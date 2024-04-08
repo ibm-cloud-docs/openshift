@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2022, 2024
-lastupdated: "2024-03-28"
+lastupdated: "2024-04-04"
 
 
 keywords: kubernetes, help, network, connectivity, webhooks
@@ -52,10 +52,10 @@ Webhooks have a failure policy that indicates whether Kubernetes can ignore conn
 
 Webhooks can also deny requests as part of normal operation: A webhook might deny requests that violate security policies or it might perform other data validation. In such cases the failure information will contain a "denied the request" response with a reason indicating the problem.
 
-    ```sh
-    admission webhook "mutate.configuration.upsert.appconnect.ibm.com" denied the request: version is not supported
-    ```
-    {: pre}
+```sh
+admission webhook "mutate.configuration.upsert.appconnect.ibm.com" denied the request: version is not supported
+```
+{: pre}
 
 In {{site.data.keyword.openshiftlong_notm}}, webhooks that call services running in the cluster do so by using a secure tunnel that connects the cluster control plane in an {{site.data.keyword.cloud_notm}} account to cluster worker nodes in your customer account.
 

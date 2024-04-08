@@ -2,10 +2,10 @@
 
 copyright: 
   years: 2014, 2024
-lastupdated: "2024-01-03"
+lastupdated: "2024-04-04"
 
 
-keywords: openshift
+keywords: {{site.data.keyword.openshiftlong_notm}}, kubernetes, openshift, help, network, connectivity
 
 subcollection: openshift
 

@@ -2,7 +2,7 @@
 
 copyright:
   years: 2023, 2024
-lastupdated: "2024-03-29"
+lastupdated: "2024-04-04"
 
 
 keywords: openshift, 4.12, update, upgrade, BOM, bill of materials, versions, patch
@@ -53,7 +53,7 @@ The following table shows the changes that are in the master fix pack 4.12.51_15
 | {{site.data.keyword.openshiftshort}}. | 4.12.49 | 4.12.51 | https://docs.openshift.com/container-platform/ |
 | OpenVPN Operator image | v1.4.33 | v1.5.13 | New version contains updates and security fixes. |
 | Portieris admission controller | v0.13.11 | v0.13.12 | See the [Portieris admission controller release notes](https://github.com/{{site.data.keyword.IBM_notm}}/portieris/releases/tag/v0.13.12){: external}. |
-| {{site.data.keyword.filestorage_full_notm}} for Classic plug-in and monitor | 441 | 442 | New version contains updates and security fixes. |
+| {{site.data.keyword.filestorage_full_notm}} plug-in and monitor | 441 | 442 | New version contains updates and security fixes. |
 {: caption="Changes since version 4.12.49_1581_openshift" caption-side="bottom"}
 
 

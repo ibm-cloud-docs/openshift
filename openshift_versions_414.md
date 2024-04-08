@@ -2,7 +2,7 @@
 
 copyright:
   years: 2023, 2024
-lastupdated: "2024-02-02"
+lastupdated: "2024-04-04"
 
 
 keywords: openshift, version, update, upgrade, 4.14, update openshift
@@ -134,7 +134,7 @@ Regardless of whether you need to take additional steps, if you keep other clust
 ### I have custom security groups. What do I change?
 {: #networking_steps_sg_oc}
 
-The necessary allow rules are automatically added to the IBM-managed `kube-<cluster_ID>` cluster security group when you update to or create a cluster at version 4.14. However, if you created a VPC cluster that does **NOT** use the `kube-<cluster_ID>` cluster security group rules, you must make sure that the following security group rules are implemented to allow traffic to the VPE gateway for registry. If the rules are not already implemented in your custom setup, [add them](/docs/containers?topic=containers-vpc-security-group&interface=cli#security_groups_cli). Each of these rules must be created for each zone in the VPC and must specify the entire VPC address prefix range for the zone as the destination CIDR. To find the VPC address prefix range for each zone in the VPC, run `ibmcloud is vpc-address-prefixes <vpc_name_or_id>`.
+The necessary allow rules are automatically added to the IBM-managed `kube-<cluster_ID>` cluster security group when you update to or create a cluster at version 4.14. However, if you created a VPC cluster that does **NOT** use the `kube-<cluster_ID>` cluster security group rules, you must make sure that the following security group rules are implemented to allow traffic to the VPE gateway for registry. If the rules are not already implemented in your custom setup, [add them](/docs/containers?topic=containers-vpc-security-group-manage&interface=cli#security_groups_cli). Each of these rules must be created for each zone in the VPC and must specify the entire VPC address prefix range for the zone as the destination CIDR. To find the VPC address prefix range for each zone in the VPC, run `ibmcloud is vpc-address-prefixes <vpc_name_or_id>`.
 
 Add the following rules to your custom security group.
 

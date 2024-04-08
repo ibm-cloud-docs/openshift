@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2024
-lastupdated: "2024-04-03"
+lastupdated: "2024-04-08"
 
 
 keywords: openshift
@@ -75,19 +75,6 @@ subcollection: openshift
 * [What skills should I have before I move my apps to a cluster?](/docs/openshift?topic=openshift-overview#knowledge)
 
 * [Related resources](/docs/openshift?topic=openshift-overview#kubernetes-resources)
-
-
-## IAM roles and actions
-{: #sitemap_iam_roles_and_actions}
-
-
-[IAM roles and actions](/docs/openshift?topic=openshift-iam-platform-access-roles#iam-platform-access-roles)
-
-* [Kubernetes Service](/docs/openshift?topic=openshift-iam-platform-access-roles#iam-platform-access-roles-include-containers-kubernetes-roles)
-
-* [Permissions to create a cluster](/docs/openshift?topic=openshift-iam-platform-access-roles#cluster-create-permissions)
-
-* [Example custom IAM roles](/docs/openshift?topic=openshift-iam-platform-access-roles#example-iam)
 
 
 ## Your responsibilities with using {{site.data.keyword.openshiftlong_notm}}
@@ -2677,18 +2664,6 @@ subcollection: openshift
 {: #sitemap_planning_to_create_clusters}
 
 
-[Preparing your account to create clusters](/docs/openshift?topic=openshift-clusters#clusters)
-
-* [Create or upgrade your account](/docs/openshift?topic=openshift-clusters#prepare-create-account)
-
-* [Setting user permissions](/docs/openshift?topic=openshift-clusters#prepare-verify-permissions)
-
-* [Plan your resource groups](/docs/openshift?topic=openshift-clusters#prepare-resource-groups)
-
-* [Cluster-specific account setup](/docs/openshift?topic=openshift-clusters#prepare-cluster-account)
-
-* [Next steps](/docs/openshift?topic=openshift-clusters#next-steps)
-
 [Creating a cluster environment strategy](/docs/openshift?topic=openshift-strategy#strategy)
 
 * [Decide how many clusters to create](/docs/openshift?topic=openshift-strategy#env_multicluster)
@@ -2902,6 +2877,31 @@ subcollection: openshift
 * [Step 3: Create the diagram](/docs/openshift?topic=openshift-document-environment#create-arch-diagram)
 
 
+## Preparing your account
+{: #sitemap_preparing_your_account}
+
+
+[Preparing your account to create clusters](/docs/openshift?topic=openshift-clusters#clusters)
+
+* [Create or upgrade your account](/docs/openshift?topic=openshift-clusters#prepare-create-account)
+
+* [Setting user permissions](/docs/openshift?topic=openshift-clusters#prepare-verify-permissions)
+
+* [Plan your resource groups](/docs/openshift?topic=openshift-clusters#prepare-resource-groups)
+
+* [Cluster-specific account setup](/docs/openshift?topic=openshift-clusters#prepare-cluster-account)
+
+* [Next steps](/docs/openshift?topic=openshift-clusters#next-steps)
+
+[IAM roles and actions](/docs/openshift?topic=openshift-iam-platform-access-roles#iam-platform-access-roles)
+
+* [Kubernetes Service](/docs/openshift?topic=openshift-iam-platform-access-roles#iam-platform-access-roles-include-containers-kubernetes-roles)
+
+* [Permissions to create a cluster](/docs/openshift?topic=openshift-iam-platform-access-roles#cluster-create-permissions)
+
+* [Example custom IAM roles](/docs/openshift?topic=openshift-iam-platform-access-roles#example-iam)
+
+
 ## Creating clusters
 {: #sitemap_creating_clusters}
 
@@ -3049,21 +3049,21 @@ subcollection: openshift
 
     * [Prerequisites](/docs/openshift?topic=openshift-update#vpc_worker_prereqs)
 
-    * [Updating VPC worker nodes in the CLI](/docs/openshift?topic=openshift-update#vpc_worker_cli)
+    * [Updating VPC worker nodes in the CLI](/docs/openshift?topic=openshift-update&interface=cli#vpc_worker_cli)
 
-    * [Updating VPC worker nodes in the console](/docs/openshift?topic=openshift-update#vpc_worker_ui)
+    * [Updating VPC worker nodes in the console](/docs/openshift?topic=openshift-update&interface=ui#vpc_worker_ui)
 
-* [Updating flavors (machine types)](/docs/openshift?topic=openshift-update#machine_type)
+* [Updating flavors (machine types)](/docs/openshift?topic=openshift-update&interface=ui#machine_type)
 
-* [How are worker pools scaled down?](/docs/openshift?topic=openshift-update#worker-scaledown-logic)
+* [How are worker pools scaled down?](/docs/openshift?topic=openshift-update&interface=ui#worker-scaledown-logic)
 
-* [Updating cluster components](/docs/openshift?topic=openshift-update#components)
+* [Updating cluster components](/docs/openshift?topic=openshift-update&interface=ui#components)
 
-    * [Managing automatic updates for Fluentd](/docs/openshift?topic=openshift-update#logging-up)
+    * [Managing automatic updates for Fluentd](/docs/openshift?topic=openshift-update&interface=ui#logging-up)
 
-    * [Managing automatic updates for Ingress ALBs](/docs/openshift?topic=openshift-update#alb)
+    * [Managing automatic updates for Ingress ALBs](/docs/openshift?topic=openshift-update&interface=ui#alb)
 
-* [Updating managed add-ons](/docs/openshift?topic=openshift-update#addons)
+* [Updating managed add-ons](/docs/openshift?topic=openshift-update&interface=ui#addons)
 
 [Creating and managing dedicated hosts on VPC Gen 2 infrastructure](/docs/openshift?topic=openshift-dedicated-hosts#dedicated-hosts)
 
@@ -3661,57 +3661,57 @@ subcollection: openshift
 {: #sitemap_controlling_network_traffic_in_vpc_clusters}
 
 
-[Overview of network security options](/docs/openshift?topic=openshift-vpc-network-policy#vpc-network-policy)
+[Understanding VPC security groups](/docs/openshift?topic=openshift-vpc-security-group#vpc-security-group)
 
-* [Comparison of network security options](/docs/openshift?topic=openshift-vpc-network-policy#comparison)
+* [Virtual private endpoint (VPE) gateways](/docs/openshift?topic=openshift-vpc-security-group#managed-vpe-gateways)
 
-* [Access control lists (ACLs) or security groups?](/docs/openshift?topic=openshift-vpc-network-policy#acl-sg-compare)
-
-[Controlling traffic with VPC security groups](/docs/openshift?topic=openshift-vpc-security-group#vpc-security-group)
-
-* [VPC security groups](/docs/openshift?topic=openshift-vpc-security-group#vpc-security-groups-details)
+* [Managed security groups](/docs/openshift?topic=openshift-vpc-security-group#managed-sgs)
 
     * [Security groups applied to cluster workers](/docs/openshift?topic=openshift-vpc-security-group#vpc-sg-cluster-workers)
 
     * [Security groups applied to VPE gateways and VPC ALBs](/docs/openshift?topic=openshift-vpc-security-group#vpc-sg-vpe-alb)
 
-* [Viewing VPC security groups in the CLI](/docs/openshift?topic=openshift-vpc-security-group&interface=cli#vpc-sg-cli)
+* [Minimum inbound and outbound requirements](/docs/openshift?topic=openshift-vpc-security-group#vpc-sg-inbound-outbound)
 
-* [Viewing the default VPC security groups in the UI](/docs/openshift?topic=openshift-vpc-security-group&interface=ui#vpc-sg-ui)
+    * [Required inbound and outbound rules for cluster workers](/docs/openshift?topic=openshift-vpc-security-group#required-group-rules-workers)
 
-* [Minimum inbound and outbound requirements](/docs/openshift?topic=openshift-vpc-security-group&interface=ui#vpc-sg-inbound-outbound)
+    * [Required rules for VPCs with a cluster that runs at version 4.14 or later](/docs/openshift?topic=openshift-vpc-security-group#rules-sg-128)
 
-    * [Required inbound and outbound rules for cluster workers](/docs/openshift?topic=openshift-vpc-security-group&interface=ui#required-group-rules-workers)
+    * [Required inbound and outbound rules for VPC ALBs](/docs/openshift?topic=openshift-vpc-security-group#required-group-rules-alb)
 
-    * [Required rules for VPCs with a cluster that runs at version  or later](/docs/openshift?topic=openshift-vpc-security-group&interface=ui#rules-sg-128)
+* [Allow the worker nodes to connect to the public service endpoint IPs for the OAuth service](/docs/openshift?topic=openshift-vpc-security-group#worker-node-public-service-endpoint)
 
-    * [Required inbound and outbound rules for VPC ALBs](/docs/openshift?topic=openshift-vpc-security-group&interface=ui#required-group-rules-alb)
+* [Allow worker nodes to connect to the Ingress LoadBalancer](/docs/openshift?topic=openshift-vpc-security-group#vpc-security-group-loadbalancer-outbound)
 
-* [Creating security group rules](/docs/openshift?topic=openshift-vpc-security-group&interface=ui#vpc-sg-create-rules)
+[Creating and managing VPC security groups](/docs/openshift?topic=openshift-vpc-security-group-manage#vpc-security-group-manage)
 
-    * [Creating rules in the console](/docs/openshift?topic=openshift-vpc-security-group&interface=ui#security-group-inbound-rules)
+* [Adding security groups during cluster creation](/docs/openshift?topic=openshift-vpc-security-group-manage#vpc-sg-cluster)
 
-    * [Creating rules in the command line](/docs/openshift?topic=openshift-vpc-security-group&interface=cli#security_groups_cli)
+    * [If you only want the default VPC and cluster security groups and no additional security groups](/docs/openshift?topic=openshift-vpc-security-group-manage#default-sgs-only)
 
-* [Adding VPC security groups to clusters and worker pools during create time](/docs/openshift?topic=openshift-vpc-security-group&interface=cli#vpc-sg-cluster)
+    * [If you only want the cluster security group and not the default VPC security group](/docs/openshift?topic=openshift-vpc-security-group-manage#cluster-sg-only)
 
-    * [If you only want the default VPC and cluster security groups and no additional security groups](/docs/openshift?topic=openshift-vpc-security-group&interface=cli#default-sgs-only)
+    * [If you want the cluster security group and your own additional security groups](/docs/openshift?topic=openshift-vpc-security-group-manage#cluster-customer-sgs)
 
-    * [If you only want the cluster security group and not the default VPC security group](/docs/openshift?topic=openshift-vpc-security-group&interface=cli#cluster-sg-only)
+    * [If you only want your own security groups](/docs/openshift?topic=openshift-vpc-security-group-manage#customer-sgs-only)
 
-    * [If you want the cluster security group and your own additional security groups](/docs/openshift?topic=openshift-vpc-security-group&interface=cli#cluster-customer-sgs)
+* [Adding security groups to worker pools during creation](/docs/openshift?topic=openshift-vpc-security-group-manage#vpc-sg-worker-pool)
 
-    * [If you only want your own security groups](/docs/openshift?topic=openshift-vpc-security-group&interface=cli#customer-sgs-only)
+    * [If you do not want to attach additional security groups to the worker pool](/docs/openshift?topic=openshift-vpc-security-group-manage#no-worker-sgs)
 
-* [Adding security groups to worker pools at worker pool create time](/docs/openshift?topic=openshift-vpc-security-group&interface=cli#vpc-sg-worker-pool)
+    * [If you do want to attach additional security groups to the worker pool](/docs/openshift?topic=openshift-vpc-security-group-manage#worker-sgs)
 
-    * [If you do not want to attach additional security groups to the worker pool](/docs/openshift?topic=openshift-vpc-security-group&interface=cli#no-worker-sgs)
+* [Viewing security groups](/docs/openshift?topic=openshift-vpc-security-group-manage&interface=cli#vpc-sg-cli)
 
-    * [If you do want to attach additional security groups to the worker pool](/docs/openshift?topic=openshift-vpc-security-group&interface=cli#worker-sgs)
+* [Viewing security groups in the console](/docs/openshift?topic=openshift-vpc-security-group-manage&interface=ui#vpc-sg-ui)
 
-* [Allow the worker nodes to connect to the public service endpoint IPs for the OAuth service](/docs/openshift?topic=openshift-vpc-security-group&interface=cli#worker-node-public-service-endpoint)
+* [Creating security group rules in the console](/docs/openshift?topic=openshift-vpc-security-group-manage&interface=ui#security-group-inbound-rules)
 
-* [Allow worker nodes to connect to the Ingress LoadBalancer](/docs/openshift?topic=openshift-vpc-security-group&interface=cli#vpc-security-group-loadbalancer-outbound)
+* [Creating security group rules in the command line](/docs/openshift?topic=openshift-vpc-security-group-manage&interface=cli#security_groups_cli)
+
+* [Allow worker nodes to connect to the public service endpoint IP addresses for the Oauth service](/docs/openshift?topic=openshift-vpc-security-group-manage&interface=cli#worker-node-public-service-endpoint)
+
+* [Allow worker nodes to connect to the Ingress LoadBalancer](/docs/openshift?topic=openshift-vpc-security-group-manage&interface=cli#vpc-security-group-loadbalancer-outbound)
 
 [Controlling traffic with ACLs](/docs/openshift?topic=openshift-vpc-acls#vpc-acls)
 
@@ -3765,15 +3765,15 @@ subcollection: openshift
 
 * [Creating a VPC subnet and attaching a public gateway](/docs/openshift?topic=openshift-vpc-subnets#create_vpc_subnet)
 
-    * [Creating a VPC subnet in the console](/docs/openshift?topic=openshift-vpc-subnets#create_vpc_subnet_ui)
+    * [Creating a VPC subnet in the console](/docs/openshift?topic=openshift-vpc-subnets&interface=ui#create_vpc_subnet_ui)
 
-    * [Creating a VPC subnet in the CLI](/docs/openshift?topic=openshift-vpc-subnets#create_vpc_subnet_cli)
+    * [Creating a VPC subnet in the CLI](/docs/openshift?topic=openshift-vpc-subnets&interface=cli#create_vpc_subnet_cli)
 
-* [Creating VPC subnets for classic access](/docs/openshift?topic=openshift-vpc-subnets#classic_access_subnets)
+* [Creating VPC subnets for classic access](/docs/openshift?topic=openshift-vpc-subnets&interface=cli#classic_access_subnets)
 
-    * [Creating VPC subnets for classic access in the console](/docs/openshift?topic=openshift-vpc-subnets#ca_subnet_ui)
+    * [Creating VPC subnets for classic access in the console](/docs/openshift?topic=openshift-vpc-subnets&interface=ui#ca_subnet_ui)
 
-    * [Creating VPC subnets for classic access from the CLI](/docs/openshift?topic=openshift-vpc-subnets#ca_subnet_cli)
+    * [Creating VPC subnets for classic access from the CLI](/docs/openshift?topic=openshift-vpc-subnets&interface=cli#ca_subnet_cli)
 
 [Setting up VPC VPN connectivity](/docs/openshift?topic=openshift-vpc-vpnaas#vpc-vpnaas)
 
@@ -5235,37 +5235,13 @@ subcollection: openshift
 
     * [Extending {{site.data.keyword.redhat_openshift_notm}} API and software with CRDs and Operators](/docs/openshift?topic=openshift-ibm-3rd-party-integrations#kube-crd-operators)
 
-[Adding Cloud Paks](/docs/openshift?topic=openshift-openshift_cloud_paks#openshift_cloud_paks)
-
-* [Overview of Cloud Pak offerings](/docs/openshift?topic=openshift-openshift_cloud_paks#oc_cloud_pak_ov)
-
-    * [Cloud Pak for Applications](/docs/openshift?topic=openshift-openshift_cloud_paks#cloud-pak-cpa)
-
-    * [Cloud Pak for Data](/docs/openshift?topic=openshift-openshift_cloud_paks#cloud-pak-cpd)
-
-    * [Cloud Pak for Integration](/docs/openshift?topic=openshift-openshift_cloud_paks#cloud-pak-cd4i)
-
-* [Cloud Pak for Security](/docs/openshift?topic=openshift-openshift_cloud_paks#cloud-pak-cp4s)
-
-* [Cloud Pak for Management](/docs/openshift?topic=openshift-openshift_cloud_paks#cloud-pak-cp4m)
-
-* [Adding IBM Cloud Paks](/docs/openshift?topic=openshift-openshift_cloud_paks#oc_cloud_paks_add)
-
-    * [Adding Cloud Paks as images from an entitled registry](/docs/openshift?topic=openshift-openshift_cloud_paks#oc_cloud_paks_registry)
+[Adding Cloud Paks, entitlements, or licenses to your cluster](/docs/openshift?topic=openshift-openshift_cloud_paks#openshift_cloud_paks)
 
 * [Assigning a Cloud Pak entitlement to your {{site.data.keyword.cloud_notm}} account](/docs/openshift?topic=openshift-openshift_cloud_paks#oc_cloud_paks_assign)
 
-* [FAQs for Cloud Pak on {{site.data.keyword.openshiftlong_notm}}](/docs/openshift?topic=openshift-openshift_cloud_paks#faq_cloud_paks)
+* [Adding entitlements to your cluster](/docs/openshift?topic=openshift-openshift_cloud_paks#oc_cloud_paks_add)
 
-    * [How do I install a Cloud Pak in my {{site.data.keyword.openshiftlong_notm}} cluster? How do I access it later?](/docs/openshift?topic=openshift-openshift_cloud_paks#cloud_pak_manage)
-
-    * [Can I use the {{site.data.keyword.redhat_openshift_notm}} entitlement that comes with my Cloud Pak for my cluster?](/docs/openshift?topic=openshift-openshift_cloud_paks#cloud_pak_byo_entitlement)
-
-    * [Can I install multiple Cloud Paks in the same {{site.data.keyword.openshiftlong_notm}} cluster?](/docs/openshift?topic=openshift-openshift_cloud_paks#cloud_pak_multiple)
-
-    * [What is included in a Cloud Pak?](/docs/openshift?topic=openshift-openshift_cloud_paks#cloud_pak_included)
-
-    * [What else do I need to know to use Cloud Paks?](/docs/openshift?topic=openshift-openshift_cloud_paks#cloud_paks_other)
+* [Adding Cloud Pak images from an entitled registry](/docs/openshift?topic=openshift-openshift_cloud_paks#oc_cloud_paks_registry)
 
 [Adding services by using Operators](/docs/openshift?topic=openshift-operators#operators)
 
@@ -6612,8 +6588,6 @@ subcollection: openshift
 
 * [`istio` 1.20](/docs/openshift?topic=openshift-supported-cluster-addon-versions#istio-1.20)
 
-* [`openshift-data-foundation` 4.11.0](/docs/openshift?topic=openshift-supported-cluster-addon-versions#openshift-data-foundation-4.11.0)
-
 * [`openshift-data-foundation` 4.12.0](/docs/openshift?topic=openshift-supported-cluster-addon-versions#openshift-data-foundation-4.12.0)
 
 * [`openshift-data-foundation` 4.13.0](/docs/openshift?topic=openshift-supported-cluster-addon-versions#openshift-data-foundation-4.13.0)
@@ -7162,7 +7136,15 @@ subcollection: openshift
 
 * [Version 4.13](/docs/openshift?topic=openshift-odf_addon_changelog#4.13_odf)
 
-    * [Version 4.13.9, released 08 January 2024](/docs/openshift?topic=openshift-odf_addon_changelog#4.13.9_odf)
+    * [Version 4.13.14, released 14 March 2024](/docs/openshift?topic=openshift-odf_addon_changelog#4.13.13_odf)
+
+    * [Version 4.13.13, released 08 March 2024](/docs/openshift?topic=openshift-odf_addon_changelog#4.13.13_odf)
+
+    * [Version 4.13.12, released 04 March 2024](/docs/openshift?topic=openshift-odf_addon_changelog#4.13.12_odf)
+
+    * [Version 4.13.11, released 14 February 2024](/docs/openshift?topic=openshift-odf_addon_changelog#4.13.11_odf)
+
+    * [Version 4.13.9, released 23 January 2024](/docs/openshift?topic=openshift-odf_addon_changelog#4.13.9_odf)
 
     * [Version 4.13.7, released 02 November 2023](/docs/openshift?topic=openshift-odf_addon_changelog#4.13.7_odf)
 
@@ -7175,6 +7157,12 @@ subcollection: openshift
     * [Version 4.13.0, released 10 July 2023](/docs/openshift?topic=openshift-odf_addon_changelog#4.13.0_odf)
 
 * [Version 4.12](/docs/openshift?topic=openshift-odf_addon_changelog#4.12_odf)
+
+    * [Version 4.12.17, released 04 March 2024](/docs/openshift?topic=openshift-odf_addon_changelog#4.11.21_odf)
+
+    * [Version 4.12.16, released 14 February 2024](/docs/openshift?topic=openshift-odf_addon_changelog#4.11.20_odf)
+
+    * [Version 4.12.15, released 02 February 2024](/docs/openshift?topic=openshift-odf_addon_changelog#4.11.19_odf)
 
     * [Version 4.12.13, released 29 November 2023](/docs/openshift?topic=openshift-odf_addon_changelog#4.12.13_odf)
 
@@ -7195,6 +7183,12 @@ subcollection: openshift
     * [Version 4.12.0, released 16 March 2023](/docs/openshift?topic=openshift-odf_addon_changelog#4.12.0_odf)
 
 * [Version 4.11](/docs/openshift?topic=openshift-odf_addon_changelog#4.11_odf)
+
+    * [Version 4.11.21, released 04 March 2024](/docs/openshift?topic=openshift-odf_addon_changelog#4.11.21_odf)
+
+    * [Version 4.11.20, released 14 February 2024](/docs/openshift?topic=openshift-odf_addon_changelog#4.11.20_odf)
+
+    * [Version 4.11.19, released 02 February 2024](/docs/openshift?topic=openshift-odf_addon_changelog#4.11.19_odf)
 
     * [Version 4.11.18, released 29 November 2023](/docs/openshift?topic=openshift-odf_addon_changelog#4.11.18_odf)
 
@@ -9428,6 +9422,16 @@ subcollection: openshift
 
 * [Can I use other IBM Cloud services with my cluster?](/docs/openshift?topic=openshift-faqs#faq_integrations)
 
+* [How do I install a Cloud Pak in my {{site.data.keyword.openshiftlong_notm}} cluster? How do I access it later?](/docs/openshift?topic=openshift-faqs#cloud_pak_manage)
+
+* [Can I use the {{site.data.keyword.redhat_openshift_notm}} entitlement that comes with my Cloud Pak for my cluster?](/docs/openshift?topic=openshift-faqs#cloud_pak_byo_entitlement)
+
+* [Can I install multiple Cloud Paks in the same {{site.data.keyword.openshiftlong_notm}} cluster?](/docs/openshift?topic=openshift-faqs#cloud_pak_multiple)
+
+* [What is included in a Cloud Pak?](/docs/openshift?topic=openshift-faqs#cloud_pak_included)
+
+* [What else do I need to know to use Cloud Paks?](/docs/openshift?topic=openshift-faqs#cloud_paks_other)
+
 * [Does IBM support third-party and open source tools that I use with my cluster?](/docs/openshift?topic=openshift-faqs#faq_thirdparty_oss)
 
 * [What am I charged for? Can I estimate and control costs in my cluster?](/docs/openshift?topic=openshift-faqs#charges)
@@ -9441,13 +9445,49 @@ subcollection: openshift
 * [What operations are blocked if my cluster is running an unsupported operating system?](/docs/openshift?topic=openshift-faqs#unsupported_os)
 
 
+## Best practices for {{site.data.keyword.openshiftlong_notm}}
+{: #sitemap_best_practices_for_}
+
+
+[Best practices for {{site.data.keyword.openshiftlong_notm}}](/docs/openshift?topic=openshift-best-practices#best-practices)
+
+* [Keep your cluster environment up to date](/docs/openshift?topic=openshift-best-practices#bp-1)
+
+* [Keep your command line tools up to date](/docs/openshift?topic=openshift-best-practices#bp-2)
+
+* [Document your environment architectrure](/docs/openshift?topic=openshift-best-practices#bp-3)
+
+* [Subscribe to RSS](/docs/openshift?topic=openshift-best-practices#bp-4)
+
+
 ## Running tests with the Diagnostics and Debug Tool
 {: #sitemap_running_tests_with_the_diagnostics_and_debug_tool}
 
 
 [Running tests with the Diagnostics and Debug Tool](/docs/openshift?topic=openshift-debug-tool#debug-tool)
 
-* [Enabling the Diagnostics and Debug Tool add-on](/docs/openshift?topic=openshift-debug-tool#debug-tool-enable)
+* [Enable and run the Diagnostics and Debug Tool add-on](/docs/openshift?topic=openshift-debug-tool#debug-tool-enable)
+
+
+## Debugging guide for {{site.data.keyword.openshiftlong_notm}}
+{: #sitemap_debugging_guide_for_}
+
+
+[Debugging guide for {{site.data.keyword.openshiftlong_notm}}](/docs/openshift?topic=openshift-debug_clusters#debug_clusters)
+
+* [Step 1: Review the status of {{site.data.keyword.cloud_notm}}](/docs/openshift?topic=openshift-debug_clusters#troubleshooting-environments)
+
+* [Step 2: Get your cluster state and status and review the common issues](/docs/openshift?topic=openshift-debug_clusters#ts-2)
+
+* [Step 3: Gather details and document the problem](/docs/openshift?topic=openshift-debug_clusters#ts-3)
+
+* [Step 4: Running tests to rule in or rule out each component](/docs/openshift?topic=openshift-debug_clusters#ts-4)
+
+* [Step 5: Gathering more data](/docs/openshift?topic=openshift-debug_clusters#ts-5)
+
+* [Step 6: Reach out in Slack or review user forums for similar issues](/docs/openshift?topic=openshift-debug_clusters#ts-6)
+
+* [Next steps](/docs/openshift?topic=openshift-debug_clusters#advanced-ts-next)
 
 
 ## Troubleshooting
@@ -9458,8 +9498,6 @@ subcollection: openshift
 ### Clusters and masters
 {: #sitemap_clusters_and_masters}
 
-
-[Debugging clusters](/docs/openshift?topic=openshift-debug_clusters#debug_clusters)
 
 [Debugging webhooks](/docs/openshift?topic=openshift-ts-webhook-debug#ts-webhook-debug)
 
@@ -9560,6 +9598,8 @@ subcollection: openshift
 [Why do I get an error about a cloud object storage bucket when I create a cluster?](/docs/openshift?topic=openshift-ts_cos_bucket_cluster_create#ts_cos_bucket_cluster_create)
 
 [After logging in to my cluster, why do I see a no resources found message?](/docs/openshift?topic=openshift-rhoks_ts_not_found#rhoks_ts_not_found)
+
+[Why do I see an `etcd database size is approaching the maximum` error?](/docs/openshift?topic=openshift-ts-etcd-capacity#ts-etcd-capacity)
 
 [Why do I get an error that my PodSecurityConfiguration is not valid?](/docs/openshift?topic=openshift-ts-pod-security-reset#ts-pod-security-reset)
 
@@ -10178,25 +10218,11 @@ subcollection: openshift
 [What if my OpenShift Data Foundation issue is still unresolved?](/docs/openshift?topic=openshift-ocs-error-unresolved#ocs-error-unresolved)
 
 
-## Getting help and support
-{: #sitemap_getting_help_and_support}
+## Contacting support
+{: #sitemap_contacting_support}
 
 
-[Getting help and support](/docs/openshift?topic=openshift-get-help#get-help)
-
-* [Best practices](/docs/openshift?topic=openshift-get-help#help-general)
-
-* [Step 1: Review the status of {{site.data.keyword.cloud_notm}}](/docs/openshift?topic=openshift-get-help#help-cloud-status)
-
-* [Step 2: Gather details and document the problem](/docs/openshift?topic=openshift-get-help#ts-app-debug-gather)
-
-* [Step 3: Running tests to rule in or rule out each component](/docs/openshift?topic=openshift-get-help#ts-app-debug-narrow-1)
-
-* [Step 4: Gathering more data](/docs/openshift?topic=openshift-get-help#ts-app-debug-gather-again)
-
-* [Step 4: Reach out in Slack or review user forums for similar issues](/docs/openshift?topic=openshift-get-help#feedback-qs)
-
-* [Contacting support](/docs/openshift?topic=openshift-get-help#help-support)
+[Contacting support](/docs/openshift?topic=openshift-get-help#get-help)
 
 
 ## Service limitations

@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2024
-lastupdated: "2024-03-28"
+lastupdated: "2024-04-04"
 
 
 keywords: openshift, {{site.data.keyword.openshiftlong_notm}}, upgrade, version, update cluster, update worker nodes, update cluster components, update cluster master
@@ -350,6 +350,7 @@ Updates to worker nodes can cause downtime for your apps and services. Your work
 
 ### Updating VPC worker nodes in the CLI
 {: #vpc_worker_cli}
+{: cli}
 
 Complete the following steps to update your worker nodes by using the CLI.
 {: shortdesc}
@@ -384,6 +385,7 @@ If you are running Portworx in your VPC cluster, you must [manually attach your 
 
 ### Updating VPC worker nodes in the console
 {: #vpc_worker_ui}
+{: ui}
 
 You can update your VPC worker nodes in the console. Before you begin, consider [adding worker nodes](/docs/openshift?topic=openshift-add-workers-vpc) to the cluster to help avoid downtime for your apps.
 {: shortdesc}
@@ -550,9 +552,6 @@ Can I install other plug-ins or add-ons than the default components?
 
 When you create a logging configuration for a source in your cluster to forward to an external server, a Fluentd component is created in your cluster. To change your logging or filter configurations, the Fluentd component must be at the latest version. By default, automatic updates to the component are enabled.
 {: shortdesc}
-
-As of 14 November 2019, a Fluentd component is created for your cluster only if you [create a logging configuration to forward logs to a syslog server](/docs/containers?topic=containers-health#configuring). If no logging configurations for syslog exist in your cluster, the Fluentd component is removed automatically. If you don't forward logs to syslog and want to ensure that the Fluentd component is removed from your cluster, automatic updates to Fluentd must be enabled.
-{: important}
 
 You can manage automatic updates of the Fluentd component in the following ways. **Note**: To run the following commands, you must have the [**Administrator** {{site.data.keyword.cloud_notm}} IAM platform access role](/docs/openshift?topic=openshift-iam-platform-access-roles) for the cluster.
 

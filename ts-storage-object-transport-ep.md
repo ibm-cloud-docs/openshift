@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2024
-lastupdated: "2024-03-27"
+lastupdated: "2024-04-04"
 
 
 keywords: openshift, {{site.data.keyword.openshiftlong_notm}}, kubernetes, help, network, connectivity
@@ -154,7 +154,7 @@ Follow the steps to gather logging information.
     ```
     {: pre}
 
-8. Review the `syslog` and the `s3fslog` for information about the `Transport endpoint` error. [Open a support ticket](/docs/openshift?topic=openshift-get-help#help-support) and share the log files that you gathered.
+8. Review the `syslog` and the `s3fslog` for information about the `Transport endpoint` error. [Open a support ticket](/docs/openshift?topic=openshift-get-help and share the log files that you gathered.
 
 9. Delete the `ibm-inspectnode` DaemonSet that you deployed.
 

@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2024
-lastupdated: "2024-03-29"
+lastupdated: "2024-04-04"
 
 
 keywords: odf, openshift data foundation add-on, change log
@@ -72,8 +72,29 @@ changelog:
 ## Version 4.13
 {: #4.13_odf}
 
+### Version 4.13.14, released 14 March 2024
+{: #4.13.13_odf}
 
-### Version 4.13.9, released 08 January 2024
+- Adds an OSD size check.
+
+### Version 4.13.13, released 08 March 2024
+{: #4.13.13_odf}
+
+- Vulnerability fixes.
+
+### Version 4.13.12, released 04 March 2024
+{: #4.13.12_odf}
+
+- Adds a taint node toleration for the Local Storage Operator.
+
+### Version 4.13.11, released 14 February 2024
+{: #4.13.11_odf}
+
+- Default base image changed.
+- Vulnerability fixes.
+
+
+### Version 4.13.9, released 23 January 2024
 {: #4.13.9_odf}
 
 - Adds a new parameter to disable the Noobaa public load balancer.
@@ -110,6 +131,22 @@ changelog:
 
 ## Version 4.12
 {: #4.12_odf}
+
+
+### Version 4.12.17, released 04 March 2024
+{: #4.11.21_odf}
+
+- Vulnerability fixes
+
+### Version 4.12.16, released 14 February 2024
+{: #4.11.20_odf}
+
+- Default base image changed
+
+### Version 4.12.15, released 02 February 2024
+{: #4.11.19_odf}
+
+- Vulnerability fixes.
 
 ### Version 4.12.13, released 29 November 2023 
 {: #4.12.13_odf}
@@ -168,6 +205,22 @@ Initial release.
 
 ## Version 4.11
 {: #4.11_odf}
+
+
+### Version 4.11.21, released 04 March 2024
+{: #4.11.21_odf}
+
+- Vulnerability fixes
+
+### Version 4.11.20, released 14 February 2024
+{: #4.11.20_odf}
+
+- Default base image changed
+
+### Version 4.11.19, released 02 February 2024
+{: #4.11.19_odf}
+
+- Vulnerability fixes.
 
 ### Version 4.11.18, released 29 November 2023 
 {: #4.11.18_odf}

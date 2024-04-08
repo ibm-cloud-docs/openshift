@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2024
-lastupdated: "2024-03-15"
+lastupdated: "2024-04-04"
 
 
 keywords: oks, iro, openshift, red hat, red hat openshift
@@ -142,8 +142,10 @@ To set up a monitoring configuration for your cluster:
         To use a different service access key after you created the monitoring configuration, use the [`ibmcloud ob monitoring config replace`](/docs/containers?topic=containers-observability_cli#monitoring_config_replace) command.
         {: tip}
 
+        **Version 4.15. and later**: If your cluster has outbound traffic protection enabled, you must set up monitoring by using the private endpoint. To do this, specify the `--private-endpoint` option.
+
         ```sh
-        ibmcloud ob monitoring config create --cluster <cluster_name_or_ID> --instance <Monitoring_instance_name_or_ID>
+        ibmcloud ob monitoring config create --cluster <cluster_name_or_ID> --instance <Monitoring_instance_name_or_ID> [--private-endpoint]
         ```
         {: pre}
 

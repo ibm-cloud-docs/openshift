@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2024
-lastupdated: "2024-03-15"
+lastupdated: "2024-04-04"
 
 
 keywords: openshift
@@ -185,7 +185,7 @@ Before you begin, [Log in to your account. If applicable, target the appropriate
         ```
         {: pre}
 
-1. [Open an issue with IBM Cloud support](/docs/openshift?topic=openshift-get-help#help-support). Be sure to include all the information and command outputs gathered in the previous step. 
+1. [Open an issue with IBM Cloud support](/docs/openshift?topic=openshift-get-help. Be sure to include all the information and command outputs gathered in the previous step. 
 
 ## Unable to create or delete worker nodes due to incorrect account error
 {: #orphaned}
@@ -286,7 +286,7 @@ Re-establish the VPE connection between your worker nodes and Kubernetes master.
 
 1. To check the VPE gateway for your cluster in the VPC infrastructure console, open the [Virtual private endpoint gateways for VPC dashboard](https://cloud.ibm.com/vpc-ext/network/endpointGateways){: external} and look for the VPE gateway in the format `iks-<cluster_ID>`.
     * If the gateway for your cluster is not listed, continue to the next step.
-    * If the gateway for your cluster is listed but its status is not `Stable`, [open a support case](/docs/openshift?topic=openshift-get-help#help-support). In the case details, include the cluster ID.
+    * If the gateway for your cluster is listed but its status is not `Stable`, [open a support case](/docs/openshift?topic=openshift-get-help). In the case details, include the cluster ID.
     * If the gateway for your cluster is listed and its status is `Stable`, you might have firewall or security group rules that are blocking worker node communication to the cluster master. [Configure your security group rules to allow outgoing traffic to the appropriate ports and IP addresses](/docs/openshift?topic=openshift-vpc-security-group).
 
 2. Refresh the cluster master. If the VPE gateway does not exist in your VPC, it is created, and connectivity to the reserved IP addresses on the subnets that your worker nodes are connected to is re-established. After you refresh the cluster, wait a few minutes to allow the operation to complete.

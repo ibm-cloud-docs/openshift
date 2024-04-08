@@ -16,7 +16,6 @@ toc:
       topics:
       - getting-started.md
       - overview.md
-      - iam-platform-access-roles.md
       - responsibilities.md
       - satellite-resp.md
       - topicgroup:
@@ -57,7 +56,6 @@ toc:
       - topicgroup:
           label: Planning to create clusters
           topics:
-          - cluster-create.md
           - kube-strategy.md
           - cluster-plan-ha.md
           - worker-plan.md
@@ -66,6 +64,11 @@ toc:
           - encryption.md
           - storage-plan.md
           - document-environment.md
+      - topicgroup:
+          label: Preparing your account
+          topics:
+          - cluster-create.md
+          - iam-platform-access-roles.md
       - topicgroup: 
           label: Creating clusters
           topics:
@@ -143,8 +146,8 @@ toc:
       - topicgroup:
           label: Controlling network traffic in VPC clusters
           topics:
-          - vpc-network-policy.md
           - vpc-security-group.md
+          - vpc-security-group-manage.md
           - vpc-acls.md
           - vpc-kube-policies.md
           - vpc-firewall.md
@@ -440,14 +443,15 @@ toc:
       topics:
       - include: ../get-support/ViewStatus.md
       - faqs.md
+      - best-practices.md
       - ts-debug-tool.md
+      - ts-cluster-debug.md
       - topicgroup:
           label: Troubleshooting
           topics:
           - topicgroup:
               label: Clusters and masters
               topics:
-              - ts-cluster-debug.md
               - ts-webhook-debug.md
               - ts-cluster-master.md
               - ts-cluster-master-upgrade.md
@@ -459,6 +463,7 @@ toc:
               - ts-cluster-create-delete.md
               - ts-cluster-cos-bucket.md
               - ts-cluster-no-resources.md
+              - ts-etcd-capacity.md
               - ts-pod-security-reset.md
               - ts-cluster-vpn.md
               - ts-cluster-no-vpc.md
@@ -475,6 +480,8 @@ toc:
               - ts-health-loglines.md
               - ts-vpc-byok-encrypted-storage.md
               - ts-etcd-alerts.md
+              - ts-sbd-cluster-create-quota.md
+              - ts-sbd-non-sbd-clusters.md
           - topicgroup:
               label: Worker nodes
               topics:
@@ -516,7 +523,7 @@ toc:
               - ts-ip-whitelist-annotation.md
               - ts-keepalive-sysctl.md
               - ts-slow-dns-lookup.md
-              - ts-sbd-cluster-create-quota.md
+              - ts-sbd-custom-dns.md
           - topicgroup:
               label: Apps and services
               topics:

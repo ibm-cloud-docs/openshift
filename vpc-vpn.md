@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2024
-lastupdated: "2024-01-05"
+lastupdated: "2024-04-04"
 
 
 keywords: openshift, strongswan, ipsec, on-prem, vpnaas, direct link
@@ -74,7 +74,7 @@ To connect an entire VPC to another VPC in your account, you can use the {{site.
 ### {{site.data.keyword.vpc_short}} VPN
 {: #vpc-vpn-other}
 
-Create a VPC gateway on a subnet in each VPC and create a VPN connection between the two VPC gateways. For example, you can connect subnets in a VPC in one region through a VPN connection to subnets in a VPC in another region. To get started, follow the steps in [Connecting two VPCs using VPN](/docs/vpc?topic=vpc-vpn-example). Note that if you use [access control lists (ACLs)](/docs/openshift?topic=openshift-vpc-network-policy) for your VPC subnets, you must create inbound or outbound rules to allow your worker nodes to communicate with the subnets in other VPCs.
+Create a VPC gateway on a subnet in each VPC and create a VPN connection between the two VPC gateways. For example, you can connect subnets in a VPC in one region through a VPN connection to subnets in a VPC in another region. To get started, follow the steps in [Connecting two VPCs using VPN](/docs/vpc?topic=vpc-vpn-example). Note that if you use [access control lists (ACLs)](/docs/openshift?topic=openshift-vpc-acls&interface=ui) for your VPC subnets, you must create inbound or outbound rules to allow your worker nodes to communicate with the subnets in other VPCs.
 
 ### {{site.data.keyword.tg_full_notm}}
 {: #vpc-transit-def}
