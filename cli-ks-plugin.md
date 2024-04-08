@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2024
-lastupdated: "2024-04-04"
+lastupdated: "2024-04-08"
 
 
 keywords: openshift
@@ -6005,7 +6005,7 @@ Publicly expose your app by creating a DNS subdomain to register a network load 
 {: shortdesc}
 
 ```sh
-ibmcloud oc nlb-dns create classic --cluster CLUSTER --ip NLB_IP [--ip NLB2_IP --ip NLB3_IP ...] [--secret-namespace NAMESPACE] [--dns-type public] --type public [--output json] [-q]
+ibmcloud oc nlb-dns create classic --cluster CLUSTER --ip NLB_IP [--ip NLB2_IP --ip NLB3_IP ...] [--secret-namespace NAMESPACE] [--output json] [-q]
 ```
 {: pre}
 
@@ -6022,9 +6022,6 @@ Minimum required permissions
 
 `--secret-namespace NAMESPACE`
 :    The {{site.data.keyword.redhat_openshift_notm}} project where you want to create the Kubernetes secret that holds the SSL certificate information for the NLB. If you don't specify a project, the secret is automatically created in the `default` project.
-
-`--dns-type public`
-:    The DNS provider type for subdomain registration. Currently, only `public` is supported.
 
 `--type public`
 :    The subdomain type. Currently, only `public` is supported.
@@ -6056,7 +6053,7 @@ Create a DNS record for a Network Load Balancer for VPC or Application Load Bala
 When you create a Network Load Balancer for VPC, the load balancer is assigned external IP addresses for each zone in your cluster. When you create an Application Load Balancer for VPC, the load balancer is assigned a hostname. If you want an app subdomain with TLS termination, you can use the `ibmcloud oc nlb-dns create vpc-gen2` command to create a DNS record for the IP addresses or hostname. {{site.data.keyword.cloud_notm}} takes care of generating and maintaining the wildcard SSL certificate for the subdomain for you. You can create subdomains for both public and private VPC load balancers.
 
 ```sh
-ibmcloud oc nlb-dns create vpc-gen2 --cluster CLUSTER (--lb-host VPC_ALB_HOSTNAME | --ip VPC_NLB_IP) [--dns-type public] [--secret-namespace NAMESPACE] [--type (public|private)] [--output json] [-q]
+ibmcloud oc nlb-dns create vpc-gen2 --cluster CLUSTER (--lb-host VPC_ALB_HOSTNAME | --ip VPC_NLB_IP) [--secret-namespace NAMESPACE] [--type (public|private)] [--output json] [-q]
 ```
 {: pre}
 
@@ -6071,14 +6068,8 @@ Minimum required permissions
 `--lb-host VPC_ALB_HOSTNAME` | `--ip VPC_NLB_IP`
 :    For VPC application load balancers, the load balancer hostname. To see load balancer hostnames, run `oc get svc -o wide`. For VPC network load balancers, the external IP addresses. To specify multiple IP addresses, use multiple `--ip` options. To see load balancer IP addresses, run `oc get svc -o wide`.
 
-`--dns-type public`
-:    The DNS provider type for the subdomain registration. Currently, only `public` DNS is supported.
-
 `--secret-namespace NAMESPACE`
 :    The {{site.data.keyword.redhat_openshift_notm}} project where you want to create the Kubernetes secret that holds the SSL certificate information for the NLB. If you don't specify a project, the secret is automatically created in the `default` project.
-
-`--type (public|private)`
-:    The VPC load balancer type.
 
 `--output json`
 :    Optional: Prints the command output in JSON format.
