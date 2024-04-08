@@ -293,7 +293,6 @@ toc:
           - integrations-helm.md
           - integrations-svcbind.md
           - sgx-install.md
-      - remote-health-monitoring-opt-out.md
       - topicgroup: 
           label: Tuning performance
           topics:
