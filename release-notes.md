@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2024
-lastupdated: "2024-04-04"
+lastupdated: "2024-04-09"
 
 
 keywords: openshift, {{site.data.keyword.openshiftlong_notm}}, kubernetes, release notes
@@ -29,6 +29,24 @@ Looking for {{site.data.keyword.cloud_notm}} status, platform announcements, sec
 
 ## April 2024
 {: #openshift-apr24}
+
+
+
+### 09 April 2024
+{: #openshift-apr0924}
+{: release-note}
+
+
+
+
+
+Worker node fix packs are available {{site.data.keyword.openshiftlong_notm}}. 
+:    Worker node updates can be applied by updating or reloading the worker node in classic infrastructure, or replacing the worker node in VPC infrastructure. Review the following change logs for your cluster version.
+:   [4.14](/docs/openshift?topic=openshift-openshift_changelog_414)
+:   [4.13](/docs/openshift?topic=openshift-openshift_changelog_413)
+:   [4.12](/docs/openshift?topic=openshift-openshift_changelog_412)
+
+
 
 
 
@@ -1326,7 +1344,7 @@ Master fix pack and worker node fix pack update
 :   {{site.data.keyword.openshiftlong_notm}} [master fix pack 4.13.0_1522_openshift and worker node fix pack 4.13.1_1521_openshift](/docs/openshift?topic=openshift-openshift_changelog_413) are available.
 
 Remote health monitoring
-:   {{site.data.keyword.openshiftlong_notm}} clusters are connected to [remote health monitoring](https://docs.openshift.com/container-platform/4.13/support/remote_health_monitoring/about-remote-health-monitoring.html) by default. This means clusters report health and usage data to Red Hat unless you opt out. With connected clusters, IBM Cloud is better positioned to support customers when there are issues specific to Red Hat which impact them. Additionally, remote health reporting gives Red Hat insights into how clusters are impacted by product upgrades. If you do not want to send cluster data to Red Hat, you must opt out. For more information, see [Understanding remote health monitoring](/docs/openshift?topic=openshift-remote-health-monitoring-opt-out).
+:   {{site.data.keyword.openshiftlong_notm}} clusters are connected to [remote health monitoring](https://docs.openshift.com/container-platform/4.13/support/remote_health_monitoring/about-remote-health-monitoring.html) by default. This means clusters report health and usage data to Red Hat unless you opt out. With connected clusters, IBM Cloud is better positioned to support customers when there are issues specific to Red Hat which impact them. Additionally, remote health reporting gives Red Hat insights into how clusters are impacted by product upgrades. If you do not want to send cluster data to Red Hat, you must opt out.
 
 
 
