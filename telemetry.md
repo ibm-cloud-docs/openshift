@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2024, 2024
-lastupdated: "2024-04-09"
+lastupdated: "2024-04-10"
 
 
 keywords: telemetry, remote health, remote monitoring, cluster data, health data
@@ -25,7 +25,7 @@ Telemetry is a remote health monitoring feature that collects anonymized aggrega
 
 To enable Telemetry, update your pull secret by adding your OpenShift access token to allow remote health reporting. The exact steps to follow depend on when your cluster version and when the cluster was created. If you are not sure if your cluster has Telemetry enabled already, see [Checking if Telemetry is enabled for a cluster](#telemetry_check).
 
-**For version 4.13 or earlier, or version 4.14 clusters that were created before 29 Feb 2024**: If your cluster was created before 29 Feb 2024, [open a support ticket](docs/openshift?topic=openshift-allowlist-request) and indicate that you want to enable Telemetry in your cluster. When the ticket is resolved, continue with the following steps. 
+**For version 4.13 or earlier, or version 4.14 clusters that were created before 29 Feb 2024**: If your cluster was created before 29 Feb 2024, [open a support ticket](/docs/openshift?topic=openshift-allowlist-request) and indicate that you want to enable Telemetry in your cluster. When the ticket is resolved, continue with the following steps. 
 
 **For version 4.14 clusters created on or after 29 Feb 2024**: Continue to the next step.
 
