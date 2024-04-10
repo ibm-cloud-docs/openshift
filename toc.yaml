@@ -47,13 +47,6 @@ toc:
       id: howto
       topics:
       - topicgroup:
-          label: Installing the CLI
-          topics:
-          - cli-install.md
-          - cli-update.md
-          - include: ../cli/reference/ibmcloud/uninstall_cli.md
-      - api-install.md
-      - topicgroup:
           label: Planning to create clusters
           topics:
           - kube-strategy.md
@@ -69,6 +62,13 @@ toc:
           topics:
           - cluster-create.md
           - iam-platform-access-roles.md
+      - topicgroup:
+          label: Installing the CLI
+          topics:
+          - cli-install.md
+          - cli-update.md
+          - include: ../cli/reference/ibmcloud/uninstall_cli.md
+      - api-install.md
       - topicgroup: 
           label: Creating clusters
           topics:
