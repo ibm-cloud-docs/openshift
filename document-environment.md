@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2024, 2024
-lastupdated: "2024-02-26"
+lastupdated: "2024-04-11"
 
 
 keywords: kubernetes, help, connectivity, debugging, openshift, apps, support, network
@@ -104,7 +104,7 @@ There are many diagramming tools available. Choose the tool that works best for 
 ## Step 3: Create the diagram
 {: #create-arch-diagram}
 
-You can use one of the examples mentioned earlier as a refrence, or create a diagram from scratch.
+You can use one of the examples mentioned earlier as a reference, or create a diagram from scratch.
 
-For more information and reference archtictures, see [IBM Architectures](https://www.ibm.com/architectures).
+For more information and reference architectures, see [IBM Architectures](https://www.ibm.com/architectures).
 

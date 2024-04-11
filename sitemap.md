@@ -9454,7 +9454,7 @@ subcollection: openshift
 
 * [Keep your command line tools up to date](/docs/openshift?topic=openshift-best-practices#bp-2)
 
-* [Document your environment architectrure](/docs/openshift?topic=openshift-best-practices#bp-3)
+* [Document your environment architecture](/docs/openshift?topic=openshift-best-practices#bp-3)
 
 * [Subscribe to RSS](/docs/openshift?topic=openshift-best-practices#bp-4)
 

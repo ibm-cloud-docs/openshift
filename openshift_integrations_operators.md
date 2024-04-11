@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2024
-lastupdated: "2024-03-15"
+lastupdated: "2024-04-11"
 
 
 keywords: openshift, disconnect, airgap, olm, mirror
@@ -18,7 +18,7 @@ subcollection: openshift
 # Adding services by using Operators
 {: #operators}
 
-{{site.data.keyword.redhat_openshift_notm}} Operators provide additional functionality and extend the capabilites of a cluster. With operators, you can manage the lifecycle of the apps in your cluster, including third-party software and services that you integrate into your cluster from the [OperatorHub](https://operatorhub.io/){: external}. You can consistently install, update, and monitor system components by using operators or by making operators available to developers that work in specific projects or across projects.
+{{site.data.keyword.redhat_openshift_notm}} Operators provide additional functionality and extend the capabilities of a cluster. With operators, you can manage the lifecycle of the apps in your cluster, including third-party software and services that you integrate into your cluster from the [OperatorHub](https://operatorhub.io/){: external}. You can consistently install, update, and monitor system components by using operators or by making operators available to developers that work in specific projects or across projects.
 {: shortdesc}
 
 Operators are a convenient way to add services to your cluster from community, third-party, your own, or other providers. Keep in mind that you are responsible for managing additional charges; [understanding the operator's lifecycle](https://access.redhat.com/support/policy/updates/openshift_operators){: external}, support timeline, and how the services operate in your cluster at any point; and for ensuring that any operators you use are compatible with the cluster version. If you have issues with an operator, work with the appropriate provider to troubleshoot the issue.
