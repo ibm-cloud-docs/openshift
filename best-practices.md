@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2024, 2024
-lastupdated: "2024-04-04"
+lastupdated: "2024-04-11"
 
 
 keywords: openshift, {{site.data.keyword.openshiftlong_notm}}, best practices
@@ -32,7 +32,7 @@ In the command line, you are notified when updates to the `ibmcloud` CLI and plu
 
 Make sure that [your `oc` CLI](/docs/openshift?topic=openshift-cli-install) client matches the same Kubernetes version as your cluster server. [Kubernetes does not support](https://kubernetes.io/releases/version-skew-policy/){: external} `oc` client versions that are 2 or more versions apart from the server version (n +/- 2).
 
-## Document your environment architectrure
+## Document your environment architecture
 {: #bp-3}
 
 Maintaining up-to-date documentation and diagrams can help when debugging issues. For more information, see [Documenting your environment architecture](/docs/openshift?topic=openshift-document-environment).

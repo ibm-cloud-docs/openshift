@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2024
-lastupdated: "2024-04-10"
+lastupdated: "2024-04-11"
 
 
 keywords: openshift
@@ -7135,7 +7135,7 @@ subcollection: openshift
 
 * [Version 4.13](/docs/openshift?topic=openshift-odf_addon_changelog#4.13_odf)
 
-    * [Version 4.13.14, released 14 March 2024](/docs/openshift?topic=openshift-odf_addon_changelog#4.13.13_odf)
+    * [Version 4.13.14, released 14 March 2024](/docs/openshift?topic=openshift-odf_addon_changelog#4.13.14_odf)
 
     * [Version 4.13.13, released 08 March 2024](/docs/openshift?topic=openshift-odf_addon_changelog#4.13.13_odf)
 
@@ -7157,11 +7157,11 @@ subcollection: openshift
 
 * [Version 4.12](/docs/openshift?topic=openshift-odf_addon_changelog#4.12_odf)
 
-    * [Version 4.12.17, released 04 March 2024](/docs/openshift?topic=openshift-odf_addon_changelog#4.11.21_odf)
+    * [Version 4.12.17, released 04 March 2024](/docs/openshift?topic=openshift-odf_addon_changelog#4.12.17_odf)
 
-    * [Version 4.12.16, released 14 February 2024](/docs/openshift?topic=openshift-odf_addon_changelog#4.11.20_odf)
+    * [Version 4.12.16, released 14 February 2024](/docs/openshift?topic=openshift-odf_addon_changelog#4.12.16_odf)
 
-    * [Version 4.12.15, released 02 February 2024](/docs/openshift?topic=openshift-odf_addon_changelog#4.11.19_odf)
+    * [Version 4.12.15, released 02 February 2024](/docs/openshift?topic=openshift-odf_addon_changelog#4.12.15_odf)
 
     * [Version 4.12.13, released 29 November 2023](/docs/openshift?topic=openshift-odf_addon_changelog#4.12.13_odf)
 
@@ -9454,7 +9454,7 @@ subcollection: openshift
 
 * [Keep your command line tools up to date](/docs/openshift?topic=openshift-best-practices#bp-2)
 
-* [Document your environment architectrure](/docs/openshift?topic=openshift-best-practices#bp-3)
+* [Document your environment architecture](/docs/openshift?topic=openshift-best-practices#bp-3)
 
 * [Subscribe to RSS](/docs/openshift?topic=openshift-best-practices#bp-4)
 

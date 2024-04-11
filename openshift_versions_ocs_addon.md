@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2024
-lastupdated: "2024-04-04"
+lastupdated: "2024-04-11"
 
 
 keywords: odf, openshift data foundation add-on, change log
@@ -73,7 +73,7 @@ changelog:
 {: #4.13_odf}
 
 ### Version 4.13.14, released 14 March 2024
-{: #4.13.13_odf}
+{: #4.13.14_odf}
 
 - Adds an OSD size check.
 
@@ -134,17 +134,17 @@ changelog:
 
 
 ### Version 4.12.17, released 04 March 2024
-{: #4.11.21_odf}
+{: #4.12.17_odf}
 
 - Vulnerability fixes
 
 ### Version 4.12.16, released 14 February 2024
-{: #4.11.20_odf}
+{: #4.12.16_odf}
 
 - Default base image changed
 
 ### Version 4.12.15, released 02 February 2024
-{: #4.11.19_odf}
+{: #4.12.15_odf}
 
 - Vulnerability fixes.
 

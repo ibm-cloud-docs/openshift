@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2024
-lastupdated: "2024-03-27"
+lastupdated: "2024-04-11"
 
 keywords: openshift, {{site.data.keyword.openshiftlong_notm}}, kubernetes, infrastructure, policy, users, permissions, access, roles
 
@@ -66,11 +66,11 @@ The following table provides some example use cases and the corresponding IAM ro
 
 | Example custom role | Permissions |
 | --- | --- |
-| App auditor | - Viewer platform access role for a cluster, region, or resource group.  \n - [Reader service access role for a cluster, region, or resource group. |
+| App auditor | - Viewer platform access role for a cluster, region, or resource group.  \n - Reader service access role for a cluster, region, or resource group. |
 | App developers | - Editor platform access role for a cluster. \n - Writer service access role scoped to a namespace. |
 | Billing | Viewer platform access role for a cluster, region, or resource group. |
 | Cluster administrator | - Administrator platform access role for a cluster.  \n - Manager service access role for the whole cluster (not scoped to a namespace).|
-| DevOps operator | - Operator platform access role for a cluster.  \n - Writer service access role for the whole cluster (not scoped to a namespace.  |
+| DevOps operator | - Operator platform access role for a cluster.  \n - Writer service access role for the whole cluster (not scoped to a namespace).  |
 | Operator or site reliability engineer | - Administrator platform access role for a cluster, region, or resource group. \n - Reader service access role for a cluster or region.  \n - Manager service access role for all cluster namespaces to be able to use `kubectl top nodes,pods` commands. |
 {: caption="Types of roles you might assign to meet different use cases." caption-side="bottom"}
 

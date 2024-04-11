@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2024
-lastupdated: "2024-03-08"
+lastupdated: "2024-04-11"
 
 
 keywords: file, add-on, changelog
@@ -52,8 +52,8 @@ To view a list of add-ons and the supported cluster versions, see the [Supported
 {: #1.2.6_130_is_file_relnote}
 
 
-- Fixes hanging issue related to mounting and umounting after node server restart.
-- Introduces granular locking mounting and umounting at the `targetPath` level.
+- Fixes hanging issue related to mounting and unmounting after node server restart.
+- Introduces granular locking mounting and unmounting at the `targetPath` level.
 - Disables the CSI NodeExpansion method as it is not required for the file share. The PVC can still be expanded.
 - Changes how the IAM endpoint is determined for VPC Gen2 clusters.
 - Upgrades Kubernetes client library to 1.28.
