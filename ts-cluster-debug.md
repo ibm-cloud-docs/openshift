@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2024
-lastupdated: "2024-04-04"
+lastupdated: "2024-04-12"
 
 
 keywords: openshift
@@ -27,7 +27,7 @@ Review the options to debug your clusters and find the root causes for failures 
 {: shortdesc}
 
 
-## Step 1: Review the status of {{site.data.keyword.cloud_notm}}
+## Review the status of {{site.data.keyword.cloud_notm}}
 {: #troubleshooting-environments}
 {: step}
 

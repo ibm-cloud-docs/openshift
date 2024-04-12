@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2024
-lastupdated: "2024-03-15"
+lastupdated: "2024-04-12"
 
 
 keywords: openshift
@@ -592,7 +592,7 @@ Great work! You successfully controlled traffic into your app by using Calico Pr
 In the previous lesson, you blocked traffic from your system IP to the NLB. In this lesson, you can learn how to log the denied traffic requests.
 {: shortdesc}
 
-In our example scenario, the PR firm you work for wants you to set up a logging trail for any unusual traffic that is continuously being denied by one of your network policies. To monitor the potential security threat, you set up logging to record every time that your blocklist policy denies an attempted action on the NLB IP.
+In this example scenario, the PR firm you work for wants you to set up a logging trail for any unusual traffic that is continuously being denied by one of your network policies. To monitor the potential security threat, you set up logging to record every time that your blocklist policy denies an attempted action on the NLB IP.
 
 1. Create a Calico NetworkPolicy named `log-denied-packets`. This log policy uses the same selector as the `blocklist` policy, which adds this policy to the Calico Iptables rule chain. By using a lower-order number, such as `300`, you can ensure that this rule is added to the Iptables rule chain before the blocklist policy. Packets from your IP are logged by this policy before they try to match the `blocklist` policy rule and are denied.
     ```yaml

@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2022, 2024
-lastupdated: "2024-01-03"
+lastupdated: "2024-04-12"
 
 
 keywords: openshift, kernel, rhcos, cpu pinning, huge pages, numa, core os
@@ -49,9 +49,6 @@ To opt out of remote health reporting, you must complete the following steps.
 - Update your cluster to use the modified pull secret.
 
 Before proceeding with the opt out steps, ensure that you have access to the cluster as a user with the `cluster-admin` role.
-
-Clusters in Satellite locations with CoreOS-enabled are currently unable to update the global pull secret within their cluster. We are aware of the issue and are addressing it promptly.
-{: important}
 
 1. Download the global pull secret to your local file system by running the following command from the directory of your choice.
 

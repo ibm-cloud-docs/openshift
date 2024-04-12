@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2024
-lastupdated: "2024-04-11"
+lastupdated: "2024-04-12"
 
 
 keywords: openshift, ocp, compliance, security standards, faq, openshift pricing, ocp pricing, openshift charges, ocp charges, openshift price, ocp price, openshift billing, ocp billing, openshift costs, ocp costs
@@ -119,7 +119,7 @@ The following table provides some examples of what types of workloads that users
 {: caption="{{site.data.keyword.cloud_notm}} implementations support your workloads" caption-side="bottom"}
 
 Ready to run workloads off-premises in {{site.data.keyword.openshiftlong_notm}}?
-:   Great! You're already in our public cloud documentation. Keep reading for more strategy ideas, or hit the ground running by [creating a cluster now](/docs/openshift?topic=openshift-getting-started).
+:   Great! You're already in the public cloud documentation. Keep reading for more strategy ideas, or hit the ground running by [creating a cluster now](/docs/openshift?topic=openshift-getting-started).
 
 Want to run workloads in both on-premises and off-premises clouds?
 :   Explore [{{site.data.keyword.satellitelong_notm}}](/docs/satellite?topic=satellite-faqs) to extend the flexibility and scalability of {{site.data.keyword.cloud_notm}} into your on-premises, edge, or other cloud provider environments.

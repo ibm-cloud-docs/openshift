@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2024
-lastupdated: "2024-01-03"
+lastupdated: "2024-04-12"
 
 
 keywords: openshift
@@ -430,10 +430,10 @@ Before you begin, [install and configure the Calico CLI, and set the context for
         ```
         {: pre}
 
-2. To log all the traffic that is denied by the policy you created in the previous step, create a Calico NetworkPolicy named `log-denied-packets`. The following Calico policy uses the same pod selector as the example `access-nginx` Kubernetes policy described in step 1, however the syntax is slightly different since it is a Calico NetworkPolicy instead of a Kubernetes NetworkPolicy. Also,because all Kubernetes NetworkPolicy are evaluated by Calico as order `1000`, we add the order number `3000` to ensure it is evaluated after our Kubernetes NetworkPolicy. With these two policies in place, here is the result:
+2. To log all the traffic that is denied by the policy you created in the previous step, create a Calico NetworkPolicy named `log-denied-packets`. The following Calico policy uses the same pod selector as the example `access-nginx` Kubernetes policy described in step 1, however the syntax is slightly different since it is a Calico NetworkPolicy instead of a Kubernetes NetworkPolicy. Also, because all Kubernetes NetworkPolicy are evaluated by Calico as order `1000`, the order number `3000` is added to ensure it is evaluated after the Kubernetes NetworkPolicy. With these two policies in place, here is the result:
 
     * New connections coming in to the nginx pod are first evaluated against the Kubernetes NetworkPolicy (order `1000`). Connections coming from a pod with the `run=access` label will be immediately accepted, meaning no other policies are evaluated.
-    * If the connection is coming from a pod without the `run=access` label (or from anything that isn't a pod), that Kubernetes NetworkPolicy won't do anything and Calico will next evaluate our `log-denied-packets` policy. This policy logs the packet to syslog on the worker the nginx pod is on.
+    * If the connection is coming from a pod without the `run=access` label (or from anything that isn't a pod), that Kubernetes NetworkPolicy won't do anything and Calico next evaluates the `log-denied-packets` policy. This policy logs the packet to syslog on the worker the nginx pod is on.
     * Calico then checks for any other policies to apply to the connection, and since it doesn't find any, the packet is dropped. This is because any traffic to a pod with a policy that isn't explicitly allowed is dropped.
 
         ```yaml
@@ -462,7 +462,7 @@ Before you begin, [install and configure the Calico CLI, and set the context for
     :   `source`: This policy applies to requests from any source.
     
     `selector`
-    :   The selector should target the same traffic as the original access-nginx Kubernetes NetworkPolicy. Since this is a Calico policy, we must include `projectcalico.org/orchestrator == 'k8s'` to indicate that it applies to all pods in the policy's namespace, in addition to the original `run == 'nginx'`.
+    :   The selector should target the same traffic as the original access-nginx Kubernetes NetworkPolicy. Since this is a Calico policy, you must include `projectcalico.org/orchestrator == 'k8s'` to indicate that it applies to all pods in the policy's namespace, in addition to the original `run == 'nginx'`.
     
     `order`
     :   Calico policies have orders that determine when they are applied to incoming request packets. Policies with lower orders, such as `1000`, are applied first. Policies with higher orders are applied after the lower-order policies. For example, a policy with a very high order, such as `3000`, is effectively applied last after all the lower-order policies have been applied. Incoming request packets go through the Iptables rules chain and try to match rules from lower-order policies first. If a packet matches any rule, the packet is accepted. However, if a packet doesn't match any rule, it arrives at the last rule in the Iptables rules chain with the highest order. To make sure that this policy is the last policy in the chain, use a much higher order, such as `3000`, than the policy you created in step 1. Note that Kubernetes NetworkPolicy are applied as order `1000`.

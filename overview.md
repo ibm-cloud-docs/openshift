@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2024
-lastupdated: "2024-04-11"
+lastupdated: "2024-04-12"
 
 
 keywords: openshift, {{site.data.keyword.openshiftlong_notm}}, kubernetes, infrastructure, rbac, policy, providers, benefits
@@ -228,7 +228,7 @@ Highly available masters
 :   Spread your masters across zones in a [multizone cluster](/docs/openshift?topic=openshift-ha_clusters#mz-clusters) to protect your cluster from zonal failures.
 
 Image security compliance with Vulnerability Advisor
-:   Set up your own repo in our secured Docker private image registry where images are stored and shared by all users in the organization.
+:   Set up your own repo in a secured Docker private image registry where images are stored and shared by all users in the organization.
 :   Benefit from automatic scanning of images in your private {{site.data.keyword.cloud_notm}} registry.
 :   Review recommendations specific to the operating system used in the image to fix potential vulnerabilities.
 
@@ -313,7 +313,7 @@ You have lots of reasons to move your workloads to {{site.data.keyword.cloud_not
 
 But how do you get to the cloud? What are your options along the way? And how do you manage your workloads after you get there?
 
-Use this page to learn some strategies for your Kubernetes deployments on {{site.data.keyword.openshiftlong_notm}}. And engage with our team on [Slack](https://ibm-cloud-success.slack.com){: external}.
+Use this page to learn some strategies for your Kubernetes deployments on {{site.data.keyword.openshiftlong_notm}}. And engage with the team on [Slack](https://ibm-cloud-success.slack.com){: external}.
 
 Not on slack yet? [Request an invite!](https://cloud.ibm.com/kubernetes/slack){: external}
 {: tip}
@@ -337,7 +337,7 @@ The following table provides some examples of what types of workloads that users
 {: caption="{{site.data.keyword.cloud_notm}} implementations that support your workloads" caption-side="bottom"}
 
 Ready to run workloads off-premises in {{site.data.keyword.openshiftlong_notm}}?
-:   Great! You're already in our public cloud documentation. Keep reading for more strategy ideas, or hit the ground running by [creating a cluster now](/docs/openshift?topic=openshift-getting-started).
+:   Great! You're already in the public cloud documentation. Keep reading for more strategy ideas, or hit the ground running by [creating a cluster now](/docs/openshift?topic=openshift-getting-started).
 
 Want to run workloads in both on-premises and off-premises clouds?
 :   Explore [{{site.data.keyword.satellitelong_notm}}](/docs/satellite?topic=satellite-faqs) to extend the flexibility and scalability of {{site.data.keyword.cloud_notm}} into your on-premises, edge, or other cloud provider environments.

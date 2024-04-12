@@ -5148,7 +5148,7 @@ subcollection: openshift
 
 * [Adding a backup location to your Portworx Backup service](/docs/openshift?topic=openshift-storage_portworx_backup#px-backup-storage)
 
-* [Adding a {{site.data.keyword.openshiftlong_notm}} cluster to your Portworx Backup service](/docs/openshift?topic=openshift-storage_portworx_backup#px-backup-cluster)
+* [Adding {{site.data.keyword.openshiftlong_notm}} clusters to your Portworx Backup service](/docs/openshift?topic=openshift-storage_portworx_backup#px-backup-cluster)
 
 * [Installing Stork on a non-Portworx cluster](/docs/openshift?topic=openshift-storage_portworx_backup#px-backup-stork)
 
@@ -9474,7 +9474,7 @@ subcollection: openshift
 
 [Debugging guide for {{site.data.keyword.openshiftlong_notm}}](/docs/openshift?topic=openshift-debug_clusters#debug_clusters)
 
-* [Step 1: Review the status of {{site.data.keyword.cloud_notm}}](/docs/openshift?topic=openshift-debug_clusters#troubleshooting-environments)
+* [Review the status of {{site.data.keyword.cloud_notm}}](/docs/openshift?topic=openshift-debug_clusters#troubleshooting-environments)
 
 * [Step 2: Get your cluster state and status and review the common issues](/docs/openshift?topic=openshift-debug_clusters#ts-2)
 
