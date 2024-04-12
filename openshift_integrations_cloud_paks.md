@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2024
-lastupdated: "2024-04-05"
+lastupdated: "2024-04-12"
 
 
 keywords: openshift, integrations, entitlements, ocp entitled, licenses, license, red hat, {{site.data.keyword.openshiftlong_notm}}
@@ -17,7 +17,7 @@ subcollection: openshift
 # Adding Cloud Paks, entitlements, or licenses to your cluster
 {: #openshift_cloud_paks}
 
-Review the following steps for adding [IBM Cloud Paks](https://www.ibm.com/cloud-paks/){: external}, {{site.data.keyword.redhat_openshift_notm}} licenses, and other entitlements to your {{product_name_notm}} clusters
+Review the following steps for adding [IBM Cloud Paks](https://www.ibm.com/cloud-paks/){: external}, {{site.data.keyword.redhat_openshift_notm}} licenses, and other entitlements to your {{site.data.keyword.openshiftlong_notm}} clusters
 {: shortdesc}
 
 ## Assigning a Cloud Pak entitlement to your {{site.data.keyword.cloud_notm}} account
@@ -70,5 +70,6 @@ You can deploy Cloud Pak images that you are already licensed to use in [IBM Pas
 
 
 Now you can run your Cloud Pak on your {{site.data.keyword.redhat_openshift_notm}} cluster!
+
 
 

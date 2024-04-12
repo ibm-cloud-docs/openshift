@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2024
-lastupdated: "2024-04-11"
+lastupdated: "2024-04-12"
 
 
 keywords: openshift, {{site.data.keyword.openshiftlong_notm}}, ha, high availability, failover, kubernetes, multi az, multi-az, szr, mzr
@@ -103,7 +103,7 @@ If your single zone cluster is created in one of the multizone regions (MZRs), y
 
 [Classic]{: tag-classic-inf} [VPC]{: tag-vpc}
 
-Multizone clusters distribute workloads across multiple worker nodes and zones, creating additional protection against zone failures. You deploy your mutlizone cluster [in a metro region](https://cloud.ibm.com/docs/containers?topic=containers-regions-and-zones#zones-vpc), such as `sydney`, and three replicas are automatically spread across the three zones of the metro, such as `au-syd-1`, `au-syd-2`, and  `au-syd-3`. If resources in one zone go down, your cluster workloads continue to run in the other zones. 
+Multizone clusters distribute workloads across multiple worker nodes and zones, creating additional protection against zone failures. You deploy your multizone cluster [in a metro region](https://cloud.ibm.com/docs/containers?topic=containers-regions-and-zones#zones-vpc), such as `sydney`, and three replicas are automatically spread across the three zones of the metro, such as `au-syd-1`, `au-syd-2`, and  `au-syd-3`. If resources in one zone go down, your cluster workloads continue to run in the other zones. 
 
 Distributing your workload across three zones ensures high availability for your app in case a zone becomes unavailable. You must have your worker nodes spread evenly across all three availability zones to meet the [{{site.data.keyword.cloud_notm}} service level agreement (SLA)](/docs/overview?topic=overview-slas) for HA configuration.
 {: important}
