@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2024
-lastupdated: "2024-04-11"
+lastupdated: "2024-04-12"
 
 
 keywords: openshift
@@ -2638,9 +2638,9 @@ subcollection: openshift
 
 * [Determine worker node capacity for the resources](/docs/openshift?topic=openshift-strategy#env_resources_worker_capacity)
 
-* [Choose how many namespaces to create](/docs/openshift?topic=openshift-strategy#env_resources_multiple_namespaces)
+* [Choose how many namespaces to create within the cluster](/docs/openshift?topic=openshift-strategy#env_resources_multiple_namespaces)
 
-* [Establish resource requests and limits](/docs/openshift?topic=openshift-strategy#env_resources_resource_quotas)
+* [Establish resource requests and limits for the namespaces](/docs/openshift?topic=openshift-strategy#env_resources_resource_quotas)
 
 [Planning your cluster for high availability](/docs/openshift?topic=openshift-ha_clusters#ha_clusters)
 
