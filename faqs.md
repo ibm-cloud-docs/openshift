@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2024
-lastupdated: "2024-04-12"
+lastupdated: "2024-04-15"
 
 
 keywords: openshift, ocp, compliance, security standards, faq, openshift pricing, ocp pricing, openshift charges, ocp charges, openshift price, ocp price, openshift billing, ocp billing, openshift costs, ocp costs
@@ -38,6 +38,18 @@ Kubernetes is an open source platform for managing containerized workloads and s
 
 For more information about Kubernetes, see the [Kubernetes documentation](https://kubernetes.io/docs/home/?path=users&persona=app-developer&level=foundational){: external}.
 
+## How do I create a {{site.data.keyword.openshiftlong_notm}} cluster?
+{: #faq-cluster-create}
+{: faq}
+{: support}
+
+To create a {{site.data.keyword.openshiftlong_notm}} cluster, first decide if you to want follow a tutorial for a basic cluster setup or design your own cluster environment.
+
+I want to follow a tutorial
+:   Begin by reviewing the [Getting started](/docs/openshift?topic=openshift-getting-started) doc, then [choose one of the available tutorials](/docs/openshift?topic=openshift-getting-started#getting-started-create).
+
+I want to design my own cluster environment
+:   Begin by reviewing the [Getting started](/docs/openshift?topic=openshift-getting-started)  doc, then [create your cluster environment strategy](/docs/openshift?topic=openshift-getting-started#getting-started-strategy).
 
 
 ## How does {{site.data.keyword.openshiftlong_notm}} work?
