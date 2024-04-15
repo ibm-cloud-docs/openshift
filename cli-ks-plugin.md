@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2024
-lastupdated: "2024-04-08"
+lastupdated: "2024-04-12"
 
 
 keywords: openshift
@@ -3990,10 +3990,10 @@ Minimum required permissions
 :   The minimum number of replicas to deploy at any time. This value is required if you include the `---cpu-average-utilization` option.
 
 `--cpu-average-utilization PERCENTAGE`
-:   The average utilization threshold used to dynamically calculate the number of replicas. 
+:   The average utilization threshold used to dynamically calculate the number of replicas.
 
 `--custom-metrics-file`
-:   The path to the custom metrics file. 
+:   The path to the custom metrics file.
 
 `-q`
 :    Optional: Do not show the message of the day or update reminders.

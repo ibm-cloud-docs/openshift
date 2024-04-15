@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2024
-lastupdated: "2024-04-11"
+lastupdated: "2024-04-12"
 
 
 keywords: openshift
@@ -2638,9 +2638,9 @@ subcollection: openshift
 
 * [Determine worker node capacity for the resources](/docs/openshift?topic=openshift-strategy#env_resources_worker_capacity)
 
-* [Choose how many namespaces to create](/docs/openshift?topic=openshift-strategy#env_resources_multiple_namespaces)
+* [Choose how many namespaces to create within the cluster](/docs/openshift?topic=openshift-strategy#env_resources_multiple_namespaces)
 
-* [Establish resource requests and limits](/docs/openshift?topic=openshift-strategy#env_resources_resource_quotas)
+* [Establish resource requests and limits for the namespaces](/docs/openshift?topic=openshift-strategy#env_resources_resource_quotas)
 
 [Planning your cluster for high availability](/docs/openshift?topic=openshift-ha_clusters#ha_clusters)
 
@@ -5148,7 +5148,7 @@ subcollection: openshift
 
 * [Adding a backup location to your Portworx Backup service](/docs/openshift?topic=openshift-storage_portworx_backup#px-backup-storage)
 
-* [Adding a {{site.data.keyword.openshiftlong_notm}} cluster to your Portworx Backup service](/docs/openshift?topic=openshift-storage_portworx_backup#px-backup-cluster)
+* [Adding {{site.data.keyword.openshiftlong_notm}} clusters to your Portworx Backup service](/docs/openshift?topic=openshift-storage_portworx_backup#px-backup-cluster)
 
 * [Installing Stork on a non-Portworx cluster](/docs/openshift?topic=openshift-storage_portworx_backup#px-backup-stork)
 
@@ -9474,7 +9474,7 @@ subcollection: openshift
 
 [Debugging guide for {{site.data.keyword.openshiftlong_notm}}](/docs/openshift?topic=openshift-debug_clusters#debug_clusters)
 
-* [Step 1: Review the status of {{site.data.keyword.cloud_notm}}](/docs/openshift?topic=openshift-debug_clusters#troubleshooting-environments)
+* [Review the status of {{site.data.keyword.cloud_notm}}](/docs/openshift?topic=openshift-debug_clusters#troubleshooting-environments)
 
 * [Step 2: Get your cluster state and status and review the common issues](/docs/openshift?topic=openshift-debug_clusters#ts-2)
 

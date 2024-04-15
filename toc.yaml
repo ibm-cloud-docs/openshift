@@ -479,8 +479,6 @@ toc:
               - ts-health-loglines.md
               - ts-vpc-byok-encrypted-storage.md
               - ts-etcd-alerts.md
-              - ts-sbd-cluster-create-quota.md
-              - ts-sbd-non-sbd-clusters.md
           - topicgroup:
               label: Worker nodes
               topics:
@@ -522,11 +520,9 @@ toc:
               - ts-ip-whitelist-annotation.md
               - ts-keepalive-sysctl.md
               - ts-slow-dns-lookup.md
-              - ts-sbd-custom-dns.md
           - topicgroup:
               label: Apps and services
               topics:
-              - ts-app-debug.md
               - ts-app-01-debug.md
               - ts-app-02-build.md
               - ts-app-03-docker-pull.md
@@ -541,8 +537,6 @@ toc:
               - ts-app-svc-key.md
               - ts-app-helm-install.md
               - ts-app-16-oc-debug-pod.md
-              - ts-sbd-app-not-working.md
-              - ts-sbd-nodeport-not-working.md
           - topicgroup:
               label: Managed add-ons
               topics:
