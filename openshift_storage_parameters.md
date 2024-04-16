@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2024
-lastupdated: "2024-03-26"
+lastupdated: "2024-04-15"
 
 
 keywords: openshift, openshift data foundation, openshift container storage, ocs
@@ -44,7 +44,8 @@ ibmcloud oc cluster addon options --addon openshift-data-foundation --version VE
 | `billingType` | Specify a `billingType` of either `essentials` or `advanced` for your OCS deployment. For more information about billing type, see [Feature support by billing type](/docs/openshift?topic=openshift-ocs-storage-prep&interface=cli#odf-essentials-vs-advanced). | `advanced` |
 | `autoDiscoverDevices` | [Classic]{: tag-classic-inf} **Optional**: Specify `true` to automatically discover the available disks on your worker nodes.| `true` |
 | `ocsUpgrade` | Specify `true` to upgrade the major version of your ODF deployment. | `false` |
-| `workerNodes` | **Optional**: Specify the names of the worker nodes that you want to use for your ODF deployment. Don't specify this parameter if you want to use all the worker nodes in your cluster. To retrieve your worker node name, run the **`oc get nodes`** command. | N/A |
+| `workerNodes` | **Optional**: Specify one of `workerPool` or `workerNodes`. Specify the names of the worker nodes that you want to use for your ODF deployment. Don't specify this option if you want to use all the worker nodes in your cluster. To retrieve your worker node name, run the **`oc get nodes`** command. | N/A |
+| `workerPool` | [4.14 and later]{: tag-warm-gray} Specify one of `workerPool` or `workerNodes`. Specify either the name or the ID of a worker pool to use for ODF.  Don't specify this option if you want to use all the worker nodes in your cluster. To retrieve your worker node name, run the **`ibmcloud oc worker ls -C CLUSTER`** command. | N/A |
 | `clusterEncryption` | Specify `true` to enable encryption. | `false` |
 | `hpcsServiceName` | Specify the name of your {{site.data.keyword.hscrypto}} or {{site.data.keyword.keymanagementserviceshort}} instance. For example: `Hyper-Protect-Crypto-Services-eugb`. | `false` |
 | `hpcsInstanceId` | Specify your {{site.data.keyword.hscrypto}} or {{site.data.keyword.keymanagementserviceshort}} instance ID. For example: `d11a1a43-aa0a-40a3-aaa9-5aaa63147aaa`. | N/A |

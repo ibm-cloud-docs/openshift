@@ -2,7 +2,7 @@
 
 copyright:
   years: 2023, 2024
-lastupdated: "2024-03-27"
+lastupdated: "2024-04-15"
 
 
 keywords: openshift, {{site.data.keyword.openshiftlong_notm}}, kubernetes cluster, red hat openshift, openshift container platform, red hat, create openshift cluster, vpc cluster, classic cluster, clusters
@@ -41,6 +41,14 @@ Already familiar with containers and {{site.data.keyword.openshiftlong_notm}}? C
 To set up your {{site.data.keyword.cloud_notm}} account so that you can create clusters, see [Preparing your account to create clusters](/docs/openshift?topic=openshift-clusters).
 
 If you've already prepared your account and you're ready to create a cluster, continue to the next step.
+
+## Create a cluster environment strategy
+{: #getting-started-strategy}
+
+Review the decision points in the [Creating a cluster environment strategy](/docs/openshift?topic=openshift-strategy) doc to begin designing your setup.
+
+Not sure where to start? Try following a [tutorial](#getting-started-create).
+{: tip}
 
 
 ## Create a cluster

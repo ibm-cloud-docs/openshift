@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2024
-lastupdated: "2024-04-12"
+lastupdated: "2024-04-15"
 
 
 keywords: openshift
@@ -40,6 +40,8 @@ subcollection: openshift
 * [Review the basics](/docs/openshift?topic=openshift-getting-started#getting-started-basics)
 
 * [Prepare your account](/docs/openshift?topic=openshift-getting-started#getting-started-prepare-account)
+
+* [Create a cluster environment strategy](/docs/openshift?topic=openshift-getting-started#getting-started-strategy)
 
 * [Create a cluster](/docs/openshift?topic=openshift-getting-started#getting-started-create)
 
@@ -9371,6 +9373,8 @@ subcollection: openshift
 
 * [What is Kubernetes?](/docs/openshift?topic=openshift-faqs#kubernetes)
 
+* [How do I create a {{site.data.keyword.openshiftlong_notm}} cluster?](/docs/openshift?topic=openshift-faqs#faq-cluster-create)
+
 * [How does {{site.data.keyword.openshiftlong_notm}} work?](/docs/openshift?topic=openshift-faqs#kubernetes_service)
 
 * [Why should I use {{site.data.keyword.openshiftlong_notm}}?](/docs/openshift?topic=openshift-faqs#faq_benefits)
@@ -9468,23 +9472,23 @@ subcollection: openshift
 * [Enable and run the Diagnostics and Debug Tool add-on](/docs/openshift?topic=openshift-debug-tool#debug-tool-enable)
 
 
-## Debugging guide for {{site.data.keyword.openshiftlong_notm}}
-{: #sitemap_debugging_guide_for_}
+## Troubleshooting apps in {{site.data.keyword.openshiftlong_notm}}
+{: #sitemap_troubleshooting_apps_in_}
 
 
-[Debugging guide for {{site.data.keyword.openshiftlong_notm}}](/docs/openshift?topic=openshift-debug_clusters#debug_clusters)
+[Troubleshooting apps in {{site.data.keyword.openshiftlong_notm}}](/docs/openshift?topic=openshift-debug_clusters#debug_clusters)
 
 * [Review the status of {{site.data.keyword.cloud_notm}}](/docs/openshift?topic=openshift-debug_clusters#troubleshooting-environments)
 
-* [Step 2: Get your cluster state and status and review the common issues](/docs/openshift?topic=openshift-debug_clusters#ts-2)
+* [Get your cluster state and status and review the common issues](/docs/openshift?topic=openshift-debug_clusters#ts-2)
 
-* [Step 3: Gather details and document the problem](/docs/openshift?topic=openshift-debug_clusters#ts-3)
+* [Gather details and document the problem](/docs/openshift?topic=openshift-debug_clusters#ts-3)
 
-* [Step 4: Running tests to rule in or rule out each component](/docs/openshift?topic=openshift-debug_clusters#ts-4)
+* [Running tests to rule in or rule out each component](/docs/openshift?topic=openshift-debug_clusters#ts-4)
 
-* [Step 5: Gathering more data](/docs/openshift?topic=openshift-debug_clusters#ts-5)
+* [Gathering more data](/docs/openshift?topic=openshift-debug_clusters#ts-5)
 
-* [Step 6: Reach out in Slack or review user forums for similar issues](/docs/openshift?topic=openshift-debug_clusters#ts-6)
+* [Reach out in Slack or review user forums for similar issues](/docs/openshift?topic=openshift-debug_clusters#ts-6)
 
 * [Next steps](/docs/openshift?topic=openshift-debug_clusters#advanced-ts-next)
 

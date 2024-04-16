@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2024
-lastupdated: "2024-03-15"
+lastupdated: "2024-04-15"
 
 
 keywords: openshift
@@ -202,10 +202,10 @@ helm ibmc install ibm-object-storage-plugin ibm-helm/ibm-object-storage-plugin -
 {: pre}
 
 `quotaLimit`
-:   A quota limit sets the maximum amount of storage (in bytes) available for a bucket. If you set this option to `true`, then when you create PVCs, the quota on buckets created by those PVCs is equal to the PVC size. 
+:   A quota limit sets the maximum amount of storage (in bytes) available for a bucket. If you set this option to `true`, then when you create PVCs, the quota on buckets created by those PVCs is equal to the PVC size. The default value is `true`. 
 
 `allowCrossNsSecret`
-:   By default, the plug-in searches for the Kubernetes secret in namespaces other than the PVC namespace. If you set this option to `false` the plug-in searches for the Kubernetes secret in only the PVC namespace.
+:   By default, the plug-in searches for the Kubernetes secret in namespaces other than the PVC namespace. If you set this option to `false` the plug-in searches for the Kubernetes secret in only the PVC namespace. The default value is `true`.
 
 Example `helm install` command for Windows.
 

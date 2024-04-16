@@ -2,10 +2,10 @@
 
 copyright: 
   years: 2014, 2024
-lastupdated: "2024-04-12"
+lastupdated: "2024-04-15"
 
 
-keywords: openshift
+keywords: openshift, {{site.data.keyword.openshiftlong_notm}}, troubleshooting apps, app debugging, application troublshooting in clusters
 
 subcollection: openshift
 
@@ -16,14 +16,14 @@ content-type: troubleshoot
 {{site.data.keyword.attribute-definition-list}}
 
 
-# Debugging guide for {{site.data.keyword.openshiftlong_notm}}
+# Troubleshooting apps in {{site.data.keyword.openshiftlong_notm}}
 {: #debug_clusters}
 {: troubleshoot}
 {: support}
 
 [Virtual Private Cloud]{: tag-vpc} [Classic infrastructure]{: tag-classic-inf} [{{site.data.keyword.satelliteshort}}]{: tag-satellite}
 
-Review the options to debug your clusters and find the root causes for failures in {{site.data.keyword.openshiftlong_notm}}. The following steps help you assess and gather information to properly resolve the issue.
+The following steps help you troubleshoot application problems within your cluster and find the root causes for application errors or problems.
 {: shortdesc}
 
 
@@ -37,7 +37,7 @@ Review the options to debug your clusters and find the root causes for failures 
 4. For issues in open source projects that are used by {{site.data.keyword.cloud_notm}}, see the [IBM Open Source and Third Party policy](https://www.ibm.com/support/pages/node/737271){: external}. For example, you might check the {{site.data.keyword.redhat_openshift_notm}} [Bugzilla](https://bugzilla.redhat.com/){: external}.
 
 
-## Step 2: Get your cluster state and status and review the common issues
+## Get your cluster state and status and review the common issues
 {: #ts-2}
 {: step}
 
@@ -60,11 +60,14 @@ Review the options to debug your clusters and find the root causes for failures 
 
 1. Review the [debugging guide for worker node issues](/docs/openshift?topic=openshift-debug_worker_nodes).
 
-## Step 3: Gather details and document the problem
+## Gather details and document the problem
 {: #ts-3}
 {: step}
 
 When documenting details about the problem, be as specific as possible. For example, "Our app occasionally gets 502 Gateway errors when trying to retrieve transaction logs" is not helpful because it is not specific. Make sure you narrow down the problem as much as possible before documenting it. When documenting the problem, try to include the following.
+
+Environment architecture
+:   Make sure you have documented your environment architecture so that you understand the components involved. For more information, see [Documenting your environment architecture](/docs/openshift?topic=openshift-document-environment).
 
 Error messages and component details.
 :   Provide the full error message and include details about which component is producing the error. For example, "All three app pods in clusterID ABCDEF occasionally fail on HTTPS calls to GET /transaction-logs from the global load balancer with the error `HTTP 502 Gateway Error: Web server received an invalid response while acting as a gateway or proxy server...`".
@@ -81,7 +84,7 @@ Start date, time, and frequency of the problem.
 Troubleshooting actions that you've already taken.
 :   Document what has been tried so far and the results of those attempts to help further narrow down the problem.
 
-## Step 4: Running tests to rule in or rule out each component
+## Running tests to rule in or rule out each component
 {: #ts-4}
 {: step}
 
@@ -92,7 +95,7 @@ Troubleshooting actions that you've already taken.
     - If you **can't** recreate the problem in a test cluster, then you can focus on the differences between the test cluster and the real cluster as the possible sources of the problem.
     - If you **can** recreate it in a test cluster, then it is likely not a problem with the cluster itself. Also, you have an environment where you can test to further narrow down the problem without impacting your production environment.
 
-## Step 5: Gathering more data
+## Gathering more data
 {: #ts-5}
 {: step}
 
@@ -104,7 +107,7 @@ Once you know the app flow, the specific error you are seeing, and where that er
     - [Cluster node access](/docs/openshift?topic=openshift-cs_ssh_worker)
 - Packet trace information. Running `tcpdump` is a common way to get packet trace information. For more information, see [Troubleshooting Load Balancers in {{site.data.keyword.cloud_notm}} Kubernetes Service by using `tcpdump`](https://www.ibm.com/blog/troubleshooting-load-balancers-in-ibm-cloud-kubernetes-service-using-tcpdump/){: external}.
 
-## Step 6: Reach out in Slack or review user forums for similar issues
+## Reach out in Slack or review user forums for similar issues
 {: #ts-6}
 {: step}
 
