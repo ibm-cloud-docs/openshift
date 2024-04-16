@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2024
-lastupdated: "2024-04-12"
+lastupdated: "2024-04-16"
 
 
 keywords: openshift
@@ -1159,6 +1159,58 @@ ibmcloud oc cluster ls -l ams03 -l wdc -l ap
 {: pre}
 
 
+
+## `ibmcloud oc cluster master console-oauth-access get`
+{: #cluster-master-console-oauth-access-get-cli}
+
+Get the OpenShift web console and OAuth server access type.
+
+```txt
+ibmcloud oc cluster master console-oauth-access get --cluster CLUSTER [--output OUTPUT] [-q]
+```
+{: pre}
+{: #cluster-master-console-oauth-access-get-usage}
+
+### Command options
+{: #cluster-master-console-oauth-access-get-options}
+
+`--cluster CLUSTER`, `-c CLUSTER`
+:    Specify the cluster name or ID.
+
+`--output OUTPUT`
+:    Prints the command output in the provided format. Accepted values: `json`
+
+`-q`
+:    Do not show the message of the day or update reminders.
+{: #cluster-master-console-oauth-access-get-options-dl}
+
+
+## `ibmcloud oc cluster master console-oauth-access set`
+{: #cluster-master-console-oauth-access-set-cli}
+
+Set the OpenShift web console and OAuth server access type.
+
+```txt
+ibmcloud oc cluster master console-oauth-access set --cluster CLUSTER [-f] [-q] [--type TYPE]
+```
+{: pre}
+{: #cluster-master-console-oauth-access-set-usage}
+
+### Command options
+{: #cluster-master-console-oauth-access-set-options}
+
+`--cluster CLUSTER`, `-c CLUSTER`
+:    Specify the cluster name or ID.
+
+`-f`
+:    Force the command to run without user prompts.
+
+`-q`
+:    Do not show the message of the day or update reminders.
+
+`--type TYPE`
+:    Specify the OpenShift web console and OAuth server access type. Accepted values: `vpe-gateway`, `legacy`
+{: #cluster-master-console-oauth-access-set-options-dl}
 
 ### `ibmcloud oc cluster master pod-security get`
 {: #cluster-master-pod-security-get}
