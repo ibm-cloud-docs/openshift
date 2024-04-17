@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2024
-lastupdated: "2024-03-15"
+lastupdated: "2024-04-16"
 
 
 keywords: openshift, firewall, ips
@@ -331,115 +331,4 @@ To permit egress to your cluster from another service, modify that service's all
 
 2. Add the subnet CIDRs or individual worker node IP addresses to your service's allowlist or your on-premises allowlist for outbound traffic.
 3. Repeat these steps for each cluster that you want to allow traffic to or from.
-
-## Updating IAM allowlists for {{site.data.keyword.containershort}} IP addresses
-{: #iam_allowlist_vpc}
-
-By default, all IP addresses can be used to log in to the {{site.data.keyword.cloud_notm}} console and perform actions to manage your cluster, such as creating, updating, deleting or viewing credentials. In the IBM Cloud Identity and Access Management (IAM) console, you can [create an allowlist by specifying which IP addresses have access](/docs/account?topic=account-ips), and all other IP addresses are restricted.
-{: shortdesc} 
-
-In your allowlist, you must also add the CIDRs of the {{site.data.keyword.openshiftlong_notm}} control plane for the zones in the region where your cluster is located so that {{site.data.keyword.openshiftlong_notm}} can create or access the following components:
-* Ingress ALBs 
-* VPC `LoadBalancers`
-* VPC security groups
-* VPE gateways
-* {{site.data.keyword.redhat_openshift_notm}} web console (requires all control plane IP addresses)
-
-Before you begin, the following steps require you to change the IAM allowlist for the user whose credentials are used for the cluster's region and resource group infrastructure permissions. If you are the credentials owner, you can change your own IAM allowlist settings. If you are not the credentials owner, but you are assigned the **Editor** or **Administrator** IBM Cloud IAM platform access role for the [User Management service](/docs/account?topic=account-account-services), you can update the restricted IP addresses for the credentials owner.
-
-1. Identify what user credentials are used for the cluster's region and resource group infrastructure permissions.
-
-    1. Check the API key for a region and resource group of the cluster.
-
-        ```sh
-        ibmcloud oc api-key info --cluster <cluster_name_or_ID>
-        ```
-        {: pre}
-
-        Example output
-        ```sh
-        Getting information about the API key owner for cluster <cluster_name>...
-        OK
-        Name                Email   
-        <user_name>         <name@email.com>
-        ```
-        {: screen}
-
-    2. Check if the infrastructure account for the region and resource group is manually set to use a different IBM Cloud infrastructure account.
-
-        ```sh
-        ibmcloud oc credential get --region <us-south>
-        ```
-        {: pre}
-
-        **Example output if credentials are set to use a different account**. In this case, the user's infrastructure credentials are used for the region and resource group that you targeted, even if a different user's credentials are stored in the API key that you retrieved in the previous step.
-
-        ```sh
-        OK
-        Infrastructure credentials for user name <1234567_name@email.com> set for resource group <resource_group_name>.
-        ```
-        {: screen}
-
-        **Example output if credentials are not set to use a different account**. In this case, the API key owner that you retrieved in the previous step has the infrastructure credentials that are used for the region and resource group.
-
-        ```sh
-        FAILED
-        No credentials set for resource group <resource_group_name>.: The user credentials could not be found. (E0051)
-        ```
-        {: screen}
-
-2. Get the **Worker Zones** and **VPCs** that your cluster is created in.
-    ```sh
-    ibmcloud oc cluster get -c <cluster>
-    ```
-    {: pre}
-
-    Example output
-
-    ```sh
-    ...
-    Worker Zones:                   us-south-1, us-south-2, us-south-3
-    Ingress Subdomain:              vpc-prod.us-south.containers.appdomain.cloud
-    Ingress Secret:                 vpc-prod
-    Creator:                        -
-    Public Service Endpoint URL:    https://c2.us-south.containers.cloud.ibm.com:20267
-    Private Service Endpoint URL:   https://c2.private.us-south.containers.cloud.ibm.com:20267
-    Pull Secrets:                   enabled in the default namespace
-    VPCs:                           ff537d43-a5a4-4b65-9627-17eddfa5237b
-    ...
-    ```
-    {: screen}
-
-3. For the worker zones and VPC that you found, ensure that you [enabled a public gateway on the VPC subnets in each worker zone](/docs/vpc?topic=vpc-creating-vpc-resources-with-cli-and-api&interface=cli#attach-public-gateway-cli).
-
-4. List the public gateways for the subnets. In the output, for the zones and VPC that your cluster is in, note the gateway **Floating IP** addresses for the subnets. These IP addresses must be added to your allowlist.
-    ```sh
-    ibmcloud is public-gateways
-    ```
-    {: pre}
-
-    Example output
-
-    ```sh
-    ID                                     Name                                       Status      Floating IP      VPC              Zone
-    5d308ea5-9f32-43b3-aaae-194d5723a3e5   pgw-b9d45630-c053-11e9-b2f8-79328ce05e7e   available   169.XX.XXX.XX    test-vpc         us-south-1
-    f8b95e43-a408-4dc8-a489-ed649fc4cfec   pgw-18a3ebb0-b539-11e9-9838-f3f4efa02374   available   169.XX.XXX.XX    prod             us-south-1
-    2ba9a280-fffa-4b0c-bdca-7970f09f9b8a   pgw-73b62bc0-b53a-11e9-9838-f3f4efa02374   available   169.XX.XXX.XX    prod             us-south-2
-    057ddef6-631f-4b22-89eb-1e99982a54fa   pgw-64c5cae0-0be2-11ea-8f26-e1565e79a36c   available   52.XX.XXX.XXX    prod             us-south-3
-    ```
-    {: screen}
-
-5. Get the [control plane CIDRs of the region where your cluster is located](https://github.com/IBM-Cloud/kube-samples/tree/master/iam-firewall-ips){: external}. These CIDRs must also be added to your allowlist. 
-
-6. Log in to the [{{site.data.keyword.cloud_notm}} console](https://cloud.ibm.com/){: external}.
-
-7. From the menu bar, click **Manage** > **Access (IAM)**, and select **Users**.
-
-8. Select the user that you found in step 1 from the list.
-
-9. From the **User details** page, go to the **IP address restrictions** section.
-
-10. Enter the subnet CIDRs and IPs, and the control plane CIDRs of the region where your cluster is located.
-
-11. Click **Apply**.
 

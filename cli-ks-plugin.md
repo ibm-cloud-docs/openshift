@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2024
-lastupdated: "2024-04-12"
+lastupdated: "2024-04-17"
 
 
 keywords: openshift
@@ -1159,6 +1159,58 @@ ibmcloud oc cluster ls -l ams03 -l wdc -l ap
 {: pre}
 
 
+
+## `ibmcloud oc cluster master console-oauth-access get`
+{: #cluster-master-console-oauth-access-get-cli}
+
+Get the OpenShift web console and OAuth server access type.
+
+```txt
+ibmcloud oc cluster master console-oauth-access get --cluster CLUSTER [--output OUTPUT] [-q]
+```
+{: pre}
+{: #cluster-master-console-oauth-access-get-usage}
+
+### Command options
+{: #cluster-master-console-oauth-access-get-options}
+
+`--cluster CLUSTER`, `-c CLUSTER`
+:    Specify the cluster name or ID.
+
+`--output OUTPUT`
+:    Prints the command output in the provided format. Accepted values: `json`
+
+`-q`
+:    Do not show the message of the day or update reminders.
+{: #cluster-master-console-oauth-access-get-options-dl}
+
+
+## `ibmcloud oc cluster master console-oauth-access set`
+{: #cluster-master-console-oauth-access-set-cli}
+
+Set the OpenShift web console and OAuth server access type.
+
+```txt
+ibmcloud oc cluster master console-oauth-access set --cluster CLUSTER [-f] [-q] [--type TYPE]
+```
+{: pre}
+{: #cluster-master-console-oauth-access-set-usage}
+
+### Command options
+{: #cluster-master-console-oauth-access-set-options}
+
+`--cluster CLUSTER`, `-c CLUSTER`
+:    Specify the cluster name or ID.
+
+`-f`
+:    Force the command to run without user prompts.
+
+`-q`
+:    Do not show the message of the day or update reminders.
+
+`--type TYPE`
+:    Specify the OpenShift web console and OAuth server access type. Accepted values: `vpe-gateway`, `legacy`
+{: #cluster-master-console-oauth-access-set-options-dl}
 
 ### `ibmcloud oc cluster master pod-security get`
 {: #cluster-master-pod-security-get}
@@ -7731,6 +7783,39 @@ To use this command to prepare your automation scripts for the release of versio
 
 Reset or sync a security group to the [default traffic rules](/docs/openshift?topic=openshift-vpc-security-group&interface=ui#vpc-sg-inbound-outbound).
 {: shortdesc}
+
+## `ibmcloud oc security-group ls`
+{: #security-group-ls-cli}
+
+List all security groups associated with a cluster.
+
+```txt
+ibmcloud oc security-group ls --cluster CLUSTER [--attached-to ATTACHED] [--managed-by MANAGER] [--output OUTPUT] [-q] [--scope SCOPE]
+```
+{: pre}
+{: #security-group-ls-usage}
+
+### Command options
+{: #security-group-ls-options}
+
+`--attached-to ATTACHED`
+:    Filter the security groups by the components they are attached to. Accepted values: `cluster`, `load-balancer`, `vpc`, `vpe-gateway`, `worker-pool`
+
+`--cluster CLUSTER`, `-c CLUSTER`
+:    Specify the cluster name or ID.
+
+`--managed-by MANAGER`
+:    Specify `user` to return the security groups created by user. Specify `ibm` to return only the security groups managed by IBM. Accepted values: `ibm`, `user`
+
+`--output OUTPUT`
+:    Prints the command output in the provided format. Accepted values: `json`
+
+`-q`
+:    Do not show the message of the day or update reminders.
+
+`--scope SCOPE`
+:    Specify `cluster` to return security groups scoped to the cluster.  Specify `vpc` to return security groups scoped to the entire VPC. Accepted values: `cluster`, `vpc`
+{: #security-group-ls-options-dl}
 
 ### `ibmcloud oc security-group reset`
 {: #security_group_reset}

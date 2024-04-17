@@ -2,7 +2,7 @@
 
 copyright:
   years: 2023, 2024
-lastupdated: "2024-04-15"
+lastupdated: "2024-04-16"
 
 
 keywords: openshift, {{site.data.keyword.openshiftlong_notm}}, kubernetes cluster, red hat openshift, openshift container platform, red hat, create openshift cluster, vpc cluster, classic cluster, clusters
@@ -28,9 +28,7 @@ Complete the following steps to get familiar with the basics, understand the ser
 {: #getting-started-basics}
 {: step}
 
-- Get an overview of the service by reviewing the concepts and terms, and benefits. For more information, see [Understanding {{site.data.keyword.openshiftlong_notm}}](/docs/openshift?topic=openshift-overview).
-
-- [Review the FAQs](/docs/openshift?topic=openshift-faqs)
+Get an overview of the service by reviewing the concepts, terms, and benefits. For more information, see [Understanding {{site.data.keyword.openshiftlong_notm}}](/docs/openshift?topic=openshift-overview).
 
 Already familiar with containers and {{site.data.keyword.openshiftlong_notm}}? Continue to the next step to prepare your account for creating clusters.
 
@@ -44,10 +42,11 @@ If you've already prepared your account and you're ready to create a cluster, co
 
 ## Create a cluster environment strategy
 {: #getting-started-strategy}
+{: step}
 
 Review the decision points in the [Creating a cluster environment strategy](/docs/openshift?topic=openshift-strategy) doc to begin designing your setup.
 
-Not sure where to start? Try following a [tutorial](#getting-started-create).
+Not sure where to start? Try following a tutorial in the next step.
 {: tip}
 
 
@@ -58,13 +57,15 @@ Not sure where to start? Try following a [tutorial](#getting-started-create).
 Follow a tutorial, or set up your own custom cluster environment. Review the following table for your deployment options.
 
 
-| Type | Level | Time | Deployment method | Description |
+| Type | Level | Time | Description |
 | --- | --- | --- | --- | --- |
-| [Tutorial]{: tag-green} | Beginner | 30 minutes | Automated via IBM Cloud Schematics | [Creating a 2 node VPC cluster by using Schematics](/docs/openshift?topic=openshift-tutorial-two-node). | 
-| [Tutorial]{: tag-green} | Beginner | 45 minutes | CLI | [Creating a classic cluster from the CLI](/docs/openshift?topic=openshift-openshift_tutorial). |
-| [Tutorial]{: tag-green} | Beginner | 60 minutes | CLI | [Create a cluster in your own Virtual Private Cloud](/docs/openshift?topic=openshift-vpc_rh_tutorial). | 
-| Custom deployment | Intermediate | 1-3 hours | UI, CLI, or Terraform  | [Create a custom cluster on Classic infrastructure](/docs/openshift?topic=openshift-cluster-create-classic). |
-| Custom deployment | Intermediate | 1-3 hours | UI, CLI, or Terraform | [Create a custom cluster on VPC infrastructure](/docs/openshift?topic=openshift-cluster-create-vpc-gen2). |
+| [Tutorial]{: tag-green} | Beginner | 30 minutes | Create a small, 2 node cluster to begin testing {{site.data.keyword.openshiftlong_notm}}. For more information, see [Creating a 2 node VPC cluster by using Schematics](/docs/openshift?topic=openshift-tutorial-two-node). | 
+| [Tutorial]{: tag-green} | Beginner | 45 minutes | Follow the steps in this tutorial to create your first cluster by using the IBM Cloud CLI. This tutorial uses Classic infrastructure. For more information, see [Creating a classic cluster from the CLI](/docs/openshift?topic=openshift-openshift_tutorial). |
+| [Tutorial]{: tag-green} | Beginner | 60 minutes | Follow the steps in this tutorial to create your own Virtual Private Cloud (VPC), then create a {{site.data.keyword.openshiftlong_notm}} cluster by using the CLI. For more information, see [Create a cluster in your own Virtual Private Cloud](/docs/openshift?topic=openshift-vpc_rh_tutorial). |
+| [Deployable architecture]{: tag-blue} QuickStart variation | Beginner | The QuickStart variation of the {{site.data.keyword.openshiftlong_notm}} on VPC landing zone deployable architecture creates one cluster in workload VPC with two worker nodes and public endpoint enabled. The QuickStart variation is designed to help you get started quickly, but is not highly available or validated for the IBM Cloud Framework for Financial Services. For more information, see [{{site.data.keyword.openshiftlong_notm}} on VPC landing zone](https://cloud.ibm.com/catalog?search=openshift%20label%3Areference_architecture#search_results){: explore} |
+| [Deployable architecture]{: tag-blue} Standard Variation | Intermediate | The Standard variation of the {{site.data.keyword.openshiftlong_notm}} on VPC landing zone is based on the IBM Cloud for Financial Services reference architecture. The architecture creates secure and compliant clusters on a Virtual Private Cloud (VPC) network. For more information, see [{{site.data.keyword.openshiftlong_notm}} on VPC landing zone](https://cloud.ibm.com/catalog?search=openshift%20label%3Areference_architecture#search_results){: explore} |
+| Custom deployment | Intermediate | 1-3 hours | [Create a custom cluster on Classic infrastructure](/docs/openshift?topic=openshift-cluster-create-classic). |
+| Custom deployment | Intermediate | 1-3 hours | [Create a custom cluster on VPC infrastructure](/docs/openshift?topic=openshift-cluster-create-vpc-gen2). |
 {: caption="Options for creating a cluster" caption-side="bottom"}
 
 Already have a cluster? Continue to the next step to deploy a sample app!

@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2024
-lastupdated: "2024-04-15"
+lastupdated: "2024-04-17"
 
 
 keywords: openshift
@@ -3753,8 +3753,6 @@ subcollection: openshift
 
     * [Allowing egress to a cluster from another service](/docs/openshift?topic=openshift-vpc-firewall#vpc-allowlist_workers_egress)
 
-* [Updating IAM allowlists for {{site.data.keyword.containershort}} IP addresses](/docs/openshift?topic=openshift-vpc-firewall#iam_allowlist_vpc)
-
 [Configuring VPC subnets](/docs/openshift?topic=openshift-vpc-subnets#vpc-subnets)
 
 * [Overview of VPC networking in {{site.data.keyword.openshiftlong_notm}}](/docs/openshift?topic=openshift-vpc-subnets#vpc_basics)
@@ -5522,6 +5520,14 @@ subcollection: openshift
 
     * [`ibmcloud oc cluster ls`](/docs/openshift?topic=openshift-kubernetes-service-cli#cs_clusters)
 
+* [`ibmcloud oc cluster master console-oauth-access get`](/docs/openshift?topic=openshift-kubernetes-service-cli#cluster-master-console-oauth-access-get-cli)
+
+    * [Command options](/docs/openshift?topic=openshift-kubernetes-service-cli#cluster-master-console-oauth-access-get-options)
+
+* [`ibmcloud oc cluster master console-oauth-access set`](/docs/openshift?topic=openshift-kubernetes-service-cli#cluster-master-console-oauth-access-set-cli)
+
+    * [Command options](/docs/openshift?topic=openshift-kubernetes-service-cli#cluster-master-console-oauth-access-set-options)
+
     * [`ibmcloud oc cluster master pod-security get`](/docs/openshift?topic=openshift-kubernetes-service-cli#cluster-master-pod-security-get)
 
     * [`ibmcloud oc cluster master pod-security policy disable`](/docs/openshift?topic=openshift-kubernetes-service-cli#cluster-master-pod-security-policy-disable)
@@ -5845,6 +5851,10 @@ subcollection: openshift
     * [`ibmcloud oc script update`](/docs/openshift?topic=openshift-kubernetes-service-cli#script_update)
 
 * [`security-group` commands](/docs/openshift?topic=openshift-kubernetes-service-cli#security_group)
+
+* [`ibmcloud oc security-group ls`](/docs/openshift?topic=openshift-kubernetes-service-cli#security-group-ls-cli)
+
+    * [Command options](/docs/openshift?topic=openshift-kubernetes-service-cli#security-group-ls-options)
 
     * [`ibmcloud oc security-group reset`](/docs/openshift?topic=openshift-kubernetes-service-cli#security_group_reset)
 
