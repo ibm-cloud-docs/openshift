@@ -30,15 +30,16 @@ To enable Telemetry, update your pull secret by adding your OpenShift access tok
 **For version 4.14 clusters created on or after 29 Feb 2024**: Continue to the next step.
 
 1. Log into the [{{site.data.keyword.redhat_openshift_notm}} console](https://console.redhat.com/openshift){: external}.
+
 1. Navigate to **Downloads** > **Tokens > Pull Secret** and download the pull secret as a JSON file.
+
+1. [Access your cluster in the CLI](/docs/openshift?topic=openshift-access_cluster).
 
 1. Get your current pull secret and store it in a JSON file. Consider naming the JSON file something like `pull-secret-original.json`.
     ```sh
     oc get secrets pull-secret -n openshift-config -o template='{{index .data ".dockerconfigjson"}}' | base64 -d > pull-secret-original.json
     ```
     {: pre}
-
-1. [Access your cluster in the CLI](/docs/openshift?topic=openshift-access_cluster). 
 
 1. Append the downloaded JSON file to your existing pull secret and apply the changes to the cluster.
     ```sh
