@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2024
-lastupdated: "2024-04-16"
+lastupdated: "2024-04-17"
 
 
 keywords: openshift
@@ -5851,6 +5851,10 @@ subcollection: openshift
     * [`ibmcloud oc script update`](/docs/openshift?topic=openshift-kubernetes-service-cli#script_update)
 
 * [`security-group` commands](/docs/openshift?topic=openshift-kubernetes-service-cli#security_group)
+
+* [`ibmcloud oc security-group ls`](/docs/openshift?topic=openshift-kubernetes-service-cli#security-group-ls-cli)
+
+    * [Command options](/docs/openshift?topic=openshift-kubernetes-service-cli#security-group-ls-options)
 
     * [`ibmcloud oc security-group reset`](/docs/openshift?topic=openshift-kubernetes-service-cli#security_group_reset)
 

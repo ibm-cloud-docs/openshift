@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2024
-lastupdated: "2024-04-16"
+lastupdated: "2024-04-17"
 
 
 keywords: openshift
@@ -7783,6 +7783,39 @@ To use this command to prepare your automation scripts for the release of versio
 
 Reset or sync a security group to the [default traffic rules](/docs/openshift?topic=openshift-vpc-security-group&interface=ui#vpc-sg-inbound-outbound).
 {: shortdesc}
+
+## `ibmcloud oc security-group ls`
+{: #security-group-ls-cli}
+
+List all security groups associated with a cluster.
+
+```txt
+ibmcloud oc security-group ls --cluster CLUSTER [--attached-to ATTACHED] [--managed-by MANAGER] [--output OUTPUT] [-q] [--scope SCOPE]
+```
+{: pre}
+{: #security-group-ls-usage}
+
+### Command options
+{: #security-group-ls-options}
+
+`--attached-to ATTACHED`
+:    Filter the security groups by the components they are attached to. Accepted values: `cluster`, `load-balancer`, `vpc`, `vpe-gateway`, `worker-pool`
+
+`--cluster CLUSTER`, `-c CLUSTER`
+:    Specify the cluster name or ID.
+
+`--managed-by MANAGER`
+:    Specify `user` to return the security groups created by user. Specify `ibm` to return only the security groups managed by IBM. Accepted values: `ibm`, `user`
+
+`--output OUTPUT`
+:    Prints the command output in the provided format. Accepted values: `json`
+
+`-q`
+:    Do not show the message of the day or update reminders.
+
+`--scope SCOPE`
+:    Specify `cluster` to return security groups scoped to the cluster.  Specify `vpc` to return security groups scoped to the entire VPC. Accepted values: `cluster`, `vpc`
+{: #security-group-ls-options-dl}
 
 ### `ibmcloud oc security-group reset`
 {: #security_group_reset}
