@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2024
-lastupdated: "2024-03-27"
+lastupdated: "2024-04-17"
 
 
 keywords: kubernetes, openshift, red hat, red hat openshift
@@ -28,7 +28,7 @@ completion-time: 45m
 
 [Classic infrastructure]{: tag-classic-inf}
 
-In this tutorial, you deploy a {{site.data.keyword.openshiftlong_notm}} cluster on Classic infrastructure by using the CLI.
+In this tutorial, you deploy an {{site.data.keyword.openshiftlong_notm}} cluster on Classic infrastructure by using the CLI.
 {: shortdesc}
 
 ## Audience

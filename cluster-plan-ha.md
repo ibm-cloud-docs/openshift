@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2024
-lastupdated: "2024-04-12"
+lastupdated: "2024-04-17"
 
 
 keywords: openshift, {{site.data.keyword.openshiftlong_notm}}, ha, high availability, failover, kubernetes, multi az, multi-az, szr, mzr
@@ -71,7 +71,7 @@ Your users are less likely to experience downtime when you distribute your apps 
 {: tip}
 
 [Single zone clusters](#single_zone) [Classic only]{: tag-classic-inf}
-:   Single zone clusters have worker nodes that are distributed across replicas on separate physical hosts within a single zone.  This option protects against certain outages, such as during a master update, and is simpler to manage. However, it does not protect your apps in the event that an entire zone experiences an outage. Single zone clusters deployed in certain locations can later be converted to multi zone clusters.
+:   Single zone clusters have worker nodes that are distributed across replicas on separate physical hosts within a single zone.  This option protects against certain outages, such as during a master update, and is simpler to manage. However, it does not protect your apps if an entire zone experiences an outage. Single zone clusters deployed in certain locations can later be converted to multi zone clusters.
 
 [Multi zone clusters](#mz-clusters) [Classic]{: tag-classic-inf} [VPC]{: tag-vpc}
 :   Multi zone clusters have worker nodes automatically deployed with three replicas spread across multiple zones. If an entire zone experiences an outage, your workload is scheduled onto worker nodes in the other zones, protecting your app from the outage. 

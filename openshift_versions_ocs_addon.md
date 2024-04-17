@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2024
-lastupdated: "2024-04-11"
+lastupdated: "2024-04-17"
 
 
 keywords: odf, openshift data foundation add-on, change log
@@ -58,7 +58,6 @@ ibmcloud oc cluster addon versions --addon openshift-data-foundation
 ### Version 4.14.5, 14 February 2024
 {: #4.14.5_odf}
 
-changelog:
 - Changes the default base image.
 - Fixes vulnerabilities.
 
