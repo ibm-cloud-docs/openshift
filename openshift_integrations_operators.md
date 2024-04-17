@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2024
-lastupdated: "2024-04-11"
+lastupdated: "2024-04-17"
 
 
 keywords: openshift, disconnect, airgap, olm, mirror
@@ -102,7 +102,7 @@ To disable and mirror the OperatorHub source images:
 ## Getting support for Operators
 {: #operator_support}
 
-You can open an {{site.data.keyword.cloud_notm}} [support ticket](/docs/openshift?topic=openshift-get-help) for issues pertaining to any operator installed from Operator Hub. If IBM support cannot resolve the issue or if the issue originates from outside of the IBM service, an issue is opened with {{site.data.keyword.redhat_openshift_notm}}.
+You can open an {{site.data.keyword.cloud_notm}} [support ticket](/docs/openshift?topic=openshift-get-help) for issues about any operator installed from Operator Hub. If IBM support cannot resolve the issue or if the issue originates from outside of the IBM service, an issue is opened with {{site.data.keyword.redhat_openshift_notm}}.
 
 
 ## Operator FAQ

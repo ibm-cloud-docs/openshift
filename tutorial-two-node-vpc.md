@@ -2,7 +2,7 @@
 
 copyright:
   years: 2024, 2024
-lastupdated: "2024-02-19"
+lastupdated: "2024-04-17"
 
 
 keywords: kubernetes
@@ -24,7 +24,7 @@ completion-time: 30m
 {: toc-services="openshift, vpc, schematics"}
 {: toc-completion-time="30m"}
 
-Create a {{site.data.keyword.openshiftlong_notm}} cluster in a Virtual Private Cloud (VPC) by using Schematics.
+Create an {{site.data.keyword.openshiftlong_notm}} cluster in a Virtual Private Cloud (VPC) by using Schematics.
 {: shortdesc}
 
 ## Audience

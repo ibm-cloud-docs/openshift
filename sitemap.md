@@ -9383,7 +9383,7 @@ subcollection: openshift
 
 * [What is Kubernetes?](/docs/openshift?topic=openshift-faqs#kubernetes)
 
-* [How do I create a {{site.data.keyword.openshiftlong_notm}} cluster?](/docs/openshift?topic=openshift-faqs#faq-cluster-create)
+* [How do I create an {{site.data.keyword.openshiftlong_notm}} cluster?](/docs/openshift?topic=openshift-faqs#faq-cluster-create)
 
 * [How does {{site.data.keyword.openshiftlong_notm}} work?](/docs/openshift?topic=openshift-faqs#kubernetes_service)
 

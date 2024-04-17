@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2024
-lastupdated: "2024-01-03"
+lastupdated: "2024-04-17"
 
 
 keywords: openshift, route, router
@@ -21,7 +21,7 @@ subcollection: openshift
 # {{site.data.keyword.cloud_notm}} HPCS Router add-on change log
 {: #hpcs-router-changelog}
 
-View information for version updates to the [{{site.data.keyword.cloud_notm}} HPCS Router add-on](/docs/openshift?topic=openshift-hpcs-router-changelog) in clusters that run {{site.data.keyword.redhat_openshift_notm}} version 4.5 and later.
+View information for version updates to the {{site.data.keyword.cloud_notm}} HPCS Router add-on in clusters that run {{site.data.keyword.redhat_openshift_notm}} version 4.5 and later.
 {: shortdesc}
 
 {{site.data.keyword.cloud_notm}} HPCS Router add-on is deprecated and become unsupported on 15 August 2022.
