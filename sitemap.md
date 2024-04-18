@@ -5900,7 +5900,7 @@ subcollection: openshift
 
 * [Version 1.0](/docs/openshift?topic=openshift-cs_cli_changelog#10)
 
-* [Version v1.0.613](/docs/openshift?topic=openshift-cs_cli_changelog#cli-010601)
+* [Version v1.0.613](/docs/openshift?topic=openshift-cs_cli_changelog#cli-010613)
 
 * [Version v1.0.601](/docs/openshift?topic=openshift-cs_cli_changelog#cli-010601)
 

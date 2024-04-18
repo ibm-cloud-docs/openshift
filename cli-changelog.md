@@ -33,7 +33,7 @@ Review the following changes for 1.0 versions of the CLI plug-in.
 {: shortdesc}
 
 ## Version v1.0.613
-{: #cli-010601}
+{: #cli-010613}
 
 Version 1.0.613 of the CLI was released on 18 April 2024.
 :   Adds the `ibmcloud oc cluster master console-oauth-access get` and `set` [commands](/docs/openshift?topic=openshift-kubernetes-service-cli#cluster-master-console-oauth-access-get-cli). 
