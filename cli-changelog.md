@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2024
-lastupdated: "2024-03-29"
+lastupdated: "2024-04-18"
 
 
 keywords: openshift, {{site.data.keyword.openshiftlong_notm}}, oc, ks
@@ -31,6 +31,15 @@ Refer to the following change logs for a summary of changes for each version of 
 
 Review the following changes for 1.0 versions of the CLI plug-in.
 {: shortdesc}
+
+## Version v1.0.613
+{: #cli-010601}
+
+Version 1.0.613 of the CLI was released on 18 April 2024.
+:   Adds the `ibmcloud oc cluster master console-oauth-access get` and `set` [commands](/docs/openshift?topic=openshift-kubernetes-service-cli#cluster-master-console-oauth-access-get-cli). 
+:   Adds the `ibmcloud oc security-group ls` [command](/docs/openshift?topic=openshift-kubernetes-service-cli#security-group-ls-cli).
+:   Updates the help text in various languages.
+
 
 ## Version v1.0.601
 {: #cli-010601}
