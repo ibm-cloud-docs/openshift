@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2024
-lastupdated: "2024-04-15"
+lastupdated: "2024-04-19"
 
 
 keywords: openshift, {{site.data.keyword.openshiftlong_notm}}, troubleshooting apps, app debugging, application troublshooting in clusters
@@ -79,7 +79,7 @@ Start date, time, and frequency of the problem.
 :   Review the following message examples.
     - "This problem affects approximately 2% of all connection attempts."
     - "This problem only occurs between 19:00 and 21:00 UTC, and during those times affects approximately 5% of all connection attempts."
-    - "This problem occurs when connecting from pod ID `XYZ`. The problem began on 10/25/2023 at approximately 05:30 UTC"
+    - "This problem occurs when connecting from pod ID `XYZ`. The problem began on `10/25/2023` at approximately 05:30 UTC"
 
 Troubleshooting actions that you've already taken.
 :   Document what has been tried so far and the results of those attempts to help further narrow down the problem.

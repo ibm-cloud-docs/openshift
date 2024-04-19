@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2024
-lastupdated: "2024-01-03"
+lastupdated: "2024-04-19"
 
 
 keywords: openshift, autoscaler
@@ -45,9 +45,7 @@ Before you begin: [Access your {{site.data.keyword.redhat_openshift_notm}} clust
     {: screen}
 
 2. Compare the version that runs in your cluster against the latest version in Cluster autoscaler add-on [change log](/docs/openshift?topic=openshift-ca_changelog).
-3. If your version is outdated, deploy the latest cluster autoscaler version to your cluster.
-
-**Deprecated** You can install the cluster autoscaler Helm chart, but the helm chart is deprecated and becomes unsupported tentatively 15 September 2020. You can't install the add-on and the Helm chart in the same cluster at the same time. 
+3. If your version is outdated, deploy the latest cluster autoscaler version to your cluster. 
 
 ## Step 2: Check the configuration
 {: #ca-debug-config}

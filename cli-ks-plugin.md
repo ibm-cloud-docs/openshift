@@ -2,21 +2,17 @@
 
 copyright:
   years: 2014, 2024
-lastupdated: "2024-04-17"
+lastupdated: "2024-04-19"
 
 
-keywords: openshift
+keywords: openshift, cli reference, kubernetes cli, openshift cli, {{product_name_notm}}
 
 subcollection: openshift
 
 
 ---
 
-
-
 {{site.data.keyword.attribute-definition-list}}
-
-
 
 
 
@@ -99,7 +95,7 @@ Minimum required permissions
 
 **Command options**:
 
-`-c, --cluster CLUSTER`
+`-c`, `--cluster CLUSTER`
 :    Required: The name or ID of the cluster.
 
 `-f`
@@ -124,7 +120,7 @@ Minimum required permissions
 
 **Command options**:
 
-`-c, --cluster CLUSTER`
+`-c`, `--cluster CLUSTER`
 :    Required: The name or ID of the cluster.
 
 `--version VERSION`
@@ -158,7 +154,7 @@ Minimum required permissions
 
 **Command options**:
 
-`-c, --cluster CLUSTER`
+`-c`, `--cluster CLUSTER`
 :    Required: The name or ID of the cluster.
 
 `-f`
@@ -184,7 +180,7 @@ Minimum required permissions
 
 **Command options**:
 
-`-c, --cluster CLUSTER`
+`-c`, `--cluster CLUSTER`
 :    Required: The name or ID of the cluster.
 
 `-f`
@@ -238,7 +234,7 @@ Minimum required permissions
 
 **Command options**:
 
-`-c, --cluster CLUSTER`
+`-c`, `--cluster CLUSTER`
 :    Required: The name or ID of the cluster.
 
 `--version VERSION`
@@ -271,7 +267,7 @@ Minimum required permissions
 
 **Command options**:
 
-`-c, --cluster CLUSTER`
+`-c`, `--cluster CLUSTER`
 :    Required: The name or ID of the cluster.
 
 `--version VERSION`
@@ -306,7 +302,7 @@ Minimum required permissions
 
 **Command options**:
 
-`-c, --cluster CLUSTER`
+`-c`, `--cluster CLUSTER`
 :    Required: The name or ID of the cluster.
 
 `-f`
@@ -371,7 +367,7 @@ Minimum required permissions
 `--addon ADDON`
 :    Required: The name of the `addon`. To list installed add-ons, run `ibmcloud oc cluster addon ls`.
 
-`-c, --cluster CLUSTER`
+`-c`, `--cluster CLUSTER`
 :    Required: The name or ID of the cluster.
 
 `--output json`
@@ -399,7 +395,7 @@ Minimum required permissions
 
 **Command options**:
 
-`-c, --cluster CLUSTER`
+`-c`, `--cluster CLUSTER`
 :    Required: The name or ID of the cluster.
 
 `--output json`
@@ -455,7 +451,7 @@ Minimum required permissions
 
 **Command options**:
 
-`-c, --cluster CLUSTER`
+`-c`, `--cluster CLUSTER`
 :    Required: The name or ID of the cluster.
 
 `-f`
@@ -527,7 +523,7 @@ Minimum required permissions
 
 **Command options**:
 
-`-c, --cluster CLUSTER`
+`-c`, `--cluster CLUSTER`
 :    Required: The name or ID of the cluster.
 
 `-f`
@@ -563,7 +559,7 @@ Minimum required permissions
 
 **Command options**:
 
-`-c, --cluster CLUSTER`
+`-c`, `--cluster CLUSTER`
 :    Required: The name or ID of the cluster.
 
 `--output json`
@@ -603,7 +599,7 @@ Minimum required permissions
 
 **Command options**:
 
-`-c, --cluster CLUSTER`
+`-c`, `--cluster CLUSTER`
 :    Required: The name or ID of the cluster.
 
 `-f`
@@ -640,7 +636,7 @@ Minimum required permissions
 
 **Command options**:
 
-`-c, --cluster CLUSTER`
+`-c`, `--cluster CLUSTER`
 :    Required: The name or ID of the cluster.
 
 `-q`
@@ -674,11 +670,11 @@ ibmcloud oc cluster config --cluster CLUSTER [--admin] [--endpoint ENDPOINT_TYPE
 Minimum required permissions
 :   **Viewer** or **Reader** {{site.data.keyword.cloud_notm}} IAM service access role for the cluster in {{site.data.keyword.containerlong_notm}}. Further, if you have only a platform access role or only a service access role, additional constraints apply.
 * **Platform**: If you have only a platform access role, you can perform this command, but you need a [service access role](/docs/openshift?topic=openshift-iam-platform-access-roles) or a [custom RBAC policy](/docs/openshift?topic=openshift-access-overview#role-binding) to perform Kubernetes actions in the cluster.
-* **Service**: If you have only a service access role, you can perform this command. However, your cluster admin must give you the cluster name, ID, and master URL because you can't run the `ibmcloud oc cluster ls` command or open the {{site.data.keyword.containerlong_notm}} console to view clusters. After you receive the cluster name and ID, you can open the {{site.data.keyword.redhat_openshift_notm}} web console by opening your browser to `<master_URL>/console`.
+* **Service**: If you have the `service` access role, you can perform this command. However, your cluster admin must gather the cluster details for you by either running the `ibmcloud oc cluster ls` command or using the {{site.data.keyword.containerlong_notm}} console. After you receive the cluster name and ID, you can open the {{site.data.keyword.redhat_openshift_notm}} web console by opening your browser to `<master_URL>/console`.
 
 **Command options**:
 
-`-c, --cluster CLUSTER`
+`-c`, `--cluster CLUSTER`
 :    Required: The name or ID of the cluster.
 
 `--admin`
@@ -730,7 +726,7 @@ Create a cluster with worker nodes on classic infrastructure.
 {: important}
 
 ```sh
-ibmcloud oc cluster create classic [--hardware HARDWARE] --zone ZONE --flavor FLAVOR --name NAME  [--operating-system (REDHAT_7_64|REDHAT_8_64)] [--version MAJOR.MINOR.PATCH] [--no-subnet] [--sm-group GROUP] [--sm-instance INSTANCE] [--private-vlan PRIVATE_VLAN] [--public-vlan PUBLIC_VLAN]  [--private-service-endpoint] [--public-service-endpoint] --workers WORKER [--disable-disk-encrypt] [--pod-subnet SUBNET] [--service-subnet SUBNET] [--skip-advance-permissions-check] [--entitlement ENTITLEMENT][-q]
+ibmcloud oc cluster create classic [--hardware HARDWARE] --zone ZONE --flavor FLAVOR --name NAME  [--operating-system SYSTEM] [--version MAJOR.MINOR.PATCH] [--no-subnet] [--sm-group GROUP] [--sm-instance INSTANCE] [--private-vlan PRIVATE_VLAN] [--public-vlan PUBLIC_VLAN]  [--private-service-endpoint] [--public-service-endpoint] --workers WORKER [--disable-disk-encrypt] [--pod-subnet SUBNET] [--service-subnet SUBNET] [--skip-advance-permissions-check] [--entitlement ENTITLEMENT][-q]
 ```
 {: pre}
 
@@ -761,8 +757,8 @@ Minimum required permissions
 :    Required: The name for the cluster. The name must start with a letter, can contain letters, numbers, periods (.), and hyphen (-), and must be 35 characters or fewer. Use a name that is unique across regions. The cluster name and the region in which the cluster is deployed form the fully qualified domain name for the Ingress subdomain. To ensure that the Ingress subdomain is unique within a region, the cluster name might be truncated and appended with a random value within the Ingress domain name.
 
 
-`--operating-system SYSTEM`
-:   Optional. The operating system of the worker nodes you want to provision in your cluster. For a list of available operating systems by cluster version, see [{{site.data.keyword.openshiftlong_notm}} version information](/docs/openshift?topic=openshift-openshift_versions).
+`--operating-system REDHAT_8_64|RHCOS`
+:   Optional. The operating system of the worker nodes in your cluster. For a list of available operating sysems by cluster version, see the [{{site.data.keyword.openshiftshort}} version information](/docs/openshift?topic=openshift-openshift_versions). If no option is specified, the default operating system that corresponds to the cluster version is used.
 
 `--version MAJOR.MINOR.PATCH`
 :    Optional: The Kubernetes version for the cluster master node. When the version is not specified, the cluster is created with the default of supported Kubernetes versions. To see available versions, run `ibmcloud oc versions`.
@@ -785,8 +781,7 @@ Minimum required permissions
 :    To find out whether you already have a public VLAN for a specific zone or to find the name of an existing public VLAN, run `ibmcloud oc vlan ls --zone ZONE`. 
 
 `--private-service-endpoint`
-:    **Standard clusters in [accounts that are enabled with VRF and service endpoints](/docs/account?topic=account-vrf-service-endpoint)**: Enable the [private cloud service endpoint](/docs/openshift?topic=openshift-plan_basics#workeruser-master) so that your Kubernetes master and the worker nodes communicate over the private VLAN. If you specify this option, you must also enable the public cloud service endpoint by using the `--public-service-endpoint` option. Note that you can't later change the cloud service endpoints.
-     After you create the cluster, you can get the endpoint by running `ibmcloud oc cluster get --cluster <cluster_name_or_ID>`.
+:    **Standard clusters in [accounts that are enabled with VRF and service endpoints](/docs/account?topic=account-vrf-service-endpoint)**: Enable the [private cloud service endpoint](/docs/openshift?topic=openshift-plan_basics#workeruser-master) so that your Kubernetes master and the worker nodes communicate over the private VLAN. If you specify this option, you must also enable the public cloud service endpoint by using the `--public-service-endpoint` option. Note that you can't later change the cloud service endpoints. After you create the cluster, you can get the endpoint by running `ibmcloud oc cluster get --cluster <cluster_name_or_ID>`.
 
 `--public-service-endpoint`
 :    Enable the [public cloud service endpoint](/docs/openshift?topic=openshift-plan_basics#workeruser-master) so that your Kubernetes master can be accessed over the public network, for example to run `oc` commands from your command line. Public-only clusters can only be created in accounts that don't have VRF enabled. If you have an [account that is enabled with VRF and service endpoints](/docs/account?topic=account-vrf-service-endpoint) and also include the `--private-service-endpoint` option, master-worker node communication goes over the private and the public network.
@@ -836,6 +831,7 @@ Minimum required permissions
      Do not exceed your entitlement. Keep in mind that your OpenShift Container Platform entitlements can be used with other cloud providers or in other environments. To avoid billing issues later, make sure that you use only what you are entitled to use. For example, you might have an entitlement for the OCP licenses for two worker nodes of 4 CPU and 16 GB memory, and you create this worker pool with two worker nodes of 4 CPU and 16 GB memory. You used your entire entitlement, and you can't use the same entitlement for other worker pools, cloud providers, or environments.
      {: important}
      
+     
 
 `-q`
 :    Optional: Do not show the message of the day or update reminders.
@@ -880,7 +876,7 @@ Your VPC cluster is created with both a public and a private cloud service endpo
 {: important}
 
 ```sh
-ibmcloud oc cluster create vpc-gen2 --name NAME --zone ZONE --vpc-id VPC_ID --subnet-id VPC_SUBNET_ID --flavor WORKER_FLAVOR [--cluster-security-group GROUP_ID] [--operating-system (REDHAT_7_64|REDHAT_8_64)] [--version 4.14_openshift] --cos-instance COS_CRN --workers NUMBER_WORKERS_PER_ZONE [--dedicated-host-pool POOL] [--disable-outbound-traffic-protection] [--disable-public-service-endpoint] [--pod-subnet SUBNET] [--service-subnet SUBNET] [--entitlement cloud_pak] [--kms-account-id ID] [--kms-instance KMS_INSTANCE_ID] [--crk ROOT_KEY_ID][--skip-advance-permissions-check] [--sm-group GROUP] [--sm-instance INSTANCE] [-q] [--secondary-storage STORAGE]
+ibmcloud oc cluster create vpc-gen2 --name NAME --zone ZONE --vpc-id VPC_ID --subnet-id VPC_SUBNET_ID --flavor WORKER_FLAVOR [--cluster-security-group GROUP_ID] [--operating-system SYSTEM] [--version VERSION] --cos-instance COS_CRN --workers NUMBER_WORKERS_PER_ZONE [--dedicated-host-pool POOL] [--disable-outbound-traffic-protection] [--disable-public-service-endpoint] [--pod-subnet SUBNET] [--service-subnet SUBNET] [--entitlement ENTITLEMENT] [--kms-account-id ID] [--kms-instance KMS_INSTANCE_ID] [--crk ROOT_KEY_ID][--skip-advance-permissions-check] [--sm-group GROUP] [--sm-instance INSTANCE] [-q] [--secondary-storage STORAGE]
 ```
 {: pre}
 
@@ -907,7 +903,7 @@ Minimum required permissions
 `--subnet-id VPC_SUBNET_ID`
 :    Required: The VPC subnet to assign the cluster. To list available VPC subnets, run `ibmcloud oc subnets --provider vpc-gen2`.
 
-`--version 4.14_openshift`
+`--version VERSION`
 :    VPC clusters are supported for {{site.data.keyword.redhat_openshift_notm}} version 4 only.
 
 `--flavor FLAVOR`
@@ -918,13 +914,16 @@ Minimum required permissions
     The security groups applied to a cluster cannot be changed once the cluster is created. You can change the rules of the security groups that are applied to the cluster, but you cannot add or remove security groups at the cluster level. If you apply the incorrect security groups at cluster create time, you must delete the cluster and create a new one. For more information, see [Adding VPC security groups to clusters and worker pools during create time](/docs/openshift?topic=openshift-vpc-security-group-manage).
     {: important}
 
-`--operating-system SYSTEM`
-:   Optional. The operating system of the worker nodes you want to provision in your cluster. For a list of available operating systems by cluster version, see [{{site.data.keyword.openshiftlong_notm}} version information](/docs/openshift?topic=openshift-openshift_versions).
+`--operating-system REDHAT_8_64|RHCOS`
+:   Optional. The operating system of the worker nodes in your cluster. For a list of available operating sysems by cluster version, see the [{{site.data.keyword.openshiftshort}} version information](/docs/openshift?topic=openshift-openshift_versions). If no option is specified, the default operating system that corresponds to the cluster version is used.
+
+
 
 `--cos-instance COS_CRN`
 :    Include the CRN ID of a standard {{site.data.keyword.cos_full_notm}} instance to back up the internal registry of your cluster. To list the CRN of existing instances, run `ibmcloud resource service-instances --long` and find the **ID** of your object storage instance. To create a standard object storage instance, run `ibmcloud resource service-instance-create <name> cloud-object-storage standard global` and note its **ID**.
 
- 
+`--preview PREVIEW`
+:    Optional. Specify one or more cluster level preview features, such as `fips`.
 
 `--dedicated-host-pool POOL`
 :    Optional. The ID of the dedicated host pool where you want to run your workers. 
@@ -968,8 +967,8 @@ Minimum required permissions
 
 :    Note that the pod and service subnets can't overlap.
 
-`--entitlement cloud_pak`
-:    Include this option only if you use this cluster with an [IBM Cloud Pak](/docs/openshift?topic=openshift-openshift_cloud_paks) that has a {{site.data.keyword.redhat_openshift_notm}} entitlement. When you specify the number of workers (`--workers`) and flavor (`--flavor`), make sure to specify only the number and size of worker nodes that you are entitled to use in [IBM Passport Advantage](https://www.ibm.com/software/passportadvantage/index.html){: external}. After your cluster is created, you are not charged the {{site.data.keyword.redhat_openshift_notm}} license fee for the entitled worker nodes in the `default` worker pool.
+`--entitlement ocp_entitled`
+:    Include this option only if you use this cluster that has a {{site.data.keyword.redhat_openshift_notm}} entitlement. When you specify the number of workers (`--workers`) and flavor (`--flavor`), make sure to specify only the number and size of worker nodes that you are entitled to use in [IBM Passport Advantage](https://www.ibm.com/software/passportadvantage/index.html){: external}. After your cluster is created, you are not charged the {{site.data.keyword.redhat_openshift_notm}} license fee for the entitled worker nodes in the `default` worker pool.
      Do not exceed your entitlement. Keep in mind that your OpenShift Container Platform entitlements can be used with other cloud providers or in other environments. To avoid billing issues later, make sure that you use only what you are entitled to use. For example, you might have an entitlement for the OCP licenses for two worker nodes of 4 CPU and 16 GB memory, and you create this worker pool with two worker nodes of 4 CPU and 16 GB memory. You used your entire entitlement, and you can't use the same entitlement for other worker pools, cloud providers, or environments.
      {: note}
 
@@ -1028,7 +1027,7 @@ Minimum required permissions
 
 **Command options**:
 
-`-c, --cluster CLUSTER`
+`-c`, `--cluster CLUSTER`
 :    Required: The name or ID of the cluster.
 
 `--show-resources`
@@ -1067,7 +1066,7 @@ Minimum required permissions
 
 **Command options**:
 
-`-c, --cluster CLUSTER`
+`-c`, `--cluster CLUSTER`
 :    Required: The name or ID of the cluster.
 
 `-q`
@@ -1100,7 +1099,7 @@ Minimum required permissions
 
 **Command options**:
 
-`-c, --cluster CLUSTER`
+`-c`, `--cluster CLUSTER`
 :    Required: The name or ID of the cluster.
 
 `-f`
@@ -1230,7 +1229,7 @@ Minimum required permissions
 
 **Command options**:
 
-`-c, --cluster CLUSTER`
+`-c`, `--cluster CLUSTER`
 :    Required: The name or ID of the cluster.
 
 `--output json`
@@ -1265,7 +1264,7 @@ Minimum required permissions
 
 **Command options**:
 
-`-c, --cluster CLUSTER`
+`-c`, `--cluster CLUSTER`
 :    Required: The name or ID of the cluster.
 
 `-q`
@@ -1297,7 +1296,7 @@ Minimum required permissions
 
 **Command options**:
 
-`-c, --cluster CLUSTER`
+`-c`, `--cluster CLUSTER`
 :    Required: The name or ID of the cluster.
 
 `--output json`
@@ -1332,7 +1331,7 @@ Minimum required permissions
 
 **Command options**:
 
-`-c, --cluster CLUSTER`
+`-c`, `--cluster CLUSTER`
 :    Required: The name or ID of the cluster.
 
 `--output json`
@@ -1367,7 +1366,7 @@ Minimum required permissions
 
 **Command options**:
 
-`-c, --cluster CLUSTER`
+`-c`, `--cluster CLUSTER`
 :    Required: The name or ID of the cluster.
 
 `--output json`
@@ -1402,7 +1401,7 @@ Minimum required permissions
 
 **Command options**:
 
-`-c, --cluster CLUSTER`
+`-c`, `--cluster CLUSTER`
 :    Required: The name or ID of the cluster.
 
 `--output json`
@@ -1447,7 +1446,7 @@ Minimum required permissions
 
 **Command options**:
 
-`-c, --cluster CLUSTER`
+`-c`, `--cluster CLUSTER`
 :    Required: The name or ID of the cluster.
 
 `--subnet SUBNET`
@@ -1486,7 +1485,7 @@ Minimum required permissions
 
 **Command options**:
 
-`-c, --cluster CLUSTER`
+`-c`, `--cluster CLUSTER`
 :    Required: The name or ID of the cluster.
 
 `-f`
@@ -1524,7 +1523,7 @@ Minimum required permissions
 
 **Command options**:
 
-`-c, --cluster CLUSTER`
+`-c`, `--cluster CLUSTER`
 :    Required: The name or ID of the cluster.
 
 `-f`
@@ -1562,7 +1561,7 @@ Minimum required permissions
 
 **Command options**:
 
-`-c, --cluster CLUSTER`
+`-c`, `--cluster CLUSTER`
 :    Required: The name or ID of the cluster.
 
 `-q`
@@ -1597,7 +1596,7 @@ Minimum required permissions
 
 **Command options**:
 
-`-c, --cluster CLUSTER`
+`-c`, `--cluster CLUSTER`
 :    Required: The name or ID of the cluster.
 
 `--subnet SUBNET`
@@ -1686,7 +1685,7 @@ Minimum required permissions
 
 **Command options**:
 
-`-c, --cluster CLUSTER`
+`-c`, `--cluster CLUSTER`
 :    Required: The name or ID of the cluster.
 
 `-q`
@@ -1730,7 +1729,7 @@ Minimum required permissions
 
 **Command options**:
 
-`-c, --cluster CLUSTER`
+`-c`, `--cluster CLUSTER`
 :    Required: The name or ID of the cluster.
 
 `-q`
@@ -1770,7 +1769,7 @@ Minimum required permissions
 
 **Command options**:
 
-`-c, --cluster CLUSTER`
+`-c`, `--cluster CLUSTER`
 :    Required: The name or ID of the cluster.
 
 `-q`
@@ -1799,7 +1798,7 @@ Minimum required permissions
 
 **Command options**:
 
-`-c, --cluster CLUSTER`
+`-c`, `--cluster CLUSTER`
 :    Required: The name or ID of the cluster.
 
 `--version MAJOR.MINOR.PATCH`
@@ -1850,7 +1849,7 @@ ibmcloud oc cluster pull-secret apply --cluster CLUSTER
 **Command options**:
 
 
-`-c, --cluster CLUSTER`
+`-c`, `--cluster CLUSTER`
 :    Required: The name or ID of the cluster.
 
 
@@ -1872,7 +1871,7 @@ Minimum required permissions
 
 **Command options**:
 
-`-c, --cluster CLUSTER`
+`-c`, `--cluster CLUSTER`
 :    Required: The name or ID of the cluster.
 
 `--force-delete-storage`
@@ -1917,7 +1916,7 @@ Minimum required permissions
 
 **Command options**:
 
-`-c, --cluster CLUSTER`
+`-c`, `--cluster CLUSTER`
 :    Required: The name or ID of the cluster.
 
 `-n, --namespace KUBERNETES_NAMESPACE`
@@ -1964,7 +1963,7 @@ Minimum required permissions
 
 **Command options**:
 
-`-c, --cluster CLUSTER`
+`-c`, `--cluster CLUSTER`
 :    Required: The name or ID of the cluster.
 
 `-n, --namespace KUBERNETES_NAMESPACE`
@@ -2010,7 +2009,7 @@ Minimum required permissions
 
 **Command options**:
 
-`-c, --cluster CLUSTER`
+`-c`, `--cluster CLUSTER`
 :    Required: The name or ID of the cluster.
 
 `-n, --namespace KUBERNETES_NAMESPACE`
@@ -2054,7 +2053,7 @@ Minimum required permissions
 
 **Command options**:
 
-`-c, --cluster CLUSTER`
+`-c`, `--cluster CLUSTER`
 :    Required: The name or ID of the cluster.
 
 `--subnet-id SUBNET`
@@ -2095,7 +2094,7 @@ Minimum required permissions
 
 **Command options**:
 
-`-c, --cluster CLUSTER`
+`-c`, `--cluster CLUSTER`
 :    Required: The name or ID of the cluster. To list your clusters, use the `ibmcloud oc cluster ls` [command](#cs_clusters).
 
 `--size SIZE`
@@ -2137,7 +2136,7 @@ Minimum required permissions
 
 **Command options**:
 
-`-c, --cluster CLUSTER`
+`-c`, `--cluster CLUSTER`
 :    Required: The name or ID of the cluster. To list your clusters, use the `ibmcloud oc cluster ls` [command](#cs_clusters).
 
 `--vlan VLAN_ID`
@@ -2185,7 +2184,7 @@ Minimum required permissions
 
 **Command options**:
 
-`-c, --cluster CLUSTER`
+`-c`, `--cluster CLUSTER`
 :    Required: The name or ID of the cluster.
 
 `--subnet-cidr SUBNET_CIDR`
@@ -2226,7 +2225,7 @@ Minimum required permissions
 
 **Command options**:
 
-`-c, --cluster CLUSTER`
+`-c`, `--cluster CLUSTER`
 :    Required: The name or ID of the cluster.
 
 `--subnet-cidr SUBNET_CIDR`
@@ -2660,7 +2659,7 @@ Minimum required permissions
 
 **Command options**:
 
-`-c, --cluster CLUSTER`
+`-c`, `--cluster CLUSTER`
 :    Required: The name or ID of the cluster.
 
 `--hardware HARDWARE`
@@ -2684,8 +2683,8 @@ Minimum required permissions
 :    Worker nodes feature AES 256-bit disk encryption by default; [learn more](/docs/openshift?topic=openshift-security#encrypted_disk). To disable encryption, include this option.
 
 
-`--operating-system SYSTEM`
-:   Optional. The operating system of the worker nodes you want to provision in your cluster. For a list of available operating systems by cluster version, see [{{site.data.keyword.openshiftlong_notm}} version information](/docs/openshift?topic=openshift-openshift_versions).
+`--operating-system REDHAT_8_64|RHCOS`
+:   Optional. The operating system of the worker nodes in your cluster. For a list of available operating sysems by cluster version, see the [{{site.data.keyword.openshiftshort}} version information](/docs/openshift?topic=openshift-openshift_versions). If no option is specified, the default operating system that corresponds to the cluster version is used.
 
 `-q`
 :    Optional: Do not show the message of the day or update reminders.
@@ -2759,10 +2758,10 @@ Minimum required permissions
 
 **Command options**:
 
-`-c, --cluster CLUSTER`
+`-c`, `--cluster CLUSTER`
 :    Required: The name or ID of the cluster for the available worker nodes.
 
-`-p, --worker-pool POOL`
+`-p`, `--worker-pool POOL`
 :    Optional: View only worker nodes that belong to the worker pool. To list available worker pools, run `ibmcloud oc worker-pool ls --cluster <cluster_name_or_ID>`.
 
 `--show-pools`
@@ -2841,7 +2840,7 @@ Minimum required permissions
 
 **Command options**:
 
-`-c, --cluster CLUSTER`
+`-c`, `--cluster CLUSTER`
 :    Required: The name or ID of the cluster.
 
 `--hard`
@@ -2913,7 +2912,7 @@ Minimum required permissions
 
 **Command options**:
 
-`-c, --cluster CLUSTER`
+`-c`, `--cluster CLUSTER`
 :    Required: The name or ID of the cluster.
 
 `-w, --worker WORKER`
@@ -2992,7 +2991,7 @@ Minimum required permissions
 
 **Command options**:
 
-`-c, --cluster CLUSTER`
+`-c`, `--cluster CLUSTER`
 :    Required: The name or ID of the cluster.
 
 `--worker WORKER`
@@ -3035,7 +3034,7 @@ Minimum required permissions
 
 **Command options**:
 
-`-c, --cluster CLUSTER`
+`-c`, `--cluster CLUSTER`
 :    Required: The name or ID of the cluster.
 
 `-w, --worker WORKER`
@@ -3087,7 +3086,7 @@ Minimum required permissions
 
 **Command options**:
 
-`-c, --cluster CLUSTER`
+`-c`, `--cluster CLUSTER`
 :    Required: The name or ID of the cluster where you list available worker nodes.
 
 `-w, --worker WORKER`
@@ -3129,7 +3128,7 @@ To create a worker pool in a VPC cluster, use the [**`ibmcloud oc worker-pool cr
 {: note}
 
 ```sh
-ibmcloud oc worker-pool create classic --name POOL_NAME --cluster CLUSTER --flavor FLAVOR --size-per-zone WORKERS_PER_ZONE --hardware ISOLATION [--disable-disk-encrypt] [--label KEY1=VALUE1] [--operating-system SYSTEM] [--entitlement cloud_pak] [-q] [--output json]
+ibmcloud oc worker-pool create classic --name POOL_NAME --cluster CLUSTER --flavor FLAVOR --size-per-zone WORKERS_PER_ZONE --hardware ISOLATION [--disable-disk-encrypt] [--label KEY1=VALUE1] [--operating-system SYSTEM] [--entitlement ENTITLEMENT] [-q] [--output json]
 ```
 {: pre}
 
@@ -3141,7 +3140,7 @@ Minimum required permissions
 `--name POOL_NAME`
 :    The name that you want to give your worker pool.
 
-`-c, --cluster CLUSTER`
+`-c`, `--cluster CLUSTER`
 :    Required: The name or ID of the cluster.
 
 `--flavor FLAVOR`
@@ -3159,13 +3158,18 @@ Minimum required permissions
 `-l, --label KEY1=VALUE1`
 :    Optional: Apply key-value labels to each worker node in the worker pool. To specify multiple labels, use multiple options, such as `-l key1=value1 -l key2=value2`.
 
-`--operating-system SYSTEM`
-:   Optional. The operating system of the worker nodes you want to provision in your cluster. For a list of available operating systems by cluster version, see [{{site.data.keyword.openshiftlong_notm}} version information](/docs/openshift?topic=openshift-openshift_versions).
+`--operating-system REDHAT_8_64|RHCOS`
+:   Optional. The operating system of the worker nodes in your cluster. For a list of available operating sysems by cluster version, see the [{{site.data.keyword.openshiftshort}} version information](/docs/openshift?topic=openshift-openshift_versions). If no option is specified, the default operating system that corresponds to the cluster version is used.
 
-`--entitlement cloud_pak`
-:    Include this option only if you use this cluster with an [IBM Cloud Pak](/docs/openshift?topic=openshift-openshift_cloud_paks) that has a {{site.data.keyword.redhat_openshift_notm}} entitlement. When you specify the number of workers (`--size-per-zone`) and flavor (`--flavor`), make sure to specify only the number and size of worker nodes that you are entitled to use in [IBM Passport Advantage](https://www.ibm.com/software/passportadvantage/index.html){: external}. After creation, your worker pool does not charge you the {{site.data.keyword.redhat_openshift_notm}} license fee for your entitled worker nodes.
-     Do not exceed your entitlement. Keep in mind that your OpenShift Container Platform entitlements can be used with other cloud providers or in other environments. To avoid billing issues later, make sure that you use only what you are entitled to use. For example, you might have an entitlement for the OCP licenses for two worker nodes of 4 CPU and 16 GB memory, and you create this worker pool with two worker nodes of 4 CPU and 16 GB memory. You used your entire entitlement, and you can't use the same entitlement for other worker pools, cloud providers, or environments.
-     {: note}
+
+
+`--entitlement ocp_entitled`
+:    Include this option only for a cluster that has a {{site.data.keyword.redhat_openshift_notm}} entitlement. When you specify the number of workers (`--size-per-zone`) and flavor (`--flavor`), make sure to specify only the number and size of worker nodes that you are entitled to use in [IBM Passport Advantage](https://www.ibm.com/software/passportadvantage/index.html){: external}. After creation, your worker pool does not charge you the {{site.data.keyword.redhat_openshift_notm}} license fee for your entitled worker nodes.
+
+Do not exceed your entitlement. Keep in mind that your OpenShift Container Platform entitlements can be used with other cloud providers or in other environments. To avoid billing issues later, make sure that you use only what you are entitled to use. For example, you might have an entitlement for the OCP licenses for two worker nodes of 4 CPU and 16 GB memory, and you create this worker pool with two worker nodes of 4 CPU and 16 GB memory. You used your entire entitlement, and you can't use the same entitlement for other worker pools, cloud providers, or environments.
+{: note}
+
+
 
 `-q`
 :    Optional: Do not show the message of the day or update reminders.
@@ -3192,7 +3196,7 @@ Add a worker pool to a VPC cluster. No worker nodes are created until you [add z
 {: shortdesc}
 
 ```sh
-ibmcloud oc worker-pool create vpc-gen2 --name <worker_pool_name> --cluster <cluster_name_or_ID> --flavor <flavor> --size-per-zone <number_of_workers_per_zone> [--operating-system SYSTEM][--dedicated-host-pool POOL][--vpc-id <VPC ID>] [--label KEY1=VALUE1] [--entitlement cloud_pak] [--kms-account-id ID] [--kms-instance KMS_INSTANCE_ID] [--crk ROOT_KEY_ID] [--operating-system SYSTEM] [-q] [--secondary-storage STORAGE] [--security-group GROUP ...] [--output json]
+ibmcloud oc worker-pool create vpc-gen2 --name <worker_pool_name> --cluster <cluster_name_or_ID> --flavor <flavor> --size-per-zone <number_of_workers_per_zone> [--operating-system SYSTEM][--dedicated-host-pool POOL][--vpc-id <VPC ID>] [--label KEY1=VALUE1] [--entitlement ENTITLEMENT] [--kms-account-id ID] [--kms-instance KMS_INSTANCE_ID] [--crk ROOT_KEY_ID] [--operating-system SYSTEM] [-q] [--secondary-storage STORAGE] [--security-group GROUP ...] [--output json]
 ```
 {: pre}
 
@@ -3206,14 +3210,14 @@ Minimum required permissions
 `--name NAME`
 :    Required: Set the name for the worker pool.
 
-`-c, --cluster CLUSTER`
+`-c`, `--cluster CLUSTER`
 :    Required: Specify the name or ID of the cluster. To list VPC clusters, run `ibmcloud oc cluster ls --provider vpc-gen2`.
 
 `--size-per-zone NUMBER_WORKERS_PER_ZONE`
 :    Specify the number of worker nodes to create per zone in this worker pool. No worker nodes are created until you [add zones](#cli_zone-add-vpc-gen2) to the worker pool. This value is required, and must be 2 or greater. For more information, see [What is the smallest size cluster that I can make?](/docs/openshift?topic=openshift-faqs#smallest_cluster).
 
-`--operating-system SYSTEM`
-:   Optional. The operating system of the worker nodes you want to provision in your cluster. For a list of available operating systems by cluster version, see [{{site.data.keyword.openshiftlong_notm}} version information](/docs/openshift?topic=openshift-openshift_versions).
+`--operating-system REDHAT_8_64|RHCOS`
+:   Optional. The operating system of the worker nodes in your cluster. For a list of available operating sysems by cluster version, see the [{{site.data.keyword.openshiftshort}} version information](/docs/openshift?topic=openshift-openshift_versions). If no option is specified, the default operating system that corresponds to the cluster version is used.
 
 `--flavor FLAVOR`
 :    Choose a flavor for your worker nodes. You can deploy your worker nodes as virtual machines on shared or dedicated hardware. To see flavors that are available in a VPC zone, run `ibmcloud oc flavors --zone <vpc_zone> --provider vpc-gen2`.
@@ -3227,8 +3231,8 @@ Minimum required permissions
 `-l, --label KEY1=VALUE1`
 :    Optional: Apply key-value labels to each worker node in the worker pool. To specify multiple labels, use multiple options, such as `-l key1=value1 -l key2=value2`.
 
-`--entitlement cloud_pak`
-:    Include this option only if you use this cluster with an [IBM Cloud Pak](/docs/openshift?topic=openshift-openshift_cloud_paks) that has a {{site.data.keyword.redhat_openshift_notm}} entitlement. When you specify the number of workers (`--size-per-zone`) and flavor (`--flavor`), make sure to specify only the number and size of worker nodes that you are entitled to use in [IBM Passport Advantage](https://www.ibm.com/software/passportadvantage/index.html){: external}. After creation, your worker pool does not charge you the {{site.data.keyword.redhat_openshift_notm}} license fee for your entitled worker nodes.
+`--entitlement ocp_entitled`
+:    Include this option only for a cluster that has a {{site.data.keyword.redhat_openshift_notm}} entitlement. When you specify the number of workers (`--size-per-zone`) and flavor (`--flavor`), make sure to specify only the number and size of worker nodes that you are entitled to use in [IBM Passport Advantage](https://www.ibm.com/software/passportadvantage/index.html){: external}. After creation, your worker pool does not charge you the {{site.data.keyword.redhat_openshift_notm}} license fee for your entitled worker nodes.
      Do not exceed your entitlement. Keep in mind that your OpenShift Container Platform entitlements can be used with other cloud providers or in other environments. To avoid billing issues later, make sure that you use only what you are entitled to use. For example, you might have an entitlement for the OCP licenses for two worker nodes of 4 CPU and 16 GB memory, and you create this worker pool with two worker nodes of 4 CPU and 16 GB memory. You used your entire entitlement, and you can't use the same entitlement for other worker pools, cloud providers, or environments.
      {: note}
 
@@ -3286,7 +3290,7 @@ Minimum required permissions
 `-p, --worker-pool WORKER_POOL`
 :    Required: The name of the worker node pool that you want to view the details of. To list available worker pools, run `ibmcloud oc worker-pool ls --cluster <cluster_name_or_ID>`.
 
-`-c, --cluster CLUSTER`
+`-c`, `--cluster CLUSTER`
 :    Required: The name or ID of the cluster where the worker pool is located.
 
 `--output json`
@@ -3326,7 +3330,7 @@ Minimum required permissions
 
 **Command options**:
 
-`-c, --cluster CLUSTER`
+`-c`, `--cluster CLUSTER`
 :    Required: The name or ID of the cluster where the worker pool is located.
 
 `-p, --worker-pool WORKER_POOL`
@@ -3366,7 +3370,7 @@ Minimum required permissions
 
 **Command options**:
 
-`-c, --cluster CLUSTER`
+`-c`, `--cluster CLUSTER`
 :    Required: The name or ID of the cluster where the worker pool is located.
 
 `--label LABEL`
@@ -3446,7 +3450,7 @@ Minimum required permissions
 
 **Command options**:
 
-`-c, --cluster CLUSTER`
+`-c`, `--cluster CLUSTER`
 :    Required: The name or ID of the cluster.
 
 `-p, --worker-pool WORKER_POOL`
@@ -3484,7 +3488,7 @@ Minimum required permissions
 **Command options**:
 
 
-`-c, --cluster CLUSTER`
+`-c`, `--cluster CLUSTER`
 :    Required: The name or ID of the cluster for which you want to resize worker pools.
 
 `--worker-pool WORKER_POOL`
@@ -3528,7 +3532,7 @@ Minimum required permissions
 `-p, --worker-pool WORKER_POOL`
 :    Required: The name of the worker node pool that you want to remove.
 
-`-c, --cluster CLUSTER`
+`-c`, `--cluster CLUSTER`
 :    Required: The name or ID of the cluster that you want to remove the worker pool from.
 
 `-q`
@@ -3577,7 +3581,7 @@ Minimum required permissions
 `-p, --worker-pool WORKER_POOL`
 :    Required: The name of the worker node pool that you want to add the taint to. To list available worker pools, run `ibmcloud oc worker-pool ls -c <cluster_name_or_ID>`.
 
-`-c, --cluster CLUSTER`
+`-c`, `--cluster CLUSTER`
 :    Required: The name or ID of the cluster with the worker pool that you want to taint.
 
 `--taint KEY=VALUE:EFFECT`
@@ -3620,7 +3624,7 @@ Minimum required permissions
 `-p, --worker-pool WORKER_POOL`
 :    Required: The name of the worker node pool that you want to add the taint to. To list available worker pools, run `ibmcloud oc worker-pool ls -c <cluster_name_or_ID>`.
 
-`-c, --cluster CLUSTER`
+`-c`, `--cluster CLUSTER`
 :    Required: The name or ID of the cluster with the worker pool that you want to taint.
 
 `-f`
@@ -3654,7 +3658,7 @@ Minimum required permissions
 
 **Command options**:
 
-`-c, --cluster CLUSTER`
+`-c`, `--cluster CLUSTER`
 :    Required: The name or ID of the cluster where the worker pool exists.
 
 `-p, --worker-pool WORKER_POOL`
@@ -3705,7 +3709,7 @@ Minimum required permissions
 `--zone ZONE`
 :    Required: The zone that you want to add. The zone must be a [multizone-capable zone](/docs/openshift?topic=openshift-regions-and-zones#zones-mz) within the cluster's region.
 
-`-c, --cluster CLUSTER`
+`-c`, `--cluster CLUSTER`
 :    Required: The name or ID of the cluster.
 
 `-p, --worker-pool WORKER_POOL`
@@ -3763,7 +3767,7 @@ Minimum required permissions
 `--subnet-id SUBNET_ID`
 :    Required: The ID of the subnet that you want to add. The VPC subnet must be within the `zone` that you specify. To see available VPC subnets, run `ibmcloud oc subnets --provider vpc-gen2 --vpc-id <vpc> --zone <vpc_zone>`. VPC subnets provide IP addresses for your worker nodes and load balancer services in the cluster, so use a [VPC subnet with enough IP addresses](/docs/openshift?topic=openshift-vpc-subnets#vpc_basics_subnets), such as 256.
 
-`-c, --cluster CLUSTER`
+`-c`, `--cluster CLUSTER`
 :    Required: The name or ID of the cluster. To list VPC clusters, run `ibmcloud oc cluster ls --provider vpc-gen2`.
 
 `-p, --worker-pool WORKER_POOL`
@@ -3850,7 +3854,7 @@ Minimum required permissions
 `--zone ZONE`
 :    Required: The zone that you want to add. The zone must be a [multizone-capable zone](/docs/openshift?topic=openshift-regions-and-zones#zones-mz) within the cluster's region.
 
-`-c, --cluster CLUSTER`
+`-c`, `--cluster CLUSTER`
 :    Required: The name or ID of the cluster.
 
 `-p, --worker-pool WORKER_POOL`
@@ -3936,7 +3940,7 @@ Minimum required permissions
 
 **Command options**:
 
-`-c, --cluster CLUSTER`
+`-c`, `--cluster CLUSTER`
 :    Required: The name or ID of the cluster.
 
 `--zone ZONE`
@@ -3992,7 +3996,7 @@ Minimum required permissions
 `--alb ALB`
 :    Required: The name or ID of the ALB to configure autoscaling on.
 
-`-c, --cluster CLUSTER`
+`-c`, `--cluster CLUSTER`
 :    Required: The name or ID of the cluster.
 
 `-q`
@@ -4031,7 +4035,7 @@ Minimum required permissions
 `--alb ALB`
 :    Required: The name or ID of the ALB to configure autoscaling on.
 
-`-c, --cluster CLUSTER`
+`-c`, `--cluster CLUSTER`
 :    Required: The name or ID of the cluster.
 
 
@@ -4083,7 +4087,7 @@ Minimum required permissions
 `--alb ALB`
 :    Required: The name or ID of the ALB to configure autoscaling on.
 
-`-c, --cluster CLUSTER`
+`-c`, `--cluster CLUSTER`
 :    Required: The name or ID of the cluster.
 
 `--output json`
@@ -4122,7 +4126,7 @@ Minimum required permissions
 
 **Command options**:
 
-`-c, --cluster CLUSTER`
+`-c`, `--cluster CLUSTER`
 :    Required: The name or ID of the cluster.
 
 `-q`
@@ -4158,7 +4162,7 @@ Minimum required permissions
 
 **Command options**:
 
-`-c, --cluster CLUSTER`
+`-c`, `--cluster CLUSTER`
 :    Required: The name or ID of the cluster.
 
 `-q`
@@ -4183,7 +4187,7 @@ Minimum required permissions
 
 **Command options**:
 
-`-c, --cluster CLUSTER`
+`-c`, `--cluster CLUSTER`
 :    Required: The name or ID of the cluster.
 
 `--output json`
@@ -4212,7 +4216,7 @@ Minimum required permissions
 
 **Command options**:
 
-`-c, --cluster CLUSTER`
+`-c`, `--cluster CLUSTER`
 :    The name or ID of the cluster.
 
 `--type (PUBLIC|PRIVATE)`
@@ -4268,7 +4272,7 @@ Minimum required permissions
 `--alb ALB_ID`
 :    Required: The ID for an ALB. To view the IDs for the ALBs in a cluster, run `ibmcloud oc ingress alb ls --cluster CLUSTER`.
 
-`-c, --cluster CLUSTER`
+`-c`, `--cluster CLUSTER`
 :    The name or ID of the cluster.
 
 `-q`
@@ -4313,7 +4317,7 @@ Minimum required permissions
 `--alb ALB_ID`
 :    Required: The ID for an ALB. To view the IDs for the ALBs in a cluster, run `ibmcloud oc ingress alb ls --cluster CLUSTER`.
 
-`-c, --cluster CLUSTER`
+`-c`, `--cluster CLUSTER`
 :    The name or ID of the cluster.
 
 `--ip IP_ADDRESS`
@@ -4359,7 +4363,7 @@ Minimum required permissions
 `--alb ALB_ID`
 :    Required: The ID for an ALB. To view the IDs for the ALBs in a cluster, run `ibmcloud oc ingress alb ls --cluster CLUSTER`.
 
-`-c, --cluster CLUSTER`
+`-c`, `--cluster CLUSTER`
 :    The name or ID of the cluster.
 
 `--output json`
@@ -4395,7 +4399,7 @@ Minimum required permissions
 
 **Command options**:
 
-`-c, --cluster CLUSTER`
+`-c`, `--cluster CLUSTER`
 :    The name or ID of the cluster.
 
 `-q`
@@ -4428,7 +4432,7 @@ Minimum required permissions
 
 **Command options**:
 
-`-c, --cluster CLUSTER`
+`-c`, `--cluster CLUSTER`
 :    The name or ID of the cluster.
 
 `-q`
@@ -4461,7 +4465,7 @@ Minimum required permissions
 
 **Command options**:
 
-`-c, --cluster CLUSTER`
+`-c`, `--cluster CLUSTER`
 :    The name or ID of the cluster.
 
 `--output json`
@@ -4541,7 +4545,7 @@ Minimum required permissions
 
 **Command options**:
 
-`-c, --cluster CLUSTER`
+`-c`, `--cluster CLUSTER`
 :    Required: The name or ID of the cluster where you want to update the ALBs.
 
 `--alb CLUSTER`
@@ -4610,7 +4614,7 @@ Minimum required permissions
 
 **Command options**:
 
-`-c, --cluster CLUSTER`
+`-c`, `--cluster CLUSTER`
 :    Required: The name or ID of the cluster where you want to create the domain.
 
 `--crn CRN`
@@ -4667,7 +4671,7 @@ Minimum required permissions
 
 **Command options**:
 
-`-c, --cluster CLUSTER`
+`-c`, `--cluster CLUSTER`
 :    Required: The name or ID of the cluster where the credential is applied. 
 
 `--output OUPUT`
@@ -4700,7 +4704,7 @@ Minimum required permissions
 
 **Command options**:
 
-`-c, --cluster CLUSTER`
+`-c`, `--cluster CLUSTER`
 :    Required: The name or ID of the cluster where the credential is applied. 
 
 `-q`
@@ -4730,7 +4734,7 @@ Minimum required permissions
 
 **Command options**:
 
-`-c, --cluster CLUSTER`
+`-c`, `--cluster CLUSTER`
 :    Required: The name or ID of the cluster where you want to add the credentials. 
 
 `--access-token TOKEN`
@@ -4775,7 +4779,7 @@ Minimum required permissions
 
 **Command options**:
 
-`-c, --cluster CLUSTER`
+`-c`, `--cluster CLUSTER`
 :    Required: The name or ID of the cluster where you want to add the credentials. 
 
 `-q`
@@ -4811,7 +4815,7 @@ Minimum required permissions
 
 **Command options**:
 
-`-c, --cluster CLUSTER`
+`-c`, `--cluster CLUSTER`
 :    Required: The name or ID of the cluster where the domain is applied.
 
 `--domain DOMAIN`
@@ -4844,7 +4848,7 @@ Minimum required permissions
 
 **Command options**:
 
-`-c, --cluster CLUSTER`
+`-c`, `--cluster CLUSTER`
 :    Required: The name or ID of the cluster where the domain is applied.
 
 `--domain DOMAIN`
@@ -4881,7 +4885,7 @@ Minimum required permissions
 
 **Command options**:
 
-`-c, --cluster CLUSTER`
+`-c`, `--cluster CLUSTER`
 :    Required: The name or ID of the cluster.
 
 `--output OUTPUT`
@@ -4914,7 +4918,7 @@ Minimum required permissions
 
 **Command options**:
 
-`-c, --cluster CLUSTER`
+`-c`, `--cluster CLUSTER`
 :    Required: The name or ID of the cluster where the domain is applied.
 
 `--domain DOMAIN`
@@ -4949,7 +4953,7 @@ Minimum required permissions
 
 **Command options**:
 
-`-c, --cluster CLUSTER`
+`-c`, `--cluster CLUSTER`
 :    Required: The name or ID of the cluster where the domain is applied.
 
 `--domain DOMAIN`
@@ -4985,7 +4989,7 @@ Minimum required permissions
 
 **Command options**:
 
-`-c, --cluster CLUSTER`
+`-c`, `--cluster CLUSTER`
 :    Required: The name or ID of the cluster where the domain is applied.
 
 `--domain DOMAIN`
@@ -5026,7 +5030,7 @@ Minimum required permissions
 
 **Command options**:
 
-`-c, --cluster CLUSTER`
+`-c`, `--cluster CLUSTER`
 :    Required: The name or ID of the cluster where the domain is applied.
 
 `--domain DOMAIN`
@@ -5303,7 +5307,7 @@ Minimum required permissions
 **Command options**:
 
 
-`-c, --cluster CLUSTER`
+`-c`, `--cluster CLUSTER`
 :    Required: The name or ID of the cluster.
 
 `-f`
@@ -5344,7 +5348,7 @@ Minimum required permissions
 
 
 
-`-c, --cluster CLUSTER`
+`-c`, `--cluster CLUSTER`
 :    Required: The name or ID of the cluster.
 
 `-f`
@@ -5387,7 +5391,7 @@ Minimum required permissions
 **Command options**:
 
 
-`-c, --cluster CLUSTER`
+`-c`, `--cluster CLUSTER`
 :    Required: The name or ID of the cluster.
 
 `--cidr CIDR`
@@ -5440,7 +5444,7 @@ Minimum required permissions
 `--cert-crn CERTIFICATE_CRN`
 :    Required: The certificate CRN.
 
-`-c, --cluster CLUSTER`
+`-c`, `--cluster CLUSTER`
 :    Required: The name or ID of the cluster.
 
 `--name SECRET_NAME`
@@ -5613,7 +5617,7 @@ Minimum required permissions
 
 **Command options**:
 
-`-c, --cluster CLUSTER`
+`-c`, `--cluster CLUSTER`
 :    Required: The name or ID of the cluster.
 
 `--name SECRET_NAME`
@@ -5660,7 +5664,7 @@ Minimum required permissions
 **Command options**:
 
 
-`-c, --cluster CLUSTER`
+`-c`, `--cluster CLUSTER`
 :    Required: The name or ID of the cluster.
 
 `--show-deleted`
@@ -5704,7 +5708,7 @@ Minimum required permissions
 **Command options**:
 
 
-`-c, --cluster CLUSTER`
+`-c`, `--cluster CLUSTER`
 :    Required: The name or ID of the cluster.
 
 `--name SECRET_NAME`
@@ -5747,7 +5751,7 @@ Minimum required permissions
 
 **Command options**:
 
-`-c, --cluster CLUSTER`
+`-c`, `--cluster CLUSTER`
 :    Required: The name or ID of the cluster.
 
 `--name SECRET_NAME`
@@ -5794,7 +5798,7 @@ Minimum required permissions
 
 **Command options**:
 
-`-c, --cluster CLUSTER`
+`-c`, `--cluster CLUSTER`
 :    Required: The name or ID of the cluster.
 
 `--output json`
@@ -5828,7 +5832,7 @@ Minimum required permissions
 
 **Command options**:
 
-`-c, --cluster CLUSTER`
+`-c`, `--cluster CLUSTER`
 :    Required: The name or ID of the cluster.
 
 `--output json`
@@ -5862,7 +5866,7 @@ Minimum required permissions
 
 **Command options**:
 
-`-c, --cluster CLUSTER`
+`-c`, `--cluster CLUSTER`
 :    Required: The name or ID of the cluster.
 
 `--output json`
@@ -5896,7 +5900,7 @@ Minimum required permissions
 
 **Command options**:
 
-`-c, --cluster CLUSTER`
+`-c`, `--cluster CLUSTER`
 :    Required: The name or ID of the cluster.
 
 `-code, --code CODE`
@@ -5934,7 +5938,7 @@ Minimum required permissions
 
 **Command options**:
 
-`-c, --cluster CLUSTER`
+`-c`, `--cluster CLUSTER`
 :    Required: The name or ID of the cluster.
 
 `--output json`
@@ -5968,7 +5972,7 @@ Minimum required permissions
 
 **Command options**:
 
-`-c, --cluster CLUSTER`
+`-c`, `--cluster CLUSTER`
 :    Required: The name or ID of the cluster.
 
 `-code, --code CODE`
@@ -6022,7 +6026,7 @@ Minimum required permissions
 
 **Command options**:
 
-`-c, --cluster CLUSTER`
+`-c`, `--cluster CLUSTER`
 :    Required: The name or ID of the cluster.
 
 `--ip NLB_IP`
@@ -6066,7 +6070,7 @@ Minimum required permissions
 
 **Command options**:
 
-`-c, --cluster CLUSTER`
+`-c`, `--cluster CLUSTER`
 :    Required: The name or ID of the cluster.
 
 `--ip IP`
@@ -6114,7 +6118,7 @@ Minimum required permissions
 
 **Command options**:
 
-`-c, --cluster CLUSTER`
+`-c`, `--cluster CLUSTER`
 :    Required: The name or ID of the cluster.
 
 `--lb-host VPC_ALB_HOSTNAME` | `--ip VPC_NLB_IP`
@@ -6156,7 +6160,7 @@ ibmcloud oc nlb-dns get --cluster CLUSTER --nlb-subdomain SUBDOMAIN [--output OU
 Minimum required permissions
 :   **Viewer** platform access role for the cluster in {{site.data.keyword.containerlong_notm}}
 
-`-c, --cluster CLUSTER`
+`-c`, `--cluster CLUSTER`
 :    Required: The name or ID of the cluster.
 
 `--nlb-subdomain SUBDOMAIN`
@@ -6195,7 +6199,7 @@ Minimum required permissions
 
 **Command options**:
 
-`-c, --cluster CLUSTER`
+`-c`, `--cluster CLUSTER`
 :    Required: The name or ID of the cluster.
 
 `--output json`
@@ -6238,7 +6242,7 @@ Minimum required permissions
 
 **Command options**:
 
-`-c, --cluster CLUSTER`
+`-c`, `--cluster CLUSTER`
 :    The name or ID of the cluster where the subdomain is registered.
 
 `--nlb-host SUBDOMAIN`
@@ -6322,7 +6326,7 @@ Minimum required permissions
 
 **Command options**:
 
-`-c, --cluster CLUSTER`
+`-c`, `--cluster CLUSTER`
 :    Required: The name or ID of the cluster.
 
 `--nlb-host SUBDOMAIN`
@@ -6366,7 +6370,7 @@ Minimum required permissions
 
 **Command options**:
 
-`-c, --cluster CLUSTER`
+`-c`, `--cluster CLUSTER`
 :    Required: The name or ID of the cluster.
 
 `--nlb-host SUBDOMAIN`
@@ -6407,7 +6411,7 @@ Minimum required permissions
 
 **Command options**:
 
-`-c, --cluster CLUSTER`
+`-c`, `--cluster CLUSTER`
 :    Required: The name or ID of the cluster.
 
 `--nlb-host SUBDOMAIN`
@@ -6448,7 +6452,7 @@ Minimum required permissions
 
 **Command options**:
 
-`-c, --cluster CLUSTER`
+`-c`, `--cluster CLUSTER`
 :    Required: The name or ID of the cluster.
 
 `--output json`
@@ -6485,7 +6489,7 @@ Minimum required permissions
 
 **Command options**:
 
-`-c, --cluster CLUSTER`
+`-c`, `--cluster CLUSTER`
 :    Required: The name or ID of the cluster.
 
 `--lb-host NEW_LB_HOSTNAME`
@@ -6529,7 +6533,7 @@ Minimum required permissions
 
 **Command options**:
 
-`-c, --cluster CLUSTER`
+`-c`, `--cluster CLUSTER`
 :    Required: The name or ID of the cluster.
 
 `--ip IP`
@@ -6574,7 +6578,7 @@ Minimum required permissions
 
 **Command options**:
 
-`-c, --cluster CLUSTER`
+`-c`, `--cluster CLUSTER`
 :    Required: The name or ID of the cluster.
 
 `--nlb-subdomain SUBDOMAIN`
@@ -6621,7 +6625,7 @@ Minimum required permissions
 
 **Command options**:
 
-`-c, --cluster CLUSTER`
+`-c`, `--cluster CLUSTER`
 :    Required: The name or ID of the cluster.
 
 `--nlb-subdomain SUBDOMAIN`
@@ -6663,7 +6667,7 @@ Minimum required permissions
 
 **Command options**:
 
-`-c, --cluster CLUSTER`
+`-c`, `--cluster CLUSTER`
 :    Required: The name or ID of the cluster.
 
 `--nlb-subdomain SUBDOMAIN`
@@ -6709,7 +6713,7 @@ Minimum required permissions
 
 **Command options**:
 
-`-c, --cluster CLUSTER`
+`-c`, `--cluster CLUSTER`
 :    Required: The name or ID of the cluster.
 
 `--level LEVEL`
@@ -6764,7 +6768,7 @@ Minimum required permissions
 
 **Command options**:
 
-`-c, --cluster CLUSTER`
+`-c`, `--cluster CLUSTER`
 :    Required: The name or ID of the cluster.
 
 `--output json`
@@ -8161,8 +8165,8 @@ ibmcloud oc cluster create satellite --location LOCATION --name NAME --version V
 `--infrastructure-topology TOPOLOGY`
 :    Optional. Specify whether the cluster runs a single worker node or the default setup of three of worker nodes. To create a single-node cluster, specify `single-replica`. This option is only supported for {{site.data.keyword.openshiftlong_notm}} version 4.11 or later and requires that you specify a {{site.data.keyword.satelliteshort}} location with CoreOS enabled. **Note that single-node clusters lack high availability and are only recommended for specific circumstances. By provisioning a single-node cluster, you accept that you are more likely to experience downtime and disruptions in your workload.** 
 
-`--operating-system REDHAT_7_64|REDHAT_8_64|RHCOS`
-:   Optional. The operating system of the worker nodes in your cluster. For a list of available operating sysems by cluster version, see [Available {{site.data.keyword.redhat_openshift_notm}} versions](/docs/openshift?topic=openshift-openshift_versions#openshift_versions_available). Note that to use your `RHCOS` hosts in your clusters, you must create a Red Hat CoreOS-enabled location and a cluster that runs version 4.9 or later. If no option is specified, the default [operating system that corresponds to the cluster version](/docs/openshift?topic=openshift-openshift_versions#openshift_versions_available) is used.
+`--operating-system REDHAT_8_64|RHCOS`
+:   Optional. The operating system of the worker nodes in your cluster. For a list of available operating sysems by cluster version, see the [{{site.data.keyword.openshiftshort}} version information](/docs/openshift?topic=openshift-openshift_versions). If no option is specified, the default operating system that corresponds to the cluster version is used.
 
 `--pod-subnet SUBNET`
 :    Optional. All pods that are deployed to a worker node are assigned a private IP address in the 172.30.0.0/16 range by default. You can avoid subnet conflicts with the network that you use to connect to your location by specifying a custom subnet CIDR that provides the private IP addresses for your pods.
@@ -8170,10 +8174,7 @@ ibmcloud oc cluster create satellite --location LOCATION --name NAME --version V
 :    The subnet that you choose must be within one of the following ranges.
      - `172.17.0.0 - 172.17.255.255`
      - `172.21.0.0 - 172.31.255.255`
-
-
      - `192.168.0.0 - 192.168.254.255`
-
      - `198.18.0.0 - 198.19.255.255`
 
 :    Note that the pod and service subnets can't overlap. The service subnet is in the 172.21.0.0/16 range by default. This value can't be set to the value of the related location's pod-subnet or service-subnet.
@@ -8195,10 +8196,7 @@ ibmcloud oc cluster create satellite --location LOCATION --name NAME --version V
 :    The subnet must be specified in CIDR format with a size of at least `/24`, which allows a maximum of 255 services in the cluster, or larger. The subnet that you choose must be within one of the following ranges.
      - `172.17.0.0 - 172.17.255.255`
      - `172.21.0.0 - 172.31.255.255`
-
-
      - `192.168.0.0 - 192.168.254.255`
-
      - `198.18.0.0 - 198.19.255.255`
 
 :    Note that the pod and service subnets can't overlap. The pod subnet is in the 172.30.0.0/16 range by default. This value can't be set to the value of the related location's pod-subnet or service-subnet.
@@ -8219,8 +8217,9 @@ ibmcloud oc cluster create satellite --location LOCATION --name NAME --version V
 
 `--entitlement`
 :    Set this option to `cloud_pak` only if you use this cluster with an [IBM Cloud Pak](/docs/openshift?topic=openshift-openshift_cloud_paks) that has a {{site.data.keyword.redhat_openshift_notm}} entitlement. When you specify the number of workers (`--workers`) and flavor (`--flavor`), make sure to specify only the number and size of worker nodes that you are entitled to use in [IBM Passport Advantage](https://www.ibm.com/software/passportadvantage/index.html){: external}. After your cluster is created, you are not charged the {{site.data.keyword.redhat_openshift_notm}} license fee for the entitled worker nodes in the `default` worker pool.
-     Do not exceed your entitlement. Keep in mind that your OpenShift Container Platform entitlements can be used with other cloud providers or in other environments. To avoid billing issues later, make sure that you use only what you are entitled to use. For example, you might have an entitlement for the OCP licenses for two worker nodes of 4 CPU and 16 GB memory, and you create this worker pool with two worker nodes of 4 CPU and 16 GB memory. You used your entire entitlement, and you can't use the same entitlement for other worker pools, cloud providers, or environments.
-     {: note}
+
+Do not exceed your entitlement. Keep in mind that your OpenShift Container Platform entitlements can be used with other cloud providers or in other environments. To avoid billing issues later, make sure that you use only what you are entitled to use. For example, you might have an entitlement for the OCP licenses for two worker nodes of 4 CPU and 16 GB memory, and you create this worker pool with two worker nodes of 4 CPU and 16 GB memory. You used your entire entitlement, and you can't use the same entitlement for other worker pools, cloud providers, or environments.
+{: note}
 
 
 
@@ -8256,7 +8255,7 @@ ibmcloud oc cluster master satellite-service-endpoint allowlist add --cluster CL
 
 **Command options**:
 
-`-c, --cluster CLUSTER`
+`-c`, `--cluster CLUSTER`
 :    Required. The name or ID of the cluster.
 
 `--subnet SUBNET`
@@ -8289,7 +8288,7 @@ ibmcloud oc cluster master satellite-service-endpoint allowlist disable --cluste
 
 **Command options**:
 
-`-c, --cluster CLUSTER`
+`-c`, `--cluster CLUSTER`
 :    Required. The name or ID of the cluster.
 
 `--subnet SUBNET`
@@ -8325,7 +8324,7 @@ ibmcloud oc cluster master satellite-service-endpoint allowlist enable --cluster
 
 **Command options**:
 
-`-c, --cluster CLUSTER`
+`-c`, `--cluster CLUSTER`
 :    Required. The name or ID of the cluster.
 
 `-f`
@@ -8358,7 +8357,7 @@ ibmcloud oc cluster master satellite-service-endpoint allowlist get --cluster CL
 
 **Command options**:
 
-`-c, --cluster CLUSTER`
+`-c`, `--cluster CLUSTER`
 :    Required. The name or ID of the cluster.
 
 `-q`
@@ -8388,7 +8387,7 @@ ibmcloud oc cluster master satellite-service-endpoint allowlist remove --cluster
 
 **Command options**:
 
-`-c, --cluster CLUSTER`
+`-c`, `--cluster CLUSTER`
 :    Required. The name or ID of the cluster.
 
 `-f`
@@ -8421,7 +8420,7 @@ ibmcloud oc worker-pool create satellite --cluster CLUSTER --host-label LABEL [-
 
 **Command options**:
 
-`-c, --cluster CLUSTER`
+`-c`, `--cluster CLUSTER`
 :    Required. The name or ID of the cluster.
 
 `--host-label, -hl LABEL`
@@ -8430,8 +8429,8 @@ ibmcloud oc worker-pool create satellite --cluster CLUSTER --host-label LABEL [-
 `--name POOL_NAME`
 :    Required. The name that you want to give your worker pool.
 
-`--operating-system REDHAT_7_64|REDHAT_8_64|RHCOS`
-:   Optional. The operating system of the worker nodes in your cluster. For a list of available operating sysems by cluster version, see [Available {{site.data.keyword.redhat_openshift_notm}} versions](/docs/openshift?topic=openshift-openshift_versions#openshift_versions_available). Note that to use your `RHCOS` hosts in your clusters, you must create a Red Hat CoreOS-enabled location and a cluster that runs version 4.9 or later. If no option is specified, the default [operating system that corresponds to the cluster version](/docs/openshift?topic=openshift-openshift_versions#openshift_versions_available) is used.
+`--operating-system REDHAT_8_64|RHCOS`
+:   Optional. The operating system of the worker nodes in your cluster. For a list of available operating sysems by cluster version, see the [{{site.data.keyword.openshiftshort}} version information](/docs/openshift?topic=openshift-openshift_versions). If no option is specified, the default operating system that corresponds to the cluster version is used.
 
 `--size-per-zone WORKERS_PER_ZONE`
 :    Required. The number of worker nodes to request in each zone. Ensure that you [attach enough hosts to your location](/docs/satellite?topic=satellite-attach-hosts) to be used as worker nodes. For example, if you enter `2` and then [add 2 more zones](/docs/openshift?topic=openshift-kubernetes-service-cli#cs_zone_add_sat) to this worker pool after you create it, ensure that at least 6 unassigned hosts are attached to your location so that they can be assigned as 2 worker nodes in each of the 3 zones in your worker pool.
@@ -8482,7 +8481,7 @@ ibmcloud oc zone add satellite --zone ZONE --cluster CLUSTER [--worker-pool WORK
 `--zone ZONE`
 :    Required. The name of the zone that you want to add. To see the zone names for your location, run `ibmcloud sat location get --location <location_name_or_ID>` and look for the `Host Zones` field.
 
-`-c, --cluster CLUSTER`
+`-c`, `--cluster CLUSTER`
 :    Required: The name or ID of the cluster.
 
 `-p, --worker-pool WORKER_POOL`
@@ -8508,4 +8507,3 @@ ibmcloud oc zone add satellite --zone myzone2 --cluster my_cluster -p pool1 -p p
 
 
 
-  

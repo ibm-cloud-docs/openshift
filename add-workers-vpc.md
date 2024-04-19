@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2024
-lastupdated: "2024-04-04"
+lastupdated: "2024-04-19"
 
 
 keywords: openshift, {{site.data.keyword.openshiftlong_notm}}, clusters, worker nodes, worker pools, add
@@ -13,11 +13,6 @@ subcollection: openshift
 ---
 
 {{site.data.keyword.attribute-definition-list}}
-
-
-
-
-
 
 
 # Adding worker nodes to VPC clusters
@@ -129,15 +124,38 @@ Before you begin, make sure that you have the [**Operator** or **Administrator**
         ```
         {: pre}
 
-1. Create a worker pool. Include the `--label` option to automatically label worker nodes that are in the pool with the label `key=value`. Include the `--vpc-id` option if the worker pool is the first in the cluster. Optionally include the `--kms-instance` and `--crk` options with the values you previously retrieved  and if the KMS instance resides in a different account, include the `--kms-account-id` option as well. To attach additional security groups to the workers in the worker pool, specify the security group IDs with the `--security-group` option. For more options, see the [CLI documentation](/docs/openshift?topic=openshift-kubernetes-service-cli#cli_worker_pool_create_vpc_gen2).
-
-    If you want to create your worker pool on dedicated hosts, make sure to specify the `--dedicated-host-pool` option.
-    {: note}
+1. Create a worker pool. For more options, see the [CLI documentation](/docs/openshift?topic=openshift-kubernetes-service-cli#cli_worker_pool_create_vpc_gen2).
 
     ```sh
-    ibmcloud oc worker-pool create vpc-gen2 --name <name> --cluster CLUSTER-NAME --flavor <flavor> --size-per-zone <number_of_worker_nodes_min_2> [--label <key>=<value>] [--vpc-id] [[--kms-account-id <KMS_account_ID>] --kms-instance <KMS_instance_ID> --crk <root_key_ID>] [--dedicated-host-pool <dedicated-host-pool>] [--security-group <group-id>]
+    ibmcloud oc worker-pool create vpc-gen2 --name <name> --cluster CLUSTER-NAME --flavor <flavor> --size-per-zone <number_of_worker_nodes_min_2> [--label <key>=<value>] [--vpc-id] [[--kms-account-id <KMS_account_ID>] --kms-instance <KMS_instance_ID> --crk <root_key_ID>] [--dedicated-host-pool <dedicated-host-pool>] [--security-group <group-id>] [--operating-system SYSTEM]
     ```
     {: pre}
+
+    `--label KEY=VALUE`
+    :   **Optional**: Automatically label worker nodes that are in the pool with the label `key=value` pair.
+
+    `--vpc-id VPC`
+    :   Specify this  option if the worker pool is the first in the cluster.
+
+    `--operating-system REDHAT_8_64|RHCOS`
+:   Optional. The operating system of the worker nodes in your cluster. For a list of available operating sysems by cluster version, see the [{{site.data.keyword.openshiftshort}} version information](/docs/openshift?topic=openshift-openshift_versions). If no option is specified, the default operating system that corresponds to the cluster version is used.
+
+    `--kms-account-id ACCOUNT`
+    :   **Optional**: Specify the account where your KMS instance resides. Include the `--kms-instance-id` and `--crk` options as well.
+
+
+    `--kms-instance INSTANCE`
+    :   **Optional**: Specify your KMS instance ID. Include the `--kms-account-id` and `--crk` options as well.
+
+    `--crk KEY`
+    :   **Optional**: Specify your KMS root key. Include the `--kms-account-id` and `--kms-instance` options as well.
+
+    `--security-group GROUP`
+    :   Specify this option to attach additional security groups to the workers in the worker pool. Include the security group IDs that you want to attach.
+    
+    `--dedicated-host-pool POOL`
+    :   Specify this option if you want to create your worker pool on dedicated hosts.
+
 
 1. Verify that the worker pool is created.
     ```sh
@@ -239,7 +257,5 @@ If you have multiple worker pools in your cluster, add the zone to all them so t
     ```
     {: screen}
 
-1. To expose apps with [Ingress](/docs/openshift?topic=openshift-ingress-about-roks4), you must [update the VPC load balancer that exposes the router](/docs/openshift?topic=openshift-router-mzr-error) to include the subnet for the new zone in your cluster.
-
-
+1. To expose apps with [Ingress](/docs/openshift?topic=openshift-ingress-about-roks4), [update the VPC load balancer that exposes the router](/docs/openshift?topic=openshift-router-mzr-error) to include the subnet for the new zone in your cluster.
 

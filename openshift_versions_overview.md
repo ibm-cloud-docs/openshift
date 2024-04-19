@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2024
-lastupdated: "2024-03-15"
+lastupdated: "2024-04-19"
 
 
 keywords: openshift, version, update, upgrade
@@ -41,9 +41,6 @@ For more details about the {{site.data.keyword.redhat_openshift_notm}} and Kuber
 
 Dates that are marked with a dagger (`†`) are tentative and subject to change.
 {: note}
-
-RHEL 7 is deprecated and becomes unsupported soon. For migration actions by cluster version, see [Migrating to a new Red Hat Enterprise Linux version](/docs/openshift?topic=openshift-rhel_migrate).
-{: important}
 
 
 
@@ -144,25 +141,6 @@ RHEL 7 is deprecated and becomes unsupported soon. For migration actions by clus
 
 Unsupported versions:
 :    For information about unsupported versions, see the [archive](#version-archive). 
-
-## Checking a cluster's Kubernetes server version
-{: #openshift_server_version}
-
-To check the Kubernetes server version of a cluster, log in to the cluster and run the following command.
-{: shortdesc}
-
-```sh
-oc version
-```
-{: pre}
-
-Example output
-```sh
-Client Version: 4.14.3
-Server Version: 4.14.12
-Kubernetes Version: v1.28.2
-```
-{: screen}
 
 
 ## Release lifecycle

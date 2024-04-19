@@ -91,11 +91,11 @@ toc:
       - topicgroup:
           label: Managing the cluster and worker node lifecycle
           topics:
+          - worker-os-check.md
           - update.md
           - dedicated-hosts.md
           - rhel_migrate.md
           - sat-worker-pool-manage.md
-          - worker-os-check.md
           - host-maintenance.md
           - access-apikey.md
           - ca-rotate.md
