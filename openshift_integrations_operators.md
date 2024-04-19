@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2024
-lastupdated: "2024-04-17"
+lastupdated: "2024-04-19"
 
 
 keywords: openshift, disconnect, airgap, olm, mirror
@@ -74,7 +74,7 @@ You can add the IBM Operator Catalog as a source on OperatorHub by configuring a
     {: pre}
 
 
-## Disabling and mirroring OperatorHub catalog source images
+## Disabling OperatorHub and mirroring catalog source images to `icr.io`
 {: #mirror-operatorhub}
 
 You can disable and mirror the OperatorHub catalog source images by following the [Operator Lifecycle Manager (OLM) on restricted networks documentation from Red Hat](https://docs.openshift.com/container-platform/4.14/operators/admin/olm-restricted-networks.html){: external}. 

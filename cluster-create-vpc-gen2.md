@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2024
-lastupdated: "2024-04-05"
+lastupdated: "2024-04-19"
 
 
 keywords: openshift, {{site.data.keyword.openshiftlong_notm}}, kubernetes, clusters, worker nodes, worker pools, vpc-gen2
@@ -22,6 +22,8 @@ subcollection: openshift
 Use the {{site.data.keyword.cloud_notm}} CLI or the {{site.data.keyword.cloud_notm}} console to create a standard VPC cluster, and customize your cluster to meet the high availability and security requirements of your apps.
 {: shortdesc}
 
+
+
 ## Prerequisites and notes
 {: #cluster-create-vpc-prereq}
 
@@ -30,8 +32,6 @@ Use the {{site.data.keyword.cloud_notm}} CLI or the {{site.data.keyword.cloud_no
 * If you plan to enable both the public and private cloud service endpoints, you must attach a public gateway to each subnet to access default {{site.data.keyword.redhat_openshift_notm}} components such as the web console or OperatorHub. Additionally, a public network gateway is required when you want your cluster to access public endpoints, such as a public URL of another app or an {{site.data.keyword.cloud_notm}} service that supports public cloud service endpoints only. Make sure to review the [VPC networking basics](/docs/openshift?topic=openshift-plan_vpc_basics) to understand when a public network gateway is required and how you can set up your cluster to limit public access to one or more subnets only.
 
 * Before you can use KMS encryption, you must create a KMS instance and set up the required service authorization in IAM. For more information, see [Managing encryption for the worker nodes in your cluster](/docs/openshift?topic=openshift-encryption).
-
-* By default, your cluster is provisioned with a VPC security group and a cluster-level security group. If you want to attach additional security groups or change which default security groups are applied when you create the cluster, you must [create your VPC cluster in the CLI](/docs/openshift?topic=openshift-cluster-create-vpc-gen2&interface=cli#cluster_vpcg2_cli).
 
 * Do not delete the subnets that you attach to your cluster during cluster creation or when you add worker nodes in a zone. If you delete a VPC subnet that your cluster used, any load balancers that use IP addresses from the subnet might experience issues, and you might be unable to create new load balancers.
 
@@ -43,6 +43,8 @@ Use the {{site.data.keyword.cloud_notm}} CLI or the {{site.data.keyword.cloud_no
 
 * If your VPC Clusters require access to Classic Infrastructure resources, you must [enable VRF](/docs/account?topic=account-vrf-service-endpoint&interface=ui#vrf) and [service endpoints](/docs/account?topic=account-vrf-service-endpoint&interface=ui#service-endpoint) in your account.
 
+OpenShift Data Foundation and the cluster autoscaler add-ons do not support Red Hat CoreOS worker nodes. If you need to install these add-ons in your cluster, use RHEL worker nodes instead.
+{: important}
 
 
 
@@ -66,7 +68,7 @@ Version
 
 
 License
-:   Apply a Cloud Pak entitlement or purchase a license for your cluster. For more information, see [Assigning software licenses to your account](/docs/account?topic=account-software-license&interface=ui), [Assigning a Cloud Pak entitlement to your IBM Cloud account](/docs/openshift?topic=openshift-openshift_cloud_paks), or the [Cloud Pak FAQ](https://www.ibm.com/support/pages/ibm-cloud-paks-support-red-hat-entitlement-frequently-asked-questions-faq){: external}.
+:   Apply an entitlement or purchase a license for your cluster. For more information, see [Assigning software licenses to your account](/docs/account?topic=account-software-license&interface=ui), [Adding Cloud Paks, entitlements, or licenses to your cluster](/docs/openshift?topic=openshift-openshift_cloud_paks), and the [Cloud Pak FAQ](https://www.ibm.com/support/pages/ibm-cloud-paks-support-red-hat-entitlement-frequently-asked-questions-faq){: external}.
 
 
 
@@ -150,7 +152,7 @@ Observability integrations
 
 4. Create the cluster in your VPC. You can use the `ibmcloud oc cluster create vpc-gen2` command to create a single zone cluster in your VPC with worker nodes that are connected to one VPC subnet only. If you want to create a multizone cluster, you can use the {{site.data.keyword.cloud_notm}} console, or [add more zones](/docs/openshift?topic=openshift-add-workers-vpc) to your cluster after the cluster is created. The cluster takes a few minutes to provision.
     ```sh
-    ibmcloud oc cluster create vpc-gen2 --name <cluster_name> --zone <vpc_zone> --vpc-id <vpc_ID> --subnet-id <vpc_subnet_ID> --flavor <worker_flavor> --version 4.14_openshift --cos-instance <COS_CRN> --workers <number_workers_per_zone> [--sm-group GROUP] [--sm-instance INSTANCE] [--pod-subnet] [--service-subnet] [--disable-public-service-endpoint] [[--kms-account-id <kms_account_ID>] --kms-instance <KMS_instance_ID> --crk <root_key_ID>] [--secondary-storage STORAGE] [--disable-outbound-traffic-protection]
+    ibmcloud oc cluster create vpc-gen2 --name <cluster_name> --zone <vpc_zone> --vpc-id <vpc_ID> --subnet-id <vpc_subnet_ID> --flavor <worker_flavor> --version 4.14_openshift --cos-instance <COS_CRN> --workers <number_workers_per_zone> [--sm-group GROUP] [--sm-instance INSTANCE] [--pod-subnet] [--service-subnet] [--disable-public-service-endpoint] [[--kms-account-id <kms_account_ID>] --kms-instance <KMS_instance_ID> --crk <root_key_ID>] [--secondary-storage STORAGE] [--disable-outbound-traffic-protection] [--operating-system SYSTEM]
 
     ```
     {: pre}
@@ -179,9 +181,8 @@ Observability integrations
     `--workers <number>`
     :   Specify at least 2 worker nodes to include in the cluster. For more information, see [What is the smallest size cluster that I can make?](/docs/openshift?topic=openshift-faqs#smallest_cluster). This value is optional.
 
-    `--operating-system SYSTEM`
-    :   Optional. The operating system of the worker nodes you want to provision in your cluster. For a list of available operating systems by cluster version, see the [{{site.data.keyword.openshiftshort}} version information](/docs/openshift?topic=openshift-openshift_versions).
-    :   If no option is specified, the default operating system version that corresponds to the cluster version is used.
+    `--operating-system REDHAT_8_64|RHCOS`
+:   Optional. The operating system of the worker nodes in your cluster. For a list of available operating sysems by cluster version, see the [{{site.data.keyword.openshiftshort}} version information](/docs/openshift?topic=openshift-openshift_versions). If no option is specified, the default operating system that corresponds to the cluster version is used.
 
 
    `--cluster-security-group <group_ID>`
@@ -281,11 +282,18 @@ ibmcloud oc cluster create vpc-gen2 --name my_cluster --version 4.14_openshift -
 ```
 {: pre}
 
-
-Example command for a VPC cluster provisioned at version 4.9 with worker nodes that run the RHEL 8 operating system. For a complete list of available RHEL versions and which cluster versions they are compatible with, see [Available {{site.data.keyword.redhat_openshift_notm}} versions](/docs/openshift?topic=openshift-openshift_versions#openshift_versions_available).
+Example command for a VPC cluster with worker nodes that run the Red Hat CoreOS (RHCOS) operating system.
 
 ```sh
-ibmcloud oc cluster create vpc-gen2 --name my_cluster --zone us-south-1 --flavor b3c.4x16 --vpc_ID VPC-ID --subnet-id SUBNET-ID --version 4.9.28_openshift --operating-system REDHAT_8_64
+ibmcloud oc cluster create vpc-gen2 --name my_cluster --zone us-south-1 --flavor b3c.4x16 --vpc_ID VPC-ID --subnet-id SUBNET-ID --operating-system RHCOS
+```
+{: pre}
+
+
+Example command for a VPC cluster with worker nodes that run the RHEL 8 operating system.
+
+```sh
+ibmcloud oc cluster create vpc-gen2 --name my_cluster --zone us-south-1 --flavor b3c.4x16 --vpc_ID VPC-ID --subnet-id SUBNET-ID --operating-system REDHAT_8_64
 ```
 {: pre}
 

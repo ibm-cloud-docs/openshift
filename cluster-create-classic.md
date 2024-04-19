@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2024
-lastupdated: "2024-03-28"
+lastupdated: "2024-04-19"
 
 
 keywords: openshift, {{site.data.keyword.openshiftlong_notm}}, kubernetes, clusters, worker nodes, worker pools, classic, create
@@ -51,6 +51,7 @@ Kubernetes version
 Worker pool
 :    The cluster worker pool defines the number and type of worker nodes that run your workload. You can change your worker pool details at anytime.
 :    - **Flavor**: The flavor defines the amount of virtual CPU, memory, and disk space that is set up in each worker node and made available to the containers. Available bare metal and virtual machines types vary by the zone in which you deploy the cluster. For more information, see [Planning your worker node setup](/docs/openshift?topic=openshift-planning_worker_nodes). 
+:    - **Operating system** and **Architecture**:  For a list of the available operating systems and architectures by cluster version, see the [available versions](/docs/containers?topic=containers-cs_versions#cs_versions_available).
 :    - **Worker nodes per zone**: For high availability, at least 3 worker nodes per zone are recommended. 
 :    - **Encrypt local disk**: By default, [worker nodes feature AES 256-bit disk encryption](/docs/openshift?topic=openshift-security#workernodes). You can choose to turn off disk encryption when you create the cluster.
 
@@ -141,7 +142,7 @@ Create your single zone or multizone classic cluster by using the {{site.data.ke
 
 1. Create your standard cluster.
     ```sh
-    ibmcloud oc cluster create classic --zone <zone> --flavor <flavor> --hardware <shared_or_dedicated> --public-vlan <public_VLAN_ID> --private-vlan <private_VLAN_ID> --workers <number> [--operating-system (REDHAT_7_64|REDHAT_8_64)] --name <cluster_name> --version <major.minor.patch>_openshift --public-service-endpoint [--private-service-endpoint] [--pod-subnet] [--service-subnet] [--disable-disk-encrypt] [--sm-group GROUP] [--sm-instance INSTANCE]
+    ibmcloud oc cluster create classic --zone <zone> --flavor <flavor> --hardware <shared_or_dedicated> --public-vlan <public_VLAN_ID> --private-vlan <private_VLAN_ID> --workers <number> [--operating-system (REDHAT_8_64)] --name <cluster_name> --version <major.minor.patch>_openshift --public-service-endpoint [--private-service-endpoint] [--pod-subnet] [--service-subnet] [--disable-disk-encrypt] [--sm-group GROUP] [--sm-instance INSTANCE]
     ```
     {: pre}
 
@@ -181,10 +182,7 @@ Create your single zone or multizone classic cluster by using the {{site.data.ke
     The subnet that you choose must be within one of the following ranges:
         - `172.17.0.0 - 172.17.255.255`
         - `172.21.0.0 - 172.31.255.255`
-
-
         - `192.168.0.0 - 192.168.254.255`
-
         - `198.18.0.0 - 198.19.255.255`
         
 
@@ -193,10 +191,7 @@ Create your single zone or multizone classic cluster by using the {{site.data.ke
     :   The subnet must be specified in CIDR format with a size of at least `/24`, which allows a maximum of 255 services in the cluster, or larger. The subnet that you choose must be within one of the following ranges:
         - `172.17.0.0 - 172.17.255.255`
         - `172.21.0.0 - 172.31.255.255`
-
-
         - `192.168.0.0 - 192.168.254.255`
-
         - `198.18.0.0 - 198.19.255.255`
         
     :   Note that the pod and service subnets can't overlap. The pod subnet is in the 172.30.0.0/16 range by default.
@@ -204,8 +199,8 @@ Create your single zone or multizone classic cluster by using the {{site.data.ke
     `--disable-disk-encrypt`
     :   Worker nodes feature AES 256-bit [disk encryption by default](/docs/openshift?topic=openshift-security#encrypted_disk). If you want to disable encryption, include this option.
     
-    `--entitlement cloud_pak`
-    :   Include this option only if you use this cluster with an [IBM Cloud Pak](/docs/openshift?topic=openshift-openshift_cloud_paks) that has a {{site.data.keyword.redhat_openshift_notm}} entitlement. When you specify the number of workers (`--workers`) and flavor (`--flavor`), make sure to specify only the number and size of worker nodes that you are entitled to use in [IBM Passport Advantage](https://www.ibm.com/software/passportadvantage/index.html){: external}. After your cluster is created, you are not charged the {{site.data.keyword.redhat_openshift_notm}} license fee for the entitled worker nodes in the `default` worker pool.
+    `--entitlement ocp_entitled`
+    :   Include this option only for a cluster that has a {{site.data.keyword.redhat_openshift_notm}} entitlement. When you specify the number of workers (`--workers`) and flavor (`--flavor`), make sure to specify only the number and size of worker nodes that you are entitled to use in [IBM Passport Advantage](https://www.ibm.com/software/passportadvantage/index.html){: external}. After your cluster is created, you are not charged the {{site.data.keyword.redhat_openshift_notm}} license fee for the entitled worker nodes in the `default` worker pool.
     Do not exceed your entitlement. Keep in mind that your OpenShift Container Platform entitlements can be used with other cloud providers or in other environments. To avoid billing issues later, make sure that you use only what you are entitled to use. For example, you might have an entitlement for the OCP licenses for two worker nodes of 4 CPU and 16 GB memory, and you create this worker pool with two worker nodes of 4 CPU and 16 GB memory. You used your entire entitlement, and you can't use the same entitlement for other worker pools, cloud providers, or environments.
     {: important}
 
@@ -260,7 +255,7 @@ Your cluster is ready for your workloads! You might also want to [add a tag to y
 {: #cluster_create_classic}
 {: cli}
 
-Classic cluster, shared virtual machine
+Example command to create a Classic cluster on shared virtual machine.
 
 ```sh
 ibmcloud oc cluster create classic --name my_cluster --version 4.14_openshift --zone dal10 --flavor b3c.4x16 --hardware shared --workers 3
@@ -268,32 +263,32 @@ ibmcloud oc cluster create classic --name my_cluster --version 4.14_openshift --
 {: pre}
 
 
-Classic cluster, bare metal
+Example command to create a Classic cluster on bare metal.
 
 ```sh
 ibmcloud oc cluster create classic --name my_cluster --version 4.14_openshift --zone dal10 --flavor mb2c.4x32 --hardware dedicated --workers 3 --public-vlan <public_VLAN_ID> --private-vlan <private_VLAN_ID>
 ```
 {: pre}
 
-
-
-Classic cluster with an IBM Cloud Pak entitlement for a default worker pool of 3 worker nodes with 4 cores and 16 memory each.
+Example command to create aClassic cluster with an IBM Cloud Pak entitlement for a default worker pool of 3 worker nodes with 4 cores and 16 memory each.
 
 ```sh
-ibmcloud oc cluster create classic --name cloud_pak_cluster --version 4.14_openshift --zone dal10 --flavor b3c.4x16 --hardware dedicated --workers 3 --entitlement cloud_pak --public-vlan <public_VLAN_ID> --private-vlan <private_VLAN_ID> [--operating-system (REDHAT_7_64|REDHAT_8_64)]
+ibmcloud oc cluster create classic --name cloud_pak_cluster --version 4.14_openshift --zone dal10 --flavor b3c.4x16 --hardware dedicated --workers 3 --entitlement ENTITLEMENT --public-vlan PUBLIC-VLAN-ID --private-vlan PRIVATE-VLAN-ID [--operating-system (REDHAT_8_64)]
 ```
 {: pre}
 
-For a complete list of available RHEL versions and which cluster versions they are compatible with, see [Available {{site.data.keyword.redhat_openshift_notm}} versions](/docs/openshift?topic=openshift-openshift_versions#openshift_versions_available).
+
+Example command to create a Classic cluster with RHEL 8 worker nodes.
 
 ```sh
 ibmcloud oc cluster create classic --name my_cluster --zone dal10 --flavor b3c.4x16 --version 4.9.28_openshift --operating-system REDHAT_8_64
 ```
+{: pre}
 
 
 
 
-For a classic multizone cluster, after you created the cluster in a [multizone metro](/docs/openshift?topic=openshift-regions-and-zones#zones-mz), [add zones](/docs/openshift?topic=openshift-add-workers-classic):
+For a classic multizone cluster, after you created the cluster in a [multizone metro](/docs/openshift?topic=openshift-regions-and-zones#zones-mz), [add zones](/docs/openshift?topic=openshift-add-workers-classic). Example command to add a zone to a Classic cluster.
 ```sh
 ibmcloud oc zone add classic --zone <zone> --cluster <cluster_name_or_ID> --worker-pool <pool_name> --private-vlan <private_VLAN_ID> --public-vlan <public_VLAN_ID>
 ```

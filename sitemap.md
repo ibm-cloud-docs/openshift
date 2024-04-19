@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2024
-lastupdated: "2024-04-18"
+lastupdated: "2024-04-19"
 
 
 keywords: openshift
@@ -485,7 +485,7 @@ subcollection: openshift
 
         * {{site.data.keyword.filestorage_vpc_full_notm}} add-on patch `1.1.10_93` and `1.2.3_97`.
 
-        * You can now apply your Cloud Pak entitlement to {{site.data.keyword.satelliteshort}} clusters and worker pools.
+        * You can now apply your Red Hat OpenShift entitlement to {{site.data.keyword.satelliteshort}} clusters and worker pools.
 
     * [20 November 2023](/docs/openshift?topic=openshift-openshift-relnotes#openshift-nov2023)
 
@@ -3041,6 +3041,18 @@ subcollection: openshift
 {: #sitemap_managing_the_cluster_and_worker_node_lifecycle}
 
 
+[Checking your cluster version, operating system, and Kubernetes server version](/docs/openshift?topic=openshift-flavor-os-check#flavor-os-check)
+
+* [Checking your cluster master version, worker node version, and worker node operating system in the console](/docs/openshift?topic=openshift-flavor-os-check&interface=ui#cluster-version-ui)
+
+* [Checking your cluster master version in the CLI](/docs/openshift?topic=openshift-flavor-os-check&interface=cli#cluster-version-cli)
+
+* [Checking your worker node version in the CLI](/docs/openshift?topic=openshift-flavor-os-check&interface=cli#worker-version-cli)
+
+* [Checking a cluster's Kubernetes server version in the CLI](/docs/openshift?topic=openshift-flavor-os-check&interface=cli#kube-version-check)
+
+* [Checking your worker node operating system in the CLI](/docs/openshift?topic=openshift-flavor-os-check&interface=cli#worker-os-check)
+
 [Updating clusters, worker nodes, and cluster components](/docs/openshift?topic=openshift-update#update)
 
 * [Updating the master](/docs/openshift?topic=openshift-update#master)
@@ -3104,8 +3116,6 @@ subcollection: openshift
 * [Adding zones to a {{site.data.keyword.satelliteshort}} worker pool](/docs/openshift?topic=openshift-satcluster-worker-pools#sat-pool-maintenance-addzone)
 
 * [Removing a {{site.data.keyword.satelliteshort}} worker pool](/docs/openshift?topic=openshift-satcluster-worker-pools#sat-pool-maintenance-remove)
-
-[Checking your worker node operating system](/docs/openshift?topic=openshift-flavor-os-check#flavor-os-check)
 
 [Preparing for host maintenance updates](/docs/openshift?topic=openshift-host-maintenance#host-maintenance)
 
@@ -4116,6 +4126,10 @@ subcollection: openshift
 * [Deploying apps to specific worker nodes by using labels](/docs/openshift?topic=openshift-deploy_app&interface=cli#node_affinity)
 
 * [Deploying an app on a GPU machine](/docs/openshift?topic=openshift-deploy_app&interface=cli#gpu_app)
+
+    * [Prerequisites](/docs/openshift?topic=openshift-deploy_app&interface=cli#gpu-prereqs)
+
+    * [Deploying a workload](/docs/openshift?topic=openshift-deploy_app&interface=cli#gpu-workload)
 
 [Testing access to apps with NodePorts](/docs/openshift?topic=openshift-nodeport#nodeport)
 
@@ -5259,7 +5273,7 @@ subcollection: openshift
 
 * [Adding the IBM Operator Catalog source to OperatorHub](/docs/openshift?topic=openshift-operators#operators_catalog)
 
-* [Disabling and mirroring OperatorHub catalog source images](/docs/openshift?topic=openshift-operators#mirror-operatorhub)
+* [Disabling OperatorHub and mirroring catalog source images to `icr.io`](/docs/openshift?topic=openshift-operators#mirror-operatorhub)
 
 * [Getting support for Operators](/docs/openshift?topic=openshift-operators#operator_support)
 
@@ -6096,8 +6110,6 @@ subcollection: openshift
     * [Clusters in Satellite locations with CoreOS enabled](/docs/openshift?topic=openshift-openshift_versions#os-satellite-with-coreos)
 
     * [Clusters in Satellite locations without CoreOS enabled](/docs/openshift?topic=openshift-openshift_versions#os-satellite-without-coreos)
-
-* [Checking a cluster's Kubernetes server version](/docs/openshift?topic=openshift-openshift_versions#openshift_server_version)
 
 * [Release lifecycle](/docs/openshift?topic=openshift-openshift_versions#release_lifecycle)
 

@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2024
-lastupdated: "2024-03-15"
+lastupdated: "2024-04-19"
 
 
 keywords: openshift, satellite, clusters, worker nodes, worker pools, delete
@@ -31,7 +31,7 @@ Create a worker pool in your {{site.data.keyword.satelliteshort}} cluster with h
 Before you begin
 
 - Make sure that you have the **Operator** platform access role to **Kubernetes Service** for the cluster in {{site.data.keyword.cloud_notm}} IAM.
-- Optional: [Attach](/docs/satellite?topic=satellite-attach-hosts) or [list available](/docs/satellite?topic=satellite-satellite-cli-reference#host-ls-cli) hosts to your {{site.data.keyword.satelliteshort}} location with host labels that match your worker pool. Then, after you create your worker pool, these available hosts can be automatically assigned to the worker pool.
+- Optional: [Attach](/docs/satellite?topic=satellite-attach-hosts) or [list available](/docs/satellite?topic=satellite-satellite-cli-reference#<review>host-ls-cli</review>host-ls-cli) hosts to your {{site.data.keyword.satelliteshort}} location with host labels that match your worker pool. Then, after you create your worker pool, these available hosts can be automatically assigned to the worker pool.
 
 To create a worker pool in a {{site.data.keyword.satelliteshort}} cluster
 
@@ -43,21 +43,31 @@ To create a worker pool in a {{site.data.keyword.satelliteshort}} cluster
 
 1. Get the details of the cluster that you want to create the worker pool in. Note the **Worker Zones**.
     ```sh
-    ibmcloud oc cluster get --cluster <cluster_name_or_ID>
+    ibmcloud oc cluster get --cluster CLUSTER
     ```
     {: pre}
 
 1. Create the worker pool in your {{site.data.keyword.satelliteshort}} cluster, with the following parameters.
 
-    * `--cluster`: Enter the name or ID of your cluster.
-    * `--name`: Give a name for your worker pool.
-    * `--size-per-zone`: Specify the number of worker nodes that you want to have in each zone that the worker pool spans. You can change this value later by resizing the worker pool.
-    * `--zone`: Select the initial zone in your {{site.data.keyword.satelliteshort}} location to create the worker pool in, that you retrieved from your cluster details. You can add more zones later.
-    * `--host-label`: Add labels to match the requested capacity of the worker pool with the available hosts in the {{site.data.keyword.satelliteshort}} location. You can use just the `cpu=number` host label because {{site.data.keyword.satelliteshort}} hosts automatically get this host label. You can also add a custom host label like `env=prod`. **Important**: You can't update host labels on the worker pool later, so make sure to configure the labels properly. You can change the labels on {{site.data.keyword.satelliteshort}} hosts, if needed.
+    `--cluster`
+    :   Enter the name or ID of your cluster.
 
-    * `--operating-system`: **Optional**: Specify the operating system of the hosts that you want to use to create your worker pool such as `REDHAT_7_64`, `REDHAT_8_64`, or `RHCOS`. Note that you must create a Red Hat CoreOS enabled location to use your RHCOS hosts in your clusters. For clusters created in default locations without Red Hat CoreOS enabled, specify a [version that corresponds to your cluster version](/docs/openshift?topic=openshift-openshift_versions#openshift_versions_available). If no option is specified, the default version that corresponds to the cluster version is used
+    `--name`
+    :   Give a name for your worker pool.
+    
+    `--size-per-zone`
+    :   Specify the number of worker nodes for each zone that the worker pool spans. You can change this value later by resizing the worker pool.
+    
+    `--zone`
+    :   Select the initial zone in your {{site.data.keyword.satelliteshort}} location to create the worker pool in, which you retrieved from your cluster details. You can add more zones later.
+    `--host-label`
+    :   Add labels to match the requested capacity of the worker pool with the available hosts in the {{site.data.keyword.satelliteshort}} location. You can use just the `cpu=number` host label because {{site.data.keyword.satelliteshort}} hosts automatically get this host label. You can also add a custom host label like `env=prod`. **Important**: You can't update host labels on the worker pool later, so take care when assigning them. You can change the labels on {{site.data.keyword.satelliteshort}} hosts, if needed.
 
-    * `--entitlement ENTITLEMENT`: **Optional**: Set this option to `cloud_pak` only if you use this cluster with an [IBM Cloud Pak](/docs/openshift?topic=openshift-openshift_cloud_paks) that has a {{site.data.keyword.redhat_openshift_notm}} entitlement. When you specify the number of workers (`--workers`) and flavor (`--flavor`), make sure to specify only the number and size of worker nodes that you are entitled to use in [IBM Passport Advantage](https://www.ibm.com/software/passportadvantage/index.html){: external}. After your cluster is created, you are not charged the {{site.data.keyword.redhat_openshift_notm}} license fee for the entitled worker nodes in the `default` worker pool.
+    `--operating-system REDHAT_8_64|RHCOS`
+:   Optional. The operating system of the worker nodes in your cluster. For a list of available operating sysems by cluster version, see the [{{site.data.keyword.openshiftshort}} version information](/docs/openshift?topic=openshift-openshift_versions). If no option is specified, the default operating system that corresponds to the cluster version is used.
+
+    `--entitlement ENTITLEMENT`
+    :   **Optional**: Set this option to `ocp_entitled` if you have a {{site.data.keyword.redhat_openshift_notm}} entitlement. When you specify the number of workers (`--workers`) and flavor (`--flavor`), make sure to specify only the number and size of worker nodes that you are entitled to use in [IBM Passport Advantage](https://www.ibm.com/software/passportadvantage/index.html){: external}.
 
 Do not exceed your entitlement. Keep in mind that your OpenShift Container Platform entitlements can be used with other cloud providers or in other environments. To avoid billing issues later, make sure that you use only what you are entitled to use. For example, you might have an entitlement for the OCP licenses for two worker nodes of 4 CPU and 16 GB memory, and you create this worker pool with two worker nodes of 4 CPU and 16 GB memory. You used your entire entitlement, and you can't use the same entitlement for other worker pools, cloud providers, or environments.
 {: note}
@@ -66,7 +76,7 @@ Do not exceed your entitlement. Keep in mind that your OpenShift Container Platf
 Example `worker-pool create` command
 
 ```sh
-ibmcloud oc worker-pool create satellite --cluster <cluster_name_or_ID> --name <pool_name> --size-per-zone <number> --zone <satellite_zone> --entitlement <entitlement> --host-label <cpu=number> --host-label <memory=number> [--host-label <key=value>] [--operating-system (REDHAT_7_64|REDHAT_8_64|RHCOS)]
+ibmcloud oc worker-pool create satellite --cluster <cluster_name_or_ID> --name <pool_name> --size-per-zone <number> --zone <satellite_zone> --entitlement <entitlement> --host-label <cpu=number> --host-label <memory=number> [--host-label <key=value>] [--operating-system SYSTEM]
 ```
 {: pre}
 

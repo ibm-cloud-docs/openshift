@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2024
-lastupdated: "2024-04-15"
+lastupdated: "2024-04-19"
 
 
 keywords: oks, iro, openshift, red hat, red hat openshift
@@ -29,6 +29,8 @@ For cluster metrics and app monitoring, {{site.data.keyword.openshiftlong}} clus
 
 To help understand when to use the built-in {{site.data.keyword.redhat_openshift_notm}} tools or {{site.data.keyword.cloud_notm}} integrations, review the following information.
 {: shortdesc}
+
+
 
 ### {{site.data.keyword.mon_full_notm}}
 {: #oc_mon_details}
@@ -142,7 +144,7 @@ To set up a monitoring configuration for your cluster:
         To use a different service access key after you created the monitoring configuration, use the [`ibmcloud ob monitoring config replace`](/docs/containers?topic=containers-observability_cli#monitoring_config_replace) command.
         {: tip}
 
-        **Version 4.15. and later**: If your cluster has outbound traffic protection enabled, you must set up monitoring by using the private endpoint. To do this, specify the `--private-endpoint` option.
+        **Version 4.15 and later**: If your cluster has outbound traffic protection enabled, you must set up monitoring by using the private endpoint. To do this, specify the `--private-endpoint` option.
 
         ```sh
         ibmcloud ob monitoring config create --cluster <cluster_name_or_ID> --instance <Monitoring_instance_name_or_ID> [--private-endpoint]
@@ -173,7 +175,7 @@ To set up a monitoring configuration for your cluster:
         {: screen}
 
 3. Optional: Verify that the {{site.data.keyword.mon_short}} agent was set up successfully.
-    1. If you used the console to create the {{site.data.keyword.mon_short}} configuration, log in to your cluster. For more information, see [Access your {{site.data.keyword.redhat_openshift_notm}} cluster](/docs/openshift?topic=openshift-access_cluster).
+    1. If you used the console to create the {{site.data.keyword.mon_short}} configuration, log in to your cluster.
     2. Verify that the daemon set for the {{site.data.keyword.mon_short}} agent was created and all instances are listed as `AVAILABLE`.
         ```sh
         oc get daemonsets -n ibm-observe

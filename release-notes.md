@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2024
-lastupdated: "2024-04-18"
+lastupdated: "2024-04-19"
 
 
 keywords: openshift, {{site.data.keyword.openshiftlong_notm}}, kubernetes, release notes
@@ -657,8 +657,8 @@ Cluster autoscaler add-on patch updates `1.2.0_290`, `1.0.9_290`, `1.0.8_292`, a
 
 
 
-You can now apply your Cloud Pak entitlement to {{site.data.keyword.satelliteshort}} clusters and worker pools.
-:   When you create a {{site.data.keyword.satelliteshort}} cluster, include the `--entitlement cloud_pak` option in the CLI or provide your entitlement details in the console. For more information, see [Creating {{site.data.keyword.satelliteshort}} clusters](/docs/openshift?topic=openshift-satellite-clusters) or [Managing {{site.data.keyword.satelliteshort}} worker pools](/docs/openshift?topic=openshift-satcluster-worker-pools).
+You can now apply your Red Hat OpenShift entitlement to {{site.data.keyword.satelliteshort}} clusters and worker pools.
+:   When you create a {{site.data.keyword.satelliteshort}} cluster, include the `--entitlement ocp_entitled` option in the CLI or provide your entitlement details in the console. For more information, see [Creating {{site.data.keyword.satelliteshort}} clusters](/docs/openshift?topic=openshift-satellite-clusters) or [Managing {{site.data.keyword.satelliteshort}} worker pools](/docs/openshift?topic=openshift-satcluster-worker-pools).
 
 
 

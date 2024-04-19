@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2024
-lastupdated: "2024-03-14"
+lastupdated: "2024-04-19"
 
 
 keywords: openshift, satellite, distributed cloud, on-prem, hybrid
@@ -136,16 +136,16 @@ Before you begin, [install the {{site.data.keyword.satelliteshort}} CLI plug-in]
     - For more information about this command's options, see the [CLI reference documentation](/docs/openshift?topic=openshift-kubernetes-service-cli#cli_cluster-create-satellite).
     - You can create a single-node cluster by including the `--infrastructure-topology` option and specifying the `single-replica` value when [creating a {{site.data.keyword.satelliteshort}} cluster in the CLI](/docs/openshift?topic=openshift-kubernetes-service-cli#cluster). If this option is not included, the cluster is provisioned with the highly available setup of three worker nodes by default.
     - To bring your own OCP license, make sure to include your Red Hat pull secret to entitle the cluster to run OCP, either by uploading the pull secret in the console or by including the `--pull-secret` option in the `ibmcloud oc cluster create satellite` [command](/docs/openshift?topic=openshift-kubernetes-service-cli#cli_cluster-create-satellite).
-    - To apply your Cloud Pak entitlement, make sure to include the `--entitlement cloud_pak` option.
+    - To apply your Cloud Pak entitlement, make sure to include the `--entitlement ocp_entitled` option.
     
-    `--operating-system REDHAT_7_64|REDHAT_8_64|RHCOS`
-:   Optional. The operating system of the worker nodes in your cluster. For a list of available operating sysems by cluster version, see [Available {{site.data.keyword.redhat_openshift_notm}} versions](/docs/openshift?topic=openshift-openshift_versions#openshift_versions_available). Note that to use your `RHCOS` hosts in your clusters, you must create a Red Hat CoreOS-enabled location and a cluster that runs version 4.9 or later. If no option is specified, the default [operating system that corresponds to the cluster version](/docs/openshift?topic=openshift-openshift_versions#openshift_versions_available) is used.
+    `--operating-system REDHAT_8_64|RHCOS`
+:   Optional. The operating system of the worker nodes in your cluster. For a list of available operating sysems by cluster version, see the [{{site.data.keyword.openshiftshort}} version information](/docs/openshift?topic=openshift-openshift_versions). If no option is specified, the default operating system that corresponds to the cluster version is used.
 
     
     Example `cluster create` command.
 
     ```sh
-    ibmcloud oc cluster create satellite --location LOCATION --name NAME --pull-secret SECRET --version 4.14_openshift [--enable-admin-agent] [--host-label LABEL ...] [--operating-system (REDHAT_8_64|RHCOS)] [--pod-subnet SUBNET] [-q] [--service-subnet SUBNET] [--workers WORKERS-PER-ZONE] [--zone ZONE] [--entitlement ENTITLEMENT]
+    ibmcloud oc cluster create satellite --location LOCATION --name NAME --pull-secret SECRET --version 4.14_openshift [--enable-admin-agent] [--host-label LABEL ...] [--operating-system SYSTEM] [--pod-subnet SUBNET] [-q] [--service-subnet SUBNET] [--workers WORKERS-PER-ZONE] [--zone ZONE] [--entitlement ENTITLEMENT]
     ```
     {: pre}
     

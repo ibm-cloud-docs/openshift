@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2024
-lastupdated: "2024-04-04"
+lastupdated: "2024-04-19"
 
 
 keywords: observability commands, observability cli, observability plug-in, logging commands, monitoring commands, logging cli, monitoring cli, logging config, monitoring config
@@ -90,7 +90,7 @@ ibmcloud ob logging config create --cluster CLUSTER --instance LOGGING_INSTANCE 
 :   The {{site.data.keyword.la_short}} ingestion key that you want to use for your configuration. This value is optional. If you don't specify this option, the latest ingestion key is automatically retrieved.   
 
 `--private-endpoint`
-:   When you add this option to your command, the private cloud service endpoint is used to connect to {{site.data.keyword.la_full_notm}}. To use the private cloud service endpoint, your cluster must be enabled for using private cloud service endpoints. **4.15. and later**: If your cluster has outbound traffic protection enabled, you must specify the private endpoint option to use logging.
+:   When you add this option to your command, the private cloud service endpoint is used to connect to {{site.data.keyword.la_full_notm}}. To use the private cloud service endpoint, your cluster must be enabled for using private cloud service endpoints. **4.15 and later**: If your cluster has outbound traffic protection enabled, you must specify the private endpoint option to use logging.
 
 
 
@@ -342,7 +342,7 @@ ibmcloud ob monitoring config create --cluster CLUSTER --instance MONITORING_INS
 :   The {{site.data.keyword.mon_short}} access key that you want to use for your configuration. This value is optional. If you don't specify this option, the latest access key is used for your configuration. 
 
 `--private-endpoint`
-:   When you add this option to your command, the private cloud service endpoint is used to connect to {{site.data.keyword.mon_full_notm}}. To use the private cloud service endpoint, your cluster must be enabled for using private cloud service endpoints. **4.15. and later**: If your cluster has outbound traffic protection enabled, you must specify the private endpoint option to use monitoring.
+:   When you add this option to your command, the private cloud service endpoint is used to connect to {{site.data.keyword.mon_full_notm}}. To use the private cloud service endpoint, your cluster must be enabled for using private cloud service endpoints. **4.15 and later**: If your cluster has outbound traffic protection enabled, you must specify the private endpoint option to use monitoring.
 
 
 
