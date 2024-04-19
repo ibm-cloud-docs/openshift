@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2024
-lastupdated: "2024-04-02"
+lastupdated: "2024-04-19"
 
 
 keywords: autoscaler, add-on, autoscaler change log, cluster autoscaler
@@ -408,7 +408,7 @@ Version 1.0.9 version is deprecated and becomes unsupported on 30 April 2024.
 - Image tags: `1.20.0 107-3`, `1.21.0 107-3`,  `1.22.0 107-3`, `1.23.0 107-3`, `1.24.0 107-3`, and `1.25.0 107-3`.
 - Updates the `golang` version to `1.19.6`.
 - Updates the `storage-secret-sidecar` image to `v1.2.18`.
-- Resolves the following CVEs: [CVE-2022-41724](https://nvd.nist.gov/vuln/detail/CVE-2022-41724){: external}, [CVE-2022-41723](https://nvd.nist.gov/vuln/detail/CVE-2022-41723){: external}, [CVE-2022-4415](https://nvd.nist.gov/vuln/detail/CVE-2022-4415){: external}, [CVE-2020-10735](https://nvd.nist.gov/vuln/detail/CVE-2020-10735){: external}, [CVE-2021-28861](https://nvd.nist.gov/vuln/detail/CVE-2021-28861){: external}, [CVE-2022-45061](https://nvd.nist.gov/vuln/detail/CVE-2022-45061){: external}, and [CVE-2022-40897](https://nvd.nist.gov/vuln/detail/CVE-2022-408975){: external}.
+- Resolves the following CVEs: [CVE-2022-41724](https://nvd.nist.gov/vuln/detail/CVE-2022-41724){: external}, [CVE-2022-41723](https://nvd.nist.gov/vuln/detail/CVE-2022-41723){: external}, [CVE-2022-4415](https://nvd.nist.gov/vuln/detail/CVE-2022-4415){: external}, [CVE-2020-10735](https://nvd.nist.gov/vuln/detail/CVE-2020-10735){: external}, [CVE-2021-28861](https://nvd.nist.gov/vuln/detail/CVE-2021-28861){: external}, [CVE-2022-45061](https://nvd.nist.gov/vuln/detail/CVE-2022-45061){: external}, and [CVE-2022-40897](https://nvd.nist.gov/vuln/detail/CVE-2022-40897){: external}.
 
 ### Change log for patch update 1.0.7_944, released 17 February 2023
 {: #107944_ca}
@@ -461,7 +461,7 @@ Version 1.0.9 version is deprecated and becomes unsupported on 30 April 2024.
 
 - Image tags: `1.19.1 106-6`, `1.20.0 106-6`,  `1.21.0 106-6`, `1.22.0 106-6`, `1.23.0 106-6`, and `1.24.0 106-6`.
 - Updates the `golang` version to `1.19.6`.
-- Resolves the following CVEs: [CVE-2022-41724](https://nvd.nist.gov/vuln/detail/CVE-2022-41724){: external}, [CVE-2022-41723](https://nvd.nist.gov/vuln/detail/CVE-2022-41723){: external}, [CVE-2022-4415](https://nvd.nist.gov/vuln/detail/CVE-2022-4415){: external}, [CVE-2020-10735](https://nvd.nist.gov/vuln/detail/CVE-2020-10735){: external}, [CVE-2021-28861](https://nvd.nist.gov/vuln/detail/CVE-2021-28861){: external}, [CVE-2022-45061](https://nvd.nist.gov/vuln/detail/CVE-2022-45061){: external}, and [CVE-2022-40897](https://nvd.nist.gov/vuln/detail/CVE-2022-408975){: external}.
+- Resolves the following CVEs: [CVE-2022-41724](https://nvd.nist.gov/vuln/detail/CVE-2022-41724){: external}, [CVE-2022-41723](https://nvd.nist.gov/vuln/detail/CVE-2022-41723){: external}, [CVE-2022-4415](https://nvd.nist.gov/vuln/detail/CVE-2022-4415){: external}, [CVE-2020-10735](https://nvd.nist.gov/vuln/detail/CVE-2020-10735){: external}, [CVE-2021-28861](https://nvd.nist.gov/vuln/detail/CVE-2021-28861){: external}, [CVE-2022-45061](https://nvd.nist.gov/vuln/detail/CVE-2022-45061){: external}, and [CVE-2022-40897](https://nvd.nist.gov/vuln/detail/CVE-2022-40897){: external}.
 
 ### Change log for patch update 1.0.6_899, released 9 January 2023
 {: #106899_ca}
