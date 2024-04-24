@@ -275,6 +275,8 @@ subcollection: openshift
 
 * [April 2024](/docs/openshift?topic=openshift-openshift-relnotes#openshift-apr24)
 
+    * [24 April 2024](/docs/openshift?topic=openshift-openshift-relnotes#openshift-apr2424)
+
     * [18 April 2024](/docs/openshift?topic=openshift-openshift-relnotes#openshift-apr1824)
 
         * {{site.data.keyword.openshiftlong_notm}} CLI version `1.0.613` is available.
