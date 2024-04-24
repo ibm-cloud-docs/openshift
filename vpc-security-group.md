@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2024
-lastupdated: "2024-04-19"
+lastupdated: "2024-04-24"
 
 
 keywords: openshift, {{site.data.keyword.openshiftlong_notm}}, kubernetes, firewall, acl, acls, access control list, rules, security group
@@ -18,7 +18,7 @@ subcollection: openshift
 
 
 
-# Understanding VPC security groups
+# Understanding VPC security groups in version 4.14 and earlier
 {: #vpc-security-group}
 {: help}
 {: support}

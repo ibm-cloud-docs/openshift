@@ -2,7 +2,7 @@
 
 copyright:
   years: 2022, 2024
-lastupdated: "2024-03-06"
+lastupdated: "2024-04-24"
 
 
 keywords: openshift, openshift data foundation, openshift container storage, vpc, air-gapped
@@ -55,6 +55,9 @@ Before you install OpenShift Data Foundation in your cluster, meet the following
     - 1 Virtual Private Cloud (VPC) with 3 subnets (1 per zone) with no public gateway attached.
     - 1 {{site.data.keyword.openshiftlong_notm}} cluster with at least 3 worker nodes spread evenly across 3 zones. The worker nodes must be at least 16x64.
 1. An {{site.data.keyword.registrylong_notm}} instance with at least one namespace in the same region as your cluster. If you don't have an instance of {{site.data.keyword.registrylong_notm}}, see [Getting started with {{site.data.keyword.registryshort}}](/docs/Registry?topic=Registry-getting-started) to create one.
+1. **Optional**: If you plan to use {{site.data.keyword.hscrypto}} or {{site.data.keyword.keymanagementserviceshort}} for encryption, create a virtual private endpoint gateway that allows access to your KMS instance. Make sure to bind at least 1 IP address from each subnet in your VPC to the VPE.
+    - [{{site.data.keyword.hscrypto}}](/docs/hs-crypto?topic=hs-crypto-virtual-private-endpoints-for-vpc&interface=cli#vpe-gateway-configure-for-hpcs).
+    - [{{site.data.keyword.keymanagementserviceshort}}](/docs/vpc?topic=vpc-ordering-endpoint-gateway&interface=ui#vpe-creating-ui).
 
 
 

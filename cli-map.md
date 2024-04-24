@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2022, 2024
-lastupdated: "2024-01-18"
+lastupdated: "2024-04-24"
 
 
 keywords: openshift
@@ -315,7 +315,7 @@ This page lists all `ibmcloud oc` commands as they are structured in the CLI. Fo
 ## ibmcloud oc vpcs 
 {: #icks_map_vpcs}
 
-[List all VPCs in the targeted resource group. If no resource group is targeted, then all VPCs in the account are listed.](/docs/openshift?topic=openshift-kubernetes-service-cli#cs_vpcs).
+[List all VPCs in the targeted resource group. If no resource group is targeted, then all VPCs in the account are listed.](/docs/openshift?topic=openshift-kubernetes-service-cli#vpc-ls-cli).
 {: shortdesc}
 
 ## ibmcloud oc flavors

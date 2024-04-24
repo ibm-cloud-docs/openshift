@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2024
-lastupdated: "2024-01-18"
+lastupdated: "2024-04-24"
 
 
 keywords: openshift, openshift data foundation, openshift container storage, ocs, classic
@@ -112,9 +112,6 @@ If you are using cluster wide encryption and storage class encryption, your API 
 :   `Reader`
 :   `Reader Plus`
 :   `Writer` 
-
-Storage class encryption is available only for versions `4.10.0` and later of OpenShift Data Foundation.
-{: note}
 
 1. Create an [{{site.data.keyword.hscrypto}}](/docs/hs-crypto?topic=hs-crypto-provision&interface=ui) or [{{site.data.keyword.keymanagementserviceshort}}](/docs/key-protect?topic=key-protect-provision) service instance.
 

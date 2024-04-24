@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2024
-lastupdated: "2024-03-27"
+lastupdated: "2024-04-24"
 
 
 keywords: openshift, {{site.data.keyword.openshiftlong_notm}}
@@ -29,7 +29,9 @@ Review the default settings for {{site.data.keyword.redhat_openshift_notm}} comp
 ## Feature gates
 {: #feature-gates}
 
-Review the feature gates that are applied to all master and worker node components by default in {{site.data.keyword.openshiftlong_notm}} clusters. These feature gates differ from the ones that are set up in community distributions. In clusters that run version 4.10 or earlier, the {{site.data.keyword.cloud_notm}} provider version enables {{site.data.keyword.redhat_openshift_notm}} APIs and features that are at beta. In version 4.11 and later, most new beta features are disabled by default. {{site.data.keyword.redhat_openshift_notm}} alpha features, which are subject to change, are disabled in all versions. 
+
+
+Review the feature gates that are applied to all master and worker node components by default in [product_name_notm]} clusters. These feature gates differ from the ones that are set up in community distributions. Most new beta features are disabled by default. {{site.data.keyword.redhat_openshift_notm}} alpha features, (also known as developer or technology preview features) which are subject to change, are disabled. In clusters that run version 4.14 or later, the `oc get featuregate cluster -o yaml` command can be used to view the cluster feature gate specification and status.
 {: shortdesc}
 
 
@@ -37,6 +39,10 @@ Review the feature gates that are applied to all master and worker node componen
 
 Modifying feature gates is not supported in {{site.data.keyword.openshiftlong_notm}}.
 {: important}
+
+4.15
+:   Community feature gates applied.
+
 
 
 

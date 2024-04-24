@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2024
-lastupdated: "2024-03-27"
+lastupdated: "2024-04-24"
 
 
 keywords: openshift, {{site.data.keyword.openshiftlong_notm}}, object storage, plug-in, change log
@@ -30,9 +30,14 @@ Refer to the following tables for a summary of changes for each version of the [
 
 | {{site.data.keyword.cos_full_notm}} plug-in version | Supported? | {{site.data.keyword.redhat_openshift_notm}} version support | Supported architecture |
 | --- | --- |--- | --- |
-| 2.2.23, 2.2.24 | Yes | Greater than or equal to 4.6 | x86 |
-| 2.2.20, 2.2.21, 2.2.22 | Deprecated | Greater than or equal to 4.6 | x86 |
+| 2.2.24, 2.2.25 | Yes | Greater than or equal to 4.6 | x86 |
+| 2.2.22, 2.2.23 | Deprecated | Greater than or equal to 4.6 | x86 |
 {: caption="{{site.data.keyword.cos_full_notm}} plug-in versions" caption-side="bottom"}
+
+## Change log for version 2.2.25, released 24 April 2024
+{: #02225_object_plugin}
+
+- Resolves [CVE-2023-45288](https://nvd.nist.gov/vuln/detail/CVE-2023-45288){: external}, [CVE-2024-24785](https://nvd.nist.gov/vuln/detail/CVE-2024-24785){: external}, [CVE-2023-44487](https://nvd.nist.gov/vuln/detail/CVE-2023-44487){: external}, and [CVE-2023-45288](https://nvd.nist.gov/vuln/detail/CVE-2023-45288){: external}
 
 ## Change log for version 2.2.24, released 22 February 2024
 {: #02224_object_plugin}

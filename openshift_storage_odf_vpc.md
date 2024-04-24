@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2024
-lastupdated: "2024-03-28"
+lastupdated: "2024-04-24"
 
 
 keywords: openshift, openshift data foundation, openshift container storage, ocs
@@ -115,18 +115,19 @@ If you are using cluster wide encryption and storage class encryption, your API 
 :   `Reader Plus`
 :   `Writer` 
 
-Storage class encryption is available only for versions `4.10.0` and later of OpenShift Data Foundation.
-{: note}
-
 1. Create an [{{site.data.keyword.hscrypto}}](/docs/hs-crypto?topic=hs-crypto-provision&interface=ui) or [{{site.data.keyword.keymanagementserviceshort}}](/docs/key-protect?topic=key-protect-provision) service instance.
 
-1. Create root key
+1. Create a root key.
     - [{{site.data.keyword.hscrypto}}](/docs/hs-crypto?topic=hs-crypto-create-root-keys&interface=ui).
     - [{{site.data.keyword.keymanagementserviceshort}}](/docs/key-protect?topic=key-protect-create-root-keys&interface=ui).
 
 1. After creating your instance and root key, make a note of your {{site.data.keyword.hscrypto}} or {{site.data.keyword.keymanagementserviceshort}} instance name, instance ID, root key ID, and public endpoint.
 
-1. Create a [service ID](/docs/account?topic=account-serviceids), [API key](/docs/account?topic=account-serviceidapikeys), and [access policy](/docs/account?topic=account-assign-access-resources) that allows access to either {{site.data.keyword.hscrypto}} and {{site.data.keyword.openshiftshort}} or {{site.data.keyword.keymanagementserviceshort}} and {{site.data.keyword.openshiftshort}}. Make a note of the API that you create. 
+1. Create a [service ID](/docs/account?topic=account-serviceids), [API key](/docs/account?topic=account-serviceidapikeys), and [access policy](/docs/account?topic=account-assign-access-resources) that allows access to either {{site.data.keyword.hscrypto}} and {{site.data.keyword.openshiftshort}} or {{site.data.keyword.keymanagementserviceshort}} and {{site.data.keyword.openshiftshort}}. Make a note of the API that you create.
+
+1. **Private clusters**: Create a virtual private endpoint gateway that allows access to your KMS instance. Make sure to bind at least 1 IP address from each subnet in your VPC to the VPE.
+    - [{{site.data.keyword.hscrypto}}](/docs/hs-crypto?topic=hs-crypto-virtual-private-endpoints-for-vpc&interface=cli#vpe-gateway-configure-for-hpcs).
+    - [{{site.data.keyword.keymanagementserviceshort}}](/docs/vpc?topic=vpc-ordering-endpoint-gateway&interface=ui#vpe-creating-ui).
 
 [Access your {{site.data.keyword.redhat_openshift_notm}} cluster](/docs/openshift?topic=openshift-access_cluster).
 

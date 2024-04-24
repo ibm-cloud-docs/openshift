@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2024
-lastupdated: "2024-04-19"
+lastupdated: "2024-04-24"
 
 
 keywords: oks, iro, openshift, red hat, red hat openshift
@@ -29,6 +29,11 @@ For cluster metrics and app monitoring, {{site.data.keyword.openshiftlong}} clus
 
 To help understand when to use the built-in {{site.data.keyword.redhat_openshift_notm}} tools or {{site.data.keyword.cloud_notm}} integrations, review the following information.
 {: shortdesc}
+
+
+
+**Monitoring limitation in private-only clusters with RHCOS worker nodes**: The monitoring agent relies on kernel headers in the operating system, however RHCOS doesn't have kernel headers. In this scenario, the agent reaches back to `sysdig.com` to use the pre-compiled agent. In clusters with no public network access this process fails. To allow monitoring on RHCOS clusters, you must either [allow outbound traffic](/docs/openshift?topic=openshift-sbd-allow-outbound#existing-cluster-sbd) or see the Sysdig documenation for [installing the agent on air-gapped environments](https://docs.sysdig.com/en/docs/installation/agent-install-for-on-prem/airgapped-installation/){: external}.
+{: important}
 
 
 
