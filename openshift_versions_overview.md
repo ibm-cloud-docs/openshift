@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2024
-lastupdated: "2024-04-19"
+lastupdated: "2024-04-24"
 
 
 keywords: openshift, version, update, upgrade
@@ -55,7 +55,15 @@ Dates that are marked with a dagger (`†`) are tentative and subject to change.
 {: #os-openshift}
 
 
-[Latest]{: tag-green} [Default]{: tag-purple} 4.14 (Kubernetes 1.27)
+[Latest]{: tag-green} 4.15
+- Release date: None
+- End of support: None
+- Operating systems: RHEL 8 (`REDHAT_8_64`)
+- [Version information and update actions](/docs/openshift?topic=openshift-cs_versions_415)
+- [Change log](/docs/openshift?topic=openshift-openshift_changelog_415)
+- [{{site.data.keyword.redhat_openshift_notm}} 4.15 release notes overview](https://docs.openshift.com/container-platform/4.15/release_notes/ocp-4-15-release-notes.html){: external}
+
+[Default]{: tag-purple} 4.14 (Kubernetes 1.27)
 - Release date: 13 December 2023
 - End of support: 08 January 2026†
 - Operating systems: RHEL 8 (`REDHAT_8_64`)
@@ -84,7 +92,15 @@ Dates that are marked with a dagger (`†`) are tentative and subject to change.
 {: #os-satellite-with-coreos}
 
 
-[Latest]{: tag-green} [Default]{: tag-purple} 4.14 (Kubernetes 1.27)
+[Latest]{: tag-green} 4.15
+- Release date: None
+- End of support: None
+- Operating systems: Red Hat CoreOS (`RHCOS`), RHEL 8 (`REDHAT_8_64`)
+- [Version information and update actions](/docs/openshift?topic=openshift-cs_versions_415)
+- [Change log](/docs/openshift?topic=openshift-openshift_changelog_415)
+- [{{site.data.keyword.redhat_openshift_notm}} 4.15 release notes overview](https://docs.openshift.com/container-platform/4.15/release_notes/ocp-4-15-release-notes.html){: external}
+
+[Default]{: tag-purple} 4.14 (Kubernetes 1.27)
 - Release date: 13 December 2023
 - End of support: 08 January 2026†
 - Operating systems: Red Hat CoreOS (`RHCOS`), RHEL 8 (`REDHAT_8_64`)
@@ -113,7 +129,15 @@ Dates that are marked with a dagger (`†`) are tentative and subject to change.
 {: #os-satellite-without-coreos}
 
 
-[Latest]{: tag-green} [Default]{: tag-purple} 4.14 (Kubernetes 1.27)
+[Latest]{: tag-green} 4.15
+- Release date: None
+- End of support: None
+- Operating systems: RHEL 8 (`REDHAT_8_64`)
+- [Version information and update actions](/docs/openshift?topic=openshift-cs_versions_415)
+- [Change log](/docs/openshift?topic=openshift-openshift_changelog_415)
+- [{{site.data.keyword.redhat_openshift_notm}} 4.15 release notes overview](https://docs.openshift.com/container-platform/4.15/release_notes/ocp-4-15-release-notes.html){: external}
+
+[Default]{: tag-purple} 4.14 (Kubernetes 1.27)
 - Release date: 13 December 2023
 - End of support: 08 January 2026†
 - Operating systems: RHEL 8 (`REDHAT_8_64`)
