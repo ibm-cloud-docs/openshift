@@ -2,10 +2,10 @@
 
 copyright: 
   years: 2014, 2024
-lastupdated: "2024-03-15"
+lastupdated: "2024-04-24"
 
 
-keywords: openshift
+keywords: kubernetes, istio, add-on, openshift
 
 subcollection: openshift
 

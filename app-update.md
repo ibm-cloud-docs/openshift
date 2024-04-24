@@ -2,10 +2,10 @@
 
 copyright: 
   years: 2014, 2024
-lastupdated: "2024-03-15"
+lastupdated: "2024-04-24"
 
 
-keywords: openshift, red hat, red hat openshift, update, upgrade
+keywords: kubernetes, openshift, red hat, red hat openshift, update, upgrade, openshift
 
 subcollection: openshift
 

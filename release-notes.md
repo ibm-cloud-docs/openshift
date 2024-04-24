@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2024
-lastupdated: "2024-04-19"
+lastupdated: "2024-04-24"
 
 
 keywords: openshift, {{site.data.keyword.openshiftlong_notm}}, kubernetes, release notes
@@ -29,6 +29,52 @@ Looking for {{site.data.keyword.cloud_notm}} status, platform announcements, sec
 
 ## April 2024
 {: #openshift-apr24}
+
+### 24 April 2024
+{: #openshift-apr2424}
+{: release-note}
+
+
+
+
+{{site.data.keyword.openshiftlong_notm}} 4.15 is available.
+:   You can create or [update clusters to version 4.15](/docs/openshift?topic=openshift-cs_versions_415). With {{site.data.keyword.openshiftlong_notm}} version 4.15, you get the latest features, as well as component updates on {{site.data.keyword.openshiftlong_notm}}. For more information, see the [4.15 change log](/docs/openshift?topic=openshift-openshift_changelog_415).
+
+Important networking changes for {{site.data.keyword.openshiftlong_notm}} VPC clusters created with version 4.15.
+:   For more information, see the [4.15 version information](/docs/openshift?topic=openshift-cs_versions_415) and [Understanding Secure by Default Cluster VPC Networking](/docs/openshift?topic=openshift-vpc-security-group-reference).
+
+Important changes to the default cluster provisioning behavior for new VPC clusters beginning with version 4.15.
+:   Beginning with version 4.15, there is a new option available at cluster creation time via the UI, CLI, API, and Terraform. This new option manages outbound traffic protection for the cluster. The default behavior is to have outbound traffic protection enabled, which means new version 4.15 VPC clusters won't have access the public internet by default. If your cluster needs access to the public internet, you must specifically include the option (from the UI, CLI, API, and Terraform) to disable outbound traffic protection. Note that you can also disable outbound traffic protection after your cluster is created. You can also selectively allow outbound traffic as needed after your cluster is created. If you provision clusters via automation, make sure to adjust your automation accordingly.
+:   For more information, see the [4.15 version information](/docs/openshift?topic=openshift-cs_versions_415), [Understanding Secure by Default Cluster VPC Networking](/docs/openshift?topic=openshift-vpc-security-group-reference), and [Managing outbound traffic protection in VPC clusters](/docs/openshift?topic=openshift-sbd-allow-outbound).
+
+Managing outbound traffic protection in new version 4.15 VPC clusters.
+:   With the introduction of Secure by Default Cluster VPC networking in version 4.15 and later clusters, there are several scenarios where you might need to adjust the security group settings for your clusters to allow outbound traffic to certain resources. For more information, see [Managing outbound traffic protection in VPC clusters](/docs/openshift?topic=openshift-sbd-allow-outbound).
+
+Red Hat CoreOS worker nodes are available for new VPC clusters beginning with version 4.15.
+:   You can now specify the Red Hat Enterprise Linux CoreOS (RHCOS) operating system when you provision a new VPC cluster. Note that the OpenShift Data Foundation and cluster autoscaler add-ons do not yet support RHCOS worker nodes. If you need to install these add-ons in your cluster, use RHEL worker nodes instead. For more information, see the [Red Hat Enterprise Linux CoreOS (RHCOS) documentation](https://docs.openshift.com/container-platform/4.10/architecture/architecture-rhcos.html){: external}.
+
+
+
+
+
+
+
+
+{{site.data.keyword.openshiftlong_notm}} master and worker node fix packs.
+:   Master fix pack are applied automatically over the course of several days. You can choose to use the [`ibmcloud ks cluster master update`](/docs/openshift?topic=openshift-kubernetes-service-cli#cs_cluster_update) command yourself without waiting for the update automation to apply the patch. Worker node fix packs can be applied by updating or reloading the worker node in classic infrastructure, or replacing the worker node in VPC infrastructure. Review the following change logs for your cluster version.
+:   [4.14](/docs/openshift?topic=openshift-openshift_changelog_414)
+:   [4.13](/docs/openshift?topic=openshift-openshift_changelog_413)
+:   [4.12](/docs/openshift?topic=openshift-openshift_changelog_412)
+
+
+
+
+
+{{site.data.keyword.cos_full_notm}} plug-in version `2.2.25`.
+:   For more information, see the [change log](/docs/openshift?topic=openshift-cos_plugin_changelog).
+
+{{site.data.keyword.openshiftlong_notm}} CLI version `1.0.617` is available.
+:   For more information, see [Updating the CLI](/docs/openshift?topic=openshift-cli-update) and the [CLI change log](/docs/openshift?topic=openshift-cs_cli_changelog).
 
 
 

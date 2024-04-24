@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2024, 2024
-lastupdated: "2024-03-29"
+lastupdated: "2024-04-24"
 
 
 keywords: openshift, {{site.data.keyword.openshiftlong_notm}}, kubernetes, certificate, rotate, ca rotate
@@ -22,6 +22,13 @@ Revoke existing certificate authority (CA) certificates in your cluster and issu
 {: shortdesc}
 
 By default, certificate authority (CA) certificates are administered to secure access to various components of your cluster, such as the master API server. As you use your cluster, you might want to revoke the certificates issued by the existing CA. For example, the administrators of your team might use a certificate signing request (CSR) to manually generate certificates that are signed by the cluster's CA for worker nodes in the cluster. If an administrator leaves your organization, you can ensure that they no longer have admin access to your cluster by creating a new CA and certificates for your cluster, and removing the old CA and certificates.
+
+
+
+VPC clusters version 4.15 and later with RHCOS worker nodes do not yet support rotating CA certificates.
+{: note}
+
+
 
 1. Create a CA for your cluster. Certificates that are signed by this new CA are issued for the cluster master components, and the API server is refreshed.
 

@@ -146,6 +146,8 @@ toc:
       - topicgroup:
           label: Controlling network traffic in VPC clusters
           topics:
+          - vpc-security-group2.md
+          - sbd-allow-outbound.md
           - vpc-security-group.md
           - vpc-security-group-manage.md
           - vpc-acls.md
@@ -333,6 +335,13 @@ toc:
           - benchmarks_overview.md
           - benchmark-comparison.md
           - topicgroup:
+              label: Version 4.15
+              topics:
+              - openshift_versions_415.md
+              - openshift_versions_changelog_415.md
+              - benchmarks_415.md
+              - benchmarks_415_co.md
+          - topicgroup:
               label: Version 4.14
               topics:
               - openshift_versions_414.md
@@ -479,6 +488,8 @@ toc:
               - ts-health-loglines.md
               - ts-vpc-byok-encrypted-storage.md
               - ts-etcd-alerts.md
+              - ts-sbd-cluster-create-quota.md
+              - ts-sbd-non-sbd-clusters.md
           - topicgroup:
               label: Worker nodes
               topics:
@@ -520,6 +531,7 @@ toc:
               - ts-ip-whitelist-annotation.md
               - ts-keepalive-sysctl.md
               - ts-slow-dns-lookup.md
+              - ts-sbd-custom-dns.md
           - topicgroup:
               label: Apps and services
               topics:
@@ -537,6 +549,8 @@ toc:
               - ts-app-svc-key.md
               - ts-app-helm-install.md
               - ts-app-16-oc-debug-pod.md
+              - ts-sbd-app-not-working.md
+              - ts-sbd-nodeport-not-working.md
           - topicgroup:
               label: Managed add-ons
               topics:

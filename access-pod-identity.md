@@ -2,10 +2,10 @@
 
 copyright: 
   years: 2014, 2024
-lastupdated: "2024-03-15"
+lastupdated: "2024-04-24"
 
 
-keywords: openshift
+keywords: kubernetes, openshift, infrastructure, rbac, policy
 
 subcollection: openshift
 
@@ -13,7 +13,6 @@ subcollection: openshift
 ---
 
 {{site.data.keyword.attribute-definition-list}}
-
 
 
 
@@ -108,7 +107,7 @@ As an account administrator, create a trusted profile in {{site.data.keyword.clo
             -H 'Content-Type: application/json' \
             --data-raw '{
                 "name": "<link_name>",
-                "cr_type": "ROKS_SA",
+                "cr_type": "<sa>",
                 "link": {
                     "crn": "<cluster_crn>",
                     "namespace": "<ns>",

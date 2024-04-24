@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2024
-lastupdated: "2024-04-19"
+lastupdated: "2024-04-24"
 
 
 keywords: openshift
@@ -274,6 +274,24 @@ subcollection: openshift
 [Release notes](/docs/openshift?topic=openshift-openshift-relnotes#openshift-relnotes)
 
 * [April 2024](/docs/openshift?topic=openshift-openshift-relnotes#openshift-apr24)
+
+    * [24 April 2024](/docs/openshift?topic=openshift-openshift-relnotes#openshift-apr2424)
+
+        * {{site.data.keyword.openshiftlong_notm}} 4.15 is available.
+
+        * Important networking changes for {{site.data.keyword.openshiftlong_notm}} VPC clusters created with version 4.15.
+
+        * Important changes to the default cluster provisioning behavior for new VPC clusters beginning with version 4.15.
+
+        * Managing outbound traffic protection in new version 4.15 VPC clusters.
+
+        * Red Hat CoreOS worker nodes are available for new VPC clusters beginning with version 4.15.
+
+        * {{site.data.keyword.openshiftlong_notm}} master and worker node fix packs.
+
+        * {{site.data.keyword.cos_full_notm}} plug-in version `2.2.25`.
+
+        * {{site.data.keyword.openshiftlong_notm}} CLI version `1.0.617` is available.
 
     * [18 April 2024](/docs/openshift?topic=openshift-openshift-relnotes#openshift-apr1824)
 
@@ -2676,7 +2694,7 @@ subcollection: openshift
 
     * [What hardware options are available to me?](/docs/openshift?topic=openshift-planning_worker_nodes#shared_dedicated_node)
 
-    * [What flavors are available to me?](/docs/openshift?topic=openshift-planning_worker_nodes#available-flavors)
+    * [Which operating systems are available?](/docs/openshift?topic=openshift-planning_worker_nodes#worker-os-options)
 
     * [Can I combine different flavors in a cluster?](/docs/openshift?topic=openshift-planning_worker_nodes#combine-flavors)
 
@@ -3681,7 +3699,61 @@ subcollection: openshift
 {: #sitemap_controlling_network_traffic_in_vpc_clusters}
 
 
-[Understanding VPC security groups](/docs/openshift?topic=openshift-vpc-security-group#vpc-security-group)
+[Understanding Secure by Default Cluster VPC Networking](/docs/openshift?topic=openshift-vpc-security-group-reference#vpc-security-group-reference)
+
+* [Overview](/docs/openshift?topic=openshift-vpc-security-group-reference#sbd-overview)
+
+* [Virtual private endpoint (VPE) gateways](/docs/openshift?topic=openshift-vpc-security-group-reference#managed-vpe-gateways)
+
+* [Managed security groups](/docs/openshift?topic=openshift-vpc-security-group-reference#sbd-managed-groups)
+
+    * [Worker security group](/docs/openshift?topic=openshift-vpc-security-group-reference#vpc-sg-kube-clusterid)
+
+    * [Master VPE gateway security group](/docs/openshift?topic=openshift-vpc-security-group-reference#vpc-sg-kube-vpegw-cluster-id)
+
+    * [Shared VPE gateway security group](/docs/openshift?topic=openshift-vpc-security-group-reference#vpc-sg-kube-vpegw-vpc-id)
+
+    * [Load balancer services security group](/docs/openshift?topic=openshift-vpc-security-group-reference#vpc-sg-kube-lbaas-cluster-ID)
+
+* [Limitations](/docs/openshift?topic=openshift-vpc-security-group-reference#vpc-sg-limitations)
+
+[Managing outbound traffic protection in VPC clusters](/docs/openshift?topic=openshift-sbd-allow-outbound#sbd-allow-outbound)
+
+* [Disabling outbound traffic protection when creating a cluster](/docs/openshift?topic=openshift-sbd-allow-outbound#new-cluster-sbd)
+
+    * [Option 1: Disabling outbound traffic protection when you create a cluster](/docs/openshift?topic=openshift-sbd-allow-outbound#sbd-disable-1)
+
+    * [Option 2: Allowing outbound traffic through a custom security group](/docs/openshift?topic=openshift-sbd-allow-outbound#sbd-disable-2)
+
+* [Disabling outbound traffic protection for existing clusters](/docs/openshift?topic=openshift-sbd-allow-outbound#existing-cluster-sbd)
+
+    * [Option 1: Disabling outbound traffic protection from the CLI](/docs/openshift?topic=openshift-sbd-allow-outbound#sbd-disable-cli-option)
+
+    * [Option 2: Adding a security group rule to the default cluster worker security group](/docs/openshift?topic=openshift-sbd-allow-outbound#sbd-disable-custom-sg)
+
+* [Enabling outbound traffic protection for existing clusters](/docs/openshift?topic=openshift-sbd-allow-outbound#sbd-enable-existing)
+
+* [Example scenarios for selectively allowing outbound traffic](/docs/openshift?topic=openshift-sbd-allow-outbound#sbd-examples)
+
+    * [Accessing images from external container registries like DockerHub or `quay.io`](/docs/openshift?topic=openshift-sbd-allow-outbound#sbd-example-quay)
+
+    * [Allowing outbound traffic to Red Hat Marketplace and OperatorHub](/docs/openshift?topic=openshift-sbd-allow-outbound#sbd-example-oh)
+
+    * [Allowing outbound traffic to Image Streams](/docs/openshift?topic=openshift-sbd-allow-outbound#sbd-example-is)
+
+    * [Allowing outbound traffic for remote health monitoring with Telemetry](/docs/openshift?topic=openshift-sbd-allow-outbound#sbd-example-telemetry)
+
+    * [Accessing 4.15 clusters and the web console over the VPE](/docs/openshift?topic=openshift-sbd-allow-outbound#sbd-example-vpe)
+
+    * [Allowing outbound traffic for webhooks](/docs/openshift?topic=openshift-sbd-allow-outbound#sbd-example-webhook)
+
+    * [Allowing outbound traffic to a public service](/docs/openshift?topic=openshift-sbd-allow-outbound#sbd-example-gh)
+
+    * [Considerations for hub and spoke VPCs with outbound traffic protection](/docs/openshift?topic=openshift-sbd-allow-outbound#sbd-example-hubspoke)
+
+    * [Allowing temporary traffic to the cluster API server over the public network](/docs/openshift?topic=openshift-sbd-allow-outbound#sbd-example-api-server-backup)
+
+[Understanding VPC security groups in version 4.14 and earlier](/docs/openshift?topic=openshift-vpc-security-group#vpc-security-group)
 
 * [Virtual private endpoint (VPE) gateways](/docs/openshift?topic=openshift-vpc-security-group#managed-vpe-gateways)
 
@@ -3707,9 +3779,7 @@ subcollection: openshift
 
 * [Adding security groups during cluster creation](/docs/openshift?topic=openshift-vpc-security-group-manage#vpc-sg-cluster)
 
-    * [If you only want the default VPC and cluster security groups and no additional security groups](/docs/openshift?topic=openshift-vpc-security-group-manage#default-sgs-only)
-
-    * [If you only want the cluster security group and not the default VPC security group](/docs/openshift?topic=openshift-vpc-security-group-manage#cluster-sg-only)
+    * [If you only want the default security groups](/docs/openshift?topic=openshift-vpc-security-group-manage#default-sgs-only)
 
     * [If you want the cluster security group and your own additional security groups](/docs/openshift?topic=openshift-vpc-security-group-manage#cluster-customer-sgs)
 
@@ -3719,7 +3789,7 @@ subcollection: openshift
 
     * [If you do not want to attach additional security groups to the worker pool](/docs/openshift?topic=openshift-vpc-security-group-manage#no-worker-sgs)
 
-    * [If you do want to attach additional security groups to the worker pool](/docs/openshift?topic=openshift-vpc-security-group-manage#worker-sgs)
+    * [If you want to attach additional security groups to the worker pool](/docs/openshift?topic=openshift-vpc-security-group-manage#worker-sgs)
 
 * [Viewing security groups](/docs/openshift?topic=openshift-vpc-security-group-manage&interface=cli#vpc-sg-cli)
 
@@ -5846,7 +5916,17 @@ subcollection: openshift
 
     * [`ibmcloud oc vlan spanning get`](/docs/openshift?topic=openshift-kubernetes-service-cli#cs_vlan_spanning_get)
 
-* [`vpcs` command](/docs/openshift?topic=openshift-kubernetes-service-cli#cs_vpcs)
+* [`ibmcloud oc vpc ls`](/docs/openshift?topic=openshift-kubernetes-service-cli#vpc-ls-cli)
+
+    * [Command options](/docs/openshift?topic=openshift-kubernetes-service-cli#vpc-ls-options)
+
+* [`ibmcloud oc vpc outbound-traffic-protection disable`](/docs/openshift?topic=openshift-kubernetes-service-cli#vpc-outbound-traffic-protection-disable-cli)
+
+    * [Command options](/docs/openshift?topic=openshift-kubernetes-service-cli#vpc-outbound-traffic-protection-disable-options)
+
+* [`ibmcloud oc vpc outbound-traffic-protection enable`](/docs/openshift?topic=openshift-kubernetes-service-cli#vpc-outbound-traffic-protection-enable-cli)
+
+    * [Command options](/docs/openshift?topic=openshift-kubernetes-service-cli#vpc-outbound-traffic-protection-enable-options)
 
 * [`flavor` command](/docs/openshift?topic=openshift-kubernetes-service-cli#cs_machine_types)
 
@@ -5913,6 +5993,8 @@ subcollection: openshift
 [CLI change log](/docs/openshift?topic=openshift-cs_cli_changelog#cs_cli_changelog)
 
 * [Version 1.0](/docs/openshift?topic=openshift-cs_cli_changelog#10)
+
+* [Version v1.0.617](/docs/openshift?topic=openshift-cs_cli_changelog#cli-010617)
 
 * [Version v1.0.613](/docs/openshift?topic=openshift-cs_cli_changelog#cli-010613)
 
@@ -6140,6 +6222,119 @@ subcollection: openshift
 * [Minor differences](/docs/openshift?topic=openshift-benchmark-comparison#benchmark-comparison-minor)
 
 
+### Version 4.15
+{: #sitemap_version_415}
+
+
+[4.15 version information and update actions](/docs/openshift?topic=openshift-cs_versions_415#cs_versions_415)
+
+* [Release timeline](/docs/openshift?topic=openshift-cs_versions_415#release_timeline_415)
+
+* [Preparing to update](/docs/openshift?topic=openshift-cs_versions_415#prep-up-415)
+
+    * [Update before master](/docs/openshift?topic=openshift-cs_versions_415#415_before)
+
+* [Checking the `Upgradeable` status of your cluster](/docs/openshift?topic=openshift-cs_versions_415#status-check-415)
+
+* [Important networking changes for VPC clusters created at version 4.15](/docs/openshift?topic=openshift-cs_versions_415#understand-sbd)
+
+    * [Which connections are allowed?](/docs/openshift?topic=openshift-cs_versions_415#sbd-allowed-connections)
+
+    * [Which connections are blocked?](/docs/openshift?topic=openshift-cs_versions_415#sbd-blocked-connections)
+
+    * [Changes to worker-to-master backup communication](/docs/openshift?topic=openshift-cs_versions_415#backup-considerations)
+
+* [Allowing outbound traffic after creating a 4.15 cluster](/docs/openshift?topic=openshift-cs_versions_415#sbd-allow-outbound-after)
+
+* [Common issues and troubleshooting](/docs/openshift?topic=openshift-cs_versions_415#sbd-common-ts)
+
+[Version 4.15 change log](/docs/openshift?topic=openshift-openshift_changelog_415#openshift_changelog_415)
+
+* [Overview](/docs/openshift?topic=openshift-openshift_changelog_415#openshift_changelog_overview_415)
+
+    * [Change log for master fix pack 4.15.9_1530_openshift and worker node fix pack 4.15.6_1525_openshift, released 24 April 2024](/docs/openshift?topic=openshift-openshift_changelog_415#4.15.9_1530_openshiftM_4.15.6_1525_openshift_openshiftW)
+
+[4.15 CIS Kubernetes Benchmark](/docs/openshift?topic=openshift-cis-benchmark-415#cis-benchmark-415)
+
+* [1 Master node security configuration](/docs/openshift?topic=openshift-cis-benchmark-415#cis-benchmark-1-415)
+
+    * [1.1 Master node configuration files](/docs/openshift?topic=openshift-cis-benchmark-415#cis-benchmark-11-415)
+
+    * [1.2 API server](/docs/openshift?topic=openshift-cis-benchmark-415#cis-benchmark-12-415)
+
+    * [1.3 Controller manager](/docs/openshift?topic=openshift-cis-benchmark-415#cis-benchmark-13-415)
+
+    * [1.4 Scheduler](/docs/openshift?topic=openshift-cis-benchmark-415#cis-benchmark-14-415)
+
+* [2 Etcd node configuration](/docs/openshift?topic=openshift-cis-benchmark-415#cis-section-2-415)
+
+* [3 Control plane configuration](/docs/openshift?topic=openshift-cis-benchmark-415#cis-section-3-415)
+
+    * [3.1 Authentication and authorization](/docs/openshift?topic=openshift-cis-benchmark-415#cis-benchmark-31-415)
+
+    * [3.2 Logging](/docs/openshift?topic=openshift-cis-benchmark-415#cis-benchmark-32-415)
+
+* [4 Worker node security configuration](/docs/openshift?topic=openshift-cis-benchmark-415#cis-section-4-415)
+
+    * [4.1 Worker node configuration files](/docs/openshift?topic=openshift-cis-benchmark-415#cis-benchmark-41-415)
+
+    * [4.2 Kubelet](/docs/openshift?topic=openshift-cis-benchmark-415#cis-benchmark-42-415)
+
+* [5 Kubernetes policies](/docs/openshift?topic=openshift-cis-benchmark-415#cis-section-5-415)
+
+    * [5.1 RBAC and service accounts](/docs/openshift?topic=openshift-cis-benchmark-415#cis-benchmark-51-415)
+
+    * [5.2 Pod Security Policies](/docs/openshift?topic=openshift-cis-benchmark-415#cis-benchmark-52-415)
+
+    * [5.3 Network policies and CNI](/docs/openshift?topic=openshift-cis-benchmark-415#cis-benchmark-53-415)
+
+    * [5.4 Secrets management](/docs/openshift?topic=openshift-cis-benchmark-415#cis-benchmark-54-415)
+
+    * [5.5 Extensible admission control](/docs/openshift?topic=openshift-cis-benchmark-415#cis-benchmark-55-415)
+
+    * [5.6 General policies](/docs/openshift?topic=openshift-cis-benchmark-415#cis-benchmark-56-415)
+
+    * [{{site.data.keyword.IBM_notm}} remediations and explanations](/docs/openshift?topic=openshift-cis-benchmark-415#ibm-remediations-and-explanations-415)
+
+[4.15 compliance operator benchmark](/docs/openshift?topic=openshift-benchmarks_415_co#benchmarks_415_co)
+
+* [1 Control plane components](/docs/openshift?topic=openshift-benchmarks_415_co#co-benchmark-415-cp)
+
+    * [1.1 Master node configuration files](/docs/openshift?topic=openshift-benchmarks_415_co#co-benchmark-415-11)
+
+    * [1.2 API server](/docs/openshift?topic=openshift-benchmarks_415_co#co-benchmark-415-12)
+
+    * [1.3 Controller manager](/docs/openshift?topic=openshift-benchmarks_415_co#co-benchmark-415-13)
+
+    * [1.4 Scheduler](/docs/openshift?topic=openshift-benchmarks_415_co#co-benchmark-415-14)
+
+* [2 etcd](/docs/openshift?topic=openshift-benchmarks_415_co#co-benchmark-415-2)
+
+* [3 Control plane configuration](/docs/openshift?topic=openshift-benchmarks_415_co#co-benchmark-415-3)
+
+    * [3.1 Authentication and authorization](/docs/openshift?topic=openshift-benchmarks_415_co#co-benchmark-415-31)
+
+    * [3.2 Logging](/docs/openshift?topic=openshift-benchmarks_415_co#co-benchmark-415-32)
+
+* [4 Worker Nodes](/docs/openshift?topic=openshift-benchmarks_415_co#co-benchmark-415-4)
+
+* [5 Policies](/docs/openshift?topic=openshift-benchmarks_415_co#co-benchmark-415-5)
+
+    * [5.1 RBAC and service accounts](/docs/openshift?topic=openshift-benchmarks_415_co#co-benchmark-415-51)
+
+    * [5.2 Pod Security Policies](/docs/openshift?topic=openshift-benchmarks_415_co#co-benchmark-415-52)
+
+    * [5.3 Network policies and CNI](/docs/openshift?topic=openshift-benchmarks_415_co#co-benchmark-415-53)
+
+    * [5.4 Secrets management](/docs/openshift?topic=openshift-benchmarks_415_co#co-benchmark-415-54)
+
+    * [5.5 Extensible admission control](/docs/openshift?topic=openshift-benchmarks_415_co#co-benchmark-415-55)
+
+    * [5.7 General policies](/docs/openshift?topic=openshift-benchmarks_415_co#co-benchmark-415-57)
+
+* [Remediations and explanations](/docs/openshift?topic=openshift-benchmarks_415_co#co-benchmark-415-remdiations)
+
+
 ### Version 4.14
 {: #sitemap_version_414}
 
@@ -6167,6 +6362,8 @@ subcollection: openshift
 [Version 4.14 change log](/docs/openshift?topic=openshift-openshift_changelog_414#openshift_changelog_414)
 
 * [Overview](/docs/openshift?topic=openshift-openshift_changelog_414#openshift_changelog_overview_414)
+
+    * [Change log for master fix pack 4.14.20_1558_openshift, released 24 April 2024](/docs/openshift?topic=openshift-openshift_changelog_414#41420_1558_openshift_M)
 
     * [Change log for worker node fix pack 4.14.19_1557_openshift, released 8 April 2024](/docs/openshift?topic=openshift-openshift_changelog_414#41419_1557_openshift_W)
 
@@ -6236,6 +6433,42 @@ subcollection: openshift
 
 [4.14 compliance operator benchmark](/docs/openshift?topic=openshift-benchmarks_414_co#benchmarks_414_co)
 
+* [1 Control plane components](/docs/openshift?topic=openshift-benchmarks_414_co#co-benchmark-414-cp)
+
+    * [1.1 Master node configuration files](/docs/openshift?topic=openshift-benchmarks_414_co#co-benchmark-414-11)
+
+    * [1.2 API server](/docs/openshift?topic=openshift-benchmarks_414_co#co-benchmark-414-12)
+
+    * [1.3 Controller manager](/docs/openshift?topic=openshift-benchmarks_414_co#co-benchmark-414-13)
+
+    * [1.4 Scheduler](/docs/openshift?topic=openshift-benchmarks_414_co#co-benchmark-414-14)
+
+* [2 etcd](/docs/openshift?topic=openshift-benchmarks_414_co#co-benchmark-414-2)
+
+* [3 Control plane configuration](/docs/openshift?topic=openshift-benchmarks_414_co#co-benchmark-414-3)
+
+    * [3.1 Authentication and authorization](/docs/openshift?topic=openshift-benchmarks_414_co#co-benchmark-414-31)
+
+    * [3.2 Logging](/docs/openshift?topic=openshift-benchmarks_414_co#co-benchmark-414-32)
+
+* [4 Worker Nodes](/docs/openshift?topic=openshift-benchmarks_414_co#co-benchmark-414-4)
+
+* [5 Policies](/docs/openshift?topic=openshift-benchmarks_414_co#co-benchmark-414-5)
+
+    * [5.1 RBAC and service accounts](/docs/openshift?topic=openshift-benchmarks_414_co#co-benchmark-414-51)
+
+    * [5.2 Pod Security Policies](/docs/openshift?topic=openshift-benchmarks_414_co#co-benchmark-414-52)
+
+    * [5.3 Network policies and CNI](/docs/openshift?topic=openshift-benchmarks_414_co#co-benchmark-414-53)
+
+    * [5.4 Secrets management](/docs/openshift?topic=openshift-benchmarks_414_co#co-benchmark-414-54)
+
+    * [5.5 Extensible admission control](/docs/openshift?topic=openshift-benchmarks_414_co#co-benchmark-414-55)
+
+    * [5.7 General policies](/docs/openshift?topic=openshift-benchmarks_414_co#co-benchmark-414-57)
+
+* [Remediations and explanations](/docs/openshift?topic=openshift-benchmarks_414_co#co-benchmark-414-remdiations)
+
 
 ### Version 4.13
 {: #sitemap_version_413}
@@ -6252,6 +6485,8 @@ subcollection: openshift
 [Version 4.13 change log](/docs/openshift?topic=openshift-openshift_changelog_413#openshift_changelog_413)
 
 * [Overview](/docs/openshift?topic=openshift-openshift_changelog_413#openshift_changelog_overview_413)
+
+    * [Change log for master fix pack 4.13.39_1568_openshift, released 24 April 2024](/docs/openshift?topic=openshift-openshift_changelog_413#41339_1568_openshift_M)
 
     * [Change log for worker node fix pack 4.13.38_1567_openshift, released 8 April 2024](/docs/openshift?topic=openshift-openshift_changelog_413#41338_1567_openshift_W)
 
@@ -6415,6 +6650,8 @@ subcollection: openshift
 [Version 4.12 change log](/docs/openshift?topic=openshift-openshift_changelog_412#openshift_changelog_412)
 
 * [Overview](/docs/openshift?topic=openshift-openshift_changelog_412#openshift_changelog_overview_412)
+
+    * [Change log for master fix pack 4.12.55_1588_openshift, released 24 April 2024](/docs/openshift?topic=openshift-openshift_changelog_412#41255_1588_openshift_M)
 
     * [Change log for worker node fix pack 4.12.54_1587_openshift, released 8 April 2024](/docs/openshift?topic=openshift-openshift_changelog_412#41254_1587_openshift_W)
 
@@ -7036,6 +7273,8 @@ subcollection: openshift
     * [Change log for version 1.0, released 16 May 2023](/docs/openshift?topic=openshift-versions-vpc-file-addon#1.0_is_file_relnote)
 
 [{{site.data.keyword.cos_full_notm}} plug-in](/docs/openshift?topic=openshift-cos_plugin_changelog#cos_plugin_changelog)
+
+* [Change log for version 2.2.25, released 24 April 2024](/docs/openshift?topic=openshift-cos_plugin_changelog#02225_object_plugin)
 
 * [Change log for version 2.2.24, released 22 February 2024](/docs/openshift?topic=openshift-cos_plugin_changelog#02224_object_plugin)
 
@@ -9664,6 +9903,14 @@ subcollection: openshift
 
 [Why am I receiving multiple etcd alerts?](/docs/openshift?topic=openshift-ts-addon-etcd-alerts#ts-addon-etcd-alerts)
 
+[When I try to create a version 4.15 cluster, I see a VPC quota error](/docs/openshift?topic=openshift-ts-sbd-cluster-create-quota#ts-sbd-cluster-create-quota)
+
+* [If you exceeded the number of security groups allowed per VPC](/docs/openshift?topic=openshift-ts-sbd-cluster-create-quota#quota-num-of-rules-per-vpc)
+
+* [If you exceeded the number of remote rules per security group](/docs/openshift?topic=openshift-ts-sbd-cluster-create-quota#quota-num-of-remote-rules)
+
+[I use custom security groups and after creating a version 4.15 cluster, applications running in other clusters in my VPC are failing](/docs/openshift?topic=openshift-ts-sbd-other-clusters#ts-sbd-other-clusters)
+
 
 ### Worker nodes
 {: #sitemap_worker_nodes}
@@ -9869,6 +10116,12 @@ subcollection: openshift
 
 [Why are DNS lookups from certain pods so slow?](/docs/openshift?topic=openshift-ts-slow-dns-lookup#ts-slow-dns-lookup)
 
+[Why do I see DNS failures after adding a custom DNS resolver?](/docs/openshift?topic=openshift-ts-sbd-custom-dns#ts-sbd-custom-dns)
+
+* [Other scenarios](/docs/openshift?topic=openshift-ts-sbd-custom-dns#sbd-dns-scenarios)
+
+    * [If the cluster is created after the DNS resolver is created](/docs/openshift?topic=openshift-ts-sbd-custom-dns#sbd-dns-after)
+
 
 ### Apps and services
 {: #sitemap_apps_and_services}
@@ -9915,6 +10168,12 @@ subcollection: openshift
 [Why can't I install a Helm chart with updated configuration values?](/docs/openshift?topic=openshift-ts-app-helm-install#ts-app-helm-install)
 
 [Why does the `oc debug` command fail with a `container is unable to start error`?](/docs/openshift?topic=openshift-ts-app-oc-debug#ts-app-oc-debug)
+
+[After creating a version 4.15 cluster, my app no longer works](/docs/openshift?topic=openshift-ts-sbd-app-not-working#ts-sbd-app-not-working)
+
+* [Allowing outbound access](/docs/openshift?topic=openshift-ts-sbd-app-not-working#allow-outbound-ts)
+
+[When I update my cluster to 4.15 or later, my nodeport app no longer works](/docs/openshift?topic=openshift-ts-sbd-nodeport-not-working#ts-sbd-nodeport-not-working)
 
 
 ### Managed add-ons

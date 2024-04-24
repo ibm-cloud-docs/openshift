@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2024
-lastupdated: "2024-01-03"
+lastupdated: "2024-04-24"
 
 
 keywords: portworx, openshift
@@ -69,6 +69,9 @@ If you don't want to use {{site.data.keyword.keymanagementservicelong_notm}} or 
 
 1. [Create a service ID](/docs/account?topic=account-serviceids&interface=cli#serviceids).
 
+1. **Private clusters**: [Create a virtual private endpoint gateway](/docs/vpc?topic=vpc-ordering-endpoint-gateway&interface=ui#vpe-creating-ui) that allows access to your KMS instance. Make sure to bind at least 1 IP address from each subnet in your VPC to the VPE.
+
+
 1. [Retrieve the Key Management public endpoint URL](/docs/hs-crypto?topic=hs-crypto-regions#service-endpoints). Make sure that you note your endpoint in the correct format; for example, `https://api.us-south.hs-crypto.cloud.ibm.com:<port>`. For more information, see the [{{site.data.keyword.hscrypto}} API documentation](https://cloud.ibm.com/apidocs/hs-crypto#getinstance){: external}.
 
 #### Setting up volume encryption with {{site.data.keyword.keymanagementservicelong_notm}}
@@ -81,6 +84,9 @@ If you don't want to use {{site.data.keyword.keymanagementservicelong_notm}} or 
 1. [Create a service ID](/docs/account?topic=account-serviceids&interface=cli#serviceids).
 
 1. [Retrieve the region](/docs/key-protect?topic=key-protect-regions#regions) where you created your service instance and make a note. You need this value later when you create your secret.
+
+1. **Private clusters**: [Create a virtual private endpoint gateway](/docs/vpc?topic=vpc-ordering-endpoint-gateway&interface=ui#vpe-creating-ui) that allows access to your KMS instance. Make sure to bind at least 1 IP address from each subnet in your VPC to the VPE.
+
 
 
 #### Creating a secret in your cluster

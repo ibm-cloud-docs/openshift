@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2022, 2024
-lastupdated: "2024-03-28"
+lastupdated: "2024-04-24"
 
 
 keywords: openshift
@@ -32,7 +32,7 @@ New security group rules have been introduced in versions 4.11 and later. These 
 Run the following commands to sync your security group settings.
 
 
-1. Get the ID of the `kube-<cluster-id>` security group.
+1. Get the ID of the `kube-<clusterID>` security group.
     ```sh
     ibmcloud is sg kube-<cluster-id>  | grep ID
     ```

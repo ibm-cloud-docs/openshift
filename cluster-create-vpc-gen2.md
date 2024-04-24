@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2024
-lastupdated: "2024-04-19"
+lastupdated: "2024-04-24"
 
 
 keywords: openshift, {{site.data.keyword.openshiftlong_notm}}, kubernetes, clusters, worker nodes, worker pools, vpc-gen2
@@ -21,6 +21,11 @@ subcollection: openshift
 
 Use the {{site.data.keyword.cloud_notm}} CLI or the {{site.data.keyword.cloud_notm}} console to create a standard VPC cluster, and customize your cluster to meet the high availability and security requirements of your apps.
 {: shortdesc}
+
+
+
+Creating a version 4.15 cluster? [Review the version information](/docs/openshift?topic=openshift-cs_versions_415) for important networking changes introduced in {{site.data.keyword.openshiftlong_notm}} version 4.15 and later.
+{: important}
 
 
 
@@ -97,6 +102,11 @@ Internal registry
 :   Select your COS instance. The container images stored in the internal registry of your {{site.data.keyword.openshiftlong_notm}} cluster are automatically backed up to a {{site.data.keyword.cos_short}} bucket. Any data that is stored in the object storage bucket remains even if you delete the cluster.
 
 
+
+
+
+Outbound traffic protection [4.15 and later]{: tag-red} 
+:   The default behavior for clusters at version 4.15 and later is to allow only the necessary networking traffic for the cluster to function and disable all other outbound connections. If you have apps or services that require connection to the public Internet, such as GitHub repositories, Docker Hub, `quay.io`, the Red Hat Marketplace and OperatorHub, note that you must either disable outbound traffic protection completely (so that all outbound traffic is allowed), or add security group rules to allow only the outbound traffic that you require.
 
 
 
@@ -186,7 +196,7 @@ Observability integrations
 
 
    `--cluster-security-group <group_ID>`
-    :   Optional. Specify additional security group IDs to apply to all workers on the cluster. You must include a separate `--cluster-security-group` option for each individual security group you want to add. To apply the IBM-created `kube-clusterID`, use `--cluster-security-group cluster`. If no value is specified, only the `kube-clusterID` and the default VPC security group are applied. A maximum of five security groups can be applied to workers, including the default security groups. Note that the VPC security group is only applied if no other security groups are specified. For more information, see [Adding VPC security groups to clusters and worker pools during create time](/docs/openshift?topic=openshift-vpc-security-group-manage).
+    :   Optional. Specify one or more security group IDs to apply to all workers on the cluster. For OpenShift version 4.15 and Kubernetes version 1.30 and later, these security groups are applied in addition to the IBM-managed `kube-clusterID` security group. For earlier cluster versions, specify the `--cluster-security-group cluster` option to apply the `kube-clusterID` security group. If no value is specified, a default set of security groups including `kube-clusterID` are applied. For more information, see [Adding VPC security groups to clusters and worker pools during create time](/docs/openshift?topic=openshift-vpc-security-group-manage).
     
     The security groups applied to a cluster cannot be changed once the cluster is created. You can [change the rules of the security groups](/docs/openshift?topic=openshift-vpc-security-group-manage) that are applied to the cluster, but you cannot add or remove security groups at the cluster level. If you apply the incorrect security groups at cluster create time, you must delete the cluster and create a new one. See [Adding VPC security groups to clusters and worker pools during create time](/docs/openshift?topic=openshift-vpc-security-group-manage) for more details before adding security groups to your cluster. 
     {: important}
@@ -225,6 +235,9 @@ Observability integrations
 
     `--secondary-storage STORAGE`
     :    Optional. The storage option for the flavor. For example, `900gb.5iops-tier`. When you add a secondary disk, that disk is used for the container runtime, while the primary disk is used for the operating system. To view the storage options for a flavor, run the `ibmcloud oc flavor get --flavor FLAVOR --zone ZONE --provider vpc-gen2` command. To view a list of VPC worker node flavors, see [VPC flavors](/docs/openshift?topic=openshift-vpc-flavors&interface=ui).
+
+    `--disable-outbound-traffic-protection` [4.15 and later]{: tag-red} 
+    :   Optional.
     
 5. Verify that the creation of the cluster was requested. It can take a few minutes for the worker node machines to be ordered, and for the cluster to be set up and provisioned in your account.
     ```sh
@@ -235,7 +248,7 @@ Observability integrations
     When the provisioning of your {{site.data.keyword.redhat_openshift_notm}} master is completed, the state of your cluster changes to **normal**. After the {{site.data.keyword.redhat_openshift_notm}} master is ready, your worker nodes are set up.
     ```sh
     NAME         ID                                   State      Created          Workers    Zone      Version     Resource Group Name   Provider
-    mycluster    aaf97a8843a29941b49a598f516da72101   normal   20170201162433   3          Dallas     4.14.16_1544_openshift      Default               vpc-gen2
+    mycluster    aaf97a8843a29941b49a598f516da72101   normal   20170201162433   3          Dallas     4.14.20_1544_openshift      Default               vpc-gen2
     ```
     {: screen}
 
@@ -248,7 +261,7 @@ Observability integrations
     When the worker nodes are ready, the worker node **State** changes to `normal` and the **Status** changes to `Ready`. When the node **Status** changes to `Ready`, you can access the cluster. Note that even if the cluster is ready, some parts of the cluster that are used by other services, such as Ingress secrets or registry image pull secrets, might still be in process.
     ```sh
     ID                                                     Public IP        Private IP     Flavor              State    Status   Zone    Version
-    kube-blrs3b1d0p0p2f7haq0g-mycluster-default-000001f7   169.xx.xxx.xxx  10.xxx.xx.xxx   b3c.4x16.encrypted  normal   Ready    dal10   4.14.16_1544_openshift
+    kube-blrs3b1d0p0p2f7haq0g-mycluster-default-000001f7   169.xx.xxx.xxx  10.xxx.xx.xxx   b3c.4x16.encrypted  normal   Ready    dal10   4.14.20_1544_openshift
     ```
     {: screen}
 

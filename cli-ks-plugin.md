@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2024
-lastupdated: "2024-04-19"
+lastupdated: "2024-04-24"
 
 
 keywords: openshift, cli reference, kubernetes cli, openshift cli, {{product_name_notm}}
@@ -53,7 +53,7 @@ The following tables list the `ibmcloud oc` command groups. For a complete list 
 | [Quota commands](#cs_quota) | View the quota and limits for cluster-related resources in your IBM Cloud account. |
 | [Subnets commands](#cs_subnets) | List available subnets in your IBM Cloud infrastructure account. |
 | [VLAN commands](#vlan) | List public and private VLANs for a zone and view the VLAN spanning status.|
-| [VPCS commands](#cs_vpcs) | List all VPCs in the targeted resource group. If no resource group is targeted, then all VPCs in the account are listed.|
+| [VPCS commands](#vpc-ls-cli) | List all VPCs in the targeted resource group. If no resource group is targeted, then all VPCs in the account are listed.|
 | [Flavor commands](#cs_machine_types) | Get the information of a flavor or list available flavors for a zone. |
 | [Locations commands](#cs_supported-locations) | List the locations that are supported by IBM Cloud Kubernetes Service. |
 | [Messages commands](#cs_messages) | View the current user messages. |
@@ -3254,7 +3254,7 @@ Minimum required permissions
 :    Optional: The storage option for the flavor. For example, `900gb.5iops-tier`. When you add a secondary disk, that disk is used for the container runtime, while the primary disk is used for the operating system. To view the storage options for a flavor, run the `**ibmcloud oc flavor get --flavor FLAVOR --zone ZONE --provider vpc-gen2` command.
 
 `--security-group GROUP`
-:    Optional. Specify up to five security group IDs to apply to all workers in the worker pool.
+:   Optional. Specify one or more security group IDs to apply to all workers on the cluster. For OpenShift version 4.15 and Kubernetes version 1.30 and later, these security groups are applied in addition to the IBM-managed `kube-clusterID` security group. For earlier cluster versions, specify the `--cluster-security-group cluster` option to apply the `kube-clusterID` security group. If no value is specified, a default set of security groups including `kube-clusterID` are applied.
 
 `--output json`
 :    Optional: Prints the command output in JSON format.
@@ -7352,39 +7352,78 @@ ibmcloud oc vlan spanning get --region us-south
 
 
 
-## `vpcs` command
-{: #cs_vpcs}
+## `ibmcloud oc vpc ls`
+{: #vpc-ls-cli}
 
-[Virtual Private Cloud]{: tag-vpc}
+List all VPCs in the targeted resource group. If no resource group is targeted, all VPCs in the account are listed.
 
-List all VPCs in the targeted resource group. If no resource group is targeted, then all VPCs in the account are listed.
-{: shortdesc}
-
-```sh
-ibmcloud oc vpcs [--provider vpc-gen2] [--output json] [-q]
+```txt
+ibmcloud oc vpc ls [--output OUTPUT] [--provider PROVIDER] [-q]
 ```
 {: pre}
+{: #vpc-ls-usage}
 
-**Minimum required permissions**:
-* **Viewer** platform access role for {{site.data.keyword.containerlong_notm}}
+### Command options
+{: #vpc-ls-options}
 
-**Command options**:
-
-`--provider vpc-gen2`
-:    The infrastructure provider type ID for the VPC worker node machine. `vpc-gen2` for VPC Generation 2 compute is supported.
-
-`--output json`
-:    Optional: Prints the command output in JSON format.
+`--output OUTPUT`
+:    Prints the command output in the provided format. Accepted values: `json`
+`--provider PROVIDER`
+:    The VPC infrastructure provider type. Supported values are `vpc-classic` and `vpc-gen2`. By default, VPCs of all provider types are returned.
 
 `-q`
-:    Optional: Do not show the message of the day or update reminders.
+:    Do not show the message of the day or update reminders.
+{: #vpc-ls-options-dl}
 
 
-**Example**:
-```sh
-ibmcloud oc vpcs
+## `ibmcloud oc vpc outbound-traffic-protection disable`
+{: #vpc-outbound-traffic-protection-disable-cli}
+
+Disable outbound traffic protection for a Secure By Default VPC cluster.
+
+```txt
+ibmcloud oc vpc outbound-traffic-protection disable --cluster CLUSTER [-f] [-q]
 ```
 {: pre}
+{: #vpc-outbound-traffic-protection-disable-usage}
+
+### Command options
+{: #vpc-outbound-traffic-protection-disable-options}
+
+`--cluster CLUSTER`, `-c CLUSTER`
+:    Specify the cluster name or ID.
+
+`-f`
+:    Force the command to run without user prompts.
+
+`-q`
+:    Do not show the message of the day or update reminders.
+{: #vpc-outbound-traffic-protection-disable-options-dl}
+
+
+## `ibmcloud oc vpc outbound-traffic-protection enable`
+{: #vpc-outbound-traffic-protection-enable-cli}
+
+Enable outbound traffic protection for a Secure By Default VPC cluster.
+
+```txt
+ibmcloud oc vpc outbound-traffic-protection enable --cluster CLUSTER [-f] [-q]
+```
+{: pre}
+{: #vpc-outbound-traffic-protection-enable-usage}
+
+### Command options
+{: #vpc-outbound-traffic-protection-enable-options}
+
+`--cluster CLUSTER`, `-c CLUSTER`
+:    Specify the cluster name or ID.
+
+`-f`
+:    Force the command to run without user prompts.
+
+`-q`
+:    Do not show the message of the day or update reminders.
+{: #vpc-outbound-traffic-protection-enable-options-dl}
 
 
 

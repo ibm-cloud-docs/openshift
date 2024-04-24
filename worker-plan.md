@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2024
-lastupdated: "2024-03-27"
+lastupdated: "2024-04-24"
 
 
 keywords: openshift, {{site.data.keyword.openshiftlong_notm}}, kubernetes, multi az, multi-az, szr, mzr
@@ -46,18 +46,34 @@ The worker node flavors and isolation levels that are available to you depend on
 
 ![Hardware options for worker nodes in a standard cluster](images/cs_clusters_hardware.png){: caption="Figure 1. Hardware options for worker nodes in a standard cluster" caption-side="bottom"}
 
-### What flavors are available to me?
-{: #available-flavors}
-
 Classic clusters
 :   Worker nodes can be created on [virtual](#vm) and [bare metal](#bm) worker nodes. If you require additional local disks, you can also choose one of the bare metal flavors that are designed for [software-defined storage](#sds) solutions, such as Portworx. Depending on the level of hardware isolation that you need, virtual worker nodes can be set up as shared or dedicated nodes, whereas bare metal machines are always set up as dedicated nodes.
-
 
 VPC clusters
 :   Worker nodes can be provisioned using virtual worker nodes on standard infrastructure or dedicated hosts.
 
 {{site.data.keyword.satelliteshort}} clusters
 :   Worker nodes can be provisioned on virtual machines in cloud providers such as AWS, Azure, GCP and more. Or, worker nodes can be provisioned using your own, on-premises, infrastructure.
+
+
+### Which operating systems are available?
+{: #worker-os-options}
+
+Review the following operating systems in {{site.data.keyword.openshiftlong_notm}}
+
+
+
+
+
+Red Hat Enterprise Linux (RHEL) version 8
+:   Red Hat Enterprise Linux on IBM Cloud provides enterprises with a robust and scalable environment—built with security in mind—tailored for critical workloads. Organizations unlock access to high availability, disaster recovery, and streamlined management capabilities by joining the Red Hat Enterprise Linux platform with IBM Cloud's infrastructure. For an overview of RHEL 8, see [Why run Linux on IBM Cloud?](https://www.redhat.com/en/topics/linux/linux-on-ibm-cloud){: external}.
+
+Red Hat Enterprise Linux CoreOS (RHCOS) [4.15 and later]{: tag-red}
+:   Red Hat Enterprise Linux CoreOS (RHCOS) is specifically designed for the Red Hat OpenShift Container Platform (OCP). While leveraging the stability and security of Red Hat Enterprise Linux (RHEL), RHCOS is lightweight and minimal, focusing on running containerized workloads efficiently and at scale. Because it consists of RHEL components, you get the same level of security as RHEL plus the added bonus of having a more minimal container centric footprint, read-only file system, image-based deployments, and more. For an overview of RHCOS, see [Red Hat Enterprise Linux CoreOS (RHCOS)](https://docs.openshift.com/container-platform/4.15/architecture/architecture-rhcos.html){: external}.
+
+
+
+
 
 
 ### Can I combine different flavors in a cluster?

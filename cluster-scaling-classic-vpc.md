@@ -2,10 +2,10 @@
 
 copyright: 
   years: 2014, 2024
-lastupdated: "2024-01-18"
+lastupdated: "2024-04-24"
 
 
-keywords: openshift, node scaling, ca, autoscaler
+keywords: kubernetes, node scaling, ca, autoscaler, openshift
 
 subcollection: openshift
 
@@ -24,14 +24,6 @@ subcollection: openshift
 
 With the `cluster-autoscaler` add-on, you can scale the worker pools in your {{site.data.keyword.openshiftlong}} classic or VPC cluster automatically to increase or decrease the number of worker nodes in the worker pool based on the sizing needs of your scheduled workloads. The `cluster-autoscaler` add-on is based on the [Kubernetes Cluster-Autoscaler project](https://github.com/kubernetes/autoscaler/tree/master/cluster-autoscaler){: external}. For a list of supported add-on versions by cluster version, see [Supported cluster add-on versions](/docs/openshift?topic=openshift-supported-cluster-addon-versions).
 {: shortdesc}
-
-
-
-
-Looking to use autoscaling in your {{site.data.keyword.satelliteshort}} clusters? See, [Preparing to autoscale {{site.data.keyword.satelliteshort}} clusters](/docs/openshift?topic=openshift-cluster-scaling-sat).
-{: tip}
-
-
 
 
 You can't enable the cluster autoscaler on worker pools that use reservations.
@@ -190,7 +182,7 @@ The cluster autoscaler add-on is not supported for baremetal worker nodes.
 
 1. Before you begin, [Install the required CLI and plug-ins](/docs/cli?topic=cli-getting-started).
     *  {{site.data.keyword.cloud_notm}} CLI (`ibmcloud`)
-    *  {{site.data.keyword.containerlong_notm}} plug-in (`ibmcloud oc` alias for {{site.data.keyword.redhat_openshift_notm}} clusters)
+    *  {{site.data.keyword.containerlong_notm}} plug-in (`ibmcloud oc`)
     *  {{site.data.keyword.registrylong_notm}} plug-in (`ibmcloud cr`)
     *  Kubernetes (`kubectl`)
 

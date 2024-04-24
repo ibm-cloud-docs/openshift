@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2024
-lastupdated: "2024-04-18"
+lastupdated: "2024-04-24"
 
 
 keywords: openshift, {{site.data.keyword.openshiftlong_notm}}, oc, ks
@@ -31,6 +31,14 @@ Refer to the following change logs for a summary of changes for each version of 
 
 Review the following changes for 1.0 versions of the CLI plug-in.
 {: shortdesc}
+
+## Version v1.0.617
+{: #cli-010617}
+
+Version 1.0.617 of the CLI was released on 24 April 2024.
+:   Adds the `ibmcloud oc vpc outbound-traffic-protection disable` and `enable` [commands](/docs/openshift?topic=openshift-kubernetes-service-cli#vpc-outbound-traffic-protection-disable-cli). 
+:   Adds the `ibmcloud oc vpc ls` [command](/docs/openshift?topic=openshift-kubernetes-service-cli#vpc-ls-cli).
+:   Updates the help text in various languages.
 
 ## Version v1.0.613
 {: #cli-010613}
@@ -736,7 +744,7 @@ Version 0.4.90 of the CLI was released on 19 February 2020.
     - Deprecates the `--disable-deployment` option of the `ibmcloud oc alb configure vpc-classic` command. 
 - **VPC-specific command updates**: 
     - Fixes the [`ibmcloud oc zone rm`](/docs/openshift?topic=openshift-kubernetes-service-cli#cs_zone_rm) command for VPC multizone clusters. 
-    - For the [`ibmcloud oc vpcs`](/docs/openshift?topic=openshift-kubernetes-service-cli#cs_vpcs) command, defaults to list only generation 1 (`vpc-classic`) VPCs. 
+    - For the [`ibmcloud oc vpcs`](/docs/openshift?topic=openshift-kubernetes-service-cli#vpc-ls-cli) command, defaults to list only generation 1 (`vpc-classic`) VPCs. 
     - Revises the `ibmcloud oc worker-pool create vpc-classic` command to remove the `--disable-disk-encrypt` option and to hide the `--hardware` option because it only accepts one value. 
 - **Help documentation updates**: 
     - Add deprecation warnings to encourage you to use the newer `classic` subcommands. For example, use `ibmcloud oc cluster create classic` instead of `ibmcloud oc cluster create`.
