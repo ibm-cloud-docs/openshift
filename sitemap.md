@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2024
-lastupdated: "2024-04-19"
+lastupdated: "2024-04-24"
 
 
 keywords: openshift
@@ -6168,6 +6168,8 @@ subcollection: openshift
 
 * [Overview](/docs/openshift?topic=openshift-openshift_changelog_414#openshift_changelog_overview_414)
 
+    * [Change log for master fix pack 4.14.20_1558_openshift, released 24 April 2024](/docs/openshift?topic=openshift-openshift_changelog_414#41420_1558_openshift_M)
+
     * [Change log for worker node fix pack 4.14.19_1557_openshift, released 8 April 2024](/docs/openshift?topic=openshift-openshift_changelog_414#41419_1557_openshift_W)
 
     * [Change log for master fix pack 4.14.16_1555_openshift, released 27 March 2024](/docs/openshift?topic=openshift-openshift_changelog_414#41416_1555_openshift_M)
@@ -6252,6 +6254,8 @@ subcollection: openshift
 [Version 4.13 change log](/docs/openshift?topic=openshift-openshift_changelog_413#openshift_changelog_413)
 
 * [Overview](/docs/openshift?topic=openshift-openshift_changelog_413#openshift_changelog_overview_413)
+
+    * [Change log for master fix pack 4.13.39_1568_openshift, released 24 April 2024](/docs/openshift?topic=openshift-openshift_changelog_413#41339_1568_openshift_M)
 
     * [Change log for worker node fix pack 4.13.38_1567_openshift, released 8 April 2024](/docs/openshift?topic=openshift-openshift_changelog_413#41338_1567_openshift_W)
 
@@ -6415,6 +6419,8 @@ subcollection: openshift
 [Version 4.12 change log](/docs/openshift?topic=openshift-openshift_changelog_412#openshift_changelog_412)
 
 * [Overview](/docs/openshift?topic=openshift-openshift_changelog_412#openshift_changelog_overview_412)
+
+    * [Change log for master fix pack 4.12.55_1588_openshift, released 24 April 2024](/docs/openshift?topic=openshift-openshift_changelog_412#41255_1588_openshift_M)
 
     * [Change log for worker node fix pack 4.12.54_1587_openshift, released 8 April 2024](/docs/openshift?topic=openshift-openshift_changelog_412#41254_1587_openshift_W)
 

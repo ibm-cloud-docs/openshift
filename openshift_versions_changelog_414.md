@@ -2,7 +2,7 @@
 
 copyright:
   years: 2023, 2024
-lastupdated: "2024-04-09"
+lastupdated: "2024-04-24"
 
 
 keywords: openshift, 4.14, update, upgrade, BOM, bill of materials, versions, patch
@@ -32,6 +32,27 @@ Check the [Security Bulletins on {{site.data.keyword.cloud_notm}} Status](https:
 
 Master patch updates are applied automatically. Worker node patch updates can be applied by reloading or updating the worker nodes. For more information about major, minor, and patch versions and preparation actions between minor versions, see [{{site.data.keyword.redhat_openshift_notm}} versions](/docs/openshift?topic=openshift-openshift_versions).
 {: tip}
+
+### Change log for master fix pack 4.14.20_1558_openshift, released 24 April 2024
+{: #41420_1558_openshift_M}
+
+The following table shows the changes that are in the master fix pack 4.14.20_1558_openshift. Master patch updates are applied automatically. 
+
+
+
+| Component | Previous | Current | Description |
+| --- | --- | --- | --- |
+| Cluster health image | v1.5.3 | v1.5.4 | New version contains updates and security fixes. |
+| etcd | v3.5.12 | v3.5.13 | See the [etcd release notes](https://github.com/coreos/etcd/releases/v3.5.13){: external}. |
+| {{site.data.keyword.cloud_notm}} Controller Manager | v1.27.12-1 | v1.27.12-10 | New version contains updates and security fixes. |
+| {{site.data.keyword.cloud_notm}} RBAC Operator | bd30030 | 4c5d156 | New version contains updates and security fixes. |
+| Key Management Service provider | v2.8.8 | v2.8.9 | New version contains updates and security fixes. |
+| Load balancer and load balancer monitor for {{site.data.keyword.cloud_notm}} Provider | 2831 | 2867 | New version contains updates and security fixes. |
+| Portieris admission controller | v0.13.12 | v0.13.13 | See the [Portieris admission controller release notes](https://github.com/{{site.data.keyword.IBM_notm}}/portieris/releases/tag/v0.13.13){: external}. |
+| {{site.data.keyword.openshiftlong_notm}}. | 4.14.16 | 4.14.20 | See the [{{site.data.keyword.openshiftlong_notm}} release notes](https://docs.openshift.com/container-platform/4.14/release_notes/ocp-4-14-release-notes.html#ocp-4-14-20){: external}. |
+| {{site.data.keyword.openshiftlong_notm}} Control Plane Operator, Metrics Server, and toolkit | 4.14.0+20240226 | 4.14.0+20240412 | See the [{{site.data.keyword.openshiftlong_notm}} toolkit release notes](https://github.com/openshift/ibm-roks-toolkit/releases/tag/v4.14.0+20240412){: external}. |
+{: caption="Changes since version 4.14.16_1555_openshift" caption-side="bottom"}
+
 
 ### Change log for worker node fix pack 4.14.19_1557_openshift, released 8 April 2024
 {: #41419_1557_openshift_W}
