@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2024, 2024
-lastupdated: "2024-04-19"
+lastupdated: "2024-04-25"
 
 
 keywords: telemetry, remote health, remote monitoring, cluster data, health data
@@ -68,7 +68,8 @@ To enable Telemetry, update your pull secret by adding your OpenShift access tok
 
 1. For classic infrastructure, [reload all worker nodes in your cluster](/https://cloud.ibm.com/docs/openshift?topic=openshift-kubernetes-service-cli#cs_worker_reload). For VPC infrastructure, [replace all worker nodes in your cluster](/docs/containers?topic=containers-kubernetes-service-cli#cli_worker_replace).
 
-1. To use the console to verify that Telemetry is enabled in the cluster, open the [{{site.data.keyword.redhat_openshift_notm}} console](https://console.redhat.com/openshift){: external} and navigate to the **Clusters** page. If your cluster is listed, Telemetry is enabled. To verify Telemetry enablement in the CLI, see [Checking if Telemetry is enabled for a cluster](#telemetry_check).
+1. Open the [{{site.data.keyword.redhat_openshift_notm}} console](https://console.redhat.com/openshift){: external} and navigate to the **Clusters** page. Telemetry is enabled when your cluster type is `RHOIC`. Note that it might take a few minutes for the changes to reflect in the console. If you want to verify Telemetry enablement in the CLI, see [Checking if Telemetry is enabled for a cluster](#telemetry_check).
+
 
 ## Disabling Telemetry
 {: #oc_disable_telemetry_reports}

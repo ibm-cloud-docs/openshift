@@ -2,7 +2,7 @@
 
 copyright:
   years: 2023, 2024
-lastupdated: "2024-04-24"
+lastupdated: "2024-04-25"
 
 
 keywords: openshift, 4.13, update, upgrade, BOM, bill of materials, versions, patch
@@ -56,6 +56,20 @@ The following table shows the changes that are in the master fix pack 4.13.39_15
 | {{site.data.keyword.openshiftlong_notm}}. | 4.13.36 | 4.13.39 | See the [{{site.data.keyword.openshiftlong_notm}} release notes](https://docs.openshift.com/container-platform/4.13/release_notes/ocp-4-13-release-notes.html#ocp-4-13-39){: external}. |
 | {{site.data.keyword.openshiftlong_notm}} Control Plane Operator, Metrics Server, and toolkit | 4.13.0+20240208 | 4.13.0+20240412 | See the [{{site.data.keyword.openshiftlong_notm}} toolkit release notes](https://github.com/openshift/ibm-roks-toolkit/releases/tag/v4.13.0+20240412){: external}. |
 {: caption="Changes since version 4.13.36_1565_openshift" caption-side="bottom"}
+
+
+### Change log for worker node fix pack 4.13.40_1569_openshift, released 22 April 2024
+{: #41340_1569_openshift_W}
+
+The following table shows the changes that are in the worker node fix pack 4.13.40_1569_openshift. Worker node patch updates can be applied by updating, reloading (in classic infrastructure), or replacing (in VPC infrastructure) the worker node.
+{: shortdesc}
+
+| Component | Previous | Current | Description |
+| --- | --- | --- | --- |
+| {{site.data.keyword.openshiftshort}}. | 4.13.38 | 4.13.40 | For more information, see the [change logs](https://docs.openshift.com/container-platform/4.13/release_notes/ocp-4-13-release-notes.html#ocp-4-13-40){: external}. |
+| RHEL 8 Packages | 4.18.0-513.24.1.el8_9 | 4.18.0-513.24.1.el8_9 | Worker node package updates for [RHSA-2024:1782](https://access.redhat.com/errata/RHSA-2024:1782){: external}, [CVE-2023-4408](https://nvd.nist.gov/vuln/detail/CVE-2023-4408){: external}, [CVE-2023-50387](https://nvd.nist.gov/vuln/detail/CVE-2023-50387){: external}, [CVE-2023-50868](https://nvd.nist.gov/vuln/detail/CVE-2023-50868){: external}, [RHSA-2024:1784](https://access.redhat.com/errata/RHSA-2024:1784){: external}, [CVE-2024-28834](https://nvd.nist.gov/vuln/detail/CVE-2024-28834){: external}. |
+| HAProxy | 295dba8 | 4e826da | Security fixes for [CVE-2024-28834](https://exchange.xforce.ibmcloud.com/vulnerabilities/CVE-2024-28834){: external}. |
+{: caption="Changes since version 4.13.38_1567_openshift" caption-side="bottom"}
 
 
 ### Change log for worker node fix pack 4.13.38_1567_openshift, released 8 April 2024
