@@ -6187,7 +6187,9 @@ subcollection: openshift
 
 * [Available {{site.data.keyword.redhat_openshift_notm}} versions](/docs/openshift?topic=openshift-openshift_versions#openshift_versions_available)
 
-    * [{{site.data.keyword.openshiftlong_notm}} clusters](/docs/openshift?topic=openshift-openshift_versions#os-openshift)
+    * [VPC clusters with Hypershift enabled](/docs/openshift?topic=openshift-openshift_versions#os-openshift-with-coreos)
+
+    * [VPC clusters](/docs/openshift?topic=openshift-openshift_versions#os-openshift)
 
     * [Clusters in Satellite locations with CoreOS enabled](/docs/openshift?topic=openshift-openshift_versions#os-satellite-with-coreos)
 

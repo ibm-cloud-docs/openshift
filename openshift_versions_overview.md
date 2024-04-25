@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2024
-lastupdated: "2024-04-24"
+lastupdated: "2024-04-25"
 
 
 keywords: openshift, version, update, upgrade
@@ -51,7 +51,20 @@ Dates that are marked with a dagger (`†`) are tentative and subject to change.
 
 
 
-### {{site.data.keyword.openshiftlong_notm}} clusters
+### VPC clusters with Hypershift enabled
+{: #os-openshift-with-coreos}
+
+
+[Latest]{: tag-green} 4.15
+- Release date: None
+- End of support: None
+- Operating systems: Red Hat CoreOS (`RHCOS`), RHEL 8 (`REDHAT_8_64`)
+- [Version information and update actions](/docs/openshift?topic=openshift-cs_versions_415)
+- [Change log](/docs/openshift?topic=openshift-openshift_changelog_415)
+- [{{site.data.keyword.redhat_openshift_notm}} 4.15 release notes overview](https://docs.openshift.com/container-platform/4.15/release_notes/ocp-4-15-release-notes.html){: external}
+
+
+### VPC clusters
 {: #os-openshift}
 
 
