@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2024
-lastupdated: "2024-04-24"
+lastupdated: "2024-04-25"
 
 
 keywords: openshift, {{site.data.keyword.openshiftlong_notm}}, kubernetes, release notes
@@ -75,7 +75,6 @@ Red Hat CoreOS worker nodes are available for new VPC clusters beginning with ve
 
 {{site.data.keyword.openshiftlong_notm}} CLI version `1.0.617` is available.
 :   For more information, see [Updating the CLI](/docs/openshift?topic=openshift-cli-update) and the [CLI change log](/docs/openshift?topic=openshift-cs_cli_changelog).
-
 
 
 ### 18 April 2024

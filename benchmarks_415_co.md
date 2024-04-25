@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2024, 2024
-lastupdated: "2024-04-24"
+lastupdated: "2024-04-25"
 
 
 keywords: openshift, benchmarks, 4.15, compliance operator, compliance
@@ -41,8 +41,6 @@ The master node configuration is not stored as a set of files; therefore, rules 
 
 | Section|Recommendation|Manual/Automated|Level|Result |
 | --- | --- | --- | --- | --- |
-| Section|Recommendation|Manual/Automated|Level|Result |
-| -- | -- | -- | -- | -- |
 | 1.2.1|Ensure that anonymous requests are authorized|Manual|1|Pass |
 | 1.2.2|Ensure that the `--basic-auth-file argument` is not set|Automated|1|Pass |
 | 1.2.3|Ensure that the `--token-auth-file parameter` is not set|Automated|1|Pass |

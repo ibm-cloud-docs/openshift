@@ -2,7 +2,7 @@
 
 copyright:
   years: 2022, 2024
-lastupdated: "2024-03-06"
+lastupdated: "2024-04-25"
 
 
 keywords: openshift, version, update, upgrade, 4.10
@@ -26,11 +26,6 @@ Review information about version 4.10 of {{site.data.keyword.openshiftlong_notm}
 Version 4.10 is no longer supported. Update your cluster to at least [version 4.11](/docs/openshift?topic=openshift-cs_versions_411) as soon as possible.
 {: important}
 
-Looking for general information about updating clusters, or information on a different version? See [the {{site.data.keyword.openshiftlong_notm}} version information](/docs/openshift?topic=openshift-openshift_versions) and the version [4.10 blog](https://www.redhat.com/blog/introducing-red-hat-openshift-4.10){: external}
-{: tip}
-
-RHEL 8 is the only operating system for worker nodes created in version 4.10 clusters.
-{: important}
 
 If you have Portworx installed, follow the steps to upgrade your installation to use at least image version `2.11.4`. For more information, see [Upgrading Portworx to a specific version](/docs/openshift?topic=openshift-storage_portworx_about).
 {: important}
@@ -59,7 +54,7 @@ Dates that are marked with a dagger (`†`) are tentative and subject to change.
 
 | Supported? | {{site.data.keyword.redhat_openshift_notm}} / Kubernetes version | Release date | Unsupported date |
 | --- | --- | --- | --- |
-| Deprecated | 4.10 / 1.23 | {{site.data.keyword.openshift_410_release_date}} | {{site.data.keyword.openshift_410_unsupported_date}}`†` |
+| Unsupported | {{site.data.keyword.openshift_410_release_date}} | 4.10 / 1.23 | {{site.data.keyword.openshift_410_release_date}} | {{site.data.keyword.openshift_410_unsupported_date}}`†` |
 {: caption="Release history for {{site.data.keyword.openshiftlong_notm}} version 4.10." caption-side="bottom"}
 
 ## Preparing to update
