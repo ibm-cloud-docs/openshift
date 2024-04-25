@@ -72,10 +72,6 @@ To determine the cause of networking issues on your pods, you can create a test 
 ### Setting up the pods
 {: #debug_pods_test_setup}
 
-These steps are intended for worker nodes that have access to `docker.io`. If your cluster workers do not have access to `docker.io` or if their access to the internet is restricted or blocked, you may need to adjust your debugging strategy. Review the information in [section]() before you begin.
-{: note}
-
-
 1. Create a new privileged namespace for your test pods. Creating a new namespace prevents any custom policies or configurations in existing namespaces from affecting your test pods. In this example, the new namespace is called  `pod-network-test`.
 
     Create the namespace. 
@@ -143,78 +139,78 @@ oc adm policy add-scc-to-group privileged system:serviceaccounts:pod-network-tes
 
     **For clusters with private connectivity.** This daemonset uses the `us.icr.io/armada-master/network-alpine:latest` image from IBM Container Registry. 
 
-        ```yaml
-        apiVersion: apps/v1
-        kind: DaemonSet
+    ```yaml
+    apiVersion: apps/v1
+    kind: DaemonSet
+    metadata:
+    labels:
+        name: nginx-test
+        app: nginx-test
+    name: nginx-test
+    spec:
+    selector:
+        matchLabels:
+        name: nginx-test
+    template:
         metadata:
         labels:
             name: nginx-test
             app: nginx-test
-        name: nginx-test
         spec:
-        selector:
-            matchLabels:
-            name: nginx-test
-        template:
-            metadata:
-            labels:
-                name: nginx-test
-                app: nginx-test
-            spec:
-              nodeSelector:
-                kubernetes.io/hostname: 10.1.1.1
-            tolerations:
-            - operator: "Exists"
-            containers:
-            - name: nginx
-                securityContext:
-                privileged: true
-                image: us.icr.io/armada-master/network-alpine:latest
-                command: ["/bin/sh"]
-                args: ["-c", "echo Hello from ${POD_NAME} > /root/index.html && while true; do { echo -ne \"HTTP/1.0 200 OK\r\nContent-Length: $(wc -c </root/index.html)\r\n\r\n\"; cat /root/index.html; } | nc -l -p 80; done"]
-                env:
-                  - name: POD_NAME
-                    valueFrom:
-                      fieldRef:
-                        fieldPath: metadata.name
-                ports:
-                - containerPort: 80
-        ```
-        {: codeblock}
+            nodeSelector:
+            kubernetes.io/hostname: 10.1.1.1
+        tolerations:
+        - operator: "Exists"
+        containers:
+        - name: nginx
+            securityContext:
+            privileged: true
+            image: us.icr.io/armada-master/network-alpine:latest
+            command: ["/bin/sh"]
+            args: ["-c", "echo Hello from ${POD_NAME} > /root/index.html && while true; do { echo -ne \"HTTP/1.0 200 OK\r\nContent-Length: $(wc -c </root/index.html)\r\n\r\n\"; cat /root/index.html; } | nc -l -p 80; done"]
+            env:
+                - name: POD_NAME
+                valueFrom:
+                    fieldRef:
+                    fieldPath: metadata.name
+            ports:
+            - containerPort: 80
+    ```
+    {: codeblock}
 
     **For clusters with no outbound connectivity at all.** This daemonset allows you to use the `ping`, `dig`, and `nc` commands without requiring outbound connectivity. 
 
-        ```yaml
-        apiVersion: apps/v1
-        kind: DaemonSet
+    ```yaml
+    apiVersion: apps/v1
+    kind: DaemonSet
+    metadata:
+    labels:
+        name: test-client
+        app: test-client
+    name: test-client
+    spec:
+    selector:
+        matchLabels:
+        name: test-client
+    template:
         metadata:
         labels:
             name: test-client
             app: test-client
-        name: test-client
         spec:
-        selector:
-            matchLabels:
-            name: test-client
-        template:
-            metadata:
-            labels:
-                name: test-client
-                app: test-client
-            spec:
-            tolerations:
-            - operator: "Exists"
-            nodeSelector:
-                kubernetes.io/hostname: 10.1.1.1
-            containers:
-            - name: test-client
-                securityContext:
-                privileged: true
-                image: us.icr.io/armada-master/network-alpine:latest
-                command: ["/bin/sh"]
-                args: ["-c", "echo Hi && while true; do sleep 86400; done"]
-            ```
-            {: codeblock}
+        tolerations:
+        - operator: "Exists"
+        nodeSelector:
+            kubernetes.io/hostname: 10.1.1.1
+        containers:
+        - name: test-client
+            securityContext:
+            privileged: true
+            image: us.icr.io/armada-master/network-alpine:latest
+            command: ["/bin/sh"]
+            args: ["-c", "echo Hi && while true; do sleep 86400; done"]
+        ```
+        {: codeblock}
 
 1. Apply the daemonset to deploy test pods on your worker nodes. 
 
@@ -235,7 +231,7 @@ If you are using an image from your private container registry  and the image pu
 ### Running tests within the pods
 {: #debug_pods_test_run}
 
-Run `curl`, `ping`, and `nc` commands to test each pod's network connection and the `dig` command to test the cluster DNS. Review each output, then see [section]() to determine what the outcomes might mean. 
+Run `curl`, `ping`, and `nc` commands to test each pod's network connection and the `dig` command to test the cluster DNS. Review each output, then see [Identifying issues](#debug_pods_test_id) to determine what the outcomes might mean. 
 
 
 
