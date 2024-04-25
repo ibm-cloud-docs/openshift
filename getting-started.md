@@ -2,7 +2,7 @@
 
 copyright:
   years: 2023, 2024
-lastupdated: "2024-04-17"
+lastupdated: "2024-04-24"
 
 
 keywords: openshift, {{site.data.keyword.openshiftlong_notm}}, kubernetes cluster, red hat openshift, openshift container platform, red hat, create openshift cluster, vpc cluster, classic cluster, clusters
@@ -58,7 +58,7 @@ Follow a tutorial, or set up your own custom cluster environment. Review the fol
 
 
 | Type | Level | Time | Description |
-| --- | --- | --- | --- | --- |
+| --- | --- | --- | --- | 
 | [Tutorial]{: tag-green} | Beginner | 30 minutes | Create a small, 2 node cluster to begin testing {{site.data.keyword.openshiftlong_notm}}. For more information, see [Creating a 2 node VPC cluster by using Schematics](/docs/openshift?topic=openshift-tutorial-two-node). | 
 | [Tutorial]{: tag-green} | Beginner | 45 minutes | Follow the steps in this tutorial to create your first cluster by using the IBM Cloud CLI. This tutorial uses Classic infrastructure. For more information, see [Creating a classic cluster from the CLI](/docs/openshift?topic=openshift-openshift_tutorial). |
 | [Tutorial]{: tag-green} | Beginner | 60 minutes | Follow the steps in this tutorial to create your own Virtual Private Cloud (VPC), then create an {{site.data.keyword.openshiftlong_notm}} cluster by using the CLI. For more information, see [Create a cluster in your own Virtual Private Cloud](/docs/openshift?topic=openshift-vpc_rh_tutorial). |
