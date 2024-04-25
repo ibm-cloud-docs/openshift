@@ -10086,6 +10086,18 @@ subcollection: openshift
 {: #sitemap_cluster_network}
 
 
+[Debugging network connections between pods](/docs/openshift?topic=openshift-debug_pods#debug_pods)
+
+* [Check the health of your cluster components and networking pods](/docs/openshift?topic=openshift-debug_pods#debug_pods_health)
+
+* [Debug with test pods](/docs/openshift?topic=openshift-debug_pods#debug_pods_test)
+
+    * [Setting up the pods](/docs/openshift?topic=openshift-debug_pods#debug_pods_test_setup)
+
+    * [Running tests within the pods](/docs/openshift?topic=openshift-debug_pods#debug_pods_test_run)
+
+    * [Identifying issues](/docs/openshift?topic=openshift-debug_pods#debug_pods_test_id)
+
 [Why is my cluster missing the public `containers.appdomain.cloud` subdomain?](/docs/openshift?topic=openshift-roks_ts_subdomain#roks_ts_subdomain)
 
 [Why does my worker node show a `NetworkUnavailable` error?](/docs/openshift?topic=openshift-ts-network-calico-node#ts-network-calico-node)
