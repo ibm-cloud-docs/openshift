@@ -2,7 +2,7 @@
 
 copyright:
   years: 2024, 2024
-lastupdated: "2024-04-25"
+lastupdated: "2024-04-26"
 
 
 keywords: pods, pod connectvity, networking, pod networking, pod trouble shooting, pod debug
@@ -40,10 +40,12 @@ Follow these steps to check the health of your components. Networking issues mig
 
 2. For each worker node, verify that the Calico and cluster DNS pods are present and running in a healthy state. 
     1. Run the command to get the details of your cluster's pods. 
+
         ```sh
         oc get pods -A -o wide | grep calico
         ```
         {: pre}
+
     2. In the output, make sure that your cluster includes the following pods. Make sure that each pod's status is `Running`, and that the pods do not have a large number of restarts.
         - Exactly one `calico-node` pod per worker node. 
         - At least one `calico-typha` pod per cluster. Larger clusters may have more than one. 
@@ -118,8 +120,8 @@ oc adm policy add-scc-to-group privileged system:serviceaccounts:pod-network-tes
     spec:
       selector:
         matchLabels:
-        name: nginx-test
-    template:
+          name: nginx-test
+      template:
         metadata:
           labels:
             name: nginx-test
@@ -143,35 +145,35 @@ oc adm policy add-scc-to-group privileged system:serviceaccounts:pod-network-tes
     apiVersion: apps/v1
     kind: DaemonSet
     metadata:
-    labels:
+      labels:
         name: nginx-test
         app: nginx-test
-    name: nginx-test
+      name: nginx-test
     spec:
-    selector:
+      selector:
         matchLabels:
-        name: nginx-test
-    template:
+          name: nginx-test
+      template:
         metadata:
-        labels:
+          labels:
             name: nginx-test
             app: nginx-test
         spec:
-            nodeSelector:
+          nodeSelector:
             kubernetes.io/hostname: 10.1.1.1
-        tolerations:
-        - operator: "Exists"
-        containers:
-        - name: nginx
+          tolerations:
+          - operator: "Exists"
+          containers:
+          - name: nginx
             securityContext:
-            privileged: true
+              privileged: true
             image: us.icr.io/armada-master/network-alpine:latest
             command: ["/bin/sh"]
             args: ["-c", "echo Hello from ${POD_NAME} > /root/index.html && while true; do { echo -ne \"HTTP/1.0 200 OK\r\nContent-Length: $(wc -c </root/index.html)\r\n\r\n\"; cat /root/index.html; } | nc -l -p 80; done"]
             env:
-                - name: POD_NAME
+              - name: POD_NAME
                 valueFrom:
-                    fieldRef:
+                  fieldRef:
                     fieldPath: metadata.name
             ports:
             - containerPort: 80
@@ -184,31 +186,31 @@ oc adm policy add-scc-to-group privileged system:serviceaccounts:pod-network-tes
     apiVersion: apps/v1
     kind: DaemonSet
     metadata:
-    labels:
+      labels:
         name: test-client
         app: test-client
-    name: test-client
+      name: test-client
     spec:
-    selector:
+      selector:
         matchLabels:
-        name: test-client
-    template:
+          name: test-client
+      template:
         metadata:
-        labels:
+          labels:
             name: test-client
             app: test-client
         spec:
-        tolerations:
-        - operator: "Exists"
-        nodeSelector:
+          tolerations:
+          - operator: "Exists"
+          nodeSelector:
             kubernetes.io/hostname: 10.1.1.1
         containers:
         - name: test-client
-            securityContext:
+          securityContext:
             privileged: true
-            image: us.icr.io/armada-master/network-alpine:latest
-            command: ["/bin/sh"]
-            args: ["-c", "echo Hi && while true; do sleep 86400; done"]
+          image: us.icr.io/armada-master/network-alpine:latest
+          command: ["/bin/sh"]
+          args: ["-c", "echo Hi && while true; do sleep 86400; done"]
         ```
         {: codeblock}
 
