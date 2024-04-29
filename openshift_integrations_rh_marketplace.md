@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2024
-lastupdated: "2024-01-03"
+lastupdated: "2024-04-29"
 
 
 keywords: kubernetes, openshift
@@ -24,7 +24,7 @@ subcollection: openshift
 
 [Virtual Private Cloud]{: tag-vpc} [Classic infrastructure]{: tag-classic-inf} [{{site.data.keyword.satelliteshort}}]{: tag-satellite}
 
-With [{{site.data.keyword.redhat_full}} Marketplace](https://marketplace.redhat.com/en-us){: external}, you can deploy certified {{site.data.keyword.redhat_notm}} software from an operator-based catalog to your OpenShift Container Platform clusters, including {{site.data.keyword.openshiftlong}}.
+With [{{site.data.keyword.redhat_full}} Marketplace](https://swc.saas.ibm.com/en-us/redhat-marketplace){: external}, you can deploy certified {{site.data.keyword.redhat_notm}} software from an operator-based catalog to your OpenShift Container Platform clusters, including {{site.data.keyword.openshiftlong}}.
 {: shortdesc}
 
 **Required permissions**:
@@ -35,7 +35,7 @@ With [{{site.data.keyword.redhat_full}} Marketplace](https://marketplace.redhat.
 {: note}
 
 **Before you begin**:
-*   Register for a [{{site.data.keyword.redhat_notm}} Marketplace account](https://marketplace.redhat.com/en-us/registration/redhat-marketplace){: external}.
+*   Register for a [{{site.data.keyword.redhat_notm}} Marketplace account](https://swc.saas.ibm.com/en-us/redhat-marketplace/registration){: external}.
 *   [Access your {{site.data.keyword.redhat_openshift_notm}} cluster](/docs/openshift?topic=openshift-access_cluster).
 *   Make sure that the Operator Lifecycle Manager (OLM) pods in the `openshift-operator-lifecycle-manager` project and marketplace pods in the `openshift-marketplace` project are ready and running. You might have to restart a pod to return the pod to a healthy state.
     ```sh
@@ -80,7 +80,7 @@ With [{{site.data.keyword.redhat_full}} Marketplace](https://marketplace.redhat.
 
 4. After your worker nodes are reloaded, verify that your cluster is listed in your [{{site.data.keyword.redhat_notm}} Marketplace workspace](https://marketplace.redhat.com/en-us/workspace/clusters){: external}.
 
-Now, you can install and manage software from {{site.data.keyword.redhat_notm}} Marketplace in your cluster. For more information, see the [{{site.data.keyword.redhat_notm}} Marketplace documentation](https://marketplace.redhat.com/en-us/documentation/){: external}.
+Now, you can install and manage software from {{site.data.keyword.redhat_notm}} Marketplace in your cluster. For more information, see the [{{site.data.keyword.redhat_notm}} Marketplace documentation](https://swc.saas.ibm.com/en-us/redhat-marketplace/documentation/){: external}.
 
 
 

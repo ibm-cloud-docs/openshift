@@ -2,7 +2,7 @@
 
 copyright:
   years: 2024, 2024
-lastupdated: "2024-04-26"
+lastupdated: "2024-04-29"
 
 
 keywords: pods, pod connectvity, networking, pod networking, pod trouble shooting, pod debug
@@ -63,7 +63,7 @@ Follow these steps to check the health of your components. Networking issues mig
         ```
         {: screen}
 
-    3. If any of the listed pods are not present or are in an unhealthy state, go through the cluster and worker node trouble shooting documentation included in the previous steps. Make sure any issues with the pods in this step are resovled before moving on.
+    3. If any of the listed pods are not present or are in an unhealthy state, go through the cluster and worker node trouble shooting documentation included in the previous steps. Make sure any issues with the pods in this step are resolved before moving on.
 
 
 ## Debug with test pods 
@@ -211,8 +211,8 @@ oc adm policy add-scc-to-group privileged system:serviceaccounts:pod-network-tes
           image: us.icr.io/armada-master/network-alpine:latest
           command: ["/bin/sh"]
           args: ["-c", "echo Hi && while true; do sleep 86400; done"]
-        ```
-        {: codeblock}
+    ```
+    {: codeblock}
 
 1. Apply the daemonset to deploy test pods on your worker nodes. 
 
@@ -379,12 +379,12 @@ Run `curl`, `ping`, and `nc` commands to test each pod's network connection and 
 
 Review the outputs from the previous section to help determine the cause of your pod networking issues. This section lists some common causes that can be identified from the previous section. 
 
-- If the commands functioned normally on the test pods, but you still have networking issues in your application pods in your default namespace, there might be issues releated specifically to your application. 
-     - You might have Calico or Kubernetes network security policies in place that restrict your networking traffic. If a networking policy is applied to a pod, *all traffic that is not specifically allowed by that policy is dropped*. For more information on networking policies, see the [Kubernetes documentation](https://kubernetes.io/docs/concepts/services-networking/network-policies/){: external}. 
+- If the commands functioned normally on the test pods, but you still have networking issues in your application pods in your default namespace, there might be issues related specifically to your application. 
+    - You might have Calico or Kubernetes network security policies in place that restrict your networking traffic. If a networking policy is applied to a pod, *all traffic that is not specifically allowed by that policy is dropped*. For more information on networking policies, see the [Kubernetes documentation](https://kubernetes.io/docs/concepts/services-networking/network-policies/){: external}. 
     - If you are using Istio or Red Hat OpenShift Service Mesh, there may be service configuration issues that drop or block traffic between pods. For more information, see the troubleshooting documentation for [Istio](https://istio.io/latest/docs/ops/diagnostic-tools/){: external} and [Red Hat OpenShift Service Mesh](https://docs.openshift.com/container-platform/4.14/service_mesh/v2x/ossm-troubleshooting-istio.html){: external}. 
     - The issue might be related to bugs in the application rather than your cluster, and might require your own independent trouble shooting. 
 
-- If the `curl`, `ping`, or `nc` commands failed for certain pods, identify which worker nodes those pods are on. If the issue exists on only some of your worker nodes, [replace those worker nodes](/docs/containers?topic=openshift-kubernetes-service-cli#cli_worker_replace) or see additional information on [worker node trouble shooting](/docs/openshift?topic=openshift-ts-critical-notready). 
+- If the `curl`, `ping`, or `nc` commands failed for certain pods, identify which worker nodes those pods are on. If the issue exists on only some of your worker nodes, [replace those worker nodes](/docs/openshift?topic=openshift-kubernetes-service-cli#cli_worker_replace) or see additional information on [worker node trouble shooting](/docs/openshift?topic=openshift-ts-critical-notready). 
 
 - If the DNS lookups from the `dig` commands failed,  See the [Red Hat DNS troubleshooting information](https://access.redhat.com/solutions/3804501){: external}. 
 

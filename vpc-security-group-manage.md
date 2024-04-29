@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2023, 2024
-lastupdated: "2024-04-24"
+lastupdated: "2024-04-29"
 
 
 keywords: openshift, {{site.data.keyword.openshiftlong_notm}}, firewall, acl, acls, access control list, rules, security group
@@ -273,14 +273,14 @@ Use the {{site.data.keyword.cloud_notm}} CLI to add inbound and outbound rules t
     ```
     {: pre}
 
-    * To create inbound traffic rules, use the [`ibmcloud is sg-rulec <sg> inbound` command](/docs/vpc?topic=vpc-vpc-reference#sg-rulec).
+    * To create inbound traffic rules, use the [`ibmcloud is sg-rulec <sg> inbound` command](/docs/vpc?topic=vpc-creating-vpc-resources-with-cli-and-api&interface=cli#add-rules-to-default-security-group).
         ```sh
         ibmcloud is sg-rulec $sg inbound <protocol> [--remote <remote_address> | <CIDR_block> | <security_group_ID>] [--icmp-type <icmp_type> [--icmp-code <icmp_code>]] [--port-min <port_min>] [--port-max <port_max>]
         ```
         {: pre}
         
         
-    * To create outbound traffic rules, use the [`ibmcloud is sg-rulec <sg> outbound` command](/docs/vpc?topic=vpc-vpc-reference#sg-rulec).
+    * To create outbound traffic rules, use the [`ibmcloud is sg-rulec <sg> outbound` command](/docs/vpc?topic=vpc-creating-vpc-resources-with-cli-and-api&interface=cli#add-rules-to-default-security-group).
 
         ```sh
         ibmcloud is sg-rulec $sg outbound <protocol> [--remote <remote_address> | <CIDR_block> | <security_group_ID>] [--icmp-type <icmp_type> [--icmp-code <icmp_code>]] [--port-min <port_min>] [--port-max <port_max>]
