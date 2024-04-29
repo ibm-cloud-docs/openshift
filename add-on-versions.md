@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2022, 2024
-lastupdated: "2024-04-08"
+lastupdated: "2024-04-29"
 
 keywords: openshift, add-ons, cluster addon
 
@@ -87,7 +87,7 @@ Review the following list of supported cluster add-ons. Each add-on version can 
 ## `debug-tool` 2.0.0 
 {: #debug-tool-2.0.0}
 
-- Supported Kubernetes cluster versions: `>=1.23.0 <1.30.0`
+- Supported Kubernetes cluster versions: `>=1.23.0 <1.31.0`
 
 - Supported OpenShift cluster versions: `>=4.11.0 <4.16.0`
 
@@ -115,6 +115,15 @@ Review the following list of supported cluster add-ons. Each add-on version can 
 {: #istio-1.20}
 
 - Supported Kubernetes cluster versions: `>=1.25.0 <1.30.0`
+
+- Supported OpenShift cluster versions:  `N/A` 
+
+
+
+## `istio` 1.21 
+{: #istio-1.21}
+
+- Supported Kubernetes cluster versions: `>=1.27.0 <1.30.0`
 
 - Supported OpenShift cluster versions:  `N/A` 
 
@@ -150,7 +159,7 @@ Review the following list of supported cluster add-ons. Each add-on version can 
 ## `static-route` 1.0.0 
 {: #static-route-1.0.0}
 
-- Supported Kubernetes cluster versions: `>=1.23.0 <1.30.0`
+- Supported Kubernetes cluster versions: `>=1.23.0 <1.31.0`
 
 - Supported OpenShift cluster versions: `>=4.11.0 <4.16.0`
 
