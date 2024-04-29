@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2024
-lastupdated: "2024-04-19"
+lastupdated: "2024-04-29"
 
 
 keywords: openshift, {{site.data.keyword.openshiftlong_notm}}, clusters, worker nodes, worker pools, add, classic
@@ -73,14 +73,13 @@ Before you begin, make sure that you have the [**Operator** or **Administrator**
     {: pre}
 
 1. Create a worker pool. For more options, see the [CLI documentation](/docs/openshift?topic=openshift-kubernetes-service-cli#cs_worker_pool_create).  
-    * The minimum number of worker nodes per zone is 2. For more information, see [What is the smallest size cluster that I can make?](/docs/openshift?topic=openshift-faqs#smallest_cluster).
     * Include the `--label` option to automatically label worker nodes that are in the pool with the label `key=value`.
     * If you provision a bare metal or dedicated VM worker pool, specify `--hardware dedicated`.
     * The new worker nodes run the same `major.minor` version as the cluster master, but the latest worker node patch of that `major.minor` version.
 
 
     ```sh
-    ibmcloud oc worker-pool create classic --name <pool_name> --cluster <cluster_name_or_ID> --flavor <flavor> --size-per-zone <number_of_workers_per_zone_min_2> [--operating-system (REDHAT_8_64)] [--label key=value]
+    ibmcloud oc worker-pool create classic --name <pool_name> --cluster <cluster_name_or_ID> --flavor <flavor> --size-per-zone <number_of_workers_per_zone> [--operating-system (REDHAT_8_64)] [--label key=value]
     ```
     {: pre}
 
@@ -134,7 +133,7 @@ To resize the worker pool, change the number of worker nodes that the worker poo
     ```
     {: pre}
 
-1. Resize the worker pool by designating the number of worker nodes that you want to deploy in each zone. The minimum value is 2. For more information, see [What is the smallest size cluster that I can make?](/docs/openshift?topic=openshift-faqs#smallest_cluster).
+1. Resize the worker pool by designating the number of worker nodes that you want to deploy in each zone. The minimum value is 2.
     ```sh
     ibmcloud oc worker-pool resize --cluster <cluster_name_or_ID> --worker-pool <pool_name>  --size-per-zone <number_of_workers_per_zone>
     ```

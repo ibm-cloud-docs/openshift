@@ -2,10 +2,10 @@
 
 copyright: 
   years: 2014, 2024
-lastupdated: "2024-03-04"
+lastupdated: "2024-04-29"
 
 
-keywords: openshift
+keywords: kubernetes, containers, openshift
 
 subcollection: openshift
 

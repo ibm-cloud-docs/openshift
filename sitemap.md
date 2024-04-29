@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2024
-lastupdated: "2024-04-25"
+lastupdated: "2024-04-29"
 
 
 keywords: openshift
@@ -6187,7 +6187,9 @@ subcollection: openshift
 
 * [Available {{site.data.keyword.redhat_openshift_notm}} versions](/docs/openshift?topic=openshift-openshift_versions#openshift_versions_available)
 
-    * [{{site.data.keyword.openshiftlong_notm}} clusters](/docs/openshift?topic=openshift-openshift_versions#os-openshift)
+    * [VPC clusters with Hypershift enabled](/docs/openshift?topic=openshift-openshift_versions#os-openshift-with-coreos)
+
+    * [VPC clusters](/docs/openshift?topic=openshift-openshift_versions#os-openshift)
 
     * [Clusters in Satellite locations with CoreOS enabled](/docs/openshift?topic=openshift-openshift_versions#os-satellite-with-coreos)
 
@@ -6861,6 +6863,8 @@ subcollection: openshift
 * [`istio` 1.19](/docs/openshift?topic=openshift-supported-cluster-addon-versions#istio-1.19)
 
 * [`istio` 1.20](/docs/openshift?topic=openshift-supported-cluster-addon-versions#istio-1.20)
+
+* [`istio` 1.21](/docs/openshift?topic=openshift-supported-cluster-addon-versions#istio-1.21)
 
 * [`openshift-data-foundation` 4.12.0](/docs/openshift?topic=openshift-supported-cluster-addon-versions#openshift-data-foundation-4.12.0)
 
@@ -10085,6 +10089,18 @@ subcollection: openshift
 ### Cluster network
 {: #sitemap_cluster_network}
 
+
+[Debugging network connections between pods](/docs/openshift?topic=openshift-debug_pods#debug_pods)
+
+* [Check the health of your cluster components and networking pods](/docs/openshift?topic=openshift-debug_pods#debug_pods_health)
+
+* [Debug with test pods](/docs/openshift?topic=openshift-debug_pods#debug_pods_test)
+
+    * [Setting up the pods](/docs/openshift?topic=openshift-debug_pods#debug_pods_test_setup)
+
+    * [Running tests within the pods](/docs/openshift?topic=openshift-debug_pods#debug_pods_test_run)
+
+    * [Identifying issues](/docs/openshift?topic=openshift-debug_pods#debug_pods_test_id)
 
 [Why is my cluster missing the public `containers.appdomain.cloud` subdomain?](/docs/openshift?topic=openshift-roks_ts_subdomain#roks_ts_subdomain)
 

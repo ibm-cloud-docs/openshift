@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2024
-lastupdated: "2024-04-24"
+lastupdated: "2024-04-29"
 
 
 keywords: openshift, logmet, logs, metrics, audit, events
@@ -39,13 +39,11 @@ Before you set up a Kubernetes API audit configuration, review the following inf
 
 
 
-* **VPC clusters versions 4.15 and later**: Audit logs use the Red Hat Openshift audit policy profile `default` (for default) and `WriteRequestBodies`(for verbose). For more information, see [Audit log policy](https://docs.openshift.com/container-platform/4.15/security/audit-log-policy-config.html){: external}
+* **VPC clusters versions 4.15 and later**: Audit logs use the Red Hat Openshift audit policy profile `default` (for default) and `WriteRequestBodies`(for verbose). For more information, see the [Audit log policy](https://docs.openshift.com/container-platform/4.15/security/audit-log-policy-config.html){: external}. To see how the audit webhook collects logs, check out the {{site.data.keyword.openshiftlong_notm}} [`openshift-audit` policy](https://github.com/IBM-Cloud/kube-samples/blob/master/kube-audit/openshift-audit-policy.yaml){: external}{: external}.
 
 
-
-* To see how the audit webhook collects logs, check out the {{site.data.keyword.openshiftlong_notm}} [`openshift-audit` policy](https://github.com/IBM-Cloud/kube-samples/blob/master/kube-audit/openshift-audit-policy.yaml){: external}{: external}.
-    You can't modify the default policy or apply your own custom policy.
-    {: note}
+You can't modify the default policy or apply your own custom policy.
+{: note}
 
 * For Kubernetes audit logs and verbosity, see the [Kubernetes documentation](https://kubernetes.io/docs/tasks/debug/debug-cluster/audit/){: external}.
 * Only one audit webhook can be created in a cluster.

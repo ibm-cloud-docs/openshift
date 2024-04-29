@@ -2,10 +2,10 @@
 
 copyright: 
   years: 2014, 2024
-lastupdated: "2024-03-14"
+lastupdated: "2024-04-29"
 
 
-keywords: openshift, registry, pull secret, secrets
+keywords: kubernetes, registry, pull secret, secrets, openshift
 
 subcollection: openshift
 
@@ -13,8 +13,6 @@ subcollection: openshift
 ---
 
 {{site.data.keyword.attribute-definition-list}}
-
-
 
 
 

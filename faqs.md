@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2024
-lastupdated: "2024-04-19"
+lastupdated: "2024-04-29"
 
 
 keywords: openshift, ocp, compliance, security standards, faq, openshift pricing, ocp pricing, openshift charges, ocp charges, openshift price, ocp price, openshift billing, ocp billing, openshift costs, ocp costs
@@ -256,6 +256,7 @@ For more information about available bare metal flavors and how bare metal is di
 ## What is the smallest size cluster that I can make?
 {: #smallest_cluster}
 {: faq}
+
 
 Classic infrastructure
 :   [Kubernetes]{: tag-blue} Clusters must have at least 1 worker node to run the default Kubernetes components.

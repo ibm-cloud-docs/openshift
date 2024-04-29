@@ -518,6 +518,7 @@ toc:
           - topicgroup:
               label: Cluster network
               topics:
+              - ts-pod-networking.md
               - ts-network-roks-subdomain-missing.md
               - ts-network-calico-node.md
               - ts-network-subnet-recover.md
