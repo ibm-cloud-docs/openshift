@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2024
-lastupdated: "2024-04-24"
+lastupdated: "2024-04-29"
 
 
 keywords: openshift, cli reference, kubernetes cli, openshift cli, {{product_name_notm}}
@@ -3474,7 +3474,7 @@ ibmcloud oc worker-pool rebalance --cluster my_cluster --worker-pool my_pool
 
 [Virtual Private Cloud]{: tag-vpc} [Classic infrastructure]{: tag-classic-inf}
 
-Resize your worker pool to increase or decrease the number of worker nodes that are in each zone of your cluster. Your worker pool must have at least 2 worker nodes per zone.
+Resize your worker pool to increase or decrease the number of worker nodes that are in each zone of your cluster.
 {: shortdesc}
 
 ```sh

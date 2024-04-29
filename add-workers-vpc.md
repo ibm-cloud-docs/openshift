@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2024
-lastupdated: "2024-04-19"
+lastupdated: "2024-04-29"
 
 
 keywords: openshift, {{site.data.keyword.openshiftlong_notm}}, clusters, worker nodes, worker pools, add
@@ -48,7 +48,7 @@ To resize the worker pool, change the number of worker nodes that the worker poo
     ```
     {: pre}
 
-1. Resize the worker pool by designating the number of worker nodes that you want to deploy in each zone. The minimum value is 2. For more information, see [What is the smallest size cluster that I can make?](/docs/openshift?topic=openshift-faqs#smallest_cluster).
+1. Resize the worker pool by designating the number of worker nodes that you want to deploy in each zone. The minimum value is 2.
     ```sh
     ibmcloud oc worker-pool resize --cluster CLUSTER-NAME --worker-pool <pool_name>  --size-per-zone <number_of_workers_per_zone>
     ```
@@ -127,7 +127,7 @@ Before you begin, make sure that you have the [**Operator** or **Administrator**
 1. Create a worker pool. For more options, see the [CLI documentation](/docs/openshift?topic=openshift-kubernetes-service-cli#cli_worker_pool_create_vpc_gen2).
 
     ```sh
-    ibmcloud oc worker-pool create vpc-gen2 --name <name> --cluster CLUSTER-NAME --flavor <flavor> --size-per-zone <number_of_worker_nodes_min_2> [--label <key>=<value>] [--vpc-id] [[--kms-account-id <KMS_account_ID>] --kms-instance <KMS_instance_ID> --crk <root_key_ID>] [--dedicated-host-pool <dedicated-host-pool>] [--security-group <group-id>] [--operating-system SYSTEM]
+    ibmcloud oc worker-pool create vpc-gen2 --name <name> --cluster CLUSTER-NAME --flavor <flavor> --size-per-zone <number_of_worker_nodes> [--label <key>=<value>] [--vpc-id] [[--kms-account-id <KMS_account_ID>] --kms-instance <KMS_instance_ID> --crk <root_key_ID>] [--dedicated-host-pool <dedicated-host-pool>] [--security-group <group-id>] [--operating-system SYSTEM]
     ```
     {: pre}
 

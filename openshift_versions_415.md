@@ -2,7 +2,7 @@
 
 copyright:
   years: 2023, 2024
-lastupdated: "2024-04-24"
+lastupdated: "2024-04-29"
 
 
 keywords: openshift, version, update, upgrade, 4.15, update openshift
@@ -23,7 +23,7 @@ Review information about version 4.15 of {{site.data.keyword.openshiftlong_notm}
 Looking for general information about updating clusters, or information on a different version? See [Red Hat {{site.data.keyword.redhat_openshift_notm}} on IBM Cloud version information](/docs/openshift?topic=openshift-openshift_versions) and the version [4.15 release notes](https://docs.openshift.com/container-platform/4.15/release_notes/ocp-4-15-release-notes.html#ocp-4-15-release-notes){: external}.
 {: tip}
 
-![This badge indicates Kubernetes version 1.27 certification for {{site.data.keyword.openshiftlong_notm}}](images/certified-kubernetes-color.svg){: caption="Figure 1. Kubernetes version 1.27 certification badge" caption-side="bottom"}
+![This badge indicates Kubernetes version 1.28 certification for {{site.data.keyword.openshiftlong_notm}}](images/certified-kubernetes-color.svg){: caption="Figure 1. Kubernetes version 1.28 certification badge" caption-side="bottom"}
 
 {{site.data.keyword.openshiftlong_notm}} is a Certified Kubernetes product for version 1.27 under the CNCF Kubernetes Software Conformance Certification program. _Kubernetes® is a registered trademark of The Linux Foundation in the United States and other countries, and is used pursuant to a license from The Linux Foundation._
 
@@ -110,7 +110,7 @@ Beginning with version 4.15, {{site.data.keyword.openshiftlong_notm}} introduced
 
 At a high-level, the security posture for {{site.data.keyword.openshiftlong_notm}} VPC clusters has changed from allowing all outbound traffic then providing users with mechanisms to selectively block traffic as needed to now blocking all traffic that is not crucial to cluster functionality and providing users with mechanisms to selectively allow traffic as needed.
 
-When you provision a new {{site.data.keyword.openshiftlong_notm}} VPC cluster at version 4.15 or later, only the traffic that is necessary for the cluster to function is allowed and all other access is blocked. To implement Secure by Default Networking, there are changes to the default VPC security groups settings as well as new Virtual Private Endpoints (VPEs) for common IBM services.
+When you provision a new {{site.data.keyword.openshiftlong_notm}} VPC cluster at version 4.15 or later, the default provisioning behavior is to allow only the traffic that is necessary for the cluster to function. All other access is blocked. To implement Secure by Default Networking, there are changes to the default VPC security groups settings as well as new Virtual Private Endpoints (VPEs) for common IBM services.
 
 Some key notes for Secure by Default Networking are:
 
@@ -118,7 +118,9 @@ Some key notes for Secure by Default Networking are:
 
 - Does not affect existing clusters. Existing clusters in your VPC will continue to function as they do today.
 
-- Applies only to newly provisioned {{site.data.keyword.openshiftlong_notm}} clusters version 4.15. The security group configurations for existing {{site.data.keyword.openshiftlong_notm}} clusters that are upgraded to version 4.15, including any customizations you've made, are not changed.
+- Applies only to newly provisioned {{site.data.keyword.openshiftlong_notm}} clusters at version 4.15. The security group configurations for existing {{site.data.keyword.openshiftlong_notm}} clusters that are upgraded to version 4.15, including any customizations you've made, are not changed.
+
+- The default behavior for clusters created at version 4.15 and later is to enable Secure by Default outbound traffic protection. However, new parameters in the UI, CLI, API, and Terraform allow you to disable this feature. You can also enable and disable outbound traffic protection after you create a cluster.
 
 - If your VPC uses a custom DNS resolver, provisioning a new version 4.15 cluster automatically adds rules allowing traffic through the resolver IP addresses on your IKS-managed security group (`kube-<clusterID>`).
 
@@ -130,7 +132,7 @@ For an overview of Secure by Default Cluster VPC networking, including the secur
 ### Which connections are allowed?
 {: #sbd-allowed-connections}
 
-In VPC clusters with Secure by Default enabled, the following connections are allowed. 
+In VPC clusters with Secure by Default outbound traffic protection enabled, the following connections are allowed. 
 
 - Accessing the internal IBM `*.icr.io` registries to pull necessary container images via a VPE gateway.
 - Accessing the cluster master and {{site.data.keyword.openshiftlong_notm}} APIs via VPE gateways.
@@ -153,7 +155,7 @@ Review the following examples of connections that are blocked by default. Note t
 
 VPC cluster workers use the private network to communicate with the cluster master. Previously, for VPC clusters that had the public service endpoint enabled, if the private network was blocked or unavailable, then the cluster workers could fall back to using the public network to communicate with the cluster master.
 
-In Secure by Default clusters, falling back to the public network is not an option because public outbound traffic from the cluster workers is blocked. You might want to disable outbound traffic protection to allow this public network backup option, however, there is a better alternative. Instead, if there a temporary issue with the worker-to-master connection over the private network, then, at that time, you can add a temporary security group rule to the `kube-clusterID` security group to allow outbound traffic to the cluster master `apiserver` port. This way you allow only traffic for the `apiserver` instead of all traffic. Later, when the problem is resolved, you can remove the temporary rule.
+In clusters with Secure by Default outbound traffic protection, falling back to the public network is not an option because public outbound traffic from the cluster workers is blocked. You might want to disable outbound traffic protection to allow this public network backup option, however, there is a better alternative. Instead, if there a temporary issue with the worker-to-master connection over the private network, then, at that time, you can add a temporary security group rule to the `kube-clusterID` security group to allow outbound traffic to the cluster master `apiserver` port. This way you allow only traffic for the `apiserver` instead of all traffic. Later, when the problem is resolved, you can remove the temporary rule.
 
 
 ## Allowing outbound traffic after creating a 4.15 cluster
