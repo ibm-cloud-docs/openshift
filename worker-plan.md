@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2024
-lastupdated: "2024-04-24"
+lastupdated: "2024-04-30"
 
 
 keywords: openshift, {{site.data.keyword.openshiftlong_notm}}, kubernetes, multi az, multi-az, szr, mzr
@@ -66,10 +66,12 @@ Review the following operating systems in {{site.data.keyword.openshiftlong_notm
 
 
 Red Hat Enterprise Linux (RHEL) version 8
+:   [Classic]{: tag-classic-inf} [VPC]{: tag-vpc} [Satellite]{: tag-satellite}
 :   Red Hat Enterprise Linux on IBM Cloud provides enterprises with a robust and scalable environment—built with security in mind—tailored for critical workloads. Organizations unlock access to high availability, disaster recovery, and streamlined management capabilities by joining the Red Hat Enterprise Linux platform with IBM Cloud's infrastructure. For an overview of RHEL 8, see [Why run Linux on IBM Cloud?](https://www.redhat.com/en/topics/linux/linux-on-ibm-cloud){: external}.
 
-Red Hat Enterprise Linux CoreOS (RHCOS) [4.15 and later]{: tag-red}
-:   Red Hat Enterprise Linux CoreOS (RHCOS) is specifically designed for the Red Hat OpenShift Container Platform (OCP). While leveraging the stability and security of Red Hat Enterprise Linux (RHEL), RHCOS is lightweight and minimal, focusing on running containerized workloads efficiently and at scale. Because it consists of RHEL components, you get the same level of security as RHEL plus the added bonus of having a more minimal container centric footprint, read-only file system, image-based deployments, and more. For an overview of RHCOS, see [Red Hat Enterprise Linux CoreOS (RHCOS)](https://docs.openshift.com/container-platform/4.15/architecture/architecture-rhcos.html){: external}.
+Red Hat Enterprise Linux CoreOS (RHCOS) 
+:   [VPC]{: tag-vpc} [Satellite]{: tag-satellite}
+:   Available for clusters created at 4.15 and later. Red Hat Enterprise Linux CoreOS (RHCOS) is specifically designed for the Red Hat OpenShift Container Platform (OCP). While leveraging the stability and security of Red Hat Enterprise Linux (RHEL), RHCOS is lightweight and minimal, focusing on running containerized workloads efficiently and at scale. Because it consists of RHEL components, you get the same level of security as RHEL plus the added bonus of having a more minimal container centric footprint, read-only file system, image-based deployments, and more. For an overview of RHCOS, see [Red Hat Enterprise Linux CoreOS (RHCOS)](https://docs.openshift.com/container-platform/4.15/architecture/architecture-rhcos.html){: external}. RHCOS worker nodes for VPC clusters are available only for clusters that were created at a version that supports RHCOS. Clusters that are upgraded from a version that does not support RHCOS to a version that does can't use RHCOS workers.
 
 
 

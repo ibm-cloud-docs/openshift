@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2024, 2024
-lastupdated: "2024-04-29"
+lastupdated: "2024-04-30"
 
 
 keywords: openshift, benchmarks, 4.15, compliance operator, compliance
@@ -22,9 +22,6 @@ subcollection: openshift
 
 Review the compliance operator benchmark results for {{site.data.keyword.openshiftlong_notm}} version 4.15.
 {: shortdesc}
-
-Missing results are being investigated.
-{: note}
 
 
 ## 1 Control plane components
@@ -64,8 +61,8 @@ The master node configuration is not stored as a set of files; therefore, rules 
 | 1.2.21|Ensure that the `healthz` endpoint is protected by RBAC|Automated|1|Pass |
 | 1.2.22|Ensure that the `--audit-log-path` argument is set|Automated|1|Pass |
 | 1.2.23|Ensure that the audit logs are forwarded off the cluster for retention|Automated|1|[Not checked](#co-benchmark-415-remdiations) |
-| 1.2.24|Ensure that the `maximumRetainedFiles` argument is set to 10 or as appropriate|Automated|1|Pass |
-| 1.2.25|Ensure that the `maximumFileSizeMegabytes` argument is set to 100 or as appropriate|Automated|1|Pass |
+| 1.2.24|Ensure that the `maximumRetainedFiles` argument is set to 10 or as appropriate|Automated|1| [Not checked](#co-benchmark-415-remdiations)  |
+| 1.2.25|Ensure that the `maximumFileSizeMegabytes` argument is set to 100 or as appropriate|Automated|1| [Not checked](#co-benchmark-415-remdiations)  |
 | 1.2.26|Ensure that the `--request-timeout argument` is set as appropriate|Automated|1|Pass |
 | 1.2.27|Ensure that the `--service-account-lookup argument` is set to true|Automated|1|Pass |
 | 1.2.28|Ensure that the `--service-account-key-file argument` is set as appropriate|Automated|1|Pass |
@@ -224,6 +221,8 @@ Follow the instruction in [Using the compliance operator](/docs/openshift?topic=
 | Section | Recommendation/Explanation  |
 | ------- | ------------------------------------------------------------ |
 | 1.2.23 | {{site.data.keyword.openshiftlong_notm}} can optionally enable Kubernetes API server auditing. |
+| 1.2.24 | {{site.data.keyword.openshiftlong_notm}} sets the `maximumRetainedFiles` argument to `1`. |
+| 1.2.25 | {{site.data.keyword.openshiftlong_notm}} sets the `maximumFileSizeMegabytes` argument to `10`. |
 | 1.2.33 | {{site.data.keyword.openshiftlong_notm}} can optionally enable a Kubernetes Key Management Service (KMS) provider. |
 | 1.2.34 | {{site.data.keyword.openshiftlong_notm}} can optionally enable a Kubernetes Key Management Service (KMS) provider. |
 | 2.7 | {{site.data.keyword.openshiftlong_notm}} configures a unique Certificate Authority for etcd. |

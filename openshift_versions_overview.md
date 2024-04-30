@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2024
-lastupdated: "2024-04-25"
+lastupdated: "2024-04-30"
 
 
 keywords: openshift, version, update, upgrade
@@ -30,7 +30,6 @@ Unless otherwise noted in the change logs, the {{site.data.keyword.cloud_notm}} 
 Check the [Security Bulletins on {{site.data.keyword.cloud_notm}} Status](https://cloud.ibm.com/status?selected=security) for security vulnerabilities that affect {{site.data.keyword.openshiftlong_notm}}. You can filter the results to view only **Kubernetes Service** security bulletins that are relevant to {{site.data.keyword.openshiftlong_notm}}. Change log entries that address other security vulnerabilities but don't also refer to an {{site.data.keyword.IBM_notm}} security bulletin are for vulnerabilities that are not known to affect {{site.data.keyword.openshiftlong_notm}} in normal usage. If you run privileged containers, run commands on the workers, or execute untrusted code, then you might be at risk.
 
 Master patch updates are applied automatically. Worker node patch updates can be applied by reloading or updating the worker nodes. For more information about major, minor, and patch versions and preparation actions between minor versions, see [{{site.data.keyword.redhat_openshift_notm}} versions](/docs/openshift?topic=openshift-openshift_versions).
-{: tip}
 
 For more details about the {{site.data.keyword.redhat_openshift_notm}} and Kubernetes project versions, review the {{site.data.keyword.redhat_openshift_notm}} release notes.
 
@@ -39,8 +38,8 @@ For more details about the {{site.data.keyword.redhat_openshift_notm}} and Kuber
 
 {{site.data.keyword.openshiftlong_notm}} supports the following versions of {{site.data.keyword.redhat_openshift_notm}}. Note that different {{site.data.keyword.redhat_openshift_notm}} versions might support different RHEL versions. 
 
-Dates that are marked with a dagger (`†`) are tentative and subject to change.
-{: note}
+Red Hat Enterprise Linux CoreOS (RHCOS) worker nodes for VPC clusters
+:   RHCOS worker nodes for VPC clusters are available only for clusters that were created at a version that supports RHCOS. Clusters that are upgraded from a version that does not support RHCOS to a version that does can't use RHCOS workers.
 
 
 
@@ -174,6 +173,9 @@ Dates that are marked with a dagger (`†`) are tentative and subject to change.
 - [Change log](/docs/openshift?topic=openshift-openshift_changelog_412)
 - [{{site.data.keyword.redhat_openshift_notm}} 4.12 release notes overview](https://docs.openshift.com/container-platform/4.12/release_notes/ocp-4-12-release-notes.html){: external}
 
+
+
+`†` Indicates dates that are tentative and subject to change.
 
 
 Unsupported versions:
