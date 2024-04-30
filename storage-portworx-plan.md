@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2024
-lastupdated: "2024-04-05"
+lastupdated: "2024-04-30"
 
 
 keywords: portworx, openshift
@@ -48,7 +48,7 @@ Review the following Portworx limitations.
 
 1. Create a [multizone cluster](/docs/openshift?topic=openshift-clusters).
     1. Infrastructure provider: For Satellite clusters, make sure to add block storage volumes to your hosts before attaching them to your location. If you use classic infrastructure, you must choose a bare metal flavor for the worker nodes. For classic clusters, virtual machines have only 1000 Mbps of networking speed, which is not sufficient to run production workloads with Portworx. Instead, provision Portworx on bare metal machines for the best performance.
-    2. Worker node flavor: Choose an SDS or bare metal flavor. If you want to use virtual machines, use a worker node with 16 vCPU and 64 GB memory or more, such as `b3c.16x64`. Virtual machines with a flavor of `b3c.4x16` or `u3c.2x4` don't provide the required resources for Portworx to work properly.
+    2. Worker node flavor: Choose an SDS or bare metal flavor. If you want to use virtual machines, use a worker node with 8 vCPU and 8 GB memory or more.
     3. Minimum number of workers: Two worker nodes per zone across three zones, for a minimum total of six worker nodes.
 1. **VPC and non-SDS classic worker nodes only**: [Create raw, unformatted, and unmounted block storage](/docs/openshift?topic=openshift-utilities#manual_block).
 1. For production workloads, create an [external Databases for etcd](/docs/openshift?topic=openshift-storage_portworx_kv_store) instance for your Portworx metadata key-value store.
