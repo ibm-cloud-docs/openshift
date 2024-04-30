@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2023, 2024
-lastupdated: "2024-03-15"
+lastupdated: "2024-04-30"
 
 
 keywords: openshift, benchmarks, 4.13, compliance operator, compliance
@@ -22,10 +22,6 @@ subcollection: openshift
 
 Review the compliance operator benchmark results for {{site.data.keyword.openshiftlong_notm}} version 4.13.
 {: shortdesc}
-
-Missing results are being investigated.
-{: note}
-
 
 ## 1 Control plane components
 {: #co-benchmark-413-cp}
