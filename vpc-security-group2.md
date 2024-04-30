@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2023, 2024
-lastupdated: "2024-04-24"
+lastupdated: "2024-04-29"
 
 
 keywords: openshift, {{site.data.keyword.openshiftlong_notm}}, firewall, acl, acls, access control list, rules, security group, 4.15, networking, secure by default, outbound traffic protection
@@ -168,7 +168,7 @@ Logging and monitoring
 :   When setting up logging and monitoring on a 4.15 or later cluster, you must use the private service endpoint when installing the logging agent in your cluster. Log data is not be saved if the public endpoint is used.
 
 Monitoring clusters with RHCOS worker nodes
-:   The monitoring agent relies on kernel headers in the operating system, however RHCOS doesn't have kernel headers. In this scenario, the agent reaches back to `sysdig.com` to use the pre-compiled agent. In clusters with no public network access this process fails. To allow monitoring on RHCOS clusters, you must either allow outbound traffic or see the Sysdig documenation for [installing the agent on air-gapped environments](https://docs.sysdig.com/en/docs/installation/agent-install-for-on-prem/airgapped-installation/){: external}.
+:   The monitoring agent relies on kernel headers in the operating system, however RHCOS doesn't have kernel headers. In this scenario, the agent reaches back to `sysdig.com` to use the pre-compiled agent. In clusters with no public network access this process fails. To allow monitoring on RHCOS clusters, you must either allow outbound traffic or see the Sysdig documentation for [installing the agent on air-gapped environments](https://docs.sysdig.com/en/docs/installation/agent-install-for-on-prem/airgapped-installation/){: external}.
 
 VPC cluster quotas
 :   There is a maximum of 15 rules that can target other security groups as their source or destination. By default, {{site.data.keyword.openshiftlong_notm}} applies 1 rule that targets the `kube-<clusterID>` security group for each cluster in the VPC. Because of this quota, only 15 clusters can be created in a given VPC. For more information, see [VPC quotas](/docs/vpc?topic=vpc-quotas).
@@ -178,5 +178,6 @@ Backup communication over the public network
 
 OpenShift Data Foundation and Portworx encryption
 :   If you plan to use OpenShift Data Foundation or Portworx in a cluster with no public network access, and you want to use {{site.data.keyword.hscrypto}} or {{site.data.keyword.keymanagementserviceshort}} for encryption, you must create a virtual private endpoint gateway (VPE) that allows access to your KMS instance. Make sure to bind at least 1 IP address from each subnet in your VPC to the VPE.
+
 
 

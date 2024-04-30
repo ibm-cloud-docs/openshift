@@ -2,7 +2,7 @@
 
 copyright:
   years: 2023, 2024
-lastupdated: "2024-04-25"
+lastupdated: "2024-04-29"
 
 
 keywords: openshift, 4.12, update, upgrade, BOM, bill of materials, versions, patch
@@ -45,7 +45,7 @@ The following table shows the changes that are in the master fix pack 4.12.55_15
 | Component | Previous | Current | Description |
 | --- | --- | --- | --- |
 | Cluster health image | v1.4.8 | v1.5.4 | New version contains updates and security fixes. |
-| etcd | v3.5.12 | v3.5.13 | See the [etcd release notes](https://github.com/coreos/etcd/releases/v3.5.13){: external}. |
+| etcd | v3.5.12 | v3.5.13 | See the [etcd release notes](https://github.com/etcd-io/etcd/releases/v3.5.13){: external}. |
 | {{site.data.keyword.cloud_notm}} Controller Manager | v1.25.16-33 | v1.25.16-42 | New version contains updates and security fixes. |
 | {{site.data.keyword.cloud_notm}} RBAC Operator | bd30030 | 4c5d156 | New version contains updates and security fixes. |
 | Key Management Service provider | v2.8.8 | v2.8.9 | New version contains updates and security fixes. |

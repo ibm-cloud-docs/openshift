@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2024
-lastupdated: "2024-04-12"
+lastupdated: "2024-04-29"
 
 
 keywords: openshift, {{site.data.keyword.openshiftlong_notm}}, kubernetes, kubernetes environment, moving to kubernetes, moving to containers, clusters, cluster sizing
@@ -37,6 +37,7 @@ The number of clusters that you create depends on your workload, company policie
 
 - **One cluster with more worker nodes**: Fewer clusters can help you to reduce operational effort and per-cluster costs for fixed resources. Instead of making more clusters, you can add worker pools for different flavors of computing resources available for your app and service components. When you develop the app, the resources it uses are in the same zone, or otherwise closely connected in a multizone, so that you can make assumptions about latency, bandwidth, or correlated failures. However, it becomes even more important for you to organize your cluster by using namespaces, resource quotas, and labels.
 {: #env_resources}
+
 - **Security considerations**: Review security information about this decision in [Container isolation and security](/docs/openshift?topic=openshift-security#container).
 
 

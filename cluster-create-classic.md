@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2024
-lastupdated: "2024-04-24"
+lastupdated: "2024-04-29"
 
 
 keywords: openshift, {{site.data.keyword.openshiftlong_notm}}, kubernetes, clusters, worker nodes, worker pools, classic, create
@@ -270,7 +270,7 @@ ibmcloud oc cluster create classic --name my_cluster --version 4.14_openshift --
 ```
 {: pre}
 
-Example command to create aClassic cluster with an IBM Cloud Pak entitlement for a default worker pool of 3 worker nodes with 4 cores and 16 memory each.
+Example command to create a Classic cluster with an IBM Cloud Pak entitlement for a default worker pool of 3 worker nodes with 4 cores and 16 memory each.
 
 ```sh
 ibmcloud oc cluster create classic --name cloud_pak_cluster --version 4.14_openshift --zone dal10 --flavor b3c.4x16 --hardware dedicated --workers 3 --entitlement ENTITLEMENT --public-vlan PUBLIC-VLAN-ID --private-vlan PRIVATE-VLAN-ID [--operating-system (REDHAT_8_64)]

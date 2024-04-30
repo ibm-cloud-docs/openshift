@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2024, 2024
-lastupdated: "2024-04-25"
+lastupdated: "2024-04-29"
 
 
 keywords: openshift, benchmarks, 4.15, compliance operator, compliance
@@ -99,7 +99,7 @@ The master node configuration is not stored as a set of files; therefore, rules 
 
 | Section|Recommendation|Manual/Automated|Level|Result |
 | -- | -- | -- | -- | -- |
-| 1.4.1|Ensure that the healthz endpoints for the scheduler are protected by RBAC|Automated|1|Pass |
+| 1.4.1|Ensure that the `healthz` endpoints for the scheduler are protected by RBAC|Automated|1|Pass |
 | 1.4.2|Verify that the scheduler API service is protected by authentication and authorization|Automated|1|Pass |
 {: caption="Section 1.4 Scheduler benchmark results"}
 
@@ -230,4 +230,5 @@ Follow the instruction in [Using the compliance operator](/docs/openshift?topic=
 | 5.2.8 | {{site.data.keyword.openshiftlong_notm}} installs custom SCCs. |
 | 5.3.2 | {{site.data.keyword.openshiftlong_notm}} has a set of default Calico network policies defined and additional network policies can optionally be added. |
 {: caption="Remediations and explanations"}
+
 
