@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2024
-lastupdated: "2024-04-30"
+lastupdated: "2024-05-01"
 
 
 keywords: openshift
@@ -6187,7 +6187,7 @@ subcollection: openshift
 
 * [Available {{site.data.keyword.redhat_openshift_notm}} versions](/docs/openshift?topic=openshift-openshift_versions#openshift_versions_available)
 
-    * [VPC clusters with Hypershift enabled](/docs/openshift?topic=openshift-openshift_versions#os-openshift-with-coreos)
+    * [VPC clusters with HyperShift enabled](/docs/openshift?topic=openshift-openshift_versions#os-openshift-with-coreos)
 
     * [VPC clusters](/docs/openshift?topic=openshift-openshift_versions#os-openshift)
 
