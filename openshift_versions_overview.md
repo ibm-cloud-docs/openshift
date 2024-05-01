@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2024
-lastupdated: "2024-04-30"
+lastupdated: "2024-05-01"
 
 
 keywords: openshift, version, update, upgrade
@@ -54,9 +54,9 @@ Red Hat Enterprise Linux CoreOS (RHCOS) worker nodes for VPC clusters
 {: #os-openshift-with-coreos}
 
 
-[Latest]{: tag-green} 4.15
-- Release date: None
-- End of support: None
+[Latest]{: tag-green} 4.15 (Kubernetes 1.28)
+- Release date: 24 April 2024
+- End of support: 08 January 2026†
 - Operating systems: Red Hat CoreOS (`RHCOS`), RHEL 8 (`REDHAT_8_64`)
 - [Version information and update actions](/docs/openshift?topic=openshift-cs_versions_415)
 - [Change log](/docs/openshift?topic=openshift-openshift_changelog_415)
@@ -67,9 +67,9 @@ Red Hat Enterprise Linux CoreOS (RHCOS) worker nodes for VPC clusters
 {: #os-openshift}
 
 
-[Latest]{: tag-green} 4.15
-- Release date: None
-- End of support: None
+[Latest]{: tag-green} 4.15 (Kubernetes 1.28)
+- Release date: 24 April 2024
+- End of support: 08 January 2026†
 - Operating systems: RHEL 8 (`REDHAT_8_64`)
 - [Version information and update actions](/docs/openshift?topic=openshift-cs_versions_415)
 - [Change log](/docs/openshift?topic=openshift-openshift_changelog_415)
@@ -104,9 +104,9 @@ Red Hat Enterprise Linux CoreOS (RHCOS) worker nodes for VPC clusters
 {: #os-satellite-with-coreos}
 
 
-[Latest]{: tag-green} 4.15
-- Release date: None
-- End of support: None
+[Latest]{: tag-green} 4.15 (Kubernetes 1.28)
+- Release date: 24 April 2024
+- End of support: 08 January 2026†
 - Operating systems: Red Hat CoreOS (`RHCOS`), RHEL 8 (`REDHAT_8_64`)
 - [Version information and update actions](/docs/openshift?topic=openshift-cs_versions_415)
 - [Change log](/docs/openshift?topic=openshift-openshift_changelog_415)
@@ -141,9 +141,9 @@ Red Hat Enterprise Linux CoreOS (RHCOS) worker nodes for VPC clusters
 {: #os-satellite-without-coreos}
 
 
-[Latest]{: tag-green} 4.15
-- Release date: None
-- End of support: None
+[Latest]{: tag-green} 4.15 (Kubernetes 1.28)
+- Release date: 24 April 2024
+- End of support: 08 January 2026†
 - Operating systems: RHEL 8 (`REDHAT_8_64`)
 - [Version information and update actions](/docs/openshift?topic=openshift-cs_versions_415)
 - [Change log](/docs/openshift?topic=openshift-openshift_changelog_415)
