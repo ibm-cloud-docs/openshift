@@ -50,7 +50,7 @@ Red Hat Enterprise Linux CoreOS (RHCOS) worker nodes for VPC clusters
 
 
 
-### VPC clusters with Hypershift enabled
+### VPC clusters with HyperShift enabled
 {: #os-openshift-with-coreos}
 
 
