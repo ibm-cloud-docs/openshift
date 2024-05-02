@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2024
-lastupdated: "2024-04-19"
+lastupdated: "2024-05-02"
 
 
 keywords: kubernetes, openshift
@@ -282,7 +282,7 @@ You must use NVIDIA GPU operator version 1.3.1 or later. When you install the No
 3. Check the job pod by filtering your pods by the `nvidia-devicequery` label. Verify that the **STATUS** is **Completed**.
 
     ```sh
-    oc get pod -a -l 'name in (nvidia-devicequery)'
+    oc get pod -A -l 'name in (nvidia-devicequery)'
     ```
     {: pre}
 

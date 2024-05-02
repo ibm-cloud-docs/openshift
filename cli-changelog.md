@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2024
-lastupdated: "2024-04-24"
+lastupdated: "2024-05-02"
 
 
 keywords: openshift, {{site.data.keyword.openshiftlong_notm}}, oc, ks
@@ -31,6 +31,12 @@ Refer to the following change logs for a summary of changes for each version of 
 
 Review the following changes for 1.0 versions of the CLI plug-in.
 {: shortdesc}
+
+## Version v1.0.618
+{: #cli-010618}
+
+Version 1.0.617 of the CLI was released on 02 May 2024.
+:   Extends the experimental date of the `ibmcloud sat experimental connector` commands to 01 July 2024.
 
 ## Version v1.0.617
 {: #cli-010617}
