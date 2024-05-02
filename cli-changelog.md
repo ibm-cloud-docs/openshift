@@ -35,7 +35,7 @@ Review the following changes for 1.0 versions of the CLI plug-in.
 ## Version v1.0.618
 {: #cli-010618}
 
-Version 1.0.617 of the CLI was released on 02 May 2024.
+Version 1.0.618 of the CLI was released on 02 May 2024.
 :   Extends the experimental date of the `ibmcloud sat experimental connector` commands to 01 July 2024.
 
 ## Version v1.0.617
