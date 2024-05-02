@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2024
-lastupdated: "2024-04-29"
+lastupdated: "2024-05-02"
 
 
 keywords: oks, iro, openshift, red hat, red hat openshift
@@ -57,16 +57,10 @@ For more information, see [Monitoring](https://docs.openshift.com/container-plat
 ### Built-in {{site.data.keyword.redhat_openshift_notm}} monitoring tools
 {: #built-in-mon-tools}
 
-Review the following details about built-in monitoring tools for your cluster. 
-{: shortdesc}
+OpenShift includes a preconfigured, preinstalled, and self-updating monitoring stack that provides monitoring for core platform components on a per-cluster basis. This monitoring includes built-in Prometheus and Grafana deployments in the `openshift-monitoring` project for cluster metrics, which is available in a single zone only. You can view and manage your monitoring dashboards, metrics, and alerts from the {{site.data.keyword.redhat_openshift_notm}} web console. For more information, see [Monitoring](https://docs.openshift.com/container-platform/4.14/observability/monitoring/monitoring-overview.html){: external} in the Red Hat OpenShift documentation. 
 
-- Built-in Prometheus and Grafana deployments in the `openshift-monitoring` project for cluster metrics.
-- At-a-glance, real-time view of how your pods consume cluster resources that can be accessed from the {{site.data.keyword.redhat_openshift_notm}} **Cluster Console**.
-- Monitoring is on a per-cluster basis.
-- The `openshift-monitoring` project stack is set up in a single zone only. No persistent storage is available to back up or view metric history.
-- In cluster versions 4.10 and later an `AuditWebhookError` alert was added that fires when the audit webhook crashes or is deleted. For more information, see [Viewing the `AuditWebhookError` alert](/docs/openshift?topic=openshift-health-audit#audit-webhook-error-410).
+By default, the monitoring stack does not use persistent storage to back up metric history, and instead uses a temporary `EmptyDir` volume in the host filesystem. The retention period for metrics history ranges from 11 to 15 days, depending on your cluster version. For some workloads, these settings might use a significant amount of disk space and memory, or might not meet requirements for metrics retention. You can configure the monitoring stack to use persistent storage, change the metrics retention policies, or run Prometheus on dedicated nodes. For more information, see [Configuring the monitoring stack](https://docs.openshift.com/container-platform/4.14/observability/monitoring/configuring-the-monitoring-stack.html){: external}.
 
-For more information, see [Monitoring](https://docs.openshift.com/container-platform/4.14/observability/monitoring/monitoring-overview.html){: external}.
 
 ### Monitoring {{site.data.keyword.openshiftlong}} storage metrics
 {: #monitor-metrics}
