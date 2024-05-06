@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2024
-lastupdated: "2024-04-19"
+lastupdated: "2024-05-06"
 
 
 keywords: autoscaler, add-on, autoscaler change log, cluster autoscaler
@@ -41,6 +41,14 @@ ibmcloud oc cluster addon versions
 ## Version 1.2.1
 {: #0121_ca_addon}
 
+
+### Change log for patch update 1.2.1_425, released 05 May 2024
+{: #121425_ca}
+
+- Updates the storage-secret-sidecar image to `v1.3.7`
+- Fixes a utilization calculation bug during scale down.
+- Image tags: `1.22.0-121-1`, `1.23.0-121-1`, `1.24.0-121-1`, `1.25.0-121-1`, `1.26.4-121-1`, `1.27.3-121-1`, `1.28.0-121-1`, and `1.28.0-121-1`.
+
 ### Change log for patch update 1.2.1_418, released 02 April 2024
 {: #121418_ca}
 
@@ -57,6 +65,13 @@ ibmcloud oc cluster addon versions
 
 ## Version 1.2.0
 {: #0120_ca_addon}
+
+### Change log for patch update 1.2.0_426, released 05 May 2024
+{: #120426_ca}
+
+- Updates the storage-secret-sidecar image to `v1.3.7`
+- Fixes a utilization calculation bug during scale down.
+- Image tags: `1.22.0-120-5`, `1.23.0-120-5`, `1.24.0-120-5`, `1.25.0-120-5`, `1.26.4-120-5`, `1.27.3-120-5`, and `1.28.0-120-5`.
 
 ### Change log for patch update 1.2.0_410, released 02 April 2024
 {: #120410_ca}
