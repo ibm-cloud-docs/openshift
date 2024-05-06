@@ -3,7 +3,7 @@
 copyright:
   years: 2024, 2024
 
-lastupdated: "2024-05-03"
+lastupdated: "2024-05-06"
 
 
 keywords: change log, version history, Ingress ALB
@@ -25,7 +25,7 @@ Review the version history for Ingress ALB.
 {: #ingress-alb-1.9.6}
 
 
-### 1.9.6_6587_iks, released 30 April 24
+### 1.9.6_6587_iks, released 03 May 24
 {: #ingress-alb-1.9.6_6587_iks}
 
 - Resolves the following CVEs: [CVE-2023-45288](https://nvd.nist.gov/vuln/detail/CVE-2023-45288){: external}.
@@ -54,7 +54,7 @@ Review the version history for Ingress ALB.
 {: #ingress-alb-1.9.4}
 
 
-### 1.9.4_6586_iks, released 30 April 24
+### 1.9.4_6586_iks, released 03 May 24
 {: #ingress-alb-1.9.4_6586_iks}
 
 [Default version]{: tag-green}
@@ -94,7 +94,7 @@ Review the version history for Ingress ALB.
 {: #ingress-alb-1.8.5}
 
 
-### 1.8.5_6585_iks, released 30 April 24
+### 1.8.5_6585_iks, released 03 May 24
 {: #ingress-alb-1.8.5_6585_iks}
 
 - Resolves the following CVEs: [CVE-2023-45288](https://nvd.nist.gov/vuln/detail/CVE-2023-45288){: external}.
@@ -137,7 +137,7 @@ Review the version history for Ingress ALB.
 {: #ingress-alb-1.6.4}
 
 
-### 1.6.4_6582_iks, released 30 April 24
+### 1.6.4_6582_iks, released 03 May 24
 {: #ingress-alb-1.6.4_6582_iks}
 
 - Resolves the following CVEs: [CVE-2023-45288](https://nvd.nist.gov/vuln/detail/CVE-2023-45288){: external}.
