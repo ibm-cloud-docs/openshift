@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2024
-lastupdated: "2024-05-02"
+lastupdated: "2024-05-06"
 
 
 keywords: openshift
@@ -274,6 +274,10 @@ subcollection: openshift
 [Release notes](/docs/openshift?topic=openshift-openshift-relnotes#openshift-relnotes)
 
 * [May 2024](/docs/openshift?topic=openshift-openshift-relnotes#openshift-may24)
+
+    * [05 May 2024](/docs/openshift?topic=openshift-openshift-relnotes#openshift-may0524)
+
+        * {{site.data.keyword.openshiftlong_notm}} cluster autoscaler add-on patch updates.
 
     * [02 May 2024](/docs/openshift?topic=openshift-openshift-relnotes#openshift-may0224)
 
@@ -6892,11 +6896,15 @@ subcollection: openshift
 
 * [Version 1.2.1](/docs/openshift?topic=openshift-ca_changelog#0121_ca_addon)
 
+    * [Change log for patch update 1.2.1_425, released 05 May 2024](/docs/openshift?topic=openshift-ca_changelog#121425_ca)
+
     * [Change log for patch update 1.2.1_418, released 02 April 2024](/docs/openshift?topic=openshift-ca_changelog#121418_ca)
 
     * [Change log for patch update 1.2.1_395, released 28 February 2024](/docs/openshift?topic=openshift-ca_changelog#121395_ca)
 
 * [Version 1.2.0](/docs/openshift?topic=openshift-ca_changelog#0120_ca_addon)
+
+    * [Change log for patch update 1.2.0_426, released 05 May 2024](/docs/openshift?topic=openshift-ca_changelog#120426_ca)
 
     * [Change log for patch update 1.2.0_410, released 02 April 2024](/docs/openshift?topic=openshift-ca_changelog#120410_ca)
 
