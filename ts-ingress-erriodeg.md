@@ -2,7 +2,7 @@
 
 copyright:
   years: 2022, 2024
-lastupdated: "2024-03-04"
+lastupdated: "2024-05-07"
 
 
 keywords: openshift, ingress, troubleshoot ingress, ingress operator, ingress cluster operator, ingress operator degraded, erriodeg
@@ -76,11 +76,14 @@ oc get clusteroperator ingress
         **Classic**: Remove the currently registered addresses by running the `ibmcloud oc nlb-dns rm classic` [command](/docs/openshift?topic=openshift-kubernetes-service-cli#cs_nlb-dns-rm), then add the new addresses with the `ibmcloud oc nlb-dns add` [command](/docs/openshift?topic=openshift-kubernetes-service-cli#cs_nlb-dns-add).
         **Satellite**: The actual addresses depends on your configuration: if you expose your worker nodes with an external load balancer, register the load balancer addresses, otherwise register the IP addresses assigned to the `router-external-default` service in the `openshift-ingress` namespace (use the `oc get services -n openshift-ingress router-external-default -o yaml` command to retrieve the addresses). Remove the currently registered addresses by running the `ibmcloud oc nlb-dns rm classic` [command](/docs/openshift?topic=openshift-kubernetes-service-cli#cs_nlb-dns-rm), then add the new addresses with the `ibmcloud oc nlb-dns add` [command](/docs/openshift?topic=openshift-kubernetes-service-cli#cs_nlb-dns-add).
 
-1. **VPC only**: Ensure that your VPC subnets have public gateways attached. For more information, see [Creating a Red Hat OpenShift cluster in your Virtual Private Cloud](/docs/openshift?topic=openshift-vpc_rh_tutorial) and [Configuring VPC subnets](/docs/openshift?topic=openshift-vpc-subnets#vpc_basics_pgw)
-    1. Run the `ibmcloud is public-gateways` to see your public gateways.
-    1. Run the `ibmcloud is subnets` to see your subnets.
-    1. For every subnet run the `ibmcloud is subnet <subnet-id>` to check whenever it has a public gateway.
-        1. If your subnet does not have a public gateway attached, you need to attach one. For more information, see [Creating public gateways](/docs/vpc?topic=vpc-create-public-gateways&interface=cli)
+1. **VPC only**: canary health check traffic originates from one of the worker nodes of your cluster.
+    - Health check traffic originates from one of the worker nodes of your cluster. In the case of clusters with public service endpoint, the traffic is directed to the public floating IP address of the VPC Load Balancer instance, therefore it is required to have a Public Gateway attached to all the worker subnets. In the case of clusters with only private service endpoints, the traffic is directed to the VPC subnet IP address of the VPC Load Balancer, therefore a Public Gateway is not required. For clusters with public service endpoint:
+        1. Run the `ibmcloud is public-gateways` to see your public gateways.
+        1. Run the `ibmcloud is subnets` to see your subnets.
+        1. For every subnet run the `ibmcloud is subnet <subnet-id>` to check whenever it has a public gateway.
+            1. If your subnet does not have a public gateway attached, you need to attach one. For more information, see [Creating public gateways](/docs/vpc?topic=vpc-create-public-gateways&interface=cli)
+    - If your VPC Load Balancers are located on a subnet other than the worker nodes of your cluster, you will need to update the Security Group attached to the VPC Load Balancer subnet to allow incoming traffic from the worker subnets.
+    - For more information, see [Creating a Red Hat OpenShift cluster in your Virtual Private Cloud](/docs/openshift?topic=openshift-vpc_rh_tutorial), [Configuring VPC subnets](/docs/openshift?topic=openshift-vpc-subnets#vpc_basics_pgw) and [Creating and managing VPC security groups](/docs/openshift?topic=openshift-vpc-security-group-manage).
 
 1. Ensure that no firewall rules block the canary traffic.
     **VPC**: canary traffic originates from one of the worker nodes, flows through a VPC Public Gateway and arrives to the public side of the VPC Load Balancer instance. Configure your VPC Security Groups to allow this communication. For more information, see [Controlling traffic with VPC security groups](/docs/openshift?topic=openshift-vpc-security-group).

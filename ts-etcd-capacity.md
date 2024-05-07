@@ -2,7 +2,7 @@
 
 copyright:
   years: 2024, 2024
-lastupdated: "2024-04-11"
+lastupdated: "2024-05-07"
 
 
 keywords: openshift, {{site.data.keyword.openshiftlong_notm}}, etcd, capacity, database, limits
@@ -44,7 +44,7 @@ Identify the resources which are occupying space in the etcd database.
     
 1. Search the output for `apiserver_storage_objects metrics`, which tells you how many of each kind of object is present in the etcd database. Look for resource types that have tens or hundreds of thousands of associated objects. These resources are the most likely cause of the issue. However, keep in mind that it is the size of these objects rather than their number that is important.
 
-1. For the resources that you identified in the previous step, review and adjust their settings to reduce the number of objects that are getting created. For example, a common issue is misconfigured operators that automatically create a large number of secrets.
+1. For the resources that you identified in the previous step, review and adjust their settings to reduce the number of objects that are getting created. For example, a common issue is misconfigured operators that automatically create too many secrets.
 
 1. After adjust the resource settings, clean up the resources to bring the size of the etcd database back down.
 
