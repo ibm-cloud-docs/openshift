@@ -275,6 +275,10 @@ subcollection: openshift
 
 * [May 2024](/docs/openshift?topic=openshift-openshift-relnotes#openshift-may24)
 
+    * [07 May 2024](/docs/openshift?topic=openshift-openshift-relnotes#openshift-may0724)
+
+        * {{site.data.keyword.openshiftlong_notm}} worker node fix packs.
+
     * [05 May 2024](/docs/openshift?topic=openshift-openshift-relnotes#openshift-may0524)
 
         * {{site.data.keyword.openshiftlong_notm}} cluster autoscaler add-on patch updates.

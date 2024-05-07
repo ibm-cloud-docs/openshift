@@ -2,10 +2,10 @@
 
 copyright: 
   years: 2022, 2024
-lastupdated: "2024-03-15"
+lastupdated: "2024-05-07"
 
 
-keywords: openshift
+keywords: kubernetes, openshift, infrastructure, policy
 
 subcollection: openshift
 
