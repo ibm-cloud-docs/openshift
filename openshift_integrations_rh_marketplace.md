@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2024
-lastupdated: "2024-04-29"
+lastupdated: "2024-05-07"
 
 
 keywords: kubernetes, openshift
@@ -49,7 +49,7 @@ With [{{site.data.keyword.redhat_full}} Marketplace](https://swc.saas.ibm.com/en
     {: pre}
 
 **To set up your cluster with {{site.data.keyword.redhat_notm}} Marketplace**:
-1. Follow the [{{site.data.keyword.redhat_notm}} Marketplace instructions](https://marketplace.redhat.com/en-us/workspace/clusters/add/register){: external} to create a namespace, operator, and global pull secret for the {{site.data.keyword.redhat_notm}} Marketplace.
+1. Follow the [{{site.data.keyword.redhat_notm}} Marketplace instructions](https://swc.saas.ibm.com/redhat-marketplace/workspace/clusters/add/register){: external} to create a namespace, operator, and global pull secret for the {{site.data.keyword.redhat_notm}} Marketplace.
 
 2. Verify that the global pull secret for the cluster is updated with the `registry.marketplace.redhat.com` secret.
     ```sh
@@ -78,7 +78,7 @@ With [{{site.data.keyword.redhat_full}} Marketplace](https://swc.saas.ibm.com/en
         ```
         {: pre}
 
-4. After your worker nodes are reloaded, verify that your cluster is listed in your [{{site.data.keyword.redhat_notm}} Marketplace workspace](https://marketplace.redhat.com/en-us/workspace/clusters){: external}.
+4. After your worker nodes are reloaded, verify that your cluster is listed in your [{{site.data.keyword.redhat_notm}} Marketplace workspace](https://swc.saas.ibm.com/redhat-marketplace/workspace/clusters){: external}.
 
 Now, you can install and manage software from {{site.data.keyword.redhat_notm}} Marketplace in your cluster. For more information, see the [{{site.data.keyword.redhat_notm}} Marketplace documentation](https://swc.saas.ibm.com/en-us/redhat-marketplace/documentation/){: external}.
 

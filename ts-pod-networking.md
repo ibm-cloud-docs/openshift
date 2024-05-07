@@ -2,7 +2,7 @@
 
 copyright:
   years: 2024, 2024
-lastupdated: "2024-04-29"
+lastupdated: "2024-05-07"
 
 
 keywords: pods, pod connectvity, networking, pod networking, pod trouble shooting, pod debug
@@ -46,7 +46,7 @@ Follow these steps to check the health of your components. Networking issues mig
         ```
         {: pre}
 
-    2. In the output, make sure that your cluster includes the following pods. Make sure that each pod's status is `Running`, and that the pods do not have a large number of restarts.
+    2. In the output, make sure that your cluster includes the following pods. Make sure that each pod's status is `Running`, and that the pods do not have too many restarts.
         - Exactly one `calico-node` pod per worker node. 
         - At least one `calico-typha` pod per cluster. Larger clusters may have more than one. 
         - Exactly one `calico-kube-controllers` pod per cluster. 

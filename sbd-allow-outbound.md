@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2024, 2024
-lastupdated: "2024-04-24"
+lastupdated: "2024-05-07"
 
 keywords: openshift, {{site.data.keyword.openshiftlong_notm}}, secure by default, outbound traffic protection, 4.15
 
@@ -251,7 +251,7 @@ Beginning with 4.15 clusters, an additional security group rule is needed for VP
 
 If you are using webhooks that contact a URL or service external to the cluster, you must add security group rules that allow outbound traffic from your cluster workers to the URL or external service. Alternatively, you can disable outbound traffic protection completely.
 
-Note that in most cases, admission webhooks that use cluster service references do not require any changes.
+Usually, admission webhooks that use cluster service references do not require any changes.
 
 In the following example, an admission webhook that connects to a cluster service  does not usually require any changes because the master connects to the service via the Konnectivity connection, which is allowed by default. One exception would be if the pods implementing that cluster service need to connect to a URL or some external service. If so, then allow those pods to access the URL or external service, as shown in this example.
 
@@ -448,6 +448,7 @@ You can choose one of the following options to allow traffic over the public net
     ibmcloud oc vpc outbound-traffic-protection disable --cluster CLUSTER
     ```
     {: pre}
+
 
 
 
