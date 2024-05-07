@@ -63,7 +63,7 @@ Red Hat Enterprise Linux CoreOS (RHCOS) worker nodes are available only for VPC 
 - [{{site.data.keyword.redhat_openshift_notm}} 4.15 release notes overview](https://docs.openshift.com/container-platform/4.15/release_notes/ocp-4-15-release-notes.html){: external}
 
 
-### VPC clusters
+### VPC and Classic clusters
 {: #os-openshift}
 
 

@@ -6205,7 +6205,7 @@ subcollection: openshift
 
     * [VPC clusters with HyperShift enabled](/docs/openshift?topic=openshift-openshift_versions#os-openshift-with-coreos)
 
-    * [VPC clusters](/docs/openshift?topic=openshift-openshift_versions#os-openshift)
+    * [VPC and Classic clusters](/docs/openshift?topic=openshift-openshift_versions#os-openshift)
 
     * [Clusters in Satellite locations with CoreOS enabled](/docs/openshift?topic=openshift-openshift_versions#os-satellite-with-coreos)
 
