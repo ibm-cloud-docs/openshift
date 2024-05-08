@@ -36,6 +36,8 @@ Looking for {{site.data.keyword.cloud_notm}} status, platform announcements, sec
 
 
 
+
+
 Image Key Synchronizer add-on patch update.
 :   For more information, see the [change log](/docs/openshift?topic=openshift-ibm-cloud-image-key-synchronizer-change-log).
 
