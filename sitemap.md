@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2024
-lastupdated: "2024-05-07"
+lastupdated: "2024-05-08"
 
 
 keywords: openshift
@@ -274,6 +274,10 @@ subcollection: openshift
 [Release notes](/docs/openshift?topic=openshift-openshift-relnotes#openshift-relnotes)
 
 * [May 2024](/docs/openshift?topic=openshift-openshift-relnotes#openshift-may24)
+
+    * [08 May 2024](/docs/openshift?topic=openshift-openshift-relnotes#openshift-may0824)
+
+        * Image Key Synchronizer add-on patch update.
 
     * [07 May 2024](/docs/openshift?topic=openshift-openshift-relnotes#openshift-may0724)
 
@@ -7759,6 +7763,12 @@ subcollection: openshift
     * [Version 4.5.0_655, released on 14 Apr 2021](/docs/openshift?topic=openshift-hpcs-router-changelog#4_5_0655)
 
     * [Version 4.5.0_647, released on 30 Mar 2021](/docs/openshift?topic=openshift-hpcs-router-changelog#4_5_0647)
+
+[IBM Cloud Image Key Synchronizer version change log](/docs/openshift?topic=openshift-ibm-cloud-image-key-synchronizer-change-log#ibm-cloud-image-key-synchronizer-change-log)
+
+* [Version 1.0.0](/docs/openshift?topic=openshift-ibm-cloud-image-key-synchronizer-change-log#ibm-cloud-image-key-synchronizer-1.0.0)
+
+    * [1.0.0_2186, released 08 May 24](/docs/openshift?topic=openshift-ibm-cloud-image-key-synchronizer-change-log#ibm-cloud-image-key-synchronizer-1.0.0_2186)
 
 [{{site.data.keyword.cloud_notm}} Image Key Synchronizer add-on change log](/docs/openshift?topic=openshift-image-key-synchronizer-changelog#image-key-synchronizer-changelog)
 
