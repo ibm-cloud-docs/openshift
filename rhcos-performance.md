@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2022, 2024
-lastupdated: "2024-01-03"
+lastupdated: "2024-05-08"
 
 
 keywords: openshift, kernel, rhcos, cpu pinning, huge pages, numa, core os
@@ -534,4 +534,4 @@ If you want to remove customizations from your worker nodes and reset them to th
         {: pre}
         
     1. Repeat these steps for each worker node that you want to reboot.
-    
+
