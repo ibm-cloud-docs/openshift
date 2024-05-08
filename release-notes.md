@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2024
-lastupdated: "2024-05-07"
+lastupdated: "2024-05-08"
 
 
 keywords: openshift, {{site.data.keyword.openshiftlong_notm}}, kubernetes, release notes
@@ -27,6 +27,21 @@ Looking for {{site.data.keyword.cloud_notm}} status, platform announcements, sec
 
 ## May 2024
 {: #openshift-may24}
+
+### 08 May 2024
+{: #openshift-may0824}
+{: release-note}
+
+
+
+
+
+Image Key Synchronizer add-on patch update.
+:   For more information, see the [change log](/docs/openshift?topic=openshift-ibm-cloud-image-key-synchronizer-change-log).
+
+
+
+
 
 ### 07 May 2024
 {: #openshift-may0724}
