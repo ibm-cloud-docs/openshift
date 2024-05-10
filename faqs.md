@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2024
-lastupdated: "2024-04-29"
+lastupdated: "2024-05-10"
 
 
 keywords: openshift, ocp, compliance, security standards, faq, openshift pricing, ocp pricing, openshift charges, ocp charges, openshift price, ocp price, openshift billing, ocp billing, openshift costs, ocp costs
@@ -258,33 +258,19 @@ For more information about available bare metal flavors and how bare metal is di
 {: faq}
 
 
-Classic infrastructure
-:   [Kubernetes]{: tag-blue} Clusters must have at least 1 worker node to run the default Kubernetes components.
-:   [OpenShift]{: tag-red} Clusters must have at least 2 worker nodes to run the default OpenShift Container Platform components.
+Classic or VPC clusters
+:   Each worker pool must always have at least 2 worker nodes. For the smallest cluster possible, you can have 1 worker pool for a minimum of 2 total nodes.
 
-VPC infrastructure
-:   [Kubernetes]{: tag-blue} Clusters must have at least 1 worker node to run the default Kubernetes components.
-:   [OpenShift]{: tag-red} Clusters must have at least 2 worker nodes to run the default OpenShift Container Platform components.
+{{site.data.keyword.satelliteshort}} clusters
+:   Clusters can be created using the single-replica topology, which means only 1 worker node. However, if you create a {{site.data.keyword.satelliteshort}} cluster using a single-replica, you can't add worker nodes later.
 
-{{site.data.keyword.satelliteshort}} (BYO infrastructure)
-:   [OpenShift]{: tag-red} Clusters can be created using the single-replica topology which means only 1 worker node. If you create a {{site.data.keyword.satelliteshort}} cluster using a single-replica, you can't add worker nodes later.
-
-
-You can't have a cluster with 0 worker nodes, and you can't power off or suspend billing for your worker nodes. Additionally, the type of cluster and the number of worker pools that you have can impact the size of your cluster.
+Keep in mind that some services such as Ingress might require highly available worker node setups. You might not be able to run these services or your apps in clusters with only two nodes in a worker pool.
 {: important}
 
-
-
-
-
-* **Single zone clusters`*`**: [Create a cluster](/docs/openshift?topic=openshift-clusters) with 2 worker nodes in the default worker pool.
-* **Multizone clusters`*`**: You must [create a cluster](/docs/openshift?topic=openshift-clusters) with 1 worker node per zone in the worker pool. Later, you can [remove zones](/docs/openshift?topic=openshift-kubernetes-service-cli#cs_zone_rm) from the worker pool or [remove individual worker nodes](/docs/openshift?topic=openshift-kubernetes-service-cli#cs_worker_rm) so that your cluster size reduces to the minimum size of 2.
-* **Worker pools**: For any type of cluster, each worker pool must always have at least 1 worker node. For the smallest size cluster possible, you can have only 1 worker pool.
-
-Keep in mind that some services such as Ingress might require multiple worker nodes for high availability, and you might not be able to run these services or your apps in the smallest size cluster possible.
+You can't have a cluster with 0 worker nodes, and you can't power off or suspend billing for your worker nodes.
 {: important}
 
-`*` **Classic clusters only**: Initially, you can create a classic cluster with only 1 worker node. This operation is allowed for multizone clusters, so that you are not forced to create 2 worker nodes per zone. If you have a single zone cluster, resize the worker pool to 2. Also, note that after resizing a worker pool to 2, you can't later resize back down to 1 worker node.
+`*` **Classic clusters only**: Initially, you can create a classic cluster with only 1 worker node. This operation is allowed only for multizone clusters, so that you are not forced to create 2 worker nodes per zone. If you have a single zone cluster, resize the worker pool to 2. Also, note that after resizing a worker pool to 2, you can't later resize back down to 1 worker node.
 {: note}
 
 ## Which versions does the service support?

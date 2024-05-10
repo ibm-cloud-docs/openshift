@@ -2,10 +2,10 @@
 
 copyright: 
   years: 2014, 2024
-lastupdated: "2024-04-11"
+lastupdated: "2024-05-10"
 
 
-keywords: file, add-on, changelog
+keywords: file, add-on, changelog, openshift
 
 subcollection: openshift
 
@@ -42,6 +42,15 @@ To view a list of add-ons and the supported cluster versions, see the [Supported
 
 ## Version 1.2
 {: #012_is_file}
+
+### Change log for 1.2.8_174, released 10 May 2024
+{: #1.2.8_174_is_block_relnote}
+
+- Updates `golang` to `1.21.9-community`.
+- Removes `curl` package from base image.
+- Updates the `armada-storage-secret` to `v1.2.35`.
+- Sets `handle-volume-inuse-error` flag to `false` in the `csi-resizer` to reduce costs associated with watching all pods in the cluster which can cause `OOM Killed` errors for the `csi-resizer`.
+- Resolves [CVE-2023-46218](https://nvd.nist.gov/vuln/detail/CVE-2023-46218){: external}, [CVE-2023-28322](https://nvd.nist.gov/vuln/detail/CVE-2023-28322){: external}, and [CVE-2023-38546](https://nvd.nist.gov/vuln/detail/CVE-2023-38546){: external}.
 
 ### Change log for 1.2.7_154, released 08 March 2024
 {: #1.2.7_154_is_block_relnote}

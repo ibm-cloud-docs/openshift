@@ -2,10 +2,10 @@
 
 copyright: 
   years: 2014, 2024
-lastupdated: "2024-03-28"
+lastupdated: "2024-05-10"
 
 
-keywords: openshift
+keywords: openshift, block storage, deploy apps
 
 subcollection: openshift
 
@@ -13,8 +13,6 @@ subcollection: openshift
 ---
 
 {{site.data.keyword.attribute-definition-list}}
-
-
 
 
 
@@ -103,7 +101,7 @@ Your {{site.data.keyword.block_storage_is_short}} volumes can be mounted by mult
 For more information, see the following links.
 
 * [Adding {{site.data.keyword.block_storage_is_short}} to apps](#vpc-block-add).  
-* [Storage class reference](#vpc-block-reference).  
+* [Storage class reference](/docs/openshift?topic=openshift-storage-block-vpc-sc-ref).  
 * [Customizing the default storage settings](#vpc-customize-default).  
 
 ## Adding {{site.data.keyword.block_storage_is_short}} to your apps
@@ -773,7 +771,7 @@ You might create a custom storage class if you want to:
 
 To create your own storage class:
 
-1. Review the [Storage class reference](#vpc-block-reference) to determine the `profile` that you want to use for your storage class. You can also review the [custom profiles](/docs/vpc?topic=vpc-block-storage-profiles#custom) if you want to specify custom IOPs for your {{site.data.keyword.block_storage_is_short}}.
+1. Review the [Storage class reference](/docs/openshift?topic=openshift-storage-block-vpc-sc-ref) to determine the `profile` that you want to use for your storage class. You can also review the [custom profiles](/docs/vpc?topic=vpc-block-storage-profiles#custom) if you want to specify custom IOPs for your {{site.data.keyword.block_storage_is_short}}.
 
     If you want to use a pre-installed storage class as a template, you can get the details of a storage class by using the `oc get sc <storageclass> -o yaml` command.
     {: tip}
@@ -1298,164 +1296,24 @@ oc cp <local_filepath>/<filename> <namespace>/<pod>:<pod_filepath> -c <container
 ```
 {: pre}
 
-    
-
-## Storage class reference
-{: #vpc-block-reference}
-
-For more information about pricing, see [Pricing information](https://cloud.ibm.com/vpc-ext/provision/vs){: external}.
-{: shortdesc}
 
 
 
 
-### 10 IOPs tier
-{: #10iops-sc-vpc-block}
+## Understanding volume request capacity
+{: #vpc-block-volume-capacity}
 
-Name
-:   `ibmc-vpc-block-10iops-tier`
-:   `ibmc-vpc-block-retain-10iops-tier`
-:   `ibmc-vpc-block-metro-10iops-tier`
-:   `ibmc-vpc-block-metro-retain-10iops-tier`
-:   `ibmc-vpcblock-odf-10iops`
-:   `ibmc-vpcblock-odf-ret-10iops`
+The VPC Block CSI Driver calculates the volume capacity by using the following formula.
 
-File system
-:   `ext4`
+- If value is provided in `Gi`: rBytes(requestedBytes) = X * 1024^3
 
-Corresponding {{site.data.keyword.block_storage_is_short}} tier
-:   [10 IOPS/GB](/docs/vpc?topic=vpc-block-storage-profiles#tiers)
+- If value is provided in `G`: rBytes(requestedBytes) = X * 10^9
 
-Volume binding mode
-:   `ibmc-vpc-block-10iops-tier`: Immediate
-:   `ibmc-vpc-block-retain-10iops-tier`: Immediate
-:   `ibmc-vpc-block-metro-10iops-tier`: WaitForFirstConsumer
-:   `ibmc-vpc-block-metro-retain-10iops-tier`: WaitForFirstConsumer
-:   `ibmc-vpcblock-odf-10iops`: WaitForFirstConsumer
-:   `ibmc-vpcblock-odf-ret-10iops`: WaitForFirstConsumer
+The requested value is equal to `(((rBytes+ GiB - 1) / GiB) * GiB) / GiB`.
 
+For example:
+- If a value of `20Gi` is provided, applying the above formula, the volume that is created is `20GB`.
+- If a value of `20G` is provided, the volume that is created is `19GB`.
 
-Reclaim policy
-:   `ibmc-vpc-block-10iops-tier`: Delete
-:   `ibmc-vpc-block-retain-10iops-tier`: Retain
-:   `ibmc-vpc-block-metro-10iops-tier`: Delete
-:   `ibmc-vpc-block-metro-retain-10iops-tier`: Retain
-:   `ibmc-vpcblock-odf-10iops`: Delete
-:   `ibmc-vpcblock-odf-ret-10iops`: Retain
-
-Billing
-:   Hourly
-
-
-
-### 5 IOPs tier
-{: #5iops-sc-vpc-block}
-
-Name
-:   `ibmc-vpc-block-5iops-tier`
-:   `ibmc-vpc-block-retain-5iops-tier`
-:   `ibmc-vpcblock-odf-5iops`
-:   `ibmc-vpcblock-odf-ret-5iops created`
-
-File system
-:   `ext4` 
-
-Corresponding {{site.data.keyword.block_storage_is_short}} tier
-:   [5 IOPS/GB](/docs/vpc?topic=vpc-block-storage-profiles#tiers)
-
-Volume binding mode
-:   `ibmc-vpc-block-5iops-tier`: Immediate
-:   `ibmc-vpc-block-retain-5iops-tier`: Immediate
-:   `ibmc-vpc-block-metro-5iops-tier`: WaitforFirstConsumer
-:   `ibmc-vpc-block-metro-retain-5iops-tier`: WaitForFirstConsumer
-:   `ibmc-vpcblock-odf-5iops`: WaitForFirstConsumer
-:   `ibmc-vpcblock-odf-ret-5iops created`: WaitForFirstConsumer
-
-Reclaim policy
-:   `ibmc-vpc-block-5iops-tier`: Delete
-:   `ibmc-vpc-block-retain-5iops-tier`: Retain
-:   `ibmc-vpc-block-metro-5iops-tier`: Delete
-:   `ibmc-vpc-block-metro-retain-5iops-tier`: Retain 
-:   `ibmc-vpcblock-odf-5iops`: Delete
-:   `ibmc-vpcblock-odf-ret-5iops created`: Retain
-
-Billing
-:   Hourly
-
-
-
-### Custom
-{: #custom-sc-vpc-block}
-
-Name
-:   `ibmc-vpc-block-custom`
-:   `ibmc-vpc-block-retain-custom`
-:   `ibmc-vpcblock-odf-custom`
-:   `ibmc-vpcblock-odf-ret-custom`
-
-File system
-:   `ext4`
-
-:   Corresponding {{site.data.keyword.block_storage_is_short}} tier
-:   [Custom](/docs/vpc?topic=vpc-block-storage-profiles#custom)
-
-Volume binding mode
-:   `ibmc-vpc-block-custom`: Immediate
-:   `ibmc-vpc-block-retain-custom`: Immediate
-:   `ibmc-vpc-block-metro-custom`: WaitforFirstConsumer
-:   `ibmc-vpc-block-metro-retain-custom`: WaitForFirstConsumer
-:   `ibmc-vpcblock-odf-custom`: WaitForFirstConsumer
-:   `ibmc-vpcblock-odf-ret-custom`: WaitForFirstConsumer
-
-Reclaim policy
-:   `ibmc-vpc-block-custom`: Delete
-:   `ibmc-vpc-block-retain-custom`: Retain
-:   `ibmc-vpc-block-metro-custom`: Delete
-:   `ibmc-vpc-block-metro-retain-custom`: Retain
-:   `ibmc-vpcblock-odf-custom`: Delete
-:   `ibmc-vpcblock-odf-ret-custom`: Retain
-
-Billing
-:   Hourly
-
-
-
-### General purpose
-{: #gen-purp-sc-vpc-block}
-
-Name
-:   `ibmc-vpc-block-general-purpose`
-:   `ibmc-vpc-block-retain-general-purpose`
-:   `ibmc-vpc-block-metro-general-purpose`
-:   `ibmc-vpc-block-metro-retain-general-purpose` 
-:   `ibmc-vpcblock-odf-ret-general`
-:   `ibmc-vpcblock-odf-general`
-
-File system
-:   `ext4`
-
-Corresponding {{site.data.keyword.block_storage_is_short}} tier
-:   [3 IOPS/GB](/docs/vpc?topic=vpc-block-storage-profiles#tiers)
-
-Volume binding mode
-:   `ibmc-vpc-block-general-purpose`: Immediate
-:   `ibmc-vpc-block-retain-general-purpose`: Immediate
-:   `ibmc-vpc-block-metro-general-purpose`: WaitforFirstConsumer
-:   `ibmc-vpc-block-metro-retain-general-purpose`: WaitForFirstConsumer
-:   `ibmc-vpcblock-odf-ret-general`: WaitForFirstConsumer
-:   `ibmc-vpcblock-odf-general`: WaitForFirstConsumer
-
-Reclaim policy
-:   `ibmc-vpc-block-general-purpose`: Delete
-:   `ibmc-vpc-block-retain-general-purpose`: Retain
-:   `ibmc-vpc-block-metro-general-purpose`: Delete
-:   `ibmc-vpc-block-metro-retain-general-purpose`: Retain 
-:   `ibmc-vpcblock-odf-ret-general`: Retain
-:   `ibmc-vpcblock-odf-general`: Delete
-
-Billing
-:   Hourly
-
-
-
+In some cases, the capacity of the volume that is created is less than the requested value. Note that billing applies for the volume that gets created, not the requested volume.
 

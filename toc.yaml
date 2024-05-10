@@ -228,6 +228,7 @@ toc:
           - storage-block-vpc-trusted-profiles.md
           - storage-block-vpc-unmanaged.md
           - storage-block-vpc-remove.md
+          - storage-block-vpc-sc-ref.md
       - storage-file.md
       - topicgroup:
           label: Setting up File Storage for VPC
@@ -429,7 +430,6 @@ toc:
           topics:
           - at-events.md
           - api-at-iam.md
-      - classic-roles.md
       - locations.md
       - openshift_integrations_overview.md
       - service-settings.md

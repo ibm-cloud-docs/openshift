@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2022, 2024
-lastupdated: "2024-04-24"
+lastupdated: "2024-05-10"
 
 
 keywords: openshift
@@ -175,6 +175,50 @@ Create a persistent volume claim (PVC) to dynamically provision {{site.data.keyw
     ```
     {: screen}
 
+Next steps
+:   After your pod is running, try [expanding your storage volume](#storage-file-vpc-expansion).
+
+
+## Expanding a mounted volume
+{: #storage-file-vpc-expansion}
+
+To provision volumes that support expansion, you must use storage class that has `allowVolumeExpansion` set to `true`. Note that only volumes that are mounted by an app pod can be expanded.
+
+1. Begin by deploying the [quickstart example PVC and Deployment](#vpc-add-file-dynamic). 
+
+1. After your PVC is mounted by an app pod, you can expand your volume by editing the value of the `spec.resources.requests.storage` field in your PVC. To expand your volume, edit your PVC and increase the value in the `spec.resources.requests.storage` field.
+
+    ```sh
+    kubectl edit pvc my-pvc
+    ```
+    {: pre}
+
+    ```yaml
+    spec:
+      accessModes:
+      - ReadWriteMany
+      resources:
+        requests:
+          storage: 50Gi
+    ```
+    {: pre}
+
+
+1. Save and close the PVC. Wait a few minutes for the volume to be expanded.
+
+1. Verify that your volume is expanded.
+    ```sh
+    kubectl get pvc
+    ```
+    {: pre}
+
+    Example output
+    ```sh
+    NAME     STATUS   VOLUME                                     CAPACITY   ACCESS MODES   STORAGECLASS        AGE
+    my-pvc   Bound    pvc-25b6912e-75bf-41ca-b6b2-567fa4f9d245   50Gi       RWX            ibmc-vpc-file-dp2   3m31s
+    ```
+    {: screen}
+
 
 ## Attaching existing file storage to an app
 {: #vpc-add-file-static}
@@ -328,7 +372,7 @@ You can run your app as non-root by first creating a custom storage class that c
     apiVersion: storage.k8s.io/v1
     kind: StorageClass
     metadata:
-        name: ibmc-vpc-file-dp-eni-default
+        name: my-nonroot-class
     provisioner: vpc.file.csi.ibm.io
     mountOptions:
         - hard
@@ -360,7 +404,7 @@ You can run your app as non-root by first creating a custom storage class that c
       resources:
         requests:
           storage: 10Gi # Enter the size of the storage in gigabytes (Gi). After your storage is provisioned, you can't change the size. Make sure to specify a size that matches the amount of data that you want to store.
-      storageClassName: ibmc-vpc-file-dp-eni-default # Enter the name of the storage class that you want to use.
+      storageClassName: my-nonroot-class # Enter the name of the storage class that you want to use.
     ```
       {: codeblock}
 
@@ -398,12 +442,19 @@ You can run your app as non-root by first creating a custom storage class that c
     ```
     {: codeblock}
 
-
-
 ## Creating a custom storage class
 {: #storage-file-vpc-custom-sc}
 
 Create your own customized storage class with the preferred settings for your {{site.data.keyword.filestorage_vpc_short}} instance.
+
+- With monthly billing, you pay the monthly charge regardless of the length of time the persistent storage is used or when it is removed.
+
+- If you want to keep your data, then create a class with a `retain` reclaim poliy. When you delete the PVC, only the PVC is deleted. The PV, the physical storage device in your IBM Cloud infrastructure account, and your data still exist.
+
+- To reclaim the storage and use it in your cluster again, you must remove the PV and follow the steps for [using existing {{site.data.keyword.filestorage_vpc_short}}](/docs/openshift?topic=openshift-storage-file-vpc-apps).
+
+- If you want the PV, the data, and your physical {{site.data.keyword.filestorage_vpc_short}} device to be deleted when you delete the PVC, create a storage class without `retain`.
+
 
 
 1. Review the [Storage class reference](/docs/openshift?topic=openshift-storage-file-vpc-sc-ref) to determine the `profile` that you want to use for your storage class. 

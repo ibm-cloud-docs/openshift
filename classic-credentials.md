@@ -2,7 +2,7 @@
 
 copyright:
   years: 2024, 2024
-lastupdated: "2024-03-27"
+lastupdated: "2024-05-10"
 
 
 keywords: openshift, {{site.data.keyword.openshiftlong_notm}}, clusters, access, endpoint, credentials, classic
@@ -20,7 +20,7 @@ subcollection: openshift
 
 Determine whether your account has access to the IBM Cloud infrastructure portfolio and learn about how {{site.data.keyword.openshiftlong_notm}} uses the API key to access the portfolio.
 
-Access to {{site.data.keyword.cloud_notm}} infrastructure works differently in Classic clusters. Infrastructure resources for Classic clusters are created in a separate {{site.data.keyword.cloud_notm}} infrastructure account. Usually, your Pay-As-You-Go or Subscription account is linked to the {{site.data.keyword.cloud_notm}} infrastructure account so that account owners can access classic infrastructure automatically. To authorize other users to access classic compute, storage, and networking resources, you must assign [classic infrastructure roles](/docs/openshift?topic=openshift-classic-roles).
+Access to {{site.data.keyword.cloud_notm}} infrastructure works differently in Classic clusters. Infrastructure resources for Classic clusters are created in a separate {{site.data.keyword.cloud_notm}} infrastructure account. Usually, your Pay-As-You-Go or Subscription account is linked to the {{site.data.keyword.cloud_notm}} infrastructure account so that account owners can access classic infrastructure automatically. To authorize other users to access classic compute, storage, and networking resources, you must assign [classic infrastructure roles](/docs/openshift?topic=openshift-iam-platform-access-roles).
 
 To access the IBM Cloud infrastructure portfolio, you use an {{site.data.keyword.cloud_notm}} Pay-As-You-Go or Subscription account.
 

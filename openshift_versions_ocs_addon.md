@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2024
-lastupdated: "2024-04-17"
+lastupdated: "2024-05-10"
 
 
 keywords: odf, openshift data foundation add-on, change log
@@ -33,6 +33,15 @@ To view a list of add-ons and the supported {{site.data.keyword.redhat_openshift
 ibmcloud oc cluster addon versions --addon openshift-data-foundation
 ```
 {: pre}
+
+## Version 4.15
+{: #4.15_odf}
+
+### Version 4.15.0, released 10 May 2024
+{: #4.15.0_odf}
+
+- Initial release of version `4.15.0`.
+- Adds the `useCephRBDAsDefaultStorageClass`, `enableNFS`, and `resourceProfile` parameters. For more information, see the [parameter reference](/docs/openshift?topic=openshift-openshift_storage_parameters).
 
 ## Version 4.14
 {: #4.14_odf}

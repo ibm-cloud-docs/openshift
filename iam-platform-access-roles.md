@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2024
-lastupdated: "2024-04-11"
+lastupdated: "2024-05-10"
 
 keywords: openshift, {{site.data.keyword.openshiftlong_notm}}, kubernetes, infrastructure, policy, users, permissions, access, roles
 
@@ -48,7 +48,7 @@ Review the following permissions that you need to create a cluster including the
 | IAM Identity Service | - **Service ID creator**  \n - **User API key creator** role  \n - **Viewer** platform access role  | The resource group where you want to create a cluster. | Yes |
 | {{site.data.keyword.keymanagementserviceshort}}| **Administrator** platform access role. | All instances or the specific instance you want to use. | Required if you plan to use {{site.data.keyword.keymanagementserviceshort}} for encryption. |
 | {{site.data.keyword.hscrypto}} | **Administrator** platform access role. | All instances or the specific instance you want to use. | Required if you plan to use {{site.data.keyword.hscrypto}} for encryption. | 
-| Classic infrastructure | **Super User** role | N/A | Yes | 
+| Classic infrastructure | **Super User** role. For more information, see [Classic infrastructure roles](#iam-platform-access-roles). | N/A | Yes | 
 | VPC infrastructure | **Administrator** platform access role for [VPC Infrastructure](/docs/vpc?topic=vpc-iam-getting-started). | All instances or the specific instance you want to use. | Yes |
 {: caption="IAM roles needed to create a cluster." caption-side="bottom"}
 
@@ -74,4 +74,53 @@ The following table provides some example use cases and the corresponding IAM ro
 | Operator or site reliability engineer | - Administrator platform access role for a cluster, region, or resource group. \n - Reader service access role for a cluster or region.  \n - Manager service access role for all cluster namespaces to be able to use `kubectl top nodes,pods` commands. |
 {: caption="Types of roles you might assign to meet different use cases." caption-side="bottom"}
 
+
+## Classic infrastructure roles
+{: #classic-roles}
+
+A user with the **Super User** infrastructure access role sets the API key for a region and resource group so that infrastructure actions can be performed.
+
+The infrastructure actions that other users in the account can perform are authorized through {{site.data.keyword.cloud_notm}} IAM platform access roles. 
+
+Use the following table to customize classic infrastructure permissions only when you can't assign **Super User** to the user who sets the API key. For instructions to assign permissions, see [Customizing infrastructure permissions](/docs/openshift?topic=openshift-iam-platform-access-roles).
+{: important}
+
+
+
+
+### Required classic infrastructure permissions
+{: #required-classic-rbac}
+
+| Permission | Description | IAM Assign Policy Console | CLI |
+|:-----------------|:-----------------|:---------------|:----|
+| IPMI Remote Management | Manage worker nodes.|
+| Add Server | Add worker nodes.   \n   \n  **Note**: For worker nodes that have public IP addresses, you also need the **Add Compute with Public Network Port** permission in the **Network** category. |
+| Cancel Server | Delete worker nodes. |
+| OS Reloads and Rescue Kernel | Update, reboot, and reload worker nodes. |
+| View Virtual Server Details | Required if the cluster has VM worker nodes. List and get details of VM worker nodes. |
+| View Hardware Details | Required if the cluster has bare metal worker nodes. List and get details of bare metal worker nodes. |
+| Add Support Case | As part of the cluster creation automation, support cases are opened to provision the cluster infrastructure. |
+| Edit Support Case | As part of the cluster creation automation, support cases are updated to provision the cluster infrastructure. |
+| View Support Case | As part of the cluster creation automation, support cases are used to provision the cluster infrastructure. |
+{: caption="Table 1: Required classic infrastructure permissions" caption-side="bottom"}
+
+
+### Suggested classic infrastructure permissions
+{: #classic-rbac-suggested}
+
+| Permission | Description |
+| --- | --- |
+| Access All Virtual | Access all worker nodes. |
+| Access All Hardware | Designate access to all bare metal worker nodes.  Without this permission, a user who creates one cluster might not be able to view the bare metal worker nodes of another cluster even if the user has IAM access to both clusters. |
+| Add Compute with Public Network Port | Let worker nodes have a port that can be accessible on the public network. |
+| Manage DNS | Set up public load balancer or Ingress networking to expose apps. |
+| Edit Hostname/Domain | Set up public load balancer or Ingress networking to expose apps. |
+| Add IP Addresses | Add IP addresses to public or private subnets that are used for cluster load balancing. |
+| Manage Network Subnet Routes | Manage public and private VLANs and subnets that are used for cluster load balancing. |
+| Manage Port Control | Manage ports that are used for app load balancing. |
+| Manage Certificates (SSL) | Set up certificates that are used for cluster load balancing. |
+| View Certificates (SSL) | Set up certificates that are used for cluster load balancing. |
+| Add/Upgrade Storage (Storage Layer) | Create {{site.data.keyword.cloud_notm}} File or Block storage instances to attach as volumes to your apps for persistent storage of data. |
+| Storage Manage | Manage {{site.data.keyword.cloud_notm}} File or Block storage instances that are attached as volumes to your apps for persistent storage of data. |
+{: caption="Table 2: Suggested classic infrastructure permissions" caption-side="bottom"}
 
