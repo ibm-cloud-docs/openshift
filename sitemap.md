@@ -283,6 +283,10 @@ subcollection: openshift
 
         * OpenShift Data Foundation add-on version `4.15.0` is available.
 
+    * [09 May 2024](/docs/openshift?topic=openshift-openshift-relnotes#openshift-may0924)
+
+        * {{site.data.keyword.openshiftlong_notm}} master fix packs.
+
     * [08 May 2024](/docs/openshift?topic=openshift-openshift-relnotes#openshift-may0824)
 
         * Image Key Synchronizer add-on patch update.
@@ -6286,6 +6290,8 @@ subcollection: openshift
 
 * [Overview](/docs/openshift?topic=openshift-openshift_changelog_415#openshift_changelog_overview_415)
 
+    * [Change log for master fix pack 4.15.11_1534_openshift, released 09 May 2024](/docs/openshift?topic=openshift-openshift_changelog_415#41511_1534_openshift_M)
+
     * [Change log for worker node fix pack 4.15.11_1533_openshift, released 06 May 2024](/docs/openshift?topic=openshift-openshift_changelog_415#41511_1533_openshift_W)
 
     * [Change log for master fix pack 4.15.9_1530_openshift and worker node fix pack 4.15.6_1525_openshift, released 24 April 2024](/docs/openshift?topic=openshift-openshift_changelog_415#4.15.9_1530_openshiftM_4.15.6_1525_openshift_openshiftW)
@@ -6400,6 +6406,8 @@ subcollection: openshift
 [Version 4.14 change log](/docs/openshift?topic=openshift-openshift_changelog_414#openshift_changelog_414)
 
 * [Overview](/docs/openshift?topic=openshift-openshift_changelog_414#openshift_changelog_overview_414)
+
+    * [Change log for master fix pack 4.14.22_1563_openshift, released 09 May 2024](/docs/openshift?topic=openshift-openshift_changelog_414#41422_1563_openshift_M)
 
     * [Change log for worker node fix pack 4.14.23_1561_openshift, released 06 May 2024](/docs/openshift?topic=openshift-openshift_changelog_414#41423_1561_openshift_W)
 

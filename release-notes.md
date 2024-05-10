@@ -49,6 +49,21 @@ OpenShift Data Foundation add-on version `4.15.0` is available.
 
 
 
+
+### 09 May 2024
+{: #openshift-may0924}
+{: release-note}
+
+{{site.data.keyword.openshiftlong_notm}} master fix packs.
+:   Master fix pack are applied automatically over the course of several days. You can choose to use the [`ibmcloud ks cluster master update`](/docs/openshift?topic=openshift-kubernetes-service-cli#cs_cluster_update) command yourself without waiting for the update automation to apply the patch. Review the following change logs for your cluster version.
+:   [4.15](/docs/openshift?topic=openshift-openshift_changelog_415)
+:   [4.14](/docs/openshift?topic=openshift-openshift_changelog_414)
+
+
+
+
+
+
 ### 08 May 2024
 {: #openshift-may0824}
 {: release-note}
