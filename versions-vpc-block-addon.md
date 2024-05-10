@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2024
-lastupdated: "2024-03-27"
+lastupdated: "2024-05-10"
 
 
 keywords: openshift, {{site.data.keyword.openshiftlong_notm}}, block, storage, add-on, changelog
@@ -46,6 +46,16 @@ Before you migrate to a `5.x` release from a previous release, you must not have
 
 ## Version 5.2
 {: #052_is_block}
+
+### Change log for version 5.2.18_539, released 10 May 2024
+{: #5.2.18_539_is_block_relnote}
+
+
+- Updates `golang` to `1.21.9-community`.
+- Removes `curl` package from base image.
+- Updates the `armada-storage-secret` to `v1.3.7`.
+- Resolves [CVE-2023-46218](https://nvd.nist.gov/vuln/detail/CVE-2023-46218){: external}, [CVE-2023-28322](https://nvd.nist.gov/vuln/detail/CVE-2023-28322){: external}, and [CVE-2023-38546](https://nvd.nist.gov/vuln/detail/CVE-2023-38546){: external}.
+
 
 ### Change log for 5.2.17_535, released 08 March 2024
 {: #5.2.17_535_is_block_relnote}
@@ -109,6 +119,14 @@ Before you migrate to a `5.x` release from a previous release, you must not have
 
 ## Version 5.1
 {: #051_is_block}
+
+### Change log for version 5.1.23_543, released 10 May 2024
+{: #5.1.23_543_is_block_relnote}
+
+- Updates `golang` to `1.21.9-community`.
+- Removes `curl` package from base image.
+- Updates the `armada-storage-secret` to `v1.2.35`.
+- Resolves [CVE-2023-46218](https://nvd.nist.gov/vuln/detail/CVE-2023-46218){: external}, [CVE-2023-28322](https://nvd.nist.gov/vuln/detail/CVE-2023-28322){: external}, and [CVE-2023-38546](https://nvd.nist.gov/vuln/detail/CVE-2023-38546){: external}.
 
 ### Change log for 5.1.22_522, released 08 March 2024
 {: #5.1.22_522_is_block_relnote}
@@ -755,7 +773,7 @@ Review the changes in version `4.0.1_780` of the {{site.data.keyword.block_stora
     - [CVE-2021-37750](https://nvd.nist.gov/vuln/detail/CVE-2021-37750){: external}
 - Updates the `storage-secret-sidecar` image to `v1.1.2`.
 - Improves error messaging if `iks_token_exchange_endpoint_private_url` is invalid or unreachable.
-- Adds [new storage classes for OpenShift Data Foundation](/docs/openshift?topic=openshift-vpc-block#vpc-block-reference).
+- Adds [new storage classes for OpenShift Data Foundation](/docs/openshift?topic=openshift-storage-block-vpc-sc-ref).
 - Updates to improve the volume attach/detach performance by avoiding unnecessary retries.
 - Fixes an issue where mounting failed with `already mounted` error.
 - Improves logging when the device path for a volume is not present on worker node.

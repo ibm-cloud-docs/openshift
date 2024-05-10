@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2024
-lastupdated: "2024-05-08"
+lastupdated: "2024-05-10"
 
 
 keywords: openshift
@@ -274,6 +274,14 @@ subcollection: openshift
 [Release notes](/docs/openshift?topic=openshift-openshift-relnotes#openshift-relnotes)
 
 * [May 2024](/docs/openshift?topic=openshift-openshift-relnotes#openshift-may24)
+
+    * [10 May 2024](/docs/openshift?topic=openshift-openshift-relnotes#openshift-may1024)
+
+        * {{site.data.keyword.block_storage_is_short}} add-on patch update.
+
+        * {{site.data.keyword.filestorage_vpc_full_notm}} add-on patch update.
+
+        * OpenShift Data Foundation add-on version `4.15.0` is available.
 
     * [08 May 2024](/docs/openshift?topic=openshift-openshift-relnotes#openshift-may0824)
 
@@ -2903,6 +2911,12 @@ subcollection: openshift
 
 * [Example custom IAM roles](/docs/openshift?topic=openshift-iam-platform-access-roles#example-iam)
 
+* [Classic infrastructure roles](/docs/openshift?topic=openshift-iam-platform-access-roles#classic-roles)
+
+    * [Required classic infrastructure permissions](/docs/openshift?topic=openshift-iam-platform-access-roles#required-classic-rbac)
+
+    * [Suggested classic infrastructure permissions](/docs/openshift?topic=openshift-iam-platform-access-roles#classic-rbac-suggested)
+
 
 ## Installing the CLI
 {: #sitemap_installing_the_cli}
@@ -3827,7 +3841,7 @@ subcollection: openshift
 
     * [Creating ACLs with the CLI](/docs/openshift?topic=openshift-vpc-acls#acls_cli)
 
-    * [Required rules for VPCs with a cluster that runs at version  or later](/docs/openshift?topic=openshift-vpc-acls#acls-128)
+    * [Required rules for VPCs with a cluster that runs at version 4.14 or later](/docs/openshift?topic=openshift-vpc-acls#acls-128)
 
 [Controlling traffic between pods with Kubernetes policies](/docs/openshift?topic=openshift-vpc-kube-policies#vpc-kube-policies)
 
@@ -4727,15 +4741,7 @@ subcollection: openshift
 
 * [Backing up and restoring data](/docs/openshift?topic=openshift-vpc-block#vpc-block-backup-restore)
 
-* [Storage class reference](/docs/openshift?topic=openshift-vpc-block#vpc-block-reference)
-
-    * [10 IOPs tier](/docs/openshift?topic=openshift-vpc-block#10iops-sc-vpc-block)
-
-    * [5 IOPs tier](/docs/openshift?topic=openshift-vpc-block#5iops-sc-vpc-block)
-
-    * [Custom](/docs/openshift?topic=openshift-vpc-block#custom-sc-vpc-block)
-
-    * [General purpose](/docs/openshift?topic=openshift-vpc-block#gen-purp-sc-vpc-block)
+* [Understanding volume request capacity](/docs/openshift?topic=openshift-vpc-block#vpc-block-volume-capacity)
 
 [Setting up snapshots with the {{site.data.keyword.block_storage_is_short}} add-on](/docs/openshift?topic=openshift-vpc-volume-snapshot#vpc-volume-snapshot)
 
@@ -4788,6 +4794,8 @@ subcollection: openshift
 [Removing {{site.data.keyword.block_storage_is_short}} from your cluster](/docs/openshift?topic=openshift-storage-block-vpc-remove#storage-block-vpc-remove)
 
 * [Cleaning up {{site.data.keyword.block_storage_is_short}}](/docs/openshift?topic=openshift-storage-block-vpc-remove#cleaning-up-block-vpc)
+
+[{{site.data.keyword.block_storage_is_short}} storage class reference](/docs/openshift?topic=openshift-storage-block-vpc-sc-ref#storage-block-vpc-sc-ref)
 
 
 ## Setting up {{site.data.keyword.filestorage_short}}
@@ -4870,6 +4878,8 @@ subcollection: openshift
 [Adding {{site.data.keyword.filestorage_vpc_short}} to apps](/docs/openshift?topic=openshift-storage-file-vpc-apps#storage-file-vpc-apps)
 
 * [Quick start for {{site.data.keyword.filestorage_vpc_short}} with dynamic provisioning](/docs/openshift?topic=openshift-storage-file-vpc-apps#vpc-add-file-dynamic)
+
+* [Expanding a mounted volume](/docs/openshift?topic=openshift-storage-file-vpc-apps#storage-file-vpc-expansion)
 
 * [Attaching existing file storage to an app](/docs/openshift?topic=openshift-storage-file-vpc-apps#vpc-add-file-static)
 
@@ -5451,6 +5461,8 @@ subcollection: openshift
 * [Enabling non-uniform memory access (NUMA), CPU pinning, and huge pages on your worker nodes](/docs/openshift?topic=openshift-rhcos-performance#rhcos-numa-pinning-huge)
 
 * [Enabling CPU pinning and huge pages on your worker nodes](/docs/openshift?topic=openshift-rhcos-performance#rhcos-pinning-huge)
+
+* [Enabling `kernel-devel` packages](/docs/openshift?topic=openshift-rhcos-performance#enable-kernel-devel)
 
 * [Removing performance customizations](/docs/openshift?topic=openshift-rhcos-performance#rhcos-performance-remove)
 
@@ -6888,8 +6900,6 @@ subcollection: openshift
 
 * [`image-key-synchronizer` 1.0.0](/docs/openshift?topic=openshift-supported-cluster-addon-versions#image-key-synchronizer-1.0.0)
 
-* [`istio` 1.19](/docs/openshift?topic=openshift-supported-cluster-addon-versions#istio-1.19)
-
 * [`istio` 1.20](/docs/openshift?topic=openshift-supported-cluster-addon-versions#istio-1.20)
 
 * [`istio` 1.21](/docs/openshift?topic=openshift-supported-cluster-addon-versions#istio-1.21)
@@ -6899,6 +6909,8 @@ subcollection: openshift
 * [`openshift-data-foundation` 4.13.0](/docs/openshift?topic=openshift-supported-cluster-addon-versions#openshift-data-foundation-4.13.0)
 
 * [`openshift-data-foundation` 4.14.0](/docs/openshift?topic=openshift-supported-cluster-addon-versions#openshift-data-foundation-4.14.0)
+
+* [`openshift-data-foundation` 4.15.0](/docs/openshift?topic=openshift-supported-cluster-addon-versions#openshift-data-foundation-4.15.0)
 
 * [`static-route` 1.0.0](/docs/openshift?topic=openshift-supported-cluster-addon-versions#static-route-1.0.0)
 
@@ -7116,6 +7128,8 @@ subcollection: openshift
 
 * [Version 5.2](/docs/openshift?topic=openshift-vpc_bs_changelog#052_is_block)
 
+    * [Change log for version 5.2.18_539, released 10 May 2024](/docs/openshift?topic=openshift-vpc_bs_changelog#5.2.18_539_is_block_relnote)
+
     * [Change log for 5.2.17_535, released 08 March 2024](/docs/openshift?topic=openshift-vpc_bs_changelog#5.2.17_535_is_block_relnote)
 
     * [Change log for version 5.2.15_501, released 08 February 2024](/docs/openshift?topic=openshift-vpc_bs_changelog#5.2.15_501_is_block_relnote)
@@ -7129,6 +7143,8 @@ subcollection: openshift
     * [Change log for version 5.2, released 25 September 2023](/docs/openshift?topic=openshift-vpc_bs_changelog#5.2_is_block_relnote)
 
 * [Version 5.1](/docs/openshift?topic=openshift-vpc_bs_changelog#051_is_block)
+
+    * [Change log for version 5.1.23_543, released 10 May 2024](/docs/openshift?topic=openshift-vpc_bs_changelog#5.1.23_543_is_block_relnote)
 
     * [Change log for 5.1.22_522, released 08 March 2024](/docs/openshift?topic=openshift-vpc_bs_changelog#5.1.22_522_is_block_relnote)
 
@@ -7288,6 +7304,8 @@ subcollection: openshift
 
 * [Version 1.2](/docs/openshift?topic=openshift-versions-vpc-file-addon#012_is_file)
 
+    * [Change log for 1.2.8_174, released 10 May 2024](/docs/openshift?topic=openshift-versions-vpc-file-addon#1.2.8_174_is_block_relnote)
+
     * [Change log for 1.2.7_154, released 08 March 2024](/docs/openshift?topic=openshift-versions-vpc-file-addon#1.2.7_154_is_block_relnote)
 
     * [Change log for version 1.2.6_130, released 08 February 2024](/docs/openshift?topic=openshift-versions-vpc-file-addon#1.2.6_130_is_file_relnote)
@@ -7433,6 +7451,10 @@ subcollection: openshift
     * [Change log for 1.0.0_649, released 8 September 2021](/docs/openshift?topic=openshift-versions-static-route#100_649)
 
 [OpenShift Data Foundation add-on change log](/docs/openshift?topic=openshift-odf_addon_changelog#odf_addon_changelog)
+
+* [Version 4.15](/docs/openshift?topic=openshift-odf_addon_changelog#4.15_odf)
+
+    * [Version 4.15.0, released 10 May 2024](/docs/openshift?topic=openshift-odf_addon_changelog#4.15.0_odf)
 
 * [Version 4.14](/docs/openshift?topic=openshift-odf_addon_changelog#4.14_odf)
 
@@ -9532,17 +9554,6 @@ subcollection: openshift
 * [Storage](/docs/openshift?topic=openshift-api-at-iam#ks-storage)
 
 * [Worker nodes and worker pools](/docs/openshift?topic=openshift-api-at-iam#ks-workers)
-
-
-## Classic infrastructure roles
-{: #sitemap_classic_infrastructure_roles}
-
-
-[Classic infrastructure roles](/docs/openshift?topic=openshift-classic-roles#classic-roles)
-
-* [Required classic infrastructure permissions](/docs/openshift?topic=openshift-classic-roles#required-classic-rbac)
-
-* [Suggested classic infrastructure permissions](/docs/openshift?topic=openshift-classic-roles#classic-rbac-suggested)
 
 
 ## Locations

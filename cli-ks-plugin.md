@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2024
-lastupdated: "2024-04-29"
+lastupdated: "2024-05-10"
 
 
 keywords: openshift, cli reference, kubernetes cli, openshift cli, {{product_name_notm}}
@@ -6984,10 +6984,10 @@ If the infrastructure credentials for the region and resource group are missing 
 *   **Required**: These permissions are needed to successfully order and manage infrastructure resources such as worker nodes. If the infrastructure credentials are missing one of these permissions, common actions such as `worker reload` can fail for all clusters in the region and resource group.
 *   **Suggested**: These permissions are helpful to include in your infrastructure permissions, and might be necessary in certain use cases. For example, the `Add Compute with Public Network Port` infrastructure permission is suggested because if you want public networking, you need this permission. However, if your use case is a cluster on the private VLAN only, the permission is not needed so it is not considered `required`.
 
-For a list of common use cases by permission, see [Infrastructure roles](/docs/openshift?topic=openshift-classic-roles).
+For a list of common use cases by permission, see [Infrastructure roles](/docs/openshift?topic=openshift-iam-platform-access-roles).
 
-What if I see an infrastructure permission that I can't find in the console or [Infrastructure roles](/docs/openshift?topic=openshift-classic-roles) table?
-:   `Support Case` permissions are managed in a different part of the console than infrastructure permissions. See [Customizing infrastructure permissions](/docs/openshift?topic=openshift-classic-roles).
+What if I see an infrastructure permission that I can't find in the console or [Infrastructure roles](/docs/openshift?topic=openshift-iam-platform-access-roles) table?
+:   `Support Case` permissions are managed in a different part of the console than infrastructure permissions. See [Customizing infrastructure permissions](/docs/openshift?topic=openshift-iam-platform-access-roles).
 
 Which infrastructure permissions do I assign?
 :   If your company's policies for permissions are strict, you might need to limit the `suggested` permissions for your cluster's use case. Otherwise, make sure that your infrastructure credentials for the region and resource group include all the `required` and `suggested` permissions.

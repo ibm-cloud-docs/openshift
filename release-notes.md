@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2024
-lastupdated: "2024-05-08"
+lastupdated: "2024-05-10"
 
 
 keywords: openshift, {{site.data.keyword.openshiftlong_notm}}, kubernetes, release notes
@@ -27,6 +27,27 @@ Looking for {{site.data.keyword.cloud_notm}} status, platform announcements, sec
 
 ## May 2024
 {: #openshift-may24}
+
+
+### 10 May 2024
+{: #openshift-may1024}
+{: release-note}
+
+{{site.data.keyword.block_storage_is_short}} add-on patch update.
+:   For more information, see the [change log](/docs/openshift?topic=openshift-vpc_bs_changelog).
+
+{{site.data.keyword.filestorage_vpc_full_notm}} add-on patch update.
+:   For more information, see the [change log](/docs/openshift?topic=openshift-versions-vpc-file-addon).
+
+
+
+OpenShift Data Foundation add-on version `4.15.0` is available.
+:   For more information, see the [change log](/docs/openshift?topic=openshift-odf_addon_changelog).
+
+
+
+
+
 
 ### 08 May 2024
 {: #openshift-may0824}
