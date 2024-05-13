@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2022, 2024
-lastupdated: "2024-05-10"
+lastupdated: "2024-05-13"
 
 keywords: openshift, add-ons, cluster addon
 
@@ -24,7 +24,7 @@ Review the following list of supported cluster add-ons. Each add-on version can 
 ## `alb-oauth-proxy` 2.0.0 
 {: #alb-oauth-proxy-2.0.0}
 
-- Supported Kubernetes cluster versions: `>=1.19.0 <1.30.0`
+- Supported Kubernetes cluster versions: `>=1.19.0 <1.31.0`
 
 - Supported OpenShift cluster versions:  `N/A` 
 
@@ -186,7 +186,7 @@ Review the following list of supported cluster add-ons. Each add-on version can 
 ## `vpc-file-csi-driver` 1.2 
 {: #vpc-file-csi-driver-1.2}
 
-- Supported Kubernetes cluster versions: `>=1.24.0 <1.30.0`
+- Supported Kubernetes cluster versions: `>=1.24.0 <1.31.0`
 
 - Supported OpenShift cluster versions: `>=4.10.0 <4.16.0`
 
