@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2024
-lastupdated: "2024-04-15"
+lastupdated: "2024-05-14"
 
 
 keywords: openshift, compliance, security standards, red hat openshift, openshift container platform, red hat, openshift architecture, red hat architecture, openshift dependencies,
@@ -26,18 +26,18 @@ Review sample architectures, components, and dependencies for your {{site.data.k
 In {{site.data.keyword.openshiftlong_notm}}, your clusters comprise an IBM-managed master that secures components such as the API server and etcd, and customer-managed worker nodes that you configure to run you app workloads, as well as {{site.data.keyword.redhat_openshift_notm}}-provided default components. The default components within the cluster, such as the {{site.data.keyword.redhat_openshift_notm}} web console or OperatorHub, vary with the {{site.data.keyword.redhat_openshift_notm}} version of your cluster.
 {: shortdesc}
 
-## Classic {{site.data.keyword.redhat_openshift_notm}} version 4 architecture
+## Classic {{site.data.keyword.redhat_openshift_notm}} architecture
 {: #service-architecture-4}
 
-Review the architecture diagram and then scroll through the following tables for a description of master and worker node components in {{site.data.keyword.openshiftlong_notm}} clusters that run version 4 on classic infrastructure. For more information about the OpenShift Container Platform architecture, see the [{{site.data.keyword.redhat_openshift_notm}} docs](https://docs.openshift.com/container-platform/4.14/architecture/architecture.html){: external}.
+Review the architecture diagram and then scroll through the following tables for a description of master and worker node components in {{site.data.keyword.openshiftlong_notm}} clusters that run on classic infrastructure. For more information about the OpenShift Container Platform architecture, see the [{{site.data.keyword.redhat_openshift_notm}} docs](https://docs.openshift.com/container-platform/4.14/architecture/architecture.html){: external}.
 {: shortdesc}
 
 When you run `oc get nodes`, you might notice that the **ROLES** of your worker nodes are marked as both `master,worker`. These nodes are worker nodes in {{site.data.keyword.cloud_notm}}, and don't include the master components that are managed by IBM. Instead, these nodes are marked as `master` because they run OpenShift Container Platform components that are required to set up and manage default resources within the cluster, such as the OperatorHub and internal registry.
 {: note}
 
-![{{site.data.keyword.openshiftlong_notm}} cluster architecture](/images/cs_org_ov_both_ses_roks4.png){: caption="Figure 1. Red Hat OpenShift version 4 master components" caption-side="bottom"}
+![{{site.data.keyword.openshiftlong_notm}} cluster architecture](/images/cs_org_ov_both_ses_roks4.png){: caption="Figure 1. Red Hat OpenShift master components" caption-side="bottom"}
 
-### {{site.data.keyword.redhat_openshift_notm}} version 4 master components
+### {{site.data.keyword.redhat_openshift_notm}} master components
 {: #service-architecture-4-master}
 
 Review the following components in the IBM-managed master of your {{site.data.keyword.openshiftlong_notm}} cluster.
@@ -124,7 +124,7 @@ Admission controllers
 :   If you manually installed admission controllers and you don't want to use them anymore, make sure to remove them entirely. If admission controllers aren't entirely removed, they might block all actions that you want to perform on the cluster.</p>
 
 
-### {{site.data.keyword.redhat_openshift_notm}} version 4 worker node components
+### {{site.data.keyword.redhat_openshift_notm}} worker node components
 {: #service-architecture-4-workers}
 
 Review the following components in the customer-managed worker nodes of your {{site.data.keyword.openshiftlong_notm}} cluster.
@@ -213,10 +213,10 @@ Projects
 ## VPC cluster service architecture
 {: #service-architecture_vpc}
 
-The following architectural overviews are specific to the VPC infrastructure provider, which is available for clusters that run version 4 only. For an architectural overview for the classic infrastructure provider, see [Classic cluster service architecture](#service-architecture).
+The following architectural overviews are specific to the VPC infrastructure provider. For an architectural overview for the classic infrastructure provider, see [Classic cluster service architecture](#service-architecture).
 {: note}
 
-Review the architecture diagrams and then scroll through the following table for a description of master and worker node components in {{site.data.keyword.openshiftlong_notm}} clusters that run version 4 on virtual private cloud (VPC) compute infrastructure.
+Review the architecture diagrams and then scroll through the following table for a description of master and worker node components in {{site.data.keyword.openshiftlong_notm}} clusters that run on virtual private cloud (VPC) compute infrastructure.
 {: shortdesc}
 
 ### Cluster with public and private cloud service endpoints
@@ -234,18 +234,18 @@ The following diagram shows the components of your cluster and how they interact
 ![{{site.data.keyword.openshiftlong_notm}} on VPC cluster architecture with the private cloud service endpoint only](images/arch_roks_vpc_private.svg){: caption="Figure 1. Red Hat OpenShift on VPC cluster architecture with the private cloud service endpoint only" caption-side="bottom"}
 
 
-### VPC version 4 master and worker node components
+### VPC master and worker node components
 {: #service-arch-vpc-4}
 
-[Masters](#service-architecture-4-master) and [worker nodes](#service-architecture-4-workers) include the same components as described in the Classic cluster architecture for version 4 clusters. For more information about the OpenShift Container Platform architecture, see the [{{site.data.keyword.redhat_openshift_notm}} docs](https://docs.openshift.com/container-platform/4.14/architecture/architecture.html){: external}.
+[Masters](#service-architecture-4-master) and [worker nodes](#service-architecture-4-workers) include the same components as described in the Classic cluster architecture for clusters. For more information about the OpenShift Container Platform architecture, see the [{{site.data.keyword.redhat_openshift_notm}} docs](https://docs.openshift.com/container-platform/4.14/architecture/architecture.html){: external}.
 
 
 Master
-:   [Master components](#service-architecture-4-master), including the API server and etcd, have three replicas and are spread across zones for even higher availability. Masters include the same components as described in the Classic cluster architecture for version 4 clusters. The master and all the master components are dedicated only to you, and are not shared with other IBM customers.
+:   [Master components](#service-architecture-4-master), including the API server and etcd, have three replicas and are spread across zones for even higher availability. Masters include the same components as described in the Classic cluster architecture for clusters. The master and all the master components are dedicated only to you, and are not shared with other IBM customers.
 
 Worker node
 :   With {{site.data.keyword.openshiftlong_notm}}, the virtual machines that your cluster manages are instances that are called worker nodes. These worker nodes virtual machines and all the worker node components are dedicated to you only and are not shared with other IBM customers. However, the underlying hardware is shared with other IBM customers. For more information, see [Virtual machines](/docs/openshift?topic=openshift-planning_worker_nodes#vm). You manage the worker nodes through the automation tools that are provided by {{site.data.keyword.openshiftlong_notm}}, such as the API, CLI, or console. Unlike classic clusters, you don't see VPC compute worker nodes in your infrastructure portal or separate infrastructure bill, but instead manage all maintenance and billing activity for the worker nodes from {{site.data.keyword.openshiftlong_notm}}.
-:   Worker nodes include the same [components](#service-architecture-4-workers) as described in the Classic cluster architecture for version 4 clusters.
+:   Worker nodes include the same [components](#service-architecture-4-workers) as described in the Classic cluster architecture.
 :   When you run `oc get nodes`, you might notice that the **ROLES** of your worker nodes are marked as both `master,worker`. These nodes are worker nodes in {{site.data.keyword.cloud_notm}}, and don't include the master components that are managed by IBM. Instead, these nodes are marked as `master` because they run OpenShift Container Platform components that are required to set up and manage default resources within the cluster, such as the OperatorHub and internal registry.
 
 Cluster networking

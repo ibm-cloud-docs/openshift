@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2024
-lastupdated: "2024-05-10"
+lastupdated: "2024-05-14"
 
 
 keywords: openshift, ocp, compliance, security standards, faq, openshift pricing, ocp pricing, openshift charges, ocp charges, openshift price, ocp price, openshift billing, ocp billing, openshift costs, ocp costs
@@ -257,21 +257,15 @@ For more information about available bare metal flavors and how bare metal is di
 {: #smallest_cluster}
 {: faq}
 
+Note that running the smallest possible cluster does not meet the service level agreement (SLA) to receive support. Also, keep in mind that some services, such as Ingress, require highly available worker node setups. You might not be able to run these services or your apps in clusters with only two nodes in a worker pool. For more information, see the [Planning your cluster for high availability](/docs/openshift?topic=openshift-ha_clusters).
+{: important}
 
 Classic or VPC clusters
-:   Each worker pool must always have at least 2 worker nodes. For the smallest cluster possible, you can have 1 worker pool for a minimum of 2 total nodes.
+:   Clusters must always have at least 2 worker nodes. Note that you can't have a cluster with 0 worker nodes, and you can't power off or suspend billing for your worker nodes.
 
 {{site.data.keyword.satelliteshort}} clusters
-:   Clusters can be created using the single-replica topology, which means only 1 worker node. However, if you create a {{site.data.keyword.satelliteshort}} cluster using a single-replica, you can't add worker nodes later.
+:   Clusters can be created using the single-replica topology, which means only 1 worker node. Note that if you create a {{site.data.keyword.satelliteshort}} cluster using single-replica topology, you can't add worker nodes later.
 
-Keep in mind that some services such as Ingress might require highly available worker node setups. You might not be able to run these services or your apps in clusters with only two nodes in a worker pool.
-{: important}
-
-You can't have a cluster with 0 worker nodes, and you can't power off or suspend billing for your worker nodes.
-{: important}
-
-`*` **Classic clusters only**: Initially, you can create a classic cluster with only 1 worker node. This operation is allowed only for multizone clusters, so that you are not forced to create 2 worker nodes per zone. If you have a single zone cluster, resize the worker pool to 2. Also, note that after resizing a worker pool to 2, you can't later resize back down to 1 worker node.
-{: note}
 
 ## Which versions does the service support?
 {: #supported_kube_versions}

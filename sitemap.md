@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2024
-lastupdated: "2024-05-10"
+lastupdated: "2024-05-14"
 
 
 keywords: openshift
@@ -3285,11 +3285,11 @@ subcollection: openshift
 
 [Architecture and dependencies of the service](/docs/openshift?topic=openshift-service-architecture#service-architecture)
 
-* [Classic {{site.data.keyword.redhat_openshift_notm}} version 4 architecture](/docs/openshift?topic=openshift-service-architecture#service-architecture-4)
+* [Classic {{site.data.keyword.redhat_openshift_notm}} architecture](/docs/openshift?topic=openshift-service-architecture#service-architecture-4)
 
-    * [{{site.data.keyword.redhat_openshift_notm}} version 4 master components](/docs/openshift?topic=openshift-service-architecture#service-architecture-4-master)
+    * [{{site.data.keyword.redhat_openshift_notm}} master components](/docs/openshift?topic=openshift-service-architecture#service-architecture-4-master)
 
-    * [{{site.data.keyword.redhat_openshift_notm}} version 4 worker node components](/docs/openshift?topic=openshift-service-architecture#service-architecture-4-workers)
+    * [{{site.data.keyword.redhat_openshift_notm}} worker node components](/docs/openshift?topic=openshift-service-architecture#service-architecture-4-workers)
 
 * [VPC cluster service architecture](/docs/openshift?topic=openshift-service-architecture#service-architecture_vpc)
 
@@ -3297,7 +3297,7 @@ subcollection: openshift
 
     * [Cluster with private cloud service endpoint only](/docs/openshift?topic=openshift-service-architecture#vpc-service-arch-private-only)
 
-    * [VPC version 4 master and worker node components](/docs/openshift?topic=openshift-service-architecture#service-arch-vpc-4)
+    * [VPC master and worker node components](/docs/openshift?topic=openshift-service-architecture#service-arch-vpc-4)
 
 [Overview of personal and sensitive data storage and removal options](/docs/openshift?topic=openshift-ibm-data#ibm-data)
 

@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2024
-lastupdated: "2024-04-29"
+lastupdated: "2024-05-14"
 
 
 keywords: openshift, {{site.data.keyword.openshiftlong_notm}}, clusters, worker nodes, worker pools, add
@@ -48,7 +48,7 @@ To resize the worker pool, change the number of worker nodes that the worker poo
     ```
     {: pre}
 
-1. Resize the worker pool by designating the number of worker nodes that you want to deploy in each zone. The minimum value is 2.
+1. Resize the worker pool by designating the number of worker nodes that you want to deploy in each zone.
     ```sh
     ibmcloud oc worker-pool resize --cluster CLUSTER-NAME --worker-pool <pool_name>  --size-per-zone <number_of_workers_per_zone>
     ```

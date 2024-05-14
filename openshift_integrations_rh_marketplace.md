@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2024
-lastupdated: "2024-05-07"
+lastupdated: "2024-05-14"
 
 
 keywords: kubernetes, openshift
@@ -30,9 +30,6 @@ With [{{site.data.keyword.redhat_full}} Marketplace](https://swc.saas.ibm.com/en
 **Required permissions**:
 * The IAM **Operator** platform access role for the cluster in {{site.data.keyword.containershort_notm}}.
 * The IAM **Manager** service access role in all namespaces (`cluster-admin` RBAC) for the cluster in {{site.data.keyword.containershort_notm}}.
-
-{{site.data.keyword.redhat_notm}} Marketplace is available for clusters that run {{site.data.keyword.redhat_openshift_notm}} version 4 only.
-{: note}
 
 **Before you begin**:
 *   Register for a [{{site.data.keyword.redhat_notm}} Marketplace account](https://swc.saas.ibm.com/en-us/redhat-marketplace/registration){: external}.
