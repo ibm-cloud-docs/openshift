@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2024
-lastupdated: "2024-05-10"
+lastupdated: "2024-05-14"
 
 
 keywords: openshift, cli reference, kubernetes cli, openshift cli, {{product_name_notm}}
@@ -22,7 +22,7 @@ subcollection: openshift
 Refer to these commands to create and manage **both community Kubernetes or {{site.data.keyword.redhat_openshift_notm}} clusters** in {{site.data.keyword.openshiftlong}}.
 {: shortdesc}
 
-* **Community Kubernetes**: [Install the Kubernetes CLI plug-in](/docs/openshift?topic=openshift-cli-install).
+* **Kubernetes**: [Install the Kubernetes CLI plug-in](/docs/openshift?topic=openshift-cli-install).
 * **OpenShift**: [Install the {{site.data.keyword.redhat_openshift_notm}} CLI plug-in](/docs/openshift?topic=openshift-cli-install).
 
 In the command line, you are notified when updates to the `ibmcloud` CLI and plug-ins are available. Be sure to keep your CLI up-to-date so that you can use all available commands and options.
@@ -788,8 +788,8 @@ Minimum required permissions
      After you create the cluster, you can get the endpoint by running `ibmcloud oc cluster get --cluster <cluster_name_or_ID>`.
 
 
-`--workers WORKER`
-:    Specify at least 2 worker nodes to include in the cluster. For more information, see [What is the smallest size cluster that I can make?](/docs/openshift?topic=openshift-faqs#smallest_cluster).
+`--workers WORKERS`
+:    **Optional**: Specify the number of worker nodes to include in the cluster. The default value is 1.
      If you create a cluster with only one worker node per zone, you might experience issues with Ingress. For high availability, create a cluster with at least two workers per zone. Every worker node is assigned a unique worker node ID and domain name that must not be manually changed after the cluster is created. Changing the ID or domain name prevents the Kubernetes master from managing your cluster.
      {: important}
 
@@ -904,7 +904,7 @@ Minimum required permissions
 :    Required: The VPC subnet to assign the cluster. To list available VPC subnets, run `ibmcloud oc subnets --provider vpc-gen2`.
 
 `--version VERSION`
-:    VPC clusters are supported for {{site.data.keyword.redhat_openshift_notm}} version 4 only.
+:    The {{site.data.keyword.redhat_openshift_notm}} version for the cluster master node. To see available versions, run `ibmcloud oc versions`.
 
 `--flavor FLAVOR`
 :    Choose a flavor for your worker nodes. You can deploy your worker nodes as virtual machines on shared or dedicated hardware. To see flavors that are available in a zone, run `ibmcloud oc flavors --zone <vpc_zone> --provider vpc-gen2`.
@@ -923,15 +923,13 @@ Minimum required permissions
 :    Include the CRN ID of a standard {{site.data.keyword.cos_full_notm}} instance to back up the internal registry of your cluster. To list the CRN of existing instances, run `ibmcloud resource service-instances --long` and find the **ID** of your object storage instance. To create a standard object storage instance, run `ibmcloud resource service-instance-create <name> cloud-object-storage standard global` and note its **ID**.
 
 `--preview PREVIEW`
-:    Optional. Specify one or more cluster level preview features, such as `fips`.
+:    Optional: Specify one or more cluster level preview features, such as `fips`.
 
 `--dedicated-host-pool POOL`
-:    Optional. The ID of the dedicated host pool where you want to run your workers. 
+:    Optional: The ID of the dedicated host pool where you want to run your workers. 
 
 `--workers NUMBER_WORKERS_PER_ZONE`
-:    Specify at least 2 worker nodes to include in the cluster. For more information, see [What is the smallest size cluster that I can make?](/docs/openshift?topic=openshift-faqs#smallest_cluster).
-      Every worker node is assigned a unique worker node ID and domain name that must not be manually changed after the cluster is created. Changing the ID or domain name prevents the Kubernetes master from managing your cluster.
-      {: important}
+:    Optional: Specify the number of worker nodes to include in the cluster. The default value is 1.
 
 `--disable-outbound-traffic-protection`
 :    Include this option to allow public outbound access from the cluster workers. By default, public outbound access is blocked in OpenShift versions 4.15 and later and Kubernetes versions 1.30 and later.
@@ -3147,7 +3145,7 @@ Minimum required permissions
 :    Choose a machine type, or flavor. You can deploy your worker nodes as virtual machines on shared or dedicated hardware, or as physical machines on bare metal. Available physical and virtual machines types vary by the zone in which you deploy the cluster. For more information, see the documentation for the `ibmcloud oc flavors (machine-types)` [command](#cs_machine_types).
 
 `--size-per-zone WORKERS_PER_ZONE`
-:    The number of workers to create in each zone. This value is required, and must be 2 or greater. For more information, see [What is the smallest size cluster that I can make?](/docs/openshift?topic=openshift-faqs#smallest_cluster).
+:    The number of workers to create in each zone.
 
 `--hardware ISOLATION`
 :    Required: The level of hardware isolation for your worker node. Use `dedicated` if you want to have available physical resources that are dedicated to you only, or `shared` to allow physical resources to be shared with other IBM customers. The default is `shared`. For bare metal flavors, specify `dedicated`.
@@ -3214,7 +3212,7 @@ Minimum required permissions
 :    Required: Specify the name or ID of the cluster. To list VPC clusters, run `ibmcloud oc cluster ls --provider vpc-gen2`.
 
 `--size-per-zone NUMBER_WORKERS_PER_ZONE`
-:    Specify the number of worker nodes to create per zone in this worker pool. No worker nodes are created until you [add zones](#cli_zone-add-vpc-gen2) to the worker pool. This value is required, and must be 2 or greater. For more information, see [What is the smallest size cluster that I can make?](/docs/openshift?topic=openshift-faqs#smallest_cluster).
+:    Specify the number of worker nodes to create per zone in this worker pool. No worker nodes are created until you [add zones](#cli_zone-add-vpc-gen2) to the worker pool.
 
 `--operating-system REDHAT_8_64|RHCOS`
 :   Optional. The operating system of the worker nodes in your cluster. For a list of available operating sysems by cluster version, see the [{{site.data.keyword.openshiftshort}} version information](/docs/openshift?topic=openshift-openshift_versions). If no option is specified, the default operating system that corresponds to the cluster version is used.
@@ -3495,7 +3493,7 @@ Minimum required permissions
 :    Required: The name of the worker node pool that you want to update.
 
 `--size-per-zone WORKERS_PER_ZONE`
-:    The number of workers that you want to have in each zone. This value is required, and must be 1 or greater. For more information, see [What is the smallest size cluster that I can make?](/docs/openshift?topic=openshift-faqs#smallest_cluster).
+:    The number of workers that you want to have in each zone.
 
 `-q`
 :    Optional: Do not show the message of the day or update reminders.

@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2024
-lastupdated: "2024-03-15"
+lastupdated: "2024-05-14"
 
 
 keywords: openshift
@@ -53,7 +53,7 @@ Verify your user permissions and the API key permissions to Cloud Object Storage
 {: screen}
 
 
-When you create a {{site.data.keyword.openshiftlong_notm}} version 4 cluster on VPC generation 2 compute infrastructure, a bucket is automatically created in a standard {{site.data.keyword.cos_full_notm}} instance that you select in your account.
+When you create a {{site.data.keyword.openshiftlong_notm}} cluster on VPC generation 2 compute infrastructure, a bucket is automatically created in a standard {{site.data.keyword.cos_full_notm}} instance that you select in your account.
 {: tsCauses}
 
 However, the bucket might not create for several reasons such as:
