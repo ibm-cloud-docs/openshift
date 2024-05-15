@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2024
-lastupdated: "2024-05-14"
+lastupdated: "2024-05-15"
 
 
 keywords: openshift
@@ -6318,7 +6318,13 @@ subcollection: openshift
 
     * [3.2 Logging](/docs/openshift?topic=openshift-cis-benchmark-415#cis-benchmark-32-415)
 
-* [4 Worker node security configuration](/docs/openshift?topic=openshift-cis-benchmark-415#cis-section-4-415)
+* [4 Worker node security configuration (REDHAT_8_64)](/docs/openshift?topic=openshift-cis-benchmark-415#cis-section-4-415-redhat-8-64)
+
+    * [4.1 Worker node configuration files](/docs/openshift?topic=openshift-cis-benchmark-415#cis-benchmark-41-415)
+
+    * [4.2 Kubelet](/docs/openshift?topic=openshift-cis-benchmark-415#cis-benchmark-42-415)
+
+* [4 Worker node security configuration (RHCOS)](/docs/openshift?topic=openshift-cis-benchmark-415#cis-section-4-415-rhcos)
 
     * [4.1 Worker node configuration files](/docs/openshift?topic=openshift-cis-benchmark-415#cis-benchmark-41-415)
 
@@ -6336,7 +6342,7 @@ subcollection: openshift
 
     * [5.5 Extensible admission control](/docs/openshift?topic=openshift-cis-benchmark-415#cis-benchmark-55-415)
 
-    * [5.6 General policies](/docs/openshift?topic=openshift-cis-benchmark-415#cis-benchmark-56-415)
+    * [5.7 General policies](/docs/openshift?topic=openshift-cis-benchmark-415#cis-benchmark-57-415)
 
     * [{{site.data.keyword.IBM_notm}} remediations and explanations](/docs/openshift?topic=openshift-cis-benchmark-415#ibm-remediations-and-explanations-415)
 
