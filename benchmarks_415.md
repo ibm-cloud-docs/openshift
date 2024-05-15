@@ -1,8 +1,8 @@
 ---
 
 copyright: 
-  years: 2023, 2024
-lastupdated: "2024-04-24"
+  years: 2024, 2024
+lastupdated: "2024-05-15"
 
 
 keywords: openshift, benchmarks, 4.15, openshift benchmarks, openshift 4.15
@@ -13,8 +13,6 @@ subcollection: openshift
 ---
 
 {{site.data.keyword.attribute-definition-list}}
-
-
 
 
 # 4.15 CIS Kubernetes Benchmark
@@ -160,8 +158,8 @@ Review the Master node security configuration results of the version 1.5 CIS Kub
 | 3.2.2 | Ensure that the audit policy covers key security concerns | Not Scored | 2 | [Fail](#ibm-remediations-and-explanations-415) | Shared |
 {: caption="Section 3.2 Logging benchmark results" caption-side="bottom"}
 
-## 4 Worker node security configuration
-{: #cis-section-4-415}
+## 4 Worker node security configuration (REDHAT_8_64)
+{: #cis-section-4-415-redhat-8-64}
 
 
 Review the Worker Node Security Configuration results of the version 1.5 CIS Kubernetes benchmark.
@@ -172,16 +170,16 @@ Review the Worker Node Security Configuration results of the version 1.5 CIS Kub
 
 | Section | Recommendation | Scored/Not Scored | Level | Result | Responsibility |
 | --- | --- | --- | --- | --- | --- |
-| 4.1.1 | Ensure that the kubelet service file permissions are set to 644 or more restrictive | Scored | 1 | Pass | IBM |
-| 4.1.2 | Ensure that the kubelet service file ownership is set to root:root | Scored | 1 | Pass | IBM |
-| 4.1.3 | Ensure that the proxy `kubeconfig` file permissions are set to 644 or more restrictive | Scored | 1 | Pass | IBM |
-| 4.1.4 | Ensure that the proxy `kubeconfig` file ownership is set to root:root | Scored | 1 | Pass | IBM |
-| 4.1.5 | Ensure that the kubelet.conf file permissions are set to 644 or more restrictive | Scored | 1 | Pass | IBM |
-| 4.1.6 | Ensure that the kubelet.conf file ownership is set to root:root | Scored | 1 | Pass | IBM |
-| 4.1.7 | Ensure that the certificate authorities file permissions are set to 644 or more restrictive | Scored | 1 | Pass | IBM |
-| 4.1.8 | Ensure that the client certificate authorities file ownership is set to root:root | Scored | 1 | Pass | IBM |
-| 4.1.9 | Ensure that the kubelet configuration file has permissions set to 644 or more restrictive | Scored | 1 | Pass | IBM |
-| 4.1.10 | Ensure that the kubelet configuration file ownership is set to root:root | Scored | 1 | Pass | IBM |
+| 4.1.1 | Ensure that the kubelet service file permissions are set to `644` or more restrictive | Scored | 1 | Pass | IBM |
+| 4.1.2 | Ensure that the kubelet service file ownership is set to `root:root` | Scored | 1 | Pass | IBM |
+| 4.1.3 | Ensure that the proxy `kubeconfig` file permissions are set to `644` or more restrictive | Scored | 1 | Pass | IBM |
+| 4.1.4 | Ensure that the proxy kubeconfig file ownership is set to `root:root` | Scored | 1 | Pass | IBM |
+| 4.1.5 | Ensure that the `kubelet.conf` file permissions are set to `644` or more restrictive | Scored | 1 | Pass | IBM |
+| 4.1.6 | Ensure that the kubelet.conf file ownership is set to `root:root` | Scored | 1 | Pass | IBM |
+| 4.1.7 | Ensure that the certificate authorities file permissions are set to `644` or more restrictive | Scored | 1 | Pass | IBM |
+| 4.1.8 | Ensure that the client certificate authorities file ownership is set to `root:root` | Scored | 1 | Pass | IBM |
+| 4.1.9 | Ensure that the kubelet configuration file has permissions set to `644` or more restrictive | Scored | 1 | Pass | IBM |
+| 4.1.10 | Ensure that the kubelet configuration file ownership is set to `root:root` | Scored | 1 | Pass | IBM |
 {: caption="Section 4.1 Worker Node Configuration benchmark results" caption-side="bottom"}
 
 ### 4.2 Kubelet
@@ -189,18 +187,61 @@ Review the Worker Node Security Configuration results of the version 1.5 CIS Kub
 
 | Section | Recommendation | Scored/Not Scored | Level | Result | Responsibility |
 | --- | --- | --- | --- | --- | --- |
-| 4.2.1 | Ensure that the `--anonymous-auth` argument is set to false | Scored | 1 | Pass | IBM |
-| 4.2.2 | Ensure that the `--authorization-mode` argument is not set to AlwaysAllow | Scored | 1 | Pass | IBM |
-| 4.2.3 | Ensure that the `--client-ca-file` argument is set as appropriate | Scored | 1 | Pass | IBM |
-| 4.2.4 | Ensure that the `--read-only-port` argument is set to 0 | Scored | 1 | Pass | IBM |
-| 4.2.5 | Ensure that the `--streaming-connection-idle-timeout` argument is not set to 0 | Scored | 1 | Pass | IBM |
-| 4.2.6 | Ensure that the `--protect-kernel-defaults` argument is set to true | Scored | 1 | [Fail](#ibm-remediations-and-explanations-415) | IBM |
-| 4.2.7 | Ensure that the `--make-iptables-util-chains` argument is set to true | Scored | 1 | Pass | IBM |
-| 4.2.8 | Ensure that the `--hostname-override` argument is not set | Not Scored | 1 | [Fail](#ibm-remediations-and-explanations-415) | IBM |
+| 4.2.1 | Ensure that the `--anonymous-auth argument` is set to `false` | Scored | 1 | Pass | IBM |
+| 4.2.2 | Ensure that the `--authorization-mode argument` is not set to AlwaysAllow | Scored | 1 | Pass | IBM |
+| 4.2.3 | Ensure that the `--client-ca-file argument` is set as appropriate | Scored | 1 | Pass | IBM |
+| 4.2.4 | Ensure that the `--read-only-port argument` is set to `0` | Scored | 1 | Pass | IBM |
+| 4.2.5 | Ensure that the `--streaming-connection-idle-timeout` argument is not set to `0` | Scored | 1 | Pass | IBM |
+| 4.2.6 | Ensure that the `--protect-kernel-defaults` argument is set to `true` | Scored | 1 | [Fail](#ibm-remediations-and-explanations-415) | IBM |
+| 4.2.7 | Ensure that the `--make-iptables-util-chains` argument is set to `true` | Scored | 1 | Pass | IBM |
+| 4.2.8 | Ensure that the `--hostname-override argument` is not set | Not Scored | 1 | [Fail](#ibm-remediations-and-explanations-415) | IBM |
 | 4.2.9 | Ensure that the `--event-qps` argument is set to 0 or a level which ensures appropriate event capture | Not Scored | 2 | Pass | IBM |
 | 4.2.10 | Ensure that the `--tls-cert-file` and `--tls-private-key-file` arguments are set as appropriate | Scored | 1 | Pass | IBM |
-| 4.2.11 | Ensure that the `--rotate-certificates` argument is not set to false | Scored | 1 | Pass | IBM |
-| 4.2.12 | Ensure that the `RotateKubeletServerCertificate` argument is set to true | Scored | 1 | Pass | IBM |
+| 4.2.11 | Ensure that the `--rotate-certificates` argument is not set to `false` | Scored | 1 | Pass | IBM |
+| 4.2.12 | Ensure that the `RotateKubeletServerCertificate` argument is set to `true` | Scored | 1 | Pass | IBM |
+| 4.2.13 | Ensure that the Kubelet only makes use of Strong Cryptographic Ciphers | Not Scored | 1 | Pass | IBM |
+{: caption="Section 4.2 Kubelet benchmark results" caption-side="bottom"}
+
+
+## 4 Worker node security configuration (RHCOS)
+{: #cis-section-4-415-rhcos}
+
+Review the Worker Node Security Configuration results of the version 1.5 CIS Kubernetes benchmark.
+
+### 4.1 Worker node configuration files
+{: #cis-benchmark-41-415}
+
+| Section | Recommendation | Scored/Not Scored | Level | Result | Responsibility |
+| --- | --- | --- | --- | --- | --- |
+| 4.1.1 | Ensure that the kubelet service file permissions are set to `644` or more restrictive | Scored | 1 | Pass | IBM |
+| 4.1.2 | Ensure that the kubelet service file ownership is set to `root:root` | Scored | 1 | Pass | IBM |
+| 4.1.3 | Ensure that the proxy kubeconfig file permissions are set to `644` or more restrictive | Scored | 1 | Pass | IBM |
+| 4.1.4 | Ensure that the proxy kubeconfig file ownership is set to `root:root` | Scored | 1 | Pass | IBM |
+| 4.1.5 | Ensure that the `kubelet.conf` file permissions are set to `644` or more restrictive | Scored | 1 | Pass | IBM |
+| 4.1.6 | Ensure that the `kubelet.conf` file ownership is set to `root:root` | Scored | 1 | Pass | IBM |
+| 4.1.7 | Ensure that the certificate authorities file permissions are set to `644` or more restrictive | Scored | 1 | Pass | IBM |
+| 4.1.8 | Ensure that the client certificate authorities file ownership is set to `root:root` | Scored | 1 | Pass | IBM |
+| 4.1.9 | Ensure that the kubelet configuration file has permissions set to `644` or more restrictive | Scored | 1 | Pass | IBM |
+| 4.1.10 | Ensure that the kubelet configuration file ownership is set to `root:root` | Scored | 1 | Pass | IBM |
+{: caption="Section 4.1 Worker Node Configuration benchmark results" caption-side="bottom"}
+
+### 4.2 Kubelet
+{: #cis-benchmark-42-415}
+
+| Section | Recommendation | Scored/Not Scored | Level | Result | Responsibility |
+| --- | --- | --- | --- | --- | --- |
+| 4.2.1 | Ensure that the `--anonymous-auth argument` is set to `false` | Scored | 1 | Pass | IBM |
+| 4.2.2 | Ensure that the `--authorization-mode` argument is not set to `AlwaysAllow` | Scored | 1 | Pass | IBM |
+| 4.2.3 | Ensure that the `--client-ca-file` argument is set as appropriate | Scored | 1 | Pass | IBM |
+| 4.2.4 | Ensure that the `--read-only-port` argument is set to `0` | Scored | 1 | Pass | IBM |
+| 4.2.5 | Ensure that the `--streaming-connection-idle-timeout` argument is not set to `0` | Scored | 1 | Pass | IBM |
+| 4.2.6 | Ensure that the `--protect-kernel-defaults` argument is set to `true` | Scored | 1 | Pass | IBM |
+| 4.2.7 | Ensure that the `--make-iptables-util-chains` argument is set to `true` | Scored | 1 | Pass | IBM |
+| 4.2.8 | Ensure that the `--hostname-override argument` is not set | Not Scored | 1 | [Fail](#ibm-remediations-and-explanations-415) | IBM |
+| 4.2.9 | Ensure that the `--event-qps` argument is set to `0` or a level which ensures appropriate event capture | Not Scored | 2 | Pass | IBM |
+| 4.2.10 | Ensure that the `--tls-cert-file` and `--tls-private-key-file` arguments are set as appropriate | Scored | 1 | Pass | IBM |
+| 4.2.11 | Ensure that the `--rotate-certificates` argument is not set to `false` | Scored | 1 | Pass | IBM |
+| 4.2.12 | Ensure that the `RotateKubeletServerCertificate` argument is set to `true` | Scored | 1 | Pass | IBM |
 | 4.2.13 | Ensure that the kubelet only makes use of Strong Cryptographic Ciphers | Not Scored | 1 | Pass | IBM |
 {: caption="Section 4.2 Kubelet benchmark results" caption-side="bottom"}
 
@@ -266,15 +307,15 @@ Review the Kubernetes Policies results of the version 1.5 CIS Kubernetes benchma
 | 5.5.1 | Configure Image Provenance using `ImagePolicyWebhook` admission controller | Not Scored | 2 | [Fail](#ibm-remediations-and-explanations-415) | Shared |
 {: caption="Section 5.5 Extensible admission control benchmark results" caption-side="bottom"}
 
-### 5.6 General policies
-{: #cis-benchmark-56-415}
+### 5.7 General policies
+{: #cis-benchmark-57-415}
 
 | Section | Recommendation | Scored/Not Scored | Level | Result | Responsibility |
 | --- | --- | --- | --- | --- | --- |
-| 5.6.1 | Create administrative boundaries between resources using namespaces | Not Scored | 1 | Pass | Shared |
-| 5.6.2 | Ensure that the `seccomp` profile is set to docker/default in your pod definitions | Not Scored | 2 | [Fail](#ibm-remediations-and-explanations-415) | Shared |
-| 5.6.3 | Apply Security Context to Your Pods and Containers | Not Scored | 2 | [Fail](#ibm-remediations-and-explanations-415) | Shared |
-| 5.6.4 | The default namespace should not be used | Scored | 2 | Pass | Shared |
+| 5.7.1 | Create administrative boundaries between resources using namespaces | Not Scored | 1 | Pass | Shared |
+| 5.7.2 | Ensure that the `seccomp` profile is set to docker/default in your pod definitions | Not Scored | 2 | [Fail](#ibm-remediations-and-explanations-415) | Shared |
+| 5.7.3 | Apply Security Context to Your Pods and Containers | Not Scored | 2 | [Fail](#ibm-remediations-and-explanations-415) | Shared |
+| 5.7.4 | The default namespace should not be used | Scored | 2 | Pass | Shared |
 {: caption="Section 5.6 General policies benchmark results" caption-side="bottom"}
 
 ### {{site.data.keyword.IBM_notm}} remediations and explanations
@@ -314,9 +355,8 @@ Review the Kubernetes Policies results of the version 1.5 CIS Kubernetes benchma
 | 5.4.1 | {{site.data.keyword.openshiftlong_notm}} deploys some system components that could prefer using secrets as files over secrets as environment variables. |
 | 5.4.2 | {{site.data.keyword.openshiftlong_notm}} can optionally [enable a Kubernetes Key Management Service (KMS) provider](/docs/openshift?topic=openshift-encryption-setup). |
 | 5.5.1 | {{site.data.keyword.openshiftlong_notm}} can optionally [enable image security enforcement](/docs/openshift?topic=openshift-images#portieris-image-sec). |
-| 5.6.2 | {{site.data.keyword.openshiftlong_notm}} does not annotate all pods with [`seccomp` profiles](https://kubernetes.io/docs/concepts/security/pod-security-policy/#seccomp){: external}. |
-| 5.6.3 | {{site.data.keyword.openshiftlong_notm}} deploys some system components that do not set a [pod or container `securityContext`](https://kubernetes.io/docs/tasks/configure-pod-container/security-context/){: external}. |
+| 5.7.2 | {{site.data.keyword.openshiftlong_notm}} does not annotate all pods with [`seccomp` profiles](https://kubernetes.io/docs/concepts/security/pod-security-policy/#seccomp){: external}. |
+| 5.7.3 | {{site.data.keyword.openshiftlong_notm}} deploys some system components that do not set a [pod or container `securityContext`](https://kubernetes.io/docs/tasks/configure-pod-container/security-context/){: external}. |
 {: caption="Explanations and remediations" caption-side="bottom"}
-
 
 
