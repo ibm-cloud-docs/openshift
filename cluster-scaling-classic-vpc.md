@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2024
-lastupdated: "2024-04-24"
+lastupdated: "2024-05-16"
 
 
 keywords: kubernetes, node scaling, ca, autoscaler, openshift
@@ -28,6 +28,8 @@ With the `cluster-autoscaler` add-on, you can scale the worker pools in your {{s
 
 You can't enable the cluster autoscaler on worker pools that use reservations.
 {: important}
+
+
 
 ## Understanding scale-up and scale-down
 {: #ca_about}
