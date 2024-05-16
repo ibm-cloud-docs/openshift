@@ -2,7 +2,7 @@
 
 copyright:
   years: 2023, 2024
-lastupdated: "2024-04-30"
+lastupdated: "2024-05-16"
 
 
 keywords: openshift, version, update, upgrade, 4.15, update openshift
@@ -28,9 +28,6 @@ Looking for general information about updating clusters, or information on a dif
 {{site.data.keyword.openshiftlong_notm}} is a Certified Kubernetes product for version 1.28 under the CNCF Kubernetes Software Conformance Certification program. _Kubernetes® is a registered trademark of The Linux Foundation in the United States and other countries, and is used pursuant to a license from The Linux Foundation._
 
 
-
-
-
 ## Release timeline 
 {: #release_timeline_415}
 
@@ -51,13 +48,7 @@ Dates that are marked with a dagger (`†`) are tentative and subject to change.
 Review changes that you might need to make when you [update a cluster](/docs/openshift?topic=openshift-update) to version 4.15. This information summarizes updates that are likely to have an impact on deployed apps when you update.
 {: shortdesc}
 
-The OpenShift Data Foundation and the cluster-autoscaler add-ons do not support {{site.data.keyword.openshiftlong_notm}} version 4.15 with CoreOS worker nodes.
-{: note}
-
 The backup and restore Helm chart is supported on {{site.data.keyword.openshiftlong_notm}} 4.15 clusters. However, only the COS direct endpoints are supported. For example: `s3.direct.us.cloud-object-storage.appdomain.cloud`.
-{: note}
-
-[Portworx](https://cloud.ibm.com/docs/openshift?topic=openshift-storage_portworx_about) does not yet support {{site.data.keyword.openshiftlong_notm}} version 4.15 clusters. Do not update your cluster to version 4.15 if Portworx is installed.
 {: note}
 
 {{site.data.keyword.openshiftlong_notm}} version 4.15 clusters do not yet support [Rotating CA certificates in your cluster](/docs/openshift?topic=openshift-cert-rotate). Do not update your cluster to version 4.15 if this support is required.
