@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2022, 2024
-lastupdated: "2024-05-10"
+lastupdated: "2024-05-16"
 
 
 keywords: openshift
@@ -449,7 +449,7 @@ Create your own customized storage class with the preferred settings for your {{
 
 - With monthly billing, you pay the monthly charge regardless of the length of time the persistent storage is used or when it is removed.
 
-- If you want to keep your data, then create a class with a `retain` reclaim poliy. When you delete the PVC, only the PVC is deleted. The PV, the physical storage device in your IBM Cloud infrastructure account, and your data still exist.
+- If you want to keep your data, then create a class with a `retain` reclaim policy. When you delete the PVC, only the PVC is deleted. The PV, the physical storage device in your IBM Cloud infrastructure account, and your data still exist.
 
 - To reclaim the storage and use it in your cluster again, you must remove the PV and follow the steps for [using existing {{site.data.keyword.filestorage_vpc_short}}](/docs/openshift?topic=openshift-storage-file-vpc-apps).
 
