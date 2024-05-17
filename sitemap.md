@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2024
-lastupdated: "2024-05-15"
+lastupdated: "2024-05-17"
 
 
 keywords: openshift
@@ -6897,8 +6897,6 @@ subcollection: openshift
 [Supported cluster add-on versions](/docs/openshift?topic=openshift-supported-cluster-addon-versions#supported-cluster-addon-versions)
 
 * [`alb-oauth-proxy` 2.0.0](/docs/openshift?topic=openshift-supported-cluster-addon-versions#alb-oauth-proxy-2.0.0)
-
-* [`cluster-autoscaler` 1.0.9](/docs/openshift?topic=openshift-supported-cluster-addon-versions#cluster-autoscaler-1.0.9)
 
 * [`cluster-autoscaler` 1.1.0](/docs/openshift?topic=openshift-supported-cluster-addon-versions#cluster-autoscaler-1.1.0)
 
