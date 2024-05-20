@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2024, 2024
-lastupdated: "2024-05-15"
+lastupdated: "2024-05-20"
 
 
 keywords: openshift, benchmarks, 4.15, openshift benchmarks, openshift 4.15
@@ -353,7 +353,7 @@ Review the Kubernetes Policies results of the version 1.5 CIS Kubernetes benchma
 | 5.2.9 | {{site.data.keyword.openshiftlong_notm}} can optionally configure [OpenShift security context constraints](/docs/openshift?topic=openshift-openshift_scc) and [Kubernetes pod security admission](https://kubernetes.io/docs/concepts/security/pod-security-admission/){: external}which are similar to the deprecated [Kubernetes pod security policies](https://kubernetes.io/docs/concepts/security/pod-security-policy/){: external}. |
 | 5.3.2 | {{site.data.keyword.openshiftlong_notm}} has a set of [default Calico network policies defined](/docs/openshift?topic=openshift-network_policies#default_policy) and [additional network policies can optionally be added](/docs/openshift?topic=openshift-network_policies#adding_network_policies). |
 | 5.4.1 | {{site.data.keyword.openshiftlong_notm}} deploys some system components that could prefer using secrets as files over secrets as environment variables. |
-| 5.4.2 | {{site.data.keyword.openshiftlong_notm}} can optionally [enable a Kubernetes Key Management Service (KMS) provider](/docs/openshift?topic=openshift-encryption-setup). |
+| 5.4.2 | {{site.data.keyword.openshiftlong_notm}} can optionally [enable Secrets Manager service](https://cloud.ibm.com/docs/openshift?topic=openshift-secrets-mgr). |
 | 5.5.1 | {{site.data.keyword.openshiftlong_notm}} can optionally [enable image security enforcement](/docs/openshift?topic=openshift-images#portieris-image-sec). |
 | 5.7.2 | {{site.data.keyword.openshiftlong_notm}} does not annotate all pods with [`seccomp` profiles](https://kubernetes.io/docs/concepts/security/pod-security-policy/#seccomp){: external}. |
 | 5.7.3 | {{site.data.keyword.openshiftlong_notm}} deploys some system components that do not set a [pod or container `securityContext`](https://kubernetes.io/docs/tasks/configure-pod-container/security-context/){: external}. |

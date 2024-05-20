@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2024
-lastupdated: "2024-04-11"
+lastupdated: "2024-05-20"
 
 
 keywords: portworx, openshift
@@ -97,9 +97,9 @@ Contact Portworx support by using one of the following methods.
 
 - Sending an e-mail to `support@purestorage.com`.
 
-- Calling `+1 (866) 244-7121` or `+1 (650) 729-4088` in the United States or one of the [International numbers](https://support.purestorage.com/bundle/m_contact_us/page/m_contact_us.html).
+- Calling `+1 (866) 244-7121` or `+1 (650) 729-4088` in the United States or one of the [International numbers](https://support.purestorage.com/bundle/m_contact_us/page/Pure_Storage_Technical_Services/Technical_Services_Information/topics/reference/r_contact_us.html).
 
-- Opening an issue in the [Portworx Service Portal](https://support.purestorage.com/bundle/m_contact_us/page/m_contact_us.html){: external}. If you don't have an account, see [Request access](https://purestorage.my.site.com/customers/CustomerAccessRequest){: external}.
+- Opening an issue in the [Portworx Service Portal](https://support.purestorage.com/bundle/m_contact_us/page/Pure_Storage_Technical_Services/Technical_Services_Information/topics/reference/r_contact_us.html){: external}. If you don't have an account, see [Request access](https://purestorage.my.site.com/customers/CustomerAccessRequest){: external}.
 
 
 

@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2024
-lastupdated: "2024-05-14"
+lastupdated: "2024-05-20"
 
 
 keywords: openshift, {{site.data.keyword.openshiftlong_notm}}, kubernetes, clusters, worker nodes, worker pools, classic, create
@@ -205,7 +205,7 @@ Create your single zone or multizone classic cluster by using the {{site.data.ke
     {: important}
 
     `--sm-group GROUP`
-    :    The secret group ID of the {{site.data.keyword.secrets-manager_short}} instance where your secrets are persisted. To get a secret group ID, see the [{{site.data.keyword.secrets-manager_short}} CLI reference](/docs/secrets-manager-cli-plugin?topic=secrets-manager-cli-plugin-secrets-manager-cli#secrets-manager-cli-secret-groups-command).
+    :    The secret group ID of the {{site.data.keyword.secrets-manager_short}} instance where your secrets are persisted. To get a secret group ID, see the [{{site.data.keyword.secrets-manager_short}} CLI reference](/docs/secrets-manager?topic=secrets-manager-secrets-manager-cli#secrets-manager-cli-secret-groups-command).
 
     `--sm-instance INSTANCE`
     :    The CRN of the {{site.data.keyword.secrets-manager_short}} instance. To get the CRN of an instance, run `ibmcloud oc ingress instance ls --cluster CLUSTER`.

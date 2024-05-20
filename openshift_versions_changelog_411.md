@@ -2,7 +2,7 @@
 
 copyright:
   years: 2022, 2024
-lastupdated: "2024-03-15"
+lastupdated: "2024-05-20"
 
 
 keywords: openshift, 4.11, update, upgrade, BOM, bill of materials, versions, patch
@@ -334,7 +334,7 @@ The following table shows the changes that are in the master fix pack 4.11.48_15
 
 | Component | Previous | Current | Description |
 | --- | --- | --- | --- |
-| Calico | v3.25.1 | v3.25.2 | See the [Calico release notes](https://docs.tigera.io/calico/3.25/release-notes/#v3.25.2){: external}. |
+| Calico | v3.25.1 | v3.25.2 | See the [Calico release notes](https://archive-os-3-25.netlify.app/calico/3.25/release-notes/){: external}. |
 | Tigera Operator | v1.29.4 | v1.29.6 | See the [Tigera Operator release notes](https://github.com/tigera/operator/releases/tag/v1.29.6){: external}. |
 | Cluster health image | v1.3.24 | v1.4.2 | Updated `Go` to version `1.20.8` and updated dependencies. Updated to new base image. |
 | {{site.data.keyword.cloud_notm}} Block Storage driver and plug-in | v2.4.5 | v2.4.10 | Updated `Go dependencies`. Updated to newer UBI base image. |
