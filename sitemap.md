@@ -275,6 +275,10 @@ subcollection: openshift
 
 * [May 2024](/docs/openshift?topic=openshift-openshift-relnotes#openshift-may24)
 
+    * [23 May 2024](/docs/openshift?topic=openshift-openshift-relnotes#openshift-may2324)
+
+        * {{site.data.keyword.openshiftlong_notm}} worker node fix packs.
+
     * [10 May 2024](/docs/openshift?topic=openshift-openshift-relnotes#openshift-may1024)
 
         * {{site.data.keyword.block_storage_is_short}} add-on patch update.
