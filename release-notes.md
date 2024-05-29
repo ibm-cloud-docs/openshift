@@ -46,7 +46,7 @@ GPU worker node flavors with Red Hat Enterprise Linux CoreOS (RHCOS).
 
 
 The {{site.data.keyword.filestorage_vpc_full_notm}} add-on is generally available.
-:   For more information, see [Enabling the {{site.data.keyword.filestorage_vpc_full_notm}} for VPC add-on](openshift?topic=openshift-storage-file-vpc-install).
+:   For more information, see [Enabling the {{site.data.keyword.filestorage_vpc_full_notm}} for VPC add-on](/docs/openshift?topic=openshift-storage-file-vpc-install).
 
 
 

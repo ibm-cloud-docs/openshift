@@ -21,7 +21,7 @@ keyword:
   kubernetes_126_release_date: 01 February 2023
   kubernetes_126_unsupported_certainty: tentative
   kubernetes_126_unsupported_date: 31 May 2024
-  kubernetes_127_deprecated: 'True'
+  kubernetes_127_deprecated: 'False'
   kubernetes_127_release_date: 24 May 2023
   kubernetes_127_unsupported_certainty: ''
   kubernetes_127_unsupported_date: 14 August 2024
