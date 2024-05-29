@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2024
-lastupdated: "2024-01-03"
+lastupdated: "2024-05-29"
 
 
 keywords: openshift
@@ -61,7 +61,7 @@ Delete the resource that is display in the error message and retry the installat
 
 1. If you continue to see the same error, get a list of the resources that are installed when the plug-in is installed. Get a list of storage classes that are created by the `ibmcloud-object-storage-plugin`.
     ```sh
-    oc get StorageClass --all-namespaces \
+    oc get sc --all-namespaces \
             -l app=ibmcloud-object-storage-plugin \
             -o jsonpath='{range .items[*]}{.metadata.name}{"\n"}{end}'
     ```

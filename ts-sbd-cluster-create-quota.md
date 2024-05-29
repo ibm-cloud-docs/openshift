@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2024, 2024
-lastupdated: "2024-04-24"
+lastupdated: "2024-05-29"
 
 
 keywords: openshift, {{site.data.keyword.openshiftlong_notm}}, secure by default, {{site.data.keyword.openshiftlong_notm}}, outbound traffic protection, cluster create, quotas, limitations, rules, security groups
@@ -108,6 +108,6 @@ After reviewing the logging messages, complete the steps in the following sectio
 
 This failure is most likely happened when the shared VPE gateway security group (`kube-vpegw-<VPC-ID>`) was being modified. This security group contains a remote rule to every cluster in the VPC, and the number of remote rules on a security group is limited. Which means this limits the number of clusters that can be created in a VPC.
 
-Review the [VPC security group quotas](/docs/vpc?topic=vpc-quotas#security-group-quotas). Any clusters that are no longer needed should be removed, and a master refresh can be run on the new cluster.  If clusters cannot be deleted, the new cluster will need to be created on a different VPC.
+Review the [VPC security group quotas](/docs/vpc?topic=vpc-quotas#security-group-quotas). Any clusters that are no longer needed should be removed, and a master refresh can be run on the new cluster.  If clusters cannot be deleted, the new cluster must be created on a different VPC.
 
 

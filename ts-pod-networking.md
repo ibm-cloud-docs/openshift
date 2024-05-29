@@ -2,7 +2,7 @@
 
 copyright:
   years: 2024, 2024
-lastupdated: "2024-05-07"
+lastupdated: "2024-05-29"
 
 
 keywords: pods, pod connectvity, networking, pod networking, pod trouble shooting, pod debug
@@ -74,7 +74,7 @@ To determine the cause of networking issues on your pods, you can create a test 
 ### Setting up the pods
 {: #debug_pods_test_setup}
 
-1. Create a new privileged namespace for your test pods. Creating a new namespace prevents any custom policies or configurations in existing namespaces from affecting your test pods. In this example, the new namespace is called  `pod-network-test`.
+1. Create a new privileged namespace for your test pods. Creating a new namespace prevents any custom policies or configurations in existing namespaces from affecting your test pods. In this example, the new namespace is called `pod-network-test`.
 
     Create the namespace. 
 
@@ -222,19 +222,18 @@ oc apply --namespace pod-network-test -f <daemonset-file>
 {: pre}
 
 1. Verify that the pods start up successfully by listing all pods in the namespace. 
-```
-oc get pods --namespace pod-network-test -o wide
-```
-{: pre}
+    ```sh
+    oc get pods --namespace pod-network-test -o wide
+    ```
+    {: pre}
 
-If you are using an image from your private container registry  and the image pull for these pods fails due to not having the proper authority, try deploying the daemonset in the `default` namespace instead.
+If you are using an image from your private container registry and you see pull errors due to not having the proper authority, try deploying the daemonset in the `default` namespace instead.
 {: tip}
 
 ### Running tests within the pods
 {: #debug_pods_test_run}
 
-Run `curl`, `ping`, and `nc` commands to test each pod's network connection and the `dig` command to test the cluster DNS. Review each output, then see [Identifying issues](#debug_pods_test_id) to determine what the outcomes might mean. 
-
+Run `curl`, `ping`, and `nc` commands to test each pod's network connection and the `dig` command to test the cluster DNS. Review each output, then see [Identifying issues](#debug_pods_test_id) to find what the outcomes might mean. 
 
 
 1. List your test pods and note the name and IP of each pod. 
@@ -372,12 +371,12 @@ Run `curl`, `ping`, and `nc` commands to test each pod's network connection and 
     ```
     {: pre}
 
-1. Repeat the previous steps with the remaining pods.
+1. Repeat the earlier steps with the remaining pods.
 
 ### Identifying issues
 {: #debug_pods_test_id}
 
-Review the outputs from the previous section to help determine the cause of your pod networking issues. This section lists some common causes that can be identified from the previous section. 
+Review the outputs from the earlier section to help find the cause of your pod networking issues. This section lists some common causes that can be identified from the earlier section. 
 
 - If the commands functioned normally on the test pods, but you still have networking issues in your application pods in your default namespace, there might be issues related specifically to your application. 
     - You might have Calico or Kubernetes network security policies in place that restrict your networking traffic. If a networking policy is applied to a pod, *all traffic that is not specifically allowed by that policy is dropped*. For more information on networking policies, see the [Kubernetes documentation](https://kubernetes.io/docs/concepts/services-networking/network-policies/){: external}. 

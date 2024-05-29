@@ -2,7 +2,7 @@
 
 copyright:
   years: 2023, 2024
-lastupdated: "2024-01-03"
+lastupdated: "2024-05-29"
 
 
 keywords: openshift, satellite, distributed cloud, on-prem, hybrid, images, private registry, pull secret
@@ -32,6 +32,9 @@ There are two ways to update the global pull secret in Satellite clusters.
 {: #satellite-pull-secret-cli}
 
 Complete the following steps to update the global pull secret in your {{site.data.keyword.satelliteshort}} cluster.
+
+In the following examples, the `hostPath` is `/root/.docker` which is used for RHCOS hosts. If you have RHEL hosts use `/.docker`.
+{: note}
 
 
 1. Create a secret that contains credentials for the registry you want to use.
@@ -119,7 +122,7 @@ Complete the following steps to update the global pull secret in your {{site.dat
                 secretName: docker-auth-secret
             - name: docker
               hostPath:
-                path: /root/.docker
+                path: /root/.docker # Note: RHEL hosts use /.docker
             - name: bin
               hostPath:
                 path: /usr/bin
@@ -272,7 +275,7 @@ Complete the following steps to use {{site.data.keyword.satelliteshort}} config 
                 secretName: docker-auth-secret
             - name: docker
               hostPath:
-                path: /root/.docker
+                path: /root/.docker # Note: RHEL hosts use /.docker
             - name: bin
               hostPath:
                 path: /usr/bin

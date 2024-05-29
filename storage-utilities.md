@@ -2,10 +2,10 @@
 
 copyright: 
   years: 2014, 2024
-lastupdated: "2024-03-19"
+lastupdated: "2024-05-29"
 
 
-keywords: openshift
+keywords: kubernetes, openshift
 
 subcollection: openshift
 
@@ -109,7 +109,7 @@ Looking for instructions for how to update or remove the {{site.data.keyword.clo
 5. Verify that the storage class for the {{site.data.keyword.cloud_notm}} Block Volume Attacher is created successfully.
 
     ```sh
-    oc get storageclasses | grep attacher
+    oc get sc | grep attacher
     ```
     {: pre}
 
@@ -200,7 +200,7 @@ If you don't want to provision and use the {{site.data.keyword.cloud_notm}} Bloc
 4. Verify that the {{site.data.keyword.cloud_notm}} Block Storage Attacher storage class is removed.
 
     ```sh
-    oc get storageclasses | grep attacher
+    oc get sc | grep attacher
     ```
     {: pre}
 

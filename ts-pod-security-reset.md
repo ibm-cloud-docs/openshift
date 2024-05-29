@@ -2,10 +2,10 @@
 
 copyright: 
   years: 2023, 2024
-lastupdated: "2024-01-18"
+lastupdated: "2024-05-29"
 
 
-keywords: openshift, pod security, reset, valid configuration, psa
+keywords: kubernetes, openshift, pod security, reset, valid configuration, psa
 
 subcollection: openshift
 

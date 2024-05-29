@@ -2,7 +2,7 @@
 
 copyright:
   years: 2022, 2024
-lastupdated: "2024-05-07"
+lastupdated: "2024-05-29"
 
 
 keywords: openshift, ingress, troubleshoot ingress, ingress operator, ingress cluster operator, ingress operator degraded, erriodeg
@@ -82,7 +82,7 @@ oc get clusteroperator ingress
         1. Run the `ibmcloud is subnets` to see your subnets.
         1. For every subnet run the `ibmcloud is subnet <subnet-id>` to check whenever it has a public gateway.
             1. If your subnet does not have a public gateway attached, you need to attach one. For more information, see [Creating public gateways](/docs/vpc?topic=vpc-create-public-gateways&interface=cli)
-    - If your VPC Load Balancers are located on a subnet other than the worker nodes of your cluster, you will need to update the Security Group attached to the VPC Load Balancer subnet to allow incoming traffic from the worker subnets.
+    - If your VPC Load Balancers are located on a subnet other than the worker nodes of your cluster, you must update the Security Group attached to the VPC Load Balancer subnet to allow incoming traffic from the worker subnets.
     - For more information, see [Creating a Red Hat OpenShift cluster in your Virtual Private Cloud](/docs/openshift?topic=openshift-vpc_rh_tutorial), [Configuring VPC subnets](/docs/openshift?topic=openshift-vpc-subnets#vpc_basics_pgw) and [Creating and managing VPC security groups](/docs/openshift?topic=openshift-vpc-security-group-manage).
 
 1. Ensure that no firewall rules block the canary traffic.

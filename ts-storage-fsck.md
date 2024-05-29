@@ -2,10 +2,10 @@
 
 copyright: 
   years: 2022, 2024
-lastupdated: "2024-01-03"
+lastupdated: "2024-05-29"
 
 
-keywords: openshift, fsck, file system check
+keywords: kubernetes, openshift, fsck, file system check
 
 subcollection: openshift
 

@@ -2,10 +2,10 @@
 
 copyright: 
   years: 2022, 2024
-lastupdated: "2024-01-03"
+lastupdated: "2024-05-29"
 
 
-keywords: openshift
+keywords: kubernetes, openshift
 
 subcollection: openshift
 
@@ -27,16 +27,24 @@ When you set up persistent storage in your cluster, you have three main componen
 ## Updating the {{site.data.keyword.filestorage_vpc_short}} add-on
 {: #storage-file-vpc-update}
 
-1. Disable the add-on.
+[Access your {{site.data.keyword.redhat_openshift_notm}} cluster](/docs/openshift?topic=openshift-access_cluster).
 
-    ```sh
-    ibmcloud oc cluster addon disable vpc-file-csi-driver --version VERSION 
+1. Get your cluster ID.
+    ```shell
+    ibmcloud oc cluster ls
     ```
     {: pre}
 
-1. Enable the newer version of the add-on.The add-on might take a few minutes to become ready.
-    ```sh
-    ibmcloud oc cluster addon enable vpc-file-csi-driver --version VERSION
+1. Review the available add-on versions.
+    ```shell
+    ibmcloud oc cluster addon versions
+    ```
+    {: pre}
+
+1. Run the following command to update the add-on.
+
+    ```shell
+    ibmcloud ks cluster addon update vpc-file-csi-driver --version VERSION --cluster CLUSTER-ID
     ```
     {: pre}
 

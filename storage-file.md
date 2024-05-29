@@ -2,10 +2,10 @@
 
 copyright: 
   years: 2014, 2024
-lastupdated: "2024-01-03"
+lastupdated: "2024-05-29"
 
 
-keywords: openshift
+keywords: kubernetes, openshift
 
 subcollection: openshift
 
@@ -129,7 +129,7 @@ To decide on a storage configuration:
 1. List available storage classes in {{site.data.keyword.containerlong}}.
 
     ```sh
-    oc get storageclasses | grep file
+    oc get sc | grep file
     ```
     {: pre}
 
@@ -903,7 +903,7 @@ Before you begin: [Access your {{site.data.keyword.redhat_openshift_notm}} clust
     :   In the spec volume claim templates spec resources requests section, if you want to provision [performance storage](#file_predefined_storageclass), enter the number of IOPS. If you use an endurance storage class and specify a number of IOPS, the number of IOPS is ignored. Instead, the IOPS that is specified in your storage class is used.
     
     `storageClassName`
-    :   In the spec volume claim templates spec section, enter the storage class that you want to use. To list existing storage classes, run `oc get storageclasses | grep file`. If you don't specify a storage class, the PVC is created with the default storage class that is set in your cluster. Make sure that the default storage class uses the `ibm.io/ibmc-file` provisioner so that your stateful set is provisioned with {{site.data.keyword.filestorage_short}}.
+    :   In the spec volume claim templates spec section, enter the storage class that you want to use. To list existing storage classes, run `oc get sc | grep file`. If you don't specify a storage class, the PVC is created with the default storage class that is set in your cluster. Make sure that the default storage class uses the `ibm.io/ibmc-file` provisioner so that your stateful set is provisioned with {{site.data.keyword.filestorage_short}}.
 
 4. Create your stateful set.
 
@@ -1152,7 +1152,7 @@ To apply the latest security updates and for a better performance, use the defau
 3. Verify that the customized storage class was created.
 
     ```sh
-    oc get storageclasses
+    oc get sc
     ```
     {: pre}
 

@@ -2,10 +2,10 @@
 
 copyright: 
   years: 2014, 2024
-lastupdated: "2024-01-03"
+lastupdated: "2024-05-29"
 
 
-keywords: openshift, dedicated hosts, host pool, dedicated pool
+keywords: kubernetes, openshift, dedicated hosts, host pool, dedicated pool
 
 subcollection: openshift
 

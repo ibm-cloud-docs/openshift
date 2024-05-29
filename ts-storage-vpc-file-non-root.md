@@ -2,10 +2,10 @@
 
 copyright: 
   years: 2022, 2024
-lastupdated: "2024-01-18"
+lastupdated: "2024-05-29"
 
 
-keywords: openshift
+keywords: kubernetes, openshift
 
 subcollection: openshift
 
@@ -81,7 +81,7 @@ If you want to use {{site.data.keyword.filestorage_vpc_short}} with static provi
 1. Verify that your storage class is available in the cluster.
 
     ```sh
-    oc get storageclasses
+    oc get sc
     ```
     {: pre}
 

@@ -2,10 +2,10 @@
 
 copyright: 
   years: 2014, 2024
-lastupdated: "2024-04-11"
+lastupdated: "2024-05-29"
 
 
-keywords: portworx, openshift
+keywords: portworx, kubernetes, openshift
 
 subcollection: openshift
 
@@ -171,7 +171,7 @@ Start creating Portworx volumes by using Kubernetes dynamic provisioning.
 
 1. List available storage classes in your cluster and check whether you can use an existing Portworx storage class that was set up during the Portworx installation. The pre-defined storage classes are optimized for database usage and to share data across pods.
     ```sh
-    oc get storageclasses | grep portworx
+    oc get sc | grep portworx
     ```
     {: pre}
 
@@ -224,7 +224,7 @@ Start creating Portworx volumes by using Kubernetes dynamic provisioning.
 
     3. Verify that the storage class is created.
         ```sh
-        oc get storageclasses
+        oc get sc
         ```
         {: pre}
 

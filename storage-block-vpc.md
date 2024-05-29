@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2024
-lastupdated: "2024-05-10"
+lastupdated: "2024-05-29"
 
 
 keywords: openshift, block storage, deploy apps
@@ -853,7 +853,7 @@ To create your own storage class:
 4. Verify that your storage class is available in the cluster.
 
     ```sh
-    oc get storageclasses
+    oc get sc
     ```
     {: pre}
 

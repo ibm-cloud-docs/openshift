@@ -2,10 +2,10 @@
 
 copyright: 
   years: 2022, 2024
-lastupdated: "2024-05-10"
+lastupdated: "2024-05-29"
 
 
-keywords: openshift network, classic
+keywords: kubernetes, openshift network, classic
 
 subcollection: openshift
 
