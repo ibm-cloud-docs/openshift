@@ -117,7 +117,6 @@ toc:
       - topicgroup:
           label: Managing access control
           topics:
-          - access-overview.md
           - classic-credentials.md
           - access-iam-rbac.md
           - access-pod-identity.md

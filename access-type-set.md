@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2023, 2024
-lastupdated: "2024-03-27"
+lastupdated: "2024-05-29"
 
 
 keywords: openshift, {{site.data.keyword.openshiftlong_notm}}, kubernetes, oauth, console, access, vpe, pse, network
@@ -18,7 +18,7 @@ subcollection: openshift
 
 [Virtual Private Cloud]{: tag-vpc}
 
-You can set the OpenShift console and OAuth exposure method for private-only {{site.data.keyword.openshiftlong_notm}} clusters on VPC infrastructure.
+Review the following steps to set the exposure method for the OpenShift web console and OAuth. Note that these steps apply to {{site.data.keyword.openshiftlong_notm}} clusters on VPC infrastructure with only the private service endpoint enabled.
 {: shortdesc}
 
 Choose between the following options when setting the OpenShift console and OAuth exposure method.

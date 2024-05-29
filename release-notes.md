@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2024
-lastupdated: "2024-05-23"
+lastupdated: "2024-05-29"
 
 
 keywords: openshift, {{site.data.keyword.openshiftlong_notm}}, kubernetes, release notes
@@ -27,6 +27,28 @@ Looking for {{site.data.keyword.cloud_notm}} status, platform announcements, sec
 
 ## May 2024
 {: #openshift-may24}
+
+### 29 May 2024
+{: #openshift-may2924}
+{: release-note}
+
+
+
+
+
+
+
+
+
+GPU worker node flavors with Red Hat Enterprise Linux CoreOS (RHCOS).
+:   You can now provision worker nodes with GPUs that use the RHCOS operating system. For a list of available flavors, see [VPC flavors](/docs/openshift?topic=openshift-vpc-flavors).
+
+
+
+The {{site.data.keyword.filestorage_vpc_full_notm}} add-on is generally available.
+:   For more information, see [Enabling the {{site.data.keyword.filestorage_vpc_full_notm}} for VPC add-on](/docs/openshift?topic=openshift-storage-file-vpc-install).
+
+
 
 ### 23 May 2024
 {: #openshift-may2324}

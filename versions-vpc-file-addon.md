@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2024
-lastupdated: "2024-05-10"
+lastupdated: "2024-05-29"
 
 
 keywords: file, add-on, changelog, openshift
@@ -34,7 +34,7 @@ Release updates
 
 To view a list of add-ons and the supported cluster versions in the CLI, run the following command.
 ```sh
-ibmcloud oc cluster addon versions --addon vpc-file-csi-driver
+ibmcloud oc cluster addon versions
 ```
 {: pre}
 
@@ -101,7 +101,7 @@ To view a list of add-ons and the supported cluster versions, see the [Supported
 - Allows you to bring your own security group to control granular authorization at the worker node, zone, or worker pool level.
 - Adds bring your own subnet support to control which subnet the virtual network interface (VNI) IP for storage is assigned and created in.
 - Adds bring your own IP support existing `PrimaryIP` which the VNI will assign.
-- Allows you to set a custom `PrimaryIPAddress` within the subnet range where the VNI IP will be assigned and created.
+- Allows you to set a custom `PrimaryIPAddress` within the subnet range where the VNI IP is assigned and created.
 
 
 ## Version 1.1

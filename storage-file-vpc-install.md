@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2022, 2024
-lastupdated: "2024-03-27"
+lastupdated: "2024-05-29"
 
 
 keywords: openshift, {{site.data.keyword.openshiftlong_notm}}, add-on, file
@@ -25,15 +25,14 @@ subcollection: openshift
 {: shortdesc}
 
 
-The {{site.data.keyword.filestorage_vpc_short}} cluster add-on is available in Beta.
-{: beta}
-
-
 ## Prerequisites
 {: #prereqs-store-file-vpc}
 
-1. Update the `container-service` plug-in to the most recent version. You can update the plug-in by running the **`ibmcloud plugin update container-service`** command. 
-
+1. Update the `container-service` plug-in to the most recent version. You can update the plug-in by running the following command.
+    ```shell
+    ibmcloud update && ibmcloud plugin update container-service
+    ```
+    {: pre}
 
 1. Get a list of the add-on versions and decide which version to install for your cluster version.
     ```sh
@@ -44,12 +43,12 @@ The {{site.data.keyword.filestorage_vpc_short}} cluster add-on is available in B
     Example output
     ```sh
     OK
-    Name                  Version         Supported Kubernetes Range   Supported Openshift Range   
-    vpc-file-csi-driver   1.0 (default)   >=1.21.0                     >=4.7.0 
+    Name                  Version         Supported Kubernetes Range   Supported OpenShift Range   Kubernetes Default   OpenShift Default
+    vpc-file-csi-driver   1.0 (default)   >=1.24.0 <1.31.0             >=4.10.0 <4.16.0            -                    -
     ```
     {: pre}
 
-1. Enable the add-on. The add-on might take a few minutes to become ready.
+1. Enable the add-on. 
     ```sh
     ibmcloud oc cluster addon enable vpc-file-csi-driver --version VERSION --cluster CLUSTERID
     ```
@@ -68,3 +67,15 @@ The {{site.data.keyword.filestorage_vpc_short}} cluster add-on is available in B
     vpc-file-csi-driver    1.0.0     normal         Addon Ready
     ```
     {: pre}
+
+
+## Next steps
+{: #vpc-enable-next-steps}
+
+Review the following links to continue setting up {{site.data.keyword.filestorage_vpc_short}}.
+
+- [Quick start for {{site.data.keyword.filestorage_vpc_short}}](/docs/openshift?topic=openshift-storage-file-vpc-apps#vpc-add-file-dynamic)
+- [Adding {{site.data.keyword.filestorage_vpc_short}} to apps](/docs/openshift?topic=openshift-storage-file-vpc-apps).
+- [Managing {{site.data.keyword.filestorage_vpc_short}}](/docs/openshift?topic=openshift-storage-file-vpc-managing).
+- [{{site.data.keyword.filestorage_vpc_short}} storage class reference](/docs/openshift?topic=openshift-storage-file-vpc-sc-ref).
+

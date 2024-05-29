@@ -23,7 +23,7 @@ keyword:
   kubernetes_126_unsupported_date: 31 May 2024
   kubernetes_127_deprecated: 'False'
   kubernetes_127_release_date: 24 May 2023
-  kubernetes_127_unsupported_certainty: tentative
+  kubernetes_127_unsupported_certainty: ''
   kubernetes_127_unsupported_date: 14 August 2024
   kubernetes_128_deprecated: 'False'
   kubernetes_128_release_date: 20 September 2023
@@ -34,9 +34,9 @@ keyword:
   kubernetes_129_unsupported_certainty: ''
   kubernetes_129_unsupported_date: 23 April 2025
   kubernetes_130_deprecated: 'False'
-  kubernetes_130_release_date: None
-  kubernetes_130_unsupported_certainty: ''
-  kubernetes_130_unsupported_date: None
+  kubernetes_130_release_date: 29 May 2024
+  kubernetes_130_unsupported_certainty: tentative
+  kubernetes_130_unsupported_date: 13 August 2025
   openshift_410_RHEL_7_unsupported_date: 6 December 2022
   openshift_410_RHEL_8_unsupported_date: ''
   openshift_410_deprecated: 'True'

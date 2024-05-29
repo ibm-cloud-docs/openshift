@@ -2,10 +2,10 @@
 
 copyright: 
   years: 2021, 2024
-lastupdated: "2024-02-16"
+lastupdated: "2024-05-29"
 
 
-keywords: openshift
+keywords: kubernetes, openshift
 
 subcollection: openshift
 

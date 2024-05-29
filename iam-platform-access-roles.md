@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2024
-lastupdated: "2024-05-10"
+lastupdated: "2024-05-29"
 
 keywords: openshift, {{site.data.keyword.openshiftlong_notm}}, kubernetes, infrastructure, policy, users, permissions, access, roles
 
@@ -23,7 +23,8 @@ Review the following table for a list of Platform and Service roles and their as
 
 {{../account/iam-service-roles.md#containers-kubernetes-roles}}
 
-For a list of all IBM services and their associated roles and actions, see [IAM roles and actions](/docs/account?topic=account-iam-service-roles-actions){: tip}
+For a list of all IBM services and their associated roles and actions, see [IAM roles and actions](/docs/account?topic=account-iam-service-roles-actions). For more information about setting up your account and resources, see [best practices for organizing users, teams, and applications](/docs/account?topic=account-account_setup).
+{: tip}
 
 
 Platform access roles
@@ -43,7 +44,7 @@ Review the following permissions that you need to create a cluster including the
 | {{site.data.keyword.containershort}} | - **Administrator** platform access role  \n - **Writer** or **Manager** service access role | The resource group where you want to create a cluster. | Yes |
 | {{site.data.keyword.registryshort_notm}} | **Administrator** platform access role. | An individual instance or all instances. Do not limit policies for {{site.data.keyword.registrylong_notm}} to the resource group level. | Yes |
 | {{site.data.keyword.cos_full_notm}} | **Administrator** platform access role | An individual instance or all instances. | Yes |
-| {{site.data.keyword.secrets-manager_short}} | **Administrator** or **Editor** platform access role  \n - **Manager** service access role | All resource groups | Required if you plan to use {{site.data.keyword.secrets-manager_short}} for encryption. |
+| {{site.data.keyword.secrets-manager_short}} | - **Administrator** or **Editor** platform access role  \n - **Manager** service access role | All resource groups | Required if you plan to use {{site.data.keyword.secrets-manager_short}} for encryption. |
 | Resource group permissions | - **Viewer** platform access role  | The resource group where you want to create a cluster. | Yes |
 | IAM Identity Service | - **Service ID creator**  \n - **User API key creator** role  \n - **Viewer** platform access role  | The resource group where you want to create a cluster. | Yes |
 | {{site.data.keyword.keymanagementserviceshort}}| **Administrator** platform access role. | All instances or the specific instance you want to use. | Required if you plan to use {{site.data.keyword.keymanagementserviceshort}} for encryption. |
@@ -53,7 +54,7 @@ Review the following permissions that you need to create a cluster including the
 {: caption="IAM roles needed to create a cluster." caption-side="bottom"}
 
 
-Consider saving the permissions outlined in the previous table as a custom IAM role. This way, you can assign users to the custom role instead of assigning each individual service. For more information, see the following example custom roles or the IAM documentation for [Creating custom roles](/docs/account?topic=account-custom-roles&interface=ui).
+Consider saving the permissions outlined in the earlier table as a custom IAM role. This way, you can assign users to the custom role instead of assigning each individual service. For more information, see the following example custom roles or the IAM documentation for [Creating custom roles](/docs/account?topic=account-custom-roles&interface=ui).
 {: tip}
 
 
@@ -66,12 +67,12 @@ The following table provides some example use cases and the corresponding IAM ro
 
 | Example custom role | Permissions |
 | --- | --- |
-| App auditor | - Viewer platform access role for a cluster, region, or resource group.  \n - Reader service access role for a cluster, region, or resource group. |
+| App auditor | - **Viewer** platform access role for a cluster, region, or resource group.  \n - **Reader** service access role for a cluster, region, or resource group. |
 | App developers | - Editor platform access role for a cluster. \n - Writer service access role scoped to a namespace. |
-| Billing | Viewer platform access role for a cluster, region, or resource group. |
-| Cluster administrator | - Administrator platform access role for a cluster.  \n - Manager service access role for the whole cluster (not scoped to a namespace).|
-| DevOps operator | - Operator platform access role for a cluster.  \n - Writer service access role for the whole cluster (not scoped to a namespace).  |
-| Operator or site reliability engineer | - Administrator platform access role for a cluster, region, or resource group. \n - Reader service access role for a cluster or region.  \n - Manager service access role for all cluster namespaces to be able to use `kubectl top nodes,pods` commands. |
+| Billing | **Viewer** platform access role for a cluster, region, or resource group. |
+| Cluster administrator | - **Administrator** platform access role for a cluster.  \n - **Manager** service access role for the whole cluster (not scoped to a namespace).|
+| DevOps operator | - **Operator** platform access role for a cluster.  \n - **Writer** service access role for the whole cluster (not scoped to a namespace).  |
+| Operator or site reliability engineer | - **Administrator** platform access role for a cluster, region, or resource group. \n - Reader service access role for a cluster or region.  \n - **Manager** service access role for all cluster namespaces to be able to use `kubectl top nodes,pods` commands. |
 {: caption="Types of roles you might assign to meet different use cases." caption-side="bottom"}
 
 

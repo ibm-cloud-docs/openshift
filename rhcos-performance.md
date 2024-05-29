@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2022, 2024
-lastupdated: "2024-05-10"
+lastupdated: "2024-05-29"
 
 
 keywords: openshift, kernel, rhcos, cpu pinning, huge pages, numa, core os
@@ -385,6 +385,8 @@ Before you begin, make sure that you have deployed the [Node Feature Discovery O
 
 ## Enabling `kernel-devel` packages
 {: #enable-kernel-devel}
+
+[{{site.data.keyword.satelliteshort}}]{: tag-satellite}
 
 You might need to enable `kernel-devel` packages to use {{site.data.keyword.satelliteshort}} services or storage such as Spectrum Scale Fusion.
 

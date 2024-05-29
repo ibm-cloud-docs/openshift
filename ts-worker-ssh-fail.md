@@ -2,10 +2,11 @@
 
 copyright: 
   years: 2014, 2024
-lastupdated: "2024-04-02"
+lastupdated: "2024-05-29"
 
 
-keywords: openshift
+keywords: kubernetes,openshift
+, help, network, connectivity
 
 subcollection: openshift
 
@@ -128,10 +129,6 @@ If you are unable to use the `oc debug node` command, you can create an Alpine p
     ```
     {: pre}
     
-    
-    
-    
-    
     To get logs or other file from a worker node, use the `**kubectl cp**` command in the following format. The following example gets the `/var/log/messages` file from the host file system of the worker node.
     
     ```sh
@@ -147,8 +144,6 @@ If you are unable to use the `oc debug node` command, you can create an Alpine p
     /var/log/calico/cni/cni.log
     ```
     {: screen}
-    
-    
 
 5. Run debug commands to help you gather information and troubleshoot issues. Commands that you might use to debug, such as `dig`, `tcpdump`, `mtr`, `curl`, `ip`, `ifconfig`, `nc`, `ping`, and `ps`, are already available in the shell. You can also install other tools, such as `conntrack`, by running `apk add <tool>`. For example, to add `conntrack`, run `apk add conntrack-tools`.
 
@@ -194,7 +189,7 @@ Allowing root SSH access is a security risk. Only allow SSH access when it is re
     ```
     {: pre}
 
-3. Create the following YAML file for a debug pod, and save the file as `enable-ssh.yaml`. Replace `<NODE_NAME>` with the worker node name and replace the example `value` for `SSH_PUBLIC_KEY` with your public SSH key. The Docker alpine image here is used as an example. If the worker node doesn't have public network access, you can maintain a copy of the image for debugging in your own ICR repository or build a customized image with other tools to fit your needs.
+3. Create the following YAML file for a debug pod, and save the file as `enable-ssh.yaml`. Replace `<NODE_NAME>` with the worker node name and replace the example `value` for `SSH_PUBLIC_KEY` with your public SSH key. The Docker alpine image here is used as an example. If the worker node doesn't have public network access, you can keep a copy of the image for debugging in your own ICR repository or build a customized image with other tools to fit your needs.
 
     ```yaml
     apiVersion: v1
@@ -276,6 +271,7 @@ For classic clusters, the [device](https://cloud.ibm.com/gen1/infrastructure/dev
     ssh -i ~/.ssh/id_rsa_worker_private root@<WORKER_PRIVATE_IP>
     ```
     {: pre}
+
 
 ### SSH into the worker node on the public network
 {: #public-network-only-classic-debug}

@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2024
-lastupdated: "2024-05-23"
+lastupdated: "2024-05-29"
 
 
 keywords: openshift
@@ -274,6 +274,12 @@ subcollection: openshift
 [Release notes](/docs/openshift?topic=openshift-openshift-relnotes#openshift-relnotes)
 
 * [May 2024](/docs/openshift?topic=openshift-openshift-relnotes#openshift-may24)
+
+    * [29 May 2024](/docs/openshift?topic=openshift-openshift-relnotes#openshift-may2924)
+
+        * GPU worker node flavors with Red Hat Enterprise Linux CoreOS (RHCOS).
+
+        * The {{site.data.keyword.filestorage_vpc_full_notm}} add-on is generally available.
 
     * [23 May 2024](/docs/openshift?topic=openshift-openshift-relnotes#openshift-may2324)
 
@@ -3364,16 +3370,6 @@ subcollection: openshift
 {: #sitemap_managing_access_control}
 
 
-[Understanding access control for clusters](/docs/openshift?topic=openshift-access-overview#access-overview)
-
-* [Access control checklist](/docs/openshift?topic=openshift-access-overview#access-checklist)
-
-    * [{{site.data.keyword.cloud_notm}} access control](/docs/openshift?topic=openshift-access-overview#access-checklist-iam)
-
-    * [Assign access roles to individual or groups of users in {{site.data.keyword.cloud_notm}} IAM](/docs/openshift?topic=openshift-access-overview#iam_individuals_groups)
-
-    * [Scope user access to cluster instances, namespaces, or resource groups](/docs/openshift?topic=openshift-access-overview#resource_groups)
-
 [Understanding Classic infrastructure credentials](/docs/openshift?topic=openshift-classic-credentials#classic-credentials)
 
 * [Accessing a different classic infrastructure account](/docs/openshift?topic=openshift-classic-credentials#credentials)
@@ -4883,19 +4879,23 @@ subcollection: openshift
 
 * [Prerequisites](/docs/openshift?topic=openshift-storage-file-vpc-install#prereqs-store-file-vpc)
 
+* [Next steps](/docs/openshift?topic=openshift-storage-file-vpc-install#vpc-enable-next-steps)
+
 [Adding {{site.data.keyword.filestorage_vpc_short}} to apps](/docs/openshift?topic=openshift-storage-file-vpc-apps#storage-file-vpc-apps)
 
-* [Quick start for {{site.data.keyword.filestorage_vpc_short}} with dynamic provisioning](/docs/openshift?topic=openshift-storage-file-vpc-apps#vpc-add-file-dynamic)
+* [Prerequisites for cluster version 4.11 and later](/docs/openshift?topic=openshift-storage-file-vpc-apps#prereqs-vpc-file-versions)
+
+* [Quick start for {{site.data.keyword.filestorage_vpc_short}}](/docs/openshift?topic=openshift-storage-file-vpc-apps#vpc-add-file-dynamic)
 
 * [Expanding a mounted volume](/docs/openshift?topic=openshift-storage-file-vpc-apps#storage-file-vpc-expansion)
 
 * [Attaching existing file storage to an app](/docs/openshift?topic=openshift-storage-file-vpc-apps#vpc-add-file-static)
 
-* [Deploying an app that runs as non-root](/docs/openshift?topic=openshift-storage-file-vpc-apps#vpc-file-non-root-app)
-
 * [Creating a custom storage class](/docs/openshift?topic=openshift-storage-file-vpc-apps#storage-file-vpc-custom-sc)
 
-* [Limiting file share access by worker node, zone, or worker pool](/docs/openshift?topic=openshift-storage-file-vpc-apps#storage-file-vpc-vni-setup)
+* [Deploying an app that runs as non-root](/docs/openshift?topic=openshift-storage-file-vpc-apps#vpc-file-non-root-app)
+
+* [Limiting file share access by worker pool, zone, or worker node](/docs/openshift?topic=openshift-storage-file-vpc-apps#storage-file-vpc-vni-setup)
 
     * [Prerequisites](/docs/openshift?topic=openshift-storage-file-vpc-apps#storage-file-vpc-vni-prereqs)
 

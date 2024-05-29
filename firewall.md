@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2024
-lastupdated: "2024-03-18"
+lastupdated: "2024-05-29"
 
 
 keywords: openshift
@@ -268,29 +268,8 @@ This table is moving. For the latest IP lists and continued updates, see the pub
 #### Allow worker nodes to communicate with {{site.data.keyword.registrylong_notm}}
 {: #firewall_registry}
 
-To permit worker nodes to communicate with {{site.data.keyword.registrylong_notm}}, allow outgoing network traffic from the worker nodes to {{site.data.keyword.registrylong_notm}} [regions](/docs/Registry?topic=Registry-registry_overview#registry_regions).
-{: shortdesc}
+Allow outgoing network traffic from your worker nodes to {{site.data.keyword.registrylong_notm}}. For more information, see [Accessing {{site.data.keyword.registrylong_notm}} through a firewall](/docs/Registry?topic=Registry-registry_firewall).
 
-
-Previously Registry subnets (IP addresses) were published in the following table. As of 17 August 2021, the Registry subnets are no longer published. When you access {{site.data.keyword.registrylong_notm}} over the public internet, you must not have any allowlist restrictions that are based on IP addresses in place. If you have any concerns about opening your allowlist, you can configure private access to {{site.data.keyword.registrylong_notm}} by using the private IBM Cloud network, see [Securing your connection to Container Registry](/docs/Registry?topic=Registry-registry_private).
-{: important}
-
-In addition to the following regional subdomains, you must also allow traffic from your worker nodes to port `443` on all subdomains of `icr.io` in case of redirection to other subdomains for delivery optimization. You must allow: `TCP port 443 FROM <each_worker_node_publicIP> TO *.icr.io`. If you use the deprecated domain names, you must allow those too.
-
-
-| {{site.data.keyword.openshiftlong_notm}} region | Registry address  |
-|---------------|-------------| 
-| Global registry across {{site.data.keyword.openshiftlong_notm}} regions | `icr.io`  Deprecated: `registry.bluemix.net` | 
-| AP North | `jp.icr.io` |
-| AP South | `au.icr.io` Deprecated: `registry.au-syd.bluemix.net` | 
-| EU Central | `de.icr.io` Deprecated: `registry.eu-de.bluemix.net` |
-| Madrid | `es.icr.io` |
-| Osaka | `jp2.icr.io` |
-| Sao Paolo | `br.icr.io` |
-| Toronto | `ca.icr.io` | 
-| UK South | `uk.icr.io` Deprecated: `registry.eu-gb.bluemix.net` | 
-| US South | `us.icr.io` Deprecated: `registry.ng.bluemix.net` | 
-{: caption="Table 2. Addresses for Container Registry traffic" caption-side="bottom"}
 
 #### Allow outgoing network traffic from worker node to IAM
 {: #firewall-iam}

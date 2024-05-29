@@ -2,10 +2,10 @@
 
 copyright: 
   years: 2022, 2024
-lastupdated: "2024-03-04"
+lastupdated: "2024-05-29"
 
 
-keywords: openshift, keepalive, TCP
+keywords: kubernetes, openshift, keepalive, TCP
 
 subcollection: openshift
 

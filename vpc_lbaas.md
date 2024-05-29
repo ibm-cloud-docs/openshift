@@ -2,10 +2,10 @@
 
 copyright: 
   years: 2014, 2024
-lastupdated: "2024-04-04"
+lastupdated: "2024-05-29"
 
 
-keywords: openshift, app protocol, application protocol
+keywords: kubernetes, openshift, app protocol, application protocol
 
 subcollection: openshift
 

@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2024
-lastupdated: "2024-03-27"
+lastupdated: "2024-05-29"
 
 
 keywords: openshift, {{site.data.keyword.openshiftlong_notm}}, clusters, worker nodes, worker pools
@@ -44,7 +44,7 @@ Confirm that you [have the required permissions to create clusters](/docs/opensh
 {: #prepare-resource-groups}
 {: step}
 
-If your account uses multiple resource groups, figure out your account's strategy for [managing resource groups](/docs/openshift?topic=openshift-access-overview#resource_groups). You might want one resource group and create all clusters within that one. You might want to set up different resource groups to group different environments or resource types.
+If your account uses multiple resource groups, figure out your account's strategy for [managing resource groups](/docs/openshift?topic=openshift-iam-platform-access-roles). You might want one resource group and create all clusters within that one. You might want to set up different resource groups to group different environments or resource types.
 
 
 Keep in mind:

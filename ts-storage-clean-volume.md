@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2022, 2024
-lastupdated: "2024-01-03"
+lastupdated: "2024-05-29"
 
 
 keywords: openshift
@@ -35,7 +35,7 @@ When you delete your cluster, you have the option to delete the storage volumes 
 Delete the storage volumes from your account.
 {: tsResolve}
 
-1. Find the cluster ID of the deleted cluster. This ID will be used to remove associated block storage volumes. If you don't have the cluster ID of the deleted cluster, run `ibmcloud oc cluster ls` and a make a note of the cluster IDs whose block storage volumes you want to keep.
+1. Find the cluster ID of the deleted cluster. This ID is used to remove associated block storage volumes. If you don't have the cluster ID of the deleted cluster, run `ibmcloud oc cluster ls` and a make a note of the cluster IDs whose block storage volumes you want to keep.
 
     ```sh
     ibmcloud oc cluster ls
