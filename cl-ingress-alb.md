@@ -3,7 +3,7 @@
 copyright:
   years: 2024, 2024
 
-lastupdated: "2024-05-20"
+lastupdated: "2024-05-30"
 
 
 keywords: change log, version history, Ingress ALB
@@ -24,6 +24,13 @@ Review the version history for Ingress ALB.
 ## Version 1.9.6
 {: #ingress-alb-1.9.6}
 
+
+### 1.9.6_6650_iks, released 30 May 24
+{: #ingress-alb-1.9.6_6650_iks}
+
+[Default version]{: tag-green}
+
+- Resolves the following CVEs: [CVE-2023-42363](https://nvd.nist.gov/vuln/detail/CVE-2023-42363){: external}, [CVE-2023-42364](https://nvd.nist.gov/vuln/detail/CVE-2023-42364){: external}, [CVE-2023-42365](https://nvd.nist.gov/vuln/detail/CVE-2023-42365){: external}, [CVE-2023-42366](https://nvd.nist.gov/vuln/detail/CVE-2023-42366){: external}, [CVE-2024-34459](https://nvd.nist.gov/vuln/detail/CVE-2024-34459){: external}, and [CVE-2024-4603](https://nvd.nist.gov/vuln/detail/CVE-2024-4603){: external}.
 
 ### 1.9.6_6634_iks, released 18 May 24
 {: #ingress-alb-1.9.6_6634_iks}
@@ -59,10 +66,13 @@ Review the version history for Ingress ALB.
 {: #ingress-alb-1.9.4}
 
 
+### 1.9.4_6675_iks, released 30 May 24
+{: #ingress-alb-1.9.4_6675_iks}
+
+- Resolves the following CVEs: [CVE-2023-42366](https://nvd.nist.gov/vuln/detail/CVE-2023-42366){: external}, [CVE-2024-34459](https://nvd.nist.gov/vuln/detail/CVE-2024-34459){: external}, and [CVE-2024-4603](https://nvd.nist.gov/vuln/detail/CVE-2024-4603){: external}.
+
 ### 1.9.4_6633_iks, released 18 May 24
 {: #ingress-alb-1.9.4_6633_iks}
-
-[Default version]{: tag-green}
 
 - Updates Go to version `1.22.3`.
 
@@ -103,6 +113,11 @@ Review the version history for Ingress ALB.
 ## Version 1.8.5
 {: #ingress-alb-1.8.5}
 
+
+### 1.8.5_6676_iks, released 30 May 24
+{: #ingress-alb-1.8.5_6676_iks}
+
+- Resolves the following CVEs: [CVE-2023-42366](https://nvd.nist.gov/vuln/detail/CVE-2023-42366){: external}, [CVE-2024-34459](https://nvd.nist.gov/vuln/detail/CVE-2024-34459){: external}, and [CVE-2024-4603](https://nvd.nist.gov/vuln/detail/CVE-2024-4603){: external}.
 
 ### 1.8.5_6632_iks, released 18 May 24
 {: #ingress-alb-1.8.5_6632_iks}
