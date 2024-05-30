@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2024
-lastupdated: "2024-05-29"
+lastupdated: "2024-05-30"
 
 
 keywords: kubernetes,openshift
@@ -59,6 +59,8 @@ The debug pod is deployed with an interactive shell so that you can access the w
     oc debug node/<NODE_NAME>
     ```
     {: pre}
+
+    
     If the `oc debug node/<NODE_NAME>` command fails, there might be security group, ACL, or firewall rules that prevent the default container image from being pulled. Try the command again with the `--image=us.icr.io/armada-master/network-alpine:latest` option, which uses an image from IBM Cloud Container Registry that is accessible over the private network . 
     {: tip}
 
