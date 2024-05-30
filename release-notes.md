@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2024
-lastupdated: "2024-05-29"
+lastupdated: "2024-05-30"
 
 
 keywords: openshift, {{site.data.keyword.openshiftlong_notm}}, kubernetes, release notes
@@ -28,13 +28,13 @@ Looking for {{site.data.keyword.cloud_notm}} status, platform announcements, sec
 ## May 2024
 {: #openshift-may24}
 
+
+
+
+
 ### 29 May 2024
 {: #openshift-may2924}
 {: release-note}
-
-
-
-
 
 
 
@@ -45,8 +45,18 @@ GPU worker node flavors with Red Hat Enterprise Linux CoreOS (RHCOS).
 
 
 
-The {{site.data.keyword.filestorage_vpc_full_notm}} add-on is generally available.
-:   For more information, see [Enabling the {{site.data.keyword.filestorage_vpc_full_notm}} for VPC add-on](/docs/openshift?topic=openshift-storage-file-vpc-install).
+
+
+
+
+{{site.data.keyword.openshiftlong_notm}} master packs.
+:   Master fix pack are applied automatically over the course of several days. You can choose to use the [`ibmcloud ks cluster master update`](/docs/openshift?topic=openshift-kubernetes-service-cli#cs_cluster_update) command yourself without waiting for the update automation to apply the patch. Worker node fix packs can be applied by updating or reloading the worker node in classic infrastructure, or replacing the worker node in VPC infrastructure. Review the following change logs for your cluster version.
+:   [4.15](/docs/openshift?topic=openshift-openshift_changelog_415)
+:   [4.14](/docs/openshift?topic=openshift-openshift_changelog_414)
+:   [4.13](/docs/openshift?topic=openshift-openshift_changelog_413)
+:   [4.12](/docs/openshift?topic=openshift-openshift_changelog_412)
+
+
 
 
 
