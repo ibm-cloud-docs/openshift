@@ -2,7 +2,7 @@
 
 copyright:
   years: 2023, 2024
-lastupdated: "2024-05-29"
+lastupdated: "2024-05-31"
 
 
 keywords: openshift, satellite, distributed cloud, on-prem, hybrid, images, private registry, pull secret
@@ -33,11 +33,8 @@ There are two ways to update the global pull secret in Satellite clusters.
 
 Complete the following steps to update the global pull secret in your {{site.data.keyword.satelliteshort}} cluster.
 
-In the following examples, the `hostPath` is `/root/.docker` which is used for RHCOS hosts. If you have RHEL hosts use `/.docker`.
-{: note}
 
-
-1. Create a secret that contains credentials for the registry you want to use.
+1. Create a secret that has the credentials for the registry you want to use.
     ```sh
     oc create secret docker-registry docker-auth-secret \
     --docker-server=REGISTRY \
@@ -80,14 +77,16 @@ In the following examples, the `hostPath` is `/root/.docker` which is used for R
             - command: ["/bin/sh", "-c"]
               args:
                 - >
+                  echo "Checking if RHEL or RHCOS host";
+                  [[ -s /docker-config/.docker/config.json  ]] && CONFIG_PATH=/docker-config/.docker || CONFIG_PATH=/docker-config/root/.docker;
                   echo "Backing up or restoring config.json";
-                  [[ -s /docker-config/config.json ]] && cp /docker-config/config.json /docker-config/config.json.bak || cp /docker-config/config.json.bak /docker-config/config.json;
+                  [[ -s $CONFIG_PATH/config.json ]] && cp $CONFIG_PATH/config.json $CONFIG_PATH/config.json.bak || cp $CONFIG_PATH/config.json.bak $CONFIG_PATH/config.json;
                   echo "Merging secret with config.json";
-                  /host/usr/bin/jq -s '.[0] * .[1]' /docker-config/config.json /auth/.dockerconfigjson > /docker-config/config.tmp;
-                  mv /docker-config/config.tmp /docker-config/config.json;
-                  echo "Sending signal to reload  crio config";
+                  /host/usr/bin/jq -s '.[0] * .[1]' $CONFIG_PATH/config.json /auth/.dockerconfigjson > $CONFIG_PATH/config.tmp;
+                  mv $CONFIG_PATH/config.tmp $CONFIG_PATH/config.json;
+                  echo "Sending signal to reload crio config";
                   pidof crio;
-                  kill -1 \$(pidof crio)
+                  kill -1 $(pidof crio)
               image: icr.io/ibm/alpine:latest
               imagePullPolicy: IfNotPresent
               name: updater
@@ -122,7 +121,7 @@ In the following examples, the `hostPath` is `/root/.docker` which is used for R
                 secretName: docker-auth-secret
             - name: docker
               hostPath:
-                path: /root/.docker # Note: RHEL hosts use /.docker
+                path: /
             - name: bin
               hostPath:
                 path: /usr/bin
@@ -179,7 +178,7 @@ Complete the following steps to use {{site.data.keyword.satelliteshort}} config 
     ```
     {: pre}
 
-1. Create a configuration file called `secret.yaml` that contains your registry credentials. Paste the base64 encoded `dockerconfigjson` section that you saved in the previous step.
+1. Create a configuration file called `secret.yaml` that has your registry credentials. Paste the base64 encoded `dockerconfigjson` section that you saved in the earlier step.
     ```yaml
     kind: Secret
     apiVersion: v1
@@ -233,14 +232,16 @@ Complete the following steps to use {{site.data.keyword.satelliteshort}} config 
             - command: ["/bin/sh", "-c"]
               args:
                 - >
+                  echo "Checking if RHEL or RHCOS host";
+                  [[ -s /docker-config/.docker/config.json  ]] && CONFIG_PATH=/docker-config/.docker || CONFIG_PATH=/docker-config/root/.docker;
                   echo "Backing up or restoring config.json";
-                  [[ -s /docker-config/config.json ]] && cp /docker-config/config.json /docker-config/config.json.bak || cp /docker-config/config.json.bak /docker-config/config.json;
+                  [[ -s $CONFIG_PATH/config.json ]] && cp $CONFIG_PATH/config.json $CONFIG_PATH/config.json.bak || cp $CONFIG_PATH/config.json.bak $CONFIG_PATH/config.json;
                   echo "Merging secret with config.json";
-                  /host/usr/bin/jq -s '.[0] * .[1]' /docker-config/config.json /auth/.dockerconfigjson > /docker-config/config.tmp;
-                  mv /docker-config/config.tmp /docker-config/config.json;
-                  echo "Sending signal to reload  crio config";
+                  /host/usr/bin/jq -s '.[0] * .[1]' $CONFIG_PATH/config.json /auth/.dockerconfigjson > $CONFIG_PATH/config.tmp;
+                  mv $CONFIG_PATH/config.tmp $CONFIG_PATH/config.json;
+                  echo "Sending signal to reload crio config";
                   pidof crio;
-                  kill -1 \$(pidof crio)
+                  kill -1 $(pidof crio)
               image: icr.io/ibm/alpine:latest
               imagePullPolicy: IfNotPresent
               name: updater
@@ -275,7 +276,7 @@ Complete the following steps to use {{site.data.keyword.satelliteshort}} config 
                 secretName: docker-auth-secret
             - name: docker
               hostPath:
-                path: /root/.docker # Note: RHEL hosts use /.docker
+                path: /
             - name: bin
               hostPath:
                 path: /usr/bin

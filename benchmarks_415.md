@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2024, 2024
-lastupdated: "2024-05-20"
+lastupdated: "2024-05-31"
 
 
 keywords: openshift, benchmarks, 4.15, openshift benchmarks, openshift 4.15
@@ -166,7 +166,7 @@ Review the Worker Node Security Configuration results of the version 1.5 CIS Kub
 
 
 ### 4.1 Worker node configuration files
-{: #cis-benchmark-41-415}
+{: #cis-benchmark-41-415-redhat-8-64}
 
 | Section | Recommendation | Scored/Not Scored | Level | Result | Responsibility |
 | --- | --- | --- | --- | --- | --- |
@@ -183,7 +183,7 @@ Review the Worker Node Security Configuration results of the version 1.5 CIS Kub
 {: caption="Section 4.1 Worker Node Configuration benchmark results" caption-side="bottom"}
 
 ### 4.2 Kubelet
-{: #cis-benchmark-42-415}
+{: #cis-benchmark-42-415-redhat-8-64}
 
 | Section | Recommendation | Scored/Not Scored | Level | Result | Responsibility |
 | --- | --- | --- | --- | --- | --- |
@@ -209,7 +209,7 @@ Review the Worker Node Security Configuration results of the version 1.5 CIS Kub
 Review the Worker Node Security Configuration results of the version 1.5 CIS Kubernetes benchmark.
 
 ### 4.1 Worker node configuration files
-{: #cis-benchmark-41-415}
+{: #cis-benchmark-41-415-rhcos}
 
 | Section | Recommendation | Scored/Not Scored | Level | Result | Responsibility |
 | --- | --- | --- | --- | --- | --- |
@@ -226,7 +226,7 @@ Review the Worker Node Security Configuration results of the version 1.5 CIS Kub
 {: caption="Section 4.1 Worker Node Configuration benchmark results" caption-side="bottom"}
 
 ### 4.2 Kubelet
-{: #cis-benchmark-42-415}
+{: #cis-benchmark-42-415-rhcos}
 
 | Section | Recommendation | Scored/Not Scored | Level | Result | Responsibility |
 | --- | --- | --- | --- | --- | --- |
