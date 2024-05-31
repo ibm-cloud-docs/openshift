@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2024
-lastupdated: "2024-05-29"
+lastupdated: "2024-05-31"
 
 
 keywords: openshift, {{site.data.keyword.openshiftlong_notm}}, kubernetes, firewall, acl, acls, access control list, rules, security group
@@ -175,7 +175,7 @@ By default, traffic rules for VPC ALBs are covered by the `kube-<vpcID>` securit
 
 
 ## Allow the worker nodes to connect to the public service endpoint IPs for the OAuth service
-{: #worker-node-public-service-endpoint}
+{: #worker-node-public-service-endpoint-previous}
 
 Required for VPC clusters with a public service endpoint.
 {: important}

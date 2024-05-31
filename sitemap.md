@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2024
-lastupdated: "2024-05-30"
+lastupdated: "2024-05-31"
 
 
 keywords: openshift
@@ -3807,7 +3807,7 @@ subcollection: openshift
 
     * [Required inbound and outbound rules for VPC ALBs](/docs/openshift?topic=openshift-vpc-security-group#required-group-rules-alb)
 
-* [Allow the worker nodes to connect to the public service endpoint IPs for the OAuth service](/docs/openshift?topic=openshift-vpc-security-group#worker-node-public-service-endpoint)
+* [Allow the worker nodes to connect to the public service endpoint IPs for the OAuth service](/docs/openshift?topic=openshift-vpc-security-group#worker-node-public-service-endpoint-previous)
 
 * [Allow worker nodes to connect to the Ingress LoadBalancer](/docs/openshift?topic=openshift-vpc-security-group#vpc-security-group-loadbalancer-outbound)
 
@@ -6328,15 +6328,15 @@ subcollection: openshift
 
 * [4 Worker node security configuration (REDHAT_8_64)](/docs/openshift?topic=openshift-cis-benchmark-415#cis-section-4-415-redhat-8-64)
 
-    * [4.1 Worker node configuration files](/docs/openshift?topic=openshift-cis-benchmark-415#cis-benchmark-41-415)
+    * [4.1 Worker node configuration files](/docs/openshift?topic=openshift-cis-benchmark-415#cis-benchmark-41-415-redhat-8-64)
 
-    * [4.2 Kubelet](/docs/openshift?topic=openshift-cis-benchmark-415#cis-benchmark-42-415)
+    * [4.2 Kubelet](/docs/openshift?topic=openshift-cis-benchmark-415#cis-benchmark-42-415-redhat-8-64)
 
 * [4 Worker node security configuration (RHCOS)](/docs/openshift?topic=openshift-cis-benchmark-415#cis-section-4-415-rhcos)
 
-    * [4.1 Worker node configuration files](/docs/openshift?topic=openshift-cis-benchmark-415#cis-benchmark-41-415)
+    * [4.1 Worker node configuration files](/docs/openshift?topic=openshift-cis-benchmark-415#cis-benchmark-41-415-rhcos)
 
-    * [4.2 Kubelet](/docs/openshift?topic=openshift-cis-benchmark-415#cis-benchmark-42-415)
+    * [4.2 Kubelet](/docs/openshift?topic=openshift-cis-benchmark-415#cis-benchmark-42-415-rhcos)
 
 * [5 Kubernetes policies](/docs/openshift?topic=openshift-cis-benchmark-415#cis-section-5-415)
 
