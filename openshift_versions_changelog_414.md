@@ -2,7 +2,7 @@
 
 copyright:
   years: 2023, 2024
-lastupdated: "2024-05-30"
+lastupdated: "2024-06-03"
 
 
 keywords: openshift, 4.14, update, upgrade, BOM, bill of materials, versions, patch
@@ -329,9 +329,6 @@ The following table shows the changes that are in the worker node fix pack 4.14.
 | Red Hat OpenShift (worker node) | 4.13.24 | 4.14.4 | See the [Red Hat OpenShift release notes](https://docs.openshift.com/container-platform/4.14/release_notes/ocp-4-14-release-notes.html#ocp-4-14-4). |
 | Red Hat OpenShift on IBM Cloud Control Plane Operator, Metrics Server, and toolkit | 4.13.0+20231102 | 4.14.0+20231128 | See the [Red Hat OpenShift on IBM Cloud toolkit release notes](https://github.com/openshift/ibm-roks-toolkit/releases/tag/v4.14.0+20231128). |
 {: caption="Changes since master fix pack 4.13.23_1550_openshift and worker fix pack 4.13.24_1551_openshift." caption-side="bottom"}
-
-
-
 
 
 

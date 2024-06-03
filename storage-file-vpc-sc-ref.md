@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2022, 2024
-lastupdated: "2024-05-10"
+lastupdated: "2024-06-03"
 
 
 keywords: openshift, file storage, storage class reference, eni
@@ -20,7 +20,7 @@ subcollection: openshift
 
 The available storage classes correspond to the predefined {{site.data.keyword.filestorage_vpc_short}} profiles. For more information about the profiles and IOPs tiers, see [{{site.data.keyword.filestorage_vpc_short}} profiles](/docs/vpc?topic=vpc-file-storage-profiles).
 
-By default, all {{site.data.keyword.filestorage_vpc_short}} devices are endurance storage SSDs that are billed hourly. For more information about pricing, see [Pricing information](https://cloud.ibm.com/cloud-storage/file/order){: external}.
+By default, all {{site.data.keyword.filestorage_vpc_short}} devices are endurance storage solid-state drives that are billed hourly. For more information about pricing, see [Pricing information](https://cloud.ibm.com/cloud-storage/file/order){: external}.
 
 
 | Characteristics | Setting |

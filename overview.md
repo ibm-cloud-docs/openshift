@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2024
-lastupdated: "2024-05-29"
+lastupdated: "2024-06-03"
 
 
 keywords: openshift, {{site.data.keyword.openshiftlong_notm}}, kubernetes, infrastructure, rbac, policy, providers, benefits
@@ -110,7 +110,7 @@ With {{site.data.keyword.openshiftlong}}, you can create a cluster by using infr
 | --- | --- |
 | Overview | Create clusters on virtual servers in your own Virtual Private Cloud (VPC). |
 | Supported container platforms | [{{site.data.keyword.redhat_openshift_notm}}]{: tag-red} or [Kubernetes]{: tag-blue} |
-| Compute and worker node resources | Worker nodes are created as virtual machines by using either shared infrastructure or dedicated hosts. Unlike classic clusters, VPC cluster worker nodes on shared hardware don't appear in your infrastructure portal or a separate infrastructure bill. Instead, you manage all maintenance and billing activity for the worker nodes through {{site.data.keyword.openshiftlong_notm}}. Your worker node instances are connected to certain VPC instances that do reside in your infrastructure account, such as the VPC subnet or storage volumes. For dedicated hosts, the dedicated host price covers the vCPU, memory, and any [instance storage](/docs/vpc?topic=vpc-instance-storage) to be used by any workers placed on the host. Note that all Intel® x86-64 servers have Hyper-Threading enabled by default. For more information, see [Intel Hyper-Threading Technology](/docs/vpc?topic=vpc-profiles#vpc-intel-hyper-threading). |
+| Compute and worker node resources | Worker nodes are created as virtual machines by using either shared infrastructure or dedicated hosts. Unlike classic clusters, VPC cluster worker nodes on shared hardware don't appear in your infrastructure portal or a separate infrastructure bill. Instead, you manage all maintenance and billing activity for the worker nodes through {{site.data.keyword.openshiftlong_notm}}. Your worker node instances are connected to certain VPC instances that do reside in your infrastructure account, such as the VPC subnet or storage volumes. For dedicated hosts, the dedicated host price covers the vCPU, memory, and any [instance storage](/docs/vpc?topic=vpc-instance-storage) to be used by any workers placed on the host. Note that all Intel® x86-64 servers have Hyper-Threading enabled by default. For more information, see [Intel Hyper-Threading Technology](/docs/vpc?topic=vpc-profiles#vpc-intel-hyper-threading-technology). |
 | Security | Clusters on shared hardware run in an isolated environment in the public cloud. Clusters on dedicated hosts do not run in a shared environment, instead only your clusters are present on your hosts. Network access control lists protect the subnets that provide the floating IPs for your worker nodes. |
 | High availability | The master includes three replicas for high availability. Further, if you create your cluster in a multizone metro, the master replicas are spread across zones and you can also spread your worker pools across zones. |
 | Reservations | Reservations aren't available for VPC. |

@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2024
-lastupdated: "2024-04-29"
+lastupdated: "2024-06-03"
 
 
 keywords: openshift, {{site.data.keyword.openshiftlong_notm}}
@@ -44,11 +44,8 @@ Modifying feature gates is not supported in {{site.data.keyword.openshiftlong_no
 :   Community feature gates applied.
 
 
-
-
 4.14
 :   `RetroactiveDefaultStorageClass=false`
-
 
 
 4.13

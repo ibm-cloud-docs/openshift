@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2022, 2024
-lastupdated: "2024-05-29"
+lastupdated: "2024-06-03"
 
 keywords: kubernetes, openshift
 
@@ -200,7 +200,7 @@ Next steps
 
 To provision volumes that support expansion, you must use storage class that has `allowVolumeExpansion` set to `true`. Note that only volumes that are mounted by an app pod can be expanded.
 
-1. Begin by deploying the [quickstart example PVC and Deployment](#vpc-add-file-dynamic). 
+1. Begin by deploying the [quick start example PVC and Deployment](#vpc-add-file-dynamic). 
 
 1. After your PVC is mounted by an app pod, you can expand your volume by editing the value of the `spec.resources.requests.storage` field in your PVC. To expand your volume, edit your PVC and increase the value in the `spec.resources.requests.storage` field.
 

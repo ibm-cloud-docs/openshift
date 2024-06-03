@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2024
-lastupdated: "2024-05-29"
+lastupdated: "2024-06-03"
 
 
 keywords: openshift, {{site.data.keyword.openshiftlong_notm}}, kubernetes, clusters, worker nodes, worker pools, vpc-gen2
@@ -21,13 +21,6 @@ subcollection: openshift
 
 Use the {{site.data.keyword.cloud_notm}} CLI or the {{site.data.keyword.cloud_notm}} console to create a standard VPC cluster, and customize your cluster to meet the high availability and security requirements of your apps.
 {: shortdesc}
-
-
-
-Creating a version 4.15 cluster? [Review the version information](/docs/openshift?topic=openshift-cs_versions_415) for important networking changes introduced in {{site.data.keyword.openshiftlong_notm}} version 4.15 and later.
-{: important}
-
-
 
 ## Prerequisites and notes
 {: #cluster-create-vpc-prereq}

@@ -2,7 +2,7 @@
 
 copyright:
   years: 2023, 2024
-lastupdated: "2024-02-23"
+lastupdated: "2024-06-03"
 
 
 keywords: data science, AI, machine learning, AI modeling, modeling, GPUs, NVIDIA, node feature discovery, pipelines
@@ -36,7 +36,7 @@ The following steps refer to the Red Hat documentation. For more information see
 
 1. [Request access](/docs/openshift?topic=openshift-allowlist-request) to GPU worker nodes on VPC clusters, which are currently behind an allowlist. 
 
-2. [Create a Red Hat OpenShift VPC cluster](/docs/openshift?topic=openshift-cluster-create-vpc-gen2&interface=ui) that runs on [bare metal GPU worker nodes](/docs/openshift?topic=openshift-planning_worker_nodes#bm) and has a public cloud service endpoint. If you choose to use a private cloud service endpoint, make sure you configure your cluster so that you can access the OpenShift web console. 
+2. [Create a Red Hat OpenShift VPC cluster](/docs/openshift?topic=openshift-cluster-create-vpc-gen2&interface=ui) that has a public cloud service endpoint. If you choose to use a private cloud service endpoint, make sure you configure your cluster so that you can access the OpenShift web console. 
 
 3. Make sure you can [access the your cluster through the OpenShift web console](/docs/openshift?topic=openshift-access_cluster#access_oc_console). 
 

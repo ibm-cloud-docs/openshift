@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2024
-lastupdated: "2024-05-30"
+lastupdated: "2024-06-03"
 
 
 keywords: openshift, {{site.data.keyword.openshiftlong_notm}}, kubernetes, release notes
@@ -24,6 +24,8 @@ Use the release notes to learn about the latest changes to the documentation tha
 
 Looking for {{site.data.keyword.cloud_notm}} status, platform announcements, security bulletins, or maintenance notifications? See [{{site.data.keyword.cloud_notm}} status](https://cloud.ibm.com/status?selected=status).
 {: tip}
+
+
 
 ## May 2024
 {: #openshift-may24}
@@ -469,6 +471,10 @@ A new tutorial is available for creating a small {{site.data.keyword.redhat_open
 
 {{site.data.keyword.openshiftlong_notm}} cluster autoscaler add-on patch update `1.1.0_362`.
 :   For more information, see [the change log](/docs/openshift?topic=openshift-ca_changelog).
+
+
+
+
 
 
 

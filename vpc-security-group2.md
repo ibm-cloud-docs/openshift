@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2023, 2024
-lastupdated: "2024-05-29"
+lastupdated: "2024-06-03"
 
 
 keywords: openshift, {{site.data.keyword.openshiftlong_notm}}, firewall, acl, acls, access control list, rules, security group, 4.15, networking, secure by default, outbound traffic protection
@@ -100,7 +100,7 @@ Do not modify the rules in the `kube-<clusterID>` security group as doing so mig
 
 
 
-`**` Hub and Spoke VPCs use custom DNS resolvers on the VPC. Traffic must flow through the IP addresses of each DNS resolver.  There are two rules per zone (TCP and UDP) through port 53.
+`**` Hub and Spoke VPCs use custom DNS resolvers on the VPC. Traffic must flow through the IP addresses of each DNS resolver. There are two rules per zone (TCP and UDP) through port 53.
 
 
 ### Master VPE gateway security group
@@ -178,6 +178,5 @@ Backup communication over the public network
 
 OpenShift Data Foundation and Portworx encryption
 :   If you plan to use OpenShift Data Foundation or Portworx in a cluster with no public network access, and you want to use {{site.data.keyword.hscrypto}} or {{site.data.keyword.keymanagementserviceshort}} for encryption, you must create a virtual private endpoint gateway (VPE) that allows access to your KMS instance. Make sure to bind at least 1 IP address from each subnet in your VPC to the VPE.
-
 
 
