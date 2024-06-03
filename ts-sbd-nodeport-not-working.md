@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2024, 2024
-lastupdated: "2024-04-24"
+lastupdated: "2024-06-03"
 
 
 keywords: openshift, {{site.data.keyword.openshiftlong_notm}}, secure by default, node port not working, {{site.data.keyword.openshiftlong_notm}}, outbound traffic protection
@@ -45,5 +45,4 @@ Update the security group rules for your node port service.
 
 There are quota limitations on the number of rules allowed per security group. If adding the custom nodeport rule exceeds this quota the rule is not added. In this case, consider using an {{site.data.keyword.openshiftlong_notm}} managed load balancer service or modifying the `port-min` or `port-max` settings on your rule(s) to use a nodeport range.
 {: note}
-
 

@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2024
-lastupdated: "2024-05-29"
+lastupdated: "2024-06-03"
 
 
 keywords: openshift, block storage, deploy apps
@@ -1315,5 +1315,5 @@ For example:
 - If a value of `20Gi` is provided, applying the above formula, the volume that is created is `20GB`.
 - If a value of `20G` is provided, the volume that is created is `19GB`.
 
-In some cases, the capacity of the volume that is created is less than the requested value. Note that billing applies for the volume that gets created, not the requested volume.
+Sometimes, the capacity of the volume that is created is less than the requested value. Note that billing applies for the volume that gets created, not the requested volume.
 
