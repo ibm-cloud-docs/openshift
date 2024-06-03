@@ -428,6 +428,93 @@ Before you begin, make sure that you have deployed the [Node Feature Discovery O
         
     1. Repeat these steps for each worker node that you want to reboot.
 
+## Enabling `kernel-devel` packages
+{: #enable-kernel-devel}
+
+[{{site.data.keyword.satelliteshort}}]{: tag-satellite}
+
+You might need to enable `kernel-devel` packages to use {{site.data.keyword.satelliteshort}} services or storage such as Spectrum Scale Fusion.
+
+Complete the following steps to enable `kernel-devel` by applying a custom config map and machine config to your worker nodes.
+
+1. Run the following command to apply the `MachineConfig`.
+
+    ```sh
+    ibmcloud ks cluster config --cluster CLUSTERID 
+    cat >"/tmp/kernel-devel-payload.yaml" <<EOF
+    apiVersion: v1
+    kind: List
+    metadata:
+      name: pvg-machine-config-tester
+      annotations:
+    items:
+      - apiVersion: v1
+        kind: Namespace
+        metadata:
+          name: ibm-machine-config
+      - apiVersion: v1
+        data:
+          config: |+
+            apiVersion: machineconfiguration.openshift.io/v1
+            kind: MachineConfig
+            metadata:
+              name: 97-kerneldevel
+              labels:
+                machineconfiguration.openshift.io/role: worker
+            spec:
+              config:
+                ignition:
+                  version: 3.2.0
+              extensions:
+              - kernel-devel
+        kind: ConfigMap
+        metadata:
+          labels:
+            ibm-cloud.kubernetes.io/user-specified-config: "true"
+          name: user-ignition-config-97-kerneldevel
+          namespace: ibm-machine-config
+    EOF
+    kubectl apply -f /tmp/kernel-devel-payload.yaml
+    ```
+    {: codeblock}
+
+1. Wait for the resources to deploy. This might take 5 minutes or more.
+
+1. Review the details of the config map to confirm that deployment was successful.
+
+    1. Confirm that the `config-validation="valid"` field is present.
+
+        ```sh
+        kubectl get cm -n ibm-machine-config user-ignition-config-97-kerneldevel -o yaml | grep config-validation
+        ```
+        {: pre}
+
+    1. Confirm that `user-ignition-config-97-kerneldevel` is present in the config map.
+        ```sh
+        kubectl get cm -n ibm-machine-config -l ibm-cloud.kubernetes.io/nodepoolfeedback="true" -o yaml | grep user-ignition-config-97-kerneldevel
+        ```
+        {: pre}
+
+1. Add worker nodes to your cluster. Worker nodes that you add have `kernel-devel` enabled.
+
+1. Verify `kernel-devel` is enabled.
+    1. Start a debug pod on one of your nodes.
+        ```sh
+        oc debug node/NODEIP
+        ```
+        {: pre}
+
+    1. Run the following `nsenter` command.
+        ```sh
+        nsenter -t 1 -m -u -i -n -p -- rpm -qa | grep kernel-devel
+        ```
+        {: pre}
+
+1. **Optional**: If you no longer need `kernel-devel`, you can remove it by running the following command.
+    ```sh
+    kubectl delete cm -n ibm-machine-config user-ignition-config-97-kerneldevel
+    ```
+    {: pre}
 
 ## Removing performance customizations
 {: #rhcos-performance-remove}

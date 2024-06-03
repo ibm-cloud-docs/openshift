@@ -5470,6 +5470,8 @@ subcollection: openshift
 
 * [Enabling CPU pinning and huge pages on your worker nodes](/docs/openshift?topic=openshift-rhcos-performance#rhcos-pinning-huge)
 
+* [Enabling `kernel-devel` packages](/docs/openshift?topic=openshift-rhcos-performance#enable-kernel-devel)
+
 * [Removing performance customizations](/docs/openshift?topic=openshift-rhcos-performance#rhcos-performance-remove)
 
 
