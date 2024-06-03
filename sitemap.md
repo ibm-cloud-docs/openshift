@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2024
-lastupdated: "2024-05-31"
+lastupdated: "2024-06-03"
 
 
 keywords: openshift
@@ -5469,8 +5469,6 @@ subcollection: openshift
 * [Enabling non-uniform memory access (NUMA), CPU pinning, and huge pages on your worker nodes](/docs/openshift?topic=openshift-rhcos-performance#rhcos-numa-pinning-huge)
 
 * [Enabling CPU pinning and huge pages on your worker nodes](/docs/openshift?topic=openshift-rhcos-performance#rhcos-pinning-huge)
-
-* [Enabling `kernel-devel` packages](/docs/openshift?topic=openshift-rhcos-performance#enable-kernel-devel)
 
 * [Removing performance customizations](/docs/openshift?topic=openshift-rhcos-performance#rhcos-performance-remove)
 

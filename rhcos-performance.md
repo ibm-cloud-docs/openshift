@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2022, 2024
-lastupdated: "2024-05-29"
+lastupdated: "2024-06-03"
 
 
 keywords: openshift, kernel, rhcos, cpu pinning, huge pages, numa, core os
@@ -35,10 +35,14 @@ Instead of tuning worker node performance with `MachineConfig` files in {{site.d
 ## Deploying the Node Feature Discovery Operator
 {: #rhcos-node-feature-discovery}
 
+[{{site.data.keyword.satelliteshort}}]{: tag-satellite}
+
 Before you can enable NUMA, CPU pinning, and huge pages on your worker nodes, you must deploy the Node Feature Discovery Operator. For more information, see [The Node Feature Discovery Operator](https://docs.openshift.com/container-platform/4.8/scalability_and_performance/psap-node-feature-discovery-operator.html){: external}.
 
 ## Enabling non-uniform memory access (NUMA), CPU pinning, and huge pages on your worker nodes
 {: #rhcos-numa-pinning-huge}
+
+[{{site.data.keyword.satelliteshort}}]{: tag-satellite}
 
 Before you begin, make sure that you have deployed the [Node Feature Discovery Operator](#rhcos-node-feature-discovery).
 
@@ -93,7 +97,31 @@ Before you begin, make sure that you have deployed the [Node Feature Discovery O
         GIGABYTES_RESERVED_MEMORY_ROUNDED_UP=$(echo $GIGABYTES_RESERVED_MEMORY | awk '{print int($1+0.999)}')
         sed -i "s/SYSTEM_RESERVED_MEMORY=.*/SYSTEM_RESERVED_MEMORY=${GIGABYTES_RESERVED_MEMORY_ROUNDED_UP}Gi/g" /etc/node-sizing.env
         TOTAL_NUMA_MEMORY_TO_ALLOCATE=$(echo "$GIGABYTES_RESERVED_MEMORY_ROUNDED_UP" "1024" | awk '{print $1 * $2 + 100}')
-        cat >/tmp/ibm-user-config.conf <<EOF
+        if cat /etc/kubernetes/kubelet.conf | jq -r .; then
+          cat >/tmp/ibm-user-config.conf.json <<EOF
+          {
+            "topologyManagerPolicy": "<<TOPOLOGY_MANAGER_POLICY_VALUE>>",
+            "memoryManagerPolicy": "Static",
+            "cpuManagerPolicy": "static",
+            "reservedMemory": [
+              {
+                "numaNode": 0,
+                "limits": {
+                "memory": "${TOTAL_NUMA_MEMORY_TO_ALLOCATE}Mi"
+                  }
+              }
+            ]
+          }
+        EOF
+          if ! cat /tmp/ibm-user-config.conf.json | jq -r .; then
+            exit 1
+          fi
+          if ! jq -s '.[0] * .[1]' /tmp/ibm-user-config.conf.json /etc/kubernetes/kubelet.conf > /etc/kubernetes/tmp-kubelet.conf; then
+            exit 1
+          fi
+          mv -f /etc/kubernetes/tmp-kubelet.conf /etc/kubernetes/kubelet.conf
+          else
+            cat >/tmp/ibm-user-config.conf <<EOF
         #START USER CONFIG
         topologyManagerPolicy: <<TOPOLOGY_MANAGER_POLICY_VALUE>>
         memoryManagerPolicy: Static
@@ -104,8 +132,9 @@ Before you begin, make sure that you have deployed the [Node Feature Discovery O
               memory: ${TOTAL_NUMA_MEMORY_TO_ALLOCATE}Mi
         #END USER CONFIG
         EOF
-        sed -i '/#START USER CONFIG/,/#END USER CONFIG/d' /etc/kubernetes/kubelet.conf
-        cat /tmp/ibm-user-config.conf >>/etc/kubernetes/kubelet.conf
+          sed -i '/#START USER CONFIG/,/#END USER CONFIG/d' /etc/kubernetes/kubelet.conf
+          cat /tmp/ibm-user-config.conf >>/etc/kubernetes/kubelet.conf
+        fi
       ibm-user-custom-configuration.service: |
         [Unit]
         Description=Add custom user config to kubelet
@@ -221,6 +250,8 @@ Before you begin, make sure that you have deployed the [Node Feature Discovery O
 ## Enabling CPU pinning and huge pages on your worker nodes
 {: #rhcos-pinning-huge}
 
+[{{site.data.keyword.satelliteshort}}]{: tag-satellite}
+
 Before you begin, make sure that you have deployed the [Node Feature Discovery Operator](#rhcos-node-feature-discovery).
 
 1. Save the following `DaemonSet` to a file called `cpu-pinning.yaml`.
@@ -270,13 +301,28 @@ Before you begin, make sure that you have deployed the [Node Feature Discovery O
       ibm-user-custom-configuration.sh: |
         #!/usr/bin/env bash
         set -x
-        cat >/tmp/ibm-user-config.conf <<EOF
+        if cat /etc/kubernetes/kubelet.conf | jq -r .; then
+          cat >/tmp/ibm-user-config.conf.json <<EOF
+          {
+            "cpuManagerPolicy": "static"
+          }
+        EOF
+          if ! cat /tmp/ibm-user-config.conf.json | jq -r .; then
+            exit 1
+          fi
+          if ! jq -s '.[0] * .[1]' /tmp/ibm-user-config.conf.json /etc/kubernetes/kubelet.conf > /etc/kubernetes/tmp-kubelet.conf; then
+            exit 1
+          fi
+          mv -f /etc/kubernetes/tmp-kubelet.conf /etc/kubernetes/kubelet.conf
+        else
+          cat >/tmp/ibm-user-config.conf <<EOF
         #START USER CONFIG
         cpuManagerPolicy: static
         #END USER CONFIG
         EOF
-        sed -i '/#START USER CONFIG/,/#END USER CONFIG/d' /etc/kubernetes/kubelet.conf
-        cat /tmp/ibm-user-config.conf >>/etc/kubernetes/kubelet.conf
+          sed -i '/#START USER CONFIG/,/#END USER CONFIG/d' /etc/kubernetes/kubelet.conf
+          cat /tmp/ibm-user-config.conf >>/etc/kubernetes/kubelet.conf
+        fi
       ibm-user-custom-configuration.service: |
         [Unit]
         Description=Add custom user config to kubelet
@@ -383,98 +429,10 @@ Before you begin, make sure that you have deployed the [Node Feature Discovery O
     1. Repeat these steps for each worker node that you want to reboot.
 
 
-## Enabling `kernel-devel` packages
-{: #enable-kernel-devel}
-
-[{{site.data.keyword.satelliteshort}}]{: tag-satellite}
-
-You might need to enable `kernel-devel` packages to use {{site.data.keyword.satelliteshort}} services or storage such as Spectrum Scale Fusion.
-
-Complete the following steps to enable `kernel-devel` by applying a custom config map and machine config to your worker nodes.
-
-1. Run the following command to apply the `MachineConfig`.
-
-    ```sh
-    ibmcloud ks cluster config --cluster CLUSTERID 
-    cat >"/tmp/kernel-devel-payload.yaml" <<EOF
-    apiVersion: v1
-    kind: List
-    metadata:
-      name: pvg-machine-config-tester
-      annotations:
-    items:
-      - apiVersion: v1
-        kind: Namespace
-        metadata:
-          name: ibm-machine-config
-      - apiVersion: v1
-        data:
-          config: |+
-            apiVersion: machineconfiguration.openshift.io/v1
-            kind: MachineConfig
-            metadata:
-              name: 97-kerneldevel
-              labels:
-                machineconfiguration.openshift.io/role: worker
-            spec:
-              config:
-                ignition:
-                  version: 3.2.0
-              extensions:
-              - kernel-devel
-        kind: ConfigMap
-        metadata:
-          labels:
-            ibm-cloud.kubernetes.io/user-specified-config: "true"
-          name: user-ignition-config-97-kerneldevel
-          namespace: ibm-machine-config
-    EOF
-    kubectl apply -f /tmp/kernel-devel-payload.yaml
-    ```
-    {: codeblock}
-
-1. Wait for the resources to deploy. This might take 5 minutes or more.
-
-1. Review the details of the config map to confirm that deployment was successful.
-
-    1. Confirm that the `config-validation="valid"` field is present.
-
-        ```sh
-        kubectl get cm -n ibm-machine-config user-ignition-config-97-kerneldevel -o yaml | grep config-validation
-        ```
-        {: pre}
-
-    1. Confirm that `user-ignition-config-97-kerneldevel` is present in the config map.
-        ```sh
-        kubectl get cm -n ibm-machine-config -l ibm-cloud.kubernetes.io/nodepoolfeedback="true" -o yaml | grep user-ignition-config-97-kerneldevel
-        ```
-        {: pre}
-
-1. Add worker nodes to your cluster. Worker nodes that you add have `kernel-devel` enabled.
-
-1. Verify `kernel-devel` is enabled.
-    1. Start a debug pod on one of your nodes.
-        ```sh
-        oc debug node/NODEIP
-        ```
-        {: pre}
-
-    1. Run the following `nsenter` command.
-        ```sh
-        nsenter -t 1 -m -u -i -n -p -- rpm -qa | grep kernel-devel
-        ```
-        {: pre}
-
-1. **Optional**: If you no longer need `kernel-devel`, you can remove it by running the following command.
-    ```sh
-    kubectl delete cm -n ibm-machine-config user-ignition-config-97-kerneldevel
-    ```
-    {: pre}
-
-
-
 ## Removing performance customizations
 {: #rhcos-performance-remove}
+
+[{{site.data.keyword.satelliteshort}}]{: tag-satellite}
 
 If you want to remove customizations from your worker nodes and reset them to the default configurations, apply the following `DaemonSet`.
 
@@ -525,7 +483,14 @@ If you want to remove customizations from your worker nodes and reset them to th
       ibm-user-custom-configuration.sh: |
         #!/usr/bin/env bash
         set -x
-        sed -i '/#START USER CONFIG/,/#END USER CONFIG/d' /etc/kubernetes/kubelet.conf
+        if cat /etc/kubernetes/kubelet.conf | jq -r .; then
+          if ! jq 'del(.topologyManagerPolicy, .memoryManagerPolicy, .cpuManagerPolicy, .reservedMemory)' /etc/kubernetes/kubelet.conf > /etc/kubernetes/tmp-kubelet.conf; then
+            exit 1
+          fi
+          mv -f /etc/kubernetes/tmp-kubelet.conf /etc/kubernetes/kubelet.conf
+        else
+          sed -i '/#START USER CONFIG/,/#END USER CONFIG/d' /etc/kubernetes/kubelet.conf
+        fi
       ibm-user-custom-configuration.service: |
         [Unit]
         Description=Add custom user config to kubelet
@@ -624,4 +589,3 @@ If you want to remove customizations from your worker nodes and reset them to th
         {: pre}
         
     1. Repeat these steps for each worker node that you want to reboot.
-
