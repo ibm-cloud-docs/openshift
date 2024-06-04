@@ -2,10 +2,10 @@
 
 copyright: 
   years: 2023, 2024
-lastupdated: "2024-06-03"
+lastupdated: "2024-06-04"
 
 
-keywords: openshift, {{site.data.keyword.openshiftlong_notm}}, firewall, acl, acls, access control list, rules, security group, 4.15, networking, secure by default, outbound traffic protection
+keywords: openshift, {{site.data.keyword.openshiftlong_notm}}, firewall, rules, security group, 4.15, networking, secure by default, outbound traffic protection
 
 subcollection: openshift
 
