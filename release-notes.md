@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2024
-lastupdated: "2024-06-03"
+lastupdated: "2024-06-04"
 
 
 keywords: openshift, {{site.data.keyword.openshiftlong_notm}}, kubernetes, release notes
@@ -24,6 +24,26 @@ Use the release notes to learn about the latest changes to the documentation tha
 
 Looking for {{site.data.keyword.cloud_notm}} status, platform announcements, security bulletins, or maintenance notifications? See [{{site.data.keyword.cloud_notm}} status](https://cloud.ibm.com/status?selected=status).
 {: tip}
+
+
+## June 2024
+{: #openshift-june24}
+  
+### 4 June 2024
+{: #openshift-june0424}
+{: release-note}
+ 
+
+{{site.data.keyword.openshiftlong_notm}} worker node fix packs.
+:   Worker node fix packs can be applied by updating or reloading the worker node in classic infrastructure, or replacing the worker node in VPC infrastructure. Review the following change logs for your cluster version.
+:   [4.15](/docs/openshift?topic=openshift-openshift_changelog_415)
+:   [4.14](/docs/openshift?topic=openshift-openshift_changelog_414)
+:   [4.13](/docs/openshift?topic=openshift-openshift_changelog_413)
+:   [4.12](/docs/openshift?topic=openshift-openshift_changelog_412)
+
+Image Key Synchronizer add-on patch update.
+:   For more information, see the [change log](/docs/openshift?topic=openshift-ibm-cloud-image-key-synchronizer-change-log).
+
 
 
 

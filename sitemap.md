@@ -273,6 +273,14 @@ subcollection: openshift
 
 [Release notes](/docs/openshift?topic=openshift-openshift-relnotes#openshift-relnotes)
 
+* [June 2024](/docs/openshift?topic=openshift-openshift-relnotes#openshift-june24)
+
+    * [4 June 2024](/docs/openshift?topic=openshift-openshift-relnotes#openshift-june0424)
+
+        * {{site.data.keyword.openshiftlong_notm}} worker node fix packs.
+
+        * Image Key Synchronizer add-on patch update.
+
 * [May 2024](/docs/openshift?topic=openshift-openshift-relnotes#openshift-may24)
 
     * [29 May 2024](/docs/openshift?topic=openshift-openshift-relnotes#openshift-may2924)
