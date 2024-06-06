@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2024
-lastupdated: "2024-05-22"
+lastupdated: "2024-06-06"
 
 
 keywords: openshift, {{site.data.keyword.openshiftlong_notm}}, kubernetes, registry, pull secret, secrets
@@ -797,7 +797,7 @@ To update your cluster image pull secret in the `default` Kubernetes namespace.
 
 
 
-## Using an image pull secret to access images in other {{site.data.keyword.cloud_notm}} accounts or external private registries from non-default {{site.data.keyword.redhat_openshift_notm}} projects
+## Using an image pull secret to access images in other accounts or external private registries from non-default {{site.data.keyword.redhat_openshift_notm}} projects
 {: #other}
 
 Set up your own image pull secret in your cluster to deploy containers to {{site.data.keyword.redhat_openshift_notm}} projects other than `default`, use images that are stored in other {{site.data.keyword.cloud_notm}} accounts, or use images that are stored in external private registries. Further, you might create your own image pull secret to apply IAM access policies that restrict permissions to specific registry image namespaces, or actions (such as `push` or `pull`).

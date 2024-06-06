@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2024
-lastupdated: "2024-03-15"
+lastupdated: "2024-06-06"
 
 
 keywords: openshift
@@ -17,9 +17,7 @@ content-type: troubleshoot
 
 
 
-
-
-# Classic: Why do I see a timeout error when I try to log in to a pod on a new worker node?
+# Why do I see a timeout error when I try to log in to a pod on a new worker node?
 {: #cs_nodes_duplicate_ip}
 {: support}
 

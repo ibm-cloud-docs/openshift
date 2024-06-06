@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2024
-lastupdated: "2024-05-07"
+lastupdated: "2024-06-06"
 
 
 keywords: openshift, logmet, logs, metrics, audit, events
@@ -87,7 +87,7 @@ The Kubernetes audit system in your cluster consists of an audit webhook, a log 
 
     
 
-    **OpenShift clusters up to version 4.10**
+    OpenShift clusters up to version 4.10
   
     ```yaml
     apiVersion: v1
@@ -168,7 +168,7 @@ The Kubernetes audit system in your cluster consists of an audit webhook, a log 
     ```
     {: codeblock}
 
-    **OpenShift clusters version 4.11 and later**
+    OpenShift clusters version 4.11 and later
   
     ```yaml
     apiVersion: v1

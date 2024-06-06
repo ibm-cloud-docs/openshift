@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2022, 2024
-lastupdated: "2024-04-04"
+lastupdated: "2024-06-06"
 
 
 keywords: kubernetes, help, network, connectivity, webhooks
@@ -50,7 +50,7 @@ Admission control webhooks provide the ability to validate or modify, or mutate,
 
 Webhooks have a failure policy that indicates whether Kubernetes can ignore connection errors when calling the webhook or whether connection error  must fail the operation. A `ValidatingWebhookConfiguration` resource inspects the request while a `MutatingWebhookConfiguration` resource modifies the request data before it is processed.
 
-Webhooks can also deny requests as part of normal operation: A webhook might deny requests that violate security policies or it might perform other data validation. In such cases the failure information will contain a "denied the request" response with a reason indicating the problem.
+Webhooks can also deny requests as part of normal operation: A webhook might deny requests that violate security policies or it might perform other data validation. In such cases the failure information contains a `denied the request` response with a reason indicating the problem.
 
 ```sh
 admission webhook "mutate.configuration.upsert.appconnect.ibm.com" denied the request: version is not supported

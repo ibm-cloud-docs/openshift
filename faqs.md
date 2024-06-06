@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2024
-lastupdated: "2024-05-14"
+lastupdated: "2024-06-06"
 
 
 keywords: openshift, ocp, compliance, security standards, faq, openshift pricing, ocp pricing, openshift charges, ocp charges, openshift price, ocp price, openshift billing, ocp billing, openshift costs, ocp costs
@@ -340,7 +340,7 @@ You can add {{site.data.keyword.cloud_notm}} platform and infrastructure service
 For a list of supported services, see [Integrating services](/docs/containers?topic=containers-supported_integrations#supported_integrations).
 
 
-## How do I install a Cloud Pak in my {{site.data.keyword.openshiftlong_notm}} cluster? How do I access it later?
+## How do I install a Cloud Pak in my cluster?
 {: #cloud_pak_manage}
 
 Cloud Paks are integrated with the {{site.data.keyword.cloud_notm}} catalog so that you can quickly configure and install the all the Cloud Pak components into an existing or new {{site.data.keyword.redhat_openshift_notm}} cluster. When you install the Cloud Pak, the Cloud Pak is provisioned with {{site.data.keyword.bpshort}} and a {{site.data.keyword.bpshort}} workspace is created for you. You can use the workspace later to access information about your Cloud Pak installation. You access your Cloud Pak services from the Cloud Pak URL. For more information, consult the [Cloud Pak documentation](https://www.ibm.com/cloud-paks/){: external}.

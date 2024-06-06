@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2024
-lastupdated: "2024-04-24"
+lastupdated: "2024-06-06"
 
 
 keywords: openshift, {{site.data.keyword.openshiftlong_notm}}, object storage, plug-in, change log
@@ -30,9 +30,16 @@ Refer to the following tables for a summary of changes for each version of the [
 
 | {{site.data.keyword.cos_full_notm}} plug-in version | Supported? | {{site.data.keyword.redhat_openshift_notm}} version support | Supported architecture |
 | --- | --- |--- | --- |
-| 2.2.24, 2.2.25 | Yes | Greater than or equal to 4.6 | x86 |
-| 2.2.22, 2.2.23 | Deprecated | Greater than or equal to 4.6 | x86 |
+| 2.2.25, 2.2.26 | Yes | Greater than or equal to 4.6 | x86 |
+| 2.2.22, 2.2.23, 2.2.24 | Deprecated | Greater than or equal to 4.6 | x86 |
 {: caption="{{site.data.keyword.cos_full_notm}} plug-in versions" caption-side="bottom"}
+
+## Change log for version 2.2.26, released 5 June 2024
+{: #02226_object_plugin}
+
+- Adds HPCS support.
+- Updates golang base image to fix vulnerabilities [CVE-2023-7008](https://nvd.nist.gov/vuln/detail/CVE-2023-7008){: external}, [CVE-2024-2961](https://nvd.nist.gov/vuln/detail/CVE-2024-2961){: external}, [CVE-2024-33599](https://nvd.nist.gov/vuln/detail/CVE-2024-33599){: external}, [CVE-2024-33600](https://nvd.nist.gov/vuln/detail/CVE-2024-33600){: external}, [CVE-2024-33601](https://nvd.nist.gov/vuln/detail/CVE-2024-33601){: external}, [CVE-2024-33602](https://nvd.nist.gov/vuln/detail/CVE-2024-33602){: external}.
+
 
 ## Change log for version 2.2.25, released 24 April 2024
 {: #02225_object_plugin}

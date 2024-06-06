@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2024, 2024
-lastupdated: "2024-05-07"
+lastupdated: "2024-06-06"
 
 keywords: openshift, {{site.data.keyword.openshiftlong_notm}}, secure by default, outbound traffic protection, 4.15
 
@@ -198,7 +198,7 @@ Beginning with 4.15 clusters, an additional security group rule is needed for VP
     ```
     {: pre}
 
-1. Get the "Client IP pool" of your VPN server.
+1. Get the **Client IP pool** of your VPN server.
     ```sh
     ibmcloud is vpn-server | grep "Client IP pool"
     ```
