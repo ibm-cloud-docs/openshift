@@ -20,7 +20,7 @@ subcollection: openshift
 # 4.10 version information and update actions
 {: #cs_versions_410}
 
-This version no longer supported. Update your cluster to a [supported version](/docs/openshift?topic=openshift-cs_versions) as soon as possible.
+This version is no longer supported. Update your cluster to a [supported version](/docs/openshift?topic=openshift-cs_versions) as soon as possible.
 {: important}
 
 Review information about version 4.10 of {{site.data.keyword.openshiftlong_notm}}. This version is based on Kubernetes version 1.23. 

@@ -20,7 +20,7 @@ subcollection: openshift
 # 4.10 compliance operator benchmark
 {: #benchmarks_410_co}
 
-This version no longer supported. Update your cluster to a [supported version](/docs/openshift?topic=openshift-cs_versions) as soon as possible.
+This version is no longer supported. Update your cluster to a [supported version](/docs/openshift?topic=openshift-cs_versions) as soon as possible.
 {: important}
 
 ## 1 Control plane components
