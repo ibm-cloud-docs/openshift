@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2024
-lastupdated: "2024-06-04"
+lastupdated: "2024-06-06"
 
 
 keywords: openshift
@@ -7837,6 +7837,8 @@ subcollection: openshift
 [IBM Cloud Image Key Synchronizer version change log](/docs/openshift?topic=openshift-ibm-cloud-image-key-synchronizer-change-log#ibm-cloud-image-key-synchronizer-change-log)
 
 * [Version 1.0.0](/docs/openshift?topic=openshift-ibm-cloud-image-key-synchronizer-change-log#ibm-cloud-image-key-synchronizer-1.0.0)
+
+    * [1.0.0_2258, released 06 June 24](/docs/openshift?topic=openshift-ibm-cloud-image-key-synchronizer-change-log#ibm-cloud-image-key-synchronizer-1.0.0_2258)
 
     * [1.0.0_2244, released 04 June 24](/docs/openshift?topic=openshift-ibm-cloud-image-key-synchronizer-change-log#ibm-cloud-image-key-synchronizer-1.0.0_2244)
 
