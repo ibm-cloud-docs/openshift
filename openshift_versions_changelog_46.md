@@ -20,7 +20,7 @@ subcollection: openshift
 {: #openshift_changelog_46}
 
 
-This version no longer supported. Update your cluster to a [supported version](/docs/openshift?topic=openshift-cs_versions) as soon as possible.
+This version is no longer supported. Update your cluster to a [supported version](/docs/openshift?topic=openshift-cs_versions) as soon as possible.
 {: important}
 
 ## Overview
