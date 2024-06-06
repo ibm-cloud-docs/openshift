@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2024
-lastupdated: "2024-02-21"
+lastupdated: "2024-06-06"
 
 
 keywords: openshift, update, upgrade, BOM, bill of materials, versions, patch
@@ -20,8 +20,8 @@ subcollection: openshift
 {: #openshift_changelog_46}
 
 
-Version 4.6 is unsupported. You can review the following archive of 4.6 change logs.
-{: shortdesc}
+This version no longer supported. Update your cluster to a [supported version](/docs/openshift?topic=openshift-cs_versions) as soon as possible.
+{: important}
 
 ## Overview
 {: #openshift_changelog_overview_46}

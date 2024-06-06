@@ -2,7 +2,7 @@
 
 copyright:
   years: 2022, 2024
-lastupdated: "2024-04-25"
+lastupdated: "2024-06-06"
 
 
 keywords: openshift, version, update, upgrade, 4.10
@@ -20,11 +20,11 @@ subcollection: openshift
 # 4.10 version information and update actions
 {: #cs_versions_410}
 
+This version no longer supported. Update your cluster to a [supported version](/docs/openshift?topic=openshift-cs_versions) as soon as possible.
+{: important}
+
 Review information about version 4.10 of {{site.data.keyword.openshiftlong_notm}}. This version is based on Kubernetes version 1.23. 
 {: shortdesc}
-
-Version 4.10 is no longer supported. Update your cluster to at least [version 4.11](/docs/openshift?topic=openshift-cs_versions_411) as soon as possible.
-{: important}
 
 
 If you have Portworx installed, follow the steps to upgrade your installation to use at least image version `2.11.4`. For more information, see [Upgrading Portworx to a specific version](/docs/openshift?topic=openshift-storage_portworx_about).

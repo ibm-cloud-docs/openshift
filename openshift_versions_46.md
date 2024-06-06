@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2024
-lastupdated: "2024-01-03"
+lastupdated: "2024-06-06"
 
 
 keywords: openshift, version, update, upgrade
@@ -20,7 +20,7 @@ subcollection: openshift
 # 4.6 version information and update actions
 {: #cs_versions_46}
 
-Version 4.6 is unsupported. 
+This version no longer supported. Update your cluster to a [supported version](/docs/openshift?topic=openshift-cs_versions) as soon as possible.
 {: important}
 
 Review information about version 4.6 of {{site.data.keyword.openshiftlong_notm}}, released 09 Jun 2021. This version is based on Kubernetes version 1.19. 
