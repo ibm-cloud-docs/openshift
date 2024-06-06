@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2022, 2024
-lastupdated: "2024-03-15"
+lastupdated: "2024-06-06"
 
 
 keywords: openshift, benchmarks, 4.9, compliance operator, compliance
@@ -20,7 +20,8 @@ subcollection: openshift
 # 4.9 compliance operator benchmark
 {: #benchmarks_49_co}
 
-
+This version no longer supported. Update your cluster to a [supported version](/docs/openshift?topic=openshift-cs_versions) as soon as possible.
+{: important}
 
 
 ## 1 Control plane components

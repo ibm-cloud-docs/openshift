@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2024
-lastupdated: "2024-05-29"
+lastupdated: "2024-06-06"
 
 
 keywords: openshift, version, update, upgrade
@@ -20,12 +20,11 @@ subcollection: openshift
 # 4.9 version information and update actions 
 {: #cs_versions_49}
 
+This version no longer supported. Update your cluster to a [supported version](/docs/openshift?topic=openshift-cs_versions) as soon as possible.
+{: important}
+
 Review information about version 4.9 of {{site.data.keyword.openshiftlong_notm}}, released 09 Feb 2022. This version is based on Kubernetes version 1.22. 
 {: shortdesc}
-
-
-Version 4.9 is no longer supported. Update your cluster to at least [version 4.10](/docs/openshift?topic=openshift-cs_versions_410&interface=ui) as soon as possible.
-{: important}
 
 
 Looking for general information about updating clusters, or information on a different version? See [Red Hat OpenShift on IBM Cloud version information](/docs/openshift?topic=openshift-openshift_versions).
