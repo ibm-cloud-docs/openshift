@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2024
-lastupdated: "2024-06-04"
+lastupdated: "2024-06-06"
 
 
 keywords: openshift, {{site.data.keyword.openshiftlong_notm}}, kubernetes, release notes
@@ -28,6 +28,14 @@ Looking for {{site.data.keyword.cloud_notm}} status, platform announcements, sec
 
 ## June 2024
 {: #openshift-june24}
+
+### 5 June 2024
+{: #openshift-june0524}
+{: release-note}
+
+{{site.data.keyword.cos_full_notm}} plug-in version `2.2.26`.
+:   For more information, see the [change log](/docs/openshift?topic=openshift-cos_plugin_changelog).
+
   
 ### 4 June 2024
 {: #openshift-june0424}

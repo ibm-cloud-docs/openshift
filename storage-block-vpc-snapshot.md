@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2022, 2024
-lastupdated: "2024-01-03"
+lastupdated: "2024-06-06"
 
 
 keywords: openshift, block storage, snapshot
@@ -320,7 +320,7 @@ After you deploy the snapshot resources, you can restore data to a new volume by
 ## Turning off snapshots
 {: #vpc-turn-off-snapshots}
 
-By default, snapshot functionality is enabled when using the {{site.data.keyword.block_storage_is_short}}. This functionality can be turned off in the configmap `addon-vpc-block-csi-driver-configmap` in the `kube-system` namespace by changing the `IsSnapshotEnabled` to `false`. Note that with this change in the configmap, any snapshots that are created fail with the message: "CreateSnapshot functionality is disabled." 
+By default, snapshot functionality is enabled when using the {{site.data.keyword.block_storage_is_short}}. This functionality can be turned off in the configmap `addon-vpc-block-csi-driver-configmap` in the `kube-system` namespace by changing the `IsSnapshotEnabled` to `false`. Note that with this change in the configmap, any snapshots that are created fail with the message:`CreateSnapshot functionality is disabled`.
 
 
 1. Save the current configmap from your cluster to your local machine.

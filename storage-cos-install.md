@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2024
-lastupdated: "2024-05-29"
+lastupdated: "2024-06-06"
 
 
 keywords: kubernetes, openshift
@@ -155,14 +155,14 @@ To install the `ibmc` Helm plug-in and the `ibm-object-storage-plugin`:
         {: pre}
         
     3. From the `ibm-object-storage-plugin`, navigate to the `templates` directory and list available files.
-        **OS X and Linux**
+        OS X and Linux
 
         ```sh
         cd templates && ls
         ```
         {: pre}
 
-        **Windows**
+        Windows
 
         ```sh
         chdir templates && dir

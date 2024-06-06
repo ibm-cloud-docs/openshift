@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2024
-lastupdated: "2024-01-03"
+lastupdated: "2024-06-06"
 
 
 keywords: openshift, ibmc, helm
@@ -52,36 +52,38 @@ If you see a `permission denied` error, you don't have the required `read`, `wri
 Review the following steps based on the error type.
 {: tsResolve}
 
-**For symlink errors**:
+- For symlink errors:
 
-1. Remove the {{site.data.keyword.cos_full_notm}} Helm plug-in.
-    **Linux**
-    ```sh
-    rm -rf ~/.helm/plugins/helm-ibmc
-    ```
-    {: pre}
+    1. Remove the {{site.data.keyword.cos_full_notm}} Helm plug-in.
+        
+        Linux example
+        ```sh
+        rm -rf ~/.helm/plugins/helm-ibmc
+        ```
+        {: pre}
 
-    **Mac OS**
-    ```sh
-    rm -rf ~/Library/helm/plugins/helm-ibmc for macOS
-    ```
-    {: pre}
+        Mac OS example
+        ```sh
+        rm -rf ~/Library/helm/plugins/helm-ibmc for macOS
+        ```
+        {: pre}
 
-2. Follow the [documentation](/docs/openshift?topic=openshift-storage_cos_install) to re-install the `ibmc` Helm plug-in and the {{site.data.keyword.cos_full_notm}} plug-in.
+    2. Follow the [documentation](/docs/openshift?topic=openshift-storage_cos_install) to re-install the `ibmc` Helm plug-in and the {{site.data.keyword.cos_full_notm}} plug-in.
 
-**For permission errors**:
+- For permission errors:
 
-1. Change the permissions for the `ibmc` plug-in.
-    **Linux**
-    ```sh
-    chmod 755 ~/.helm/plugins/helm-ibmc/ibmc.sh
-    ```
-    {: pre}
+    1. Change the permissions for the `ibmc` plug-in.
+        Linux example
+        ```sh
+        chmod 755 ~/.helm/plugins/helm-ibmc/ibmc.sh
+        ```
+        {: pre}
 
-    **Mac OS**
-    ```sh
-    chmod 755 ~/Library/helm/plugins/helm-ibmc/ibmc.sh
-    ```
+        Mac OS example
+        ```sh
+        chmod 755 ~/Library/helm/plugins/helm-ibmc/ibmc.sh
+        ```
+        {: pre}
 
 2. Try out the `ibm` Helm plug-in.
     ```sh

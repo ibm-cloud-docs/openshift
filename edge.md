@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2024
-lastupdated: "2024-06-03"
+lastupdated: "2024-06-06"
 
 
 keywords: openshift
@@ -161,7 +161,7 @@ To isolate your workload to edge worker nodes:
 
 1. [Create a worker pool](/docs/openshift?topic=openshift-add-workers-classic#add_pool) that spans all zones in your cluster and has at least two or more workers per zone. In the `ibmcloud oc worker-pool create` command, include the `--label dedicated=edge` option to label all worker nodes in the pool. All worker nodes in this pool, including any worker nodes that you add later, are labeled as edge nodes. If you want to use an existing worker pool, you can add the `dedicated=edge` label by running the [`ibmcloud oc worker-pool label set` command](/docs/openshift?topic=openshift-kubernetes-service-cli#cs_worker_pool_label_set).
 
-    To ensure that ALB pods are always scheduled to edge worker nodes if they are present and not scheduled to non-edge worker nodes, you must create or use an existing worker pool that has at least two edge worker nodes per zone. During the update of an ALB pod, a new ALB pod rolls out to replace an existing ALB pod. In order to keep the ALB available during update, the rolling update ensures that at least one ALB pod is active. However, ALB pods have anti-affinity rules that don't permit two ALB pods on the same worker. When at least two edge nodes are present in a zone, the new ALB pod can be replaced on one of them while the other one keeps running. 
+    To ensure that ALB pods are always scheduled to edge worker nodes if they are present and not scheduled to non-edge worker nodes, you must create or use an existing worker pool that has at least two edge worker nodes per zone. During the update of an ALB pod, a new ALB pod rolls out to replace an existing ALB pod. To keep the ALB available during update, the rolling update ensures that at least one ALB pod is active. However, ALB pods have anti-affinity rules that don't permit two ALB pods on the same worker. When at least two edge nodes are present in a zone, the new ALB pod can be replaced on one of them while the other one keeps running. 
     
     To ensure high availability of the ALB, the edge node label is ignored if there aren't enough edge nodes in each region, and the ALB pods will be scheduled to non-edge nodes as well.
     {: important}
