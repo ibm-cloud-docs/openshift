@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2024
-lastupdated: "2024-06-06"
+lastupdated: "2024-06-07"
 
 
 keywords: openshift, update, upgrade, BOM, bill of materials, versions, patch
@@ -19,8 +19,12 @@ subcollection: openshift
 # Version 4.7 change log
 {: #openshift_changelog_47}
 
-This version is no longer supported. Update your cluster to a [supported version](/docs/openshift?topic=openshift-cs_versions) as soon as possible.
+
+
+This version is no longer supported. Update your cluster to a [supported version](/docs/openshift?topic=openshift-cs_versions-openshift_versions) as soon as possible.
 {: important}
+
+
 
 
 View information of version changes for major, minor, and patch updates that are available for your {{site.data.keyword.openshiftlong}} clusters that run version 4.7. Changes include updates to {{site.data.keyword.redhat_openshift_notm}}, Kubernetes, and {{site.data.keyword.cloud_notm}} Provider components.

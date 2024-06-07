@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2024, 2024
-lastupdated: "2024-04-24"
+lastupdated: "2024-06-07"
 
 keywords: openshift, {{site.data.keyword.openshiftlong_notm}}, secure by default, {{site.data.keyword.openshiftlong_notm}}, outbound traffic protection, cluster create, quota, limitations
 
@@ -14,8 +14,10 @@ content-type: troubleshoot
 
 {{site.data.keyword.attribute-definition-list}}
 
+
 # I use custom security groups and after creating a version 4.15 cluster, applications running in other clusters in my VPC are failing
 {: #ts-sbd-other-clusters}
+
 
 [Virtual Private Cloud]{: tag-vpc}
 [4.15 and later]{: tag-red}

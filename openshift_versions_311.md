@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2024
-lastupdated: "2024-06-06"
+lastupdated: "2024-06-07"
 
 
 keywords: openshift, version, update, upgrade
@@ -21,8 +21,12 @@ subcollection: openshift
 # Version 3.11
 {: #cs_versions_311}
 
-This version is no longer supported. Update your cluster to a [supported version](/docs/openshift?topic=openshift-cs_versions) as soon as possible.
+
+
+This version is no longer supported. Update your cluster to a [supported version](/docs/openshift?topic=openshift-cs_versions-openshift_versions) as soon as possible.
 {: important}
+
+
 
 Review information about version 3.11 of {{site.data.keyword.openshiftlong_notm}}, released 01 Aug 2019.
 {: shortdesc}
