@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2024
-lastupdated: "2024-06-06"
+lastupdated: "2024-06-07"
 
 
 keywords: openshift, {{site.data.keyword.openshiftlong_notm}}, troubleshooting apps, app debugging, application troublshooting in clusters
@@ -64,7 +64,7 @@ The following steps help you troubleshoot application problems within your clust
 {: #ts-3}
 {: step}
 
-When documenting details about the problem, be as specific as possible. For example, "Our app occasionally gets 502 Gateway errors when trying to retrieve transaction logs" is not helpful because it is not specific. Make sure you narrow down the problem as much as possible before documenting it. When documenting the problem, try to include the following.
+When documenting details about the problem, be as specific as possible. For example, `Our app occasionally gets 502 Gateway errors when trying to retrieve transaction logs` is not helpful because it is not specific. Make sure you narrow down the problem as much as possible before documenting it. When documenting the problem, try to include the following.
 
 Environment architecture
 :   Make sure you have documented your environment architecture so that you understand the components involved. For more information, see [Documenting your environment architecture](/docs/openshift?topic=openshift-document-environment).

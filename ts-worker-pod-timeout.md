@@ -2,10 +2,10 @@
 
 copyright: 
   years: 2014, 2024
-lastupdated: "2024-06-06"
+lastupdated: "2024-06-07"
 
 
-keywords: openshift
+keywords: kubernetes, help, network, connectivity, openshift
 
 subcollection: openshift
 
@@ -21,8 +21,8 @@ content-type: troubleshoot
 {: #cs_nodes_duplicate_ip}
 {: support}
 
-[Classic infrastructure]{: tag-classic-inf}
 
+[Classic infrastructure]{: tag-classic-inf}
 
 
 You deleted a worker node in your cluster and then added a worker node. When you deployed a pod or Kubernetes service, the resource can't access the newly created worker node, and the connection times out.
