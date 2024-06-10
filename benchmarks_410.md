@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2022, 2024
-lastupdated: "2024-06-07"
+lastupdated: "2024-06-10"
 
 
 keywords: openshift, benchmarks, 4.10
@@ -22,7 +22,7 @@ subcollection: openshift
 
 
 
-This version is no longer supported. Update your cluster to a [supported version](/docs/openshift?topic=openshift-cs_versions-openshift_versions) as soon as possible.
+This version is no longer supported. Update your cluster to a [supported version](/docs/openshift?topic=openshift-openshift_versions) as soon as possible.
 {: important}
 
 
