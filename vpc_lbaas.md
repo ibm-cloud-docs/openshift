@@ -641,7 +641,7 @@ To register VPC NLB IP addresses with a DNS subdomain,
 2. Create a custom or IBM-provided DNS subdomain for the IP address.
 
     - **Custom domain**:
-        1. Register a custom domain by working with your Domain Name Service (DNS) provider or [{{site.data.keyword.cloud_notm}} DNS](/docs/dns-svcs?topic=dns-getting-started).
+        1. Register a custom domain by working with your Domain Name Service (DNS) provider or [{{site.data.keyword.cloud_notm}} DNS](/docs/dns-svcs?topic=dns-svcs-getting-started).
         2. Define an alias for your custom domain by specifying the load balancer IP addresses as A records.
 
     - **IBM-provided subdomain**: Use `nlb-dns` commands to generate a subdomain with an SSL certificate for the IP addresses. {{site.data.keyword.cloud_notm}} takes care of generating and maintaining the wildcard SSL certificate for the subdomain for you.
@@ -937,7 +937,7 @@ To register a VPC ALB hostname with a DNS subdomain,
 
 2. Create a custom or IBM-provided DNS subdomain for the load balancer hostname.
     - **Custom domain**: Provide your own custom domain and give it an alias by specifying the load balancer external IP, in the format `1234abcd-us-south.lb.appdomain.cloud` as a Canonical Name record (CNAME).
-        1. Register a custom domain by working with your Domain Name Service (DNS) provider or [{{site.data.keyword.cloud_notm}} DNS](/docs/dns-svcs?topic=dns-getting-started).
+        1. Register a custom domain by working with your Domain Name Service (DNS) provider or [{{site.data.keyword.cloud_notm}} DNS](/docs/dns-svcs?topic=dns-svcs-getting-started).
         2. Define an alias for your custom domain by specifying the load balancer external IP as a Canonical Name record (CNAME). In the following example, the load balancer with the external IP of `1234abcd-us-south.lb.appdomain.cloud` is reachable at `www.your-custom-domain.com`.
         
         Host/Service
