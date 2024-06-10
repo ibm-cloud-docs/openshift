@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2024
-lastupdated: "2024-03-19"
+lastupdated: "2024-06-10"
 
 
 keywords: openshift, lb2.0, nlb
@@ -95,7 +95,7 @@ To create a subdomain for one or more NLB IP addresses:
     {: screen}
 
 4. Optional: Set up a custom domain to point to the IBM-provided subdomain that you created in the previous step.
-    1. Register a custom domain by working with your Domain Name Service (DNS) provider or by using [{{site.data.keyword.cloud_notm}} DNS](/docs/dns?topic=dns-getting-started).
+    1. Register a custom domain by working with your Domain Name Service (DNS) provider or by using [{{site.data.keyword.cloud_notm}} DNS](/docs/dns-svcs?topic=dns-getting-started).
     2. Define an alias for your custom domain by specifying the IBM-provided subdomain as a Canonical Name record (CNAME).
 
 5. In a web browser, enter the URL to access your app through the subdomain that you created.

@@ -2,7 +2,7 @@
 
 copyright:
   years: 2023, 2024
-lastupdated: "2024-05-01"
+lastupdated: "2024-06-07"
 
 
 keywords: openshift, {{site.data.keyword.openshiftlong_notm}}, kubernetes cluster, red hat openshift, openshift container platform, red hat, create openshift cluster, vpc cluster, classic cluster, clusters
@@ -63,7 +63,8 @@ Follow a tutorial, or set up your own custom cluster environment. Review the fol
 | Tutorial | Beginner | 45 minutes | Follow the steps in this tutorial to create your first cluster by using the IBM Cloud CLI. This tutorial uses Classic infrastructure. For more information, see [Creating a classic cluster from the CLI](/docs/openshift?topic=openshift-openshift_tutorial). |
 | Tutorial| Beginner | 1 hour | Follow the steps in this tutorial to create your own Virtual Private Cloud (VPC), then create an {{site.data.keyword.openshiftlong_notm}} cluster by using the CLI. For more information, see [Create a cluster in your own Virtual Private Cloud](/docs/openshift?topic=openshift-vpc_rh_tutorial). |
 | Deployable architecture: QuickStart variation | Beginner | 1 hour | This deployable architecture creates one VPC cluster with two worker nodes and a public endpoint. Note that the QuickStart variation is not highly available or validated for the IBM Cloud Framework for Financial Services. For more information, see [{{site.data.keyword.openshiftlong_notm}} on VPC landing zone](https://cloud.ibm.com/catalog?search=openshift%20label%3Areference_architecture#search_results){: explore} |
-| Deployable architecture: Standard variation | Intermediate | 1-3 hours | This deployable architecture is based on the IBM Cloud for Financial Services reference architecture. The architecture creates secure and compliant clusters on a Virtual Private Cloud (VPC) network. For more information, see [{{site.data.keyword.openshiftlong_notm}} on VPC landing zone](https://cloud.ibm.com/catalog?search=openshift%20label%3Areference_architecture#search_results){: explore} |
+| Deployable architecture: Standard variation | Intermediate | 1-3 hours | This deployable architecture is based on the IBM Cloud for Financial Services reference architecture. The architecture creates secure and compliant clusters on a Virtual Private Cloud (VPC) network. For more information, see [{{site.data.keyword.openshiftlong_notm}} on VPC landing zone](https://cloud.ibm.com/catalog?search=openshift%20label%3Areference_architecture#search_results){: explore}. |
+| Deployable architectures: Community Registry | Intermediate | 1-4 hours | There are more deployable architectures available in the Community Registry. Review the options to see if they fit your use case. For more information, see [Catalog](https://cloud.ibm.com/catalog#reference_architecture){: external} and select **Community Registry** from the dropdown. |
 | Custom deployment | Intermediate | 1-3 hours | [Create a custom cluster on Classic infrastructure](/docs/openshift?topic=openshift-cluster-create-classic). |
 | Custom deployment | Intermediate | 1-3 hours | [Create a custom cluster on VPC infrastructure](/docs/openshift?topic=openshift-cluster-create-vpc-gen2). |
 {: caption="Options for creating a cluster" caption-side="bottom"}
