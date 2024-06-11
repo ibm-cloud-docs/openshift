@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2024
-lastupdated: "2024-04-08"
+lastupdated: "2024-06-10"
 
 
 keywords: openshift, {{site.data.keyword.openshiftlong_notm}}, kubernetes, kernel, performance
@@ -60,12 +60,105 @@ To change the compute hardware, such as the CPU and memory per worker node, choo
 * Create a worker pool. The instructions vary depending on the type of infrastructure for the cluster, such as classic, VPC, or {{site.data.keyword.satelliteshort}}. For more information, see [Adding worker nodes to Classic clusters](/docs/openshift?topic=openshift-add-workers-classic) or [Adding worker nodes to VPC clusters](/docs/openshift?topic=openshift-add-workers-vpc). 
 * [Update the flavor](/docs/openshift?topic=openshift-update#machine_type) in your cluster by creating a worker pool and removing the previous worker pool.
 
-## Modifying worker node settings to optimize performance
-{: #worker}
 
 
 
+## Modifying worker node kernel settings to optimize performance
+{: #worker-kernel-ds}
 
+Cluster worker nodes are configured for a level of stability, optimization, and performance that is expected to meet the needs of most workloads. In most cases, it is not recommended to change your worker node kernel settings, as such changes can create unusual and unintended issues. However, if your workload has highly unique performance optimization requirements that necessitate changes to your kernel settings, a custom Kubernetes daemonset can be applied to change the kernel configuration. Understand that these changes can have significant negative consequences and that you implement changes to the kernel settings configuration **at your own risk**. 
+
+If you change the configuration of your kernel settings, make sure you document and save the exact changes that you make. If you open a support ticket for any issues related to the cluster, you must specify these changes. These configuration changes may be responsible for the issue, and you might be asked to revert the changes as part of the issue investigation. In this case, you are responsible for reverting any kernel configuration changes you implement. 
+{: important}
+
+Changing the default kernel settings can have negative effects on your cluster. Make these changes at your own risk. 
+{: important}
+
+You can change the default kernel settings by applying a custom [Kubernetes `DaemonSet`](https://kubernetes.io/docs/concepts/workloads/controllers/daemonset/){: external} with an [`init` Container](https://kubernetes.io/docs/concepts/workloads/pods/init-containers/){: external} to your cluster. The daemon set modifies the settings for all existing worker nodes and applies the settings to any new worker nodes that are provisioned in the cluster. The `init` container makes sure that these modifications occur before other pods are scheduled on the worker node. No pods are affected.
+
+You must have the [**Manager** {{site.data.keyword.cloud_notm}} IAM service access role](/docs/openshift?topic=openshift-iam-platform-access-roles) for all namespaces to run the sample privileged `initContainer`. After the containers for the deployments are initialized, the privileges are dropped.
+{: note}
+
+Before you begin: [Access your {{site.data.keyword.redhat_openshift_notm}} cluster](/docs/openshift?topic=openshift-access_cluster).
+
+1. Save the following daemon set in a file named `worker-node-kernel-settings.yaml`. In the `spec.template.spec.initContainers` section, add the fields and values for the `sysctl` parameters that you want to tune. This example daemon set changes the default maximum number of connections that are allowed in the environment via the `net.core.somaxconn` setting and the ephemeral port range via the `net.ipv4.ip_local_port_range` setting.
+
+    Depending on the `systctl` settings that you try to change, you might want to configure the security context. For more information, see the [{{site.data.keyword.redhat_openshift_notm}} documentation](https://docs.openshift.com/container-platform/4.14/nodes/containers/nodes-containers-sysctls.html){: external}.
+    {: note}
+
+    
+    ```yaml
+    apiVersion: apps/v1
+    kind: DaemonSet
+    metadata:
+      name: kernel-optimization
+      namespace: kube-system
+      labels:
+        tier: management
+        app: kernel-optimization
+    spec:
+      selector:
+        matchLabels:
+          name: kernel-optimization
+      template:
+        metadata:
+          labels:
+            name: kernel-optimization
+        spec:
+          hostNetwork: true
+          hostPID: true
+          hostIPC: true
+          initContainers:
+            - command:
+                - sh
+                - -c
+                - sysctl -w net.ipv4.tcp_syn_retries="5"; sysctl -w net.ipv4.tcp_fin_timeout="15";
+              image: us.icr.io/armada-master/network-alpine:latest
+              imagePullPolicy: Always 
+              name: sysctl
+              resources: {}
+              securityContext:
+                privileged: true
+                capabilities:
+                  add:
+                    - NET_ADMIN
+              volumeMounts:
+                - name: modifysys
+                  mountPath: /sys
+          containers:
+            - resources:
+                requests:
+                  cpu: 0.01
+              image: us.icr.io/armada-master/network-alpine:latest
+              name: sleepforever
+              command: ["/bin/sh", "-c"]
+              args:
+                - >
+                  while true; do
+                    sleep 100000;
+                  done
+          volumes:
+            - name: modifysys
+              hostPath:
+                path: /sys
+    ```
+    {: codeblock}
+
+1. Apply the daemon set to your worker nodes. The changes are applied immediately.
+    ```sh
+    oc apply -f worker-node-kernel-settings.yaml
+    ```
+    {: pre}
+
+To revert your worker nodes `sysctl` parameters to the default values, follow these steps.
+
+1. Delete the daemon set. The `initContainers` that applied the custom settings are removed.
+    ```sh
+    oc delete ds kernel-optimization
+    ```
+    {: pre}
+
+1. [Reboot all worker nodes in the cluster](/docs/openshift?topic=openshift-kubernetes-service-cli#cs_worker_reboot). The worker nodes come back online with the default values applied.
 
 
 

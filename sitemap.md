@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2024
-lastupdated: "2024-06-07"
+lastupdated: "2024-06-10"
 
 
 keywords: openshift
@@ -5466,7 +5466,7 @@ subcollection: openshift
 
     * [Hardware changes](/docs/openshift?topic=openshift-kernel#worker-default-hw)
 
-* [Modifying worker node settings to optimize performance](/docs/openshift?topic=openshift-kernel#worker)
+* [Modifying worker node kernel settings to optimize performance](/docs/openshift?topic=openshift-kernel#worker-kernel-ds)
 
 * [Optimizing network keepalive `sysctl` settings](/docs/openshift?topic=openshift-kernel#keepalive-iks)
 
