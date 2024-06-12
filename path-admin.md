@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2024
-lastupdated: "2024-05-29"
+lastupdated: "2024-06-12"
 
 
 keywords: openshift, red hat, red hat openshift, admin
@@ -177,7 +177,7 @@ Manage your cluster and worker nodes through each phase of the cluster lifecycle
 - **Autoscaling**: [Automatically increase or decrease the number of worker nodes](/docs/openshift?topic=openshift-cluster-scaling-install-addon) based on the sizing needs of your scheduled workloads.
 - **Updating**: Keep your environment up-to-date by frequently [updating clusters, worker nodes, and cluster components](/docs/openshift?topic=openshift-update). While you update, refer to these version reference pages:
     - [{{site.data.keyword.openshiftshort}} version information](/docs/openshift?topic=openshift-openshift_versions)
-    - [Fluentd and Ingress ALB change log](/docs/containers?topic=containers-cs_versions_ingress)
+    - [Fluentd and Ingress ALB change log](/docs/containers?topic=containers-ingress-alb-change-log)
 - **Removing**: [Remove clusters and clean up related resources](/docs/openshift?topic=openshift-remove).
 
 

@@ -302,7 +302,7 @@ Version 1.0.9 of the cluster autoscaler add-on is deprecated with an end of supp
 
 
 Image Key Synchronizer add-on patch update.
-:   For more information, see the [change log](/docs/openshift?topic=openshift-image-key-synchronizer-changelog).
+:   For more information, see the [change log](/docs/openshift?topic=openshift-ibm-cloud-image-key-synchronizer-change-log).
 
 
 
@@ -658,7 +658,7 @@ Cluster autoscaler add-on patch updates `1.2.0_322` and `1.0.9_328`.
 
 
 Image Key Synchronizer add-on version `1.0.0_2015`.
-:   For more information, see the [change log](/docs/openshift?topic=openshift-image-key-synchronizer-changelog).
+:   For more information, see the [change log](/docs/openshift?topic=openshift-ibm-cloud-image-key-synchronizer-change-log).
 
 
 
@@ -1025,7 +1025,7 @@ Master fix packs are available.
 
   
 Cloud Image Key Synchronizer add-on version `1.0.0_1936`.
-:   For more information, see the [change log](/docs/openshift?topic=openshift-image-key-synchronizer-changelog).
+:   For more information, see the [change log](/docs/openshift?topic=openshift-ibm-cloud-image-key-synchronizer-change-log).
 
 
 
@@ -1049,7 +1049,7 @@ Worker node fix packs are available.
 
 
 Ingress ALB version `1.8.4_5586_ikss`
-:   For more information, see the [change log](/docs/containers?topic=containers-cs_versions_ingress).
+:   For more information, see the [change log](/docs/containers?topic=containers-ingress-alb-change-log).
 
 
 
@@ -1060,7 +1060,7 @@ Ingress ALB version `1.8.4_5586_ikss`
 
 
 Cloud Image Key Synchronizer add-on version `1.0.0_1921`.
-:   For more information, see the [change log](/docs/openshift?topic=openshift-image-key-synchronizer-changelog).
+:   For more information, see the [change log](/docs/openshift?topic=openshift-ibm-cloud-image-key-synchronizer-change-log).
   
 
 
@@ -1072,7 +1072,7 @@ Cloud Image Key Synchronizer add-on version `1.0.0_1921`.
 {: release-note}
 
 Ingress ALB versions `1.8.1_5543_iks`, `1.6.4_5544_iks`, and `1.5.1_5542_iks`
-:   For more information, see the [change log](/docs/containers?topic=containers-cs_versions_ingress).
+:   For more information, see the [change log](/docs/containers?topic=containers-ingress-alb-change-log).
 
 
 
@@ -1081,7 +1081,7 @@ Ingress ALB versions `1.8.1_5543_iks`, `1.6.4_5544_iks`, and `1.5.1_5542_iks`
 {: release-note}
 
 Ingress ALB versions `1.5.1_5436_iks`, `1.6.4_5435_iks`, and `1.8.1_5434_iks`
-:   For more information, see the [change log](/docs/containers?topic=containers-cs_versions_ingress).
+:   For more information, see the [change log](/docs/containers?topic=containers-ingress-alb-change-log).
 
 {{site.data.keyword.cos_full_notm}} plug-in version `2.2.19`
 :   For more information, see the [change log](/docs/openshift?topic=openshift-cos_plugin_changelog).
@@ -1136,7 +1136,7 @@ Cluster autoscaler add-on version `1.0.9_134`.
 
 
 Cloud Image Key Synchronizer add-on version `1.0.0_1831`.
-:   For more information, see the [change log](/docs/openshift?topic=openshift-image-key-synchronizer-changelog).
+:   For more information, see the [change log](/docs/openshift?topic=openshift-ibm-cloud-image-key-synchronizer-change-log).
   
 
 
@@ -1427,7 +1427,7 @@ Worker node fix packs `4.9.59_1596_openshift`, `4.10.63_1576_openshift`, `4.11.4
 {: release-note}
 
 Cloud Image Key Synchronizer add-on version `1.0.0_1701`.
-:   For more information, see the [change log](/docs/openshift?topic=openshift-image-key-synchronizer-changelog).
+:   For more information, see the [change log](/docs/openshift?topic=openshift-ibm-cloud-image-key-synchronizer-change-log).
   
 
 
@@ -1567,7 +1567,7 @@ Worker node fix pack updates
 {: release-note} 
 
 Cloud Image Key Synchronizer add-on version `1.0.0_1633`.
-:   For more information, see the [change log](/docs/openshift?topic=openshift-image-key-synchronizer-changelog).
+:   For more information, see the [change log](/docs/openshift?topic=openshift-ibm-cloud-image-key-synchronizer-change-log).
 
 
 ### 14 June 2023
@@ -1707,7 +1707,7 @@ New! OpenShift Data Foundation add-on versions `4.12.4`, `4.11.10`, `4.10.24`, `
 
 
 Cloud Image Key Synchronizer add-on version `1.0.0_1523`.
-:   For more information, see the [change log](/docs/openshift?topic=openshift-image-key-synchronizer-changelog).
+:   For more information, see the [change log](/docs/openshift?topic=openshift-ibm-cloud-image-key-synchronizer-change-log).
   
 Master fix pack `4.12.13_1540_openshift`.
 :   For more information, see the [change logs for 4.12](/docs/openshift?topic=openshift-openshift_changelog_412).
@@ -1901,7 +1901,7 @@ CLI version `1.0.498`.
 :   For more information, see the [change log](/docs/openshift?topic=openshift-cs_cli_changelog).
 
 Cloud Image Key Synchronizer add-on version `1.0.0_1362`.
-:   For more information, see the [change log](/docs/openshift?topic=openshift-image-key-synchronizer-changelog).
+:   For more information, see the [change log](/docs/openshift?topic=openshift-ibm-cloud-image-key-synchronizer-change-log).
 
 
 ## February 2023
@@ -1995,7 +1995,7 @@ New troubleshooting doc for how to recover after deleting a portable subnet in C
 {: release-note}
 
 Cloud Image Key Synchronizer add-on version `1.0.0_1329`.
-:   For more information, see the [change log](/docs/openshift?topic=openshift-image-key-synchronizer-changelog).
+:   For more information, see the [change log](/docs/openshift?topic=openshift-ibm-cloud-image-key-synchronizer-change-log).
 
 
 
@@ -2135,7 +2135,7 @@ Worker node fix packs `4.11.18_1536_openshift`, `4.10.45_1549_openshift`, `4.9.5
 
 
 Cloud Image Key Synchronizer add-on version 1.0.0_1269
-:   For more information, see the [change log](/docs/openshift?topic=openshift-image-key-synchronizer-changelog).
+:   For more information, see the [change log](/docs/openshift?topic=openshift-ibm-cloud-image-key-synchronizer-change-log).
 
 
 
@@ -2211,7 +2211,7 @@ Istio add-on version `1.16.0`
 
 
 Ingress ALB change log updates
-:   Updated the [Ingress ALB change log](/docs/containers?topic=containers-cs_versions_ingress) for version `1.3.1_3108_iks`.
+:   Updated the [Ingress ALB change log](/docs/containers?topic=containers-ingress-alb-change-log) for version `1.3.1_3108_iks`.
 
 
 
@@ -2346,7 +2346,7 @@ Worker node fix pack 4.11.9_1529_openshift, 4.10.37_1542_openshift, and 4.9.50_1
 :   For more information, see the change logs: [4.11](/docs/openshift?topic=openshift-openshift_changelog_411), [4.10](/docs/openshift?topic=openshift-openshift_changelog_410), and [4.9](/docs/openshift?topic=openshift-openshift_changelog_49).
 
 Cloud Image Key Synchronizer add-on version 1.0.0_1200
-:   For more information, see the [change log](/docs/openshift?topic=openshift-image-key-synchronizer-changelog).
+:   For more information, see the [change log](/docs/openshift?topic=openshift-ibm-cloud-image-key-synchronizer-change-log).
 
 
 
@@ -2747,7 +2747,7 @@ HPCS Router add-on
 :   Versions 4.6.0_2245, 4.7.0_2252, 4.8.0_2246, and 4.9.0_2251 of the [HPCS Router add-on](/docs/openshift?topic=openshift-hpcs-router-changelog) are released.
 
 Cloud Image Key Synchronizer add-on
-:   Version 1.0.0_1061 of the [Cloud Image Key Synchronizer add-on](/docs/openshift?topic=openshift-image-key-synchronizer-changelog) is released.
+:   Version 1.0.0_1061 of the [Cloud Image Key Synchronizer add-on](/docs/openshift?topic=openshift-ibm-cloud-image-key-synchronizer-change-log) is released.
 
 
 ### 5 July 2022
@@ -2847,7 +2847,7 @@ Worker node fix pack
 HPCS Router add-on
 :   Versions 4.6.0_1986, 4.7.0_1985, 4.8.0_1984, and 4.9.0_1983 of the [HPCS Router add-on](/docs/openshift?topic=openshift-hpcs-router-changelog) are released.
 Cloud Image Key Synchronizer add-on
-:   Version 1.0.0_1022 of the [Cloud Image Key Synchronizer add-on](/docs/openshift?topic=openshift-image-key-synchronizer-changelog) is released.
+:   Version 1.0.0_1022 of the [Cloud Image Key Synchronizer add-on](/docs/openshift?topic=openshift-ibm-cloud-image-key-synchronizer-change-log) is released.
 
 {{site.data.keyword.block_storage_is_short}} add-on.
 :   [Version 5.0.0-beta_1125](/docs/openshift?topic=openshift-vpc_bs_changelog) is available for allowlisted accounts.
@@ -2944,7 +2944,7 @@ Cluster autoscaler add-on
 :   Versions `1.0.5_628` and `1.1.0_615` are available. See [Cluster autoscaler add-on change log](/docs/openshift?topic=openshift-ca_changelog).
 
 ALB OAuth Proxy add-on
-:   Version 1.0.0 is no longer supported. For more information, see the [change log](/docs/containers?topic=containers-alb-oauth-proxy-changelog).
+:   Version 1.0.0 is no longer supported. For more information, see the [change log](/docs/containers?topic=containers-alb-oauth-proxy-add-on-change-log).
 
 ### 12 May 2022
 {: #openshift-may1222}
@@ -2977,7 +2977,7 @@ Worker node fix pack
 HPCS Router add-on
 :   Versions 4.6.0_1570, 4.7.0_1561, 4.8.0_1560, and 4.9.0_1559 of the [HPCS Router add-on](/docs/openshift?topic=openshift-hpcs-router-changelog) are released.
 Cloud Image Key Synchronizer add-on
-:   Version 1.0.0_956 of the [Cloud Image Key Synchronizer add-on](/docs/openshift?topic=openshift-image-key-synchronizer-changelog) is released.
+:   Version 1.0.0_956 of the [Cloud Image Key Synchronizer add-on](/docs/openshift?topic=openshift-ibm-cloud-image-key-synchronizer-change-log) is released.
 
 
 
@@ -3068,7 +3068,7 @@ New! {{site.data.keyword.secrets-manager_full}}
 HPCS Router add-on
 :   Versions 4.6.0_1468, 4.7.0_1469, 4.8.0_1470, and 4.9.0_1471 of the [HPCS Router add-on](/docs/openshift?topic=openshift-hpcs-router-changelog) are released.
 Cloud Image Key Synchronizer add-on
-:   Version 1.0.0_927 of the [Cloud Image Key Synchronizer add-on](/docs/openshift?topic=openshift-image-key-synchronizer-changelog) is released.
+:   Version 1.0.0_927 of the [Cloud Image Key Synchronizer add-on](/docs/openshift?topic=openshift-ibm-cloud-image-key-synchronizer-change-log) is released.
 
 
 
@@ -3142,7 +3142,7 @@ Worker node fix pack update.
 HPCS Router add-on
 :   Versions 4.6.0_1383, 4.7.0_1386, 4.8.0_1385, and 4.9.0_1384 of the [HPCS Router add-on](/docs/openshift?topic=openshift-hpcs-router-changelog) are released.
 Cloud Image Key Synchronizer add-on
-:   Version 1.0.0_906 of the [Cloud Image Key Synchronizer add-on](/docs/openshift?topic=openshift-image-key-synchronizer-changelog) is released.
+:   Version 1.0.0_906 of the [Cloud Image Key Synchronizer add-on](/docs/openshift?topic=openshift-ibm-cloud-image-key-synchronizer-change-log) is released.
 
 
 
@@ -3154,7 +3154,7 @@ Hong Kong (`HKG02`) and Seoul (`SEO01`) are deprecated and become unsupported la
 :   To prevent any interruption of service, [redeploy your cluster workloads](/docs/openshift?topic=openshift-update_app#copy_apps_cluster) to a [supported data center](/docs/openshift?topic=openshift-regions-and-zones#zones-mz) and remove your Hong Kong (`HKG02`) and Seoul (`SEO01`) clusters by 28 September 2022. Clusters remaining in these data centers after 28 September 2022 will be removed. Cluster creation in these locations will be stopped on 29 April 2022. For more information about data center closures and recommended data centers, see [Data center consolidations](/docs/get-support?topic=get-support-dc-closure).
 
 Ingress ALB change log updates
-:   Updated the [Ingress ALB change log](/docs/containers?topic=containers-cs_versions_ingress) for versions `1.1.2_2050_iks`, `1.1.1_1996_iks`, and `0.49.3_1994_iks`.
+:   Updated the [Ingress ALB change log](/docs/containers?topic=containers-ingress-alb-change-log) for versions `1.1.2_2050_iks`, `1.1.1_1996_iks`, and `0.49.3_1994_iks`.
 
 
 
@@ -3256,7 +3256,7 @@ HPCS Router add-on
 :   Versions 4.6.0_1308, 4.7.0_1309, 4.8.0_1310, and 4.9.0_1349 of the [HPCS Router add-on](/docs/openshift?topic=openshift-hpcs-router-changelog) are released.
 
 Cloud Image Key Synchronizer add-on
-:   Version 1.0.0_883 of the [Cloud Image Key Synchronizer add-on](/docs/openshift?topic=openshift-image-key-synchronizer-changelog) is released.
+:   Version 1.0.0_883 of the [Cloud Image Key Synchronizer add-on](/docs/openshift?topic=openshift-ibm-cloud-image-key-synchronizer-change-log) is released.
 
 
 
@@ -3418,7 +3418,7 @@ HPCS Router add-on
 :   Versions 4.8.0_1232, 4.7.0_1226, and 4.6.0_1227 of the [HPCS Router add-on](/docs/openshift?topic=openshift-hpcs-router-changelog) are released.
 
 Cloud Image Key Synchronizer add-on
-:   Version 1.0.0_834 of the [Cloud Image Key Synchronizer add-on](/docs/openshift?topic=openshift-image-key-synchronizer-changelog) is released.
+:   Version 1.0.0_834 of the [Cloud Image Key Synchronizer add-on](/docs/openshift?topic=openshift-ibm-cloud-image-key-synchronizer-change-log) is released.
 
 
 
@@ -3484,7 +3484,7 @@ HPCS Router add-on
 :   Versions 4.8.0_1125, 4.7.0_1127, and 4.6.0_1126 of the [HPCS Router add-on](/docs/openshift?topic=openshift-hpcs-router-changelog) are released.
 
 Cloud Image Key Synchronizer add-on
-:   Version 1.0.0_804 of the [Cloud Image Key Synchronizer add-on](/docs/openshift?topic=openshift-image-key-synchronizer-changelog) is released.
+:   Version 1.0.0_804 of the [Cloud Image Key Synchronizer add-on](/docs/openshift?topic=openshift-ibm-cloud-image-key-synchronizer-change-log) is released.
 
 
 
@@ -3613,7 +3613,7 @@ HPCS Router add-on
 :   Versions 4.7.0_1013 and 4.6.0_1012 of the [HPCS Router add-on](/docs/openshift?topic=openshift-hpcs-router-changelog) are released.
 
 Cloud Image Key Synchronizer add-on
-:   Version 1.0.0_744 of the [Cloud Image Key Synchronizer add-on](/docs/openshift?topic=openshift-image-key-synchronizer-changelog) is released.
+:   Version 1.0.0_744 of the [Cloud Image Key Synchronizer add-on](/docs/openshift?topic=openshift-ibm-cloud-image-key-synchronizer-change-log) is released.
 
 
 
@@ -3734,7 +3734,7 @@ Worker node fix pack update
 {: release-note}
 
 Ingress ALB change log updates
-:   Updated the [Ingress ALB change log](/docs/containers?topic=containers-cs_versions_ingress) for versions `0.49.3_1745_iks` and `1.0.3_1730_iks`.
+:   Updated the [Ingress ALB change log](/docs/containers?topic=containers-ingress-alb-change-log) for versions `0.49.3_1745_iks` and `1.0.3_1730_iks`.
 
 ### 18 October 2021
 {: #openshift-oct1821}
@@ -3805,7 +3805,7 @@ Updated supported, deprecated, and unsupported versions for strongSwan Helm char
 
 
 {{site.data.keyword.cloud_notm}} Image Key Synchronizer add-on change log.
-:   [Version 1.0.0_690](/docs/openshift?topic=openshift-image-key-synchronizer-changelog#1_0_0690) is released.
+:   [Version 1.0.0_690](/docs/openshift?topic=openshift-ibm-cloud-image-key-synchronizer-change-log#1_0_0690) is released.
 
 
 
@@ -3867,7 +3867,7 @@ Review the release notes for 22 September 2021.
 {: shortdesc}
 
 Ingress ALB version change log
-:   [Version `1.0.0_1699_iks`](/docs/containers?topic=containers-cs_versions_ingress#1_0_0) is now available. Updates for versions [`0.48.1_1698_iks`](/docs/containers?topic=containers-cs_versions_ingress#0_48_0) and [`0.43.0_1697_iks`](/docs/containers?topic=containers-cs_versions_ingress#0_47_0) are available in the change log. 
+:   [Version `1.0.0_1699_iks`](/docs/containers?topic=containers-ingress-alb-change-log#1_0_0) is now available. Updates for versions [`0.48.1_1698_iks`](/docs/containers?topic=containers-ingress-alb-change-log#0_48_0) and [`0.43.0_1697_iks`](/docs/containers?topic=containers-ingress-alb-change-log#0_47_0) are available in the change log. 
 
 
 
@@ -3916,7 +3916,7 @@ Review the release notes for 14 September 2021.
 {: shortdesc}
 
 Ingress ALB version change log
-:   [Version `1.0.0_1645_iks`](/docs/containers?topic=containers-cs_versions_ingress#1_0_0) is now available. Updates for versions [`0.48.1_1613_iks`](/docs/containers?topic=containers-cs_versions_ingress#0_48_0) and [`0.47.0_1614_iks`](/docs/containers?topic=containers-cs_versions_ingress#0_47_0) are available in the change log. 
+:   [Version `1.0.0_1645_iks`](/docs/containers?topic=containers-ingress-alb-change-log#1_0_0) is now available. Updates for versions [`0.48.1_1613_iks`](/docs/containers?topic=containers-ingress-alb-change-log#0_48_0) and [`0.47.0_1614_iks`](/docs/containers?topic=containers-ingress-alb-change-log#0_47_0) are available in the change log. 
 
 Istio add-on change log
 :   [Version `1.10.4`](/docs/containers?topic=containers-istio-changelog#1104) and [version `1.9.8`](/docs/containers?topic=containers-istio-changelog#198) of the Istio managed add-on is released.
@@ -4029,7 +4029,7 @@ HPCS Router
 :   Updated version change log for the [HPCS Router](/docs/openshift?topic=openshift-hpcs-router-changelog) add-on.
 
 Image key synchronizer
-:   Updated the version change log for the [Image Key Synchronizer](/docs/openshift?topic=openshift-image-key-synchronizer-changelog) add-on.
+:   Updated the version change log for the [Image Key Synchronizer](/docs/openshift?topic=openshift-ibm-cloud-image-key-synchronizer-change-log) add-on.
 
 
 
@@ -4055,7 +4055,7 @@ HPCS Router
 :   Updated version change log for the [HPCS Router](/docs/openshift?topic=openshift-hpcs-router-changelog) add-on.
 
 Image key synchronizer
-:   Updated the version change log for the [Image Key Synchronizer](/docs/openshift?topic=openshift-image-key-synchronizer-changelog) add-on.
+:   Updated the version change log for the [Image Key Synchronizer](/docs/openshift?topic=openshift-ibm-cloud-image-key-synchronizer-change-log) add-on.
 
  
 
@@ -4107,7 +4107,7 @@ HPCS Router
 {: release-note}
 
 Image key synchronizer
-:   Updated the version change log for the [Image Key Synchronizer](/docs/openshift?topic=openshift-image-key-synchronizer-changelog) add-on.
+:   Updated the version change log for the [Image Key Synchronizer](/docs/openshift?topic=openshift-ibm-cloud-image-key-synchronizer-change-log) add-on.
 
 
 
@@ -4226,7 +4226,7 @@ New! OpenShift Container Storage is now OpenShift Data Foundation.
 
 
 Image key synchronizer
-:   Updated the version change log for the [Image Key Synchronizer](/docs/openshift?topic=openshift-image-key-synchronizer-changelog) add-on.
+:   Updated the version change log for the [Image Key Synchronizer](/docs/openshift?topic=openshift-ibm-cloud-image-key-synchronizer-change-log) add-on.
 
 
 
@@ -4285,7 +4285,7 @@ HPCS Router
 :   Updated version change log for the [HPCS Router](/docs/openshift?topic=openshift-hpcs-router-changelog) add-on.
   
 Image key synchronizer
-:   Updated the version change log for the [Image Key Synchronizer](/docs/openshift?topic=openshift-image-key-synchronizer-changelog) add-on.
+:   Updated the version change log for the [Image Key Synchronizer](/docs/openshift?topic=openshift-ibm-cloud-image-key-synchronizer-change-log) add-on.
 
 ### 1 June 2021
 {: #openshift-june0121}
@@ -4388,7 +4388,7 @@ Default version
 :   The default version for new clusters is now 4.6.
 
 Image key synchronizer
-:   Updated the version change log for the [Image Key Synchronizer](/docs/openshift?topic=openshift-image-key-synchronizer-changelog) add-on.
+:   Updated the version change log for the [Image Key Synchronizer](/docs/openshift?topic=openshift-ibm-cloud-image-key-synchronizer-change-log) add-on.
 
 ### 27 April 2021
 {: #openshift-april2721}
@@ -4440,7 +4440,7 @@ New! Toronto multizone region for VPC
 {: release-note}
 
 add-on change logs
-:   Updated version change logs for the [HPCS Router](/docs/openshift?topic=openshift-hpcs-router-changelog) and [Image Key Synchronizer](/docs/openshift?topic=openshift-image-key-synchronizer-changelog) add-ons.
+:   Updated version change logs for the [HPCS Router](/docs/openshift?topic=openshift-hpcs-router-changelog) and [Image Key Synchronizer](/docs/openshift?topic=openshift-ibm-cloud-image-key-synchronizer-change-log) add-ons.
 
 Cluster autoscaler add-on
 :   [Patch update `1.0.2_256`](/docs/openshift?topic=openshift-ca_changelog) of the cluster autoscaler add-on is available.
@@ -4484,7 +4484,7 @@ Accessing VPC clusters
 :   If you use the add-on, the [latest version build updates](/docs/openshift?topic=openshift-hpcs-router-changelog) are automatically applied to your cluster.
 
 {{site.data.keyword.cloud_notm}} Image Key Synchronizer add-on
-:   If you use the add-on, the [latest version build updates](/docs/openshift?topic=openshift-image-key-synchronizer-changelog) are automatically applied to your cluster.
+:   If you use the add-on, the [latest version build updates](/docs/openshift?topic=openshift-ibm-cloud-image-key-synchronizer-change-log) are automatically applied to your cluster.
 
 
 
@@ -4551,7 +4551,7 @@ Compliance operator
 {: release-note}
 
 add-on change logs
-:   Added version change logs for the [HPCS Router](/docs/openshift?topic=openshift-hpcs-router-changelog) and [Image Key Synchronizer](/docs/openshift?topic=openshift-image-key-synchronizer-changelog) add-ons.
+:   Added version change logs for the [HPCS Router](/docs/openshift?topic=openshift-hpcs-router-changelog) and [Image Key Synchronizer](/docs/openshift?topic=openshift-ibm-cloud-image-key-synchronizer-change-log) add-ons.
 
 Master versions
 :   Master fix pack update change log documentation is available for version [`4.6.21_1535_openshift`](/docs/openshift?topic=openshift-openshift_changelog_46#4621_1535), [`4.5.35_1533_openshift`](/docs/openshift?topic=openshift-changelog_archive#4535_1533), [`4.4.33_1536_openshift`](/docs/openshift?topic=openshift-changelog_archive), and [`3.11.394_1583_openshift`](/docs/openshift?topic=openshift-openshift_changelog_311#311394_1583).
@@ -5234,7 +5234,7 @@ Versions
 {: release-note}
 
 Ingress ALB change log
-:   Updated the [Kubernetes Ingress image build to `0.35.0_474_iks`](/docs/containers?topic=containers-cs_versions_ingress#0_35_0).
+:   Updated the [Kubernetes Ingress image build to `0.35.0_474_iks`](/docs/containers?topic=containers-ingress-alb-change-log#0_35_0).
 
 ### 6 October 2020
 {: #openshift-oct0620}
