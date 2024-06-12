@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2024
-lastupdated: "2024-06-10"
+lastupdated: "2024-06-12"
 
 
 keywords: openshift
@@ -274,6 +274,10 @@ subcollection: openshift
 [Release notes](/docs/openshift?topic=openshift-openshift-relnotes#openshift-relnotes)
 
 * [June 2024](/docs/openshift?topic=openshift-openshift-relnotes#openshift-june24)
+
+    * [12 June 2024](/docs/openshift?topic=openshift-openshift-relnotes#openshift-june1224)
+
+        * Version 4.15 is the default version for {{site.data.keyword.openshiftlong_notm}}.
 
     * [5 June 2024](/docs/openshift?topic=openshift-openshift-relnotes#openshift-june0524)
 
@@ -5559,7 +5563,7 @@ subcollection: openshift
 
 [IBM Cloud Kubernetes Service API JSON](https://containers.cloud.ibm.com/global/swagger-global-api/swagger.json){: external}
 
-[OpenShift Container Platform REST API](https://docs.openshift.com/container-platform/4.14/rest_api/index.html){: external}
+[OpenShift Container Platform REST API](https://docs.openshift.com/container-platform/4.15/rest_api/index.html){: external}
 
 
 ## CLI plug-in reference
@@ -7852,73 +7856,69 @@ subcollection: openshift
 
     * [1.0.0_2186, released 08 May 24](/docs/openshift?topic=openshift-ibm-cloud-image-key-synchronizer-change-log#ibm-cloud-image-key-synchronizer-1.0.0_2186)
 
-[{{site.data.keyword.cloud_notm}} Image Key Synchronizer add-on change log](/docs/openshift?topic=openshift-image-key-synchronizer-changelog#image-key-synchronizer-changelog)
+    * [1.0.0_2111, released on 03 April 2024](/docs/openshift?topic=openshift-ibm-cloud-image-key-synchronizer-change-log#1.0.0_2111)
 
-* [Version 1.0.0](/docs/openshift?topic=openshift-image-key-synchronizer-changelog#1_0_0-image-key)
+    * [1.0.0_2015, released on 16 January 2024](/docs/openshift?topic=openshift-ibm-cloud-image-key-synchronizer-change-log#1.0.0_2015)
 
-    * [Version 1.0.0_2111, released on 03 April 2024](/docs/openshift?topic=openshift-image-key-synchronizer-changelog#1.0.0_2111)
+    * [1.0.0_1936, released on 25 October 2023](/docs/openshift?topic=openshift-ibm-cloud-image-key-synchronizer-change-log#1.0.0_1936)
 
-    * [Version 1.0.0_2015, released on 16 January 2024](/docs/openshift?topic=openshift-image-key-synchronizer-changelog#1.0.0_2015)
+    * [1.0.0_1921, released on 18 October 2023](/docs/openshift?topic=openshift-ibm-cloud-image-key-synchronizer-change-log#1.0.0_1921)
 
-    * [Version 1.0.0_1936, released on 25 October 2023](/docs/openshift?topic=openshift-image-key-synchronizer-changelog#1.0.0_1936)
+    * [1.0.0_1831, released on 3 October 2023](/docs/openshift?topic=openshift-ibm-cloud-image-key-synchronizer-change-log#1_0_1831)
 
-    * [Version 1.0.0_1921, released on 18 October 2023](/docs/openshift?topic=openshift-image-key-synchronizer-changelog#1.0.0_1921)
+    * [1.0.0_1701, released on 13 July 2023](/docs/openshift?topic=openshift-ibm-cloud-image-key-synchronizer-change-log#1_0_1701)
 
-    * [Version 1.0.0_1831, released on 3 October 2023](/docs/openshift?topic=openshift-image-key-synchronizer-changelog#1_0_1831)
+    * [1.0.0_1633, released on 15 June 2023](/docs/openshift?topic=openshift-ibm-cloud-image-key-synchronizer-change-log#1_0_1633)
 
-    * [Version 1.0.0_1701, released on 13 July 2023](/docs/openshift?topic=openshift-image-key-synchronizer-changelog#1_0_1701)
+    * [1.0.0_1523, released on 2 May 2023](/docs/openshift?topic=openshift-ibm-cloud-image-key-synchronizer-change-log#1_0_1523)
 
-    * [Version 1.0.0_1633, released on 15 June 2023](/docs/openshift?topic=openshift-image-key-synchronizer-changelog#1_0_1633)
+    * [1.0.0_1362, released on 1 March 2023](/docs/openshift?topic=openshift-ibm-cloud-image-key-synchronizer-change-log#1_0_1362)
 
-    * [Version 1.0.0_1523, released on 2 May 2023](/docs/openshift?topic=openshift-image-key-synchronizer-changelog#1_0_1523)
+    * [1.0.0_1329, released on 8 February 2023](/docs/openshift?topic=openshift-ibm-cloud-image-key-synchronizer-change-log#1_0_1329)
 
-    * [Version 1.0.0_1362, released on 1 March 2023](/docs/openshift?topic=openshift-image-key-synchronizer-changelog#1_0_1362)
+    * [1.0.0_1269, released on 15 December 2022](/docs/openshift?topic=openshift-ibm-cloud-image-key-synchronizer-change-log#1_0_1269)
 
-    * [Version 1.0.0_1329, released on 8 February 2023](/docs/openshift?topic=openshift-image-key-synchronizer-changelog#1_0_1329)
+    * [1.0.0_1200, released on 27 October 2022](/docs/openshift?topic=openshift-ibm-cloud-image-key-synchronizer-change-log#1_0_1200)
 
-    * [Version 1.0.0_1269, released on 15 December 2022](/docs/openshift?topic=openshift-image-key-synchronizer-changelog#1_0_1269)
+    * [1.0.0_1061, released on 7 July 2022](/docs/openshift?topic=openshift-ibm-cloud-image-key-synchronizer-change-log#1_0_1061)
 
-    * [Version 1.0.0_1200, released on 27 October 2022](/docs/openshift?topic=openshift-image-key-synchronizer-changelog#1_0_1200)
+    * [1.0.0_1022, released on 13 Jun 2022](/docs/openshift?topic=openshift-ibm-cloud-image-key-synchronizer-change-log#1_0_1022)
 
-    * [Version 1.0.0_1061, released on 7 July 2022](/docs/openshift?topic=openshift-image-key-synchronizer-changelog#1_0_1061)
+    * [1.0.0_956, released on 4 May 2022](/docs/openshift?topic=openshift-ibm-cloud-image-key-synchronizer-change-log#1_0_0956)
 
-    * [Version 1.0.0_1022, released on 13 Jun 2022](/docs/openshift?topic=openshift-image-key-synchronizer-changelog#1_0_1022)
+    * [1.0.0_927, released on 11 April 2022](/docs/openshift?topic=openshift-ibm-cloud-image-key-synchronizer-change-log#1_0_0927)
 
-    * [Version 1.0.0_956, released on 4 May 2022](/docs/openshift?topic=openshift-image-key-synchronizer-changelog#1_0_0956)
+    * [1.0.0_906, released on 24 March 2022](/docs/openshift?topic=openshift-ibm-cloud-image-key-synchronizer-change-log#1_0_0906)
 
-    * [Version 1.0.0_927, released on 11 April 2022](/docs/openshift?topic=openshift-image-key-synchronizer-changelog#1_0_0927)
+    * [1.0.0_883, released on 28 February 2022](/docs/openshift?topic=openshift-ibm-cloud-image-key-synchronizer-change-log#1_0_0883)
 
-    * [Version 1.0.0_906, released on 24 March 2022](/docs/openshift?topic=openshift-image-key-synchronizer-changelog#1_0_0906)
+    * [1.0.0_834, released on 25 January 2022](/docs/openshift?topic=openshift-ibm-cloud-image-key-synchronizer-change-log#1_0_0834)
 
-    * [Version 1.0.0_883, released on 28 February 2022](/docs/openshift?topic=openshift-image-key-synchronizer-changelog#1_0_0883)
+    * [1.0.0_804, released on 11 January 2022](/docs/openshift?topic=openshift-ibm-cloud-image-key-synchronizer-change-log#1_0_0804)
 
-    * [Version 1.0.0_834, released on 25 January 2022](/docs/openshift?topic=openshift-image-key-synchronizer-changelog#1_0_0834)
+    * [1.0.0_744, released on 19 November 2021](/docs/openshift?topic=openshift-ibm-cloud-image-key-synchronizer-change-log#1_0_0744)
 
-    * [Version 1.0.0_804, released on 11 January 2022](/docs/openshift?topic=openshift-image-key-synchronizer-changelog#1_0_0804)
+    * [1.0.0_734, released on 16 November 2021](/docs/openshift?topic=openshift-ibm-cloud-image-key-synchronizer-change-log#1_0_0734)
 
-    * [Version 1.0.0_744, released on 19 November 2021](/docs/openshift?topic=openshift-image-key-synchronizer-changelog#1_0_0744)
+    * [1.0.0_690, released on 6 October 2021](/docs/openshift?topic=openshift-ibm-cloud-image-key-synchronizer-change-log#1_0_0690)
 
-    * [Version 1.0.0_734, released on 16 November 2021](/docs/openshift?topic=openshift-image-key-synchronizer-changelog#1_0_0734)
+    * [1.0.0_627, released on 23 August 2021](/docs/openshift?topic=openshift-ibm-cloud-image-key-synchronizer-change-log#1_0_0627)
 
-    * [Version 1.0.0_690, released on 6 October 2021](/docs/openshift?topic=openshift-image-key-synchronizer-changelog#1_0_0690)
+    * [1.0.0_614, released on 10 August 2021](/docs/openshift?topic=openshift-ibm-cloud-image-key-synchronizer-change-log#1_0_0614)
 
-    * [Version 1.0.0_627, released on 23 August 2021](/docs/openshift?topic=openshift-image-key-synchronizer-changelog#1_0_0627)
+    * [1.0.0_575, released on 23 July 2021](/docs/openshift?topic=openshift-ibm-cloud-image-key-synchronizer-change-log#1_0_0575)
 
-    * [Version 1.0.0_614, released on 10 August 2021](/docs/openshift?topic=openshift-image-key-synchronizer-changelog#1_0_0614)
+    * [1.0.0_549, released on 17 June 2021](/docs/openshift?topic=openshift-ibm-cloud-image-key-synchronizer-change-log#1_0_0549)
 
-    * [Version 1.0.0_575, released on 23 July 2021](/docs/openshift?topic=openshift-image-key-synchronizer-changelog#1_0_0575)
+    * [1.0.0_529, released on 2 June 2021](/docs/openshift?topic=openshift-ibm-cloud-image-key-synchronizer-change-log#1_0_0529)
 
-    * [Version 1.0.0_549, released on 17 June 2021](/docs/openshift?topic=openshift-image-key-synchronizer-changelog#1_0_0549)
+    * [1.0.0_485, released on 28 April 2021](/docs/openshift?topic=openshift-ibm-cloud-image-key-synchronizer-change-log#1_0_0485)
 
-    * [Version 1.0.0_529, released on 2 June 2021](/docs/openshift?topic=openshift-image-key-synchronizer-changelog#1_0_0529)
+    * [1.0.0_473, released on 19 April 2021](/docs/openshift?topic=openshift-ibm-cloud-image-key-synchronizer-change-log#1_0_0473)
 
-    * [Version 1.0.0_485, released on 28 April 2021](/docs/openshift?topic=openshift-image-key-synchronizer-changelog#1_0_0485)
+    * [1.0.0_461, released on 14 April 2021](/docs/openshift?topic=openshift-ibm-cloud-image-key-synchronizer-change-log#1_0_0461)
 
-    * [Version 1.0.0_473, released on 19 April 2021](/docs/openshift?topic=openshift-image-key-synchronizer-changelog#1_0_0473)
-
-    * [Version 1.0.0_461, released on 14 April 2021](/docs/openshift?topic=openshift-image-key-synchronizer-changelog#1_0_0461)
-
-    * [Version 1.0.0_438, released on 30 March 2021](/docs/openshift?topic=openshift-image-key-synchronizer-changelog#1_0_0438)
+    * [1.0.0_438, released on 30 March 2021](/docs/openshift?topic=openshift-ibm-cloud-image-key-synchronizer-change-log#1_0_0438)
 
 
 ## Archived version history

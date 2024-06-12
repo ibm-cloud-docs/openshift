@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2024
-lastupdated: "2024-06-06"
+lastupdated: "2024-06-11"
 
 
 keywords: openshift, logmet, logs, metrics, audit, events
@@ -373,7 +373,7 @@ After you set up the audit webhook in your cluster, you can monitor version upda
 Forward audit logs to a resource other than {{site.data.keyword.la_short}} that is outside of your cluster and accessible in the {{site.data.keyword.cloud_notm}} private network.
 {: shortdesc}
 
-The following example uses the `haproxytech/haproxy-alpine:2.6` image to forward logs. Do not use this image in production environments.
+The following example uses the `haproxytech/haproxy-alpine:2.6` image to forward logs. This image is for demonstration purposes only and should not be used in production environments. For a production solution, configure and maintain your own log forwarding image.
 {: important}
 
 Before you begin, ensure that you reviewed the [considerations and prerequisites](#prereqs-apiserver-logs).

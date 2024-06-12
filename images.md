@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2024
-lastupdated: "2024-04-29"
+lastupdated: "2024-06-12"
 
 
 keywords: kubernetes, registry, pull secret, secrets, openshift
@@ -39,7 +39,7 @@ Tekton pipelines
 ## Deploying containers from an existing image stream in the internal registry
 {: #oc_imagestream_deploy}
 
-You can deploy an app from an existing [image stream](https://docs.openshift.com/container-platform/4.14/openshift_images/image-streams-manage.html){: external} that your cluster administrator set up in the internal registry of your {{site.data.keyword.redhat_openshift_notm}} cluster. For example, your cluster administrator might have [set up the image stream to import an image from an external private registry](/docs/openshift?topic=openshift-registry#imagestream_registry), such as {{site.data.keyword.registrylong_notm}}.
+You can deploy an app from an existing [image stream](https://docs.openshift.com/container-platform/4.15/openshift_images/image-streams-manage.html){: external} that your cluster administrator set up in the internal registry of your {{site.data.keyword.redhat_openshift_notm}} cluster. For example, your cluster administrator might have [set up the image stream to import an image from an external private registry](/docs/openshift?topic=openshift-registry#imagestream_registry), such as {{site.data.keyword.registrylong_notm}}.
 {: shortdesc}
 
 ### Using an image stream with the CLI
@@ -289,7 +289,7 @@ To deploy containers that use encrypted images:
 If you later decide to disable the add-on, the `addon-image-key-synchronizer` daemon set is removed, but the `image-key-synchronizer` project and any secrets that you created in that project are not removed, and the container runtime can still use the secrets to run encrypted images. If you want to remove the keys from your worker nodes as well, you must delete the corresponding secrets from the `image-key-synchronizer` project before you disable the add-on.
 {: note}
 
-For the list of changes for each Image Key Synchronizer add-on version, see the [{{site.data.keyword.cloud_notm}} Image Key Synchronizer add-on change log](/docs/openshift?topic=openshift-image-key-synchronizer-changelog).
+For the list of changes for each Image Key Synchronizer add-on version, see the [{{site.data.keyword.cloud_notm}} Image Key Synchronizer add-on change log](/docs/openshift?topic=openshift-ibm-cloud-image-key-synchronizer-change-log).
 {: tip}
 
 
