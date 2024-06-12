@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2024
-lastupdated: "2024-06-06"
+lastupdated: "2024-06-12"
 
 
 keywords: openshift, {{site.data.keyword.openshiftlong_notm}}, kubernetes, release notes
@@ -26,8 +26,21 @@ Looking for {{site.data.keyword.cloud_notm}} status, platform announcements, sec
 {: tip}
 
 
+
+
 ## June 2024
 {: #openshift-june24}
+
+
+
+### 12 June 2024
+{: #openshift-june1224}
+{: release-note}
+
+Version 4.15 is the default version for {{site.data.keyword.openshiftlong_notm}}.
+:   For a complete list of available versions, see the [version information](/docs/openshift?topic=openshift-openshift_versions).
+
+
 
 ### 5 June 2024
 {: #openshift-june0524}

@@ -275,6 +275,10 @@ subcollection: openshift
 
 * [June 2024](/docs/openshift?topic=openshift-openshift-relnotes#openshift-june24)
 
+    * [12 June 2024](/docs/openshift?topic=openshift-openshift-relnotes#openshift-june1224)
+
+        * Version 4.15 is the default version for {{site.data.keyword.openshiftlong_notm}}.
+
     * [5 June 2024](/docs/openshift?topic=openshift-openshift-relnotes#openshift-june0524)
 
         * {{site.data.keyword.cos_full_notm}} plug-in version `2.2.26`.
@@ -5559,7 +5563,7 @@ subcollection: openshift
 
 [IBM Cloud Kubernetes Service API JSON](https://containers.cloud.ibm.com/global/swagger-global-api/swagger.json){: external}
 
-[OpenShift Container Platform REST API](https://docs.openshift.com/container-platform/4.14/rest_api/index.html){: external}
+[OpenShift Container Platform REST API](https://docs.openshift.com/container-platform/4.15/rest_api/index.html){: external}
 
 
 ## CLI plug-in reference
