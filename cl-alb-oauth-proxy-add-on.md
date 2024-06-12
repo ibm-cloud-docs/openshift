@@ -45,7 +45,6 @@ Review the version history for ALB OAuth Proxy add on.
 
 - Resolves the following CVEs: [CVE-2024-24786](https://nvd.nist.gov/vuln/detail/CVE-2024-24786){: external}, and [CVE-2023-45288](https://nvd.nist.gov/vuln/detail/CVE-2023-45288){: external}.
 - Updates Go to version `1.22.0`.
-- Initial release of 2.0.0
 - oauth2-proxy v7.5.0-2231
 - oauth2-proxy v7.5.0-2236
 - oauth2-proxy v7.5.0-2255
@@ -55,6 +54,7 @@ Review the version history for ALB OAuth Proxy add on.
 - oauth2-proxy v7.5.0-2295
 - oauth2-proxy v7.5.0-2291
 - oauth2-proxy v7.5.0-2281
+
 
 
 ### 2.0.0_2156, released 03 April 2024

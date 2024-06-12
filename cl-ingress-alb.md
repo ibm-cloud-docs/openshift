@@ -205,6 +205,7 @@ Review the version history for Ingress ALB.
 - Resolves the following CVEs: [CVE-2024-21626](https://nvd.nist.gov/vuln/detail/CVE-2024-21626){: external}.
 
 
+
 ## Version 1.9.4
 {: #1_9_4}
 
