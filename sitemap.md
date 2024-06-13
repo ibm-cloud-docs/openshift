@@ -275,6 +275,10 @@ subcollection: openshift
 
 * [June 2024](/docs/openshift?topic=openshift-openshift-relnotes#openshift-june24)
 
+    * [13 June 2024](/docs/openshift?topic=openshift-openshift-relnotes#openshift-june1324)
+
+        * {{site.data.keyword.openshiftlong_notm}} CLI version `1.0.628` is available.
+
     * [12 June 2024](/docs/openshift?topic=openshift-openshift-relnotes#openshift-june1224)
 
         * Version 4.15 is the default version for {{site.data.keyword.openshiftlong_notm}}.
@@ -6049,6 +6053,8 @@ subcollection: openshift
 [CLI change log](/docs/openshift?topic=openshift-cs_cli_changelog#cs_cli_changelog)
 
 * [Version 1.0](/docs/openshift?topic=openshift-cs_cli_changelog#10)
+
+* [Version v1.0.628](/docs/openshift?topic=openshift-cs_cli_changelog#cli-010628)
 
 * [Version v1.0.618](/docs/openshift?topic=openshift-cs_cli_changelog#cli-010618)
 

@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2024
-lastupdated: "2024-05-02"
+lastupdated: "2024-06-13"
 
 
 keywords: openshift, {{site.data.keyword.openshiftlong_notm}}, oc, ks
@@ -32,90 +32,100 @@ Refer to the following change logs for a summary of changes for each version of 
 Review the following changes for 1.0 versions of the CLI plug-in.
 {: shortdesc}
 
+## Version v1.0.628
+{: #cli-010628}
+
+Version 1.0.628 of the CLI was released on 13 June 2024.
+- Adds support for managing endpoints for {{site.data.keyword.satelliteshort}} Connectors by using the the `--connector-id` option in the `ibmcloud sat connector endpoint` commands.
+- Adds the `--idle-timeout-seconds` option to `ibmcloud sat connector endpoint create` and `ibmcloud sat connector endpoint update`.
+- Adds `ibmcloud sat experimental endpoint authn set` command and ``ibmcloud sat experimental endpoint authn rotate` commands.
+
+
+
 ## Version v1.0.618
 {: #cli-010618}
 
 Version 1.0.618 of the CLI was released on 02 May 2024.
-:   Extends the experimental date of the `ibmcloud sat experimental connector` commands to 01 July 2024.
+- Extends the experimental date of the `ibmcloud sat experimental connector` commands to 01 July 2024.
 
 ## Version v1.0.617
 {: #cli-010617}
 
 Version 1.0.617 of the CLI was released on 24 April 2024.
-:   Adds the `ibmcloud oc vpc outbound-traffic-protection disable` and `enable` [commands](/docs/openshift?topic=openshift-kubernetes-service-cli#vpc-outbound-traffic-protection-disable-cli). 
-:   Adds the `ibmcloud oc vpc ls` [command](/docs/openshift?topic=openshift-kubernetes-service-cli#vpc-ls-cli).
-:   Updates the help text in various languages.
+- Adds the `ibmcloud oc vpc outbound-traffic-protection disable` and `enable` [commands](/docs/openshift?topic=openshift-kubernetes-service-cli#vpc-outbound-traffic-protection-disable-cli). 
+- Adds the `ibmcloud oc vpc ls` [command](/docs/openshift?topic=openshift-kubernetes-service-cli#vpc-ls-cli).
+- Updates the help text in various languages.
 
 ## Version v1.0.613
 {: #cli-010613}
 
 Version 1.0.613 of the CLI was released on 18 April 2024.
-:   Adds the `ibmcloud oc cluster master console-oauth-access get` and `set` [commands](/docs/openshift?topic=openshift-kubernetes-service-cli#cluster-master-console-oauth-access-get-cli). 
-:   Adds the `ibmcloud oc security-group ls` [command](/docs/openshift?topic=openshift-kubernetes-service-cli#security-group-ls-cli).
-:   Updates the help text in various languages.
+- Adds the `ibmcloud oc cluster master console-oauth-access get` and `set` [commands](/docs/openshift?topic=openshift-kubernetes-service-cli#cluster-master-console-oauth-access-get-cli). 
+- Adds the `ibmcloud oc security-group ls` [command](/docs/openshift?topic=openshift-kubernetes-service-cli#security-group-ls-cli).
+- Updates the help text in various languages.
 
 
 ## Version v1.0.601
 {: #cli-010601}
 
 Version 1.0.601 of the CLI was released on 27 February 2024.
-:   Adds the `--disable-outbound-traffic-protection` option for the `ibmcloud oc cluster create vpc-gen2` command. 
+- Adds the `--disable-outbound-traffic-protection` option for the `ibmcloud oc cluster create vpc-gen2` command. 
 
 ## Version v1.0.597
 {: #cli-01597}
 
 Version 0.1.597 of the CLI was released on 27 February 2024.
-:   Adds the `[-f]` option for the `ibmcloud sat connector remove` command. 
+- Adds the `[-f]` option for the `ibmcloud sat connector remove` command. 
 
 ## Version v1.0.595
 {: #cli-01959}
 
 Version 0.1.595 of the CLI was released on 08 February 2024.
-:  Adds the `ibmcloud sat storage assignment autopatch` command for enabling and disabling automatic patch updates to your Satellite storage assignments.
-:  Adds the `patch` alias to the `ibmcloud sat storage assignment upgrade` command.
+- Adds the `ibmcloud sat storage assignment autopatch` command for enabling and disabling automatic patch updates to your Satellite storage assignments.
+- Adds the `patch` alias to the `ibmcloud sat storage assignment upgrade` command.
 
 ## Version v1.0.589
 {: #cli-01589}
 
 Version 0.1.589 of the CLI was released on 19 January 2024.
-:   Adds the `sat experimental connector agent` commands.
-:   Deprecates the `private service endpoint disable` commands.
-:   Updates to experimental commands.
-:   Resolves [CVE-2023-48795](https://nvd.nist.gov/vuln/detail/CVE-2023-48795){: external}.
-:   Upgrades the golang version.
-:   Updates the phrasing of various commands and help text strings. 
+- Adds the `sat experimental connector agent` commands.
+- Deprecates the `private service endpoint disable` commands.
+- Updates to experimental commands.
+- Resolves [CVE-2023-48795](https://nvd.nist.gov/vuln/detail/CVE-2023-48795){: external}.
+- Upgrades the golang version.
+- Updates the phrasing of various commands and help text strings. 
 
 ## Version v1.0.579
 {: #cli-01579}
 
 
 Version 0.1.579 of the CLI was released on 7 November 2023.
-:  Deprecates `logging collect` commands.
-:  Removes beta tag for `sat storage assignment` commands.
+- Deprecates `logging collect` commands.
+- Removes beta tag for `sat storage assignment` commands.
 
 ## Version 0.1.573
 {: #cli-01573}
 
 
 Version 0.1.573 of the CLI was released on 10 October 2023.
-:  Deprecates the various `logging` commands.
-:  Updates the help text in various languages.
+- Deprecates the various `logging` commands.
+- Updates the help text in various languages.
 
 
 ## Version v1.0.566
 {: #cli-10566}
 
 Version 1.0.566 of the CLI was released on 18 September 2023.
-:  Updates the phrasing of various commands and help text strings. 
-:  Updates the help text in various languages. 
+- Updates the phrasing of various commands and help text strings. 
+- Updates the help text in various languages. 
 
 ## Version v1.0.540
 {: #cli-10549}
 
 Version 1.0.540 of the CLI was released on 19 July 2023.
-:  Adds new [`ibmcloud oc ingress alb autoscale`](/docs/openshift?topic=openshift-kubernetes-service-cli#cs_alb_autoscale_get) commands.
-:  Replaces the deprecated `ibmcloud oc alb ls` command in certain command help texts.
-:  Updates the help text in various languages. 
+- Adds new [`ibmcloud oc ingress alb autoscale`](/docs/openshift?topic=openshift-kubernetes-service-cli#cs_alb_autoscale_get) commands.
+- Replaces the deprecated `ibmcloud oc alb ls` command in certain command help texts.
+- Updates the help text in various languages. 
 
 ## Version v1.0.528
 {: #cli-10528}
