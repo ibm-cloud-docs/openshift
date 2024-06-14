@@ -23,8 +23,11 @@ subcollection: openshift
 When you set up persistent storage in your cluster, you have three main components: the Kubernetes persistent volume claim (PVC) that requests storage, the Kubernetes persistent volume (PV) that is mounted to a pod and described in the PVC, and the file share. Depending on how you created your storage, you might need to delete all three components separately. 
 {: shortdesc}
 
+The {{site.data.keyword.filestorage_vpc_short}} cluster add-on is available in Beta. 
+{: beta}
 
-## Updating the {{site.data.keyword.filestorage_vpc_short}} add-on
+
+## Updating the {{site.data.keyword.filestorage_vpc_short}} cluster add-on
 {: #storage-file-vpc-update}
 
 [Access your {{site.data.keyword.redhat_openshift_notm}} cluster](/docs/openshift?topic=openshift-access_cluster).

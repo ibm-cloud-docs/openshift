@@ -16,13 +16,16 @@ subcollection: openshift
 
 
 
-# Enabling the {{site.data.keyword.filestorage_vpc_full_notm}} add-on
+# Enabling the {{site.data.keyword.filestorage_vpc_full_notm}} cluster add-on
 {: #storage-file-vpc-install}
 
 [Virtual Private Cloud]{: tag-vpc}
 
-{{site.data.keyword.filestorage_vpc_full_notm}} is persistent, fast, and flexible network-attached, NFS-based {{site.data.keyword.filestorage_vpc_short}} that you can add to your apps by using Kubernetes persistent volumes (PVs). You can choose between predefined storage tiers with GB sizes and IOPS that meet the requirements of your workloads. To find out if {{site.data.keyword.filestorage_vpc_short}} is the correct storage option for you, see [Choosing a storage solution](/docs/openshift?topic=openshift-storage-plan). For pricing information, see [Pricing](https://cloud.ibm.com/vpc-ext/provision/fileShare){: external}.
+{{site.data.keyword.filestorage_vpc_full_notm}} is persistent, fast, and flexible network-attached, NFS-based {{site.data.keyword.filestorage_vpc_short}} that you can add to your apps by using Kubernetes persistent volumes (PVs). You can choose between predefined GB sizes and IOPS that meet the requirements of your workloads. To find out if {{site.data.keyword.filestorage_vpc_short}} is the correct storage option for you, see [Choosing a storage solution](/docs/openshift?topic=openshift-storage-plan). For pricing information, see [Pricing](https://cloud.ibm.com/vpc-ext/provision/fileShare){: external}.
 {: shortdesc}
+
+The {{site.data.keyword.filestorage_vpc_short}} cluster add-on is available in Beta. 
+{: beta} 
 
 
 ## Prerequisites

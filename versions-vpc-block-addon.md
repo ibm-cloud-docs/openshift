@@ -18,18 +18,18 @@ subcollection: openshift
 
 
 
-# {{site.data.keyword.block_storage_is_short}} add-on change log 
+# {{site.data.keyword.block_storage_is_short}} cluster add-on change log 
 {: #vpc_bs_changelog}
 
 
-View information for patch updates to the {{site.data.keyword.block_storage_is_short}} add-on in your {{site.data.keyword.openshiftlong_notm}} clusters.
+View information for patch updates to the {{site.data.keyword.block_storage_is_short}} cluster add-on in your {{site.data.keyword.openshiftlong_notm}} clusters.
 {: shortdesc}
 
 Patch updates
 :   Patch updates are delivered automatically by IBM and don't contain any feature updates or changes in the supported add-on and cluster versions.
 
 Release updates
-:   Release updates contain new features for the {{site.data.keyword.block_storage_is_short}} or changes in the supported add-on or cluster versions. You must manually apply release updates to your {{site.data.keyword.block_storage_is_short}} add-on. To update your {{site.data.keyword.block_storage_is_short}} add-on, see [Updating the {{site.data.keyword.block_storage_is_short}} add-on](/docs/openshift?topic=openshift-vpc-block#vpc-addon-update).
+:   Release updates contain new features for the {{site.data.keyword.block_storage_is_short}} or changes in the supported add-on or cluster versions. You must manually apply release updates to your {{site.data.keyword.block_storage_is_short}} cluster add-on. To update your {{site.data.keyword.block_storage_is_short}} cluster add-on, see [Updating the {{site.data.keyword.block_storage_is_short}} cluster add-on](/docs/openshift?topic=openshift-vpc-block#vpc-addon-update).
 
 
 To view a list of add-ons and the supported cluster versions in the CLI, run the following command.
@@ -678,13 +678,13 @@ After updating to version 4.2, you must complete the following steps.
 ## Version 4.1
 {: #041_is_block}
 
-Review the changes in version `4.1` of the {{site.data.keyword.block_storage_is_short}} add-on.
+Review the changes in version `4.1` of the {{site.data.keyword.block_storage_is_short}} cluster add-on.
 {: shortdesc}
 
 ### Change log for version 4.1.3_846, released 14 February 2022
 {: #413_846_is_block_relnote}
 
-Review the changes in version `4.1.3_846` of the {{site.data.keyword.block_storage_is_short}} add-on.
+Review the changes in version `4.1.3_846` of the {{site.data.keyword.block_storage_is_short}} cluster add-on.
 {: shortdesc}    
 
 - Resolves the following CVEs. 
@@ -703,7 +703,7 @@ Review the changes in version `4.1.3_846` of the {{site.data.keyword.block_stora
 ### Change log for version 4.1.1_827, released 20 January 2022
 {: #0411837_is_block_relnote}
 
-Review the changes in version `4.1.1_827` of the {{site.data.keyword.block_storage_is_short}} add-on.
+Review the changes in version `4.1.1_827` of the {{site.data.keyword.block_storage_is_short}} cluster add-on.
 {: shortdisc}
 
 - Resolves the following CVEs.
@@ -717,7 +717,7 @@ Review the changes in version `4.1.1_827` of the {{site.data.keyword.block_stora
 ### Change log for version 4.1.0_807, released 06 January 2022
 {: #41_is_block_relnote}
 
-Review the changes in version `4.1.0_807` of the {{site.data.keyword.block_storage_is_short}} add-on.
+Review the changes in version `4.1.0_807` of the {{site.data.keyword.block_storage_is_short}} cluster add-on.
 {: shortdesc}
 
 - Image tags: v4.1
@@ -729,14 +729,14 @@ Review the changes in version `4.1.0_807` of the {{site.data.keyword.block_stora
 ## Version 4.0
 {: #0400_is_block}
 
-Review the changes in version `4.0` of the {{site.data.keyword.block_storage_is_short}} add-on.
+Review the changes in version `4.0` of the {{site.data.keyword.block_storage_is_short}} cluster add-on.
 {: shortdesc}
 
 
 ### Change log for version 4.0.3_793, released 22 November 2021
 {: #403793_is_block_relnote}
 
-Review the changes in version `4.0.3_793` of the {{site.data.keyword.block_storage_is_short}} add-on. 
+Review the changes in version `4.0.3_793` of the {{site.data.keyword.block_storage_is_short}} cluster add-on. 
 {: shortdesc}
 
 - Image tags: v4.0.3
@@ -761,7 +761,7 @@ Review the changes in version `4.0.3_793` of the {{site.data.keyword.block_stora
 ### Change log for version 4.0.1_780, released 06 October 2021
 {: #0400780_is_block_relnote}
 
-Review the changes in version `4.0.1_780` of the {{site.data.keyword.block_storage_is_short}} add-on.
+Review the changes in version `4.0.1_780` of the {{site.data.keyword.block_storage_is_short}} cluster add-on.
 {: shortdesc}
 
 - Image tags: `v4.0.1`
@@ -784,7 +784,7 @@ Review the changes in version `4.0.1_780` of the {{site.data.keyword.block_stora
 ### Change log for version 4.0.0_769, released 16 September 2021
 {: #0400769_is_block_relnote}
 
-Review the changes in version `4.0.0_769` of the {{site.data.keyword.block_storage_is_short}} add-on.
+Review the changes in version `4.0.0_769` of the {{site.data.keyword.block_storage_is_short}} cluster add-on.
 {: shortdesc}
 
 - Image tags: `v4.0.0`
@@ -805,7 +805,7 @@ Review the changes in version `4.0.0_769` of the {{site.data.keyword.block_stora
 ### Change log for version 4.0, released 1 September 2021
 {: #0400_is_block_relnote}
 
-Review the changes in version `4.0.0_764` of the {{site.data.keyword.block_storage_is_short}} add-on.
+Review the changes in version `4.0.0_764` of the {{site.data.keyword.block_storage_is_short}} cluster add-on.
 {: shortdesc}
 
 - Image tags: `v4.0.0`
@@ -829,13 +829,13 @@ Review the changes in version `4.0.0_764` of the {{site.data.keyword.block_stora
 ## Version 3.0.1
 {: #0301_is_block}
 
-Review the changes in version `3.0.1` of the {{site.data.keyword.block_storage_is_short}} add-on.
+Review the changes in version `3.0.1` of the {{site.data.keyword.block_storage_is_short}} cluster add-on.
 {: shortdesc}
 
 ### Change log for version 3.0.1, released 15 July 2021
 {: #301_init}
 
-Review the change log for version `3.0.1` of the {{site.data.keyword.block_storage_is_short}} add-on.
+Review the change log for version `3.0.1` of the {{site.data.keyword.block_storage_is_short}} cluster add-on.
 
 Volume expansion in version `3.0.1` is available in beta for allowlisted accounts. Don't use this feature for production workloads.
 {: beta}
@@ -848,13 +848,13 @@ Volume expansion in version `3.0.1` is available in beta for allowlisted account
 ## Version 3.0.0
 {: #0300_is_block}
 
-Review the changes in version 3.0.0 of the {{site.data.keyword.block_storage_is_short}} add-on.
+Review the changes in version 3.0.0 of the {{site.data.keyword.block_storage_is_short}} cluster add-on.
 {: shortdesc}
 
 ### Change log for patch update 3.0.0_521, released 01 April 2021
 {: #3.0.0_521}
 
-Review the changes in version 3.0.0_521 of the {{site.data.keyword.block_storage_is_short}} add-on.
+Review the changes in version 3.0.0_521 of the {{site.data.keyword.block_storage_is_short}} cluster add-on.
 {: shortdesc}
 
 - Image tags: `v3.0.7`  
@@ -864,7 +864,7 @@ Review the changes in version 3.0.0_521 of the {{site.data.keyword.block_storage
 ### Change log for version 3.0.0, released 26 February 2021
 {: #0300_is_block_relnote}
 
-Review the changes in version 3.0.0_521 of the {{site.data.keyword.block_storage_is_short}} add-on.
+Review the changes in version 3.0.0_521 of the {{site.data.keyword.block_storage_is_short}} cluster add-on.
 {: shortdesc}
 
 - Image tags: `v.3.0.0`   
@@ -874,12 +874,12 @@ Review the changes in version 3.0.0_521 of the {{site.data.keyword.block_storage
 ## Archive
 {: #unsupported_versions}
 
-Find an overview of {{site.data.keyword.block_storage_is_short}} add-ons that are unsupported in IBM Cloud Kubernetes Service.
+Find an overview of {{site.data.keyword.block_storage_is_short}} cluster add-ons that are unsupported in IBM Cloud Kubernetes Service.
 
 ### Version 2.0.3
 {: #0203_is_block}
 
-Review the changes in version 2.0.3 of the {{site.data.keyword.block_storage_is_short}} add-on.
+Review the changes in version 2.0.3 of the {{site.data.keyword.block_storage_is_short}} cluster add-on.
 {: shortdesc}
 
 Version 2.0.3 is unsupported.
@@ -888,7 +888,7 @@ Version 2.0.3 is unsupported.
 #### Change log for patch update 2.0.3_471, released 26 January 2021
 {: #0203471_is_block}
 
-Review the changes in version 2.0.3_471 of the {{site.data.keyword.block_storage_is_short}} add-on.
+Review the changes in version 2.0.3_471 of the {{site.data.keyword.block_storage_is_short}} cluster add-on.
 {: shortdesc}
 
 - Image tags: `v.2.0.9`  
@@ -898,7 +898,7 @@ Review the changes in version 2.0.3_471 of the {{site.data.keyword.block_storage
 #### Change log for patch update 2.0.3_464, released 10 December 2020
 {: #0203464_is_block}
 
-Review the changes in version 2.0.3_464 of the {{site.data.keyword.block_storage_is_short}} add-on.
+Review the changes in version 2.0.3_464 of the {{site.data.keyword.block_storage_is_short}} cluster add-on.
 {: shortdesc}
 
 - Image tags: `v2.0.8`  
@@ -910,7 +910,7 @@ Review the changes in version 2.0.3_464 of the {{site.data.keyword.block_storage
 #### Change log for patch update 2.0.3_404, released 25 November 2020
 {: #0203404_is_block}
 
-Review the changes in version 2.0.3_404 of the {{site.data.keyword.block_storage_is_short}} add-on.
+Review the changes in version 2.0.3_404 of the {{site.data.keyword.block_storage_is_short}} cluster add-on.
 {: shortdesc}
 
 - Image tags: `v2.0.7`   
@@ -921,7 +921,7 @@ Review the changes in version 2.0.3_404 of the {{site.data.keyword.block_storage
 #### Change log for patch update 2.0.3_375, released 17 September 2020
 {: #0203375_is_block}
 
-Review the changes in version 2.0.3_375 of the {{site.data.keyword.block_storage_is_short}} add-on.
+Review the changes in version 2.0.3_375 of the {{site.data.keyword.block_storage_is_short}} cluster add-on.
 {: shortdesc}
 
 - Image tags: `v2.0.6`   
@@ -930,7 +930,7 @@ Review the changes in version 2.0.3_375 of the {{site.data.keyword.block_storage
 #### Change log for patch update 2.0.3_374+, released 29 August 2020
 {: #0203374_is_block}
 
-Review the changes in version 2.0.3_374+ of the {{site.data.keyword.block_storage_is_short}} add-on.
+Review the changes in version 2.0.3_374+ of the {{site.data.keyword.block_storage_is_short}} cluster add-on.
 {: shortdesc}
 
 - Image tags: `v2.0.5`   
@@ -939,7 +939,7 @@ Review the changes in version 2.0.3_374+ of the {{site.data.keyword.block_storag
 #### Change log for patch update 2.0.3_365, released 05 August 2020
 {: #203365_is_block}
 
-Review the changes in version 2.0.3_365 of the {{site.data.keyword.block_storage_is_short}} add-on.
+Review the changes in version 2.0.3_365 of the {{site.data.keyword.block_storage_is_short}} cluster add-on.
 {: shortdesc}
 
 - Image tags: `v2.0.4`   

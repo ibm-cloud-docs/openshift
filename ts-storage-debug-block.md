@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2024
-lastupdated: "2024-03-15"
+lastupdated: "2024-06-14"
 
 
 keywords: file, debug, help
@@ -248,7 +248,7 @@ If you use a `oc` CLI version that does not match at least the major.minor versi
 ## Checking and updating the {{site.data.keyword.blockstorageshort}} driver
 {: #debug_storage_block_driver}
 
-1. For {{site.data.keyword.block_storage_is_short}}, [verify that you have the latest version of the {{site.data.keyword.block_storage_is_short}} add-on](/docs/openshift?topic=openshift-vpc-block#vpc-addon-update).
+1. For {{site.data.keyword.block_storage_is_short}}, [verify that you have the latest version of the {{site.data.keyword.block_storage_is_short}} cluster add-on](/docs/openshift?topic=openshift-vpc-block#vpc-addon-update).
 
 1. For {{site.data.keyword.blockstorageshort}} on classic clusters, make sure that you installed the latest Helm chart version for the plug-in.
     1. Update your Helm chart repositories.

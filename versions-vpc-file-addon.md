@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2024
-lastupdated: "2024-05-29"
+lastupdated: "2024-06-14"
 
 
 keywords: file, add-on, changelog, openshift
@@ -16,21 +16,21 @@ subcollection: openshift
 
 
 
-# {{site.data.keyword.filestorage_vpc_full_notm}} add-on change log 
+# {{site.data.keyword.filestorage_vpc_full_notm}} cluster add-on change log 
 {: #versions-vpc-file-addon}
 
 The {{site.data.keyword.filestorage_vpc_short}} cluster add-on is available in Beta. 
 {: beta} 
 
 
-View information for patch updates to the {{site.data.keyword.filestorage_vpc_full_notm}} add-on in your {{site.data.keyword.openshiftlong_notm}} clusters.
+View information for patch updates to the {{site.data.keyword.filestorage_vpc_full_notm}} cluster add-on in your {{site.data.keyword.openshiftlong_notm}} clusters.
 {: shortdesc}
 
 Patch updates
 :   Patch updates are delivered automatically by IBM and don't contain any feature updates or changes in the supported add-on and cluster versions.
 
 Release updates
-:   Release updates contain new features for the {{site.data.keyword.filestorage_vpc_full_notm}} or changes in the supported add-on or cluster versions. You must manually apply release updates to your {{site.data.keyword.filestorage_vpc_full_notm}} add-on. To update your {{site.data.keyword.filestorage_vpc_full_notm}} add-on, see [Updating the {{site.data.keyword.filestorage_vpc_full_notm}} add-on](/docs/openshift?topic=openshift-storage-file-vpc-managing).
+:   Release updates contain new features for the {{site.data.keyword.filestorage_vpc_full_notm}} or changes in the supported add-on or cluster versions. You must manually apply release updates to your {{site.data.keyword.filestorage_vpc_full_notm}} cluster add-on. To update your {{site.data.keyword.filestorage_vpc_full_notm}} cluster add-on, see [Updating the {{site.data.keyword.filestorage_vpc_full_notm}} cluster add-on](/docs/openshift?topic=openshift-storage-file-vpc-managing).
 
 To view a list of add-ons and the supported cluster versions in the CLI, run the following command.
 ```sh

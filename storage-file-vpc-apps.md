@@ -18,14 +18,17 @@ subcollection: openshift
 {{site.data.keyword.containerlong}} provides pre-defined storage classes that you can use to provision {{site.data.keyword.filestorage_vpc_short}}. Each storage class specifies the type of {{site.data.keyword.filestorage_vpc_short}} that you provision, including available size, IOPS, file system, and the retention policy. You can also create your own storage classes depending on your use case.
 {: shortdesc}
 
-After you provision a specific type of storage by using a storage class, you can't change the type, or retention policy for the storage device. However, you can [change the size ](/docs/openshift?topic=openshift-storage-file-vpc-apps#storage-file-vpc-expansion) and the [IOPS](/docs/vpc?topic=vpc-adjusting-share-iops&interface=ui) if you want to increase your storage capacity and performance. To change the type and retention policy for your storage, you must create a new storage instance and copy the data from the old storage instance to your new one.
+The {{site.data.keyword.filestorage_vpc_short}} cluster add-on is available in Beta. 
+{: beta} 
+
+After you provision a specific type of storage by using a storage class, you can't change the type, or retention policy for the storage device. However, you can [change the size](/docs/openshift?topic=openshift-storage-file-vpc-apps#storage-file-vpc-expansion) and the [IOPS](/docs/vpc?topic=vpc-adjusting-share-iops&interface=ui) if you want to increase your storage capacity and performance. To change the type and retention policy for your storage, you must create a new storage instance and copy the data from the old storage instance to your new one.
 
 Decide on a storage class. For more information, see the [storage class reference](/docs/openshift?topic=openshift-storage-file-vpc-sc-ref).
 
 Review the following notes and considerations for {{site.data.keyword.filestorage_vpc_short}}.
 
-- By default, {{site.data.keyword.filestorage_vpc_short}} add-on provisions file shares in the `kube-<clusterID>` security group. This means pods can access file shares across nodes and zones.
-- If the `kube-<clusterID>` security group is not available, the {{site.data.keyword.filestorage_vpc_short}} add-on provisions file shares in default VPC security group.
+- By default, {{site.data.keyword.filestorage_vpc_short}} cluster add-on provisions file shares in the `kube-<clusterID>` security group. This means pods can access file shares across nodes and zones.
+- If the `kube-<clusterID>` security group is not available, the {{site.data.keyword.filestorage_vpc_short}} cluster add-on provisions file shares in default VPC security group.
 - If you need the following features, you must [create your own storage class](/docs/openshift?topic=openshift-storage-file-vpc-apps#storage-file-vpc-custom-sc).
     - Your app needs to run as non-root.
     - Your cluster is in a different resource group from your VPC and subnet.
@@ -33,13 +36,12 @@ Review the following notes and considerations for {{site.data.keyword.filestorag
     - You need bring your own (BYOK) encryption using a KMS provider such as HPCS or Key Protect.
     - You need to manually specify the subnet or IP address of the [Virtual Network Interface (VNI)](/docs/vpc?topic=vpc-file-storage-vpc-about&interface=ui#fs-mount-granular-auth).
 
-## Prerequisites for cluster version 4.11 and later
-{: #prereqs-vpc-file-versions}
+
 
 New security group rules have been introduced in versions 4.11 and later. These rule changes mean you must sync your security groups before you can use {{site.data.keyword.filestorage_vpc_short}}.
 {: important}
 
-Run the following commands to sync your security group settings.
+If your cluster was initially created at version 4.11 or earlier, run the following commands to sync your security group settings.
 
 1. Get the ID of the `kube-<clusterID>` security group.
     ```sh
@@ -547,7 +549,7 @@ To run an app as non-root, you must first create your own storage class that con
           storage: 10Gi # Enter the size of the storage in gigabytes (Gi). After your storage is provisioned, you can't change the size. Make sure to specify a size that matches the amount of data that you want to store.
       storageClassName: my-nonroot-class # Enter the name of the storage class that you want to use.
     ```
-      {: codeblock}
+    {: codeblock}
 
 1. Create the PVC.
     ```sh

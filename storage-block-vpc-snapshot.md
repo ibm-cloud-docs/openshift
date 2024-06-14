@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2022, 2024
-lastupdated: "2024-06-06"
+lastupdated: "2024-06-14"
 
 
 keywords: openshift, block storage, snapshot
@@ -16,7 +16,7 @@ subcollection: openshift
 
 
 
-# Setting up snapshots with the {{site.data.keyword.block_storage_is_short}} add-on
+# Setting up snapshots with the {{site.data.keyword.block_storage_is_short}} cluster add-on
 {: #vpc-volume-snapshot}
 
 [Virtual Private Cloud]{: tag-vpc} 
@@ -27,7 +27,7 @@ subcollection: openshift
 
 
 
-Snapshots support is available for cluster version 4.9 and later and with the {{site.data.keyword.block_storage_is_short}} add-on version 5.0 and later.
+Snapshots support is available for cluster version 4.9 and later and with the {{site.data.keyword.block_storage_is_short}} cluster add-on version 5.0 and later.
 {: important}
 
 

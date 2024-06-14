@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2024
-lastupdated: "2024-01-03"
+lastupdated: "2024-06-14"
 
 
 keywords: openshift, block storage, pod identity, trusted profiles
@@ -16,7 +16,7 @@ subcollection: openshift
 
 
 
-# Setting up trusted profiles for the {{site.data.keyword.block_storage_is_short}} add-on
+# Setting up trusted profiles for the {{site.data.keyword.block_storage_is_short}} cluster add-on
 {: #storage-block-vpc-trusted-profiles}
 
 [Virtual Private Cloud]{: tag-vpc} 
@@ -24,7 +24,7 @@ subcollection: openshift
 You can use trusted profiles to limit the access that running pods in your cluster have to other resources in your account or cluster. For more information about trusted profiles, see [Creating trusted profiles](/docs/account?topic=account-create-trusted-profile).
 {: shortdesc}
 
-## Enabling the {{site.data.keyword.block_storage_is_short}} add-on
+## Enabling the {{site.data.keyword.block_storage_is_short}} cluster add-on
 {: #vpc-addon-enable-trusted}
 
 1. [Log in to your account. If applicable, target the appropriate resource group. Set the context for your cluster.](/docs/containers?topic=containers-access_cluster)
@@ -36,7 +36,7 @@ You can use trusted profiles to limit the access that running pods in your clust
     {: pre}
 
 
-1. If you have an add-on version earlier than 4.4 of the {{site.data.keyword.block_storage_is_short}} add-on installed in your cluster, you must first disable the add-on and then enable version 4.4 or later. 
+1. If you have an add-on version earlier than 4.4 of the {{site.data.keyword.block_storage_is_short}} cluster add-on installed in your cluster, you must first disable the add-on and then enable version 4.4 or later. 
     ```sh
     ibmcloud oc cluster addon disable vpc-block-csi-driver  --cluster CLUSTER-ID
     ```

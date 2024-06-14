@@ -248,7 +248,7 @@ Choose your {{site.data.keyword.block_storage_is_short}} profile and create a pe
 
 9. Verify that the PVC is successfully mounted to your app. It might take a few minutes for your pods to get into a **Running** state.
 
-    During the deployment of your app, you might see intermittent `Unable to mount volumes` errors in the **Events** section of your CLI output. The {{site.data.keyword.block_storage_is_short}} add-on automatically retries mounting the storage to your apps. Wait a few more minutes for the storage to mount to your app.
+    During the deployment of your app, you might see intermittent `Unable to mount volumes` errors in the **Events** section of your CLI output. The {{site.data.keyword.block_storage_is_short}} cluster add-on automatically retries mounting the storage to your apps. Wait a few more minutes for the storage to mount to your app.
     {: tip}
 
     ```sh
@@ -468,10 +468,10 @@ You can attach a volume to one worker node only. Make sure that the volume is in
     {: codeblock}
     
 
-## Updating the {{site.data.keyword.block_storage_is_short}} add-on
+## Updating the {{site.data.keyword.block_storage_is_short}} cluster add-on
 {: #vpc-addon-update}
 
-You can update the {{site.data.keyword.block_storage_is_short}} add-on by using the `addon update` command.
+You can update the {{site.data.keyword.block_storage_is_short}} cluster add-on by using the `addon update` command.
 {: shortdesc}
 
 
@@ -735,10 +735,10 @@ When you want to set up encryption for your {{site.data.keyword.block_storage_is
 ### Changing the default storage class
 {: #vpc-block-default-edit}
 
-With version 4.2 the {{site.data.keyword.block_storage_is_short}} add-on sets the default storage class to the `ibmc-vpc-block-10iops-tier` class. If you have a default storage class other than `ibmc-vpc-block-10iops-tier` and your PVCs use the default storage class, this can result in multiple default storage classes which can cause PVC creation failures. To use a default storage class other than `ibmc-vpc-block-10iops-tier`, you can update the `addon-vpc-block-csi-driver-configmap` to change the `IsStorageClassDefault` to false.
+With version 4.2 the {{site.data.keyword.block_storage_is_short}} cluster add-on sets the default storage class to the `ibmc-vpc-block-10iops-tier` class. If you have a default storage class other than `ibmc-vpc-block-10iops-tier` and your PVCs use the default storage class, this can result in multiple default storage classes which can cause PVC creation failures. To use a default storage class other than `ibmc-vpc-block-10iops-tier`, you can update the `addon-vpc-block-csi-driver-configmap` to change the `IsStorageClassDefault` to false.
 {: important}
 
-The default storage class for the {{site.data.keyword.block_storage_is_short}} add-on is the `ibmc-vpc-block-10iops-tier` storage class.
+The default storage class for the {{site.data.keyword.block_storage_is_short}} cluster add-on is the `ibmc-vpc-block-10iops-tier` storage class.
 
 1. Edit the `addon-vpc-block-csi-driver-configmap`
     ```sh
@@ -927,7 +927,7 @@ You can create a customized storage class to provision {{site.data.keyword.block
 ### Updating the `VolumeAttachLimit`
 {: #vpc-block-volume-attach-limit}
 
-In versions `5.2` and later of the {{site.data.keyword.block_storage_is_short}} add-on, you can edit the maximum number of volumes that can be attached to each node by editing the configmap. The default value is `12`.
+In versions `5.2` and later of the {{site.data.keyword.block_storage_is_short}} cluster add-on, you can edit the maximum number of volumes that can be attached to each node by editing the configmap. The default value is `12`.
 
 Your account must be approved to use this feature.
 {: important}
@@ -1099,7 +1099,7 @@ You can only expand volumes that are mounted by an app pod.
 {: note}
 
 [Log in to your account. If applicable, target the appropriate resource group. Set the context for your cluster.](/docs/containers?topic=containers-access_cluster)
-1. If you are not using version `4.2` or later of the add-on, [update the {{site.data.keyword.block_storage_is_short}} add-on in your cluster](#vpc-addon-update).
+1. If you are not using version `4.2` or later of the add-on, [update the {{site.data.keyword.block_storage_is_short}} cluster add-on in your cluster](#vpc-addon-update).
 
 1. [Create a PVC](#vpc_block_qs) that uses a storage class that supports volume expansion.
 
