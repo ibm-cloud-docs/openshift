@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2024
-lastupdated: "2024-05-10"
+lastupdated: "2024-06-14"
 
 
 keywords: openshift, openshift data foundation, openshift container storage, ocs
@@ -445,7 +445,7 @@ To create an ODF storage cluster in your VPC cluster by using dynamic provisioni
 If you want to use an {{site.data.keyword.cos_full_notm}} service instance as your default backing store, make sure that you [created the service instance](#odf-create-cos), and created the Kubernetes secret in your cluster. When you create the ODF CRD in your cluster, ODF looks for a secret named `ibm-cloud-cos-creds` to set up the default backing store that uses your {{site.data.keyword.cos_short}} HMAC credentials.
 {: note}
 
-1. Create a custom resource definition called `OcsCluster`. Save one of the following custom resource definition files on your local machine and edit it to include the name of the custom storage class that you created earlier as the `monStorageClassName` and `osdStorageClassName` parameters. For more information about the `OcsCluster` parameters, see the [parameter reference](/docs/openshift?topic=openshift-openshift_storage_parameters).
+1. Create a custom resource definition called `OcsCluster`. Save one of the following custom resource definition files on your local machine and edit it to include the name of the your storage class that you created earlier as the `monStorageClassName` and `osdStorageClassName` parameters. For more information about the `OcsCluster` parameters, see the [parameter reference](/docs/openshift?topic=openshift-openshift_storage_parameters).
 
     Example custom resource definition for installing ODF on all worker nodes on a 4.8 cluster.
 

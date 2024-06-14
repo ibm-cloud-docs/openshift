@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2024
-lastupdated: "2024-06-13"
+lastupdated: "2024-06-14"
 
 
 keywords: openshift
@@ -4666,7 +4666,7 @@ subcollection: openshift
 
 * [Setting up encryption for {{site.data.keyword.blockstorageshort}}](/docs/openshift?topic=openshift-block_storage#block_encryption_setup)
 
-    * [Encrypting volume data by using a custom storage class](/docs/openshift?topic=openshift-block_storage#encrypt_custom_sc)
+    * [Encrypting volume data by using your own storage class](/docs/openshift?topic=openshift-block_storage#encrypt_custom_sc)
 
     * [Create a PVC that references your {{site.data.keyword.blockstorageshort}} secret](/docs/openshift?topic=openshift-block_storage#pvc_encrypt_label)
 
@@ -4741,7 +4741,7 @@ subcollection: openshift
 
 * [Updating the {{site.data.keyword.block_storage_is_short}} add-on](/docs/openshift?topic=openshift-vpc-block#vpc-addon-update)
 
-    * [Recreating custom storage classes after updating to version 4.2](/docs/openshift?topic=openshift-vpc-block#recreate-sc-42)
+    * [Re-creating your own storage classes after updating to version 4.2](/docs/openshift?topic=openshift-vpc-block#recreate-sc-42)
 
 * [Setting up encryption for {{site.data.keyword.block_storage_is_short}}](/docs/openshift?topic=openshift-vpc-block#vpc-block-encryption)
 
@@ -4749,7 +4749,7 @@ subcollection: openshift
 
     * [Changing the default storage class](/docs/openshift?topic=openshift-vpc-block#vpc-block-default-edit)
 
-    * [Creating a custom storage class](/docs/openshift?topic=openshift-vpc-block#vpc-customize-storage-class)
+    * [Creating your own storage class](/docs/openshift?topic=openshift-vpc-block#vpc-customize-storage-class)
 
     * [Verifying your {{site.data.keyword.block_storage_is_short}} file system](/docs/openshift?topic=openshift-vpc-block#vpc-block-fs-verify)
 
@@ -4913,7 +4913,7 @@ subcollection: openshift
 
 * [Attaching existing file storage to an app](/docs/openshift?topic=openshift-storage-file-vpc-apps#vpc-add-file-static)
 
-* [Creating a custom storage class](/docs/openshift?topic=openshift-storage-file-vpc-apps#storage-file-vpc-custom-sc)
+* [Creating your own storage class](/docs/openshift?topic=openshift-storage-file-vpc-apps#storage-file-vpc-custom-sc)
 
 * [Deploying an app that runs as non-root](/docs/openshift?topic=openshift-storage-file-vpc-apps#vpc-file-non-root-app)
 
@@ -10036,7 +10036,7 @@ subcollection: openshift
 
 * [If you exceeded the number of remote rules per security group](/docs/openshift?topic=openshift-ts-sbd-cluster-create-quota#quota-num-of-remote-rules)
 
-[I use custom security groups and after creating a version 4.15 cluster, applications running in other clusters in my VPC are failing](/docs/openshift?topic=openshift-ts-sbd-other-clusters#ts-sbd-other-clusters)
+[After creating a version 4.15 cluster, applications running in other clusters in my VPC are failing](/docs/openshift?topic=openshift-ts-sbd-other-clusters#ts-sbd-other-clusters)
 
 
 ### Worker nodes
@@ -10147,7 +10147,7 @@ subcollection: openshift
 
 [Classic: Why can't I add worker nodes with an invalid VLAN ID?](/docs/openshift?topic=openshift-suspended#suspended)
 
-[Why do I see a timeout error when I try to log in to a pod on a new worker node?](/docs/openshift?topic=openshift-cs_nodes_duplicate_ip#cs_nodes_duplicate_ip)
+[Why do I see a timeout error when I try to log in to a pod?](/docs/openshift?topic=openshift-cs_nodes_duplicate_ip#cs_nodes_duplicate_ip)
 
 [Why can't I SSH into my worker node?](/docs/openshift?topic=openshift-cs_ssh_worker#cs_ssh_worker)
 
@@ -10484,7 +10484,7 @@ subcollection: openshift
 
 [Why does my {{site.data.keyword.filestorage_vpc_short}} deployment fail due to a permissions error?](/docs/openshift?topic=openshift-ts-storage-vpc-file-non-root#ts-storage-vpc-file-non-root)
 
-* [Create custom storage class and specify the `uid` and `gid` your app needs](/docs/openshift?topic=openshift-ts-storage-vpc-file-non-root#ts-vpc-new-sc)
+* [Create your own storage class and specify the `uid` and `gid` your app needs](/docs/openshift?topic=openshift-ts-storage-vpc-file-non-root#ts-vpc-new-sc)
 
 * [Edit your app to run as root with `fsGroup: 0`](/docs/openshift?topic=openshift-ts-storage-vpc-file-non-root#ts-vpc-yaml-sc)
 

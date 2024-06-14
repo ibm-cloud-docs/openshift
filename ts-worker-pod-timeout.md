@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2024
-lastupdated: "2024-06-07"
+lastupdated: "2024-06-14"
 
 
 keywords: kubernetes, help, network, connectivity, openshift
@@ -17,7 +17,7 @@ content-type: troubleshoot
 
 
 
-# Why do I see a timeout error when I try to log in to a pod on a new worker node?
+# Why do I see a timeout error when I try to log in to a pod?
 {: #cs_nodes_duplicate_ip}
 {: support}
 

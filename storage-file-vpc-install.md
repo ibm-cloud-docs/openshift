@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2022, 2024
-lastupdated: "2024-05-29"
+lastupdated: "2024-06-14"
 
 
 keywords: openshift, {{site.data.keyword.openshiftlong_notm}}, add-on, file
@@ -21,7 +21,7 @@ subcollection: openshift
 
 [Virtual Private Cloud]{: tag-vpc}
 
-{{site.data.keyword.filestorage_vpc_full_notm}} is persistent, fast, and flexible network-attached, NFS-based {{site.data.keyword.filestorage_vpc_short}} that you can add to your apps by using Kubernetes persistent volumes (PVs). You can choose between predefined storage tiers with GB sizes and IOPS that meet the requirements of your workloads. To find out if {{site.data.keyword.filestorage_vpc_short}} is the correct storage option for you, see [Choosing a storage solution](/docs/openshift?topic=openshift-storage-plan). For pricing information, see [Pricing](https://cloud.ibm.com/cloud-storage/file/order){: external}.
+{{site.data.keyword.filestorage_vpc_full_notm}} is persistent, fast, and flexible network-attached, NFS-based {{site.data.keyword.filestorage_vpc_short}} that you can add to your apps by using Kubernetes persistent volumes (PVs). You can choose between predefined storage tiers with GB sizes and IOPS that meet the requirements of your workloads. To find out if {{site.data.keyword.filestorage_vpc_short}} is the correct storage option for you, see [Choosing a storage solution](/docs/openshift?topic=openshift-storage-plan). For pricing information, see [Pricing](https://cloud.ibm.com/vpc-ext/provision/fileShare){: external}.
 {: shortdesc}
 
 
@@ -42,9 +42,15 @@ subcollection: openshift
 
     Example output
     ```sh
-    OK
     Name                  Version         Supported Kubernetes Range   Supported OpenShift Range   Kubernetes Default   OpenShift Default
-    vpc-file-csi-driver   1.0 (default)   >=1.24.0 <1.31.0             >=4.10.0 <4.16.0            -                    -
+    vpc-file-csi-driver   1.2             >=1.24.0                     >=4.10.0                    -                    -
+    vpc-file-csi-driver   2.0 (default)   >=1.30.0                     >=4.15.0                    -                    -
+    ```
+    {: pre}
+
+1. For add-on version 2.0 and later, enable the `ibm-storage-operator` first.
+    ```sh
+    ibmcloud oc cluster addon enable ibm-storage-operator -c CLUSTER
     ```
     {: pre}
 

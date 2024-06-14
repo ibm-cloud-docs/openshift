@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2024
-lastupdated: "2024-06-13"
+lastupdated: "2024-06-14"
 
 
 keywords: openshift, {{site.data.keyword.openshiftlong_notm}}, oc, ks
@@ -475,7 +475,7 @@ Version 1.0.258 of the CLI was released on 26 April 2021.
 - In the output of the `ibmcloud oc addon-versions` command, changes the `Min. OpenShift version` column to `Supported Openshift Range`. 
 - When `--output json` is specified for the `ibmcloud oc storage attachment get` or `ibmcloud oc storage attachment ls` commands, fixes the output so that a volume table is not printed after the JSON output. 
 - Fixes a `golang` vulnerability for [CVE-2020-28852](https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2020-28852){: external}.
-- Adds the `ibmcloud sat storage config sc add`, `ibmcloud sat storage config sc get`, and `ibmcloud sat storage config sc ls` beta commands to create and view custom storage classes of {{site.data.keyword.satelliteshort}} storage configurations.
+- Adds the `ibmcloud sat storage config sc add`, `ibmcloud sat storage config sc get`, and `ibmcloud sat storage config sc ls` beta commands to create and view your own storage classes of {{site.data.keyword.satelliteshort}} storage configurations.
 - Adds the `ibmcloud sat messages` command to view current messages from {{site.data.keyword.satellitelong_notm}}.
 - Fixes a `golang` vulnerability for [CVE-2020-28852](https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2020-28852){: external}.
 - Adds the `ibmcloud sat storage assignment upgrade` and `ibmcloud sat storage config upgrade` commands.

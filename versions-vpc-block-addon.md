@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2024
-lastupdated: "2024-05-10"
+lastupdated: "2024-06-14"
 
 
 keywords: openshift, {{site.data.keyword.openshiftlong_notm}}, block, storage, add-on, changelog
@@ -669,7 +669,7 @@ Updates in this version:
 After updating to version 4.2, you must complete the following steps.
 {: important}
 
-* [Delete and recreate](/docs/openshift?topic=openshift-vpc-block#vpc-addon-update) any custom storage classes that are using the `sizeRange` or `iopsRange` parameters.
+* [Delete and re-create](/docs/openshift?topic=openshift-vpc-block#vpc-addon-update) any of your own storage classes that use the `sizeRange` or `iopsRange` parameters.
 * If you use a default storage class other than `ibmc-vpc-block-10iops-tier`, you must change the `isStorageClassDefault` setting to `false` in the `addon-vpc-block-csi-driver-configmap` configmap in the `kube-system` namespace. For more information, see [Changing the default storage class](/docs/openshift?topic=openshift-vpc-block#vpc-block-default-edit).
     
 

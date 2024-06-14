@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2024
-lastupdated: "2024-05-29"
+lastupdated: "2024-06-14"
 
 
 keywords: openshift, adding object storage, adding storage to cluster, adding pvc, persistent volume claim, object storage pvc
@@ -104,7 +104,7 @@ To add {{site.data.keyword.cos_full_notm}} to your cluster:
     :   If `ibm.io/auto-create-bucket: "true"`: Enter the storage class that you want to use for your new bucket.
     :   If `ibm.io/auto-create-bucket: "false"`: Enter the storage class that you used to create your existing bucket. 
     :   If you manually created the bucket in your {{site.data.keyword.cos_full_notm}} service instance or you can't remember the storage class that you used, find your service instance in the {{site.data.keyword.cloud_notm}} dashboard and review the **Class** and **Location** of your existing bucket. Then, use the appropriate [storage class](/docs/openshift?topic=openshift-storage_cos_reference).
-        The {{site.data.keyword.cos_full_notm}} API endpoint that is set in your storage class is based on the region that your cluster is in. If you want to access a bucket that is located in a different region than the one where your cluster is in, you must create a custom storage class and use the appropriate API endpoint for your bucket.
+        The {{site.data.keyword.cos_full_notm}} API endpoint that is set in your storage class is based on the region that your cluster is in. If you want to access a bucket that is located in a different region than the one where your cluster is in, you must create your own storage class and use the appropriate API endpoint for your bucket.
         {: note}
 
     `ibm.io/secret-name`
