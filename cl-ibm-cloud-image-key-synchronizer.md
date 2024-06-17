@@ -36,7 +36,6 @@ Review the version history for IBM Cloud Image Key Synchronizer.
 ### 1.0.0_2186, released 08 May 24
 {: #ibm-cloud-image-key-synchronizer-1.0.0_2186}
 
-- Initial release of 1.0.0
 
 
 

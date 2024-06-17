@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2024
-lastupdated: "2024-06-06"
+lastupdated: "2024-06-14"
 
 
 keywords: openshift, block storage, deploy apps
@@ -248,7 +248,7 @@ Choose your {{site.data.keyword.block_storage_is_short}} profile and create a pe
 
 9. Verify that the PVC is successfully mounted to your app. It might take a few minutes for your pods to get into a **Running** state.
 
-    During the deployment of your app, you might see intermittent `Unable to mount volumes` errors in the **Events** section of your CLI output. The {{site.data.keyword.block_storage_is_short}} add-on automatically retries mounting the storage to your apps. Wait a few more minutes for the storage to mount to your app.
+    During the deployment of your app, you might see intermittent `Unable to mount volumes` errors in the **Events** section of your CLI output. The {{site.data.keyword.block_storage_is_short}} cluster add-on automatically retries mounting the storage to your apps. Wait a few more minutes for the storage to mount to your app.
     {: tip}
 
     ```sh
@@ -468,10 +468,10 @@ You can attach a volume to one worker node only. Make sure that the volume is in
     {: codeblock}
     
 
-## Updating the {{site.data.keyword.block_storage_is_short}} add-on
+## Updating the {{site.data.keyword.block_storage_is_short}} cluster add-on
 {: #vpc-addon-update}
 
-You can update the {{site.data.keyword.block_storage_is_short}} add-on by using the `addon update` command.
+You can update the {{site.data.keyword.block_storage_is_short}} cluster add-on by using the `addon update` command.
 {: shortdesc}
 
 
@@ -535,20 +535,20 @@ Before updating the add-on review the [change log](/docs/openshift?topic=openshi
     If you use a default storage class other than the `ibmc-vpc-block-10iops-tier` storage class you must change the default storage class settings in the `addon-vpc-block-csi-driver-configmap` ConfigMap. For more information, see [Changing the default storage class](/docs/openshift?topic=openshift-vpc-block#vpc-block-default-edit).
     {: important}
     
-1. If you created custom storage classes based on the default {{site.data.keyword.block_storage_is_short}} storage classes, you must recreate those storage classes to update the parameters. For more information, see [Recreating custom storage classes after updating to version 4.2](#recreate-sc-42).
+1. If you created your own storage classes based on the default {{site.data.keyword.block_storage_is_short}} storage classes, you must re-create those storage classes to update the parameters. For more information, see [Recreating your own storage classes after updating to version 4.2](#recreate-sc-42).
     
 
 
-### Recreating custom storage classes after updating to version 4.2
+### Re-creating your own storage classes after updating to version 4.2
 {: #recreate-sc-42}
 
 
 
-With version 4.2, the default parameters for storage classes has changed. The `sizeRange` or `iopsRange` parameters are no longer used. If you created any custom storage classes that use these parameters, you must edit your custom storage classes to remove these parameters. To change the parameters in custom storage classes, you must delete and recreate them. Previously, `sizeRange` and `iopsRange` were provided each storage class as reference information. With version 4.2, these references have been removed. Now, for information about block storage profiles, sizes, and IOPs, see the [block storage profiles](/docs/vpc?topic=vpc-block-storage-profiles&interface=ui) reference.
+With version 4.2, the default parameters for storage classes has changed. The `sizeRange` or `iopsRange` parameters are no longer used. If you created any of your own storage classes that use these parameters, you must edit your own storage classes to remove these parameters. To change the parameters in your own storage classes, you must delete and re-create them. Previously, `sizeRange` and `iopsRange` were provided each storage class as reference information. With version 4.2, these references have been removed. Now, for information about block storage profiles, sizes, and IOPs, see the [block storage profiles](/docs/vpc?topic=vpc-block-storage-profiles&interface=ui) reference.
 {: important}
 
 
-1. To find the details of your custom storage classes, run the following command.
+1. To find the details of your own storage classes, run the following command.
 
     ```sh
     oc describe sc STORAGECLASS
@@ -580,7 +580,7 @@ With version 4.2, the default parameters for storage classes has changed. The `s
 ## Setting up encryption for {{site.data.keyword.block_storage_is_short}}
 {: #vpc-block-encryption}
 
-Use a key management service (KMS) provider, such as {{site.data.keyword.keymanagementservicelong}}, to create a private root key that you use in your {{site.data.keyword.block_storage_is_short}} instance to encrypt data as it is written to the storage. After you create the private root key, create a custom storage class or a Kubernetes secret with your root key and then use this storage class or secret to provision your {{site.data.keyword.block_storage_is_short}} instance.
+Use a key management service (KMS) provider, such as {{site.data.keyword.keymanagementservicelong}}, to create a private root key that you use in your {{site.data.keyword.block_storage_is_short}} instance to encrypt data as it is written to the storage. After you create the private root key, create your own storage class or a Kubernetes secret with your root key and then use this storage class or secret to provision your {{site.data.keyword.block_storage_is_short}} instance.
 {: shortdesc}
 
 Enabling encryption for {{site.data.keyword.block_storage_is_short}} impacts performance by approximately 20%. However, the exact impact depends on your worker node and storage volume configuration. Consider allowing for performance impacts when enabling encryption.
@@ -735,10 +735,10 @@ When you want to set up encryption for your {{site.data.keyword.block_storage_is
 ### Changing the default storage class
 {: #vpc-block-default-edit}
 
-With version 4.2 the {{site.data.keyword.block_storage_is_short}} add-on sets the default storage class to the `ibmc-vpc-block-10iops-tier` class. If you have a default storage class other than `ibmc-vpc-block-10iops-tier` and your PVCs use the default storage class, this can result in multiple default storage classes which can cause PVC creation failures. To use a default storage class other than `ibmc-vpc-block-10iops-tier`, you can update the `addon-vpc-block-csi-driver-configmap` to change the `IsStorageClassDefault` to false.
+With version 4.2 the {{site.data.keyword.block_storage_is_short}} cluster add-on sets the default storage class to the `ibmc-vpc-block-10iops-tier` class. If you have a default storage class other than `ibmc-vpc-block-10iops-tier` and your PVCs use the default storage class, this can result in multiple default storage classes which can cause PVC creation failures. To use a default storage class other than `ibmc-vpc-block-10iops-tier`, you can update the `addon-vpc-block-csi-driver-configmap` to change the `IsStorageClassDefault` to false.
 {: important}
 
-The default storage class for the {{site.data.keyword.block_storage_is_short}} add-on is the `ibmc-vpc-block-10iops-tier` storage class.
+The default storage class for the {{site.data.keyword.block_storage_is_short}} cluster add-on is the `ibmc-vpc-block-10iops-tier` storage class.
 
 1. Edit the `addon-vpc-block-csi-driver-configmap`
     ```sh
@@ -758,18 +758,16 @@ The default storage class for the {{site.data.keyword.block_storage_is_short}} a
     
 
 
-### Creating a custom storage class
+### Creating your own storage class
 {: #vpc-customize-storage-class}
 
 Create your own customized storage class with the preferred settings for your {{site.data.keyword.block_storage_is_short}} instance.
 {: shortdesc}
 
-You might create a custom storage class if you want to:
+You might create your own storage class if you want to:
 * Set a custom IOPs value.
 * Set up {{site.data.keyword.block_storage_is_short}} with a file system type other than `ext4`.
 * Set up encryption.
-
-To create your own storage class:
 
 1. Review the [Storage class reference](/docs/openshift?topic=openshift-storage-block-vpc-sc-ref) to determine the `profile` that you want to use for your storage class. You can also review the [custom profiles](/docs/vpc?topic=vpc-block-storage-profiles#custom) if you want to specify custom IOPs for your {{site.data.keyword.block_storage_is_short}}.
 
@@ -813,7 +811,7 @@ To create your own storage class:
     :   Enter the profile that you selected in the previous step, or enter `custom` to use a custom IOPs value. To find supported storage sizes for a specific profile, see [Tiered IOPS profile](/docs/vpc?topic=vpc-block-storage-profiles). Any PVC that uses this storage class must specify a size value that is within this range.
         
     `csi.storage.k8s.io/fstype`
-        :   In the parameters, enter the file system for your {{site.data.keyword.block_storage_is_short}} instance. Choose `xfs`, `ext3`, or `ext4`. If you want to modify the ownership or permissions of your volume you must specify the `csi.storage.k8s.io/fstype` in your custom storage class and your PVC must have `ReadWriteOnce` as the `accessMode`. The {{site.data.keyword.block_storage_is_short}} driver uses the `ReadWriteOnceWithFSType` `fsGroupPolicy`. For more information, see [CSI driver documentation](https://kubernetes-csi.github.io/docs/support-fsgroup.html#csi-driver-fsgroup-support){: external}.
+        :   In the parameters, enter the file system for your {{site.data.keyword.block_storage_is_short}} instance. Choose `xfs`, `ext3`, or `ext4`. If you want to modify the ownership or permissions of your volume you must specify the `csi.storage.k8s.io/fstype` in your own storage class and your PVC must have `ReadWriteOnce` as the `accessMode`. The {{site.data.keyword.block_storage_is_short}} driver uses the `ReadWriteOnceWithFSType` `fsGroupPolicy`. For more information, see [CSI driver documentation](https://kubernetes-csi.github.io/docs/support-fsgroup.html#csi-driver-fsgroup-support){: external}.
 
     `encrypted`
     :   In the parameters, enter `true` to create a storage class that sets up encryption for your {{site.data.keyword.block_storage_is_short}} volume. If you set this option to `true`, you must provide the root key CRN of your {{site.data.keyword.keymanagementserviceshort}} service instance that you want to use in `parameterencryptionKey`. For more information about encrypting your data, see [Setting up encryption for your {{site.data.keyword.block_storage_is_short}}](#vpc-block-encryption).
@@ -929,7 +927,7 @@ You can create a customized storage class to provision {{site.data.keyword.block
 ### Updating the `VolumeAttachLimit`
 {: #vpc-block-volume-attach-limit}
 
-In versions `5.2` and later of the {{site.data.keyword.block_storage_is_short}} add-on, you can edit the maximum number of volumes that can be attached to each node by editing the configmap. The default value is `12`.
+In versions `5.2` and later of the {{site.data.keyword.block_storage_is_short}} cluster add-on, you can edit the maximum number of volumes that can be attached to each node by editing the configmap. The default value is `12`.
 
 Your account must be approved to use this feature.
 {: important}
@@ -1101,7 +1099,7 @@ You can only expand volumes that are mounted by an app pod.
 {: note}
 
 [Log in to your account. If applicable, target the appropriate resource group. Set the context for your cluster.](/docs/containers?topic=containers-access_cluster)
-1. If you are not using version `4.2` or later of the add-on, [update the {{site.data.keyword.block_storage_is_short}} add-on in your cluster](#vpc-addon-update).
+1. If you are not using version `4.2` or later of the add-on, [update the {{site.data.keyword.block_storage_is_short}} cluster add-on in your cluster](#vpc-addon-update).
 
 1. [Create a PVC](#vpc_block_qs) that uses a storage class that supports volume expansion.
 

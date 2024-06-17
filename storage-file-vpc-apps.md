@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2022, 2024
-lastupdated: "2024-06-03"
+lastupdated: "2024-06-14"
 
 keywords: kubernetes, openshift
 
@@ -15,31 +15,33 @@ subcollection: openshift
 # Adding {{site.data.keyword.filestorage_vpc_short}} to apps
 {: #storage-file-vpc-apps}
 
-{{site.data.keyword.containerlong}} provides pre-defined storage classes that you can use to provision {{site.data.keyword.filestorage_vpc_short}}. Each storage class specifies the type of {{site.data.keyword.filestorage_vpc_short}} that you provision, including available size, IOPS, file system, and the retention policy. You can also create your own custom storage classes depending on your use case.
+{{site.data.keyword.containerlong}} provides pre-defined storage classes that you can use to provision {{site.data.keyword.filestorage_vpc_short}}. Each storage class specifies the type of {{site.data.keyword.filestorage_vpc_short}} that you provision, including available size, IOPS, file system, and the retention policy. You can also create your own storage classes depending on your use case.
 {: shortdesc}
 
-After you provision a specific type of storage by using a storage class, you can't change the type, or retention policy for the storage device. However, you can [change the size and the IOPS](/docs/vpc?topic=vpc-file-storage-profiles#fs-tiers){: external} if you want to increase your storage capacity and performance. To change the type and retention policy for your storage, you must create a new storage instance and copy the data from the old storage instance to your new one.
+The {{site.data.keyword.filestorage_vpc_short}} cluster add-on is available in Beta. 
+{: beta} 
 
-Decide on a storage class. For more information, see the [storage class reference](/docs/openshift?topic=openshift-storage-file-vpc-managing).
+After you provision a specific type of storage by using a storage class, you can't change the type, or retention policy for the storage device. However, you can [change the size](/docs/openshift?topic=openshift-storage-file-vpc-apps#storage-file-vpc-expansion) and the [IOPS](/docs/vpc?topic=vpc-adjusting-share-iops&interface=ui) if you want to increase your storage capacity and performance. To change the type and retention policy for your storage, you must create a new storage instance and copy the data from the old storage instance to your new one.
+
+Decide on a storage class. For more information, see the [storage class reference](/docs/openshift?topic=openshift-storage-file-vpc-sc-ref).
 
 Review the following notes and considerations for {{site.data.keyword.filestorage_vpc_short}}.
 
-- By default, {{site.data.keyword.filestorage_vpc_short}} add-on provisions file shares in the `kube-<clusterID>` security group. This means pods can access file shares across nodes and zones.
-- If the `kube-<clusterID>` security group is not available, the {{site.data.keyword.filestorage_vpc_short}} add-on provisions file shares in default VPC security group.
-- If you need the following features, you must [create a custom storage class](#storage-file-vpc-custom-sc).
+- By default, {{site.data.keyword.filestorage_vpc_short}} cluster add-on provisions file shares in the `kube-<clusterID>` security group. This means pods can access file shares across nodes and zones.
+- If the `kube-<clusterID>` security group is not available, the {{site.data.keyword.filestorage_vpc_short}} cluster add-on provisions file shares in default VPC security group.
+- If you need the following features, you must [create your own storage class](/docs/openshift?topic=openshift-storage-file-vpc-apps#storage-file-vpc-custom-sc).
     - Your app needs to run as non-root.
     - Your cluster is in a different resource group from your VPC and subnet.
     - You need to limit file share access to pods on a given node or in a given zone.
     - You need bring your own (BYOK) encryption using a KMS provider such as HPCS or Key Protect.
-    - You need to manually specify the IP address of the Virtual Network Interface (VNI).
+    - You need to manually specify the subnet or IP address of the [Virtual Network Interface (VNI)](/docs/vpc?topic=vpc-file-storage-vpc-about&interface=ui#fs-mount-granular-auth).
 
-## Prerequisites for cluster version 4.11 and later
-{: #prereqs-vpc-file-versions}
+
 
 New security group rules have been introduced in versions 4.11 and later. These rule changes mean you must sync your security groups before you can use {{site.data.keyword.filestorage_vpc_short}}.
 {: important}
 
-Run the following commands to sync your security group settings.
+If your cluster was initially created at version 4.11 or earlier, run the following commands to sync your security group settings.
 
 1. Get the ID of the `kube-<clusterID>` security group.
     ```sh
@@ -67,7 +69,7 @@ Create a persistent volume claim (PVC) to dynamically provision {{site.data.keyw
     ```
     {: pre}
 
-1. Save the following code to a file called `my-pvc.yaml`. This code creates a claim that is named `my-pvc` by using the `ibmc-vpc-file-dp2` storage class, billed `monthly`, with a gigabyte size of `10Gi`.
+1. Save the following code to a file called `my-pvc.yaml`. This code creates a claim that is named `my-pvc` by using the `ibmc-vpc-file-min-iops` storage class, billed `monthly`, with a gigabyte size of `10Gi`.
 
     ```yaml
     apiVersion: v1
@@ -80,7 +82,7 @@ Create a persistent volume claim (PVC) to dynamically provision {{site.data.keyw
       resources:
         requests:
           storage: 10Gi # Enter the size of the storage in gigabytes (Gi).
-      storageClassName: ibmc-vpc-file-dp2 # Enter the name of the storage class that you want to use.
+      storageClassName: ibmc-vpc-file-min-iops # Enter the name of the storage class that you want to use.
     ```
       {: codeblock}
 
@@ -230,7 +232,7 @@ To provision volumes that support expansion, you must use storage class that has
     Example output
     ```sh
     NAME     STATUS   VOLUME                                     CAPACITY   ACCESS MODES   STORAGECLASS        AGE
-    my-pvc   Bound    pvc-25b6912e-75bf-41ca-b6b2-567fa4f9d245   50Gi       RWX            ibmc-vpc-file-dp2   3m31s
+    my-pvc   Bound    pvc-25b6912e-75bf-41ca-b6b2-567fa4f9d245   50Gi       RWX            ibmc-vpc-file-min-iops   3m31s
     ```
     {: screen}
 
@@ -254,11 +256,69 @@ Before you can create a persistent volume (PV), you have to retrieve details abo
     ```
     {: pre}
 
+    Example command.
+    ```sh
+    ibmcloud is share r134-bad98878-1f63-45d2-a3fd-60447094c2e6
+    ```
+    {: pre}
+
+    Example output.
+    ```sh
+    ID                           r134-bad98878-1f63-45d2-a3fd-60447094c2e6   
+    Name                         pvc-e7e005a9-e96b-41ad-9d6e-74650a9110a0   
+    CRN                          crn:v1:staging:public:is:us-south-1:a/77f2bceddaeb577dcaddb4073fe82c1c::share:r134-bad98878-1f63-45d2-a3fd-60447094c2e6   
+    Lifecycle state              stable   
+    Access control mode          security_group   
+    Zone                         us-south-1   
+    Profile                      dp2   
+    Size(GB)                     10   
+    IOPS                         100   
+    User Tags                    clusterid:cpjao3l20dl78jadqkd0,namespace:default,provisioner:vpc.file.csi.ibm.io,pv:pvc-e7e005a9-e96b-41ad-9d6e-74650a9110a0,pvc:pv-file,reclaimpolicy:delete,storageclass:custom-eni   
+    Encryption                   provider_managed   
+    Mount Targets                ID                                          Name      
+                                r134-aa2aabb8-f616-47be-886b-99220852b728   pvc-e7e005a9-e96b-41ad-9d6e-74650a9110a0      
+                                    
+    Resource group               ID                                 Name      
+                                300b9469ee8676f9a038ecdf408c1a9d   Default      
+                                    
+    Created                      2024-06-11T19:55:11+05:30   
+    Replication role             none   
+    Replication status           none   
+    Replication status reasons   Status code   Status message      
+    ```
+    {: screen}
+
 1. Get the `nfsServerPath`, also called the `Mount Path`. 
     ```sh
     ibmcloud is share-mount-target SHARE-ID SHARE-TARGET-ID
     ```
     {: pre}
+
+    Example command.
+    ```sh
+    ibmcloud is share-mount-target  r134-bad98878-1f63-45d2-a3fd-60447094c2e6 r134-aa2aabb8-f616-47be-886b-99220852b728
+    ```
+    {: pre}
+
+    Example output
+
+    ```sh
+    ID                          r134-aa2aabb8-f616-47be-886b-99220852b728   
+    Name                        pvc-e7e005a9-e96b-41ad-9d6e-74650a9110a0   
+    VPC                         ID                                          Name      
+                                r134-f05922d4-d8ab-4f64-9a3d-82664b303bc1   prankul-vpc-public      
+                                  
+    Access control mode         security_group   
+    Resource type               share_mount_target   
+    Virtual network interface   ID                                          Name      
+                                0716-6407fb4b-e962-49c4-8556-dc94f4574b4b   defective-chloride-huffy-gladly      
+                                  
+    Lifecycle state             stable   
+    Mount path                  10.240.0.23:/89d8a454_f552_42bf_8374_4d31481edf4d   
+    Transit Encryption          none   
+    Created                     2024-06-11T19:55:12+05:30
+    ```
+    {: screen}
 
 1. Create a PV configuration file called `static-file-share.yaml` that references your file share. 
     ```yaml
@@ -372,69 +432,58 @@ Before you can create a persistent volume (PV), you have to retrieve details abo
     ```
     {: pre}
 
-## Creating a custom storage class
+## Creating your own storage class
 {: #storage-file-vpc-custom-sc}
 
-Create your own customized storage class with the preferred settings for your {{site.data.keyword.filestorage_vpc_short}} instance.
+Create your own customized storage class with the preferred settings for your {{site.data.keyword.filestorage_vpc_short}} instance. The following example uses the `dp2` [profile](https://cloud.ibm.com/docs/vpc?topic=vpc-file-storage-profiles&interface=ui#dp2-profile).
 
-- With monthly billing, you pay the monthly charge regardless of the length of time the persistent storage is used or when it is removed.
 
-- If you want to keep your data, then create a class with a `retain` reclaim policy. When you delete the PVC, only the PVC is deleted. The PV, the physical storage device in your IBM Cloud infrastructure account, and your data still exist.
-
-- To reclaim the storage and use it in your cluster again, you must remove the PV and follow the steps for [using existing {{site.data.keyword.filestorage_vpc_short}}](/docs/openshift?topic=openshift-storage-file-vpc-apps).
-
-- If you want the PV, the data, and your physical {{site.data.keyword.filestorage_vpc_short}} device to be deleted when you delete the PVC, create a storage class without `retain`.
-
-1. Review the [Storage class reference](/docs/openshift?topic=openshift-storage-file-vpc-sc-ref) to determine the `profile` that you want to use for your storage class. 
-
-    If you want to use a preinstalled storage class as a template, you can get the details of a storage class by using the `oc get sc STORAGECLASS -o yaml` command.
-    {: tip}
-
-2. Create a custom storage class configuration file.
+1. Create a storage class configuration file.
 
     ```yaml
     apiVersion: storage.k8s.io/v1
     kind: StorageClass
     metadata:
-        name: ibmc-vpc-file-dp-eni-default
+        name: ibmc-vpc-file-custom-sc
+        labels:
+            app.kubernetes.io/name: ibm-vpc-file-csi-driver
+        annotations:
+              version: v2.0
     provisioner: vpc.file.csi.ibm.io
     mountOptions:
-        - hard
-        - nfsvers=4.1
-        - sec=sys
+          - hard
+          - nfsvers=4.1
+          - sec=sys
     parameters:
-        profile: "dp2" # The VPC Storage profile used.
-        iops: "100" # Default IOPS.
-        billingType: "hourly" # The default billing policy used.
-        encrypted: "false" # By default, all PVC using this class will only be provider managed encrypted.
-        encryptionKey: "" # If encrypted is true, then you must specify the CRN of the encryption key that you want to use from your associated KP/HPCS instance.
-        gid: "0" # The default is 0 which runs as root. You can optionally specify a non-root group ID.
-        uid: "0" # The default is 0 which runs as root. You can optionally specify a non-root user ID.
-        resourceGroup: "" # By default, the cluster resource group is used. If your VPC or subnets are in a different resource group than the cluster, enter the VPC or subnet resource group here.
-        region: "" # By default, the region is populated from the worker node topology.
-        zone: "" # By default, the storage vpc driver automatically selects a zone.
-        tags: "" # A list of tags "a, b, c" that is created when the volume is created.
-        isENIEnabled: "true" # VPC File Shares use the advanced VNI features.
-        isEITEnabled: "true" # Enable encryption in-transit.
-        securityGroupIDs: "" # Specify a comma-separated list of security group IDs.
-        subnetID: "" # Specify the subnet ID in which the ENI/VNI is created. If not specified, the subnet used are the VPC subnets in the same zone of the cluster.
-        zone: "" # By default, the storage VPC driver selects a zone. The user can override this default.
-        primaryIPID: "" # Existing ID of reserved IP address from the same subnet as the file share zone. The subnet-id is not mandatory for this field.
-        primaryIPAddress: "" # IP address for VNI to be created in the subnet of the zone. The subnetID parameter is also required for this field.
-        classVersion: "1"
+        profile: "dp2" # The VPC Storage profile used. https://cloud.ibm.com/docs/vpc?topic=vpc-file-storage-profiles.
+        billingType: "hourly" # The default billing policy used. The user can override this default.
+        encrypted: "false" # By default, encryption is managed by cloud provider. User can override this default.
+        encryptionKey: "" # If encrypted is true, then a user must specify the CRK-CRN.
+        resourceGroup: "" # By default resource group will be used from storage-secrete-store secret, User can override.
+        isENIEnabled: "true" # VPC File Share ENI/VNI feature will be used by all PVCs created with this storage class.
+        securityGroupIDs: "" # By default cluster security group i.e kube-<clusterID> will be used. User can provide their own command separated SGs.
+        subnetID: "" # User can provide subnetID in which the ENI/VNI will be created. Zone and region are mandatory for this. If not provided CSI driver will use the subnetID available in the cluster' VPC zone.
+        region: "" # By VPC CSI driver will select a region from cluster node's topology. The user can override this default.
+      zone: "" # By VPC CSI driver will select a region from cluster node's topology. The user can override this default.
+      primaryIPID: "" # Existing ID of reserved IP from the same subnet as the file share zone. Zone and region are mandatory for this. SubnetID is not mandatory for this.
+      primaryIPAddress: "" # IPAddress for ENI/VNI to be created in the respective subnet of the zone. Zone, region and subnetID are mandatory for this.
+      tags: "" # User can add a list of tags "a, b, c" that will be used at the time of provisioning file share, by default CSI driver has its own tags.
+      uid: "0" # The initial user identifier for the file share, by default its root.
+      gid: "0" # The initial group identifier for the file share, by default its root.
+      classVersion: "1"
     reclaimPolicy: "Delete"
     allowVolumeExpansion: true
     ```
     {: codeblock}
 
-3. Create the customized storage class in your cluster.
+1. Create the customized storage class in your cluster.
 
     ```sh
     oc apply -f custom-storageclass.yaml
     ```
     {: pre}
 
-4. Verify that your storage class is available in the cluster.
+1. Verify that your storage class is available in the cluster.
 
     ```sh
     oc get sc
@@ -454,20 +503,24 @@ Create your own customized storage class with the preferred settings for your {{
 ## Deploying an app that runs as non-root
 {: #vpc-file-non-root-app}
 
-To run an app as non-root, you must first create a custom storage class that contains the group ID (`gid`) or user ID (`uid`) that you want to use.
+To run an app as non-root, you must first create your own storage class that contains the group ID (`gid`) or user ID (`uid`) that you want to use.
 
-1. Create a custom storage class and specify the group ID (`gid`) or user ID (`uid`) that you want to use for your app.
+1. Create your own storage class and specify the group ID (`gid`) or user ID (`uid`) that you want to use for your app.
 
     ```yaml
     apiVersion: storage.k8s.io/v1
     kind: StorageClass
     metadata:
-        name: my-nonroot-class
+        name: ibmc-vpc-file-custom-sc
+        labels:
+            app.kubernetes.io/name: ibm-vpc-file-csi-driver
+        annotations:
+              version: v2.0
     provisioner: vpc.file.csi.ibm.io
     mountOptions:
-        - hard
-        - nfsvers=4.1
-        - sec=sys
+          - hard
+          - nfsvers=4.1
+          - sec=sys
     parameters:
         profile: "dp2"
         iops: "100" # Default IOPS.
@@ -481,7 +534,7 @@ To run an app as non-root, you must first create a custom storage class that con
     ```
     {: codeblock}
 
-1. Save the following code to a file called `my-pvc.yaml`. This code creates a claim that is named `my-pvc` by using the `ibmc-vpc-file-dp2` storage class, billed `monthly`, with a gigabyte size of `10Gi`.
+1. Save the following code to a file called `my-pvc.yaml`. This code creates a claim that is named `my-pvc` by using the `ibmc-vpc-file-min-iops` storage class, billed `monthly`, with a gigabyte size of `10Gi`.
 
     ```yaml
     apiVersion: v1
@@ -496,7 +549,7 @@ To run an app as non-root, you must first create a custom storage class that con
           storage: 10Gi # Enter the size of the storage in gigabytes (Gi). After your storage is provisioned, you can't change the size. Make sure to specify a size that matches the amount of data that you want to store.
       storageClassName: my-nonroot-class # Enter the name of the storage class that you want to use.
     ```
-      {: codeblock}
+    {: codeblock}
 
 1. Create the PVC.
     ```sh
@@ -574,9 +627,9 @@ To limit file share access by node, zone, or resource group, you must first crea
     ```
     {: pre}
 
-1. [Create a custom storage class](#storage-file-vpc-custom-sc) and enter the ID of the custom security group you created earlier. All PVCs created from this storage class are in your custom security group.
+1. [Create your own storage class](#storage-file-vpc-custom-sc) and enter the ID of the custom security group you created earlier. All PVCs created from this storage class are in your custom security group.
 
-1. Create a PVC that uses your custom storage class.
+1. Create a PVC that uses your own storage class.
     ```yaml
       apiVersion: v1
       kind: PersistentVolumeClaim

@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2022, 2024
-lastupdated: "2024-05-29"
+lastupdated: "2024-06-14"
 
 
 keywords: kubernetes, openshift
@@ -24,25 +24,25 @@ subcollection: openshift
 Your app that uses {{site.data.keyword.filestorage_vpc_short}} fails with a permissions error.
 {: tsSymptoms}
 
-You created a custom storage class to use with an existing file share, but did not specify the correct `uid` and `gid`. When a process runs on Unix and Linux, the operating system identifies a user with a user ID (UID) and group with a group ID (GID). These IDs determine which system resources a user or group can access. For example, if the file storage user ID is 12345 and its group ID is 6789, then the mount on the host node and in the container must have those same IDs. The container’s main process must match one or both of those IDs to access the file share.
+You created your own storage class to use with an existing file share, but did not specify the correct `uid` and `gid`. When a process runs on Unix and Linux, the operating system identifies a user with a user ID (UID) and group with a group ID (GID). These IDs determine which system resources a user or group can access. For example, if the file storage user ID is 12345 and its group ID is 6789, then the mount on the host node and in the container must have those same IDs. The container’s main process must match one or both of those IDs to access the file share.
 {: tsCauses}
 
 You can resolve the issue in one of the following ways.
 {: tsResolve}
 
 
-- If you need your app to run as non-root, create a custom storage class with the correct `uid` and `gid` that your app needs. 
+- If you need your app to run as non-root, create your own storage class with the correct `uid` and `gid` that your app needs. 
 
 - If you want to run your app as as root user, edit your deployment to use `fsGroup: 0`.
 
 
 
-## Create custom storage class and specify the `uid` and `gid` your app needs
+## Create your own storage class and specify the `uid` and `gid` your app needs
 {: #ts-vpc-new-sc}
 
-If you want to use {{site.data.keyword.filestorage_vpc_short}} with static provisioning your custom storage class must reference the correct `uid` and `gid`.
+If you want to use {{site.data.keyword.filestorage_vpc_short}} with static provisioning, you must reference the correct `uid` and `gid`.
 
-1. Create a new custom storage class with the correct `uid` and `gid` that your app needs.
+1. Create a storage class with the correct `uid` and `gid` that your app needs.
 
     ```yaml
     apiVersion: storage.k8s.io/v1

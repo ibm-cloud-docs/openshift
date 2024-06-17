@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2024
-lastupdated: "2024-06-12"
+lastupdated: "2024-06-14"
 
 
 keywords: kubernetes, openshift, red hat, red hat openshift
@@ -257,5 +257,5 @@ Review the following diagram for an overview of common cluster resources.
 
 For more information about working with your apps, see the [{{site.data.keyword.redhat_openshift_notm}} developer activities](https://docs.openshift.com/container-platform/4.15/welcome/index.html#developer-activities){: external} documentation.
 
-Install two popular {{site.data.keyword.openshiftlong_notm}} add-ons: [{{site.data.keyword.la_full_notm}}](/docs/openshift?topic=openshift-health#openshift_logging) and [{{site.data.keyword.mon_full_notm}}](/docs/openshift?topic=openshift-health-monitor).
+Install two popular {{site.data.keyword.openshiftlong_notm}} cluster add-ons: [{{site.data.keyword.la_full_notm}}](/docs/openshift?topic=openshift-health#openshift_logging) and [{{site.data.keyword.mon_full_notm}}](/docs/openshift?topic=openshift-health-monitor).
 

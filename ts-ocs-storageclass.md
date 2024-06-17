@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2024
-lastupdated: "2024-01-03"
+lastupdated: "2024-06-14"
 
 
 keywords: openshift
@@ -42,7 +42,7 @@ Kubernetes PVC names must be fewer than 63 characters.
 If you a have multizone VPC cluster and create your ODF storage cluster by using a `retain` class like the `ibmc-vpc-block-metro-retain-10iops-tier`, the corresponding ODF device set PVCs that are created by using this storage class are assigned names that exceed the 63 character limit.
 
 
-Create a custom storage class that uses the same configuration as the pre-defined storage class that you want to use, but with a name that does not exceed 63 characters.
+Create your own storage class where the name does not exceed 63 characters.
 {: tsResolve}
 
 1. Get the YAML configuration of the storage class that you want to use in your ODF storage cluster and save it in a file on your local machine.
@@ -51,7 +51,7 @@ Create a custom storage class that uses the same configuration as the pre-define
     ```
     {: pre}
 
-1. Edit the name of the storage class. Make sure that the name of your custom storage class is fewer than 30 characters to allow for the ODF storage cluster device set IDs to be under the 63 character kubernetes limit. Create the storage class in your cluster.
+1. Edit the name of the storage class. Make sure that the name of your storage class is fewer than 30 characters to allow for the ODF storage cluster device set IDs to be under the 63 character kubernetes limit. Create the storage class in your cluster.
     ```sh
     oc create -f <custom-storage-class.yaml>
     ```
@@ -59,7 +59,7 @@ Create a custom storage class that uses the same configuration as the pre-define
 
 1. Clean up your [ODF deployment](/docs/openshift?topic=openshift-ocs-manage-deployment).
 
-1. Create an ODF deployment that uses the custom storage class you created.
+1. Create an ODF deployment that uses the storage class you created.
 
 
 

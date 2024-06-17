@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2024
-lastupdated: "2024-06-12"
+lastupdated: "2024-06-17"
 
 
 keywords: openshift
@@ -274,6 +274,10 @@ subcollection: openshift
 [Release notes](/docs/openshift?topic=openshift-openshift-relnotes#openshift-relnotes)
 
 * [June 2024](/docs/openshift?topic=openshift-openshift-relnotes#openshift-june24)
+
+    * [17 June 2024](/docs/openshift?topic=openshift-openshift-relnotes#openshift-june1724)
+
+        * {{site.data.keyword.openshiftlong_notm}} CLI version `1.0.628` is available.
 
     * [12 June 2024](/docs/openshift?topic=openshift-openshift-relnotes#openshift-june1224)
 
@@ -4662,7 +4666,7 @@ subcollection: openshift
 
 * [Setting up encryption for {{site.data.keyword.blockstorageshort}}](/docs/openshift?topic=openshift-block_storage#block_encryption_setup)
 
-    * [Encrypting volume data by using a custom storage class](/docs/openshift?topic=openshift-block_storage#encrypt_custom_sc)
+    * [Encrypting volume data by using your own storage class](/docs/openshift?topic=openshift-block_storage#encrypt_custom_sc)
 
     * [Create a PVC that references your {{site.data.keyword.blockstorageshort}} secret](/docs/openshift?topic=openshift-block_storage#pvc_encrypt_label)
 
@@ -4735,9 +4739,9 @@ subcollection: openshift
 
 * [Using an existing {{site.data.keyword.block_storage_is_short}} instance](/docs/openshift?topic=openshift-vpc-block#vpc-block-static)
 
-* [Updating the {{site.data.keyword.block_storage_is_short}} add-on](/docs/openshift?topic=openshift-vpc-block#vpc-addon-update)
+* [Updating the {{site.data.keyword.block_storage_is_short}} cluster add-on](/docs/openshift?topic=openshift-vpc-block#vpc-addon-update)
 
-    * [Recreating custom storage classes after updating to version 4.2](/docs/openshift?topic=openshift-vpc-block#recreate-sc-42)
+    * [Re-creating your own storage classes after updating to version 4.2](/docs/openshift?topic=openshift-vpc-block#recreate-sc-42)
 
 * [Setting up encryption for {{site.data.keyword.block_storage_is_short}}](/docs/openshift?topic=openshift-vpc-block#vpc-block-encryption)
 
@@ -4745,7 +4749,7 @@ subcollection: openshift
 
     * [Changing the default storage class](/docs/openshift?topic=openshift-vpc-block#vpc-block-default-edit)
 
-    * [Creating a custom storage class](/docs/openshift?topic=openshift-vpc-block#vpc-customize-storage-class)
+    * [Creating your own storage class](/docs/openshift?topic=openshift-vpc-block#vpc-customize-storage-class)
 
     * [Verifying your {{site.data.keyword.block_storage_is_short}} file system](/docs/openshift?topic=openshift-vpc-block#vpc-block-fs-verify)
 
@@ -4765,7 +4769,7 @@ subcollection: openshift
 
 * [Understanding volume request capacity](/docs/openshift?topic=openshift-vpc-block#vpc-block-volume-capacity)
 
-[Setting up snapshots with the {{site.data.keyword.block_storage_is_short}} add-on](/docs/openshift?topic=openshift-vpc-volume-snapshot#vpc-volume-snapshot)
+[Setting up snapshots with the {{site.data.keyword.block_storage_is_short}} cluster add-on](/docs/openshift?topic=openshift-vpc-volume-snapshot#vpc-volume-snapshot)
 
 * [Creating an app deployment](/docs/openshift?topic=openshift-vpc-volume-snapshot#vpc-snapshot-deployment)
 
@@ -4783,9 +4787,9 @@ subcollection: openshift
 
 * [{{site.data.keyword.block_storage_is_short}} configmap reference](/docs/openshift?topic=openshift-storage-block-vpc-configmap#storage-block-vpc-configmap-reference)
 
-[Setting up trusted profiles for the {{site.data.keyword.block_storage_is_short}} add-on](/docs/openshift?topic=openshift-storage-block-vpc-trusted-profiles#storage-block-vpc-trusted-profiles)
+[Setting up trusted profiles for the {{site.data.keyword.block_storage_is_short}} cluster add-on](/docs/openshift?topic=openshift-storage-block-vpc-trusted-profiles#storage-block-vpc-trusted-profiles)
 
-* [Enabling the {{site.data.keyword.block_storage_is_short}} add-on](/docs/openshift?topic=openshift-storage-block-vpc-trusted-profiles#vpc-addon-enable-trusted)
+* [Enabling the {{site.data.keyword.block_storage_is_short}} cluster add-on](/docs/openshift?topic=openshift-storage-block-vpc-trusted-profiles#vpc-addon-enable-trusted)
 
 * [Setting up trusted profiles](/docs/openshift?topic=openshift-storage-block-vpc-trusted-profiles#vpc-block-setup-trusted)
 
@@ -4893,7 +4897,7 @@ subcollection: openshift
 {: #sitemap_setting_up_file_storage_for_vpc}
 
 
-[Enabling the {{site.data.keyword.filestorage_vpc_full_notm}} add-on](/docs/openshift?topic=openshift-storage-file-vpc-install#storage-file-vpc-install)
+[Enabling the {{site.data.keyword.filestorage_vpc_full_notm}} cluster add-on](/docs/openshift?topic=openshift-storage-file-vpc-install#storage-file-vpc-install)
 
 * [Prerequisites](/docs/openshift?topic=openshift-storage-file-vpc-install#prereqs-store-file-vpc)
 
@@ -4901,15 +4905,13 @@ subcollection: openshift
 
 [Adding {{site.data.keyword.filestorage_vpc_short}} to apps](/docs/openshift?topic=openshift-storage-file-vpc-apps#storage-file-vpc-apps)
 
-* [Prerequisites for cluster version 4.11 and later](/docs/openshift?topic=openshift-storage-file-vpc-apps#prereqs-vpc-file-versions)
-
 * [Quick start for {{site.data.keyword.filestorage_vpc_short}}](/docs/openshift?topic=openshift-storage-file-vpc-apps#vpc-add-file-dynamic)
 
 * [Expanding a mounted volume](/docs/openshift?topic=openshift-storage-file-vpc-apps#storage-file-vpc-expansion)
 
 * [Attaching existing file storage to an app](/docs/openshift?topic=openshift-storage-file-vpc-apps#vpc-add-file-static)
 
-* [Creating a custom storage class](/docs/openshift?topic=openshift-storage-file-vpc-apps#storage-file-vpc-custom-sc)
+* [Creating your own storage class](/docs/openshift?topic=openshift-storage-file-vpc-apps#storage-file-vpc-custom-sc)
 
 * [Deploying an app that runs as non-root](/docs/openshift?topic=openshift-storage-file-vpc-apps#vpc-file-non-root-app)
 
@@ -4927,7 +4929,7 @@ subcollection: openshift
 
 [Managing {{site.data.keyword.filestorage_vpc_full_notm}}](/docs/openshift?topic=openshift-storage-file-vpc-managing#storage-file-vpc-managing)
 
-* [Updating the {{site.data.keyword.filestorage_vpc_short}} add-on](/docs/openshift?topic=openshift-storage-file-vpc-managing#storage-file-vpc-update)
+* [Updating the {{site.data.keyword.filestorage_vpc_short}} cluster add-on](/docs/openshift?topic=openshift-storage-file-vpc-managing#storage-file-vpc-update)
 
 * [Understanding your storage removal options](/docs/openshift?topic=openshift-storage-file-vpc-managing#vpc_storage_delete_options_file)
 
@@ -6049,6 +6051,8 @@ subcollection: openshift
 [CLI change log](/docs/openshift?topic=openshift-cs_cli_changelog#cs_cli_changelog)
 
 * [Version 1.0](/docs/openshift?topic=openshift-cs_cli_changelog#10)
+
+* [Version v1.0.628](/docs/openshift?topic=openshift-cs_cli_changelog#cli-010628)
 
 * [Version v1.0.618](/docs/openshift?topic=openshift-cs_cli_changelog#cli-010618)
 
@@ -7182,7 +7186,7 @@ subcollection: openshift
 
     * [Change log for patch update 1.0.1_114, released 10 September 2020](/docs/openshift?topic=openshift-ca_changelog#101114_ca)
 
-[{{site.data.keyword.block_storage_is_short}} add-on change log](/docs/openshift?topic=openshift-vpc_bs_changelog#vpc_bs_changelog)
+[{{site.data.keyword.block_storage_is_short}} cluster add-on change log](/docs/openshift?topic=openshift-vpc_bs_changelog#vpc_bs_changelog)
 
 * [Version 5.2](/docs/openshift?topic=openshift-vpc_bs_changelog#052_is_block)
 
@@ -7358,7 +7362,7 @@ subcollection: openshift
 
     * [Version 2.0.3](/docs/openshift?topic=openshift-vpc_bs_changelog#0203_is_block)
 
-[{{site.data.keyword.filestorage_vpc_full_notm}} add-on change log](/docs/openshift?topic=openshift-versions-vpc-file-addon#versions-vpc-file-addon)
+[{{site.data.keyword.filestorage_vpc_full_notm}} cluster add-on change log](/docs/openshift?topic=openshift-versions-vpc-file-addon#versions-vpc-file-addon)
 
 * [Version 1.2](/docs/openshift?topic=openshift-versions-vpc-file-addon#012_is_file)
 
@@ -10030,7 +10034,7 @@ subcollection: openshift
 
 * [If you exceeded the number of remote rules per security group](/docs/openshift?topic=openshift-ts-sbd-cluster-create-quota#quota-num-of-remote-rules)
 
-[I use custom security groups and after creating a version 4.15 cluster, applications running in other clusters in my VPC are failing](/docs/openshift?topic=openshift-ts-sbd-other-clusters#ts-sbd-other-clusters)
+[After creating a version 4.15 cluster, applications running in other clusters in my VPC are failing](/docs/openshift?topic=openshift-ts-sbd-other-clusters#ts-sbd-other-clusters)
 
 
 ### Worker nodes
@@ -10141,7 +10145,7 @@ subcollection: openshift
 
 [Classic: Why can't I add worker nodes with an invalid VLAN ID?](/docs/openshift?topic=openshift-suspended#suspended)
 
-[Why do I see a timeout error when I try to log in to a pod on a new worker node?](/docs/openshift?topic=openshift-cs_nodes_duplicate_ip#cs_nodes_duplicate_ip)
+[Why do I see a timeout error when I try to log in to a pod?](/docs/openshift?topic=openshift-cs_nodes_duplicate_ip#cs_nodes_duplicate_ip)
 
 [Why can't I SSH into my worker node?](/docs/openshift?topic=openshift-cs_ssh_worker#cs_ssh_worker)
 
@@ -10478,7 +10482,7 @@ subcollection: openshift
 
 [Why does my {{site.data.keyword.filestorage_vpc_short}} deployment fail due to a permissions error?](/docs/openshift?topic=openshift-ts-storage-vpc-file-non-root#ts-storage-vpc-file-non-root)
 
-* [Create custom storage class and specify the `uid` and `gid` your app needs](/docs/openshift?topic=openshift-ts-storage-vpc-file-non-root#ts-vpc-new-sc)
+* [Create your own storage class and specify the `uid` and `gid` your app needs](/docs/openshift?topic=openshift-ts-storage-vpc-file-non-root#ts-vpc-new-sc)
 
 * [Edit your app to run as root with `fsGroup: 0`](/docs/openshift?topic=openshift-ts-storage-vpc-file-non-root#ts-vpc-yaml-sc)
 

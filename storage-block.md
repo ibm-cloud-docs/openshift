@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2024
-lastupdated: "2024-05-29"
+lastupdated: "2024-06-14"
 
 
 keywords: kubernetes, openshift
@@ -35,7 +35,7 @@ Keep in mind the following requirements when you use the {{site.data.keyword.clo
 [Classic infrastructure]{: tag-classic-inf}
 
 
-The steps on this page apply to classic clusters only. On VPC clusters, the {{site.data.keyword.block_storage_is_short}} add-on is installed by default. For more information, see [Setting up Setting up {{site.data.keyword.block_storage_is_short}}](/docs/openshift?topic=openshift-vpc-block).
+The steps on this page apply to classic clusters only. On VPC clusters, the {{site.data.keyword.block_storage_is_short}} cluster add-on is installed by default. For more information, see [Setting up Setting up {{site.data.keyword.block_storage_is_short}}](/docs/openshift?topic=openshift-vpc-block).
 {: important}
 
 
@@ -245,7 +245,7 @@ Make sure to choose your storage configuration carefully to have enough capacity
         | 4000-7999 Gi | 300-48000 IOPS |
         | 8000-9999 Gi | 500-48000 IOPS |
         | 10000-12000 Gi | 1000-48000 IOPS |
-        {: caption="Table of custom storage class size ranges and IOPS}
+        {: caption="Table class size ranges and IOPS}
             
 
 5. Choose if you want to keep your data after the cluster or the persistent volume claim (PVC) is deleted.
@@ -409,21 +409,21 @@ You can enable encryption by creating a Kubernetes secret that uses your persona
 
 15. Choose between the following options to create a {{site.data.keyword.blockstorageshort}} instance that encrypts data with your root key.
 
-    * [Create a custom storage class that references your {{site.data.keyword.keymanagementserviceshort}} secret](#encrypt_custom_sc).
+    * [Create your own storage class that references your {{site.data.keyword.keymanagementserviceshort}} secret](#encrypt_custom_sc).
     * [Define the secret in a PVC and use one of the provided storage classes](#pvc_encrypt_label).
 
 
-### Encrypting volume data by using a custom storage class
+### Encrypting volume data by using your own storage class
 {: #encrypt_custom_sc}
 
-You can deploy apps that use encrypted volumes by first creating a custom storage class.
+You can deploy apps that use encrypted volumes by first creating your own storage class.
 {: shortdesc}
 
 The following steps explain how to create a custom, encrypted storage class that you can use to create multiple encrypted block storage instances with the same configuration. If you want to create an encrypted PVC by using one of the IBM-provided storage classes, you can do this by [referencing the {{site.data.keyword.keymanagementserviceshort}} credentials directly in your PVC](#pvc_encrypt_label).
 
 1. [Decide on a storage configuration](/docs/openshift?topic=openshift-block_storage#block_predefined_storageclass).
 
-1. Create a custom storage class that provisions an encrypted block storage instance by using one of the {{site.data.keyword.IBM_notm}}-provided storage classes as the basis. You can retrieve the details a storage class by running `oc get sc <storageclass_name> -o yaml`. The following example is based on the `ibmc-block-retain-bronze` storage class.
+1. Create your own storage class that provisions an encrypted block storage instance by using one of the {{site.data.keyword.IBM_notm}}-provided storage classes as the basis. You can retrieve the details a storage class by running `oc get sc <storageclass_name> -o yaml`. The following example is based on the `ibmc-block-retain-bronze` storage class.
     ```yaml
     apiVersion: storage.k8s.io/v1
     kind: StorageClass
@@ -452,7 +452,7 @@ The following steps explain how to create a custom, encrypted storage class that
     ```
     {: pre}
 
-1. [Add {{site.data.keyword.blockstorageshort}} to your app by using your custom storage class to create a PVC](#add_block).
+1. [Add {{site.data.keyword.blockstorageshort}} to your app by using your own storage class to create a PVC](#add_block).
 
 1. [Verify the encryption of your {{site.data.keyword.blockstorageshort}} volumes](#block_encrypt).
 
@@ -597,7 +597,7 @@ To add block storage:
         ```
         {: codeblock}
 
-    -  **Example for using the custom storage class**:
+    -  **Example for using your own storage class**:
         The following `.yaml` file creates a claim that is named `block-storage-pvc` of the storage class `ibmc-block-retain-custom`, billed hourly, with a gigabyte size of `45Gi` and IOPS of `"300"`.
 
         ```yaml
@@ -637,7 +637,7 @@ To add block storage:
         :   In the spec resources requests section, enter the size of the block storage, in gigabytes (Gi). After your storage is provisioned, you can't change the size of your block storage. Make sure to specify a size that matches the amount of data that you want to store. 
 
         `iops`
-        :   This option is available for the custom storage classes only (`ibmc-block-custom / ibmc-block-retain-custom`). In the spec resources requests section, specify the total IOPS for the storage, selecting a multiple of 100 within the allowable range. If you choose an IOPS other than one that is listed, the IOPS is rounded up.
+        :   This option is available for your own custom storage classes only (`ibmc-block-custom / ibmc-block-retain-custom`). In the spec resources requests section, specify the total IOPS for the storage, selecting a multiple of 100 within the allowable range. If you choose an IOPS other than one that is listed, the IOPS is rounded up.
 
         `storageClassName`
         :   In the spec section, enter the name of the storage class that you want to use to provision block storage. You can choose to use one of the [IBM-provided storage classes](#block_storageclass_reference) or [create your own storage class](#block_custom_storageclass). If you don't specify a storage class, the PV is created with the default storage class `ibmc-file-bronze`.
@@ -1025,7 +1025,7 @@ How can I create my stateful set in a specific zone?
 :   In a multizone cluster, you can specify the zone and region where you want to create your stateful set in the `spec.selector.matchLabels` and `spec.template.metadata.labels` section of your stateful set YAML. Alternatively, you can add those labels to a [customized storage class](#block_custom_storageclass) and use this storage class in the `volumeClaimTemplates` section of your stateful set.
 
 Can I delay binding of a PV to my stateful pod until the pod is ready?
-:   Yes, you can [create a custom storage class](#topology_yaml) for your PVC that includes the [`volumeBindingMode: WaitForFirstConsumer`](https://kubernetes.io/docs/concepts/storage/storage-classes/#volume-binding-mode){: external} field.
+:   Yes, you can [create your own storage class](#topology_yaml) for your PVC that includes the [`volumeBindingMode: WaitForFirstConsumer`](https://kubernetes.io/docs/concepts/storage/storage-classes/#volume-binding-mode){: external} field.
 
 What options do I have to add block storage to a stateful set?
 :   If you want to automatically create your PVC when you create the stateful set, use [dynamic provisioning](#block_dynamic_statefulset). You can also choose to [pre-provision your PVCs or use existing PVCs](#block_static_statefulset) with your stateful set.  
@@ -1975,33 +1975,32 @@ Removing persistent storage from your {{site.data.keyword.cloud_notm}} account v
 Is my persistent storage deleted when I delete my cluster?
 :   During cluster deletion, you have the option to remove your persistent storage. However, depending on how your storage was provisioned, the removal of your storage might not include all storage components.
 
-If you dynamically provisioned storage with a storage class that sets `reclaimPolicy: Delete`, your PVC, PV, and the storage instance are automatically deleted when you delete the cluster. For storage that was statically provisioned, VPC Block Storage, or storage that you provisioned with a storage class that sets `reclaimPolicy: Retain`, the PVC and the PV are removed when you delete the cluster, but your storage instance and your data remain. You are still charged for your storage instance. Also, if you deleted your cluster in an unhealthy state, the storage might still exist even if you chose to remove it.
+If you dynamically provisioned storage with a storage class that sets `reclaimPolicy: Delete`, your PVC, PV, and the storage instance are automatically deleted when you delete the cluster. For storage that was statically provisioned or storage that you provisioned with a storage class that sets `reclaimPolicy: Retain`, the PVC and the PV are removed when you delete the cluster, but your storage instance and your data remain. You are still charged for your storage instance. Also, if you deleted your cluster in an unhealthy state, the storage might still exist even if you chose to remove it.
 
 How do I delete the storage when I want to keep my cluster?
 :   When you dynamically provisioned the storage with a storage class that sets `reclaimPolicy: Delete`, you can remove the PVC to start the deletion process of your persistent storage. Your PVC, PV, and storage instance are automatically removed.
-:   For storage that was statically provisioned, VPC Block Storage, or storage that you provisioned with a storage class that sets `reclaimPolicy: Retain`, you must manually remove the PVC, PV, and the storage instance to avoid further charges.
+:   For storage that was statically provisioned or storage that you provisioned with a storage class that sets `reclaimPolicy: Retain`, you must manually remove the PVC, PV, and the storage instance to avoid further charges.
 
 How does the billing stop after I delete my storage?
 :   Depending on what storage components you delete and when, the billing cycle might not stop immediately. If you delete the PVC and PV, but not the storage instance in your {{site.data.keyword.cloud_notm}} account, that instance still exists and you are charged for it.
 
 If you delete the PVC, PV, and the storage instance, the billing cycle stops depending on the `billingType` that you chose when you provisioned your storage and how you chose to delete the storage.
 
-- When you manually cancel the persistent storage instance from the {{site.data.keyword.cloud_notm}} console or the `ibmcloud sl` CLI, billing stops as follows:
+- When you manually cancel the persistent storage instance from the {{site.data.keyword.cloud_notm}} console or the CLI, billing stops as follows:
     - **Hourly storage**: Billing stops immediately. After your storage is canceled, you might still see your storage instance in the console for up to 72 hours.
     - **Monthly storage**: You can choose between immediate cancellation or cancellation on the anniversary date. In both cases, you are billed until the end of the current billing cycle, and billing stops for the next billing cycle. After your storage is canceled, you might still see your storage instance in the console or the CLI for up to 72 hours.
-        - **Immediate cancellation**: Choose this option to immediately remove your storage. Neither you nor your users can use the storage anymore or recover the data.
+    - **Immediate cancellation**: Choose this option to immediately remove your storage. Neither you nor your users can use the storage anymore or recover the data.
     - **Anniversary date**: Choose this option to cancel your storage on the next anniversary date. Your storage instances remain active until the next anniversary date and you can continue to use them until this date, such as to give your team time to make backups of your data.
 
 - When you dynamically provisioned the storage with a storage class that sets `reclaimPolicy: Delete` and you choose to remove the PVC, the PV and the storage instance are immediately removed. For hourly billed storage, billing stops immediately. For monthly billed storage, you are still charged for the remainder of the month. After your storage is removed and billing stops, you might still see your storage instance in the console or the CLI for up to 72 hours.
 
 What do I need to be aware of before I delete persistent storage?
-:   When you clean up persistent storage, you delete all the data that is stored in it. If you need a copy of the data, make a backup for [file storage](/docs/openshift?topic=openshift-file_storage#file_backup_restore) or [block storage](/docs/openshift?topic=openshift-block_storage#block_backup_restore).
+:   When you clean up persistent storage, you delete all the data that is stored in it. If you need a copy of the data, make a backup for file storage or block storage.
 
 I deleted my storage instance. Why can I still see my instance?
 :   After you remove persistent storage, it can take up to 72 hours for the removal to be fully processed and for the storage to disappear from your {{site.data.keyword.cloud_notm}} console or CLI.
 
-I deleted my cluster. How do I remove the remaining storage volumes?
-:   See the steps in [Why am I still seeing charges for block storage devices after deleting my cluster](/docs/openshift?topic=openshift-ts_storage_clean_volume).
+
 
 
 ### Cleaning up persistent storage
@@ -2028,9 +2027,9 @@ To clean up persistent data:
     
     ```sh
     NAME                  STATUS    VOLUME                                     CAPACITY   ACCESSMODES   STORAGECLASS            AGE
-    claim1-block-bronze   Bound     pvc-06886b77-102b-11e8-968a-f6612bb731fb   20Gi       RWO           ibmc-block-bronze       78d
-    claim-file-bronze     Bound     pvc-457a2b96-fafc-11e7-8ff9-b6c8f770356c   4Gi        RWX           ibmc-file-bronze-retain 105d
-    claim-file-silve      Bound     pvc-1efef0ba-0c48-11e8-968a-f6612bb731fb   24Gi       RWX           ibmc-file-silver        83d
+    claim1   Bound     pvc-06886b77-102b-11e8-968a-f6612bb731fb   20Gi       RWO           ibmc-block-bronze       78d
+    claim2     Bound     pvc-457a2b96-fafc-11e7-8ff9-b6c8f770356c   4Gi        RWX           ibmc-file-bronze-retain 105d
+    claim3      Bound     pvc-1efef0ba-0c48-11e8-968a-f6612bb731fb   24Gi       RWX           ibmc-file-silver        83d
     ```
     {: screen}
 

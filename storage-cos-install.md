@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2024
-lastupdated: "2024-06-06"
+lastupdated: "2024-06-14"
 
 
 keywords: kubernetes, openshift
@@ -482,7 +482,7 @@ To remove the `ibmc` Helm plug-in and the `ibm-object-storage-plugin`:
     :   The maximum number of parallel requests that can be sent to the {{site.data.keyword.cos_full_notm}} service instance to list files in a single directory. All storage classes are set up with a maximum of 20 parallel requests.
     
     `ibm.io/object-store-endpoint`
-    :   The API endpoint to use to access the bucket in your {{site.data.keyword.cos_full_notm}} service instance. The endpoint is automatically set based on the region of your cluster. If you want to access an existing bucket that is located in a different region than the one where your cluster is in, you must create a custom storage class and use the API endpoint for your bucket.
+    :   The API endpoint to use to access the bucket in your {{site.data.keyword.cos_full_notm}} service instance. The endpoint is automatically set based on the region of your cluster. If you want to access an existing bucket that is located in a different region than the one where your cluster is in, you must create your own storage class and use the API endpoint for your bucket.
     
     `ibm.io/object-store-storage-class`
     :   The name of the storage class.

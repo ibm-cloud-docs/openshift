@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2024
-lastupdated: "2024-01-03"
+lastupdated: "2024-06-14"
 
 
 keywords: kubernetes, openshift
@@ -63,7 +63,7 @@ With {{site.data.keyword.openshiftlong_notm}}, you can create a standard cluster
 
 Before you can create a VPC cluster, you must have a VPC and at least one VPC subnet that you provision by using the {{site.data.keyword.cloud_notm}} console, CLI, or API. You manage these resources in the VPC dashboard directly. When you create your cluster, worker nodes are automatically provisioned as [{{site.data.keyword.vsi_is_short}}](/docs/vpc?topic=vpc-about-advanced-virtual-servers) instances and you can view and manage these instances in {{site.data.keyword.openshiftlong_notm}} only.
 
-To add persistent storage to your VPC cluster, you can use the [{{site.data.keyword.block_storage_is_short}} add-on](/docs/openshift?topic=openshift-vpc-block). The add-on sets up pre-defined Kubernetes storage classes, the storage provider, and the storage driver in your cluster so that you can provision {{site.data.keyword.block_storage_is_short}} by using Kubernetes persistent volume claims (PVCs).
+To add persistent storage to your VPC cluster, you can use the [{{site.data.keyword.block_storage_is_short}} cluster add-on](/docs/openshift?topic=openshift-vpc-block). The add-on sets up pre-defined Kubernetes storage classes, the storage provider, and the storage driver in your cluster so that you can provision {{site.data.keyword.block_storage_is_short}} by using Kubernetes persistent volume claims (PVCs).
 
 To secure your cluster network traffic, you can modify the default security group for your worker nodes. For more information, see [Security in your {{site.data.keyword.vpc_short}}](/docs/vpc?topic=vpc-security-in-your-vpc).
 

@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2024
-lastupdated: "2024-01-03"
+lastupdated: "2024-06-14"
 
 
 keywords: openshift, storage
@@ -32,7 +32,7 @@ After you reset your API key, {{site.data.keyword.block_storage_is_short}} PVC c
 {: tsSymptoms}
 
 
-Resetting your API key means the credentials the {{site.data.keyword.block_storage_is_short}} add-on uses to provision volumes are no longer valid. After resetting your API key, you must reset the {{site.data.keyword.block_storage_is_short}} controller to use the latest API key for volume provisioning.
+Resetting your API key means the credentials the {{site.data.keyword.block_storage_is_short}} cluster add-on uses to provision volumes are no longer valid. After resetting your API key, you must reset the {{site.data.keyword.block_storage_is_short}} controller to use the latest API key for volume provisioning.
 {: tsCauses}
 
 

@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2024
-lastupdated: "2024-06-12"
+lastupdated: "2024-06-14"
 
 
 keywords: openshift, http2, quota, app protocol, application protocol
@@ -183,7 +183,7 @@ Keep in mind that the [service](#tech_limits) limitations also apply.
 | Supported types | You can set up {{site.data.keyword.cos_full_notm}} and {{site.data.keyword.databases-for}} only. |
 | Volume attachments | See [Volume attachment limits](/docs/vpc?topic=vpc-attaching-block-storage#vol-attach-limits).|
 | Portworx | Review the [Portworx limitations](/docs/openshift?topic=openshift-storage_portworx_plan#portworx_limitations). |
-| {{site.data.keyword.block_storage_is_short}} | The default storage class in VPC clusters can not be changed. However, you can [create a custom storage class](/docs/openshift?topic=openshift-vpc-block#vpc-customize-storage-class). |
+| {{site.data.keyword.block_storage_is_short}} | The default storage class in VPC clusters can not be changed. However, you can [create your own storage class](/docs/openshift?topic=openshift-vpc-block#vpc-customize-storage-class). |
 {: caption="VPC cluster storage limitations"}
 
 

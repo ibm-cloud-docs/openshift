@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2024
-lastupdated: "2024-06-12"
+lastupdated: "2024-06-17"
 
 
 keywords: openshift, {{site.data.keyword.openshiftlong_notm}}, kubernetes, release notes
@@ -33,12 +33,26 @@ Looking for {{site.data.keyword.cloud_notm}} status, platform announcements, sec
 
 
 
+### 17 June 2024
+{: #openshift-june1724}
+{: release-note}
+
+{{site.data.keyword.openshiftlong_notm}} CLI version `1.0.628` is available.
+:   For more information, see [Updating the CLI](/docs/openshift?topic=openshift-cli-update) and the [CLI change log](/docs/openshift?topic=openshift-cs_cli_changelog).
+
+
+
 ### 12 June 2024
 {: #openshift-june1224}
 {: release-note}
 
+
 Version 4.15 is the default version for {{site.data.keyword.openshiftlong_notm}}.
 :   For a complete list of available versions, see the [version information](/docs/openshift?topic=openshift-openshift_versions).
+
+
+
+
 
 
 

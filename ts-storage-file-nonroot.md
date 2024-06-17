@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2024
-lastupdated: "2024-01-03"
+lastupdated: "2024-06-14"
 
 
 keywords: openshift
@@ -39,7 +39,7 @@ Your app deployment or Helm chart configuration specifies the [security context]
 To allow a non-root user read and write access to a file storage device, you must allocate a [supplemental group ID](https://kubernetes.io/docs/concepts/security/pod-security-policy/){: external} in a storage class, refer to this storage class in the PVC, and set the pod's security context with a `runAsUser` value that is automatically added to the supplemental group ID. When you grant the supplemental group ID read and write access to the file storage, any non-root user that belongs to the group ID, including your pod, is granted access to the file storage.
 {: tsResolve}
 
-You can use one of the provided [`gid` storage classes](/docs/openshift?topic=openshift-file_storage#file_storageclass_reference) or create a custom storage class to define your own supplemental group ID.
+You can use one of the provided [`gid` storage classes](/docs/openshift?topic=openshift-file_storage#file_storageclass_reference) or create your own storage class to define your own supplemental group ID.
 
 Allocating a supplemental group ID for a non-root user of a file storage device is supported for single zone clusters only, and can't be used in multizone clusters.
 {: note}

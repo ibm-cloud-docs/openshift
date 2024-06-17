@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2024
-lastupdated: "2024-06-11"
+lastupdated: "2024-06-14"
 
 
 keywords: openshift, logmet, logs, metrics, audit, events
@@ -28,7 +28,7 @@ Forward audit logs for {{site.data.keyword.openshiftlong_notm}}, the Kubernetes 
 ## Kubernetes API server audit logs
 {: #audit-api-server}
 
-To monitor user-initiated, Kubernetes administrative activity made within your cluster, you can collect and forward audit events that are passed through your Kubernetes API server to {{site.data.keyword.la_full_notm}} or an external server. Although the Kubernetes API server for your cluster is enabled for auditing by default, no auditing data is available until you set up log forwarding.
+To monitor user-initiated, Kubernetes administrative activity made within your cluster, you can collect and forward audit events that are passed through your Kubernetes API server to {{site.data.keyword.la_full_notm}} or an external server.
 {: shortdesc}
 
 ### Considerations and prerequisites
