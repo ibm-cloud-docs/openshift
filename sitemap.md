@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2024
-lastupdated: "2024-06-14"
+lastupdated: "2024-06-17"
 
 
 keywords: openshift
@@ -275,7 +275,7 @@ subcollection: openshift
 
 * [June 2024](/docs/openshift?topic=openshift-openshift-relnotes#openshift-june24)
 
-    * [13 June 2024](/docs/openshift?topic=openshift-openshift-relnotes#openshift-june1324)
+    * [17 June 2024](/docs/openshift?topic=openshift-openshift-relnotes#openshift-june1724)
 
         * {{site.data.keyword.openshiftlong_notm}} CLI version `1.0.628` is available.
 
