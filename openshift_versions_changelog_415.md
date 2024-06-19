@@ -2,7 +2,7 @@
 
 copyright:
   years: 2023, 2024
-lastupdated: "2024-06-04"
+lastupdated: "2024-06-19"
 
 
 keywords: openshift, 4.15, update, upgrade, BOM, bill of materials, versions, patch
@@ -32,6 +32,39 @@ Check the [Security Bulletins on {{site.data.keyword.cloud_notm}} Status](https:
 
 Master patch updates are applied automatically. Worker node patch updates can be applied by reloading or updating the worker nodes. For more information about major, minor, and patch versions and preparation actions between minor versions, see [{{site.data.keyword.redhat_openshift_notm}} versions](/docs/openshift?topic=openshift-openshift_versions).
 {: tip}
+
+
+### Change log for master fix pack 4.15.17_1541_openshift, released 19 June 2024
+{: #41517_1541_openshift_M}
+
+The following table shows the changes that are in the master fix pack 4.15.17_1541_openshift. Master patch updates are applied automatically. 
+
+
+
+| Component | Previous | Current | Description |
+| --- | --- | --- | --- |
+| Cluster health image | v1.5.5 | v1.5.6 | New version contains updates and security fixes. |
+| {{site.data.keyword.cloud_notm}} Controller Manager | v1.28.10-1 | v1.28.10-5 | New version contains updates and security fixes. |
+| {{site.data.keyword.cloud_notm}} RBAC Operator | 4c5d156 | 14d0ab5 | New version contains updates and security fixes. |
+| Key Management Service provider | v2.9.6 | v2.9.7 | New version contains updates and security fixes. |
+| {{site.data.keyword.openshiftshort}}. | 4.15.14 | 4.15.17 | https://docs.openshift.com/container-platform/4.15/release_notes/ocp-4-15-release-notes.html |
+| Portieris admission controller | v0.13.15 | v0.13.16 | See the [Portieris admission controller release notes](https://github.com/{{site.data.keyword.IBM_notm}}/portieris/releases/tag/v0.13.16){: external}. |
+| {{site.data.keyword.openshiftlong_notm}} Control Plane Operator, Metrics Server, and toolkit | 4.15.0+20240514 | 4.15.0+20240603 | See the [{{site.data.keyword.openshiftlong_notm}} toolkit release notes](https://github.com/openshift/ibm-roks-toolkit/releases/tag/v4.15.0+20240603){: external}. |
+{: caption="Changes since version 4.15.14_1537_openshift" caption-side="bottom"}
+
+
+### Change log for worker node fix pack 4.15.17_1542_openshift, released 18 June 2024
+{: #41517_1542_openshift_W}
+
+The following table shows the changes that are in the worker node fix pack 4.15.17_1542_openshift. Worker node patch updates can be applied by updating, reloading (in classic infrastructure), or replacing (in VPC infrastructure) the worker node.
+{: shortdesc}
+
+| Component | Previous | Current | Description |
+| --- | --- | --- | --- |
+| {{site.data.keyword.openshiftshort}}. | 4.15.15 | 4.15.17 | For more information, see the [change logs](https://docs.openshift.com/container-platform/4.15/release_notes/ocp-4-15-release-notes.html#ocp-4-15-17){: external}. |
+| RHEL 8 Packages | 4.18.0-513.24.1.el8_9 | 4.18.0-513.24.1.el8_9 | N/A |
+| HAProxy | 0062a3c | 18889dd | Security fixes for [CVE-2024-25062](https://nvd.nist.gov/vuln/detail/CVE-2024-25062){: external}. |
+{: caption="Changes since version 4.15.15_1538_openshift" caption-side="bottom"}
 
 
 ### Change log for worker node fix pack 4.15.15_1538_openshift, released 03 June 2024
