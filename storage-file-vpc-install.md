@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2022, 2024
-lastupdated: "2024-06-14"
+lastupdated: "2024-06-19"
 
 
 keywords: openshift, {{site.data.keyword.openshiftlong_notm}}, add-on, file
@@ -21,17 +21,14 @@ subcollection: openshift
 
 [Virtual Private Cloud]{: tag-vpc}
 
-{{site.data.keyword.filestorage_vpc_full_notm}} is persistent, fast, and flexible network-attached, NFS-based {{site.data.keyword.filestorage_vpc_short}} that you can add to your apps by using Kubernetes persistent volumes (PVs). You can choose between predefined GB sizes and IOPS that meet the requirements of your workloads. To find out if {{site.data.keyword.filestorage_vpc_short}} is the correct storage option for you, see [Choosing a storage solution](/docs/openshift?topic=openshift-storage-plan). For pricing information, see [Pricing](https://cloud.ibm.com/vpc-ext/provision/fileShare){: external}.
+{{site.data.keyword.filestorage_vpc_full_notm}} is persistent, fast, and flexible network-attached, NFS-based {{site.data.keyword.filestorage_vpc_short}} that you can add to your apps by using Kubernetes persistent volumes (PVs). You can choose between predefined storage classes that meet the GB sizes and IOPS that meet the requirements of your workloads. To find out if {{site.data.keyword.filestorage_vpc_short}} is the correct storage option for you, see [Choosing a storage solution](/docs/openshift?topic=openshift-storage-plan). For pricing information, see [Pricing](https://cloud.ibm.com/vpc-ext/provision/fileShare){: external}.
 {: shortdesc}
 
 The {{site.data.keyword.filestorage_vpc_short}} cluster add-on is available in Beta. 
 {: beta} 
 
 
-## Prerequisites
-{: #prereqs-store-file-vpc}
-
-1. Update the `container-service` plug-in to the most recent version. You can update the plug-in by running the following command.
+1. Update the `container-service` CLI plug-in.
     ```shell
     ibmcloud update && ibmcloud plugin update container-service
     ```
@@ -51,17 +48,19 @@ The {{site.data.keyword.filestorage_vpc_short}} cluster add-on is available in B
     ```
     {: pre}
 
-1. For add-on version 2.0 and later, enable the `ibm-storage-operator` first.
+1. Enable the add-on and follow the prompts to install any dependencies.
     ```sh
-    ibmcloud oc cluster addon enable ibm-storage-operator -c CLUSTER
+    ibmcloud oc cluster addon enable vpc-file-csi-driver --version VERSION --cluster CLUSTER
     ```
     {: pre}
 
-1. Enable the add-on. 
+    Example output.
     ```sh
-    ibmcloud oc cluster addon enable vpc-file-csi-driver --version VERSION --cluster CLUSTERID
+    Enabling add-on vpc-file-csi-driver(1.0) for cluster devcluster2...
+    The add-on might take several minutes to deploy and become ready for use.
+    The ibm-storage-operator add-on version 1.0 is required to enable the vpc-file-csi-driver add-on. Enable ibm-storage-operator? [y/N]> y
     ```
-    {: pre}
+    {: screen}
 
 
 1. Verify that the add-on is enabled.
@@ -72,8 +71,9 @@ The {{site.data.keyword.filestorage_vpc_short}} cluster add-on is available in B
 
     Example output
     ```sh
-    Name                   Version   Health State   Health Status   
-    vpc-file-csi-driver    1.0.0     normal         Addon Ready
+    Name                   Version   Health State   Health Status
+    ibm-storage-operator   1.0       normal         Addon Ready. For more info: http://ibm.biz/addon-state (H1500)
+    vpc-file-csi-driver    2.0       normal         Addon Ready. For more info: http://ibm.biz/addon-state (H1500)
     ```
     {: pre}
 

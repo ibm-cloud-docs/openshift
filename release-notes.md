@@ -31,6 +31,17 @@ Looking for {{site.data.keyword.cloud_notm}} status, platform announcements, sec
 ## June 2024
 {: #openshift-june24}
 
+### 20 June 2024
+{: #openshift-june2024}
+{: release-note}
+
+Cluster autoscaler add-on version `1.2.2_452`.
+:   For more information, see [Cluster autoscaler add-on change log](/docs/openshift?topic=openshift-ca_changelog).
+
+
+### 19 June 2024
+{: #openshift-june1924}
+{: release-note}
 
 
 ### 19 June 2024

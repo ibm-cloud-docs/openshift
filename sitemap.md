@@ -275,6 +275,12 @@ subcollection: openshift
 
 * [June 2024](/docs/openshift?topic=openshift-openshift-relnotes#openshift-june24)
 
+    * [20 June 2024](/docs/openshift?topic=openshift-openshift-relnotes#openshift-june2024)
+
+        * Cluster autoscaler add-on version `1.2.2_452`.
+
+    * [19 June 2024](/docs/openshift?topic=openshift-openshift-relnotes#openshift-june1924)
+
     * [19 June 2024](/docs/openshift?topic=openshift-openshift-relnotes#openshift-june1924)
 
         * {{site.data.keyword.openshiftlong_notm}} master and worker node fix packs.
@@ -3534,7 +3540,7 @@ subcollection: openshift
 
     * [Updating your image pull secret](/docs/openshift?topic=openshift-registry#update-pull-secret)
 
-* [Using an image pull secret to access images in other accounts or external private registries from non-default {{site.data.keyword.redhat_openshift_notm}} projects](/docs/openshift?topic=openshift-registry#other)
+* [Using an image pull secret to access images in external private registries](/docs/openshift?topic=openshift-registry#other)
 
     * [Copying an existing image pull secret](/docs/openshift?topic=openshift-registry#copy_imagePullSecret)
 
@@ -4902,8 +4908,6 @@ subcollection: openshift
 
 
 [Enabling the {{site.data.keyword.filestorage_vpc_full_notm}} cluster add-on](/docs/openshift?topic=openshift-storage-file-vpc-install#storage-file-vpc-install)
-
-* [Prerequisites](/docs/openshift?topic=openshift-storage-file-vpc-install#prereqs-store-file-vpc)
 
 * [Next steps](/docs/openshift?topic=openshift-storage-file-vpc-install#vpc-enable-next-steps)
 
@@ -7003,6 +7007,10 @@ subcollection: openshift
 * [`vpc-file-csi-driver` 1.2](/docs/openshift?topic=openshift-supported-cluster-addon-versions#vpc-file-csi-driver-1.2)
 
 [Cluster autoscaler add-on change log](/docs/openshift?topic=openshift-ca_changelog#ca_changelog)
+
+* [Version 1.2.2](/docs/openshift?topic=openshift-ca_changelog#0122_ca_addon)
+
+    * [Change log for patch update 1.2.2_452, released 20 June 2024](/docs/openshift?topic=openshift-ca_changelog#122452_ca)
 
 * [Version 1.2.1](/docs/openshift?topic=openshift-ca_changelog#0121_ca_addon)
 
@@ -9994,7 +10002,7 @@ subcollection: openshift
 
 * [Missing projects or `oc` and `kubectl` commands fail](/docs/openshift?topic=openshift-ts_clis#rhoks_ts_admin_config)
 
-[Why do I see a `Could not find user` error when I try to access the {{site.data.keyword.openshiftshort}} web console?](/docs/openshift?topic=openshift-ts-cluster-ocp-console#ts-cluster-ocp-console)
+[Why do I see a `Could not find user` error when I try to access the web console?](/docs/openshift?topic=openshift-ts-cluster-ocp-console#ts-cluster-ocp-console)
 
 [Why can't I create or delete clusters or worker nodes?](/docs/openshift?topic=openshift-cluster_infra_errors#cluster_infra_errors)
 

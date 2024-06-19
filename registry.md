@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2024
-lastupdated: "2024-06-12"
+lastupdated: "2024-06-19"
 
 
 keywords: openshift, {{site.data.keyword.openshiftlong_notm}}, kubernetes, registry, pull secret, secrets
@@ -695,16 +695,11 @@ I see image pull secrets for the regional registry domains and all registry doma
 
 For workloads in other Kubernetes namespaces in the cluster to pull container images from a private registry, you can now copy only the `all-icr-io` image pull secret to that Kubernetes project. Then, specify the `all-icr-io` secret in your service account or deployment. You don't need to copy the image pull secret that matches the regional registry of your image anymore. Also, keep in mind that you don't need image pull secrets for public registries, which don't require authentication.
 
-
-
 After I copy or create an image pull secret in another {{site.data.keyword.redhat_openshift_notm}} project, am I done?
 :   Not quite. Your containers must be authorized to pull images by using the secret that you created. You can add the image pull secret to the service account for the namespace, or refer to the secret in each deployment. For instructions, see [Using the image pull secret to deploy containers](#use_imagePullSecret).
 
 ### Private network connection to `icr.io` registries
 {: #cluster_registry_auth_private}
-
-When you use the private network to pull images, your image pull traffic is not charged as [public bandwidth](/docs/openshift?topic=openshift-costs#bandwidth), because the traffic is on the private network. For more information, see the [{{site.data.keyword.registrylong_notm}} private network documentation](/docs/Registry?topic=Registry-registry_private).
-{: note}
 
 When you set up your {{site.data.keyword.cloud_notm}} account to use service endpoints, you can use a private network connection to push images to and to pull images from {{site.data.keyword.registrylong_notm}}. 
 {: shortdesc}
@@ -714,10 +709,7 @@ What do I need to do to set up my cluster to use the private connection to `icr.
 1. Enable a [Virtual Router Function (VRF)](/docs/account?topic=account-vrf-service-endpoint&interface=ui) for your IBM Cloud infrastructure account so that you can use the {{site.data.keyword.registrylong_notm}} private cloud service endpoint. To enable VRF, see [Enabling VRF](/docs/account?topic=account-vrf-service-endpoint&interface=ui). To check whether a VRF is already enabled, use the `ibmcloud account show` command.
 1. [Enable your {{site.data.keyword.cloud_notm}} account to use service endpoints](/docs/account?topic=account-vrf-service-endpoint#service-endpoint).
 
-Now, {{site.data.keyword.registrylong_notm}} automatically uses the private cloud service endpoint. You don't need to enable the private cloud service endpoint for your {{site.data.keyword.openshiftlong_notm}} clusters.
-
-Do I have to use the private `icr.io` registry addresses for anything else?
-:   Yes, if you [sign your images for trusted content](/docs/Registry?topic=Registry-registry_trustedcontent), the signatures contain the registry domain name. If you want to use the private `icr.io` domain for your signed images, resign your images with the private `icr.io` domains.
+{{site.data.keyword.registrylong_notm}} automatically uses the private cloud service endpoint. You don't need to enable the private cloud service endpoint for your {{site.data.keyword.openshiftlong_notm}} clusters.
 
 
 
@@ -797,7 +789,7 @@ To update your cluster image pull secret in the `default` Kubernetes namespace.
 
 
 
-## Using an image pull secret to access images in other accounts or external private registries from non-default {{site.data.keyword.redhat_openshift_notm}} projects
+## Using an image pull secret to access images in external private registries
 {: #other}
 
 Set up your own image pull secret in your cluster to deploy containers to {{site.data.keyword.redhat_openshift_notm}} projects other than `default`, use images that are stored in other {{site.data.keyword.cloud_notm}} accounts, or use images that are stored in external private registries. Further, you might create your own image pull secret to apply IAM access policies that restrict permissions to specific registry image namespaces, or actions (such as `push` or `pull`).

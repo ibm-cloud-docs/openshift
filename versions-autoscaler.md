@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2024
-lastupdated: "2024-05-06"
+lastupdated: "2024-06-19"
 
 
 keywords: autoscaler, add-on, autoscaler change log, cluster autoscaler
@@ -37,6 +37,18 @@ To view a list of add-ons and the supported cluster versions, run the following 
 ibmcloud oc cluster addon versions
 ```
 {: pre}
+
+
+## Version 1.2.2
+{: #0122_ca_addon}
+
+### Change log for patch update 1.2.2_452, released 20 June 2024
+{: #122452_ca}
+- Adds support for version 1.30.
+- Changes the format of the `cluster-autoscaler-status` configmap. For more information, see the [Community Kubernetes pull request](https://github.com/kubernetes/autoscaler/pull/6375){: external}.
+- Image tags: `1.22.0-122-0`, `1.23.0-122-0`, `1.24.0-122-0`, `1.25.0-122-0`, `1.26.4-122-0`, `1.27.3-122-0`, `1.28.0-122-0`, `1.29.0-122-0`, `1.30.0-122-0`.
+
+
 
 ## Version 1.2.1
 {: #0121_ca_addon}
