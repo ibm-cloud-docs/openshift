@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2024
-lastupdated: "2024-06-17"
+lastupdated: "2024-06-19"
 
 
 keywords: openshift, {{site.data.keyword.openshiftlong_notm}}, oc, ks
@@ -38,7 +38,7 @@ Review the following changes for 1.0 versions of the CLI plug-in.
 Version 1.0.628 of the CLI was released on 17 June 2024.
 - Adds support for managing endpoints for {{site.data.keyword.satelliteshort}} Connectors by using the the `--connector-id` option in the `ibmcloud sat connector endpoint` commands.
 - Adds the `--idle-timeout-seconds` option to `ibmcloud sat connector endpoint create` and `ibmcloud sat connector endpoint update`.
-- Adds `ibmcloud sat experimental endpoint authn set` command and ``ibmcloud sat experimental endpoint authn rotate` commands.
+- Adds `ibmcloud sat experimental endpoint authn set` command and `ibmcloud sat experimental endpoint authn rotate` commands.
 
 
 

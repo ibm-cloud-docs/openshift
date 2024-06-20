@@ -1,8 +1,8 @@
 ---
 
 copyright: 
-  years: 2022, 2024
-lastupdated: "2024-06-14"
+  years: 2023, 2024
+lastupdated: "2024-06-19"
 
 
 keywords: kubernetes, openshift
@@ -27,6 +27,7 @@ The {{site.data.keyword.filestorage_vpc_short}} cluster add-on is available in B
 {: beta}
 
 
+
 ## Updating the {{site.data.keyword.filestorage_vpc_short}} cluster add-on
 {: #storage-file-vpc-update}
 
@@ -44,12 +45,57 @@ The {{site.data.keyword.filestorage_vpc_short}} cluster add-on is available in B
     ```
     {: pre}
 
-1. Run the following command to update the add-on.
 
-    ```shell
-    ibmcloud ks cluster addon update vpc-file-csi-driver --version VERSION --cluster CLUSTER-ID
+1. Disable the add-on.
+    ```sh
+    ibmcloud oc cluster addon disable vpc-file-csi-driver --cluster CLUSTER
     ```
     {: pre}
+
+
+1. Enable the newer version of the add-on.
+    ```sh
+    ibmcloud oc cluster addon enable vpc-file-csi-driver --cluster CLUSTER --version VERSION
+    ```
+    {: pre}
+
+1. Verify the add-on is enabled by running the following commands.
+
+    ```sh
+    oc get deploy -n kube-system | grep file
+    ```
+    {: pre}
+
+    ```sh
+    ibm-vpc-file-csi-controller   2/2     2            2           13m
+    ```
+    {: screen}
+    
+    ```sh
+    oc get ds -n kube-system | grep file
+    ```
+    {: pre}
+
+    ```sh
+    ibm-vpc-file-csi-node    2         2         2       2            2           <none>          14m
+    ```
+    {: screen}
+
+    ```sh
+    oc get pods -n kube-system  | grep file
+    ```
+    {: pre}
+
+    ```sh
+    ibm-vpc-file-csi-controller-7899db784-kc29g   5/5     Running   0             14m
+    ibm-vpc-file-csi-controller-7899db784-mp5jt   5/5     Running   0             14m
+    ibm-vpc-file-csi-node-bfqdz                   4/4     Running   0             14m
+    ibm-vpc-file-csi-node-n7jbx                   4/4     Running   0             14m
+    ```
+    {: screen}
+
+
+
 
 ## Understanding your storage removal options
 {: #vpc_storage_delete_options_file}

@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2022, 2024
-lastupdated: "2024-06-14"
+lastupdated: "2024-06-20"
 
 keywords: kubernetes, openshift
 
@@ -11,6 +11,7 @@ subcollection: openshift
 ---
 
 {{site.data.keyword.attribute-definition-list}}
+
 
 # Adding {{site.data.keyword.filestorage_vpc_short}} to apps
 {: #storage-file-vpc-apps}
@@ -33,7 +34,7 @@ Review the following notes and considerations for {{site.data.keyword.filestorag
     - Your app needs to run as non-root.
     - Your cluster is in a different resource group from your VPC and subnet.
     - You need to limit file share access to pods on a given node or in a given zone.
-    - You need bring your own (BYOK) encryption using a KMS provider such as HPCS or Key Protect.
+    - You need to bring your own (BYOK) encryption using a KMS provider such as HPCS or Key Protect.
     - You need to manually specify the subnet or IP address of the [Virtual Network Interface (VNI)](/docs/vpc?topic=vpc-file-storage-vpc-about&interface=ui#fs-mount-granular-auth).
 
 
@@ -69,7 +70,7 @@ Create a persistent volume claim (PVC) to dynamically provision {{site.data.keyw
     ```
     {: pre}
 
-1. Save the following code to a file called `my-pvc.yaml`. This code creates a claim that is named `my-pvc` by using the `ibmc-vpc-file-min-iops` storage class, billed `monthly`, with a gigabyte size of `10Gi`.
+1. Save the following YAML to a file. This example creates a claim that is named `my-pvc` by using the `ibmc-vpc-file-min-iops` storage class with a gigabyte size of `10Gi`.
 
     ```yaml
     apiVersion: v1
@@ -78,7 +79,7 @@ Create a persistent volume claim (PVC) to dynamically provision {{site.data.keyw
       name: my-pvc # Enter a name for your PVC.
     spec:
       accessModes:
-      - ReadWriteMany # The PVC can be mounted by multiple pods. All pods can read from and write to the volume.
+      - ReadWriteMany # The file share can be mounted on multiple nodes and pods.
       resources:
         requests:
           storage: 10Gi # Enter the size of the storage in gigabytes (Gi).
@@ -202,6 +203,9 @@ Next steps
 
 To provision volumes that support expansion, you must use storage class that has `allowVolumeExpansion` set to `true`. Note that only volumes that are mounted by an app pod can be expanded.
 
+The {{site.data.keyword.filestorage_vpc_short}} cluster add-on supports expansion in both online and offline modes. However, expansion is only possible within the given [size and IOPs range of the {{site.data.keyword.filestorage_vpc_short}} profile](/docs/vpc?topic=vpc-file-storage-profiles&interface=ui#dp2-profile).
+{: note}
+
 1. Begin by deploying the [quick start example PVC and Deployment](#vpc-add-file-dynamic). 
 
 1. After your PVC is mounted by an app pod, you can expand your volume by editing the value of the `spec.resources.requests.storage` field in your PVC. To expand your volume, edit your PVC and increase the value in the `spec.resources.requests.storage` field.
@@ -306,7 +310,7 @@ Before you can create a persistent volume (PV), you have to retrieve details abo
     ID                          r134-aa2aabb8-f616-47be-886b-99220852b728   
     Name                        pvc-e7e005a9-e96b-41ad-9d6e-74650a9110a0   
     VPC                         ID                                          Name      
-                                r134-f05922d4-d8ab-4f64-9a3d-82664b303bc1   prankul-vpc-public      
+                                r134-f05922d4-d8ab-4f64-9a3d-82664b303bc1   vpc-public      
                                   
     Access control mode         security_group   
     Resource type               share_mount_target   
@@ -325,21 +329,21 @@ Before you can create a persistent volume (PV), you have to retrieve details abo
     apiVersion: v1
     kind: PersistentVolume
     metadata:
-    name: static-file-share
+      name: static-file-share
     spec:
-    mountOptions:
+      mountOptions:
       - hard
       - nfsvers=4.1
       - sec=sys
-    accessModes:
-    - ReadWriteMany
-    capacity:
-      storage: 10Gi
-    csi:
-      volumeAttributes:
-        nfsServerPath:  NFS-SERVER-PATH
-      driver: vpc.file.csi.ibm.io
-      volumeHandle: FILE-SHARE-ID:SHARE-TARGET-ID
+      accessModes:
+      - ReadWriteMany
+      capacity:
+        storage: 10Gi
+      csi:
+        volumeAttributes:
+          nfsServerPath: NFS-SERVER-PATH
+        driver: vpc.file.csi.ibm.io
+        volumeHandle: FILE-SHARE-ID#SHARE-TARGET-ID
     ```
     {: codeblock}
 
@@ -444,33 +448,33 @@ Create your own customized storage class with the preferred settings for your {{
     apiVersion: storage.k8s.io/v1
     kind: StorageClass
     metadata:
-        name: ibmc-vpc-file-custom-sc
-        labels:
-            app.kubernetes.io/name: ibm-vpc-file-csi-driver
-        annotations:
-              version: v2.0
+      name: ibmc-vpc-file-custom-sc
+      labels:
+        app.kubernetes.io/name: ibm-vpc-file-csi-driver
+      annotations:
+        version: v2.0
     provisioner: vpc.file.csi.ibm.io
     mountOptions:
-          - hard
-          - nfsvers=4.1
-          - sec=sys
+      - hard
+      - nfsvers=4.1
+      - sec=sys
     parameters:
         profile: "dp2" # The VPC Storage profile used. https://cloud.ibm.com/docs/vpc?topic=vpc-file-storage-profiles.
         billingType: "hourly" # The default billing policy used. The user can override this default.
         encrypted: "false" # By default, encryption is managed by cloud provider. User can override this default.
         encryptionKey: "" # If encrypted is true, then a user must specify the CRK-CRN.
         resourceGroup: "" # By default resource group will be used from storage-secrete-store secret, User can override.
-        isENIEnabled: "true" # VPC File Share ENI/VNI feature will be used by all PVCs created with this storage class.
-        securityGroupIDs: "" # By default cluster security group i.e kube-<clusterID> will be used. User can provide their own command separated SGs.
-        subnetID: "" # User can provide subnetID in which the ENI/VNI will be created. Zone and region are mandatory for this. If not provided CSI driver will use the subnetID available in the cluster' VPC zone.
-        region: "" # By VPC CSI driver will select a region from cluster node's topology. The user can override this default.
-      zone: "" # By VPC CSI driver will select a region from cluster node's topology. The user can override this default.
-      primaryIPID: "" # Existing ID of reserved IP from the same subnet as the file share zone. Zone and region are mandatory for this. SubnetID is not mandatory for this.
-      primaryIPAddress: "" # IPAddress for ENI/VNI to be created in the respective subnet of the zone. Zone, region and subnetID are mandatory for this.
-      tags: "" # User can add a list of tags "a, b, c" that will be used at the time of provisioning file share, by default CSI driver has its own tags.
-      uid: "0" # The initial user identifier for the file share, by default its root.
-      gid: "0" # The initial group identifier for the file share, by default its root.
-      classVersion: "1"
+        isENIEnabled: "true" # VPC File Share VNI feature will be used by all PVCs created with this storage class.
+        securityGroupIDs: "" # By default cluster security group i.e kube-<clusterID> will be used. User can provide their own comma separated SGs.
+        subnetID: "" # User can provide subnetID in which the VNI will be created. Zone and region are mandatory for this. If not provided CSI driver will use the subnetID available in the cluster's VPC zone.
+        region: "" # VPC CSI driver will select a region from cluster node's topology. The user can override this default.
+        zone: "" # VPC CSI driver will select a region from cluster node's topology. The user can override this default.
+        primaryIPID: "" # Existing ID of reserved IP from the same subnet as the file share zone. Zone and region are mandatory for this. SubnetID is not mandatory for this.
+        primaryIPAddress: "" # IPAddress for VNI to be created in the respective subnet of the zone. Zone, region and subnetID are mandatory for this.
+        tags: "" # User can add a list of tags "a, b, c" that will be used at the time of provisioning file share, by default CSI driver has its own tags.
+        uid: "0" # The initial user identifier for the file share, by default its root.
+        gid: "0" # The initial group identifier for the file share, by default its root.
+        classVersion: "1"
     reclaimPolicy: "Delete"
     allowVolumeExpansion: true
     ```
@@ -494,7 +498,7 @@ Create your own customized storage class with the preferred settings for your {{
     
     ```sh
     NAME                                          PROVISIONER
-    ibmc-vpc-file-dp-eni-default                  vpc.file.csi.ibm.io
+    ibmc-vpc-file-custom-sc                       vpc.file.csi.ibm.io
     ```
     {: screen}
 
@@ -503,32 +507,30 @@ Create your own customized storage class with the preferred settings for your {{
 ## Deploying an app that runs as non-root
 {: #vpc-file-non-root-app}
 
-To run an app as non-root, you must first create your own storage class that contains the group ID (`gid`) or user ID (`uid`) that you want to use.
-
-1. Create your own storage class and specify the group ID (`gid`) or user ID (`uid`) that you want to use for your app.
+1. Create your own storage class and specify the group ID or user ID that you want to use for your app.
 
     ```yaml
     apiVersion: storage.k8s.io/v1
     kind: StorageClass
     metadata:
-        name: ibmc-vpc-file-custom-sc
-        labels:
-            app.kubernetes.io/name: ibm-vpc-file-csi-driver
-        annotations:
-              version: v2.0
+      name: ibmc-vpc-file-custom-sc
+      labels:
+        app.kubernetes.io/name: ibm-vpc-file-csi-driver
+      annotations:
+        version: v2.0
     provisioner: vpc.file.csi.ibm.io
     mountOptions:
-          - hard
-          - nfsvers=4.1
-          - sec=sys
+      - hard
+      - nfsvers=4.1
+      - sec=sys
     parameters:
-        profile: "dp2"
-        iops: "100" # Default IOPS.
-        billingType: "hourly" # The default billing policy used.
-        encrypted: "false" # By default, all PVC using this class will only be provider managed encrypted.
-        gid: "3000" # The default is 0 which runs as root. You can optionally specify a non-root group ID.
-        uid: "1000" # The default is 0 which runs as root. You can optionally specify a non-root user ID.
-        classVersion: "1"
+      profile: "dp2"
+      iops: "100"
+      billingType: "hourly"
+      encrypted: "false"
+      gid: "3000"
+      uid: "1000"
+      classVersion: "1"
     reclaimPolicy: "Delete"
     allowVolumeExpansion: true
     ```
@@ -540,14 +542,14 @@ To run an app as non-root, you must first create your own storage class that con
     apiVersion: v1
     kind: PersistentVolumeClaim
     metadata:
-      name: my-pvc # Enter a name for your PVC.
+      name: my-pvc
     spec:
       accessModes:
-      - ReadWriteMany # The PVC can be mounted by multiple pods. All pods can read from and write to the volume.
+      - ReadWriteMany
       resources:
         requests:
-          storage: 10Gi # Enter the size of the storage in gigabytes (Gi). After your storage is provisioned, you can't change the size. Make sure to specify a size that matches the amount of data that you want to store.
-      storageClassName: my-nonroot-class # Enter the name of the storage class that you want to use.
+          storage: 10Gi
+      storageClassName: ibmc-vpc-file-custom-sc
     ```
     {: codeblock}
 
@@ -581,9 +583,11 @@ To run an app as non-root, you must first create your own storage class that con
         securityContext:
           allowPrivilegeEscalation: false
         persistentVolumeClaim:
-          claimName: my-pvc # The name of the PVC that you created earlier
+          claimName: my-pvc
     ``` 
     {: codeblock}
+
+
 
 
 

@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2024
-lastupdated: "2024-01-03"
+lastupdated: "2024-06-19"
 
 
 keywords: openshift, console, user, error
@@ -17,7 +17,7 @@ content-type: troubleshoot
 
 
 
-# Why do I see a `Could not find user` error when I try to access the {{site.data.keyword.openshiftshort}} web console?
+# Why do I see a `Could not find user` error when I try to access the web console?
 {: #ts-cluster-ocp-console}
 
 When you try to access the {{site.data.keyword.openshiftshort}} web console, you see an error message similar to the following.
