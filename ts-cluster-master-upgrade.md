@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2023, 2024
-lastupdated: "2024-03-27"
+lastupdated: "2024-06-20"
 
 
 keywords: openshift, {{site.data.keyword.openshiftlong_notm}}, kubernetes, help, cluster, upgrades,
@@ -59,7 +59,7 @@ oc get clusterversion version -o json | jq '.status.conditions[] | select(.type 
 
 1. Follow the steps to [Provide the administrator acknowledgment](https://docs.openshift.com/container-platform/4.14/updating/preparing_for_updates/updating-cluster-prepare.html#update-preparing-ack_updating-cluster-prepare){: external} that you have migrated off the removed APIs.
 
-1. After you have completed the previous migration steps, run the following command again. Note, it may take several minutes for the `Upgradeable` status to update. If no data is returned, the `Upgradeable` status has been removed and you can retry the cluster upgrade.
+1. After you have completed the previous migration steps, run the following command again. Note, it might take several minutes for the `Upgradeable` status to update. If no data is returned, the `Upgradeable` status has been removed and you can retry the cluster upgrade.
     ```sh
     oc get clusterversion version -o json | jq '.status.conditions[] | select(.type == "Upgradeable")'
     ```

@@ -2,7 +2,7 @@
 
 copyright:
   years: 2023, 2024
-lastupdated: "2024-01-18"
+lastupdated: "2024-06-20"
 
 
 keywords: critical, not ready, notready, troubleshooting, worker node status, status
@@ -72,7 +72,7 @@ If only some, but not all, of the worker nodes in your cluster are in a `Critica
 ### If all worker nodes in a single zone, subnet, or VLAN are affected
 {: #ts-critical-notready-steps-zone}
 
-If all worker nodes in a single zone, subnet, or VLAN are in a `Critical` or `NotReady` state, but all other worker nodes in the cluster are functioning normally, there might be an issue with a networking component. Follow the steps in [If all worker nodes in a cluster are affected](#ts-critical-notready-steps-all), especially to the steps regarding any networking components that may affect the zone, subnet or VLAN, such as firewall or gateway rules, ACLs or custom routes, or Calico and Kubernetes network policies.
+If all worker nodes in a single zone, subnet, or VLAN are in a `Critical` or `NotReady` state, but all other worker nodes in the cluster are functioning normally, there might be an issue with a networking component. Follow the steps in [If all worker nodes in a cluster are affected](#ts-critical-notready-steps-all), especially to the steps regarding any networking components that might affect the zone, subnet or VLAN, such as firewall or gateway rules, ACLs or custom routes, or Calico and Kubernetes network policies.
 
 If you checked your networking components and still cannot resolve the issue, [gather your worker node data](#ts-critical-notready-gather) and open a support ticket. 
 
@@ -90,7 +90,7 @@ Some steps are specific to a specialized area, such as networking or automation.
     - For VPC clusters, check if any changes were made to the default security group and ACLs on the VPC or the worker nodes. If any modifications were made, ensure that you are allowing all necessary traffic from the cluster worker nodes to the cluster master, container registry, and other critical services. For more information, see [Controlling Traffic with VPC Security Groups](/docs/openshift?topic=openshift-vpc-security-group&interface=ui) and [Controlling traffic with ACLs](/docs/openshift?topic=openshift-vpc-acls&interface=ui).
     - For VPC clusters, check any custom routing rules for changes that might be blocking traffic from the cluster `apiserver`.
     - Check any Calico or Kubernetes network policies that are applied to the cluster and make sure that they do not block traffic from the worker node to the cluster `apiservice`, container registry, or other critical services. 
-1. Check if the applications, security, or monitoring components in your cluster are overloading the cluster `apiserver` with requests, which may cause disruptions for your worker nodes.
+1. Check if the applications, security, or monitoring components in your cluster are overloading the cluster `apiserver` with requests, which might cause disruptions for your worker nodes.
 1. If you recently added any components to your cluster, remove them. If you made changes to any existing components in your cluster, revert the changes. Then, check the status of your worker nodes to see if the new components or changes were causing the issue. 
 1. Check for changes on any cluster webhooks, which can disrupt `apiserver` requests or block a worker node's ability to connect with the `apiserver`. [Remove all webhooks](/docs/openshift?topic=openshift-ts-delete-webhooks) that were added to the cluster after it was created.
 1. Remove and regenerate any custom Docker pull secrets, which, if misconfigured, can prevent worker nodes from pulling images from Docker registries. 
@@ -113,11 +113,11 @@ Some steps are specific to a specialized area, such as networking or automation.
 ### If worker nodes switch between normal and critical states
 {: #ts-critical-notready-steps-switch}
 
-If your worker nodes switch between a `Normal` and `Critical` or `NotReady` state, check the following components for any issues or recent changes that may disrupt your worker nodes.
+If your worker nodes switch between a `Normal` and `Critical` or `NotReady` state, check the following components for any issues or recent changes that might disrupt your worker nodes.
 
 
 1. For classic clusters, check your firewalls or gateways. If there is a bandwidth limit or any type of malfunction, resolve the issue. Then, check your worker nodes again.
-1. Check if the applications, security, or monitoring components in your cluster are overloading the cluster `apiserver` with requests, which may cause disruptions for your worker nodes.
+1. Check if the applications, security, or monitoring components in your cluster are overloading the cluster `apiserver` with requests, which might cause disruptions for your worker nodes.
 1. If you recently added any components to your cluster, remove them. If you made changes to any existing components in your cluster, revert the changes. Then, check the status of your worker nodes to see whether the new components or changes were causing the issue. 
 1. Check for changes on any cluster webhooks, which can disrupt `apiserver` requests or block a worker node's ability to connect with the `apiserver`. [Remove all webhooks](/docs/openshift?topic=openshift-ts-delete-webhooks)  that were added to the cluster after it was created.
 1. If the issue is still not resolved, follow the steps to [gather your worker node data](#ts-critical-notready-gather) and open a support ticket. 

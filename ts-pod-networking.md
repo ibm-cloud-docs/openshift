@@ -2,7 +2,7 @@
 
 copyright:
   years: 2024, 2024
-lastupdated: "2024-06-12"
+lastupdated: "2024-06-20"
 
 
 keywords: pods, pod connectvity, networking, pod networking, pod trouble shooting, pod debug
@@ -48,9 +48,9 @@ Follow these steps to check the health of your components. Networking issues mig
 
     2. In the output, make sure that your cluster includes the following pods. Make sure that each pod's status is `Running`, and that the pods do not have too many restarts.
         - Exactly one `calico-node` pod per worker node. 
-        - At least one `calico-typha` pod per cluster. Larger clusters may have more than one. 
+        - At least one `calico-typha` pod per cluster. Larger clusters might have more than one. 
         - Exactly one `calico-kube-controllers` pod per cluster. 
-        - At least one `dns-default` pod per cluster. Larger clusters may have more than one. 
+        - At least one `dns-default` pod per cluster. Larger clusters might have more than one. 
 
         Example output. 
 
@@ -380,7 +380,7 @@ Review the outputs from the earlier section to help find the cause of your pod n
 
 - If the commands functioned normally on the test pods, but you still have networking issues in your application pods in your default namespace, there might be issues related specifically to your application. 
     - You might have Calico or Kubernetes network security policies in place that restrict your networking traffic. If a networking policy is applied to a pod, *all traffic that is not specifically allowed by that policy is dropped*. For more information on networking policies, see the [Kubernetes documentation](https://kubernetes.io/docs/concepts/services-networking/network-policies/){: external}. 
-    - If you are using Istio or Red Hat OpenShift Service Mesh, there may be service configuration issues that drop or block traffic between pods. For more information, see the troubleshooting documentation for [Istio](https://istio.io/latest/docs/ops/diagnostic-tools/){: external} and [Red Hat OpenShift Service Mesh](https://docs.openshift.com/container-platform/4.15/service_mesh/v2x/ossm-troubleshooting-istio.html){: external}. 
+    - If you are using Istio or Red Hat OpenShift Service Mesh, there might be service configuration issues that drop or block traffic between pods. For more information, see the troubleshooting documentation for [Istio](https://istio.io/latest/docs/ops/diagnostic-tools/){: external} and [Red Hat OpenShift Service Mesh](https://docs.openshift.com/container-platform/4.15/service_mesh/v2x/ossm-troubleshooting-istio.html){: external}. 
     - The issue might be related to bugs in the application rather than your cluster, and might require your own independent trouble shooting. 
 
 - If the `curl`, `ping`, or `nc` commands failed for certain pods, identify which worker nodes those pods are on. If the issue exists on only some of your worker nodes, [replace those worker nodes](/docs/openshift?topic=openshift-kubernetes-service-cli#cli_worker_replace) or see additional information on [worker node trouble shooting](/docs/openshift?topic=openshift-ts-critical-notready). 

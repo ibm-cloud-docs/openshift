@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2024
-lastupdated: "2024-06-10"
+lastupdated: "2024-06-20"
 
 
 keywords: openshift, update, upgrade, BOM, bill of materials, versions, patch
@@ -873,7 +873,7 @@ The following table shows the changes that are in the master fix pack patch upda
 | Tigera Operator | v1.17.3 | v1.17.8 | See the [Tigera Operator release notes](https://github.com/tigera/operator/releases/tag/v1.17.8){: external}. |
 | Gateway-enabled cluster controller | 1444 | 1510 | Updated image for [CVE-2021-3711](https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2021-3711){: external} and [CVE-2021-3712](https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2021-3712){: external}. |
 | {{site.data.keyword.cloud_notm}} {{site.data.keyword.blockstorageshort}} plug-in and driver | v2.0.9 | v2.1.1 | Updated to use `Go` version `1.16.7`. Updated universal base image (UBI) to the latest `8.4-208` version to resolve CVEs. |
-| {{site.data.keyword.IBM_notm}} Cloud Controller Manager | v1.20.10-1 | v1.20.11-1 | Updated to support the Kubernetes `1.20.11` release. Fixed a bug that may cause node initialization to fail when a new node reuses the name of a deleted node. |
+| {{site.data.keyword.IBM_notm}} Cloud Controller Manager | v1.20.10-1 | v1.20.11-1 | Updated to support the Kubernetes `1.20.11` release. Fixed a bug that might cause node initialization to fail when a new node reuses the name of a deleted node. |
 | {{site.data.keyword.cloud_notm}} {{site.data.keyword.filestorage_short}} plug-in and monitor | 398 | 400 | Updated to use `Go` version `1.16.7`. Updated universal base image (UBI) to the latest `8.4-208` version to resolve CVEs. |
 | {{site.data.keyword.IBM_notm}} Cloud RBAC Operator | 945df65 | e3cb629 | Updated to use `Go` version `1.16.7`. |
 | Kubernetes API server auditing configuration | N/A | N/A| Updated to support `verbose` [Kubernetes API server auditing](/docs/openshift?topic=openshift-health-audit#audit-api-server){: external}. |
@@ -934,7 +934,7 @@ The following table shows the changes that are in the master fix pack patch upda
 | --- | --- | --- | --- |
 | Calico | N/A | N/A | Updated the rolling update configuration for the `calico-node` daemonset in the `calico-system` namespace.  The configuration is now the same regardless of the number of cluster worker nodes. |
 | Cluster health image | v1.2.14 | v1.2.15 | Updated to use `Go` version `1.15.15`. Updated universal base image (UBI) to the latest `8.4` version to resolve CVEs. |
-| Cluster master operations | N/A | N/A | Fixes DNS configuration problem that may block {{site.data.keyword.redhat_openshift_notm}} operator updates. |
+| Cluster master operations | N/A | N/A | Fixes DNS configuration problem that might block {{site.data.keyword.redhat_openshift_notm}} operator updates. |
 | Gateway-enabled cluster controller | 1348 | 1444 | Updated image for [CVE-2021-36159](https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2021-36159){: external}. |
 | {{site.data.keyword.IBM_notm}} Calico extension | 747 | 763 | Updated to use `Go` version `1.16.6`. Updated universal base image (UBI) to the latest `8.4-205` version to resolve CVEs. |
 | {{site.data.keyword.cloud_notm}} {{site.data.keyword.blockstorageshort}} plug-in and driver | v2.0.8 | v2.0.9 | Updated to use `Go` version `1.16.6`. Updated image for [CVE-2021-33910](https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2021-33910){: external}. |

@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2024, 2024
-lastupdated: "2024-04-24"
+lastupdated: "2024-06-20"
 
 
 keywords: openshift, {{site.data.keyword.openshiftlong_notm}}, secure by default, app not working, {{site.data.keyword.openshiftlong_notm}}, outbound traffic protection, 4.15, 1.30
@@ -32,7 +32,7 @@ warning: Container container-00 is unable to start due to an error: Back-off pul
 {: pre}
 
 
-Applications that have external public dependencies such as image registries like `ghcr.io`, repositories like GitHub, and so on may no longer function correctly after enabling the secure by default outbound traffic protection. Secure by default clusters have all public access disabled by default.
+Applications that have external public dependencies such as image registries like `ghcr.io`, repositories like GitHub, and so on might no longer function correctly after enabling the secure by default outbound traffic protection. Secure by default clusters have all public access disabled by default.
 {: tsCauses}
 
 

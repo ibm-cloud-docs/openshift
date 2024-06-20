@@ -2,7 +2,7 @@
 
 copyright:
   years: 2023, 2024
-lastupdated: "2024-01-03"
+lastupdated: "2024-06-20"
 
 
 keywords: openshift, route, network, satellite
@@ -94,7 +94,7 @@ You can use these `Hostendpoint` instances to define global network policies wit
 
 In addition to this label, all the worker node’s labels are added for additional customization options.
 
-These `Hostendpoints` have the `“projectcalico-default-allow"` profile, which means these `Hostendpoints` may change the previously expected behavior when you update to 4.12.
+These `Hostendpoints` have the `“projectcalico-default-allow"` profile, which means these `Hostendpoints` might change the previously expected behavior when you update to 4.12.
 {: important}
 
 Before updating to 4.12, make sure all the previously expected networking rules, policies, `Hostendpoints` work the same after the update as well.

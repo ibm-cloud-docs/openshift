@@ -2,7 +2,7 @@
 
 copyright:
   years: 2022, 2024
-lastupdated: "2024-03-04"
+lastupdated: "2024-06-20"
 
 
 keywords: secrets manager, secrets, certificates, secret group, CRN
@@ -89,7 +89,7 @@ Integrating {{site.data.keyword.secrets-manager_short}} with your {{site.data.ke
 {: #secrets-mgr_setup_create}
 {: step}
 
-To create a {{site.data.keyword.secrets-manager_short}} instance in the CLI or the UI, refer to the {{site.data.keyword.secrets-manager_short}} documentation. It may take several minutes for you {{site.data.keyword.secrets-manager_short}} instance to fully provision.
+To create a {{site.data.keyword.secrets-manager_short}} instance in the CLI or the UI, refer to the {{site.data.keyword.secrets-manager_short}} documentation. It might take several minutes for you {{site.data.keyword.secrets-manager_short}} instance to fully provision.
 {: shortdesc}
 
 - [Create a {{site.data.keyword.secrets-manager_short}} instance in CLI](/docs/secrets-manager?topic=secrets-manager-create-instance&interface=cli).
@@ -196,7 +196,7 @@ When you set a default {{site.data.keyword.secrets-manager_short}} instance, all
 
     3. Verify that your default Ingress secrets regenerated. In the output, the CRN of the default Ingress secrets should contain `secrets-manager`.
 
-        It may take several minutes for your secrets to regenerate. During this process, the **Status** column in the output says `regenerating` and switches to `created` when the regeneration is complete. 
+        It might take several minutes for your secrets to regenerate. During this process, the **Status** column in the output says `regenerating` and switches to `created` when the regeneration is complete. 
         {: note}
 
         ```sh

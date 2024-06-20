@@ -144,7 +144,7 @@ Follow the steps to create a dedicated host in a dedicated host pool. Then, prov
         {: screen}
 
 
-7. Create the cluster. Specify the dedicated host pool, the subnet, vpc and zone you previously noted, and the cluster flavor. Note that it may take several minutes for the cluster to fully provision.
+7. Create the cluster. Specify the dedicated host pool, the subnet, vpc and zone you previously noted, and the cluster flavor. Note that it might take several minutes for the cluster to fully provision.
 
     ```sh
     ibmcloud oc cluster create vpc-gen2  --name my_cluster --flavor bx2d.4x16 --dedicated-host-pool dh_a1aaa1111aaa1aaa1a11  --subnet-id 1111-a11aaaa1-1a11-1111-1a1a-aaaaa1111111 --vpc-id a111-11a111a1-11a1-1a11-11a1-a1a1111a11a1 --zone dal10 --workers 3
