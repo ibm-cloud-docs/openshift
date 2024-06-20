@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2024
-lastupdated: "2024-06-19"
+lastupdated: "2024-06-20"
 
 
 keywords: openshift
@@ -277,9 +277,9 @@ subcollection: openshift
 
     * [20 June 2024](/docs/openshift?topic=openshift-openshift-relnotes#openshift-june2024)
 
-        * Cluster autoscaler add-on version `1.2.2_452`.
+        * Cluster autoscaler add-on patch update for {{site.data.keyword.openshiftlong_notm}}.
 
-    * [19 June 2024](/docs/openshift?topic=openshift-openshift-relnotes#openshift-june1924)
+        * Ingress ALB updates are available for {{site.data.keyword.openshiftlong_notm}}.
 
     * [19 June 2024](/docs/openshift?topic=openshift-openshift-relnotes#openshift-june1924)
 
