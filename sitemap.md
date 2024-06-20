@@ -279,8 +279,6 @@ subcollection: openshift
 
         * Cluster autoscaler add-on patch update for {{site.data.keyword.openshiftlong_notm}}.
 
-        * Ingress ALB updates are available for {{site.data.keyword.openshiftlong_notm}}.
-
     * [19 June 2024](/docs/openshift?topic=openshift-openshift-relnotes#openshift-june1924)
 
         * {{site.data.keyword.openshiftlong_notm}} master and worker node fix packs.

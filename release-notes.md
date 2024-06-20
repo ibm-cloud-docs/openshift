@@ -38,8 +38,7 @@ Looking for {{site.data.keyword.cloud_notm}} status, platform announcements, sec
 Cluster autoscaler add-on patch update for {{site.data.keyword.openshiftlong_notm}}.
 :   For more information, see [Cluster autoscaler add-on change log](/docs/openshift?topic=openshift-ca_changelog).
 
-Ingress ALB updates are available for {{site.data.keyword.openshiftlong_notm}}.
-:   For more information, see the [change log](/docs/containers?topic=containers-ingress-alb-change-log).
+
 
 
 

@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2022, 2024
-lastupdated: "2024-06-19"
+lastupdated: "2024-06-20"
 
 keywords: kubernetes, openshift
 
@@ -11,6 +11,7 @@ subcollection: openshift
 ---
 
 {{site.data.keyword.attribute-definition-list}}
+
 
 # Adding {{site.data.keyword.filestorage_vpc_short}} to apps
 {: #storage-file-vpc-apps}
@@ -506,32 +507,30 @@ Create your own customized storage class with the preferred settings for your {{
 ## Deploying an app that runs as non-root
 {: #vpc-file-non-root-app}
 
-To run an app as non-root, you must first create your own storage class that contains the group ID (`gid`) or user ID (`uid`) that you want to use.
-
-1. Create your own storage class and specify the group ID (`gid`) or user ID (`uid`) that you want to use for your app.
+1. Create your own storage class and specify the group ID or user ID that you want to use for your app.
 
     ```yaml
     apiVersion: storage.k8s.io/v1
     kind: StorageClass
     metadata:
-        name: ibmc-vpc-file-custom-sc
-        labels:
-            app.kubernetes.io/name: ibm-vpc-file-csi-driver
-        annotations:
-              version: v2.0
+      name: ibmc-vpc-file-custom-sc
+      labels:
+        app.kubernetes.io/name: ibm-vpc-file-csi-driver
+      annotations:
+        version: v2.0
     provisioner: vpc.file.csi.ibm.io
     mountOptions:
-          - hard
-          - nfsvers=4.1
-          - sec=sys
+      - hard
+      - nfsvers=4.1
+      - sec=sys
     parameters:
-        profile: "dp2"
-        iops: "100" # Default IOPS.
-        billingType: "hourly" # The default billing policy used.
-        encrypted: "false" # By default, all PVC using this class will only be provider managed encrypted.
-        gid: "3000" # The default is 0 which runs as root. You can optionally specify a non-root group ID.
-        uid: "1000" # The default is 0 which runs as root. You can optionally specify a non-root user ID.
-        classVersion: "1"
+      profile: "dp2"
+      iops: "100"
+      billingType: "hourly"
+      encrypted: "false"
+      gid: "3000"
+      uid: "1000"
+      classVersion: "1"
     reclaimPolicy: "Delete"
     allowVolumeExpansion: true
     ```
@@ -543,14 +542,14 @@ To run an app as non-root, you must first create your own storage class that con
     apiVersion: v1
     kind: PersistentVolumeClaim
     metadata:
-      name: my-pvc # Enter a name for your PVC.
+      name: my-pvc
     spec:
       accessModes:
-      - ReadWriteMany # The PVC can be mounted by multiple pods. All pods can read from and write to the volume.
+      - ReadWriteMany
       resources:
         requests:
-          storage: 10Gi # Enter the size of the storage in gigabytes (Gi). After your storage is provisioned, you can't change the size. Make sure to specify a size that matches the amount of data that you want to store.
-      storageClassName: my-nonroot-class # Enter the name of the storage class that you want to use.
+          storage: 10Gi
+      storageClassName: ibmc-vpc-file-custom-sc
     ```
     {: codeblock}
 
@@ -584,9 +583,11 @@ To run an app as non-root, you must first create your own storage class that con
         securityContext:
           allowPrivilegeEscalation: false
         persistentVolumeClaim:
-          claimName: my-pvc # The name of the PVC that you created earlier
+          claimName: my-pvc
     ``` 
     {: codeblock}
+
+
 
 
 
