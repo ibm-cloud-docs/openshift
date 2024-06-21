@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2024
-lastupdated: "2024-06-20"
+lastupdated: "2024-06-21"
 
 
 keywords: openshift, {{site.data.keyword.openshiftlong_notm}}, kubernetes, release notes
@@ -28,6 +28,14 @@ Looking for {{site.data.keyword.cloud_notm}} status, platform announcements, sec
 
 ## June 2024
 {: #openshift-june24}
+
+
+### 21 June 2024
+{: #openshift-june2024}
+{: release-note}
+
+Cluster autoscaler add-on patch update for {{site.data.keyword.openshiftlong_notm}}.
+:   For more information, see [Cluster autoscaler add-on change log](/docs/openshift?topic=openshift-ca_changelog).
 
 ### 20 June 2024
 {: #openshift-june2024}
