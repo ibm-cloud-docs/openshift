@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2022, 2024
-lastupdated: "2024-06-20"
+lastupdated: "2024-06-21"
 
 keywords: kubernetes, openshift
 
@@ -459,9 +459,9 @@ Create your own customized storage class with the preferred settings for your {{
       - nfsvers=4.1
       - sec=sys
     parameters:
-        profile: "dp2" # The VPC Storage profile used. https://cloud.ibm.com/docs/vpc?topic=vpc-file-storage-profiles.
-        billingType: "hourly" # The default billing policy used. The user can override this default.
-        encrypted: "false" # By default, encryption is managed by cloud provider. User can override this default.
+        profile: "dp2"
+        billingType: "hourly" # hourly or monthly
+        encrypted: "false"
         encryptionKey: "" # If encrypted is true, then a user must specify the CRK-CRN.
         resourceGroup: "" # By default resource group will be used from storage-secrete-store secret, User can override.
         isENIEnabled: "true" # VPC File Share VNI feature will be used by all PVCs created with this storage class.
@@ -497,10 +497,10 @@ Create your own customized storage class with the preferred settings for your {{
     Example output
     
     ```sh
-    NAME                                          PROVISIONER
     ibmc-vpc-file-custom-sc                       vpc.file.csi.ibm.io
     ```
     {: screen}
+
 
 
 
@@ -524,19 +524,21 @@ Create your own customized storage class with the preferred settings for your {{
       - nfsvers=4.1
       - sec=sys
     parameters:
-      profile: "dp2"
-      iops: "100"
-      billingType: "hourly"
-      encrypted: "false"
-      gid: "3000"
-      uid: "1000"
-      classVersion: "1"
+        profile: "dp2"
+        iops: "100"
+        billingType: "hourly" # hourly or monthly
+        encrypted: "false"
+        uid: "3000" # The initial user identifier for the file share.
+        gid: "1000" # The initial group identifier for the file share.
+        classVersion: "1"
     reclaimPolicy: "Delete"
     allowVolumeExpansion: true
     ```
     {: codeblock}
 
-1. Save the following code to a file called `my-pvc.yaml`. This code creates a claim that is named `my-pvc` by using the `ibmc-vpc-file-min-iops` storage class, billed `monthly`, with a gigabyte size of `10Gi`.
+
+
+1. Save the following YAML to a file called `my-pvc.yaml`.
 
     ```yaml
     apiVersion: v1
@@ -553,9 +555,12 @@ Create your own customized storage class with the preferred settings for your {{
     ```
     {: codeblock}
 
+
+
 1. Create the PVC.
+
     ```sh
-    kubectl apply -f my-pvc.yaml
+    oc apply -f my-pvc.yaml
     ```
     {: pre}
 
@@ -587,6 +592,11 @@ Create your own customized storage class with the preferred settings for your {{
     ``` 
     {: codeblock}
 
+1. Verify the pod is running.
+    ```sh
+    oc get pods
+    ```
+    {: pre}
 
 
 
@@ -657,7 +667,7 @@ To limit file share access by node, zone, or resource group, you must first crea
 
     Example output.
 
-    ```yaml
+    ```sh
     nfsServerPath: XXX.XX.XX.XXX:/XX # VNI IP address
     ```
     {: screen}
