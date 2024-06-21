@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2024
-lastupdated: "2024-06-14"
+lastupdated: "2024-06-21"
 
 
 keywords: file, add-on, changelog, openshift
@@ -43,8 +43,16 @@ To view a list of add-ons and the supported cluster versions, see the [Supported
 ## Version 1.2
 {: #012_is_file}
 
+### Change log for version 1.2.9_245, released 21 June 2024
+{: #1.2.9_245_is_file_relnote}
+
+- Updates `golang` to `1.21.11-community`.
+- Updates the `armada-storage-secret` to `v1.3.8`.
+- Resolves: [CVE-2024-26458](https://nvd.nist.gov/vuln/detail/CVE-2024-26458){: external}, [CVE-2024-26461](https://nvd.nist.gov/vuln/detail/CVE-2024-26461){: external}, [CVE-2024-33600](https://nvd.nist.gov/vuln/detail/CVE-2024-33600){: external}, [CVE-2024-33601](https://nvd.nist.gov/vuln/detail/CVE-2024-33601){: external}, [CVE-2024-33602](https://nvd.nist.gov/vuln/detail/CVE-2024-33602){: external}, [CVE-2024-2961](https://nvd.nist.gov/vuln/detail/CVE-2024-33602){: external}, and [CVE-2024-33599](https://nvd.nist.gov/vuln/detail/CVE-2024-33599){: external}.
+
+
 ### Change log for 1.2.8_174, released 10 May 2024
-{: #1.2.8_174_is_block_relnote}
+{: #1.2.8_174_is_file_relnote}
 
 - Updates `golang` to `1.21.9-community`.
 - Removes `curl` package from base image.
@@ -53,7 +61,7 @@ To view a list of add-ons and the supported cluster versions, see the [Supported
 - Resolves [CVE-2023-46218](https://nvd.nist.gov/vuln/detail/CVE-2023-46218){: external}, [CVE-2023-28322](https://nvd.nist.gov/vuln/detail/CVE-2023-28322){: external}, and [CVE-2023-38546](https://nvd.nist.gov/vuln/detail/CVE-2023-38546){: external}.
 
 ### Change log for 1.2.7_154, released 08 March 2024
-{: #1.2.7_154_is_block_relnote}
+{: #1.2.7_154_is_file_relnote}
 
 - Base image migrated from UBI to golang.
 

@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2024
-lastupdated: "2024-06-14"
+lastupdated: "2024-06-21"
 
 
 keywords: openshift, {{site.data.keyword.openshiftlong_notm}}, block, storage, add-on, changelog
@@ -46,6 +46,14 @@ Before you migrate to a `5.x` release from a previous release, you must not have
 
 ## Version 5.2
 {: #052_is_block}
+
+### Change log for version 5.2.19_570, released 21 June 2024
+{: #5.2.19_570_is_block_relnote}
+
+
+- Updates `golang` to `1.21.11-community`.
+- Updates the `armada-storage-secret` to `v1.3.9`.
+- Resolves: [CVE-2024-2961](https://nvd.nist.gov/vuln/detail/CVE-2024-2961){: external}, [CVE-2024-33599](https://nvd.nist.gov/vuln/detail/CVE-2024-33599){: external}, [CVE-2024-33600](https://nvd.nist.gov/vuln/detail/CVE-2024-33600){: external}, [CVE-2024-33601](https://nvd.nist.gov/vuln/detail/CVE-2024-33601){: external}, [CVE-2024-33602](https://nvd.nist.gov/vuln/detail/CVE-2024-33602){: external}.
 
 ### Change log for version 5.2.18_539, released 10 May 2024
 {: #5.2.18_539_is_block_relnote}
@@ -119,6 +127,13 @@ Before you migrate to a `5.x` release from a previous release, you must not have
 
 ## Version 5.1
 {: #051_is_block}
+
+### Change log for version 5.1.24_567, released 21 June 2024
+{: #5.1.24_567_is_block_relnote}
+
+- Updates `golang` to `1.21.11-community`.
+- Updates the `armada-storage-secret` to `v1.3.8`.
+- Resolves: [CVE-2024-2961](https://nvd.nist.gov/vuln/detail/CVE-2024-2961){: external}, [CVE-2024-33599](https://nvd.nist.gov/vuln/detail/CVE-2024-33599){: external}, [CVE-2024-33600](https://nvd.nist.gov/vuln/detail/CVE-2024-33600){: external}, [CVE-2024-33601](https://nvd.nist.gov/vuln/detail/CVE-2024-33601){: external}, [CVE-2024-33602](https://nvd.nist.gov/vuln/detail/CVE-2024-33602){: external}.
 
 ### Change log for version 5.1.23_543, released 10 May 2024
 {: #5.1.23_543_is_block_relnote}

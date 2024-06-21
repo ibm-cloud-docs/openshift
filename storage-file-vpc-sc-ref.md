@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2022, 2024
-lastupdated: "2024-06-20"
+lastupdated: "2024-06-21"
 
 
 keywords: openshift, file storage, storage class reference, eni
@@ -22,7 +22,7 @@ The available storage classes correspond to the predefined {{site.data.keyword.f
 
 - All file shares are provisioned with zonal availability.
 - All classes are elastic network interface (ENI) enabled.
-- The `metro` classes support cross-zone mounting.
+- All classes support cross-zone mounting.
 
 The {{site.data.keyword.filestorage_vpc_short}} cluster add-on is available in Beta. 
 {: beta}
@@ -34,10 +34,10 @@ New storage classes were introduced with version 2.0.0. You can no longer provis
 
 | Name | Description |
 | --- | --- |
-| ibmc-vpc-file-1000-iops | 1000 IOPs |
-| ibmc-vpc-file-3000-iops | 3000 IOPs|
-| ibmc-vpc-file-500-iops | 500 IOPs |
-| ibmc-vpc-file-eit | 1000 IOPs, `Immediate ` binding, as well as and ElasticNetworkInterface(ENI) and EncryptionInTransit(EIT) enabled. |
+| ibmc-vpc-file-1000-iops | 1000 IOPs and `Immediate ` binding. |
+| ibmc-vpc-file-3000-iops | 3000 IOPs and `Immediate ` binding. |
+| ibmc-vpc-file-500-iops | 500 IOPs `Immediate ` binding |
+| ibmc-vpc-file-eit | 1000 IOPs, `Immediate ` binding., as well as and ElasticNetworkInterface(ENI) and EncryptionInTransit(EIT) enabled. |
 | ibmc-vpc-file-metro-1000-iops | 1000 IOPs and `WaitForFirstConsumer` binding. |
 | ibmc-vpc-file-metro-3000-iops | 3000 IOPs and `WaitForFirstConsumer` binding. |
 | ibmc-vpc-file-metro-500-iops | 500 IOPs `WaitForFirstConsumer` binding. |

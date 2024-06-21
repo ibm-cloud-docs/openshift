@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2024
-lastupdated: "2024-06-19"
+lastupdated: "2024-06-21"
 
 
 keywords: autoscaler, add-on, autoscaler change log, cluster autoscaler
@@ -44,6 +44,7 @@ ibmcloud oc cluster addon versions
 
 ### Change log for patch update 1.2.2_452, released 20 June 2024
 {: #122452_ca}
+
 - Adds support for version 1.30.
 - Changes the format of the `cluster-autoscaler-status` configmap. For more information, see the [Community Kubernetes pull request](https://github.com/kubernetes/autoscaler/pull/6375){: external}.
 - Image tags: `1.22.0-122-0`, `1.23.0-122-0`, `1.24.0-122-0`, `1.25.0-122-0`, `1.26.4-122-0`, `1.27.3-122-0`, `1.28.0-122-0`, `1.29.0-122-0`, `1.30.0-122-0`.
@@ -54,10 +55,18 @@ ibmcloud oc cluster addon versions
 {: #0121_ca_addon}
 
 
+### Change log for patch update 1.2.1_444, released 21 June 2024
+{: #121444_ca}
+
+- Updates the `storage-secret-sidecar` image to `v1.3.9`.
+- Updates golang version to `1.21.11`.
+- Image tags: `1.24.0-121-2`, `1.25.0-121-2`, `1.26.4-121-2`, `1.27.3-121-2`, `1.28.0-121-2`, `1.29.0-121-2`.
+
+
 ### Change log for patch update 1.2.1_425, released 05 May 2024
 {: #121425_ca}
 
-- Updates the storage-secret-sidecar image to `v1.3.7`
+- Updates the `storage-secret-sidecar` image to `v1.3.7`
 - Fixes a utilization calculation bug during scale down.
 - Image tags: `1.22.0-121-1`, `1.23.0-121-1`, `1.24.0-121-1`, `1.25.0-121-1`, `1.26.4-121-1`, `1.27.3-121-1`, `1.28.0-121-1`, and `1.28.0-121-1`.
 
@@ -77,6 +86,13 @@ ibmcloud oc cluster addon versions
 
 ## Version 1.2.0
 {: #0120_ca_addon}
+
+### Change log for patch update 1.2.0_443, released 21 June 2024
+{: #120443_ca}
+
+- Updates the `storage-secret-sidecar` image to `v1.3.9`.
+- Updates golang version to `1.21.11`.
+- Image tags: `1.24.0-120-6`, `1.25.0-120-6`, `1.26.4-120-6`, `1.27.3-120-6`, `1.28.0-120-6`.
 
 ### Change log for patch update 1.2.0_426, released 05 May 2024
 {: #120426_ca}
