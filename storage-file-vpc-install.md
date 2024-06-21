@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2022, 2024
-lastupdated: "2024-06-19"
+lastupdated: "2024-06-21"
 
 
 keywords: openshift, {{site.data.keyword.openshiftlong_notm}}, add-on, file
@@ -25,7 +25,11 @@ subcollection: openshift
 {: shortdesc}
 
 The {{site.data.keyword.filestorage_vpc_short}} cluster add-on is available in Beta. 
-{: beta} 
+{: beta}
+
+
+Need to update the add-on to a newer version? See [Updating the {{site.data.keyword.filestorage_vpc_short}} add-on](https://test.cloud.ibm.com/docs/openshift?topic=openshift-storage-file-vpc-managing#storage-file-vpc-update)
+{: tip}
 
 
 1. Update the `container-service` CLI plug-in.
@@ -43,24 +47,29 @@ The {{site.data.keyword.filestorage_vpc_short}} cluster add-on is available in B
     Example output
     ```sh
     Name                  Version         Supported Kubernetes Range   Supported OpenShift Range   Kubernetes Default   OpenShift Default
-    vpc-file-csi-driver   1.2             >=1.24.0                     >=4.10.0                    -                    -
     vpc-file-csi-driver   2.0 (default)   >=1.30.0                     >=4.15.0                    -                    -
     ```
     {: pre}
 
-1. Enable the add-on and follow the prompts to install any dependencies.
+1. Enable the add-on and follow the prompts to install any dependencies. Version 2.0 is recommended.
     ```sh
-    ibmcloud oc cluster addon enable vpc-file-csi-driver --version VERSION --cluster CLUSTER
+    ibmcloud oc cluster addon enable vpc-file-csi-driver --version 2.0 --cluster CLUSTER
     ```
     {: pre}
 
     Example output.
     ```sh
-    Enabling add-on vpc-file-csi-driver(1.0) for cluster devcluster2...
+    Enabling add-on vpc-file-csi-driver(2.0) for cluster devcluster2...
     The add-on might take several minutes to deploy and become ready for use.
     The ibm-storage-operator add-on version 1.0 is required to enable the vpc-file-csi-driver add-on. Enable ibm-storage-operator? [y/N]> y
     ```
     {: screen}
+
+    Example prompt to install dependencies.
+    ```sh
+    The ibm-storage-operator add-on version 1.0 is required to enable the vpc-file-csi-driver add-on. Enable ibm-storage-operator? [y/N]> y
+    ```
+    {: pre}
 
 
 1. Verify that the add-on is enabled.

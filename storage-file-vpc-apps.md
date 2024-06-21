@@ -81,7 +81,7 @@ Create a persistent volume claim (PVC) to dynamically provision {{site.data.keyw
       - ReadWriteMany # The file share can be mounted on multiple nodes and pods.
       resources:
         requests:
-          storage: 10Gi # Enter the size of the storage in gigabytes (Gi).
+          storage: 20Gi # Enter the size of the storage in gigabytes (Gi).
       storageClassName: ibmc-vpc-file-min-iops # Enter the name of the storage class that you want to use.
     ```
     {: codeblock}
@@ -139,19 +139,19 @@ Create a persistent volume claim (PVC) to dynamically provision {{site.data.keyw
         spec:
           containers:
           - name: busybox
-            image: busybox:1.28 # The name of the container image that you want to use. 
+            image: busybox:1.28
             command: [ "sh", "-c", "sleep 1h" ]
             volumeMounts:
             - name: my-vol
-              mountPath: /data/demo
+              mountPath: /data/demo # Mount path for the application.
           volumes:
           - name: my-vol
             persistentVolumeClaim:
-              claimName: my-pvc
+              claimName: my-pvc # Your PVC name.
     ```
     {: codeblock}
     
-    `mountPath`
+    `volumeMounts.mountPath`
     :   In the container volume mounts section, enter the absolute path of the directory to where the volume is mounted inside the container. Data that is written to the mount path is stored under the `root` directory in your physical {{site.data.keyword.filestorage_vpc_short}} instance. If you want to share a volume between different apps, you can specify [volume sub paths](https://kubernetes.io/docs/concepts/storage/volumes/#using-subpath){: external} for each of your apps.
     
     `volumeMounts.name`
@@ -181,15 +181,14 @@ Create a persistent volume claim (PVC) to dynamically provision {{site.data.keyw
     The mount point is in the **Volume Mounts** field and the volume is in the **Volumes** field.
 
     ```sh
-    Volume Mounts:
-        /var/run/secrets/kubernetes.io/serviceaccount from default-token-tqp61 (ro)
-        /volumemount from myvol (rw)
-    ...
+    Containers:
+      Mounts:
+        /data/demo from my-vol (rw)
     Volumes:
-    myvol:
-        Type:    PersistentVolumeClaim (a reference to a PersistentVolumeClaim in the same namespace)
-        ClaimName:    mypvc
-        ReadOnly:    false
+    my-vol:
+      Type:       PersistentVolumeClaim (a reference to a PersistentVolumeClaim in the same namespace)
+      ClaimName:  my-pvc
+      ReadOnly:   false
     ```
     {: screen}
 
@@ -200,7 +199,7 @@ Create a persistent volume claim (PVC) to dynamically provision {{site.data.keyw
 ## Expanding a mounted volume
 {: #storage-file-vpc-expansion}
 
-To provision volumes that support expansion, you must use storage class that has `allowVolumeExpansion` set to `true`. Note that only volumes that are mounted by an app pod can be expanded.
+To provision volumes that support expansion, you must use storage class that has `allowVolumeExpansion` set to `true`.
 
 The {{site.data.keyword.filestorage_vpc_short}} cluster add-on supports expansion in both online and offline modes. However, expansion is only possible within the given [size and IOPs range of the {{site.data.keyword.filestorage_vpc_short}} profile](/docs/vpc?topic=vpc-file-storage-profiles&interface=ui#dp2-profile).
 {: note}
@@ -246,9 +245,9 @@ The {{site.data.keyword.filestorage_vpc_short}} cluster add-on supports expansio
 
 Create a persistent volume claim (PVC) to statically provision {{site.data.keyword.filestorage_vpc_short}} for your cluster. Static provisioning allows cluster administrators to make existing storage devices available to a cluster. 
 
-Before you can create a persistent volume (PV), you have to retrieve details about your file share.
+1. Create a file share and target. For more information, see [Creating file shares and mount targets](/docs/vpc?topic=vpc-file-storage-create&interface=cli).
 
-1. Get the ID for your file share.
+1. Before you can create a persistent volume (PV), retrieve the details about your file share.
     ```sh
     ibmcloud is shares
     ```
@@ -427,9 +426,6 @@ Before you can create a persistent volume (PV), you have to retrieve details abo
     `volumes.persistentVolumeClaim.claimName`
     :   Enter the name of the PVC that binds the PV that you want to use.
 
-    `securityContext`
-    :   Enter the `securityContext` that your app needs, for example `runAsUser` or `runAsGroup` that matches `uid` or `gid` of your file share. Note that `fsGroup: 0` is used in the example to provide root permissions. For more information about security context, see [Configure a Security Context for a Pod or Container](https://kubernetes.io/docs/tasks/configure-pod-container/security-context/){: external}.
-
 1. Create the deployment.
     ```sh
     oc apply -f testpod.yaml
@@ -604,9 +600,7 @@ Create your own customized storage class with the preferred settings for your {{
 ## Limiting file share access by worker pool, zone, or worker node
 {: #storage-file-vpc-vni-setup}
 
-The default behavior for {{site.data.keyword.filestorage_vpc_short}} cluster add-on is that pods on a given node can access file shares.
-
-However, you can also apply more granular control over how pods access your file shares. For example, you might limit file share access to only pods on a specific node, in a specific zone, on a specific worker pool, or in a specific subnet. Review the following scenarios for how you can configure pod access to your file shares.
+The default behavior for {{site.data.keyword.filestorage_vpc_short}} cluster add-on is that pods on any node can access file shares. You can also apply more granular control over how pods access your file shares. For example, you might limit file share access to only pods on a specific node, in a specific zone, on a specific worker pool. Review the following scenarios for how you can configure pod access to your file shares.
 
 If you use the following VNI features to limit pod access to your file shares, your app might not be highly available.
 
@@ -757,7 +751,7 @@ To limit file share access by node, zone, or resource group, you must first crea
 1. Add the following rule to the `kube-<clusterID>` security group. Specify the IP address of the virtual network interface (VNI) as the remote or source.
 
     ```sh
-    ibmcloud is sg-rulec kube-<clusterID> outbound tcp --port-min 111 --port-max 2049 --remote VNI-IP
+    ibmcloud is sg-rulec kube-<clusterID> outbound tcp --port-min 111 --port-max 2049 --remote 10.240.1.7 # VNI-IP
     ```
     {: pre}
 

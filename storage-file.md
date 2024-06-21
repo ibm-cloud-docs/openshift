@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2024
-lastupdated: "2024-06-20"
+lastupdated: "2024-06-21"
 
 
 keywords: kubernetes, openshift
@@ -1708,9 +1708,9 @@ To clean up persistent data:
     
     ```sh
     NAME                  STATUS    VOLUME                                     CAPACITY   ACCESSMODES   STORAGECLASS            AGE
-    claim1   Bound     pvc-06886b77-102b-11e8-968a-f6612bb731fb   20Gi       RWO           ibmc-block-bronze       78d
-    claim2     Bound     pvc-457a2b96-fafc-11e7-8ff9-b6c8f770356c   4Gi        RWX           ibmc-file-bronze-retain 105d
-    claim3      Bound     pvc-1efef0ba-0c48-11e8-968a-f6612bb731fb   24Gi       RWX           ibmc-file-silver        83d
+    claim1   Bound     pvc-06886b77-102b-11e8-968a-f6612bb731fb   20Gi       RWO           class       78d
+    claim2     Bound     pvc-457a2b96-fafc-11e7-8ff9-b6c8f770356c   4Gi        RWX           class 105d
+    claim3      Bound     pvc-1efef0ba-0c48-11e8-968a-f6612bb731fb   24Gi       RWX           class        83d
     ```
     {: screen}
 
@@ -1736,7 +1736,7 @@ To clean up persistent data:
     Example output
 
     ```sh
-    blockdepl-12345-prz7b:    claim1-block-bronze  
+    depl-12345-prz7b:    claim1
     ```
     {: screen}
 

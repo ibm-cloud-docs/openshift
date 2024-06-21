@@ -277,7 +277,11 @@ subcollection: openshift
 
     * [21 June 2024](/docs/openshift?topic=openshift-openshift-relnotes#openshift-june2024)
 
-        * Cluster autoscaler add-on patch update for {{site.data.keyword.openshiftlong_notm}}.
+        * Cluster autoscaler add-on patch updates for {{site.data.keyword.openshiftlong_notm}}.
+
+        * {{site.data.keyword.block_storage_is_short}} add-on patch updates.
+
+        * {{site.data.keyword.filestorage_vpc_full_notm}} add-on patch updates.
 
     * [20 June 2024](/docs/openshift?topic=openshift-openshift-relnotes#openshift-june2024)
 
@@ -7230,6 +7234,8 @@ subcollection: openshift
 
 * [Version 5.2](/docs/openshift?topic=openshift-vpc_bs_changelog#052_is_block)
 
+    * [Change log for version 5.2.19_570, released 21 June 2024](/docs/openshift?topic=openshift-vpc_bs_changelog#5.2.19_570_is_block_relnote)
+
     * [Change log for version 5.2.18_539, released 10 May 2024](/docs/openshift?topic=openshift-vpc_bs_changelog#5.2.18_539_is_block_relnote)
 
     * [Change log for 5.2.17_535, released 08 March 2024](/docs/openshift?topic=openshift-vpc_bs_changelog#5.2.17_535_is_block_relnote)
@@ -7245,6 +7251,8 @@ subcollection: openshift
     * [Change log for version 5.2, released 25 September 2023](/docs/openshift?topic=openshift-vpc_bs_changelog#5.2_is_block_relnote)
 
 * [Version 5.1](/docs/openshift?topic=openshift-vpc_bs_changelog#051_is_block)
+
+    * [Change log for version 5.1.24_567, released 21 June 2024](/docs/openshift?topic=openshift-vpc_bs_changelog#5.1.24_567_is_block_relnote)
 
     * [Change log for version 5.1.23_543, released 10 May 2024](/docs/openshift?topic=openshift-vpc_bs_changelog#5.1.23_543_is_block_relnote)
 
@@ -7406,9 +7414,11 @@ subcollection: openshift
 
 * [Version 1.2](/docs/openshift?topic=openshift-versions-vpc-file-addon#012_is_file)
 
-    * [Change log for 1.2.8_174, released 10 May 2024](/docs/openshift?topic=openshift-versions-vpc-file-addon#1.2.8_174_is_block_relnote)
+    * [Change log for version 1.2.9_245, released 21 June 2024](/docs/openshift?topic=openshift-versions-vpc-file-addon#1.2.9_245_is_file_relnote)
 
-    * [Change log for 1.2.7_154, released 08 March 2024](/docs/openshift?topic=openshift-versions-vpc-file-addon#1.2.7_154_is_block_relnote)
+    * [Change log for 1.2.8_174, released 10 May 2024](/docs/openshift?topic=openshift-versions-vpc-file-addon#1.2.8_174_is_file_relnote)
+
+    * [Change log for 1.2.7_154, released 08 March 2024](/docs/openshift?topic=openshift-versions-vpc-file-addon#1.2.7_154_is_file_relnote)
 
     * [Change log for version 1.2.6_130, released 08 February 2024](/docs/openshift?topic=openshift-versions-vpc-file-addon#1.2.6_130_is_file_relnote)
 
