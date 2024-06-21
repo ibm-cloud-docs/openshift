@@ -31,7 +31,7 @@ Looking for {{site.data.keyword.cloud_notm}} status, platform announcements, sec
 
 
 ### 21 June 2024
-{: #openshift-june2024}
+{: #openshift-june2124}
 {: release-note}
 
 Cluster autoscaler add-on patch updates for {{site.data.keyword.openshiftlong_notm}}.

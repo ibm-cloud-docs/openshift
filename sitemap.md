@@ -275,7 +275,7 @@ subcollection: openshift
 
 * [June 2024](/docs/openshift?topic=openshift-openshift-relnotes#openshift-june24)
 
-    * [21 June 2024](/docs/openshift?topic=openshift-openshift-relnotes#openshift-june2024)
+    * [21 June 2024](/docs/openshift?topic=openshift-openshift-relnotes#openshift-june2124)
 
         * Cluster autoscaler add-on patch updates for {{site.data.keyword.openshiftlong_notm}}.
 
