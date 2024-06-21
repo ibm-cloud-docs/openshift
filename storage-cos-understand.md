@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2024
-lastupdated: "2024-05-29"
+lastupdated: "2024-06-20"
 
 
 keywords: kubernetes, openshift
@@ -66,13 +66,26 @@ To access your {{site.data.keyword.cos_full_notm}} service instance to read and 
 
 Follow these steps to create a Kubernetes secret for the credentials of an {{site.data.keyword.cos_full_notm}} service instance. If you plan to use a local Cloud Object Storage server or a different s3 API endpoint, create a Kubernetes secret with the appropriate credentials.
 
-Before you begin:
-* [Access your {{site.data.keyword.redhat_openshift_notm}} cluster](/docs/openshift?topic=openshift-access_cluster).
+### Prerequisites
+{: #cos-secret-prereqs}
+
+
 * Make sure that you have the **Manager** service access role for the cluster.
+* [Set up your KMS provider](/docs/containers?topic=containers-encryption-setup).
+* Retrieve the **`apikey`**, or the **`access_key_id`** and the **`secret_access_key`** of your [{{site.data.keyword.cos_full_notm}} service credentials](#service_credentials). Note that the service credentials must be enough for the bucket operations that your app needs to perform. For example, if your app reads data from a bucket, the service credentials you see in your secret must have **Reader** permissions at minimum.
 
-To create a secret for your {{site.data.keyword.cos_full_notm}} credentials:
 
-1. Retrieve the **`apikey`**, or the **`access_key_id`** and the **`secret_access_key`** of your [{{site.data.keyword.cos_full_notm}} service credentials](#service_credentials). Note that the service credentials must be enough for the bucket operations that your app needs to perform. For example, if your app reads data from a bucket, the service credentials you see in your secret must have **Reader** permissions at minimum. If you want to integrate {{site.data.keyword.keymanagementserviceshort}} encryption when creating new buckets from PVCs in your cluster, you must to include the root key CRN when creating your [{{site.data.keyword.cos_full_notm}} secret](/docs/openshift?topic=openshift-storage-cos-understand#create_cos_secret). Note that {{site.data.keyword.keymanagementserviceshort}} encryption can't be added to existing buckets.
+
+### Creating an object storage secret in your cluster
+{: #cos-secret-create}
+
+
+Complete the following steps to create a secret in your cluster for {{site.data.keyword.cos_full_notm}}.
+
+
+If you want to integrate {{site.data.keyword.keymanagementserviceshort}} encryption when creating new buckets from PVCs in your cluster, you must to include the root key CRN when creating your [{{site.data.keyword.cos_full_notm}} secret](/docs/openshift?topic=openshift-storage-cos-understand#create_cos_secret). Note that {{site.data.keyword.keymanagementserviceshort}} encryption can't be added to existing buckets. Encryption can be used only when you create new buckets. If the root key that is used for encryption is deleted, all the files in the associated buckets are inaccessible. 
+
+* [Access your {{site.data.keyword.redhat_openshift_notm}} cluster](/docs/openshift?topic=openshift-access_cluster).
 
 1. Get the **GUID** of your {{site.data.keyword.cos_full_notm}} service instance.
     ```sh
@@ -80,61 +93,56 @@ To create a secret for your {{site.data.keyword.cos_full_notm}} credentials:
     ```
     {: pre}
 
-1. Create a Kubernetes secret to store your service credentials. When you create your secret, all values are automatically encoded to base64. In the following example, the secret name is `cos-write-access`.
+1. Create a Kubernetes secret to store your service credentials. Choose from one the following examples to create your secret.
 
-    Example `create secret` command that uses an API key.
-    ```sh
-    oc create secret generic cos-write-access --type=ibm/ibmc-s3fs --from-literal=api-key=<api_key> --from-literal=service-instance-id=<service_instance_guid>
-    ```
-    {: pre}
-
-    Example `create secret` command that uses HMAC authentication.
-    ```sh
-    oc create secret generic cos-write-access --type=ibm/ibmc-s3fs --from-literal=access-key=<access_key_ID> --from-literal=secret-key=<secret_access_key>    
-    ```
-    {: pre}
-
-1. If you want to use {{site.data.keyword.keymanagementserviceshort}} Encryption for buckets created with {{site.data.keyword.cos_full_notm}} s3fs plug-in, include the `keyprotect root key crn` value in the secret that is used to create the PVC. 
-
-    {{site.data.keyword.keymanagementserviceshort}} encryption can be used only when you create new buckets. If the {{site.data.keyword.keymanagementserviceshort}} root key that is used for encryption is deleted, all the files in the associated buckets are inaccessible. 
-    {: important}
-    
-    1.  Create a YAML file for your {{site.data.keyword.cos_full_notm}} secret.
-        ```yaml
-        ---
-        apiVersion: v1
-        data:
-            access-key: xxx
-            secret-key: xxx
-            kp-root-key-crn: <keyprotect-root-key-crn in base64 encoded format> 
-        kind: Secret
-        metadata:
-            name: <cos-write-access> 
-        type: ibm/ibmc-s3fs
-        ```
-        {: codeblock}
-
-    1. Apply the secret to your cluster.
+    * Example `create secret` command that uses an API key.
         ```sh
-        kubectl apply -f <secret_name>
+        oc create secret generic cos-write-access --type=ibm/ibmc-s3fs --from-literal=api-key=<api_key> --from-literal=service-instance-id=<service_instance_guid>
         ```
         {: pre}
 
+    * Example `create secret` command that uses HMAC authentication.
+        ```sh
+        oc create secret generic cos-write-access --type=ibm/ibmc-s3fs --from-literal=access-key=<access_key_ID> --from-literal=secret-key=<secret_access_key>    
+        ```
+        {: pre}
+    
+    * Example secret configuration file for enabling encryption with your KMS provider.
+        1. Save the following YAML to a file. 
+            ```yaml
+            apiVersion: v1
+            data:
+                access-key: xxx
+                secret-key: xxx
+                kp-root-key-crn: <CRN> # Key Protect or HPCS root key crn in base64 encoded format 
+            kind: Secret
+            metadata:
+                name: cos-write-access 
+            type: ibm/ibmc-s3fs
+            ```
+            {: codeblock}
 
-    `api-key`
-    :   Enter the API key that you retrieved from your {{site.data.keyword.cos_full_notm}} service credentials earlier. If you want to use HMAC authentication, specify the `access-key` and `secret-key` instead.
-    
-    `access-key`
-    :   Enter the access key ID that you retrieved from your {{site.data.keyword.cos_full_notm}} service credentials earlier. If you want to use OAuth2 authentication, specify the `api-key` instead.
-    
-    `secret-key`
-    :   Enter the secret access key that you retrieved from your {{site.data.keyword.cos_full_notm}} service credentials earlier. If you want to use OAuth2 authentication, specify the `api-key` instead.
-    
-    `service-instance-id`
-    :   Enter the GUID of your {{site.data.keyword.cos_full_notm}} service instance that you retrieved earlier.
+            `api-key`
+            :   Enter the API key that you retrieved from your {{site.data.keyword.cos_full_notm}} service credentials earlier. If you want to use HMAC authentication, specify the `access-key` and `secret-key` instead.
 
-    `kp-root-key-crn`
-    :   Enter the base64 encoded {{site.data.keyword.keymanagementserviceshort}} root key CRN to use {{site.data.keyword.keymanagementserviceshort}} encryption.
+            `access-key`
+            :   Enter the access key ID that you retrieved from your {{site.data.keyword.cos_full_notm}} service credentials earlier. If you want to use OAuth2 authentication, specify the `api-key` instead.
+
+            `secret-key`
+            :   Enter the secret access key that you retrieved from your {{site.data.keyword.cos_full_notm}} service credentials earlier. If you want to use OAuth2 authentication, specify the `api-key` instead.
+
+            `service-instance-id`
+            :   Enter the GUID of your {{site.data.keyword.cos_full_notm}} service instance that you retrieved earlier.
+
+            `kp-root-key-crn`
+            :   Enter the base64 encoded {{site.data.keyword.keymanagementserviceshort}} root key CRN to use {{site.data.keyword.keymanagementserviceshort}} encryption.
+
+        1. Apply the secret to your cluster.
+            ```sh
+            kubectl apply -f <secret_name>
+            ```
+            {: pre}
+
 
 1. Get the secrets in your cluster and verify the output.
     ```sh

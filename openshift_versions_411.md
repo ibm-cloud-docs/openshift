@@ -2,7 +2,7 @@
 
 copyright:
   years: 2022, 2024
-lastupdated: "2024-06-10"
+lastupdated: "2024-06-20"
 
 
 keywords: openshift, version, update, upgrade, 4.11, update openshift
@@ -72,7 +72,7 @@ Portworx
 :    Portworx is supported on version 4.11. However, if you have Portworx installed, you must follow the steps to upgrade your installation to use at least image version `2.11.4`. For more information, see [Upgrading Portworx to a specific version](/docs/openshift?topic=openshift-storage_portworx_about).
 
 {{site.data.keyword.redhat_openshift_notm}} Data Foundation (ODF)
-:    ODF version 4.10 supports {{site.data.keyword.openshiftshort}} version 4.11 clusters. You may continue to use version 4.10 of the ODF add-on.
+:    ODF version 4.10 supports {{site.data.keyword.openshiftshort}} version 4.11 clusters. You might continue to use version 4.10 of the ODF add-on.
 
 Extended update support (EUS)
 :    EUS updates are not available at this time for clusters that run version 4.11.

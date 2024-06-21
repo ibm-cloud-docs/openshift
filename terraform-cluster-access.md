@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2023, 2024
-lastupdated: "2024-03-15"
+lastupdated: "2024-06-20"
 
 
 keywords: openshift, terraform, create, cluster, access
@@ -121,7 +121,7 @@ You can use Terraform to assign IAM user access for {{site.data.keyword.redhat_o
     ```
     {: screen}
 
-1. Apply the configuration file to create the access policy. It may take a few seconds to complete. In the output, note the policy ID number after the user's IBM email.
+1. Apply the configuration file to create the access policy. It might take a few seconds to complete. In the output, note the policy ID number after the user's IBM email.
 
     ```sh
     terraform apply

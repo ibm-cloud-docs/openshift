@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2024
-lastupdated: "2024-06-14"
+lastupdated: "2024-06-20"
 
 
 keywords: kubernetes, openshift
@@ -332,7 +332,7 @@ To add {{site.data.keyword.filestorage_short}}:
     ```
     {: pre}
 
-3. Verify that your PVC is created and bound to the PV. This process can take a few minutes.
+3. Verify that your PVC is created and bound to the PV.
 
     ```sh
     oc describe pvc mypvc
@@ -604,7 +604,7 @@ For persistent storage that was provisioned outside the cluster
     ```
     {: pre}
 
-6. Verify that your PVC is created and bound to the PV. This process can take a few minutes.
+6. Verify that your PVC is created and bound to the PV.
 
     ```sh
     oc describe pvc mypvc
@@ -1085,7 +1085,7 @@ For questions about billing and to find the steps for how to use the {{site.data
 
     > 20 GB Storage Space (Snapshot Space)
 
-    You may run 'ibmcloud sl file volume-list --order 12345667' to find this file volume after it is ready.
+    You might run 'ibmcloud sl file volume-list --order 12345667' to find this file volume after it is ready.
     ```
     {: screen}
 

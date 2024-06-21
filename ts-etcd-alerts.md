@@ -2,7 +2,7 @@
 
 copyright:
   years: 2023, 2024
-lastupdated: "2024-01-03"
+lastupdated: "2024-06-20"
 
 
 keywords: etcd, help, alert
@@ -22,7 +22,7 @@ You receive multiple alerts for `etcdHighNumberOfLeaderChanges` or `etcdExcessiv
 {: tsSymptoms}
 
 ```txt
-"etcd": 7.5 leader changes within the last 15 minutes. Frequent elections may be a sign of insufficient resources, high network latency, or disruptions by other components and should be investigated.
+"etcd": 7.5 leader changes within the last 15 minutes. Frequent elections might be a sign of insufficient resources, high network latency, or disruptions by other components and should be investigated.
 ```
 {: screen}
 

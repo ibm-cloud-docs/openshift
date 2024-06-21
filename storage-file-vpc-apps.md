@@ -29,7 +29,6 @@ Decide on a storage class. For more information, see the [storage class referenc
 Review the following notes and considerations for {{site.data.keyword.filestorage_vpc_short}}.
 
 - By default, {{site.data.keyword.filestorage_vpc_short}} cluster add-on provisions file shares in the `kube-<clusterID>` security group. This means pods can access file shares across nodes and zones.
-- If the `kube-<clusterID>` security group is not available, the {{site.data.keyword.filestorage_vpc_short}} cluster add-on provisions file shares in default VPC security group.
 - If you need the following features, you must [create your own storage class](/docs/openshift?topic=openshift-storage-file-vpc-apps#storage-file-vpc-custom-sc).
     - Your app needs to run as non-root.
     - Your cluster is in a different resource group from your VPC and subnet.
@@ -85,7 +84,7 @@ Create a persistent volume claim (PVC) to dynamically provision {{site.data.keyw
           storage: 10Gi # Enter the size of the storage in gigabytes (Gi).
       storageClassName: ibmc-vpc-file-min-iops # Enter the name of the storage class that you want to use.
     ```
-      {: codeblock}
+    {: codeblock}
 
 1. Create the PVC.
 
@@ -94,7 +93,7 @@ Create a persistent volume claim (PVC) to dynamically provision {{site.data.keyw
     ```
     {: pre}
 
-1. Verify that your PVC is created and bound to the PV. This process can take a few minutes.
+1. Verify that your PVC is created and bound to the PV.
 
     ```sh
     oc describe pvc my-pvc
@@ -194,8 +193,8 @@ Create a persistent volume claim (PVC) to dynamically provision {{site.data.keyw
     ```
     {: screen}
 
-Next steps
-:   After your pod is running, try [expanding your storage volume](#storage-file-vpc-expansion).
+
+1. **Optional**: After your pod is running, try [expanding your storage volume](#storage-file-vpc-expansion).
 
 
 ## Expanding a mounted volume
@@ -223,7 +222,7 @@ The {{site.data.keyword.filestorage_vpc_short}} cluster add-on supports expansio
         requests:
           storage: 50Gi
     ```
-    {: pre}
+    {: codeblock}
 
 1. Save and close the PVC. Wait a few minutes for the volume to be expanded.
 
@@ -234,6 +233,7 @@ The {{site.data.keyword.filestorage_vpc_short}} cluster add-on supports expansio
     {: pre}
 
     Example output
+
     ```sh
     NAME     STATUS   VOLUME                                     CAPACITY   ACCESS MODES   STORAGECLASS        AGE
     my-pvc   Bound    pvc-25b6912e-75bf-41ca-b6b2-567fa4f9d245   50Gi       RWX            ibmc-vpc-file-min-iops   3m31s
@@ -261,12 +261,14 @@ Before you can create a persistent volume (PV), you have to retrieve details abo
     {: pre}
 
     Example command.
+
     ```sh
     ibmcloud is share r134-bad98878-1f63-45d2-a3fd-60447094c2e6
     ```
     {: pre}
 
     Example output.
+
     ```sh
     ID                           r134-bad98878-1f63-45d2-a3fd-60447094c2e6   
     Name                         pvc-e7e005a9-e96b-41ad-9d6e-74650a9110a0   
@@ -355,17 +357,17 @@ Before you can create a persistent volume (PV), you have to retrieve details abo
 
 1. Create a PVC.
     ```yaml
-      apiVersion: v1
-      kind: PersistentVolumeClaim
-      metadata:
-        name: pvc-static
-      spec:
-        accessModes:
-        - ReadWriteMany
-        resources:
-          requests:
-            storage: 10Gi
-        storageClassName: "" #Leave the storage class blank.
+    apiVersion: v1
+    kind: PersistentVolumeClaim
+    metadata:
+      name: pvc-static
+    spec:
+      accessModes:
+      - ReadWriteMany
+      resources:
+        requests:
+          storage: 10Gi
+      storageClassName: "" #Leave the storage class blank.
     ```
     {: codeblock}
 
@@ -384,8 +386,6 @@ Before you can create a persistent volume (PV), you have to retrieve details abo
       labels:
         app: testpod
     spec:
-      securityContext:
-        fsgroup: 0
       replicas: 1
       selector:
         matchLabels:
@@ -656,6 +656,7 @@ To limit file share access by node, zone, or resource group, you must first crea
     {: pre}
 
     Example output.
+
     ```yaml
     nfsServerPath: XXX.XX.XX.XXX:/XX # VNI IP address
     ```
@@ -677,6 +678,7 @@ To limit file share access by node, zone, or resource group, you must first crea
     ```sh
     ibmcloud is sg-rulec kube-<cluster-id> outbound tcp --port-min 111 --port-max 2049 --remote 10.240.0.10 # VNI IP
     ```
+    {: pre}
 
 1. Create a deployment that uses your PVC. Only pods that are deployed on the worker node that matches the rule that you created are able to mount or use the PVC. Pods deployed on other nodes are stuck in the container `creating` state. 
  
@@ -686,7 +688,7 @@ To limit file share access by node, zone, or resource group, you must first crea
 
 1. Make sure you have [completed the prerequisites](#storage-file-vpc-vni-prereqs).
 
-1. Add the following rule to the custom security group you created earlier. Specify the worker node
+1. Add the following rule to the custom security group you created earlier.
 
     ```sh
     ibmcloud is sg-rulec CUSTOM-SG inbound tcp --port-min 111 --port-max 2049 --remote 10.240.0.0/24 # zone subnet cidr range
@@ -697,6 +699,7 @@ To limit file share access by node, zone, or resource group, you must first crea
     ```sh
     ibmcloud is sg-rulec kube-<cluster-ID> outbound tcp --port-min 111 --port-max 2049 --remote VNI-IP
     ```
+    {: pre}
 
 
 1. Create a deployment that uses your PVC. Only pods deployed in the zone that is listed in the previous rule can mount the PVC. Pods that are deployed in other zones cannot access the PVC and are stuck in the Container `creating` state.

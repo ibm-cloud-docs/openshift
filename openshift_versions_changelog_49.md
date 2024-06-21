@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2024
-lastupdated: "2024-06-10"
+lastupdated: "2024-06-20"
 
 
 keywords: openshift, update, upgrade, BOM, bill of materials, versions, patch, 4.9
@@ -27,8 +27,12 @@ View information of version changes for major, minor, and patch updates that are
 {: shortdesc}
 
 
-Version 4.9 is no longer supported Update your cluster to at least [version 4.10](/docs/openshift?topic=openshift-cs_versions_410&interface=ui) as soon as possible.
+
+
+This version is no longer supported. Update your cluster to a [supported version](/docs/openshift?topic=openshift-openshift_versions) as soon as possible.
 {: important}
+
+
 
 ## Overview
 {: #openshift_changelog_overview_49}

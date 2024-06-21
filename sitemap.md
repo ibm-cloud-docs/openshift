@@ -4956,6 +4956,10 @@ subcollection: openshift
 
 * [Creating a secret for the object storage service credentials](/docs/openshift?topic=openshift-storage-cos-understand#create_cos_secret)
 
+    * [Prerequisites](/docs/openshift?topic=openshift-storage-cos-understand#cos-secret-prereqs)
+
+    * [Creating an object storage secret in your cluster](/docs/openshift?topic=openshift-storage-cos-understand#cos-secret-create)
+
 * [Limitations](/docs/openshift?topic=openshift-storage-cos-understand#cos_limitations)
 
 [Installing the {{site.data.keyword.cos_full_notm}} plug-in](/docs/openshift?topic=openshift-storage_cos_install#storage_cos_install)
@@ -10250,8 +10254,6 @@ subcollection: openshift
 [I deleted a portable subnet and now my Classic cluster my Load Balancers are failing. How do I recover?](/docs/openshift?topic=openshift-ts-network-subnet-recover#ts-network-subnet-recover)
 
 [Why am I running out of SNAT ports for egress connections from pods in my cluster?](/docs/openshift?topic=openshift-ts-network-snat-125#ts-network-snat-125)
-
-[Why am I seeing egress connection failures from pods?](/docs/openshift?topic=openshift-ts-network-egress-124#ts-network-egress-124)
 
 [Why can't I establish VPN connectivity with the strongSwan Helm chart?](/docs/openshift?topic=openshift-cs_vpn_fails#cs_vpn_fails)
 

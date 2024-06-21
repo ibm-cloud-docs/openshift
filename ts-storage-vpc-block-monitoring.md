@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2022, 2024
-lastupdated: "2024-04-04"
+lastupdated: "2024-06-20"
 
 
 keywords: vpc, monitoring, block storage, metrics
@@ -27,8 +27,8 @@ When you try to view {{site.data.keyword.block_storage_is_short}} metrics in the
 {: tsSymptoms}
 
 Metrics might fail to populate in the dashboard for one of the following reasons: 
-* The PVC you want to monitor may not be mounted. Metrics are only populated for PVCs that are mounted to a pod.
-* There may be a console-related issue, which can be verified by manually viewing the storage metrics in the CLI. 
+* The PVC you want to monitor might not be mounted. Metrics are only populated for PVCs that are mounted to a pod.
+* There might be a console-related issue, which can be verified by manually viewing the storage metrics in the CLI. 
 {: tsCauses}
 
 Check that the PVC is mounted. If the issue persists, manually view your metrics in the CLI to determine if the cause is related to issues with the console. 
@@ -176,7 +176,7 @@ After you complete the following steps, make sure to remove the resources you cr
     ```
     {: pre}
 
-1. View the metrics in the terminal output. You may have to wait several minutes for the metrics to output. If you are still unable to view metrics, [open a support issue](/docs/openshift?topic=openshift-get-help.
+1. View the metrics in the terminal output. You might have to wait several minutes for the metrics to output. If you are still unable to view metrics, [open a support issue](/docs/openshift?topic=openshift-get-help.
 
 1. After you have finished viewing the metrics, and determined whether the issue is related to dashboard or the metrics agent, delete the configurations and resources that you created in the previous steps.
 

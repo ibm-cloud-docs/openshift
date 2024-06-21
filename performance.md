@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2024
-lastupdated: "2024-06-13"
+lastupdated: "2024-06-20"
 
 
 keywords: openshift, {{site.data.keyword.openshiftlong_notm}}, kubernetes, kernel, performance
@@ -68,7 +68,7 @@ To change the compute hardware, such as the CPU and memory per worker node, choo
 
 Cluster worker nodes are configured for a level of stability, optimization, and performance that is expected to meet the needs of most workloads. Usually, it is not recommended to change your worker node kernel settings, as such changes can create unusual and unintended issues. However, if your workload has highly unique performance optimization requirements that necessitate changes to your kernel settings, a custom Kubernetes daemonset can be applied to change the kernel configuration. Understand that these changes can have significant negative consequences and that you implement changes to the kernel settings configuration **at your own risk**. 
 
-If you change the configuration of your kernel settings, make sure you document and save the exact changes that you make. If you open a support ticket for any issues related to the cluster, you must specify these changes. These configuration changes may be responsible for the issue, and you might be asked to revert the changes as part of the issue investigation. In this case, you are responsible for reverting any kernel configuration changes you implement. 
+If you change the configuration of your kernel settings, make sure you document and save the exact changes that you make. If you open a support ticket for any issues related to the cluster, you must specify these changes. These configuration changes might be responsible for the issue, and you might be asked to revert the changes as part of the issue investigation. In this case, you are responsible for reverting any kernel configuration changes you implement. 
 {: important}
 
 Changing the default kernel settings can have negative effects on your cluster. Make these changes at your own risk. 
