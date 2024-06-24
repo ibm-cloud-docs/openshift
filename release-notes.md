@@ -31,6 +31,15 @@ Looking for {{site.data.keyword.cloud_notm}} status, platform announcements, sec
 
 
 
+### 24 June 2024
+{: #openshift-june2424}
+{: release-note}
+
+
+
+Storage optimized flavors for {{site.data.keyword.openshiftlong_notm}} VPC clusters
+:   New storage optimizied `ox2` flavors are available. For more information, see the [VPC flavors](/docs/openshift?topic=openshift-vpc-flavors).
+
 
 ### 21 June 2024
 {: #openshift-june2124}
