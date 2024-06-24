@@ -279,6 +279,8 @@ subcollection: openshift
 
         * Storage optimized flavors for {{site.data.keyword.openshiftlong_notm}} VPC clusters
 
+        * {{site.data.keyword.openshiftlong_notm}} CLI version `1.0.630` is available.
+
     * [21 June 2024](/docs/openshift?topic=openshift-openshift-relnotes#openshift-june2124)
 
         * Cluster autoscaler add-on patch updates for {{site.data.keyword.openshiftlong_notm}}.
@@ -6073,6 +6075,8 @@ subcollection: openshift
 [CLI change log](/docs/openshift?topic=openshift-cs_cli_changelog#cs_cli_changelog)
 
 * [Version 1.0](/docs/openshift?topic=openshift-cs_cli_changelog#10)
+
+* [Version v1.0.630](/docs/openshift?topic=openshift-cs_cli_changelog#cli-010630)
 
 * [Version v1.0.628](/docs/openshift?topic=openshift-cs_cli_changelog#cli-010628)
 
