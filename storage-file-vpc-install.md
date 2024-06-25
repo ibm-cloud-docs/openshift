@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2022, 2024
-lastupdated: "2024-06-21"
+lastupdated: "2024-06-25"
 
 
 keywords: openshift, {{site.data.keyword.openshiftlong_notm}}, add-on, file
@@ -47,13 +47,13 @@ Need to update the add-on to a newer version? See [Updating the {{site.data.keyw
     Example output
     ```sh
     Name                  Version         Supported Kubernetes Range   Supported OpenShift Range   Kubernetes Default   OpenShift Default
-    vpc-file-csi-driver   2.0 (default)   >=1.30.0                     >=4.15.0                    -                    -
+    vpc-file-csi-driver   1.2 (default)   >=1.30.0                     >=4.15.0                    -                    -
     ```
     {: pre}
 
-1. Enable the add-on and follow the prompts to install any dependencies. Version 2.0 is recommended.
+1. Enable the add-on and follow the prompts to install any dependencies.
     ```sh
-    ibmcloud oc cluster addon enable vpc-file-csi-driver --version 2.0 --cluster CLUSTER
+    ibmcloud oc cluster addon enable vpc-file-csi-driver --version VERSION --cluster CLUSTER
     ```
     {: pre}
 
