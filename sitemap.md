@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2024
-lastupdated: "2024-06-21"
+lastupdated: "2024-06-25"
 
 
 keywords: openshift
@@ -274,6 +274,12 @@ subcollection: openshift
 [Release notes](/docs/openshift?topic=openshift-openshift-relnotes#openshift-relnotes)
 
 * [June 2024](/docs/openshift?topic=openshift-openshift-relnotes#openshift-june24)
+
+    * [24 June 2024](/docs/openshift?topic=openshift-openshift-relnotes#openshift-june2424)
+
+        * Storage optimized flavors for {{site.data.keyword.openshiftlong_notm}} VPC clusters
+
+        * {{site.data.keyword.openshiftlong_notm}} CLI version `1.0.630` is available.
 
     * [21 June 2024](/docs/openshift?topic=openshift-openshift-relnotes#openshift-june2124)
 
@@ -4366,13 +4372,15 @@ subcollection: openshift
 
 [Exposing apps with load balancers for VPC](/docs/openshift?topic=openshift-vpc-lbaas#vpc-lbaas)
 
-* [Network Load Balancer for VPC](/docs/openshift?topic=openshift-vpc-lbaas#nlb_vpc)
+* [Loadbalancer types](/docs/openshift?topic=openshift-vpc-lbaas#vpc-lbaas-types)
 
-* [Application Load Balancer for VPC](/docs/openshift?topic=openshift-vpc-lbaas#lb_vpc)
+    * [Network Load Balancer for VPC](/docs/openshift?topic=openshift-vpc-lbaas#nlb_vpc)
+
+    * [Application Load Balancer for VPC](/docs/openshift?topic=openshift-vpc-lbaas#lb_vpc)
 
 * [Setting up a Network Load Balancer for VPC](/docs/openshift?topic=openshift-vpc-lbaas#setup_vpc_nlb)
 
-    * [Setting up a public VPC NLB](/docs/openshift?topic=openshift-vpc-lbaas#setup_vpc_nlb_pub)
+* [Setting up a public VPC NLB](/docs/openshift?topic=openshift-vpc-lbaas#setup_vpc_nlb_pub)
 
     * [Setting up an NLB using port range](/docs/openshift?topic=openshift-vpc-lbaas#nlb-setup-portrange)
 
@@ -6070,6 +6078,8 @@ subcollection: openshift
 
 * [Version 1.0](/docs/openshift?topic=openshift-cs_cli_changelog#10)
 
+* [Version v1.0.630](/docs/openshift?topic=openshift-cs_cli_changelog#cli-010630)
+
 * [Version v1.0.628](/docs/openshift?topic=openshift-cs_cli_changelog#cli-010628)
 
 * [Version v1.0.618](/docs/openshift?topic=openshift-cs_cli_changelog#cli-010618)
@@ -6987,6 +6997,8 @@ subcollection: openshift
 * [`cluster-autoscaler` 1.2.0](/docs/openshift?topic=openshift-supported-cluster-addon-versions#cluster-autoscaler-1.2.0)
 
 * [`cluster-autoscaler` 1.2.1](/docs/openshift?topic=openshift-supported-cluster-addon-versions#cluster-autoscaler-1.2.1)
+
+* [`cluster-autoscaler` 1.2.2](/docs/openshift?topic=openshift-supported-cluster-addon-versions#cluster-autoscaler-1.2.2)
 
 * [`csutil` 1.0.0](/docs/openshift?topic=openshift-supported-cluster-addon-versions#csutil-1.0.0)
 

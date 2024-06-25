@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2024
-lastupdated: "2024-06-21"
+lastupdated: "2024-06-25"
 
 
 keywords: openshift, {{site.data.keyword.openshiftlong_notm}}, kubernetes, release notes
@@ -28,6 +28,20 @@ Looking for {{site.data.keyword.cloud_notm}} status, platform announcements, sec
 
 ## June 2024
 {: #openshift-june24}
+
+
+
+### 24 June 2024
+{: #openshift-june2424}
+{: release-note}
+
+
+
+Storage optimized flavors for {{site.data.keyword.openshiftlong_notm}} VPC clusters
+:   New storage optimized `ox2` flavors are available. For more information, see the [VPC flavors](/docs/openshift?topic=openshift-vpc-flavors).
+
+{{site.data.keyword.openshiftlong_notm}} CLI version `1.0.630` is available.
+:   For more information, see [Updating the CLI](/docs/openshift?topic=openshift-cli-update) and the [CLI change log](/docs/openshift?topic=openshift-cs_cli_changelog).
 
 
 ### 21 June 2024

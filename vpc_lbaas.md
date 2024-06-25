@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2024
-lastupdated: "2024-06-20"
+lastupdated: "2024-06-25"
 
 
 keywords: kubernetes, openshift, app protocol, application protocol
@@ -26,9 +26,10 @@ subcollection: openshift
 Set up a Load Balancer for VPC to expose your app on the public or private network.
 {: shortdesc}
 
-VPC load balancers can be created for VPC clusters only, and can't be created for classic clusters. To load balance in classic clusters, see [Classic: About network load balancers (NLBs)](/docs/openshift?topic=openshift-loadbalancer-about).
-
 To expose an app in a VPC cluster, you can create a layer 7 Application Load Balancer for VPC. You can optionally create a layer 4 Network Load Balancer for VPC.
+
+## Loadbalancer types
+{: #vpc-lbaas-types}
 
 
 
@@ -44,14 +45,14 @@ The following table describes the basic characteristics of each load balancing o
 |Application access|Hostname|Hostname and static IP address|
 |Source IP preservation|Configurable*|Yes|
 |Improved performance with direct server return|No|Yes|
-|Multizone routing|Yes|No|
+|Multizone routing|Yes|Yes|
 |Port ranges|No| Public only|
 |Security groups|Yes|Yes|
 {: caption="Load balancing options for VPC clusters"}
 
 
 
-## Network Load Balancer for VPC
+### Network Load Balancer for VPC
 {: #nlb_vpc}
 
 In VPC clusters, set up a layer-4 [Network Load Balancer for VPC](/docs/vpc?topic=vpc-network-load-balancers) (VPC NLB) in each zone of your cluster to serve as the external entry point for incoming requests to an app.
@@ -59,8 +60,14 @@ In VPC clusters, set up a layer-4 [Network Load Balancer for VPC](/docs/vpc?topi
 
 VPC NLBs provide several advantages, such as providing higher throughput and better performance by utilizing direct server return (DSR). With DSR, the worker node can send app response packets directly to the client IP address and skip the VPC NLB, decreasing the amount of traffic that the VPC NLB must handle. Additionally, the VPC NLB supports source IP address preservation on all client requests by default.
 
-When you create a Kubernetes `LoadBalancer` service for an app in your cluster and include the `service.kubernetes.io/ibm-load-balancer-cloud-provider-enable-features: "nlb"` annotation, a VPC NLB is created in your VPC outside of your cluster. The VPC NLB routes requests for your app through the private NodePorts that are automatically opened on your worker nodes.
+* Standard VPC NLB names have a format `kube-<cluster_ID>-<kubernetes_lb_service_UID>`. To see your cluster ID, run `ibmcloud oc cluster get --cluster <cluster_name>`. To see the Kubernetes `LoadBalancer` service UID, run `oc get svc myloadbalancer -o yaml` and look for the **metadata.uid** field in the output. The hyphens (-) are removed from the Kubernetes `LoadBalancer` service UID in the VPC NLB name.
+
+* Persistent VPC NLB names have a format `kube-<cluster_ID>-<kubernetes_lb_service_UID>`. To see your cluster ID, run `ibmcloud oc cluster get --cluster <cluster_name>`. To see the Kubernetes `LoadBalancer` service UID, run `oc get svc myloadbalancer -o yaml` and look for the **metadata.uid** field in the output. The hyphens (-) are removed from the Kubernetes `LoadBalancer` service UID in the VPC NLB name.
+
+* When you create a Kubernetes `LoadBalancer` service for an app in your cluster and include the `service.kubernetes.io/ibm-load-balancer-cloud-provider-enable-features: "nlb"` annotation, a VPC NLB is created in your VPC outside of your cluster. The VPC NLB routes requests for your app through the private NodePorts that are automatically opened on your worker nodes.
+
 * If you create a **public** Kubernetes `LoadBalancer` service, you can access your app from the internet through the external, public IP address that is assigned by the VPC NLB to the Kubernetes `LoadBalancer` service. Even though your worker nodes are connected to only a private VPC subnet, the VPC NLB can receive and route public requests to the service that exposes your app. Note that no public gateway is required on your VPC subnet to allow public requests to your VPC NLB. However, if your app must access a public URL, you must attach public gateways to the VPC subnets that your worker nodes are connected to.
+
 * If you create a **private** Kubernetes `LoadBalancer` service, your app is accessible only to systems that are connected to your private subnets within the same region and VPC. If you are connected to your private VPC network, you can access your app through the external, private IP address that is assigned by the VPC NLB to the Kubernetes `LoadBalancer` service.
 
 The following diagram illustrates how a user accesses an app from the internet through the VPC NLB.
@@ -69,9 +76,9 @@ The following diagram illustrates how a user accesses an app from the internet t
 
 1. A request to your app uses the external IP address that is assigned to the Kubernetes `LoadBalancer` service by the VPC NLB.
 2. The request is automatically forwarded by the VPC NLB to one of the node ports on the worker node, and then to the private IP address of the app pod.
-3. If app instances are deployed to multiple worker nodes in the cluster, the VPC NLB routes the requests between the app pods on various worker nodes within the same zone.
+3. If app instances are deployed to multiple worker nodes in the cluster, the VPC NLB routes the requests between the app pods on various worker nodes across all zones of the cluster.
 
-## Application Load Balancer for VPC
+### Application Load Balancer for VPC
 {: #lb_vpc}
 
 Set up a layer-7, multizone [Application Load Balancer for VPC](/docs/vpc?topic=vpc-load-balancers) (VPC ALB) to serve as the external entry point for incoming requests to an app in your cluster.
@@ -80,8 +87,12 @@ Set up a layer-7, multizone [Application Load Balancer for VPC](/docs/vpc?topic=
 Do not confuse the Application Load Balancer for VPC with {{site.data.keyword.openshiftlong_notm}} Ingress applications load balancers. Application Load Balancers for VPC (VPC ALBs) run outside your cluster in your VPC and are configured by Kubernetes `LoadBalancer` services that you create. [Ingress applications load balancers (ALBs)](/docs/containers?topic=containers-comm-ingress-annotations) are Ingress controllers that run on worker nodes in your cluster.
 {: note}
 
-By default, when you create a Kubernetes `LoadBalancer` service for an app in your cluster, an Application Load Balancer for VPC is created in your VPC outside of your cluster. The VPC ALB routes requests to your app through the private NodePorts that are automatically opened on your worker nodes.
+* VPC ALB names has a format `kube-<cluster_ID>-<kubernetes_lb_service_UID>`. To see your cluster ID, run `ibmcloud oc cluster get --cluster <cluster_name>`. To see the Kubernetes `LoadBalancer` service UID, run `oc get svc myloadbalancer -o yaml` and look for the **metadata.uid** field in the output. The hyphes (-) are removed from the Kubernetes `LoadBalancer` service UID in the VPC ALB name.
+
+* By default, when you create a Kubernetes `LoadBalancer` service for an app in your cluster, an Application Load Balancer for VPC is created in your VPC outside of your cluster. The VPC ALB routes requests to your app through the private NodePorts that are automatically opened on your worker nodes.
+
 * If you create a **public** Kubernetes `LoadBalancer` service, you can access your app from the internet through the hostname that is assigned by the VPC ALB to the Kubernetes `LoadBalancer` service in the format `1234abcd-<region>.lb.appdomain.cloud`. Even though your worker nodes are connected to only a private VPC subnet, the VPC ALB can receive and route public requests to the service that exposes your app. Note that no public gateway is required on your VPC subnet to allow public requests to your VPC ALB. However, if your app must access a public URL, you must attach public gateways to the VPC subnets that your worker nodes are connected to.
+
 * If you create a **private** Kubernetes `LoadBalancer` service, your app is accessible only to systems that are connected to your private subnets within the same region and VPC. If you are connected to your private VPC network, you can access your app through the hostname that is assigned by the VPC ALB to the Kubernetes `LoadBalancer` service in the format `1234abcd-<region>.lb.appdomain.cloud`.
 
 The following diagram illustrates how a user accesses an app from the internet through the VPC ALB.
@@ -98,11 +109,12 @@ The following diagram illustrates how a user accesses an app from the internet t
 Expose your app to the public or to the private network by setting up a [public](#setup_vpc_nlb_pub) or [private](#setup_vpc_nlb_priv) Kubernetes `LoadBalancer` service in each zone of your VPC cluster. Then, you can optionally [register the VPC NLB with a DNS record and TLS certificate](#vpc_nlb_dns).
 {: shortdesc}
 
-### Setting up a public VPC NLB
+## Setting up a public VPC NLB
 {: #setup_vpc_nlb_pub}
 
 Expose your app to public network traffic by setting up a Kubernetes `LoadBalancer` service in each zone of your cluster. When you create the Kubernetes `LoadBalancer` service, a public Network Load Balancer for VPC (VPC NLB) that routes requests to your app is automatically created for you in your VPC outside of your cluster.
 {: shortdesc}
+
 
 * Ensure that you have the [**Writer** or **Manager** {{site.data.keyword.cloud_notm}} IAM service access role](/docs/openshift?topic=openshift-iam-platform-access-roles) for the namespace in which you deploy the Kubernetes `LoadBalancer` service for the VPC NLB.
 * [Access your {{site.data.keyword.redhat_openshift_notm}} cluster](/docs/openshift?topic=openshift-access_cluster).
@@ -111,8 +123,6 @@ Expose your app to public network traffic by setting up a Kubernetes `LoadBalanc
     ibmcloud plugin install infrastructure-service
     ```
     {: pre}
-
-
 
 
 1. [Deploy your app to the cluster](/docs/containers?topic=containers-deploy_app#app_cli). Ensure that you add a label in the metadata section of your deployment configuration file. This custom label identifies all pods where your app runs to include them in the load balancing.
@@ -159,7 +169,7 @@ Expose your app to public network traffic by setting up a Kubernetes `LoadBalanc
     {: codeblock}
 
     `service.kubernetes.io/ibm-load-balancer-cloud-provider-vpc-lb-name: "my-load-balancer"`
-    :   Optional. Include a unique name to make your VPC load balancer persistent. Persistent VPC load balancers are not deleted when the cluster they belong to is deleted. For more information, see [Persistent VPC load balancers](#vpc_lb_persist). This annotation can be set only on load balancer creation. It cannot be used in an update operation.
+    :   **Optional**. Include a unique name to make your VPC load balancer persistent. Persistent VPC load balancers are not deleted when the cluster they belong to is deleted. For more information, see [Persistent VPC load balancers](#vpc_lb_persist). This annotation can be set only on load balancer creation. It cannot be used in an update operation.
 
     `service.kubernetes.io/ibm-load-balancer-cloud-provider-enable-features: "nlb"`
     :    Required: Annotation to create a VPC NLB. This annotation can be set only on load balancer creation. It cannot be used in an update operation.
@@ -197,23 +207,23 @@ Expose your app to public network traffic by setting up a Kubernetes `LoadBalanc
     :    Optional: Specify a TCP port to use for TCP health checks in a UDP load balancer. Required for UDP load balancers that have `externalTrafficPolicy` set to `Cluster`. For more information on setting port values, see [Configuring TCP health checks for UDP load balancers](#vpc_lb_health_udp).
 
     `service.kubernetes.io/ibm-load-balancer-cloud-provider-vpc-health-check-protocol`
-    :  Optional. The protocol type to use for the custom health checks. Choose `http`, `https`, or `tcp`. This annotation overrides the TCP or HTTP configuration set with the `externalTrafficPolicy` annotation. However, if `externalTrafficPolicy` is set to `Local`, the incoming traffic rules still apply.
+    :  **Optional**. The protocol type to use for the custom health checks. Choose `http`, `https`, or `tcp`. This annotation overrides the TCP or HTTP configuration set with the `externalTrafficPolicy` annotation. However, if `externalTrafficPolicy` is set to `Local`, the incoming traffic rules still apply.
 
     `service.kubernetes.io/ibm-load-balancer-cloud-provider-vpc-health-check-port`
-    :  Optional. The TCP port that is used for the health checks. This annotation applies only if `ibm-load-balancer-cloud-provider-vpc-health-check-protocol` is also specified. 
+    :  **Optional**. The TCP port that is used for the health checks. This annotation applies only if `ibm-load-balancer-cloud-provider-vpc-health-check-protocol` is also specified. 
     - If the specified TCP port is outside of the Kubernetes node port range (30,000-32,767), the VPC security group applied to the cluster worker nodes must be [modified](/docs/openshift?topic=openshift-vpc-security-group-manage) to allow inbound traffic on the port. 
     - If this annotation is applied to a Kubernetes load balancer service associated with a VPC ALB, the outbound rules of the security group assigned to the VPC ALB must be [modified](/docs/openshift?topic=openshift-vpc-security-group-manage) to allow outbound traffic to the specified TCP port. 
 
     `service.kubernetes.io/ibm-load-balancer-cloud-provider-vpc-health-check-path`
-    :   Optional. The health check URL path for HTTP and HTTPS health checks. This annotation applies only if `ibm-load-balancer-cloud-provider-vpc-health-check-protocol` is set to `http` or `https`.
+    :   **Optional**. The health check URL path for HTTP and HTTPS health checks. This annotation applies only if `ibm-load-balancer-cloud-provider-vpc-health-check-protocol` is set to `http` or `https`.
     - The URL path must be in the format of an [origin-form request target](https://www.rfc-editor.org/rfc/rfc7230#section-5.3.1){: external}.
     - If this annotation is not specified and the `ibm-load-balancer-cloud-provider-vpc-health-check-protocol` annotation is set to `http` or `https`, the  default value `/` is applied.
 
     `service.kubernetes.io/ibm-load-balancer-cloud-provider-vpc-health-check-delay`
-    :   Optional. The number of seconds to wait between health check attempts. By default, this value is set to `5`, and has a minimum of `2` and a maximum of `60`. This value must be greater than the `ibm-load-balancer-cloud-provider-vpc-health-check-timeout` value, which is set to `2` by default. 
+    :   **Optional**. The number of seconds to wait between health check attempts. By default, this value is set to `5`, and has a minimum of `2` and a maximum of `60`. This value must be greater than the `ibm-load-balancer-cloud-provider-vpc-health-check-timeout` value, which is set to `2` by default. 
 
     `service.kubernetes.io/ibm-load-balancer-cloud-provider-vpc-health-check-timeout`
-    :   Optional. The number of seconds to wait for a response to a health check. By default, this value is set to `2`, and has a minimum of `1` and a maximum of `59`. This value must be less than the `ibm-load-balancer-cloud-provider-vpc-health-check-delay`, which is set to `5` by default. 
+    :   **Optional**. The number of seconds to wait for a response to a health check. By default, this value is set to `2`, and has a minimum of `1` and a maximum of `59`. This value must be less than the `ibm-load-balancer-cloud-provider-vpc-health-check-delay`, which is set to `5` by default. 
 
     `service.kubernetes.io/ibm-load-balancer-cloud-provider-vpc-health-check-retries`
     :   The maximum number of health check retries for the VPC load balancer. By default, this value is set to `2`, and has a minimum of `1` and a maximum of `10`.
@@ -277,13 +287,8 @@ Expose your app to public network traffic by setting up a Kubernetes `LoadBalanc
 
 5. Verify that the VPC NLB is created successfully in your VPC. In the output, verify that the VPC NLB has an **Operating Status** of `online` and a **Provision Status** of `active`.
 
-    Persistent VPC NLB names have a format `kube-<cluster_ID>-<kubernetes_lb_service_UID>`. To see your cluster ID, run `ibmcloud oc cluster get --cluster <cluster_name>`. To see the Kubernetes `LoadBalancer` service UID, run `oc get svc myloadbalancer -o yaml` and look for the **metadata.uid** field in the output. The dashes (-) are removed from the Kubernetes `LoadBalancer` service UID in the VPC NLB name.
-    {: tip}
-    
-    The VPC NLB name has a format `kube-<cluster_ID>-<kubernetes_lb_service_UID>`. To see your cluster ID, run `ibmcloud oc cluster get --cluster <cluster_name>`. To see the Kubernetes `LoadBalancer` service UID, run `oc get svc myloadbalancer -o yaml` and look for the **metadata.uid** field in the output. The dashes (-) are removed from the Kubernetes `LoadBalancer` service UID in the VPC NLB name.
-    {: tip}
 
-     Do not rename any VPC NLBs that are created automatically for `LoadBalancer` services. If you rename a VPC NLB, {{site.data.keyword.openshiftlong_notm}} automatically creates another VPC NLB for the `LoadBalancer` service.
+    Do not rename any VPC NLBs that are created automatically for `LoadBalancer` services. If you rename a VPC NLB, {{site.data.keyword.openshiftlong_notm}} automatically creates another VPC NLB for the `LoadBalancer` service.
     {: important}
 
     ```sh
@@ -307,7 +312,6 @@ Do not delete the subnets that you attached to your cluster during cluster creat
 
 ### Setting up an NLB using port range
 {: #nlb-setup-portrange}
-
 
 
 Port ranges can be used in  public NLBs when there is a need to host a service from a single host name that has multiple backend applications, each listening on a separate port number. To use port ranges in your Kubernetes cluster, some manual configuration must be performed. First, the `ibm-load-balancer-cloud-provider-vpc-port-range` option must be set.  It can include one or multiple ranges, each delimited by a comma. The `spec.ports.port` value must also be set to the minimum value in the port range.
@@ -475,7 +479,7 @@ To enable your app to receive private network requests,
     {: codeblock}
 
     `service.kubernetes.io/ibm-load-balancer-cloud-provider-vpc-lb-name: "my-load-balancer"`
-    :   Optional. Include a unique name to make your VPC load balancer persistent. Persistent VPC load balancers are not deleted when the cluster they belong to is deleted. For more information, see [Persistent VPC load balancers](#vpc_lb_persist).
+    :   **Optional**. Include a unique name to make your VPC load balancer persistent. Persistent VPC load balancers are not deleted when the cluster they belong to is deleted. For more information, see [Persistent VPC load balancers](#vpc_lb_persist).
 
     `service.kubernetes.io/ibm-load-balancer-cloud-provider-enable-features: "nlb"`
     :   Required: Annotation to create a VPC NLB.
@@ -508,23 +512,23 @@ To enable your app to receive private network requests,
     :    Optional: Specify a TCP node port to use for TCP health checks in a UDP load balancer. Required for UDP load balancers that have `externalTrafficPolicy` set to `Cluster`. See [Configuring TCP health checks for UDP load balancers](#vpc_lb_health_udp) for more considerations before setting a port value.
 
     `service.kubernetes.io/ibm-load-balancer-cloud-provider-vpc-health-check-protocol`
-    :  Optional. The protocol type to use for the custom health checks. Choose `http`, `https`, or `tcp`. This annotation overrides the TCP or HTTP configuration set with the `externalTrafficPolicy` annotation. However, if `externalTrafficPolicy` is set to `Local`, the incoming traffic rules still apply.
+    :  **Optional**. The protocol type to use for the custom health checks. Choose `http`, `https`, or `tcp`. This annotation overrides the TCP or HTTP configuration set with the `externalTrafficPolicy` annotation. However, if `externalTrafficPolicy` is set to `Local`, the incoming traffic rules still apply.
 
     `service.kubernetes.io/ibm-load-balancer-cloud-provider-vpc-health-check-port`
-    :  Optional. The TCP port that is used for the health checks. This annotation applies only if `ibm-load-balancer-cloud-provider-vpc-health-check-protocol` is also specified. 
+    :  **Optional**. The TCP port that is used for the health checks. This annotation applies only if `ibm-load-balancer-cloud-provider-vpc-health-check-protocol` is also specified. 
     - If the specified TCP port is outside of the Kubernetes node port range (30,000-32,767), the VPC security group applied to the cluster worker nodes must be [modified](/docs/openshift?topic=openshift-vpc-security-group-manage) to allow inbound traffic on the port. 
     - If this annotation is applied to a Kubernetes load balancer service associated with a VPC ALB, the outbound rules of the security group assigned to the VPC ALB must be [modified](/docs/openshift?topic=openshift-vpc-security-group-manage) to allow outbound traffic to the specified TCP port. 
 
     `service.kubernetes.io/ibm-load-balancer-cloud-provider-vpc-health-check-path`
-    :   Optional. The health check URL path for HTTP and HTTPs health checks. This annotation applies only if `ibm-load-balancer-cloud-provider-vpc-health-check-protocol` is set to `http` or `https`.
+    :   **Optional**. The health check URL path for HTTP and HTTPs health checks. This annotation applies only if `ibm-load-balancer-cloud-provider-vpc-health-check-protocol` is set to `http` or `https`.
     - The URL path must be in the format of an [origin-form request target](https://www.rfc-editor.org/rfc/rfc7230#section-5.3.1){: external}.
     - If this annotation is not specified and the `ibm-load-balancer-cloud-provider-vpc-health-check-protocol` annotation is set to `http` or `https`, the  default value `/` is applied.
 
     `service.kubernetes.io/ibm-load-balancer-cloud-provider-vpc-health-check-delay`
-    :   Optional. The number of seconds to wait between health check attempts. By default, this value is set to `5`, and has a minimum of `2` and a maximum of `60`. This value must be greater than the `ibm-load-balancer-cloud-provider-vpc-health-check-timeout` value, which is set to `2` by default. 
+    :   **Optional**. The number of seconds to wait between health check attempts. By default, this value is set to `5`, and has a minimum of `2` and a maximum of `60`. This value must be greater than the `ibm-load-balancer-cloud-provider-vpc-health-check-timeout` value, which is set to `2` by default. 
 
     `service.kubernetes.io/ibm-load-balancer-cloud-provider-vpc-health-check-timeout`
-    :   Optional. The number of seconds to wait for a response to a health check. By default, this value is set to `2`, and has a minimum of `1` and a maximum of `59`. This value must be less than the `ibm-load-balancer-cloud-provider-vpc-health-check-delay`, which is set to `5` by default. 
+    :   **Optional**. The number of seconds to wait for a response to a health check. By default, this value is set to `2`, and has a minimum of `1` and a maximum of `59`. This value must be less than the `ibm-load-balancer-cloud-provider-vpc-health-check-delay`, which is set to `5` by default. 
 
     `service.kubernetes.io/ibm-load-balancer-cloud-provider-vpc-health-check-retries`
     :   The maximum number of health check retries for the VPC load balancer. By default, this value is set to `2`, and has a minimum of `1` and a maximum of `10`.
@@ -536,7 +540,7 @@ To enable your app to receive private network requests,
      :   The port that the service listens on.
 
     `targetPort`
-    :   Optional: The port to which the service directs traffic.
+    :   Optional: The port to which the service directs traffic. The application running in the pod must be listening for incoming TCP traffic on this target port. The target port is often statically defined in the image that is running in the application pod. The target port configured in the pod is different than the node port for the service and might also be different than the external port that is configured on the VPC LB.
 
     `externalTrafficPolicy`
     :   Set to `Local` to preserve the source IP address of client requests to your apps. This setting also prevents traffic from forwarding to a different zone. You must ensure that an app pod exists on each worker node in the zone that the VPC NLB deploys to, such as by using a DaemonSet. This option also configures HTTP health checks. 
@@ -587,9 +591,6 @@ To enable your app to receive private network requests,
     {: screen}
 
 7. Verify that the VPC NLB is created successfully in your VPC. In the output, verify that the VPC NLB has an **Operating Status** of `online` and a **Provision Status** of `active`.
-
-    Persistent VPC NLB names have a format `kube-<cluster_ID>-<kubernetes_lb_service_UID>`. To see your cluster ID, run `ibmcloud oc cluster get --cluster <cluster_name>`. To see the Kubernetes `LoadBalancer` service UID, run `oc get svc myloadbalancer -o yaml` and look for the **metadata.uid** field in the output. The dashes (-) are removed from the Kubernetes `LoadBalancer` service UID in the VPC NLB name.
-    {: tip}
 
     ```sh
     ibmcloud is load-balancers
@@ -740,10 +741,10 @@ To enable your app to receive public or private requests,
     {: codeblock}
 
     `service.kubernetes.io/ibm-load-balancer-cloud-provider-vpc-lb-name: "my-load-balancer"`
-    :   Optional. Include a unique name to make your VPC load balancer persistent. Persistent VPC load balancers are not deleted when the cluster they belong to is deleted. For more information, see [Persistent VPC load balancers](#vpc_lb_persist).
+    :   **Optional**. Include a unique name to make your VPC load balancer persistent. Persistent VPC load balancers are not deleted when the cluster they belong to is deleted. For more information, see [Persistent VPC load balancers](#vpc_lb_persist).
 
     `service.kubernetes.io/ibm-load-balancer-cloud-provider-enable-features: "proxy-protocol"`
-    :   Enable the PROXY protocol. The load balancer passes client connection information, including the client IP address, the proxy server IP address, and both port numbers, in request headers to your back-end app. Note that your back-end app must be configured to accept the PROXY protocol. For example, you can configure an NGINX app to accept the PROXY protocol by following [these steps](https://docs.nginx.com/nginx/admin-guide/load-balancer/using-proxy-protocol/){: external}.
+    :   **Optional**: Enable the PROXY protocol. The load balancer passes client connection information, including the client IP address, the proxy server IP address, and both port numbers, in request headers to your back-end app. Note that your back-end app must be configured to accept the PROXY protocol. For example, you can configure an NGINX app to accept the PROXY protocol by following [these steps](https://docs.nginx.com/nginx/admin-guide/load-balancer/using-proxy-protocol/){: external}.
 
     `service.kubernetes.io/ibm-load-balancer-cloud-provider-ip-type`
     :   Annotation to specify a service that accepts public or private requests. If you don't include this annotation, a public `LoadBalancer` is created.
@@ -779,29 +780,29 @@ To enable your app to receive public or private requests,
      :   If the `dedicated: edge` label is set on worker nodes and you specify this annotation, then only edge nodes in the specified zone are configured to receive traffic. Edge nodes in other zones and non-edge nodes in the specified zone don't receive traffic from the load balancer.
 
      `service.kubernetes.io/ibm-load-balancer-cloud-provider-vpc-health-check-protocol`
-    :  Optional. The protocol type to use for the custom health checks. Choose `http`, `https`, or `tcp`. This annotation overrides the TCP or HTTP configuration set with the `externalTrafficPolicy` annotation. However, if `externalTrafficPolicy` is set to `Local`, the incoming traffic rules still apply.
+    :  **Optional**. The protocol type to use for the custom health checks. Choose `http`, `https`, or `tcp`. This annotation overrides the TCP or HTTP configuration set with the `externalTrafficPolicy` annotation. However, if `externalTrafficPolicy` is set to `Local`, the incoming traffic rules still apply.
 
     `service.kubernetes.io/ibm-load-balancer-cloud-provider-vpc-health-check-port`
-    :  Optional. The TCP port that is used for the health checks. This annotation applies only if `ibm-load-balancer-cloud-provider-vpc-health-check-protocol` is also specified. 
+    :  **Optional**. The TCP port that is used for the health checks. This annotation applies only if `ibm-load-balancer-cloud-provider-vpc-health-check-protocol` is also specified. 
     - If the specified TCP port is outside of the Kubernetes node port range (30,000-32,767), the VPC security group applied to the cluster worker nodes must be [modified](/docs/openshift?topic=openshift-vpc-security-group-manage) to allow inbound traffic on the port. 
     - If this annotation is applied to a Kubernetes load balancer service associated with a VPC ALB, the outbound rules of the security group assigned to the VPC ALB must be [modified](/docs/openshift?topic=openshift-vpc-security-group-manage) to allow outbound traffic to the specified TCP port. 
 
     `service.kubernetes.io/ibm-load-balancer-cloud-provider-vpc-health-check-path`
-    :   Optional. The health check URL path for HTTP and HTTPs health checks. This annotation applies only if `ibm-load-balancer-cloud-provider-vpc-health-check-protocol` is set to `http` or `https`.
+    :   **Optional**. The health check URL path for HTTP and HTTPs health checks. This annotation applies only if `ibm-load-balancer-cloud-provider-vpc-health-check-protocol` is set to `http` or `https`.
     - The URL path must be in the format of an [origin-form request target](https://www.rfc-editor.org/rfc/rfc7230#section-5.3.1){: external}.
     - If this annotation is not specified and the `ibm-load-balancer-cloud-provider-vpc-health-check-protocol` annotation is set to `http` or `https`, the  default value `/` is applied.
 
     `service.kubernetes.io/ibm-load-balancer-cloud-provider-vpc-health-check-delay`
-    :   Optional. The number of seconds to wait between health check attempts. By default, this value is set to `5`, and has a minimum of `2` and a maximum of `60`. This value must be greater than the `ibm-load-balancer-cloud-provider-vpc-health-check-timeout` value, which is set to `2` by default. 
+    :   **Optional**. The number of seconds to wait between health check attempts. By default, this value is set to `5`, and has a minimum of `2` and a maximum of `60`. This value must be greater than the `ibm-load-balancer-cloud-provider-vpc-health-check-timeout` value, which is set to `2` by default. 
 
     `service.kubernetes.io/ibm-load-balancer-cloud-provider-vpc-health-check-timeout`
-    :   Optional. The number of seconds to wait for a response to a health check. By default, this value is set to `2`, and has a minimum of `1` and a maximum of `59`. This value must be less than the `ibm-load-balancer-cloud-provider-vpc-health-check-delay`, which is set to `5` by default.
+    :   **Optional**. The number of seconds to wait for a response to a health check. By default, this value is set to `2`, and has a minimum of `1` and a maximum of `59`. This value must be less than the `ibm-load-balancer-cloud-provider-vpc-health-check-delay`, which is set to `5` by default.
 
     `service.kubernetes.io/ibm-load-balancer-cloud-provider-vpc-health-check-retries`
     :   The maximum number of health check retries for the VPC load balancer. By default, this value is set to `2`, and has a minimum of `1` and a maximum of `10`.
 
     `service.kubernetes.io/ibm-load-balancer-cloud-provider-vpc-idle-connection-timeout`
-    :   Optional. The idle connection timeout of the listener in seconds. The default idle timeout is dependent on your account settings. Usually, this value is `50`. However, some allowlisted accounts have larger timeout settings. If you don't set the annotation, your loadbalancers use the timeout setting in your account. You can explicitly specify the timeout by setting this annotation. The minimum is `50`. The maximum is `7200`.
+    :   **Optional**. The idle connection timeout of the listener in seconds. The default idle timeout is dependent on your account settings. Usually, this value is `50`. However, some allowlisted accounts have larger timeout settings. If you don't set the annotation, your loadbalancers use the timeout setting in your account. You can explicitly specify the timeout by setting this annotation. The minimum is `50`. The maximum is `7200`.
     
     `selector`
     :   The label key (<selector_key>) and value (<selector_value>) that you used in the `spec.template.metadata.labels` section of your app deployment YAML. This custom label identifies all pods where your app runs to include them in the load balancing.
@@ -810,7 +811,7 @@ To enable your app to receive public or private requests,
     :   The port that the service listens on.
 
     `targetPort`
-    :   The port to which the service directs traffic.
+    :   Optional: The port to which the service directs traffic. The application running in the pod must be listening for incoming TCP traffic on this target port. The target port is often statically defined in the image that is running in the application pod. The target port configured in the pod is different than the node port for the service and might also be different than the external port that is configured on the VPC LB.
 
     `externalTrafficPolicy`
     :   Set to `Local` to preserve the source IP address of client requests to your apps. This setting also prevents traffic from forwarding to a different zone. You must ensure that an app pod exists on each worker node in the zone that the VPC NLB deploys to, such as by using a DaemonSet. This option also configures HTTP health checks. 
@@ -860,12 +861,6 @@ To enable your app to receive public or private requests,
 
 5. Verify that the VPC ALB is created successfully in your VPC. In the output, verify that the VPC ALB has an **Operating Status** of `online` and a **Provision Status** of `active`.
 
-    Non-persistent VPC ALB names has a format `kube-<cluster_ID>-<kubernetes_lb_service_UID>`. To see your cluster ID, run `ibmcloud oc cluster get --cluster <cluster_name>`. To see the Kubernetes `LoadBalancer` service UID, run `oc get svc myloadbalancer -o yaml` and look for the **metadata.uid** field in the output. The dashes (-) are removed from the Kubernetes `LoadBalancer` service UID in the VPC ALB name.
-    {: tip}
-    
-    The VPC ALB name has a format `kube-<cluster_ID>-<kubernetes_lb_service_UID>`. To see your cluster ID, run `ibmcloud oc cluster get --cluster <cluster_name>`. To see the Kubernetes `LoadBalancer` service UID, run `oc get svc myloadbalancer -o yaml` and look for the **metadata.uid** field in the output. The dashes (-) are removed from the Kubernetes `LoadBalancer` service UID in the VPC ALB name.
-    {: tip}
-
     Do not rename any VPC ALBs that are created automatically for `LoadBalancer` services. If you rename a VPC ALB, {{site.data.keyword.openshiftlong_notm}} automatically creates another VPC ALB for the `LoadBalancer` service.
     {: important}
 
@@ -901,7 +896,7 @@ To enable your app to receive public or private requests,
 Do not delete the subnets that you attached to your cluster during cluster creation or when you add worker nodes in a zone. If you delete a VPC subnet that your cluster used, any load balancers that use IP addresses from the subnet might experience issues, and you might be unable to create new load balancers.
 {: important}
 
-VPC ALBs and NLBs that are not tied to Kubernetes or Openshift clusters can be updated directly by using 'ibmcloud is' commands or the **VPC Infrastructure** section in the console. For example, change a front-end listener's port or health check timeout value. But for VPC load balancers that are tied to Kubernetes or Openshift clusters, any updates to them must be performed via annotations in the Ingress configuration. The Ingress periodically re-syncs with any associated VPC ALBs and NLBs to ensure the running load balancer conforms to the Ingress's expected configuration. So if you make any changes to such a load balancer directly via VPC instead of using Ingress annotations, those changes will be reverted back.
+VPC ALBs and NLBs that are not tied to Kubernetes or Openshift clusters can be updated directly by using 'ibmcloud is' commands or the **VPC Infrastructure** section in the console. For example, change a front-end listener's port or health check timeout value. But for VPC load balancers that are tied to Kubernetes or Openshift clusters, any updates to them must be performed via annotations in the Ingress configuration. The IBM Cloud Provider periodically re-syncs with any associated VPC ALBs and NLBs to ensure the running load balancer conforms to the Ingress's expected configuration. So if you make any changes to such a load balancer directly via VPC instead of using Ingress annotations, those changes will be reverted back.
 {: important}
 
 ### Registering a DNS record and TLS certificate
@@ -985,7 +980,7 @@ By default, VPC load balancers are deleted when the cluster they are associated 
 
 
 
-VPC load balancer names are formatted as `kube-<cluster_ID>-<kubernetes_lb_service_UID>` by default. When a cluster is deleted, this name format specifies the associated load balancers that are then also deleted. To make sure that your load balancer is not deleted when you delete a cluster, include the `service.kubernetes.io/ibm-load-balancer-cloud-provider-vpc-lb-name` annotation in your `LoadBalancer` service definition to give your load balancer a unique name. The load balancer name must be unique within your VPC, and can include only lowercase alphanumeric characters and dashes (`-`). The annotation can be applied to all VPC load balancer types. 
+VPC load balancer names are formatted as `kube-<cluster_ID>-<kubernetes_lb_service_UID>` by default. When a cluster is deleted, this name format specifies the associated load balancers that are then also deleted. To make sure that your load balancer is not deleted when you delete a cluster, include the `service.kubernetes.io/ibm-load-balancer-cloud-provider-vpc-lb-name` annotation in your `LoadBalancer` service definition to give your load balancer a unique name. The load balancer name must be unique within your VPC, and can include only lowercase alphanumeric characters and hyphes (`-`). The annotation can be applied to all VPC load balancer types. 
 
 You are responsible for deleting persistent VPC load balancers when they are no longer needed. To delete a persistent VPC load balancer, delete the Kubernetes `LoadBalancer` service definition that the VPC load balancer is associated with. 
 
@@ -1007,12 +1002,12 @@ If you remove the annotation, the original `LoadBalancer` service reverts and cr
 ### Attaching a VPC load balancer to a cluster
 {: #vpc_lb_move_attach}
 
-After a persistent VPC load balancer is detached from a cluster, you can attach to a different cluster by creating a new Kubernetes `LoadBalancer` service definition that references the VPC load balancer, or by updating an existing Kubernetes `LoadBalancer` service that exists on the new cluster. 
+After a persistent VPC load balancer is detached from a cluster, you can attach to a different cluster by creating a new Kubernetes `LoadBalancer` service definition that references the VPC load balancer.
 {: shortdesc}
 
-If you create a new `LoadBalancer` service on the new cluster, you can use the `service.kubernetes.io/ibm-load-balancer-cloud-provider-vpc-lb-name` annotation to specify the name of the VPC load balancer you want to attach.
+When you create a new `LoadBalancer` service on the new cluster, you can use the `service.kubernetes.io/ibm-load-balancer-cloud-provider-vpc-lb-name` annotation to specify the name of the VPC load balancer you want to attach.
 
-Whether you create a new `LoadBalancer` service or update an existing one, the VPC load balancer type (ALB, NLB) and IP type (public, private) must match the specifications in the `LoadBalancer` service. For instance, an existing `LoadBalancer` service on the new cluster that specifies an NLB type cannot be used to attach a VPC ALB to the cluster. The annotations that specify the load balancer type and IP type are `service.kubernetes.io/ibm-load-balancer-cloud-provider-enable-features` and `service.kubernetes.io/ibm-load-balancer-cloud-provider-ip-type`, respectively.
+When you create LoadBalancer service, the the VPC load balancer type (ALB, NLB) and IP type (public, private) must match the specifications in the `LoadBalancer` service. For instance, an existing `LoadBalancer` service on the new cluster that specifies an NLB type cannot be used to attach a VPC ALB to the cluster. The annotations that specify the load balancer type and IP type are `service.kubernetes.io/ibm-load-balancer-cloud-provider-enable-features` and `service.kubernetes.io/ibm-load-balancer-cloud-provider-ip-type`, respectively.
 
 The port and node ports specified in the `LoadBalancer` service do not need to match those that the VPC load balancer was created with. The VPC load balancer re-configures with the port definitions of whichever `LoadBalancer` service it is associated with in the new cluster.
 
@@ -1037,23 +1032,23 @@ For more control over your VPC load balancer health checks, you can use optional
 
 
 `service.kubernetes.io/ibm-load-balancer-cloud-provider-vpc-health-check-protocol`
-:  Optional. The protocol type to use for the custom health checks. Choose either `http`, `https`, or `tcp`. This annotation overrides the TCP or HTTP configuration set with the `externalTrafficPolicy` annotation. However, if `externalTrafficPolicy` is set to `Local`, the incoming traffic rules still apply.
+:  **Optional**. The protocol type to use for the custom health checks. Choose either `http`, `https`, or `tcp`. This annotation overrides the TCP or HTTP configuration set with the `externalTrafficPolicy` annotation. However, if `externalTrafficPolicy` is set to `Local`, the incoming traffic rules still apply.
 
 `service.kubernetes.io/ibm-load-balancer-cloud-provider-vpc-health-check-port`
-:  Optional. The TCP port that is used for the health checks. This annotation applies only if `ibm-load-balancer-cloud-provider-vpc-health-check-protocol` is also specified. 
+:  **Optional**. The TCP port that is used for the health checks. This annotation applies only if `ibm-load-balancer-cloud-provider-vpc-health-check-protocol` is also specified. 
    - If the specified TCP port is outside of the Kubernetes node port range (30,000-32,767), the VPC security group applied to the cluster worker nodes must be [modified](/docs/openshift?topic=openshift-vpc-security-group-manage) to allow inbound traffic on the port. 
    - If this annotation is applied to a Kubernetes load balancer service associated with a VPC ALB, the outbound rules of the security group assigned to the VPC ALB must be [modified](/docs/openshift?topic=openshift-vpc-security-group-manage) to allow outbound traffic to the specified TCP port. 
 
 `service.kubernetes.io/ibm-load-balancer-cloud-provider-vpc-health-check-path`
-:   Optional. The health check URL path for HTTP and HTTPs health checks. This annotation applies only if `ibm-load-balancer-cloud-provider-vpc-health-check-protocol` is set to `http` or `https`.
+:   **Optional**. The health check URL path for HTTP and HTTPs health checks. This annotation applies only if `ibm-load-balancer-cloud-provider-vpc-health-check-protocol` is set to `http` or `https`.
    - The URL path must be in the format of an [origin-form request target](https://www.rfc-editor.org/rfc/rfc7230#section-5.3.1){: external}.
    - If this annotation is not specified and the `ibm-load-balancer-cloud-provider-vpc-health-check-protocol` annotation is set to `http` or `https`, the  default value `/` is applied.
 
 `service.kubernetes.io/ibm-load-balancer-cloud-provider-vpc-health-check-delay`
-:   Optional. The number of seconds to wait between health check attempts. By default, this value is set to `5`, and has a minimum of `2` and a maximum of `60`. This value must be greater than the `ibm-load-balancer-cloud-provider-vpc-health-check-timeout` value, which is set to `2` by default. 
+:   **Optional**. The number of seconds to wait between health check attempts. By default, this value is set to `5`, and has a minimum of `2` and a maximum of `60`. This value must be greater than the `ibm-load-balancer-cloud-provider-vpc-health-check-timeout` value, which is set to `2` by default. 
 
 `service.kubernetes.io/ibm-load-balancer-cloud-provider-vpc-health-check-timeout`
-:   Optional. The number of seconds to wait for a response to a health check. By default, this value is set to `2`, and has a minimum of `1` and a maximum of `59`. This value must be less than the `ibm-load-balancer-cloud-provider-vpc-health-check-delay` value, which is set to `5` by default. 
+:   **Optional**. The number of seconds to wait for a response to a health check. By default, this value is set to `2`, and has a minimum of `1` and a maximum of `59`. This value must be less than the `ibm-load-balancer-cloud-provider-vpc-health-check-delay` value, which is set to `5` by default. 
 
 `service.kubernetes.io/ibm-load-balancer-cloud-provider-vpc-health-check-retries`
 :   The maximum number of health check retries for the VPC load balancer. By default, this value is set to `2`, and has a minimum of `1` and a maximum of `10`.
@@ -1077,7 +1072,7 @@ Want to avoid the complexity of specifying additional TCP ports for health check
 ## Changing load balancer subnets or zones
 {: #lbaas_change_subnets}
 
-Once you have created a VPC NLB or VPC ALB, you cannot reconfigure its subnets or zones. If you want to change the subnets or zone for an existing VPC load balancer, you must delete, update, and reapply the corresponding Kubernetes `LoadBalancer` service.
+After you have created a VPC NLB, you can not reconfigure the listening subnet it was created with. If you want to change the listening subnet of an existing VPC NLB, you must delete, update, and reapply the corresponding Kubernetes `LoadBalancer` service.
 {: shortdesc}
 
 1. [Log in to your account. If applicable, target the appropriate resource group. Set the context for your cluster.](/docs/containers?topic=containers-access_cluster)
@@ -1099,7 +1094,7 @@ Once you have created a VPC NLB or VPC ALB, you cannot reconfigure its subnets o
 
 1. Find the VPC load balancer that corresponds with the Kubernetes `LoadBalancer` service.
 
-    VPC load balancer names are in the format `kube-<cluster_ID>-<kubernetes_lb_service_UID>`. To see your cluster ID, run `ibmcloud ks cluster get --cluster <cluster_name>`. To see the Kubernetes LoadBalancer service UID, run `oc get svc <load-balancer-name> -o yaml` and look for the metadata.uid field in the output. The dashes (-) are removed from the Kubernetes `LoadBalancer` service UID in the VPC load balancer name.
+    VPC load balancer names are in the format `kube-<cluster_ID>-<kubernetes_lb_service_UID>`. To see your cluster ID, run `ibmcloud ks cluster get --cluster <cluster_name>`. To see the Kubernetes LoadBalancer service UID, run `oc get svc <load-balancer-name> -o yaml` and look for the metadata.uid field in the output. The hyphes (-) are removed from the Kubernetes `LoadBalancer` service UID in the VPC load balancer name.
     {: tip}
 
     ```sh
@@ -1130,7 +1125,7 @@ Once you have created a VPC NLB or VPC ALB, you cannot reconfigure its subnets o
     ```
     {: pre}
 
-1. Update the Kubernetes `LoadBalancer` service definition file with the subnet or zone changes you want to implement. Do not change the name of the `LoadBalancer` service. For details on specifying subnets or zones for network load balancers, see [Setting up a Network Load Balancer for VPC](/docs/openshift?topic=openshift-vpc-lbaas#setup_vpc_nlb). For details on specifying subnets or zones for application load balancers, see [Setting up an Application Load Balancer for VPC](/docs/openshift?topic=openshift-vpc-lbaas#setup_vpc_ks_vpc_lb).
+1. Update the Kubernetes `LoadBalancer` service definition file with the subnet or zone changes you want to implement. Do not change the name of the `LoadBalancer` service. For details on specifying subnets or zones for network load balancers, see [Setting up a Network Load Balancer for VPC](/docs/openshift?topic=openshift-vpc-lbaas#setup_vpc_nlb).
 
 1. Apply the new `LoadBalancer` definition file.
 
@@ -1138,7 +1133,7 @@ Once you have created a VPC NLB or VPC ALB, you cannot reconfigure its subnets o
     oc apply -f my-lb.yaml
     ```
 
-1. Verify that the Kubernetes `LoadBalancer` service is recreated successfully in your cluster. When the service is created, the **LoadBalancer Ingress** field is populated with either an external IP address for NLBs or a hostname for ALBs. Note that it takes a few minutes to provision the load balancer and you might see a `pending` status until it is fully provisioned.
+1. Verify that the Kubernetes `LoadBalancer` service is recreated successfully in your cluster. When the service is created, the **LoadBalancer Ingress** field is populated with an external IP address for the NLB.
 
     ```sh
     oc describe service my-load-balancer
@@ -1198,12 +1193,11 @@ Review the following default settings and limitations.
 * Review [known limitations for VPC ALBs](/docs/vpc?topic=vpc-lb-limitations) and [known limitations for VPC NLBs](/docs/vpc?topic=vpc-nlb-limitations).
 * Private VPC ALBs don't accept all traffic, only RFC 1918 traffic.
 * Private VPC NLBs must be created on a dedicated VPC subnet that must exist in the same VPC and location as your cluster, but the subnet can't be attached to your cluster or any worker nodes.
-* {{site.data.keyword.redhat_openshift_notm}} 4.10 or later: Although the Kubernetes [SCTP protocol](https://kubernetes.io/docs/concepts/services-networking/service/#sctp){: external} is generally available in the Kubernetes community release, creating load balancers that use this protocol is not supported in {{site.data.keyword.containerlong_notm}} clusters.
+* {{site.data.keyword.redhat_openshift_notm}}: Although the Kubernetes [SCTP protocol](https://kubernetes.io/docs/concepts/services-networking/service/#sctp){: external} is generally available in the Kubernetes community release, creating load balancers that use this protocol is not supported in {{site.data.keyword.containerlong_notm}} clusters.
 * One VPC load balancer is created for each Kubernetes `LoadBalancer` service that you create, and it routes requests to that Kubernetes `LoadBalancer` service only. Across all your VPC clusters in your VPC, a maximum of 50 VPC load balancers can be created. For more information, see the [VPC quotas documentation](/docs/vpc?topic=vpc-quotas).
 * The VPC load balancer can route requests to a limited number of worker nodes. The maximum number of nodes you can route requests to depends on how you set the `externalTrafficPolicy` annotation. 
     * If you set `externalTrafficPolicy: Cluster` in your load balancer configuration:
-        * [Versions 1.25 and later]{: tag-warm-gray} The VPC load balancer routes to the first 8 worker nodes that are discovered in each zone. For a single-zone cluster, the load balancer routes to 8 worker nodes total. The `kube-proxy` configures IP tables to route the incoming traffic from the worker node to the application pod on whichever node the application pod resides on. 
-        * [Versions 1.24 and earlier]{: tag-warm-gray} The VPC load balancer only routes to the first 50 worker nodes that are returned in the cluster's API call to the VPC load balancer. The `kube-proxy` configures IP tables to route the incoming traffic from the worker node to the application pod on whichever node the application pod resides on.  
+        * The VPC load balancer routes to the first 8 worker nodes that are discovered in each zone. For a single-zone cluster, the load balancer routes to 8 worker nodes total. The `kube-proxy` configures IP tables to route the incoming traffic from the worker node to the application pod on whichever node the application pod resides on. 
     * If you set `externalTrafficPolicy: Local` in your load balancer configuration, the VPC load balancer is created only if there are 50 or fewer worker nodes on the cluster. This limit is set by VPC quota limitations of 50 pool members per VPC load balancer pool. To avoid this limitation, use the `service.kubernetes.io/ibm-load-balancer-cloud-provider-vpc-node-selector` annotation to limit which worker nodes are in the load balancer pool. For instance, you can use this annotation to force incoming traffic to a specific worker pool. If you use this annotation to force traffic to a specific worker pool, you must also ensure that the application pod also runs in the same worker pool. 
 * When you define the configuration YAML file for a Kubernetes `LoadBalancer` service, the following annotations and settings are not supported:
     * `service.kubernetes.io/ibm-load-balancer-cloud-provider-vlan: "<vlan_id>"`
@@ -1217,11 +1211,9 @@ Review the following default settings and limitations.
 * You can register up to 128 subdomains for VPC load balancer hostnames. This limit can be lifted on request by opening a [support case](/docs/get-support?topic=get-support-using-avatar).
 * Subdomains that you register for VPC load balancers are limited to 130 characters or fewer.
 * VPC ALBs listen on the same VPC subnets that the cluster worker nodes are allocated on unless the Kubernetes load balancer service is created with the `service.kubernetes.io/ibm-load-balancer-cloud-provider-vpc-subnets` or `service.kubernetes.io/ibm-load-balancer-cloud-provider-zone` annotations, which limit traffic to specific nodes.
-    * [Versions 1.25 and later]{: tag-warm-gray} The subnets and zones of the VPC ALB can be updated or modified after the ALB is created. If you add more zones to the cluster or update the Kubernetes load balancer service with the `service.kubernetes.io/ibm-load-balancer-cloud-provider-vpc-subnets` or `service.kubernetes.io/ibm-load-balancer-cloud-provider-zone` annotations, the VPC ALB is updated to listen on the new subnets. 
-    * [Versions 1.24 and earlier]{: tag-warm-gray} The subnets and zones of the VPC ALB cannot be changed after the ALB is created. If you add more zones to the cluster, the VPC ALB is not updated to listen for incoming traffic on the new zones. You can route incoming traffic to all backend worker nodes in the cluster across all zones, but you cannot change the VPC subnets that the VPC ALB listens on. 
+    * The subnets and zones of the VPC ALB can be updated or modified after the ALB is created. If you add more zones to the cluster or update the Kubernetes load balancer service with the `service.kubernetes.io/ibm-load-balancer-cloud-provider-vpc-subnets` or `service.kubernetes.io/ibm-load-balancer-cloud-provider-zone` annotations, the VPC ALB is updated to listen on the new subnets. 
 * VPC NLBs listen only on a single VPC subnet in a single zone. They cannot be configured to listen on multiple VPC subnets or to listen on multiple zones. You can specify the single subnet for an NLB to listen on with the `service.kubernetes.io/ibm-load-balancer-cloud-provider-vpc-subnets` or `service.kubernetes.io/ibm-load-balancer-cloud-provider-zone` annotations. 
-    * [Versions 1.25 and later]{: tag-warm-gray} VPC NLBs forward incoming traffic to all worker nodes in the cluster unless you restrict incoming traffic to specific worker nodes with the `service.kubernetes.io/ibm-load-balancer-cloud-provider-vpc-node-selector` or `service.kubernetes.io/ibm-load-balancer-cloud-provider-zone annotations`. To limit traffic to a specific zone, you can use these annotations to specify worker nodes in that zone. 
-    * [Versions 1.24 and earlier]{: tag-warm-gray} VPC NLBs forward incoming traffic only to the cluster worker nodes that are in the same zone the ALB listens in.
+    * VPC NLBs forward incoming traffic to all worker nodes in the cluster unless you restrict incoming traffic to specific worker nodes with the `service.kubernetes.io/ibm-load-balancer-cloud-provider-vpc-node-selector` or `service.kubernetes.io/ibm-load-balancer-cloud-provider-zone annotations`. To limit traffic to a specific zone, you can use these annotations to specify worker nodes in that zone. 
 * Disabling load balancer NodePort allocation is not supported for VPC load balancers. 
 * VPC ALBs only: Mixed protocol load balancer services are not currently supported in IBM Cloud Kubernetes Service. You cannot specify both TCP and UDP ports in your load balancer definition.
 * VPC NLBs can be set up with both UDP and TCP on the same VPC LB, but the listening port must be different.

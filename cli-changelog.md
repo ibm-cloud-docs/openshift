@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2024
-lastupdated: "2024-06-19"
+lastupdated: "2024-06-24"
 
 
 keywords: openshift, {{site.data.keyword.openshiftlong_notm}}, oc, ks
@@ -31,6 +31,12 @@ Refer to the following change logs for a summary of changes for each version of 
 
 Review the following changes for 1.0 versions of the CLI plug-in.
 {: shortdesc}
+
+## Version v1.0.630
+{: #cli-010630}
+
+Version 1.0.630 of the CLI was released on 24 June 2024.
+- Updates the validation logic on the `worker-pool resize` command.
 
 ## Version v1.0.628
 {: #cli-010628}
