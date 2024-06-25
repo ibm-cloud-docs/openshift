@@ -87,7 +87,7 @@ Set up a layer-7, multizone [Application Load Balancer for VPC](/docs/vpc?topic=
 Do not confuse the Application Load Balancer for VPC with {{site.data.keyword.openshiftlong_notm}} Ingress applications load balancers. Application Load Balancers for VPC (VPC ALBs) run outside your cluster in your VPC and are configured by Kubernetes `LoadBalancer` services that you create. [Ingress applications load balancers (ALBs)](/docs/containers?topic=containers-comm-ingress-annotations) are Ingress controllers that run on worker nodes in your cluster.
 {: note}
 
-* VPC ALB names has a format `kube-<cluster_ID>-<kubernetes_lb_service_UID>`. To see your cluster ID, run `ibmcloud oc cluster get --cluster <cluster_name>`. To see the Kubernetes `LoadBalancer` service UID, run `oc get svc myloadbalancer -o yaml` and look for the **metadata.uid** field in the output. The hyphes (-) are removed from the Kubernetes `LoadBalancer` service UID in the VPC ALB name.
+* VPC ALB names has a format `kube-<cluster_ID>-<kubernetes_lb_service_UID>`. To see your cluster ID, run `ibmcloud oc cluster get --cluster <cluster_name>`. To see the Kubernetes `LoadBalancer` service UID, run `oc get svc myloadbalancer -o yaml` and look for the **metadata.uid** field in the output. The hyphens (-) are removed from the Kubernetes `LoadBalancer` service UID in the VPC ALB name.
 
 * By default, when you create a Kubernetes `LoadBalancer` service for an app in your cluster, an Application Load Balancer for VPC is created in your VPC outside of your cluster. The VPC ALB routes requests to your app through the private NodePorts that are automatically opened on your worker nodes.
 
@@ -980,7 +980,7 @@ By default, VPC load balancers are deleted when the cluster they are associated 
 
 
 
-VPC load balancer names are formatted as `kube-<cluster_ID>-<kubernetes_lb_service_UID>` by default. When a cluster is deleted, this name format specifies the associated load balancers that are then also deleted. To make sure that your load balancer is not deleted when you delete a cluster, include the `service.kubernetes.io/ibm-load-balancer-cloud-provider-vpc-lb-name` annotation in your `LoadBalancer` service definition to give your load balancer a unique name. The load balancer name must be unique within your VPC, and can include only lowercase alphanumeric characters and hyphes (`-`). The annotation can be applied to all VPC load balancer types. 
+VPC load balancer names are formatted as `kube-<cluster_ID>-<kubernetes_lb_service_UID>` by default. When a cluster is deleted, this name format specifies the associated load balancers that are then also deleted. To make sure that your load balancer is not deleted when you delete a cluster, include the `service.kubernetes.io/ibm-load-balancer-cloud-provider-vpc-lb-name` annotation in your `LoadBalancer` service definition to give your load balancer a unique name. The load balancer name must be unique within your VPC, and can include only lowercase alphanumeric characters and hyphens (`-`). The annotation can be applied to all VPC load balancer types. 
 
 You are responsible for deleting persistent VPC load balancers when they are no longer needed. To delete a persistent VPC load balancer, delete the Kubernetes `LoadBalancer` service definition that the VPC load balancer is associated with. 
 
@@ -1094,7 +1094,7 @@ After you have created a VPC NLB, you can not reconfigure the listening subnet i
 
 1. Find the VPC load balancer that corresponds with the Kubernetes `LoadBalancer` service.
 
-    VPC load balancer names are in the format `kube-<cluster_ID>-<kubernetes_lb_service_UID>`. To see your cluster ID, run `ibmcloud ks cluster get --cluster <cluster_name>`. To see the Kubernetes LoadBalancer service UID, run `oc get svc <load-balancer-name> -o yaml` and look for the metadata.uid field in the output. The hyphes (-) are removed from the Kubernetes `LoadBalancer` service UID in the VPC load balancer name.
+    VPC load balancer names are in the format `kube-<cluster_ID>-<kubernetes_lb_service_UID>`. To see your cluster ID, run `ibmcloud ks cluster get --cluster <cluster_name>`. To see the Kubernetes LoadBalancer service UID, run `oc get svc <load-balancer-name> -o yaml` and look for the metadata.uid field in the output. The hyphens (-) are removed from the Kubernetes `LoadBalancer` service UID in the VPC load balancer name.
     {: tip}
 
     ```sh
