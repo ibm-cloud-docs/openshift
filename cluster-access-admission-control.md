@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2022, 2024
-lastupdated: "2024-06-12"
+lastupdated: "2024-06-26"
 
 
 keywords: openshift, {{site.data.keyword.openshiftlong_notm}}, webhooks, admission control, 
@@ -63,29 +63,29 @@ In cluster versions 4.14 and later, Konnectivity replaced the OpenVPN solution. 
 
 You can configure a webhook by referencing the webhook app as a Kubernetes service, or by referencing the webhook app as an IP address or publicly registered DNS name.
 
-    Example configuration for referencing the webhook app as a Kubernetes service
+Example configuration for referencing the webhook app as a Kubernetes service
 
 
-    ```yaml
-    clientConfig:
-       caBundle: #CA_BUNDLE_BASE64#
-       service:
-          name: admission-webhook
-          namespace: default
-          path: /validate
-          port: 443
-    ```
-    {: codeblock}
+```yaml
+clientConfig:
+   caBundle: #CA_BUNDLE_BASE64#
+   service:
+      name: admission-webhook
+      namespace: default
+      path: /validate
+      port: 443
+```
+{: codeblock}
 
-    Example configuration for referencing the webhook app as an IP address or publicly registered DNS name
+Example configuration for referencing the webhook app as an IP address or publicly registered DNS name
 
 
-    ```yaml
-    clientConfig:
-       caBundle: #CA_BUNDLE_BASE64#
-       url: https://#WEBHOOK_URL#:443/validate
-    ```
-    {: codeblock}
+```yaml
+clientConfig:
+   caBundle: #CA_BUNDLE_BASE64#
+   url: https://#WEBHOOK_URL#:443/validate
+```
+{: codeblock}
 
 Note the following limitations for referencing the webhook app as an IP address or DNS name:
 

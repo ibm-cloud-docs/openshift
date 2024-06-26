@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2024
-lastupdated: "2024-06-25"
+lastupdated: "2024-06-26"
 
 
 keywords: openshift
@@ -4953,7 +4953,9 @@ subcollection: openshift
 
 * [Updating the {{site.data.keyword.filestorage_vpc_short}} cluster add-on](/docs/openshift?topic=openshift-storage-file-vpc-managing#storage-file-vpc-update)
 
-* [Understanding your storage removal options](/docs/openshift?topic=openshift-storage-file-vpc-managing#vpc_storage_delete_options_file)
+* [Disabling the add-on](/docs/openshift?topic=openshift-storage-file-vpc-managing#storage-file-vpc-disable)
+
+* [Understanding your storage removal options](/docs/openshift?topic=openshift-storage-file-vpc-managing#vpc-storage-delete-options-file)
 
 * [Cleaning up persistent storage](/docs/openshift?topic=openshift-storage-file-vpc-managing#vpc-storage-remove-file)
 
@@ -7580,9 +7582,21 @@ subcollection: openshift
 
 * [Version 4.15](/docs/openshift?topic=openshift-odf_addon_changelog#4.15_odf)
 
+    * [Version 4.15.3, released 24 June 2024](/docs/openshift?topic=openshift-odf_addon_changelog#4.15.3_odf)
+
+    * [Version 4.15.2, released 5 June 2024](/docs/openshift?topic=openshift-odf_addon_changelog#4.15.2_odf)
+
     * [Version 4.15.0, released 10 May 2024](/docs/openshift?topic=openshift-odf_addon_changelog#4.15.0_odf)
 
 * [Version 4.14](/docs/openshift?topic=openshift-odf_addon_changelog#4.14_odf)
+
+    * [Version 4.14.14, released 24 June 2024](/docs/openshift?topic=openshift-odf_addon_changelog#4.14.14_odf)
+
+    * [Version 4.14.13, released 5 June 2024](/docs/openshift?topic=openshift-odf_addon_changelog#4.14.13_odf)
+
+    * [Version 4.14.11, released 19 April 2024](/docs/openshift?topic=openshift-odf_addon_changelog#4.14.11_odf)
+
+    * [Version 4.14.10, released 08 April 2024](/docs/openshift?topic=openshift-odf_addon_changelog#4.14.10_odf)
 
     * [Version 4.14.9, released 26 March 2024](/docs/openshift?topic=openshift-odf_addon_changelog#4.14.9_odf)
 
@@ -7595,6 +7609,12 @@ subcollection: openshift
     * [Version 4.14.0, released 19 January 2024](/docs/openshift?topic=openshift-odf_addon_changelog#4.14.0_odf)
 
 * [Version 4.13](/docs/openshift?topic=openshift-odf_addon_changelog#4.13_odf)
+
+    * [Version 4.13.17, released 5 June 2024](/docs/openshift?topic=openshift-odf_addon_changelog#4.13.17_odf)
+
+    * [Version 4.13.16, released 19 April 2024](/docs/openshift?topic=openshift-odf_addon_changelog#4.13.16_odf)
+
+    * [Version 4.13.15, released 08 March 2024](/docs/openshift?topic=openshift-odf_addon_changelog#4.13.15_odf)
 
     * [Version 4.13.14, released 14 March 2024](/docs/openshift?topic=openshift-odf_addon_changelog#4.13.14_odf)
 
@@ -7617,6 +7637,10 @@ subcollection: openshift
     * [Version 4.13.0, released 10 July 2023](/docs/openshift?topic=openshift-odf_addon_changelog#4.13.0_odf)
 
 * [Version 4.12](/docs/openshift?topic=openshift-odf_addon_changelog#4.12_odf)
+
+    * [Version 4.12.19, released 5 June 2024](/docs/openshift?topic=openshift-odf_addon_changelog#4.12.19_odf)
+
+    * [Version 4.12.19, released 19 April 2024](/docs/openshift?topic=openshift-odf_addon_changelog#4.12.19_odf)
 
     * [Version 4.12.17, released 04 March 2024](/docs/openshift?topic=openshift-odf_addon_changelog#4.12.17_odf)
 

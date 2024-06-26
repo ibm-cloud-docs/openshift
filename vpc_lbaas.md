@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2024
-lastupdated: "2024-06-25"
+lastupdated: "2024-06-26"
 
 
 keywords: kubernetes, openshift, app protocol, application protocol
@@ -207,7 +207,8 @@ Expose your app to public network traffic by setting up a Kubernetes `LoadBalanc
     :    Optional: Specify a TCP port to use for TCP health checks in a UDP load balancer. Required for UDP load balancers that have `externalTrafficPolicy` set to `Cluster`. For more information on setting port values, see [Configuring TCP health checks for UDP load balancers](#vpc_lb_health_udp).
 
     `service.kubernetes.io/ibm-load-balancer-cloud-provider-vpc-health-check-protocol`
-    :  **Optional**. The protocol type to use for the custom health checks. Choose `http`, `https`, or `tcp`. This annotation overrides the TCP or HTTP configuration set with the `externalTrafficPolicy` annotation. However, if `externalTrafficPolicy` is set to `Local`, the incoming traffic rules still apply.
+    :  **Optional**: This annotation sets the health check protocol on the VPC load balancer resource associated with the Kubernetes load balancer service. Normally, the VPC LB health check protocol is determined by the value of the `externalTrafficPolicy` setting in the Kubernetes load balancer service specification. This annotation overrides that logic. This annotation does **not** alter how Kubernetes, and kube-proxy in particular, behaves in regards to the various settings of `externalTrafficPolicy`.
+
 
     `service.kubernetes.io/ibm-load-balancer-cloud-provider-vpc-health-check-port`
     :  **Optional**. The TCP port that is used for the health checks. This annotation applies only if `ibm-load-balancer-cloud-provider-vpc-health-check-protocol` is also specified. 
@@ -512,7 +513,7 @@ To enable your app to receive private network requests,
     :    Optional: Specify a TCP node port to use for TCP health checks in a UDP load balancer. Required for UDP load balancers that have `externalTrafficPolicy` set to `Cluster`. See [Configuring TCP health checks for UDP load balancers](#vpc_lb_health_udp) for more considerations before setting a port value.
 
     `service.kubernetes.io/ibm-load-balancer-cloud-provider-vpc-health-check-protocol`
-    :  **Optional**. The protocol type to use for the custom health checks. Choose `http`, `https`, or `tcp`. This annotation overrides the TCP or HTTP configuration set with the `externalTrafficPolicy` annotation. However, if `externalTrafficPolicy` is set to `Local`, the incoming traffic rules still apply.
+    :  **Optional**: This annotation sets the health check protocol on the VPC load balancer resource associated with the Kubernetes load balancer service. Normally, the VPC LB health check protocol is determined by the value of the `externalTrafficPolicy` setting in the Kubernetes load balancer service specification. This annotation overrides that logic. This annotation does **not** alter how Kubernetes, and kube-proxy in particular, behaves in regards to the various settings of `externalTrafficPolicy`.
 
     `service.kubernetes.io/ibm-load-balancer-cloud-provider-vpc-health-check-port`
     :  **Optional**. The TCP port that is used for the health checks. This annotation applies only if `ibm-load-balancer-cloud-provider-vpc-health-check-protocol` is also specified. 
@@ -543,7 +544,7 @@ To enable your app to receive private network requests,
     :   Optional: The port to which the service directs traffic. The application running in the pod must be listening for incoming TCP traffic on this target port. The target port is often statically defined in the image that is running in the application pod. The target port configured in the pod is different than the node port for the service and might also be different than the external port that is configured on the VPC LB.
 
     `externalTrafficPolicy`
-    :   Set to `Local` to preserve the source IP address of client requests to your apps. This setting also prevents traffic from forwarding to a different zone. You must ensure that an app pod exists on each worker node in the zone that the VPC NLB deploys to, such as by using a DaemonSet. This option also configures HTTP health checks. 
+    :   Set to `Local` to preserve the source IP address of client requests to your apps. This setting prevents the incoming traffic from being forwarded to a different node. This option also configures HTTP health checks.
     :   If `Cluster` is set, DSR is implemented only from the worker node that the VPC NLB initially forwards the incoming request to. After the incoming request arrives, the request is forwarded to a worker node that contains the app pod, which might be in a different zone. The response from the app pod is sent to the original worker node, and that worker node uses DSR to send the response directly back to the client, bypassing the VPC NLB. This option also configures TCP health checks. For UDP load balancers, the `service.kubernetes.io/ibm-load-balancer-cloud-provider-vpc-health-check-udp` must be set with a TCP port value. For more information, see [Configuring TCP health checks for UDP load balancers](#vpc_lb_health_udp).
 
 
@@ -780,7 +781,7 @@ To enable your app to receive public or private requests,
      :   If the `dedicated: edge` label is set on worker nodes and you specify this annotation, then only edge nodes in the specified zone are configured to receive traffic. Edge nodes in other zones and non-edge nodes in the specified zone don't receive traffic from the load balancer.
 
      `service.kubernetes.io/ibm-load-balancer-cloud-provider-vpc-health-check-protocol`
-    :  **Optional**. The protocol type to use for the custom health checks. Choose `http`, `https`, or `tcp`. This annotation overrides the TCP or HTTP configuration set with the `externalTrafficPolicy` annotation. However, if `externalTrafficPolicy` is set to `Local`, the incoming traffic rules still apply.
+    :  **Optional**: This annotation sets the health check protocol on the VPC load balancer resource associated with the Kubernetes load balancer service. Normally, the VPC LB health check protocol is determined by the value of the `externalTrafficPolicy` setting in the Kubernetes load balancer service specification. This annotation overrides that logic. This annotation does **not** alter how Kubernetes, and kube-proxy in particular, behaves in regards to the various settings of `externalTrafficPolicy`.
 
     `service.kubernetes.io/ibm-load-balancer-cloud-provider-vpc-health-check-port`
     :  **Optional**. The TCP port that is used for the health checks. This annotation applies only if `ibm-load-balancer-cloud-provider-vpc-health-check-protocol` is also specified. 
@@ -814,8 +815,7 @@ To enable your app to receive public or private requests,
     :   Optional: The port to which the service directs traffic. The application running in the pod must be listening for incoming TCP traffic on this target port. The target port is often statically defined in the image that is running in the application pod. The target port configured in the pod is different than the node port for the service and might also be different than the external port that is configured on the VPC LB.
 
     `externalTrafficPolicy`
-    :   Set to `Local` to preserve the source IP address of client requests to your apps. This setting also prevents traffic from forwarding to a different zone. You must ensure that an app pod exists on each worker node in the zone that the VPC NLB deploys to, such as by using a DaemonSet. This option also configures HTTP health checks. 
-    :   Set to `Cluster` to configure TCP health checks. For UDP load balancers, the `service.kubernetes.io/ibm-load-balancer-cloud-provider-vpc-health-check-udp` must be set with a TCP port value. For more information, see [Configuring TCP health checks for UDP load balancers](#vpc_lb_health_udp).
+    :   Set to `Local` to prevent the incoming traffic from being forwarded to a different node. This option also configures HTTP health checks. Set to `Cluster` to allow the incoming traffic to be forwarded to the backend application port on whatever node or zone it might be running. The option also configures TCP health checks.
 
 3. Create the Kubernetes `LoadBalancer` service in your cluster.
     ```sh
@@ -1018,7 +1018,7 @@ VPC load balancers are automatically configured with health checks, which you co
 {: shortdesc} 
 
 - If `externalTrafficPolicy` is set to `Cluster`, TCP health checks are applied. If you are configuring a UDP load balancer, [you must make additional port specifications](#vpc_lb_health_udp).
-- If `externalTrafficPolicy` is set to `Local`, HTTP health checks are applied. You must ensure that an app pod exists on each worker node in the same zone that the VPC NLB deploys to, such as by using a DaemonSet, and the source of requests to your apps must exist outside of the cluster. Incoming traffic is delivered only to the application pod residing on that specific node. If there is no application pod on that specific node, the incoming traffic is dropped.
+- If `externalTrafficPolicy` is set to `Local`, HTTP health checks are applied. Incoming traffic is delivered only to the application pod residing on that specific node. If there is no application pod on that specific node, the incoming traffic is dropped.
 
 The `externalTrafficPolicy: Local` setting might cause health checks on your load balancer worker nodes to fail. Usually, this outcome is the expected behavior and does not necessarily indicate a problem, as traffic is intentionally dropped if the load balancer tries to connect to any node that does not have an application pod. For more information, see [Why are VPC load balancer health checks failing on my worker nodes?](/docs/openshift?topic=openshift-vpc-lb-healthcheck-fail).
 {: note}
@@ -1032,7 +1032,7 @@ For more control over your VPC load balancer health checks, you can use optional
 
 
 `service.kubernetes.io/ibm-load-balancer-cloud-provider-vpc-health-check-protocol`
-:  **Optional**. The protocol type to use for the custom health checks. Choose either `http`, `https`, or `tcp`. This annotation overrides the TCP or HTTP configuration set with the `externalTrafficPolicy` annotation. However, if `externalTrafficPolicy` is set to `Local`, the incoming traffic rules still apply.
+:  **Optional**: This annotation sets the health check protocol on the VPC load balancer resource associated with the Kubernetes load balancer service. Normally, the VPC LB health check protocol is determined by the value of the `externalTrafficPolicy` setting in the Kubernetes load balancer service specification. This annotation overrides that logic. This annotation does **not** alter how Kubernetes, and kube-proxy in particular, behaves in regards to the various settings of `externalTrafficPolicy`.
 
 `service.kubernetes.io/ibm-load-balancer-cloud-provider-vpc-health-check-port`
 :  **Optional**. The TCP port that is used for the health checks. This annotation applies only if `ibm-load-balancer-cloud-provider-vpc-health-check-protocol` is also specified. 

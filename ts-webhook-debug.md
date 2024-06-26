@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2022, 2024
-lastupdated: "2024-06-06"
+lastupdated: "2024-06-26"
 
 
 keywords: kubernetes, help, network, connectivity, webhooks
@@ -24,7 +24,7 @@ content-type: troubleshoot
 {: support}
 
 When running oc commands, you see error messages similar to the following examples.
-{: tsSymptoms}
+
 
 ```sh
 Error from server (InternalError): error when creating "testjob.yaml": Internal error occurred: failed calling webhook "mywebhook.test.io": Post https://admission-webhook.default.svc:443/validate?timeout=30s: dial tcp 172.21.189.228:443: connect: connection timed out
@@ -37,6 +37,7 @@ error creating namespace "test": Internal error occurred: admission plugin "Muta
 {: pre}
 
 Failing webhooks might also cause problems similar to the following issues.
+{: tsSymptoms}
 
 - You can't create or modify pods, secrets, or namespaces.
 - You can't add worker nodes to a cluster or create a secret that holds the LUKS encryption key.

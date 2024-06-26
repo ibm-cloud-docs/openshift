@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2024
-lastupdated: "2024-06-21"
+lastupdated: "2024-06-26"
 
 
 keywords: file, add-on, changelog, openshift
@@ -39,6 +39,8 @@ ibmcloud oc cluster addon versions
 {: pre}
 
 To view a list of add-ons and the supported cluster versions, see the [Supported cluster add-ons table](/docs/openshift?topic=openshift-supported-cluster-addon-versions).
+
+
 
 ## Version 1.2
 {: #012_is_file}

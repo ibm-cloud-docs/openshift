@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2024
-lastupdated: "2024-05-10"
+lastupdated: "2024-06-26"
 
 
 keywords: odf, openshift data foundation add-on, change log
@@ -37,6 +37,16 @@ ibmcloud oc cluster addon versions --addon openshift-data-foundation
 ## Version 4.15
 {: #4.15_odf}
 
+### Version 4.15.3, released 24 June 2024
+{: #4.15.3_odf}
+
+- Resolves [CVE-2023-45288](https://nvd.nist.gov/vuln/detail/CVE-2023-45288){: external}
+
+### Version 4.15.2, released 5 June 2024
+{: #4.15.2_odf}
+
+- Updates `golang` to `1.21.10`.
+
 ### Version 4.15.0, released 10 May 2024
 {: #4.15.0_odf}
 
@@ -45,6 +55,28 @@ ibmcloud oc cluster addon versions --addon openshift-data-foundation
 
 ## Version 4.14
 {: #4.14_odf}
+
+### Version 4.14.14, released 24 June 2024
+{: #4.14.14_odf}
+
+- Resolves [CVE-2023-45288](https://nvd.nist.gov/vuln/detail/CVE-2023-45288){: external}
+
+### Version 4.14.13, released 5 June 2024
+{: #4.14.13_odf}
+
+- Updates `golang` to `1.21.10`.
+
+### Version 4.14.11, released 19 April 2024
+{: #4.14.11_odf}
+
+- Updates `golang` to `1.21.9`.
+- Adds a node watcher.
+
+
+### Version 4.14.10, released 08 April 2024
+{: #4.14.10_odf}
+
+- Fixes a memory leak in the configmap watcher.
 
 ### Version 4.14.9, released 26 March 2024
 {: #4.14.9_odf}
@@ -79,6 +111,23 @@ ibmcloud oc cluster addon versions --addon openshift-data-foundation
 
 ## Version 4.13
 {: #4.13_odf}
+
+### Version 4.13.17, released 5 June 2024
+{: #4.13.17_odf}
+
+- Updates `golang` to `1.21.10`.
+
+### Version 4.13.16, released 19 April 2024
+{: #4.13.16_odf}
+
+- Updates `golang` to `1.21.9`.
+- Adds a node watcher.
+
+
+### Version 4.13.15, released 08 March 2024
+{: #4.13.15_odf}
+
+- Fixes a memory leak in the configmap watcher.
 
 ### Version 4.13.14, released 14 March 2024
 {: #4.13.14_odf}
@@ -139,6 +188,17 @@ ibmcloud oc cluster addon versions --addon openshift-data-foundation
 
 ## Version 4.12
 {: #4.12_odf}
+
+### Version 4.12.19, released 5 June 2024
+{: #4.12.19_odf}
+
+- Updates `golang` to `1.21.10`.
+
+### Version 4.12.19, released 19 April 2024
+{: #4.12.19_odf}
+
+- Updates `golang` to `1.21.9`.
+- Adds a node watcher.
 
 
 ### Version 4.12.17, released 04 March 2024

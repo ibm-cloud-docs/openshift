@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2022, 2024
-lastupdated: "2024-06-21"
+lastupdated: "2024-06-26"
 
 keywords: kubernetes, openshift
 
@@ -601,6 +601,9 @@ Create your own customized storage class with the preferred settings for your {{
 {: #storage-file-vpc-vni-setup}
 
 The default behavior for {{site.data.keyword.filestorage_vpc_short}} cluster add-on is that pods on any node can access file shares. You can also apply more granular control over how pods access your file shares. For example, you might limit file share access to only pods on a specific node, in a specific zone, on a specific worker pool. Review the following scenarios for how you can configure pod access to your file shares.
+
+When a PVC is created, it creates one file share target per PVC and one VNI IP is reserved on that respective subnet in the zone. This means the max number of PVCs for VPC file storage depends on the available IP addresses on that subnet.
+{: note}
 
 If you use the following VNI features to limit pod access to your file shares, your app might not be highly available.
 

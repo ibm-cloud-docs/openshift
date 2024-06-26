@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2023, 2024
-lastupdated: "2024-06-21"
+lastupdated: "2024-06-26"
 
 
 keywords: kubernetes, openshift
@@ -94,11 +94,34 @@ The {{site.data.keyword.filestorage_vpc_short}} cluster add-on is available in B
     ```
     {: screen}
 
+## Disabling the add-on
+{: #storage-file-vpc-disable}
+
+Disabling the `vpc-file-csi-driver` removes the encryption in-transit packages from your worker nodes.
+{: note}
+
+1. Run the following command to disable the add-on.
+
+    ```sh
+    ibmcloud oc cluster addon disable --addon vpc-file-csi-driver --cluster CLUSTER
+    ```
+    {: pre}
+
+1. Verify the pods have been removed.
+
+    ```sh
+    oc get pods -n kube-system  | grep file
+    ```
+    {: pre}
+
 
 
 
 ## Understanding your storage removal options
-{: #vpc_storage_delete_options_file}
+{: #vpc-storage-delete-options-file}
+
+Tagging was not supported in version 1.2. This impacts the removal of file shares when a cluster is deleted with the `--force-delete-storage` option. Make sure you clean up all PVCs that were created with version 1.2 of the add-on before deleting your cluster.
+{: note}
 
 Removing persistent storage from your {{site.data.keyword.cloud_notm}} account varies depending on how you provisioned the storage and what components you already removed.
 {: shortdesc}
@@ -231,10 +254,17 @@ To clean up persistent data:
     {: pre}
     
 
+1. List your shares.
 
-1. List your file shares and filter by the cluster ID.
     ```sh
-    ibmcloud is shares | grep CLUSTER-ID
+    ibmcloud is shares
+    ```
+    {: pre}
+
+
+1. List each file share and find the associated cluster ID.
+    ```sh
+    ibmcloud is share SHARE | grep CLUSTER-ID
     ```
     {: pre}
 
@@ -244,5 +274,6 @@ To clean up persistent data:
     ibmcloud is share-delete (SHARE1 SHARE2 ...)
     ```
     {: pre}
+
 
 
