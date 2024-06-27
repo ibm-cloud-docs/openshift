@@ -2,7 +2,7 @@
 
 copyright:
   years: 2023, 2024
-lastupdated: "2024-06-20"
+lastupdated: "2024-06-26"
 
 
 keywords: kubernetes, openshift
@@ -200,14 +200,13 @@ ibmcloud oc ingress domain create --cluster CLUSTER [--crn CRN] [--is-default] [
 `--domain-zone ZONE`
 :    Optional. The Domain ID for your {{site.data.keyword.cis_full_notm}} instance. This is a GUID value.
 
-
-### Adding DNS credentials for an external provider
-{: #ingress-domains-ext-cred}
+## Adding credentials and setting up domains from other external providers
+{: #ingress-domain-external}
 {: cli}
 
-To use a domain that is registered with an external provider such as Akamai or Cloudflare, you must add the external provider credentials to your cluster. {{site.data.keyword.openshiftlong_notm}} uses these credentials to provision or access a domain from the external provider on your behalf. You can only add one set of credentials to your cluster. 
+To use a domain that is registered with an external provider such as Akamai or Cloudflare, you must add the external provider credentials to your cluster. {{site.data.keyword.openshiftlong_notm}} uses these credentials to provision or access a domain from the external provider on your behalf. You can only add one set of credentials to your cluster. Different providers might require different credentials, such as access tokens or secrets. {{site.data.keyword.openshiftlong_notm}} does not provide the credentials; you must acquire them from the external provider.
 
-Different providers might require different credentials, such as access tokens or secrets. {{site.data.keyword.openshiftlong_notm}} does not provide the credentials; you must acquire them from the external provider.
+After you add external credentials to your cluster, you can [add or create domains](#ingress-domains-ext-create) that are registered with your external account. 
 
 ### Adding Akamai credentials
 {: #ingress-domains-ext-cred-ak}

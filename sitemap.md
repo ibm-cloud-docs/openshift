@@ -4593,7 +4593,7 @@ subcollection: openshift
 
     * [Create a domain](/docs/openshift?topic=openshift-ingress-domains&interface=cli#ingress-domain-cis-create)
 
-    * [Adding DNS credentials for an external provider](/docs/openshift?topic=openshift-ingress-domains&interface=cli#ingress-domains-ext-cred)
+* [Adding credentials and setting up domains from other external providers](/docs/openshift?topic=openshift-ingress-domains&interface=cli#ingress-domain-external)
 
     * [Adding Akamai credentials](/docs/openshift?topic=openshift-ingress-domains&interface=cli#ingress-domains-ext-cred-ak)
 
