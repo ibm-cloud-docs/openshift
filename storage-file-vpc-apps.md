@@ -64,7 +64,7 @@ Create a persistent volume claim (PVC) to dynamically provision {{site.data.keyw
 1. [Access your {{site.data.keyword.redhat_openshift_notm}} cluster](/docs/openshift?topic=openshift-access_cluster).
 
 1. Review the pre-installed storage classes by running the following command. For more information, see the [storage class reference](/docs/openshift?topic=openshift-storage-file-vpc-sc-ref).
-    ```shell
+    ```sh
     oc get sc | grep vpc-file
     ```
     {: pre}
@@ -313,12 +313,13 @@ Create a persistent volume claim (PVC) to statically provision {{site.data.keywo
     {: pre}
 
     Example command.
+
     ```sh
     ibmcloud is share-mount-target  r134-bad98878-1f63-45d2-a3fd-60447094c2e6 r134-aa2aabb8-f616-47be-886b-99220852b728
     ```
     {: pre}
 
-    Example output
+    Example output.
 
     ```sh
     ID                          r134-aa2aabb8-f616-47be-886b-99220852b728   
@@ -338,7 +339,8 @@ Create a persistent volume claim (PVC) to statically provision {{site.data.keywo
     ```
     {: screen}
 
-1. Create a PV configuration file called `static-file-share.yaml` that references your file share. 
+1. Create a PV configuration file called `static-file-share.yaml` that references your file share.
+
     ```yaml
     apiVersion: v1
     kind: PersistentVolume
@@ -362,6 +364,7 @@ Create a persistent volume claim (PVC) to statically provision {{site.data.keywo
     {: codeblock}
 
 1. Create the PV.
+
     ```sh
     oc apply -f static-file-share.yaml
     ```
@@ -384,12 +387,14 @@ Create a persistent volume claim (PVC) to statically provision {{site.data.keywo
     {: codeblock}
 
 1. Create the PVC to bind your PV.
+
     ```sh
     oc apply -f pvc-static.yaml
     ```
     {: pre}
 
-1. Create a deployment file name `testpod.yaml` to attach your fileshare to the desired application pod. 
+1. Create a deployment file name `testpod.yaml` to attach your fileshare to the desired application pod.
+
     ```yaml
     apiVersion: apps/v1
     kind: Deployment
@@ -408,8 +413,8 @@ Create a persistent volume claim (PVC) to statically provision {{site.data.keywo
             app: testpod
         spec:
           containers:
-          - image: IMAGE
-            name: CONTAINER-NAME
+          - image: IMAGE # The name of the container image that you want to use.
+            name: CONTAINER-NAME # The name of the container that you want to deploy to your cluster.
             volumeMounts:
             - mountPath: /myvol  
               name: pvc-name 
@@ -419,12 +424,6 @@ Create a persistent volume claim (PVC) to statically provision {{site.data.keywo
               claimName: pvc-static # The name of the PVC that you created earlier
     ```
     {: codeblock}
-
-    `spec.containers.image`
-    :   The name of the container image that you want to use. To list available images in your {{site.data.keyword.registrylong_notm}} account, run `ibmcloud cr image-list`.
-    
-    `spec.containers.name`
-    :   The name of the container that you want to deploy to your cluster.
     
     `spec.containers.volumeMounts.mountPath`
     :   Enter the absolute path of the directory to where the volume is mounted inside the container. Data that is written to the mount path is stored under the `root` directory in your physical {{site.data.keyword.filestorage_vpc_short}} instance. If you want to share a volume between different apps, you can specify [volume sub paths](https://kubernetes.io/docs/concepts/storage/volumes/#using-subpath){: external} for each of your apps.
@@ -440,6 +439,7 @@ Create a persistent volume claim (PVC) to statically provision {{site.data.keywo
     :   Enter the name of the PVC that binds the PV that you want to use.
 
 1. Create the deployment.
+
     ```sh
     oc apply -f testpod.yaml
     ```
@@ -472,7 +472,7 @@ Create your own customized storage class with the preferred settings for your {{
         billingType: "hourly" # hourly or monthly
         encrypted: "false"
         encryptionKey: "" # If encrypted is true, then a user must specify the CRK-CRN.
-        resourceGroup: "" # By default resource group will be used from storage-secrete-store secret, User can override.
+        resourceGroup: "" # Resource group ID. By default, the resource group of the cluster will be used from storage-secrete-store secret.
         isENIEnabled: "true" # VPC File Share VNI feature will be used by all PVCs created with this storage class.
         securityGroupIDs: "" # By default cluster security group i.e kube-<clusterID> will be used. User can provide their own comma separated SGs.
         subnetID: "" # User can provide subnetID in which the VNI will be created. Zone and region are mandatory for this. If not provided CSI driver will use the subnetID available in the cluster's VPC zone.
@@ -511,10 +511,9 @@ Create your own customized storage class with the preferred settings for your {{
     {: screen}
 
 
-
-
 ## Deploying an app that runs as non-root
 {: #vpc-file-non-root-app}
+
 
 1. Create your own storage class and specify the group ID or user ID that you want to use for your app.
 
@@ -546,7 +545,6 @@ Create your own customized storage class with the preferred settings for your {{
     {: codeblock}
 
 
-
 1. Save the following YAML to a file called `my-pvc.yaml`.
 
     ```yaml
@@ -563,8 +561,6 @@ Create your own customized storage class with the preferred settings for your {{
       storageClassName: ibmc-vpc-file-custom-sc
     ```
     {: codeblock}
-
-
 
 1. Create the PVC.
 
@@ -598,14 +594,16 @@ Create your own customized storage class with the preferred settings for your {{
           allowPrivilegeEscalation: false
         persistentVolumeClaim:
           claimName: my-pvc
-    ``` 
+    ```
     {: codeblock}
 
 1. Verify the pod is running.
+
     ```sh
     oc get pods
     ```
     {: pre}
+
 
 
 
@@ -627,7 +625,7 @@ Complete the following steps to set up encryption-in-transit (EIT) for file shar
 1. Edit the `addon-vpc-file-csi-driver-configmap`.
 
     ```shell
-    kubectl edit addon-vpc-file-csi-driver-configmap -n kube-system
+    oc edit addon-vpc-file-csi-driver-configmap -n kube-system
     ```
     {: pre}
 
@@ -698,8 +696,7 @@ Complete the following steps to set up encryption-in-transit (EIT) for file shar
 
 1. Select a pre-installed storage class that supports EIT or create your own storage class.
 
-    * Create a PVC by using either the `ibmc-vpc-file-eit` storage class. 
-    
+    * Create a PVC by using either the `ibmc-vpc-file-eit` storage class.
     * Create your own storage class and set the `isEITenabled` parameter to `true`.
 
 1. Create a PVC that references the storage class you selected, then deploy an app that uses your PVC.
@@ -717,7 +714,7 @@ When a PVC is created, it creates one file share target per PVC and one VNI IP i
 
 If you use the following VNI features to limit pod access to your file shares, your app might not be highly available.
 
-### Prerequisites
+### Before you begin
 {: #storage-file-vpc-vni-prereqs}
 
 To limit file share access by node, zone, or resource group, you must first create a custom VPC security group.
@@ -787,7 +784,7 @@ To limit file share access by node, zone, or resource group, you must first crea
 1. Add the following rule to the custom security group you created earlier.
 
     ```sh
-    ibmcloud is sg-rulec CUSTOM-SG inbound tcp --port-min 111 --port-max 2049 --remote WORKER-IP
+    ibmcloud is sg-rulec CUSTOM-SG inbound tcp --port-min 111 --port-max 2049 --remote 10.240.0.10 # VNI IP
     ```
     {: pre}
 
@@ -814,7 +811,7 @@ To limit file share access by node, zone, or resource group, you must first crea
 
 1. Add the following rule to the `kube-clusterID` security group. Specify the IP address of the virtual network interface (VNI).
     ```sh
-    ibmcloud is sg-rulec kube-<cluster-ID> outbound tcp --port-min 111 --port-max 2049 --remote VNI-IP
+    ibmcloud is sg-rulec kube-<cluster-ID> outbound tcp --port-min 111 --port-max 2049 --remote 10.240.0.10 # VNI IP
     ```
     {: pre}
 
@@ -838,7 +835,7 @@ To limit file share access by node, zone, or resource group, you must first crea
 1. Add the following rule to the `kube-clusterID` security group. Specify the IP address of the virtual network interface (VNI) as the remote or source.
 
     ```sh
-    ibmcloud is sg-rulec kube-<cluster-ID> outbound tcp --port-min 111 --port-max 2049 --remote VNI-IP
+    ibmcloud is sg-rulec kube-<cluster-ID> outbound tcp --port-min 111 --port-max 2049 --remote 10.240.0.10 # VNI IP
     ```
     {: pre}
 

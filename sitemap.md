@@ -4956,7 +4956,7 @@ subcollection: openshift
 
 * [Limiting file share access by worker pool, zone, or worker node](/docs/openshift?topic=openshift-storage-file-vpc-apps#storage-file-vpc-vni-setup)
 
-    * [Prerequisites](/docs/openshift?topic=openshift-storage-file-vpc-apps#storage-file-vpc-vni-prereqs)
+    * [Before you begin](/docs/openshift?topic=openshift-storage-file-vpc-apps#storage-file-vpc-vni-prereqs)
 
     * [Limiting file share access to pods on one worker node](/docs/openshift?topic=openshift-storage-file-vpc-apps#storage-file-vpc-vni-one-worker)
 
