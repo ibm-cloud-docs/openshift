@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2022, 2024
-lastupdated: "2024-06-26"
+lastupdated: "2024-06-28"
 
 keywords: kubernetes, openshift
 
@@ -45,7 +45,7 @@ If your cluster was initially created at version 4.11 or earlier, run the follow
 
 1. Get the ID of the `kube-<clusterID>` security group.
     ```sh
-    ibmcloud is sg kube-<cluster-id>  | grep ID
+    ibmcloud oc security-group ls --cluster CLUSTER
     ```
     {: pre}
 
@@ -196,7 +196,7 @@ Create a persistent volume claim (PVC) to dynamically provision {{site.data.keyw
 1. **Optional**: After your pod is running, try [expanding your storage volume](#storage-file-vpc-expansion).
 
 
-## Expanding a mounted volume
+## Setting up volume expansion
 {: #storage-file-vpc-expansion}
 
 To provision volumes that support expansion, you must use storage class that has `allowVolumeExpansion` set to `true`.
@@ -204,7 +204,20 @@ To provision volumes that support expansion, you must use storage class that has
 The {{site.data.keyword.filestorage_vpc_short}} cluster add-on supports expansion in both online and offline modes. However, expansion is only possible within the given [size and IOPs range of the {{site.data.keyword.filestorage_vpc_short}} profile](/docs/vpc?topic=vpc-file-storage-profiles&interface=ui#dp2-profile).
 {: note}
 
-1. Begin by deploying the [quick start example PVC and Deployment](#vpc-add-file-dynamic). 
+New storage classes were introduced with version 2.0. Volume expansion does not work for shares that use the storage classes from earlier versions of the add-on.
+{: note}
+
+### Before you begin
+{: #before-vpc-file-expansion}
+
+* To use volume expansion, make sure you [update your add-on to at least version 2.0](/docs/openshift?topic=openshift-storage-file-vpc-managing).
+
+* Make sure your app is using one of the [latest storage classes](/docs/openshift?topic=openshift-storage-file-vpc-sc-ref).
+
+* If you don't have a running app, begin by deploying the [quick start example PVC and Deployment](#vpc-add-file-dynamic). 
+
+### Expanding a mounted volume
+{: #vpc-file-volume-expansion}
 
 1. After your PVC is mounted by an app pod, you can expand your volume by editing the value of the `spec.resources.requests.storage` field in your PVC. To expand your volume, edit your PVC and increase the value in the `spec.resources.requests.storage` field.
 
@@ -569,8 +582,8 @@ Create your own customized storage class with the preferred settings for your {{
       name: security-context-demo
     spec:
       securityContext:
-        runAsUser: 1000
-        runAsGroup: 3000
+        runAsUser: 3000
+        runAsGroup: 1000
       volumes:
       - name: sec-ctx-vol
         emptyDir: {}
@@ -593,6 +606,103 @@ Create your own customized storage class with the preferred settings for your {{
     oc get pods
     ```
     {: pre}
+
+
+
+
+
+## Setting up encryption in-transit (EIT)
+{: #storage-file-vpc-eit}
+
+Review the following information about EIT.
+- By default, file shares are [encrypted at rest](/docs/vpc?topic=vpc-file-storage-vpc-about&interface=ui#FS-encryption) with IBM-managed encryption.
+- If you choose to use encryption in-transit, you need to balance your requirements between performance and enhanced security. Encrypting data in-transit can have performance impacts due to the processing that is needed to encrypt and decrypt the data at the endpoints. 
+- EIT is not available for Secure by Default clusters and requires you the disable outbound traffic protection in clusters 4.15 and later.
+- For more information about encryption in-transit, see [VPC Encryption in Transit](https://cloud.ibm.com/docs/vpc?topic=vpc-file-storage-vpc-about&interface=ui#fs-eit).
+
+
+Complete the following steps to set up encryption-in-transit (EIT) for file shares in your {{site.data.keyword.openshiftlong_notm}} cluster. Enabling EIT installs the required packages on your worker nodes.
+
+1. Make a note of the worker pools in your cluster where you want to enable EIT.
+1. Edit the `addon-vpc-file-csi-driver-configmap`.
+
+    ```shell
+    kubectl edit addon-vpc-file-csi-driver-configmap -n kube-system
+    ```
+    {: pre}
+
+1. In the configmap, set `ENABLE_EIT:true` and add worker pools where you want to enable EIT to the `WORKER_POOLS_WITH_EIT`. For example: `"wp1, wp2"`.
+
+    ```yaml
+    apiVersion: v1
+    data:
+      EIT_ENABLED_WORKER_POOLS: "wp1,wp2" # Specify the worker pools where you want to enable EIT. If this field is blank, EIT is not enabled on any worker pools.
+      ENABLE_EIT: "true"
+      PACKAGE_DEPLOYER_VERSION: v1.0.0
+    kind: ConfigMap
+    metadata:
+      annotations:
+        version: v2.0.1
+      creationTimestamp: "2024-06-18T09:45:48Z"
+      labels:
+        app.kubernetes.io/name: ibm-vpc-file-csi-driver
+      name: addon-vpc-file-csi-driver-configmap
+      namespace: kube-system
+      ownerReferences:
+      - apiVersion: csi.drivers.ibmcloud.io/v1
+        blockOwnerDeletion: true
+        controller: true
+        kind: VPCFileCSIDriver
+        name: ibm-vpc-file-csi-driver
+        uid: d3c8bbcd-24fa-4203-9352-4ab7aa72a055
+      resourceVersion: "1251777"
+      uid: 5c9d6679-4135-458b-800d-217b34d27c75
+    ```
+    {: screen}
+
+1. After enabling EIT, save and close the config map.
+
+1. To verify EIT is enabled, review the events of the `file-csi-driver-status` config map.
+
+    ```sh
+    oc describe cm file-csi-driver-status -n kube-system
+    ```
+    {: pre}
+
+    Example output.
+
+    ```yaml
+    apiVersion: v1
+    data:
+      EIT_ENABLED_WORKER_NODES: |
+        default:
+        - 10.240.0.10
+        - 10.240.0.8
+      PACKAGE_DEPLOYER_VERSION: v1.0.0
+      events: |
+        - event: EnableVPCFileCSIDriver
+          description: 'VPC File CSI Driver enable successful, DriverVersion: v2.0.3'
+          timestamp: "2024-06-13 09:17:07"
+        - event: EnableEITRequest
+          description: 'Request received to enableEIT, workerPools: , check the file-csi-driver-status
+            configmap for eit installation status on each node of each workerpool.'
+          timestamp: "2024-06-13 09:17:31"
+        - event: 'Enabling EIT on host: 10.240.0.10'
+          description: 'Package installation successful on host: 10.240.0.10, workerpool: wp1'
+          timestamp: "2024-06-13 09:17:48"
+        - event: 'Enabling EIT on host: 10.240.0.8'
+          description: 'Package installation successful on host: 10.240.0.8, workerpool: wp2'
+          timestamp: "2024-06-13 09:17:48"
+    ```
+    {: screen}
+
+1. Select a pre-installed storage class that supports EIT or create your own storage class.
+
+    * Create a PVC by using either the `ibmc-vpc-file-eit` storage class. 
+    
+    * Create your own storage class and set the `isEITenabled` parameter to `true`.
+
+1. Create a PVC that references the storage class you selected, then deploy an app that uses your PVC.
 
 
 
@@ -717,7 +827,7 @@ To limit file share access by node, zone, or resource group, you must first crea
 
 1. Make sure you have [completed the prerequisites](#storage-file-vpc-vni-prereqs).
 
-1. Create inbound rules for each subnet range
+1. Create inbound rules for each worker pool subnet range.
 
     ```sh
     ibmcloud is sg-rulec CUSTOM-SG inbound tcp --port-min 111 --port-max 2049 --remote 10.240.0.0/24 # zone 1 subnet cidr range

@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2024
-lastupdated: "2024-06-26"
+lastupdated: "2024-06-28"
 
 
 keywords: file, add-on, changelog, openshift
@@ -39,6 +39,21 @@ ibmcloud oc cluster addon versions
 {: pre}
 
 To view a list of add-ons and the supported cluster versions, see the [Supported cluster add-ons table](/docs/openshift?topic=openshift-supported-cluster-addon-versions).
+
+
+
+## Version 2.0
+{: #020_is_file}
+
+### Change log for version 2.0.4_232, released 1 July 2024
+
+- Updates golang to `1.21.11-community`.
+- Adds support for encryption in-transit (EIT).
+- Adds new storage classes. If you are using storage class from earlier versions of of the add-on, move your configuration to the newer storage classes.
+- Adds the `file-csi-driver-status` in `kube-system` namespace. You can view events in this configmap by running `oc get cm file-csi-driver-status -n kube-system`.
+- Adds the following PV object details: `FileShareID`, `FileShareTargetID`, `ENISubnetID` and `ENISecurityGroupIDs`.
+- Fixes an issue when the file share is created but target creation fails, the CSI Driver now retries creating mount target.
+- Improves error messages.
 
 
 

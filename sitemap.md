@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2024
-lastupdated: "2024-06-26"
+lastupdated: "2024-06-28"
 
 
 keywords: openshift
@@ -4678,6 +4678,15 @@ subcollection: openshift
 * [Exposing apps with routes and Link endpoints for traffic from {{site.data.keyword.cloud_notm}}](/docs/openshift?topic=openshift-sat-expose-apps#sat-expose-cloud)
 
 
+## Enabling the IBM Storage Operator cluster add-on
+{: #sitemap_enabling_the_ibm_storage_operator_cluster_add-on}
+
+
+[Enabling the IBM Storage Operator cluster add-on](/docs/openshift?topic=openshift-storage-operator#storage-operator)
+
+* [Disabling the `ibm-storage-operator` add-on](/docs/openshift?topic=openshift-storage-operator#storage-operator-disable)
+
+
 ## Setting up {{site.data.keyword.blockstorageshort}}
 {: #sitemap_setting_up_}
 
@@ -4929,13 +4938,19 @@ subcollection: openshift
 
 * [Quick start for {{site.data.keyword.filestorage_vpc_short}}](/docs/openshift?topic=openshift-storage-file-vpc-apps#vpc-add-file-dynamic)
 
-* [Expanding a mounted volume](/docs/openshift?topic=openshift-storage-file-vpc-apps#storage-file-vpc-expansion)
+* [Setting up volume expansion](/docs/openshift?topic=openshift-storage-file-vpc-apps#storage-file-vpc-expansion)
+
+    * [Before you begin](/docs/openshift?topic=openshift-storage-file-vpc-apps#before-vpc-file-expansion)
+
+    * [Expanding a mounted volume](/docs/openshift?topic=openshift-storage-file-vpc-apps#vpc-file-volume-expansion)
 
 * [Attaching existing file storage to an app](/docs/openshift?topic=openshift-storage-file-vpc-apps#vpc-add-file-static)
 
 * [Creating your own storage class](/docs/openshift?topic=openshift-storage-file-vpc-apps#storage-file-vpc-custom-sc)
 
 * [Deploying an app that runs as non-root](/docs/openshift?topic=openshift-storage-file-vpc-apps#vpc-file-non-root-app)
+
+* [Setting up encryption in-transit (EIT)](/docs/openshift?topic=openshift-storage-file-vpc-apps#storage-file-vpc-eit)
 
 * [Limiting file share access by worker pool, zone, or worker node](/docs/openshift?topic=openshift-storage-file-vpc-apps#storage-file-vpc-vni-setup)
 
@@ -4952,6 +4967,8 @@ subcollection: openshift
 [Managing {{site.data.keyword.filestorage_vpc_full_notm}}](/docs/openshift?topic=openshift-storage-file-vpc-managing#storage-file-vpc-managing)
 
 * [Updating the {{site.data.keyword.filestorage_vpc_short}} cluster add-on](/docs/openshift?topic=openshift-storage-file-vpc-managing#storage-file-vpc-update)
+
+* [Updating encryption in-transit (EIT) packages](/docs/openshift?topic=openshift-storage-file-vpc-managing#storage-file-vpc-eit-packages)
 
 * [Disabling the add-on](/docs/openshift?topic=openshift-storage-file-vpc-managing#storage-file-vpc-disable)
 
@@ -7426,6 +7443,10 @@ subcollection: openshift
 
 [{{site.data.keyword.filestorage_vpc_full_notm}} cluster add-on change log](/docs/openshift?topic=openshift-versions-vpc-file-addon#versions-vpc-file-addon)
 
+* [Version 2.0](/docs/openshift?topic=openshift-versions-vpc-file-addon#020_is_file)
+
+    * [Change log for version 2.0.4_232, released 1 July 2024](/docs/openshift?topic=openshift-versions-vpc-file-addon#change-log-for-version-204_232-released-1-july-2024)
+
 * [Version 1.2](/docs/openshift?topic=openshift-versions-vpc-file-addon#012_is_file)
 
     * [Change log for version 1.2.9_245, released 21 June 2024](/docs/openshift?topic=openshift-versions-vpc-file-addon#1.2.9_245_is_file_relnote)
@@ -8009,6 +8030,12 @@ subcollection: openshift
     * [1.0.0_461, released on 14 April 2021](/docs/openshift?topic=openshift-ibm-cloud-image-key-synchronizer-change-log#1_0_0461)
 
     * [1.0.0_438, released on 30 March 2021](/docs/openshift?topic=openshift-ibm-cloud-image-key-synchronizer-change-log#1_0_0438)
+
+[IBM storage operator add-on change log](/docs/openshift?topic=openshift-versions-ibm-storage-operator#versions-ibm-storage-operator)
+
+* [Version 1.0.0](/docs/openshift?topic=openshift-versions-ibm-storage-operator#ibm-storage-operator-1.0.0)
+
+    * [1.0.0_2186, released 29 May 2024](/docs/openshift?topic=openshift-versions-ibm-storage-operator#ibm-storage-operator-1.0.0-initial)
 
 
 ## Archived version history
@@ -10575,6 +10602,12 @@ subcollection: openshift
 * [Verifying the read and write permissions for the non-root user](/docs/openshift?topic=openshift-cs_storage_nonroot#verify-rw-permissions)
 
 [Why are the file systems for worker nodes changed to read-only?](/docs/openshift?topic=openshift-readonly_nodes#readonly_nodes)
+
+[Why do I see a `MountingTargetFailed` error for {{site.data.keyword.filestorage_vpc_short}}?](/docs/openshift?topic=openshift-ts-storage-vpc-file-eit-mount-failed#ts-storage-vpc-file-eit-mount-failed)
+
+[Why do I see an `UnresponsiveMountHelperContainerUtility` error for {{site.data.keyword.filestorage_vpc_short}}?](/docs/openshift?topic=openshift-ts-storage-vpc-file-eit-unresponsive#ts-storage-vpc-file-eit-unresponsive)
+
+[Why do I see a `MetadataServiceNotEnabled` error for {{site.data.keyword.filestorage_vpc_short}}?](/docs/openshift?topic=openshift-ts-storage-vpc-file-eit-access#ts-storage-vpc-file-eit-access)
 
 [Storage: Feedback, questions, and support](/docs/openshift?topic=openshift-getting_help_storage#getting_help_storage)
 

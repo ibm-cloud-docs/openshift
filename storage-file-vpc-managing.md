@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2023, 2024
-lastupdated: "2024-06-26"
+lastupdated: "2024-06-28"
 
 
 keywords: kubernetes, openshift
@@ -26,6 +26,9 @@ When you set up persistent storage in your cluster, you have three main componen
 The {{site.data.keyword.filestorage_vpc_short}} cluster add-on is available in Beta. 
 {: beta}
 
+
+New storage classes were introduced with version 2.0 You can no longer provision new file shares that use the older storage classes. However, existing volumes (PVC/PVs) that use the older storage classes are not impacted and continue to function. For more information, see the [storage class reference](https://cloud.ibm.com/docs/openshift?topic=openshift-storage-file-vpc-sc-ref).
+{: note}
 
 
 ## Updating the {{site.data.keyword.filestorage_vpc_short}} cluster add-on
@@ -93,6 +96,65 @@ The {{site.data.keyword.filestorage_vpc_short}} cluster add-on is available in B
     ibm-vpc-file-csi-node-n7jbx                   4/4     Running   0             14m
     ```
     {: screen}
+
+
+
+## Updating encryption in-transit (EIT) packages
+{: #storage-file-vpc-eit-packages}
+
+The `PACKAGE_DEPLOYER_VERSION` in the `addon-vpc-file-csi-driver-configmap` indicates the image version of the EIT packages.
+
+When a new image is available, edit the add-on configmap and specify the new image version, to update the packages on your worker nodes.
+
+1. Edit the `addon-vpc-file-csi-driver-configmap` configmap and specify the new image version.
+
+    ```sh
+    oc edit cm addon-vpc-file-csi-driver-configmap -n kube-system
+    ```
+    {: pre}
+
+    Example output.
+
+    ```yaml
+    PACKAGE_DEPLOYER_VERSION: v1.0.0
+    ```
+    {: screen}
+
+
+
+1. Follow the status of the update by reviewing the events in the `file-csi-driver-status` config map
+
+    ```sh
+    oc get cm file-csi-driver-status -n kube-system -o yaml
+    ```
+    {: pre}
+
+    ```sh
+      events: |
+    - event: EnableVPCFileCSIDriver
+      description: 'VPC File CSI Driver enable successful, DriverVersion: v2.0.3'
+      timestamp: "2024-06-13 09:17:07"
+    - event: EnableEITRequest
+      description: 'Request received to enableEIT, workerPools: , check the file-csi-driver-status
+        configmap for eit installation status on each node of each workerpool.'
+      timestamp: "2024-06-13 09:17:31"
+    - event: 'Enabling EIT on host: 10.240.0.10'
+      description: 'Package installation successful on host: 10.240.0.10, workerpool:
+        default'
+      timestamp: "2024-06-13 09:17:48"
+    - event: 'Enabling EIT on host: 10.240.0.8'
+      description: 'Package installation successful on host: 10.240.0.8, workerpool: default'
+      timestamp: "2024-06-13 09:17:48"
+    - event: 'Enabling EIT on host: 10.240.0.8'
+      description: 'Package update successful on host: 10.240.0.8, workerpool: default'
+      timestamp: "2024-06-13 09:20:21"
+    - event: 'Enabling EIT on host: 10.240.0.10'
+      description: 'Package update successful on host: 10.240.0.10, workerpool: default'
+      timestamp: "2024-06-13 09:20:21"
+    ```
+    {: screen}
+
+
 
 ## Disabling the add-on
 {: #storage-file-vpc-disable}
