@@ -4394,6 +4394,8 @@ subcollection: openshift
 
     * [Registering a DNS record and TLS certificate](/docs/openshift?topic=openshift-vpc-lbaas#vpc_lb_dns)
 
+    * [Registering a private DNS record for a private VPC ALB](/docs/openshift?topic=openshift-vpc-lbaas#vpc_alb_private_dns)
+
 * [Persistent VPC load balancers](/docs/openshift?topic=openshift-vpc-lbaas#vpc_lb_persist)
 
 * [Moving a VPC load balancer from one cluster to another](/docs/openshift?topic=openshift-vpc-lbaas#vpc_lb_move)
