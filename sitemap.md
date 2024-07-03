@@ -4946,6 +4946,8 @@ subcollection: openshift
 
 * [Quick start for {{site.data.keyword.filestorage_vpc_short}}](/docs/openshift?topic=openshift-storage-file-vpc-apps#vpc-add-file-dynamic)
 
+* [Migrating to a new storage class](/docs/openshift?topic=openshift-storage-file-vpc-apps#storage-file-expansion-migration)
+
 * [Setting up volume expansion](/docs/openshift?topic=openshift-storage-file-vpc-apps#storage-file-vpc-expansion)
 
     * [Before you begin](/docs/openshift?topic=openshift-storage-file-vpc-apps#before-vpc-file-expansion)

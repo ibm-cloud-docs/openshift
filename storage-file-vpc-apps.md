@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2022, 2024
-lastupdated: "2024-06-28"
+lastupdated: "2024-07-03"
 
 keywords: kubernetes, openshift
 
@@ -195,6 +195,111 @@ Create a persistent volume claim (PVC) to dynamically provision {{site.data.keyw
 
 1. **Optional**: After your pod is running, try [expanding your storage volume](#storage-file-vpc-expansion).
 
+## Migrating to a new storage class
+{: #storage-file-expansion-migration}
+
+- New storage classes were added with version 2.0 of the add-on.
+- You can no longer provision new file shares that use the older storage classes.
+- Existing volumes that use the older storage classes continue to function, however you cannot expand the volumes that were created using the older classes.
+- If you need the volume expansion feature, complete the following steps to migrate your apps to a newer storage class.
+- If you don't need the volume expansion feature, you do not need to migrate and your PVCs continue to function as normal.
+- Before migrating, consider backing up your existing apps, PVs, and PVC data by using any backup solution like Portworx backup, Velero, or others.
+
+
+1. Find the PVC you want to migrate and make a note of the both the PVC name and the associated PV name.
+    ```sh
+    oc get pvc
+    ```
+    {: pre}
+
+1. Scale down your app that is using the PVC.
+
+    ```sh
+    oc scale deployment DEPLOYMENT --replicas 0
+    ```
+    {: pre}
+
+2. Edit the PV object that your app is using to change reclaim policy to `Retain` and storage class to `ibmc-vpc-file-min-iops`. 
+
+    ```sh
+    kubectl edit pv PV
+    ```
+    {: pre}
+
+    ```yaml
+    spec:
+      accessModes:
+      - ReadWriteMany
+      capacity:
+        storage: 20Gi
+      claimRef:
+        apiVersion: v1
+        kind: PersistentVolumeClaim
+        name: <pvc-name>
+        namespace: default
+        ...
+      persistentVolumeReclaimPolicy: Retain # Change delete to retain
+      storageClassName: ibmc-vpc-file-min-iops # Enter a new storage class
+      volumeMode: Filesystem
+    ```
+    {: codeblock}
+
+3. Delete the existing PVC object.
+    ```sh
+    kubectl delete pvc PVC
+    ```
+    {: pre}
+
+4. Edit the PV again and remove the `claimRef` section.
+
+    ```sh
+    kubectl edit pv PV
+    ```
+    {: pre}
+
+    ```yaml
+    spec:
+      accessModes:
+      - ReadWriteMany
+      capacity:
+        storage: 20Gi
+      #claimRef:
+        #apiVersion: v1
+        #kind: PersistentVolumeClaim
+        #name: <pvc-name>
+        #namespace: default
+        #resourceVersion: "381270"
+        #uid: 4042f319-1233-4187-8549-8249a840a8dd
+    ```
+    {: codeblock}
+
+5. Create a PVC that has the same name and same size as your previous PVC. This should be done one by one for all affected PVCs.
+
+    ```sh
+    apiVersion: v1
+    kind: PersistentVolumeClaim
+    metadata:
+      name: <pvc-name>
+    spec:
+      accessModes:
+      - ReadWriteMany
+      resources:
+        requests:
+          storage: <size>Gi
+      storageClassName: ibmc-vpc-file-min-iops
+    ```
+    {: pre}
+
+6. Scale up your app which was using the PVC.
+
+    ```sh
+    k scale deployment DEPLOYMENT --replicas x
+    ```
+    {: pre}
+
+7. To continue using volume expansion, see [Setting up volume expansion](#storage-file-vpc-expansion).
+
+
 
 ## Setting up volume expansion
 {: #storage-file-vpc-expansion}
@@ -212,7 +317,7 @@ New storage classes were introduced with version 2.0. Volume expansion does not 
 
 * To use volume expansion, make sure you [update your add-on to at least version 2.0](/docs/openshift?topic=openshift-storage-file-vpc-managing).
 
-* Make sure your app is using one of the [latest storage classes](/docs/openshift?topic=openshift-storage-file-vpc-sc-ref).
+* Make sure your app is using one of the [latest storage classes](/docs/openshift?topic=openshift-storage-file-vpc-sc-ref). For migration steps, see [Migrating to a new storage class](#storage-file-expansion-migration)
 
 * If you don't have a running app, begin by deploying the [quick start example PVC and Deployment](#vpc-add-file-dynamic). 
 
