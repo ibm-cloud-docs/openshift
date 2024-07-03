@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2023, 2024
-lastupdated: "2024-06-28"
+lastupdated: "2024-07-03"
 
 
 keywords: kubernetes, openshift
@@ -27,7 +27,7 @@ The {{site.data.keyword.filestorage_vpc_short}} cluster add-on is available in B
 {: beta}
 
 
-New storage classes were introduced with version 2.0 You can no longer provision new file shares that use the older storage classes. However, existing volumes (PVC/PVs) that use the older storage classes are not impacted and continue to function. For more information, see the [storage class reference](https://cloud.ibm.com/docs/openshift?topic=openshift-storage-file-vpc-sc-ref).
+New storage classes were introduced with version 2.0 You can no longer provision new file shares that use the older storage classes. However, existing volumes (PVC/PVs) that use the older storage classes are not impacted and continue to function. For more information, see the [Migrating to a new storage class](/docs/openshift?topic=openshift-storage-file-vpc-apps#storage-file-expansion-migration).
 {: note}
 
 
