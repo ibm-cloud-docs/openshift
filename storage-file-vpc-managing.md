@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2023, 2024
-lastupdated: "2024-06-26"
+lastupdated: "2024-07-03"
 
 
 keywords: kubernetes, openshift
@@ -26,6 +26,12 @@ When you set up persistent storage in your cluster, you have three main componen
 The {{site.data.keyword.filestorage_vpc_short}} cluster add-on is available in Beta. 
 {: beta}
 
+
+The following limitations apply to the add-on beta.
+
+- It is recommended that your cluster and VPC are part of same resource group. If your cluster and VPC are in separate resource groups, then before you can provision file shares, you must create your own storage class and provide your VPC resource group ID. For more information, see [Creating your own storage class](/docs/openshift?topic=openshift-storage-file-vpc-apps#storage-file-vpc-custom-sc).
+- New security group rules have been introduced in cluster versions 4.11 and later. These rule changes mean that you must sync your security groups before you can use {{site.data.keyword.filestorage_vpc_short}}. For more information, see [Adding {{site.data.keyword.filestorage_vpc_short}} to apps](/docs/containers?topic=containers-storage-file-vpc-apps).
+- New storage classes were added with version 2.0 of the add-on. You can no longer provision new file shares that use the older storage classes. Existing volumes that use the older storage classes continue to function, however you cannot expand the volumes that were created using the older classes. For more information, see the [Migrating to a new storage class](/docs/openshift?topic=openshift-storage-file-vpc-apps#storage-file-expansion-migration).
 
 
 ## Updating the {{site.data.keyword.filestorage_vpc_short}} cluster add-on
@@ -94,6 +100,65 @@ The {{site.data.keyword.filestorage_vpc_short}} cluster add-on is available in B
     ```
     {: screen}
 
+
+
+## Updating encryption in-transit (EIT) packages
+{: #storage-file-vpc-eit-packages}
+
+The `PACKAGE_DEPLOYER_VERSION` in the `addon-vpc-file-csi-driver-configmap` indicates the image version of the EIT packages.
+
+When a new image is available, edit the add-on configmap and specify the new image version, to update the packages on your worker nodes.
+
+1. Edit the `addon-vpc-file-csi-driver-configmap` configmap and specify the new image version.
+
+    ```sh
+    oc edit cm addon-vpc-file-csi-driver-configmap -n kube-system
+    ```
+    {: pre}
+
+    Example output.
+
+    ```yaml
+    PACKAGE_DEPLOYER_VERSION: v1.0.0
+    ```
+    {: screen}
+
+
+
+1. Follow the status of the update by reviewing the events in the `file-csi-driver-status` config map
+
+    ```sh
+    oc get cm file-csi-driver-status -n kube-system -o yaml
+    ```
+    {: pre}
+
+    ```sh
+      events: |
+    - event: EnableVPCFileCSIDriver
+      description: 'VPC File CSI Driver enable successful, DriverVersion: v2.0.3'
+      timestamp: "2024-06-13 09:17:07"
+    - event: EnableEITRequest
+      description: 'Request received to enableEIT, workerPools: , check the file-csi-driver-status
+        configmap for eit installation status on each node of each workerpool.'
+      timestamp: "2024-06-13 09:17:31"
+    - event: 'Enabling EIT on host: 10.240.0.10'
+      description: 'Package installation successful on host: 10.240.0.10, workerpool:
+        default'
+      timestamp: "2024-06-13 09:17:48"
+    - event: 'Enabling EIT on host: 10.240.0.8'
+      description: 'Package installation successful on host: 10.240.0.8, workerpool: default'
+      timestamp: "2024-06-13 09:17:48"
+    - event: 'Enabling EIT on host: 10.240.0.8'
+      description: 'Package update successful on host: 10.240.0.8, workerpool: default'
+      timestamp: "2024-06-13 09:20:21"
+    - event: 'Enabling EIT on host: 10.240.0.10'
+      description: 'Package update successful on host: 10.240.0.10, workerpool: default'
+      timestamp: "2024-06-13 09:20:21"
+    ```
+    {: screen}
+
+
+
 ## Disabling the add-on
 {: #storage-file-vpc-disable}
 
@@ -127,13 +192,10 @@ Removing persistent storage from your {{site.data.keyword.cloud_notm}} account v
 {: shortdesc}
 
 Is my persistent storage deleted when I delete my cluster?
-:   During cluster deletion, you have the option to remove your persistent storage. However, depending on how your storage was provisioned, the removal of your storage might not include all storage components.
-
-If you dynamically provisioned storage with a storage class that sets `reclaimPolicy: Delete`, your PVC, PV, and the storage instance are automatically deleted when you delete the cluster. For storage that was statically provisioned or storage that you provisioned with a storage class that sets `reclaimPolicy: Retain`, the PVC and the PV are removed when you delete the cluster, but your storage instance and your data remain. You are still charged for your storage instance. Also, if you deleted your cluster in an unhealthy state, the storage might still exist even if you chose to remove it.
+:   During cluster deletion, you have the option to remove your persistent storage. However, depending on how your storage was provisioned, the removal of your storage might not include all storage components. If you dynamically provisioned storage with a storage class that sets `reclaimPolicy: Delete`, your PVC, PV, and the storage instance are automatically deleted when you delete the cluster. For storage that was statically provisioned or storage that you provisioned with a storage class that sets `reclaimPolicy: Retain`, the PVC and the PV are removed when you delete the cluster, but your storage instance and your data remain. You are still charged for your storage instance. Also, if you deleted your cluster in an unhealthy state, the storage might still exist even if you chose to remove it.
 
 How do I delete the storage when I want to keep my cluster?
-:   When you dynamically provisioned the storage with a storage class that sets `reclaimPolicy: Delete`, you can remove the PVC to start the deletion process of your persistent storage. Your PVC, PV, and storage instance are automatically removed.
-:   For storage that was statically provisioned or storage that you provisioned with a storage class that sets `reclaimPolicy: Retain`, you must manually remove the PVC, PV, and the storage instance to avoid further charges.
+:   When you dynamically provisioned the storage with a storage class that sets `reclaimPolicy: Delete`, you can remove the PVC to start the deletion process of your persistent storage. Your PVC, PV, and storage instance are automatically removed. For storage that was statically provisioned or storage that you provisioned with a storage class that sets `reclaimPolicy: Retain`, you must manually remove the PVC, PV, and the storage instance to avoid further charges.
 
 How does the billing stop after I delete my storage?
 :   Depending on what storage components you delete and when, the billing cycle might not stop immediately. If you delete the PVC and PV, but not the storage instance in your {{site.data.keyword.cloud_notm}} account, that instance still exists and you are charged for it.
@@ -149,7 +211,7 @@ If you delete the PVC, PV, and the storage instance, the billing cycle stops dep
 - When you dynamically provisioned the storage with a storage class that sets `reclaimPolicy: Delete` and you choose to remove the PVC, the PV and the storage instance are immediately removed. For hourly billed storage, billing stops immediately. For monthly billed storage, you are still charged for the remainder of the month. After your storage is removed and billing stops, you might still see your storage instance in the console or the CLI for up to 72 hours.
 
 What do I need to be aware of before I delete persistent storage?
-:   When you clean up persistent storage, you delete all the data that is stored in it. If you need a copy of the data, make a backup for file storage or block storage.
+:   When you clean up persistent storage, you delete all the data that is stored in it. If you need a copy of the data, make a backup.
 
 I deleted my storage instance. Why can I still see my instance?
 :   After you remove persistent storage, it can take up to 72 hours for the removal to be fully processed and for the storage to disappear from your {{site.data.keyword.cloud_notm}} console or CLI.

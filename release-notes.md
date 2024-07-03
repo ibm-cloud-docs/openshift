@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2024
-lastupdated: "2024-06-25"
+lastupdated: "2024-07-03"
 
 
 keywords: openshift, {{site.data.keyword.openshiftlong_notm}}, kubernetes, release notes
@@ -25,9 +25,19 @@ Use the release notes to learn about the latest changes to the documentation tha
 Looking for {{site.data.keyword.cloud_notm}} status, platform announcements, security bulletins, or maintenance notifications? See [{{site.data.keyword.cloud_notm}} status](https://cloud.ibm.com/status?selected=status).
 {: tip}
 
+## July 2024
+{: #openshift-july24}
+
+### 3 July 2024
+{: #openshift-july324}
+{: release-note}
+
+{{site.data.keyword.filestorage_vpc_full_notm}} add-on version 2.0 is available in Beta.
+:   For more information, see the [change log](/docs/openshift?topic=openshift-versions-vpc-file-addon).
 
 ## June 2024
 {: #openshift-june24}
+
 
 
 

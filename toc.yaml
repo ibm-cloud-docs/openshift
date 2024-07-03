@@ -217,6 +217,7 @@ toc:
               - secrets.md
               - secrets-mgr.md
           - satellite_expose_apps.md
+      - storage-operator.md
       - storage-block.md
       - topicgroup:
           label: Setting up Block Storage for VPC
@@ -375,6 +376,7 @@ toc:
           - versions-backup-restore.md
           - openshift_versions_hpcs_router.md
           - cl-ibm-cloud-image-key-synchronizer.md
+          - cl-ibm-storage-operator.md
       - topicgroup:
           label: Archived version history
           topics:
@@ -613,6 +615,9 @@ toc:
               - ts-storage-vpc-file-non-root.md
               - ts-storage-file-nonroot.md
               - ts-storage-file-readonly.md
+              - ts-storage-vpc-file-eit-mount-failed.md
+              - ts-storage-vpc-file-eit-unresponsive.md
+              - ts-storage-vpc-file-eit-access.md
               - ts-storage-feedback.md
           - topicgroup:
               label: Block Storage

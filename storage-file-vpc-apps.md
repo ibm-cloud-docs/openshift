@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2022, 2024
-lastupdated: "2024-06-26"
+lastupdated: "2024-07-03"
 
 keywords: kubernetes, openshift
 
@@ -20,7 +20,13 @@ subcollection: openshift
 {: shortdesc}
 
 The {{site.data.keyword.filestorage_vpc_short}} cluster add-on is available in Beta. 
-{: beta} 
+{: beta}
+
+The following limitations apply to the add-on beta.
+
+- It is recommended that your cluster and VPC are part of same resource group. If your cluster and VPC are in separate resource groups, then before you can provision file shares, you must create your own storage class and provide your VPC resource group ID. For more information, see [Creating your own storage class](/docs/openshift?topic=openshift-storage-file-vpc-apps#storage-file-vpc-custom-sc).
+- New security group rules have been introduced in cluster versions 4.11 and later. These rule changes mean that you must sync your security groups before you can use {{site.data.keyword.filestorage_vpc_short}}. For more information, see [Adding {{site.data.keyword.filestorage_vpc_short}} to apps](/docs/containers?topic=containers-storage-file-vpc-apps).
+- New storage classes were added with version 2.0 of the add-on. You can no longer provision new file shares that use the older storage classes. Existing volumes that use the older storage classes continue to function, however you cannot expand the volumes that were created using the older classes. For more information, see the [Migrating to a new storage class](/docs/openshift?topic=openshift-storage-file-vpc-apps#storage-file-expansion-migration).
 
 After you provision a specific type of storage by using a storage class, you can't change the type, or retention policy for the storage device. However, you can [change the size](/docs/openshift?topic=openshift-storage-file-vpc-apps#storage-file-vpc-expansion) and the [IOPS](/docs/vpc?topic=vpc-adjusting-share-iops&interface=ui) if you want to increase your storage capacity and performance. To change the type and retention policy for your storage, you must create a new storage instance and copy the data from the old storage instance to your new one.
 
@@ -45,7 +51,7 @@ If your cluster was initially created at version 4.11 or earlier, run the follow
 
 1. Get the ID of the `kube-<clusterID>` security group.
     ```sh
-    ibmcloud is sg kube-<cluster-id>  | grep ID
+    ibmcloud oc security-group ls --cluster CLUSTER
     ```
     {: pre}
 
@@ -64,7 +70,7 @@ Create a persistent volume claim (PVC) to dynamically provision {{site.data.keyw
 1. [Access your {{site.data.keyword.redhat_openshift_notm}} cluster](/docs/openshift?topic=openshift-access_cluster).
 
 1. Review the pre-installed storage classes by running the following command. For more information, see the [storage class reference](/docs/openshift?topic=openshift-storage-file-vpc-sc-ref).
-    ```shell
+    ```sh
     oc get sc | grep vpc-file
     ```
     {: pre}
@@ -195,8 +201,113 @@ Create a persistent volume claim (PVC) to dynamically provision {{site.data.keyw
 
 1. **Optional**: After your pod is running, try [expanding your storage volume](#storage-file-vpc-expansion).
 
+## Migrating to a new storage class
+{: #storage-file-expansion-migration}
 
-## Expanding a mounted volume
+- New storage classes were added with version 2.0 of the add-on.
+- You can no longer provision new file shares that use the older storage classes.
+- Existing volumes that use the older storage classes continue to function, however you cannot expand the volumes that were created using the older classes.
+- If you need the volume expansion feature, complete the following steps to migrate your apps to a newer storage class.
+- If you don't need the volume expansion feature, you do not need to migrate and your PVCs continue to function as normal.
+- The following steps cover manual migration. If you use a backup service such as PX backup or Velero, you can use those services to backup and restore your apps to a new storage class.
+
+
+1. Find the PVC you want to migrate and make a note of the both the PVC name and the associated PV name.
+    ```sh
+    oc get pvc
+    ```
+    {: pre}
+
+1. Scale down your app that is using the PVC.
+
+    ```sh
+    oc scale deployment DEPLOYMENT --replicas 0
+    ```
+    {: pre}
+
+2. Edit the PV object that your app is using to change reclaim policy to `Retain` and storage class to `ibmc-vpc-file-min-iops`. 
+
+    ```sh
+    kubectl edit pv PV
+    ```
+    {: pre}
+
+    ```yaml
+    spec:
+      accessModes:
+      - ReadWriteMany
+      capacity:
+        storage: 20Gi
+      claimRef:
+        apiVersion: v1
+        kind: PersistentVolumeClaim
+        name: <pvc-name>
+        namespace: default
+        ...
+      persistentVolumeReclaimPolicy: Retain # Change delete to retain
+      storageClassName: ibmc-vpc-file-min-iops # Enter a new storage class
+      volumeMode: Filesystem
+    ```
+    {: codeblock}
+
+3. Delete the existing PVC object.
+    ```sh
+    kubectl delete pvc PVC
+    ```
+    {: pre}
+
+4. Edit the PV again and remove the `claimRef` section.
+
+    ```sh
+    kubectl edit pv PV
+    ```
+    {: pre}
+
+    ```yaml
+    spec:
+      accessModes:
+      - ReadWriteMany
+      capacity:
+        storage: 20Gi
+      #claimRef:
+        #apiVersion: v1
+        #kind: PersistentVolumeClaim
+        #name: <pvc-name>
+        #namespace: default
+        #resourceVersion: "381270"
+        #uid: 4042f319-1233-4187-8549-8249a840a8dd
+    ```
+    {: codeblock}
+
+5. Create a PVC that has the same name and same size as your previous PVC. This should be done one by one for all affected PVCs.
+
+    ```sh
+    apiVersion: v1
+    kind: PersistentVolumeClaim
+    metadata:
+      name: <pvc-name>
+    spec:
+      accessModes:
+      - ReadWriteMany
+      resources:
+        requests:
+          storage: <size>Gi
+      storageClassName: ibmc-vpc-file-min-iops
+    ```
+    {: codeblock}
+
+6. Scale up your app which was using the PVC.
+
+    ```sh
+    k scale deployment DEPLOYMENT --replicas x
+    ```
+    {: pre}
+
+7. To continue using volume expansion, see [Setting up volume expansion](#storage-file-vpc-expansion).
+
+
+
+## Setting up volume expansion
 {: #storage-file-vpc-expansion}
 
 To provision volumes that support expansion, you must use storage class that has `allowVolumeExpansion` set to `true`.
@@ -204,7 +315,20 @@ To provision volumes that support expansion, you must use storage class that has
 The {{site.data.keyword.filestorage_vpc_short}} cluster add-on supports expansion in both online and offline modes. However, expansion is only possible within the given [size and IOPs range of the {{site.data.keyword.filestorage_vpc_short}} profile](/docs/vpc?topic=vpc-file-storage-profiles&interface=ui#dp2-profile).
 {: note}
 
-1. Begin by deploying the [quick start example PVC and Deployment](#vpc-add-file-dynamic). 
+New storage classes were introduced with version 2.0. Volume expansion does not work for shares that use the storage classes from earlier versions of the add-on.
+{: note}
+
+### Before you begin
+{: #before-vpc-file-expansion}
+
+* To use volume expansion, make sure you [update your add-on to at least version 2.0](/docs/openshift?topic=openshift-storage-file-vpc-managing).
+
+* Make sure your app is using one of the [latest storage classes](/docs/openshift?topic=openshift-storage-file-vpc-sc-ref). For migration steps, see [Migrating to a new storage class](#storage-file-expansion-migration)
+
+* If you don't have a running app, begin by deploying the [quick start example PVC and Deployment](#vpc-add-file-dynamic). 
+
+### Expanding a mounted volume
+{: #vpc-file-volume-expansion}
 
 1. After your PVC is mounted by an app pod, you can expand your volume by editing the value of the `spec.resources.requests.storage` field in your PVC. To expand your volume, edit your PVC and increase the value in the `spec.resources.requests.storage` field.
 
@@ -300,12 +424,13 @@ Create a persistent volume claim (PVC) to statically provision {{site.data.keywo
     {: pre}
 
     Example command.
+
     ```sh
     ibmcloud is share-mount-target  r134-bad98878-1f63-45d2-a3fd-60447094c2e6 r134-aa2aabb8-f616-47be-886b-99220852b728
     ```
     {: pre}
 
-    Example output
+    Example output.
 
     ```sh
     ID                          r134-aa2aabb8-f616-47be-886b-99220852b728   
@@ -325,7 +450,8 @@ Create a persistent volume claim (PVC) to statically provision {{site.data.keywo
     ```
     {: screen}
 
-1. Create a PV configuration file called `static-file-share.yaml` that references your file share. 
+1. Create a PV configuration file called `static-file-share.yaml` that references your file share.
+
     ```yaml
     apiVersion: v1
     kind: PersistentVolume
@@ -349,6 +475,7 @@ Create a persistent volume claim (PVC) to statically provision {{site.data.keywo
     {: codeblock}
 
 1. Create the PV.
+
     ```sh
     oc apply -f static-file-share.yaml
     ```
@@ -371,12 +498,14 @@ Create a persistent volume claim (PVC) to statically provision {{site.data.keywo
     {: codeblock}
 
 1. Create the PVC to bind your PV.
+
     ```sh
     oc apply -f pvc-static.yaml
     ```
     {: pre}
 
-1. Create a deployment file name `testpod.yaml` to attach your fileshare to the desired application pod. 
+1. Create a deployment file name `testpod.yaml` to attach your fileshare to the desired application pod.
+
     ```yaml
     apiVersion: apps/v1
     kind: Deployment
@@ -395,8 +524,8 @@ Create a persistent volume claim (PVC) to statically provision {{site.data.keywo
             app: testpod
         spec:
           containers:
-          - image: IMAGE
-            name: CONTAINER-NAME
+          - image: IMAGE # The name of the container image that you want to use.
+            name: CONTAINER-NAME # The name of the container that you want to deploy to your cluster.
             volumeMounts:
             - mountPath: /myvol  
               name: pvc-name 
@@ -406,12 +535,6 @@ Create a persistent volume claim (PVC) to statically provision {{site.data.keywo
               claimName: pvc-static # The name of the PVC that you created earlier
     ```
     {: codeblock}
-
-    `spec.containers.image`
-    :   The name of the container image that you want to use. To list available images in your {{site.data.keyword.registrylong_notm}} account, run `ibmcloud cr image-list`.
-    
-    `spec.containers.name`
-    :   The name of the container that you want to deploy to your cluster.
     
     `spec.containers.volumeMounts.mountPath`
     :   Enter the absolute path of the directory to where the volume is mounted inside the container. Data that is written to the mount path is stored under the `root` directory in your physical {{site.data.keyword.filestorage_vpc_short}} instance. If you want to share a volume between different apps, you can specify [volume sub paths](https://kubernetes.io/docs/concepts/storage/volumes/#using-subpath){: external} for each of your apps.
@@ -427,6 +550,7 @@ Create a persistent volume claim (PVC) to statically provision {{site.data.keywo
     :   Enter the name of the PVC that binds the PV that you want to use.
 
 1. Create the deployment.
+
     ```sh
     oc apply -f testpod.yaml
     ```
@@ -459,7 +583,7 @@ Create your own customized storage class with the preferred settings for your {{
         billingType: "hourly" # hourly or monthly
         encrypted: "false"
         encryptionKey: "" # If encrypted is true, then a user must specify the CRK-CRN.
-        resourceGroup: "" # By default resource group will be used from storage-secrete-store secret, User can override.
+        resourceGroup: "" # Resource group ID. By default, the resource group of the cluster will be used from storage-secrete-store secret.
         isENIEnabled: "true" # VPC File Share VNI feature will be used by all PVCs created with this storage class.
         securityGroupIDs: "" # By default cluster security group i.e kube-<clusterID> will be used. User can provide their own comma separated SGs.
         subnetID: "" # User can provide subnetID in which the VNI will be created. Zone and region are mandatory for this. If not provided CSI driver will use the subnetID available in the cluster's VPC zone.
@@ -498,10 +622,9 @@ Create your own customized storage class with the preferred settings for your {{
     {: screen}
 
 
-
-
 ## Deploying an app that runs as non-root
 {: #vpc-file-non-root-app}
+
 
 1. Create your own storage class and specify the group ID or user ID that you want to use for your app.
 
@@ -533,7 +656,6 @@ Create your own customized storage class with the preferred settings for your {{
     {: codeblock}
 
 
-
 1. Save the following YAML to a file called `my-pvc.yaml`.
 
     ```yaml
@@ -551,8 +673,6 @@ Create your own customized storage class with the preferred settings for your {{
     ```
     {: codeblock}
 
-
-
 1. Create the PVC.
 
     ```sh
@@ -569,8 +689,8 @@ Create your own customized storage class with the preferred settings for your {{
       name: security-context-demo
     spec:
       securityContext:
-        runAsUser: 1000
-        runAsGroup: 3000
+        runAsUser: 3000
+        runAsGroup: 1000
       volumes:
       - name: sec-ctx-vol
         emptyDir: {}
@@ -585,14 +705,112 @@ Create your own customized storage class with the preferred settings for your {{
           allowPrivilegeEscalation: false
         persistentVolumeClaim:
           claimName: my-pvc
-    ``` 
+    ```
     {: codeblock}
 
 1. Verify the pod is running.
+
     ```sh
     oc get pods
     ```
     {: pre}
+
+
+
+
+
+
+## Setting up encryption in-transit (EIT)
+{: #storage-file-vpc-eit}
+
+Review the following information about EIT.
+- By default, file shares are [encrypted at rest](/docs/vpc?topic=vpc-file-storage-vpc-about&interface=ui#FS-encryption) with IBM-managed encryption.
+- If you choose to use encryption in-transit, you need to balance your requirements between performance and enhanced security. Encrypting data in-transit can have performance impacts due to the processing that is needed to encrypt and decrypt the data at the endpoints. 
+- EIT is not available for Secure by Default clusters and requires you the disable outbound traffic protection in clusters 4.15 and later.
+- For more information about encryption in-transit, see [VPC Encryption in Transit](https://cloud.ibm.com/docs/vpc?topic=vpc-file-storage-vpc-about&interface=ui#fs-eit).
+
+
+Complete the following steps to set up encryption-in-transit (EIT) for file shares in your {{site.data.keyword.openshiftlong_notm}} cluster. Enabling EIT installs the required packages on your worker nodes.
+
+1. Make a note of the worker pools in your cluster where you want to enable EIT.
+1. Edit the `addon-vpc-file-csi-driver-configmap`.
+
+    ```shell
+    oc edit addon-vpc-file-csi-driver-configmap -n kube-system
+    ```
+    {: pre}
+
+1. In the configmap, set `ENABLE_EIT:true` and add worker pools where you want to enable EIT to the `WORKER_POOLS_WITH_EIT`. For example: `"wp1, wp2"`.
+
+    ```yaml
+    apiVersion: v1
+    data:
+      EIT_ENABLED_WORKER_POOLS: "wp1,wp2" # Specify the worker pools where you want to enable EIT. If this field is blank, EIT is not enabled on any worker pools.
+      ENABLE_EIT: "true"
+      PACKAGE_DEPLOYER_VERSION: v1.0.0
+    kind: ConfigMap
+    metadata:
+      annotations:
+        version: v2.0.1
+      creationTimestamp: "2024-06-18T09:45:48Z"
+      labels:
+        app.kubernetes.io/name: ibm-vpc-file-csi-driver
+      name: addon-vpc-file-csi-driver-configmap
+      namespace: kube-system
+      ownerReferences:
+      - apiVersion: csi.drivers.ibmcloud.io/v1
+        blockOwnerDeletion: true
+        controller: true
+        kind: VPCFileCSIDriver
+        name: ibm-vpc-file-csi-driver
+        uid: d3c8bbcd-24fa-4203-9352-4ab7aa72a055
+      resourceVersion: "1251777"
+      uid: 5c9d6679-4135-458b-800d-217b34d27c75
+    ```
+    {: screen}
+
+1. After enabling EIT, save and close the config map.
+
+1. To verify EIT is enabled, review the events of the `file-csi-driver-status` config map.
+
+    ```sh
+    oc describe cm file-csi-driver-status -n kube-system
+    ```
+    {: pre}
+
+    Example output.
+
+    ```yaml
+    apiVersion: v1
+    data:
+      EIT_ENABLED_WORKER_NODES: |
+        default:
+        - 10.240.0.10
+        - 10.240.0.8
+      PACKAGE_DEPLOYER_VERSION: v1.0.0
+      events: |
+        - event: EnableVPCFileCSIDriver
+          description: 'VPC File CSI Driver enable successful, DriverVersion: v2.0.3'
+          timestamp: "2024-06-13 09:17:07"
+        - event: EnableEITRequest
+          description: 'Request received to enableEIT, workerPools: , check the file-csi-driver-status
+            configmap for eit installation status on each node of each workerpool.'
+          timestamp: "2024-06-13 09:17:31"
+        - event: 'Enabling EIT on host: 10.240.0.10'
+          description: 'Package installation successful on host: 10.240.0.10, workerpool: wp1'
+          timestamp: "2024-06-13 09:17:48"
+        - event: 'Enabling EIT on host: 10.240.0.8'
+          description: 'Package installation successful on host: 10.240.0.8, workerpool: wp2'
+          timestamp: "2024-06-13 09:17:48"
+    ```
+    {: screen}
+
+1. Select a pre-installed storage class that supports EIT or create your own storage class.
+
+    * Create a PVC by using either the `ibmc-vpc-file-eit` storage class.
+    * Create your own storage class and set the `isEITenabled` parameter to `true`.
+
+1. Create a PVC that references the storage class you selected, then deploy an app that uses your PVC.
 
 
 
@@ -607,7 +825,7 @@ When a PVC is created, it creates one file share target per PVC and one VNI IP i
 
 If you use the following VNI features to limit pod access to your file shares, your app might not be highly available.
 
-### Prerequisites
+### Before you begin
 {: #storage-file-vpc-vni-prereqs}
 
 To limit file share access by node, zone, or resource group, you must first create a custom VPC security group.
@@ -677,7 +895,7 @@ To limit file share access by node, zone, or resource group, you must first crea
 1. Add the following rule to the custom security group you created earlier.
 
     ```sh
-    ibmcloud is sg-rulec CUSTOM-SG inbound tcp --port-min 111 --port-max 2049 --remote WORKER-IP
+    ibmcloud is sg-rulec CUSTOM-SG inbound tcp --port-min 111 --port-max 2049 --remote 10.240.0.10 # VNI IP
     ```
     {: pre}
 
@@ -704,7 +922,7 @@ To limit file share access by node, zone, or resource group, you must first crea
 
 1. Add the following rule to the `kube-clusterID` security group. Specify the IP address of the virtual network interface (VNI).
     ```sh
-    ibmcloud is sg-rulec kube-<cluster-ID> outbound tcp --port-min 111 --port-max 2049 --remote VNI-IP
+    ibmcloud is sg-rulec kube-<cluster-ID> outbound tcp --port-min 111 --port-max 2049 --remote 10.240.0.10 # VNI IP
     ```
     {: pre}
 
@@ -717,7 +935,7 @@ To limit file share access by node, zone, or resource group, you must first crea
 
 1. Make sure you have [completed the prerequisites](#storage-file-vpc-vni-prereqs).
 
-1. Create inbound rules for each subnet range
+1. Create inbound rules for each worker pool subnet range.
 
     ```sh
     ibmcloud is sg-rulec CUSTOM-SG inbound tcp --port-min 111 --port-max 2049 --remote 10.240.0.0/24 # zone 1 subnet cidr range
@@ -728,7 +946,7 @@ To limit file share access by node, zone, or resource group, you must first crea
 1. Add the following rule to the `kube-clusterID` security group. Specify the IP address of the virtual network interface (VNI) as the remote or source.
 
     ```sh
-    ibmcloud is sg-rulec kube-<cluster-ID> outbound tcp --port-min 111 --port-max 2049 --remote VNI-IP
+    ibmcloud is sg-rulec kube-<cluster-ID> outbound tcp --port-min 111 --port-max 2049 --remote 10.240.0.10 # VNI IP
     ```
     {: pre}
 

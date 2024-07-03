@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2024
-lastupdated: "2024-06-26"
+lastupdated: "2024-07-03"
 
 
 keywords: file, add-on, changelog, openshift
@@ -39,6 +39,27 @@ ibmcloud oc cluster addon versions
 {: pre}
 
 To view a list of add-ons and the supported cluster versions, see the [Supported cluster add-ons table](/docs/openshift?topic=openshift-supported-cluster-addon-versions).
+
+
+
+## Version 2.0
+{: #020_is_file}
+
+### Change log for version 2.0.4_232, released 3 July 2024
+{: #2.0.4_232_is_file_relnote}
+
+- Version 2.0 and later is managed via the `storage-operator` add-on which is installed by default on new 4.16 and later clusters. To update your add-on, see [Updating the {{site.data.keyword.filestorage_vpc_full_notm}} cluster add-on](/docs/openshift?topic=openshift-storage-file-vpc-managing).
+- Adds support for encryption in-transit (EIT). EIT is disabled by default. For more information, see [Setting up encryption in-transit](/docs/openshift?topic=openshift-storage-file-vpc-apps#storage-file-vpc-eit).
+- Adds support for tagging. File shares can now be cleaned up when deleting clusters by using the `--force-delete-storage` option on the `ibmcloud oc cluster rm` command.
+- Adds new pre-defined storage classes. The previous storage classes are deprecated. Update your apps to use the new storage classes. For more information, see the [Migrating to a new storage class](/docs/openshift?topic=openshift-storage-file-vpc-apps#storage-file-expansion-migration).
+- Adds functionality to track CSI driver major events. You can the add-on status by reviewing the `file-csi-driver-status` configmap in the `kube-system` namespace.
+- Adds more attributes to persistent volume objects (PV) `FileShareID`, `FileShareTargetID`, `ENISubnetID`, `ENISecurityGroupIDs`.
+- Adds retries for fileShare target creation in case of partial failure during PVC creation.
+- Updates RBAC policies to use minimal privileges required.
+- Updates golang to `1.21.11-community`.
+- Known issues: [StorageClassSecres](https://kubernetes-csi.github.io/docs/secrets-and-credentials-storage-class.html#storageclass-secrets){: external} are not supported.
+
+
 
 
 

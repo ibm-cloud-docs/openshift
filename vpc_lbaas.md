@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2024
-lastupdated: "2024-06-26"
+lastupdated: "2024-06-28"
 
 
 keywords: kubernetes, openshift, app protocol, application protocol
@@ -805,6 +805,12 @@ To enable your app to receive public or private requests,
     `service.kubernetes.io/ibm-load-balancer-cloud-provider-vpc-idle-connection-timeout`
     :   **Optional**. The idle connection timeout of the listener in seconds. The default idle timeout is dependent on your account settings. Usually, this value is `50`. However, some allowlisted accounts have larger timeout settings. If you don't set the annotation, your loadbalancers use the timeout setting in your account. You can explicitly specify the timeout by setting this annotation. The minimum is `50`. The maximum is `7200`.
     
+    `service.kubernetes.io/ibm-load-balancer-cloud-provider-vpc-private-dns-instance-crn: "private-dns-crn"`
+    :   Optional. Can be applied only for private VPC ALBs in version 4.15 or later. The DNS `instance` to associate with this load balancer. For more information, see [Registering a private DNS record](#vpc_alb_private_dns).
+
+    `service.kubernetes.io/ibm-load-balancer-cloud-provider-vpc-private-dns-zone-id: "dns-zone-id"`
+    :   Optional. Can be applied only for private VPC ALBs in version 4.15 or later. The DNS `zone` to associate with this load balancer. For more information, see [Registering a private DNS record](#vpc_alb_private_dns).
+
     `selector`
     :   The label key (<selector_key>) and value (<selector_value>) that you used in the `spec.template.metadata.labels` section of your app deployment YAML. This custom label identifies all pods where your app runs to include them in the load balancing.
 
@@ -971,6 +977,48 @@ To register a VPC ALB hostname with a DNS subdomain,
 
 To use the TLS certificate to access your app via HTTPS, ensure that you defined an HTTPS port in your [Kubernetes `LoadBalancer` service](#setup_vpc_ks_vpc_lb). You can verify that requests are correctly routing through the HTTPS port by running `curl -v --insecure https://<domain>`. A connection error indicates that no HTTPS port is open on the service. Also, ensure that TLS connections can be terminated by your app. You can verify that your app terminates TLS properly by running `curl -v https://<domain>`. A certificate error indicates that your app is not properly terminating TLS connections.
 {: tip}
+
+### Registering a private DNS record for a private VPC ALB
+{: #vpc_alb_private_dns}
+
+ In version 4.15 or later you can use the following optional annotations to associate an own DNS `instance` which serves a custom DNS `zone` with a private VPC ALB. For this both optional annotations must be set.
+If they are unspecified then DNS `A` records for this load balancer's `hostname` property will be added to the public DNS zone `lb.appdomain.cloud`.
+
+`service.kubernetes.io/ibm-load-balancer-cloud-provider-vpc-private-dns-instance-crn: "private-dns-crn"`
+    :   The DNS `instance` to associate with this load balancer. The specified instance may be in a different region or account, subject to IAM policies.
+    Possible values: 9 ≤ length ≤ 512
+
+`service.kubernetes.io/ibm-load-balancer-cloud-provider-vpc-private-dns-zone-id: "dns-zone-id"`
+    :   The DNS `zone` to associate with this load balancer. The specified zone may be in a different region or account, subject to IAM policies.
+    Possible values: 1 ≤ length ≤ 128, Value must match regular expression ^[a-z0-9\-]*[a-z0-9]$
+
+You need to do the following as pre requirement before you can use this feature:
+* Create the DNS zone which can be bound to a load balancer
+* Enable service-to-service authorization between VPC LBs and DNS Services
+* Add the cluster's VPC to the permitted networks of the zone
+
+For detailed informations see the [Integrating an application load balancer with IBM Cloud DNS Services](/docs/vpc?topic=vpc-lb-dns) and [Add a VPC as a permitted network to the DNS zone](/docs/dns-svcs?topic=dns-svcs-getting-started#step-4-add-vpc-as-permitted-network-to-dns-zone) documents.
+
+Example:
+```yaml
+apiVersion: v1
+kind: Service
+metadata:
+  name: myloadbalancer
+  annotations:
+    service.kubernetes.io/ibm-load-balancer-cloud-provider-vpc-lb-name: "my-load-balancer"
+    service.kubernetes.io/ibm-load-balancer-cloud-provider-ip-type: "private"
+    service.kubernetes.io/ibm-load-balancer-cloud-provider-vpc-private-dns-instance-crn: "crn:v1:bluemix:public:dns-svcs:global:a/bb1b52262f7441a586f49068482f1e60:f761b566-030a-4696-8649-cc9d09889e88::"
+    service.kubernetes.io/ibm-load-balancer-cloud-provider-vpc-private-dns-zone-id: "d66662cc-aa23-4fe1-9987-858487a61f45"
+spec:
+  type: LoadBalancer
+status:
+  loadBalancer:
+    ingress:
+    - ip: 169.60.115.164
+...
+```
+{: codeblock}
 
 ## Persistent VPC load balancers
 {: #vpc_lb_persist}
