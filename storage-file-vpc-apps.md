@@ -20,7 +20,13 @@ subcollection: openshift
 {: shortdesc}
 
 The {{site.data.keyword.filestorage_vpc_short}} cluster add-on is available in Beta. 
-{: beta} 
+{: beta}
+
+The following limitations apply to the add-on beta.
+
+- It is recommended that your cluster and VPC are part of same resource group. If your cluster and VPC are in separate resource groups, then before you can provision file shares, you must create your own storage class and provide your VPC resource group ID. For more information, see [Creating your own storage class](/docs/openshift?topic=openshift-storage-file-vpc-apps#storage-file-vpc-custom-sc).
+- New security group rules have been introduced in cluster versions 4.11 and later. These rule changes mean that you must sync your security groups before you can use {{site.data.keyword.filestorage_vpc_short}}. For more information, see [Adding {{site.data.keyword.filestorage_vpc_short}} to apps](/docs/containers?topic=containers-storage-file-vpc-apps).
+- New storage classes were added with version 2.0 of the add-on. You can no longer provision new file shares that use the older storage classes. Existing volumes that use the older storage classes continue to function, however you cannot expand the volumes that were created using the older classes. For more information, see the [Migrating to a new storage class](/docs/openshift?topic=openshift-storage-file-vpc-apps#storage-file-expansion-migration).
 
 After you provision a specific type of storage by using a storage class, you can't change the type, or retention policy for the storage device. However, you can [change the size](/docs/openshift?topic=openshift-storage-file-vpc-apps#storage-file-vpc-expansion) and the [IOPS](/docs/vpc?topic=vpc-adjusting-share-iops&interface=ui) if you want to increase your storage capacity and performance. To change the type and retention policy for your storage, you must create a new storage instance and copy the data from the old storage instance to your new one.
 
@@ -203,7 +209,7 @@ Create a persistent volume claim (PVC) to dynamically provision {{site.data.keyw
 - Existing volumes that use the older storage classes continue to function, however you cannot expand the volumes that were created using the older classes.
 - If you need the volume expansion feature, complete the following steps to migrate your apps to a newer storage class.
 - If you don't need the volume expansion feature, you do not need to migrate and your PVCs continue to function as normal.
-- The following steps cover manual migration. If you use a backup service such as PX backup or Velero, you can back use those services to backup and restore your apps to a new storage class.
+- The following steps cover manual migration. If you use a backup service such as PX backup or Velero, you can use those services to backup and restore your apps to a new storage class.
 
 
 1. Find the PVC you want to migrate and make a note of the both the PVC name and the associated PV name.
