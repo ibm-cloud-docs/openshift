@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2024
-lastupdated: "2024-06-28"
+lastupdated: "2024-07-03"
 
 
 keywords: openshift
@@ -272,6 +272,12 @@ subcollection: openshift
 
 
 [Release notes](/docs/openshift?topic=openshift-openshift-relnotes#openshift-relnotes)
+
+* [July 2024](/docs/openshift?topic=openshift-openshift-relnotes#openshift-july24)
+
+    * [3 July 2024](/docs/openshift?topic=openshift-openshift-relnotes#openshift-july324)
+
+        * {{site.data.keyword.filestorage_vpc_full_notm}} add-on version 2.0 is available in Beta.
 
 * [June 2024](/docs/openshift?topic=openshift-openshift-relnotes#openshift-june24)
 
@@ -7447,7 +7453,7 @@ subcollection: openshift
 
 * [Version 2.0](/docs/openshift?topic=openshift-versions-vpc-file-addon#020_is_file)
 
-    * [Change log for version 2.0.4_232, released 1 July 2024](/docs/openshift?topic=openshift-versions-vpc-file-addon#change-log-for-version-204_232-released-1-july-2024)
+    * [Change log for version 2.0.4_232, released 3 July 2024](/docs/openshift?topic=openshift-versions-vpc-file-addon#2.0.4_232_is_file_relnote)
 
 * [Version 1.2](/docs/openshift?topic=openshift-versions-vpc-file-addon#012_is_file)
 

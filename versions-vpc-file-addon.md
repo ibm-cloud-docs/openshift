@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2024
-lastupdated: "2024-06-28"
+lastupdated: "2024-07-03"
 
 
 keywords: file, add-on, changelog, openshift
@@ -45,15 +45,20 @@ To view a list of add-ons and the supported cluster versions, see the [Supported
 ## Version 2.0
 {: #020_is_file}
 
-### Change log for version 2.0.4_232, released 1 July 2024
+### Change log for version 2.0.4_232, released 3 July 2024
+{: #2.0.4_232_is_file_relnote}
 
+- Version 2.0 and later is managed via the `storage-operator` add-on which is installed by default on 4.16 and later clusters.
+- Adds support for encryption in-transit (EIT). EIT is disabled by default. For more information, see [Setting up encryption in-transit](/docs/openshift?topic=openshift-storage-file-vpc-apps#storage-file-vpc-eit).
+- Adds support for tagging. File shares can now be cleaned up when deleting clusters by using the `--force-delete-storage` option on the `ibmcloud oc cluster rm` command.
+- Adds new pre-defined storage classes. The previous storage classes are deprecated. Update your apps to use the new storage classes.
+- Adds functionality to track CSI driver major events. You can the add-on status by reviewing the `file-csi-driver-status` configmap in the `kube-system` namespace.
+- Adds more attributes to persistent volume objects (PV) `FileShareID`, `FileShareTargetID`, `ENISubnetID`, `ENISecurityGroupIDs`.
+- Adds retries for fileShare target creation in case of partial failure during PVC creation. RBAC policies restricted to minimal privileges required.
 - Updates golang to `1.21.11-community`.
-- Adds support for encryption in-transit (EIT).
-- Adds new storage classes. If you are using storage class from earlier versions of of the add-on, move your configuration to the newer storage classes.
-- Adds the `file-csi-driver-status` in `kube-system` namespace. You can view events in this configmap by running `oc get cm file-csi-driver-status -n kube-system`.
-- Adds the following PV object details: `FileShareID`, `FileShareTargetID`, `ENISubnetID` and `ENISecurityGroupIDs`.
-- Fixes an issue when the file share is created but target creation fails, the CSI Driver now retries creating mount target.
-- Improves error messages.
+- Known issues: [StorageClassSecres](https://kubernetes-csi.github.io/docs/secrets-and-credentials-storage-class.html#storageclass-secrets){: external} are not supported.
+
+
 
 
 
