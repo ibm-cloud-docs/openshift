@@ -33,7 +33,7 @@ Check the [Security Bulletins on {{site.data.keyword.cloud_notm}} Status](https:
 Master patch updates are applied automatically. Worker node patch updates can be applied by reloading or updating the worker nodes. For more information about major, minor, and patch versions and preparation actions between minor versions, see [{{site.data.keyword.redhat_openshift_notm}} versions](/docs/openshift?topic=openshift-openshift_versions).
 {: tip}
 
-### Change log for worker node fix pack 4.14.31_1572_openshift, released 08 July 2024
+### Change log for worker node fix pack 4.14.31_1572_openshift, released 09 July 2024
 {: #41431_1572_openshift_W}
 
 The following table shows the changes that are in the worker node fix pack 4.14.31_1572_openshift. Worker node patch updates can be applied by updating, reloading (in classic infrastructure), or replacing (in VPC infrastructure) the worker node.

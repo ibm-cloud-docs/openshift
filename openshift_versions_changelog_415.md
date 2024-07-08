@@ -34,7 +34,7 @@ Master patch updates are applied automatically. Worker node patch updates can be
 {: tip}
 
 
-### Change log for worker node fix pack 4.15.19_1543_openshift, released 08 July 2024
+### Change log for worker node fix pack 4.15.19_1543_openshift, released 09 July 2024
 {: #41519_1543_openshift_W}
 
 The following table shows the changes that are in the worker node fix pack 4.15.19_1543_openshift. Worker node patch updates can be applied by updating, reloading (in classic infrastructure), or replacing (in VPC infrastructure) the worker node.

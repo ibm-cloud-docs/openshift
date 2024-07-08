@@ -428,7 +428,7 @@ toc:
       - topicgroup:
           label: Activity Tracker events
           topics:
-          - at-events.md
+          - at-events-ref.md
           - api-at-iam.md
       - locations.md
       - openshift_integrations_overview.md
