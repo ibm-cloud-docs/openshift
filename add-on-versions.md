@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2022, 2024
-lastupdated: "2024-06-24"
+lastupdated: "2024-07-08"
 
 keywords: openshift, add-ons, cluster addon
 
@@ -89,7 +89,16 @@ Review the following list of supported cluster add-ons. Each add-on version can 
 
 - Supported Kubernetes cluster versions: `>=1.23.0 <1.31.0`
 
-- Supported OpenShift cluster versions: `>=4.11.0 <4.16.0`
+- Supported OpenShift cluster versions: `>=4.11.0 <4.17.0`
+
+
+
+## `ibm-storage-operator` 1.0 
+{: #ibm-storage-operator-1.0}
+
+- Supported Kubernetes cluster versions: `>=1.30.0 <1.31.0`
+
+- Supported OpenShift cluster versions: `>=4.15.0 <4.16.0`
 
 
 
@@ -170,7 +179,7 @@ Review the following list of supported cluster add-ons. Each add-on version can 
 
 - Supported Kubernetes cluster versions: `>=1.23.0 <1.31.0`
 
-- Supported OpenShift cluster versions: `>=4.11.0 <4.16.0`
+- Supported OpenShift cluster versions: `>=4.11.0 <4.17.0`
 
 
 
@@ -198,6 +207,15 @@ Review the following list of supported cluster add-ons. Each add-on version can 
 - Supported Kubernetes cluster versions: `>=1.24.0 <1.31.0`
 
 - Supported OpenShift cluster versions: `>=4.10.0 <4.16.0`
+
+
+
+## `vpc-file-csi-driver` 2.0 
+{: #vpc-file-csi-driver-2.0}
+
+- Supported Kubernetes cluster versions: `>=1.30.0 <1.31.0`
+
+- Supported OpenShift cluster versions: `>=4.15.0 <4.16.0`
 
 
 
