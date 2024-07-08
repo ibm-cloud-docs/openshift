@@ -9696,33 +9696,33 @@ subcollection: openshift
 {: #sitemap_activity_tracker_events}
 
 
-[{{site.data.keyword.at_full_notm}} events](/docs/openshift?topic=openshift-at_events#at_events)
+[{{site.data.keyword.at_full_notm}} events](/docs/openshift?topic=openshift-at_events_ref#at_events_ref)
 
-* [Cluster events](/docs/openshift?topic=openshift-at_events#clusters-events)
+* [Cluster events](/docs/openshift?topic=openshift-at_events_ref#clusters-events)
 
-* [Cluster account events](/docs/openshift?topic=openshift-at_events#cluster-account-events)
+* [Cluster account events](/docs/openshift?topic=openshift-at_events_ref#cluster-account-events)
 
-* [Cluster add-on events](/docs/openshift?topic=openshift-at_events#cluster-addons)
+* [Cluster add-on events](/docs/openshift?topic=openshift-at_events_ref#cluster-addons)
 
-* [Fluentd logging events](/docs/openshift?topic=openshift-at_events#at-fluentd)
+* [Fluentd logging events](/docs/openshift?topic=openshift-at_events_ref#at-fluentd)
 
-* [Ingress ALB events](/docs/openshift?topic=openshift-at_events#ingress-alb-events)
+* [Ingress ALB events](/docs/openshift?topic=openshift-at_events_ref#ingress-alb-events)
 
-* [Ingress secret events](/docs/openshift?topic=openshift-at_events#ingress-secret-events)
+* [Ingress secret events](/docs/openshift?topic=openshift-at_events_ref#ingress-secret-events)
 
-* [Observability events for logging and monitoring](/docs/openshift?topic=openshift-at_events#at-lm)
+* [Observability events for logging and monitoring](/docs/openshift?topic=openshift-at_events_ref#at-lm)
 
-* [NLB DNS events](/docs/openshift?topic=openshift-at_events#ingress-nlb-dns-events)
+* [NLB DNS events](/docs/openshift?topic=openshift-at_events_ref#ingress-nlb-dns-events)
 
-* [Private service endpoint allowlist events](/docs/openshift?topic=openshift-at_events#acl-events)
+* [Private service endpoint allowlist events](/docs/openshift?topic=openshift-at_events_ref#acl-events)
 
-* [{{site.data.keyword.satelliteshort}} events](/docs/openshift?topic=openshift-at_events#satellite-events)
+* [{{site.data.keyword.satelliteshort}} events](/docs/openshift?topic=openshift-at_events_ref#satellite-events)
 
-* [Storage events](/docs/openshift?topic=openshift-at_events#storage-events)
+* [Storage events](/docs/openshift?topic=openshift-at_events_ref#storage-events)
 
-* [Worker node and worker pool events](/docs/openshift?topic=openshift-at_events#worker-events)
+* [Worker node and worker pool events](/docs/openshift?topic=openshift-at_events_ref#worker-events)
 
-* [Viewing your cluster events](/docs/openshift?topic=openshift-at_events#at-ui)
+* [Viewing your cluster events](/docs/openshift?topic=openshift-at_events_ref#at-ui)
 
 [IAM and {{site.data.keyword.cloudaccesstrailshort}} action by API method](/docs/openshift?topic=openshift-api-at-iam#api-at-iam)
 
