@@ -275,7 +275,13 @@ subcollection: openshift
 
 * [July 2024](/docs/openshift?topic=openshift-openshift-relnotes#openshift-july24)
 
+    * [10 July 2024](/docs/openshift?topic=openshift-openshift-relnotes#openshift-july1024)
+
+        * {{site.data.keyword.openshiftlong_notm}} CLI version `1.0.635` is available.
+
     * [9 July 2024](/docs/openshift?topic=openshift-openshift-relnotes#openshift-july924)
+
+        * {{site.data.keyword.openshiftlong_notm}} CLI version `1.0.632` is available.
 
         * {{site.data.keyword.openshiftlong_notm}} worker node fix packs.
 
@@ -6110,6 +6116,10 @@ subcollection: openshift
 [CLI change log](/docs/openshift?topic=openshift-cs_cli_changelog#cs_cli_changelog)
 
 * [Version 1.0](/docs/openshift?topic=openshift-cs_cli_changelog#10)
+
+* [Version v1.0.635](/docs/openshift?topic=openshift-cs_cli_changelog#cli-010635)
+
+* [Version v1.0.632](/docs/openshift?topic=openshift-cs_cli_changelog#cli-010632)
 
 * [Version v1.0.630](/docs/openshift?topic=openshift-cs_cli_changelog#cli-010630)
 
