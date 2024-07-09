@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2024
-lastupdated: "2024-07-08"
+lastupdated: "2024-07-09"
 
 
 keywords: openshift
@@ -275,7 +275,13 @@ subcollection: openshift
 
 * [July 2024](/docs/openshift?topic=openshift-openshift-relnotes#openshift-july24)
 
+    * [10 July 2024](/docs/openshift?topic=openshift-openshift-relnotes#openshift-july1024)
+
+        * {{site.data.keyword.openshiftlong_notm}} CLI version `1.0.635` is available.
+
     * [9 July 2024](/docs/openshift?topic=openshift-openshift-relnotes#openshift-july924)
+
+        * {{site.data.keyword.openshiftlong_notm}} CLI version `1.0.632` is available.
 
         * {{site.data.keyword.openshiftlong_notm}} worker node fix packs.
 
@@ -6111,6 +6117,10 @@ subcollection: openshift
 
 * [Version 1.0](/docs/openshift?topic=openshift-cs_cli_changelog#10)
 
+* [Version v1.0.635](/docs/openshift?topic=openshift-cs_cli_changelog#cli-010635)
+
+* [Version v1.0.632](/docs/openshift?topic=openshift-cs_cli_changelog#cli-010632)
+
 * [Version v1.0.630](/docs/openshift?topic=openshift-cs_cli_changelog#cli-010630)
 
 * [Version v1.0.628](/docs/openshift?topic=openshift-cs_cli_changelog#cli-010628)
@@ -7986,6 +7996,8 @@ subcollection: openshift
 [IBM Cloud Image Key Synchronizer version change log](/docs/openshift?topic=openshift-ibm-cloud-image-key-synchronizer-change-log#ibm-cloud-image-key-synchronizer-change-log)
 
 * [Version 1.0.0](/docs/openshift?topic=openshift-ibm-cloud-image-key-synchronizer-change-log#ibm-cloud-image-key-synchronizer-1.0.0)
+
+    * [1.0.0_2308, released 09 July 24](/docs/openshift?topic=openshift-ibm-cloud-image-key-synchronizer-change-log#ibm-cloud-image-key-synchronizer-1.0.0_2308)
 
     * [1.0.0_2258, released 06 June 24](/docs/openshift?topic=openshift-ibm-cloud-image-key-synchronizer-change-log#ibm-cloud-image-key-synchronizer-1.0.0_2258)
 
