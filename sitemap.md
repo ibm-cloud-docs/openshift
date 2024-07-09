@@ -7987,6 +7987,8 @@ subcollection: openshift
 
 * [Version 1.0.0](/docs/openshift?topic=openshift-ibm-cloud-image-key-synchronizer-change-log#ibm-cloud-image-key-synchronizer-1.0.0)
 
+    * [1.0.0_2308, released 09 July 24](/docs/openshift?topic=openshift-ibm-cloud-image-key-synchronizer-change-log#ibm-cloud-image-key-synchronizer-1.0.0_2308)
+
     * [1.0.0_2258, released 06 June 24](/docs/openshift?topic=openshift-ibm-cloud-image-key-synchronizer-change-log#ibm-cloud-image-key-synchronizer-1.0.0_2258)
 
     * [1.0.0_2244, released 04 June 24](/docs/openshift?topic=openshift-ibm-cloud-image-key-synchronizer-change-log#ibm-cloud-image-key-synchronizer-1.0.0_2244)
