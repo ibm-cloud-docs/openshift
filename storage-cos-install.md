@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2024
-lastupdated: "2024-06-24"
+lastupdated: "2024-07-10"
 
 
 keywords: kubernetes, openshift
@@ -33,7 +33,7 @@ Prerequisites
 
 Before you begin: [Access your {{site.data.keyword.redhat_openshift_notm}} cluster](/docs/openshift?topic=openshift-access_cluster).
 
-To install the `ibmc` Helm plug-in and the `ibm-object-storage-plugin`:
+Install the `ibmc` Helm plug-in and the `ibm-object-storage-plugin`:
 
 1. Make sure that your worker node applies the latest patch for your minor version to run your worker node with the latest security settings. The patch version also ensures that the root password on the worker node is renewed. 
 
@@ -197,7 +197,14 @@ Example `helm ibmc install` commands for OS X and Linux
 
 
 ```sh
-helm ibmc install ibm-object-storage-plugin ibm-helm/ibm-object-storage-plugin --set license=true [--set quotaLimit=true/false] [--set bucketAccessPolicy=false] [--set allowCrossNsSecret=true/false]
+helm install ibm-object-storage-plugin ./ibm-object-storage-plugin \
+--set license=true \
+--set kubeDriver=etc/kubernetes \
+--set dcname="${DC_NAME}" --set provider="${CLUSTER_PROVIDER}" --set workerOS="${WORKER_OS}" \
+--region="${REGION}" --set platform="${PLATFORM}" \
+[--set quotaLimit=true/false] \
+[--set bucketAccessPolicy=false] \
+[--set allowCrossNsSecret=true/false]
 ```
 {: pre}
 
@@ -206,6 +213,10 @@ helm ibmc install ibm-object-storage-plugin ibm-helm/ibm-object-storage-plugin -
 
 `allowCrossNsSecret`
 :   By default, the plug-in searches for the Kubernetes secret in namespaces other than the PVC namespace. If you set this option to `false` the plug-in searches for the Kubernetes secret in only the PVC namespace. The default value is `true`.
+
+`kubeDriver`
+:   RHEL worker nodes: set to `/usr/libexec/kubernetes`.
+:   CoreOS worker nodes: set to `/etc/kubernetes`.
 
 Example `helm install` command for Windows.
 

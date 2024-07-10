@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2024
-lastupdated: "2024-06-14"
+lastupdated: "2024-07-10"
 
 
 keywords: openshift, block storage, deploy apps
@@ -586,33 +586,18 @@ Use a key management service (KMS) provider, such as {{site.data.keyword.keymana
 Enabling encryption for {{site.data.keyword.block_storage_is_short}} impacts performance by approximately 20%. However, the exact impact depends on your worker node and storage volume configuration. Consider allowing for performance impacts when enabling encryption.
 {: note}
 
-1. [Create a {{site.data.keyword.keymanagementserviceshort}} service instance](/docs/key-protect?topic=key-protect-provision#provision).
+1. Create an instance of the KMS provider that you want to use.
+    - [{{site.data.keyword.keymanagementserviceshort}}](/docs/key-protect?topic=key-protect-provision#provision).
+    - [{{site.data.keyword.hscrypto}}](https://cloud.ibm.com/catalog/services/hyper-protect-crypto-services){: external}.
 
-2. [Create a root key](/docs/key-protect?topic=key-protect-create-root-keys#create-root-keys). By default, the root key is created without an expiration date.
+1. Create a root key in your KMS instance.
+    - [{{site.data.keyword.keymanagementserviceshort}} root key](/docs/key-protect?topic=key-protect-create-root-keys#create-root-keys).
+    - [{{site.data.keyword.hscrypto}} root key](/docs/hs-crypto?topic=hs-crypto-create-root-keys). By default, the root key is created without an expiration date.
 
-3. Retrieve the service CRN for your root key.
-
-    1. From the {{site.data.keyword.keymanagementserviceshort}} details page, select the **Keys** tab to find the list of your keys.
-    
-    2. Find the root key that you created and from the actions menu, click **View CRN**.
-    
-    3. Note the CRN of your root key.
-
-4. Authorize {{site.data.keyword.block_storage_is_short}} to access {{site.data.keyword.keymanagementservicelong}}.
-
-    1. From the {{site.data.keyword.cloud_notm}} menu, select **Manage** > **Access (IAM)**.
-    
-    2. From the menu, select **Authorizations**.
-    
-    3. Click **Create**.
-    4. Select **Cloud {{site.data.keyword.block_storage_is_short}}** as your source service.
-    
-    5. Select **Key Protect** as your target service.
-    
-    6. Select the **Reader** service access role and click **Authorize**.
+1. [Set up service to service authorization](/docs/account?topic=account-serviceauth). Authorize {{site.data.keyword.block_storage_is_short}} to access {{site.data.keyword.keymanagementservicelong}}. Make sure to give {{site.data.keyword.block_storage_is_short}} at least `Reader` access to your KMS instance.
     
 
-5. [Decide if you want to store the {{site.data.keyword.keymanagementserviceshort}} root key CRN in a customized storage class or in a Kubernetes secret](/docs/openshift?topic=openshift-vpc-block#vpc-customize-default). Then, follow the steps to create a customized storage class or a Kubernetes secret.
+1. [Decide if you want to store the {{site.data.keyword.keymanagementserviceshort}} root key CRN in a customized storage class or in a Kubernetes secret](/docs/openshift?topic=openshift-vpc-block#vpc-customize-default). Then, follow the steps to create a customized storage class or a Kubernetes secret.
 
     Example customized storage class.
     ```yaml

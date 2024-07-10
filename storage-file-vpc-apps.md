@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2022, 2024
-lastupdated: "2024-07-03"
+lastupdated: "2024-07-10"
 
 keywords: kubernetes, openshift
 
@@ -716,6 +716,24 @@ Create your own customized storage class with the preferred settings for your {{
     {: pre}
 
 
+## Setting up your KMS provider for encrypting {{site.data.keyword.filestorage_vpc_short}}
+{: #storage-file-kms}
+
+Use a key management service (KMS) provider, such as {{site.data.keyword.keymanagementservicelong}}, to create a private root key that you use in your {{site.data.keyword.filestorage_vpc_short}} instance to encrypt data as it is written to storage. After you create the private root key, create your own storage class or a Kubernetes secret with your root key and then use this storage class or secret to provision your {{site.data.keyword.filestorage_vpc_short}} instance.
+{: shortdesc}
+
+
+1. Create an instance of the KMS provider that you want to use.
+    - [{{site.data.keyword.keymanagementserviceshort}}](/docs/key-protect?topic=key-protect-provision#provision).
+    - [{{site.data.keyword.hscrypto}}](https://cloud.ibm.com/catalog/services/hyper-protect-crypto-services){: external}.
+
+1. Create a root key in your KMS instance.
+    - [{{site.data.keyword.keymanagementserviceshort}} root key](/docs/key-protect?topic=key-protect-create-root-keys#create-root-keys).
+    - [{{site.data.keyword.hscrypto}} root key](/docs/hs-crypto?topic=hs-crypto-create-root-keys). By default, the root key is created without an expiration date.
+
+
+1. [Set up service to service authorization](/docs/account?topic=account-serviceauth). Authorize {{site.data.keyword.filestorage_vpc_short}} to access {{site.data.keyword.keymanagementservicelong}}. Make sure to give {{site.data.keyword.filestorage_vpc_short}} at least `Reader` access to your KMS instance.
+    
 
 
 
@@ -736,9 +754,10 @@ Complete the following steps to set up encryption-in-transit (EIT) for file shar
 1. Edit the `addon-vpc-file-csi-driver-configmap`.
 
     ```shell
-    oc edit addon-vpc-file-csi-driver-configmap -n kube-system
+    oc edit cm addon-vpc-file-csi-driver-configmap -n kube-system
     ```
     {: pre}
+
 
 1. In the configmap, set `ENABLE_EIT:true` and add worker pools where you want to enable EIT to the `WORKER_POOLS_WITH_EIT`. For example: `"wp1, wp2"`.
 
