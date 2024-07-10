@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2024
-lastupdated: "2024-07-08"
+lastupdated: "2024-07-09"
 
 
 keywords: kubernetes, openshift, app protocol, application protocol
@@ -148,6 +148,8 @@ Expose your app to public network traffic by setting up a Kubernetes `LoadBalanc
         service.kubernetes.io/ibm-load-balancer-cloud-provider-vpc-health-check-delay: "<value>"
         service.kubernetes.io/ibm-load-balancer-cloud-provider-vpc-health-check-timeout: "<value>"
         service.kubernetes.io/ibm-load-balancer-cloud-provider-vpc-health-check-timeout: "<value>"
+        service.kubernetes.io/ibm-load-balancer-cloud-provider-vpc-member-quota: "<value>"
+        service.kubernetes.io/ibm-load-balancer-cloud-provider-vpc-security-group: "<security-group>"
     spec:
       type: LoadBalancer
       selector:
@@ -240,6 +242,12 @@ Expose your app to public network traffic by setting up a Kubernetes `LoadBalanc
     :   **Required**. Specify `Local` or `Cluster`.
     :   Set to `Local` to preserve the source IP address of client requests to your apps. This setting prevents the incoming traffic from being forwarded to a different node. This option also configures HTTP health checks.
     :   If `Cluster` is set, DSR is implemented only from the worker node that the VPC NLB initially forwards the incoming request to. After the incoming request arrives, the request is forwarded to a worker node that contains the app pod, which might be in a different zone. The response from the app pod is sent to the original worker node, and that worker node uses DSR to send the response directly back to the client, bypassing the VPC NLB. This option also configures TCP health checks. For UDP load balancers, the `service.kubernetes.io/ibm-load-balancer-cloud-provider-vpc-health-check-udp` is required if you choose the `Cluster` option. For more information, see [Configuring TCP health checks for UDP load balancers](#vpc_lb_health_udp).
+
+    `service.kubernetes.io/ibm-load-balancer-cloud-provider-vpc-member-quota`
+    :   Optional. The number of worker nodes per zone that the load balancer routes to. The default value is 8. For a cluster with worker nodes in three zones, this results in the the load balancer routing to 24 total worker nodes. The total number of worker nodes across all zones that the load balancer routes to cannot exceed 50. If the cluster has fewer than 50 worker nodes across all zones, specify 0 to route to all worker nodes in a zone. 
+
+    `service.kubernetes.io/ibm-load-balancer-cloud-provider-vpc-security-group`
+    :   Optional. A customer-managed security group to add to the VPC load balancer. If you do not want to use the [IBM-managed security group](/docs/openshift?topic=openshift-vpc-security-group-reference&interface=ui#vpc-sg-kube-lbaas-cluster-ID), specify a security group that you own and manage. This option removes the IBM-managed security group and replaces it with the security group you specify. Removing the annotation from an existing load balancer replaces the security group you added with the IBM-managed security group. You can add or remove this annotation at any time. You are responsible for managing your security group and keeping it up to date. 
 
 3. Create the Kubernetes `LoadBalancer` service in your cluster.
     ```sh
@@ -456,6 +464,8 @@ To enable your app to receive private network requests,
         service.kubernetes.io/ibm-load-balancer-cloud-provider-vpc-health-check-delay: "<value>"
         service.kubernetes.io/ibm-load-balancer-cloud-provider-vpc-health-check-timeout: "<value>"
         service.kubernetes.io/ibm-load-balancer-cloud-provider-vpc-health-check-timeout: "<value>"
+        service.kubernetes.io/ibm-load-balancer-cloud-provider-vpc-member-quota: "<value>"
+        service.kubernetes.io/ibm-load-balancer-cloud-provider-vpc-security-group: "<security-group>"
     spec:
       type: LoadBalancer
       selector:
@@ -542,6 +552,12 @@ To enable your app to receive private network requests,
     :   **Required**. Specify `Local` or `Cluster`.
     :   Set to `Local` to preserve the source IP address of client requests to your apps. This setting prevents the incoming traffic from being forwarded to a different node. This option also configures HTTP health checks.
     :   If `Cluster` is set, DSR is implemented only from the worker node that the VPC NLB initially forwards the incoming request to. After the incoming request arrives, the request is forwarded to a worker node that contains the app pod, which might be in a different zone. The response from the app pod is sent to the original worker node, and that worker node uses DSR to send the response directly back to the client, bypassing the VPC NLB. This option also configures TCP health checks. For UDP load balancers, the `service.kubernetes.io/ibm-load-balancer-cloud-provider-vpc-health-check-udp` is required if you choose the `Cluster` option. For more information, see [Configuring TCP health checks for UDP load balancers](#vpc_lb_health_udp).
+
+    `service.kubernetes.io/ibm-load-balancer-cloud-provider-vpc-member-quota`
+    :   Optional. The number of worker nodes per zone that the load balancer routes to. The default value is 8. For a cluster with worker nodes in three zones, this results in the the load balancer routing to 24 total worker nodes. The total number of worker nodes across all zones that the load balancer routes to cannot exceed 50. If the cluster has fewer than 50 worker nodes across all zones, specify 0 to route to all worker nodes in a zone. 
+
+    `service.kubernetes.io/ibm-load-balancer-cloud-provider-vpc-security-group`
+    :   Optional. A customer-managed security group to add to the VPC load balancer. If you do not want to use the [IBM-managed security group](/docs/openshift?topic=openshift-vpc-security-group-reference&interface=ui#vpc-sg-kube-lbaas-cluster-ID), specify a security group that you own and manage. This option removes the IBM-managed security group and replaces it with the security group you specify. Removing the annotation from an existing load balancer replaces the security group you added with the IBM-managed security group. You can add or remove this annotation at any time. You are responsible for managing your security group and keeping it up to date. 
 
 
 5. Create the Kubernetes `LoadBalancer` service in your cluster.
@@ -719,6 +735,8 @@ To enable your app to receive public or private requests,
         service.kubernetes.io/ibm-load-balancer-cloud-provider-vpc-health-check-timeout: "<value>"
         service.kubernetes.io/ibm-load-balancer-cloud-provider-vpc-health-check-retries: "<value>"
         service.kubernetes.io/ibm-load-balancer-cloud-provider-vpc-idle-connection-timeout: "<value>"
+        service.kubernetes.io/ibm-load-balancer-cloud-provider-vpc-member-quota: "<value>"
+        service.kubernetes.io/ibm-load-balancer-cloud-provider-vpc-security-group: "<security-group>"
    spec:
      type: LoadBalancer
      selector:
@@ -817,11 +835,14 @@ To enable your app to receive public or private requests,
     :   Optional: The port to which the service directs traffic. The application running in the pod must be listening for incoming TCP traffic on this target port. The target port is often statically defined in the image that is running in the application pod. The target port configured in the pod is different than the node port for the service and might also be different than the external port that is configured on the VPC LB.
 
     `externalTrafficPolicy`
-    :   Set to `Local` to prevent the incoming traffic from being forwarded to a different node. This option also configures HTTP health checks. Set to `Cluster` to allow the incoming traffic to be forwarded to the backend application port on whatever node or zone it might be running. The option also configures TCP health checks.
-
-        `externalTrafficPolicy`
     :   Required. Specify `Local` or `Cluster`.
     :   Set to `Local` to preserve the source IP address of client requests to your apps. This setting prevents the incoming traffic from being forwarded to a different node. This option also configures HTTP health checks. For UDP load balancers, the `service.kubernetes.io/ibm-load-balancer-cloud-provider-vpc-health-check-udp` is required if you choose the `Cluster` option. For more information, see [Configuring TCP health checks for UDP load balancers](#vpc_lb_health_udp).
+
+    `service.kubernetes.io/ibm-load-balancer-cloud-provider-vpc-member-quota`
+    :   Optional. The number of worker nodes per zone that the load balancer routes to. The default value is 8. For a cluster with worker nodes in three zones, this results in the the load balancer routing to 24 total worker nodes. The total number of worker nodes across all zones that the load balancer routes to cannot exceed 50. If the cluster has fewer than 50 worker nodes across all zones, specify 0 to route to all worker nodes in a zone. 
+
+    `service.kubernetes.io/ibm-load-balancer-cloud-provider-vpc-security-group`
+    :   Optional. A customer-managed security group to add to the VPC load balancer. If you do not want to use the [IBM-managed security group](/docs/openshift?topic=openshift-vpc-security-group-reference&interface=ui#vpc-sg-kube-lbaas-cluster-ID), specify a security group that you own and manage. This option removes the IBM-managed security group and replaces it with the security group you specify. Removing the annotation from an existing load balancer replaces the security group you added with the IBM-managed security group. You can add or remove this annotation at any time. You are responsible for managing your security group and keeping it up to date. 
 
 3. Create the Kubernetes `LoadBalancer` service in your cluster.
     ```sh
@@ -1242,7 +1263,7 @@ Review the following default settings and limitations.
 * One VPC load balancer is created for each Kubernetes `LoadBalancer` service that you create, and it routes requests to that Kubernetes `LoadBalancer` service only. Across all your VPC clusters in your VPC, a maximum of 50 VPC load balancers can be created. For more information, see the [VPC quotas documentation](/docs/vpc?topic=vpc-quotas).
 * The VPC load balancer can route requests to a limited number of worker nodes. The maximum number of nodes you can route requests to depends on how you set the `externalTrafficPolicy` annotation. 
     * If you set `externalTrafficPolicy: Cluster` in your load balancer configuration:
-        * The VPC load balancer routes to the first 8 worker nodes that are discovered in each zone. For a single-zone cluster, the load balancer routes to 8 worker nodes total. The `kube-proxy` configures IP tables to route the incoming traffic from the worker node to the application pod on whichever node the application pod resides on. 
+        * The VPC load balancer routes to the first 8 worker nodes that are discovered in each zone. For a cluster with worker nodes in three zones, this results in the load balancer routing to 24 worker nodes total. For a single-zone cluster, the load balancer routes to 8 worker nodes total. You can change the number of worker nodes per zone that the load balancer routes to with the `service.kubernetes.io/ibm-load-balancer-cloud-provider-vpc-member-quota`, but the total number across all zones cannot exceed 50. If the cluster has fewer than 50 worker nodes across all zones, specify 0 to route to all worker nodes in a zone. The `kube-proxy` configures IP tables to route the incoming traffic from the worker node to the application pod on whichever node the application pod resides on. 
     * If you set `externalTrafficPolicy: Local` in your load balancer configuration, the VPC load balancer is created only if there are 50 or fewer worker nodes on the cluster. This limit is set by VPC quota limitations of 50 pool members per VPC load balancer pool. To avoid this limitation, use the `service.kubernetes.io/ibm-load-balancer-cloud-provider-vpc-node-selector` annotation to limit which worker nodes are in the load balancer pool. For instance, you can use this annotation to force incoming traffic to a specific worker pool. If you use this annotation to force traffic to a specific worker pool, you must also ensure that the application pod also runs in the same worker pool. 
 * When you define the configuration YAML file for a Kubernetes `LoadBalancer` service, the following annotations and settings are not supported:
     * `service.kubernetes.io/ibm-load-balancer-cloud-provider-vlan: "<vlan_id>"`
