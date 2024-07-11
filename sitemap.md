@@ -10083,7 +10083,7 @@ subcollection: openshift
 
 * [Step 10: Retry](/docs/openshift?topic=openshift-ocp-debug#oc-debug-retry)
 
-[Why does OpenShift show the cluster version is down-level?](/docs/openshift?topic=openshift-ts-cluster-version-downlevel#ts-cluster-version-downlevel)
+[Why does OpenShift show the cluster version is not up to date?](/docs/openshift?topic=openshift-ts-cluster-version-downlevel#ts-cluster-version-downlevel)
 
 [Cluster states](/docs/openshift?topic=openshift-cluster-states-reference#cluster-states-reference)
 
