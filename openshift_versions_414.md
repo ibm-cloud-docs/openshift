@@ -2,7 +2,7 @@
 
 copyright:
   years: 2023, 2024
-lastupdated: "2024-04-24"
+lastupdated: "2024-07-11"
 
 
 keywords: openshift, version, update, upgrade, 4.14, update openshift
@@ -66,7 +66,7 @@ Cluster master access for VPC clusters with a private service endpoint changed s
 | --- | --- |
 | **Unsupported:** Deprecated and removed OpenShift features | For more information, review the [OpenShift version 4.14 deprecated and removed features](https://docs.openshift.com/container-platform/4.14/release_notes/ocp-4-14-release-notes.html#ocp-4-14-deprecated-removed-features){: external} and [Preparing to update to OpenShift Container Platform 4.14](https://docs.openshift.com/container-platform/4.14/updating/preparing_for_updates/updating-cluster-prepare.html){: external} for possible actions required. |
 | Known OpenShift issues | For more information, review the [OpenShift version 4.14 known issues](https://docs.openshift.com/container-platform/4.14/release_notes/ocp-4-14-release-notes.html#ocp-4-14-known-issues){: external} for possible actions required. |
-| Upgrade requires OpenShift cluster version currency | A cluster master upgrade will now be cancelled if the OpenShift cluster version status indicates that an update is already in progress.  See [Why does OpenShift show the cluster version is down-level?](/docs/openshift?topic=openshift-ts-cluster-version-downlevel){: external} for details. |
+| Upgrade requires OpenShift cluster version currency | A cluster master upgrade will now be cancelled if the OpenShift cluster version status indicates that an update is already in progress.  See [Why does OpenShift show the cluster version is not up to date?](/docs/openshift?topic=openshift-ts-cluster-version-downlevel){: external} for details. |
 | Upgrade requires resolution to OpenShift cluster version upgradeable conditions | A cluster master upgrade might be cancelled if the OpenShift cluster version `Upgradeable` status condition indicates that the cluster is not upgradeable. To determine if the cluster is upgradeable, see [Checking the `Upgradeable` status of your cluster](#status-check-414). If the cluster is not in an upgradeable status, the condition information provides instructions that must be followed before upgrading. For more information, see [Providing the administrator acknowledgment](https://docs.openshift.com/container-platform/4.14/updating/preparing_for_updates/updating-cluster-prepare.html#update-preparing-ack_updating-cluster-prepare){: external}. |
 | Pod security admission label synchronization changes | Highly privileged namespaces `default`, `kube-public`, and `kube-system` are exempt from pod security admission enforcement. That is, pod security admission label synchronization will ensure that these namespaces enforce `privileged` pod security admission. You can disable pod security admission label synchronization for other namespaces by setting the value of the `security.openshift.io/scc.podSecurityLabelSync` namespace label to `false`. For more information, see [Understanding and managing pod security admission](https://docs.openshift.com/container-platform/4.14/authentication/understanding-and-managing-pod-security-admission.html){: external}. |
 | OpenVPN replaced by Konnectivity |	 Konnectivity replaces OpenVPN as the Kubernetes API server network proxy used to secure OpenShift master to worker node communication. If your apps rely on OpenVPN to implement a secure OpenShift master to worker node communication, update your apps to support Konnectivity. |

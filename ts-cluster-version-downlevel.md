@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2024
-lastupdated: "2024-03-27"
+lastupdated: "2024-07-11"
 
 
 keywords: openshift, {{site.data.keyword.openshiftlong_notm}}, cluster version, 
@@ -15,7 +15,7 @@ content-type: troubleshoot
 {{site.data.keyword.attribute-definition-list}}
 
 
-# Why does OpenShift show the cluster version is down-level?
+# Why does OpenShift show the cluster version is not up to date?
 {: #ts-cluster-version-downlevel}
 {: support}
 
