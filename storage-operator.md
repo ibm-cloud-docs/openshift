@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2024, 2024
-lastupdated: "2024-06-28"
+lastupdated: "2024-07-12"
 
 
 keywords: openshift, {{site.data.keyword.openshiftlong_notm}}, add-on, storage operator
@@ -22,7 +22,7 @@ subcollection: openshift
 The `ibm-storage-operator` cluster add-on manages several storage configmaps and resources in your cluster.
 {: shortdesc}
 
-The `ibm-storage-operator` is installed by default in VPC clusters beginning with versions 4.16 and later and is a dependency of the {{site.data.keyword.filestorage_vpc_full_notm}} add-on.
+The `ibm-storage-operator` is installed by default in VPC clusters beginning with versions 4.15 and later and is a dependency of the {{site.data.keyword.filestorage_vpc_full_notm}} add-on.
 
 The `ibm-storage-operator` cluster add-on is available in Beta. 
 {: beta} 
