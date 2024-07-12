@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2024
-lastupdated: "2024-07-09"
+lastupdated: "2024-07-12"
 
 
 keywords: kubernetes, openshift, app protocol, application protocol
@@ -582,6 +582,8 @@ To enable your app to receive private network requests,
     Namespace:                default
     Labels:                   <none>
     Annotations:              service.kubernetes.io/ibm-load-balancer-cloud-provider-enable-features: nlb
+                              service.kubernetes.io/ibm-load-balancer-cloud-provider-ip-type: "private"
+                              service.kubernetes.io/ibm-load-balancer-cloud-provider-vpc-subnets: "<subnet1_ID,subnet2_ID>"
     Selector:                 app=echo-server
     Type:                     LoadBalancer
     IP:                       172.21.204.12
