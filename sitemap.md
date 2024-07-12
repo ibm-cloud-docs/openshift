@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2024
-lastupdated: "2024-07-11"
+lastupdated: "2024-07-12"
 
 
 keywords: openshift
@@ -274,6 +274,10 @@ subcollection: openshift
 [Release notes](/docs/openshift?topic=openshift-openshift-relnotes#openshift-relnotes)
 
 * [July 2024](/docs/openshift?topic=openshift-openshift-relnotes#openshift-july24)
+
+    * [12 July 2024](/docs/openshift?topic=openshift-openshift-relnotes#openshift-july1224)
+
+        * {{site.data.keyword.openshiftlong_notm}} CLI version `1.0.638` is available.
 
     * [10 July 2024](/docs/openshift?topic=openshift-openshift-relnotes#openshift-july1024)
 
@@ -6118,6 +6122,8 @@ subcollection: openshift
 [CLI change log](/docs/openshift?topic=openshift-cs_cli_changelog#cs_cli_changelog)
 
 * [Version 1.0](/docs/openshift?topic=openshift-cs_cli_changelog#10)
+
+* [Version v1.0.638](/docs/openshift?topic=openshift-cs_cli_changelog#cli-010638)
 
 * [Version v1.0.635](/docs/openshift?topic=openshift-cs_cli_changelog#cli-010635)
 

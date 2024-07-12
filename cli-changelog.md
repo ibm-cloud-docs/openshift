@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2024
-lastupdated: "2024-07-09"
+lastupdated: "2024-07-12"
 
 
 keywords: openshift, {{site.data.keyword.openshiftlong_notm}}, oc, ks
@@ -31,6 +31,14 @@ Refer to the following change logs for a summary of changes for each version of 
 
 Review the following changes for 1.0 versions of the CLI plug-in.
 {: shortdesc}
+
+## Version v1.0.638
+{: #cli-010638}
+
+Version 1.0.638 of the CLI was released on 12 July 2024.
+- Adds `ibmcloud sat experimental endpoint acl` commands.
+- Adds support for the beta `ibm-object-csi-driver` add-on.
+- Updates error messages.
 
 ## Version v1.0.635
 {: #cli-010635}
