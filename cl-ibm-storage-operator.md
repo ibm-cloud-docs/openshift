@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2024, 2024
-lastupdated: "2024-06-28"
+lastupdated: "2024-07-12"
 
 
 keywords: storage operator, add-on, changelog, openshift
@@ -22,7 +22,7 @@ subcollection: openshift
 View information for patch updates to the IBM storage-operator add-on in your {{site.data.keyword.openshiftlong_notm}} clusters.
 {: shortdesc}
 
-The `ibm-storage-operator` is enabled by default on VPC clusters.
+The `ibm-storage-operator` is enabled by default on VPC clusters beginning with version 4.15.
 {: note}
 
 To view a list of add-ons and the supported cluster versions in the CLI, run the following command.
