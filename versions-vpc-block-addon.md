@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2024
-lastupdated: "2024-06-21"
+lastupdated: "2024-07-15"
 
 
 keywords: openshift, {{site.data.keyword.openshiftlong_notm}}, block, storage, add-on, changelog
@@ -46,6 +46,13 @@ Before you migrate to a `5.x` release from a previous release, you must not have
 
 ## Version 5.2
 {: #052_is_block}
+
+### Change log for version 5.2.20_579, released 15 July 2024
+{: #5.2.20_579_is_block_relnote}
+
+- Updates the golang image to `1.21.12-community`.
+- Updates the `armada-storage-secret` to `v1.3.10`.
+- Resolves [CVE-2024-28182](https://nvd.nist.gov/vuln/detail/CVE-2024-28182){: external} and [CVE-2023-2953](https://nvd.nist.gov/vuln/detail/CVE-2023-2953){: external}.
 
 ### Change log for version 5.2.19_570, released 21 June 2024
 {: #5.2.19_570_is_block_relnote}
@@ -127,6 +134,13 @@ Before you migrate to a `5.x` release from a previous release, you must not have
 
 ## Version 5.1
 {: #051_is_block}
+
+### Change log for version 5.1.25_574, released 15 July 2024
+{: #5.1.25_574_is_block_relnote}
+
+- Updates the golang image to `1.21.12-community`.
+- Updates the `armada-storage-secret` to `v1.2.40`.
+- Resolves [CVE-2024-28182](https://nvd.nist.gov/vuln/detail/CVE-2024-28182){: external} and [CVE-2023-2953](https://nvd.nist.gov/vuln/detail/CVE-2023-2953){: external}.
 
 ### Change log for version 5.1.24_567, released 21 June 2024
 {: #5.1.24_567_is_block_relnote}

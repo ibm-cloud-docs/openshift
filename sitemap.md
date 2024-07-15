@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2024
-lastupdated: "2024-07-12"
+lastupdated: "2024-07-15"
 
 
 keywords: openshift
@@ -274,6 +274,18 @@ subcollection: openshift
 [Release notes](/docs/openshift?topic=openshift-openshift-relnotes#openshift-relnotes)
 
 * [July 2024](/docs/openshift?topic=openshift-openshift-relnotes#openshift-july24)
+
+    * [15 July 2024](/docs/openshift?topic=openshift-openshift-relnotes#openshift-july1524)
+
+        * {{site.data.keyword.openshiftlong_notm}} master fix packs.
+
+        * {{site.data.keyword.openshiftlong_notm}} worker node fix packs.
+
+        * {{site.data.keyword.block_storage_is_short}} cluster add-on patch updates.
+
+        * {{site.data.keyword.filestorage_vpc_full_notm}} cluster add-on patch updates.
+
+        * Storage Operator cluster add-on patch update.
 
     * [12 July 2024](/docs/openshift?topic=openshift-openshift-relnotes#openshift-july1224)
 
@@ -6395,6 +6407,10 @@ subcollection: openshift
 
 * [Overview](/docs/openshift?topic=openshift-openshift_changelog_415#openshift_changelog_overview_415)
 
+    * [Change log for master fix pack 4.15.18_1545_openshift, released 15 July 2024](/docs/openshift?topic=openshift-openshift_changelog_415#41518_1545_openshift_M)
+
+    * [Change log for worker node fix pack 4.15.21_1546_openshift, released 15 July 2024](/docs/openshift?topic=openshift-openshift_changelog_415#41521_1546_openshift_W)
+
     * [Change log for worker node fix pack 4.15.19_1543_openshift, released 09 July 2024](/docs/openshift?topic=openshift-openshift_changelog_415#41519_1543_openshift_W)
 
     * [Change log for master fix pack 4.15.17_1541_openshift, released 19 June 2024](/docs/openshift?topic=openshift-openshift_changelog_415#41517_1541_openshift_M)
@@ -6529,6 +6545,8 @@ subcollection: openshift
 [Version 4.14 change log](/docs/openshift?topic=openshift-openshift_changelog_414#openshift_changelog_414)
 
 * [Overview](/docs/openshift?topic=openshift-openshift_changelog_414#openshift_changelog_overview_414)
+
+    * [Change log for worker node fix pack 4.14.32_1573_openshift, released 15 July 2024](/docs/openshift?topic=openshift-openshift_changelog_414#41432_1573_openshift_W)
 
     * [Change log for worker node fix pack 4.14.31_1572_openshift, released 09 July 2024](/docs/openshift?topic=openshift-openshift_changelog_414#41431_1572_openshift_W)
 
@@ -6670,6 +6688,8 @@ subcollection: openshift
 [Version 4.13 change log](/docs/openshift?topic=openshift-openshift_changelog_413#openshift_changelog_413)
 
 * [Overview](/docs/openshift?topic=openshift-openshift_changelog_413#openshift_changelog_overview_413)
+
+    * [Change log for worker node fix pack 4.13.44_1580_openshift, released 15 July 2024](/docs/openshift?topic=openshift-openshift_changelog_413#41344_1580_openshift_W)
 
     * [Change log for worker node fix pack 4.13.44_1579_openshift, released 09 July 2024](/docs/openshift?topic=openshift-openshift_changelog_413#41344_1579_openshift_W)
 
@@ -6851,6 +6871,8 @@ subcollection: openshift
 [Version 4.12 change log](/docs/openshift?topic=openshift-openshift_changelog_412#openshift_changelog_412)
 
 * [Overview](/docs/openshift?topic=openshift-openshift_changelog_412#openshift_changelog_overview_412)
+
+    * [Change log for worker node fix pack 4.12.60_1600_openshift, released 15 July 2024](/docs/openshift?topic=openshift-openshift_changelog_412#41260_1600_openshift_W)
 
     * [Change log for worker node fix pack 4.12.60_1599_openshift, released 09 July 2024](/docs/openshift?topic=openshift-openshift_changelog_412#41260_1599_openshift_W)
 
@@ -7309,6 +7331,8 @@ subcollection: openshift
 
 * [Version 5.2](/docs/openshift?topic=openshift-vpc_bs_changelog#052_is_block)
 
+    * [Change log for version 5.2.20_579, released 15 July 2024](/docs/openshift?topic=openshift-vpc_bs_changelog#5.2.20_579_is_block_relnote)
+
     * [Change log for version 5.2.19_570, released 21 June 2024](/docs/openshift?topic=openshift-vpc_bs_changelog#5.2.19_570_is_block_relnote)
 
     * [Change log for version 5.2.18_539, released 10 May 2024](/docs/openshift?topic=openshift-vpc_bs_changelog#5.2.18_539_is_block_relnote)
@@ -7326,6 +7350,8 @@ subcollection: openshift
     * [Change log for version 5.2, released 25 September 2023](/docs/openshift?topic=openshift-vpc_bs_changelog#5.2_is_block_relnote)
 
 * [Version 5.1](/docs/openshift?topic=openshift-vpc_bs_changelog#051_is_block)
+
+    * [Change log for version 5.1.25_574, released 15 July 2024](/docs/openshift?topic=openshift-vpc_bs_changelog#5.1.25_574_is_block_relnote)
 
     * [Change log for version 5.1.24_567, released 21 June 2024](/docs/openshift?topic=openshift-vpc_bs_changelog#5.1.24_567_is_block_relnote)
 
@@ -7489,9 +7515,13 @@ subcollection: openshift
 
 * [Version 2.0](/docs/openshift?topic=openshift-versions-vpc-file-addon#020_is_file)
 
+    * [Change log for version 2.0.5_253, released 15 July 2024](/docs/openshift?topic=openshift-versions-vpc-file-addon#2.0.5_253_is_file_relnote)
+
     * [Change log for version 2.0.4_232, released 3 July 2024](/docs/openshift?topic=openshift-versions-vpc-file-addon#2.0.4_232_is_file_relnote)
 
 * [Version 1.2](/docs/openshift?topic=openshift-versions-vpc-file-addon#012_is_file)
+
+    * [Change log for version 1.2.10_254, released 15 July 2024](/docs/openshift?topic=openshift-versions-vpc-file-addon#1.2.10_254_is_file_relnote)
 
     * [Change log for version 1.2.9_245, released 21 June 2024](/docs/openshift?topic=openshift-versions-vpc-file-addon#1.2.9_245_is_file_relnote)
 
@@ -8081,7 +8111,9 @@ subcollection: openshift
 
 * [Version 1.0.0](/docs/openshift?topic=openshift-versions-ibm-storage-operator#ibm-storage-operator-1.0.0)
 
-    * [1.0.0_2186, released 29 May 2024](/docs/openshift?topic=openshift-versions-ibm-storage-operator#ibm-storage-operator-1.0.0-initial)
+    * [Change log for version 1.0.12_147, released 15 July 2024](/docs/openshift?topic=openshift-versions-ibm-storage-operator#ibm-storage-operator-1.0.12_147)
+
+    * [1.0.10_141, released 03 July 2024](/docs/openshift?topic=openshift-versions-ibm-storage-operator#ibm-storage-operator-1.0.0-initial)
 
 
 ## Archived version history
@@ -10648,8 +10680,6 @@ subcollection: openshift
 * [Verifying the read and write permissions for the non-root user](/docs/openshift?topic=openshift-cs_storage_nonroot#verify-rw-permissions)
 
 [Why are the file systems for worker nodes changed to read-only?](/docs/openshift?topic=openshift-readonly_nodes#readonly_nodes)
-
-[Why do I see a `MountingTargetFailed` error for {{site.data.keyword.filestorage_vpc_short}}?](/docs/openshift?topic=openshift-ts-storage-vpc-file-eit-mount-failed#ts-storage-vpc-file-eit-mount-failed)
 
 [Why do I see an `UnresponsiveMountHelperContainerUtility` error for {{site.data.keyword.filestorage_vpc_short}}?](/docs/openshift?topic=openshift-ts-storage-vpc-file-eit-unresponsive#ts-storage-vpc-file-eit-unresponsive)
 
