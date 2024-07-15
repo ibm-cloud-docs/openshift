@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2024, 2024
-lastupdated: "2024-07-12"
+lastupdated: "2024-07-15"
 
 
 keywords: openshift, {{site.data.keyword.openshiftlong_notm}}, add-on, storage operator
@@ -83,4 +83,3 @@ Note that you can't disable the add-on if there are other add-ons are using the 
     ibmcloud oc cluster addon disable ibm-storage-operator -c CLUSTER
     ```
     {: pre}
-

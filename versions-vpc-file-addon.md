@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2024
-lastupdated: "2024-07-03"
+lastupdated: "2024-07-15"
 
 
 keywords: file, add-on, changelog, openshift
@@ -45,6 +45,13 @@ To view a list of add-ons and the supported cluster versions, see the [Supported
 ## Version 2.0
 {: #020_is_file}
 
+### Change log for version 2.0.5_253, released 15 July 2024
+{: #2.0.5_253_is_file_relnote}
+
+- Updates the golang image to `1.21.12-community`.
+- Updates the `armada-storage-secret` to `v1.2.40`.
+- Resolves [CVE-2024-28182](https://nvd.nist.gov/vuln/detail/CVE-2024-28182){: external} and [CVE-2023-2953](https://nvd.nist.gov/vuln/detail/CVE-2023-2953){: external}.
+
 ### Change log for version 2.0.4_232, released 3 July 2024
 {: #2.0.4_232_is_file_relnote}
 
@@ -65,6 +72,13 @@ To view a list of add-ons and the supported cluster versions, see the [Supported
 
 ## Version 1.2
 {: #012_is_file}
+
+### Change log for version 1.2.10_254, released 15 July 2024
+{: #1.2.10_254_is_file_relnote}
+
+- Updates the golang image to `1.21.12-community`.
+- Updates the `armada-storage-secret` to `v1.2.40`.
+- Resolves [CVE-2024-28182](https://nvd.nist.gov/vuln/detail/CVE-2024-28182){: external} and [CVE-2023-2953](https://nvd.nist.gov/vuln/detail/CVE-2023-2953){: external}.
 
 ### Change log for version 1.2.9_245, released 21 June 2024
 {: #1.2.9_245_is_file_relnote}

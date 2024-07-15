@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2024, 2024
-lastupdated: "2024-06-28"
+lastupdated: "2024-07-15"
 
 
 keywords: kubernetes, openshift
@@ -49,10 +49,4 @@ Make sure that your app pod is running in the same worker pool as mentioned in t
     oc get pods -A
     ```
     {: pre}
-
-
-
-
-
-
 

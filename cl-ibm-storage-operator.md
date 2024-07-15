@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2024, 2024
-lastupdated: "2024-07-12"
+lastupdated: "2024-07-15"
 
 
 keywords: storage operator, add-on, changelog, openshift
@@ -36,9 +36,14 @@ To view a list of add-ons and the supported cluster versions, see the [Supported
 ## Version 1.0.0
 {: #ibm-storage-operator-1.0.0}
 
+### Change log for version 1.0.12_147, released 15 July 2024
+{: #ibm-storage-operator-1.0.12_147}
 
-### 1.0.0_2186, released 29 May 2024
+- Updates the golang image to `1.21.12-community`.
+- Resolves [CVE-2024-28182](https://nvd.nist.gov/vuln/detail/CVE-2024-28182){: external} and [CVE-2023-2953](https://nvd.nist.gov/vuln/detail/CVE-2023-2953){: external}.
+
+
+### 1.0.10_141, released 03 July 2024
 {: #ibm-storage-operator-1.0.0-initial}
 
-- Initial release of 1.0.0.
-
+- Initial release.

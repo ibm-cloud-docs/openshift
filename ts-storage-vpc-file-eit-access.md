@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2024, 2024
-lastupdated: "2024-07-10"
+lastupdated: "2024-07-15"
 
 
 keywords: kubernetes, openshift, eit, 
@@ -44,7 +44,3 @@ To resolve this, you must allow all outbound access to your cluster by using the
 ibmcloud oc vpc outbound-traffic-protection disable --cluster CLUSTER [-f] [-q]
 ```
 {: pre}
-
-
-
-
