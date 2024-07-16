@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2024
-lastupdated: "2024-07-15"
+lastupdated: "2024-07-16"
 
 
 keywords: openshift dedicated hosts
@@ -12,7 +12,6 @@ subcollection: openshift
 ---
 
 {{site.data.keyword.attribute-definition-list}}
-
 
 
 

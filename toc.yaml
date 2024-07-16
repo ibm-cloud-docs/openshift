@@ -615,8 +615,10 @@ toc:
               - ts-storage-vpc-file-non-root.md
               - ts-storage-file-nonroot.md
               - ts-storage-file-readonly.md
+              - ts-storage-vpc-file-eit-mount-failed.md
               - ts-storage-vpc-file-eit-unresponsive.md
               - ts-storage-vpc-file-eit-access.md
+              - ts-storage-vpc-pvc-fails.md
               - ts-storage-feedback.md
           - topicgroup:
               label: Block Storage

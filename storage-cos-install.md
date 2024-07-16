@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2024
-lastupdated: "2024-07-10"
+lastupdated: "2024-07-16"
 
 
 keywords: kubernetes, openshift
@@ -197,7 +197,7 @@ Example `helm ibmc install` commands for OS X and Linux
 
 
 ```sh
-helm install ibm-object-storage-plugin ./ibm-object-storage-plugin \
+helm ibmc install ibm-object-storage-plugin ./ibm-object-storage-plugin \
 --set license=true \
 --set kubeDriver=etc/kubernetes \
 --set dcname="${DC_NAME}" --set provider="${CLUSTER_PROVIDER}" --set workerOS="${WORKER_OS}" \
