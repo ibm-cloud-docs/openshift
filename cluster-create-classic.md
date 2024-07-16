@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2024
-lastupdated: "2024-06-24"
+lastupdated: "2024-07-16"
 
 
 keywords: openshift, {{site.data.keyword.openshiftlong_notm}}, kubernetes, clusters, worker nodes, worker pools, classic, create
@@ -219,7 +219,7 @@ Create your single zone or multizone classic cluster by using the {{site.data.ke
     When the provisioning of your {{site.data.keyword.redhat_openshift_notm}} master is completed, the **State** of your cluster changes to `normal`. After your {{site.data.keyword.redhat_openshift_notm}} master is ready, the provisioning of your worker nodes is initiated.
     ```sh
     NAME         ID                         State      Created          Workers    Zone      Version     Resource Group Name   Provider
-    mycluster    blrs3b1d0p0p2f7haq0g       normal   20170201162433   3          dal10     4.15.17_1544_openshift      Default             classic
+    mycluster    blrs3b1d0p0p2f7haq0g       normal   20170201162433   3          dal10     4.15.18_1544_openshift      Default             classic
     ```
     {: screen}
 
