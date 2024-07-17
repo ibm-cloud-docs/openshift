@@ -618,6 +618,7 @@ toc:
               - ts-storage-vpc-file-eit-mount-failed.md
               - ts-storage-vpc-file-eit-unresponsive.md
               - ts-storage-vpc-file-eit-access.md
+              - ts-storage-vpc-file-pvc-fails.md
               - ts-storage-vpc-pvc-fails.md
               - ts-storage-feedback.md
           - topicgroup:

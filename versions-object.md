@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2024
-lastupdated: "2024-07-16"
+lastupdated: "2024-07-17"
 
 
 keywords: openshift, {{site.data.keyword.openshiftlong_notm}}, object storage, plug-in, change log
@@ -26,11 +26,11 @@ View information for updates to the {{site.data.keyword.cos_full_notm}} plug-in 
 {: shortdesc}
 
 
-Refer to the following tables for a summary of changes for each version of the [{{site.data.keyword.cos_full_notm}} plug-in](/docs/openshift?topic=openshift-storage-cos-understand).
-
-| {{site.data.keyword.cos_full_notm}} plug-in version | Supported? | {{site.data.keyword.redhat_openshift_notm}} version support | Supported architecture |
-| --- | --- |--- | --- |
-| 2.2.26, 2.2.27 | Yes | Greater than or equal to 4.6 | x86 |
+| {{site.data.keyword.cos_full_notm}} plug-in version | Supported? |
+| --- | --- |
+| 2.2.28 | Yes |
+| 2.2.27| Yes |
+| 2.2.26 | Yes |
 {: caption="{{site.data.keyword.cos_full_notm}} plug-in versions" caption-side="bottom"}
 
 
@@ -42,7 +42,7 @@ Refer to the following tables for a summary of changes for each version of the [
 ## Change log for version 2.2.27, released 17 July 2024
 {: #02227_object_plugin}
 
-- Resolves [CVE-2023-2953](https://nvd.nist.gov/vuln/detail/CVE-2023-2953){: external} and [CVE-2024-28182](https://nvd.nist.gov/vuln/detail/CVE-2024-28182){: external}
+- Resolves [CVE-2024-24789](https://nvd.nist.gov/vuln/detail/CVE-2024-24789){: external} and [CVE-2024-24790](https://nvd.nist.gov/vuln/detail/CVE-2024-24790){: external}
 
 ## Change log for version 2.2.26, released 5 June 2024
 {: #02226_object_plugin}

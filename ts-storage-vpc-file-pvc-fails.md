@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2024, 2024
-lastupdated: "2024-07-16"
+lastupdated: "2024-07-17"
 
 
 keywords: kubernetes, openshift, MountingTargetFailed, encryption in-transit, eit
@@ -16,7 +16,7 @@ subcollection: openshift
 
 
 # Why does PVC creation fail for {{site.data.keyword.filestorage_vpc_short}}?
-{: #ts-storage-vpc-file-eit-mount-failed}
+{: #ts-storage-vpc-file-eit-pvc-fails}
 
 [Virtual Private Cloud]{: tag-vpc}
 
