@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2024
-lastupdated: "2024-07-15"
+lastupdated: "2024-07-16"
 
 
 keywords: openshift, {{site.data.keyword.openshiftlong_notm}}, kubernetes, release notes
@@ -27,6 +27,13 @@ Looking for {{site.data.keyword.cloud_notm}} status, platform announcements, sec
 
 ## July 2024
 {: #openshift-july24}
+
+### 17 July 2024
+{: #openshift-july1724}
+{: release-note}
+
+{{site.data.keyword.cos_full_notm}} plug-in updates.
+:   For more information, see the [change log](/docs/openshift?topic=openshift-cos_plugin_changelog).
 
 ### 15 July 2024
 {: #openshift-july1524}
@@ -60,6 +67,14 @@ Looking for {{site.data.keyword.cloud_notm}} status, platform announcements, sec
 
 Storage Operator cluster add-on patch update.
 :   For more information, see the [change log](/docs/openshift?topic=openshift-versions-ibm-storage-operator).
+
+Cluster autoscaler add-on patch updates for {{site.data.keyword.openshiftlong_notm}}.
+:   For more information, see [Cluster autoscaler add-on change log](/docs/openshift?topic=openshift-ca_changelog).
+
+
+
+OpenShift Data Foundation cluster add-on patch updates.
+:   For more information, see the [change log](/docs/openshift?topic=openshift-odf_addon_changelog).
 
 
 

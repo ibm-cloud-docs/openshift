@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2024
-lastupdated: "2024-06-21"
+lastupdated: "2024-07-16"
 
 
 keywords: autoscaler, add-on, autoscaler change log, cluster autoscaler
@@ -42,6 +42,14 @@ ibmcloud oc cluster addon versions
 ## Version 1.2.2
 {: #0122_ca_addon}
 
+### Change log for patch update 1.2.2_466, released 15 July 2024
+{: #122_466_ca}
+
+- Updates the `storage-secret-sidecar` image to `v1.3.10`.
+- Resolves [CVE-2024-28182](https://nvd.nist.gov/vuln/detail/CVE-2024-28182){: external} and [CVE-2023-2953](https://nvd.nist.gov/vuln/detail/CVE-2023-2953){: external}
+- Image tags: `1.24.0-122-0`, `1.25.0-122-0`, `1.26.4-122-0`, `1.27.3-122-0`, `1.28.0-122-0`, `1.29.0-122-0`.
+
+
 ### Change log for patch update 1.2.2_452, released 20 June 2024
 {: #122452_ca}
 
@@ -53,6 +61,13 @@ ibmcloud oc cluster addon versions
 
 ## Version 1.2.1
 {: #0121_ca_addon}
+
+### Change log for patch update 1.2.1_467, released 15 July 2024
+{: #121_467_ca}
+
+- Updates the `storage-secret-sidecar` image to `v1.3.10`.
+- Resolves [CVE-2024-28182](https://nvd.nist.gov/vuln/detail/CVE-2024-28182){: external} and [CVE-2023-2953](https://nvd.nist.gov/vuln/detail/CVE-2023-2953){: external}
+- Image tags: `1.24.0-121-2`, `1.25.0-121-2`, `1.26.4-121-2`, `1.27.3-121-2`, `1.28.0-121-2`, `1.29.0-121-2`.
 
 
 ### Change log for patch update 1.2.1_444, released 21 June 2024
@@ -86,6 +101,13 @@ ibmcloud oc cluster addon versions
 
 ## Version 1.2.0
 {: #0120_ca_addon}
+
+### Change log for patch update 1.2.0_468, released 15 July 2024
+{: #120_468_ca}
+
+- Updates the `storage-secret-sidecar` image to `v1.3.10`.
+- Resolves [CVE-2024-28182](https://nvd.nist.gov/vuln/detail/CVE-2024-28182){: external} and [CVE-2023-2953](https://nvd.nist.gov/vuln/detail/CVE-2023-2953){: external}
+- Image tags: `1.24.0-120-6`, `1.25.0-120-6`, `1.26.4-120-6`, `1.27.3-120-6`, `1.28.0-120-6`.
 
 ### Change log for patch update 1.2.0_443, released 21 June 2024
 {: #120443_ca}

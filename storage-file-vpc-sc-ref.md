@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2022, 2024
-lastupdated: "2024-06-28"
+lastupdated: "2024-07-16"
 
 
 keywords: openshift, file storage, storage class reference, eni
@@ -59,95 +59,4 @@ For more information about each of the classes view the details from the web con
 oc get sc CLASS
 ```
 {: pre}
-
-
-
-
-
-| Characteristics | Setting |
-|:-----------------|:-----------------|
-| Name | `ibmc-vpc-file-dp2` |
-| IOPS per gigabyte | 5 |
-| Size range in gigabytes | 20-12000 Gi |
-| `gid` | `0` |
-| `encrypted` | `false` |
-| `profile` | `dp2` |
-| `iops` | `100` |
-| `isENIEnabled` | `true` |
-| `uid` | `0` |
-| `billingType` | `hourly` |
-| `reclaimPolicy` | `Delete` |
-| `allowVolumeExpansion` | `true` |
-| `volumeBindingMode` | `Immediate` |
-{: class="simple-tab-table"}
-{: caption="ibmc-vpc-file-dp2" caption-side="bottom"}
-{: #simpletabtable1-file-vpc-sc-ref}
-{: tab-title="dp2"}
-{: tab-group="Class"}
-
-  
-
-| Characteristics | Setting|
-|:-----------------|:-----------------|
-| Name | `ibmc-vpc-file-retain-dp2` |
-| IOPS per gigabyte | 5 |
-| Size range in gigabytes | 20-12000 Gi |
-| `gid` | `0` |
-| `encrypted` | `'false'` |
-| `profile` | `dp2` |
-| `iops` | `100` |
-| `isENIEnabled` | `true` |
-| `uid` | `0` |
-| `billingType` | `hourly` |
-| `reclaimPolicy` | `Retain` |
-| `allowVolumeExpansion` | `true` |
-| `volumeBindingMode` | `Immediate` |
-{: class="simple-tab-table"}
-{: caption="ibmc-vpc-file-retain-dp2" caption-side="bottom"}
-{: #simpletabtable2-file-vpc-sc-ref}
-{: tab-title="dp2 retain"}
-{: tab-group="Class"}
-
-| Characteristics | Setting|
-|:-----------------|:-----------------|
-| Name | `ibmc-vpc-file-metro-dp2` |
-| IOPS per gigabyte | 10|
-| Size range in gigabytes | 20-4000 Gi|
-| `gid` | `0` |
-| `encrypted` | `'false'` |
-| `profile` | `dp2` |
-| `iops` | `100` |
-| `isENIEnabled` | `true` |
-| `uid` | `0` |
-| `billingType` | `hourly` |
-| `reclaimPolicy` | `Delete` |
-| `allowVolumeExpansion` | `true` |
-| `volumeBindingMode` | `WaitForFirstConsumer` |
-{: class="simple-tab-table"}
-{: caption="ibmc-vpc-file-metro-dp2 " caption-side="bottom"}
-{: #simpletabtable3-file-vpc-sc-ref}
-{: tab-title="dp2 metro"}
-{: tab-group="Class"}
-
-| Characteristics | Setting|
-|:-----------------|:-----------------|
-| Name | `ibmc-vpc-file-metro-retain-dp2` |
-| IOPS per gigabyte | 10|
-| Size range in gigabytes | 20-4000 Gi|
-| `gid` | `0` |
-| `encrypted` | `'false'` |
-| `profile` | `dp2` |
-| `iops` | `100` |
-| `isENIEnabled` | `true` |
-| `uid` | `0` |
-| `billingType` | `hourly` |
-| `reclaimPolicy` | `Retain` |
-| `allowVolumeExpansion` | `true` |
-| `volumeBindingMode` | `Immediate` |
-{: class="simple-tab-table"}
-{: caption="ibmc-vpc-file-metro-retain-dp2" caption-side="bottom"}
-{: #simpletabtable4-file-vpc-sc-ref}
-{: tab-title="dp2 metro retain"}
-{: tab-group="Class"}
-
 

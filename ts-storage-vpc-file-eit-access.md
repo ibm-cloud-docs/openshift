@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2024, 2024
-lastupdated: "2024-07-15"
+lastupdated: "2024-07-16"
 
 
 keywords: kubernetes, openshift, eit, 
@@ -25,8 +25,6 @@ Your app that uses encryption in-transit {{site.data.keyword.filestorage_vpc_sho
 {: tsSymptoms}
 
 
-
-
 You see an error message similar to the following.
 
 ```sh
@@ -44,3 +42,5 @@ To resolve this, you must allow all outbound access to your cluster by using the
 ibmcloud oc vpc outbound-traffic-protection disable --cluster CLUSTER [-f] [-q]
 ```
 {: pre}
+
+

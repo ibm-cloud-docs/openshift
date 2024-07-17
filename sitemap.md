@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2024
-lastupdated: "2024-07-15"
+lastupdated: "2024-07-17"
 
 
 keywords: openshift
@@ -275,6 +275,10 @@ subcollection: openshift
 
 * [July 2024](/docs/openshift?topic=openshift-openshift-relnotes#openshift-july24)
 
+    * [17 July 2024](/docs/openshift?topic=openshift-openshift-relnotes#openshift-july1724)
+
+        * {{site.data.keyword.cos_full_notm}} plug-in updates.
+
     * [15 July 2024](/docs/openshift?topic=openshift-openshift-relnotes#openshift-july1524)
 
         * {{site.data.keyword.openshiftlong_notm}} master fix packs.
@@ -286,6 +290,10 @@ subcollection: openshift
         * {{site.data.keyword.filestorage_vpc_full_notm}} cluster add-on patch updates.
 
         * Storage Operator cluster add-on patch update.
+
+        * Cluster autoscaler add-on patch updates for {{site.data.keyword.openshiftlong_notm}}.
+
+        * OpenShift Data Foundation cluster add-on patch updates.
 
     * [12 July 2024](/docs/openshift?topic=openshift-openshift-relnotes#openshift-july1224)
 
@@ -7119,9 +7127,13 @@ subcollection: openshift
 
 * [Version 1.2.2](/docs/openshift?topic=openshift-ca_changelog#0122_ca_addon)
 
+    * [Change log for patch update 1.2.2_466, released 15 July 2024](/docs/openshift?topic=openshift-ca_changelog#122_466_ca)
+
     * [Change log for patch update 1.2.2_452, released 20 June 2024](/docs/openshift?topic=openshift-ca_changelog#122452_ca)
 
 * [Version 1.2.1](/docs/openshift?topic=openshift-ca_changelog#0121_ca_addon)
+
+    * [Change log for patch update 1.2.1_467, released 15 July 2024](/docs/openshift?topic=openshift-ca_changelog#121_467_ca)
 
     * [Change log for patch update 1.2.1_444, released 21 June 2024](/docs/openshift?topic=openshift-ca_changelog#121444_ca)
 
@@ -7132,6 +7144,8 @@ subcollection: openshift
     * [Change log for patch update 1.2.1_395, released 28 February 2024](/docs/openshift?topic=openshift-ca_changelog#121395_ca)
 
 * [Version 1.2.0](/docs/openshift?topic=openshift-ca_changelog#0120_ca_addon)
+
+    * [Change log for patch update 1.2.0_468, released 15 July 2024](/docs/openshift?topic=openshift-ca_changelog#120_468_ca)
 
     * [Change log for patch update 1.2.0_443, released 21 June 2024](/docs/openshift?topic=openshift-ca_changelog#120443_ca)
 
@@ -7557,6 +7571,10 @@ subcollection: openshift
 
 [{{site.data.keyword.cos_full_notm}} plug-in](/docs/openshift?topic=openshift-cos_plugin_changelog#cos_plugin_changelog)
 
+* [Change log for version 2.2.28, released 17 July 2024](/docs/openshift?topic=openshift-cos_plugin_changelog#02228_object_plugin)
+
+* [Change log for version 2.2.27, released 17 July 2024](/docs/openshift?topic=openshift-cos_plugin_changelog#02227_object_plugin)
+
 * [Change log for version 2.2.26, released 5 June 2024](/docs/openshift?topic=openshift-cos_plugin_changelog#02226_object_plugin)
 
 * [Change log for version 2.2.25, released 24 April 2024](/docs/openshift?topic=openshift-cos_plugin_changelog#02225_object_plugin)
@@ -7677,6 +7695,8 @@ subcollection: openshift
 
 * [Version 4.15](/docs/openshift?topic=openshift-odf_addon_changelog#4.15_odf)
 
+    * [Version 4.15.4, released 15 July 2024](/docs/openshift?topic=openshift-odf_addon_changelog#4.15.4_odf)
+
     * [Version 4.15.3, released 24 June 2024](/docs/openshift?topic=openshift-odf_addon_changelog#4.15.3_odf)
 
     * [Version 4.15.2, released 5 June 2024](/docs/openshift?topic=openshift-odf_addon_changelog#4.15.2_odf)
@@ -7684,6 +7704,8 @@ subcollection: openshift
     * [Version 4.15.0, released 10 May 2024](/docs/openshift?topic=openshift-odf_addon_changelog#4.15.0_odf)
 
 * [Version 4.14](/docs/openshift?topic=openshift-odf_addon_changelog#4.14_odf)
+
+    * [Version 4.14.15, released 15 July 2024](/docs/openshift?topic=openshift-odf_addon_changelog#4.14.15_odf)
 
     * [Version 4.14.14, released 24 June 2024](/docs/openshift?topic=openshift-odf_addon_changelog#4.14.14_odf)
 
@@ -7704,6 +7726,8 @@ subcollection: openshift
     * [Version 4.14.0, released 19 January 2024](/docs/openshift?topic=openshift-odf_addon_changelog#4.14.0_odf)
 
 * [Version 4.13](/docs/openshift?topic=openshift-odf_addon_changelog#4.13_odf)
+
+    * [Version 4.13.18, released 15 July 2024](/docs/openshift?topic=openshift-odf_addon_changelog#4.13.18_odf)
 
     * [Version 4.13.17, released 5 June 2024](/docs/openshift?topic=openshift-odf_addon_changelog#4.13.17_odf)
 
@@ -7732,6 +7756,8 @@ subcollection: openshift
     * [Version 4.13.0, released 10 July 2023](/docs/openshift?topic=openshift-odf_addon_changelog#4.13.0_odf)
 
 * [Version 4.12](/docs/openshift?topic=openshift-odf_addon_changelog#4.12_odf)
+
+    * [Version 4.12.20, released 15 July 2024](/docs/openshift?topic=openshift-odf_addon_changelog#4.12.20_odf)
 
     * [Version 4.12.19, released 5 June 2024](/docs/openshift?topic=openshift-odf_addon_changelog#4.12.19_odf)
 
@@ -10681,9 +10707,13 @@ subcollection: openshift
 
 [Why are the file systems for worker nodes changed to read-only?](/docs/openshift?topic=openshift-readonly_nodes#readonly_nodes)
 
+[Why do I see a `MountingTargetFailed` error for {{site.data.keyword.filestorage_vpc_short}}?](/docs/openshift?topic=openshift-ts-storage-vpc-file-eit-mount-failed#ts-storage-vpc-file-eit-mount-failed)
+
 [Why do I see an `UnresponsiveMountHelperContainerUtility` error for {{site.data.keyword.filestorage_vpc_short}}?](/docs/openshift?topic=openshift-ts-storage-vpc-file-eit-unresponsive#ts-storage-vpc-file-eit-unresponsive)
 
 [Why do I see a `MetadataServiceNotEnabled` error for {{site.data.keyword.filestorage_vpc_short}}?](/docs/openshift?topic=openshift-ts-storage-vpc-file-eit-access#ts-storage-vpc-file-eit-access)
+
+[Why does PVC creation fail for {{site.data.keyword.filestorage_vpc_short}}?](/docs/openshift?topic=openshift-ts-storage-vpc-file-eit-pvc-fails#ts-storage-vpc-file-eit-pvc-fails)
 
 [Storage: Feedback, questions, and support](/docs/openshift?topic=openshift-getting_help_storage#getting_help_storage)
 
