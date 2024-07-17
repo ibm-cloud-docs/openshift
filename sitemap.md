@@ -279,6 +279,8 @@ subcollection: openshift
 
         * {{site.data.keyword.cos_full_notm}} plug-in updates.
 
+        * {{site.data.keyword.openshiftlong_notm}} CLI version `1.0.640` is available.
+
     * [15 July 2024](/docs/openshift?topic=openshift-openshift-relnotes#openshift-july1524)
 
         * {{site.data.keyword.openshiftlong_notm}} master fix packs.
@@ -6142,6 +6144,8 @@ subcollection: openshift
 [CLI change log](/docs/openshift?topic=openshift-cs_cli_changelog#cs_cli_changelog)
 
 * [Version 1.0](/docs/openshift?topic=openshift-cs_cli_changelog#10)
+
+* [Version v1.0.640](/docs/openshift?topic=openshift-cs_cli_changelog#cli-010640)
 
 * [Version v1.0.638](/docs/openshift?topic=openshift-cs_cli_changelog#cli-010638)
 
