@@ -36,11 +36,11 @@ One possible cause for this issue is that your Cluster and VPC are in different 
 1. Find the resource group of your cluster and VPC. You can find your resource groups in the console or by running the `ibmcloud is resource service-instances -g GROUP` command.
 
 
-    * If your cluster and VPC are in the same resource group, create your own storage class and specify the [VPC resource group ID](/docs/openshift?topic=openshift-storage-file-vpc-apps#storage-file-vpc-custom-sc).
+    * **Cluster and VPC are not in the same resource group**: Create your own storage class and specify the [VPC resource group ID](/docs/openshift?topic=openshift-storage-file-vpc-apps#storage-file-vpc-custom-sc).
 
 
 
-    * If your cluster and VPC are in the same resource group. Check that the `vpc_subnet_ids` property contains valid subnet IDs.
+    * **Cluster and VPC are in the same resource group**: Check that the `vpc_subnet_ids` property contains valid subnet IDs.
 
         1. Review the subnet IDs in the `ibm-cloud-provider-data` configmap. 
             ```sh
