@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2024
-lastupdated: "2024-07-12"
+lastupdated: "2024-07-17"
 
 
 keywords: openshift, {{site.data.keyword.openshiftlong_notm}}, oc, ks
@@ -31,6 +31,13 @@ Refer to the following change logs for a summary of changes for each version of 
 
 Review the following changes for 1.0 versions of the CLI plug-in.
 {: shortdesc}
+
+## Version v1.0.640
+{: #cli-010640}
+
+Version 1.0.640 of the CLI was released on 17 July 2024.
+- Changes the `--entitlement cloud_pak` option in the `cluster create` command to be `--entitlement ocp_entitled` to allow for other entitlements besides Cloud Paks.
+- Adds the `--worker-pool POOL` option to the `ibmcloud oc zone add`, `ibmcloud oc zone network set`, and `ibmcloud oc zone network rm` commands.
 
 ## Version v1.0.638
 {: #cli-010638}
