@@ -2,12 +2,12 @@
 
 copyright: 
   years: 2024, 2024
-lastupdated: "2024-06-26"
+lastupdated: "2024-07-18"
 
 
 keywords: telemetry, remote health, remote monitoring, cluster data, health data
 
-subcollection: openshift
+subcollection: <containers>containers</containers><openshift>openshift</openshift>
 
 ---
 
@@ -16,7 +16,7 @@ subcollection: openshift
 # Telemetry for remote health monitoring
 {: #telemetry}
 
-Telemetry is a remote health monitoring feature that collects anonymized aggregated data about your cluster, such as the health of your components and the number and types of resources in use. If you have a public cluster that runs version 4.14 or later and was provisioned on or after 28 Feb 2024, you can elect to have your own Telemetry data visible in the Red Hat Hybrid Console under your Red Hat account for your use. For more information on Telemetry, such as the type of data collected, see [About Telemetry](https://access.redhat.com/documentation/en-us/openshift_container_platform/4.1/html/telemetry/about-telemetry){: external} in the {{site.data.keyword.redhat_openshift_notm}} documentation. 
+Telemetry is a remote health monitoring feature that collects anonymized aggregated data about your cluster, such as the health of your components and the number and types of resources in use. If you have a public cluster that runs version 4.14 or later and was provisioned on or after 28 Feb 2024, you can elect to have your own Telemetry data visible in the Red Hat Hybrid Console under your Red Hat account for your use. For more information on Telemetry, such as the type of data collected, see [About Telemetry](https://docs.redhat.com/en/documentation/openshift_container_platform/4.1/html/telemetry/about-telemetry){: external} in the {{site.data.keyword.redhat_openshift_notm}} documentation. 
 {: shortdesc}
 
 
@@ -96,13 +96,13 @@ You might want to disable this remote health reporting to comply with privacy la
 3. To pick up the global configuration changes, reload all the worker nodes in your cluster.
     1. Note the **ID** of the worker nodes in your cluster.
         ```sh
-        ibmcloud oc worker ls -c <cluster_name_or_ID>
+        <containers>ibmcloud ks</containers><openshift>ibmcloud oc</openshift> worker ls -c <cluster_name_or_ID>
         ```
         {: pre}
 
     2. Reload each worker node. You can reload multiple worker nodes by including multiple `-w` options, but make sure to leave enough worker nodes running at the same time for your apps to avoid an outage.
         ```sh
-        ibmcloud oc worker reload -c <cluster_name_or_ID> -w <workerID_1> -w <workerID_2>
+        <containers>ibmcloud ks</containers><openshift>ibmcloud oc</openshift> worker reload -c <cluster_name_or_ID> -w <workerID_1> -w <workerID_2>
         ```
         {: pre}
 
@@ -122,7 +122,7 @@ If you are not sure whether Telemetry is already enabled for a cluster, follow t
 1. In the CLI, set the context for your cluster and include the `--admin` option.
 
     ```sh
-    ibmcloud oc cluster config -c CLUSTER-ID --admin
+    <containers>ibmcloud ks</containers><openshift>ibmcloud oc</openshift> cluster config -c CLUSTER-ID --admin
     ```
     {: pre}
 

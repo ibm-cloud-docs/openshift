@@ -2,12 +2,12 @@
 
 copyright: 
   years: 2014, 2024
-lastupdated: "2024-06-20"
+lastupdated: "2024-07-18"
 
 
-keywords: portworx, kubernetes, openshift
+keywords: portworx, kubernetes, <containers>containers</containers><openshift>openshift</openshift>
 
-subcollection: openshift
+subcollection: <containers>containers</containers><openshift>openshift</openshift>
 
 
 ---
@@ -20,7 +20,7 @@ subcollection: openshift
 
 [Virtual Private Cloud]{: tag-vpc} [Classic infrastructure]{: tag-classic-inf}
 
-Portworx Backup is a Portworx proprietary backup solution that is compatible with any {{site.data.keyword.openshiftlong_notm}} cluster. You can use Portworx Backup to back up and restore {{site.data.keyword.openshiftlong_notm}} resources, apps and data across multiple clusters. For more information on Portworx Backup, see [Understanding Portworx Backup](https://portworx.com/services/backup-and-data-protection/){: external}.
+Portworx Backup is a Portworx proprietary backup solution that is compatible with any <containers>{{site.data.keyword.containerlong_notm}}</containers><openshift>{{site.data.keyword.openshiftlong_notm}}</openshift> cluster. You can use Portworx Backup to back up and restore <containers>{{site.data.keyword.containerlong_notm}}</containers><openshift>{{site.data.keyword.openshiftlong_notm}}</openshift> resources, apps and data across multiple clusters. For more information on Portworx Backup, see [Understanding Portworx Backup](https://portworx.com/services/backup-and-data-protection/){: external}.
 {: shortdesc}
 
 To back up the data in your persistent volumes, you must have a storage class that supports snapshots in your cluster. Clusters with Portworx Enterprise have storage classes available that support snapshots by default. However, for clusters that don't have Portworx Enterprise, you must have a storage classes with snapshot support to back up your persistent volume data. The {{site.data.keyword.blockstorageshort}} driver, and the {{site.data.keyword.filestorage_short}} driver don't have storage classes that support snapshots. If you have workloads that use these drivers, you can use Portworx Backup to back up your apps, but not the data in the persistent volumes. For more information see [Backing up and restoring cluster data with Portworx Backup](#px-backup-and-restore).
@@ -36,23 +36,24 @@ Portworx Backup is not supported for {{site.data.keyword.satelliteshort}} cluste
 {: #px-backup-install}
 
 Before you begin:
-- Make sure that your cluster meets the [minimum Portworx requirements](https://docs.portworx.com/portworx-enterprise/install-portworx/prerequisites){: external}. 
-- [Log in to your cluster](/docs/openshift?topic=openshift-access_cluster).
-- Provision and attach 320Gi of block storage to your cluster. See [Setting {{site.data.keyword.cloud_notm}} Block Storage](/docs/openshift?topic=openshift-block_storage) or [Setting up Block Storage for VPC](/docs/openshift?topic=openshift-vpc-block).
+- Make sure that your cluster meets the [minimum Portworx requirements](https://docs.portworx.com/portworx-enterprise/platform/prerequisites){: external}. <containers>
+- [Install or update the {{site.data.keyword.cloud_notm}} Block Storage plug-in in your cluster](/docs/<containers>containers</containers><openshift>openshift</openshift>?topic=<containers>containers</containers><openshift>openshift</openshift>-block_storage#install_block).</containers><openshift>
+- [Log in to your cluster](/docs/openshift?topic=openshift-access_cluster).</openshift>
+- Provision and attach 320Gi of block storage to your cluster. See [Setting {{site.data.keyword.cloud_notm}} Block Storage](/docs/<containers>containers</containers><openshift>openshift</openshift>?topic=<containers>containers</containers><openshift>openshift</openshift>-block_storage) or [Setting up Block Storage for VPC](/docs/<containers>containers</containers><openshift>openshift</openshift>?topic=<containers>containers</containers><openshift>openshift</openshift>-vpc-block).
 
-
+<openshift>
 If you are installing Portworx Backup in a newly provisioned cluster, [you must log in to it at least once](/docs/openshift?topic=openshift-access_cluster) before beginning the installation.
-{: important}
+{: important}</openshift>
 
 
 1. Open the Portworx Backup service from the [{{site.data.keyword.cloud_notm}} catalog](https://cloud.ibm.com/catalog/services/px-backup-for-kubernetes){: external}.
-2. Select the same location where the  cluster you want to install Portworx Backup on is located. You can find the location of your cluster from the {{site.data.keyword.openshiftlong_notm}} dashboard.
+2. Select the same location where the  cluster you want to install Portworx Backup on is located. You can find the location of your cluster from the <containers>{{site.data.keyword.containerlong_notm}}</containers><openshift>{{site.data.keyword.openshiftlong_notm}}</openshift> dashboard.
 3. Enter the name for your Portworx Backup service in the **Service name** field.
 4. Select the resource group where you want to create the Portworx Backup service.
 5. In the **Tag** field, enter the name of the cluster where you want to install PX-Backup. After you complete the installation, you can't see the name of the cluster where you installed PX-Backup. To find the cluster more easily later, make sure that you enter the cluster name and any additional information as tags.
 6. Enter your {{site.data.keyword.cloud_notm}} API key. After you enter the API key, the **Kubernetes or OpenShift cluster name** field appears. If you don't have an {{site.data.keyword.cloud_notm}} API key, see [Creating an API key](/docs/account?topic=account-userapikey&interface=ui#create_user_key) to create one.
 7. In the **Kubernetes or OpenShift cluster name** field, select the cluster where you want to install PX-Backup.
-8. Enter the name of the {{site.data.keyword.redhat_openshift_notm}} project where you want to install your Portworx Backup service components. Do not use the `kube-system` or `default` namespace. If the {{site.data.keyword.redhat_openshift_notm}} project that you enter does not already exist in your cluster, it is automatically created during the installation.
+8. Enter the name of the <containers>Kubernetes namespace</containers><openshift>{{site.data.keyword.redhat_openshift_notm}} project</openshift> where you want to install your Portworx Backup service components. Do not use the `kube-system` or `default` namespace. If the <containers>Kubernetes namespace</containers><openshift>{{site.data.keyword.redhat_openshift_notm}} project</openshift> that you enter does not already exist in your cluster, it is automatically created during the installation.
 9. Select an existing storage class in your cluster to provision persistent volumes for the Portworx Backup service. The service uses this storage to store service metadata and is not used to back up your apps and data. [Your apps and data are backed up to an {{site.data.keyword.cos_full_notm}} service instance](#px-backup-storage).
 10. Click **Create** to begin the Portworx Backup installation. The installation might take a few minutes to complete.
 11. [Verify that your Portworx Backup service is installed correctly](#px-backup-verify).
@@ -68,7 +69,14 @@ Verify that Portworx Backup is correctly installed on your cluster.
 1. Review the **Status** column to see if the installation succeeded or failed. The status might take a few minutes to update.
 1. If the status changes to **Active**, verify that the Portworx Backup pods, services and jobs are running in your cluster.
     1. From the {{site.data.keyword.cloud_notm}} [Resource list](https://cloud.ibm.com/resources){: external}, select the cluster where you installed PX-Backup.
-    1. Open the {{site.data.keyword.redhat_openshift_notm}} web console.
+    1. Open the <containers>Kubernetes dashboard</containers><openshift>{{site.data.keyword.redhat_openshift_notm}} web console</openshift>.<containers>
+    1. Select the namespace where you installed the Portworx Backup service components.
+    1. Find the **Pods** table.
+    1. Verify that the **Status** of all pods is **Running**.
+    1. Click on **Services**.
+    1. Find the **px-backup-ui** service and verify that a URL is present in the **External Endpoints** column.
+    1. Click on **Jobs**.
+    1. Find the **pxcentral-post-install-hook** job and verify that it is complete.</containers><openshift>
     1. Click on **Projects**.
     1. Select the namespace where you installed the Portworx Backup service components.
     1. In the **Inventory** section, select the option to display your pods.
@@ -76,17 +84,17 @@ Verify that Portworx Backup is correctly installed on your cluster.
     1. Click on **Networking>Routes**.
     1. Find the **px-backup-ui** route and verify that a URL is listed in the **Location** column.
     1. Click **Workloads>Jobs**.
-    1. Verify that the **pxcentral-post-install-hook** job is complete.
+    1. Verify that the **pxcentral-post-install-hook** job is complete.</openshift>
 
 From the CLI
 
 1. From the {{site.data.keyword.cloud_notm}} [Resource list](https://cloud.ibm.com/resources){: external}, find the Portworx Backup service you created.
 2. Review the **Status** column to see if the installation succeeded or failed. The status might take a few minutes to update.
 3. If the status changes to **Active**, verify that the Portworx Backup pods are running in your cluster.
-    1. [Access your {{site.data.keyword.redhat_openshift_notm}} cluster](/docs/openshift?topic=openshift-access_cluster).
+    1. <containers>[Log in to your account. If applicable, target the appropriate resource group. Set the context for your cluster.](/docs/containers?topic=containers-access_cluster)</containers><openshift>[Access your {{site.data.keyword.redhat_openshift_notm}} cluster](/docs/openshift?topic=openshift-access_cluster).</openshift>
     2. Run the command to verify that the installation has completed.
         ```sh
-        oc get po -n <px_backup_namespace> -ljob-name=pxcentral-post-install-hook  -o wide | awk '{print $1   $3}' | grep -iv error
+        <containers>kubectl</containers><openshift>oc</openshift> get po -n <px_backup_namespace> -ljob-name=pxcentral-post-install-hook  -o wide | awk '{print $1   $3}' | grep -iv error
         ```
         {: pre}
 
@@ -101,25 +109,30 @@ From the CLI
 ## Logging in to the Portworx Backup console
 {: #px-backup-ui}
 
-Access the Portworx Backup console through the URL supplied in the {{site.data.keyword.openshiftlong_notm}} dashboard for the cluster where you installed the service.
+Access the Portworx Backup console through the URL supplied in the <containers>{{site.data.keyword.containerlong_notm}}</containers><openshift>{{site.data.keyword.openshiftlong_notm}}</openshift> dashboard for the cluster where you installed the service.
 {: shortdesc}
 
 For VPC clusters
 
 1. From the {{site.data.keyword.cloud_notm}} [Resource list](https://cloud.ibm.com/resources){: external}, select the cluster where you installed PX-Backup.
-1. Open the {{site.data.keyword.redhat_openshift_notm}} web console .
+1. Open the <containers>Kubernetes dashboard</containers><openshift>{{site.data.keyword.redhat_openshift_notm}} web console </openshift>.<containers>
+1. Select the namespace where you installed the Portworx Backup service components.
+1. In the **Services** section, find the **px-backup-ui** service and locate the URL in the **Public Endpoints** column. Click this URL to open the Portworx Backup console.</containers><openshift>
 1. Click on **Networking>Routes**.
-1. Find the **px-backup-ui** route and click on the URL that is listed in the **Location** column to open the Portworx Backup console.
+1. Find the **px-backup-ui** route and click on the URL that is listed in the **Location** column to open the Portworx Backup console.</openshift>
 1. Log in to the Portworx Backup console. If you are the first user to access the console, you must log in in with the username `admin` and the password `admin`. You are redirected to a registration page to set a unique username and password. Subsequent users must register a new account to access the console.
 
 
 For public classic clusters
 
 1. From the {{site.data.keyword.cloud_notm}} [Resource list](https://cloud.ibm.com/resources){: external}, select the cluster where you installed PX-Backup.
-1. Open the {{site.data.keyword.redhat_openshift_notm}} web console .
+1. Open the <containers>Kubernetes dashboard</containers><openshift>{{site.data.keyword.redhat_openshift_notm}} web console </openshift>.<containers>
+1. Select the namespace where you installed the Portworx Backup service components.
+1. In the **Services** section, find the **px-backup-ui** service and note the IP address and node port under **External Endpoints**.
+1. Copy and paste the IP address and node port into your web browser to open the Portworx Backup console.</containers><openshift>
 1. Click on **Networking>Routes**.
 1. Find the **px-backup-ui** route and note the IP address and node port listed in the **Locations** column.
-1. Copy and paste the IP address and node port into your web browser to open the Portworx Backup console.
+1. Copy and paste the IP address and node port into your web browser to open the Portworx Backup console.</openshift>
 1. Log in to the Portworx Backup console. If you are the first user to access the console, you must log in in with the username `admin` and the password `admin`. You are redirected to a registration page to set a unique username and password. Subsequent users must register a new account to access the console.
 
 
@@ -134,8 +147,8 @@ Create an {{site.data.keyword.cos_full_notm}} instance and bucket, and add them 
 
 Before you begin, [log in to the Portworx Backup console](#px-backup-ui). Note that if you are the first user to access the console, you must login in with the username `admin` and the password `admin`. You are redirected to a registration page to set a unique username and password. Subsequent users must register a new account to access the console.
 
-1. [Create your {{site.data.keyword.cos_full_notm}} service instance](/docs/openshift?topic=openshift-storage-cos-understand#create_cos_service).
-2. [Create service credentials for your {{site.data.keyword.cos_full_notm}} service instance](/docs/openshift?topic=openshift-storage-cos-understand#create_cos_secret). Be sure to enable HMAC authentication by clicking **Advanced Options** in the **Create credential** dialog box and switching the **Include HMAC Credential** parameter to **On**.
+1. [Create your {{site.data.keyword.cos_full_notm}} service instance](/docs/<containers>containers</containers><openshift>openshift</openshift>?topic=<containers>containers</containers><openshift>openshift</openshift>-storage-cos-understand#create_cos_service).
+2. [Create service credentials for your {{site.data.keyword.cos_full_notm}} service instance](/docs/<containers>containers</containers><openshift>openshift</openshift>?topic=<containers>containers</containers><openshift>openshift</openshift>-storage-cos-understand#create_cos_secret). Be sure to enable HMAC authentication by clicking **Advanced Options** in the **Create credential** dialog box and switching the **Include HMAC Credential** parameter to **On**.
 3. Expand your credentials in the service credentials table. Note the **`access_key_id`** and the **`secret_access_key`** in the **`cos_hmac_keys`** section.
 4. [Create a storage bucket in your {{site.data.keyword.cos_full_notm}} instance](/docs/cloud-object-storage?topic=cloud-object-storage-getting-started-cloud-object-storage).
 5. Click on your bucket and note its location.
@@ -159,10 +172,10 @@ Before you begin, [log in to the Portworx Backup console](#px-backup-ui). Note t
     5. In the **Endpoint** field, enter the endpoint for your bucket that you retrieved earlier.
     6. Click **Add+** to create the backup location.
 
-## Adding {{site.data.keyword.openshiftlong_notm}} clusters to your Portworx Backup service
+## Adding <containers>{{site.data.keyword.containerlong_notm}}</containers><openshift>{{site.data.keyword.openshiftlong_notm}}</openshift> clusters to your Portworx Backup service
 {: #px-backup-cluster}
 
-Add the {{site.data.keyword.openshiftlong_notm}} cluster that you want to back up with PX-Backup. You can select any cluster in your account, including the cluster where you installed PX-Backup.
+Add the <containers>{{site.data.keyword.containerlong_notm}}</containers><openshift>{{site.data.keyword.openshiftlong_notm}}</openshift> cluster that you want to back up with PX-Backup. You can select any cluster in your account, including the cluster where you installed PX-Backup.
 {: shortdesc}
 
 Before you begin:
@@ -170,9 +183,8 @@ Before you begin:
 - [Log in to your account. If applicable, target the appropriate resource group. Set the context for your cluster.](/docs/containers?topic=containers-access_cluster)
 
 The `kubeconfig` in clusters with Portworx Backup expires after 24 hours. To prevent your cluster's `kubeconfig` file from expiring, set the context with your cluster using the `--admin` option.
-`
-ibmcloud oc cluster config --cluster <cluster_name> --admin --endpoint private
-`
+
+`<containers>ibmcloud ks</containers><openshift>ibmcloud oc</openshift> cluster config --cluster <cluster_name> --admin --endpoint private`
 {: tip}
 
 Adding a cluster:
@@ -182,7 +194,7 @@ Adding a cluster:
 3. Enter the name of the cluster that you want to back up.
 4. In the CLI, get the `kubeconfig` file output for your cluster. Make sure that you have set the context to your cluster with the `--admin` option to prevent the `kubeconfig` from expiring.
     ```sh
-    oc config view --flatten --minify
+    <containers>kubectl</containers><openshift>oc</openshift> config view --flatten --minify
     ```
     {: pre}
 
@@ -219,13 +231,13 @@ If a cluster that you want to back up with Portworx Backup does not have Portwor
 
 6. Save the file and run the command to apply the file to your cluster and install Stork.
     ```sh
-    oc apply -f <file_name>.yaml
+    <containers>kubectl</containers><openshift>oc</openshift> apply -f <file_name>.yaml
     ```
     {: pre}
 
 7. Verify that Stork is successfully installed on your cluster and that all pods are running.
     ```sh
-    oc get deployment -n kube-system | grep stork
+    <containers>kubectl</containers><openshift>oc</openshift> get deployment -n kube-system | grep stork
     ```
     {: pre}
 

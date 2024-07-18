@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2024
-lastupdated: "2024-07-17"
+lastupdated: "2024-07-18"
 
 
 keywords: openshift
@@ -3315,15 +3315,15 @@ subcollection: openshift
 {: #sitemap_enhancing_security}
 
 
-[Security for {{site.data.keyword.openshiftlong_notm}}](/docs/openshift?topic=openshift-security#security)
+[Security for <containers>{{site.data.keyword.containerlong_notm}}</containers><openshift>{{site.data.keyword.openshiftlong_notm}}</openshift>](/docs/openshift?topic=openshift-security#security)
 
 * [Overview of security threats for your cluster](/docs/openshift?topic=openshift-security#threats)
 
-* [{{site.data.keyword.redhat_openshift_notm}} API server and etcd](/docs/openshift?topic=openshift-security#apiserver)
+* [<containers>Kubernetes</containers><openshift>{{site.data.keyword.redhat_openshift_notm}}</openshift> API server and etcd](/docs/openshift?topic=openshift-security#apiserver)
 
     * [How is access to my API server granted?](/docs/openshift?topic=openshift-security#api-server-access)
 
-    * [What does {{site.data.keyword.openshiftlong_notm}} do to secure my API server and etcd data store?](/docs/openshift?topic=openshift-security#secure-api-server)
+    * [What does <containers>{{site.data.keyword.containerlong_notm}}</containers><openshift>{{site.data.keyword.openshiftlong_notm}}</openshift> do to secure my API server and etcd data store?](/docs/openshift?topic=openshift-security#secure-api-server)
 
     * [What else can I do to secure my API server?](/docs/openshift?topic=openshift-security#api-server-what-else)
 
@@ -3358,6 +3358,8 @@ subcollection: openshift
     * [Securely expose apps with LoadBalancer and Ingress services](/docs/openshift?topic=openshift-security#network_lb_ingress)
 
     * [Can I use security groups to manage my cluster's network traffic?](/docs/openshift?topic=openshift-security#can-i-use-security-groups)
+
+    * [How can I secure the source IP within the cluster?](/docs/openshift?topic=openshift-security#secure-source-ip-cluster)
 
     * [How can I do TLS termination with LoadBalancer and Ingress services?](/docs/openshift?topic=openshift-security#tls-termination-lb)
 
@@ -5385,7 +5387,7 @@ subcollection: openshift
 
 * [Adding a backup location to your Portworx Backup service](/docs/openshift?topic=openshift-storage_portworx_backup#px-backup-storage)
 
-* [Adding {{site.data.keyword.openshiftlong_notm}} clusters to your Portworx Backup service](/docs/openshift?topic=openshift-storage_portworx_backup#px-backup-cluster)
+* [Adding <containers>{{site.data.keyword.containerlong_notm}}</containers><openshift>{{site.data.keyword.openshiftlong_notm}}</openshift> clusters to your Portworx Backup service](/docs/openshift?topic=openshift-storage_portworx_backup#px-backup-cluster)
 
 * [Installing Stork on a non-Portworx cluster](/docs/openshift?topic=openshift-storage_portworx_backup#px-backup-stork)
 

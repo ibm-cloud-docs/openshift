@@ -2,12 +2,12 @@
 
 copyright: 
   years: 2014, 2024
-lastupdated: "2024-05-29"
+lastupdated: "2024-07-18"
 
 
-keywords: portworx, kubernetes, openshift
+keywords: portworx, kubernetes, <containers>containers</containers><openshift>openshift</openshift>
 
-subcollection: openshift
+subcollection: <containers>containers</containers><openshift>openshift</openshift>
 
 
 ---
@@ -40,7 +40,7 @@ An software defined storage (SDS), such as Portworx, solution abstracts storage 
 |Cloud native storage and data management for stateful apps|Portworx aggregates available local storage that is attached to your worker nodes and that can vary in size or type, and creates a unified persistent storage layer for containerized databases or other stateful apps that you want to run in the cluster. By using Kubernetes persistent volume claims (PVC), you can add local persistent storage to your apps to store your data.|
 |Highly available data with volume replication|Portworx automatically replicates data in your volumes across worker nodes and zones in your cluster so that your data can always be accessed and that your stateful app can be rescheduled to another worker node in case of a worker node failure or reboot. |
 |Support to run `hyper-converged`|Portworx can be configured to run [`hyper-converged`](https://docs.portworx.com/portworx-enterprise/concepts/kubernetes-storage-101/hyperconvergence){: external} to ensure that your compute resources and the storage are always placed onto the same worker node. When your app must be rescheduled, Portworx moves your app to a worker node where one of your volume replicas resides to ensure local-disk access speed and high performance for your stateful app. |
-|Encrypt data with {{site.data.keyword.keymanagementservicelong_notm}}|You can [set up {{site.data.keyword.keymanagementservicelong_notm}} encryption keys](/docs/openshift?topic=openshift-storage_portworx_encryption) that are secured by FIPS 140-2 Level 2 certified cloud-based hardware security modules (HSMs) to protect the data in your volumes. You can choose between using one encryption key to encrypt all your volumes in a cluster or using one encryption key for each volume. Portworx uses this key to encrypt data at rest and during transit when data is sent to a different worker node.|
+|Encrypt data with {{site.data.keyword.keymanagementservicelong_notm}}|You can [set up {{site.data.keyword.keymanagementservicelong_notm}} encryption keys](/docs/<containers>containers</containers><openshift>openshift</openshift>?topic=<containers>containers</containers><openshift>openshift</openshift>-storage_portworx_encryption) that are secured by FIPS 140-2 Level 2 certified cloud-based hardware security modules (HSMs) to protect the data in your volumes. You can choose between using one encryption key to encrypt all your volumes in a cluster or using one encryption key for each volume. Portworx uses this key to encrypt data at rest and during transit when data is sent to a different worker node.|
 |Built-in snapshots and cloud backups|You can save the current state of a volume and its data by creating a [Portworx snapshot](https://docs.portworx.com/portworx-enterprise/operations/operate-kubernetes/storage-operations/create-snapshots){: external}. Snapshots can be stored on your local Portworx cluster or in the cloud.|
 |Integrated monitoring |You can view the health of your Portworx cluster, including the number of available storage nodes, volumes and available capacity, and analyze your data in Prometheus, Grafana, or Kibana.|
 {: caption="Benefits of using Portworx" caption-side="bottom"}
@@ -55,15 +55,15 @@ Portworx also comes with additional features that you can use for your stateful 
 ## What are the requirements to run Portworx?
 {: #about-px-requirments}
 
-Review the requirements to [install Portworx](https://docs.portworx.com/portworx-enterprise/install-portworx/prerequisites){: external}.
+Review the requirements to [install Portworx](https://docs.portworx.com/portworx-enterprise/platform/prerequisites){: external}.
 
-For production environments, choose one of the [SDS worker node flavors](/docs/openshift?topic=openshift-planning_worker_nodes#sds-table) for best performance. 
+For production environments, choose one of the [SDS worker node flavors](/docs/<containers>containers</containers><openshift>openshift</openshift>?topic=<containers>containers</containers><openshift>openshift</openshift>-planning_worker_nodes#sds-table) for best performance. 
 {: tip}
 
 ## How can I make sure that my data is stored highly available?
 {: #about-px-ha}
 
-You need at least three worker nodes in your Portworx cluster so that Portworx can replicate your data across nodes. By replicating your data across worker nodes, Portworx can ensure that your stateful app can be rescheduled to a different worker node in case of a failure without losing data. For even higher availability, use a [multizone cluster](/docs/openshift?topic=openshift-ha_clusters#mz-clusters) and replicate your volumes across worker nodes in 3 or more zones.
+You need at least three worker nodes in your Portworx cluster so that Portworx can replicate your data across nodes. By replicating your data across worker nodes, Portworx can ensure that your stateful app can be rescheduled to a different worker node in case of a failure without losing data. For even higher availability, use a [multizone cluster](/docs/<containers>containers</containers><openshift>openshift</openshift>?topic=<containers>containers</containers><openshift>openshift</openshift>-ha_clusters#mz-clusters) and replicate your volumes across worker nodes in 3 or more zones.
 
 ## What volume topology offers the best performance for my pods?
 {: #about-px-topology}
@@ -72,7 +72,7 @@ One of the biggest challenges when you run stateful apps in a cluster is to make
 
 You can also choose to use only a subset of worker nodes for your Portworx storage layer. For example, you might have a worker pool with SDS worker nodes that come with local raw block storage, and another worker pool with virtual worker nodes that don't come with local storage. When you install Portworx, a Portworx pod is scheduled onto every worker node in your cluster as part of a DaemonSet. Because your SDS worker nodes have local storage, these worker nodes are into the Portworx storage layer only. Your virtual worker nodes are not included as a storage node because of the missing local storage. However, when you deploy an app pod to your virtual worker node, this pod can still access data that is physically stored on an SDS worker node by using the Portworx DaemonSet pod. This setup is referred to as `storage-heavy` and offers slightly slower performance than the `hyper-converged` setup because the virtual worker node must talk to the SDS worker node over the private network to access the data.
 
-{{site.data.keyword.openshiftlong_notm}} does not support the [Portworx experimental `InitializerConfiguration` admission controller](https://github.com/libopenstorage/stork#initializer-experimental){: external}.
+<containers>{{site.data.keyword.containerlong_notm}}</containers><openshift>{{site.data.keyword.openshiftlong_notm}}</openshift> does not support the [Portworx experimental `InitializerConfiguration` admission controller](https://github.com/libopenstorage/stork#initializer-experimental){: external}.
 {: note}
 
 
@@ -87,7 +87,7 @@ If you want to install Portworx in a cluster that doesn't have VRF or access to 
 ## Can I install Autopilot while using Portworx?
 {: #about-px-ap}
 
-Yes. Autopilot can be installed by following the [Installing Autopilot documentation](/docs/openshift?topic=openshift-storage-portworx-autopilot).
+Yes. Autopilot can be installed by following the [Installing Autopilot documentation](/docs/<containers>containers</containers><openshift>openshift</openshift>?topic=<containers>containers</containers><openshift>openshift</openshift>-storage-portworx-autopilot).
 
 ## How do I get support?
 {: #portworx-billing-support}
@@ -106,7 +106,7 @@ Contact Portworx support by using one of the following methods.
 ## What's next?
 {: #about-px-next}
 
-All set? Let's start with [creating a cluster with an SDS worker pool of at least three worker nodes](/docs/openshift?topic=openshift-clusters). If you want to include non-SDS worker nodes into your Portworx cluster, [add raw block storage](/docs/openshift?topic=openshift-utilities#manual_block) to each worker node. After your cluster is prepared, [install Portworx](/docs/openshift?topic=openshift-storage_portworx_deploy) in your cluster and create your first hyper-converged storage cluster.
+All set? Let's start with [creating a cluster with an SDS worker pool of at least three worker nodes](/docs/<containers>containers</containers><openshift>openshift</openshift>?topic=<containers>containers</containers><openshift>openshift</openshift>-clusters). If you want to include non-SDS worker nodes into your Portworx cluster, [add raw block storage](/docs/<containers>containers</containers><openshift>openshift</openshift>?topic=<containers>containers</containers><openshift>openshift</openshift>-utilities#manual_block) to each worker node. After your cluster is prepared, [install Portworx](/docs/<containers>containers</containers><openshift>openshift</openshift>?topic=<containers>containers</containers><openshift>openshift</openshift>-storage_portworx_deploy) in your cluster and create your first hyper-converged storage cluster.
 
 
 ## Exploring other Portworx features

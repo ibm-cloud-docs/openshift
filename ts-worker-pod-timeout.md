@@ -2,12 +2,12 @@
 
 copyright: 
   years: 2014, 2024
-lastupdated: "2024-06-24"
+lastupdated: "2024-07-18"
 
 
-keywords: kubernetes, help, network, connectivity, openshift
+keywords: kubernetes, help, network, connectivity, <containers>containers</containers><openshift>openshift</openshift>
 
-subcollection: openshift
+subcollection: <containers>containers</containers><openshift>openshift</openshift>
 
 content-type: troubleshoot
 
@@ -39,7 +39,7 @@ Manually update the reference of the private IP address to point to the correct 
 1. Confirm that you have two worker nodes with the same **Private IP** address. Note the **Private IP** and **ID** of the deleted worker.
 
     ```sh
-    ibmcloud oc worker ls --cluster <cluster_name_or_id>
+    <containers>ibmcloud ks</containers><openshift>ibmcloud oc</openshift> worker ls --cluster <cluster_name_or_id>
     ```
     {: pre}
 
@@ -50,8 +50,8 @@ Manually update the reference of the private IP address to point to the correct 
     ```
     {: screen}
 
-2. Install the [Calico CLI](/docs/openshift?topic=openshift-network_policies#cli_install).
-3. List the available worker nodes in Calico. Replace <path_to_file> with the local path to the Calico configuration file.
+2. Install the [Calico CLI](/docs/<containers>containers</containers><openshift>openshift</openshift>?topic=<containers>containers</containers><openshift>openshift</openshift>-network_policies#cli_install).
+3. List the available worker nodes in Calico. Replace `<path_to_file>` with the local path to the Calico configuration file.
 
     ```sh
     calicoctl get nodes --config=filepath/calicoctl.cfg
@@ -75,7 +75,7 @@ Manually update the reference of the private IP address to point to the correct 
 5. Reboot the worker node that was not deleted.
 
     ```sh
-    ibmcloud oc worker reboot --cluster <cluster_name_or_id> --worker <worker_id>
+    <containers>ibmcloud ks</containers><openshift>ibmcloud oc</openshift> worker reboot --cluster <cluster_name_or_id> --worker <worker_id>
     ```
     {: pre}
 
