@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2024
-lastupdated: "2024-07-17"
+lastupdated: "2024-07-23"
 
 
 keywords: openshift
@@ -3157,6 +3157,10 @@ subcollection: openshift
 
 [Setting the OAuth access type for VPC clusters](/docs/openshift?topic=openshift-setting-oauth-access-type#setting-oauth-access-type)
 
+* [Setting the OAuth access type for a cluster from the CLI](/docs/openshift?topic=openshift-setting-oauth-access-type&interface=cli#oauth-access-set-cli)
+
+* [Getting the OAuth access type for a cluster from the CLI](/docs/openshift?topic=openshift-setting-oauth-access-type&interface=cli#oauth-access-get-cli)
+
 * [Setting the OAuth access type for a cluster from the API](/docs/openshift?topic=openshift-setting-oauth-access-type&interface=api#oauth-access-set-api)
 
 * [Getting the OAuth access type for a cluster from the API](/docs/openshift?topic=openshift-setting-oauth-access-type&interface=api#oauth-access-get-api)
@@ -3641,21 +3645,6 @@ subcollection: openshift
 * [Updating the global pull secret](/docs/openshift?topic=openshift-satellite-registry-pull-secret#satellite-pull-secret-cli)
 
 * [Updating the global pull secret by using {{site.data.keyword.satelliteshort}} config](/docs/openshift?topic=openshift-satellite-registry-pull-secret#satellite-pull-secret-config)
-
-
-## Restricting network traffic to edge worker nodes
-{: #sitemap_restricting_network_traffic_to_edge_worker_nodes}
-
-
-[Restricting network traffic to edge worker nodes](/docs/openshift?topic=openshift-edge#edge)
-
-* [Isolating NLB workloads to edge nodes](/docs/openshift?topic=openshift-edge#edge_nodes_nlb)
-
-* [Isolating ALB workloads to edge worker nodes](/docs/openshift?topic=openshift-edge#edge_nodes_alb)
-
-* [Preventing app workloads from running on edge worker nodes](/docs/openshift?topic=openshift-edge#edge_workloads)
-
-* [Deploying the Sysdig agent on edge worker nodes](/docs/openshift?topic=openshift-edge#sysdig-edge)
 
 
 ## Controlling network traffic in Classic clusters
@@ -4498,6 +4487,16 @@ subcollection: openshift
 
     * [Unsupported scheduling algorithms](/docs/openshift?topic=openshift-loadbalancer-v2#scheduling_unsupported)
 
+[ Isolating Classic NLBs to edge worker nodes](/docs/openshift?topic=openshift-edge-nlb-classic#edge-nlb-classic)
+
+[Isolating network workloads to edge nodes in VPC clusters](/docs/openshift?topic=openshift-edge-vpc-workloads#edge-vpc-workloads)
+
+* [Prerequisites](/docs/openshift?topic=openshift-edge-vpc-workloads#edge-vpc-workloads-pre)
+
+* [Isolating workloads to edge nodes](/docs/openshift?topic=openshift-edge-vpc-workloads#edge-vpc-workloads-steps)
+
+* [Next steps](/docs/openshift?topic=openshift-edge-vpc-workloads#edge-workloads-vpc-next)
+
 [Registering a DNS subdomain for an NLB](/docs/openshift?topic=openshift-loadbalancer_hostname#loadbalancer_hostname)
 
 * [Registering NLB IPs with a DNS subdomain](/docs/openshift?topic=openshift-loadbalancer_hostname#loadbalancer_hostname_dns)
@@ -4709,6 +4708,8 @@ subcollection: openshift
 
 * [Registering a {{site.data.keyword.secrets-manager_short}} instance when creating a cluster](/docs/openshift?topic=openshift-secrets-mgr#secrets-mgr_cluster_create)
 
+[Isolating routers to edge nodes](/docs/openshift?topic=openshift-edge#edge)
+
 [Exposing apps in {{site.data.keyword.satelliteshort}} clusters](/docs/openshift?topic=openshift-sat-expose-apps#sat-expose-apps)
 
 * [Setting up MetalLB](/docs/openshift?topic=openshift-sat-expose-apps#sat-expose-metallb)
@@ -4720,6 +4721,10 @@ subcollection: openshift
 * [Exposing apps with NodePorts](/docs/openshift?topic=openshift-sat-expose-apps#sat-expose-np)
 
 * [Exposing apps with routes and Link endpoints for traffic from {{site.data.keyword.cloud_notm}}](/docs/openshift?topic=openshift-sat-expose-apps#sat-expose-cloud)
+
+[Preventing app workloads from running on edge worker nodes](/docs/openshift?topic=openshift-edge-workload-prevent#edge-workload-prevent)
+
+[Deploying the Sysdig agent on edge worker nodes](/docs/openshift?topic=openshift-edge-sysdig#edge-sysdig)
 
 
 ## Enabling the IBM Storage Operator cluster add-on
@@ -5084,6 +5089,18 @@ subcollection: openshift
 * [Next steps](/docs/openshift?topic=openshift-storage-cos-tutorial-quota#storage-cos-quota-next)
 
 [VPC: Setting up authorized IP addresses for {{site.data.keyword.cos_full_notm}}](/docs/openshift?topic=openshift-storage_cos_vpc_ip#storage_cos_vpc_ip)
+
+[Migrating Cloud Object Storage (COS) resources between IBM Cloud accounts](/docs/openshift?topic=openshift-storage-rclone-migration#storage-rclone-migration)
+
+* [Prerequisites](/docs/openshift?topic=openshift-storage-rclone-migration#rclone-migration-prereqs)
+
+* [Configuring `rclone`](/docs/openshift?topic=openshift-storage-rclone-migration#rclone-config)
+
+* [Syncing between COS buckets](/docs/openshift?topic=openshift-storage-rclone-migration#rclone-inspect)
+
+* [Syncing contents between buckets](/docs/openshift?topic=openshift-storage-rclone-migration#rclone-sync)
+
+* [Next steps](/docs/openshift?topic=openshift-storage-rclone-migration#rclone-next-steps)
 
 [Storage class reference](/docs/openshift?topic=openshift-storage_cos_reference#storage_cos_reference)
 

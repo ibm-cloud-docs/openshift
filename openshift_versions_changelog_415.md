@@ -2,7 +2,7 @@
 
 copyright:
   years: 2023, 2024
-lastupdated: "2024-07-15"
+lastupdated: "2024-07-18"
 
 
 keywords: openshift, 4.15, update, upgrade, BOM, bill of materials, versions, patch
@@ -38,7 +38,7 @@ Master patch updates are applied automatically. Worker node patch updates can be
 
 | Component | Previous | Current | Description |
 | --- | --- | --- | --- |
-| etcd | v3.5.13 | v3.5.14 | See the [etcd release notes](https://github.com/coreos/etcd/releases/v3.5.14). |
+| etcd | v3.5.13 | v3.5.14 | See the [etcd release notes](https://github.com/etcd-io/etcd/releases/v3.5.14). |
 | IBM Cloud Controller Manager | v1.28.10-5 | v1.28.11-5 | New version contains updates and security fixes. |
 | Load balancer and load balancer monitor for IBM Cloud Provider | 2933 | 2967 | New version contains updates and security fixes. |
 | Red Hat OpenShift on IBM Cloud | 4.15.17 | 4.15.18 | See the [Red Hat OpenShift on IBM Cloud release notes](https://docs.openshift.com/container-platform/4.15/release_notes/ocp-4-15-release-notes.html#ocp-4-15-18) |

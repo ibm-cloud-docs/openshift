@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2022, 2024
-lastupdated: "2024-06-24"
+lastupdated: "2024-07-23"
 
 
 keywords: vpc, monitoring, block storage, metrics
@@ -43,7 +43,7 @@ Check that the PVC is mounted. If the issue persists, manually view your metrics
     ```
     {: pre}
 
-    Example output. 
+    Example output 
 
     ```sh
     Name:          my-pvc
@@ -124,7 +124,7 @@ After you complete the following steps, make sure to remove the resources you cr
     ```
     {: pre}
 
-    Example output.
+    Example output
 
     ```sh
     NAME          STATUS    ROLES    AGE     VERSION              

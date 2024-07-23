@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2024
-lastupdated: "2024-03-27"
+lastupdated: "2024-07-23"
 
 
 keywords: openshift, {{site.data.keyword.openshiftlong_notm}}, kubernetes, red hat, encrypt, security, kms, root key, crk
@@ -19,15 +19,17 @@ subcollection: openshift
 
 [Virtual Private Cloud]{: tag-vpc} [Classic infrastructure]{: tag-classic-inf} [{{site.data.keyword.satelliteshort}}]{: tag-satellite}
 
-Protect sensitive information in your {{site.data.keyword.openshiftlong}} cluster to ensure data integrity and to prevent your data from being exposed to unauthorized users.
+Protect sensitive information in your {{site.data.keyword.openshiftlong}} cluster to ensure data integrity and to prevent your data from being exposed to unauthorized users by setting up a key management service (KMS) provider.
 {: shortdesc}
 
-The following table outlines the default and optional data encryption for {{site.data.keyword.openshiftlong_notm}} clusters.
+{{site.data.keyword.openshiftlong_notm}} offers encryption at several layers in your cluster. In some cases, encryption is managed by IBM and in other cases you have the option to bring your own KMS provider credentials to manage encryption yourself.
+
+The following table outlines the encryption options for {{site.data.keyword.openshiftlong_notm}} clusters.
 
 
 | Component | Encrypted by default? | Bring your own key support? | Enablement time | Supported KMS providers | Cross account support? |
 | --- | --- | --- | --- | --- | --- |
-| [Control plane](#control-plane-encryption) | Yes | No | During cluster creation. | - {{site.data.keyword.hscrypto}}  \n - {{site.data.keyword.keymanagementserviceshort}} | Cross account supported for Classic and VPC clusters only. | N/A | No |
+| [Control plane](#control-plane-encryption) | Yes | No | During cluster creation. | IBM managed {{site.data.keyword.keymanagementserviceshort}} | N/A | N/A | No |
 | [Worker node disks](#worker-node-encryption) | Yes | Yes | During cluster creation or worker pool creation. | - {{site.data.keyword.hscrypto}}  \n - {{site.data.keyword.keymanagementserviceshort}} | Yes |
 | [Cluster secrets](#cluster-secret-encryption) | No | Yes | After cluster creation by using `kms enable`. | - {{site.data.keyword.hscrypto}}  \n - {{site.data.keyword.keymanagementserviceshort}} | Cross account supported for Classic and VPC clusters only. |
 | [Persistent storage](#persistent-encryption) | Depends on the storage provider. | Depends on provider | After cluster creation, when setting up storage. | - {{site.data.keyword.hscrypto}}  \n - {{site.data.keyword.keymanagementserviceshort}} | Depends on the storage provider. |
@@ -38,7 +40,11 @@ The following table outlines the default and optional data encryption for {{site
 ## Control plane
 {: #control-plane-encryption}
 
-Components in the {{site.data.keyword.redhat_openshift_notm}} master boot up on a LUKS-encrypted drive using an IBM-managed key. The etcd component of the master stores the configuration files of your Kubernetes resources, such as deployments and secrets. Data in etcd is stored on the local disk of the Kubernetes master and is backed up to {{site.data.keyword.cos_full_notm}}. Data is encrypted during transit to {{site.data.keyword.cos_full_notm}} and at rest. 
+Control plane encryption is managed by IBM.
+- Components in the {{site.data.keyword.redhat_openshift_notm}} master boot up on a LUKS-encrypted drive using an IBM-managed key.
+- The etcd component of the master stores the configuration files of your Kubernetes resources, such as deployments and secrets.
+- Data in etcd is stored on the local disk of the Kubernetes master and is backed up to {{site.data.keyword.cos_full_notm}}.
+- Data is encrypted during transit to {{site.data.keyword.cos_full_notm}} and at rest. 
 
 
 
@@ -76,13 +82,12 @@ Review the following notes about cluster secret encryption.
 - Disabling a root key restricts cluster functionality until you reenable the key.
 - Deleting a root key makes the cluster unusable and unrecoverable.
 - Root keys can't be deleted if the key is used by a cluster.
-- You can't add more than one KMS provider to the cluster.
-- You can have only one KMS provider enabled in the cluster at a time. 
-- You can switch the KMS provider, but you can't disable KMS provider encryption after it is enabled.
+- You can have only one KMS provider and key enabled in the cluster at a time. 
+- You can switch the KMS provider and key.
 - You can't disable KMS provider encryption.
 
 
-To set up cluster secret encryption, see [[Setting up worker node disk encryption for VPC clusters](/docs/openshift?topic=openshift-encryption-secrets).]
+To set up cluster secret encryption, see [Setting up cluster secret encryption](/docs/openshift?topic=openshift-encryption-secrets).
 
 
 ## Persistent storage

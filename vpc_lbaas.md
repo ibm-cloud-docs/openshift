@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2024
-lastupdated: "2024-07-12"
+lastupdated: "2024-07-23"
 
 
 keywords: kubernetes, openshift, app protocol, application protocol
@@ -1152,7 +1152,7 @@ After you have created a VPC NLB, you can not reconfigure the listening subnet i
     ```
     {: pre}
 
-    Example output.
+    Example output
 
     ```sh
     NAME                     TYPE           CLUSTER-IP      EXTERNAL-IP      PORT(S)                        AGE
@@ -1170,7 +1170,7 @@ After you have created a VPC NLB, you can not reconfigure the listening subnet i
     ```
     {: pre}
 
-    Example output.
+    Example output
 
     ```sh
     ID                                          Name                                                         Family        Subnets                                       Is public   Provision status   Operating status   Resource group      
@@ -1208,7 +1208,7 @@ After you have created a VPC NLB, you can not reconfigure the listening subnet i
     ```
     {: pre}
 
-    Example output.
+    Example output
 
     ```sh
     NAME:                     my-load-balancer
@@ -1243,7 +1243,7 @@ After you have created a VPC NLB, you can not reconfigure the listening subnet i
     ```
     {: pre}
 
-    Example output.
+    Example output
 
     ```sh
     ID                                          Name                                                         Family        Subnets                                       Is public   Provision status   Operating status   Resource group     

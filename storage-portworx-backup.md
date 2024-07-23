@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2024
-lastupdated: "2024-06-20"
+lastupdated: "2024-07-23"
 
 
 keywords: portworx, kubernetes, openshift
@@ -36,7 +36,7 @@ Portworx Backup is not supported for {{site.data.keyword.satelliteshort}} cluste
 {: #px-backup-install}
 
 Before you begin:
-- Make sure that your cluster meets the [minimum Portworx requirements](https://docs.portworx.com/portworx-enterprise/install-portworx/prerequisites){: external}. 
+- Make sure that your cluster meets the [minimum Portworx requirements](https://docs.portworx.com/portworx-enterprise/platform/prerequisites){: external}. 
 - [Log in to your cluster](/docs/openshift?topic=openshift-access_cluster).
 - Provision and attach 320Gi of block storage to your cluster. See [Setting {{site.data.keyword.cloud_notm}} Block Storage](/docs/openshift?topic=openshift-block_storage) or [Setting up Block Storage for VPC](/docs/openshift?topic=openshift-vpc-block).
 
@@ -170,9 +170,8 @@ Before you begin:
 - [Log in to your account. If applicable, target the appropriate resource group. Set the context for your cluster.](/docs/containers?topic=containers-access_cluster)
 
 The `kubeconfig` in clusters with Portworx Backup expires after 24 hours. To prevent your cluster's `kubeconfig` file from expiring, set the context with your cluster using the `--admin` option.
-`
-ibmcloud oc cluster config --cluster <cluster_name> --admin --endpoint private
-`
+
+`ibmcloud oc cluster config --cluster <cluster_name> --admin --endpoint private`
 {: tip}
 
 Adding a cluster:

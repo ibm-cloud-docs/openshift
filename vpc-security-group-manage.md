@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2023, 2024
-lastupdated: "2024-05-31"
+lastupdated: "2024-07-23"
 
 
 keywords: openshift, {{site.data.keyword.openshiftlong_notm}}, firewall, acl, acls, access control list, rules, security group
@@ -165,7 +165,7 @@ Follow the steps to view details about the VPC security groups.
     ```
     {: pre}
 
-    Example output.
+    Example output
 
     ```sh
     ID                                          Name                                             Rules   Network interfaces   VPC                          Resource group   
@@ -183,7 +183,7 @@ Follow the steps to view details about the VPC security groups.
     ```
     {: pre}
 
-    Example output.
+    Example output
 
     ```sh
     ...

@@ -2,7 +2,7 @@
 
 copyright:
   years: 2022, 2024
-lastupdated: "2024-03-04"
+lastupdated: "2024-07-23"
 
 
 keywords: openshift, ingress, troubleshoot ingress, ingress operator, ingress cluster operator, ingress operator missing
@@ -50,7 +50,7 @@ Verify that the `ingress` ClusterOperator resource exists in your cluster.
     ```
     {: pre}
     
-    Example output.
+    Example output
     
     ```sh
     NAME      VERSION   AVAILABLE   PROGRESSING   DEGRADED   SINCE   MESSAGE

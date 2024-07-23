@@ -2,7 +2,7 @@
 
 copyright:
   years: 2023, 2024
-lastupdated: "2024-06-03"
+lastupdated: "2024-07-18"
 
 
 keywords: data science, AI, machine learning, AI modeling, modeling, GPUs, NVIDIA, node feature discovery, pipelines
@@ -27,7 +27,7 @@ completion-time: 60m
 Red Hat OpenShift AI is an open hybrid AI and machine learning platform for gathering insights from data and building AI-enabled applications. It provides tools to rapidly develop, train, serve, and monitor machine learning models on site, in the public cloud, or at the edge. You can install Red Hat OpenShift AI and other necessary operators onto an existing Red Hat OpenShift cluster that is enabled with GPU-enhanced worker nodes. 
 {: shortdesc}
 
-The following steps refer to the Red Hat documentation. For more information see, [Installing OpenShift AI self-managed](https://access.redhat.com/documentation/en-us/red_hat_openshift_ai_self-managed/2-latest#installing-openshift-data-science-on-openshift-container-platform_install){: external}.
+The following steps refer to the Red Hat documentation. For more information see, [Installing OpenShift AI self-managed](https://docs.redhat.com/en/documentation/red_hat_openshift_ai_self-managed/2-latest#installing-openshift-data-science-on-openshift-container-platform_install){: external}.
 {: note}
 
 ## Before you begin
@@ -51,7 +51,7 @@ OpenShift AI supports data science pipelines. A pipeline is a collection of task
 {: #datascience_install}
 {: step}
 
-You can install the OpenShift AI Operator to your cluster using the web console. See [Installing OpenShift AI self-managed](https://access.redhat.com/documentation/en-us/red_hat_openshift_ai_self-managed/2-latest#installing-openshift-data-science-on-openshift-container-platform_install){: external} for detailed installation steps and requirements.
+You can install the OpenShift AI Operator to your cluster using the web console. See [Installing OpenShift AI self-managed](https://docs.redhat.com/en/documentation/red_hat_openshift_ai_self-managed/2-latest#installing-openshift-data-science-on-openshift-container-platform_install){: external} for detailed installation steps and requirements.
 
 
 ## Install the Node Feature Discovery Operator

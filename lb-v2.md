@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2024
-lastupdated: "2024-03-15"
+lastupdated: "2024-07-23"
 
 
 keywords: openshift, lb2.0, nlb
@@ -141,7 +141,7 @@ To set up an NLB 2.0 in a multizone cluster:
 
 
         `selector`
-        :   The label key (<selector_key>) and value (<selector_value>) that you used in the `spec.template.metadata.labels` section of your app deployment YAML.
+        :   The label key (`<selector_key>`) and value (`<selector_value>`) that you used in the `spec.template.metadata.labels` section of your app deployment YAML.
 
 
         `port`

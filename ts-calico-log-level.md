@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2021, 2024
-lastupdated: "2024-05-29"
+lastupdated: "2024-07-23"
 
 
 keywords: kubernetes, openshift
@@ -25,6 +25,8 @@ content-type: troubleshoot
 {: support}
 
 [Virtual Private Cloud]{: tag-vpc} [Classic infrastructure]{: tag-classic-inf}
+
+
 
 You experience issues with Calico components such as pods that don't deploy or intermittent networking issues. 
 {: tsSymptoms}

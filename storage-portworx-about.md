@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2024
-lastupdated: "2024-05-29"
+lastupdated: "2024-07-23"
 
 
 keywords: portworx, kubernetes, openshift
@@ -55,7 +55,7 @@ Portworx also comes with additional features that you can use for your stateful 
 ## What are the requirements to run Portworx?
 {: #about-px-requirments}
 
-Review the requirements to [install Portworx](https://docs.portworx.com/portworx-enterprise/install-portworx/prerequisites){: external}.
+Review the requirements to [install Portworx](https://docs.portworx.com/portworx-enterprise/platform/prerequisites){: external}.
 
 For production environments, choose one of the [SDS worker node flavors](/docs/openshift?topic=openshift-planning_worker_nodes#sds-table) for best performance. 
 {: tip}

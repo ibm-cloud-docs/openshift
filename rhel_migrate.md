@@ -2,7 +2,7 @@
 
 copyright:
   years: 2022, 2024
-lastupdated: "2024-04-19"
+lastupdated: "2024-07-23"
 
 
 keywords: rhel, os, operating system
@@ -79,7 +79,7 @@ Version 4.8 clusters
     ```
     {: pre}
 
-    Example output.
+    Example output
 
     ```sh
     Name            ID                              Flavor                 OS              Workers 

@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2022, 2024
-lastupdated: "2024-06-24"
+lastupdated: "2024-07-23"
 
 
 keywords: openshift, clusters, dedicated hosts
@@ -34,7 +34,7 @@ Follow the steps to create a dedicated host in a dedicated host pool. Then, prov
     ```
     {: pre}
 
-    Example output.
+    Example output
 
     ```sh
     OK
@@ -61,7 +61,7 @@ Follow the steps to create a dedicated host in a dedicated host pool. Then, prov
     ```
     {: pre}
 
-    Example output.
+    Example output
 
     ```sh
     ID                        Name                    Metro   Flavor Class   Hosts   State   
@@ -83,7 +83,7 @@ Follow the steps to create a dedicated host in a dedicated host pool. Then, prov
     ```
     {: pre}
 
-    Example output.
+    Example output
 
     ```sh
     ID                                                Zone         Flavor              State   
@@ -100,7 +100,7 @@ Follow the steps to create a dedicated host in a dedicated host pool. Then, prov
         ```
         {: pre}
 
-        Example output. 
+        Example output 
 
         ```sh
         ID                                          Name        Status      Subnet CIDR       Addresses   ACL                        Public Gateway      VPC      Zone        Resource group   
@@ -115,7 +115,7 @@ Follow the steps to create a dedicated host in a dedicated host pool. Then, prov
         ```
         {: pre}
 
-        Example output. 
+        Example output 
 
         ```sh
         Name       ID                                          Provider   
@@ -130,7 +130,7 @@ Follow the steps to create a dedicated host in a dedicated host pool. Then, prov
         ```
         {: pre}
 
-        Example output. 
+        Example output 
 
         ```sh
         ID           Name         Metro             Flavors  
@@ -159,7 +159,7 @@ Follow the steps to create a dedicated host in a dedicated host pool. Then, prov
     ```
     {: pre}
 
-    Example output.
+    Example output
 
     ```sh
     Name           ID                   State     Created      Workers   Location    Version                  Resource Group Name   Provider   

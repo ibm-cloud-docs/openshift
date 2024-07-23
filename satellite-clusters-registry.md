@@ -2,7 +2,7 @@
 
 copyright:
   years: 2023, 2024
-lastupdated: "2024-01-18"
+lastupdated: "2024-07-23"
 
 
 keywords: openshift, satellite, distributed cloud, on-prem, hybrid, images,
@@ -107,7 +107,7 @@ In the CLI, create a secret with the service credentials you created and saved.
         ```
         {: pre}
 
-        Example output.
+        Example output
         ```sh
         ID                           Name                                              Destination Type   Address       
         cavvku1p1h1gcfgk1kn1_uwokw   satellite-cosRegional-cavvku1p1h1gcfgk1kn1        cloud              TLS   i11aa11a1a1a11a11-1a11a1aaa1a1a1a1a-c000.us-east.satellite.appdomian.cloud:11111 
@@ -167,7 +167,7 @@ Verify that the image registry was configured by checking for a pod that begins 
 
 1. Review the output and confirm that the registry pod is `Running`.
 
-    Example output.
+    Example output
     ```sh
     NAME                                               READY   STATUS      RESTARTS      AGE
     image-registry-63p54b8add-vkjju                    1/1      Running      0              16m
