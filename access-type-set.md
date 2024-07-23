@@ -23,6 +23,7 @@ Review the following steps to set the exposure method for the OpenShift web cons
 
 Choose between the following options when setting the OpenShift console and OAuth exposure method.
 
+
 Virtual Private Endpoint Gateway (`vpe-gateway`,`vpegw`)
 :   This is default access type for version 4.13. For more information, see [Accessing VPC clusters through the VPE gateway](/docs/openshift?topic=openshift-access_cluster#vpc_vpe).
 
@@ -31,6 +32,7 @@ Private Service Endpoint URL (`legacy`)
 
 Making the Virtual Private Endpoint Gateway for OAuth and console access the default behavior for all clusters is available on an allowlist basis. To request that your account be allowlisted, see [Requesting access to allowlisted features](/docs/openshift?topic=openshift-get-help).
 {: tip}
+
 
 ## Setting the OAuth access type for a cluster from the CLI
 {: #oauth-access-set-cli}
