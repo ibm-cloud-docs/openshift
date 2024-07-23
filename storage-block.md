@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2024
-lastupdated: "2024-06-28"
+lastupdated: "2024-07-23"
 
 
 keywords: kubernetes, openshift
@@ -133,7 +133,7 @@ First time using {{site.data.keyword.blockstorageshort}} in your cluster? Come b
     ```
     {: pre}
     
-    Example output.
+    Example output
     ```sh
     NAME            READY   UP-TO-DATE   AVAILABLE   AGE
     my-deployment   1/1     1            1           3m19s
@@ -146,7 +146,7 @@ First time using {{site.data.keyword.blockstorageshort}} in your cluster? Come b
     ```
     {: pre}
     
-    Example output.
+    Example output
     ```sh
     NAME                            READY   STATUS    RESTARTS   AGE
     my-deployment-ccdf87dfb-vzn95   1/1     Running   0          5m27s
@@ -160,7 +160,7 @@ First time using {{site.data.keyword.blockstorageshort}} in your cluster? Come b
     ```
     {: pre}
     
-    Example output.
+    Example output
     ```sh
     2022-01-21 14:18:59
     ```
@@ -999,7 +999,7 @@ Before you can start to mount your existing storage to an app, you must retrieve
     ```
     {: pre}
     
-    Example output.
+    Example output
     ```sh
     2022-01-21 16:11:00
     ```

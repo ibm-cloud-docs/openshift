@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2022, 2024
-lastupdated: "2024-06-14"
+lastupdated: "2024-07-23"
 
 
 keywords: openshift, block storage, snapshot
@@ -308,7 +308,7 @@ After you deploy the snapshot resources, you can restore data to a new volume by
     ```
     {: pre}
     
-    Example output.
+    Example output
     
     ```sh
     hi

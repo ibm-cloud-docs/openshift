@@ -2,12 +2,12 @@
 
 copyright: 
   years: 2024, 2024
-lastupdated: "2024-07-18"
+lastupdated: "2024-07-23"
 
 
 keywords: telemetry, remote health, remote monitoring, cluster data, health data
 
-subcollection: <containers>containers</containers><openshift>openshift</openshift>
+subcollection: openshift
 
 ---
 
@@ -96,13 +96,13 @@ You might want to disable this remote health reporting to comply with privacy la
 3. To pick up the global configuration changes, reload all the worker nodes in your cluster.
     1. Note the **ID** of the worker nodes in your cluster.
         ```sh
-        <containers>ibmcloud ks</containers><openshift>ibmcloud oc</openshift> worker ls -c <cluster_name_or_ID>
+        ibmcloud oc worker ls -c <cluster_name_or_ID>
         ```
         {: pre}
 
     2. Reload each worker node. You can reload multiple worker nodes by including multiple `-w` options, but make sure to leave enough worker nodes running at the same time for your apps to avoid an outage.
         ```sh
-        <containers>ibmcloud ks</containers><openshift>ibmcloud oc</openshift> worker reload -c <cluster_name_or_ID> -w <workerID_1> -w <workerID_2>
+        ibmcloud oc worker reload -c <cluster_name_or_ID> -w <workerID_1> -w <workerID_2>
         ```
         {: pre}
 
@@ -122,7 +122,7 @@ If you are not sure whether Telemetry is already enabled for a cluster, follow t
 1. In the CLI, set the context for your cluster and include the `--admin` option.
 
     ```sh
-    <containers>ibmcloud ks</containers><openshift>ibmcloud oc</openshift> cluster config -c CLUSTER-ID --admin
+    ibmcloud oc cluster config -c CLUSTER-ID --admin
     ```
     {: pre}
 

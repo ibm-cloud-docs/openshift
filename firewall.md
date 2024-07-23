@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2024
-lastupdated: "2024-06-24"
+lastupdated: "2024-07-23"
 
 
 keywords: openshift
@@ -597,7 +597,7 @@ Follow the steps to obtain the correct subnet IP addresses to add to your IAM al
     ```
     {: pre}
 
-    Example output.
+    Example output
 
     ```sh
     Name             Value   

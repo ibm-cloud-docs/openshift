@@ -2,12 +2,12 @@
 
 copyright:
   years: 2023, 2024
-lastupdated: "2024-07-18"
+lastupdated: "2024-07-23"
 
 
-keywords: kubernetes, <containers>containers</containers><openshift>openshift</openshift>
+keywords: kubernetes, openshift
 
-subcollection: <containers>containers</containers><openshift>openshift</openshift>
+subcollection: openshift
 
 
 ---
@@ -71,9 +71,9 @@ If you are using the **{{site.data.keyword.cis_full_notm}}** provider, you must 
 {: #ingress-domains-ui-credentials}
 {: ui}
 
-Your DNS credentials are required to create or add a domain with external providers, such as Cloudflare or Akamai. <containers>{{site.data.keyword.containerlong_notm}}</containers><openshift>{{site.data.keyword.openshiftlong_notm}}</openshift> uses these credentials to provision or access a domain from the external provider on your behalf. You must use the same set of credentials for each domain in a cluster.
+Your DNS credentials are required to create or add a domain with external providers, such as Cloudflare or Akamai. {{site.data.keyword.openshiftlong_notm}} uses these credentials to provision or access a domain from the external provider on your behalf. You must use the same set of credentials for each domain in a cluster.
 
-Different providers might require different credentials, such as access tokens or secrets. <containers>{{site.data.keyword.containerlong_notm}}</containers><openshift>{{site.data.keyword.openshiftlong_notm}}</openshift> does not provide the credentials; you must acquire them from the external provider. 
+Different providers might require different credentials, such as access tokens or secrets. {{site.data.keyword.openshiftlong_notm}} does not provide the credentials; you must acquire them from the external provider. 
 
 #### Required credentials for Akamai
 {: #ingress-domains-ui-credentials-akamai}
@@ -113,13 +113,13 @@ Change a cluster's default domain
 {: #ingress-domain-int}
 {: cli}
 
-{{site.data.keyword.cloud_notm}} provides a managed, internal provider that you can use to create your own domains. You can use the `<containers>ibmcloud ks</containers><openshift>ibmcloud oc</openshift> ingress domain create` command to create a new domain, or you can specify an existing domain that you want to add to your cluster. When you create a domain with the internal provider, you might specify a subdomain name, such as `exampledomain`, or provide the fully qualified domain name. The new domain is named in the format `exampledomain.<zone>.containers.appdomain.cloud`. 
+{{site.data.keyword.cloud_notm}} provides a managed, internal provider that you can use to create your own domains. You can use the `ibmcloud oc ingress domain create` command to create a new domain, or you can specify an existing domain that you want to add to your cluster. When you create a domain with the internal provider, you might specify a subdomain name, such as `exampledomain`, or provide the fully qualified domain name. The new domain is named in the format `exampledomain.<zone>.containers.appdomain.cloud`. 
 
 The {{site.data.keyword.cloud_notm}} internal managed domain provider is Akamai. You can also use your own Akamai account to create or add domains. When you get the details of a domain, you might see the provider type listed as `akamai` or `akamai-ext`. The `akamai` provider type refers to the internal {{site.data.keyword.cloud_notm}} domain provider, and `akamai-ext` refers to your own external Akamai account that you directly register the domain with. If you provide the fully qualified domain name, the zone of your domain must match the zone your cluster was created in.
 {: note}
 
 ```sh
-<containers>ibmcloud ks</containers><openshift>ibmcloud oc</openshift> ingress domain create --cluster CLUSTER [--is-default] [--domain DOMAIN] [--hostname HOSTNAME] [--ip IP] [--output OUTPUT] [-q] [--secret-namespace NAMESPACE]
+ibmcloud oc ingress domain create --cluster CLUSTER [--is-default] [--domain DOMAIN] [--hostname HOSTNAME] [--ip IP] [--output OUTPUT] [-q] [--secret-namespace NAMESPACE]
 ```
 {: pre}
 
@@ -166,7 +166,7 @@ If you delete a domain that is registered with the IBM internal provider, you ca
 
 
 ```sh
-<containers>ibmcloud ks</containers><openshift>ibmcloud oc</openshift> ingress domain create --cluster CLUSTER [--crn CRN] [--is-default] [--domain DOMAIN] [--hostname HOSTNAME] [--ip IP] [--output OUTPUT] [--domain-provider PROVIDER] [-q] [--secret-namespace NAMESPACE] [--zone ZONE]
+ibmcloud oc ingress domain create --cluster CLUSTER [--crn CRN] [--is-default] [--domain DOMAIN] [--hostname HOSTNAME] [--ip IP] [--output OUTPUT] [--domain-provider PROVIDER] [-q] [--secret-namespace NAMESPACE] [--zone ZONE]
 ```
 {: pre}
 
@@ -204,7 +204,7 @@ If you delete a domain that is registered with the IBM internal provider, you ca
 {: #ingress-domain-external}
 {: cli}
 
-To use a domain that is registered with an external provider such as Akamai or Cloudflare, you must add the external provider credentials to your cluster. <containers>{{site.data.keyword.containerlong_notm}}</containers><openshift>{{site.data.keyword.openshiftlong_notm}}</openshift> uses these credentials to provision or access a domain from the external provider on your behalf. You can only add one set of credentials to your cluster. Different providers might require different credentials, such as access tokens or secrets. <containers>{{site.data.keyword.containerlong_notm}}</containers><openshift>{{site.data.keyword.openshiftlong_notm}}</openshift> does not provide the credentials; you must acquire them from the external provider.
+To use a domain that is registered with an external provider such as Akamai or Cloudflare, you must add the external provider credentials to your cluster. {{site.data.keyword.openshiftlong_notm}} uses these credentials to provision or access a domain from the external provider on your behalf. You can only add one set of credentials to your cluster. Different providers might require different credentials, such as access tokens or secrets. {{site.data.keyword.openshiftlong_notm}} does not provide the credentials; you must acquire them from the external provider.
 
 After you add external credentials to your cluster, you can [add or create domains](docs/containers?topic=containers-ingress-domains&interface=cli#ingress-domains-ext-create) that are registered with your external account. 
 
@@ -223,7 +223,7 @@ Note that registering credentials for Akamai requires the `READ-WRITE` permissio
 3. Run the following command to add the provider credentials to your cluster. Specify the token, secret, and DNS zone values you found in the previous steps.
 
 ```sh
-<containers>ibmcloud ks</containers><openshift>ibmcloud oc</openshift> ingress domain credential set akamai --cluster CLUSTER --access-token TOKEN --client-secret SECRET --client-token TOKEN --host HOST --zone AKAMAI_ZONE [-q] 
+ibmcloud oc ingress domain credential set akamai --cluster CLUSTER --access-token TOKEN --client-secret SECRET --client-token TOKEN --host HOST --zone AKAMAI_ZONE [-q] 
 ```
 {: pre}
 
@@ -266,7 +266,7 @@ Note that registering credentials for Cloudflare requires the following permissi
 3. Run the following command to add the provider credentials to your cluster. Specify the access token and DNS zone values you found in the previous steps.
 
 ```sh
-<containers>ibmcloud ks</containers><openshift>ibmcloud oc</openshift> ingress domain credential set cloudflare --cluster CLUSTER --token TOKEN --zone CLOUDFLARE_ZONE [-q]
+ibmcloud oc ingress domain credential set cloudflare --cluster CLUSTER --token TOKEN --zone CLOUDFLARE_ZONE [-q]
 ```
 {: pre}
 
@@ -280,7 +280,7 @@ Note that registering credentials for Cloudflare requires the following permissi
 :    The access token for Cloudflare credentials. This token is provided by Cloudflare. 
 
 `--domain-zone ZONE`
-:    The DNS zone that exists in your Cloudflare account and is specified in your [provider credentials](/docs/<containers>containers</containers><openshift>openshift</openshift>?topic=<containers>containers</containers><openshift>openshift</openshift>-ingress-domains&interface=cli#ingress-domains-ext-cred-cf). This is a GUID value. 
+:    The DNS zone that exists in your Cloudflare account and is specified in your [provider credentials](/docs/openshift?topic=openshift-ingress-domains&interface=cli#ingress-domains-ext-cred-cf). This is a GUID value. 
 
 
 ### Verifying your provider credentials 
@@ -290,7 +290,7 @@ Note that registering credentials for Cloudflare requires the following permissi
 Verify that the provider credentials were added to your cluster.
 
 ```sh
-<containers>ibmcloud ks</containers><openshift>ibmcloud oc</openshift> ingress domain credential get --cluster CLUSTER [--output OUTPUT] [-q]
+ibmcloud oc ingress domain credential get --cluster CLUSTER [--output OUTPUT] [-q]
 ```
 {: pre}
 
@@ -299,10 +299,10 @@ Verify that the provider credentials were added to your cluster.
 {: #ingress-domains-ext-create}
 {: cli}
 
-Create or add a domain to your cluster with the `<containers>ibmcloud ks</containers><openshift>ibmcloud oc</openshift> ingress domain create`. If you already have a domain provisioned with an internal or external provider and have set up any necessary credentials, you can use this command to add that domain to your cluster. Or, you can provision a new domain in both your cluster and in your provider account. To specify an existing domain, include the full domain name with the external provider zone, such as `exampledomain.externalzone.com`. To create a new domain, you must still include the external provider zone, but you can customize the subdomain portion, such as `new-exampledomain.externalzone.com`.
+Create or add a domain to your cluster with the `ibmcloud oc ingress domain create`. If you already have a domain provisioned with an internal or external provider and have set up any necessary credentials, you can use this command to add that domain to your cluster. Or, you can provision a new domain in both your cluster and in your provider account. To specify an existing domain, include the full domain name with the external provider zone, such as `exampledomain.externalzone.com`. To create a new domain, you must still include the external provider zone, but you can customize the subdomain portion, such as `new-exampledomain.externalzone.com`.
 
 ```sh
-<containers>ibmcloud ks</containers><openshift>ibmcloud oc</openshift> ingress domain create --cluster CLUSTER [--is-default] [--domain DOMAIN] [--hostname HOSTNAME] [--ip IP] [--output OUTPUT] [--domain-provider PROVIDER] [-q] [--secret-namespace NAMESPACE] 
+ibmcloud oc ingress domain create --cluster CLUSTER [--is-default] [--domain DOMAIN] [--hostname HOSTNAME] [--ip IP] [--output OUTPUT] [--domain-provider PROVIDER] [-q] [--secret-namespace NAMESPACE] 
 ```
 {: pre}
 
@@ -340,20 +340,20 @@ Learn how to manage the domains that exist in your cluster.
 ### Listing all domains in a cluster
 {: #ingress-domains-manage-view-ls}
 
-For more details and command options, see the [CLI reference](/docs/<containers>containers</containers><openshift>openshift</openshift>?topic=<containers>containers</containers><openshift>openshift</openshift>-kubernetes-service-cli&interface=ui#ingress-domain-ls).
+For more details and command options, see the [CLI reference](/docs/openshift?topic=openshift-kubernetes-service-cli&interface=ui#ingress-domain-ls).
 
 ```sh
-<containers>ibmcloud ks</containers><openshift>ibmcloud oc</openshift> ingress domain ls --cluster CLUSTER
+ibmcloud oc ingress domain ls --cluster CLUSTER
 ```
 {: pre}
 
 ### Getting the details of a single domain
 {: #ingress-domains-manage-view-get}
 
-For more details and command options, see the [CLI reference](/docs/<containers>containers</containers><openshift>openshift</openshift>?topic=<containers>containers</containers><openshift>openshift</openshift>-kubernetes-service-cli&interface=ui#ingress-domain-get).
+For more details and command options, see the [CLI reference](/docs/openshift?topic=openshift-kubernetes-service-cli&interface=ui#ingress-domain-get).
 
 ```sh
-<containers>ibmcloud ks</containers><openshift>ibmcloud oc</openshift> ingress domain credential get --cluster CLUSTER 
+ibmcloud oc ingress domain credential get --cluster CLUSTER 
 ```
 {: pre}
 
@@ -365,10 +365,10 @@ If you delete a domain from a cluster, the domain cannot be recovered. If you la
 If you delete a domain that is registered with the IBM internal provider, you cannot reuse the domain name.
 {: note}
 
-For more details and command options, see the [CLI reference](/docs/<containers>containers</containers><openshift>openshift</openshift>?topic=<containers>containers</containers><openshift>openshift</openshift>-kubernetes-service-cli&interface=ui#ingress-domain-rm).
+For more details and command options, see the [CLI reference](/docs/openshift?topic=openshift-kubernetes-service-cli&interface=ui#ingress-domain-rm).
 
 ```sh
-<containers>ibmcloud ks</containers><openshift>ibmcloud oc</openshift> ingress domain rm --cluster CLUSTER --domain DOMAIN
+ibmcloud oc ingress domain rm --cluster CLUSTER --domain DOMAIN
 ```
 {: pre}
 
@@ -377,28 +377,28 @@ For more details and command options, see the [CLI reference](/docs/<containers>
 
 You can update a domain's registered IP addresses (for Classic or VPC clusters) or hostname (for VPC clusters) after the domain is created or added to the cluster. This command updates all the resources in your cluster with the specified IP addresses or hostnames and changes your app URLs. 
 
-For more information and command options, see the [CLI reference](/docs/<containers>containers</containers><openshift>openshift</openshift>?topic=<containers>containers</containers><openshift>openshift</openshift>-kubernetes-service-cli&interface=ui#ingress-domain-update).
+For more information and command options, see the [CLI reference](/docs/openshift?topic=openshift-kubernetes-service-cli&interface=ui#ingress-domain-update).
 
 Note that when you add IP addresses or hostnames, you must include any IPs or hostnames that are currently registered to the domain. The domain updates with the exact values specified, so any current IP addresses or hostnames are overwritten if they are not included. For example, if `52.137.182.166` is currently registered to your domain and you want to add `52.137.182.270`, you must specify `--ip 52.137.182.166 --ip 52.137.182.270` in the command.
 {: important}
 
 ```sh
-<containers>ibmcloud ks</containers><openshift>ibmcloud oc</openshift> ingress domain update --cluster CLUSTER --domain DOMAIN [--hostname HOSTNAME] [--ip IP] 
+ibmcloud oc ingress domain update --cluster CLUSTER --domain DOMAIN [--hostname HOSTNAME] [--ip IP] 
 ```
 {: pre}
 
 ### Changing a cluster's default domain
 {: #ingress-domain-manage-default}
 
-The default Ingress domain is used to form a unique URL for each of your apps and is the domain that is referenced by the IP addresses of any public ALBs in your cluster. When you provision a cluster, the default Ingress domain is automatically created for you, but you can change the default domain to any domain that exists in your cluster. To check your cluster's default domain, run `<containers>ibmcloud ks</containers><openshift>ibmcloud oc</openshift> cluster get` and find the **Ingress subdomain** in the output. 
+The default Ingress domain is used to form a unique URL for each of your apps and is the domain that is referenced by the IP addresses of any public ALBs in your cluster. When you provision a cluster, the default Ingress domain is automatically created for you, but you can change the default domain to any domain that exists in your cluster. To check your cluster's default domain, run `ibmcloud oc cluster get` and find the **Ingress subdomain** in the output. 
 
-For more details and command options, see the [CLI reference](/docs/<containers>containers</containers><openshift>openshift</openshift>?topic=<containers>containers</containers><openshift>openshift</openshift>-kubernetes-service-cli&interface=ui#ingress-domain-default-replace).
+For more details and command options, see the [CLI reference](/docs/openshift?topic=openshift-kubernetes-service-cli&interface=ui#ingress-domain-default-replace).
 
 It can take up to five minutes for the default domain to update. During that time, your domain might experience downtime.
 {: important}
 
 ```sh
-<containers>ibmcloud ks</containers><openshift>ibmcloud oc</openshift> ingress domain default replace --cluster CLUSTER --domain DOMAIN
+ibmcloud oc ingress domain default replace --cluster CLUSTER --domain DOMAIN
 ```
 {: pre}
 
@@ -415,10 +415,10 @@ Learn how to manage the provider credentials that exist in your cluster.
 
 Get the details of the provider credentials that are added to your cluster. Note that only one set of credentials can be added to a cluster at a time. 
 
-For more details and command options, see the [CLI reference](/docs/<containers>containers</containers><openshift>openshift</openshift>?topic=<containers>containers</containers><openshift>openshift</openshift>-kubernetes-service-cli&interface=ui#ingress-domain-credential-get).
+For more details and command options, see the [CLI reference](/docs/openshift?topic=openshift-kubernetes-service-cli&interface=ui#ingress-domain-credential-get).
 
 ```sh
-<containers>ibmcloud ks</containers><openshift>ibmcloud oc</openshift> ingress domain credential get --cluster CLUSTER 
+ibmcloud oc ingress domain credential get --cluster CLUSTER 
 ```
 {: pre}
 
@@ -427,10 +427,10 @@ For more details and command options, see the [CLI reference](/docs/<containers>
 
 You can remove external provider credentials from your cluster. Note that removing credentials causes any domains registered with those credentials to enter an `Error` state. The domain status resolves when the credentials are reapplied. 
 
-For more details and command options, see the [CLI reference](/docs/<containers>containers</containers><openshift>openshift</openshift>?topic=<containers>containers</containers><openshift>openshift</openshift>-kubernetes-service-cli&interface=ui#ingress-domain-credential-rm).
+For more details and command options, see the [CLI reference](/docs/openshift?topic=openshift-kubernetes-service-cli&interface=ui#ingress-domain-credential-rm).
 
 ```sh
-<containers>ibmcloud ks</containers><openshift>ibmcloud oc</openshift> ingress domain credential rm --cluster CLUSTER 
+ibmcloud oc ingress domain credential rm --cluster CLUSTER 
 ```
 {: pre}
 
@@ -445,10 +445,10 @@ Learn how to manage the TLS certificate for your Ingress domain.
 
 Regenerate the domain certificate to generate a new token in your DNS provider and apply it to your cluster.
 
-For more details and command options, see the [CLI reference](/docs/<containers>containers</containers><openshift>openshift</openshift>?topic=<containers>containers</containers><openshift>openshift</openshift>-kubernetes-service-cli#ingress-domain-secret-regenerate)
+For more details and command options, see the [CLI reference](/docs/openshift?topic=openshift-kubernetes-service-cli#ingress-domain-secret-regenerate)
 
 ```sh
-<containers>ibmcloud ks</containers><openshift>ibmcloud oc</openshift> ingress domain secret regenerate --cluster CLUSTER --domain DOMAIN
+ibmcloud oc ingress domain secret regenerate --cluster CLUSTER --domain DOMAIN
 ```
 {: pre}
 
@@ -457,10 +457,10 @@ For more details and command options, see the [CLI reference](/docs/<containers>
 
 Delete the secret for an Ingress domain and prevent future renewal of the certificate. 
 
-For more details and command options, see the [CLI reference](/docs/<containers>containers</containers><openshift>openshift</openshift>?topic=<containers>containers</containers><openshift>openshift</openshift>-kubernetes-service-cli#ingress-domain-secret-rm)
+For more details and command options, see the [CLI reference](/docs/openshift?topic=openshift-kubernetes-service-cli#ingress-domain-secret-rm)
 
 ```sh
-<containers>ibmcloud ks</containers><openshift>ibmcloud oc</openshift> ingress domain secret rm --cluster CLUSTER --domain DOMAIN 
+ibmcloud oc ingress domain secret rm --cluster CLUSTER --domain DOMAIN 
 ```
 {: pre}
 

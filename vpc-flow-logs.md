@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2022, 2024
-lastupdated: "2024-01-03"
+lastupdated: "2024-07-23"
 
 
 keywords: flow logs, VPC monitoring, worker nodes, VPC, network traffic, collector
@@ -46,7 +46,7 @@ Your {{site.data.keyword.fl_full}} gathers information from the VPC, VPC subnet,
     ```sh
     oc describe node <worker_node_ip> | grep instance-id
     ```
-    Example output.
+    Example output
     ```sh
     ibm-cloud.kubernetes.io/instance-id=1010_a1aa1010-a1a0-1010-a1aa-aa1a1-a1-aa1
     ```

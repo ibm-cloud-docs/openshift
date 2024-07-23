@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2022, 2024
-lastupdated: "2024-07-16"
+lastupdated: "2024-07-23"
 
 keywords: kubernetes, openshift
 
@@ -390,7 +390,7 @@ Create a persistent volume claim (PVC) to statically provision {{site.data.keywo
     ```
     {: pre}
 
-    Example output.
+    Example output
 
     ```sh
     ID                           r134-bad98878-1f63-45d2-a3fd-60447094c2e6   
@@ -430,7 +430,7 @@ Create a persistent volume claim (PVC) to statically provision {{site.data.keywo
     ```
     {: pre}
 
-    Example output.
+    Example output
 
     ```sh
     ID                          r134-aa2aabb8-f616-47be-886b-99220852b728   
@@ -797,7 +797,7 @@ Complete the following steps to set up encryption-in-transit (EIT) for file shar
     ```
     {: pre}
 
-    Example output.
+    Example output
 
     ```yaml
     apiVersion: v1
@@ -899,7 +899,7 @@ To limit file share access by node, zone, or resource group, you must first crea
     ```
     {: pre}
 
-    Example output.
+    Example output
 
     ```sh
     nfsServerPath: XXX.XX.XX.XXX:/XX # VNI IP address

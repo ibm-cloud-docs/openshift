@@ -2,12 +2,12 @@
 
 copyright: 
   years: 2023, 2024
-lastupdated: "2024-07-18"
+lastupdated: "2024-07-23"
 
 
-keywords: portworx, <containers>containers</containers><openshift>openshift</openshift>, autopilot
+keywords: portworx, openshift, autopilot
 
-subcollection: <containers>containers</containers><openshift>openshift</openshift>
+subcollection: openshift
 
 
 ---
@@ -25,9 +25,9 @@ Autopilot allows you to specify monitoring conditions in your cluster to react a
 {: #autopilot-prereqs}
 
 
-1. [Install Portworx](/docs/<containers>containers</containers><openshift>openshift</openshift>?topic=<containers>containers</containers><openshift>openshift</openshift>-storage_portworx_deploy).
+1. [Install Portworx](/docs/openshift?topic=openshift-storage_portworx_deploy).
 
-1. <containers>[Log in to your account. If applicable, target the appropriate resource group. Set the context for your cluster.](/docs/containers?topic=containers-access_cluster)</containers><openshift>[Access your {{site.data.keyword.redhat_openshift_notm}} cluster](/docs/openshift?topic=openshift-access_cluster).</openshift>
+1. [Access your {{site.data.keyword.redhat_openshift_notm}} cluster](/docs/openshift?topic=openshift-access_cluster).
 
 1. Autopilot requires a running Prometheus instance in your cluster. To set up Prometheus, see [Monitor your Portworx cluster](https://docs.portworx.com/portworx-enterprise/operations/operate-kubernetes/monitoring){: external}.
 

@@ -2,7 +2,7 @@
 
 copyright:
   years: 2022, 2024
-lastupdated: "2024-06-26"
+lastupdated: "2024-07-23"
 
 
 keywords: secrets manager, secrets, certificates, secret group, CRN
@@ -112,7 +112,7 @@ Follow the steps to register your {{site.data.keyword.secrets-manager_short}} in
     ```
     {: pre}
 
-    Example output.
+    Example output
 
     ```sh
     Name:                  my-secrets-manager-instance 
@@ -148,7 +148,7 @@ Follow the steps to register your {{site.data.keyword.secrets-manager_short}} in
     ```
     {: pre}
 
-    Example output.
+    Example output
 
     ```sh
     Name                                Type              Is Default   Status    Secret Group   CRN   
@@ -204,7 +204,7 @@ When you set a default {{site.data.keyword.secrets-manager_short}} instance, all
         ```
         {: pre}
 
-        Example output.
+        Example output
 
         ```sh
         Name                               Namespace  CRN                                                                               Expires On                 Domain                                                   Status    Type   

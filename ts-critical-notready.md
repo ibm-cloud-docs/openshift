@@ -2,7 +2,7 @@
 
 copyright:
   years: 2023, 2024
-lastupdated: "2024-06-20"
+lastupdated: "2024-07-23"
 
 
 keywords: critical, not ready, notready, troubleshooting, worker node status, status
@@ -148,7 +148,7 @@ Check the conditions of your worker nodes and cluster before you gather data.
     ```
     {: pre}
 
-    Example output. 
+    Example output 
 
     ```sh
     NAME            CPU(cores)   CPU%   MEMORY(bytes)   MEMORY%   

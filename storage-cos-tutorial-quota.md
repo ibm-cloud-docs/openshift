@@ -2,7 +2,7 @@
 
 copyright:
   years: 2022, 2024
-lastupdated: "2024-05-29"
+lastupdated: "2024-07-23"
 
 
 keywords: kubernetes, openshift
@@ -71,7 +71,7 @@ Before beginning this tutorial make sure you have created or installed the follo
     ```
     {: pre}
     
-    Example output.
+    Example output
     ```sh
     secret/my-cos-secret created
     ```
@@ -83,7 +83,7 @@ Before beginning this tutorial make sure you have created or installed the follo
     ```
     {: pre}
     
-    Example output.
+    Example output
     ```sh   
     my-cos-secret              ibm/ibmc-s3fs                         3      11m
     ```
@@ -106,7 +106,7 @@ When you install the plug-in in your cluster, make sure to specify the `--set qu
     ```
     {: pre}
     
-    Example output.
+    Example output
     ```sh
     ibmcloud-object-storage-driver-k9x4l             1/1     Running   0          6m52s
     ibmcloud-object-storage-driver-kj9m6             1/1     Running   0          6m52s
@@ -149,7 +149,7 @@ You can use dynamic provisioning to automatically create a {{site.data.keyword.c
     oc apply -f pvc.yaml
     ```
     
-    Example output.
+    Example output
     ```sh
     persistentvolumeclaim/my-cos-pvc created
     ```
@@ -237,7 +237,7 @@ You can use dynamic provisioning to automatically create a {{site.data.keyword.c
     ```
     {: pre}
     
-    Example output.
+    Example output
     ```sh
     pod/cat-test-file created
     ```

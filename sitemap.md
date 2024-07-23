@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2024
-lastupdated: "2024-07-18"
+lastupdated: "2024-07-23"
 
 
 keywords: openshift
@@ -3315,15 +3315,15 @@ subcollection: openshift
 {: #sitemap_enhancing_security}
 
 
-[Security for <containers>{{site.data.keyword.containerlong_notm}}</containers><openshift>{{site.data.keyword.openshiftlong_notm}}</openshift>](/docs/openshift?topic=openshift-security#security)
+[Security for {{site.data.keyword.openshiftlong_notm}}](/docs/openshift?topic=openshift-security#security)
 
 * [Overview of security threats for your cluster](/docs/openshift?topic=openshift-security#threats)
 
-* [<containers>Kubernetes</containers><openshift>{{site.data.keyword.redhat_openshift_notm}}</openshift> API server and etcd](/docs/openshift?topic=openshift-security#apiserver)
+* [{{site.data.keyword.redhat_openshift_notm}} API server and etcd](/docs/openshift?topic=openshift-security#apiserver)
 
     * [How is access to my API server granted?](/docs/openshift?topic=openshift-security#api-server-access)
 
-    * [What does <containers>{{site.data.keyword.containerlong_notm}}</containers><openshift>{{site.data.keyword.openshiftlong_notm}}</openshift> do to secure my API server and etcd data store?](/docs/openshift?topic=openshift-security#secure-api-server)
+    * [What does {{site.data.keyword.openshiftlong_notm}} do to secure my API server and etcd data store?](/docs/openshift?topic=openshift-security#secure-api-server)
 
     * [What else can I do to secure my API server?](/docs/openshift?topic=openshift-security#api-server-what-else)
 
@@ -3358,8 +3358,6 @@ subcollection: openshift
     * [Securely expose apps with LoadBalancer and Ingress services](/docs/openshift?topic=openshift-security#network_lb_ingress)
 
     * [Can I use security groups to manage my cluster's network traffic?](/docs/openshift?topic=openshift-security#can-i-use-security-groups)
-
-    * [How can I secure the source IP within the cluster?](/docs/openshift?topic=openshift-security#secure-source-ip-cluster)
 
     * [How can I do TLS termination with LoadBalancer and Ingress services?](/docs/openshift?topic=openshift-security#tls-termination-lb)
 
@@ -3643,21 +3641,6 @@ subcollection: openshift
 * [Updating the global pull secret](/docs/openshift?topic=openshift-satellite-registry-pull-secret#satellite-pull-secret-cli)
 
 * [Updating the global pull secret by using {{site.data.keyword.satelliteshort}} config](/docs/openshift?topic=openshift-satellite-registry-pull-secret#satellite-pull-secret-config)
-
-
-## Restricting network traffic to edge worker nodes
-{: #sitemap_restricting_network_traffic_to_edge_worker_nodes}
-
-
-[Restricting network traffic to edge worker nodes](/docs/openshift?topic=openshift-edge#edge)
-
-* [Isolating NLB workloads to edge nodes](/docs/openshift?topic=openshift-edge#edge_nodes_nlb)
-
-* [Isolating ALB workloads to edge worker nodes](/docs/openshift?topic=openshift-edge#edge_nodes_alb)
-
-* [Preventing app workloads from running on edge worker nodes](/docs/openshift?topic=openshift-edge#edge_workloads)
-
-* [Deploying the Sysdig agent on edge worker nodes](/docs/openshift?topic=openshift-edge#sysdig-edge)
 
 
 ## Controlling network traffic in Classic clusters
@@ -4500,6 +4483,16 @@ subcollection: openshift
 
     * [Unsupported scheduling algorithms](/docs/openshift?topic=openshift-loadbalancer-v2#scheduling_unsupported)
 
+[ Isolating Classic NLBs to edge worker nodes](/docs/openshift?topic=openshift-edge-nlb-classic#edge-nlb-classic)
+
+[Isolating network workloads to edge nodes in VPC clusters](/docs/openshift?topic=openshift-edge-vpc-workloads#edge-vpc-workloads)
+
+* [Prerequisites](/docs/openshift?topic=openshift-edge-vpc-workloads#edge-vpc-workloads-pre)
+
+* [Isolating workloads to edge nodes](/docs/openshift?topic=openshift-edge-vpc-workloads#edge-vpc-workloads-steps)
+
+* [Next steps](/docs/openshift?topic=openshift-edge-vpc-workloads#edge-workloads-vpc-next)
+
 [Registering a DNS subdomain for an NLB](/docs/openshift?topic=openshift-loadbalancer_hostname#loadbalancer_hostname)
 
 * [Registering NLB IPs with a DNS subdomain](/docs/openshift?topic=openshift-loadbalancer_hostname#loadbalancer_hostname_dns)
@@ -4711,6 +4704,8 @@ subcollection: openshift
 
 * [Registering a {{site.data.keyword.secrets-manager_short}} instance when creating a cluster](/docs/openshift?topic=openshift-secrets-mgr#secrets-mgr_cluster_create)
 
+[Isolating routers to edge nodes](/docs/openshift?topic=openshift-edge#edge)
+
 [Exposing apps in {{site.data.keyword.satelliteshort}} clusters](/docs/openshift?topic=openshift-sat-expose-apps#sat-expose-apps)
 
 * [Setting up MetalLB](/docs/openshift?topic=openshift-sat-expose-apps#sat-expose-metallb)
@@ -4722,6 +4717,10 @@ subcollection: openshift
 * [Exposing apps with NodePorts](/docs/openshift?topic=openshift-sat-expose-apps#sat-expose-np)
 
 * [Exposing apps with routes and Link endpoints for traffic from {{site.data.keyword.cloud_notm}}](/docs/openshift?topic=openshift-sat-expose-apps#sat-expose-cloud)
+
+[Preventing app workloads from running on edge worker nodes](/docs/openshift?topic=openshift-edge-workload-prevent#edge-workload-prevent)
+
+[Deploying the Sysdig agent on edge worker nodes](/docs/openshift?topic=openshift-edge-sysdig#edge-sysdig)
 
 
 ## Enabling the IBM Storage Operator cluster add-on
@@ -5087,6 +5086,18 @@ subcollection: openshift
 
 [VPC: Setting up authorized IP addresses for {{site.data.keyword.cos_full_notm}}](/docs/openshift?topic=openshift-storage_cos_vpc_ip#storage_cos_vpc_ip)
 
+[Migrating Cloud Object Storage (COS) resources between IBM Cloud accounts](/docs/openshift?topic=openshift-storage-rclone-migration#storage-rclone-migration)
+
+* [Prerequisites](/docs/openshift?topic=openshift-storage-rclone-migration#rclone-migration-prereqs)
+
+* [Configuring `rclone`](/docs/openshift?topic=openshift-storage-rclone-migration#rclone-config)
+
+* [Syncing between COS buckets](/docs/openshift?topic=openshift-storage-rclone-migration#rclone-inspect)
+
+* [Syncing contents between buckets](/docs/openshift?topic=openshift-storage-rclone-migration#rclone-sync)
+
+* [Next steps](/docs/openshift?topic=openshift-storage-rclone-migration#rclone-next-steps)
+
 [Storage class reference](/docs/openshift?topic=openshift-storage_cos_reference#storage_cos_reference)
 
 
@@ -5387,7 +5398,7 @@ subcollection: openshift
 
 * [Adding a backup location to your Portworx Backup service](/docs/openshift?topic=openshift-storage_portworx_backup#px-backup-storage)
 
-* [Adding <containers>{{site.data.keyword.containerlong_notm}}</containers><openshift>{{site.data.keyword.openshiftlong_notm}}</openshift> clusters to your Portworx Backup service](/docs/openshift?topic=openshift-storage_portworx_backup#px-backup-cluster)
+* [Adding {{site.data.keyword.openshiftlong_notm}} clusters to your Portworx Backup service](/docs/openshift?topic=openshift-storage_portworx_backup#px-backup-cluster)
 
 * [Installing Stork on a non-Portworx cluster](/docs/openshift?topic=openshift-storage_portworx_backup#px-backup-stork)
 

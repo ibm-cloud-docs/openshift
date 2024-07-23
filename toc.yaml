@@ -132,7 +132,6 @@ toc:
       - registry.md
       - satellite-clusters-registry.md
       - satellite-registry-pull-secret.md
-      - edge.md
       - topicgroup: 
           label: Controlling network traffic in Classic clusters
           topics:
@@ -197,12 +196,14 @@ toc:
               - openshift_routes.md
           - topicgroup:
               label: Exposing apps with load balancers
-              topics: 
+              topics:
               - lb-quickstart.md
               - vpc_lbaas.md
               - lb-about.md
               - lb.md
               - lb-v2.md
+              - edge-classic-nlb.md
+              - edge-vpc-lb.md
               - lb-dns.md
           - topicgroup:
               label: Exposing apps with Ingress
@@ -216,7 +217,10 @@ toc:
               - ingress-domains.md
               - secrets.md
               - secrets-mgr.md
+              - edge-ingress.md
           - satellite_expose_apps.md
+          - edge-workload-prevent.md
+          - edge-sysdig.md
       - storage-operator.md
       - storage-block.md
       - topicgroup:
@@ -245,6 +249,7 @@ toc:
           - storage-cos-apps.md
           - storage-cos-tutorial-quota.md
           - storage-cos-vpc-ip.md
+          - storage-rclone-migration.md
           - storage-cos-reference.md
       - topicgroup:
           label: Setting up OpenShift Data Foundation

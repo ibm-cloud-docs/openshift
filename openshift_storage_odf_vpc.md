@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2024
-lastupdated: "2024-07-10"
+lastupdated: "2024-07-23"
 
 
 keywords: openshift, openshift data foundation, openshift container storage, ocs
@@ -501,7 +501,7 @@ If you want to use an {{site.data.keyword.cos_full_notm}} service instance as yo
     ```
     {: pre}
 
-    Example output.
+    Example output
 
     ```yaml
     Name:         ocscluster-vpc
