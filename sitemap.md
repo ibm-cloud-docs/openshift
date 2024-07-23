@@ -3157,6 +3157,10 @@ subcollection: openshift
 
 [Setting the OAuth access type for VPC clusters](/docs/openshift?topic=openshift-setting-oauth-access-type#setting-oauth-access-type)
 
+* [Setting the OAuth access type for a cluster from the CLI](/docs/openshift?topic=openshift-setting-oauth-access-type&interface=cli#oauth-access-set-cli)
+
+* [Getting the OAuth access type for a cluster from the CLI](/docs/openshift?topic=openshift-setting-oauth-access-type&interface=cli#oauth-access-get-cli)
+
 * [Setting the OAuth access type for a cluster from the API](/docs/openshift?topic=openshift-setting-oauth-access-type&interface=api#oauth-access-set-api)
 
 * [Getting the OAuth access type for a cluster from the API](/docs/openshift?topic=openshift-setting-oauth-access-type&interface=api#oauth-access-get-api)

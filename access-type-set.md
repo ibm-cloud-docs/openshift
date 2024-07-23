@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2023, 2024
-lastupdated: "2024-05-29"
+lastupdated: "2024-07-23"
 
 
 keywords: openshift, {{site.data.keyword.openshiftlong_notm}}, kubernetes, oauth, console, access, vpe, pse, network
@@ -23,15 +23,52 @@ Review the following steps to set the exposure method for the OpenShift web cons
 
 Choose between the following options when setting the OpenShift console and OAuth exposure method.
 
-Virtual Private Endpoint Gateway
+Virtual Private Endpoint Gateway (`vpe-gateway`,`vpegw`)
 :   This is default access type for version 4.13. For more information, see [Accessing VPC clusters through the VPE gateway](/docs/openshift?topic=openshift-access_cluster#vpc_vpe).
 
-Private Service Endpoint URL
+Private Service Endpoint URL (`legacy`)
 :   This is default access type for cluster versions 4.12 and earlier and 4.14 and later. For more information, see [Accessing clusters through the private cloud service endpoint](/docs/openshift?topic=openshift-access_cluster#access_private_se).
 
-Setting the Virtual Private Endpoint Gateway for OAuth and console as the default behavior for all clusters is available on an allowlist basis. To request that your account be allowlisted, see [Requesting access to allowlisted features](/docs/openshift?topic=openshift-get-help).
+Making the Virtual Private Endpoint Gateway for OAuth and console access the default behavior for all clusters is available on an allowlist basis. To request that your account be allowlisted, see [Requesting access to allowlisted features](/docs/openshift?topic=openshift-get-help).
 {: tip}
 
+## Setting the OAuth access type for a cluster from the CLI
+{: #oauth-access-set-cli}
+{: cli}
+
+1. Run the `cluster master console-oauth-access set` command to set the access type for your cluster.
+
+    ```txt
+    ibmcloud oc cluster master console-oauth-access set --cluster CLUSTER --type vpe-gateway|legacy
+    ```
+    {: pre}
+
+1. Verify the access the type.
+    ```sh
+    ibmcloud oc cluster master console-oauth-access get --cluster CLUSTER
+    ```
+    {: pre}
+
+1. Review the output and verify the OAuth access type.
+   - [4.13 clusters]{: tag-red}: If the value is empty, the `vpe-gateway` behavior is being used.
+   - [4.14 clusters]{: tag-red} and later: If the value is empty, the `legacy` behavior is being used.
+
+
+
+## Getting the OAuth access type for a cluster from the CLI
+{: #oauth-access-get-cli}
+{: cli}
+
+1. To view the access type for your cluster, run the `cluster master console-oauth-access get` command.
+
+    ```sh
+    ibmcloud oc cluster master console-oauth-access get --cluster CLUSTER
+    ```
+    {: pre}
+
+1. Review the output and verify the OAuth access type.
+   - [4.13 clusters]{: tag-red}: If the value is empty, the `vpe-gateway` behavior is being used.
+   - [4.14 clusters]{: tag-red} and later: If the value is empty, the `legacy` behavior is being used.
 
 ## Setting the OAuth access type for a cluster from the API
 {: #oauth-access-set-api}
@@ -82,6 +119,6 @@ You can use the `GET /network/v2/oauth-access-type/{idOrName}` API to get the ac
 
 1. Review the output and verify the OAuth access type.
    - [4.13 clusters]{: tag-red}: If the value is empty, the `vpegw` behavior is being used.
-   - [4.14 clusters]{: tag-red}: If the value is empty, the `legacy` behavior is being used.
+   - [4.14 clusters]{: tag-red} and later: If the value is empty, the `legacy` behavior is being used.
 
 
