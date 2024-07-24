@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2024
-lastupdated: "2024-06-12"
+lastupdated: "2024-07-24"
 
 
 keywords: openshift, cli reference, kubernetes cli, openshift cli, {{site.data.keyword.openshiftlong_notm}}
@@ -663,7 +663,7 @@ After logging in to {{site.data.keyword.cloud_notm}}, download the Kubernetes co
 The `kubeconfig` file is merged to your existing `kubeconfig` file in `~/.kube/config` (`<user_profile>/.kube/config` in Windows), or to the last file that is set by the `KUBECONFIG` environment variable in your command line session. After you run `ibmcloud oc cluster config`, you can interact with your cluster immediately, and quickly change the context to other clusters in the Kubernetes context.
 
 ```sh
-ibmcloud oc cluster config --cluster CLUSTER [--admin] [--endpoint ENDPOINT_TYPE] [--network] [--skip-rbac] [-q] [--yaml]
+ibmcloud oc cluster config --cluster CLUSTER [--admin] [--endpoint ENDPOINT_TYPE] [--network] [--skip-rbac] [-q] [-o]
 ```
 {: pre}
 
@@ -691,8 +691,6 @@ Minimum required permissions
 
 `--network`
 :    Optional: Download the Calico configuration file, TLS certificates, and permission files that are required to run `calicoctl` commands in your cluster.
-     This option can't be used with the `--yaml` option.
-     {: note}
 
 `--skip-rbac`
 :    Skip adding user Kubernetes RBAC roles based on the {{site.data.keyword.cloud_notm}} IAM service access roles to the cluster configuration. Include this option only if you [manage your own Kubernetes RBAC roles](/docs/openshift?topic=openshift-understand-rbac). If you use [{{site.data.keyword.cloud_notm}} IAM service access roles](/docs/openshift?topic=openshift-iam-platform-access-roles) to manage all your RBAC users, don't include this option.
@@ -700,8 +698,8 @@ Minimum required permissions
 `-q`
 :    Optional: Do not show the message of the day or update reminders.
 
-`--yaml`
-:    Optional: Prints the command output in YAML format.
+`-o`
+:    Optional: Prints the command output in YAML, JSON, or `.zip` format.
 
 
 #### Example `cluster config` command

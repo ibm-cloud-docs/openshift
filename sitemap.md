@@ -10605,7 +10605,7 @@ subcollection: openshift
 
 * [Step 4: Ping the Ingress subdomain and Ingress controller public IP address](/docs/openshift?topic=openshift-ingress-debug-roks4#ping-43)
 
-[Gathering Ingress logs](/docs/openshift?topic=openshift-ingress-must-gather#ingress-must-gather)
+[Gathering Ingress details for debugging](/docs/openshift?topic=openshift-ingress-must-gather#ingress-must-gather)
 
 [Classic clusters: Why can't my app connect via Ingress?](/docs/openshift?topic=openshift-cs_ingress_fails#cs_ingress_fails)
 
