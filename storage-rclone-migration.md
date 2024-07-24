@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2024, 2024
-lastupdated: "2024-07-23"
+lastupdated: "2024-07-24"
 
 
 keywords: openshift, rclone, migrate
@@ -32,7 +32,6 @@ Complete the following steps to move the contents of a COS bucket in one account
 
 ## Configuring `rclone`
 {: #rclone-config}
-{: step}
 
 
 1. After you have `rclone` installed, you must generate a configuration file that defines the 2 COS instances. You can do this by running the command `rclone config` command.
