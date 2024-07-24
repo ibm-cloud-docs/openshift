@@ -2,13 +2,12 @@
 
 copyright: 
   years: 2014, 2024
-lastupdated: "2024-05-14"
+lastupdated: "2024-07-24"
 
 
 keywords: openshift, {{site.data.keyword.openshiftlong_notm}}, kubernetes, multi az, multi-az, szr, mzr
 
 subcollection: openshift
-
 
 ---
 
