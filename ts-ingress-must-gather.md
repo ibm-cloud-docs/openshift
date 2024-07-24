@@ -2,10 +2,10 @@
 
 copyright: 
   years: 2014, 2024
-lastupdated: "2024-01-03"
+lastupdated: "2024-07-24"
 
 
-keywords: openshift
+keywords: openshift, kubernetes, help, network, connectivity, ingress, must gather
 
 subcollection: openshift
 
@@ -23,20 +23,6 @@ content-type: troubleshoot
 Run the following commands to gather the required logs for debugging Ingress.
 {: shortdesc}
 
-1. List ALBs.
-
-    ```sh
-    ibmcloud oc ingress alb ls -c CLUSTERID
-    ```
-    {: pre}
-
-1. Get the Ingress status.
-
-    ```sh
-    ibmcloud oc ingress status-report get -c CLUSTERID
-    ```
-    {: pre}
-    
 1. Get nodes and node labels.
 
     ```sh
@@ -51,31 +37,57 @@ Run the following commands to gather the required logs for debugging Ingress.
     ```
     {: pre}
 
-1. Describe your Ingress resource.
+1. Get the Ingress status.
 
     ```sh
-    oc describe ing <ingress name> -n <namespace>
+    ibmcloud oc ingress status-report get -c CLUSTERID
     ```
     {: pre}
     
-1. Get the logs for the `nginx-ingress` container in your Ingress pods.
 
-    ```sh
-    oc logs <ingress pods> -n kube-system -c nginx-ingress
-    ```
-    {: pre}
-    
-1.  List host names for network load balancer (NLB).
 
+
+1. List Ingresses.
     ```sh
-    ibmcloud oc nlb-dns ls -c CLUSTERID
+    oc get ingress -n openshift-ingress
     ```
     {: pre}
 
-1. List the `alb` pods in the `kube-system` namespace.
-
+1. Get the logs of the Ingress controller.
     ```sh
-    oc get pods -n kube-system | grep alb
+    oc logs ingresscontroller -n openshift-ingress-operator
+    ```
+    {: pre}
+
+1. Get the Ingress Operator logs.
+    ```sh
+    oc logs deployments/ingress-operator -n openshift-ingress-operator -c ingress-operator
+    ```
+    {: pre}
+
+1. List pods in the `openshift-ingress` namespace.
+    ```sh
+    oc get pods -n openshift-ingress
+    ```
+    {: pre}
+
+1. Get the router service details.
+    ```sh
+    oc get svc -n openshift-ingress
+    ```
+    {: pre}
+
+1. Describe the router service.
+    ```sh
+    oc describe svc router-default -n openshift-ingress
+    ```
+    {: pre}
+
+
+
+1. List your cluster subdomains.
+    ```sh
+    ibmcloud oc ingress domain ls -c CLUSTERID
     ```
     {: pre}
     
@@ -86,7 +98,7 @@ Run the following commands to gather the required logs for debugging Ingress.
     ```
     {: pre}
     
-Review the output for error messages, then review the list of [Ingress and routers troubleshooting topics](/docs/openshift?topic=openshift-sitemap#sitemap_ingress_and_routers) for help resolving common Ingress issues.
+Review the output for error messages, then review the list of [Ingress and routers troubleshooting topics](/docs/openshift?topic=openshift-ingress-status) for help resolving common Ingress issues.
 {: tip}
 
 
