@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2024
-lastupdated: "2024-07-24"
+lastupdated: "2024-07-25"
 
 
 keywords: openshift
@@ -10013,7 +10013,7 @@ subcollection: openshift
 
 * [Does the service come with a managed {{site.data.keyword.redhat_openshift_notm}} master and worker nodes?](/docs/openshift?topic=openshift-faqs#managed_master_worker)
 
-* [Are the master and worker nodes highly available?](/docs/openshift?topic=openshift-faqs#faq_ha)
+    * [Why do my worker nodes have the `master` role?](/docs/openshift?topic=openshift-faqs#flavor-master-role)
 
 * [What kinds of workloads can I move to {{site.data.keyword.openshiftlong_notm}}?](/docs/openshift?topic=openshift-faqs#move_to_cloud)
 
@@ -10050,6 +10050,26 @@ subcollection: openshift
 * [Where is the service available?](/docs/openshift?topic=openshift-faqs#supported_regions)
 
 * [Is the service highly available?](/docs/openshift?topic=openshift-faqs#ha_sla)
+
+* [How do multizone clusters work?](/docs/openshift?topic=openshift-faqs#mz-cluster-faq)
+
+    * [How is my {{site.data.keyword.openshiftlong_notm}} master set up?](/docs/openshift?topic=openshift-faqs#mz-master-setup)
+
+    * [Do I have to do anything so that the master can communicate with the workers across zones?](/docs/openshift?topic=openshift-faqs#mz-master-communication)
+
+    * [Can I convert my single zone cluster to a multizone cluster?](/docs/openshift?topic=openshift-faqs#convert-sz-to-mz)
+
+* [What if I want to set up multiple clusters across regions?](/docs/openshift?topic=openshift-faqs#multiple-regions-setup)
+
+* [What options do I have to load balance workloads across multiple clusters?](/docs/openshift?topic=openshift-faqs#multiple-cluster-lb-options)
+
+* [What if I want to load balance workloads on the private network?](/docs/openshift?topic=openshift-faqs#glb-private)
+
+* [Are the master and worker nodes highly available?](/docs/openshift?topic=openshift-faqs#faq_ha)
+
+* [Do my apps automatically spread across zones?](/docs/openshift?topic=openshift-faqs#multizone-apps-faq)
+
+* [Are the worker nodes encrypted?](/docs/openshift?topic=openshift-faqs#encrypted-flavors)
 
 * [What compliance standards does the service meet?](/docs/openshift?topic=openshift-faqs#standards)
 

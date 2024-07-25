@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2024
-lastupdated: "2024-06-06"
+lastupdated: "2024-07-24"
 
 
 keywords: openshift, ocp, compliance, security standards, faq, openshift pricing, ocp pricing, openshift charges, ocp charges, openshift price, ocp price, openshift billing, ocp billing, openshift costs, ocp costs
@@ -95,19 +95,15 @@ Periodically, {{site.data.keyword.redhat_openshift_notm}} releases [major, minor
 
 Worker nodes in standard clusters are provisioned in to your {{site.data.keyword.cloud_notm}} infrastructure account. The worker nodes are dedicated to your account and you are responsible to request timely updates to the worker nodes to ensure that the worker node OS and {{site.data.keyword.openshiftlong_notm}} components apply the latest security updates and patches. Security updates and patches are made available by IBM Site Reliability Engineers (SREs) who continuously monitor the Linux image that is installed on your worker nodes to detect vulnerabilities and security compliance issues. For more information, see [Updating worker nodes](/docs/openshift?topic=openshift-update#worker_node).
 
-## Are the master and worker nodes highly available?
-{: #faq_ha}
-{: faq}
 
-The {{site.data.keyword.openshiftlong_notm}} architecture and infrastructure is designed to ensure reliability, low processing latency, and a maximum uptime of the service. By default, every cluster in {{site.data.keyword.openshiftlong_notm}} is set up with multiple {{site.data.keyword.redhat_openshift_notm}} master instances to ensure availability and accessibility of your cluster resources, even if one or more instances of your {{site.data.keyword.redhat_openshift_notm}} master are unavailable.
 
-You can make your cluster even more highly available and protect your app from a downtime by spreading your workloads across multiple worker nodes in multiple zones of a region. This setup is called a [multizone cluster](/docs/openshift?topic=openshift-ha_clusters#mz-clusters) and ensures that your app is accessible, even if a worker node or an entire zone is not available.
+### Why do my worker nodes have the `master` role?
+{: #flavor-master-role}
 
-To protect against an entire region failure, create [multiple clusters and spread them across {{site.data.keyword.cloud_notm}} regions](/docs/openshift?topic=openshift-ha_clusters#multiple-clusters-glb). By setting up a network load balancer (NLB) for your clusters, you can achieve cross-region load balancing and cross-region networking for your clusters.
+When you run `oc get nodes` or `oc describe node <worker_node>`, you might see that the worker nodes have `master,worker` roles. In OpenShift Container Platform clusters, operators use the master role as a `nodeSelector` so that OCP can deploy default components that are controlled by operators, such as the internal registry, in your cluster. No master node processes, such as the API server or Kubernetes scheduler, run on your worker nodes. For more information about master and worker node components, see [{{site.data.keyword.redhat_openshift_notm}} architecture](/docs/openshift?topic=openshift-service-architecture#service-architecture-4).
 
-If you have data that must be available, even if an outage occurs, make sure to store your data on [persistent storage](/docs/openshift?topic=openshift-storage-plan).
 
-For more information about how to achieve high availability for your cluster, see [High availability for {{site.data.keyword.openshiftlong_notm}}](/docs/openshift?topic=openshift-ha_clusters).
+
 
 ## What kinds of workloads can I move to {{site.data.keyword.openshiftlong_notm}}?
 {: #move_to_cloud}
@@ -302,6 +298,67 @@ For more information about supported regions, see [Locations](/docs/openshift?to
 Yes. By default, {{site.data.keyword.openshiftlong_notm}} sets up many components such as the cluster master with replicas, anti-affinity, and other options to increase the high availability (HA) of the service. You can increase the redundancy and failure toleration of your cluster worker nodes, storage, networking, and workloads by configuring them in a highly available architecture. For an overview of the default setup and your options to increase HA, see [High availability for {{site.data.keyword.openshiftlong_notm}}](/docs/openshift?topic=openshift-ha_clusters).
 
 For the latest HA service level agreement terms, refer to the [{{site.data.keyword.cloud_notm}} terms of service](/docs/overview?topic=overview-slas). Generally, the SLA availability terms require that when you configure your infrastructure resources in an HA architecture, you must distribute them evenly across three different availability zones. For example, to receive full HA coverage under the SLA terms, you must [set up a multizone cluster](/docs/openshift?topic=openshift-ha_clusters#mz-clusters) with a total of at least 6 worker nodes, two worker nodes per zone that are evenly spread across three zones.
+
+
+
+## How do multizone clusters work?
+{: #mz-cluster-faq}
+
+### How is my {{site.data.keyword.openshiftlong_notm}} master set up?
+{: #mz-master-setup}
+
+When you create a cluster in a multizone location, a highly available master is automatically deployed and three replicas are spread across the zones of the metro. For example, if the cluster is in `dal10`, `dal12`, or `dal13` zones, the replicas of the master are spread across each zone in the Dallas multizone metro.
+
+### Do I have to do anything so that the master can communicate with the workers across zones?
+{: #mz-master-communication}
+
+If you created a VPC multizone cluster, the subnets in each zone are automatically set up with Access Control Lists (ACLs) that allow communication between the master and the worker nodes across zones. In classic clusters, if you have multiple VLANs for your cluster, multiple subnets on the same VLAN, or a multizone classic cluster, you must enable a [Virtual Router Function (VRF)](/docs/account?topic=account-vrf-service-endpoint&interface=ui) for your IBM Cloud infrastructure account so your worker nodes can communicate with each other on the private network. To enable VRF, see [Enabling VRF](/docs/account?topic=account-vrf-service-endpoint&interface=ui). To check whether a VRF is already enabled, use the `ibmcloud account show` command. If you can't or don't want to enable VRF, enable [VLAN spanning](/docs/vlans?topic=vlans-vlan-spanning#vlan-spanning). To perform this action, you need the **Network > Manage Network VLAN Spanning** infrastructure permission, or you can request the account owner to enable it. To check whether VLAN spanning is already enabled, use the `ibmcloud oc vlan spanning get --region <region>` [command](/docs/containers?topic=containers-kubernetes-service-cli#cs_vlan_spanning_get).
+
+### Can I convert my single zone cluster to a multizone cluster?
+{: #convert-sz-to-mz}
+
+To convert a single zone cluster to a multizone cluster, your cluster must be set up in one of the supported [classic](/docs/openshift?topic=openshift-regions-and-zones#zones-mz) or [VPC](/docs/openshift?topic=openshift-regions-and-zones#zones-vpc) multizone locations. VPC clusters can be set up only in multizone metro locations, and as such can always be converted from a single zone cluster to a multizone cluster. Classic clusters that are set up in a single zone data center can't be converted to a multizone cluster. To convert a single zone cluster to a multizone cluster, see [Adding worker nodes to Classic clusters](/docs/openshift?topic=openshift-add-workers-classic) or [Adding worker nodes to VPC clusters](/docs/openshift?topic=openshift-add-workers-vpc).
+
+## What if I want to set up multiple clusters across regions?
+{: #multiple-regions-setup}
+
+You can set up multiple clusters in different regions of one geolocation (such as US South and US East) or across geolocations (such as US South and EU Central). Both setups offer the same level of availability for your app, but also add complexity when it comes to data sharing and data replication. For most cases, staying within the same geolocation is sufficient. But if you have users across the world, it might be better to set up a cluster where your users are so that your users don't experience long waiting times when they send a request to your app.
+
+## What options do I have to load balance workloads across multiple clusters?
+{: #multiple-cluster-lb-options}
+
+To load balance workloads across multiple clusters, you must make your apps available on the public network by using [Ingress](/docs/openshift?topic=openshift-ingress-about-roks4), [routers](/docs/openshift?topic=openshift-openshift_routes), or [Network Load Balancers (NLBs)](/docs/openshift?topic=openshift-loadbalancer-about). The router services and NLBs are assigned a public IP address that you can use to access your apps.
+
+To load balance workloads across your apps, add the public IP addresses of your router services and NLBs to a CIS global load balancer or your own global load balancer.
+
+## What if I want to load balance workloads on the private network?
+{: #glb-private}
+
+{{site.data.keyword.cloud_notm}} does not offer a global load balancer service on the private network. However, you can connect your cluster to a private load balancer that you host in your on-prem network by using one of the [supported VPN options](/docs/openshift?topic=openshift-vpn). Make sure to expose your apps on the private network by using [Ingress](/docs/openshift?topic=openshift-ingress-about-roks4), [routers](/docs/openshift?topic=openshift-openshift_routes), or [Network Load Balancers (NLBs)](/docs/openshift?topic=openshift-loadbalancer-about), and use the private IP address in your VPN settings to connect your app to your on-prem network.
+
+## Are the master and worker nodes highly available?
+{: #faq_ha}
+{: faq}
+
+The {{site.data.keyword.openshiftlong_notm}} architecture and infrastructure is designed to ensure reliability, low processing latency, and a maximum uptime of the service. By default, every cluster in {{site.data.keyword.openshiftlong_notm}} is set up with multiple {{site.data.keyword.redhat_openshift_notm}} master instances to ensure availability and accessibility of your cluster resources, even if one or more instances of your {{site.data.keyword.redhat_openshift_notm}} master are unavailable.
+
+You can make your cluster even more highly available and protect your app from a downtime by spreading your workloads across multiple worker nodes in multiple zones of a region. This setup is called a [multizone cluster](/docs/openshift?topic=openshift-ha_clusters#mz-clusters) and ensures that your app is accessible, even if a worker node or an entire zone is not available.
+
+To protect against an entire region failure, create [multiple clusters and spread them across {{site.data.keyword.cloud_notm}} regions](/docs/openshift?topic=openshift-ha_clusters#multiple-clusters-glb). By setting up a network load balancer (NLB) for your clusters, you can achieve cross-region load balancing and cross-region networking for your clusters.
+
+If you have data that must be available, even if an outage occurs, make sure to store your data on [persistent storage](/docs/openshift?topic=openshift-storage-plan).
+
+For more information about how to achieve high availability for your cluster, see [High availability for {{site.data.keyword.openshiftlong_notm}}](/docs/openshift?topic=openshift-ha_clusters).
+
+## Do my apps automatically spread across zones?
+{: #multizone-apps-faq}
+
+It depends on how you set up the app. See [Planning highly available deployments](/docs/openshift?topic=openshift-plan_deploy#highly_available_apps) and [Planning highly available persistent storage](/docs/openshift?topic=openshift-storage-plan).
+
+## Are the worker nodes encrypted?
+{: #encrypted-flavors}
+
+The secondary disk of the worker node is encrypted. For more information, see [Overview of cluster encryption](/docs/openshift?topic=openshift-encryption). After you create a worker pool, you might notice that the worker node flavor has `.encrypted` in the name, such as `b3c.4x16.encrypted`.
 
 ## What compliance standards does the service meet?
 {: #standards}
