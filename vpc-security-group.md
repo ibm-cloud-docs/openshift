@@ -145,7 +145,7 @@ If you update or create a cluster in your VPC that runs at version 4.14 or later
 ### Required inbound and outbound rules for VPC ALBs
 {: #required-group-rules-alb}
 
-By default, traffic rules for VPC ALBs are covered by the `kube-<vpcID>` security group. Note that you should not modify this security group as doing so might cause disruptions in network connectivity between the cluster and the Kubernetes master. However, you can [remove the security group](/docs/vpc-infrastructure-cli-plugin?topic=vpc-infrastructure-cli-plugin-vpc-reference&interface=cli#security-group-target-remove) from your ALB and [replace it](/docs/vpc-infrastructure-cli-plugin?topic=vpc-infrastructure-cli-plugin-vpc-reference&interface=cli#security-group-target-add) with one that you create and manage. If you do so, you must make sure that the following traffic rules are still covered. 
+By default, traffic rules for VPC ALBs are covered by the `kube-lbaas-<clusterID>` security group. Note that you should not modify this security group as doing so might cause disruptions in network connectivity between the cluster and the Kubernetes master. However, you can [remove the security group](/docs/vpc-infrastructure-cli-plugin?topic=vpc-infrastructure-cli-plugin-vpc-reference&interface=cli#security-group-target-remove) from your ALB and [replace it](/docs/vpc-infrastructure-cli-plugin?topic=vpc-infrastructure-cli-plugin-vpc-reference&interface=cli#security-group-target-add) with one that you create and manage. If you do so, you must make sure that the following traffic rules are still covered. 
 {: shortdesc}
 
 #### Inbound rules
