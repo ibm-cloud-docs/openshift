@@ -13,7 +13,7 @@ subcollection: openshift
 {{site.data.keyword.attribute-definition-list}}
 
 # Creating a highly available cluster strategy
-{: #strategy-plan}
+{: #strategy}
 
 Design your standard cluster for maximum availability and capacity for your app with {{site.data.keyword.openshiftlong}}. Use the built-in features to make your cluster more highly available and to protect your app from downtime when a component in your cluster fails. But figuring out what your cluster setup must be to support your workload is not an exact science. You might need to test different configurations and adapt.
 {: shortdesc}
@@ -39,7 +39,7 @@ The number of clusters that you create depends on your workload, company policie
     * Simplify user access to control access within a cluster by configuring access on the cluster-instance level instead of customizing and managing multiple RBAC policies at the namespace level.
     * Keep the number of worker nodes lower. Network bandwidth on scaling virtual machines is around 1000 Mbps. If you need hundreds of worker nodes in a cluster, you can split the configuration up into multiple clusters with fewer nodes, or order bare metal nodes.
     * Allow for a larger number of [services integrations](/docs/containers?topic=containers-supported_integrations#supported_integrations), such as more than 5,000 service.
-    * Provide higher availability to an app. Similar to using 3 zones in multizone clusters, you can provide more availability to your app by setting up three clusters across zones.
+    * Provide higher availability to an app. Similar to using [3 zones in multizone clusters](#mz-clusters), you can provide more availability to your app by setting up three clusters across zones.
     * Reduce costs by purchasing smaller machines to handle your workload.
 
 - **One cluster with more worker nodes**: Fewer clusters can help you to reduce operational effort and per-cluster costs for fixed resources. Instead of making more clusters, you can add worker pools to one cluster for different flavors of computing resources available for your app and service components. When you develop the app, the resources it uses are in the same zone, or otherwise closely connected in a multizone, so that you can make assumptions about latency, bandwidth, or correlated failures. However, it becomes even more important for you to organize your cluster by using namespaces, resource quotas, and labels when you have only one cluster.
@@ -54,7 +54,7 @@ A cluster can either distribute replicas across worker nodes in a single locatio
 Distributing your workload across three zones ensures high availability for your app in case a zone becomes unavailable. You must have your worker nodes spread evenly across all three availability zones to meet the [{{site.data.keyword.cloud_notm}} service level agreement (SLA)](/docs/overview?topic=overview-slas) for HA configuration.
 {: important}
 
-A zone failure affects all physical compute hosts and NFS storage. Failures include power, cooling, networking, or storage outages, and natural disasters, like flooding, earthquakes, and hurricanes. To protect against a zone failure, you must have clusters in two different zones that are load balanced by an external load balancer, create a cluster in a multizone location, which spreads the master across zones, or consider setting up a second cluster in another zone.
+A zone failure affects all physical compute hosts and NFS storage. Failures include power, cooling, networking, or storage outages, and natural disasters, like flooding, earthquakes, and hurricanes. To protect against a zone failure, you must have clusters in two different zones that are load balanced by an external load balancer, create a cluster in a [multizone location](#mz-clusters), which spreads the master across zones, or consider setting up a second cluster in another zone.
 
 * **Multizone clusters** [Classic]{: tag-classic-inf} [VPC]{: tag-vpc}: Multizone clusters distribute workloads across multiple worker nodes and zones, creating additional protection against zone failures. Worker nodes are automatically deployed with three replicas spread across multiple zones. If an entire zone experiences an outage, your workload is scheduled onto worker nodes in the other zones, protecting your app from the outage.
 
@@ -73,7 +73,7 @@ A zone failure affects all physical compute hosts and NFS storage. Failures incl
 
   To balance your workload across multiple clusters, you must [set up a global load balancer](/docs/cis?topic=cis-configure-glb) through [{{site.data.keyword.cis_short}}](/docs/cis?topic=cis-getting-started) and add the public IP addresses of your router services or load balancer services to your domain. By adding these IP addresses, you can route incoming traffic between your clusters. 
 
-  For the global load balancer to detect if one of your clusters is unavailable, consider adding a ping-based health check to every IP address. When you set up this check, your DNS provider regularly pings the IP addresses that you added to your domain. If one IP address becomes unavailable, then traffic is not sent to this IP address anymore. However, {{site.data.keyword.redhat_openshift_notm}} does not automatically restart pods from the unavailable cluster on worker nodes in available clusters. If you want {{site.data.keyword.redhat_openshift_notm}} to automatically restart pods in available clusters, consider setting up a multizone cluster.
+  For the global load balancer to detect if one of your clusters is unavailable, consider adding a ping-based health check to every IP address. When you set up this check, your DNS provider regularly pings the IP addresses that you added to your domain. If one IP address becomes unavailable, then traffic is not sent to this IP address anymore. However, {{site.data.keyword.redhat_openshift_notm}} does not automatically restart pods from the unavailable cluster on worker nodes in available clusters. If you want {{site.data.keyword.redhat_openshift_notm}} to automatically restart pods in available clusters, consider setting up a [multizone cluster](#mz-clusters).
 
 * **Single zone clusters** [Classic]{: tag-classic-inf}: Worker nodes are distributed across replicas on separate physical hosts within a single zone.  This option protects against certain outages, such as during a master update, and is simpler to manage. However, it does not protect your apps if an entire zone experiences an outage. If you later find availability to be a problem, single zone clusters deployed in certain locations can later be converted to multi zone clusters.
 
@@ -261,6 +261,5 @@ VPC clusters
 
 
 ## Make your apps highly available too
-{: #apps-ha}
 
 Containers and pods are, by design, short-lived and can fail unexpectedly. For example, a container or pod might crash if an error occurs in your app. To make your app highly available, you must ensure that you have enough instances of your app to handle the workload plus additional instances in the case of a failure. Ideally, these instances are distributed across multiple worker nodes to protect your app from a worker node failure. For more information, see [Deploying highly available apps](/docs/openshift?topic=openshift-plan_deploy#highly_available_apps).
