@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2023, 2024
-lastupdated: "2024-06-04"
+lastupdated: "2024-07-26"
 
 
 keywords: openshift, {{site.data.keyword.openshiftlong_notm}}, firewall, rules, security group, 4.15, networking, secure by default, outbound traffic protection
@@ -60,10 +60,10 @@ The following VPE gateways are created automatically when you create a VPC clust
 
 {{site.data.keyword.openshiftlong_notm}} automatically creates and updates the following security groups and rules for VPC clusters.
 
-- [Worker security group](#vpc-sg-kube-clusterid)
-- [Master VPE gateway security group](#vpc-sg-kube-vpegw-cluster-id)
-- [Shared VPE gateway security group](#vpc-sg-kube-vpegw-vpc-id)
-- [Load balancer services security group](#vpc-sg-kube-vpegw-vpc-id)
+- [Worker security group](#vpc-sg-kube-clusterid) (`kube-<clusterID>`).
+- [Master VPE gateway security group](#vpc-sg-kube-vpegw-cluster-id) (`kube-vpegw-<clusterID>`).
+- [Shared VPE gateway security group](#vpc-sg-kube-vpegw-vpc-id) (`kube-vpegw-<vpcID>`).
+- [Load balancer services security group](#vpc-sg-kube-vpegw-vpc-id) (`kube-lbaas-<clusterID>`).
 
 
 ### Worker security group
@@ -106,7 +106,7 @@ Do not modify the rules in the `kube-<clusterID>` security group as doing so mig
 ### Master VPE gateway security group
 {: #vpc-sg-kube-vpegw-cluster-id}
 
-When you create a VPC cluster, a Virtual Private Endpoint (VPE) gateway is created in the same VPC as the cluster. The purpose of this VPE gateway is to serve as a gateway to the cluster master which is managed by IBM Cloud. The VPE gateway is assigned a single IP address in each zone in the VPC in which the cluster has workers.
+When you create a VPC cluster, a Virtual Private Endpoint (VPE) gateway is created in the same VPC as the cluster. The name of the security is `kube-vpegw-<clusterID>` where `<clusterID>` is the ID of the cluster. The purpose of this VPE gateway is to serve as a gateway to the cluster master which is managed by IBM Cloud. The VPE gateway is assigned a single IP address in each zone in the VPC in which the cluster has workers.
 
 To allow access to a cluster's master only from its worker nodes a security group is created for each cluster master VPE gateway. A remote rule is then created that allows Ingress connectivity from the cluster worker security group to the required ports on the cluster master VPE gateway.
 
@@ -131,7 +131,7 @@ To allow access to a cluster's master only from its worker nodes a security grou
 ### Shared VPE gateway security group
 {: #vpc-sg-kube-vpegw-vpc-id}
 
-Shared VPE gateways are created when the first cluster in a VPC is provisioned.The shared VPE gateway security group is created when you create a cluster (if it doesn't already exist from previous clusters). A remote rule is then created that allows Ingress connectivity from the cluster worker security group for the given cluster. The shared VPE gateway security group contains the VPE gateways that are shared by all clusters in that VPC. Shared VPE gateways might be added in later versions to allow connections to other IBM Cloud Services. For
+Shared VPE gateways are created when the first cluster in a VPC is provisioned.The shared VPE gateway security group is created when you create a cluster (if it doesn't already exist from previous clusters). The name of the security group is `kube-vpegw-<vpcID>` where `<vpcID>` is the the ID of your VPC. A remote rule is then created that allows Ingress connectivity from the cluster worker security group for the given cluster. The shared VPE gateway security group contains the VPE gateways that are shared by all clusters in that VPC. Shared VPE gateways might be added in later versions to allow connections to other IBM Cloud Services. For
 
 If this shared VPE gateway security group already exists when a cluster is provisioned, it is recognized by the provisioning process and is not recreated. However, a remote rule is still added between the existing shared VPE gateway security group and the new worker security group. This is done so that connectivity is allowed from all clusters in the given VPC. One rule is created for each cluster in the VPC. 
 
@@ -148,7 +148,7 @@ There is a maximum of 15 rules that can target other security groups as their so
 ### Load balancer services security group
 {: #vpc-sg-kube-lbaas-cluster-ID}
 
-The default security group that is attached to all load balancers (ALBs and NLBs). Note that SDNLBs do not support attaching security groups. Each cluster gets their own unique security group which is shared by all the load balancers in the cluster. The following example show the rules added to the load balancer security group by a cluster that uses a single ALB. The rules on this security group are added or deleted dynamically as load balancers are added, removed, or updated.
+The default security group that is attached to all load balancers (ALBs and NLBs). The name of the security group is `kube-lbaas-<clusterID>` where `<clusterID>` is the ID of your cluster. Each cluster gets their own unique security group which is shared by all the load balancers in the cluster. The following example show the rules added to the load balancer security group by a cluster that uses a single ALB. The rules on this security group are added or deleted dynamically as load balancers are added, removed, or updated. Note that SDNLBs do not support attaching security groups.
 
 | Description | Direction | Protocol | Port or value | Source or destination |
 | ---- | ---- | ---- | ---- | ---- |
