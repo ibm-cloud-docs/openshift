@@ -2,7 +2,7 @@
 
 copyright:
   years: 2023, 2024
-lastupdated: "2024-07-15"
+lastupdated: "2024-07-29"
 
 
 keywords: openshift, 4.13, update, upgrade, BOM, bill of materials, versions, patch
@@ -32,6 +32,20 @@ Check the [Security Bulletins on {{site.data.keyword.cloud_notm}} Status](https:
 
 Master patch updates are applied automatically. Worker node patch updates can be applied by reloading or updating the worker nodes. For more information about major, minor, and patch versions and preparation actions between minor versions, see [{{site.data.keyword.redhat_openshift_notm}} versions](/docs/openshift?topic=openshift-openshift_versions).
 {: tip}
+
+
+### Change log for worker node fix pack 4.13.45_1586_openshift, released 29 July 2024
+{: #41345_1586_openshift_W}
+
+The following table shows the changes that are in the worker node fix pack 4.13.45_1586_openshift. Worker node patch updates can be applied by updating, reloading (in classic infrastructure), or replacing (in VPC infrastructure) the worker node.
+{: shortdesc}
+
+| Component | Previous | Current | Description |
+| --- | --- | --- | --- |
+| RHEL 8 Packages | N/A | N/A | Package updates for [RHSA-2024:4620](https://access.redhat.com/errata/RHSA-2024:4620){: external}, [CVE-2024-5564](https://nvd.nist.gov/vuln/detail/CVE-2024-5564){: external}, [RHSA-2024:3043](https://access.redhat.com/errata/RHSA-2024:3043){: external}, [CVE-2024-0690](https://nvd.nist.gov/vuln/detail/CVE-2024-0690){: external}. |
+| Haproxy | N/A | N/A | N/A |
+| {{site.data.keyword.openshiftshort}}. | 4.13.44 | 4.13.45 | For more information, see the [change logs](https://docs.openshift.com/container-platform/4.13/release_notes/ocp-4-13-release-notes.html#ocp-4-13-45){: external}. |
+{: caption="Changes since version 4.13.44_1580_openshift" caption-side="bottom"}
 
 
 ### Change log for worker node fix pack 4.13.44_1580_openshift, released 15 July 2024

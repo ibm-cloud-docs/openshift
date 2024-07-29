@@ -2,7 +2,7 @@
 
 copyright:
   years: 2023, 2024
-lastupdated: "2024-07-18"
+lastupdated: "2024-07-29"
 
 
 keywords: openshift, 4.15, update, upgrade, BOM, bill of materials, versions, patch
@@ -33,6 +33,20 @@ Check the [Security Bulletins on {{site.data.keyword.cloud_notm}} Status](https:
 Master patch updates are applied automatically. Worker node patch updates can be applied by reloading or updating the worker nodes. For more information about major, minor, and patch versions and preparation actions between minor versions, see [{{site.data.keyword.redhat_openshift_notm}} versions](/docs/openshift?topic=openshift-openshift_versions).
 {: tip}
 
+### Change log for worker node fix pack 4.15.23_1553_openshift, released 29 July 2024
+{: #41523_1553_openshift_W}
+
+The following table shows the changes that are in the worker node fix pack 4.15.23_1553_openshift. Worker node patch updates can be applied by updating, reloading (in classic infrastructure), or replacing (in VPC infrastructure) the worker node.
+{: shortdesc}
+
+| Component | Previous | Current | Description |
+| --- | --- | --- | --- |
+| RHEL 8 Packages | N/A | N/A | Package updates for [RHSA-2024:4620](https://access.redhat.com/errata/RHSA-2024:4620){: external}, [CVE-2024-5564](https://nvd.nist.gov/vuln/detail/CVE-2024-5564){: external}, [RHSA-2024:3043](https://access.redhat.com/errata/RHSA-2024:3043){: external}, [CVE-2024-0690](https://nvd.nist.gov/vuln/detail/CVE-2024-0690){: external}. |
+| Haproxy | N/A | N/A | N/A |
+| {{site.data.keyword.openshiftshort}}. | 4.15.21 | 4.15.23 | For more information, see the [change logs](https://docs.openshift.com/container-platform/4.15/release_notes/ocp-4-15-release-notes.html#ocp-4-15-23_release-notes){: external}. |
+{: caption="Changes since version 4.15.21_1546_openshif" caption-side="bottom"}
+
+
 ### Change log for master fix pack 4.15.18_1545_openshift, released 15 July 2024
 {: #41518_1545_openshift_M}
 
@@ -44,7 +58,6 @@ Master patch updates are applied automatically. Worker node patch updates can be
 | Red Hat OpenShift on IBM Cloud | 4.15.17 | 4.15.18 | See the [Red Hat OpenShift on IBM Cloud release notes](https://docs.openshift.com/container-platform/4.15/release_notes/ocp-4-15-release-notes.html#ocp-4-15-18) |
 | Red Hat OpenShift on IBM Cloud Control Plane Operator, Metrics Server, and toolkit | 4.15.0+20240603 | 4.15.0+20240709 | See the [Red Hat OpenShift on IBM Cloud toolkit release notes](https://github.com/openshift/ibm-roks-toolkit/releases/tag/v4.15.0+20240709). |
 {: caption="Changes since version 4.15.17_1541_openshift" caption-side="bottom"}
-
 
 
 ### Change log for worker node fix pack 4.15.21_1546_openshift, released 15 July 2024
