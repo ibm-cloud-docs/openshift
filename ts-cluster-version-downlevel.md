@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2024
-lastupdated: "2024-07-11"
+lastupdated: "2024-07-30"
 
 
 keywords: openshift, {{site.data.keyword.openshiftlong_notm}}, cluster version, 
@@ -27,6 +27,14 @@ You see one or more of the following for an extended period of time.
 
 
 - The OpenShift Web Console displays a banner stating that the cluster is updating and the **Cluster Settings** page shows the current version has a status of `Partial`.
+
+- When you run `ibmcloud oc cluster get --cluster <cluster_name>` command you see a `warning` state and a status indicating cluster operators are down-level.
+
+    ```txt
+    State:                          warning
+    Status:                         Some Cluster Operators are down-level and need to be updated, see 'https://ibm.biz/rhos_clusterversion_ts'
+    ```
+    {: screen}
 
 - When you run `oc get clusterversion` command you see an earlier version.
 
