@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2024
-lastupdated: "2024-07-24"
+lastupdated: "2024-07-31"
 
 
 keywords: openshift, {{site.data.keyword.openshiftlong_notm}}, kubernetes, multi az, multi-az, szr, mzr
@@ -88,7 +88,7 @@ Yes. To add different flavors to your cluster, you must [create another worker p
 See [updating flavors](/docs/openshift?topic=openshift-update#machine_type).
 
 ### Are the worker nodes encrypted?
-{: #encrypted-flavors}
+{: #encrypted-flavor-plan}
 
 The secondary disk of the worker node is encrypted. For more information, see [Overview of cluster encryption](/docs/openshift?topic=openshift-encryption). After you create a worker pool, you might notice that the worker node flavor has `.encrypted` in the name, such as `b3c.4x16.encrypted`.
 
@@ -158,7 +158,7 @@ The following operations are blocked when an operating system is unsupported:
 
 
 ### Why do my worker nodes have the `master` role?
-{: #flavor-master-role}
+{: #flavor-master-role-plan}
 
 When you run `oc get nodes` or `oc describe node <worker_node>`, you might see that the worker nodes have `master,worker` roles. In OpenShift Container Platform clusters, operators use the master role as a `nodeSelector` so that OCP can deploy default components that are controlled by operators, such as the internal registry, in your cluster. No master node processes, such as the API server or Kubernetes scheduler, run on your worker nodes. For more information about master and worker node components, see [{{site.data.keyword.redhat_openshift_notm}} architecture](/docs/openshift?topic=openshift-service-architecture#service-architecture-4).
 

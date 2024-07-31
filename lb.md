@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2024
-lastupdated: "2024-07-24"
+lastupdated: "2024-07-31"
 
 
 keywords: openshift, lb2.0, nlb
@@ -318,7 +318,7 @@ To force your app to deploy to specific worker nodes where load balancer service
 ### Adding edge node affinity rules and tolerations
 {: #lb_edge_nodes}
 
-When you [label worker nodes as edge nodes](/docs/openshift?topic=openshift-edge#edge_nodes_nlb) and also [taint the edge nodes](/docs/openshift?topic=openshift-edge#edge_workloads), load balancer service pods deploy only to those edge nodes, and app pods can't deploy to edge nodes. When source IP is enabled for the NLB service, the load balancer pods on the edge nodes can't forward incoming requests to your app pods on other worker nodes.
+When you [label worker nodes as edge nodes](/docs/openshift?topic=openshift-edge) and also [taint the edge nodes](/docs/openshift?topic=openshift-edge-workload-prevent), load balancer service pods deploy only to those edge nodes, and app pods can't deploy to edge nodes. When source IP is enabled for the NLB service, the load balancer pods on the edge nodes can't forward incoming requests to your app pods on other worker nodes.
 {: shortdesc}
 
 To force your app pods to deploy to edge nodes, add an edge node [affinity rule](https://kubernetes.io/docs/concepts/scheduling-eviction/assign-pod-node/){: external} and [toleration](https://kubernetes.io/docs/concepts/scheduling-eviction/taint-and-toleration/){: external} to the app deployment.

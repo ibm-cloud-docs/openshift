@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2024
-lastupdated: "2024-07-16"
+lastupdated: "2024-07-31"
 
 
 keywords: odf, openshift data foundation add-on, change log
@@ -218,8 +218,8 @@ ibmcloud oc cluster addon versions --addon openshift-data-foundation
 
 - Updates `golang` to `1.21.10`.
 
-### Version 4.12.19, released 19 April 2024
-{: #4.12.19_odf}
+### Version 4.12.18, released 19 April 2024
+{: #4.12.18_odf}
 
 - Updates `golang` to `1.21.9`.
 - Adds a node watcher.

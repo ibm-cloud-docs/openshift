@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2024
-lastupdated: "2024-07-30"
+lastupdated: "2024-07-31"
 
 
 keywords: openshift
@@ -2804,17 +2804,17 @@ subcollection: openshift
 
 * [Multizone clusters](/docs/openshift?topic=openshift-ha_clusters#mz-clusters)
 
-    * [Multizone cluster FAQ](/docs/openshift?topic=openshift-ha_clusters#mz-cluster-faq)
+    * [Multizone cluster FAQ](/docs/openshift?topic=openshift-ha_clusters#mz-cluster-faq-plan)
 
 * [Multiple public clusters connected with a global load balancer](/docs/openshift?topic=openshift-ha_clusters#multiple-clusters-glb)
 
     * [Why do I need 3 clusters in three zones?](/docs/openshift?topic=openshift-ha_clusters#multicluster-three-zones)
 
-    * [What if I want to set up multiple clusters across regions?](/docs/openshift?topic=openshift-ha_clusters#multiple-regions-setup)
+    * [What if I want to set up multiple clusters across regions?](/docs/openshift?topic=openshift-ha_clusters#multiple-regions-setup-plan)
 
-    * [What options do I have to load balance workloads across multiple clusters?](/docs/openshift?topic=openshift-ha_clusters#multiple-cluster-lb-options)
+    * [What options do I have to load balance workloads across multiple clusters?](/docs/openshift?topic=openshift-ha_clusters#multiple-cluster-lb-options-plan)
 
-    * [What if I want to load balance workloads on the private network?](/docs/openshift?topic=openshift-ha_clusters#glb-private)
+    * [What if I want to load balance workloads on the private network?](/docs/openshift?topic=openshift-ha_clusters#glb-private-plan)
 
 [Planning your worker node setup](/docs/openshift?topic=openshift-planning_worker_nodes#planning_worker_nodes)
 
@@ -2828,7 +2828,7 @@ subcollection: openshift
 
     * [How can I change worker node flavors?](/docs/openshift?topic=openshift-planning_worker_nodes#change-flavors)
 
-    * [Are the worker nodes encrypted?](/docs/openshift?topic=openshift-planning_worker_nodes#encrypted-flavors)
+    * [Are the worker nodes encrypted?](/docs/openshift?topic=openshift-planning_worker_nodes#encrypted-flavor-plan)
 
     * [How do I manage my worker nodes?](/docs/openshift?topic=openshift-planning_worker_nodes#flavor-manage)
 
@@ -2838,7 +2838,7 @@ subcollection: openshift
 
     * [What operations are blocked if my worker node is running an unsupported operating system?](/docs/openshift?topic=openshift-planning_worker_nodes#unsupported-os)
 
-    * [Why do my worker nodes have the `master` role?](/docs/openshift?topic=openshift-planning_worker_nodes#flavor-master-role)
+    * [Why do my worker nodes have the `master` role?](/docs/openshift?topic=openshift-planning_worker_nodes#flavor-master-role-plan)
 
 * [Virtual machines](/docs/openshift?topic=openshift-planning_worker_nodes#vm)
 
@@ -3888,7 +3888,7 @@ subcollection: openshift
 
 * [Allow the worker nodes to connect to the public service endpoint IPs for the OAuth service](/docs/openshift?topic=openshift-vpc-security-group#worker-node-public-service-endpoint-previous)
 
-* [Allow worker nodes to connect to the Ingress LoadBalancer](/docs/openshift?topic=openshift-vpc-security-group#vpc-security-group-loadbalancer-outbound)
+* [Allow worker nodes to connect to the Ingress LoadBalancer](/docs/openshift?topic=openshift-vpc-security-group#vpc-security-group-loadbalancer-outbound-vr)
 
 [Creating and managing VPC security groups](/docs/openshift?topic=openshift-vpc-security-group-manage#vpc-security-group-manage)
 
@@ -7782,7 +7782,7 @@ subcollection: openshift
 
     * [Version 4.12.19, released 5 June 2024](/docs/openshift?topic=openshift-odf_addon_changelog#4.12.19_odf)
 
-    * [Version 4.12.19, released 19 April 2024](/docs/openshift?topic=openshift-odf_addon_changelog#4.12.19_odf)
+    * [Version 4.12.18, released 19 April 2024](/docs/openshift?topic=openshift-odf_addon_changelog#4.12.18_odf)
 
     * [Version 4.12.17, released 04 March 2024](/docs/openshift?topic=openshift-odf_addon_changelog#4.12.17_odf)
 
@@ -9865,8 +9865,6 @@ subcollection: openshift
 [Locations](/docs/openshift?topic=openshift-regions-and-zones#regions-and-zones)
 
 * [{{site.data.keyword.openshiftlong_notm}} locations](/docs/openshift?topic=openshift-regions-and-zones#locations)
-
-    * [How locations are organized](/docs/openshift?topic=openshift-regions-and-zones#example_locations_org)
 
     * [Classic multizone regions](/docs/openshift?topic=openshift-regions-and-zones#zones-mz)
 
