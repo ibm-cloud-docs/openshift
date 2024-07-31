@@ -453,8 +453,6 @@ To protect your apps, consider to address the following areas:
 You can use the built-in container registry to automate the container image build process from your source code in an external source repository to your internal registry. However, images are not automatically scanned for vulnerabilities when they are pushed to the internal registry. To set up image scanning, set up a registry namespace and push your images to the managed {{site.data.keyword.registrylong_notm}} instead. 
 
 
-![Deploying containers with trusted content](images/oc_image_security.png "Title text that shows on hover here"){: caption="Figure 1. Deploying containers with trusted content" caption-side="bottom"})
-
 |Security feature|Description|
 |--|--|
 |Secured Docker private image repository in {{site.data.keyword.registrylong_notm}}|Set up your own Docker [image repository](/docs/Registry?topic=Registry-getting-started#getting-started) in a multi-tenant, highly available, and scalable private image registry that is hosted and managed by IBM. By using the registry, you can build, securely store, and share Docker images across cluster users.  /n Learn more about [securing your personal information](/docs/containers?topic=containers-security#pi) when you work with container images.|

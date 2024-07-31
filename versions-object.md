@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2024
-lastupdated: "2024-07-17"
+lastupdated: "2024-07-31"
 
 
 keywords: openshift, {{site.data.keyword.openshiftlong_notm}}, object storage, plug-in, change log
@@ -28,11 +28,16 @@ View information for updates to the {{site.data.keyword.cos_full_notm}} plug-in 
 
 | {{site.data.keyword.cos_full_notm}} plug-in version | Supported? |
 | --- | --- |
+| 2.2.29 | Yes |
 | 2.2.28 | Yes |
 | 2.2.27| Yes |
-| 2.2.26 | Yes |
+| 2.2.26 | Deprecated |
 {: caption="{{site.data.keyword.cos_full_notm}} plug-in versions" caption-side="bottom"}
 
+## Change log for version 2.2.29, released 31 July 2024
+{: #02229_object_plugin}
+
+- Adds support for Ubuntu 24 worker nodes.
 
 ## Change log for version 2.2.28, released 17 July 2024
 {: #02228_object_plugin}

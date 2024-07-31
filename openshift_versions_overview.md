@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2024
-lastupdated: "2024-06-12"
+lastupdated: "2024-07-31"
 
 
 keywords: openshift, version, update, upgrade
@@ -50,7 +50,7 @@ Red Hat Enterprise Linux CoreOS (RHCOS) worker nodes are available only for VPC 
 
 
 
-### VPC clusters with HyperShift enabled
+### VPC clusters with CoreOS enabled
 {: #os-openshift-with-coreos}
 
 

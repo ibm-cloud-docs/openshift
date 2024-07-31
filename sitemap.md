@@ -275,6 +275,10 @@ subcollection: openshift
 
 * [July 2024](/docs/openshift?topic=openshift-openshift-relnotes#openshift-july24)
 
+    * [31 July 2024](/docs/openshift?topic=openshift-openshift-relnotes#openshift-july3124)
+
+        * {{site.data.keyword.cos_full_notm}} plug-in updates.
+
     * [29 July 2024](/docs/openshift?topic=openshift-openshift-relnotes#openshift-july2924)
 
         * {{site.data.keyword.openshiftlong_notm}} worker node fix packs.
@@ -6361,7 +6365,7 @@ subcollection: openshift
 
 * [Available {{site.data.keyword.redhat_openshift_notm}} versions](/docs/openshift?topic=openshift-openshift_versions#openshift_versions_available)
 
-    * [VPC clusters with HyperShift enabled](/docs/openshift?topic=openshift-openshift_versions#os-openshift-with-coreos)
+    * [VPC clusters with CoreOS enabled](/docs/openshift?topic=openshift-openshift_versions#os-openshift-with-coreos)
 
     * [VPC and Classic clusters](/docs/openshift?topic=openshift-openshift_versions#os-openshift)
 
@@ -7591,6 +7595,8 @@ subcollection: openshift
     * [Change log for version 1.0, released 16 May 2023](/docs/openshift?topic=openshift-versions-vpc-file-addon#1.0_is_file_relnote)
 
 [{{site.data.keyword.cos_full_notm}} plug-in](/docs/openshift?topic=openshift-cos_plugin_changelog#cos_plugin_changelog)
+
+* [Change log for version 2.2.29, released 31 July 2024](/docs/openshift?topic=openshift-cos_plugin_changelog#02229_object_plugin)
 
 * [Change log for version 2.2.28, released 17 July 2024](/docs/openshift?topic=openshift-cos_plugin_changelog#02228_object_plugin)
 
