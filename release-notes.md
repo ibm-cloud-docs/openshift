@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2024
-lastupdated: "2024-07-29"
+lastupdated: "2024-07-31"
 
 
 keywords: openshift, {{site.data.keyword.openshiftlong_notm}}, kubernetes, release notes
@@ -4634,7 +4634,7 @@ Cluster autoscaler add-on
 {: release-note}
 
 New fields and events for {{site.data.keyword.at_short}}
-:   To align with event auditing standards across {{site.data.keyword.cloud_notm}}, the previously deprecated cluster fields and events are now replaced by new fields and events. For an updated list of events, see [{{site.data.keyword.at_full_notm}} events](/docs/openshift?topic=openshift-at_events).
+:   To align with event auditing standards across {{site.data.keyword.cloud_notm}}, the previously deprecated cluster fields and events are now replaced by new fields and events. For an updated list of events, see [{{site.data.keyword.at_full_notm}} events](/docs/openshift?topic=openshift-at_events_ref).
 
 ### 15 April 2021
 {: #openshift-april1521}

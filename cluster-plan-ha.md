@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2024
-lastupdated: "2024-04-17"
+lastupdated: "2024-07-31"
 
 
 keywords: openshift, {{site.data.keyword.openshiftlong_notm}}, ha, high availability, failover, kubernetes, multi az, multi-az, szr, mzr
@@ -116,25 +116,25 @@ You can create a multizone cluster in one of the supported [classic](/docs/opens
 
 
 ### Multizone cluster FAQ
-{: #mz-cluster-faq}
+{: #mz-cluster-faq-plan}
 
 #### How is my {{site.data.keyword.openshiftlong_notm}} master set up?
-{: #mz-master-setup}
+{: #mz-master-setup-plan}
 
 When you create a cluster in a multizone location, a highly available master is automatically deployed and three replicas are spread across the zones of the metro. For example, if the cluster is in `dal10`, `dal12`, or `dal13` zones, the replicas of the master are spread across each zone in the Dallas multizone metro.
 
 #### Do I have to do anything so that the master can communicate with the workers across zones?
-{: #mz-master-communication}
+{: #mz-master-communication-plan}
 
 If you created a VPC multizone cluster, the subnets in each zone are automatically set up with Access Control Lists (ACLs) that allow communication between the master and the worker nodes across zones. In classic clusters, if you have multiple VLANs for your cluster, multiple subnets on the same VLAN, or a multizone classic cluster, you must enable a [Virtual Router Function (VRF)](/docs/account?topic=account-vrf-service-endpoint&interface=ui) for your IBM Cloud infrastructure account so your worker nodes can communicate with each other on the private network. To enable VRF, see [Enabling VRF](/docs/account?topic=account-vrf-service-endpoint&interface=ui). To check whether a VRF is already enabled, use the `ibmcloud account show` command. If you can't or don't want to enable VRF, enable [VLAN spanning](/docs/vlans?topic=vlans-vlan-spanning#vlan-spanning). To perform this action, you need the **Network > Manage Network VLAN Spanning** infrastructure permission, or you can request the account owner to enable it. To check whether VLAN spanning is already enabled, use the `ibmcloud oc vlan spanning get --region <region>` [command](/docs/containers?topic=containers-kubernetes-service-cli#cs_vlan_spanning_get).
 
 #### Can I convert my single zone cluster to a multizone cluster?
-{: #convert-sz-to-mz}
+{: #convert-sz-to-mz-plan}
 
 To convert a single zone cluster to a multizone cluster, your cluster must be set up in one of the supported [classic](/docs/openshift?topic=openshift-regions-and-zones#zones-mz) or [VPC](/docs/openshift?topic=openshift-regions-and-zones#zones-vpc) multizone locations. VPC clusters can be set up only in multizone metro locations, and as such can always be converted from a single zone cluster to a multizone cluster. Classic clusters that are set up in a single zone data center can't be converted to a multizone cluster. To convert a single zone cluster to a multizone cluster, see [Adding worker nodes to Classic clusters](/docs/openshift?topic=openshift-add-workers-classic) or [Adding worker nodes to VPC clusters](/docs/openshift?topic=openshift-add-workers-vpc).
 
 #### Do my apps automatically spread across zones?
-{: #multizone-apps-faq}
+{: #multizone-apps-faq-plan}
 
 It depends on how you set up the app. See [Planning highly available deployments](/docs/openshift?topic=openshift-plan_deploy#highly_available_apps) and [Planning highly available persistent storage](/docs/openshift?topic=openshift-storage-plan).
 
@@ -158,19 +158,19 @@ For the global load balancer to detect if one of your clusters is unavailable, c
 Similar to using [3 zones in multizone clusters](#mz-clusters), you can provide more availability to your app by setting up three clusters across zones. You can also reduce costs by purchasing smaller machines to handle your workload.
 
 ### What if I want to set up multiple clusters across regions?
-{: #multiple-regions-setup}
+{: #multiple-regions-setup-plan}
 
 You can set up multiple clusters in different regions of one geolocation (such as US South and US East) or across geolocations (such as US South and EU Central). Both setups offer the same level of availability for your app, but also add complexity when it comes to data sharing and data replication. For most cases, staying within the same geolocation is sufficient. But if you have users across the world, it might be better to set up a cluster where your users are so that your users don't experience long waiting times when they send a request to your app.
 
 ### What options do I have to load balance workloads across multiple clusters?
-{: #multiple-cluster-lb-options}
+{: #multiple-cluster-lb-options-plan}
 
 To load balance workloads across multiple clusters, you must make your apps available on the public network by using [Ingress](/docs/openshift?topic=openshift-ingress-about-roks4), [routers](/docs/openshift?topic=openshift-openshift_routes), or [Network Load Balancers (NLBs)](/docs/openshift?topic=openshift-loadbalancer-about). The router services and NLBs are assigned a public IP address that you can use to access your apps.
 
 To load balance workloads across your apps, add the public IP addresses of your router services and NLBs to a CIS global load balancer or your own global load balancer.
 
 ### What if I want to load balance workloads on the private network?
-{: #glb-private}
+{: #glb-private-plan}
 
 {{site.data.keyword.cloud_notm}} does not offer a global load balancer service on the private network. However, you can connect your cluster to a private load balancer that you host in your on-prem network by using one of the [supported VPN options](/docs/openshift?topic=openshift-vpn). Make sure to expose your apps on the private network by using [Ingress](/docs/openshift?topic=openshift-ingress-about-roks4), [routers](/docs/openshift?topic=openshift-openshift_routes), or [Network Load Balancers (NLBs)](/docs/openshift?topic=openshift-loadbalancer-about), and use the private IP address in your VPN settings to connect your app to your on-prem network.
 

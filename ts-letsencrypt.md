@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2024
-lastupdated: "2024-06-06"
+lastupdated: "2024-07-31"
 
 keywords: kubernetes, openshift, help, network, connectivity, {{site.data.keyword.openshiftlong_notm}}
 
@@ -52,7 +52,7 @@ No actions need to be taken to {{site.data.keyword.openshiftlong_notm}} or {{sit
 
 For more information, see the following links.
 - [Ubuntu bug report](https://bugs.launchpad.net/ubuntu/+source/openssl/+bug/1928989){: external}
-- [Workaround steps from OpenSSL](https://www.openssl.org/blog/blog/2021/09/13/LetsEncryptRootCertExpire/){: external}
+- [Workaround steps from OpenSSL](https://openssl-library.org/post/2021-09-13-letsencryptrootcertexpire/){: external}
 - [Extending Let's Encrypt compatibility](https://letsencrypt.org/2020/12/21/extending-android-compatibility.html){: external}
 - [Let's Encrypt production chain community](https://community.letsencrypt.org/t/production-chain-changes/150739){: external})
 - [Let's Encrypt DST Root CA X3 docs](https://letsencrypt.org/docs/dst-root-ca-x3-expiration-september-2021/){: external}

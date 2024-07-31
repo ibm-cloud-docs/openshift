@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2024
-lastupdated: "2024-06-10"
+lastupdated: "2024-07-31"
 
 
 keywords: openshift, {{site.data.keyword.openshiftlong_notm}}, kubernetes, firewall, acl, acls, access control list, rules, security group
@@ -231,7 +231,7 @@ Required for VPC clusters with a public service endpoint.
 
 
 ## Allow worker nodes to connect to the Ingress LoadBalancer
-{: #vpc-security-group-loadbalancer-outbound}
+{: #vpc-security-group-loadbalancer-outbound-vr}
 
 Follow the steps to allow worker nodes to connect to the Ingress LoadBalancer.
 {: shortdesc}

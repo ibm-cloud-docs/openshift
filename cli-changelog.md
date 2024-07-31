@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2024
-lastupdated: "2024-07-30"
+lastupdated: "2024-07-31"
 
 
 keywords: openshift, {{site.data.keyword.openshiftlong_notm}}, oc, ks
@@ -729,5 +729,6 @@ Version 1.0.15 of the CLI was released on 24 March 2020.
 
 Version 1.0.0 of the CLI was released on 26 March 2020.
 
-- Introduces permanent behavior and syntax changes that are not compatible with earlier versions. For a summary of the changes in version 1.0, see [Using version 1.0 of the plug-in](#changelog_beta).
+- Introduces permanent behavior and syntax changes that are not compatible with earlier versions.
+
 
