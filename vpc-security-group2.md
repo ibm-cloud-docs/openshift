@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2023, 2024
-lastupdated: "2024-07-26"
+lastupdated: "2024-07-31"
 
 
 keywords: openshift, {{site.data.keyword.openshiftlong_notm}}, firewall, rules, security group, 4.15, networking, secure by default, outbound traffic protection
@@ -119,7 +119,7 @@ To allow access to a cluster's master only from its worker nodes a security grou
 | Allows inbound traffic from the cluster worker security group to the server nodeport. | Inbound | TCP | Server URL node port | `kube-<clusterID>` |
 | Allows inbound traffic from the cluster worker security group to the openVPN or Konnectivity port. | Inbound | TCP | Konnectivity port | `kube-<clusterID>` |
 | Allows inbound traffic from the cluster worker security group to the Oauth port. | Inbound | TCP | Oauth port | `kube-<clusterID>` |
-| HyperShift-enabled clusters only. Allows inbound traffic from the cluster worker security group to the ignition server port | Inbound | TCP | Ignition server port | `kube-<clusterID>` |
+| CoreOS-enabled clusters only. Allows inbound traffic from the cluster worker security group to the ignition server port | Inbound | TCP | Ignition server port | `kube-<clusterID>` |
 {: caption="Table 4. Inbound rules in the Master VPE gateway security group" caption-side="bottom"}
 {: summary="The table shows the inbound rules applied to the cluster worker security group. The first column includes purpose of the rule. The second column includes the direction of the rule. The third column includes the protocol. The fourth column includes the ports or values. The fifth column includes remote destination of the rule."}
 

@@ -275,6 +275,12 @@ subcollection: openshift
 
 * [July 2024](/docs/openshift?topic=openshift-openshift-relnotes#openshift-july24)
 
+    * [31 July 2024](/docs/openshift?topic=openshift-openshift-relnotes#openshift-july3124)
+
+        * {{site.data.keyword.openshiftlong_notm}} master fix packs.
+
+        * {{site.data.keyword.cos_full_notm}} plug-in updates.
+
     * [29 July 2024](/docs/openshift?topic=openshift-openshift-relnotes#openshift-july2924)
 
         * {{site.data.keyword.openshiftlong_notm}} worker node fix packs.
@@ -6361,7 +6367,7 @@ subcollection: openshift
 
 * [Available {{site.data.keyword.redhat_openshift_notm}} versions](/docs/openshift?topic=openshift-openshift_versions#openshift_versions_available)
 
-    * [VPC clusters with HyperShift enabled](/docs/openshift?topic=openshift-openshift_versions#os-openshift-with-coreos)
+    * [VPC clusters with CoreOS enabled](/docs/openshift?topic=openshift-openshift_versions#os-openshift-with-coreos)
 
     * [VPC and Classic clusters](/docs/openshift?topic=openshift-openshift_versions#os-openshift)
 
@@ -6427,6 +6433,8 @@ subcollection: openshift
 [Version 4.15 change log](/docs/openshift?topic=openshift-openshift_changelog_415#openshift_changelog_415)
 
 * [Overview](/docs/openshift?topic=openshift-openshift_changelog_415#openshift_changelog_overview_415)
+
+    * [Change log for master fix pack 4.15.22_1554_openshift, released 31 July 2024](/docs/openshift?topic=openshift-openshift_changelog_415#41522_1554_openshift_M)
 
     * [Change log for worker node fix pack 4.15.23_1553_openshift, released 29 July 2024](/docs/openshift?topic=openshift-openshift_changelog_415#41523_1553_openshift_W)
 
@@ -6568,6 +6576,8 @@ subcollection: openshift
 [Version 4.14 change log](/docs/openshift?topic=openshift-openshift_changelog_414#openshift_changelog_414)
 
 * [Overview](/docs/openshift?topic=openshift-openshift_changelog_414#openshift_changelog_overview_414)
+
+    * [Change log for master fix pack 4.14.33_1575_openshift, released 31 July 2024](/docs/openshift?topic=openshift-openshift_changelog_414#41433_1575_openshift_M)
 
     * [Change log for worker node fix pack 4.14.33_1576_openshift, released 29 July 2024](/docs/openshift?topic=openshift-openshift_changelog_414#41433_1576_openshift_W)
 
@@ -6713,6 +6723,8 @@ subcollection: openshift
 [Version 4.13 change log](/docs/openshift?topic=openshift-openshift_changelog_413#openshift_changelog_413)
 
 * [Overview](/docs/openshift?topic=openshift-openshift_changelog_413#openshift_changelog_overview_413)
+
+    * [Change log for master fix pack 4.13.45_1585_openshift, released 31 July 2024](/docs/openshift?topic=openshift-openshift_changelog_413#41345_1585_openshift_M)
 
     * [Change log for worker node fix pack 4.13.45_1586_openshift, released 29 July 2024](/docs/openshift?topic=openshift-openshift_changelog_413#41345_1586_openshift_W)
 
@@ -6898,6 +6910,8 @@ subcollection: openshift
 [Version 4.12 change log](/docs/openshift?topic=openshift-openshift_changelog_412#openshift_changelog_412)
 
 * [Overview](/docs/openshift?topic=openshift-openshift_changelog_412#openshift_changelog_overview_412)
+
+    * [Change log for master fix pack 4.12.60_1602_openshift, released 31 July 2024](/docs/openshift?topic=openshift-openshift_changelog_412#41260_1602_openshift_M)
 
     * [Change log for worker node fix pack 4.12.61_1603_openshift, released 29 July 2024](/docs/openshift?topic=openshift-openshift_changelog_412#41261_1603_openshift_W)
 
@@ -7591,6 +7605,8 @@ subcollection: openshift
     * [Change log for version 1.0, released 16 May 2023](/docs/openshift?topic=openshift-versions-vpc-file-addon#1.0_is_file_relnote)
 
 [{{site.data.keyword.cos_full_notm}} plug-in](/docs/openshift?topic=openshift-cos_plugin_changelog#cos_plugin_changelog)
+
+* [Change log for version 2.2.29, released 31 July 2024](/docs/openshift?topic=openshift-cos_plugin_changelog#02229_object_plugin)
 
 * [Change log for version 2.2.28, released 17 July 2024](/docs/openshift?topic=openshift-cos_plugin_changelog#02228_object_plugin)
 

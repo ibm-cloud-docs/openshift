@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2024
-lastupdated: "2024-06-24"
+lastupdated: "2024-07-31"
 
 
 keywords: kubernetes, openshift, red hat, red hat openshift
@@ -163,7 +163,7 @@ Create an {{site.data.keyword.cloud_notm}} Virtual Private Cloud (VPC) environme
 
     ```sh
     Client Version: v4.15.0
-    Kubernetes Version: v1.30.2.2
+    Kubernetes Version: v1.30.3.2
     ```
     {: screen}
 
@@ -178,10 +178,6 @@ Create an {{site.data.keyword.cloud_notm}} Virtual Private Cloud (VPC) environme
 
 Quickly deploy a new sample app that is available to requests from inside the cluster only.
 {: shortdesc}
-
-The components that you deploy by completing this lesson are shown in the following diagram.
-
-![Deployment setup](images/cs-app-components1.svg){: caption="Figure 1. Deployment setup" caption-side="bottom"}
 
 1. Create a {{site.data.keyword.redhat_openshift_notm}} project for your Hello World app.
     ```sh
@@ -235,13 +231,6 @@ Set up a VPC load balancer to expose your app to external requests on the public
 {: shortdesc}
 
 When you create a Kubernetes `LoadBalancer` service in your cluster, a VPC load balancer is automatically created in your VPC outside of your cluster. The VPC load balancer is multizonal and routes requests for your app through the private NodePorts that are automatically opened on your worker nodes. The following diagram illustrates how a user accesses an app's service through the VPC load balancer, even though your worker node is connected to only a private subnet.
-
-![VPC load balancing for an {{site.data.keyword.redhat_openshift_notm}} cluster.](images/vpc_roks_tutorial_lesson4_lb.png "Title text that shows on hover here"){: caption="Figure 1. VPC load balancing for an {{site.data.keyword.redhat_openshift_notm}} cluster" caption-side="bottom"}
-
-Interested in using a {{site.data.keyword.redhat_openshift_notm}} route to expose your app instead? Check out [How does a request via route get to my app in a VPC cluster?](/docs/openshift?topic=openshift-openshift_routes#route_vpc) and [Setting up public routes](/docs/openshift?topic=openshift-openshift_routes#routes-setup).
-{: tip}
-
-
 
 1. Create a Kubernetes `LoadBalancer` service in your cluster to publicly expose the hello world app.
     ```sh
