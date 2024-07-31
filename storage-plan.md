@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2024
-lastupdated: "2024-03-15"
+lastupdated: "2024-07-31"
 
 
 keywords: planning, storage, cluster, container storage, cloud storage, kubernetes service, openshift
@@ -80,8 +80,6 @@ Understand other storage characteristics that impact your choice.
 
 You can use non-persistent storage options if your data is not required to be persistently stored or if you want to unit-test your app components. The following image shows available non-persistent data storage options in {{site.data.keyword.openshiftlong_notm}}.
 
-![Non-persistent data storage options](images/cs_storage_nonpersistent.svg){: caption="Figure 1. Non-persistent data storage options" caption-side="bottom"}
-
 
 | Characteristics | Inside the container | On the worker node's primary or secondary disk |
 | --- | --- | --- |
@@ -108,9 +106,6 @@ You can use non-persistent storage options if your data is not required to be pe
 If you have a single zone cluster, you can choose between the following options in {{site.data.keyword.openshiftlong_notm}} that provide fast access to your data. For higher availability, use a storage option that is designed for geographically distributed data and, if possible for your requirements, create a multizone cluster.
 
 The following image shows the options that you have in {{site.data.keyword.openshiftlong_notm}} to permanently store your data in a single cluster.
-
-![Persistent storage options for single zone cluster](images/cs_storage_single_zone.svg){: caption="Figure 2. Persistent storage options for single zone cluster" caption-side="bottom"}
-
 
 | Characteristics | Description |
 | --- | --- |
@@ -220,11 +215,6 @@ The following image shows the options that you have in {{site.data.keyword.opens
 {: #storage-plan-multizone}
 
 The following sections show the options that you have in {{site.data.keyword.openshiftlong_notm}} to permanently store your data in a multizone cluster and make your data highly available. You can use these options in a single zone cluster, but you might not get the high availability benefits that your app requires.
-
-
-![High availability options for persistent storage in a multizone cluster](images/cs_storage_options_multizone.png){: caption="Figure 1. High availability options for persistent storage in a multizone cluster" caption-side="bottom"}
-
-
 
 | Characteristic | Description |
 | --- | --- |

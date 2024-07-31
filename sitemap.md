@@ -9866,8 +9866,6 @@ subcollection: openshift
 
 * [{{site.data.keyword.openshiftlong_notm}} locations](/docs/openshift?topic=openshift-regions-and-zones#locations)
 
-    * [How locations are organized](/docs/openshift?topic=openshift-regions-and-zones#example_locations_org)
-
     * [Classic multizone regions](/docs/openshift?topic=openshift-regions-and-zones#zones-mz)
 
     * [Classic single zone regions](/docs/openshift?topic=openshift-regions-and-zones#zones-sz)

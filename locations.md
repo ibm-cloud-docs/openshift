@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2024
-lastupdated: "2024-07-23"
+lastupdated: "2024-07-31"
 
 
 keywords: openshift, mzr, szr, multizone, multi az
@@ -46,22 +46,6 @@ ibmcloud oc locations
 ```
 {: pre}
 
-### How locations are organized
-{: #example_locations_org}
-
-The following image is used as an example to explain how {{site.data.keyword.openshiftlong_notm}} locations are organized. For more information, see [Locations for resource deployment](/docs/overview?topic=overview-locations).
-{: shortdesc}
-
-![Organization of {{site.data.keyword.openshiftlong_notm}} locations](images/cs_regions_hierarchy.png){: caption="Figure 1. Organization of {{site.data.keyword.openshiftlong_notm}} locations" caption-side="bottom"}
-
-
-|Type|Example|Description|
-|--- |--- |--- |
-|Geography |North America (`na`)|An organizational grouping that is based on geographic continents.|
-|Country|Canada (`ca`)|The location's country within the geography.|
-|Metro| For example, Dallas (`dal`). |The name of a city where 1 or more data centers are located. A metro might have a multizone region, such as Dallas, or might have a single zone region, such as Milan. If you create a cluster in a multizone region, the Kubernetes master and worker nodes can be spread across zones for high availability.|
-|Data center (zone)|Dallas 12 (`dal12`)|A physical location of the compute, network, and storage infrastructure and related cooling and power that host cloud services and applications. In a region, clusters can be spread across data centers, or zones, in an multizone architecture for high availability. Zones are isolated from each other, which ensures no shared single point of failure.|
-{: caption="Organization of {{site.data.keyword.openshiftlong_notm}} locations."}
 
 ### Classic multizone regions
 {: #zones-mz}
