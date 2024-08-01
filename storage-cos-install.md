@@ -198,18 +198,24 @@ If you don't set the `--set quotaLimit=true` option during installation, you can
 {: note}
 
 
-Example `helm ibmc install` commands for OS X and Linux
-
+Example `helm ibmc install` commands for OS X and Linux for RHEL and Ubuntu worker nodes.
 
 ```sh
-helm ibmc install ibm-object-storage-plugin ./ibm-object-storage-plugin \
---set license=true \
---set kubeDriver=etc/kubernetes \
---set dcname="${DC_NAME}" --set provider="${CLUSTER_PROVIDER}" --set workerOS="${WORKER_OS}" \
---region="${REGION}" --set platform="${PLATFORM}" \
-[--set quotaLimit=true/false] \
-[--set bucketAccessPolicy=false] \
-[--set allowCrossNsSecret=true/false]
+helm ibmc install ibm-object-storage-plugin ibm-helm/ibm-object-storage-plugin --set license=true [--set quotaLimit=true/false] [--set bucketAccessPolicy=false] [--set allowCrossNsSecret=true/false]
+```
+{: pre}
+
+
+Example `helm ibmc install` commands for OS X and Linux for Red Hat OpenShift CoreOS worker nodes.
+```sh
+helm install ibm-object-storage-plugin ./ibm-object-storage-plugin --set license=true --set kubeDriver=/etc/kubernetes --set dcname="${DC_NAME}" --set provider="${CLUSTER_PROVIDER}" --set workerOS="${WORKER_OS}" --region="${REGION}" --set platform="${PLATFORM}" [--set quotaLimit=true/false] [--set bucketAccessPolicy=false] [--set allowCrossNsSecret=true/false]
+```
+{: pre}
+
+Example `helm install` command for Windows.
+
+```sh
+helm install ibm-object-storage-plugin ./ibm-object-storage-plugin --set dcname="${DC_NAME}" --set provider="${CLUSTER_PROVIDER}" --set workerOS="${WORKER_OS}" --region="${REGION} --set platform="${PLATFORM}" --set license=true [--set bucketAccessPolicy=false]
 ```
 {: pre}
 
@@ -222,13 +228,6 @@ helm ibmc install ibm-object-storage-plugin ./ibm-object-storage-plugin \
 `kubeDriver`
 :   RHEL worker nodes: set to `/usr/libexec/kubernetes`.
 :   CoreOS worker nodes: set to `/etc/kubernetes`.
-
-Example `helm install` command for Windows.
-
-```sh
-helm install ibm-object-storage-plugin ./ibm-object-storage-plugin --set dcname="${DC_NAME}" --set provider="${CLUSTER_PROVIDER}" --set workerOS="${WORKER_OS}" --region="${REGION} --set platform="${PLATFORM}" --set license=true [--set bucketAccessPolicy=false]
-```
-{: pre}
 
 
 `DC_NAME`
