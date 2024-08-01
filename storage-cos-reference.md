@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2024
-lastupdated: "2024-05-29"
+lastupdated: "2024-08-01"
 
 
 keywords: kubernetes, openshift
@@ -22,6 +22,9 @@ subcollection: openshift
 Review the storage class for {{site.data.keyword.cos_full_notm}}.
 {: shortdesc}
 
+The resiliency endpoint is automatically set based on the location that your cluster is in. For more information, see [Endpoints and storage locations](/docs/cloud-object-storage?topic=cloud-object-storage-endpoints). For pricing information, see the [pricing documentation](https://cloud.ibm.com/objectstorage/create){: external}.
+{: note}
+
 To view more information about these classes, you can run the `get sc` command in your cluster.
 
 ```sh
@@ -29,10 +32,12 @@ oc get sc STORAGE-CLASS -o yaml
 ```
 {: pre}
 
-The resiliency endpoint is automatically set based on the location that your cluster is in. For more information, see [Endpoints and storage locations](/docs/cloud-object-storage?topic=cloud-object-storage-endpoints). For pricing information, see the [pricing documentation](https://cloud.ibm.com/objectstorage/create){: external}.
-{: note}
 
 
+
+
+## {{site.data.keyword.cos_full_notm}} Helm chart storage classes
+{: #cos-sc-ref-helm}
 
 | Feature | Description |
 |-----|-----|
@@ -97,8 +102,6 @@ The resiliency endpoint is automatically set based on the location that your clu
 {: tab-group="sc_ref"}
 {: class="simple-tab-table"}
 {: summary="The first column contains a feature of the storage class. The second column contains a brief description of the feature."}
-
-
 
 
 
