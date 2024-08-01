@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2024
-lastupdated: "2024-07-31"
+lastupdated: "2024-08-01"
 
 
 keywords: openshift
@@ -5062,6 +5062,8 @@ subcollection: openshift
 
 [Installing the {{site.data.keyword.cos_full_notm}} plug-in](/docs/openshift?topic=openshift-storage_cos_install#storage_cos_install)
 
+* [Installing the plug-in via Helm](/docs/openshift?topic=openshift-storage_cos_install#storage_cos_install_helm)
+
 * [Updating the {{site.data.keyword.cos_full_notm}} plug-in](/docs/openshift?topic=openshift-storage_cos_install#update_cos_plugin)
 
 * [Removing the {{site.data.keyword.cos_full_notm}} plug-in](/docs/openshift?topic=openshift-storage_cos_install#remove_cos_plugin)
@@ -5113,6 +5115,8 @@ subcollection: openshift
 * [Next steps](/docs/openshift?topic=openshift-storage-rclone-migration#rclone-next-steps)
 
 [Storage class reference](/docs/openshift?topic=openshift-storage_cos_reference#storage_cos_reference)
+
+* [{{site.data.keyword.cos_full_notm}} Helm chart storage classes](/docs/openshift?topic=openshift-storage_cos_reference#cos-sc-ref-helm)
 
 
 ## Setting up OpenShift Data Foundation

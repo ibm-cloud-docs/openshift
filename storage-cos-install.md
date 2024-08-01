@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2024
-lastupdated: "2024-07-25"
+lastupdated: "2024-08-01"
 
 
 keywords: kubernetes, openshift
@@ -21,11 +21,16 @@ subcollection: openshift
 
 [Virtual Private Cloud]{: tag-vpc} [Classic infrastructure]{: tag-classic-inf}
 
-Install the {{site.data.keyword.cos_full_notm}} plug-in with a Helm chart to set up pre-defined storage classes for {{site.data.keyword.cos_full_notm}}. You can use these storage classes to create a PVC to provision {{site.data.keyword.cos_full_notm}} for your apps.
+Install the {{site.data.keyword.cos_full_notm}} plug-in to set up pre-defined storage classes for {{site.data.keyword.cos_full_notm}}. You can use these storage classes to create a PVC to provision {{site.data.keyword.cos_full_notm}} for your apps.
 {: shortdesc}
 
 If you are migrating from RHEL 7 to RHEL 8, you must uninstall and then reinstall the plug-in version `2.2.6` or later. If you are upgrading from a chart version before `2.2.5`, you must uninstall and reinstall the plug-in and then re-create your PVCs and pods or the upgrade will fail.
 {: important}
+
+
+
+## Installing the plug-in via Helm
+{: #storage_cos_install_helm}
 
 Prerequisites
 :   The {{site.data.keyword.cos_full_notm}} plug-in requires at least 0.2 vCPU and 128 MB of memory.
