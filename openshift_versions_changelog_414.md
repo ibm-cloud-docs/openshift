@@ -2,7 +2,7 @@
 
 copyright:
   years: 2023, 2024
-lastupdated: "2024-07-31"
+lastupdated: "2024-08-01"
 
 
 keywords: openshift, 4.14, update, upgrade, BOM, bill of materials, versions, patch
@@ -48,7 +48,7 @@ The following table shows the changes that are in the master fix pack 4.14.33_15
 | {{site.data.keyword.cloud_notm}} Block Storage driver and plug-in | v2.5.9 | v2.5.12 | New version contains updates and security fixes. |
 | {{site.data.keyword.filestorage_full_notm}} for Classic plug-in and monitor | 443 | 445 | New version contains updates and security fixes. |
 | {{site.data.keyword.cloud_notm}} RBAC Operator | 14d0ab5 | 312030f | New version contains updates and security fixes. |
-| etcd | v3.5.13 | v3.5.14 | See the [etcd release notes](https://github.com/coreos/etcd/releases/v3.5.14){: external}. |
+| etcd | v3.5.13 | v3.5.14 | See the [etcd release notes](https://github.com/etcd-io/etcd/releases/v3.5.14){: external}. |
 | {{site.data.keyword.cloud_notm}} Controller Manager | v1.27.14-5 | v1.27.16-1 | New version contains updates and security fixes. |
 | Key Management Service provider | v2.8.11 | v2.8.12 | New version contains updates and security fixes. |
 | Load balancer and load balancer monitor for {{site.data.keyword.cloud_notm}} Provider | 2933 | 2967 | New version contains updates and security fixes. |

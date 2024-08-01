@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2024
-lastupdated: "2024-06-12"
+lastupdated: "2024-08-01"
 
 
 keywords: kubernetes, registry, pull secret, secrets, openshift
@@ -150,7 +150,7 @@ To run an app by using an encrypted image, you must share the key for decrypting
 Before you begin
 
 1. Download and install the CLI clients for the following open source tools:
-    - [OpenSSL](https://www.openssl.org/source/){: external}, to generate an RSA key pair.
+    - [OpenSSL](https://openssl-library.org/source/){: external}, to generate an RSA key pair.
     - [Docker Engine CLI](https://www.docker.com/products/container-runtime/#/download){: external}, to locally pull images from an image registry.
     - [Skopeo](https://github.com/containers/skopeo/blob/main/install.md){: external}, to encrypt OCI container images.
 
