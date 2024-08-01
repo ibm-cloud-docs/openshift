@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2024
-lastupdated: "2024-07-31"
+lastupdated: "2024-08-01"
 
 
 keywords: openshift, {{site.data.keyword.openshiftlong_notm}}, kubernetes, audit
@@ -252,7 +252,7 @@ The following table lists the actions related to access control lists (ACLs) and
 ## {{site.data.keyword.satelliteshort}} events
 {: #satellite-events}
 
-See the [{{site.data.keyword.satellitelong_notm}} documentation](/docs/satellite?topic=satellite-at_events_ref).
+See the [{{site.data.keyword.satellitelong_notm}} documentation](/docs/satellite?topic=satellite-at_events).
 {: shortdesc}
 
 ## Storage events

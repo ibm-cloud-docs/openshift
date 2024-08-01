@@ -2,7 +2,7 @@
 
 copyright:
   years: 2023, 2024
-lastupdated: "2024-07-31"
+lastupdated: "2024-08-01"
 
 
 keywords: openshift, 4.12, update, upgrade, BOM, bill of materials, versions, patch
@@ -48,7 +48,7 @@ The following table shows the changes that are in the master fix pack 4.12.60_16
 | --- | --- | --- | --- |
 | Calico | v3.27.2 | v3.27.4 | See the [Calico release notes](https://docs.tigera.io/calico/3.27/release-notes/#v3.27.4){: external}. |
 | Cluster health image | v1.5.6 | v1.5.7 | New version contains updates and security fixes. |
-| etcd | v3.5.13 | v3.5.14 | See the [etcd release notes](https://github.com/coreos/etcd/releases/v3.5.14){: external}. |
+| etcd | v3.5.13 | v3.5.14 | See the [etcd release notes](https://github.com/etcd-io/etcd/releases/v3.5.14){: external}. |
 | {{site.data.keyword.IBM_notm}} Calico extension | 1595 | 1598 | New version contains security fixes. |
 | {{site.data.keyword.cloud_notm}} Block Storage driver and plug-in | v2.4.20 | v2.4.23 | New version contains updates and security fixes. |
 | {{site.data.keyword.cloud_notm}} Controller Manager | v1.25.16-52 | v1.25.16-59 | New version contains updates and security fixes. |

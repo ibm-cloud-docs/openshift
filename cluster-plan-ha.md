@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2024
-lastupdated: "2024-07-31"
+lastupdated: "2024-08-01"
 
 
 keywords: openshift, {{site.data.keyword.openshiftlong_notm}}, ha, high availability, failover, kubernetes, multi az, multi-az, szr, mzr
@@ -95,7 +95,7 @@ If one worker node goes down, app instances on available worker nodes continue t
 
 If you prefer single zone clusters for simplified management, or if your cluster must reside in a specific single zone city that does not support multizone capabilities, you can create [multiple clusters](#multiple-clusters-glb) and connect them with a global load balancer.
 
-If your single zone cluster is created in one of the multizone regions (MZRs), you can [change your single zone cluster to a multizone cluster](#convert-sz-to-mz). In a [multizone cluster](#mz-clusters), your workloads are distributed across worker nodes in different zones. If one zone is not available, your workloads continue to run in the remaining zones.
+If your single zone cluster is created in one of the multizone regions (MZRs), you can [change your single zone cluster to a multizone cluster](#convert-sz-to-mz-plan). In a [multizone cluster](#mz-clusters), your workloads are distributed across worker nodes in different zones. If one zone is not available, your workloads continue to run in the remaining zones.
 {: tip}
 
 ## Multizone clusters
