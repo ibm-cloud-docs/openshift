@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2024
-lastupdated: "2024-07-16"
+lastupdated: "2024-08-02"
 
 
 keywords: openshift, {{site.data.keyword.openshiftlong_notm}}, iro, openshift, red hat, red hat openshift
@@ -125,7 +125,7 @@ Bandwidth refers to the public data transfer of inbound and outbound network tra
 Review the following factors that impact public bandwidth charges:
 * **Location**: As with worker nodes, charges vary depending on the zone that your resources are deployed in.
 * **Pay-As-You-Go for VM**: Because VMs are billed at an hourly rate, your VM worker node machines have a Pay-As-You-Go allocation of outbound networking based on GB usage.
-* **Included bandwidth and tiered packages for BM**: Bare metal worker nodes might come with a certain allocation of outbound networking per month that varies by geography: 20 TB for North America and Europe, or 5 TB for Asia Pacific and South America. After you exceed your included bandwidth, you are charged according to a tiered usage scheme for your geography. If you exceed a tier allotment, you might also be charged a standard data transfer fee. For more information, see [Bandwidth packages](https://github.com/etcd-io/etcd/releases/v3.5.10){: external}.
+* **Included bandwidth and tiered packages for BM**: Bare metal worker nodes might come with a certain allocation of outbound networking per month that varies by geography: 20 TB for North America and Europe, or 5 TB for Asia Pacific and South America. After you exceed your included bandwidth, you are charged according to a tiered usage scheme for your geography. If you exceed a tier allotment, you might also be charged a standard data transfer fee.
 
 **VPC clusters**: For more information about how internet data transfer works in your Virtual Private Cloud, see [Pricing for VPC](https://cloud.ibm.com/vpc-ext/provision/vs){: external}.
 
