@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2024
-lastupdated: "2024-08-01"
+lastupdated: "2024-08-05"
 
 
 keywords: openshift
@@ -3824,7 +3824,7 @@ subcollection: openshift
 
 * [Overview](/docs/openshift?topic=openshift-vpc-security-group-reference#sbd-overview)
 
-* [Virtual private endpoint (VPE) gateways](/docs/openshift?topic=openshift-vpc-security-group-reference#managed-vpe-gateways)
+* [Virtual private endpoint (VPE) gateways](/docs/openshift?topic=openshift-vpc-security-group-reference#sbd-managed-vpe-gateways)
 
 * [Managed security groups](/docs/openshift?topic=openshift-vpc-security-group-reference#sbd-managed-groups)
 
