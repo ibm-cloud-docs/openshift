@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2024
-lastupdated: "2024-08-01"
+lastupdated: "2024-08-05"
 
 
 keywords: openshift
