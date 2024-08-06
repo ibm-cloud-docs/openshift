@@ -3255,6 +3255,8 @@ subcollection: openshift
 
 * [Adding labels to existing worker pools](/docs/openshift?topic=openshift-worker-tag-label&interface=cli#worker_pool_labels)
 
+[Checking worker node resource reserves](/docs/openshift?topic=openshift-resource-limit-node#resource-limit-node)
+
 
 ## Setting up encryption
 {: #sitemap_setting_up_encryption}
@@ -9875,19 +9877,8 @@ subcollection: openshift
 * [Global settings](/docs/openshift?topic=openshift-service-settings#global-settings)
 
 
-## Related links
-{: #sitemap_related_links}
-
-
-[OpenShift Container Platform documentation](https://docs.openshift.com/){: external}
-
-[IBM Developer - Red Hat OpenShift on IBM Cloud](https://developer.ibm.com/components/redhat-openshift-ibm-cloud/){: external}
-
-[OpenShift interactive learning portal](https://developers.redhat.com/learn){: external}
-
-
-## VPC flavors
-{: #sitemap_vpc_flavors}
+## Worker node flavors
+{: #sitemap_worker_node_flavors}
 
 
 [VPC flavors](/docs/openshift?topic=openshift-vpc-flavors#vpc-flavors)
@@ -9911,11 +9902,6 @@ subcollection: openshift
 * [Washington DC (`us-east`)](/docs/openshift?topic=openshift-vpc-flavors#washington-dc-us-east)
 
 * [Dallas (`us-south`)](/docs/openshift?topic=openshift-vpc-flavors#dallas-us-south)
-
-
-## Classic flavors
-{: #sitemap_classic_flavors}
-
 
 [Classic flavors](/docs/openshift?topic=openshift-classic-flavors#classic-flavors)
 
@@ -9951,19 +9937,20 @@ subcollection: openshift
 
 * [Washington DC (`wdc`)](/docs/openshift?topic=openshift-classic-flavors#washington-dc-wdc)
 
+[Bare metal flavors](/docs/openshift?topic=openshift-flavors-bm#flavors-bm)
 
-## Available flavors for bare metal
-{: #sitemap_available_flavors_for_bare_metal}
-
-
-[Available flavors for bare metal](/docs/openshift?topic=openshift-flavors-bm#flavors-bm)
+[SDS flavors](/docs/openshift?topic=openshift-flavors-sds#flavors-sds)
 
 
-## Available flavors for SDS
-{: #sitemap_available_flavors_for_sds}
+## Related links
+{: #sitemap_related_links}
 
 
-[Available flavors for SDS](/docs/openshift?topic=openshift-flavors-sds#flavors-sds)
+[OpenShift Container Platform documentation](https://docs.openshift.com/){: external}
+
+[IBM Developer - Red Hat OpenShift on IBM Cloud](https://developer.ibm.com/components/redhat-openshift-ibm-cloud/){: external}
+
+[OpenShift interactive learning portal](https://developers.redhat.com/learn){: external}
 
 
 ## Viewing cloud status

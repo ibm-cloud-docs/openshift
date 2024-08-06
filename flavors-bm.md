@@ -14,7 +14,7 @@ subcollection: openshift
 
 {{site.data.keyword.attribute-definition-list}}
 
-# Available flavors for bare metal
+# Bare metal flavors
 {: #flavors-bm}
 
 Worker node flavors vary by cluster type, the zone where you want to create the cluster, the container platform, and the infrastructure provider that you want to use. To see the flavors available in your zone, run `ibmcloud oc flavors --zone <zone>`.

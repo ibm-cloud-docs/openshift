@@ -98,6 +98,7 @@ toc:
           - access-apikey.md
           - ca-rotate.md
           - worker-tag-label.md
+          - resource-limit-node.md
       - topicgroup:
           label: Setting up encryption
           topics:
@@ -437,6 +438,13 @@ toc:
       - openshift_integrations_overview.md
       - service-settings.md
       - topicgroup:
+          label: Worker node flavors
+          topics:
+          - vpc-flavors.md
+          - classic-flavors.md
+          - flavors-bm.md
+          - flavors-sds.md
+      - topicgroup:
           label: Related links
           topics:
           - link:
@@ -448,10 +456,6 @@ toc:
           - link:
               label: OpenShift interactive learning portal
               href: https://developers.redhat.com/learn
-      - vpc-flavors.md
-      - classic-flavors.md
-      - flavors-bm.md
-      - flavors-sds.md
   - navgroup:
       id: help
       topics:

@@ -102,4 +102,4 @@ Depending on the type of persistent storage you use, you can encrypt the data wr
 ## Next steps
 {: #plan-storage-next}
 
-To continue the planning process, choose a [storage option](/docs/openshift?topic=openshift-storage-plan). If you're ready to get started with encryption, move on to[create a KMS instance and root key](/docs/openshift?topic=openshift-encryption-setup). 
+To continue the planning process, choose a [storage option](/docs/openshift?topic=openshift-storage-plan). If you're ready to get started with encryption, move on to [creating a KMS instance and root key](/docs/openshift?topic=openshift-encryption-setup). 
