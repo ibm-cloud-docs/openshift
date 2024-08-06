@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2024
-lastupdated: "2024-06-10"
+lastupdated: "2024-08-06"
 
 
 keywords: openshift, update, upgrade, BOM, bill of materials, versions, patch
@@ -1573,7 +1573,7 @@ The following table shows the changes that are in the worker node fix pack `3.11
 | --------- | -------- | ------- | ----------- |
 | RHEL 7 packages | N/A | N/A | Updated worker node images with package updates for [CVE-2019-11729](https://nvd.nist.gov/vuln/detail/CVE-2019-11729){: external} and [CVE-2019-11745](https://nvd.nist.gov/vuln/detail/CVE-2019-11745){: external}. |
 | {{site.data.keyword.redhat_openshift_notm}} node | 3.11.154 | 3.11.157 | See the [{{site.data.keyword.redhat_openshift_notm}} release notes](https://docs.openshift.com/container-platform/3.11/release_notes/ocp_3_11_release_notes.html#ocp-3-11-157){: external}. |
-| Maximum process IDs (PIDs) for pods | N/A | N/A | Updated to support scaling the maximum allowed pod process IDs (PIDs) based on the [worker node machine type](/docs/openshift?topic=openshift-planning_worker_nodes#resource_limit_node). |
+| Maximum process IDs (PIDs) for pods | N/A | N/A | Updated to support scaling the maximum allowed pod process IDs (PIDs) based on the worker node machine type. |
 {: caption="Changes since version 3.11.154_1534" caption-side="bottom"}
 
 

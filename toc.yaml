@@ -49,9 +49,7 @@ toc:
       - topicgroup:
           label: Planning to create clusters
           topics:
-          - kube-strategy.md
-          - cluster-plan-ha.md
-          - worker-plan.md
+          - strategy.md
           - cluster-plan-network-vpc.md
           - cluster-plan-network-classic.md
           - encryption.md
@@ -452,6 +450,8 @@ toc:
               href: https://developers.redhat.com/learn
       - vpc-flavors.md
       - classic-flavors.md
+      - flavors-bm.md
+      - flavors-sds.md
   - navgroup:
       id: help
       topics:

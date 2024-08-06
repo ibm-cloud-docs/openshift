@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2024, 2024
-lastupdated: "2024-04-11"
+lastupdated: "2024-08-06"
 
 
 keywords: kubernetes, help, connectivity, debugging, openshift, apps, support, network
@@ -108,3 +108,8 @@ You can use one of the examples mentioned earlier as a reference, or create a di
 
 For more information and reference architectures, see [IBM Architectures](https://www.ibm.com/architectures).
 
+
+## Next steps
+{: #plan-prepare}
+
+[Prepare your account to create clusters](/docs/openshift?topic=openshift-clusters). 

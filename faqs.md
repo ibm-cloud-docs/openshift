@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2024
-lastupdated: "2024-07-24"
+lastupdated: "2024-08-06"
 
 
 keywords: openshift, ocp, compliance, security standards, faq, openshift pricing, ocp pricing, openshift charges, ocp charges, openshift price, ocp price, openshift billing, ocp billing, openshift costs, ocp costs
@@ -57,7 +57,7 @@ I want to design my own cluster environment
 {: faq}
 {: support}
 
-With {{site.data.keyword.openshiftlong_notm}}, you can create your own {{site.data.keyword.redhat_openshift_notm}} cluster to deploy and manage containerized apps on {{site.data.keyword.cloud_notm}}. Your containerized apps are hosted on IBM Cloud infrastructure compute hosts that are called worker nodes. You can choose to provision your compute hosts as [virtual machines](/docs/openshift?topic=openshift-planning_worker_nodes#vm) with shared or dedicated resources, or as [bare metal machines](/docs/openshift?topic=openshift-planning_worker_nodes#bm) that can be optimized for GPU and software-defined storage (SDS) usage. Your worker nodes are controlled by a highly available {{site.data.keyword.redhat_openshift_notm}} master that is configured, monitored, and managed by IBM. You can use the {{site.data.keyword.containerlong_notm}} API or CLI to work with your cluster infrastructure resources and the Kubernetes API or CLI to manage your deployments and services.
+With {{site.data.keyword.openshiftlong_notm}}, you can create your own {{site.data.keyword.redhat_openshift_notm}} cluster to deploy and manage containerized apps on {{site.data.keyword.cloud_notm}}. Your containerized apps are hosted on IBM Cloud infrastructure compute hosts that are called worker nodes. You can choose to provision your compute hosts as virtual machines with shared or dedicated resources, or as bare metal machines that can be optimized for GPU and software-defined storage (SDS) usage. Your worker nodes are controlled by a highly available {{site.data.keyword.redhat_openshift_notm}} master that is configured, monitored, and managed by IBM. You can use the {{site.data.keyword.containerlong_notm}} API or CLI to work with your cluster infrastructure resources and the Kubernetes API or CLI to manage your deployments and services.
 
 For more information about how your cluster resources are set up, see the [Service architecture](/docs/containers?topic=containers-service-arch). To find a list of capabilities and benefits, see [Benefits and service offerings](/docs/openshift?topic=openshift-overview).
 
@@ -247,13 +247,13 @@ Certain VPC worker node flavors offer GPU support. For more information, see the
 
 Yes, you can provision your worker node as a single-tenant physical bare metal server. Bare metal servers come with high-performance benefits for workloads such as data, GPU, and AI. Additionally, all the hardware resources are dedicated to your workloads, so you don't have to worry about "noisy neighbors".
 
-For more information about available bare metal flavors and how bare metal is different from virtual machines, see [Physical machines (bare metal)](/docs/openshift?topic=openshift-planning_worker_nodes#bm).
+For more information about available bare metal flavors and how bare metal is different from virtual machines, see the [planning guidance](/docs/openshift?topic=openshift-strategy#env_flavors_node).
 
 ## What is the smallest size cluster that I can make?
 {: #smallest_cluster}
 {: faq}
 
-Note that running the smallest possible cluster does not meet the service level agreement (SLA) to receive support. Also, keep in mind that some services, such as Ingress, require highly available worker node setups. You might not be able to run these services or your apps in clusters with only two nodes in a worker pool. For more information, see the [Planning your cluster for high availability](/docs/openshift?topic=openshift-ha_clusters).
+Note that running the smallest possible cluster does not meet the service level agreement (SLA) to receive support. Also, keep in mind that some services, such as Ingress, require highly available worker node setups. You might not be able to run these services or your apps in clusters with only two nodes in a worker pool. For more information, see the [Planning your cluster for high availability](/docs/openshift?topic=openshift-strategy).
 {: important}
 
 Classic or VPC clusters
@@ -295,9 +295,9 @@ For more information about supported regions, see [Locations](/docs/openshift?to
 {: #ha_sla}
 {: faq}
 
-Yes. By default, {{site.data.keyword.openshiftlong_notm}} sets up many components such as the cluster master with replicas, anti-affinity, and other options to increase the high availability (HA) of the service. You can increase the redundancy and failure toleration of your cluster worker nodes, storage, networking, and workloads by configuring them in a highly available architecture. For an overview of the default setup and your options to increase HA, see [High availability for {{site.data.keyword.openshiftlong_notm}}](/docs/openshift?topic=openshift-ha_clusters).
+Yes. By default, {{site.data.keyword.openshiftlong_notm}} sets up many components such as the cluster master with replicas, anti-affinity, and other options to increase the high availability (HA) of the service. You can increase the redundancy and failure toleration of your cluster worker nodes, storage, networking, and workloads by configuring them in a highly available architecture. For an overview of the default setup and your options to increase HA, see [Creating a highly available cluster strategy](/docs/openshift?topic=openshift-strategy).
 
-For the latest HA service level agreement terms, refer to the [{{site.data.keyword.cloud_notm}} terms of service](/docs/overview?topic=overview-slas). Generally, the SLA availability terms require that when you configure your infrastructure resources in an HA architecture, you must distribute them evenly across three different availability zones. For example, to receive full HA coverage under the SLA terms, you must [set up a multizone cluster](/docs/openshift?topic=openshift-ha_clusters#mz-clusters) with a total of at least 6 worker nodes, two worker nodes per zone that are evenly spread across three zones.
+For the latest HA service level agreement terms, refer to the [{{site.data.keyword.cloud_notm}} terms of service](/docs/overview?topic=overview-slas). Generally, the SLA availability terms require that when you configure your infrastructure resources in an HA architecture, you must distribute them evenly across three different availability zones. For example, to receive full HA coverage under the SLA terms, you must set up a multizone cluster with a total of at least 6 worker nodes, two worker nodes per zone that are evenly spread across three zones.
 
 
 
@@ -342,13 +342,13 @@ To load balance workloads across your apps, add the public IP addresses of your 
 
 The {{site.data.keyword.openshiftlong_notm}} architecture and infrastructure is designed to ensure reliability, low processing latency, and a maximum uptime of the service. By default, every cluster in {{site.data.keyword.openshiftlong_notm}} is set up with multiple {{site.data.keyword.redhat_openshift_notm}} master instances to ensure availability and accessibility of your cluster resources, even if one or more instances of your {{site.data.keyword.redhat_openshift_notm}} master are unavailable.
 
-You can make your cluster even more highly available and protect your app from a downtime by spreading your workloads across multiple worker nodes in multiple zones of a region. This setup is called a [multizone cluster](/docs/openshift?topic=openshift-ha_clusters#mz-clusters) and ensures that your app is accessible, even if a worker node or an entire zone is not available.
+You can make your cluster even more highly available and protect your app from a downtime by spreading your workloads across multiple worker nodes in multiple zones of a region. This setup is called a multizone cluster and ensures that your app is accessible, even if a worker node or an entire zone is not available.
 
-To protect against an entire region failure, create [multiple clusters and spread them across {{site.data.keyword.cloud_notm}} regions](/docs/openshift?topic=openshift-ha_clusters#multiple-clusters-glb). By setting up a network load balancer (NLB) for your clusters, you can achieve cross-region load balancing and cross-region networking for your clusters.
+To protect against an entire region failure, create multiple clusters and spread them across {{site.data.keyword.cloud_notm}} regions. By setting up a network load balancer (NLB) for your clusters, you can achieve cross-region load balancing and cross-region networking for your clusters.
 
 If you have data that must be available, even if an outage occurs, make sure to store your data on [persistent storage](/docs/openshift?topic=openshift-storage-plan).
 
-For more information about how to achieve high availability for your cluster, see [High availability for {{site.data.keyword.openshiftlong_notm}}](/docs/openshift?topic=openshift-ha_clusters).
+For more information about how to achieve high availability for your cluster, see [High availability for {{site.data.keyword.openshiftlong_notm}}](/docs/openshift?topic=openshift-strategy).
 
 ## Do my apps automatically spread across zones?
 {: #multizone-apps-faq}

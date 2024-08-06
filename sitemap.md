@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2024
-lastupdated: "2024-08-05"
+lastupdated: "2024-08-06"
 
 
 keywords: openshift
@@ -2782,11 +2782,15 @@ subcollection: openshift
 {: #sitemap_planning_to_create_clusters}
 
 
-[Creating a cluster environment strategy](/docs/openshift?topic=openshift-strategy#strategy)
+[Creating a highly available cluster strategy](/docs/openshift?topic=openshift-strategy#strategy)
 
 * [Decide how many clusters to create](/docs/openshift?topic=openshift-strategy#env_multicluster)
 
+* [Determine how many locations are needed](/docs/openshift?topic=openshift-strategy#plan_locations)
+
 * [Select a cluster type](/docs/openshift?topic=openshift-strategy#env_flavors)
+
+* [Select an operating system for the cluster](/docs/openshift?topic=openshift-strategy#os)
 
 * [Define a cluster naming strategy](/docs/openshift?topic=openshift-strategy#naming)
 
@@ -2800,71 +2804,11 @@ subcollection: openshift
 
 * [Establish resource requests and limits for the namespaces](/docs/openshift?topic=openshift-strategy#env_resources_resource_quotas)
 
-[Planning your cluster for high availability](/docs/openshift?topic=openshift-ha_clusters#ha_clusters)
+    * [Learn how to manage worker nodes](/docs/openshift?topic=openshift-strategy#flavor-manage)
 
-* [High availability at different levels](/docs/openshift?topic=openshift-ha_clusters#ha_levels)
+* [Make your apps highly available too](/docs/openshift?topic=openshift-strategy#apps-ha)
 
-* [Resource distribution for high availability](/docs/openshift?topic=openshift-ha_clusters#ha_distribution)
-
-* [Single zone clusters](/docs/openshift?topic=openshift-ha_clusters#single_zone)
-
-* [Multizone clusters](/docs/openshift?topic=openshift-ha_clusters#mz-clusters)
-
-    * [Multizone cluster FAQ](/docs/openshift?topic=openshift-ha_clusters#mz-cluster-faq-plan)
-
-* [Multiple public clusters connected with a global load balancer](/docs/openshift?topic=openshift-ha_clusters#multiple-clusters-glb)
-
-    * [Why do I need 3 clusters in three zones?](/docs/openshift?topic=openshift-ha_clusters#multicluster-three-zones)
-
-    * [What if I want to set up multiple clusters across regions?](/docs/openshift?topic=openshift-ha_clusters#multiple-regions-setup-plan)
-
-    * [What options do I have to load balance workloads across multiple clusters?](/docs/openshift?topic=openshift-ha_clusters#multiple-cluster-lb-options-plan)
-
-    * [What if I want to load balance workloads on the private network?](/docs/openshift?topic=openshift-ha_clusters#glb-private-plan)
-
-[Planning your worker node setup](/docs/openshift?topic=openshift-planning_worker_nodes#planning_worker_nodes)
-
-* [Worker node FAQs](/docs/openshift?topic=openshift-planning_worker_nodes#worker-plan-faqs)
-
-    * [What hardware options are available to me?](/docs/openshift?topic=openshift-planning_worker_nodes#shared_dedicated_node)
-
-    * [Which operating systems are available?](/docs/openshift?topic=openshift-planning_worker_nodes#worker-os-options)
-
-    * [Can I combine different flavors in a cluster?](/docs/openshift?topic=openshift-planning_worker_nodes#combine-flavors)
-
-    * [How can I change worker node flavors?](/docs/openshift?topic=openshift-planning_worker_nodes#change-flavors)
-
-    * [Are the worker nodes encrypted?](/docs/openshift?topic=openshift-planning_worker_nodes#encrypted-flavor-plan)
-
-    * [How do I manage my worker nodes?](/docs/openshift?topic=openshift-planning_worker_nodes#flavor-manage)
-
-    * [What storage options are available on worker nodes?](/docs/openshift?topic=openshift-planning_worker_nodes#hardware-options)
-
-    * [What limitations do I need to be aware of?](/docs/openshift?topic=openshift-planning_worker_nodes#flavor-limitations)
-
-    * [What operations are blocked if my worker node is running an unsupported operating system?](/docs/openshift?topic=openshift-planning_worker_nodes#unsupported-os)
-
-    * [Why do my worker nodes have the `master` role?](/docs/openshift?topic=openshift-planning_worker_nodes#flavor-master-role-plan)
-
-* [Virtual machines](/docs/openshift?topic=openshift-planning_worker_nodes#vm)
-
-    * [Planning considerations for VMs](/docs/openshift?topic=openshift-planning_worker_nodes#vm-planning)
-
-    * [Available flavors for VMs](/docs/openshift?topic=openshift-planning_worker_nodes#vm-table)
-
-* [Physical machines (bare metal)](/docs/openshift?topic=openshift-planning_worker_nodes#bm)
-
-    * [Planning considerations for bare metal](/docs/openshift?topic=openshift-planning_worker_nodes#bm-planning)
-
-    * [Available flavors for bare metal](/docs/openshift?topic=openshift-planning_worker_nodes#bm-table)
-
-* [Software-defined storage (SDS) machines](/docs/openshift?topic=openshift-planning_worker_nodes#sds)
-
-    * [Planning considerations for SDS](/docs/openshift?topic=openshift-planning_worker_nodes#sds-planning)
-
-    * [Available flavors for SDS](/docs/openshift?topic=openshift-planning_worker_nodes#sds-table)
-
-* [Worker node resource reserves](/docs/openshift?topic=openshift-planning_worker_nodes#resource_limit_node)
+* [Next steps](/docs/openshift?topic=openshift-strategy#plan-network-next)
 
 [Understanding VPC cluster networking](/docs/openshift?topic=openshift-plan_vpc_basics#plan_vpc_basics)
 
@@ -2914,6 +2858,8 @@ subcollection: openshift
 
     * [External communication to apps that run on worker nodes](/docs/openshift?topic=openshift-plan_vpc_basics#vpc-vpn-external)
 
+* [Next steps](/docs/openshift?topic=openshift-plan_vpc_basics#plan-encryption-next-vpc)
+
 [Understanding Classic cluster networking](/docs/openshift?topic=openshift-plan_basics#plan_basics)
 
 * [Worker-to-worker communication: classic VLANs and subnets](/docs/openshift?topic=openshift-plan_basics#worker-worker)
@@ -2960,6 +2906,8 @@ subcollection: openshift
 
     * [External communication to apps that run on worker nodes with a gateway appliance](/docs/openshift?topic=openshift-plan_basics#limited-public-gw-external)
 
+* [Next steps](/docs/openshift?topic=openshift-plan_basics#plan-encryption-next-cl)
+
 [Encryption overview](/docs/openshift?topic=openshift-encryption#encryption)
 
 * [Control plane](/docs/openshift?topic=openshift-encryption#control-plane-encryption)
@@ -2970,7 +2918,7 @@ subcollection: openshift
 
 * [Persistent storage](/docs/openshift?topic=openshift-encryption#persistent-encryption)
 
-* [Next steps](/docs/openshift?topic=openshift-encryption#encryption-next-steps)
+* [Next steps](/docs/openshift?topic=openshift-encryption#plan-storage-next)
 
 [{{site.data.keyword.openshiftlong_notm}} storage overview](/docs/openshift?topic=openshift-storage-plan#storage-plan)
 
@@ -2979,6 +2927,8 @@ subcollection: openshift
 * [Single zone clusters](/docs/openshift?topic=openshift-storage-plan#storage-plan-single-zone)
 
 * [Multizone clusters](/docs/openshift?topic=openshift-storage-plan#storage-plan-multizone)
+
+* [Next steps](/docs/openshift?topic=openshift-storage-plan#plan-document-next)
 
 [Documenting your environment architecture](/docs/openshift?topic=openshift-document-environment#document-environment)
 
@@ -2993,6 +2943,8 @@ subcollection: openshift
 * [Step 2: Choose a tool](/docs/openshift?topic=openshift-document-environment#choose-arch-tool)
 
 * [Step 3: Create the diagram](/docs/openshift?topic=openshift-document-environment#create-arch-diagram)
+
+* [Next steps](/docs/openshift?topic=openshift-document-environment#plan-prepare)
 
 
 ## Preparing your account
@@ -9998,6 +9950,20 @@ subcollection: openshift
 * [Toronto (`tor`)](/docs/openshift?topic=openshift-classic-flavors#toronto-tor)
 
 * [Washington DC (`wdc`)](/docs/openshift?topic=openshift-classic-flavors#washington-dc-wdc)
+
+
+## Available flavors for bare metal
+{: #sitemap_available_flavors_for_bare_metal}
+
+
+[Available flavors for bare metal](/docs/openshift?topic=openshift-flavors-bm#flavors-bm)
+
+
+## Available flavors for SDS
+{: #sitemap_available_flavors_for_sds}
+
+
+[Available flavors for SDS](/docs/openshift?topic=openshift-flavors-sds#flavors-sds)
 
 
 ## Viewing cloud status

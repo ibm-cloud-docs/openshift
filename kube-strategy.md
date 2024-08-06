@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2024
-lastupdated: "2024-04-29"
+lastupdated: "2024-08-06"
 
 
 keywords: openshift, {{site.data.keyword.openshiftlong_notm}}, kubernetes, kubernetes environment, moving to kubernetes, moving to containers, clusters, cluster sizing
@@ -33,7 +33,6 @@ The number of clusters that you create depends on your workload, company policie
     *  Configure user access on the cluster-instance level instead of customizing and managing multiple RBAC policies to control access within a cluster at the namespace level.
     * Keep in mind that network bandwidth on scaling virtual machines is around 1000 Mbps. If you need hundreds of worker nodes in a cluster, split it up into multiple clusters with fewer nodes, or order bare metal nodes.
     * If you anticipate needing a larger number of [services integrations](/docs/containers?topic=containers-supported_integrations#supported_integrations), such as more than 5,000 services, use multiple clusters.
-    * Learn more about when you might need a [multiple cluster setup](/docs/openshift?topic=openshift-ha_clusters#multiple-clusters-glb)
 
 - **One cluster with more worker nodes**: Fewer clusters can help you to reduce operational effort and per-cluster costs for fixed resources. Instead of making more clusters, you can add worker pools for different flavors of computing resources available for your app and service components. When you develop the app, the resources it uses are in the same zone, or otherwise closely connected in a multizone, so that you can make assumptions about latency, bandwidth, or correlated failures. However, it becomes even more important for you to organize your cluster by using namespaces, resource quotas, and labels.
 {: #env_resources}

@@ -13,7 +13,7 @@ subcollection: openshift
 {{site.data.keyword.attribute-definition-list}}
 
 # Creating a highly available cluster strategy
-{: #strategy}
+{: #strategy-plan}
 
 Design your standard cluster for maximum availability and capacity for your app with {{site.data.keyword.openshiftlong}}. Use the built-in features to make your cluster more highly available and to protect your app from downtime when a component in your cluster fails. But figuring out what your cluster setup must be to support your workload is not an exact science. You might need to test different configurations and adapt.
 {: shortdesc}
@@ -155,7 +155,7 @@ A worker node is a VM that runs on physical hardware. Worker node failures inclu
 
 A worker node flavor describes the compute resources, such as CPU, memory, and disk capacity that you get when you provision your worker node. Worker nodes of the same flavor are grouped in worker node pools. 
 
-As you were choosing a cluster type, you already thought about how worker node flavor location and machine type impact your decision. As you choose between worker node flavors, consider the following.
+As you were choosing a cluster type, you already thought about how worker node flavor location and machine type impact your decision. As you choose between [worker node flavors](/docs/openshift?topic=openshift-planning_worker_nodes#planning_worker_nodes), consider the following.
 
 - **Tenancy**: Depending on the level of hardware isolation that you need, virtual worker nodes can be set up as shared by multiple {{site.data.keyword.IBM_notm}} customers (multi tenancy) or dedicated to you only (single tenancy) nodes. Bare metal machines are always set up as dedicated. When you decide between shared and dedicated nodes, you might want to check with your legal department to discuss the level of infrastructure isolation and compliance that your app environment requires.
     - **Shared**: Physical resources, such as CPU and memory, are shared across all virtual machines that are deployed to the same physical hardware. To ensure that every virtual machine can run independently, a virtual machine monitor, also referred to as the hypervisor, segments the physical resources into isolated entities and allocates them as dedicated resources to a virtual machine (hypervisor isolation). Shared nodes are usually less costly than dedicated nodes because the costs for the underlying hardware are shared among multiple customers.
@@ -210,7 +210,7 @@ As you were choosing a cluster type, you already thought about how worker node f
 
 To get the most out of your worker node's performance, consider the following as you set up your resources:
 
-- **Consider what your app is doing**: Start by aligning the app size with the capacity of one of the available worker node flavors. Also consider thing like whether your app pulls large or many images, since they can take up local storage on the worker node.
+- **Consider what your app is doing**: Start by aligning the app size with the capacity of one of the [available worker node flavors](/docs/openshift?topic=openshift-planning_worker_nodes#planning_worker_nodes). Also consider thing like whether your app pulls large or many images, since they can take up local storage on the worker node.
 
 - **Keep up your core strength**: Each machine has a certain number of cores. Depending on your app's workload, set a limit for the number of pods per core, such as 10. 
 
@@ -263,11 +263,4 @@ VPC clusters
 ## Make your apps highly available too
 {: #apps-ha}
 
-Containers and pods are, by design, short-lived and can fail unexpectedly. For example, a container or pod might crash if an error occurs in your app. To make your app highly available, you must ensure that you have enough instances to handle the workload plus additional instances in the case of a failure. You can ensure that there are enough instances by setting up [automatic scaling](/docs/openshift?topic=openshift-update_app#app_scaling). 
-
-
-
-## Next steps
-{: #plan-network-next}
-
-To continue the planning process, choose between [VPC cluster networking](/docs/openshift?topic=openshift-plan_vpc_basics) and [Classic cluster networking](/docs/openshift?topic=openshift-plan_basics). If you're ready to get started creating a cluster, first start by [Preparing your account to create clusters](/docs/openshift?topic=openshift-clusters).
+Containers and pods are, by design, short-lived and can fail unexpectedly. For example, a container or pod might crash if an error occurs in your app. To make your app highly available, you must ensure that you have enough instances of your app to handle the workload plus additional instances in the case of a failure. Ideally, these instances are distributed across multiple worker nodes to protect your app from a worker node failure. For more information, see [Deploying highly available apps](/docs/openshift?topic=openshift-plan_deploy#highly_available_apps).
