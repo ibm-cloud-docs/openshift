@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2024
-lastupdated: "2024-06-20"
+lastupdated: "2024-08-06"
 
 
 keywords: openshift, {{site.data.keyword.openshiftlong_notm}}, kubernetes, kernel, performance
@@ -36,7 +36,7 @@ Instead of tuning worker node performance with `MachineConfig` files in {{site.d
 ## Default worker node settings
 {: #worker-default}
 
-By default, your worker nodes have the operating system and compute hardware of the [worker node flavor](/docs/openshift?topic=openshift-planning_worker_nodes) that you choose when you create the worker pool.
+By default, your worker nodes have the operating system and compute hardware of the worker node flavor that you choose when you create the worker pool.
 {: shortdesc}
 
 ### Customizing the operating system

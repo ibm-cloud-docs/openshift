@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2024
-lastupdated: "2024-07-23"
+lastupdated: "2024-08-06"
 
 
 keywords: portworx, kubernetes, openshift
@@ -57,13 +57,13 @@ Portworx also comes with additional features that you can use for your stateful 
 
 Review the requirements to [install Portworx](https://docs.portworx.com/portworx-enterprise/platform/prerequisites){: external}.
 
-For production environments, choose one of the [SDS worker node flavors](/docs/openshift?topic=openshift-planning_worker_nodes#sds-table) for best performance. 
+For production environments, choose one of the [SDS worker node flavors](/docs/openshift?topic=openshift-flavors-sds) for best performance. 
 {: tip}
 
 ## How can I make sure that my data is stored highly available?
 {: #about-px-ha}
 
-You need at least three worker nodes in your Portworx cluster so that Portworx can replicate your data across nodes. By replicating your data across worker nodes, Portworx can ensure that your stateful app can be rescheduled to a different worker node in case of a failure without losing data. For even higher availability, use a [multizone cluster](/docs/openshift?topic=openshift-ha_clusters#mz-clusters) and replicate your volumes across worker nodes in 3 or more zones.
+You need at least three worker nodes in your Portworx cluster so that Portworx can replicate your data across nodes. By replicating your data across worker nodes, Portworx can ensure that your stateful app can be rescheduled to a different worker node in case of a failure without losing data. For even higher availability, use a multizone cluster and replicate your volumes across worker nodes in 3 or more zones.
 
 ## What volume topology offers the best performance for my pods?
 {: #about-px-topology}

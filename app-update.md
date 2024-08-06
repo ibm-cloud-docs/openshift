@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2024
-lastupdated: "2024-04-24"
+lastupdated: "2024-08-06"
 
 
 keywords: kubernetes, openshift, red hat, red hat openshift, update, upgrade, openshift
@@ -52,7 +52,7 @@ Before you begin
 - [Access your {{site.data.keyword.redhat_openshift_notm}} cluster](/docs/openshift?topic=openshift-access_cluster).
 - Make sure that you are assigned a [service access role](/docs/openshift?topic=openshift-iam-platform-access-roles) that grants the appropriate Kubernetes RBAC role so that you can work with Kubernetes resources in the project.
 
-To scale your apps,
+To scale your apps:
 
 1. Deploy your app to a cluster from the CLI. For more complex deployments, you might need to create a [configuration file](/docs/containers?topic=containers-deploy_app#app_cli).
     ```sh
@@ -94,7 +94,7 @@ Before you begin
 * Create a [deployment](/docs/containers?topic=containers-deploy_app#app_cli).
 * Make sure that you have a [service access role](/docs/openshift?topic=openshift-iam-platform-access-roles) that grants the appropriate Kubernetes RBAC role so that you can work with Kubernetes resources in the project.
 
-To manage rolling updates to your apps,
+To manage rolling updates to your apps:
 
 1. To make sure that your deployments are marked as ready only when the container is running and ready to service requests, add [liveness and readiness probes to your deployment](/docs/openshift?topic=openshift-app#probe).
 

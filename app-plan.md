@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2024
-lastupdated: "2024-06-12"
+lastupdated: "2024-08-06"
 
 
 keywords: kubernetes, deploy, app, openshift
@@ -332,7 +332,7 @@ Review the following potential app setups that are ordered with increasing degre
 2. A deployment with n+2 pods that are managed by a replica set and spread across multiple nodes (anti-affinity) in a single zone cluster.
 3. A deployment with n+2 pods that are managed by a replica set and spread across multiple nodes (anti-affinity) in a multizone cluster across zones.
 
-You can also [connect multiple clusters in different regions with a global load balancer](/docs/openshift?topic=openshift-ha_clusters#multiple-clusters-glb) to increase the high availability.
+You can also [connect multiple clusters in different regions with a global load balancer](/docs/openshift?topic=openshift-loadbalancer-qs) to increase the high availability.
 
 ### How can I increase the availability of my app?
 {: #increase_availability}
@@ -356,8 +356,8 @@ Spread pods across multiple nodes (anti-affinity)
     For an example of affinity in an app deployment, see [Making your app deployment YAML file](/docs/openshift?topic=openshift-app#app_yaml).
 
 Distribute pods across multiple zones or regions
-:   To protect your app from a zone failure, you can create multiple clusters in separate zones or add zones to a worker pool in a multizone cluster. Multizone clusters are available only in certain [classic](/docs/openshift?topic=openshift-regions-and-zones#zones-mz) or [VPC](/docs/openshift?topic=openshift-regions-and-zones#zones-vpc) multizones, such as Dallas. If you create multiple clusters in separate zones, you must [set up a global load balancer](/docs/openshift?topic=openshift-ha_clusters#multiple-clusters-glb).
-    When you use a replica set and specify pod anti-affinity, Kubernetes spreads your app pods across the nodes. If your nodes are in multiple zones, the pods are spread across the zones, increasing the availability of your app. If you want to limit your apps to run only in one zone, you can configure pod affinity, or create and label a worker pool in one zone. For more information, see [High availability for multizone clusters](/docs/openshift?topic=openshift-ha_clusters#ha_clusters).
+:   To protect your app from a zone failure, you can create multiple clusters in separate zones or add zones to a worker pool in a multizone cluster. Multizone clusters are available only in certain [classic](/docs/openshift?topic=openshift-regions-and-zones#zones-mz) or [VPC](/docs/openshift?topic=openshift-regions-and-zones#zones-vpc) multizones, such as Dallas. If you create multiple clusters in separate zones, you must [set up a global load balancer](/docs/openshift?topic=openshift-strategy#plan_locations).
+    When you use a replica set and specify pod anti-affinity, Kubernetes spreads your app pods across the nodes. If your nodes are in multiple zones, the pods are spread across the zones, increasing the availability of your app. If you want to limit your apps to run only in one zone, you can configure pod affinity, or create and label a worker pool in one zone. 
     
 In a multizone cluster deployment, are my app pods distributed evenly across the nodes?
 :   The pods are evenly distributed across zones, but not always across nodes. For example, if you have a cluster with one node in each of three zones and deploy a replica set of six pods, then each node gets two pods. However, if you have a cluster with two nodes in each of three zones and deploy a replica set of six pods, each zone schedules two pods, and might schedule one pod per node or might not. For more control over scheduling, you can [set pod affinity](https://kubernetes.io/docs/concepts/scheduling-eviction/assign-pod-node/){: external}.
@@ -367,7 +367,7 @@ If a zone goes down, how are pods rescheduled onto the remaining nodes in the ot
     In multizone clusters, try to keep your worker node capacity at 50% per zone so that enough capacity remains to protect your cluster against a zonal failure.
     
 What if I want to spread my app across regions?
-:   To protect your app from a region failure, create a second cluster in another region, [set up a global load balancer](/docs/openshift?topic=openshift-ha_clusters#multiple-clusters-glb) to connect your clusters, and use a deployment YAML to deploy a duplicate replica set with [pod anti-affinity](https://kubernetes.io/docs/concepts/scheduling-eviction/assign-pod-node/){: external} for your app.
+:   To protect your app from a region failure, create a second cluster in another region, [set up a global load balancer](/docs/openshift?topic=openshift-strategy#plan_locations) to connect your clusters, and use a deployment YAML to deploy a duplicate replica set with [pod anti-affinity](https://kubernetes.io/docs/concepts/scheduling-eviction/assign-pod-node/){: external} for your app.
     
 What if my apps need persistent storage?
 :   Use a cloud service such as [{{site.data.keyword.cloudant_short_notm}}](/docs/Cloudant?topic=Cloudant-getting-started-with-cloudant) or [{{site.data.keyword.cos_full_notm}}](/docs/cloud-object-storage?topic=cloud-object-storage-getting-started-cloud-object-storage).

@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2024
-lastupdated: "2024-07-31"
+lastupdated: "2024-08-06"
 
 
 keywords: openshift, {{site.data.keyword.openshiftlong_notm}}, kubernetes, release notes
@@ -5509,7 +5509,7 @@ Ingress ALB change log
 
 
 New! Reservations and limits for PIDs
-:   Worker nodes that run {{site.data.keyword.redhat_openshift_notm}} 4.3 or later or later set [process ID (PID) reservations and limits that vary by flavor](/docs/openshift?topic=openshift-planning_worker_nodes#resource_limit_node), to help prevent malicious or runaway apps from consuming all available PIDs.
+:   Worker nodes that run {{site.data.keyword.redhat_openshift_notm}} 4.3 or later or later set process ID (PID) reservations and limits that vary by flavor, to help prevent malicious or runaway apps from consuming all available PIDs.
 
 
 

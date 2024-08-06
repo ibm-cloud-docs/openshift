@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2024
-lastupdated: "2024-07-31"
+lastupdated: "2024-08-06"
 
 
 keywords: openshift, cli reference, kubernetes cli, openshift cli, {{site.data.keyword.openshiftlong_notm}}
@@ -7431,7 +7431,7 @@ Each flavor includes the amount of virtual CPU, memory, and disk space for each 
 
 By default, the secondary storage disk directory where all container data is stored, is encrypted with LUKS encryption. If the `disable-disk-encrypt` option is included during cluster creation, then the host's container runtime data is not encrypted. [Learn more about the encryption](/docs/openshift?topic=openshift-security#encrypted_disk).
 
-You can provision your worker node as a virtual machine on shared or dedicated hardware, or for classic clusters only, as a physical machine on bare metal. [Learn more about your flavor options](/docs/openshift?topic=openshift-planning_worker_nodes#planning_worker_nodes).
+You can provision your worker node as a virtual machine on shared or dedicated hardware, or for classic clusters only, as a physical machine on bare metal.
 
 ### `flavor get` command
 {: #cs_flavor_get}
@@ -7501,7 +7501,7 @@ Minimum required permissions
 :    Optional: The infrastructure provider for which you want to get flavor information for. Available options are `classic`, `vpc-classic` and `vpc-gen2`.
 
 `--show-storage`
-:    Optional: Show additional raw disks that are available for SDS worker node flavors. For more information, see [Software-defined storage (SDS) machines](/docs/openshift?topic=openshift-planning_worker_nodes#sds).
+:    Optional: Show additional raw disks that are available for SDS worker node flavors. For more information, see [Software-defined storage (SDS) machines](/docs/openshift?topic=openshift-flavors-sds).
 
 `--output json`
 :    Optional: Prints the command output in JSON format.

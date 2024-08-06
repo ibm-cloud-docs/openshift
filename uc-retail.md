@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2024
-lastupdated: "2024-05-29"
+lastupdated: "2024-08-06"
 
 
 keywords: kubernetes, openshift
@@ -35,7 +35,7 @@ A Line-of-Business (LOB) Exec needs to increase sales channels, but the retail s
 {{site.data.keyword.openshiftlong_notm}} provides a public-cloud ecosystem, where containers enable new business partners and other external players to co-develop apps and data, through APIs. Now that the retail system is on the public cloud, APIs also streamline data sharing and jump-start new app development. App deployments increase when Developers experiment easily, pushing changes to Development and Test systems quickly with toolchains.
 
 {{site.data.keyword.openshiftlong_notm}} and key technologies:
-* [Clusters that fit varied CPU, RAM, storage needs](/docs/openshift?topic=openshift-planning_worker_nodes#planning_worker_nodes)
+* [Clusters that fit varied CPU, RAM, storage needs](/docs/openshift?topic=openshift-strategy)
 * [{{site.data.keyword.cos_full}} to persist and sync data across apps](/docs/cloud-object-storage?topic=cloud-object-storage-getting-started-cloud-object-storage)
 * [DevOps native tools, including open toolchains in {{site.data.keyword.contdelivery_full}}](/docs/ContinuousDelivery?topic=ContinuousDelivery-getting-started&interface=ui){: external}
 
@@ -135,7 +135,7 @@ A Chief Marketing Officer (CMO) needs to increase customer traffic by 20% in sto
 
 Key technologies:    
 * [Horizontal scaling to accelerate development](/docs/openshift?topic=openshift-plan_deploy#highly_available_apps)
-* [Clusters that fit varied CPU, RAM, storage needs](/docs/openshift?topic=openshift-planning_worker_nodes#planning_worker_nodes)
+* [Clusters that fit varied CPU, RAM, storage needs](/docs/openshift?topic=openshift-strategy)
 * [Insights to market trends with {{site.data.keyword.watson}} Discovery](https://www.ibm.com/products/watson-discovery){: external}
 * [DevOps native tools, including open toolchains in {{site.data.keyword.contdelivery_full}}](/docs/ContinuousDelivery?topic=ContinuousDelivery-getting-started&interface=ui){: external}
 * [Inventory management with {{site.data.keyword.messagehub_full}}](/docs/EventStreams?topic=EventStreams-about#about)

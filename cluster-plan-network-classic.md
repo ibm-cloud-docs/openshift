@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2022, 2024
-lastupdated: "2024-07-31"
+lastupdated: "2024-08-06"
 
 
 keywords: kubernetes, openshift network, classic
@@ -177,7 +177,7 @@ If your worker nodes need to access services in private networks outside of your
 
 To expose an app in your cluster to the internet, you can create a public network load balancer (NLB) or Ingress application load balancer (ALB) service. You can improve the security of your cluster by creating a pool of worker nodes that are labeled as edge nodes. The pods for public network services are deployed to the edge nodes so that external traffic workloads are isolated to only a few workers in your cluster. You can further control public traffic to the network services that expose your apps by creating Calico pre-DNAT policies, such as allowlist and blocklist policies.
 
-Ready to get started with a cluster for this scenario? After you plan your [high availability](/docs/openshift?topic=openshift-ha_clusters) and [worker node](/docs/openshift?topic=openshift-planning_worker_nodes) setups, see [Creating clusters](/docs/openshift?topic=openshift-clusters).
+Ready to get started with a cluster for this scenario? After you plan your [high availability](/docs/openshift?topic=openshift-strategy) setup, see [Creating clusters](/docs/openshift?topic=openshift-clusters).
 
 ## Scenario: Allow limited public connectivity with a gateway appliance
 {: #vyatta-gateway}
@@ -206,6 +206,11 @@ Your worker nodes can securely communicate with other {{site.data.keyword.cloud_
 
 To provide private access to an app in your cluster, you can create a private network load balancer (NLB) or Ingress application load balancer (ALB) to expose your app to the private network only. If you need to provide limited public access to an app in your cluster, you can create a public NLB or ALB to expose your app. Because all traffic goes through your gateway appliance firewall, you can control public and private traffic to the network services that expose your apps by opening up the service's ports and IP addresses in your firewall to permit inbound traffic to these services.
 
-Ready to get started with a cluster for this scenario? After you plan your [high availability](/docs/openshift?topic=openshift-ha_clusters) and [worker node](/docs/openshift?topic=openshift-planning_worker_nodes) setups, see [Creating clusters](/docs/openshift?topic=openshift-clusters).
+Ready to get started with a cluster for this scenario? After you plan your [high availability](/docs/openshift?topic=openshift-strategy) setup, see [Creating clusters](/docs/openshift?topic=openshift-clusters).
 
 
+
+## Next steps
+{: #plan-encryption-next-cl}
+
+To continue the planning process, learn about protecting sensitive information in your cluster by making decisions about the level of [encryption](/docs/openshift?topic=openshift-encryption) you must configure. If you're ready to get started setting up networking, move on to [Using Calico network policies to control traffic on Classic clusters](/docs/openshift?topic=openshift-policy_tutorial). 
