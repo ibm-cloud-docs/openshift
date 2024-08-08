@@ -194,16 +194,21 @@ toc:
               topics: 
               - openshift_routes.md
           - topicgroup:
-              label: Exposing apps with load balancers
+              label: Exposing apps with Classic load balancers
               topics:
-              - lb-quickstart.md
-              - vpc_lbaas.md
               - lb-about.md
               - lb.md
               - lb-v2.md
               - edge-classic-nlb.md
               - edge-vpc-lb.md
               - lb-dns.md
+          - topicgroup:
+              label: Exposing apps with VPC load balancers
+              topics:
+              - vpc_lb_about.md
+              - vpc_alb.md
+              - vpc_nlb.md
+              - vpc_lb_manage.md
           - topicgroup:
               label: Exposing apps with Ingress
               topics:

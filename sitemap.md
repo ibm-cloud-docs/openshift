@@ -4355,59 +4355,9 @@ subcollection: openshift
 * [Moving Ingress controller services across VLANs in classic clusters](/docs/openshift?topic=openshift-openshift_routes#migrate-router-vlan-classic)
 
 
-### Exposing apps with load balancers
-{: #sitemap_exposing_apps_with_load_balancers}
+### Exposing apps with Classic load balancers
+{: #sitemap_exposing_apps_with_classic_load_balancers}
 
-
-[Quick start for load balancers](/docs/openshift?topic=openshift-loadbalancer-qs#loadbalancer-qs)
-
-* [Exposing an app by using an NLB in a classic cluster](/docs/openshift?topic=openshift-loadbalancer-qs#lb_qs_classic)
-
-* [Exposing an app by using a VPC load balancer in a VPC cluster](/docs/openshift?topic=openshift-loadbalancer-qs#lb_qs_vpc)
-
-[Exposing apps with load balancers for VPC](/docs/openshift?topic=openshift-vpc-lbaas#vpc-lbaas)
-
-* [Loadbalancer types](/docs/openshift?topic=openshift-vpc-lbaas#vpc-lbaas-types)
-
-    * [Network Load Balancer for VPC](/docs/openshift?topic=openshift-vpc-lbaas#nlb_vpc)
-
-    * [Application Load Balancer for VPC](/docs/openshift?topic=openshift-vpc-lbaas#lb_vpc)
-
-* [Setting up a Network Load Balancer for VPC](/docs/openshift?topic=openshift-vpc-lbaas#setup_vpc_nlb)
-
-* [Setting up a public VPC NLB](/docs/openshift?topic=openshift-vpc-lbaas#setup_vpc_nlb_pub)
-
-    * [Setting up an NLB using port range](/docs/openshift?topic=openshift-vpc-lbaas#nlb-setup-portrange)
-
-    * [Setting up a private VPC NLB](/docs/openshift?topic=openshift-vpc-lbaas#setup_vpc_nlb_priv)
-
-    * [Registering a DNS record and TLS certificate](/docs/openshift?topic=openshift-vpc-lbaas#vpc_nlb_dns)
-
-* [Setting up an Application Load Balancer for VPC](/docs/openshift?topic=openshift-vpc-lbaas#setup_vpc_ks_vpc_lb)
-
-    * [Setting up a public or private VPC ALB](/docs/openshift?topic=openshift-vpc-lbaas#setup_vpc_alb_pub_priv)
-
-    * [Registering a DNS record and TLS certificate](/docs/openshift?topic=openshift-vpc-lbaas#vpc_lb_dns)
-
-    * [Registering a private DNS record for a private VPC ALB](/docs/openshift?topic=openshift-vpc-lbaas#vpc_alb_private_dns)
-
-* [Persistent VPC load balancers](/docs/openshift?topic=openshift-vpc-lbaas#vpc_lb_persist)
-
-* [Moving a VPC load balancer from one cluster to another](/docs/openshift?topic=openshift-vpc-lbaas#vpc_lb_move)
-
-    * [Detaching a VPC load balancer from a cluster](/docs/openshift?topic=openshift-vpc-lbaas#vpc_lb_move_detach)
-
-    * [Attaching a VPC load balancer to a cluster](/docs/openshift?topic=openshift-vpc-lbaas#vpc_lb_move_attach)
-
-* [Health checks for load balancers](/docs/openshift?topic=openshift-vpc-lbaas#vpc_lb_health)
-
-    * [Customizing health checks for VPC load balancers](/docs/openshift?topic=openshift-vpc-lbaas#vpc_lb_health_custom)
-
-    * [Enabling TCP health checks for UDP load balancers](/docs/openshift?topic=openshift-vpc-lbaas#vpc_lb_health_udp)
-
-* [Changing load balancer subnets or zones](/docs/openshift?topic=openshift-vpc-lbaas#lbaas_change_subnets)
-
-* [Limitations](/docs/openshift?topic=openshift-vpc-lbaas#lbaas_limitations)
 
 [Classic: About network load balancers (NLBs)](/docs/openshift?topic=openshift-loadbalancer-about#loadbalancer-about)
 
@@ -4470,6 +4420,11 @@ subcollection: openshift
 * [Enable health checks on a subdomain by creating a health monitor](/docs/openshift?topic=openshift-loadbalancer_hostname#loadbalancer_hostname_monitor)
 
     * [Updating and removing IPs and monitors from subdomains](/docs/openshift?topic=openshift-loadbalancer_hostname#loadbalancer_hostname_delete)
+
+
+### Exposing apps with VPC load balancers
+{: #sitemap_exposing_apps_with_vpc_load_balancers}
+
 
 
 ### Exposing apps with Ingress
