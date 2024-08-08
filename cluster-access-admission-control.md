@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2022, 2024
-lastupdated: "2024-06-26"
+lastupdated: "2024-08-07"
 
 
 keywords: openshift, {{site.data.keyword.openshiftlong_notm}}, webhooks, admission control, 
@@ -35,6 +35,7 @@ As noted in the Kubernetes documentation, you can use admission controllers for 
 
 Keep in mind the following best practices and considerations when you configure a webhook.
 
+- Do not use mutating webhooks to mutate resources owned by another controller or operator. Doing so might cause an infinite reconciliation loop between the resource owner and the webhook. Webhooks can determine resource ownership by checking if `metadata.ownerReferences` is set in the resource data. For example, a Kubernetes replicaset resource is owned by a Kubernetes deployment resource and must never be mutated by a webhook. 
 - Create [replica pods](/docs/openshift?topic=openshift-app#replicaset) for the webhook so that if one pod goes down, the webhook can still process requests from your resources. Spread the replica pods across zones, if possible.
 - Set an appropriate `failurePolicy` option, such as whether your webhook fails or ignores connection failures or timeouts. You might set the `failurePolicy` to `Ignore` if you want your webhook to ignore connection errors an timeouts. Note that this does not change how the `apiserver` behaves if the webhook rejects a request.
 - Review the `timeoutSeconds` interval. Older webhooks that use the `v1beta1.admissionregistration.k8s.io` API have a default timeout of 30 seconds. The `v1` API uses a default of 10 seconds. If the webhook failure policy is Ignore and the current `timeoutSeconds` is 30, consider reducing the timeout to 10 seconds. For OpenShift clusters, control plane components often have their own timeout of 13 seconds.
