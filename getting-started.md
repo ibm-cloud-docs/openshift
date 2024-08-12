@@ -2,7 +2,7 @@
 
 copyright:
   years: 2023, 2024
-lastupdated: "2024-06-07"
+lastupdated: "2024-08-12"
 
 
 keywords: openshift, {{site.data.keyword.openshiftlong_notm}}, kubernetes cluster, red hat openshift, openshift container platform, red hat, create openshift cluster, vpc cluster, classic cluster, clusters
@@ -19,7 +19,7 @@ subcollection: openshift
 # Getting started with {{site.data.keyword.openshiftlong_notm}}
 {: #getting-started}
 
-{{site.data.keyword.openshiftlong_notm}} is a managed offering to create your own cluster of compute hosts where you can deploy and manage containerized apps on IBM Cloud. Combined with an intuitive user experience, built-in security and isolation, and advanced tools to secure, manage, and monitor your cluster workloads, you can rapidly deliver highly available and secure containerized apps in the public cloud.
+{{site.data.keyword.openshiftlong_notm}} is a managed Kubernetes service to create your own cluster of compute hosts where you can deploy and manage containerized apps on IBM Cloud. Combined with an intuitive user experience, built-in security and isolation, and advanced tools to secure, manage, and monitor your cluster workloads, you can rapidly deliver highly available and secure containerized apps in the public cloud.
 {: shortdesc}
 
 Complete the following steps to get familiar with the basics, understand the service components, create your first cluster, and deploy a starter app.
