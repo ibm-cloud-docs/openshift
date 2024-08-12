@@ -10354,6 +10354,15 @@ subcollection: openshift
 * [Upgrading from 4.10 to 4.11](/docs/openshift?topic=openshift-ts-cloud-pak-ds#cdp-feature-gates-411)
 
 
+### Permissions and credentials
+{: #sitemap_permissions_and_credentials}
+
+
+[Resolving permission and credential errors](/docs/openshift?topic=openshift-ts-perms-creds#ts-perms-creds)
+
+* [Invalid API key](/docs/openshift?topic=openshift-ts-perms-creds#invalid_apikey)
+
+
 ### Cluster autoscaler
 {: #sitemap_cluster_autoscaler}
 

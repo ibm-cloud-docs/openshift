@@ -524,6 +524,10 @@ toc:
               - ts-openshift-marketplace.md
               - ts-cloud-pak-ds.md
           - topicgroup:
+              label: Permissions and credentials
+              topics:
+              - ts-perms-creds.md  
+          - topicgroup:
               label: Cluster autoscaler
               topics:
               - ts-ca-debug.md

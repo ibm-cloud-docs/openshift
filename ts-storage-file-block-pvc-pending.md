@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2024
-lastupdated: "2024-06-14"
+lastupdated: "2024-08-12"
 
 
 keywords: kubernetes, help, network, connectivity, openshift
@@ -56,6 +56,7 @@ Find the root cause by describing your PVC and reviewing the common error messag
 | `Failed to place storage order with the storage provider` `Storage with the order ID 12345 could not be created after retrying for xx seconds.` `Failed to do subnet authorizations for the storage 12345.` `Storage 12345 has ongoing active transactions and could not be completed after retrying for xx seconds.` | The storage size, IOPS, and storage type might be incompatible with the storage class that you chose, or the {{site.data.keyword.cloud_notm}} infrastructure API endpoint is currently unavailable. | Review [Deciding on the file storage configuration](/docs/openshift?topic=openshift-file_storage#file_predefined_storageclass) and [Deciding on the block storage configuration](/docs/openshift?topic=openshift-block_storage#block_predefined_storageclass) to find supported storage sizes and IOPS for the storage class and storage type that you want to use. Then, delete the PVC and re-create the PVC. |
 | Failed to find the storage with storage id 12345. | You want to create a PVC for an existing storage instance by using Kubernetes static provisioning, but the storage instance that you specified could not be found. | Follow the instructions to provision existing [file storage](/docs/openshift?topic=openshift-file_storage#existing_file) or [block storage](/docs/openshift?topic=openshift-block_storage#existing_block) in your cluster and make sure to retrieve the correct information for your existing storage instance. Then, delete the PVC and re-create the PVC. |
 | Storage type not provided, expected storage type is `Endurance` or `Performance`. | You created your own storage class and specified a storage type that is not supported. | Update your own storage class to specify `Endurance` or `Performance` as your storage type. To find examples for your own storage classes, see the sample storage classes for [file storage](/docs/openshift?topic=openshift-file_storage#file_custom_storageclass) and [block storage](/docs/openshift?topic=openshift-block_storage#block_custom_storageclass). | 
+| `SoftLayer_Exception_User_Customer_Unauthorized: Invalid API key`  | You specified an IAM API key when a classic infrastructure API key is required. Or, the classic infrastructure API key you specified does not exist.   |  Follow the instructions in [Invalid API key](/docs/openshift?topic=openshift-ts-perms-creds#invalid_apikey)|
 {: caption="{{site.data.keyword.filestorage_short}} error messages" caption-side="bottom"}
 
 
