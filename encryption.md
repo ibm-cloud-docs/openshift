@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2024
-lastupdated: "2024-08-06"
+lastupdated: "2024-08-12"
 
 
 keywords: openshift, {{site.data.keyword.openshiftlong_notm}}, kubernetes, red hat, encrypt, security, kms, root key, crk
@@ -23,6 +23,9 @@ Protect sensitive information in your {{site.data.keyword.openshiftlong}} cluste
 {: shortdesc}
 
 {{site.data.keyword.openshiftlong_notm}} offers encryption at several layers in your cluster. In some cases, encryption is managed by IBM and in other cases you have the option to bring your own KMS provider credentials to manage encryption yourself.
+
+When you're done with this page, [try out the quiz](https://quizzes.12dekrh4l1b4.us-south.codeengine.appdomain.cloud/openshift/strategy/quiz.php).
+{: tip}
 
 The following table outlines the encryption options for {{site.data.keyword.openshiftlong_notm}} clusters.
 
@@ -101,5 +104,8 @@ Depending on the type of persistent storage you use, you can encrypt the data wr
 
 ## Next steps
 {: #plan-storage-next}
+
+[Test your knowledge with a quiz](https://quizzes.12dekrh4l1b4.us-south.codeengine.appdomain.cloud/openshift/encryption/quiz.php).
+{: tip}
 
 To continue the planning process, choose a [storage option](/docs/openshift?topic=openshift-storage-plan). If you're ready to get started with encryption, move on to [creating a KMS instance and root key](/docs/openshift?topic=openshift-encryption-setup). 
