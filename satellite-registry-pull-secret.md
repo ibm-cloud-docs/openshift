@@ -2,7 +2,7 @@
 
 copyright:
   years: 2023, 2024
-lastupdated: "2024-05-31"
+lastupdated: "2024-08-13"
 
 
 keywords: openshift, satellite, distributed cloud, on-prem, hybrid, images, private registry, pull secret
@@ -80,13 +80,13 @@ Complete the following steps to update the global pull secret in your {{site.dat
                   echo "Checking if RHEL or RHCOS host";
                   [[ -s /docker-config/.docker/config.json  ]] && CONFIG_PATH=/docker-config/.docker || CONFIG_PATH=/docker-config/root/.docker;
                   echo "Backing up or restoring config.json";
-                  [[ -s $CONFIG_PATH/config.json ]] && cp $CONFIG_PATH/config.json $CONFIG_PATH/config.json.bak || cp $CONFIG_PATH/config.json.bak $CONFIG_PATH/config.json;
+                  [[ -s \$CONFIG_PATH/config.json ]] && cp \$CONFIG_PATH/config.json \$CONFIG_PATH/config.json.bak || cp \$CONFIG_PATH/config.json.bak \$CONFIG_PATH/config.json;
                   echo "Merging secret with config.json";
-                  /host/usr/bin/jq -s '.[0] * .[1]' $CONFIG_PATH/config.json /auth/.dockerconfigjson > $CONFIG_PATH/config.tmp;
-                  mv $CONFIG_PATH/config.tmp $CONFIG_PATH/config.json;
+                  /host/usr/bin/jq -s '.[0] * .[1]' \$CONFIG_PATH/config.json /auth/.dockerconfigjson > \$CONFIG_PATH/config.tmp;
+                  mv \$CONFIG_PATH/config.tmp \$CONFIG_PATH/config.json;
                   echo "Sending signal to reload crio config";
                   pidof crio;
-                  kill -1 $(pidof crio)
+                  kill -1 \$(pidof crio)
               image: icr.io/ibm/alpine:latest
               imagePullPolicy: IfNotPresent
               name: updater
@@ -235,13 +235,13 @@ Complete the following steps to use {{site.data.keyword.satelliteshort}} config 
                   echo "Checking if RHEL or RHCOS host";
                   [[ -s /docker-config/.docker/config.json  ]] && CONFIG_PATH=/docker-config/.docker || CONFIG_PATH=/docker-config/root/.docker;
                   echo "Backing up or restoring config.json";
-                  [[ -s $CONFIG_PATH/config.json ]] && cp $CONFIG_PATH/config.json $CONFIG_PATH/config.json.bak || cp $CONFIG_PATH/config.json.bak $CONFIG_PATH/config.json;
+                  [[ -s \$CONFIG_PATH/config.json ]] && cp \$CONFIG_PATH/config.json \$CONFIG_PATH/config.json.bak || cp \$CONFIG_PATH/config.json.bak \$CONFIG_PATH/config.json;
                   echo "Merging secret with config.json";
-                  /host/usr/bin/jq -s '.[0] * .[1]' $CONFIG_PATH/config.json /auth/.dockerconfigjson > $CONFIG_PATH/config.tmp;
-                  mv $CONFIG_PATH/config.tmp $CONFIG_PATH/config.json;
+                  /host/usr/bin/jq -s '.[0] * .[1]' \$CONFIG_PATH/config.json /auth/.dockerconfigjson > \$CONFIG_PATH/config.tmp;
+                  mv \$CONFIG_PATH/config.tmp \$CONFIG_PATH/config.json;
                   echo "Sending signal to reload crio config";
                   pidof crio;
-                  kill -1 $(pidof crio)
+                  kill -1 \$(pidof crio)
               image: icr.io/ibm/alpine:latest
               imagePullPolicy: IfNotPresent
               name: updater
