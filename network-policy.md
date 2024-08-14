@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2024
-lastupdated: "2024-05-14"
+lastupdated: "2024-08-14"
 
 
 keywords: openshift
@@ -282,7 +282,9 @@ Before you begin, [install and configure the Calico CLI, and set the context for
     calicoctl apply -f allow-ibm-ports-public.yaml
     calicoctl apply -f allow-public-service-endpoint.yaml
     calicoctl apply -f deny-all-outbound-public.yaml
+    calicoctl apply -f allow-konnectivity.yaml
     calicoctl apply -f allow-openshift-console.yaml
+    calicoctl apply -f allow-openshift-metrics.yaml
     ```
     {: pre}
 
@@ -294,7 +296,14 @@ Before you begin, [install and configure the Calico CLI, and set the context for
     ```
     {: pre}
 
-1. Verify that the policies are applied.
+1. Verify that the network policies are applied.
+
+    ```sh
+    calicoctl get NetworkPolicies -o yaml -A
+    ```
+    {: pre}
+
+1. Verify that the global network policies are applied.
 
     ```sh
     calicoctl get GlobalNetworkPolicies -o yaml
