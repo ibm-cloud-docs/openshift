@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2024
-lastupdated: "2024-07-23"
+lastupdated: "2024-08-14"
 
 
 keywords: openshift
@@ -484,15 +484,15 @@ If you want to access services that run inside or outside {{site.data.keyword.cl
 3. Add the subnet CIDR or IP addresses to your service's allowlist for outbound traffic or your on-premises allowlist for inbound traffic.
 4. Repeat these steps for each cluster that you want to allow traffic to or from.
 
-## Updating IAM allowlists for {{site.data.keyword.containershort}} IP addresses
+## Updating IAM allowlists for {{site.data.keyword.containershort}} network zones
 {: #iam_firewall}
 
 By default, all IP addresses can be used to log in to the {{site.data.keyword.cloud_notm}} console and perform actions to manage your cluster, such as creating, updating, deleting or viewing credentials. In the IBM Cloud Identity and Access Management (IAM) console, you can [create an allowlist by specifying which IP addresses have access](/docs/account?topic=account-ips), and all other IP addresses are restricted.
 {: shortdesc} 
 
-In your allowlist, you must also add the CIDRs of the {{site.data.keyword.openshiftlong_notm}} control plane for the zones in the region where your cluster is located so that {{site.data.keyword.openshiftlong_notm}} can create or access components such as Ingress ALBs  or the {{site.data.keyword.redhat_openshift_notm}} web console, which requires all control plane IP addresses.
+In your allowlist, you must also configure network zones in the {{site.data.keyword.openshiftlong_notm}} control plane for the region where your cluster is located so that {{site.data.keyword.openshiftlong_notm}} can create or access components such as Ingress ALBs  or the {{site.data.keyword.redhat_openshift_notm}} web console, which requires all control plane IP addresses.
 
-Before you begin, the following steps require you to change the IAM allowlist for the user whose credentials are used for the cluster's region and resource group infrastructure permissions. If you are the credentials owner, you can change your own IAM allowlist settings. If you are not the credentials owner, but you are assigned the **Editor** or **Administrator** IBM Cloud IAM platform access role for the [User Management service](/docs/account?topic=account-account-services), you can update the restricted IP addresses for the credentials owner.
+Before you begin, the following steps require you to change the IAM allowlist for the user whose credentials are used for the cluster's region and resource group infrastructure permissions. If you are the credentials owner, you can change your own IAM allowlist settings. If you are not the credentials owner, but you are assigned the **Editor** or **Administrator** IBM Cloud IAM platform access role for the [User Management service](/docs/account?topic=account-account-services), you can update the networks for the credentials owner.
 
 1. Identify what user credentials are used for the cluster's region and resource group infrastructure permissions.
 
@@ -535,14 +535,39 @@ Before you begin, the following steps require you to change the IAM allowlist fo
         ```
         {: screen}
 
-2. [Get the CIDRs and IPs of the subnets that your worker nodes are attached to](#iam_cidr_ip).
-3. Get the [control plane CIDRs of the region where your cluster is located](https://github.com/IBM-Cloud/kube-samples/tree/master/iam-firewall-ips){: external}. 
 3. Log in to the [{{site.data.keyword.cloud_notm}} console](https://cloud.ibm.com/){: external}.
-4. From the menu bar, click **Manage** > **Access (IAM)**, and select **Users**.
-5. Select the user that you found in step 1 from the list.
-6. From the **User details** page, go to the **IP address restrictions** section.
-7. Enter the subnet CIDRs and IPs, and the control plane CIDRs of the region where your cluster is located.
-8. Click **Apply**.
+
+1. Create network zones that include the {{site.data.keyword.containershort}} IPs for either all regions or just the regions that you have clusters in.
+
+    1. In the account that the cluster is in, from the menu bar, click **Manage** > **Context-based restrictions**.
+    
+    1. Click **Network zones** > **Create**.
+
+    3. For the **Name**, enter a descriptive name for the network zone, such as `us-south-kubernetes-service-network-zone`.
+
+    4. Do not enter any values for the **Allowed IP addresses**  and **Allowed VPCs** sections.
+
+    5. In the **Reference a service** section, select **Kubernetes Service** and click **+**.
+
+    6. For **Locations**, you can either leave the field empty so that all locations are used, which applies to clusters in other regions, or you can specify a single region.
+
+    7. Click **Next** and review the selections.
+
+    8. Click **Create**.
+
+    9. Repeat for additional zones.
+
+1. Add the network zone names to your IAM allowlist.
+
+    1. From the menu bar, click **Manage** > **Access (IAM)**, and select **Users**.
+
+    2. Select the user that you found in step 1 from the list.
+
+    3. From the **User details** page, go to the **IP address restrictions** section.
+
+    4. Add the network zone names from the previous step. Example: `us-south-kubernetes-service-network-zone`
+
+    5. Click **Apply**.
 
 
 ### Getting your {{site.data.keyword.containershort}} subnet IP addresses
