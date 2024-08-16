@@ -1,7 +1,7 @@
-
+---
 copyright: 
   years: 2024, 2024
-lastupdated: "2024-08-13"
+lastupdated: "2024-08-16"
 
 keywords: alb, application load balancer, vpc alb, dns, public lb, private lb
 
@@ -329,11 +329,24 @@ Review the required and optional VPC ALB annotations and specifications.
 
 
 
+
+
+
+
+
+`service.kubernetes.io/ibm-load-balancer-cloud-provider-vpc-private-dns-instance-crn: "private-dns-crn"`
+:   Version 4.15 or later.
+:   The DNS `instance` to associate with this load balancer.  For more information, see [Registering a private DNS record](#vpc_alb_private_dns).
+
+
 `service.kubernetes.io/ibm-load-balancer-cloud-provider-vpc-private-dns-zone-id: "dns-zone-id"`
-:   The DNS `zone` to associate with this load balancer. Available only for private VPC ALBs on cluster version 4.15 or later.For more information, see [Registering a private DNS record](#vpc_alb_private_dns).
+:   Version 4.15 or later.
+:   The DNS `zone` to associate with this load balancer. For more information, see [Registering a private DNS record](#vpc_alb_private_dns).
 
 `service.kubernetes.io/ibm-load-balancer-cloud-provider-vpc-member-quota`
 :  The number of worker nodes per zone that the load balancer routes to. The default value is 8. For a cluster with worker nodes in three zones, this results in the the load balancer routing to 24 total worker nodes. The total number of worker nodes across all zones that the load balancer routes to cannot exceed 50. If the cluster has fewer than 50 worker nodes across all zones, specify 0 to route to all worker nodes in a zone. 
+
+
 
 `service.kubernetes.io/ibm-load-balancer-cloud-provider-vpc-allow-outbound-traffic`
 :   Available for clusters that run [Secure by Default](/docs/containers?topic=openshift-vpc-security-group-reference). Annotation to create security groups for each IP address of an ALB associated with an external port that you specify. These rules are created in the cluster security group and automatically update if the VPC ALB IP address changes. Specify valid external ports in a comma-separated list, such as `80,443`. In this example, if each public ALB associated with each external port value has two IP addresses, one outbound rule is created per IP address for a total of 4 new rules. You can add or remove this annotation at any time.
@@ -346,5 +359,4 @@ Review the required and optional VPC ALB annotations and specifications.
 
 `targetPort`
 :   The port to which the service directs traffic. The application running in the pod must be listening for incoming TCP traffic on this target port. The target port is often statically defined in the image that is running in the application pod. The target port configured in the pod is different than the node port for the service and might also be different than the external port that is configured on the VPC LB.
-
 

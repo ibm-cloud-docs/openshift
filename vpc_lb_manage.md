@@ -1,8 +1,7 @@
-
 ---
 copyright: 
   years: 2024, 2024
-lastupdated: "2024-08-13"
+lastupdated: "2024-08-16"
 
 
 keywords: load balancer, vpc, vpc load balancer, lb, persistent
@@ -223,5 +222,4 @@ After you have created a VPC NLB, you can not reconfigure the listening subnet i
     r006-5ecc68f6-c751-409f-b2e0-1c69babf0dc0   kube-c441c43d02mb8mg00r70-3e25d0b5bf03445796fe4ca3f73885cb   Network       subnet-2                                  true        active             online             default  
     ```
     {: pre}
-
 

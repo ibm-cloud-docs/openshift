@@ -1,8 +1,7 @@
-
 ---
 copyright: 
   years: 2024, 2024
-lastupdated: "2024-08-13"
+lastupdated: "2024-08-16"
 
 keywords: nlb, network load balancer, vpc nlb, dns, public lb, private lb
 subcollection: openshift
@@ -16,10 +15,6 @@ subcollection: openshift
 
 Expose your app to the public or to the private network by setting up a public or private Kubernetes `LoadBalancer` service in each zone of your VPC cluster. Then, you can optionally [register the VPC NLB with a DNS record and TLS certificate](#vpc_nlb_dns). VPC NLBs support both the TCP and UDP protocol types. 
 {: shortdesc}
-
-If you create a **public** Kubernetes `LoadBalancer` service, you expose your app to public network traffic. You can access your app from the internet through the external, public IP address that is assigned by the VPC NLB to the Kubernetes `LoadBalancer` service. No public gateway is required on your VPC subnet to allow public requests to your VPC NLB. However, if your app must access a public URL, you must attach public gateways to the VPC subnets that your worker nodes are connected to.
-
-If you create a **private** Kubernetes `LoadBalancer` service, you expose your app to private network traffic. Your app is accessible only to systems that are connected to your private subnets within the same region and VPC. If you are connected to your private VPC network, you can access your app through the external, private IP address that is assigned by the VPC NLB to the Kubernetes `LoadBalancer` service.
 
 ## Setting up a public or private VPC NLB
 {: #vpc_nlb_pub_priv}
@@ -287,6 +282,13 @@ Review the required and optional VPC NLB annotations and specifications.
 
 `service.kubernetes.io/ibm-load-balancer-cloud-provider-vpc-health-check-retries`
 :   The maximum number of health check retries for the VPC load balancer. By default, this value is set to `2`, and has a minimum of `1` and a maximum of `10`.
+
+
+
+
+
+
+
 
 `service.kubernetes.io/ibm-load-balancer-cloud-provider-vpc-member-quota`
 :   Optional. The number of worker nodes per zone that the load balancer routes to. The default value is 8. For a cluster with worker nodes in three zones, this results in the the load balancer routing to 24 total worker nodes. The total number of worker nodes across all zones that the load balancer routes to cannot exceed 50. If the cluster has fewer than 50 worker nodes across all zones, specify 0 to route to all worker nodes in a zone. 

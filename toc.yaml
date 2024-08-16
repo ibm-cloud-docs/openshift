@@ -625,7 +625,7 @@ toc:
               - ts-storage-debug.md
               - ts-storage-debug-file.md
               - ts-storage-pvc-fail-permissions.md
-              - ts-storage-file-block-pvc-pending.md
+              - ts-storage-file-pvc-pending.md
               - ts-vpc-file-container-creating.md
               - ts-storage-file-app.md
               - ts-storage-file-group-id-fail.md
@@ -646,6 +646,7 @@ toc:
               - ts-storage-block-mount-wrong-fs.md
               - ts-storage-block-read-only.md
               - ts-storage-block-throttling.md
+              - ts-storage-block-pvc-pending.md
               - ts-storage-vpc-block-api-key.md
               - ts-storage-block-not-attached.md
               - ts-storage-vpc-block-monitoring.md

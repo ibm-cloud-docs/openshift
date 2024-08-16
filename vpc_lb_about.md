@@ -1,9 +1,8 @@
-
 ---
 
 copyright: 
   years: 2014, 2024
-lastupdated: "2024-08-13"
+lastupdated: "2024-08-16"
 
 
 keywords: kubernetes, openshift, app protocol, application protocol
@@ -25,6 +24,10 @@ Learn how you can use VPC load balancers to expose your app on the public or pri
 {: shortdesc}
 
 To expose an app in a VPC cluster, you can create a layer 7 VPC Application Load Balancer(VPC ALB) or a layer 4 VPC Network Load Balancer (VPC NLB). 
+
+If you create a **public** Kubernetes `LoadBalancer` service, you expose your app to public network traffic. You can access your app from the internet through the external, public IP address that is assigned by the VPC NLB to the Kubernetes `LoadBalancer` service. No public gateway is required on your VPC subnet to allow public requests to your VPC NLB. However, if your app must access a public URL, you must attach public gateways to the VPC subnets that your worker nodes are connected to.
+
+If you create a **private** Kubernetes `LoadBalancer` service, you expose your app to private network traffic. Your app is accessible only to systems that are connected to your private subnets within the same region and VPC. If you are connected to your private VPC network, you can access your app through the external, private IP address that is assigned by the VPC NLB to the Kubernetes `LoadBalancer` service.
 
 ## Load balancer types
 {: #vpclb-types}
@@ -135,7 +138,4 @@ Review the following default settings and limitations.
     * VPC NLBs forward incoming traffic to all worker nodes in the cluster unless you restrict incoming traffic to specific worker nodes with the `service.kubernetes.io/ibm-load-balancer-cloud-provider-vpc-node-selector` or `service.kubernetes.io/ibm-load-balancer-cloud-provider-zone annotations`. To limit traffic to a specific zone, you can use these annotations to specify worker nodes in that zone. 
 * Disabling load balancer NodePort allocation is not supported for VPC load balancers. 
 * VPC NLBs can be set up with both UDP and TCP on the same VPC LB, but the listening port must be different.
-
-
-
 
