@@ -1,8 +1,7 @@
-
 ---
 copyright: 
   years: 2024, 2024
-lastupdated: "2024-08-13"
+lastupdated: "2024-08-19"
 
 keywords: nlb, network load balancer, vpc nlb, dns, public lb, private lb
 subcollection: openshift
@@ -16,10 +15,6 @@ subcollection: openshift
 
 Expose your app to the public or to the private network by setting up a public or private Kubernetes `LoadBalancer` service in each zone of your VPC cluster. Then, you can optionally [register the VPC NLB with a DNS record and TLS certificate](#vpc_nlb_dns). VPC NLBs support both the TCP and UDP protocol types. 
 {: shortdesc}
-
-If you create a **public** Kubernetes `LoadBalancer` service, you expose your app to public network traffic. You can access your app from the internet through the external, public IP address that is assigned by the VPC NLB to the Kubernetes `LoadBalancer` service. No public gateway is required on your VPC subnet to allow public requests to your VPC NLB. However, if your app must access a public URL, you must attach public gateways to the VPC subnets that your worker nodes are connected to.
-
-If you create a **private** Kubernetes `LoadBalancer` service, you expose your app to private network traffic. Your app is accessible only to systems that are connected to your private subnets within the same region and VPC. If you are connected to your private VPC network, you can access your app through the external, private IP address that is assigned by the VPC NLB to the Kubernetes `LoadBalancer` service.
 
 ## Setting up a public or private VPC NLB
 {: #vpc_nlb_pub_priv}
@@ -231,6 +226,69 @@ Create an NLB that uses a port range by using the following example. The selecto
     - `30003` = Is a node port in the range that responds to request
     - Other ports in the range do not respond unless additional node port services are created.
 
+## Registering a DNS record and TLS certificate
+{: #vpc_nlb_dns}
+
+VPC NLBs provide static external IP addresses through which you can access your app. To register an SSL certificate for your app domain to support HTTPS, you can create an IBM-provided subdomain or bring your own custom domain.
+{: shortdesc}
+
+For example, say that you have a multizone cluster, and run replicas of your app on worker nodes in each zone of your cluster. You create one VPC NLB per zone to expose the app replicas. Then, you can register the external IP addresses provided by each VPC NLB with one DNS entry.
+
+After you create a DNS subdomain for VPC NLBs, you can't use `nlb-dns health-monitor` commands to create a custom health check. Instead, the default VPC health check is used. For more information, see the [VPC documentation](/docs/vpc?topic=vpc-nlb-health-checks).
+{: note}
+
+- Create one VPC NLB per zone for your app. Ensure that you define an HTTPS port in your Kubernetes `LoadBalancer` service that configures the VPC NLB.
+- To use the SSL certificate to access your app via HTTPS, your app must be able to terminate TLS connections.
+
+Follow the steps to register VPC NLB IP addresses with a DNS subdomain.
+
+1. Retrieve the external IP address of your load balancer.
+
+    ```sh
+    oc get svc -o wide
+    ```
+    {: pre}
+
+    Example output
+    ```sh
+    NAME                      TYPE           CLUSTER-IP       EXTERNAL-IP       PORT(S)            AGE      SELECTOR
+    ...
+    myapp-vpc-nlb-jp-tok-3    LoadBalancer   172.21.xxx.xxx   169.xx.xxx.xx     8080:30532/TCP     1d       run=webserver
+    ```
+    {: screen}
+
+2. Create a custom or IBM-provided DNS subdomain for the IP address.
+
+    - **Custom domain**:
+        1. Register a custom domain by working with your Domain Name Service (DNS) provider or [{{site.data.keyword.cloud_notm}} DNS](/docs/dns-svcs?topic=dns-svcs-getting-started).
+        2. Define an alias for your custom domain by specifying the load balancer IP addresses as A records.
+
+    - **IBM-provided subdomain**: Use `nlb-dns` commands to generate a subdomain with an SSL certificate for the IP addresses. {{site.data.keyword.cloud_notm}} takes care of generating and maintaining the wildcard SSL certificate for the subdomain for you.
+
+        1. Create a DNS subdomain and SSL certificate.
+            ```sh
+            ibmcloud oc nlb-dns create vpc-gen2 --type public --cluster <cluster_name_or_id> --ip <vpc_nlb1_ip> --ip <vpc_nlb2_ip> --ip <vpc_nlb3_ip>
+            ```
+            {: pre}
+            
+        2. Verify that the subdomain is created. For more information, see [Understanding the subdomain format](/docs/openshift?topic=openshift-loadbalancer_hostname#loadbalancer_hostname_format).
+            ```sh
+            ibmcloud oc nlb-dns ls --cluster <cluster_name_or_id>
+            ```
+            {: pre}
+
+            Example output
+            ```sh
+            Subdomain                                                                               IP(s)                                        Health Monitor   SSL Cert Status           SSL Cert Secret Name
+            mycluster-a1b2cdef345678g9hi012j3kl4567890-0001.us-south.containers.appdomain.cloud     169.46.xx.x,169.48.xxx.xx,169.48.xxx.xx      None             created                   <certificate>
+            ```
+            {: screen}
+
+3. Open a web browser and enter the URL to access your app through the subdomain.
+
+To use the SSL certificate to access your app via HTTPS, ensure that you defined an HTTPS port in your [Kubernetes `LoadBalancer` service](#setup_vpc_alb). You can verify that requests are correctly routing through the HTTPS port by running `curl -v --insecure https://<domain>`. A connection error indicates that no HTTPS port is open on the service. Also, ensure that TLS connections can be terminated by your app. You can verify that your app terminates TLS properly by running `curl -v https://<domain>`. A certificate error indicates that your app is not properly terminating TLS connections.
+{: tip}
+
 
 ## Annotations and specifications
 {: #vpc_nlb_annotations}
@@ -252,14 +310,14 @@ Review the required and optional VPC NLB annotations and specifications.
 `externalTrafficPolicy`
 :   Specify `Local` or `Cluster`.
 :   Set to `Local` to preserve the source IP address of client requests to your apps. This setting prevents the incoming traffic from being forwarded to a different node. This option also configures HTTP health checks.
-:   If `Cluster` is set, DSR is implemented only from the worker node that the VPC NLB initially forwards the incoming request to. After the incoming request arrives, the request is forwarded to a worker node that contains the app pod, which might be in a different zone. The response from the app pod is sent to the original worker node, and that worker node uses DSR to send the response directly back to the client, bypassing the VPC NLB. This option also configures TCP health checks. For UDP load balancers, the `service.kubernetes.io/ibm-load-balancer-cloud-provider-vpc-health-check-udp` is required if you choose the `Cluster` option. For more information, see [Configuring TCP health checks for UDP load balancers](#vpc_lb_health_udp).
+:   If `Cluster` is set, DSR is implemented only from the worker node that the VPC NLB initially forwards the incoming request to. After the incoming request arrives, the request is forwarded to a worker node that contains the app pod, which might be in a different zone. The response from the app pod is sent to the original worker node, and that worker node uses DSR to send the response directly back to the client, bypassing the VPC NLB. This option also configures TCP health checks. For UDP load balancers, the `service.kubernetes.io/ibm-load-balancer-cloud-provider-vpc-health-check-udp` is required if you choose the `Cluster` option. For more information, see [Configuring TCP health checks for UDP load balancers](/docs/openshift?topic=openshift-vpclb_manage#vpc_lb_health_udp).
 
 
 ### Optional annotations and specifications
 {: #vpc_nlb_annotations_opt}
 
 `service.kubernetes.io/ibm-load-balancer-cloud-provider-vpc-lb-name`
-:   Include a unique name to make your VPC load balancer persistent. Persistent VPC load balancers are not deleted when the cluster they belong to is deleted. For more information, see [Persistent VPC load balancers](#vpc_lb_persist). This annotation can be set only on load balancer creation. It cannot be used in an update operation.
+:   Include a unique name to make your VPC load balancer persistent. Persistent VPC load balancers are not deleted when the cluster they belong to is deleted. For more information, see [Persistent VPC load balancers](/docs/openshift?topic=openshift-vpclb_manage#vpc_lb_persist). This annotation can be set only on load balancer creation. It cannot be used in an update operation.
 
 `service.kubernetes.io/ibm-load-balancer-cloud-provider-zone`
 :   Annotation to specify a VPC zone that your cluster is attached to. The VPC NLB is deployed to the same subnet in that zone that your worker nodes are connected to.  If you later change this annotation to a different zone, the VPC NLB is not moved to the new zone. If you don't specify this annotation or the `service.kubernetes.io/ibm-load-balancer-cloud-provider-vpc-subnets annotation`, the VPC NLB is deployed to the most optimal zone (such as a zone that has worker nodes in the `Ready` state). If the `dedicated: edge` label is set on worker nodes and you specify this annotation, then only edge nodes in the specified zone are configured to receive traffic. Edge nodes in other zones and non-edge nodes in the specified zone don't receive traffic from the load balancer. To see zones, run `ibmcloud ks zone ls --provider vpc-gen2`. To see zones, run `ibmcloud ks zone ls --provider vpc-gen2`.
@@ -268,7 +326,7 @@ Review the required and optional VPC NLB annotations and specifications.
 :   Annotation to specify a worker node label selector. You can configure specific worker nodes in your cluster to receive traffic by specifying label selector keys. You can include only one label selector in the annotation, and that the selector must be specified in the `"key=value"` format. If this annotation is not specified, all worker nodes in your cluster are configured to receive traffic from the VPC NLB. This annotation takes precedence over the `service.kubernetes.io/ibm-load-balancer-cloud-provider-zone` annotation, and any `dedicated: edge` labels on worker nodes are ignored. To limit traffic to a specific zone, you can use this annotation to specify worker nodes in that zone. Note that setting a new label on a cluster worker node does not automatically configure the worker node to recieve traffic; you must recreate or update the VPC NLB for the newly-labeled worker node to recieve traffic. 
 
 `service.kubernetes.io/ibm-load-balancer-cloud-provider-vpc-health-check-udp`
-:    The TCP node port to use for TCP health checks in a UDP load balancer. Required for UDP load balancers that have `externalTrafficPolicy` set to `Cluster`. See [Configuring TCP health checks for UDP load balancers](#vpc_lb_health_udp) for more considerations before setting a port value.
+:    The TCP node port to use for TCP health checks in a UDP load balancer. Required for UDP load balancers that have `externalTrafficPolicy` set to `Cluster`. See [Configuring TCP health checks for UDP load balancers](/docs/openshift?topic=openshift-vpclb_manage#vpc_lb_health_udp) for more considerations before setting a port value.
 
 `service.kubernetes.io/ibm-load-balancer-cloud-provider-vpc-health-check-protocol`
 :  This annotation sets the health check protocol on the VPC load balancer resource associated with the Kubernetes load balancer service. Available options are `http`, `https`, or `tcp`. Usually, the VPC LB health check protocol is determined by the value of the `externalTrafficPolicy` setting in the Kubernetes load balancer service specification. However, this annotation overrides that logic. This annotation does **not** alter how Kubernetes, and kube-proxy in particular, behaves in regards to the various settings of `externalTrafficPolicy`.
@@ -287,6 +345,13 @@ Review the required and optional VPC NLB annotations and specifications.
 
 `service.kubernetes.io/ibm-load-balancer-cloud-provider-vpc-health-check-retries`
 :   The maximum number of health check retries for the VPC load balancer. By default, this value is set to `2`, and has a minimum of `1` and a maximum of `10`.
+
+
+
+
+
+
+
 
 `service.kubernetes.io/ibm-load-balancer-cloud-provider-vpc-member-quota`
 :   Optional. The number of worker nodes per zone that the load balancer routes to. The default value is 8. For a cluster with worker nodes in three zones, this results in the the load balancer routing to 24 total worker nodes. The total number of worker nodes across all zones that the load balancer routes to cannot exceed 50. If the cluster has fewer than 50 worker nodes across all zones, specify 0 to route to all worker nodes in a zone. 

@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2024
-lastupdated: "2024-08-06"
+lastupdated: "2024-08-19"
 
 
 keywords: openshift, {{site.data.keyword.openshiftlong_notm}}, oc, ks
@@ -438,7 +438,7 @@ Version 1.0.331 of the CLI was released on 12 October 2021.
 Version 1.0.327 of the CLI was released on 11 October 2021.
 {: shortdesc}
 
-- Adds the `--data-location` option for the `ibmcloud sat config create` command and the `--location` option for the `ibmcloud sat storage assingment ls` command.
+- Adds the `--data-location` option for the `ibmcloud sat config create` command and the `--location` option for the `ibmcloud sat storage assignment ls` command.
 - Updates the help text in various languages.
 
 ## Version 1.0.312

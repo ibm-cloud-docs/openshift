@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2024
-lastupdated: "2024-08-06"
+lastupdated: "2024-08-19"
 
 
 keywords: openshift, {{site.data.keyword.openshiftlong_notm}}, kubernetes, clusters, worker nodes, worker pools, vpc-gen2
@@ -43,7 +43,7 @@ Use the {{site.data.keyword.cloud_notm}} CLI or the {{site.data.keyword.cloud_no
 
 * If you want to create a cluster that runs on dedicated hardware, you must first use the CLI to [create a dedicated host pool](/docs/openshift?topic=openshift-dedicated-hosts#setup-dedicated-host-cli) in your account. 
 
-OpenShift Data Foundation and the cluster autoscaler add-ons do not support Red Hat CoreOS worker nodes. If you need to install these add-ons in your cluster, use RHEL worker nodes instead.
+The cluster autoscaler add-on does not support Red Hat CoreOS worker nodes. If you need to install this add-on in your cluster, use RHEL worker nodes instead.
 {: important}
 
 

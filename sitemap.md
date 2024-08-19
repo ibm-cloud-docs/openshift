@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2024
-lastupdated: "2024-08-14"
+lastupdated: "2024-08-19"
 
 
 keywords: openshift
@@ -4436,19 +4436,19 @@ subcollection: openshift
 
 * [Limitations](/docs/openshift?topic=openshift-vpclb-about#vpclb_limit)
 
-[Setting up an Application Load Balancer for VPC](/docs/openshift?topic=openshift-setup_vpc_ks_vpc_lb#setup_vpc_ks_vpc_lb)
+[Setting up an Application Load Balancer for VPC](/docs/openshift?topic=openshift-setup_vpc_alb#setup_vpc_alb)
 
-* [Setting up a public or private VPC ALB](/docs/openshift?topic=openshift-setup_vpc_ks_vpc_lb#setup_vpc_alb_pub_priv)
+* [Setting up a public or private VPC ALB](/docs/openshift?topic=openshift-setup_vpc_alb#setup_vpc_alb_pub_priv)
 
-* [Registering a DNS record and TLS certificate](/docs/openshift?topic=openshift-setup_vpc_ks_vpc_lb#vpc_lb_dns)
+* [Registering a DNS record and TLS certificate](/docs/openshift?topic=openshift-setup_vpc_alb#vpc_lb_dns)
 
-    * [Registering a private DNS record for a private VPC ALB](/docs/openshift?topic=openshift-setup_vpc_ks_vpc_lb#vpc_alb_private_dns)
+    * [Registering a private DNS record for a private VPC ALB](/docs/openshift?topic=openshift-setup_vpc_alb#vpc_alb_private_dns)
 
-* [Annotations and specifications](/docs/openshift?topic=openshift-setup_vpc_ks_vpc_lb#vpc_alb_annotations)
+* [Annotations and specifications](/docs/openshift?topic=openshift-setup_vpc_alb#vpc_alb_annotations)
 
-    * [Required annotations and specifications](/docs/openshift?topic=openshift-setup_vpc_ks_vpc_lb#vpc_nlb_annotations_req)
+    * [Required annotations and specifications](/docs/openshift?topic=openshift-setup_vpc_alb#vpc_nlb_annotations_req)
 
-    * [Optional annotations and specifications](/docs/openshift?topic=openshift-setup_vpc_ks_vpc_lb#vpc_nlb_annotations_opt)
+    * [Optional annotations and specifications](/docs/openshift?topic=openshift-setup_vpc_alb#vpc_nlb_annotations_opt)
 
 [Setting up a Network Load Balancer for VPC](/docs/openshift?topic=openshift-setup_vpc_nlb#setup_vpc_nlb)
 
@@ -4459,6 +4459,8 @@ subcollection: openshift
     * [Configure the `LoadBalancer` service](/docs/openshift?topic=openshift-setup_vpc_nlb#vpc_nlb_config)
 
     * [Setting up a public NLB using a port range](/docs/openshift?topic=openshift-setup_vpc_nlb#nlb-setup-portrange)
+
+* [Registering a DNS record and TLS certificate](/docs/openshift?topic=openshift-setup_vpc_nlb#vpc_nlb_dns)
 
 * [Annotations and specifications](/docs/openshift?topic=openshift-setup_vpc_nlb#vpc_nlb_annotations)
 
@@ -6405,6 +6407,8 @@ subcollection: openshift
 
 * [Overview](/docs/openshift?topic=openshift-openshift_changelog_415#openshift_changelog_overview_415)
 
+    * [Change log for worker node fix pack 4.15.25_1555_openshift, released 12 August 2024](/docs/openshift?topic=openshift-openshift_changelog_415#41525_1555_openshift_W)
+
     * [Change log for master fix pack 4.15.22_1554_openshift, released 31 July 2024](/docs/openshift?topic=openshift-openshift_changelog_415#41522_1554_openshift_M)
 
     * [Change log for worker node fix pack 4.15.23_1553_openshift, released 29 July 2024](/docs/openshift?topic=openshift-openshift_changelog_415#41523_1553_openshift_W)
@@ -6547,6 +6551,8 @@ subcollection: openshift
 [Version 4.14 change log](/docs/openshift?topic=openshift-openshift_changelog_414#openshift_changelog_414)
 
 * [Overview](/docs/openshift?topic=openshift-openshift_changelog_414#openshift_changelog_overview_414)
+
+    * [Change log for worker node fix pack 4.14.34_1577_openshift, released 12 August 2024](/docs/openshift?topic=openshift-openshift_changelog_414#41434_1577_openshift_W)
 
     * [Change log for master fix pack 4.14.33_1575_openshift, released 31 July 2024](/docs/openshift?topic=openshift-openshift_changelog_414#41433_1575_openshift_M)
 
@@ -6694,6 +6700,8 @@ subcollection: openshift
 [Version 4.13 change log](/docs/openshift?topic=openshift-openshift_changelog_413#openshift_changelog_413)
 
 * [Overview](/docs/openshift?topic=openshift-openshift_changelog_413#openshift_changelog_overview_413)
+
+    * [Change log for worker node fix pack 4.13.46_1587_openshift, released 12 August 2024](/docs/openshift?topic=openshift-openshift_changelog_413#41346_1587_openshift_W)
 
     * [Change log for master fix pack 4.13.45_1585_openshift, released 31 July 2024](/docs/openshift?topic=openshift-openshift_changelog_413#41345_1585_openshift_M)
 
@@ -6881,6 +6889,8 @@ subcollection: openshift
 [Version 4.12 change log](/docs/openshift?topic=openshift-openshift_changelog_412#openshift_changelog_412)
 
 * [Overview](/docs/openshift?topic=openshift-openshift_changelog_412#openshift_changelog_overview_412)
+
+    * [Change log for worker node fix pack 4.12.61_1604_openshift, released 12 August 2024](/docs/openshift?topic=openshift-openshift_changelog_412#41261_1604_openshift_W)
 
     * [Change log for master fix pack 4.12.60_1602_openshift, released 31 July 2024](/docs/openshift?topic=openshift-openshift_changelog_412#41260_1602_openshift_M)
 
@@ -10719,7 +10729,7 @@ subcollection: openshift
 
 [What permissions do I need to manage storage and create PVCs?](/docs/openshift?topic=openshift-missing_permissions#missing_permissions)
 
-[File storage and block storage: Why does my PVC remain in a pending state?](/docs/openshift?topic=openshift-file_pvc_pending#file_pvc_pending)
+[Why does my file storage PVC remain in a pending state?](/docs/openshift?topic=openshift-file_pvc_pending#file_pvc_pending)
 
 [Why is my app pod stuck in `Container creating` when trying to mount {{site.data.keyword.filestorage_vpc_short}}?](/docs/openshift?topic=openshift-ts-vpc-file-container-creating#ts-vpc-file-container-creating)
 
@@ -10777,6 +10787,8 @@ subcollection: openshift
 [Why does block storage change to read-only?](/docs/openshift?topic=openshift-readonly_block#readonly_block)
 
 [Why does the Block storage plug-in Helm chart give CPU throttling warnings?](/docs/openshift?topic=openshift-block_helm_cpu#block_helm_cpu)
+
+[Why does my block storage PVC remain in a pending state?](/docs/openshift?topic=openshift-block_pvc_pending#block_pvc_pending)
 
 [{{site.data.keyword.block_storage_is_short}} PVC creation fails after API key reset](/docs/openshift?topic=openshift-vpc-block-api-key-reset-ts#vpc-block-api-key-reset-ts)
 

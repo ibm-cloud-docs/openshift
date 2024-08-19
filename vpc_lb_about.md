@@ -1,9 +1,8 @@
-
 ---
 
 copyright: 
   years: 2014, 2024
-lastupdated: "2024-08-13"
+lastupdated: "2024-08-19"
 
 
 keywords: kubernetes, openshift, app protocol, application protocol
@@ -25,6 +24,10 @@ Learn how you can use VPC load balancers to expose your app on the public or pri
 {: shortdesc}
 
 To expose an app in a VPC cluster, you can create a layer 7 VPC Application Load Balancer(VPC ALB) or a layer 4 VPC Network Load Balancer (VPC NLB). 
+
+If you create a **public** Kubernetes `LoadBalancer` service, you expose your app to public network traffic. You can access your app from the internet through the external, public IP address that is assigned by the VPC NLB to the Kubernetes `LoadBalancer` service. No public gateway is required on your VPC subnet to allow public requests to your VPC NLB. However, if your app must access a public URL, you must attach public gateways to the VPC subnets that your worker nodes are connected to.
+
+If you create a **private** Kubernetes `LoadBalancer` service, you expose your app to private network traffic. Your app is accessible only to systems that are connected to your private subnets within the same region and VPC. If you are connected to your private VPC network, you can access your app through the external, private IP address that is assigned by the VPC NLB to the Kubernetes `LoadBalancer` service.
 
 ## Load balancer types
 {: #vpclb-types}
@@ -103,6 +106,7 @@ The following diagram illustrates how a user accesses an app from the internet t
 2. The request is automatically forwarded by the VPC NLB to one of the node ports on the worker node, and then to the private IP address of the app pod.
 3. If app instances are deployed to multiple worker nodes in the cluster, the VPC NLB routes the requests between the app pods on various worker nodes across all zones of the cluster.
 
+
 ## Limitations
 {: #vpclb_limit}
 
@@ -126,7 +130,7 @@ Review the following default settings and limitations.
     * `spec.loadBalancerSourceRanges`
     * VPC NLBs only: `service.kubernetes.io/ibm-load-balancer-cloud-provider-enable-features: "proxy-protocol"`
     * VPC ALBs only: The `externalTrafficPolicy: Local` setting is supported, but the setting does not preserve the source IP of the request.
-* When you delete a VPC cluster, any non-persistent VPC load balancers, which are named in the `kube-<cluster_ID>-<kubernetes_lb_service_UID>` format and are automatically created by {{site.data.keyword.openshiftlong_notm}} for the Kubernetes `LoadBalancer` services in that cluster, are also automatically deleted. However, [persistent load balancers](#vpc_lb_persist) with unique names and VPC load balancers that you manually created in your VPC are not deleted.
+* When you delete a VPC cluster, any non-persistent VPC load balancers, which are named in the `kube-<cluster_ID>-<kubernetes_lb_service_UID>` format and are automatically created by {{site.data.keyword.openshiftlong_notm}} for the Kubernetes `LoadBalancer` services in that cluster, are also automatically deleted. However, [persistent load balancers](/docs/openshift?topic=openshift-vpclb_manage#vpc_lb_persist) with unique names and VPC load balancers that you manually created in your VPC are not deleted.
 * You can register up to 128 subdomains for VPC load balancer hostnames. This limit can be lifted on request by opening a [support case](/docs/get-support?topic=get-support-using-avatar).
 * Subdomains that you register for VPC load balancers are limited to 130 characters or fewer.
 * VPC ALBs listen on the same VPC subnets that the cluster worker nodes are allocated on unless the Kubernetes load balancer service is created with the `service.kubernetes.io/ibm-load-balancer-cloud-provider-vpc-subnets` or `service.kubernetes.io/ibm-load-balancer-cloud-provider-zone` annotations, which limit traffic to specific nodes.
@@ -135,7 +139,4 @@ Review the following default settings and limitations.
     * VPC NLBs forward incoming traffic to all worker nodes in the cluster unless you restrict incoming traffic to specific worker nodes with the `service.kubernetes.io/ibm-load-balancer-cloud-provider-vpc-node-selector` or `service.kubernetes.io/ibm-load-balancer-cloud-provider-zone annotations`. To limit traffic to a specific zone, you can use these annotations to specify worker nodes in that zone. 
 * Disabling load balancer NodePort allocation is not supported for VPC load balancers. 
 * VPC NLBs can be set up with both UDP and TCP on the same VPC LB, but the listening port must be different.
-
-
-
 
