@@ -2,7 +2,7 @@
 
 copyright:
   years: 2024, 2024
-lastupdated: "2024-07-23"
+lastupdated: "2024-08-19"
 
 
 keywords: pods, pod connectvity, networking, pod networking, pod trouble shooting, pod debug
@@ -24,7 +24,7 @@ Review the options and strategies for debugging connection issues between pods.
 
 Follow these steps to check the health of your components. Networking issues might occur if your cluster components are not up to date or are not in a healthy state.
 
-1. Check that your cluster master and worker nodes run on a supported version and are in a healthy state. If the cluster master or workers do not run a supported version, [make any necessary updates](/docs/containers?topic=containers-update) so that they run a supported version. If the status of any components is not `Normal` or `Ready`, review the [cluster master health states](/docs/containers?topic=containers-debug_master), [cluster states](https://cloud.ibm.com/docs/containers?topic=containers-cluster-states-reference), or [worker node states](/docs/containers?topic=containers-worker-node-state-reference) for more information. Make sure any related issues are resolved before continuing. 
+1. Check that your cluster master and worker nodes run on a supported version and are in a healthy state. If the cluster master or workers do not run a supported version, [make any necessary updates](/docs/openshift?topic=openshift-update) so that they run a supported version. If the status of any components is not `Normal` or `Ready`, review the [cluster master health states](/docs/openshift?topic=openshift-debug_master), [cluster states](/docs/openshift?topic=openshift-cluster-states-reference), [worker node states](/docs/openshift?topic=openshift-worker-node-state-reference), or [steps to troubleshoot `Critical` or `NotReady` worker nodes](https://cloud.ibm.com/docs/openshift?topic=openshift-ts-critical-notready) for more information. Make sure any related issues are resolved before continuing. 
 
     To check the cluster master version and health:
     ```sh
@@ -41,27 +41,33 @@ Follow these steps to check the health of your components. Networking issues mig
 2. For each worker node, verify that the Calico and cluster DNS pods are present and running in a healthy state. 
     1. Run the command to get the details of your cluster's pods. 
 
-        ```sh
-        oc get pods -A -o wide | grep calico
+       ```sh
+        oc get pods -A -o wide | grep -e calico -e dns-default
         ```
         {: pre}
+
 
     2. In the output, make sure that your cluster includes the following pods. Make sure that each pod's status is `Running`, and that the pods do not have too many restarts.
         - Exactly one `calico-node` pod per worker node. 
         - At least one `calico-typha` pod per cluster. Larger clusters might have more than one. 
         - Exactly one `calico-kube-controllers` pod per cluster. 
-        - At least one `dns-default` pod per cluster. Larger clusters might have more than one. 
-
+        - One `dns-default` pod per node. However, some nodes might not have the `dns-default` pod if they have labels attached. This is normal and does not cause network issues.
+        
         Example output 
+        
 
-        ```sh
-        NAMESPACE       NAME                                       READY   STATUS     RESTARTS    AGE   IP              NODE           NOMINATED NODE   READINESS GATES
-        calico-system   calico-kube-controllers-7dbc745664-vp7kh   1/1     Running    0           34h   172.17.24.75    192.168.0.22   <none>           <none>
-        calico-system   calico-node-h9gpz                          1/1     Running    1           34h   192.168.0.22    192.168.0.22   <none>           <none>
-        calico-system   calico-node-z8tb9                          1/1     Running    0           34h   192.168.0.21    192.168.0.21   <none>           <none>
-        calico-system   calico-typha-5bdc4ddb57-h7jfd              1/1     Running    0           34h   192.168.0.22    192.168.0.22   <none>           <none>
+        
+        ```
+        NAMESPACE        NAME                               READY   STATUS     RESTARTS    AGE    IP              NODE           NOMINATED     READINESS GATES
+        calico-system    calico-kube-controllers-1a1a1a1    1/1     Running     0          37m    172.17.61.195   10.245.0.5     <none>        <none>
+        calico-system    calico-node-1a1a1a1                1/1     Running     0          37m    10.245.0.5      10.245.0.5     <none>        <none>
+        calico-system    calico-node-1a1a1a1                1/1     Running     0          37m    10.245.0.4      10.245.0.4     <none>        <none>
+        calico-system    calico-typha-1a1a1a1               1/1     Running     0          37m    10.245.0.5      10.245.0.5     <none>        <none>
+        openshift-dns    dns-default-1a1a1a1                2/2     Running     0          33m    172.17.36.144   10.245.0.4     <none>        <none>
+        openshift-dns    dns-default-1a1a1a1                2/2     Running     0          33m    172.17.61.210   10.245.0.5     <none>        <none>
         ```
         {: screen}
+        
 
     3. If any of the listed pods are not present or are in an unhealthy state, go through the cluster and worker node trouble shooting documentation included in the previous steps. Make sure any issues with the pods in this step are resolved before moving on.
 
@@ -83,7 +89,7 @@ To determine the cause of networking issues on your pods, you can create a test 
     ```
     {: pre}
 
-    Add labels to the namespace. 
+ 1. Add labels to the new privileged namespace. 
 
     ```sh
     oc label namespace pod-network-test --overwrite=true \
@@ -104,115 +110,43 @@ oc adm policy add-scc-to-group privileged system:serviceaccounts:pod-network-tes
 ```
 {: pre}
 
-
-1. Create and apply a daemonset that creates a test pod on each node. Choose the correct daemonset based on your cluster connectivity (public, private, or none). You can make additional customizations to the daemonset as needed. 
-
-    **For clusters with public connectivity.** This daemonset uses an image from Docker.
-
+1. Create and apply the following daemonset to create a test pod on each node. 
     ```yaml
     apiVersion: apps/v1
     kind: DaemonSet
     metadata:
       labels:
-        name: nginx-test
-        app: nginx-test
-      name: nginx-test
+        name: webserver-test
+        app: webserver-test
+      name: webserver-test
     spec:
       selector:
         matchLabels:
-          name: nginx-test
+          name: webserver-test
       template:
         metadata:
           labels:
-            name: nginx-test
-            app: nginx-test
+            name: webserver-test
+            app: webserver-test
         spec:
           tolerations:
           - operator: "Exists"
           containers:
-          - name: nginx
-            securityContext:
-              privileged: true
-            image: docker.io/nginx:latest
-            ports:
-            - containerPort: 80
-    ```
-    {: codeblock}
-
-    **For clusters with private connectivity.** This daemonset uses the `us.icr.io/armada-master/network-alpine:latest` image from IBM Container Registry. 
-
-    ```yaml
-    apiVersion: apps/v1
-    kind: DaemonSet
-    metadata:
-      labels:
-        name: nginx-test
-        app: nginx-test
-      name: nginx-test
-    spec:
-      selector:
-        matchLabels:
-          name: nginx-test
-      template:
-        metadata:
-          labels:
-            name: nginx-test
-            app: nginx-test
-        spec:
-          nodeSelector:
-            kubernetes.io/hostname: 10.1.1.1
-          tolerations:
-          - operator: "Exists"
-          containers:
-          - name: nginx
+          - name: webserver
             securityContext:
               privileged: true
             image: us.icr.io/armada-master/network-alpine:latest
-            command: ["/bin/sh"]
-            args: ["-c", "echo Hello from ${POD_NAME} > /root/index.html && while true; do { echo -ne \"HTTP/1.0 200 OK\r\nContent-Length: $(wc -c </root/index.html)\r\n\r\n\"; cat /root/index.html; } | nc -l -p 80; done"]
             env:
+              - name: ENABLE_ECHO_SERVER
+                value: "true"
               - name: POD_NAME
                 valueFrom:
                   fieldRef:
                     fieldPath: metadata.name
-            ports:
-            - containerPort: 80
-    ```
-    {: codeblock}
-
-    **For clusters with no outbound connectivity at all.** This daemonset allows you to use the `ping`, `dig`, and `nc` commands without requiring outbound connectivity. 
-
-    ```yaml
-    apiVersion: apps/v1
-    kind: DaemonSet
-    metadata:
-      labels:
-        name: test-client
-        app: test-client
-      name: test-client
-    spec:
-      selector:
-        matchLabels:
-          name: test-client
-      template:
-        metadata:
-          labels:
-            name: test-client
-            app: test-client
-        spec:
-          tolerations:
-          - operator: "Exists"
-          nodeSelector:
-            kubernetes.io/hostname: 10.1.1.1
-        containers:
-        - name: test-client
-          securityContext:
-            privileged: true
-          image: us.icr.io/armada-master/network-alpine:latest
-          command: ["/bin/sh"]
-          args: ["-c", "echo Hi && while true; do sleep 86400; done"]
-    ```
-    {: codeblock}
+          restartPolicy: Always
+          terminationGracePeriodSeconds: 1
+          ```
+          {: codeblock}
 
 1. Apply the daemonset to deploy test pods on your worker nodes. 
 
@@ -227,8 +161,6 @@ oc apply --namespace pod-network-test -f <daemonset-file>
     ```
     {: pre}
 
-If you are using an image from your private container registry and you see pull errors due to not having the proper authority, try deploying the daemonset in the `default` namespace instead.
-{: tip}
 
 ### Running tests within the pods
 {: #debug_pods_test_run}
@@ -246,9 +178,9 @@ Run `curl`, `ping`, and `nc` commands to test each pod's network connection and 
     Example output 
 
     ```sh
-    NAME               READY   STATUS    RESTARTS   AGE   IP               NODE             NOMINATED NODE   READINESS GATES
-    nginx-test-dgbkz   1/1     Running   0          18s   172.30.208.211   10.188.102.116   <none>           <none>
-    nginx-test-v8lvz   1/1     Running   0          18s   172.30.248.201   10.188.102.120   <none>           <none>
+    NAME                   READY   STATUS    RESTARTS   AGE   IP               NODE        NOMINATED NODE   READINESS GATES
+    webserver-test-1a1a1   1/1     Running   0          68s   172.17.36.169   10.245.0.4   <none>           <none>
+    webserver-test-1a1a1   1/1     Running   0          68s   172.17.61.240   10.245.0.5   <none>           <none>
     ```
     {: screen}
 
@@ -262,16 +194,26 @@ Run `curl`, `ping`, and `nc` commands to test each pod's network connection and 
 1. Run the `curl` command on the pod and note the output. Specify the IP of the pod that you did **not** log into. This tests the network connection between pods on different nodes. 
 
     ```sh
-    curl <pod_ip>
+    curl <pod_ip>:8080
     ```
     {: pre}
 
     Example successful output. 
 
     ```sh
-    Welcome to nginx!
-    If you see this page, the nginx web server is successfully installed and
-    working. Further configuration is required.
+    Hostname: webserver-test-t546j
+
+    Pod Information:
+      node name:	env var NODE_NAME not set
+      pod name:	webserver-test-t546j
+      pod namespace:	env var POD_NAMESPACE not set
+      pod IP:  	env var POD_IP not set
+
+    Connection Information:
+      remote address:	172.17.36.169
+      remote port:	56042
+      local address:	172.17.61.240
+      local port:	8080
     ```
     {: screen}
 
@@ -301,16 +243,15 @@ Run `curl`, `ping`, and `nc` commands to test each pod's network connection and 
 1. Run the `nc` command on the pod and note the output. Specify the IP of the pod that you did **not** log into with the `exec` command. This tests the network connection between pods on different nodes. 
 
     ```sh
-    nc -vzw 5 <pod_ip> 80
+    nc -vzw 5 <pod_ip> 8080
     ```
     {: pre}
 
     Example successful output. 
 
     ```sh
-    Ncat: Version 7.93 ( https://nmap.org/ncat )
-    Ncat: Connected to 172.30.248.201:80.
-    Ncat: 0 bytes sent, 0 bytes received in 0.12 seconds.
+    nc -vzw 5 172.17.61.240 8080
+    172.17.61.240 (172.17.61.240:8080) open
     ```
     {: screen}
 
@@ -387,7 +328,7 @@ Review the outputs from the earlier section to help find the cause of your pod n
 
 - If the DNS lookups from the `dig` commands failed,  See the [Red Hat DNS troubleshooting information](https://access.redhat.com/solutions/3804501){: external}. 
 
-If you are still unable to resolve your pod networking issue, [open a support case](/docs/get-support?topic=get-support-open-case) and include a detailed description of the problem, how you have tried to solve it, what kinds of tests you ran, and [relevant logs](/docs/containers?topic=containers-debug_clusters&interface=ui#ts-5) for your pods and worker nodes. For more information on opening a support case and what information to include, see the [general debugging guide](/docs/containers?topic=containers-debug_clusters&interface=ui#ts-3).
+If you are still unable to resolve your pod networking issue, [open a support case](/docs/get-support?topic=get-support-open-case) and include a detailed description of the problem, how you have tried to solve it, what kinds of tests you ran, and [relevant logs](/docs/openshift?topic=openshift-debug_clusters&interface=ui#ts-5) for your pods and worker nodes. For more information on opening a support case and what information to include, see the [general debugging guide](/docs/openshift?topic=openshift-debug_clusters&interface=ui#ts-3).
 
 
 
