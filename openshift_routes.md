@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2024
-lastupdated: "2024-06-12"
+lastupdated: "2024-08-19"
 
 
 keywords: openshift, route, router
@@ -13,7 +13,6 @@ subcollection: openshift
 
 
 {{site.data.keyword.attribute-definition-list}}
-
 
 
 
