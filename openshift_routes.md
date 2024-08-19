@@ -91,7 +91,7 @@ When you create a multizone VPC cluster with the public cloud service endpoint e
 
 The following diagram shows how a Ingress controller directs network traffic from the internet to an app in a multizone, VPC cluster.
 
-![Expose an app in a multizone VPC cluster by using an Ingress controller](images/traffic-flow-multizone-vpc-public.svg)"Expose an app in a multizone VPC cluster by using an Ingress controller"){: caption="Figure 1. Expose an app in a multizone VPC cluster by using an Ingress controller" caption-side="bottom"}
+![Expose an app in a multizone VPC cluster by using an Ingress controller](images/traffic-flow-multizone-vpc-public.svg "Expose an app in a multizone VPC cluster by using an Ingress controller"){: caption="Figure 1. Expose an app in a multizone VPC cluster by using an Ingress controller" caption-side="bottom"}
 
 
 
