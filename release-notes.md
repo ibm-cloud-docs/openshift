@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2024
-lastupdated: "2024-08-06"
+lastupdated: "2024-08-19"
 
 
 keywords: openshift, {{site.data.keyword.openshiftlong_notm}}, kubernetes, release notes
@@ -2212,10 +2212,10 @@ Istio add-on `1.14`
 
 
 Persistent VPC load balancers
-:   You can now create a [persistent VPC load balancer](/docs/openshift?topic=openshift-vpc-lbaas#vpc_lb_persist) that remains available even after your cluster is deleted. 
+:   You can now create a [persistent VPC load balancer](/docs/openshift?topic=openshift-vpclb_manage#vpc_lb_persist) that remains available even after your cluster is deleted. 
 
 Customized VPC load balancer health checks
-:   For more control over your VPC load balancer health checks, you can use [optional annotations](/docs/openshift?topic=openshift-vpc-lbaas#vpc_lb_health_custom) to customize your health checks with advanced configurations for test intervals, timeouts, and retries.
+:   For more control over your VPC load balancer health checks, you can use [optional annotations](/docs/openshift?topic=openshift-vpclb-about#vpc_lb_health_custom) to customize your health checks with advanced configurations for test intervals, timeouts, and retries.
 
 ## January 2023
 {: #openshift-jan23}
@@ -4434,7 +4434,7 @@ Image key synchronizer
 {: release-note}
 
 New! Private VPC NLB
-:   You can now create [private Network Load Balancers for VPC](/docs/openshift?topic=openshift-vpc-lbaas#setup_vpc_nlb_priv) to expose apps in clusters that run version 4.6 and later.
+:   You can now create [private Network Load Balancers for VPC](/docs/openshift?topic=openshift-setup_vpc_nlb) to expose apps in clusters that run version 4.6 and later.
 
 ### 9 June 2021
 {: #openshift-june0921}
@@ -4611,7 +4611,7 @@ CLI change log
 
 
 VPC NLB
-:   Adds steps for [registering a VPC network load balancer with a DNS record and TLS certificate](/docs/openshift?topic=openshift-vpc-lbaas#vpc_nlb_dns).
+:   Adds steps for [registering a VPC network load balancer with a DNS record and TLS certificate](/docs/openshift?topic=openshift-vpclb-about#vpc_nlb_dns).
 
 Worker node versions
 :   Worker node fix pack update change log documentation is available for version [`4.6.25_1541_openshift`](/docs/openshift?topic=openshift-openshift_changelog_46#4625_1541), [`4.5.37_1537_openshift`](/docs/openshift?topic=openshift-changelog_archive#4537_1537), [`4.4.33_1540_openshift`](/docs/openshift?topic=openshift-changelog_archive), and [`3.11.420_1587_openshift`](/docs/openshift?topic=openshift-openshift_changelog_311#311420_1587).

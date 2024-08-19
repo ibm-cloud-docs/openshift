@@ -1,7 +1,7 @@
 ---
 copyright: 
   years: 2024, 2024
-lastupdated: "2024-08-16"
+lastupdated: "2024-08-19"
 
 
 keywords: load balancer, vpc, vpc load balancer, lb, persistent
@@ -165,7 +165,7 @@ After you have created a VPC NLB, you can not reconfigure the listening subnet i
     ```
     {: pre}
 
-1. Update the Kubernetes `LoadBalancer` service definition file with the subnet or zone changes you want to implement. Do not change the name of the `LoadBalancer` service. For details on specifying subnets or zones for network load balancers, see [Setting up a Network Load Balancer for VPC](/docs/openshift?topic=openshift-vpc-lbaas#setup_vpc_nlb).
+1. Update the Kubernetes `LoadBalancer` service definition file with the subnet or zone changes you want to implement. Do not change the name of the `LoadBalancer` service. For details on specifying subnets or zones for network load balancers, see [Setting up a Network Load Balancer for VPC](/docs/openshift?topic=openshift-setup_vpc_nlb).
 
 1. Apply the new `LoadBalancer` definition file.
 

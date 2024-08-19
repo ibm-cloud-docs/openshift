@@ -1,7 +1,7 @@
 ---
 copyright: 
   years: 2024, 2024
-lastupdated: "2024-08-16"
+lastupdated: "2024-08-19"
 
 keywords: alb, application load balancer, vpc alb, dns, public lb, private lb
 
@@ -12,7 +12,7 @@ subcollection: openshift
 {{site.data.keyword.attribute-definition-list}}
 
 # Setting up an Application Load Balancer for VPC
-{: #setup_vpc_ks_vpc_lb}
+{: #setup_vpc_alb}
 
 Expose your app to the public or to the private network by setting up a Kubernetes `LoadBalancer` service in your cluster. When you expose your app, an Application Load Balancer for VPC (VPC ALB) that routes requests to your app is automatically created for you in your VPC outside of your cluster. Then, you can optionally [register the VPC ALB with a DNS record and TLS certificate](#vpc_lb_dns). VPC ALBs support the TCP protocol only. 
 {: shortdesc}
@@ -161,7 +161,7 @@ After you create a DNS subdomain for a VPC ALB hostname, you can't use `nlb-dns 
 
 Before you begin
 
-- [Set up a VPC ALB](#setup_vpc_ks_vpc_lb). Ensure that you define an HTTPS port in your Kubernetes `LoadBalancer` service that configures the VPC ALB.
+- [Set up a VPC ALB](#setup_vpc_alb). Ensure that you define an HTTPS port in your Kubernetes `LoadBalancer` service that configures the VPC ALB.
 - To use the TLS certificate to access your app via HTTPS, your app must be able to terminate TLS connections.
 
 To register a VPC ALB hostname with a DNS subdomain:
@@ -220,7 +220,7 @@ To register a VPC ALB hostname with a DNS subdomain:
 
 3. If you created a subdomain for a public VPC ALB, open a web browser and enter the URL to access your app through the subdomain such as the example `www.your-custom-domain.com`. If you created a subdomain for a private VPC ALB, you must be [connected to your private VPC network](/docs/vpc?topic=vpc-vpn-onprem-example) to test access to your subdomain.
 
-To use the TLS certificate to access your app via HTTPS, ensure that you defined an HTTPS port in your [Kubernetes `LoadBalancer` service](#setup_vpc_ks_vpc_lb). You can verify that requests are correctly routing through the HTTPS port by running `curl -v --insecure https://<domain>`. A connection error indicates that no HTTPS port is open on the service. Also, ensure that TLS connections can be terminated by your app. You can verify that your app terminates TLS properly by running `curl -v https://<domain>`. A certificate error indicates that your app is not properly terminating TLS connections.
+To use the TLS certificate to access your app via HTTPS, ensure that you defined an HTTPS port in your [Kubernetes `LoadBalancer` service](#setup_vpc_alb). You can verify that requests are correctly routing through the HTTPS port by running `curl -v --insecure https://<domain>`. A connection error indicates that no HTTPS port is open on the service. Also, ensure that TLS connections can be terminated by your app. You can verify that your app terminates TLS properly by running `curl -v https://<domain>`. A certificate error indicates that your app is not properly terminating TLS connections.
 {: tip}
 
 ### Registering a private DNS record for a private VPC ALB
@@ -289,7 +289,7 @@ Review the required and optional VPC ALB annotations and specifications.
 {: #vpc_nlb_annotations_opt}
 
 `service.kubernetes.io/ibm-load-balancer-cloud-provider-vpc-lb-name`
-:   Include a unique name to make your VPC load balancer persistent. Persistent VPC load balancers are not deleted when the cluster they belong to is deleted. For more information, see [Persistent VPC load balancers](#vpc_lb_persist). This annotation can be set only on load balancer creation. It cannot be used in an update operation.
+:   Include a unique name to make your VPC load balancer persistent. Persistent VPC load balancers are not deleted when the cluster they belong to is deleted. For more information, see [Persistent VPC load balancers](/docs/openshift?topic=openshift-vpclb_manage#vpc_lb_persist). This annotation can be set only on load balancer creation. It cannot be used in an update operation.
 
 `service.kubernetes.io/ibm-load-balancer-cloud-provider-enable-features: "proxy-protocol"`
 :   Enable the PROXY protocol. The load balancer passes client connection information, including the client IP address, the proxy server IP address, and both port numbers, in request headers to your back-end app. Note that your back-end app must be configured to accept the PROXY protocol. For example, you can configure an NGINX app to accept the PROXY protocol by following [these steps](https://docs.nginx.com/nginx/admin-guide/load-balancer/using-proxy-protocol/){: external}.
@@ -359,4 +359,5 @@ Review the required and optional VPC ALB annotations and specifications.
 
 `targetPort`
 :   The port to which the service directs traffic. The application running in the pod must be listening for incoming TCP traffic on this target port. The target port is often statically defined in the image that is running in the application pod. The target port configured in the pod is different than the node port for the service and might also be different than the external port that is configured on the VPC LB.
+
 

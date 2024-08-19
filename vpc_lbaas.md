@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2024
-lastupdated: "2024-07-24"
+lastupdated: "2024-08-19"
 
 
 keywords: kubernetes, openshift, app protocol, application protocol
@@ -106,7 +106,7 @@ The following diagram illustrates how a user accesses an app from the internet t
 ## Setting up a Network Load Balancer for VPC
 {: #setup_vpc_nlb}
 
-Expose your app to the public or to the private network by setting up a [public](#setup_vpc_nlb_pub) or [private](#setup_vpc_nlb_priv) Kubernetes `LoadBalancer` service in each zone of your VPC cluster. Then, you can optionally [register the VPC NLB with a DNS record and TLS certificate](#vpc_nlb_dns). VPC NLBs support both the TCP and UDP protocol types. 
+Expose your app to the public or to the private network by setting up a [public](#setup_vpc_nlb_pub) or [private](#setup_vpc_nlb_priv) Kubernetes `LoadBalancer` service in each zone of your VPC cluster. Then, you can optionally [register the VPC NLB with a DNS record and TLS certificate](#vpc_nlb_dns__). VPC NLBs support both the TCP and UDP protocol types. 
 {: shortdesc}
 
 ## Setting up a public VPC NLB
@@ -312,7 +312,7 @@ Expose your app to public network traffic by setting up a Kubernetes `LoadBalanc
 
 6. Access the IP address of the Kubernetes `LoadBalancer` service that you found in step 4 and your app port in the format `<external_IP>:<app_port>`.
 
-7. Optional: Repeat these steps to deploy a public VPC NLB in each zone where you want to expose your app. Then, you can register the external IP addresses of the VPC NLB in each zone with one [DNS subdomain](#vpc_nlb_dns).
+7. Optional: Repeat these steps to deploy a public VPC NLB in each zone where you want to expose your app. Then, you can register the external IP addresses of the VPC NLB in each zone with one [DNS subdomain](#vpc_nlb_dns__).
 
 Do not delete the subnets that you attached to your cluster during cluster creation or when you add worker nodes in a zone. If you delete a VPC subnet that your cluster used, any VPC NLBs that use IP addresses from the subnet might experience issues, and you might be unable to create new load balancers.
 {: important}
@@ -621,10 +621,10 @@ To enable your app to receive private network requests,
 
 8. From your connection to the VPC private network, access the IP address of the Kubernetes `LoadBalancer` service that you found in step 6 and your app port in the format `<external_IP>:<app_port>`.
 
-9. Optional: Repeat these steps to deploy a private VPC NLB in each zone where you want to expose your app. Then, you can register the external IP addresses of the VPC NLB in each zone with one [DNS subdomain](#vpc_nlb_dns).
+9. Optional: Repeat these steps to deploy a private VPC NLB in each zone where you want to expose your app. Then, you can register the external IP addresses of the VPC NLB in each zone with one [DNS subdomain](#vpc_nlb_dns__).
 
 ### Registering a DNS record and TLS certificate
-{: #vpc_nlb_dns}
+{: #vpc_nlb_dns__}
 
 VPC NLBs provide static external IP addresses through which you can access your app. To register an SSL certificate for your app domain to support HTTPS, you can create an IBM-provided subdomain or bring your own custom domain.
 {: shortdesc}
@@ -1193,7 +1193,7 @@ After you have created a VPC NLB, you can not reconfigure the listening subnet i
     ```
     {: pre}
 
-1. Update the Kubernetes `LoadBalancer` service definition file with the subnet or zone changes you want to implement. Do not change the name of the `LoadBalancer` service. For details on specifying subnets or zones for network load balancers, see [Setting up a Network Load Balancer for VPC](/docs/openshift?topic=openshift-vpc-lbaas#setup_vpc_nlb).
+1. Update the Kubernetes `LoadBalancer` service definition file with the subnet or zone changes you want to implement. Do not change the name of the `LoadBalancer` service. For details on specifying subnets or zones for network load balancers, see [Setting up a Network Load Balancer for VPC](/docs/openshift?topic=openshift-vpclb-about#setup_vpc_nlb).
 
 1. Apply the new `LoadBalancer` definition file.
 

@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2024
-lastupdated: "2024-01-03"
+lastupdated: "2024-08-19"
 
 
 keywords: openshift, red hat, red hat openshift, dev
@@ -143,7 +143,7 @@ Publicly expose an app in your cluster to the internet or privately expose an ap
         - Classic clusters:
             1. Create an [NLB 1.0](/docs/openshift?topic=openshift-loadbalancer) or [NLB 2.0](/docs/openshift?topic=openshift-loadbalancer-v2).
             2. [Register a DNS subdomain](/docs/openshift?topic=openshift-loadbalancer_hostname#loadbalancer_hostname) for the NLB.
-        - VPC clusters: Set up a [VPC load balancer](/docs/openshift?topic=openshift-vpc-lbaas).
+        - VPC clusters: Set up a [VPC load balancer](/docs/openshift?topic=openshift-vpclb-about).
 
     - Ingress: Configure Ingress for the [public network](/docs/openshift?topic=openshift-ingress-public-expose&interface=ui) or the [private network](/docs/openshift?topic=openshift-ingress-private-expose&interface=ui).
 

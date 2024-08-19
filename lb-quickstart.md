@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2024
-lastupdated: "2024-01-03"
+lastupdated: "2024-08-19"
 
 
 keywords: openshift, nlb, lbaas
@@ -24,7 +24,7 @@ subcollection: openshift
 Quickly expose your app to the Internet by creating a layer 4 load balancer.
 {: shortdesc}
 
-First time setting up a load balancer? Check out [Classic: Setting up basic load balancing with an NLB 1.0](/docs/openshift?topic=openshift-loadbalancer) or [VPC: Exposing apps with VPC load balancers](/docs/openshift?topic=openshift-vpc-lbaas) for prerequisite steps, limitations, and more details. Come back to these quick start steps for a brief refresher the next time you set up a load balancer.
+First time setting up a load balancer? Check out [Classic: Setting up basic load balancing with an NLB 1.0](/docs/openshift?topic=openshift-loadbalancer) or [VPC: Exposing apps with VPC load balancers](/docs/openshift?topic=openshift-vpclb-about) for prerequisite steps, limitations, and more details. Come back to these quick start steps for a brief refresher the next time you set up a load balancer.
 {: tip}
 
 ## Exposing an app by using an NLB in a classic cluster
@@ -99,7 +99,7 @@ For more information, see:
 
 3. In a web browser, enter the hostname that is created.
 
-For more information, see [VPC: Exposing apps with VPC load balancers](/docs/openshift?topic=openshift-vpc-lbaas).
+For more information, see [VPC: Exposing apps with VPC load balancers](/docs/openshift?topic=openshift-vpclb-about).
 
 
 

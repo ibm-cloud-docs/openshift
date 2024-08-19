@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2024
-lastupdated: "2024-08-16"
+lastupdated: "2024-08-19"
 
 
 keywords: kubernetes, openshift, app protocol, application protocol
@@ -106,6 +106,7 @@ The following diagram illustrates how a user accesses an app from the internet t
 2. The request is automatically forwarded by the VPC NLB to one of the node ports on the worker node, and then to the private IP address of the app pod.
 3. If app instances are deployed to multiple worker nodes in the cluster, the VPC NLB routes the requests between the app pods on various worker nodes across all zones of the cluster.
 
+
 ## Limitations
 {: #vpclb_limit}
 
@@ -129,7 +130,7 @@ Review the following default settings and limitations.
     * `spec.loadBalancerSourceRanges`
     * VPC NLBs only: `service.kubernetes.io/ibm-load-balancer-cloud-provider-enable-features: "proxy-protocol"`
     * VPC ALBs only: The `externalTrafficPolicy: Local` setting is supported, but the setting does not preserve the source IP of the request.
-* When you delete a VPC cluster, any non-persistent VPC load balancers, which are named in the `kube-<cluster_ID>-<kubernetes_lb_service_UID>` format and are automatically created by {{site.data.keyword.openshiftlong_notm}} for the Kubernetes `LoadBalancer` services in that cluster, are also automatically deleted. However, [persistent load balancers](#vpc_lb_persist) with unique names and VPC load balancers that you manually created in your VPC are not deleted.
+* When you delete a VPC cluster, any non-persistent VPC load balancers, which are named in the `kube-<cluster_ID>-<kubernetes_lb_service_UID>` format and are automatically created by {{site.data.keyword.openshiftlong_notm}} for the Kubernetes `LoadBalancer` services in that cluster, are also automatically deleted. However, [persistent load balancers](/docs/openshift?topic=openshift-vpclb_manage#vpc_lb_persist) with unique names and VPC load balancers that you manually created in your VPC are not deleted.
 * You can register up to 128 subdomains for VPC load balancer hostnames. This limit can be lifted on request by opening a [support case](/docs/get-support?topic=get-support-using-avatar).
 * Subdomains that you register for VPC load balancers are limited to 130 characters or fewer.
 * VPC ALBs listen on the same VPC subnets that the cluster worker nodes are allocated on unless the Kubernetes load balancer service is created with the `service.kubernetes.io/ibm-load-balancer-cloud-provider-vpc-subnets` or `service.kubernetes.io/ibm-load-balancer-cloud-provider-zone` annotations, which limit traffic to specific nodes.

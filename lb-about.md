@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2024
-lastupdated: "2024-07-08"
+lastupdated: "2024-08-19"
 
 
 keywords: openshift, lb2.0, nlb, app protocol, application protocol
@@ -21,7 +21,7 @@ subcollection: openshift
 # Classic: About network load balancers (NLBs)
 {: #loadbalancer-about}
 
-Network load balancers can be created in classic clusters only. To load balance in VPC clusters, see [Exposing apps with load balancers for VPC](/docs/openshift?topic=openshift-vpc-lbaas).
+Network load balancers can be created in classic clusters only. To load balance in VPC clusters, see [Exposing apps with load balancers for VPC](/docs/openshift?topic=openshift-vpclb-about).
 {: note}
 
 When you create a standard cluster, {{site.data.keyword.openshiftlong}} automatically provisions a portable public subnet and a portable private subnet.

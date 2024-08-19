@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2024
-lastupdated: "2024-08-06"
+lastupdated: "2024-08-19"
 
 
 keywords: openshift, http2, quota, app protocol, application protocol
@@ -169,7 +169,7 @@ Keep in mind that the [service](#tech_limits) limitations also apply.
 | Service endpoints | When you create your VPC cluster in the {{site.data.keyword.cloud_notm}} console, your cluster has both a public and a private cloud service endpoint. If you want only a private cloud service endpoint, you must create the cluster [in the CLI](/docs/openshift?topic=openshift-cluster-create-vpc-gen2&interface=cli) instead, and include the `--disable-public-service-endpoint` option. If you include this option, your cluster is created with routers and Ingress controllers that expose your apps on the private network only by default. If you later want to expose apps to a public network, you must manually create public routers and Ingress controllers.|
 | strongSwan VPN service | The strongSwan service is not supported. To connect your cluster to resources in an on-premises network or another VPC, see [Using VPN with your VPC](/docs/vpc?topic=vpc-vpn-onprem-example). |
 | Subnets |  \n - See [VPC networking limitations](/docs/openshift?topic=openshift-vpc-subnets#vpc_basics_limitations). \n - Do not delete the subnets that you attach to your cluster during cluster creation or when you add worker nodes in a zone. If you delete a VPC subnet that your cluster used, any load balancers that use IP addresses from the subnet might experience issues, and you might be unable to create new load balancers.  |
-| VPC load balancer | See [VPC load balancer limitations](/docs/openshift?topic=openshift-vpc-lbaas#lbaas_limitations). |
+| VPC load balancer | See [VPC load balancer limitations](/docs/openshift?topic=openshift-vpclb-about#lbaas_limitations). |
 {: caption="VPC cluster networking limitations"}
 
 ### Storage
