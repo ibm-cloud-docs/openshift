@@ -32,8 +32,8 @@ Refer to the following change logs for a summary of changes for each version of 
 Review the following changes for 1.0 versions of the CLI plug-in.
 {: shortdesc}
 
-## Version v1.0.648
-{: #cli-010648}
+## Version v1.0.651
+{: #cli-010651}
 
 - Makes the `--worker-pool` option required for the `zone add`, `zone rm`, and `zone network-set` commands.
 - Updates the expiration date format for `experimental` commands.
