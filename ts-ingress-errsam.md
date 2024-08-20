@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2022, 2024
-lastupdated: "2024-08-19"
+lastupdated: "2024-08-20"
 
 
 keywords: openshift, errsam, loadbalancer service missing
@@ -71,7 +71,7 @@ Complete the following steps to troubleshoot the issue.
     - **Classic**: If you see errors regarding your load balancer deployment, ensure your cluster has at least two healthy workers. For more information, see [Adding worker nodes and zones to clusters](/docs/openshift?topic=openshift-add-workers-classic).
     
     - **Classic**: If you see errors saying that no IPs are available, add new portable subnets to the cluster with the **`ibmcloud oc cluster subnet create`** [command](/docs/openshift?topic=openshift-kubernetes-service-cli#cs_cluster_subnet_create).
-    - **VPC**: If you see permission issues, review your IAM permissions. For more information, see [Setting up an Application Load Balancer for VPC](/docs/openshift?topic=openshift-vpclb-about#setup_vpc_alb).
+    - **VPC**: If you see permission issues, review your IAM permissions. For more information, see [Setting up an Application Load Balancer for VPC](/docs/openshift?topic=openshift-setup_vpc_alb).
     - **VPC**: Ensure that you did not reach your LBaaS instance quota. For more information, see [Quotas and service limits](/docs/vpc?topic=vpc-quotas#alb-quotas) and **`ibmcloud is load-balancers`** [command](/docs/vpc?topic=vpc-vpc-reference#lb-anchor).
     
 1. Wait 10 to 15 minutes, then check if the load balancer got an address assigned. If not, check the events again.

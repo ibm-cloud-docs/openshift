@@ -1,7 +1,7 @@
 ---
 copyright: 
   years: 2024, 2024
-lastupdated: "2024-08-19"
+lastupdated: "2024-08-20"
 
 keywords: nlb, network load balancer, vpc nlb, dns, public lb, private lb
 subcollection: openshift
@@ -36,7 +36,7 @@ Expose your app to network traffic by setting up a Kubernetes `LoadBalancer` ser
 5. **For private VPC NLBs**: Enable your app to receive private network requests.
     1. [Create a VPC subnet](https://cloud.ibm.com/vpc/network/subnets){: external} that is dedicated to your VPC NLB. This subnet must exist in the same VPC and location as your cluster, but can't be attached to your cluster or any worker nodes. If you enter a specific IP range, don't use the following reserved ranges: `172.16.0.0/16`, `172.18.0.0/16`, `172.19.0.0/16`, and `172.20.0.0/16`. After you provision the subnet, note its **ID**.
     2. If the client that connects to your app through the VPC NLB exists outside of the VPC and zone of your dedicated VPC subnet, you must [create a custom ingress routing table](https://cloud.ibm.com/vpc-ext/network/routingTables){: external}. For more information, see the table in the [known limitations](/docs/vpc?topic=vpc-nlb-limitations) and [About routing tables and routes](/docs/vpc?topic=vpc-about-custom-routes).
-        Select one of the following **Traffic sources** for your custom ingress routing table: For traffic from an on-premise netowrk, choose  **Direct link**. For traffic from another VPC or from classic infrastructure, choose **Transit gateway**. For traffic from another zone within the same VPC, choose **VPC zone**. For more information, see [Setting up VPC VPN connectivity](/docs/openshift?topic=openshift-vpc-vpnaas).
+        Select one of the following **Traffic sources** for your custom ingress routing table: For traffic from an on-premise network, choose  **Direct link**. For traffic from another VPC or from classic infrastructure, choose **Transit gateway**. For traffic from another zone within the same VPC, choose **VPC zone**. For more information, see [Setting up VPC VPN connectivity](/docs/openshift?topic=openshift-vpc-vpnaas).
         {: note}
 
 
@@ -45,7 +45,7 @@ Expose your app to network traffic by setting up a Kubernetes `LoadBalancer` ser
 
 1. [Deploy your app to the cluster](/docs/containers?topic=containers-deploy_app#app_cli). Ensure that you add a label in the metadata section of your deployment configuration file. This custom label identifies all pods where your app runs to include them in the load balancing.
 
-2. Create a configuration YAML file for your Kubernetes `LoadBalancer` service. In the YAML file, specify the `service.kubernetes.io/ibm-load-balancer-cloud-provider-ip-type` annotation as either `"public"` or `"private"`. The `annotations` section in the example file includes only some of the available annotations. For a complete list of required and optional VPC NLB annotations, see [Annotations and specifications](#vpc_nlb_annotations).
+2. Create a configuration YAML file for your Kubernetes `LoadBalancer` service. In the YAML file, specify the `service.kubernetes.io/ibm-load-balancer-cloud-provider-ip-type` annotation as either `"public"` or `"private"`. The `annotations` section in the example file includes only some available annotations. For a complete list of required and optional VPC NLB annotations, see [Annotations and specifications](#vpc_nlb_annotations).
 
     To make your VPC NLB easily identifiable, consider naming the service in the format `<app_name>-vpc-nlb-<VPC_zone>`.
     {: tip}
@@ -323,7 +323,7 @@ Review the required and optional VPC NLB annotations and specifications.
 :   Annotation to specify a VPC zone that your cluster is attached to. The VPC NLB is deployed to the same subnet in that zone that your worker nodes are connected to.  If you later change this annotation to a different zone, the VPC NLB is not moved to the new zone. If you don't specify this annotation or the `service.kubernetes.io/ibm-load-balancer-cloud-provider-vpc-subnets annotation`, the VPC NLB is deployed to the most optimal zone (such as a zone that has worker nodes in the `Ready` state). If the `dedicated: edge` label is set on worker nodes and you specify this annotation, then only edge nodes in the specified zone are configured to receive traffic. Edge nodes in other zones and non-edge nodes in the specified zone don't receive traffic from the load balancer. To see zones, run `ibmcloud ks zone ls --provider vpc-gen2`. To see zones, run `ibmcloud ks zone ls --provider vpc-gen2`.
 
 `service.kubernetes.io/ibm-load-balancer-cloud-provider-vpc-node-selector`
-:   Annotation to specify a worker node label selector. You can configure specific worker nodes in your cluster to receive traffic by specifying label selector keys. You can include only one label selector in the annotation, and that the selector must be specified in the `"key=value"` format. If this annotation is not specified, all worker nodes in your cluster are configured to receive traffic from the VPC NLB. This annotation takes precedence over the `service.kubernetes.io/ibm-load-balancer-cloud-provider-zone` annotation, and any `dedicated: edge` labels on worker nodes are ignored. To limit traffic to a specific zone, you can use this annotation to specify worker nodes in that zone. Note that setting a new label on a cluster worker node does not automatically configure the worker node to recieve traffic; you must recreate or update the VPC NLB for the newly-labeled worker node to recieve traffic. 
+:   Annotation to specify a worker node label selector. You can configure specific worker nodes in your cluster to receive traffic by specifying label selector keys. You can include only one label selector in the annotation, and that the selector must be specified in the `"key=value"` format. If this annotation is not specified, all worker nodes in your cluster are configured to receive traffic from the VPC NLB. This annotation takes precedence over the `service.kubernetes.io/ibm-load-balancer-cloud-provider-zone` annotation, and any `dedicated: edge` labels on worker nodes are ignored. To limit traffic to a specific zone, you can use this annotation to specify worker nodes in that zone. Note that setting a new label on a cluster worker node does not automatically configure the worker node to receive traffic; you must recreate or update the VPC NLB for the newly-labeled worker node to receive traffic. 
 
 `service.kubernetes.io/ibm-load-balancer-cloud-provider-vpc-health-check-udp`
 :    The TCP node port to use for TCP health checks in a UDP load balancer. Required for UDP load balancers that have `externalTrafficPolicy` set to `Cluster`. See [Configuring TCP health checks for UDP load balancers](/docs/openshift?topic=openshift-vpclb_manage#vpc_lb_health_udp) for more considerations before setting a port value.
@@ -357,7 +357,7 @@ Review the required and optional VPC NLB annotations and specifications.
 :   Optional. The number of worker nodes per zone that the load balancer routes to. The default value is 8. For a cluster with worker nodes in three zones, this results in the the load balancer routing to 24 total worker nodes. The total number of worker nodes across all zones that the load balancer routes to cannot exceed 50. If the cluster has fewer than 50 worker nodes across all zones, specify 0 to route to all worker nodes in a zone. 
 
 `service.kubernetes.io/ibm-load-balancer-cloud-provider-vpc-allow-outbound-traffic`
-:   Available for clusters that run [Secure by Default](/docs/containers?topic=openshift-vpc-security-group-reference). Annotation to create security groups for each IP address of an ALB associated with an external port that you specify. These rules are created in the cluster security group. Specify valid external ports in a comma-separated list, such as `80,443`. In this example, if each public ALB associated with each external port value has two IP addresses, one outbound rule is created per IP address for a total of 4 new rules. You can add or remove this annotation at any time.
+:   Available for clusters that run [Secure by Default](/docs/openshift?topic=openshift-vpc-security-group-reference). Annotation to create security groups for each IP address of an ALB associated with an external port that you specify. These rules are created in the cluster security group. Specify valid external ports in a comma-separated list, such as `80,443`. In this example, if each public ALB associated with each external port value has two IP addresses, one outbound rule is created per IP address for a total of 4 new rules. You can add or remove this annotation at any time.
 
 `selector`
 :   The label key (`<selector_key>`) and value (`<selector_value>`) that you used in the `spec.template.metadata.labels` section of your app deployment YAML. This custom label identifies all pods where your app runs to include them in the load balancing.
