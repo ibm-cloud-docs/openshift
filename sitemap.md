@@ -277,7 +277,7 @@ subcollection: openshift
 
     * [20 August 2024](/docs/openshift?topic=openshift-openshift-relnotes#openshift-aug2024)
 
-        * CLI version `1.0.647` is available.
+        * CLI version `1.0.648` is available.
 
 * [July 2024](/docs/openshift?topic=openshift-openshift-relnotes#openshift-july24)
 
@@ -6151,7 +6151,7 @@ subcollection: openshift
 
 * [Version 1.0](/docs/openshift?topic=openshift-cs_cli_changelog#10)
 
-* [Version v1.0.647](/docs/openshift?topic=openshift-cs_cli_changelog#cli-010640)
+* [Version v1.0.648](/docs/openshift?topic=openshift-cs_cli_changelog#cli-010648)
 
 * [Version v1.0.640](/docs/openshift?topic=openshift-cs_cli_changelog#cli-010640)
 
