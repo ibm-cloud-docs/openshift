@@ -1,7 +1,7 @@
 ---
 copyright: 
   years: 2024, 2024
-lastupdated: "2024-08-19"
+lastupdated: "2024-08-20"
 
 keywords: alb, application load balancer, vpc alb, dns, public lb, private lb
 
@@ -38,7 +38,7 @@ To enable your app to receive public or private request:
 
 1. [Deploy your app to the cluster](/docs/openshift?topic=openshift-app). Ensure that you add a label in the metadata section of your deployment configuration file. This custom label identifies all pods where your app runs to include them in the load balancing.
 
-2. Create a configuration YAML file for your Kubernetes `LoadBalancer` service. In the YAML file, specify the `service.kubernetes.io/ibm-load-balancer-cloud-provider-ip-type` annotation as either `"public"` or `"private"`. The `annotations` section in the example file includes only some of the available annotations. For a complete list of required and optional VPC ALB annotations, see [Annotations and specifications](#vpc_alb_annotations).
+2. Create a configuration YAML file for your Kubernetes `LoadBalancer` service. In the YAML file, specify the `service.kubernetes.io/ibm-load-balancer-cloud-provider-ip-type` annotation as either `"public"` or `"private"`. The `annotations` section in the example file includes only some available annotations. For a complete list of required and optional VPC ALB annotations, see [Annotations and specifications](#vpc_alb_annotations).
 
     To make your VPC ALB easily identifiable, consider naming the service in the format `<app_name>-vpc-alb-<VPC_zone>`.
     {: tip}
@@ -281,7 +281,7 @@ Review the required and optional VPC ALB annotations and specifications.
 :   (Required for private VPC ALBs) Annotation to specify a service that accepts public or private requests. If this annotation is not included, a public VPC ALB is created.
 
 `externalTrafficPolicy`
-:   Specify `Cluster` to forward a request to a worker node that contains the app pod. This worker node might be in a different zone. By default, this annotatation is set to `Cluster`.
+:   Specify `Cluster` to forward a request to a worker node that contains the app pod. This worker node might be in a different zone. By default, this annotation is set to `Cluster`.
 :   Specify `Local` to prevent the incoming traffic from forwarding to a different node. This option also configures HTTP health checks. 
 :   Note that to use the original client source IP for VPC ALBs, you must enable the PROXY protocol with the `service.kubernetes.io/ibm-load-balancer-cloud-provider-enable-features: "proxy-protocol"` annotation. 
 
@@ -301,7 +301,7 @@ Review the required and optional VPC ALB annotations and specifications.
 :   Annotation to specify one or more subnets that the VPC ALB service deploys to. If specified, this annotation takes precedence over the `service.kubernetes.io/ibm-load-balancer-cloud-provider-zone` annotation. Without this annotation, the subnets that the VPC ALB deploys to automatically update to match the zones of a cluster if the cluster is updated from single zone to multi-zone, or vice versa. Note that you can specify a different subnet in the same VPC than the subnets that your cluster is attached to. In this case, even though the VPC ALB deploys to a different subnet in the same VPC, the VPC ALB can still route traffic to your worker nodes on the cluster subnets. To see subnets in all resource groups, run `ibmcloud oc subnets --provider vpc-gen2 --vpc-id <vpc> --zone <zone>`. This annotation can be added or modified for existing VPC ALBs. 
 
 `service.kubernetes.io/ibm-load-balancer-cloud-provider-vpc-node-selector`
-:   Annotation to specify a worker node label selector.  You can configure specific worker nodes in your cluster to receive traffic by specifying label selector keys. You can include only one label selector in the annotation, and that the selector must be specified in the `"key=value"` format. If this annotation is not specified, all worker nodes in your cluster are configured to receive traffic from the VPC ALB. This annotation takes precedence over the `service.kubernetes.io/ibm-load-balancer-cloud-provider-zone` annotation, and any `dedicated: edge` labels on worker nodes are ignored. To limit traffic to a specific zone, you can use this annotation to specify worker nodes in that zone. Note that setting a new label on a cluster worker node does not automatically configure the worker node to recieve traffic; you must recreate or update the VPC ALB for the newly-labeled worker node to recieve traffic. 
+:   Annotation to specify a worker node label selector.  You can configure specific worker nodes in your cluster to receive traffic by specifying label selector keys. You can include only one label selector in the annotation, and that the selector must be specified in the `"key=value"` format. If this annotation is not specified, all worker nodes in your cluster are configured to receive traffic from the VPC ALB. This annotation takes precedence over the `service.kubernetes.io/ibm-load-balancer-cloud-provider-zone` annotation, and any `dedicated: edge` labels on worker nodes are ignored. To limit traffic to a specific zone, you can use this annotation to specify worker nodes in that zone. Note that setting a new label on a cluster worker node does not automatically configure the worker node to receive traffic; you must recreate or update the VPC ALB for the newly-labeled worker node to receive traffic. 
 
 `service.kubernetes.io/ibm-load-balancer-cloud-provider-vpc-health-check-protocol`
 :   The health check protocol on the VPC load balancer resource associated with the Kubernetes load balancer service. Available options are `http`, `https`, or `tcp`. Usually, the VPC LB health check protocol is determined by the value of the `externalTrafficPolicy` setting in the Kubernetes load balancer service specification, however this annotation overrides that logic. This annotation does **not** alter how Kubernetes, and kube-proxy in particular, behaves in regards to the various settings of `externalTrafficPolicy`.
@@ -349,7 +349,7 @@ Review the required and optional VPC ALB annotations and specifications.
 
 
 `service.kubernetes.io/ibm-load-balancer-cloud-provider-vpc-allow-outbound-traffic`
-:   Available for clusters that run [Secure by Default](/docs/containers?topic=openshift-vpc-security-group-reference). Annotation to create security groups for each IP address of an ALB associated with an external port that you specify. These rules are created in the cluster security group and automatically update if the VPC ALB IP address changes. Specify valid external ports in a comma-separated list, such as `80,443`. In this example, if each public ALB associated with each external port value has two IP addresses, one outbound rule is created per IP address for a total of 4 new rules. You can add or remove this annotation at any time.
+:   Available for clusters that run [Secure by Default](/docs/openshift?topic=openshift-vpc-security-group-reference). Annotation to create security groups for each IP address of an ALB associated with an external port that you specify. These rules are created in the cluster security group and automatically update if the VPC ALB IP address changes. Specify valid external ports in a comma-separated list, such as `80,443`. In this example, if each public ALB associated with each external port value has two IP addresses, one outbound rule is created per IP address for a total of 4 new rules. You can add or remove this annotation at any time.
 
 `selector`
 :   The label key (`<selector_key>`) and value (`<selector_value>`) that you used in the `spec.template.metadata.labels` section of your app deployment YAML. This custom label identifies all pods where your app runs to include them in the load balancing.

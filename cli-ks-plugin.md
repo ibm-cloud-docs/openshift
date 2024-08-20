@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2024
-lastupdated: "2024-08-06"
+lastupdated: "2024-08-20"
 
 
 keywords: openshift, cli reference, kubernetes cli, openshift cli, {{site.data.keyword.openshiftlong_notm}}
@@ -3693,7 +3693,7 @@ To add a zone to worker pools in a VPC cluster, use the [**`ibmcloud oc zone add
 {: note}
 
 ```sh
-ibmcloud oc zone add classic --zone ZONE --cluster CLUSTER [--worker-pool WORKER_POOL] [--private-vlan PRIVATE_VLAN] [--public-vlan PUBLIC_VLAN] [--output json] [-q]
+ibmcloud oc zone add classic --zone ZONE --cluster CLUSTER --worker-pool WORKER_POOL [--private-vlan PRIVATE_VLAN] [--public-vlan PUBLIC_VLAN] [--output json] [-q]
 ```
 {: pre}
 
@@ -3838,7 +3838,7 @@ ibmcloud oc zone ls -l ap
 {: shortdesc}
 
 ```sh
-ibmcloud oc zone network-set --zone ZONE --cluster CLUSTER  --private-vlan PRIVATE_VLAN [--worker-pool WORKER_POOL] [--public-vlan PUBLIC_VLAN] [-f] [-q]
+ibmcloud oc zone network-set --zone ZONE --cluster CLUSTER  --private-vlan PRIVATE_VLAN --worker-pool WORKER_POOL [--public-vlan PUBLIC_VLAN] [-f] [-q]
 ```
 {: pre}
 
@@ -3927,7 +3927,7 @@ Before you remove a zone, make sure that you have enough worker nodes in other z
 {: tip}
 
 ```sh
-ibmcloud oc zone rm --cluster CLUSTER --zone ZONE [--worker-pool WORKER_POOL] [-f] [-q]
+ibmcloud oc zone rm --cluster CLUSTER --zone ZONE --worker-pool WORKER_POOL [-f] [-q]
 ```
 {: pre}
 
@@ -8505,7 +8505,7 @@ After you create an {{site.data.keyword.satellitelong_notm}} cluster or worker p
 {: shortdesc}
 
 ```sh
-ibmcloud oc zone add satellite --zone ZONE --cluster CLUSTER [--worker-pool WORKER_POOL] [--output json] [-q]
+ibmcloud oc zone add satellite --zone ZONE --cluster CLUSTER --worker-pool WORKER_POOL [--output json] [-q]
 ```
 {: pre}
 

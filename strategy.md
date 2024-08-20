@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2024
-lastupdated: "2024-08-12"
+lastupdated: "2024-08-20"
 
 keywords: kubernetes, kubernetes environment, moving to kubernetes, moving to containers, clusters, cluster sizing, openshift, {{site.data.keyword.openshiftlong_notm}}
 
@@ -20,7 +20,7 @@ Design your standard cluster for maximum availability and capacity for your app 
 
 High availability (HA) is a core discipline in an IT infrastructure to keep your apps up and running, even after a partial or full site failure. The main purpose of high availability is to eliminate potential points of failures in an IT infrastructure. For example, you can prepare for the failure of one system by adding redundancy and setting up failover mechanisms. See [How {{site.data.keyword.cloud_notm}} ensures high availability and disaster recovery](/docs/overview?topic=overview-zero-downtime).
 
-To get started planning and sizing your cluster, review all of these decision points before creating a cluster.
+To get started planning and sizing your cluster, review these decision points before creating a cluster.
 
 When you're done, [try out the quiz](https://quizzes.12dekrh4l1b4.us-south.codeengine.appdomain.cloud/openshift/strategy/quiz.php).
 {: tip}
@@ -71,7 +71,7 @@ A zone failure affects all physical compute hosts and NFS storage. Failures incl
 
 * **Multiple clusters linked with load balancers** [Classic]{: tag-classic-inf} [VPC]{: tag-vpc}: To protect your app from a master failure or for classic clusters that must reside in one of the supported [single zone locations](/docs/openshift?topic=openshift-regions-and-zones#zones-sz), you can create multiple clusters in different zones within a region, and connect them with a global load balancer. This option is useful if you must provision a cluster in a single zone region, but you still want the benefits of multizone availability. 
 
-  To connect multiple clusters with a global load balancer, the clusters must be set up with public network connectivity and your apps must be exposed through [Ingress](/docs/containers?topic=containers-managed-ingress-about), [routes](/docs/openshift?topic=openshift-openshift_routes), or with a [Kubernetes load balancer service](/docs/openshift?topic=openshift-loadbalancer-qs).
+  To connect multiple clusters with a global load balancer, the clusters must be set up with public network connectivity and your apps must be exposed through [Ingress](/docs/containers?topic=containers-managed-ingress-about), [routes](/docs/openshift?topic=openshift-openshift_routes), or with a [Kubernetes load balancer service](/docs/openshift?topic=openshift-cs_network_planning).
 
   To balance your workload across multiple clusters, you must [set up a global load balancer](/docs/cis?topic=cis-configure-glb) through [{{site.data.keyword.cis_short}}](/docs/cis?topic=cis-getting-started) and add the public IP addresses of your router services or load balancer services to your domain. By adding these IP addresses, you can route incoming traffic between your clusters. 
 
@@ -107,7 +107,7 @@ Classic clusters
 ## Select an operating system for the cluster
 {: #os}
 
-The operating systems avaiable to you depend on the cluster type you chose.
+The operating systems available to you depend on the cluster type you chose.
 
 
 Red Hat Enterprise Linux CoreOS (RHCOS) 

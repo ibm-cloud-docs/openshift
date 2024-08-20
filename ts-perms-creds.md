@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2024
-lastupdated: "2024-08-12"
+lastupdated: "2024-08-20"
 
 
 keywords: kubernetes, openshift, user permissions, infrastructure credentials
@@ -19,7 +19,7 @@ content-type: troubleshoot
 {: #ts-perms-creds}
 
 
-When you try to make changes to your cluster, such as creating or deleting worker nodes or other components, you recieve an error message similar to one of the following examples. 
+When you try to make changes to your cluster, such as creating or deleting worker nodes or other components, you receive an error message similar to one of the following examples. 
 {: tsSymptoms}
 
 ```sh

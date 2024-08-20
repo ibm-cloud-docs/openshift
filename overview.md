@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2024
-lastupdated: "2024-08-19"
+lastupdated: "2024-08-20"
 
 
 keywords: openshift, {{site.data.keyword.openshiftlong_notm}}, kubernetes, infrastructure, rbac, policy, providers, benefits
@@ -315,7 +315,7 @@ But how do you get to the cloud? What are your options along the way? And how do
 
 Use this page to learn some strategies for your Kubernetes deployments on {{site.data.keyword.openshiftlong_notm}}. And engage with the team on [Slack](https://ibm-cloud-success.slack.com){: external}.
 
-Not on slack yet? [Request an invite!](https://cloud.ibm.com/kubernetes/slack){: external}
+Not on slack yet? [Request an invite!](https://join.slack.com/t/ibm-cloud-success/shared_invite/zt-2p5zqh275-FL8XUSEmn_vvAJZzrHqYcA){: external}
 {: tip}
 
 The following table provides some examples of what types of workloads that users typically move to the various types of clouds. You might also choose a hybrid approach where you have clusters that run in both environments.
