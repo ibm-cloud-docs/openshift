@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2024
-lastupdated: "2024-08-19"
+lastupdated: "2024-08-20"
 
 
 keywords: openshift, {{site.data.keyword.openshiftlong_notm}}, oc, ks
@@ -31,6 +31,15 @@ Refer to the following change logs for a summary of changes for each version of 
 
 Review the following changes for 1.0 versions of the CLI plug-in.
 {: shortdesc}
+
+## Version v1.0.647
+{: #cli-010640}
+
+- Makes the `--worker-pool` option required for the `zone add`, `zone rm`, and `zone network-set` commands.
+- Updates the expiration date format for `experimental` commands.
+- Adds the `ibmcloud sat acl` command group for managing Satellite endpoint access.
+- Adds the `enable` and `disable` commands to the `ibmcloud sat endpoint` group.
+- Adds the `ibmcloud sat agent attach` and `agent ls` commands.
 
 ## Version v1.0.640
 {: #cli-010640}
