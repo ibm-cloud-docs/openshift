@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2024, 2024
-lastupdated: "2024-07-24"
+lastupdated: "2024-08-21"
 
 
 keywords: openshift, rclone, migrate
@@ -247,7 +247,7 @@ Complete the following steps to move the contents of a COS bucket in one account
 {: #rclone-inspect}
 
 
-After configuring rclone, you can now sync between buckets. But first, review the contents of each bucket.
+After configuring `rclone`, you can now sync between buckets. But first, review the contents of each bucket.
 
 1. View the contents of the bucket in the first instance.
 

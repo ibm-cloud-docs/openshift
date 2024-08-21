@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2024
-lastupdated: "2024-06-20"
+lastupdated: "2024-08-21"
 
 
 keywords: kubernetes, openshift
@@ -17,7 +17,7 @@ subcollection: openshift
 
 
 
-# Setting up {{site.data.keyword.cos_full_notm}}
+# Setting up your {{site.data.keyword.cos_full_notm}} instance
 {: #storage-cos-understand}
 
 [{{site.data.keyword.cos_full_notm}}](/docs/cloud-object-storage?topic=cloud-object-storage-getting-started-cloud-object-storage) is persistent, highly available storage that you can mount to your apps. The plug-in is a Kubernetes Flex-Volume plug-in that connects Cloud {{site.data.keyword.cos_short}} buckets to pods in your cluster. Information stored with {{site.data.keyword.cos_full_notm}} is encrypted in transit and at rest, dispersed across many geographic locations, and accessed over HTTP by using a REST API.
@@ -26,7 +26,7 @@ subcollection: openshift
 If you want to use {{site.data.keyword.cos_full_notm}} in a private cluster without public network access, you must set up your {{site.data.keyword.cos_full_notm}} service instance for HMAC authentication. If you don't want to use HMAC authentication, you must open up all outbound network traffic on port 443 for the plug-in to work properly in a private cluster.
 {: important}
 
-## Creating your object storage service instance
+## Creating an {{site.data.keyword.cos_full_notm}} instance
 {: #create_cos_service}
 
 Before you can start using object storage in your cluster, you must provision an {{site.data.keyword.cos_full_notm}} service instance in your account.

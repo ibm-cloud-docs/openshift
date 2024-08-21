@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2024, 2024
-lastupdated: "2024-06-06"
+lastupdated: "2024-08-21"
 
 keywords: openshift, {{site.data.keyword.openshiftlong_notm}}, secure by default, outbound traffic protection, 4.15
 
@@ -27,6 +27,9 @@ In many of the following scenarios, you have the option to add custom rules to y
 
 ## Disabling outbound traffic protection when creating a cluster
 {: #new-cluster-sbd}
+
+[Virtual Private Cloud]{: tag-vpc}
+[4.15 and later]{: tag-red}
 
 Review the following options for disabling outbound traffic protections for new clusters.
 
@@ -57,6 +60,9 @@ Before creating your cluster, create a [custom security group](/docs/vpc?topic=v
 ## Disabling outbound traffic protection for existing clusters
 {: #existing-cluster-sbd}
 
+[Virtual Private Cloud]{: tag-vpc}
+[4.15 and later]{: tag-red}
+
 Review your options for disabling outbound traffic protection after you've provisioned a cluster.
 
 ### Option 1: Disabling outbound traffic protection from the CLI
@@ -82,6 +88,9 @@ ibmcloud is sg-rulec kube-<clusterID> outbound all --remote <IP-address-or-subne
 
 ## Enabling outbound traffic protection for existing clusters
 {: #sbd-enable-existing}
+
+[Virtual Private Cloud]{: tag-vpc}
+[4.15 and later]{: tag-red}
 
 To enable outbound protection for your existing 4.15 clusters, run the following command. Note that enabling outbound traffic protection blocks all outbound traffic.
 
