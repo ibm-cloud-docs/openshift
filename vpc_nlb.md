@@ -1,7 +1,7 @@
 ---
 copyright: 
   years: 2024, 2024
-lastupdated: "2024-08-20"
+lastupdated: "2024-08-21"
 
 keywords: nlb, network load balancer, vpc nlb, dns, public lb, private lb
 subcollection: openshift
@@ -323,7 +323,7 @@ Review the required and optional VPC NLB annotations and specifications.
 :   Annotation to specify a VPC zone that your cluster is attached to. The VPC NLB is deployed to the same subnet in that zone that your worker nodes are connected to.  If you later change this annotation to a different zone, the VPC NLB is not moved to the new zone. If you don't specify this annotation or the `service.kubernetes.io/ibm-load-balancer-cloud-provider-vpc-subnets annotation`, the VPC NLB is deployed to the most optimal zone (such as a zone that has worker nodes in the `Ready` state). If the `dedicated: edge` label is set on worker nodes and you specify this annotation, then only edge nodes in the specified zone are configured to receive traffic. Edge nodes in other zones and non-edge nodes in the specified zone don't receive traffic from the load balancer. To see zones, run `ibmcloud ks zone ls --provider vpc-gen2`. To see zones, run `ibmcloud ks zone ls --provider vpc-gen2`.
 
 `service.kubernetes.io/ibm-load-balancer-cloud-provider-vpc-node-selector`
-:   Annotation to specify a worker node label selector. You can configure specific worker nodes in your cluster to receive traffic by specifying label selector keys. You can include only one label selector in the annotation, and that the selector must be specified in the `"key=value"` format. If this annotation is not specified, all worker nodes in your cluster are configured to receive traffic from the VPC NLB. This annotation takes precedence over the `service.kubernetes.io/ibm-load-balancer-cloud-provider-zone` annotation, and any `dedicated: edge` labels on worker nodes are ignored. To limit traffic to a specific zone, you can use this annotation to specify worker nodes in that zone. Note that setting a new label on a cluster worker node does not automatically configure the worker node to receive traffic; you must recreate or update the VPC NLB for the newly-labeled worker node to receive traffic. 
+:   Annotation to specify a worker node label selector. You can configure specific worker nodes in your cluster to receive traffic by specifying label selector keys. You can include only one label selector in the annotation, and that the selector must be specified in the `"key=value"` format. If this annotation is not specified, all worker nodes in your cluster are configured to receive traffic from the VPC NLB. This annotation takes precedence over the `service.kubernetes.io/ibm-load-balancer-cloud-provider-zone` annotation, and any `dedicated: edge` labels on worker nodes are ignored. To limit traffic to a specific zone, you can use this annotation to specify worker nodes in that zone. Note that setting a new label on a cluster worker node does not automatically configure the worker node to receive traffic; you must recreate or update the VPC NLB for the newly labeled worker node to receive traffic. 
 
 `service.kubernetes.io/ibm-load-balancer-cloud-provider-vpc-health-check-udp`
 :    The TCP node port to use for TCP health checks in a UDP load balancer. Required for UDP load balancers that have `externalTrafficPolicy` set to `Cluster`. See [Configuring TCP health checks for UDP load balancers](/docs/openshift?topic=openshift-vpclb_manage#vpc_lb_health_udp) for more considerations before setting a port value.

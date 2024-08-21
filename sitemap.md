@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2024
-lastupdated: "2024-08-20"
+lastupdated: "2024-08-21"
 
 
 keywords: openshift
@@ -5021,9 +5021,9 @@ subcollection: openshift
 {: #sitemap_setting_up_object_storage}
 
 
-[Setting up {{site.data.keyword.cos_full_notm}}](/docs/openshift?topic=openshift-storage-cos-understand#storage-cos-understand)
+[Setting up your {{site.data.keyword.cos_full_notm}} instance](/docs/openshift?topic=openshift-storage-cos-understand#storage-cos-understand)
 
-* [Creating your object storage service instance](/docs/openshift?topic=openshift-storage-cos-understand#create_cos_service)
+* [Creating an {{site.data.keyword.cos_full_notm}} instance](/docs/openshift?topic=openshift-storage-cos-understand#create_cos_service)
 
 * [Creating {{site.data.keyword.cos_full_notm}} service credentials](/docs/openshift?topic=openshift-storage-cos-understand#service_credentials)
 
@@ -5553,10 +5553,6 @@ subcollection: openshift
     * [Referencing the secret in environment variables](/docs/openshift?topic=openshift-service-binding#reference_secret)
 
 * [Removing a service from a cluster](/docs/openshift?topic=openshift-service-binding#unbind-service)
-
-[Installing SGX drivers and platform software on SGX-capable worker nodes](/docs/openshift?topic=openshift-sgx-install#sgx-install)
-
-* [Installing with a script](/docs/openshift?topic=openshift-sgx-install#intel-sgx-script)
 
 
 ## Tuning performance

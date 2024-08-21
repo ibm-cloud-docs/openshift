@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2024
-lastupdated: "2024-08-01"
+lastupdated: "2024-08-21"
 
 
 keywords: kubernetes, openshift
@@ -427,7 +427,6 @@ To remove the `ibmc` Helm plug-in and the `ibm-object-storage-plugin`:
     {: pre}
 
     Example output
-
     ```sh
     ibmc-s3fs-cold-cross-region            ibm.io/ibmc-s3fs   8m
     ibmc-s3fs-cold-regional                ibm.io/ibmc-s3fs   8m
@@ -444,15 +443,15 @@ To remove the `ibmc` Helm plug-in and the `ibm-object-storage-plugin`:
     ```
     {: screen}
 
-2. Choose a storage class that fits your data access requirements. The storage class determines the [pricing](https://cloud.ibm.com/objectstorage/create){: external} for storage capacity, read and write operations, and outbound bandwidth for a bucket. The option that is correct for you is based on how frequently data is read and written to your service instance.
+2. Choose a storage class that fits your data access requirements. The storage class determines the storage capacity, read and write operations, and outbound bandwidth for a bucket. The option that is correct for you is based on how frequently data is read and written to your service instance.
     - **Standard**: This option is used for hot data that is accessed frequently. Common use cases are web or mobile apps.
     - **Vault**: This option is used for workloads or cool data that are accessed infrequently, such as once a month or less. Common use cases are archives, short-term data retention, digital asset preservation, tape replacement, and disaster recovery.
     - **Cold**: This option is used for cold data that is rarely accessed (every 90 days or less), or inactive data. Common use cases are archives, long-term backups, historical data that you keep for compliance, or workloads and apps that are rarely accessed.
     - **Smart**: This option is used for workloads and data that don't follow a specific usage pattern, or that are too huge to determine or predict a usage pattern.
 
-3. Decide on the level of resiliency for the data that is stored in your bucket.
-    - **Cross-region**: With this option, your data is stored across three regions within a geolocation for highest availability. If you have workloads that are distributed across regions, requests are routed to the nearest regional endpoint. The API endpoint for the geolocation is automatically set by the `ibmc` Helm plug-in that you installed earlier based on the location that your cluster is in. For example, if your cluster is in `US South`, then your storage classes are configured to use the `US GEO` API endpoint for your buckets. For more information, see [Regions and endpoints](/docs/cloud-object-storage?topic=cloud-object-storage-endpoints).  
-    - **Regional**: With this option, your data is replicated across multiple zones within one region. If you have workloads that are located in the same region, you see lower latency and better performance than in a cross-regional setup. The regional endpoint is automatically set by the `ibm` Helm plug-in that you installed earlier based on the location that your cluster is in. For example, if your cluster is in `US South`, then your storage classes were configured to use `US South` as the regional endpoint for your buckets. For more information, see [Regions and endpoints](/docs/cloud-object-storage?topic=cloud-object-storage-endpoints).
+3. Decide on the level of resiliency for the data that is stored in your bucket. For more information, see [Regions and endpoints](/docs/cloud-object-storage?topic=cloud-object-storage-endpoints).
+    - **Cross-region**: With this option, your data is stored across three regions within a geolocation for highest availability. If you have workloads that are distributed across regions, requests are routed to the nearest regional endpoint. The API endpoint for the geolocation is automatically set by the `ibmc` Helm plug-in that you installed earlier based on the location that your cluster is in. For example, if your cluster is in `US South`, then your storage classes are configured to use the `US GEO` API endpoint for your buckets. 
+    - **Regional**: With this option, your data is replicated across multiple zones within one region. If you have workloads that are located in the same region, you see lower latency and better performance than in a cross-regional setup. The regional endpoint is automatically set by the `ibm` Helm plug-in that you installed earlier based on the location that your cluster is in. For example, if your cluster is in `US South`, then your storage classes were configured to use `US South` as the regional endpoint for your buckets.
 
 4. Review the detailed {{site.data.keyword.cos_full_notm}} bucket configuration for a storage class.
 

@@ -304,7 +304,6 @@ toc:
           - integrations-addons.md
           - integrations-helm.md
           - integrations-svcbind.md
-          - sgx-install.md
       - topicgroup: 
           label: Tuning performance
           topics:
