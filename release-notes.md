@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2024
-lastupdated: "2024-08-20"
+lastupdated: "2024-08-22"
 
 
 keywords: openshift, {{site.data.keyword.openshiftlong_notm}}, kubernetes, release notes
@@ -27,6 +27,13 @@ Looking for {{site.data.keyword.cloud_notm}} status, platform announcements, sec
 
 ## August 2024
 {: #openshift-aug24}
+
+### 22 August 2024
+{: #openshift-aug2224}
+{: release-note}
+
+New audit events for cluster operations
+:   The `containers-kubernetes.cluster-master.changed` and `containers-kubernetes.cluster-ssl-certificate.update` [audit events](/docs/openshift?topic=openshift-at_events_ref) are available. 
 
 ### 20 August 2024
 {: #openshift-aug2024}
@@ -2226,7 +2233,7 @@ Persistent VPC load balancers
 :   You can now create a [persistent VPC load balancer](/docs/openshift?topic=openshift-vpclb_manage#vpc_lb_persist) that remains available even after your cluster is deleted. 
 
 Customized VPC load balancer health checks
-:   For more control over your VPC load balancer health checks, you can use [optional annotations](/docs/openshift?topic=openshift-setup_vpc_alb#vpc_nlb_annotations_opt) to customize your health checks with advanced configurations for test intervals, timeouts, and retries.
+:   For more control over your VPC load balancer health checks, you can use [optional annotations](/docs/openshift?topic=openshift-setup_vpc_alb#vpc_alb_annotations_opt) to customize your health checks with advanced configurations for test intervals, timeouts, and retries.
 
 ## January 2023
 {: #openshift-jan23}

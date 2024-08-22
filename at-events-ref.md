@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2024
-lastupdated: "2024-08-01"
+lastupdated: "2024-08-22"
 
 
 keywords: openshift, {{site.data.keyword.openshiftlong_notm}}, kubernetes, audit
@@ -48,6 +48,7 @@ The following list of cluster events are sent to {{site.data.keyword.at_full_not
 | `containers-kubernetes.image-security.disable` | Image security is disabled. |
 | `containers-kubernetes.cluster-key-state.update` | The root key in the key management service (KMS) provider that the cluster uses is updated, such as a root key being enabled, disabled, or rotated in a key management service (KMS) provider.|
 | `containers-kubernetes.cluster-kms.enable` | A key management service (KMS) provider is enabled for a cluster. |
+| `containers-kubernetes.cluster-master.changed` | A cluster master operation is completed. |
 | `containers-kubernetes.cluster-master.refresh` | A cluster master refresh is requested. |
 | `containers-kubernetes.cluster-master.update` | A cluster master update is requested. |
 | `containers-kubernetes.cluster-private-service-endpoint.disable` | The private cloud service endpoint for a cluster is disabled. |
@@ -61,6 +62,7 @@ The following list of cluster events are sent to {{site.data.keyword.at_full_not
 | `containers-kubernetes.cluster-service.bind` | An {{site.data.keyword.cloud_notm}} service is bound to the cluster.|
 | `containers-kubernetes.cluster-service.list` | The {{site.data.keyword.cloud_notm}} services that are bound to a cluster are listed. The list might be filtered by the cluster project.|
 | `containers-kubernetes.cluster-service.unbind` | An {{site.data.keyword.cloud_notm}} service is removed from the cluster. |
+| `containers-kubernetes.cluster-ssl-certificate.update` | An update for a named SSL certificate is initiated. |
 | `containers-kubernetes.cluster-subnet.add` | A public or private portable subnet is added to a cluster. |
 | `containers-kubernetes.cluster-subnet.create` | A public or private subnet is created for the cluster. |
 | `containers-kubernetes.cluster-subnet.detach` | A public or private portable subnet is detached from a cluster.  |
