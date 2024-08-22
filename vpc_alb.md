@@ -1,7 +1,7 @@
 ---
 copyright: 
   years: 2024, 2024
-lastupdated: "2024-08-21"
+lastupdated: "2024-08-22"
 
 keywords: alb, application load balancer, vpc alb, dns, public lb, private lb
 
@@ -25,7 +25,7 @@ Do not confuse the Application Load Balancer for VPC with {{site.data.keyword.op
 
 Before you begin
 
-- Ensure that you have the [**Writer** or **Manager** {{site.data.keyword.cloud_notm}} IAM service access role](/docs/openshift?topic=openshift-iam-platform-access-roles) for the namespace in which you deploy the Kubernetes `LoadBalancer` service for the VPC NLB.
+- Ensure that you have the [**Writer** or **Manager** {{site.data.keyword.cloud_notm}} IAM service access role](/docs/openshift?topic=openshift-iam-platform-access-roles) for the namespace in which you deploy the Kubernetes `LoadBalancer` service for the VPC ALB.
 - [Access your {{site.data.keyword.redhat_openshift_notm}} cluster](/docs/openshift?topic=openshift-access_cluster).
 - To view VPC ALBs, install the `infrastructure-service` plug-in. The prefix for running commands is `ibmcloud is`.
     ```sh
@@ -272,7 +272,7 @@ status:
 Review the required and optional VPC ALB annotations and specifications. 
 
 ### Required annotations and specifications
-{: #vpc_nlb_annotations_req}
+{: #vpc_alb_annotations_req}
 
 `service.kubernetes.io/ibm-load-balancer-cloud-provider-enable-features: "alb"`
 :   Annotation to create a VPC ALB. If you do not include `service.kubernetes.io/ibm-load-balancer-cloud-provider-enable-features`, a VPC ALB is provisioned by default. 
@@ -286,7 +286,7 @@ Review the required and optional VPC ALB annotations and specifications.
 :   Note that to use the original client source IP for VPC ALBs, you must enable the PROXY protocol with the `service.kubernetes.io/ibm-load-balancer-cloud-provider-enable-features: "proxy-protocol"` annotation. 
 
 ### Optional annotations and specifications
-{: #vpc_nlb_annotations_opt}
+{: #vpc_alb_annotations_opt}
 
 `service.kubernetes.io/ibm-load-balancer-cloud-provider-vpc-lb-name`
 :   Include a unique name to make your VPC load balancer persistent. Persistent VPC load balancers are not deleted when the cluster they belong to is deleted. For more information, see [Persistent VPC load balancers](/docs/openshift?topic=openshift-vpclb_manage#vpc_lb_persist). This annotation can be set only on load balancer creation. It cannot be used in an update operation.

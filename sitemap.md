@@ -4456,9 +4456,9 @@ subcollection: openshift
 
 * [Annotations and specifications](/docs/openshift?topic=openshift-setup_vpc_alb#vpc_alb_annotations)
 
-    * [Required annotations and specifications](/docs/openshift?topic=openshift-setup_vpc_alb#vpc_nlb_annotations_req)
+    * [Required annotations and specifications](/docs/openshift?topic=openshift-setup_vpc_alb#vpc_alb_annotations_req)
 
-    * [Optional annotations and specifications](/docs/openshift?topic=openshift-setup_vpc_alb#vpc_nlb_annotations_opt)
+    * [Optional annotations and specifications](/docs/openshift?topic=openshift-setup_vpc_alb#vpc_alb_annotations_opt)
 
 [Setting up a Network Load Balancer for VPC](/docs/openshift?topic=openshift-setup_vpc_nlb#setup_vpc_nlb)
 
