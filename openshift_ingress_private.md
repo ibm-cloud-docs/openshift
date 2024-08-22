@@ -2,7 +2,7 @@
 
 copyright:
   years: 2023, 2024
-lastupdated: "2024-03-19"
+lastupdated: "2024-08-22"
 
 
 keywords: ingress, expose apps, privately expose, private ingress, ingress vpc
@@ -304,7 +304,7 @@ Ingress resources define the routing rules that the Ingress controller uses to r
 
 1. Define an Ingress resource configuration file that uses the IBM-provided domain or your custom domain to route incoming network traffic to the services that you created earlier.
     ```yaml
-    apiVersion: networking.k8s.io/v1 # For 4.5 or earlier, use networking.k8s.io/v1beta1 instead
+    apiVersion: networking.k8s.io/v1
     kind: Ingress
     metadata:
       name: myingressresource

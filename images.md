@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2024
-lastupdated: "2024-08-01"
+lastupdated: "2024-08-22"
 
 
 keywords: kubernetes, registry, pull secret, secrets, openshift
@@ -154,7 +154,7 @@ Before you begin
     - [Docker Engine CLI](https://www.docker.com/products/container-runtime/#/download){: external}, to locally pull images from an image registry.
     - [Skopeo](https://github.com/containers/skopeo/blob/main/install.md){: external}, to encrypt OCI container images.
 
-2. [Access your {{site.data.keyword.redhat_openshift_notm}} cluster](/docs/openshift?topic=openshift-access_cluster). Note that encrypted images are supported only for {{site.data.keyword.redhat_openshift_notm}} version 4.5 and later.
+2. [Access your {{site.data.keyword.redhat_openshift_notm}} cluster](/docs/openshift?topic=openshift-access_cluster).
 
 3. Optional: When you create a public and private key pair for the image encryption, you can provide the private key directly in a secret, or first wrap the private key by using a {{site.data.keyword.keymanagementserviceshort}} root key or a key management service (KMS). To prepare to wrap the private key:
     1. [Install the {{site.data.keyword.keymanagementserviceshort}} CLI plug-in](/docs/key-protect?topic=key-protect-set-up-cli).

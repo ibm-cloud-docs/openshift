@@ -2,7 +2,7 @@
 
 copyright:
   years: 2023, 2024
-lastupdated: "2024-03-19"
+lastupdated: "2024-08-22"
 
 
 keywords: ingress, expose apps, publicly expose, public ingress, ingress vpc
@@ -95,6 +95,7 @@ Ingress resources define the routing rules that the Ingress controller uses to r
         http:
           paths:
           - path: /<app1_path>
+            pathType: Prefix
             backend:
                 service:
                     name: test
@@ -119,6 +120,9 @@ Ingress resources define the routing rules that the Ingress controller uses to r
 
     `path`
     :    Replace `<app_path>` with  the path that your app is listening on. The path is appended to the IBM-provided or your custom domain to create a unique route to your app. When you enter this route into a web browser, network traffic is routed to the Ingress controller. The Ingress controller looks up the associated service, and the Ingress controller sends network traffic to the service. The service then forwards the traffic to the pods where the app runs. Many apps don't listen on a specific path, but use the root path and a specific port. In this case, define the root path as `/` and don't specify an individual path for your app. For `http://domain/`, enter `/` as the path. For `http://domain/app1_path`, enter `/app1_path` as the path.
+
+    `pathType`
+    :   The URL path matching method. Supported values are `ImplementationSpecific`, `Exact`, or `Prefix`. For more information about and examples of each path type, see the [community Kubernetes documentation](https://kubernetes.io/docs/concepts/services-networking/ingress/#path-types){: external}.
 
     `name`
     :    Replace `<app1_service>` and `<app2_service>`, and so on, with the name of the services you created to expose your apps. If your apps are exposed by services in different projects in the cluster, include only app services that are in the same project. You must create one Ingress resource for each project where you have apps that you want to expose.
@@ -298,7 +302,7 @@ Ingress resources define the routing rules that the Ingress controller uses to r
 
 1. Define an Ingress resource configuration file that uses the IBM-provided domain or your custom domain to route incoming network traffic to the services that you created earlier.
     ```yaml
-    apiVersion: networking.k8s.io/v1 # For 4.5 or earlier, use networking.k8s.io/v1beta1 instead
+    apiVersion: networking.k8s.io/v1
     kind: Ingress
     metadata:
       name: myingressresource
@@ -312,6 +316,7 @@ Ingress resources define the routing rules that the Ingress controller uses to r
         http:
           paths:
           - path: /<app1_path>
+            pathType: Prefix
             backend:
                 service:
                   name: <app1_service>
@@ -335,8 +340,10 @@ Ingress resources define the routing rules that the Ingress controller uses to r
     :    Replace `<domain>` with your subdomain. If your cluster has multiple projects where apps are exposed, one Ingress resource is required per project. You can use the same subdomain in each resource or different subdomains in each resource. For example, if you use a wildcard domain, you can append a wildcard subdomain to the beginning of the domain, such as `subdomain1.custom_domain.net`. Do not use &ast; for your host or leave the host property empty to avoid failures during Ingress creation.
 
     `path`
-    :    Replace `<app_path>` with the path that your app is listening on. The path is appended to the IBM-provided or your custom domain to create a unique route to your app. When you enter this route into a web browser, network traffic is routed to the Ingress controller. The Ingress controller looks up the associated service, and sends network traffic to the service. The service then forwards the traffic to the pods where the app runs. Many apps don't listen on a specific path, but use the root path and a specific port. In this case, define the root path as `/` and don't specify an individual path for your app.
-    :    For example, to use `http://domain/`, enter `/` as the path. For `http://domain/app1_path`, enter `/app1_path` as the path.
+    :    Replace `<app_path>` with the path that your app is listening on. The path is appended to the IBM-provided or your custom domain to create a unique route to your app. When you enter this route into a web browser, network traffic is routed to the Ingress controller. The Ingress controller looks up the associated service, and sends network traffic to the service. The service then forwards the traffic to the pods where the app runs. Many apps don't listen on a specific path, but use the root path and a specific port. In this case, define the root path as `/` and don't specify an individual path for your app. For example, to use `http://domain/`, enter `/` as the path. For `http://domain/app1_path`, enter `/app1_path` as the path.
+
+    `pathType`
+    :   The URL path matching method. Supported values are `ImplementationSpecific`, `Exact`, or `Prefix`. For more information about and examples of each path type, see the [community Kubernetes documentation](https://kubernetes.io/docs/concepts/services-networking/ingress/#path-types){: external}.
 
     `name`
     :    Replace `<app1_service>` and `<app2_service>`, and so on, with the name of the services you created to expose your apps. If your apps are exposed by services in different projects in the cluster, include only app services that are in the same project. You must create one Ingress resource for each project where you have apps that you want to expose.
