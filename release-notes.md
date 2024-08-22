@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2024
-lastupdated: "2024-08-20"
+lastupdated: "2024-08-22"
 
 
 keywords: openshift, {{site.data.keyword.openshiftlong_notm}}, kubernetes, release notes
@@ -27,6 +27,13 @@ Looking for {{site.data.keyword.cloud_notm}} status, platform announcements, sec
 
 ## August 2024
 {: #openshift-aug24}
+
+### 22 August 2024
+{: #openshift-aug2224}
+{: release-note}
+
+New audit events for cluster operations
+:   The `containers-kubernetes.cluster-master.changed` and `containers-kubernetes.cluster-ssl-certificate.update` [audit events](/docs/openshift?topic=openshift-at_events_ref) are available. 
 
 ### 20 August 2024
 {: #openshift-aug2024}

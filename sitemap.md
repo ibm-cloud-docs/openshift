@@ -275,6 +275,10 @@ subcollection: openshift
 
 * [August 2024](/docs/openshift?topic=openshift-openshift-relnotes#openshift-aug24)
 
+    * [22 August 2024](/docs/openshift?topic=openshift-openshift-relnotes#openshift-aug2224)
+
+        * New audit events for cluster operations
+
     * [20 August 2024](/docs/openshift?topic=openshift-openshift-relnotes#openshift-aug2024)
 
         * CLI version `1.0.651` is available.
