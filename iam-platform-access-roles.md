@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2024
-lastupdated: "2024-05-29"
+lastupdated: "2024-08-22"
 
 keywords: openshift, {{site.data.keyword.openshiftlong_notm}}, kubernetes, infrastructure, policy, users, permissions, access, roles
 
@@ -92,8 +92,8 @@ Use the following table to customize classic infrastructure permissions only whe
 ### Required classic infrastructure permissions
 {: #required-classic-rbac}
 
-| Permission | Description | IAM Assign Policy Console | CLI |
-|:-----------------|:-----------------|:---------------|:----|
+| Permission | Description |
+| --- | --- |
 | IPMI Remote Management | Manage worker nodes.|
 | Add Server | Add worker nodes.   \n   \n  **Note**: For worker nodes that have public IP addresses, you also need the **Add Compute with Public Network Port** permission in the **Network** category. |
 | Cancel Server | Delete worker nodes. |

@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2024
-lastupdated: "2024-08-06"
+lastupdated: "2024-08-22"
 
 
 keywords: openshift, openshift data foundation, openshift container storage, ocs, classic
@@ -241,8 +241,8 @@ Before you install OpenShift Data Foundation, prepare your cluster.
 ### Getting your device details
 {: #odf-classic-get-devices}
 
-**Optional for add-on version 4.8 and later**. You can use automatic disk discovery to find available devices for ODF. However, if you want to manually specify storage devices for ODF, complete the following steps to retrieve your storage device details.
-{: important}
+You can use automatic disk discovery to find available devices for ODF. However, if you want to manually specify storage devices for ODF, complete the following steps to retrieve your storage device details.
+{: tip}
 
 Before you install ODF, get the details of the local disks on your worker nodes.
 {: shortdesc}
