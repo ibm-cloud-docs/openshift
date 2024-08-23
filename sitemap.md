@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2024
-lastupdated: "2024-08-22"
+lastupdated: "2024-08-23"
 
 
 keywords: openshift
@@ -275,13 +275,13 @@ subcollection: openshift
 
 * [August 2024](/docs/openshift?topic=openshift-openshift-relnotes#openshift-aug24)
 
+    * [23 August 2024](/docs/openshift?topic=openshift-openshift-relnotes#openshift-aug2324)
+
+        * CLI version `1.0.652` is available.
+
     * [22 August 2024](/docs/openshift?topic=openshift-openshift-relnotes#openshift-aug2224)
 
         * New audit events for cluster operations
-
-    * [20 August 2024](/docs/openshift?topic=openshift-openshift-relnotes#openshift-aug2024)
-
-        * CLI version `1.0.651` is available.
 
 * [July 2024](/docs/openshift?topic=openshift-openshift-relnotes#openshift-july24)
 
@@ -6151,7 +6151,7 @@ subcollection: openshift
 
 * [Version 1.0](/docs/openshift?topic=openshift-cs_cli_changelog#10)
 
-* [Version v1.0.651](/docs/openshift?topic=openshift-cs_cli_changelog#cli-010651)
+* [Version v1.0.652](/docs/openshift?topic=openshift-cs_cli_changelog#cli-010652)
 
 * [Version v1.0.640](/docs/openshift?topic=openshift-cs_cli_changelog#cli-010640)
 

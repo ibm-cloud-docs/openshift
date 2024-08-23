@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2024
-lastupdated: "2024-01-03"
+lastupdated: "2024-08-23"
 
 
 keywords: openshift, autoscaler
@@ -26,6 +26,10 @@ Your pending workloads might not request enough capacity to make each zone balan
 
 In this case, if you want to manually balance the worker pools, [update your cluster autoscaler ConfigMap](/docs/openshift?topic=openshift-cluster-scaling-install-addon-enable) to remove the unbalanced worker pool. Then, run the `ibmcloud oc worker-pool rebalance` [command](/docs/openshift?topic=openshift-kubernetes-service-cli#cs_rebalance), and add the worker pool back to the cluster autoscaler ConfigMap.
 {: tsResolve} 
+
+
+For Satellite clusters, do not use the `ibmcloud oc worker-pool rebalance` command if you have manually assigned worker nodes to your worker pool. Rebalancing a pool with manually assigned worker nodes might remove more than the expected number of worker nodes. 
+{: important}
 
 
 
