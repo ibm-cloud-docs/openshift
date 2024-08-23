@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2024
-lastupdated: "2024-01-18"
+lastupdated: "2024-08-23"
 
 
 keywords: openshift, vlan
@@ -208,6 +208,11 @@ To change the VLANs that a worker pool uses to provision worker nodes.
         ibmcloud oc worker-pool rebalance --cluster <cluster_name_or_ID> --worker-pool <pool_name>
         ```
         {: pre}
+
+        
+        For Satellite clusters, do not use the `ibmcloud oc worker-pool rebalance` command if you have manually assigned worker nodes to your worker pool. Rebalancing a pool with manually assigned worker nodes might remove more than the expected number of worker nodes. 
+        {: important}
+        
 
 8. Optional: You can repeat steps 2 - 7 for each worker pool in your cluster. After you complete these steps, all worker nodes in your cluster are set up with the new VLANs.
 
