@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2024
-lastupdated: "2024-08-06"
+lastupdated: "2024-08-26"
 
 
 keywords: kubernetes, deploy, app, openshift
@@ -332,7 +332,7 @@ Review the following potential app setups that are ordered with increasing degre
 2. A deployment with n+2 pods that are managed by a replica set and spread across multiple nodes (anti-affinity) in a single zone cluster.
 3. A deployment with n+2 pods that are managed by a replica set and spread across multiple nodes (anti-affinity) in a multizone cluster across zones.
 
-You can also [connect multiple clusters in different regions with a global load balancer](/docs/openshift?topic=openshift-loadbalancer-qs) to increase the high availability.
+You can also connect multiple clusters in different regions with a global load balancer.
 
 ### How can I increase the availability of my app?
 {: #increase_availability}

@@ -2,7 +2,7 @@
 
 copyright:
   years: 2023, 2024
-lastupdated: "2024-08-22"
+lastupdated: "2024-08-26"
 
 
 keywords: kubernetes, openshift
@@ -30,7 +30,7 @@ You can also use your own external DNS provider. You must have an account with t
 - [Cloudflare]{: tag-red}
 - [CIS]{: tag-cool-gray}
 
-You can also use the `service.kubernetes.io/ibm-load-balancer-cloud-provider-dns-name` VPC load balancer annotation to create a new domain or register an existing domain to your VPC load balancer. For more information, see the annotation description in the [VPC ALB](/docs/openshift?topic=openshift-setup_vpc_alb#vpc_nlb_annotations_opt) or [VPC NLB](/docs/openshift?topic=openshift-setup_vpc_nlb#vpc_nlb_annotations_opt) documentation. 
+You can also use the `service.kubernetes.io/ibm-load-balancer-cloud-provider-dns-name` VPC load balancer annotation to create a new domain or register an existing domain to your VPC load balancer. For more information, see the annotation description in the [VPC ALB](/docs/openshift?topic=openshift-setup_vpc_alb#vpc_alb_annotations_opt) or [VPC NLB](/docs/openshift?topic=openshift-setup_vpc_nlb#vpc_nlb_annotations_opt) documentation. 
 {: tip}
 
 ## Accessing domains in the console
