@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2024
-lastupdated: "2024-08-23"
+lastupdated: "2024-08-26"
 
 
 keywords: openshift
@@ -274,6 +274,12 @@ subcollection: openshift
 [Release notes](/docs/openshift?topic=openshift-openshift-relnotes#openshift-relnotes)
 
 * [August 2024](/docs/openshift?topic=openshift-openshift-relnotes#openshift-aug24)
+
+    * [26 August 2024](/docs/openshift?topic=openshift-openshift-relnotes#openshift-aug2624)
+
+        * {{site.data.keyword.filestorage_vpc_full_notm}} cluster add-on patch updates.
+
+        * Storage Operator cluster add-on patch update.
 
     * [23 August 2024](/docs/openshift?topic=openshift-openshift-relnotes#openshift-aug2324)
 
@@ -7553,6 +7559,8 @@ subcollection: openshift
 
 * [Version 2.0](/docs/openshift?topic=openshift-versions-vpc-file-addon#020_is_file)
 
+    * [Change log for version 2.0.6_259, released 26 August 2024](/docs/openshift?topic=openshift-versions-vpc-file-addon#2.0.6_259_is_file_relnote)
+
     * [Change log for version 2.0.5_253, released 15 July 2024](/docs/openshift?topic=openshift-versions-vpc-file-addon#2.0.5_253_is_file_relnote)
 
     * [Change log for version 2.0.4_232, released 3 July 2024](/docs/openshift?topic=openshift-versions-vpc-file-addon#2.0.4_232_is_file_relnote)
@@ -8162,6 +8170,8 @@ subcollection: openshift
 [IBM storage operator add-on change log](/docs/openshift?topic=openshift-versions-ibm-storage-operator#versions-ibm-storage-operator)
 
 * [Version 1.0.0](/docs/openshift?topic=openshift-versions-ibm-storage-operator#ibm-storage-operator-1.0.0)
+
+    * [Change log for version 1.0.13_151, released 26 August 2024](/docs/openshift?topic=openshift-versions-ibm-storage-operator#ibm-storage-operator-1.0.13_151)
 
     * [Change log for version 1.0.12_147, released 15 July 2024](/docs/openshift?topic=openshift-versions-ibm-storage-operator#ibm-storage-operator-1.0.12_147)
 

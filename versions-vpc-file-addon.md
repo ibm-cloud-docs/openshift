@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2024
-lastupdated: "2024-07-15"
+lastupdated: "2024-08-26"
 
 
 keywords: file, add-on, changelog, openshift
@@ -44,6 +44,11 @@ To view a list of add-ons and the supported cluster versions, see the [Supported
 
 ## Version 2.0
 {: #020_is_file}
+
+### Change log for version 2.0.6_259, released 26 August 2024
+{: #2.0.6_259_is_file_relnote}
+
+- Updates the golang image to `1.21.13-community`.
 
 ### Change log for version 2.0.5_253, released 15 July 2024
 {: #2.0.5_253_is_file_relnote}

@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2024, 2024
-lastupdated: "2024-07-15"
+lastupdated: "2024-08-26"
 
 
 keywords: storage operator, add-on, changelog, openshift
@@ -33,8 +33,17 @@ ibmcloud oc cluster addon versions --addon ibm-storage-operator
 
 To view a list of add-ons and the supported cluster versions, see the [Supported cluster add-ons table](/docs/openshift?topic=openshift-supported-cluster-addon-versions).
 
+
 ## Version 1.0.0
 {: #ibm-storage-operator-1.0.0}
+
+
+### Change log for version 1.0.13_151, released 26 August 2024
+{: #ibm-storage-operator-1.0.13_151}
+
+- Applies the `PACKAGE_DEPLOYER_VERSION` image automatically on the worker pools where EIT is enabled.
+- Updates the golang image to `1.21.13-community`.
+
 
 ### Change log for version 1.0.12_147, released 15 July 2024
 {: #ibm-storage-operator-1.0.12_147}
