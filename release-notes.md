@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2024
-lastupdated: "2024-08-26"
+lastupdated: "2024-08-27"
 
 
 keywords: openshift, {{site.data.keyword.openshiftlong_notm}}, kubernetes, release notes
@@ -27,6 +27,8 @@ Looking for {{site.data.keyword.cloud_notm}} status, platform announcements, sec
 
 ## August 2024
 {: #openshift-aug24}
+
+
 
 ### 26 August 2024
 {: #openshift-aug2624}
@@ -5574,6 +5576,3 @@ Versions
 
 CA certificate rotation
 :   Added steps to [revoke existing certificate authority (CA) certificates in your cluster and issue new CA certificates](/docs/openshift?topic=openshift-cert-rotate).
-
-
-
