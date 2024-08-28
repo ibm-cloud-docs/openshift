@@ -275,6 +275,10 @@ subcollection: openshift
 
 * [August 2024](/docs/openshift?topic=openshift-openshift-relnotes#openshift-aug24)
 
+    * [28 August 2024](/docs/openshift?topic=openshift-openshift-relnotes#openshift-aug2824)
+
+        * {{site.data.keyword.openshiftlong_notm}} master fix packs.
+
     * [26 August 2024](/docs/openshift?topic=openshift-openshift-relnotes#openshift-aug2624)
 
         * {{site.data.keyword.filestorage_vpc_full_notm}} cluster add-on patch updates.
