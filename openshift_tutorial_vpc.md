@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2024
-lastupdated: "2024-08-20"
+lastupdated: "2024-08-29"
 
 
 keywords: kubernetes, openshift, red hat, red hat openshift
@@ -163,7 +163,7 @@ Create an {{site.data.keyword.cloud_notm}} Virtual Private Cloud (VPC) environme
 
     ```sh
     Client Version: v4.15.0
-    Kubernetes Version: v1.30.3.2
+    Kubernetes Version: v1.30.4.2
     ```
     {: screen}
 
@@ -360,9 +360,3 @@ Now that you have a VPC cluster, learn more about what you can do.
 
 Need help, have questions, or want to give feedback on VPC clusters? Try posting in the [Slack channel](https://join.slack.com/t/ibm-cloud-success/shared_invite/zt-2p5zqh275-FL8XUSEmn_vvAJZzrHqYcA){: external}.
 {: tip}
-
-
-
-
-
-
