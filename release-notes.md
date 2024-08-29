@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2024
-lastupdated: "2024-08-28"
+lastupdated: "2024-08-29"
 
 
 keywords: openshift, {{site.data.keyword.openshiftlong_notm}}, kubernetes, release notes
@@ -27,6 +27,13 @@ Looking for {{site.data.keyword.cloud_notm}} status, platform announcements, sec
 
 ## August 2024
 {: #openshift-aug24}
+
+### 29 August 2024
+{: #openshift-aug2924}
+{: release-note}
+
+{{site.data.keyword.cos_full_notm}} plug-in updates.
+:   For more information, see the [change log](/docs/openshift?topic=openshift-cos_plugin_changelog).
 
 ### 28 August 2024
 {: #openshift-aug2824}
@@ -57,6 +64,19 @@ Looking for {{site.data.keyword.cloud_notm}} status, platform announcements, sec
 
 Storage Operator cluster add-on patch update.
 :   For more information, see the [change log](/docs/openshift?topic=openshift-versions-ibm-storage-operator).
+
+
+
+
+
+{{site.data.keyword.openshiftlong_notm}} master fix packs.
+:   Worker node fix packs can be applied by updating or reloading the worker node in classic infrastructure, or replacing the worker node in VPC infrastructure. Review the following change logs for your cluster version.
+:   [Version 4.15 change log](/docs/openshift?topic=openshift-openshift_changelog_415)
+:   [Version 4.14 change log](/docs/openshift?topic=openshift-openshift_changelog_414)
+:   [Version 4.13 change log](/docs/openshift?topic=openshift-openshift_changelog_413)
+:   [Version 4.12 change log](/docs/openshift?topic=openshift-openshift_changelog_412)
+
+
 
 ### 23 August 2024
 {: #openshift-aug2324}

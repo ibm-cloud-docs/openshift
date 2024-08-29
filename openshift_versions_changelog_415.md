@@ -2,7 +2,7 @@
 
 copyright:
   years: 2023, 2024
-lastupdated: "2024-08-28"
+lastupdated: "2024-08-29"
 
 
 keywords: openshift, 4.15, update, upgrade, BOM, bill of materials, versions, patch
@@ -53,6 +53,20 @@ The following table shows the changes that are in the master fix pack 4.15.25_15
 | {{site.data.keyword.openshiftlong_notm}}. | 4.15.22 | 4.15.25 | See the [{{site.data.keyword.openshiftlong_notm}} release notes](https://docs.openshift.com/container-platform/4.15/release_notes/ocp-4-15-release-notes.html#ocp-4-15-25){: external}. |
 | {{site.data.keyword.openshiftlong_notm}} Control Plane Operator, Metrics Server, and toolkit | 4.15.0+20240709 | 4.15.0+20240814 | See the [{{site.data.keyword.openshiftlong_notm}} toolkit release notes](https://github.com/openshift/ibm-roks-toolkit/releases/tag/v4.15.0+20240814){: external}. |
 {: caption="Changes since version 4.15.22_1554_openshift" caption-side="bottom"}
+
+
+### Change log for worker node fix pack 4.15.28_1557_openshift, released 26 August 2024
+{: #41528_1557_openshift_W}
+
+The following table shows the changes that are in the worker node fix pack 4.15.28_1557_openshift. Worker node patch updates can be applied by updating, reloading (in classic infrastructure), or replacing (in VPC infrastructure) the worker node.
+{: shortdesc}
+
+| Component | Previous | Current | Description |
+| --- | --- | --- | --- |
+| RHEL 8 Packages | N/A | N/A | Package updates for [RHSA-2024:5524](https://access.redhat.com/errata/RHSA-2024:5524){: external}, [CVE-2024-1737](https://nvd.nist.gov/vuln/detail/CVE-2024-1737){: external}, [CVE-2024-1975](https://nvd.nist.gov/vuln/detail/CVE-2024-1975){: external}, [RHSA-2024:5258](https://access.redhat.com/errata/RHSA-2024:5258){: external}, [CVE-2023-45290](https://nvd.nist.gov/vuln/detail/CVE-2023-45290){: external}, [CVE-2024-1394](https://nvd.nist.gov/vuln/detail/CVE-2024-1394){: external}, [CVE-2024-24783](https://nvd.nist.gov/vuln/detail/CVE-2024-24783){: external}, [CVE-2024-24784](https://nvd.nist.gov/vuln/detail/CVE-2024-24784){: external}, [CVE-2024-24789](https://nvd.nist.gov/vuln/detail/CVE-2024-24789){: external}, [CVE-2024-3727](https://nvd.nist.gov/vuln/detail/CVE-2024-3727){: external}, [CVE-2024-37298](https://nvd.nist.gov/vuln/detail/CVE-2024-37298){: external}, [CVE-2024-6104](https://nvd.nist.gov/vuln/detail/CVE-2024-6104){: external}, [RHSA-2024:5530](https://access.redhat.com/errata/RHSA-2024:5530){: external}, [CVE-2024-6345](https://nvd.nist.gov/vuln/detail/CVE-2024-6345){: external}, [RHSA-2024:3043](https://access.redhat.com/errata/RHSA-2024:3043){: external}, [CVE-2024-0690](https://nvd.nist.gov/vuln/detail/CVE-2024-0690){: external}, [RHSA-2024:5654](https://access.redhat.com/errata/RHSA-2024:5654){: external}, [CVE-2024-2398](https://nvd.nist.gov/vuln/detail/CVE-2024-2398){: external}, [RHSA-2024:5312](https://access.redhat.com/errata/RHSA-2024:5312){: external}, [CVE-2024-37370](https://nvd.nist.gov/vuln/detail/CVE-2024-37370){: external}, [CVE-2024-37371](https://nvd.nist.gov/vuln/detail/CVE-2024-37371){: external}, [RHSA-2024:5309](https://access.redhat.com/errata/RHSA-2024:5309){: external}, [CVE-2024-37891](https://nvd.nist.gov/vuln/detail/CVE-2024-37891){: external}, [RHSA-2024:5299](https://access.redhat.com/errata/RHSA-2024:5299){: external}, [CVE-2024-38428](https://nvd.nist.gov/vuln/detail/CVE-2024-38428){: external}. |
+| Haproxy | c91c765 | 546887a | Security fixes for [CVE-2024-2398](https://exchange.xforce.ibmcloud.com/vulnerabilities/286430){: external}, [CVE-2024-37370](https://exchange.xforce.ibmcloud.com/vulnerabilities/296012){: external}, [CVE-2024-37371](https://exchange.xforce.ibmcloud.com/vulnerabilities/296013){: external}, [CVE-2024-6345](https://exchange.xforce.ibmcloud.com/vulnerabilities/CVE-2024-6345){: external}. |
+| {{site.data.keyword.openshiftshort}}. | 4.15.25 | 4.15.28 | For more information, see the [change logs](https://docs.openshift.com/container-platform/4.15/release_notes/ocp-4-15-release-notes.html#ocp-4-15-28_release-notes){: external}. |
+{: caption="Changes since version 4.15.25_1555_openshift" caption-side="bottom"}
 
 
 ### Change log for worker node fix pack 4.15.25_1555_openshift, released 12 August 2024
