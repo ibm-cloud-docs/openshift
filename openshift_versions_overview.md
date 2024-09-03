@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2024
-lastupdated: "2024-08-30"
+lastupdated: "2024-09-03"
 
 
 keywords: openshift, version, update, upgrade
@@ -56,7 +56,7 @@ Red Hat Enterprise Linux CoreOS (RHCOS) worker nodes are available only for VPC 
 
 [Latest]{: tag-green} 4.16
 - Release date: None
-- End of support: None
+- End of support: None†
 - Operating systems: Red Hat CoreOS (`RHCOS`), RHEL 8 (`REDHAT_8_64`)
 - [Version information and update actions](/docs/openshift?topic=openshift-cs_versions_416)
 - [Change log](/docs/openshift?topic=openshift-openshift_changelog_416)
@@ -114,7 +114,7 @@ Red Hat Enterprise Linux CoreOS (RHCOS) worker nodes are available only for VPC 
 
 [Latest]{: tag-green} 4.16
 - Release date: None
-- End of support: None
+- End of support: None†
 - Operating systems: Red Hat CoreOS (`RHCOS`), RHEL 8 (`REDHAT_8_64`)
 - [Version information and update actions](/docs/openshift?topic=openshift-cs_versions_416)
 - [Change log](/docs/openshift?topic=openshift-openshift_changelog_416)
