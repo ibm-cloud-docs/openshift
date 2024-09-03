@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2024
-lastupdated: "2024-08-29"
+lastupdated: "2024-09-03"
 
 
 keywords: openshift
@@ -10650,6 +10650,8 @@ subcollection: openshift
 [Why do I see `SyncLoadBalancerFailed` errors when creating a VPC cluster?](/docs/openshift?topic=openshift-ts-loadbalancer-sync-failed#ts-loadbalancer-sync-failed)
 
 [Why are VPC load balancer health checks failing on my worker nodes?](/docs/openshift?topic=openshift-vpc-lb-healthcheck-fail#vpc-lb-healthcheck-fail)
+
+[VPC Clusters: My VPC NLB has a zone error and does not update](/docs/openshift?topic=openshift-ts-nlb-vpc-zone#ts-nlb-vpc-zone)
 
 
 ### Ingress and routers
