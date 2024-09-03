@@ -3271,6 +3271,8 @@ subcollection: openshift
 
 * [Resetting the cluster API key](/docs/openshift?topic=openshift-access-creds#admin-set-credentials)
 
+* [Removing user credentials and permissions](/docs/openshift?topic=openshift-access-creds#apikey-remove-user)
+
 [Rotating CA certificates in your cluster](/docs/openshift?topic=openshift-cert-rotate#cert-rotate)
 
 [Adding tags and labels to clusters](/docs/openshift?topic=openshift-worker-tag-label#worker-tag-label)
