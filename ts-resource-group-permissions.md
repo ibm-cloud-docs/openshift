@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2024, 2024
-lastupdated: "2024-07-23"
+lastupdated: "2024-09-03"
 
 
 keywords: openshift, {{site.data.keyword.openshiftlong_notm}}, subnet, detach, specified subnet, infrastructure operation failed
@@ -41,14 +41,14 @@ Complete the following steps to resolve the issue.
 
 1. Review the details of the API key that was used to create the cluster.
     ```sh
-    ibmcloud api-key info
+    ibmcloud oc api-key info
     ```
     {: pre}
 
     Example output
     ```sh
-    ic ks api-key info -c docs
-    Getting information about the API key owner for cluster docs...
+    ibmcloud oc api-key info -c CLUSTER
+    Getting information about the API key owner for cluster CLUSTER...
     OK
     Name                Email
     User 2   usertwo@us.ibm.com
@@ -60,5 +60,3 @@ Complete the following steps to resolve the issue.
 1. Retry the cluster creation steps.
 
 1. If the issue persists, contact support. Open a [support case](/docs/get-support?topic=get-support-using-avatar). In the case details, be sure to include any relevant log files, error messages, or command outputs.
-
-
