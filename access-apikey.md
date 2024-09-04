@@ -26,7 +26,7 @@ subcollection: openshift
 
 By default, the account owner's credentials are stored in the API key. However, to avoid tying your cluster resources to a specific user, such as the account owner, consider using a [functional ID](/docs/account?topic=account-identity-overview#functionalid-bestpract) instead of a personal user. In the event of the account owner leaving the organization or being removed from the account, a functional ID prevents other users from losing access to the account and prevents disruptions to services and commands requiring certain credentials that might not be available after the account owner leaves.
 
-Need to remove a user from your account? Make sure you reset your API key. See [Removing user credentials and permissions](##apikey-remove-user).
+Need to remove a user from your account? Make sure you reset your API key. See [Removing user credentials and permissions](#apikey-remove-user).
 {: tip}
 
 ## Resetting the cluster API key
