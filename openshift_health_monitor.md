@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2024
-lastupdated: "2024-06-24"
+lastupdated: "2024-09-04"
 
 
 keywords: oks, iro, openshift, red hat, red hat openshift
@@ -60,6 +60,8 @@ For more information, see [Monitoring](https://docs.openshift.com/container-plat
 OpenShift includes a preconfigured, preinstalled, and self-updating monitoring stack that provides monitoring for core platform components on a per-cluster basis. This monitoring includes built-in Prometheus and Grafana deployments in the `openshift-monitoring` project for cluster metrics, which is available in a single zone only. You can view and manage your monitoring dashboards, metrics, and alerts from the {{site.data.keyword.redhat_openshift_notm}} web console. For more information, see [Monitoring](https://docs.openshift.com/container-platform/4.15/observability/monitoring/monitoring-overview.html){: external} in the Red Hat OpenShift documentation. 
 
 By default, the monitoring stack does not use persistent storage to back up metric history, and instead uses a temporary `EmptyDir` volume in the host filesystem. The retention period for metrics history ranges from 11 to 15 days, depending on your cluster version. For some workloads, these settings might use a significant amount of disk space and memory, or might not meet requirements for metrics retention. You can configure the monitoring stack to use persistent storage, change the metrics retention policies, or run Prometheus on dedicated nodes. For more information, see [Configuring the monitoring stack](https://docs.openshift.com/container-platform/4.15/observability/monitoring/configuring-the-monitoring-stack.html){: external}.
+
+Note that {{site.data.keyword.openshiftlong_notm}} version 4.16 sets a default 10 GB size retention. 
 
 
 ### Monitoring {{site.data.keyword.openshiftlong}} storage metrics
@@ -249,4 +251,3 @@ The **Master Status** provides details of what operation from the master state i
 {: #oc_enable_telemetry_reports}
 
 Telemetry is a remote health monitoring feature that collects aggregated data about your cluster, such as the health of your components and the number and types of resources in use. If you have a public cluster, you can elect to have your own Telemetry data visible in your account for your use. For more information, see [Telemetry for remote health monitoring](/docs/openshift?topic=openshift-telemetry).
-
