@@ -344,6 +344,13 @@ toc:
           - benchmarks_overview.md
           - benchmark-comparison.md
           - topicgroup:
+              label: Version 4.16
+              topics:
+              - openshift_versions_416.md
+              - openshift_versions_changelog_416.md
+              - benchmarks_416.md
+              - benchmarks_416_co.md
+          - topicgroup:
               label: Version 4.15
               topics:
               - openshift_versions_415.md
