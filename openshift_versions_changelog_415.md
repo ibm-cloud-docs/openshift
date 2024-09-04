@@ -2,7 +2,7 @@
 
 copyright:
   years: 2023, 2024
-lastupdated: "2024-08-29"
+lastupdated: "2024-09-04"
 
 
 keywords: openshift, 4.15, update, upgrade, BOM, bill of materials, versions, patch
@@ -43,7 +43,7 @@ The following table shows the changes that are in the master fix pack 4.15.25_15
 | Component | Previous | Current | Description |
 | --- | --- | --- | --- |
 | Cluster health image | v1.5.7 | v1.5.8 | New version contains updates and security fixes. |
-| etcd | v3.5.14 | v3.5.15 | See the [etcd release notes](https://github.com/coreos/etcd/releases/v3.5.15){: external}. |
+| etcd | v3.5.14 | v3.5.15 | See the [etcd release notes](https://github.com/etcd-io/etcd/releases/v3.5.15){: external}. |
 | {{site.data.keyword.cloud_notm}} Block Storage driver and plug-in | v2.5.12 | v2.5.13 | New version contains updates and security fixes. |
 | {{site.data.keyword.cloud_notm}} Controller Manager | v1.28.12-1 | v1.28.13-1 | New version contains updates and security fixes. |
 | {{site.data.keyword.cloud_notm}} RBAC Operator | 312030f | 897f067 | New version contains updates and security fixes. |
@@ -277,7 +277,7 @@ The following table shows the changes that are in the worker node fix pack 4.15.
 | Calico | v3.26.4 | v3.27.2 | See the [Calico release notes](https://docs.tigera.io/calico/3.27/release-notes/). |
 | IBM Calico extension | 1537 | N/A | Component has been removed. |
 | IBM Cloud Controller Manager | v1.27.12-10 | v1.28.9-1 | New version contains updates and security fixes. |
-| Key Management Service provider | v2.8.9 | v2.9.5 | New version contains updates and security fixes. |
+| Key Management Service provider (KMS) | v2.8.9 | v2.9.5 | New version contains updates and security fixes. In addition, [both KMS v1 and v2](https://kubernetes.io/docs/tasks/administer-cluster/kms-provider/){: external} are now supported. KMS v1 instances are migrated to KMS v2 on upgrade. KMS v2 is now the default. |
 | Red Hat OpenShift (master) | 4.14.20 | 4.15.9 | See the [Red Hat OpenShift release notes](https://docs.openshift.com/container-platform/4.15/release_notes/ocp-4-15-release-notes.html#ocp-4-15-9). |
 | Red Hat OpenShift (worker node) | 4.14.19 | 4.15.6 | See the [Red Hat OpenShift release notes](https://docs.openshift.com/container-platform/4.15/release_notes/ocp-4-15-release-notes.html#ocp-4-15-6). |
 | Red Hat OpenShift on IBM Cloud Control Plane Operator, Metrics Server, and toolkit | 4.14.0+20240412 | 4.15.0+20240415 | See the [Red Hat OpenShift on IBM Cloud toolkit release notes](https://github.com/openshift/ibm-roks-toolkit/releases/tag/v4.15.0+20240415). |

@@ -2,7 +2,7 @@
 
 copyright:
   years: 2023, 2024
-lastupdated: "2024-08-29"
+lastupdated: "2024-09-03"
 
 
 keywords: openshift, 4.13, update, upgrade, BOM, bill of materials, versions, patch
@@ -44,7 +44,7 @@ The following table shows the changes that are in the master fix pack 4.13.46_15
 | Component | Previous | Current | Description |
 | --- | --- | --- | --- |
 | Cluster health image | v1.5.7 | v1.5.8 | New version contains updates and security fixes. |
-| etcd | v3.5.14 | v3.5.15 | See the [etcd release notes](https://github.com/coreos/etcd/releases/v3.5.15){: external}. |
+| etcd | v3.5.14 | v3.5.15 | See the [etcd release notes](https://github.com/etcd-io/etcd/releases/v3.5.15){: external}. |
 | {{site.data.keyword.cloud_notm}} Block Storage driver and plug-in | v2.4.23 | v2.4.24 | New version contains updates and security fixes. |
 | {{site.data.keyword.cloud_notm}} Controller Manager | v1.26.15-27 | v1.26.15-29 | New version contains updates and security fixes. |
 | {{site.data.keyword.cloud_notm}} RBAC Operator | 312030f | 897f067 | New version contains updates and security fixes. |

@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2024
-lastupdated: "2024-03-27"
+lastupdated: "2024-09-04"
 
 
 keywords: openshift, {{site.data.keyword.openshiftlong_notm}}, kubernetes, infrastructure, rbac, policy
@@ -24,8 +24,10 @@ subcollection: openshift
 {{site.data.keyword.openshiftlong_notm}} accesses the infrastructure portfolio and other services that you use in your cluster by using an [API key](/docs/account?topic=account-manapikey). This API key stores the credentials of a user in the account to the infrastructure and other services. {{site.data.keyword.openshiftlong_notm}} uses the API key to order resources in the service, such as new worker nodes or VLANs in IBM Cloud infrastructure.
 {: shortdesc}
 
-By default, the account owner's credentials are stored in the API key. However, to avoid tying your cluster resources to a specific user, such as the account owner, consider using a functional ID instead of a personal user.
+By default, the account owner's credentials are stored in the API key. However, to avoid tying your cluster resources to a specific user, such as the account owner, consider using a [functional ID](/docs/account?topic=account-identity-overview#functionalid-bestpract) instead of a personal user. In the event of the account owner leaving the organization or being removed from the account, a functional ID prevents other users from losing access to the account and prevents disruptions to services and commands requiring certain credentials that might not be available after the account owner leaves.
 
+Need to remove a user from your account? Make sure you reset your API key. See [Removing user credentials and permissions](#apikey-remove-user).
+{: tip}
 
 ## Resetting the cluster API key
 {: #admin-set-credentials}
@@ -71,4 +73,7 @@ Make sure that the user or functional ID that runs this command has the [require
 1. Repeat these steps for each region and resource group where you want to reset the cluster API key.
 
 
+## Removing user credentials and permissions
+{: #apikey-remove-user}
 
+In certain scenarios, such as staffing changes, your organization might need to remove user credentials and permissions from your account. To ensure that processes requiring certain user credentials are not disrupted when a user is removed from the account, you must reset the API key with another user's infrastructure credentials. For more information, see [Removing users](/docs/containers?topic=containers-removing-user-permissions).

@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2022, 2024
-lastupdated: "2024-03-18"
+lastupdated: "2024-09-04"
 
 
 keywords: openshift, deploy, pod security admission, pod security, security profiles
@@ -84,6 +84,7 @@ By default, {{site.data.keyword.openshiftlong_notm}} adds the `privileged` Pod S
 - `ibm-operators`
 - `calico-system` 
 - `tigera-operator` 
+- `calico-apiserver` (Version 4.16 and later)
 
 
 Do not remove or change the labels for these namespaces or any of the `openshift-*` namespaces.
@@ -172,6 +173,3 @@ In this example, the pod is still created and can run as long the service accoun
 - [Understanding and managing pod security admission](https://docs.openshift.com/container-platform/4.11/authentication/understanding-and-managing-pod-security-admission.html){: external}.
 - [Pod Security Admission in {{site.data.keyword.redhat_openshift_notm}} 4.11](https://www.redhat.com/blog/pod-security-admission-in-openshift-4.11){: external}.
 - [Kubernetes API server audit logs](/docs/openshift?topic=openshift-health-audit#audit-api-server) describes how to configure API server audit logs in the {{site.data.keyword.openshiftlong_notm}} service.
-
-
-

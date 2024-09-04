@@ -3,7 +3,7 @@
 copyright:
   years: 2024, 2024
 
-lastupdated: "2024-07-09"
+lastupdated: "2024-09-04"
 
 
 keywords: change log, version history, IBM Cloud Image Key Synchronizer
@@ -14,31 +14,34 @@ subcollection: openshift
 
 {{site.data.keyword.attribute-definition-list}}
 
-# IBM Cloud Image Key Synchronizer version change log
-{: #ibm-cloud-image-key-synchronizer-change-log}
+# IBM Cloud Image Key Synchronizer add-on version change log
+{: #cl-add-ons-ibm-cloud-image-key-synchronizer}
 
 Review the version history for IBM Cloud Image Key Synchronizer.
 {: shortdesc}
 
-
 ## Version 1.0.0
-{: #ibm-cloud-image-key-synchronizer-1.0.0}
+{: #cl-add-ons-ibm-cloud-image-key-synchronizer-1.0.0}
 
 
-### 1.0.0_2308, released 09 July 24
-{: #ibm-cloud-image-key-synchronizer-1.0.0_2308}
+### 1.0.0_2382, released 04 September 2024
+{: #cl-add-ons-ibm-cloud-image-key-synchronizer-100_2382}
 
 
-### 1.0.0_2258, released 06 June 24
-{: #ibm-cloud-image-key-synchronizer-1.0.0_2258}
+### 1.0.0_2308, released 09 July 2024
+{: #cl-add-ons-ibm-cloud-image-key-synchronizer-100_2308}
 
 
-### 1.0.0_2244, released 04 June 24
-{: #ibm-cloud-image-key-synchronizer-1.0.0_2244}
+### 1.0.0_2258, released 06 June 2024
+{: #cl-add-ons-ibm-cloud-image-key-synchronizer-100_2258}
 
 
-### 1.0.0_2186, released 08 May 24
-{: #ibm-cloud-image-key-synchronizer-1.0.0_2186}
+### 1.0.0_2244, released 04 June 2024
+{: #cl-add-ons-ibm-cloud-image-key-synchronizer-100_2244}
+
+
+### 1.0.0_2186, released 08 May 2024
+{: #cl-add-ons-ibm-cloud-image-key-synchronizer-100_2186}
 
 
 

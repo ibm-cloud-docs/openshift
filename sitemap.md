@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2024
-lastupdated: "2024-08-29"
+lastupdated: "2024-09-04"
 
 
 keywords: openshift
@@ -3271,6 +3271,8 @@ subcollection: openshift
 
 * [Resetting the cluster API key](/docs/openshift?topic=openshift-access-creds#admin-set-credentials)
 
+* [Removing user credentials and permissions](/docs/openshift?topic=openshift-access-creds#apikey-remove-user)
+
 [Rotating CA certificates in your cluster](/docs/openshift?topic=openshift-cert-rotate#cert-rotate)
 
 [Adding tags and labels to clusters](/docs/openshift?topic=openshift-worker-tag-label#worker-tag-label)
@@ -6401,6 +6403,115 @@ subcollection: openshift
 * [Minor differences](/docs/openshift?topic=openshift-benchmark-comparison#benchmark-comparison-minor)
 
 
+### Version 4.16
+{: #sitemap_version_416}
+
+
+[4.16 version information and update actions](/docs/openshift?topic=openshift-cs_versions_416#cs_versions_416)
+
+* [Release timeline](/docs/openshift?topic=openshift-cs_versions_416#release_timeline_416)
+
+* [Preparing to update](/docs/openshift?topic=openshift-cs_versions_416#prep-up-416)
+
+    * [Update before master](/docs/openshift?topic=openshift-cs_versions_416#416_before)
+
+* [Update after master](/docs/openshift?topic=openshift-cs_versions_416#416_after)
+
+* [Checking the `Upgradeable` status of your cluster](/docs/openshift?topic=openshift-cs_versions_416#status-check-416)
+
+[Version 4.16 change log](/docs/openshift?topic=openshift-openshift_changelog_416#openshift_changelog_416)
+
+* [Overview](/docs/openshift?topic=openshift-openshift_changelog_416#openshift_changelog_overview_416)
+
+    * [Change log for master fix pack 4.16.7_1532_openshift and worker node fix pack 4.16.6_1531_openshift, released 30 August 2024](/docs/openshift?topic=openshift-openshift_changelog_416#change-log-for-master-fix-pack-4167_1532_openshift-and-worker-node-fix-pack-4166_1531_openshift-released-30-august-2024)
+
+[4.16 CIS Kubernetes Benchmark](/docs/openshift?topic=openshift-cis-benchmark-416#cis-benchmark-416)
+
+* [1 Master Node Security Configuration](/docs/openshift?topic=openshift-cis-benchmark-416#cis-benchmark-1-416)
+
+    * [1.1 Master Node Configuration Files](/docs/openshift?topic=openshift-cis-benchmark-416#cis-benchmark-11-416)
+
+    * [1.2 API Server](/docs/openshift?topic=openshift-cis-benchmark-416#cis-benchmark-12-416)
+
+    * [1.3 Controller Manager](/docs/openshift?topic=openshift-cis-benchmark-416#cis-benchmark-13-416)
+
+    * [1.4 Scheduler](/docs/openshift?topic=openshift-cis-benchmark-416#cis-benchmark-14-416)
+
+* [2 Etcd Node Configuration](/docs/openshift?topic=openshift-cis-benchmark-416#cis-benchmark-2-416)
+
+* [3 Control Plane Configuration](/docs/openshift?topic=openshift-cis-benchmark-416#cis-benchmark-3-416)
+
+    * [3.1 Authentication and Authorization](/docs/openshift?topic=openshift-cis-benchmark-416#cis-benchmark-31-416)
+
+    * [3.2 Logging](/docs/openshift?topic=openshift-cis-benchmark-416#cis-benchmark-32-416)
+
+* [4 Worker Node Security Configuration (REDHAT_8_64)](/docs/openshift?topic=openshift-cis-benchmark-416#cis-section-4-416-redhat-8-64)
+
+    * [4.1 Worker Node Configuration Files](/docs/openshift?topic=openshift-cis-benchmark-416#cis-section-41-416-redhat-8-64)
+
+    * [4.2 Kubelet](/docs/openshift?topic=openshift-cis-benchmark-416#cis-section-42-416-redhat-8-64)
+
+* [4 Worker Node Security Configuration (RHCOS)](/docs/openshift?topic=openshift-cis-benchmark-416#cis-section-4-416-rhcos)
+
+    * [4.1 Worker Node Configuration Files](/docs/openshift?topic=openshift-cis-benchmark-416#cis-section-41-416-rhcos)
+
+    * [4.2 Kubelet](/docs/openshift?topic=openshift-cis-benchmark-416#cis-section-42-416-rhcos)
+
+* [5 Kubernetes Policies](/docs/openshift?topic=openshift-cis-benchmark-416#cis-section-5-416)
+
+    * [5.1 RBAC and Service Accounts](/docs/openshift?topic=openshift-cis-benchmark-416#cis-section-51-416)
+
+    * [5.2 Pod Security Policies](/docs/openshift?topic=openshift-cis-benchmark-416#cis-section-52-416)
+
+    * [5.3 Network Policies and CNI](/docs/openshift?topic=openshift-cis-benchmark-416#cis-section-53-416)
+
+    * [5.4 Secrets Management](/docs/openshift?topic=openshift-cis-benchmark-416#cis-section-54-416)
+
+    * [5.5 Extensible Admission Control](/docs/openshift?topic=openshift-cis-benchmark-416#cis-section-55-416)
+
+    * [5.7 General Policies](/docs/openshift?topic=openshift-cis-benchmark-416#cis-section-57-416)
+
+    * [{{site.data.keyword.IBM_notm}} remediations and explanations](/docs/openshift?topic=openshift-cis-benchmark-416#ibm-remediations-and-explanations-416)
+
+[4.16 compliance operator benchmark](/docs/openshift?topic=openshift-benchmarks_416_co#benchmarks_416_co)
+
+* [1 Control plane components](/docs/openshift?topic=openshift-benchmarks_416_co#co-benchmark-416-cp)
+
+    * [1.1 Master node configuration files](/docs/openshift?topic=openshift-benchmarks_416_co#co-benchmark-416-11)
+
+    * [1.2 API server](/docs/openshift?topic=openshift-benchmarks_416_co#co-benchmark-416-12)
+
+    * [1.3 Controller manager](/docs/openshift?topic=openshift-benchmarks_416_co#co-benchmark-416-13)
+
+    * [1.4 Scheduler](/docs/openshift?topic=openshift-benchmarks_416_co#co-benchmark-416-14)
+
+* [2 etcd](/docs/openshift?topic=openshift-benchmarks_416_co#co-benchmark-416-2)
+
+* [3 Control plane configuration](/docs/openshift?topic=openshift-benchmarks_416_co#co-benchmark-416-3)
+
+    * [3.1 Authentication and authorization](/docs/openshift?topic=openshift-benchmarks_416_co#co-benchmark-416-31)
+
+    * [3.2 Logging](/docs/openshift?topic=openshift-benchmarks_416_co#co-benchmark-416-32)
+
+* [4 Worker nodes](/docs/openshift?topic=openshift-benchmarks_416_co#co-benchmark-416-4)
+
+* [5 Policies](/docs/openshift?topic=openshift-benchmarks_416_co#co-benchmark-416-5)
+
+    * [5.1 RBAC and service accounts](/docs/openshift?topic=openshift-benchmarks_416_co#co-benchmark-416-51)
+
+    * [5.2 Pod security policies](/docs/openshift?topic=openshift-benchmarks_416_co#co-benchmark-416-52)
+
+    * [5.3 Network policies and CNI](/docs/openshift?topic=openshift-benchmarks_416_co#co-benchmark-416-53)
+
+    * [5.4 Secrets management](/docs/openshift?topic=openshift-benchmarks_416_co#co-benchmark-416-54)
+
+    * [5.5 Extensible admission control](/docs/openshift?topic=openshift-benchmarks_416_co#co-benchmark-416-55)
+
+    * [5.7 General policies](/docs/openshift?topic=openshift-benchmarks_416_co#co-benchmark-416-57)
+
+* [Remediations and explanations](/docs/openshift?topic=openshift-benchmarks_416_co#co-benchmark-416-remdiations)
+
+
 ### Version 4.15
 {: #sitemap_version_415}
 
@@ -8119,81 +8230,83 @@ subcollection: openshift
 
     * [Version 4.5.0_647, released on 30 Mar 2021](/docs/openshift?topic=openshift-hpcs-router-changelog#4_5_0647)
 
-[IBM Cloud Image Key Synchronizer version change log](/docs/openshift?topic=openshift-ibm-cloud-image-key-synchronizer-change-log#ibm-cloud-image-key-synchronizer-change-log)
+[IBM Cloud Image Key Synchronizer add-on version change log](/docs/openshift?topic=openshift-cl-add-ons-ibm-cloud-image-key-synchronizer#cl-add-ons-ibm-cloud-image-key-synchronizer)
 
-* [Version 1.0.0](/docs/openshift?topic=openshift-ibm-cloud-image-key-synchronizer-change-log#ibm-cloud-image-key-synchronizer-1.0.0)
+* [Version 1.0.0](/docs/openshift?topic=openshift-cl-add-ons-ibm-cloud-image-key-synchronizer#cl-add-ons-ibm-cloud-image-key-synchronizer-1.0.0)
 
-    * [1.0.0_2308, released 09 July 24](/docs/openshift?topic=openshift-ibm-cloud-image-key-synchronizer-change-log#ibm-cloud-image-key-synchronizer-1.0.0_2308)
+    * [1.0.0_2382, released 04 September 2024](/docs/openshift?topic=openshift-cl-add-ons-ibm-cloud-image-key-synchronizer#cl-add-ons-ibm-cloud-image-key-synchronizer-100_2382)
 
-    * [1.0.0_2258, released 06 June 24](/docs/openshift?topic=openshift-ibm-cloud-image-key-synchronizer-change-log#ibm-cloud-image-key-synchronizer-1.0.0_2258)
+    * [1.0.0_2308, released 09 July 2024](/docs/openshift?topic=openshift-cl-add-ons-ibm-cloud-image-key-synchronizer#cl-add-ons-ibm-cloud-image-key-synchronizer-100_2308)
 
-    * [1.0.0_2244, released 04 June 24](/docs/openshift?topic=openshift-ibm-cloud-image-key-synchronizer-change-log#ibm-cloud-image-key-synchronizer-1.0.0_2244)
+    * [1.0.0_2258, released 06 June 2024](/docs/openshift?topic=openshift-cl-add-ons-ibm-cloud-image-key-synchronizer#cl-add-ons-ibm-cloud-image-key-synchronizer-100_2258)
 
-    * [1.0.0_2186, released 08 May 24](/docs/openshift?topic=openshift-ibm-cloud-image-key-synchronizer-change-log#ibm-cloud-image-key-synchronizer-1.0.0_2186)
+    * [1.0.0_2244, released 04 June 2024](/docs/openshift?topic=openshift-cl-add-ons-ibm-cloud-image-key-synchronizer#cl-add-ons-ibm-cloud-image-key-synchronizer-100_2244)
 
-    * [1.0.0_2111, released on 03 April 2024](/docs/openshift?topic=openshift-ibm-cloud-image-key-synchronizer-change-log#1.0.0_2111)
+    * [1.0.0_2186, released 08 May 2024](/docs/openshift?topic=openshift-cl-add-ons-ibm-cloud-image-key-synchronizer#cl-add-ons-ibm-cloud-image-key-synchronizer-100_2186)
 
-    * [1.0.0_2015, released on 16 January 2024](/docs/openshift?topic=openshift-ibm-cloud-image-key-synchronizer-change-log#1.0.0_2015)
+    * [1.0.0_2111, released on 03 April 2024](/docs/openshift?topic=openshift-cl-add-ons-ibm-cloud-image-key-synchronizer#1.0.0_2111)
 
-    * [1.0.0_1936, released on 25 October 2023](/docs/openshift?topic=openshift-ibm-cloud-image-key-synchronizer-change-log#1.0.0_1936)
+    * [1.0.0_2015, released on 16 January 2024](/docs/openshift?topic=openshift-cl-add-ons-ibm-cloud-image-key-synchronizer#1.0.0_2015)
 
-    * [1.0.0_1921, released on 18 October 2023](/docs/openshift?topic=openshift-ibm-cloud-image-key-synchronizer-change-log#1.0.0_1921)
+    * [1.0.0_1936, released on 25 October 2023](/docs/openshift?topic=openshift-cl-add-ons-ibm-cloud-image-key-synchronizer#1.0.0_1936)
 
-    * [1.0.0_1831, released on 3 October 2023](/docs/openshift?topic=openshift-ibm-cloud-image-key-synchronizer-change-log#1_0_1831)
+    * [1.0.0_1921, released on 18 October 2023](/docs/openshift?topic=openshift-cl-add-ons-ibm-cloud-image-key-synchronizer#1.0.0_1921)
 
-    * [1.0.0_1701, released on 13 July 2023](/docs/openshift?topic=openshift-ibm-cloud-image-key-synchronizer-change-log#1_0_1701)
+    * [1.0.0_1831, released on 3 October 2023](/docs/openshift?topic=openshift-cl-add-ons-ibm-cloud-image-key-synchronizer#1_0_1831)
 
-    * [1.0.0_1633, released on 15 June 2023](/docs/openshift?topic=openshift-ibm-cloud-image-key-synchronizer-change-log#1_0_1633)
+    * [1.0.0_1701, released on 13 July 2023](/docs/openshift?topic=openshift-cl-add-ons-ibm-cloud-image-key-synchronizer#1_0_1701)
 
-    * [1.0.0_1523, released on 2 May 2023](/docs/openshift?topic=openshift-ibm-cloud-image-key-synchronizer-change-log#1_0_1523)
+    * [1.0.0_1633, released on 15 June 2023](/docs/openshift?topic=openshift-cl-add-ons-ibm-cloud-image-key-synchronizer#1_0_1633)
 
-    * [1.0.0_1362, released on 1 March 2023](/docs/openshift?topic=openshift-ibm-cloud-image-key-synchronizer-change-log#1_0_1362)
+    * [1.0.0_1523, released on 2 May 2023](/docs/openshift?topic=openshift-cl-add-ons-ibm-cloud-image-key-synchronizer#1_0_1523)
 
-    * [1.0.0_1329, released on 8 February 2023](/docs/openshift?topic=openshift-ibm-cloud-image-key-synchronizer-change-log#1_0_1329)
+    * [1.0.0_1362, released on 1 March 2023](/docs/openshift?topic=openshift-cl-add-ons-ibm-cloud-image-key-synchronizer#1_0_1362)
 
-    * [1.0.0_1269, released on 15 December 2022](/docs/openshift?topic=openshift-ibm-cloud-image-key-synchronizer-change-log#1_0_1269)
+    * [1.0.0_1329, released on 8 February 2023](/docs/openshift?topic=openshift-cl-add-ons-ibm-cloud-image-key-synchronizer#1_0_1329)
 
-    * [1.0.0_1200, released on 27 October 2022](/docs/openshift?topic=openshift-ibm-cloud-image-key-synchronizer-change-log#1_0_1200)
+    * [1.0.0_1269, released on 15 December 2022](/docs/openshift?topic=openshift-cl-add-ons-ibm-cloud-image-key-synchronizer#1_0_1269)
 
-    * [1.0.0_1061, released on 7 July 2022](/docs/openshift?topic=openshift-ibm-cloud-image-key-synchronizer-change-log#1_0_1061)
+    * [1.0.0_1200, released on 27 October 2022](/docs/openshift?topic=openshift-cl-add-ons-ibm-cloud-image-key-synchronizer#1_0_1200)
 
-    * [1.0.0_1022, released on 13 Jun 2022](/docs/openshift?topic=openshift-ibm-cloud-image-key-synchronizer-change-log#1_0_1022)
+    * [1.0.0_1061, released on 7 July 2022](/docs/openshift?topic=openshift-cl-add-ons-ibm-cloud-image-key-synchronizer#1_0_1061)
 
-    * [1.0.0_956, released on 4 May 2022](/docs/openshift?topic=openshift-ibm-cloud-image-key-synchronizer-change-log#1_0_0956)
+    * [1.0.0_1022, released on 13 Jun 2022](/docs/openshift?topic=openshift-cl-add-ons-ibm-cloud-image-key-synchronizer#1_0_1022)
 
-    * [1.0.0_927, released on 11 April 2022](/docs/openshift?topic=openshift-ibm-cloud-image-key-synchronizer-change-log#1_0_0927)
+    * [1.0.0_956, released on 4 May 2022](/docs/openshift?topic=openshift-cl-add-ons-ibm-cloud-image-key-synchronizer#1_0_0956)
 
-    * [1.0.0_906, released on 24 March 2022](/docs/openshift?topic=openshift-ibm-cloud-image-key-synchronizer-change-log#1_0_0906)
+    * [1.0.0_927, released on 11 April 2022](/docs/openshift?topic=openshift-cl-add-ons-ibm-cloud-image-key-synchronizer#1_0_0927)
 
-    * [1.0.0_883, released on 28 February 2022](/docs/openshift?topic=openshift-ibm-cloud-image-key-synchronizer-change-log#1_0_0883)
+    * [1.0.0_906, released on 24 March 2022](/docs/openshift?topic=openshift-cl-add-ons-ibm-cloud-image-key-synchronizer#1_0_0906)
 
-    * [1.0.0_834, released on 25 January 2022](/docs/openshift?topic=openshift-ibm-cloud-image-key-synchronizer-change-log#1_0_0834)
+    * [1.0.0_883, released on 28 February 2022](/docs/openshift?topic=openshift-cl-add-ons-ibm-cloud-image-key-synchronizer#1_0_0883)
 
-    * [1.0.0_804, released on 11 January 2022](/docs/openshift?topic=openshift-ibm-cloud-image-key-synchronizer-change-log#1_0_0804)
+    * [1.0.0_834, released on 25 January 2022](/docs/openshift?topic=openshift-cl-add-ons-ibm-cloud-image-key-synchronizer#1_0_0834)
 
-    * [1.0.0_744, released on 19 November 2021](/docs/openshift?topic=openshift-ibm-cloud-image-key-synchronizer-change-log#1_0_0744)
+    * [1.0.0_804, released on 11 January 2022](/docs/openshift?topic=openshift-cl-add-ons-ibm-cloud-image-key-synchronizer#1_0_0804)
 
-    * [1.0.0_734, released on 16 November 2021](/docs/openshift?topic=openshift-ibm-cloud-image-key-synchronizer-change-log#1_0_0734)
+    * [1.0.0_744, released on 19 November 2021](/docs/openshift?topic=openshift-cl-add-ons-ibm-cloud-image-key-synchronizer#1_0_0744)
 
-    * [1.0.0_690, released on 6 October 2021](/docs/openshift?topic=openshift-ibm-cloud-image-key-synchronizer-change-log#1_0_0690)
+    * [1.0.0_734, released on 16 November 2021](/docs/openshift?topic=openshift-cl-add-ons-ibm-cloud-image-key-synchronizer#1_0_0734)
 
-    * [1.0.0_627, released on 23 August 2021](/docs/openshift?topic=openshift-ibm-cloud-image-key-synchronizer-change-log#1_0_0627)
+    * [1.0.0_690, released on 6 October 2021](/docs/openshift?topic=openshift-cl-add-ons-ibm-cloud-image-key-synchronizer#1_0_0690)
 
-    * [1.0.0_614, released on 10 August 2021](/docs/openshift?topic=openshift-ibm-cloud-image-key-synchronizer-change-log#1_0_0614)
+    * [1.0.0_627, released on 23 August 2021](/docs/openshift?topic=openshift-cl-add-ons-ibm-cloud-image-key-synchronizer#1_0_0627)
 
-    * [1.0.0_575, released on 23 July 2021](/docs/openshift?topic=openshift-ibm-cloud-image-key-synchronizer-change-log#1_0_0575)
+    * [1.0.0_614, released on 10 August 2021](/docs/openshift?topic=openshift-cl-add-ons-ibm-cloud-image-key-synchronizer#1_0_0614)
 
-    * [1.0.0_549, released on 17 June 2021](/docs/openshift?topic=openshift-ibm-cloud-image-key-synchronizer-change-log#1_0_0549)
+    * [1.0.0_575, released on 23 July 2021](/docs/openshift?topic=openshift-cl-add-ons-ibm-cloud-image-key-synchronizer#1_0_0575)
 
-    * [1.0.0_529, released on 2 June 2021](/docs/openshift?topic=openshift-ibm-cloud-image-key-synchronizer-change-log#1_0_0529)
+    * [1.0.0_549, released on 17 June 2021](/docs/openshift?topic=openshift-cl-add-ons-ibm-cloud-image-key-synchronizer#1_0_0549)
 
-    * [1.0.0_485, released on 28 April 2021](/docs/openshift?topic=openshift-ibm-cloud-image-key-synchronizer-change-log#1_0_0485)
+    * [1.0.0_529, released on 2 June 2021](/docs/openshift?topic=openshift-cl-add-ons-ibm-cloud-image-key-synchronizer#1_0_0529)
 
-    * [1.0.0_473, released on 19 April 2021](/docs/openshift?topic=openshift-ibm-cloud-image-key-synchronizer-change-log#1_0_0473)
+    * [1.0.0_485, released on 28 April 2021](/docs/openshift?topic=openshift-cl-add-ons-ibm-cloud-image-key-synchronizer#1_0_0485)
 
-    * [1.0.0_461, released on 14 April 2021](/docs/openshift?topic=openshift-ibm-cloud-image-key-synchronizer-change-log#1_0_0461)
+    * [1.0.0_473, released on 19 April 2021](/docs/openshift?topic=openshift-cl-add-ons-ibm-cloud-image-key-synchronizer#1_0_0473)
 
-    * [1.0.0_438, released on 30 March 2021](/docs/openshift?topic=openshift-ibm-cloud-image-key-synchronizer-change-log#1_0_0438)
+    * [1.0.0_461, released on 14 April 2021](/docs/openshift?topic=openshift-cl-add-ons-ibm-cloud-image-key-synchronizer#1_0_0461)
+
+    * [1.0.0_438, released on 30 March 2021](/docs/openshift?topic=openshift-cl-add-ons-ibm-cloud-image-key-synchronizer#1_0_0438)
 
 [IBM storage operator add-on change log](/docs/openshift?topic=openshift-versions-ibm-storage-operator#versions-ibm-storage-operator)
 
@@ -10650,6 +10763,8 @@ subcollection: openshift
 [Why do I see `SyncLoadBalancerFailed` errors when creating a VPC cluster?](/docs/openshift?topic=openshift-ts-loadbalancer-sync-failed#ts-loadbalancer-sync-failed)
 
 [Why are VPC load balancer health checks failing on my worker nodes?](/docs/openshift?topic=openshift-vpc-lb-healthcheck-fail#vpc-lb-healthcheck-fail)
+
+[VPC Clusters: My VPC NLB has a zone error and does not update](/docs/openshift?topic=openshift-ts-nlb-vpc-zone#ts-nlb-vpc-zone)
 
 
 ### Ingress and routers

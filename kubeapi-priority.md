@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2024
-lastupdated: "2024-06-20"
+lastupdated: "2024-09-04"
 
 
 keywords: kubernetes, openshift
@@ -38,6 +38,8 @@ For example, you might have a user or namespace that runs your critical apps in 
 | `ibm-admin` | Resources from IBM cluster administrators | Exempts requests by cluster administrators from priority restrictions. |
 | `ibm-system-service-accounts` | Resources in the `ibm-system` namespace that use a service account in the namespace | Same priority as `kube-system` namespace service accounts |
 | `tigera-operator-service-accounts` | Resources in the `tigera-operator` namespace that use a service account in the namespace | Same priority as `kube-system` namespace service accounts. |
+| `calico-apiserver-service-accounts` | Resources in the `calico-apiserver` namespace that use a service account in the namespace | Same priority as kube-system namespace service accounts. This schema is available for {{site.data.keyword.openshiftlong_notm}} version 4.16 and later. |
+
 {: caption="Default flow schema and priority levels" caption-side="bottom"}
 
 You can create your own flow schema and priorities, but don't modify the default settings. Unexpected results might occur in your cluster when you modify API request priorities.
@@ -75,11 +77,3 @@ oc get prioritylevelconfiguration apiserver-health
 oc describe prioritylevelconfiguration apiserver-health
 ```
 {: pre}
-
-
-
-
-
-
-
-

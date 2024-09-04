@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2024
-lastupdated: "2024-06-03"
+lastupdated: "2024-09-04"
 
 
 keywords: openshift, {{site.data.keyword.openshiftlong_notm}}
@@ -40,13 +40,16 @@ Review the feature gates that are applied to all master and worker node componen
 Modifying feature gates is not supported in {{site.data.keyword.openshiftlong_notm}}.
 {: important}
 
+
+4.16
+:   KMSv1=false
+:   StructuredAuthenticationConfiguration=true
+
 4.15
 :   Community feature gates applied.
 
-
 4.14
 :   `RetroactiveDefaultStorageClass=false`
-
 
 4.13
 :   `RetroactiveDefaultStorageClass=false`
@@ -119,7 +122,3 @@ Read-only custom resource definitions in the `config.openshift.io` resource grou
 * `OAuth`
 * `Proxy`
 * `Scheduler`
-
-
-
-
