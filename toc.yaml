@@ -383,7 +383,7 @@ toc:
           - openshift_versions_ocs_addon.md
           - versions-backup-restore.md
           - openshift_versions_hpcs_router.md
-          - cl-ibm-cloud-image-key-synchronizer.md
+          - cl-add-ons-ibm-cloud-image-key-synchronizer.md
           - cl-ibm-storage-operator.md
       - topicgroup:
           label: Archived version history
