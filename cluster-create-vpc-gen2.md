@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2024
-lastupdated: "2024-08-29"
+lastupdated: "2024-09-05"
 
 
 keywords: openshift, {{site.data.keyword.openshiftlong_notm}}, kubernetes, clusters, worker nodes, worker pools, vpc-gen2
@@ -41,10 +41,7 @@ Use the {{site.data.keyword.cloud_notm}} CLI or the {{site.data.keyword.cloud_no
 
 * If your VPC Clusters require access to Classic Infrastructure resources, you must [enable VRF](/docs/account?topic=account-vrf-service-endpoint&interface=ui#vrf) and [service endpoints](/docs/account?topic=account-vrf-service-endpoint&interface=ui#service-endpoint) in your account.
 
-* If you want to create a cluster that runs on dedicated hardware, you must first use the CLI to [create a dedicated host pool](/docs/openshift?topic=openshift-dedicated-hosts#setup-dedicated-host-cli) in your account. 
-
-The cluster autoscaler add-on does not support Red Hat CoreOS worker nodes. If you need to install this add-on in your cluster, use RHEL worker nodes instead.
-{: important}
+* If you want to create a cluster that runs on dedicated hardware, you must first use the CLI to [create a dedicated host pool](/docs/openshift?topic=openshift-dedicated-hosts#setup-dedicated-host-cli) in your account.
 
 
 
