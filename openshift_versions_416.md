@@ -2,7 +2,7 @@
 
 copyright:
   years: 2024, 2024
-lastupdated: "2024-09-04"
+lastupdated: "2024-09-05"
 
 
 keywords: openshift, version, update, upgrade, 4.16, update openshift
@@ -68,6 +68,9 @@ VPC worker nodes provisioned for version 4.16 have VPC Instance Metadata Service
 The following table shows the actions that you must take before you [update the cluster master](/docs/openshift?topic=openshift-update#master).
 {: shortdesc}
 
+For clusters that run version 4.16 or later, you can use the `oc adm upgrade status` command to check the update status of your cluster master during a master version update. For more information, see [Viewing cluster upgrade status with the `oc adm upgrade status` command](docs/openshift?topic=openshift-upgrade-status).
+{: tip}
+
 | Type | Description |
 | --- | --- |
 | **Unsupported:** Deprecated and removed OpenShift features | For more information, review the [OpenShift Container Platform version 4.16 deprecated and removed features](https://docs.openshift.com/container-platform/4.16/release_notes/ocp-4-16-release-notes.html#ocp-4-16-deprecated-removed-features_release-notes){: external} and information for [preparing to update to OpenShift Container Platform 4.16](https://docs.openshift.com/container-platform/4.16/updating/preparing_for_updates/updating-cluster-prepare.html){: external} for possible actions required. The etcd backup and version selection upgrade preparation actions do not apply to {{site.data.keyword.redhat_openshift_notm}} on IBM Cloud clusters since both of these actions are handled for you. |
@@ -112,6 +115,3 @@ Example output where the `Upgradeable` status is `False`.
 {: screen}
 
 If the `Upgradeable` status is `False`, the condition information provides instructions that must be followed before upgrading. For more information, see [Providing the administrator acknowledgment](https://docs.openshift.com/container-platform/4.16/updating/preparing_for_updates/updating-cluster-prepare.html#update-preparing-ack_updating-cluster-prepare){: external}.
-
-
-

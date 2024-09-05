@@ -481,12 +481,13 @@ toc:
           - topicgroup:
               label: Clusters and masters
               topics:
-              - ts-webhook-debug.md
-              - ts-cluster-master.md
-              - ts-cluster-master-upgrade.md
-              - ts-cluster-debug-ocp.md
-              - ts-cluster-version-downlevel.md
               - states-cluster.md
+              - ts-cluster-master.md
+              - ts-cluster-upgrade-status.md
+              - ts-cluster-debug-ocp.md
+              - ts-webhook-debug.md
+              - ts-cluster-master-upgrade.md
+              - ts-cluster-version-downlevel.md
               - ts-cluster-cli.md
               - ts-cluster-console-user.md
               - ts-cluster-create-delete.md
