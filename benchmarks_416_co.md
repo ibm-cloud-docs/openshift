@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2024, 2024
-lastupdated: "2024-09-04"
+lastupdated: "2024-09-05"
 
 
 keywords: openshift, benchmarks, 4.16, compliance operator, compliance
@@ -182,7 +182,7 @@ Please follow the instruction in [Using the compliance operator](/docs/openshift
 | Section|Recommendation|Manual/Automated|Level|Result |
 | -- | -- | -- | -- | -- |
 | 5.4.1|Prefer using secrets as files over secrets as environment variable.|Manual|1|NOT CHECKED |
-| 5.4.2|Consider external secret storag.|Manual|2|NOT CHECKED |
+| 5.4.2|Consider external secret storage.|Manual|2|NOT CHECKED |
 {: caption="Section 5.4 Benchmarks for secrets management." caption-side="top"}
 
 ### 5.5 Extensible admission control
