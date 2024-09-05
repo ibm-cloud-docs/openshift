@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2024
-lastupdated: "2024-09-04"
+lastupdated: "2024-09-05"
 
 
 keywords: openshift
@@ -6423,7 +6423,7 @@ subcollection: openshift
 
 * [Overview](/docs/openshift?topic=openshift-openshift_changelog_416#openshift_changelog_overview_416)
 
-    * [Change log for master fix pack 4.16.7_1532_openshift and worker node fix pack 4.16.6_1531_openshift, released 30 August 2024](/docs/openshift?topic=openshift-openshift_changelog_416#change-log-for-master-fix-pack-4167_1532_openshift-and-worker-node-fix-pack-4166_1531_openshift-released-30-august-2024)
+    * [Change log for master fix pack 4.16.7_1532_openshift and worker node fix pack 4.16.6_1531_openshift, released 30 August 2024](/docs/openshift?topic=openshift-openshift_changelog_416#openshift_changelog_4167_1532)
 
 [4.16 CIS Kubernetes Benchmark](/docs/openshift?topic=openshift-cis-benchmark-416#cis-benchmark-416)
 
