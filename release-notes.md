@@ -39,7 +39,7 @@ Looking for {{site.data.keyword.cloud_notm}} status, platform announcements, sec
 :   You can create or [update clusters to version 4.16](/docs/openshift?topic=openshift-cs_versions_416). With {{site.data.keyword.openshiftlong_notm}} version 4.16, you get the latest features, as well as component updates on {{site.data.keyword.openshiftlong_notm}}. For more information, see the [4.16 change log](/docs/openshift?topic=openshift-openshift_changelog_416).
 
 New! Upgrade status command.
-:   For clusters that run version 4.16 or later, you can use the `oc adm upgrade status` command to check the update status of your cluster master during a master version update. For more information, see [Viewing cluster upgrade status with the `oc adm upgrade status` command](docs/openshift?topic=openshift-upgrade-status).
+:   For clusters that run version 4.16 or later, you can use the `oc adm upgrade status` command to check the update status of your cluster master during a master version update. For more information, see [Viewing cluster upgrade status with the `oc adm upgrade status` command](/docs/openshift?topic=openshift-upgrade-status).
 
 
 
