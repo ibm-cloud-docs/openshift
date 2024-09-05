@@ -76,10 +76,10 @@ keyword:
   openshift_415_unsupported_date: 08 January 2026
   openshift_416_RHEL_8_unsupported_date: ''
   openshift_416_deprecated: 'False'
-  openshift_416_kube_version: ''
-  openshift_416_release_date: None
+  openshift_416_kube_version: '1.29'
+  openshift_416_release_date: 29 August 2024
   openshift_416_unsupported_certainty: ''
-  openshift_416_unsupported_date: None
+  openshift_416_unsupported_date: 26 August 2026
   openshift_46_deprecated: 'True'
   openshift_46_kube_version: '1.19'
   openshift_46_release_date: 17 February 2021
@@ -137,10 +137,10 @@ keyword:
   satellite_415_unsupported_date: 08 January 2026
   satellite_416_RHEL_8_unsupported_date: ''
   satellite_416_deprecated: 'False'
-  satellite_416_kube_version: ''
-  satellite_416_release_date: None
+  satellite_416_kube_version: '1.29'
+  satellite_416_release_date: 29 August 2024
   satellite_416_unsupported_certainty: ''
-  satellite_416_unsupported_date: None
+  satellite_416_unsupported_date: 26 August 2026
   satellite_46_deprecated: 'True'
   satellite_46_kube_version: '1.19'
   satellite_46_release_date: 17 February 2021

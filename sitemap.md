@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2024
-lastupdated: "2024-09-04"
+lastupdated: "2024-09-05"
 
 
 keywords: openshift
@@ -274,6 +274,12 @@ subcollection: openshift
 [Release notes](/docs/openshift?topic=openshift-openshift-relnotes#openshift-relnotes)
 
 * [August 2024](/docs/openshift?topic=openshift-openshift-relnotes#openshift-aug24)
+
+    * [30 August 2024](/docs/openshift?topic=openshift-openshift-relnotes#openshift-aug3024)
+
+        * {{site.data.keyword.openshiftlong_notm}} 4.16 is available.
+
+        * New! Upgrade status command.
 
     * [29 August 2024](/docs/openshift?topic=openshift-openshift-relnotes#openshift-aug2924)
 
@@ -6423,7 +6429,7 @@ subcollection: openshift
 
 * [Overview](/docs/openshift?topic=openshift-openshift_changelog_416#openshift_changelog_overview_416)
 
-    * [Change log for master fix pack 4.16.7_1532_openshift and worker node fix pack 4.16.6_1531_openshift, released 30 August 2024](/docs/openshift?topic=openshift-openshift_changelog_416#change-log-for-master-fix-pack-4167_1532_openshift-and-worker-node-fix-pack-4166_1531_openshift-released-30-august-2024)
+    * [Change log for master fix pack 4.16.7_1532_openshift and worker node fix pack 4.16.6_1531_openshift, released 30 August 2024](/docs/openshift?topic=openshift-openshift_changelog_416#openshift_changelog_4167_1532)
 
 [4.16 CIS Kubernetes Benchmark](/docs/openshift?topic=openshift-cis-benchmark-416#cis-benchmark-416)
 
@@ -10305,44 +10311,6 @@ subcollection: openshift
 {: #sitemap_clusters_and_masters}
 
 
-[Debugging webhooks](/docs/openshift?topic=openshift-ts-webhook-debug#ts-webhook-debug)
-
-* [Reviewing the service that the webhook is calling](/docs/openshift?topic=openshift-ts-webhook-debug#review-webhook-service)
-
-* [Disabling or removing a webhook](/docs/openshift?topic=openshift-ts-webhook-debug#webhook-disable-rm)
-
-[Reviewing master health](/docs/openshift?topic=openshift-debug_master#debug_master)
-
-* [Reviewing master health, status, and states](/docs/openshift?topic=openshift-debug_master#review-master-health)
-
-* [Understanding the impact of a master outage](/docs/openshift?topic=openshift-debug_master#review-master-outage)
-
-[Why do I see a `Cannot complete cluster master upgrade` message?](/docs/openshift?topic=openshift-ts-cluster-master-upgrade#ts-cluster-master-upgrade)
-
-[Debugging {{site.data.keyword.redhat_openshift_notm}} web console, OperatorHub, internal registry, and other components](/docs/openshift?topic=openshift-ocp-debug#ocp-debug)
-
-* [Step 1: Check your account setup](/docs/openshift?topic=openshift-ocp-debug#oc-debug-acct)
-
-* [Step 2: Check the public gateway](/docs/openshift?topic=openshift-ocp-debug#oc-debug-pgw)
-
-* [Step 3: Check firewalls and network policies](/docs/openshift?topic=openshift-ocp-debug#oc-debug-firewall)
-
-* [Step 4: Check the cluster setup](/docs/openshift?topic=openshift-ocp-debug#oc-debug-cluster-setup)
-
-* [Step 5: Log in to your cluster](/docs/openshift?topic=openshift-ocp-debug#oc-debug-cluster-login)
-
-* [Step 6: Check the component pods](/docs/openshift?topic=openshift-ocp-debug#oc-debug-pods)
-
-* [Step 7: Check the system pods](/docs/openshift?topic=openshift-ocp-debug#oc-debug-pods-system)
-
-* [Step 8: Check the VPN](/docs/openshift?topic=openshift-ocp-debug#oc-debug-vpn)
-
-* [Step 9: Refresh the cluster master](/docs/openshift?topic=openshift-ocp-debug#oc-debug-refresh-master)
-
-* [Step 10: Retry](/docs/openshift?topic=openshift-ocp-debug#oc-debug-retry)
-
-[Why does OpenShift show the cluster version is not up to date?](/docs/openshift?topic=openshift-ts-cluster-version-downlevel#ts-cluster-version-downlevel)
-
 [Cluster states](/docs/openshift?topic=openshift-cluster-states-reference#cluster-states-reference)
 
 * [Aborted](/docs/openshift?topic=openshift-cluster-states-reference#cluster-state-aborted)
@@ -10372,6 +10340,48 @@ subcollection: openshift
 * [Unsupported](/docs/openshift?topic=openshift-cluster-states-reference#cluster-state-unsupported)
 
 * [Warning](/docs/openshift?topic=openshift-cluster-states-reference#cluster-state-warning)
+
+[Reviewing master health](/docs/openshift?topic=openshift-debug_master#debug_master)
+
+* [Reviewing master health, status, and states](/docs/openshift?topic=openshift-debug_master#review-master-health)
+
+* [Understanding the impact of a master outage](/docs/openshift?topic=openshift-debug_master#review-master-outage)
+
+[Viewing cluster upgrade status with the `oc adm upgrade status` command](/docs/openshift?topic=openshift-upgrade-status#upgrade-status)
+
+* [Getting cluster update details](/docs/openshift?topic=openshift-upgrade-status#oc-adm-use)
+
+[Debugging {{site.data.keyword.redhat_openshift_notm}} web console, OperatorHub, internal registry, and other components](/docs/openshift?topic=openshift-ocp-debug#ocp-debug)
+
+* [Step 1: Check your account setup](/docs/openshift?topic=openshift-ocp-debug#oc-debug-acct)
+
+* [Step 2: Check the public gateway](/docs/openshift?topic=openshift-ocp-debug#oc-debug-pgw)
+
+* [Step 3: Check firewalls and network policies](/docs/openshift?topic=openshift-ocp-debug#oc-debug-firewall)
+
+* [Step 4: Check the cluster setup](/docs/openshift?topic=openshift-ocp-debug#oc-debug-cluster-setup)
+
+* [Step 5: Log in to your cluster](/docs/openshift?topic=openshift-ocp-debug#oc-debug-cluster-login)
+
+* [Step 6: Check the component pods](/docs/openshift?topic=openshift-ocp-debug#oc-debug-pods)
+
+* [Step 7: Check the system pods](/docs/openshift?topic=openshift-ocp-debug#oc-debug-pods-system)
+
+* [Step 8: Check the VPN](/docs/openshift?topic=openshift-ocp-debug#oc-debug-vpn)
+
+* [Step 9: Refresh the cluster master](/docs/openshift?topic=openshift-ocp-debug#oc-debug-refresh-master)
+
+* [Step 10: Retry](/docs/openshift?topic=openshift-ocp-debug#oc-debug-retry)
+
+[Debugging webhooks](/docs/openshift?topic=openshift-ts-webhook-debug#ts-webhook-debug)
+
+* [Reviewing the service that the webhook is calling](/docs/openshift?topic=openshift-ts-webhook-debug#review-webhook-service)
+
+* [Disabling or removing a webhook](/docs/openshift?topic=openshift-ts-webhook-debug#webhook-disable-rm)
+
+[Why do I see a `Cannot complete cluster master upgrade` message?](/docs/openshift?topic=openshift-ts-cluster-master-upgrade#ts-cluster-master-upgrade)
+
+[Why does OpenShift show the cluster version is not up to date?](/docs/openshift?topic=openshift-ts-cluster-version-downlevel#ts-cluster-version-downlevel)
 
 [Debugging common CLI issues with clusters](/docs/openshift?topic=openshift-ts_clis#ts_clis)
 

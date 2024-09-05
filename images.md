@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2024
-lastupdated: "2024-08-22"
+lastupdated: "2024-09-05"
 
 
 keywords: kubernetes, registry, pull secret, secrets, openshift
@@ -289,7 +289,7 @@ To deploy containers that use encrypted images:
 If you later decide to disable the add-on, the `addon-image-key-synchronizer` daemon set is removed, but the `image-key-synchronizer` project and any secrets that you created in that project are not removed, and the container runtime can still use the secrets to run encrypted images. If you want to remove the keys from your worker nodes as well, you must delete the corresponding secrets from the `image-key-synchronizer` project before you disable the add-on.
 {: note}
 
-For the list of changes for each Image Key Synchronizer add-on version, see the [{{site.data.keyword.cloud_notm}} Image Key Synchronizer add-on change log](/docs/openshift?topic=openshift-ibm-cloud-image-key-synchronizer-change-log).
+For the list of changes for each Image Key Synchronizer add-on version, see the [{{site.data.keyword.cloud_notm}} Image Key Synchronizer add-on change log](/docs/openshift?topic=openshift-cl-add-ons-ibm-cloud-image-key-synchronizer).
 {: tip}
 
 
@@ -455,7 +455,3 @@ Before you begin
     oc get ImagePolicy --all-namespaces
     ```
     {: pre}
-
-
-
-

@@ -2,7 +2,7 @@
 
 copyright:
   years: 2023, 2024
-lastupdated: "2024-09-04"
+lastupdated: "2024-09-05"
 
 
 keywords: openshift, 4.16, update, upgrade, BOM, bill of materials, versions, patch
@@ -35,6 +35,7 @@ Master patch updates are applied automatically. Worker node patch updates can be
 
 
 ### Change log for master fix pack 4.16.7_1532_openshift and worker node fix pack 4.16.6_1531_openshift, released 30 August 2024
+{: #openshift_changelog_4167_1532}
 
 | Component | Previous | Current | Description |
 | --- | --- | --- | --- |
@@ -48,4 +49,3 @@ Master patch updates are applied automatically. Worker node patch updates can be
 | {{site.data.keyword.redhat_openshift_notm}} on IBM Cloud Control Plane Operator, Metrics Server, and toolkit | 4.15.0+20240814 | 4.16.0+20240814 | See the [Red Hat OpenShift on IBM Cloud toolkit release notes](https://github.com/openshift/ibm-roks-toolkit/releases/tag/v4.16.0+20240814){: external}. |
 | Tigera Operator | v1.32.10 | v1.34.3 | See the [Tigera Operator release notes](https://github.com/tigera/operator/releases/tag/v1.34.3){: external}. |
 {: caption="Changes since master fix pack 4.15.25_1556_openshift and worker fix pack 4.15.28_1557_openshift." caption-side="bottom"}
-
