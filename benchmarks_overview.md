@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2024
-lastupdated: "2024-05-20"
+lastupdated: "2024-09-06"
 
 
 keywords: kubernetes, containers, openshift
@@ -30,12 +30,14 @@ When a new Kubernetes version is released as part of a [supported {{site.data.ke
 {: #cis-benchmark-versions}
 
 Use the list to find CIS Kubernetes Benchmark results for available versions.
+
+
+- [Version 4.16](/docs/openshift?topic=openshift-cis-benchmark-416)
 - [Version 4.15](/docs/openshift?topic=openshift-cis-benchmark-415)
 - [Version 4.14](/docs/openshift?topic=openshift-cis-benchmark-414)
 - [Version 4.13](/docs/openshift?topic=openshift-cis-benchmark-413)
 - [Version 4.12](/docs/openshift?topic=openshift-cis-benchmark-412)
-- [Version 4.11](/docs/openshift?topic=openshift-cis-benchmark-411)
-- [Version 4.10](/docs/openshift?topic=openshift-cis-benchmark-410)
+
 
 
 ## Using the benchmark
@@ -155,6 +157,3 @@ Before you begin: [Log in to your account. If applicable, target the appropriate
     oc delete ns ibm-kube-bench-test
     ```
     {: pre}
-
-
-
