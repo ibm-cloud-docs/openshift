@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2024, 2024
-lastupdated: "2024-09-05"
+lastupdated: "2024-09-06"
 
 
 keywords: openshift, benchmarks, 4.16, openshift benchmarks, openshift 4.16
@@ -25,7 +25,7 @@ subcollection: openshift
 ### 1.1 Master Node Configuration Files
 {: #cis-benchmark-11-416}
 
-| # | Recommendation | Scored/Not Scored | Level | Result | Responsibility |
+| Section | Recommendation | Scored/Not Scored | Level | Result | Responsibility |
 | --- | --- | --- | --- | --- | --- |
 | 1.1.1 | Ensure that the API server pod specification file permissions are set to 644 or more restrictive | Scored | 1 | Pass | IBM |
 | 1.1.2 | Ensure that the API server pod specification file ownership is set to root:root | Scored | 1 | Pass | IBM |
@@ -52,7 +52,7 @@ subcollection: openshift
 ### 1.2 API Server
 {: #cis-benchmark-12-416}
 
-| # | Recommendation | Scored/Not Scored | Level | Result | Responsibility |
+| Section | Recommendation | Scored/Not Scored | Level | Result | Responsibility |
 | --- | --- | --- | --- | --- | --- |
 | 1.2.1 | Ensure that the ``--anonymous-auth`` argument is set to false | Not Scored | 1 | [Fail](#ibm-remediations-and-explanations-416) | IBM |
 | 1.2.2 | Ensure that the ``--basic-auth-file`` argument is not set | Scored | 1 | Pass | IBM |
@@ -93,7 +93,7 @@ subcollection: openshift
 ### 1.3 Controller Manager
 {: #cis-benchmark-13-416}
 
-| # | Recommendation | Scored / Not Scored | Level | Result | Responsibility |
+| Section | Recommendation | Scored / Not Scored | Level | Result | Responsibility |
 | --- | --- | --- | --- | --- | --- |
 | 1.3.1 | Ensure that the `--terminated-pod-gc-threshold` argument is set as appropriate. | Scored  | 1 | Pass | IBM |
 | 1.3.2 | Ensure that the `--profiling` argument is set to false. | Scored  | 1 | Pass | IBM |
@@ -106,7 +106,7 @@ subcollection: openshift
 ### 1.4 Scheduler
 {: #cis-benchmark-14-416}
 
-| # | Recommendation | Scored/Not Scored | Level | Result | Responsibility |
+| Section | Recommendation | Scored/Not Scored | Level | Result | Responsibility |
 | --- | --- | --- | --- | --- | --- |
 | 1.4.1 | Ensure that the `--profiling` argument is set to false. | Scored  | 1 | Pass | IBM |
 | 1.4.2 | Ensure that the `--bind-address` argument is set to 127.0.0.1. | Scored  | 1 | Pass | IBM |
@@ -114,7 +114,7 @@ subcollection: openshift
 ## 2 Etcd Node Configuration
 {: #cis-benchmark-2-416}
 
-| # | Recommendation | Scored/Not Scored | Level | Result | Responsibility |
+| Section | Recommendation | Scored/Not Scored | Level | Result | Responsibility |
 | --- | --- | --- | --- | --- | --- |
 | 2.1 | Ensure that the `--cert-file` and `--key-file` arguments are set as appropriate. | Scored  | 1 | Pass | IBM |
 | 2.2 | Ensure that the `--client-cert-auth` argument is set to true. | Scored  | 1 | Pass | IBM |
@@ -130,14 +130,14 @@ subcollection: openshift
 ### 3.1 Authentication and Authorization
 {: #cis-benchmark-31-416}
 
-| # | Recommendation | Scored/Not Scored | Level | Result | Responsibility |
+| Section | Recommendation | Scored/Not Scored | Level | Result | Responsibility |
 | --- | --- | --- | --- | --- | --- |
 | 3.1.1 | Client certificate authentication should not be used for users. | Not  Scored | 2 | Pass | Shared |
 
 ### 3.2 Logging
 {: #cis-benchmark-32-416}
 
-| # | Recommendation | Scored/Not Scored | Level | Result | Responsibility |
+| Section | Recommendation | Scored/Not Scored | Level | Result | Responsibility |
 | --- | --- | --- | --- | --- | --- |
 | 3.2.1 | Ensure that a minimal audit policy is created. | Scored  | 1 | [Fail](#ibm-remediations-and-explanations-416) | Shared |
 | 3.2.2 | Ensure that the audit policy covers key security concerns. | Not  Scored | 2 | [Fail](#ibm-remediations-and-explanations-416) | Shared |
@@ -148,7 +148,7 @@ subcollection: openshift
 ### 4.1 Worker Node Configuration Files
 {: #cis-section-41-416-redhat-8-64}
 
-| # | Recommendation | Scored/Not Scored | Level | Result | Responsibility |
+| Section | Recommendation | Scored/Not Scored | Level | Result | Responsibility |
 | --- | --- | --- | --- | --- | --- |
 | 4.1.1 | Ensure that the kubelet service file permissions are set to 644 or more restrictive. | Scored  | 1 | Pass | IBM |
 | 4.1.2 | Ensure that the kubelet service file ownership is set to root:root. | Scored  | 1 | Pass | IBM |
@@ -164,7 +164,7 @@ subcollection: openshift
 ### 4.2 Kubelet
 {: #cis-section-42-416-redhat-8-64}
 
-| # | Recommendation | Scored/Not Scored | Level | Result | Responsibility |
+| Section | Recommendation | Scored/Not Scored | Level | Result | Responsibility |
 | --- | --- | --- | --- | --- | --- |
 | 4.2.1 | Ensure that the `--anonymous-auth` argument is set to false. | Scored  | 1 | Pass | IBM |
 | 4.2.2 | Ensure that the `--authorization-mode` argument is not set to AlwaysAllow. | Scored  | 1 | Pass | IBM |
@@ -186,7 +186,7 @@ subcollection: openshift
 ### 4.1 Worker Node Configuration Files
 {: #cis-section-41-416-rhcos}
 
-| # | Recommendation | Scored/Not Scored | Level | Result | Responsibility |
+| Section | Recommendation | Scored/Not Scored | Level | Result | Responsibility |
 | --- | --- | --- | --- | --- | --- |
 | 4.1.1 | Ensure that the kubelet service file permissions are set to 644 or more restrictive. | Scored  | 1 | Pass | IBM |
 | 4.1.2 | Ensure that the kubelet service file ownership is set to root:root. | Scored  | 1 | Pass | IBM |
@@ -202,7 +202,7 @@ subcollection: openshift
 ### 4.2 Kubelet
 {: #cis-section-42-416-rhcos}
 
-| # | Recommendation | Scored/Not Scored | Level | Result | Responsibility |
+| Section | Recommendation | Scored/Not Scored | Level | Result | Responsibility |
 | --- | --- | --- | --- | --- | --- |
 | 4.2.1 | Ensure that the `--anonymous-auth` argument is set to false. | Scored  | 1 | Pass | IBM |
 | 4.2.2 | Ensure that the `--authorization-mode` argument is not set to AlwaysAllow. | Scored  | 1 | Pass | IBM |
@@ -224,7 +224,7 @@ subcollection: openshift
 ### 5.1 RBAC and Service Accounts
 {: #cis-section-51-416}
 
-| # | Recommendation | Scored/Not Scored | Level | Result | Responsibility |
+| Section | Recommendation | Scored/Not Scored | Level | Result | Responsibility |
 | --- | --- | --- | --- | --- | --- |
 | 5.1.1 | Ensure that the cluster-admin role is only used where required. | Not  Scored | 1 | Pass | Shared |
 | 5.1.2 | Minimize access to secrets. | Not  Scored | 1 | [Fail](#ibm-remediations-and-explanations-416) | Shared |
@@ -236,7 +236,7 @@ subcollection: openshift
 ### 5.2 Pod Security Policies
 {: #cis-section-52-416}
 
-| # | Recommendation | Scored/Not Scored | Level | Result | Responsibility |
+| Section | Recommendation | Scored/Not Scored | Level | Result | Responsibility |
 | --- | --- | --- | --- | --- | --- |
 | 5.2.1 | Minimize the admission of privileged containers. | Not  Scored | 1 | [Pass](#ibm-remediations-and-explanations-416) | Shared |
 | 5.2.2 | Minimize the admission of containers wishing to share the host process ID namespace. | Scored  | 1 | [Pass](#ibm-remediations-and-explanations-416) | Shared |
@@ -251,7 +251,7 @@ subcollection: openshift
 ### 5.3 Network Policies and CNI
 {: #cis-section-53-416}
 
-| # | Recommendation | Scored/Not Scored | Level | Result | Responsibility |
+| Section | Recommendation | Scored/Not Scored | Level | Result | Responsibility |
 | --- | --- | --- | --- | --- | --- |
 | 5.3.1 | Ensure that the CNI in use supports Network Policies. | Not  Scored | 1 | Pass | IBM |
 | 5.3.2 | Ensure that all Namespaces have Network Policies defined. | Scored  | 2 | [Fail](#ibm-remediations-and-explanations-416) | Shared |
@@ -259,7 +259,7 @@ subcollection: openshift
 ### 5.4 Secrets Management
 {: #cis-section-54-416}
 
-| # | Recommendation | Scored/Not Scored | Level | Result | Responsibility |
+| Section | Recommendation | Scored/Not Scored | Level | Result | Responsibility |
 | --- | --- | --- | --- | --- | --- |
 | 5.4.1 | Prefer using secrets as files over secrets as environment variables. | Not  Scored | 1 | [Fail](#ibm-remediations-and-explanations-416) | Shared |
 | 5.4.2 | Consider external secret storage. | Not  Scored | 2 | [Fail](#ibm-remediations-and-explanations-416) | Shared |
@@ -267,14 +267,14 @@ subcollection: openshift
 ### 5.5 Extensible Admission Control
 {: #cis-section-55-416}
 
-| # | Recommendation | Scored/Not Scored | Level | Result | Responsibility |
+| Section | Recommendation | Scored/Not Scored | Level | Result | Responsibility |
 | --- | --- | --- | --- | --- | --- |
 | 5.5.1 | Configure Image Provenance using ImagePolicyWebhook admission controller. | Not  Scored | 2 | [Fail](#ibm-remediations-and-explanations-416) | Shared |
 
 ### 5.7 General Policies
 {: #cis-section-57-416}
 
-| # | Recommendation | Scored/Not Scored | Level | Result | Responsibility |
+| Section | Recommendation | Scored/Not Scored | Level | Result | Responsibility |
 | --- | --- | --- | --- | --- | --- |
 | 5.7.1 | Create administrative boundaries between resources using namespaces. | Not  Scored | 1 | Pass | Shared |
 | 5.7.2 | Ensure that the seccomp profile is set to docker/default in your pod definitions. | Not  Scored | 2 | [Fail](#ibm-remediations-and-explanations-416) | Shared |
@@ -284,7 +284,7 @@ subcollection: openshift
 ### {{site.data.keyword.IBM_notm}} remediations and explanations
 {: #ibm-remediations-and-explanations-416}
 
-| # | Remediation/Explanation |
+| Section | Remediation/Explanation |
 | --- | --- |
 | 1.2.1 | {{site.data.keyword.openshiftlong_notm}} utilizes RBAC for cluster protection, but allows anonymous discovery, which is considered reasonable per [CIS Kubernetes Benchmark](https://www.cisecurity.org/benchmark/kubernetes/){: external}. |
 | 1.2.10 | {{site.data.keyword.openshiftlong_notm}} does not enable the [EventRateLimit](https://kubernetes.io/docs/reference/access-authn-authz/admission-controllers/#eventratelimit){: external} admission controller since it is a Kubernetes alpha feature. |
