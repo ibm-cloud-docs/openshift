@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2024
-lastupdated: "2024-07-18"
+lastupdated: "2024-09-06"
 
 
 keywords: openshift, openshift data foundation, openshift container storage
@@ -30,7 +30,10 @@ What is OpenShift Data Foundation?
 
 How does OpenShift Data Foundation work?
 :   ODF uses these devices to create a virtualized storage layer, where your app data is replicated for high availability. Because ODF abstracts your underlying storage, you can use ODF to create File, Block, or Object storage claims from the same underlying raw block storage.
-:   ODF uses storage volumes in multiples of 3 and replicates your app data across these volumes. The underlying storage volumes that you use for ODF depends on your cluster type. For VPC clusters the storage volumes are dynamically provisioned {{site.data.keyword.block_storage_is_short}} devices. For bare metal Classic clusters, the storage volumes are local disks on your bare metal worker nodes. For {{site.data.keyword.satelliteshort}} clusters, the storage volumes are either local disks on your worker nodes, or you can dynamically provision disks by using a compatible block storage driver.
+:   ODF uses storage volumes in multiples of 3 and replicates your app data across these volumes. The underlying storage volumes that you use for ODF depends on your cluster type.
+    - For **VPC clusters**, the storage volumes are {{site.data.keyword.block_storage_is_short}} storage volumes. 
+    - For bare metal **Classic clusters**, the storage volumes are local disks on your bare metal worker nodes.
+    - For **{{site.data.keyword.satelliteshort}} clusters**, the storage volumes are either local disks on your worker nodes, or you can dynamically provision disks by using a compatible block storage driver.
 
 Can I install the OpenShift Data Foundation add-on in {{site.data.keyword.satelliteshort}} clusters?
 :   No. The cluster add-on is available only for Classic and VPC clusters. 
@@ -237,11 +240,3 @@ Virtual Private Cloud (VPC) clusters
 
 Classic clusters
 :   You can deploy ODF by using local disks on your bare metal worker nodes. For more information, see [Deploying OpenShift Data Foundation on Classic clusters](/docs/openshift?topic=openshift-deploy-odf-classic).
-
-
-
-
-
-
-
-
