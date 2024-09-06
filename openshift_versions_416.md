@@ -2,7 +2,7 @@
 
 copyright:
   years: 2024, 2024
-lastupdated: "2024-09-05"
+lastupdated: "2024-09-06"
 
 
 keywords: openshift, version, update, upgrade, 4.16, update openshift
@@ -68,7 +68,7 @@ VPC worker nodes provisioned for version 4.16 have VPC Instance Metadata Service
 The following table shows the actions that you must take before you [update the cluster master](/docs/openshift?topic=openshift-update#master).
 {: shortdesc}
 
-For clusters that run version 4.16 or later, you can use the `oc adm upgrade status` command to check the update status of your cluster master during a master version update. For more information, see [Viewing cluster upgrade status with the `oc adm upgrade status` command](docs/openshift?topic=openshift-upgrade-status).
+For clusters that run version 4.16 or later, you can use the `oc adm upgrade status` command to check the update status of your cluster master during a master version update. For more information, see [Viewing cluster upgrade status with the `oc adm upgrade status` command](/docs/openshift?topic=openshift-upgrade-status).
 {: tip}
 
 | Type | Description |

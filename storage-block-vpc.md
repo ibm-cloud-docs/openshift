@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2024
-lastupdated: "2024-07-10"
+lastupdated: "2024-09-06"
 
 
 keywords: openshift, block storage, deploy apps
@@ -1002,7 +1002,7 @@ What do I need to be aware of before I start using the Kubernetes secret for my 
     :   In the string data section, enter a comma-separated list of tags to use when the PVC is created. Tags can help you find your storage instance after it is created.
     
     `resourceGroup`
-    :   In the string data section, enter the resource group that you want your {{site.data.keyword.block_storage_is_short}} instance to get access to. If you don't enter a resource group, the instance is automatically authorized to access resources of the resource group that your cluster belongs to. 
+    :   In the string data section, enter the resource group ID that you want your {{site.data.keyword.block_storage_is_short}} instance to get access to. If you don't enter a resource group, the instance is automatically authorized to access resources of the resource group that your cluster belongs to. 
     
     `encrypted`
     :   In the string data section, enter `true` to create a secret that sets up encryption for {{site.data.keyword.block_storage_is_short}} volumes. If you set this option to `true`, you must provide the root key CRN of your {{site.data.keyword.keymanagementserviceshort}} service instance that you want to use in `parameters.encryptionKey`. For more information about encrypting your data, see [Setting up encryption](#vpc-block-encryption) for your {{site.data.keyword.block_storage_is_short}}.
@@ -1299,4 +1299,3 @@ For example:
 - If a value of `20G` is provided, the volume that is created is `19GB`.
 
 Sometimes, the capacity of the volume that is created is less than the requested value. Note that billing applies for the volume that gets created, not the requested volume.
-
