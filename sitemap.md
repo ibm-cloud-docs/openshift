@@ -273,6 +273,14 @@ subcollection: openshift
 
 [Release notes](/docs/openshift?topic=openshift-openshift-relnotes#openshift-relnotes)
 
+* [September 2024](/docs/openshift?topic=openshift-openshift-relnotes#openshift-sep24)
+
+    * [10 September 2024](/docs/openshift?topic=openshift-openshift-relnotes#openshift-sep1024)
+
+        * CLI version `1.0.657` is available.
+
+        * {{site.data.keyword.openshiftlong_notm}} is Kubernetes certified
+
 * [August 2024](/docs/openshift?topic=openshift-openshift-relnotes#openshift-aug24)
 
     * [30 August 2024](/docs/openshift?topic=openshift-openshift-relnotes#openshift-aug3024)
@@ -6174,6 +6182,8 @@ subcollection: openshift
 [CLI change log](/docs/openshift?topic=openshift-cs_cli_changelog#cs_cli_changelog)
 
 * [Version 1.0](/docs/openshift?topic=openshift-cs_cli_changelog#10)
+
+* [Version v1.0.657](/docs/openshift?topic=openshift-cs_cli_changelog#cli-010657)
 
 * [Version v1.0.652](/docs/openshift?topic=openshift-cs_cli_changelog#cli-010652)
 

@@ -26,6 +26,25 @@ Looking for {{site.data.keyword.cloud_notm}} status, platform announcements, sec
 {: tip}
 
 
+
+## September 2024
+{: #openshift-sep24}
+
+### 10 September 2024
+{: #openshift-sep1024}
+{: release-note}
+
+CLI version `1.0.657` is available.
+:   For more information, see [Updating the CLI](/docs/openshift?topic=openshift-cli-update) and the [CLI change log](/docs/openshift?topic=openshift-cs_cli_changelog).
+
+
+
+{{site.data.keyword.openshiftlong_notm}} is Kubernetes certified
+:   Version [4.16](/docs/openshift?topic=openshift-openshift_changelog_416) release is now certified.
+
+
+
+
 ## August 2024
 {: #openshift-aug24}
 

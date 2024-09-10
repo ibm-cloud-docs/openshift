@@ -2,7 +2,7 @@
 
 copyright:
   years: 2024, 2024
-lastupdated: "2024-09-09"
+lastupdated: "2024-09-10"
 
 
 keywords: openshift, version, update, upgrade, 4.16, update openshift
@@ -24,7 +24,9 @@ Looking for general information about updating clusters, or information on a dif
 {: tip}
 
 
+![This badge indicates Kubernetes version 1.29 certification for {{site.data.keyword.openshiftlong_notm}}](images/certified-kubernetes-color.svg){: caption="Figure 1. Kubernetes version 1.29 certification badge" caption-side="bottom"}
 
+{{site.data.keyword.openshiftlong_notm}} is a Certified Kubernetes product for version 1.29 under the CNCF Kubernetes Software Conformance Certification program. _Kubernetes® is a registered trademark of The Linux Foundation in the United States and other countries, and is used pursuant to a license from The Linux Foundation._
 
 ## Release timeline 
 {: #release_timeline_416}
