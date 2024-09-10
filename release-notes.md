@@ -26,6 +26,20 @@ Looking for {{site.data.keyword.cloud_notm}} status, platform announcements, sec
 {: tip}
 
 
+
+## September 2024
+{: #openshift-sep24}
+
+### 10 September 2024
+{: #openshift-sep1024}
+{: release-note}
+
+{{site.data.keyword.openshiftlong_notm}} is Kubernetes certified
+:   Version [4.16](/docs/openshift?topic=openshift-openshift_changelog_416) release is now certified.
+
+
+
+
 ## August 2024
 {: #openshift-aug24}
 

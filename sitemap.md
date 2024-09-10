@@ -273,6 +273,12 @@ subcollection: openshift
 
 [Release notes](/docs/openshift?topic=openshift-openshift-relnotes#openshift-relnotes)
 
+* [September 2024](/docs/openshift?topic=openshift-openshift-relnotes#openshift-sep24)
+
+    * [10 September 2024](/docs/openshift?topic=openshift-openshift-relnotes#openshift-sep1024)
+
+        * {{site.data.keyword.openshiftlong_notm}} is Kubernetes certified
+
 * [August 2024](/docs/openshift?topic=openshift-openshift-relnotes#openshift-aug24)
 
     * [30 August 2024](/docs/openshift?topic=openshift-openshift-relnotes#openshift-aug3024)

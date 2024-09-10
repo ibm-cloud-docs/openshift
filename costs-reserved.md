@@ -2,10 +2,10 @@
 
 copyright: 
   years: 2014, 2024
-lastupdated: "2024-03-15"
+lastupdated: "2024-09-10"
 
 
-keywords: oks, iro, openshift, red hat, red hat openshift
+keywords: openshift, reservations, worker node
 
 subcollection: openshift
 
@@ -20,6 +20,8 @@ subcollection: openshift
 
 # Using reservations to reduce classic worker node costs
 {: #reservations}
+
+[Classic infrastructure]{: tag-classic-inf}
 
 When you have consistent computing needs over time of at least one year, create a reservation to reduce the costs of worker nodes in your {{site.data.keyword.openshiftlong}} clusters. With a reservation, you reserve virtual worker node instances in a contract for a fixed, predictable, and lower price than regular instances.
 {: shortdesc}
@@ -98,7 +100,7 @@ These discounted reserved worker nodes are in addition to any current account-le
 How am I billed? How are my discounts applied?
 :   When you create a contract, a discounted monthly price for the total number of worker nodes is calculated. Then, this cost is applied for each month in the term. You are billed each month for the discounted cost, regardless of how many worker nodes that you use during the month. Keep in mind that the price of each new contract is fixed at the time that the contract is created for the lifetime of the contract.
 
-Consider the following example. You create a contract on 15 December 2020 for 12 worker nodes for a 1 year term, until 15 December 2021. The total discounted cost for all 12 worker nodes for the entire term is calculated at $12,000. For each full month, you are billed a flat rate of $1,000, regardless of how many worker nodes in the reservation are in use. For the first and last months, you are billed a pro-rated amount, according to the dates that the contract is active in the months.
+Consider the following example. You create a contract on 15 December 2024 for 12 worker nodes for a 1 year term, until 15 December 2025. The total discounted cost for all 12 worker nodes for the entire term is calculated at $12,000. For each full month, you are billed a flat rate of $1,000, regardless of how many worker nodes in the reservation are in use. For the first and last months, you are billed a pro-rated amount, according to the dates that the contract is active in the months.
 
 If I don't need reserved worker nodes anymore, can I modify my contract?
 :   No, you can't modify the terms of the contract, such as the duration, number of worker nodes, or flavor. You can remove any unneeded worker nodes from your clusters, but you can't get a refund for unused capacity in your reservation.
@@ -186,8 +188,3 @@ Before you begin, make sure that you have the following roles in {{site.data.key
 3. From the **Services** table, find the **Kubernetes Service** row and click **View plans**.
 4. From the plans table, find the row for your reservation name and click **View details**.
 5. Review the details for the reserved worker nodes that are associated with the contracts of your reservation.
-
-
-
-
-
