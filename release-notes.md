@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2024
-lastupdated: "2024-09-09"
+lastupdated: "2024-09-10"
 
 
 keywords: openshift, {{site.data.keyword.openshiftlong_notm}}, kubernetes, release notes
@@ -84,7 +84,7 @@ Storage Operator cluster add-on patch update.
 
 
 
-{{site.data.keyword.openshiftlong_notm}} master fix packs.
+{{site.data.keyword.openshiftlong_notm}} worker node fix packs.
 :   Worker node fix packs can be applied by updating or reloading the worker node in classic infrastructure, or replacing the worker node in VPC infrastructure. Review the following change logs for your cluster version.
 :   [Version 4.15 change log](/docs/openshift?topic=openshift-openshift_changelog_415)
 :   [Version 4.14 change log](/docs/openshift?topic=openshift-openshift_changelog_414)

@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2024
-lastupdated: "2024-09-05"
+lastupdated: "2024-09-10"
 
 
 keywords: openshift
@@ -295,7 +295,7 @@ subcollection: openshift
 
         * Storage Operator cluster add-on patch update.
 
-        * {{site.data.keyword.openshiftlong_notm}} master fix packs.
+        * {{site.data.keyword.openshiftlong_notm}} worker node fix packs.
 
     * [23 August 2024](/docs/openshift?topic=openshift-openshift-relnotes#openshift-aug2324)
 
