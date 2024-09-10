@@ -2,7 +2,7 @@
 
 copyright:
   years: 2024, 2024
-lastupdated: "2024-09-06"
+lastupdated: "2024-09-09"
 
 
 keywords: openshift, version, update, upgrade, 4.16, update openshift
@@ -47,9 +47,6 @@ Review changes that you might need to make when you [update a cluster](/docs/ope
 {: shortdesc}
 
 The backup and restore Helm chart is supported on {{site.data.keyword.openshiftlong_notm}} 4.16 clusters. However, only the COS direct endpoints are supported. For example: `s3.direct.us.cloud-object-storage.appdomain.cloud`.
-{: note}
-
-{{site.data.keyword.openshiftlong_notm}} version 4.16 clusters do not yet support [Rotating CA certificates in your cluster](/docs/openshift?topic=openshift-cert-rotate). Do not update your cluster to version 4.16 if this support is required.
 {: note}
 
 VPC worker nodes provisioned for version 4.16 have VPC Instance Metadata Service enabled. For more information, see [About VPC Instance Metadata](/docs/vpc?topic=vpc-imd-about). 

@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2024
-lastupdated: "2024-09-04"
+lastupdated: "2024-09-09"
 
 
 keywords: openshift, {{site.data.keyword.openshiftlong_notm}}
@@ -42,8 +42,8 @@ Modifying feature gates is not supported in {{site.data.keyword.openshiftlong_no
 
 
 4.16
-:   KMSv1=false
-:   StructuredAuthenticationConfiguration=true
+:   `KMSv1=false`
+:   `StructuredAuthenticationConfiguration=true`
 
 4.15
 :   Community feature gates applied.
