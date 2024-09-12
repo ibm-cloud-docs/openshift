@@ -2,7 +2,7 @@
 
 copyright:
   years: 2023, 2024
-lastupdated: "2024-07-18"
+lastupdated: "2024-09-12"
 
 
 keywords: data science, AI, machine learning, AI modeling, modeling, GPUs, NVIDIA, node feature discovery, pipelines
@@ -65,7 +65,15 @@ The Node Feature Discovery (NFD) Operator is a prerequisite for the NVIDIA GPU O
 {: #datascience_nvidia_gpu}
 {: step}
 
-To ensure that your data scientists can use compute-heavy workloads in their models, you can enable graphics processing units (GPUs) in OpenShift AI. To enable GPUs on OpenShift, you must install the NVIDIA GPU Operator on the cluster. For installation steps, see [Installing the NVIDIA GPU Operator](https://docs.nvidia.com/datacenter/cloud-native/openshift/23.6.1/install-gpu-ocp.html#installing-the-nvidia-gpu-operator) in the NVIDIA documentation. Note that the [Node Feature Discovery Operator](#datascience_node_feature_discovery) must be installed before you can install the NVIDIA GPU operator.
+To ensure that your data scientists can use compute-heavy workloads in their models, you can enable graphics processing units (GPUs) in OpenShift AI.
+
+
+- Note that the [Node Feature Discovery Operator](#datascience_node_feature_discovery) must be installed before you can install the NVIDIA GPU operator.
+- To enable GPUs on OpenShift, you must install the NVIDIA GPU Operator on the cluster. For installation steps, see [Installing the NVIDIA GPU Operator](https://docs.nvidia.com/datacenter/cloud-native/openshift/23.6.1/install-gpu-ocp.html#installing-the-nvidia-gpu-operator) in the NVIDIA documentation.
+
+If you experience issues installing the Node Feature Discovery Operator or the NVIDIA GPU Operator, [contact NVIDIA support for help](https://www.nvidia.com/en-us/support/){: external} or open an issue in the [NVIDIA GPU Operator repo](https://github.com/NVIDIA/gpu-operator/issues){: external}
+{: note}
+
 
 To check that the GPU operator installation is successful, you can [run a sample GPU application](https://docs.nvidia.com/datacenter/cloud-native/openshift/23.6.1/install-gpu-ocp.html#running-a-sample-gpu-application){: external}.
 {: tip}
@@ -90,11 +98,3 @@ After you install the operators, check that they are visible in the OpenShift we
 {: #datascience_next}
 
 Now that you have OpenShift AI installed on your cluster, try one of the [Data Science learning paths](https://developers.redhat.com/learn/openshift-ai){: external}, run a sample AI workload on your cluster by following one of the [Red Hat OpenShift tutorials](https://developers.redhat.com/learn/openshift-ai){: external}, or try this tutorial on using [GPUs and a Jupyter notebook for AI or machine learning modeling](https://developers.redhat.com/learn/openshift-data-science/configure-jupyter-notebook-use-gpus-aiml-modeling){: external}. 
-
-
-
-
-
-
-
-

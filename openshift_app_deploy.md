@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2024
-lastupdated: "2024-06-24"
+lastupdated: "2024-09-12"
 
 
 keywords: kubernetes, openshift
@@ -229,6 +229,9 @@ Before you begin
 
 You must use NVIDIA GPU operator version 1.3.1 or later. When you install the Node Feature Discovery operator, select the update channel that matches your {{site.data.keyword.redhat_openshift_notm}} cluster version. Don't install the operators through another method, such as a Helm chart.
 {: important}
+
+If you experience issues installing the Node Feature Discovery Operator or the NVIDIA GPU Operator, [contact NVIDIA support for help](https://www.nvidia.com/en-us/support/){: external} or open an issue in the [NVIDIA GPU Operator repo](https://github.com/NVIDIA/gpu-operator/issues){: external}
+{: note}
     
 
 
@@ -385,9 +388,3 @@ You must use NVIDIA GPU operator version 1.3.1 or later. When you install the No
 Now that you deployed a test GPU workload, you might want to set up your cluster to run a tool that relies on GPU processing, such as [IBM Maximo Visual Inspection](https://www.ibm.com/products/maximo/remote-monitoring){: external}.
 
     
-
-
-
-
-
-
