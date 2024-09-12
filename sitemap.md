@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2024
-lastupdated: "2024-09-11"
+lastupdated: "2024-09-12"
 
 
 keywords: openshift
@@ -274,6 +274,10 @@ subcollection: openshift
 [Release notes](/docs/openshift?topic=openshift-openshift-relnotes#openshift-relnotes)
 
 * [September 2024](/docs/openshift?topic=openshift-openshift-relnotes#openshift-sep24)
+
+    * [12 September 2024](/docs/openshift?topic=openshift-openshift-relnotes#openshift-sep1224)
+
+        * New! NVIDIA H100 GPU support. You can now create VPC clusters with worker nodes that have NVIDIA H100 GPUs.
 
     * [10 September 2024](/docs/openshift?topic=openshift-openshift-relnotes#openshift-sep1024)
 
@@ -2829,6 +2833,12 @@ subcollection: openshift
 * [Decide how many clusters to create](/docs/openshift?topic=openshift-strategy#env_multicluster)
 
 * [Determine how many locations are needed](/docs/openshift?topic=openshift-strategy#plan_locations)
+
+    * [Multizone clusters](/docs/openshift?topic=openshift-strategy#mz-strategy)
+
+    * [Multiple clusters linked with load balancers](/docs/openshift?topic=openshift-strategy#mz-cluster-strategy)
+
+    * [Single zone clusters](/docs/openshift?topic=openshift-strategy#sz-single-zone-strategy)
 
 * [Select a cluster type](/docs/openshift?topic=openshift-strategy#env_flavors)
 
@@ -10146,10 +10156,6 @@ subcollection: openshift
 * [Toronto (`tor`)](/docs/openshift?topic=openshift-classic-flavors#toronto-tor)
 
 * [Washington DC (`wdc`)](/docs/openshift?topic=openshift-classic-flavors#washington-dc-wdc)
-
-[Bare metal flavors](/docs/openshift?topic=openshift-flavors-bm#flavors-bm)
-
-[SDS flavors](/docs/openshift?topic=openshift-flavors-sds#flavors-sds)
 
 
 ## Related links
