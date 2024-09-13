@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2024
-lastupdated: "2024-09-12"
+lastupdated: "2024-09-13"
 
 
 keywords: openshift, {{site.data.keyword.openshiftlong_notm}}, kubernetes, release notes
@@ -35,6 +35,7 @@ Looking for {{site.data.keyword.cloud_notm}} status, platform announcements, sec
 ### 12 September 2024
 {: #openshift-sep1224}
 {: release-note}
+
 
 
 New! NVIDIA H100 GPU support. You can now create VPC clusters with worker nodes that have NVIDIA H100 GPUs.
