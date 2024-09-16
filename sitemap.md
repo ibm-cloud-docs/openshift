@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2024
-lastupdated: "2024-09-12"
+lastupdated: "2024-09-16"
 
 
 keywords: openshift
@@ -274,6 +274,10 @@ subcollection: openshift
 [Release notes](/docs/openshift?topic=openshift-openshift-relnotes#openshift-relnotes)
 
 * [September 2024](/docs/openshift?topic=openshift-openshift-relnotes#openshift-sep24)
+
+    * [16 September 2024](/docs/openshift?topic=openshift-openshift-relnotes#openshift-sep1624)
+
+        * New! The {{site.data.keyword.cloud}} and Compliance Center Workload Protection integration is available for VPC clusters in the UI. 
 
     * [12 September 2024](/docs/openshift?topic=openshift-openshift-relnotes#openshift-sep1224)
 

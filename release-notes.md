@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2024
-lastupdated: "2024-09-13"
+lastupdated: "2024-09-16"
 
 
 keywords: openshift, {{site.data.keyword.openshiftlong_notm}}, kubernetes, release notes
@@ -30,7 +30,12 @@ Looking for {{site.data.keyword.cloud_notm}} status, platform announcements, sec
 ## September 2024
 {: #openshift-sep24}
 
+### 16 September 2024
+{: #openshift-sep1624}
+{: release-note}
 
+New! The {{site.data.keyword.cloud}} and Compliance Center Workload Protection integration is available for VPC clusters in the UI. 
+:   For more information, see the list of Observability Integrations in [Creating a VPC cluster in the console](/docs/containers?topic=containers-cluster-create-vpc-gen2&interface=ui#clusters_vpcg2_ui).
 
 ### 12 September 2024
 {: #openshift-sep1224}
