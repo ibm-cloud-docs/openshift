@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2024
-lastupdated: "2024-08-01"
+lastupdated: "2024-09-16"
 
 
 keywords: kubernetes, openshift
@@ -31,9 +31,6 @@ To view more information about these classes, you can run the `get sc` command i
 oc get sc STORAGE-CLASS -o yaml
 ```
 {: pre}
-
-
-
 
 
 ## {{site.data.keyword.cos_full_notm}} Helm chart storage classes
@@ -102,7 +99,3 @@ oc get sc STORAGE-CLASS -o yaml
 {: tab-group="sc_ref"}
 {: class="simple-tab-table"}
 {: summary="The first column contains a feature of the storage class. The second column contains a brief description of the feature."}
-
-
-
-
