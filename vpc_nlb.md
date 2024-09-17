@@ -1,7 +1,7 @@
 ---
 copyright: 
   years: 2024, 2024
-lastupdated: "2024-08-27"
+lastupdated: "2024-09-17"
 
 keywords: nlb, network load balancer, vpc nlb, dns, public lb, private lb
 subcollection: openshift
@@ -346,7 +346,9 @@ Review the required and optional VPC NLB annotations and specifications.
 `service.kubernetes.io/ibm-load-balancer-cloud-provider-vpc-health-check-retries`
 :   The maximum number of health check retries for the VPC load balancer. By default, this value is set to `2`, and has a minimum of `1` and a maximum of `10`.
 
-
+`service.kubernetes.io/ibm-load-balancer-cloud-provider-dns-name: "example-ingress-domain.<region>.containers.appdomain.cloud"`
+:   Version 4.16 or later.
+:   Register the load balancer's IP address with the specified [Ingress domain](/docs/openshift?topic=openshift-ingress-domains). If the specified domain does not exist, a domain is created that uses the internal, IBM managed provider (`akamai`). To create a new domain, the name must be unique across all existing domains (not just those on your cluster). Deleting the load balancer service removes the IP address from the domain. However, removing the annotation does not remove the IP address from the domain. 
 
 
 

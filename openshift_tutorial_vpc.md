@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2024
-lastupdated: "2024-08-29"
+lastupdated: "2024-09-17"
 
 
 keywords: kubernetes, openshift, red hat, red hat openshift
@@ -358,5 +358,5 @@ Now that you have a VPC cluster, learn more about what you can do.
 - [VPC cluster limitations](/docs/openshift?topic=openshift-limitations#ks_vpc_gen2_limits)
 - [About the v2 API](/docs/openshift?topic=openshift-cs_api_install#api_about)
 
-Need help, have questions, or want to give feedback on VPC clusters? Try posting in the [Slack channel](https://join.slack.com/t/ibm-cloud-success/shared_invite/zt-2p5zqh275-FL8XUSEmn_vvAJZzrHqYcA){: external}.
+Need help, have questions, or want to give feedback on VPC clusters? Try posting in the [Slack channel](https://ibm-cloud-success.slack.com/join/shared_invite/zt-2p5zqh275-FL8XUSEmn_vvAJZzrHqYcA){: external}.
 {: tip}

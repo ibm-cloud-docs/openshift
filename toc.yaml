@@ -453,8 +453,6 @@ toc:
           topics:
           - vpc-flavors.md
           - classic-flavors.md
-          - flavors-bm.md
-          - flavors-sds.md
       - topicgroup:
           label: Related links
           topics:

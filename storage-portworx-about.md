@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2024
-lastupdated: "2024-08-06"
+lastupdated: "2024-09-17"
 
 
 keywords: portworx, kubernetes, openshift
@@ -57,7 +57,7 @@ Portworx also comes with additional features that you can use for your stateful 
 
 Review the requirements to [install Portworx](https://docs.portworx.com/portworx-enterprise/platform/prerequisites){: external}.
 
-For production environments, choose one of the [SDS worker node flavors](/docs/openshift?topic=openshift-flavors-sds) for best performance. 
+For production environments, choose one of the [SDS worker node flavors](/docs/openshift?topic=openshift-classic-flavors) for best performance. In the tables for each metro area section, SDS flavors are in the **Bare Metal** tabs and end with `.ssd`.
 {: tip}
 
 ## How can I make sure that my data is stored highly available?
@@ -130,4 +130,3 @@ Monitoring and managing your Portworx cluster with Lighthouse
 
 Configuring Autopilot 
 :   You can monitor your cluster resources and specify conditions along with actions it should take when those conditions occur. For more information, refer to the [Autopilot docs](https://docs.portworx.com/portworx-enterprise/operations/operate-kubernetes/autopilot){: external}.
-

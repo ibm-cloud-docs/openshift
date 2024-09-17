@@ -1,7 +1,7 @@
 ---
 copyright: 
   years: 2024, 2024
-lastupdated: "2024-08-22"
+lastupdated: "2024-09-17"
 
 keywords: alb, application load balancer, vpc alb, dns, public lb, private lb
 
@@ -328,6 +328,9 @@ Review the required and optional VPC ALB annotations and specifications.
 :   The idle connection timeout of the listener in seconds. The default idle timeout is dependent on your account settings. Usually, this value is `50`. However, some allowlisted accounts have larger timeout settings. If you don't set the annotation, your loadbalancers use the timeout setting in your account. You can explicitly specify the timeout by setting this annotation. The minimum is `50`. The maximum is `7200`.
 
 
+`service.kubernetes.io/ibm-load-balancer-cloud-provider-dns-name: "example-ingress-domain.<region>.containers.appdomain.cloud"`
+:   Version 4.16 or later.
+:   Register the load balancer's IP address with the specified [Ingress domain](/docs/openshift?topic=openshift-ingress-domains). If the specified domain does not exist, a domain is created that uses the internal, IBM managed provider (`akamai`). To create a new domain, the name must be unique across all existing domains (not just those on your cluster). Deleting the load balancer service removes the IP address from the domain. However, removing the annotation does not remove the IP address from the domain. 
 
 
 
@@ -359,5 +362,3 @@ Review the required and optional VPC ALB annotations and specifications.
 
 `targetPort`
 :   The port to which the service directs traffic. The application running in the pod must be listening for incoming TCP traffic on this target port. The target port is often statically defined in the image that is running in the application pod. The target port configured in the pod is different than the node port for the service and might also be different than the external port that is configured on the VPC LB.
-
-
