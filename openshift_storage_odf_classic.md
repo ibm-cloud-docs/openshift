@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2024
-lastupdated: "2024-08-22"
+lastupdated: "2024-09-17"
 
 
 keywords: openshift, openshift data foundation, openshift container storage, ocs, classic
@@ -40,7 +40,7 @@ To install OpenShift Data Foundation on classic clusters, you must enable [VRF](
 1. [Install](/docs/openshift?topic=openshift-cli-install) or update the `oc` CLI
 1. If you don't have virtual route forwarding (VRF) enabled in your account, enable [VRF](/docs/account?topic=account-vrf-service-endpoint&interface=ui).
     1. After you have enabled VRF, enable [Service endpoints](/docs/account?topic=account-vrf-service-endpoint&interface=ui#service-endpoint). 
-1. [Review the SDS worker node flavors](/docs/openshift?topic=openshift-flavors-sds).
+1. [Review the SDS worker node flavors](/docs/openshift?topic=openshift-classic-flavors). In the tables for each metro area section, SDS flavors are in the **Bare Metal** tabs and end with `.ssd`.
 1. Create a [classic cluster](/docs/openshift?topic=openshift-clusters) with a minimum of one worker node per zone across three zones. Choose worker nodes of flavor type `mb4c.32x384.3.8tb.ssd` or `mb4c.20x64.2x1.9tb.ssd` that have the required local disks for ODF.
 1. [Prepare your classic cluster](#odf-cluster-prepare-classic).
 
@@ -461,6 +461,3 @@ If you want to use an {{site.data.keyword.cos_full_notm}} service instance as yo
 
 
 You can't use both the `ibmcloud-block-storage-plugin` and the ODF add-on at the same time. To install ODF, you must first edit the `/etc/kubernetes/kubelet.conf` file and change the value of the `EnableControllerAttachDetach` parameter to `true` which changes the default volume attachment behavior for the cluster. This means you can't dynamically provision volumes by using the `ibmc-block-*` storage classes. Instead, you must create volumes by using the [ODF storage classes](/docs/openshift?topic=openshift-ocs-sc-ref).
-
-
-

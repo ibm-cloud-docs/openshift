@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2024
-lastupdated: "2024-03-15"
+lastupdated: "2024-09-17"
 
 
 keywords: openshift, strongswan, ipsec, on-prem
@@ -300,7 +300,7 @@ To monitor the status of the strongSwan VPN, you can set up a webhook to automat
 
 1. Sign in to your Slack workspace.
 
-2. Go to the [Incoming WebHooks app page](https://slack.com/apps/A0F7XDUAZ-incoming-webhooks){: external}.
+2. Go to the [Incoming WebHooks app page](https://slack.com/marketplace/A0F7XDUAZ-incoming-webhooks){: external}.
 
 3. Click **Request to Install**. If this app is not listed in your Slack setup, contact your Slack workspace owner.
 
@@ -698,7 +698,3 @@ To set up a Virtual Router Appliance,
 
 If you have an existing router appliance and then add a cluster, the new portable subnets that are ordered for the cluster are not configured on the router appliance. To use networking services, you must enable routing between the subnets on the same VLAN by [enabling VLAN spanning or VRF](/docs/openshift?topic=openshift-plan_basics#worker-worker).
 {: important}
-
-
-
-
