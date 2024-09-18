@@ -2,10 +2,10 @@
 
 copyright: 
   years: 2014, 2024
-lastupdated: "2024-09-16"
+lastupdated: "2024-09-18"
 
 
-keywords: openshift, {{site.data.keyword.openshiftlong_notm}}, kubernetes, release notes
+keywords: kubernetes, release notes, openshift, {{site.data.keyword.openshiftlong_notm}}
 
 subcollection: openshift
 
@@ -29,6 +29,19 @@ Looking for {{site.data.keyword.cloud_notm}} status, platform announcements, sec
 
 ## September 2024
 {: #openshift-sep24}
+
+
+
+### 18 September 2024
+{: #openshift-sep1824}
+{: release-note}
+
+
+{{site.data.keyword.openshiftlong_notm}} CLI plug-in version `1.0.665` is available.
+:   For more information, see [Updating the CLI](/docs/openshift?topic=openshift-cli-update) and the [CLI change log](/docs/openshift?topic=openshift-cs_cli_changelog).
+
+
+
 
 ### 16 September 2024
 {: #openshift-sep1624}

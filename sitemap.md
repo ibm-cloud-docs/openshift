@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2024
-lastupdated: "2024-09-16"
+lastupdated: "2024-09-18"
 
 
 keywords: openshift
@@ -274,6 +274,10 @@ subcollection: openshift
 [Release notes](/docs/openshift?topic=openshift-openshift-relnotes#openshift-relnotes)
 
 * [September 2024](/docs/openshift?topic=openshift-openshift-relnotes#openshift-sep24)
+
+    * [18 September 2024](/docs/openshift?topic=openshift-openshift-relnotes#openshift-sep1824)
+
+        * {{site.data.keyword.openshiftlong_notm}} CLI plug-in version `1.0.665` is available.
 
     * [16 September 2024](/docs/openshift?topic=openshift-openshift-relnotes#openshift-sep1624)
 
@@ -5921,6 +5925,8 @@ subcollection: openshift
 
     * [`ibmcloud oc worker-pool ls`](/docs/openshift?topic=openshift-kubernetes-service-cli#cs_worker_pools)
 
+    * [`ibmcloud oc worker-pool operating-system set`](/docs/openshift?topic=openshift-kubernetes-service-cli#worker-pool-operating-system-set-cli)
+
     * [`ibmcloud oc worker-pool rebalance`](/docs/openshift?topic=openshift-kubernetes-service-cli#cs_rebalance)
 
     * [`ibmcloud oc worker-pool resize`](/docs/openshift?topic=openshift-kubernetes-service-cli#cs_worker_pool_resize)
@@ -6198,6 +6204,8 @@ subcollection: openshift
 [CLI change log](/docs/openshift?topic=openshift-cs_cli_changelog#cs_cli_changelog)
 
 * [Version 1.0](/docs/openshift?topic=openshift-cs_cli_changelog#10)
+
+* [Version v1.0.665](/docs/openshift?topic=openshift-cs_cli_changelog#cli-010665)
 
 * [Version v1.0.657](/docs/openshift?topic=openshift-cs_cli_changelog#cli-010657)
 

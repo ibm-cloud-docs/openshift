@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2024
-lastupdated: "2024-09-17"
+lastupdated: "2024-09-18"
 
 
 keywords: openshift, {{site.data.keyword.openshiftlong_notm}}, oc, ks
@@ -31,6 +31,16 @@ Refer to the following change logs for a summary of changes for each version of 
 
 Review the following changes for 1.0 versions of the CLI plug-in.
 {: shortdesc}
+
+## Version v1.0.665
+{: #cli-010665}
+
+
+Version 1.0.665 of the CLI was released on 18 September 2024.
+- Adds the `ibmcloud oc worker-pool operating-system set` command.
+- Adds the `--physical-address` and `--capability` options to the `ibmcloud sat location create` command.
+- Adds operating system information to the output of the `ibmcloud oc workers` and `ibmcloud oc worker get` commands.
+- Adds Secure By Default networking and outbound traffic protection information to the output of `ibmcloud oc cluster get`.
 
 ## Version v1.0.657
 {: #cli-010657}
