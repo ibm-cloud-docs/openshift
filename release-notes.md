@@ -2,10 +2,10 @@
 
 copyright: 
   years: 2014, 2024
-lastupdated: "2024-09-16"
+lastupdated: "2024-09-18"
 
 
-keywords: openshift, {{site.data.keyword.openshiftlong_notm}}, kubernetes, release notes
+keywords: kubernetes, release notes, openshift, {{site.data.keyword.openshiftlong_notm}}
 
 subcollection: openshift
 
@@ -29,6 +29,9 @@ Looking for {{site.data.keyword.cloud_notm}} status, platform announcements, sec
 
 ## September 2024
 {: #openshift-sep24}
+
+
+
 
 ### 16 September 2024
 {: #openshift-sep1624}
