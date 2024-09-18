@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2024
-lastupdated: "2024-09-17"
+lastupdated: "2024-09-18"
 
 
 keywords: openshift, cli reference, kubernetes cli, openshift cli, {{site.data.keyword.openshiftlong_notm}}
@@ -3426,6 +3426,33 @@ Minimum required permissions
 ibmcloud oc worker-pool ls --cluster my_cluster
 ```
 {: pre}
+
+### `ibmcloud oc worker-pool operating-system set`
+{: #worker-pool-operating-system-set-cli}
+
+Set the operating system. After you set the operating system, you must update your workers by running either `ibmcloud ks worker update` or `ibmcloud ks worker replace`.
+
+```txt
+ibmcloud oc worker-pool operating-system set --cluster CLUSTER --operating-system SYSTEM --worker-pool POOL [-q]
+```
+{: pre}
+{: #worker-pool-operating-system-set-usage}
+
+#### Command options
+{: #worker-pool-operating-system-set-options}
+
+`--cluster CLUSTER`, `-c CLUSTER`
+:    Specify the cluster name or ID.
+
+`--operating-system SYSTEM`
+:    Specify the name of the operating system.
+
+`-q`
+:    Do not show the message of the day or update reminders.
+
+`--worker-pool POOL`, `-p POOL`
+:    Specify a worker pool.
+{: #worker-pool-operating-system-set-options-dl}
 
 
 ### `ibmcloud oc worker-pool rebalance`

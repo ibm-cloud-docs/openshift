@@ -47,6 +47,10 @@ keyword:
   kubernetes_130_release_date: 29 May 2024
   kubernetes_130_unsupported_certainty: tentative
   kubernetes_130_unsupported_date: 13 August 2025
+  kubernetes_131_deprecated: 'False'
+  kubernetes_131_release_date: 18 September 2024
+  kubernetes_131_unsupported_certainty: tentative
+  kubernetes_131_unsupported_date: 10 December 2025
   openshift_410_RHEL_7_unsupported_date: 6 December 2022
   openshift_410_RHEL_8_unsupported_date: ''
   openshift_410_deprecated: 'True'

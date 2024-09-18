@@ -32,6 +32,16 @@ Looking for {{site.data.keyword.cloud_notm}} status, platform announcements, sec
 
 
 
+### 18 September 2024
+{: #openshift-sep1824}
+{: release-note}
+
+
+{{site.data.keyword.openshiftlong_notm}} CLI plug-in version `1.0.665` is available.
+:   For more information, see [Updating the CLI](/docs/openshift?topic=openshift-cli-update) and the [CLI change log](/docs/openshift?topic=openshift-cs_cli_changelog).
+
+
+
 
 ### 16 September 2024
 {: #openshift-sep1624}
