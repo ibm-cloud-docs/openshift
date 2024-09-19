@@ -2,7 +2,7 @@
 
 copyright:
   years: 2023, 2024
-lastupdated: "2024-09-12"
+lastupdated: "2024-09-19"
 
 
 keywords: data science, AI, machine learning, AI modeling, modeling, GPUs, NVIDIA, node feature discovery, pipelines
@@ -97,4 +97,4 @@ After you install the operators, check that they are visible in the OpenShift we
 ## What's next?
 {: #datascience_next}
 
-Now that you have OpenShift AI installed on your cluster, try one of the [Data Science learning paths](https://developers.redhat.com/learn/openshift-ai){: external}, run a sample AI workload on your cluster by following one of the [Red Hat OpenShift tutorials](https://developers.redhat.com/learn/openshift-ai){: external}, or try this tutorial on using [GPUs and a Jupyter notebook for AI or machine learning modeling](https://developers.redhat.com/learn/openshift-data-science/configure-jupyter-notebook-use-gpus-aiml-modeling){: external}. 
+Now that you have OpenShift AI installed on your cluster, try one of the [Data Science learning paths](https://developers.redhat.com/learn/openshift-ai){: external}, or run a sample AI workload on your cluster by following one of the [Red Hat OpenShift tutorials](https://developers.redhat.com/learn/openshift-ai){: external}. 
