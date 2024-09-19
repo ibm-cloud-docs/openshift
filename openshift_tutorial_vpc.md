@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2024
-lastupdated: "2024-09-17"
+lastupdated: "2024-09-19"
 
 
 keywords: kubernetes, openshift, red hat, red hat openshift
@@ -89,7 +89,7 @@ Complete the following prerequisite steps to set up permissions and the command-
 Create an {{site.data.keyword.cloud_notm}} Virtual Private Cloud (VPC) environment. Then, create a {{site.data.keyword.openshiftlong_notm}} cluster on the VPC infrastructure. For more information about VPC, see [Getting Started with Virtual Private Cloud](/docs/vpc?topic=vpc-getting-started).
 {: shortdesc}
 
-1. Log in to the account, resource group, and {{site.data.keyword.cloud_notm}} region where you want to create your VPC environment. The VPC must be set up in the same multizone metro location where you want to create your cluster. In this tutorial you create a VPC in `us-south`. For other supported regions, see [Multizone metros for VPC clusters](/docs/openshift?topic=openshift-regions-and-zones). If you have a federated ID, include the `--sso` option.
+1. Log in to the account, resource group, and {{site.data.keyword.cloud_notm}} region where you want to create your VPC environment. The VPC must be set up in the same multizone metro region where you want to create your cluster. In this tutorial you create a VPC in `us-south`. For other supported regions, see [Multizone metros for VPC clusters](/docs/openshift?topic=openshift-regions-and-zones). If you have a federated ID, include the `--sso` option.
     ```sh
     ibmcloud login -r us-south [-g <resource_group>] [--sso]
     ```
@@ -109,7 +109,7 @@ Create an {{site.data.keyword.cloud_notm}} Virtual Private Cloud (VPC) environme
         {: pre}
 
     3. Create a subnet for your VPC, and note its **ID**. Consider the following information when you create the VPC subnet:
-        *  **Zones**: You must have one VPC subnet for each zone in your cluster. The available zones depend on the metro location that you created the VPC in. To list available zones in the region, run `ibmcloud is zones`.
+        *  **Zones**: You must have one VPC subnet for each zone in your cluster. The available zones depend on the region that you created the VPC in. To list available zones in the region, run `ibmcloud is zones`.
         *  **IP addresses**: VPC subnets provide private IP addresses for your worker nodes and load balancer services in your cluster, so make sure to [create a subnet with enough IP addresses](/docs/openshift?topic=openshift-vpc-subnets#vpc_basics_subnets), such as 256. You can't change the number of IP addresses that a VPC subnet has later.
         *  **Public gateways**: Include the public gateway that you previously created. You must have one public gateway for each zone in your cluster.
 

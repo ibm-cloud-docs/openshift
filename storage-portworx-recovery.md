@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2024
-lastupdated: "2024-05-29"
+lastupdated: "2024-09-19"
 
 
 keywords: portworx, kubernetes, openshift
@@ -27,7 +27,7 @@ If you installed Portworx in one of your clusters without the Portworx disaster 
 {: important}
 
 Depending on your cluster setup, Portworx offers the following two disaster recovery configurations:
-- [**Metro DR**](https://docs.portworx.com/portworx-enterprise/operations/operate-kubernetes/disaster-recovery/px-metro){: external}: Your {{site.data.keyword.redhat_openshift_notm}} clusters are in the same metro location, such as both clusters are deployed in one or multiple zones of the `us-south` region. All clusters are configured to use the same Portworx cluster and share the same Portworx key-value store. Data is automatically replicated between the clusters because the Portworx storage layer is shared. RPO (Recovery Point Objective) and RTO (Recovery Time Objective) for this configuration is less than 60 seconds.
+- [**Metro DR**](https://docs.portworx.com/portworx-enterprise/operations/operate-kubernetes/disaster-recovery/px-metro){: external}: Your {{site.data.keyword.redhat_openshift_notm}} clusters are in the same region, such as both clusters are deployed in one or multiple zones of the `us-south` region. All clusters are configured to use the same Portworx cluster and share the same Portworx key-value store. Data is automatically replicated between the clusters because the Portworx storage layer is shared. RPO (Recovery Point Objective) and RTO (Recovery Time Objective) for this configuration is less than 60 seconds.
 - [**Asynchronous DR**](https://docs.portworx.com/portworx-enterprise/operations/operate-kubernetes/disaster-recovery/async-dr){: external}: Your {{site.data.keyword.redhat_openshift_notm}} clusters are deployed in different regions, such as `us-south` and `us-east`. Each cluster has its own Portworx installation and uses a separate Portworx key-value store that is not shared. To replicate data between clusters, you must set up scheduled replication between these clusters. Because of the higher latency and scheduled replication times, the RPO for this scenario might be up to 15 minutes.
 
 To include your cluster in a Portworx disaster recovery configuration:
@@ -36,7 +36,7 @@ To include your cluster in a Portworx disaster recovery configuration:
 2. Review the prerequisites for the [**Metro DR**](https://docs.portworx.com/portworx-enterprise/operations/operate-kubernetes/disaster-recovery/px-metro/prerequisites){: external} and [**Asynchronous DR**](https://docs.portworx.com/portworx-enterprise/operations/operate-kubernetes/disaster-recovery/async-dr/prerequisites){: external} configuration.
 3. Configure disaster recovery for your cluster. 
     **Metro DR**:
-    1. Choose at least two {{site.data.keyword.redhat_openshift_notm}} clusters that are located in the same metro location. If you have one cluster only, you can still configure this cluster for metro disaster recovery, but Portworx can't do a proper failover until a second cluster is configured.
+    1. Choose at least two {{site.data.keyword.redhat_openshift_notm}} clusters that are located in the same region. If you have one cluster only, you can still configure this cluster for metro disaster recovery, but Portworx can't do a proper failover until a second cluster is configured.
     2. Make sure that all your clusters have sufficient [raw and unformatted block storage](/docs/openshift?topic=openshift-utilities#manual_block) so that you can build your Portworx storage layer.
     3. Set up a [Databases for etcd service instance](/docs/openshift?topic=openshift-storage_portworx_kv_store) for your Portworx key-value store. Because both {{site.data.keyword.redhat_openshift_notm}} clusters must share the key-value store, you can't use the internal Portworx KVDB.
     4. Optional: Decide if you want to set up [encryption for your Portworx volumes](/docs/openshift?topic=openshift-storage_portworx_encryption).
@@ -50,8 +50,3 @@ To include your cluster in a Portworx disaster recovery configuration:
     4. Enable Portworx [volume encryption](/docs/openshift?topic=openshift-storage_portworx_encryption) for both of your clusters. The {{site.data.keyword.keymanagementservicelong_notm}} credentials are later used by Portworx to encrypt data traffic between the clusters.
     5. Follow the instructions to [install Portworx](/docs/openshift?topic=openshift-storage_portworx_deploy) with the disaster recovery plan in both of your clusters. If you installed Portworx without the disaster recovery plan in one of your clusters already, you must re-install Portworx in that cluster with the disaster recovery plan. Make sure that you configure the Portworx key-value store that each cluster uses.
     6. Follow the [Portworx documentation](https://docs.portworx.com/portworx-enterprise/operations/operate-kubernetes/disaster-recovery){: external} to create a cluster pair, enable disaster recovery mode, and schedule data migrations between your clusters.
-
-
-
-
-

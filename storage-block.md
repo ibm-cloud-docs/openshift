@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2024
-lastupdated: "2024-07-23"
+lastupdated: "2024-09-19"
 
 
 keywords: kubernetes, openshift
@@ -30,7 +30,7 @@ Keep in mind the following requirements when you use the {{site.data.keyword.clo
 {{site.data.keyword.cloud_notm}} {{site.data.keyword.blockstorageshort}} plug-in is available only for standard {{site.data.keyword.openshiftlong_notm}} clusters that are provisioned on classic infrastructure.
 
 
-{{site.data.keyword.blockstorageshort}} instances are specific to a single zone. If you have a multizone cluster, consider [multizone persistent storage options](/docs/openshift?topic=openshift-storage-plan).
+{{site.data.keyword.blockstorageshort}} instances are specific to a single-campus multizone region. If you have a multizone cluster, consider [multizone persistent storage options](/docs/openshift?topic=openshift-storage-plan).
 
 [Classic infrastructure]{: tag-classic-inf}
 
@@ -2175,8 +2175,3 @@ To monitor for instances where pod connectivity to {{site.data.keyword.blockstor
 1. Set the threshold to `>0` and set the severity you want to use for this alert.
 
 1. Select your notification channel and save the alert.
-
-
-
-
-

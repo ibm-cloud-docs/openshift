@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2024
-lastupdated: "2024-08-12"
+lastupdated: "2024-09-19"
 
 
 keywords: planning, storage, cluster, container storage, cloud storage, kubernetes service, openshift
@@ -104,7 +104,7 @@ You can use non-persistent storage options if your data is not required to be pe
 ## Single zone clusters
 {: #storage-plan-single-zone}
 
-If you have a single zone cluster, you can choose between the following options in {{site.data.keyword.openshiftlong_notm}} that provide fast access to your data. For higher availability, use a storage option that is designed for geographically distributed data and, if possible for your requirements, create a multizone cluster.
+If you have a single zone region cluster, you can choose between the following options in {{site.data.keyword.openshiftlong_notm}} that provide fast access to your data. For higher availability, use a storage option that is designed for geographically distributed data and, if possible for your requirements, create a multizone cluster.
 
 The following image shows the options that you have in {{site.data.keyword.openshiftlong_notm}} to permanently store your data in a single cluster.
 
@@ -228,7 +228,7 @@ The following sections show the options that you have in {{site.data.keyword.ope
 | Performance | High for read operations. Predictable due to assigned IOPS and size when you use non-SDS machines. |
 | Consistency| Eventual |
 | Durability | Very high as data slices are dispersed across a cluster of storage nodes. Every node stores only a part of the data. |
-| Resiliency | High as data slices are dispersed across three zones or regions. Medium, when set up in a single zone only. |
+| Resiliency | High as data slices are dispersed across three zones or regions. Medium, when set up in a single zone region only. |
 | Availability | High due to the distribution across zones or regions. |
 | Scalability | Scales automatically |
 | Encryption | In transit and at rest |
@@ -253,7 +253,7 @@ The following sections show the options that you have in {{site.data.keyword.ope
 | Performance | High for read operations. Predictable due to assigned IOPS and size when you use non-SDS machines. |Close to bare metal performance for sequential read and write operations when you use SDS machines. Provides [profiles](https://docs.portworx.com/portworx-enterprise/operations/operate-kubernetes/storage-operations/create-pvcs/dynamic-provisioning.html){: external} to run high-performance databases. Possibility to create a storage layer with different performance profiles that your app can choose from.| High if deployed to the same data center as your app. |
 | Consistency| Eventual | Strong | Depends on the DBaaS |
 | Durability | Very high as data slices are dispersed across a cluster of storage nodes. Every node stores only a part of the data. | Very high as three copies of your data are always maintained. | High |
-| Resiliency | High as data slices are dispersed across three zones or regions. Medium, when set up in a single zone only. | High when set up with replication across three zones. Medium, when you store data in a single zone only. | Depends on the DBaaS and your setup. |
+| Resiliency | High as data slices are dispersed across three zones or regions. Medium, when set up in a single zone region only. | High when set up with replication across three zones. Medium, when you store data in a single zone region only. | Depends on the DBaaS and your setup. |
 | Availability | High due to the distribution across zones or regions. | High when you replicate data across three worker nodes in different zones. | High if you set up multiple instances. |
 | Scalability | Scales automatically | Increase volume capacity by resizing the volume. To increase overall storage layer capacity, you must add worker nodes or remote block storage. Both scenarios require monitoring of capacity by the user. | Scales automatically | 
 | Encryption | Bring your own key to protect your data in transit and at rest with {{site.data.keyword.keymanagementservicelong_notm}}. |

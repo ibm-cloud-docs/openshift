@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2024
-lastupdated: "2024-09-18"
+lastupdated: "2024-09-19"
 
 
 keywords: openshift
@@ -10074,7 +10074,7 @@ subcollection: openshift
 
     * [Classic multizone regions](/docs/openshift?topic=openshift-regions-and-zones#zones-mz)
 
-    * [Classic single zone regions](/docs/openshift?topic=openshift-regions-and-zones#zones-sz)
+    * [Single zone Classic data centers](/docs/openshift?topic=openshift-regions-and-zones#zones-sz)
 
     * [VPC multizone regions](/docs/openshift?topic=openshift-regions-and-zones#zones-vpc)
 

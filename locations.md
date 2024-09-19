@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2024
-lastupdated: "2024-07-31"
+lastupdated: "2024-09-19"
 
 
 keywords: openshift, mzr, szr, multizone, multi az
@@ -38,7 +38,7 @@ This image is an artistic representation and does not reflect actual political o
 ## {{site.data.keyword.openshiftlong_notm}} locations
 {: #locations}
 
-{{site.data.keyword.cloud_notm}} resources are organized into a hierarchy of geographic locations. {{site.data.keyword.openshiftlong_notm}} is available in a subset of these locations, including worldwide multizone regions and single zone regions. Other {{site.data.keyword.cloud_notm}} services might be available globally or within a specific location.
+{{site.data.keyword.cloud_notm}} resources are organized into a hierarchy of geographic locations. {{site.data.keyword.openshiftlong_notm}} is available in a subset of these locations, including worldwide multizone regions (MZRs) and single-campus multizone regions (SC-MZRs). Other {{site.data.keyword.cloud_notm}} services might be available globally or within a specific location.
 {: shortdesc}
 
 ```sh
@@ -62,17 +62,17 @@ If you create a classic cluster in a multizone region, the replicas of your high
 | Europe | United Kingdom | London | uk-lon | lon02, lon04, lon05, lon06 |
 | North America | United States | Dallas | us-dal | dal10, dal12, dal13 |
 | North America | United States | Washington DC | us-wdc | wdc04, wdc06, wdc07 |
-{: caption="Available multizone metro locations for classic clusters in {{site.data.keyword.openshiftlong_notm}}." caption-side="bottom"}
+{: caption="Available multizone regions for classic clusters in {{site.data.keyword.openshiftlong_notm}}." caption-side="bottom"}
 {: #classic-multizone-locations-table}
 
 
 
 
 
-### Classic single zone regions
+### Single zone Classic data centers
 {: #zones-sz}
 
-If you create a classic cluster in a single zone region, you can create multiple worker nodes but you can't spread them across data centers (zones). The highly available master includes three replicas on separate hosts, but is not spread across zones.
+If you create a classic cluster in a single-campus multizone region, you can create multiple worker nodes but you can't spread them across data centers (zones). The highly available master includes three replicas on separate hosts, but is not spread across zones.
 {: shortdesc}
 
 Classic single zone clusters are managed from the regional endpoint located in the nearest region that supports classic multizone, such as `mon01` to `us-east` or `sao01` to `us-south`.
@@ -88,7 +88,7 @@ Classic single zone clusters are managed from the regional endpoint located in t
 | North America | Canada | Toronto | ca-tor | tor01 | US East (`us-east`) |
 | North America | United States | San Jose | us-sjc | sjc03, sjc04 | US South (`us-south`) |
 | South America | Brazil | Sao Paulo | br-sao | sao01 | US South (`us-south`) |
-{: caption="Available single zone data center locations for classic clusters in {{site.data.keyword.openshiftlong_notm}}." caption-side="bottom"}
+{: caption="Available single zone data centers for classic clusters in {{site.data.keyword.openshiftlong_notm}}." caption-side="bottom"}
 {: #classic-single-zone-locations-table}
 
 
@@ -111,7 +111,7 @@ VPC resources are provisioned in a region, which is a separate group of zones wi
 | North America | United States | Dallas | us-south | us-south-1, us-south-2, us-south-3 |
 | North America | United States | Washington DC | us-east | us-east-1, us-east-2, us-east-3 |
 | South America | Brazil | `†` São Paulo | br-sao | br-sao-1, br-sao-2, br-sao-3 |
-{: caption="Available multizone metro locations for VPC clusters in {{site.data.keyword.openshiftlong_notm}}." caption-side="bottom"}
+{: caption="Available multizone regions for VPC clusters in {{site.data.keyword.openshiftlong_notm}}." caption-side="bottom"}
 {: #vpc-gen2-multizone-locations-table}
 
 
@@ -138,7 +138,7 @@ When you initiate cluster management actions, such as running **`ibmcloud oc`** 
 In a multizone cluster, your cluster's resources are spread across multiple zones for higher availability.
 {: shortdesc}
 
-Worker nodes are spread across multiple zones in the metro location to provide more availability for your cluster. The Kubernetes master replicas are also spread across zones. When you initiate local container orchestration actions, such as **`oc`** commands, the information is exchanged between your master and worker nodes through the global endpoint.
+Worker nodes are spread across multiple zones in the region to provide more availability for your cluster. The Kubernetes master replicas are also spread across zones. When you initiate local container orchestration actions, such as **`oc`** commands, the information is exchanged between your master and worker nodes through the global endpoint.
 
 Other cluster resources, such as storage, networking, compute, or apps running in pods, vary in how they deploy to the zones in your multizone cluster. For more information, review these topics:
 *   Setting up [file storage](/docs/openshift?topic=openshift-file_storage#add_file) and [block storage](/docs/openshift?topic=openshift-block_storage#add_block) in multizone clusters, or [choosing a multizone persistent storage solution](/docs/openshift?topic=openshift-storage-plan).
@@ -165,7 +165,7 @@ To see a list of the supported `Managed from` regions for {{site.data.keyword.sa
 ## Accessing the global endpoint
 {: #endpoint}
 
-You can organize your resources across {{site.data.keyword.cloud_notm}} services by using {{site.data.keyword.cloud_notm}} locations (formerly called regions). For example, you can deploy an app to a cluster by using a private Docker image that is stored in your {{site.data.keyword.registrylong_notm}} of the same location. To access these resources, you can use the global endpoints and filter by location.
+You can organize your resources across {{site.data.keyword.cloud_notm}} services by using {{site.data.keyword.cloud_notm}} locations (or regions). For example, you can deploy an app to a cluster by using a private Docker image that is stored in your {{site.data.keyword.registrylong_notm}} of the same location. To access these resources, you can use the global endpoints and filter by location.
 {: shortdesc}
 
 ### Logging in to {{site.data.keyword.cloud_notm}}
@@ -232,10 +232,3 @@ GET https://containers.cloud.ibm.com/global/v1/clusters
 
 
 If you need to specify a region in an API call, remove the `/global` parameter from the path and pass the region name in the `X-Region` header. To list available regions, review the [Previous region](#zones-mz) column in the {{site.data.keyword.openshiftlong_notm}} locations table.
-
-
-
-
-
-
-

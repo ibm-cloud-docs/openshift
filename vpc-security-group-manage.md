@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2023, 2024
-lastupdated: "2024-07-23"
+lastupdated: "2024-09-19"
 
 
 keywords: openshift, {{site.data.keyword.openshiftlong_notm}}, firewall, acl, acls, access control list, rules, security group
@@ -338,7 +338,7 @@ Required for VPC clusters with a public service endpoint. This scenario applies 
     ```
     {: screen}
     
-2. Run `dig +short` or `nslookup` to get the IPs associated with the hostname in the URL. For single zone regions there is only one public IP associated with the hostname. For multizone regions, there are 3. Look up the individual IPs by replacing `e` with 1, 2, and 3.
+2. Run `dig +short` or `nslookup` to get the IPs associated with the hostname in the URL. For single-campus multizone regions there is only one public IP associated with the hostname. For multizone regions, there are 3. Look up the individual IPs by replacing `e` with 1, 2, and 3.
     ```sh
     dig +short cXXX-1.<region>.containers.cloud.ibm.com
     dig +short cXXX-2.<region>.containers.cloud.ibm.com
@@ -410,4 +410,3 @@ This scenario applies only to versions 4.14 and earlier.
     
 If the Ingress or console operators fail their health checks, you can repeat these steps to see if the LoadBalancer IP addresses changed. While rare, if the amount of traffic to your LoadBalancers varies widely, these IP addresses might change to handle the increased or decreased load.
 {: tip}
-

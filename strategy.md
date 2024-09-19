@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2024
-lastupdated: "2024-09-12"
+lastupdated: "2024-09-19"
 
 keywords: kubernetes, kubernetes environment, moving to kubernetes, moving to containers, clusters, cluster sizing, openshift, {{site.data.keyword.openshiftlong_notm}}
 
@@ -79,7 +79,7 @@ A multi-region cluster requires several cloud resources, and depending on your a
 
 [Classic]{: tag-classic-inf} [VPC]{: tag-vpc}
 
-To protect your app from a master failure or for classic clusters that must reside in one of the supported [single zone locations](/docs/openshift?topic=openshift-regions-and-zones#zones-sz), you can create multiple clusters in different zones within a region, and connect them with a global load balancer. This option is useful if you must provision a cluster in a single zone region, but you still want the benefits of multizone availability. 
+To protect your app from a master failure, you can create multiple clusters in different zones within a region, and connect them with a global load balancer. This option is useful if you must provision a cluster in Classic data center with only one zone, but you still want the benefits of multizone availability. 
 
     To connect multiple clusters with a global load balancer, the clusters must be set up with public network connectivity and your apps must be exposed through [Ingress](/docs/containers?topic=containers-managed-ingress-about), [routes](/docs/openshift?topic=openshift-openshift_routes), or with a [Kubernetes load balancer service](/docs/openshift?topic=openshift-cs_network_planning).
 
@@ -92,9 +92,9 @@ To protect your app from a master failure or for classic clusters that must resi
 
 [Classic]{: tag-classic-inf}
 
-Worker nodes are distributed across replicas on separate physical hosts within a single zone.  This option protects against certain outages, such as during a master update, and is simpler to manage. However, it does not protect your apps if an entire zone experiences an outage. If you later find availability to be a problem, single zone clusters deployed in certain locations can later be converted to multi zone clusters.
+Worker nodes are distributed across separate physical hosts within a single zone. This option protects against certain outages, such as during a master update, and is simpler to manage. However, it does not protect your apps if an entire zone experiences an outage. If you later find availability to be a problem, single zone clusters deployed in certain locations can later be converted to multizone clusters.
 
-If your cluster is created in a single zone region, the Kubernetes master of your classic cluster is highly available and includes replicas on separate physical hosts for your master API server, etcd, scheduler, and controller manager to protect against an outage, such as during a master update. You can add additional worker nodes to your single zone cluster to improve availability and add protection in the case that one worker node fails. 
+If your cluster is created with all worker nodes in a single zone, the Kubernetes master of your classic cluster is highly available and includes separate physical hosts for your master API server, etcd, scheduler, and controller manager to protect against an outage, such as during a master update. You can add additional worker nodes to your single zone cluster to improve availability and add protection in the case that one worker node fails. 
 
 If one worker node goes down, app instances on available worker nodes continue to run. {{site.data.keyword.redhat_openshift_notm}} automatically reschedules pods from unavailable worker nodes to ensure performance and capacity for your app. To ensure that your pods are evenly distributed across worker nodes, implement [pod affinity](https://kubernetes.io/docs/concepts/scheduling-eviction/assign-pod-node/){: external}.
 
@@ -153,7 +153,7 @@ The total number of worker nodes in a cluster determine the compute capacity tha
 The level of availability that you set up for your cluster impacts your coverage under the [{{site.data.keyword.cloud_notm}} HA service level agreement terms](/docs/overview?topic=overview-slas). For example, to receive full HA coverage under the SLA terms, you must set up a multizone cluster with a total of at least 6 worker nodes, two worker nodes per zone that are evenly spread across three zones.
 {: important}
 
-* **Single zone clusters** [Classic only]{: tag-classic-inf}: Plan to have at least three worker nodes in your cluster. Further, you want one extra node's worth of CPU and memory capacity available within the cluster. If your apps require less resources than the resources that are available on the worker node, you might be able to limit the number of pods that you deploy to one worker node. 
+* **Single zone clusters** Plan to have at least three worker nodes in your cluster. Further, you want one extra node's worth of CPU and memory capacity available within the cluster. If your apps require less resources than the resources that are available on the worker node, you might be able to limit the number of pods that you deploy to one worker node. 
 
 Keep in mind:
 - You can try out [the cluster autoscaler](/docs/openshift?topic=openshift-cluster-scaling-install-addon) to be sure that you always have enough worker nodes to cover your workload.

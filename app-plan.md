@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2024
-lastupdated: "2024-08-26"
+lastupdated: "2024-09-19"
 
 
 keywords: kubernetes, deploy, app, openshift
@@ -328,7 +328,7 @@ Review the following potential app setups that are ordered with increasing degre
 
 ![Stages of high availability for an app](images/cs_app_ha_roadmap-mz.png){: caption="Figure 1. Stages of high availability for an app" caption-side="bottom"}
 
-1. A deployment with n+2 pods that are managed by a replica set in a single node in a single zone cluster.
+1. A deployment with n+2 pods that are managed by a replica set on a single node.
 2. A deployment with n+2 pods that are managed by a replica set and spread across multiple nodes (anti-affinity) in a single zone cluster.
 3. A deployment with n+2 pods that are managed by a replica set and spread across multiple nodes (anti-affinity) in a multizone cluster across zones.
 
@@ -521,5 +521,3 @@ Within the app deployment YAML, you can set the security context for a pod or co
 
 You can set up {{site.data.keyword.cloud_notm}} [logging and monitoring](/docs/openshift?topic=openshift-health) for your cluster.
 {: shortdesc}
-
-
