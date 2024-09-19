@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2024
-lastupdated: "2024-08-29"
+lastupdated: "2024-09-19"
 
 
 keywords: openshift, {{site.data.keyword.openshiftlong_notm}}, kubernetes, clusters, worker nodes, worker pools, classic, create
@@ -42,7 +42,7 @@ Location details
 :    - **Resource group**: A cluster can be created in only one resource group, and after the cluster is created, you can't change its resource group. To create clusters in a resource group other than the default, you must have at least the [**Viewer** role](/docs/openshift?topic=openshift-iam-platform-access-roles) for the resource group.
 :    - **Geography**: Select an area to create the cluster in, such as **North America**. The geography helps filter the **Availability** and **Metro** values that you can select in the console.
 :    - **Availability**: A cluster can be created with a **Single zone** or **Multizone** configuration. A multizone cluster provides high availability, with the {{site.data.keyword.redhat_openshift_notm}} master deployed in a multizone-capable zone and three replicas of the master spread across different zones.
-        - For multizone clusters, choose a **Metro** location. For the best performance, select the metro location that is physically closest to you. Your **Worker zones** are based on the metro location you choose. You can select which worker zones to apply, and your worker nodes are spread across your zones for high availability. Each worker zone has a public and private **VLAN**. If you do not have VLANs in that zone, they are created for you. 
+        - For multizone clusters, choose a **Metro** location. For the best performance, select the region that is physically closest to you. Your **Worker zones** are based on the region you choose. You can select which worker zones to apply, and your worker nodes are spread across your zones for high availability. Each worker zone has a public and private **VLAN**. If you do not have VLANs in that zone, they are created for you. 
         - For single zone clusters, choose a single **Worker zone** to host your cluster in. For the best performance, select a zone in the city that is physically closest to you. Each worker zone has a public and private **VLAN**. If you do not have a VLANs in that zone, they are created for you.
 
 Kubernetes version
@@ -80,7 +80,7 @@ Observability integrations
 {: #clusters_cli_steps}
 {: cli}
 
-Create your single zone or multizone classic cluster by using the {{site.data.keyword.cloud_notm}} CLI.
+Create your Classic cluster by using the {{site.data.keyword.cloud_notm}} CLI.
 {: shortdesc}
 
 * Ensure that you complete the prerequisites to [prepare your account](/docs/openshift?topic=openshift-clusters) and decide on your cluster setup. Keep in mind that you need a cluster with a minimum of 2 worker nodes of the `4x16` flavor so that default {{site.data.keyword.redhat_openshift_notm}} components can deploy.
@@ -242,7 +242,7 @@ Create your single zone or multizone classic cluster by using the {{site.data.ke
     Every worker node is assigned a unique worker node ID and domain name that must not be changed manually after the cluster is created. If you change the ID or domain name, the {{site.data.keyword.redhat_openshift_notm}} master cannot manage your cluster.
     {: important}
 
-1. **Optional**: If you created your cluster in a [multizone metro location](/docs/openshift?topic=openshift-regions-and-zones#zones-mz), you can [spread the default worker pool across zones](/docs/openshift?topic=openshift-add-workers-classic) to increase the cluster's availability.
+1. **Optional**: If you created your cluster in a [multizone region](/docs/openshift?topic=openshift-regions-and-zones#zones-mz), you can [spread the default worker pool across zones](/docs/openshift?topic=openshift-add-workers-classic) to increase the cluster's availability.
 
 1. After your cluster is created, you can [begin working with your cluster by configuring your CLI session](/docs/openshift?topic=openshift-access_cluster).
 
@@ -328,7 +328,7 @@ Terraform on {{site.data.keyword.cloud_notm}} enables predictable and consistent
     ```
     {: pre}
 
-2. Create a Terraform configuration file for a classic cluster. Save the file in your Terraform directory. The following example configuration creates a classic cluster with a single zone and three worker nodes. For more information and cluster configuration options, see the [Terraform `ibm_container_cluster`](https://registry.terraform.io/providers/IBM-Cloud/ibm/latest/docs){: external} documentation. 
+2. Create a Terraform configuration file for a classic cluster. Save the file in your Terraform directory. The following example configuration creates a classic cluster with three worker nodes in one zone. For more information and cluster configuration options, see the [Terraform `ibm_container_cluster`](https://registry.terraform.io/providers/IBM-Cloud/ibm/latest/docs){: external} documentation. 
 
     Example Terraform configuration file. 
     ```sh

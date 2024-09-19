@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2024
-lastupdated: "2024-08-01"
+lastupdated: "2024-09-19"
 
 
 keywords: openshift, {{site.data.keyword.openshiftlong_notm}}, kubernetes, firewall, acl, acls, access control list, rules, security group
@@ -56,7 +56,7 @@ The following VPE gateways are created automatically when you create a VPC clust
 {: summary="The table shows the VPE gateways created for VPC clusters. The first column includes name of the gateway. The second column includes a brief description."}
 
 
-† All supported VPC clusters have a VPE Gateway for the cluster master that gets created at in the your account when the cluster gets created. This VPE Gateway is used by the cluster workers, and can be used by other things in the VPC, to connect to the cluster's master API server. This VPE Gateway is assigned a single Reserved IP from each zone that the cluster workers are in, and this IP is created in one of the VPC subnets in that zone that has cluster workers. For example, if the cluster has workers in only a single zone (`us-east-1`) and single VPC subnet, then a single IP is created in that subnet and assigned to the VPE Gateway. If a cluster has workers in all three zones like `us-east-1`, `us-east-2`, and `us-east-3` and these workers are spread out among 4 VPC subnets in each zone, then 12 VPC subnets altogether, three IPs are created, one in each zone, in one of the four VPC subnets in that zone. Note that the subnet is chosen at random.
+† All supported VPC clusters have a VPE Gateway for the cluster master that gets created at in the your account when the cluster gets created. This VPE Gateway is used by the cluster workers, and can be used by other things in the VPC, to connect to the cluster's master API server. This VPE Gateway is assigned a single Reserved IP from each zone that the cluster workers are in, and this IP is created in one of the VPC subnets in that zone that has cluster workers. For example, if the cluster has workers in only a single zone region (`us-east-1`) and single VPC subnet, then a single IP is created in that subnet and assigned to the VPE Gateway. If a cluster has workers in all three zones like `us-east-1`, `us-east-2`, and `us-east-3` and these workers are spread out among 4 VPC subnets in each zone, then 12 VPC subnets altogether, three IPs are created, one in each zone, in one of the four VPC subnets in that zone. Note that the subnet is chosen at random.
 
 ## Managed security groups
 {: #managed-sgs}
@@ -195,7 +195,7 @@ Required for VPC clusters with a public service endpoint.
     ```
     {: screen}
     
-2. Run `dig +short` or `nslookup` to get the IPs associated with the hostname in the URL. For single zone regions there is only one public IP associated with the hostname. For multizone regions, there are 3. Look up the individual IPs by replacing `e` with 1, 2, and 3.
+2. Run `dig +short` or `nslookup` to get the IPs associated with the hostname in the URL. For single-campus multizone regions there is only one public IP associated with the hostname. For multizone regions, there are 3. Look up the individual IPs by replacing `e` with 1, 2, and 3.
     ```sh
     dig +short cXXX-1.<region>.containers.cloud.ibm.com
     dig +short cXXX-2.<region>.containers.cloud.ibm.com
@@ -265,8 +265,3 @@ Follow the steps to allow worker nodes to connect to the Ingress LoadBalancer.
 If the Ingress or console operators fail their health checks, you can repeat these steps to see if the LoadBalancer IP addresses changed. While rare, if the amount of traffic to your LoadBalancers varies widely, these IP addresses might change to handle the increased or decreased load.
 {: tip}
     
-
-
-
-
-

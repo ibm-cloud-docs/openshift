@@ -2,7 +2,7 @@
 
 copyright:
   years: 2024, 2024
-lastupdated: "2024-04-17"
+lastupdated: "2024-09-19"
 
 
 keywords: kubernetes
@@ -50,7 +50,7 @@ In this tutorial, you create the following resources. There are optional steps t
 - 1 Subnet
 - 1 Public gateway
 - 1 Cloud Object Storage (COS) bucket
-- 1 single zone OpenShift cluster with 2 worker nodes.
+- 1 OpenShift cluster with 2 worker nodes in the same zone.
 
 ## Create a Schematics workspaces
 {: #basic-create-workspace}
@@ -97,4 +97,3 @@ In this tutorial, you create the following resources. There are optional steps t
 1. From the **Actions** dropdown menu, click **Destroy resources**.
 1. Wait a few minutes while Schematics deletes the resources from your account.
 1. From the **Actions menu**, click **Delete workspace**.
-

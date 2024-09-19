@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2024
-lastupdated: "2024-04-04"
+lastupdated: "2024-09-19"
 
 
 keywords: openshift, {{site.data.keyword.openshiftlong_notm}} kubernetes, ips, vlans, networking, public gateway
@@ -168,7 +168,7 @@ When you create VPC subnets for your clusters, keep in mind the following featur
 - The default CIDR size of each VPC subnet is `/24`, which can support up to 253 worker nodes. If you plan to deploy more than 250 worker nodes per zone in one cluster, consider creating a subnet of a larger size.
 - After you create a VPC subnet, you can't resize it or change its IP range.
 - Multiple clusters in the same VPC can share VPC subnets. However, custom pod and service subnets can't be shared between multiple clusters.
-- VPC subnets are bound to a single zone and can't span multiple zones or regions.
+- VPC subnets are bound to a single-campus multizone region and can't span multiple zones or regions.
 - After you create a subnet, you can't move it to a different zone, region, or VPC.
 - If you have worker nodes that are attached to an existing subnet in a zone, you can't change the subnet for that zone in the cluster.
 - The `172.16.0.0/16`, `172.18.0.0/16`, `172.19.0.0/16`, and `172.20.0.0/16` ranges are prohibited.

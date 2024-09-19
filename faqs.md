@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2024
-lastupdated: "2024-08-06"
+lastupdated: "2024-09-19"
 
 
 keywords: openshift, ocp, compliance, security standards, faq, openshift pricing, ocp pricing, openshift charges, ocp charges, openshift price, ocp price, openshift billing, ocp billing, openshift costs, ocp costs
@@ -317,7 +317,9 @@ If you created a VPC multizone cluster, the subnets in each zone are automatical
 ### Can I convert my single zone cluster to a multizone cluster?
 {: #convert-sz-to-mz}
 
-To convert a single zone cluster to a multizone cluster, your cluster must be set up in one of the supported [classic](/docs/openshift?topic=openshift-regions-and-zones#zones-mz) or [VPC](/docs/openshift?topic=openshift-regions-and-zones#zones-vpc) multizone locations. VPC clusters can be set up only in multizone metro locations, and as such can always be converted from a single zone cluster to a multizone cluster. Classic clusters that are set up in a single zone data center can't be converted to a multizone cluster. To convert a single zone cluster to a multizone cluster, see [Adding worker nodes to Classic clusters](/docs/openshift?topic=openshift-add-workers-classic) or [Adding worker nodes to VPC clusters](/docs/openshift?topic=openshift-add-workers-vpc).
+To convert a single zone cluster to a multizone cluster, your cluster must be set up in a location that has more than one availability zone.
+- VPC clusters can be set up only in multizone regions, and as such can always be converted from a single zone cluster to a multizone cluster. For more information, see [Adding worker nodes to VPC clusters](/docs/openshift?topic=openshift-add-workers-vpc).
+- Classic clusters that are set up in data centers with only one zone can't be converted to a multizone cluster. For more information, see [Adding worker nodes to Classic clusters](/docs/openshift?topic=openshift-add-workers-classic).
 
 ## What if I want to set up multiple clusters across regions?
 {: #multiple-regions-setup}
