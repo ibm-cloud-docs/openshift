@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2024
-lastupdated: "2024-09-18"
+lastupdated: "2024-09-20"
 
 
 keywords: kubernetes, release notes, openshift, {{site.data.keyword.openshiftlong_notm}}
@@ -30,6 +30,12 @@ Looking for {{site.data.keyword.cloud_notm}} status, platform announcements, sec
 ## September 2024
 {: #openshift-sep24}
 
+### 20 September 2024
+{: #openshift-sep2024}
+{: release-note}
+
+{{site.data.keyword.openshiftlong_notm}} version 1.31 Kubernetes certification
+:   {{site.data.keyword.openshiftlong_notm}} version [1.31](/docs/openshift?topic=openshift-cs_versions_131) is now Kubernetes certified.
 
 
 ### 18 September 2024
@@ -3164,7 +3170,7 @@ Worker node fix pack
 {: release-note}
 
 {{site.data.keyword.block_storage_is_short}} add-on.
-:   [Version version 4.3.2_1441](/docs/openshift?topic=openshift-vpc_bs_changelog) is available.
+:   [Version 4.3.2_1441](/docs/openshift?topic=openshift-vpc_bs_changelog) is available.
 
 
 
@@ -3178,7 +3184,7 @@ Worker node fix pack
 :   Metrics and labels are now stored and displayed in a Prometheus compatible naming convention. Some metrics and labels are deprecated. For more information, see [Discontinued Metrics and Labels](https://docs.sysdig.com/en/docs/release-notes/enhanced-metric-store/#discontinued-metrics-and-labels){: external} and [removed features](https://docs.sysdig.com/en/docs/release-notes/enhanced-metric-store/#removed-featurees){: external}.
 
 {{site.data.keyword.block_storage_is_short}} add-on.
-:   [Version version 5.0.1-beta_1411](/docs/openshift?topic=openshift-vpc_bs_changelog) is available for allowlisted accounts.
+:   [Version 5.0.1-beta_1411](/docs/openshift?topic=openshift-vpc_bs_changelog) is available for allowlisted accounts.
 
 
 
