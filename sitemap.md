@@ -10084,17 +10084,19 @@ subcollection: openshift
 
     * [VPC multizone regions](/docs/openshift?topic=openshift-regions-and-zones#zones-vpc)
 
+    * [{{site.data.keyword.satelliteshort}} regions](/docs/openshift?topic=openshift-regions-and-zones#sat-regions-openshift)
+
+* [Where are the resources?](/docs/openshift?topic=openshift-regions-and-zones#regions_resources)
+
     * [Resources in a single zone cluster](/docs/openshift?topic=openshift-regions-and-zones#regions_single_zone)
 
     * [Resources in a multizone cluster](/docs/openshift?topic=openshift-regions-and-zones#regions_multizone)
 
-* [{{site.data.keyword.satelliteshort}} regions](/docs/openshift?topic=openshift-regions-and-zones#sat-regions-openshift)
+* [Accessing resources](/docs/openshift?topic=openshift-regions-and-zones#endpoint)
 
-* [Accessing the global endpoint](/docs/openshift?topic=openshift-regions-and-zones#endpoint)
+    * [Accessing resources from the CLI](/docs/openshift?topic=openshift-regions-and-zones#endpoint_cli)
 
-    * [Logging in to {{site.data.keyword.cloud_notm}}](/docs/openshift?topic=openshift-regions-and-zones#login-ic)
-
-    * [Logging in to {{site.data.keyword.openshiftlong_notm}}](/docs/openshift?topic=openshift-regions-and-zones#login-iks)
+    * [Accessing resources from the API](/docs/openshift?topic=openshift-regions-and-zones#endpoint_api)
 
 
 ## Supported IBM Cloud and third-party integrations
