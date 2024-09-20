@@ -15,23 +15,16 @@ subcollection: openshift
 {{site.data.keyword.attribute-definition-list}}
 
 
-
-
-
 # Locations
 {: #regions-and-zones}
 
 [{{site.data.keyword.cloud_notm}} resources](/docs/overview?topic=overview-locations) are organized into a hierarchy of geographic locations. {{site.data.keyword.openshiftlong_notm}} is available in a subset of the {{site.data.keyword.cloud_notm}} locations, including worldwide multizone regions (MZRs) and single-campus multizone regions (SC-MZRs).
 {: shortdesc}
 
-
 ![{{site.data.keyword.openshiftlong_notm}} locations](images/locations.svg){: caption="Figure 1. {{site.data.keyword.openshiftlong_notm}} locations" caption-side="bottom"}
-
 
 This image is an artistic representation and does not reflect actual political or geographic boundaries.
 {: note}
-
-
 
 
 ## {{site.data.keyword.openshiftlong_notm}} locations
@@ -39,7 +32,6 @@ This image is an artistic representation and does not reflect actual political o
 
 You can deploy {{site.data.keyword.openshiftlong}} clusters worldwide. When you create a cluster, its resources remain in the location that you deploy the cluster to. To work with your cluster, you can access the service via a global API endpoint.
 {: shortdesc}
-
 
 
 ### Classic multizone regions
@@ -113,6 +105,18 @@ VPC resources are provisioned in a region, which is a separate group of zones wi
 
 `†` These regions are available as multizone regions for clusters on VPC infrastructure only.
 
+
+
+### {{site.data.keyword.satelliteshort}} regions
+{: #sat-regions-openshift}
+
+To see a list of the supported `Managed from` regions for {{site.data.keyword.satelliteshort}} clusters, [Supported {{site.data.keyword.satelliteshort}} locations](/docs/satellite?topic=satellite-sat-regions).
+
+
+
+## Where are the resources?
+{: #regions_resources}
+
 ### Resources in a single zone cluster
 {: #regions_single_zone}
 
@@ -145,85 +149,48 @@ When you initiate cluster management actions, such as running [`ibmcloud oc` com
 
 
 
-
-## {{site.data.keyword.satelliteshort}} regions
-{: #sat-regions-openshift}
-
-To see a list of the supported `Managed from` regions for {{site.data.keyword.satelliteshort}} clusters, [Supported {{site.data.keyword.satelliteshort}} locations](/docs/satellite?topic=satellite-sat-regions).
-
-
-
-
-
-
-
-## Accessing the global endpoint
+## Accessing resources
 {: #endpoint}
 
 You can organize your resources across {{site.data.keyword.cloud_notm}} services by using {{site.data.keyword.cloud_notm}} locations (or regions). For example, you can deploy an app to a cluster by using a private Docker image that is stored in your {{site.data.keyword.registrylong_notm}} of the same location. To access these resources, you can use the global endpoints and filter by location.
 {: shortdesc}
 
-### Logging in to {{site.data.keyword.cloud_notm}}
-{: #login-ic}
+### Accessing resources from the CLI
+{: #endpoint_cli}
 
-When you log in to the {{site.data.keyword.cloud_notm}} (`ibmcloud`) command line, you are prompted to select a region. However, this region does not affect the {{site.data.keyword.openshiftlong_notm}} plug-in (`ibmcloud oc`) endpoint, which still uses the global endpoint. Note that you do still need to target the resource group that your cluster is in if it is not in the default resource group.
-{: shortdesc}
+1. [Install the CLI](/docs/openshift?topic=openshift-cli-install).
 
-To log in to the {{site.data.keyword.cloud_notm}} global API endpoint and target the resource group that your cluster is in:
-```sh
-ibmcloud login -a https://cloud.ibm.com -g <nondefault_resource_group_name>
-```
-{: pre}
+1. [Access your {{site.data.keyword.redhat_openshift_notm}} cluster](/docs/openshift?topic=openshift-access_cluster).
 
-### Logging in to {{site.data.keyword.openshiftlong_notm}}
-{: #login-iks}
+    When you log in to the {{site.data.keyword.cloud_notm}} (`ibmcloud`) command line, you are prompted to select a region. However, this region does not affect the {{site.data.keyword.openshiftlong_notm}} plug-in (`ibmcloud oc`) endpoint, which still uses the global endpoint. Note that you do still need to target the resource group that your cluster is in if it is not in the default resource group.
 
-When you log in to {{site.data.keyword.cloud_notm}}, you can access the {{site.data.keyword.containershort_notm}}. To help you get started, check out the following resources for using the {{site.data.keyword.openshiftlong_notm}} CLI and API.
-{: shortdesc}
+1. [Review the CLI commands](/docs/containers?topic=containers-kubernetes-service-cli). 
 
-[Install the IBM Cloud CLI](/docs/openshift?topic=openshift-cli-install)
-[Access your {{site.data.keyword.redhat_openshift_notm}} cluster](/docs/openshift?topic=openshift-access_cluster).
+    * Listing resources:
+        * When you list resources, such as with the `ibmcloud oc cluster ls`, `ibmcloud oc subnets`, or `ibmcloud oc zone ls` commands, resources in all locations are returned. To filter resources by a specific location, certain commands include a `--location` option. For example, if you filter clusters for the `wdc` metro, multizone clusters in that metro and single-zone clusters in data centers (zones) within that metro are returned. If you filter clusters for the `wdc06` data center (zone), multizone clusters that have a worker node in that zone and single-zone clusters in that zone are returned. `ibmcloud oc cluster ls -l dal`.
 
-When you use the new global functionality in the {{site.data.keyword.openshiftlong_notm}} CLI, consider the following changes from the legacy region-based functionality.
+        * Other commands don't return resources in all locations. To run `credential set/unset/get`, `api-key reset`, and `vlan spanning get` commands, you must specify a region in the `--region`.
 
-* Listing resources:
-    * When you list resources, such as with the `ibmcloud oc cluster ls`, `ibmcloud oc subnets`, or `ibmcloud oc zone ls` commands, resources in all locations are returned. To filter resources by a specific location, certain commands include a `--location` option. For example, if you filter clusters for the `wdc` metro, multizone clusters in that metro and single-zone clusters in data centers (zones) within that metro are returned. If you filter clusters for the `wdc06` data center (zone), multizone clusters that have a worker node in that zone and single-zone clusters in that zone are returned. `ibmcloud oc cluster ls -l dal`.
-
-    * Other commands don't return resources in all locations. To run `credential set/unset/get`, `api-key reset`, and `vlan spanning get` commands, you must specify a region in the `--region`.
-
-* Working with resources:
-    * When you use the global endpoint, you can work with resources that you have access permissions to in any location, even if you target one region and the resource that you want to work with is in another region.
-    * If you have clusters with the same name in different regions, use the cluster ID when you run commands or set a region with the `ibmcloud oc init` command and use the cluster name when you run commands.
-
-* Legacy functionality:
-    * If you need to list and work with resources from one region only, you can use the `ibmcloud oc init` [command](/docs/openshift?topic=openshift-kubernetes-service-cli#cs_init) to target a regional endpoint instead of the global endpoint. Example to target the US South regional endpoint:
-        ```sh
-        ibmcloud oc init --host https://us-south.containers.cloud.ibm.com
-        ```
-        {: pre}
-
-    * To use the global functionality, you can use the `ibmcloud oc init` command again to target the global endpoint. Example to target the global endpoint again:
-        ```sh
-        ibmcloud oc init --host https://containers.cloud.ibm.com
-        ```
-        {: pre}
+    * Working with resources:
+        * When you use the global endpoint, you can work with resources that you have access permissions to in any location, even if you target one region and the resource that you want to work with is in another region.
+        * If you have clusters with the same name in different regions, use the cluster ID when you run commands or set a region with the `ibmcloud oc init` command and use the cluster name when you run commands.
 
 
+### Accessing resources from the API
+{: #endpoint_api}
 
+1. [Get started with the API](/docs/openshift?topic=openshift-cs_api_install#cs_api).
 
-**{{site.data.keyword.openshiftlong_notm}} API**:
-* [Get started with the API](/docs/openshift?topic=openshift-cs_api_install#cs_api).
-* [View documentation on the API commands](https://containers.cloud.ibm.com/global/swagger-global-api/#/){: external}.
-* Generate a client of the API to use in automation by using the [`swagger.json` API](https://containers.cloud.ibm.com/global/swagger-global-api/swagger.json){: external}.
+1. [Review the API commands](https://containers.cloud.ibm.com/global/swagger-global-api/#/){: external}.
 
-To interact with the global {{site.data.keyword.openshiftlong_notm}} API, enter the command type and append `global/v1/command` to the endpoint.
+    To interact with the global {{site.data.keyword.openshiftlong_notm}} API, enter the command type and append `global/v1/command` to the endpoint.
 
-Example of `GET /clusters` global API:
-```sh
-GET https://containers.cloud.ibm.com/global/v1/clusters
-```
-{: codeblock}
+    Example of `GET /clusters` global API:
+    ```sh
+    GET https://containers.cloud.ibm.com/global/v1/clusters
+    ```
+    {: codeblock}
 
+    If you need to specify a region in an API call, remove the `/global` parameter from the path and pass the region name in the `X-Region` header. To list available regions, review the [Previous region](#zones-mz) column in the {{site.data.keyword.openshiftlong_notm}} locations table.
 
-
-If you need to specify a region in an API call, remove the `/global` parameter from the path and pass the region name in the `X-Region` header. To list available regions, review the [Previous region](#zones-mz) column in the {{site.data.keyword.openshiftlong_notm}} locations table.
+1. Optional: Generate a client of the API to use in automation by using the [`swagger.json` API](https://containers.cloud.ibm.com/global/swagger-global-api/swagger.json){: external}.
