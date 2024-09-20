@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2024
-lastupdated: "2024-09-19"
+lastupdated: "2024-09-20"
 
 
 keywords: openshift
@@ -7316,11 +7316,11 @@ subcollection: openshift
 
 * [`image-key-synchronizer` 1.0.0](/docs/openshift?topic=openshift-supported-cluster-addon-versions#image-key-synchronizer-1.0.0)
 
-* [`istio` 1.20](/docs/openshift?topic=openshift-supported-cluster-addon-versions#istio-1.20)
-
 * [`istio` 1.21](/docs/openshift?topic=openshift-supported-cluster-addon-versions#istio-1.21)
 
 * [`istio` 1.22](/docs/openshift?topic=openshift-supported-cluster-addon-versions#istio-1.22)
+
+* [`istio` 1.23](/docs/openshift?topic=openshift-supported-cluster-addon-versions#istio-1.23)
 
 * [`openshift-data-foundation` 4.12.0](/docs/openshift?topic=openshift-supported-cluster-addon-versions#openshift-data-foundation-4.12.0)
 
@@ -7329,6 +7329,8 @@ subcollection: openshift
 * [`openshift-data-foundation` 4.14.0](/docs/openshift?topic=openshift-supported-cluster-addon-versions#openshift-data-foundation-4.14.0)
 
 * [`openshift-data-foundation` 4.15.0](/docs/openshift?topic=openshift-supported-cluster-addon-versions#openshift-data-foundation-4.15.0)
+
+* [`openshift-data-foundation` 4.16.0](/docs/openshift?topic=openshift-supported-cluster-addon-versions#openshift-data-foundation-4.16.0)
 
 * [`static-route` 1.0.0](/docs/openshift?topic=openshift-supported-cluster-addon-versions#static-route-1.0.0)
 
