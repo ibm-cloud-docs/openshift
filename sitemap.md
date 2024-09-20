@@ -275,6 +275,10 @@ subcollection: openshift
 
 * [September 2024](/docs/openshift?topic=openshift-openshift-relnotes#openshift-sep24)
 
+    * [20 September 2024](/docs/openshift?topic=openshift-openshift-relnotes#openshift-sep2024)
+
+        * {{site.data.keyword.openshiftlong_notm}} version 1.31 Kubernetes certification
+
     * [18 September 2024](/docs/openshift?topic=openshift-openshift-relnotes#openshift-sep1824)
 
         * {{site.data.keyword.openshiftlong_notm}} CLI plug-in version `1.0.665` is available.
