@@ -38,6 +38,8 @@ Looking for {{site.data.keyword.cloud_notm}} status, platform announcements, sec
 :   {{site.data.keyword.openshiftlong_notm}} version [1.31](/docs/openshift?topic=openshift-cs_versions_131) is now Kubernetes certified.
 
 
+
+
 ### 18 September 2024
 {: #openshift-sep1824}
 {: release-note}
