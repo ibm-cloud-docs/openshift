@@ -275,6 +275,8 @@ subcollection: openshift
 
 * [September 2024](/docs/openshift?topic=openshift-openshift-relnotes#openshift-sep24)
 
+    * [23 September 2024](/docs/openshift?topic=openshift-openshift-relnotes#openshift-23september24)
+
     * [24 September 2024](/docs/openshift?topic=openshift-openshift-relnotes#openshift-sep2424)
 
         * {{site.data.keyword.cos_full_notm}} plug-in updates.

@@ -30,6 +30,12 @@ Looking for {{site.data.keyword.cloud_notm}} status, platform announcements, sec
 ## September 2024
 {: #openshift-sep24}
 
+### 23 September 2024
+{: #openshift-23september24}
+{: release-note}
+
+
+
 ### 24 September 2024
 {: #openshift-sep2424}
 {: release-note}
