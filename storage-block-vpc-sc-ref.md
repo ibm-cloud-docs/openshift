@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2024, 2024
-lastupdated: "2024-05-10"
+lastupdated: "2024-09-23"
 
 
 keywords: openshift, block storage, deploy apps, storage class reference
@@ -24,7 +24,7 @@ subcollection: openshift
 Review the following storage class information for {{site.data.keyword.block_storage_is_short}} in {{site.data.keyword.openshiftlong_notm}} clusters.
 {: shortdesc}
 
-All storage classes use hourly billing. For more information about pricing, see [Pricing information](https://cloud.ibm.com/vpc-ext/provision/vs){: external} and the [corresponding {{site.data.keyword.block_storage_is_short}} tiers](/docs/vpc?topic=vpc-block-storage-profiles#tiers).
+All storage classes use hourly billing. For more information about pricing, see [Pricing information](https://cloud.ibm.com/infrastructure/provision/vs){: external} and the [corresponding {{site.data.keyword.block_storage_is_short}} tiers](/docs/vpc?topic=vpc-block-storage-profiles#tiers).
 
 
 | Name | File system | Volume binding mode | Reclaim policy |
@@ -54,5 +54,3 @@ All storage classes use hourly billing. For more information about pricing, see 
 | `ibmc-vpcblock-odf-ret-general` | `ext4` | WaitforFirstConsumer | Retain | 
 | `ibmc-vpcblock-odf-general` | `ext4` | WaitforFirstConsumer | Delete |
 {: caption="Table 1. VPC Block storage class reference" caption-side="bottom"}
-
-

@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2024
-lastupdated: "2024-01-03"
+lastupdated: "2024-09-23"
 
 
 keywords: openshift
@@ -24,7 +24,7 @@ content-type: troubleshoot
 [Virtual Private Cloud]{: tag-vpc}
 
 
-In the [Load balancers for VPC dashboard](https://cloud.ibm.com/vpc-ext/network/loadBalancers){: external}, you view the details of the VPC load balancer that exposes your cluster's Ingress controller.
+In the [Load balancers for VPC dashboard](https://cloud.ibm.com/infrastructure/network/loadBalancers){: external}, you view the details of the VPC load balancer that exposes your cluster's Ingress controller.
 {: tsSymptoms}
 
 Although traffic to your apps is flowing correctly in your cluster, the **Health status** of the VPC load balancer shows that at most 2 instances (worker nodes) are **Passing**, while all other instances are **Failing**. For example, if you have 4 worker nodes in your cluster, the health status shows `2/4`.
@@ -36,10 +36,3 @@ In VPC clusters, a VPC load balancer that exposes the Ingress controller is auto
 This `externalTrafficPolicy: Local` setting indicates that when the VPC load balancer receives a request to your app service's node port, the load balancer forwards the traffic only to Ingress controller pods that are also on the same worker node as the app service's node port.
 
 By default in the OpenShift Container Platform Ingress controller, only 2 Ingress controller pods are deployed to your cluster, so only 2 worker nodes have Ingress controller pods. Because the VPC load balancer forwards traffic only to worker nodes that contain Ingress controller pods, the load balancer's health check only reports the 2 worker nodes that have the Ingress controller pods as **Passing**, and the other worker nodes as **Failing**. For this reason, the failures are expected, and don't indicate that your VPC load balancer is unable to forward traffic to your cluster.
-
-
-
-
-
-
-

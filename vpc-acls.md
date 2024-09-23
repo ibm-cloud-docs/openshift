@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2024
-lastupdated: "2024-05-10"
+lastupdated: "2024-09-23"
 
 
 keywords: openshift, firewall, acl, acls, access control list, rules, security group
@@ -58,8 +58,8 @@ For each subnet that your cluster is attached to, use the {{site.data.keyword.cl
 Looking for a simpler security setup? Leave the default ACL for your VPC as-is, and modify the [default security group](/docs/openshift?topic=openshift-vpc-security-group) instead.
 {: tip}
 
-1. Multizone clusters only: In the [Subnets for VPC dashboard](https://cloud.ibm.com/vpc-ext/network/subnets){: external}, note the **IP Range** of each subnet that your cluster is attached to.
-2. In the [Access control lists for VPC dashboard](https://cloud.ibm.com/vpc-ext/network/acl){: external}, click **New access control list**.
+1. Multizone clusters only: In the [Subnets for VPC dashboard](https://cloud.ibm.com/infrastructure/network/subnets){: external}, note the **IP Range** of each subnet that your cluster is attached to.
+2. In the [Access control lists for VPC dashboard](https://cloud.ibm.com/infrastructure/network/acl){: external}, click **New access control list**.
 3. Give your ACL a name and choose the VPC and resource group that your subnets are in.
 4. In the **Rules** section, delete the default inbound rule and outbound rule that allow all inbound and outbound traffic.
 5. In the **Inbound rules** section, create the following rules by clicking **Create**.

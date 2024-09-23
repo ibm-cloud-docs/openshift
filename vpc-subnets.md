@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2024
-lastupdated: "2024-09-19"
+lastupdated: "2024-09-23"
 
 
 keywords: openshift, {{site.data.keyword.openshiftlong_notm}} kubernetes, ips, vlans, networking, public gateway
@@ -36,7 +36,7 @@ Understand the basic concepts of VPC networking in {{site.data.keyword.openshift
 ### Subnets
 {: #vpc_basics_subnets}
 
-Before you create a VPC cluster for the first time, you must [create a VPC subnet](https://cloud.ibm.com/vpc-ext/provision/network){: external} in each zone where you want to deploy worker nodes. A VPC subnet is a specified private IP address range (CIDR block) and configures a group of worker nodes and pods as if they are attached to the same physical wire.
+Before you create a VPC cluster for the first time, you must [create a VPC subnet](https://cloud.ibm.com/infrastructure/provision/network){: external} in each zone where you want to deploy worker nodes. A VPC subnet is a specified private IP address range (CIDR block) and configures a group of worker nodes and pods as if they are attached to the same physical wire.
 {: shortdesc}
 
 When you create a cluster, you can specify only one existing VPC subnet for each zone. Each worker node that you add in a cluster is deployed with a private IP address from the VPC subnet in that zone. After the worker node is provisioned, the worker node IP address persists after a `reboot` operation, but the worker node IP address changes after `replace` and `update` operations.
@@ -47,7 +47,7 @@ Do not delete the subnets that you attach to your cluster during cluster creatio
 #### How many IP addresses do I need for my VPC subnet?
 {: #vpc-subnets-how-many}
 
-When you [create your VPC subnet](https://cloud.ibm.com/vpc-ext/provision/network){: external}, make sure to create a subnet with enough IP addresses for your cluster, such as 256. You can't change the number of IP addresses that a VPC subnet has later.
+When you [create your VPC subnet](https://cloud.ibm.com/infrastructure/provision/network){: external}, make sure to create a subnet with enough IP addresses for your cluster, such as 256. You can't change the number of IP addresses that a VPC subnet has later.
 
 Keep in mind the following IP address reservations.
 - 5 IP addresses are [reserved by VPC](/docs/vpc?topic=vpc-about-networking-for-vpc#addresses-reserved-by-the-system) from each subnet by default.
@@ -142,7 +142,7 @@ Within one VPC, you can create only one public gateway per zone, but that public
 Worker nodes can communicate with the Kubernetes master through the cluster's [virtual private endpoint (VPE)](/docs/vpc?topic=vpc-about-vpe).
 {: shortdesc}
 
-A VPE is a virtual IP address that is bound to an endpoint gateway. One VPE gateway resource is created per cluster in your VPC. One IP address from one subnet in each zone where your cluster has worker nodes is automatically used for the VPE gateway, and the worker nodes in this zone use this IP address to communicate with the Kubernetes master. To view the VPE gateway details for your cluster, open the [Virtual private endpoint gateways for VPC dashboard](https://cloud.ibm.com/vpc-ext/network/endpointGateways){: external} and look for the VPE gateway in the format `iks-<cluster_ID>`.
+A VPE is a virtual IP address that is bound to an endpoint gateway. One VPE gateway resource is created per cluster in your VPC. One IP address from one subnet in each zone where your cluster has worker nodes is automatically used for the VPE gateway, and the worker nodes in this zone use this IP address to communicate with the Kubernetes master. To view the VPE gateway details for your cluster, open the [Virtual private endpoint gateways for VPC dashboard](https://cloud.ibm.com/infrastructure/network/endpointGateways){: external} and look for the VPE gateway in the format `iks-<cluster_ID>`.
 
 Note that your worker nodes automatically use the VPE that is created by default in your VPC. However, if you enabled the [public cloud service endpoint for your cluster](/docs/openshift?topic=openshift-plan_vpc_basics#vpc-workeruser-master), worker-to-master traffic is established half over the public endpoint and half over the VPE for protection from potential outages of the public or private network.
 

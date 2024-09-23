@@ -2,7 +2,7 @@
 
 copyright:
   years: 2022, 2024
-lastupdated: "2024-04-24"
+lastupdated: "2024-09-23"
 
 
 keywords: openshift, openshift data foundation, openshift container storage, vpc, air-gapped
@@ -67,20 +67,20 @@ Before you install OpenShift Data Foundation in your cluster, meet the following
 
 In addition to the 3 required subnets, create another subnet and attach a public gateway to it.
 
-[From the Subnets for VPC console](https://cloud.ibm.com/vpc-ext/network/subnets){: external}, create an additional subnet in your VPC. Note that this subnet must be separate from the subnets your worker nodes are in and must have a public gateway attached.
+[From the Subnets for VPC console](https://cloud.ibm.com/infrastructure/network/subnets){: external}, create an additional subnet in your VPC. Note that this subnet must be separate from the subnets your worker nodes are in and must have a public gateway attached.
 
 
 ## Create a bastion host
 {: #odf-storage-bastion}
 {: step}
 
-[From the Virtual Servers for VPC console](https://cloud.ibm.com/vpc-ext/provision/vs){: external}, create a virtual server in the subnet that you created in the previous step. This virtual server is used as a bastion host to connect to your private cluster. The operating system for your bastion host must be at least Ubuntu 20.04 or RHEL 8.
+[From the Virtual Servers for VPC console](https://cloud.ibm.com/infrastructure/provision/vs){: external}, create a virtual server in the subnet that you created in the previous step. This virtual server is used as a bastion host to connect to your private cluster. The operating system for your bastion host must be at least Ubuntu 20.04 or RHEL 8.
 
 ## Reserve a floating IP and bind it to your bastion host
 {: #odf-floating-ip-bind}
 {: step}
 
-[From the **Floating IPs** console](https://cloud.ibm.com/vpc-ext/network/floatingIPs){: external}, reserve a floating IP in the zone where the subnet that you created earlier is located and bind it to your bastion host.
+[From the **Floating IPs** console](https://cloud.ibm.com/infrastructure/network/floatingIPs){: external}, reserve a floating IP in the zone where the subnet that you created earlier is located and bind it to your bastion host.
 
 ## Install the CLI tools
 {: #odf-cli-install-bastion}
@@ -527,9 +527,3 @@ To install ODF in your cluster, complete the following steps.
     oc get sc
     ```
     {: pre}
-
-
-
-
-
-
