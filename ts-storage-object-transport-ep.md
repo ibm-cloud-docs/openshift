@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2024
-lastupdated: "2024-04-04"
+lastupdated: "2024-09-23"
 
 
 keywords: openshift, {{site.data.keyword.openshiftlong_notm}}, kubernetes, help, network, connectivity
@@ -25,6 +25,9 @@ content-type: troubleshoot
 {: support}
 
 [Virtual Private Cloud]{: tag-vpc} [Classic infrastructure]{: tag-classic-inf}
+
+The following steps apply to the {{site.data.keyword.cos_full_notm}} plug-in only. If you are using the cluster add-on, see [Why do I see transport endpoint not connected errors?](/docs/openshift?topic=openshift-cos_transport_ts_connect_addon) instead.
+{: important}
 
 
 When you create a PVC, you see an error message similar to the following:
@@ -67,13 +70,13 @@ Follow the steps to gather logging information.
    ```
    {: codeblock}
 
-2. Create the `debug-pvc` PVC in your cluster.
+1. Create the `debug-pvc` PVC in your cluster.
     ```sh
     oc create -f debug-pvc.yaml>
     ```
     {: pre}
 
-3. Redeploy your app and reference the `debug-pvc`. Alternatively, you can use the following sample pod.
+1. Redeploy your app and reference the `debug-pvc`. Alternatively, you can use the following sample pod.
     ```yaml
     apiVersion: v1
     kind: Pod
@@ -93,7 +96,7 @@ Follow the steps to gather logging information.
     ```
     {: codeblock}
 
-4. Save the following DaemonSet configuration file as `inspectnode-ds.yaml`. After you deploy an app that references the PVC that you created earlier, deploy the DaemonSet when the `Transport endpoint is not connected.` error occurs to gather the logs.
+1. Save the following DaemonSet configuration file as `inspectnode-ds.yaml`. After you deploy an app that references the PVC that you created earlier, deploy the DaemonSet when the `Transport endpoint is not connected` error occurs to gather the logs.
     ```yaml
     apiVersion: apps/v1
     kind: DaemonSet
@@ -133,30 +136,30 @@ Follow the steps to gather logging information.
     ```
     {: codeblock}
 
-5. Create the DaemonSet in your cluster when the `Transport endpoint is not connected.` error occurs.
+1. Create the DaemonSet in your cluster when the `Transport endpoint is not connected` error occurs.
 
     ```sh
     oc create -f ./inspectnode-ds.yaml
     ```
     {: pre}
 
-6. Get the name of the `inspectnode` pod.
+1. Get the name of the `inspectnode` pod.
 
     ```sh
     oc get pods -n default -l app=ibm-inspectnode -o wide
     ```
     {: pre}
 
-7. Copy the logs from `inspectnode` pod to your local machine. In the copy command, give your directory a name so that you can identify which node the logs are from. For example, `node-one.log`. You might also use the node IP in the directory name, for example: `10.XXX.XX.XXX.log`.
+1. Copy the logs from `inspectnode` pod to your local machine. In the copy command, give your directory a name so that you can identify which node the logs are from. For example, `node-one.log`. You might also use the node IP in the directory name, for example: `10.XXX.XX.XXX.log`.
 
     ```sh
     oc cp <inspectnode_pod_name>:/host/var/log  ./<node_name>.log
     ```
     {: pre}
 
-8. Review the `syslog` and the `s3fslog` for information about the `Transport endpoint` error. [Open a support ticket](/docs/openshift?topic=openshift-get-help and share the log files that you gathered.
+1. Review the `syslog` and the `s3fslog` for information about the `Transport endpoint` error. [Open a support ticket](/docs/openshift?topic=openshift-get-help) and share the log files that you gathered.
 
-9. Delete the `ibm-inspectnode` DaemonSet that you deployed.
+1. Delete the `ibm-inspectnode` DaemonSet that you deployed.
 
     ```sh
     oc delete daemonset ibm-inspectnode
@@ -164,8 +167,4 @@ Follow the steps to gather logging information.
     {: pre}
 
 
-
-
-
-
-
+1. If the issue persists, contact support. Open a [support case](/docs/get-support?topic=get-support-using-avatar). In the case details, be sure to include any relevant log files, error messages, or command outputs.

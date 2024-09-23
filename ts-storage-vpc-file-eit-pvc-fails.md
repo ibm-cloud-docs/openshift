@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2024, 2024
-lastupdated: "2024-08-20"
+lastupdated: "2024-09-23"
 
 
 keywords: kubernetes, openshift, MountingTargetFailed, encryption in-transit, eit
@@ -36,8 +36,11 @@ One possible cause for this issue is that your Cluster and VPC are in different 
 1. Find the resource group of your cluster and VPC. You can find your resource groups in the console or by running the `ibmcloud is resource service-instances -g GROUP` command.
 
 
-    * **Cluster and VPC are not in the same resource group**: Create your own storage class and specify the [VPC resource group ID](/docs/openshift?topic=openshift-storage-file-vpc-apps#storage-file-vpc-custom-sc).
-
+    * **Cluster and VPC are not in the same resource group**: [Create your own storage class]((/docs/openshift?topic=openshift-storage-file-vpc-apps#storage-file-vpc-custom-sc)) and make sure to specify the VPC resource group ID in the `resourceGroup` section as well as the `kube-<clusterID>` security group ID in the `securityGroupIDs` section. You can find the ID of the `kube-<clusterID>` security group by running the following command.
+        ```sh
+        ibmcloud is sg kube-<cluster-id>  | grep ID
+        ```
+        {: pre}
 
 
     * **Cluster and VPC are in the same resource group**: Check that the `vpc_subnet_ids` property contains valid subnet IDs.
@@ -57,5 +60,3 @@ One possible cause for this issue is that your Cluster and VPC are in different 
             {: pre}
 
 1. If the issue persists, Open a [support case](/docs/get-support?topic=get-support-using-avatar). In the case details, be sure to include any relevant log files, error messages, or command outputs.
-
-

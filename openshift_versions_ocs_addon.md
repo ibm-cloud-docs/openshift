@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2024
-lastupdated: "2024-07-31"
+lastupdated: "2024-09-23"
 
 
 keywords: odf, openshift data foundation add-on, change log
@@ -37,6 +37,12 @@ ibmcloud oc cluster addon versions --addon openshift-data-foundation
 ## Version 4.15
 {: #4.15_odf}
 
+
+### Version 4.15.4, released 03 August 2024
+{: #4.15.5_odf}
+
+- Resolves [CVE-2024-37370](https://nvd.nist.gov/vuln/detail/CVE-2024-37370){: external} and [CVE-2024-37371](https://nvd.nist.gov/vuln/detail/CVE-2024-37371){: external}.
+
 ### Version 4.15.4, released 15 July 2024
 {: #4.15.4_odf}
 
@@ -61,6 +67,11 @@ ibmcloud oc cluster addon versions --addon openshift-data-foundation
 
 ## Version 4.14
 {: #4.14_odf}
+
+### Version 4.14.16, released 03 August 2024
+{: #4.14.16_odf}
+
+- Resolves [CVE-2024-37370](https://nvd.nist.gov/vuln/detail/CVE-2024-37370){: external} and [CVE-2024-37371](https://nvd.nist.gov/vuln/detail/CVE-2024-37371){: external}.
 
 ### Version 4.14.15, released 15 July 2024
 {: #4.14.15_odf}
@@ -123,6 +134,11 @@ ibmcloud oc cluster addon versions --addon openshift-data-foundation
 
 ## Version 4.13
 {: #4.13_odf}
+
+### Version 4.13.19, released 03 August 2024
+{: #4.13.19_odf}
+
+- Resolves [CVE-2024-37370](https://nvd.nist.gov/vuln/detail/CVE-2024-37370){: external} and [CVE-2024-37371](https://nvd.nist.gov/vuln/detail/CVE-2024-37371){: external}.
 
 ### Version 4.13.18, released 15 July 2024
 {: #4.13.18_odf}
@@ -206,6 +222,11 @@ ibmcloud oc cluster addon versions --addon openshift-data-foundation
 
 ## Version 4.12
 {: #4.12_odf}
+
+### Version 4.12.21, released 03 August 2024
+{: #4.12.21_odf}
+
+- Resolves [CVE-2024-37370](https://nvd.nist.gov/vuln/detail/CVE-2024-37370){: external} and [CVE-2024-37371](https://nvd.nist.gov/vuln/detail/CVE-2024-37371){: external}.
 
 ### Version 4.12.20, released 15 July 2024
 {: #4.12.20_odf}
@@ -646,19 +667,3 @@ Adds a fix for multiple operator groups.
 {: #4.7.6_odf}
 
 - Updates the UBI.
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-

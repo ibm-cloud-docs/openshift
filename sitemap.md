@@ -275,6 +275,10 @@ subcollection: openshift
 
 * [September 2024](/docs/openshift?topic=openshift-openshift-relnotes#openshift-sep24)
 
+    * [24 September 2024](/docs/openshift?topic=openshift-openshift-relnotes#openshift-sep2424)
+
+        * {{site.data.keyword.cos_full_notm}} plug-in updates.
+
     * [20 September 2024](/docs/openshift?topic=openshift-openshift-relnotes#openshift-sep2024)
 
         * {{site.data.keyword.openshiftlong_notm}} version 1.31 Kubernetes certification
@@ -5044,6 +5048,8 @@ subcollection: openshift
 
 * [Creating your own storage class](/docs/openshift?topic=openshift-storage-file-vpc-apps#storage-file-vpc-custom-sc)
 
+* [Setting the default storage class](/docs/openshift?topic=openshift-storage-file-vpc-apps#vpc-file-set-default-sc)
+
 * [Deploying an app that runs as non-root](/docs/openshift?topic=openshift-storage-file-vpc-apps#vpc-file-non-root-app)
 
 * [Setting up your KMS provider for encrypting {{site.data.keyword.filestorage_vpc_short}}](/docs/openshift?topic=openshift-storage-file-vpc-apps#storage-file-kms)
@@ -7796,6 +7802,8 @@ subcollection: openshift
 
 [{{site.data.keyword.cos_full_notm}} plug-in](/docs/openshift?topic=openshift-cos_plugin_changelog#cos_plugin_changelog)
 
+* [Change log for version 2.2.31, released 24 September 2024](/docs/openshift?topic=openshift-cos_plugin_changelog#02231_object_plugin)
+
 * [Change log for version 2.2.30, released 29 August 2024](/docs/openshift?topic=openshift-cos_plugin_changelog#02230_object_plugin)
 
 * [Change log for version 2.2.29, released 31 July 2024](/docs/openshift?topic=openshift-cos_plugin_changelog#02229_object_plugin)
@@ -7924,6 +7932,8 @@ subcollection: openshift
 
 * [Version 4.15](/docs/openshift?topic=openshift-odf_addon_changelog#4.15_odf)
 
+    * [Version 4.15.4, released 03 August 2024](/docs/openshift?topic=openshift-odf_addon_changelog#4.15.5_odf)
+
     * [Version 4.15.4, released 15 July 2024](/docs/openshift?topic=openshift-odf_addon_changelog#4.15.4_odf)
 
     * [Version 4.15.3, released 24 June 2024](/docs/openshift?topic=openshift-odf_addon_changelog#4.15.3_odf)
@@ -7933,6 +7943,8 @@ subcollection: openshift
     * [Version 4.15.0, released 10 May 2024](/docs/openshift?topic=openshift-odf_addon_changelog#4.15.0_odf)
 
 * [Version 4.14](/docs/openshift?topic=openshift-odf_addon_changelog#4.14_odf)
+
+    * [Version 4.14.16, released 03 August 2024](/docs/openshift?topic=openshift-odf_addon_changelog#4.14.16_odf)
 
     * [Version 4.14.15, released 15 July 2024](/docs/openshift?topic=openshift-odf_addon_changelog#4.14.15_odf)
 
@@ -7955,6 +7967,8 @@ subcollection: openshift
     * [Version 4.14.0, released 19 January 2024](/docs/openshift?topic=openshift-odf_addon_changelog#4.14.0_odf)
 
 * [Version 4.13](/docs/openshift?topic=openshift-odf_addon_changelog#4.13_odf)
+
+    * [Version 4.13.19, released 03 August 2024](/docs/openshift?topic=openshift-odf_addon_changelog#4.13.19_odf)
 
     * [Version 4.13.18, released 15 July 2024](/docs/openshift?topic=openshift-odf_addon_changelog#4.13.18_odf)
 
@@ -7985,6 +7999,8 @@ subcollection: openshift
     * [Version 4.13.0, released 10 July 2023](/docs/openshift?topic=openshift-odf_addon_changelog#4.13.0_odf)
 
 * [Version 4.12](/docs/openshift?topic=openshift-odf_addon_changelog#4.12_odf)
+
+    * [Version 4.12.21, released 03 August 2024](/docs/openshift?topic=openshift-odf_addon_changelog#4.12.21_odf)
 
     * [Version 4.12.20, released 15 July 2024](/docs/openshift?topic=openshift-odf_addon_changelog#4.12.20_odf)
 
