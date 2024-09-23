@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2024
-lastupdated: "2024-09-20"
+lastupdated: "2024-09-23"
 
 
 keywords: openshift, mzr, szr, multizone, multi az
@@ -34,10 +34,10 @@ You can deploy {{site.data.keyword.openshiftlong}} clusters worldwide. When you 
 {: shortdesc}
 
 
-### Classic multizone regions
+### Classic regions with multiple data centers
 {: #zones-mz}
 
-If you create a classic cluster in a multizone region, the replicas of your highly available Kubernetes master are automatically spread across the data centers (zones). You have the option to spread your worker nodes across zones to protect your apps from a zone failure. To determine whether a location has a multizone region, your can run `ibmcloud oc locations` and look for the value in the `Multizone Metro` column.
+If you create a classic cluster with multiple data centers, the replicas of your highly available Kubernetes master are automatically spread across the data centers. You have the option to spread your worker nodes across zones to protect your apps from a zone failure. To determine whether a location has a multizone region, your can run `ibmcloud oc locations` and look for the value in the `Multizone Metro` column.
 {: shortdesc}
 
 | Geography | Country | Metro | Region | Zones |
@@ -56,10 +56,10 @@ If you create a classic cluster in a multizone region, the replicas of your high
 
 
 
-### Single zone Classic data centers
+### Classic regions with one data center
 {: #zones-sz}
 
-If you create a classic cluster in a single-campus multizone region, you can create multiple worker nodes but you can't spread them across data centers (zones). The highly available master includes three replicas on separate hosts, but is not spread across zones.
+If you create a classic cluster in a region with only one data center, the highly available master includes three replicas on separate hosts, but is not spread across zones.
 {: shortdesc}
 
 Classic single zone clusters are managed from the regional endpoint located in the nearest region that supports classic multizone, such as `mon01` to `us-east` or `sao01` to `us-south`.
