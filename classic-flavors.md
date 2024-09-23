@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2024
-lastupdated: "2024-08-28"
+lastupdated: "2024-09-23"
 
 
 keywords: openshift, {{site.data.keyword.openshiftlong_notm}}, kubernetes, node scaling, ca, autoscaler
@@ -963,12 +963,12 @@ Review the classic worker node flavors by metro.
 
 | Name | Cores, Memory, and Network speed | Type | OS | Primary storage | Secondary storage | GPUs |
 | ---- | -------------------------------- | ---- | -- | --------------- | ----------------- | -- |
-| b3c.16x64 | 16, 64GB, 1000Mbps | Virtual | REDHAT_7_64, **REDHAT_8_64 (default)**| 25GB SSD | 100GB SSD | N/A|
-| b3c.16x64.300gb | 16, 64GB, 1000Mbps | Virtual | REDHAT_7_64, **REDHAT_8_64 (default)**| 25GB SSD | 300GB SSD | N/A|
-| b3c.32x128 | 32, 128GB, 1000Mbps | Virtual | REDHAT_7_64, **REDHAT_8_64 (default)**| 25GB SSD | 100GB SSD | N/A|
-| b3c.4x16 | 4, 16GB, 1000Mbps | Virtual | REDHAT_7_64, **REDHAT_8_64 (default)**| 25GB SSD | 100GB SSD | N/A|
-| b3c.56x242 | 56, 242GB, 1000Mbps | Virtual | REDHAT_7_64, **REDHAT_8_64 (default)**| 25GB SSD | 100GB SSD | N/A|
-| b3c.8x32 | 8, 32GB, 1000Mbps | Virtual | REDHAT_7_64, **REDHAT_8_64 (default)**| 25GB SSD | 100GB SSD | N/A|
+| b3c.16x64 | 16, 64GB, 1000Mbps | Virtual | REDHAT_7_64, **REDHAT_8_64 (default)**, RHEL_9_64| 25GB SSD | 100GB SSD | N/A|
+| b3c.16x64.300gb | 16, 64GB, 1000Mbps | Virtual | REDHAT_7_64, **REDHAT_8_64 (default)**, RHEL_9_64| 25GB SSD | 300GB SSD | N/A|
+| b3c.32x128 | 32, 128GB, 1000Mbps | Virtual | REDHAT_7_64, **REDHAT_8_64 (default)**, RHEL_9_64| 25GB SSD | 100GB SSD | N/A|
+| b3c.4x16 | 4, 16GB, 1000Mbps | Virtual | REDHAT_7_64, **REDHAT_8_64 (default)**, RHEL_9_64| 25GB SSD | 100GB SSD | N/A|
+| b3c.56x242 | 56, 242GB, 1000Mbps | Virtual | REDHAT_7_64, **REDHAT_8_64 (default)**, RHEL_9_64| 25GB SSD | 100GB SSD | N/A|
+| b3c.8x32 | 8, 32GB, 1000Mbps | Virtual | REDHAT_7_64, **REDHAT_8_64 (default)**, RHEL_9_64| 25GB SSD | 100GB SSD | N/A|
 {: class="simple-tab-table"}
 {: caption="Table. Balanced flavors in Sydney." caption-side="bottom"}
 {: #syd-balanced-table}
@@ -978,10 +978,10 @@ Review the classic worker node flavors by metro.
 
 | Name | Cores, Memory, and Network speed | Type | OS | Primary storage | Secondary storage | GPUs |
 | ---- | -------------------------------- | ---- | -- | --------------- | ----------------- | -- |
-| c3c.16x16 | 16, 16GB, 1000Mbps | Virtual | REDHAT_7_64, **REDHAT_8_64 (default)**| 25GB SSD | 100GB SSD | N/A|
-| c3c.16x32 | 16, 32GB, 1000Mbps | Virtual | REDHAT_7_64, **REDHAT_8_64 (default)**| 25GB SSD | 100GB SSD | N/A|
-| c3c.32x32 | 32, 32GB, 1000Mbps | Virtual | REDHAT_7_64, **REDHAT_8_64 (default)**| 25GB SSD | 100GB SSD | N/A|
-| c3c.32x64 | 32, 64GB, 1000Mbps | Virtual | REDHAT_7_64, **REDHAT_8_64 (default)**| 25GB SSD | 100GB SSD | N/A|
+| c3c.16x16 | 16, 16GB, 1000Mbps | Virtual | REDHAT_7_64, **REDHAT_8_64 (default)**, RHEL_9_64| 25GB SSD | 100GB SSD | N/A|
+| c3c.16x32 | 16, 32GB, 1000Mbps | Virtual | REDHAT_7_64, **REDHAT_8_64 (default)**, RHEL_9_64| 25GB SSD | 100GB SSD | N/A|
+| c3c.32x32 | 32, 32GB, 1000Mbps | Virtual | REDHAT_7_64, **REDHAT_8_64 (default)**, RHEL_9_64| 25GB SSD | 100GB SSD | N/A|
+| c3c.32x64 | 32, 64GB, 1000Mbps | Virtual | REDHAT_7_64, **REDHAT_8_64 (default)**, RHEL_9_64| 25GB SSD | 100GB SSD | N/A|
 {: class="simple-tab-table"}
 {: caption="Table. Compute flavors in Sydney." caption-side="bottom"}
 {: #syd-compute-table}
@@ -992,14 +992,16 @@ Review the classic worker node flavors by metro.
 
 | Name | Cores, Memory, and Network speed | Type | OS | Primary storage | Secondary storage | GPUs |
 | ---- | -------------------------------- | ---- | -- | --------------- | ----------------- | -- |
-| mb4c.20x192 | 20, 192GB, 10000Mbps | Physical | REDHAT_7_64, **REDHAT_8_64 (default)**| 2000GB HDD | 960GB SSD | N/A|
-| mb4c.20x384 | 20, 384GB, 10000Mbps | Physical | REDHAT_7_64, **REDHAT_8_64 (default)**| 2000GB HDD | 960GB SSD | N/A|
-| mb4c.20x64 | 20, 64GB, 10000Mbps | Physical | REDHAT_7_64, **REDHAT_8_64 (default)**| 2000GB HDD | 960GB SSD | N/A|
-| mb4c.20x64.2x1.9tb.ssd | 20, 64GB, 10000Mbps | Physical | REDHAT_7_64, **REDHAT_8_64 (default)**| 2000GB HDD | 960GB SSD | N/A|
-| mb4c.32x384.3.8tb.ssd | 32, 384GB, 10000Mbps | Physical | REDHAT_7_64, **REDHAT_8_64 (default)**| 2000GB HDD | 1920GB SSD | N/A|
-| mb4c.32x384.6x3.8tb.ssd | 32, 384GB, 10000Mbps | Physical | REDHAT_7_64, **REDHAT_8_64 (default)**| 2000GB HDD | 1920GB SSD | N/A|
-| mb4c.32x768.3.8tb.ssd | 32, 768GB, 10000Mbps | Physical | REDHAT_7_64, **REDHAT_8_64 (default)**| 2000GB HDD | 960GB SSD | N/A|
-| mb4c.48x1536 | 48, 1536GB, 10000Mbps | Physical | REDHAT_7_64, **REDHAT_8_64 (default)**| 2000GB HDD | 960GB SSD | N/A|
+| mb4c.20x192 | 20, 192GB, 10000Mbps | Physical | REDHAT_7_64, **REDHAT_8_64 (default)**, RHEL_9_64| 2000GB HDD | 960GB SSD | N/A|
+| mb4c.20x384 | 20, 384GB, 10000Mbps | Physical | REDHAT_7_64, **REDHAT_8_64 (default)**, RHEL_9_64| 2000GB HDD | 960GB SSD | N/A|
+| mb4c.20x64 | 20, 64GB, 10000Mbps | Physical | REDHAT_7_64, **REDHAT_8_64 (default)**, RHEL_9_64| 2000GB HDD | 960GB SSD | N/A|
+| mb4c.20x64.2x1.9tb.ssd | 20, 64GB, 10000Mbps | Physical | REDHAT_7_64, **REDHAT_8_64 (default)**, RHEL_9_64| 2000GB HDD | 960GB SSD | N/A|
+| mb4c.32x384.3.8tb.ssd | 32, 384GB, 10000Mbps | Physical | REDHAT_7_64, **REDHAT_8_64 (default)**, RHEL_9_64| 2000GB HDD | 1920GB SSD | N/A|
+| mb4c.32x384.6x3.8tb.ssd | 32, 384GB, 10000Mbps | Physical | REDHAT_7_64, **REDHAT_8_64 (default)**, RHEL_9_64| 2000GB HDD | 1920GB SSD | N/A|
+| mb4c.32x768.3.8tb.ssd | 32, 768GB, 10000Mbps | Physical | REDHAT_7_64, **REDHAT_8_64 (default)**, RHEL_9_64| 2000GB HDD | 960GB SSD | N/A|
+| mb4c.48x1536 | 48, 1536GB, 10000Mbps | Physical | REDHAT_7_64, **REDHAT_8_64 (default)**, RHEL_9_64| 2000GB HDD | 960GB SSD | N/A|
+| mb4c.4x32 | 4, 32GB, 10000Mbps | Physical | REDHAT_7_64, **REDHAT_8_64 (default)**, RHEL_9_64| 2000GB HDD | 2000GB HDD | N/A|
+| mb4c.4x32.1.9tb.ssd | 4, 32GB, 10000Mbps | Physical | REDHAT_7_64, **REDHAT_8_64 (default)**, RHEL_9_64| 2000GB HDD | 960GB SSD | N/A|
 {: class="simple-tab-table"}
 {: caption="Table. Bare Metal flavors in Sydney." caption-side="bottom"}
 {: #syd-baremetal-table}
@@ -1020,8 +1022,8 @@ Review the classic worker node flavors by metro.
 
 | Name | Cores, Memory, and Network speed | Type | OS | Primary storage | Secondary storage | GPUs |
 | ---- | -------------------------------- | ---- | -- | --------------- | ----------------- | -- |
-| mg4c.32x384.2xp100 | 32, 384GB, 10000Mbps | Physical | REDHAT_7_64, **REDHAT_8_64 (default)**| 2000GB HDD | 960GB SSD |2 P100 |
-| mg4c.48x384.2xv100 | 48, 384GB, 10000Mbps | Physical | REDHAT_7_64, **REDHAT_8_64 (default)**| 2000GB HDD | 960GB SSD |2 V100 |
+| mg4c.32x384.2xp100 | 32, 384GB, 10000Mbps | Physical | REDHAT_7_64, **REDHAT_8_64 (default)**, RHEL_9_64| 2000GB HDD | 960GB SSD |2 P100 |
+| mg4c.48x384.2xv100 | 48, 384GB, 10000Mbps | Physical | REDHAT_7_64, **REDHAT_8_64 (default)**, RHEL_9_64| 2000GB HDD | 960GB SSD |2 V100 |
 {: class="simple-tab-table"}
 {: caption="Table. Bare Metal GPUs flavors in Sydney." caption-side="bottom"}
 {: #syd-baremetalgpu-table}
@@ -1031,10 +1033,10 @@ Review the classic worker node flavors by metro.
 
 | Name | Cores, Memory, and Network speed | Type | OS | Primary storage | Secondary storage | GPUs |
 | ---- | -------------------------------- | ---- | -- | --------------- | ----------------- | -- |
-| m3c.16x128 | 16, 128GB, 1000Mbps | Virtual | REDHAT_7_64, **REDHAT_8_64 (default)**| 25GB SSD | 100GB SSD | N/A|
-| m3c.30x240 | 30, 240GB, 1000Mbps | Virtual | REDHAT_7_64, **REDHAT_8_64 (default)**| 25GB SSD | 100GB SSD | N/A|
-| m3c.4x32 | 4, 32GB, 1000Mbps | Virtual | REDHAT_7_64, **REDHAT_8_64 (default)**| 25GB SSD | 100GB SSD | N/A|
-| m3c.8x64 | 8, 64GB, 1000Mbps | Virtual | REDHAT_7_64, **REDHAT_8_64 (default)**| 25GB SSD | 100GB SSD | N/A|
+| m3c.16x128 | 16, 128GB, 1000Mbps | Virtual | REDHAT_7_64, **REDHAT_8_64 (default)**, RHEL_9_64| 25GB SSD | 100GB SSD | N/A|
+| m3c.30x240 | 30, 240GB, 1000Mbps | Virtual | REDHAT_7_64, **REDHAT_8_64 (default)**, RHEL_9_64| 25GB SSD | 100GB SSD | N/A|
+| m3c.4x32 | 4, 32GB, 1000Mbps | Virtual | REDHAT_7_64, **REDHAT_8_64 (default)**, RHEL_9_64| 25GB SSD | 100GB SSD | N/A|
+| m3c.8x64 | 8, 64GB, 1000Mbps | Virtual | REDHAT_7_64, **REDHAT_8_64 (default)**, RHEL_9_64| 25GB SSD | 100GB SSD | N/A|
 {: class="simple-tab-table"}
 {: caption="Table. Memory flavors in Sydney." caption-side="bottom"}
 {: #syd-memory-table}
