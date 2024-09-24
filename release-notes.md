@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2024
-lastupdated: "2024-09-23"
+lastupdated: "2024-09-24"
 
 
 keywords: kubernetes, release notes, openshift, {{site.data.keyword.openshiftlong_notm}}
@@ -30,12 +30,6 @@ Looking for {{site.data.keyword.cloud_notm}} status, platform announcements, sec
 ## September 2024
 {: #openshift-sep24}
 
-### 23 September 2024
-{: #openshift-23september24}
-{: release-note}
-
-
-
 ### 24 September 2024
 {: #openshift-sep2424}
 {: release-note}
@@ -44,6 +38,8 @@ Looking for {{site.data.keyword.cloud_notm}} status, platform announcements, sec
 
 {{site.data.keyword.cos_full_notm}} plug-in updates.
 :   For more information, see the [change log](/docs/openshift?topic=openshift-cos_plugin_changelog).
+
+
 
 ### 20 September 2024
 {: #openshift-sep2024}
