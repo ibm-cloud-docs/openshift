@@ -1,7 +1,7 @@
 ---
 copyright: 
   years: 2024, 2024
-lastupdated: "2024-09-17"
+lastupdated: "2024-09-23"
 
 keywords: nlb, network load balancer, vpc nlb, dns, public lb, private lb
 subcollection: openshift
@@ -35,7 +35,7 @@ Expose your app to network traffic by setting up a Kubernetes `LoadBalancer` ser
 4. **For private VPC NLBs**: Connect to your VPC private network, such as through a [VPC VPN connection](/docs/openshift?topic=openshift-vpc-vpnaas).
 5. **For private VPC NLBs**: Enable your app to receive private network requests.
     1. [Create a VPC subnet](https://cloud.ibm.com/vpc/network/subnets){: external} that is dedicated to your VPC NLB. This subnet must exist in the same VPC and location as your cluster, but can't be attached to your cluster or any worker nodes. If you enter a specific IP range, don't use the following reserved ranges: `172.16.0.0/16`, `172.18.0.0/16`, `172.19.0.0/16`, and `172.20.0.0/16`. After you provision the subnet, note its **ID**.
-    2. If the client that connects to your app through the VPC NLB exists outside of the VPC and zone of your dedicated VPC subnet, you must [create a custom ingress routing table](https://cloud.ibm.com/vpc-ext/network/routingTables){: external}. For more information, see the table in the [known limitations](/docs/vpc?topic=vpc-nlb-limitations) and [About routing tables and routes](/docs/vpc?topic=vpc-about-custom-routes).
+    2. If the client that connects to your app through the VPC NLB exists outside of the VPC and zone of your dedicated VPC subnet, you must [create a custom ingress routing table](https://cloud.ibm.com/infrastructure/network/routingTables){: external}. For more information, see the table in the [known limitations](/docs/vpc?topic=vpc-nlb-limitations) and [About routing tables and routes](/docs/vpc?topic=vpc-about-custom-routes).
         Select one of the following **Traffic sources** for your custom ingress routing table: For traffic from an on-premise network, choose  **Direct link**. For traffic from another VPC or from classic infrastructure, choose **Transit gateway**. For traffic from another zone within the same VPC, choose **VPC zone**. For more information, see [Setting up VPC VPN connectivity](/docs/openshift?topic=openshift-vpc-vpnaas).
         {: note}
 

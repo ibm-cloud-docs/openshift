@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2024
-lastupdated: "2024-09-20"
+lastupdated: "2024-09-24"
 
 
 keywords: openshift
@@ -275,9 +275,9 @@ subcollection: openshift
 
 * [September 2024](/docs/openshift?topic=openshift-openshift-relnotes#openshift-sep24)
 
-    * [20 September 2024](/docs/openshift?topic=openshift-openshift-relnotes#openshift-sep2024)
+    * [24 September 2024](/docs/openshift?topic=openshift-openshift-relnotes#openshift-sep2424)
 
-        * {{site.data.keyword.openshiftlong_notm}} version 1.31 Kubernetes certification
+        * {{site.data.keyword.cos_full_notm}} plug-in updates.
 
     * [18 September 2024](/docs/openshift?topic=openshift-openshift-relnotes#openshift-sep1824)
 
@@ -5044,6 +5044,8 @@ subcollection: openshift
 
 * [Creating your own storage class](/docs/openshift?topic=openshift-storage-file-vpc-apps#storage-file-vpc-custom-sc)
 
+* [Setting the default storage class](/docs/openshift?topic=openshift-storage-file-vpc-apps#vpc-file-set-default-sc)
+
 * [Deploying an app that runs as non-root](/docs/openshift?topic=openshift-storage-file-vpc-apps#vpc-file-non-root-app)
 
 * [Setting up your KMS provider for encrypting {{site.data.keyword.filestorage_vpc_short}}](/docs/openshift?topic=openshift-storage-file-vpc-apps#storage-file-kms)
@@ -5107,7 +5109,7 @@ subcollection: openshift
 
 * [Verifying your installation](/docs/openshift?topic=openshift-storage_cos_install#cos-plugin-verify)
 
-[Adding object storage to apps](/docs/openshift?topic=openshift-storage_cos_apps#storage_cos_apps)
+[Deploying an app that uses COS](/docs/openshift?topic=openshift-storage_cos_apps#storage_cos_apps)
 
 * [Creating a deployment](/docs/openshift?topic=openshift-storage_cos_apps#create-cos-deployment-steps)
 
@@ -5137,17 +5139,27 @@ subcollection: openshift
 
 [VPC: Setting up authorized IP addresses for {{site.data.keyword.cos_full_notm}}](/docs/openshift?topic=openshift-storage_cos_vpc_ip#storage_cos_vpc_ip)
 
-[Migrating Cloud Object Storage (COS) resources between IBM Cloud accounts](/docs/openshift?topic=openshift-storage-rclone-migration#storage-rclone-migration)
+[Migrating Cloud Object Storage (COS) apps and data between IBM Cloud accounts](/docs/openshift?topic=openshift-storage-cos-app-migration#storage-cos-app-migration)
 
-* [Prerequisites](/docs/openshift?topic=openshift-storage-rclone-migration#rclone-migration-prereqs)
+* [Prerequisites](/docs/openshift?topic=openshift-storage-cos-app-migration#cos-migration-prereqs)
 
-* [Configuring `rclone`](/docs/openshift?topic=openshift-storage-rclone-migration#rclone-config)
+    * [Account 1](/docs/openshift?topic=openshift-storage-cos-app-migration#cos-mig-account-1-prereqs)
 
-* [Syncing between COS buckets](/docs/openshift?topic=openshift-storage-rclone-migration#rclone-inspect)
+    * [Account 2](/docs/openshift?topic=openshift-storage-cos-app-migration#cos-mig-account-2-prereqs)
 
-* [Syncing contents between buckets](/docs/openshift?topic=openshift-storage-rclone-migration#rclone-sync)
+* [Get the details of your apps](/docs/openshift?topic=openshift-storage-cos-app-migration#cos-mig-app-details)
 
-* [Next steps](/docs/openshift?topic=openshift-storage-rclone-migration#rclone-next-steps)
+* [Install `rclone`](/docs/openshift?topic=openshift-storage-cos-app-migration#rclone-install)
+
+* [Configure `rclone`](/docs/openshift?topic=openshift-storage-cos-app-migration#rclone-config)
+
+* [Syncing between COS buckets](/docs/openshift?topic=openshift-storage-cos-app-migration#rclone-inspect)
+
+* [Syncing contents between buckets](/docs/openshift?topic=openshift-storage-cos-app-migration#rclone-sync)
+
+* [Create a PVC](/docs/openshift?topic=openshift-storage-cos-app-migration#cos-app-redploy)
+
+* [Redeploy your app](/docs/openshift?topic=openshift-storage-cos-app-migration#cos-mig-redeploy-app)
 
 [Storage class reference](/docs/openshift?topic=openshift-storage_cos_reference#storage_cos_reference)
 
@@ -7796,6 +7808,8 @@ subcollection: openshift
 
 [{{site.data.keyword.cos_full_notm}} plug-in](/docs/openshift?topic=openshift-cos_plugin_changelog#cos_plugin_changelog)
 
+* [Change log for version 2.2.31, released 24 September 2024](/docs/openshift?topic=openshift-cos_plugin_changelog#02231_object_plugin)
+
 * [Change log for version 2.2.30, released 29 August 2024](/docs/openshift?topic=openshift-cos_plugin_changelog#02230_object_plugin)
 
 * [Change log for version 2.2.29, released 31 July 2024](/docs/openshift?topic=openshift-cos_plugin_changelog#02229_object_plugin)
@@ -7924,6 +7938,8 @@ subcollection: openshift
 
 * [Version 4.15](/docs/openshift?topic=openshift-odf_addon_changelog#4.15_odf)
 
+    * [Version 4.15.4, released 03 August 2024](/docs/openshift?topic=openshift-odf_addon_changelog#4.15.5_odf)
+
     * [Version 4.15.4, released 15 July 2024](/docs/openshift?topic=openshift-odf_addon_changelog#4.15.4_odf)
 
     * [Version 4.15.3, released 24 June 2024](/docs/openshift?topic=openshift-odf_addon_changelog#4.15.3_odf)
@@ -7933,6 +7949,8 @@ subcollection: openshift
     * [Version 4.15.0, released 10 May 2024](/docs/openshift?topic=openshift-odf_addon_changelog#4.15.0_odf)
 
 * [Version 4.14](/docs/openshift?topic=openshift-odf_addon_changelog#4.14_odf)
+
+    * [Version 4.14.16, released 03 August 2024](/docs/openshift?topic=openshift-odf_addon_changelog#4.14.16_odf)
 
     * [Version 4.14.15, released 15 July 2024](/docs/openshift?topic=openshift-odf_addon_changelog#4.14.15_odf)
 
@@ -7955,6 +7973,8 @@ subcollection: openshift
     * [Version 4.14.0, released 19 January 2024](/docs/openshift?topic=openshift-odf_addon_changelog#4.14.0_odf)
 
 * [Version 4.13](/docs/openshift?topic=openshift-odf_addon_changelog#4.13_odf)
+
+    * [Version 4.13.19, released 03 August 2024](/docs/openshift?topic=openshift-odf_addon_changelog#4.13.19_odf)
 
     * [Version 4.13.18, released 15 July 2024](/docs/openshift?topic=openshift-odf_addon_changelog#4.13.18_odf)
 
@@ -7985,6 +8005,8 @@ subcollection: openshift
     * [Version 4.13.0, released 10 July 2023](/docs/openshift?topic=openshift-odf_addon_changelog#4.13.0_odf)
 
 * [Version 4.12](/docs/openshift?topic=openshift-odf_addon_changelog#4.12_odf)
+
+    * [Version 4.12.21, released 03 August 2024](/docs/openshift?topic=openshift-odf_addon_changelog#4.12.21_odf)
 
     * [Version 4.12.20, released 15 July 2024](/docs/openshift?topic=openshift-odf_addon_changelog#4.12.20_odf)
 
@@ -10078,9 +10100,9 @@ subcollection: openshift
 
 * [{{site.data.keyword.openshiftlong_notm}} locations](/docs/openshift?topic=openshift-regions-and-zones#locations)
 
-    * [Classic multizone regions](/docs/openshift?topic=openshift-regions-and-zones#zones-mz)
+    * [Classic regions with multiple data centers](/docs/openshift?topic=openshift-regions-and-zones#zones-mz)
 
-    * [Single zone Classic data centers](/docs/openshift?topic=openshift-regions-and-zones#zones-sz)
+    * [Classic regions with one data center](/docs/openshift?topic=openshift-regions-and-zones#zones-sz)
 
     * [VPC multizone regions](/docs/openshift?topic=openshift-regions-and-zones#zones-vpc)
 

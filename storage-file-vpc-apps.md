@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2022, 2024
-lastupdated: "2024-07-23"
+lastupdated: "2024-09-23"
 
 keywords: kubernetes, openshift
 
@@ -24,7 +24,7 @@ The {{site.data.keyword.filestorage_vpc_short}} cluster add-on is available in B
 
 The following limitations apply to the add-on beta.
 
-- It is recommended that your cluster and VPC are part of same resource group. If your cluster and VPC are in separate resource groups, then before you can provision file shares, you must create your own storage class and provide your VPC resource group ID. For more information, see [Creating your own storage class](/docs/openshift?topic=openshift-storage-file-vpc-apps#storage-file-vpc-custom-sc).
+- If your cluster and VPC are in separate resource groups, then before you can provision file shares, you must create your own storage class and provide your VPC resource group ID under the `resourceGroup` section along with the `kube-<clusterID>` security group ID under `securityGroupIDs` section. To retrieve security group ID do the following. For more information, see [Creating your own storage class](/docs/openshift?topic=openshift-storage-file-vpc-apps#storage-file-vpc-custom-sc).
 - New security group rules were introduced in cluster versions 4.11 and later. These rule changes mean that you must sync your security groups before you can use {{site.data.keyword.filestorage_vpc_short}}. For more information, see [Adding {{site.data.keyword.filestorage_vpc_short}} to apps](/docs/containers?topic=containers-storage-file-vpc-apps).
 - New storage classes were added with version 2.0 of the add-on. You can no longer provision new file shares that use the older storage classes. Existing volumes that use the older storage classes continue to function, however you cannot expand the volumes that were created using the older classes. For more information, see the [Migrating to a new storage class](/docs/openshift?topic=openshift-storage-file-vpc-apps#storage-file-expansion-migration).
 
@@ -44,18 +44,23 @@ Review the following notes and considerations for {{site.data.keyword.filestorag
 
 
 
-New security group rules were introduced in versions 4.11 and later. These rule changes mean you must sync your security groups before you can use {{site.data.keyword.filestorage_vpc_short}}.
+New security group rules were introduced in versions 4.11 and later. These rule changes mean you must sync your security groups before you can use {{site.data.keyword.filestorage_vpc_short}}. If your cluster was initially created at version 4.11 or earlier, run the following commands to sync your security group settings.
 {: important}
 
-If your cluster was initially created at version 4.11 or earlier, run the following commands to sync your security group settings.
 
-1. Get the ID of the `kube-<clusterID>` security group.
+1. Get the ID of your cluster.
     ```sh
-    ibmcloud oc security-group ls --cluster CLUSTER
+    ibmcloud oc cluster ls
     ```
     {: pre}
 
-1. Sync your security group settings.
+1. Get the ID of the `kube-<clusterID>` security group.
+    ```sh
+    ibmcloud is sg kube-<cluster-id>  | grep ID
+    ```
+    {: pre}
+
+1. Sync the `kube-<clusterID>` security group by using the ID that you retrieved in the previous step.
     ```sh
     ibmcloud ks security-group sync -c <cluster ID> --security-group <ID>
     ```
@@ -367,9 +372,33 @@ New storage classes were introduced with version 2.0. Volume expansion does not 
 ## Attaching existing file storage to an app
 {: #vpc-add-file-static}
 
-Create a persistent volume claim (PVC) to statically provision {{site.data.keyword.filestorage_vpc_short}} for your cluster. Static provisioning allows cluster administrators to make existing storage devices available to a cluster. 
+Create a persistent volume claim (PVC) to statically provision {{site.data.keyword.filestorage_vpc_short}} for your cluster. Static provisioning allows cluster administrators to make existing storage devices available to a cluster.
 
-1. Create a file share and target. For more information, see [Creating file shares and mount targets](/docs/vpc?topic=vpc-file-storage-create&interface=cli).
+1. Get your cluster ID.
+    ```
+    ibmcloud ks cluster ls
+    ```
+    {: pre}
+
+1. Get the ID of your `kube-<clusterID>` security group.
+    ```sh
+    ibmcloud is sg kube-<cluster-id>  | grep ID
+    ```
+    {: pre}
+
+1. Create a file share. For more information, see [Creating file shares and mount targets](/docs/vpc?topic=vpc-file-storage-create&interface=cli).
+
+    ```sh
+    ibmcloud is share-create --name my-file-share --zone us-south-2 --profile dp2 --size 1000 --iops 1000
+    ```
+    {: pre}
+
+1. Create a share mount target and specify the `kube-<clusterID>` security group ID that you retrieved earlier in the `--vni-sgs` option.
+
+    ```sh
+    ibmcloud is share-mount-target-create my-file-share --subnet my-subnet --name NAME --vni-name my-share-vni-1  --vni-sgs kube-<cluster-id> --resource-group-name Default --vpc ID
+    ```
+    {: pre}
 
 1. Before you can create a persistent volume (PV), retrieve the details about your file share.
     ```sh
@@ -469,6 +498,7 @@ Create a persistent volume claim (PVC) to statically provision {{site.data.keywo
       csi:
         volumeAttributes:
           nfsServerPath: NFS-SERVER-PATH
+          isEITEnabled: true # The default is false
         driver: vpc.file.csi.ibm.io
         volumeHandle: FILE-SHARE-ID#SHARE-TARGET-ID
     ```
@@ -561,6 +591,9 @@ Create a persistent volume claim (PVC) to statically provision {{site.data.keywo
 
 Create your own customized storage class with the preferred settings for your {{site.data.keyword.filestorage_vpc_short}} instance. The following example uses the `dp2` [profile](https://cloud.ibm.com/docs/vpc?topic=vpc-file-storage-profiles&interface=ui#dp2-profile).
 
+If your cluster and VPC are not in the same resource group, you must specify the VPC resource group ID in the `resourceGroup` section and the `kube-<clusterID>` security group ID in the `securityGroupIDs` section. You can find the ID of the `kube-<clusterID>` security group by running `ibmcloud is sg kube-<cluster-id>  | grep ID`.
+{: important}
+
 
 1. Create a storage class configuration file.
 
@@ -618,6 +651,47 @@ Create your own customized storage class with the preferred settings for your {{
     
     ```sh
     ibmc-vpc-file-custom-sc                       vpc.file.csi.ibm.io
+    ```
+    {: screen}
+
+
+## Setting the default storage class
+{: #vpc-file-set-default-sc}
+
+- Changing the default storage class is only available for add-on version 2.0 or later.
+- You can set the default storage class to one of the pre-installed {{site.data.keyword.filestorage_vpc_short}} classes or your own custom storage class. If you are using a custom storage class, make sure the provisioner is set to `vpc.file.csi.ibm.io`.
+- If multiple storage classes are set as the default in a cluster, any of the default storage classes might be used. As a best practice, and to ensure the correct storage class is used, remove any existing default storage classes in the cluster before setting a new default class.
+
+
+1. Edit the `addon-vpc-file-csi-driver-configmap` configmap and specify the storage class name in `SET_DEFAULT_STORAGE_CLASS` parameter.
+    ```sh
+    oc edit cm addon-vpc-file-csi-driver-configmap -n kube-system
+    ```
+    {: pre}
+
+    Example output
+    ```sh
+    SET_DEFAULT_STORAGE_CLASS: "ibmc-vpc-file-eit"
+    ```
+    {: screen}
+
+1. Verify the default is set correctly by describing the `file-csi-driver-status` configmap.
+    ```sh
+    oc describe cm file-csi-driver-status -n kube-system
+    ```
+    {: pre}
+
+
+    Example output.
+    ```sh
+    events:
+    ----
+    - event: EnableVPCFileCSIDriver
+      description: 'VPC File CSI Driver enable successful, DriverVersion: v2.0.6'
+      timestamp: "2024-09-20 12:01:02"
+    - event: Change default storage class request
+      description: Successfully set 'ibmc-vpc-file-eit' as default storage class
+      timestamp: "2024-09-20 12:01:36"
     ```
     {: screen}
 
@@ -745,6 +819,7 @@ Review the following information about EIT.
 - By default, file shares are [encrypted at rest](/docs/vpc?topic=vpc-file-storage-vpc-about&interface=ui#FS-encryption) with IBM-managed encryption.
 - If you choose to use encryption in-transit, you need to balance your requirements between performance and enhanced security. Encrypting data in-transit can have performance impacts due to the processing that is needed to encrypt and decrypt the data at the endpoints. 
 - EIT is not available for Secure by Default clusters and requires you the disable outbound traffic protection in clusters 4.15 and later.
+- EIT is availabe for cluster versions 4.16 and later.
 - For more information about encryption in-transit, see [VPC Encryption in Transit](https://cloud.ibm.com/docs/vpc?topic=vpc-file-storage-vpc-about&interface=ui#fs-eit).
 
 
@@ -996,6 +1071,3 @@ To limit file share access by node, zone, or resource group, you must first crea
     {: pre}
 
 1. Create a deployment that uses your PVC. Only pods deployed in the zone indicated in the rule can mount the PVC. Pods deployed on the restricted worker nodes are stuck in the Container `creating` state.
-
-
-

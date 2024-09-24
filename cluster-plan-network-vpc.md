@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2022, 2024
-lastupdated: "2024-09-19"
+lastupdated: "2024-09-23"
 
 
 keywords: kubernetes, openshift network
@@ -34,7 +34,7 @@ When you're done with this page, [try out the quiz](https://quizzes.12dekrh4l1b4
 ## Worker-to-worker communication using VPC subnets
 {: #vpc-worker-worker}
 
-Before you create a VPC cluster for the first time, you must [create a VPC subnet](https://cloud.ibm.com/vpc-ext/provision/network){: external} in each zone where you want to deploy worker nodes. A VPC subnet is a specified private IP address range (CIDR block) and configures a group of worker nodes and pods as if they are attached to the same physical wire.
+Before you create a VPC cluster for the first time, you must [create a VPC subnet](https://cloud.ibm.com/infrastructure/provision/network){: external} in each zone where you want to deploy worker nodes. A VPC subnet is a specified private IP address range (CIDR block) and configures a group of worker nodes and pods as if they are attached to the same physical wire.
 {: shortdesc}
 
 When you create a cluster, you specify an existing VPC subnet for each zone. Each worker node that you add in a cluster is deployed with a private IP address from the VPC subnet in that zone. After the worker node is provisioned, the worker node IP address persists after a `reboot` operation, but the worker node IP address changes after `replace` and `update` operations.

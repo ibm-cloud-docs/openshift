@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2024
-lastupdated: "2024-06-03"
+lastupdated: "2024-09-23"
 
 
 keywords: kubernetes, openshift, help, network, connectivity
@@ -245,7 +245,7 @@ Allowing root SSH access is a security risk. Only allow SSH access when it is re
 ### SSH into the worker on the private network
 {: #ssh-private-network}
 
-Create a new or choose an existing server instance that has access to the same private network as the worker node. For VPC clusters, the [virtual server instance](https://cloud.ibm.com/vpc-ext/compute/vs){: external} must exist in the same VPC as the worker node.
+Create a new or choose an existing server instance that has access to the same private network as the worker node. For VPC clusters, the [virtual server instance](https://cloud.ibm.com/infrastructure/compute/vs){: external} must exist in the same VPC as the worker node.
 {: shortdesc}
 
 For classic clusters, the [device](https://cloud.ibm.com/gen1/infrastructure/devices){: external} can access the worker node from any private VLAN if a [Virtual Router Function (VRF)](/docs/account?topic=account-vrf-service-endpoint&interface=ui) or [VLAN spanning](/docs/vlans?topic=vlans-vlan-spanning#vlan-spanning) is enabled. Otherwise, the device must exist on the same private VLAN as the worker node.
@@ -338,8 +338,3 @@ After you finish debugging, clean up resources to disable SSH access.
     {: pre}
 
 3. [Reload your classic worker node](/docs/openshift?topic=openshift-kubernetes-service-cli#cs_worker_reload) or [replace your VPC worker node](/docs/openshift?topic=openshift-kubernetes-service-cli#cli_worker_replace) so that the original SSH configuration is used and the SSH key that you added is removed.
-
-
-
-
-

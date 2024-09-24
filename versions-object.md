@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2024
-lastupdated: "2024-08-29"
+lastupdated: "2024-09-23"
 
 
 keywords: openshift, {{site.data.keyword.openshiftlong_notm}}, object storage, plug-in, change log
@@ -28,10 +28,18 @@ View information for updates to the {{site.data.keyword.cos_full_notm}} plug-in 
 
 | {{site.data.keyword.cos_full_notm}} plug-in version | Supported? |
 | --- | --- |
+| 2.2.31 | Yes |
 | 2.2.30 | Yes |
-| 2.2.29 | Yes |
-| 2.2.28 | Yes |
 {: caption="{{site.data.keyword.cos_full_notm}} plug-in versions" caption-side="bottom"}
+
+## Change log for version 2.2.31, released 24 September 2024
+{: #02231_object_plugin}
+
+- Updates `s3fs-fuse` to `v1.94`.
+- Updates golang to `1.22.7`.
+- Resolves [CVE-2024-34158](https://nvd.nist.gov/vuln/detail/CVE-2024-34158){: external}, [CVE-2024-34155](https://nvd.nist.gov/vuln/detail/CVE-2024-34155){: external}, and [CVE-2024-34156](https://nvd.nist.gov/vuln/detail/CVE-2024-34156){: external}.
+
+
 
 ## Change log for version 2.2.30, released 29 August 2024
 {: #02230_object_plugin}

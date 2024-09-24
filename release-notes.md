@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2024
-lastupdated: "2024-09-23"
+lastupdated: "2024-09-24"
 
 
 keywords: kubernetes, release notes, openshift, {{site.data.keyword.openshiftlong_notm}}
@@ -30,12 +30,16 @@ Looking for {{site.data.keyword.cloud_notm}} status, platform announcements, sec
 ## September 2024
 {: #openshift-sep24}
 
-### 20 September 2024
-{: #openshift-sep2024}
+### 24 September 2024
+{: #openshift-sep2424}
 {: release-note}
 
-{{site.data.keyword.openshiftlong_notm}} version 1.31 Kubernetes certification
-:   {{site.data.keyword.openshiftlong_notm}} version [1.31](/docs/containers?topic=containers-cs_versions_131) is now Kubernetes certified.
+
+
+{{site.data.keyword.cos_full_notm}} plug-in updates.
+:   For more information, see the [change log](/docs/openshift?topic=openshift-cos_plugin_changelog).
+
+
 
 
 

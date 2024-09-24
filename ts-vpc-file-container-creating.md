@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2024, 2024
-lastupdated: "2024-03-27"
+lastupdated: "2024-09-23"
 
 
 keywords: openshift, {{site.data.keyword.openshiftlong_notm}}, storage, container creating, file
@@ -72,22 +72,29 @@ A temporary network outage might cause file shares to be unreachable and unmount
 Complete the following steps to resolve the issue.
 {: tsResolve}
 
-1. Restart the `ibm-vpc-file-csi-node` daemonset.
-    ```sh
-    kubectl rolloutrestart daemonset ibm-vpc-file-csi-node
-    ```
-    {: pre}
+New security group rules were introduced in versions 4.11 and later. These rule changes mean you must sync your security groups before you can use {{site.data.keyword.filestorage_vpc_short}}. If your cluster was initially created at version 4.11 or earlier, run the following commands to sync your security group settings.
+{: important}
 
-1. Wait a few minutes for the daemonset to restart.                                                                
+* If your cluster was initially created at version 4.11 or earlier:
 
-1. Retry your app deployment.
+    1. Get the ID of your cluster.
+        ```sh
+        ibmcloud oc cluster ls
+        ```
+        {: pre}
 
-1. Reboot the worker node.
-    ```sh
-    ibmcloud oc worker reboot -c CLUSTER -w WORKER
-    ```
-    {: pre}
+    1. Get the ID of the `kube-<clusterID>` security group.
+        ```sh
+        ibmcloud is sg kube-<cluster-id>  | grep ID
+        ```
+        {: pre}
+
+    1. Sync the `kube-<clusterID>` security group by using the ID that you retrieved in the previous step.
+        ```sh
+        ibmcloud ks security-group sync -c <cluster ID> --security-group <ID>
+        ```
+        {: pre}
+
+* If your cluster was created at version 4.11 and later, verify that the worker node where pod is deployed is allowlisted in the VNI security group.
 
 1. If the issue persists, contact support. Open a [support case](/docs/get-support?topic=get-support-using-avatar). In the case details, be sure to include any relevant log files, error messages, or command outputs.
-
-

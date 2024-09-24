@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2022, 2024
-lastupdated: "2024-07-23"
+lastupdated: "2024-09-23"
 
 
 keywords: openshift, {{site.data.keyword.openshiftlong_notm}}, add-on, file
@@ -21,7 +21,7 @@ subcollection: openshift
 
 [Virtual Private Cloud]{: tag-vpc}
 
-{{site.data.keyword.filestorage_vpc_full_notm}} is persistent, fast, and flexible network-attached, NFS-based {{site.data.keyword.filestorage_vpc_short}} that you can add to your apps by using Kubernetes persistent volumes claims (PVCs). You can choose between predefined storage classes that meet the GB sizes and IOPS that meet the requirements of your workloads. To find out if {{site.data.keyword.filestorage_vpc_short}} is the correct storage option for you, see [Choosing a storage solution](/docs/openshift?topic=openshift-storage-plan). For pricing information, see [Pricing](https://cloud.ibm.com/vpc-ext/provision/fileShare){: external}.
+{{site.data.keyword.filestorage_vpc_full_notm}} is persistent, fast, and flexible network-attached, NFS-based {{site.data.keyword.filestorage_vpc_short}} that you can add to your apps by using Kubernetes persistent volumes claims (PVCs). You can choose between predefined storage classes that meet the GB sizes and IOPS that meet the requirements of your workloads. To find out if {{site.data.keyword.filestorage_vpc_short}} is the correct storage option for you, see [Choosing a storage solution](/docs/openshift?topic=openshift-storage-plan). For pricing information, see [Pricing](https://cloud.ibm.com/infrastructure/provision/fileShare){: external}.
 {: shortdesc}
 
 The {{site.data.keyword.filestorage_vpc_short}} cluster add-on is available in Beta. 
@@ -104,4 +104,3 @@ Review the following links to continue setting up {{site.data.keyword.filestorag
 - [Managing {{site.data.keyword.filestorage_vpc_short}}](/docs/openshift?topic=openshift-storage-file-vpc-managing).
 - [Creating your own storage class](/docs/openshift?topic=openshift-storage-file-vpc-apps#storage-file-vpc-custom-sc).
 - [{{site.data.keyword.filestorage_vpc_short}} storage class reference](/docs/openshift?topic=openshift-storage-file-vpc-sc-ref).
-

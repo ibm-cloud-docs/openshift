@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2024
-lastupdated: "2024-06-14"
+lastupdated: "2024-09-24"
 
 
 keywords: openshift, adding object storage, adding storage to cluster, adding pvc, persistent volume claim, object storage pvc
@@ -16,7 +16,7 @@ subcollection: openshift
 
 
 
-# Adding object storage to apps
+# Deploying an app that uses COS
 {: #storage_cos_apps}
 
 Create a persistent volume claim (PVC) to provision {{site.data.keyword.cos_full_notm}} for your cluster.

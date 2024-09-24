@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2024
-lastupdated: "2024-08-06"
+lastupdated: "2024-09-23"
 
 
 keywords: openshift, {{site.data.keyword.openshiftlong_notm}}, iro, openshift, red hat, red hat openshift
@@ -125,7 +125,7 @@ Review the following factors that impact public bandwidth charges:
 * **Pay-As-You-Go for VM**: Because VMs are billed at an hourly rate, your VM worker node machines have a Pay-As-You-Go allocation of outbound networking based on GB usage.
 * **Included bandwidth and tiered packages for BM**: Bare metal worker nodes might come with a certain allocation of outbound networking per month that varies by geography: 20 TB for North America and Europe, or 5 TB for Asia Pacific and South America. After you exceed your included bandwidth, you are charged according to a tiered usage scheme for your geography. If you exceed a tier allotment, you might also be charged a standard data transfer fee.
 
-**VPC clusters**: For more information about how internet data transfer works in your Virtual Private Cloud, see [Pricing for VPC](https://cloud.ibm.com/vpc-ext/provision/vs){: external}.
+**VPC clusters**: For more information about how internet data transfer works in your Virtual Private Cloud, see [Pricing for VPC](https://cloud.ibm.com/infrastructure/provision/vs){: external}.
 
 ### Subnet IP addresses
 {: #subnet_ips}
@@ -135,7 +135,7 @@ Subnets for {{site.data.keyword.openshiftlong_notm}} clusters vary by infrastruc
 
 **Classic clusters**: When you create a standard cluster, a portable public subnet with 8 public IP addresses is ordered and charged to your account monthly. For pricing information, see the [Subnets and IPs](/docs/subnets) documentation or estimate your costs in the [classic subnets console)](https://cloud.ibm.com/classic/network/subnet/provision){: external}.  If you already have available portable public subnets in your infrastructure account, you can use these subnets instead. Create the cluster with the `--no-subnets` [flag](/docs/openshift?topic=openshift-kubernetes-service-cli#cs_cluster_create), and then [reuse your subnets](/docs/openshift?topic=openshift-subnets#subnets_custom).
 
-**VPC clusters**: For more information about charges for floating IPs and other networking costs, see [Pricing for VPC](https://cloud.ibm.com/vpc-ext/provision/vs){: external}.
+**VPC clusters**: For more information about charges for floating IPs and other networking costs, see [Pricing for VPC](https://cloud.ibm.com/infrastructure/provision/vs){: external}.
 
 ### Multizone load balancer
 {: #mzlb_pricing}
@@ -145,7 +145,7 @@ When you create a multizone cluster or add zones to a single zone cluster, you m
 
 The type of load balancer that is automatically created varies depending on the type of cluster.
 * **Classic clusters**: An Akamai MZLB is automatically created for each multizone cluster. You can view the hourly rate in the pricing summary when you create the cluster.
-* **VPC clusters**: A Load Balancer for VPC is automatically created in your VPC for your cluster. For cost information, see [Pricing for Load Balancer for VPC](https://cloud.ibm.com/vpc-ext/provision/vs){: external}.
+* **VPC clusters**: A Load Balancer for VPC is automatically created in your VPC for your cluster. For cost information, see [Pricing for Load Balancer for VPC](https://cloud.ibm.com/infrastructure/provision/vs){: external}.
 
 
 
@@ -198,10 +198,10 @@ This information applies to VPC worker nodes only.
 Regional uplift charges
 :    When you create a cluster on VPC infrastructure, the worker nodes might incur an uplift charge that varies by the [multizone location](/docs/openshift?topic=openshift-regions-and-zones#zones-vpc) that you create the cluster in. The uplift charge is a percentage (`%`) of the hourly rate (`r`), and is added to the hourly rate of the worker node. The total hourly rate cost for a worker node can be calculated as `r + (r × %)`. In the cluster creation console, this uplift is reflected in the pricing calculator as you configure your cluster details. The following table describes the pricing uplift by region.
 
-:    For a table that describes the pricing uplift by region, see [Regional pricing for VPC](https://cloud.ibm.com/vpc-ext/provision/vs){: external}.
+:    For a table that describes the pricing uplift by region, see [Regional pricing for VPC](https://cloud.ibm.com/infrastructure/provision/vs){: external}.
 
 Sustained usage discounts
-:    For virtual server instances that are billed at an hourly rate, discounted prices depend on how long the instance runs during the billing month. For more information, expand the **Sustained usage discounts on {{site.data.keyword.cloud_notm}} {{site.data.keyword.vsi_is_short}}** section on the [Pricing for VPC](https://cloud.ibm.com/vpc-ext/provision/vs){: external} page.
+:    For virtual server instances that are billed at an hourly rate, discounted prices depend on how long the instance runs during the billing month. For more information, expand the **Sustained usage discounts on {{site.data.keyword.cloud_notm}} {{site.data.keyword.vsi_is_short}}** section on the [Pricing for VPC](https://cloud.ibm.com/infrastructure/provision/vs){: external} page.
 
 ## Estimating costs
 {: #costs-estimate}
@@ -252,5 +252,3 @@ Looking for an estimate? Try the [Cost estimator](/docs/billing-usage?topic=bill
 | Worker node management fee | Per vCPU hour of the hosts that are assigned to the cluster as worker nodes. | Per vCPU hour of the hosts that are assigned to the cluster as worker nodes. | The benefits of {{site.data.keyword.satellitelong_notm}}, such as to create the cluster on any compatible infrastructure that you want; tooling to consistently deploy apps, storage drivers, and endpoints across the location; integration with {{site.data.keyword.cloud_notm}} platform tooling such as IAM; continuous monitoring by {{site.data.keyword.IBM_notm}} Site Reliability Engineers; access to {{site.data.keyword.cloud_notm}} support; and more. |
 | OCP licensing fee | Per vCPU hour. You can either purchase a license during cluster creation or bring your own. | Per vCPU hour. You can either purchase a license during cluster creation or bring your own. |
 {: caption="Red Hat OpenShift cluster on Satellite charges." caption-side="bottom"}
-
-
