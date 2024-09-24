@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2024
-lastupdated: "2024-09-23"
+lastupdated: "2024-09-24"
 
 
 keywords: openshift, {{site.data.keyword.openshiftlong_notm}}, kubernetes, help, network, connectivity
@@ -26,7 +26,7 @@ content-type: troubleshoot
 
 [Virtual Private Cloud]{: tag-vpc} [Classic infrastructure]{: tag-classic-inf}
 
-The following steps apply to the {{site.data.keyword.cos_full_notm}} plug-in only. If you are using the cluster add-on, see [Why do I see transport endpoint not connected errors?](/docs/openshift?topic=openshift-cos_transport_ts_connect_addon) instead.
+The following steps apply to the {{site.data.keyword.cos_full_notm}} plug-in only.
 {: important}
 
 
