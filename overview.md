@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2024
-lastupdated: "2024-09-19"
+lastupdated: "2024-09-24"
 
 
 keywords: openshift, {{site.data.keyword.openshiftlong_notm}}, kubernetes, infrastructure, rbac, policy, providers, benefits
@@ -22,6 +22,7 @@ Learn more about [{{site.data.keyword.openshiftlong}}](https://www.ibm.com/produ
 {: shortdesc}
 
 {{site.data.keyword.openshiftlong_notm}} is a managed offering to create your own {{site.data.keyword.redhat_openshift_notm}} cluster of compute hosts to deploy and manage containerized apps on {{site.data.keyword.cloud_notm}}. {{site.data.keyword.openshiftlong_notm}} provides intelligent scheduling, self-healing, horizontal scaling, service discovery and load balancing, automated rollouts and rollbacks, and secret and configuration management for your apps. Combined with an intuitive user experience, built-in security and isolation, and advanced tools to secure, manage, and monitor your cluster workloads, you can rapidly deliver highly available and secure containerized apps in the public cloud.
+{: #overview-iks}
 
 
 Review frequently asked questions and key technologies that {{site.data.keyword.openshiftlong_notm}} uses.
@@ -97,7 +98,8 @@ For more information, see the [Docker documentation](https://docs.docker.com/){:
 ## What is {{site.data.keyword.redhat_openshift_notm}}?
 {: #what-is-openshift-overview}
 
-{{site.data.keyword.redhat_openshift_notm}} is a Kubernetes container platform that provides a trusted environment to run enterprise workloads. It extends the Kubernetes platform with built-in software to enhance app lifecycle development, operations, and security. With {{site.data.keyword.redhat_openshift_notm}}, you can consistently deploy your workloads across hybrid cloud providers and environments. For more information about the differences between the community Kubernetes and {{site.data.keyword.redhat_openshift_notm}} cluster offerings, see the [comparison table](/docs/openshift?topic=openshift-overview#openshift_kubernetes).
+{{site.data.keyword.redhat_openshift_notm}} is a Kubernetes container platform that provides a trusted environment to run enterprise workloads. It extends the Kubernetes platform with built-in software to enhance app lifecycle development, operations, and security. With {{site.data.keyword.redhat_openshift_notm}}, you can consistently deploy your workloads across hybrid cloud providers and environments. 
+{: #what-is-openshift-overview-par}
 
 ## What compute host infrastructure does {{site.data.keyword.openshiftlong_notm}} offer?
 {: #what-compute-infra-is-offered}
@@ -271,6 +273,7 @@ Both {{site.data.keyword.openshiftlong_notm}} and {{site.data.keyword.containerl
 |Preferred external traffic networking| Ingress | Router |
 |Secured routes encrypted with {{site.data.keyword.hscrypto}} | | Yes |
 {: caption="Characteristics of Kubernetes and {{site.data.keyword.redhat_openshift_notm}} clusters" caption-side="bottom"}
+{: #iks-os-table}
 
 
 
