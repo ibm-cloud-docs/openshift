@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2024, 2024
-lastupdated: "2024-08-21"
+lastupdated: "2024-09-24"
 
 
 keywords: openshift, rclone, migrate
@@ -16,25 +16,76 @@ subcollection: openshift
 
 
 
-# Migrating Cloud Object Storage (COS) resources between IBM Cloud accounts
-{: #storage-rclone-migration}
+# Migrating Cloud Object Storage (COS) apps and data between IBM Cloud accounts
+{: #storage-cos-app-migration}
 
-Complete the following steps to move the contents of a COS bucket in one account to a COS bucket in a separate account.
+[Classic infrastructure]{: tag-classic-inf} [Virtual Private Cloud]{: tag-vpc}
+
+In this tutorial, you'll migrate a COS app and data from {{site.data.keyword.containerlong_notm}} cluster in one account, to an {{site.data.keyword.openshiftlong_notm}} cluster in a separate account.
+
 
 ## Prerequisites
-{: #rclone-migration-prereqs}
+{: #cos-migration-prereqs}
+
+### Account 1
+{: #cos-mig-account-1-prereqs}
+
+In the first account, you must have the following.
+
+* An {{site.data.keyword.containerlong_notm}} cluster.
+
+* A COS instance and a set of HMAC credentials. For more information, see [Service credentials](/docs/cloud-object-storage?topic=cloud-object-storage-service-credentials).
+
+* The [COS plug-in installed in your cluster](/docs/containers?topic=containers-storage_cos_install).
+
+* An app that uses COS and writes data to a bucket in your instance. To deploy an app, see [Adding object storage to apps](/docs/containers?topic=containers-storage_cos_apps).
 
 
-* A COS bucket with HMAC credentials for each instance of Cloud Object Storage that you are migrating between. For more information, see [Service credentials](/docs/cloud-object-storage?topic=cloud-object-storage-service-credentials).
+### Account 2
+{: #cos-mig-account-2-prereqs}
 
-* Install `rclone`. For more information, see the [docs](https://rclone.org/install/).
+In the second account, the destination account for where you will migrate to, you must have the following.
+
+* A {{site.data.keyword.openshiftlong_notm}} cluster.
+
+* The [COS plug-in installed in your cluster](/docs/openshift?topic=openshift-storage_cos_install).
+
+* A COS instance and a set of HMAC credentials. For more information, see [Service credentials](/docs/cloud-object-storage?topic=cloud-object-storage-service-credentials).
+
+* An empty bucket in your COS instance.
+
+## Get the details of your apps
+{: #cos-mig-app-details}
+{: step}
+
+1. List the pods and PVCs.
+    ```sh
+    oc get pods
+    ```
+    {: pre}
+
+1. Describe your PVC and review the details.
+    ```sh
+    oc describe PVC -o yaml
+    ```
+    {: pre}
 
 
-## Configuring `rclone`
+
+## Install `rclone`
+{: #rclone-install}
+{: step}
+
+Follow the `rclone` docs for [installation steps](https://rclone.org/install/).
+
+
+## Configure `rclone`
 {: #rclone-config}
+{: step}
 
+After you have `rclone` installed, you must generate a configuration file that defines the 2 COS instances that you want to migrate data between.
 
-1. After you have `rclone` installed, you must generate a configuration file that defines the 2 COS instances. You can do this by running the command `rclone config` command.
+1. Run the `rclone config` command.
 
     ```sh
     rclone config
@@ -240,14 +291,15 @@ Complete the following steps to move the contents of a COS bucket in one account
     ```
     {: screen}
 
-1. Complete the previous steps again to add your second COS instance and when you've verified that everything looks correct choose q to quit the configuration process.
+1. Repeat the previous steps to add the COS instance in your second account. When you've verified the information, press `q` to quit the configuration process.
 
 
 ## Syncing between COS buckets
 {: #rclone-inspect}
+{: step}
 
 
-After configuring `rclone`, you can now sync between buckets. But first, review the contents of each bucket.
+After configuring `rclone`, review the contents of each bucket and then sync the data between buckets in each account.
 
 1. View the contents of the bucket in the first instance.
 
@@ -284,6 +336,7 @@ After configuring `rclone`, you can now sync between buckets. But first, review 
 
 ## Syncing contents between buckets
 {: #rclone-sync}
+{: step}
 
 
 1. To move the data from one bucket to another, you can use the `rclone sync` command. In this example `cos-instance-1:BUCKET` is in one account while `cos-instance-2:BUCKET` is a second instance of COS in a separate account.
@@ -337,8 +390,87 @@ After configuring `rclone`, you can now sync between buckets. But first, review 
     ```
     {: screen}
 
-## Next steps
-{: #rclone-next-steps}
 
-Redeploy your apps that use COS. For more information, see [Adding Object Storage to apps](/docs/openshift?topic=openshift-storage_cos_apps).
+## Create a PVC
+{: #cos-app-redploy}
+{: step}
 
+Redeploy your apps that use COS.
+
+1. Copy the following PVC and save it to a file called `pvc.yaml`
+
+    ```yaml
+    kind: PersistentVolumeClaim
+    apiVersion: v1
+    metadata:
+      name: <name> # Enter the name of the PVC.
+      namespace: <namespace> # Enter the namespace where you want to create the PVC. The PVC must be created in the same namespace where you created the Kubernetes secret for your service credentials and where you want to run your pod.
+      annotations:
+        ibm.io/auto-create-bucket: "false" # Enter false.
+        ibm.io/auto-delete-bucket: "<false"
+        ibm.io/bucket: "<bucket_name>" # Enter the name of the bucket in Account 2.
+        ibm.io/object-path: "<bucket_subdirectory>"
+        ibm.io/quota-limit: "true/false" # Disable or enable a quota limit for your PVC. To use this annotation you must specify the -set quotaLimit=true option during installation.
+        ibm.io/endpoint: "https://<s3fs_service_endpoint>"
+        ibm.io/tls-cipher-suite: "default"
+        ibm.io/secret-name: "<secret_name>" # The name of your Kubernetes secret that you created. 
+        ibm.io/secret-namespace: "<secret-namespace>" # By default, the COS plug-in searches for your secret in the same namespace where you create the PVC. If you created your secret in a namespace other than the namespace where you want to create your PVC, enter the namespace where you created your secret.
+        ibm.io/add-mount-param: "<option-1>,<option-2>" # s3fs mount options
+        ibm.io/access-policy-allowed-ips: "XX.XXX.XX.XXX, XX.XX.XX.XXX, XX.XX.XX.XX" # A csv of allow listed IPs.
+    spec:
+      accessModes:
+        - ReadWriteOnce
+      resources:
+        requests:
+          storage: <size> # Enter the size of the PVC that you retrieved earlier.
+      storageClassName: <storage_class> # Enter the name of the storage class that you retrieved earlier.
+      ```
+      {: codeblock}
+
+1. Create the PVC in your cluster.
+    ```sh
+    oc apply -f pvc.yaml
+    ```
+    {: pre}
+
+## Redeploy your app
+{: #cos-mig-redeploy-app}
+{: step}
+
+1. Save the following configuration to a file called `deployment.yaml`.
+    ```yaml
+    apiVersion: apps/v1
+    kind: Deployment
+    metadata:
+      name: <deployment_name>
+      labels:
+        app: <deployment_label>
+    spec:
+      selector:
+        matchLabels:
+          app: <app_name>
+      template:
+        metadata:
+          labels:
+            app: <app_name>
+        spec:
+          containers:
+          - image: <image_name>
+            name: <container_name>
+            securityContext:
+              runAsUser: <non_root_user>
+            volumeMounts:
+            - name: <volume_name>
+              mountPath: /<file_path>
+          volumes:
+          - name: <volume_name>
+            persistentVolumeClaim:
+              claimName: <pvc_name> # Enter the name of the PVC that you created in the previous step.
+    ```
+    {: codeblock}
+
+1. Create the deployment.
+    ```sh
+    oc create -f deployment.yaml
+    ```
+    {: pre}

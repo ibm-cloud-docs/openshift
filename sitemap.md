@@ -5109,7 +5109,7 @@ subcollection: openshift
 
 * [Verifying your installation](/docs/openshift?topic=openshift-storage_cos_install#cos-plugin-verify)
 
-[Adding object storage to apps](/docs/openshift?topic=openshift-storage_cos_apps#storage_cos_apps)
+[Deploying an app that uses COS](/docs/openshift?topic=openshift-storage_cos_apps#storage_cos_apps)
 
 * [Creating a deployment](/docs/openshift?topic=openshift-storage_cos_apps#create-cos-deployment-steps)
 
@@ -5139,17 +5139,27 @@ subcollection: openshift
 
 [VPC: Setting up authorized IP addresses for {{site.data.keyword.cos_full_notm}}](/docs/openshift?topic=openshift-storage_cos_vpc_ip#storage_cos_vpc_ip)
 
-[Migrating Cloud Object Storage (COS) resources between IBM Cloud accounts](/docs/openshift?topic=openshift-storage-rclone-migration#storage-rclone-migration)
+[Migrating Cloud Object Storage (COS) apps and data between IBM Cloud accounts](/docs/openshift?topic=openshift-storage-cos-app-migration#storage-cos-app-migration)
 
-* [Prerequisites](/docs/openshift?topic=openshift-storage-rclone-migration#rclone-migration-prereqs)
+* [Prerequisites](/docs/openshift?topic=openshift-storage-cos-app-migration#cos-migration-prereqs)
 
-* [Configuring `rclone`](/docs/openshift?topic=openshift-storage-rclone-migration#rclone-config)
+    * [Account 1](/docs/openshift?topic=openshift-storage-cos-app-migration#cos-mig-account-1-prereqs)
 
-* [Syncing between COS buckets](/docs/openshift?topic=openshift-storage-rclone-migration#rclone-inspect)
+    * [Account 2](/docs/openshift?topic=openshift-storage-cos-app-migration#cos-mig-account-2-prereqs)
 
-* [Syncing contents between buckets](/docs/openshift?topic=openshift-storage-rclone-migration#rclone-sync)
+* [Get the details of your apps](/docs/openshift?topic=openshift-storage-cos-app-migration#cos-mig-app-details)
 
-* [Next steps](/docs/openshift?topic=openshift-storage-rclone-migration#rclone-next-steps)
+* [Install `rclone`](/docs/openshift?topic=openshift-storage-cos-app-migration#rclone-install)
+
+* [Configure `rclone`](/docs/openshift?topic=openshift-storage-cos-app-migration#rclone-config)
+
+* [Syncing between COS buckets](/docs/openshift?topic=openshift-storage-cos-app-migration#rclone-inspect)
+
+* [Syncing contents between buckets](/docs/openshift?topic=openshift-storage-cos-app-migration#rclone-sync)
+
+* [Create a PVC](/docs/openshift?topic=openshift-storage-cos-app-migration#cos-app-redploy)
+
+* [Redeploy your app](/docs/openshift?topic=openshift-storage-cos-app-migration#cos-mig-redeploy-app)
 
 [Storage class reference](/docs/openshift?topic=openshift-storage_cos_reference#storage_cos_reference)
 
