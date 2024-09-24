@@ -75,9 +75,9 @@ To dive deeper into Kubernetes, see the [Kubernetes documentation](https://kuber
 ## What are containers?
 {: #what-are-containers-overview}
 
-Containers provide a standard way to package your application's code, configurations, and dependencies into a single unit that can run as a resource-isolated process on a compute server. To run your app in Kubernetes on {{site.data.keyword.openshiftlong_notm}}, you must first containerize your app by creating a container image that you store in a container registry.
+Containers provide a standard way to package your application's code, configurations, and dependencies into a single unit that can run as a resource-isolated process on a compute server. To run your app on {{site.data.keyword.cloud_notm}}, you must first containerize your app by creating a container image that you store in a container registry.
 
-Built on existing Linux container technology (LXC), the open source project that is named Docker defined templates for how to package software into standardized units, called containers, that include all the elements that an app needs to run. {{site.data.keyword.openshiftlong_notm}} uses `cri-o` as the container runtime to deploy containers from Docker container images into your cluster.
+Built on existing Linux container technology (LXC), the open source project that is named Docker defined templates for how to package software into standardized units, called containers, that include all the elements that an app needs to run. For example, {{site.data.keyword.openshiftlong_notm}} uses `cri-o` as the container runtime to deploy containers from Docker container images into a cluster.
 
 
 Image
@@ -202,48 +202,7 @@ Your {{site.data.keyword.redhat_openshift_notm}} workloads can scale across IBMâ
 Ready to get started? Try out the [creating a {{site.data.keyword.openshiftlong_notm}} cluster tutorial](/docs/openshift?topic=openshift-openshift_tutorial).
 
 
-Choice of container platform provider
-:   Deploy clusters with **{{site.data.keyword.redhat_openshift_notm}}** or community **Kubernetes** installed as the container platform orchestrator.
-:   Choose the developer experience that fits your company, or run workloads across both {{site.data.keyword.redhat_openshift_notm}} or community Kubernetes clusters.
-:   Built-in integrations from the {{site.data.keyword.cloud_notm}} console to the Kubernetes dashboard or {{site.data.keyword.redhat_openshift_notm}} web console.
-:   Single view and management experience of all your {{site.data.keyword.redhat_openshift_notm}} or community Kubernetes clusters from {{site.data.keyword.cloud_notm}}. For more information, see Comparison between [{{site.data.keyword.redhat_openshift_notm}}](#openshift_kubernetes) and community Kubernetes clusters.
-
-
-Single-tenant Kubernetes clusters with compute, network, and storage infrastructure isolation
-:  Create your own customized infrastructure that meets the requirements of your organization.
-:  Choose between [infrastructure providers](/docs/openshift?topic=openshift-overview#what-compute-infra-is-offered).
-:   Provision a dedicated and secured {{site.data.keyword.redhat_openshift_notm}} master, worker nodes, virtual networks, and storage by using the resources provided by IBM Cloud infrastructure.
-:   Fully managed Kubernetes master that is continuously monitored and updated by {{site.data.keyword.IBM_notm}} to keep your cluster available.
-:   Option to provision worker nodes as bare metal servers for compute-intensive workloads such as data, GPU, and AI.
-:   Store persistent data, share data between Kubernetes pods, and restore data when needed with the integrated and secure volume service.
-:   Benefit from full support for all native Kubernetes APIs.
-
-Multizone clusters to increase high availability
-:   Easily manage worker nodes of the same flavor (CPU, memory, virtual or physical) with worker pools.
-:   Guard against zone failure by spreading nodes evenly across select multizones and by using anti-affinity pod deployments for your apps.
-:   Decrease your costs by using multizone clusters instead of duplicating the resources in a separate cluster.
-:   Benefit from automatic load balancing across apps with the multizone load balancer (MZLB) that is set up automatically for you in each zone of the cluster.
-
-
-Highly available masters
-:   Reduce cluster downtime such as during master updates with highly available masters that are provisioned automatically when you create a cluster.
-:   Spread your masters across zones in a multizone cluster to protect your cluster from zonal failures.
-
-Image security compliance with Vulnerability Advisor
-:   Set up your own repo in a secured Docker private image registry where images are stored and shared by all users in the organization.
-:   Benefit from automatic scanning of images in your private {{site.data.keyword.cloud_notm}} registry.
-:   Review recommendations specific to the operating system used in the image to fix potential vulnerabilities.
-
-Continuous monitoring of the cluster health
-:   Use the cluster dashboard to quickly see and manage the health of your cluster, worker nodes, and container deployments.
-:   Find detailed consumption metrics by using {{site.data.keyword.mon_full}} and quickly expand your cluster to meet work loads.
-:   Review logging information by using {{site.data.keyword.la_full}} to see detailed cluster activities.
-
-Secure exposure of apps to the public
-:   Choose between a public IP address, an {{site.data.keyword.IBM_notm}} provided route, or your own custom domain to access services in your cluster from the internet.
-
-{{site.data.keyword.cloud_notm}} service integration
-:   Add extra capabilities to your app through the integration of {{site.data.keyword.cloud_notm}} services, such as {{site.data.keyword.watson}} APIs, Blockchain, data services, or Internet of Things.
+{{_include-segments/service-benefits.md}}
 
 
 ## Comparison between {{site.data.keyword.redhat_openshift_notm}} and Kubernetes clusters
