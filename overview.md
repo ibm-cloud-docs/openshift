@@ -78,8 +78,6 @@ To dive deeper into Kubernetes, see the [Kubernetes documentation](https://kuber
 
 Containers provide a standard way to package your application's code, configurations, and dependencies into a single unit that can run as a resource-isolated process on a compute server. To run your app on {{site.data.keyword.cloud_notm}}, you must first containerize your app by creating a container image that you store in a container registry.
 
-Built on existing Linux container technology (LXC), the open source project that is named Docker defined templates for how to package software into standardized units, called containers, that include all the elements that an app needs to run. For example, {{site.data.keyword.openshiftlong_notm}} uses `cri-o` as the container runtime to deploy containers from Docker container images into a cluster.
-
 
 Image
 :   A container image is the base for every container that you want to run. Container images are built from a Dockerfile, a text file that defines how to build the image and which build artifacts to include in it, such as the app, the app configuration, and its dependencies. Images are always built from other images, making them quick to configure. Let someone else do the bulk of the work on an image and then tweak it for your use.
@@ -89,10 +87,6 @@ Registry
 
 Container
 :   Every container is created from an image. A container is a packaged app with all its dependencies so that the app can be moved between environments and run without changes. Unlike virtual machines, containers don't virtualize a device, its operating system, and the underlying hardware. Only the app code, run time, system tools, libraries, and settings are packaged inside the container. Containers run as isolated processes on Ubuntu compute hosts and share the host operating system and its hardware resources. This approach makes a container more lightweight, portable, and efficient than a virtual machine.
-
-
-For more information, see the [Docker documentation](https://docs.docker.com/){: external}.
-{: tip}
 
 
 

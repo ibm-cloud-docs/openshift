@@ -41,13 +41,6 @@ Looking for {{site.data.keyword.cloud_notm}} status, platform announcements, sec
 
 
 
-### 20 September 2024
-{: #openshift-sep2024}
-{: release-note}
-
-{{site.data.keyword.openshiftlong_notm}} version 1.31 Kubernetes certification
-:   {{site.data.keyword.openshiftlong_notm}} version [1.31](/docs/containers?topic=containers-cs_versions_131) is now Kubernetes certified.
-
 
 
 
