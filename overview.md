@@ -228,7 +228,7 @@ Both {{site.data.keyword.openshiftlong_notm}} and {{site.data.keyword.containerl
 |Integrated CI/CD with Jenkins| |Yes|
 |Stricter app security context set up by default| |Yes|
 |Simplified Kubernetes developer experience, with an app console that is suited for beginners| |Yes|
-|Supported operating system| [Kubernetes version information](/docs/containers?topic=containers-cs_versions). | [{{site.data.keyword.redhat_openshift_notm}} version information](/docs/openshift?topic=openshift-openshift_versions). |
+|Supported operating system| [Kubernetes version information](/docs/containers?topic=containers-cs_versions) | [{{site.data.keyword.redhat_openshift_notm}} version information](/docs/openshift?topic=openshift-openshift_versions) |
 |Preferred external traffic networking| Ingress | Router |
 |Secured routes encrypted with {{site.data.keyword.hscrypto}} | | Yes |
 {: caption="Characteristics of Kubernetes and {{site.data.keyword.redhat_openshift_notm}} clusters" caption-side="bottom"}
