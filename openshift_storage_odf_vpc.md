@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2024
-lastupdated: "2024-07-23"
+lastupdated: "2024-09-25"
 
 
 keywords: openshift, openshift data foundation, openshift container storage, ocs
@@ -43,7 +43,31 @@ Review the following prerequisites.
     You can deploy OpenShift Data Foundation on 3 worker nodes of 16 CPUs and 32 GB RAM, but you must taint your worker nodes to run only ODF pods. You can't run any additional app workloads or system pods on your ODF nodes when you use this setup.
     {: important}
 
-1. **Cluster versions 4.15 and later**: Your cluster must have public internet access. Make sure to [disable outbound traffic protection](/docs/openshift?topic=openshift-sbd-allow-outbound#existing-cluster-sbd).
+1. **Cluster versions 4.15 and later**: Your cluster must have public internet access.
+
+    1. [Disable outbound traffic protection](/docs/openshift?topic=openshift-sbd-allow-outbound#existing-cluster-sbd) in your cluster.
+        ```txt
+        ibmcloud oc vpc outbound-traffic-protection disable --cluster CLUSTER
+        ```
+        {: pre}
+
+    1. Edit OperatorHub and change `disableAllDefaultSources` to `false`.
+        ```sh
+        oc edit operatorhub cluster -n openshift-marketplace
+        ```
+        {: pre}
+
+        ```yaml
+        disableAllDefaultSources: "false"
+        ```
+        {: screen}
+    
+    1. Make sure that pods in the `openshift-marketplace` project are running before continuing.
+        ```sh
+        oc get po -n openshift-marketplace
+        ```
+        {: pre}
+
 
 
 ### Optional: Setting up an {{site.data.keyword.cos_full_notm}} service instance
@@ -644,14 +668,3 @@ Review the following limitations for deploying ODF.
 {: #ocs-reference-section}
 
 [ODF storage class reference](/docs/openshift?topic=openshift-ocs-sc-ref)
-
-
-
-
-
-
-
-
-
-
-

@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2024
-lastupdated: "2024-09-24"
+lastupdated: "2024-09-25"
 
 
 keywords: openshift, {{site.data.keyword.openshiftlong_notm}}, kubernetes, infrastructure, rbac, policy, providers, benefits
@@ -78,15 +78,16 @@ To dive deeper into Kubernetes, see the [Kubernetes documentation](https://kuber
 
 Containers provide a standard way to package your application's code, configurations, and dependencies into a single unit that can run as a resource-isolated process on a compute server. To run your app on {{site.data.keyword.cloud_notm}}, you must first containerize your app by creating a container image that you store in a container registry.
 
-
-Image
-:   A container image is the base for every container that you want to run. Container images are built from a Dockerfile, a text file that defines how to build the image and which build artifacts to include in it, such as the app, the app configuration, and its dependencies. Images are always built from other images, making them quick to configure. Let someone else do the bulk of the work on an image and then tweak it for your use.
-
-Registry
-:   An image registry is a place to store, retrieve, and share container images. Images that are stored in a registry can either be publicly available (public registry) or accessible by a small group of users (private registry). {{site.data.keyword.cloud_notm}} offers public images that you can use to create your first containerized app. When it comes to enterprise applications, use a private registry like the one that is provided in {{site.data.keyword.cloud_notm}} to protect your images from being used by unauthorized users.
+Review the following terms to get more familiar with the concepts.
 
 Container
-:   Every container is created from an image. A container is a packaged app with all its dependencies so that the app can be moved between environments and run without changes. Unlike virtual machines, containers don't virtualize a device, its operating system, and the underlying hardware. Only the app code, run time, system tools, libraries, and settings are packaged inside the container. Containers run as isolated processes on Ubuntu compute hosts and share the host operating system and its hardware resources. This approach makes a container more lightweight, portable, and efficient than a virtual machine.
+:   A container is an app that is packaged with all its dependencies so that the app can be moved between environments and run without changes. Unlike virtual machines, containers don't virtualize a device, its operating system, and the underlying hardware. Only the app code, run time, system tools, libraries, and settings are packaged inside the container. Containers run as isolated processes on compute hosts and share the host operating system and its hardware resources. This approach makes a container more lightweight, portable, and efficient than a virtual machine.
+
+Image
+:  A container image is a package that includes all of the files, configuration settings, and libraries to run a container. An image is built from a text file called a Dockerfile. Dockerfiles define how to build the image and which artifacts to include in it. The artifacts that are included in a container consist of the app code, configuration settings, and any dependencies.
+
+Registry
+:   An image registry is a place to store, retrieve, and share container images. Registries can either be publicly available to anyone or privately available to a small group of users. When it comes to enterprise applications, use a private registry like {{site.data.keyword.cloud_notm}} to protect your images from being used by unauthorized users.
 
 
 
