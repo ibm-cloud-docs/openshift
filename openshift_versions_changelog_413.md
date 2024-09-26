@@ -2,7 +2,7 @@
 
 copyright:
   years: 2023, 2024
-lastupdated: "2024-09-25"
+lastupdated: "2024-09-26"
 
 
 keywords: openshift, 4.13, update, upgrade, BOM, bill of materials, versions, patch
@@ -43,7 +43,7 @@ The following table shows the changes that are in the worker node fix pack 4.13.
 | Component | Previous | Current | Description |
 | --- | --- | --- | --- |
 | RHEL 8 Packages | N/A | N/A | Package updates for [RHSA-2024:3043](https://access.redhat.com/errata/RHSA-2024:3043){: external}, [CVE-2024-0690](https://nvd.nist.gov/vuln/detail/CVE-2024-0690){: external}. |
-| {{site.data.keyword.openshiftshort}}. | 4.13.49 | 4.13.50 | For more information, see the [change logs](https://docs.openshift.com/container-platform/4.12/release_notes/ocp-4-13-release-notes.html#ocp-4-13-50){: external}. |
+| {{site.data.keyword.openshiftshort}}. | 4.13.49 | 4.13.50 | For more information, see the [change logs](https://docs.openshift.com/container-platform/4.13/release_notes/ocp-4-13-release-notes.html#ocp-4-13-50){: external}. |
 {: caption="Changes since version 4.13.49_1590_openshift" caption-side="bottom"}
 
 
