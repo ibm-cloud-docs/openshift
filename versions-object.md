@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2024
-lastupdated: "2024-09-23"
+lastupdated: "2024-09-25"
 
 
 keywords: openshift, {{site.data.keyword.openshiftlong_notm}}, object storage, plug-in, change log
@@ -28,9 +28,15 @@ View information for updates to the {{site.data.keyword.cos_full_notm}} plug-in 
 
 | {{site.data.keyword.cos_full_notm}} plug-in version | Supported? |
 | --- | --- |
+| 2.2.32 | Yes |
 | 2.2.31 | Yes |
 | 2.2.30 | Yes |
 {: caption="{{site.data.keyword.cos_full_notm}} plug-in versions" caption-side="bottom"}
+
+## Change log for version 2.2.32, released 26 September 2024
+{: #02232_object_plugin}
+
+- Fixes a mounting issue in clusters with RHCOS worker nodes.
 
 ## Change log for version 2.2.31, released 24 September 2024
 {: #02231_object_plugin}

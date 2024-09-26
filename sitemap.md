@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2024
-lastupdated: "2024-09-25"
+lastupdated: "2024-09-26"
 
 
 keywords: openshift
@@ -274,6 +274,10 @@ subcollection: openshift
 [Release notes](/docs/openshift?topic=openshift-openshift-relnotes#openshift-relnotes)
 
 * [September 2024](/docs/openshift?topic=openshift-openshift-relnotes#openshift-sep24)
+
+    * [26 September 2024](/docs/openshift?topic=openshift-openshift-relnotes#openshift-sep2624)
+
+        * {{site.data.keyword.cos_full_notm}} plug-in updates.
 
     * [24 September 2024](/docs/openshift?topic=openshift-openshift-relnotes#openshift-sep2424)
 
@@ -7822,6 +7826,8 @@ subcollection: openshift
 
 [{{site.data.keyword.cos_full_notm}} plug-in](/docs/openshift?topic=openshift-cos_plugin_changelog#cos_plugin_changelog)
 
+* [Change log for version 2.2.32, released 26 September 2024](/docs/openshift?topic=openshift-cos_plugin_changelog#02232_object_plugin)
+
 * [Change log for version 2.2.31, released 24 September 2024](/docs/openshift?topic=openshift-cos_plugin_changelog#02231_object_plugin)
 
 * [Change log for version 2.2.30, released 29 August 2024](/docs/openshift?topic=openshift-cos_plugin_changelog#02230_object_plugin)
@@ -10124,9 +10130,9 @@ subcollection: openshift
 
 * [Where are the resources?](/docs/openshift?topic=openshift-regions-and-zones#regions_resources)
 
-    * [Resources in a single zone cluster](/docs/openshift?topic=openshift-regions-and-zones#regions_single_zone)
+    * [Resources in single zone clusters](/docs/openshift?topic=openshift-regions-and-zones#regions_single_zone)
 
-    * [Resources in a multizone cluster](/docs/openshift?topic=openshift-regions-and-zones#regions_multizone)
+    * [Resources in multizone clusters](/docs/openshift?topic=openshift-regions-and-zones#regions_multizone)
 
 * [Accessing resources](/docs/openshift?topic=openshift-regions-and-zones#endpoint)
 
