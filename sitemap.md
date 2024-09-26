@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2024
-lastupdated: "2024-09-25"
+lastupdated: "2024-09-26"
 
 
 keywords: openshift
@@ -10130,9 +10130,9 @@ subcollection: openshift
 
 * [Where are the resources?](/docs/openshift?topic=openshift-regions-and-zones#regions_resources)
 
-    * [Resources in a single zone cluster](/docs/openshift?topic=openshift-regions-and-zones#regions_single_zone)
+    * [Resources in single zone clusters](/docs/openshift?topic=openshift-regions-and-zones#regions_single_zone)
 
-    * [Resources in a multizone cluster](/docs/openshift?topic=openshift-regions-and-zones#regions_multizone)
+    * [Resources in multizone clusters](/docs/openshift?topic=openshift-regions-and-zones#regions_multizone)
 
 * [Accessing resources](/docs/openshift?topic=openshift-regions-and-zones#endpoint)
 

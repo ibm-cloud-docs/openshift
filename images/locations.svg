@@ -19,9 +19,9 @@
 </style>
 <rect class="st0" width="1080" height="540"/>
 <rect class="st1" width="1080" height="540"/>
-<text transform="matrix(1 0 0 1 64 432.2437)" class="st2 st3">Classic single zone regions</text>
+<text transform="matrix(1 0 0 1 64 432.2437)" class="st2 st3">Classic regions with one data center</text>
 <text transform="matrix(1 0 0 1 864 237.25)" class="st2 st3">Tokyo </text>
-<text transform="matrix(1 0 0 1 64 468.5703)" class="st2 st3">Classic + VPC multizone regions</text>
+<text transform="matrix(1 0 0 1 64 468.5703)" class="st2 st3">Classic regions + VPC multizone regions</text>
 <path class="st4" d="M734.2,238.3h-0.4v0.4h0.4V238.3z"/>
 <path class="st4" d="M734.2,238.3h-0.4v0.4h0.4V238.3z"/>
 <path class="st5" d="M682.5,108.6h0.8L683,109L682.5,108.6z"/>

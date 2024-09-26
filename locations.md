@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2024
-lastupdated: "2024-09-23"
+lastupdated: "2024-09-26"
 
 
 keywords: openshift, mzr, szr, multizone, multi az
@@ -30,14 +30,16 @@ This image is an artistic representation and does not reflect actual political o
 ## {{site.data.keyword.openshiftlong_notm}} locations
 {: #locations}
 
-You can deploy {{site.data.keyword.openshiftlong}} clusters worldwide. When you create a cluster, its resources remain in the location that you deploy the cluster to. To work with your cluster, you can access the service via a global API endpoint.
+Availability of a cluster is based on the type of cluster it is and how many replicas of the resources you have.
 {: shortdesc}
 
+The term `zone` in this document refers to different things depending the type of infrastructure being used. For VPC, the term `zone` refers to the zone names within an MZR, such as `us-south-1`. For Classic infrastructure, the term `zone` refers to a Classic data center, such as `dal10`. 
+{: tip}
 
 ### Classic regions with multiple data centers
 {: #zones-mz}
 
-If you create a classic cluster with multiple data centers, the replicas of your highly available Kubernetes master are automatically spread across the data centers. You have the option to spread your worker nodes across zones to protect your apps from a zone failure. To determine whether a location has a multizone region, your can run `ibmcloud oc locations` and look for the value in the `Multizone Metro` column.
+If you create a classic cluster with multiple data centers, the replicas of the highly available Kubernetes master are automatically spread across the data centers. You have the option to spread your worker nodes across classic zones (data centers) to protect your apps from a zone failure. To determine whether a classic region has multiple data centers from the CLI, your can run `ibmcloud oc locations` and look for the value in the `Multizone Metro` column.
 {: shortdesc}
 
 | Geography | Country | Metro | Region | Zones |
@@ -59,10 +61,10 @@ If you create a classic cluster with multiple data centers, the replicas of your
 ### Classic regions with one data center
 {: #zones-sz}
 
-If you create a classic cluster in a region with only one data center, the highly available master includes three replicas on separate hosts, but is not spread across zones.
+If you create a classic cluster in a region with only one data center, the highly available master includes three replicas on separate hosts, but is not spread across classic zones.
 {: shortdesc}
 
-Classic single zone clusters are managed from the regional endpoint located in the nearest region that supports classic multizone, such as `mon01` to `us-east` or `sao01` to `us-south`.
+Classic regions with one data center are managed from the regional endpoint located in the nearest region that supports classic data centers, such as `mon01` to `us-east` or `sao01` to `us-south`.
 
 | Geography | Country | Metro | Region | Zone | Managed from region |
 | --- | --- | --- | --- | --- | --- |
@@ -117,31 +119,31 @@ To see a list of the supported `Managed from` regions for {{site.data.keyword.sa
 ## Where are the resources?
 {: #regions_resources}
 
-### Resources in a single zone cluster
+Where your resources are stored in the cluster depends on the availability of the cluster A cluster might be available in a single zone or multiple zones (multizone). 
+
+### Resources in single zone clusters
 {: #regions_single_zone}
 
-In a single zone cluster, your cluster's resources remain in the data center (zone) in which the cluster is deployed, but management operations might be routed through a regional endpoint.
+Your cluster's resources remain in the data center in which the cluster is deployed, but management operations might be routed through a regional endpoint.
 {: shortdesc}
 
 Your cluster's resources, including the master and worker nodes, are in the same zone that you deployed the cluster to. When you initiate local container orchestration actions, such as `oc` commands, the information is exchanged between your master and worker nodes within the same zone.
 
-If you set up other cluster resources, such as storage, networking, compute, or apps running in pods, the resources and their data remain in the zone that you deployed your cluster to.
+If you set up other cluster resources, such as storage, networking, compute, or apps running in pods, the resources and their data remain in the data center that you deployed your cluster to.
 
 When you initiate cluster management actions, such as running **`ibmcloud oc`** commands, basic information about the cluster such as name, ID, user, the command is routed through a regional endpoint and the global endpoint. 
 
-
-
-### Resources in a multizone cluster
+### Resources in multizone clusters
 {: #regions_multizone}
 
-In a multizone cluster, your cluster's resources are spread across multiple zones for higher availability.
+In multizone clusters, the cluster's resources are spread across multiple locations (zones for VPC and data centers for Classic) for higher availability.
 {: shortdesc}
 
-Worker nodes are spread across multiple zones in the region to provide more availability for your cluster. The Kubernetes master replicas are also spread across zones. When you initiate local container orchestration actions, such as **`oc`** commands, the information is exchanged between your master and worker nodes through the global endpoint.
+Worker nodes are spread across multiple VPC zones or Classic data centers in the region to provide more availability for your cluster. The Kubernetes master replicas are also spread across zones or classic data centers. When you initiate local container orchestration actions, such as **`oc`** commands, the information is exchanged between your master and worker nodes through the global endpoint.
 
-Other cluster resources, such as storage, networking, compute, or apps running in pods, vary in how they deploy to the zones in your multizone cluster. For more information, review these topics:
-*   Setting up [file storage](/docs/openshift?topic=openshift-file_storage#add_file) and [block storage](/docs/openshift?topic=openshift-block_storage#add_block) in multizone clusters, or [choosing a multizone persistent storage solution](/docs/openshift?topic=openshift-storage-plan).
-*   [Enabling public or private access to an app by using a network load balancer (NLB) service in a multizone cluster](/docs/openshift?topic=openshift-loadbalancer#multi_zone_config).
+Other cluster resources, such as storage, networking, compute, or apps running in pods, vary in how they deploy to the zones in your cluster. For more information, review these topics:
+*   Setting up [file storage](/docs/openshift?topic=openshift-file_storage#add_file) and [block storage](/docs/openshift?topic=openshift-block_storage#add_block) in clusters, or [choosing a multizone persistent storage solution](/docs/openshift?topic=openshift-storage-plan).
+*   [Enabling public or private access to an app by using a network load balancer (NLB) service in a cluster](/docs/openshift?topic=openshift-loadbalancer#multi_zone_config).
 *   [Managing network traffic by using Ingress](/docs/containers?topic=containers-managed-ingress-about).
 *   [Increasing the availability of your app](/docs/openshift?topic=openshift-app).
 
