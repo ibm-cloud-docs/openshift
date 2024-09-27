@@ -2,7 +2,7 @@
 
 copyright:
   years: 2023, 2024
-lastupdated: "2024-09-25"
+lastupdated: "2024-09-27"
 
 
 keywords: openshift, 4.12, update, upgrade, BOM, bill of materials, versions, patch
@@ -35,6 +35,30 @@ Check the [Security Bulletins on {{site.data.keyword.cloud_notm}} Status](https:
 Master patch updates are applied automatically. Worker node patch updates can be applied by reloading or updating the worker nodes. For more information about major, minor, and patch versions and preparation actions between minor versions, see [{{site.data.keyword.redhat_openshift_notm}} versions](/docs/openshift?topic=openshift-openshift_versions).
 {: tip}
 
+
+
+### Change log for master fix pack 4.12.64_1609_openshift, released 25 September 2024
+{: #41264_1609_openshift_M}
+
+The following table shows the changes that are in the master fix pack 4.12.64_1609_openshift. Master patch updates are applied automatically. 
+
+
+
+| Component | Previous | Current | Description |
+| --- | --- | --- | --- |
+| {{site.data.keyword.IBM_notm}} Calico extension | 1598 | 1607 | New version contains security fixes. |
+| {{site.data.keyword.cloud_notm}} Block Storage driver and plug-in | v2.4.24 | v2.4.26 | New version contains updates and security fixes. |
+| {{site.data.keyword.cloud_notm}} Controller Manager | v1.25.16-61 | v1.25.16-62 | New version contains updates and security fixes. |
+| {{site.data.keyword.filestorage_full_notm}} for Classic plug-in and monitor | 445 | 446 | New version contains updates and security fixes. |
+| {{site.data.keyword.cloud_notm}} RBAC Operator | 897f067 | 5b17dab | New version contains updates and security fixes. |
+| Key Management Service provider | v2.8.13 | v2.8.14 | New version contains updates and security fixes. |
+| Load balancer and load balancer monitor for {{site.data.keyword.cloud_notm}} Provider | 3022 | 3051 | New version contains updates and security fixes. |
+| OpenVPN client | 2.6.11-r0-IKS-145 | 2.6.11-r0-IKS-152 | New version contains updates and security fixes. |
+| OpenVPN server | 2.6.11-r0-IKS-144 | 2.6.11-r0-IKS-151 | New version contains updates and security fixes. |
+| OpenVPN Operator image | v1.5.18 | v1.5.19 | New version contains updates and security fixes. |
+| {{site.data.keyword.openshiftlong_notm}}. | 4.12.61 | 4.12.64 | See the [{{site.data.keyword.openshiftlong_notm}} release notes](https://docs.openshift.com/container-platform/4.12/release_notes/ocp-4-12-release-notes.html#ocp-4-12-64){: external}. |
+| {{site.data.keyword.openshiftlong_notm}} Control Plane Operator, Metrics Server, and toolkit | 4.12.0+20240814 | 4.12.0+20240913 | See the [{{site.data.keyword.openshiftlong_notm}} toolkit release notes](https://github.com/openshift/ibm-roks-toolkit/releases/tag/v4.12.0+20240913){: external}. |
+{: caption="Changes since version 4.12.61_1606_openshift" caption-side="bottom"}
 
 
 ### Change log for worker node fix pack 4.12.66_1610_openshift, released 23 September 2024
