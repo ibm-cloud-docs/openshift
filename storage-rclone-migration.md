@@ -34,8 +34,9 @@ In this tutorial, you'll migrate a COS app and data from an {{site.data.keyword.
 ## Prerequisites
 {: #cos-migration-prereqs}
 
-Account 1 [Account 1]{: tag-dark-teal}
-:   In the first account, you must have the following.
+[Account 1]{: tag-purple}
+
+In Account 1, you must have the following.
 
 * An {{site.data.keyword.containerlong_notm}} cluster.
 
@@ -45,7 +46,8 @@ Account 1 [Account 1]{: tag-dark-teal}
 
 
 Account 2 [Account 2]{: tag-teal}
-:   In the second account, the destination account to migrate to, you must have the following.
+
+In Account 2, the destination account to migrate to, you must have the following.
 
 * A {{site.data.keyword.openshiftlong_notm}} cluster.
 
@@ -59,7 +61,7 @@ Account 2 [Account 2]{: tag-teal}
 {: #cos-mig-app-deploy}
 {: step}
 
-[Account 1]{: tag-dark-teal}
+[Account 1]{: tag-purple}
 
 If you don't already have an app that you want to migrate, you can deploy the following example app.
 
@@ -151,7 +153,7 @@ If you don't already have an app that you want to migrate, you can deploy the fo
 {: #cos-mig-app-details}
 {: step}
 
-[Account 1]{: tag-dark-teal}
+[Account 1]{: tag-purple}
 
 1. List the pods and PVCs.
     ```sh
@@ -176,7 +178,7 @@ Follow the `rclone` docs for [installation steps](https://rclone.org/install/).
 {: #rclone-config}
 {: step}
 
-[Account 1]{: tag-dark-teal}
+[Account 1]{: tag-purple}
 
 After you have `rclone` installed, you must generate a configuration file that defines the COS instance that you want to migrate data from.
 
