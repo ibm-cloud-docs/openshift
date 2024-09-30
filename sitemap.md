@@ -273,6 +273,12 @@ subcollection: openshift
 
 [Release notes](/docs/openshift?topic=openshift-openshift-relnotes#openshift-relnotes)
 
+* [October 2024](/docs/openshift?topic=openshift-openshift-relnotes#openshift-oct24)
+
+    * [01 October 2024](/docs/openshift?topic=openshift-openshift-relnotes#openshift-oct0124)
+
+        * Red Hat Enterprise Linux 9 is now available for {{site.data.keyword.openshiftlong_notm}} clusters version 4.16 and later
+
 * [September 2024](/docs/openshift?topic=openshift-openshift-relnotes#openshift-sep24)
 
     * [26 September 2024](/docs/openshift?topic=openshift-openshift-relnotes#openshift-sep2624)
@@ -2880,8 +2886,6 @@ subcollection: openshift
 
 * [Establish resource requests and limits for the namespaces](/docs/openshift?topic=openshift-strategy#env_resources_resource_quotas)
 
-    * [Learn how to manage worker nodes](/docs/openshift?topic=openshift-strategy#flavor-manage)
-
 * [Make your apps highly available too](/docs/openshift?topic=openshift-strategy#apps-ha)
 
 * [Next steps](/docs/openshift?topic=openshift-strategy#plan-network-next)
@@ -3288,10 +3292,6 @@ subcollection: openshift
 * [Removing dedicated hosts pools in the CLI](/docs/openshift?topic=openshift-dedicated-hosts#remove-dedicated-host-pool-cli)
 
 [Migrating to a new Red Hat Enterprise Linux version](/docs/openshift?topic=openshift-rhel_migrate#rhel_migrate)
-
-* [Migration actions by cluster version](/docs/openshift?topic=openshift-rhel_migrate#rhel_migrate_versions)
-
-* [Creating RHEL 8 worker pools in the command line](/docs/openshift?topic=openshift-rhel_migrate#rhel-migrate-create-pools-cli)
 
 [Managing {{site.data.keyword.satelliteshort}} worker pools](/docs/openshift?topic=openshift-satcluster-worker-pools#satcluster-worker-pools)
 
@@ -6486,6 +6486,8 @@ subcollection: openshift
 * [Update after master](/docs/openshift?topic=openshift-cs_versions_416#416_after)
 
 * [Checking the `Upgradeable` status of your cluster](/docs/openshift?topic=openshift-cs_versions_416#status-check-416)
+
+* [RHEL 9](/docs/openshift?topic=openshift-cs_versions_416#416_rhel9)
 
 [Version 4.16 change log](/docs/openshift?topic=openshift-openshift_changelog_416#openshift_changelog_416)
 

@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2024
-lastupdated: "2024-09-24"
+lastupdated: "2024-09-30"
 
 keywords: kubernetes, kubernetes environment, moving to kubernetes, moving to containers, clusters, cluster sizing, openshift, {{site.data.keyword.openshiftlong_notm}}
 
@@ -81,11 +81,11 @@ A multi-region cluster requires several cloud resources, and depending on your a
 
 To protect your app from a master failure, you can create multiple clusters in different zones within a region, and connect them with a global load balancer. This option is useful if you must provision a cluster in Classic data center with only one zone, but you still want the benefits of multizone availability. 
 
-    To connect multiple clusters with a global load balancer, the clusters must be set up with public network connectivity and your apps must be exposed through [Ingress](/docs/containers?topic=containers-managed-ingress-about), [routes](/docs/openshift?topic=openshift-openshift_routes), or with a [Kubernetes load balancer service](/docs/openshift?topic=openshift-cs_network_planning).
+To connect multiple clusters with a global load balancer, the clusters must be set up with public network connectivity and your apps must be exposed through [Ingress](/docs/containers?topic=containers-managed-ingress-about), [routes](/docs/openshift?topic=openshift-openshift_routes), or with a [Kubernetes load balancer service](/docs/openshift?topic=openshift-cs_network_planning).
 
-    To balance your workload across multiple clusters, you must [set up a global load balancer](/docs/cis?topic=cis-configure-glb) through [{{site.data.keyword.cis_short}}](/docs/cis?topic=cis-getting-started) and add the public IP addresses of your router services or load balancer services to your domain. By adding these IP addresses, you can route incoming traffic between your clusters. 
+To balance your workload across multiple clusters, you must [set up a global load balancer](/docs/cis?topic=cis-configure-glb) through [{{site.data.keyword.cis_short}}](/docs/cis?topic=cis-getting-started) and add the public IP addresses of your router services or load balancer services to your domain. By adding these IP addresses, you can route incoming traffic between your clusters. 
 
-    For the global load balancer to detect if one of your clusters is unavailable, consider adding a ping-based health check to every IP address. When you set up this check, your DNS provider regularly pings the IP addresses that you added to your domain. If one IP address becomes unavailable, then traffic is not sent to this IP address anymore. However, {{site.data.keyword.redhat_openshift_notm}} does not automatically restart pods from the unavailable cluster on worker nodes in available clusters. If you want {{site.data.keyword.redhat_openshift_notm}} to automatically restart pods in available clusters, consider setting up a multizone cluster.
+For the global load balancer to detect if one of your clusters is unavailable, consider adding a ping-based health check to every IP address. When you set up this check, your DNS provider regularly pings the IP addresses that you added to your domain. If one IP address becomes unavailable, then traffic is not sent to this IP address anymore. However, {{site.data.keyword.redhat_openshift_notm}} does not automatically restart pods from the unavailable cluster on worker nodes in available clusters. If you want {{site.data.keyword.redhat_openshift_notm}} to automatically restart pods in available clusters, consider setting up a multizone cluster.
 
 ### Single zone clusters
 {: #sz-single-zone-strategy}
@@ -128,15 +128,23 @@ The operating systems available to you depend on the cluster type you chose.
 
 
 
+
 Red Hat Enterprise Linux (RHEL) version 8
 :   [Classic]{: tag-classic-inf} [VPC]{: tag-vpc} [Satellite]{: tag-satellite}
 :   Red Hat Enterprise Linux on IBM Cloud provides enterprises with a robust and scalable environment, built with security in mind, and tailored for critical workloads. Organizations unlock access to high availability, disaster recovery, and streamlined management capabilities by joining the Red Hat Enterprise Linux platform with IBM Cloud's infrastructure. For an overview of RHEL 8, see [Why run Linux on IBM Cloud?](https://www.redhat.com/en/topics/linux/linux-on-ibm-cloud){: external}.
 
 
 
+Red Hat Enterprise Linux (RHEL) version 9
+:   [Classic]{: tag-classic-inf} [VPC]{: tag-vpc}
+:   Available for clusters created at version 4.16 and later. Red Hat Enterprise Linux on IBM Cloud provides enterprises with a robust and scalable environment, built with security in mind, and tailored for critical workloads. Organizations unlock access to high availability, disaster recovery, and streamlined management capabilities by joining the Red Hat Enterprise Linux platform with IBM Cloud's infrastructure. For an overview of RHEL 9, see [Why run Linux on IBM Cloud?](https://www.redhat.com/en/topics/linux/linux-on-ibm-cloud){: external}.
+
+
+
 Red Hat Enterprise Linux CoreOS (RHCOS) 
 :   [VPC]{: tag-vpc} [Satellite]{: tag-satellite}
-:   Available for clusters created at 4.15 and later. Red Hat Enterprise Linux CoreOS (RHCOS) is specifically designed for the Red Hat OpenShift Container Platform (OCP). While leveraging the stability and security of Red Hat Enterprise Linux (RHEL), RHCOS is lightweight and minimal, focusing on running containerized workloads efficiently and at scale. Because it consists of RHEL components, you get the same level of security as RHEL plus the added bonus of having a more minimal container centric footprint, read-only file system, image-based deployments, and more. For an overview of RHCOS, see [Red Hat Enterprise Linux CoreOS (RHCOS)](https://docs.openshift.com/container-platform/4.15/architecture/architecture-rhcos.html){: external}. RHCOS worker nodes for VPC clusters are available only for clusters that were created at a version that supports RHCOS. Clusters that are upgraded from a version that does not support RHCOS to a version that does can't use RHCOS workers.
+:   Available for clusters created at version 4.15 and later. Red Hat Enterprise Linux CoreOS (RHCOS) is specifically designed for the Red Hat OpenShift Container Platform (OCP). While leveraging the stability and security of Red Hat Enterprise Linux (RHEL), RHCOS is lightweight and minimal, focusing on running containerized workloads efficiently and at scale. Because it consists of RHEL components, you get the same level of security as RHEL plus the added bonus of having a more minimal container centric footprint, read-only file system, image-based deployments, and more. For an overview of RHCOS, see [Red Hat Enterprise Linux CoreOS (RHCOS)](https://docs.openshift.com/container-platform/4.15/architecture/architecture-rhcos.html){: external}. RHCOS worker nodes for VPC clusters are available only for clusters that were created at a version that supports RHCOS. Clusters that are upgraded from a version that does not support RHCOS to a version that does can't use RHCOS workers.
+
 
 
 
@@ -153,12 +161,12 @@ Consider giving clusters unique names across resource groups and regions in your
 ## Decide how many worker nodes for each cluster
 {: #sizing_workers}
 
+The level of availability that you set up for your cluster impacts your coverage under the [{{site.data.keyword.cloud_notm}} HA service level agreement terms](/docs/overview?topic=overview-slas). For example, to receive full HA coverage under the SLA terms, you must set up a multizone cluster with a total of at least 6 worker nodes, two worker nodes per zone that are evenly spread across three zones.
+{: important}
+
 The total number of worker nodes in a cluster determine the compute capacity that is available to your apps in the cluster. You can protect your setup during a worker node failure by setting up multiple worker nodes in your cluster. Worker node failures can include hardware outages, such as power, cooling, or networking, and issues on the VM itself. 
 
 * **Multizone clusters** [Classic]{: tag-classic-inf} [VPC]{: tag-vpc}: Plan to have at least two worker nodes per zone, so six nodes across three zones in total. Additionally, plan for the total capacity of your cluster to be at least 150% of your total workload's required capacity, so that if one zone goes down, you have resources available to maintain the workload.
-
-The level of availability that you set up for your cluster impacts your coverage under the [{{site.data.keyword.cloud_notm}} HA service level agreement terms](/docs/overview?topic=overview-slas). For example, to receive full HA coverage under the SLA terms, you must set up a multizone cluster with a total of at least 6 worker nodes, two worker nodes per zone that are evenly spread across three zones.
-{: important}
 
 * **Single zone clusters** Plan to have at least three worker nodes in your cluster. Further, you want one extra node's worth of CPU and memory capacity available within the cluster. If your apps require less resources than the resources that are available on the worker node, you might be able to limit the number of pods that you deploy to one worker node. 
 
@@ -261,17 +269,6 @@ To ensure that every team has the necessary resources to deploy services and run
 
 When you create a deployment, also limit it so that your app's pod deploys only on machines with the best mix of resources. For example, you might want to limit a database application to a bare metal machine with a significant amount of local disk storage like the `md1c.28x512.4x4tb`.
 
-### Learn how to manage worker nodes
-{: #flavor-manage}
-
-Classic clusters
-:   Worker nodes are provisioned into your {{site.data.keyword.cloud_notm}} account. You can manage your worker nodes by using {{site.data.keyword.openshiftlong_notm}}, but you can also use the [classic infrastructure dashboard](https://cloud.ibm.com/classic/) in the {{site.data.keyword.cloud_notm}} console to work with your worker node directly.  
-
-VPC clusters
-:   Worker nodes are not listed in the [VPC infrastructure dashboard](https://cloud.ibm.com/vpc/overview). Instead, you manage your worker nodes with {{site.data.keyword.openshiftlong_notm}} only. However, your worker nodes might be connected to other VPC infrastructure resources, such as VPC subnets or VPC Block Storage. These resources are in the VPC infrastructure dashboard and can be managed separately from there.
-
-{{site.data.keyword.satelliteshort}} clusters
-:    Worker nodes are provisioned by using infrastructure hosts in another cloud provider or on-premsies. You can manage your worker nodes by using the {{site.data.keyword.openshiftlong_notm}} and {{site.data.keyword.satelliteshort}} API, CLI, and console. You can manage the underlying infrastructure hosts in your cloud provider account or by using your own on-premises management method.
 
 
 ## Make your apps highly available too

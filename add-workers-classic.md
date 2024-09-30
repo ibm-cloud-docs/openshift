@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2024
-lastupdated: "2024-08-22"
+lastupdated: "2024-09-30"
 
 
 keywords: openshift, {{site.data.keyword.openshiftlong_notm}}, clusters, worker nodes, worker pools, add, classic
@@ -79,7 +79,7 @@ Before you begin, make sure that you have the [**Operator** or **Administrator**
 
 
     ```sh
-    ibmcloud oc worker-pool create classic --name <pool_name> --cluster <cluster_name_or_ID> --flavor <flavor> --size-per-zone <number_of_workers_per_zone> [--operating-system (REDHAT_8_64)] [--label key=value]
+    ibmcloud oc worker-pool create classic --name <pool_name> --cluster <cluster_name_or_ID> --flavor <flavor> --size-per-zone <number_of_workers_per_zone> [--operating-system (REDHAT_9_64)] [--label key=value]
     ```
     {: pre}
 
