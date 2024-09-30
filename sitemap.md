@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2024
-lastupdated: "2024-09-27"
+lastupdated: "2024-09-30"
 
 
 keywords: openshift
@@ -5155,21 +5155,21 @@ subcollection: openshift
 
 * [Prerequisites](/docs/openshift?topic=openshift-storage-cos-app-migration#cos-migration-prereqs)
 
-    * [Account 1](/docs/openshift?topic=openshift-storage-cos-app-migration#cos-mig-account-1-prereqs)
+* [Optional: Deploy an app in your cluster](/docs/openshift?topic=openshift-storage-cos-app-migration#cos-mig-app-deploy)
 
-    * [Account 2](/docs/openshift?topic=openshift-storage-cos-app-migration#cos-mig-account-2-prereqs)
-
-* [Get the details of your apps](/docs/openshift?topic=openshift-storage-cos-app-migration#cos-mig-app-details)
+* [Get the details of your app](/docs/openshift?topic=openshift-storage-cos-app-migration#cos-mig-app-details)
 
 * [Install `rclone`](/docs/openshift?topic=openshift-storage-cos-app-migration#rclone-install)
 
-* [Configure `rclone`](/docs/openshift?topic=openshift-storage-cos-app-migration#rclone-config)
+* [Configure `rclone` for your bucket in Account 1](/docs/openshift?topic=openshift-storage-cos-app-migration#rclone-config)
+
+* [Configure `rclone` for your bucket in Account 2](/docs/openshift?topic=openshift-storage-cos-app-migration#rclone-config)
 
 * [Syncing between COS buckets](/docs/openshift?topic=openshift-storage-cos-app-migration#rclone-inspect)
 
 * [Syncing contents between buckets](/docs/openshift?topic=openshift-storage-cos-app-migration#rclone-sync)
 
-* [Create a PVC](/docs/openshift?topic=openshift-storage-cos-app-migration#cos-app-redploy)
+* [Create a PVC in Account 2](/docs/openshift?topic=openshift-storage-cos-app-migration#cos-app-redploy)
 
 * [Redeploy your app](/docs/openshift?topic=openshift-storage-cos-app-migration#cos-mig-redeploy-app)
 
@@ -5744,7 +5744,7 @@ subcollection: openshift
 
 [IBM Cloud Kubernetes Service API JSON](https://containers.cloud.ibm.com/global/swagger-global-api/swagger.json){: external}
 
-[OpenShift Container Platform REST API](https://docs.openshift.com/container-platform/4.15/rest_api/index.html){: external}
+[OpenShift Container Platform REST API](https://docs.openshift.com/container-platform/4.15/rest_api/overview/index.html){: external}
 
 
 ## CLI plug-in reference

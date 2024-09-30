@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2022, 2024
-lastupdated: "2024-09-23"
+lastupdated: "2024-09-30"
 
 keywords: kubernetes, openshift
 
@@ -375,7 +375,7 @@ New storage classes were introduced with version 2.0. Volume expansion does not 
 Create a persistent volume claim (PVC) to statically provision {{site.data.keyword.filestorage_vpc_short}} for your cluster. Static provisioning allows cluster administrators to make existing storage devices available to a cluster.
 
 1. Get your cluster ID.
-    ```
+    ```sh
     ibmcloud ks cluster ls
     ```
     {: pre}
@@ -861,7 +861,7 @@ Complete the following steps to set up encryption-in-transit (EIT) for file shar
       resourceVersion: "1251777"
       uid: 5c9d6679-4135-458b-800d-217b34d27c75
     ```
-    {: screen}
+    {: codeblock}
 
 1. After enabling EIT, save and close the config map.
 
@@ -897,7 +897,7 @@ Complete the following steps to set up encryption-in-transit (EIT) for file shar
           description: 'Package installation successful on host: 10.240.0.8, workerpool: wp2'
           timestamp: "2024-06-13 09:17:48"
     ```
-    {: screen}
+    {: codeblock}
 
 1. Select a pre-installed storage class that supports EIT or create your own storage class.
 

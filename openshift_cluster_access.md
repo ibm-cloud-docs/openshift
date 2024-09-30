@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2024
-lastupdated: "2024-06-12"
+lastupdated: "2024-09-30"
 
 
 keywords: openshift, clusters, access, endpoint
@@ -658,7 +658,7 @@ You can create an {{site.data.keyword.cloud_notm}} IAM API key and then use the 
         ```
         {: screen}
 
-    5. Use your cluster master URL and the access token to access the {{site.data.keyword.redhat_openshift_notm}} API, such as to list all the pods in your cluster. For more information, see the [{{site.data.keyword.redhat_openshift_notm}} API documentation](https://docs.openshift.com/container-platform/4.15/rest_api/index.html){: external}.
+    5. Use your cluster master URL and the access token to access the {{site.data.keyword.redhat_openshift_notm}} API, such as to list all the pods in your cluster. For more information, see the [{{site.data.keyword.redhat_openshift_notm}} API documentation](https://docs.openshift.com/container-platform/4.15/rest_api/overview/index.html){: external}.
 
         Example curl request:
         ```sh
@@ -773,7 +773,3 @@ You can create an {{site.data.keyword.cloud_notm}} IAM service ID, make an API k
     IAM#first.last@email.com       55555ee5-e555-55e5-e5e5-555555ee55ee               IAM:IBMid-666666FFF6
     ```
     {: screen}
-
-
-
-
