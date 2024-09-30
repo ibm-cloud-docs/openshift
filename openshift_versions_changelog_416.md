@@ -2,7 +2,7 @@
 
 copyright:
   years: 2023, 2024
-lastupdated: "2024-09-27"
+lastupdated: "2024-09-30"
 
 
 keywords: openshift, 4.16, update, upgrade, BOM, bill of materials, versions, patch
@@ -43,7 +43,7 @@ The following table shows the changes that are in the master fix pack 4.16.10_15
 
 | Component | Previous | Current | Description |
 | --- | --- | --- | --- |
-| Calico API server | N/A | v3.28.1 | See the [Calico release notes](https://docs.projectcalico.org/releases){: external}. |
+| Calico API server | N/A | v3.28.1 | See the [Calico release notes](https://docs.tigera.io/archive){: external}. |
 | {{site.data.keyword.cloud_notm}} Block Storage driver and plug-in | v2.5.13 | v2.5.15 | New version contains updates and security fixes. |
 | {{site.data.keyword.cloud_notm}} Controller Manager | v1.29.8-1 | v1.29.9-1 | New version contains updates and security fixes. |
 | {{site.data.keyword.filestorage_full_notm}} for Classic plug-in and monitor | 445 | 446 | New version contains updates and security fixes. |
