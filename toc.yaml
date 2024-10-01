@@ -255,6 +255,7 @@ toc:
           - storage-cos-vpc-ip.md
           - storage-rclone-migration.md
           - storage-cos-reference.md
+          - storage-cos-install-addon.md
       - topicgroup:
           label: Setting up OpenShift Data Foundation
           topics:
@@ -676,6 +677,7 @@ toc:
               - ts-storage-object-pvc-pending.md
               - ts-storage-object-pvc-pod-fail-secret.md
               - ts-storage-object-transport-ep.md
+              - ts-storage-object-transport-addon.md
           - topicgroup:
               label: Portworx Storage
               topics:

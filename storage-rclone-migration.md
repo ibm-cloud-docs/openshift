@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2024, 2024
-lastupdated: "2024-09-30"
+lastupdated: "2024-10-01"
 
 
 keywords: openshift, rclone, migrate
@@ -45,7 +45,7 @@ In Account 1, you must have the following.
 * The [COS plug-in installed in your cluster](/docs/containers?topic=containers-storage_cos_install).
 
 
-Account 2 [Account 2]{: tag-teal}
+[Account 2]{: tag-teal}
 
 In Account 2, the destination account to migrate to, you must have the following.
 

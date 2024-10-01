@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2024
-lastupdated: "2024-09-30"
+lastupdated: "2024-10-01"
 
 
 keywords: openshift
@@ -278,6 +278,8 @@ subcollection: openshift
     * [01 October 2024](/docs/openshift?topic=openshift-openshift-relnotes#openshift-oct0124)
 
         * Red Hat Enterprise Linux 9 is now available for {{site.data.keyword.openshiftlong_notm}} clusters version 4.16 and later
+
+        * New! The {{site.data.keyword.cos_full_notm}} cluster add-on is available in Beta for allowlisted accounts.
 
 * [September 2024](/docs/openshift?topic=openshift-openshift-relnotes#openshift-sep24)
 
@@ -2544,218 +2546,6 @@ subcollection: openshift
     * [6 January 2021](/docs/openshift?topic=openshift-openshift-relnotes#openshift-jan0621)
 
         * Master versions
-
-* [December 2020](/docs/openshift?topic=openshift-openshift-relnotes#openshift-dec20)
-
-    * [21 December 2020](/docs/openshift?topic=openshift-openshift-relnotes#openshift-dec2120)
-
-        * Gateway firewalls and Calico policies
-
-        * Worker node versions
-
-    * [18 December 2020](/docs/openshift?topic=openshift-openshift-relnotes#openshift-dec1820)
-
-        * CLI change log
-
-        * {{site.data.keyword.cos_full_notm}} plug-in
-
-    * [17 December 2020](/docs/openshift?topic=openshift-openshift-relnotes#openshift-dec1720)
-
-        * Audit documentation
-
-        * Back up and restore
-
-    * [15 December 2020](/docs/openshift?topic=openshift-openshift-relnotes#openshift-dec1520)
-
-        * Cluster autoscaler
-
-    * [14 December 2020](/docs/openshift?topic=openshift-openshift-relnotes#openshift-dec1420)
-
-        * Encrypted images
-
-        * Master versions
-
-    * [11 December 2020](/docs/openshift?topic=openshift-openshift-relnotes#openshift-dec1120)
-
-        * Storage add-ons
-
-        * strongSwan versions
-
-    * [9 December 2020](/docs/openshift?topic=openshift-openshift-relnotes#openshift-dec0920)
-
-        * Accessing clusters
-
-        * CLI change log
-
-        * Proxy protocol for Ingress
-
-        * Helm version 2 unsupported
-
-    * [7 December 2020](/docs/openshift?topic=openshift-openshift-relnotes#openshift-dec0720)
-
-        * {{site.data.keyword.keymanagementserviceshort}} enhancements
-
-        * Worker node versions
-
-    * [3 December 2020](/docs/openshift?topic=openshift-openshift-relnotes#openshift-dec0320)
-
-        * Cluster autoscaler add-on
-
-    * [2 December 2020](/docs/openshift?topic=openshift-openshift-relnotes#openshift-dec0220)
-
-        * Default version
-
-* [November 2020](/docs/openshift?topic=openshift-openshift-relnotes#openshift-nov20)
-
-    * [25 November 2020](/docs/openshift?topic=openshift-openshift-relnotes#openshift-nov2520)
-
-        * New! {{site.data.keyword.cloud_notm}} HPCS Router
-
-    * [24 November 2020](/docs/openshift?topic=openshift-openshift-relnotes#openshift-nov2420)
-
-        * New! Reservations to reduce classic worker node costs
-
-    * [23 November 2020](/docs/openshift?topic=openshift-openshift-relnotes#openshift-nov2320)
-
-        * Worker node versions
-
-    * [20 November 2020](/docs/openshift?topic=openshift-openshift-relnotes#openshift-nov2020)
-
-        * New! Portieris for image security enforcement
-
-    * [19 November 2020](/docs/openshift?topic=openshift-openshift-relnotes#openshift-nov1920)
-
-        * Ingress ALB change log
-
-    * [18 November 2020](/docs/openshift?topic=openshift-openshift-relnotes#openshift-nov1820)
-
-        * CLI change log
-
-        * New! {{site.data.keyword.block_storage_is_short}} change log
-
-    * [16 November 2020](/docs/openshift?topic=openshift-openshift-relnotes#openshift-nov1620)
-
-        * New! GPU support in {{site.data.keyword.redhat_openshift_notm}} 4
-
-        * Master versions
-
-    * [13 November 2020](/docs/openshift?topic=openshift-openshift-relnotes#openshift-nov1320)
-
-        * {{site.data.keyword.at_full_notm}} and IAM events
-
-    * [9 November 2020](/docs/openshift?topic=openshift-openshift-relnotes#openshift-nov0920)
-
-        * New! Reduced and hourly billing is available for OCP licenses
-
-        * Worker node versions
-
-    * [5 November 2020](/docs/openshift?topic=openshift-openshift-relnotes#openshift-nov0520)
-
-        * {{site.data.keyword.block_storage_is_short}}
-
-        * Classic-enabled VPCs
-
-        * Disabling remote health reporting
-
-        * Gateway firewalls and Calico policies
-
-    * [2 November 2020](/docs/openshift?topic=openshift-openshift-relnotes#openshift-nov0220)
-
-        * Persistent storage
-
-        * Version 4 Ingress
-
-* [October 2020](/docs/openshift?topic=openshift-openshift-relnotes#openshift-oct20)
-
-    * [26 October 2020](/docs/openshift?topic=openshift-openshift-relnotes#openshift-oct2620)
-
-        * Master versions
-
-        * Worker node versions
-
-    * [22 October 2020](/docs/openshift?topic=openshift-openshift-relnotes#openshift-oct2220)
-
-        * API key
-
-    * [16 October 2020](/docs/openshift?topic=openshift-openshift-relnotes#openshift-oct1620)
-
-        * Gateway firewalls and Calico policies
-
-        * {{site.data.keyword.cos_short}}
-
-    * [13 October 2020](/docs/openshift?topic=openshift-openshift-relnotes#openshift-oct1320)
-
-        * New! Certified {{site.data.keyword.redhat_openshift_notm}} version 4.5
-
-        * Deprecated: {{site.data.keyword.redhat_openshift_notm}} version 4.3
-
-        * Version change logs
-
-        * VPC load balancer
-
-        * VPC security groups
-
-        * {{site.data.keyword.cos_short}} in VPC Gen 2
-
-    * [12 October 2020](/docs/openshift?topic=openshift-openshift-relnotes#openshift-oct1220)
-
-        * Versions
-
-    * [8 October 2020](/docs/openshift?topic=openshift-openshift-relnotes#openshift-oct0820)
-
-        * Ingress ALB change log
-
-    * [6 October 2020](/docs/openshift?topic=openshift-openshift-relnotes#openshift-oct0620)
-
-        * CLI change log
-
-        * Ingress secret expiration synchronization
-
-        * Internal {{site.data.keyword.redhat_openshift_notm}} container image registry
-
-    * [1 October 2020](/docs/openshift?topic=openshift-openshift-relnotes#openshift-oct0120)
-
-        * Default version
-
-        * Ingress ALB change log
-
-* [September 2020](/docs/openshift?topic=openshift-openshift-relnotes#openshift-sep20)
-
-    * [30 September 2020](/docs/openshift?topic=openshift-openshift-relnotes#openshift-sept3020)
-
-        * Versions
-
-    * [29 September 2020](/docs/openshift?topic=openshift-openshift-relnotes#openshift-sept2920)
-
-        * Gateway firewalls and Calico policies
-
-    * [26 September 2020](/docs/openshift?topic=openshift-openshift-relnotes#openshift-sept2620)
-
-        * Versions
-
-    * [24 September 2020](/docs/openshift?topic=openshift-openshift-relnotes#openshift-sept2420)
-
-        * CLI change log
-
-    * [23 September 2020](/docs/openshift?topic=openshift-openshift-relnotes#openshift-sept2320)
-
-        * Ingress ALB change log
-
-        * New! Reservations and limits for PIDs
-
-    * [22 September 2020](/docs/openshift?topic=openshift-openshift-relnotes#openshift-sept2220)
-
-        * Unsupported: Kubernetes version 1.15
-
-    * [21 September 2020](/docs/openshift?topic=openshift-openshift-relnotes#openshift-sept2120)
-
-        * Versions
-
-        * Versions
-
-    * [3 September 2020](/docs/openshift?topic=openshift-openshift-relnotes#openshift-sept0320)
-
-        * CA certificate rotation
 
 
 ## Tutorials library for OpenShift
@@ -5176,6 +4966,26 @@ subcollection: openshift
 [Storage class reference](/docs/openshift?topic=openshift-storage_cos_reference#storage_cos_reference)
 
 * [{{site.data.keyword.cos_full_notm}} Helm chart storage classes](/docs/openshift?topic=openshift-storage_cos_reference#cos-sc-ref-helm)
+
+[Installing the {{site.data.keyword.cos_full_notm}} cluster add-on](/docs/openshift?topic=openshift-storage-cos-install-addon#storage-cos-install-addon)
+
+* [Enabling the {{site.data.keyword.cos_full_notm}} add-on](/docs/openshift?topic=openshift-storage-cos-install-addon#enable-cos-addon)
+
+* [Deploying an app that uses {{site.data.keyword.cos_full_notm}}](/docs/openshift?topic=openshift-storage-cos-install-addon#cos-addon-app)
+
+    * [Create a Kubernetes secret that contains your COS credentials.](/docs/openshift?topic=openshift-storage-cos-install-addon#cos-addon-app-secret)
+
+    * [Create a PVC](/docs/openshift?topic=openshift-storage-cos-install-addon#cos-addon-app-pvc)
+
+    * [Create a deployment](/docs/openshift?topic=openshift-storage-cos-install-addon#cos-addon-app-dep)
+
+* [Setting up autorecovery for stale volumes](/docs/openshift?topic=openshift-storage-cos-install-addon#cos-addon-autorecovery)
+
+    * [Verifying recovery by simulating an error](/docs/openshift?topic=openshift-storage-cos-install-addon#cos_transport_verify_recovery)
+
+* [Disabling the {{site.data.keyword.cos_full_notm}} add-on](/docs/openshift?topic=openshift-storage-cos-install-addon#disable-cos-addon)
+
+* [{{site.data.keyword.cos_full_notm}} cluster add-on storage classes](/docs/openshift?topic=openshift-storage-cos-install-addon#cos-sc-ref-addon)
 
 
 ## Setting up OpenShift Data Foundation
@@ -11131,6 +10941,10 @@ subcollection: openshift
 [Why does PVC or pod creation fail due to not finding the Kubernetes secret?](/docs/openshift?topic=openshift-cos_secret_access_fails#cos_secret_access_fails)
 
 [Why is the transport endpoint not connected?](/docs/openshift?topic=openshift-cos_transport_ts_connect#cos_transport_ts_connect)
+
+[Why do I see transport endpoint not connected errors when using the {{site.data.keyword.cos_full_notm}} cluster add-on?](/docs/openshift?topic=openshift-cos_transport_ts_connect_addon#cos_transport_ts_connect_addon)
+
+* [Verifying recovery by simulating an error](/docs/openshift?topic=openshift-cos_transport_ts_connect_addon#cos_transport_verify)
 
 
 ### Portworx Storage
