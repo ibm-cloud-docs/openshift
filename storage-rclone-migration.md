@@ -145,7 +145,7 @@ If you don't already have an app that you want to migrate, you can deploy the fo
 1. Verify that the app can write to your block storage volume by logging in to your pod.
 
    ```txt
-   oc exec demo-pod -- bash -c "touch /mnt/cosvol/test.txt && ls /mnt/cosvol" test.txt
+   oc exec demo-pod -- bash -c "ls /mnt/cosvol"
    ```
    {: pre}
 
@@ -423,7 +423,7 @@ Repeat the steps to configure `rclone` for Account 2.
 
     Example remote name
     ```txt
-    name> cos-instance-1
+    name> cos-instance-2
     ```
     {: codeblock}
 
@@ -607,9 +607,11 @@ Repeat the steps to configure `rclone` for Account 2.
 
 1. Repeat the previous steps to add the COS instance in your second account. When you've verified the information, press `q` to quit the configuration process.
 
-## Syncing between COS buckets
+## View the contents of your COS buckets
 {: #rclone-inspect}
 {: step}
+
+[Account 1]{: tag-purple} [Account 2]{: tag-teal}
 
 
 After configuring `rclone`, review the contents of each bucket and then sync the data between buckets in each account.
@@ -633,6 +635,8 @@ After configuring `rclone`, review the contents of each bucket and then sync the
 ## Syncing contents between buckets
 {: #rclone-sync}
 {: step}
+
+[Account 1]{: tag-purple} [Account 2]{: tag-teal}
 
 
 1. To move the data from one bucket to another, you can use the `rclone sync` command. In this example `cos-instance-1:bucket-1` is in one account while `cos-instance-2:bucket-2` is a second instance of COS in a separate account.
@@ -670,7 +674,7 @@ After configuring `rclone`, review the contents of each bucket and then sync the
     {: screen}
 
 
-## Create a PVC in Account 2
+## Redeploy your app in Account 2
 {: #cos-app-redploy}
 {: step}
 
@@ -683,28 +687,24 @@ After configuring `rclone`, review the contents of each bucket and then sync the
     ```yaml
     kind: PersistentVolumeClaim
     apiVersion: v1
-    metadata:
-      name: <name> # Enter the name of the PVC.
-      namespace: <namespace> # Enter the namespace where you want to create the PVC. The PVC must be created in the same namespace where you created the Kubernetes secret for your service credentials and where you want to run your pod.
+    metadata: 
+      name: demo # Enter a name for your PVC.
+      namespace: default
       annotations:
-        ibm.io/auto-create-bucket: "false" # Enter false.
-        ibm.io/auto-delete-bucket: "<false"
-        ibm.io/bucket: "<bucket_name>" # Enter the name of the bucket in Account 2.
-        ibm.io/object-path: "<bucket_subdirectory>"
-        ibm.io/quota-limit: "true/false" # Disable or enable a quota limit for your PVC. To use this annotation you must specify the -set quotaLimit=true option during installation.
-        ibm.io/endpoint: "https://<s3fs_service_endpoint>"
-        ibm.io/tls-cipher-suite: "default"
-        ibm.io/secret-name: "<secret_name>" # The name of your Kubernetes secret that you created. 
-        ibm.io/secret-namespace: "<secret-namespace>" # By default, the COS plug-in searches for your secret in the same namespace where you create the PVC. If you created your secret in a namespace other than the namespace where you want to create your PVC, enter the namespace where you created your secret.
-    spec:
-      accessModes:
+      ibm.io/bucket-name: "bucket-2" # Enter the name of the bucket in Account 2
+      ibm.io/auto-create-bucket: "false"
+      ibm.io/auto-delete-bucket: "false"
+      ibm.io/secret-name: SECRET-NAME #Enter the name of the secret you created earlier.
+      ibm.io/secret-namespace: NAMESPACE #Enter the namespace where you want to create the PVC.
+    spec: 
+        accessModes:
         - ReadWriteOnce
-      resources:
-        requests:
-          storage: <size> # Enter the size of the PVC that you retrieved earlier.
-      storageClassName: <storage_class> # Enter the name of the storage class that you retrieved earlier.
-      ```
-      {: codeblock}
+        resources:
+            requests:
+              storage: 10Gi
+        storageClassName: ibmc-s3fs-cos #The storage class that you want to use.
+    ```
+    {: codeblock}
 
 1. Create the PVC in your cluster.
     ```txt
@@ -712,46 +712,62 @@ After configuring `rclone`, review the contents of each bucket and then sync the
     ```
     {: pre}
 
-## Redeploy your app
-{: #cos-mig-redeploy-app}
-{: step}
 
-[Account 2]{: tag-teal}
+1. Create a YAML configuration file for a pod that mounts the PVC that you create.
 
-1. Save the following configuration to a file called `deployment.yaml`.
     ```yaml
-    apiVersion: apps/v1
-    kind: Deployment
+    apiVersion: v1
+    kind: Pod
     metadata:
-      name: <deployment_name>
-      labels:
-        app: <deployment_label>
+      name: demo-pod
+      namespace: default
     spec:
-      selector:
-        matchLabels:
-          app: <app_name>
-      template:
-        metadata:
-          labels:
-            app: <app_name>
-        spec:
-          containers:
-          - image: <image_name>
-            name: <container_name>
-            securityContext:
-              runAsUser: <non_root_user>
-            volumeMounts:
-            - name: <volume_name>
-              mountPath: /<file_path>
-          volumes:
-          - name: <volume_name>
-            persistentVolumeClaim:
-              claimName: <pvc_name> # Enter the name of the PVC that you created in the previous step.
+      securityContext:
+        runAsUser: 2000
+        fsGroup: 2000
+      volumes:
+      - name: demo-vol
+        persistentVolumeClaim:
+          claimName: demo
+      containers:
+      - name: test
+        image: nginxinc/nginx-unprivileged
+        imagePullPolicy: Always
+        volumeMounts:
+        - name: demo-vol
+          mountPath: /mnt/cosvol
     ```
     {: codeblock}
 
-1. Create the deployment.
+
+1. Create the pod in your cluster.
+
     ```txt
-    oc create -f deployment.yaml
+    oc apply -f demo-pod.yaml
     ```
     {: pre}
+
+1. Verify that the pod is deployed. Note that it might take a few minutes for your app to get into a `Running` state.
+
+    ```txt
+    oc get pods
+    ```
+    {: pre}
+
+    ```txt
+    NAME                                READY   STATUS    RESTARTS   AGE
+    demo-pod                            1/1     Running   0          2m58s
+    ```
+    {: screen}
+
+1. Verify that the app can write to your block storage volume by logging in to your pod.
+
+   ```txt
+   oc exec demo-pod -- bash -c "ls /mnt/cosvol"
+   ```
+   {: pre}
+
+   ```txt
+   test.txt
+   ```
+   {: pre}

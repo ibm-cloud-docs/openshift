@@ -4955,13 +4955,11 @@ subcollection: openshift
 
 * [Configure rclone for your bucket in Account 2](/docs/openshift?topic=openshift-storage-cos-app-migration#rclone-config-2)
 
-* [Syncing between COS buckets](/docs/openshift?topic=openshift-storage-cos-app-migration#rclone-inspect)
+* [View the contents of your COS buckets](/docs/openshift?topic=openshift-storage-cos-app-migration#rclone-inspect)
 
 * [Syncing contents between buckets](/docs/openshift?topic=openshift-storage-cos-app-migration#rclone-sync)
 
-* [Create a PVC in Account 2](/docs/openshift?topic=openshift-storage-cos-app-migration#cos-app-redploy)
-
-* [Redeploy your app](/docs/openshift?topic=openshift-storage-cos-app-migration#cos-mig-redeploy-app)
+* [Redeploy your app in Account 2](/docs/openshift?topic=openshift-storage-cos-app-migration#cos-app-redploy)
 
 [Storage class reference](/docs/openshift?topic=openshift-storage_cos_reference#storage_cos_reference)
 
