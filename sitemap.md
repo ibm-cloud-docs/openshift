@@ -4298,9 +4298,9 @@ subcollection: openshift
 
 * [Load balancer types](/docs/openshift?topic=openshift-vpclb-about#vpclb-types)
 
-    * [Application Load Balancer for VPC](/docs/openshift?topic=openshift-vpclb-about#vpc-alb)
+    * [Application load balancer for VPC](/docs/openshift?topic=openshift-vpclb-about#vpc-alb)
 
-    * [Network Load Balancer for VPC](/docs/openshift?topic=openshift-vpclb-about#vpc-nlb)
+    * [Network load balancer for VPC](/docs/openshift?topic=openshift-vpclb-about#vpc-nlb)
 
 * [Limitations](/docs/openshift?topic=openshift-vpclb-about#vpclb_limit)
 

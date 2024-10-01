@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2024
-lastupdated: "2024-09-30"
+lastupdated: "2024-10-01"
 
 
 keywords: openshift, cli reference, kubernetes cli, openshift cli, {{site.data.keyword.openshiftlong_notm}}
@@ -678,7 +678,7 @@ Minimum required permissions
 :    Required: The name or ID of the cluster.
 
 `--admin`
-:    Optional: Download the TLS certificates and permission files for the Super User role. You can use the certs to automate tasks in a cluster without having to reauthenticate. The files are downloaded to `<user_home_directory>/.bluemix/plugins/kubernetes-service/clusters/<cluster_name>-admin`.
+:    Optional: The **Administrator** Platform role is required to use this option. Download the TLS certificates and permission files for the Super User role. The files are downloaded to `<user_home_directory>/.bluemix/plugins/kubernetes-service/clusters/<cluster_name>-admin`. The certificates can be revoked or rotated. Fore more information, see [Rotating CA certificates in your cluster](/docs/openshift?topic=openshift-cert-rotate).
 
 `--endpoint ENDPOINT_TYPE`
 :    Optional: Specify the type of endpoint to use to connect to the cluster. If you don't specify this option, the default service endpoint for your cluster is used.
