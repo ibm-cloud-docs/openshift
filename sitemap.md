@@ -4700,7 +4700,7 @@ subcollection: openshift
 
 [Setting up snapshots with the {{site.data.keyword.block_storage_is_short}} cluster add-on](/docs/openshift?topic=openshift-vpc-volume-snapshot#vpc-volume-snapshot)
 
-* [Creating an app deployment](/docs/openshift?topic=openshift-vpc-volume-snapshot#vpc-snapshot-deployment)
+* [Creating an app](/docs/openshift?topic=openshift-vpc-volume-snapshot#vpc-snapshot-deployment)
 
 * [Creating a volume snapshot](/docs/openshift?topic=openshift-vpc-volume-snapshot#vpc-create-snapshot)
 
@@ -4951,9 +4951,9 @@ subcollection: openshift
 
 * [Install `rclone`](/docs/openshift?topic=openshift-storage-cos-app-migration#rclone-install)
 
-* [Configure `rclone` for your bucket in Account 1](/docs/openshift?topic=openshift-storage-cos-app-migration#rclone-config)
+* [Configure `rclone` for your bucket in Account 1](/docs/openshift?topic=openshift-storage-cos-app-migration#rclone-config-1)
 
-* [Configure `rclone` for your bucket in Account 2](/docs/openshift?topic=openshift-storage-cos-app-migration#rclone-config)
+* [Configure `rclone` for your bucket in Account 2](/docs/openshift?topic=openshift-storage-cos-app-migration#rclone-config-2)
 
 * [Syncing between COS buckets](/docs/openshift?topic=openshift-storage-cos-app-migration#rclone-inspect)
 

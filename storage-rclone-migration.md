@@ -12,7 +12,7 @@ subcollection: openshift
 content-type: tutorial
 services: containers, cloud-object-storage 
 account-plan: paid
-completion-time: 120m
+completion-time: 2h
 
 ---
 
@@ -24,7 +24,7 @@ completion-time: 120m
 {: #storage-cos-app-migration}
 {: toc-content-type="tutorial"}
 {: toc-services="containers, cloud-object-storage"}
-{: toc-completion-time="120m"}
+{: toc-completion-time="2h"}
 
 [Classic infrastructure]{: tag-classic-inf} [Virtual Private Cloud]{: tag-vpc}
 
@@ -175,7 +175,7 @@ Follow the `rclone` docs for [installation steps](https://rclone.org/install/).
 
 
 ## Configure `rclone` for your bucket in Account 1
-{: #rclone-config}
+{: #rclone-config-1}
 {: step}
 
 [Account 1]{: tag-purple}
@@ -391,7 +391,7 @@ After you have `rclone` installed, you must generate a configuration file that d
 1. Repeat the previous steps to add the COS instance in your second account. When you've verified the information, press `q` to quit the configuration process.
 
 ## Configure `rclone` for your bucket in Account 2
-{: #rclone-config}
+{: #rclone-config-2}
 {: step}
 
 [Account 2]{: tag-teal}
@@ -618,24 +618,7 @@ After configuring `rclone`, review the contents of each bucket and then sync the
 
     ```sh
     rclone ls cos-instance-1:bucket-1
-        45338 AddNFSAccess.png
-        48559 AddingNFSAccess.png
-        66750 ChooseGroup.png
-        2550 CloudPakApplications.png
-        4643 CloudPakAutomation.png
-        4553 CloudPakData.png
-        5123 CloudPakIntegration.png
-        4612 CloudPakMultiCloud.png
-        23755 CompletedAddingNFSAccess.png
-      174525 CreateNetworkShare1.png
-        69836 CreateNetworkShare2.png
-        76863 CreateStoragePool.png
-        50489 CreateStoragePool1.png
-        56297 CreateStoragePool2.png
-        2340 applications-icon.svg
-        6979 automation-icon.svg
-      120584 cloud-paks-leadspace.png
-        9255 data-icon.svg
+        45338 test.txt
     ```
     {: screen}
 
@@ -682,24 +665,7 @@ After configuring `rclone`, review the contents of each bucket and then sync the
     Example output
 
     ```sh
-    45338 AddNFSAccess.png
-    48559 AddingNFSAccess.png
-    66750 ChooseGroup.png
-    2550 CloudPakApplications.png
-    4643 CloudPakAutomation.png
-    4553 CloudPakData.png
-    5123 CloudPakIntegration.png
-    4612 CloudPakMultiCloud.png
-    23755 CompletedAddingNFSAccess.png
-    174525 CreateNetworkShare1.png
-    69836 CreateNetworkShare2.png
-    76863 CreateStoragePool.png
-    50489 CreateStoragePool1.png
-    56297 CreateStoragePool2.png
-    2340 applications-icon.svg
-    6979 automation-icon.svg
-    120584 cloud-paks-leadspace.png
-    9255 data-icon.svg
+    45338 test.txt
     ```
     {: screen}
 

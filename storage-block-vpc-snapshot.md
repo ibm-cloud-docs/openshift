@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2022, 2024
-lastupdated: "2024-07-23"
+lastupdated: "2024-10-01"
 
 
 keywords: openshift, block storage, snapshot
@@ -25,13 +25,11 @@ subcollection: openshift
 {: shortdesc}
 
 
-
-
 Snapshots support is available for cluster version 4.9 and later and with the {{site.data.keyword.block_storage_is_short}} cluster add-on version 5.0 and later.
 {: important}
 
 
-## Creating an app deployment
+## Creating an app
 {: #vpc-snapshot-deployment}
 
 Create an example Persistent Volume Claim (PVC) and deploy a pod that references that claim. 
@@ -48,7 +46,7 @@ Create an example Persistent Volume Claim (PVC) and deploy a pod that references
 
     ```sh
     Name                   Version                     Health State   Health Status   
-    vpc-block-csi-driver   5.0   normal         Addon Ready. For more info: http://ibm.biz/addon-state (H1500)   
+    vpc-block-csi-driver   5.2   normal         Addon Ready. For more info: http://ibm.biz/addon-state (H1500)   
     ```
     {: screen}
     
@@ -67,7 +65,7 @@ Create an example Persistent Volume Claim (PVC) and deploy a pod that references
     ```
     {: screen}
 
-1. Create a PVC that uses the following yaml. 
+1. Create a PVC. 
 
     ```yaml
     apiVersion: v1
