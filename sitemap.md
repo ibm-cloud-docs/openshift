@@ -4949,11 +4949,11 @@ subcollection: openshift
 
 * [Get the details of your app](/docs/openshift?topic=openshift-storage-cos-app-migration#cos-mig-app-details)
 
-* [Install `rclone`](/docs/openshift?topic=openshift-storage-cos-app-migration#rclone-install)
+* [Install rclone](/docs/openshift?topic=openshift-storage-cos-app-migration#rclone-install)
 
-* [Configure `rclone` for your bucket in Account 1](/docs/openshift?topic=openshift-storage-cos-app-migration#rclone-config-1)
+* [Configure rclone for your bucket in Account 1](/docs/openshift?topic=openshift-storage-cos-app-migration#rclone-config-1)
 
-* [Configure `rclone` for your bucket in Account 2](/docs/openshift?topic=openshift-storage-cos-app-migration#rclone-config-2)
+* [Configure rclone for your bucket in Account 2](/docs/openshift?topic=openshift-storage-cos-app-migration#rclone-config-2)
 
 * [Syncing between COS buckets](/docs/openshift?topic=openshift-storage-cos-app-migration#rclone-inspect)
 

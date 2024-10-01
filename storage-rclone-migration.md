@@ -90,7 +90,7 @@ If you don't already have an app that you want to migrate, you can deploy the fo
 
 1. Create the PVC in your cluster.
 
-    ```sh
+    ```txt
     oc apply -f pvc-cos.yaml
     ```
     {: pre}
@@ -124,19 +124,19 @@ If you don't already have an app that you want to migrate, you can deploy the fo
 
 1. Create the pod in your cluster.
 
-    ```sh
+    ```txt
     oc apply -f demo-pod.yaml
     ```
     {: pre}
 
 1. Verify that the pod is deployed. Note that it might take a few minutes for your app to get into a `Running` state.
 
-    ```sh
+    ```txt
     oc get pods
     ```
     {: pre}
 
-    ```sh
+    ```txt
     NAME                                READY   STATUS    RESTARTS   AGE
     demo-pod                            1/1     Running   0          2m58s
     ```
@@ -144,7 +144,7 @@ If you don't already have an app that you want to migrate, you can deploy the fo
 
 1. Verify that the app can write to your block storage volume by logging in to your pod.
 
-   ```sh
+   ```txt
    oc exec demo-pod -- bash -c "touch /mnt/cosvol/test.txt && ls /mnt/cosvol" test.txt
    ```
    {: pre}
@@ -156,25 +156,25 @@ If you don't already have an app that you want to migrate, you can deploy the fo
 [Account 1]{: tag-purple}
 
 1. List the pods and PVCs.
-    ```sh
+    ```txt
     oc get pods
     ```
     {: pre}
 
 1. Describe your PVC and review the details and make a note of the bucket name.
-    ```sh
+    ```txt
     oc describe PVC -o yaml
     ```
     {: pre}
 
-## Install `rclone`
+## Install rclone
 {: #rclone-install}
 {: step}
 
 Follow the `rclone` docs for [installation steps](https://rclone.org/install/).
 
 
-## Configure `rclone` for your bucket in Account 1
+## Configure rclone for your bucket in Account 1
 {: #rclone-config-1}
 {: step}
 
@@ -184,7 +184,7 @@ After you have `rclone` installed, you must generate a configuration file that d
 
 1. Run the `rclone config` command.
 
-    ```sh
+    ```txt
     rclone config
     ```
     {: pre}
@@ -200,13 +200,13 @@ After you have `rclone` installed, you must generate a configuration file that d
     {: screen}
 
 1. Enter `n` to set up a new remote, then provide a name for your remote.
-    ```sh
+    ```txt
     n/s/q> n
     ```
     {: pre}
 
     Example remote name
-    ```sh
+    ```txt
     name> cos-instance-1
     ```
     {: codeblock}
@@ -359,7 +359,7 @@ After you have `rclone` installed, you must generate a configuration file that d
     {: screen}
 
 1. Skip the advanced config option and confirm your setup.
-    ```sh
+    ```txt
     Edit advanced config? (y/n)
     y) Yes
     n) No
@@ -390,7 +390,7 @@ After you have `rclone` installed, you must generate a configuration file that d
 
 1. Repeat the previous steps to add the COS instance in your second account. When you've verified the information, press `q` to quit the configuration process.
 
-## Configure `rclone` for your bucket in Account 2
+## Configure rclone for your bucket in Account 2
 {: #rclone-config-2}
 {: step}
 
@@ -400,7 +400,7 @@ Repeat the steps to configure `rclone` for Account 2.
 
 1. Run the `rclone config` command.
 
-    ```sh
+    ```txt
     rclone config
     ```
     {: pre}
@@ -416,13 +416,13 @@ Repeat the steps to configure `rclone` for Account 2.
     {: screen}
 
 1. Enter `n` to set up a new remote, then provide a name for your remote.
-    ```sh
+    ```txt
     n/s/q> n
     ```
     {: pre}
 
     Example remote name
-    ```sh
+    ```txt
     name> cos-instance-1
     ```
     {: codeblock}
@@ -575,7 +575,7 @@ Repeat the steps to configure `rclone` for Account 2.
     {: screen}
 
 1. Skip the advanced config option and confirm your setup.
-    ```sh
+    ```txt
     Edit advanced config? (y/n)
     y) Yes
     n) No
@@ -616,7 +616,7 @@ After configuring `rclone`, review the contents of each bucket and then sync the
 
 1. View the contents of the bucket in the first instance.
 
-    ```sh
+    ```txt
     rclone ls cos-instance-1:bucket-1
         45338 test.txt
     ```
@@ -624,7 +624,7 @@ After configuring `rclone`, review the contents of each bucket and then sync the
 
 1. View the contents of the bucket in instance 2. In this example the bucket name is `bucket-2`.
 
-    ```sh
+    ```txt
     rclone ls cos-instance-2:bucket-2
     ```
     {: pre}
@@ -639,14 +639,14 @@ After configuring `rclone`, review the contents of each bucket and then sync the
 
     Example
 
-    ```sh
+    ```txt
     rclone sync -P cos-instance-1:bucket-1 cos-instance-2:bucket-2
     ```
     {: pre}
 
     Example output
 
-    ```sh
+    ```txt
     Transferred:      754.933k / 754.933 kBytes, 100%, 151.979 kBytes/s, ETA 0s
     Errors:                 0
     Checks:                 0 / 0, -
@@ -657,14 +657,14 @@ After configuring `rclone`, review the contents of each bucket and then sync the
 
 1. Verify the contents of the bucket in `cos-instance-1` have been synced to the bucket in `cos-instance-2`.
 
-    ```sh
+    ```txt
     rclone ls cos-instance-2:bucket-2
     ```
     {: pre}
 
     Example output
 
-    ```sh
+    ```txt
     45338 test.txt
     ```
     {: screen}
@@ -707,7 +707,7 @@ After configuring `rclone`, review the contents of each bucket and then sync the
       {: codeblock}
 
 1. Create the PVC in your cluster.
-    ```sh
+    ```txt
     oc apply -f pvc.yaml
     ```
     {: pre}
@@ -751,7 +751,7 @@ After configuring `rclone`, review the contents of each bucket and then sync the
     {: codeblock}
 
 1. Create the deployment.
-    ```sh
+    ```txt
     oc create -f deployment.yaml
     ```
     {: pre}
