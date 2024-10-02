@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2024
-lastupdated: "2024-06-28"
+lastupdated: "2024-10-02"
 
 
 keywords: kubernetes, openshift
@@ -1364,7 +1364,7 @@ oc cp <namespace>/<pod>:<pod_filepath>/<filename></var> <local_filepath>/<filena
 Copy data from your local machine to a specific container that runs in a pod in your cluster.
 
 ```sh
-oc cp <local_filepath>/<filename> <namespace>/<pod>:<pod_filepath> -c <container>
+oc cp <local_filepath>/<filename> <namespace>/<pod>:<pod_filepath> -c CONTAINER
 ```
 {: pre}
 
@@ -1838,5 +1838,3 @@ The deletion process might take up to 72 hours to complete.
     
     
     
-
-

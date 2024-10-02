@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2024
-lastupdated: "2024-10-01"
+lastupdated: "2024-10-02"
 
 
 keywords: kubernetes, release notes, openshift, {{site.data.keyword.openshiftlong_notm}}
@@ -30,6 +30,22 @@ Looking for {{site.data.keyword.cloud_notm}} status, platform announcements, sec
 
 ## October 2024
 {: #openshift-oct24}
+
+### 03 October 2024
+{: #openshift-oct0324}
+{: release-note}
+
+{{site.data.keyword.block_storage_is_short}} cluster add-on patch updates.
+:   For more information, see the [change log](/docs/openshift?topic=openshift-vpc_bs_changelog).
+
+
+{{site.data.keyword.filestorage_vpc_full_notm}} cluster add-on patch updates.
+:   For more information, see the [change log](/docs/openshift?topic=openshift-versions-vpc-file-addon).
+
+Storage Operator cluster add-on patch update.
+:  For more information, see the [change log](/docs/openshift?topic=openshift-versions-ibm-storage-operator).
+
+
 
 ### 01 October 2024
 {: #openshift-oct0124}
@@ -218,7 +234,7 @@ New! Upgrade status command.
 :   For more information, see the [change log](/docs/openshift?topic=openshift-versions-vpc-file-addon).
 
 Storage Operator cluster add-on patch update.
-:   For more information, see the [change log](/docs/openshift?topic=openshift-versions-ibm-storage-operator).
+:  For more information, see the [change log](/docs/openshift?topic=openshift-versions-ibm-storage-operator).
 
 
 

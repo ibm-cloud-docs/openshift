@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2024
-lastupdated: "2024-09-30"
+lastupdated: "2024-10-02"
 
 
 keywords: kubernetes, openshift
@@ -53,8 +53,11 @@ Identify and restore the resource that causes the broken webhook.
 {: tsResolve}
 
 1. Create a test pod to get an error that identifies the broken webhook. If the test passes, then the failure might have been temporary and can be retried.
+
     ```sh
     oc run webhook-test --image registry.ng.bluemix.net/armada-master/pause:3.10 -n ibm-system
+    oc delete pod -n ibm-system webhook-test --ignore-not-found
+    oc label ns ibm-system ibm-cloud.kubernetes.io/webhook-test-at="$(date -u +%FT%H_%M_%SZ)" --overwrite
     ```
     {: pre}
 
@@ -63,19 +66,6 @@ Identify and restore the resource that causes the broken webhook.
     Error from server (InternalError): Internal error occurred: failed calling webhook "trust.hooks.securityenforcementadmission.cloud.ibm.com": Post https://ibmcloud-image-enforcement.ibm-system.svc:443/mutating-pods?timeout=30s: dialtcp 172.21.xxx.xxx:443: connect: connection timed out
     ```
     {: screen}
-
-1. Delete the test pod.
-
-    ```sh
-    oc delete pod -n ibm-system webhook-test
-    ```
-    {: pre}
-
-    ```sh
-    oc label ns ibm-system ibm-cloud.kubernetes.io/webhook-test-at="$(date -u +%FT%H_%M_%SZ)" --overwrite
-    ```
-    {: pre}
-
 
 
 1. Get the name of the broken webhook.

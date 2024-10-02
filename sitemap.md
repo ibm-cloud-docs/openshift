@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2024
-lastupdated: "2024-10-01"
+lastupdated: "2024-10-02"
 
 
 keywords: openshift
@@ -274,6 +274,14 @@ subcollection: openshift
 [Release notes](/docs/openshift?topic=openshift-openshift-relnotes#openshift-relnotes)
 
 * [October 2024](/docs/openshift?topic=openshift-openshift-relnotes#openshift-oct24)
+
+    * [03 October 2024](/docs/openshift?topic=openshift-openshift-relnotes#openshift-oct0324)
+
+        * {{site.data.keyword.block_storage_is_short}} cluster add-on patch updates.
+
+        * {{site.data.keyword.filestorage_vpc_full_notm}} cluster add-on patch updates.
+
+        * Storage Operator cluster add-on patch update.
 
     * [01 October 2024](/docs/openshift?topic=openshift-openshift-relnotes#openshift-oct0124)
 
@@ -3446,6 +3454,8 @@ subcollection: openshift
 
 * [Adding a private registry to the global pull secret](/docs/openshift?topic=openshift-registry#cluster_global_pull_secret)
 
+* [Updating the global pull secret](/docs/openshift?topic=openshift-registry#oc-pull-secret-cli)
+
 * [Updating an {{site.data.keyword.containerlong_notm}} containerd custom registry configuration](/docs/openshift?topic=openshift-registry#update_containerd_registry_config)
 
     * [Example daemonset to update a containerd custom registry configuration](/docs/openshift?topic=openshift-registry#ds-example-registry)
@@ -4850,7 +4860,7 @@ subcollection: openshift
 
 * [Deploying an app that runs as non-root](/docs/openshift?topic=openshift-storage-file-vpc-apps#vpc-file-non-root-app)
 
-* [Setting up your KMS provider for encrypting {{site.data.keyword.filestorage_vpc_short}}](/docs/openshift?topic=openshift-storage-file-vpc-apps#storage-file-kms)
+* [Setting up KMS encryption for {{site.data.keyword.filestorage_vpc_short}}](/docs/openshift?topic=openshift-storage-file-vpc-apps#storage-file-kms)
 
 * [Setting up encryption in-transit (EIT)](/docs/openshift?topic=openshift-storage-file-vpc-apps#storage-file-vpc-eit)
 
@@ -7422,6 +7432,8 @@ subcollection: openshift
 
 * [Version 5.2](/docs/openshift?topic=openshift-vpc_bs_changelog#052_is_block)
 
+    * [Change log for version 5.2.21_602, released 3 October 2024](/docs/openshift?topic=openshift-vpc_bs_changelog#5.2.21_602_is_block_relnote)
+
     * [Change log for version 5.2.20_579, released 15 July 2024](/docs/openshift?topic=openshift-vpc_bs_changelog#5.2.20_579_is_block_relnote)
 
     * [Change log for version 5.2.19_570, released 21 June 2024](/docs/openshift?topic=openshift-vpc_bs_changelog#5.2.19_570_is_block_relnote)
@@ -7441,6 +7453,8 @@ subcollection: openshift
     * [Change log for version 5.2, released 25 September 2023](/docs/openshift?topic=openshift-vpc_bs_changelog#5.2_is_block_relnote)
 
 * [Version 5.1](/docs/openshift?topic=openshift-vpc_bs_changelog#051_is_block)
+
+    * [Change log for version 5.1.26_601, released 3 October 2024](/docs/openshift?topic=openshift-vpc_bs_changelog#5.1.26_601_is_block_relnote)
 
     * [Change log for version 5.1.25_574, released 15 July 2024](/docs/openshift?topic=openshift-vpc_bs_changelog#5.1.25_574_is_block_relnote)
 
@@ -7606,6 +7620,8 @@ subcollection: openshift
 
 * [Version 2.0](/docs/openshift?topic=openshift-versions-vpc-file-addon#020_is_file)
 
+    * [Change log for version 2.0.8_311, released 3 October 2024](/docs/openshift?topic=openshift-versions-vpc-file-addon#2.0.8_311_is_file_relnote)
+
     * [Change log for version 2.0.6_259, released 26 August 2024](/docs/openshift?topic=openshift-versions-vpc-file-addon#2.0.6_259_is_file_relnote)
 
     * [Change log for version 2.0.5_253, released 15 July 2024](/docs/openshift?topic=openshift-versions-vpc-file-addon#2.0.5_253_is_file_relnote)
@@ -7613,6 +7629,8 @@ subcollection: openshift
     * [Change log for version 2.0.4_232, released 3 July 2024](/docs/openshift?topic=openshift-versions-vpc-file-addon#2.0.4_232_is_file_relnote)
 
 * [Version 1.2](/docs/openshift?topic=openshift-versions-vpc-file-addon#012_is_file)
+
+    * [Change log for version 1.2.12_312, released 3 October 2024](/docs/openshift?topic=openshift-versions-vpc-file-addon#1.2.12_312_is_file_relnote)
 
     * [Change log for version 1.2.10_254, released 15 July 2024](/docs/openshift?topic=openshift-versions-vpc-file-addon#1.2.10_254_is_file_relnote)
 
@@ -7773,6 +7791,8 @@ subcollection: openshift
 [Static route add-on change log](/docs/openshift?topic=openshift-versions-static-route#versions-static-route)
 
 * [Version 1.0.0](/docs/openshift?topic=openshift-versions-static-route#v100)
+
+    * [Change log for 1.0.0_1415, released 3 October 2024](/docs/openshift?topic=openshift-versions-static-route#100_1415)
 
     * [Change log for 1.0.0_1122, released 17 July 2023](/docs/openshift?topic=openshift-versions-static-route#100_1122)
 
@@ -8233,6 +8253,8 @@ subcollection: openshift
 [IBM storage operator add-on change log](/docs/openshift?topic=openshift-versions-ibm-storage-operator#versions-ibm-storage-operator)
 
 * [Version 1.0.0](/docs/openshift?topic=openshift-versions-ibm-storage-operator#ibm-storage-operator-1.0.0)
+
+    * [Change log for version 1.0.15_163, released 3 October 2024](/docs/openshift?topic=openshift-versions-ibm-storage-operator#ibm-storage-operator-1.0.15_163)
 
     * [Change log for version 1.0.13_151, released 26 August 2024](/docs/openshift?topic=openshift-versions-ibm-storage-operator#ibm-storage-operator-1.0.13_151)
 

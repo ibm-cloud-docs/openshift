@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2024
-lastupdated: "2024-01-03"
+lastupdated: "2024-10-02"
 
 
 keywords: openshift, static route, add-on
@@ -37,6 +37,12 @@ ibmcloud oc cluster addon versions
 ## Version 1.0.0
 {: #v100}
 
+### Change log for 1.0.0_1415, released 3 October 2024
+{: #100_1415}
+
+- Updates the Operator SDK version to `1.36.1`.
+- Updates the Go builder version to `1.22`.
+- Fixes a bug in `nodeSelector` that did not properly select nodes on a multi-subnet cluster.
 
 
 ### Change log for 1.0.0_1122, released 17 July 2023
@@ -50,7 +56,3 @@ Adds support for multiple worker node architectures.
 {: #100_649}
 
 - Uses `apiextensions.k8s.io/v1` instead of `apiextensions.k8s.io/v1beta1`.
-
-
-
-
