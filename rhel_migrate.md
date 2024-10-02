@@ -2,7 +2,7 @@
 
 copyright:
   years: 2022, 2024
-lastupdated: "2024-09-30"
+lastupdated: "2024-10-02"
 
 
 keywords: rhel, os, operating system
@@ -42,7 +42,7 @@ To find your worker node operating system, run the **`ibmcloud oc worker-pools -
     ```
     {: pre}
 
-1. Update each worker node in the worker pool by running the [`ibmcloud oc worker update`](/docs/containers?topic=containers-kubernetes-service-cli#cs_worker_update) or [`ibmcloud oc worker replace`](h/docs/containers?topic=containers-kubernetes-service-cli#cli_worker_replace) command. 
+1. Update each worker node in the worker pool by running the [`ibmcloud oc worker update`](/docs/containers?topic=containers-kubernetes-service-cli#cs_worker_update) or [`ibmcloud oc worker replace`](/docs/containers?topic=containers-kubernetes-service-cli#cli_worker_replace) command. 
 
     Make sure you have enough worker nodes to support your workload while you update or replace the relevant worker nodes. For more information, see [Updating VPC worker nodes](/docs/containers?topic=containers-update&interface=ui#vpc_worker_node) or [Updating classic worker nodes](/docs/containers?topic=containers-update&interface=ui#worker_node).
     {: tip}
