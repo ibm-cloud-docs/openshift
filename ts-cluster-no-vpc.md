@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2024
-lastupdated: "2024-05-29"
+lastupdated: "2024-10-03"
 
 
 keywords: kubernetes, openshift
@@ -25,7 +25,7 @@ content-type: troubleshoot
 
 **Infrastructure provider**: VPC
 
-You try to create a VPC cluster by using the [{{site.data.keyword.openshiftlong_notm}} console](https://cloud.ibm.com/kubernetes/catalog/create){: external}.
+You try to create a VPC cluster by using the [{{site.data.keyword.openshiftlong_notm}} console](https://cloud.ibm.com/containers/cluster-management/catalog/create){: external}.
 {: tsSymptoms} 
 
 You have an existing [VPC](https://cloud.ibm.com/vpc){: external} in your account, but when you try to select an existing **Virtual Private Cloud** to create the cluster in, you see the following error message:
@@ -60,7 +60,4 @@ To set an API key for the `default` resource group, use the {{site.data.keyword.
     ```
     {: pre}
 
-4. In the [{{site.data.keyword.openshiftlong_notm}} console](https://cloud.ibm.com/kubernetes/catalog/create){: external}, click **Refresh VPCs**. Your available VPCs are now listed in a drop-down menu.
-
-
-
+4. In the [{{site.data.keyword.openshiftlong_notm}} console](https://cloud.ibm.com/containers/cluster-management/catalog/create){: external}, click **Refresh VPCs**. Your available VPCs are now listed in a drop-down menu.
