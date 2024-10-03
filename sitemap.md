@@ -6305,8 +6305,6 @@ subcollection: openshift
 
 * [Checking the `Upgradeable` status of your cluster](/docs/openshift?topic=openshift-cs_versions_416#status-check-416)
 
-* [RHEL 9](/docs/openshift?topic=openshift-cs_versions_416#416_rhel9)
-
 [Version 4.16 change log](/docs/openshift?topic=openshift-openshift_changelog_416#openshift_changelog_416)
 
 * [Overview](/docs/openshift?topic=openshift-openshift_changelog_416#openshift_changelog_overview_416)
