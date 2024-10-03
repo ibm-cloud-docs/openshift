@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2024
-lastupdated: "2024-09-30"
+lastupdated: "2024-10-03"
 
 
 keywords: kubernetes, clusters, worker nodes, worker pools, vpc-gen2, openshift, {{site.data.keyword.openshiftlong_notm}}
@@ -300,7 +300,7 @@ ibmcloud oc cluster create vpc-gen2 --name my_cluster --zone us-south-1 --flavor
 Example command for a VPC cluster with worker nodes that run the RHEL 9 operating system.
 
 ```sh
-ibmcloud oc cluster create vpc-gen2 --name my_cluster --zone us-south-1 --flavor b3c.4x16 --vpc_ID VPC-ID --subnet-id SUBNET-ID --operating-system REDHAT_9_64
+ibmcloud oc cluster create vpc-gen2 --name my_cluster --zone us-south-1 --flavor b3c.4x16 --vpc_ID VPC-ID --subnet-id SUBNET-ID --operating-system REDHAT_8_64
 ```
 {: pre}
 

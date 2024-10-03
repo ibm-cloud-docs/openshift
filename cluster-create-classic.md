@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2024
-lastupdated: "2024-09-30"
+lastupdated: "2024-10-03"
 
 
 keywords: openshift, {{site.data.keyword.openshiftlong_notm}}, kubernetes, clusters, worker nodes, worker pools, classic, create
@@ -143,7 +143,7 @@ Create your Classic cluster by using the {{site.data.keyword.cloud_notm}} CLI.
 
 1. Create your standard cluster.
     ```sh
-    ibmcloud oc cluster create classic --zone <zone> --flavor <flavor> --hardware <shared_or_dedicated> --public-vlan <public_VLAN_ID> --private-vlan <private_VLAN_ID> --workers <number> [--operating-system (REDHAT_9_64)] --name <cluster_name> --version <major.minor.patch>_openshift --public-service-endpoint [--private-service-endpoint] [--pod-subnet] [--service-subnet] [--disable-disk-encrypt] [--sm-group GROUP] [--sm-instance INSTANCE]
+    ibmcloud oc cluster create classic --zone <zone> --flavor <flavor> --hardware <shared_or_dedicated> --public-vlan <public_VLAN_ID> --private-vlan <private_VLAN_ID> --workers <number> [--operating-system (REDHAT_8_64)] --name <cluster_name> --version <major.minor.patch>_openshift --public-service-endpoint [--private-service-endpoint] [--pod-subnet] [--service-subnet] [--disable-disk-encrypt] [--sm-group GROUP] [--sm-instance INSTANCE]
     ```
     {: pre}
 
@@ -274,15 +274,15 @@ ibmcloud oc cluster create classic --name my_cluster --version 4.15_openshift --
 Example command to create a Classic cluster with an IBM Cloud Pak entitlement for a default worker pool of 3 worker nodes with 4 cores and 16 memory each.
 
 ```sh
-ibmcloud oc cluster create classic --name cloud_pak_cluster --version 4.15_openshift --zone dal10 --flavor b3c.4x16 --hardware dedicated --workers 3 --entitlement ENTITLEMENT --public-vlan PUBLIC-VLAN-ID --private-vlan PRIVATE-VLAN-ID [--operating-system (REDHAT_9_64)]
+ibmcloud oc cluster create classic --name cloud_pak_cluster --version 4.15_openshift --zone dal10 --flavor b3c.4x16 --hardware dedicated --workers 3 --entitlement ENTITLEMENT --public-vlan PUBLIC-VLAN-ID --private-vlan PRIVATE-VLAN-ID [--operating-system (REDHAT_8_64)]
 ```
 {: pre}
 
 
-Example command to create a Classic cluster with RHEL 9 worker nodes.
+Example command to create a Classic cluster with RHEL 8 worker nodes.
 
 ```sh
-ibmcloud oc cluster create classic --name my_cluster --zone dal10 --flavor b3c.4x16 --version 4.9.28_openshift --operating-system REDHAT_9_64
+ibmcloud oc cluster create classic --name my_cluster --zone dal10 --flavor b3c.4x16 --version 4.9.28_openshift --operating-system REDHAT_8_64
 ```
 {: pre}
 

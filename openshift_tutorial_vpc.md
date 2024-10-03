@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2024
-lastupdated: "2024-09-30"
+lastupdated: "2024-10-03"
 
 
 keywords: kubernetes, openshift, red hat, red hat openshift
@@ -127,7 +127,7 @@ Create an {{site.data.keyword.cloud_notm}} Virtual Private Cloud (VPC) environme
 4. Create a cluster in your VPC in the same zone as the subnet.
     The following command creates a version 4.15 cluster in Dallas with the minimum configuration of 2 worker nodes that have at least 4 cores and 16 GB memory so that default {{site.data.keyword.redhat_openshift_notm}} components can deploy. By default, your cluster is created with a public and a private cloud service endpoint. You can use the public cloud service endpoint to access the Kubernetes master, such as to run `oc` commands, from your local machine. Your worker nodes communicate with the master on the private cloud service endpoint. For the purposes of this tutorial, do **not** specify the `--disable-public-service-endpoint` option. For more information about the command options, see the [`cluster create vpc-gen2` CLI reference docs](/docs/openshift?topic=openshift-kubernetes-service-cli#cli_cluster-create-vpc-gen2).
     ```sh
-    ibmcloud oc cluster create vpc-gen2 --name myvpc-cluster --zone us-south-1 --version 4.15_openshift --flavor bx2.4x16 --workers 2 [--operating-system REDHAT_9_64] --vpc-id <vpc_ID> --subnet-id <vpc_subnet_ID> --cos-instance <cos_crn>
+    ibmcloud oc cluster create vpc-gen2 --name myvpc-cluster --zone us-south-1 --version 4.15_openshift --flavor bx2.4x16 --workers 2 [--operating-system REDHAT_8_64] --vpc-id <vpc_ID> --subnet-id <vpc_subnet_ID> --cos-instance <cos_crn>
     ```
     {: pre}
 
