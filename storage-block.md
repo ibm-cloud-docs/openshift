@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2024
-lastupdated: "2024-09-19"
+lastupdated: "2024-10-02"
 
 
 keywords: kubernetes, openshift
@@ -1633,7 +1633,7 @@ oc cp <namespace>/<pod>:<pod_filepath>/<filename> <local_filepath>/<filename>
 Copy data from your local machine to a specific container that runs in a pod in your cluster.
 
 ```sh
-oc cp <local_filepath>/<filename> <namespace>/<pod>:<pod_filepath> -c <container>
+oc cp <local_filepath>/<filename> <namespace>/<pod>:<pod_filepath> -c CONTAINER
 ```
 {: pre}
 

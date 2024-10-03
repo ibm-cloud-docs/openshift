@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2024
-lastupdated: "2024-09-04"
+lastupdated: "2024-10-02"
 
 
 keywords: openshift, {{site.data.keyword.openshiftlong_notm}}, kubernetes, registry, pull secret, secrets
@@ -1340,6 +1340,118 @@ To add private registries, edit the global `pull-secret` in the `openshift-confi
         vi /.docker/config.json
         ```
         {: pre}
+
+## Updating the global pull secret
+{: #oc-pull-secret-cli}
+
+Complete the following steps to update the global pull secret in your {{site.data.keyword.openshiftlong_notm}} cluster.
+
+
+1. Create a secret that has the credentials for the registry you want to use.
+    ```sh
+    oc create secret docker-registry docker-auth-secret \
+    --docker-server=REGISTRY \
+    --docker-username=USERNAME \
+    --docker-password=PASSWORD \
+    --namespace kube-system
+    ```
+    {: pre}
+
+    Example `create secret` command.
+    ```sh
+    oc create secret docker-registry docker-auth-secret \
+    --docker-server=REGISTRY \
+    --docker-username=cp \
+    --docker-password=ENTITLEMENT-KEY \
+    --namespace kube-system
+    ```
+    {: pre}
+
+1. Create a DaemonSet to apply the secret across all worker nodes.
+    ```yaml
+    cat << EOF | oc create -f -
+    apiVersion: apps/v1
+    kind: DaemonSet
+    metadata:
+      name: update-docker-config
+      namespace: kube-system
+      labels:
+        app: update-docker-config
+    spec:
+      selector:
+        matchLabels:
+          name: update-docker-config
+      template:
+        metadata:
+          labels:
+            name: update-docker-config
+        spec:
+          initContainers:
+            - command: ["/bin/sh", "-c"]
+              args:
+                - >
+                  echo "Checking if RHEL or RHCOS host";
+                  [[ -s /docker-config/.docker/config.json  ]] && CONFIG_PATH=/docker-config/.docker || CONFIG_PATH=/docker-config/root/.docker;
+                  echo "Backing up or restoring config.json";
+                  [[ -s \$CONFIG_PATH/config.json ]] && cp \$CONFIG_PATH/config.json \$CONFIG_PATH/config.json.bak || cp \$CONFIG_PATH/config.json.bak \$CONFIG_PATH/config.json;
+                  echo "Merging secret with config.json";
+                  /host/usr/bin/jq -s '.[0] * .[1]' \$CONFIG_PATH/config.json /auth/.dockerconfigjson > \$CONFIG_PATH/config.tmp;
+                  mv \$CONFIG_PATH/config.tmp \$CONFIG_PATH/config.json;
+                  echo "Sending signal to reload crio config";
+                  pidof crio;
+                  kill -1 \$(pidof crio)
+              image: icr.io/ibm/alpine:latest
+              imagePullPolicy: IfNotPresent
+              name: updater
+              resources: {}
+              securityContext:
+                privileged: true
+              volumeMounts:
+                - name: docker-auth-secret
+                  mountPath: /auth
+                - name: docker
+                  mountPath: /docker-config
+                - name: bin
+                  mountPath: /host/usr/bin
+                - name: lib64
+                  mountPath: /lib64
+          containers:
+            - resources:
+                requests:
+                  cpu: 0.01
+              image: icr.io/ibm/alpine:latest
+              name: sleepforever
+              command: ["/bin/sh", "-c"]
+              args:
+                - >
+                  while true; do
+                    sleep 100000;
+                  done
+          hostPID: true
+          volumes:
+            - name: docker-auth-secret
+              secret:
+                secretName: docker-auth-secret
+            - name: docker
+              hostPath:
+                path: /
+            - name: bin
+              hostPath:
+                path: /usr/bin
+            - name: lib64
+              hostPath:
+                path: /lib64
+                hostPathType: Directory
+    EOF
+    ```
+    {: codeblock}
+
+1. Verify the pods are running.
+    ```sh
+    oc get daemonset -n kube-system update-docker-config
+    ```
+    {: pre}
+
 
 
 

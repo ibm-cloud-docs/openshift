@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2024
-lastupdated: "2024-08-26"
+lastupdated: "2024-10-02"
 
 
 keywords: file, add-on, changelog, openshift
@@ -45,6 +45,17 @@ To view a list of add-ons and the supported cluster versions, see the [Supported
 ## Version 2.0
 {: #020_is_file}
 
+### Change log for version 2.0.8_311, released 3 October 2024
+{: #2.0.8_311_is_file_relnote}
+
+- Updates the golang base image to `1.22.7`.
+- Updates to Kubernetes 1.30 client libraries.
+- Updates the CSI specification to version `1.9.0`.
+- Fixes a security issue for the CSI sidecar liveness probe. The sidecar now runs as non-root in the Node Server pod.
+- Adds the ability to set a default storage class. For more information, see [Setting the default storage class](/docs/openshift?topic=openshift-storage-file-vpc-apps#vpc-file-set-default-sc).
+- Updates the following sidecar images: `csi-provisioner:v5.0.2`, `csi-resizer:v1.11.2`, `livenessprobe:v2.13.1`, and `csi-node-driver-registrar:v2.11.1`.
+- Resolves [CVE-2024-2398](https://nvd.nist.gov/vuln/detail/CVE-2024-2398){: external}, [CVE-2024-37370](https://nvd.nist.gov/vuln/detail/CVE-2024-37370){: external}, [CVE-2024-37371](https://nvd.nist.gov/vuln/detail/CVE-2024-37371){: external}.
+
 ### Change log for version 2.0.6_259, released 26 August 2024
 {: #2.0.6_259_is_file_relnote}
 
@@ -77,6 +88,17 @@ To view a list of add-ons and the supported cluster versions, see the [Supported
 
 ## Version 1.2
 {: #012_is_file}
+
+### Change log for version 1.2.12_312, released 3 October 2024
+{: #1.2.12_312_is_file_relnote}
+
+- Updates the golang base image to `1.22.7`.
+- Updates to Kubernetes 1.30 client libraries.
+- Updates the CSI specification to version `1.9.0`.
+- Fixes a security issue for the CSI sidecar liveness probe. The sidecar now runs as non-root in the Node Server pod.
+- Updates the following sidecar images: `csi-provisioner:v5.0.2`, `csi-resizer:v1.11.2`, `livenessprobe:v2.13.1`, and `csi-node-driver-registrar:v2.11.1`.
+- Resolves [CVE-2024-2398](https://nvd.nist.gov/vuln/detail/CVE-2024-2398){: external}, [CVE-2024-37370](https://nvd.nist.gov/vuln/detail/CVE-2024-37370){: external}, [CVE-2024-37371](https://nvd.nist.gov/vuln/detail/CVE-2024-37371){: external}.
+
 
 ### Change log for version 1.2.10_254, released 15 July 2024
 {: #1.2.10_254_is_file_relnote}
@@ -239,9 +261,3 @@ To view a list of add-ons and the supported cluster versions, see the [Supported
 - Updates the UBI image to `8.7-1107`.
 - Updates Golang to `1.19.8`.
 - Resolves the following CVEs: [CVE-2023-2453](https://nvd.nist.gov/vuln/detail/CVE-2023-2453){: external}, [CVE-2023-24537](https://nvd.nist.gov/vuln/detail/CVE-2023-24537){: external}, [CVE-2023-24538](https://nvd.nist.gov/vuln/detail/CVE-2023-24538){: external}.
-
-
-
-
-
-

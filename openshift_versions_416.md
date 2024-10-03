@@ -2,7 +2,7 @@
 
 copyright:
   years: 2024, 2024
-lastupdated: "2024-09-10"
+lastupdated: "2024-10-03"
 
 
 keywords: openshift, version, update, upgrade, 4.16, update openshift
@@ -47,6 +47,7 @@ Dates that are marked with a dagger (`†`) are tentative and subject to change.
 
 Review changes that you might need to make when you [update a cluster](/docs/openshift?topic=openshift-update) to version 4.16. This information summarizes updates that are likely to have an impact on deployed apps when you update.
 {: shortdesc}
+
 
 The backup and restore Helm chart is supported on {{site.data.keyword.openshiftlong_notm}} 4.16 clusters. However, only the COS direct endpoints are supported. For example: `s3.direct.us.cloud-object-storage.appdomain.cloud`.
 {: note}

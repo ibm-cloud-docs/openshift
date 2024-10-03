@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2024
-lastupdated: "2024-08-19"
+lastupdated: "2024-10-01"
 
 
 keywords: kubernetes, openshift, app protocol, application protocol
@@ -23,7 +23,7 @@ subcollection: openshift
 Learn how you can use VPC load balancers to expose your app on the public or private network.
 {: shortdesc}
 
-To expose an app in a VPC cluster, you can create a layer 7 VPC Application Load Balancer(VPC ALB) or a layer 4 VPC Network Load Balancer (VPC NLB). 
+To expose an app in a VPC cluster, you can create a layer 7 VPC Application Load Balancer (VPC ALB) or a layer 4 VPC Network Load Balancer (VPC NLB). 
 
 If you create a **public** Kubernetes `LoadBalancer` service, you expose your app to public network traffic. You can access your app from the internet through the external, public IP address that is assigned by the VPC NLB to the Kubernetes `LoadBalancer` service. No public gateway is required on your VPC subnet to allow public requests to your VPC NLB. However, if your app must access a public URL, you must attach public gateways to the VPC subnets that your worker nodes are connected to.
 
@@ -54,7 +54,7 @@ The following table describes the basic characteristics of each load balancing o
 
 
 
-### Application Load Balancer for VPC
+### Application load balancer for VPC
 {: #vpc-alb}
 
 Set up a layer-7, multizone [Application Load Balancer for VPC](/docs/vpc?topic=vpc-load-balancers) (VPC ALB) to serve as the external entry point for incoming requests to an app in your cluster. Keep the following points in mind when planning your VPC ALB setup. 
@@ -63,7 +63,7 @@ Set up a layer-7, multizone [Application Load Balancer for VPC](/docs/vpc?topic=
 Do not confuse the Application Load Balancer for VPC with {{site.data.keyword.openshiftlong_notm}} Ingress applications load balancers. Application Load Balancers for VPC (VPC ALBs) run outside your cluster in your VPC and are configured by Kubernetes `LoadBalancer` services that you create. [Ingress applications load balancers (ALBs)](/docs/containers?topic=containers-comm-ingress-annotations) are Ingress controllers that run on worker nodes in your cluster.
 {: note}
 
-* VPC ALB names has a format `kube-<cluster_ID>-<kubernetes_lb_service_UID>`. To see your cluster ID, run `ibmcloud oc cluster get --cluster <cluster_name>`. To see the Kubernetes `LoadBalancer` service UID, run `oc get svc myloadbalancer -o yaml` and look for the **metadata.uid** field in the output. The hyphens (-) are removed from the Kubernetes `LoadBalancer` service UID in the VPC ALB name.
+* VPC ALB names have a format `kube-<cluster_ID>-<kubernetes_lb_service_UID>`. To see your cluster ID, run `ibmcloud oc cluster get --cluster <cluster_name>`. To see the Kubernetes `LoadBalancer` service UID, run `oc get svc myloadbalancer -o yaml` and look for the **metadata.uid** field in the output. The hyphens (-) are removed from the Kubernetes `LoadBalancer` service UID in the VPC ALB name.
 
 * By default, when you create a Kubernetes `LoadBalancer` service for an app in your cluster, an Application Load Balancer for VPC is created in your VPC outside of your cluster. The VPC ALB routes requests to your app through the private NodePorts that are automatically opened on your worker nodes.
 
@@ -81,7 +81,7 @@ The following diagram illustrates how a user accesses an app from the internet t
 2. The request is automatically forwarded by the VPC ALB to one of the node ports on the worker node, and then to the private IP address of the app pod.
 3. If app instances are deployed to multiple worker nodes in the cluster, the load balancer routes the requests between the app pods on various worker nodes. Additionally, if you have a multizone cluster, the VPC ALB routes requests to worker nodes across all subnets and zones in your cluster.
 
-### Network Load Balancer for VPC
+### Network load balancer for VPC
 {: #vpc-nlb}
 
 In VPC clusters, set up a layer-4 [Network Load Balancer for VPC](/docs/vpc?topic=vpc-network-load-balancers) (VPC NLB) in each zone of your cluster to serve as the external entry point for incoming requests to an app.
@@ -105,6 +105,7 @@ The following diagram illustrates how a user accesses an app from the internet t
 1. A request to your app uses the external IP address that is assigned to the Kubernetes `LoadBalancer` service by the VPC NLB.
 2. The request is automatically forwarded by the VPC NLB to one of the node ports on the worker node, and then to the private IP address of the app pod.
 3. If app instances are deployed to multiple worker nodes in the cluster, the VPC NLB routes the requests between the app pods on various worker nodes across all zones of the cluster.
+
 
 
 ## Limitations
@@ -139,4 +140,3 @@ Review the following default settings and limitations.
     * VPC NLBs forward incoming traffic to all worker nodes in the cluster unless you restrict incoming traffic to specific worker nodes with the `service.kubernetes.io/ibm-load-balancer-cloud-provider-vpc-node-selector` or `service.kubernetes.io/ibm-load-balancer-cloud-provider-zone annotations`. To limit traffic to a specific zone, you can use these annotations to specify worker nodes in that zone. 
 * Disabling load balancer NodePort allocation is not supported for VPC load balancers. 
 * VPC NLBs can be set up with both UDP and TCP on the same VPC LB, but the listening port must be different.
-

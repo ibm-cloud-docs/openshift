@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2024
-lastupdated: "2024-07-15"
+lastupdated: "2024-10-02"
 
 
 keywords: openshift, {{site.data.keyword.openshiftlong_notm}}, block, storage, add-on, changelog
@@ -46,6 +46,19 @@ Before you migrate to a `5.x` release from a previous release, you must not have
 
 ## Version 5.2
 {: #052_is_block}
+
+
+### Change log for version 5.2.21_602, released 3 October 2024
+{: #5.2.21_602_is_block_relnote}
+
+- Adds support for cross-account snapshot restoration.
+- Updates the golang base image to `1.22.7`.
+- Updates to Kubernetes 1.30 client libraries.
+- Updates the CSI specification to version `1.9.0`.
+- Fixes a security issue for the CSI sidecar liveness probe. The sidecar now runs as non-root in the Node Server pod.
+- Adds the ability to set a default storage class. For more information, see [Setting the default storage class](/docs/openshift?topic=openshift-storage-file-vpc-apps#vpc-file-set-default-sc).
+- Updates the following sidecar images: `csi-provisioner:v5.0.2`, `csi-resizer:v1.11.2`, `csi-snapshotter:v8.0.1`, `csi-attacher:v4.6.1`, `livenessprobe:v2.13.1`, and `csi-node-driver-registrar:v2.11.1`
+- Resolves [CVE-2024-2398](https://nvd.nist.gov/vuln/detail/CVE-2024-2398){: external}, [CVE-2024-37370](https://nvd.nist.gov/vuln/detail/CVE-2024-37370){: external}, [CVE-2024-37371](https://nvd.nist.gov/vuln/detail/CVE-2024-37371){: external}.
 
 ### Change log for version 5.2.20_579, released 15 July 2024
 {: #5.2.20_579_is_block_relnote}
@@ -134,6 +147,17 @@ Before you migrate to a `5.x` release from a previous release, you must not have
 
 ## Version 5.1
 {: #051_is_block}
+
+### Change log for version 5.1.26_601, released 3 October 2024
+{: #5.1.26_601_is_block_relnote}
+
+- Updates the golang base image to `1.22.7`.
+- Updates to Kubernetes 1.30 client libraries.
+- Updates the CSI specification to version `1.9.0`.
+- Fixes a security issue for the CSI sidecar liveness probe. The sidecar now runs as non-root in the Node Server pod.
+- Adds the ability to set a default storage class. For more information, see [Setting the default storage class](/docs/openshift?topic=openshift-storage-file-vpc-apps#vpc-file-set-default-sc).
+- Updates the following sidecar images: `csi-provisioner:v5.0.2`, `csi-resizer:v1.11.2`, `csi-snapshotter:v8.0.1`, `csi-attacher:v4.6.1`, `livenessprobe:v2.13.1`, and `csi-node-driver-registrar:v2.11.1`
+- Resolves [CVE-2024-2398](https://nvd.nist.gov/vuln/detail/CVE-2024-2398){: external}, [CVE-2024-37370](https://nvd.nist.gov/vuln/detail/CVE-2024-37370){: external}, [CVE-2024-37371](https://nvd.nist.gov/vuln/detail/CVE-2024-37371){: external}.
 
 ### Change log for version 5.1.25_574, released 15 July 2024
 {: #5.1.25_574_is_block_relnote}

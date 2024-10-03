@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2024
-lastupdated: "2024-09-26"
+lastupdated: "2024-10-03"
 
 
 keywords: kubernetes, openshift, red hat, red hat openshift

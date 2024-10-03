@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2024, 2024
-lastupdated: "2024-09-30"
+lastupdated: "2024-10-01"
 
 
 keywords: openshift, rclone, migrate
@@ -12,7 +12,7 @@ subcollection: openshift
 content-type: tutorial
 services: containers, cloud-object-storage 
 account-plan: paid
-completion-time: 120m
+completion-time: 2h
 
 ---
 
@@ -24,7 +24,7 @@ completion-time: 120m
 {: #storage-cos-app-migration}
 {: toc-content-type="tutorial"}
 {: toc-services="containers, cloud-object-storage"}
-{: toc-completion-time="120m"}
+{: toc-completion-time="2h"}
 
 [Classic infrastructure]{: tag-classic-inf} [Virtual Private Cloud]{: tag-vpc}
 
@@ -34,8 +34,9 @@ In this tutorial, you'll migrate a COS app and data from an {{site.data.keyword.
 ## Prerequisites
 {: #cos-migration-prereqs}
 
-Account 1 [Account 1]{: tag-dark-teal}
-:   In the first account, you must have the following.
+[Account 1]{: tag-purple}
+
+In Account 1, you must have the following.
 
 * An {{site.data.keyword.containerlong_notm}} cluster.
 
@@ -44,8 +45,9 @@ Account 1 [Account 1]{: tag-dark-teal}
 * The [COS plug-in installed in your cluster](/docs/containers?topic=containers-storage_cos_install).
 
 
-Account 2 [Account 2]{: tag-teal}
-:   In the second account, the destination account to migrate to, you must have the following.
+[Account 2]{: tag-teal}
+
+In Account 2, the destination account to migrate to, you must have the following.
 
 * A {{site.data.keyword.openshiftlong_notm}} cluster.
 
@@ -59,7 +61,7 @@ Account 2 [Account 2]{: tag-teal}
 {: #cos-mig-app-deploy}
 {: step}
 
-[Account 1]{: tag-dark-teal}
+[Account 1]{: tag-purple}
 
 If you don't already have an app that you want to migrate, you can deploy the following example app.
 
@@ -88,7 +90,7 @@ If you don't already have an app that you want to migrate, you can deploy the fo
 
 1. Create the PVC in your cluster.
 
-    ```sh
+    ```txt
     oc apply -f pvc-cos.yaml
     ```
     {: pre}
@@ -122,19 +124,19 @@ If you don't already have an app that you want to migrate, you can deploy the fo
 
 1. Create the pod in your cluster.
 
-    ```sh
+    ```txt
     oc apply -f demo-pod.yaml
     ```
     {: pre}
 
 1. Verify that the pod is deployed. Note that it might take a few minutes for your app to get into a `Running` state.
 
-    ```sh
+    ```txt
     oc get pods
     ```
     {: pre}
 
-    ```sh
+    ```txt
     NAME                                READY   STATUS    RESTARTS   AGE
     demo-pod                            1/1     Running   0          2m58s
     ```
@@ -142,8 +144,8 @@ If you don't already have an app that you want to migrate, you can deploy the fo
 
 1. Verify that the app can write to your block storage volume by logging in to your pod.
 
-   ```sh
-   oc exec demo-pod -- bash -c "touch /mnt/cosvol/test.txt && ls /mnt/cosvol" test.txt
+   ```txt
+   oc exec demo-pod -- bash -c "ls /mnt/cosvol"
    ```
    {: pre}
 
@@ -151,38 +153,38 @@ If you don't already have an app that you want to migrate, you can deploy the fo
 {: #cos-mig-app-details}
 {: step}
 
-[Account 1]{: tag-dark-teal}
+[Account 1]{: tag-purple}
 
 1. List the pods and PVCs.
-    ```sh
+    ```txt
     oc get pods
     ```
     {: pre}
 
 1. Describe your PVC and review the details and make a note of the bucket name.
-    ```sh
+    ```txt
     oc describe PVC -o yaml
     ```
     {: pre}
 
-## Install `rclone`
+## Install rclone
 {: #rclone-install}
 {: step}
 
 Follow the `rclone` docs for [installation steps](https://rclone.org/install/).
 
 
-## Configure `rclone` for your bucket in Account 1
-{: #rclone-config}
+## Configure rclone for your bucket in Account 1
+{: #rclone-config-1}
 {: step}
 
-[Account 1]{: tag-dark-teal}
+[Account 1]{: tag-purple}
 
 After you have `rclone` installed, you must generate a configuration file that defines the COS instance that you want to migrate data from.
 
 1. Run the `rclone config` command.
 
-    ```sh
+    ```txt
     rclone config
     ```
     {: pre}
@@ -198,13 +200,13 @@ After you have `rclone` installed, you must generate a configuration file that d
     {: screen}
 
 1. Enter `n` to set up a new remote, then provide a name for your remote.
-    ```sh
+    ```txt
     n/s/q> n
     ```
     {: pre}
 
     Example remote name
-    ```sh
+    ```txt
     name> cos-instance-1
     ```
     {: codeblock}
@@ -357,7 +359,7 @@ After you have `rclone` installed, you must generate a configuration file that d
     {: screen}
 
 1. Skip the advanced config option and confirm your setup.
-    ```sh
+    ```txt
     Edit advanced config? (y/n)
     y) Yes
     n) No
@@ -388,8 +390,8 @@ After you have `rclone` installed, you must generate a configuration file that d
 
 1. Repeat the previous steps to add the COS instance in your second account. When you've verified the information, press `q` to quit the configuration process.
 
-## Configure `rclone` for your bucket in Account 2
-{: #rclone-config}
+## Configure rclone for your bucket in Account 2
+{: #rclone-config-2}
 {: step}
 
 [Account 2]{: tag-teal}
@@ -398,7 +400,7 @@ Repeat the steps to configure `rclone` for Account 2.
 
 1. Run the `rclone config` command.
 
-    ```sh
+    ```txt
     rclone config
     ```
     {: pre}
@@ -414,14 +416,14 @@ Repeat the steps to configure `rclone` for Account 2.
     {: screen}
 
 1. Enter `n` to set up a new remote, then provide a name for your remote.
-    ```sh
+    ```txt
     n/s/q> n
     ```
     {: pre}
 
     Example remote name
-    ```sh
-    name> cos-instance-1
+    ```txt
+    name> cos-instance-2
     ```
     {: codeblock}
 
@@ -573,7 +575,7 @@ Repeat the steps to configure `rclone` for Account 2.
     {: screen}
 
 1. Skip the advanced config option and confirm your setup.
-    ```sh
+    ```txt
     Edit advanced config? (y/n)
     y) Yes
     n) No
@@ -605,41 +607,26 @@ Repeat the steps to configure `rclone` for Account 2.
 
 1. Repeat the previous steps to add the COS instance in your second account. When you've verified the information, press `q` to quit the configuration process.
 
-## Syncing between COS buckets
+## View the contents of your COS buckets
 {: #rclone-inspect}
 {: step}
+
+[Account 1]{: tag-purple} [Account 2]{: tag-teal}
 
 
 After configuring `rclone`, review the contents of each bucket and then sync the data between buckets in each account.
 
 1. View the contents of the bucket in the first instance.
 
-    ```sh
+    ```txt
     rclone ls cos-instance-1:bucket-1
-        45338 AddNFSAccess.png
-        48559 AddingNFSAccess.png
-        66750 ChooseGroup.png
-        2550 CloudPakApplications.png
-        4643 CloudPakAutomation.png
-        4553 CloudPakData.png
-        5123 CloudPakIntegration.png
-        4612 CloudPakMultiCloud.png
-        23755 CompletedAddingNFSAccess.png
-      174525 CreateNetworkShare1.png
-        69836 CreateNetworkShare2.png
-        76863 CreateStoragePool.png
-        50489 CreateStoragePool1.png
-        56297 CreateStoragePool2.png
-        2340 applications-icon.svg
-        6979 automation-icon.svg
-      120584 cloud-paks-leadspace.png
-        9255 data-icon.svg
+        45338 test.txt
     ```
     {: screen}
 
 1. View the contents of the bucket in instance 2. In this example the bucket name is `bucket-2`.
 
-    ```sh
+    ```txt
     rclone ls cos-instance-2:bucket-2
     ```
     {: pre}
@@ -649,19 +636,21 @@ After configuring `rclone`, review the contents of each bucket and then sync the
 {: #rclone-sync}
 {: step}
 
+[Account 1]{: tag-purple} [Account 2]{: tag-teal}
+
 
 1. To move the data from one bucket to another, you can use the `rclone sync` command. In this example `cos-instance-1:bucket-1` is in one account while `cos-instance-2:bucket-2` is a second instance of COS in a separate account.
 
     Example
 
-    ```sh
+    ```txt
     rclone sync -P cos-instance-1:bucket-1 cos-instance-2:bucket-2
     ```
     {: pre}
 
     Example output
 
-    ```sh
+    ```txt
     Transferred:      754.933k / 754.933 kBytes, 100%, 151.979 kBytes/s, ETA 0s
     Errors:                 0
     Checks:                 0 / 0, -
@@ -672,37 +661,20 @@ After configuring `rclone`, review the contents of each bucket and then sync the
 
 1. Verify the contents of the bucket in `cos-instance-1` have been synced to the bucket in `cos-instance-2`.
 
-    ```sh
+    ```txt
     rclone ls cos-instance-2:bucket-2
     ```
     {: pre}
 
     Example output
 
-    ```sh
-    45338 AddNFSAccess.png
-    48559 AddingNFSAccess.png
-    66750 ChooseGroup.png
-    2550 CloudPakApplications.png
-    4643 CloudPakAutomation.png
-    4553 CloudPakData.png
-    5123 CloudPakIntegration.png
-    4612 CloudPakMultiCloud.png
-    23755 CompletedAddingNFSAccess.png
-    174525 CreateNetworkShare1.png
-    69836 CreateNetworkShare2.png
-    76863 CreateStoragePool.png
-    50489 CreateStoragePool1.png
-    56297 CreateStoragePool2.png
-    2340 applications-icon.svg
-    6979 automation-icon.svg
-    120584 cloud-paks-leadspace.png
-    9255 data-icon.svg
+    ```txt
+    45338 test.txt
     ```
     {: screen}
 
 
-## Create a PVC in Account 2
+## Redeploy your app in Account 2
 {: #cos-app-redploy}
 {: step}
 
@@ -715,75 +687,87 @@ After configuring `rclone`, review the contents of each bucket and then sync the
     ```yaml
     kind: PersistentVolumeClaim
     apiVersion: v1
-    metadata:
-      name: <name> # Enter the name of the PVC.
-      namespace: <namespace> # Enter the namespace where you want to create the PVC. The PVC must be created in the same namespace where you created the Kubernetes secret for your service credentials and where you want to run your pod.
+    metadata: 
+      name: demo # Enter a name for your PVC.
+      namespace: default
       annotations:
-        ibm.io/auto-create-bucket: "false" # Enter false.
-        ibm.io/auto-delete-bucket: "<false"
-        ibm.io/bucket: "<bucket_name>" # Enter the name of the bucket in Account 2.
-        ibm.io/object-path: "<bucket_subdirectory>"
-        ibm.io/quota-limit: "true/false" # Disable or enable a quota limit for your PVC. To use this annotation you must specify the -set quotaLimit=true option during installation.
-        ibm.io/endpoint: "https://<s3fs_service_endpoint>"
-        ibm.io/tls-cipher-suite: "default"
-        ibm.io/secret-name: "<secret_name>" # The name of your Kubernetes secret that you created. 
-        ibm.io/secret-namespace: "<secret-namespace>" # By default, the COS plug-in searches for your secret in the same namespace where you create the PVC. If you created your secret in a namespace other than the namespace where you want to create your PVC, enter the namespace where you created your secret.
-    spec:
-      accessModes:
+      ibm.io/bucket-name: "bucket-2" # Enter the name of the bucket in Account 2
+      ibm.io/auto-create-bucket: "false"
+      ibm.io/auto-delete-bucket: "false"
+      ibm.io/secret-name: SECRET-NAME #Enter the name of the secret you created earlier.
+      ibm.io/secret-namespace: NAMESPACE #Enter the namespace where you want to create the PVC.
+    spec: 
+        accessModes:
         - ReadWriteOnce
-      resources:
-        requests:
-          storage: <size> # Enter the size of the PVC that you retrieved earlier.
-      storageClassName: <storage_class> # Enter the name of the storage class that you retrieved earlier.
-      ```
-      {: codeblock}
+        resources:
+            requests:
+              storage: 10Gi
+        storageClassName: ibmc-s3fs-cos #The storage class that you want to use.
+    ```
+    {: codeblock}
 
 1. Create the PVC in your cluster.
-    ```sh
+    ```txt
     oc apply -f pvc.yaml
     ```
     {: pre}
 
-## Redeploy your app
-{: #cos-mig-redeploy-app}
-{: step}
 
-[Account 2]{: tag-teal}
+1. Create a YAML configuration file for a pod that mounts the PVC that you create.
 
-1. Save the following configuration to a file called `deployment.yaml`.
     ```yaml
-    apiVersion: apps/v1
-    kind: Deployment
+    apiVersion: v1
+    kind: Pod
     metadata:
-      name: <deployment_name>
-      labels:
-        app: <deployment_label>
+      name: demo-pod
+      namespace: default
     spec:
-      selector:
-        matchLabels:
-          app: <app_name>
-      template:
-        metadata:
-          labels:
-            app: <app_name>
-        spec:
-          containers:
-          - image: <image_name>
-            name: <container_name>
-            securityContext:
-              runAsUser: <non_root_user>
-            volumeMounts:
-            - name: <volume_name>
-              mountPath: /<file_path>
-          volumes:
-          - name: <volume_name>
-            persistentVolumeClaim:
-              claimName: <pvc_name> # Enter the name of the PVC that you created in the previous step.
+      securityContext:
+        runAsUser: 2000
+        fsGroup: 2000
+      volumes:
+      - name: demo-vol
+        persistentVolumeClaim:
+          claimName: demo
+      containers:
+      - name: test
+        image: nginxinc/nginx-unprivileged
+        imagePullPolicy: Always
+        volumeMounts:
+        - name: demo-vol
+          mountPath: /mnt/cosvol
     ```
     {: codeblock}
 
-1. Create the deployment.
-    ```sh
-    oc create -f deployment.yaml
+
+1. Create the pod in your cluster.
+
+    ```txt
+    oc apply -f demo-pod.yaml
     ```
     {: pre}
+
+1. Verify that the pod is deployed. Note that it might take a few minutes for your app to get into a `Running` state.
+
+    ```txt
+    oc get pods
+    ```
+    {: pre}
+
+    ```txt
+    NAME                                READY   STATUS    RESTARTS   AGE
+    demo-pod                            1/1     Running   0          2m58s
+    ```
+    {: screen}
+
+1. Verify that the app can write to your block storage volume by logging in to your pod.
+
+   ```txt
+   oc exec demo-pod -- bash -c "ls /mnt/cosvol"
+   ```
+   {: pre}
+
+   ```txt
+   test.txt
+   ```
+   {: pre}

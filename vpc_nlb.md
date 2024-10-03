@@ -1,7 +1,7 @@
 ---
 copyright: 
   years: 2024, 2024
-lastupdated: "2024-09-23"
+lastupdated: "2024-10-02"
 
 keywords: nlb, network load balancer, vpc nlb, dns, public lb, private lb
 subcollection: openshift
@@ -350,6 +350,37 @@ Review the required and optional VPC NLB annotations and specifications.
 :   Version 4.16 or later.
 :   Register the load balancer's IP address with the specified [Ingress domain](/docs/openshift?topic=openshift-ingress-domains). If the specified domain does not exist, a domain is created that uses the internal, IBM managed provider (`akamai`). To create a new domain, the name must be unique across all existing domains (not just those on your cluster). Deleting the load balancer service removes the IP address from the domain. However, removing the annotation does not remove the IP address from the domain. 
 
+
+
+`service.kubernetes.io/ibm-load-balancer-cloud-provider-dns-provider`
+:   Version 4.16 or later.
+:   If you create an Ingress domain with the `ibm-load-balancer-cloud-provider-dns-name` annotation, register it with the specified domain provider. If you do not include this annotation when creating an Ingress domain, the internal, IBM-managed `akamai` provider is applied by default. To create a domain that uses an external provider, you must have the [required credentials](/docs/openshift?topic=openshift-ingress-domains&interface=ui#ingress-domains-ui-credentials) added to your cluster. Note that you can only use one external provider per cluster; if you already have a domain with an external provider in your cluster, you must specify that external provider. For information on available providers, see [Setting up a domain for your cluster](/docs/openshift?topic=openshift-ingress-domains&interface=ui#ingress-domain-int).
+
+
+
+
+
+`service.kubernetes.io/ibm-load-balancer-cloud-provider-ingress-dns-monitor`
+:   Version 4.16 or later.
+:   Enable health monitoring for the Ingress domain you create with the `ibm-load-balancer-cloud-provider-dns-name` annotation. This annotation is only available if you specify the `akamai-ext` provider with the `ibm-load-balancer-cloud-provider-dns-provider`. Specify a provider-specific JSON configuration. See the following example. Note that if you are using Context Based Restrictions, you must make sure that you have a [configured rule](https://cloud.ibm.com/context-based-restrictions/rules){: external} that targets the **Kubernetes Service** and and protects **Management APIs**. 
+
+    ```json
+      annotations:
+        ...
+        service.kubernetes.io/ibm-load-balancer-cloud-provider-dns-monitor: |
+          {
+            "testInterval": 15,
+            "httpError5xx": true,
+            "httpError4xx": true,
+            "httpError3xx": true,
+            "testObject": "/",
+            "testObjectProtocol": "HTTP",
+            "testObjectPort": 80,
+            "testTimeout": 2,
+            "httpMethod": "GET"
+          }
+    ```
+    {: codeblock}
 
 
 

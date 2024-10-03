@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2024
-lastupdated: "2024-09-27"
+lastupdated: "2024-10-03"
 
 
 keywords: kubernetes, release notes, openshift, {{site.data.keyword.openshiftlong_notm}}
@@ -24,6 +24,40 @@ Use the release notes to learn about the latest changes to the documentation tha
 
 Looking for {{site.data.keyword.cloud_notm}} status, platform announcements, security bulletins, or maintenance notifications? See [{{site.data.keyword.cloud_notm}} status](https://cloud.ibm.com/status?selected=status).
 {: tip}
+
+
+
+
+## October 2024
+{: #openshift-oct24}
+
+### 03 October 2024
+{: #openshift-oct0324}
+{: release-note}
+
+{{site.data.keyword.block_storage_is_short}} cluster add-on patch updates.
+:   For more information, see the [change log](/docs/openshift?topic=openshift-vpc_bs_changelog).
+
+
+{{site.data.keyword.filestorage_vpc_full_notm}} cluster add-on patch updates.
+:   For more information, see the [change log](/docs/openshift?topic=openshift-versions-vpc-file-addon).
+
+Storage Operator cluster add-on patch update.
+:  For more information, see the [change log](/docs/openshift?topic=openshift-versions-ibm-storage-operator).
+
+
+Static route add-on version patch update.
+:   For more information, see [the change log](/docs/openshift?topic=openshift-versions-static-route).
+
+
+### 01 October 2024
+{: #openshift-oct0124}
+{: release-note}
+
+
+
+New! The {{site.data.keyword.cos_full_notm}} cluster add-on is available in Beta for allowlisted accounts.
+:   For more information, see the [Installing the {{site.data.keyword.cos_full_notm}} cluster add-on](/docs/openshift?topic=openshift-storage-cos-install-addon).
 
 
 
@@ -198,7 +232,7 @@ New! Upgrade status command.
 :   For more information, see the [change log](/docs/openshift?topic=openshift-versions-vpc-file-addon).
 
 Storage Operator cluster add-on patch update.
-:   For more information, see the [change log](/docs/openshift?topic=openshift-versions-ibm-storage-operator).
+:  For more information, see the [change log](/docs/openshift?topic=openshift-versions-ibm-storage-operator).
 
 
 
@@ -5303,449 +5337,3 @@ Removal of data center support
 Master versions
 :   Master fix pack update change log documentation is available.
 :   [`4.5.24_1525_openshift`](/docs/openshift?topic=openshift-changelog_archive), [`4.4.31_1529_openshift`](/docs/openshift?topic=openshift-changelog_archive), [`4.3.40_1550_openshift`](/docs/openshift?topic=openshift-changelog_archive), and [`3.11.346_1577_openshift`](/docs/openshift?topic=openshift-openshift_changelog_311).
-
-## December 2020
-{: #openshift-dec20}
-
-### 21 December 2020
-{: #openshift-dec2120}
-{: release-note}
-
-Gateway firewalls and Calico policies
-:   For classic clusters in Tokyo, updated the {{site.data.keyword.openshiftlong_notm}} IP addresses that you must open in a [public gateway firewall device](/docs/openshift?topic=openshift-firewall#firewall_outbound) or [Calico network isolation policies](https://github.com/IBM-Cloud/kube-samples/tree/master/calico-policies/public-network-isolation){: external}.
-
-Worker node versions
-:   Worker node fix pack update change log documentation is available.
-:   [`4.5.22_1524_openshift`](/docs/openshift?topic=openshift-changelog_archive), [`4.4.31_1528_openshift`](/docs/openshift?topic=openshift-changelog_archive), [`4.3.40_1549_openshift`](/docs/openshift?topic=openshift-changelog_archive), and [`3.11.346_1576_openshift`](/docs/openshift?topic=openshift-openshift_changelog_311).
-
-
-
-### 18 December 2020
-{: #openshift-dec1820}
-{: release-note}
-
-CLI change log
-:   Updated the {{site.data.keyword.openshiftlong_notm}} CLI plug-in change log page for the [release of version 1.0.208](/docs/openshift?topic=openshift-cs_cli_changelog#10).
-
-{{site.data.keyword.cos_full_notm}} plug-in
-:   Version `2.0.6` of the {{site.data.keyword.cos_full_notm}} plug-in is released. For more information, see the [{{site.data.keyword.cos_full_notm}} plug-in change log](/docs/openshift?topic=openshift-cos_plugin_changelog).
-
-### 17 December 2020
-{: #openshift-dec1720}
-{: release-note}
-
-Audit documentation
-:   Reorganized information about the configuration and forwarding of Kubernetes API server and worker node [audit logs](/docs/openshift?topic=openshift-health-audit).
-
-Back up and restore
-:   Version `1.0.5` of the `ibmcloud-backup-restore` Helm chart is released. For more information, see the [Back up and restore Helm chart change log](/docs/openshift?topic=openshift-backup_restore_changelog).
-
-
-
-### 15 December 2020
-{: #openshift-dec1520}
-{: release-note}
-
-Cluster autoscaler
-:   Cluster autoscaler add-on patch update `1.0.1_205` is released. For more information, see the [Cluster autoscaler add-on change log](/docs/openshift?topic=openshift-ca_changelog).
-
-### 14 December 2020
-{: #openshift-dec1420}
-{: release-note}
-
-
-
-Encrypted images
-:   In clusters that run {{site.data.keyword.redhat_openshift_notm}} version 4.4 or later, you can now [deploy containers from an encrypted image](/docs/openshift?topic=openshift-images#encrypted-images) by enabling the Image Key Synchronizer cluster add-on.
-
-
-
-Master versions
-:   Master fix pack update change log documentation is available.
-:   [`4.5.18_1523_openshift`](/docs/openshift?topic=openshift-changelog_archive), [`4.4.29_1527_openshift`](/docs/openshift?topic=openshift-changelog_archive), [`4.3.40_1548_openshift`](/docs/openshift?topic=openshift-changelog_archive), and [`3.11.318_1575_openshift`](/docs/openshift?topic=openshift-openshift_changelog_311).
-
-### 11 December 2020
-{: #openshift-dec1120}
-{: release-note}
-
-Storage add-ons
-:   Cluster autoscaler add-on patch update `1.0.1_195` is released. For more information, see the [Cluster autoscaler add-on change log](/docs/openshift?topic=openshift-ca_changelog). {{site.data.keyword.block_storage_is_short}} add-on patch update `2.0.3_464` is released. For more information, see the [{{site.data.keyword.block_storage_is_short}} add-on change log](/docs/openshift?topic=openshift-vpc_bs_changelog).
-
-strongSwan versions
-:   Added information about which [strongSwan Helm chart versions](/docs/containers?topic=containers-116_changelog#11615_1554) are supported.
-
-
-
-### 9 December 2020
-{: #openshift-dec0920}
-{: release-note}
-
-Accessing clusters
-:   Updated the steps for [accessing clusters through the private cloud service endpoint](/docs/containers?topic=containers-access_cluster#access_private_se) to use the `--endpoint private` option in the **`ibmcloud oc cluster config`** command.
-
-CLI change log
-:   Updated the {{site.data.keyword.openshiftlong_notm}} CLI plug-in change log page for the [release of version 1.0.206](/docs/openshift?topic=openshift-cs_cli_changelog#10).
-
-Proxy protocol for Ingress
-:   In VPC clusters, you can now [enable the PROXY protocol](/docs/containers?topic=containers-comm-ingress-annotations#preserve_source_ip_vpc) for all load balancers that expose Ingress ALBs in your cluster. The PROXY protocol enables load balancers to pass client connection information that is contained in headers on the client request, including the client IP address, the proxy server IP address, and both port numbers, to ALBs.
-
-Helm version 2 unsupported
-:   Removed all steps for using Helm v2, which is unsupported. [Migrate to Helm v3 today](https://helm.sh/docs/topics/v2_v3_migration/){: external} for several advantages over Helm v2, such as the removal of the Helm server, Tiller.
-
-
-
-### 7 December 2020
-{: #openshift-dec0720}
-{: release-note}
-
-{{site.data.keyword.keymanagementserviceshort}} enhancements
-:   For clusters that run `4.4.16_1513_openshift` or later, your cluster now [integrates more features from {{site.data.keyword.keymanagementserviceshort}}](/docs/openshift?topic=openshift-encryption-setup) when you enable {{site.data.keyword.keymanagementserviceshort}} as the KMS provider for the cluster. When you enable this integration, a **Reader** [service-to-service authorization policy](/docs/account?topic=account-serviceauth) between {{site.data.keyword.openshiftlong_notm}} and {{site.data.keyword.keymanagementserviceshort}} is automatically created for your cluster, if the policy does not already exist. If you have a cluster that runs an earlier version, [update your cluster](/docs/openshift?topic=openshift-update) and then [re-enable KMS encryption](/docs/openshift?topic=openshift-encryption) to register your cluster with {{site.data.keyword.keymanagementserviceshort}} again.
-
-Worker node versions
-:   Worker node fix pack update change log documentation is available.
-:   {{site.data.keyword.redhat_openshift_notm}} [`4.5.21_1522_openshift`](/docs/openshift?topic=openshift-changelog_archive#4521_1522), `4.4.31_1526_openshift`, `4.3.40_1547_openshift`, and `3.11.318_1574_openshift`..
-
-### 3 December 2020
-{: #openshift-dec0320}
-{: release-note}
-
-Cluster autoscaler add-on
-:   Patch update `1.0.1_146` is released. For more information, see the [Cluster autoscaler add-on change log](/docs/openshift?topic=openshift-ca_changelog).
-
-
-
-### 2 December 2020
-{: #openshift-dec0220}
-{: release-note}
-
-Default version
-:   {{site.data.keyword.redhat_openshift_notm}} 4.5 is now the default version for {{site.data.keyword.openshiftlong_notm}} clusters.
-
-
-
-## November 2020
-{: #openshift-nov20}
-
-
-
-### 25 November 2020
-{: #openshift-nov2520}
-{: release-note}
-
-New! {{site.data.keyword.cloud_notm}} HPCS Router
-:   In clusters that run {{site.data.keyword.redhat_openshift_notm}} version 4.5, you can now deploy the {{site.data.keyword.cloud_notm}} HPCS Router to encrypt routes with a private key that is stored in an {{site.data.keyword.cloud}} {{site.data.keyword.hscrypto}} instance. This key can be used by the router in TLS session establishment and in Certificate Signing Request (CSR) signing. To get started, see [Encrypting routes with keys stored in {{site.data.keyword.hscrypto}}](/docs/openshift?topic=openshift-hpcs-router-changelog).
-
-
-
-### 24 November 2020
-{: #openshift-nov2420}
-{: release-note}
-
-New! Reservations to reduce classic worker node costs
-:   Create a reservation with contracts for 1 or 3 year terms for classic worker nodes to lock in a reduced cost for the life of the contract. Typical savings range between 30-50% compared to worker node costs. Reservations can be created in the {{site.data.keyword.cloud_notm}} console for classic infrastructure only. For more information, see [Reserving instances to reduce classic worker node costs](/docs/openshift?topic=openshift-reservations).
-
-### 23 November 2020
-{: #openshift-nov2320}
-{: release-note}
-
-Worker node versions
-:   Worker node fix pack update change log documentation is available.
-:   {{site.data.keyword.redhat_openshift_notm}} [`4.5.19_1521_openshift`](/docs/openshift?topic=openshift-changelog_archive#4519_1521), `4.4.30_1525_openshift`, `4.3.40_1546_openshift`, and `3.11.313.318_1573_openshift`.
-
-### 20 November 2020
-{: #openshift-nov2020}
-{: release-note}
-
-New! Portieris for image security enforcement
-:   With the [open source Portieris project](https://github.com/IBM/portieris){: external}, you can set up a Kubernetes admission controller to enforce image security policies by namespace or cluster. Use [Portieris](/docs/Registry?topic=Registry-security_enforce_portieris) instead of the deprecated Container Image Security Enforcement Helm chart.
-
-### 19 November 2020
-{: #openshift-nov1920}
-{: release-note}
-
-Ingress ALB change log
-:   Updated the [`nginx-ingress` build to 653 and the `ingress-auth` build to 425](/docs/containers?topic=containers-ingress-alb-manage#alb-version-list) for the {{site.data.keyword.openshiftlong_notm}} Ingress image.
-
-### 18 November 2020
-{: #openshift-nov1820}
-{: release-note}
-
-CLI change log
-:   Updated the {{site.data.keyword.openshiftlong_notm}} CLI plug-in change log page for the [release of version 1.0.197](/docs/openshift?topic=openshift-cs_cli_changelog#10).
-
-
-
-New! {{site.data.keyword.block_storage_is_short}} change log
-:   Added a [change log](/docs/openshift?topic=openshift-vpc_bs_changelog) for the {{site.data.keyword.block_storage_is_short}} add-on.
-
-### 16 November 2020
-{: #openshift-nov1620}
-{: release-note}
-
-
-
-New! GPU support in {{site.data.keyword.redhat_openshift_notm}} 4
-:   Now, you can create GPU bare metal worker nodes in your {{site.data.keyword.openshiftlong_notm}} version 4 clusters in select zones. GPU machines are suited for high-performance computing, machine learning, or 3D applications that you might have, such as [IBM Maximo Visual Inspection](https://www.ibm.com/products/maximo/remote-monitoring){: external}. 
-:   To get started with GPU-accelerated workloads.
-    - Create a cluster or worker pool that uses a GPU bare metal flavor. 
-    - [Install the Node Feature Discovery and NVIDIA GPU operators for your cluster version](https://docs.nvidia.com/datacenter/cloud-native/gpu-operator/getting-started.html){: external}. 
-    - Verify that you can run GPU workloads by [deploying a sample job](/docs/openshift?topic=openshift-deploy_app#gpu_app).
-    
-
-  
-Master versions
-:   Master fix pack update change log documentation is available for {{site.data.keyword.redhat_openshift_notm}} [`4.5.18_1521_openshift`](/docs/openshift?topic=openshift-changelog_archive), [`4.4.29_1525_openshift`](/docs/openshift?topic=openshift-changelog_archive), [`4.3.40_1546_openshift`](/docs/openshift?topic=openshift-changelog_archive), and [`3.11.306_1573_openshift`](/docs/openshift?topic=openshift-openshift_changelog_311).
-
-### 13 November 2020
-{: #openshift-nov1320}
-{: release-note}
-
-{{site.data.keyword.at_full_notm}} and IAM events
-:   Added [IAM actions and {{site.data.keyword.cloudaccesstrailshort}} events](/docs/openshift?topic=openshift-api-at-iam#ks-ingress) for the Ingress secret, Ingress ALB, and NLB DNS APIs.
-
-### 9 November 2020
-{: #openshift-nov0920}
-{: release-note}
-
-
-
-New! Reduced and hourly billing is available for OCP licenses
-:   Now when you create worker nodes with the latest flavors, OCP license costs are billed at reduced rates as part of the worker node cost. You can check the new rates in the pricing estimate when you create a cluster or worker pool. This billing change means that virtual worker nodes are only billed hourly for OCP license instead of monthly. Existing worker nodes in clusters continue to be billed at the previous rates for monthly OCP licenses. For more information and to migrate existing worker nodes, see [On-demand OCP licenses from {{site.data.keyword.openshiftlong_notm}}](/docs/openshift?topic=openshift-costs#licenses-on-demand) or review the [{{site.data.keyword.cloud_notm}} blog announcement](https://www.ibm.com/blog/announcement/run-workloads-by-the-hour-with-red-hat-openshift-on-ibm-cloud/){: external}.
-
-
-
-Worker node versions
-:   Worker node fix pack update change log documentation is available.
-:   {{site.data.keyword.redhat_openshift_notm}} [`4.5.17_1519_openshift`](/docs/openshift?topic=openshift-changelog_archive#4517_1519), `4.4.29_1524_openshift`, `4.3.40_1545_openshift`, and `3.11.306_1572_openshift`.
-
-### 5 November 2020
-{: #openshift-nov0520}
-{: release-note}
-
-{{site.data.keyword.block_storage_is_short}}
-:   Added topics for [verifying your {{site.data.keyword.block_storage_is_short}} file system](/docs/openshift?topic=openshift-vpc-block#vpc-block-fs-verify), [enabling every user to customize the default PVC settings](/docs/openshift?topic=openshift-vpc-block#customize-with-secret), and [enforcing base64 encoding for the {{site.data.keyword.keymanagementserviceshort}} root key CRN](/docs/openshift?topic=openshift-vpc-block#static-secret).
-
-Classic-enabled VPCs
-:   Added steps in [Creating VPC subnets for classic access](/docs/openshift?topic=openshift-vpc-subnets#ca_subnet_cli) for creating a classic-enabled VPC and VPC subnets without the automatic default address prefixes.
-
-
-  
-Disabling remote health reporting
-:   Added steps to disable the remote, anonymized health reporting of your cluster by OpenShift Container Platform to comply with privacy laws, organizational standards, or data governance practices.
-
-
-
-Gateway firewalls and Calico policies
-:   For classic clusters in Dallas and Frankfurt, updated the required IP addresses and ports that you must open in a [public gateway firewall device](/docs/openshift?topic=openshift-firewall#firewall_outbound), [private gateway device firewall](/docs/openshift?topic=openshift-firewall#firewall_private), or [Calico network isolation policies](https://github.com/IBM-Cloud/kube-samples/tree/master/calico-policies){: external}.
-
-
-
-### 2 November 2020
-{: #openshift-nov0220}
-{: release-note}
-
-
-
-Persistent storage
-:   Added the following topics.
-    - [Creating {{site.data.keyword.cos_full_notm}} service credentials](/docs/openshift?topic=openshift-storage-cos-understand#create_cos_secret)
-    - [Adding your {{site.data.keyword.cos_full_notm}} credentials to the default storage classes](/docs/openshift?topic=openshift-storage-cos-understand#service_credentials)
-    - [Backing up and restoring storage data](/docs/openshift?topic=openshift-storage_br)
-    
-
-
-Version 4 Ingress
-:   Added a troubleshooting topic for [VPC load balancer health status failures](/docs/openshift?topic=openshift-vpc_lb_healthcheck) in version 4 VPC clusters.
-
-
-
-## October 2020
-{: #openshift-oct20}
-
-### 26 October 2020
-{: #openshift-oct2620}
-{: release-note}
-
-Master versions
-:   Master fix pack update change log documentation is available.
-
-:   {{site.data.keyword.redhat_openshift_notm}} `4.5.15_1518_openshift`, `4.4.27_1523_openshift`, `4.3.38_1544_openshift`, and `3.11.286_1571_openshift`.
-
-Worker node versions
-:   Worker node fix pack update change log documentation is available.
-
-:   {{site.data.keyword.redhat_openshift_notm}} [`4.5.15_1518_openshift`](/docs/openshift?topic=openshift-changelog_archive#4515_1518_worker), `4.4.27_1523_openshift`, `4.3.40_1544_openshift`, and `3.11.306_1571_openshift`.
-
-### 22 October 2020
-{: #openshift-oct2220}
-{: release-note}
-
-API key
-:   Added more information about how the {{site.data.keyword.openshiftlong_notm}} API key is used.
-
-
-  
-### 16 October 2020
-{: #openshift-oct1620}
-{: release-note}
-
-Gateway firewalls and Calico policies
-:   For classic clusters in Dallas, updated the required IP addresses and ports that you must open in a [public gateway firewall device](/docs/openshift?topic=openshift-firewall#firewall_outbound), [private gateway device firewall](/docs/openshift?topic=openshift-firewall#firewall_private), or [Calico network isolation policies](https://github.com/IBM-Cloud/kube-samples/tree/master/calico-policies){: external}.
-
-
-
-{{site.data.keyword.cos_short}}
-
-:   Added steps to help you [decide on the object storage configuration](/docs/openshift?topic=openshift-storage_cos_install#configure_cos) and added troubleshooting steps for when [app pods fail because of an `Operation not permitted` error](/docs/openshift?topic=openshift-cos_operation_not_permitted).
-
-
-### 13 October 2020
-{: #openshift-oct1320}
-{: release-note}
-
-
-
-New! Certified {{site.data.keyword.redhat_openshift_notm}} version 4.5
-:   You can now create clusters that run {{site.data.keyword.redhat_openshift_notm}} version 4.5. To update an existing cluster, see the [Version 4.5 preparation actions](/docs/openshift?topic=openshift-changelog_archive). The {{site.data.keyword.redhat_openshift_notm}} 4.5 release is also certified for Kubernetes 1.18.
-
-Deprecated: {{site.data.keyword.redhat_openshift_notm}} version 4.3
-:   With the release of version 4.5, clusters that run version 4.3 are deprecated. Update your clusters to at least [version 4.4](/docs/openshift?topic=openshift-openshift_versions) today.
-
-
-
-Version change logs
-:   Change log documentation is available for [4.5.13_1515](/docs/openshift?topic=openshift-changelog_archive#4513_1515).
-
-VPC load balancer
-:   Added support for setting the `service.kubernetes.io/ibm-load-balancer-cloud-provider-vpc-node-selector` and `service.kubernetes.io/ibm-load-balancer-cloud-provider-vpc-subnet` annotations when you create new VPC load balancers in clusters that run {{site.data.keyword.redhat_openshift_notm}} version 4.5.
-
-VPC security groups
-:   Expanded the list of required rules based on the cluster version for default VPC security groups.
-
-{{site.data.keyword.cos_short}} in VPC Gen 2
-:   Added support for authorized IP addresses in {{site.data.keyword.cos_full_notm}} for VPC Gen 2. For more information, see [Allowing IP addresses for {{site.data.keyword.cos_full_notm}}](/docs/openshift?topic=openshift-storage_cos_vpc_ip).
-
-### 12 October 2020
-{: #openshift-oct1220}
-{: release-note}
-
-Versions
-:   Worker node fix pack update change log documentation is available.
-:   {{site.data.keyword.redhat_openshift_notm}} `4.4.26_1521_openshift`, `4.3.38_1542_openshift`, and `3.11.286_1570_openshift`.
-
-### 8 October 2020
-{: #openshift-oct0820}
-{: release-note}
-
-Ingress ALB change log
-:   Updated the [Kubernetes Ingress image build to `0.35.0_474_iks`](/docs/containers?topic=containers-cl-ingress-alb#0_35_0).
-
-### 6 October 2020
-{: #openshift-oct0620}
-{: release-note}
-
-CLI change log
-:   Updated the {{site.data.keyword.openshiftlong_notm}} CLI plug-in change log page for the [release of version 1.0.178](/docs/openshift?topic=openshift-cs_cli_changelog#10).
-
-Ingress secret expiration synchronization
-:   Added a troubleshooting topic for when Ingress secret expiration dates are out of sync or are not updated.
-
-
-
-Internal {{site.data.keyword.redhat_openshift_notm}} container image registry
-:   Added a troubleshooting topic for when you [can't push images to the internal registry from outside the VPC network](/docs/openshift?topic=openshift-ts-app-ocr-vpc-push).
-
-
-
-### 1 October 2020
-{: #openshift-oct0120}
-{: release-note}
-
-Default version
-:   The default version for clusters is now 4.4.
-
-Ingress ALB change log
-:   Updated the [`nginx-ingress` build to 652 and the `ingress-auth` build to 424](/docs/containers?topic=containers-ingress-alb-manage#alb-version-list) for the {{site.data.keyword.openshiftlong_notm}} Ingress image.
-
-## September 2020
-{: #openshift-sep20}
-
-
-
-### 30 September 2020
-{: #openshift-sept3020}
-{: release-note}
-
-Versions
-:   Worker node fix pack update change log documentation is available for {{site.data.keyword.redhat_openshift_notm}} [`4.4.23_1520_openshift`](/docs/openshift?topic=openshift-changelog_archive), `4.3.38_1541_openshift`, and `3.11.286_1569_openshift`.
-
-
-
-### 29 September 2020
-{: #openshift-sept2920}
-{: release-note}
-
-Gateway firewalls and Calico policies
-:   For classic clusters in London or Dallas, updated the required IP addresses and ports that you must open in a [public gateway firewall device](/docs/openshift?topic=openshift-firewall#firewall_outbound), [private gateway device firewall](/docs/openshift?topic=openshift-firewall#firewall_private), or [Calico network isolation policies](https://github.com/IBM-Cloud/kube-samples/tree/master/calico-policies){: external}.
-
-### 26 September 2020
-{: #openshift-sept2620}
-{: release-note}
-
-Versions
-:   Worker node fix pack update change log documentation is available.
-
-:   {{site.data.keyword.redhat_openshift_notm}} [`4.4.23_1519_openshift`](/docs/openshift?topic=openshift-changelog_archive), `4.3.38_1540_openshift`, and `3.11.286_1568_openshift`.
-
-### 24 September 2020
-{: #openshift-sept2420}
-{: release-note}
-
-CLI change log
-:   Updated the {{site.data.keyword.openshiftlong_notm}} CLI plug-in change log page for the [release of version 1.0.171](/docs/openshift?topic=openshift-cs_cli_changelog#10).
-
-### 23 September 2020
-{: #openshift-sept2320}
-{: release-note}
-
-Ingress ALB change log
-:   Updated the [`nginx-ingress` build to 651 and the `ingress-auth` build to 423](/docs/containers?topic=containers-ingress-alb-manage#alb-version-list) for the {{site.data.keyword.openshiftlong_notm}} Ingress image.
-
-
-
-New! Reservations and limits for PIDs
-:   Worker nodes that run {{site.data.keyword.redhat_openshift_notm}} 4.3 or later or later set process ID (PID) reservations and limits that vary by flavor, to help prevent malicious or runaway apps from consuming all available PIDs.
-
-
-
-### 22 September 2020
-{: #openshift-sept2220}
-{: release-note}
-
-Unsupported: Kubernetes version 1.15
-:   Clusters that run version 1.15 are unsupported. To continue receiving important security updates and support, you must [update the cluster to a supported version](/docs/containers?topic=containers-cs_versions#prep-up) immediately.
-
-### 21 September 2020
-{: #openshift-sept2120}
-{: release-note}
-
-Versions
-:   Master fix pack update change log documentation is available.
-
-:   {{site.data.keyword.redhat_openshift_notm}} [`4.4.20_1518_openshift`](/docs/openshift?topic=openshift-changelog_archive), `4.3.35_1539_openshift`, and `3.11.272_1567_openshift`.
-
-
-
-Versions
-:   Worker node fix pack update change log documentation is available.
-
-:   {{site.data.keyword.redhat_openshift_notm}} [`4.4.20_1517_openshift`](/docs/openshift?topic=openshift-changelog_archive), `4.3.35_1538_openshift`, and [`3.11.272_1566_openshift`](/docs/openshift?topic=openshift-openshift_changelog_311#311272_1566).
-
-
-
-### 3 September 2020
-{: #openshift-sept0320}
-{: release-note}
-
-CA certificate rotation
-:   Added steps to [revoke existing certificate authority (CA) certificates in your cluster and issue new CA certificates](/docs/openshift?topic=openshift-cert-rotate).

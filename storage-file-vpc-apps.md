@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2022, 2024
-lastupdated: "2024-09-30"
+lastupdated: "2024-10-02"
 
 keywords: kubernetes, openshift
 
@@ -790,7 +790,7 @@ If your cluster and VPC are not in the same resource group, you must specify the
     {: pre}
 
 
-## Setting up your KMS provider for encrypting {{site.data.keyword.filestorage_vpc_short}}
+## Setting up KMS encryption for {{site.data.keyword.filestorage_vpc_short}}
 {: #storage-file-kms}
 
 Use a key management service (KMS) provider, such as {{site.data.keyword.keymanagementservicelong}}, to create a private root key that you use in your {{site.data.keyword.filestorage_vpc_short}} instance to encrypt data as it is written to storage. After you create the private root key, create your own storage class or a Kubernetes secret with your root key and then use this storage class or secret to provision your {{site.data.keyword.filestorage_vpc_short}} instance.
@@ -808,8 +808,121 @@ Use a key management service (KMS) provider, such as {{site.data.keyword.keymana
 
 1. [Set up service to service authorization](/docs/account?topic=account-serviceauth). Authorize {{site.data.keyword.filestorage_vpc_short}} to access {{site.data.keyword.keymanagementservicelong}}. Make sure to give {{site.data.keyword.filestorage_vpc_short}} at least `Reader` access to your KMS instance.
     
+1. Create a custom storage class and specify your KMS details.
+    ```yaml
+    apiVersion: storage.k8s.io/v1
+    kind: StorageClass
+    metadata:
+      name: custom-sc-encrypted
+      labels:
+        app.kubernetes.io/name: ibm-vpc-file-csi-driver
+      annotations:
+        version: v2.0
+    provisioner: vpc.file.csi.ibm.io
+    mountOptions:
+      - hard
+      - nfsvers=4.1
+      - sec=sys
+    parameters:
+        profile: "dp2"
+        billingType: "hourly" # hourly or monthly
+        encrypted: "true"
+        encryptionKey: "" # Specify the root key CRN.
+        resourceGroup: "" # Resource group ID. By default, the resource group of the cluster will be used from storage-secrete-store secret.
+        isENIEnabled: "true" # VPC File Share VNI feature will be used by all PVCs created with this storage class.
+        securityGroupIDs: "" # By default cluster security group i.e kube-<clusterID> will be used. User can provide their own comma separated SGs.
+        subnetID: "" # User can provide subnetID in which the VNI will be created. Zone and region are mandatory for this. If not provided CSI driver will use the subnetID available in the cluster's VPC zone.
+        region: "" # VPC CSI driver will select a region from cluster node's topology. The user can override this default.
+        zone: "" # VPC CSI driver will select a region from cluster node's topology. The user can override this default.
+        primaryIPID: "" # Existing ID of reserved IP from the same subnet as the file share zone. Zone and region are mandatory for this. SubnetID is not mandatory for this.
+        primaryIPAddress: "" # IPAddress for VNI to be created in the respective subnet of the zone. Zone, region and subnetID are mandatory for this.
+        tags: "" # User can add a list of tags "a, b, c" that will be used at the time of provisioning file share, by default CSI driver has its own tags.
+        uid: "0" # The initial user identifier for the file share, by default its root.
+        gid: "0" # The initial group identifier for the file share, by default its root.
+        classVersion: "1"
+    reclaimPolicy: "Delete"
+    allowVolumeExpansion: true
+    ```
+    {: codeblock}
+
+1. Create the storage class.
+    ```txt
+    oc apply -f encrypted-class.yaml
+    ```
+    {: pre}
+
+1. Save the following YAML to a file called `my-pvc.yaml`.
+
+    ```yaml
+    apiVersion: v1
+    kind: PersistentVolumeClaim
+    metadata:
+      name: my-pvc
+    spec:
+      accessModes:
+      - ReadWriteMany
+      resources:
+        requests:
+          storage: 10Gi
+      storageClassName: custom-sc-encrypted
+    ```
+    {: codeblock}
+
+1. Create the PVC.
+
+    ```sh
+    oc apply -f my-pvc.yaml
+    ```
+    {: pre}
+
+1. Save the following deployment configuration to file called `deployment.yaml` and reference the PVC that you created in the previous step.
+
+    ```yaml
+    apiVersion: apps/v1
+    kind: Deployment
+    metadata:
+      name: my-deployment
+      labels:
+        app: my-deployment
+    spec:
+      selector:
+        matchLabels:
+          app: busybox
+      template:
+        metadata:
+          labels:
+            app: busybox
+        spec:
+          containers:
+          - name: busybox
+            image: busybox:1.28
+            command: [ "sh", "-c", "sleep 1h" ]
+            volumeMounts:
+            - name: my-vol
+              mountPath: /data/demo # Mount path for the application.
+          volumes:
+          - name: my-vol
+            persistentVolumeClaim:
+              claimName: my-pvc # Your PVC name.
+    ```
+    {: codeblock}
+    
+    `volumeMounts.mountPath`
+    :   In the container volume mounts section, enter the absolute path of the directory to where the volume is mounted inside the container. Data that is written to the mount path is stored under the `root` directory in your physical {{site.data.keyword.filestorage_vpc_short}} instance. If you want to share a volume between different apps, you can specify [volume sub paths](https://kubernetes.io/docs/concepts/storage/volumes/#using-subpath){: external} for each of your apps.
+    
+    `volumeMounts.name`
+    :   In the container volume mounts section, enter the name of the volume to mount to your pod.
+    
+    `volume.name`
+    :   In the volumes section, enter the name of the volume to mount to your pod. Typically this name is the same as `volumeMounts.name`.
 
 
+1. Create the deployment.
+
+    ```sh
+    oc apply -f deployment.yaml
+    ```
+    {: pre}
 
 
 ## Setting up encryption in-transit (EIT)
