@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2024
-lastupdated: "2024-09-30"
+lastupdated: "2024-10-03"
 
 keywords: kubernetes, kubernetes environment, moving to kubernetes, moving to containers, clusters, cluster sizing, openshift, {{site.data.keyword.openshiftlong_notm}}
 
@@ -132,12 +132,6 @@ The operating systems available to you depend on the cluster type you chose.
 Red Hat Enterprise Linux (RHEL) version 8
 :   [Classic]{: tag-classic-inf} [VPC]{: tag-vpc} [Satellite]{: tag-satellite}
 :   Red Hat Enterprise Linux on IBM Cloud provides enterprises with a robust and scalable environment, built with security in mind, and tailored for critical workloads. Organizations unlock access to high availability, disaster recovery, and streamlined management capabilities by joining the Red Hat Enterprise Linux platform with IBM Cloud's infrastructure. For an overview of RHEL 8, see [Why run Linux on IBM Cloud?](https://www.redhat.com/en/topics/linux/linux-on-ibm-cloud){: external}.
-
-
-
-Red Hat Enterprise Linux (RHEL) version 9
-:   [Classic]{: tag-classic-inf} [VPC]{: tag-vpc}
-:   Available for clusters created at version 4.16 and later. Red Hat Enterprise Linux on IBM Cloud provides enterprises with a robust and scalable environment, built with security in mind, and tailored for critical workloads. Organizations unlock access to high availability, disaster recovery, and streamlined management capabilities by joining the Red Hat Enterprise Linux platform with IBM Cloud's infrastructure. For an overview of RHEL 9, see [Why run Linux on IBM Cloud?](https://www.redhat.com/en/topics/linux/linux-on-ibm-cloud){: external}.
 
 
 

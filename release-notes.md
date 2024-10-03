@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2024
-lastupdated: "2024-10-02"
+lastupdated: "2024-10-03"
 
 
 keywords: kubernetes, release notes, openshift, {{site.data.keyword.openshiftlong_notm}}
@@ -46,15 +46,13 @@ Storage Operator cluster add-on patch update.
 :  For more information, see the [change log](/docs/openshift?topic=openshift-versions-ibm-storage-operator).
 
 
+Static route add-on version patch update.
+:   For more information, see [the change log](/docs/openshift?topic=openshift-versions-static-route).
+
 
 ### 01 October 2024
 {: #openshift-oct0124}
 {: release-note}
-
-
-
-Red Hat Enterprise Linux 9 is now available for {{site.data.keyword.openshiftlong_notm}} clusters version 4.16 and later
-:   You can now create Classic or VPC clusters at version 4.16 at later that have Red Hat Enterprise Linux (RHEL) 9 worker nodes. To migrate existing workers to RHEL 9, see [Migrating to a new RHEL version](/docs/openshift?topic=openshift-rhel_migrate). To review operating system support by cluster version, see [{{site.data.keyword.openshiftlong_notm}} version information](/docs/openshift?topic=openshift-openshift_versions). To review a list of worker node flavors with RHEL 9 support, see [VPC flavors](/docs/openshift?topic=openshift-vpc-flavors) or [Classic flavors](/docs/openshift?topic=openshift-classic-flavors).
 
 
 

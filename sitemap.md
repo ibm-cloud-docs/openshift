@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2024
-lastupdated: "2024-10-02"
+lastupdated: "2024-10-03"
 
 
 keywords: openshift
@@ -283,9 +283,9 @@ subcollection: openshift
 
         * Storage Operator cluster add-on patch update.
 
-    * [01 October 2024](/docs/openshift?topic=openshift-openshift-relnotes#openshift-oct0124)
+        * Static route add-on version patch update.
 
-        * Red Hat Enterprise Linux 9 is now available for {{site.data.keyword.openshiftlong_notm}} clusters version 4.16 and later
+    * [01 October 2024](/docs/openshift?topic=openshift-openshift-relnotes#openshift-oct0124)
 
         * New! The {{site.data.keyword.cos_full_notm}} cluster add-on is available in Beta for allowlisted accounts.
 
