@@ -2,7 +2,7 @@
 
 copyright:
   years: 2022, 2024
-lastupdated: "2024-10-02"
+lastupdated: "2024-10-04"
 
 
 keywords: rhel, os, operating system
@@ -38,7 +38,7 @@ To find your worker node operating system, run the **`ibmcloud oc worker-pools -
 1. Specify the `REDHAT_9_64` version for the worker pool. 
 
     ```sh
-    ibmcloud oc worker-pool operating-system set --cluster CLUSTER --worker-pool POOL --operating-system `REDHAT_9_64`
+    ibmcloud oc worker-pool operating-system set --cluster CLUSTER --worker-pool POOL --operating-system REDHAT_9_64
     ```
     {: pre}
 

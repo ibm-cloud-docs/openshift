@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2024
-lastupdated: "2024-10-03"
+lastupdated: "2024-10-04"
 
 
 keywords: openshift
@@ -4976,6 +4976,8 @@ subcollection: openshift
 * [{{site.data.keyword.cos_full_notm}} Helm chart storage classes](/docs/openshift?topic=openshift-storage_cos_reference#cos-sc-ref-helm)
 
 [Installing the {{site.data.keyword.cos_full_notm}} cluster add-on](/docs/openshift?topic=openshift-storage-cos-install-addon#storage-cos-install-addon)
+
+* [Understanding bucket creation and removal](/docs/openshift?topic=openshift-storage-cos-install-addon#cos-addon-bucket-cd)
 
 * [Enabling the {{site.data.keyword.cos_full_notm}} add-on](/docs/openshift?topic=openshift-storage-cos-install-addon#enable-cos-addon)
 

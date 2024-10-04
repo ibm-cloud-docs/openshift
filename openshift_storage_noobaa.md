@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2024
-lastupdated: "2024-01-03"
+lastupdated: "2024-10-04"
 
 
 keywords: openshift, noobaa, openshift container storage, openshift data foundation, storage classes
@@ -78,7 +78,7 @@ To add a backing store to your storage cluster by using the NooBaa CLI:
 
 After you have [installed ODF](/docs/openshift?topic=openshift-deploy-odf-vpc) and configured at least two [backing stores](#odf-backingstore), you can create a bucket class that uses multiple backing stores. Bucket classes allow you to configure data federation policies across your backing stores. Then, when your apps write objects to your bucket, you can mirror or spread the objects across two or more backing stores.
 
-**Before you begin** [Install the NooBaa CLI](https://github.com/NooBaa/NooBaa-operator){: external})
+1. [Install the NooBaa CLI](https://github.com/NooBaa/NooBaa-operator){: external}.
 
 1. Get the status of your NooBaa instance. For clusters in {{site.data.keyword.cloud_notm}}, target the `openshift-storage` namespace.
     ```sh
@@ -231,11 +231,3 @@ After you create backing stores and a bucket class, you can create an object buc
     oc get pods
     ```
     {: pre}
-
-
-
-
-
-
-
-

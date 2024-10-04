@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2024
-lastupdated: "2024-08-19"
+lastupdated: "2024-10-04"
 
 
 keywords: openshift, lb2.0, nlb
@@ -87,6 +87,8 @@ Next, you can follow the steps in [Setting up an NLB 2.0 in a multizone cluster]
 * Ensure that you have the [**Writer** or **Manager** {{site.data.keyword.cloud_notm}} IAM service access role](/docs/openshift?topic=openshift-iam-platform-access-roles) for the `default` namespace.
 * Ensure you have the required number of worker nodes:
     * Classic clusters: If you restrict network traffic to edge worker nodes, ensure that at least two [edge worker nodes](/docs/openshift?topic=openshift-edge#edge) are enabled in each zone so that NLBs deploy uniformly.
+
+    
 * When cluster nodes are reloaded or when a cluster master update includes a new `keepalived` image,  the load balancer virtual IP is moved to the network interface of a new node. When this occurs, any long-lasting connections to your load balancer must be re-established. Consider including retry logic in your application so that attempts to re-establish the connection are made quickly.
 
 To set up an NLB 2.0 in a multizone cluster:
@@ -416,6 +418,3 @@ Weighted pod algorithms
 :   The following algorithms depend on weighted app pods. However, in {{site.data.keyword.openshiftlong_notm}}, all app pods are assigned equal weight for load balancing.
     - Weighted Least Connection (`wlc`)
     - Weighted round-robin (`wrr`)
-
-
-

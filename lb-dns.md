@@ -2,10 +2,10 @@
 
 copyright: 
   years: 2014, 2024
-lastupdated: "2024-10-02"
+lastupdated: "2024-10-04"
 
 
-keywords: openshift, lb2.0, nlb
+keywords: kubernetes, lb2.0, nlb, health check, dns, hostname, subdomain, openshift
 
 subcollection: openshift
 
@@ -20,6 +20,8 @@ subcollection: openshift
 
 # Registering a DNS subdomain for an NLB 
 {: #loadbalancer_hostname}
+
+[Classic infrastructure]{: tag-classic-inf}
 
 This content is specific to NLBs in classic clusters. For VPC clusters, see [Registering a VPC load balancer hostname with a DNS subdomain](/docs/openshift?topic=openshift-setup_vpc_alb#vpc_lb_dns).
 {: note}
