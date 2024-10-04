@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2024
-lastupdated: "2024-10-02"
+lastupdated: "2024-10-04"
 
 
 keywords: kubernetes, openshift
@@ -49,13 +49,13 @@ Potential causes for broken webhooks include:
 *   The webhook is part of an add-on or other plug-in application that did not install correctly or is unhealthy.
 *   Your cluster might have a networking connectivity issue that prevents the webhook from communicating with the Kubernetes API server in the cluster master.
 
-Identify and restore the resource that causes the broken webhook.
+Run the following commands to create a test pod to get an error that identifies the broken webhook. If the test passes, then the failure might have been temporary and can be retried.
 {: tsResolve}
 
-1. Create a test pod to get an error that identifies the broken webhook. If the test passes, then the failure might have been temporary and can be retried.
+1. Run the following commands to create the test pod and label the `ibm-system` namespace.
 
     ```sh
-    oc run webhook-test --image registry.ng.bluemix.net/armada-master/pause:3.10 -n ibm-system
+    oc run webhook-test --image us.icr.io/armada-master/pause:3.10 -n ibm-system
     oc delete pod -n ibm-system webhook-test --ignore-not-found
     oc label ns ibm-system ibm-cloud.kubernetes.io/webhook-test-at="$(date -u +%FT%H_%M_%SZ)" --overwrite
     ```
