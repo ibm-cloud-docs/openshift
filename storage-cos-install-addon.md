@@ -2,7 +2,7 @@
 
 copyright:
   years: 2024, 2024
-lastupdated: "2024-10-01"
+lastupdated: "2024-10-04"
 
 
 keywords: kubernetes, openshift, object storage add-in, cos
@@ -23,6 +23,18 @@ The {{site.data.keyword.cos_full_notm}} cluster add-on is available in Beta for 
 
 Prerequisites
 :   The {{site.data.keyword.cos_full_notm}} plug-in requires at least 0.2 vCPU and 128 MB of memory.
+
+## Understanding bucket creation and removal
+{: #cos-addon-bucket-cd}
+
+
+- You can use an existing bucket by specifiying the bucket name in your PVC.
+- If you provide a bucket name and that bucket doesn't exist, then a bucket with that name is created.
+- If you don't provide a bucket name, then a bucket with the naming convention `temp-xxx` is created.
+- Buckets are deleted based on reclaim policy defined in your storage class.
+    - If `reclaimPolicy: Delete` is set, the bucket is deleted when the PVC is deleted.
+    - If `reclaimPolicy: Retain` is set, the bucket is retained even after the PVC is deleted.
+
 
 ## Enabling the {{site.data.keyword.cos_full_notm}} add-on
 {: #enable-cos-addon}
@@ -46,7 +58,7 @@ Before you begin: [Access your {{site.data.keyword.redhat_openshift_notm}} clust
 
 1. Install the add-on.
     ```sh
-    ibmcloud oc cluster addon enable --addon ibm-object-csi-driver --cluster CLUSTER [--version VERSION]
+    ibmcloud oc cluster addon enable ibm-object-csi-driver --cluster CLUSTER [--version VERSION]
     ```
     {: pre}
 
@@ -97,13 +109,16 @@ Before you begin: [Access your {{site.data.keyword.redhat_openshift_notm}} clust
     kind: Secret
     type: cos-s3-csi-driver
     metadata:
-        name: <secret_name> # Name your secret
+        name: cos-secret-1 # Name your secret. This same name is used for the PVC in the following steps.
         namespace: <namespace> # Specify the namespace where you want to create the secret.
     data:
         bucketName: <base64-encoded-bucket-name>
-        apiKey: <base64-encoded COS Service-Instance-API-key>
+        apiKey: <base64-encoded-COS-Service-Instance-API-key>
         accessKey: <base64 encoded HMAC access key>
         secretKey: <base64 encoded HMAC secret key>
+    stringData:
+    # uid: "3000" # Optional: Provide a uid to run as non root user. This must match runAsUser in SecurityContext of pod spec.
+    mountOptions: |
     ```
     {: codeblock}
 
@@ -131,7 +146,7 @@ Before you begin: [Access your {{site.data.keyword.redhat_openshift_notm}} clust
     apiVersion: v1
     kind: PersistentVolumeClaim
     metadata:
-    name: <pvc_name> # Give your PVC the same name as the secret you created in the previous step.
+    name: cos-secret-1 # Give your PVC the same name as the secret you created in the previous step.
     namespace: <namespace> # The namespace where you want to create the PVC.
     spec:
     accessModes:
@@ -197,6 +212,8 @@ Before you begin: [Access your {{site.data.keyword.redhat_openshift_notm}} clust
 
 ## Setting up autorecovery for stale volumes
 {: #cos-addon-autorecovery}
+
+When the connection is lost between the `ibm-object-csi-driver` node server pods and application pods, you might see `TransportEndpoint` connection errors. One possible case for this error is when patch updates are applied. To help avoid the connection errors, set up autorecovery of stale volumes by completing the following steps.
 
 1. Copy the following yaml and save it as a file called `stale.yaml`
     ```yaml
@@ -377,4 +394,3 @@ Before you begin: [Access your {{site.data.keyword.redhat_openshift_notm}} clust
 | ibm-object-storage-standard-s3fs |  Delete | Immediate |
 | ibm-object-storage-standard-s3fs-retain | Retain | Immediate |
 {: caption="COS cluster add-on storage classes." caption-side="bottom"}
-

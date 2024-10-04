@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2024
-lastupdated: "2024-08-06"
+lastupdated: "2024-10-04"
 
 
 keywords: openshift, {{site.data.keyword.openshiftlong_notm}}, clusters, worker nodes, worker pools, add
@@ -77,7 +77,7 @@ To resize the worker pool, change the number of worker nodes that the worker poo
 Want to create a new worker pool on dedicated hosts? See [Setting up dedicated hosts in the CLI](/docs/openshift?topic=openshift-dedicated-hosts#setup-dedicated-host-cli).
 {: tip}
 
-Before you begin, make sure that you have the [**Operator** or **Administrator** IAM platform access role](/docs/openshift?topic=openshift-iam-platform-access-roles.
+Before you begin, make sure that you have the [**Operator** or **Administrator** IAM platform access role](/docs/openshift?topic=openshift-iam-platform-access-roles).
 
 1. Retrieve the **VPC ID** and **Worker Zones** of your cluster and choose the zone where you want to deploy the worker nodes in your worker pool. You can choose any of the existing **Worker Zones** of your cluster, or add one of the [multizone locations](/docs/openshift?topic=openshift-regions-and-zones#zones-vpc) for the region that your cluster is in. You can list available zones by running `ibmcloud oc zone ls --provider vpc-gen2`.
     ```sh
@@ -256,6 +256,7 @@ If you have multiple worker pools in your cluster, add the zone to all them so t
     Worker Zones:  us-south-1, us-south-2, us-south-3
     ```
     {: screen}
+    
+
 
 1. To expose apps with [Ingress](/docs/openshift?topic=openshift-ingress-about-roks4), [update the VPC load balancer that exposes the router](/docs/openshift?topic=openshift-router-mzr-error) to include the subnet for the new zone in your cluster.
-
