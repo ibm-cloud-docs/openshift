@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2024
-lastupdated: "2024-06-12"
+lastupdated: "2024-10-07"
 
 
 keywords: openshift, openshift data foundation, openshift container storage, ocs
@@ -319,7 +319,7 @@ If you want to remove all ODF resources and data from your cluster, [remove the 
 ## Troubleshooting ODF
 {: #odf-troubleshooting-gather}
 
-To gather the information to troubleshoot ODF, you can use the `oc adm must-gather` command and specify the ODF image. For more information, see [Gathering cluster data](https://docs.openshift.com/container-platform/4.15/support/gathering-cluster-data.html).
+To gather the information to troubleshoot ODF, you can use the `oc adm must-gather` command and specify the ODF image. For more information, see [Gathering cluster data](https://docs.openshift.com/container-platform/4.16/support/gathering-cluster-data.html).
 {: shortdesc}
 
 Example command:
@@ -333,9 +333,3 @@ You can use the Rook community toolbox to debug issues with your Ceph cluster. F
 {: tip}
 
 For more information, review the [common troubleshooting topics](/docs/openshift?topic=openshift-sitemap#sitemap_openshift_data_foundation).
-
-
-
-
-
-

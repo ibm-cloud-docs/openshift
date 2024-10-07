@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2023, 2024
-lastupdated: "2024-06-24"
+lastupdated: "2024-10-07"
 
 
 keywords: openshift, {{site.data.keyword.openshiftlong_notm}}, kubernetes, allowlist, operating system, rhel, ubuntu
@@ -95,8 +95,8 @@ oc version
 
 Example output
 ```sh
-Client Version: 4.15.3
-Server Version: 4.15.12
+Client Version: 4.16.3
+Server Version: 4.16.12
 Kubernetes Version: v1.29.2
 ```
 {: screen}
@@ -143,4 +143,3 @@ You can also log in to your cluster to check the operating system of the worker 
         ...
     ```
     {: screen}
-

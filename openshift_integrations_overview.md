@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2024
-lastupdated: "2024-06-12"
+lastupdated: "2024-10-07"
 
 
 keywords: kubernetes, openshift
@@ -31,7 +31,7 @@ Learn more about the following {{site.data.keyword.IBM}}, {{site.data.keyword.cl
 | Cluster autoscaler | With the `ibm-iks-cluster-autoscaler` plug-in, you can scale the worker pools in your cluster automatically to increase or decrease the number of worker nodes in the worker pool based on the sizing requests of your scheduled workloads. For more information, see [Scaling clusters](/docs/openshift?topic=openshift-cluster-scaling-install-addon). |
 | Diagnostics and debug tool | While you troubleshoot, you can use the [{{site.data.keyword.containerlong_notm}} Diagnostics and Debug Tool add-on](/docs/openshift?topic=openshift-debug-tool) to run tests and gather pertinent information from your cluster. |
 | IBM Cloud Paks | [IBM Cloud Paks&trade;](https://www.ibm.com/cloud-paks/){: external} are containerized, licensed IBM middleware and open source software components that you can use to modernize, move, and build cloud-native business applications in hybrid and multicloud deployments. By running exclusively on {{site.data.keyword.redhat_openshift_notm}} and Red Hat Enterprise Linux, Cloud Paks are built atop a secure stack and maintain consistency in deployment and behavior across cloud providers. To get started, see [Adding Cloud Paks](/docs/openshift?topic=openshift-openshift_cloud_paks). |
-| Istio for service mesh | Unlike for community Kubernetes clusters, the Istio managed add-on is not supported. Instead, use the [Red Hat service mesh operator](https://docs.openshift.com/container-platform/4.15/service_mesh/v1x/servicemesh-release-notes.html){: external}. **Note**: The default {{site.data.keyword.cloud_notm}} configuration of the routers enables host networking, which is not compatible with the service mesh network policy. For the service mesh ingress to work, [apply a network policy](https://gist.githubusercontent.com/kitch/39c504a2ed9e381c2aadea436d5b52e4/raw/d8efa69f41d41425b16bb363a881a98d40d3708c/mesh-policy.yaml){: external}. |
+| Istio for service mesh | Unlike for community Kubernetes clusters, the Istio managed add-on is not supported. Instead, use the [Red Hat service mesh operator](https://docs.openshift.com/container-platform/4.16/service_mesh/v1x/servicemesh-release-notes.html){: external}. **Note**: The default {{site.data.keyword.cloud_notm}} configuration of the routers enables host networking, which is not compatible with the service mesh network policy. For the service mesh ingress to work, [apply a network policy](https://gist.githubusercontent.com/kitch/39c504a2ed9e381c2aadea436d5b52e4/raw/d8efa69f41d41425b16bb363a881a98d40d3708c/mesh-policy.yaml){: external}. |
 | {{site.data.keyword.la_full_notm}} | Add log management capabilities to your cluster by deploying a {{site.data.keyword.la_short}} agent to your worker nodes to manage logs from your pod containers. For more information, see the following docs.  \n - [Setting up {{site.data.keyword.la_short}} in a {{site.data.keyword.redhat_openshift_notm}} cluster](/docs/openshift?topic=openshift-health#openshift_logging).  \n - [Tutorial: Managing Kubernetes cluster logs with {{site.data.keyword.la_full_notm}}](/docs/log-analysis?topic=log-analysis-tutorial-use-logdna). |
 | Portworx | [Portworx](https://portworx.com/services/kubernetes-storage/){: external} is a highly available software-defined storage solution that you can use to manage persistent storage for your containerized databases and other stateful apps, or to share data between pods across multiple zones. You can [install Portworx with a Helm chart](/docs/openshift?topic=openshift-storage_portworx_about) and provision storage for your apps by using Kubernetes persistent volumes. However, the default configuration requires that you modify the security context constraints, similar to [{{site.data.keyword.la_full_notm}}](/docs/openshift?topic=openshift-health#openshift_logging). |
 | Razee | [Razee](https://razee.io/){: external} is an open-source project that automates and manages the deployment of Kubernetes resources across clusters, environments, and cloud providers, and helps you to visualize deployment information for your resources so that you can monitor the rollout process and find deployment issues more quickly. For more information about Razee and how to set up Razee in your cluster to automate your deployment process, see the [Razee documentation](https://github.com/razee-io/Razee){: external}. |
@@ -39,9 +39,3 @@ Learn more about the following {{site.data.keyword.IBM}}, {{site.data.keyword.cl
 | Other third-party integrations | You can install many other integrations into your {{site.data.keyword.redhat_openshift_notm}} cluster, such as through the {{site.data.keyword.redhat_openshift_notm}} catalog, the [Red Hat Marketplace](https://swc.saas.ibm.com/en-us/redhat-marketplace/documentation/getting-started){: external}, Operators, Helm charts, or do-it-yourself open source software installations. Make sure that these apps are compatible with your {{site.data.keyword.redhat_openshift_notm}} cluster and Kubernetes version. For example, you might need to [update the app](/docs/openshift?topic=openshift-plan_deploy#openshift_move_apps_scenarios) for the installation to succeed. |
 {: caption="{{site.data.keyword.cloud_notm}} and third-party integrations for {{site.data.keyword.openshiftlong}} clusters"}
 {: summary=""}
-
-
-
-
-
-

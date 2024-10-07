@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2024
-lastupdated: "2024-07-31"
+lastupdated: "2024-10-07"
 
 
 keywords: oks, iro, openshift, red hat, red hat openshift
@@ -45,7 +45,7 @@ Built-in {{site.data.keyword.redhat_openshift_notm}} logging tools
 :   Built-in view of pod logs in the {{site.data.keyword.redhat_openshift_notm}} web console.
     - Built-in pod logs are not configured with persistent storage. You must integrate with a cloud database to back up the logging data and make it highly available, and manage the logs yourself.
   
-    To set up an [OpenShift Container Platform Elasticsearch, Fluentd, and Kibana EFK stack](https://docs.openshift.com/container-platform/4.15/observability/logging/cluster-logging.html){: external}, see [installing the cluster logging operator](#oc_logging_operator). Keep in mind that your worker nodes must have at least 4 cores and GB memory to run the cluster logging stack.
+    To set up an [OpenShift Container Platform Elasticsearch, Fluentd, and Kibana EFK stack](https://docs.openshift.com/container-platform/4.16/observability/logging/cluster-logging.html){: external}, see [installing the cluster logging operator](#oc_logging_operator). Keep in mind that your worker nodes must have at least 4 cores and GB memory to run the cluster logging stack.
     {: note}
 
 Service logs: {{site.data.keyword.at_full}}
@@ -161,7 +161,7 @@ To set up a logging configuration for your cluster,
 ## Using the cluster logging operator
 {: #oc_logging_operator}
 
-To deploy the OpenShift Container Platform cluster logging operator and stack on your {{site.data.keyword.openshiftlong_notm}} cluster, see the [{{site.data.keyword.redhat_openshift_notm}} documentation](https://docs.openshift.com/container-platform/4.15/observability/logging/cluster-logging.html){: external}. Additionally, you must update the cluster logging instance to use an {{site.data.keyword.cloud_notm}} Block Storage storage class.
+To deploy the OpenShift Container Platform cluster logging operator and stack on your {{site.data.keyword.openshiftlong_notm}} cluster, see the [{{site.data.keyword.redhat_openshift_notm}} documentation](https://docs.openshift.com/container-platform/4.16/observability/logging/cluster-logging.html){: external}. Additionally, you must update the cluster logging instance to use an {{site.data.keyword.cloud_notm}} Block Storage storage class.
 {: shortdesc}
 
 1. Prepare your worker pool to run the operator.
@@ -189,7 +189,7 @@ To deploy the OpenShift Container Platform cluster logging operator and stack on
     {: codeblock}
     
 7. Modify the configuration YAML to include the node selector and toleration for the worker pool label and taint that you previously created. For more information and examples, see the following {{site.data.keyword.redhat_openshift_notm}} documents. The examples use a label and toleration of `logging: clo-efk`.
-    * [Node selector](https://docs.openshift.com/container-platform/4.15/observability/logging/scheduling_resources/logging-node-selectors.html){: external}. Add the node selector to the Elasticsearch (`logstore`)and Kibana (`visualization`), and Fluentd (`collector.logs`) pods.
+    * [Node selector](https://docs.openshift.com/container-platform/4.16/observability/logging/scheduling_resources/logging-node-selectors.html){: external}. Add the node selector to the Elasticsearch (`logstore`)and Kibana (`visualization`), and Fluentd (`collector.logs`) pods.
         ```yaml
         spec:
         logStore:
@@ -210,7 +210,7 @@ To deploy the OpenShift Container Platform cluster logging operator and stack on
         ```
         {: codeblock}
 
-    * [Toleration](https://docs.openshift.com/container-platform/4.15/observability/logging/scheduling_resources/logging-taints-tolerations.html){: external}. Add the node selector to the Elasticsearch (`logstore`)and Kibana (`visualization`), and Fluentd (`collector.logs`) pods.
+    * [Toleration](https://docs.openshift.com/container-platform/4.16/observability/logging/scheduling_resources/logging-taints-tolerations.html){: external}. Add the node selector to the Elasticsearch (`logstore`)and Kibana (`visualization`), and Fluentd (`collector.logs`) pods.
         ```yaml
         spec:
         logStore:
@@ -242,9 +242,3 @@ To deploy the OpenShift Container Platform cluster logging operator and stack on
 
 8. Click **Create**.
 9. Verify that the operator, Elasticsearch, Fluentd, and Kibana pods are all **Running**.
-
-
-
-
-
-

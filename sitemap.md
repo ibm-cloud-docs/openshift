@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2024
-lastupdated: "2024-10-04"
+lastupdated: "2024-10-07"
 
 
 keywords: openshift
@@ -274,6 +274,10 @@ subcollection: openshift
 [Release notes](/docs/openshift?topic=openshift-openshift-relnotes#openshift-relnotes)
 
 * [October 2024](/docs/openshift?topic=openshift-openshift-relnotes#openshift-oct24)
+
+    * Version 4.16 is now the default version for {{site.data.keyword.openshiftlong_notm}}.
+
+    * New! The `gx3d.160x1792.8h100` worker node flavor with H100 GPU support is available for VPC clusters.
 
     * [03 October 2024](/docs/openshift?topic=openshift-openshift-relnotes#openshift-oct0324)
 
@@ -5564,7 +5568,7 @@ subcollection: openshift
 
 [IBM Cloud Kubernetes Service API JSON](https://containers.cloud.ibm.com/global/swagger-global-api/swagger.json){: external}
 
-[OpenShift Container Platform REST API](https://docs.openshift.com/container-platform/4.15/rest_api/overview/index.html){: external}
+[OpenShift Container Platform REST API](https://docs.openshift.com/container-platform/4.16/rest_api/overview/index.html){: external}
 
 
 ## CLI plug-in reference
