@@ -31,6 +31,10 @@ Looking for {{site.data.keyword.cloud_notm}} status, platform announcements, sec
 ## October 2024
 {: #openshift-oct24}
 
+### 07 October 2024
+{: #openshift-oct0724}
+{: release-note}
+
 
 
 Version 4.16 is now the default version for {{site.data.keyword.openshiftlong_notm}}.
