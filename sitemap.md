@@ -275,9 +275,11 @@ subcollection: openshift
 
 * [October 2024](/docs/openshift?topic=openshift-openshift-relnotes#openshift-oct24)
 
-    * Version 4.16 is now the default version for {{site.data.keyword.openshiftlong_notm}}.
+    * [07 October 2024](/docs/openshift?topic=openshift-openshift-relnotes#openshift-oct0724)
 
-    * New! The `gx3d.160x1792.8h100` worker node flavor with H100 GPU support is available for VPC clusters.
+        * Version 4.16 is now the default version for {{site.data.keyword.openshiftlong_notm}}.
+
+        * New! The `gx3d.160x1792.8h100` worker node flavor with H100 GPU support is available for VPC clusters.
 
     * [03 October 2024](/docs/openshift?topic=openshift-openshift-relnotes#openshift-oct0324)
 
