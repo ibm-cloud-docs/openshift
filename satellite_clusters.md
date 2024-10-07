@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2024
-lastupdated: "2024-06-20"
+lastupdated: "2024-10-07"
 
 
 keywords: openshift, satellite, distributed cloud, on-prem, hybrid
@@ -145,7 +145,7 @@ Before you begin, [install the {{site.data.keyword.satelliteshort}} CLI plug-in]
     Example `cluster create` command.
 
     ```sh
-    ibmcloud oc cluster create satellite --location LOCATION --name NAME --pull-secret SECRET --version 4.15_openshift [--enable-admin-agent] [--host-label LABEL ...] [--operating-system SYSTEM] [--pod-subnet SUBNET] [-q] [--service-subnet SUBNET] [--workers WORKERS-PER-ZONE] [--zone ZONE] [--entitlement ENTITLEMENT]
+    ibmcloud oc cluster create satellite --location LOCATION --name NAME --pull-secret SECRET --version 4.16_openshift [--enable-admin-agent] [--host-label LABEL ...] [--operating-system SYSTEM] [--pod-subnet SUBNET] [-q] [--service-subnet SUBNET] [--workers WORKERS-PER-ZONE] [--zone ZONE] [--entitlement ENTITLEMENT]
     ```
     {: pre}
     
@@ -220,11 +220,3 @@ Exposing apps
 
 Storing application data in persistent storage
 :   Unlike standard {{site.data.keyword.redhat_openshift_notm}} clusters that are created on {{site.data.keyword.cloud_notm}} infrastructure, your {{site.data.keyword.satelliteshort}} clusters don't come installed with a storage driver that provides Kubernetes storage classes that are ready to use with Kubernetes persistent volumes for your apps. However, you can install your own storage driver to set up your apps to save their data in a backing storage device. Review the following common options. For more information, see [Understanding {{site.data.keyword.satelliteshort}} storage](/docs/satellite?topic=satellite-storage-template-ov).
-
-
-
-
-
-
-
-

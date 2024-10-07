@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2024, 2024
-lastupdated: "2024-07-23"
+lastupdated: "2024-10-07"
 
 
 keywords: openshift, kubernetes, affinity, taint, edge node, edge
@@ -87,7 +87,7 @@ To isolate your workload to edge worker nodes:
     ```
     {: pre}
     
-1. Set the `spec.nodePlacement` field to the following. For more information, see the [Red Hat documentation](https://docs.openshift.com/container-platform/4.15/networking/ingress-operator.html#nw-ingress-controller-configuration-parameters_configuring-ingress){: external}. 
+1. Set the `spec.nodePlacement` field to the following. For more information, see the [Red Hat documentation](https://docs.openshift.com/container-platform/4.16/networking/ingress-operator.html#nw-ingress-controller-configuration-parameters_configuring-ingress){: external}. 
     ```yaml
     nodePlacement:
       nodeSelector:
@@ -127,4 +127,3 @@ To isolate your workload to edge worker nodes:
 
 
 You labeled worker nodes in a worker pool with `dedicated=edge` and redeployed all the existing ALBs to the edge nodes. All subsequent ALBs that are added to the cluster are also deployed to an edge node in your edge worker pool. Next, you can prevent other [workloads from running on edge worker nodes](/docs/openshift?topic=openshift-edge-workload-prevent).
-

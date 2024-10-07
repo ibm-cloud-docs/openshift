@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2024
-lastupdated: "2024-09-26"
+lastupdated: "2024-10-07"
 
 
 keywords: kubernetes, openshift, red hat, red hat openshift
@@ -87,9 +87,9 @@ Review the following diagram for an overview of common cluster resources.
     ```
     {: pre}
 
-1. Run the following command to create a version 4.15 cluster in Washington, DC with 2 worker nodes that have 4 cores and 16 GB memory.
+1. Run the following command to create a version 4.16 cluster in Washington, DC with 2 worker nodes that have 4 cores and 16 GB memory.
     ```sh
-    ibmcloud oc cluster create classic --name my-tutorial-cluster --location wdc04 --version 4.15_openshift --flavor b3c.4x16  --workers 2 --public-service-endpoint
+    ibmcloud oc cluster create classic --name my-tutorial-cluster --location wdc04 --version 4.16_openshift --flavor b3c.4x16  --workers 2 --public-service-endpoint
     ```
     {: pre}
 
@@ -123,7 +123,7 @@ Review the following diagram for an overview of common cluster resources.
     Example output
 
     ```sh
-    Client Version: v4.15.0
+    Client Version: v4.16.0
     Kubernetes Version: v1.30.5.2
     ```
     {: screen}
@@ -255,6 +255,6 @@ Review the following diagram for an overview of common cluster resources.
 ## What's next?
 {: #openshift_next}
 
-For more information about working with your apps, see the [{{site.data.keyword.redhat_openshift_notm}} developer activities](https://docs.openshift.com/container-platform/4.15/welcome/index.html#developer-activities){: external} documentation.
+For more information about working with your apps, see the [{{site.data.keyword.redhat_openshift_notm}} developer activities](https://docs.openshift.com/container-platform/4.16/welcome/index.html#developer-activities){: external} documentation.
 
 Install two popular {{site.data.keyword.openshiftlong_notm}} cluster add-ons: [{{site.data.keyword.la_full_notm}}](/docs/openshift?topic=openshift-health#openshift_logging) and [{{site.data.keyword.mon_full_notm}}](/docs/openshift?topic=openshift-health-monitor).

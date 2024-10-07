@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2024, 2024
-lastupdated: "2024-07-23"
+lastupdated: "2024-10-07"
 
 
 keywords: telemetry, remote health, remote monitoring, cluster data, health data
@@ -92,7 +92,7 @@ You might want to disable this remote health reporting to comply with privacy la
     ```
     {: screen}
 
-2. Follow the {{site.data.keyword.redhat_openshift_notm}} instructions to [update the global pull secret in the cluster to disable remote health reporting](https://docs.openshift.com/container-platform/4.15/support/remote_health_monitoring/opting-out-of-remote-health-reporting.html){: external}.
+2. Follow the {{site.data.keyword.redhat_openshift_notm}} instructions to [update the global pull secret in the cluster to disable remote health reporting](https://docs.openshift.com/container-platform/4.16/support/remote_health_monitoring/opting-out-of-remote-health-reporting.html){: external}.
 3. To pick up the global configuration changes, reload all the worker nodes in your cluster.
     1. Note the **ID** of the worker nodes in your cluster.
         ```sh
@@ -149,4 +149,3 @@ If you are not sure whether Telemetry is already enabled for a cluster, follow t
         }
     ```
     {: screen}
-

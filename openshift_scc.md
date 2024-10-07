@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2024
-lastupdated: "2024-06-12"
+lastupdated: "2024-10-07"
 
 
 keywords: openshift, scc, security context constraint, psp
@@ -20,7 +20,7 @@ subcollection: openshift
 # Configuring security context constraints
 {: #openshift_scc}
 
-With security context constraints (SCCs), you can control the actions and access that pods within your {{site.data.keyword.openshiftlong}} cluster can perform. For more information about SCCs, see the [{{site.data.keyword.redhat_openshift_notm}} docs](https://docs.openshift.com/container-platform/4.15/authentication/managing-security-context-constraints.html){: external}.
+With security context constraints (SCCs), you can control the actions and access that pods within your {{site.data.keyword.openshiftlong}} cluster can perform. For more information about SCCs, see the [{{site.data.keyword.redhat_openshift_notm}} docs](https://docs.openshift.com/container-platform/4.16/authentication/managing-security-context-constraints.html){: external}.
 {: shortdesc}
 
 Why do I set security context constraints?
@@ -60,7 +60,7 @@ The default {{site.data.keyword.redhat_openshift_notm}} SCCs are stricter than t
 ## Customizing security context constraints
 {: #customize_sccs}
 
-To create, edit, list, delete, and otherwise manage security context constraints, see the [{{site.data.keyword.redhat_openshift_notm}} docs](https://docs.openshift.com/container-platform/4.15/authentication/managing-security-context-constraints.html){: external}. You can also authorize users or groups to the default security context constraints by using role-based access control such as `clusterroles`, `clusterrolebindings`, `roles`, and `rolebindings`. You can also use the `oc adm policy` subcommands, such as `oc adm policy add-scc-to-user`, to manage these settings. The oc version is the same as that of the cluster being managed.
+To create, edit, list, delete, and otherwise manage security context constraints, see the [{{site.data.keyword.redhat_openshift_notm}} docs](https://docs.openshift.com/container-platform/4.16/authentication/managing-security-context-constraints.html){: external}. You can also authorize users or groups to the default security context constraints by using role-based access control such as `clusterroles`, `clusterrolebindings`, `roles`, and `rolebindings`. You can also use the `oc adm policy` subcommands, such as `oc adm policy add-scc-to-user`, to manage these settings. The oc version is the same as that of the cluster being managed.
 {: shortdesc}
 
 ## Guidelines for assigning access to SCCs
@@ -114,9 +114,3 @@ Do not edit existing {{site.data.keyword.redhat_openshift_notm}} or IBM SCCs set
 | `ibm-privileged-scc`| Grants access to all privileged host features, and allows a pod to run with any UID and GID and any volume. \n  \n **Important**: Grant this SCC for only cluster administration that requires the most access possible. |
 | `ibm-restricted-scc` | Denies access to all host features and requires that pods are run with a UID and SELinux context that are allocated to the namespace. This SCC is the most restrictive IBM SCC.|
 {: caption="Default IBM security context constraints" caption-side="bottom"}
-
-
-
-
-
-
