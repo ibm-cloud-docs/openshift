@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2024
-lastupdated: "2024-10-03"
+lastupdated: "2024-10-07"
 
 
 keywords: kubernetes, release notes, openshift, {{site.data.keyword.openshiftlong_notm}}
@@ -30,6 +30,16 @@ Looking for {{site.data.keyword.cloud_notm}} status, platform announcements, sec
 
 ## October 2024
 {: #openshift-oct24}
+
+
+
+Version 4.16 is now the default version for {{site.data.keyword.openshiftlong_notm}}.
+:   For a complete list of available versions, see the [version information](/docs/openshift?topic=openshift-openshift_versions).
+
+
+
+New! The `gx3d.160x1792.8h100` worker node flavor with H100 GPU support is available for VPC clusters.
+:   For a list of available flavors, see [VPC flavors](/docs/openshift?topic=openshift-vpc-flavors).
 
 ### 03 October 2024
 {: #openshift-oct0324}
