@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2024
-lastupdated: "2024-10-07"
+lastupdated: "2024-10-08"
 
 
 keywords: openshift
@@ -4765,6 +4765,26 @@ subcollection: openshift
 [Removing {{site.data.keyword.block_storage_is_short}} from your cluster](/docs/openshift?topic=openshift-storage-block-vpc-remove#storage-block-vpc-remove)
 
 * [Cleaning up {{site.data.keyword.block_storage_is_short}}](/docs/openshift?topic=openshift-storage-block-vpc-remove#cleaning-up-block-vpc)
+
+[Migrating {{site.data.keyword.block_storage_is_short}} apps and data between IBM Cloud accounts](/docs/openshift?topic=openshift-storage-block-vpc-migration#storage-block-vpc-migration)
+
+* [Prerequisites](/docs/openshift?topic=openshift-storage-block-vpc-migration#vpc-block-migration-prereqs)
+
+* [Get your account IDs](/docs/openshift?topic=openshift-storage-block-vpc-migration#vpc-block-mig-account-IDs)
+
+* [Set up your permissions](/docs/openshift?topic=openshift-storage-block-vpc-migration#vpc-block-mig-s2s)
+
+* [Optional: Deploy an app](/docs/openshift?topic=openshift-storage-block-vpc-migration#vpc-block-mig-deploy)
+
+* [Create a snapshot](/docs/openshift?topic=openshift-storage-block-vpc-migration#vpc-block-mig-snapshot)
+
+* [Get the details of your snapshot](/docs/openshift?topic=openshift-storage-block-vpc-migration#vpc-block-mig-snapshot-details)
+
+* [Restore the snapshot in Account 2](/docs/openshift?topic=openshift-storage-block-vpc-migration#vpc-block-mig-snapshot-restore)
+
+* [Redploy your app](/docs/openshift?topic=openshift-storage-block-vpc-migration#vpc-block-mig-snapshot-redeploy)
+
+* [Continue migrating your snapshots and apps to Account 2](/docs/openshift?topic=openshift-storage-block-vpc-migration#vpc-block-mig-snapshot-next)
 
 [{{site.data.keyword.block_storage_is_short}} storage class reference](/docs/openshift?topic=openshift-storage-block-vpc-sc-ref#storage-block-vpc-sc-ref)
 
