@@ -275,6 +275,10 @@ subcollection: openshift
 
 * [October 2024](/docs/openshift?topic=openshift-openshift-relnotes#openshift-oct24)
 
+    * [09 October 2024](/docs/openshift?topic=openshift-openshift-relnotes#openshift-oct0924)
+
+        * {{site.data.keyword.openshiftlong_notm}} worker node fix packs.
+
     * [07 October 2024](/docs/openshift?topic=openshift-openshift-relnotes#openshift-oct0724)
 
         * Version 4.16 is now the default version for {{site.data.keyword.openshiftlong_notm}}.
@@ -6339,6 +6343,8 @@ subcollection: openshift
 
 * [Overview](/docs/openshift?topic=openshift-openshift_changelog_416#openshift_changelog_overview_416)
 
+    * [Change log for worker node fix pack 4.16.15_1539_openshift, released 09 October 2024](/docs/openshift?topic=openshift-openshift_changelog_416#41615_1539_openshift_W)
+
     * [Change log for master fix pack 4.16.10_1537_openshift, released 25 September 2024](/docs/openshift?topic=openshift-openshift_changelog_416#41610_1537_openshift_M)
 
     * [Change log for worker node fix pack 4.16.13_1538_openshift, released 23 September 2024](/docs/openshift?topic=openshift-openshift_changelog_416#41613_1538_openshift_W)
@@ -6463,6 +6469,8 @@ subcollection: openshift
 [Version 4.15 change log](/docs/openshift?topic=openshift-openshift_changelog_415#openshift_changelog_415)
 
 * [Overview](/docs/openshift?topic=openshift-openshift_changelog_415#openshift_changelog_overview_415)
+
+    * [Change log for worker node fix pack 4.15.35_1561_openshift, released 09 October 2024](/docs/openshift?topic=openshift-openshift_changelog_415#41535_1561_openshift_W)
 
     * [Change log for master fix pack 4.15.30_1559_openshift, released 25 September 2024](/docs/openshift?topic=openshift-openshift_changelog_415#41530_1559_openshift_M)
 
@@ -6618,6 +6626,8 @@ subcollection: openshift
 [Version 4.14 change log](/docs/openshift?topic=openshift-openshift_changelog_414#openshift_changelog_414)
 
 * [Overview](/docs/openshift?topic=openshift-openshift_changelog_414#openshift_changelog_overview_414)
+
+    * [Change log for worker node fix pack 4.14.38_1583_openshift, released 09 October 2024](/docs/openshift?topic=openshift-openshift_changelog_414#41438_1583_openshift_W)
 
     * [Change log for master fix pack 4.14.35_1581_openshift, released 25 September 2024](/docs/openshift?topic=openshift-openshift_changelog_414#41435_1581_openshift_M)
 
@@ -6777,6 +6787,8 @@ subcollection: openshift
 [Version 4.13 change log](/docs/openshift?topic=openshift-openshift_changelog_413#openshift_changelog_413)
 
 * [Overview](/docs/openshift?topic=openshift-openshift_changelog_413#openshift_changelog_overview_413)
+
+    * [Change log for worker node fix pack 4.13.51_1593_openshift, released 09 October 2024](/docs/openshift?topic=openshift-openshift_changelog_413#41351_1593_openshift_W)
 
     * [Change log for master fix pack 4.13.49_1591_openshift, released 25 September 2024](/docs/openshift?topic=openshift-openshift_changelog_413#41349_1591_openshift_M)
 
@@ -6976,6 +6988,8 @@ subcollection: openshift
 [Version 4.12 change log](/docs/openshift?topic=openshift-openshift_changelog_412#openshift_changelog_412)
 
 * [Overview](/docs/openshift?topic=openshift-openshift_changelog_412#openshift_changelog_overview_412)
+
+    * [Change log for worker node fix pack 4.12.66_1612_openshift, released 09 October 2024](/docs/openshift?topic=openshift-openshift_changelog_412#41266_1612_openshift_W)
 
     * [Change log for master fix pack 4.12.64_1609_openshift, released 25 September 2024](/docs/openshift?topic=openshift-openshift_changelog_412#41264_1609_openshift_M)
 
