@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2024, 2024
-lastupdated: "2024-10-08"
+lastupdated: "2024-10-09"
 
 
 keywords: openshift, migration, block storage for vpc, snapshots
@@ -271,6 +271,8 @@ You can creating snapshots only when a volume is attached to a pod.
 ## Get the details of your snapshot
 {: #vpc-block-mig-snapshot-details}
 {: step}
+
+[Account 1]{: tag-purple}
 
 1. Get the details of your `volumesnapshotcontent` by using the `SNAPSHOTCONTENT` you found in the previous step.
 

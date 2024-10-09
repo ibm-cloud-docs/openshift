@@ -2,7 +2,7 @@
 
 copyright:
   years: 2024, 2024
-lastupdated: "2024-10-04"
+lastupdated: "2024-10-09"
 
 
 keywords: kubernetes, openshift, object storage add-in, cos
@@ -93,7 +93,6 @@ Before you begin: [Access your {{site.data.keyword.redhat_openshift_notm}} clust
     ```
     {: screen}
 
-
 ## Deploying an app that uses {{site.data.keyword.cos_full_notm}}
 {: #cos-addon-app}
 
@@ -114,8 +113,8 @@ Before you begin: [Access your {{site.data.keyword.redhat_openshift_notm}} clust
     data:
         bucketName: <base64-encoded-bucket-name>
         apiKey: <base64-encoded-COS-Service-Instance-API-key>
-        accessKey: <base64 encoded HMAC access key>
-        secretKey: <base64 encoded HMAC secret key>
+        accessKey: <base64-encoded-HMAC-access-key>
+        secretKey: <base64-encoded-HMAC-secret-key>
     stringData:
     # uid: "3000" # Optional: Provide a uid to run as non root user. This must match runAsUser in SecurityContext of pod spec.
     mountOptions: |
@@ -319,7 +318,7 @@ When the connection is lost between the `ibm-object-csi-driver` node server pods
     {: pre}
 
     Example output
-    ```sh
+    ```txt
     pod "ibm-object-csi-node-vk8jf" deleted
     ```
     {: screen}
@@ -361,7 +360,7 @@ When the connection is lost between the `ibm-object-csi-driver` node server pods
 
 1. Run the following command to disable the add-on.
     ```sh
-     ibmcloud ks cluster addon disable ibm-object-csi-driver --cluster CLUSTER
+     ibmcloud oc cluster addon disable ibm-object-csi-driver --cluster CLUSTER
      ```
      {: pre}
 
@@ -378,6 +377,153 @@ When the connection is lost between the `ibm-object-csi-driver` node server pods
     ibmcloud oc cluster addon ls --cluster CLUSTER
     ```
     {: pre}
+
+
+
+## Migrating from the Helm plug-in to the cluster add-on
+{: #cos-addon-migrate-helm}
+
+1. [Access your {{site.data.keyword.redhat_openshift_notm}} cluster](/docs/openshift?topic=openshift-access_cluster).
+
+1. Get the details of your PVCs and select one to migrate.
+    ```sh
+    oc get pvc --all-namespaces -o custom-columns='NAMESPACE:.metadata.namespace,NAME:.metadata.name' | tail -n +2 | while read namespace pvc; do kubectl describe pvc "$pvc" -n "$namespace" | grep 'volume.kubernetes.io/storage-provisioner: ibm.io/ibmc-s3fs' > /dev/null ; if [ $? -eq 0 ]; then echo "PVC: $pvc in Namespace: $namespace uses ibm.io/ibmc-s3fs storage provisioner"; fi; done
+    ```
+    {: pre}
+
+    Example output
+    ```txt
+    PVC: pvc-test in Namespace: default uses ibm.io/ibmc-s3fs storage provisioner
+    ```
+    {: screen}
+
+1. Describe the PVC and get the bucket name.
+    ```sh
+    oc describe pvc <pvc_name> | grep ibm.io/bucket:
+    ```
+    {: pre}
+
+    Example output
+    ```txt
+    ibm.io/bucket: test-s3
+    ```
+    {: screen}
+
+1. Create a secret that has the same name as your PVC.
+    ```yaml
+    apiVersion: v1
+    kind: Secret
+    type: cos-s3-csi-driver
+    metadata:
+        name: test-s3 # Name your secret the same name your PVC
+        namespace: default # Specify the namespace where you want to create the secret. In this example, the previous PVC and secret were in the default namespace.
+    data:
+        bucketName: <base64-encoded-bucket-name>
+        apiKey: <base64-encoded-COS-Service-Instance-API-key>
+        accessKey: <base64-encoded-HMAC-access-key>
+        secretKey: <base64-encoded-HMAC-secret-key>
+    stringData:
+    # uid: "3000" # Optional: Provide a uid to run as non root user. This must match runAsUser in SecurityContext of pod spec.
+    mountOptions: |
+    ```
+    {: codeblock}
+    
+1. Find the storage class that was used in your PVC.
+    ```sh
+    oc describe pvc <pvc_name> | grep StorageClass:
+    ```
+    {: pre}
+
+    Example command for a PVC called `test-s3`.
+    ```sh
+    oc describe pvc test-s3 | grep StorageClass:
+    ```
+    {: pre}
+
+    Example output
+    ```txt
+    StorageClass:  ibmc-s3fs-smart-perf-regional
+    ```
+    {: screen}
+
+1. [Review the new storage classes](#cos-sc-ref-addon) that are available with the add-on and select a replacement class.
+    * If you used a `flex` class, choose one of the new `smart` classes.
+    * If you used a `standard` classes, choose one of the new `standard` classes.
+    * The `cold` and `vault` classes are no longer available with the add-on; choose a `smart` or `standard` class instead.
+
+1. Review the details of your PVC.
+    ```sh
+    oc describe pvc test-s3
+    ```
+    {: pre}
+
+    Example output
+
+    ```txt
+    Name:          pvc-test
+    Namespace:     default
+    StorageClass:  ibmc-s3fs-smart-perf-regional
+    Status:        Bound
+    Volume:        pvc-c625474d-31f0-4929-bc3e-feace1fb42fb
+    Labels:        <none>
+    Annotations:   ibm.io/auto-create-bucket: true
+                ibm.io/auto-delete-bucket: true
+                ibm.io/bucket: bha-test-s23
+                ibm.io/secret-name: satstoragesecret
+                pv.kubernetes.io/bind-completed: yes
+                pv.kubernetes.io/bound-by-controller: yes
+                volume.beta.kubernetes.io/storage-provisioner: ibm.io/ibmc-s3fs
+                volume.kubernetes.io/storage-provisioner: ibm.io/ibmc-s3fs
+    Finalizers:    [kubernetes.io/pvc-protection]
+    Capacity:      3Gi
+    Access Modes:  RWO
+    VolumeMode:    Filesystem
+    Used By:       test-pod
+    Events:        <none>
+    ```
+    {: screen}
+
+1. Create a replacement PVC that uses a new storage class and references the secret you created earlier.
+    ```yaml
+    apiVersion: v1
+    kind: PersistentVolumeClaim
+    metadata:
+    name: test-s3 # Enter the same name as the secret you created earlier.
+    spec:
+    accessModes:
+    - ReadWriteOnce
+    resources:
+        requests:
+        storage: 3Gi
+    storageClassName: ibm-object-storage-smart-s3fs
+    ```
+    {: codeblock}
+
+1. Verify the PVC is `Bound`.
+    ```sh
+    oc get pvc
+    ```
+    {: pre}
+
+1. Get the details of your app.
+    ```sh
+    oc get pods
+    ```
+    {: pre}
+
+1. Scale down your app to zero.
+    ```sh
+    kubectl scale deployment --replicas=0 my-app
+    ```
+    {: pre}
+
+1. Create a replacement deployment that references the PVC you created in the previous step.
+
+
+1. After the new deployment is running, you can delete the old deployment.
+
+1. Repeat these steps for each PVC that you want to migrate.
+
 
 
 ## {{site.data.keyword.cos_full_notm}} cluster add-on storage classes
