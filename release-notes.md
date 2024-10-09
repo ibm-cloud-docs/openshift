@@ -33,6 +33,24 @@ Looking for {{site.data.keyword.cloud_notm}} status, platform announcements, sec
 
 
 
+### 09 October 2024
+{: #openshift-oct0924}
+{: release-note}
+
+
+
+
+
+{{site.data.keyword.openshiftlong_notm}} worker node fix packs.
+:   Worker node fix packs can be applied by updating or reloading the worker node in classic infrastructure, or replacing the worker node in VPC infrastructure. Review the following change logs for your cluster version.
+:   [Version 4.16 change log](/docs/openshift?topic=openshift-openshift_changelog_416)
+:   [Version 4.15 change log](/docs/openshift?topic=openshift-openshift_changelog_415)
+:   [Version 4.14 change log](/docs/openshift?topic=openshift-openshift_changelog_414)
+:   [Version 4.13 change log](/docs/openshift?topic=openshift-openshift_changelog_413)
+:   [Version 4.12 change log](/docs/openshift?topic=openshift-openshift_changelog_412)
+
+
+
 ### 07 October 2024
 {: #openshift-oct0724}
 {: release-note}
