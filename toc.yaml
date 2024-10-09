@@ -236,6 +236,7 @@ toc:
           - storage-block-vpc-trusted-profiles.md
           - storage-block-vpc-unmanaged.md
           - storage-block-vpc-remove.md
+          - storage-block-vpc-migration.md
           - storage-block-vpc-sc-ref.md
       - storage-file.md
       - topicgroup:
