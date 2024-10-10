@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2024
-lastupdated: "2024-10-09"
+lastupdated: "2024-10-10"
 
 
 keywords: openshift, node scaling, ca, autoscaler
@@ -44,7 +44,7 @@ If your account is allowlisted for flavors that are not listed below, you can fi
 | bx2.4x16 | 4, 16GB, 8Gbps | Virtual | REDHAT_7_64, **REDHAT_8_64 (default)**, RHEL_9_64, RHCOS| 100GB BLOCK | N/A | 300gb.5iops-tier, 300gb.10iops-tier, 600gb.5iops-tier, 600gb.10iops-tier, 900gb.5iops-tier, 900gb.10iops-tier, 1200gb.5iops-tier, 1200gb.10iops-tier, 1600gb.5iops-tier, 1600gb.10iops-tier | N/A|
 | bx2.8x32 | 8, 32GB, 16Gbps | Virtual | REDHAT_7_64, **REDHAT_8_64 (default)**, RHEL_9_64, RHCOS| 100GB BLOCK | N/A | 300gb.5iops-tier, 300gb.10iops-tier, 600gb.5iops-tier, 600gb.10iops-tier, 900gb.5iops-tier, 900gb.10iops-tier, 1200gb.5iops-tier, 1200gb.10iops-tier, 1600gb.5iops-tier, 1600gb.10iops-tier, 2400gb.10iops-tier, 3000gb.10iops-tier, 4000gb.10iops-tier | N/A|
 {: class="simple-tab-table"}
-{: caption="Table. Balanced flavors in Sydney." caption-side="bottom"}
+{: caption="Balanced flavors in Sydney." caption-side="bottom"}
 {: #au-syd-balanced-table}
 {: tab-title="Balanced"}
 {: tab-group="au-syd-tables"}
@@ -57,7 +57,7 @@ If your account is allowlisted for flavors that are not listed below, you can fi
 | cx2.48x96 | 48, 96GB, 25Gbps | Virtual | REDHAT_7_64, **REDHAT_8_64 (default)**, RHEL_9_64, RHCOS| 100GB BLOCK | N/A | 300gb.5iops-tier, 300gb.10iops-tier, 600gb.5iops-tier, 600gb.10iops-tier, 900gb.5iops-tier, 900gb.10iops-tier, 1200gb.5iops-tier, 1200gb.10iops-tier, 1600gb.5iops-tier, 1600gb.10iops-tier, 2400gb.10iops-tier, 3000gb.10iops-tier, 4000gb.10iops-tier | N/A|
 | cx2.8x16 | 8, 16GB, 16Gbps | Virtual | REDHAT_7_64, **REDHAT_8_64 (default)**, RHEL_9_64, RHCOS| 100GB BLOCK | N/A | 300gb.5iops-tier, 300gb.10iops-tier, 600gb.5iops-tier, 600gb.10iops-tier, 900gb.5iops-tier, 900gb.10iops-tier, 1200gb.5iops-tier, 1200gb.10iops-tier, 1600gb.5iops-tier, 1600gb.10iops-tier, 2400gb.10iops-tier, 3000gb.10iops-tier, 4000gb.10iops-tier | N/A|
 {: class="simple-tab-table"}
-{: caption="Table. Compute flavors in Sydney." caption-side="bottom"}
+{: caption="Compute flavors in Sydney." caption-side="bottom"}
 {: #au-syd-compute-table}
 {: tab-title="Compute"}
 {: tab-group="au-syd-tables"}
@@ -71,7 +71,7 @@ If your account is allowlisted for flavors that are not listed below, you can fi
 | gx3.48x240.2l40s | 48, 240GB, 32Gbps | Virtual | **REDHAT_8_64 (default)**, RHEL_9_64, RHCOS| 100GB BLOCK | N/A | 300gb.5iops-tier, 300gb.10iops-tier, 600gb.5iops-tier, 600gb.10iops-tier, 900gb.5iops-tier, 900gb.10iops-tier, 1200gb.5iops-tier, 1200gb.10iops-tier, 1600gb.5iops-tier, 1600gb.10iops-tier, 2400gb.10iops-tier, 3000gb.10iops-tier, 4000gb.10iops-tier |2 L40S |
 | gx3.64x320.4l4 | 64, 320GB, 32Gbps | Virtual | **REDHAT_8_64 (default)**, RHEL_9_64, RHCOS| 100GB BLOCK | N/A | 300gb.5iops-tier, 300gb.10iops-tier, 600gb.5iops-tier, 600gb.10iops-tier, 900gb.5iops-tier, 900gb.10iops-tier, 1200gb.5iops-tier, 1200gb.10iops-tier, 1600gb.5iops-tier, 1600gb.10iops-tier, 2400gb.10iops-tier, 3000gb.10iops-tier, 4000gb.10iops-tier |4 L4 |
 {: class="simple-tab-table"}
-{: caption="Table. GPU flavors in Sydney." caption-side="bottom"}
+{: caption="GPU flavors in Sydney." caption-side="bottom"}
 {: #au-syd-gpu-table}
 {: tab-title="GPU"}
 {: tab-group="au-syd-tables"}
@@ -88,7 +88,7 @@ If your account is allowlisted for flavors that are not listed below, you can fi
 | mx2.64x512 | 64, 512GB, 25Gbps | Virtual | REDHAT_7_64, **REDHAT_8_64 (default)**, RHEL_9_64, RHCOS| 100GB BLOCK | N/A | 300gb.5iops-tier, 300gb.10iops-tier, 600gb.5iops-tier, 600gb.10iops-tier, 900gb.5iops-tier, 900gb.10iops-tier, 1200gb.5iops-tier, 1200gb.10iops-tier, 1600gb.5iops-tier, 1600gb.10iops-tier, 2400gb.10iops-tier, 3000gb.10iops-tier, 4000gb.10iops-tier | N/A|
 | mx2.8x64 | 8, 64GB, 16Gbps | Virtual | REDHAT_7_64, **REDHAT_8_64 (default)**, RHEL_9_64, RHCOS| 100GB BLOCK | N/A | 300gb.5iops-tier, 300gb.10iops-tier, 600gb.5iops-tier, 600gb.10iops-tier, 900gb.5iops-tier, 900gb.10iops-tier, 1200gb.5iops-tier, 1200gb.10iops-tier, 1600gb.5iops-tier, 1600gb.10iops-tier, 2400gb.10iops-tier, 3000gb.10iops-tier, 4000gb.10iops-tier | N/A|
 {: class="simple-tab-table"}
-{: caption="Table. Memory flavors in Sydney." caption-side="bottom"}
+{: caption="Memory flavors in Sydney." caption-side="bottom"}
 {: #au-syd-memory-table}
 {: tab-title="Memory"}
 {: tab-group="au-syd-tables"}
@@ -104,7 +104,7 @@ If your account is allowlisted for flavors that are not listed below, you can fi
 | ox2.8x64 | 8, 64GB, 16Gbps | Virtual | REDHAT_7_64, **REDHAT_8_64 (default)**, RHEL_9_64, RHCOS| 100GB BLOCK | N/A | 300gb.5iops-tier, 300gb.10iops-tier, 600gb.5iops-tier, 600gb.10iops-tier, 900gb.5iops-tier, 900gb.10iops-tier, 1200gb.5iops-tier, 1200gb.10iops-tier, 1600gb.5iops-tier, 1600gb.10iops-tier, 2400gb.10iops-tier, 3000gb.10iops-tier, 4000gb.10iops-tier | N/A|
 | ox2.96x768 | 96, 768GB, 25Gbps | Virtual | REDHAT_7_64, **REDHAT_8_64 (default)**, RHEL_9_64, RHCOS| 100GB BLOCK | N/A | 300gb.5iops-tier, 300gb.10iops-tier, 600gb.5iops-tier, 600gb.10iops-tier, 900gb.5iops-tier, 900gb.10iops-tier, 1200gb.5iops-tier, 1200gb.10iops-tier, 1600gb.5iops-tier, 1600gb.10iops-tier, 2400gb.10iops-tier, 3000gb.10iops-tier, 4000gb.10iops-tier | N/A|
 {: class="simple-tab-table"}
-{: caption="Table. Storage optimized flavors in Sydney." caption-side="bottom"}
+{: caption="Storage optimized flavors in Sydney." caption-side="bottom"}
 {: #au-syd-storageopt-table}
 {: tab-title="Storage optimized"}
 {: tab-group="au-syd-tables"}
@@ -125,7 +125,7 @@ If your account is allowlisted for flavors that are not listed below, you can fi
 | bx2.4x16 | 4, 16GB, 8Gbps | Virtual | REDHAT_7_64, **REDHAT_8_64 (default)**, RHEL_9_64, RHCOS| 100GB BLOCK | N/A | 300gb.5iops-tier, 300gb.10iops-tier, 600gb.5iops-tier, 600gb.10iops-tier, 900gb.5iops-tier, 900gb.10iops-tier, 1200gb.5iops-tier, 1200gb.10iops-tier, 1600gb.5iops-tier, 1600gb.10iops-tier | N/A|
 | bx2.8x32 | 8, 32GB, 16Gbps | Virtual | REDHAT_7_64, **REDHAT_8_64 (default)**, RHEL_9_64, RHCOS| 100GB BLOCK | N/A | 300gb.5iops-tier, 300gb.10iops-tier, 600gb.5iops-tier, 600gb.10iops-tier, 900gb.5iops-tier, 900gb.10iops-tier, 1200gb.5iops-tier, 1200gb.10iops-tier, 1600gb.5iops-tier, 1600gb.10iops-tier, 2400gb.10iops-tier, 3000gb.10iops-tier, 4000gb.10iops-tier | N/A|
 {: class="simple-tab-table"}
-{: caption="Table. Balanced flavors in Sao Paulo." caption-side="bottom"}
+{: caption="Balanced flavors in Sao Paulo." caption-side="bottom"}
 {: #br-sao-balanced-table}
 {: tab-title="Balanced"}
 {: tab-group="br-sao-tables"}
@@ -138,7 +138,7 @@ If your account is allowlisted for flavors that are not listed below, you can fi
 | cx2.48x96 | 48, 96GB, 25Gbps | Virtual | REDHAT_7_64, **REDHAT_8_64 (default)**, RHEL_9_64, RHCOS| 100GB BLOCK | N/A | 300gb.5iops-tier, 300gb.10iops-tier, 600gb.5iops-tier, 600gb.10iops-tier, 900gb.5iops-tier, 900gb.10iops-tier, 1200gb.5iops-tier, 1200gb.10iops-tier, 1600gb.5iops-tier, 1600gb.10iops-tier, 2400gb.10iops-tier, 3000gb.10iops-tier, 4000gb.10iops-tier | N/A|
 | cx2.8x16 | 8, 16GB, 16Gbps | Virtual | REDHAT_7_64, **REDHAT_8_64 (default)**, RHEL_9_64, RHCOS| 100GB BLOCK | N/A | 300gb.5iops-tier, 300gb.10iops-tier, 600gb.5iops-tier, 600gb.10iops-tier, 900gb.5iops-tier, 900gb.10iops-tier, 1200gb.5iops-tier, 1200gb.10iops-tier, 1600gb.5iops-tier, 1600gb.10iops-tier, 2400gb.10iops-tier, 3000gb.10iops-tier, 4000gb.10iops-tier | N/A|
 {: class="simple-tab-table"}
-{: caption="Table. Compute flavors in Sao Paulo." caption-side="bottom"}
+{: caption="Compute flavors in Sao Paulo." caption-side="bottom"}
 {: #br-sao-compute-table}
 {: tab-title="Compute"}
 {: tab-group="br-sao-tables"}
@@ -152,7 +152,7 @@ If your account is allowlisted for flavors that are not listed below, you can fi
 | gx3.48x240.2l40s | 48, 240GB, 32Gbps | Virtual | **REDHAT_8_64 (default)**, RHEL_9_64, RHCOS| 100GB BLOCK | N/A | 300gb.5iops-tier, 300gb.10iops-tier, 600gb.5iops-tier, 600gb.10iops-tier, 900gb.5iops-tier, 900gb.10iops-tier, 1200gb.5iops-tier, 1200gb.10iops-tier, 1600gb.5iops-tier, 1600gb.10iops-tier, 2400gb.10iops-tier, 3000gb.10iops-tier, 4000gb.10iops-tier |2 L40S |
 | gx3.64x320.4l4 | 64, 320GB, 32Gbps | Virtual | **REDHAT_8_64 (default)**, RHEL_9_64, RHCOS| 100GB BLOCK | N/A | 300gb.5iops-tier, 300gb.10iops-tier, 600gb.5iops-tier, 600gb.10iops-tier, 900gb.5iops-tier, 900gb.10iops-tier, 1200gb.5iops-tier, 1200gb.10iops-tier, 1600gb.5iops-tier, 1600gb.10iops-tier, 2400gb.10iops-tier, 3000gb.10iops-tier, 4000gb.10iops-tier |4 L4 |
 {: class="simple-tab-table"}
-{: caption="Table. GPU flavors in Sao Paulo." caption-side="bottom"}
+{: caption="GPU flavors in Sao Paulo." caption-side="bottom"}
 {: #br-sao-gpu-table}
 {: tab-title="GPU"}
 {: tab-group="br-sao-tables"}
@@ -168,7 +168,7 @@ If your account is allowlisted for flavors that are not listed below, you can fi
 | mx2.64x512 | 64, 512GB, 25Gbps | Virtual | REDHAT_7_64, **REDHAT_8_64 (default)**, RHEL_9_64, RHCOS| 100GB BLOCK | N/A | 300gb.5iops-tier, 300gb.10iops-tier, 600gb.5iops-tier, 600gb.10iops-tier, 900gb.5iops-tier, 900gb.10iops-tier, 1200gb.5iops-tier, 1200gb.10iops-tier, 1600gb.5iops-tier, 1600gb.10iops-tier, 2400gb.10iops-tier, 3000gb.10iops-tier, 4000gb.10iops-tier | N/A|
 | mx2.8x64 | 8, 64GB, 16Gbps | Virtual | REDHAT_7_64, **REDHAT_8_64 (default)**, RHEL_9_64, RHCOS| 100GB BLOCK | N/A | 300gb.5iops-tier, 300gb.10iops-tier, 600gb.5iops-tier, 600gb.10iops-tier, 900gb.5iops-tier, 900gb.10iops-tier, 1200gb.5iops-tier, 1200gb.10iops-tier, 1600gb.5iops-tier, 1600gb.10iops-tier, 2400gb.10iops-tier, 3000gb.10iops-tier, 4000gb.10iops-tier | N/A|
 {: class="simple-tab-table"}
-{: caption="Table. Memory flavors in Sao Paulo." caption-side="bottom"}
+{: caption="Memory flavors in Sao Paulo." caption-side="bottom"}
 {: #br-sao-memory-table}
 {: tab-title="Memory"}
 {: tab-group="br-sao-tables"}
@@ -190,7 +190,7 @@ If your account is allowlisted for flavors that are not listed below, you can fi
 | bx2.4x16 | 4, 16GB, 8Gbps | Virtual | REDHAT_7_64, **REDHAT_8_64 (default)**, RHEL_9_64, RHCOS| 100GB BLOCK | N/A | 300gb.5iops-tier, 300gb.10iops-tier, 600gb.5iops-tier, 600gb.10iops-tier, 900gb.5iops-tier, 900gb.10iops-tier, 1200gb.5iops-tier, 1200gb.10iops-tier, 1600gb.5iops-tier, 1600gb.10iops-tier | N/A|
 | bx2.8x32 | 8, 32GB, 16Gbps | Virtual | REDHAT_7_64, **REDHAT_8_64 (default)**, RHEL_9_64, RHCOS| 100GB BLOCK | N/A | 300gb.5iops-tier, 300gb.10iops-tier, 600gb.5iops-tier, 600gb.10iops-tier, 900gb.5iops-tier, 900gb.10iops-tier, 1200gb.5iops-tier, 1200gb.10iops-tier, 1600gb.5iops-tier, 1600gb.10iops-tier, 2400gb.10iops-tier, 3000gb.10iops-tier, 4000gb.10iops-tier | N/A|
 {: class="simple-tab-table"}
-{: caption="Table. Balanced flavors in Toronto." caption-side="bottom"}
+{: caption="Balanced flavors in Toronto." caption-side="bottom"}
 {: #ca-tor-balanced-table}
 {: tab-title="Balanced"}
 {: tab-group="ca-tor-tables"}
@@ -203,7 +203,7 @@ If your account is allowlisted for flavors that are not listed below, you can fi
 | cx2.48x96 | 48, 96GB, 25Gbps | Virtual | REDHAT_7_64, **REDHAT_8_64 (default)**, RHEL_9_64, RHCOS| 100GB BLOCK | N/A | 300gb.5iops-tier, 300gb.10iops-tier, 600gb.5iops-tier, 600gb.10iops-tier, 900gb.5iops-tier, 900gb.10iops-tier, 1200gb.5iops-tier, 1200gb.10iops-tier, 1600gb.5iops-tier, 1600gb.10iops-tier, 2400gb.10iops-tier, 3000gb.10iops-tier, 4000gb.10iops-tier | N/A|
 | cx2.8x16 | 8, 16GB, 16Gbps | Virtual | REDHAT_7_64, **REDHAT_8_64 (default)**, RHEL_9_64, RHCOS| 100GB BLOCK | N/A | 300gb.5iops-tier, 300gb.10iops-tier, 600gb.5iops-tier, 600gb.10iops-tier, 900gb.5iops-tier, 900gb.10iops-tier, 1200gb.5iops-tier, 1200gb.10iops-tier, 1600gb.5iops-tier, 1600gb.10iops-tier, 2400gb.10iops-tier, 3000gb.10iops-tier, 4000gb.10iops-tier | N/A|
 {: class="simple-tab-table"}
-{: caption="Table. Compute flavors in Toronto." caption-side="bottom"}
+{: caption="Compute flavors in Toronto." caption-side="bottom"}
 {: #ca-tor-compute-table}
 {: tab-title="Compute"}
 {: tab-group="ca-tor-tables"}
@@ -217,7 +217,7 @@ If your account is allowlisted for flavors that are not listed below, you can fi
 | gx3.48x240.2l40s | 48, 240GB, 32Gbps | Virtual | **REDHAT_8_64 (default)**, RHEL_9_64, RHCOS| 100GB BLOCK | N/A | 300gb.5iops-tier, 300gb.10iops-tier, 600gb.5iops-tier, 600gb.10iops-tier, 900gb.5iops-tier, 900gb.10iops-tier, 1200gb.5iops-tier, 1200gb.10iops-tier, 1600gb.5iops-tier, 1600gb.10iops-tier, 2400gb.10iops-tier, 3000gb.10iops-tier, 4000gb.10iops-tier |2 L40S |
 | gx3.64x320.4l4 | 64, 320GB, 32Gbps | Virtual | **REDHAT_8_64 (default)**, RHEL_9_64, RHCOS| 100GB BLOCK | N/A | 300gb.5iops-tier, 300gb.10iops-tier, 600gb.5iops-tier, 600gb.10iops-tier, 900gb.5iops-tier, 900gb.10iops-tier, 1200gb.5iops-tier, 1200gb.10iops-tier, 1600gb.5iops-tier, 1600gb.10iops-tier, 2400gb.10iops-tier, 3000gb.10iops-tier, 4000gb.10iops-tier |4 L4 |
 {: class="simple-tab-table"}
-{: caption="Table. GPU flavors in Toronto." caption-side="bottom"}
+{: caption="GPU flavors in Toronto." caption-side="bottom"}
 {: #ca-tor-gpu-table}
 {: tab-title="GPU"}
 {: tab-group="ca-tor-tables"}
@@ -234,7 +234,7 @@ If your account is allowlisted for flavors that are not listed below, you can fi
 | mx2.64x512 | 64, 512GB, 25Gbps | Virtual | REDHAT_7_64, **REDHAT_8_64 (default)**, RHEL_9_64, RHCOS| 100GB BLOCK | N/A | 300gb.5iops-tier, 300gb.10iops-tier, 600gb.5iops-tier, 600gb.10iops-tier, 900gb.5iops-tier, 900gb.10iops-tier, 1200gb.5iops-tier, 1200gb.10iops-tier, 1600gb.5iops-tier, 1600gb.10iops-tier, 2400gb.10iops-tier, 3000gb.10iops-tier, 4000gb.10iops-tier | N/A|
 | mx2.8x64 | 8, 64GB, 16Gbps | Virtual | REDHAT_7_64, **REDHAT_8_64 (default)**, RHEL_9_64, RHCOS| 100GB BLOCK | N/A | 300gb.5iops-tier, 300gb.10iops-tier, 600gb.5iops-tier, 600gb.10iops-tier, 900gb.5iops-tier, 900gb.10iops-tier, 1200gb.5iops-tier, 1200gb.10iops-tier, 1600gb.5iops-tier, 1600gb.10iops-tier, 2400gb.10iops-tier, 3000gb.10iops-tier, 4000gb.10iops-tier | N/A|
 {: class="simple-tab-table"}
-{: caption="Table. Memory flavors in Toronto." caption-side="bottom"}
+{: caption="Memory flavors in Toronto." caption-side="bottom"}
 {: #ca-tor-memory-table}
 {: tab-title="Memory"}
 {: tab-group="ca-tor-tables"}
@@ -250,7 +250,7 @@ If your account is allowlisted for flavors that are not listed below, you can fi
 | ox2.8x64 | 8, 64GB, 16Gbps | Virtual | REDHAT_7_64, **REDHAT_8_64 (default)**, RHEL_9_64, RHCOS| 100GB BLOCK | N/A | 300gb.5iops-tier, 300gb.10iops-tier, 600gb.5iops-tier, 600gb.10iops-tier, 900gb.5iops-tier, 900gb.10iops-tier, 1200gb.5iops-tier, 1200gb.10iops-tier, 1600gb.5iops-tier, 1600gb.10iops-tier, 2400gb.10iops-tier, 3000gb.10iops-tier, 4000gb.10iops-tier | N/A|
 | ox2.96x768 | 96, 768GB, 25Gbps | Virtual | REDHAT_7_64, **REDHAT_8_64 (default)**, RHEL_9_64, RHCOS| 100GB BLOCK | N/A | 300gb.5iops-tier, 300gb.10iops-tier, 600gb.5iops-tier, 600gb.10iops-tier, 900gb.5iops-tier, 900gb.10iops-tier, 1200gb.5iops-tier, 1200gb.10iops-tier, 1600gb.5iops-tier, 1600gb.10iops-tier, 2400gb.10iops-tier, 3000gb.10iops-tier, 4000gb.10iops-tier | N/A|
 {: class="simple-tab-table"}
-{: caption="Table. Storage optimized flavors in Toronto." caption-side="bottom"}
+{: caption="Storage optimized flavors in Toronto." caption-side="bottom"}
 {: #ca-tor-storageopt-table}
 {: tab-title="Storage optimized"}
 {: tab-group="ca-tor-tables"}
@@ -271,7 +271,7 @@ If your account is allowlisted for flavors that are not listed below, you can fi
 | bx2.4x16 | 4, 16GB, 8Gbps | Virtual | REDHAT_7_64, **REDHAT_8_64 (default)**, RHEL_9_64, RHCOS| 100GB BLOCK | N/A | 300gb.5iops-tier, 300gb.10iops-tier, 600gb.5iops-tier, 600gb.10iops-tier, 900gb.5iops-tier, 900gb.10iops-tier, 1200gb.5iops-tier, 1200gb.10iops-tier, 1600gb.5iops-tier, 1600gb.10iops-tier | N/A|
 | bx2.8x32 | 8, 32GB, 16Gbps | Virtual | REDHAT_7_64, **REDHAT_8_64 (default)**, RHEL_9_64, RHCOS| 100GB BLOCK | N/A | 300gb.5iops-tier, 300gb.10iops-tier, 600gb.5iops-tier, 600gb.10iops-tier, 900gb.5iops-tier, 900gb.10iops-tier, 1200gb.5iops-tier, 1200gb.10iops-tier, 1600gb.5iops-tier, 1600gb.10iops-tier, 2400gb.10iops-tier, 3000gb.10iops-tier, 4000gb.10iops-tier | N/A|
 {: class="simple-tab-table"}
-{: caption="Table. Balanced flavors in Frankfurt." caption-side="bottom"}
+{: caption="Balanced flavors in Frankfurt." caption-side="bottom"}
 {: #eu-de-balanced-table}
 {: tab-title="Balanced"}
 {: tab-group="eu-de-tables"}
@@ -284,7 +284,7 @@ If your account is allowlisted for flavors that are not listed below, you can fi
 | cx2.48x96 | 48, 96GB, 25Gbps | Virtual | REDHAT_7_64, **REDHAT_8_64 (default)**, RHEL_9_64, RHCOS| 100GB BLOCK | N/A | 300gb.5iops-tier, 300gb.10iops-tier, 600gb.5iops-tier, 600gb.10iops-tier, 900gb.5iops-tier, 900gb.10iops-tier, 1200gb.5iops-tier, 1200gb.10iops-tier, 1600gb.5iops-tier, 1600gb.10iops-tier, 2400gb.10iops-tier, 3000gb.10iops-tier, 4000gb.10iops-tier | N/A|
 | cx2.8x16 | 8, 16GB, 16Gbps | Virtual | REDHAT_7_64, **REDHAT_8_64 (default)**, RHEL_9_64, RHCOS| 100GB BLOCK | N/A | 300gb.5iops-tier, 300gb.10iops-tier, 600gb.5iops-tier, 600gb.10iops-tier, 900gb.5iops-tier, 900gb.10iops-tier, 1200gb.5iops-tier, 1200gb.10iops-tier, 1600gb.5iops-tier, 1600gb.10iops-tier, 2400gb.10iops-tier, 3000gb.10iops-tier, 4000gb.10iops-tier | N/A|
 {: class="simple-tab-table"}
-{: caption="Table. Compute flavors in Frankfurt." caption-side="bottom"}
+{: caption="Compute flavors in Frankfurt." caption-side="bottom"}
 {: #eu-de-compute-table}
 {: tab-title="Compute"}
 {: tab-group="eu-de-tables"}
@@ -298,7 +298,7 @@ If your account is allowlisted for flavors that are not listed below, you can fi
 | gx3.48x240.2l40s | 48, 240GB, 32Gbps | Virtual | **REDHAT_8_64 (default)**, RHEL_9_64, RHCOS| 100GB BLOCK | N/A | 300gb.5iops-tier, 300gb.10iops-tier, 600gb.5iops-tier, 600gb.10iops-tier, 900gb.5iops-tier, 900gb.10iops-tier, 1200gb.5iops-tier, 1200gb.10iops-tier, 1600gb.5iops-tier, 1600gb.10iops-tier, 2400gb.10iops-tier, 3000gb.10iops-tier, 4000gb.10iops-tier |2 L40S |
 | gx3.64x320.4l4 | 64, 320GB, 32Gbps | Virtual | **REDHAT_8_64 (default)**, RHEL_9_64, RHCOS| 100GB BLOCK | N/A | 300gb.5iops-tier, 300gb.10iops-tier, 600gb.5iops-tier, 600gb.10iops-tier, 900gb.5iops-tier, 900gb.10iops-tier, 1200gb.5iops-tier, 1200gb.10iops-tier, 1600gb.5iops-tier, 1600gb.10iops-tier, 2400gb.10iops-tier, 3000gb.10iops-tier, 4000gb.10iops-tier |4 L4 |
 {: class="simple-tab-table"}
-{: caption="Table. GPU flavors in Frankfurt." caption-side="bottom"}
+{: caption="GPU flavors in Frankfurt." caption-side="bottom"}
 {: #eu-de-gpu-table}
 {: tab-title="GPU"}
 {: tab-group="eu-de-tables"}
@@ -315,7 +315,7 @@ If your account is allowlisted for flavors that are not listed below, you can fi
 | mx2.64x512 | 64, 512GB, 25Gbps | Virtual | REDHAT_7_64, **REDHAT_8_64 (default)**, RHEL_9_64, RHCOS| 100GB BLOCK | N/A | 300gb.5iops-tier, 300gb.10iops-tier, 600gb.5iops-tier, 600gb.10iops-tier, 900gb.5iops-tier, 900gb.10iops-tier, 1200gb.5iops-tier, 1200gb.10iops-tier, 1600gb.5iops-tier, 1600gb.10iops-tier, 2400gb.10iops-tier, 3000gb.10iops-tier, 4000gb.10iops-tier | N/A|
 | mx2.8x64 | 8, 64GB, 16Gbps | Virtual | REDHAT_7_64, **REDHAT_8_64 (default)**, RHEL_9_64, RHCOS| 100GB BLOCK | N/A | 300gb.5iops-tier, 300gb.10iops-tier, 600gb.5iops-tier, 600gb.10iops-tier, 900gb.5iops-tier, 900gb.10iops-tier, 1200gb.5iops-tier, 1200gb.10iops-tier, 1600gb.5iops-tier, 1600gb.10iops-tier, 2400gb.10iops-tier, 3000gb.10iops-tier, 4000gb.10iops-tier | N/A|
 {: class="simple-tab-table"}
-{: caption="Table. Memory flavors in Frankfurt." caption-side="bottom"}
+{: caption="Memory flavors in Frankfurt." caption-side="bottom"}
 {: #eu-de-memory-table}
 {: tab-title="Memory"}
 {: tab-group="eu-de-tables"}
@@ -331,7 +331,7 @@ If your account is allowlisted for flavors that are not listed below, you can fi
 | ox2.8x64 | 8, 64GB, 16Gbps | Virtual | REDHAT_7_64, **REDHAT_8_64 (default)**, RHEL_9_64, RHCOS| 100GB BLOCK | N/A | 300gb.5iops-tier, 300gb.10iops-tier, 600gb.5iops-tier, 600gb.10iops-tier, 900gb.5iops-tier, 900gb.10iops-tier, 1200gb.5iops-tier, 1200gb.10iops-tier, 1600gb.5iops-tier, 1600gb.10iops-tier, 2400gb.10iops-tier, 3000gb.10iops-tier, 4000gb.10iops-tier | N/A|
 | ox2.96x768 | 96, 768GB, 25Gbps | Virtual | REDHAT_7_64, **REDHAT_8_64 (default)**, RHEL_9_64, RHCOS| 100GB BLOCK | N/A | 300gb.5iops-tier, 300gb.10iops-tier, 600gb.5iops-tier, 600gb.10iops-tier, 900gb.5iops-tier, 900gb.10iops-tier, 1200gb.5iops-tier, 1200gb.10iops-tier, 1600gb.5iops-tier, 1600gb.10iops-tier, 2400gb.10iops-tier, 3000gb.10iops-tier, 4000gb.10iops-tier | N/A|
 {: class="simple-tab-table"}
-{: caption="Table. Storage optimized flavors in Frankfurt." caption-side="bottom"}
+{: caption="Storage optimized flavors in Frankfurt." caption-side="bottom"}
 {: #eu-de-storageopt-table}
 {: tab-title="Storage optimized"}
 {: tab-group="eu-de-tables"}
@@ -352,7 +352,7 @@ If your account is allowlisted for flavors that are not listed below, you can fi
 | bx2.4x16 | 4, 16GB, 8Gbps | Virtual | REDHAT_7_64, **REDHAT_8_64 (default)**, RHEL_9_64, RHCOS| 100GB BLOCK | N/A | 300gb.5iops-tier, 300gb.10iops-tier, 600gb.5iops-tier, 600gb.10iops-tier, 900gb.5iops-tier, 900gb.10iops-tier, 1200gb.5iops-tier, 1200gb.10iops-tier, 1600gb.5iops-tier, 1600gb.10iops-tier | N/A|
 | bx2.8x32 | 8, 32GB, 16Gbps | Virtual | REDHAT_7_64, **REDHAT_8_64 (default)**, RHEL_9_64, RHCOS| 100GB BLOCK | N/A | 300gb.5iops-tier, 300gb.10iops-tier, 600gb.5iops-tier, 600gb.10iops-tier, 900gb.5iops-tier, 900gb.10iops-tier, 1200gb.5iops-tier, 1200gb.10iops-tier, 1600gb.5iops-tier, 1600gb.10iops-tier, 2400gb.10iops-tier, 3000gb.10iops-tier, 4000gb.10iops-tier | N/A|
 {: class="simple-tab-table"}
-{: caption="Table. Balanced flavors in Madrid." caption-side="bottom"}
+{: caption="Balanced flavors in Madrid." caption-side="bottom"}
 {: #eu-es-balanced-table}
 {: tab-title="Balanced"}
 {: tab-group="eu-es-tables"}
@@ -365,7 +365,7 @@ If your account is allowlisted for flavors that are not listed below, you can fi
 | cx2.48x96 | 48, 96GB, 25Gbps | Virtual | REDHAT_7_64, **REDHAT_8_64 (default)**, RHEL_9_64, RHCOS| 100GB BLOCK | N/A | 300gb.5iops-tier, 300gb.10iops-tier, 600gb.5iops-tier, 600gb.10iops-tier, 900gb.5iops-tier, 900gb.10iops-tier, 1200gb.5iops-tier, 1200gb.10iops-tier, 1600gb.5iops-tier, 1600gb.10iops-tier, 2400gb.10iops-tier, 3000gb.10iops-tier, 4000gb.10iops-tier | N/A|
 | cx2.8x16 | 8, 16GB, 16Gbps | Virtual | REDHAT_7_64, **REDHAT_8_64 (default)**, RHEL_9_64, RHCOS| 100GB BLOCK | N/A | 300gb.5iops-tier, 300gb.10iops-tier, 600gb.5iops-tier, 600gb.10iops-tier, 900gb.5iops-tier, 900gb.10iops-tier, 1200gb.5iops-tier, 1200gb.10iops-tier, 1600gb.5iops-tier, 1600gb.10iops-tier, 2400gb.10iops-tier, 3000gb.10iops-tier, 4000gb.10iops-tier | N/A|
 {: class="simple-tab-table"}
-{: caption="Table. Compute flavors in Madrid." caption-side="bottom"}
+{: caption="Compute flavors in Madrid." caption-side="bottom"}
 {: #eu-es-compute-table}
 {: tab-title="Compute"}
 {: tab-group="eu-es-tables"}
@@ -379,7 +379,7 @@ If your account is allowlisted for flavors that are not listed below, you can fi
 | gx3.48x240.2l40s | 48, 240GB, 32Gbps | Virtual | **REDHAT_8_64 (default)**, RHEL_9_64, RHCOS| 100GB BLOCK | N/A | 300gb.5iops-tier, 300gb.10iops-tier, 600gb.5iops-tier, 600gb.10iops-tier, 900gb.5iops-tier, 900gb.10iops-tier, 1200gb.5iops-tier, 1200gb.10iops-tier, 1600gb.5iops-tier, 1600gb.10iops-tier, 2400gb.10iops-tier, 3000gb.10iops-tier, 4000gb.10iops-tier |2 L40S |
 | gx3.64x320.4l4 | 64, 320GB, 32Gbps | Virtual | **REDHAT_8_64 (default)**, RHEL_9_64, RHCOS| 100GB BLOCK | N/A | 300gb.5iops-tier, 300gb.10iops-tier, 600gb.5iops-tier, 600gb.10iops-tier, 900gb.5iops-tier, 900gb.10iops-tier, 1200gb.5iops-tier, 1200gb.10iops-tier, 1600gb.5iops-tier, 1600gb.10iops-tier, 2400gb.10iops-tier, 3000gb.10iops-tier, 4000gb.10iops-tier |4 L4 |
 {: class="simple-tab-table"}
-{: caption="Table. GPU flavors in Madrid." caption-side="bottom"}
+{: caption="GPU flavors in Madrid." caption-side="bottom"}
 {: #eu-es-gpu-table}
 {: tab-title="GPU"}
 {: tab-group="eu-es-tables"}
@@ -395,7 +395,7 @@ If your account is allowlisted for flavors that are not listed below, you can fi
 | mx2.64x512 | 64, 512GB, 25Gbps | Virtual | REDHAT_7_64, **REDHAT_8_64 (default)**, RHEL_9_64, RHCOS| 100GB BLOCK | N/A | 300gb.5iops-tier, 300gb.10iops-tier, 600gb.5iops-tier, 600gb.10iops-tier, 900gb.5iops-tier, 900gb.10iops-tier, 1200gb.5iops-tier, 1200gb.10iops-tier, 1600gb.5iops-tier, 1600gb.10iops-tier, 2400gb.10iops-tier, 3000gb.10iops-tier, 4000gb.10iops-tier | N/A|
 | mx2.8x64 | 8, 64GB, 16Gbps | Virtual | REDHAT_7_64, **REDHAT_8_64 (default)**, RHEL_9_64, RHCOS| 100GB BLOCK | N/A | 300gb.5iops-tier, 300gb.10iops-tier, 600gb.5iops-tier, 600gb.10iops-tier, 900gb.5iops-tier, 900gb.10iops-tier, 1200gb.5iops-tier, 1200gb.10iops-tier, 1600gb.5iops-tier, 1600gb.10iops-tier, 2400gb.10iops-tier, 3000gb.10iops-tier, 4000gb.10iops-tier | N/A|
 {: class="simple-tab-table"}
-{: caption="Table. Memory flavors in Madrid." caption-side="bottom"}
+{: caption="Memory flavors in Madrid." caption-side="bottom"}
 {: #eu-es-memory-table}
 {: tab-title="Memory"}
 {: tab-group="eu-es-tables"}
@@ -411,7 +411,7 @@ If your account is allowlisted for flavors that are not listed below, you can fi
 | ox2.8x64 | 8, 64GB, 16Gbps | Virtual | REDHAT_7_64, **REDHAT_8_64 (default)**, RHEL_9_64, RHCOS| 100GB BLOCK | N/A | 300gb.5iops-tier, 300gb.10iops-tier, 600gb.5iops-tier, 600gb.10iops-tier, 900gb.5iops-tier, 900gb.10iops-tier, 1200gb.5iops-tier, 1200gb.10iops-tier, 1600gb.5iops-tier, 1600gb.10iops-tier, 2400gb.10iops-tier, 3000gb.10iops-tier, 4000gb.10iops-tier | N/A|
 | ox2.96x768 | 96, 768GB, 25Gbps | Virtual | REDHAT_7_64, **REDHAT_8_64 (default)**, RHEL_9_64, RHCOS| 100GB BLOCK | N/A | 300gb.5iops-tier, 300gb.10iops-tier, 600gb.5iops-tier, 600gb.10iops-tier, 900gb.5iops-tier, 900gb.10iops-tier, 1200gb.5iops-tier, 1200gb.10iops-tier, 1600gb.5iops-tier, 1600gb.10iops-tier, 2400gb.10iops-tier, 3000gb.10iops-tier, 4000gb.10iops-tier | N/A|
 {: class="simple-tab-table"}
-{: caption="Table. Storage optimized flavors in Madrid." caption-side="bottom"}
+{: caption="Storage optimized flavors in Madrid." caption-side="bottom"}
 {: #eu-es-storageopt-table}
 {: tab-title="Storage optimized"}
 {: tab-group="eu-es-tables"}
@@ -432,7 +432,7 @@ If your account is allowlisted for flavors that are not listed below, you can fi
 | bx2.4x16 | 4, 16GB, 8Gbps | Virtual | REDHAT_7_64, **REDHAT_8_64 (default)**, RHEL_9_64, RHCOS| 100GB BLOCK | N/A | 300gb.5iops-tier, 300gb.10iops-tier, 600gb.5iops-tier, 600gb.10iops-tier, 900gb.5iops-tier, 900gb.10iops-tier, 1200gb.5iops-tier, 1200gb.10iops-tier, 1600gb.5iops-tier, 1600gb.10iops-tier | N/A|
 | bx2.8x32 | 8, 32GB, 16Gbps | Virtual | REDHAT_7_64, **REDHAT_8_64 (default)**, RHEL_9_64, RHCOS| 100GB BLOCK | N/A | 300gb.5iops-tier, 300gb.10iops-tier, 600gb.5iops-tier, 600gb.10iops-tier, 900gb.5iops-tier, 900gb.10iops-tier, 1200gb.5iops-tier, 1200gb.10iops-tier, 1600gb.5iops-tier, 1600gb.10iops-tier, 2400gb.10iops-tier, 3000gb.10iops-tier, 4000gb.10iops-tier | N/A|
 {: class="simple-tab-table"}
-{: caption="Table. Balanced flavors in London." caption-side="bottom"}
+{: caption="Balanced flavors in London." caption-side="bottom"}
 {: #eu-gb-balanced-table}
 {: tab-title="Balanced"}
 {: tab-group="eu-gb-tables"}
@@ -445,7 +445,7 @@ If your account is allowlisted for flavors that are not listed below, you can fi
 | cx2.48x96 | 48, 96GB, 25Gbps | Virtual | REDHAT_7_64, **REDHAT_8_64 (default)**, RHEL_9_64, RHCOS| 100GB BLOCK | N/A | 300gb.5iops-tier, 300gb.10iops-tier, 600gb.5iops-tier, 600gb.10iops-tier, 900gb.5iops-tier, 900gb.10iops-tier, 1200gb.5iops-tier, 1200gb.10iops-tier, 1600gb.5iops-tier, 1600gb.10iops-tier, 2400gb.10iops-tier, 3000gb.10iops-tier, 4000gb.10iops-tier | N/A|
 | cx2.8x16 | 8, 16GB, 16Gbps | Virtual | REDHAT_7_64, **REDHAT_8_64 (default)**, RHEL_9_64, RHCOS| 100GB BLOCK | N/A | 300gb.5iops-tier, 300gb.10iops-tier, 600gb.5iops-tier, 600gb.10iops-tier, 900gb.5iops-tier, 900gb.10iops-tier, 1200gb.5iops-tier, 1200gb.10iops-tier, 1600gb.5iops-tier, 1600gb.10iops-tier, 2400gb.10iops-tier, 3000gb.10iops-tier, 4000gb.10iops-tier | N/A|
 {: class="simple-tab-table"}
-{: caption="Table. Compute flavors in London." caption-side="bottom"}
+{: caption="Compute flavors in London." caption-side="bottom"}
 {: #eu-gb-compute-table}
 {: tab-title="Compute"}
 {: tab-group="eu-gb-tables"}
@@ -459,7 +459,7 @@ If your account is allowlisted for flavors that are not listed below, you can fi
 | gx3.48x240.2l40s | 48, 240GB, 32Gbps | Virtual | **REDHAT_8_64 (default)**, RHEL_9_64, RHCOS| 100GB BLOCK | N/A | 300gb.5iops-tier, 300gb.10iops-tier, 600gb.5iops-tier, 600gb.10iops-tier, 900gb.5iops-tier, 900gb.10iops-tier, 1200gb.5iops-tier, 1200gb.10iops-tier, 1600gb.5iops-tier, 1600gb.10iops-tier, 2400gb.10iops-tier, 3000gb.10iops-tier, 4000gb.10iops-tier |2 L40S |
 | gx3.64x320.4l4 | 64, 320GB, 32Gbps | Virtual | **REDHAT_8_64 (default)**, RHEL_9_64, RHCOS| 100GB BLOCK | N/A | 300gb.5iops-tier, 300gb.10iops-tier, 600gb.5iops-tier, 600gb.10iops-tier, 900gb.5iops-tier, 900gb.10iops-tier, 1200gb.5iops-tier, 1200gb.10iops-tier, 1600gb.5iops-tier, 1600gb.10iops-tier, 2400gb.10iops-tier, 3000gb.10iops-tier, 4000gb.10iops-tier |4 L4 |
 {: class="simple-tab-table"}
-{: caption="Table. GPU flavors in London." caption-side="bottom"}
+{: caption="GPU flavors in London." caption-side="bottom"}
 {: #eu-gb-gpu-table}
 {: tab-title="GPU"}
 {: tab-group="eu-gb-tables"}
@@ -476,7 +476,7 @@ If your account is allowlisted for flavors that are not listed below, you can fi
 | mx2.64x512 | 64, 512GB, 25Gbps | Virtual | REDHAT_7_64, **REDHAT_8_64 (default)**, RHEL_9_64, RHCOS| 100GB BLOCK | N/A | 300gb.5iops-tier, 300gb.10iops-tier, 600gb.5iops-tier, 600gb.10iops-tier, 900gb.5iops-tier, 900gb.10iops-tier, 1200gb.5iops-tier, 1200gb.10iops-tier, 1600gb.5iops-tier, 1600gb.10iops-tier, 2400gb.10iops-tier, 3000gb.10iops-tier, 4000gb.10iops-tier | N/A|
 | mx2.8x64 | 8, 64GB, 16Gbps | Virtual | REDHAT_7_64, **REDHAT_8_64 (default)**, RHEL_9_64, RHCOS| 100GB BLOCK | N/A | 300gb.5iops-tier, 300gb.10iops-tier, 600gb.5iops-tier, 600gb.10iops-tier, 900gb.5iops-tier, 900gb.10iops-tier, 1200gb.5iops-tier, 1200gb.10iops-tier, 1600gb.5iops-tier, 1600gb.10iops-tier, 2400gb.10iops-tier, 3000gb.10iops-tier, 4000gb.10iops-tier | N/A|
 {: class="simple-tab-table"}
-{: caption="Table. Memory flavors in London." caption-side="bottom"}
+{: caption="Memory flavors in London." caption-side="bottom"}
 {: #eu-gb-memory-table}
 {: tab-title="Memory"}
 {: tab-group="eu-gb-tables"}
@@ -492,7 +492,7 @@ If your account is allowlisted for flavors that are not listed below, you can fi
 | ox2.8x64 | 8, 64GB, 16Gbps | Virtual | REDHAT_7_64, **REDHAT_8_64 (default)**, RHEL_9_64, RHCOS| 100GB BLOCK | N/A | 300gb.5iops-tier, 300gb.10iops-tier, 600gb.5iops-tier, 600gb.10iops-tier, 900gb.5iops-tier, 900gb.10iops-tier, 1200gb.5iops-tier, 1200gb.10iops-tier, 1600gb.5iops-tier, 1600gb.10iops-tier, 2400gb.10iops-tier, 3000gb.10iops-tier, 4000gb.10iops-tier | N/A|
 | ox2.96x768 | 96, 768GB, 25Gbps | Virtual | REDHAT_7_64, **REDHAT_8_64 (default)**, RHEL_9_64, RHCOS| 100GB BLOCK | N/A | 300gb.5iops-tier, 300gb.10iops-tier, 600gb.5iops-tier, 600gb.10iops-tier, 900gb.5iops-tier, 900gb.10iops-tier, 1200gb.5iops-tier, 1200gb.10iops-tier, 1600gb.5iops-tier, 1600gb.10iops-tier, 2400gb.10iops-tier, 3000gb.10iops-tier, 4000gb.10iops-tier | N/A|
 {: class="simple-tab-table"}
-{: caption="Table. Storage optimized flavors in London." caption-side="bottom"}
+{: caption="Storage optimized flavors in London." caption-side="bottom"}
 {: #eu-gb-storageopt-table}
 {: tab-title="Storage optimized"}
 {: tab-group="eu-gb-tables"}
@@ -513,7 +513,7 @@ If your account is allowlisted for flavors that are not listed below, you can fi
 | bx2.4x16 | 4, 16GB, 8Gbps | Virtual | REDHAT_7_64, **REDHAT_8_64 (default)**, RHEL_9_64, RHCOS| 100GB BLOCK | N/A | 300gb.5iops-tier, 300gb.10iops-tier, 600gb.5iops-tier, 600gb.10iops-tier, 900gb.5iops-tier, 900gb.10iops-tier, 1200gb.5iops-tier, 1200gb.10iops-tier, 1600gb.5iops-tier, 1600gb.10iops-tier | N/A|
 | bx2.8x32 | 8, 32GB, 16Gbps | Virtual | REDHAT_7_64, **REDHAT_8_64 (default)**, RHEL_9_64, RHCOS| 100GB BLOCK | N/A | 300gb.5iops-tier, 300gb.10iops-tier, 600gb.5iops-tier, 600gb.10iops-tier, 900gb.5iops-tier, 900gb.10iops-tier, 1200gb.5iops-tier, 1200gb.10iops-tier, 1600gb.5iops-tier, 1600gb.10iops-tier, 2400gb.10iops-tier, 3000gb.10iops-tier, 4000gb.10iops-tier | N/A|
 {: class="simple-tab-table"}
-{: caption="Table. Balanced flavors in Osaka." caption-side="bottom"}
+{: caption="Balanced flavors in Osaka." caption-side="bottom"}
 {: #jp-osa-balanced-table}
 {: tab-title="Balanced"}
 {: tab-group="jp-osa-tables"}
@@ -526,7 +526,7 @@ If your account is allowlisted for flavors that are not listed below, you can fi
 | cx2.48x96 | 48, 96GB, 25Gbps | Virtual | REDHAT_7_64, **REDHAT_8_64 (default)**, RHEL_9_64, RHCOS| 100GB BLOCK | N/A | 300gb.5iops-tier, 300gb.10iops-tier, 600gb.5iops-tier, 600gb.10iops-tier, 900gb.5iops-tier, 900gb.10iops-tier, 1200gb.5iops-tier, 1200gb.10iops-tier, 1600gb.5iops-tier, 1600gb.10iops-tier, 2400gb.10iops-tier, 3000gb.10iops-tier, 4000gb.10iops-tier | N/A|
 | cx2.8x16 | 8, 16GB, 16Gbps | Virtual | REDHAT_7_64, **REDHAT_8_64 (default)**, RHEL_9_64, RHCOS| 100GB BLOCK | N/A | 300gb.5iops-tier, 300gb.10iops-tier, 600gb.5iops-tier, 600gb.10iops-tier, 900gb.5iops-tier, 900gb.10iops-tier, 1200gb.5iops-tier, 1200gb.10iops-tier, 1600gb.5iops-tier, 1600gb.10iops-tier, 2400gb.10iops-tier, 3000gb.10iops-tier, 4000gb.10iops-tier | N/A|
 {: class="simple-tab-table"}
-{: caption="Table. Compute flavors in Osaka." caption-side="bottom"}
+{: caption="Compute flavors in Osaka." caption-side="bottom"}
 {: #jp-osa-compute-table}
 {: tab-title="Compute"}
 {: tab-group="jp-osa-tables"}
@@ -543,7 +543,7 @@ If your account is allowlisted for flavors that are not listed below, you can fi
 | mx2.64x512 | 64, 512GB, 25Gbps | Virtual | REDHAT_7_64, **REDHAT_8_64 (default)**, RHEL_9_64, RHCOS| 100GB BLOCK | N/A | 300gb.5iops-tier, 300gb.10iops-tier, 600gb.5iops-tier, 600gb.10iops-tier, 900gb.5iops-tier, 900gb.10iops-tier, 1200gb.5iops-tier, 1200gb.10iops-tier, 1600gb.5iops-tier, 1600gb.10iops-tier, 2400gb.10iops-tier, 3000gb.10iops-tier, 4000gb.10iops-tier | N/A|
 | mx2.8x64 | 8, 64GB, 16Gbps | Virtual | REDHAT_7_64, **REDHAT_8_64 (default)**, RHEL_9_64, RHCOS| 100GB BLOCK | N/A | 300gb.5iops-tier, 300gb.10iops-tier, 600gb.5iops-tier, 600gb.10iops-tier, 900gb.5iops-tier, 900gb.10iops-tier, 1200gb.5iops-tier, 1200gb.10iops-tier, 1600gb.5iops-tier, 1600gb.10iops-tier, 2400gb.10iops-tier, 3000gb.10iops-tier, 4000gb.10iops-tier | N/A|
 {: class="simple-tab-table"}
-{: caption="Table. Memory flavors in Osaka." caption-side="bottom"}
+{: caption="Memory flavors in Osaka." caption-side="bottom"}
 {: #jp-osa-memory-table}
 {: tab-title="Memory"}
 {: tab-group="jp-osa-tables"}
@@ -559,7 +559,7 @@ If your account is allowlisted for flavors that are not listed below, you can fi
 | ox2.8x64 | 8, 64GB, 16Gbps | Virtual | REDHAT_7_64, **REDHAT_8_64 (default)**, RHEL_9_64, RHCOS| 100GB BLOCK | N/A | 300gb.5iops-tier, 300gb.10iops-tier, 600gb.5iops-tier, 600gb.10iops-tier, 900gb.5iops-tier, 900gb.10iops-tier, 1200gb.5iops-tier, 1200gb.10iops-tier, 1600gb.5iops-tier, 1600gb.10iops-tier, 2400gb.10iops-tier, 3000gb.10iops-tier, 4000gb.10iops-tier | N/A|
 | ox2.96x768 | 96, 768GB, 25Gbps | Virtual | REDHAT_7_64, **REDHAT_8_64 (default)**, RHEL_9_64, RHCOS| 100GB BLOCK | N/A | 300gb.5iops-tier, 300gb.10iops-tier, 600gb.5iops-tier, 600gb.10iops-tier, 900gb.5iops-tier, 900gb.10iops-tier, 1200gb.5iops-tier, 1200gb.10iops-tier, 1600gb.5iops-tier, 1600gb.10iops-tier, 2400gb.10iops-tier, 3000gb.10iops-tier, 4000gb.10iops-tier | N/A|
 {: class="simple-tab-table"}
-{: caption="Table. Storage optimized flavors in Osaka." caption-side="bottom"}
+{: caption="Storage optimized flavors in Osaka." caption-side="bottom"}
 {: #jp-osa-storageopt-table}
 {: tab-title="Storage optimized"}
 {: tab-group="jp-osa-tables"}
@@ -580,7 +580,7 @@ If your account is allowlisted for flavors that are not listed below, you can fi
 | bx2.4x16 | 4, 16GB, 8Gbps | Virtual | REDHAT_7_64, **REDHAT_8_64 (default)**, RHEL_9_64, RHCOS| 100GB BLOCK | N/A | 300gb.5iops-tier, 300gb.10iops-tier, 600gb.5iops-tier, 600gb.10iops-tier, 900gb.5iops-tier, 900gb.10iops-tier, 1200gb.5iops-tier, 1200gb.10iops-tier, 1600gb.5iops-tier, 1600gb.10iops-tier | N/A|
 | bx2.8x32 | 8, 32GB, 16Gbps | Virtual | REDHAT_7_64, **REDHAT_8_64 (default)**, RHEL_9_64, RHCOS| 100GB BLOCK | N/A | 300gb.5iops-tier, 300gb.10iops-tier, 600gb.5iops-tier, 600gb.10iops-tier, 900gb.5iops-tier, 900gb.10iops-tier, 1200gb.5iops-tier, 1200gb.10iops-tier, 1600gb.5iops-tier, 1600gb.10iops-tier, 2400gb.10iops-tier, 3000gb.10iops-tier, 4000gb.10iops-tier | N/A|
 {: class="simple-tab-table"}
-{: caption="Table. Balanced flavors in Tokyo." caption-side="bottom"}
+{: caption="Balanced flavors in Tokyo." caption-side="bottom"}
 {: #jp-tok-balanced-table}
 {: tab-title="Balanced"}
 {: tab-group="jp-tok-tables"}
@@ -593,7 +593,7 @@ If your account is allowlisted for flavors that are not listed below, you can fi
 | cx2.48x96 | 48, 96GB, 25Gbps | Virtual | REDHAT_7_64, **REDHAT_8_64 (default)**, RHEL_9_64, RHCOS| 100GB BLOCK | N/A | 300gb.5iops-tier, 300gb.10iops-tier, 600gb.5iops-tier, 600gb.10iops-tier, 900gb.5iops-tier, 900gb.10iops-tier, 1200gb.5iops-tier, 1200gb.10iops-tier, 1600gb.5iops-tier, 1600gb.10iops-tier, 2400gb.10iops-tier, 3000gb.10iops-tier, 4000gb.10iops-tier | N/A|
 | cx2.8x16 | 8, 16GB, 16Gbps | Virtual | REDHAT_7_64, **REDHAT_8_64 (default)**, RHEL_9_64, RHCOS| 100GB BLOCK | N/A | 300gb.5iops-tier, 300gb.10iops-tier, 600gb.5iops-tier, 600gb.10iops-tier, 900gb.5iops-tier, 900gb.10iops-tier, 1200gb.5iops-tier, 1200gb.10iops-tier, 1600gb.5iops-tier, 1600gb.10iops-tier, 2400gb.10iops-tier, 3000gb.10iops-tier, 4000gb.10iops-tier | N/A|
 {: class="simple-tab-table"}
-{: caption="Table. Compute flavors in Tokyo." caption-side="bottom"}
+{: caption="Compute flavors in Tokyo." caption-side="bottom"}
 {: #jp-tok-compute-table}
 {: tab-title="Compute"}
 {: tab-group="jp-tok-tables"}
@@ -607,7 +607,7 @@ If your account is allowlisted for flavors that are not listed below, you can fi
 | gx3.48x240.2l40s | 48, 240GB, 32Gbps | Virtual | **REDHAT_8_64 (default)**, RHEL_9_64, RHCOS| 100GB BLOCK | N/A | 300gb.5iops-tier, 300gb.10iops-tier, 600gb.5iops-tier, 600gb.10iops-tier, 900gb.5iops-tier, 900gb.10iops-tier, 1200gb.5iops-tier, 1200gb.10iops-tier, 1600gb.5iops-tier, 1600gb.10iops-tier, 2400gb.10iops-tier, 3000gb.10iops-tier, 4000gb.10iops-tier |2 L40S |
 | gx3.64x320.4l4 | 64, 320GB, 32Gbps | Virtual | **REDHAT_8_64 (default)**, RHEL_9_64, RHCOS| 100GB BLOCK | N/A | 300gb.5iops-tier, 300gb.10iops-tier, 600gb.5iops-tier, 600gb.10iops-tier, 900gb.5iops-tier, 900gb.10iops-tier, 1200gb.5iops-tier, 1200gb.10iops-tier, 1600gb.5iops-tier, 1600gb.10iops-tier, 2400gb.10iops-tier, 3000gb.10iops-tier, 4000gb.10iops-tier |4 L4 |
 {: class="simple-tab-table"}
-{: caption="Table. GPU flavors in Tokyo." caption-side="bottom"}
+{: caption="GPU flavors in Tokyo." caption-side="bottom"}
 {: #jp-tok-gpu-table}
 {: tab-title="GPU"}
 {: tab-group="jp-tok-tables"}
@@ -624,7 +624,7 @@ If your account is allowlisted for flavors that are not listed below, you can fi
 | mx2.64x512 | 64, 512GB, 25Gbps | Virtual | REDHAT_7_64, **REDHAT_8_64 (default)**, RHEL_9_64, RHCOS| 100GB BLOCK | N/A | 300gb.5iops-tier, 300gb.10iops-tier, 600gb.5iops-tier, 600gb.10iops-tier, 900gb.5iops-tier, 900gb.10iops-tier, 1200gb.5iops-tier, 1200gb.10iops-tier, 1600gb.5iops-tier, 1600gb.10iops-tier, 2400gb.10iops-tier, 3000gb.10iops-tier, 4000gb.10iops-tier | N/A|
 | mx2.8x64 | 8, 64GB, 16Gbps | Virtual | REDHAT_7_64, **REDHAT_8_64 (default)**, RHEL_9_64, RHCOS| 100GB BLOCK | N/A | 300gb.5iops-tier, 300gb.10iops-tier, 600gb.5iops-tier, 600gb.10iops-tier, 900gb.5iops-tier, 900gb.10iops-tier, 1200gb.5iops-tier, 1200gb.10iops-tier, 1600gb.5iops-tier, 1600gb.10iops-tier, 2400gb.10iops-tier, 3000gb.10iops-tier, 4000gb.10iops-tier | N/A|
 {: class="simple-tab-table"}
-{: caption="Table. Memory flavors in Tokyo." caption-side="bottom"}
+{: caption="Memory flavors in Tokyo." caption-side="bottom"}
 {: #jp-tok-memory-table}
 {: tab-title="Memory"}
 {: tab-group="jp-tok-tables"}
@@ -640,7 +640,7 @@ If your account is allowlisted for flavors that are not listed below, you can fi
 | ox2.8x64 | 8, 64GB, 16Gbps | Virtual | REDHAT_7_64, **REDHAT_8_64 (default)**, RHEL_9_64, RHCOS| 100GB BLOCK | N/A | 300gb.5iops-tier, 300gb.10iops-tier, 600gb.5iops-tier, 600gb.10iops-tier, 900gb.5iops-tier, 900gb.10iops-tier, 1200gb.5iops-tier, 1200gb.10iops-tier, 1600gb.5iops-tier, 1600gb.10iops-tier, 2400gb.10iops-tier, 3000gb.10iops-tier, 4000gb.10iops-tier | N/A|
 | ox2.96x768 | 96, 768GB, 25Gbps | Virtual | REDHAT_7_64, **REDHAT_8_64 (default)**, RHEL_9_64, RHCOS| 100GB BLOCK | N/A | 300gb.5iops-tier, 300gb.10iops-tier, 600gb.5iops-tier, 600gb.10iops-tier, 900gb.5iops-tier, 900gb.10iops-tier, 1200gb.5iops-tier, 1200gb.10iops-tier, 1600gb.5iops-tier, 1600gb.10iops-tier, 2400gb.10iops-tier, 3000gb.10iops-tier, 4000gb.10iops-tier | N/A|
 {: class="simple-tab-table"}
-{: caption="Table. Storage optimized flavors in Tokyo." caption-side="bottom"}
+{: caption="Storage optimized flavors in Tokyo." caption-side="bottom"}
 {: #jp-tok-storageopt-table}
 {: tab-title="Storage optimized"}
 {: tab-group="jp-tok-tables"}
@@ -661,7 +661,7 @@ If your account is allowlisted for flavors that are not listed below, you can fi
 | bx2.4x16 | 4, 16GB, 8Gbps | Virtual | REDHAT_7_64, **REDHAT_8_64 (default)**, RHEL_9_64, RHCOS| 100GB BLOCK | N/A | 300gb.5iops-tier, 300gb.10iops-tier, 600gb.5iops-tier, 600gb.10iops-tier, 900gb.5iops-tier, 900gb.10iops-tier, 1200gb.5iops-tier, 1200gb.10iops-tier, 1600gb.5iops-tier, 1600gb.10iops-tier | N/A|
 | bx2.8x32 | 8, 32GB, 16Gbps | Virtual | REDHAT_7_64, **REDHAT_8_64 (default)**, RHEL_9_64, RHCOS| 100GB BLOCK | N/A | 300gb.5iops-tier, 300gb.10iops-tier, 600gb.5iops-tier, 600gb.10iops-tier, 900gb.5iops-tier, 900gb.10iops-tier, 1200gb.5iops-tier, 1200gb.10iops-tier, 1600gb.5iops-tier, 1600gb.10iops-tier, 2400gb.10iops-tier, 3000gb.10iops-tier, 4000gb.10iops-tier | N/A|
 {: class="simple-tab-table"}
-{: caption="Table. Balanced flavors in Washington DC." caption-side="bottom"}
+{: caption="Balanced flavors in Washington DC." caption-side="bottom"}
 {: #us-east-balanced-table}
 {: tab-title="Balanced"}
 {: tab-group="us-east-tables"}
@@ -674,7 +674,7 @@ If your account is allowlisted for flavors that are not listed below, you can fi
 | cx2.48x96 | 48, 96GB, 25Gbps | Virtual | REDHAT_7_64, **REDHAT_8_64 (default)**, RHEL_9_64, RHCOS| 100GB BLOCK | N/A | 300gb.5iops-tier, 300gb.10iops-tier, 600gb.5iops-tier, 600gb.10iops-tier, 900gb.5iops-tier, 900gb.10iops-tier, 1200gb.5iops-tier, 1200gb.10iops-tier, 1600gb.5iops-tier, 1600gb.10iops-tier, 2400gb.10iops-tier, 3000gb.10iops-tier, 4000gb.10iops-tier | N/A|
 | cx2.8x16 | 8, 16GB, 16Gbps | Virtual | REDHAT_7_64, **REDHAT_8_64 (default)**, RHEL_9_64, RHCOS| 100GB BLOCK | N/A | 300gb.5iops-tier, 300gb.10iops-tier, 600gb.5iops-tier, 600gb.10iops-tier, 900gb.5iops-tier, 900gb.10iops-tier, 1200gb.5iops-tier, 1200gb.10iops-tier, 1600gb.5iops-tier, 1600gb.10iops-tier, 2400gb.10iops-tier, 3000gb.10iops-tier, 4000gb.10iops-tier | N/A|
 {: class="simple-tab-table"}
-{: caption="Table. Compute flavors in Washington DC." caption-side="bottom"}
+{: caption="Compute flavors in Washington DC." caption-side="bottom"}
 {: #us-east-compute-table}
 {: tab-title="Compute"}
 {: tab-group="us-east-tables"}
@@ -688,7 +688,7 @@ If your account is allowlisted for flavors that are not listed below, you can fi
 | gx3.48x240.2l40s | 48, 240GB, 32Gbps | Virtual | **REDHAT_8_64 (default)**, RHEL_9_64, RHCOS| 100GB BLOCK | N/A | 300gb.5iops-tier, 300gb.10iops-tier, 600gb.5iops-tier, 600gb.10iops-tier, 900gb.5iops-tier, 900gb.10iops-tier, 1200gb.5iops-tier, 1200gb.10iops-tier, 1600gb.5iops-tier, 1600gb.10iops-tier, 2400gb.10iops-tier, 3000gb.10iops-tier, 4000gb.10iops-tier |2 L40S |
 | gx3.64x320.4l4 | 64, 320GB, 32Gbps | Virtual | **REDHAT_8_64 (default)**, RHEL_9_64, RHCOS| 100GB BLOCK | N/A | 300gb.5iops-tier, 300gb.10iops-tier, 600gb.5iops-tier, 600gb.10iops-tier, 900gb.5iops-tier, 900gb.10iops-tier, 1200gb.5iops-tier, 1200gb.10iops-tier, 1600gb.5iops-tier, 1600gb.10iops-tier, 2400gb.10iops-tier, 3000gb.10iops-tier, 4000gb.10iops-tier |4 L4 |
 {: class="simple-tab-table"}
-{: caption="Table. GPU flavors in Washington DC." caption-side="bottom"}
+{: caption="GPU flavors in Washington DC." caption-side="bottom"}
 {: #us-east-gpu-table}
 {: tab-title="GPU"}
 {: tab-group="us-east-tables"}
@@ -705,7 +705,7 @@ If your account is allowlisted for flavors that are not listed below, you can fi
 | mx2.64x512 | 64, 512GB, 25Gbps | Virtual | REDHAT_7_64, **REDHAT_8_64 (default)**, RHEL_9_64, RHCOS| 100GB BLOCK | N/A | 300gb.5iops-tier, 300gb.10iops-tier, 600gb.5iops-tier, 600gb.10iops-tier, 900gb.5iops-tier, 900gb.10iops-tier, 1200gb.5iops-tier, 1200gb.10iops-tier, 1600gb.5iops-tier, 1600gb.10iops-tier, 2400gb.10iops-tier, 3000gb.10iops-tier, 4000gb.10iops-tier | N/A|
 | mx2.8x64 | 8, 64GB, 16Gbps | Virtual | REDHAT_7_64, **REDHAT_8_64 (default)**, RHEL_9_64, RHCOS| 100GB BLOCK | N/A | 300gb.5iops-tier, 300gb.10iops-tier, 600gb.5iops-tier, 600gb.10iops-tier, 900gb.5iops-tier, 900gb.10iops-tier, 1200gb.5iops-tier, 1200gb.10iops-tier, 1600gb.5iops-tier, 1600gb.10iops-tier, 2400gb.10iops-tier, 3000gb.10iops-tier, 4000gb.10iops-tier | N/A|
 {: class="simple-tab-table"}
-{: caption="Table. Memory flavors in Washington DC." caption-side="bottom"}
+{: caption="Memory flavors in Washington DC." caption-side="bottom"}
 {: #us-east-memory-table}
 {: tab-title="Memory"}
 {: tab-group="us-east-tables"}
@@ -721,7 +721,7 @@ If your account is allowlisted for flavors that are not listed below, you can fi
 | ox2.8x64 | 8, 64GB, 16Gbps | Virtual | REDHAT_7_64, **REDHAT_8_64 (default)**, RHEL_9_64, RHCOS| 100GB BLOCK | N/A | 300gb.5iops-tier, 300gb.10iops-tier, 600gb.5iops-tier, 600gb.10iops-tier, 900gb.5iops-tier, 900gb.10iops-tier, 1200gb.5iops-tier, 1200gb.10iops-tier, 1600gb.5iops-tier, 1600gb.10iops-tier, 2400gb.10iops-tier, 3000gb.10iops-tier, 4000gb.10iops-tier | N/A|
 | ox2.96x768 | 96, 768GB, 25Gbps | Virtual | REDHAT_7_64, **REDHAT_8_64 (default)**, RHEL_9_64, RHCOS| 100GB BLOCK | N/A | 300gb.5iops-tier, 300gb.10iops-tier, 600gb.5iops-tier, 600gb.10iops-tier, 900gb.5iops-tier, 900gb.10iops-tier, 1200gb.5iops-tier, 1200gb.10iops-tier, 1600gb.5iops-tier, 1600gb.10iops-tier, 2400gb.10iops-tier, 3000gb.10iops-tier, 4000gb.10iops-tier | N/A|
 {: class="simple-tab-table"}
-{: caption="Table. Storage optimized flavors in Washington DC." caption-side="bottom"}
+{: caption="Storage optimized flavors in Washington DC." caption-side="bottom"}
 {: #us-east-storageopt-table}
 {: tab-title="Storage optimized"}
 {: tab-group="us-east-tables"}
@@ -742,7 +742,7 @@ If your account is allowlisted for flavors that are not listed below, you can fi
 | bx2.4x16 | 4, 16GB, 8Gbps | Virtual | REDHAT_7_64, **REDHAT_8_64 (default)**, RHEL_9_64, RHCOS| 100GB BLOCK | N/A | 300gb.5iops-tier, 300gb.10iops-tier, 600gb.5iops-tier, 600gb.10iops-tier, 900gb.5iops-tier, 900gb.10iops-tier, 1200gb.5iops-tier, 1200gb.10iops-tier, 1600gb.5iops-tier, 1600gb.10iops-tier | N/A|
 | bx2.8x32 | 8, 32GB, 16Gbps | Virtual | REDHAT_7_64, **REDHAT_8_64 (default)**, RHEL_9_64, RHCOS| 100GB BLOCK | N/A | 300gb.5iops-tier, 300gb.10iops-tier, 600gb.5iops-tier, 600gb.10iops-tier, 900gb.5iops-tier, 900gb.10iops-tier, 1200gb.5iops-tier, 1200gb.10iops-tier, 1600gb.5iops-tier, 1600gb.10iops-tier, 2400gb.10iops-tier, 3000gb.10iops-tier, 4000gb.10iops-tier | N/A|
 {: class="simple-tab-table"}
-{: caption="Table. Balanced flavors in Dallas." caption-side="bottom"}
+{: caption="Balanced flavors in Dallas." caption-side="bottom"}
 {: #us-south-balanced-table}
 {: tab-title="Balanced"}
 {: tab-group="us-south-tables"}
@@ -755,7 +755,7 @@ If your account is allowlisted for flavors that are not listed below, you can fi
 | cx2.48x96 | 48, 96GB, 25Gbps | Virtual | REDHAT_7_64, **REDHAT_8_64 (default)**, RHEL_9_64, RHCOS| 100GB BLOCK | N/A | 300gb.5iops-tier, 300gb.10iops-tier, 600gb.5iops-tier, 600gb.10iops-tier, 900gb.5iops-tier, 900gb.10iops-tier, 1200gb.5iops-tier, 1200gb.10iops-tier, 1600gb.5iops-tier, 1600gb.10iops-tier, 2400gb.10iops-tier, 3000gb.10iops-tier, 4000gb.10iops-tier | N/A|
 | cx2.8x16 | 8, 16GB, 16Gbps | Virtual | REDHAT_7_64, **REDHAT_8_64 (default)**, RHEL_9_64, RHCOS| 100GB BLOCK | N/A | 300gb.5iops-tier, 300gb.10iops-tier, 600gb.5iops-tier, 600gb.10iops-tier, 900gb.5iops-tier, 900gb.10iops-tier, 1200gb.5iops-tier, 1200gb.10iops-tier, 1600gb.5iops-tier, 1600gb.10iops-tier, 2400gb.10iops-tier, 3000gb.10iops-tier, 4000gb.10iops-tier | N/A|
 {: class="simple-tab-table"}
-{: caption="Table. Compute flavors in Dallas." caption-side="bottom"}
+{: caption="Compute flavors in Dallas." caption-side="bottom"}
 {: #us-south-compute-table}
 {: tab-title="Compute"}
 {: tab-group="us-south-tables"}
@@ -769,7 +769,7 @@ If your account is allowlisted for flavors that are not listed below, you can fi
 | gx3.48x240.2l40s | 48, 240GB, 32Gbps | Virtual | **REDHAT_8_64 (default)**, RHEL_9_64, RHCOS| 100GB BLOCK | N/A | 300gb.5iops-tier, 300gb.10iops-tier, 600gb.5iops-tier, 600gb.10iops-tier, 900gb.5iops-tier, 900gb.10iops-tier, 1200gb.5iops-tier, 1200gb.10iops-tier, 1600gb.5iops-tier, 1600gb.10iops-tier, 2400gb.10iops-tier, 3000gb.10iops-tier, 4000gb.10iops-tier |2 L40S |
 | gx3.64x320.4l4 | 64, 320GB, 32Gbps | Virtual | **REDHAT_8_64 (default)**, RHEL_9_64, RHCOS| 100GB BLOCK | N/A | 300gb.5iops-tier, 300gb.10iops-tier, 600gb.5iops-tier, 600gb.10iops-tier, 900gb.5iops-tier, 900gb.10iops-tier, 1200gb.5iops-tier, 1200gb.10iops-tier, 1600gb.5iops-tier, 1600gb.10iops-tier, 2400gb.10iops-tier, 3000gb.10iops-tier, 4000gb.10iops-tier |4 L4 |
 {: class="simple-tab-table"}
-{: caption="Table. GPU flavors in Dallas." caption-side="bottom"}
+{: caption="GPU flavors in Dallas." caption-side="bottom"}
 {: #us-south-gpu-table}
 {: tab-title="GPU"}
 {: tab-group="us-south-tables"}
@@ -786,7 +786,7 @@ If your account is allowlisted for flavors that are not listed below, you can fi
 | mx2.64x512 | 64, 512GB, 25Gbps | Virtual | REDHAT_7_64, **REDHAT_8_64 (default)**, RHEL_9_64, RHCOS| 100GB BLOCK | N/A | 300gb.5iops-tier, 300gb.10iops-tier, 600gb.5iops-tier, 600gb.10iops-tier, 900gb.5iops-tier, 900gb.10iops-tier, 1200gb.5iops-tier, 1200gb.10iops-tier, 1600gb.5iops-tier, 1600gb.10iops-tier, 2400gb.10iops-tier, 3000gb.10iops-tier, 4000gb.10iops-tier | N/A|
 | mx2.8x64 | 8, 64GB, 16Gbps | Virtual | REDHAT_7_64, **REDHAT_8_64 (default)**, RHEL_9_64, RHCOS| 100GB BLOCK | N/A | 300gb.5iops-tier, 300gb.10iops-tier, 600gb.5iops-tier, 600gb.10iops-tier, 900gb.5iops-tier, 900gb.10iops-tier, 1200gb.5iops-tier, 1200gb.10iops-tier, 1600gb.5iops-tier, 1600gb.10iops-tier, 2400gb.10iops-tier, 3000gb.10iops-tier, 4000gb.10iops-tier | N/A|
 {: class="simple-tab-table"}
-{: caption="Table. Memory flavors in Dallas." caption-side="bottom"}
+{: caption="Memory flavors in Dallas." caption-side="bottom"}
 {: #us-south-memory-table}
 {: tab-title="Memory"}
 {: tab-group="us-south-tables"}
@@ -802,7 +802,7 @@ If your account is allowlisted for flavors that are not listed below, you can fi
 | ox2.8x64 | 8, 64GB, 16Gbps | Virtual | REDHAT_7_64, **REDHAT_8_64 (default)**, RHEL_9_64, RHCOS| 100GB BLOCK | N/A | 300gb.5iops-tier, 300gb.10iops-tier, 600gb.5iops-tier, 600gb.10iops-tier, 900gb.5iops-tier, 900gb.10iops-tier, 1200gb.5iops-tier, 1200gb.10iops-tier, 1600gb.5iops-tier, 1600gb.10iops-tier, 2400gb.10iops-tier, 3000gb.10iops-tier, 4000gb.10iops-tier | N/A|
 | ox2.96x768 | 96, 768GB, 25Gbps | Virtual | REDHAT_7_64, **REDHAT_8_64 (default)**, RHEL_9_64, RHCOS| 100GB BLOCK | N/A | 300gb.5iops-tier, 300gb.10iops-tier, 600gb.5iops-tier, 600gb.10iops-tier, 900gb.5iops-tier, 900gb.10iops-tier, 1200gb.5iops-tier, 1200gb.10iops-tier, 1600gb.5iops-tier, 1600gb.10iops-tier, 2400gb.10iops-tier, 3000gb.10iops-tier, 4000gb.10iops-tier | N/A|
 {: class="simple-tab-table"}
-{: caption="Table. Storage optimized flavors in Dallas." caption-side="bottom"}
+{: caption="Storage optimized flavors in Dallas." caption-side="bottom"}
 {: #us-south-storageopt-table}
 {: tab-title="Storage optimized"}
 {: tab-group="us-south-tables"}
