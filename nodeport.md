@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2024
-lastupdated: "2024-08-19"
+lastupdated: "2024-10-10"
 
 
 keywords: openshift, app access
@@ -37,7 +37,7 @@ When you expose your app by creating a Kubernetes service of type NodePort, a No
 
 The following diagram shows how communication is directed from the internet to an app when a NodePort service is configured.
 
-![Expose an app in {{site.data.keyword.containerlong_notm}} by using NodePort](images/nodeport.svg "Expose an app by using NodePort"){: caption="Figure 1. Expose an app by using NodePort" caption-side="bottom"}
+![Expose an app in {{site.data.keyword.containerlong_notm}} by using NodePort](images/nodeport.svg "Expose an app by using NodePort"){: caption="Expose an app by using NodePort" caption-side="bottom"}
 
 1. A request is sent to your app by using the public IP address of your worker node and the NodePort on the worker node.
 
@@ -101,7 +101,7 @@ To use a NodePort,
     | `selector` | Replace `<my-selector-key>` and `<my-selector-value>` with the key/value pair that you used in the `spec.template.metadata.labels` section of your deployment YAML. To associate the service with the deployment, the selector must match the deployment labels. |
     | `port` | Replace `<8081>` with the port that your service listens on. |
     | `nodePort` | Optional: Replace `<31514>` with a NodePort in the 30000 - 32767 range. Do not specify a NodePort that is already in use by another service. If no NodePort is assigned, a random one is assigned for you. \n To specify a NodePort and see which NodePorts are already in use, run the **`oc get svc`** command. Any NodePorts in use appear under the **Ports** field.
-    {: caption="Table 1. Understanding the NodePort service components" caption-side="bottom"}
+    {: caption="Understanding the NodePort service components" caption-side="bottom"}
 
 2. Save the updated configuration file.
 
@@ -155,7 +155,3 @@ To use a NodePort,
     3. Form the URL with one of the worker node IP addresses and the NodePort. Example: `http://192.0.2.23:30872`.
         For VPC clusters, you must be connected to the private network, such as through a VPN connection, to access the worker node private IP address and NodePort.
         {: note}
-
-
-
-

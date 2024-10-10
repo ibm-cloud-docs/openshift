@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2024
-lastupdated: "2024-09-23"
+lastupdated: "2024-10-10"
 
 
 keywords: openshift, {{site.data.keyword.openshiftlong_notm}}, kubernetes, firewall, acl, acls, access control list, rules, security group
@@ -52,7 +52,7 @@ The following VPE gateways are created automatically when you create a VPC clust
 | {{site.data.keyword.cos_full_notm}} s3 gateway | [Shared]{: tag-cool-gray} Access the COS APIs. |
 | {{site.data.keyword.cos_full_notm}} config gateway | [Shared]{: tag-cool-gray} Backup container images to {{site.data.keyword.cos_full_notm}} |
 | {{site.data.keyword.openshiftlong_notm}} | Access the {{site.data.keyword.openshiftlong_notm}} APIs to interact with and manage your cluster. † |
-{: caption="Table 1. VPE gateways" caption-side="bottom"}
+{: caption="VPE gateways" caption-side="bottom"}
 {: summary="The table shows the VPE gateways created for VPC clusters. The first column includes name of the gateway. The second column includes a brief description."}
 
 
@@ -71,7 +71,7 @@ Do not modify the rules in the`kube-<clusterID>` security group as doing so migh
 | --- | --- | --- | 
 | VPC security group | Randomly generated | - Automatically created when the VPC is created. Automatically attached to each worker node in a cluster created in the VPC.  \n - Allows all outbound traffic by default. |
 | VPC cluster security group | `kube-<clusterID>`| - Automatically created when the VPC cluster is created. Automatically attached to each worker node in a cluster created in the VPC.   \n - Allows traffic necessary for the cluster infrastructure to function. |
-{: caption="Table 1. VPC security groups" caption-side="bottom"}
+{: caption="VPC security groups" caption-side="bottom"}
 {: summary="The table shows the three types of security groups that are automatically created for VPCs. The first column includes the type of security group. The second column includes the naming format of the security group. The third column includes details on when and where the security group is created and what type of traffic it allows."}
 
 ### Security groups applied to VPE gateways and VPC ALBs
@@ -83,7 +83,7 @@ Do not modify the rules in the `kube-<vpcID>` security group as doing so might c
 | Security group type | Name | Details |
 | --- | --- | --- | 
 | {{site.data.keyword.openshiftlong_notm}} security group | `kube-<vpcID>` | - Automatically created and attached to any cluster-related VPE gateways in the VPC.  \n - Automatically created and attached to each VPC ALB that is created in the VPC.  \n - Allows traffic necessary for the cluster infrastructure to function. |
-{: caption="Table 1. VPC security groups" caption-side="bottom"}
+{: caption="VPC security groups" caption-side="bottom"}
 {: summary="The table shows the three types of security groups that are automatically created for VPCs. The first column includes the type of security group. The second column includes the naming format of the security group. The third column includes details on when and where the security group is created and what type of traffic it allows."}
 
 ## Minimum inbound and outbound requirements 

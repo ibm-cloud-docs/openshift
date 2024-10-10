@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2024
-lastupdated: "2024-09-26"
+lastupdated: "2024-10-10"
 
 
 keywords: openshift, mzr, szr, multizone, multi az
@@ -21,7 +21,7 @@ subcollection: openshift
 [{{site.data.keyword.cloud_notm}} resources](/docs/overview?topic=overview-locations) are organized into a hierarchy of geographic locations. {{site.data.keyword.openshiftlong_notm}} is available in a subset of the {{site.data.keyword.cloud_notm}} locations, including worldwide multizone regions (MZRs) and single-campus multizone regions (SC-MZRs).
 {: shortdesc}
 
-![{{site.data.keyword.openshiftlong_notm}} locations](images/locations.svg){: caption="Figure 1. {{site.data.keyword.openshiftlong_notm}} locations" caption-side="bottom"}
+![{{site.data.keyword.openshiftlong_notm}} locations](images/locations.svg){: caption="{{site.data.keyword.openshiftlong_notm}} locations" caption-side="bottom"}
 
 This image is an artistic representation and does not reflect actual political or geographic boundaries.
 {: note}

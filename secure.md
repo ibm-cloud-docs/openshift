@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2024
-lastupdated: "2024-10-07"
+lastupdated: "2024-10-10"
 
 
 keywords: openshift
@@ -91,7 +91,7 @@ The following image shows the default cluster security settings that address aut
 
 
 
-![Describes the security stages when you access the Kubernetes API server.](images/oc_security_apiserver_access.png "Security stages when accessing the Kubernetes API server"){: caption="Figure 1. Security stages when accessing the Kubernetes API server" caption-side="bottom"}
+![Describes the security stages when you access the Kubernetes API server.](images/oc_security_apiserver_access.png "Security stages when accessing the Kubernetes API server"){: caption="Security stages when accessing the Kubernetes API server" caption-side="bottom"}
 
 Review the following security features for {{site.data.keyword.redhat_openshift_notm}} API server and etcd.
 
@@ -173,7 +173,7 @@ The image does not include components that ensure secure end-to-end communicatio
 
 
 
-![Worker node setup in {{site.data.keyword.openshiftlong_notm}} excluding network security.](images/oc_worker_setup.png "Worker node setup in {{site.data.keyword.openshiftlong_notm}}"){: caption="Figure 2. Worker node setup in {{site.data.keyword.openshiftlong_notm}} excluding network security" caption-side="bottom"}
+![Worker node setup in {{site.data.keyword.openshiftlong_notm}} excluding network security.](images/oc_worker_setup.png "Worker node setup in {{site.data.keyword.openshiftlong_notm}}"){: caption="Worker node setup in {{site.data.keyword.openshiftlong_notm}} excluding network security" caption-side="bottom"}
 
 CIS-compliant RHEL image
 :   Every worker node is set up with a Red Hat Enterprise Linux operating system that implements the benchmarks that are published by the Center of Internet Security (CIS). The user or the owner of the machine can't change this operating system to another operating system. To review the current RHEL version, run `oc get nodes -o wide`. IBM works with internal and external security advisory teams to address potential security compliance vulnerabilities. Security updates and patches for the operating system are made available through {{site.data.keyword.openshiftlong_notm}} and must be installed by the user to keep the worker node secure.
@@ -391,7 +391,7 @@ How can I audit events that happen in my cluster?
 What are my options to enable trust in my cluster?
 :   By default, {{site.data.keyword.openshiftlong_notm}} provides many features for your cluster components so that you can deploy your containerized apps in a security-rich environment. Extend your level of trust in your cluster to better ensure that what happens within your cluster is what you intended to happen. You can implement trust in your cluster in various ways, as shown in the following diagram.
 
-![Deploying containers with trusted content.](images/trusted_story.svg "Deploying containers with trusted content"){: caption="Figure 1. Deploying containers with trusted content" caption-side="bottom"}
+![Deploying containers with trusted content.](images/trusted_story.svg "Deploying containers with trusted content"){: caption="Deploying containers with trusted content" caption-side="bottom"}
 
 1. **Content Trust for your images**: Ensure the integrity of your images by enabling content trust in your {{site.data.keyword.registrylong_notm}}. With trusted content, you can control who can sign images as trusted. After trusted signers push an image to your registry, users can pull the signed content so that they can verify the source of the image. For more information, see [Signing images for trusted content](/docs/Registry?topic=Registry-registry_trustedcontent#registry_trustedcontent).
 
@@ -426,7 +426,7 @@ Example request flow
 
 The following diagram presents an example request flow between the kubelet and CRI-O.
 
-![Example request flow between kubelet and CRI-O.](images/crio-selinux.png "Example request flow between kubelet and CRI-O"){: caption="Figure 1. Example request flow between kubelet and CRI-O" caption-side="bottom"}
+![Example request flow between kubelet and CRI-O.](images/crio-selinux.png "Example request flow between kubelet and CRI-O"){: caption="Example request flow between kubelet and CRI-O" caption-side="bottom"}
 
 
 
@@ -487,7 +487,7 @@ For every project that you have in the cluster, make sure to set up proper [RBAC
 
 In a single-tenant cluster, you create one cluster for every group of people that must run workloads in a cluster. Usually, this team is responsible to manage the cluster and to properly configure and secure it. Multi-tenant clusters use multiple projects to isolate tenants and their workloads.
 
-![Deciding between a single tenant or a multi-tenant cluster.](images/cs_single_multitenant.png "Single tenant versus multi-tenant cluster"){: caption="Figure 1. Single tenant versus multi-tenant cluster" caption-side="bottom"}
+![Deciding between a single tenant or a multi-tenant cluster.](images/cs_single_multitenant.png "Single tenant versus multi-tenant cluster"){: caption="Single tenant versus multi-tenant cluster" caption-side="bottom"}
 
 Deciding between single-tenant and multi-tenant clusters depends on the number of teams that must run workloads in a cluster, their service requirements, the size of the service, and the level of isolation that you want to achieve for your workloads.
 

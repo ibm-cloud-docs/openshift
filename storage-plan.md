@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2024
-lastupdated: "2024-09-19"
+lastupdated: "2024-10-10"
 
 
 keywords: planning, storage, cluster, container storage, cloud storage, kubernetes service, openshift
@@ -96,7 +96,7 @@ You can use non-persistent storage options if your data is not required to be pe
 | Durability | Data is lost when the container crashes or is removed. | Data in `hostPath` or `emptyDir` volumes is lost when the worker node is deleted, the worker node is reloaded or updated, the cluster is deleted, the {{site.data.keyword.cloud_notm}} account reaches a suspended state. In addition, data in an `emptyDir` volume is removed when the assigned pod is permanently deleted from the worker node, the assigned pod is scheduled on another worker node. |
 | Common use cases | Local image cache or container logs | Setting up a high-performance local cache, accessing files from the worker node file system, or running unit tests. |
 | Non-ideal use cases | Persistent data storage or sharing data between containers | Persistent data storage |
-{: caption="Figure 1. Non-persistent storage options"}
+{: caption="Non-persistent storage options"}
 
 
 
@@ -127,7 +127,7 @@ The following image shows the options that you have in {{site.data.keyword.opens
 | Common use cases | Mass or single file storage or file sharing across a single zone cluster. |
 | Non-ideal use cases| Multizone clusters or geographically distributed data. |
 {: class="simple-tab-table"}
-{: caption="Table 1. Storage options for single zone clusters" caption-side="bottom"}
+{: caption="Storage options for single zone clusters" caption-side="bottom"}
 {: #single-zone-storage-1}
 {: tab-title="{{site.data.keyword.filestorage_short}}"}
 {: tab-group="single-zone-storage"}
@@ -153,7 +153,7 @@ The following image shows the options that you have in {{site.data.keyword.opens
 | Common use cases | Stateful sets, backing storage when you run your own database, or high-performance access for single pods. |
 | Non-ideal use cases | Multizone clusters, geographically distributed data, or sharing data across multiple app instances. |
 {: class="simple-tab-table"}
-{: caption="Table 1. Storage options for single zone clusters" caption-side="bottom"}
+{: caption="Storage options for single zone clusters" caption-side="bottom"}
 {: #single-zone-storage-2}
 {: tab-title="{{site.data.keyword.blockstorageshort}}"}
 {: tab-group="single-zone-storage"}
@@ -180,7 +180,7 @@ The following image shows the options that you have in {{site.data.keyword.opens
 | Common use cases | Mass or single file storage or file sharing across a single zone cluster. |
 | Non-ideal use cases | Multizone clusters, geographically distributed data, or sharing data across multiple app instances. |
 {: class="simple-tab-table"}
-{: caption="Table 1. Storage options for single zone clusters" caption-side="bottom"}
+{: caption="Storage options for single zone clusters" caption-side="bottom"}
 {: #single-zone-storage-3}
 {: tab-title="{{site.data.keyword.filestorage_vpc_short}}"}
 {: tab-group="single-zone-storage"}
@@ -205,7 +205,7 @@ The following image shows the options that you have in {{site.data.keyword.opens
 | Common use cases | Stateful sets, backing storage when you run your own database, or high-performance access for single pods. |
 | Non-ideal use cases| Multizone clusters, geographically distributed data, or sharing data across multiple app instances. |
 {: class="simple-tab-table"}
-{: caption="Table 1. Storage options for single zone clusters" caption-side="bottom"}
+{: caption="Storage options for single zone clusters" caption-side="bottom"}
 {: #single-zone-storage-4}
 {: tab-title="{{site.data.keyword.block_storage_is_short}}"}
 {: tab-group="single-zone-storage"}
@@ -236,7 +236,7 @@ The following sections show the options that you have in {{site.data.keyword.ope
 | Common use cases | Geographically distributed data, static big data, static multimedia content, web apps, backups, archives, stateful sets. |
 | Non-ideal use cases | Write-intensive workloads, random write operations, incremental data updates, or transaction databases. |
 {: class="simple-tab-table"}
-{: caption="Table 2. Storage options for multizone clusters" caption-side="bottom"}
+{: caption="Storage options for multizone clusters" caption-side="bottom"}
 {: #multi-zone-storage-1}
 {: tab-title="{{site.data.keyword.cos_full_notm}}"}
 {: tab-group="multi-zone-storage"}
@@ -261,7 +261,7 @@ The following sections show the options that you have in {{site.data.keyword.ope
 | Common use cases | Multizone clusters. Geographically distributed data. Static big data. Static multimedia content | Web apps, backups, archives, stateful sets, geographically distributed data, running apps across multiple cloud providers, backing storage when you run your own database. High-performance access for single pods. Shared storage access across multiple pods and worker nodes. Multizone clusters, relational and non-relational databases, or geographically distributed data. |
 | Non-ideal use cases | Write-intensive workloads, random write operations, incremental data updates, or transaction databases. |
 {: class="simple-tab-table"}
-{: caption="Table 2. Storage options for multizone clusters" caption-side="bottom"}
+{: caption="Storage options for multizone clusters" caption-side="bottom"}
 {: #multi-zone-storage-2}
 {: tab-title="Portworx"}
 {: tab-group="multi-zone-storage"}
@@ -286,7 +286,7 @@ The following sections show the options that you have in {{site.data.keyword.ope
 | Encryption | Bring your own key with {{site.data.keyword.keymanagementservicelong_notm}} or HPCS. In-transit and at rest. |
 | Backup and recovery| Use local or cloud snapshots to save the current state of a volume. |
 {: class="simple-tab-table"}
-{: caption="Table 2. Storage options for multizone clusters" caption-side="bottom"}
+{: caption="Storage options for multizone clusters" caption-side="bottom"}
 {: #multi-zone-storage-3}
 {: tab-title="OpenShift Data Foundation"}
 {: tab-group="multi-zone-storage"}
@@ -313,7 +313,7 @@ The following sections show the options that you have in {{site.data.keyword.ope
 | Common use cases | Multizone clusters, relational and non-relational databases, or geographically distributed data. |
 | Non-ideal use cases | App that is designed to write to a file system. |
 {: class="simple-tab-table"}
-{: caption="Table 2. Storage options for multizone clusters" caption-side="bottom"}
+{: caption="Storage options for multizone clusters" caption-side="bottom"}
 {: #multi-zone-storage-4}
 {: tab-title="Databases"}
 {: tab-group="multi-zone-storage"}

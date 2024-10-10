@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2024
-lastupdated: "2024-10-07"
+lastupdated: "2024-10-10"
 
 
 keywords: openshift, compliance, security standards, red hat openshift, openshift container platform, red hat, openshift architecture, red hat architecture, openshift dependencies,
@@ -35,7 +35,7 @@ Review the architecture diagram and then scroll through the following tables for
 When you run `oc get nodes`, you might notice that the **ROLES** of your worker nodes are marked as both `master,worker`. These nodes are worker nodes in {{site.data.keyword.cloud_notm}}, and don't include the master components that are managed by IBM. Instead, these nodes are marked as `master` because they run OpenShift Container Platform components that are required to set up and manage default resources within the cluster, such as the OperatorHub and internal registry.
 {: note}
 
-![{{site.data.keyword.openshiftlong_notm}} cluster architecture](/images/cs_org_ov_both_ses_roks4.png){: caption="Figure 1. Red Hat OpenShift master components" caption-side="bottom"}
+![{{site.data.keyword.openshiftlong_notm}} cluster architecture](/images/cs_org_ov_both_ses_roks4.png){: caption="Red Hat OpenShift master components" caption-side="bottom"}
 
 ### {{site.data.keyword.redhat_openshift_notm}} master components
 {: #service-architecture-4-master}
@@ -224,14 +224,14 @@ Review the architecture diagrams and then scroll through the following table for
 
 The following diagram shows the components of your cluster and how they interact when both the [public and private cloud service endpoints are enabled](/docs/openshift?topic=openshift-plan_vpc_basics#vpc-workeruser-master). Because both service endpoints are enabled, your VPC creates a public load balancer for each service for inbound traffic.
 
-![{{site.data.keyword.openshiftlong_notm}} on VPC cluster architecture with public and private cloud service endpoints](/images/arch_roks_vpc.svg){: caption="Figure 1. Red Hat OpenShift on VPC cluster architecture with public and private cloud service endpoints" caption-side="bottom"}
+![{{site.data.keyword.openshiftlong_notm}} on VPC cluster architecture with public and private cloud service endpoints](/images/arch_roks_vpc.svg){: caption="Red Hat OpenShift on VPC cluster architecture with public and private cloud service endpoints" caption-side="bottom"}
 
 ### Cluster with private cloud service endpoint only
 {: #vpc-service-arch-private-only}
 
 The following diagram shows the components of your cluster and how they interact when only the [private cloud service endpoint is enabled](/docs/openshift?topic=openshift-plan_vpc_basics#vpc-workeruser-master). Because only the private cloud service endpoint is enabled, your VPC creates a private load balancer for each service for inbound traffic.
 
-![{{site.data.keyword.openshiftlong_notm}} on VPC cluster architecture with the private cloud service endpoint only](images/arch_roks_vpc_private.svg){: caption="Figure 1. Red Hat OpenShift on VPC cluster architecture with the private cloud service endpoint only" caption-side="bottom"}
+![{{site.data.keyword.openshiftlong_notm}} on VPC cluster architecture with the private cloud service endpoint only](images/arch_roks_vpc_private.svg){: caption="Red Hat OpenShift on VPC cluster architecture with the private cloud service endpoint only" caption-side="bottom"}
 
 
 ### VPC master and worker node components

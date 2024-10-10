@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2024
-lastupdated: "2024-02-28"
+lastupdated: "2024-10-10"
 
 
 keywords: openshift dedicated hosts
@@ -28,7 +28,7 @@ For each cluster that you create with {{site.data.keyword.openshiftlong_notm}}, 
 |-------|----------|
 |Personal information|The email address of the {{site.data.keyword.cloud_notm}} account that created the cluster.|
 |Sensitive information|  - The TLS certificate and secret that is used for the assigned Ingress subdomain.  \n - The certificate authority that is used for the TLS certificate.  \n - The certificate authority, private keys, and TLS certificates for the {{site.data.keyword.redhat_openshift_notm}} master components, including the {{site.data.keyword.redhat_openshift_notm}} API server, etcd data store, and VPN.  \n - A customer root key in {{site.data.keyword.keymanagementservicelong_notm}} for each {{site.data.keyword.cloud_notm}} account that is used to encrypt personal and sensitive information.|
-{: caption="Table 1. Information that is stored with IBM" caption-side="bottom"}
+{: caption="Information that is stored with IBM" caption-side="bottom"}
 
 ## How is my information stored and encrypted?
 {: #pi-storage}
@@ -60,5 +60,3 @@ What options do I have to permanently remove my data?
 
 - **Open an {{site.data.keyword.cloud_notm}} support case**: Contact IBM Support to remove your personal and sensitive information from {{site.data.keyword.openshiftlong_notm}}. For more information, see [Getting support](/docs/get-support?topic=get-support-using-avatar).
 - **End your {{site.data.keyword.cloud_notm}} subscription**: After you end your {{site.data.keyword.cloud_notm}} subscription, {{site.data.keyword.openshiftlong_notm}} removes the customer root key in {{site.data.keyword.keymanagementservicelong_notm}} that IBM created and managed for you as well as all the personal and sensitive information from the etcd data store and {{site.data.keyword.cos_short}} backup.
-
-

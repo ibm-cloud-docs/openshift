@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2024
-lastupdated: "2024-10-07"
+lastupdated: "2024-10-10"
 
 
 keywords: kubernetes, deploy, app, openshift
@@ -326,7 +326,7 @@ The more widely you distribute your setup across multiple worker nodes and clust
 
 Review the following potential app setups that are ordered with increasing degrees of availability.
 
-![Stages of high availability for an app](images/cs_app_ha_roadmap-mz.png){: caption="Figure 1. Stages of high availability for an app" caption-side="bottom"}
+![Stages of high availability for an app](images/cs_app_ha_roadmap-mz.png){: caption="Stages of high availability for an app" caption-side="bottom"}
 
 1. A deployment with n+2 pods that are managed by a replica set on a single node.
 2. A deployment with n+2 pods that are managed by a replica set and spread across multiple nodes (anti-affinity) in a single zone cluster.

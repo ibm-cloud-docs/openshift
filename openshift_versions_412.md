@@ -2,7 +2,7 @@
 
 copyright:
   years: 2023, 2024
-lastupdated: "2024-01-17"
+lastupdated: "2024-10-10"
 
 
 keywords: openshift, version, update, upgrade, 4.12, update openshift
@@ -26,7 +26,7 @@ Review information about version 4.12 of {{site.data.keyword.openshiftlong_notm}
 Looking for general information about updating clusters, or information on a different version? See [Red Hat {{site.data.keyword.redhat_openshift_notm}} on IBM Cloud version information](/docs/openshift?topic=openshift-openshift_versions) and the version [4.12 blog](https://www.redhat.com/blog/whats-new-in-red-hat-openshift-4.12-blog){: external}.
 {: tip}
 
-![This badge indicates Kubernetes version 1.25 certification for {{site.data.keyword.openshiftlong_notm}}](images/certified-kubernetes-color.svg){: caption="Figure 1. Kubernetes version 1.25 certification badge" caption-side="bottom"}
+![This badge indicates Kubernetes version 1.25 certification for {{site.data.keyword.openshiftlong_notm}}](images/certified-kubernetes-color.svg){: caption="Kubernetes version 1.25 certification badge" caption-side="bottom"}
 
 {{site.data.keyword.openshiftlong_notm}} is a Certified Kubernetes product for version 1.25 under the CNCF Kubernetes Software Conformance Certification program. _Kubernetes® is a registered trademark of The Linux Foundation in the United States and other countries, and is used pursuant to a license from The Linux Foundation._
 
@@ -70,4 +70,3 @@ The following table shows the actions that you must take before you [update the 
 | Application updates required for `natPortRange` changes. | If your app requires a larger number of egress network connections from `pod-network` pods to a destination that is external to the cluster, you might need to make updates. This applies if your app has more than 30,000 egress connections open on a single worker node simultaneously, or over 30,000 egress connections open on a single worker node within a few minutes. For more information, see [Why am I running out of SNAT ports for egress connections from pods in my cluster?](/docs/openshift?topic=openshift-ts-network-snat-125). |
 | The kubelet modifications that some Cloud Paks make are causing worker nodes to enter `Critical` when upgrading. | For more information, see [Why do I see a `failed to set feature gates` error when upgrading a worker node?](/docs/openshift?topic=openshift-ts-cloud-pak-ds). |
 {: caption="Changes to make before you update the master to Red Hat OpenShift 4.12" caption-side="bottom"}
-

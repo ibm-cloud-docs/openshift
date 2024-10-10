@@ -2,7 +2,7 @@
 
 copyright:
   years: 2022, 2024
-lastupdated: "2024-06-10"
+lastupdated: "2024-10-10"
 
 
 keywords: openshift, version, update, upgrade, 4.10
@@ -41,7 +41,7 @@ Gateway-enabled clusters on Classic infrastructure are deprecated and will be un
 {: note}
 
 
-![This badge indicates Kubernetes version 1.23 certification for {{site.data.keyword.openshiftlong_notm}}](images/certified-kubernetes-color.svg){: caption="Figure 1. Kubernetes version 1.23 certification badge" caption-side="bottom"}
+![This badge indicates Kubernetes version 1.23 certification for {{site.data.keyword.openshiftlong_notm}}](images/certified-kubernetes-color.svg){: caption="Kubernetes version 1.23 certification badge" caption-side="bottom"}
 
 {{site.data.keyword.openshiftlong_notm}} is a Certified Kubernetes product for version 1.23 under the CNCF Kubernetes Software Conformance Certification program. _Kubernetes® is a registered trademark of The Linux Foundation in the United States and other countries, and is used pursuant to a license from The Linux Foundation._
 
@@ -91,9 +91,3 @@ The following table shows the actions that you must take before you [update the 
 With the release of RHEL 8, the use of RHEL 7 worker nodes is deprecated in clusters that run version 4.10. You cannot upgrade RHEL 7 worker nodes to RHEL 8.
 
 Instead, you must provision a new worker pool and then delete the previous worker pool. In versions 4.10 and later, worker nodes in the new worker pool run RHEL 8 by default. See [Migrating to a new Red Hat Enterprise Linux version](/docs/openshift?topic=openshift-rhel_migrate).
-
-
-
-
-
-

@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2022, 2024
-lastupdated: "2024-09-23"
+lastupdated: "2024-10-10"
 
 
 keywords: kubernetes, openshift network
@@ -189,7 +189,7 @@ In this scenario, you run workloads in a VPC cluster that are accessible to requ
 {: shortdesc}
 
 
-![Network setup for a VPC cluster that runs internet-facing app workloads.](images/roks_ov_vpc_pub.png){: caption="Figure 1. Network setup for a VPC cluster that runs internet-facing app workloads" caption-side="bottom"}
+![Network setup for a VPC cluster that runs internet-facing app workloads.](images/roks_ov_vpc_pub.png){: caption="Network setup for a VPC cluster that runs internet-facing app workloads" caption-side="bottom"}
 
 ### Worker-to-worker communication
 {: #vpc-no-pgw-worker}

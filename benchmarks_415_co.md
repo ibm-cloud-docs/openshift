@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2024, 2024
-lastupdated: "2024-06-03"
+lastupdated: "2024-10-10"
 
 
 keywords: openshift, benchmarks, 4.15, compliance operator, compliance
@@ -73,7 +73,7 @@ The master node configuration is not stored as a set of files; therefore, rules 
 | 1.2.33|Ensure that the `--encryption-provider-config` argument is set as appropriate|Manual|1|[Not checked](#co-benchmark-415-remdiations) |
 | 1.2.34|Ensure that encryption providers are appropriately configured|Manual|1|[Not checked](#co-benchmark-415-remdiations) |
 | 1.2.35|Ensure that the API Server only makes use of Strong Cryptographic Ciphers|Manual|1|Pass |
-{: caption="Table 1. Benchmarks for api server." caption-side="top"}
+{: caption="Benchmarks for api server." caption-side="top"}
 {: caption="Section 1.2 API server benchmark results"}
 
 ### 1.3 Controller manager
@@ -229,6 +229,3 @@ Follow the instruction in [Using the compliance operator](/docs/openshift?topic=
 | 5.2.8 | {{site.data.keyword.openshiftlong_notm}} installs custom SCCs. |
 | 5.3.2 | {{site.data.keyword.openshiftlong_notm}} has a set of default Calico network policies defined and additional network policies can optionally be added. |
 {: caption="Remediations and explanations"}
-
-
-

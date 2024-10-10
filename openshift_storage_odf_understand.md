@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2024
-lastupdated: "2024-10-04"
+lastupdated: "2024-10-10"
 
 
 keywords: openshift, openshift data foundation, openshift container storage
@@ -56,7 +56,7 @@ For a full overview of the features and benefits, see [OpenShift Data Foundation
 Review the following diagram and table to learn more about OpenShift Data Foundation.
 {: shortdesc}
 
-![ODF architecture](images/ODF_components.svg "ODF architecture"){: caption="Figure 1. ODF architecture" caption-side="bottom"}
+![ODF architecture](images/ODF_components.svg "ODF architecture"){: caption="ODF architecture" caption-side="bottom"}
 
 
 | Number | ODF component | Description |
@@ -76,7 +76,7 @@ Review the following diagram and table to learn more about OpenShift Data Founda
 The Multicloud Object Gateway consists of the open source tool [NooBaa](https://www.noobaa.io/){: external} and is a component of OpenShift Data Foundation. With the Multicloud Object Gateway, you can manage objects and buckets across cloud providers.
 {: shortdesc}
 
-![Multicloud Object Gateway overview](images/noobaa.svg "NooBaa overview"){: caption="Figure 2. Multicloud Object Gateway overview" caption-side="bottom"}
+![Multicloud Object Gateway overview](images/noobaa.svg "NooBaa overview"){: caption="Multicloud Object Gateway overview" caption-side="bottom"}
 
 | Number | Multicloud Object Gateway component | Description |
 | --- | --- | --- |

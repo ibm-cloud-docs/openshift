@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2024
-lastupdated: "2024-10-07"
+lastupdated: "2024-10-10"
 
 
 keywords: kubernetes, openshift, red hat, red hat openshift
@@ -61,7 +61,7 @@ In this tutorial, you create the following resources by using the CLI. There are
 
 Review the following diagram for an overview of common cluster resources.
 
-![Cluster architecture](images/cs-app-components1.svg){: caption="Figure 1. Cluster architecture" caption-side="bottom"}
+![Cluster architecture](images/cs-app-components1.svg){: caption="Cluster architecture" caption-side="bottom"}
 
 
 ## Prerequisites

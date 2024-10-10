@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2024
-lastupdated: "2024-10-01"
+lastupdated: "2024-10-10"
 
 
 keywords: kubernetes, openshift, app protocol, application protocol
@@ -75,7 +75,7 @@ Do not confuse the Application Load Balancer for VPC with {{site.data.keyword.op
 
 The following diagram illustrates how a user accesses an app from the internet through the VPC ALB.
 
-![Load balancing for a cluster through the VPC ALB.](images/vpc-alb-mz.svg){: caption="Figure 2. Load balancing for a cluster through the VPC ALB" caption-side="bottom"}
+![Load balancing for a cluster through the VPC ALB.](images/vpc-alb-mz.svg){: caption="Load balancing for a cluster through the VPC ALB" caption-side="bottom"}
 
 1. A request to your app uses the hostname that is assigned to the Kubernetes `LoadBalancer` service by the VPC ALB, such as `1234abcd-<region>.lb.appdomain.cloud`.
 2. The request is automatically forwarded by the VPC ALB to one of the node ports on the worker node, and then to the private IP address of the app pod.
@@ -100,7 +100,7 @@ VPC NLBs provide several advantages, such as providing higher throughput and bet
 
 The following diagram illustrates how a user accesses an app from the internet through the VPC NLB.
 
-![Load balancing for a cluster through the VPC NLB.](/images/vpc-nlb-sz.svg){: caption="Figure 1. VPC load balancing for a cluster through the VPC NLB" caption-side="bottom"}
+![Load balancing for a cluster through the VPC NLB.](/images/vpc-nlb-sz.svg){: caption="VPC load balancing for a cluster through the VPC NLB" caption-side="bottom"}
 
 1. A request to your app uses the external IP address that is assigned to the Kubernetes `LoadBalancer` service by the VPC NLB.
 2. The request is automatically forwarded by the VPC NLB to one of the node ports on the worker node, and then to the private IP address of the app pod.

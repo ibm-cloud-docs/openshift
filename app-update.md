@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2024
-lastupdated: "2024-08-06"
+lastupdated: "2024-10-10"
 
 
 keywords: kubernetes, openshift, red hat, red hat openshift, update, upgrade, openshift
@@ -78,7 +78,7 @@ To scale your apps:
     | `--cpu-percent` | The average CPU utilization that is maintained by the Horizontal Pod Autoscaler, which is specified as a percentage. |
     | `--min` | The minimum number of deployed pods that are used to maintain the specified CPU utilization percentage. |
     | `--max` | The maximum number of deployed pods that are used to maintain the specified CPU utilization percentage. |
-    {: caption="Table 2. Understanding your command options" caption-side="bottom"}
+    {: caption="Understanding your command options" caption-side="bottom"}
     
 ## Managing rolling deployments to update your apps
 {: #app_rolling}
@@ -284,7 +284,3 @@ Before you begin, you need two clusters and the **Manager** [service access role
     oc get all
     ```
     {: pre}
-
-
-
-

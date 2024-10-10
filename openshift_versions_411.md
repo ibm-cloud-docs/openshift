@@ -2,7 +2,7 @@
 
 copyright:
   years: 2022, 2024
-lastupdated: "2024-06-20"
+lastupdated: "2024-10-10"
 
 
 keywords: openshift, version, update, upgrade, 4.11, update openshift
@@ -34,7 +34,7 @@ Looking for general information about updating clusters, or information on a dif
 {: tip}
 
 
-![This badge indicates Kubernetes version 1.24 certification for {{site.data.keyword.openshiftlong_notm}}](images/certified-kubernetes-color.svg){: caption="Figure 1. Kubernetes version 1.24 certification badge" caption-side="bottom"}
+![This badge indicates Kubernetes version 1.24 certification for {{site.data.keyword.openshiftlong_notm}}](images/certified-kubernetes-color.svg){: caption="Kubernetes version 1.24 certification badge" caption-side="bottom"}
 
 
 {{site.data.keyword.openshiftlong_notm}} is a Certified Kubernetes product for version 1.24 under the CNCF Kubernetes Software Conformance Certification program. _Kubernetes® is a registered trademark of The Linux Foundation in the United States and other countries, and is used pursuant to a license from The Linux Foundation._
@@ -165,5 +165,3 @@ For more information about creating worker pools and adding worker nodes, see [A
         ibmcloud ks worker-pool rm --worker-pool WORKER_POOL --cluster CLUSTER [-q] [-f]
         ```
         {: pre}
-
-

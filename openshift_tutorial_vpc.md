@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2024
-lastupdated: "2024-10-07"
+lastupdated: "2024-10-10"
 
 
 keywords: kubernetes, openshift, red hat, red hat openshift
@@ -254,7 +254,7 @@ When you create a Kubernetes `LoadBalancer` service in your cluster, a VPC load 
     | `--port=<8080>` | The port on which the service listens for external network traffic. |
     | `--target-port=<8080>` | The port that your app listens on and to which the service directs incoming network traffic. In this example, the `target-port` is the same as the `port`, but other apps that you create might use a different port. |
     | `-n <hello-world>` | The namespace that your deployment is in. |
-    {: caption="Table 1. More about the expose parameters" caption-side="bottom"}
+    {: caption="More about the expose parameters" caption-side="bottom"}
 
 2. Verify that the Kubernetes `LoadBalancer` service is created successfully in your cluster. When you create the Kubernetes `LoadBalancer` service, a VPC load balancer is automatically created for you. The VPC load balancer assigns a hostname to your Kubernetes `LoadBalancer` service that you can see in the **LoadBalancer Ingress** field of your CLI output. In VPC, services in your cluster are assigned a hostname because the external IP address for the service is not stable.
     The VPC load balancer takes a few minutes to provision in your VPC. Until the VPC load balancer is ready, you can't access the Kubernetes `LoadBalancer` service through its hostname.

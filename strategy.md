@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2024
-lastupdated: "2024-10-03"
+lastupdated: "2024-10-10"
 
 keywords: kubernetes, kubernetes environment, moving to kubernetes, moving to containers, clusters, cluster sizing, openshift, {{site.data.keyword.openshiftlong_notm}}
 
@@ -31,7 +31,7 @@ When you're done, [try out the quiz](https://quizzes.12dekrh4l1b4.us-south.codee
 
 Your users are less likely to experience downtime when you distribute your apps across multiple worker nodes, zones, and clusters. Built-in capabilities, like load balancing and isolation, increase resiliency against potential failures with hosts, networks, or apps. 
 
-![High availability for clusters](images/cs_cluster_ha_roadmap_multizone_public.png){: caption="Figure 1. High availability for clusters" caption-side="bottom"}
+![High availability for clusters](images/cs_cluster_ha_roadmap_multizone_public.png){: caption="High availability for clusters" caption-side="bottom"}
 
 The number of clusters that you create depends on your workload, company policies and regulations, business requirements, the Service Level Agreements that you have with your customers, the resources that you want to expend, and what you want to do with the computing resources.
 
@@ -104,7 +104,7 @@ If one worker node goes down, app instances on available worker nodes continue t
 
 The worker node flavors and isolation levels that are available to you depend on your container platform, cluster type, the infrastructure provider that you want to use, and the {{site.data.keyword.openshiftlong_notm}} location where you want to create your cluster. You can choose between Classic, VPC, or {{site.data.keyword.satelliteshort}} clusters. The type of cluster you need is determined by the decisions you made for the number of clusters, locations.
 
-![Hardware options for worker nodes in a standard cluster](images/cs_clusters_hardware.png){: caption="Figure 1. Hardware options for worker nodes in a standard cluster" caption-side="bottom"}
+![Hardware options for worker nodes in a standard cluster](images/cs_clusters_hardware.png){: caption="Hardware options for worker nodes in a standard cluster" caption-side="bottom"}
 
 
 

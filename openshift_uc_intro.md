@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2024
-lastupdated: "2024-01-03"
+lastupdated: "2024-10-10"
 
 
 keywords: openshift
@@ -34,5 +34,4 @@ Various use cases show the strengths of {{site.data.keyword.openshiftlong}} and 
 | Healthcare |  - [Migrate workloads from inefficient VMs to easily operated containers for patient systems](/docs/openshift?topic=openshift-cs_uc_health#uc_migrate) \n - [Securely host sensitive data while you grow research with partners](/docs/openshift?topic=openshift-cs_uc_health#uc_research) |
 | Retail |  - [Share data via APIs with global business partners to drive omnichannel sales](/docs/openshift?topic=openshift-cs_uc_retail#uc_data-share) \n - [Optimize inventory expenses with digital insights to sales behavior](/docs/openshift?topic=openshift-cs_uc_retail#uc_grocer) |
 | Transportation |  - [Build and deploy HR site with AI in less than 3 weeks](/docs/openshift?topic=openshift-cs_uc_transport#uc_airline) \n - [Increase availability of worldwide systems for business partners](/docs/openshift?topic=openshift-cs_uc_transport#uc_shipping) |
-{: caption="Table 1. Use cases" caption-side="bottom"}
-
+{: caption="Use cases" caption-side="bottom"}
