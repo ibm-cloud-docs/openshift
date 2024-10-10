@@ -275,10 +275,6 @@ subcollection: openshift
 
 * [October 2024](/docs/openshift?topic=openshift-openshift-relnotes#openshift-oct24)
 
-    * [10 October 2024](/docs/openshift?topic=openshift-openshift-relnotes#openshift-oct1024)
-
-        * Istio add-on patch updates.
-
     * [09 October 2024](/docs/openshift?topic=openshift-openshift-relnotes#openshift-oct0924)
 
         * {{site.data.keyword.openshiftlong_notm}} worker node fix packs.
