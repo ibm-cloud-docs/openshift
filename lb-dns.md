@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2024
-lastupdated: "2024-10-04"
+lastupdated: "2024-10-10"
 
 
 keywords: kubernetes, lb2.0, nlb, health check, dns, hostname, subdomain, openshift
@@ -128,7 +128,7 @@ For example, a subdomain that you create for an NLB might look like `mycluster-a
 |`0001`|Acts as a counter for each subdomain that you create.|
 |`<region>`|The region that the cluster is created in.|
 |`containers.appdomain.cloud`|The subdomain for {{site.data.keyword.openshiftlong_notm}} subdomains.|
-{: caption="Table 1. Understanding the NLB subdomain format" caption-side="bottom"}
+{: caption="Understanding the NLB subdomain format" caption-side="bottom"}
 
 
 

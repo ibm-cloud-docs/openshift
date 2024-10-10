@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2024, 2024
-lastupdated: "2024-10-07"
+lastupdated: "2024-10-10"
 
 
 keywords: openshift, {{site.data.keyword.openshiftlong_notm}}, kubernetes, infrastructure, rbac, policy, role-based access control
@@ -120,7 +120,7 @@ To create custom RBAC permissions,
     | `rules.apiGroups` | Specify the Kubernetes [API groups](https://kubernetes.io/docs/reference/using-api/#api-groups){: external} that you want users to be able to interact with, such as `"apps"`, `"batch"`, or `"extensions"`. For access to the core API group at REST path `api/v1`, leave the group blank: `[""]`. |
     | `rules.resources` | Specify the Kubernetes [resource types](https://kubernetes.io/docs/reference/kubectl/quick-reference/){: external} to which you want to grant access, such as `"daemonsets"`, `"deployments"`, `"events"`, or `"ingresses"`. If you specify `"nodes"`, then the kind must be `ClusterRole`. |
     | `rules.verbs` | Specify the types of [actions](https://kubectl.docs.kubernetes.io/){: external} that you want users to be able to do, such as `"get"`, `"list"`, `"describe"`, `"create"`, or `"delete"`. |
-    {: caption="Table 3. Understanding the YAML parameters" caption-side="bottom"}
+    {: caption="Understanding the YAML parameters" caption-side="bottom"}
 
 1. Create the role or cluster role in your cluster.
 
@@ -180,7 +180,7 @@ To create custom RBAC permissions,
     | `roleRef.kind` | Enter the same value as the `kind` in the role `.yaml` file: `Role` or `ClusterRole`. |
     | `roleRef.name` | Enter the name of the role `.yaml` file. |
     | `roleRef.apiGroup` | Use `rbac.authorization.k8s.io`. |
-    {: caption="Table 3. Understanding the YAML parameters" caption-side="bottom"}
+    {: caption="Understanding the YAML parameters" caption-side="bottom"}
 
 1. Create the role binding or cluster role binding resource in your cluster.
 
@@ -265,7 +265,7 @@ Before you begin: [Access your {{site.data.keyword.redhat_openshift_notm}} clust
     | `rules.apiGroups` | Specify the Kubernetes [API groups](https://kubernetes.io/docs/reference/using-api/#api-groups){: external} that you want users to be able to interact with, such as `"apps"`, `"batch"`, or `"extensions"`. For access to the core API group at REST path `api/v1`, leave the group blank: `[""]`. |
     | `rules.resources` | Specify the Kubernetes [resource types](https://kubernetes.io/docs/reference/kubectl/quick-reference/){: external} to which you want to grant access, such as `"daemonsets"`, `"deployments"`, `"events"`, or `"ingresses"`. |
     | `rules.verbs` | Specify the types of [actions](https://kubectl.docs.kubernetes.io/){: external} that you want users to be able to do, such as `"get"`, `"list"`, `"describe"`, `"create"`, or `"delete"`. |
-    {: caption="Table 4. Understanding the YAML parameters" caption-side="bottom"}
+    {: caption="Understanding the YAML parameters" caption-side="bottom"}
 
 2. Create the cluster role in your cluster. Any users that have a role binding to the `admin` cluster role now have the additional permissions from the `view-pod-metrics` cluster role.
     ```sh
@@ -369,7 +369,7 @@ The following table shows the Kubernetes resource permissions that are granted b
 | Writer role | When scoped to one namespace: **`edit`** cluster role applied by the **`ibm-edit`** role binding in that namespace. \n \n When scoped to all namespaces: **`edit`** cluster role applied by the **`ibm-edit`** role binding in each namespace of the cluster | - Read/write access to resources in a namespace \n - No read/write access to roles and role bindings< \n - Access the Kubernetes dashboard to view resources in a namespace. |
 | Manager role | When scoped to one namespace: **`admin`** cluster role applied by the **`ibm-operate`** role binding in that namespace \n  \n When scoped to all namespaces: **`cluster-admin`** cluster role applied by the **`ibm-admin`** cluster role binding that applies to all namespaces | When scoped to one namespace: \n - Read/write access to all resources in a namespace but not to resource quota or the namespace itself \n - Create RBAC roles and role bindings in a namespace  \n - Access the Kubernetes dashboard to view all resources in a namespace  \n When scoped to all namespaces: \n - Read/write access to all resources in every namespace \n - Create RBAC roles and role bindings in a namespace or cluster roles and cluster role bindings in all namespaces \n - Access the Kubernetes dashboard \n - Create an Ingress resource that makes apps publicly available \n - Review cluster metrics such as with the `oc top pods`, `oc top nodes`, or `oc get nodes` commands | 
 | Any service access role | All users of a {{site.data.keyword.redhat_openshift_notm}} cluster are given the `basic-users`. | |  - Get basic information about projects that the user has access to. \n - Create authorized resources in the projects that the user has access to. \n - For more information, see the [{{site.data.keyword.redhat_openshift_notm}} docs](https://docs.openshift.com/container-platform/4.16/authentication/using-rbac.html){: external} |
-{: caption="Table 1. Kubernetes resource permissions by service and corresponding RBAC roles" caption-side="bottom"}
+{: caption="Kubernetes resource permissions by service and corresponding RBAC roles" caption-side="bottom"}
 
 ### Kubernetes resource permissions per RBAC role
 {: #rbac_ref}
@@ -436,7 +436,7 @@ The following table shows the permissions that are granted by each RBAC role to 
 | `services/proxy` | - | create, delete, `deletecollection`, get, list, patch, update, watch | create, delete, `deletecollection`, get, list, patch, update, watch |
 | `statefulsets.apps` | get, list, watch | create, delete, `deletecollection`, get, list, patch, update, watch | create, delete, `deletecollection`, get, list, patch, update, watch |
 | `statefulsets.apps/scale` | get, list, watch | create, delete, `deletecollection`, get, list, patch, update, watch | create, delete, `deletecollection`, get, list, patch, update, watch |
-{: caption="Table 1. Kubernetes resource permissions granted by each predefined RBAC role" caption-side="bottom"}
+{: caption="Kubernetes resource permissions granted by each predefined RBAC role" caption-side="bottom"}
 
 
 

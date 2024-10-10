@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2023, 2024
-lastupdated: "2024-09-19"
+lastupdated: "2024-10-10"
 
 
 keywords: openshift, {{site.data.keyword.openshiftlong_notm}}, firewall, rules, security group, 4.15, networking, secure by default, outbound traffic protection
@@ -31,7 +31,7 @@ Beginning with new VPC clusters that are created at version 4.15, {{site.data.ke
 
 With Secure by Default Networking, when you provision a new {{site.data.keyword.openshiftlong_notm}} VPC cluster at version 4.15 or later, only the traffic that is necessary for the cluster to function is allowed and all other access is blocked. To implement Secure by Default Networking, {{site.data.keyword.openshiftlong_notm}} uses various security groups and security group rules to protect cluster components. These security groups and rules are automatically created and attached to your worker nodes, load balancers, and cluster-related VPE gateways.
 
-![VPC security groups](images/vpc-security-group.svg "VPC security groups"){: caption="Figure 1. This image shows the VPC security groups applied to your VPC and clusters." caption-side="bottom"}
+![VPC security groups](images/vpc-security-group.svg "VPC security groups"){: caption="This image shows the VPC security groups applied to your VPC and clusters." caption-side="bottom"}
 
 Virtual Private Cloud security groups filter traffic at the hypervisor level. Security group rules are not applied in a particular order. However, requests to your worker nodes are only permitted if the request matches one of the rules that you specify. When you allow traffic in one direction by creating an inbound or outbound rule, responses are also permitted in the opposite direction. Security groups are additive, meaning that if your worker nodes are attached to more than one security group, all rules included in the security groups are applied to the worker nodes. Newer cluster versions might have more rules in the `kube-<clusterID>` security group than older cluster versions. Security group rules are added to improve the security of the service and do not break functionality.
 
@@ -48,7 +48,7 @@ The following VPE gateways are created automatically when you create a VPC clust
 | {{site.data.keyword.cos_full_notm}} s3 gateway | [Shared]{: tag-cool-gray} Access the COS APIs. |
 | {{site.data.keyword.cos_full_notm}} config gateway | [Shared]{: tag-cool-gray} Backup container images to {{site.data.keyword.cos_full_notm}} |
 | {{site.data.keyword.openshiftlong_notm}} | Access the {{site.data.keyword.openshiftlong_notm}} APIs to interact with and manage your cluster. † |
-{: caption="Table 1. VPE gateways" caption-side="bottom"}
+{: caption="VPE gateways" caption-side="bottom"}
 {: summary="The table shows the VPE gateways created for VPC clusters. The first column includes name of the gateway. The second column includes a brief description."}
 
 
@@ -90,7 +90,7 @@ Do not modify the rules in the `kube-<clusterID>` security group as doing so mig
 | Allows TCP and UDP traffic through custom DNS resolver for zone `n`.`**` | Outbound | TCP/UDP | Min=53,Max=53 | DNS resolver IP address in zone `n`. |
 | Allows traffic to the entire CSE service range. | Outbound | All | All | 166.8.0.0/14 |
 | Allows traffic to the IAM private endpoint for all zones. The IPs might vary by region. One rule is added per zone the cluster is in. | Outbound | All | All | IAM private endpoint IP address for all zones. |
-{: caption="Table 2. Rules in the kube-clusterID security group" caption-side="bottom"}
+{: caption="Rules in the kube-clusterID security group" caption-side="bottom"}
 {: summary="The table shows the rules applied to the cluster worker security group. The first column includes protocol of the rule. The second column includes the ports and types. The third column includes remote destination of the rule. The fourth column includes a brief description of the rule."}
 
 
@@ -120,7 +120,7 @@ To allow access to a cluster's master only from its worker nodes a security grou
 | Allows inbound traffic from the cluster worker security group to the openVPN or Konnectivity port. | Inbound | TCP | Konnectivity port | `kube-<clusterID>` |
 | Allows inbound traffic from the cluster worker security group to the Oauth port. | Inbound | TCP | Oauth port | `kube-<clusterID>` |
 | CoreOS-enabled clusters only. Allows inbound traffic from the cluster worker security group to the ignition server port | Inbound | TCP | Ignition server port | `kube-<clusterID>` |
-{: caption="Table 4. Inbound rules in the Master VPE gateway security group" caption-side="bottom"}
+{: caption="Inbound rules in the Master VPE gateway security group" caption-side="bottom"}
 {: summary="The table shows the inbound rules applied to the cluster worker security group. The first column includes purpose of the rule. The second column includes the direction of the rule. The third column includes the protocol. The fourth column includes the ports or values. The fifth column includes remote destination of the rule."}
 
  
@@ -141,7 +141,7 @@ There is a maximum of 15 rules that can target other security groups as their so
 | Description | Direction | Protocol | Source or destination |
 | ---- | ---- | ---- | ---- | 
 | Allows inbound traffic from the specified cluster. | Inbound | TCP | `kube-<clusterID>` |
-{: caption="Table 5. Inbound rules in the shared VPE gateway security group" caption-side="bottom"}
+{: caption="Inbound rules in the shared VPE gateway security group" caption-side="bottom"}
 {: summary="The table shows the inbound rules applied to the shared VPE gateway security group. The first column includes the purpose of the rule. The second column includes the direction of the rule. The third column includes the protocol. The fourth column includes remote destination of the rule."}
 
 
@@ -155,7 +155,7 @@ The default security group that is attached to all load balancers (ALBs and NLBs
 | Allows outbound access to node port opened by the load balancer. Depending on the load balancer you might have multiple rules. | Outbound | TCP | Node port(s) opened by the load balancer. | `kube-<clusterID>` |
 | Load balancer listens on port 80 allowing inbound access from that port. | Inbound | TCP | Public LB port. Example `80` | 0.0.0.0/0 |
 | Load balancer listens on port 443 allowing inbound access from that port. | Inbound | TCP | Public LB port. Example `443` | 0.0.0.0/0 |
-{: caption="Table 6. Load balancer security group rules" caption-side="bottom"}
+{: caption="Load balancer security group rules" caption-side="bottom"}
 {: summary="The table shows the rules applied to the Load balancer security group. The first column includes purpose of the rule. The second column includes the direction of the rule. The third column includes the protocol. The fourth column includes the ports or values. The fifth column includes remote destination of the rule."}
 
 ## Limitations

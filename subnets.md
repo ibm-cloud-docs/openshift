@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2024
-lastupdated: "2024-06-24"
+lastupdated: "2024-10-10"
 
 
 keywords: openshift
@@ -386,7 +386,7 @@ To order a subnet,
     | *`<cluster_name_or_id>`* | Replace `<cluster_name_or_id>` with the name or ID of the cluster. |
     | *`<subnet_size>`* | Replace `<subnet_size>` with the number of IP addresses that you want to create in the portable subnet. Accepted values are 8, 16, 32, or 64. Note that when you add portable IP addresses for your subnet, three IP addresses are used to establish cluster-internal networking. You can't use these three IP addresses for your Ingress application load balancers (ALBs) or to create network load balancer (NLB) services. For example, if you request eight portable public IP addresses, you can use five of them to expose your apps to the public. |
     | *`<VLAN_ID>`* | Replace `<VLAN_ID>` with the ID of the public or private VLAN on which you want to allocate the portable public or private IP addresses. You must select a public or private VLAN that an existing worker node is connected to. To review the public or private VLANs that your worker nodes are connected to, run `ibmcloud oc cluster get --cluster <cluster> --show-resources` and look for the **Subnet VLANs** section in the output. The subnet is provisioned in the same zone that the VLAN is in. |
-    {: caption="Table 1. Parameters for a subnet" caption-side="bottom"}
+    {: caption="Parameters for a subnet" caption-side="bottom"}
 
 2. Verify that the subnet was successfully created and added to your cluster. The subnet CIDR is listed in the **Subnet VLANs** section.
 
@@ -568,4 +568,3 @@ If you no longer need subnets, you can remove them from your cluster. After you 
     2234945   169.xx.xxx.xxx/29    true     false
     ```
     {: screen}
-

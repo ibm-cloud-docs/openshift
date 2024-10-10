@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2024, 2024
-lastupdated: "2024-08-06"
+lastupdated: "2024-10-10"
 
 
 keywords: kubernetes, help, connectivity, debugging, openshift, apps, support, network
@@ -75,14 +75,14 @@ Each of these VPC ALBs is a part of a separate cluster in the respective region.
 
 Note that some of these connections are over the public network. Some are over a private network in the same VPC, and some use the private network in {{site.data.keyword.cloud_notm}} between components in a VPC and a service in {{site.data.keyword.cloud_notm}}.
 
-![Multi-cluster Diagram](images/multi-cluster-with-glb-architecture.jpg){: caption="Figure 1. Multi-cluster architecture" caption-side="bottom"}
+![Multi-cluster Diagram](images/multi-cluster-with-glb-architecture.jpg){: caption="Multi-cluster architecture" caption-side="bottom"}
 
 ### Example 3: A VSI client contacting a VPC network load balancer with an external service backend
 {: #example-arch-3}
 
 In the following example, the client is a Classic VSI in {{site.data.keyword.cloud_notm}}. The VSI connects via the private network to a private VPC network load balancer (NLB) created for an VPC cluster. This NLB balances traffic to one of the three VPC worker nodes via the NodePort for the cluster Load Balancer service. The cluster Load Balancer service then sends the traffic to one of the app pods which connect to an external cloud service outside of {{site.data.keyword.cloud_notm}} over the public network.
 
-![NLB with an external service](images/vsi-nlb-external-service-architecture.jpg){: caption="Figure 2. NLB with external service" caption-side="bottom"}
+![NLB with an external service](images/vsi-nlb-external-service-architecture.jpg){: caption="NLB with external service" caption-side="bottom"}
 
 
 ## Step 2: Choose a tool

@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2024
-lastupdated: "2024-10-07"
+lastupdated: "2024-10-10"
 
 
 keywords: openshift, {{site.data.keyword.openshiftlong_notm}}, kubernetes, infrastructure, rbac, policy, providers, benefits
@@ -33,14 +33,14 @@ Review frequently asked questions and key technologies that {{site.data.keyword.
 
 Kubernetes is an open source platform for managing containerized workloads and services across multiple hosts, and offers management tools for deploying, automating, monitoring, and scaling containerized apps with minimal to no manual intervention.
 
-![Kubernetes certification badge](images/certified-kubernetes-color.svg "Deployment setup"){: caption="Figure 1. This badge indicates Kubernetes certification for IBM Cloud Container Service." caption-side="bottom"}
+![Kubernetes certification badge](images/certified-kubernetes-color.svg "Deployment setup"){: caption="This badge indicates Kubernetes certification for IBM Cloud Container Service." caption-side="bottom"}
 
 The open source project, Kubernetes, combines running a containerized infrastructure with production workloads, open source contributions, and Docker container management tools. The Kubernetes infrastructure provides an isolated and secure app platform for managing containers that is portable, extensible, and self-healing in case of a failover. For more information, see [What is Kubernetes?](https://www.ibm.com/topics/kubernetes){: external}.
 
 Learn more about the key concepts of Kubernetes as illustrated in the following image.
 
 
-![Example deployment and namespaces](images/k8-namespace.svg "Deployment setup"){: caption="Figure 2. A description of key concepts for Kubernetes" caption-side="bottom"}
+![Example deployment and namespaces](images/k8-namespace.svg "Deployment setup"){: caption="A description of key concepts for Kubernetes" caption-side="bottom"}
 
 
 Account
@@ -124,7 +124,7 @@ With {{site.data.keyword.openshiftlong}}, you can create a cluster by using infr
 | Service compliance | See the VPC section in [What standards does the service comply to?](/docs/openshift?topic=openshift-faqs#standards).
 | Service limitations | See [Service limitations](/docs/openshift?topic=openshift-limitations#tech_limits). For VPC-specific limitations in {{site.data.keyword.openshiftlong_notm}}, see [VPC cluster limitations](/docs/openshift?topic=openshift-limitations#ks_vpc_gen2_limits). For general VPC infrastructure provider limitations, see [Limitations](/docs/vpc?topic=vpc-limitations).  |
 {: class="simple-tab-table"}
-{: caption="Table 1. Infrastructure overview" caption-side="bottom"}
+{: caption="Infrastructure overview" caption-side="bottom"}
 {: #infra-1}
 {: tab-title="VPC"}
 {: tab-group="infra-table"}
@@ -151,7 +151,7 @@ With {{site.data.keyword.openshiftlong}}, you can create a cluster by using infr
 | Service compliance | For clusters, see [What standards does the service comply to?](/docs/openshift?topic=openshift-faqs#standards). For {{site.data.keyword.satelliteshort}}, see [Security and compliance](/docs/satellite?topic=satellite-compliance). |
 | Service limitations | See [Limitations, default settings, and usage requirements](/docs/satellite?topic=satellite-requirements). |
 {: class="simple-tab-table"}
-{: caption="Table 1. Infrastructure overview" caption-side="bottom"}
+{: caption="Infrastructure overview" caption-side="bottom"}
 {: #infra-2}
 {: tab-title="{{site.data.keyword.satelliteshort}}"}
 {: tab-group="infra-table"}
@@ -179,7 +179,7 @@ With {{site.data.keyword.openshiftlong}}, you can create a cluster by using infr
 | Service compliance | See the classic section in [What standards does the service comply to?](/docs/openshift?topic=openshift-faqs#standards). |
 | Service limitations | See [Service limitations](/docs/openshift?topic=openshift-limitations#tech_limits). Feature-specific limitations are documented by section. |
 {: class="simple-tab-table"}
-{: caption="Table 1. Infrastructure overview" caption-side="bottom"}
+{: caption="Infrastructure overview" caption-side="bottom"}
 {: #infra-3}
 {: tab-title="Classic"}
 {: tab-group="infra-table"}

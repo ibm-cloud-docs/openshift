@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2024, 2024
-lastupdated: "2024-09-23"
+lastupdated: "2024-10-10"
 
 
 keywords: openshift, block storage, deploy apps, storage class reference
@@ -53,4 +53,4 @@ All storage classes use hourly billing. For more information about pricing, see 
 | `ibmc-vpc-block-metro-retain-general-purpose` | `ext4` | WaitforFirstConsumer | Retain | 
 | `ibmc-vpcblock-odf-ret-general` | `ext4` | WaitforFirstConsumer | Retain | 
 | `ibmc-vpcblock-odf-general` | `ext4` | WaitforFirstConsumer | Delete |
-{: caption="Table 1. VPC Block storage class reference" caption-side="bottom"}
+{: caption="VPC Block storage class reference" caption-side="bottom"}

@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2024
-lastupdated: "2024-05-29"
+lastupdated: "2024-10-10"
 
 
 keywords: portworx, kubernetes, openshift
@@ -24,7 +24,7 @@ The following image illustrates the encryption workflow in Portworx when you set
 {: shortdesc}
 
 
-![Encrypting Portworx volumes](images/cs_px_volume_encryption.png "Encrypting Portworx volumes"){: caption="Figure 1. Encrypting Portworx volumes" caption-side="bottom"}
+![Encrypting Portworx volumes](images/cs_px_volume_encryption.png "Encrypting Portworx volumes"){: caption="Encrypting Portworx volumes" caption-side="bottom"}
 
 
 1. The user creates a PVC with a Portworx storage class and requests the storage to be encrypted.
@@ -38,7 +38,7 @@ The following image illustrates the encryption workflow in Portworx when you set
 
 The following image illustrates the decryption workflow in Portworx when you set up per-volume encryption.
 
-![Decrypting Portworx volumes](images/cs_px_volume_decryption.png "Decrypting Portworx volumes"){: caption="Figure 2. Decrypting Portworx volumes" caption-side="bottom"}
+![Decrypting Portworx volumes](images/cs_px_volume_decryption.png "Decrypting Portworx volumes"){: caption="Decrypting Portworx volumes" caption-side="bottom"}
 
 1. Kubernetes sends a request to decrypt an encrypted volume.
 2. Portworx requests the DEK for the volume from the Portworx etcd database.
@@ -148,10 +148,3 @@ If you don't want to use {{site.data.keyword.keymanagementservicelong_notm}} or 
         oc get secrets -n portworx
         ```
         {: pre}
-
-
-
-
-
-
-

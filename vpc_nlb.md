@@ -1,7 +1,7 @@
 ---
 copyright: 
   years: 2024, 2024
-lastupdated: "2024-10-09"
+lastupdated: "2024-10-10"
 
 keywords: nlb, network load balancer, vpc nlb, dns, public lb, private lb
 subcollection: openshift
@@ -158,7 +158,7 @@ In the following example diagram, a Nodeport service with port 30000 is created 
 
 The user makes a request to port 30001 of the NLB containing the port range. This request is directed to the VPC NLB service that directs the request to the Nodeport service in the cluster that is also listening on port 30001, which in this case is for Deployment 2. The Nodeport service then directs the request to the target port of the selected pods of Deployment 2.
 
-![VPC NLB that uses port range.](/images/nlb-port-range.svg){: caption="Figure 3. VPC NLB with port range" caption-side="bottom"}
+![VPC NLB that uses port range.](/images/nlb-port-range.svg){: caption="VPC NLB with port range" caption-side="bottom"}
 
 Create an NLB that uses a port range by using the following example. The selector and backend pods must be associated with the port range load balancer service so that health checks return success and data is delivered to the ports in the port range. To use port range, you must create additional NodePort services that have port values in the range that is defined by the load balancer service.
 

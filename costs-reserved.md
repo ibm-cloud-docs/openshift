@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2024
-lastupdated: "2024-09-10"
+lastupdated: "2024-10-10"
 
 
 keywords: openshift, reservations, worker node
@@ -40,7 +40,7 @@ A reservation is a type of {{site.data.keyword.cloud_notm}} resource that you se
 
 Review the following diagram for an example scenario of how you might set up your reservation and contracts to use across clusters.
 
-![Overview of reservations for {{site.data.keyword.openshiftlong_notm}}.](images/reservations-ov.png "Overview of reservations for {{site.data.keyword.openshiftlong_notm}}"){: caption="Figure 1. An example scenario of using a reservation for worker nodes in your clusters." caption-side="bottom"}
+![Overview of reservations for {{site.data.keyword.openshiftlong_notm}}.](images/reservations-ov.png "Overview of reservations for {{site.data.keyword.openshiftlong_notm}}"){: caption="An example scenario of using a reservation for worker nodes in your clusters." caption-side="bottom"}
 
 **Reservation**: The reservation contains details such as the container platform, worker node flavor, location, and infrastructure provider.
 

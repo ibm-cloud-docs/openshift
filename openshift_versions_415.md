@@ -2,7 +2,7 @@
 
 copyright:
   years: 2024, 2024
-lastupdated: "2024-07-11"
+lastupdated: "2024-10-10"
 
 
 keywords: openshift, version, update, upgrade, 4.15, update openshift
@@ -23,7 +23,7 @@ Review information about version 4.15 of {{site.data.keyword.openshiftlong_notm}
 Looking for general information about updating clusters, or information on a different version? See [Red Hat {{site.data.keyword.redhat_openshift_notm}} on IBM Cloud version information](/docs/openshift?topic=openshift-openshift_versions) and the version [4.15 release notes](https://docs.openshift.com/container-platform/4.15/release_notes/ocp-4-15-release-notes.html#ocp-4-15-release-notes){: external}.
 {: tip}
 
-![This badge indicates Kubernetes version 1.28 certification for {{site.data.keyword.openshiftlong_notm}}](images/certified-kubernetes-color.svg){: caption="Figure 1. Kubernetes version 1.28 certification badge" caption-side="bottom"}
+![This badge indicates Kubernetes version 1.28 certification for {{site.data.keyword.openshiftlong_notm}}](images/certified-kubernetes-color.svg){: caption="Kubernetes version 1.28 certification badge" caption-side="bottom"}
 
 {{site.data.keyword.openshiftlong_notm}} is a Certified Kubernetes product for version 1.28 under the CNCF Kubernetes Software Conformance Certification program. _Kubernetes® is a registered trademark of The Linux Foundation in the United States and other countries, and is used pursuant to a license from The Linux Foundation._
 
@@ -165,4 +165,3 @@ For more information, see [Managing outbound traffic protection in VPC clusters]
 - [When I update my cluster to secure by default, my nodeport app no longer works](/docs/openshift?topic=openshift-ts-sbd-nodeport-not-working).
 - [Why do I see DNS failures after adding a custom DNS resolver?](/docs/openshift?topic=openshift-ts-sbd-custom-dns).
 - [After creating a version 4.15 cluster, applications running in other clusters in my VPC are failing](/docs/openshift?topic=openshift-ts-sbd-other-clusters).
-
