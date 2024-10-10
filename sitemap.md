@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2024
-lastupdated: "2024-10-09"
+lastupdated: "2024-10-10"
 
 
 keywords: openshift
@@ -274,6 +274,10 @@ subcollection: openshift
 [Release notes](/docs/openshift?topic=openshift-openshift-relnotes#openshift-relnotes)
 
 * [October 2024](/docs/openshift?topic=openshift-openshift-relnotes#openshift-oct24)
+
+    * [10 October 2024](/docs/openshift?topic=openshift-openshift-relnotes#openshift-oct1024)
+
+        * Istio add-on patch updates.
 
     * [09 October 2024](/docs/openshift?topic=openshift-openshift-relnotes#openshift-oct0924)
 

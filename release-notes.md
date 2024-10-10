@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2024
-lastupdated: "2024-10-09"
+lastupdated: "2024-10-10"
 
 
 keywords: kubernetes, release notes, openshift, {{site.data.keyword.openshiftlong_notm}}
@@ -31,7 +31,12 @@ Looking for {{site.data.keyword.cloud_notm}} status, platform announcements, sec
 ## October 2024
 {: #openshift-oct24}
 
+### 10 October 2024
+{: #openshift-oct1024}
+{: release-note}
 
+Istio add-on patch updates.
+:   For more information, see the [change log](/docs/containers?topic=containers-istio-changelog).
 
 ### 09 October 2024
 {: #openshift-oct0924}
