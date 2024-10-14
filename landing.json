@@ -1,49 +1,64 @@
 {
+    "version": 2,
     "title": "Red Hat OpenShift on IBM Cloud",
-    "lastupdated": "2024-10-08",
-    "introduction": "Explore the capabilities of Red Hat OpenShift on IBM Cloud and discover how you can deploy apps on highly available clusters. ",
+    "introduction": "Explore the capabilities of Red Hat OpenShift on IBM Cloud and discover how you can deploy apps on highly available clusters.",
+    "product_page": "https://www.ibm.com/products/openshift",
+    "console_page": "/kubernetes/overview?platformType=openshift",
+    "section_topics": {
+      "links": [
+        {
+            "title": "See what's new",
+            "href": "/docs/openshift?topic=openshift-openshift-relnotes"
+          },  
+          {
+            "title": "Understand Red Hat OpenShift on IBM Cloud",
+            "href": "/docs/openshift?topic=openshift-overview"
+          },
+          {
+            "title": "Get started with Red Hat OpenShift on IBM Cloud",
+            "href": "/docs/openshift?topic=openshift-getting-started"
+          },
+          {
+            "title": "Plan your environment",
+            "href": "/docs/openshift?topic=openshift-learning-path-admin#admin_plan"
+          },
+          {
+            "title": "Create a cluster",
+            "href": "/docs/openshift?topic=openshift-learning-path-admin#admin_cluster"
+          },
+          {
+            "title": "Add storage",
+            "href": "/docs/openshift?topic=openshift-learning-path-admin#admin_storage"
+          }
+      ]
+    },
+    "section_highlights": [
+      {
+        "title": "Developer resources",
+        "description": "Find developer resources for Red Hat OpenShift on IBM Cloud.",
+        "href": "https://developer.ibm.com/components/redhat-openshift-ibm-cloud/",
+        "type": "training"
+      },
+      {
+        "title": "Training",
+        "description": "Find courses to guide you through using Red Hat OpenShift on IBM Cloud.",
+        "href": "https://www.ibm.com/training/search?query=Red%20Hat%20OpenShift",
+        "type": "training"
+      },
+      {
+        "title": "Community",
+        "description": "Find blogs, events, and resources for IBM Cloud.",
+        "href": "https://community.ibm.com/community/user/cloud/home",
+        "type": "training"
+      }
+    ],
     "section_devtools": {
       "api": "/apidocs/kubernetes", 
       "cli": "/docs/openshift?topic=openshift-kubernetes-service-cli", 
       "terraform": "https://registry.terraform.io/providers/IBM-Cloud/ibm/latest/docs"
     },
-    "section_recommended": [
-      {
-        "title": "See what's new",
-        "description": "Read about the latest changes to Red Hat OpenShift on IBM Cloud. ",
-        "href": "/docs/openshift?topic=openshift-openshift-relnotes"
-      },  
-      {
-        "title": "Understand Red Hat OpenShift on IBM Cloud",
-        "description": "Learn more about Red Hat OpenShift on IBM Cloud, its capabilities, and the options that are available to you.",
-        "href": "/docs/openshift?topic=openshift-overview"
-      },
-      {
-        "title": "Get started with Red Hat OpenShift on IBM Cloud",
-        "description": "Use the IBM Cloud console to create a cluster and deploy your first containerized app.",
-        "href": "/docs/openshift?topic=openshift-getting-started"
-      },
-      {
-        "title": "Plan your environment",
-        "description": "Plan a highly available cluster with capacity for app workloads.",
-        "href": "/docs/openshift?topic=openshift-learning-path-admin#admin_plan"
-      },
-      {
-        "title": "Create a cluster",
-        "description": "Create a cluster according to your planned setup.",
-        "href": "/docs/openshift?topic=openshift-learning-path-admin#admin_cluster"
-      },
-      {
-        "title": "Add storage",
-        "description": "Plan and add highly available persistent storage for your app data.",
-        "href": "/docs/openshift?topic=openshift-learning-path-admin#admin_storage"
-      }
-    ],
-
-    "section_learn": {
-      "developer": "https://developer.ibm.com/components/redhat-openshift-ibm-cloud/",
-      "training": "https://www.ibm.com/training/search?query=Red%20Hat%20OpenShift",
-      "community": "https://community.ibm.com/community/user/cloud/home"
+    "section_updates": {
+        "view_more": "/docs/openshift?topic=openshift-openshift-relnotes"
     }
-    
+
   }
