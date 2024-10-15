@@ -345,6 +345,8 @@ subcollection: openshift
 
         * New! Upgrade status command.
 
+        * {{site.data.keyword.openshiftlong_notm}} version 4.12 and 4.13 are deprecated.
+
     * [29 August 2024](/docs/openshift?topic=openshift-openshift-relnotes#openshift-aug2924)
 
         * {{site.data.keyword.cos_full_notm}} plug-in updates.
