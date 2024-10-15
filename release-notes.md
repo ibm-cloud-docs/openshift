@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2024
-lastupdated: "2024-10-11"
+lastupdated: "2024-10-15"
 
 
 keywords: kubernetes, release notes, openshift, {{site.data.keyword.openshiftlong_notm}}
@@ -230,6 +230,9 @@ CLI version `1.0.657` is available.
 
 New! Upgrade status command.
 :   For clusters that run version 4.16 or later, you can use the `oc adm upgrade status` command to check the update status of your cluster master during a master version update. For more information, see [Viewing cluster upgrade status with the `oc adm upgrade status` command](/docs/openshift?topic=openshift-upgrade-status).
+
+{{site.data.keyword.openshiftlong_notm}} version 4.12 and 4.13 are deprecated.
+:   Update your cluster to a [supported version](/docs/openshift?topic=openshift-openshift_versions) as soon as possible.
 
 
 
