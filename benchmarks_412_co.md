@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2023, 2024
-lastupdated: "2024-04-30"
+lastupdated: "2024-10-15"
 
 
 keywords: openshift, benchmarks, 4.12, compliance operator, compliance
@@ -19,6 +19,13 @@ subcollection: openshift
 
 # 4.12 compliance operator benchmark
 {: #benchmarks_412_co}
+
+
+
+This version is deprecated. Update your cluster to a [supported version](/docs/openshift?topic=openshift-openshift_versions) as soon as possible.
+{: deprecated}
+
+
 
 Review the compliance operator benchmark results for {{site.data.keyword.openshiftlong_notm}} version 4.12.
 {: shortdesc}
@@ -228,5 +235,3 @@ to perform automated check for worker node configuration.
 | 5.2.8 | {{site.data.keyword.openshiftlong_notm}} installs custom SCCs. |
 | 5.3.2 | {{site.data.keyword.openshiftlong_notm}} has a set of default Calico network policies defined and additional network policies can optionally be added. |
 {: caption="Remediations and explanations"}
-
-

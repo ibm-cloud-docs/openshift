@@ -1,7 +1,7 @@
 ---
 copyright: 
   years: 2024, 2024
-lastupdated: "2024-10-09"
+lastupdated: "2024-10-15"
 
 keywords: alb, application load balancer, vpc alb, dns, public lb, private lb
 
@@ -346,6 +346,9 @@ Review the required and optional VPC ALB annotations and specifications.
 :  The number of worker nodes per zone that the load balancer routes to. The default value is 8. For a cluster with worker nodes in three zones, this results in the the load balancer routing to 24 total worker nodes. The total number of worker nodes across all zones that the load balancer routes to cannot exceed 50. If the cluster has fewer than 50 worker nodes across all zones, specify 0 to route to all worker nodes in a zone. 
 
 
+`service.kubernetes.io/ibm-load-balancer-cloud-provider-vpc-security-group`
+:   Version 1.30 or later.
+:   A customer-managed security group to add to the VPC load balancer. If you do not want to use the [IBM-managed security group](/docs/openshift?topic=openshift-vpc-security-group-reference&interface=ui#vpc-sg-kube-lbaas-cluster-ID), specify a security group that you own and manage. This option removes the IBM-managed security group and replaces it with the security group you specify. Removing the annotation from an existing load balancer replaces the security group you added with the IBM-managed security group. You can add or remove this annotation at any time. You are responsible for managing your security group and keeping it up to date.
 
 `service.kubernetes.io/ibm-load-balancer-cloud-provider-vpc-allow-outbound-traffic`
 :   Available for clusters that run [Secure by Default](/docs/openshift?topic=openshift-vpc-security-group-reference). Annotation to create security groups for each IP address of an ALB associated with an external port that you specify. These rules are created in the cluster security group and automatically update if the VPC ALB IP address changes. Specify valid external ports in a comma-separated list, such as `80,443`. In this example, if each public ALB associated with each external port value has two IP addresses, one outbound rule is created per IP address for a total of 4 new rules. You can add or remove this annotation at any time.

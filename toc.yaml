@@ -208,6 +208,7 @@ toc:
               - vpc_lb_about.md
               - vpc_alb.md
               - vpc_nlb.md
+              - vpc_nlb_pp.md
               - vpc_lb_manage.md
           - topicgroup:
               label: Exposing apps with Ingress

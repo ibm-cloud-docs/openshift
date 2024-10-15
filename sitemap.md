@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2024
-lastupdated: "2024-10-10"
+lastupdated: "2024-10-15"
 
 
 keywords: openshift
@@ -4355,6 +4355,24 @@ subcollection: openshift
     * [Required annotations and specifications](/docs/openshift?topic=openshift-setup_vpc_nlb#vpc_nlb_annotations_req)
 
     * [Optional annotations and specifications](/docs/openshift?topic=openshift-setup_vpc_nlb#vpc_nlb_annotations_opt)
+
+[Setting up a Private Path Network Load Balancer for VPC](/docs/openshift?topic=openshift-setup_vpc_nlb_pp#setup_vpc_nlb_pp)
+
+* [Prerequisites](/docs/openshift?topic=openshift-setup_vpc_nlb_pp#vpc_nlb_pp_pre)
+
+* [Configuring the `LoadBalancer` service](/docs/openshift?topic=openshift-setup_vpc_nlb_pp#vpc_nlb_pp_config)
+
+* [Creating a Private Path service](/docs/openshift?topic=openshift-setup_vpc_nlb_pp#vpc_nlb_pp_setup)
+
+* [Setting up a Virtual Private Endpoint Gateway](/docs/openshift?topic=openshift-setup_vpc_nlb_pp#vpc_nlb_pp_vpe)
+
+* [Connecting to your apps through your VPE](/docs/openshift?topic=openshift-setup_vpc_nlb_pp#vpc_nlb_pp_vpe)
+
+* [Annotations and specifications](/docs/openshift?topic=openshift-setup_vpc_nlb_pp#vpc_nlb_pp_annotations)
+
+    * [Required annotations and specifications](/docs/openshift?topic=openshift-setup_vpc_nlb_pp#vpc_nlb_pp_annotations_req)
+
+    * [Optional annotations and specifications](/docs/openshift?topic=openshift-setup_vpc_nlb_pp#vpc_nlb_pp_annotations_opt)
 
 [Managing VPC load balancers](/docs/openshift?topic=openshift-vpclb_manage#vpclb_manage)
 
