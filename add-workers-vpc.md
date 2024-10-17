@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2024
-lastupdated: "2024-10-04"
+lastupdated: "2024-10-17"
 
 
 keywords: openshift, {{site.data.keyword.openshiftlong_notm}}, clusters, worker nodes, worker pools, add
@@ -38,7 +38,7 @@ Looking to add workers to Classic clusters? See [Adding worker nodes to Classic 
 You can add or reduce the number of worker nodes in your cluster by resizing an existing worker pool, regardless of whether the worker pool is in one zone or spread across multiple zones.
 {: shortdesc}
 
-Before you begin, make sure that you have the [**Operator** or **Administrator** IAM platform access role](/docs/openshift?topic=openshift-iam-platform-access-roles.
+Before you begin, make sure that you have the [**Operator** or **Administrator** IAM platform access role](/docs/openshift?topic=openshift-iam-platform-access-roles).
 
 To resize the worker pool, change the number of worker nodes that the worker pool deploys in each zone:
 

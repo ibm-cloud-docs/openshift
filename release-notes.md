@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2024
-lastupdated: "2024-10-15"
+lastupdated: "2024-10-17"
 
 
 keywords: kubernetes, release notes, openshift, {{site.data.keyword.openshiftlong_notm}}
@@ -30,6 +30,22 @@ Looking for {{site.data.keyword.cloud_notm}} status, platform announcements, sec
 
 ## October 2024
 {: #openshift-oct24}
+
+
+
+
+### 17 October 2024
+{: #openshift-oct1724}
+{: release-note}
+
+
+
+Red Hat Enterprise Linux 9 is now available for {{site.data.keyword.openshiftlong_notm}} clusters version 4.16 and later
+:   You can now create Classic or VPC clusters at version 4.16 or later that have Red Hat Enterprise Linux (RHEL) 9 worker nodes. To migrate existing workers to RHEL 9, see [Migrating to a new RHEL version](/docs/openshift?topic=openshift-rhel_migrate). To review operating system support by cluster version, see [{{site.data.keyword.openshiftlong_notm}} version information](/docs/openshift?topic=openshift-openshift_versions). To review a list of worker node flavors with RHEL 9 support, see [VPC flavors](/docs/openshift?topic=openshift-vpc-flavors) or [Classic flavors](/docs/openshift?topic=openshift-classic-flavors).
+
+
+
+
 
 
 
@@ -89,7 +105,6 @@ Static route add-on version patch update.
 ### 01 October 2024
 {: #openshift-oct0124}
 {: release-note}
-
 
 
 New! The {{site.data.keyword.cos_full_notm}} cluster add-on is available in Beta for allowlisted accounts.

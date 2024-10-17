@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2024
-lastupdated: "2024-10-07"
+lastupdated: "2024-10-17"
 
 
 keywords: kubernetes, clusters, worker nodes, worker pools, vpc-gen2, openshift, {{site.data.keyword.openshiftlong_notm}}
@@ -300,7 +300,7 @@ ibmcloud oc cluster create vpc-gen2 --name my_cluster --zone us-south-1 --flavor
 Example command for a VPC cluster with worker nodes that run the RHEL 9 operating system.
 
 ```sh
-ibmcloud oc cluster create vpc-gen2 --name my_cluster --zone us-south-1 --flavor b3c.4x16 --vpc_ID VPC-ID --subnet-id SUBNET-ID --operating-system REDHAT_8_64
+ibmcloud oc cluster create vpc-gen2 --name my_cluster --zone us-south-1 --flavor b3c.4x16 --vpc_ID VPC-ID --subnet-id SUBNET-ID --operating-system REDHAT_9_64
 ```
 {: pre}
 
@@ -313,7 +313,7 @@ ibmcloud oc cluster create vpc-gen2 --name <cluster_name> --zone us-south-1 --vp
 
 
 
-Example command to [add a zone](/docs/openshift?topic=openshift-add-workers-vpc#vpc_add_zone) to a multizone VPC cluster.
+Example command to add worker nodes by [adding a zone](/docs/openshift?topic=openshift-add-workers-vpc#vpc_add_zone) to a multizone VPC cluster.
 
 ```sh
 ibmcloud oc zone add vpc-gen2 --zone ZONE --cluster <cluster_name_or_ID> --worker-pool WORKER-POOL --subnet-id SUBNET-ID
@@ -363,7 +363,7 @@ Terraform on {{site.data.keyword.cloud_notm}} enables predictable and consistent
     vpc_id            = "<vpc_id>"
     flavor            = "bx2.16x64"
     worker_count      = "3"
-    operating_system  = "UBUNTU_20_64"
+    operating_system  = "REDHAT_8_64"
     kube_version      = "1.28.2"
     resource_group_id = "<resource_group_id>"
     zones {
@@ -431,9 +431,8 @@ Terraform on {{site.data.keyword.cloud_notm}} enables predictable and consistent
 ## Next steps for VPC clusters
 {: #cluster-create-vpc-next-steps}
 
-
-
+* [Add worker nodes](/docs/openshift?topic=openshift-add-workers-vpc&interface=cli).{: cli}
 * [Back up your internal image registry to {{site.data.keyword.cos_full_notm}}.](/docs/openshift?topic=openshift-registry#cos_image_registry)
-* Expose your apps with [public networking services](/docs/openshift?topic=openshift-cs_network_planning#openshift_routers) or [private networking services](/docs/openshift?topic=openshift-cs_network_planning#private_access). If you have multiple public clusters with exposed apps, consider connecting them with a [global load balancer](/docs/containers?topic=containers-strategy#plan_locations) for high availability. 
+* Expose your apps with [public networking services](/docs/openshift?topic=openshift-cs_network_planning#openshift_routers) or [private networking services](/docs/openshift?topic=openshift-cs_network_planning#private_access). If you have multiple public clusters with exposed apps, consider connecting them with a [global load balancer](/docs/openshift?topic=openshift-strategy) for high availability. 
 * Connect your cluster with services in private networks outside of your {{site.data.keyword.cloud_notm}} account or with resources in other VPCs by [setting up the {{site.data.keyword.vpc_short}} VPN](/docs/openshift?topic=openshift-vpc-vpnaas).
 * [Add rules to the security group for your worker nodes](/docs/openshift?topic=openshift-vpc-security-group-manage) to control ingress and egress traffic to your VPC subnets.

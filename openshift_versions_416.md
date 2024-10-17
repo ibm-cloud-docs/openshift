@@ -2,7 +2,7 @@
 
 copyright:
   years: 2024, 2024
-lastupdated: "2024-10-10"
+lastupdated: "2024-10-17"
 
 
 keywords: openshift, version, update, upgrade, 4.16, update openshift
@@ -115,3 +115,15 @@ Example output where the `Upgradeable` status is `False`.
 {: screen}
 
 If the `Upgradeable` status is `False`, the condition information provides instructions that must be followed before upgrading. For more information, see [Providing the administrator acknowledgment](https://docs.openshift.com/container-platform/4.16/updating/preparing_for_updates/updating-cluster-prepare.html#update-preparing-ack_updating-cluster-prepare){: external}.
+
+
+## RHEL 9
+{: #416_rhel9}
+
+RHEL 9 is available for Classic or VPC clusters that run version 4.16.
+
+You can provision a new cluster with RHEL 9 in the console by specifying the {[rhel_9]} operating system for your worker node flavor or [in the CLI](/docs/openshift?topic=openshift-kubernetes-service-cli#cli_cluster-create-vpc-gen2) by including the `--operating-system REDHAT_9_64` option when you run the `ibmcloud oc cluster create` command. 
+
+If you upgrade an existing cluster to version 4.16 and want your worker nodes to run RHEL 9, you must [follow the steps to migrate your worker nodes](/docs/openshift?topic=openshift-rhel_migrate).
+
+For more information on RHEL 9, see the [Red Hat OpenShift release notes](https://docs.redhat.com/en/documentation/red_hat_enterprise_linux/9/html/9.4_release_notes/index){: external}. 
