@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2024
-lastupdated: "2024-10-15"
+lastupdated: "2024-10-17"
 
 
 keywords: openshift
@@ -274,6 +274,10 @@ subcollection: openshift
 [Release notes](/docs/openshift?topic=openshift-openshift-relnotes#openshift-relnotes)
 
 * [October 2024](/docs/openshift?topic=openshift-openshift-relnotes#openshift-oct24)
+
+    * [17 October 2024](/docs/openshift?topic=openshift-openshift-relnotes#openshift-oct1724)
+
+        * Red Hat Enterprise Linux 9 is now available for {{site.data.keyword.openshiftlong_notm}} clusters version 4.16 and later
 
     * [09 October 2024](/docs/openshift?topic=openshift-openshift-relnotes#openshift-oct0924)
 
@@ -6358,6 +6362,8 @@ subcollection: openshift
 * [Update after master](/docs/openshift?topic=openshift-cs_versions_416#416_after)
 
 * [Checking the `Upgradeable` status of your cluster](/docs/openshift?topic=openshift-cs_versions_416#status-check-416)
+
+* [RHEL 9](/docs/openshift?topic=openshift-cs_versions_416#416_rhel9)
 
 [Version 4.16 change log](/docs/openshift?topic=openshift-openshift_changelog_416#openshift_changelog_416)
 
