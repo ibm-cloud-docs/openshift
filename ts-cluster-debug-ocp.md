@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2024
-lastupdated: "2024-05-10"
+lastupdated: "2024-10-21"
 
 
 keywords: openshift
@@ -37,7 +37,7 @@ Commonly used components include the following. If these components fail, review
 
 Check that your {{site.data.keyword.cloud_notm}} account is set up properly. Some common scenarios that can prevent the default components from running properly include the following:
 * If your classic cluster has multiple zones, or if you have a VPC cluster, make sure that you enable [VRF or VLAN spanning](/docs/openshift?topic=openshift-subnets#basics_segmentation). To check if VRF is already enabled, run `ibmcloud account show`. To check if VLAN spanning is enabled, run `ibmcloud oc vlan spanning get`.
-* If some users in the account use a multifactor authentication (MFA) such as [TOTP](/docs/account?topic=account-types), make sure that you [enable MFA](/docs/account?topic=account-enablemfa) for all users in the {{site.data.keyword.cloud_notm}} account. 
+* If some users in the account use a multifactor authentication (MFA) such as [TOTP](/docs/account?topic=account-enablemfa#add-auth-factors), make sure that you [enable MFA](/docs/account?topic=account-enablemfa) for all users in the {{site.data.keyword.cloud_notm}} account. 
 
 Enabling MFA at the user level is not supported. If MFA is enabled for some users but is not enabled for all users at the account level, authentication errors might occur. 
 {: important}
@@ -262,9 +262,3 @@ ibmcloud oc cluster master refresh -c <cluster_name_or_ID>
 Try to use the {{site.data.keyword.redhat_openshift_notm}} component again.
 
 If the error still exists, see [Feedback, questions, and support](/docs/openshift?topic=openshift-get-help).
-
-
-
-
-
-
