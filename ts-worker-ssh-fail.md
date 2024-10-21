@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2024
-lastupdated: "2024-09-23"
+lastupdated: "2024-10-21"
 
 
 keywords: kubernetes, openshift, help, network, connectivity
@@ -45,7 +45,7 @@ To get host access to worker nodes for debugging and troubleshooting purposes, r
 Use the `oc debug node` command to deploy a pod with a privileged `securityContext` to a worker node that you want to troubleshoot.
 {: shortdesc}
 
-The debug pod is deployed with an interactive shell so that you can access the worker node immediately after the pod is created. For more information about how the `oc debug node` command works, see [this {{site.data.keyword.redhat_notm}} blog post](https://www.redhat.com/sysadmin/how-oc-debug-works){: external}{: external}.
+The debug pod is deployed with an interactive shell so that you can access the worker node immediately after the pod is created. For more information about how the `oc debug node` command works, see [this {{site.data.keyword.redhat_notm}} blog post](https://www.redhat.com/en/blog/how-oc-debug-works){: external}{: external}.
 
 1. Get the name of the worker node that you want to access. For CoreOS worker nodes, the name is the hostname of the worker. For all other worker nodes, the worker node name is the private IP address.
     ```sh
