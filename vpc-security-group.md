@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2024
-lastupdated: "2024-10-10"
+lastupdated: "2024-10-22"
 
 
 keywords: openshift, {{site.data.keyword.openshiftlong_notm}}, kubernetes, firewall, acl, acls, access control list, rules, security group
@@ -100,7 +100,7 @@ Modifying the `kube-<vpcID>` security group is not recommended as doing so might
 By default, traffic rules for cluster workers are covered by the randomly named VPC security group and the `kube-<clusterID>` cluster security group. If you modify or replace either of these security groups, make sure the following traffic rules are still allowed. 
 {: shortdesc}
 
-If you have a VPC cluster that runs at version  or later, you might need to include [additional security group rules](#rules-sg-128). 
+If you have a VPC cluster that runs at version 4.14 or later, you might need to include [additional security group rules](#rules-sg-128). 
 {: important}
 
 #### Inbound rules

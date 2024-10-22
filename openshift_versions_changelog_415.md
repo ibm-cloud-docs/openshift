@@ -2,7 +2,7 @@
 
 copyright:
   years: 2023, 2024
-lastupdated: "2024-10-09"
+lastupdated: "2024-10-22"
 
 
 keywords: openshift, 4.15, update, upgrade, BOM, bill of materials, versions, patch
@@ -32,6 +32,20 @@ Check the [Security Bulletins on {{site.data.keyword.cloud_notm}} Status](https:
 
 Master patch updates are applied automatically. Worker node patch updates can be applied by reloading or updating the worker nodes. For more information about major, minor, and patch versions and preparation actions between minor versions, see [{{site.data.keyword.redhat_openshift_notm}} versions](/docs/openshift?topic=openshift-openshift_versions).
 {: tip}
+
+### Change log for worker node fix pack 4.15.36_1562_openshift, released 21 October 2024
+{: #41536_1562_openshift_W}
+
+The following table shows the changes that are in the worker node fix pack 4.15.36_1562_openshift. Worker node patch updates can be applied by updating, reloading (in classic infrastructure), or replacing (in VPC infrastructure) the worker node.
+{: shortdesc}
+
+| Component | Previous | Current | Description |
+| --- | --- | --- | --- |
+| RHEL 8 Packages | N/A| N/A | Package updates for [RHSA-2024:8038](https://access.redhat.com/errata/RHSA-2024:8038){: external}, [CVE-2023-45290](https://nvd.nist.gov/vuln/detail/CVE-2023-45290){: external}, [CVE-2024-34155](https://nvd.nist.gov/vuln/detail/CVE-2024-34155){: external}, [CVE-2024-34156](https://nvd.nist.gov/vuln/detail/CVE-2024-34156){: external}, [CVE-2024-34158](https://nvd.nist.gov/vuln/detail/CVE-2024-34158){: external}, [RHSA-2024:7848](https://access.redhat.com/errata/RHSA-2024:7848){: external}, [CVE-2024-5535](https://nvd.nist.gov/vuln/detail/CVE-2024-5535){: external}, [RHSA-2024:3043](https://access.redhat.com/errata/RHSA-2024:3043){: external}, [CVE-2024-0690](https://nvd.nist.gov/vuln/detail/CVE-2024-0690){: external}. |
+| {{site.data.keyword.openshiftshort}} and Red Hat CoreOS| 4.15.35 | 4.15.36 | For more information, see the [change logs](https://docs.openshift.com/container-platform/4.15/release_notes/ocp-4-15-release-notes.html#ocp-4-15-36_release-notes){: external}.|
+| Haproxy | 67d03375 | 88598691 | Security fixes for [CVE-2024-5535](https://nvd.nist.gov/vuln/detail/CVE-2024-5535){: external}. |
+{: caption="Changes since version 4.15.35_1561_openshift" caption-side="bottom"}
+
 
 ### Change log for worker node fix pack 4.15.35_1561_openshift, released 09 October 2024
 {: #41535_1561_openshift_W}

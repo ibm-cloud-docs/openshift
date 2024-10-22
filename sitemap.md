@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2024
-lastupdated: "2024-10-17"
+lastupdated: "2024-10-22"
 
 
 keywords: openshift
@@ -274,6 +274,10 @@ subcollection: openshift
 [Release notes](/docs/openshift?topic=openshift-openshift-relnotes#openshift-relnotes)
 
 * [October 2024](/docs/openshift?topic=openshift-openshift-relnotes#openshift-oct24)
+
+    * [21 October 2024](/docs/openshift?topic=openshift-openshift-relnotes#openshift-oct2124)
+
+        * {{site.data.keyword.openshiftlong_notm}} worker node fix packs are available.
 
     * [17 October 2024](/docs/openshift?topic=openshift-openshift-relnotes#openshift-oct1724)
 
@@ -3668,7 +3672,7 @@ subcollection: openshift
 {: #sitemap_controlling_network_traffic_in_vpc_clusters}
 
 
-[Understanding Secure by Default Cluster VPC Networking](/docs/openshift?topic=openshift-vpc-security-group-reference#vpc-security-group-reference)
+[Understanding secure by default Cluster VPC Networking](/docs/openshift?topic=openshift-vpc-security-group-reference#vpc-security-group-reference)
 
 * [Overview](/docs/openshift?topic=openshift-vpc-security-group-reference#sbd-overview)
 
@@ -3688,7 +3692,7 @@ subcollection: openshift
 
 [Managing outbound traffic protection in VPC clusters](/docs/openshift?topic=openshift-sbd-allow-outbound#sbd-allow-outbound)
 
-* [Disabling outbound traffic protection when creating a cluster](/docs/openshift?topic=openshift-sbd-allow-outbound#new-cluster-sbd)
+* [Disabling outbound traffic protection](/docs/openshift?topic=openshift-sbd-allow-outbound#new-cluster-sbd)
 
     * [Option 1: Disabling outbound traffic protection when you create a cluster](/docs/openshift?topic=openshift-sbd-allow-outbound#sbd-disable-1)
 
@@ -3758,7 +3762,7 @@ subcollection: openshift
 
     * [If you do not want to attach additional security groups to the worker pool](/docs/openshift?topic=openshift-vpc-security-group-manage#no-worker-sgs)
 
-    * [If you want to attach additional security groups to the worker pool](/docs/openshift?topic=openshift-vpc-security-group-manage#worker-sgs)
+    * [If you want to attach extra security groups to the worker pool](/docs/openshift?topic=openshift-vpc-security-group-manage#worker-sgs)
 
 * [Viewing security groups](/docs/openshift?topic=openshift-vpc-security-group-manage&interface=cli#vpc-sg-cli)
 
@@ -6369,6 +6373,8 @@ subcollection: openshift
 
 * [Overview](/docs/openshift?topic=openshift-openshift_changelog_416#openshift_changelog_overview_416)
 
+    * [Change log for worker node fix pack 4.16.17_1540_openshift, released 21 October 2024](/docs/openshift?topic=openshift-openshift_changelog_416#41617_1540_openshift_W)
+
     * [Change log for worker node fix pack 4.16.15_1539_openshift, released 09 October 2024](/docs/openshift?topic=openshift-openshift_changelog_416#41615_1539_openshift_W)
 
     * [Change log for master fix pack 4.16.10_1537_openshift, released 25 September 2024](/docs/openshift?topic=openshift-openshift_changelog_416#41610_1537_openshift_M)
@@ -6495,6 +6501,8 @@ subcollection: openshift
 [Version 4.15 change log](/docs/openshift?topic=openshift-openshift_changelog_415#openshift_changelog_415)
 
 * [Overview](/docs/openshift?topic=openshift-openshift_changelog_415#openshift_changelog_overview_415)
+
+    * [Change log for worker node fix pack 4.15.36_1562_openshift, released 21 October 2024](/docs/openshift?topic=openshift-openshift_changelog_415#41536_1562_openshift_W)
 
     * [Change log for worker node fix pack 4.15.35_1561_openshift, released 09 October 2024](/docs/openshift?topic=openshift-openshift_changelog_415#41535_1561_openshift_W)
 
@@ -6652,6 +6660,8 @@ subcollection: openshift
 [Version 4.14 change log](/docs/openshift?topic=openshift-openshift_changelog_414#openshift_changelog_414)
 
 * [Overview](/docs/openshift?topic=openshift-openshift_changelog_414#openshift_changelog_overview_414)
+
+    * [Change log for worker node fix pack 4.14.38_1584_openshift, released 21 October 2024](/docs/openshift?topic=openshift-openshift_changelog_414#41438_1584_openshift_W)
 
     * [Change log for worker node fix pack 4.14.38_1583_openshift, released 09 October 2024](/docs/openshift?topic=openshift-openshift_changelog_414#41438_1583_openshift_W)
 
@@ -6813,6 +6823,8 @@ subcollection: openshift
 [Version 4.13 change log](/docs/openshift?topic=openshift-openshift_changelog_413#openshift_changelog_413)
 
 * [Overview](/docs/openshift?topic=openshift-openshift_changelog_413#openshift_changelog_overview_413)
+
+    * [Change log for worker node fix pack 4.13.52_1594_openshift, released 21 October 2024](/docs/openshift?topic=openshift-openshift_changelog_413#41352_1594_openshift_W)
 
     * [Change log for worker node fix pack 4.13.51_1593_openshift, released 09 October 2024](/docs/openshift?topic=openshift-openshift_changelog_413#41351_1593_openshift_W)
 
@@ -7014,6 +7026,8 @@ subcollection: openshift
 [Version 4.12 change log](/docs/openshift?topic=openshift-openshift_changelog_412#openshift_changelog_412)
 
 * [Overview](/docs/openshift?topic=openshift-openshift_changelog_412#openshift_changelog_overview_412)
+
+    * [Change log for worker node fix pack 4.12.67_1613_openshift, released 21 October 2024](/docs/openshift?topic=openshift-openshift_changelog_412#41267_1613_openshift_W)
 
     * [Change log for worker node fix pack 4.12.66_1612_openshift, released 09 October 2024](/docs/openshift?topic=openshift-openshift_changelog_412#41266_1612_openshift_W)
 
