@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2024
-lastupdated: "2024-10-17"
+lastupdated: "2024-10-22"
 
 
 keywords: kubernetes, clusters, worker nodes, worker pools, vpc-gen2, openshift, {{site.data.keyword.openshiftlong_notm}}
@@ -282,10 +282,10 @@ ibmcloud oc cluster create vpc-gen2 --name my_cluster --version 4.16_openshift -
 {: pre}
 
 
-Example command to create a VPC cluster with 3 worker nodes in `us-east-1` with a custom pod subnet range and size.
+Example command to create a VPC cluster with 3 worker nodes in `us-east-1` with a custom pod subnet range and size and outbound traffic protection disabled.
 
 ```sh
-ibmcloud oc cluster create vpc-gen2 --name my_cluster --version 4.16_openshift --zone us-east-1 --vpc-id VPC-ID --subnet-id VPC-SUBNET-ID --cos-instance COS-CRN --flavor bx2.4x16 --workers 3 --pod-subnet 0.0.0.0/15
+ibmcloud oc cluster create vpc-gen2 --name my_cluster --version 4.16_openshift --zone us-east-1 --vpc-id VPC-ID --subnet-id VPC-SUBNET-ID --cos-instance COS-CRN --flavor bx2.4x16 --workers 3 --pod-subnet 0.0.0.0/15 --disable-outbound-traffic-protection
 ```
 {: pre}
 
@@ -297,10 +297,10 @@ ibmcloud oc cluster create vpc-gen2 --name my_cluster --zone us-south-1 --flavor
 {: pre}
 
 
-Example command for a VPC cluster with worker nodes that run the RHEL 9 operating system.
+Example command for a VPC cluster with worker nodes that run the RHEL 9 operating system and outbound traffic protection disabled. 
 
 ```sh
-ibmcloud oc cluster create vpc-gen2 --name my_cluster --zone us-south-1 --flavor b3c.4x16 --vpc_ID VPC-ID --subnet-id SUBNET-ID --operating-system REDHAT_9_64
+ibmcloud oc cluster create vpc-gen2 --name my_cluster --zone us-south-1 --flavor b3c.4x16 --vpc_ID VPC-ID --subnet-id SUBNET-ID --operating-system REDHAT_9_64 --disable-outbound-traffic-protection
 ```
 {: pre}
 
