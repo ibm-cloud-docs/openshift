@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2024
-lastupdated: "2024-10-17"
+lastupdated: "2024-10-22"
 
 
 keywords: openshift
@@ -3668,7 +3668,7 @@ subcollection: openshift
 {: #sitemap_controlling_network_traffic_in_vpc_clusters}
 
 
-[Understanding Secure by Default Cluster VPC Networking](/docs/openshift?topic=openshift-vpc-security-group-reference#vpc-security-group-reference)
+[Understanding secure by default Cluster VPC Networking](/docs/openshift?topic=openshift-vpc-security-group-reference#vpc-security-group-reference)
 
 * [Overview](/docs/openshift?topic=openshift-vpc-security-group-reference#sbd-overview)
 
@@ -3688,7 +3688,7 @@ subcollection: openshift
 
 [Managing outbound traffic protection in VPC clusters](/docs/openshift?topic=openshift-sbd-allow-outbound#sbd-allow-outbound)
 
-* [Disabling outbound traffic protection when creating a cluster](/docs/openshift?topic=openshift-sbd-allow-outbound#new-cluster-sbd)
+* [Disabling outbound traffic protection](/docs/openshift?topic=openshift-sbd-allow-outbound#new-cluster-sbd)
 
     * [Option 1: Disabling outbound traffic protection when you create a cluster](/docs/openshift?topic=openshift-sbd-allow-outbound#sbd-disable-1)
 
@@ -3758,7 +3758,7 @@ subcollection: openshift
 
     * [If you do not want to attach additional security groups to the worker pool](/docs/openshift?topic=openshift-vpc-security-group-manage#no-worker-sgs)
 
-    * [If you want to attach additional security groups to the worker pool](/docs/openshift?topic=openshift-vpc-security-group-manage#worker-sgs)
+    * [If you want to attach extra security groups to the worker pool](/docs/openshift?topic=openshift-vpc-security-group-manage#worker-sgs)
 
 * [Viewing security groups](/docs/openshift?topic=openshift-vpc-security-group-manage&interface=cli#vpc-sg-cli)
 

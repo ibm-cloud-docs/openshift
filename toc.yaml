@@ -144,7 +144,7 @@ toc:
           label: Controlling network traffic in VPC clusters
           topics:
           - vpc-security-group2.md
-          - sbd-allow-outbound.md
+          - vpc-sbd-allow-outbound.md
           - vpc-security-group.md
           - vpc-security-group-manage.md
           - vpc-acls.md
