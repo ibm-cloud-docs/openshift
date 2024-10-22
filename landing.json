@@ -44,12 +44,6 @@
         "description": "Find courses to guide you through using Red Hat OpenShift on IBM Cloud.",
         "href": "https://www.ibm.com/training/search?query=Red%20Hat%20OpenShift",
         "type": "training"
-      },
-      {
-        "title": "Community",
-        "description": "Find blogs, events, and resources for IBM Cloud.",
-        "href": "https://community.ibm.com/community/user/cloud/home",
-        "type": "training"
       }
     ],
     "section_devtools": {
