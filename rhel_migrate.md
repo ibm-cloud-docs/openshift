@@ -2,7 +2,7 @@
 
 copyright:
   years: 2022, 2024
-lastupdated: "2024-10-08"
+lastupdated: "2024-10-23"
 
 
 keywords: rhel, os, operating system
@@ -28,6 +28,8 @@ For more information on RHEL 9, see the [Red Hat OpenShift release notes](https:
 To find your worker node operating system, run the **`ibmcloud oc worker-pools -c CLUSTER`** command.
 {: tip}
 
+For RHEL 9, the `/tmp` directory is a separate partition that has the `nosuid`, `noexec`, and `nodev` options set. If your apps install to and run scripts or binaries under the `/tmp` directory, they might fail. Update your apps to use the `/var/tmp` directory instead of the `/tmp` directory to run temporary scripts or binaries.
+{: important}
 
 1. Review your worker pool operating systems to determine which pools you need to migrate.
     ```sh
