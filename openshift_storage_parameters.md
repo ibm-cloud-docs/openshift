@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2024
-lastupdated: "2024-10-22"
+lastupdated: "2024-10-23"
 
 
 keywords: openshift, openshift data foundation, openshift container storage, ocs
@@ -34,7 +34,7 @@ ibmcloud oc cluster addon options --addon openshift-data-foundation --version VE
 
 
 | Parameter | Description | Default | Editable after deployment |
-| --- | --- | --- |
+| --- | --- | --- | --- |
 | `name` | Specify a name for your resource that uses only lowercase letters, numbers, `-` or `.` | N/A | Yes |
 | `odfDeploy` | Specify `true` to deploy the ODF resources such as storage classes, PVCs, and PVs when you enable the add-on. When set to `false`, only the add-on is deployed and you must then configure your ODF resources later via YAML configuration files. | `false` | Yes |
 | `osdStorageClassName` | - [Classic]{: tag-classic-inf}: Specify `localblock`.  \n - [VPC]{: tag-vpc} Specify the name of the storage class that you want to use for your OSD devices. For multizone clusters, specify a metro storage class. For single zone clusters, Specify the name of the tiered storage class that you want to use. Example: `ibmc-vpc-block-10iops-tier`. | N/A | Yes |
