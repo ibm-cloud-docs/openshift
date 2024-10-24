@@ -92,7 +92,7 @@ keyword:
   openshift_416_deprecated: 'False'
   openshift_416_kube_version: '1.29'
   openshift_416_release_date: 30 August 2024
-  openshift_416_unsupported_certainty: 'tentative'
+  openshift_416_unsupported_certainty: tentative
   openshift_416_unsupported_date: 26 August 2026
   openshift_46_deprecated: 'True'
   openshift_46_kube_version: '1.19'
@@ -153,7 +153,7 @@ keyword:
   satellite_416_deprecated: 'False'
   satellite_416_kube_version: '1.29'
   satellite_416_release_date: 30 August 2024
-  satellite_416_unsupported_certainty: 'tentative'
+  satellite_416_unsupported_certainty: tentative
   satellite_416_unsupported_date: 26 August 2026
   satellite_46_deprecated: 'True'
   satellite_46_kube_version: '1.19'
