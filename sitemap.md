@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2024
-lastupdated: "2024-10-22"
+lastupdated: "2024-10-29"
 
 
 keywords: openshift
@@ -7255,6 +7255,8 @@ subcollection: openshift
 * [`cluster-autoscaler` 1.2.1](/docs/openshift?topic=openshift-supported-cluster-addon-versions#cluster-autoscaler-1.2.1)
 
 * [`cluster-autoscaler` 1.2.2](/docs/openshift?topic=openshift-supported-cluster-addon-versions#cluster-autoscaler-1.2.2)
+
+* [`cluster-autoscaler` 1.2.3](/docs/openshift?topic=openshift-supported-cluster-addon-versions#cluster-autoscaler-1.2.3)
 
 * [`csutil` 1.0.0](/docs/openshift?topic=openshift-supported-cluster-addon-versions#csutil-1.0.0)
 
