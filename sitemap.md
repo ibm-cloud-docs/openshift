@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2024
-lastupdated: "2024-10-22"
+lastupdated: "2024-10-29"
 
 
 keywords: openshift
@@ -274,6 +274,10 @@ subcollection: openshift
 [Release notes](/docs/openshift?topic=openshift-openshift-relnotes#openshift-relnotes)
 
 * [October 2024](/docs/openshift?topic=openshift-openshift-relnotes#openshift-oct24)
+
+    * [28 October 2024](/docs/openshift?topic=openshift-openshift-relnotes#openshift-oct2824)
+
+        * OpenShift Data Foundation cluster add-on patch updates.
 
     * [21 October 2024](/docs/openshift?topic=openshift-openshift-relnotes#openshift-oct2124)
 
@@ -7256,6 +7260,8 @@ subcollection: openshift
 
 * [`cluster-autoscaler` 1.2.2](/docs/openshift?topic=openshift-supported-cluster-addon-versions#cluster-autoscaler-1.2.2)
 
+* [`cluster-autoscaler` 1.2.3](/docs/openshift?topic=openshift-supported-cluster-addon-versions#cluster-autoscaler-1.2.3)
+
 * [`csutil` 1.0.0](/docs/openshift?topic=openshift-supported-cluster-addon-versions#csutil-1.0.0)
 
 * [`csutil-experimental` 1.0.0](/docs/openshift?topic=openshift-supported-cluster-addon-versions#csutil-experimental-1.0.0)
@@ -7882,7 +7888,13 @@ subcollection: openshift
 
 [OpenShift Data Foundation add-on change log](/docs/openshift?topic=openshift-odf_addon_changelog#odf_addon_changelog)
 
+* [Version 4.16](/docs/openshift?topic=openshift-odf_addon_changelog#4.16_odf)
+
+    * [Version 4.16.3, released 28 October 2024](/docs/openshift?topic=openshift-odf_addon_changelog#version-4163-released-28-october-2024)
+
 * [Version 4.15](/docs/openshift?topic=openshift-odf_addon_changelog#4.15_odf)
+
+    * [Version 4.15.6, released 28 October 2024](/docs/openshift?topic=openshift-odf_addon_changelog#4.15.6_odf)
 
     * [Version 4.15.4, released 03 August 2024](/docs/openshift?topic=openshift-odf_addon_changelog#4.15.5_odf)
 
