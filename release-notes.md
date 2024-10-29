@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2024
-lastupdated: "2024-10-22"
+lastupdated: "2024-10-29"
 
 
 keywords: kubernetes, release notes, openshift, {{site.data.keyword.openshiftlong_notm}}
@@ -30,6 +30,17 @@ Looking for {{site.data.keyword.cloud_notm}} status, platform announcements, sec
 
 ## October 2024
 {: #openshift-oct24}
+
+
+
+### 28 October 2024
+{: #openshift-oct2824}
+{: release-note}
+
+OpenShift Data Foundation cluster add-on patch updates.
+:   For more information, see the [change log](/docs/openshift?topic=openshift-odf_addon_changelog).
+
+
 
 ### 21 October 2024
 {: #openshift-oct2124}
