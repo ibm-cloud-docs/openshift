@@ -2,7 +2,7 @@
 
 copyright:
   years: 2023, 2024
-lastupdated: "2024-10-22"
+lastupdated: "2024-10-30"
 
 
 keywords: openshift, 4.12, update, upgrade, BOM, bill of materials, versions, patch
@@ -40,6 +40,28 @@ Check the [Security Bulletins on {{site.data.keyword.cloud_notm}} Status](https:
 Master patch updates are applied automatically. Worker node patch updates can be applied by reloading or updating the worker nodes. For more information about major, minor, and patch versions and preparation actions between minor versions, see [{{site.data.keyword.redhat_openshift_notm}} versions](/docs/openshift?topic=openshift-openshift_versions).
 {: tip}
 
+
+
+### Change log for master fix pack 4.12.67_1614_openshift, released 30 October 2024
+{: #41267_1614_openshift_M}
+
+The following table shows the changes that are in the master fix pack 4.12.67_1614_openshift. Master patch updates are applied automatically. 
+
+
+
+| Component | Previous | Current | Description |
+| --- | --- | --- | --- |
+| Cluster health image | v1.5.8 | v1.5.9 | New version contains updates and security fixes. |
+| etcd | v3.5.15 | v3.5.16 | See the [etcd release notes](https://github.com/coreos/etcd/releases/v3.5.16){: external}. |
+| {{site.data.keyword.filestorage_full_notm}} for Classic plug-in and monitor | 446 | 447 | New version contains updates and security fixes. |
+| {{site.data.keyword.cloud_notm}} RBAC Operator | 5b17dab | 77dac6b | New version contains updates and security fixes. |
+| Key Management Service provider | v2.8.14 | v2.8.16 | New version contains updates and security fixes. |
+| OpenVPN client | 2.6.11-r0-IKS-152 | 2.6.11-r0-IKS-155 | New version contains updates and security fixes. |
+| OpenVPN server | 2.6.11-r0-IKS-151 | 2.6.11-r0-IKS-154 | New version contains updates and security fixes. |
+| OpenVPN Operator image | v1.5.19 | v1.5.21 | New version contains updates and security fixes. |
+| Portieris admission controller | v0.13.18 | v0.13.20 | See the [Portieris admission controller release notes](https://github.com/{{site.data.keyword.IBM_notm}}/portieris/releases/tag/v0.13.20){: external}. |
+| {{site.data.keyword.openshiftlong_notm}}. | 4.12.64 | 4.12.67 | See the [{{site.data.keyword.openshiftlong_notm}} release notes](https://docs.openshift.com/container-platform/4.12/release_notes/ocp-4-12-release-notes.html#ocp-4-12-67){: external}. |
+{: caption="Changes since version 4.12.64_1609_openshift" caption-side="bottom"}
 
 
 ### Change log for worker node fix pack 4.12.67_1613_openshift, released 21 October 2024
