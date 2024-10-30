@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2022, 2024
-lastupdated: "2024-10-02"
+lastupdated: "2024-10-30"
 
 keywords: kubernetes, openshift
 
@@ -932,7 +932,7 @@ Review the following information about EIT.
 - By default, file shares are [encrypted at rest](/docs/vpc?topic=vpc-file-storage-vpc-about&interface=ui#FS-encryption) with IBM-managed encryption.
 - If you choose to use encryption in-transit, you need to balance your requirements between performance and enhanced security. Encrypting data in-transit can have performance impacts due to the processing that is needed to encrypt and decrypt the data at the endpoints. 
 - EIT is not available for Secure by Default clusters and requires you the disable outbound traffic protection in clusters 4.15 and later.
-- EIT is availabe for cluster versions 4.16 and later.
+- EIT is available for cluster versions 4.16 and later.
 - For more information about encryption in-transit, see [VPC Encryption in Transit](https://cloud.ibm.com/docs/vpc?topic=vpc-file-storage-vpc-about&interface=ui#fs-eit).
 
 

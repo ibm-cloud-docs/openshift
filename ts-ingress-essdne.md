@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2022, 2024
-lastupdated: "2024-01-03"
+lastupdated: "2024-10-30"
 
 
 keywords: openshift, essdne
@@ -43,7 +43,4 @@ If the secret is no longer needed, delete it. If the secret is still needed, rea
 - If the secret is still needed, run the **`ibmcloud oc ingress secret update`** command to reapply the secret to the cluster.
 
 
-If the issue persists, contact support. Open a [support case](/docs/get-support?topic=get-support-using-avatar). In the case details, be sure to include any relevant log files, error messages, or command outputs.
-
-
-
+If the issue persists, contact support. Open a [support case](/docs/account?topic=account-using-avatar). In the case details, be sure to include any relevant log files, error messages, or command outputs.

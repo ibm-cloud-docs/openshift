@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2024, 2024
-lastupdated: "2024-10-09"
+lastupdated: "2024-10-30"
 
 
 keywords: openshift, migration, block storage for vpc, snapshots
@@ -440,7 +440,7 @@ You can creating snapshots only when a volume is attached to a pod.
     ```
     {: pre}
 
-## Redploy your app
+## Redeploy your app
 {: #vpc-block-mig-snapshot-redeploy}
 {: step}
 

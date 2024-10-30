@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2022, 2024
-lastupdated: "2024-05-29"
+lastupdated: "2024-10-30"
 
 
 keywords: kubernetes, openshift, fsck, file system check
@@ -66,5 +66,4 @@ Run the following commands to patch the PV that the pod is mounting.
 
 1. Remove the `"ibm.io/autofix-fsckErr: true"` annotation from the PV and save it.
 
-1. If the issue persists, contact support. Open a [support case](/docs/get-support?topic=get-support-using-avatar). In the case details, be sure to include any relevant log files, error messages, or command outputs.
-
+1. If the issue persists, contact support. Open a [support case](/docs/account?topic=account-using-avatar). In the case details, be sure to include any relevant log files, error messages, or command outputs.

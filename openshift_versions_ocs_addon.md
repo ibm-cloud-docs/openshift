@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2024
-lastupdated: "2024-10-29"
+lastupdated: "2024-10-30"
 
 
 keywords: odf, openshift data foundation add-on, change log
@@ -38,6 +38,7 @@ ibmcloud oc cluster addon versions --addon openshift-data-foundation
 {: #4.16_odf}
 
 ### Version 4.16.3, released 28 October 2024
+{: #4.16.3_odf}
 
 - Resolves [CVE-2024-5535](https://nvd.nist.gov/vuln/detail/CVE-2024-5535){: external}.
 

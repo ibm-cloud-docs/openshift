@@ -2,7 +2,7 @@
 
 copyright:
   years: 2024, 2024
-lastupdated: "2024-05-07"
+lastupdated: "2024-10-30"
 
 
 keywords: openshift, {{site.data.keyword.openshiftlong_notm}}, etcd, capacity, database, limits
@@ -48,5 +48,4 @@ Identify the resources which are occupying space in the etcd database.
 
 1. After adjust the resource settings, clean up the resources to bring the size of the etcd database back down.
 
-1. If the issue persists, contact support. Open a [support case](/docs/get-support?topic=get-support-using-avatar). In the case details, be sure to include any relevant log files, error messages, or command outputs.
-
+1. If the issue persists, contact support. Open a [support case](/docs/account?topic=account-using-avatar). In the case details, be sure to include any relevant log files, error messages, or command outputs.

@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2023, 2024
-lastupdated: "2024-03-27"
+lastupdated: "2024-10-30"
 
 
 keywords: openshift, {{site.data.keyword.openshiftlong_notm}}, kubernetes, help, network, connectivity, target port, limited, alerts
@@ -42,8 +42,7 @@ If your PV shows a `limited` connectivity status, then only 1 target port was av
 
 1. Review that IBM Cloud status console for potential maintenance impacts. Do not reload or restart your deployments if your PVs have `limited` connectivity.
 
-1. If there is no ongoing maintenance, or if the issue persists, contact support. Open a [support case](/docs/get-support?topic=get-support-using-avatar). In the case details, be sure to include any relevant log files, error messages, or command outputs..
+1. If there is no ongoing maintenance, or if the issue persists, contact support. Open a [support case](/docs/account?topic=account-using-avatar). In the case details, be sure to include any relevant log files, error messages, or command outputs..
 
 You can also set up monitoring alerts for `limited` connected PVs. For more information, see [Setting up monitoring for `limited` connectivity PVs](/docs/openshift?topic=openshift-block_storage#storage-block-vpc-limited-monitoring).
 {: tip}
-

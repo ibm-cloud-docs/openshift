@@ -2,7 +2,7 @@
 
 copyright:
   years: 2023, 2024
-lastupdated: "2024-01-03"
+lastupdated: "2024-10-30"
 
 
 keywords: openshift, debug, cloud pak, daemson set, feature gates, failed to set
@@ -57,7 +57,7 @@ Review the following steps based on your target cluster version.
 
 1. After rebooting, continue to upgrade your worker nodes.
 
-1. If the issue persists, contact support. Open a [support case](/docs/get-support?topic=get-support-using-avatar). In the case details, be sure to include any relevant log files, error messages, or command outputs.
+1. If the issue persists, contact support. Open a [support case](/docs/account?topic=account-using-avatar). In the case details, be sure to include any relevant log files, error messages, or command outputs.
 
 ## Upgrading from 4.10 to 4.11
 {: #cdp-feature-gates-411}
@@ -82,5 +82,4 @@ Review the following steps based on your target cluster version.
 
 1. After rebooting, continue to upgrade your worker nodes.
 
-1. If the issue persists, contact support. Open a [support case](/docs/get-support?topic=get-support-using-avatar). In the case details, be sure to include any relevant log files, error messages, or command outputs.
-
+1. If the issue persists, contact support. Open a [support case](/docs/account?topic=account-using-avatar). In the case details, be sure to include any relevant log files, error messages, or command outputs.

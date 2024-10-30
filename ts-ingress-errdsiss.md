@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2022, 2024
-lastupdated: "2024-03-04"
+lastupdated: "2024-10-30"
 
 
 keywords: openshift, errdsiss, nlb dns
@@ -51,6 +51,4 @@ Check the `SSL Cert Status` of your managed domains and, if needed, regenerate t
     `rate_limited` status.
     :   Let's Encrypt refused to generate a new certificate for this domain. This usually happens when the cluster is deleted and recreated with the same name, or the **`ibmcloud oc nlb-dns secret regenerate`** command was invoked multiple times. The rate limit will expire after 7 days (there is no way to manually remove it). Certificate generation will be automatically attempted again after 7 days.
 1. Wait 10-15 minutes, then check if the warning is resolved.
-1. If the issue persists, contact support. Open a [support case](/docs/get-support?topic=get-support-using-avatar). In the case details, be sure to include any relevant log files, error messages, or command outputs.
-
-
+1. If the issue persists, contact support. Open a [support case](/docs/account?topic=account-using-avatar). In the case details, be sure to include any relevant log files, error messages, or command outputs.

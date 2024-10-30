@@ -2,7 +2,7 @@
 
 copyright:
   years: 2024, 2024
-lastupdated: "2024-10-09"
+lastupdated: "2024-10-30"
 
 
 keywords: kubernetes, openshift, object storage add-in, cos
@@ -28,7 +28,7 @@ Prerequisites
 {: #cos-addon-bucket-cd}
 
 
-- You can use an existing bucket by specifiying the bucket name in your PVC.
+- You can use an existing bucket by specifying the bucket name in your PVC.
 - If you provide a bucket name and that bucket doesn't exist, then a bucket with that name is created.
 - If you don't provide a bucket name, then a bucket with the naming convention `temp-xxx` is created.
 - Buckets are deleted based on reclaim policy defined in your storage class.
@@ -260,7 +260,7 @@ When the connection is lost between the `ibm-object-csi-driver` node server pods
     ```
     {: screen}
 
-1. If the issue persists, contact support. Open a [support case](/docs/get-support?topic=get-support-using-avatar). In the case details, be sure to include any relevant log files, error messages, or command outputs.
+1. If the issue persists, contact support. Open a [support case](/docs/account?topic=account-using-avatar). In the case details, be sure to include any relevant log files, error messages, or command outputs.
 
 
 ### Verifying recovery by simulating an error

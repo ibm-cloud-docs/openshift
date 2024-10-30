@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2023, 2024
-lastupdated: "2024-02-23"
+lastupdated: "2024-10-30"
 
 
 keywords: kubernetes, help, network, connectivity, openshift, esssmg
@@ -45,7 +45,4 @@ Review your service-to-service authorization policies and verify that communicat
     - To view and modify the secret groups available in your instance, see [Organizing your secrets](/docs/secrets-manager?topic=secrets-manager-secret-groups).
     - To update the secret group for your cluster, run the **`ibmcloud oc ingress instance default set`** command and specify the `--secret-group` option.
 
-1. If the issue persists, contact support. Open a [support case](/docs/get-support?topic=get-support-using-avatar). In the case details, be sure to include any relevant log files, error messages, or command outputs.
-
-
-
+1. If the issue persists, contact support. Open a [support case](/docs/account?topic=account-using-avatar). In the case details, be sure to include any relevant log files, error messages, or command outputs.

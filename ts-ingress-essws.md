@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2022, 2024
-lastupdated: "2024-01-03"
+lastupdated: "2024-10-30"
 
 
 keywords: openshift, essws
@@ -47,6 +47,4 @@ To view the specific error, run the **`ibmcloud oc ingress secret ls`** commands
 `Error namespace_not_found`
 :   The namespace for the secret is no longer found in the cluster. If you no longer need the secret for that namespace, you can remove it with the **`ibmcloud oc ingress secret rm`** command. Otherwise, recreate the namespace on the cluster.
 
-If the issue persists, contact support. Open a [support case](/docs/get-support?topic=get-support-using-avatar). In the case details, be sure to include any relevant log files, error messages, or command outputs.
-
-
+If the issue persists, contact support. Open a [support case](/docs/account?topic=account-using-avatar). In the case details, be sure to include any relevant log files, error messages, or command outputs.

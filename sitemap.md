@@ -4822,7 +4822,7 @@ subcollection: openshift
 
 * [Restore the snapshot in Account 2](/docs/openshift?topic=openshift-storage-block-vpc-migration#vpc-block-mig-snapshot-restore)
 
-* [Redploy your app](/docs/openshift?topic=openshift-storage-block-vpc-migration#vpc-block-mig-snapshot-redeploy)
+* [Redeploy your app](/docs/openshift?topic=openshift-storage-block-vpc-migration#vpc-block-mig-snapshot-redeploy)
 
 * [Continue migrating your snapshots and apps to Account 2](/docs/openshift?topic=openshift-storage-block-vpc-migration#vpc-block-mig-snapshot-next)
 
@@ -7904,7 +7904,7 @@ subcollection: openshift
 
 * [Version 4.16](/docs/openshift?topic=openshift-odf_addon_changelog#4.16_odf)
 
-    * [Version 4.16.3, released 28 October 2024](/docs/openshift?topic=openshift-odf_addon_changelog#version-4163-released-28-october-2024)
+    * [Version 4.16.3, released 28 October 2024](/docs/openshift?topic=openshift-odf_addon_changelog#4.16.3_odf)
 
 * [Version 4.15](/docs/openshift?topic=openshift-odf_addon_changelog#4.15_odf)
 
@@ -10185,17 +10185,39 @@ subcollection: openshift
 [OpenShift interactive learning portal](https://developers.redhat.com/learn){: external}
 
 
-## Viewing cloud status
-{: #sitemap_viewing_cloud_status}
+## Monitoring notifications and status
+{: #sitemap_monitoring_notifications_and_status}
 
 
-[Viewing cloud status](/docs/openshift?topic=openshift-viewing-cloud-status#viewing-cloud-status)
+[Monitoring notifications and status](/docs/openshift?topic=openshift-viewing-cloud-status#viewing-cloud-status)
+
+* [Viewing status](/docs/openshift?topic=openshift-viewing-cloud-status#view-status-page)
+
+* [Advanced status search](/docs/openshift?topic=openshift-viewing-cloud-status#adv-search)
+
+    * [URL query filters:](/docs/openshift?topic=openshift-viewing-cloud-status#url-query)
 
 * [Viewing the status of a dedicated multizone region (MZR)](/docs/openshift?topic=openshift-viewing-cloud-status#view-private-mzr)
 
 * [Subscribing to an RSS feed](/docs/openshift?topic=openshift-viewing-cloud-status#subscribing-rss-feed)
 
 * [Checking incident reports](/docs/openshift?topic=openshift-viewing-cloud-status#status-incident-report)
+
+* [Viewing notifications](/docs/openshift?topic=openshift-viewing-cloud-status#viewing-notifications)
+
+    * [Notification types](/docs/openshift?topic=openshift-viewing-cloud-status#notification-types)
+
+* [Subscribing to email notifications](/docs/openshift?topic=openshift-viewing-cloud-status#subscribe-email-notifications)
+
+* [Checking the delivery status of email notifications and viewing email history](/docs/openshift?topic=openshift-viewing-cloud-status#view-email-history)
+
+* [Getting advanced notice for disruptive maintenance](/docs/openshift?topic=openshift-viewing-cloud-status#disruptive-maintenance)
+
+    * [Iaas](/docs/openshift?topic=openshift-viewing-cloud-status#iaas)
+
+    * [PaaS](/docs/openshift?topic=openshift-viewing-cloud-status#paas)
+
+    * [SaaS](/docs/openshift?topic=openshift-viewing-cloud-status#saas)
 
 
 ## FAQs
