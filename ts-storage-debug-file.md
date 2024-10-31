@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2024
-lastupdated: "2024-06-24"
+lastupdated: "2024-10-31"
 
 
 keywords: file, debug, help
@@ -214,15 +214,11 @@ If you use a `oc` CLI version that does not match at least the major.minor versi
 
     Example output:
     ```sh
-    Client Version: version.Info{Major:"1", Minor:"23", GitVersion:"v1.30", GitCommit:"641856db18352033a0d96dbc99153fa3b27298e5", GitTreeState:"clean", BuildDate:"2019-03-25T15:53:57Z", GoVersion:"go1.12.1", Compiler:"gc", Platform:"darwin/amd64"}
-    Server Version: version.Info{Major:"1", Minor:"23", GitVersion:"v1.30+IKS", GitCommit:"e15454c2216a73b59e9a059fd2def4e6712a7cf0", GitTreeState:"clean", BuildDate:"2019-04-01T10:08:07Z", GoVersion:"go1.11.5", Compiler:"gc", Platform:"linux/amd64"}
+    Client Version: version.Info{Major:"1", Minor:"23", GitVersion:"v1.31", GitCommit:"641856db18352033a0d96dbc99153fa3b27298e5", GitTreeState:"clean", BuildDate:"2019-03-25T15:53:57Z", GoVersion:"go1.12.1", Compiler:"gc", Platform:"darwin/amd64"}
+    Server Version: version.Info{Major:"1", Minor:"23", GitVersion:"v1.31+IKS", GitCommit:"e15454c2216a73b59e9a059fd2def4e6712a7cf0", GitTreeState:"clean", BuildDate:"2019-04-01T10:08:07Z", GoVersion:"go1.11.5", Compiler:"gc", Platform:"linux/amd64"}
     ```   
     {: screen}
 
     The CLI versions match if you can see the same version in `GitVersion` for the client and the server. You can ignore the `+IKS` part of the version for the server.
 
 2. If the `oc` CLI versions on your local machine and your cluster don't match, either update your cluster or [install a different CLI version on your local machine](/docs/openshift?topic=openshift-cli-install).
-
-
-
-

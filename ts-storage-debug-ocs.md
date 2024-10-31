@@ -1,7 +1,7 @@
 ---
 copyright:
   years: 2014, 2024
-lastupdated: "2024-06-24"
+lastupdated: "2024-10-31"
 
 
 keywords: openshift, file, debug, help
@@ -159,8 +159,8 @@ If you use a `oc` CLI version that does not match at least the major.minor versi
 
     Example output:
     ```sh
-    Client Version: version.Info{Major:"1", Minor:"23", GitVersion:"v1.30", GitCommit:"641856db18352033a0d96dbc99153fa3b27298e5", GitTreeState:"clean", BuildDate:"2019-03-25T15:53:57Z", GoVersion:"go1.12.1", Compiler:"gc", Platform:"darwin/amd64"}
-    Server Version: version.Info{Major:"1", Minor:"23", GitVersion:"v1.30+IKS", GitCommit:"e15454c2216a73b59e9a059fd2def4e6712a7cf0", GitTreeState:"clean", BuildDate:"2019-04-01T10:08:07Z", GoVersion:"go1.11.5", Compiler:"gc", Platform:"linux/amd64"}
+    Client Version: version.Info{Major:"1", Minor:"23", GitVersion:"v1.31", GitCommit:"641856db18352033a0d96dbc99153fa3b27298e5", GitTreeState:"clean", BuildDate:"2019-03-25T15:53:57Z", GoVersion:"go1.12.1", Compiler:"gc", Platform:"darwin/amd64"}
+    Server Version: version.Info{Major:"1", Minor:"23", GitVersion:"v1.31+IKS", GitCommit:"e15454c2216a73b59e9a059fd2def4e6712a7cf0", GitTreeState:"clean", BuildDate:"2019-04-01T10:08:07Z", GoVersion:"go1.11.5", Compiler:"gc", Platform:"linux/amd64"}
     ```   
     {: screen}
 
@@ -269,4 +269,3 @@ Describe your ODF resources and review the command outputs for any error message
 
 
 1. [Review the troubleshooting documentation for steps to solve common errors](/docs/openshift?topic=openshift-sitemap#sitemap_openshift_data_foundation). 
-
