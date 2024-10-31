@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2022, 2024
-lastupdated: "2024-10-29"
+lastupdated: "2024-10-31"
 
 keywords: openshift, add-ons, cluster addon
 
@@ -39,15 +39,6 @@ Review the following list of supported cluster add-ons. Each add-on version can 
 
 
 
-## `cluster-autoscaler` 1.2.0 
-{: #cluster-autoscaler-1.2.0}
-
-- Supported Kubernetes cluster versions: `>=1.24.0 <1.29.0`
-
-- Supported OpenShift cluster versions: `>=4.10.0 <4.16.0`
-
-
-
 ## `cluster-autoscaler` 1.2.1 
 {: #cluster-autoscaler-1.2.1}
 
@@ -78,7 +69,7 @@ Review the following list of supported cluster add-ons. Each add-on version can 
 ## `csutil` 1.0.0 
 {: #csutil-1.0.0}
 
-- Supported Kubernetes cluster versions: `>=1.20.0 <1.32.0`
+- Supported Kubernetes cluster versions: `>=1.20.0 <1.33.0`
 
 - Supported OpenShift cluster versions: `>=4.6.0 <4.18.0`
 
@@ -87,7 +78,7 @@ Review the following list of supported cluster add-ons. Each add-on version can 
 ## `csutil-experimental` 1.0.0 
 {: #csutil-experimental-1.0.0}
 
-- Supported Kubernetes cluster versions: `>=1.20.0 <1.32.0`
+- Supported Kubernetes cluster versions: `>=1.20.0 <1.33.0`
 
 - Supported OpenShift cluster versions: `>=4.6.0 <4.18.0`
 
@@ -107,7 +98,7 @@ Review the following list of supported cluster add-ons. Each add-on version can 
 
 - Supported Kubernetes cluster versions: `>=1.30.0 <1.32.0`
 
-- Supported OpenShift cluster versions: `>=4.15.0 <4.17.0`
+- Supported OpenShift cluster versions: `>=4.15.0 <4.18.0`
 
 
 
@@ -206,7 +197,7 @@ Review the following list of supported cluster add-ons. Each add-on version can 
 
 - Supported Kubernetes cluster versions: `>=1.22.0 <1.32.0`
 
-- Supported OpenShift cluster versions: `>=4.9.0 <4.17.0`
+- Supported OpenShift cluster versions: `>=4.9.0 <4.18.0`
 
 
 
@@ -215,7 +206,7 @@ Review the following list of supported cluster add-ons. Each add-on version can 
 
 - Supported Kubernetes cluster versions: `>=1.25.0 <1.32.0`
 
-- Supported OpenShift cluster versions: `>=4.10.0 <4.17.0`
+- Supported OpenShift cluster versions: `>=4.10.0 <4.18.0`
 
 
 
@@ -224,7 +215,7 @@ Review the following list of supported cluster add-ons. Each add-on version can 
 
 - Supported Kubernetes cluster versions: `>=1.24.0 <1.32.0`
 
-- Supported OpenShift cluster versions: `>=4.10.0 <4.17.0`
+- Supported OpenShift cluster versions: `>=4.10.0 <4.18.0`
 
 
 
@@ -233,4 +224,4 @@ Review the following list of supported cluster add-ons. Each add-on version can 
 
 - Supported Kubernetes cluster versions: `>=1.30.0 <1.32.0`
 
-- Supported OpenShift cluster versions: `>=4.15.0 <4.17.0`
+- Supported OpenShift cluster versions: `>=4.15.0 <4.18.0`

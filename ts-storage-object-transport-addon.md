@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2024, 2024
-lastupdated: "2024-10-01"
+lastupdated: "2024-10-30"
 
 
 keywords: openshift, {{site.data.keyword.openshiftlong_notm}}, kubernetes, help, network, connectivity
@@ -82,7 +82,7 @@ The `ibm-object-csi-driver` supports auto-recovery of volumes which have lost co
     ```
     {: screen}
 
-1. If the issue persists, contact support. Open a [support case](/docs/get-support?topic=get-support-using-avatar). In the case details, be sure to include any relevant log files, error messages, or command outputs.
+1. If the issue persists, contact support. Open a [support case](/docs/account?topic=account-using-avatar). In the case details, be sure to include any relevant log files, error messages, or command outputs.
 
 
 ## Verifying recovery by simulating an error
@@ -174,4 +174,3 @@ The `ibm-object-csi-driver` supports auto-recovery of volumes which have lost co
     2024-07-10T17:25:39Z	INFO	recoverstalevolume_controller	Pod deleted.	{"Request.Namespace": "default", "Request.Name": "recoverstalevolume-sample"}
     ```
     {: pre}
-

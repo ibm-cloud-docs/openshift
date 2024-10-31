@@ -2,7 +2,7 @@
 
 copyright:
   years: 2022, 2024
-lastupdated: "2024-05-29"
+lastupdated: "2024-10-30"
 
 
 keywords: openshift, ingress, troubleshoot ingress, ingress operator, ingress cluster operator, ingress operator degraded, erriodeg
@@ -94,7 +94,4 @@ oc get clusteroperator ingress
 
 1. Wait 30 minutes, then run the `oc get clusteroperator ingress` command and check the `MESSAGE` column again.
 1. If you see a different error message repeat the troubleshooting steps.
-1. If the issue persists, contact support. Open a [support case](/docs/get-support?topic=get-support-using-avatar). In the case details, be sure to include any relevant log files, error messages, or command outputs.
-
-
-
+1. If the issue persists, contact support. Open a [support case](/docs/account?topic=account-using-avatar). In the case details, be sure to include any relevant log files, error messages, or command outputs.

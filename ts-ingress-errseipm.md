@@ -2,7 +2,7 @@
 
 copyright:
   years: 2022, 2024
-lastupdated: "2024-03-04"
+lastupdated: "2024-10-30"
 
 
 keywords: openshift, ingress, troubleshoot ingress, ingress operator, ingress cluster operator, missing ip addresses, errseipm
@@ -59,6 +59,4 @@ Add the worker IP addresses to the external Ingress service.
 
 1. Wait 10 to 15 minutes, then check if the warning is resolved by running the `ibmcloud oc ingress status-report get` command.
 
-1. If the issue persists, contact support. Open a [support case](/docs/get-support?topic=get-support-using-avatar). In the case details, be sure to include any relevant log files, error messages, or command outputs.
-
-
+1. If the issue persists, contact support. Open a [support case](/docs/account?topic=account-using-avatar). In the case details, be sure to include any relevant log files, error messages, or command outputs.

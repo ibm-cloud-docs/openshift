@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2024
-lastupdated: "2024-10-10"
+lastupdated: "2024-10-30"
 
 
 keywords: openshift dedicated hosts
@@ -58,5 +58,5 @@ Is my data removed when I remove the cluster?
 What options do I have to permanently remove my data?
 :   To remove that data that IBM stores, choose between the following options. Note that removing your personal and sensitive information requires all your clusters to be deleted as well. Make sure that you backed up your app data before your proceed.
 
-- **Open an {{site.data.keyword.cloud_notm}} support case**: Contact IBM Support to remove your personal and sensitive information from {{site.data.keyword.openshiftlong_notm}}. For more information, see [Getting support](/docs/get-support?topic=get-support-using-avatar).
+- **Open an {{site.data.keyword.cloud_notm}} support case**: Contact IBM Support to remove your personal and sensitive information from {{site.data.keyword.openshiftlong_notm}}. For more information, see [Getting support](/docs/account?topic=account-using-avatar).
 - **End your {{site.data.keyword.cloud_notm}} subscription**: After you end your {{site.data.keyword.cloud_notm}} subscription, {{site.data.keyword.openshiftlong_notm}} removes the customer root key in {{site.data.keyword.keymanagementservicelong_notm}} that IBM created and managed for you as well as all the personal and sensitive information from the etcd data store and {{site.data.keyword.cos_short}} backup.

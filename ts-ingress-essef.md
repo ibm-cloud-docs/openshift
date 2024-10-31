@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2022, 2024
-lastupdated: "2024-01-03"
+lastupdated: "2024-10-30"
 
 
 keywords: openshift, essef
@@ -57,7 +57,4 @@ Review the secrets in your cluster and update or remove them.
 
 1. If the secret in the secret field is expiring because it is no longer needed, run the **`ibmcloud oc ingress secret field rm`** command to remove it.
 
-1. If the issue persists, contact support. Open a [support case](/docs/get-support?topic=get-support-using-avatar). In the case details, be sure to include any relevant log files, error messages, or command outputs.
-
-
-
+1. If the issue persists, contact support. Open a [support case](/docs/account?topic=account-using-avatar). In the case details, be sure to include any relevant log files, error messages, or command outputs.

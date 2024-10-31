@@ -2,7 +2,7 @@
 
 copyright:
   years: 2022, 2024
-lastupdated: "2024-07-23"
+lastupdated: "2024-10-30"
 
 
 keywords: openshift, ingress, troubleshoot ingress, ingress operator, ingress cluster operator, ingress operator missing
@@ -71,6 +71,4 @@ Verify that the `ingress` ClusterOperator resource exists in your cluster.
     {: pre}
     
     
-1. After you refresh your cluster master, wait 10 to 15 minutes and then check the Ingress Operator status again by running the **`oc get clusteroperator ingress`** command. If the resource is still not created or is in a degraded state, contact support. Open a [support case](/docs/get-support?topic=get-support-using-avatar). In the case details, be sure to include any relevant log files, error messages, or command outputs.
-
-
+1. After you refresh your cluster master, wait 10 to 15 minutes and then check the Ingress Operator status again by running the **`oc get clusteroperator ingress`** command. If the resource is still not created or is in a degraded state, contact support. Open a [support case](/docs/account?topic=account-using-avatar). In the case details, be sure to include any relevant log files, error messages, or command outputs.

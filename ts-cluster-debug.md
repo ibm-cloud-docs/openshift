@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2024
-lastupdated: "2024-08-19"
+lastupdated: "2024-10-30"
 
 
 keywords: openshift, {{site.data.keyword.openshiftlong_notm}}, troubleshooting apps, app debugging, application troublshooting in clusters
@@ -116,16 +116,10 @@ Once you know the app flow, the specific error you are seeing, and where that er
     * If you are an external user, post in the [#openshift](https://ibm-cloud-success.slack.com/messages/CKCJLJCH4){: external}{: external} channel. 
 1. Review forums such as {{site.data.keyword.redhat_openshift_notm}} help or Stack Overflow to see whether other users ran into the same issue. When you use the forums to ask a question, tag your question so that it is seen by the {{site.data.keyword.cloud_notm}} development teams.
     * If you have technical questions about developing or deploying clusters or apps with {{site.data.keyword.openshiftlong_notm}}, post your question on [Stack Overflow](https://stackoverflow.com/questions/tagged/ibm-cloud+containers){: external} and tag your question with `ibm-cloud`, `openshift`,  and `containers`.
-    * See [Getting help](/docs/get-support?topic=get-support-using-avatar) for more details about using the forums.
+    * See [Getting help](/docs/account?topic=account-using-avatar) for more details about using the forums.
 
 
 ## Next steps
 {: #advanced-ts-next}
 
-If the issue persists, contact support. Open a [support case](/docs/get-support?topic=get-support-using-avatar). In the case details, be sure to include any relevant log files, error messages, or command outputs.
-
-
-
-
-
-
+If the issue persists, contact support. Open a [support case](/docs/account?topic=account-using-avatar). In the case details, be sure to include any relevant log files, error messages, or command outputs.

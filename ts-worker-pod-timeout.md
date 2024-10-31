@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2024
-lastupdated: "2024-07-23"
+lastupdated: "2024-10-31"
 
 
 keywords: kubernetes, help, network, connectivity, openshift
@@ -45,8 +45,8 @@ Manually update the reference of the private IP address to point to the correct 
 
     ```txt
     ID                                                 Public IP       Private IP       Machine Type   State     Status   Zone   Version
-    kube-dal10-cr9b7371a7fcbe46d08e04f046d5e6d8b4-w1   169.xx.xxx.xxx  10.xxx.xx.xxx    b3c.4x16       normal    Ready    dal10      1.30
-    kube-dal10-cr9b7371a7fcbe46d08e04f046d5e6d8b4-w2   169.xx.xxx.xxx  10.xxx.xx.xxx    b3c.4x16       deleted    -       dal10      1.30
+    kube-dal10-cr9b7371a7fcbe46d08e04f046d5e6d8b4-w1   169.xx.xxx.xxx  10.xxx.xx.xxx    b3c.4x16       normal    Ready    dal10      1.31
+    kube-dal10-cr9b7371a7fcbe46d08e04f046d5e6d8b4-w2   169.xx.xxx.xxx  10.xxx.xx.xxx    b3c.4x16       deleted    -       dal10      1.31
     ```
     {: screen}
 
@@ -81,6 +81,3 @@ Manually update the reference of the private IP address to point to the correct 
 
 
 The deleted node is no longer listed in Calico.
-
-
-

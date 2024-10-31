@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2024, 2024
-lastupdated: "2024-05-29"
+lastupdated: "2024-10-30"
 
 
 keywords: openshift, {{site.data.keyword.openshiftlong_notm}}, secure by default, {{site.data.keyword.openshiftlong_notm}}, outbound traffic protection, cluster create, quotas, limitations, rules, security groups
@@ -100,7 +100,7 @@ After reviewing the logging messages, complete the steps in the following sectio
     ```
     {: pre}
 
-1. If you can't delete the security groups, any new clusters must be created in a different VPC. Alternatively, a ticket can be opened against the account to request a quota increase. Open a [support case](/docs/get-support?topic=get-support-using-avatar). In the case details, be sure to include any relevant log files, error messages, or command outputs.
+1. If you can't delete the security groups, any new clusters must be created in a different VPC. Alternatively, a ticket can be opened against the account to request a quota increase. Open a [support case](/docs/account?topic=account-using-avatar). In the case details, be sure to include any relevant log files, error messages, or command outputs.
 
 
 ## If you exceeded the number of remote rules per security group
@@ -109,5 +109,3 @@ After reviewing the logging messages, complete the steps in the following sectio
 This failure is most likely happened when the shared VPE gateway security group (`kube-vpegw-<VPC-ID>`) was being modified. This security group contains a remote rule to every cluster in the VPC, and the number of remote rules on a security group is limited. Which means this limits the number of clusters that can be created in a VPC.
 
 Review the [VPC security group quotas](/docs/vpc?topic=vpc-quotas#security-group-quotas). Any clusters that are no longer needed should be removed, and a master refresh can be run on the new cluster.  If clusters cannot be deleted, the new cluster must be created on a different VPC.
-
-

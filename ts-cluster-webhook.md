@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2024
-lastupdated: "2024-10-04"
+lastupdated: "2024-10-30"
 
 
 keywords: kubernetes, openshift
@@ -165,4 +165,4 @@ Run the following commands to create a test pod to get an error that identifies 
 1. Re-create the webhook or reinstall the add-on.
 
 
-1. If the issue persists, contact support. Open a [support case](/docs/get-support?topic=get-support-using-avatar). In the case details, be sure to include any relevant log files, error messages, or command outputs.
+1. If the issue persists, contact support. Open a [support case](/docs/account?topic=account-using-avatar). In the case details, be sure to include any relevant log files, error messages, or command outputs.

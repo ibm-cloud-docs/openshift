@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2024
-lastupdated: "2024-10-10"
+lastupdated: "2024-10-30"
 
 
 keywords: openshift, reservations, worker node
@@ -77,7 +77,7 @@ Can I convert existing worker nodes to reserved worker nodes to save money?
 :   No. Instead, you can create reservations and contracts for the worker nodes in your clusters. Then, create worker pools in your existing clusters that use the reserved worker nodes. Consider using labels to reschedule your existing workloads to the new reserved worker pools. Then, delete your old, on demand worker pools.
 
 How do reservations impact quotas?
-:   By default, {{site.data.keyword.openshiftlong_notm}} sets a certain quota limit on the number of worker nodes that you can have across all clusters in a region. Contracts that exceed the worker node quota are blocked from creating. You can try a different region or increase the quota. If you need more of the resource, [contact IBM Support](/docs/get-support?topic=get-support-using-avatar). In the support case, include the new quota limit for the region and infrastructure provider that you want. After the quota is increased, you can create a contract.
+:   By default, {{site.data.keyword.openshiftlong_notm}} sets a certain quota limit on the number of worker nodes that you can have across all clusters in a region. Contracts that exceed the worker node quota are blocked from creating. You can try a different region or increase the quota. If you need more of the resource, [contact IBM Support](/docs/account?topic=account-using-avatar). In the support case, include the new quota limit for the region and infrastructure provider that you want. After the quota is increased, you can create a contract.
 
 What happens when my contract ends? Are my worker nodes deleted?
 :   When a contract ends, your reservation is checked for extra capacity from other contracts. If you have more worker nodes than capacity, the worker nodes that exceed the reservation's total capacity are deleted.
