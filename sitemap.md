@@ -279,6 +279,8 @@ subcollection: openshift
 
         * {{site.data.keyword.openshiftlong_notm}} master fix packs.
 
+        * IBM Cloud Image Key Synchronizer cluster add-on patch updates.
+
     * [28 October 2024](/docs/openshift?topic=openshift-openshift-relnotes#openshift-oct2824)
 
         * OpenShift Data Foundation cluster add-on patch updates.
@@ -8281,6 +8283,8 @@ subcollection: openshift
 [IBM Cloud Image Key Synchronizer add-on version change log](/docs/openshift?topic=openshift-cl-add-ons-ibm-cloud-image-key-synchronizer#cl-add-ons-ibm-cloud-image-key-synchronizer)
 
 * [Version 1.0.0](/docs/openshift?topic=openshift-cl-add-ons-ibm-cloud-image-key-synchronizer#cl-add-ons-ibm-cloud-image-key-synchronizer-1.0.0)
+
+    * [1.0.0_2450, released 30 October 2024](/docs/openshift?topic=openshift-cl-add-ons-ibm-cloud-image-key-synchronizer#cl-add-ons-ibm-cloud-image-key-synchronizer-100_2450)
 
     * [1.0.0_2382, released 04 September 2024](/docs/openshift?topic=openshift-cl-add-ons-ibm-cloud-image-key-synchronizer#cl-add-ons-ibm-cloud-image-key-synchronizer-100_2382)
 

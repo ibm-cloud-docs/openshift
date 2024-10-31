@@ -3,7 +3,7 @@
 copyright:
   years: 2024, 2024
 
-lastupdated: "2024-09-24"
+lastupdated: "2024-10-31"
 
 
 keywords: change log, version history, IBM Cloud Image Key Synchronizer
@@ -23,6 +23,10 @@ Review the version history for IBM Cloud Image Key Synchronizer.
 
 ## Version 1.0.0
 {: #cl-add-ons-ibm-cloud-image-key-synchronizer-1.0.0}
+
+
+### 1.0.0_2450, released 30 October 2024
+{: #cl-add-ons-ibm-cloud-image-key-synchronizer-100_2450}
 
 
 ### 1.0.0_2382, released 04 September 2024
