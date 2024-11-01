@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2024
-lastupdated: "2024-10-31"
+lastupdated: "2024-11-01"
 
 
 keywords: openshift
@@ -10187,39 +10187,29 @@ subcollection: openshift
 [OpenShift interactive learning portal](https://developers.redhat.com/learn){: external}
 
 
-## Monitoring notifications and status
-{: #sitemap_monitoring_notifications_and_status}
+## Monitoring status
+{: #sitemap_monitoring_status}
 
 
-[Monitoring notifications and status](/docs/openshift?topic=openshift-viewing-cloud-status#viewing-cloud-status)
+[Monitoring status](/docs/openshift?topic=openshift-best-practices#best-practices)
 
-* [Viewing status](/docs/openshift?topic=openshift-viewing-cloud-status#view-status-page)
+* [Check for upcoming maintenance windows](/docs/openshift?topic=openshift-best-practices#monbp-checmaintwin)
 
-* [Advanced status search](/docs/openshift?topic=openshift-viewing-cloud-status#adv-search)
+* [Check for current maintenance windows or an incident in progress](/docs/openshift?topic=openshift-best-practices#monbp-checcurmaninprog)
 
-    * [URL query filters:](/docs/openshift?topic=openshift-viewing-cloud-status#url-query)
+* [Take advantage of multiple {{site.data.keyword.Bluemix_notm}} locations](/docs/openshift?topic=openshift-best-practices#monbp-multpreg)
 
-* [Viewing the status of a dedicated multizone region (MZR)](/docs/openshift?topic=openshift-viewing-cloud-status#view-private-mzr)
+* [Subscribing to email notifications](/docs/openshift?topic=openshift-best-practices#monbp-subscribing)
 
-* [Subscribing to an RSS feed](/docs/openshift?topic=openshift-viewing-cloud-status#subscribing-rss-feed)
+* [Viewing cloud status](/docs/openshift?topic=openshift-best-practices#viewing-cloud-status)
 
-* [Checking incident reports](/docs/openshift?topic=openshift-viewing-cloud-status#status-incident-report)
+    * [Viewing the status of a dedicated multizone region (MZR)](/docs/openshift?topic=openshift-best-practices#view-private-mzr)
 
-* [Viewing notifications](/docs/openshift?topic=openshift-viewing-cloud-status#viewing-notifications)
+    * [Subscribing to an RSS feed](/docs/openshift?topic=openshift-best-practices#subscribing-rss-feed)
 
-    * [Notification types](/docs/openshift?topic=openshift-viewing-cloud-status#notification-types)
+    * [Checking incident reports](/docs/openshift?topic=openshift-best-practices#status-incident-report)
 
-* [Subscribing to email notifications](/docs/openshift?topic=openshift-viewing-cloud-status#subscribe-email-notifications)
-
-* [Checking the delivery status of email notifications and viewing email history](/docs/openshift?topic=openshift-viewing-cloud-status#view-email-history)
-
-* [Getting advanced notice for disruptive maintenance](/docs/openshift?topic=openshift-viewing-cloud-status#disruptive-maintenance)
-
-    * [Iaas](/docs/openshift?topic=openshift-viewing-cloud-status#iaas)
-
-    * [PaaS](/docs/openshift?topic=openshift-viewing-cloud-status#paas)
-
-    * [SaaS](/docs/openshift?topic=openshift-viewing-cloud-status#saas)
+    * [Advanced status search](/docs/openshift?topic=openshift-best-practices#adv-search)
 
 
 ## FAQs
@@ -10329,15 +10319,15 @@ subcollection: openshift
 {: #sitemap_best_practices_for_}
 
 
-[Best practices for {{site.data.keyword.openshiftlong_notm}}](/docs/openshift?topic=openshift-best-practices#best-practices)
+[Best practices for {{site.data.keyword.openshiftlong_notm}}](/docs/openshift?topic=openshift-best-practices-service#best-practices-service)
 
-* [Keep your cluster environment up to date](/docs/openshift?topic=openshift-best-practices#bp-1)
+* [Keep your cluster environment up to date](/docs/openshift?topic=openshift-best-practices-service#bp-1)
 
-* [Keep your command line tools up to date](/docs/openshift?topic=openshift-best-practices#bp-2)
+* [Keep your command line tools up to date](/docs/openshift?topic=openshift-best-practices-service#bp-2)
 
-* [Document your environment architecture](/docs/openshift?topic=openshift-best-practices#bp-3)
+* [Document your environment architecture](/docs/openshift?topic=openshift-best-practices-service#bp-3)
 
-* [Subscribe to RSS](/docs/openshift?topic=openshift-best-practices#bp-4)
+* [Subscribe to RSS](/docs/openshift?topic=openshift-best-practices-service#bp-4)
 
 
 ## Running tests with the Diagnostics and Debug Tool

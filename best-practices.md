@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2024, 2024
-lastupdated: "2024-04-11"
+lastupdated: "2024-11-01"
 
 
 keywords: openshift, {{site.data.keyword.openshiftlong_notm}}, best practices
@@ -15,7 +15,7 @@ subcollection: openshift
 
 
 # Best practices for {{site.data.keyword.openshiftlong_notm}}
-{: #best-practices}
+{: #best-practices-service}
 {: support}
 
 ## Keep your cluster environment up to date
@@ -40,5 +40,4 @@ Maintaining up-to-date documentation and diagrams can help when debugging issues
 ## Subscribe to RSS
 {: #bp-4}
 
-You can receive documentation release notes for {{site.data.keyword.openshiftlong_notm}} via RSS. For more information, see [Subscribing to an RSS feed](/docs/openshift?topic=openshift-viewing-cloud-status#subscribing-rss-feed).
-
+You can receive documentation release notes for {{site.data.keyword.openshiftlong_notm}} via RSS. For more information, see [Subscribing to an RSS feed](/docs/openshift?topic=openshift-best-practices-service#bp-4).
