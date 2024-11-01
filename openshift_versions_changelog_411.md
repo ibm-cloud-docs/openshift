@@ -2,7 +2,7 @@
 
 copyright:
   years: 2022, 2024
-lastupdated: "2024-06-10"
+lastupdated: "2024-11-01"
 
 
 keywords: openshift, 4.11, update, upgrade, BOM, bill of materials, versions, patch
@@ -111,7 +111,7 @@ The following table shows the changes that are in the master fix pack 4.11.56_15
 
 | Component | Previous | Current | Description |
 | --- | --- | --- | --- |
-| Calico | v3.26.3 | v3.26.4 | See the [Calico release notes](https://docs.tigera.io/calico/3.26/release-notes/#v3.26.4){: external}. |
+| Calico | v3.26.3 | v3.26.4 | See the [Calico release notes](https://archive-os-3-26.netlify.app/calico/3.26/release-notes/#v3.26.4){: external}. |
 | Cluster health image | v1.4.5 | v1.4.6 | New version contains security fixes. |
 | Tigera Operator | v1.30.7 | v1.30.9 | See the Tigera Operator release notes. |
 | etcd | v3.5.10 | v3.5.11 | See the [etcd release notes](https://github.com/etcd-io/etcd/releases/v3.5.11){: external}. |
@@ -1026,5 +1026,3 @@ The following table shows the changes that are in the master fix pack 4.11.0_151
 | Red Hat OpenShift on IBM Cloud toolkit | 4.10.0+20220712 | 4.11.0+20220824 | See the [{{site.data.keyword.openshiftshort}} toolkit release notes](https://github.com/openshift/ibm-roks-toolkit/releases/tag/v4.11.0+20220824){: external}. |
 | RHEL Packages | RHEL 7 | RHEL 8 | Red Hat OpenShift on IBM Cloud version 4.11 supports RHEL 8 worker nodes. |
 {: caption="Changes since version 4.10.22_1528_openshift" caption-side="bottom"}
-
-

@@ -40,4 +40,4 @@ Maintaining up-to-date documentation and diagrams can help when debugging issues
 ## Subscribe to RSS
 {: #bp-4}
 
-You can receive documentation release notes for {{site.data.keyword.openshiftlong_notm}} via RSS. For more information, see [Subscribing to an RSS feed](/docs/openshift?topic=openshift-viewing-cloud-status#subscribing-rss-feed).
+You can receive documentation release notes for {{site.data.keyword.openshiftlong_notm}} via RSS. For more information, see [Subscribing to an RSS feed](/docs/openshift?topic=openshift-best-practices-service#bp-4).
