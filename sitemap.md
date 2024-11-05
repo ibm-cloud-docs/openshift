@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2024
-lastupdated: "2024-11-01"
+lastupdated: "2024-11-05"
 
 
 keywords: openshift
@@ -10187,29 +10187,39 @@ subcollection: openshift
 [OpenShift interactive learning portal](https://developers.redhat.com/learn){: external}
 
 
-## Monitoring status
-{: #sitemap_monitoring_status}
+## Monitoring notifications and status
+{: #sitemap_monitoring_notifications_and_status}
 
 
-[Monitoring status](/docs/openshift?topic=openshift-best-practices#best-practices)
+[Monitoring notifications and status](/docs/openshift?topic=openshift-viewing-cloud-status#viewing-cloud-status)
 
-* [Check for upcoming maintenance windows](/docs/openshift?topic=openshift-best-practices#monbp-checmaintwin)
+* [Viewing status](/docs/openshift?topic=openshift-viewing-cloud-status#view-status-page)
 
-* [Check for current maintenance windows or an incident in progress](/docs/openshift?topic=openshift-best-practices#monbp-checcurmaninprog)
+* [Advanced status search](/docs/openshift?topic=openshift-viewing-cloud-status#adv-search)
 
-* [Take advantage of multiple {{site.data.keyword.Bluemix_notm}} locations](/docs/openshift?topic=openshift-best-practices#monbp-multpreg)
+    * [URL query filters:](/docs/openshift?topic=openshift-viewing-cloud-status#url-query)
 
-* [Subscribing to email notifications](/docs/openshift?topic=openshift-best-practices#monbp-subscribing)
+* [Viewing the status of a dedicated multizone region (MZR)](/docs/openshift?topic=openshift-viewing-cloud-status#view-private-mzr)
 
-* [Viewing cloud status](/docs/openshift?topic=openshift-best-practices#viewing-cloud-status)
+* [Subscribing to an RSS feed](/docs/openshift?topic=openshift-viewing-cloud-status#subscribing-rss-feed)
 
-    * [Viewing the status of a dedicated multizone region (MZR)](/docs/openshift?topic=openshift-best-practices#view-private-mzr)
+* [Checking incident reports](/docs/openshift?topic=openshift-viewing-cloud-status#status-incident-report)
 
-    * [Subscribing to an RSS feed](/docs/openshift?topic=openshift-best-practices#subscribing-rss-feed)
+* [Viewing notifications](/docs/openshift?topic=openshift-viewing-cloud-status#viewing-notifications)
 
-    * [Checking incident reports](/docs/openshift?topic=openshift-best-practices#status-incident-report)
+    * [Notification types](/docs/openshift?topic=openshift-viewing-cloud-status#notification-types)
 
-    * [Advanced status search](/docs/openshift?topic=openshift-best-practices#adv-search)
+* [Subscribing to email notifications](/docs/openshift?topic=openshift-viewing-cloud-status#subscribe-email-notifications)
+
+* [Checking the delivery status of email notifications and viewing email history](/docs/openshift?topic=openshift-viewing-cloud-status#view-email-history)
+
+* [Getting advanced notice for disruptive maintenance](/docs/openshift?topic=openshift-viewing-cloud-status#disruptive-maintenance)
+
+    * [Iaas](/docs/openshift?topic=openshift-viewing-cloud-status#iaas)
+
+    * [PaaS](/docs/openshift?topic=openshift-viewing-cloud-status#paas)
+
+    * [SaaS](/docs/openshift?topic=openshift-viewing-cloud-status#saas)
 
 
 ## FAQs
