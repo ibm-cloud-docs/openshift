@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2024
-lastupdated: "2024-10-03"
+lastupdated: "2024-11-05"
 
 
 keywords: openshift, {{site.data.keyword.openshiftlong_notm}}, iro, openshift, red hat, red hat openshift
@@ -25,7 +25,7 @@ With {{site.data.keyword.cloud}}, you can plan for, estimate, review, and modify
 ## Understanding costs by component
 {: #costs-for-clusters}
 
-With {{site.data.keyword.openshiftlong_notm}} clusters, you can use IBM Cloud infrastructure compute, networking, and storage resources with platform services such as {{site.data.keyword.watson}} AI or Compose Database-as-a-Service. Each resource might entail its own charges that can be [fixed, metered, tiered, or reserved](/docs/billing-usage?topic=billing-usage-charges#charges) and billed by various incremental rates such as monthly or hourly.
+With {{site.data.keyword.openshiftlong_notm}} clusters, you can use IBM Cloud infrastructure compute, networking, and storage resources with platform services such as {{site.data.keyword.watson}} AI or Compose Database-as-a-Service. Each resource might entail its own charges that can be [fixed, metered, tiered, or reserved](/docs/account?topic=account-charges#charges) and billed by various incremental rates such as monthly or hourly.
 {: shortdesc}
 
 Monthly resources are billed based on the first of the month for usage in the preceding month. If you order a monthly resource in the middle of the month, you are charged a prorated amount for that month. However, if you cancel a resource in the middle of the month, you are still charged the full amount for the monthly resource.
@@ -46,7 +46,7 @@ When do worker nodes begin to incur charges?**
 **Virtual machines** feature greater flexibility, quicker provisioning times, and more automatic scalability features than bare metal, at a more cost-effective price than bare-metal. However, VMs have a performance tradeoff when compared to bare metal specs, such as networking Gbps, RAM and memory thresholds, and storage options. Keep in mind these factors that impact your VM costs.
 * **Shared versus dedicated**: If you share the underlying hardware of the VM, the cost is less than dedicated hardware, but the physical resources are not dedicated to your VM.
 * **Hourly billing only**: Hourly billing offers more flexibility to order and cancel VMs quickly. You are charged an hourly rate that is metered for only the time that that the worker node is provisioned. The time is not rounded up or down to the nearest hour, but is metered in minutes and charged at the hourly rate. For example, if your worker node is provisioned for 90 minutes, you are charged the hourly rate for 1.5 hours, not 2 hours.
-* **Tiered hours per month**: The [pricing](https://cloud.ibm.com/containers/cluster-management/catalog/about#pricing){: external} is billed hourly in [graduated tiered](/docs/billing-usage?topic=billing-usage-charges#graduated_tier). As your VM remains ordered for a tier of hours within a billing month, the hourly rate that you are charged lowers. The tiers of hours are as follows:
+* **Tiered hours per month**: The [pricing](https://cloud.ibm.com/containers/cluster-management/catalog/about#pricing){: external} is billed hourly in [graduated tiered](/docs/account?topic=account-charges#graduated_tier). As your VM remains ordered for a tier of hours within a billing month, the hourly rate that you are charged lowers. The tiers of hours are as follows:
     * 0 - 150 hours
     * 151 - 290 hours
     * 291 - 540 hours
@@ -177,7 +177,7 @@ To choose the correct storage solution, see [Planning highly available persisten
 ### {{site.data.keyword.cloud_notm}} services
 {: #services}
 
-Each service that you integrate with your cluster has its own pricing model. Review each product documentation and use the {{site.data.keyword.cloud_notm}} console to [estimate costs](/docs/billing-usage?topic=billing-usage-cost#cost).
+Each service that you integrate with your cluster has its own pricing model. Review each product documentation and use the {{site.data.keyword.cloud_notm}} console to [estimate costs](/docs/account?topic=account-cost#cost).
 {: shortdesc}
 
 ### Operators and other third-party integrations
@@ -206,7 +206,7 @@ Sustained usage discounts
 ## Estimating costs
 {: #costs-estimate}
 
-See [Estimating your costs](/docs/billing-usage?topic=billing-usage-cost#cost).
+See [Estimating your costs](/docs/account?topic=account-cost#cost).
 
 Keep in mind that some charges are not reflected in the estimate, such as tiered pricing for increased hourly usage. For more information, see [Understanding costs for your clusters](#costs-for-clusters).
 
@@ -217,7 +217,7 @@ The following steps present a general process to manage costs for your {{site.da
 {: shortdesc}
 
 1. Decide on a cloud platform strategy to manage your resources.
-    * See [IBM Cloud Billing and Usage docs](/docs/billing-usage).
+    * See [IBM Cloud Billing and Usage docs](/docs/account).
     * Organize your billing with [resource groups](/docs/account?topic=account-rgs).
     * [Add tags to your clusters](/docs/openshift?topic=openshift-worker-tag-label) according to your organizational strategy.
 2. Plan the type of cluster that you need.
@@ -225,14 +225,14 @@ The following steps present a general process to manage costs for your {{site.da
     * [Decide the cluster environment that you want](/docs/openshift?topic=openshift-strategy).
     * [Consider the availability that you want for your cluster](/docs/openshift?topic=openshift-strategy). For example, a basic high availability setup is one multizone cluster with two worker nodes in each of three zones, for a minimum total of 6 worker nodes.
 3. Check out other {{site.data.keyword.cloud_notm}} services, add-ons, operators, and other third-party software that you might use that can increase your cost. To get an idea of what other costs clusters typically incur, review [Understanding costs for your clusters](#costs-for-clusters).
-4. [Estimate your costs](/docs/billing-usage?topic=billing-usage-cost#cost) and review detailed pricing information for the service, see [{{site.data.keyword.containerlong_notm}}: Pricing](https://www.ibm.com/products/openshift){: external}.
+4. [Estimate your costs](/docs/account?topic=account-cost#cost) and review detailed pricing information for the service, see [{{site.data.keyword.containerlong_notm}}: Pricing](https://www.ibm.com/products/openshift){: external}.
 5. Manage the lifecycle of your cluster to control costs.
     * Consider [enabling the cluster autoscaler](/docs/openshift?topic=openshift-cluster-scaling-install-addon) to automatically add or remove worker nodes in response to your cluster workload resource requests.
     * Manually resize your worker pool to remove worker nodes that you don't need. Keep in mind that you can't scale a worker pool down to zero worker nodes.
     * Use Kubernetes features such as [horizontal pod autoscaling](https://kubernetes.io/docs/tasks/run-application/horizontal-pod-autoscale/){: external}, [pod priority](/docs/openshift?topic=openshift-pod_priority), and [resource requests and limits](/docs/openshift?topic=openshift-app#resourcereq) to control how resources are used within your cluster.
     * Consider setting up a [monitoring tool](/docs/openshift?topic=openshift-health) such as {{site.data.keyword.mon_full_notm}} and creating alerts for your workloads when they need more resources.
-6. [View your usage](/docs/billing-usage?topic=billing-usage-viewingusage#viewingusage) to continuously refine how you consume {{site.data.keyword.cloud_notm}} services.
-7. [Set spending notifications](/docs/billing-usage?topic=billing-usage-spending).
+6. [View your usage](/docs/account?topic=account-viewingusage#viewingusage) to continuously refine how you consume {{site.data.keyword.cloud_notm}} services.
+7. [Set spending notifications](/docs/account?topic=account-spending).
 
 
 
@@ -243,7 +243,7 @@ The following steps present a general process to manage costs for your {{site.da
 Review the table for information about charges related to {{site.data.keyword.redhat_openshift_notm}} clusters in {{site.data.keyword.satellitelong_notm}}. For information about Location pricing, see [{{site.data.keyword.satelliteshort}} pricing](/docs/satellite?topic=satellite-sat-pricing).
 {: shortdesc}
 
-Looking for an estimate? Try the [Cost estimator](/docs/billing-usage?topic=billing-usage-cost#cost) or review the [Pricing model](https://www.ibm.com/products/satellite){: external}
+Looking for an estimate? Try the [Cost estimator](/docs/account?topic=account-cost#cost) or review the [Pricing model](https://www.ibm.com/products/satellite){: external}
 {: tip}
 
 | Type of charge | Clusters created after 15 November 2022 | Clusters created before 15 November 2022 | What the charge covers |

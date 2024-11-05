@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2024
-lastupdated: "2024-11-01"
+lastupdated: "2024-11-05"
 
 
 keywords: openshift
@@ -272,6 +272,12 @@ subcollection: openshift
 
 
 [Release notes](/docs/openshift?topic=openshift-openshift-relnotes#openshift-relnotes)
+
+* [November 2024](/docs/openshift?topic=openshift-openshift-relnotes#openshift-nov24)
+
+    * [05 November 2024](/docs/openshift?topic=openshift-openshift-relnotes#openshift-nov0524)
+
+        * {{site.data.keyword.openshiftlong_notm}} worker node fix packs are available.
 
 * [October 2024](/docs/openshift?topic=openshift-openshift-relnotes#openshift-oct24)
 
@@ -6383,6 +6389,8 @@ subcollection: openshift
 
 * [Overview](/docs/openshift?topic=openshift-openshift_changelog_416#openshift_changelog_overview_416)
 
+    * [Change log for worker node fix pack 4.16.19_1542_openshift, released 04 November 2024](/docs/openshift?topic=openshift-openshift_changelog_416#41619_1542_openshift_W)
+
     * [Change log for master fix pack 4.16.16_1541_openshift, released 30 October 2024](/docs/openshift?topic=openshift-openshift_changelog_416#41616_1541_openshift_M)
 
     * [Change log for worker node fix pack 4.16.17_1540_openshift, released 21 October 2024](/docs/openshift?topic=openshift-openshift_changelog_416#41617_1540_openshift_W)
@@ -6513,6 +6521,8 @@ subcollection: openshift
 [Version 4.15 change log](/docs/openshift?topic=openshift-openshift_changelog_415#openshift_changelog_415)
 
 * [Overview](/docs/openshift?topic=openshift-openshift_changelog_415#openshift_changelog_overview_415)
+
+    * [Change log for worker node fix pack 4.15.37_1565_openshift, released 04 November 2024](/docs/openshift?topic=openshift-openshift_changelog_415#41537_1565_openshift_W)
 
     * [Change log for master fix pack 4.15.36_1564_openshift, released 30 October 2024](/docs/openshift?topic=openshift-openshift_changelog_415#41536_1564_openshift_M)
 
@@ -6674,6 +6684,8 @@ subcollection: openshift
 [Version 4.14 change log](/docs/openshift?topic=openshift-openshift_changelog_414#openshift_changelog_414)
 
 * [Overview](/docs/openshift?topic=openshift-openshift_changelog_414#openshift_changelog_overview_414)
+
+    * [Change log for worker node fix pack 4.14.39_1586_openshift, released 04 November 2024](/docs/openshift?topic=openshift-openshift_changelog_414#41439_1586_openshift_W)
 
     * [Change log for master fix pack 4.14.38_1585_openshift, released 30 October 2024](/docs/openshift?topic=openshift-openshift_changelog_414#41438_1585_openshift_M)
 
@@ -6839,6 +6851,8 @@ subcollection: openshift
 [Version 4.13 change log](/docs/openshift?topic=openshift-openshift_changelog_413#openshift_changelog_413)
 
 * [Overview](/docs/openshift?topic=openshift-openshift_changelog_413#openshift_changelog_overview_413)
+
+    * [Change log for worker node fix pack 4.13.52_1596_openshift, released 04 November 2024](/docs/openshift?topic=openshift-openshift_changelog_413#41352_1596_openshift_W)
 
     * [Change log for master fix pack 4.13.51_1595_openshift, released 30 October 2024](/docs/openshift?topic=openshift-openshift_changelog_413#41351_1595_openshift_M)
 
@@ -7044,6 +7058,8 @@ subcollection: openshift
 [Version 4.12 change log](/docs/openshift?topic=openshift-openshift_changelog_412#openshift_changelog_412)
 
 * [Overview](/docs/openshift?topic=openshift-openshift_changelog_412#openshift_changelog_overview_412)
+
+    * [Change log for worker node fix pack 4.12.67_1615_openshift, released 04 November 2024](/docs/openshift?topic=openshift-openshift_changelog_412#41267_1615_openshift_W)
 
     * [Change log for master fix pack 4.12.67_1614_openshift, released 30 October 2024](/docs/openshift?topic=openshift-openshift_changelog_412#41267_1614_openshift_M)
 
@@ -10187,29 +10203,39 @@ subcollection: openshift
 [OpenShift interactive learning portal](https://developers.redhat.com/learn){: external}
 
 
-## Monitoring status
-{: #sitemap_monitoring_status}
+## Monitoring notifications and status
+{: #sitemap_monitoring_notifications_and_status}
 
 
-[Monitoring status](/docs/openshift?topic=openshift-best-practices#best-practices)
+[Monitoring notifications and status](/docs/openshift?topic=openshift-viewing-cloud-status#viewing-cloud-status)
 
-* [Check for upcoming maintenance windows](/docs/openshift?topic=openshift-best-practices#monbp-checmaintwin)
+* [Viewing status](/docs/openshift?topic=openshift-viewing-cloud-status#view-status-page)
 
-* [Check for current maintenance windows or an incident in progress](/docs/openshift?topic=openshift-best-practices#monbp-checcurmaninprog)
+* [Advanced status search](/docs/openshift?topic=openshift-viewing-cloud-status#adv-search)
 
-* [Take advantage of multiple {{site.data.keyword.Bluemix_notm}} locations](/docs/openshift?topic=openshift-best-practices#monbp-multpreg)
+    * [URL query filters:](/docs/openshift?topic=openshift-viewing-cloud-status#url-query)
 
-* [Subscribing to email notifications](/docs/openshift?topic=openshift-best-practices#monbp-subscribing)
+* [Viewing the status of a dedicated multizone region (MZR)](/docs/openshift?topic=openshift-viewing-cloud-status#view-private-mzr)
 
-* [Viewing cloud status](/docs/openshift?topic=openshift-best-practices#viewing-cloud-status)
+* [Subscribing to an RSS feed](/docs/openshift?topic=openshift-viewing-cloud-status#subscribing-rss-feed)
 
-    * [Viewing the status of a dedicated multizone region (MZR)](/docs/openshift?topic=openshift-best-practices#view-private-mzr)
+* [Checking incident reports](/docs/openshift?topic=openshift-viewing-cloud-status#status-incident-report)
 
-    * [Subscribing to an RSS feed](/docs/openshift?topic=openshift-best-practices#subscribing-rss-feed)
+* [Viewing notifications](/docs/openshift?topic=openshift-viewing-cloud-status#viewing-notifications)
 
-    * [Checking incident reports](/docs/openshift?topic=openshift-best-practices#status-incident-report)
+    * [Notification types](/docs/openshift?topic=openshift-viewing-cloud-status#notification-types)
 
-    * [Advanced status search](/docs/openshift?topic=openshift-best-practices#adv-search)
+* [Subscribing to email notifications](/docs/openshift?topic=openshift-viewing-cloud-status#subscribe-email-notifications)
+
+* [Checking the delivery status of email notifications and viewing email history](/docs/openshift?topic=openshift-viewing-cloud-status#view-email-history)
+
+* [Getting advanced notice for disruptive maintenance](/docs/openshift?topic=openshift-viewing-cloud-status#disruptive-maintenance)
+
+    * [Iaas](/docs/openshift?topic=openshift-viewing-cloud-status#iaas)
+
+    * [PaaS](/docs/openshift?topic=openshift-viewing-cloud-status#paas)
+
+    * [SaaS](/docs/openshift?topic=openshift-viewing-cloud-status#saas)
 
 
 ## FAQs

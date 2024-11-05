@@ -471,7 +471,7 @@ toc:
   - navgroup:
       id: help
       topics:
-      - include: ../account/status-bps.md
+      - include: ../account/monitor-notification-status.md
       - faqs.md
       - best-practices.md
       - ts-debug-tool.md
