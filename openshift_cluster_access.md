@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2024
-lastupdated: "2024-10-10"
+lastupdated: "2024-11-07"
 
 
 keywords: openshift, clusters, access, endpoint
@@ -325,6 +325,9 @@ The {{site.data.keyword.redhat_openshift_notm}} master is accessible through the
 
 ### Creating an allowlist for the private cloud service endpoint
 {: #private-se-allowlist}
+
+Private service endpoint allowlists are deprecated and support ends on 10 February 2025. Migrate from allowlists to context based restrictions as soon as possible. For more information, see [Migrating from a private service endpoint allowlist to context based restrictions (CBR)](/docs/openshift?topic=openshift-pse-to-cbr-migration).
+{: deprecated}
 
 Control access to your private cloud service endpoint by creating a subnet allowlist.
 {: shortdesc}

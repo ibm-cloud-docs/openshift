@@ -2,7 +2,7 @@
 
 copyright:
   years: 2022, 2024
-lastupdated: "2024-10-30"
+lastupdated: "2024-11-07"
 
 
 keywords: openshift, ingress, troubleshoot ingress, ingress operator, ingress cluster operator, ingress operator degraded, erriodeg
@@ -66,6 +66,8 @@ oc get clusteroperator ingress
 
 ## One or more other status conditions indicate a degraded state: `CanaryChecksSucceeding=False`
 {: #ts-ingress-erriodeg-ccs-false}
+
+1. [Access your {{site.data.keyword.redhat_openshift_notm}} cluster](/docs/openshift?topic=openshift-access_cluster).
 
 1. Ensure that the correct LoadBalancer service address is registered for your Ingress subdomain.
     1. Run the `ibmcloud oc cluster get` [command](/docs/openshift?topic=openshift-kubernetes-service-cli#cs_cluster_get) to see your Ingress subdomain.

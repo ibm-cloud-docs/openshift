@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2024
-lastupdated: "2024-11-05"
+lastupdated: "2024-11-07"
 
 
 keywords: openshift
@@ -274,6 +274,10 @@ subcollection: openshift
 [Release notes](/docs/openshift?topic=openshift-openshift-relnotes#openshift-relnotes)
 
 * [November 2024](/docs/openshift?topic=openshift-openshift-relnotes#openshift-nov24)
+
+    * [07 November 2024](/docs/openshift?topic=openshift-openshift-relnotes#openshift-nov0724)
+
+        * New! A new tutorial is available for {{site.data.keyword.openshiftlong_notm}} that covers how to migrate from a private service endpoint allowlist (PSE) to context based restrictions (CBR).
 
     * [05 November 2024](/docs/openshift?topic=openshift-openshift-relnotes#openshift-nov0524)
 
@@ -3328,6 +3332,42 @@ subcollection: openshift
     * [Allowing different IPs to access the public and private service endpoints](/docs/openshift?topic=openshift-cbr-tutorial#cbr-tutorial-scenarios-pub-priv-one-ip)
 
     * [Allowing different IPs to access different API types over the public and private service endpoints](/docs/openshift?topic=openshift-cbr-tutorial#cbr-tutorial-scenarios-pub-priv-api-types)
+
+[Migrating from a private service endpoint allowlist to context based restrictions (CBR)](/docs/openshift?topic=openshift-pse-to-cbr-migration#pse-to-cbr-migration)
+
+* [Before you begin](/docs/openshift?topic=openshift-pse-to-cbr-migration#pse-cbr-before)
+
+* [Step 1: Review the details of your allowlist](/docs/openshift?topic=openshift-pse-to-cbr-migration#pse-cbr-review)
+
+* [Step 2: Creating a network zone](/docs/openshift?topic=openshift-pse-to-cbr-migration&interface=cli#pse-cbr-create)
+
+    * [Creating a network zone in the console](/docs/openshift?topic=openshift-pse-to-cbr-migration&interface=ui#pse-cbr-create-ui)
+
+    * [Creating a network zone by using the CLI](/docs/openshift?topic=openshift-pse-to-cbr-migration&interface=cli#pse-cbr-create-cli)
+
+* [Step 3: Creating a CBR rule](/docs/openshift?topic=openshift-pse-to-cbr-migration&interface=cli#pse-cbr-rule)
+
+    * [Creating a CBR rule in the console](/docs/openshift?topic=openshift-pse-to-cbr-migration&interface=cli#pse-cbr-rule-ui)
+
+    * [Creating a CBR rule by using the CLI](/docs/openshift?topic=openshift-pse-to-cbr-migration&interface=cli#pse-cbr-rule-cli)
+
+* [Step 4: Disabling the private service endpoint allowlist](/docs/openshift?topic=openshift-pse-to-cbr-migration&interface=cli#pse-cbr-disable)
+
+* [Step 5: Testing the CBR rule](/docs/openshift?topic=openshift-pse-to-cbr-migration&interface=cli#pse-cbr-test)
+
+* [Step 6: Adding or removing subnets that can access the cluster](/docs/openshift?topic=openshift-pse-to-cbr-migration&interface=cli#pse-cbr-update)
+
+    * [Modifying your network zone from the console](/docs/openshift?topic=openshift-pse-to-cbr-migration&interface=ui#pse-zone-update-ui)
+
+    * [Modify your network zone from the CLI](/docs/openshift?topic=openshift-pse-to-cbr-migration&interface=cli#pse-zone-update-cli)
+
+* [Removing context based restrictions from the private service endpoint](/docs/openshift?topic=openshift-pse-to-cbr-migration&interface=cli#pse-cbr-remove)
+
+* [Deleting a rule from the console](/docs/openshift?topic=openshift-pse-to-cbr-migration&interface=ui#pse-cbr-remove-ui)
+
+* [Deleting a rule from the CLI](/docs/openshift?topic=openshift-pse-to-cbr-migration&interface=cli#pse-cbr-remove)
+
+* [Next steps](/docs/openshift?topic=openshift-pse-to-cbr-migration&interface=cli#pse-cbr-next)
 
 
 ## Managing access control
@@ -10203,39 +10243,19 @@ subcollection: openshift
 [OpenShift interactive learning portal](https://developers.redhat.com/learn){: external}
 
 
-## Monitoring notifications and status
-{: #sitemap_monitoring_notifications_and_status}
+## Monitoring status best practices
+{: #sitemap_monitoring_status_best_practices}
 
 
-[Monitoring notifications and status](/docs/openshift?topic=openshift-viewing-cloud-status#viewing-cloud-status)
+[Monitoring status best practices](/docs/openshift?topic=openshift-best-practices#best-practices)
 
-* [Viewing status](/docs/openshift?topic=openshift-viewing-cloud-status#view-status-page)
+* [Check for upcoming maintenance windows](/docs/openshift?topic=openshift-best-practices#monbp-checmaintwin)
 
-* [Advanced status search](/docs/openshift?topic=openshift-viewing-cloud-status#adv-search)
+* [Check for current maintenance windows or an incident in progress](/docs/openshift?topic=openshift-best-practices#monbp-checcurmaninprog)
 
-    * [URL query filters:](/docs/openshift?topic=openshift-viewing-cloud-status#url-query)
+* [Take advantage of multiple {{site.data.keyword.Bluemix_notm}} locations](/docs/openshift?topic=openshift-best-practices#monbp-multpreg)
 
-* [Viewing the status of a dedicated multizone region (MZR)](/docs/openshift?topic=openshift-viewing-cloud-status#view-private-mzr)
-
-* [Subscribing to an RSS feed](/docs/openshift?topic=openshift-viewing-cloud-status#subscribing-rss-feed)
-
-* [Checking incident reports](/docs/openshift?topic=openshift-viewing-cloud-status#status-incident-report)
-
-* [Viewing notifications](/docs/openshift?topic=openshift-viewing-cloud-status#viewing-notifications)
-
-    * [Notification types](/docs/openshift?topic=openshift-viewing-cloud-status#notification-types)
-
-* [Subscribing to email notifications](/docs/openshift?topic=openshift-viewing-cloud-status#subscribe-email-notifications)
-
-* [Checking the delivery status of email notifications and viewing email history](/docs/openshift?topic=openshift-viewing-cloud-status#view-email-history)
-
-* [Getting advanced notice for disruptive maintenance](/docs/openshift?topic=openshift-viewing-cloud-status#disruptive-maintenance)
-
-    * [Iaas](/docs/openshift?topic=openshift-viewing-cloud-status#iaas)
-
-    * [PaaS](/docs/openshift?topic=openshift-viewing-cloud-status#paas)
-
-    * [SaaS](/docs/openshift?topic=openshift-viewing-cloud-status#saas)
+* [Subscribing to email notifications](/docs/openshift?topic=openshift-best-practices#monbp-subscribing)
 
 
 ## FAQs
