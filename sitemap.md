@@ -10232,6 +10232,27 @@ subcollection: openshift
 * [Washington DC (`wdc`)](/docs/openshift?topic=openshift-classic-flavors#washington-dc-wdc)
 
 
+## Understanding data portability for {{site.data.keyword.openshiftlong_notm}}
+{: #sitemap_understanding_data_portability_for_}
+
+
+[Understanding data portability for {{site.data.keyword.openshiftlong_notm}}](/docs/openshift?topic=openshift-data-portability#data-portability)
+
+* [Responsibilities](/docs/openshift?topic=openshift-data-portability#data-portability-responsibilities)
+
+* [Data export procedures](/docs/openshift?topic=openshift-data-portability#data-portability-procedures)
+
+    * [Exporting data by using the `oc` CLI](/docs/openshift?topic=openshift-data-portability#export-procedure-kubectl)
+
+    * [Exporting data by using Velero](/docs/openshift?topic=openshift-data-portability#export-velero)
+
+    * [Other options for exporting data](/docs/openshift?topic=openshift-data-portability#data-other)
+
+* [Exported data formats](/docs/openshift?topic=openshift-data-portability#data-portability-data-formats)
+
+* [Data ownership](/docs/openshift?topic=openshift-data-portability#data-ownership)
+
+
 ## Related links
 {: #sitemap_related_links}
 
