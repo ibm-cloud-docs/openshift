@@ -113,6 +113,7 @@ toc:
           - data-security.md
           - cbr.md
           - cbr-tutorial.md
+          - pse-to-cbr-migration.md
       - topicgroup:
           label: Managing access control
           topics:
@@ -471,7 +472,7 @@ toc:
   - navgroup:
       id: help
       topics:
-      - include: ../account/monitor-notification-status.md
+      - include: ../account/status-bps.md
       - faqs.md
       - best-practices.md
       - ts-debug-tool.md

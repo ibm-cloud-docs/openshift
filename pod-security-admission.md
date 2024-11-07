@@ -2,10 +2,10 @@
 
 copyright: 
   years: 2022, 2024
-lastupdated: "2024-09-04"
+lastupdated: "2024-11-07"
 
 
-keywords: openshift, deploy, pod security admission, pod security, security profiles
+keywords: kubernetes, deploy, openshift, pod security admission, pod security, security profiles
 
 subcollection: openshift
 
