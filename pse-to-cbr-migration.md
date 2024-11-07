@@ -84,7 +84,7 @@ Now that you've verified your allowlist is working as expected, you can continue
 
 1. Review the output and make a note of the **Custom** subnets. These subnets are used later.
     - The **System** entries are migrated automatically and can be ignored. These entries make sure the cluster workers are allowed to connect to the cluster apiserver.
-    - The **Custom** entries are the subnets that you have added that are allowed to connect to this cluster's private service endpoint. The subnets '10.30.50.0/24` and `10.249.94.103/32` in the example are added to a CBR network zone in the next step.
+    - The **Custom** entries are the subnets that you have added that are allowed to connect to this cluster's private service endpoint. The subnets `10.30.50.0/24` and `10.249.94.103/32` in the example are added to a CBR network zone in the next step.
 
 
 ## Step 2: Creating a network zone
@@ -107,7 +107,7 @@ Create a CBR network zone that contains the same subnets as your existing custom
 
 1. Click **Next** to review the details of your network zone.
 
-1. Click **Create** to finih creating your network zone.
+1. Click **Create** to finish creating your network zone.
 
 
 ### Creating a network zone by using the CLI
@@ -203,7 +203,7 @@ The following instructions describe how to use the CLI to create a network zone.
 
     | Parameter | Description |
     | --- | --- |
-    | `--api-types` | The `crn:v1:bluemix:public:containers-kubernetes::::api-type:cluster` value indcates the cluster control plane master APIs. For more information about the API types for {{site.data.keyword.openshiftlong_notm}}, see [Protecting specific APIs](/docs/{[subcollectio]}?topic=openshift-cbr&interface=ui#protect-api-types-cbr). |
+    | `--api-types` | The `crn:v1:bluemix:public:containers-kubernetes::::api-type:cluster` value indcates the cluster control plane master APIs. For more information about the API types for {{site.data.keyword.openshiftlong_notm}}, see [Protecting specific APIs](/docs/openshift?topic=openshift-cbr&interface=ui#protect-api-types-cbr). |
     | `--description` | An optional description of the rule. |
     | `--service-name containers-kubernetes` | The `containers-kubernetes` value indicates {{site.data.keyword.openshiftlong_notm}} as the target service for the rule. |
     | `--service-instance CLUSTER-ID` | Specify the `CLUSTER-ID` of the cluster you want to protect. |
@@ -221,7 +221,7 @@ The following instructions describe how to use the CLI to create a network zone.
 
     | Parameter | Description |
     | --- | --- |
-    | `--api-types` | The `crn:v1:bluemix:public:containers-kubernetes::::api-type:cluster` value indcates the cluster control plane master APIs. For more information about the API types for {{site.data.keyword.openshiftlong_notm}}, see [Protecting specific APIs](/docs/{[subcollectio]}?topic=openshift-cbr&interface=ui#protect-api-types-cbr). |
+    | `--api-types` | The `crn:v1:bluemix:public:containers-kubernetes::::api-type:cluster` value indcates the cluster control plane master APIs. For more information about the API types for {{site.data.keyword.openshiftlong_notm}}, see [Protecting specific APIs](/docs/openshift?topic=openshift-cbr&interface=ui#protect-api-types-cbr). |
     | `--description` | An optional description of the rule. |
     | `--service-name` | The `containers-kubernetes` value indicates {{site.data.keyword.openshiftlong_notm}} as the target service for the rule. |
     | `--context-attributes endpointType=private,networkZoneId=NETWORK-ZONE-ID` | The option allows only resources in the `NETWORK-ZONE-ID` zone to access the cluster's private endpoint. |
@@ -336,4 +336,3 @@ For more information about CBR, see the following links.
 - [Protecting cluster resources with context-based restrictions]/docs/openshift?topic=openshift-cbr&interface=ui).
 - [Example context-based restrictions scenarios](/docs/openshift?topic=openshift-cbr-tutorial).
 - [CBR CLI reference](/docs/account?topic=account-cbr-plugin).
-

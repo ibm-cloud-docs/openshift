@@ -275,6 +275,10 @@ subcollection: openshift
 
 * [November 2024](/docs/openshift?topic=openshift-openshift-relnotes#openshift-nov24)
 
+    * [07 November 2024](/docs/openshift?topic=openshift-openshift-relnotes#openshift-nov0724)
+
+        * New! A new tutorial is available for {{site.data.keyword.openshiftlong_notm}} that covers how to migrate from a private service endpoint allowlist (PSE) to context based restrictions (CBR).
+
     * [05 November 2024](/docs/openshift?topic=openshift-openshift-relnotes#openshift-nov0524)
 
         * {{site.data.keyword.openshiftlong_notm}} worker node fix packs are available.

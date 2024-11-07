@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2024
-lastupdated: "2024-11-05"
+lastupdated: "2024-11-07"
 
 
 keywords: kubernetes, release notes, openshift, {{site.data.keyword.openshiftlong_notm}}
@@ -27,6 +27,13 @@ Looking for {{site.data.keyword.cloud_notm}} status, platform announcements, sec
 
 ## November 2024
 {: #openshift-nov24}
+
+### 07 November 2024
+{: #openshift-nov0724}
+{: release-note}
+
+New! A new tutorial is available for {{site.data.keyword.openshiftlong_notm}} that covers how to migrate from a private service endpoint allowlist (PSE) to context based restrictions (CBR).
+:   Private service endpoint allowlists are deprecated and support ends on 10 February 2025. Migrate from PSE allowlists to CBR as soon as possible. For more information and migration steps, see [Migrating from a private service endpoint allowlist to context based restrictions (CBR)](/docs/openshift?topic=openshift-pse-to-cbr-migration).
 
 ### 05 November 2024
 {: #openshift-nov0524}
