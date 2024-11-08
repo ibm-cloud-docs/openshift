@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2024, 2024
-lastupdated: "2024-10-01"
+lastupdated: "2024-11-08"
 
 
 keywords: openshift, rclone, migrate
@@ -167,14 +167,14 @@ If you don't already have an app that you want to migrate, you can deploy the fo
     ```
     {: pre}
 
-## Install rclone
+## Install `rclone`
 {: #rclone-install}
 {: step}
 
 Follow the `rclone` docs for [installation steps](https://rclone.org/install/).
 
 
-## Configure rclone for your bucket in Account 1
+## Configure `rclone` for your bucket in Account 1
 {: #rclone-config-1}
 {: step}
 

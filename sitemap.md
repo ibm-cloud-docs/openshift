@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2024
-lastupdated: "2024-11-07"
+lastupdated: "2024-11-08"
 
 
 keywords: openshift
@@ -5073,9 +5073,9 @@ subcollection: openshift
 
 * [Get the details of your app](/docs/openshift?topic=openshift-storage-cos-app-migration#cos-mig-app-details)
 
-* [Install rclone](/docs/openshift?topic=openshift-storage-cos-app-migration#rclone-install)
+* [Install `rclone`](/docs/openshift?topic=openshift-storage-cos-app-migration#rclone-install)
 
-* [Configure rclone for your bucket in Account 1](/docs/openshift?topic=openshift-storage-cos-app-migration#rclone-config-1)
+* [Configure `rclone` for your bucket in Account 1](/docs/openshift?topic=openshift-storage-cos-app-migration#rclone-config-1)
 
 * [Configure rclone for your bucket in Account 2](/docs/openshift?topic=openshift-storage-cos-app-migration#rclone-config-2)
 
