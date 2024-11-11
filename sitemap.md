@@ -5593,8 +5593,6 @@ subcollection: openshift
 
 * [Changing the Calico maximum transmission unit (MTU)](/docs/openshift?topic=openshift-kernel#calico-mtu)
 
-    * [Updating the Calico installation](/docs/openshift?topic=openshift-kernel#calico-mtu-43)
-
 * [Disabling the port map plug-in](/docs/openshift?topic=openshift-kernel#calico-portmap)
 
 [Tuning performance for Red Hat CoreOS worker nodes](/docs/openshift?topic=openshift-rhcos-performance#rhcos-performance)
