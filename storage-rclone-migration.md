@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2024, 2024
-lastupdated: "2024-11-08"
+lastupdated: "2024-11-11"
 
 
 keywords: openshift, rclone, migrate
@@ -390,7 +390,7 @@ After you have `rclone` installed, you must generate a configuration file that d
 
 1. Repeat the previous steps to add the COS instance in your second account. When you've verified the information, press `q` to quit the configuration process.
 
-## Configure rclone for your bucket in Account 2
+## Configure `rclone` for your bucket in Account 2
 {: #rclone-config-2}
 {: step}
 
