@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2024
-lastupdated: "2024-10-10"
+lastupdated: "2024-11-11"
 
 
 keywords: openshift
@@ -137,9 +137,11 @@ If you manually installed admission controllers and you don't want to use them a
 ### What else can I do to secure my API server?
 {: #api-server-what-else}
 
-You can restrict connections to the master nodes by enabling the private cloud service endpoint, and creating a subnet allowlist. This combination provides the greatest degree of isolation.. Note that your options for service endpoints vary based on your cluster's {{site.data.keyword.redhat_openshift_notm}} version and infrastructure provider. For more information about service endpoints, see worker-to-master and user-to-master communication in [classic clusters](/docs/openshift?topic=openshift-plan_basics#workeruser-master) and [VPC clusters](/docs/openshift?topic=openshift-plan_vpc_basics#vpc-workeruser-master).
+You can restriction network connectivity to your cluster master in several ways
 
-If you enable the private cloud service endpoint, you can create a subnet allowlist. Only authorized requests to your cluster master that originate from subnets in the allowlist are permitted through the cluster's private cloud service endpoint. For more information, see [Creating an allowlist for the private cloud service endpoint](/docs/containers?topic=containers-access_cluster#private-se-allowlist).
+- **Enable only the private cloud service endpoint**: The public service endpoint is only requied for classic Openshift clusters.  It can be disabled for all VPC clusters.  It can also be disabled for clasisc Kubernetes clusters as long as your account has [VRF and Service Endpoint enabled](/docs/openshift?topic=openshift-plan_basics#workeruser-master-pub-priv).  This protects your cluster master from attacks on the public network.
+- **Enable context based restrictions**: You can secure network access to your cluster's private and/or public service endpoints using context based restrictions (CBR). Only authorized requests to your cluster master that originate from subnets in the CBR rules are permitted.  For more information, see [Using context based restrictions](/docs/openshift?topic=openshift-cbr).
+
 
 
 

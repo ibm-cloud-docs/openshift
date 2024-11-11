@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2024
-lastupdated: "2024-08-22"
+lastupdated: "2024-11-11"
 
 
 keywords: openshift, {{site.data.keyword.openshiftlong_notm}}, kubernetes, audit
@@ -240,6 +240,9 @@ The following list of network load balancer (NLB) DNS events are sent to {{site.
 ## Private service endpoint allowlist events
 {: #acl-events}
 
+Private service endpoint allowlists are deprecated and support ends on 10 February 2025. Migrate from allowlists to context based restrictions as soon as possible. For more information, see [Migrating from a private service endpoint allowlist to context based restrictions (CBR)](/docs/openshift?topic=openshift-pse-to-cbr-migration).
+{: deprecated}
+
 The following table lists the actions related to access control lists (ACLs) and the generation of events for clusters that use a private cloud service endpoint allowlist.
 {: shortdesc}
 
@@ -356,6 +359,3 @@ The following table shows the {{site.data.keyword.at_short}} location where your
 | Toronto (ca-tor-1, ca-tor-2, ca-tor-3) | Toronto |
 | Washington, D.C. (us-east-1, us-east-2, us-east-3) | Washington, D.C. |
 {: caption="Corresponding {{site.data.keyword.at_short}} instance and {{site.data.keyword.openshiftlong_notm}} cluster locations." caption-side="bottom"}
-
-
-
