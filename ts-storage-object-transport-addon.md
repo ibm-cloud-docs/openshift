@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2024, 2024
-lastupdated: "2024-10-30"
+lastupdated: "2024-11-08"
 
 
 keywords: openshift, {{site.data.keyword.openshiftlong_notm}}, kubernetes, help, network, connectivity
@@ -33,7 +33,7 @@ One possible case for this error is when patch updates are applied. In this case
 {: tsCauses}
 
 
-The `ibm-object-csi-driver` supports auto-recovery of volumes which have lost connection to `s3fs`. Auto-recovery can be achieved by deploying a custom resource provided by the `ibm-object-csi-driver`. This resource continuously monitors the applications and the namespace that you specify and automatically restarts app pods when `TransportEndpoint` errors occur.
+The `ibm-object-csi-driver` supports autorecovery of volumes which have lost connection to `s3fs`. Autorecovery can be achieved by deploying a custom resource provided by the `ibm-object-csi-driver`. This resource continuously monitors the applications and the namespace that you specify and automatically restarts app pods when `TransportEndpoint` errors occur.
 {: tsResolve}
 
 1. Copy the following yaml and save it as a file called `stale.yaml`

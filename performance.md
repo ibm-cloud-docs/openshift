@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2024
-lastupdated: "2024-10-07"
+lastupdated: "2024-11-11"
 
 
 keywords: openshift, {{site.data.keyword.openshiftlong_notm}}, kubernetes, kernel, performance
@@ -232,131 +232,161 @@ Deploy the following example `initContainer`. Remember to change the `containers
 ## Changing the Calico maximum transmission unit (MTU)
 {: #calico-mtu}
 
-Increase or decrease the Calico plug-in maximum transmission unit (MTU) to meet the network throughput requirements of your environment.
+Increase or decrease the Calico plug-in maximum transmission unit (MTU) to meet the network throughput requirements of your environment. 
 {: shortdesc}
 
-All VPC workers nodes support jumbo frames. However, on classic infrastructure, only bare metal workers support jumbo frames.
+
+
+
+All VPC worker nodes support jumbo frames, but classic infrastructure only supports jumbo frames on bare metal workers. 
+{: note}
+
+
+Changing maximum transmission unit (MTU) values can have unexpected results, especially in complex networking environments. To avoid disruption to your workflow, it is highly recommended that you test these changes on a development cluster before you make any changes to your production clusters. 
 {: important}
 
-By default, the Calico network plug-in in your {{site.data.keyword.openshiftlong_notm}} cluster has an MTU of 1480 bytes. For most cases, this default MTU value provides sufficient throughput for packets that are sent and received in your network workloads. Review the following cases in which you might need to modify the default Calico MTU:
+By default, the Calico network plug-in in your {{site.data.keyword.openshiftlong_notm}} cluster has an MTU of 1450 bytes for Satellite clusters and 1480 bytes for non-Satellite clusters. For most cases, this default Calico MTU value is sufficient for preventing packet drops and fragmentation. Because most hosts use an MTU value of 1500, these default values provide Satellite clusters with 50 extra bytes for vxlan headers and provide non-Satellite clusters with 20 extra bytes for the IP headers used in some pod-to-pod cluster network traffic. Note that all worker nodes in the cluster must use the same Calico MTU value.
 
-* Jumbo frames have an MTU value in the range of 1500 to 9000. To ensure that your cluster's pod network can use this higher MTU value, you can increase the Calico MTU to 20 bytes less than the jumbo frame MTU. This 20 byte difference allows space for packet header on encapsulated packets. For example, if your worker nodes' jumbo frames are set to 9000, you can set the Calico MTU to 8980. Note that all worker nodes in the cluster must use the same Calico MTU, so to increase the Calico MTU, all worker nodes in the cluster must be bare metal and use jumbo frames.
+Review the following cases in which you might need to modify the default Calico MTU:
+
+* If you need to improve your pod-to-pod network throughput and your cluster nodes are able to use a higher host MTU, then you can increase both the host and Calico MTU. This is called using "jumbo frames". The typical jumbo frame MTU is 9000. In this case, you can set the host private network interface to an MTU value of 9000 and the Calico MTU to a slightly lower value -- 8950 for Satellite clusters and 8980 for non-Satellite clusters. Note that some cloud provider hardware or resources, [such as Azure virtual machines](https://learn.microsoft.com/en-us/azure/virtual-network/how-to-virtual-machine-mtu?tabs=linux){: external}, might not support jumbo frames or might only support an MTU value of up to 4000. 
 * If you have a VPN connection set up for your cluster, some VPN connections require a smaller Calico MTU than the default. Check with the VPN service provider to determine whether a smaller Calico MTU is required.
-* If your cluster's worker nodes exist on different subnets, increasing the MTU value for the worker nodes and for the Calico MTU can allow pods to use the full bandwidth capability of the worker nodes.
 
 
 Before you begin
-:   If your worker nodes still run the default MTU value, increase the MTU value for your worker nodes first before you increase the MTU value for the Calico plug-in. For example, you can apply the following daemon set to change the MTU for your worker nodes jumbo frames to 9000 bytes. Note the interface names that are used in the **`ip link`** command vary depending on the type of your worker nodes.
+:   If your worker nodes still run the default MTU value, increase the MTU value for your worker nodes first before you increase the MTU value for the Calico plug-in. For example, you can apply the following daemon set to change the MTU for your worker nodes to 9000 bytes. Note the interface names that are used in the **`ip link`** command vary depending on the type of your worker nodes.
     - Example command for Bare Metal worker nodes: `ip link set dev bond0 mtu 9000;ip link set dev bond1 mtu 9000;`
     - Example command VPC Gen 2 worker nodes: `ip link set dev ens3 mtu 9000;`
 
-```yaml
-apiVersion: apps/v1
-kind: DaemonSet
-metadata:
-  name: jumbo-apply
-  namespace: kube-system
-  labels:
-    tier: management
-    app: jumbo-apply
-spec:
-  selector:
-    matchLabels:
-      name: jumbo-apply
-  template:
+1. Run the following commands to log into a cluster worker node and ping from one node to another. Because your node MTU is only set to 1500 or 1480, **this attempt is expected to fail**. In the following steps, you can run these commands again to verify that changes are successful.
+    1. List the nodes in your cluster. Save the names and IP addresses of two healthy nodes. 
+        ```sh
+        oc get nodes -o wide
+        ```
+        {: pre}
+    1. Log into one of the nodes. Specify the name of the node.
+
+        
+        ```sh
+        oc debug node/<NODE_NAME>
+        ```
+        {: pre}
+        
+        
+
+
+    1. Run the command to ping from one node to the other. Specify the IP address of the node that you did not reference in the previous step.
+        ```sh
+        ping -c1 -Mdo -s 8972 <OTHER_HOST_IP>
+        ```
+        {: pre}
+
+2. Change the node MTU with the following example daemonset. This MTU value applies to node-to-node traffic. Modify the `- ip link set dev ens3 mtu <MTU_VALUE>` line to include your desired MTU value (the example uses a MTU value of 9000). Note that you might also need to change the `ens3` interface name if ens3 is not appropriate for your nodes.
+    ```yaml
+    apiVersion: apps/v1
+    kind: DaemonSet
     metadata:
       labels:
-        name: jumbo-apply
+        app: set-host-mtu
+      name: set-host-mtu
+      namespace: kube-system
     spec:
-      hostNetwork: true
-      hostPID: true
-      hostIPC: true
-      tolerations:
-      - operator: Exists
-      initContainers:
-        - command:
-            - sh
-            - -c
-            - ip link set dev bond0 mtu 9000;ip link set dev bond1 mtu 9000; # Update this command based on your worker node type.
-          image: alpine:3.6
-          imagePullPolicy: IfNotPresent
-          name: iplink
-          resources: {}
-          securityContext:
-            privileged: true
-            capabilities:
-              add:
-                - NET_ADMIN
-          volumeMounts:
-            - name: modifysys
-              mountPath: /sys
-      containers:
-        - resources:
-            requests:
-              cpu: 0.01
-          image: alpine:3.6
-          name: sleepforever
-          command: ["/bin/sh", "-c"]
-          args:
-            - >
+      selector:
+        matchLabels:
+          name: set-host-mtu
+      template:
+        metadata:
+          labels:
+            name: set-host-mtu
+        spec:
+          containers:
+          - args:
+            - |
               while true; do
                 sleep 100000;
               done
-      volumes:
-        - name: modifysys
-          hostPath:
-             path: /sys
-```
-{: codeblock}
+            command:
+            - /bin/sh
+            - -c
+            image: us.icr.io/armada-master/network-alpine:latest
+            imagePullPolicy: IfNotPresent
+            name: sleepforever
+            resources:
+              requests:
+                cpu: 10m
+          hostNetwork: true
+          initContainers:
+          - command:
+            - sh
+            - -c
+            - ip link set dev ens3 mtu 9000
+            image: us.icr.io/armada-master/network-alpine:latest
+            imagePullPolicy: IfNotPresent
+            name: set-host-mtu
+            securityContext:
+              capabilities:
+                add:
+                - NET_ADMIN
+              privileged: true
+            volumeMounts:
+            - mountPath: /sys
+              name: modifysys
+          restartPolicy: Always
+          terminationGracePeriodSeconds: 2
+          tolerations:
+          - operator: Exists
+          volumes:
+          - hostPath:
+              path: /sys
+              type: ""
+            name: modifysys
+      updateStrategy:
+        rollingUpdate:
+          maxSurge: 0
+          maxUnavailable: 1
+        type: RollingUpdate
+    ```
+    {: codeblock}
 
-
-
-
-
-### Updating the Calico installation 
-{: #calico-mtu-43}
-
-After [applying the DaemonSet to increase the Calico plug-in MTU](#calico-mtu), complete the following steps to update the Calico installation.
-
-
-To run your {{site.data.keyword.redhat_openshift_notm}} cluster, make sure that the MTU is equal to or greater than 1450 bytes.
-{: important}
-
-1. Edit the `default` Calico installation resource.
+3. Apply the daemonset to change the node MTU value. 
     ```sh
-    oc edit installation default -n calico-system
+      oc apply -f <file_name>
     ```
     {: pre}
 
-2. In the `spec.calicoNetwork` section, change the value of the `mtu` field.
-    ```yaml
-    ...
-    spec:
-      calicoNetwork:
-        ipPools:
-        - cidr: 172.30.0.0/16
-          encapsulation: IPIPCrossSubnet
-          natOutgoing: Enabled
-          nodeSelector: all()
-        mtu: 8980
-        nodeAddressAutodetectionV4:
-          interface: (^bond0$|^eth0$|^ens6$|^ens3$)
-      kubernetesProvider: OpenShift
-      registry: registry.ng.bluemix.net/armada-master/
-      variant: Calico
-    status:
-      variant: Calico
+4. Re-run the commands to log in to a node and ping from one host to another, using a large packet size. Now that you have increased the node MTU value, the `ping` command is expected to succeed. 
+    
+    ```sh
+    oc debug node/<NODE_NAME>
     ```
-    {: screen}
+    {: pre}
+    
+    
 
-    To run your {{site.data.keyword.redhat_openshift_notm}} cluster, make sure that the MTU is equal to or greater than 1450 bytes.
-    {: important}
+    ```sh
+    ping -c1 -Mdo -s 8972 <OTHER_HOST_IP>
+    ```
+    {: pre}
 
-3. Save and close the file.
+5. Take time to test your cluster with the new node MTU value. Before you continue with changing the Calico MTU value, it is recommended that you check to make sure your applications still function as expected. 
 
-4. Apply the MTU changes to your worker nodes by [rebooting all worker nodes in your cluster](/docs/openshift?topic=openshift-kubernetes-service-cli#cs_worker_reboot).
+6. Run the command to update the Calico MTU values so that pod-to-pod traffic can also use the larger MTU. For Satellite Core OS clusters, the Calico MTU value should be 50 bytes less than the node MTU value. For all other clusters, the Calico MTU value should be 20 bytes less. For example, if you specified 9000 for the node MTU, your Calico MTU should be 8950 for Satellite Core OS clusters or 8980 for all other clusters. 
 
+      ```sh
+      oc patch installation.operator.tigera.io default --type='merge' -p '{"spec":{"calicoNetwork":{"mtu":<MTU_VALUE>}}}'
+      ```
+      {: pre}
 
+      You can also edit the resource directly by running `oc edit installation.operator.tigera.io default`.
+      {: tip}
+
+7. Apply these changes to all of your nodes by carefully rebooting all nodes. Make sure you have tested this process on a development cluster before you continue with this step, as these changes could cause disruptions to your workload. To reboot your nodes, it is recommended that you [cordon, drain, and reboot](/docs/containers?topic=containers-host-maintenance#worker-maintenance-classic) your nodes one by one. 
+
+If you are completing these steps on a production cluster, you should use the same process you use for updating or replacing production nodes. It is highly recommended that you test this entire process on a test cluster before you complete these steps on a production cluster. 
+{: important}
+
+During the reboot process, some pods use the new larger MTU and some pods still have the original, smaller MTU. Typically, this scenario does not cause issues because both sides negotiate the correct max packet size. However, if you block ICMP packets, the negotiation might not work and your cluster might experience pod connection issues untill all reboots have completed. It is critical that this process is first tested on a development cluster. 
+{: important}
 
 ## Disabling the port map plug-in
 {: #calico-portmap}

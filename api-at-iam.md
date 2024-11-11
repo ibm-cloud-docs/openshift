@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2024
-lastupdated: "2024-07-31"
+lastupdated: "2024-11-11"
 
 
 keywords: kubernetes, istio, add-on, openshift
@@ -335,6 +335,8 @@ Review the following observability monitoring API methods, their corresponding a
 ## Private service endpoint allowlist
 {: #ks-acl}
 
+Private service endpoint allowlists are deprecated and support ends on 10 February 2025. Migrate from allowlists to context based restrictions as soon as possible. For more information, see [Migrating from a private service endpoint allowlist to context based restrictions (CBR)](/docs/openshift?topic=openshift-pse-to-cbr-migration).
+
 Review the following access control list (ACL) API methods, their corresponding actions in {{site.data.keyword.cloud_notm}} IAM, and the events that are sent to {{site.data.keyword.at_full_notm}} for {{site.data.keyword.openshiftlong_notm}} if you use a private cloud service endpoint allowlist.
 {: shortdesc}
 
@@ -435,7 +437,3 @@ Review the following worker node and worker pool API methods, their correspondin
 | `POST​/v2​/vpc​/replaceWorker` | Replace a worker node with a new worker node. | `containers-kubernetes.cluster.operate` | `containers-kubernetes.account.create`  |
 | `PUT​/v1​/clusters​/{idOrName}​/workers​/{workerId}` | Reboot, reload, or update a worker node for a cluster. | `containers-kubernetes.cluster.operate` | `containers-kubernetes.worker.update`  |
 {: caption="Worker node and worker pool API methods, IAM actions, and {{site.data.keyword.cloudaccesstrailshort}} events."}
-
-
-
-

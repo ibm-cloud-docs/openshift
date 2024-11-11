@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2024
-lastupdated: "2024-11-07"
+lastupdated: "2024-11-11"
 
 
 keywords: openshift, clusters, access, endpoint
@@ -343,7 +343,7 @@ A private cloud service endpoint allowlist can also help prevent users from acce
 
 Worker node subnets are automatically added to and removed from your allowlist so that worker nodes can always access the master through the private cloud service endpoint.
 
-By default, private cloud service endpoint allowlists are limited to 20 subnets. If you need more than 20 subnets in your allowlist, you can [open a support ticket](/docs/containers?topic=containers-get-help to increase the limit to 75. 
+Private cloud service endpoint allowlists are limited to 20 subnets and will be unsupported soon. Context based restriction rules are the replacement for this and can contain up to 200 subnets, so if you need more than 20 subnets in your allowlist you should use [Migrating from a private service endpoint allowlist to context based restrictions (CBR)](/docs/openshift?topic=openshift-pse-to-cbr-migration).
 {: tip}
 
 If the public cloud service endpoint is enabled for your cluster, authorized requests are still permitted through the public cloud service endpoint. Therefore, the private cloud service endpoint allowlist is most effective for controlling access to clusters that have only the private cloud service endpoint enabled.

@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2024, 2024
-lastupdated: "2024-11-07"
+lastupdated: "2024-11-08"
 
 
 keywords: kubernetes, private service endpoint, openshift, context based restrictions
@@ -17,7 +17,7 @@ subcollection: openshift
 # Migrating from a private service endpoint allowlist to context based restrictions (CBR)
 {: #pse-to-cbr-migration}
 
-To provide more functionality and a better user experience, master [private service endpoint allowlists](/docs/openshift?topic=openshift-access_cluster#private-se-allowlist) are being deprecated in favor of conxext based restrictions (CBR). Support for master private service endpoint allowlists ends on 10 February 2025. If your clusters have master private service endpoint allowlists enabled, complete the following steps to migrate to using [context based restrictions](/docs/openshift?topic=openshift-cbr) (CBR).
+To provide more functionality and a better user experience, master [private service endpoint allowlists](/docs/openshift?topic=openshift-access_cluster#private-se-allowlist) are being deprecated in favor of context based restrictions (CBR). Support for master private service endpoint allowlists ends on 10 February 2025. If your clusters have master private service endpoint allowlists enabled, complete the following steps to migrate to using [context based restrictions](/docs/openshift?topic=openshift-cbr) (CBR).
 {: shortdesc}
 
 The following instructions cover protecting the private service endpoint of your cluster by using CBR rules. If your cluster has both a public and private service endpoint (PSE), you can also protect your cluster's public service endpoint with CBR.
@@ -203,7 +203,7 @@ The following instructions describe how to use the CLI to create a network zone.
 
     | Parameter | Description |
     | --- | --- |
-    | `--api-types` | The `crn:v1:bluemix:public:containers-kubernetes::::api-type:cluster` value indcates the cluster control plane master APIs. For more information about the API types for {{site.data.keyword.openshiftlong_notm}}, see [Protecting specific APIs](/docs/openshift?topic=openshift-cbr&interface=ui#protect-api-types-cbr). |
+    | `--api-types` | The `crn:v1:bluemix:public:containers-kubernetes::::api-type:cluster` value indicates the cluster control plane master APIs. For more information about the API types for {{site.data.keyword.openshiftlong_notm}}, see [Protecting specific APIs](/docs/openshift?topic=openshift-cbr&interface=ui#protect-api-types-cbr). |
     | `--description` | An optional description of the rule. |
     | `--service-name containers-kubernetes` | The `containers-kubernetes` value indicates {{site.data.keyword.openshiftlong_notm}} as the target service for the rule. |
     | `--service-instance CLUSTER-ID` | Specify the `CLUSTER-ID` of the cluster you want to protect. |
@@ -221,7 +221,7 @@ The following instructions describe how to use the CLI to create a network zone.
 
     | Parameter | Description |
     | --- | --- |
-    | `--api-types` | The `crn:v1:bluemix:public:containers-kubernetes::::api-type:cluster` value indcates the cluster control plane master APIs. For more information about the API types for {{site.data.keyword.openshiftlong_notm}}, see [Protecting specific APIs](/docs/openshift?topic=openshift-cbr&interface=ui#protect-api-types-cbr). |
+    | `--api-types` | The `crn:v1:bluemix:public:containers-kubernetes::::api-type:cluster` value indicates the cluster control plane master APIs. For more information about the API types for {{site.data.keyword.openshiftlong_notm}}, see [Protecting specific APIs](/docs/openshift?topic=openshift-cbr&interface=ui#protect-api-types-cbr). |
     | `--description` | An optional description of the rule. |
     | `--service-name` | The `containers-kubernetes` value indicates {{site.data.keyword.openshiftlong_notm}} as the target service for the rule. |
     | `--context-attributes endpointType=private,networkZoneId=NETWORK-ZONE-ID` | The option allows only resources in the `NETWORK-ZONE-ID` zone to access the cluster's private endpoint. |

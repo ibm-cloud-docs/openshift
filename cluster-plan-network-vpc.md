@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2022, 2024
-lastupdated: "2024-10-10"
+lastupdated: "2024-11-11"
 
 
 keywords: kubernetes, openshift network
@@ -98,7 +98,7 @@ You can allow authorized cluster users to communicate with the Kubernetes master
 * Public and private cloud service endpoints: By default, all calls to the master that are initiated by authorized cluster users are routed through the public cloud service endpoint. If authorized cluster users are in your VPC network or are connected through a [VPC VPN connection](/docs/openshift?topic=openshift-vpc-vpnaas), the master is privately accessible through the private cloud service endpoint.
 * Private cloud service endpoint only: To access the master through the private cloud service endpoint, authorized cluster users must either be in your VPC network or connected through a [VPC VPN connection](/docs/openshift?topic=openshift-vpc-vpnaas).
 
-You can secure access to your private cloud service endpoint by creating a subnet allowlist. Only authorized requests to your cluster master that originate from subnets in the allowlist are permitted through the cluster's private cloud service endpoint. Use of the allowlist function helps prevent unauthorized scanning activities. For more information, see [Creating an allowlist for the private cloud service endpoint](/docs/containers?topic=containers-access_cluster#private-se-allowlist).
+You can secure network access to your cluster's service endpoints using context based restrictions. Only authorized requests to your cluster master that originate from subnets in the allowlist are permitted through the cluster's service endpoints.  Use of context based restrictions helps prevent unauthorized scanning activities. For more information, see [Using context based restrictions](/docs/openshift?topic=openshift-cbr).
 {: tip}
 
 

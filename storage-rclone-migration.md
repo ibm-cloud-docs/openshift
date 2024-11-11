@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2024, 2024
-lastupdated: "2024-10-01"
+lastupdated: "2024-11-11"
 
 
 keywords: openshift, rclone, migrate
@@ -167,14 +167,14 @@ If you don't already have an app that you want to migrate, you can deploy the fo
     ```
     {: pre}
 
-## Install rclone
+## Install `rclone`
 {: #rclone-install}
 {: step}
 
 Follow the `rclone` docs for [installation steps](https://rclone.org/install/).
 
 
-## Configure rclone for your bucket in Account 1
+## Configure `rclone` for your bucket in Account 1
 {: #rclone-config-1}
 {: step}
 
@@ -390,7 +390,7 @@ After you have `rclone` installed, you must generate a configuration file that d
 
 1. Repeat the previous steps to add the COS instance in your second account. When you've verified the information, press `q` to quit the configuration process.
 
-## Configure rclone for your bucket in Account 2
+## Configure `rclone` for your bucket in Account 2
 {: #rclone-config-2}
 {: step}
 

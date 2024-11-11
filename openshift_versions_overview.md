@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2024
-lastupdated: "2024-10-17"
+lastupdated: "2024-11-11"
 
 
 keywords: openshift, version, update, upgrade
@@ -107,9 +107,9 @@ Red Hat Enterprise Linux CoreOS (RHCOS) worker nodes are available only for VPC 
 - [Change log](/docs/openshift?topic=openshift-openshift_changelog_413)
 - [{{site.data.keyword.redhat_openshift_notm}} 4.13 release notes overview](https://docs.openshift.com/container-platform/4.13/release_notes/ocp-4-13-release-notes.html){: external}
 
-4.12 (Kubernetes 1.25)
+[Deprecated]{: tag-deprecated} 4.12 (Kubernetes 1.25)
 - Release date: 23 February 2023
-- End of support: 26 February 2025†
+- End of support: 26 February 2025
 - Operating systems: RHEL 8 (`REDHAT_8_64`)
 - [Version information and update actions](/docs/openshift?topic=openshift-cs_versions_412)
 - [Change log](/docs/openshift?topic=openshift-openshift_changelog_412)
@@ -152,9 +152,9 @@ Red Hat Enterprise Linux CoreOS (RHCOS) worker nodes are available only for VPC 
 - [Change log](/docs/openshift?topic=openshift-openshift_changelog_413)
 - [{{site.data.keyword.redhat_openshift_notm}} 4.13 release notes overview](https://docs.openshift.com/container-platform/4.13/release_notes/ocp-4-13-release-notes.html){: external}
 
-4.12 (Kubernetes 1.25)
+[Deprecated]{: tag-deprecated} 4.12 (Kubernetes 1.25)
 - Release date: 23 February 2023
-- End of support: 26 February 2025†
+- End of support: 26 February 2025
 - Operating systems: Red Hat CoreOS (`RHCOS`), RHEL 8 (`REDHAT_8_64`)
 - [Version information and update actions](/docs/openshift?topic=openshift-cs_versions_412)
 - [Change log](/docs/openshift?topic=openshift-openshift_changelog_412)
@@ -197,9 +197,9 @@ Red Hat Enterprise Linux CoreOS (RHCOS) worker nodes are available only for VPC 
 - [Change log](/docs/openshift?topic=openshift-openshift_changelog_413)
 - [{{site.data.keyword.redhat_openshift_notm}} 4.13 release notes overview](https://docs.openshift.com/container-platform/4.13/release_notes/ocp-4-13-release-notes.html){: external}
 
-4.12 (Kubernetes 1.25)
+[Deprecated]{: tag-deprecated} 4.12 (Kubernetes 1.25)
 - Release date: 23 February 2023
-- End of support: 26 February 2025†
+- End of support: 26 February 2025
 - Operating systems: RHEL 8 (`REDHAT_8_64`)
 - [Version information and update actions](/docs/openshift?topic=openshift-cs_versions_412)
 - [Change log](/docs/openshift?topic=openshift-openshift_changelog_412)
