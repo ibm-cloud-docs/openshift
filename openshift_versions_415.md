@@ -2,7 +2,7 @@
 
 copyright:
   years: 2024, 2024
-lastupdated: "2024-10-10"
+lastupdated: "2024-11-12"
 
 
 keywords: openshift, version, update, upgrade, 4.15, update openshift
@@ -49,9 +49,6 @@ Review changes that you might need to make when you [update a cluster](/docs/ope
 {: shortdesc}
 
 The backup and restore Helm chart is supported on {{site.data.keyword.openshiftlong_notm}} 4.15 clusters. However, only the COS direct endpoints are supported. For example: `s3.direct.us.cloud-object-storage.appdomain.cloud`.
-{: note}
-
-{{site.data.keyword.openshiftlong_notm}} version 4.15 clusters do not yet support [Rotating CA certificates in your cluster](/docs/openshift?topic=openshift-cert-rotate). Do not update your cluster to version 4.15 if this support is required.
 {: note}
 
 
