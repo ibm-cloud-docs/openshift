@@ -2,7 +2,7 @@
 
 copyright:
   years: 2024, 2024
-lastupdated: "2024-11-08"
+lastupdated: "2024-11-12"
 
 keywords: data, portability
 
@@ -21,7 +21,7 @@ subcollection: openshift
 ## Responsibilities
 {: #data-portability-responsibilities}
 
-{{site.data.keyword.Bluemix_notm}} services provide interfaces and instructions to guide the customer to copy and store the service customer content, including the related configuration, on their own selected location.
+{{site.data.keyword.Bluemix_notm}} provides interfaces and instructions to guide the customer to copy and store the service customer content, including the related configuration, on their own selected location.
 
 The customer is responsible for the use of the exported data and configuration for data portability to other infrastructures, which includes:
 
@@ -45,7 +45,7 @@ For more information, see [Your responsibilities with {{site.data.keyword.opensh
 
 
 
-You can use the `oc` CLI to export and save the resources in your cluster. For more information, see the [Kubernetes documentation](https://docs.openshift.com/container-platform/4.17/cli_reference/openshift_cli/developer-cli-commands.html){: external}.
+You can use the `oc` CLI to export and save the resources from your cluster. For more information, see the [Kubernetes documentation](https://docs.openshift.com/container-platform/4.17/cli_reference/openshift_cli/developer-cli-commands.html){: external}.
 
 Example `oc get` [commands](https://docs.openshift.com/container-platform/4.17/cli_reference/openshift_cli/developer-cli-commands.html#oc-get){: external}.
 
@@ -59,6 +59,8 @@ oc get pod pod1 -o yaml
 
 ### Exporting data by using Velero
 {: #export-velero}
+
+The following example exports data from {{site.data.keyword.openshiftlong_notm}} to {{site.data.keyword.cos_full_notm}}. However, you can adapt these steps to export data to other s3 providers. 
 
 1. [Install the Velero CLI](https://velero.io/docs/v1.14/basic-install/){: external}.
 1. [Install {{site.data.keyword.openshiftlong_notm}} CLI](/docs/openshift?topic=openshift-cli-install).
@@ -81,14 +83,7 @@ oc get pod pod1 -o yaml
 1. Install Velero on your cluster. If you selected a different region for the COS instance, adjust the command with the appropriate endpoints. By default, this targets all storage in the cluster for backup.
 
     ```sh
-    velero install \
-        --provider aws \
-        --plugins velero/velero-plugin-for-aws:v1.9.0 \
-        --use-node-agent \
-        --bucket <bucket-name> \
-        --default-volumes-to-fs-backup \
-        --backup-location-config region=us-geo,s3ForcePathStyle="true",s3Url=https://s3.us.cloud-object-storage.appdomain.cloud \
-        --secret-file <hmac-credentials-file>
+    velero install --provider aws --bucket <bucket-name> --secret-file <hmac-credentials-file> --use-volume-snapshots=false --default-volumes-to-fs-backup --use-node-agent --plugins velero/velero-plugin-for-aws:v1.9.0 --image velero/velero:v1.13.0 --backup-location-config region=us-geo,s3ForcePathStyle="true",s3Url=https://s3.direct.us.cloud-object-storage.appdomain.cloud
     ```
     {: pre}
 
@@ -98,7 +93,7 @@ oc get pod pod1 -o yaml
     ```
     {: pre}
 
-1. Create a backup of the cluster. The following command backs up all PVCs, PVs, and pods in the `default` namespace. You can also apply filters to target specific resources or namespaces.
+1. Create a backup of the cluster. The following command backs up all PVCs, PVs, and pods from the `default` namespace. You can also apply filters to target specific resources or namespaces.
     ```sh
     velero backup create mybackup --include-resources pvc,pv,pod --default-volumes-to-fs-backup --snapshot-volumes=false --include-namespaces default --exclude-namespaces kube-system,test-namespace
     ```
@@ -129,8 +124,6 @@ To see an example scenario that uses `velero` in IBM Cloud for migrating from a 
 | [OpenShift APIs for Data Protection](https://access.redhat.com/articles/5456281){: external} (OADP) | OADP (OpenShift APIs for Data Protection) is an operator that Red Hat has created to create backup and restore APIs for OpenShift clusters. For more information, see [Backup and restore Red Hat OpenShift cluster applications with OADP](https://developer.ibm.com/tutorials/awb-backup-and-restore-redhat-openshift-clusters-with-oadp/){: external} and the [OADP documentation](https://docs.openshift.com/container-platform/4.17/backup_and_restore/application_backup_and_restore/oadp-intro.html){: external} |
 | [Backing up and restoring apps and data with Portworx Backup](/docs/openshift?topic=openshift-storage_portworx_backup#px-backup-storage) | This document walks you through setting up PX Backup. You can configure clusters from other providers and restore data from IBM Cloud to the new provider. |
 | [Wanclouds](https://wanclouds.net/){: external} VPC+ DRaaS (VPC+ Disaster Recovery as a Service) | Review the Wanclouds Multi Cloud Backup, Disaster Recovery and Optimization as a Service. For more information, see the [Wanclouds documentation](https://docs.wanclouds.net/ibm/About-VPC-DRaas/){: external}. |
-| Understanding data portability for {{site.data.keyword.cos_full_notm}} | Many backup and restore tools for Kubernetes or OpenShift clusters use {{site.data.keyword.cos_full_notm}} as the backup and restore location. Review the {{site.data.keyword.cos_full_notm}} documentation for more data portability options. |
-| Understanding data portability for VPC | Review the VPC documentation for more data portability options. |
 {: caption="Other options for exporting data" caption-side="bottom"}
 
 
