@@ -2,7 +2,7 @@
 
 copyright:
   years: 2024, 2024
-lastupdated: "2024-10-30"
+lastupdated: "2024-11-12"
 
 
 keywords: openshift, version, update, upgrade, 4.16, update openshift
@@ -56,9 +56,6 @@ VPC worker nodes provisioned for version 4.16 have VPC Instance Metadata Service
 {: note}
 
 [Portworx](/docs/openshift?topic=openshift-storage_portworx_about) does not yet support {{site.data.keyword.redhat_openshift_notm}} on IBM Cloud version 4.16 clusters. Do not update your cluster to version 4.16 if Portworx is installed.
-{: note}
-
-{{site.data.keyword.redhat_openshift_notm}} on IBM Cloud version 4.16 clusters do not yet support [Rotating CA certificates in your cluster](/docs/openshift?topic=openshift-cert-rotate). Do not update your cluster to version 4.16 if this support is required.
 {: note}
 
 
