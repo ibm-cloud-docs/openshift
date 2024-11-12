@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2024
-lastupdated: "2024-07-16"
+lastupdated: "2024-11-12"
 
 
 keywords: autoscaler, add-on, autoscaler change log, cluster autoscaler
@@ -37,6 +37,17 @@ To view a list of add-ons and the supported cluster versions, run the following 
 ibmcloud oc cluster addon versions
 ```
 {: pre}
+
+## Version 1.2.3
+{: #0123_ca_addon}
+
+### Change log for patch update 1.2.3_512, released 31 October 2024
+{: #123_512_ca}
+
+- Adds support for version 1.31.
+- Updates the storage-secret-sidecar image to v1.3.16.
+- Image tags: `1.27.3 123-1`, `1.28.0 123-1`, `1.29.0 123-1`, `1.30.2 123-1`, `1.31.0 123-1`
+
 
 
 ## Version 1.2.2

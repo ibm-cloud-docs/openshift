@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2024
-lastupdated: "2024-11-11"
+lastupdated: "2024-11-12"
 
 
 keywords: openshift
@@ -7367,6 +7367,10 @@ subcollection: openshift
 * [`vpc-file-csi-driver` 2.0](/docs/openshift?topic=openshift-supported-cluster-addon-versions#vpc-file-csi-driver-2.0)
 
 [Cluster autoscaler add-on change log](/docs/openshift?topic=openshift-ca_changelog#ca_changelog)
+
+* [Version 1.2.3](/docs/openshift?topic=openshift-ca_changelog#0123_ca_addon)
+
+    * [Change log for patch update 1.2.3_512, released 31 October 2024](/docs/openshift?topic=openshift-ca_changelog#123_512_ca)
 
 * [Version 1.2.2](/docs/openshift?topic=openshift-ca_changelog#0122_ca_addon)
 

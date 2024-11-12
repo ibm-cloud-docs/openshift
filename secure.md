@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2024
-lastupdated: "2024-11-11"
+lastupdated: "2024-11-12"
 
 
 keywords: openshift
@@ -139,7 +139,7 @@ If you manually installed admission controllers and you don't want to use them a
 
 You can restriction network connectivity to your cluster master in several ways
 
-- **Enable only the private cloud service endpoint**: The public service endpoint is only requied for classic Openshift clusters.  It can be disabled for all VPC clusters.  It can also be disabled for clasisc Kubernetes clusters as long as your account has [VRF and Service Endpoint enabled](/docs/openshift?topic=openshift-plan_basics#workeruser-master-pub-priv).  This protects your cluster master from attacks on the public network.
+- **Enable only the private cloud service endpoint**: The public service endpoint is only required for classic Openshift clusters.  It can be disabled for all VPC clusters.  It can also be disabled for classic Kubernetes clusters as long as your account has [VRF and Service Endpoint enabled](/docs/openshift?topic=openshift-plan_basics#workeruser-master-pub-priv).  This protects your cluster master from attacks on the public network.
 - **Enable context based restrictions**: You can secure network access to your cluster's private and/or public service endpoints using context based restrictions (CBR). Only authorized requests to your cluster master that originate from subnets in the CBR rules are permitted.  For more information, see [Using context based restrictions](/docs/openshift?topic=openshift-cbr).
 
 

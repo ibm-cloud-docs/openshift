@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2024
-lastupdated: "2024-11-11"
+lastupdated: "2024-11-12"
 
 
 keywords: openshift, {{site.data.keyword.openshiftlong_notm}}, kubernetes, kernel, performance
@@ -245,7 +245,7 @@ All VPC worker nodes support jumbo frames, but classic infrastructure only suppo
 Changing maximum transmission unit (MTU) values can have unexpected results, especially in complex networking environments. To avoid disruption to your workflow, it is highly recommended that you test these changes on a development cluster before you make any changes to your production clusters. 
 {: important}
 
-By default, the Calico network plug-in in your {{site.data.keyword.openshiftlong_notm}} cluster has an MTU of 1450 bytes for Satellite clusters and 1480 bytes for non-Satellite clusters. For most cases, this default Calico MTU value is sufficient for preventing packet drops and fragmentation. Because most hosts use an MTU value of 1500, these default values provide Satellite clusters with 50 extra bytes for vxlan headers and provide non-Satellite clusters with 20 extra bytes for the IP headers used in some pod-to-pod cluster network traffic. Note that all worker nodes in the cluster must use the same Calico MTU value.
+By default, the Calico network plug-in in your {{site.data.keyword.openshiftlong_notm}} cluster has an MTU of 1450 bytes for Satellite clusters and 1480 bytes for non-Satellite clusters. For most cases, this default Calico MTU value is sufficient for preventing packet drops and fragmentation. Because most hosts use an MTU value of 1500, these default values provide Satellite clusters with 50 extra bytes for VXLAN headers and provide non-Satellite clusters with 20 extra bytes for the IP headers used in some pod-to-pod cluster network traffic. Note that all worker nodes in the cluster must use the same Calico MTU value.
 
 Review the following cases in which you might need to modify the default Calico MTU:
 
@@ -380,12 +380,12 @@ Before you begin
       You can also edit the resource directly by running `oc edit installation.operator.tigera.io default`.
       {: tip}
 
-7. Apply these changes to all of your nodes by carefully rebooting all nodes. Make sure you have tested this process on a development cluster before you continue with this step, as these changes could cause disruptions to your workload. To reboot your nodes, it is recommended that you [cordon, drain, and reboot](/docs/containers?topic=containers-host-maintenance#worker-maintenance-classic) your nodes one by one. 
+7. Apply these changes to all your nodes by carefully rebooting all nodes. Make sure you have tested this process on a development cluster before you continue with this step, as these changes could cause disruptions to your workload. To reboot your nodes, it is recommended that you [cordon, drain, and reboot](/docs/containers?topic=containers-host-maintenance#worker-maintenance-classic) your nodes one by one. 
 
 If you are completing these steps on a production cluster, you should use the same process you use for updating or replacing production nodes. It is highly recommended that you test this entire process on a test cluster before you complete these steps on a production cluster. 
 {: important}
 
-During the reboot process, some pods use the new larger MTU and some pods still have the original, smaller MTU. Typically, this scenario does not cause issues because both sides negotiate the correct max packet size. However, if you block ICMP packets, the negotiation might not work and your cluster might experience pod connection issues untill all reboots have completed. It is critical that this process is first tested on a development cluster. 
+During the reboot process, some pods use the new larger MTU and some pods still have the original, smaller MTU. Typically, this scenario does not cause issues because both sides negotiate the correct max packet size. However, if you block ICMP packets, the negotiation might not work and your cluster might experience pod connection issues until all reboots have completed. It is critical that this process is first tested on a development cluster. 
 {: important}
 
 ## Disabling the port map plug-in
