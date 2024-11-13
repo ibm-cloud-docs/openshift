@@ -1,7 +1,7 @@
 ---
 copyright: 
   years: 2024, 2024
-lastupdated: "2024-10-18"
+lastupdated: "2024-11-13"
 
 keywords: nlb, network load balancer, vpc nlb, dns, public lb, private lb
 subcollection: openshift
@@ -32,6 +32,7 @@ Expose your app to network traffic by setting up a Kubernetes `LoadBalancer` ser
     ibmcloud plugin install infrastructure-service
     ```
     {: pre}
+
 4. **For private VPC NLBs**: Connect to your VPC private network, such as through a [VPC VPN connection](/docs/openshift?topic=openshift-vpc-vpnaas).
 5. **For private VPC NLBs**: Enable your app to receive private network requests.
     1. [Create a VPC subnet](https://cloud.ibm.com/vpc/network/subnets){: external} that is dedicated to your VPC NLB. This subnet must exist in the same VPC and location as your cluster, but can't be attached to your cluster or any worker nodes. If you enter a specific IP range, don't use the following reserved ranges: `172.16.0.0/16`, `172.18.0.0/16`, `172.19.0.0/16`, and `172.20.0.0/16`. After you provision the subnet, note its **ID**.
@@ -364,7 +365,7 @@ Review the required and optional VPC NLB annotations and specifications.
 :   The label key (`<selector_key>`) and value (`<selector_value>`) that you used in the `spec.template.metadata.labels` section of your app deployment YAML. This custom label identifies all pods where your app runs to include them in the load balancing.
 
 `port`
-  :   The port that the service listens on.
+:   The port that the service listens on.
 
 `targetPort`
 :   Optional: The port to which the service directs traffic. The application running in the pod must be listening for incoming TCP traffic on this target port. The target port is often statically defined in the image that is running in the application pod. The target port configured in the pod is different than the node port for the service and might also be different than the external port that is configured on the VPC LB.

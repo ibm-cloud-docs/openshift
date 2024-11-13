@@ -2,7 +2,7 @@
 
 copyright:
   years: 2024, 2024
-lastupdated: "2024-11-12"
+lastupdated: "2024-11-13"
 
 
 keywords: openshift, version, update, upgrade, 4.16, update openshift
@@ -87,6 +87,7 @@ For clusters that run version 4.16 or later, you can use the `oc adm upgrade sta
 | Type | Description |
 | --- | --- |
 | **Unsupported:** `localhost` `NodePort` services | To further reduce security risks related to [CVE-2020-8558](https://github.com/advisories/GHSA-wqv3-8cm6-h6wg){: external}, `localhost` access to `NodePort` services is disabled. If your apps rely on this behavior, update them to the node private IP address instead. |
+{: caption="Changes to make after you update the master to {{site.data.keyword.redhat_openshift_notm}} 4.16" caption-side="bottom"}
 
 ## Checking the `Upgradeable` status of your cluster
 {: #status-check-416}

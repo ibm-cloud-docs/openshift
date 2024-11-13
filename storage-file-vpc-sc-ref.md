@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2022, 2024
-lastupdated: "2024-07-16"
+lastupdated: "2024-11-13"
 
 
 keywords: openshift, file storage, storage class reference, eni
@@ -20,8 +20,6 @@ subcollection: openshift
 
 The available storage classes correspond to the predefined {{site.data.keyword.filestorage_vpc_short}} profiles. For storage classes with defined IOPs, make sure the IOPs are sufficient for the file share size you want to provision. For more information about the profiles and IOPs tiers, see [{{site.data.keyword.filestorage_vpc_short}} `dp2` profiles](/docs/vpc?topic=vpc-file-storage-profiles&interface=ui#dp2-profile).
 
-
-
 - All file shares are provisioned with zonal availability.
 - All classes are elastic network interface (ENI) enabled.
 - All classes support cross-zone mounting.
@@ -37,10 +35,10 @@ New storage classes were introduced with version 2.0. You can no longer provisio
 
 | Name | Description |
 | --- | --- |
-| ibmc-vpc-file-1000-iops | 1000 IOPs and `Immediate ` binding. |
-| ibmc-vpc-file-3000-iops | 3000 IOPs and `Immediate ` binding. |
-| ibmc-vpc-file-500-iops | 500 IOPs `Immediate ` binding |
-| ibmc-vpc-file-eit | 1000 IOPs, `Immediate ` binding., as well as and ElasticNetworkInterface(ENI) and EncryptionInTransit(EIT) enabled. |
+| ibmc-vpc-file-1000-iops | 1000 IOPs and `Immediate` binding. |
+| ibmc-vpc-file-3000-iops | 3000 IOPs and `Immediate` binding. |
+| ibmc-vpc-file-500-iops | 500 IOPs `Immediate` binding |
+| ibmc-vpc-file-eit | 1000 IOPs, `Immediate` binding., as well as and ElasticNetworkInterface(ENI) and EncryptionInTransit(EIT) enabled. |
 | ibmc-vpc-file-metro-1000-iops | 1000 IOPs and `WaitForFirstConsumer` binding. |
 | ibmc-vpc-file-metro-3000-iops | 3000 IOPs and `WaitForFirstConsumer` binding. |
 | ibmc-vpc-file-metro-500-iops | 500 IOPs `WaitForFirstConsumer` binding. |
@@ -59,4 +57,3 @@ For more information about each of the classes view the details from the web con
 oc get sc CLASS
 ```
 {: pre}
-
