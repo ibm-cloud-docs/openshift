@@ -2,7 +2,7 @@
 
 copyright:
   years: 2024, 2024
-lastupdated: "2024-11-01"
+lastupdated: "2024-11-13"
 
 
 keywords: pods, pod connectvity, networking, pod networking, pod trouble shooting, pod debug
@@ -57,7 +57,7 @@ Follow these steps to check the health of your components. Networking issues mig
         
 
         
-        ```
+        ```txt
         NAMESPACE        NAME                               READY   STATUS     RESTARTS    AGE    IP              NODE           NOMINATED     READINESS GATES
         calico-system    calico-kube-controllers-1a1a1a1    1/1     Running     0          37m    172.17.61.195   10.245.0.5     <none>        <none>
         calico-system    calico-node-1a1a1a1                1/1     Running     0          37m    10.245.0.5      10.245.0.5     <none>        <none>
@@ -89,7 +89,7 @@ To determine the cause of networking issues on your pods, you can create a test 
     ```
     {: pre}
 
- 1. Add labels to the new privileged namespace. 
+1. Add labels to the new privileged namespace. 
 
     ```sh
     oc label namespace pod-network-test --overwrite=true \
