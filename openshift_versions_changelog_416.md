@@ -2,7 +2,7 @@
 
 copyright:
   years: 2023, 2024
-lastupdated: "2024-11-12"
+lastupdated: "2024-11-13"
 
 
 keywords: openshift, 4.16, update, upgrade, BOM, bill of materials, versions, patch
@@ -32,6 +32,22 @@ Check the [Security Bulletins on {{site.data.keyword.cloud_notm}} Status](https:
 
 Master patch updates are applied automatically. Worker node patch updates can be applied by reloading or updating the worker nodes. For more information about major, minor, and patch versions and preparation actions between minor versions, see [{{site.data.keyword.redhat_openshift_notm}} versions](/docs/openshift?topic=openshift-openshift_versions).
 {: tip}
+
+
+### Change log for master fix pack 4.16.19_1543_openshift, released 13 November 2024
+{: #41619_1543_openshift_M}
+
+The following table shows the changes that are in the master fix pack 4.16.19_1543_openshift. Master patch updates are applied automatically. 
+
+
+
+| Component | Previous | Current | Description |
+| --- | --- | --- | --- |
+| {{site.data.keyword.cloud_notm}} Block Storage driver and plug-in | v2.5.15 | v2.5.16 | New version contains updates and security fixes. |
+| {{site.data.keyword.cloud_notm}} Controller Manager | v1.29.9-6 | v1.29.10-2 | New version contains updates and security fixes. |
+| {{site.data.keyword.cloud_notm}} RBAC Operator | 77dac6b | c4a05b0 | New version contains updates and security fixes. |
+| {{site.data.keyword.openshiftlong_notm}}. | 4.16.16 | 4.16.19 | See the [{{site.data.keyword.openshiftlong_notm}} release notes](https://docs.openshift.com/container-platform/4.16/release_notes/ocp-4-16-release-notes.html#ocp-4-16-19){: external}. |
+{: caption="Changes since version 4.16.16_1541_openshift" caption-side="bottom"}
 
 
 ### Change log for worker node fix pack 4.16.19_1542_openshift, released 04 November 2024
@@ -84,7 +100,6 @@ The following table shows the changes that are in the worker node fix pack 4.16.
 | {{site.data.keyword.openshiftshort}} and Red Hat CoreOS| 4.16.15 | 4.16.17 | For more information, see the [change logs](https://docs.openshift.com/container-platform/4.16/release_notes/ocp-4-16-release-notes.html#ocp-4-16-17_release-notes){: external}.|
 | Haproxy | 67d03375 | 88598691 | Security fixes for [CVE-2024-5535](https://nvd.nist.gov/vuln/detail/CVE-2024-5535){: external}. |
 {: caption="Changes since version 4.16.15_1539_openshift" caption-side="bottom"}
-
 
 
 ### Change log for worker node fix pack 4.16.15_1539_openshift, released 09 October 2024
