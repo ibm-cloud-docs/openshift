@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2024, 2024
-lastupdated: "2024-07-31"
+lastupdated: "2024-11-13"
 
 
 keywords: openshift, kubernetes, affinity, taint, edge node, edge
@@ -16,7 +16,7 @@ subcollection: openshift
 
 
 
-#  Isolating Classic NLBs to edge worker nodes
+# Isolating Classic NLBs to edge worker nodes
 {: #edge-nlb-classic}
 
 [Classic]{: tag-classic-inf}
@@ -146,4 +146,3 @@ Before you begin
 
 
 You labeled worker nodes in a worker pool with `dedicated=edge` and redeployed all the existing NLBs to the edge nodes. All subsequent NLBs that are added to the cluster are also deployed to an edge node in your edge worker pool. Next, prevent other [workloads from running on edge worker nodes](/docs/openshift?topic=openshift-edge-workload-prevent) and [block inbound traffic to NodePorts on worker nodes](/docs/openshift?topic=openshift-network_policies#block_ingress).
-
