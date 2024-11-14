@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2024
-lastupdated: "2024-09-18"
+lastupdated: "2024-11-14"
 
 
 keywords: openshift, {{site.data.keyword.openshiftlong_notm}}, oc, ks
@@ -29,8 +29,16 @@ Refer to the following change logs for a summary of changes for each version of 
 ## Version 1.0
 {: #10}
 
+## Version v1.0.673
+{: #cli-010673}
+
 Review the following changes for 1.0 versions of the CLI plug-in.
 {: shortdesc}
+
+- Adds the `vpc secure-by-default` command group.
+- Adds the `endpoint authn get` command for Satellite.
+- Adds the `-f` force option to `worker-pool rebalance`.
+- Updates the help text when referring to Key Management Service (KMS).
 
 ## Version v1.0.665
 {: #cli-010665}

@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2024
-lastupdated: "2024-11-13"
+lastupdated: "2024-11-14"
 
 
 keywords: kubernetes, release notes, openshift, {{site.data.keyword.openshiftlong_notm}}
@@ -27,6 +27,16 @@ Looking for {{site.data.keyword.cloud_notm}} status, platform announcements, sec
 
 ## November 2024
 {: #openshift-nov24}
+
+### 14 November 2024
+{: #openshift-nov1424}
+{: release-note}
+
+Secure by default networking can now be enabled on VPC clusters that were created before 4.15.
+:   Secure by default networking introduced new security group configurations and behaviors for new VPC clusters beginning with 4.15. Clusters created at versions 4.14 and earlier did not get the secure by default security group configurations when updating to 4.15. However, you can now update your cluster's security group configurations for clusters that were created at versions 4.14 and earlier. For more information, see [Enabling secure by default for clusters created at 4.14 and earlier](/docs/openshift?topic=openshift-vpc-sbd-enable-existing).
+
+CLI version `1.0.673` is available.
+:   For more information, see [Updating the CLI](/docs/openshift?topic=openshift-cli-update) and the [CLI change log](/docs/openshift?topic=openshift-cs_cli_changelog).
 
 ### 13 November 2024
 {: #openshift-nov1324}
