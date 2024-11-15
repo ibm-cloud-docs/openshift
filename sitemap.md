@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2024
-lastupdated: "2024-11-14"
+lastupdated: "2024-11-15"
 
 
 keywords: openshift
@@ -7375,8 +7375,6 @@ subcollection: openshift
 * [`ibm-storage-operator` 1.0](/docs/openshift?topic=openshift-supported-cluster-addon-versions#ibm-storage-operator-1.0)
 
 * [`image-key-synchronizer` 1.0.0](/docs/openshift?topic=openshift-supported-cluster-addon-versions#image-key-synchronizer-1.0.0)
-
-* [`istio` 1.21](/docs/openshift?topic=openshift-supported-cluster-addon-versions#istio-1.21)
 
 * [`istio` 1.22](/docs/openshift?topic=openshift-supported-cluster-addon-versions#istio-1.22)
 
