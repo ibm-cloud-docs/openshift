@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2024, 2024
-lastupdated: "2024-11-08"
+lastupdated: "2024-11-15"
 
 
 keywords: kubernetes, private service endpoint, openshift, context based restrictions
@@ -317,7 +317,7 @@ To remove subnets from the zone, you can use the same command and omit the subne
 1. Add or remove subnets, VPCs, or services to your network zone to control which resources can access your chosen clusters.
 
 ## Deleting a rule from the CLI
-{: #pse-cbr-remove}
+{: #pse-cbr-remove-cli}
 {: cli}
 
 You can delete CBR rules with the `ibmcloud cbr rule-delete <RULE-ID>` or `ibmcloud cbr rule-update <RULE-ID>` command.

@@ -3375,7 +3375,7 @@ subcollection: openshift
 
 * [Deleting a rule from the console](/docs/openshift?topic=openshift-pse-to-cbr-migration&interface=ui#pse-cbr-remove-ui)
 
-* [Deleting a rule from the CLI](/docs/openshift?topic=openshift-pse-to-cbr-migration&interface=cli#pse-cbr-remove)
+* [Deleting a rule from the CLI](/docs/openshift?topic=openshift-pse-to-cbr-migration&interface=cli#pse-cbr-remove-cli)
 
 * [Next steps](/docs/openshift?topic=openshift-pse-to-cbr-migration&interface=cli#pse-cbr-next)
 
@@ -4452,7 +4452,7 @@ subcollection: openshift
 
 * [Setting up a Virtual Private Endpoint Gateway](/docs/openshift?topic=openshift-setup_vpc_nlb_pp#vpc_nlb_pp_vpe)
 
-* [Connecting to your apps through your VPE](/docs/openshift?topic=openshift-setup_vpc_nlb_pp#vpc_nlb_pp_vpe)
+* [Connecting to your apps through your VPE](/docs/openshift?topic=openshift-setup_vpc_nlb_pp#vpc_nlb_pp_vpe_con)
 
 * [Annotations and specifications](/docs/openshift?topic=openshift-setup_vpc_nlb_pp#vpc_nlb_pp_annotations)
 

@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2024, 2024
-lastupdated: "2024-10-15"
+lastupdated: "2024-11-15"
 
 keywords: private path nlb, private path network load balancer, vpc nlb, private lb
 subcollection: openshift
@@ -88,7 +88,7 @@ Now that you've configured a Load Balancer service, you must set a Virtual Priva
 For more information, see [Creating an endpoint gateway in the UI](/docs/vpc?topic=vpc-ordering-endpoint-gateway&interface=ui).
 
 ## Connecting to your apps through your VPE
-{: #vpc_nlb_pp_vpe}
+{: #vpc_nlb_pp_vpe_con}
 {: step}
 
 For information on connecting to your apps through your VPE, see [Accessing your virtual private endpoint after setting up your endpoint gateway](/docs/vpc?topic=vpc-accessing-vpe-after-setup&interface=ui).
@@ -150,5 +150,3 @@ Review the required and optional VPC NLB annotations and specifications.
 
 `targetPort`
 :   Optional: The port to which the service directs traffic. The application running in the pod must be listening for incoming TCP traffic on this target port. The target port is often statically defined in the image that is running in the application pod. The target port configured in the pod is different than the node port for the service and might also be different than the external port that is configured on the VPC LB.
-
-
