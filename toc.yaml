@@ -146,6 +146,7 @@ toc:
           topics:
           - vpc-security-group2.md
           - vpc-sbd-allow-outbound.md
+          - vpc-sbd-enable-existing.md
           - vpc-security-group.md
           - vpc-security-group-manage.md
           - vpc-acls.md

@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2024
-lastupdated: "2024-11-13"
+lastupdated: "2024-11-15"
 
 
 keywords: openshift
@@ -274,6 +274,12 @@ subcollection: openshift
 [Release notes](/docs/openshift?topic=openshift-openshift-relnotes#openshift-relnotes)
 
 * [November 2024](/docs/openshift?topic=openshift-openshift-relnotes#openshift-nov24)
+
+    * [14 November 2024](/docs/openshift?topic=openshift-openshift-relnotes#openshift-nov1424)
+
+        * Secure by default networking can now be enabled on VPC clusters that were created before 4.15.
+
+        * CLI version `1.0.673` is available.
 
     * [13 November 2024](/docs/openshift?topic=openshift-openshift-relnotes#openshift-nov1324)
 
@@ -3786,6 +3792,16 @@ subcollection: openshift
 
     * [Allowing temporary traffic to the cluster API server over the public network](/docs/openshift?topic=openshift-sbd-allow-outbound#sbd-example-api-server-backup)
 
+[Enabling secure by default for clusters created at 4.14 and earlier](/docs/openshift?topic=openshift-vpc-sbd-enable-existing#vpc-sbd-enable-existing)
+
+* [Preparing to enable secure by default](/docs/openshift?topic=openshift-vpc-sbd-enable-existing#existing-cluster-sbd-prepare)
+
+* [What happens when I enable secure by default?](/docs/openshift?topic=openshift-vpc-sbd-enable-existing#existing-cluster-what)
+
+* [In what order are the changes applied?](/docs/openshift?topic=openshift-vpc-sbd-enable-existing#sbd-existing-update-order)
+
+* [Enabling secure by default](/docs/openshift?topic=openshift-vpc-sbd-enable-existing#existing-cluster-sbd-enable)
+
 [Understanding VPC security groups in version 4.14 and earlier](/docs/openshift?topic=openshift-vpc-security-group#vpc-security-group)
 
 * [Virtual private endpoint (VPE) gateways](/docs/openshift?topic=openshift-vpc-security-group#managed-vpe-gateways)
@@ -6051,6 +6067,10 @@ subcollection: openshift
 
     * [Experimental: `ibmcloud oc nlb-dns secret rm`](/docs/openshift?topic=openshift-kubernetes-service-cli#cs_nlb-dns-secret-rm)
 
+* [`ibmcloud oc vpc secure-by-default enable`](/docs/openshift?topic=openshift-kubernetes-service-cli#vpc-secure-by-default-enable-cli)
+
+    * [Command options](/docs/openshift?topic=openshift-kubernetes-service-cli#vpc-secure-by-default-enable-options)
+
 * [`webhook-create` command](/docs/openshift?topic=openshift-kubernetes-service-cli#cs_webhook_create)
 
     * [Example `webhook-create` command](/docs/openshift?topic=openshift-kubernetes-service-cli#webhook-create-example)
@@ -6170,6 +6190,8 @@ subcollection: openshift
 [CLI change log](/docs/openshift?topic=openshift-cs_cli_changelog#cs_cli_changelog)
 
 * [Version 1.0](/docs/openshift?topic=openshift-cs_cli_changelog#10)
+
+* [Version v1.0.673](/docs/openshift?topic=openshift-cs_cli_changelog#cli-010673)
 
 * [Version v1.0.665](/docs/openshift?topic=openshift-cs_cli_changelog#cli-010665)
 
@@ -7353,8 +7375,6 @@ subcollection: openshift
 * [`ibm-storage-operator` 1.0](/docs/openshift?topic=openshift-supported-cluster-addon-versions#ibm-storage-operator-1.0)
 
 * [`image-key-synchronizer` 1.0.0](/docs/openshift?topic=openshift-supported-cluster-addon-versions#image-key-synchronizer-1.0.0)
-
-* [`istio` 1.21](/docs/openshift?topic=openshift-supported-cluster-addon-versions#istio-1.21)
 
 * [`istio` 1.22](/docs/openshift?topic=openshift-supported-cluster-addon-versions#istio-1.22)
 
