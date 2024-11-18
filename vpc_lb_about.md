@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2024
-lastupdated: "2024-10-30"
+lastupdated: "2024-11-18"
 
 
 keywords: kubernetes, openshift, app protocol, application protocol
@@ -39,7 +39,7 @@ The following table describes the basic characteristics of each load balancing o
 
 
 | Characteristic | Application Load BalancerA (ALB) | Network Load Balancer (NLB) | Private Path NLB |
-|--------------|---------------------|-----------------------------|
+| --- | --- | --- | --- |
 | Supported {{site.data.keyword.redhat_openshift_notm}} version | All versions | All versions | 4.16 and later |
 | Transport layer | Layer 7 | Layer 4 | Layer 4 |
 | Types of load balancers | Public and private | Public and private | Private |
