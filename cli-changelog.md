@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2024
-lastupdated: "2024-11-14"
+lastupdated: "2024-11-19"
 
 
 keywords: openshift, {{site.data.keyword.openshiftlong_notm}}, oc, ks
@@ -29,11 +29,16 @@ Refer to the following change logs for a summary of changes for each version of 
 ## Version 1.0
 {: #10}
 
-## Version v1.0.673
-{: #cli-010673}
-
 Review the following changes for 1.0 versions of the CLI plug-in.
 {: shortdesc}
+
+## Version v1.0.674
+{: #cli-010674}
+
+- Updates the `sat location update` command from experimental to non-experimental.
+
+## Version v1.0.673
+{: #cli-010673}
 
 - Adds the `vpc secure-by-default` command group.
 - Adds the `endpoint authn get` command for Satellite.
