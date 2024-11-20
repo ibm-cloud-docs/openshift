@@ -62,6 +62,14 @@ Red Hat Enterprise Linux CoreOS (RHCOS) worker nodes are available only for VPC 
 - [Change log](/docs/openshift?topic=openshift-openshift_changelog_416)
 - [{{site.data.keyword.redhat_openshift_notm}} 4.16 release notes overview](https://docs.openshift.com/container-platform/4.16/release_notes/ocp-4-16-release-notes.html){: external}
 
+4.15 (Kubernetes 1.28)
+- Release date: 24 April 2024
+- End of support: 08 January 2026†
+- Operating systems: Red Hat CoreOS (`RHCOS`), RHEL 8 (`REDHAT_8_64`)
+- [Version information and update actions](/docs/openshift?topic=openshift-cs_versions_415)
+- [Change log](/docs/openshift?topic=openshift-openshift_changelog_415)
+- [{{site.data.keyword.redhat_openshift_notm}} 4.15 release notes overview](https://docs.openshift.com/container-platform/4.15/release_notes/ocp-4-15-release-notes.html){: external}
+
 
 ### VPC and Classic clusters
 {: #os-openshift}
