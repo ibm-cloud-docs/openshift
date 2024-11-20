@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2024, 2024
-lastupdated: "2024-09-05"
+lastupdated: "2024-11-20"
 
 
 keywords: openshift, benchmarks, 4.16, compliance operator, compliance
@@ -36,41 +36,41 @@ The master node configuration is not stored as a set of files; therefore, rules 
 
 | Section|Recommendation|Manual/Automated|Level|Result |
 | -- | -- | -- | -- | -- |
-| 1.2.1|Ensure that anonymous requests are authorized.|Manual|1|PASS |
-| 1.2.2|Ensure that the `--basic-auth-file` argument is not set.|Automated|1|PASS |
-| 1.2.3|Ensure that the `--token-auth-file` parameter is not set.|Automated|1|PASS |
-| 1.2.4|Use https for kubelet connections.|Automated|1|PASS |
-| 1.2.5|Ensure that the kubelet uses certificates to authenticate.|Automated|1|NOT CHECKED |
-| 1.2.6|Verify that the kubelet certificate authority is set as appropriate.|Automated|1|PASS |
-| 1.2.7|Ensure that the `--authorization-mode` argument is not set to AlwaysAllow.|Automated|1|PASS |
-| 1.2.8|Verify that the Node authorizer is enabled.|Automated|1|PASS |
-| 1.2.9|Verify that RBAC is enabled.|Automated|1|PASS |
-| 1.2.10|Ensure that the APIPriorityAndFairness feature gate is enabled.|Manual|1|PASS |
-| 1.2.11|Ensure that the admission control plugin AlwaysAdmit is not set.|Automated|1|PASS |
-| 1.2.12|Ensure that the admission control plugin AlwaysPullImages is not set.|Manual|1|PASS |
-| 1.2.13|Ensure that the admission control plugin SecurityContextDeny is not set.|Manual|1|PASS |
-| 1.2.14|Ensure that the admission control plugin ServiceAccount is set.|Automated|1|PASS |
-| 1.2.15|Ensure that the admission control plugin NamespaceLifecycle is set.|Automated|1|PASS |
-| 1.2.16|Ensure that the admission control plugin SecurityContextConstraint is set.|Automated|1|PASS |
-| 1.2.17|Ensure that the admission control plugin NodeRestriction is set.|Automated|1|PASS |
-| 1.2.18|Ensure that the `--insecure-bind-address` argument is not set.|Automated|1|PASS |
-| 1.2.19|Ensure that the `--insecure-port` argument is set to 0.|Automated|1|NOT CHECKED |
-| 1.2.20|Ensure that the `--secure-port` argument is not set to 0.|Automated|1|PASS |
-| 1.2.21|Ensure that the healthz endpoint is protected by RBAC.|Automated|1|PASS |
-| 1.2.22|Ensure that the `--audit-log-path` argument is set.|Automated|1|PASS |
-| 1.2.23|Ensure that the audit logs are forwarded off the cluster for retention.|Automated|1|[NOT CHECKED](#co-benchmark-416-remdiations) |
-| 1.2.24|Ensure that the maximumRetainedFiles argument is set to 10 or as appropriate.|Automated|1|[NOT CHECKED](#co-benchmark-416-remdiations) |
-| 1.2.25|Ensure that the maximumFileSizeMegabytes argument is set to 100 or as appropriate.|Automated|1|[NOT CHECKED](#co-benchmark-416-remdiations) |
-| 1.2.26|Ensure that the `--request-timeout` argument is set as appropriate.|Automated|1|PASS |
-| 1.2.27|Ensure that the `--service-account-lookup` argument is set to true.|Automated|1|PASS |
-| 1.2.28|Ensure that the `--service-account-key-file` argument is set as appropriate.|Automated|1|PASS |
-| 1.2.29|Ensure that the `--etcd-certfile` and `--etcd-keyfile` arguments are set as appropriate.|Automated|1|PASS |
-| 1.2.30|Ensure that the `--tls-cert-file` and `--tls-private-key-file` arguments are set as appropriate.|Automated|1|PASS |
-| 1.2.31|Ensure that the `--client-ca-file` argument is set as appropriate.|Automated|1|PASS |
-| 1.2.32|Ensure that the `--etcd-cafile` argument is set as appropriate.|Automated|1|PASS |
-| 1.2.33|Ensure that the `--encryption-provider-config` argument is set as appropriate.|Manual|1|[NOT CHECKED](#co-benchmark-416-remdiations) |
-| 1.2.34|Ensure that encryption providers are appropriately configured.|Manual|1|[NOT CHECKED](#co-benchmark-416-remdiations) |
-| 1.2.35|Ensure that the API Server only makes use of Strong Cryptographic Ciphers.|Manual|1|PASS |
+| 1.2.1|Ensure that anonymous requests are authorized.|Manual|1|Pass |
+| 1.2.2|Ensure that the `--basic-auth-file` argument is not set.|Automated|1|Pass |
+| 1.2.3|Ensure that the `--token-auth-file` parameter is not set.|Automated|1|Pass |
+| 1.2.4|Use https for kubelet connections.|Automated|1|Pass |
+| 1.2.5|Ensure that the kubelet uses certificates to authenticate.|Automated|1|Not checked |
+| 1.2.6|Verify that the kubelet certificate authority is set as appropriate.|Automated|1|Pass |
+| 1.2.7|Ensure that the `--authorization-mode` argument is not set to AlwaysAllow.|Automated|1|Pass |
+| 1.2.8|Verify that the Node authorizer is enabled.|Automated|1|Pass |
+| 1.2.9|Verify that RBAC is enabled.|Automated|1|Pass |
+| 1.2.10|Ensure that the APIPriorityAndFairness feature gate is enabled.|Manual|1|Pass |
+| 1.2.11|Ensure that the admission control plugin AlwaysAdmit is not set.|Automated|1|Pass |
+| 1.2.12|Ensure that the admission control plugin AlwaysPullImages is not set.|Manual|1|Pass |
+| 1.2.13|Ensure that the admission control plugin SecurityContextDeny is not set.|Manual|1|Pass |
+| 1.2.14|Ensure that the admission control plugin ServiceAccount is set.|Automated|1|Pass |
+| 1.2.15|Ensure that the admission control plugin NamespaceLifecycle is set.|Automated|1|Pass |
+| 1.2.16|Ensure that the admission control plugin SecurityContextConstraint is set.|Automated|1|Pass |
+| 1.2.17|Ensure that the admission control plugin NodeRestriction is set.|Automated|1|Pass |
+| 1.2.18|Ensure that the `--insecure-bind-address` argument is not set.|Automated|1|Pass |
+| 1.2.19|Ensure that the `--insecure-port` argument is set to 0.|Automated|1|Not checked |
+| 1.2.20|Ensure that the `--secure-port` argument is not set to 0.|Automated|1|Pass |
+| 1.2.21|Ensure that the healthz endpoint is protected by RBAC.|Automated|1|Pass |
+| 1.2.22|Ensure that the `--audit-log-path` argument is set.|Automated|1|Pass |
+| 1.2.23|Ensure that the audit logs are forwarded off the cluster for retention.|Automated|1|[Not checked](#co-benchmark-416-remdiations) |
+| 1.2.24|Ensure that the maximumRetainedFiles argument is set to 10 or as appropriate.|Automated|1|[Not checked](#co-benchmark-416-remdiations) |
+| 1.2.25|Ensure that the maximumFileSizeMegabytes argument is set to 100 or as appropriate.|Automated|1|[Not checked](#co-benchmark-416-remdiations) |
+| 1.2.26|Ensure that the `--request-timeout` argument is set as appropriate.|Automated|1|Pass |
+| 1.2.27|Ensure that the `--service-account-lookup` argument is set to true.|Automated|1|Pass |
+| 1.2.28|Ensure that the `--service-account-key-file` argument is set as appropriate.|Automated|1|Pass |
+| 1.2.29|Ensure that the `--etcd-certfile` and `--etcd-keyfile` arguments are set as appropriate.|Automated|1|Pass |
+| 1.2.30|Ensure that the `--tls-cert-file` and `--tls-private-key-file` arguments are set as appropriate.|Automated|1|Pass |
+| 1.2.31|Ensure that the `--client-ca-file` argument is set as appropriate.|Automated|1|Pass |
+| 1.2.32|Ensure that the `--etcd-cafile` argument is set as appropriate.|Automated|1|Pass |
+| 1.2.33|Ensure that the `--encryption-provider-config` argument is set as appropriate.|Manual|1|[Not checked](#co-benchmark-416-remdiations) |
+| 1.2.34|Ensure that encryption providers are appropriately configured.|Manual|1|[Not checked](#co-benchmark-416-remdiations) |
+| 1.2.35|Ensure that the API Server only makes use of Strong Cryptographic Ciphers.|Manual|1|Pass |
 {: caption="Section 1.2 Benchmarks for api server." caption-side="top"}
 
 ### 1.3 Controller manager
@@ -78,13 +78,13 @@ The master node configuration is not stored as a set of files; therefore, rules 
 
 | Section|Recommendation|Manual/Automated|Level|Result |
 | -- | -- | -- | -- | -- |
-| 1.3.1|Ensure that garbage collection is configured as appropriate.|Manual|1|NOT CHECKED |
-| 1.3.2|Ensure that controller manager healthz endpoints are protected by RBAC.|Automated|1|PASS |
-| 1.3.3|Ensure that the `--use-service-account-credentials` argument is set to true.|Automated|1|PASS |
-| 1.3.4|Ensure that the `--service-account-private-key-file` argument is set as appropriate.|Automated|1|PASS |
-| 1.3.5|Ensure that the `--root-ca-file` argument is set as appropriate.|Automated|1|PASS |
-| 1.3.6|Ensure that the RotateKubeletServerCertificate argument is set to true.|Automated|2|PASS |
-| 1.3.7|Ensure that the `--bind-address` argument is set to 127.0.0.1.|Automated|1|PASS |
+| 1.3.1|Ensure that garbage collection is configured as appropriate.|Manual|1|Not checked |
+| 1.3.2|Ensure that controller manager healthz endpoints are protected by RBAC.|Automated|1|Pass |
+| 1.3.3|Ensure that the `--use-service-account-credentials` argument is set to true.|Automated|1|Pass |
+| 1.3.4|Ensure that the `--service-account-private-key-file` argument is set as appropriate.|Automated|1|Pass |
+| 1.3.5|Ensure that the `--root-ca-file` argument is set as appropriate.|Automated|1|Pass |
+| 1.3.6|Ensure that the RotateKubeletServerCertificate argument is set to true.|Automated|2|Pass |
+| 1.3.7|Ensure that the `--bind-address` argument is set to 127.0.0.1.|Automated|1|Pass |
 {: caption="Section 1.3 Benchmarks for controller manager." caption-side="top"}
 
 ### 1.4 Scheduler
@@ -92,8 +92,8 @@ The master node configuration is not stored as a set of files; therefore, rules 
 
 | Section|Recommendation|Manual/Automated|Level|Result |
 | -- | -- | -- | -- | -- |
-| 1.4.1|Ensure that the healthz endpoints for the scheduler are protected by RBAC.|Automated|1|PASS |
-| 1.4.2|Verify that the scheduler API service is protected by authentication and authorization.|Automated|1|PASS |
+| 1.4.1|Ensure that the healthz endpoints for the scheduler are protected by RBAC.|Automated|1|Pass |
+| 1.4.2|Verify that the scheduler API service is protected by authentication and authorization.|Automated|1|Pass |
 {: caption="Section 1.4 Benchmarks for scheduler." caption-side="top"}
 
 ## 2 etcd
@@ -101,13 +101,13 @@ The master node configuration is not stored as a set of files; therefore, rules 
 
 | Section|Recommendation|Manual/Automated|Level|Result |
 | -- | -- | -- | -- | -- |
-| 2.1|Ensure that the `--cert-file` and `--key-file` arguments are set as appropriate.|Automated|1|PASS |
-| 2.2|Ensure that the `--client-cert-auth` argument is set to true.|Automated|1|PASS |
-| 2.3|Ensure that the `--auto-tls` argument is not set to true.|Automated|1|PASS |
-| 2.4|Ensure that the `--peer-cert-file` and `--peer-key-file` arguments are set as appropriate.|Automated|1|PASS |
-| 2.5|Ensure that the `--peer-client-cert-auth` argument is set to true.|Automated|1|PASS |
-| 2.6|Ensure that the --peer-auto-tls argument is not set to true.|Automated|1|PASS |
-| 2.7|Ensure that a unique Certificate Authority is used for etcd.|Manual|2|[NOT CHECKED](#co-benchmark-416-remdiations) |
+| 2.1|Ensure that the `--cert-file` and `--key-file` arguments are set as appropriate.|Automated|1|Pass |
+| 2.2|Ensure that the `--client-cert-auth` argument is set to true.|Automated|1|Pass |
+| 2.3|Ensure that the `--auto-tls` argument is not set to true.|Automated|1|Pass |
+| 2.4|Ensure that the `--peer-cert-file` and `--peer-key-file` arguments are set as appropriate.|Automated|1|Pass |
+| 2.5|Ensure that the `--peer-client-cert-auth` argument is set to true.|Automated|1|Pass |
+| 2.6|Ensure that the --peer-auto-tls argument is not set to true.|Automated|1|Pass |
+| 2.7|Ensure that a unique Certificate Authority is used for etcd.|Manual|2|[Not checked](#co-benchmark-416-remdiations) |
 {: caption="Section 2 Benchmarks for etcd." caption-side="top"}
 
 ## 3 Control plane configuration
@@ -118,7 +118,7 @@ The master node configuration is not stored as a set of files; therefore, rules 
 
 | Section|Recommendation|Manual/Automated|Level|Result |
 | -- | -- | -- | -- | -- |
-| 3.1.1|Client certificate authentication should not be used for users.|Manual|2|PASS |
+| 3.1.1|Client certificate authentication should not be used for users.|Manual|2|Pass |
 {: caption="Section 3.1 Benchmarks for authentication and authorization." caption-side="top"}
 
 ### 3.2 Logging
@@ -126,8 +126,8 @@ The master node configuration is not stored as a set of files; therefore, rules 
 
 | Section|Recommendation|Manual/Automated|Level|Result |
 | -- | -- | -- | -- | -- |
-| 3.2.1|Ensure that a minimal audit policy is created.|Automated|1|PASS |
-| 3.2.2|Ensure that the audit policy covers key security concerns.|Manual|2|PASS |
+| 3.2.1|Ensure that a minimal audit policy is created.|Automated|1|Pass |
+| 3.2.2|Ensure that the audit policy covers key security concerns.|Manual|2|Pass |
 {: caption="Section 3.2 Benchmarks for logging." caption-side="top"}
 
 ## 4 Worker nodes
@@ -143,12 +143,12 @@ Please follow the instruction in [Using the compliance operator](/docs/openshift
 
 | Section|Recommendation|Manual/Automated|Level|Result |
 | -- | -- | -- | -- | -- |
-| 5.1.1|Ensure that the cluster-admin role is only used where required.|Manual|1|PASS |
-| 5.1.2|Minimize access to secrets.|Manual|1|NOT CHECKED |
-| 5.1.3|Minimize wildcard use in Roles and ClusterRoles.|Manual|1|NOT CHECKED |
-| 5.1.4|Minimize access to create pods.|Manual|1|NOT CHECKED |
-| 5.1.5|Ensure that default service accounts are not actively used..|Automated|1|NOT CHECKED |
-| 5.1.6|Ensure that Service Account Tokens are only mounted where necessary.|Manual|1|NOT CHECKED |
+| 5.1.1|Ensure that the cluster-admin role is only used where required.|Manual|1|Pass |
+| 5.1.2|Minimize access to secrets.|Manual|1|Not checked |
+| 5.1.3|Minimize wildcard use in Roles and ClusterRoles.|Manual|1|Not checked |
+| 5.1.4|Minimize access to create pods.|Manual|1|Not checked |
+| 5.1.5|Ensure that default service accounts are not actively used.|Automated|1|Not checked |
+| 5.1.6|Ensure that Service Account Tokens are only mounted where necessary.|Manual|1|Not checked |
 {: caption="Section 5.1 Benchmarks for rbac and service accounts." caption-side="top"}
 
 ### 5.2 Pod security policies
@@ -156,15 +156,15 @@ Please follow the instruction in [Using the compliance operator](/docs/openshift
 
 | Section|Recommendation|Manual/Automated|Level|Result |
 | -- | -- | -- | -- | -- |
-| 5.2.1|Minimize the admission of privileged containers.|Manual|1|NOT CHECKED |
-| 5.2.2|Minimize the admission of containers wishing to share the host process ID namespace.|Automated|1|NOT CHECKED |
-| 5.2.3|Minimize the admission of containers wishing to share the host IPC namespace.|Automated|1|NOT CHECKED |
-| 5.2.4|Minimize the admission of containers wishing to share the host network namespace.|Automated|1|NOT CHECKED |
-| 5.2.5|Minimize the admission of containers with allowPrivilegeEscalation.|Automated|1|NOT CHECKED |
-| 5.2.6|Minimize the admission of root containers.|Manual|2|NOT CHECKED |
-| 5.2.7|Minimize the admission of containers with the NET_RAW capability.|Manual|1|NOT CHECKED |
-| 5.2.8|Minimize the admission of containers with added capabilities.|Manual|1|[NOT CHECKED](#co-benchmark-416-remdiations) |
-| 5.2.9|Minimize the admission of containers with capabilities assigned.|Manual|2|NOT CHECKED |
+| 5.2.1|Minimize the admission of privileged containers.|Manual|1|Not checked |
+| 5.2.2|Minimize the admission of containers wishing to share the host process ID namespace.|Automated|1|Not checked |
+| 5.2.3|Minimize the admission of containers wishing to share the host IPC namespace.|Automated|1|Not checked |
+| 5.2.4|Minimize the admission of containers wishing to share the host network namespace.|Automated|1|Not checked |
+| 5.2.5|Minimize the admission of containers with allowPrivilegeEscalation.|Automated|1|Not checked |
+| 5.2.6|Minimize the admission of root containers.|Manual|2|Not checked |
+| 5.2.7|Minimize the admission of containers with the NET_RAW capability.|Manual|1|Not checked |
+| 5.2.8|Minimize the admission of containers with added capabilities.|Manual|1|[Not checked](#co-benchmark-416-remdiations) |
+| 5.2.9|Minimize the admission of containers with capabilities assigned.|Manual|2|Not checked |
 {: caption="Section 5.2 Benchmarks for pod security policies." caption-side="top"}
 
 ### 5.3 Network policies and CNI
@@ -172,8 +172,8 @@ Please follow the instruction in [Using the compliance operator](/docs/openshift
 
 | Section|Recommendation|Manual/Automated|Level|Result |
 | -- | -- | -- | -- | -- |
-| 5.3.1|Ensure that the CNI in use supports Network Policies.|Manual|1|PASS |
-| 5.3.2|Ensure that all Namespaces have Network Policies define.|Automated|2|[NOT CHECKED](#co-benchmark-416-remdiations) |
+| 5.3.1|Ensure that the CNI in use supports Network Policies.|Manual|1|Pass |
+| 5.3.2|Ensure that all Namespaces have Network Policies define.|Automated|2|[Not checked](#co-benchmark-416-remdiations) |
 {: caption="Section 5.3 Benchmarks for network policies and cni." caption-side="top"}
 
 ### 5.4 Secrets management
@@ -181,8 +181,8 @@ Please follow the instruction in [Using the compliance operator](/docs/openshift
 
 | Section|Recommendation|Manual/Automated|Level|Result |
 | -- | -- | -- | -- | -- |
-| 5.4.1|Prefer using secrets as files over secrets as environment variable.|Manual|1|NOT CHECKED |
-| 5.4.2|Consider external secret storage.|Manual|2|NOT CHECKED |
+| 5.4.1|Prefer using secrets as files over secrets as environment variable.|Manual|1|Not checked |
+| 5.4.2|Consider external secret storage.|Manual|2|Not checked |
 {: caption="Section 5.4 Benchmarks for secrets management." caption-side="top"}
 
 ### 5.5 Extensible admission control
@@ -190,7 +190,7 @@ Please follow the instruction in [Using the compliance operator](/docs/openshift
 
 | Section|Recommendation|Manual/Automated|Level|Result |
 | -- | -- | -- | -- | -- |
-| 5.5.1|Configure Image Provenance using image controller configuration parameter.|Manual|2|NOT CHECKED |
+| 5.5.1|Configure Image Provenance using image controller configuration parameter.|Manual|2|Not checked |
 {: caption="Section 5.5 Benchmarks for extensible admission control." caption-side="top"}
 
 ### 5.7 General policies
@@ -198,10 +198,10 @@ Please follow the instruction in [Using the compliance operator](/docs/openshift
 
 | Section|Recommendation|Manual/Automated|Level|Result |
 | -- | -- | -- | -- | -- |
-| 5.7.1|Create administrative boundaries between resources using namespace.|Manual|1|NOT CHECKED |
-| 5.7.2|Ensure that the seccomp profile is set to docker/default in your pod definition.|Manual|2|NOT CHECKED |
-| 5.7.3|Apply Security Context to Your Pods and Container.|Manual|2|NOT CHECKED |
-| 5.7.4|The default namespace should not be use.|Automated|2|NOT CHECKED |
+| 5.7.1|Create administrative boundaries between resources using namespace.|Manual|1|Not checked |
+| 5.7.2|Ensure that the seccomp profile is set to docker/default in your pod definition.|Manual|2|Not checked |
+| 5.7.3|Apply Security Context to Your Pods and Container.|Manual|2|Not checked |
+| 5.7.4|The default namespace should not be use.|Automated|2|Not checked |
 {: caption="Section 5.7 Benchmarks for general policies." caption-side="top"}
 
 ## Remediations and explanations
