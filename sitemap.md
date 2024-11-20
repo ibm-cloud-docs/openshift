@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2024
-lastupdated: "2024-11-19"
+lastupdated: "2024-11-20"
 
 
 keywords: openshift
@@ -274,6 +274,10 @@ subcollection: openshift
 [Release notes](/docs/openshift?topic=openshift-openshift-relnotes#openshift-relnotes)
 
 * [November 2024](/docs/openshift?topic=openshift-openshift-relnotes#openshift-nov24)
+
+    * [20 November 2024](/docs/openshift?topic=openshift-openshift-relnotes#openshift-nov2024)
+
+        * {{site.data.keyword.block_storage_is_short}} cluster add-on patch updates.
 
     * [19 November 2024](/docs/openshift?topic=openshift-openshift-relnotes#openshift-nov1924)
 
@@ -7646,6 +7650,8 @@ subcollection: openshift
 
 * [Version 5.2](/docs/openshift?topic=openshift-vpc_bs_changelog#052_is_block)
 
+    * [Change log for version 5.2.24_641, released 20 November 2024](/docs/openshift?topic=openshift-vpc_bs_changelog#5.2.24_641_is_block_relnote)
+
     * [Change log for version 5.2.21_602, released 3 October 2024](/docs/openshift?topic=openshift-vpc_bs_changelog#5.2.21_602_is_block_relnote)
 
     * [Change log for version 5.2.20_579, released 15 July 2024](/docs/openshift?topic=openshift-vpc_bs_changelog#5.2.20_579_is_block_relnote)
@@ -7667,6 +7673,8 @@ subcollection: openshift
     * [Change log for version 5.2, released 25 September 2023](/docs/openshift?topic=openshift-vpc_bs_changelog#5.2_is_block_relnote)
 
 * [Version 5.1](/docs/openshift?topic=openshift-vpc_bs_changelog#051_is_block)
+
+    * [Change log for version 5.1.29_642, released 20 November 2024](/docs/openshift?topic=openshift-vpc_bs_changelog#5.1.29_642_is_block_relnote)
 
     * [Change log for version 5.1.26_601, released 3 October 2024](/docs/openshift?topic=openshift-vpc_bs_changelog#5.1.26_601_is_block_relnote)
 

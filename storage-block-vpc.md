@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2024
-lastupdated: "2024-10-02"
+lastupdated: "2024-11-20"
 
 
 keywords: openshift, block storage, deploy apps
@@ -24,6 +24,9 @@ subcollection: openshift
 
 You can choose between predefined storage tiers with GB sizes and IOPS that meet the requirements of your workloads. To find out if {{site.data.keyword.block_storage_is_short}} is the right storage option for you, see [Choosing a storage solution](/docs/openshift?topic=openshift-storage-plan). For pricing information, see [Pricing for {{site.data.keyword.block_storage_is_short}}](https://cloud.ibm.com/infrastructure/provision/vs){: external}.
 
+
+
+The {{site.data.keyword.block_storage_is_short}} cluster add-on is enabled by default on VPC clusters.
 
 
 ## Quick start for {{site.data.keyword.cloud_notm}} {{site.data.keyword.block_storage_is_short}}
@@ -477,6 +480,9 @@ You can update the {{site.data.keyword.block_storage_is_short}} cluster add-on b
 
 Before updating the add-on review the [change log](/docs/openshift?topic=openshift-vpc_bs_changelog).
 {: tip}
+
+Before you update to a `5.x` release from a previous release, you must not have any volume snapshots in `failure` state. For more information, see [Why can't I delete my Block Storage for VPC volume snapshot resources?](/docs/openshift?topic=openshift-ts-storage-volumesnapshotdelete).
+{: important}
 
 1. Check to see if an update is available. If an update is available, the plug-in version is flagged with an asterisk and the latest version is shown. Note the latest version as this value is used later.
 

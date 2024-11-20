@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2024
-lastupdated: "2024-11-19"
+lastupdated: "2024-11-20"
 
 
 keywords: kubernetes, release notes, openshift, {{site.data.keyword.openshiftlong_notm}}
@@ -27,6 +27,13 @@ Looking for {{site.data.keyword.cloud_notm}} status, platform announcements, sec
 
 ## November 2024
 {: #openshift-nov24}
+
+### 20 November 2024
+{: #openshift-nov2024}
+{: release-note}
+
+{{site.data.keyword.block_storage_is_short}} cluster add-on patch updates.
+:   For more information, see the [change log](/docs/openshift?topic=openshift-vpc_bs_changelog).
 
 ### 19 November 2024
 {: #openshift-nov1924}
