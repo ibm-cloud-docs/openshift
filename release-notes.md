@@ -32,6 +32,8 @@ Looking for {{site.data.keyword.cloud_notm}} status, platform announcements, sec
 {: #openshift-nov2024}
 {: release-note}
 
+
+
 {{site.data.keyword.block_storage_is_short}} cluster add-on patch updates.
 :   For more information, see the [change log](/docs/openshift?topic=openshift-vpc_bs_changelog).
 
