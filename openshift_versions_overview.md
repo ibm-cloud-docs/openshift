@@ -55,8 +55,8 @@ Red Hat Enterprise Linux CoreOS (RHCOS) worker nodes are available only for VPC 
 
 
 [Latest]{: tag-green} 4.17 (Kubernetes 1.30)
-- Release date: 21 November 2024
-- End of support: None†
+- Release date: 20 November 2024
+- End of support: 26 August 2026†
 - Operating systems: `RHEL_9_64`, Red Hat CoreOS (`RHCOS`), RHEL 8 (`REDHAT_8_64`)
 - [Version information and update actions](/docs/openshift?topic=openshift-cs_versions_417)
 - [Change log](/docs/openshift?topic=openshift-openshift_changelog_417)
@@ -84,8 +84,8 @@ Red Hat Enterprise Linux CoreOS (RHCOS) worker nodes are available only for VPC 
 
 
 [Latest]{: tag-green} 4.17 (Kubernetes 1.30)
-- Release date: 21 November 2024
-- End of support: None†
+- Release date: 20 November 2024
+- End of support: 26 August 2026†
 - Operating systems: `RHEL_9_64`, RHEL 8 (`REDHAT_8_64`)
 - [Version information and update actions](/docs/openshift?topic=openshift-cs_versions_417)
 - [Change log](/docs/openshift?topic=openshift-openshift_changelog_417)
@@ -137,8 +137,8 @@ Red Hat Enterprise Linux CoreOS (RHCOS) worker nodes are available only for VPC 
 
 
 [Latest]{: tag-green} 4.17 (Kubernetes 1.30)
-- Release date: 21 November 2024
-- End of support: None†
+- Release date: 20 November 2024
+- End of support: 26 August 2026†
 - Operating systems: `RHEL_9_64`, Red Hat CoreOS (`RHCOS`), RHEL 8 (`REDHAT_8_64`)
 - [Version information and update actions](/docs/openshift?topic=openshift-cs_versions_417)
 - [Change log](/docs/openshift?topic=openshift-openshift_changelog_417)
@@ -190,8 +190,8 @@ Red Hat Enterprise Linux CoreOS (RHCOS) worker nodes are available only for VPC 
 
 
 [Latest]{: tag-green} 4.17 (Kubernetes 1.30)
-- Release date: 21 November 2024
-- End of support: None†
+- Release date: 20 November 2024
+- End of support: 26 August 2026†
 - Operating systems: `RHEL_9_64`, RHEL 8 (`REDHAT_8_64`)
 - [Version information and update actions](/docs/openshift?topic=openshift-cs_versions_417)
 - [Change log](/docs/openshift?topic=openshift-openshift_changelog_417)
