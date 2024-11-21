@@ -2,10 +2,10 @@
 
 copyright: 
   years: 2024, 2024
-lastupdated: "2024-11-20"
+lastupdated: "2024-11-21"
 
 
-keywords: openshift, benchmarks, 4.16, compliance operator, compliance
+keywords: openshift, benchmarks, 4.17, compliance operator, compliance
 
 subcollection: openshift
 
@@ -17,22 +17,29 @@ subcollection: openshift
 
 
 
-# 4.16 compliance operator benchmark
-{: #benchmarks_416_co}
+# 4.17 compliance operator benchmark
+{: #benchmarks_417_co}
 
-Review the compliance operator benchmark results for {{site.data.keyword.openshiftlong_notm}} version 4.16.
+Review the compliance operator benchmark results for {{site.data.keyword.openshiftlong_notm}} version 4.17.
 {: shortdesc}
 
+
+
 ## 1 Control plane components
-{: #co-benchmark-416-cp}
+{: #co-benchmark-417-cp}
+
+
 
 ### 1.1 Master node configuration files
-{: #co-benchmark-416-11}
+{: #co-benchmark-417-11}
+
 
 The master node configuration is not stored as a set of files; therefore, rules in section 1.1 are out of the scope of the automated check by the compliance operator.
 
+
+
 ### 1.2 API server
-{: #co-benchmark-416-12}
+{: #co-benchmark-417-12}
 
 | Section|Recommendation|Manual/Automated|Level|Result |
 | -- | -- | -- | -- | -- |
@@ -58,9 +65,9 @@ The master node configuration is not stored as a set of files; therefore, rules 
 | 1.2.20|Ensure that the `--secure-port` argument is not set to 0.|Automated|1|Pass |
 | 1.2.21|Ensure that the healthz endpoint is protected by RBAC.|Automated|1|Pass |
 | 1.2.22|Ensure that the `--audit-log-path` argument is set.|Automated|1|Pass |
-| 1.2.23|Ensure that the audit logs are forwarded off the cluster for retention.|Automated|1|[Not checked](#co-benchmark-416-remdiations) |
-| 1.2.24|Ensure that the maximumRetainedFiles argument is set to 10 or as appropriate.|Automated|1|[Not checked](#co-benchmark-416-remdiations) |
-| 1.2.25|Ensure that the maximumFileSizeMegabytes argument is set to 100 or as appropriate.|Automated|1|[Not checked](#co-benchmark-416-remdiations) |
+| 1.2.23|Ensure that the audit logs are forwarded off the cluster for retention.|Automated|1|[Not checked](#co-benchmark-417-remdiations) |
+| 1.2.24|Ensure that the maximumRetainedFiles argument is set to 10 or as appropriate.|Automated|1|[Not checked](#co-benchmark-417-remdiations) |
+| 1.2.25|Ensure that the maximumFileSizeMegabytes argument is set to 100 or as appropriate.|Automated|1|[Not checked](#co-benchmark-417-remdiations) |
 | 1.2.26|Ensure that the `--request-timeout` argument is set as appropriate.|Automated|1|Pass |
 | 1.2.27|Ensure that the `--service-account-lookup` argument is set to true.|Automated|1|Pass |
 | 1.2.28|Ensure that the `--service-account-key-file` argument is set as appropriate.|Automated|1|Pass |
@@ -68,13 +75,14 @@ The master node configuration is not stored as a set of files; therefore, rules 
 | 1.2.30|Ensure that the `--tls-cert-file` and `--tls-private-key-file` arguments are set as appropriate.|Automated|1|Pass |
 | 1.2.31|Ensure that the `--client-ca-file` argument is set as appropriate.|Automated|1|Pass |
 | 1.2.32|Ensure that the `--etcd-cafile` argument is set as appropriate.|Automated|1|Pass |
-| 1.2.33|Ensure that the `--encryption-provider-config` argument is set as appropriate.|Manual|1|[Not checked](#co-benchmark-416-remdiations) |
-| 1.2.34|Ensure that encryption providers are appropriately configured.|Manual|1|[Not checked](#co-benchmark-416-remdiations) |
+| 1.2.33|Ensure that the `--encryption-provider-config` argument is set as appropriate.|Manual|1|[Not checked](#co-benchmark-417-remdiations) |
+| 1.2.34|Ensure that encryption providers are appropriately configured.|Manual|1|[Not checked](#co-benchmark-417-remdiations) |
 | 1.2.35|Ensure that the API Server only makes use of Strong Cryptographic Ciphers.|Manual|1|Pass |
 {: caption="Section 1.2 Benchmarks for api server." caption-side="top"}
 
+
 ### 1.3 Controller manager
-{: #co-benchmark-416-13}
+{: #co-benchmark-417-13}
 
 | Section|Recommendation|Manual/Automated|Level|Result |
 | -- | -- | -- | -- | -- |
@@ -87,8 +95,9 @@ The master node configuration is not stored as a set of files; therefore, rules 
 | 1.3.7|Ensure that the `--bind-address` argument is set to 127.0.0.1.|Automated|1|Pass |
 {: caption="Section 1.3 Benchmarks for controller manager." caption-side="top"}
 
+
 ### 1.4 Scheduler
-{: #co-benchmark-416-14}
+{: #co-benchmark-417-14}
 
 | Section|Recommendation|Manual/Automated|Level|Result |
 | -- | -- | -- | -- | -- |
@@ -96,8 +105,9 @@ The master node configuration is not stored as a set of files; therefore, rules 
 | 1.4.2|Verify that the scheduler API service is protected by authentication and authorization.|Automated|1|Pass |
 {: caption="Section 1.4 Benchmarks for scheduler." caption-side="top"}
 
+
 ## 2 etcd
-{: #co-benchmark-416-2}
+{: #co-benchmark-417-2}
 
 | Section|Recommendation|Manual/Automated|Level|Result |
 | -- | -- | -- | -- | -- |
@@ -107,22 +117,26 @@ The master node configuration is not stored as a set of files; therefore, rules 
 | 2.4|Ensure that the `--peer-cert-file` and `--peer-key-file` arguments are set as appropriate.|Automated|1|Pass |
 | 2.5|Ensure that the `--peer-client-cert-auth` argument is set to true.|Automated|1|Pass |
 | 2.6|Ensure that the --peer-auto-tls argument is not set to true.|Automated|1|Pass |
-| 2.7|Ensure that a unique Certificate Authority is used for etcd.|Manual|2|[Not checked](#co-benchmark-416-remdiations) |
+| 2.7|Ensure that a unique Certificate Authority is used for etcd.|Manual|2|[Not checked](#co-benchmark-417-remdiations) |
 {: caption="Section 2 Benchmarks for etcd." caption-side="top"}
 
+
 ## 3 Control plane configuration
-{: #co-benchmark-416-3}
+{: #co-benchmark-417-3}
+
+
 
 ### 3.1 Authentication and authorization
-{: #co-benchmark-416-31}
+{: #co-benchmark-417-31}
 
 | Section|Recommendation|Manual/Automated|Level|Result |
 | -- | -- | -- | -- | -- |
 | 3.1.1|Client certificate authentication should not be used for users.|Manual|2|Pass |
 {: caption="Section 3.1 Benchmarks for authentication and authorization." caption-side="top"}
 
+
 ### 3.2 Logging
-{: #co-benchmark-416-32}
+{: #co-benchmark-417-32}
 
 | Section|Recommendation|Manual/Automated|Level|Result |
 | -- | -- | -- | -- | -- |
@@ -130,16 +144,24 @@ The master node configuration is not stored as a set of files; therefore, rules 
 | 3.2.2|Ensure that the audit policy covers key security concerns.|Manual|2|Pass |
 {: caption="Section 3.2 Benchmarks for logging." caption-side="top"}
 
-## 4 Worker nodes
-{: #co-benchmark-416-4}
 
-Please follow the instruction in [Using the compliance operator](/docs/openshift?topic=openshift-compliance-operator) to perform automated check for worker node configuration.
+## 4 Worker nodes
+{: #co-benchmark-417-4}
+
+
+Follow the instruction in [Using the compliance operator](/docs/openshift?topic=openshift-compliance-operator) to perform automated check for worker node configuration.
+
+
+
+
 
 ## 5 Policies
-{: #co-benchmark-416-5}
+{: #co-benchmark-417-5}
+
+
 
 ### 5.1 RBAC and service accounts
-{: #co-benchmark-416-51}
+{: #co-benchmark-417-51}
 
 | Section|Recommendation|Manual/Automated|Level|Result |
 | -- | -- | -- | -- | -- |
@@ -151,8 +173,9 @@ Please follow the instruction in [Using the compliance operator](/docs/openshift
 | 5.1.6|Ensure that Service Account Tokens are only mounted where necessary.|Manual|1|Not checked |
 {: caption="Section 5.1 Benchmarks for rbac and service accounts." caption-side="top"}
 
+
 ### 5.2 Pod security policies
-{: #co-benchmark-416-52}
+{: #co-benchmark-417-52}
 
 | Section|Recommendation|Manual/Automated|Level|Result |
 | -- | -- | -- | -- | -- |
@@ -163,49 +186,53 @@ Please follow the instruction in [Using the compliance operator](/docs/openshift
 | 5.2.5|Minimize the admission of containers with allowPrivilegeEscalation.|Automated|1|Not checked |
 | 5.2.6|Minimize the admission of root containers.|Manual|2|Not checked |
 | 5.2.7|Minimize the admission of containers with the NET_RAW capability.|Manual|1|Not checked |
-| 5.2.8|Minimize the admission of containers with added capabilities.|Manual|1|[Not checked](#co-benchmark-416-remdiations) |
+| 5.2.8|Minimize the admission of containers with added capabilities.|Manual|1|[Not checked](#co-benchmark-417-remdiations) |
 | 5.2.9|Minimize the admission of containers with capabilities assigned.|Manual|2|Not checked |
 {: caption="Section 5.2 Benchmarks for pod security policies." caption-side="top"}
 
+
 ### 5.3 Network policies and CNI
-{: #co-benchmark-416-53}
+{: #co-benchmark-417-53}
 
 | Section|Recommendation|Manual/Automated|Level|Result |
 | -- | -- | -- | -- | -- |
 | 5.3.1|Ensure that the CNI in use supports Network Policies.|Manual|1|Pass |
-| 5.3.2|Ensure that all Namespaces have Network Policies define.|Automated|2|[Not checked](#co-benchmark-416-remdiations) |
+| 5.3.2|Ensure that all Namespaces have Network Policies defined.|Automated|2|[Not checked](#co-benchmark-417-remdiations) |
 {: caption="Section 5.3 Benchmarks for network policies and cni." caption-side="top"}
 
+
 ### 5.4 Secrets management
-{: #co-benchmark-416-54}
+{: #co-benchmark-417-54}
 
 | Section|Recommendation|Manual/Automated|Level|Result |
 | -- | -- | -- | -- | -- |
-| 5.4.1|Prefer using secrets as files over secrets as environment variable.|Manual|1|Not checked |
-| 5.4.2|Consider external secret storage.|Manual|2|Not checked |
+| 5.4.1|Prefer using secrets as files over secrets as environment variables|Manual|1|Not checked |
+| 5.4.2|Consider external secret storage|Manual|2|Not checked |
 {: caption="Section 5.4 Benchmarks for secrets management." caption-side="top"}
 
+
 ### 5.5 Extensible admission control
-{: #co-benchmark-416-55}
+{: #co-benchmark-417-55}
 
 | Section|Recommendation|Manual/Automated|Level|Result |
 | -- | -- | -- | -- | -- |
-| 5.5.1|Configure Image Provenance using image controller configuration parameter.|Manual|2|Not checked |
+| 5.5.1|Configure Image Provenance using image controller configuration parameters.|Manual|2|Not checked |
 {: caption="Section 5.5 Benchmarks for extensible admission control." caption-side="top"}
 
+
 ### 5.7 General policies
-{: #co-benchmark-416-57}
+{: #co-benchmark-417-57}
 
 | Section|Recommendation|Manual/Automated|Level|Result |
 | -- | -- | -- | -- | -- |
-| 5.7.1|Create administrative boundaries between resources using namespace.|Manual|1|Not checked |
-| 5.7.2|Ensure that the seccomp profile is set to docker/default in your pod definition.|Manual|2|Not checked |
-| 5.7.3|Apply Security Context to Your Pods and Container.|Manual|2|Not checked |
-| 5.7.4|The default namespace should not be use.|Automated|2|Not checked |
+| 5.7.1|Create administrative boundaries between resources using namespaces.|Manual|1|Not checked |
+| 5.7.2|Ensure that the seccomp profile is set to docker/default in your pod definitions.|Manual|2|Not checked |
+| 5.7.3|Apply Security Context to Your Pods and Containers.|Manual|2|Not checked |
+| 5.7.4|The default namespace should not be used.|Automated|2|Not checked |
 {: caption="Section 5.7 Benchmarks for general policies." caption-side="top"}
 
 ## Remediations and explanations
-{: #co-benchmark-416-remdiations}
+{: #co-benchmark-417-remdiation}
 
 Review information from IBM on the CIS Benchmark results.
 

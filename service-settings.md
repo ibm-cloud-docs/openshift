@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2024
-lastupdated: "2024-09-09"
+lastupdated: "2024-11-21"
 
 
 keywords: openshift, {{site.data.keyword.openshiftlong_notm}}
@@ -40,6 +40,10 @@ Review the feature gates that are applied to all master and worker node componen
 Modifying feature gates is not supported in {{site.data.keyword.openshiftlong_notm}}.
 {: important}
 
+4.17
+:   `KMSv1=false`
+:   `StrictCostEnforcementForVAP=true`
+:   `StrictCostEnforcementForWebhooks=true`
 
 4.16
 :   `KMSv1=false`

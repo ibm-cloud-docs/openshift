@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2024, 2024
-lastupdated: "2024-06-03"
+lastupdated: "2024-11-21"
 
 
 keywords: openshift, benchmarks, 4.15, openshift benchmarks, openshift 4.15
@@ -105,10 +105,10 @@ Review the Master node security configuration results of the version 1.5 CIS Kub
 | Section | Recommendation | Scored/Not Scored | Level | Result | Responsibility |
 | --- | --- | --- | --- | --- | --- |
 | 1.3.1 | Ensure that the `--terminated-pod-gc-threshold` argument is set as appropriate | Scored | 1 | Pass | IBM |
-| 1.3.2 | Ensure that the `--profiling argument` is set to false | Scored | 1 | Pass | IBM |
+| 1.3.2 | Ensure that the `--profiling` argument is set to false | Scored | 1 | Pass | IBM |
 | 1.3.3 | Ensure that the `--use-service-account-credentials` argument is set to true | Scored | 1 | Pass | IBM |
 | 1.3.4 | Ensure that the `--service-account-private-key-file` argument is set as appropriate | Scored | 1 | Pass | IBM |
-| 1.3.5 | Ensure that the `--root-ca-file argument` is set as appropriate | Scored | 1 | Pass | IBM |
+| 1.3.5 | Ensure that the `--root-ca-file` argument is set as appropriate | Scored | 1 | Pass | IBM |
 | 1.3.6 | Ensure that the `RotateKubeletServerCertificate` argument is set to true | Scored | 2 | Pass | IBM |
 | 1.3.7 | Ensure that the `--bind-address` argument is set to `127.0.0.1` | Scored | 1 | Pass | IBM |
 {: caption="Section 1.3 Controller manager benchmark results" caption-side="bottom"}
@@ -187,14 +187,14 @@ Review the Worker Node Security Configuration results of the version 1.5 CIS Kub
 
 | Section | Recommendation | Scored/Not Scored | Level | Result | Responsibility |
 | --- | --- | --- | --- | --- | --- |
-| 4.2.1 | Ensure that the `--anonymous-auth argument` is set to `false` | Scored | 1 | Pass | IBM |
-| 4.2.2 | Ensure that the `--authorization-mode argument` is not set to AlwaysAllow | Scored | 1 | Pass | IBM |
-| 4.2.3 | Ensure that the `--client-ca-file argument` is set as appropriate | Scored | 1 | Pass | IBM |
-| 4.2.4 | Ensure that the `--read-only-port argument` is set to `0` | Scored | 1 | Pass | IBM |
+| 4.2.1 | Ensure that the `--anonymous-auth` argument is set to `false` | Scored | 1 | Pass | IBM |
+| 4.2.2 | Ensure that the `--authorization-mode` argument is not set to AlwaysAllow | Scored | 1 | Pass | IBM |
+| 4.2.3 | Ensure that the `--client-ca-file` argument is set as appropriate | Scored | 1 | Pass | IBM |
+| 4.2.4 | Ensure that the `--read-only-port` argument is set to `0` | Scored | 1 | Pass | IBM |
 | 4.2.5 | Ensure that the `--streaming-connection-idle-timeout` argument is not set to `0` | Scored | 1 | Pass | IBM |
 | 4.2.6 | Ensure that the `--protect-kernel-defaults` argument is set to `true` | Scored | 1 | [Fail](#ibm-remediations-and-explanations-415) | IBM |
 | 4.2.7 | Ensure that the `--make-iptables-util-chains` argument is set to `true` | Scored | 1 | Pass | IBM |
-| 4.2.8 | Ensure that the `--hostname-override argument` is not set | Not Scored | 1 | [Fail](#ibm-remediations-and-explanations-415) | IBM |
+| 4.2.8 | Ensure that the `--hostname-override` argument is not set | Not Scored | 1 | [Fail](#ibm-remediations-and-explanations-415) | IBM |
 | 4.2.9 | Ensure that the `--event-qps` argument is set to 0 or a level which ensures appropriate event capture | Not Scored | 2 | Pass | IBM |
 | 4.2.10 | Ensure that the `--tls-cert-file` and `--tls-private-key-file` arguments are set as appropriate | Scored | 1 | Pass | IBM |
 | 4.2.11 | Ensure that the `--rotate-certificates` argument is not set to `false` | Scored | 1 | Pass | IBM |
@@ -230,14 +230,14 @@ Review the Worker Node Security Configuration results of the version 1.5 CIS Kub
 
 | Section | Recommendation | Scored/Not Scored | Level | Result | Responsibility |
 | --- | --- | --- | --- | --- | --- |
-| 4.2.1 | Ensure that the `--anonymous-auth argument` is set to `false` | Scored | 1 | Pass | IBM |
+| 4.2.1 | Ensure that the `--anonymous-auth` argument is set to `false` | Scored | 1 | Pass | IBM |
 | 4.2.2 | Ensure that the `--authorization-mode` argument is not set to `AlwaysAllow` | Scored | 1 | Pass | IBM |
 | 4.2.3 | Ensure that the `--client-ca-file` argument is set as appropriate | Scored | 1 | Pass | IBM |
 | 4.2.4 | Ensure that the `--read-only-port` argument is set to `0` | Scored | 1 | Pass | IBM |
 | 4.2.5 | Ensure that the `--streaming-connection-idle-timeout` argument is not set to `0` | Scored | 1 | Pass | IBM |
 | 4.2.6 | Ensure that the `--protect-kernel-defaults` argument is set to `true` | Scored | 1 | Pass | IBM |
 | 4.2.7 | Ensure that the `--make-iptables-util-chains` argument is set to `true` | Scored | 1 | Pass | IBM |
-| 4.2.8 | Ensure that the `--hostname-override argument` is not set | Not Scored | 1 | [Fail](#ibm-remediations-and-explanations-415) | IBM |
+| 4.2.8 | Ensure that the `--hostname-override` argument is not set | Not Scored | 1 | [Fail](#ibm-remediations-and-explanations-415) | IBM |
 | 4.2.9 | Ensure that the `--event-qps` argument is set to `0` or a level which ensures appropriate event capture | Not Scored | 2 | Pass | IBM |
 | 4.2.10 | Ensure that the `--tls-cert-file` and `--tls-private-key-file` arguments are set as appropriate | Scored | 1 | Pass | IBM |
 | 4.2.11 | Ensure that the `--rotate-certificates` argument is not set to `false` | Scored | 1 | Pass | IBM |
@@ -326,8 +326,8 @@ Review the Kubernetes Policies results of the version 1.5 CIS Kubernetes benchma
 | 1.2.1 | {{site.data.keyword.openshiftlong_notm}} utilizes RBAC for cluster protection, but allows anonymous discovery, which is considered reasonable per [CIS Kubernetes Benchmark](https://www.cisecurity.org/benchmark/kubernetes/). |
 | 1.2.10 | {{site.data.keyword.openshiftlong_notm}} does not enable the [`EventRateLimit`](https://kubernetes.io/docs/reference/access-authn-authz/admission-controllers/#eventratelimit) admission controller since it is a Kubernetes alpha feature. |
 | 1.2.12 | {{site.data.keyword.openshiftlong_notm}} does not enable the [`AlwaysPullImages`](https://kubernetes.io/docs/reference/access-authn-authz/admission-controllers/#alwayspullimages) admission controller since it overrides a container's `imagePullPolicy` and may impact performance. |
-| 1.2.13 | {{site.data.keyword.openshiftlong_notm}} supports [OpenShift security context constraints](/docs/openshift?topic=openshift-openshift_scc) and [Kubernetes pod security admission](https://kubernetes.io/docs/concepts/security/pod-security-admission/){: external}which are similar to the deprecated [Kubernetes pod security policies](https://kubernetes.io/docs/concepts/security/pod-security-policy/){: external}. |
-| 1.2.16 | {{site.data.keyword.openshiftlong_notm}} supports [OpenShift security context constraints](/docs/openshift?topic=openshift-openshift_scc) and [Kubernetes pod security admission](https://kubernetes.io/docs/concepts/security/pod-security-admission/){: external}which are similar to the deprecated [Kubernetes pod security policies](https://kubernetes.io/docs/concepts/security/pod-security-policy/){: external}. |
+| 1.2.13 | {{site.data.keyword.openshiftlong_notm}} supports [OpenShift security context constraints](/docs/openshift?topic=openshift-openshift_scc) and [Kubernetes pod security admission](https://kubernetes.io/docs/concepts/security/pod-security-admission/){: external} which are similar to the deprecated [Kubernetes pod security policies](https://kubernetes.io/docs/concepts/security/pod-security-policy/){: external}. |
+| 1.2.16 | {{site.data.keyword.openshiftlong_notm}} supports [OpenShift security context constraints](/docs/openshift?topic=openshift-openshift_scc) and [Kubernetes pod security admission](https://kubernetes.io/docs/concepts/security/pod-security-admission/){: external} which are similar to the deprecated [Kubernetes pod security policies](https://kubernetes.io/docs/concepts/security/pod-security-policy/){: external}. |
 | 1.2.22 | {{site.data.keyword.openshiftlong_notm}} can optionally [enable Kubernetes API server auditing](/docs/openshift?topic=openshift-health-audit). |
 | 1.2.23 | {{site.data.keyword.openshiftlong_notm}} can optionally [enable Kubernetes API server auditing](/docs/openshift?topic=openshift-health-audit). |
 | 1.2.24 | {{site.data.keyword.openshiftlong_notm}} can optionally [enable Kubernetes API server auditing](/docs/openshift?topic=openshift-health-audit). |
@@ -344,19 +344,17 @@ Review the Kubernetes Policies results of the version 1.5 CIS Kubernetes benchma
 | 5.1.6 | {{site.data.keyword.openshiftlong_notm}} deploys some system components that could set [*automountServiceAccountToken: false*](https://kubernetes.io/docs/tasks/configure-pod-container/configure-service-account/#use-the-default-service-account-to-access-the-api-server){: external}. |
 | 5.2.1 | {{site.data.keyword.openshiftlong_notm}} can optionally configure [OpenShift security context constraints](/docs/openshift?topic=openshift-openshift_scc) and [Kubernetes pod security admission](https://kubernetes.io/docs/concepts/security/pod-security-admission/){: external} which are similar to the deprecated [Kubernetes pod security policies](https://kubernetes.io/docs/concepts/security/pod-security-policy/){: external}. |
 | 5.2.2 | {{site.data.keyword.openshiftlong_notm}} can optionally configure [OpenShift security context constraints](/docs/openshift?topic=openshift-openshift_scc) and [Kubernetes pod security admission](https://kubernetes.io/docs/concepts/security/pod-security-admission/){: external} which are similar to the deprecated [Kubernetes pod security policies](https://kubernetes.io/docs/concepts/security/pod-security-policy/){: external}. |
-| 5.2.3 | {{site.data.keyword.openshiftlong_notm}} can optionally configure [OpenShift security context constraints](/docs/openshift?topic=openshift-openshift_scc) and [Kubernetes pod security admission](https://kubernetes.io/docs/concepts/security/pod-security-admission/){: external}which are similar to the deprecated [Kubernetes pod security policies](https://kubernetes.io/docs/concepts/security/pod-security-policy/){: external}. |
-| 5.2.4 | {{site.data.keyword.openshiftlong_notm}} can optionally configure [OpenShift security context constraints](/docs/openshift?topic=openshift-openshift_scc) and [Kubernetes pod security admission](https://kubernetes.io/docs/concepts/security/pod-security-admission/){: external}which are similar to the deprecated [Kubernetes pod security policies](https://kubernetes.io/docs/concepts/security/pod-security-policy/){: external}. |
-| 5.2.5 | {{site.data.keyword.openshiftlong_notm}} can optionally configure [OpenShift security context constraints](/docs/openshift?topic=openshift-openshift_scc) and [Kubernetes pod security admission](https://kubernetes.io/docs/concepts/security/pod-security-admission/){: external}which are similar to the deprecated [Kubernetes pod security policies](https://kubernetes.io/docs/concepts/security/pod-security-policy/){: external}. |
-| 5.2.6 | {{site.data.keyword.openshiftlong_notm}} can optionally configure [OpenShift security context constraints](/docs/openshift?topic=openshift-openshift_scc) and [Kubernetes pod security admission](https://kubernetes.io/docs/concepts/security/pod-security-admission/){: external}which are similar to the deprecated [Kubernetes pod security policies](https://kubernetes.io/docs/concepts/security/pod-security-policy/){: external}. |
-| 5.2.7 | {{site.data.keyword.openshiftlong_notm}} can optionally configure [OpenShift security context constraints](/docs/openshift?topic=openshift-openshift_scc) and [Kubernetes pod security admission](https://kubernetes.io/docs/concepts/security/pod-security-admission/){: external}which are similar to the deprecated [Kubernetes pod security policies](https://kubernetes.io/docs/concepts/security/pod-security-policy/){: external}. |
-| 5.2.8 | {{site.data.keyword.openshiftlong_notm}} can optionally configure [OpenShift security context constraints](/docs/openshift?topic=openshift-openshift_scc) and [Kubernetes pod security admission](https://kubernetes.io/docs/concepts/security/pod-security-admission/){: external}which are similar to the deprecated [Kubernetes pod security policies](https://kubernetes.io/docs/concepts/security/pod-security-policy/){: external}. |
-| 5.2.9 | {{site.data.keyword.openshiftlong_notm}} can optionally configure [OpenShift security context constraints](/docs/openshift?topic=openshift-openshift_scc) and [Kubernetes pod security admission](https://kubernetes.io/docs/concepts/security/pod-security-admission/){: external}which are similar to the deprecated [Kubernetes pod security policies](https://kubernetes.io/docs/concepts/security/pod-security-policy/){: external}. |
+| 5.2.3 | {{site.data.keyword.openshiftlong_notm}} can optionally configure [OpenShift security context constraints](/docs/openshift?topic=openshift-openshift_scc) and [Kubernetes pod security admission](https://kubernetes.io/docs/concepts/security/pod-security-admission/){: external} which are similar to the deprecated [Kubernetes pod security policies](https://kubernetes.io/docs/concepts/security/pod-security-policy/){: external}. |
+| 5.2.4 | {{site.data.keyword.openshiftlong_notm}} can optionally configure [OpenShift security context constraints](/docs/openshift?topic=openshift-openshift_scc) and [Kubernetes pod security admission](https://kubernetes.io/docs/concepts/security/pod-security-admission/){: external} which are similar to the deprecated [Kubernetes pod security policies](https://kubernetes.io/docs/concepts/security/pod-security-policy/){: external}. |
+| 5.2.5 | {{site.data.keyword.openshiftlong_notm}} can optionally configure [OpenShift security context constraints](/docs/openshift?topic=openshift-openshift_scc) and [Kubernetes pod security admission](https://kubernetes.io/docs/concepts/security/pod-security-admission/){: external} which are similar to the deprecated [Kubernetes pod security policies](https://kubernetes.io/docs/concepts/security/pod-security-policy/){: external}. |
+| 5.2.6 | {{site.data.keyword.openshiftlong_notm}} can optionally configure [OpenShift security context constraints](/docs/openshift?topic=openshift-openshift_scc) and [Kubernetes pod security admission](https://kubernetes.io/docs/concepts/security/pod-security-admission/){: external} which are similar to the deprecated [Kubernetes pod security policies](https://kubernetes.io/docs/concepts/security/pod-security-policy/){: external}. |
+| 5.2.7 | {{site.data.keyword.openshiftlong_notm}} can optionally configure [OpenShift security context constraints](/docs/openshift?topic=openshift-openshift_scc) and [Kubernetes pod security admission](https://kubernetes.io/docs/concepts/security/pod-security-admission/){: external} which are similar to the deprecated [Kubernetes pod security policies](https://kubernetes.io/docs/concepts/security/pod-security-policy/){: external}. |
+| 5.2.8 | {{site.data.keyword.openshiftlong_notm}} can optionally configure [OpenShift security context constraints](/docs/openshift?topic=openshift-openshift_scc) and [Kubernetes pod security admission](https://kubernetes.io/docs/concepts/security/pod-security-admission/){: external} which are similar to the deprecated [Kubernetes pod security policies](https://kubernetes.io/docs/concepts/security/pod-security-policy/){: external}. |
+| 5.2.9 | {{site.data.keyword.openshiftlong_notm}} can optionally configure [OpenShift security context constraints](/docs/openshift?topic=openshift-openshift_scc) and [Kubernetes pod security admission](https://kubernetes.io/docs/concepts/security/pod-security-admission/){: external} which are similar to the deprecated [Kubernetes pod security policies](https://kubernetes.io/docs/concepts/security/pod-security-policy/){: external}. |
 | 5.3.2 | {{site.data.keyword.openshiftlong_notm}} has a set of [default Calico network policies defined](/docs/openshift?topic=openshift-network_policies#default_policy) and [additional network policies can optionally be added](/docs/openshift?topic=openshift-network_policies#adding_network_policies). |
 | 5.4.1 | {{site.data.keyword.openshiftlong_notm}} deploys some system components that could prefer using secrets as files over secrets as environment variables. |
-| 5.4.2 | {{site.data.keyword.openshiftlong_notm}} can optionally [enable Secrets Manager service](https://cloud.ibm.com/docs/openshift?topic=openshift-secrets-mgr). |
+| 5.4.2 | {{site.data.keyword.openshiftlong_notm}} can optionally [enable Secrets Manager service](/docs/openshift?topic=openshift-secrets-mgr). |
 | 5.5.1 | {{site.data.keyword.openshiftlong_notm}} can optionally [enable image security enforcement](/docs/openshift?topic=openshift-images#portieris-image-sec). |
 | 5.7.2 | {{site.data.keyword.openshiftlong_notm}} does not annotate all pods with [`seccomp` profiles](https://kubernetes.io/docs/concepts/security/pod-security-policy/#seccomp){: external}. |
 | 5.7.3 | {{site.data.keyword.openshiftlong_notm}} deploys some system components that do not set a [pod or container `securityContext`](https://kubernetes.io/docs/tasks/configure-pod-container/security-context/){: external}. |
 {: caption="Explanations and remediations" caption-side="bottom"}
-
-

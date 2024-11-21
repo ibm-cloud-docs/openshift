@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2024
-lastupdated: "2024-10-02"
+lastupdated: "2024-11-20"
 
 
 keywords: openshift, {{site.data.keyword.openshiftlong_notm}}, block, storage, add-on, changelog
@@ -46,6 +46,13 @@ Before you migrate to a `5.x` release from a previous release, you must not have
 
 ## Version 5.2
 {: #052_is_block}
+
+### Change log for version 5.2.24_641, released 20 November 2024
+{: #5.2.24_641_is_block_relnote}
+
+- Updates the golang base image to `1.22.9`.
+- Introduces an `init` container to clean up any leftover controller pods from the 5.1 release.
+
 
 
 ### Change log for version 5.2.21_602, released 3 October 2024
@@ -147,6 +154,13 @@ Before you migrate to a `5.x` release from a previous release, you must not have
 
 ## Version 5.1
 {: #051_is_block}
+
+### Change log for version 5.1.29_642, released 20 November 2024
+{: #5.1.29_642_is_block_relnote}
+
+- Updates the golang base image to `1.22.9`.
+- Introduces an `init` container to clean up any leftover controller pods from 5.2 release.
+
 
 ### Change log for version 5.1.26_601, released 3 October 2024
 {: #5.1.26_601_is_block_relnote}
