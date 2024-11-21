@@ -44,6 +44,13 @@ Looking for {{site.data.keyword.cloud_notm}} status, platform announcements, sec
 {{site.data.keyword.block_storage_is_short}} cluster add-on patch updates.
 :   For more information, see the [change log](/docs/openshift?topic=openshift-vpc_bs_changelog).
 
+
+
+{{site.data.keyword.openshiftlong_notm}} 4.17 is available.
+:   You can create or [update clusters to version 4.17](/docs/openshift?topic=openshift-cs_versions_417). With {{site.data.keyword.openshiftlong_notm}} version 4.17, you get the latest features, as well as component updates on {{site.data.keyword.openshiftlong_notm}}. For more information, see the [4.17 change log](/docs/openshift?topic=openshift-openshift_changelog_417).
+
+
+
 ### 19 November 2024
 {: #openshift-nov1924}
 {: release-note}
