@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2024
-lastupdated: "2024-11-21"
+lastupdated: "2024-11-22"
 
 
 keywords: kubernetes, release notes, openshift, {{site.data.keyword.openshiftlong_notm}}
@@ -27,6 +27,17 @@ Looking for {{site.data.keyword.cloud_notm}} status, platform announcements, sec
 
 ## November 2024
 {: #openshift-nov24}
+
+
+
+### 22 November 2024
+{: #openshift-nov2224}
+{: release-note}
+
+{{site.data.keyword.openshiftlong_notm}} is Kubernetes certified
+:   Version [4.17](/docs/openshift?topic=openshift-openshift_changelog_417) release is now certified.
+
+
 
 ### 21 November 2024
 {: #openshift-nov2124}
