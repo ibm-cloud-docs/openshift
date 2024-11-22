@@ -2,7 +2,7 @@
 
 copyright:
   years: 2022, 2024
-lastupdated: "2024-01-03"
+lastupdated: "2024-11-22"
 
 
 keywords: cbr, context based restrictions, security
@@ -56,18 +56,18 @@ You can create CBR rules to protect specific regions, and clusters.
 
 Cluster
 :   Protects a specific {{site.data.keyword.openshiftlong_notm}} cluster. If you select a cluster in your CBR rule, only traffic from resources in the network zones that you associate with the rule can interact with that cluster.
-:   If you use the CLI, you can specify the `--service-instance CLUSTER-ID` option to protect a specific cluster.
-:   If you use the API, you can specify `"name": "serviceInstance","value": "CLUSTER-ID"` in the resource attributes.
+:   If you use the CLI, you can specify the `--service-instance CLUSTER-ID` option to protect a specific cluster.{: cli}
+:   If you use the API, you can specify `"name": "serviceInstance","value": "CLUSTER-ID"` in the resource attributes.{: api}
 
 Region
 :   Protects {{site.data.keyword.openshiftlong_notm}} resources in a specific region. If you select a region in your CBR rule, then only traffic from resources in the network zones that you associate with the rule can interact with resources in that region.
-:   If you use the CLI, you can specify the `--region REGION` option to protect resources in a specific region.
-:   If you use the API, you can specify `"name": "region","value": "REGION"` field in the resource attributes.
+:   If you use the CLI, you can specify the `--region REGION` option to protect resources in a specific region.{: cli}
+:   If you use the API, you can specify `"name": "region","value": "REGION"` field in the resource attributes.{: api}
 
 Resource group
 :   Protects {{site.data.keyword.openshiftlong_notm}} resources in a specific resource group.
-:   If you use the CLI, you can specify the `--resource-group-id RESOURCE-GROUP-ID` option to protect resources in a specific resource group.
-:   If you use the API, you can specify `"name": "resourceGroupId","value": "RESOURCE-GROUP-ID"` field in the resource attributes.
+:   If you use the CLI, you can specify the `--resource-group-id RESOURCE-GROUP-ID` option to protect resources in a specific resource group.{: cli}
+:   If you use the API, you can specify `"name": "resourceGroupId","value": "RESOURCE-GROUP-ID"` field in the resource attributes.{: api}
 
 
 ### Protecting specific APIs
@@ -77,13 +77,13 @@ You can create CBR rules to protect the following API types for {{site.data.keyw
 
 Cluster control plane APIs
 :   Protect access to the APIs inside your clusters, such as the APIs for creating namespaces, pods, and more. CBR rules that apply to the cluster API type control access to your cluster API server, which includes all `oc` commands to that cluster. If you select the cluster control plane APIs in your CBR rule, then only traffic from resources in the network zones that associate with that rule can interact with the cluster control plane APIs. All other requests are blocked.
-:   If you use the CLI, you can specify the `--api-types` option and the `crn:v1:bluemix:public:containers-kubernetes::::api-type:cluster` type.
-:   If you use the API, you can specify `"api_type_id": "crn:v1:bluemix:public:containers-kubernetes::::api-type:cluster"` in the `"operations"` spec.
+:   If you use the CLI, you can specify the `--api-types` option and the `crn:v1:bluemix:public:containers-kubernetes::::api-type:cluster` type.{: cli}
+:   If you use the API, you can specify `"api_type_id": "crn:v1:bluemix:public:containers-kubernetes::::api-type:cluster"` in the `"operations"` spec.{: api}
 
 Management APIs
 :   Protect access to the APIs for provisioning and managing clusters, worker pools, and more. CBR rules that apply to the management API type control access the {{site.data.keyword.openshiftlong_notm}} APIs, which includes all `ibmcloud oc` commands calls, such as `ibmcloud oc clusters`, `ibmcloud oc cluster create`, and more. If you select the management APIs in your CBR rule, then resources in the network zone that associate with the rule can interact with the management APIs.
-:   If you use the CLI, you can specify the `--api-types` option and the `crn:v1:bluemix:public:containers-kubernetes::::api-type:management` type.
-:   If you use the API, you can specify `"api_type_id": "crn:v1:bluemix:public:containers-kubernetes::::api-type:management"` in the `"operations"` spec.
+:   If you use the CLI, you can specify the `--api-types` option and the `crn:v1:bluemix:public:containers-kubernetes::::api-type:management` type.{: cli}
+:   If you use the API, you can specify `"api_type_id": "crn:v1:bluemix:public:containers-kubernetes::::api-type:management"` in the `"operations"` spec.{: api}
 
 To follow an example CBR scenario, see [Setting up context-based restrictions](/docs/openshift?topic=openshift-cbr-tutorial).
 {: tip}
