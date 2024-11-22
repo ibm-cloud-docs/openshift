@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2024
-lastupdated: "2024-11-21"
+lastupdated: "2024-11-22"
 
 
 keywords: openshift
@@ -274,6 +274,10 @@ subcollection: openshift
 [Release notes](/docs/openshift?topic=openshift-openshift-relnotes#openshift-relnotes)
 
 * [November 2024](/docs/openshift?topic=openshift-openshift-relnotes#openshift-nov24)
+
+    * [22 November 2024](/docs/openshift?topic=openshift-openshift-relnotes#openshift-nov2224)
+
+        * {{site.data.keyword.openshiftlong_notm}} is Kubernetes certified
 
     * [21 November 2024](/docs/openshift?topic=openshift-openshift-relnotes#openshift-nov2124)
 

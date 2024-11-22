@@ -2,7 +2,7 @@
 
 copyright:
   years: 2024, 2024
-lastupdated: "2024-11-21"
+lastupdated: "2024-11-22"
 
 
 keywords: openshift, version, update, upgrade, 4.17, update openshift
@@ -24,6 +24,10 @@ Looking for general information about updating clusters, or information on a dif
 {: tip}
 
 
+![This badge indicates Kubernetes version 1.30 certification for {{site.data.keyword.openshiftlong_notm}}](images/certified-kubernetes-color.svg){: caption="Kubernetes version 1.30 certification badge" caption-side="bottom"}
+
+{{site.data.keyword.openshiftlong_notm}} is a Certified Kubernetes product for version 1.30 under the CNCF Kubernetes Software Conformance Certification program. _Kubernetes® is a registered trademark of The Linux Foundation in the United States and other countries, and is used pursuant to a license from The Linux Foundation._
+
 
 ## Release timeline 
 {: #release_timeline_417}
@@ -38,4 +42,3 @@ Dates that are marked with a dagger (`†`) are tentative and subject to change.
 | --- | --- | --- | --- |
 | Supported | 4.17 / {{site.data.keyword.openshift_417_kube_version}} | {{site.data.keyword.openshift_417_release_date}} | {{site.data.keyword.openshift_417_unsupported_date}}`†` |
 {: caption="Release history for {{site.data.keyword.openshiftlong_notm}} version 4.17." caption-side="bottom"}
-
