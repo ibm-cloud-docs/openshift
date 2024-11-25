@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2024, 2024
-lastupdated: "2024-10-30"
+lastupdated: "2024-11-25"
 
 
 keywords: openshift, {{site.data.keyword.openshiftlong_notm}}, secure by default, {{site.data.keyword.openshiftlong_notm}}, outbound traffic protection, cluster create, quotas, limitations, rules, security groups
@@ -15,8 +15,7 @@ content-type: troubleshoot
 
 {{site.data.keyword.attribute-definition-list}}
 
-
-# When I try to create a version 4.15 cluster, I see a VPC quota error
+# When I create a VPC cluster, my worker nodes are stuck in `Pending security group creation`
 {: #ts-sbd-cluster-create-quota}
 {: support}
 
@@ -24,48 +23,47 @@ content-type: troubleshoot
 [4.15 and later]{: tag-red}
 
 
-Cluster creation fails due to security group quota enforcement. You see an error message similar to one of the following.
+After you create a VPC cluster, your worker nodes are stuck in the `Provision_pending` state with the message `Pending security group creation` .
 {: tsSymptoms}
 
-
-Example message where the number of remote rules per security group was exceeded.
-
-```txt
-Exceeded limit of unique remote rules per security group (the limit is 15 unique remote rules per security group).\n\nAdding a rule would exceed the limit of unique remote rules per security group. Consider creating another security group.","code":"ErrorSecurityGroupRuleOverQuota","wrapped":["over_quota: Exceeded limit of unique remote rules per security group (the limit is 15 unique remote rules per security group).\n\nAdding a rule would exceed the limit of unique remote rules per security group. Consider creating another security group. (400)","over_quota: Exceeded limit of unique remote rules per security group (the limit is 15 unique remote rules per security group).\n\nAdding a rule would exceed the limit of unique remote rules per security group. Consider creating another security group. - https://cloud.ibm.com/docs/vpc?topic=vpc-quotas","80ccf38c1b8e06cc9892762f80eaca0d"],"user_error":{"code":"P4050","description":"The '{{.Provider}}' infrastructure operation failed with the message: {{.Message}}","type":"BadRequest","terseDescription":"'{{.Provider}}' infrastructure exception: {{.Message}}","rc":400},"vars":{"Message":"Exceeded limit of unique remote rules per security group (the limit is 15 unique remote rules per security group).\n\nAdding a rule would exceed the limit of unique remote rules per security group. Consider creating another security group.","Provider":"vpc-gen2"}}}}
-```
-{: pre}
-
-Example error message where the number of security groups in a VPC was exceeded.
-
-```txt
-Creating a new security group will put the user over quota. Allocated: 100, Requested: 1, Quota: 100","code":"ErrorSecurityGroupOverQuota","wrapped":["over_quota: Creating a new security group will put the user over quota. Allocated: 100, Requested: 1, Quota: 100 (400)","over_quota: Creating a new security group will put the user over quota. Allocated: 100, Requested: 1, Quota: 100 - https://cloud.ibm.com/docs/vpc?topic=vpc-quotas","e29df63c7eb284123750fab554863858"],"user_error":{"code":"P4050","description":"The '{{.Provider}}' infrastructure operation failed with the message: {{.Message}}","type":"BadRequest","terseDescription":"'{{.Provider}}' infrastructure exception: {{.Message}}","rc":400},"vars":{"Message":"Creating a new security group will put the user over quota. Allocated: 100, Requested: 1, Quota: 100","Provider":"vpc-gen2"}
-```
-{: pre}
-
-
-Another indication of a quota error is that your worker nodes are stuck in the `Provision_pending` state with the message `Pending security group creation`.
+Example worker node. 
 ```sh
 cluster-default-00000  -     bx2.4x16   provision_pending   Pending security group creation   us-south-2   -
 ```
 {: screen}
 
 
-There are a number of different quotas associated with VPC clusters.
+Your VPC has reached the limit of clusters or security groups allowed per VPC. For more information, see the [VPC security group quotas](/docs/vpc?topic=vpc-quotas#security-group-quotas).
 {: tsCauses}
 
-This includes quotas for security groups, such as the following. 
-- The number of security groups allowed per VPC.
-- The number of rules allowed per security group.
-- The number of rules between security groups per security group (Also called remote rules).
+Review the quota limitations that might cause the issue. 
 
-For more information, see the [VPC security group quotas](/docs/vpc?topic=vpc-quotas#security-group-quotas).
+Cluster limit
+:   Because of security group limitations, a single VPC can have a maximum number of 15 clusters. This is a hard limit with no exceptions. 
+
+Security group limit
+:   Every time a  VPC cluster is created, additional security groups are automatically created for the cluster and its worker nodes. However, there is a limited number of security groups that can exist in a VPC. If this limit is reached, additional security groups cannot be created for the cluster or worker nodes that you provisioned. 
 
 Review the logging messages from the `network-microservice` to see details on which quota was exceeded.
 {: tsResolve}
 
 After reviewing the logging messages, complete the steps in the following sections for the quota you exceeded.
 
-## If you exceeded the number of security groups allowed per VPC
+
+## If you have reached the number of clusters allowed per VPC
+{: #quota-cluster-max}
+
+If you have already reached the 15 cluster maximum for your VPC, the worker nodes on any additional cluster you provision remain in the `pending` state. There are no exceptions to this quota. You can either [delete a cluster](/docs/containers?topic=containers-remove) from your VPC, or [create a new VPC](/docs/vpc?topic=vpc-creating-vpc-resources-with-cli-and-api&interface=cli#create-a-vpc-cli) where you can provision additional clusters. 
+
+If you choose to delete a cluster from your existing VPC, [refresh the cluster master](/docs/containers?topic=containers-kubernetes-service-cli#cs_apiserver_refresh) to continue provisioning your worker nodes. 
+
+    ```sh
+    ibmcloud oc cluster master refresh -c <cluster_name_or_ID>
+    ```
+    {: pre}
+
+
+## If you have reached the number of security groups allowed per VPC
 {: #quota-num-of-rules-per-vpc}
 
 1. Review the [VPC security group quotas](/docs/vpc?topic=vpc-quotas#security-group-quotas).
@@ -101,11 +99,3 @@ After reviewing the logging messages, complete the steps in the following sectio
     {: pre}
 
 1. If you can't delete the security groups, any new clusters must be created in a different VPC. Alternatively, a ticket can be opened against the account to request a quota increase. Open a [support case](/docs/account?topic=account-using-avatar). In the case details, be sure to include any relevant log files, error messages, or command outputs.
-
-
-## If you exceeded the number of remote rules per security group
-{: #quota-num-of-remote-rules}
-
-This failure is most likely happened when the shared VPE gateway security group (`kube-vpegw-<VPC-ID>`) was being modified. This security group contains a remote rule to every cluster in the VPC, and the number of remote rules on a security group is limited. Which means this limits the number of clusters that can be created in a VPC.
-
-Review the [VPC security group quotas](/docs/vpc?topic=vpc-quotas#security-group-quotas). Any clusters that are no longer needed should be removed, and a master refresh can be run on the new cluster.  If clusters cannot be deleted, the new cluster must be created on a different VPC.
