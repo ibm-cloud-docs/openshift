@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2024
-lastupdated: "2024-10-10"
+lastupdated: "2024-11-26"
 
 
 keywords: openshift, nginx, ingress controller, ingress operator, router
@@ -35,7 +35,7 @@ In clusters that run {{site.data.keyword.redhat_openshift_notm}} version 4, Ingr
 ### Ingress operator
 {: #ingress-operator}
 
-The [{{site.data.keyword.redhat_openshift_notm}} Ingress operator](https://docs.openshift.com/container-platform/4.16/networking/ingress-operator.html){: external} implements routing rules that are applied to all incoming traffic for the apps in your cluster.
+The [{{site.data.keyword.redhat_openshift_notm}} Ingress operator](https://docs.openshift.com/container-platform/4.16/networking/networking_operators/ingress-operator.html){: external} implements routing rules that are applied to all incoming traffic for the apps in your cluster.
 {: shortdesc}
 
 Ingress controllers are managed by the Ingress operator. During cluster creation, the default Ingress controller is registered with the default Ingress subdomain for your cluster in the format `<cluster_name>.<globally_unique_account_HASH>-0000.<region>.containers.appdomain.cloud`. When you register your app with this subdomain by creating an Route resource, the Ingress controller ensures that requests to your app through this subdomain are properly proxied to your app pods. To see the default Ingress controller in your cluster, run `oc describe ingresscontroller/default -n openshift-ingress-operator`.

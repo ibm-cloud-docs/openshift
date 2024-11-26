@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2024
-lastupdated: "2024-11-25"
+lastupdated: "2024-11-26"
 
 
 keywords: openshift
@@ -10736,6 +10736,10 @@ subcollection: openshift
 [Why do cluster master operations fail due to a broken webhook?](/docs/openshift?topic=openshift-webhooks_update#webhooks_update)
 
 [Deleting webhooks from a cluster](/docs/openshift?topic=openshift-ts-delete-webhooks#ts-delete-webhooks)
+
+* [Checking webhooks that are rejecting requests](/docs/openshift?topic=openshift-ts-delete-webhooks#webhook-reject)
+
+* [Deleting webhooks](/docs/openshift?topic=openshift-ts-delete-webhooks#deleting-webhooks)
 
 [Why is my Portieris cluster image security enforcement installation canceled?](/docs/openshift?topic=openshift-portieris_enable#portieris_enable)
 

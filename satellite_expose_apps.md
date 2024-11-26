@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2024
-lastupdated: "2024-10-07"
+lastupdated: "2024-11-26"
 
 
 keywords: openshift, route, Ingress controller
@@ -35,10 +35,10 @@ You have several options for exposing apps in {{site.data.keyword.satelliteshort
 ## Setting up MetalLB
 {: #sat-expose-metallb}
 
-MetalLB is a load-balancer implementation for bare metal Kubernetes clusters, using standard routing protocols. For more information, see [About MetalLB and the MetalLB Operator](https://docs.openshift.com/container-platform/4.16/networking/metallb/about-metallb.html){: external} in the {{site.data.keyword.redhat_openshift_notm}} documentation.
+MetalLB is a load-balancer implementation for bare metal Kubernetes clusters, using standard routing protocols. For more information, see [About MetalLB and the MetalLB Operator](https://docs.openshift.com/container-platform/4.16/networking/networking_operators/metallb-operator/about-metallb.html){: external} in the {{site.data.keyword.redhat_openshift_notm}} documentation.
 {: shortdesc}
 
-To install and configure MetalLB, follow the instructions under [LoadBalancing with MetalLB](https://docs.openshift.com/container-platform/4.16/networking/metallb/metallb-operator-install.html){: external} in the {{site.data.keyword.redhat_openshift_notm}} documentation. Before you begin, make sure you have a dedicated subnet (`IPAddressPool`) for the external IP of the `LoadBalancer` services. Check that the IP addresses included in the `IPAddressPool` are not reserved or used for other purposes, otherwise the load balancing function might fail. 
+To install and configure MetalLB, follow the instructions under [Installing the MetalLB Operator](https://docs.openshift.com/container-platform/4.16/networking/networking_operators/metallb-operator/metallb-operator-install.html){: external} in the {{site.data.keyword.redhat_openshift_notm}} documentation. Before you begin, make sure you have a dedicated subnet (`IPAddressPool`) for the external IP of the `LoadBalancer` services. Check that the IP addresses included in the `IPAddressPool` are not reserved or used for other purposes, otherwise the load balancing function might fail. 
 
 ## Exposing apps with {{site.data.keyword.redhat_openshift_notm}} routes
 {: #sat-expose-routes}
