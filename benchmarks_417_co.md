@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2024, 2024
-lastupdated: "2024-11-21"
+lastupdated: "2024-11-26"
 
 
 keywords: openshift, benchmarks, 4.17, compliance operator, compliance
@@ -65,9 +65,9 @@ The master node configuration is not stored as a set of files; therefore, rules 
 | 1.2.20|Ensure that the `--secure-port` argument is not set to 0.|Automated|1|Pass |
 | 1.2.21|Ensure that the healthz endpoint is protected by RBAC.|Automated|1|Pass |
 | 1.2.22|Ensure that the `--audit-log-path` argument is set.|Automated|1|Pass |
-| 1.2.23|Ensure that the audit logs are forwarded off the cluster for retention.|Automated|1|[Not checked](#co-benchmark-417-remdiations) |
-| 1.2.24|Ensure that the maximumRetainedFiles argument is set to 10 or as appropriate.|Automated|1|[Not checked](#co-benchmark-417-remdiations) |
-| 1.2.25|Ensure that the maximumFileSizeMegabytes argument is set to 100 or as appropriate.|Automated|1|[Not checked](#co-benchmark-417-remdiations) |
+| 1.2.23|Ensure that the audit logs are forwarded off the cluster for retention.|Automated|1|[Not checked](#co-benchmark-417-remdiation) |
+| 1.2.24|Ensure that the maximumRetainedFiles argument is set to 10 or as appropriate.|Automated|1|[Not checked](#co-benchmark-417-remdiation) |
+| 1.2.25|Ensure that the maximumFileSizeMegabytes argument is set to 100 or as appropriate.|Automated|1|[Not checked](#co-benchmark-417-remdiation) |
 | 1.2.26|Ensure that the `--request-timeout` argument is set as appropriate.|Automated|1|Pass |
 | 1.2.27|Ensure that the `--service-account-lookup` argument is set to true.|Automated|1|Pass |
 | 1.2.28|Ensure that the `--service-account-key-file` argument is set as appropriate.|Automated|1|Pass |
@@ -75,8 +75,8 @@ The master node configuration is not stored as a set of files; therefore, rules 
 | 1.2.30|Ensure that the `--tls-cert-file` and `--tls-private-key-file` arguments are set as appropriate.|Automated|1|Pass |
 | 1.2.31|Ensure that the `--client-ca-file` argument is set as appropriate.|Automated|1|Pass |
 | 1.2.32|Ensure that the `--etcd-cafile` argument is set as appropriate.|Automated|1|Pass |
-| 1.2.33|Ensure that the `--encryption-provider-config` argument is set as appropriate.|Manual|1|[Not checked](#co-benchmark-417-remdiations) |
-| 1.2.34|Ensure that encryption providers are appropriately configured.|Manual|1|[Not checked](#co-benchmark-417-remdiations) |
+| 1.2.33|Ensure that the `--encryption-provider-config` argument is set as appropriate.|Manual|1|[Not checked](#co-benchmark-417-remdiation) |
+| 1.2.34|Ensure that encryption providers are appropriately configured.|Manual|1|[Not checked](#co-benchmark-417-remdiation) |
 | 1.2.35|Ensure that the API Server only makes use of Strong Cryptographic Ciphers.|Manual|1|Pass |
 {: caption="Section 1.2 Benchmarks for api server." caption-side="top"}
 
@@ -117,7 +117,7 @@ The master node configuration is not stored as a set of files; therefore, rules 
 | 2.4|Ensure that the `--peer-cert-file` and `--peer-key-file` arguments are set as appropriate.|Automated|1|Pass |
 | 2.5|Ensure that the `--peer-client-cert-auth` argument is set to true.|Automated|1|Pass |
 | 2.6|Ensure that the --peer-auto-tls argument is not set to true.|Automated|1|Pass |
-| 2.7|Ensure that a unique Certificate Authority is used for etcd.|Manual|2|[Not checked](#co-benchmark-417-remdiations) |
+| 2.7|Ensure that a unique Certificate Authority is used for etcd.|Manual|2|[Not checked](#co-benchmark-417-remdiation) |
 {: caption="Section 2 Benchmarks for etcd." caption-side="top"}
 
 
@@ -186,7 +186,7 @@ Follow the instruction in [Using the compliance operator](/docs/openshift?topic=
 | 5.2.5|Minimize the admission of containers with allowPrivilegeEscalation.|Automated|1|Not checked |
 | 5.2.6|Minimize the admission of root containers.|Manual|2|Not checked |
 | 5.2.7|Minimize the admission of containers with the NET_RAW capability.|Manual|1|Not checked |
-| 5.2.8|Minimize the admission of containers with added capabilities.|Manual|1|[Not checked](#co-benchmark-417-remdiations) |
+| 5.2.8|Minimize the admission of containers with added capabilities.|Manual|1|[Not checked](#co-benchmark-417-remdiation) |
 | 5.2.9|Minimize the admission of containers with capabilities assigned.|Manual|2|Not checked |
 {: caption="Section 5.2 Benchmarks for pod security policies." caption-side="top"}
 
@@ -197,7 +197,7 @@ Follow the instruction in [Using the compliance operator](/docs/openshift?topic=
 | Section|Recommendation|Manual/Automated|Level|Result |
 | -- | -- | -- | -- | -- |
 | 5.3.1|Ensure that the CNI in use supports Network Policies.|Manual|1|Pass |
-| 5.3.2|Ensure that all Namespaces have Network Policies defined.|Automated|2|[Not checked](#co-benchmark-417-remdiations) |
+| 5.3.2|Ensure that all Namespaces have Network Policies defined.|Automated|2|[Not checked](#co-benchmark-417-remdiation) |
 {: caption="Section 5.3 Benchmarks for network policies and cni." caption-side="top"}
 
 

@@ -2,7 +2,7 @@
 
 copyright:
   years: 2023, 2024
-lastupdated: "2024-01-03"
+lastupdated: "2024-11-26"
 
 
 keywords: delete webhooks, webhooks, mutating, validating, troubleshooting webhooks
@@ -22,6 +22,23 @@ subcollection: openshift
 Some troubleshooting and debugging steps might require you to temporarily remove certain webhooks from your cluster. Follow these steps to remove webhooks, then reapply them after you have resolved your issue.
 {: shortdesc}
 
+## Checking webhooks that are rejecting requests
+{: #webhook-reject}
+
+1. Before you delete webhooks, run the following command to get a list of webhooks that are rejecting requests.
+
+    ```sh
+    kubectl get --raw /metrics | grep apiserver_admission_webhook_admission_duration_seconds
+    ```
+    {: pre}
+
+1. Review the output for webhooks that have `rejected="true"` status.
+
+1. Continue troubleshooting the webhooks that are rejecting requests.
+
+
+## Deleting webhooks
+{: webhook-delete}
 
 1. List the mutating webhooks in your cluster.
 
@@ -53,7 +70,7 @@ Some troubleshooting and debugging steps might require you to temporarily remove
     ```
     {: pre}
 
-1. Identify any validating webhooks that are **not** included in the following list. 
+1. Identify any validating webhooks that aren't included in the following list.
     - `alertmanagerconfigs.openshift.io`
     - `managed-storage-validation-webhooks`
     - `multus.openshift.io` 
@@ -61,10 +78,10 @@ Some troubleshooting and debugging steps might require you to temporarily remove
     - `prometheusrules.openshift.io`
     - `snapshot.storage.k8s.io`
 
-    Any validating webhook that **is** included in this list should **not** be deleted in the following steps. 
+    Any validating webhook that's included in this list shouldn't be deleted in the following steps. 
     {: important}
 
-1. For each validating webhook that is **not** included in the previous list, copy the component YAML file and delete the webhook.
+1. For each validating webhook that isn't included in the previous list, copy the component YAML file and delete the webhook.
     1. Run the command to copy the YAML file. Save the YAML file so you can reapply it later.
 
         ```sh
