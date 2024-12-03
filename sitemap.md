@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2024
-lastupdated: "2024-11-26"
+lastupdated: "2024-12-03"
 
 
 keywords: openshift
@@ -6462,6 +6462,18 @@ subcollection: openshift
 [4.17 version information and update actions](/docs/openshift?topic=openshift-cs_versions_417#cs_versions_417)
 
 * [Release timeline](/docs/openshift?topic=openshift-cs_versions_417#release_timeline_417)
+
+* [Preparing to update](/docs/openshift?topic=openshift-cs_versions_417#prep-up-417)
+
+    * [Update before master](/docs/openshift?topic=openshift-cs_versions_417#417_before)
+
+* [Update after master](/docs/openshift?topic=openshift-cs_versions_417#417_after)
+
+* [Checking the `Upgradeable` status of your cluster](/docs/openshift?topic=openshift-cs_versions_417#status-check-417)
+
+* [RHEL 9](/docs/openshift?topic=openshift-cs_versions_417#417_rhel9)
+
+* [Choose your container network interface](/docs/openshift?topic=openshift-cs_versions_417#417-cni)
 
 [Version 4.17 change log](/docs/openshift?topic=openshift-openshift_changelog_417#openshift_changelog_417)
 
