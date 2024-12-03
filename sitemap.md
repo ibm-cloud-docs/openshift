@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2024
-lastupdated: "2024-11-26"
+lastupdated: "2024-12-03"
 
 
 keywords: openshift
@@ -6463,6 +6463,18 @@ subcollection: openshift
 
 * [Release timeline](/docs/openshift?topic=openshift-cs_versions_417#release_timeline_417)
 
+* [Preparing to update](/docs/openshift?topic=openshift-cs_versions_417#prep-up-417)
+
+    * [Update before master](/docs/openshift?topic=openshift-cs_versions_417#417_before)
+
+* [Update after master](/docs/openshift?topic=openshift-cs_versions_417#417_after)
+
+* [Checking the `Upgradeable` status of your cluster](/docs/openshift?topic=openshift-cs_versions_417#status-check-417)
+
+* [RHEL 9](/docs/openshift?topic=openshift-cs_versions_417#417_rhel9)
+
+* [Choose your container network interface](/docs/openshift?topic=openshift-cs_versions_417#417-cni)
+
 [Version 4.17 change log](/docs/openshift?topic=openshift-openshift_changelog_417#openshift_changelog_417)
 
 * [Overview](/docs/openshift?topic=openshift-openshift_changelog_417#openshift_changelog_overview_417)
@@ -6710,6 +6722,12 @@ subcollection: openshift
     * [Changes to worker-to-master backup communication](/docs/openshift?topic=openshift-cs_versions_415#backup-considerations)
 
 * [Allowing outbound traffic after creating a 4.15 cluster](/docs/openshift?topic=openshift-cs_versions_415#sbd-allow-outbound-after)
+
+* [VPE gateway creation information](/docs/openshift?topic=openshift-cs_versions_415#vpe-gateway-415)
+
+    * [VPE gateways created when upgrading to version 4.15](/docs/openshift?topic=openshift-cs_versions_415#vpe-gateway-415-upgrade)
+
+    * [New VPE gateway configuration when creating a new 4.15 cluster](/docs/openshift?topic=openshift-cs_versions_415#vpe-gateway-415-new)
 
 * [Common issues and troubleshooting](/docs/openshift?topic=openshift-cs_versions_415#sbd-common-ts)
 

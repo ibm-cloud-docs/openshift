@@ -2,7 +2,7 @@
 
 copyright:
   years: 2024, 2024
-lastupdated: "2024-11-12"
+lastupdated: "2024-12-03"
 
 
 keywords: openshift, version, update, upgrade, 4.15, update openshift
@@ -64,6 +64,7 @@ The following table shows the actions that you must take before you [update the 
 | Known OpenShift issues | For more information, review the [OpenShift version 4.15 known issues](https://docs.openshift.com/container-platform/4.15/release_notes/ocp-4-15-release-notes.html#ocp-4-15-known-issues) for possible actions required. |
 | Upgrade requires OpenShift cluster version currency | A cluster master upgrade is canceled when the OpenShift cluster version status indicates that an update is already in progress. See [Why does OpenShift show the cluster version is not up to date](/docs/openshift?topic=openshift-ts-cluster-version-downlevel) for details. |
 | Upgrade requires resolution to OpenShift cluster version upgradeable conditions | A cluster master upgrade will now be cancelled if the OpenShift cluster version `Upgradeable` status condition indicates that the cluster is not upgradeable. See [Why do I see a `Cannot complete cluster master upgrade` message?](/docs/openshift?topic=openshift-ts-cluster-master-upgrade) for details. |
+| VPE gateways changes when creating or updating a VPC cluster to version 4.15 | There are important changes to the VPE gateways used for VPC clusters when creating a 4.15 cluster or updating to 4.15. These changes might require action. To review the changes and determine your required actions, see [VPE gateway creation information](#vpe-gateway-415). |
 {: caption="Changes to make before you update the master to Red Hat OpenShift 4.15" caption-side="bottom"}
 
 ## Checking the `Upgradeable` status of your cluster
@@ -152,6 +153,56 @@ In clusters with Secure by Default outbound traffic protection, falling back to 
 If you created a version 4.15 cluster with outbound traffic protection enabled, your apps or services might experience downtime due to dependencies that require external network connections. Review the following options for enabling outbound traffic selectively or allowing all outbound traffic.
 
 For more information, see [Managing outbound traffic protection in VPC clusters](/docs/openshift?topic=openshift-sbd-allow-outbound).
+
+
+## VPE gateway creation information
+{: #vpe-gateway-415}
+
+When a VPC cluster is created at or updated to version 4.15, the following VPE gateways are created if they do not exist.
+
+| VPE DNS Name(s) | Service | Versions |
+| --- | --- | --- |
+| `s3.direct.<region>.cloud-object-storage.appdomain.cloud` and `*.s3.direct.<region>.cloud-object-storage.appdomain.cloud` | Cloud Object Storage | Version 4.15 and later |
+| `config.direct.cloud-object-storage.cloud.ibm.com` | Cloud Object Storage Configuration | Version 4.15 and later |
+| `<region>.private.iaas.cloud.ibm.com` | VPC infrastructure | Version 4.15 and later |
+| `icr.io` and `*.icr.io`* | Container Registry | Version 4.14 and later |
+| `api.<region>.containers.cloud.ibm.com`* | {{site.data.keyword.openshiftlong_notm}} | Version 4.14 and later |
+{: caption="Changes to VPE gateways in version 4.15" caption-side="bottom"}
+
+
+* For clusters updated to 4.15, these VPE Gateways should already exist since they would have been created when the cluster was at 4.14.
+
+These VPE Gateways are shared by all resources in the VPC, and when they are first created, they change the IP addresses associated with these services as well as restrict access to them.
+
+If any resources in the VPC are using any of these services where the VPE Gateway does not yet exist, you must take the actions described below both before and possibly during the update to ensure the resources still have access.
+
+The steps you take are different depending on if you are creating a new 4.15 cluster, or upgrading the master of an existing 4.14 cluster.
+- New 4.15 clusters get the Secure by Default configurations described above.
+- Upgraded existing 4.14 clusters continue to use the old security group model.
+
+### VPE gateways created when upgrading to version 4.15
+{: #vpe-gateway-415-upgrade}
+
+Three new VPE Gateways for 4.15 are created if they don't already exist in the VPC. Also, one IP address per zone is added to each VPE gateway for each zone that has cluster workers in.
+These IP addresses are taken from one of the existing VPC subnets in that zone.
+
+The VPE gateways are put into the existing `kube-<vpcID>` security group, which by default allows all traffic. Unless you have modified this security group, you don't need to add any rules to allow inbound access to these new VPE Gateways.
+
+If you have modified the `kube-<vpcID>` security group, you must make sure all resources in the VPC that use these services are allowed inbound access to this security group. Also, ensure there are no network ACLs on the subnets, security groups on the resources themselves, or custom VPC routes that block access to these new VPE gateways.
+
+### New VPE gateway configuration when creating a new 4.15 cluster
+{: #vpe-gateway-415-new}
+
+Five new VPE gateways are created if they don't already exist in the VPC. Also, one IP addresses per zone is added to each VPE Gateway for each zone that has cluster workers in.
+These IP addresses are taken from one of the existing VPC subnets in that zone.
+
+The VPE gateways are put into a new `kube-vpegw-<vpcID>` security group, which only allows inbound traffic to these new VPE gateways from the cluster worker security group `kube-<clusterID>`.
+
+Before you create your cluster, for any resources in your VPC that access any of these endpoints, ensure there are no network ACLs on the subnets, security groups on the resources themselves, or custom VPC routes that block access to these new VPE gateways.
+
+As your cluster is being updated, watch for the creation of the `kube-vpegw-<vpcID>` security group. After it is created, add the necessary inbound rules to allow all your resources that are not cluster workers to access the new VPE gateways that are being created. Note that all cluster workers in the VPC can already access these VPE gateways via security group rules that are added automatically as the cluster is created.
+
+For more information about a similar use case, see [VPC application troubleshooting](/docs/openshift?topic=openshift-ts-sbd-other-clusters).
 
 
 ## Common issues and troubleshooting 
