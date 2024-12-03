@@ -6723,6 +6723,12 @@ subcollection: openshift
 
 * [Allowing outbound traffic after creating a 4.15 cluster](/docs/openshift?topic=openshift-cs_versions_415#sbd-allow-outbound-after)
 
+* [VPE gateway creation information](/docs/openshift?topic=openshift-cs_versions_415#vpe-gateway-415)
+
+    * [VPE gateways created when upgrading to version 4.15](/docs/openshift?topic=openshift-cs_versions_415#vpe-gateway-415-upgrade)
+
+    * [New VPE gateway configuration when creating a new 4.15 cluster](/docs/openshift?topic=openshift-cs_versions_415#vpe-gateway-415-new)
+
 * [Common issues and troubleshooting](/docs/openshift?topic=openshift-cs_versions_415#sbd-common-ts)
 
 [Version 4.15 change log](/docs/openshift?topic=openshift-openshift_changelog_415#openshift_changelog_415)
