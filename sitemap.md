@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2024
-lastupdated: "2024-12-03"
+lastupdated: "2024-12-04"
 
 
 keywords: openshift
@@ -273,6 +273,12 @@ subcollection: openshift
 
 [Release notes](/docs/openshift?topic=openshift-openshift-relnotes#openshift-relnotes)
 
+* [December 2024](/docs/openshift?topic=openshift-openshift-relnotes#openshift-dec24)
+
+    * [04 December 2024](/docs/openshift?topic=openshift-openshift-relnotes#openshift-dec0424)
+
+        * {{site.data.keyword.openshiftlong_notm}} master fix packs.
+
 * [November 2024](/docs/openshift?topic=openshift-openshift-relnotes#openshift-nov24)
 
     * [22 November 2024](/docs/openshift?topic=openshift-openshift-relnotes#openshift-nov2224)
@@ -314,6 +320,10 @@ subcollection: openshift
     * [05 November 2024](/docs/openshift?topic=openshift-openshift-relnotes#openshift-nov0524)
 
         * {{site.data.keyword.openshiftlong_notm}} worker node fix packs are available.
+
+* [December 2024](/docs/openshift?topic=openshift-openshift-relnotes#openshift-december24)
+
+    * [03 December 2024](/docs/openshift?topic=openshift-openshift-relnotes#openshift-03december24)
 
 * [October 2024](/docs/openshift?topic=openshift-openshift-relnotes#openshift-oct24)
 
@@ -6479,6 +6489,8 @@ subcollection: openshift
 
 * [Overview](/docs/openshift?topic=openshift-openshift_changelog_417#openshift_changelog_overview_417)
 
+    * [Change log for master fix pack 4.17.5_1517_openshift, released 04 December 2024](/docs/openshift?topic=openshift-openshift_changelog_417#4175_1517_openshift_M)
+
     * [Change log for worker node fix pack 4.17.4_1516_openshift, released 21 November 2024](/docs/openshift?topic=openshift-openshift_changelog_417#4174_1516_openshift_W)
 
     * [Change log for master fix pack 4.17.4_1515_openshift and worker node fix pack 4.17.4_1516_openshift, released 20 November 2024](/docs/openshift?topic=openshift-openshift_changelog_417#openshift_changelog_4174_1515)
@@ -6591,6 +6603,8 @@ subcollection: openshift
 [Version 4.16 change log](/docs/openshift?topic=openshift-openshift_changelog_416#openshift_changelog_416)
 
 * [Overview](/docs/openshift?topic=openshift-openshift_changelog_416#openshift_changelog_overview_416)
+
+    * [Change log for master fix pack 4.16.23_1545_openshift, released 04 December 2024](/docs/openshift?topic=openshift-openshift_changelog_416#41623_1545_openshift_M)
 
     * [Change log for worker node fix pack 4.16.21_1544_openshift, released 18 November 2024](/docs/openshift?topic=openshift-openshift_changelog_416#41621_1544_openshift_W)
 
@@ -6734,6 +6748,8 @@ subcollection: openshift
 [Version 4.15 change log](/docs/openshift?topic=openshift-openshift_changelog_415#openshift_changelog_415)
 
 * [Overview](/docs/openshift?topic=openshift-openshift_changelog_415#openshift_changelog_overview_415)
+
+    * [Change log for master fix pack 4.15.38_1568_openshift, released 04 December 2024](/docs/openshift?topic=openshift-openshift_changelog_415#41538_1568_openshift_M)
 
     * [Change log for worker node fix pack 4.15.38_1567_openshift, released 18 November 2024](/docs/openshift?topic=openshift-openshift_changelog_415#41538_1567_openshift_W)
 
@@ -6901,6 +6917,8 @@ subcollection: openshift
 [Version 4.14 change log](/docs/openshift?topic=openshift-openshift_changelog_414#openshift_changelog_414)
 
 * [Overview](/docs/openshift?topic=openshift-openshift_changelog_414#openshift_changelog_overview_414)
+
+    * [Change log for master fix pack 4.14.40_1590_openshift, released 04 December 2024](/docs/openshift?topic=openshift-openshift_changelog_414#41440_1590_openshift_M)
 
     * [Change log for worker node fix pack 4.14.40_1589_openshift, released 18 November 2024](/docs/openshift?topic=openshift-openshift_changelog_414#41440_1589_openshift_W)
 
@@ -7072,6 +7090,8 @@ subcollection: openshift
 [Version 4.13 change log](/docs/openshift?topic=openshift-openshift_changelog_413#openshift_changelog_413)
 
 * [Overview](/docs/openshift?topic=openshift-openshift_changelog_413#openshift_changelog_overview_413)
+
+    * [Change log for master fix pack 4.13.53_1600_openshift, released 04 December 2024](/docs/openshift?topic=openshift-openshift_changelog_413#41353_1600_openshift_M)
 
     * [Change log for worker node fix pack 4.13.53_1598_openshift, released 18 November 2024](/docs/openshift?topic=openshift-openshift_changelog_413#41353_1598_openshift_W)
 
@@ -7283,6 +7303,8 @@ subcollection: openshift
 [Version 4.12 change log](/docs/openshift?topic=openshift-openshift_changelog_412#openshift_changelog_412)
 
 * [Overview](/docs/openshift?topic=openshift-openshift_changelog_412#openshift_changelog_overview_412)
+
+    * [Change log for master fix pack 4.12.69_1618_openshift, released 04 December 2024](/docs/openshift?topic=openshift-openshift_changelog_412#41269_1618_openshift_M)
 
     * [Change log for worker node fix pack 4.12.69_1617_openshift, released 18 November 2024](/docs/openshift?topic=openshift-openshift_changelog_412#41269_1617_openshift_W)
 
@@ -8143,15 +8165,17 @@ subcollection: openshift
 
 * [Change log for version 2.0.5, released 25 November 2020](/docs/openshift?topic=openshift-cos_plugin_changelog#0205_object_plugin)
 
-[Static route add-on change log](/docs/openshift?topic=openshift-versions-static-route#versions-static-route)
+[Static Route add-on change log](/docs/openshift?topic=openshift-cl-add-ons-static-route#cl-add-ons-static-route)
 
-* [Version 1.0.0](/docs/openshift?topic=openshift-versions-static-route#v100)
+* [Version 1.0.0](/docs/openshift?topic=openshift-cl-add-ons-static-route#cl-add-ons-static-route-1.0.0)
 
-    * [Change log for 1.0.0_1415, released 3 October 2024](/docs/openshift?topic=openshift-versions-static-route#100_1415)
+    * [1.0.0_1581, released 14 November 2024](/docs/openshift?topic=openshift-cl-add-ons-static-route#cl-add-ons-static-route-100_1581)
 
-    * [Change log for 1.0.0_1122, released 17 July 2023](/docs/openshift?topic=openshift-versions-static-route#100_1122)
+    * [Change log for 1.0.0_1415, released 3 October 2024](/docs/openshift?topic=openshift-cl-add-ons-static-route#cl-add-ons-static-route-100_1415)
 
-    * [Change log for 1.0.0_649, released 8 September 2021](/docs/openshift?topic=openshift-versions-static-route#100_649)
+    * [Change log for 1.0.0_1122, released 17 July 2023](/docs/openshift?topic=openshift-cl-add-ons-static-route#cl-add-ons-static-route-100_1122)
+
+    * [Change log for 1.0.0_649, released 8 September 2021](/docs/openshift?topic=openshift-cl-add-ons-static-route#cl-add-ons-static-route-100_649)
 
 [OpenShift Data Foundation add-on change log](/docs/openshift?topic=openshift-odf_addon_changelog#odf_addon_changelog)
 

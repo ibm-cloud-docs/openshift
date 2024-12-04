@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2024
-lastupdated: "2024-12-03"
+lastupdated: "2024-12-04"
 
 
 keywords: kubernetes, release notes, openshift, {{site.data.keyword.openshiftlong_notm}}
@@ -24,6 +24,29 @@ Use the release notes to learn about the latest changes to the documentation tha
 
 Looking for {{site.data.keyword.cloud_notm}} status, platform announcements, security bulletins, or maintenance notifications? See [{{site.data.keyword.cloud_notm}} status](https://cloud.ibm.com/status?selected=status).
 {: tip}
+
+
+## December 2024
+{: #openshift-dec24}
+
+### 04 December 2024
+{: #openshift-dec0424}
+{: release-note}
+
+
+
+
+
+{{site.data.keyword.openshiftlong_notm}} master fix packs.
+:   Master fix packs are applied automatically over the course of several days. You can choose to use the [`ibmcloud ks cluster master update`](/docs/openshift?topic=openshift-kubernetes-service-cli#cs_cluster_update) command yourself without waiting for the update automation to apply the patch. Review the following change logs for your cluster version.
+:   [Version 4.17 change log](/docs/openshift?topic=openshift-openshift_changelog_417)
+:   [Version 4.16 change log](/docs/openshift?topic=openshift-openshift_changelog_416)
+:   [Version 4.15 change log](/docs/openshift?topic=openshift-openshift_changelog_415)
+:   [Version 4.14 change log](/docs/openshift?topic=openshift-openshift_changelog_414)
+:   [Version 4.13 change log](/docs/openshift?topic=openshift-openshift_changelog_413)
+:   [Version 4.12 change log](/docs/openshift?topic=openshift-openshift_changelog_412)
+
+
 
 
 
@@ -143,6 +166,15 @@ New! A new tutorial is available for {{site.data.keyword.openshiftlong_notm}} th
 :   [Version 4.13 change log](/docs/openshift?topic=openshift-openshift_changelog_413)
 :   [Version 4.12 change log](/docs/openshift?topic=openshift-openshift_changelog_412)
 
+
+
+
+## December 2024
+{: #openshift-december24}
+
+### 03 December 2024
+{: #openshift-03december24}
+{: release-note}
 
 
 
