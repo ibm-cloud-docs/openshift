@@ -321,10 +321,6 @@ subcollection: openshift
 
         * {{site.data.keyword.openshiftlong_notm}} worker node fix packs are available.
 
-* [December 2024](/docs/openshift?topic=openshift-openshift-relnotes#openshift-december24)
-
-    * [03 December 2024](/docs/openshift?topic=openshift-openshift-relnotes#openshift-03december24)
-
 * [October 2024](/docs/openshift?topic=openshift-openshift-relnotes#openshift-oct24)
 
     * [30 October 2024](/docs/openshift?topic=openshift-openshift-relnotes#openshift-oct3024)
