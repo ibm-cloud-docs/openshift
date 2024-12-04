@@ -2,7 +2,7 @@
 
 copyright:
   years: 2024, 2024
-lastupdated: "2024-11-26"
+lastupdated: "2024-12-04"
 
 
 keywords: openshift, 4.17, update, upgrade, BOM, bill of materials, versions, patch
@@ -32,6 +32,23 @@ Check the [Security Bulletins on {{site.data.keyword.cloud_notm}} Status](https:
 
 Master patch updates are applied automatically. Worker node patch updates can be applied by reloading or updating the worker nodes. For more information about major, minor, and patch versions and preparation actions between minor versions, see [{{site.data.keyword.redhat_openshift_notm}} versions](/docs/openshift?topic=openshift-openshift_versions).
 {: tip}
+
+
+### Change log for master fix pack 4.17.5_1517_openshift, released 04 December 2024
+{: #4175_1517_openshift_M}
+
+The following table shows the changes that are in the master fix pack 4.17.5_1517_openshift. Master patch updates are applied automatically. 
+
+
+
+| Component | Previous | Current | Description |
+| --- | --- | --- | --- |
+| {{site.data.keyword.cloud_notm}} Controller Manager | v1.30.6-3 | v1.30.6-4 | New version contains updates and security fixes. |
+| Key Management Service provider | v2.10.7 | v2.10.8 | New version contains updates and security fixes. |
+| Load balancer and load balancer monitor for {{site.data.keyword.cloud_notm}} Provider | 3051 | 3079 | New version contains updates and security fixes. |
+| Portieris admission controller | v0.13.20 | v0.13.21 | See the [Portieris admission controller release notes](https://github.com/{{site.data.keyword.IBM_notm}}/portieris/releases/tag/v0.13.21){: external}. |
+| {{site.data.keyword.openshiftlong_notm}}. | 4.17.4 | 4.17.5 | See the [{{site.data.keyword.openshiftlong_notm}} release notes](https://docs.openshift.com/container-platform/4.17/release_notes/ocp-4-17-release-notes.html#ocp-4-17-5){: external}. |
+{: caption="Changes since version 4.17.4_1515_openshift" caption-side="bottom"}
 
 
 ### Change log for worker node fix pack 4.17.4_1516_openshift, released 21 November 2024
