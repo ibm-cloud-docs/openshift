@@ -51,12 +51,6 @@ The following table shows the changes that are in the master fix pack 4.17.5_151
 {: caption="Changes since version 4.17.4_1515_openshift" caption-side="bottom"}
 
 
-### Change log for worker node fix pack 4.17.4_1516_openshift, released 21 November 2024
-{: #4174_1516_openshift_W}
-
-The following table shows the changes that are in the worker node fix pack 4.17.4_1516_openshift. Worker node patch updates can be applied by updating, reloading (in classic infrastructure), or replacing (in VPC infrastructure) the worker node.
-{: shortdesc}
-
 
 ### Change log for master fix pack 4.17.4_1515_openshift and worker node fix pack 4.17.4_1516_openshift, released 20 November 2024
 {: #openshift_changelog_4174_1515}

@@ -6477,21 +6477,15 @@ subcollection: openshift
 
     * [Update before master](/docs/openshift?topic=openshift-cs_versions_417#417_before)
 
-* [Update after master](/docs/openshift?topic=openshift-cs_versions_417#417_after)
-
 * [Checking the `Upgradeable` status of your cluster](/docs/openshift?topic=openshift-cs_versions_417#status-check-417)
 
 * [RHEL 9](/docs/openshift?topic=openshift-cs_versions_417#417_rhel9)
-
-* [Choose your container network interface](/docs/openshift?topic=openshift-cs_versions_417#417-cni)
 
 [Version 4.17 change log](/docs/openshift?topic=openshift-openshift_changelog_417#openshift_changelog_417)
 
 * [Overview](/docs/openshift?topic=openshift-openshift_changelog_417#openshift_changelog_overview_417)
 
     * [Change log for master fix pack 4.17.5_1517_openshift, released 04 December 2024](/docs/openshift?topic=openshift-openshift_changelog_417#4175_1517_openshift_M)
-
-    * [Change log for worker node fix pack 4.17.4_1516_openshift, released 21 November 2024](/docs/openshift?topic=openshift-openshift_changelog_417#4174_1516_openshift_W)
 
     * [Change log for master fix pack 4.17.4_1515_openshift and worker node fix pack 4.17.4_1516_openshift, released 20 November 2024](/docs/openshift?topic=openshift-openshift_changelog_417#openshift_changelog_4174_1515)
 

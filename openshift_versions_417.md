@@ -2,7 +2,7 @@
 
 copyright:
   years: 2024, 2024
-lastupdated: "2024-12-03"
+lastupdated: "2024-12-04"
 
 
 keywords: openshift, version, update, upgrade, 4.17, update openshift
@@ -75,14 +75,6 @@ For clusters that run version 4.17 or later, you can use the `oc adm upgrade sta
 | Node label `node-role.kubernetes.io/master` removed | VPC clusters with CoreOS enabled no longer set the `node-role.kubernetes.io/master` node label for version 4.17 worker nodes. If your apps rely on this node label, update them accordingly. |
 {: caption="Changes to make before you update the master to {{site.data.keyword.redhat_openshift_notm}} 4.17" caption-side="bottom"}
 
-## Update after master
-{: #417_after}
-
-| Type | Description |
-| --- | --- |
-| **Unsupported:** `localhost` `NodePort` services | To further reduce security risks related to [CVE-2020-8558](https://github.com/advisories/GHSA-wqv3-8cm6-h6wg){: external}, `localhost` access to `NodePort` services is disabled. If your apps rely on this behavior, update them to the node private IP address instead. |
-{: caption="Changes to make after you update the master to {{site.data.keyword.redhat_openshift_notm}} 4.16" caption-side="bottom"}
-
 ## Checking the `Upgradeable` status of your cluster
 {: #status-check-417}
 
@@ -106,7 +98,7 @@ Example output where the `Upgradeable` status is `False`.
 ```
 {: screen}
 
-If the `Upgradeable` status is `False`, the condition information provides instructions that must be followed before upgrading. For more information, see [Providing the administrator acknowledgment](https://docs.openshift.com/container-platform/4.16/updating/preparing_for_updates/updating-cluster-prepare.html#update-preparing-ack_updating-cluster-prepare){: external}.
+If the `Upgradeable` status is `False`, the condition information provides instructions that must be followed before upgrading.
 
 
 ## RHEL 9
@@ -119,15 +111,3 @@ You can provision a new cluster with RHEL 9 in the console by specifying the RHE
 If you upgrade an existing cluster to version 4.17 and want your worker nodes to run RHEL 9, you must [follow the steps to migrate your worker nodes](/docs/openshift?topic=openshift-rhel_migrate).
 
 For more information on RHEL 9, see the [Red Hat OpenShift release notes](https://docs.redhat.com/en/documentation/red_hat_enterprise_linux/9/html/9.4_release_notes/index){: external}. 
-
-
-## Choose your container network interface
-{: #417-cni}
-
-[Internal IBM only]{: tag-blue}
-[VPC]{: tag-green}
-
-When you use the CLI to provision a version 4.17 VPC or CoreOS-enabled {{site.data.keyword.satelliteshort}} cluster that runs the RHCOS operating system, you can choose which container network interface (CNI) you want to use on your cluster. The available options are Calico or OVN-Kubernetes (OVN). You can specify the CNI with the `--cni` option when you run the `ibmcloud oc cluster create` command. 
-
-This option is only available in the CLI.
-{: note}
