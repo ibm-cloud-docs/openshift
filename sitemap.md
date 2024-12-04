@@ -10771,7 +10771,7 @@ subcollection: openshift
 
 * [Checking webhooks that are rejecting requests](/docs/openshift?topic=openshift-ts-delete-webhooks#webhook-reject)
 
-* [Deleting webhooks](/docs/openshift?topic=openshift-ts-delete-webhooks#deleting-webhooks)
+* [Deleting webhooks](/docs/openshift?topic=openshift-ts-delete-webhooks#webhook-delete)
 
 [Why is my Portieris cluster image security enforcement installation canceled?](/docs/openshift?topic=openshift-portieris_enable#portieris_enable)
 
