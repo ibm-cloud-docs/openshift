@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2024
-lastupdated: "2024-12-03"
+lastupdated: "2024-12-04"
 
 
 keywords: kubernetes, release notes, openshift, {{site.data.keyword.openshiftlong_notm}}
@@ -143,6 +143,15 @@ New! A new tutorial is available for {{site.data.keyword.openshiftlong_notm}} th
 :   [Version 4.13 change log](/docs/openshift?topic=openshift-openshift_changelog_413)
 :   [Version 4.12 change log](/docs/openshift?topic=openshift-openshift_changelog_412)
 
+
+
+
+## December 2024
+{: #openshift-december24}
+
+### 03 December 2024
+{: #openshift-03december24}
+{: release-note}
 
 
 

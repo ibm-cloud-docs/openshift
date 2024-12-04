@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2024
-lastupdated: "2024-12-03"
+lastupdated: "2024-12-04"
 
 
 keywords: openshift
@@ -314,6 +314,10 @@ subcollection: openshift
     * [05 November 2024](/docs/openshift?topic=openshift-openshift-relnotes#openshift-nov0524)
 
         * {{site.data.keyword.openshiftlong_notm}} worker node fix packs are available.
+
+* [December 2024](/docs/openshift?topic=openshift-openshift-relnotes#openshift-december24)
+
+    * [03 December 2024](/docs/openshift?topic=openshift-openshift-relnotes#openshift-03december24)
 
 * [October 2024](/docs/openshift?topic=openshift-openshift-relnotes#openshift-oct24)
 
@@ -8143,15 +8147,17 @@ subcollection: openshift
 
 * [Change log for version 2.0.5, released 25 November 2020](/docs/openshift?topic=openshift-cos_plugin_changelog#0205_object_plugin)
 
-[Static route add-on change log](/docs/openshift?topic=openshift-versions-static-route#versions-static-route)
+[Static Route add-on change log](/docs/openshift?topic=openshift-cl-add-ons-static-route#cl-add-ons-static-route)
 
-* [Version 1.0.0](/docs/openshift?topic=openshift-versions-static-route#v100)
+* [Version 1.0.0](/docs/openshift?topic=openshift-cl-add-ons-static-route#cl-add-ons-static-route-1.0.0)
 
-    * [Change log for 1.0.0_1415, released 3 October 2024](/docs/openshift?topic=openshift-versions-static-route#100_1415)
+    * [1.0.0_1581, released 14 November 2024](/docs/openshift?topic=openshift-cl-add-ons-static-route#cl-add-ons-static-route-100_1581)
 
-    * [Change log for 1.0.0_1122, released 17 July 2023](/docs/openshift?topic=openshift-versions-static-route#100_1122)
+    * [Change log for 1.0.0_1415, released 3 October 2024](/docs/openshift?topic=openshift-cl-add-ons-static-route#cl-add-ons-static-route-100_1415)
 
-    * [Change log for 1.0.0_649, released 8 September 2021](/docs/openshift?topic=openshift-versions-static-route#100_649)
+    * [Change log for 1.0.0_1122, released 17 July 2023](/docs/openshift?topic=openshift-cl-add-ons-static-route#cl-add-ons-static-route-100_1122)
+
+    * [Change log for 1.0.0_649, released 8 September 2021](/docs/openshift?topic=openshift-cl-add-ons-static-route#cl-add-ons-static-route-100_649)
 
 [OpenShift Data Foundation add-on change log](/docs/openshift?topic=openshift-odf_addon_changelog#odf_addon_changelog)
 

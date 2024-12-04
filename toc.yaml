@@ -398,7 +398,7 @@ toc:
           - versions-vpc-block-addon.md
           - versions-vpc-file-addon.md
           - versions-object.md
-          - versions-static-route.md
+          - cl-add-ons-static-route.md
           - openshift_versions_ocs_addon.md
           - versions-backup-restore.md
           - openshift_versions_hpcs_router.md
