@@ -169,15 +169,6 @@ New! A new tutorial is available for {{site.data.keyword.openshiftlong_notm}} th
 
 
 
-## December 2024
-{: #openshift-december24}
-
-### 03 December 2024
-{: #openshift-03december24}
-{: release-note}
-
-
-
 ## October 2024
 {: #openshift-oct24}
 
