@@ -2,7 +2,7 @@
 
 copyright:
   years: 2023, 2024
-lastupdated: "2024-11-26"
+lastupdated: "2024-12-04"
 
 
 keywords: delete webhooks, webhooks, mutating, validating, troubleshooting webhooks
@@ -38,7 +38,7 @@ Some troubleshooting and debugging steps might require you to temporarily remove
 
 
 ## Deleting webhooks
-{: webhook-delete}
+{: #webhook-delete}
 
 1. List the mutating webhooks in your cluster.
 
