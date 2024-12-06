@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2024
-lastupdated: "2024-12-04"
+lastupdated: "2024-12-06"
 
 
 keywords: openshift
@@ -10766,12 +10766,6 @@ subcollection: openshift
 [Why can't the cluster pull images from {{site.data.keyword.registrylong_notm}} during creation?](/docs/openshift?topic=openshift-ts_image_pull_create#ts_image_pull_create)
 
 [Why do cluster master operations fail due to a broken webhook?](/docs/openshift?topic=openshift-webhooks_update#webhooks_update)
-
-[Deleting webhooks from a cluster](/docs/openshift?topic=openshift-ts-delete-webhooks#ts-delete-webhooks)
-
-* [Checking webhooks that are rejecting requests](/docs/openshift?topic=openshift-ts-delete-webhooks#webhook-reject)
-
-* [Deleting webhooks](/docs/openshift?topic=openshift-ts-delete-webhooks#webhook-delete)
 
 [Why is my Portieris cluster image security enforcement installation canceled?](/docs/openshift?topic=openshift-portieris_enable#portieris_enable)
 

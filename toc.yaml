@@ -512,7 +512,6 @@ toc:
               - ts-api-key-leak.md
               - ts-cluster-icr-pull-img.md
               - ts-cluster-webhook.md
-              - ts-delete-webhooks.md
               - ts-cluster-portieris.md
               - ts-cluster-pending.md
               - ts-cluster-view-work.md
