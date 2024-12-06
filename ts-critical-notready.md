@@ -2,7 +2,7 @@
 
 copyright:
   years: 2023, 2024
-lastupdated: "2024-09-19"
+lastupdated: "2024-12-06"
 
 
 keywords: critical, not ready, notready, troubleshooting, worker node status, status
@@ -92,7 +92,16 @@ Some steps are specific to a specialized area, such as networking or automation.
     - Check any Calico or Kubernetes network policies that are applied to the cluster and make sure that they do not block traffic from the worker node to the cluster `apiservice`, container registry, or other critical services. 
 1. Check if the applications, security, or monitoring components in your cluster are overloading the cluster `apiserver` with requests, which might cause disruptions for your worker nodes.
 1. If you recently added any components to your cluster, remove them. If you made changes to any existing components in your cluster, revert the changes. Then, check the status of your worker nodes to see if the new components or changes were causing the issue. 
-1. Check for changes on any cluster webhooks, which can disrupt `apiserver` requests or block a worker node's ability to connect with the `apiserver`. [Remove all webhooks](/docs/openshift?topic=openshift-ts-delete-webhooks) that were added to the cluster after it was created.
+1. Check for changes on any cluster webhooks, which can disrupt `apiserver` requests or block a worker node's ability to connect with the `apiserver`. Check for webhooks that are rejecting requests. Run the following command to get a list of webhooks that are rejecting requests.
+
+    ```sh
+    kubectl get --raw /metrics | grep apiserver_admission_webhook_admission_duration_seconds
+    ```
+    {: pre}
+
+1. Review the output for webhooks that have `rejected="true"` status.
+
+
 1. Remove and regenerate any custom Docker pull secrets, which, if misconfigured, can prevent worker nodes from pulling images from Docker registries. 
     1. Run the `ibmcloud oc delete secret -n openshift pull-secret` and `ibmcloud oc delete secret -n openshift-config pull-secret` commands to delete the custom Docker pull secrets.
         ```sh
@@ -119,7 +128,14 @@ If your worker nodes switch between a `Normal` and `Critical` or `NotReady` stat
 1. For classic clusters, check your firewalls or gateways. If there is a bandwidth limit or any type of malfunction, resolve the issue. Then, check your worker nodes again.
 1. Check if the applications, security, or monitoring components in your cluster are overloading the cluster `apiserver` with requests, which might cause disruptions for your worker nodes.
 1. If you recently added any components to your cluster, remove them. If you made changes to any existing components in your cluster, revert the changes. Then, check the status of your worker nodes to see whether the new components or changes were causing the issue. 
-1. Check for changes on any cluster webhooks, which can disrupt `apiserver` requests or block a worker node's ability to connect with the `apiserver`. [Remove all webhooks](/docs/openshift?topic=openshift-ts-delete-webhooks)  that were added to the cluster after it was created.
+1. Check for changes on any cluster webhooks, which can disrupt `apiserver` requests or block a worker node's ability to connect with the `apiserver`. Check for webhooks that are rejecting requests. Run the following command to get a list of webhooks that are rejecting requests.
+
+    ```sh
+    kubectl get --raw /metrics | grep apiserver_admission_webhook_admission_duration_seconds
+    ```
+    {: pre}
+
+1. Review the output for webhooks that have `rejected="true"` status.
 1. If the issue is still not resolved, follow the steps to [gather your worker node data](#ts-critical-notready-gather) and open a support ticket. 
 
 
@@ -158,7 +174,14 @@ Check the conditions of your worker nodes and cluster before you gather data.
     ```
     {: screen}
 
-2. Make sure that you have [removed any added webhooks](/docs/openshift?topic=openshift-ts-delete-webhooks) from the cluster. 
+1. Check for changes on any cluster webhooks, which can disrupt `apiserver` requests or block a worker node's ability to connect with the `apiserver`. Check for webhooks that are rejecting requests. Run the following command to get a list of webhooks that are rejecting requests.
+
+    ```sh
+    kubectl get --raw /metrics | grep apiserver_admission_webhook_admission_duration_seconds
+    ```
+    {: pre}
+
+1. Review the output for webhooks that have `rejected="true"` status.
 
 ### Gathering data
 {: #ts-critical-notready-gather-steps}
