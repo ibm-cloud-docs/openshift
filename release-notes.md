@@ -312,7 +312,7 @@ Storage Operator cluster add-on patch update.
 
 
 Static route add-on version patch update.
-:   For more information, see [the change log](/docs/openshift?topic=openshift-versions-static-route).
+:   For more information, see [the change log](/docs/openshift?topic=openshift-cl-add-ons-static-route).
 
 
 ### 01 October 2024
@@ -2095,7 +2095,7 @@ Cluster autoscaler add-on version `1.0.9_70`.
 :   For more information, see [the change log](/docs/openshift?topic=openshift-ca_changelog).
   
 Static route add-on version `1.0.0_1122`.
-:   For more information, see [the change log](/docs/openshift?topic=openshift-versions-static-route).
+:   For more information, see [the change log](/docs/openshift?topic=openshift-cl-add-ons-static-route).
 
 
 
