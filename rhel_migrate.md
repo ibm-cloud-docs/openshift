@@ -2,7 +2,7 @@
 
 copyright:
   years: 2022, 2024
-lastupdated: "2024-10-23"
+lastupdated: "2024-12-10"
 
 
 keywords: rhel, os, operating system
@@ -29,6 +29,8 @@ To find your worker node operating system, run the **`ibmcloud oc worker-pools -
 {: tip}
 
 For RHEL 9, the `/tmp` directory is a separate partition that has the `nosuid`, `noexec`, and `nodev` options set. If your apps install to and run scripts or binaries under the `/tmp` directory, they might fail. Update your apps to use the `/var/tmp` directory instead of the `/tmp` directory to run temporary scripts or binaries.
+
+The default `cgroup` implementation is `cgroup` v2. Please review the [Kubernetes migration documentation for `cgroup` v2](https://kubernetes.io/docs/concepts/architecture/cgroups/#migrating-to-cgroup-v2) and verify that your applications fully support `cgroup` v2. There are known issues with older versions of Java that may cause out of memory (OOM) issues for workloads.
 {: important}
 
 1. Review your worker pool operating systems to determine which pools you need to migrate.
