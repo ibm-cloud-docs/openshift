@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2024
-lastupdated: "2024-12-10"
+lastupdated: "2024-12-11"
 
 
 keywords: kubernetes, release notes, openshift, {{site.data.keyword.openshiftlong_notm}}
@@ -28,6 +28,20 @@ Looking for {{site.data.keyword.cloud_notm}} status, platform announcements, sec
 
 ## December 2024
 {: #openshift-dec24}
+
+### 11 December 2024
+{: #openshift-dec1124}
+{: release-note}
+
+{{site.data.keyword.block_storage_is_short}} add-on versions `5.1.31_656` and `5.2.26_657`.
+:   For more information, see the [add-on change log](/docs/openshift?topic=openshift-vpc_bs_changelog).
+
+{{site.data.keyword.filestorage_vpc_full_notm}} cluster add-on patch updates.
+:   For more information, see the [change log](/docs/openshift?topic=openshift-versions-vpc-file-addon).
+
+Storage Operator cluster add-on patch update.
+:  For more information, see the [change log](/docs/openshift?topic=openshift-versions-ibm-storage-operator).
+
 
 ### 05 December 2024
 {: #openshift-dec0524}

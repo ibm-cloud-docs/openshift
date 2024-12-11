@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2024
-lastupdated: "2024-12-10"
+lastupdated: "2024-12-11"
 
 
 keywords: openshift
@@ -274,6 +274,14 @@ subcollection: openshift
 [Release notes](/docs/openshift?topic=openshift-openshift-relnotes#openshift-relnotes)
 
 * [December 2024](/docs/openshift?topic=openshift-openshift-relnotes#openshift-dec24)
+
+    * [11 December 2024](/docs/openshift?topic=openshift-openshift-relnotes#openshift-dec1124)
+
+        * {{site.data.keyword.block_storage_is_short}} add-on versions `5.1.31_656` and `5.2.26_657`.
+
+        * {{site.data.keyword.filestorage_vpc_full_notm}} cluster add-on patch updates.
+
+        * Storage Operator cluster add-on patch update.
 
     * [05 December 2024](/docs/openshift?topic=openshift-openshift-relnotes#openshift-dec0524)
 
@@ -7811,6 +7819,8 @@ subcollection: openshift
 
 * [Version 5.2](/docs/openshift?topic=openshift-vpc_bs_changelog#052_is_block)
 
+    * [Change log for version 5.2.26_657, released 11 December 2024](/docs/openshift?topic=openshift-vpc_bs_changelog#5.2.26_657_is_block_relnote)
+
     * [Change log for version 5.2.24_641, released 20 November 2024](/docs/openshift?topic=openshift-vpc_bs_changelog#5.2.24_641_is_block_relnote)
 
     * [Change log for version 5.2.21_602, released 3 October 2024](/docs/openshift?topic=openshift-vpc_bs_changelog#5.2.21_602_is_block_relnote)
@@ -7834,6 +7844,8 @@ subcollection: openshift
     * [Change log for version 5.2, released 25 September 2023](/docs/openshift?topic=openshift-vpc_bs_changelog#5.2_is_block_relnote)
 
 * [Version 5.1](/docs/openshift?topic=openshift-vpc_bs_changelog#051_is_block)
+
+    * [Change log for version 5.1.31_656, released 11 December 2024](/docs/openshift?topic=openshift-vpc_bs_changelog#5.1.31_656_is_block_relnote)
 
     * [Change log for version 5.1.29_642, released 20 November 2024](/docs/openshift?topic=openshift-vpc_bs_changelog#5.1.29_642_is_block_relnote)
 
@@ -8003,6 +8015,8 @@ subcollection: openshift
 
 * [Version 2.0](/docs/openshift?topic=openshift-versions-vpc-file-addon#020_is_file)
 
+    * [Change log for version 2.0.9_322, released 11 December 2024](/docs/openshift?topic=openshift-versions-vpc-file-addon#2.0.9_322_is_file_relnote)
+
     * [Change log for version 2.0.8_311, released 3 October 2024](/docs/openshift?topic=openshift-versions-vpc-file-addon#2.0.8_311_is_file_relnote)
 
     * [Change log for version 2.0.6_259, released 26 August 2024](/docs/openshift?topic=openshift-versions-vpc-file-addon#2.0.6_259_is_file_relnote)
@@ -8012,6 +8026,8 @@ subcollection: openshift
     * [Change log for version 2.0.4_232, released 3 July 2024](/docs/openshift?topic=openshift-versions-vpc-file-addon#2.0.4_232_is_file_relnote)
 
 * [Version 1.2](/docs/openshift?topic=openshift-versions-vpc-file-addon#012_is_file)
+
+    * [Change log for version 1.2.13_326, released 11 December 2024](/docs/openshift?topic=openshift-versions-vpc-file-addon#1.2.13_326_is_file_relnote)
 
     * [Change log for version 1.2.12_312, released 3 October 2024](/docs/openshift?topic=openshift-versions-vpc-file-addon#1.2.12_312_is_file_relnote)
 
@@ -8173,17 +8189,17 @@ subcollection: openshift
 
 * [Change log for version 2.0.5, released 25 November 2020](/docs/openshift?topic=openshift-cos_plugin_changelog#0205_object_plugin)
 
-[Static Route add-on change log](/docs/openshift?topic=openshift-cl-add-ons-static-route#cl-add-ons-static-route)
+[Static Route add-on version change log](/docs/openshift?topic=openshift-cl-add-ons-static-route#cl-add-ons-static-route)
 
 * [Version 1.0.0](/docs/openshift?topic=openshift-cl-add-ons-static-route#cl-add-ons-static-route-1.0.0)
 
     * [1.0.0_1581, released 14 November 2024](/docs/openshift?topic=openshift-cl-add-ons-static-route#cl-add-ons-static-route-100_1581)
 
-    * [Change log for 1.0.0_1415, released 3 October 2024](/docs/openshift?topic=openshift-cl-add-ons-static-route#cl-add-ons-static-route-100_1415)
+    * [1.0.0_1415, released 3 October 2024](/docs/openshift?topic=openshift-cl-add-ons-static-route#cl-add-ons-static-route-100_1415)
 
-    * [Change log for 1.0.0_1122, released 17 July 2023](/docs/openshift?topic=openshift-cl-add-ons-static-route#cl-add-ons-static-route-100_1122)
+    * [1.0.0_1122, released 17 July 2023](/docs/openshift?topic=openshift-cl-add-ons-static-route#cl-add-ons-static-route-100_1122)
 
-    * [Change log for 1.0.0_649, released 8 September 2021](/docs/openshift?topic=openshift-cl-add-ons-static-route#cl-add-ons-static-route-100_649)
+    * [1.0.0_649, released 8 September 2021](/docs/openshift?topic=openshift-cl-add-ons-static-route#cl-add-ons-static-route-100_649)
 
 [OpenShift Data Foundation add-on change log](/docs/openshift?topic=openshift-odf_addon_changelog#odf_addon_changelog)
 
@@ -8648,6 +8664,8 @@ subcollection: openshift
 [IBM storage operator add-on change log](/docs/openshift?topic=openshift-versions-ibm-storage-operator#versions-ibm-storage-operator)
 
 * [Version 1.0.0](/docs/openshift?topic=openshift-versions-ibm-storage-operator#ibm-storage-operator-1.0.0)
+
+    * [Change log for version 1.0.16_169, released 11 December 2024](/docs/openshift?topic=openshift-versions-ibm-storage-operator#ibm-storage-operator-1.0.16_169)
 
     * [Change log for version 1.0.15_163, released 3 October 2024](/docs/openshift?topic=openshift-versions-ibm-storage-operator#ibm-storage-operator-1.0.15_163)
 

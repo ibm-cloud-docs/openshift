@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2024
-lastupdated: "2024-10-02"
+lastupdated: "2024-12-11"
 
 
 keywords: file, add-on, changelog, openshift
@@ -44,6 +44,16 @@ To view a list of add-ons and the supported cluster versions, see the [Supported
 
 ## Version 2.0
 {: #020_is_file}
+
+### Change log for version 2.0.9_322, released 11 December 2024
+{: #2.0.9_322_is_file_relnote}
+
+
+- `region` support is now deprecated in the storage class settings. Continuining to provide a `region` in your storage classes does not cause any issues with either existing PVC or new PVC. The default behavior is now to get the region detail from worker node labels only.
+- Fixes a bug where setting default storage class was not working in version 4.15 clusters.
+- Fixes [CVE-2024-51744](https://nvd.nist.gov/vuln/detail/CVE-2024-51744){: external}.
+- Updates the `storage-secret-sidecar` image to `v1.2.52`.
+
 
 ### Change log for version 2.0.8_311, released 3 October 2024
 {: #2.0.8_311_is_file_relnote}
@@ -88,6 +98,13 @@ To view a list of add-ons and the supported cluster versions, see the [Supported
 
 ## Version 1.2
 {: #012_is_file}
+
+### Change log for version 1.2.13_326, released 11 December 2024
+{: #1.2.13_326_is_file_relnote}
+
+- Fixes [CVE-2024-51744](https://nvd.nist.gov/vuln/detail/CVE-2024-51744){: external}.
+- Updates the `storage-secret-sidecar` image to `v1.2.52`.
+
 
 ### Change log for version 1.2.12_312, released 3 October 2024
 {: #1.2.12_312_is_file_relnote}
