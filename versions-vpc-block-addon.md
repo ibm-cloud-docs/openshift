@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2024
-lastupdated: "2024-11-20"
+lastupdated: "2024-12-11"
 
 
 keywords: openshift, {{site.data.keyword.openshiftlong_notm}}, block, storage, add-on, changelog
@@ -46,6 +46,13 @@ Before you migrate to a `5.x` release from a previous release, you must not have
 
 ## Version 5.2
 {: #052_is_block}
+
+### Change log for version 5.2.26_657, released 11 December 2024
+{: #5.2.26_657_is_block_relnote}
+
+- Resolves [CVE-2024-51744](https://nvd.nist.gov/vuln/detail/CVE-2024-51744){: external}.
+- Increases custom volume profile support to a maximum of 16TB.
+- Removes IOPS and capacity validation for custom volume profile from CSI Driver. Now VPC IaaS performs validation and shows the following generic error in case of wrong user input: `The volume profile specified in the request is not valid for the provided capacity and/or IOPS`. Existing VPCs are not impacted.
 
 ### Change log for version 5.2.24_641, released 20 November 2024
 {: #5.2.24_641_is_block_relnote}
@@ -154,6 +161,11 @@ Before you migrate to a `5.x` release from a previous release, you must not have
 
 ## Version 5.1
 {: #051_is_block}
+
+### Change log for version 5.1.31_656, released 11 December 2024
+{: #5.1.31_656_is_block_relnote}
+
+- Resolves [CVE-2024-51744](https://nvd.nist.gov/vuln/detail/CVE-2024-51744){: external}.
 
 ### Change log for version 5.1.29_642, released 20 November 2024
 {: #5.1.29_642_is_block_relnote}

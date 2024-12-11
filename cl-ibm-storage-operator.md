@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2024, 2024
-lastupdated: "2024-10-02"
+lastupdated: "2024-12-11"
 
 
 keywords: storage operator, add-on, changelog, openshift
@@ -36,6 +36,13 @@ To view a list of add-ons and the supported cluster versions, see the [Supported
 
 ## Version 1.0.0
 {: #ibm-storage-operator-1.0.0}
+
+### Change log for version 1.0.16_169, released 11 December 2024
+{: #ibm-storage-operator-1.0.16_169}
+
+
+- Resolves [CVE-2024-51744](https://nvd.nist.gov/vuln/detail/CVE-2024-51744){: external}.
+
 
 
 ### Change log for version 1.0.15_163, released 3 October 2024
