@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2024
-lastupdated: "2024-10-10"
+lastupdated: "2024-12-12"
 
 
 keywords: planning, storage, cluster, container storage, cloud storage, kubernetes service, openshift
@@ -271,7 +271,7 @@ The following sections show the options that you have in {{site.data.keyword.ope
 
 | Characteristic | Description |
 | --- | --- |
-| Deployment guide | [Setting up {{site.data.keyword.blockstorageshort}}](/docs/openshift?topic=openshift-ocs-storage-prep). |
+| Deployment guide | [Deploying OpenShift Data Foundation](/docs/openshift?topic=openshift-ocs-storage-prep#odf-deploy-options). |
 | Supported infrastructure providers | Classic, VPC, Satellite |
 | Ideal data types | Any |
 | Data usage pattern | Write-intensive workloads. Random read and write operation. Sequential read and write operations. |
