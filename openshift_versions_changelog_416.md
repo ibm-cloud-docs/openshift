@@ -2,7 +2,7 @@
 
 copyright:
   years: 2023, 2024
-lastupdated: "2024-12-10"
+lastupdated: "2024-12-12"
 
 
 keywords: openshift, 4.16, update, upgrade, BOM, bill of materials, versions, patch
@@ -45,7 +45,7 @@ The following table shows the changes that are in the worker node fix pack 4.16.
 | RHEL 8 Packages | 4.18.0-553.27.1.el8_10 | 4.18.0-553.30.1.el8_10 | Worker node kernel & package updates for [RHSA-2024:10379](https://access.redhat.com/errata/RHSA-2024:10379){: external}, [CVE-2024-10041](https://nvd.nist.gov/vuln/detail/CVE-2024-10041){: external}, [CVE-2024-10963](https://nvd.nist.gov/vuln/detail/CVE-2024-10963){: external}, [RHSA-2024:3043](https://access.redhat.com/errata/RHSA-2024:3043){: external}, [CVE-2024-0690](https://nvd.nist.gov/vuln/detail/CVE-2024-0690){: external}, [RHSA-2024:10289](https://access.redhat.com/errata/RHSA-2024:10289){: external}, [CVE-2021-33198](https://nvd.nist.gov/vuln/detail/CVE-2021-33198){: external}, [CVE-2021-4024](https://nvd.nist.gov/vuln/detail/CVE-2021-4024){: external}, [CVE-2024-9676](https://nvd.nist.gov/vuln/detail/CVE-2024-9676){: external}, [RHSA-2024:10281](https://access.redhat.com/errata/RHSA-2024:10281){: external}, [CVE-2024-27043](https://nvd.nist.gov/vuln/detail/CVE-2024-27043){: external}, [CVE-2024-27399](https://nvd.nist.gov/vuln/detail/CVE-2024-27399){: external}, [CVE-2024-38564](https://nvd.nist.gov/vuln/detail/CVE-2024-38564){: external}, [CVE-2024-46858](https://nvd.nist.gov/vuln/detail/CVE-2024-46858){: external}. |
 | RHEL 9 Packages | N/A | N/A | N/A |
 | HAProxy | N/A | N/A | N/A |
-| {{site.data.keyword.openshiftshort}} and Red Hat CoreOS | 4.16.21 | 4.16.23 | For more information, see the [change logs](https://docs.openshift.com/container-platform/4.14/release_notes/ocp-4-16-release-notes.html#ocp-4-16-23_release-notes){: external}. |
+| {{site.data.keyword.openshiftshort}} and Red Hat CoreOS | 4.16.21 | 4.16.23 | For more information, see the [change logs](https://docs.openshift.com/container-platform/4.16/release_notes/ocp-4-16-release-notes.html){: external}. |
 {: caption="Changes since version 4.16.21_1544_openshift" caption-side="bottom"}
 
 
