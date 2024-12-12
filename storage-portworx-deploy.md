@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2024
-lastupdated: "2024-12-10"
+lastupdated: "2024-12-12"
 
 
 keywords: portworx, kubernetes, openshift
@@ -324,7 +324,7 @@ To access the storage from your app, you must mount the PVC to your app.
     :   A label for the deployment.
     
     `spec.schedulerName`
-    :   Use [Stork](https://docs.portworx.com/portworx-enterprise/operations/operate-kubernetes/storage-operations/stork){: external} as the scheduler for your Portworx cluster. With Stork, you can co-locate pods with their data, provides seamless migration of pods in case of storage errors and makes it easier to create and restore snapshots of Portworx volumes.
+    :   Use [Stork](https://docs.portworx.com/portworx-enterprise/operations/operate-kubernetes/storage-operations/stateful-applications/stork){: external} as the scheduler for your Portworx cluster. With Stork, you can co-locate pods with their data, provides seamless migration of pods in case of storage errors and makes it easier to create and restore snapshots of Portworx volumes.
     
     `spec.containers.image`
     :   The name of the image that you want to use. To list available images in your {{site.data.keyword.registrylong_notm}} account, run `ibmcloud cr image-list`.
