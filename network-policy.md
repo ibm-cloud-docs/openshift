@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2024
-lastupdated: "2024-08-14"
+lastupdated: "2024-12-13"
 
 
 keywords: openshift
@@ -244,7 +244,7 @@ To see how to allow or block source IP addresses, try the [Using Calico network 
 ## Example Calico policies to restrict public or private network traffic
 {: #isolate_workers_public}
 
-We provide a set of example [Calico public network policies](https://github.com/IBM-Cloud/kube-samples/tree/master/calico-policies/public-network-isolation) that further restrict public/private network traffic on cluster workers. These policies allow the traffic that is necessary for the cluster to function, and block certain other traffic. 
+We provide a set of example [Calico public network policies](https://github.com/IBM-Cloud/kube-samples/tree/master/calico-policies/public-network-isolation) that further restrict public/private network traffic on cluster workers. These policies allow the traffic that is necessary for the cluster to deploy, and block certain other traffic.
 {: shortdesc}
 
 These policies are not meant to block everything, nor do they necessarily meet any compliance requirements on their own. They are intended as a starting point and must be edited to meet your unique use cases. For more information, see the [README](https://github.com/IBM-Cloud/kube-samples/tree/master/calico-policies){: external}.
@@ -252,6 +252,9 @@ These policies are not meant to block everything, nor do they necessarily meet a
 
 Whenever new locations for {{site.data.keyword.openshiftlong_notm}} and other {{site.data.keyword.cloud_notm}} are enabled, the subnets for these locations are added to the Calico policies. Be sure to [watch the GitHub repository](https://github.com/IBM-Cloud/kube-samples/tree/master/calico-policies/public-network-isolation){: external} for any updates to these policies.
 {: note}
+
+Note that we no longer recommend using the allow-egress-pods-public, allow-public-services-pods, allow-openshift-console, allow-kube-system-to-olm, allow-openshift-metrics, allow-egress-pods-private, or allow-private-services-pods sample policies in the public and private network policies sections below.  These policies controlled egress from all pods in the cluster.  If you want to control traffic to/from pods you should use Kubernetes NetworkPolicy and target specific namespaces and pods instead of using these blanket policies that treat each pod the same.
+{: important}
 
 ### Applying public network policies
 {: #calico-public}
@@ -273,26 +276,23 @@ Before you begin, [install and configure the Calico CLI, and set the context for
     ```
     {: pre}
 
-1. Review each policy for any changes you might need to make. For example, if you specified a custom subnet when you created your cluster that provides the private IP addresses for your pods, you must specify that CIDR instead of the `172.30.0.0/16` CIDR in the `allow-ibm-ports-public.yaml` policy. Also review these policies for any connections you might not want to allow. For example, if a certain port listed in the policy is described as only being needed for Istio, and you are not deploying Istio in your cluster, you can remove that port.
+1. Review each policy for any changes you might need to make. For example, the `allow-ibm-ports-public.yaml` policy might need to be edited to specify the cluster's pod subnet, replacing the default `172.30.0.0/16` subnet. Also review these policies for any connections you might not want to allow.
 
 1. Apply the public or private policies that you want to use.
 
+
     ```sh
-    calicoctl apply -f allow-egress-pods-public.yaml
     calicoctl apply -f allow-ibm-ports-public.yaml
     calicoctl apply -f allow-public-service-endpoint.yaml
     calicoctl apply -f deny-all-outbound-public.yaml
     calicoctl apply -f allow-konnectivity.yaml
-    calicoctl apply -f allow-openshift-console.yaml
-    calicoctl apply -f allow-openshift-metrics.yaml
     ```
     {: pre}
 
-1. Optional: To allow your worker nodes to access other {{site.data.keyword.cloud_notm}} services over the public network, apply the `allow-public-services.yaml` and `allow-public-services-pods.yaml` policies. The policy allows access to the IP addresses for {{site.data.keyword.registrylong_notm}}, and if the services are available in the region, {{site.data.keyword.la_full_notm}} and {{site.data.keyword.mon_full_notm}}. To access other {{site.data.keyword.cloud_notm}} services, you must manually add the subnets for those services to this policy.
+1. Optional: To allow your worker nodes to access other {{site.data.keyword.cloud_notm}} services over the public network, apply the `allow-public-services.yaml` policy. This policy allows access to the IP addresses for {{site.data.keyword.registrylong_notm}}, and if the services are available in the region, {{site.data.keyword.la_full_notm}} and {{site.data.keyword.mon_full_notm}}. To access other {{site.data.keyword.cloud_notm}} services, you must manually add the subnets for those services to this policy.
 
     ```sh
     calicoctl apply -f allow-public-services.yaml
-    calicoctl apply -f allow-public-services-pods.yaml
     ```
     {: pre}
 
@@ -310,23 +310,20 @@ Before you begin, [install and configure the Calico CLI, and set the context for
     ```
     {: pre}
 
-1. Optional: If you must allow traffic that is not specified by these policies, [create and apply Calico policies](#adding_network_policies) to allow this traffic. For example, if you use any in-cluster webhooks, you must add policies to ensure that the webhooks can make the required connections. You also must create policies for any non-local services that extend the Kubernetes API. You can find these services by running `oc get apiservices`. Note that `default/openshift-apiserver` is included as a local service and does not require a network policy.
+1. Optional: If you do use policies that apply to pods in the cluster, test these well to ensure all your cluster functionality continues to work.  For example, if you use any in-cluster webhooks, ensure your policies allow these webhooks to make the required connections to the pods that implement the webhooks.  You also must allow traffic for any non-local services that extend the Kubernetes API. You can find these services by running `oc get apiservices`. Note that `default/openshift-apiserver` is included as a local service and does not require a network policy.
 
 
 ### Applying private network policies
 {: #isolate_workers}
 
-We provide a set of example [Calico private network policies](https://github.com/IBM-Cloud/kube-samples/tree/master/calico-policies/private-network-isolation) that further restrict public/private network traffic on cluster workers. These policies allow the traffic that is necessary for the cluster to function, and block certain other traffic. 
+We provide a set of example [Calico private network policies](https://github.com/IBM-Cloud/kube-samples/tree/master/calico-policies/private-network-isolation) that further restrict public/private network traffic on cluster workers. These policies allow the traffic that is necessary for the cluster to deploy, and block certain other traffic.
 {: shortdesc}
 
 These policies are not meant to block everything, nor do they necessarily meet any compliance requirements on their own. They are intended as a starting point and must be edited to meet your unique use cases. For more information, see the [README](https://github.com/IBM-Cloud/kube-samples/tree/master/calico-policies){: external}.
 {: important}
 
-Whenever new locations for {{site.data.keyword.openshiftlong_notm}} and other {{site.data.keyword.cloud_notm}} are enabled, the subnets for these locations are added to the Calico policies. Be sure to [watch the GitHub repository](https://github.com/IBM-Cloud/kube-samples/tree/master/calico-policies/public-network-isolation){: external} for any updates to these policies.
+Whenever new locations for {{site.data.keyword.openshiftlong_notm}} and other {{site.data.keyword.cloud_notm}} are enabled, the subnets for these locations are added to the Calico policies. Be sure to [watch the GitHub repository](https://github.com/IBM-Cloud/kube-samples/tree/master/calico-policies/private-network-isolation){: external} for any updates to these policies.
 {: note}
-
-When you apply the egress pod policies that are in this policy set, only network traffic to the subnets and ports that are specified in the pod policies is permitted. All traffic to any subnets or ports that are not specified in the policies is blocked for all pods in all namespaces. Because only the ports and subnets that are necessary for the pods to function in {{site.data.keyword.containerlong_notm}} are specified in these policies, your pods can't send network traffic over the private network until you add or change the Calico policy to allow them to.
-{: important}
 
 Before you begin, [install and configure the Calico CLI, and set the context for your cluster to run Calico commands](#cli_install).
 
@@ -350,7 +347,6 @@ Before you begin, [install and configure the Calico CLI, and set the context for
 
     ```sh
     calicoctl apply -f allow-all-workers-private.yaml
-    calicoctl apply -f allow-egress-pods-private.yaml
     calicoctl apply -f allow-ibm-ports-private.yaml
     calicoctl apply -f allow-icmp-private.yaml
     calicoctl apply -f allow-private-service-endpoint.yaml
@@ -359,11 +355,10 @@ Before you begin, [install and configure the Calico CLI, and set the context for
     ```
     {: pre}
 
-1. Optional: To allow your workers and pods to access {{site.data.keyword.registrylong_notm}} over the private network, apply the `allow-private-services.yaml` and `allow-private-services-pods.yaml` policies. To access other {{site.data.keyword.cloud_notm}} services that support private cloud service endpoints, you must manually add the subnets for those services to this policy.
+1. Optional: To allow your workers to access {{site.data.keyword.registrylong_notm}} over the private network, apply the `allow-private-services.yaml` policy. To access other {{site.data.keyword.cloud_notm}} services that support private cloud service endpoints, you must manually add the subnets for those services to this policy.
 
     ```sh
     calicoctl apply -f allow-private-services.yaml
-    calicoctl apply -f allow-private-services-pods.yaml
     ```
     {: pre}
 
@@ -384,7 +379,7 @@ Before you begin, [install and configure the Calico CLI, and set the context for
     ```
     {: pre}
 
-1. Optional: If you must allow traffic that is not specified by these policies, [create and apply Calico policies](#adding_network_policies) to allow this traffic. For example, if you use any in-cluster webhooks, you must add policies to ensure that the webhooks can make the required connections. You also must create policies for any non-local services that extend the Kubernetes API. You can find these services by running `oc get apiservices`. Note that `default/openshift-apiserver` is included as a local service and does not require a network policy.
+1. Optional: If you do use policies that apply to pods in the cluster, test these well to ensure all your cluster functionality continues to work.  For example, if you use any in-cluster webhooks, ensure your policies allow these webhooks to make the required connections to the pods that implement the webhooks.  You also must allow traffic for any non-local services that extend the Kubernetes API. You can find these services by running `oc get apiservices`. Note that `default/openshift-apiserver` is included as a local service and does not require a network policy.
 
 
 ## Controlling traffic between pods
@@ -495,7 +490,3 @@ Before you begin, [install and configure the Calico CLI, and set the context for
     {: screen}
 
 6. Optional: Forward the logs from `/var/log/syslog` to [{{site.data.keyword.la_full}}](/docs/openshift?topic=openshift-health#openshift_logging).
-
-
-
-
