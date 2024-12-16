@@ -249,3 +249,4 @@ Instead of tuning worker node performance with `MachineConfig` files in {{site.d
 * SR-IOV Network Operator: Supported in {{site.data.keyword.satelliteshort}} clusters only.
 * Telemeter and Insights Connected Experience
 * Windows Machine Config: Worker nodes with Windows operating systems are not supported.
+* ImageContentSourcePolicy, ImageDigestMirrorSet and ImageTagMirrorSet are not supported.
