@@ -3,7 +3,7 @@
 copyright:
   years: 2024, 2024
 
-lastupdated: "2024-10-31"
+lastupdated: "2024-12-17"
 
 
 keywords: change log, version history, IBM Cloud Image Key Synchronizer
@@ -14,11 +14,14 @@ subcollection: openshift
 
 {{site.data.keyword.attribute-definition-list}}
 
+<!-- The content in this topic is auto-generated except for reuse-snippets indicated with {[ ]}. -->
+
 # IBM Cloud Image Key Synchronizer add-on version change log
 {: #cl-add-ons-ibm-cloud-image-key-synchronizer}
 
 Review the version history for IBM Cloud Image Key Synchronizer.
 {: shortdesc}
+
 
 
 ## Version 1.0.0
