@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2024
-lastupdated: "2024-10-10"
+lastupdated: "2024-12-17"
 
 keywords: kubernetes, kubernetes environment, moving to kubernetes, moving to containers, clusters, cluster sizing, openshift, {{site.data.keyword.openshiftlong_notm}}
 
@@ -18,7 +18,7 @@ subcollection: openshift
 Design your standard cluster for maximum availability and capacity for your app with {{site.data.keyword.openshiftlong}}. Use the built-in features to make your cluster more highly available and to protect your app from downtime when a component in your cluster fails. But figuring out what your cluster setup must be to support your workload is not an exact science. You might need to test different configurations and adapt.
 {: shortdesc}
 
-High availability (HA) is a core discipline in an IT infrastructure to keep your apps up and running, even after a partial or full site failure. The main purpose of high availability is to eliminate potential points of failures in an IT infrastructure. For example, you can prepare for the failure of one system by adding redundancy and setting up failover mechanisms. See [How {{site.data.keyword.cloud_notm}} ensures high availability and disaster recovery](/docs/overview?topic=overview-zero-downtime).
+High availability (HA) is a core discipline in an IT infrastructure to keep your apps up and running, even after a partial or full site failure. The main purpose of high availability is to eliminate potential points of failures in an IT infrastructure. For example, you can prepare for the failure of one system by adding redundancy and setting up failover mechanisms. See [How {{site.data.keyword.cloud_notm}} ensures high availability and disaster recovery](/docs/resiliency?topic=resiliency-ha-redundancy).
 
 To get started planning and sizing your cluster, review these decision points before creating a cluster.
 

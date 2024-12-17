@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2024, 2024
-lastupdated: "2024-06-03"
+lastupdated: "2024-12-17"
 
 
 keywords: openshift, {{site.data.keyword.openshiftlong_notm}}, secure by default, node port not working, {{site.data.keyword.openshiftlong_notm}}, outbound traffic protection
@@ -27,7 +27,7 @@ Requests sent to your nodeport service fail with a timeout error.
 
 
 
-{{site.data.keyword.openshiftlong_notm}} managed load balancer services (ALB, NLB, sdNLB) dynamically adjust the security group rules as they are added, deleted or updated. Rules are also maintained to allow traffic through the nodeports opened by these services. Whenever possible, it is recommended to use {{site.data.keyword.openshiftlong_notm}} managed load balancer services.
+{{site.data.keyword.openshiftlong_notm}} managed load balancer services (ALB, NLB, sdNLB) dynamically adjust the security group rules as they are added, deleted, or updated. Rules are also maintained to allow traffic through the nodeports opened by these services. Whenever possible, it is recommended to use {{site.data.keyword.openshiftlong_notm}} managed load balancer services.
 
 If you don't use {{site.data.keyword.openshiftlong_notm}} managed load balancer services, then any unmanaged node port services and the associated security group rules to allow traffic through these node ports are your responsibility.
 {: tsCauses}
@@ -45,4 +45,3 @@ Update the security group rules for your node port service.
 
 There are quota limitations on the number of rules allowed per security group. If adding the custom nodeport rule exceeds this quota the rule is not added. In this case, consider using an {{site.data.keyword.openshiftlong_notm}} managed load balancer service or modifying the `port-min` or `port-max` settings on your rule(s) to use a nodeport range.
 {: note}
-
