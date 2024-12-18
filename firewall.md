@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2024
-lastupdated: "2024-12-17"
+lastupdated: "2024-12-18"
 
 
 keywords: openshift
@@ -311,7 +311,7 @@ Before you begin
 1. Allow the IBM Cloud infrastructure private IP ranges so that you can create worker nodes in your cluster.
 
     1. Allow the appropriate IBM Cloud infrastructure private IP ranges. See [Backend (private) Network](/docs/infrastructure-hub?topic=infrastructure-hub-ibm-cloud-ip-ranges#back-end-network).
-    2. Allow the IBM Cloud infrastructure private IP ranges for all the [zones](/docs/openshift?topic=openshift-regions-and-zones#locations) that you are using. **Note**: You must add the `166.8.0.0/14` and `161.26.0.0/16` IP ranges, the IP ranges for the `dal10` and `wdc04` zones. See [Service Network (on backend/private network)](//docs/infrastructure-hub?topic=infrastructure-hub-ibm-cloud-ip-ranges#back-end-network).
+    2. Allow the IBM Cloud infrastructure private IP ranges for all the [zones](/docs/openshift?topic=openshift-regions-and-zones#locations) that you are using. **Note**: You must add the `166.8.0.0/14` and `161.26.0.0/16` IP ranges, the IP ranges for the `dal10` and `wdc04` zones. See [Service Network (on backend/private network)](/docs/infrastructure-hub?topic=infrastructure-hub-ibm-cloud-ip-ranges#back-end-network).
 
 2. Note the private IP address for each worker node in the cluster.
 
