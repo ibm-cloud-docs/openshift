@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2024
-lastupdated: "2024-12-16"
+lastupdated: "2024-12-19"
 
 
 keywords: openshift, http2, quota, app protocol, application protocol
@@ -237,6 +237,7 @@ Instead of tuning worker node performance with `MachineConfig` files in {{site.d
 * MachineConfigs
 * Metering and Cost Management SaaS Service
 * OpenShift Cloud Manager (OCM) SaaS Service
+* OpenShift Cluster-Wide Proxy
 * OpenShift Data Foundation: Supported through the [cluster add-on](/docs/openshift?topic=openshift-ocs-storage-prep) for Classic and VPC clusters or through the {{site.data.keyword.satelliteshort}} [template](/docs/satellite?topic=satellite-storage-template-ov) for {{site.data.keyword.satelliteshort}} clusters.
 * OVS and OVN SDN
 * Performance Add-on Operator

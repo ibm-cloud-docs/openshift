@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2024
-lastupdated: "2024-10-07"
+lastupdated: "2024-12-20"
 
 
 keywords: openshift, {{site.data.keyword.openshiftlong_notm}}, kubernetes, registry, pull secret, secrets
@@ -227,6 +227,9 @@ Keep in mind that this data is not persistent, and if the pod or worker node is 
 {: #remove-image-registry}
 
 [Virtual Private Cloud]{: tag-vpc}
+
+The image registry operator deployments are present only in an {[product-name-notm]} Toolkit managed clusters. HyperShift managed clusters run the image registry operator in the control plane.
+{: note}
 
 If you don't want to use the internal image registry, you can complete the following steps to remove it.
 
