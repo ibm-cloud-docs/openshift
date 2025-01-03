@@ -1,8 +1,8 @@
 ---
 
 copyright:
-  years: 2014, 2024
-lastupdated: "2024-11-14"
+  years: 2014, 2025
+lastupdated: "2025-01-03"
 
 
 keywords: openshift, cli reference, kubernetes cli, openshift cli, {{site.data.keyword.openshiftlong_notm}}
@@ -4667,7 +4667,7 @@ Minimum required permissions
 :    Optional: Prints the command output in JSON format.
 
 `--domain-provider PROVIDER`
-:    Optional. The external DNS provider type. Available options are `akamai-ext`, `cloudflare-ext`, or `cis-ext`. If no provider is specified, a domain is created with the IBM-managed internal provider.
+:    Optional. The external DNS provider type. Available option is `cis-ext`. If no provider is specified, a domain is created with the IBM-managed internal provider.
 
 `--secret-namespace NAMESPACE`
 :    Optional. The namespace that the TLS secret is created in. If no namespace is specified, the secret is created in the `default` namespace.
@@ -4683,150 +4683,6 @@ This example command creates a domain registered with the {{site.data.keyword.cl
 
 ```sh
 ibmcloud oc ingress domain create --cluster my-cluster --domain exampledomain
-```
-{: pre}
-
-### `ibmcloud oc ingress domain credential get`
-{: #ingress-domain-credential-get}
-
-View the details of the external domain provider credentials that have been added to your cluster.
-{: shortdesc}
-
-```sh
-ibmcloud oc ingress domain credential get --cluster CLUSTER [--output OUTPUT] [-q]
-```
-{: pre}
-
-Minimum required permissions
-:   **Viewer** platform access role for {{site.data.keyword.containerlong_notm}}
-
-**Command options**:
-
-`-c`, `--cluster CLUSTER`
-:    Required: The name or ID of the cluster where the credential is applied. 
-
-`--output OUPUT`
-:    Optional: Prints the command output in JSON format.
-
-`-q`
-:    Optional: Do not show the message of the day or update reminders.
-
-#### Example `ingress domain credential` command
-{: #ingress-domain-credential-get-example}
-
-```sh
-ibmcloud oc ingress domain credential get --cluster mycluster 
-```
-{: pre}
-
-### `ibmcloud oc ingress domain credential rm`
-{: #ingress-domain-credential-rm}
-
-Remove external domain provider credentials from the cluster.
-{: shortdesc}
-
-```sh
-ibmcloud oc ingress domain credential rm --cluster CLUSTER [-q]
-```
-{: pre}
-
-Minimum required permissions
-:   **Operator** platform access role for the cluster in {{site.data.keyword.containerlong_notm}}
-
-**Command options**:
-
-`-c`, `--cluster CLUSTER`
-:    Required: The name or ID of the cluster where the credential is applied. 
-
-`-q`
-:    Optional: Do not show the message of the day or update reminders.
-
-#### Example `ingress domain credential rm` command
-{: #ingress-domain-credential-rm-example}
-
-```sh
-ibmcloud oc ingress domain credential rm --cluster mycluster
-```
-{: pre}
-
-### `ibmcloud oc ingress domain credential set akamai`
-{: #ingress-domain-credential-set-akamai}
-
-Add external Akamai domain credentials to your cluster.
-{: shortdesc}
-
-```sh
-ibmcloud oc ingress domain credential set akamai --cluster CLUSTER [--access-token TOKEN] [--client-secret SECRET] [--client-token TOKEN] [--host HOST] [-q] [--domain-zone ZONE]
-```
-{: pre}
-
-Minimum required permissions
-:   **Administrator** platform access role for the cluster in {{site.data.keyword.containerlong_notm}}
-
-**Command options**:
-
-`-c`, `--cluster CLUSTER`
-:    Required: The name or ID of the cluster where you want to add the credentials. 
-
-`--access-token TOKEN`
-:    The access token for the Akamai API Client credentials. This token is provided by Akamai. 
-
-`--client-secret SECRET`
-:    The client secret for the Akamai API Client credentials. This secret is provided by Akamai. 
-
-`--client-token TOKEN`
-:    The client token for the Akamai API Client credentials. This token is provided by Akamai. 
-
-`--host HOST`
-:    The host for the Akamai API Client credentials. 
-
-`-q`
-:    Optional: Do not show the message of the day or update reminders.
-
-`--domain-zone ZONE`
-:    The DNS zone that exists in your external account and is specified in the Akamai credentials. Specify the full zone name, such as `example.external.adppdomain.cloud`.
-
-#### Example `ingress domain credential set akamai` command
-{: #ingress-domain-credential-set-akamai-example}
-
-```sh
-ibmcloud oc ingress domain credential set akamai --cluster mycluster [--access-token TOKEN] [--client-secret SECRET] [--client-token TOKEN] [--host HOST] [-q] [--domain-zone ZONE]
-```
-{: pre}
-
-### `ibmcloud oc ingress domain credential set cloudflare`
-{: #ingress-domain-credential-set-cloudflare}
-
-Add external Cloudflare domain credentials to your cluster.
-{: shortdesc}
-
-```sh
-ibmcloud oc ingress domain credential set cloudflare --cluster CLUSTER [-q] [--token TOKEN] [--domain-zone ZONE]
-```
-{: pre}
-
-Minimum required permissions
-:   **Administrator** platform access role for the cluster in {{site.data.keyword.containerlong_notm}}
-
-**Command options**:
-
-`-c`, `--cluster CLUSTER`
-:    Required: The name or ID of the cluster where you want to add the credentials. 
-
-`-q`
-:    Optional: Do not show the message of the day or update reminders.
-
-`--token TOKEN`
-:    The access token for Cloudflare credentials. This token is provided by Cloudflare. 
-
-`--domain-zone ZONE`
-:   The DNS zone that exists in your external account and is specified in your Cloudflare credentials. This value is a GUID.
-
-#### Example `ingress domain credential set cloudflare` command
-{: #ingress-domain-credential-set-cloudflare-example}
-
-```sh
-ibmcloud oc ingress domain credential set akamai --cluster mycluster [--access-token TOKEN] [--client-secret SECRET] [--client-token TOKEN] [--host HOST] [-q] [--domain-zone ZONE]
 ```
 {: pre}
 
