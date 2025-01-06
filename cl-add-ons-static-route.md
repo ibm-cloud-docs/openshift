@@ -1,9 +1,9 @@
 ---
 
 copyright:
-  years: 2024, 2024
+  years: 2024, 2025
 
-lastupdated: "2024-12-20"
+lastupdated: "2025-01-03"
 
 
 keywords: change log, version history, Static Route

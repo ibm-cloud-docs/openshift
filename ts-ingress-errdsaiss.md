@@ -1,8 +1,8 @@
 ---
 
 copyright: 
-  years: 2023, 2024
-lastupdated: "2024-03-27"
+  years: 2023, 2025
+lastupdated: "2025-01-03"
 
 
 keywords: openshift, {{site.data.keyword.openshiftlong_notm}}, errdsaiss, ingress, domain, third party, external domain
@@ -42,10 +42,4 @@ The Kubernetes Service is unable to access the external domain provider used for
 Complete the following steps based on your external domain provider.
 {: tsResolve}
 
-
-- For external Akamai or Cloudflare domains, make sure that you create a valid credential for the cluster by using **`ibmcloud ks ingress domain credential set`** command.
-
 - For domains provisioned with Cloud Internet Services, ensure that the service-to-service authorization is in place. For more information, see [Setting up domains with IBM Cloud Internet Services](/docs/openshift?topic=openshift-ingress-domains&interface=cli#ingress-domain-cis). If you no longer want to use the domain you registered, then you can remove it by using the **`ibmcloud ks ingress domain rm --c CLUSTER --domain DOMAIN`** command.
-
-
-

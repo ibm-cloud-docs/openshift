@@ -1,8 +1,8 @@
 ---
 
 copyright:
-  years: 2017, 2024
-lastupdated: "2024-12-17"
+  years: 2017, 2025
+lastupdated: "2025-01-03"
 
 
 keywords: openshift
@@ -4639,8 +4639,6 @@ subcollection: openshift
 
     * [Registration details](/docs/openshift?topic=openshift-ingress-domains&interface=ui#ingress-domains-ui-registration)
 
-    * [Credentials](/docs/openshift?topic=openshift-ingress-domains&interface=ui#ingress-domains-ui-credentials)
-
 * [Managing your domain in the console](/docs/openshift?topic=openshift-ingress-domains&interface=ui#ingress-domains-ui-manage)
 
 * [Setting up domains with the managed {{site.data.keyword.cloud_notm}} internal provider](/docs/openshift?topic=openshift-ingress-domains&interface=cli#ingress-domain-int)
@@ -4650,16 +4648,6 @@ subcollection: openshift
     * [Set up service-to-service authorization](/docs/openshift?topic=openshift-ingress-domains&interface=cli#ingress-domain-cis-s2s)
 
     * [Create a domain](/docs/openshift?topic=openshift-ingress-domains&interface=cli#ingress-domain-cis-create)
-
-* [Adding credentials and setting up domains from other external providers](/docs/openshift?topic=openshift-ingress-domains&interface=cli#ingress-domain-external)
-
-    * [Adding Akamai credentials](/docs/openshift?topic=openshift-ingress-domains&interface=cli#ingress-domains-ext-cred-ak)
-
-    * [Adding Cloudflare credentials](/docs/openshift?topic=openshift-ingress-domains&interface=cli#ingress-domains-ext-cred-cf)
-
-    * [Verifying your provider credentials](/docs/openshift?topic=openshift-ingress-domains&interface=cli#ingress-domains-ext-cred-verify)
-
-* [Creating a domain, or adding an existing domain](/docs/openshift?topic=openshift-ingress-domains&interface=cli#ingress-domains-ext-create)
 
 * [Managing domains](/docs/openshift?topic=openshift-ingress-domains&interface=cli#ingress-domains-manage)
 
@@ -4672,12 +4660,6 @@ subcollection: openshift
     * [Updating a domain's IP addresses or hostname](/docs/openshift?topic=openshift-ingress-domains&interface=cli#ingress-domains-manage-update)
 
     * [Changing a cluster's default domain](/docs/openshift?topic=openshift-ingress-domains&interface=cli#ingress-domain-manage-default)
-
-* [Managing external provider credentials](/docs/openshift?topic=openshift-ingress-domains&interface=cli#ingress-domains-manage-creds)
-
-    * [Viewing external provider credentials](/docs/openshift?topic=openshift-ingress-domains&interface=cli#ingress-domain-manage-creds-view)
-
-    * [Removing external provider credentials](/docs/openshift?topic=openshift-ingress-domains&interface=cli#ingress-domain-manage-creds-rm)
 
 * [Managing domain secrets and certificates](/docs/openshift?topic=openshift-ingress-domains&interface=cli#ingress-domain-manage-secrets)
 
@@ -6010,14 +5992,6 @@ subcollection: openshift
     * [`ibmcloud oc ingress alb versions`](/docs/openshift?topic=openshift-kubernetes-service-cli#cs_alb_versions)
 
     * [`ibmcloud oc ingress domain create`](/docs/openshift?topic=openshift-kubernetes-service-cli#ingress-domain-create)
-
-    * [`ibmcloud oc ingress domain credential get`](/docs/openshift?topic=openshift-kubernetes-service-cli#ingress-domain-credential-get)
-
-    * [`ibmcloud oc ingress domain credential rm`](/docs/openshift?topic=openshift-kubernetes-service-cli#ingress-domain-credential-rm)
-
-    * [`ibmcloud oc ingress domain credential set akamai`](/docs/openshift?topic=openshift-kubernetes-service-cli#ingress-domain-credential-set-akamai)
-
-    * [`ibmcloud oc ingress domain credential set cloudflare`](/docs/openshift?topic=openshift-kubernetes-service-cli#ingress-domain-credential-set-cloudflare)
 
     * [`ibmcloud oc ingress domain default replace`](/docs/openshift?topic=openshift-kubernetes-service-cli#ingress-domain-default-replace)
 
