@@ -1,8 +1,8 @@
 ---
 
 copyright:
-  years: 2022, 2024
-lastupdated: "2024-10-30"
+  years: 2022, 2025
+lastupdated: "2025-01-06"
 
 
 keywords: openshift, ingress, troubleshoot ingress, ingress operator, ingress cluster operator, missing ip addresses, errrna
@@ -47,7 +47,7 @@ Review the configuration of Routes resources that have not been marked as `admit
     
 1. Fetch your Route resources and review their `Status`.
     ```sh
-    oc get routes -A
+    oc get routes -A -o yaml
     ```
     {: pre}
     
