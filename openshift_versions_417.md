@@ -1,8 +1,8 @@
 ---
 
 copyright:
-  years: 2024, 2024
-lastupdated: "2024-12-04"
+  years: 2024, 2025
+lastupdated: "2025-01-07"
 
 
 keywords: openshift, version, update, upgrade, 4.17, update openshift
@@ -49,9 +49,6 @@ Dates that are marked with a dagger (`†`) are tentative and subject to change.
 
 Review changes that you might need to make when you [update a cluster](/docs/openshift?topic=openshift-update) to version 4.17. This information summarizes updates that are likely to have an impact on deployed apps when you update.
 {: shortdesc}
-
-[Portworx](/docs/openshift?topic=openshift-storage_portworx_about) does not yet support {{site.data.keyword.redhat_openshift_notm}} on IBM Cloud version 4.17 clusters. Do not update your cluster to version 4.17 if Portworx is installed.
-{: note}
 
 
 ### Update before master

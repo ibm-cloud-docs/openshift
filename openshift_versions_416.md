@@ -1,8 +1,8 @@
 ---
 
 copyright:
-  years: 2024, 2024
-lastupdated: "2024-11-13"
+  years: 2024, 2025
+lastupdated: "2025-01-07"
 
 
 keywords: openshift, version, update, upgrade, 4.16, update openshift
@@ -53,9 +53,6 @@ The backup and restore Helm chart is supported on {{site.data.keyword.openshiftl
 {: note}
 
 VPC worker nodes provisioned for version 4.16 have VPC Instance Metadata Service enabled. For more information, see [About VPC Instance Metadata](/docs/vpc?topic=vpc-imd-about). 
-{: note}
-
-[Portworx](/docs/openshift?topic=openshift-storage_portworx_about) does not yet support {{site.data.keyword.redhat_openshift_notm}} on IBM Cloud version 4.16 clusters. Do not update your cluster to version 4.16 if Portworx is installed.
 {: note}
 
 
