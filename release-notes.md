@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2025
-lastupdated: "2025-01-06"
+lastupdated: "2025-01-07"
 
 
 keywords: kubernetes, release notes, openshift, {{site.data.keyword.openshiftlong_notm}}
@@ -27,6 +27,19 @@ Looking for {{site.data.keyword.cloud_notm}} status, platform announcements, sec
 
 ## January 2025
 {: #openshift-jan25}
+
+
+
+### 07 January 2025
+{: #openshift-jan0725}
+{: release-note}
+
+Portworx now supports {{site.data.keyword.openshiftlong_notm}} version 4.16 and 4.17 clusters.
+:  For more information about updating to 4.16 or 4.17, see the change logs.
+:   [Version 4.17 change log](/docs/openshift?topic=openshift-openshift_changelog_417)
+:   [Version 4.16 change log](/docs/openshift?topic=openshift-openshift_changelog_416)
+
+
 
 ### 06 January 2024
 {: #openshift-jan0625}

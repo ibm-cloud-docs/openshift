@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2025
-lastupdated: "2025-01-06"
+lastupdated: "2025-01-07"
 
 
 keywords: openshift
@@ -274,6 +274,10 @@ subcollection: openshift
 [Release notes](/docs/openshift?topic=openshift-openshift-relnotes#openshift-relnotes)
 
 * [January 2025](/docs/openshift?topic=openshift-openshift-relnotes#openshift-jan25)
+
+    * [07 January 2025](/docs/openshift?topic=openshift-openshift-relnotes#openshift-jan0725)
+
+        * Portworx now supports {{site.data.keyword.openshiftlong_notm}} version 4.16 and 4.17 clusters.
 
     * [06 January 2024](/docs/openshift?topic=openshift-openshift-relnotes#openshift-jan0625)
 
