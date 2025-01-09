@@ -33,7 +33,7 @@ Review your cluster master health.
 ## Reviewing master health, status, and states
 {: #review-master-health}
 
-{[states-master.md]}
+[Cluster and master states](/docs/openshift?topic=openshift-cluster-states-reference&interface=ui)
 
 ## Understanding the impact of a master outage
 {: #review-master-outage}

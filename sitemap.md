@@ -3414,15 +3414,17 @@ subcollection: openshift
 
 [Migrating your {{site.data.keyword.openshiftlong_notm}} clusters to Cloud Logs](/docs/openshift?topic=openshift-cloud-logs-migration#cloud-logs-migration)
 
-* [Migrating to Cloud Logs](/docs/openshift?topic=openshift-cloud-logs-migration#migration-cloud-logs)
+* [Determining if you need to migrate](/docs/openshift?topic=openshift-cloud-logs-migration#migrate-check)
 
-    * [Determining if you need to migrate](/docs/openshift?topic=openshift-cloud-logs-migration#migrate-check)
+* [Enabling your clusters to use your Cloud Logs instance](/docs/openshift?topic=openshift-cloud-logs-migration#migrate-cloud-logs-clusters)
 
-    * [Enabling your clusters to use your Cloud Logs instance](/docs/openshift?topic=openshift-cloud-logs-migration#migrate-cloud-logs-clusters)
+    * [Enabling Cloud Logs in the console](/docs/openshift?topic=openshift-cloud-logs-migration&interface=ui#cloud-logs-console-enable)
 
-* [Migrating to the new monitoring agent](/docs/openshift?topic=openshift-cloud-logs-migration#monitoring)
+    * [Enabling Cloud Logs in the CLI](/docs/openshift?topic=openshift-cloud-logs-migration&interface=cli#cloud-logs-cli-enable)
 
-* [What else do I need to know?](/docs/openshift?topic=openshift-cloud-logs-migration#ob-plugin-dep)
+* [Migrating to the new monitoring agent](/docs/openshift?topic=openshift-cloud-logs-migration&interface=cli#monitoring)
+
+* [What else do I need to know?](/docs/openshift?topic=openshift-cloud-logs-migration&interface=cli#ob-plugin-dep)
 
 [Logging for clusters](/docs/openshift?topic=openshift-health#health)
 

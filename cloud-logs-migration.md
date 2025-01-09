@@ -20,12 +20,9 @@ subcollection: openshift
 Log Analysis and Activity Tracker are deprecated and support ends on 28 March 2025. For more details about the deprecation, including migration steps, see [Migrating to Cloud Logs](/docs/log-analysis?topic=log-analysis-deprecation_migration).
 {: deprecated}
 
-## Migrating to Cloud Logs
-{: #migration-cloud-logs}
-
 You need to migrate if your clusters are using the deprecated logging agent.
 
-### Determining if you need to migrate
+## Determining if you need to migrate
 {: #migrate-check}
 
 1. Check if your clusters are using the deprecated agent.
@@ -40,14 +37,14 @@ You need to migrate if your clusters are using the deprecated logging agent.
 The Cloud Logs service has provided migration guides for moving your instances to Cloud Logs. For more information, see [Migrating instances](/docs/cloud-logs?topic=cloud-logs-migration-intro).
 
 
-### Enabling your clusters to use your Cloud Logs instance
+## Enabling your clusters to use your Cloud Logs instance
 {: #migrate-cloud-logs-clusters}
 
 After you’ve migrated your Log Analysis and Activity Tracker instances to Cloud Logs, you must migrate your clusters to use the new instances.
 
 You can migrate your clusters from the Console or by using the CLI.
 
-#### Enabling Cloud Logs in the console
+### Enabling Cloud Logs in the console
 {: #cloud-logs-console-enable}
 {: ui}
 
@@ -55,7 +52,7 @@ You can migrate your clusters from the Console or by using the CLI.
 1. From the cluster dashboard, disable Log Analysis.
 1. Enable the Cloud Logs integration via the UI.
 
-#### Enabling Cloud Logs in the CLI
+### Enabling Cloud Logs in the CLI
 {: #cloud-logs-cli-enable}
 {: cli}
 
