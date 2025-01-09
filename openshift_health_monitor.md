@@ -1,8 +1,8 @@
 ---
 
 copyright:
-  years: 2014, 2024
-lastupdated: "2024-10-31"
+  years: 2014, 2025
+lastupdated: "2025-01-09"
 
 
 keywords: oks, iro, openshift, red hat, red hat openshift
@@ -205,46 +205,8 @@ To set up a monitoring configuration for your cluster:
 
 5. Review how you can work with the [{{site.data.keyword.mon_short}} dashboard](/docs/monitoring?topic=monitoring-panels) to further analyze your metrics.
 
-## Viewing cluster states
-{: #states}
 
-Review the state of a {{site.data.keyword.redhat_openshift_notm}} cluster to get information about the availability and capacity of the cluster, and potential problems that might occur.
-{: shortdesc}
 
-To view information about a specific cluster, such as its zones, service endpoint URLs, Ingress subdomain, version, and owner, use the `ibmcloud oc cluster get --cluster <cluster_name_or_ID>` [command](/docs/openshift?topic=openshift-kubernetes-service-cli#cs_cluster_get). Include the `--show-resources` option to view more cluster resources such as add-ons for storage pods or subnet VLANs for public and private IPs.
-
-You can review information about the overall cluster, the IBM-managed master, and your worker nodes. To troubleshoot your cluster and worker nodes, see [Troubleshooting clusters](/docs/openshift?topic=openshift-debug_clusters).
-
-For more information about cluster and worker states, see:
-- [Cluster states](/docs/openshift?topic=openshift-cluster-states-reference).
-- [Worker node states](/docs/openshift?topic=openshift-worker-node-state-reference).
-
-### Master states
-{: #states_master}
-
-Your {{site.data.keyword.openshiftlong_notm}} cluster includes an IBM-managed master with highly available replicas, automatic security patch updates applied for you, and automation in place to recover in case of an incident. You can check the health, status, and state of the cluster master by running `ibmcloud oc cluster get --cluster <cluster_name_or_ID>`.
-{: shortdesc}
-
-The **Master Health** reflects the state of master components and notifies you if something needs your attention. The health might be one of the following states.
-- `error`: The master is not operational. IBM is automatically notified and takes action to resolve this issue. You can continue monitoring the health until the master is `normal`. You can also [open an {{site.data.keyword.cloud_notm}} support case](/docs/containers?topic=containers-get-help).
-- `normal`: The master is operational and healthy. No action is required.
-- `unavailable`: The master might not be accessible, which means some actions such as resizing a worker pool are temporarily unavailable. IBM is automatically notified and takes action to resolve this issue. You can continue monitoring the health until the master is `normal`.
-- `unsupported`: The master runs an unsupported version of Kubernetes. You must [update your cluster](/docs/containers?topic=containers-update) to return the master to `normal` health.
-
-The **Master Status** provides details of what operation from the master state is in progress. The status includes a timestamp of how long the master has been in the same state, such as `Ready (1 month ago)`. The **Master State** reflects the lifecycle of possible operations that can be performed on the master, such as deploying, updating, and deleting. Each state is described in the following table.
-
-|Master state|Description|
-|--- |--- |
-|`deployed`|The master is successfully deployed. Check the status to verify that the master is `Ready` or to see if an update is available.|
-|`deploying`|The master is currently deploying. Wait for the state to become `deployed` before working with your cluster, such as adding worker nodes.|
-|`deploy_failed`|The master failed to deploy. IBM Support is notified and works to resolve the issue. Check the **Master Status** field for more information, or wait for the state to become `deployed`.|
-|`deleting`|The master is currently deleting because you deleted the cluster. You can't undo a deletion. After the cluster is deleted, you can no longer check the master state because the cluster is completely removed.|
-|`delete_failed`|The master failed to delete. IBM Support is notified and works to resolve the issue. You can't resolve the issue by trying to delete the cluster again. Instead, check the **Master Status** field for more information, or wait for the cluster to delete. You can also [open an {{site.data.keyword.cloud_notm}} support case](/docs/containers?topic=containers-get-help).|
-|`scaled_down`| The master resources have been scaled down to zero replicas. This is a temporary state that occurs while etcd is being restored after a backup. You cannot interact with your cluster while it is in this state. Wait for the etcd restoration to complete and the master state to return to `deployed`.|
-|`updating`|The master is updating its Kubernetes version. The update might be a patch update that is automatically applied, or a minor or major version that you applied by updating the cluster. During the update, your highly available master can continue processing requests, and your app workloads and worker nodes continue to run. After the master update is complete, you can [update your worker nodes](/docs/containers?topic=containers-update#worker_node). If the update is unsuccessful, the master returns to a `deployed` state and continues running the previous version. IBM Support is notified and works to resolve the issue. You can check if the update failed in the **Master Status** field.|
-|`update_cancelled`|The master update is canceled because the cluster was not in a healthy state at the time of the update. Your master remains in this state until your cluster is healthy and you manually update the master. To update the master, use the `ibmcloud oc cluster master update` [command](/docs/containers?topic=containers-kubernetes-service-cli#cs_cluster_update). If you don't want to update the master to the default `major.minor` version during the update, include the `--version` option and specify the latest patch version that is available for the `major.minor` version that you want, such as `1.31`. To list available versions, run `ibmcloud oc versions`.|
-|`update_failed`|The master update failed. IBM Support is notified and works to resolve the issue. You can continue to monitor the health of the master until the master reaches a normal state. If the master remains in this state for more than 1 day, [open an {{site.data.keyword.cloud_notm}} support case](/docs/containers?topic=containers-get-help). IBM Support might identify other issues in your cluster that you must fix before the master can be updated.|
-{: caption="Master states"}
 
 
 ## Enabling remote health reporting

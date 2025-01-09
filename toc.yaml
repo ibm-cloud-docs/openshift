@@ -171,6 +171,7 @@ toc:
       - topicgroup: 
           label: Logging and monitoring
           topics:
+          - cloud-logs-migration.md
           - openshift_health_log.md
           - openshift_health_monitor.md
           - health-audit.md
@@ -525,9 +526,9 @@ toc:
           - topicgroup:
               label: Worker nodes
               topics:
+              - states-workers.md
               - ts-worker-debug.md
               - ts-worker-debug-kube-api.md
-              - states-workers.md
               - ts-worker-common-issues.md
               - ts-critical-notready.md
               - ts-worker-dedicated.md
