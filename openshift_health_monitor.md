@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2025
-lastupdated: "2025-01-09"
+lastupdated: "2025-01-10"
 
 
 keywords: oks, iro, openshift, red hat, red hat openshift
@@ -49,10 +49,7 @@ Review the following details about {{site.data.keyword.mon_full_notm}}.
 - Historical access to metrics that is based on the timeline and plan, and ability to capture and download trace files.
 - Highly available, scalable, and compliant with industry security standards.
 - Integrated with {{site.data.keyword.cloud_notm}} IAM for user access management.
-- Free trial to try out the capabilities.
-- To get started, see [Forwarding cluster and app metrics to {{site.data.keyword.mon_full_notm}}](#openshift_monitoring).
 
-For more information, see [Monitoring](https://docs.openshift.com/container-platform/4.16/observability/monitoring/monitoring-overview.html){: external}.
 
 ### Built-in {{site.data.keyword.redhat_openshift_notm}} monitoring tools
 {: #built-in-mon-tools}
@@ -109,6 +106,9 @@ If your volume is reaching capacity, try setting up [volume expansion](/docs/ope
 
 ## Forwarding cluster and app metrics to {{site.data.keyword.mon_full_notm}}
 {: #openshift_monitoring}
+
+The following steps are deprecated. The observability CLI plug-in `ibmcloud ob` and the `v2/observe` endpoints are deprecated and support ends on 28 March 2025. You can now manage your logging and monitoring integrations from the console or through the Helm charts. For the latest steps, see [Working with the Kubernetes agent](/docs/monitoring?topic=monitoring-agent_Kube) or [Working with the Red Hat OpenShift agent](/docs/monitoring?topic=monitoring-agent_openshift).
+{: deprecated}
 
 Use the {{site.data.keyword.openshiftlong_notm}} observability plug-in to create a monitoring configuration for {{site.data.keyword.mon_full_notm}} in your cluster, and use this monitoring configuration to automatically collect and forward metrics to {{site.data.keyword.mon_full_notm}}.
 {: shortdesc}

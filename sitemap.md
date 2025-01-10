@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2025
-lastupdated: "2025-01-09"
+lastupdated: "2025-01-10"
 
 
 keywords: openshift
@@ -3418,13 +3418,11 @@ subcollection: openshift
 
 * [Enabling your clusters to use your Cloud Logs instance](/docs/openshift?topic=openshift-cloud-logs-migration#migrate-cloud-logs-clusters)
 
-    * [Enabling Cloud Logs in the console](/docs/openshift?topic=openshift-cloud-logs-migration&interface=ui#cloud-logs-console-enable)
+    * [Enabling Cloud Logs in the console](/docs/openshift?topic=openshift-cloud-logs-migration#cloud-logs-console-enable)
 
-    * [Enabling Cloud Logs in the CLI](/docs/openshift?topic=openshift-cloud-logs-migration&interface=cli#cloud-logs-cli-enable)
+    * [Enabling Cloud Logs in the CLI](/docs/openshift?topic=openshift-cloud-logs-migration#cloud-logs-cli-enable)
 
-* [Migrating to the new monitoring agent](/docs/openshift?topic=openshift-cloud-logs-migration&interface=cli#monitoring)
-
-* [What else do I need to know?](/docs/openshift?topic=openshift-cloud-logs-migration&interface=cli#ob-plugin-dep)
+* [Migrating to the new monitoring agent](/docs/openshift?topic=openshift-cloud-logs-migration#monitoring)
 
 [Logging for clusters](/docs/openshift?topic=openshift-health#health)
 

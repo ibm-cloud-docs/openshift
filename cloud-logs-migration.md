@@ -2,7 +2,7 @@
 
 copyright:
   years: 2025, 2025
-lastupdated: "2025-01-09"
+lastupdated: "2025-01-10"
 
 keywords: logging, cloud logs, logs, log analysis, containers
 
@@ -22,19 +22,20 @@ Log Analysis and Activity Tracker are deprecated and support ends on 28 March 20
 
 You need to migrate if your clusters are using the deprecated logging agent.
 
+Additonally, the observability CLI plug-in `ibmcloud ob` and the `v2/observe` endpoints are deprecated and support ends on 28 March 2025. You can now manage your logging and monitoring integrations from the console or through the Helm charts.
+
 ## Determining if you need to migrate
 {: #migrate-check}
 
-1. Check if your clusters are using the deprecated agent.
+Check if your clusters are using the deprecated agent.
 
+1. Run the following command. If you a logging config is returned, you must migrate your existing Log Analysis and Activity Tracker instances to Cloud Logs instances.
     ```sh
     ibmcloud ob logging config ls --cluster <cluster>
     ```
     {: pre}
 
-1. If you have the deprecated logging agent installed in your cluster, migrate your existing Log Analysis and Activity Tracker instances to Cloud Logs instances.
-
-The Cloud Logs service has provided migration guides for moving your instances to Cloud Logs. For more information, see [Migrating instances](/docs/cloud-logs?topic=cloud-logs-migration-intro).
+1. The Cloud Logs service has provided migration guides for moving your instances. For more information, see [Migrating instances](/docs/cloud-logs?topic=cloud-logs-migration-intro).
 
 
 ## Enabling your clusters to use your Cloud Logs instance
@@ -46,20 +47,19 @@ You can migrate your clusters from the Console or by using the CLI.
 
 ### Enabling Cloud Logs in the console
 {: #cloud-logs-console-enable}
-{: ui}
 
 
-1. From the cluster dashboard, disable Log Analysis.
-1. Enable the Cloud Logs integration via the UI.
+1. From the cluster dashboard, disable **Log Analysis** and **Activity Tracker**.
+1. Enable the **Cloud Logs** integration.
 
 ### Enabling Cloud Logs in the CLI
 {: #cloud-logs-cli-enable}
-{: cli}
 
-1. Delete your logging config.
+
+1. Delete your deprecated logging config.
 
     ```sh
-    ic ob logging config delete --cluster INSTANCE --instance INSTANCE
+    ibmcloud ob logging config delete --cluster INSTANCE --instance INSTANCE
     ```
     {: pre}
 
@@ -71,6 +71,8 @@ You can migrate your clusters from the Console or by using the CLI.
 ## Migrating to the new monitoring agent
 {: #monitoring}
 
+Because the `ibmcloud ob` plug-in is deprecated, if you have a monitoring agent installed that used the deprecated plug-in, you must migrate to a new agent.
+
 1. Check whether you need to migrate by running the following command.
     ```sh
     ibmcloud ob monitoring config ls --cluster <cluster>
@@ -79,17 +81,10 @@ You can migrate your clusters from the Console or by using the CLI.
 
 1. Delete the monitoring config.
     ```sh
-    ic ob monitoring config delete --cluster INSTANCE --instance INSTANCE
+    ibmcloud ob monitoring config delete --cluster INSTANCE --instance INSTANCE
     ```
     {: pre}
 
 1. Install the new monitoring agent. For more information, see the following links.
     - [Working with the Kubernetes agent](/docs/monitoring?topic=monitoring-agent_Kube).
     - [Working with the Red Hat OpenShift agent](/docs/monitoring?topic=monitoring-agent_openshift).
-
-
-
-## What else do I need to know?
-{: #ob-plugin-dep}
-
-The observability CLI plug-in `ibmcloud ob` and the `v2/observe` endpoints are deprecated and support ends on 28 March 2025. You can now manage your Cloud Logs integrations from the cluster dashboard or from the Helm chart.
