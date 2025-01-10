@@ -1,11 +1,11 @@
 ---
 
 copyright: 
-  years: 2014, 2024
-lastupdated: "2024-05-14"
+  years: 2014, 2025
+lastupdated: "2025-01-09"
 
 
-keywords: observability commands, observability cli, observability plug-in, logging commands, monitoring commands, logging cli, monitoring cli, logging config, monitoring config
+keywords: openshift, observability commands, observability cli, observability plug-in, logging commands, monitoring commands, logging cli, monitoring cli, logging config, monitoring config
 
 subcollection: openshift
 
@@ -16,10 +16,11 @@ subcollection: openshift
 
 
 
-
-
-# Observability plug-in CLI
+# Observability CLI plug-in
 {: #observability_cli}
+
+The observability CLI plug-in (`ibmcloud ob`) is deprecated and support ends on 28 March 2025. There is no direct replacement, however you can now manage your observability instance and agents via the Cluster dashboard or the Cloud Logs UI.
+{: deprecated}
 
 Refer to these commands to create and manage logging and monitoring configurations for your {{site.data.keyword.openshiftlong_notm}} cluster.
 {: shortdesc}
@@ -525,9 +526,3 @@ ibmcloud ob monitoring config show --cluster CLUSTER --instance MONITORING_INSTA
 
 `--instance LOGGING_INSTANCE`
 :   The ID or name of the {{site.data.keyword.mon_full_notm}} service instance for which you want to show the monitoring configuration. To retrieve the name, run `ibmcloud resource service-instances`. This value is required.
-
-
-
-
-
-

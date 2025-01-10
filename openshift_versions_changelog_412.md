@@ -2,7 +2,7 @@
 
 copyright:
   years: 2023, 2025
-lastupdated: "2025-01-06"
+lastupdated: "2025-01-10"
 
 
 keywords: openshift, 4.12, update, upgrade, BOM, bill of materials, versions, patch
@@ -1249,7 +1249,7 @@ The following table shows the changes that are in the worker node fix pack 4.12.
 ### Change log for master fix pack 4.12.2_1527_openshift and worker node fix pack 4.12.2_1526_openshift, released 23 February 2023
 {: #4122_1527_openshift_4.12.2_1526_openshift}
 
-The following table shows the changes that are in the master fix pack 4.12.2_1627_openshift and worker node fix pack 4.12.2_1526_openshift.  Master patch updates are applied automatically. Worker node patch updates can be applied by updating, reloading (in classic infrastructure), or replacing (in VPC infrastructure) the worker node.
+The following table shows the changes that are in the master fix pack 4.12.2_1627_openshift and worker node fix pack 4.12.2_1526_openshift. Master patch updates are applied automatically. Worker node patch updates can be applied by updating, reloading (in classic infrastructure), or replacing (in VPC infrastructure) the worker node.
 {: shortdesc}
 
 | Component | Previous | Current | Description |

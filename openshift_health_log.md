@@ -1,8 +1,8 @@
 ---
 
 copyright:
-  years: 2014, 2024
-lastupdated: "2024-10-07"
+  years: 2014, 2025
+lastupdated: "2025-01-10"
 
 
 keywords: oks, iro, openshift, red hat, red hat openshift
@@ -38,8 +38,7 @@ To help understand when to use the built-in {{site.data.keyword.redhat_openshift
     - Highly available, scalable, and compliant with industry security standards.
     - Integrated with {{site.data.keyword.cloud_notm}} IAM for user access management.
     - Flexible plans, including a free `Lite` option.
-  
-    To get started, see [Forwarding cluster and app logs to {{site.data.keyword.la_full_notm}}](#openshift_logging).
+
 
 Built-in {{site.data.keyword.redhat_openshift_notm}} logging tools
 :   Built-in view of pod logs in the {{site.data.keyword.redhat_openshift_notm}} web console.
@@ -66,6 +65,9 @@ Built-in {{site.data.keyword.redhat_openshift_notm}} audit logging tools
 
 ## Forwarding cluster and app logs to {{site.data.keyword.la_full_notm}}
 {: #openshift_logging}
+
+The following steps are deprecated. The observability CLI plug-in `ibmcloud ob` and the `v2/observe` endpoints are deprecated and support ends on 28 March 2025. You can now manage your logging and monitoring integrations from the console or through the Helm charts. For the latest steps, see [Managing the Logging agent for Red Hat OpenShift on IBM Cloud clusters](/docs/cloud-logs?topic=cloud-logs-agent-openshift) or [Managing the Logging agent for IBM Cloud Kubernetes Service clusters](/docs/cloud-logs?topic=cloud-logs-agent-std-cluster)
+{: deprecated}
 
 Use the {{site.data.keyword.openshiftlong_notm}} observability plug-in to create a logging configuration for {{site.data.keyword.la_full_notm}} in your cluster, and use this logging configuration to automatically collect and forward pod logs to {{site.data.keyword.la_full_notm}}.
 {: shortdesc}
