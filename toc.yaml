@@ -171,7 +171,9 @@ toc:
       - topicgroup: 
           label: Logging and monitoring
           topics:
-          - cloud-logs-migration.md
+          - logging.md
+          - monitoring.md
+          - at-events.md
           - openshift_health_log.md
           - openshift_health_monitor.md
           - health-audit.md

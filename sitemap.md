@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2025
-lastupdated: "2025-01-10"
+lastupdated: "2025-01-13"
 
 
 keywords: openshift
@@ -3412,23 +3412,63 @@ subcollection: openshift
 {: #sitemap_logging_and_monitoring}
 
 
-[Migrating your {{site.data.keyword.openshiftlong_notm}} clusters to Cloud Logs](/docs/openshift?topic=openshift-cloud-logs-migration#cloud-logs-migration)
+[Logging for {{site.data.keyword.openshiftlong_notm}}](/docs/openshift?topic=openshift-logging#logging)
 
-* [Determining if you need to migrate](/docs/openshift?topic=openshift-cloud-logs-migration#migrate-check)
+* [Locations where logs are generated](/docs/openshift?topic=openshift-logging#log-locations)
 
-* [Enabling your clusters to use your Cloud Logs instance](/docs/openshift?topic=openshift-cloud-logs-migration#migrate-cloud-logs-clusters)
+* [Locations where logs are sent to {{site.data.keyword.la_full_notm}}](/docs/openshift?topic=openshift-logging#la-legacy-locations)
 
-    * [Enabling Cloud Logs in the console](/docs/openshift?topic=openshift-cloud-logs-migration#cloud-logs-console-enable)
+* [Locations where logs are sent by {{site.data.keyword.logs_routing_full_notm}}](/docs/openshift?topic=openshift-logging#lr-locations)
 
-    * [Enabling Cloud Logs in the CLI](/docs/openshift?topic=openshift-cloud-logs-migration#cloud-logs-cli-enable)
+* [Logs that are generated](/docs/openshift?topic=openshift-logging#log-platform)
 
-* [Migrating to the new monitoring agent](/docs/openshift?topic=openshift-cloud-logs-migration#monitoring)
+* [Enabling logging](/docs/openshift?topic=openshift-logging#log-enable)
+
+* [Enable logging in an existing cluster](/docs/openshift?topic=openshift-logging#log-enable-existing)
+
+* [Enable logging while creating a cluster](/docs/openshift?topic=openshift-logging#log-enable-create)
+
+* [Viewing logs](/docs/openshift?topic=openshift-logging#log-viewing)
+
+* [Launching {{site.data.keyword.logs_full_notm}} from the Observability page](/docs/openshift?topic=openshift-logging#log-launch-standalone-ob)
+
+* [Fields by log type](/docs/openshift?topic=openshift-logging#log-fields)
+
+* [Line identifiers by type](/docs/openshift?topic=openshift-logging#line-indentifiers)
+
+* [Analyzing {{site.data.keyword.openshiftlong_notm}} logs](/docs/openshift?topic=openshift-logging#cloud-logs)
+
+* [Migrating from Log Analysis and Activity Tracker to Cloud Logs](/docs/openshift?topic=openshift-logging#cloud-logs-migration)
+
+* [Enabling your clusters to use your Cloud Logs instance](/docs/openshift?topic=openshift-logging#migrate-cloud-logs-clusters)
+
+    * [Enabling Cloud Logs in the console](/docs/openshift?topic=openshift-logging#cloud-logs-console-enable)
+
+    * [Enabling Cloud Logs in the CLI](/docs/openshift?topic=openshift-logging#cloud-logs-cli-enable)
+
+[Monitoring metrics for {{site.data.keyword.openshiftlong_notm}}](/docs/openshift?topic=openshift-monitoring#monitoring)
+
+* [Locations where metrics are generated](/docs/openshift?topic=openshift-monitoring#mon-locations)
+
+* [Enabling metrics for {{site.data.keyword.openshiftlong_notm}}](/docs/openshift?topic=openshift-monitoring#monitoring-enable)
+
+* [Enable monitoring in an existing cluster](/docs/openshift?topic=openshift-monitoring#monintoring-enable-existing)
+
+* [Enable monitoring while creating a cluster](/docs/openshift?topic=openshift-monitoring#monintoring-enable-create)
+
+* [Viewing metrics](/docs/openshift?topic=openshift-monitoring#monitoring-view)
+
+    * [Launching {{site.data.keyword.mon_full}} from the Observability page](/docs/openshift?topic=openshift-monitoring#monitoring-view-ob)
+
+* [Monitoring {{site.data.keyword.openshiftlong_notm}}](/docs/openshift?topic=openshift-monitoring#monitoring-monitor)
+
+* [Migrating to the new monitoring agent](/docs/openshift?topic=openshift-monitoring#migrating-new-agent)
 
 [Logging for clusters](/docs/openshift?topic=openshift-health#health)
 
 * [Understanding options for logging](/docs/openshift?topic=openshift-health#oc_logmet_options)
 
-* [Forwarding cluster and app logs to {{site.data.keyword.la_full_notm}}](/docs/openshift?topic=openshift-health#openshift_logging)
+* [Forwarding cluster and app logs to {{site.data.keyword.logs_full_notm}}](/docs/openshift?topic=openshift-health#openshift_logging)
 
 * [Using the cluster logging operator](/docs/openshift?topic=openshift-health#oc_logging_operator)
 
