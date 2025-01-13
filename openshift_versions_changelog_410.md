@@ -1,8 +1,8 @@
 ---
 
 copyright:
-  years: 2022, 2024
-lastupdated: "2024-06-10"
+  years: 2022, 2025
+lastupdated: "2025-01-13"
 
 
 keywords: openshift, 4.10, update, upgrade, BOM, bill of materials, versions, patch
@@ -51,7 +51,7 @@ Review the version 4.10 change log.
 {: shortdesc}
 
 
-### Change log for worker node fix pack 4.10.67_1597_openshift, released 29 January 2024
+### Worker node fix pack 4.10.67_1597_openshift, released 29 January 2024
 {: #41067_1597_openshift_W}
 
 The following table shows the changes that are in the worker node fix pack 4.10.67_1597_openshift. Worker node patch updates can be applied by updating, reloading (in classic infrastructure), or replacing (in VPC infrastructure) the worker node.
@@ -65,7 +65,7 @@ The following table shows the changes that are in the worker node fix pack 4.10.
 {: caption="Changes since version 4.10.67_1596_openshift" caption-side="bottom"}
 
 
-### Change log for worker node fix pack 4.10.67_1596_openshift, released 16 January 2024
+### Worker node fix pack 4.10.67_1596_openshift, released 16 January 2024
 {: #41067_1596_openshift_W}
 
 The following table shows the changes that are in the worker node fix pack 4.10.67_1596_openshift. Worker node patch updates can be applied by updating, reloading (in classic infrastructure), or replacing (in VPC infrastructure) the worker node.
@@ -79,7 +79,7 @@ The following table shows the changes that are in the worker node fix pack 4.10.
 {: caption="Changes since version 4.10.67_1595_openshift" caption-side="bottom"}
 
 
-### Change log for worker node fix pack 4.10.67_1595_openshift, released 02 January 2024
+### Worker node fix pack 4.10.67_1595_openshift, released 02 January 2024
 {: #41067_1595_openshift_W}
 
 The following table shows the changes that are in the worker node fix pack 4.10.67_1595_openshift. Worker node patch updates can be applied by updating, reloading (in classic infrastructure), or replacing (in VPC infrastructure) the worker node.
@@ -92,7 +92,7 @@ The following table shows the changes that are in the worker node fix pack 4.10.
 {: caption="Changes since version 4.10.67_1594_openshift" caption-side="bottom"}
 
 
-### Change log for worker node fix pack 4.10.67_1594_openshift, released 18 December 2023
+### Worker node fix pack 4.10.67_1594_openshift, released 18 December 2023
 {: #41067_1594_openshift_W}
 
 The following table shows the changes that are in the worker node fix pack 4.10.67_1594_openshift. Worker node patch updates can be applied by updating, reloading (in classic infrastructure), or replacing (in VPC infrastructure) the worker node.
@@ -105,7 +105,7 @@ The following table shows the changes that are in the worker node fix pack 4.10.
 {: caption="Changes since version 4.10.67_1593_openshift" caption-side="bottom"}
 
 
-### Change log for worker node fix pack 4.10.67_1593_openshift, released 04 December 2023
+### Worker node fix pack 4.10.67_1593_openshift, released 04 December 2023
 {: #41067_1593_openshift_W}
 
 The following table shows the changes that are in the worker node fix pack 4.10.67_1593_openshift. Worker node patch updates can be applied by updating, reloading (in classic infrastructure), or replacing (in VPC infrastructure) the worker node.
@@ -118,7 +118,7 @@ The following table shows the changes that are in the worker node fix pack 4.10.
 {: caption="Changes since version 4.10.67_1592_openshift" caption-side="bottom"}
 
 
-### Change log for worker node fix pack 4.10.67_1592_openshift, released 29 November 2023
+### Worker node fix pack 4.10.67_1592_openshift, released 29 November 2023
 {: #41067_1592_openshift_W}
 
 The following table shows the changes that are in the worker node fix pack 4.10.67_1592_openshift. Worker node patch updates can be applied by updating, reloading (in classic infrastructure), or replacing (in VPC infrastructure) the worker node.
@@ -152,7 +152,7 @@ The following table shows the changes that are in the master fix pack 4.10.67_15
 {: caption="Changes since version 4.10.67_1588_openshift" caption-side="bottom"}
 
 
-### Change log for worker node fix pack 4.10.67_1590_openshift, released 08 November 2023
+### Worker node fix pack 4.10.67_1590_openshift, released 08 November 2023
 {: #41067_1590_openshift_W}
 
 The following table shows the changes that are in the worker node fix pack 4.10.67_1590_openshift. Worker node patch updates can be applied by updating, reloading (in classic infrastructure), or replacing (in VPC infrastructure) the worker node.
@@ -182,7 +182,7 @@ The following table shows the changes that are in the master fix pack 4.10.67_15
 {: caption="Changes since version 4.10.67_1585_openshift" caption-side="bottom"}
 
 
-### Change log for worker node fix pack 4.10.67_1589_openshift, released 23 October 2023
+### Worker node fix pack 4.10.67_1589_openshift, released 23 October 2023
 {: #41067_1589_openshift_W}
 
 The following table shows the changes that are in the worker node fix pack 4.10.67_1589_openshift. Worker node patch updates can be applied by updating, reloading (in classic infrastructure), or replacing (in VPC infrastructure) the worker node.
@@ -195,7 +195,7 @@ The following table shows the changes that are in the worker node fix pack 4.10.
 {: caption="Changes since version 4.10.67_1587_openshift" caption-side="bottom"}
 
 
-### Change log for worker node fix pack 4.10.67_1587_openshift, released 9 October 2023
+### Worker node fix pack 4.10.67_1587_openshift, released 9 October 2023
 {: #41067_1587_openshift_W}
 
 The following table shows the changes that are in the worker node fix pack 4.10.67_1587_openshift. Worker node patch updates can be applied by updating, reloading (in classic infrastructure), or replacing (in VPC infrastructure) the worker node.
@@ -208,7 +208,7 @@ The following table shows the changes that are in the worker node fix pack 4.10.
 {: caption="Changes since version 4.10.67_1586_openshift" caption-side="bottom"}
 
 
-### Change log for worker node fix pack 4.10.67_1586_openshift, released 27 September 2023
+### Worker node fix pack 4.10.67_1586_openshift, released 27 September 2023
 {: #41067_1586_openshift_W}
 
 The following table shows the changes that are in the worker node fix pack 4.10.67_1586_openshift. Worker node patch updates can be applied by updating, reloading (in classic infrastructure), or replacing (in VPC infrastructure) the worker node.
@@ -240,7 +240,7 @@ The following table shows the changes that are in the master fix pack 4.10.67_15
 {: caption="Changes since version 4.10.65_1580_openshift" caption-side="bottom"}
 
 
-### Change log for worker node fix pack 4.10.67_1582_openshift, released 12 September 2023
+### Worker node fix pack 4.10.67_1582_openshift, released 12 September 2023
 {: #41067_1582_openshift_W}
 
 The following table shows the changes that are in the worker node fix pack 4.10.67_1582_openshift. Worker node patch updates can be applied by updating, reloading (in classic infrastructure), or replacing (in VPC infrastructure) the worker node.
@@ -276,7 +276,7 @@ The following table shows the changes that are in the master fix pack 4.10.65_15
 {: caption="Changes since version 4.10.63_1577_openshift" caption-side="bottom"}
 
 
-### Change log for worker node fix pack 4.10.66_1581_openshift, released 28th August 2023
+### Worker node fix pack 4.10.66_1581_openshift, released 28th August 2023
 {: #41066_1581_openshift_W}
 
 The following table shows the changes that are in the worker node fix pack 4.10.66_1581_openshift. Worker node patch updates can be applied by updating, reloading (in classic infrastructure), or replacing (in VPC infrastructure) the worker node.
@@ -288,7 +288,7 @@ The following table shows the changes that are in the worker node fix pack 4.10.
 {: caption="Changes since version 4.10.65_1579_openshift" caption-side="bottom"}
 
 
-### Change log for worker node fix pack 4.10.65_1579_openshift, released 15th August 2023
+### Worker node fix pack 4.10.65_1579_openshift, released 15th August 2023
 {: #41065_1579_openshift_W}
 
 The following table shows the changes that are in the worker node fix pack 4.10.65_1579_openshift. Worker node patch updates can be applied by updating, reloading (in classic infrastructure), or replacing (in VPC infrastructure) the worker node.
@@ -302,7 +302,7 @@ The following table shows the changes that are in the worker node fix pack 4.10.
 {: caption="Changes since version 4.10.64_1578_openshift" caption-side="bottom"}
 
 
-### Change log for worker node fix pack 4.10.64_1578_openshift, released 1 August 2023
+### Worker node fix pack 4.10.64_1578_openshift, released 1 August 2023
 {: #41064_1578_openshift_W}
 
 The following table shows the changes that are in the worker node fix pack 4.10.64_1578_openshift. Worker node patch updates can be applied by updating, reloading (in classic infrastructure), or replacing (in VPC infrastructure) the worker node.
@@ -338,7 +338,7 @@ The following table shows the changes that are in the master fix pack 4.10.63_15
 {: caption="Changes since version 4.10.61_1574_openshift" caption-side="bottom"}
 
 
-### Change log for worker node fix pack 4.10.63_1576_openshift, released 17th July 2023
+### Worker node fix pack 4.10.63_1576_openshift, released 17th July 2023
 {: #41063_1576_openshift_W}
 
 The following table shows the changes that are in the worker node fix pack 4.10.63_1576_openshift. Worker node patch updates can be applied by updating, reloading (in classic infrastructure), or replacing (in VPC infrastructure) the worker node.
@@ -352,7 +352,7 @@ The following table shows the changes that are in the worker node fix pack 4.10.
 {: caption="Changes since version 4.10.62_1575_openshift" caption-side="bottom"}
 
 
-### Change log for worker node fix pack 4.10.62_1575_openshift, released 03 July 2023
+### Worker node fix pack 4.10.62_1575_openshift, released 03 July 2023
 {: #41062_1575_openshift_W}
 
 The following table shows the changes that are in the worker node fix pack 4.10.62_1575_openshift. Worker node patch updates can be applied by updating, reloading (in classic infrastructure), or replacing (in VPC infrastructure) the worker node.
@@ -388,7 +388,7 @@ The following table shows the changes that are in the master fix pack 4.10.61_15
 {: caption="Changes since version 4.10.59_1570_openshift" caption-side="bottom"}
 
 
-### Change log for worker node fix pack 4.10.61_1572_openshift, released 19 June 2023
+### Worker node fix pack 4.10.61_1572_openshift, released 19 June 2023
 {: #41061_1572_openshift_W}
 
 The following table shows the changes that are in the worker node fix pack 4.10.61_1572_openshift. Worker node patch updates can be applied by updating, reloading (in classic infrastructure), or replacing (in VPC infrastructure) the worker node.
@@ -401,7 +401,7 @@ The following table shows the changes that are in the worker node fix pack 4.10.
 {: caption="Changes since version 4.10.60_1571_openshift" caption-side="bottom"}
 
 
-### Change log for worker node fix pack 4.10.60_1571_openshift, released 5 June 2023
+### Worker node fix pack 4.10.60_1571_openshift, released 5 June 2023
 {: #41060_1571_openshift_W}
 
 The following table shows the changes that are in the worker node fix pack 4.10.60_1571_openshift. Worker node patch updates can be applied by updating, reloading (in classic infrastructure), or replacing (in VPC infrastructure) the worker node.
@@ -436,7 +436,7 @@ The following table shows the changes that are in the master fix pack 4.10.59_15
 {: caption="Changes since version 4.10.56_1565_openshift" caption-side="bottom"}
 
 
-### Change log for worker node fix pack 4.10.59_1569_openshift, released 23 May 2023
+### Worker node fix pack 4.10.59_1569_openshift, released 23 May 2023
 {: #41059_1569_openshift_W}
 
 The following table shows the changes that are in the worker node fix pack 4.10.59_1569_openshift. Worker node patch updates can be applied by updating, reloading (in classic infrastructure), or replacing (in VPC infrastructure) the worker node.
@@ -450,7 +450,7 @@ The following table shows the changes that are in the worker node fix pack 4.10.
 {: caption="Changes since version 4.10.59_1566_openshift" caption-side="bottom"}
 
 
-### Change log for worker node fix pack 4.10.59_1566_openshift, released 10 May 2023
+### Worker node fix pack 4.10.59_1566_openshift, released 10 May 2023
 {: #41059_1566_openshift_W}
 
 The following table shows the changes that are in the worker node fix pack 4.10.59_1566_openshift. Worker node patch updates can be applied by updating, reloading (in classic infrastructure), or replacing (in VPC infrastructure) the worker node.
@@ -488,7 +488,7 @@ The following table shows the changes that are in the master fix pack 4.10.56_15
 {: caption="Changes since version 4.10.53_1561_openshift" caption-side="bottom"}
 
 
-### Change log for worker node fix pack 4.10.57_1565_openshift, released 24 April 2023
+### Worker node fix pack 4.10.57_1565_openshift, released 24 April 2023
 {: #41057_1565_openshift}
 
 The following table shows the changes that are in the worker node fix pack 4.10.57_1565_openshift. Worker node patch updates can be applied by updating, reloading (in classic infrastructure), or replacing (in VPC infrastructure) the worker node.
@@ -502,7 +502,7 @@ The following table shows the changes that are in the worker node fix pack 4.10.
 {: caption="Changes since version 4.10.55_1563_openshift" caption-side="bottom"}
 
 
-### Change log for worker node fix pack 4.10.55_1563_openshift, released 11 April 2023
+### Worker node fix pack 4.10.55_1563_openshift, released 11 April 2023
 {: #41055_1563_openshift}
 
 The following table shows the changes that are in the worker node fix pack 4.10.55_1563_openshift. Worker node patch updates can be applied by updating, reloading (in classic infrastructure), or replacing (in VPC infrastructure) the worker node.
@@ -539,7 +539,7 @@ The following table shows the changes that are in the master fix pack 4.10.53_15
 {: caption="Changes since version 4.10.52_1558_openshift" caption-side="bottom"}
 
 
-### Change log for worker node fix pack 4.10.54_1562_openshift, released 27 March 2023
+### Worker node fix pack 4.10.54_1562_openshift, released 27 March 2023
 {: #41054_1562_openshift}
 
 The following table shows the changes that are in the worker node fix pack 4.10.54_1562_openshift. Worker node patch updates can be applied by updating, reloading (in classic infrastructure), or replacing (in VPC infrastructure) the worker node.
@@ -554,7 +554,7 @@ The following table shows the changes that are in the worker node fix pack 4.10.
 {: caption="Changes since version 4.10.53_1559_openshift" caption-side="bottom"}
 
 
-### Change log for worker node fix pack 4.10.53_1559_openshift, released 13 March 2023
+### Worker node fix pack 4.10.53_1559_openshift, released 13 March 2023
 {: #41052_1559_openshift}
 
 The following table shows the changes that are in the worker node fix pack 4.10.53_1559_openshift. Worker node patch updates can be applied by updating, reloading (in classic infrastructure), or replacing (in VPC infrastructure) the worker node.
@@ -596,7 +596,7 @@ The following table shows the changes that are in the master fix pack 4.10.52_15
 {: caption="Changes since version 4.10.47_1553_openshift" caption-side="bottom"}
 
 
-### Change log for worker node fix pack 4.10.52_1556_openshift, released 27 February 2023
+### Worker node fix pack 4.10.52_1556_openshift, released 27 February 2023
 {: #41052_1556_openshift}
 
 The following table shows the changes that are in the worker node fix pack 4.10.52_1556_openshift. Worker node patch updates can be applied by updating, reloading (in classic infrastructure), or replacing (in VPC infrastructure) the worker node.
@@ -610,7 +610,7 @@ The following table shows the changes that are in the worker node fix pack 4.10.
 {: caption="Changes since version 4.10.51_1555_openshift" caption-side="bottom"}
 
 
-### Change log for worker node fix pack 4.10.51_1555_openshift, released 13 February 2023
+### Worker node fix pack 4.10.51_1555_openshift, released 13 February 2023
 {: #41051_1555_openshift}
 
 The following table shows the changes that are in the worker node fix pack 4.10.51_1555_openshift. Worker node patch updates can be applied by updating, reloading (in classic infrastructure), or replacing (in VPC infrastructure) the worker node.
@@ -647,7 +647,7 @@ The following table shows the changes that are in the master fix pack 4.10.47_15
 {: caption="Changes since version 4.10.43_1548_openshift" caption-side="bottom"}
 
 
-### Change log for worker node fix pack 4.10.50_1554_openshift, released 30 January 2023
+### Worker node fix pack 4.10.50_1554_openshift, released 30 January 2023
 {: #41050_1554_openshift}
 
 The following table shows the changes that are in the worker node fix pack 4.10.50_1554_openshift. Worker node patch updates can be applied by updating, reloading (in classic infrastructure), or replacing (in VPC infrastructure) the worker node.
@@ -662,7 +662,7 @@ The following table shows the changes that are in the worker node fix pack 4.10.
 {: caption="Changes since version 4.10.47_1551_openshift" caption-side="bottom"}
 
 
-### Change log for worker node fix pack 4.10.47_1551_openshift, released 16 January 2023
+### Worker node fix pack 4.10.47_1551_openshift, released 16 January 2023
 {: #41047_1551_openshift}
 
 The following table shows the changes that are in the worker node fix pack 4.10.47_1551_openshift. Worker node patch updates can be applied by updating, reloading (in classic infrastructure), or replacing (in VPC infrastructure) the worker node.
@@ -676,7 +676,7 @@ The following table shows the changes that are in the worker node fix pack 4.10.
 {: caption="Changes since version 4.10.45_1550_openshift" caption-side="bottom"}
 
 
-### Change log for worker node fix pack 4.10.45_1550_openshift, released 02 January 2023
+### Worker node fix pack 4.10.45_1550_openshift, released 02 January 2023
 {: #41045_1550_openshift}
 
 The following table shows the changes that are in the worker node fix pack 4.10.45_1550_openshift. Worker node patch updates can be applied by updating, reloading (in classic infrastructure), or replacing (in VPC infrastructure) the worker node.
@@ -690,7 +690,7 @@ The following table shows the changes that are in the worker node fix pack 4.10.
 {: caption="Changes since version 4.10.45_1549_openshift" caption-side="bottom"}
 
 
-### Change log for worker node fix pack 4.10.45_1549_openshift, released 19 December 2022
+### Worker node fix pack 4.10.45_1549_openshift, released 19 December 2022
 {: #41045_1549_openshift}
 
 The following table shows the changes that are in the worker node fix pack 4.10.45_1549_openshift. Worker node patch updates can be applied by updating, reloading (in classic infrastructure), or replacing (in VPC infrastructure) the worker node.
@@ -728,7 +728,7 @@ The following table shows the changes that are in the master fix pack 4.10.43_15
 {: caption="Changes since version 4.10.39_1545_openshift" caption-side="bottom"}
 
 
-### Change log for worker node fix pack 4.10.43_1547_openshift, released 05 December 2022
+### Worker node fix pack 4.10.43_1547_openshift, released 05 December 2022
 {: #41043_1547_openshift}
 
 The following table shows the changes that are in the worker node fix pack 4.10.43_1547_openshift. Worker node patch updates can be applied by updating, reloading (in classic infrastructure), or replacing (in VPC infrastructure) the worker node.
@@ -743,7 +743,7 @@ The following table shows the changes that are in the worker node fix pack 4.10.
 {: caption="Changes since version 4.10.41_1546_openshift" caption-side="bottom"}
 
 
-### Change log for worker node fix pack 4.10.41_1546_openshift, released 21 November 2022
+### Worker node fix pack 4.10.41_1546_openshift, released 21 November 2022
 {: #41041_1546_openshift}
 
 The following table shows the changes that are in the worker node fix pack 4.10.41_1546_openshift. Worker node patch updates can be applied by updating, reloading (in classic infrastructure), or replacing (in VPC infrastructure) the worker node.
@@ -783,7 +783,7 @@ The following table shows the changes that are in the master fix pack 4.10.39_15
 {: caption="Changes since version 4.10.36_1541_openshift" caption-side="bottom"}
 
 
-### Change log for worker node fix pack 4.10.39_1544_openshift, released 11 November 2022
+### Worker node fix pack 4.10.39_1544_openshift, released 11 November 2022
 {: #41039_1544_openshift}
 
 The following table shows the changes that are in the worker node fix pack 4.10.39_1544_openshift. Worker node patch updates can be applied by updating, reloading (in classic infrastructure), or replacing (in VPC infrastructure) the worker node.
@@ -796,7 +796,7 @@ The following table shows the changes that are in the worker node fix pack 4.10.
 {: caption="Changes since version 4.10.39_1543_openshift" caption-side="bottom"}
 
 
-### Change log for worker node fix pack 4.10.39_1543_openshift, released 07 November 2022
+### Worker node fix pack 4.10.39_1543_openshift, released 07 November 2022
 {: #41039_1543_openshift}
 
 The following table shows the changes that are in the worker node fix pack 4.10.39_1543_openshift. Worker node patch updates can be applied by updating, reloading (in classic infrastructure), or replacing (in VPC infrastructure) the worker node.
@@ -829,7 +829,7 @@ The following table shows the changes that are in the master fix pack 4.10.36_15
 {: caption="Changes since version 4.10.321536openshift" caption-side="bottom"}
 
 
-### Change log for worker node fix pack 4.10.37_1542_openshift, released 27 October 2022
+### Worker node fix pack 4.10.37_1542_openshift, released 27 October 2022
 {: #41037_1542_openshift}
 
 The following table shows the changes that are in the worker node fix pack 4.10.37_1542_openshift. Worker node patch updates can be applied by updating, reloading (in classic infrastructure), or replacing (in VPC infrastructure) the worker node.
@@ -841,7 +841,7 @@ The following table shows the changes that are in the worker node fix pack 4.10.
 {: caption="Changes since version 4.10.37_1539_openshift" caption-side="bottom"}
 
 
-### Change log for worker node fix pack 4.10.37_1539_openshift, released 25 October 2022
+### Worker node fix pack 4.10.37_1539_openshift, released 25 October 2022
 {: #41037_1539_openshift}
 
 The following table shows the changes that are in the worker node fix pack 4.10.37_1539_openshift. Worker node patch updates can be applied by updating, reloading (in classic infrastructure), or replacing (in VPC infrastructure) the worker node.
@@ -854,7 +854,7 @@ The following table shows the changes that are in the worker node fix pack 4.10.
 {: caption="Changes since version 4.10.35_1538_openshift" caption-side="bottom"}
 
 
-### Change log for worker node fix pack 4.10.35_1538_openshift, released 10 October 2022
+### Worker node fix pack 4.10.35_1538_openshift, released 10 October 2022
 {: #41035_1538_openshift}
 
 The following table shows the changes that are in the worker node fix pack 4.10.35_1538_openshift. Worker node patch updates can be applied by updating, reloading (in classic infrastructure), or replacing (in VPC infrastructure) the worker node.
@@ -891,7 +891,7 @@ The following table shows the changes that are in the master fix pack 4.10.32_15
 {: caption="Changes since version 4.10.261534openshift" caption-side="bottom"}
 
 
-### Change log for worker node fix pack 4.10.33_1537_openshift, released 26 September 2022
+### Worker node fix pack 4.10.33_1537_openshift, released 26 September 2022
 {: #41033_1537_openshift}
 
 The following table shows the changes that are in the worker node fix pack 4.10.33_1537_openshift. Worker node patch updates can be applied by updating, reloading (in classic infrastructure), or replacing (in VPC infrastructure) the worker node.
@@ -905,7 +905,7 @@ The following table shows the changes that are in the worker node fix pack 4.10.
 {: caption="Changes since version 4.10.31_1535_openshift" caption-side="bottom"}
 
 
-### Change log for worker node fix pack 4.10.31_1535_openshift, released 12 September 2022
+### Worker node fix pack 4.10.31_1535_openshift, released 12 September 2022
 {: #41031_1535_openshift}
 
 The following table shows the changes that are in the worker node fix pack 4.10.31_1535_openshift. Worker node patch updates can be applied by updating, reloading (in classic infrastructure), or replacing (in VPC infrastructure) the worker node.
@@ -949,7 +949,7 @@ The following table shows the changes that are in the master fix pack 4.10.26_15
 {: caption="Changes since version 4.10.22_1528_openshift" caption-side="bottom"}
 
 
-### Change log for worker node fix pack 4.10.28_1533_openshift, released 29 August 2022
+### Worker node fix pack 4.10.28_1533_openshift, released 29 August 2022
 {: #41028_1533_openshift}
 
 The following table shows the changes that are in the worker node fix pack 4.10.28_1533_openshift. Worker node patch updates can be applied by updating, reloading (in classic infrastructure), or replacing (in VPC infrastructure) the worker node.
@@ -963,7 +963,7 @@ The following table shows the changes that are in the worker node fix pack 4.10.
 {: caption="Changes since version 4.10.26_1530_openshift" caption-side="bottom"}
 
 
-### Change log for worker node fix pack 4.10.26_1530_openshift, released 16 August 2022
+### Worker node fix pack 4.10.26_1530_openshift, released 16 August 2022
 {: #41026_1530_openshift}
 
 The following table shows the changes that are in the worker node fix pack 4.10.26_1530_openshift. Worker node patch updates can be applied by updating, reloading (in classic infrastructure), or replacing (in VPC infrastructure) the worker node.
@@ -976,7 +976,7 @@ The following table shows the changes that are in the worker node fix pack 4.10.
 {: caption="Changes since version 4.10.24_1529_openshift" caption-side="bottom"}
 
 
-### Change log for worker node fix pack 4.10.24_1529_openshift, released 01 August 2022
+### Worker node fix pack 4.10.24_1529_openshift, released 01 August 2022
 {: #41024_1529_openshift}
 
 The following table shows the changes that are in the worker node fix pack 4.10.24_1529_openshift. Worker node patch updates can be applied by updating, reloading (in classic infrastructure), or replacing (in VPC infrastructure) the worker node.
@@ -1018,7 +1018,7 @@ The following table shows the changes that are in the master fix pack 4.10.22_15
 {: caption="Changes since version 4.10.17_1524_openshift" caption-side="bottom"}
 
 
-### Change log for worker node fix pack 4.10.21_1527_openshift, released 18 July 2022
+### Worker node fix pack 4.10.21_1527_openshift, released 18 July 2022
 {: #41021_1527_openshift}
 
 The following table shows the changes that are in the worker node fix pack 4.10.21_1527_openshift. Worker node patch updates can be applied by updating, reloading (in classic infrastructure), or replacing (in VPC infrastructure) the worker node.
@@ -1031,7 +1031,7 @@ The following table shows the changes that are in the worker node fix pack 4.10.
 {: caption="Changes since version 4.10.20_1526_openshift" caption-side="bottom"}
 
 
-### Change log for worker node fix pack 4.10.20_1526_openshift, released 11 July 2022
+### Worker node fix pack 4.10.20_1526_openshift, released 11 July 2022
 {: #41020_1526_openshift}
 
 The following table shows the changes that are in the worker node fix pack 4.10.20_1526_openshift. Worker node patch updates can be applied by updating, reloading (in classic infrastructure), or replacing (in VPC infrastructure) the worker node.
@@ -1043,7 +1043,7 @@ The following table shows the changes that are in the worker node fix pack 4.10.
 {: caption="Changes since version 4.10.20_1525_openshift" caption-side="bottom"}
 
 
-### Change log for worker node fix pack 4.10.20_1525_openshift, released 05 July 2022
+### Worker node fix pack 4.10.20_1525_openshift, released 05 July 2022
 {: #41020_1525_openshift}
 
 The following table shows the changes that are in the worker node fix pack 4.10.20_1525_openshift. Worker node patch updates can be applied by updating, reloading (in classic infrastructure), or replacing (in VPC infrastructure) the worker node.
@@ -1074,7 +1074,7 @@ The following table shows the changes that are in the master fix pack 4.10.17_15
 {: caption="Changes since version 4.10.15_1520_openshift" caption-side="bottom"}
 
 
-### Change log for worker node fix pack 4.10.18_1523_openshift, released 20 June 2022
+### Worker node fix pack 4.10.18_1523_openshift, released 20 June 2022
 {: #41018_1523_openshift}
 
 The following table shows the changes that are in the worker node fix pack 4.10.18_1523_openshift. Worker node patch updates can be applied by updating, reloading (in classic infrastructure), or replacing (in VPC infrastructure) the worker node.
@@ -1088,7 +1088,7 @@ The following table shows the changes that are in the worker node fix pack 4.10.
 {: caption="Changes since version 4.10.16_1521_openshift" caption-side="bottom"}
 
 
-### Change log for worker node fix pack 4.10.16_1521_openshift, released 7 June 2022
+### Worker node fix pack 4.10.16_1521_openshift, released 7 June 2022
 {: #41016_1521_openshift}
 
 The following table shows the changes that are in the worker node fix pack 4.10.16_1521_openshift. Worker node patch updates can be applied by updating, reloading (in classic infrastructure), or replacing (in VPC infrastructure) the worker node.
@@ -1123,7 +1123,7 @@ The following table shows the changes that are in the master fix pack 4.10.15_15
 {: caption="Changes since version 4.10.9_1515_openshift" caption-side="bottom"}
 
 
-### Change log for worker node fix pack 4.10.14_1519_openshift, released 23 May 2022
+### Worker node fix pack 4.10.14_1519_openshift, released 23 May 2022
 {: #41014_1519_openshift}
 
 The following table shows the changes that are in the worker node fix pack 4.10.14_1519_openshift. Worker node patch updates can be applied by updating, reloading (in classic infrastructure), or replacing (in VPC infrastructure) the worker node.
@@ -1137,7 +1137,7 @@ The following table shows the changes that are in the worker node fix pack 4.10.
 {: caption="Changes since version 4.10.12_1517_openshift" caption-side="bottom"}
 
 
-### Change log for worker node fix pack 4.10.12_1517_openshift, released 09 May 2022
+### Worker node fix pack 4.10.12_1517_openshift, released 09 May 2022
 {: #41012_1517_openshift}
 
 The following table shows the changes that are in the worker node fix pack 4.10.12_1517_openshift. Worker node patch updates can be applied by updating, reloading (in classic infrastructure), or replacing (in VPC infrastructure) the worker node.
@@ -1166,5 +1166,3 @@ The following table shows the changes that are in the worker node fix pack 4.10.
 | {{site.data.keyword.redhat_openshift_notm}} Metrics Server | v4.9.0-20220412 | v4.10.0-20220420 | See the [{{site.data.keyword.redhat_openshift_notm}} toolkit release notes](https://github.com/openshift/ibm-roks-toolkit/releases/tag/v4.10.0+20220420){: external}. |
 | {{site.data.keyword.redhat_openshift_notm}} toolkit | 4.9.0+20220412 | 4.10.0+20220420 | See the [{{site.data.keyword.redhat_openshift_notm}} toolkit release notes](https://github.com/openshift/ibm-roks-toolkit/releases/tag/v4.10.0+20220420){: external}. |
 {: caption="Changes since version 4.9.28_1536_openshift master and 4.9.29_1537_openshift worker node" caption-side="bottom"}
-
-
