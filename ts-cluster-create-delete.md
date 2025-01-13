@@ -1,8 +1,8 @@
 ---
 
 copyright: 
-  years: 2014, 2024
-lastupdated: "2024-10-21"
+  years: 2014, 2025
+lastupdated: "2025-01-13"
 
 
 keywords: kubernetes, openshift
@@ -98,7 +98,7 @@ Follow the steps to review your infrastructure credentials and determine why you
 
 1. Check which infrastructure account was used to provision the cluster.
     1. In the **Worker Nodes** tab, select a worker node and note its **ID**.
-    2. Open the menu ![Menu icon](../../icons/icon_hamburger.svg "Menu icon") and click **Classic Infrastructure**.
+    2. Open the menu ![Menu icon](../../icons/icon_hamburger.svg "Menu icon") and click **Infrastructure** > **Classic Infrastructure**.
     3. From the infrastructure navigation pane, click **Devices > Device List**.
     4. Search for the worker node ID that you previously noted.
     5. If you don't find the worker node ID, the worker node is not provisioned into this infrastructure account. Switch to a different infrastructure account and try again.
