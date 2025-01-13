@@ -1,8 +1,8 @@
 ---
 
 copyright: 
-  years: 2014, 2024
-lastupdated: "2024-06-20"
+  years: 2014, 2025
+lastupdated: "2025-01-13"
 
 
 keywords: openshift, roks, rhoks, rhos, limits
@@ -50,6 +50,8 @@ You have a few options when it comes to dealing with this.
         kubectl get --raw /metrics | grep ^apiserver_storage_objects | sort -n -k2
         ```
         {: pre}
+
+- For each resource listed, we recommend avoiding a count above 250 per node. For example, a standard 3-node cluster should not exceed 750 per resource.
 
 - Request a higher resource limit for your master.  To request a higher limit, [open a support ticket](/docs/openshift?topic=openshift-get-help with justification.  Requests are reviewed and granted on a cluster by cluster basis. 
 
