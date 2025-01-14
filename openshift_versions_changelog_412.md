@@ -17,7 +17,7 @@ subcollection: openshift
 <!-- The content in this topic is auto-generated except for reuse-snippets indicated with {[ ]}. -->
 
 
-# Version 4.12_openshift change log
+# 4.12 version change log
 {: #openshift_changelog_412}
 
 View information of version changes for major, minor, and patch updates that are available for your {{site.data.keyword.openshiftlong}} clusters that run this version. Changes include updates to {{site.data.keyword.redhat_openshift_notm}}, Kubernetes, and {{site.data.keyword.cloud_notm}} Provider components.
@@ -35,8 +35,8 @@ Check the [Security Bulletins on {{site.data.keyword.cloud_notm}} Status](https:
 Master patch updates are applied automatically. Worker node patch updates can be applied by reloading or updating the worker nodes. For more information about major, minor, and patch versions and preparation actions between minor versions, see [{{site.data.keyword.redhat_openshift_notm}} versions](/docs/openshift?topic=openshift-openshift_versions).
 {: tip}
 
-## Version 4.12_openshift
-{: #412_openshift_components}
+## Version 4.12
+{: #412_components}
 
 
 
@@ -50,26 +50,22 @@ The following table shows the components included in the worker node fix pack 4.
 | ---- | ---- | ---- |
 |RHEL_8|4.18.0-553.34.1.el8_10|Resolves the following CVEs: [RHSA-2025:0065](https://access.redhat.com/errata/RHSA-2025:0065){: external}, [CVE-2024-53088](https://nvd.nist.gov/vuln/detail/CVE-2024-53088){: external}, [CVE-2024-53122](https://nvd.nist.gov/vuln/detail/CVE-2024-53122){: external}, [RHSA-2024:3043](https://access.redhat.com/errata/RHSA-2024:3043){: external}, [CVE-2024-0690](https://nvd.nist.gov/vuln/detail/CVE-2024-0690){: external}, [RHSA-2025:0012](https://access.redhat.com/errata/RHSA-2025:0012){: external}, [CVE-2024-35195](https://nvd.nist.gov/vuln/detail/CVE-2024-35195){: external}, [RHSA-2024:11161](https://access.redhat.com/errata/RHSA-2024:11161){: external}, and [CVE-2024-52337](https://nvd.nist.gov/vuln/detail/CVE-2024-52337){: external}.|
 |OpenShift|4.12.71|For more information, see the [change logs](https://docs.openshift.com/container-platform/4.12/release_notes/ocp-4-12-release-notes.html#ocp-4-12-71_release-notes).|
-|HAProxy|14daa781a66ca5ed5754656ce53c3cca4af580b5||
+|HAProxy|14daa781a66ca5ed5754656ce53c3cca4af580b5|N/A|
 {: caption="Components in version 4.12.71_1622_openshift." caption-side="bottom"}
 {: #cl-boms-41271_1622_openshift_W-component-table}
 
 
 
-
 ### Worker node fix pack 4.12.70_1621_openshift, released 30 December 2024
-{: #cl-boms-41270_1621_openshift_W}
+{: #41270_1621_openshift_W}
 
-The following table shows the components included in the worker node fix pack 4.12.70_1621_openshift. Worker node patch updates can be applied by updating, reloading (in classic infrastructure), or replacing (in VPC infrastructure) the worker node.
+The following table shows the changes that are in the worker node fix pack 4.12.70_1621_openshift. Worker node patch updates can be applied by updating, reloading (in classic infrastructure), or replacing (in VPC infrastructure) the worker node.
 {: shortdesc}
 
-| Component | Version | Description |
-| ---- | ---- | ---- |
-|RHEL_8|4.18.0-553.32.1.el8_10|Resolves the following CVEs: [RHSA-2024:3043](https://access.redhat.com/errata/RHSA-2024:3043){: external}, [CVE-2024-0690](https://nvd.nist.gov/vuln/detail/CVE-2024-0690){: external}, [RHSA-2024:11161](https://access.redhat.com/errata/RHSA-2024:11161){: external}, and [CVE-2024-52337](https://nvd.nist.gov/vuln/detail/CVE-2024-52337){: external}.|
-|OpenShift|4.12.70|For more information, see the [change logs](https://docs.openshift.com/container-platform/4.12/release_notes/ocp-4-12-release-notes.html#ocp-4-12-70_release-notes).|
-|HAProxy|14daa781a66ca5ed5754656ce53c3cca4af580b5||
-{: caption="Components in version 4.12.70_1621_openshift." caption-side="bottom"}
-{: #cl-boms-41270_1621_openshift_W-component-table}
+| Component | Previous | Current | Description |
+| --- | --- | --- | --- |
+| RHEL 8 Packages | N/A | N/A | Worker node package updates for [RHSA-2024:3043](https://access.redhat.com/errata/RHSA-2024:3043){: external}, [CVE-2024-0690](https://nvd.nist.gov/vuln/detail/CVE-2024-0690){: external}, [RHSA-2024:11161](https://access.redhat.com/errata/RHSA-2024:11161){: external}, [CVE-2024-52337](https://nvd.nist.gov/vuln/detail/CVE-2024-52337){: external}. |
+{: caption="Changes since version 4.12.70_1620_openshift" caption-side="bottom"}
 
 
 ### Worker node fix pack 4.12.70_1620_openshift, released 16 December 2024
@@ -100,7 +96,7 @@ The following table shows the changes that are in the worker node fix pack 4.12.
 {: caption="Changes since version 4.12.69_1617_openshift" caption-side="bottom"}
 
 
-### Change log for master fix pack 4.12.69_1618_openshift, released 04 December 2024
+### Master fix pack 4.12.69_1618_openshift, released 04 December 2024
 {: #41269_1618_openshift_M}
 
 The following table shows the changes that are in the master fix pack 4.12.69_1618_openshift. Master patch updates are applied automatically. 
@@ -132,7 +128,7 @@ The following table shows the changes that are in the worker node fix pack 4.12.
 {: caption="Changes since version 4.12.67_1615_openshift" caption-side="bottom"}
 
 
-### Change log for master fix pack 4.12.67_1616_openshift, released 13 November 2024
+### Master fix pack 4.12.67_1616_openshift, released 13 November 2024
 {: #41267_1616_openshift_M}
 
 The following table shows the changes that are in the master fix pack 4.12.67_1616_openshift. Master patch updates are applied automatically. 
@@ -160,7 +156,7 @@ The following table shows the changes that are in the worker node fix pack 4.12.
 {: caption="Changes since version 4.12.67_1613_openshift" caption-side="bottom"}
 
 
-### Change log for master fix pack 4.12.67_1614_openshift, released 30 October 2024
+### Master fix pack 4.12.67_1614_openshift, released 30 October 2024
 {: #41267_1614_openshift_M}
 
 The following table shows the changes that are in the master fix pack 4.12.67_1614_openshift. Master patch updates are applied automatically. 
@@ -211,7 +207,7 @@ The following table shows the changes that are in the worker node fix pack 4.12.
 {: caption="Changes since version 4.12.66_1610_openshift" caption-side="bottom"}
 
 
-### Change log for master fix pack 4.12.64_1609_openshift, released 25 September 2024
+### Master fix pack 4.12.64_1609_openshift, released 25 September 2024
 {: #41264_1609_openshift_M}
 
 The following table shows the changes that are in the master fix pack 4.12.64_1609_openshift. Master patch updates are applied automatically. 
@@ -261,7 +257,7 @@ The following table shows the changes that are in the worker node fix pack 4.12.
 {: caption="Changes since version 4.12.63_1607_openshift" caption-side="bottom"}
 
 
-### Change log for master fix pack 4.12.61_1606_openshift, released 28 August 2024
+### Master fix pack 4.12.61_1606_openshift, released 28 August 2024
 {: #41261_1606_openshift_M}
 
 The following table shows the changes that are in the master fix pack 4.12.61_1606_openshift. Master patch updates are applied automatically. 
@@ -309,7 +305,7 @@ The following table shows the changes that are in the worker node fix pack 4.12.
 {: caption="Changes since version 4.12.61_1603_openshift" caption-side="bottom"}
 
 
-### Change log for master fix pack 4.12.60_1602_openshift, released 31 July 2024
+### Master fix pack 4.12.60_1602_openshift, released 31 July 2024
 {: #41260_1602_openshift_M}
 
 The following table shows the changes that are in the master fix pack 4.12.60_1602_openshift. Master patch updates are applied automatically. 
@@ -335,7 +331,7 @@ The following table shows the changes that are in the master fix pack 4.12.60_16
 | {{site.data.keyword.openshiftlong_notm}}. | 4.12.58 | 4.12.60 | See the [{{site.data.keyword.openshiftlong_notm}} release notes](https://docs.openshift.com/container-platform/4.12/release_notes/ocp-4-12-release-notes.html#ocp-4-12-60){: external}. |
 | {{site.data.keyword.openshiftlong_notm}} Control Plane Operator, Metrics Server, and toolkit | 4.12.0+20240603 | 4.12.0+20240709 | See the [{{site.data.keyword.openshiftlong_notm}} toolkit release notes](https://github.com/openshift/ibm-roks-toolkit/releases/tag/v4.12.0+20240709){: external}. |
 | Tigera Operator | v1.32.5 | v1.32.10 | See the [Tigera Operator release notes](https://github.com/tigera/operator/releases/tag/v1.32.10){: external}. |
-{: caption="Changes since version 4.12.58_1597_openshift.Change log for master fix pack 4.12.58_1597_openshift, released 19 June 2024" caption-side="bottom"}
+{: caption="Changes since version 4.12.58_1597_openshift.Master fix pack 4.12.58_1597_openshift, released 19 June 2024" caption-side="bottom"}
 
 
 ### Worker node fix pack 4.12.61_1603_openshift, released 29 July 2024
@@ -379,7 +375,7 @@ The following table shows the changes that are in the worker node fix pack 4.12.
 {: caption="Changes since version 4.12.59_1598_openshift" caption-side="bottom"}
 
 
-### Change log for master fix pack 4.12.58_1597_openshift, released 19 June 2024
+### Master fix pack 4.12.58_1597_openshift, released 19 June 2024
 {: #41258_1597_openshift_M}
 
 The following table shows the changes that are in the master fix pack 4.12.58_1597_openshift. Master patch updates are applied automatically. 
@@ -430,7 +426,7 @@ The following table shows the changes that are in the worker node fix pack 4.12.
 {: caption="Changes since version 4.12.57_1591_openshift" caption-side="bottom"}
 
 
-### Change log for master fix pack 4.12.56_1593_openshift, released 29 May 2024
+### Master fix pack 4.12.56_1593_openshift, released 29 May 2024
 {: #41256_1593_openshift_M}
 
 The following table shows the changes that are in the master fix pack 4.12.56_1593_openshift. Master patch updates are applied automatically. 
@@ -483,7 +479,7 @@ The following table shows the changes that are in the worker node fix pack 4.12.
 {: caption="Changes since version 4.12.55_1589_openshift" caption-side="bottom"}
 
 
-### Change log for master fix pack 4.12.55_1588_openshift, released 24 April 2024
+### Master fix pack 4.12.55_1588_openshift, released 24 April 2024
 {: #41255_1588_openshift_M}
 
 The following table shows the changes that are in the master fix pack 4.12.55_1588_openshift. Master patch updates are applied automatically. 
@@ -536,7 +532,7 @@ The following table shows the changes that are in the worker node fix pack 4.12.
 {: caption="Changes since version 4.12.53_1586_openshift" caption-side="bottom"}
 
 
-### Change log for master fix pack 4.12.51_1585_openshift, released 27 March 2024
+### Master fix pack 4.12.51_1585_openshift, released 27 March 2024
 {: #41251_1585_openshift_M}
 
 The following table shows the changes that are in the master fix pack 4.12.51_1585_openshift. Master patch updates are applied automatically. 
@@ -588,7 +584,7 @@ The following table shows the changes that are in the worker node fix pack 4.12.
 {: caption="Changes since version 4.12.50_1582_openshift" caption-side="bottom"}
 
 
-### Change log for master fix pack 4.12.49_1581_openshift, released 28 February 2024
+### Master fix pack 4.12.49_1581_openshift, released 28 February 2024
 {: #41249_1581_openshift_M}
 
 The following table shows the changes that are in the master fix pack 4.12.49_1581_openshift. Master patch updates are applied automatically. 
@@ -640,7 +636,7 @@ The following table shows the changes that are in the worker node fix pack 4.12.
 {: caption="Changes since version 4.12.47_1577_openshift" caption-side="bottom"}
 
 
-### Change log for master fix pack 4.12.46_1576_openshift, released 31 January 2024
+### Master fix pack 4.12.46_1576_openshift, released 31 January 2024
 {: #41246_1576_openshift_M}
 
 The following table shows the changes that are in the master fix pack 4.12.46_1576_openshift. Master patch updates are applied automatically. 
@@ -721,7 +717,7 @@ The following table shows the changes that are in the worker node fix pack 4.12.
 {: caption="Changes since version 4.12.44_1572_openshift" caption-side="bottom"}
 
 
-### Change log for master fix pack 4.12.44_1571_openshift, released 06 December 2023
+### Master fix pack 4.12.44_1571_openshift, released 06 December 2023
 {: #41244_1571_openshift_M}
 
 The following table shows the changes that are in the master fix pack 4.12.44_1571_openshift. Master patch updates are applied automatically. 
@@ -768,7 +764,7 @@ The following table shows the changes that are in the worker node fix pack 4.12.
 {: caption="Changes since version 4.12.41_1567_openshift" caption-side="bottom"}
 
 
-### Change log for master fix pack 4.12.40_1568_openshift, released 15 November 2023
+### Master fix pack 4.12.40_1568_openshift, released 15 November 2023
 {: #41240_1568_openshift_M}
 
 The following table shows the changes that are in the master fix pack 4.12.40_1568_openshift. Master patch updates are applied automatically. 
@@ -805,7 +801,7 @@ The following table shows the changes that are in the worker node fix pack 4.12.
 {: caption="Changes since version 4.12.39_1566_openshift" caption-side="bottom"}
 
 
-### Change log for master fix pack 4.12.37_1565_openshift, released 25 October 2023
+### Master fix pack 4.12.37_1565_openshift, released 25 October 2023
 {: #41237_1565_openshift_M}
 
 The following table shows the changes that are in the master fix pack 4.12.37_1565_openshift. Master patch updates are applied automatically. 
@@ -868,7 +864,7 @@ The following table shows the changes that are in the worker node fix pack 4.12.
 {: caption="Changes since version 4.12.34_1557_openshift" caption-side="bottom"}
 
 
-### Change log for master fix pack 4.12.26_1562_openshift, released 20 September 2023
+### Master fix pack 4.12.26_1562_openshift, released 20 September 2023
 {: #41226_1562_openshift_M}
 
 The following table shows the changes that are in the master fix pack 4.12.26_1562_openshift. Master patch updates are applied automatically. 
@@ -901,7 +897,7 @@ The following table shows the changes that are in the worker node fix pack 4.12.
 {: caption="Changes since version 4.12.30_1556_openshift" caption-side="bottom"}
 
 
-### Change log for master fix pack 4.12.26_1555_openshift, released 30 August 2023
+### Master fix pack 4.12.26_1555_openshift, released 30 August 2023
 {: #41226_1555_openshift_M}
 
 The following table shows the changes that are in the master fix pack 4.12.26_1555_openshift. Master patch updates are applied automatically. 
@@ -963,7 +959,7 @@ The following table shows the changes that are in the worker node fix pack 4.12.
 {: caption="Changes since version 4.12.24_1551_openshift" caption-side="bottom"}
 
 
-### Change log for master fix pack 4.12.24_1552_openshift, released 28 July 2023
+### Master fix pack 4.12.24_1552_openshift, released 28 July 2023
 {: #41224_1552_openshift_M}
 
 The following table shows the changes that are in the master fix pack 4.12.24_1552_openshift. Master patch updates are applied automatically. 
@@ -1011,7 +1007,7 @@ The following table shows the changes that are in the worker node fix pack 4.12.
 {: caption="Changes since version 4.12.21_1547_openshift" caption-side="bottom"}
 
 
-### Change log for master fix pack 4.12.20_1549_openshift, released 27 June 2023
+### Master fix pack 4.12.20_1549_openshift, released 27 June 2023
 {: #41220_1549_openshift_M}
 
 The following table shows the changes that are in the master fix pack 4.12.20_1549_openshift. Master patch updates are applied automatically. 
@@ -1061,7 +1057,7 @@ The following table shows the changes that are in the worker node fix pack 4.12.
 {: caption="Changes since version 4.12.16_1544_openshift" caption-side="bottom"}
 
 
-### Change log for master fix pack 4.12.16_1545_openshift, released 25 May 2023
+### Master fix pack 4.12.16_1545_openshift, released 25 May 2023
 {: #41216_1545_openshift_M}
 
 The following table shows the changes that are in the master fix pack 4.12.16_1545_openshift. Master patch updates are applied automatically. 
@@ -1094,7 +1090,7 @@ The following table shows the changes that are in the worker node fix pack 4.12.
 {: caption="Changes since version 4.12.15_1542_openshift" caption-side="bottom"}
 
 
-### Change log for master fix pack 4.12.13_1541_openshift, released 2 May 2023
+### Master fix pack 4.12.13_1541_openshift, released 2 May 2023
 {: #41213_1541_openshift}
 
 The following table shows the changes that are in the master fix pack 4.12.13_1540_openshift. Master patch updates are applied automatically. 
@@ -1109,7 +1105,7 @@ The following table shows the changes that are in the master fix pack 4.12.13_15
 {: caption="Changes since version 4.12.11_1538_openshift" caption-side="bottom"}
 
 
-### Change log for master fix pack 4.12.11_1539_openshift, released 27 April 2023
+### Master fix pack 4.12.11_1539_openshift, released 27 April 2023
 {: #41211_1539_openshift}
 
 The following table shows the changes that are in the master fix pack 4.12.11_1538_openshift. Master patch updates are applied automatically. 
@@ -1178,7 +1174,7 @@ The following table shows the changes that are in the worker node fix pack 4.12.
 {: caption="Changes since version 4.12.8_1535_openshift" caption-side="bottom"}
 
 
-### Change log for master fix pack 4.12.7_1534_openshift, released 28 March 2023
+### Master fix pack 4.12.7_1534_openshift, released 28 March 2023
 {: #4127_1534_openshift}
 
 The following table shows the changes that are in the master fix pack 4.12.7_1534_openshift. Master patch updates are applied automatically. 
@@ -1227,7 +1223,7 @@ The following table shows the changes that are in the worker node fix pack 4.12.
 {: caption="Changes since version 4.12.4_1528_openshift" caption-side="bottom"}
 
 
-### Change log for master fix pack 4.12.3_1530_openshift, released 2 March 2023
+### Master fix pack 4.12.3_1530_openshift, released 2 March 2023
 {: #4123_1530_openshift}
 
 The following table shows the changes that are in the master fix pack 4.12.3_1530_openshift. Master patch updates are applied automatically. 
@@ -1264,7 +1260,7 @@ The following table shows the changes that are in the worker node fix pack 4.12.
 {: caption="Changes since version 4.12.2_1526_openshift" caption-side="bottom"}
 
 
-### Change log for master fix pack 4.12.2_1527_openshift and worker node fix pack 4.12.2_1526_openshift, released 23 February 2023
+### Master fix pack 4.12.2_1527_openshift and worker node fix pack 4.12.2_1526_openshift, released 23 February 2023
 {: #4122_1527_openshift_4.12.2_1526_openshift}
 
 The following table shows the changes that are in the master fix pack 4.12.2_1627_openshift and worker node fix pack 4.12.2_1526_openshift. Master patch updates are applied automatically. Worker node patch updates can be applied by updating, reloading (in classic infrastructure), or replacing (in VPC infrastructure) the worker node.

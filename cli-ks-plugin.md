@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2025
-lastupdated: "2025-01-03"
+lastupdated: "2025-01-14"
 
 
 keywords: openshift, cli reference, kubernetes cli, openshift cli, {{site.data.keyword.openshiftlong_notm}}
@@ -206,7 +206,6 @@ ibmcloud oc cluster addon disable static-route --cluster CLUSTER
 
 Minimum required permissions
 :   **Administrator** platform access role for the cluster in {{site.data.keyword.containerlong_notm}}
-
 
 
 

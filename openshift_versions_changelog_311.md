@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2025
-lastupdated: "2025-01-13"
+lastupdated: "2025-01-14"
 
 
 keywords: openshift, update, upgrade, BOM, bill of materials, versions, patch
@@ -63,7 +63,7 @@ The following table shows the changes that are in the worker node fix pack 3.11.
 | {{site.data.keyword.openshiftshort}} node | 3.11.685 | 3.11.705 | See the [{{site.data.keyword.openshiftshort}} release notes](https://docs.openshift.com/container-platform/3.11/release_notes/ocp_3_11_release_notes.html#ocp-3-11-705){: external}. |
 {: caption="Changes since version 3.11.685_1632_openshift" caption-side="bottom"}
 
-### Change log for master fix pack 3.11.705_1633_openshift, released 3 June 2022
+### Master fix pack 3.11.705_1633_openshift, released 3 June 2022
 {: #311705_1633_openshift}
 
 The following table shows the changes that are in the master fix pack 3.11.705_1633_openshift. Master patch updates are applied automatically. 
@@ -104,7 +104,7 @@ The following table shows the changes that are in the worker node fix pack 3.11.
 | Haproxy | f53b22 | 36b030 | [CVE-2022-1271](https://nvd.nist.gov/vuln/detail/CVE-2022-1271){: external}, [CVE-2022-1154](https://nvd.nist.gov/vuln/detail/CVE-2022-1154){: external}, [CVE-2018-25032](https://nvd.nist.gov/vuln/detail/CVE-2018-25032){: external}. |
 {: caption="Changes since version 3.11.664_openshift" caption-side="bottom"}
 
-### Change log for master fix pack 3.11.664_1629_openshift, released 26 April 2022
+### Master fix pack 3.11.664_1629_openshift, released 26 April 2022
 {: #311664_1629_openshift}
 
 The following table shows the changes that are in the master fix pack 3.11.664_1629_openshift. Master patch updates are applied automatically. 
@@ -155,7 +155,7 @@ The following table shows the changes that are in the worker node fix pack 3.11.
 
 
 
-### Change log for master fix pack 3.11.634_1626_openshift, released 30 March 2022
+### Master fix pack 3.11.634_1626_openshift, released 30 March 2022
 {: #311634_1626}
 
 | Component | Previous | Current | Description |
@@ -202,7 +202,7 @@ The following table shows the changes that are in the worker node fix pack 3.11.
 
 
 
-### Change log for master fix pack 3.11.570_1623_openshift, released 3 March 2022
+### Master fix pack 3.11.570_1623_openshift, released 3 March 2022
 {: #311570_1623}
 
 | Component | Previous | Current | Description |
@@ -260,7 +260,7 @@ The following table shows the changes that are in the worker node fix pack `3.11
 
 
 
-### Change log for master fix pack 3.11.570_1619_openshift, released 26 January 2022
+### Master fix pack 3.11.570_1619_openshift, released 26 January 2022
 {: #311570_1619}
 
 The following table shows the changes that are in the master fix pack patch update `3.11.570_1619_openshift`. Master patch updates are applied automatically. 
@@ -324,7 +324,7 @@ The following table shows the changes that are in the worker node fix pack patch
 
 
 
-### Change log for master fix pack 3.11.542_1614_openshift, released 7 December 2021
+### Master fix pack 3.11.542_1614_openshift, released 7 December 2021
 {: #311542_1614}
 
 The following table shows the changes that are in the master fix pack patch update `3.11.542_1614_openshift`. Master patch updates are applied automatically. 
@@ -373,7 +373,7 @@ The following table shows the changes that are in the worker node fix pack patch
 
 
 
-### Change log for master fix pack 3.11.542_1611_openshift, released 17 November 2021
+### Master fix pack 3.11.542_1611_openshift, released 17 November 2021
 {: #311542_1611}
 
 The following table shows the changes that are in the master fix pack patch update `3.11.542_1611_openshift`. Master patch updates are applied automatically. 
@@ -410,7 +410,7 @@ The following table shows the changes that are in the worker node fix pack patch
 
 
 
-### Change log for master fix pack 3.11.524_1608_openshift, released 29 October 2021
+### Master fix pack 3.11.524_1608_openshift, released 29 October 2021
 {: #311524_1608}
 
 The following table shows the changes that are in the master fix pack patch update `3.11.524_1608_openshift`. Master patch updates are applied automatically. 
@@ -461,7 +461,7 @@ The following table shows the changes that are in the worker node fix pack patch
 
 
 
-### Change log for master fix pack 3.11.521_1604_openshift, released 28 September 2021
+### Master fix pack 3.11.521_1604_openshift, released 28 September 2021
 {: #311521_1604}
 
 The following table shows the changes that are in the worker node fix pack patch update `3.11.521_1604_openshift`. Worker node patch updates can be applied by updating, reloading (in classic infrastructure), or replacing (in VPC infrastructure) the worker node.
@@ -526,7 +526,7 @@ The following table shows the changes that are in the worker node fix pack patch
 
 
 
-### Change log for master fix pack 3.11.487_1601_openshift, released 25 August 2021
+### Master fix pack 3.11.487_1601_openshift, released 25 August 2021
 {: #311487_1601}
 
 The following table shows the changes that are in the master fix pack patch update `3.11.487_1601`. Master patch updates are applied automatically. 
@@ -578,7 +578,7 @@ The following table shows the changes that are in the worker node fix pack patch
 
 
 
-### Change log for master fix pack 3.11.439_1598_openshift, released 27 July 2021
+### Master fix pack 3.11.439_1598_openshift, released 27 July 2021
 {: #311439_1598}
 
 The following table shows the changes that are in the master fix pack patch update `311.439_1598_openshift`. Master patch updates are applied automatically. 
@@ -627,7 +627,7 @@ The following table shows the changes that are in the worker node fix pack `3.11
 
 
 
-### Change log for master fix pack 3.11.439_1594_openshift, released 28 June 2021
+### Master fix pack 3.11.439_1594_openshift, released 28 June 2021
 {: #311439_1594}
 
 The following table shows the changes that are in the master fix pack patch update `3.11.439_1594_openshift`. Master patch updates are applied automatically.
@@ -697,7 +697,7 @@ The following table shows the changes that are in the worker node fix pack `3.11
 
 
 
-### Change log for master fix pack 3.11.420_1590_openshift, released 24 May 2021
+### Master fix pack 3.11.420_1590_openshift, released 24 May 2021
 {: #311420_1590}
 
 The following table shows the changes that are in the master fix pack patch update `3.11.420_1590_openshift`. Master patch updates are applied automatically.
@@ -731,7 +731,7 @@ The following table shows the changes that are in the worker node fix pack `3.11
 
 
 
-### Change log for master fix pack 3.11.420_1586_openshift, released 27 April 2021
+### Master fix pack 3.11.420_1586_openshift, released 27 April 2021
 {: #311420_1586}
 
 The following table shows the changes that are in the master fix pack patch update `3.11.420_1586_openshift`. Master patch updates are applied automatically.
@@ -784,7 +784,7 @@ The following table shows the changes that are in the worker node fix pack `3.11
 
 
 
-### Change log for master fix pack 3.11.394_1583_openshift, released 30 March 2021
+### Master fix pack 3.11.394_1583_openshift, released 30 March 2021
 {: #311394_1583}
 
 The following table shows the changes that are in the master fix pack patch update `3.11.394_1583_openshift`. Master patch updates are applied automatically.
@@ -850,7 +850,7 @@ The following table shows the changes that are in the worker node fix pack `3.11
 
 
 
-### Change log for master fix pack 3.11.380_1581_openshift, released 22 February 2021
+### Master fix pack 3.11.380_1581_openshift, released 22 February 2021
 {: #311380_1581}
 
 The following table shows the changes that are in the master fix pack patch update `3.11.380_1581_openshift`. Master patch updates are applied automatically.
@@ -901,7 +901,7 @@ The following table shows the changes that are in the worker node fix pack `3.11
 
 
 
-### Change log for master fix pack 3.11.346_1578_openshift, released 19 January 2021
+### Master fix pack 3.11.346_1578_openshift, released 19 January 2021
 {: #311346_1578_master}
 
 The following table shows the changes that are in the master fix pack patch update `3.11.346_1578_openshift`. Master patch updates are applied automatically.
@@ -934,7 +934,7 @@ The following table shows the changes that are in the worker node fix pack `3.11
 
 
 
-### Change log for master fix pack 3.11.346_1577_openshift, released 6 January 2021
+### Master fix pack 3.11.346_1577_openshift, released 6 January 2021
 {: #311346_1577}
 
 The following table shows the changes that are in the master fix pack patch update `3.11.346_1577_openshift`. Master patch updates are applied automatically.
@@ -966,7 +966,7 @@ The following table shows the changes that are in the worker node fix pack updat
 
 
 
-### Change log for master fix pack 3.11.318_1575_openshift, released 14 December 2020
+### Master fix pack 3.11.318_1575_openshift, released 14 December 2020
 {: #311306_1573_master}
 
 The following table shows the changes that are in the master fix pack patch update `3.11.318_1575_openshift`. Master patch updates are applied automatically.
@@ -1018,7 +1018,7 @@ The following table shows the changes that are in the worker node fix pack updat
 
 
 
-### Change log for master fix pack 3.11.306_1573_openshift, released 16 November 2020
+### Master fix pack 3.11.306_1573_openshift, released 16 November 2020
 {: #311306_1573}
 
 The following table shows the changes that are in the master fix pack patch update `3.11.306_1573_openshift`. Master patch updates are applied automatically.
@@ -1068,7 +1068,7 @@ The following table shows the changes that are in the worker node fix pack updat
 
 
 
-### Change log for master fix pack 3.11.286_1571_openshift, released 26 October 2020
+### Master fix pack 3.11.286_1571_openshift, released 26 October 2020
 {: #311286_1571}
 
 The following table shows the changes that are in the master fix pack patch update `3.11.286_1571_openshift`. Master patch updates are applied automatically.
@@ -1129,7 +1129,7 @@ The following table shows the changes that are in the worker node fix pack updat
 
 
 
-### Change log for master fix pack 3.11.272_1567_openshift, released 21 September 2020
+### Master fix pack 3.11.272_1567_openshift, released 21 September 2020
 {: #311272_1567}
 
 The following table shows the changes that are in the master fix pack patch update `3.11.272_1567_openshift`. Master patch updates are applied automatically.
@@ -1180,7 +1180,7 @@ The following table shows the changes that are in the worker node fix pack updat
 
 
 
-### Change log for master fix pack 3.11.248_1564_openshift, released 18 August 2020
+### Master fix pack 3.11.248_1564_openshift, released 18 August 2020
 {: #311248_1564_master}
 
 The following table shows the changes that are in the master fix pack patch update `3.11.248_1564_openshift`. Master patch updates are applied automatically.
@@ -1230,7 +1230,7 @@ The following table shows the changes that are in the worker node fix pack updat
 
 
 
-### Change log for master fix pack 3.11.232_1560_openshift, released 24 July 2020
+### Master fix pack 3.11.232_1560_openshift, released 24 July 2020
 {: #311232_1560}
 
 The following table shows the changes that are in the master fix pack update `3.11.232_1560_openshift`. Master patch updates are applied automatically.
@@ -1247,7 +1247,7 @@ The following table shows the changes that are in the master fix pack update `3.
 
 
 
-### Change log for master fix pack 3.11.232_1559_openshift, released 20 July 2020
+### Master fix pack 3.11.232_1559_openshift, released 20 July 2020
 {: #311232_1559}
 
 The following table shows the changes that are in the master fix pack update `3.11.232_1559_openshift`. Master patch updates are applied automatically.
@@ -1297,7 +1297,7 @@ The following table shows the changes that are in the worker node fix pack updat
 
 
 
-### Change log for master fix pack 3.11.219_1554_openshift and worker node fix pack 3.11.232_1554_openshift, released 22 June 2020
+### Master fix pack 3.11.219_1554_openshift and worker node fix pack 3.11.232_1554_openshift, released 22 June 2020
 {: #311219_1554_master}
 
 The following table shows the changes that are in the master fix pack update `3.11.219_1554_openshift` and in worker node fix pack update `3.11.232_1554_openshift`. Master patch updates are applied automatically. Worker node patch updates can be applied by updating or reloading the worker node For more information, see [Update types](/docs/openshift?topic=openshift-openshift_versions).
@@ -1388,7 +1388,7 @@ The following table shows the changes that are in the worker node fix pack updat
 
 
 
-### Change log for master fix pack 3.11.200_1548_openshift, released 23 April 2020
+### Master fix pack 3.11.200_1548_openshift, released 23 April 2020
 {: #311200_1548}
 
 The following table shows the changes that are in the master fix pack update `3.11.200_1548_openshift`. Master patch updates are applied automatically.
@@ -1460,7 +1460,7 @@ The following table shows the changes that are in the master and worker node upd
 
 
 
-### Change log for master fix pack 3.11.161_1542_openshift, released 18 February 2020
+### Master fix pack 3.11.161_1542_openshift, released 18 February 2020
 {: #311161_1542_master}
 
 The following table shows the changes that are in the master fix pack update `3.11.161_1542_openshift`. Master patch updates are applied automatically.
@@ -1522,7 +1522,7 @@ The following table shows the changes that are in the worker node fix pack `3.11
 
 
 
-### Change log for master fix pack 3.11.161_1539_openshift, released 3 February 2020
+### Master fix pack 3.11.161_1539_openshift, released 3 February 2020
 {: #311161_1539}
 
 The following table shows the changes that are in the master fix pack `3.11.161_1539_openshift`.
@@ -1581,7 +1581,7 @@ The following table shows the changes that are in the worker node fix pack `3.11
 
 
 
-### Change log for master fix pack 3.11.154_1536_openshift, released 17 December 2019
+### Master fix pack 3.11.154_1536_openshift, released 17 December 2019
 {: #311154_1536}
 
 The following table shows the changes that are in the master fix pack `3.11.154_1536_openshift`.
@@ -1633,7 +1633,7 @@ The following table shows the changes that are in the worker node fix pack `3.11
 
 
 
-### Change log for master fix pack 3.11.154_1533_openshift, released 21 November 2019
+### Master fix pack 3.11.154_1533_openshift, released 21 November 2019
 {: #311154_1533}
 
 The following table shows the changes that are in the master fix pack `3.11.154_1533_openshift`.
@@ -1686,7 +1686,7 @@ The following table shows the changes that are in the worker node fix pack `3.11
 
 
 
-### Change log for master fix pack 3.11.146_1528_openshift, released 22 October 2019
+### Master fix pack 3.11.146_1528_openshift, released 22 October 2019
 {: #311146_1528}
 
 The following table shows the changes that are in the master fix pack `3.11.146_1528_openshift`.
@@ -1723,7 +1723,7 @@ The following table shows the changes that are in the worker node fix pack `3.11
 
 
 
-### Change log for master fix pack 3.11.146_1526_openshift, released 4 October 2019
+### Master fix pack 3.11.146_1526_openshift, released 4 October 2019
 {: #311146_1526}
 
 The following table shows the changes that are in the master fix pack `3.11.146_1526_openshift`.
@@ -1794,7 +1794,7 @@ The following table shows the changes that are in the worker node fix pack `3.11
 
 
 
-### Change log for master fix pack 3.11.135_1522_openshift, released 28 August 2019
+### Master fix pack 3.11.135_1522_openshift, released 28 August 2019
 {: #311135_1522}
 
 The following table shows the changes that are in the master fix pack `3.11.135_1522_openshift`.
@@ -1832,7 +1832,7 @@ The following table shows the changes that are in the worker node fix pack `3.11
 
 
 
-### Change log for master fix pack 3.11.135_1521_openshift, released 17 August 2019
+### Master fix pack 3.11.135_1521_openshift, released 17 August 2019
 {: #311135_1521_master}
 
 The following table shows the changes that are in the master fix pack `3.11.135_1521_openshift`.
@@ -1848,7 +1848,7 @@ The following table shows the changes that are in the master fix pack `3.11.135_
 
 
 
-### Change log for master fix pack 3.11.135_1520_openshift, released 15 August 2019
+### Master fix pack 3.11.135_1520_openshift, released 15 August 2019
 {: #311135_1520_master}
 
 The following table shows the changes that are in the master fix pack `3.11.135_1520_openshift`.

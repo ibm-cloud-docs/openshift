@@ -1,8 +1,8 @@
 ---
 
 copyright:
-  years: 2014, 2024
-lastupdated: "2024-09-17"
+  years: 2014, 2025
+lastupdated: "2025-01-14"
 
 
 keywords: openshift, openshift data foundation, openshift container storage, ocs, classic
@@ -327,24 +327,60 @@ If you want to use an {{site.data.keyword.cos_full_notm}} service instance as yo
 
 1. Before you enable the add-on, review the [change log](/docs/openshift?topic=openshift-odf_addon_changelog) for the latest version information. Note that the add-on supports `n+1` cluster versions. For example, you can deploy version `4.10.0` of the add-on to an OCP 4.9 or 4.11 cluster. If you have a cluster version other than the default, you must specify the `--version` option when you enable the add-on.
 
-1. Review the add-on options for the version of the add-on that you want to deploy.
+   1. Review the add-on options for the version of the add-on that you want to deploy.
+  
     ```sh
-    ibmcloud oc cluster addon options --addon ADDON [--version VERSION]
+    ibmcloud oc cluster addon options --addon openshift-data-foundation --version 4.15.0
     ```
     {: pre}
+
+    For the best performance, it's recommended to include the `resourceProfile` option specified as `performance`. This option helps obtain enhanced performance levels based on the availability of resources during deployment. For more information on the `resourceProfile` option, see [Performance profiles](https://docs.redhat.com/en/documentation/red_hat_openshift_data_foundation/4.15/html/4.15_release_notes/new_features#performance_profiles){: external} in the Red Hat OpenShift ODF documentation
+    {: tip}
 
     Note that the default storage classes for `monStorageClassName` and `osdStorageClassName` are {{site.data.keyword.block_storage_is_short}} storage classes.
     {: note}
 
+    Example add-on options for version 4.15.0
+    ```sh
+    Add-on Options
+    Option                            Default Value
+    osdStorageClassName               ibmc-vpc-block-metro-10iops-tier
+    ocsUpgrade                        false
+    billingType                       advanced
+    autoDiscoverDevices               false
+    hpcsBaseUrl                       <Please provide the KMS Base (public) URL>
+    taintNodes                        false
+    enableNFS                         false
+    resourceProfile                   performance
+    useCephRBDAsDefaultStorageClass   false
+    clusterEncryption                 false
+    hpcsEncryption                    false
+    hpcsSecretName                    <Please provide the KMS secret name>
+    encryptionInTransit               false
+    disableNoobaaLB                   false
+    osdSize                           512Gi
+    numOfOsd                          1
+    ignoreNoobaa                      true
+    addSingleReplicaPool              false
+    prepareForDisasterRecovery        false
+    workerPool                        -
+    odfDeploy                         true
+    osdDevicePaths                    <Please provide IDs of the disks to be used for OSD pods if using local disks or standard classic cluster>
+    workerNodes                       all
+    hpcsServiceName                   <Please provide the KMS Service instance name>
+    hpcsInstanceId                    <Please provide the KMS Service instance ID>
+    hpcsTokenUrl                      <Please provide the KMS token URL>
+    ```
+    {: screen}
+
 1. Enable the `openshift-data-foundation` add-on. If you want to deploy the ODF add-on only, you can specify the `"odfDeploy=false"` option. If you want to override any of the default parameters, specify the `--param "key=value"` option for each parameter you want to override. If you don't want to create your storage cluster when you enable the add-on, you can enable the add-on first, then create your storage cluster later by creating a CRD.
 
-    Example command for enabling the add-on and automatically discovering local volumes, and enabling encryption with {{site.data.keyword.hscrypto}} or {{site.data.keyword.keymanagementserviceshort}}.
+    Example command for enabling the add-on and automatically discovering local volumes, enabling the `performance` resource profile option, and enabling encryption with {{site.data.keyword.hscrypto}} or {{site.data.keyword.keymanagementserviceshort}}.
     ```sh
-    ibmcloud oc cluster addon enable openshift-data-foundation -c <cluster-name> --version VERSION --param "odfDeploy=true"  --param "osdSize=250" --param "autoDiscoverDevices=true" --param "hpcsTokenUrl=https://iam.cloud.ibm.com/identity/token" --param "hpcsEncryption=true" --param "hpcsBaseUrl=<hpcs-instance-public-endpoint>" --param "hpcsInstanceId=<hpcs-instance-id>" --param "hpcsServiceName=<hpcs-instance-name>" --param "hpcsSecretName=<hpcs-secret-name>"
+    ibmcloud oc cluster addon enable openshift-data-foundation -c <cluster-name> --version VERSION --param "odfDeploy=true"  --param "resourceProfile=performance" --param "osdSize=250" --param "autoDiscoverDevices=true" --param "hpcsTokenUrl=https://iam.cloud.ibm.com/identity/token" --param "hpcsEncryption=true" --param "hpcsBaseUrl=<hpcs-instance-public-endpoint>" --param "hpcsInstanceId=<hpcs-instance-id>" --param "hpcsServiceName=<hpcs-instance-name>" --param "hpcsSecretName=<hpcs-secret-name>"
     ```
     {: pre}
 
-    
 
 1. Verify the add-on is in a `Ready` state.
     ```sh
