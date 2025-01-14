@@ -1,8 +1,8 @@
 ---
 
 copyright:
-  years: 2023, 2024
-lastupdated: "2024-10-10"
+  years: 2023, 2025
+lastupdated: "2025-01-14"
 
 
 keywords: openshift, version, update, upgrade, 4.14, update openshift
@@ -29,8 +29,6 @@ Looking for general information about updating clusters, or information on a dif
 
 
 
-
-
 ## Release timeline 
 {: #release_timeline_414}
 
@@ -50,7 +48,6 @@ Dates that are marked with a dagger (`†`) are tentative and subject to change.
 
 Review changes that you might need to make when you [update a cluster](/docs/openshift?topic=openshift-update) to version 4.14. This information summarizes updates that are likely to have an impact on deployed apps when you update.
 {: shortdesc}
-
 
 
 ### Update before master
