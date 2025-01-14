@@ -5851,11 +5851,11 @@ subcollection: openshift
 
 * [RHEL 9](/docs/openshift?topic=openshift-cs_versions_417#417_rhel9)
 
-[Version 4.17_openshift change log](/docs/openshift?topic=openshift-openshift_changelog_417#openshift_changelog_417)
+[4.17 version change log](/docs/openshift?topic=openshift-openshift_changelog_417#openshift_changelog_417)
 
 * [Overview](/docs/openshift?topic=openshift-openshift_changelog_417#changelog_overview)
 
-* [Version 4.17_openshift](/docs/openshift?topic=openshift-openshift_changelog_417#417_openshift_components)
+* [Version 4.17](/docs/openshift?topic=openshift-openshift_changelog_417#417_components)
 
     * [Worker node fix pack 4.17.11_1521_openshift, released 13 January 2025](/docs/openshift?topic=openshift-openshift_changelog_417#cl-boms-41711_1521_openshift_W)
 
@@ -5974,11 +5974,11 @@ subcollection: openshift
 
 * [RHEL 9](/docs/openshift?topic=openshift-cs_versions_416#416_rhel9)
 
-[Version 4.16_openshift change log](/docs/openshift?topic=openshift-openshift_changelog_416#openshift_changelog_416)
+[4.16 version change log](/docs/openshift?topic=openshift-openshift_changelog_416#openshift_changelog_416)
 
 * [Overview](/docs/openshift?topic=openshift-openshift_changelog_416#changelog_overview)
 
-* [Version 4.16_openshift](/docs/openshift?topic=openshift-openshift_changelog_416#416_openshift_components)
+* [Version 4.16](/docs/openshift?topic=openshift-openshift_changelog_416#416_components)
 
     * [Worker node fix pack 4.16.29_1549_openshift, released 13 January 2025](/docs/openshift?topic=openshift-openshift_changelog_416#cl-boms-41629_1549_openshift_W)
 
@@ -6129,11 +6129,11 @@ subcollection: openshift
 
 * [Common issues and troubleshooting](/docs/openshift?topic=openshift-cs_versions_415#sbd-common-ts)
 
-[Version 4.15_openshift change log](/docs/openshift?topic=openshift-openshift_changelog_415#openshift_changelog_415)
+[4.15 version change log](/docs/openshift?topic=openshift-openshift_changelog_415#openshift_changelog_415)
 
 * [Overview](/docs/openshift?topic=openshift-openshift_changelog_415#changelog_overview)
 
-* [Version 4.15_openshift](/docs/openshift?topic=openshift-openshift_changelog_415#415_openshift_components)
+* [Version 4.15](/docs/openshift?topic=openshift-openshift_changelog_415#415_components)
 
     * [Worker node fix pack 4.15.42_1572_openshift, released 13 January 2025](/docs/openshift?topic=openshift-openshift_changelog_415#cl-boms-41542_1572_openshift_W)
 
@@ -6308,11 +6308,11 @@ subcollection: openshift
 
     * [I have custom network policies. What do I change?](/docs/openshift?topic=openshift-cs_versions_414#networking_steps_policy_oc)
 
-[Version 4.14_openshift change log](/docs/openshift?topic=openshift-openshift_changelog_414#openshift_changelog_414)
+[4.14 version change log](/docs/openshift?topic=openshift-openshift_changelog_414#openshift_changelog_414)
 
 * [Overview](/docs/openshift?topic=openshift-openshift_changelog_414#changelog_overview)
 
-* [Version 4.14_openshift](/docs/openshift?topic=openshift-openshift_changelog_414#414_openshift_components)
+* [Version 4.14](/docs/openshift?topic=openshift-openshift_changelog_414#414_components)
 
     * [Worker node fix pack 4.14.44_1594_openshift, released 13 January 2025](/docs/openshift?topic=openshift-openshift_changelog_414#cl-boms-41444_1594_openshift_W)
 
@@ -6491,11 +6491,11 @@ subcollection: openshift
 
     * [Update before master](/docs/openshift?topic=openshift-cs_versions_413#413_before)
 
-[Version 4.13_openshift change log](/docs/openshift?topic=openshift-openshift_changelog_413#openshift_changelog_413)
+[4.13 version change log](/docs/openshift?topic=openshift-openshift_changelog_413#openshift_changelog_413)
 
 * [Overview](/docs/openshift?topic=openshift-openshift_changelog_413#changelog_overview)
 
-* [Version 4.13_openshift](/docs/openshift?topic=openshift-openshift_changelog_413#413_openshift_components)
+* [Version 4.13](/docs/openshift?topic=openshift-openshift_changelog_413#413_components)
 
     * [Worker node fix pack 4.13.54_1604_openshift, released 13 January 2025](/docs/openshift?topic=openshift-openshift_changelog_413#cl-boms-41354_1604_openshift_W)
 
@@ -6714,11 +6714,11 @@ subcollection: openshift
 
     * [Update before master](/docs/openshift?topic=openshift-cs_versions_412#412_before)
 
-[Version 4.12_openshift change log](/docs/openshift?topic=openshift-openshift_changelog_412#openshift_changelog_412)
+[4.12 version change log](/docs/openshift?topic=openshift-openshift_changelog_412#openshift_changelog_412)
 
 * [Overview](/docs/openshift?topic=openshift-openshift_changelog_412#changelog_overview)
 
-* [Version 4.12_openshift](/docs/openshift?topic=openshift-openshift_changelog_412#412_openshift_components)
+* [Version 4.12](/docs/openshift?topic=openshift-openshift_changelog_412#412_components)
 
     * [Worker node fix pack 4.12.71_1622_openshift, released 13 January 2025](/docs/openshift?topic=openshift-openshift_changelog_412#cl-boms-41271_1622_openshift_W)
 

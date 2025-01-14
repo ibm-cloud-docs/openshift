@@ -17,7 +17,7 @@ subcollection: openshift
 <!-- The content in this topic is auto-generated except for reuse-snippets indicated with {[ ]}. -->
 
 
-# Version 4.15_openshift change log
+# 4.15 version change log
 {: #openshift_changelog_415}
 
 View information of version changes for major, minor, and patch updates that are available for your {{site.data.keyword.openshiftlong}} clusters that run this version. Changes include updates to {{site.data.keyword.redhat_openshift_notm}}, Kubernetes, and {{site.data.keyword.cloud_notm}} Provider components.
@@ -35,8 +35,8 @@ Check the [Security Bulletins on {{site.data.keyword.cloud_notm}} Status](https:
 Master patch updates are applied automatically. Worker node patch updates can be applied by reloading or updating the worker nodes. For more information about major, minor, and patch versions and preparation actions between minor versions, see [{{site.data.keyword.redhat_openshift_notm}} versions](/docs/openshift?topic=openshift-openshift_versions).
 {: tip}
 
-## Version 4.15_openshift
-{: #415_openshift_components}
+## Version 4.15
+{: #415_components}
 
 
 
@@ -50,7 +50,7 @@ The following table shows the components included in the worker node fix pack 4.
 | ---- | ---- | ---- |
 |RHEL_8|4.18.0-553.34.1.el8_10|Resolves the following CVEs: [RHSA-2025:0065](https://access.redhat.com/errata/RHSA-2025:0065){: external}, [CVE-2024-53088](https://nvd.nist.gov/vuln/detail/CVE-2024-53088){: external}, [CVE-2024-53122](https://nvd.nist.gov/vuln/detail/CVE-2024-53122){: external}, [RHSA-2024:3043](https://access.redhat.com/errata/RHSA-2024:3043){: external}, [CVE-2024-0690](https://nvd.nist.gov/vuln/detail/CVE-2024-0690){: external}, [RHSA-2025:0012](https://access.redhat.com/errata/RHSA-2025:0012){: external}, [CVE-2024-35195](https://nvd.nist.gov/vuln/detail/CVE-2024-35195){: external}, [RHSA-2024:11161](https://access.redhat.com/errata/RHSA-2024:11161){: external}, and [CVE-2024-52337](https://nvd.nist.gov/vuln/detail/CVE-2024-52337){: external}.|
 |Red Hat OpenShift and Red Hat CoreOS|4.15.42|For more information, see the [change logs](https://docs.openshift.com/container-platform/4.15/release_notes/ocp-4-15-release-notes.html#ocp-4-15-42_release-notes).|
-|HAProxy|14daa781a66ca5ed5754656ce53c3cca4af580b5||
+|HAProxy|14daa781a66ca5ed5754656ce53c3cca4af580b5|N/A|
 {: caption="Components in version 4.15.42_1572_openshift." caption-side="bottom"}
 {: #cl-boms-41542_1572_openshift_W-component-table}
 
@@ -67,7 +67,7 @@ The following table shows the components included in the worker node fix pack 4.
 | ---- | ---- | ---- |
 |RHEL_8|4.18.0-553.32.1.el8_10|Resolves the following CVEs: [RHSA-2024:3043](https://access.redhat.com/errata/RHSA-2024:3043){: external}, [CVE-2024-0690](https://nvd.nist.gov/vuln/detail/CVE-2024-0690){: external}, [RHSA-2024:11161](https://access.redhat.com/errata/RHSA-2024:11161){: external}, and [CVE-2024-52337](https://nvd.nist.gov/vuln/detail/CVE-2024-52337){: external}.|
 |Red Hat OpenShift and Red Hat CoreOS|4.15.41|For more information, see the [change logs](https://docs.openshift.com/container-platform/4.15/release_notes/ocp-4-15-release-notes.html#ocp-4-15-41_release-notes).|
-|HAProxy|14daa781a66ca5ed5754656ce53c3cca4af580b5||
+|HAProxy|14daa781a66ca5ed5754656ce53c3cca4af580b5|N/A|
 {: caption="Components in version 4.15.41_1571_openshift." caption-side="bottom"}
 {: #cl-boms-41541_1571_openshift_W-component-table}
 
