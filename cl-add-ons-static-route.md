@@ -3,7 +3,7 @@
 copyright:
   years: 2024, 2025
 
-lastupdated: "2025-01-13"
+lastupdated: "2025-01-14"
 
 
 keywords: change log, version history, Static Route
@@ -15,6 +15,7 @@ subcollection: openshift
 {{site.data.keyword.attribute-definition-list}}
 
 <!-- The content in this topic is auto-generated except for reuse-snippets indicated with {[ ]}. -->
+
 
 # Static Route add-on version change log
 {: #cl-add-ons-static-route}

@@ -3,7 +3,7 @@
 copyright:
   years: 2024, 2025
 
-lastupdated: "2025-01-13"
+lastupdated: "2025-01-14"
 
 
 keywords: change log, version history, IBM Cloud Image Key Synchronizer
@@ -15,6 +15,7 @@ subcollection: openshift
 {{site.data.keyword.attribute-definition-list}}
 
 <!-- The content in this topic is auto-generated except for reuse-snippets indicated with {[ ]}. -->
+
 
 # IBM Cloud Image Key Synchronizer add-on version change log
 {: #cl-add-ons-ibm-cloud-image-key-synchronizer}

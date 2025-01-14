@@ -3,7 +3,7 @@
 copyright:
   years: 2024, 2025
 
-lastupdated: "2025-01-13"
+lastupdated: "2025-01-14"
 
 
 keywords: change log, version history, 4.12_openshift
@@ -16,8 +16,9 @@ subcollection: openshift
 
 <!-- The content in this topic is auto-generated except for reuse-snippets indicated with {[ ]}. -->
 
+
 # Version 4.12_openshift change log
-{: #changelog_412_openshift}
+{: #openshift_changelog_412}
 
 View information of version changes for major, minor, and patch updates that are available for your {{site.data.keyword.openshiftlong}} clusters that run this version. Changes include updates to {{site.data.keyword.redhat_openshift_notm}}, Kubernetes, and {{site.data.keyword.cloud_notm}} Provider components.
 {: shortdesc}
@@ -69,37 +70,6 @@ The following table shows the components included in the worker node fix pack 4.
 |HAProxy|14daa781a66ca5ed5754656ce53c3cca4af580b5||
 {: caption="Components in version 4.12.70_1621_openshift." caption-side="bottom"}
 {: #cl-boms-41270_1621_openshift_W-component-table}
-
-
-
-
-### Worker node fix pack 4.12.70_1621_openshift, released 30 December 2024
-{: #cl-boms-41270_1621_openshift_W}
-
-The following table shows the components included in the worker node fix pack 4.12.70_1621_openshift. Worker node patch updates can be applied by updating, reloading (in classic infrastructure), or replacing (in VPC infrastructure) the worker node.
-{: shortdesc}
-
-| Component | Version | Description |
-| ---- | ---- | ---- |
-|RHEL_8|4.18.0-553.32.1.el8_10|Resolves the following CVEs: [RHSA-2024:3043](https://access.redhat.com/errata/RHSA-2024:3043){: external}, [CVE-2024-0690](https://nvd.nist.gov/vuln/detail/CVE-2024-0690){: external}, [RHSA-2024:11161](https://access.redhat.com/errata/RHSA-2024:11161){: external}, and [CVE-2024-52337](https://nvd.nist.gov/vuln/detail/CVE-2024-52337){: external}.|
-|OpenShift|4.12.70|For more information, see the [change logs](https://docs.openshift.com/container-platform/4.12/release_notes/ocp-4-12-release-notes.html#ocp-4-12-70_release-notes).|
-|HAProxy|14daa781a66ca5ed5754656ce53c3cca4af580b5||
-{: caption="Components in version 4.12.70_1621_openshift." caption-side="bottom"}
-{: #cl-boms-41270_1621_openshift_W-component-table}
-
-
-
-
-### Worker node fix pack 4.12.70_1621_openshift, released 30 December 2024
-{: #41270_1621_openshift_W}
-
-The following table shows the changes that are in the worker node fix pack 4.12.70_1621_openshift. Worker node patch updates can be applied by updating, reloading (in classic infrastructure), or replacing (in VPC infrastructure) the worker node.
-{: shortdesc}
-
-| Component | Previous | Current | Description |
-| --- | --- | --- | --- |
-| RHEL 8 Packages | N/A | N/A | Worker node package updates for [RHSA-2024:3043](https://access.redhat.com/errata/RHSA-2024:3043){: external}, [CVE-2024-0690](https://nvd.nist.gov/vuln/detail/CVE-2024-0690){: external}, [RHSA-2024:11161](https://access.redhat.com/errata/RHSA-2024:11161){: external}, [CVE-2024-52337](https://nvd.nist.gov/vuln/detail/CVE-2024-52337){: external}. |
-{: caption="Changes since version 4.12.70_1620_openshift" caption-side="bottom"}
 
 
 ### Worker node fix pack 4.12.70_1620_openshift, released 16 December 2024
