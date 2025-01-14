@@ -2,7 +2,7 @@
 
 copyright:
  years: 2014, 2025
-lastupdated: "2025-01-13"
+lastupdated: "2025-01-14"
 
 
 keywords: openshift, change log, version, unsupported, supported, deprecated
@@ -47,7 +47,7 @@ The following table shows the changes that are in the worker node fix pack patch
 | Haproxy | 9c98dc5 | 07f1e9 | Updated image with fixes for [CVE-2021-22922](https://nvd.nist.gov/vuln/detail/CVE-2021-22922){: external}, [CVE-2021-22923](https://nvd.nist.gov/vuln/detail/CVE-2021-22923){: external}, [CVE-2021-22924](https://nvd.nist.gov/vuln/detail/CVE-2021-22924){: external}, [CVE-2021-36222](https://nvd.nist.gov/vuln/detail/CVE-2021-36222){: external}, and [CVE-2021-37750](https://nvd.nist.gov/vuln/detail/CVE-2021-37750){: external}. |
 {: caption="Changes since version 4.5.41_1551_openshift" caption-side="bottom"}
 
-### Change log for master fix pack 4.5.41_1552_openshift, released 28 September 2021
+### Master fix pack 4.5.41_1552_openshift, released 28 September 2021
 {: #4541_1552}
 
 The following table shows the changes that are in the master fix pack patch update `4.5.41_1552_openshift`. Master patch updates are applied automatically. 
@@ -80,7 +80,7 @@ The following table shows the changes that are in the worker node fix pack patch
 | RHEL 7 Packages | 3.10.0-1160.36.2.el7 | 3.10.0-1160.42.2.el7 | Updated worker node image package updates for [CVE-2021-25214](https://nvd.nist.gov/vuln/detail/CVE-2021-25214){: external}, [CVE-2020-27777](https://nvd.nist.gov/vuln/detail/CVE-2020-27777){: external}, [CVE-2021-22555](https://nvd.nist.gov/vuln/detail/CVE-2021-22555){: external}, [CVE-2021-29154](https://nvd.nist.gov/vuln/detail/CVE-2021-29154){: external}, [CVE-2021-29650](https://nvd.nist.gov/vuln/detail/CVE-2021-29650){: external}, [CVE-2021-32399](https://nvd.nist.gov/vuln/detail/CVE-2021-32399){: external}, and [CVE-2021-3715](https://nvd.nist.gov/vuln/detail/CVE-2021-3715){: external}. |
 {: caption="Changes since version 4.5.41_1549_openshift" caption-side="bottom"}
 
-### Change log for master fix pack 4.5.41_1549_openshift, released 25 August 2021
+### Master fix pack 4.5.41_1549_openshift, released 25 August 2021
 {: #4541_1549}
 
 The following table shows the changes that are in the master fix pack patch update `4.5.41_1549_openshift`. Master patch updates are applied automatically. 
@@ -175,7 +175,7 @@ The following table shows the changes that are in the worker node fix pack `4.5.
 | HA proxy | 700dc6 | aae810 | Updated image with fixes for [CVE-2021-3520](https://nvd.nist.gov/vuln/detail/CVE-2021-3520){: external}, [CVE-2021-20271](https://nvd.nist.gov/vuln/detail/CVE-2021-20271){: external}, [CVE-2021-3516](https://nvd.nist.gov/vuln/detail/CVE-2021-3516){: external}, [CVE-2021-3517](https://nvd.nist.gov/vuln/detail/CVE-2021-3517){: external}, [CVE-2021-3518](https://nvd.nist.gov/vuln/detail/CVE-2021-3518){: external}, [CVE-2021-3537](https://nvd.nist.gov/vuln/detail/CVE-2021-3537){: external}, and [CVE-2021-3541](https://nvd.nist.gov/vuln/detail/CVE-2021-3541){: external}. |
 {: caption="Changes since version 4.5.40_1542_openshift" caption-side="bottom"}
 
-### Change log for master fix pack 4.5.40_1543_openshift, released 28 June 2021
+### Master fix pack 4.5.40_1543_openshift, released 28 June 2021
 {: #4540_1543}
 
 The following table shows the changes that are in the master fix pack patch update `4.5.40_1543_openshift`. Master patch updates are applied automatically.
@@ -239,7 +239,7 @@ The following table shows the changes that are in the worker node fix pack `4.5.
 | RHEL 7 Packages | N/A | N/A | Updated worker node image with package updates.|
 {: caption="Changes since version 4.5.38_1538_openshift" caption-side="bottom"}
 
-### Change log for master fix pack 4.5.39_1539_openshift, released 24 May 2021
+### Master fix pack 4.5.39_1539_openshift, released 24 May 2021
 {: #4539_1539}
 
 The following table shows the changes that are in the master fix pack patch update `4.5.39_1539_openshift`. Master patch updates are applied automatically.
@@ -276,7 +276,7 @@ The following table shows the changes that are in the worker node fix pack `4.5.
 | RHEL 7 Packages | 3.10.0-1160.24 | 3.10.0-1160.25 | To increase resiliency, `rsyslog` no longer keeps old file descriptors. Updated worker node images with kernel and package updates for [CVE-2021-25215](https://nvd.nist.gov/vuln/detail/CVE-2021-25215){: external}, [CVE-2020-25692](https://nvd.nist.gov/vuln/detail/CVE-2020-25692){: external}, and [CVE-2020-25648](https://nvd.nist.gov/vuln/detail/CVE-2020-25648){: external}.|
 {: caption="Changes since version 4.5.37_1537_openshift" caption-side="bottom"}
 
-### Change log for master fix pack 4.5.37_1536_openshift, released 27 April 2021
+### Master fix pack 4.5.37_1536_openshift, released 27 April 2021
 {: #4537_1536}
 
 The following table shows the changes that are in the master fix pack patch update `4.5.37_1536_openshift`. Master patch updates are applied automatically.
@@ -325,7 +325,7 @@ The following table shows the changes that are in the worker node fix pack `4.5.
 | RHEL 7 Packages | 3.10.0-1160.21.1.el7 | 3.10.0-1160.24.1.el7 | Updated worker node images with kernel and package updates for [CVE-2021-27363](https://nvd.nist.gov/vuln/detail/CVE-2021-27363){: external}, [CVE-2021-27364](https://nvd.nist.gov/vuln/detail/CVE-2021-27364){: external}, and [CVE-2021-27365](https://nvd.nist.gov/vuln/detail/CVE-2021-27365){: external}. |
 {: caption="Changes since version 4.5.35_1534_openshift" caption-side="bottom"}
 
-### Change log for master fix pack 4.5.35_1533_openshift, released 30 March 2021
+### Master fix pack 4.5.35_1533_openshift, released 30 March 2021
 {: #4535_1533}
 
 The following table shows the changes that are in the master fix pack patch update `4.5.35_1533_openshift`. Master patch updates are applied automatically.
@@ -383,7 +383,7 @@ The following table shows the changes that are in the worker node fix pack `4.5.
 | RHEL 7 Packages | N/A | N/A | Updated worker node with package updates. |
 {: caption="Changes since version 4.5.31_1529_openshift" caption-side="bottom"}
 
-### Change log for master fix pack 4.5.31_1531_openshift, released 27 February 2021
+### Master fix pack 4.5.31_1531_openshift, released 27 February 2021
 {: #4531_1531_master}
 
 The following table shows the changes that are in the master fix pack patch update `4.5.31_1531_openshift`. Master patch updates are applied automatically.
@@ -395,7 +395,7 @@ The following table shows the changes that are in the master fix pack patch upda
 | OpenVPN Operator image | v1.1.0 | v1.1.2 | Updated image to implement additional IBM security controls. |
 {: caption="Changes since version 4.5.31_1530_openshift" caption-side="bottom"}
 
-### Change log for master fix pack 4.5.31_1530_openshift, released 22 February 2021
+### Master fix pack 4.5.31_1530_openshift, released 22 February 2021
 {: #4531_1530}
 
 The following table shows the changes that are in the master fix pack patch update `4.5.31_1530_openshift`. Master patch updates are applied automatically.
@@ -440,7 +440,7 @@ The following table shows the changes that are in the worker node fix pack `4.5.
 | RHEL 7 Packages | N/A | N/A | Updated worker node image with package updates for [CVE-2021-3156](https://nvd.nist.gov/vuln/detail/CVE-2021-3156){: external}, [CVE-2020-25684](https://nvd.nist.gov/vuln/detail/CVE-2020-25684){: external}, [CVE-2020-25685](https://nvd.nist.gov/vuln/detail/CVE-2020-25685){: external}, and [CVE-2020-25686](https://nvd.nist.gov/vuln/detail/CVE-2020-25686){: external}. |
 {: caption="Changes since version 4.5.24_1526_openshift" caption-side="bottom"}
 
-### Change log for master fix pack 4.5.24_1527_openshift, released 19 January 2021
+### Master fix pack 4.5.24_1527_openshift, released 19 January 2021
 {: #4524_1527}
 
 The following table shows the changes that are in the master fix pack patch update `4.5.24_1527_openshift`. Master patch updates are applied automatically.
@@ -475,7 +475,7 @@ The following table shows the changes that are in the worker node fix pack `4.5.
 | RHEL 7 Packages | N/A | N/A | Updated worker node image with package updates. |
 {: caption="Changes since version 4.5.22_1524_openshift" caption-side="bottom"}
 
-### Change log for master fix pack 4.5.24_1525_openshift, released 6 January 2021
+### Master fix pack 4.5.24_1525_openshift, released 6 January 2021
 {: #4524_1525}
 
 The following table shows the changes that are in the master fix pack patch update `4.5.24_1525_openshift`. Master patch updates are applied automatically.
@@ -507,7 +507,7 @@ The following table shows the changes that are in the worker node fix pack updat
 | RHEL 7 Packages | 3.10.0-1160.6.1.el7 | 3.10.0-1160.11.1.el7 | Updated worker node image with kernel and package updates for: [CVE-2019-18282](https://nvd.nist.gov/vuln/detail/CVE-2019-18282){: external}, [CVE-2020-10769](https://nvd.nist.gov/vuln/detail/CVE-2020-10769){: external}, [CVE-2020-14314](https://nvd.nist.gov/vuln/detail/CVE-2020-14314){: external}, [CVE-2020-14385](https://nvd.nist.gov/vuln/detail/CVE-2020-14385){: external}, [CVE-2020-24394](https://nvd.nist.gov/vuln/detail/CVE-2020-24394){: external}, [CVE-2020-25212](https://nvd.nist.gov/vuln/detail/CVE-2020-25212){: external}, [CVE-2020-25643](https://nvd.nist.gov/vuln/detail/CVE-2020-25643){: external}, and [CVE-2020-1971](https://nvd.nist.gov/vuln/detail/CVE-2020-1971){: external}. |
 {: caption="Changes since version 4.5.18_1523_openshift" caption-side="bottom"}
 
-### Change log for master fix pack 4.5.18_1523_openshift, released 14 December 2020
+### Master fix pack 4.5.18_1523_openshift, released 14 December 2020
 {: #4518_1523}
 
 The following table shows the changes that are in the master fix pack patch update `4.5.18_1523_openshift`. Master patch updates are applied automatically.
@@ -559,7 +559,7 @@ The following table shows the changes that are in the worker node fix pack updat
 | RHEL 7 Packages |  3.10.0-1160.2.2.el7 | 3.10.0-1160.6.1.el7 | Updated worker node image with kernel and package updates for [CVE-2020-8622](https://nvd.nist.gov/vuln/detail/CVE-2020-8622){: external}, [CVE-2020-8623](https://nvd.nist.gov/vuln/detail/CVE-2020-8623){: external}, [CVE-2020-8624](https://nvd.nist.gov/vuln/detail/CVE-2020-8624){: external}, [CVE-2019-20907](https://nvd.nist.gov/vuln/detail/CVE-2019-20907){: external}, [CVE-2020-15999](https://nvd.nist.gov/vuln/detail/CVE-2020-15999){: external}, [CVE-2020-8177](https://nvd.nist.gov/vuln/detail/CVE-2020-8177){: external}, [CVE-2019-20811](https://nvd.nist.gov/vuln/detail/CVE-2019-20811){: external}, [CVE-2020-14331](https://nvd.nist.gov/vuln/detail/CVE-2020-14331){: external}, [CVE-2020-8695](https://nvd.nist.gov/vuln/detail/CVE-2020-8695){: external}, [CVE-2020-8696](https://nvd.nist.gov/vuln/detail/CVE-2020-8696){: external}, and [CVE-2020-8698](https://nvd.nist.gov/vuln/detail/CVE-2020-8698){: external}.|
 {: caption="Changes since version 4.5.17_1519_openshift" caption-side="bottom"}
 
-### Change log for master fix pack 4.5.18_1521_openshift, released 16 November 2020
+### Master fix pack 4.5.18_1521_openshift, released 16 November 2020
 {: #4518_1521}
 
 The following table shows the changes that are in the master fix pack patch update `4.5.18_1521_openshift`. Master patch updates are applied automatically.
@@ -604,7 +604,7 @@ The following table shows the changes that are in the worker node fix pack updat
 | RHEL 7 Packages | 3.10.0-1160.2.1.el7 | 3.10.0-1160.2.2.el7 | Updated worker node images with kernel and package updates for [CVE-2020-12351](https://nvd.nist.gov/vuln/detail/CVE-2020-12351){: external} and [CVE-2020-12352](https://nvd.nist.gov/vuln/detail/CVE-2020-12352){: external}.|
 {: caption="Changes since version 4.5.13_1515_openshift" caption-side="bottom"}
 
-### Change log for master fix pack 4.5.15_1518_openshift, released 26 October 2020
+### Master fix pack 4.5.15_1518_openshift, released 26 October 2020
 {: #4515_1518}
 
 The following table shows the changes that are in the master fix pack patch update `4.5.15_1518_openshift`. Master patch updates are applied automatically.
@@ -666,7 +666,7 @@ The following table shows the changes that are in the worker node fix pack `4.4.
 | RHEL 7 Packages | N/A | N/A | Updated worker node image with package updates.|
 {: caption="Changes since version 4.4.33_1541_openshift" caption-side="bottom"}
 
-### Change log for master fix pack 4.4.33_1543_openshift, released 24 May 2021
+### Master fix pack 4.4.33_1543_openshift, released 24 May 2021
 {: #4433_1543}
 
 The following table shows the changes that are in the master fix pack patch update `4.4.33_1543_openshift`. Master patch updates are applied automatically.
@@ -697,7 +697,7 @@ The following table shows the changes that are in the worker node fix pack `4.4.
 | RHEL 7 Packages | 3.10.0-1160.24 | 3.10.0-1160.25 | To increase resiliency, `rsyslog` no longer keeps old file descriptors. Updated worker node images with kernel and package updates for [CVE-2021-25215](https://nvd.nist.gov/vuln/detail/CVE-2021-25215){: external}, [CVE-2020-25692](https://nvd.nist.gov/vuln/detail/CVE-2020-25692){: external}, and [CVE-2020-25648](https://nvd.nist.gov/vuln/detail/CVE-2020-25648){: external}.|
 {: caption="Changes since version 4.4.33_1540_openshift" caption-side="bottom"}
 
-### Change log for master fix pack 4.4.33_1539_openshift, released 27 April 2021
+### Master fix pack 4.4.33_1539_openshift, released 27 April 2021
 {: #4433_1539}
 
 The following table shows the changes that are in the master fix pack patch update `4.4.33_1539_openshift`. Master patch updates are applied automatically.
@@ -739,7 +739,7 @@ The following table shows the changes that are in the worker node fix pack `4.4.
 | RHEL 7 Packages | 3.10.0-1160.21.1.el7 | 3.10.0-1160.24.1.el7 | Updated worker node images with kernel and package updates for [CVE-2021-27363](https://nvd.nist.gov/vuln/detail/CVE-2021-27363){: external}, [CVE-2021-27364](https://nvd.nist.gov/vuln/detail/CVE-2021-27364){: external}, and [CVE-2021-27365](https://nvd.nist.gov/vuln/detail/CVE-2021-27365){: external}. |
 {: caption="Changes since version 4.4.33_1537_openshift" caption-side="bottom"}
 
-### Change log for master fix pack 4.4.33_1536_openshift, released 30 March 2021
+### Master fix pack 4.4.33_1536_openshift, released 30 March 2021
 {: #4433_1536}
 
 The following table shows the changes that are in the master fix pack patch update `4.4.33_1536_openshift`. Master patch updates are applied automatically.
@@ -791,7 +791,7 @@ The following table shows the changes that are in the worker node fix pack `4.4.
 | RHEL 7 Packages | N/A | N/A | Updated worker node with package updates. |
 {: caption="Changes since version 4.4.33_1533_openshift" caption-side="bottom"}
 
-### Change log for master fix pack 4.4.33_1534_openshift, released 22 February 2021
+### Master fix pack 4.4.33_1534_openshift, released 22 February 2021
 {: #4433_1534}
 
 The following table shows the changes that are in the master fix pack patch update `4.4.33_1534_openshift`. Master patch updates are applied automatically.
@@ -835,7 +835,7 @@ The following table shows the changes that are in the worker node fix pack `4.4.
 | RHEL 7 Packages | N/A | N/A | Updated worker node image with package updates for [CVE-2021-3156](https://nvd.nist.gov/vuln/detail/CVE-2021-3156){: external}, [CVE-2020-25684](https://nvd.nist.gov/vuln/detail/CVE-2020-25684){: external}, [CVE-2020-25685](https://nvd.nist.gov/vuln/detail/CVE-2020-25685){: external}, and [CVE-2020-25686](https://nvd.nist.gov/vuln/detail/CVE-2020-25686){: external}. |
 {: caption="Changes since version 4.4.31_1530_openshift" caption-side="bottom"}
 
-### Change log for master fix pack 4.4.31_1531_openshift, released 19 January 2021
+### Master fix pack 4.4.31_1531_openshift, released 19 January 2021
 {: #4431_1531}
 
 The following table shows the changes that are in the master fix pack patch update `4.4.31_1531_openshift`. Master patch updates are applied automatically.
@@ -867,7 +867,7 @@ The following table shows the changes that are in the worker node fix pack `4.4.
 | RHEL 7 Packages | N/A | N/A | Updated worker node image with package updates. |
 {: caption="Changes since version 4.4.31_1528_openshift" caption-side="bottom"}
 
-### Change log for master fix pack 4.4.31_1529_openshift, released 6 January 2021
+### Master fix pack 4.4.31_1529_openshift, released 6 January 2021
 {: #4431_1529}
 
 The following table shows the changes that are in the master fix pack patch update `4.4.31_1529_openshift`. Master patch updates are applied automatically.
@@ -898,7 +898,7 @@ The following table shows the changes that are in the worker node fix pack updat
 | RHEL 7 Packages | 3.10.0-1160.6.1.el7 | 3.10.0-1160.11.1.el7 | Updated worker node image with kernel and package updates for: [CVE-2019-18282](https://nvd.nist.gov/vuln/detail/CVE-2019-18282){: external}, [CVE-2020-10769](https://nvd.nist.gov/vuln/detail/CVE-2020-10769){: external}, [CVE-2020-14314](https://nvd.nist.gov/vuln/detail/CVE-2020-14314){: external}, [CVE-2020-14385](https://nvd.nist.gov/vuln/detail/CVE-2020-14385){: external}, [CVE-2020-24394](https://nvd.nist.gov/vuln/detail/CVE-2020-24394){: external}, [CVE-2020-25212](https://nvd.nist.gov/vuln/detail/CVE-2020-25212){: external}, [CVE-2020-25643](https://nvd.nist.gov/vuln/detail/CVE-2020-25643){: external}, and [CVE-2020-1971](https://nvd.nist.gov/vuln/detail/CVE-2020-1971){: external}. |
 {: caption="Changes since version 4.4.29_1527_openshift" caption-side="bottom"}
 
-### Change log for master fix pack 4.4.29_1527_openshift, released 14 December 2020
+### Master fix pack 4.4.29_1527_openshift, released 14 December 2020
 {: #4429_1527}
 
 The following table shows the changes that are in the master fix pack patch update `4.4.29_1527_openshift`. Master patch updates are applied automatically.
@@ -948,7 +948,7 @@ The following table shows the changes that are in the worker node fix pack updat
 | RHEL 7 Packages |  3.10.0-1160.2.2.el7 | 3.10.0-1160.6.1.el7 | Updated worker node image with kernel and package updates for [CVE-2020-8622](https://nvd.nist.gov/vuln/detail/CVE-2020-8622){: external}, [CVE-2020-8623](https://nvd.nist.gov/vuln/detail/CVE-2020-8623){: external}, [CVE-2020-8624](https://nvd.nist.gov/vuln/detail/CVE-2020-8624){: external}, [CVE-2019-20907](https://nvd.nist.gov/vuln/detail/CVE-2019-20907){: external}, [CVE-2020-15999](https://nvd.nist.gov/vuln/detail/CVE-2020-15999){: external}, [CVE-2020-8177](https://nvd.nist.gov/vuln/detail/CVE-2020-8177){: external}, [CVE-2019-20811](https://nvd.nist.gov/vuln/detail/CVE-2019-20811){: external}, [CVE-2020-14331](https://nvd.nist.gov/vuln/detail/CVE-2020-14331){: external}, [CVE-2020-8695](https://nvd.nist.gov/vuln/detail/CVE-2020-8695){: external}, [CVE-2020-8696](https://nvd.nist.gov/vuln/detail/CVE-2020-8696){: external}, and [CVE-2020-8698](https://nvd.nist.gov/vuln/detail/CVE-2020-8698){: external}.|
 {: caption="Changes since version 4.4.29_1524_openshift" caption-side="bottom"}
 
-### Change log for master fix pack 4.4.29_1525_openshift, released 16 November 2020
+### Master fix pack 4.4.29_1525_openshift, released 16 November 2020
 {: #4429_1525}
 
 The following table shows the changes that are in the master fix pack patch update `4.4.29_1525_openshift`. Master patch updates are applied automatically.
@@ -991,7 +991,7 @@ The following table shows the changes that are in the worker node fix pack updat
 | RHEL 7 Packages | 3.10.0-1160.2.1.el7 | 3.10.0-1160.2.2.el7 | Updated worker node images with kernel and package updates for [CVE-2020-12351](https://nvd.nist.gov/vuln/detail/CVE-2020-12351){: external} and [CVE-2020-12352](https://nvd.nist.gov/vuln/detail/CVE-2020-12352){: external}.|
 {: caption="Changes since version 4.4.26_1521_openshift" caption-side="bottom"}
 
-### Change log for master fix pack 4.4.27_1523_openshift, released 26 October 2020
+### Master fix pack 4.4.27_1523_openshift, released 26 October 2020
 {: #4427_1523}
 
 The following table shows the changes that are in the master fix pack patch update `4.4.27_1523_openshift`. Master patch updates are applied automatically.

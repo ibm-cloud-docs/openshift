@@ -1,8 +1,8 @@
 ---
 
 copyright: 
-  years: 2014, 2024
-lastupdated: "2024-11-19"
+  years: 2014, 2025
+lastupdated: "2025-01-14"
 
 
 keywords: openshift, {{site.data.keyword.openshiftlong_notm}}, oc, ks
@@ -530,7 +530,7 @@ Version 1.0.295 of the CLI was released on 24 June 2021.
 Version 1.0.275 of the CLI was released on 26 May 2021.
   
 - The `--region` option is now required for the `ibmcloud oc api-key reset`, `ibmcloud oc credential get`, and `ibmcloud oc credential set` commands. 
-- Adds the `ibmcloud oc cluster addon versions` command to list the {{site.data.keyword.redhat_openshift_notm}} versions that are supported for each add-on version, and deprecates the `ibmcloud oc addon-versions` command.
+- Adds the `ibmcloud oc cluster addon versions` command to list the {{site.data.keyword.redhat_openshift_notm}} versions that are supported for each add-on version, and deprecates the `ibmcloud oc addon-versions` command
 - The `ibmcloud oc image-security disable` and `ibmcloud oc image-security enable` commands are now generally available. 
 - The IAM token that is used for your CLI session is now refreshed 5 minutes before expiration to keep the session active.
 - Adds the `--cluster` option to the `ibmcloud sat storage assignment create` command to assign to an individual cluster ID instead of a cluster group.

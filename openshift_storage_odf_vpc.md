@@ -38,36 +38,16 @@ Review the following prerequisites.
 {: shortdesc}
 
 1. [Install](/docs/openshift?topic=openshift-cli-install) or update the CLI.
-1. Create a [VPC cluster](/docs/openshift?topic=openshift-clusters) with at least 3 worker nodes. For high availability, create a cluster with at least one worker node per zone across three zones. Each worker node must have a minimum of 16 CPUs and 64 GB RAM. Make sure each of your subnets have a public gateway attached.
+1. Create a [VPC cluster](/docs/openshift?topic=openshift-clusters) with at least 3 worker nodes. For high availability, create a cluster with at least one worker node per zone across three zones. Each worker node must have a minimum of 16 CPUs and 64 GB RAM. For cluster versions earlier than 4.16, make sure each of your subnets have a public gateway attached.
 
     You can deploy OpenShift Data Foundation on 3 worker nodes of 16 CPUs and 32 GB RAM, but you must taint your worker nodes to run only ODF pods. You can't run any additional app workloads or system pods on your ODF nodes when you use this setup.
     {: important}
 
-1. **Cluster versions 4.15 and later**: Your cluster must have public internet access.
-
-    1. [Disable outbound traffic protection](/docs/openshift?topic=openshift-sbd-allow-outbound#existing-cluster-sbd) in your cluster.
-        ```txt
-        ibmcloud oc vpc outbound-traffic-protection disable --cluster CLUSTER
-        ```
-        {: pre}
-
-    1. Edit OperatorHub and change `disableAllDefaultSources` to `false`.
-        ```sh
-        oc edit operatorhub cluster -n openshift-marketplace
-        ```
-        {: pre}
-
-        ```yaml
-        disableAllDefaultSources: "false"
-        ```
-        {: screen}
-    
-    1. Make sure that pods in the `openshift-marketplace` project are running before continuing.
-        ```sh
-        oc get po -n openshift-marketplace
-        ```
-        {: pre}
-
+1. For cluster version 4.16 and later, if you enabled the secure by default option, you must manually disable the default operators in `openshift-marketplace` with the following command for ODF to work properly. 
+    ```sh
+    oc patch OperatorHub cluster --type json -p '[{"op": "add", "path": "/spec/disableAllDefaultSources", "value": true}]'
+    ```
+    {: pre}
 
 
 ### Optional: Setting up an {{site.data.keyword.cos_full_notm}} service instance

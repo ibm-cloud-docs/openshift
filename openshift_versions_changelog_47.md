@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2025
-lastupdated: "2025-01-13"
+lastupdated: "2025-01-14"
 
 
 keywords: openshift, update, upgrade, BOM, bill of materials, versions, patch
@@ -78,7 +78,7 @@ The following table shows the changes that are in the worker node fix pack 4.7.6
 {: caption="Changes since version 4.7.60_1591_openshift" caption-side="top"}
 
 
-### Change log for master fix pack 4.7.60_1592_openshift, released 14 December 2022
+### Master fix pack 4.7.60_1592_openshift, released 14 December 2022
 {: #4760_1592_openshift}
 
 The following table shows the changes that are in the master fix pack 4.7.60_1592_openshift. Master patch updates are applied automatically. 
@@ -130,7 +130,7 @@ The following table shows the changes that are in the worker node fix pack 4.7.6
 {: caption="Changes since version 4.7.59_1588_openshift" caption-side="top"}
 
 
-### Change log for master fix pack 4.7.59_1589_openshift, released 16 November 2022
+### Master fix pack 4.7.59_1589_openshift, released 16 November 2022
 {: #4759_1589_openshift}
 
 The following table shows the changes that are in the master fix pack 4.7.59_1589_openshift. Master patch updates are applied automatically. 
@@ -168,7 +168,7 @@ The following table shows the changes that are in the worker node fix pack 4.7.5
 {: caption="Changes since version 4.7.59_1585_openshift" caption-side="top"}
 
 
-### Change log for master fix pack 4.7.59_1587_openshift, released 27 October 2022
+### Master fix pack 4.7.59_1587_openshift, released 27 October 2022
 {: #4759_1587_openshift}
 
 The following table shows the changes that are in the master fix pack 4.7.59_1587_openshift. Master patch updates are applied automatically. 
@@ -212,7 +212,7 @@ The following table shows the changes that are in the worker node fix pack 4.7.5
 {: caption="Changes since version 4.7.59_1583_openshift" caption-side="bottom"}
 
 
-### Change log for master fix pack 4.7.59_1582_openshift, released 26 September 2022
+### Master fix pack 4.7.59_1582_openshift, released 26 September 2022
 {: #4759_1582_openshift}
 
 The following table shows the changes that are in the master fix pack 4.7.59_1582_openshift. Master patch updates are applied automatically. 
@@ -261,7 +261,7 @@ The following table shows the changes that are in the worker node fix pack 4.7.5
 {: caption="Changes since version 4.7.56_1578_openshift" caption-side="bottom"}
 
 
-### Change log for master fix pack 4.7.56_1580_openshift, released 1 September 2022
+### Master fix pack 4.7.56_1580_openshift, released 1 September 2022
 {: #4756_1580_openshift}
 
 The following table shows the changes that are in the master fix pack 4.7.56_1580_openshift. Master patch updates are applied automatically. 
@@ -332,7 +332,7 @@ The following table shows the changes that are in the worker node fix pack 4.7.5
 {: caption="Changes since version 4.7.54_1572_openshift" caption-side="bottom"}
 
 
-### Change log for master fix pack 4.7.53_1574_openshift, released 26 July 2022
+### Master fix pack 4.7.53_1574_openshift, released 26 July 2022
 {: #4753_1574_openshift}
 
 The following table shows the changes that are in the master fix pack 4.7.53_1574_openshift. Master patch updates are applied automatically. 
@@ -398,7 +398,7 @@ The following table shows the changes that are in the worker node fix pack 4.7.5
 {: caption="Changes since version 4.7.53_1568_openshift" caption-side="bottom"}
 
 
-### Change log for master fix pack 4.7.52_1569_openshift, released 22 June 2022
+### Master fix pack 4.7.52_1569_openshift, released 22 June 2022
 {: #4752_1569_openshift}
 
 The following table shows the changes that are in the master fix pack 4.7.52_1569_openshift. Master patch updates are applied automatically. 
@@ -447,7 +447,7 @@ The following table shows the changes that are in the worker node fix pack 4.7.5
 {: caption="Changes since version 4.7.50_1564_openshift" caption-side="bottom"}
 
 
-### Change log for master fix pack 4.7.50_1565_openshift, released 3 June 2022
+### Master fix pack 4.7.50_1565_openshift, released 3 June 2022
 {: #4750_1565_openshift}
 
 The following table shows the changes that are in the master fix pack 4.7.50_1565_openshift. Master patch updates are applied automatically. 
@@ -501,7 +501,7 @@ The following table shows the changes that are in the worker node fix pack 4.7.4
 {: caption="Changes since version 4.7.49_1563_openshift" caption-side="bottom"}
 
 
-### Change log for master fix pack 4.7.48_1561_openshift, released 26 April 2022
+### Master fix pack 4.7.48_1561_openshift, released 26 April 2022
 {: #4748_1561_openshift}
 
 The following table shows the changes that are in the master fix pack 4.7.48_1561_openshift. Master patch updates are applied automatically. 
@@ -555,7 +555,7 @@ The following table shows the changes that are in the worker node fix pack 4.7.4
 {: caption="Changes since version 4.7.45_1557_openshift" caption-side="bottom"}
 
 
-### Change log for master fix pack 4.7.45_1559_openshift, released 6 April 2022
+### Master fix pack 4.7.45_1559_openshift, released 6 April 2022
 {: #4745_1559}
 
 | Component | Previous | Current | Description |
@@ -602,7 +602,7 @@ The following table shows the changes that are in the worker node fix pack 4.7.4
 {: caption="Changes since version 4.7.42_1553_openshift" caption-side="bottom"}
 
 
-### Change log for master fix pack 4.7.43_1552_openshift, released 3 March 2022
+### Master fix pack 4.7.43_1552_openshift, released 3 March 2022
 {: #4743_1552}
 
 | Component | Previous | Current | Description |
@@ -658,7 +658,7 @@ The following table shows the changes that are in the worker node fix pack `4.7.
 {: caption="Changes since version 4.7.40_1546_openshift" caption-side="bottom"}
 
 
-### Change log for master fix pack 4.7.40_1547_openshift, released 26 January 2022
+### Master fix pack 4.7.40_1547_openshift, released 26 January 2022
 {: #4740_1547}
 
 The following table shows the changes that are in the master fix pack patch update `4.7.40_1547_openshift`. Master patch updates are applied automatically.
@@ -721,7 +721,7 @@ The following table shows the changes that are in the worker node fix pack patch
 {: caption="Changes since version 4.7.38_1543_openshift" caption-side="bottom"}
 
 
-### Change log for master fix pack 4.7.37_1542_openshift, released 7 December 2021
+### Master fix pack 4.7.37_1542_openshift, released 7 December 2021
 {: #4737_1542}
 
 The following table shows the changes that are in the master fix pack patch update `4.7.37_1542_openshift`. Master patch updates are applied automatically.
@@ -773,7 +773,7 @@ The following table shows the changes that are in the worker node fix pack patch
 {: caption="Changes since version 4.7.36_1538_openshift" caption-side="bottom"}
 
 
-### Change log for master fix pack 4.7.36_1539_openshift, released 17 November 2021
+### Master fix pack 4.7.36_1539_openshift, released 17 November 2021
 {: #4736_1539}
 
 The following table shows the changes that are in the master fix pack patch update `4.7.36_1539_openshift`. Master patch updates are applied automatically. 
@@ -811,7 +811,7 @@ The following table shows the changes that are in the worker node fix pack patch
 {: caption="Changes since version 4.7.32_1534_openshift" caption-side="bottom"}
 
 
-### Change log for master fix pack 4.7.33_1536_openshift, released 29 October 2021
+### Master fix pack 4.7.33_1536_openshift, released 29 October 2021
 {: #4733_1536}
 
 The following table shows the changes that are in the master fix pack patch update `4.7.33_1536_openshift`. Master patch updates are applied automatically. 
@@ -861,7 +861,7 @@ The following table shows the changes that are in the worker node fix pack patch
 {: caption="Changes since version 4.7.31_1533_openshift" caption-side="bottom"}
 
 
-### Change log for master fix pack 4.7.30_1532_openshift, released 28 September 2021
+### Master fix pack 4.7.30_1532_openshift, released 28 September 2021
 {: #4730_1532}
 
 The following table shows the changes that are in the master fix pack patch update `4.7.30_1532_openshift`. Master patch updates are applied automatically. 
@@ -924,7 +924,7 @@ The following table shows the changes that are in the worker node fix pack patch
 {: caption="Changes since version 4.7.23_1528_openshift" caption-side="bottom"}
 
 
-### Change log for master fix pack 4.7.23_1529_openshift, released 25 August 2021
+### Master fix pack 4.7.23_1529_openshift, released 25 August 2021
 {: #4723_1529}
 
 The following table shows the changes that are in the master fix pack patch update `4.7.23_1529_openshift`. Master patch updates are applied automatically. 
@@ -980,7 +980,7 @@ The following table shows the changes that are in the worker node fix pack patch
 {: caption="Changes since version 4.7.19_1525_openshift" caption-side="bottom"}
 
 
-### Change log for master fix pack 4.7.19_1526_openshift, released 27 July 2021
+### Master fix pack 4.7.19_1526_openshift, released 27 July 2021
 {: #4719_1526}
 
 The following table shows the changes that are in the master fix pack patch update `4.7.19_1526_openshift`. Master patch updates are applied automatically. 
@@ -1030,7 +1030,7 @@ The following table shows the changes that are in the worker node fix pack `4.7.
 {: caption="Changes since version 4.7.16_1522_openshift" caption-side="bottom"}
 
 
-### Change log for master fix pack 4.7.16_1523_openshift, released 28 June 2021
+### Master fix pack 4.7.16_1523_openshift, released 28 June 2021
 {: #4716_1523}
 
 The following table shows the changes that are in the master fix pack patch update `4.7.16_1523_openshift`. Master patch updates are applied automatically. 
@@ -1084,7 +1084,7 @@ The following table shows the changes that are in the worker node fix pack `4.7.
 {: caption="Changes since version 4.6.31_1545_openshift" caption-side="bottom"}
 
 
-### Change log for master fix pack 4.7.12_1520_openshift, released 9 June 2021
+### Master fix pack 4.7.12_1520_openshift, released 9 June 2021
 {: #4712_1520}
 
 The following table shows the changes that are in the master fix pack patch update `4.7.12_1520_openshift`. Master patch updates are applied automatically. 
