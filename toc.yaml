@@ -463,6 +463,7 @@ toc:
       - locations.md
       - openshift_integrations_overview.md
       - service-settings.md
+      - include: ../containers/service-dependency.md
       - topicgroup:
           label: Worker node flavors
           topics:
