@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2025
-lastupdated: "2025-01-13"
+lastupdated: "2025-01-16"
 
 
 keywords: openshift
@@ -559,15 +559,11 @@ Before you begin, the following steps require you to change the IAM allowlist fo
 
 1. Add the network zone names to your IAM allowlist.
 
-    1. From the menu bar, click **Manage** > **Access (IAM)**, and select **Users**.
+    1. From the menu bar, click **Manage** > **Access (IAM)**, and select **Settings**.
 
-    2. Select the user that you found in step 1 from the list.
+    2. Under **Restrict IP address access**, select **Enable** and provide the network zone name from the previous step.
 
-    3. From the **User details** page, go to the **IP address restrictions** section.
-
-    4. Add the network zone names from the previous step. Example: `us-south-kubernetes-service-network-zone`
-
-    5. Click **Apply**.
+    3. Click **Apply**.
 
 
 ### Getting your {{site.data.keyword.containershort}} subnet IP addresses
