@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2025
-lastupdated: "2025-01-14"
+lastupdated: "2025-01-17"
 
 
 keywords: openshift
@@ -9792,6 +9792,13 @@ subcollection: openshift
 * [Global settings](/docs/openshift?topic=openshift-service-settings#global-settings)
 
 
+## Service dependency map for IBM Cloud Kubernetes Service and Red Hat OpenShift on IBM Cloud
+{: #sitemap_service_dependency_map_for_ibm_cloud_kubernetes_service_and_red_hat_openshift_on_ibm_cloud}
+
+
+[Service dependency map for IBM Cloud Kubernetes Service and Red Hat OpenShift on IBM Cloud](/docs/openshift?topic=openshift-service-dependencies#service-dependencies)
+
+
 ## Worker node flavors
 {: #sitemap_worker_node_flavors}
 
@@ -10785,6 +10792,8 @@ subcollection: openshift
 [Why do I see transport endpoint not connected errors when using the {{site.data.keyword.cos_full_notm}} cluster add-on?](/docs/openshift?topic=openshift-cos_transport_ts_connect_addon#cos_transport_ts_connect_addon)
 
 * [Verifying recovery by simulating an error](/docs/openshift?topic=openshift-cos_transport_ts_connect_addon#cos_transport_verify)
+
+[Why do I see a volume mounting error when using the {{site.data.keyword.filestorage_full_notm}} plug-in?](/docs/openshift?topic=openshift-ts-cos-storage-dep#ts-cos-storage-dep)
 
 
 ### Portworx Storage
