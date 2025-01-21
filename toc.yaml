@@ -693,6 +693,7 @@ toc:
               - ts-storage-object-transport-ep.md
               - ts-storage-object-transport-addon.md
               - ts-storage-cos-plugin-dep.md
+              - ts-storage-cos-csi-addon.md
           - topicgroup:
               label: Portworx Storage
               topics:
