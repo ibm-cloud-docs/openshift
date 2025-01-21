@@ -275,6 +275,10 @@ subcollection: openshift
 
 * [January 2025](/docs/openshift?topic=openshift-openshift-relnotes#openshift-jan25)
 
+    * [21 January 2024](/docs/openshift?topic=openshift-openshift-relnotes#openshift-jan2125)
+
+        * New! Red Hat OpenShift AI add-on
+
     * [13 January 2024](/docs/openshift?topic=openshift-openshift-relnotes#openshift-jan1325)
 
         * {{site.data.keyword.openshiftlong_notm}} worker node fix packs are available.
@@ -4108,6 +4112,67 @@ subcollection: openshift
 [Deploying the Sysdig agent on edge worker nodes](/docs/openshift?topic=openshift-edge-sysdig#edge-sysdig)
 
 
+## Setting up OpenShift AI
+{: #sitemap_setting_up_openshift_ai}
+
+
+[About the Red Hat OpenShift AI add-on](/docs/openshift?topic=openshift-ai-addon-about#ai-addon-about)
+
+* [What gets deployed when I install the OpenShift AI add-on?](/docs/openshift?topic=openshift-ai-addon-about#ai-addon-deployed)
+
+* [Who is responsible for managing the OpenShift AI add-on components and required operators?](/docs/openshift?topic=openshift-ai-addon-about#ai-addon-responsibility)
+
+    * [OpenShift AI operator](/docs/openshift?topic=openshift-ai-addon-about#responsible-IBM)
+
+    * [Additional operators](/docs/openshift?topic=openshift-ai-addon-about#responsible-customer)
+
+* [How are OpenShift AI add-on components updated?](/docs/openshift?topic=openshift-ai-addon-about#ai-addon-updatehow)
+
+    * [Updating the OpenShift AI operator](/docs/openshift?topic=openshift-ai-addon-about#ai-addon-updatehow-managed)
+
+    * [Updating operators not managed by IBM](/docs/openshift?topic=openshift-ai-addon-about#ai-addon-updatehow-notmanaged)
+
+* [What's next?](/docs/openshift?topic=openshift-ai-addon-about#ai-addon-ov-next)
+
+[Installing the Red Hat OpenShift AI add-on](/docs/openshift?topic=openshift-ai-addon-install#ai-addon-install)
+
+* [Minimum requirements](/docs/openshift?topic=openshift-ai-addon-install#ai-min)
+
+* [Before you begin](/docs/openshift?topic=openshift-ai-addon-install#ai-before)
+
+* [Step 1: Choose customization options](/docs/openshift?topic=openshift-ai-addon-install&interface=cli#ai-custom-step)
+
+* [Step 2: Review the recommended operators](/docs/openshift?topic=openshift-ai-addon-install&interface=cli#ai-ops-rec-cli)
+
+* [Step 3: Install the add-on in the CLI](/docs/openshift?topic=openshift-ai-addon-install&interface=cli#ai-install-cli)
+
+* [Step 1: Review the recommended operators](/docs/openshift?topic=openshift-ai-addon-install&interface=ui#ai-ops-rec)
+
+* [Step 2: Install the add-on in the UI](/docs/openshift?topic=openshift-ai-addon-install&interface=ui#ai-install-ui)
+
+* [OpenShift AI customization options](/docs/openshift?topic=openshift-ai-addon-install&interface=ui#custom-options)
+
+* [Customizations for recommended operators](/docs/openshift?topic=openshift-ai-addon-install&interface=ui#rec-ops-custom)
+
+* [What's next?](/docs/openshift?topic=openshift-ai-addon-install&interface=ui#ai-addon-install-next)
+
+[Managing the Red Hat OpenShift AI add-on](/docs/openshift?topic=openshift-ai-addon-manage#ai-addon-manage)
+
+* [Updating the IBM-managed OpenShift AI operator](/docs/openshift?topic=openshift-ai-addon-manage#ai-addon-update)
+
+    * [Major updates](/docs/openshift?topic=openshift-ai-addon-manage#ai-addon-update-major)
+
+    * [Minor and patch updates](/docs/openshift?topic=openshift-ai-addon-manage#ai-addon-update-minorpatch)
+
+    * [Applying the update](/docs/openshift?topic=openshift-ai-addon-manage#ai-addon-update-apply)
+
+    * [Approving the install plan and applying the update](/docs/openshift?topic=openshift-ai-addon-manage#ai-addon-update-approve)
+
+* [Disabling the add-on](/docs/openshift?topic=openshift-ai-addon-manage#ai-addon-disable)
+
+* [Getting support for the OpenShift AI add-on](/docs/openshift?topic=openshift-ai-addon-manage#ai-addon-support)
+
+
 ## Enabling the IBM Storage Operator cluster add-on
 {: #sitemap_enabling_the_ibm_storage_operator_cluster_add-on}
 
@@ -6966,6 +7031,12 @@ subcollection: openshift
 * [`vpc-file-csi-driver` 1.2](/docs/openshift?topic=openshift-supported-cluster-addon-versions#vpc-file-csi-driver-1.2)
 
 * [`vpc-file-csi-driver` 2.0](/docs/openshift?topic=openshift-supported-cluster-addon-versions#vpc-file-csi-driver-2.0)
+
+[Openshift AI add-on version change log](/docs/openshift?topic=openshift-cl-add-ons-openshift-ai#cl-add-ons-openshift-ai)
+
+* [Version 416.0.0](/docs/openshift?topic=openshift-cl-add-ons-openshift-ai#cl-add-ons-openshift-ai-416.0.0)
+
+    * [416.0.0_424, released 14 January 2025](/docs/openshift?topic=openshift-cl-add-ons-openshift-ai#cl-add-ons-openshift-ai-41600_424)
 
 [Cluster autoscaler add-on change log](/docs/openshift?topic=openshift-ca_changelog#ca_changelog)
 

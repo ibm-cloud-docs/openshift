@@ -28,6 +28,17 @@ Looking for {{site.data.keyword.cloud_notm}} status, platform announcements, sec
 ## January 2025
 {: #openshift-jan25}
 
+
+
+### 21 January 2024
+{: #openshift-jan2125}
+{: release-note}
+
+New! Red Hat OpenShift AI add-on
+:   Red Hat OpenShift AI is a flexible, scalable artificial intelligence and machine learning platform that enables enterprises to create and deliver AI-enabled applications at scale across hybrid cloud environments. For more information, see [About the Red Hat OpenShift AI add-on](/docs/openshift?topic=openshift-ai-addon-about).
+
+
+
 ### 13 January 2024
 {: #openshift-jan1325}
 {: release-note}

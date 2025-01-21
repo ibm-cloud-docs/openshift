@@ -230,6 +230,12 @@ toc:
           - satellite_expose_apps.md
           - edge-workload-prevent.md
           - edge-sysdig.md
+      - topicgroup:
+          label: Setting up OpenShift AI
+          topics:
+          - openshift-ai-addon-overview.md
+          - openshift-ai-addon-install.md
+          - openshift-ai-addon-manage.md
       - storage-operator.md
       - storage-block.md
       - topicgroup:
@@ -396,6 +402,7 @@ toc:
           label: Add-on version history
           topics:
           - add-on-versions.md 
+          - cl-add-ons-openshift-ai.md
           - versions-autoscaler.md
           - versions-vpc-block-addon.md
           - versions-vpc-file-addon.md
