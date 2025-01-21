@@ -173,7 +173,6 @@ toc:
           topics:
           - logging.md
           - monitoring.md
-          - at-events.md
           - openshift_health_log.md
           - openshift_health_monitor.md
           - health-audit.md
@@ -231,6 +230,12 @@ toc:
           - satellite_expose_apps.md
           - edge-workload-prevent.md
           - edge-sysdig.md
+      - topicgroup:
+          label: Setting up OpenShift AI
+          topics:
+          - openshift-ai-addon-overview.md
+          - openshift-ai-addon-install.md
+          - openshift-ai-addon-manage.md
       - storage-operator.md
       - storage-block.md
       - topicgroup:
@@ -397,6 +402,7 @@ toc:
           label: Add-on version history
           topics:
           - add-on-versions.md 
+          - cl-add-ons-openshift-ai.md
           - versions-autoscaler.md
           - versions-vpc-block-addon.md
           - versions-vpc-file-addon.md
@@ -694,6 +700,7 @@ toc:
               - ts-storage-object-transport-ep.md
               - ts-storage-object-transport-addon.md
               - ts-storage-cos-plugin-dep.md
+              - ts-storage-cos-csi-addon.md
           - topicgroup:
               label: Portworx Storage
               topics:
