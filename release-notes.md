@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2025
-lastupdated: "2025-01-13"
+lastupdated: "2025-01-21"
 
 
 keywords: kubernetes, release notes, openshift, {{site.data.keyword.openshiftlong_notm}}
@@ -3010,7 +3010,7 @@ Ingress ALB change log updates
 
 
 Experimental: Installing OpenShift Data Foundation on private only, air-gapped clusters
-:   For more information, see [Installing OpenShift Data Foundation on a private cluster](/docs/openshift?topic=openshift-openshift-storage-odf-private).
+:   For more information, see [Understanding OpenShift Data Foundation](/docs/openshift?topic=openshift-openshift-ocs-storage-prep).
 
 
 

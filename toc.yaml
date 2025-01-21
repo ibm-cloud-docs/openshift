@@ -173,7 +173,6 @@ toc:
           topics:
           - logging.md
           - monitoring.md
-          - at-events.md
           - openshift_health_log.md
           - openshift_health_monitor.md
           - health-audit.md
