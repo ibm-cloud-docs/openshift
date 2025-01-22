@@ -3,7 +3,7 @@
 copyright:
   years: 2024, 2025
 
-lastupdated: "2025-01-21"
+lastupdated: "2025-01-22"
 
 
 keywords: change log, version history, Openshift AI
@@ -39,4 +39,3 @@ Review the version history for Openshift AI.
 - Optionally installs NFD operator based on latest version available for channel `stable`.
 - Optionally installs NVIDIA GPU operator based on latest version available for channel `stable`.
 - Optionally installs Pipeline operator based on latest version available for channel `latest`.
-

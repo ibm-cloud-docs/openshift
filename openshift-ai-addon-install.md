@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2024, 2025
-lastupdated: "2025-01-21"
+lastupdated: "2025-01-22"
 
 
 keywords: openshift, {{site.data.keyword.openshiftlong_notm}}, ai, add-on
@@ -88,7 +88,7 @@ Some of these operators might include additional customizations that you can cho
 {: #ai-install-cli}
 {: cli}
 
-Run the command to install the Red Hat OpenShift AI add-on. Specify [customizations](#ai-ops-rec-cli) with the format `--parameter PARAM=VALUE`. For example, to include the Data Science Pipelines option, specify `--parameter oaiDataSciencePipelines=Managed`.
+Run the command to install the Red Hat OpenShift AI add-on. Specify [customizations](/docs/openshift?topic=openshift-ai-addon-install&interface=cli#ai-ops-rec-cli) with the format `--parameter PARAM=VALUE`. For example, to include the Data Science Pipelines option, specify `--parameter oaiDataSciencePipelines=Managed`.
 
 To include the recommended operators when installing the add-on with the CLI, specify the following options when you run the installation command.
 - OpenShift Pipelines: `--parameter pipelineEnabled=true`
@@ -209,4 +209,3 @@ To include a customization for an operator when you [install the OpenShift AI ad
 
 - See information on [managing the OpenShift AI add-on](/docs/openshift?topic=openshift-ai-addon-manage).
 - Make sure you understand the [update process](/docs/openshift?topic=openshift-ai-addon-manage#ai-addon-update) for the OpenShift AI add-on.
-
