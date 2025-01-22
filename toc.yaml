@@ -42,7 +42,6 @@ toc:
       - openshift_tutorial.md
       - openshift_tutorial_vpc.md
       - tutorial-two-node-vpc.md
-      - openshift_datascience.md
   - navgroup: 
       id: howto
       topics:

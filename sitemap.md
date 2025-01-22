@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2025
-lastupdated: "2025-01-21"
+lastupdated: "2025-01-22"
 
 
 keywords: openshift
@@ -2063,27 +2063,6 @@ subcollection: openshift
 * [Access your OpenShift cluster](/docs/openshift?topic=openshift-tutorial-two-node#basic-access-cluster)
 
 * [Optional: Clean up the resources](/docs/openshift?topic=openshift-tutorial-two-node#basic-cleanup)
-
-
-## Installing Red Hat OpenShift AI
-{: #sitemap_installing_red_hat_openshift_ai}
-
-
-[Installing Red Hat OpenShift AI](/docs/openshift?topic=openshift-datascience#datascience)
-
-* [Before you begin](/docs/openshift?topic=openshift-datascience#datascience_before)
-
-* [Optional. Install the Red Hat OpenShift Pipelines Operator](/docs/openshift?topic=openshift-datascience#datascience_pipelines)
-
-* [Install the OpenShift AI Operator](/docs/openshift?topic=openshift-datascience#datascience_install)
-
-* [Install the Node Feature Discovery Operator](/docs/openshift?topic=openshift-datascience#datascience_node_feature_discovery)
-
-* [Install the NVIDIA GPU Operator](/docs/openshift?topic=openshift-datascience#datascience_nvidia_gpu)
-
-* [Check installed operators](/docs/openshift?topic=openshift-datascience#datascience_check)
-
-* [What's next?](/docs/openshift?topic=openshift-datascience#datascience_next)
 
 
 ## Planning to create clusters
@@ -7021,6 +7000,8 @@ subcollection: openshift
 * [`openshift-data-foundation` 4.15.0](/docs/openshift?topic=openshift-supported-cluster-addon-versions#openshift-data-foundation-4.15.0)
 
 * [`openshift-data-foundation` 4.16.0](/docs/openshift?topic=openshift-supported-cluster-addon-versions#openshift-data-foundation-4.16.0)
+
+* [`openshift-data-foundation` 4.17.0](/docs/openshift?topic=openshift-supported-cluster-addon-versions#openshift-data-foundation-4.17.0)
 
 * [`static-route` 1.0.0](/docs/openshift?topic=openshift-supported-cluster-addon-versions#static-route-1.0.0)
 
