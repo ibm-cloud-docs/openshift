@@ -1,8 +1,8 @@
 ---
 
 copyright: 
-  years: 2023, 2024
-lastupdated: "2024-03-27"
+  years: 2023, 2025
+lastupdated: "2025-01-23"
 
 
 keywords: openshift, {{site.data.keyword.openshiftlong_notm}}, kubernetes, red hat, encrypt, security, kms, root key, crk
@@ -84,7 +84,7 @@ Setting up cross-account encryption by using a KMS in a different account is sup
 
 1. Optional: [Verify that your secrets are encrypted](#encryption-secrets-verify).
 
-Do not delete root keys in your KMS instance, even if you rotate to use a new key. If you delete a root key that a cluster uses, the cluster becomes unusable, loses all its data, and can't be recovered. When you rotate a root key, you can't reuse a previous root key for the same cluster. Similarly, if you disable a root key, operations that rely on reading secrets fail. Unlike deleting a root key, however, you can reenable a disabled key to make your cluster usable again.
+Key enablement, which is initiated through {{site.data.keyword.redhat_openshift_notm}}, means that the encryption switches to a new key from the KMS provider. Key rotation, which is initiated through the KMS provider, means the encryption switches to a new version of the existing key. Do not delete any root key in your KMS instance if it is rotated from the KMS provider. A root key can be deleted only when it is no longer in use. For example, after you enable a new key and verify that the cluster is not using the old key anymore, you can delete the old key. If you delete a root key that a cluster uses, the cluster becomes unusable, loses all its data, and can't be recovered. When you rotate a root key, you can't reuse a previous root key for the same cluster. Similarly, if you disable a root key, operations that rely on reading secrets fail. Unlike deleting a root key, however, you can re-enable a disabled key to make your cluster usable again.
 {: important}
 
 ## Enabling secret encryption from the console
@@ -121,7 +121,7 @@ You can enable a KMS provider, update the KMS provider instance, or update the r
 
 1. Optional: [Verify that your secrets are encrypted](#encryption-secrets-verify).
 
-Do not delete root keys in your KMS instance, even if you rotate to use a new key. If you delete a root key that a cluster uses, the cluster becomes unusable, loses all its data, and can't be recovered. When you rotate a root key, you can't reuse a previous root key for the same cluster. Similarly, if you disable a root key, operations that rely on reading secrets fail. Unlike deleting a root key, however, you can reenable a disabled key to make your cluster usable again.
+Key enablement, which is initiated through {{site.data.keyword.redhat_openshift_notm}}, means the encryption switches to a new key from the KMS provider. Key rotation, which is initiated through the KMS provider, means the encryption switches to a new version of the existing key. Do not delete any root key in your KMS instance if it is rotated from the KMS provider. A root key can be deleted only when it is no longer in use. For example, after you enable a new key and verify that the cluster is not using the old key anymore, you can delete the old key. If you delete a root key that a cluster uses, the cluster becomes unusable, loses all its data, and can't be recovered. When you rotate a root key, you can't reuse a previous root key for the same cluster. Similarly, if you disable a root key, operations that rely on reading secrets fail. Unlike deleting a root key, however, you can re-enable a disabled key to make your cluster usable again.
 {: important}
 
 ## Rotating the root key for your cluster
@@ -180,4 +180,3 @@ Make sure that you have the {{site.data.keyword.cloud_notm}} IAM **Administrator
     {: pre}
 
 1. In your KMS instance, enable the root key so that your cluster returns to a **normal** state and becomes usable again.
-
