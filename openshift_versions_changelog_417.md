@@ -3,7 +3,7 @@
 copyright:
   years: 2024, 2025
 
-lastupdated: "2025-01-22"
+lastupdated: "2025-01-23"
 
 
 keywords: change log, version history, 4.17_openshift
@@ -40,6 +40,26 @@ Master patch updates are applied automatically. Worker node patch updates can be
 
 
 
+### Change log for master fix pack 4.17.10_1522_openshift, released 22 January 2025
+{: #41710_1522_openshift_M}
+
+The following table shows the changes that are in the master fix pack 4.17.10_1522_openshift. Master patch updates are applied automatically. 
+
+
+
+| Component | Previous | Current | Description |
+| --- | --- | --- | --- |
+| Cluster health image | v1.6.3 | v1.6.4 | New version contains updates and security fixes. |
+| etcd | v3.5.16 | v3.5.17 | See the [etcd release notes](https://github.com/coreos/etcd/releases/v3.5.17){: external}. |
+| {{site.data.keyword.cloud_notm}} Controller Manager | v1.30.6-4 | v1.30.8-3 | New version contains updates and security fixes. |
+| {{site.data.keyword.cloud_notm}} RBAC Operator | 743ed58 | cb4f333 | New version contains updates and security fixes. |
+| Key Management Service provider | v2.10.8 | v2.10.9 | New version contains updates and security fixes. |
+| Portieris admission controller | v0.13.21 | v0.13.23 | See the [Portieris admission controller release notes](https://github.com/{{site.data.keyword.IBM_notm}}/portieris/releases/tag/v0.13.23){: external}. |
+| {{site.data.keyword.openshiftlong_notm}}. | 4.17.5 | 4.17.10 | See the [{{site.data.keyword.openshiftlong_notm}} release notes](https://docs.openshift.com/container-platform/4.17/release_notes/ocp-4-17-release-notes.html#ocp-4-17-10){: external}. |
+| {{site.data.keyword.openshiftlong_notm}} Control Plane Operator, Metrics Server, and toolkit | 4.17.0+20241112 | 4.17.0+20250102 | See the [{{site.data.keyword.openshiftlong_notm}} toolkit release notes](https://github.com/openshift/ibm-roks-toolkit/releases/tag/v4.17.0+20250102){: external}. |
+{: caption="Changes since version 4.17.5_1517_openshift" caption-side="bottom"}
+
+
 ### Worker node fix pack 4.17.11_1521_openshift, released 13 January 2025
 {: #cl-boms-41711_1521_openshift_W}
 
@@ -54,8 +74,6 @@ The following table shows the components included in the worker node fix pack 4.
 |HAProxy|14daa781a66ca5ed5754656ce53c3cca4af580b5|N/A|
 {: caption="Components in version 4.17.11_1521_openshift." caption-side="bottom"}
 {: #cl-boms-41711_1521_openshift_W-component-table}
-
-
 
 
 ### Worker node fix pack 4.17.9_1520_openshift, released 30 December 2024

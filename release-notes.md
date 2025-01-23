@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2025
-lastupdated: "2025-01-21"
+lastupdated: "2025-01-23"
 
 
 keywords: kubernetes, release notes, openshift, {{site.data.keyword.openshiftlong_notm}}
@@ -29,8 +29,28 @@ Looking for {{site.data.keyword.cloud_notm}} status, platform announcements, sec
 {: #openshift-jan25}
 
 
+### 23 January 2025
+{: #openshift-jan2325}
+{: release-note}
 
-### 21 January 2024
+
+
+
+
+{{site.data.keyword.openshiftlong_notm}} master fix packs.
+:   Master fix packs are applied automatically over the course of several days. You can choose to use the [`ibmcloud ks cluster master update`](/docs/openshift?topic=openshift-kubernetes-service-cli#cs_cluster_update) command yourself without waiting for the update automation to apply the patch. Review the following change logs for your cluster version.
+:   [Version 4.17 change log](/docs/openshift?topic=openshift-openshift_changelog_417)
+:   [Version 4.16 change log](/docs/openshift?topic=openshift-openshift_changelog_416)
+:   [Version 4.15 change log](/docs/openshift?topic=openshift-openshift_changelog_415)
+:   [Version 4.14 change log](/docs/openshift?topic=openshift-openshift_changelog_414)
+:   [Version 4.13 change log](/docs/openshift?topic=openshift-openshift_changelog_413)
+:   [Version 4.12 change log](/docs/openshift?topic=openshift-openshift_changelog_412)
+
+
+
+
+
+### 21 January 2025
 {: #openshift-jan2125}
 {: release-note}
 
@@ -39,7 +59,7 @@ New! Red Hat OpenShift AI add-on
 
 
 
-### 13 January 2024
+### 13 January 2025
 {: #openshift-jan1325}
 {: release-note}
 
@@ -73,7 +93,7 @@ Portworx now supports {{site.data.keyword.openshiftlong_notm}} version 4.16 and 
 
 
 
-### 06 January 2024
+### 06 January 2025
 {: #openshift-jan0625}
 {: release-note}
 
@@ -3021,7 +3041,7 @@ Ingress ALB change log updates
 
 
 Experimental: Installing OpenShift Data Foundation on private only, air-gapped clusters
-:   For more information, see [Understanding OpenShift Data Foundation](/docs/openshift?topic=openshift-openshift-ocs-storage-prep).
+:   For more information, see [Understanding OpenShift Data Foundation](/docs/openshift?topic=openshift-ocs-storage-prep).
 
 
 

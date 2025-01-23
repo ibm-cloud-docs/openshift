@@ -3,7 +3,7 @@
 copyright:
   years: 2024, 2025
 
-lastupdated: "2025-01-22"
+lastupdated: "2025-01-23"
 
 
 keywords: change log, version history, Openshift AI
@@ -29,7 +29,7 @@ Review the version history for Openshift AI.
 {: #cl-add-ons-openshift-ai-416.0.0}
 
 
-### 416.0.0_424, released 14 January 2025
+### 416.0.0_424, released 21 January 2025
 {: #cl-add-ons-openshift-ai-41600_424}
 
 [Default version]{: tag-green}

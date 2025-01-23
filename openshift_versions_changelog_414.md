@@ -3,7 +3,7 @@
 copyright:
   years: 2024, 2025
 
-lastupdated: "2025-01-22"
+lastupdated: "2025-01-23"
 
 
 keywords: change log, version history, 4.14_openshift
@@ -40,6 +40,27 @@ Master patch updates are applied automatically. Worker node patch updates can be
 
 
 
+### Change log for master fix pack 4.14.43_1595_openshift, released 22 January 2025
+{: #41443_1595_openshift_M}
+
+The following table shows the changes that are in the master fix pack 4.14.43_1595_openshift. Master patch updates are applied automatically. 
+
+
+
+| Component | Previous | Current | Description |
+| --- | --- | --- | --- |
+| Cluster health image | v1.5.9 | v1.5.10 | New version contains updates and security fixes. |
+| etcd | v3.5.16 | v3.5.17 | See the [etcd release notes](https://github.com/coreos/etcd/releases/v3.5.17){: external}. |
+| {{site.data.keyword.IBM_notm}} Calico extension | 1607 | 1619 | New version contains security fixes. |
+| {{site.data.keyword.cloud_notm}} RBAC Operator | 743ed58 | cb4f333 | New version contains updates and security fixes. |
+| {{site.data.keyword.cloud_notm}} Controller Manager | v1.27.16-15 | v1.27.16-21 | New version contains updates and security fixes. |
+| Key Management Service provider | v2.8.17 | v2.8.18 | New version contains updates and security fixes. |
+| Portieris admission controller | v0.13.21 | v0.13.23 | See the [Portieris admission controller release notes](https://github.com/{{site.data.keyword.IBM_notm}}/portieris/releases/tag/v0.13.23){: external}. |
+| {{site.data.keyword.openshiftlong_notm}}. | 4.14.40 | 4.14.43 | See the [{{site.data.keyword.openshiftlong_notm}} release notes](https://docs.openshift.com/container-platform/4.14/release_notes/ocp-4-14-release-notes.html#ocp-4-14-43){: external}. |
+| {{site.data.keyword.openshiftlong_notm}} Control Plane Operator, Metrics Server, and toolkit | 4.14.0+20241107 | 4.14.0+20250102 | See the [{{site.data.keyword.openshiftlong_notm}} toolkit release notes](https://github.com/openshift/ibm-roks-toolkit/releases/tag/v4.14.0+20250102){: external}. |
+{: caption="Changes since version 4.14.40_1590_openshift" caption-side="bottom"}
+
+
 ### Worker node fix pack 4.14.44_1594_openshift, released 13 January 2025
 {: #cl-boms-41444_1594_openshift_W}
 
@@ -53,10 +74,6 @@ The following table shows the components included in the worker node fix pack 4.
 |HAProxy|14daa781a66ca5ed5754656ce53c3cca4af580b5|N/A|
 {: caption="Components in version 4.14.44_1594_openshift." caption-side="bottom"}
 {: #cl-boms-41444_1594_openshift_W-component-table}
-
-
-
-
 
 
 ### Worker node fix pack 4.14.43_1593_openshift, released 30 December 2024
