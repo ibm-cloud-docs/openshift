@@ -275,6 +275,10 @@ subcollection: openshift
 
 * [January 2025](/docs/openshift?topic=openshift-openshift-relnotes#openshift-jan25)
 
+    * [24 January 2025](/docs/openshift?topic=openshift-openshift-relnotes#openshift-jan2425)
+
+        * {{site.data.keyword.cos_full_notm}} plug-in updates.
+
     * [23 January 2025](/docs/openshift?topic=openshift-openshift-relnotes#openshift-jan2325)
 
         * {{site.data.keyword.openshiftlong_notm}} master fix packs.
@@ -7498,6 +7502,8 @@ subcollection: openshift
     * [Change log for version 1.0, released 16 May 2023](/docs/openshift?topic=openshift-versions-vpc-file-addon#1.0_is_file_relnote)
 
 [{{site.data.keyword.cos_full_notm}} plug-in](/docs/openshift?topic=openshift-cos_plugin_changelog#cos_plugin_changelog)
+
+* [Change log for version 2.2.34, released 24 January 2025](/docs/openshift?topic=openshift-cos_plugin_changelog#02234_object_plugin)
 
 * [Change log for version 2.2.33, released 21 November 2024](/docs/openshift?topic=openshift-cos_plugin_changelog#02233_object_plugin)
 
