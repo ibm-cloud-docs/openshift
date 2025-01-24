@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2025
-lastupdated: "2025-01-23"
+lastupdated: "2025-01-24"
 
 
 keywords: openshift
@@ -274,6 +274,10 @@ subcollection: openshift
 [Release notes](/docs/openshift?topic=openshift-openshift-relnotes#openshift-relnotes)
 
 * [January 2025](/docs/openshift?topic=openshift-openshift-relnotes#openshift-jan25)
+
+    * [24 January 2025](/docs/openshift?topic=openshift-openshift-relnotes#openshift-jan2425)
+
+        * {{site.data.keyword.cos_full_notm}} plug-in updates.
 
     * [23 January 2025](/docs/openshift?topic=openshift-openshift-relnotes#openshift-jan2325)
 
@@ -2411,16 +2415,6 @@ subcollection: openshift
     * [Setting up admission controller webhooks](/docs/openshift?topic=openshift-access_webhooks#configure-webhooks-122)
 
 * [I need help with a broken webhook. What can I do?](/docs/openshift?topic=openshift-access_webhooks#access_webhooks-help)
-
-[Setting the OAuth access type for VPC clusters](/docs/openshift?topic=openshift-setting-oauth-access-type#setting-oauth-access-type)
-
-* [Setting the OAuth access type for a cluster from the CLI](/docs/openshift?topic=openshift-setting-oauth-access-type&interface=cli#oauth-access-set-cli)
-
-* [Getting the OAuth access type for a cluster from the CLI](/docs/openshift?topic=openshift-setting-oauth-access-type&interface=cli#oauth-access-get-cli)
-
-* [Setting the OAuth access type for a cluster from the API](/docs/openshift?topic=openshift-setting-oauth-access-type&interface=api#oauth-access-set-api)
-
-* [Getting the OAuth access type for a cluster from the API](/docs/openshift?topic=openshift-setting-oauth-access-type&interface=api#oauth-access-get-api)
 
 [Accessing private clusters](/docs/openshift?topic=openshift-cluster-access-wireguard#cluster-access-wireguard)
 
@@ -7508,6 +7502,8 @@ subcollection: openshift
     * [Change log for version 1.0, released 16 May 2023](/docs/openshift?topic=openshift-versions-vpc-file-addon#1.0_is_file_relnote)
 
 [{{site.data.keyword.cos_full_notm}} plug-in](/docs/openshift?topic=openshift-cos_plugin_changelog#cos_plugin_changelog)
+
+* [Change log for version 2.2.34, released 24 January 2025](/docs/openshift?topic=openshift-cos_plugin_changelog#02234_object_plugin)
 
 * [Change log for version 2.2.33, released 21 November 2024](/docs/openshift?topic=openshift-cos_plugin_changelog#02233_object_plugin)
 
