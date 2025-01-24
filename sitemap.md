@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2025
-lastupdated: "2025-01-23"
+lastupdated: "2025-01-24"
 
 
 keywords: openshift
@@ -2411,16 +2411,6 @@ subcollection: openshift
     * [Setting up admission controller webhooks](/docs/openshift?topic=openshift-access_webhooks#configure-webhooks-122)
 
 * [I need help with a broken webhook. What can I do?](/docs/openshift?topic=openshift-access_webhooks#access_webhooks-help)
-
-[Setting the OAuth access type for VPC clusters](/docs/openshift?topic=openshift-setting-oauth-access-type#setting-oauth-access-type)
-
-* [Setting the OAuth access type for a cluster from the CLI](/docs/openshift?topic=openshift-setting-oauth-access-type&interface=cli#oauth-access-set-cli)
-
-* [Getting the OAuth access type for a cluster from the CLI](/docs/openshift?topic=openshift-setting-oauth-access-type&interface=cli#oauth-access-get-cli)
-
-* [Setting the OAuth access type for a cluster from the API](/docs/openshift?topic=openshift-setting-oauth-access-type&interface=api#oauth-access-set-api)
-
-* [Getting the OAuth access type for a cluster from the API](/docs/openshift?topic=openshift-setting-oauth-access-type&interface=api#oauth-access-get-api)
 
 [Accessing private clusters](/docs/openshift?topic=openshift-cluster-access-wireguard#cluster-access-wireguard)
 

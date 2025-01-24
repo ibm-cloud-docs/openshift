@@ -78,7 +78,6 @@ toc:
           topics:
           - openshift_cluster_access.md
           - cluster-access-admission-control.md
-          - access-type-set.md
           - cluster-access-wireguard.md
       - topicgroup:
           label: Adding worker nodes
@@ -468,7 +467,7 @@ toc:
       - locations.md
       - openshift_integrations_overview.md
       - service-settings.md
-      - include: ../containers/service-dependency.md
+      - service-dependency.md
       - topicgroup:
           label: Worker node flavors
           topics:
