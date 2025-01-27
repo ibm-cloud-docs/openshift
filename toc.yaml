@@ -548,6 +548,7 @@ toc:
               - ts-worker-ssh-fail.md
               - ts-openshift-marketplace.md
               - ts-cloud-pak-ds.md
+              - ts-workerpool-license-entitlement.md
           - topicgroup:
               label: Permissions and credentials
               topics:
