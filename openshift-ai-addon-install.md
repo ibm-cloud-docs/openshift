@@ -75,11 +75,11 @@ You are responsible for managing these operators, including but not limited to u
 
 The following operators are recommended. 
 - [OpenShift Pipelines](https://docs.openshift.com/pipelines/1.16/about/about-pipelines.html){: external}
-  - [Installing OpenShift Pipelines](https://docs.openshift.com/pipelines/1.16/install_config/installing-pipelines.html){: external}
+    - [Installing OpenShift Pipelines](https://docs.openshift.com/pipelines/1.16/install_config/installing-pipelines.html){: external}
 - [Node Feature Discovery](https://docs.openshift.com/container-platform/4.16/hardware_enablement/psap-node-feature-discovery-operator.html){: external}
-  - [Installing the Node Feature Discovery Operator](https://docs.openshift.com/container-platform/4.16/hardware_enablement/psap-node-feature-discovery-operator.html#installing-the-node-feature-discovery-operator_psap-node-feature-discovery-operator){: external}
+    - [Installing the Node Feature Discovery Operator](https://docs.openshift.com/container-platform/4.16/hardware_enablement/psap-node-feature-discovery-operator.html#installing-the-node-feature-discovery-operator_psap-node-feature-discovery-operator){: external}
 - [NVIDIA GPU Operator](https://docs.nvidia.com/datacenter/cloud-native/gpu-operator/latest/index.html){: external}
-  - [Installing the NVIDIA GPU Operator](https://docs.nvidia.com/datacenter/cloud-native/gpu-operator/latest/getting-started.html){: external}
+    - [Installing the NVIDIA GPU Operator](https://docs.nvidia.com/datacenter/cloud-native/gpu-operator/latest/getting-started.html){: external}
 
 
 Some of these operators might include additional customizations that you can choose to specify when you install the add-on. Review the list of [customizations available for the recommended operators](/docs/openshift?topic=openshift-ai-addon-install&interface=cli#ai-ops-rec-cli).
@@ -121,11 +121,11 @@ You are responsible for managing these operators, including but not limited to u
 
 The following operators are recommended. 
 - [OpenShift Pipelines](https://docs.openshift.com/pipelines/1.16/about/about-pipelines.html){: external}
-  - [Installing OpenShift Pipelines](https://docs.openshift.com/pipelines/1.16/install_config/installing-pipelines.html){: external}
+    - [Installing OpenShift Pipelines](https://docs.openshift.com/pipelines/1.16/install_config/installing-pipelines.html){: external}
 - [Node Feature Discovery](https://docs.openshift.com/container-platform/4.16/hardware_enablement/psap-node-feature-discovery-operator.html){: external}
-  - [Installing the Node Feature Discovery Operator](https://docs.openshift.com/container-platform/4.16/hardware_enablement/psap-node-feature-discovery-operator.html#installing-the-node-feature-discovery-operator_psap-node-feature-discovery-operator){: external}
+    - [Installing the Node Feature Discovery Operator](https://docs.openshift.com/container-platform/4.16/hardware_enablement/psap-node-feature-discovery-operator.html#installing-the-node-feature-discovery-operator_psap-node-feature-discovery-operator){: external}
 - [NVIDIA GPU Operator](https://docs.nvidia.com/datacenter/cloud-native/gpu-operator/latest/index.html){: external}
-  - [Installing the NVIDIA GPU Operator](https://docs.nvidia.com/datacenter/cloud-native/gpu-operator/latest/getting-started.html){: external}
+    - [Installing the NVIDIA GPU Operator](https://docs.nvidia.com/datacenter/cloud-native/gpu-operator/latest/getting-started.html){: external}
 
 
 Some of these operators might include additional customizations that you can choose to specify when you install the add-on. Review the list of [customizations available for the recommended operators](/docs/openshift?topic=openshift-ai-addon-install&interface=cli#ai-ops-rec-cli).
@@ -144,8 +144,8 @@ Install the Red Hat OpenShift AI add-on with the UI.
 
 4. In the **Additional recommended operators** section, click to expand each operator and select the customization options you want to include. These additional operators and customizations are recommended for certain Red Hat OpenShift AI features. You can choose to install these options later by using OperatorHub or by following the operator-specific installation steps. 
 
-  You are responsible for managing these operators, including but not limited to updating, monitoring, recovery, and re-installation.
-  {: important}
+    You are responsible for managing these operators, including but not limited to updating, monitoring, recovery, and re-installation.
+    {: important}
 
 5. Click **Install**. 
 
