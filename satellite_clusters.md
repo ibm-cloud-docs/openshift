@@ -1,8 +1,8 @@
 ---
 
 copyright:
-  years: 2020, 2024
-lastupdated: "2024-10-07"
+  years: 2020, 2025
+lastupdated: "2025-01-28"
 
 
 keywords: openshift, satellite, distributed cloud, on-prem, hybrid
@@ -139,7 +139,7 @@ Before you begin, [install the {{site.data.keyword.satelliteshort}} CLI plug-in]
     - To apply your Cloud Pak entitlement, make sure to include the `--entitlement ocp_entitled` option.
     
     `--operating-system REDHAT_8_64|RHCOS`
-:   Optional. The operating system of the worker nodes in your cluster. For a list of available operating sysems by cluster version, see the [{{site.data.keyword.openshiftshort}} version information](/docs/openshift?topic=openshift-openshift_versions). If no option is specified, the default operating system that corresponds to the cluster version is used.
+:   Optional. The operating system of the worker nodes in your cluster. For a list of available operating systems by cluster version, see the [{{site.data.keyword.openshiftshort}} version information](/docs/openshift?topic=openshift-openshift_versions). If no option is specified, the default operating system that corresponds to the cluster version is used.
 
     
     Example `cluster create` command.

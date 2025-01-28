@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2025
-lastupdated: "2025-01-14"
+lastupdated: "2025-01-28"
 
 
 keywords: openshift, cli reference, kubernetes cli, openshift cli, {{site.data.keyword.openshiftlong_notm}}
@@ -755,7 +755,7 @@ Minimum required permissions
 
 
 `--operating-system REDHAT_8_64|RHCOS`
-:   Optional. The operating system of the worker nodes in your cluster. For a list of available operating sysems by cluster version, see the [{{site.data.keyword.openshiftshort}} version information](/docs/openshift?topic=openshift-openshift_versions). If no option is specified, the default operating system that corresponds to the cluster version is used.
+:   Optional. The operating system of the worker nodes in your cluster. For a list of available operating systems by cluster version, see the [{{site.data.keyword.openshiftshort}} version information](/docs/openshift?topic=openshift-openshift_versions). If no option is specified, the default operating system that corresponds to the cluster version is used.
 
 `--version MAJOR.MINOR.PATCH`
 :    Optional: The Kubernetes version for the cluster master node. When the version is not specified, the cluster is created with the default of supported Kubernetes versions. To see available versions, run `ibmcloud oc versions`.
@@ -912,7 +912,7 @@ Minimum required permissions
     {: important}
 
 `--operating-system REDHAT_8_64|RHCOS`
-:   Optional. The operating system of the worker nodes in your cluster. For a list of available operating sysems by cluster version, see the [{{site.data.keyword.openshiftshort}} version information](/docs/openshift?topic=openshift-openshift_versions). If no option is specified, the default operating system that corresponds to the cluster version is used.
+:   Optional. The operating system of the worker nodes in your cluster. For a list of available operating systems by cluster version, see the [{{site.data.keyword.openshiftshort}} version information](/docs/openshift?topic=openshift-openshift_versions). If no option is specified, the default operating system that corresponds to the cluster version is used.
 
 
 
@@ -2682,7 +2682,7 @@ Minimum required permissions
 
 
 `--operating-system REDHAT_8_64|RHCOS`
-:   Optional. The operating system of the worker nodes in your cluster. For a list of available operating sysems by cluster version, see the [{{site.data.keyword.openshiftshort}} version information](/docs/openshift?topic=openshift-openshift_versions). If no option is specified, the default operating system that corresponds to the cluster version is used.
+:   Optional. The operating system of the worker nodes in your cluster. For a list of available operating systems by cluster version, see the [{{site.data.keyword.openshiftshort}} version information](/docs/openshift?topic=openshift-openshift_versions). If no option is specified, the default operating system that corresponds to the cluster version is used.
 
 `-q`
 :    Optional: Do not show the message of the day or update reminders.
@@ -3157,7 +3157,7 @@ Minimum required permissions
 :    Optional: Apply key-value labels to each worker node in the worker pool. To specify multiple labels, use multiple options, such as `-l key1=value1 -l key2=value2`.
 
 `--operating-system REDHAT_8_64|RHCOS`
-:   Optional. The operating system of the worker nodes in your cluster. For a list of available operating sysems by cluster version, see the [{{site.data.keyword.openshiftshort}} version information](/docs/openshift?topic=openshift-openshift_versions). If no option is specified, the default operating system that corresponds to the cluster version is used.
+:   Optional. The operating system of the worker nodes in your cluster. For a list of available operating systems by cluster version, see the [{{site.data.keyword.openshiftshort}} version information](/docs/openshift?topic=openshift-openshift_versions). If no option is specified, the default operating system that corresponds to the cluster version is used.
 
 
 
@@ -3215,7 +3215,7 @@ Minimum required permissions
 :    Specify the number of worker nodes to create per zone in this worker pool. No worker nodes are created until you [add zones](#cli_zone-add-vpc-gen2) to the worker pool.
 
 `--operating-system REDHAT_8_64|RHCOS`
-:   Optional. The operating system of the worker nodes in your cluster. For a list of available operating sysems by cluster version, see the [{{site.data.keyword.openshiftshort}} version information](/docs/openshift?topic=openshift-openshift_versions). If no option is specified, the default operating system that corresponds to the cluster version is used.
+:   Optional. The operating system of the worker nodes in your cluster. For a list of available operating systems by cluster version, see the [{{site.data.keyword.openshiftshort}} version information](/docs/openshift?topic=openshift-openshift_versions). If no option is specified, the default operating system that corresponds to the cluster version is used.
 
 `--flavor FLAVOR`
 :    Choose a flavor for your worker nodes. You can deploy your worker nodes as virtual machines on shared or dedicated hardware. To see flavors that are available in a VPC zone, run `ibmcloud oc flavors --zone <vpc_zone> --provider vpc-gen2`.
@@ -8116,7 +8116,7 @@ ibmcloud oc cluster create satellite --location LOCATION --name NAME --version V
 :    Optional. Specify whether the cluster runs a single worker node or the default setup of three of worker nodes. To create a single-node cluster, specify `single-replica`. This option is only supported for {{site.data.keyword.openshiftlong_notm}} version 4.11 or later and requires that you specify a {{site.data.keyword.satelliteshort}} location with CoreOS enabled. **Note that single-node clusters lack high availability and are only recommended for specific circumstances. By provisioning a single-node cluster, you accept that you are more likely to experience downtime and disruptions in your workload.** 
 
 `--operating-system REDHAT_8_64|RHCOS`
-:   Optional. The operating system of the worker nodes in your cluster. For a list of available operating sysems by cluster version, see the [{{site.data.keyword.openshiftshort}} version information](/docs/openshift?topic=openshift-openshift_versions). If no option is specified, the default operating system that corresponds to the cluster version is used.
+:   Optional. The operating system of the worker nodes in your cluster. For a list of available operating systems by cluster version, see the [{{site.data.keyword.openshiftshort}} version information](/docs/openshift?topic=openshift-openshift_versions). If no option is specified, the default operating system that corresponds to the cluster version is used.
 
 `--pod-subnet SUBNET`
 :    Optional. All pods that are deployed to a worker node are assigned a private IP address in the 172.30.0.0/16 range by default. You can avoid subnet conflicts with the network that you use to connect to your location by specifying a custom subnet CIDR that provides the private IP addresses for your pods.
@@ -8380,7 +8380,7 @@ ibmcloud oc worker-pool create satellite --cluster CLUSTER --host-label LABEL [-
 :    Required. The name that you want to give your worker pool.
 
 `--operating-system REDHAT_8_64|RHCOS`
-:   Optional. The operating system of the worker nodes in your cluster. For a list of available operating sysems by cluster version, see the [{{site.data.keyword.openshiftshort}} version information](/docs/openshift?topic=openshift-openshift_versions). If no option is specified, the default operating system that corresponds to the cluster version is used.
+:   Optional. The operating system of the worker nodes in your cluster. For a list of available operating systems by cluster version, see the [{{site.data.keyword.openshiftshort}} version information](/docs/openshift?topic=openshift-openshift_versions). If no option is specified, the default operating system that corresponds to the cluster version is used.
 
 `--size-per-zone WORKERS_PER_ZONE`
 :    Required. The number of worker nodes to request in each zone. Ensure that you [attach enough hosts to your location](/docs/satellite?topic=satellite-attach-hosts) to be used as worker nodes. For example, if you enter `2` and then [add 2 more zones](/docs/openshift?topic=openshift-kubernetes-service-cli#cs_zone_add_sat) to this worker pool after you create it, ensure that at least 6 unassigned hosts are attached to your location so that they can be assigned as 2 worker nodes in each of the 3 zones in your worker pool.

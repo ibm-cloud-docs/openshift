@@ -3,7 +3,7 @@
 copyright:
   years: 2024, 2025
 
-lastupdated: "2025-01-24"
+lastupdated: "2025-01-28"
 
 
 keywords: change log, version history, 4.14_openshift
@@ -50,7 +50,7 @@ The following table shows the changes that are in the master fix pack 4.14.43_15
 | Component | Previous | Current | Description |
 | --- | --- | --- | --- |
 | Cluster health image | v1.5.9 | v1.5.10 | New version contains updates and security fixes. |
-| etcd | v3.5.16 | v3.5.17 | See the [etcd release notes](https://github.com/coreos/etcd/releases/v3.5.17){: external}. |
+| etcd | v3.5.16 | v3.5.17 | See the [etcd release notes](https://github.com/etcd-io/etcd/releases/v3.5.17){: external}. |
 | {{site.data.keyword.IBM_notm}} Calico extension | 1607 | 1619 | New version contains security fixes. |
 | {{site.data.keyword.cloud_notm}} RBAC Operator | 743ed58 | cb4f333 | New version contains updates and security fixes. |
 | {{site.data.keyword.cloud_notm}} Controller Manager | v1.27.16-15 | v1.27.16-21 | New version contains updates and security fixes. |

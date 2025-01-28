@@ -1,7 +1,7 @@
 ---
 copyright: 
   years: 2024, 2025
-lastupdated: "2025-01-21"
+lastupdated: "2025-01-28"
 
 
 keywords: openshift, {{site.data.keyword.openshiftlong_notm}}, ai, add-on
@@ -31,11 +31,11 @@ To avoid disruptions to your workload, make sure you understand [your responsibi
 These following operators are recommended for the OpenShift AI add-on. If they are not already installed on your cluster, you can choose to include them in the add-on installation. Or, you can install them at anytime by using OperatorHub or by following the operator-specific installation steps. 
 
 - [OpenShift Pipelines](https://docs.openshift.com/pipelines/1.16/about/about-pipelines.html){: external}
-  - [Installing OpenShift Pipelines](https://docs.openshift.com/pipelines/1.16/install_config/installing-pipelines.html){: external}
+    - [Installing OpenShift Pipelines](https://docs.openshift.com/pipelines/1.16/install_config/installing-pipelines.html){: external}
 - [Node Feature Discovery](https://docs.openshift.com/container-platform/4.16/hardware_enablement/psap-node-feature-discovery-operator.html){: external}
-  - [Installing the Node Feature Discovery Operator](https://docs.openshift.com/container-platform/4.16/hardware_enablement/psap-node-feature-discovery-operator.html#installing-the-node-feature-discovery-operator_psap-node-feature-discovery-operator){: external}
+    - [Installing the Node Feature Discovery Operator](https://docs.openshift.com/container-platform/4.16/hardware_enablement/psap-node-feature-discovery-operator.html#installing-the-node-feature-discovery-operator_psap-node-feature-discovery-operator){: external}
 - [NVIDIA GPU Operator](https://docs.nvidia.com/datacenter/cloud-native/gpu-operator/latest/index.html){: external}
-  - [Installing the NVIDIA GPU Operator](https://docs.nvidia.com/datacenter/cloud-native/gpu-operator/latest/getting-started.html){: external}
+    - [Installing the NVIDIA GPU Operator](https://docs.nvidia.com/datacenter/cloud-native/gpu-operator/latest/getting-started.html){: external}
 
 
 ## Who is responsible for managing the OpenShift AI add-on components and required operators?
@@ -99,5 +99,3 @@ You are responsible for updating all operators that are not managed by IBM. IBM 
 {: #ai-addon-ov-next}
 
 Follow the steps to [install the OpenShift AI add-on](/docs/openshift?topic=openshift-ai-addon-install) using the CLI or UI. 
-
-

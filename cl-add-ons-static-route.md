@@ -3,7 +3,7 @@
 copyright:
   years: 2024, 2025
 
-lastupdated: "2025-01-24"
+lastupdated: "2025-01-28"
 
 
 keywords: change log, version history, Static Route
