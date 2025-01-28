@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2025, 2025
-lastupdated: "2025-01-21"
+lastupdated: "2025-01-28"
 
 
 keywords: openshift
@@ -56,7 +56,7 @@ Follow these steps to gather gather details about the issue.
     ```
     {: pre}
   
-If any CSI driver pod is in `ImagePullBackOff` state, that means the image used for pods creation is not avaialble in the registry or there might be permission issues. Gather the output from the previous steps and, contact support. Open a [support case](/docs/account?topic=account-using-avatar). In the case details, be sure to include any relevant log files, error messages, or command outputs.
+If any CSI driver pod is in `ImagePullBackOff` state, that means the image used for pods creation is not available in the registry or there might be permission issues. Gather the output from the previous steps and, contact support. Open a [support case](/docs/account?topic=account-using-avatar). In the case details, be sure to include any relevant log files, error messages, or command outputs.
   
 If any CSI driver pod is in `CrashLoopBackOff` state, you can try the following steps:
 
@@ -111,4 +111,3 @@ If you need to contact support for further help, make sure you gather the follow
     oc logs ibm-object-csi-node-xxx -n ibm-object-csi-operator 
     ```
     {: pre}
-

@@ -2,11 +2,11 @@
 
 copyright:
   years: 2024
-lastupdated: "2025-01-24"
+lastupdated: "2025-01-28"
 
 keywords:
 
-subcollection: containers
+subcollection: openshift
 
 ---
 

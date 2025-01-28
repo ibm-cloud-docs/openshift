@@ -1,8 +1,8 @@
 ---
 
 copyright: 
-  years: 2014, 2024
-lastupdated: "2024-08-23"
+  years: 2014, 2025
+lastupdated: "2025-01-28"
 
 
 keywords: openshift, satellite, clusters, worker nodes, worker pools, delete
@@ -64,7 +64,7 @@ To create a worker pool in a {{site.data.keyword.satelliteshort}} cluster
     :   Add labels to match the requested capacity of the worker pool with the available hosts in the {{site.data.keyword.satelliteshort}} location. You can use just the `cpu=number` host label because {{site.data.keyword.satelliteshort}} hosts automatically get this host label. You can also add a custom host label like `env=prod`. **Important**: You can't update host labels on the worker pool later, so take care when assigning them. You can change the labels on {{site.data.keyword.satelliteshort}} hosts, if needed.
 
     `--operating-system REDHAT_8_64|RHCOS`
-:   Optional. The operating system of the worker nodes in your cluster. For a list of available operating sysems by cluster version, see the [{{site.data.keyword.openshiftshort}} version information](/docs/openshift?topic=openshift-openshift_versions). If no option is specified, the default operating system that corresponds to the cluster version is used.
+:   Optional. The operating system of the worker nodes in your cluster. For a list of available operating systems by cluster version, see the [{{site.data.keyword.openshiftshort}} version information](/docs/openshift?topic=openshift-openshift_versions). If no option is specified, the default operating system that corresponds to the cluster version is used.
 
     `--entitlement ENTITLEMENT`
     :   **Optional**: Set this option to `ocp_entitled` if you have a {{site.data.keyword.redhat_openshift_notm}} entitlement. When you specify the number of workers (`--workers`) and flavor (`--flavor`), make sure to specify only the number and size of worker nodes that you are entitled to use in [IBM Passport Advantage](https://www.ibm.com/software/passportadvantage/index.html){: external}.
@@ -136,6 +136,3 @@ You can add zones to a worker pool. Available {{site.data.keyword.satelliteshort
 {: #sat-pool-maintenance-remove}
 
 When you remove a worker pool, all the worker nodes in the cluster are removed. The hosts that the worker nodes ran on are unassigned from the cluster, and become unusable by but still attached to the {{site.data.keyword.satelliteshort}} location. For more information, see [Removing {{site.data.keyword.satelliteshort}} worker nodes or clusters](/docs/openshift?topic=openshift-remove).
-
-
-

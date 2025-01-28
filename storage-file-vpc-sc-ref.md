@@ -1,8 +1,8 @@
 ---
 
 copyright: 
-  years: 2022, 2024
-lastupdated: "2024-11-13"
+  years: 2022, 2025
+lastupdated: "2025-01-28"
 
 
 keywords: openshift, file storage, storage class reference, eni
@@ -42,9 +42,9 @@ New storage classes were introduced with version 2.0. You can no longer provisio
 | ibmc-vpc-file-metro-1000-iops | 1000 IOPs and `WaitForFirstConsumer` binding. |
 | ibmc-vpc-file-metro-3000-iops | 3000 IOPs and `WaitForFirstConsumer` binding. |
 | ibmc-vpc-file-metro-500-iops | 500 IOPs `WaitForFirstConsumer` binding. |
-| ibmc-vpc-file-metro-retain-1000-iops | 1000 IOPs, `WaitForFirstConsumer` binding, and recliam policy set to `Retain`. |
-| ibmc-vpc-file-metro-retain-3000-iops | 3000 IOPs, `WaitForFirstConsumer` binding, and recliam policy set to `Retain`. |
-| ibmc-vpc-file-metro-retain-500-iops | 500 IOPs, `WaitForFirstConsumer` binding, and recliam policy set to `Retain`. |
+| ibmc-vpc-file-metro-retain-1000-iops | 1000 IOPs, `WaitForFirstConsumer` binding, and reclaim policy set to `Retain`. |
+| ibmc-vpc-file-metro-retain-3000-iops | 3000 IOPs, `WaitForFirstConsumer` binding, and reclaim policy set to `Retain`. |
+| ibmc-vpc-file-metro-retain-500-iops | 500 IOPs, `WaitForFirstConsumer` binding, and reclaim policy set to `Retain`. |
 | ibmc-vpc-file-min-iops | Minimum IOPs based on file share size, `Immediate` binding. For more information, see [{{site.data.keyword.filestorage_vpc_short}} profiles](/docs/vpc?topic=vpc-file-storage-profiles&interface=ui#dp2-profile). |
 | ibmc-vpc-file-retain-1000-iops | 3000 IOPs and `Retain` reclaim policy. |
 | ibmc-vpc-file-retain-3000-iops | 1000 IOPs and `Retain` reclaim policy. |

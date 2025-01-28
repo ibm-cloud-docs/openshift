@@ -1,8 +1,8 @@
 ---
 
 copyright: 
-  years: 2014, 2024
-lastupdated: "2024-10-31"
+  years: 2014, 2025
+lastupdated: "2025-01-28"
 
 
 keywords: openshift, {{site.data.keyword.openshiftlong_notm}}, clusters, worker nodes, worker pools, add
@@ -138,7 +138,7 @@ Before you begin, make sure that you have the [**Operator** or **Administrator**
     :   Specify this  option if the worker pool is the first in the cluster.
 
     `--operating-system REDHAT_8_64|RHCOS`
-:   Optional. The operating system of the worker nodes in your cluster. For a list of available operating sysems by cluster version, see the [{{site.data.keyword.openshiftshort}} version information](/docs/openshift?topic=openshift-openshift_versions). If no option is specified, the default operating system that corresponds to the cluster version is used.
+:   Optional. The operating system of the worker nodes in your cluster. For a list of available operating systems by cluster version, see the [{{site.data.keyword.openshiftshort}} version information](/docs/openshift?topic=openshift-openshift_versions). If no option is specified, the default operating system that corresponds to the cluster version is used.
 
     `--kms-account-id ACCOUNT`
     :   **Optional**: Specify the account where your KMS instance resides. Include the `--kms-instance-id` and `--crk` options as well.
