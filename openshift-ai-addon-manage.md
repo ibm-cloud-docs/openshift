@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2024, 2025
-lastupdated: "2025-01-21"
+lastupdated: "2025-01-28"
 
 
 keywords: openshift, {{site.data.keyword.openshiftlong_notm}}, ai, add-on
@@ -76,25 +76,25 @@ Follow the steps to disable the OpenShift AI add-on.
 
     Remove the Red Hat OpenShift AI Platform.
     ```sh
-     oc -n kube-system patch cm managed-addon-rhoai-options --type json -p '[{"op": "replace", "path": "/data/oaiDeletePolicy", "value": "delete"}]
+    oc -n kube-system patch cm managed-addon-rhoai-options --type json -p '[{"op": "replace", "path": "/data/oaiDeletePolicy", "value": "delete"}]
     ```
     {: pre}
 
     Remove the Node Feature Discovery Operator.
     ```sh
-     oc -n kube-system patch cm managed-addon-rhoai-options --type json -p '[{"op": "replace", "path": "/data/nfdDeletePolicy", "value": "delete"}]
+    oc -n kube-system patch cm managed-addon-rhoai-options --type json -p '[{"op": "replace", "path": "/data/nfdDeletePolicy", "value": "delete"}]
     ```
     {: pre}
 
     Remove the NVIDIA GPU Operator.
     ```sh
-     oc -n kube-system patch cm managed-addon-rhoai-options --type json -p '[{"op": "replace", "path": "/data/nvidiaDeletePolicy", "value": "delete"}]
+    oc -n kube-system patch cm managed-addon-rhoai-options --type json -p '[{"op": "replace", "path": "/data/nvidiaDeletePolicy", "value": "delete"}]
     ```
     {: pre}
 
     Remove the Pipeline Operator.
     ```sh
-     oc -n kube-system patch cm managed-addon-rhoai-options --type json -p '[{"op": "replace", "path": "/data/pipelineDeletePolicy", "value": "delete"}]
+    oc -n kube-system patch cm managed-addon-rhoai-options --type json -p '[{"op": "replace", "path": "/data/pipelineDeletePolicy", "value": "delete"}]
     ```
     {: pre}
 
@@ -107,7 +107,7 @@ Follow the steps to disable the OpenShift AI add-on.
 
     Example output.
 
-    ```
+    ```sh
     Data and resources that you created for the add-on might be deleted when the add-on is disabled. Continue? [y/N]> y
     Disabling add-on openshift-ai for cluster abcdefg123456...
     OK
