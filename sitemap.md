@@ -10247,17 +10247,17 @@ subcollection: openshift
 
 [Why do I see a `Could not find user` error when I try to access the web console?](/docs/openshift?topic=openshift-ts-cluster-ocp-console#ts-cluster-ocp-console)
 
-[Private VPC clusters: Why can't I connect to the OpenShift console?](/docs/openshift?topic=openshift-ts-console-vpe-priv#ts-console-vpe-priv)
+[Private VPC clusters: Why can't I connect to the OpenShift console?](/docs/openshift?topic=openshift-ts-cluster-console-vpe-priv#ts-cluster-console-vpe-priv)
 
-* [1. Understanding the cluster connection flow](/docs/openshift?topic=openshift-ts-console-vpe-priv#ts-console-vpe-priv-flow)
+* [1. Understanding the cluster connection flow](/docs/openshift?topic=openshift-ts-cluster-console-vpe-priv#ts-console-vpe-priv-flow)
 
-* [2. Check your VPC and cluster configuration](/docs/openshift?topic=openshift-ts-console-vpe-priv#ts-console-vpe-priv-config)
+* [2. Check your VPC and cluster configuration](/docs/openshift?topic=openshift-ts-cluster-console-vpe-priv#ts-console-vpe-priv-config)
 
-* [3. Gather cluster data](/docs/openshift?topic=openshift-ts-console-vpe-priv#ts-console-vpe-priv-data)
+* [3. Gather cluster data](/docs/openshift?topic=openshift-ts-cluster-console-vpe-priv#ts-console-vpe-priv-data)
 
-* [4. Verify connections and troubleshoot](/docs/openshift?topic=openshift-ts-console-vpe-priv#ts-console-vpe-priv-verify)
+* [4. Verify connections and troubleshoot](/docs/openshift?topic=openshift-ts-cluster-console-vpe-priv#ts-console-vpe-priv-verify)
 
-* [5. Contact support](/docs/openshift?topic=openshift-ts-console-vpe-priv#ts-console-vpe-priv-support)
+* [5. Contact support](/docs/openshift?topic=openshift-ts-cluster-console-vpe-priv#ts-console-vpe-priv-support)
 
 [Why can't I create or delete clusters or worker nodes?](/docs/openshift?topic=openshift-cluster_infra_errors#cluster_infra_errors)
 
@@ -10449,6 +10449,8 @@ subcollection: openshift
 * [Upgrading from 4.11 to 4.12](/docs/openshift?topic=openshift-ts-cloud-pak-ds#cdp-feature-gates-412)
 
 * [Upgrading from 4.10 to 4.11](/docs/openshift?topic=openshift-ts-cloud-pak-ds#cdp-feature-gates-411)
+
+[Why do I see a license or entitlement error when creating a worker pool?](/docs/openshift?topic=openshift-ts-workerpool-license-entitlement#ts-workerpool-license-entitlement)
 
 
 ### Permissions and credentials

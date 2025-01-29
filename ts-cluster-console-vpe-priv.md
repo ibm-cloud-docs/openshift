@@ -15,7 +15,7 @@ content-type: troubleshoot
 {{site.data.keyword.attribute-definition-list}}
 
 # Private VPC clusters: Why can't I connect to the OpenShift console?
-{: #ts-console-vpe-priv}
+{: #ts-cluster-console-vpe-priv}
 
 Troubleshoot problems connecting to the Openshift console on a cluster that has only a private service endpoint.
 
@@ -172,6 +172,3 @@ Follow these steps to check the connections described in the [connection flow](#
 {: #ts-console-vpe-priv-support}
 
 If you completed all the above steps and have not resolved the issue, contact support. Open a [support case](/docs/account?topic=account-using-avatar). In the case details, be sure to include any relevant log files, error messages, or command outputs.. 
-
-
-
