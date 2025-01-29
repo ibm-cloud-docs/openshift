@@ -78,6 +78,11 @@ toc:
           topics:
           - openshift_cluster_access.md
           - cluster-access-admission-control.md
+          - topicgroup: 
+              label: Accessing the OpenShift Console 
+              topics:
+              - access-type-set.md
+              - access_api_oauth_server.md
           - cluster-access-wireguard.md
       - topicgroup:
           label: Adding worker nodes
@@ -508,6 +513,7 @@ toc:
               - ts-cluster-version-downlevel.md
               - ts-cluster-cli.md
               - ts-cluster-console-user.md
+              - ts-cluster-console-vpe-priv.md
               - ts-cluster-create-delete.md
               - ts-cluster-cos-bucket.md
               - ts-cluster-no-resources.md

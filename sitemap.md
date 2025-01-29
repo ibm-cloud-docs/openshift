@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2025
-lastupdated: "2025-01-27"
+lastupdated: "2025-01-29"
 
 
 keywords: openshift
@@ -2415,6 +2415,25 @@ subcollection: openshift
     * [Setting up admission controller webhooks](/docs/openshift?topic=openshift-access_webhooks#configure-webhooks-122)
 
 * [I need help with a broken webhook. What can I do?](/docs/openshift?topic=openshift-access_webhooks#access_webhooks-help)
+
+
+### Accessing the OpenShift Console
+{: #sitemap_accessing_the_openshift_console}
+
+
+[Setting the OAuth access type for VPC clusters](/docs/openshift?topic=openshift-setting-oauth-access-type#setting-oauth-access-type)
+
+* [Setting the OAuth access type for a cluster from the CLI](/docs/openshift?topic=openshift-setting-oauth-access-type&interface=cli#oauth-access-set-cli)
+
+* [Getting the OAuth access type for a cluster from the CLI](/docs/openshift?topic=openshift-setting-oauth-access-type&interface=cli#oauth-access-get-cli)
+
+* [Setting the OAuth access type for a cluster from the API](/docs/openshift?topic=openshift-setting-oauth-access-type&interface=api#oauth-access-set-api)
+
+* [Getting the OAuth access type for a cluster from the API](/docs/openshift?topic=openshift-setting-oauth-access-type&interface=api#oauth-access-get-api)
+
+[Accessing the OpenShift console when OAuth access is set to VPE gateway](/docs/openshift?topic=openshift-console-apiserver-oauthvpe#console-apiserver-oauthvpe)
+
+* [Allowing connections from VPN clients to the API server and OAuth server](/docs/openshift?topic=openshift-console-apiserver-oauthvpe#apiserver-oauth-allow)
 
 [Accessing private clusters](/docs/openshift?topic=openshift-cluster-access-wireguard#cluster-access-wireguard)
 
@@ -10227,6 +10246,18 @@ subcollection: openshift
 * [Missing projects or `oc` and `kubectl` commands fail](/docs/openshift?topic=openshift-ts_clis#rhoks_ts_admin_config)
 
 [Why do I see a `Could not find user` error when I try to access the web console?](/docs/openshift?topic=openshift-ts-cluster-ocp-console#ts-cluster-ocp-console)
+
+[Private VPC clusters: Why can't I connect to the OpenShift console?](/docs/openshift?topic=openshift-ts-console-vpe-priv#ts-console-vpe-priv)
+
+* [1. Understanding the cluster connection flow](/docs/openshift?topic=openshift-ts-console-vpe-priv#ts-console-vpe-priv-flow)
+
+* [2. Check your VPC and cluster configuration](/docs/openshift?topic=openshift-ts-console-vpe-priv#ts-console-vpe-priv-config)
+
+* [3. Gather cluster data](/docs/openshift?topic=openshift-ts-console-vpe-priv#ts-console-vpe-priv-data)
+
+* [4. Verify connections and troubleshoot](/docs/openshift?topic=openshift-ts-console-vpe-priv#ts-console-vpe-priv-verify)
+
+* [5. Contact support](/docs/openshift?topic=openshift-ts-console-vpe-priv#ts-console-vpe-priv-support)
 
 [Why can't I create or delete clusters or worker nodes?](/docs/openshift?topic=openshift-cluster_infra_errors#cluster_infra_errors)
 
