@@ -471,7 +471,8 @@ toc:
       - locations.md
       - openshift_integrations_overview.md
       - service-settings.md
-      - service-dependency.md
+      - topic: service-dependency.md
+        navtitle: Service dependencies
       - topicgroup:
           label: Worker node flavors
           topics:

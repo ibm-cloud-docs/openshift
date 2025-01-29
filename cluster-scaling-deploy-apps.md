@@ -1,8 +1,8 @@
 ---
 
 copyright: 
-  years: 2014, 2024
-lastupdated: "2024-01-03"
+  years: 2014, 2025
+lastupdated: "2025-01-29"
 
 
 keywords: openshift, node scaling, ca, autoscaler
@@ -93,7 +93,7 @@ For more information, see the following Kubernetes docs:
 ## Scaling up worker nodes before the worker pool has insufficient resources
 {: #ca_scaleup}
 
-As described in the [Understanding how the cluster autoscaler works](/docs/openshift?topic=openshift-cluster-scaling-classic-vpc#ca_about) topic and the [Kubernetes Cluster Autoscaler FAQs](https://github.com/kubernetes/autoscaler/blob/master/cluster-autoscaler/FAQ.md){: external}, the cluster autoscaler scales up your worker pools in response to your requested resources of the workload against the available recourses of the worker pool. However, you might want the cluster autoscaler to scale up worker nodes before the worker pool runs out of resources. In this case, your workload does not need to wait as long for worker nodes to be provisioned because the worker pool is already scaled up to meet the resource requests.
+As described in the [Understanding how the cluster autoscaler works](/docs/openshift?topic=openshift-cluster-scaling-classic-vpc#ca_about) topic and the [Kubernetes Cluster Autoscaler FAQ](https://github.com/kubernetes/autoscaler/blob/master/cluster-autoscaler/FAQ.md){: external}, the cluster autoscaler scales up your worker pools in response to your requested resources of the workload against the available recourses of the worker pool. However, you might want the cluster autoscaler to scale up worker nodes before the worker pool runs out of resources. In this case, your workload does not need to wait as long for worker nodes to be provisioned because the worker pool is already scaled up to meet the resource requests.
 {: shortdesc}
 
 The cluster autoscaler does not support early scaling (overprovisioning) of worker pools. However, you can configure other Kubernetes resources to work with the cluster autoscaler to achieve early scaling.
@@ -116,7 +116,3 @@ Because horizontal pod autoscaling is based on the average CPU usage of the pods
 {: shortdesc}
 
 More pods are requested, which then triggers the cluster autoscaler to scale up the worker pool.  For more information about setting up HPA, see the [Kubernetes docs](https://kubernetes.io/docs/tasks/run-application/horizontal-pod-autoscale-walkthrough/){: external}.
-
-
-
-

@@ -9877,11 +9877,11 @@ subcollection: openshift
 * [Global settings](/docs/openshift?topic=openshift-service-settings#global-settings)
 
 
-## Service dependency map for IBM Cloud Kubernetes Service and Red Hat OpenShift on IBM Cloud
-{: #sitemap_service_dependency_map_for_ibm_cloud_kubernetes_service_and_red_hat_openshift_on_ibm_cloud}
+## Service dependencies
+{: #sitemap_service_dependencies}
 
 
-[Service dependency map for IBM Cloud Kubernetes Service and Red Hat OpenShift on IBM Cloud](/docs/openshift?topic=openshift-service-dependencies#service-dependencies)
+[Service dependencies](/docs/openshift?topic=openshift-service-dependencies#service-dependencies)
 
 
 ## Worker node flavors
@@ -9992,11 +9992,11 @@ subcollection: openshift
 * [Subscribing to email notifications](/docs/openshift?topic=openshift-best-practices#monbp-subscribing)
 
 
-## FAQs
-{: #sitemap_faqs}
+## FAQ for {{site.data.keyword.openshiftlong}}
+{: #sitemap_faq_for_}
 
 
-[FAQs](/docs/openshift?topic=openshift-faqs#faqs)
+[FAQ for {{site.data.keyword.openshiftlong}}](/docs/openshift?topic=openshift-faqs#faqs)
 
 * [What is Kubernetes?](/docs/openshift?topic=openshift-faqs#kubernetes)
 
