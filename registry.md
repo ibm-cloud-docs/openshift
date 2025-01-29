@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2025
-lastupdated: "2025-01-06"
+lastupdated: "2025-01-29"
 
 
 keywords: openshift, {{site.data.keyword.openshiftlong_notm}}, kubernetes, registry, pull secret, secrets
@@ -662,7 +662,7 @@ However, by default, your cluster is set up to pull images from only your accoun
 ### Default image pull secret setup
 {: #cluster_registry_auth_default}
 
-Generally, your {{site.data.keyword.openshiftlong_notm}} cluster is set up to pull images from all {{site.data.keyword.registrylong_notm}} `icr.io` domains from the `default` {{site.data.keyword.redhat_openshift_notm}} project only. Review the following FAQs to learn more about how to pull images in other {{site.data.keyword.redhat_openshift_notm}} projects or accounts, restrict pull access, or why your cluster might not have the default image pull secrets.
+Generally, your {{site.data.keyword.openshiftlong_notm}} cluster is set up to pull images from all {{site.data.keyword.registrylong_notm}} `icr.io` domains from the `default` {{site.data.keyword.redhat_openshift_notm}} project only. Review the following FAQ to learn more about how to pull images in other {{site.data.keyword.redhat_openshift_notm}} projects or accounts, restrict pull access, or why your cluster might not have the default image pull secrets.
 {: shortdesc}
 
 How is my cluster set up to pull images from the `default` {{site.data.keyword.redhat_openshift_notm}} project?

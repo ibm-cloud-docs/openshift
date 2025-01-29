@@ -1,8 +1,8 @@
 ---
 
 copyright: 
-  years: 2014, 2024
-lastupdated: "2024-08-06"
+  years: 2014, 2025
+lastupdated: "2025-01-29"
 
 
 keywords: kubernetes, node scaling, ca, autoscaler, openshift
@@ -53,7 +53,7 @@ What does scaling up and down look like?
     *   Your pending pod resource requests and certain metadata that you associate with the workload, such as anti-affinity, labels to place pods only on certain flavors, or [pod disruption budgets](https://kubernetes.io/docs/concepts/workloads/pods/disruptions/){: external}.
     *   The worker pools that the cluster autoscaler manages, potentially across zones in a multizone cluster.
 
-For more information, see the Kubernetes Cluster Autoscaler FAQs for [How does scale-up work?](https://github.com/kubernetes/autoscaler/blob/master/cluster-autoscaler/FAQ.md#how-does-scale-up-work){: external} and [How does scale-down work?](https://github.com/kubernetes/autoscaler/blob/master/cluster-autoscaler/FAQ.md#how-does-scale-down-work){: external}.
+For more information, see the Kubernetes Cluster Autoscaler FAQ for [How does scale-up work?](https://github.com/kubernetes/autoscaler/blob/master/cluster-autoscaler/FAQ.md#how-does-scale-up-work){: external} and [How does scale-down work?](https://github.com/kubernetes/autoscaler/blob/master/cluster-autoscaler/FAQ.md#how-does-scale-down-work){: external}.
 
 
 
@@ -78,7 +78,7 @@ How is this behavior different from worker pools that are not managed by the clu
 ## Following scalable deployment practices
 {: #scalable-practices}
 
-Make the most out of the cluster autoscaler by using the following strategies for your worker node and workload deployment strategies. For more information, see the [Kubernetes Cluster Autoscaler FAQs](https://github.com/kubernetes/autoscaler/blob/master/cluster-autoscaler/FAQ.md){: external}.
+Make the most out of the cluster autoscaler by using the following strategies for your worker node and workload deployment strategies. For more information, see the [Kubernetes Cluster Autoscaler FAQ](https://github.com/kubernetes/autoscaler/blob/master/cluster-autoscaler/FAQ.md){: external}.
 {: shortdesc}
 
 [Try out the cluster autoscaler](/docs/openshift?topic=openshift-cluster-scaling-install-addon) with a few test workloads to get a good feel for how [scale-up and scale-down work](#ca_about), you might want to configure, and any other aspects that you might want, like [overprovisioning](/docs/openshift?topic=openshift-cluster-scaling-install-addon-deploy-apps#ca_scaleup) worker nodes or [limiting apps](/docs/openshift?topic=openshift-cluster-scaling-install-addon-deploy-apps). Then, clean up your test environment and plan to include these custom values and additional settings with a fresh installation of the cluster autoscaler.
@@ -218,6 +218,3 @@ The cluster autoscaler add-on is not supported for baremetal worker nodes.
 1. [Install the cluster autoscaler add-on](/docs/openshift?topic=openshift-cluster-scaling-install-addon).
 
 After install the add-on, update the ConfigMap values to [enable autoscaling in your cluster](/docs/openshift?topic=openshift-cluster-scaling-install-addon-enable).
-
-
-

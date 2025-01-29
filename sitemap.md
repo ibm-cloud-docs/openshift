@@ -9877,11 +9877,11 @@ subcollection: openshift
 * [Global settings](/docs/openshift?topic=openshift-service-settings#global-settings)
 
 
-## Service dependency map for IBM Cloud Kubernetes Service and Red Hat OpenShift on IBM Cloud
-{: #sitemap_service_dependency_map_for_ibm_cloud_kubernetes_service_and_red_hat_openshift_on_ibm_cloud}
+## Service dependencies
+{: #sitemap_service_dependencies}
 
 
-[Service dependency map for IBM Cloud Kubernetes Service and Red Hat OpenShift on IBM Cloud](/docs/openshift?topic=openshift-service-dependencies#service-dependencies)
+[Service dependencies](/docs/openshift?topic=openshift-service-dependencies#service-dependencies)
 
 
 ## Worker node flavors
@@ -9992,11 +9992,11 @@ subcollection: openshift
 * [Subscribing to email notifications](/docs/openshift?topic=openshift-best-practices#monbp-subscribing)
 
 
-## FAQs
-{: #sitemap_faqs}
+## FAQ for {{site.data.keyword.openshiftlong}}
+{: #sitemap_faq_for_}
 
 
-[FAQs](/docs/openshift?topic=openshift-faqs#faqs)
+[FAQ for {{site.data.keyword.openshiftlong}}](/docs/openshift?topic=openshift-faqs#faqs)
 
 * [What is Kubernetes?](/docs/openshift?topic=openshift-faqs#kubernetes)
 
@@ -10247,17 +10247,17 @@ subcollection: openshift
 
 [Why do I see a `Could not find user` error when I try to access the web console?](/docs/openshift?topic=openshift-ts-cluster-ocp-console#ts-cluster-ocp-console)
 
-[Private VPC clusters: Why can't I connect to the OpenShift console?](/docs/openshift?topic=openshift-ts-console-vpe-priv#ts-console-vpe-priv)
+[Private VPC clusters: Why can't I connect to the OpenShift console?](/docs/openshift?topic=openshift-ts-cluster-console-vpe-priv#ts-cluster-console-vpe-priv)
 
-* [1. Understanding the cluster connection flow](/docs/openshift?topic=openshift-ts-console-vpe-priv#ts-console-vpe-priv-flow)
+* [1. Understanding the cluster connection flow](/docs/openshift?topic=openshift-ts-cluster-console-vpe-priv#ts-console-vpe-priv-flow)
 
-* [2. Check your VPC and cluster configuration](/docs/openshift?topic=openshift-ts-console-vpe-priv#ts-console-vpe-priv-config)
+* [2. Check your VPC and cluster configuration](/docs/openshift?topic=openshift-ts-cluster-console-vpe-priv#ts-console-vpe-priv-config)
 
-* [3. Gather cluster data](/docs/openshift?topic=openshift-ts-console-vpe-priv#ts-console-vpe-priv-data)
+* [3. Gather cluster data](/docs/openshift?topic=openshift-ts-cluster-console-vpe-priv#ts-console-vpe-priv-data)
 
-* [4. Verify connections and troubleshoot](/docs/openshift?topic=openshift-ts-console-vpe-priv#ts-console-vpe-priv-verify)
+* [4. Verify connections and troubleshoot](/docs/openshift?topic=openshift-ts-cluster-console-vpe-priv#ts-console-vpe-priv-verify)
 
-* [5. Contact support](/docs/openshift?topic=openshift-ts-console-vpe-priv#ts-console-vpe-priv-support)
+* [5. Contact support](/docs/openshift?topic=openshift-ts-cluster-console-vpe-priv#ts-console-vpe-priv-support)
 
 [Why can't I create or delete clusters or worker nodes?](/docs/openshift?topic=openshift-cluster_infra_errors#cluster_infra_errors)
 
@@ -10449,6 +10449,8 @@ subcollection: openshift
 * [Upgrading from 4.11 to 4.12](/docs/openshift?topic=openshift-ts-cloud-pak-ds#cdp-feature-gates-412)
 
 * [Upgrading from 4.10 to 4.11](/docs/openshift?topic=openshift-ts-cloud-pak-ds#cdp-feature-gates-411)
+
+[Why do I see a license or entitlement error when creating a worker pool?](/docs/openshift?topic=openshift-ts-workerpool-license-entitlement#ts-workerpool-license-entitlement)
 
 
 ### Permissions and credentials
