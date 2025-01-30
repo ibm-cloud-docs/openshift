@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2025
-lastupdated: "2025-01-29"
+lastupdated: "2025-01-30"
 
 
 keywords: openshift
@@ -10316,6 +10316,8 @@ subcollection: openshift
 * [If you have reached the number of security groups allowed per VPC](/docs/openshift?topic=openshift-ts-sbd-cluster-create-quota#quota-num-of-rules-per-vpc)
 
 [After creating a version 4.15 cluster, applications running in other clusters in my VPC are failing](/docs/openshift?topic=openshift-ts-sbd-other-clusters#ts-sbd-other-clusters)
+
+[Why don't image streams populate on a secure by default cluster?](/docs/openshift?topic=openshift-ts_cluster_sbd_image_stream#ts_cluster_sbd_image_stream)
 
 
 ### Worker nodes

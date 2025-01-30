@@ -536,6 +536,7 @@ toc:
               - ts-etcd-alerts.md
               - ts-sbd-cluster-create-quota.md
               - ts-sbd-non-sbd-clusters.md
+              - ts-cluster-sbd-image-stream.md
           - topicgroup:
               label: Worker nodes
               topics:
