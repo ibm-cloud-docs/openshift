@@ -3,7 +3,7 @@
 copyright:
   years: 2024, 2025
 
-lastupdated: "2025-01-29"
+lastupdated: "2025-01-30"
 
 
 keywords: change log, version history, 4.14_openshift
@@ -37,6 +37,22 @@ Master patch updates are applied automatically. Worker node patch updates can be
 
 ## Version 4.14
 {: #414_components}
+
+
+
+### Worker node fix pack 4.14.45_1596_openshift, released 29 January 2025
+{: #cl-boms-41445_1596_openshift_W}
+
+The following table shows the components included in the worker node fix pack 4.14.45_1596_openshift. Worker node patch updates can be applied by updating, reloading (in classic infrastructure), or replacing (in VPC infrastructure) the worker node.
+{: shortdesc}
+
+| Component | Version | Description |
+| ---- | ---- | ---- |
+|OpenShift|4.14.45|For more information, see the [change logs](https://docs.openshift.com/container-platform/4.14/release_notes/ocp-4-14-release-notes.html#ocp-4-14-45_release-notes).|
+|HAProxy|14daa781a66ca5ed5754656ce53c3cca4af580b5|N/A|
+{: caption="4.14.45_1596_openshift fix pack." caption-side="bottom"}
+{: #cl-boms-41445_1596_openshift_W-component-table}
+
 
 
 
