@@ -4745,7 +4745,7 @@ subcollection: openshift
 
     * [Automatically creating a secret by using a Shell script](/docs/openshift?topic=openshift-storage-odf-trusted-profiles#odf-secret-create-truted-profile)
 
-[OpenShift Data Foundation Regional Disaster Recovery on {{site.data.keyword.openshiftlong}} clusters](/docs/openshift?topic=openshift-openshift_odf_rdr_roks#openshift_odf_rdr_roks)
+[OpenShift Data Foundation Regional Disaster Recovery on {{site.data.keyword.openshiftlong_notm}} clusters](/docs/openshift?topic=openshift-openshift_odf_rdr_roks#openshift_odf_rdr_roks)
 
 * [Creating the clusters](/docs/openshift?topic=openshift-openshift_odf_rdr_roks#odf-rdr-clusters)
 
