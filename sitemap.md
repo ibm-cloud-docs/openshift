@@ -279,10 +279,6 @@ subcollection: openshift
 
         * {{site.data.keyword.openshiftlong_notm}} worker node fix packs are available.
 
-    * [29 January 2025](/docs/openshift?topic=openshift-openshift-relnotes#openshift-jan2925)
-
-        * New! {{site.data.keyword.openshiftlong_notm}} version 1.32.
-
     * [24 January 2025](/docs/openshift?topic=openshift-openshift-relnotes#openshift-jan2425)
 
         * {{site.data.keyword.cos_full_notm}} plug-in updates.

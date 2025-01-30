@@ -48,13 +48,6 @@ Looking for {{site.data.keyword.cloud_notm}} status, platform announcements, sec
 
 
 
-### 29 January 2025
-{: #openshift-jan2925}
-{: release-note}
-
-New! {{site.data.keyword.openshiftlong_notm}} version 1.32.
-:   You can now create or [update clusters to Kubernetes version 1.32](/docs/openshift?topic=openshift-cs_versions_132). With Kubernetes 1.32, you get the latest stable enhancements from the Kubernetes community as well as enhancements to the {{site.data.keyword.cloud_notm}} product.
-
 
 
 ### 24 January 2025
