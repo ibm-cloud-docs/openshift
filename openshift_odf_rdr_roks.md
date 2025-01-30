@@ -17,7 +17,7 @@ subcollection: openshift
 
 
 
-# OpenShift Data Foundation Regional Disaster Recovery on {{site.data.keyword.openshiftlong}} clusters
+# OpenShift Data Foundation Regional Disaster Recovery on {{site.data.keyword.openshiftlong_notm}} clusters
 {: #openshift_odf_rdr_roks}
 
 [Virtual Private Cloud]{: tag-vpc}
@@ -164,10 +164,3 @@ Create a sample application to test your disaster recovery solution. For more in
 
 1. Verify that the application pods are moved back to the primary cluster.
         
-
-
-
-
-
-
-
