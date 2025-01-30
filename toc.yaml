@@ -287,7 +287,6 @@ toc:
               - openshift-storage-update-classic.md
           - openshift_storage_odf_apps.md
           - openshift_storage_odf_trusted_profile.md
-          - openshift_odf_rdr_roks.md
           - openshift_storage_ocs_manage.md
           - openshift_storage_noobaa.md
           - openshift_storage_parameters.md
