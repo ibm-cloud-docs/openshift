@@ -1,8 +1,8 @@
 ---
 
 copyright:
-  years: 2014, 2024
-lastupdated: "2024-10-07"
+  years: 2014, 2025
+lastupdated: "2025-02-01"
 
 
 keywords: openshift, disconnect, airgap, olm, mirror
@@ -28,20 +28,20 @@ Operators are a convenient way to add services to your cluster from community, t
 ## Using Operators in clusters
 {: #operators_4}
 
-[Operators](https://docs.openshift.com/container-platform/4.16/operators/understanding/olm-what-operators-are.html){: external} are available in your cluster by default and can be used to package, deploy, and update your apps.
+[Operators](https://docs.openshift.com/container-platform/4.17/operators/understanding/olm-what-operators-are.html){: external} are available in your cluster by default and can be used to package, deploy, and update your apps.
 {: shortdesc}
 
-Before you begin, [check the status](https://docs.openshift.com/container-platform/4.16/operators/admin/olm-status.html){: external} of any existing operators in your cluster. Resolve any issues before using operators to manage your apps. 
+Before you begin, [check the status](https://docs.openshift.com/container-platform/4.17/operators/admin/olm-status.html){: external} of any existing operators in your cluster. Resolve any issues before using operators to manage your apps. 
 
 1. To use operators, follow the {{site.data.keyword.redhat_openshift_notm}} documentation.
-    - [Adding Operators to a cluster](https://docs.openshift.com/container-platform/4.16/operators/admin/olm-adding-operators-to-cluster.html){: external}
-    - [Deleting Operators from a cluster](https://docs.openshift.com/container-platform/4.16/operators/admin/olm-deleting-operators-from-cluster.html){: external}
-    - [Creating applications from installed Operators](https://docs.openshift.com/container-platform/4.16/operators/user/olm-creating-apps-from-installed-operators.html){: external}
+    - [Adding Operators to a cluster](https://docs.openshift.com/container-platform/4.17/operators/admin/olm-adding-operators-to-cluster.html){: external}
+    - [Deleting Operators from a cluster](https://docs.openshift.com/container-platform/4.17/operators/admin/olm-deleting-operators-from-cluster.html){: external}
+    - [Creating applications from installed Operators](https://docs.openshift.com/container-platform/4.17/operators/user/olm-creating-apps-from-installed-operators.html){: external}
     - [Making your own custom Operator](https://github.com/operator-framework/community-operators/blob/master/docs/testing-operators.md#testing-operator-deployment-on-openshift){: external}.
-        - For help creating custom Operators, see the [Operator SDK](https://docs.openshift.com/container-platform/4.16/operators/operator_sdk/osdk-about.html){: external} documentation, which includes a guide to build an operator that is based on a [Helm chart](https://docs.openshift.com/container-platform/4.7/operators/operator_sdk/){: external}.
-        - To manage your custom Operator, see the [Operator Lifecycle Manager](http://docs.openshift.com/container-platform/4.16/operators/understanding/olm/olm-understanding-olm.html){: external} documentation.
+        - For help creating custom Operators, see the [Operator SDK](https://docs.openshift.com/container-platform/4.17/operators/operator_sdk/osdk-about.html){: external} documentation, which includes a guide to build an operator that is based on a [Helm chart](https://docs.openshift.com/container-platform/4.7/operators/operator_sdk/){: external}.
+        - To manage your custom Operator, see the [Operator Lifecycle Manager](http://docs.openshift.com/container-platform/4.17/operators/understanding/olm/olm-understanding-olm.html){: external} documentation.
 2. Review any custom steps to install an operator in your cluster.
-    - To set up an [OpenShift Container Platform Elasticsearch, Fluentd, and Kibana (EFK) stack](https://docs.openshift.com/container-platform/4.16/observability/logging/cluster-logging.html){: external}, see [installing the cluster logging operator](/docs/openshift?topic=openshift-health#oc_logging_operator).
+    - To set up an [OpenShift Container Platform Elasticsearch, Fluentd, and Kibana (EFK) stack](https://docs.openshift.com/container-platform/4.17/observability/logging/cluster-logging.html){: external}, see [installing the cluster logging operator](/docs/openshift?topic=openshift-health#oc_logging_operator).
 3. If the operator uses a template with a build component that must pull an image from a private registry, the build might fail with an authentication error. To resolve this error, see [Build error due to image pull authentication](/docs/openshift?topic=openshift-ts-app-build-img-pull).
 
 ## Adding the IBM Operator Catalog source to OperatorHub
@@ -77,7 +77,7 @@ You can add the IBM Operator Catalog as a source on OperatorHub by configuring a
 ## Disabling OperatorHub and mirroring catalog source images to `icr.io`
 {: #mirror-operatorhub}
 
-You can disable and mirror the OperatorHub catalog source images by following the [Operator Lifecycle Manager (OLM) on restricted networks documentation from Red Hat](https://docs.openshift.com/container-platform/4.16/operators/admin/olm-restricted-networks.html){: external}. 
+You can disable and mirror the OperatorHub catalog source images by following the [Operator Lifecycle Manager (OLM) on restricted networks documentation from Red Hat](https://docs.openshift.com/container-platform/4.17/operators/admin/olm-restricted-networks.html){: external}. 
 {: shortdesc}
 
 Mirroring OperatorHub is required to use operators with clusters that have private-only network configurations.
@@ -90,13 +90,13 @@ To understand why you might disable and mirror the catalog, consider the followi
 Before you begin
 
 - Make sure that you have the **Manager** service role to the cluster in all namespaces in {{site.data.keyword.cloud_notm}} IAM.
-- [Install the `opm` command-line interface](https://docs.openshift.com/container-platform/4.16/cli_reference/opm/cli-opm-ref.html){: external}, including its prerequisite tools such as `podman`.
+- [Install the `opm` command-line interface](https://docs.openshift.com/container-platform/4.17/cli_reference/opm/cli-opm-ref.html){: external}, including its prerequisite tools such as `podman`.
 - Have a Red Hat account with credentials to pull images from the `registry.redhat.io` and `quay.io` registries, or use the [default global pull secret](/docs/openshift?topic=openshift-registry#cluster_global_pull_secret).
 
 To disable and mirror the OperatorHub source images:
-1. Disable the catalog sources as described in [Disabling the default OperatorHub sources](https://docs.openshift.com/container-platform/4.16/operators/admin/olm-restricted-networks.html#olm-restricted-networks-operatorhub_olm-restricted-networks){: external}.
-2. **Optional**: Prune the catalog index to a select list of packages as described in [Pruning an index image](https://docs.openshift.com/container-platform/4.16/operators/admin/olm-restricted-networks.html#olm-pruning-index-image_olm-restricted-networks){: external}. You might prune the catalog to control what images your cluster users can install and to reduce the size of the images in your registry.
-3. Mirror the catalog to your compatible registry, such as {{site.data.keyword.registrylong_notm}}, as described in [Mirroring an Operator catalog](https://docs.openshift.com/container-platform/4.16/operators/admin/olm-restricted-networks.html#olm-mirror-catalog_olm-restricted-networks){: external}.
+1. Disable the catalog sources as described in [Disabling the default OperatorHub sources](https://docs.openshift.com/container-platform/4.17/operators/admin/olm-restricted-networks.html#olm-restricted-networks-operatorhub_olm-restricted-networks){: external}.
+2. **Optional**: Prune the catalog index to a select list of packages as described in [Pruning an index image](https://docs.openshift.com/container-platform/4.17/operators/admin/olm-restricted-networks.html#olm-pruning-index-image_olm-restricted-networks){: external}. You might prune the catalog to control what images your cluster users can install and to reduce the size of the images in your registry.
+3. Mirror the catalog to your compatible registry, such as {{site.data.keyword.registrylong_notm}}, as described in [Mirroring an Operator catalog](https://docs.openshift.com/container-platform/4.17/operators/admin/olm-restricted-networks.html#olm-mirror-catalog_olm-restricted-networks){: external}.
 
 
 ## Getting support for Operators
