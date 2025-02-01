@@ -1,8 +1,8 @@
 ---
 
 copyright: 
-  years: 2023, 2024
-lastupdated: "2024-10-31"
+  years: 2023, 2025
+lastupdated: "2025-02-01"
 
 
 keywords: openshift, {{site.data.keyword.openshiftlong_notm}}, kubernetes, allowlist, operating system, rhel, ubuntu
@@ -95,8 +95,8 @@ oc version
 
 Example output
 ```sh
-Client Version: 4.16.3
-Server Version: 4.16.12
+Client Version: 4.17.3
+Server Version: 4.17.12
 Kubernetes Version: v1.30.2
 ```
 {: screen}

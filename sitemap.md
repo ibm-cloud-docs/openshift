@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2025
-lastupdated: "2025-01-30"
+lastupdated: "2025-02-01"
 
 
 keywords: openshift
@@ -5137,7 +5137,7 @@ subcollection: openshift
 
 [IBM Cloud Kubernetes Service API JSON](https://containers.cloud.ibm.com/global/swagger-global-api/swagger.json){: external}
 
-[OpenShift Container Platform REST API](https://docs.openshift.com/container-platform/4.16/rest_api/overview/index.html){: external}
+[OpenShift Container Platform REST API](https://docs.openshift.com/container-platform/4.17/rest_api/overview/index.html){: external}
 
 
 ## CLI plug-in reference
