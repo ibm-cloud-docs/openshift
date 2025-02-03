@@ -1,8 +1,8 @@
 ---
 
 copyright: 
-  years: 2014, 2024
-lastupdated: "2024-11-11"
+  years: 2014, 2025
+lastupdated: "2025-02-03"
 
 
 keywords: openshift, {{site.data.keyword.openshiftlong_notm}}, kubernetes, audit
@@ -162,8 +162,8 @@ The following list of Ingress application load balancer (ALB) events are sent to
 | `containers-kubernetes.cluster-alb.delete` | An ALB is disabled. |
 | `containers-kubernetes.cluster-alb.enable` | An existing ALB is enabled in a cluster. |
 | `containers-kubernetes.cluster-alb.get` | Details of an ALB are viewed. |
-| `containers-kubernetes.cluster-alb-healthcheck.get` | Details of an ALB healthcheck are viewed. |
-| `containers-kubernetes.cluster-alb-healthcheck.set` | Details of an ALB healthcheck are viewed. |
+| `containers-kubernetes.cluster-alb-healthcheck.get` | Details of an ALB health check are viewed. |
+| `containers-kubernetes.cluster-alb-healthcheck.set` | Details of an ALB health check are viewed. |
 | `containers-kubernetes.cluster-alb.list` | ALBs in a cluster are listed. |
 | `containers-kubernetes.cluster-alb.update` | ALB pods are updated. |
 | `containers-kubernetes.cluster-alb-policy.get` | The status of automatic updates for Ingress ALBs is viewed. |

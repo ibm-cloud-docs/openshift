@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2025
-lastupdated: "2025-02-01"
+lastupdated: "2025-02-03"
 
 
 keywords: openshift, disconnect, airgap, olm, mirror
@@ -41,7 +41,7 @@ Before you begin, [check the status](https://docs.openshift.com/container-platfo
         - For help creating custom Operators, see the [Operator SDK](https://docs.openshift.com/container-platform/4.17/operators/operator_sdk/osdk-about.html){: external} documentation, which includes a guide to build an operator that is based on a [Helm chart](https://docs.openshift.com/container-platform/4.7/operators/operator_sdk/){: external}.
         - To manage your custom Operator, see the [Operator Lifecycle Manager](http://docs.openshift.com/container-platform/4.17/operators/understanding/olm/olm-understanding-olm.html){: external} documentation.
 2. Review any custom steps to install an operator in your cluster.
-    - To set up an [OpenShift Container Platform Elasticsearch, Fluentd, and Kibana (EFK) stack](https://docs.openshift.com/container-platform/4.17/observability/logging/cluster-logging.html){: external}, see [installing the cluster logging operator](/docs/openshift?topic=openshift-health#oc_logging_operator).
+    - To set up an [OpenShift Container Platform Elasticsearch, Fluentd, and Kibana (EFK) stack](https://docs.openshift.com/container-platform/4.17/observability/logging/logging-6.1/log6x-about-6.1.html){: external}, see [installing the cluster logging operator](/docs/openshift?topic=openshift-health#oc_logging_operator).
 3. If the operator uses a template with a build component that must pull an image from a private registry, the build might fail with an authentication error. To resolve this error, see [Build error due to image pull authentication](/docs/openshift?topic=openshift-ts-app-build-img-pull).
 
 ## Adding the IBM Operator Catalog source to OperatorHub

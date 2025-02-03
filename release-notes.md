@@ -35,7 +35,7 @@ Looking for {{site.data.keyword.cloud_notm}} status, platform announcements, sec
 {: release-note}
 
 Version 4.17 is now the default version for {{site.data.keyword.openshiftlong_notm}}.
-:   For a complete list of available versions, see the [version information](/openshift?topic=openshift-openshift_versions).
+:   For a complete list of available versions, see the [version information](/docs/openshift?topic=openshift-openshift_versions).
 
 
 
