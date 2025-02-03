@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2025
-lastupdated: "2025-01-30"
+lastupdated: "2025-02-03"
 
 
 keywords: kubernetes, release notes, openshift, {{site.data.keyword.openshiftlong_notm}}
@@ -24,6 +24,22 @@ Use the release notes to learn about the latest changes to the documentation tha
 
 Looking for {{site.data.keyword.cloud_notm}} status, platform announcements, security bulletins, or maintenance notifications? See [{{site.data.keyword.cloud_notm}} status](https://cloud.ibm.com/status?selected=status).
 {: tip}
+
+
+  
+## February 2025
+{: #openshift-feb25}
+
+### 03 February 2025
+{: #openshift-feb0325}
+{: release-note}
+
+Version 4.17 is now the default version for {{site.data.keyword.openshiftlong_notm}}.
+:   For a complete list of available versions, see the [version information](/openshift?topic=openshift-openshift_versions).
+
+
+
+
 
 ## January 2025
 {: #openshift-jan25}
