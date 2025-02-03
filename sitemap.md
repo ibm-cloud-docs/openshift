@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2025
-lastupdated: "2025-02-01"
+lastupdated: "2025-02-03"
 
 
 keywords: openshift
@@ -272,6 +272,12 @@ subcollection: openshift
 
 
 [Release notes](/docs/openshift?topic=openshift-openshift-relnotes#openshift-relnotes)
+
+* [February 2025](/docs/openshift?topic=openshift-openshift-relnotes#openshift-feb25)
+
+    * [03 February 2025](/docs/openshift?topic=openshift-openshift-relnotes#openshift-feb0325)
+
+        * Version 4.17 is now the default version for {{site.data.keyword.openshiftlong_notm}}.
 
 * [January 2025](/docs/openshift?topic=openshift-openshift-relnotes#openshift-jan25)
 
