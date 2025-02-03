@@ -1,8 +1,8 @@
 ---
 
 copyright: 
-  years: 2014, 2024
-lastupdated: "2024-03-15"
+  years: 2014, 2025
+lastupdated: "2025-02-03"
 
 
 keywords: kubernetes, openshift
@@ -68,7 +68,7 @@ Your service might not yet support private cloud service endpoints.
 ### Can I use all {{site.data.keyword.cloud_notm}} services in my cluster?
 {: #svc-bind-which}
 
-You can use service binding only for services that support service keys so that the service credentials can automatically be created and stored in a Kubernetes secret. To find a list of services that support service keys, see [Enabling external apps to use {{site.data.keyword.cloud_notm}} services](/docs/account?topic=account-externalapp#externalapp).
+You can use service binding only for services that support service keys so that the service credentials can automatically be created and stored in a Kubernetes secret. To learn how to connect the service to an app, see [Connecting services to apps](/docs/account?topic=account-service_credentials).
 
 Services that don't support service keys usually provide an API that you can use in your app. The service binding method does not automatically set up API access for your app. Make sure to review the API documentation of your service and implement the API interface in your app.
 
@@ -93,7 +93,7 @@ Before you begin:
 
 To add an {{site.data.keyword.cloud_notm}} service to your cluster:
 
-1. [Create an instance of the {{site.data.keyword.cloud_notm}} service](/docs/account?topic=account-externalapp#externalapp).
+1. [Create an instance of the {{site.data.keyword.cloud_notm}} service](//docs/account?topic=account-service_credentials).
 
     * Some {{site.data.keyword.cloud_notm}} services are available only in select regions. You can bind a service to your cluster only if the service is available in the same region as your cluster. In addition, if you want to create a service instance in the Washington DC zone, you must use the CLI.
     * **For IAM-enabled services**: You must create the service instance in the same resource group as your cluster. A service can be created in only one resource group that you can't change afterward.
@@ -578,7 +578,3 @@ If you don't want to use an {{site.data.keyword.cloud_notm}} service that you bo
     ibmcloud resource service-instance-delete <service_name>
     ```
     {: pre}
-
-
-
-
