@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2025
-lastupdated: "2025-01-14"
+lastupdated: "2025-02-04"
 
 
 keywords: openshift, openshift data foundation, openshift container storage, ocs
@@ -213,7 +213,7 @@ To install ODF in your cluster, complete the following steps.
 {: shortdesc}
 
 
-1. Before you enable the add-on, review the [change log](/docs/openshift?topic=openshift-odf_addon_changelog) for the latest version information. 
+1. Before you enable the add-on, review the [change log](/docs/openshift?topic=openshift-cl-add-ons-openshift-data-foundation) for the latest version information. 
 1. [Review the parameter reference](/docs/openshift?topic=openshift-openshift_storage_parameters).
 1. From the [{{site.data.keyword.redhat_openshift_notm}} clusters console](https://cloud.ibm.com/kubernetes/clusters?platformType=openshift){: external}, select the cluster where you want to install the add-on.
 1. On the cluster **Overview** page, on the OpenShift Data Foundation card, click **Install**. The **Install ODF** panel opens.
@@ -269,7 +269,7 @@ You can install the add-on by using the [`ibmcloud oc cluster addon enable` comm
     ```
     {: pre}
 
-1. Before you enable the add-on, review the [change log](/docs/openshift?topic=openshift-odf_addon_changelog) for the latest version information. Note that the add-on supports `n+1` cluster versions. For example, you can deploy version `4.10.0` of the add-on to an OCP `4.9` or `4.11` cluster. If you have a cluster version other than the default, you must specify the `--version` option when you enable the add-on.
+1. Before you enable the add-on, review the [change log](/docs/openshift?topic=openshift-cl-add-ons-openshift-data-foundation) for the latest version information. Note that the add-on supports `n+1` cluster versions. For example, you can deploy version `4.10.0` of the add-on to an OCP `4.9` or `4.11` cluster. If you have a cluster version other than the default, you must specify the `--version` option when you enable the add-on.
 
 1. Review the add-on options. 
 

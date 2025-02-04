@@ -410,7 +410,7 @@ toc:
           - versions-vpc-file-addon.md
           - versions-object.md
           - cl-add-ons-static-route.md
-          - openshift_versions_ocs_addon.md
+          - cl-add-ons-openshift-data-foundation.md
           - versions-backup-restore.md
           - openshift_versions_hpcs_router.md
           - cl-add-ons-ibm-cloud-image-key-synchronizer.md

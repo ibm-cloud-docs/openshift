@@ -3,7 +3,7 @@
 copyright:
   years: 2024, 2025
 
-lastupdated: "2025-01-30"
+lastupdated: "2025-02-04"
 
 
 keywords: change log, version history, Openshift AI

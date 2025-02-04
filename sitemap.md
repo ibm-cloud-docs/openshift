@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2025
-lastupdated: "2025-02-03"
+lastupdated: "2025-02-04"
 
 
 keywords: openshift
@@ -274,6 +274,10 @@ subcollection: openshift
 [Release notes](/docs/openshift?topic=openshift-openshift-relnotes#openshift-relnotes)
 
 * [February 2025](/docs/openshift?topic=openshift-openshift-relnotes#openshift-feb25)
+
+    * [04 February 2025](/docs/openshift?topic=openshift-openshift-relnotes#openshift-feb0425)
+
+        * OpenShift Data Foundation cluster add-on patch updates.
 
     * [03 February 2025](/docs/openshift?topic=openshift-openshift-relnotes#openshift-feb0325)
 
@@ -7680,243 +7684,253 @@ subcollection: openshift
 
     * [1.0.0_649, released 8 September 2021](/docs/openshift?topic=openshift-cl-add-ons-static-route#cl-add-ons-static-route-100_649)
 
-[OpenShift Data Foundation add-on change log](/docs/openshift?topic=openshift-odf_addon_changelog#odf_addon_changelog)
+[OpenShift Data Foundation add-on version change log](/docs/openshift?topic=openshift-cl-add-ons-openshift-data-foundation#cl-add-ons-openshift-data-foundation)
 
-* [Version 4.16](/docs/openshift?topic=openshift-odf_addon_changelog#4.16_odf)
+* [Version 4.17.0](/docs/openshift?topic=openshift-cl-add-ons-openshift-data-foundation#cl-add-ons-openshift-data-foundation-4.17.0)
 
-    * [Version 4.16.3, released 28 October 2024](/docs/openshift?topic=openshift-odf_addon_changelog#4.16.3_odf)
+    * [4.17.1, released 04 February 2025](/docs/openshift?topic=openshift-cl-add-ons-openshift-data-foundation#cl-add-ons-openshift-data-foundation-4171)
 
-* [Version 4.15](/docs/openshift?topic=openshift-odf_addon_changelog#4.15_odf)
+* [Version 4.16.0](/docs/openshift?topic=openshift-cl-add-ons-openshift-data-foundation#cl-add-ons-openshift-data-foundation-4.16)
 
-    * [Version 4.15.6, released 28 October 2024](/docs/openshift?topic=openshift-odf_addon_changelog#4.15.6_odf)
+    * [4.16.6, released 04 February 2025](/docs/openshift?topic=openshift-cl-add-ons-openshift-data-foundation#cl-add-ons-openshift-data-foundation-4166)
 
-    * [Version 4.15.4, released 03 August 2024](/docs/openshift?topic=openshift-odf_addon_changelog#4.15.5_odf)
+    * [4.16.3, released 28 October 2024](/docs/openshift?topic=openshift-cl-add-ons-openshift-data-foundation#cl-add-ons-openshift-data-foundation-4.16.3)
 
-    * [Version 4.15.4, released 15 July 2024](/docs/openshift?topic=openshift-odf_addon_changelog#4.15.4_odf)
+* [Version 4.15.0](/docs/openshift?topic=openshift-cl-add-ons-openshift-data-foundation#cl-add-ons-openshift-data-foundation-4.15)
 
-    * [Version 4.15.3, released 24 June 2024](/docs/openshift?topic=openshift-odf_addon_changelog#4.15.3_odf)
+    * [4.15.6, released 28 October 2024](/docs/openshift?topic=openshift-cl-add-ons-openshift-data-foundation#cl-add-ons-openshift-data-foundation-4.15.6)
 
-    * [Version 4.15.2, released 5 June 2024](/docs/openshift?topic=openshift-odf_addon_changelog#4.15.2_odf)
+    * [4.15.4, released 03 August 2024](/docs/openshift?topic=openshift-cl-add-ons-openshift-data-foundation#cl-add-ons-openshift-data-foundation-4.15.5)
 
-    * [Version 4.15.0, released 10 May 2024](/docs/openshift?topic=openshift-odf_addon_changelog#4.15.0_odf)
+    * [4.15.4, released 15 July 2024](/docs/openshift?topic=openshift-cl-add-ons-openshift-data-foundation#cl-add-ons-openshift-data-foundation-4.15.4)
 
-* [Version 4.14](/docs/openshift?topic=openshift-odf_addon_changelog#4.14_odf)
+    * [4.15.3, released 24 June 2024](/docs/openshift?topic=openshift-cl-add-ons-openshift-data-foundation#cl-add-ons-openshift-data-foundation-4.15.3)
 
-    * [Version 4.14.16, released 03 August 2024](/docs/openshift?topic=openshift-odf_addon_changelog#4.14.16_odf)
+    * [4.15.2, released 5 June 2024](/docs/openshift?topic=openshift-cl-add-ons-openshift-data-foundation#cl-add-ons-openshift-data-foundation-4.15.2)
 
-    * [Version 4.14.15, released 15 July 2024](/docs/openshift?topic=openshift-odf_addon_changelog#4.14.15_odf)
+    * [4.15.0, released 10 May 2024](/docs/openshift?topic=openshift-cl-add-ons-openshift-data-foundation#cl-add-ons-openshift-data-foundation-4.15.0)
 
-    * [Version 4.14.14, released 24 June 2024](/docs/openshift?topic=openshift-odf_addon_changelog#4.14.14_odf)
+* [Version 4.14](/docs/openshift?topic=openshift-cl-add-ons-openshift-data-foundation#cl-add-ons-openshift-data-foundation-4.14)
 
-    * [Version 4.14.13, released 5 June 2024](/docs/openshift?topic=openshift-odf_addon_changelog#4.14.13_odf)
+    * [4.14.17, released 04 February 2025](/docs/openshift?topic=openshift-cl-add-ons-openshift-data-foundation#cl-add-ons-openshift-data-foundation-41417)
 
-    * [Version 4.14.11, released 19 April 2024](/docs/openshift?topic=openshift-odf_addon_changelog#4.14.11_odf)
+    * [4.14.16, released 03 August 2024](/docs/openshift?topic=openshift-cl-add-ons-openshift-data-foundation#cl-add-ons-openshift-data-foundation-4.14.16)
 
-    * [Version 4.14.10, released 08 April 2024](/docs/openshift?topic=openshift-odf_addon_changelog#4.14.10_odf)
+    * [4.14.15, released 15 July 2024](/docs/openshift?topic=openshift-cl-add-ons-openshift-data-foundation#cl-add-ons-openshift-data-foundation-4.14.15)
 
-    * [Version 4.14.9, released 26 March 2024](/docs/openshift?topic=openshift-odf_addon_changelog#4.14.9_odf)
+    * [4.14.14, released 24 June 2024](/docs/openshift?topic=openshift-cl-add-ons-openshift-data-foundation#cl-add-ons-openshift-data-foundation-4.14.14)
 
-    * [Version 4.14.8, released 08 March 2024](/docs/openshift?topic=openshift-odf_addon_changelog#4.14.8_odf)
+    * [4.14.13, released 5 June 2024](/docs/openshift?topic=openshift-cl-add-ons-openshift-data-foundation#cl-add-ons-openshift-data-foundation-4.14.13)
 
-    * [Version 4.14.7, released 29 February 2024](/docs/openshift?topic=openshift-odf_addon_changelog#4.14.7_odf)
+    * [4.14.11, released 19 April 2024](/docs/openshift?topic=openshift-cl-add-ons-openshift-data-foundation#cl-add-ons-openshift-data-foundation-4.14.11)
 
-    * [Version 4.14.5, 14 February 2024](/docs/openshift?topic=openshift-odf_addon_changelog#4.14.5_odf)
+    * [4.14.10, released 08 April 2024](/docs/openshift?topic=openshift-cl-add-ons-openshift-data-foundation#cl-add-ons-openshift-data-foundation-4.14.10)
 
-    * [Version 4.14.0, released 19 January 2024](/docs/openshift?topic=openshift-odf_addon_changelog#4.14.0_odf)
+    * [4.14.9, released 26 March 2024](/docs/openshift?topic=openshift-cl-add-ons-openshift-data-foundation#cl-add-ons-openshift-data-foundation-4.14.9)
 
-* [Version 4.13](/docs/openshift?topic=openshift-odf_addon_changelog#4.13_odf)
+    * [4.14.8, released 08 March 2024](/docs/openshift?topic=openshift-cl-add-ons-openshift-data-foundation#cl-add-ons-openshift-data-foundation-4.14.8)
 
-    * [Version 4.13.19, released 03 August 2024](/docs/openshift?topic=openshift-odf_addon_changelog#4.13.19_odf)
+    * [4.14.7, released 29 February 2024](/docs/openshift?topic=openshift-cl-add-ons-openshift-data-foundation#cl-add-ons-openshift-data-foundation-4.14.7)
 
-    * [Version 4.13.18, released 15 July 2024](/docs/openshift?topic=openshift-odf_addon_changelog#4.13.18_odf)
+    * [4.14.5, 14 February 2024](/docs/openshift?topic=openshift-cl-add-ons-openshift-data-foundation#cl-add-ons-openshift-data-foundation-4.14.5)
 
-    * [Version 4.13.17, released 5 June 2024](/docs/openshift?topic=openshift-odf_addon_changelog#4.13.17_odf)
+    * [4.14.0, released 19 January 2024](/docs/openshift?topic=openshift-cl-add-ons-openshift-data-foundation#cl-add-ons-openshift-data-foundation-4.14.0)
 
-    * [Version 4.13.16, released 19 April 2024](/docs/openshift?topic=openshift-odf_addon_changelog#4.13.16_odf)
+* [Version 4.13](/docs/openshift?topic=openshift-cl-add-ons-openshift-data-foundation#cl-add-ons-openshift-data-foundation-4.13)
 
-    * [Version 4.13.15, released 08 March 2024](/docs/openshift?topic=openshift-odf_addon_changelog#4.13.15_odf)
+    * [4.13.20, released 04 February 2025](/docs/openshift?topic=openshift-cl-add-ons-openshift-data-foundation#cl-add-ons-openshift-data-foundation-41320)
 
-    * [Version 4.13.14, released 14 March 2024](/docs/openshift?topic=openshift-odf_addon_changelog#4.13.14_odf)
+    * [4.13.19, released 03 August 2024](/docs/openshift?topic=openshift-cl-add-ons-openshift-data-foundation#cl-add-ons-openshift-data-foundation-4.13.19)
 
-    * [Version 4.13.13, released 08 March 2024](/docs/openshift?topic=openshift-odf_addon_changelog#4.13.13_odf)
+    * [4.13.18, released 15 July 2024](/docs/openshift?topic=openshift-cl-add-ons-openshift-data-foundation#cl-add-ons-openshift-data-foundation-4.13.18)
 
-    * [Version 4.13.12, released 04 March 2024](/docs/openshift?topic=openshift-odf_addon_changelog#4.13.12_odf)
+    * [4.13.17, released 5 June 2024](/docs/openshift?topic=openshift-cl-add-ons-openshift-data-foundation#cl-add-ons-openshift-data-foundation-4.13.17)
 
-    * [Version 4.13.11, released 14 February 2024](/docs/openshift?topic=openshift-odf_addon_changelog#4.13.11_odf)
+    * [4.13.16, released 19 April 2024](/docs/openshift?topic=openshift-cl-add-ons-openshift-data-foundation#cl-add-ons-openshift-data-foundation-4.13.16)
 
-    * [Version 4.13.9, released 23 January 2024](/docs/openshift?topic=openshift-odf_addon_changelog#4.13.9_odf)
+    * [4.13.15, released 08 March 2024](/docs/openshift?topic=openshift-cl-add-ons-openshift-data-foundation#cl-add-ons-openshift-data-foundation-4.13.15)
 
-    * [Version 4.13.7, released 02 November 2023](/docs/openshift?topic=openshift-odf_addon_changelog#4.13.7_odf)
+    * [4.13.14, released 14 March 2024](/docs/openshift?topic=openshift-cl-add-ons-openshift-data-foundation#cl-add-ons-openshift-data-foundation-4.13.14)
 
-    * [Version 4.13.6, released 20 October 2023](/docs/openshift?topic=openshift-odf_addon_changelog#4.13.6_odf)
+    * [4.13.13, released 08 March 2024](/docs/openshift?topic=openshift-cl-add-ons-openshift-data-foundation#cl-add-ons-openshift-data-foundation-4.13.13)
 
-    * [Version 4.13.4, released 12 September 2023](/docs/openshift?topic=openshift-odf_addon_changelog#4.13.4_odf)
+    * [4.13.12, released 04 March 2024](/docs/openshift?topic=openshift-cl-add-ons-openshift-data-foundation#cl-add-ons-openshift-data-foundation-4.13.12)
 
-    * [Version 4.13.3, released 31 July 2023](/docs/openshift?topic=openshift-odf_addon_changelog#4.13.3_odf)
+    * [4.13.11, released 14 February 2024](/docs/openshift?topic=openshift-cl-add-ons-openshift-data-foundation#cl-add-ons-openshift-data-foundation-4.13.11)
 
-    * [Version 4.13.0, released 10 July 2023](/docs/openshift?topic=openshift-odf_addon_changelog#4.13.0_odf)
+    * [4.13.9, released 23 January 2024](/docs/openshift?topic=openshift-cl-add-ons-openshift-data-foundation#cl-add-ons-openshift-data-foundation-4.13.9)
 
-* [Version 4.12](/docs/openshift?topic=openshift-odf_addon_changelog#4.12_odf)
+    * [4.13.7, released 02 November 2023](/docs/openshift?topic=openshift-cl-add-ons-openshift-data-foundation#cl-add-ons-openshift-data-foundation-4.13.7)
 
-    * [Version 4.12.21, released 03 August 2024](/docs/openshift?topic=openshift-odf_addon_changelog#4.12.21_odf)
+    * [4.13.6, released 20 October 2023](/docs/openshift?topic=openshift-cl-add-ons-openshift-data-foundation#cl-add-ons-openshift-data-foundation-4.13.6)
 
-    * [Version 4.12.20, released 15 July 2024](/docs/openshift?topic=openshift-odf_addon_changelog#4.12.20_odf)
+    * [4.13.4, released 12 September 2023](/docs/openshift?topic=openshift-cl-add-ons-openshift-data-foundation#cl-add-ons-openshift-data-foundation-4.13.4)
 
-    * [Version 4.12.19, released 5 June 2024](/docs/openshift?topic=openshift-odf_addon_changelog#4.12.19_odf)
+    * [4.13.3, released 31 July 2023](/docs/openshift?topic=openshift-cl-add-ons-openshift-data-foundation#cl-add-ons-openshift-data-foundation-4.13.3)
 
-    * [Version 4.12.18, released 19 April 2024](/docs/openshift?topic=openshift-odf_addon_changelog#4.12.18_odf)
+    * [4.13.0, released 10 July 2023](/docs/openshift?topic=openshift-cl-add-ons-openshift-data-foundation#cl-add-ons-openshift-data-foundation-4.13.0)
 
-    * [Version 4.12.17, released 04 March 2024](/docs/openshift?topic=openshift-odf_addon_changelog#4.12.17_odf)
+* [Version 4.12.0](/docs/openshift?topic=openshift-cl-add-ons-openshift-data-foundation#cl-add-ons-openshift-data-foundation-4.12)
 
-    * [Version 4.12.16, released 14 February 2024](/docs/openshift?topic=openshift-odf_addon_changelog#4.12.16_odf)
+    * [4.12.21, released 03 August 2024](/docs/openshift?topic=openshift-cl-add-ons-openshift-data-foundation#cl-add-ons-openshift-data-foundation-4.12.21)
 
-    * [Version 4.12.15, released 02 February 2024](/docs/openshift?topic=openshift-odf_addon_changelog#4.12.15_odf)
+    * [4.12.20, released 15 July 2024](/docs/openshift?topic=openshift-cl-add-ons-openshift-data-foundation#cl-add-ons-openshift-data-foundation-4.12.20)
 
-    * [Version 4.12.13, released 29 November 2023](/docs/openshift?topic=openshift-odf_addon_changelog#4.12.13_odf)
+    * [4.12.19, released 5 June 2024](/docs/openshift?topic=openshift-cl-add-ons-openshift-data-foundation#cl-add-ons-openshift-data-foundation-4.12.19)
 
-    * [Version 4.12.12, released 02 November 2023](/docs/openshift?topic=openshift-odf_addon_changelog#4.12.12_odf)
+    * [4.12.18, released 19 April 2024](/docs/openshift?topic=openshift-cl-add-ons-openshift-data-foundation#cl-add-ons-openshift-data-foundation-4.12.18)
 
-    * [Version 4.12.11, released 20 October 2023](/docs/openshift?topic=openshift-odf_addon_changelog#4.12.11_odf)
+    * [4.12.17, released 04 March 2024](/docs/openshift?topic=openshift-cl-add-ons-openshift-data-foundation#cl-add-ons-openshift-data-foundation-4.12.17)
 
-    * [Version 4.12.9, released 12 September 2023](/docs/openshift?topic=openshift-odf_addon_changelog#4.12.9_odf)
+    * [4.12.16, released 14 February 2024](/docs/openshift?topic=openshift-cl-add-ons-openshift-data-foundation#cl-add-ons-openshift-data-foundation-4.12.16)
 
-    * [Version 4.12.8, released 31 July 2023](/docs/openshift?topic=openshift-odf_addon_changelog#4.12.8_odf)
+    * [4.12.15, released 02 February 2024](/docs/openshift?topic=openshift-cl-add-ons-openshift-data-foundation#cl-add-ons-openshift-data-foundation-4.12.15)
 
-    * [Version 4.12.6, released 28 June 2023](/docs/openshift?topic=openshift-odf_addon_changelog#4.12.6_odf)
+    * [4.12.13, released 29 November 2023](/docs/openshift?topic=openshift-cl-add-ons-openshift-data-foundation#cl-add-ons-openshift-data-foundation-4.12.13)
 
-    * [Version 4.12.5, released 09 June 2023](/docs/openshift?topic=openshift-odf_addon_changelog#4.12.5_odf)
+    * [4.12.12, released 02 November 2023](/docs/openshift?topic=openshift-cl-add-ons-openshift-data-foundation#cl-add-ons-openshift-data-foundation-4.12.12)
 
-    * [Version 4.12.4, released 05 May 2023](/docs/openshift?topic=openshift-odf_addon_changelog#4.12.4_odf)
+    * [4.12.11, released 20 October 2023](/docs/openshift?topic=openshift-cl-add-ons-openshift-data-foundation#cl-add-ons-openshift-data-foundation-4.12.11)
 
-    * [Version 4.12.0, released 16 March 2023](/docs/openshift?topic=openshift-odf_addon_changelog#4.12.0_odf)
+    * [4.12.9, released 12 September 2023](/docs/openshift?topic=openshift-cl-add-ons-openshift-data-foundation#cl-add-ons-openshift-data-foundation-4.12.9)
 
-* [Version 4.11](/docs/openshift?topic=openshift-odf_addon_changelog#4.11_odf)
+    * [4.12.8, released 31 July 2023](/docs/openshift?topic=openshift-cl-add-ons-openshift-data-foundation#cl-add-ons-openshift-data-foundation-4.12.8)
 
-    * [Version 4.11.21, released 04 March 2024](/docs/openshift?topic=openshift-odf_addon_changelog#4.11.21_odf)
+    * [4.12.6, released 28 June 2023](/docs/openshift?topic=openshift-cl-add-ons-openshift-data-foundation#cl-add-ons-openshift-data-foundation-4.12.6)
 
-    * [Version 4.11.20, released 14 February 2024](/docs/openshift?topic=openshift-odf_addon_changelog#4.11.20_odf)
+    * [4.12.5, released 09 June 2023](/docs/openshift?topic=openshift-cl-add-ons-openshift-data-foundation#cl-add-ons-openshift-data-foundation-4.12.5)
 
-    * [Version 4.11.19, released 02 February 2024](/docs/openshift?topic=openshift-odf_addon_changelog#4.11.19_odf)
+    * [4.12.4, released 05 May 2023](/docs/openshift?topic=openshift-cl-add-ons-openshift-data-foundation#cl-add-ons-openshift-data-foundation-4.12.4)
 
-    * [Version 4.11.18, released 29 November 2023](/docs/openshift?topic=openshift-odf_addon_changelog#4.11.18_odf)
+    * [4.12.0, released 16 March 2023](/docs/openshift?topic=openshift-cl-add-ons-openshift-data-foundation#cl-add-ons-openshift-data-foundation-4.12.0)
 
-    * [Version 4.11.17, released 02 November 2023](/docs/openshift?topic=openshift-odf_addon_changelog#4.11.17_odf)
+* [Version 4.11.0](/docs/openshift?topic=openshift-cl-add-ons-openshift-data-foundation#cl-add-ons-openshift-data-foundation-4.11)
 
-    * [Version 4.11.16, released 20 October 2023](/docs/openshift?topic=openshift-odf_addon_changelog#4.11.16_odf)
+    * [4.11.21, released 04 March 2024](/docs/openshift?topic=openshift-cl-add-ons-openshift-data-foundation#cl-add-ons-openshift-data-foundation-4.11.21)
 
-    * [Version 4.11.14, released 12 September 2023](/docs/openshift?topic=openshift-odf_addon_changelog#4.11.14_odf)
+    * [4.11.20, released 14 February 2024](/docs/openshift?topic=openshift-cl-add-ons-openshift-data-foundation#cl-add-ons-openshift-data-foundation-4.11.20)
 
-    * [Version 4.11.13, released 31 July 2023](/docs/openshift?topic=openshift-odf_addon_changelog#4.11.13_odf)
+    * [4.11.19, released 02 February 2024](/docs/openshift?topic=openshift-cl-add-ons-openshift-data-foundation#cl-add-ons-openshift-data-foundation-4.11.19)
 
-    * [Version 4.11.11, released 09 June 2023](/docs/openshift?topic=openshift-odf_addon_changelog#4.11.11_odf)
+    * [4.11.18, released 29 November 2023](/docs/openshift?topic=openshift-cl-add-ons-openshift-data-foundation#cl-add-ons-openshift-data-foundation-4.11.18)
 
-    * [Version 4.11.10, released 05 May 2023](/docs/openshift?topic=openshift-odf_addon_changelog#4.11.10_odf)
+    * [4.11.17, released 02 November 2023](/docs/openshift?topic=openshift-cl-add-ons-openshift-data-foundation#cl-add-ons-openshift-data-foundation-4.11.17)
 
-    * [Version 4.11.4, released 14 February 2023](/docs/openshift?topic=openshift-odf_addon_changelog#4.11.4_odf)
+    * [4.11.16, released 20 October 2023](/docs/openshift?topic=openshift-cl-add-ons-openshift-data-foundation#cl-add-ons-openshift-data-foundation-4.11.16)
 
-    * [Version 4.11.3, released 18 January 2023](/docs/openshift?topic=openshift-odf_addon_changelog#4.11.3_odf)
+    * [4.11.14, released 12 September 2023](/docs/openshift?topic=openshift-cl-add-ons-openshift-data-foundation#cl-add-ons-openshift-data-foundation-4.11.14)
 
-    * [Version 4.11.2, released 03 January 2023](/docs/openshift?topic=openshift-odf_addon_changelog#4.11.2_odf)
+    * [4.11.13, released 31 July 2023](/docs/openshift?topic=openshift-cl-add-ons-openshift-data-foundation#cl-add-ons-openshift-data-foundation-4.11.13)
 
-    * [Version 4.11.0, released 21 December 2022](/docs/openshift?topic=openshift-odf_addon_changelog#4.11.0_odf)
+    * [4.11.11, released 09 June 2023](/docs/openshift?topic=openshift-cl-add-ons-openshift-data-foundation#cl-add-ons-openshift-data-foundation-4.11.11)
 
-* [Version 4.10](/docs/openshift?topic=openshift-odf_addon_changelog#4.10_odf)
+    * [4.11.10, released 05 May 2023](/docs/openshift?topic=openshift-cl-add-ons-openshift-data-foundation#cl-add-ons-openshift-data-foundation-4.11.10)
 
-    * [Version 4.10.32, released 29 November 2023](/docs/openshift?topic=openshift-odf_addon_changelog#4.10.32_odf)
+    * [4.11.4, released 14 February 2023](/docs/openshift?topic=openshift-cl-add-ons-openshift-data-foundation#cl-add-ons-openshift-data-foundation-4.11.4)
 
-    * [Version 4.10.31, released 02 November 2023](/docs/openshift?topic=openshift-odf_addon_changelog#4.10.31_odf)
+    * [4.11.3, released 18 January 2023](/docs/openshift?topic=openshift-cl-add-ons-openshift-data-foundation#cl-add-ons-openshift-data-foundation-4.11.3)
 
-    * [Version 4.10.30 released 20 October 2023](/docs/openshift?topic=openshift-odf_addon_changelog#4.10.30_odf)
+    * [4.11.2, released 03 January 2023](/docs/openshift?topic=openshift-cl-add-ons-openshift-data-foundation#cl-add-ons-openshift-data-foundation-4.11.2)
 
-    * [Version 4.10.29, released 12 September 2023](/docs/openshift?topic=openshift-odf_addon_changelog#4.10.29_odf)
+    * [4.11.0, released 21 December 2022](/docs/openshift?topic=openshift-cl-add-ons-openshift-data-foundation#cl-add-ons-openshift-data-foundation-4.11.0)
 
-    * [Version 4.10.28, released 31 July 2023](/docs/openshift?topic=openshift-odf_addon_changelog#4.10.28_odf)
+* [Version 4.10.0](/docs/openshift?topic=openshift-cl-add-ons-openshift-data-foundation#cl-add-ons-openshift-data-foundation-4.10)
 
-    * [Version 4.10.27, released 28 June 2023](/docs/openshift?topic=openshift-odf_addon_changelog#4.10.27_odf)
+    * [4.10.32, released 29 November 2023](/docs/openshift?topic=openshift-cl-add-ons-openshift-data-foundation#cl-add-ons-openshift-data-foundation-4.10.32)
 
-    * [Version 4.10.26 released 09 June 2023](/docs/openshift?topic=openshift-odf_addon_changelog#4.10.26_odf)
+    * [4.10.31, released 02 November 2023](/docs/openshift?topic=openshift-cl-add-ons-openshift-data-foundation#cl-add-ons-openshift-data-foundation-4.10.31)
 
-    * [Version 4.10.24, released 05 May 2023](/docs/openshift?topic=openshift-odf_addon_changelog#4.10.24_odf)
+    * [4.10.30 released 20 October 2023](/docs/openshift?topic=openshift-cl-add-ons-openshift-data-foundation#cl-add-ons-openshift-data-foundation-4.10.30)
 
-    * [Version 4.10.14, released 17 November 2023](/docs/openshift?topic=openshift-odf_addon_changelog#4.10.14_odf)
+    * [4.10.29, released 12 September 2023](/docs/openshift?topic=openshift-cl-add-ons-openshift-data-foundation#cl-add-ons-openshift-data-foundation-4.10.29)
 
-    * [Version 4.10.12, released 02 November 2022](/docs/openshift?topic=openshift-odf_addon_changelog#4.10.12_odf)
+    * [4.10.28, released 31 July 2023](/docs/openshift?topic=openshift-cl-add-ons-openshift-data-foundation#cl-add-ons-openshift-data-foundation-4.10.28)
 
-    * [Version 4.10.11, released 16 September 2022](/docs/openshift?topic=openshift-odf_addon_changelog#4.10.11_odf)
+    * [4.10.27, released 28 June 2023](/docs/openshift?topic=openshift-cl-add-ons-openshift-data-foundation#cl-add-ons-openshift-data-foundation-4.10.27)
 
-    * [Version 4.10.10, released 01 September 2022](/docs/openshift?topic=openshift-odf_addon_changelog#4.10.10_odf)
+    * [4.10.26 released 09 June 2023](/docs/openshift?topic=openshift-cl-add-ons-openshift-data-foundation#cl-add-ons-openshift-data-foundation-4.10.26)
 
-    * [Version 4.10.9, released 12 August 2022](/docs/openshift?topic=openshift-odf_addon_changelog#4.10.9_odf)
+    * [4.10.24, released 05 May 2023](/docs/openshift?topic=openshift-cl-add-ons-openshift-data-foundation#cl-add-ons-openshift-data-foundation-4.10.24)
 
-    * [Version 4.10.7, released 02 August 2022](/docs/openshift?topic=openshift-odf_addon_changelog#4.10.7_odf)
+    * [4.10.14, released 17 November 2023](/docs/openshift?topic=openshift-cl-add-ons-openshift-data-foundation#cl-add-ons-openshift-data-foundation-4.10.14)
 
-    * [Version 4.10.6, released 12 July 2022](/docs/openshift?topic=openshift-odf_addon_changelog#4.10.6_odf)
+    * [4.10.12, released 02 November 2022](/docs/openshift?topic=openshift-cl-add-ons-openshift-data-foundation#cl-add-ons-openshift-data-foundation-4.10.12)
 
-    * [Version 4.10.5, released 7 July 2022](/docs/openshift?topic=openshift-odf_addon_changelog#4.10.5_odf)
+    * [4.10.11, released 16 September 2022](/docs/openshift?topic=openshift-cl-add-ons-openshift-data-foundation#cl-add-ons-openshift-data-foundation-4.10.11)
 
-    * [Version 4.10.4, released 22 June 2022](/docs/openshift?topic=openshift-odf_addon_changelog#4.10.4_odf)
+    * [4.10.10, released 01 September 2022](/docs/openshift?topic=openshift-cl-add-ons-openshift-data-foundation#cl-add-ons-openshift-data-foundation-4.10.10)
 
-    * [Version 4.10.3, released 13 June 2022](/docs/openshift?topic=openshift-odf_addon_changelog#4.10.3_odf)
+    * [4.10.9, released 12 August 2022](/docs/openshift?topic=openshift-cl-add-ons-openshift-data-foundation#cl-add-ons-openshift-data-foundation-4.10.9)
 
-    * [Version 4.10.2, released 23 May 2022](/docs/openshift?topic=openshift-odf_addon_changelog#4.10.2_odf)
+    * [4.10.7, released 02 August 2022](/docs/openshift?topic=openshift-cl-add-ons-openshift-data-foundation#cl-add-ons-openshift-data-foundation-4.10.7)
 
-    * [Version 4.10.1, released 20 May 2022](/docs/openshift?topic=openshift-odf_addon_changelog#4.10.1_odf)
+    * [4.10.6, released 12 July 2022](/docs/openshift?topic=openshift-cl-add-ons-openshift-data-foundation#cl-add-ons-openshift-data-foundation-4.10.6)
 
-    * [Version 4.10.0, released 9 May 2022](/docs/openshift?topic=openshift-odf_addon_changelog#4.10.0_odf)
+    * [4.10.5, released 7 July 2022](/docs/openshift?topic=openshift-cl-add-ons-openshift-data-foundation#cl-add-ons-openshift-data-foundation-4.10.5)
 
-* [Version 4.9](/docs/openshift?topic=openshift-odf_addon_changelog#4.9_odf)
+    * [4.10.4, released 22 June 2022](/docs/openshift?topic=openshift-cl-add-ons-openshift-data-foundation#cl-add-ons-openshift-data-foundation-4.10.4)
 
-    * [Version 4.9.29, released 28 June 2023](/docs/openshift?topic=openshift-odf_addon_changelog#4.9.29_odf)
+    * [4.10.3, released 13 June 2022](/docs/openshift?topic=openshift-cl-add-ons-openshift-data-foundation#cl-add-ons-openshift-data-foundation-4.10.3)
 
-    * [Version 4.9.28, released 09 June 2023](/docs/openshift?topic=openshift-odf_addon_changelog#4.9.28_odf)
+    * [4.10.2, released 23 May 2022](/docs/openshift?topic=openshift-cl-add-ons-openshift-data-foundation#cl-add-ons-openshift-data-foundation-4.10.2)
 
-    * [Version 4.9.26, released 05 May 2023](/docs/openshift?topic=openshift-odf_addon_changelog#4.9.26_odf)
+    * [4.10.1, released 20 May 2022](/docs/openshift?topic=openshift-cl-add-ons-openshift-data-foundation#cl-add-ons-openshift-data-foundation-4.10.1)
 
-    * [Version 4.9.5, released 20 May 2022](/docs/openshift?topic=openshift-odf_addon_changelog#4.9.5_odf)
+    * [4.10.0, released 9 May 2022](/docs/openshift?topic=openshift-cl-add-ons-openshift-data-foundation#cl-add-ons-openshift-data-foundation-4.10.0)
 
-    * [Version 4.9.4, released 13 April 2022](/docs/openshift?topic=openshift-odf_addon_changelog#4.9.4_odf)
+* [Version 4.9.0](/docs/openshift?topic=openshift-cl-add-ons-openshift-data-foundation#cl-add-ons-openshift-data-foundation-4.9)
 
-    * [Version 4.9.3, released 23 March 2022](/docs/openshift?topic=openshift-odf_addon_changelog#4.9.3_odf)
+    * [4.9.29, released 28 June 2023](/docs/openshift?topic=openshift-cl-add-ons-openshift-data-foundation#cl-add-ons-openshift-data-foundation-4.9.29)
 
-    * [Version 4.9.2, released 24 February 2022](/docs/openshift?topic=openshift-odf_addon_changelog#4.9.2_odf)
+    * [4.9.28, released 09 June 2023](/docs/openshift?topic=openshift-cl-add-ons-openshift-data-foundation#cl-add-ons-openshift-data-foundation-4.9.28)
 
-    * [Version 4.9.1, released 23 February 2022](/docs/openshift?topic=openshift-odf_addon_changelog#4.9.1_odf)
+    * [4.9.26, released 05 May 2023](/docs/openshift?topic=openshift-cl-add-ons-openshift-data-foundation#cl-add-ons-openshift-data-foundation-4.9.26)
 
-    * [Version 4.9.0, released 11 February 2022](/docs/openshift?topic=openshift-odf_addon_changelog#4.9.0_odf)
+    * [4.9.5, released 20 May 2022](/docs/openshift?topic=openshift-cl-add-ons-openshift-data-foundation#cl-add-ons-openshift-data-foundation-4.9.5)
 
-* [Version 4.8](/docs/openshift?topic=openshift-odf_addon_changelog#4.8_odf)
+    * [4.9.4, released 13 April 2022](/docs/openshift?topic=openshift-cl-add-ons-openshift-data-foundation#cl-add-ons-openshift-data-foundation-4.9.4)
 
-    * [Version 4.8.31, released 05 May 2023](/docs/openshift?topic=openshift-odf_addon_changelog#4.8.31_odf)
+    * [4.9.3, released 23 March 2022](/docs/openshift?topic=openshift-cl-add-ons-openshift-data-foundation#cl-add-ons-openshift-data-foundation-4.9.3)
 
-    * [Version 4.8.4, released 17 January 2022](/docs/openshift?topic=openshift-odf_addon_changelog#4.8.4_odf)
+    * [4.9.2, released 24 February 2022](/docs/openshift?topic=openshift-cl-add-ons-openshift-data-foundation#cl-add-ons-openshift-data-foundation-4.9.2)
 
-    * [Version 4.8.3, released Jan 07, 2022](/docs/openshift?topic=openshift-odf_addon_changelog#4.8.3_odf)
+    * [4.9.1, released 23 February 2022](/docs/openshift?topic=openshift-cl-add-ons-openshift-data-foundation#cl-add-ons-openshift-data-foundation-4.9.1)
 
-    * [Version 4.8.2, released 03 January 2022](/docs/openshift?topic=openshift-odf_addon_changelog#4.8.2_odf)
+    * [4.9.0, released 11 February 2022](/docs/openshift?topic=openshift-cl-add-ons-openshift-data-foundation#cl-add-ons-openshift-data-foundation-4.9.0)
 
-    * [Version 4.8.1, released 17 November 2021](/docs/openshift?topic=openshift-odf_addon_changelog#4.8.1_odf)
+* [Version 4.8.0](/docs/openshift?topic=openshift-cl-add-ons-openshift-data-foundation#cl-add-ons-openshift-data-foundation-4.8)
 
-    * [Version 4.8.0, released 25 October 2021](/docs/openshift?topic=openshift-odf_addon_changelog#4.8.0_odf)
+    * [4.8.31, released 05 May 2023](/docs/openshift?topic=openshift-cl-add-ons-openshift-data-foundation#cl-add-ons-openshift-data-foundation-4.8.31)
 
-* [Version 4.7](/docs/openshift?topic=openshift-odf_addon_changelog#4.7_odf)
+    * [4.8.4, released 17 January 2022](/docs/openshift?topic=openshift-cl-add-ons-openshift-data-foundation#cl-add-ons-openshift-data-foundation-4.8.4)
 
-    * [Version 4.7.14, released 25 October 2021](/docs/openshift?topic=openshift-odf_addon_changelog#4.7.14_odf)
+    * [4.8.3, released Jan 07, 2022](/docs/openshift?topic=openshift-cl-add-ons-openshift-data-foundation#cl-add-ons-openshift-data-foundation-4.8.3)
 
-    * [Version 4.7.13, released 13 October 2021](/docs/openshift?topic=openshift-odf_addon_changelog#4.7.13_odf)
+    * [4.8.2, released 03 January 2022](/docs/openshift?topic=openshift-cl-add-ons-openshift-data-foundation#cl-add-ons-openshift-data-foundation-4.8.2)
 
-    * [Version 4.7.12, released 30 September 2021](/docs/openshift?topic=openshift-odf_addon_changelog#4.7.12_odf)
+    * [4.8.1, released 17 November 2021](/docs/openshift?topic=openshift-cl-add-ons-openshift-data-foundation#cl-add-ons-openshift-data-foundation-4.8.1)
 
-    * [Version 4.7.11, released 29 September 2021](/docs/openshift?topic=openshift-odf_addon_changelog#4.7.11_odf)
+    * [4.8.0, released 25 October 2021](/docs/openshift?topic=openshift-cl-add-ons-openshift-data-foundation#cl-add-ons-openshift-data-foundation-4.8.0)
 
-    * [Version 4.7.10, released 15 September 2021](/docs/openshift?topic=openshift-odf_addon_changelog#4.7.10_odf)
+* [Version 4.7.0](/docs/openshift?topic=openshift-cl-add-ons-openshift-data-foundation#cl-add-ons-openshift-data-foundation-4.7)
 
-    * [Version 4.7.9, released 06 September 2021](/docs/openshift?topic=openshift-odf_addon_changelog#4.7.9_odf)
+    * [4.7.14, released 25 October 2021](/docs/openshift?topic=openshift-cl-add-ons-openshift-data-foundation#cl-add-ons-openshift-data-foundation-4.7.14)
 
-    * [Version 4.7.8, released 16 August 202](/docs/openshift?topic=openshift-odf_addon_changelog#4.7.8_odf)
+    * [4.7.13, released 13 October 2021](/docs/openshift?topic=openshift-cl-add-ons-openshift-data-foundation#cl-add-ons-openshift-data-foundation-4.7.13)
 
-    * [Version 4.7.7, released 27 July 2021](/docs/openshift?topic=openshift-odf_addon_changelog#4.7.7_odf)
+    * [4.7.12, released 30 September 2021](/docs/openshift?topic=openshift-cl-add-ons-openshift-data-foundation#cl-add-ons-openshift-data-foundation-4.7.12)
 
-    * [Version 4.7.6, released 05 July 2021](/docs/openshift?topic=openshift-odf_addon_changelog#4.7.6_odf)
+    * [4.7.11, released 29 September 2021](/docs/openshift?topic=openshift-cl-add-ons-openshift-data-foundation#cl-add-ons-openshift-data-foundation-4.7.11)
+
+    * [4.7.10, released 15 September 2021](/docs/openshift?topic=openshift-cl-add-ons-openshift-data-foundation#cl-add-ons-openshift-data-foundation-4.7.10)
+
+    * [4.7.9, released 06 September 2021](/docs/openshift?topic=openshift-cl-add-ons-openshift-data-foundation#cl-add-ons-openshift-data-foundation-4.7.9)
+
+    * [4.7.8, released 16 August 202](/docs/openshift?topic=openshift-cl-add-ons-openshift-data-foundation#cl-add-ons-openshift-data-foundation-4.7.8)
+
+    * [4.7.7, released 27 July 2021](/docs/openshift?topic=openshift-cl-add-ons-openshift-data-foundation#cl-add-ons-openshift-data-foundation-4.7.7)
+
+    * [4.7.6, released 05 July 2021](/docs/openshift?topic=openshift-cl-add-ons-openshift-data-foundation#cl-add-ons-openshift-data-foundation-4.7.6)
 
 [Back up and restore Helm chart](/docs/openshift?topic=openshift-backup_restore_changelog#backup_restore_changelog)
 
