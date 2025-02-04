@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2025
-lastupdated: "2025-02-03"
+lastupdated: "2025-02-04"
 
 
 keywords: kubernetes, release notes, openshift, {{site.data.keyword.openshiftlong_notm}}
@@ -29,6 +29,13 @@ Looking for {{site.data.keyword.cloud_notm}} status, platform announcements, sec
   
 ## February 2025
 {: #openshift-feb25}
+
+### 04 February 2025
+{: #openshift-feb0425}
+{: release-note}
+
+OpenShift Data Foundation cluster add-on patch updates.
+:   For more information, see the [change log](/docs/openshift?topic=openshift-cl-add-ons-openshift-data-foundation).
 
 ### 03 February 2025
 {: #openshift-feb0325}
@@ -60,7 +67,6 @@ Version 4.17 is now the default version for {{site.data.keyword.openshiftlong_no
 :   [Version 4.14 change log](/docs/openshift?topic=openshift-openshift_changelog_414)
 :   [Version 4.13 change log](/docs/openshift?topic=openshift-openshift_changelog_413)
 :   [Version 4.12 change log](/docs/openshift?topic=openshift-openshift_changelog_412)
-
 
 
 
@@ -388,7 +394,7 @@ IBM Cloud Image Key Synchronizer cluster add-on patch updates.
 {: release-note}
 
 OpenShift Data Foundation cluster add-on patch updates.
-:   For more information, see the [change log](/docs/openshift?topic=openshift-odf_addon_changelog).
+:   For more information, see the [change log](/docs/openshift?topic=openshift-cl-add-ons-openshift-data-foundation).
 
 
 
@@ -783,7 +789,7 @@ Cluster autoscaler add-on patch updates for {{site.data.keyword.openshiftlong_no
 
 
 OpenShift Data Foundation cluster add-on patch updates.
-:   For more information, see the [change log](/docs/openshift?topic=openshift-odf_addon_changelog).
+:   For more information, see the [change log](/docs/openshift?topic=openshift-cl-add-ons-openshift-data-foundation).
 
 
 
@@ -1003,7 +1009,7 @@ GPU worker node flavors with Red Hat Enterprise Linux CoreOS (RHCOS).
 
 
 OpenShift Data Foundation add-on version `4.15.0` is available.
-:   For more information, see the [change log](/docs/openshift?topic=openshift-odf_addon_changelog).
+:   For more information, see the [change log](/docs/openshift?topic=openshift-cl-add-ons-openshift-data-foundation).
 
 
 
@@ -1490,7 +1496,7 @@ CLI version `1.0.589` is available.
 
 
 OpenShift Data Foundation add-on version `4.14.0`.
-:   For more information, see the [change log](/docs/openshift?topic=openshift-odf_addon_changelog).
+:   For more information, see the [change log](/docs/openshift?topic=openshift-cl-add-ons-openshift-data-foundation).
 
 
 
@@ -1556,7 +1562,7 @@ Subscribe to the {{site.data.keyword.cloud_notm}} documentation release notes vi
 {: release-note}
 
 OpenShift Data Foundation add-on version `4.13.9`.
-:   For more information, see the [change log](/docs/openshift?topic=openshift-odf_addon_changelog).
+:   For more information, see the [change log](/docs/openshift?topic=openshift-cl-add-ons-openshift-data-foundation).
 
 
 
@@ -1737,7 +1743,7 @@ Worker node fix packs are available.
     - [4.10.67_1592_openshift](/docs/openshift?topic=openshift-openshift_changelog_410)
     
 OpenShift Data Foundation add-on versions `4.10.32`, `4.11.12`, and `4.12.13`.
-:   For more information, see the [change log](/docs/openshift?topic=openshift-odf_addon_changelog).
+:   For more information, see the [change log](/docs/openshift?topic=openshift-cl-add-ons-openshift-data-foundation).
 
 
 
@@ -2307,7 +2313,7 @@ Cloud Image Key Synchronizer add-on version `1.0.0_1701`.
 {: release-note}
 
 New! OpenShift Data Foundation add-on version `4.13.0`.
-:   For more information, see the [change log](/docs/openshift?topic=openshift-odf_addon_changelog).
+:   For more information, see the [change log](/docs/openshift?topic=openshift-cl-add-ons-openshift-data-foundation).
 
 
 
@@ -2354,7 +2360,7 @@ Worker node fix packs `4.9.59_1595_openshift`, `4.10.62_1575_openshift`, `4.11.4
 {: release-note} 
 
 New! OpenShift Data Foundation add-on versions `4.12.6`, `4.11.12`, `4.10.27`, and `4.9.29`.
-:   For more information, see the [change log](/docs/openshift?topic=openshift-odf_addon_changelog).
+:   For more information, see the [change log](/docs/openshift?topic=openshift-cl-add-ons-openshift-data-foundation).
 
 
 
@@ -2466,7 +2472,7 @@ Remote health monitoring
 
 
 New! OpenShift Data Foundation add-on versions `4.12.5`, `4.11.11`, `4.10.26`, and `4.9.28`.
-:   For more information, see the [change log](/docs/openshift?topic=openshift-odf_addon_changelog).
+:   For more information, see the [change log](/docs/openshift?topic=openshift-cl-add-ons-openshift-data-foundation).
   
 
 
@@ -2562,7 +2568,7 @@ Worker node fix packs `4.9.59_1588_openshift`, `4.10.59_1566_openshift`, `4.11.3
 
   
 New! OpenShift Data Foundation add-on versions `4.12.4`, `4.11.10`, `4.10.24`, `4.9.26`, and `4.8.31`.
-:   For more information, see the [change log](/docs/openshift?topic=openshift-odf_addon_changelog).
+:   For more information, see the [change log](/docs/openshift?topic=openshift-cl-add-ons-openshift-data-foundation).
   
 
 
@@ -2709,7 +2715,7 @@ Cluster autoscaler add-on version `1.1.0_978`.
 
   
 New! OpenShift Data Foundation add-on version `4.12.0`.
-:   For more information, see the [change log](/docs/openshift?topic=openshift-odf_addon_changelog).
+:   For more information, see the [change log](/docs/openshift?topic=openshift-cl-add-ons-openshift-data-foundation).
   
 
 
@@ -3800,7 +3806,7 @@ New! Enable volume encryption in OpenShift Data Foundation by using {{site.data.
 :   For more information, see [Deploying OpenShift Data Foundation on VPC clusters](/docs/openshift?topic=openshift-deploy-odf-vpc) and [Deploying OpenShift Data Foundation on Classic clusters](/docs/openshift?topic=openshift-deploy-odf-classic). Note that volume encryption is available with add-on version 4.10 and later. 
 
 New! Version 4.10.0 of the OpenShift Data Foundation add-on is available.
-:   For more information, see the [change log](/docs/openshift?topic=openshift-odf_addon_changelog).
+:   For more information, see the [change log](/docs/openshift?topic=openshift-cl-add-ons-openshift-data-foundation).
 
 
 
