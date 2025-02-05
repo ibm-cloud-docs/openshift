@@ -3,7 +3,7 @@
 copyright:
   years: 2024, 2025
 
-lastupdated: "2025-02-04"
+lastupdated: "2025-02-05"
 
 
 keywords: change log, version history, 4.16_openshift
@@ -56,7 +56,7 @@ The following table shows the components included in the worker node fix pack 4.
 
 
 
-### Change log for master fix pack 4.16.28_1550_openshift, released 22 January 2025
+### Master fix pack 4.16.28_1550_openshift, released 22 January 2025
 {: #41628_1550_openshift_M}
 
 The following table shows the changes that are in the master fix pack 4.16.28_1550_openshift. Master patch updates are applied automatically. 
