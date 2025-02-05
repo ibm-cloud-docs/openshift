@@ -1,8 +1,8 @@
 ---
 
 copyright:
-  years: 2024, 2024
-lastupdated: "2024-10-30"
+  years: 2024, 2025
+lastupdated: "2025-02-05"
 
 
 keywords: kubernetes, openshift, object storage add-in, cos
@@ -22,7 +22,7 @@ The {{site.data.keyword.cos_full_notm}} cluster add-on is available in Beta for 
 {: beta}
 
 Prerequisites
-:   The {{site.data.keyword.cos_full_notm}} plug-in requires at least 0.2 vCPU and 128 MB of memory.
+:   The {{site.data.keyword.cos_full_notm}} add-on requires at least 0.2 vCPU and 128 MB of memory.
 
 ## Understanding bucket creation and removal
 {: #cos-addon-bucket-cd}
