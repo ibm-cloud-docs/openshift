@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2025
-lastupdated: "2025-02-04"
+lastupdated: "2025-02-05"
 
 
 keywords: openshift
@@ -3973,6 +3973,8 @@ subcollection: openshift
 
 * [Customizing Ingress routing with annotations](/docs/openshift?topic=openshift-ingress-configure#ingress-configure-annotations)
 
+* [Enabling access logging](/docs/openshift?topic=openshift-ingress-configure#ingress-enable-access-logging)
+
 [Publicly exposing apps with Ingress](/docs/openshift?topic=openshift-ingress-public-expose#ingress-public-expose)
 
 * [Prerequisites](/docs/openshift?topic=openshift-ingress-public-expose#ingress-public-prereqs)
@@ -7024,8 +7026,6 @@ subcollection: openshift
 
 * [`cluster-autoscaler` 1.1.0](/docs/openshift?topic=openshift-supported-cluster-addon-versions#cluster-autoscaler-1.1.0)
 
-* [`cluster-autoscaler` 1.2.1](/docs/openshift?topic=openshift-supported-cluster-addon-versions#cluster-autoscaler-1.2.1)
-
 * [`cluster-autoscaler` 1.2.2](/docs/openshift?topic=openshift-supported-cluster-addon-versions#cluster-autoscaler-1.2.2)
 
 * [`cluster-autoscaler` 1.2.3](/docs/openshift?topic=openshift-supported-cluster-addon-versions#cluster-autoscaler-1.2.3)
@@ -7039,8 +7039,6 @@ subcollection: openshift
 * [`ibm-storage-operator` 1.0](/docs/openshift?topic=openshift-supported-cluster-addon-versions#ibm-storage-operator-1.0)
 
 * [`image-key-synchronizer` 1.0.0](/docs/openshift?topic=openshift-supported-cluster-addon-versions#image-key-synchronizer-1.0.0)
-
-* [`istio` 1.22](/docs/openshift?topic=openshift-supported-cluster-addon-versions#istio-1.22)
 
 * [`istio` 1.23](/docs/openshift?topic=openshift-supported-cluster-addon-versions#istio-1.23)
 
