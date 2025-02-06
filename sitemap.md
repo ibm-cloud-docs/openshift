@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2025
-lastupdated: "2025-02-05"
+lastupdated: "2025-02-06"
 
 
 keywords: openshift
@@ -10928,7 +10928,7 @@ subcollection: openshift
 
 * [Verifying recovery by simulating an error](/docs/openshift?topic=openshift-cos_transport_ts_connect_addon#cos_transport_verify)
 
-[Why do I see a volume mounting error when using the {{site.data.keyword.filestorage_full_notm}} plug-in?](/docs/openshift?topic=openshift-ts-cos-storage-dep#ts-cos-storage-dep)
+[Why do I see a volume mounting error when using the {{site.data.keyword.cos_full_notm}} plug-in?](/docs/openshift?topic=openshift-ts-cos-storage-dep#ts-cos-storage-dep)
 
 [Debugging the Cloud Object Storage add-on](/docs/openshift?topic=openshift-ts-storage-cos-csi-addon#ts-storage-cos-csi-addon)
 
