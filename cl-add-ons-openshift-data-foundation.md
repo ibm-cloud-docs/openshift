@@ -3,7 +3,7 @@
 copyright:
   years: 2024, 2025
 
-lastupdated: "2025-02-04"
+lastupdated: "2025-02-06"
 
 
 keywords: change log, version history, OpenShift Data Foundation
@@ -24,6 +24,7 @@ Review the version history for OpenShift Data Foundation.
 {: shortdesc}
 
 
+
 ## Version 4.17.0
 {: #cl-add-ons-openshift-data-foundation-4.17.0}
 
@@ -34,21 +35,64 @@ Review the version history for OpenShift Data Foundation.
 - Initial release.
 
 
+
 ## Version 4.16.0
-{: #cl-add-ons-openshift-data-foundation-4.16}
+{: #cl-add-ons-openshift-data-foundation-4.16.0}
+
 
 ### 4.16.6, released 04 February 2025
 {: #cl-add-ons-openshift-data-foundation-4166}
 
 - Resolves the following CVEs: [CVE-2023-37920](https://nvd.nist.gov/vuln/detail/CVE-2023-37920){: external}, [CVE-2024-3596](https://nvd.nist.gov/vuln/detail/CVE-2024-3596){: external}, and [CVE-2024-553](https://nvd.nist.gov/vuln/detail/CVE-2024-553){: external}.
 
+
+
+## Version 4.15.0
+{: #cl-add-ons-openshift-data-foundation-4.15.0}
+
+
+### 4.15.7, released 04 February 2025
+{: #cl-add-ons-openshift-data-foundation-4157}
+
+- Resolves the following CVEs: [CVE-2023-37920](https://nvd.nist.gov/vuln/detail/CVE-2023-37920){: external}, [CVE-2024-3596](https://nvd.nist.gov/vuln/detail/CVE-2024-3596){: external}, and [CVE-2024-553](https://nvd.nist.gov/vuln/detail/CVE-2024-553){: external}.
+
+
+
+## Version 4.14.0
+{: #cl-add-ons-openshift-data-foundation-4.14.0}
+
+
+### 4.14.17, released 04 February 2025
+{: #cl-add-ons-openshift-data-foundation-41417}
+
+- Resolves the following CVEs: [CVE-2023-37920](https://nvd.nist.gov/vuln/detail/CVE-2023-37920){: external}, [CVE-2024-3596](https://nvd.nist.gov/vuln/detail/CVE-2024-3596){: external}, and [CVE-2024-553](https://nvd.nist.gov/vuln/detail/CVE-2024-553){: external}.
+
+
+
+## Version 4.13.0
+{: #cl-add-ons-openshift-data-foundation-4.13.0}
+
+
+### 4.13.20, released 04 February 2025
+{: #cl-add-ons-openshift-data-foundation-41320}
+
+- Resolves the following CVEs: [CVE-2023-37920](https://nvd.nist.gov/vuln/detail/CVE-2023-37920){: external}, [CVE-2024-3596](https://nvd.nist.gov/vuln/detail/CVE-2024-3596){: external}, and [CVE-2024-553](https://nvd.nist.gov/vuln/detail/CVE-2024-553){: external}.
+
+
+
+
+
+
+## Version 4.16.0 archive
+{: #cl-add-ons-openshift-data-foundation-4.16-archive}
+
 ### 4.16.3, released 28 October 2024
 {: #cl-add-ons-openshift-data-foundation-4.16.3}
 
 - Resolves [CVE-2024-5535](https://nvd.nist.gov/vuln/detail/CVE-2024-5535){: external}.
 
-## Version 4.15.0
-{: #cl-add-ons-openshift-data-foundation-4.15}
+## Version 4.15.0 archive
+{: #cl-add-ons-openshift-data-foundation-4.15-archive}
 
 ### 4.15.6, released 28 October 2024
 {: #cl-add-ons-openshift-data-foundation-4.15.6}
@@ -83,13 +127,8 @@ Review the version history for OpenShift Data Foundation.
 - Initial release of version `4.15.0`.
 - Adds the `useCephRBDAsDefaultStorageClass`, `enableNFS`, and `resourceProfile` parameters. For more information, see the [parameter reference](/docs/openshift?topic=openshift-openshift_storage_parameters).
 
-## Version 4.14
-{: #cl-add-ons-openshift-data-foundation-4.14}
-
-### 4.14.17, released 04 February 2025
-{: #cl-add-ons-openshift-data-foundation-41417}
-
-- Resolves the following CVEs: [CVE-2023-37920](https://nvd.nist.gov/vuln/detail/CVE-2023-37920){: external}, [CVE-2024-3596](https://nvd.nist.gov/vuln/detail/CVE-2024-3596){: external}, and [CVE-2024-553](https://nvd.nist.gov/vuln/detail/CVE-2024-553){: external}.
+## Version 4.14 archive
+{: #cl-add-ons-openshift-data-foundation-4.14-archive}
 
 ### 4.14.16, released 03 August 2024
 {: #cl-add-ons-openshift-data-foundation-4.14.16}
@@ -155,13 +194,9 @@ Review the version history for OpenShift Data Foundation.
 - Adds the `disableNoobaaLB`, `taintNodes`, `addSingleReplicaPool`, and `prepareForDisasterRecovery` parameters. For more information, see the [OpenShift Data Foundation add-on parameter reference](/docs/openshift?topic=openshift-openshift_storage_parameters).
 
 
-## Version 4.13
-{: #cl-add-ons-openshift-data-foundation-4.13}
+## Version 4.13 archive
+{: #cl-add-ons-openshift-data-foundation-4.13-archive}
 
-### 4.13.20, released 04 February 2025
-{: #cl-add-ons-openshift-data-foundation-41320}
-
-- Resolves the following CVEs: [CVE-2023-37920](https://nvd.nist.gov/vuln/detail/CVE-2023-37920){: external}, [CVE-2024-3596](https://nvd.nist.gov/vuln/detail/CVE-2024-3596){: external}, and [CVE-2024-553](https://nvd.nist.gov/vuln/detail/CVE-2024-553){: external}.
 
 ### 4.13.19, released 03 August 2024
 {: #cl-add-ons-openshift-data-foundation-4.13.19}
@@ -248,8 +283,8 @@ Review the version history for OpenShift Data Foundation.
 - Initial 4.13 release. 
 - Adds support for encryption in transit by specifying the `encryptionInTransit` parameter when installing the add-on.
 
-## Version 4.12.0
-{: #cl-add-ons-openshift-data-foundation-4.12}
+## Version 4.12.0 archive
+{: #cl-add-ons-openshift-data-foundation-4.12-archive}
 
 ### 4.12.21, released 03 August 2024
 {: #cl-add-ons-openshift-data-foundation-4.12.21}
@@ -344,8 +379,8 @@ Review the version history for OpenShift Data Foundation.
 
 Initial release.
 
-## Version 4.11.0
-{: #cl-add-ons-openshift-data-foundation-4.11}
+## Version 4.11.0 archive
+{: #cl-add-ons-openshift-data-foundation-4.11-archive}
 
 
 ### 4.11.21, released 04 March 2024
@@ -426,8 +461,8 @@ Updates Golang to `1.18.9`.
 
 Initial release.
 
-## Version 4.10.0
-{: #cl-add-ons-openshift-data-foundation-4.10}
+## Version 4.10.0 archive
+{: #cl-add-ons-openshift-data-foundation-4.10-archive}
 
 ### 4.10.32, released 29 November 2023 
 {: #cl-add-ons-openshift-data-foundation-4.10.32}
@@ -548,8 +583,8 @@ Includes storage class encryption parameter parsing improvements.
 Initial release.
 
 
-## Version 4.9.0
-{: #cl-add-ons-openshift-data-foundation-4.9}
+## Version 4.9.0 archive
+{: #cl-add-ons-openshift-data-foundation-4.9-archive}
 
 ### 4.9.29, released 28 June 2023
 {: #cl-add-ons-openshift-data-foundation-4.9.29}
@@ -602,8 +637,8 @@ Updates the UBI.
 Initial release.
 
 
-## Version 4.8.0
-{: #cl-add-ons-openshift-data-foundation-4.8}
+## Version 4.8.0 archive
+{: #cl-add-ons-openshift-data-foundation-4.8-archive}
 
 ### 4.8.31, released 05 May 2023
 {: #cl-add-ons-openshift-data-foundation-4.8.31}
@@ -642,8 +677,8 @@ Updates Golang version to 1.16.13.
 
 Updates Golang to 1.16.9.
 
-## Version 4.7.0
-{: #cl-add-ons-openshift-data-foundation-4.7}
+## Version 4.7.0 archive
+{: #cl-add-ons-openshift-data-foundation-4.7-archive}
 
 ### 4.7.14, released 25 October 2021
 {: #cl-add-ons-openshift-data-foundation-4.7.14}
@@ -695,19 +730,3 @@ Adds a fix for multiple operator groups.
 {: #cl-add-ons-openshift-data-foundation-4.7.6}
 
 - Updates the UBI.
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
