@@ -9931,6 +9931,35 @@ subcollection: openshift
 * [Global settings](/docs/openshift?topic=openshift-service-settings#global-settings)
 
 
+## Understanding high availability and disaster recovery for {{site.data.keyword.openshiftlong_notm}}
+{: #sitemap_understanding_high_availability_and_disaster_recovery_for_}
+
+
+[Understanding high availability and disaster recovery for {{site.data.keyword.openshiftlong_notm}}](/docs/openshift?topic=openshift-iks-ha-dr#iks-ha-dr)
+
+* [High availability architecture](/docs/openshift?topic=openshift-iks-ha-dr#ha-architecture)
+
+    * [Resource distribution for high availability.](/docs/openshift?topic=openshift-iks-ha-dr#ha-architecture-dist)
+
+* [High availability features](/docs/openshift?topic=openshift-iks-ha-dr#ha-features)
+
+* [Disaster recovery features](/docs/openshift?topic=openshift-iks-ha-dr#dr-features)
+
+* [Recovery time objective (RTO) and recovery point objective (RPO)](/docs/openshift?topic=openshift-iks-ha-dr#rto-rpo-features)
+
+* [How {{site.data.keyword.IBM}} helps ensure disaster recovery](/docs/openshift?topic=openshift-iks-ha-dr#ibm-disaster-recovery)
+
+    * [How {{site.data.keyword.IBM_notm}} recovers from failures](/docs/openshift?topic=openshift-iks-ha-dr#ibm-zone-failure)
+
+* [How {{site.data.keyword.IBM_notm}} maintains services](/docs/openshift?topic=openshift-iks-ha-dr#ibm-service-maintenance)
+
+* [Your responsibilities for high availability and disaster recovery](/docs/openshift?topic=openshift-iks-ha-dr#your-responsibilities-for-high-availability-and-disaster-recovery)
+
+* [Change management](/docs/openshift?topic=openshift-iks-ha-dr#change-management)
+
+* [Considerations for app and service deployment](/docs/openshift?topic=openshift-iks-ha-dr#app-considerations)
+
+
 ## Service dependencies
 {: #sitemap_service_dependencies}
 
