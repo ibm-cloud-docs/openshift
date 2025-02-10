@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2025
-lastupdated: "2025-02-06"
+lastupdated: "2025-02-10"
 
 
 keywords: kubernetes, release notes, openshift, {{site.data.keyword.openshiftlong_notm}}
@@ -29,6 +29,13 @@ Looking for {{site.data.keyword.cloud_notm}} status, platform announcements, sec
   
 ## February 2025
 {: #openshift-feb25}
+
+### 06 February 2025
+{: #openshift-06february25}
+{: release-note}
+
+Static Route cluster add-on patch updates.
+:   For more information, see the [change log](/docs/openshift?topic=openshift-static-route-change-log).
 
 ### 04 February 2025
 {: #openshift-feb0425}
