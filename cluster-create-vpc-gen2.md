@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2025
-lastupdated: "2025-02-01"
+lastupdated: "2025-02-10"
 
 
 keywords: kubernetes, clusters, worker nodes, worker pools, vpc-gen2, openshift, {{site.data.keyword.openshiftlong_notm}}
@@ -79,7 +79,7 @@ Worker Pool
 :   - **Secondary Storage**: You can provision a secondary disk to your worker nodes, such as a `900gb.5iops-tier` block storage disk. When you add a secondary disk, that disk is used for the container runtime, while the primary disk is used for the operating system. Secondary disks are useful in scenarios where more container storage is needed, such as running pods with large images. Note that when using secondary storage pods might not be able to utilize the full IOPS/bandwidth capabilities of the volumes due to the overhead of overlay file systems. Secondary disks are provisioned in your account and you can see them in VPC console. The charges for these disks are separate to the cost of each worker and show as a different line item on your bill. These secondary volumes also count toward the quota usage for the your account. If you plan to use secondary storage on nodes where Persistent Volumes could be attached it is highly recommended to use the 10-iops tiers or higher. This is because the storage bandwidth allocation for the nodes is shared between secondary storage volumes and any attached PVCs. When using 5-iops, tiers this can lead to degraded performance for pulling images or for pods writing to the storage. For more information on bandwidth allocation see [Bandwidth Allocation in Virtual Server Instances](https://www.ibm.com/products/tutorials/bandwidth-allocation-in-virtual-server-instances).{: external}
 :   - **GPU**: If you plan to deploy AI, visual, or high-quality graphics workloads to your cluster, make sure you select a GPU worker node flavor.
 
-Additional flavor types, including flavors with NVIDIA V100s GPUs are available for allowlisted accounts only. To request access to other allowlisted flavors, [request access to the allowlist](/docs/openshift?topic=openshift-allowlist-request).
+Additional flavor types, including flavors with NVIDIA V100, A100, H100, and H200 GPUs are available for allowlisted accounts only. To request access to other allowlisted flavors, [request access to the allowlist](/docs/openshift?topic=openshift-allowlist-request).
 {: note}
 
 

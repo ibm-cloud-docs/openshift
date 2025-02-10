@@ -275,6 +275,10 @@ subcollection: openshift
 
 * [February 2025](/docs/openshift?topic=openshift-openshift-relnotes#openshift-feb25)
 
+    * [10 February 2025](/docs/openshift?topic=openshift-openshift-relnotes#openshift-feb1025)
+
+        * New! Worker node flavors with H200 GPU support are available on an allowlist basis for VPC clusters.
+
     * [06 February 2025](/docs/openshift?topic=openshift-openshift-relnotes#openshift-06february25)
 
         * Static Route cluster add-on patch updates.

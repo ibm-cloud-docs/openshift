@@ -26,9 +26,18 @@ Looking for {{site.data.keyword.cloud_notm}} status, platform announcements, sec
 {: tip}
 
 
-  
 ## February 2025
 {: #openshift-feb25}
+
+
+### 10 February 2025
+{: #openshift-feb1025}
+{: release-note}
+
+New! Worker node flavors with H200 GPU support are available on an allowlist basis for VPC clusters.
+:   To request access to the allowlist, see see [Requesting access to allowlisted features](/docs/openshift?topic=openshift-allowlist-request).
+:   For a list of available worker node flavors for VPC clusters, see [VPC flavors](/docs/openshift?topic=openshift-vpc-flavors).
+
 
 ### 06 February 2025
 {: #openshift-06february25}
@@ -37,10 +46,12 @@ Looking for {{site.data.keyword.cloud_notm}} status, platform announcements, sec
 Static Route cluster add-on patch updates.
 :   For more information, see the [change log](/docs/openshift?topic=openshift-static-route-change-log).
 
+
+
+
 ### 04 February 2025
 {: #openshift-feb0425}
 {: release-note}
-
 
 OpenShift Data Foundation cluster add-on patch updates.
 :   For more information, see the [change log](/docs/openshift?topic=openshift-cl-add-ons-openshift-data-foundation).

@@ -23,10 +23,10 @@ subcollection: openshift
 
 Review the VPC Gen 2 worker node flavors by metro.
 
-Additional flavor types, including flavors with NVIDIA V100, A100, and H100 GPUs are available for allowlisted accounts only. To request access to other allowlisted flavors, [request access to the allowlist](/docs/openshift?topic=openshift-allowlist-request).
+Additional flavor types, including flavors with NVIDIA V100, A100, H100, and H200 GPUs are available for allowlisted accounts only. To request access to other allowlisted flavors, [request access to the allowlist](/docs/openshift?topic=openshift-allowlist-request).
 {: note}
 
-If your account is allowlisted for flavors that are not listed below, you can find a list of available flavors by running **`ibmcloud oc flavor ls`** [command](/docs/openshift?topic=openshift-kubernetes-service-cli#cs_flavor_ls).
+If your account is allowlisted for flavors that are not listed below, you can find a list of available flavors by running **`ibmcloud oc flavor ls`** [command](/docs/openshift?topic=openshift-kubernetes-service-cli#cs_flavor_ls) or review the list of flavors when creating a cluster in the console.
 
 
 
