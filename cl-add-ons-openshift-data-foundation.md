@@ -3,7 +3,7 @@
 copyright:
   years: 2024, 2025
 
-lastupdated: "2025-02-06"
+lastupdated: "2025-02-10"
 
 
 keywords: change log, version history, OpenShift Data Foundation
@@ -122,7 +122,7 @@ Review the version history for OpenShift Data Foundation.
 - Updates `golang` to `1.21.10`.
 
 ### 4.15.0, released 10 May 2024
-{: #cl-add-ons-openshift-data-foundation-4.15.0}
+{: #cl-add-ons-openshift-data-foundation-4.15.0-archive}
 
 - Initial release of version `4.15.0`.
 - Adds the `useCephRBDAsDefaultStorageClass`, `enableNFS`, and `resourceProfile` parameters. For more information, see the [parameter reference](/docs/openshift?topic=openshift-openshift_storage_parameters).
@@ -189,7 +189,7 @@ Review the version history for OpenShift Data Foundation.
 
 
 ### 4.14.0, released 19 January 2024
-{: #cl-add-ons-openshift-data-foundation-4.14.0}
+{: #cl-add-ons-openshift-data-foundation-4.14.0-archive}
 
 - Adds the `disableNoobaaLB`, `taintNodes`, `addSingleReplicaPool`, and `prepareForDisasterRecovery` parameters. For more information, see the [OpenShift Data Foundation add-on parameter reference](/docs/openshift?topic=openshift-openshift_storage_parameters).
 
@@ -278,7 +278,7 @@ Review the version history for OpenShift Data Foundation.
 
 
 ### 4.13.0, released 10 July 2023
-{: #cl-add-ons-openshift-data-foundation-4.13.0}
+{: #cl-add-ons-openshift-data-foundation-4.13.0-archive}
 
 - Initial 4.13 release. 
 - Adds support for encryption in transit by specifying the `encryptionInTransit` parameter when installing the add-on.

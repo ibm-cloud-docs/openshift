@@ -3,7 +3,7 @@
 copyright:
   years: 2024, 2025
 
-lastupdated: "2025-02-05"
+lastupdated: "2025-02-10"
 
 
 keywords: change log, version history, 4.16_openshift
@@ -24,7 +24,7 @@ View information of version changes for major, minor, and patch updates that are
 {: shortdesc}
 
 ## Overview
-{: #changelog_overview}
+{: #changelog_overview_416}
 
 
 Unless otherwise noted in the change logs, the {{site.data.keyword.cloud_notm}} provider version enables {{site.data.keyword.redhat_openshift_notm}} APIs and features that are at beta. {{site.data.keyword.redhat_openshift_notm}} alpha features are disabled and subject to change.
