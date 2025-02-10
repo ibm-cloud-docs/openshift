@@ -1,8 +1,8 @@
 ---
 
 copyright: 
-  years: 2014, 2024
-lastupdated: "2024-10-22"
+  years: 2014, 2025
+lastupdated: "2025-02-10"
 
 
 keywords: openshift, node scaling, ca, autoscaler
@@ -23,10 +23,10 @@ subcollection: openshift
 
 Review the VPC Gen 2 worker node flavors by metro.
 
-Additional flavor types, including flavors with NVIDIA V100, A100, and H100 GPUs are available for allowlisted accounts only. To request access to other allowlisted flavors, [request access to the allowlist](/docs/openshift?topic=openshift-allowlist-request).
+Additional flavor types, including flavors with NVIDIA V100, A100, H100, and H200 GPUs are available for allowlisted accounts only. To request access to other allowlisted flavors, [request access to the allowlist](/docs/openshift?topic=openshift-allowlist-request).
 {: note}
 
-If your account is allowlisted for flavors that are not listed below, you can find a list of available flavors by running **`ibmcloud oc flavor ls`** [command](/docs/openshift?topic=openshift-kubernetes-service-cli#cs_flavor_ls).
+If your account is allowlisted for flavors that are not listed below, you can find a list of available flavors by running **`ibmcloud oc flavor ls`** [command](/docs/openshift?topic=openshift-kubernetes-service-cli#cs_flavor_ls) or review the list of flavors when creating a cluster in the console.
 
 
 
@@ -695,6 +695,7 @@ If your account is allowlisted for flavors that are not listed below, you can fi
 | gx3.48x240.2l40s | 48, 240GB, 32Gbps | Virtual | **REDHAT_8_64 (default)**, RHEL_9_64, RHCOS| 100GB BLOCK | N/A | 300gb.5iops-tier, 300gb.10iops-tier, 600gb.5iops-tier, 600gb.10iops-tier, 900gb.5iops-tier, 900gb.10iops-tier, 1200gb.5iops-tier, 1200gb.10iops-tier, 1600gb.5iops-tier, 1600gb.10iops-tier, 2400gb.10iops-tier, 3000gb.10iops-tier, 4000gb.10iops-tier |2 L40S |
 | gx3.64x320.4l4 | 64, 320GB, 32Gbps | Virtual | **REDHAT_8_64 (default)**, RHEL_9_64, RHCOS| 100GB BLOCK | N/A | 300gb.5iops-tier, 300gb.10iops-tier, 600gb.5iops-tier, 600gb.10iops-tier, 900gb.5iops-tier, 900gb.10iops-tier, 1200gb.5iops-tier, 1200gb.10iops-tier, 1600gb.5iops-tier, 1600gb.10iops-tier, 2400gb.10iops-tier, 3000gb.10iops-tier, 4000gb.10iops-tier |4 L4 |
 | gx3d.160x1792.8h100 | 160, 1792GB, 32Gbps | Virtual | **REDHAT_8_64 (default)**, RHEL_9_64, RHCOS| 100GB BLOCK | N/A | 300gb.5iops-tier, 300gb.10iops-tier, 600gb.5iops-tier, 600gb.10iops-tier, 900gb.5iops-tier, 900gb.10iops-tier, 1200gb.5iops-tier, 1200gb.10iops-tier, 1600gb.5iops-tier, 1600gb.10iops-tier, 2400gb.10iops-tier, 3000gb.10iops-tier, 4000gb.10iops-tier |8 H100 |
+| gx3d.160x1792.8h200 | 160, 1792GB, 32Gbps | Virtual | **REDHAT_8_64 (default)**, RHCOS| 100GB BLOCK | N/A | 300gb.5iops-tier, 300gb.10iops-tier, 600gb.5iops-tier, 600gb.10iops-tier, 900gb.5iops-tier, 900gb.10iops-tier, 1200gb.5iops-tier, 1200gb.10iops-tier, 1600gb.5iops-tier, 1600gb.10iops-tier, 2400gb.10iops-tier, 3000gb.10iops-tier, 4000gb.10iops-tier |8 H200 |
 {: class="simple-tab-table"}
 {: caption="GPU flavors in Washington DC." caption-side="bottom"}
 {: #us-east-gpu-table}

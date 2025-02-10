@@ -275,6 +275,14 @@ subcollection: openshift
 
 * [February 2025](/docs/openshift?topic=openshift-openshift-relnotes#openshift-feb25)
 
+    * [10 February 2025](/docs/openshift?topic=openshift-openshift-relnotes#openshift-feb1025)
+
+        * New! Worker node flavors with H200 GPU support are available on an allowlist basis for VPC clusters.
+
+    * [06 February 2025](/docs/openshift?topic=openshift-openshift-relnotes#openshift-06february25)
+
+        * Static Route cluster add-on patch updates.
+
     * [04 February 2025](/docs/openshift?topic=openshift-openshift-relnotes#openshift-feb0425)
 
         * OpenShift Data Foundation cluster add-on patch updates.
@@ -7673,6 +7681,8 @@ subcollection: openshift
 [Static Route add-on version change log](/docs/openshift?topic=openshift-cl-add-ons-static-route#cl-add-ons-static-route)
 
 * [Version 1.0.0](/docs/openshift?topic=openshift-cl-add-ons-static-route#cl-add-ons-static-route-1.0.0)
+
+    * [v1.0.0-1661, released 06 February 2025](/docs/openshift?topic=openshift-cl-add-ons-static-route#cl-add-ons-static-route-v100-1661)
 
     * [1.0.0_1581, released 14 November 2024](/docs/openshift?topic=openshift-cl-add-ons-static-route#cl-add-ons-static-route-100_1581)
 
