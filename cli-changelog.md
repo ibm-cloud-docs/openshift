@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2025
-lastupdated: "2025-01-14"
+lastupdated: "2025-02-11"
 
 
 keywords: openshift, {{site.data.keyword.openshiftlong_notm}}, oc, ks
@@ -31,6 +31,13 @@ Refer to the following change logs for a summary of changes for each version of 
 
 Review the following changes for 1.0 versions of the CLI plug-in.
 {: shortdesc}
+
+## Version v1.0.677
+{: #cli-010677}
+
+- Adds the `--show-os` option to the `ibmcloud oc flavor ls` command. 
+- Deprecates all `ibmcloud oc cluster master private-service-endpoint allowlist` commands.
+- Removes the `--gateway-enabled`option from the `ibmcloud oc cluster create classic` command.
 
 ## Version v1.0.674
 {: #cli-010674}

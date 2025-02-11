@@ -29,6 +29,12 @@ Looking for {{site.data.keyword.cloud_notm}} status, platform announcements, sec
 ## February 2025
 {: #openshift-feb25}
 
+### 11 February 2025
+{: #openshift-feb1125}
+{: release-note}
+
+CLI version `1.0.677` is available.
+:   For more information, see [Updating the CLI](/docs/openshift?topic=openshift-cli-update) and the [CLI change log](/docs/openshift?topic=openshift-cs_cli_changelog).
 
 ### 10 February 2025
 {: #openshift-feb1025}
