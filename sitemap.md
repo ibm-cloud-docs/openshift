@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2025
-lastupdated: "2025-02-10"
+lastupdated: "2025-02-11"
 
 
 keywords: openshift
@@ -274,6 +274,10 @@ subcollection: openshift
 [Release notes](/docs/openshift?topic=openshift-openshift-relnotes#openshift-relnotes)
 
 * [February 2025](/docs/openshift?topic=openshift-openshift-relnotes#openshift-feb25)
+
+    * [11 February 2025](/docs/openshift?topic=openshift-openshift-relnotes#openshift-feb1125)
+
+        * CLI version `1.0.677` is available.
 
     * [10 February 2025](/docs/openshift?topic=openshift-openshift-relnotes#openshift-feb1025)
 
@@ -5642,6 +5646,8 @@ subcollection: openshift
 
 * [Version 1.0](/docs/openshift?topic=openshift-cs_cli_changelog#10)
 
+* [Version v1.0.677](/docs/openshift?topic=openshift-cs_cli_changelog#cli-010677)
+
 * [Version v1.0.674](/docs/openshift?topic=openshift-cs_cli_changelog#cli-010674)
 
 * [Version v1.0.673](/docs/openshift?topic=openshift-cs_cli_changelog#cli-010673)
@@ -9929,6 +9935,35 @@ subcollection: openshift
 * [Feature gates](/docs/openshift?topic=openshift-service-settings#feature-gates)
 
 * [Global settings](/docs/openshift?topic=openshift-service-settings#global-settings)
+
+
+## Understanding high availability and disaster recovery for {{site.data.keyword.openshiftlong_notm}}
+{: #sitemap_understanding_high_availability_and_disaster_recovery_for_}
+
+
+[Understanding high availability and disaster recovery for {{site.data.keyword.openshiftlong_notm}}](/docs/openshift?topic=openshift-iks-ha-dr#iks-ha-dr)
+
+* [High availability architecture](/docs/openshift?topic=openshift-iks-ha-dr#ha-architecture)
+
+    * [Resource distribution for high availability.](/docs/openshift?topic=openshift-iks-ha-dr#ha-architecture-dist)
+
+* [High availability features](/docs/openshift?topic=openshift-iks-ha-dr#ha-features)
+
+* [Disaster recovery features](/docs/openshift?topic=openshift-iks-ha-dr#dr-features)
+
+* [Recovery time objective (RTO) and recovery point objective (RPO)](/docs/openshift?topic=openshift-iks-ha-dr#rto-rpo-features)
+
+* [How {{site.data.keyword.IBM}} helps ensure disaster recovery](/docs/openshift?topic=openshift-iks-ha-dr#ibm-disaster-recovery)
+
+    * [How {{site.data.keyword.IBM_notm}} recovers from failures](/docs/openshift?topic=openshift-iks-ha-dr#ibm-zone-failure)
+
+* [How {{site.data.keyword.IBM_notm}} maintains services](/docs/openshift?topic=openshift-iks-ha-dr#ibm-service-maintenance)
+
+* [Your responsibilities for high availability and disaster recovery](/docs/openshift?topic=openshift-iks-ha-dr#your-responsibilities-for-high-availability-and-disaster-recovery)
+
+* [Change management](/docs/openshift?topic=openshift-iks-ha-dr#change-management)
+
+* [Considerations for app and service deployment](/docs/openshift?topic=openshift-iks-ha-dr#app-considerations)
 
 
 ## Service dependencies

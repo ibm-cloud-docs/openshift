@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2025
-lastupdated: "2025-02-01"
+lastupdated: "2025-02-12"
 
 
 keywords: kubernetes, openshift, red hat, red hat openshift
@@ -114,9 +114,12 @@ Create an {{site.data.keyword.cloud_notm}} Virtual Private Cloud (VPC) environme
         *  **Public gateways**: Include the public gateway that you previously created. You must have one public gateway for each zone in your cluster.
 
             ```sh
-            ibmcloud is subnet-create mysubnet1 <vpc_ID> --zone us-south-1 --ipv4-address-count 256 --public-gateway-id <gateway_ID>
+            ibmcloud is subnet-create mysubnet1 <vpc_ID> --zone us-south-1 --ipv4-address-count 256 --pgw <gateway_ID>
             ```
             {: pre}
+    
+    If you have multiple zones, repeat these steps for each zone.
+    {: tip}
 
 3. Create a standard {{site.data.keyword.cos_full_notm}} instance to back up the internal registry in your cluster. In the output, note the instance **ID**.
     ```sh

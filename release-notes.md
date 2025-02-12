@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2025
-lastupdated: "2025-02-10"
+lastupdated: "2025-02-11"
 
 
 keywords: kubernetes, release notes, openshift, {{site.data.keyword.openshiftlong_notm}}
@@ -29,6 +29,12 @@ Looking for {{site.data.keyword.cloud_notm}} status, platform announcements, sec
 ## February 2025
 {: #openshift-feb25}
 
+### 11 February 2025
+{: #openshift-feb1125}
+{: release-note}
+
+CLI version `1.0.677` is available.
+:   For more information, see [Updating the CLI](/docs/openshift?topic=openshift-cli-update) and the [CLI change log](/docs/openshift?topic=openshift-cs_cli_changelog).
 
 ### 10 February 2025
 {: #openshift-feb1025}
@@ -44,7 +50,7 @@ New! Worker node flavors with H200 GPU support are available on an allowlist bas
 {: release-note}
 
 Static Route cluster add-on patch updates.
-:   For more information, see the [change log](/docs/openshift?topic=openshift-static-route-change-log).
+:   For more information, see the [change log](/docs/openshift?topic=openshift-cl-add-ons-static-route).
 
 
 
