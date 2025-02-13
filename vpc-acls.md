@@ -1,8 +1,8 @@
 ---
 
 copyright: 
-  years: 2014, 2024
-lastupdated: "2024-10-10"
+  years: 2014, 2025
+lastupdated: "2025-02-13"
 
 
 keywords: openshift, firewall, acl, acls, access control list, rules, security group
@@ -69,14 +69,14 @@ Looking for a simpler security setup? Leave the default ACL for your VPC as-is, 
     
     | Rule purpose | Allow/Deny | Protocol | Source IP or CIDR | Source Port | Destination IP or CIDR | Destination Port | Priority |
     | --- | --- | --- | --- | --- | --- | --- | -- |
-    | Allow worker nodes to be created in your cluster.  | Allow | ALL | `161.26.0.0/16` | - | Any | - | Set to `top` |
-    | Allow worker nodes to communicate with other {{site.data.keyword.cloud_notm}} services that support private cloud service endpoints, and in clusters that run {{site.data.keyword.redhat_openshift_notm}} version 4.5 or earlier, with the cluster master through the private cloud service endpoint.  | Allow | ALL | `166.8.0.0/14` | - | Any | - | After 1 |
-    | Multizone clusters: Allow worker nodes in one subnet to communicate with the worker nodes in other subnets within the cluster. Create one rule for each subnet that you want to connect to.  | Allow | ALL | Other subnet's CIDR | - | Any | - | After 2 |
+    | Allow worker nodes to be created in your cluster.  | Allow | ALL | `161.26.0.0/16` | N/A | Any | N/A | Set to `top` |
+    | Allow worker nodes to communicate with other {{site.data.keyword.cloud_notm}} services that support private cloud service endpoints, and in clusters that run {{site.data.keyword.redhat_openshift_notm}} version 4.5 or earlier, with the cluster master through the private cloud service endpoint.  | Allow | ALL | `166.8.0.0/14` | N/A | Any | N/A | After 1 |
+    | Multizone clusters: Allow worker nodes in one subnet to communicate with the worker nodes in other subnets within the cluster. Create one rule for each subnet that you want to connect to.  | Allow | ALL | Other subnet's CIDR | N/A | Any | N/A | After 2 |
     | Allow incoming traffic requests to apps that run on your worker nodes.  | Allow | TCP | Any | Any | Any | `30000 - 32767` | After 3 |
     | To expose apps by using load balancers or Ingress, allow traffic through VPC load balancers. For example, for Ingress listening on `TCP/443`)  | Allow | TCP | Any | Any | Any | 443 | After 4 |
-    | `**` For clusters with public and private service endpoints, allow {{site.data.keyword.redhat_openshift_notm}} Console pods to contact the master | Allow |  ALL |  Master IPs | - | Any | - | After 5 |
-    | `*` Allow access from the {{site.data.keyword.redhat_openshift_notm}} control plane IP addresses that are used to health check and report the overall status of your Ingress components. Create one rule for each [control plane CIDR for the region where your cluster is located](https://github.com/IBM-Cloud/kube-samples/tree/master/control-plane-ips){: external}  | Allow | TCP | Each [control plane CIDR for the region where your cluster is located](https://github.com/IBM-Cloud/kube-samples/tree/master/control-plane-ips){: external} | - | Any | `80` | After 6 |
-    | Deny all other traffic that does not match the previous rules.  | Deny | ALL | Any | - | Any | - | Set to bottom |
+    | `**` For clusters with public and private service endpoints, allow {{site.data.keyword.redhat_openshift_notm}} Console pods to contact the master | Allow |  ALL |  Master IPs | N/A | Any | N/A | After 5 |
+    | `*` Allow access from the {{site.data.keyword.redhat_openshift_notm}} control plane IP addresses that are used to health check and report the overall status of your Ingress components. Create one rule for each [control plane CIDR for the region where your cluster is located](https://github.com/IBM-Cloud/kube-samples/tree/master/control-plane-ips){: external}  | Allow | TCP | Each [control plane CIDR for the region where your cluster is located](https://github.com/IBM-Cloud/kube-samples/tree/master/control-plane-ips){: external} | N/A | Any | `80` | After 6 |
+    | Deny all other traffic that does not match the previous rules.  | Deny | ALL | Any | N/A | Any | N/A | Set to bottom |
     {: caption="Required inbound rules" caption-side="bottom"}
 
     
@@ -92,14 +92,14 @@ Looking for a simpler security setup? Leave the default ACL for your VPC as-is, 
    
     | Rule purpose | Allow/Deny | Protocol | Source IP or CIDR | Source Port | Destination IP or CIDR | Destination Port | Priority |
     | --- | --- | --- | --- | --- | --- | --- | -- |
-    | Allow worker nodes to be created in your cluster. | Allow | ALL | Any | - | `161.26.0.0/16` | - | Set to `top` |
-    | Allow worker nodes to communicate with other {{site.data.keyword.cloud_notm}} services that support private cloud service endpoints, and in clusters that run {{site.data.keyword.redhat_openshift_notm}} version 4.5 or earlier, with the cluster master through the private cloud service endpoint. | Allow | ALL | Any | - | `166.8.0.0/14` | - | After 1 |
-    | Multizone clusters: Allow worker nodes in one subnet to communicate with the worker nodes in all other subnets within the cluster. Create one rule for each subnet that you want to connect to.  | Allow | ALL | Any | - | Other subnet's CIDR | - | After 2 |
+    | Allow worker nodes to be created in your cluster. | Allow | ALL | Any | N/A | `161.26.0.0/16` | N/A | Set to `top` |
+    | Allow worker nodes to communicate with other {{site.data.keyword.cloud_notm}} services that support private cloud service endpoints, and in clusters that run {{site.data.keyword.redhat_openshift_notm}} version 4.5 or earlier, with the cluster master through the private cloud service endpoint. | Allow | ALL | Any | N/A | `166.8.0.0/14` | N/A | After 1 |
+    | Multizone clusters: Allow worker nodes in one subnet to communicate with the worker nodes in all other subnets within the cluster. Create one rule for each subnet that you want to connect to.  | Allow | ALL | Any | N/A | Other subnet's CIDR | N/A | After 2 |
     | Allow incoming traffic requests to apps that run on your worker nodes. | Allow | TCP | Any | `30000 - 32767` | Any | Any | After 3 |
     | To expose apps by using load balancers or Ingress, allow traffic through VPC load balancers.  | Allow | TCP | Any | `443` | Any | Any | After 4 |
-    | `**` For clusters with public and private service endpoints, allow {{site.data.keyword.redhat_openshift_notm}} Console pods to contact the master | Allow |  ALL |  Master IPs | - | Any | - | After 5 |
+    | `**` For clusters with public and private service endpoints, allow {{site.data.keyword.redhat_openshift_notm}} Console pods to contact the master | Allow |  ALL |  Master IPs | N/A | Any | N/A | After 5 |
     | `*` Allow access from the {{site.data.keyword.redhat_openshift_notm}} control plane IP addresses that are used to health check and report the overall status of your Ingress components. Create one rule for each [control plane CIDR for the region where your cluster is located](https://github.com/IBM-Cloud/kube-samples/tree/master/control-plane-ips){: external}. | Allow | TCP | Any | `80` | Each [control plane CIDR for the region where your cluster is located](https://github.com/IBM-Cloud/kube-samples/tree/master/control-plane-ips){: external}. | Any | After 6 |
-    | Deny all other traffic that does not match the previous rules.  | Deny | ALL | Any | - | Any | - | Set to bottom |
+    | Deny all other traffic that does not match the previous rules.  | Deny | ALL | Any | N/A | Any | N/A | Set to bottom |
     {: caption="Required outbound rules" caption-side="bottom"}
 
     
