@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2025
-lastupdated: "2025-02-01"
+lastupdated: "2025-02-14"
 
 
 keywords: openshift, route, router
@@ -82,6 +82,7 @@ The following diagram shows how a router directs network traffic from the intern
 4. The router forwards the request to the private IP address of the app pod over the private network. The source IP address of the request package is changed to the public IP address of the worker node where the router pod runs. Each router sends requests to the app instances in its own zone and to app instances in other zones. Additionally, if multiple app instances are deployed in one zone, the router alternates requests between app pods.
 
 5. When the app returns a response packet, it uses the IP address of the worker node where the router that forwarded the client request exists. The router then sends the response packet through the load balancer service to the client.
+
 
 ### Traffic flow in a multizone VPC cluster with a public cloud service endpoint
 {: #route_vpc}
