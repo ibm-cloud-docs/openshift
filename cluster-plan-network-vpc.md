@@ -1,8 +1,8 @@
 ---
 
 copyright: 
-  years: 2022, 2024
-lastupdated: "2024-11-11"
+  years: 2022, 2025
+lastupdated: "2025-02-14"
 
 
 keywords: kubernetes, openshift network
@@ -189,7 +189,7 @@ In this scenario, you run workloads in a VPC cluster that are accessible to requ
 {: shortdesc}
 
 
-![Network setup for a VPC cluster that runs internet-facing app workloads.](images/roks_ov_vpc_pub.png){: caption="Network setup for a VPC cluster that runs internet-facing app workloads" caption-side="bottom"}
+![Network setup for a VPC cluster that runs internet-facing app workloads.](images/roks_ov_vpc_pub.svg){: caption="Network setup for a VPC cluster that runs internet-facing app workloads" caption-side="bottom"}
 
 ### Worker-to-worker communication
 {: #vpc-no-pgw-worker}
@@ -223,6 +223,7 @@ Ready to get started with a cluster for this scenario? After you plan your [high
 
 In this scenario, you run workloads in a VPC cluster. However, you want these workloads to be accessible only to services, databases, or other resources in your private networks in an on-premises data center. Your cluster workloads might need to access a few other {{site.data.keyword.cloud_notm}} services that support communication over the private network.
 {: shortdesc}
+
 
 ![Network setup for a VPC cluster that extends an on-prem data center.](images/roks_ov_vpc_priv.png){: caption="Figure 1.Network setup for a VPC cluster that extends an on-prem data center" caption-side="bottom"}
 
