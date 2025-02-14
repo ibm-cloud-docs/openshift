@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2025
-lastupdated: "2025-02-01"
+lastupdated: "2025-02-14"
 
 
 keywords: openshift, satellite, distributed cloud, on-prem, hybrid
@@ -138,7 +138,7 @@ Before you begin, [install the {{site.data.keyword.satelliteshort}} CLI plug-in]
     - To bring your own OCP license, make sure to include your Red Hat pull secret to entitle the cluster to run OCP, either by uploading the pull secret in the console or by including the `--pull-secret` option in the `ibmcloud oc cluster create satellite` [command](/docs/openshift?topic=openshift-kubernetes-service-cli#cli_cluster-create-satellite).
     - To apply your Cloud Pak entitlement, make sure to include the `--entitlement ocp_entitled` option.
     
-    `--operating-system REDHAT_8_64|RHCOS`
+    `--operating-system REDHAT_9_64|REDHAT_8_64|RHCOS`
 :   Optional. The operating system of the worker nodes in your cluster. For a list of available operating systems by cluster version, see the [{{site.data.keyword.openshiftshort}} version information](/docs/openshift?topic=openshift-openshift_versions). If no option is specified, the default operating system that corresponds to the cluster version is used.
 
     

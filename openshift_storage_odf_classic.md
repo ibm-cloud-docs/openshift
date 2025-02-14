@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2025
-lastupdated: "2025-02-04"
+lastupdated: "2025-02-14"
 
 
 keywords: openshift, openshift data foundation, openshift container storage, ocs, classic
@@ -309,6 +309,7 @@ Before you install ODF, get the details of the local disks on your worker nodes.
     {: screen}
 
 1. Repeat the previous steps for each worker node that you want to use for your OpenShift Data Foundation deployment.
+
 
 1. [Install ODF in your cluster](/docs/openshift?topic=openshift-deploy-odf-classic&interface=cli#install-odf-cli-classic).
 
