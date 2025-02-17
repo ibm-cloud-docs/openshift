@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2025, 2025
-lastupdated: "2025-02-10"
+lastupdated: "2025-02-17"
 
 
 keywords: high availability, disaster recover, HA, DR, responsibilities
@@ -19,14 +19,14 @@ subcollection: openshift
 
 High availability{: term} (HA) is the ability for a service to remain operational and accessible in the presence of unexpected failures. Disaster recovery{: term} is the process of recovering the service instance to a working state. {: shortdesc}
 
-<containers{{site.data.keyword.containerlong_notm}}<containers>{{site.data.keyword.openshiftlong_notm}} is a highly available regional or zonal service designed for availability during a regional or zonal outage. Kubernetes Service is designed to meet the Service Level Objectives (SLO) with the Standard plan.
+{{site.data.keyword.openshiftlong_notm}} is a highly available regional or zonal service designed for availability during a regional or zonal outage. Kubernetes Service is designed to meet the Service Level Objectives (SLO) with the Standard plan.
 
 For more information about the available region and data center locations, see Service and infrastructure availability by location.
 
 ## High availability architecture
 {: #ha-architecture}
 
-<containers{{site.data.keyword.containerlong_notm}}<containers>{{site.data.keyword.openshiftlong_notm}} architecture creates high availability at the regional, zone, and cluster levels. 
+{{site.data.keyword.openshiftlong_notm}} architecture creates high availability at the regional, zone, and cluster levels. 
 
 Region availability
 :    Every region is set up with a highly available load balancer that is accessible from the region-specific API endpoint. The load balancer routes incoming and outgoing requests to clusters in the regional zones. The likelihood of a full regional failure is low. However, to account for this failure, you can set up multiple clusters in different regions and connect them by using an external load balancer. If an entire region fails, the cluster in the other region can take over the workload.
@@ -84,13 +84,13 @@ Kubernetes Serivce supports the following disaster recovery features:
 |---------| ----------- |
 | [Portworx](/docs/openshift?topic=openshift-storage_portworx_recovery) | A third-party, highly available software-defined storage solution that you can use to manage local persistent storage for your containerized databases and other stateful apps, or to share data between pods across multiple zones. Review the [prerequisites](https://docs.portworx.com/portworx-enterprise/platform/prerequisites){: external}  |
 | [OpenShift Data Foundation (ODF) Regional Disaster Recovery](/docs/openshift?topic=openshift-openshift_odf_rdr_roks) | A disaster recovery solution that provides an automated "one-click" recovery in the event of a regional disaster. Applications are automatically redeployed to a designated OpenShift Container Platform with an ODF cluster that is available in another region. |
-| [Cloud Object Storage (COS)]() | A persistent, highly available storage option that mounts to your apps, available as a plug-in. Review the [limitations](/docs/openshift?topic=openshift-storage-cos-understand#cos_limitations).|
+| [Cloud Object Storage (COS)](/docs/cloud-object-storage) | A persistent, highly available storage option that mounts to your apps, available as a plug-in. Review the [limitations](/docs/openshift?topic=openshift-storage-cos-understand#cos_limitations).|
 | [Autorecovery](/docs/openshift?topic=openshift-health-monitor#autorecovery) | The Autorecovery system uses various checks to query worker node health status. If Autorecovery detects an unhealthy worker node based on the configured checks, Autorecovery triggers a corrective action like rebooting a VPC worker node or reloading the operating system in a classic worker node.|
 | [Data portability with Velero](/docs/openshift?topic=openshift-data-portability&q=velero&tags=containers#export-velero) | A third-party option for exporting data from your cluster to an IBM COS instance or another s3 provider. | Requires an IBM COS instance and bucket. |
 | [Data portability using the `kubectl` CLI](/docs/openshift?topic=openshift-data-portability&q=velero&tags=containers#export-procedure-kubectl) | Export data by using the `kubectl` CLI. |
 {: caption="DR features for IBM Cloud Kubernetes Service" caption-side="bottom"}
 
-Review [additional options for exporting data](/docs/openshift?topic=openshift-data-portability#data-other), such as Rclone or OADP.
+Review [additional options for exporting data](/docs/openshift?topic=openshift-data-portability#data-other), such as rclone or OADP.
 {: note}
 
 
@@ -129,7 +129,8 @@ Complex changes are enabled and disabled with feature flags to control exposure.
 Changes that impact customer workloads are detailed in {{site.data.keyword.cloud_notm}} notifications. For more information about planned maintenance, announcements, and release notes that impact this service, see [Monitoring notifications and status](/docs/account?topic=account-viewing-cloud-status).
 
 ## Your responsibilities for high availability and disaster recovery
-{#feature-responsibilities}
+{: #feature-responsibilities}
+
 
 
 It is your responsibility to continuously test your plan for HA and DR.
@@ -173,5 +174,5 @@ Review the following potential app setups that are ordered with increasing degre
  Review the following documentation for information on creating a highly available work load. 
 
 - [Planning highly available deployments](/docs/openshift?topic=openshift-plan_deploy#highly_available_apps)
-- [Cluster high avaliability strategy](/docs/openshift?topic=openshift-strategy)
+- [Cluster high availability strategy](/docs/openshift?topic=openshift-strategy)
 - [Your responsibilities with using IBM Cloud Kubernetes Service](/docs/openshift?topic=openshift-responsibilities_iks)

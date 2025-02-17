@@ -9981,7 +9981,7 @@ subcollection: openshift
 
 * [How {{site.data.keyword.IBM_notm}} maintains services](/docs/openshift?topic=openshift-iks-ha-dr#ibm-service-maintenance)
 
-* [Your responsibilities for high availability and disaster recovery](/docs/openshift?topic=openshift-iks-ha-dr#your-responsibilities-for-high-availability-and-disaster-recovery)
+* [Your responsibilities for high availability and disaster recovery](/docs/openshift?topic=openshift-iks-ha-dr#feature-responsibilities)
 
 * [Change management](/docs/openshift?topic=openshift-iks-ha-dr#change-management)
 
