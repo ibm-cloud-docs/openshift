@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2025
-lastupdated: "2025-02-11"
+lastupdated: "2025-02-17"
 
 
 keywords: openshift, {{site.data.keyword.openshiftlong_notm}}, oc, ks
@@ -31,6 +31,12 @@ Refer to the following change logs for a summary of changes for each version of 
 
 Review the following changes for 1.0 versions of the CLI plug-in.
 {: shortdesc}
+
+## Version v1.0.679
+{: #cli-010679}
+
+Version 1.0.679 of the CLI was released on 17 February 2025.
+- Includes general refactoring and improvements.
 
 ## Version v1.0.677
 {: #cli-010677}
@@ -220,7 +226,6 @@ Version 1.0.528 of the CLI was released on 26 June 2023.
 - Removes unnecessary translations.
 - Updates to `ibmcloud sat cluster register` command better recognize response headers.
 - Adds Satellite connector CLI commands.
-- Removes unnecessary translations.
 - Adds support for multiple default cluster add-on versions depending on cluster version. Updates `cluster addon versions` output.
 - Updates to `ibmcloud sat cluster register` command better recognize response headers.
 - Updates for pod security admission.

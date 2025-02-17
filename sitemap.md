@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2025
-lastupdated: "2025-02-14"
+lastupdated: "2025-02-17"
 
 
 keywords: openshift
@@ -275,9 +275,15 @@ subcollection: openshift
 
 * [February 2025](/docs/openshift?topic=openshift-openshift-relnotes#openshift-feb25)
 
+    * [17 February 2025](/docs/openshift?topic=openshift-openshift-relnotes#openshift-feb1725)
+
+        * CLI version `1.0.679` is available.
+
     * [12 February 2025](/docs/openshift?topic=openshift-openshift-relnotes#openshift-feb1225)
 
         * {{site.data.keyword.openshiftlong_notm}} worker node fix packs are available.
+
+        * >>>>>>> f37c588cad40b5897b63101fd6767ba2cd9ce531
 
     * [11 February 2025](/docs/openshift?topic=openshift-openshift-relnotes#openshift-feb1125)
 
@@ -5649,6 +5655,8 @@ subcollection: openshift
 [CLI change log](/docs/openshift?topic=openshift-cs_cli_changelog#cs_cli_changelog)
 
 * [Version 1.0](/docs/openshift?topic=openshift-cs_cli_changelog#10)
+
+* [Version v1.0.679](/docs/openshift?topic=openshift-cs_cli_changelog#cli-010679)
 
 * [Version v1.0.677](/docs/openshift?topic=openshift-cs_cli_changelog#cli-010677)
 
