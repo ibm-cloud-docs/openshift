@@ -54,7 +54,6 @@ CLI version `1.0.679` is available.
 :   [Version 4.12 change log](/docs/openshift?topic=openshift-openshift_changelog_412)
 
 
->>>>>>> f37c588cad40b5897b63101fd6767ba2cd9ce531
 
 ### 11 February 2025
 {: #openshift-feb1125}
