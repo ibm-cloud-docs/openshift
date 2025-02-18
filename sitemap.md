@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2025
-lastupdated: "2025-02-14"
+lastupdated: "2025-02-17"
 
 
 keywords: openshift
@@ -274,6 +274,10 @@ subcollection: openshift
 [Release notes](/docs/openshift?topic=openshift-openshift-relnotes#openshift-relnotes)
 
 * [February 2025](/docs/openshift?topic=openshift-openshift-relnotes#openshift-feb25)
+
+    * [17 February 2025](/docs/openshift?topic=openshift-openshift-relnotes#openshift-feb1725)
+
+        * CLI version `1.0.679` is available.
 
     * [12 February 2025](/docs/openshift?topic=openshift-openshift-relnotes#openshift-feb1225)
 
@@ -5650,6 +5654,8 @@ subcollection: openshift
 
 * [Version 1.0](/docs/openshift?topic=openshift-cs_cli_changelog#10)
 
+* [Version v1.0.679](/docs/openshift?topic=openshift-cs_cli_changelog#cli-010679)
+
 * [Version v1.0.677](/docs/openshift?topic=openshift-cs_cli_changelog#cli-010677)
 
 * [Version v1.0.674](/docs/openshift?topic=openshift-cs_cli_changelog#cli-010674)
@@ -9975,7 +9981,7 @@ subcollection: openshift
 
 * [How {{site.data.keyword.IBM_notm}} maintains services](/docs/openshift?topic=openshift-iks-ha-dr#ibm-service-maintenance)
 
-* [Your responsibilities for high availability and disaster recovery](/docs/openshift?topic=openshift-iks-ha-dr#your-responsibilities-for-high-availability-and-disaster-recovery)
+* [Your responsibilities for high availability and disaster recovery](/docs/openshift?topic=openshift-iks-ha-dr#feature-responsibilities)
 
 * [Change management](/docs/openshift?topic=openshift-iks-ha-dr#change-management)
 
