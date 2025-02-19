@@ -40,6 +40,27 @@ Master patch updates are applied automatically. Worker node patch updates can be
 
 
 
+### Master fix pack 4.14.45_1599_openshift, released 19 February 2025
+{: #41445_1599_openshift_M}
+
+The following table shows the changes that are in the master fix pack 4.14.45_1599_openshift. Master patch updates are applied automatically. 
+
+
+
+| Component | Previous | Current | Description |
+| --- | --- | --- | --- |
+| Calico | v3.27.4 | v3.28.2 | See the [Calico release notes](https://docs.tigera.io/calico/3.28/release-notes/#v3.28.2){: external}. |
+| {{site.data.keyword.IBM_notm}} Calico extension | 1619 | 1624 | New version contains security fixes. |
+| {{site.data.keyword.cloud_notm}} Block Storage driver and plug-in | v2.5.16 | v2.5.17 | New version contains updates and security fixes. |
+| {{site.data.keyword.cloud_notm}} Controller Manager | v1.27.16-21 | v1.27.16-24 | New version contains updates and security fixes. |
+| {{site.data.keyword.filestorage_full_notm}} for Classic plug-in and monitor | 447 | 449 | New version contains updates and security fixes. |
+| Key Management Service provider | v2.8.18 | v2.8.19 | New version contains updates and security fixes. |
+| Load balancer and load balancer monitor for {{site.data.keyword.cloud_notm}} Provider | 3079 | 3178 | New version contains updates and security fixes. |
+| {{site.data.keyword.openshiftlong_notm}}. | 4.14.43 | 4.14.45 | See the [{{site.data.keyword.openshiftlong_notm}} release notes](https://docs.openshift.com/container-platform/4.14/release_notes/ocp-4-14-release-notes.html#ocp-4-14-45){: external}. |
+| Tigera Operator | v1.32.10 | v1.34.5 | See the [Tigera Operator release notes](https://github.com/tigera/operator/releases/tag/v1.34.5){: external}. |
+{: caption="Changes since version 4.14.43_1595_openshift" caption-side="bottom"}
+
+
 ### Worker node fix pack 4.14.46_1598_openshift, released 11 February 2025
 {: #cl-boms-41446_1598_openshift_W}
 
@@ -54,8 +75,6 @@ The following table shows the components included in the worker node fix pack 4.
 {: #cl-boms-41446_1598_openshift_W-component-table}
 
 
-
-
 ### Worker node fix pack 4.14.45_1596_openshift, released 29 January 2025
 {: #cl-boms-41445_1596_openshift_W}
 
@@ -68,8 +87,6 @@ The following table shows the components included in the worker node fix pack 4.
 |HAProxy|14daa781a66ca5ed5754656ce53c3cca4af580b5|N/A|
 {: caption="4.14.45_1596_openshift fix pack." caption-side="bottom"}
 {: #cl-boms-41445_1596_openshift_W-component-table}
-
-
 
 
 ### Master fix pack 4.14.43_1595_openshift, released 22 January 2025
