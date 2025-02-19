@@ -1,37 +1,39 @@
 ---
 
-copyright: 
-  years: 2024, 2024
-lastupdated: "2024-12-11"
+copyright:
+  years: 2024, 2025
+
+lastupdated: "2025-02-19"
 
 
-keywords: storage operator, add-on, changelog, openshift
+keywords: change log, version history, IBM Storage Operator
 
 subcollection: openshift
-
 
 ---
 
 {{site.data.keyword.attribute-definition-list}}
 
+<!-- The content in this topic is auto-generated except for reuse-snippets indicated with {[ ]}. -->
 
 
-# IBM storage operator add-on change log 
-{: #versions-ibm-storage-operator}
+# IBM Storage Operator add-on version change log
+{: #cl-add-ons-ibm-storage-operator}
 
-View information for patch updates to the IBM storage-operator add-on in your {{site.data.keyword.openshiftlong_notm}} clusters.
+Review the version history for IBM Storage Operator.
 {: shortdesc}
 
-The `ibm-storage-operator` is enabled by default on VPC clusters beginning with version 4.15.
-{: note}
 
-To view a list of add-ons and the supported cluster versions in the CLI, run the following command.
-```sh
-ibmcloud oc cluster addon versions --addon ibm-storage-operator
-```
-{: pre}
 
-To view a list of add-ons and the supported cluster versions, see the [Supported cluster add-ons table](/docs/openshift?topic=openshift-supported-cluster-addon-versions).
+## Version 1.0
+{: #cl-add-ons-ibm-storage-operator-1.0}
+
+
+### 1.0.17_173, released 19 February 2025
+{: #cl-add-ons-ibm-storage-operator-1017_173}
+
+- Resolves the following CVEs: [CVE-2024-5535](https://nvd.nist.gov/vuln/detail/CVE-2024-5535){: external}.
+- Updates the golang base image to 1.22.12. 
 
 
 ## Version 1.0.0

@@ -1,8 +1,8 @@
 ---
 
 copyright: 
-  years: 2014, 2024
-lastupdated: "2024-11-20"
+  years: 2014, 2025
+lastupdated: "2025-02-19"
 
 
 keywords: openshift, block storage, deploy apps
@@ -478,7 +478,7 @@ You can update the {{site.data.keyword.block_storage_is_short}} cluster add-on b
 {: shortdesc}
 
 
-Before updating the add-on review the [change log](/docs/openshift?topic=openshift-vpc_bs_changelog).
+Before updating the add-on review the [change log](/docs/openshift?topic=openshift-cl-add-ons-vpc-block-csi-driver).
 {: tip}
 
 Before you update to a `5.x` release from a previous release, you must not have any volume snapshots in `failure` state. For more information, see [Why can't I delete my Block Storage for VPC volume snapshot resources?](/docs/openshift?topic=openshift-ts-storage-volumesnapshotdelete).

@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2025
-lastupdated: "2025-02-17"
+lastupdated: "2025-02-19"
 
 
 keywords: kubernetes, release notes, openshift, {{site.data.keyword.openshiftlong_notm}}
@@ -29,12 +29,22 @@ Looking for {{site.data.keyword.cloud_notm}} status, platform announcements, sec
 ## February 2025
 {: #openshift-feb25}
 
+### 19 February 2025
+{: #openshift-feb1925}
+{: release-note}
+
+{{site.data.keyword.filestorage_vpc_full_notm}} cluster add-on patch updates.
+:   For more information, see the [change log](/docs/openshift?topic=openshift-cl-add-ons-vpc-file-csi-driver).
+
 ### 17 February 2025
 {: #openshift-feb1725}
 {: release-note}
 
 CLI version `1.0.679` is available.
 :   For more information, see [Updating the CLI](/docs/openshift?topic=openshift-cli-update) and the [CLI change log](/docs/openshift?topic=openshift-cs_cli_changelog).
+
+{{site.data.keyword.block_storage_is_short}} cluster add-on patch updates.
+:   For more information, see the [add-on change log](/docs/openshift?topic=openshift-cl-add-ons-vpc-block-csi-driver).
 
 ### 12 February 2025
 {: #openshift-feb1225}
@@ -242,10 +252,10 @@ Portworx now supports {{site.data.keyword.openshiftlong_notm}} version 4.16 and 
 {: release-note}
 
 {{site.data.keyword.block_storage_is_short}} add-on versions `5.1.31_656` and `5.2.26_657`.
-:   For more information, see the [add-on change log](/docs/openshift?topic=openshift-vpc_bs_changelog).
+:   For more information, see the [add-on change log](/docs/openshift?topic=openshift-cl-add-ons-vpc-block-csi-driver).
 
 {{site.data.keyword.filestorage_vpc_full_notm}} cluster add-on patch updates.
-:   For more information, see the [change log](/docs/openshift?topic=openshift-versions-vpc-file-addon).
+:   For more information, see the [change log](/docs/openshift?topic=openshift-cl-add-ons-vpc-file-csi-driver).
 
 Storage Operator cluster add-on patch update.
 :  For more information, see the [change log](/docs/openshift?topic=openshift-versions-ibm-storage-operator).
@@ -319,7 +329,7 @@ Storage Operator cluster add-on patch update.
 
 
 {{site.data.keyword.block_storage_is_short}} cluster add-on patch updates.
-:   For more information, see the [change log](/docs/openshift?topic=openshift-vpc_bs_changelog).
+:   For more information, see the [change log](/docs/openshift?topic=openshift-cl-add-ons-vpc-block-csi-driver).
 
 
 
@@ -523,11 +533,11 @@ New! The `gx3d.160x1792.8h100` worker node flavor with H100 GPU support is avail
 {: release-note}
 
 {{site.data.keyword.block_storage_is_short}} cluster add-on patch updates.
-:   For more information, see the [change log](/docs/openshift?topic=openshift-vpc_bs_changelog).
+:   For more information, see the [change log](/docs/openshift?topic=openshift-cl-add-ons-vpc-block-csi-driver).
 
 
 {{site.data.keyword.filestorage_vpc_full_notm}} cluster add-on patch updates.
-:   For more information, see the [change log](/docs/openshift?topic=openshift-versions-vpc-file-addon).
+:   For more information, see the [change log](/docs/openshift?topic=openshift-cl-add-ons-vpc-file-csi-driver).
 
 Storage Operator cluster add-on patch update.
 :  For more information, see the [change log](/docs/openshift?topic=openshift-versions-ibm-storage-operator).
@@ -718,7 +728,7 @@ New! Upgrade status command.
 {: release-note}
 
 {{site.data.keyword.filestorage_vpc_full_notm}} cluster add-on patch updates.
-:   For more information, see the [change log](/docs/openshift?topic=openshift-versions-vpc-file-addon).
+:   For more information, see the [change log](/docs/openshift?topic=openshift-cl-add-ons-vpc-file-csi-driver).
 
 Storage Operator cluster add-on patch update.
 :  For more information, see the [change log](/docs/openshift?topic=openshift-versions-ibm-storage-operator).
@@ -827,10 +837,10 @@ New audit events for cluster operations
 
 
 {{site.data.keyword.block_storage_is_short}} cluster add-on patch updates.
-:   For more information, see the [change log](/docs/openshift?topic=openshift-vpc_bs_changelog).
+:   For more information, see the [change log](/docs/openshift?topic=openshift-cl-add-ons-vpc-block-csi-driver).
 
 {{site.data.keyword.filestorage_vpc_full_notm}} cluster add-on patch updates.
-:   For more information, see the [change log](/docs/openshift?topic=openshift-versions-vpc-file-addon).
+:   For more information, see the [change log](/docs/openshift?topic=openshift-cl-add-ons-vpc-file-csi-driver).
 
 Storage Operator cluster add-on patch update.
 :   For more information, see the [change log](/docs/openshift?topic=openshift-versions-ibm-storage-operator).
@@ -888,7 +898,7 @@ OpenShift Data Foundation cluster add-on patch updates.
 {: release-note}
 
 {{site.data.keyword.filestorage_vpc_full_notm}} add-on version 2.0 is available in Beta.
-:   For more information, see the [change log](/docs/openshift?topic=openshift-versions-vpc-file-addon).
+:   For more information, see the [change log](/docs/openshift?topic=openshift-cl-add-ons-vpc-file-csi-driver).
 
 ## June 2024
 {: #openshift-june24}
@@ -914,10 +924,10 @@ Cluster autoscaler add-on patch updates for {{site.data.keyword.openshiftlong_no
 :   For more information, see [Cluster autoscaler add-on change log](/docs/openshift?topic=openshift-ca_changelog).
 
 {{site.data.keyword.block_storage_is_short}} add-on patch updates.
-:   For more information, see the [change log](/docs/openshift?topic=openshift-vpc_bs_changelog).
+:   For more information, see the [change log](/docs/openshift?topic=openshift-cl-add-ons-vpc-block-csi-driver).
 
 {{site.data.keyword.filestorage_vpc_full_notm}} add-on patch updates.
-:   For more information, see the [change log](/docs/openshift?topic=openshift-versions-vpc-file-addon).
+:   For more information, see the [change log](/docs/openshift?topic=openshift-cl-add-ons-vpc-file-csi-driver).
 
 ### 20 June 2024
 {: #openshift-june2024}
@@ -1053,10 +1063,10 @@ GPU worker node flavors with Red Hat Enterprise Linux CoreOS (RHCOS).
 {: release-note}
 
 {{site.data.keyword.block_storage_is_short}} add-on patch update.
-:   For more information, see the [change log](/docs/openshift?topic=openshift-vpc_bs_changelog).
+:   For more information, see the [change log](/docs/openshift?topic=openshift-cl-add-ons-vpc-block-csi-driver).
 
 {{site.data.keyword.filestorage_vpc_full_notm}} add-on patch update.
-:   For more information, see the [change log](/docs/openshift?topic=openshift-versions-vpc-file-addon).
+:   For more information, see the [change log](/docs/openshift?topic=openshift-cl-add-ons-vpc-file-csi-driver).
 
 
 
@@ -1301,10 +1311,10 @@ Version 4.14 the default version for {{site.data.keyword.openshiftlong_notm}}.
 {: release-note}
 
 {{site.data.keyword.block_storage_is_short}} add-on patch updates.
-:   For more information, see the [change log](/docs/openshift?topic=openshift-vpc_bs_changelog).
+:   For more information, see the [change log](/docs/openshift?topic=openshift-cl-add-ons-vpc-block-csi-driver).
 
 {{site.data.keyword.filestorage_vpc_full_notm}} add-on patch update.
-:   For more information, see the [change log](/docs/openshift?topic=openshift-versions-vpc-file-addon).
+:   For more information, see the [change log](/docs/openshift?topic=openshift-cl-add-ons-vpc-file-csi-driver).
 
 
 
@@ -1475,10 +1485,10 @@ CLI version `1.0.595` is available.
 :   For more information, see [Updating the CLI](/docs/openshift?topic=openshift-cli-update) and the [CLI change log](/docs/openshift?topic=openshift-cs_cli_changelog).
 
 {{site.data.keyword.block_storage_is_short}} add-on versions `5.2.15_501` and `5.1.21_506` are available.
-:   For more information, see the [change log](/docs/openshift?topic=openshift-vpc_bs_changelog).
+:   For more information, see the [change log](/docs/openshift?topic=openshift-cl-add-ons-vpc-block-csi-driver).
 
 {{site.data.keyword.filestorage_vpc_full_notm}} add-on version `1.2.6_130` is available.
-:   For more information, see the [change log](/docs/openshift?topic=openshift-versions-vpc-file-addon).
+:   For more information, see the [change log](/docs/openshift?topic=openshift-cl-add-ons-vpc-file-csi-driver).
 
 
 
@@ -1601,10 +1611,10 @@ Subscribe to the {{site.data.keyword.cloud_notm}} documentation release notes vi
 
 
 {{site.data.keyword.filestorage_vpc_full_notm}} cluster add-on patch update `1.2.5_107`.
-:   For more information, see [the change log](/docs/openshift?topic=openshift-versions-vpc-file-addon).
+:   For more information, see [the change log](/docs/openshift?topic=openshift-cl-add-ons-vpc-file-csi-driver).
 
 {{site.data.keyword.block_storage_is_short}} cluster add-on patch updates `5.2.14_485` and `5.1.19_486`.
-:   For more information, see the [change log](/docs/openshift?topic=openshift-vpc_bs_changelog).
+:   For more information, see the [change log](/docs/openshift?topic=openshift-cl-add-ons-vpc-block-csi-driver).
 
 
 
@@ -1810,10 +1820,10 @@ Cluster autoscaler add-on patch updates `1.2.0_290`, `1.0.9_290`, `1.0.8_292`, a
 :   For more information, see [the change log](/docs/openshift?topic=openshift-ca_changelog).
 
 {{site.data.keyword.block_storage_is_short}} add-on versions `5.0.23_437` and `5.1.16_446`, and `5.2.11_447`.
-:   For more information, see the [change log](/docs/openshift?topic=openshift-vpc_bs_changelog).
+:   For more information, see the [change log](/docs/openshift?topic=openshift-cl-add-ons-vpc-block-csi-driver).
 
 {{site.data.keyword.filestorage_vpc_full_notm}} add-on patch `1.1.10_93` and `1.2.3_97`.
-:   For more information, see [the change log](/docs/openshift?topic=openshift-versions-vpc-file-addon).
+:   For more information, see [the change log](/docs/openshift?topic=openshift-cl-add-ons-vpc-file-csi-driver).
 
 
 
@@ -1864,13 +1874,13 @@ Master fix packs are available.
 :   For more information, see the [change log](/docs/openshift?topic=openshift-cos_plugin_changelog).
 
 {{site.data.keyword.block_storage_is_short}} add-on versions `5.0.21_401` and `5.1.15_419`, and `5.2.10_428`.
-:   For more information, see the [change log](/docs/openshift?topic=openshift-vpc_bs_changelog).
+:   For more information, see the [change log](/docs/openshift?topic=openshift-cl-add-ons-vpc-block-csi-driver).
 
 Cluster autoscaler add-on patch updates `1.0.9_195`, `1.0.8_233`, and `1.0.7_185`.
 :   For more information, see [the change log](/docs/openshift?topic=openshift-ca_changelog).
 
 {{site.data.keyword.filestorage_vpc_full_notm}} add-on patch `1.1.9_87`.
-:   For more information, see [the change log](/docs/openshift?topic=openshift-versions-vpc-file-addon).
+:   For more information, see [the change log](/docs/openshift?topic=openshift-cl-add-ons-vpc-file-csi-driver).
 
 
 
@@ -1923,7 +1933,7 @@ VNI functionality for limiting access to {{site.data.keyword.filestorage_vpc_sho
 :   You now have more granular control over how pods access your {{site.data.keyword.filestorage_vpc_short}}. For more information, see [Limiting file share access by worker node, zone, or worker pool](/docs/openshift?topic=openshift-storage-file-vpc-apps#storage-file-vpc-vni-setup).
 
 {{site.data.keyword.filestorage_vpc_full_notm}} add-on version `1.2`.
-:   For more information, see [the change log](/docs/openshift?topic=openshift-versions-vpc-file-addon).
+:   For more information, see [the change log](/docs/openshift?topic=openshift-cl-add-ons-vpc-file-csi-driver).
 
 
 ### 30 October 2023
@@ -2093,7 +2103,7 @@ Worker node fix packs are available.
 {: release-note}
 
 {{site.data.keyword.block_storage_is_short}} add-on version `5.2`.
-:   For more information, see the [change log](/docs/openshift?topic=openshift-vpc_bs_changelog).
+:   For more information, see the [change log](/docs/openshift?topic=openshift-cl-add-ons-vpc-block-csi-driver).
 
 
 
@@ -2137,10 +2147,10 @@ Cluster autoscaler add-on versions `1.0.9_103`,`1.0.8_104`, and `1.0.7_102`.
 
 
 {{site.data.keyword.filestorage_vpc_full_notm}} add-on version `1.1.7_49`
-:   For more information, see [the change log](/docs/openshift?topic=openshift-versions-vpc-file-addon).
+:   For more information, see [the change log](/docs/openshift?topic=openshift-cl-add-ons-vpc-file-csi-driver).
 
 {{site.data.keyword.block_storage_is_short}} add-on versions `5.0.19_358` and `5.1.13_345`.
-:   For more information, see the [change log](/docs/openshift?topic=openshift-vpc_bs_changelog).
+:   For more information, see the [change log](/docs/openshift?topic=openshift-cl-add-ons-vpc-block-csi-driver).
 
 
 ### 12 September 2023
@@ -2260,7 +2270,7 @@ Worker node fix packs are available.
 
 
 {{site.data.keyword.block_storage_is_short}} add-on versions `5.0.17_266` and `5.1.12_285`.
-:   For more information, see the [change log](/docs/openshift?topic=openshift-vpc_bs_changelog).
+:   For more information, see the [change log](/docs/openshift?topic=openshift-cl-add-ons-vpc-block-csi-driver).
 
 
 
@@ -2298,7 +2308,7 @@ Master fix packs are available.
 
 
 {{site.data.keyword.filestorage_vpc_full_notm}} add-on version `1.1.6`
-:   For more information, see [the change log](/docs/openshift?topic=openshift-versions-vpc-file-addon).
+:   For more information, see [the change log](/docs/openshift?topic=openshift-cl-add-ons-vpc-file-csi-driver).
 
 
 
@@ -2394,7 +2404,7 @@ Pod security admission updates
 :   For more information, see the [change log](/docs/openshift?topic=openshift-cos_plugin_changelog).
 
 {{site.data.keyword.filestorage_vpc_full_notm}} add-on version `1.1`
-:   For more information, see [the change log](/docs/openshift?topic=openshift-versions-vpc-file-addon). 
+:   For more information, see [the change log](/docs/openshift?topic=openshift-cl-add-ons-vpc-file-csi-driver). 
 
 
 
@@ -2466,7 +2476,7 @@ Certified Kubernetes
 {: release-note} 
 
 {{site.data.keyword.block_storage_is_short}} add-on versions `5.0.16_127` and `5.1.11_126`.
-:   This patch introduces two new variables to the `addon-vpc-block-csi-driver-configmap`. To get the latest snapshot configmap values users must add the new values to the existing configmap and apply the changes. For more information, see [Customizing snapshots](/docs/openshift?topic=openshift-vpc-volume-snapshot) and [the add-on change log](/docs/openshift?topic=openshift-vpc_bs_changelog).
+:   This patch introduces two new variables to the `addon-vpc-block-csi-driver-configmap`. To get the latest snapshot configmap values users must add the new values to the existing configmap and apply the changes. For more information, see [Customizing snapshots](/docs/openshift?topic=openshift-vpc-volume-snapshot) and [the add-on change log](/docs/openshift?topic=openshift-cl-add-ons-vpc-block-csi-driver).
 
 
 
@@ -2578,7 +2588,7 @@ Worker node fix packs `4.9.59_1590_openshift`, `4.10.59_1569_openshift`, `4.11.4
 {: release-note}
 
 {{site.data.keyword.filestorage_vpc_full_notm}} add-on version `1.0`.
-:   For more information, see [the change log](/docs/openshift?topic=openshift-versions-vpc-file-addon).
+:   For more information, see [the change log](/docs/openshift?topic=openshift-cl-add-ons-vpc-file-csi-driver).
 
 ### 15 May 2023
 {: #openshift-may1523}
@@ -2588,10 +2598,10 @@ Cluster autoscaler add-on versions `1.0.6_1077`, `1.0.7_1076`, `1.0.8_1078`, and
 :   For more information, see [the change log](/docs/openshift?topic=openshift-ca_changelog).
 
 {{site.data.keyword.filestorage_vpc_full_notm}} add-on version `1.1-beta`
-:   For more information, see [the change log](/docs/openshift?topic=openshift-versions-vpc-file-addon). 
+:   For more information, see [the change log](/docs/openshift?topic=openshift-cl-add-ons-vpc-file-csi-driver). 
 
 {{site.data.keyword.block_storage_is_short}} add-on versions `5.0.12_1963` and `5.1.8_1970`.
-:   For more information, see [the change log](/docs/openshift?topic=openshift-vpc_bs_changelog).
+:   For more information, see [the change log](/docs/openshift?topic=openshift-cl-add-ons-vpc-block-csi-driver).
 
 
 ### 10 May 2023
@@ -2697,7 +2707,7 @@ Cluster autoscaler add-on versions `1.0.6_1010`, `1.0.7_1021`, and `1.0.8_1016`.
 :   For more information, see [the change log](/docs/openshift?topic=openshift-ca_changelog).
 
 {{site.data.keyword.block_storage_is_short}} add-on versions `5.0.10_1869` and `5.1.6_1872`.
-:   For more information, see [the change log](/docs/openshift?topic=openshift-vpc_bs_changelog).
+:   For more information, see [the change log](/docs/openshift?topic=openshift-cl-add-ons-vpc-block-csi-driver).
 
 
 
@@ -2721,7 +2731,7 @@ Pod Security admission
 
 
 {{site.data.keyword.block_storage_is_short}} add-on versions `5.0.9_1862` and `5.1.5_1857`.
-:   For more information, see [the change log](/docs/openshift?topic=openshift-vpc_bs_changelog).
+:   For more information, see [the change log](/docs/openshift?topic=openshift-cl-add-ons-vpc-block-csi-driver).
 
 Cluster autoscaler add-on versions `1.0.7_988` and `1.0.8_987`.
 :   For more information, see [the change log](/docs/openshift?topic=openshift-ca_changelog).
@@ -2809,7 +2819,7 @@ Cluster autoscaler add-on version `1.0.6_955` and `1.0.7_956`.
 
 
 {{site.data.keyword.block_storage_is_short}} add-on versions `4.4.17_1829`, `5.0.7_1836`, and `5.1.2_1828`.
-:   For more information, see [the change log](/docs/openshift?topic=openshift-vpc_bs_changelog).
+:   For more information, see [the change log](/docs/openshift?topic=openshift-cl-add-ons-vpc-block-csi-driver).
 
 
 ### 3 March 2023
@@ -2865,7 +2875,7 @@ Worker node fix packs `4.8.57_1590_openshift`, `4.9.56_1576_openshift`, `4.10.52
 :   For more information, see the [change log](/docs/openshift?topic=openshift-cos_plugin_changelog).
 
 {{site.data.keyword.block_storage_is_short}} add-on versions `4.4.17_1829`, `5.0.7_1836`, and `5.1.2_1828`.
-:   For more information, see [the change log](/docs/openshift?topic=openshift-vpc_bs_changelog).
+:   For more information, see [the change log](/docs/openshift?topic=openshift-cl-add-ons-vpc-block-csi-driver).
 
 
   
@@ -2914,7 +2924,7 @@ New troubleshooting doc for how to recover after deleting a portable subnet in C
 
 
 {{site.data.keyword.block_storage_is_short}} add-on version `5.1`.
-:   For more information, see [the change log](/docs/openshift?topic=openshift-vpc_bs_changelog).
+:   For more information, see [the change log](/docs/openshift?topic=openshift-cl-add-ons-vpc-block-csi-driver).
 
 
 ### 8 February 2023
@@ -2981,7 +2991,7 @@ CLI version 1.0.487 change log update
 :   The [CLI change log](/docs/openshift?topic=openshift-cs_cli_changelog) is updated for version 1.0.487.
 
 {{site.data.keyword.block_storage_is_short}} add-on versions `4.4.16_1779` and `5.0.5_1784`.
-:   For more information, see [the change log](/docs/openshift?topic=openshift-vpc_bs_changelog).
+:   For more information, see [the change log](/docs/openshift?topic=openshift-cl-add-ons-vpc-block-csi-driver).
 
 Cluster autoscaler add-on version `1.0.7_940`.
 :   For more information, see [the change log](/docs/openshift?topic=openshift-ca_changelog).
@@ -3009,7 +3019,7 @@ Worker node fix packs `4.11.22_1538_openshift`, `4.10.47_1551_openshift`, `4.9.5
 {: release-note}
 
 {{site.data.keyword.block_storage_is_short}} add-on versions `4.4.15_1764` and `5.0.4_1773`
-:   For more information, see [the change log](/docs/openshift?topic=openshift-vpc_bs_changelog).
+:   For more information, see [the change log](/docs/openshift?topic=openshift-cl-add-ons-vpc-block-csi-driver).
 
 Istio add-on versions `1.14.6`, `1.15.4`, and `1.16.1`
 :   For more information, see the [change log](/docs/containers?topic=containers-istio-changelog#1161).
@@ -3165,7 +3175,7 @@ Worker node fix pack 4.11.13_1533_openshift, 4.10.41_1546_openshift, 4.9.51_1566
 {: release-note}
 
 {{site.data.keyword.block_storage_is_short}} add-on versions `4.4.13_1712` and `5.0.2_1713`
-:   For more information, see [the change log](/docs/openshift?topic=openshift-vpc_bs_changelog).
+:   For more information, see [the change log](/docs/openshift?topic=openshift-cl-add-ons-vpc-block-csi-driver).
 
 
 
@@ -3200,7 +3210,7 @@ New Ingress status messages
 {: release-note}
 
 {{site.data.keyword.block_storage_is_short}} add-on version `4.3.8_1705`
-:   For more information, see [the change log](/docs/openshift?topic=openshift-vpc_bs_changelog).
+:   For more information, see [the change log](/docs/openshift?topic=openshift-cl-add-ons-vpc-block-csi-driver).
 
 
 
@@ -3223,7 +3233,7 @@ Istio add-on version `1.15.3`
 {: release-note}
 
 {{site.data.keyword.block_storage_is_short}} add-on version `4.4.12_1700` and `5.0.1_1695`
-:   For more information, see [the change log](/docs/openshift?topic=openshift-vpc_bs_changelog).
+:   For more information, see [the change log](/docs/openshift?topic=openshift-cl-add-ons-vpc-block-csi-driver).
 
 
 
@@ -3314,7 +3324,7 @@ Istio add-on
 {: release-note}
 
 {{site.data.keyword.block_storage_is_short}} add-on version `5.0`.
-:   For more information, see [the change log](/docs/openshift?topic=openshift-vpc_bs_changelog).
+:   For more information, see [the change log](/docs/openshift?topic=openshift-cl-add-ons-vpc-block-csi-driver).
 
 
 
@@ -3381,7 +3391,7 @@ Worker node fix pack
 {: release-note}
 
 {{site.data.keyword.block_storage_is_short}} add-on version `4.4.11_1614`.
-:   For more information, see [the change log](/docs/openshift?topic=openshift-vpc_bs_changelog).
+:   For more information, see [the change log](/docs/openshift?topic=openshift-cl-add-ons-vpc-block-csi-driver).
 
 
 
@@ -3394,7 +3404,7 @@ Cluster autoscaler add-on versions `1.1.0_798`, `1.0.6_800`, and `1.0.5_779`.
 :   For more information, see [Cluster autoscaler add-on change log](/docs/openshift?topic=openshift-ca_changelog).
 
 {{site.data.keyword.block_storage_is_short}} add-on version `4.3.7_1613`.
-:   For more information, see [the change log](/docs/openshift?topic=openshift-vpc_bs_changelog).
+:   For more information, see [the change log](/docs/openshift?topic=openshift-cl-add-ons-vpc-block-csi-driver).
 
 
 ### 21 September 2022
@@ -3422,7 +3432,7 @@ CLI change log update
 {: release-note}
 
 {{site.data.keyword.block_storage_is_short}} add-on version 4.4.10_1578 is available.
-:   For more information, see [version 4.4.10_1578](/docs/openshift?topic=openshift-vpc_bs_changelog).
+:   For more information, see [version 4.4.10_1578](/docs/openshift?topic=openshift-cl-add-ons-vpc-block-csi-driver).
 
 New! vGPU worker node flavors are now available for VPC Gen 2.
 :   For more information about the available worker node flavors, see [VPC Gen 2 flavors](/docs/openshift?topic=openshift-vpc-flavors). Worker node flavors with vGPU support are the `gx2` flavor class, for example: `gx2.16x128.2v100`. {{site.data.keyword.vpc_short}} worker nodes with GPUs are available for allowlisted accounts only. To request that your account be allowlisted, see [Requesting access to allowlisted features](/docs/openshift?topic=openshift-allowlist-request). Be sure to include the data centers, the VPC infrastructure profile, and the number of workers that you want use. For example `12 worker nodes in us-east-1 of VPC profile gx2-16x128xv100`.
@@ -3433,7 +3443,7 @@ New! vGPU worker node flavors are now available for VPC Gen 2.
 {: release-note}
 
 {{site.data.keyword.block_storage_is_short}} add-on version 4.3.6_1579 is available.
-:   For more information, see [version 4.3.6_1579](/docs/openshift?topic=openshift-vpc_bs_changelog)
+:   For more information, see [version 4.3.6_1579](/docs/openshift?topic=openshift-cl-add-ons-vpc-block-csi-driver)
 
 {{site.data.keyword.cos_full_notm}} plug-in version `2.2.0` is available.
 :   For more information, see the [change log](/docs/openshift?topic=openshift-cos_plugin_changelog).
@@ -3492,7 +3502,7 @@ CLI change log update
 {: release-note}
 
 {{site.data.keyword.block_storage_is_short}} add-on version 4.4.9_1566 is available.
-:   For more information, see [version 4.4.9_1566](/docs/openshift?topic=openshift-vpc_bs_changelog)
+:   For more information, see [version 4.4.9_1566](/docs/openshift?topic=openshift-cl-add-ons-vpc-block-csi-driver)
 
 
 
@@ -3502,7 +3512,7 @@ CLI change log update
 
 {{site.data.keyword.block_storage_is_short}} add-on version 4.3.5_1563 is available.
 
-:   For more information, see [version 4.3.5_1563](/docs/openshift?topic=openshift-vpc_bs_changelog)
+:   For more information, see [version 4.3.5_1563](/docs/openshift?topic=openshift-cl-add-ons-vpc-block-csi-driver)
 
 {{site.data.keyword.cos_full_notm}} plug-in version `2.1.21` is available.
 :   For more information, see the [change log](/docs/openshift?topic=openshift-cos_plugin_changelog).
@@ -3612,7 +3622,7 @@ Cluster autoscaler add-on
 {: release-note}
 
 {{site.data.keyword.block_storage_is_short}} add-on.
-:   [Version 4.3.4_1551](/docs/openshift?topic=openshift-vpc_bs_changelog) and [Version 4.4.8_1550](/docs/openshift?topic=openshift-vpc_bs_changelog) are available.
+:   [Version 4.3.4_1551](/docs/openshift?topic=openshift-cl-add-ons-vpc-block-csi-driver) and [Version 4.4.8_1550](/docs/openshift?topic=openshift-cl-add-ons-vpc-block-csi-driver) are available.
 
 Worker node fix pack
 
@@ -3637,7 +3647,7 @@ Cross-account encryption
 :   Version `2.1.18` of the {{site.data.keyword.cos_full_notm}} plug-in [is available](/docs/openshift?topic=openshift-cos_plugin_changelog).
 
 {{site.data.keyword.block_storage_is_short}} add-on.
-:   Version [5.0.1-beta_1411](/docs/openshift?topic=openshift-vpc_bs_changelog) is available.
+:   Version [5.0.1-beta_1411](/docs/openshift?topic=openshift-cl-add-ons-vpc-block-csi-driver) is available.
 
 
 
@@ -3717,7 +3727,7 @@ Cluster autoscaler add-on
 :   You can now [create snapshots of your PVCs](/docs/openshift?topic=openshift-vpc-volume-snapshot) by using version `5.0.0-beta` of the {{site.data.keyword.block_storage_is_short}} add-on.
 
 {{site.data.keyword.block_storage_is_short}} add-on.
-:   [Version 4.4.6_1446](/docs/openshift?topic=openshift-vpc_bs_changelog) is available.
+:   [Version 4.4.6_1446](/docs/openshift?topic=openshift-cl-add-ons-vpc-block-csi-driver) is available.
 
 ### 22 June 2022
 {: #openshift-jun2222}
@@ -3742,7 +3752,7 @@ Worker node fix pack
 {: release-note}
 
 {{site.data.keyword.block_storage_is_short}} add-on.
-:   [Version 4.3.2_1441](/docs/openshift?topic=openshift-vpc_bs_changelog) is available.
+:   [Version 4.3.2_1441](/docs/openshift?topic=openshift-cl-add-ons-vpc-block-csi-driver) is available.
 
 
 
@@ -3756,7 +3766,7 @@ Worker node fix pack
 :   Metrics and labels are now stored and displayed in a Prometheus compatible naming convention. Some metrics and labels are deprecated. For more information, see [Discontinued Metrics and Labels](https://docs.sysdig.com/en/docs/release-notes/enhanced-metric-store/#discontinued-metrics-and-labels){: external} and [removed features](https://docs.sysdig.com/en/docs/release-notes/enhanced-metric-store/#removed-featurees){: external}.
 
 {{site.data.keyword.block_storage_is_short}} add-on.
-:   [Version 5.0.1-beta_1411](/docs/openshift?topic=openshift-vpc_bs_changelog) is available for allowlisted accounts.
+:   [Version 5.0.1-beta_1411](/docs/openshift?topic=openshift-cl-add-ons-vpc-block-csi-driver) is available for allowlisted accounts.
 
 
 
@@ -3767,7 +3777,7 @@ Worker node fix pack
 
 
 {{site.data.keyword.block_storage_is_short}} add-on.
-:   [Version 4.4.5_1371](/docs/openshift?topic=openshift-vpc_bs_changelog) is available.
+:   [Version 4.4.5_1371](/docs/openshift?topic=openshift-cl-add-ons-vpc-block-csi-driver) is available.
 
 
 
@@ -3777,7 +3787,7 @@ Cloud Image Key Synchronizer add-on
 :   Version 1.0.0_1022 of the [Cloud Image Key Synchronizer add-on](/docs/openshift?topic=openshift-cl-add-ons-ibm-cloud-image-key-synchronizer) is released.
 
 {{site.data.keyword.block_storage_is_short}} add-on.
-:   [Version 5.0.0-beta_1125](/docs/openshift?topic=openshift-vpc_bs_changelog) is available for allowlisted accounts.
+:   [Version 5.0.0-beta_1125](/docs/openshift?topic=openshift-cl-add-ons-vpc-block-csi-driver) is available for allowlisted accounts.
 
 ### 9 June 2022
 {: #openshift-jun922}
@@ -3838,10 +3848,10 @@ CLI change log update
 :   Version `2.1.16` of the {{site.data.keyword.cos_full_notm}} plug-in [is available](/docs/openshift?topic=openshift-cos_plugin_changelog).
 
 {{site.data.keyword.block_storage_is_short}} add-on.
-:   [Version 4.3.0_1163](/docs/openshift?topic=openshift-vpc_bs_changelog) is available.
+:   [Version 4.3.0_1163](/docs/openshift?topic=openshift-cl-add-ons-vpc-block-csi-driver) is available.
 
 {{site.data.keyword.block_storage_is_short}} add-on.
-:   [Version 4.2.6_1161](/docs/openshift?topic=openshift-vpc_bs_changelog) is available.
+:   [Version 4.2.6_1161](/docs/openshift?topic=openshift-cl-add-ons-vpc-block-csi-driver) is available.
 
 ### 20 May 2022
 {: #openshift-may2022}
@@ -3878,7 +3888,7 @@ ALB OAuth Proxy add-on
 {: release-note}
 
 {{site.data.keyword.block_storage_is_short}} add-on.
-:   [Version 4.2.5_1106](/docs/openshift?topic=openshift-vpc_bs_changelog) is available.
+:   [Version 4.2.5_1106](/docs/openshift?topic=openshift-cl-add-ons-vpc-block-csi-driver) is available.
 
 ### 9 May 2022
 {: #openshift-may0922}
@@ -4000,7 +4010,7 @@ Cloud Image Key Synchronizer add-on
 
 
 {{site.data.keyword.block_storage_is_short}} add-on.
-:   [Version 4.2.3_983](/docs/openshift?topic=openshift-vpc_bs_changelog) is available.
+:   [Version 4.2.3_983](/docs/openshift?topic=openshift-cl-add-ons-vpc-block-csi-driver) is available.
 
 Worker node fix pack
 
@@ -4063,7 +4073,7 @@ Worker node fix pack update.
 :   Version `2.1.13` of the {{site.data.keyword.cos_full_notm}} plug-in [is available](/docs/openshift?topic=openshift-cos_plugin_changelog).
 
 {{site.data.keyword.block_storage_is_short}} add-on.
-:   [Version 4.2.2_900](/docs/openshift?topic=openshift-vpc_bs_changelog) is available.
+:   [Version 4.2.2_900](/docs/openshift?topic=openshift-cl-add-ons-vpc-block-csi-driver) is available.
 
 
 HPCS Router add-on
@@ -4098,7 +4108,7 @@ CLI change log update
 {: release-note}
 
 {{site.data.keyword.block_storage_is_short}} add-on.
-:   [Version 4.2.1_895](/docs/openshift?topic=openshift-vpc_bs_changelog) is available.
+:   [Version 4.2.1_895](/docs/openshift?topic=openshift-cl-add-ons-vpc-block-csi-driver) is available.
 
 
 
@@ -4170,7 +4180,7 @@ Master fix pack update.
 {: release-note}
 
 {{site.data.keyword.block_storage_is_short}} add-on.
-:   [Version 4.2](/docs/openshift?topic=openshift-vpc_bs_changelog) is available.
+:   [Version 4.2](/docs/openshift?topic=openshift-cl-add-ons-vpc-block-csi-driver) is available.
 
 Cluster autoscaler
 :   Version [1.0.5_415](/docs/openshift?topic=openshift-ca_changelog) is available.
@@ -4259,7 +4269,7 @@ Worker node fix pack
 
 
 {{site.data.keyword.block_storage_is_short}} add-on.
-:   [Version 4.1.3_846](/docs/openshift?topic=openshift-vpc_bs_changelog) is released.
+:   [Version 4.1.3_846](/docs/openshift?topic=openshift-cl-add-ons-vpc-block-csi-driver) is released.
 
 
 ### 10 February 2022
@@ -4326,7 +4336,7 @@ Version change log
 {: release-note}
 
 {{site.data.keyword.block_storage_is_short}} add-on.
-:   [Version 4.1.2_834](/docs/openshift?topic=openshift-vpc_bs_changelog) is released.
+:   [Version 4.1.2_834](/docs/openshift?topic=openshift-cl-add-ons-vpc-block-csi-driver) is released.
 
 **New!** Gathering Ingress logs
 :   When troubleshooting Ingress, follow the steps in [gathering Ingress logs](/docs/openshift?topic=openshift-ingress-must-gather) to retrieve useful debugging information.
@@ -4365,7 +4375,7 @@ Cluster autoscaler add-on.
 :   [Version 1.0.4_403](/docs/openshift?topic=openshift-ca_changelog) is released.
 
 {{site.data.keyword.block_storage_is_short}} add-on.
-:   [Version 4.1.1_827](/docs/openshift?topic=openshift-vpc_bs_changelog) is released.
+:   [Version 4.1.1_827](/docs/openshift?topic=openshift-cl-add-ons-vpc-block-csi-driver) is released.
 
 OpenShift Data Foundation
 :   New and updated parameters for OpenShift Data Foundation.
@@ -4422,7 +4432,7 @@ Cloud Image Key Synchronizer add-on
 
 
 {{site.data.keyword.block_storage_is_short}} add-on.
-:   [Version 4.1.0_807](/docs/openshift?topic=openshift-vpc_bs_changelog) is released.
+:   [Version 4.1.0_807](/docs/openshift?topic=openshift-cl-add-ons-vpc-block-csi-driver) is released.
 
 
 {{site.data.keyword.containershort}} 1.20 end of support date change

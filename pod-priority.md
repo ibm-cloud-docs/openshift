@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2025
-lastupdated: "2025-02-01"
+lastupdated: "2025-02-19"
 
 
 keywords: kubernetes, openshift
@@ -43,7 +43,7 @@ If you don't specify a priority for your pod deployment, the default is set to t
 
 To understand how pod priority and {{site.data.keyword.redhat_openshift_notm}} controller work together, consider the scenarios in the following figure. You must place prioritized pods on worker nodes with available resources. Otherwise, high priority pods in your cluster can remain in pending at the same time that existing pods are removed, such as in Scenario 3.
 
-![Pod priority scenarios.](images/pod-priority.png "Pod priority scenarios"){: caption="Pod priority scenarios" caption-side="bottom"}
+![Pod priority scenarios.](images/pod-priority.svg "Pod priority scenarios"){: caption="Pod priority scenarios" caption-side="bottom"}
 
 1. Three pods with high, medium, and low priority are pending scheduling. The {{site.data.keyword.redhat_openshift_notm}} controller finds an available worker node with room for all three pods, and schedules them in order of priority, with the highest priority pod scheduled first.
 2. Three pods with high, medium, and low priority are pending scheduling. The {{site.data.keyword.redhat_openshift_notm}} controller finds an available worker node, but the worker node has only enough resources to support the high and medium priority pods. The low-priority pod is not scheduled and it remains in pending.

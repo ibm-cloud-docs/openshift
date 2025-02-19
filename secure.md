@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2025
-lastupdated: "2025-02-01"
+lastupdated: "2025-02-19"
 
 
 keywords: openshift
@@ -89,9 +89,7 @@ Admission control
 
 The following image shows the default cluster security settings that address authentication, authorization, admission control, and secure connectivity between the Kubernetes master and worker nodes.
 
-
-
-![Describes the security stages when you access the Kubernetes API server.](images/oc_security_apiserver_access.png "Security stages when accessing the Kubernetes API server"){: caption="Security stages when accessing the Kubernetes API server" caption-side="bottom"}
+![Describes the security stages when you access the API server.](images/apiserver_access.svg "Security stages when accessing the Kubernetes API server"){: caption="Security stages when accessing the API server" caption-side="bottom"}
 
 Review the following security features for {{site.data.keyword.redhat_openshift_notm}} API server and etcd.
 
@@ -175,7 +173,7 @@ The image does not include components that ensure secure end-to-end communicatio
 
 
 
-![Worker node setup in {{site.data.keyword.openshiftlong_notm}} excluding network security.](images/oc_worker_setup.png "Worker node setup in {{site.data.keyword.openshiftlong_notm}}"){: caption="Worker node setup in {{site.data.keyword.openshiftlong_notm}} excluding network security" caption-side="bottom"}
+![Worker node setup in {{site.data.keyword.openshiftlong_notm}} excluding network security.](images/oc_worker_setup.svg "Worker node setup in {{site.data.keyword.openshiftlong_notm}}"){: caption="Worker node setup in {{site.data.keyword.openshiftlong_notm}} excluding network security" caption-side="bottom"}
 
 CIS-compliant RHEL image
 :   Every worker node is set up with a Red Hat Enterprise Linux operating system that implements the benchmarks that are published by the Center of Internet Security (CIS). The user or the owner of the machine can't change this operating system to another operating system. To review the current RHEL version, run `oc get nodes -o wide`. IBM works with internal and external security advisory teams to address potential security compliance vulnerabilities. Security updates and patches for the operating system are made available through {{site.data.keyword.openshiftlong_notm}} and must be installed by the user to keep the worker node secure.
@@ -428,7 +426,7 @@ Example request flow
 
 The following diagram presents an example request flow between the kubelet and CRI-O.
 
-![Example request flow between kubelet and CRI-O.](images/crio-selinux.png "Example request flow between kubelet and CRI-O"){: caption="Example request flow between kubelet and CRI-O" caption-side="bottom"}
+![Example request flow between kubelet and CRI-O.](images/crio-selinux.svg "Example request flow between kubelet and CRI-O"){: caption="Example request flow between kubelet and CRI-O" caption-side="bottom"}
 
 
 

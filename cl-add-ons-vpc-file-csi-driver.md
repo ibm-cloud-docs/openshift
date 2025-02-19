@@ -1,47 +1,55 @@
 ---
 
-copyright: 
-  years: 2014, 2024
-lastupdated: "2024-12-11"
+copyright:
+  years: 2024, 2025
+
+lastupdated: "2025-02-19"
 
 
-keywords: openshift, {{site.data.keyword.openshiftlong_notm}}, block, storage, add-on, changelog
+keywords: change log, version history, VPC File CSI Driver
 
 subcollection: openshift
-
 
 ---
 
 {{site.data.keyword.attribute-definition-list}}
 
+<!-- The content in this topic is auto-generated except for reuse-snippets indicated with {[ ]}. -->
 
 
+# VPC File CSI Driver add-on version change log
+{: #cl-add-ons-vpc-file-csi-driver}
 
-
-# {{site.data.keyword.block_storage_is_short}} cluster add-on change log 
-{: #vpc_bs_changelog}
-
-
-View information for patch updates to the {{site.data.keyword.block_storage_is_short}} cluster add-on in your {{site.data.keyword.openshiftlong_notm}} clusters.
+Review the version history for VPC File CSI Driver.
 {: shortdesc}
 
-Patch updates
-:   Patch updates are delivered automatically by IBM and don't contain any feature updates or changes in the supported add-on and cluster versions.
-
-Release updates
-:   Release updates contain new features for the {{site.data.keyword.block_storage_is_short}} or changes in the supported add-on or cluster versions. You must manually apply release updates to your {{site.data.keyword.block_storage_is_short}} cluster add-on. To update your {{site.data.keyword.block_storage_is_short}} cluster add-on, see [Updating the {{site.data.keyword.block_storage_is_short}} cluster add-on](/docs/openshift?topic=openshift-vpc-block#vpc-addon-update).
 
 
-To view a list of add-ons and the supported cluster versions in the CLI, run the following command.
-```sh
-ibmcloud oc cluster addon versions --addon vpc-block-csi-driver
-```
-{: pre}
+## Version 2.0
+{: #cl-add-ons-vpc-file-csi-driver-2.0}
 
-To view a list of add-ons and the supported cluster versions, see the [Supported cluster add-ons table](/docs/openshift?topic=openshift-supported-cluster-addon-versions).
 
-Before you migrate to a `5.x` release from a previous release, you must not have any volume snapshots in `failure` state. For more information, see [Why can't I delete my Block Storage for VPC volume snapshot resources?](/docs/openshift?topic=openshift-ts-storage-volumesnapshotdelete).
-{: important}
+### 2.0.10_334, released 19 February 2025
+{: #cl-add-ons-vpc-file-csi-driver-2010_334}
+
+- Resolves the following CVEs: [CVE-2024-45339](https://nvd.nist.gov/vuln/detail/CVE-2024-45339){: external}, and [CVE-2024-45338](https://nvd.nist.gov/vuln/detail/CVE-2024-45338){: external}.
+- Resiliency improvement to use VPC Storage service API for tagging volumes. This doesn't impact existing or new PVCs. This reduces the number of Kubernetes service API calls. 
+- Updates the golang base image to 1.22.12. 
+- Updates the armada-storage-secret to v1.2.55. 
+
+
+
+## Version 1.2
+{: #cl-add-ons-vpc-file-csi-driver-1.2}
+
+
+### 1.2.14_332, released 19 February 2025
+{: #cl-add-ons-vpc-file-csi-driver-1214_332}
+
+- Resolves the following CVEs: [CVE-2024-45339](https://nvd.nist.gov/vuln/detail/CVE-2024-45339){: external}, and [CVE-2024-45338](https://nvd.nist.gov/vuln/detail/CVE-2024-45338){: external}.
+- Resiliency improvement to use VPC Storage service API for tagging volumes. This doesn't impact existing or new PVCs. This reduces the number of Kubernetes service API calls. 
+- Updates the golang base image to 1.22.12. 
+- Updates the armada-storage-secret to v1.2.55. 
 
 
 ## Version 5.2
