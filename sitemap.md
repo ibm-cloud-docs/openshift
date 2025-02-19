@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2025
-lastupdated: "2025-02-17"
+lastupdated: "2025-02-18"
 
 
 keywords: openshift
@@ -5148,6 +5148,8 @@ subcollection: openshift
 * [Using a reservation in a cluster](/docs/openshift?topic=openshift-reservations#ri-use)
 
 * [Reviewing reservation usage](/docs/openshift?topic=openshift-reservations#ri-review)
+
+* [Renewing expiring reservation](/docs/openshift?topic=openshift-reservations#renew-reservation)
 
 
 ## Removing clusters

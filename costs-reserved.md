@@ -1,8 +1,8 @@
 ---
 
 copyright: 
-  years: 2014, 2024
-lastupdated: "2024-10-30"
+  years: 2014, 2025
+lastupdated: "2025-02-18"
 
 
 keywords: openshift, reservations, worker node
@@ -188,3 +188,26 @@ Before you begin, make sure that you have the following roles in {{site.data.key
 3. From the **Services** table, find the **Kubernetes Service** row and click **View plans**.
 4. From the plans table, find the row for your reservation name and click **View details**.
 5. Review the details for the reserved worker nodes that are associated with the contracts of your reservation.
+
+
+## Renewing expiring reservation
+{: #renew-reservation}
+
+If you are a member of an account that has contract reservation set to expire within 30 days, you must take action to prevent loss of service.
+{: shortdesc}
+ 
+If you have more worker nodes than reservation capacity at the time of contract expiration, worker nodes will be deleted until they no longer exceed the reservation's current total capacity.
+{: note}
+ 
+To prevent loss of service, you must create new contracts for your existing reservations to replace the expiring ones. Alternatively, if you choose to not continue with reservations, you must create a new worker pool not using a reservation, and migrate workloads over before the contract expiration date.
+ 
+If you want to continue with reservations, take the following steps.
+
+1. Log in to the [{{site.data.keyword.openshiftlong_notm}} reservations console](https://cloud.ibm.com/kubernetes/reservations){: external}.
+2. Click on each reservation in the list to view a list of contracts associated with each reservation.
+3. For each contract, look at the **Expiration date** column to find contracts that expire within 30 days.   
+4. Click **Add** to add a new contract. Repeat for each contract that expires within 30 days. 
+5. Select the number of worker nodes. Ensure that the number of worker nodes is sufficient for the capacity you need. For example, if your expiring contract contains 3 worker nodes, your new contract must also contain 3 worker nodes, unless you determine you need more or less capacity.
+6. Select a start date for the new contract. Ensure the following requirements are met:
+  - The start date is no more than 30 days in the future.      
+  - There is no gap between the start date you choose and the expiration date of the expiring contract. You can choose a start date a day or two before the existing one expires to ensure there is no gap and loss of service.    
