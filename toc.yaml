@@ -406,15 +406,15 @@ toc:
           - add-on-versions.md 
           - cl-add-ons-openshift-ai.md
           - versions-autoscaler.md
-          - versions-vpc-block-addon.md
-          - versions-vpc-file-addon.md
+          - cl-add-ons-ibm-storage-operator.md
+          - cl-add-ons-vpc-block-csi-driver.md
+          - cl-add-ons-vpc-file-csi-driver.md
           - versions-object.md
           - cl-add-ons-static-route.md
           - cl-add-ons-openshift-data-foundation.md
           - versions-backup-restore.md
           - openshift_versions_hpcs_router.md
           - cl-add-ons-ibm-cloud-image-key-synchronizer.md
-          - cl-ibm-storage-operator.md
       - topicgroup:
           label: Archived version history
           topics:
