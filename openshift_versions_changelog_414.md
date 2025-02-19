@@ -224,7 +224,7 @@ The following table shows the changes that are in the master fix pack 4.14.38_15
 | Cluster health image | v1.5.8 | v1.5.9 | New version contains updates and security fixes. |
 | etcd | v3.5.15 | v3.5.16 | See the [etcd release notes](https://github.com/etcd-io/etcd/releases/v3.5.16){: external}. |
 | {{site.data.keyword.cloud_notm}} Controller Manager | v1.27.16-6 | v1.27.16-11 | New version contains updates and security fixes. |
-| {{site.data.keyword.filestorage_full_notm}} for Classic plug-in and monitor | 446 | 447 | New version contains updates and security fixes. |
+| {{site.data.keyword.filestorage_full_notm}} plug-in and monitor | 446 | 447 | New version contains updates and security fixes. |
 | {{site.data.keyword.cloud_notm}} RBAC Operator | 5b17dab | 77dac6b | New version contains updates and security fixes. |
 | Key Management Service provider | v2.8.14 | v2.8.16 | New version contains updates and security fixes. |
 | Portieris admission controller | v0.13.18 | v0.13.20 | See the [Portieris admission controller release notes](https://github.com/{{site.data.keyword.IBM_notm}}/portieris/releases/tag/v0.13.20){: external}. |
@@ -272,7 +272,7 @@ The following table shows the changes that are in the master fix pack 4.14.35_15
 | {{site.data.keyword.IBM_notm}} Calico extension | 1598 | 1607 | New version contains security fixes. |
 | {{site.data.keyword.cloud_notm}} Block Storage driver and plug-in | v2.5.13 | v2.5.15 | New version contains updates and security fixes. |
 | {{site.data.keyword.cloud_notm}} Controller Manager | v1.27.16-3 | v1.27.16-6 | New version contains updates and security fixes. |
-| {{site.data.keyword.filestorage_full_notm}} for Classic plug-in and monitor | 445 | 446 | New version contains updates and security fixes. |
+| {{site.data.keyword.filestorage_full_notm}} plug-in and monitor | 445 | 446 | New version contains updates and security fixes. |
 | {{site.data.keyword.cloud_notm}} RBAC Operator | 897f067 | 5b17dab | New version contains updates and security fixes. |
 | Key Management Service provider | v2.8.13 | v2.8.14 | New version contains updates and security fixes. |
 | Load balancer and load balancer monitor for {{site.data.keyword.cloud_notm}} Provider | 3022 | 3051 | New version contains updates and security fixes. |
@@ -367,7 +367,7 @@ The following table shows the changes that are in the master fix pack 4.14.33_15
 | Cluster health image | v1.5.6 | v1.5.7 | New version contains updates and security fixes. |
 | {{site.data.keyword.IBM_notm}} Calico extension | 1595 | 1598 | New version contains security fixes. |
 | {{site.data.keyword.cloud_notm}} Block Storage driver and plug-in | v2.5.9 | v2.5.12 | New version contains updates and security fixes. |
-| {{site.data.keyword.filestorage_full_notm}} for Classic plug-in and monitor | 443 | 445 | New version contains updates and security fixes. |
+| {{site.data.keyword.filestorage_full_notm}} plug-in and monitor | 443 | 445 | New version contains updates and security fixes. |
 | {{site.data.keyword.cloud_notm}} RBAC Operator | 14d0ab5 | 312030f | New version contains updates and security fixes. |
 | etcd | v3.5.13 | v3.5.14 | See the [etcd release notes](https://github.com/etcd-io/etcd/releases/v3.5.14){: external}. |
 | {{site.data.keyword.cloud_notm}} Controller Manager | v1.27.14-5 | v1.27.16-1 | New version contains updates and security fixes. |
@@ -517,7 +517,7 @@ The following table shows the changes that are in the master fix pack 4.14.22_15
 | --- | --- | --- | --- |
 | {{site.data.keyword.cloud_notm}} Block Storage driver and plug-in | v2.5.8 | v2.5.9 | New version contains updates and security fixes. |
 | {{site.data.keyword.cloud_notm}} Controller Manager | v1.27.12-10 | v1.27.13-4 | New version contains updates and security fixes. |
-| {{site.data.keyword.filestorage_full_notm}} for Classic plug-in and monitor | 442 | 443 | New version contains updates and security fixes. |
+| {{site.data.keyword.filestorage_full_notm}} plug-in and monitor | 442 | 443 | New version contains updates and security fixes. |
 | {{site.data.keyword.openshiftlong_notm}}. | 4.14.20 | 4.14.22 | See the [{{site.data.keyword.openshiftlong_notm}} release notes](https://docs.openshift.com/container-platform/4.14/release_notes/ocp-4-14-release-notes.html#ocp-4-14-22){: external}. |
 {: caption="Changes since version 4.14.20_1558_openshift" caption-side="bottom"}
 

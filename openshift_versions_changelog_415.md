@@ -222,7 +222,7 @@ The following table shows the changes that are in the master fix pack 4.15.36_15
 | Cluster health image | v1.5.8 | v1.5.9 | New version contains updates and security fixes. |
 | etcd | v3.5.15 | v3.5.16 | See the [etcd release notes](https://github.com/etcd-io/etcd/releases/v3.5.16){: external}. |
 | {{site.data.keyword.cloud_notm}} Controller Manager | v1.28.14-1 | v1.28.14-6 | New version contains updates and security fixes. |
-| {{site.data.keyword.filestorage_full_notm}} for Classic plug-in and monitor | 446 | 447 | New version contains updates and security fixes. |
+| {{site.data.keyword.filestorage_full_notm}} plug-in and monitor | 446 | 447 | New version contains updates and security fixes. |
 | {{site.data.keyword.cloud_notm}} RBAC Operator | 5b17dab | 77dac6b | New version contains updates and security fixes. |
 | Key Management Service provider | v2.9.10 | v2.9.12 | New version contains updates and security fixes. |
 | Portieris admission controller | v0.13.18 | v0.13.20 | See the [Portieris admission controller release notes](https://github.com/{{site.data.keyword.IBM_notm}}/portieris/releases/tag/v0.13.20){: external}. |
@@ -271,7 +271,7 @@ The following table shows the changes that are in the master fix pack 4.15.30_15
 | --- | --- | --- | --- |
 | {{site.data.keyword.cloud_notm}} Block Storage driver and plug-in | v2.5.13 | v2.5.15 | New version contains updates and security fixes. |
 | {{site.data.keyword.cloud_notm}} Controller Manager | v1.28.13-1 | v1.28.14-1 | New version contains updates and security fixes. |
-| {{site.data.keyword.filestorage_full_notm}} for Classic plug-in and monitor | 445 | 446 | New version contains updates and security fixes. |
+| {{site.data.keyword.filestorage_full_notm}} plug-in and monitor | 445 | 446 | New version contains updates and security fixes. |
 | {{site.data.keyword.cloud_notm}} RBAC Operator | 897f067 | 5b17dab | New version contains updates and security fixes. |
 | Key Management Service provider | v2.9.9 | v2.9.10 | New version contains updates and security fixes. |
 | Load balancer and load balancer monitor for {{site.data.keyword.cloud_notm}} Provider | 3022 | 3051 | New version contains updates and security fixes. |
@@ -370,7 +370,7 @@ The following table shows the changes that are in the master fix pack 4.15.22_15
 | Key Management Service provider | v2.9.7 | v2.9.8 | New version contains updates and security fixes. |
 | Portieris admission controller | v0.13.16 | v0.13.17 | See the [Portieris admission controller release notes](https://github.com/{{site.data.keyword.IBM_notm}}/portieris/releases/tag/v0.13.17){: external}. |
 | {{site.data.keyword.openshiftlong_notm}}. | 4.15.18 | 4.15.22 | See the [{{site.data.keyword.openshiftlong_notm}} release notes](https://docs.openshift.com/container-platform/4.15/release_notes/ocp-4-15-release-notes.html#ocp-4-15-22){: external}. |
-| {{site.data.keyword.filestorage_full_notm}} for Classic plug-in and monitor | 443 | 445 | New version contains updates and security fixes. |
+| {{site.data.keyword.filestorage_full_notm}} plug-in and monitor | 443 | 445 | New version contains updates and security fixes. |
 | {{site.data.keyword.cloud_notm}} RBAC Operator | 14d0ab5 | 312030f | New version contains updates and security fixes. |
 | Tigera Operator | v1.32.5 | v1.32.10 | See the [Tigera Operator release notes](https://github.com/tigera/operator/releases/tag/v1.32.10){: external}. |
 {: caption="Changes since version 4.15.18_1545_openshift" caption-side="bottom"}
@@ -522,7 +522,7 @@ The following table shows the changes that are in the master fix pack 4.15.11_15
 | --- | --- | --- | --- |
 | {{site.data.keyword.cloud_notm}} Block Storage driver and plug-in | v2.5.8 | v2.5.9 | New version contains updates and security fixes. |
 | {{site.data.keyword.cloud_notm}} Controller Manager | v1.28.9-1 | v1.28.9-4 | New version contains updates and security fixes. |
-| {{site.data.keyword.filestorage_full_notm}} for Classic plug-in and monitor | 442 | 443 | New version contains updates and security fixes. |
+| {{site.data.keyword.filestorage_full_notm}} plug-in and monitor | 442 | 443 | New version contains updates and security fixes. |
 | {{site.data.keyword.openshiftlong_notm}}. | 4.15.9 | 4.15.11 | See the [{{site.data.keyword.openshiftlong_notm}} release notes](https://docs.openshift.com/container-platform/4.15/release_notes/ocp-4-15-release-notes.html#ocp-4-15-11){: external}. |
 {: caption="Changes since version 4.15.9_1530_openshift" caption-side="bottom"}
 
