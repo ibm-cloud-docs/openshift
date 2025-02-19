@@ -40,6 +40,25 @@ Master patch updates are applied automatically. Worker node patch updates can be
 
 
 
+### Master fix pack 4.12.71_1627_openshift, released 19 February 2025
+{: #41271_1627_openshift_M}
+
+The following table shows the changes that are in the master fix pack 4.12.71_1627_openshift. Master patch updates are applied automatically. 
+
+
+
+| Component | Previous | Current | Description |
+| --- | --- | --- | --- |
+| {{site.data.keyword.IBM_notm}} Calico extension | 1619 | 1624 | New version contains security fixes. |
+| {{site.data.keyword.cloud_notm}} Block Storage driver and plug-in | v2.4.27 | v2.4.28 | New version contains updates and security fixes. |
+| {{site.data.keyword.filestorage_full_notm}} for Classic plug-in and monitor | 447 | 449 | New version contains updates and security fixes. |
+| Key Management Service provider | v2.8.18 | v2.8.19 | New version contains updates and security fixes. |
+| Load balancer and load balancer monitor for {{site.data.keyword.cloud_notm}} Provider | 3079 | 3178 | New version contains updates and security fixes. |
+| OpenVPN Operator image | v1.5.25 | v1.5.26 | New version contains updates and security fixes. |
+| {{site.data.keyword.openshiftlong_notm}}. | 4.12.70 | 4.12.71 | See the [{{site.data.keyword.openshiftlong_notm}} release notes](https://docs.openshift.com/container-platform/4.12/release_notes/ocp-4-12-release-notes.html#ocp-4-12-71){: external}. |
+{: caption="Changes since version 4.12.70_1623_openshift" caption-side="bottom"}
+
+
 ### Worker node fix pack 4.12.72_1626_openshift, released 11 February 2025
 {: #cl-boms-41272_1626_openshift_W}
 
@@ -54,8 +73,6 @@ The following table shows the components included in the worker node fix pack 4.
 {: #cl-boms-41272_1626_openshift_W-component-table}
 
 
-
-
 ### Worker node fix pack 4.12.71_1624_openshift, released 29 January 2025
 {: #cl-boms-41271_1624_openshift_W}
 
@@ -68,8 +85,6 @@ The following table shows the components included in the worker node fix pack 4.
 |HAProxy|14daa781a66ca5ed5754656ce53c3cca4af580b5|N/A|
 {: caption="4.12.71_1624_openshift fix pack." caption-side="bottom"}
 {: #cl-boms-41271_1624_openshift_W-component-table}
-
-
 
 
 ### Master fix pack 4.12.70_1623_openshift, released 22 January 2025

@@ -40,6 +40,26 @@ Master patch updates are applied automatically. Worker node patch updates can be
 
 
 
+### Master fix pack 4.17.14_1530_openshift, released 19 February 2025
+{: #41714_1530_openshift_M}
+
+The following table shows the changes that are in the master fix pack 4.17.14_1530_openshift. Master patch updates are applied automatically. 
+
+
+
+| Component | Previous | Current | Description |
+| --- | --- | --- | --- |
+| {{site.data.keyword.cloud_notm}} Block Storage driver and plug-in | v2.5.16 | v2.5.17 | New version contains updates and security fixes. |
+| {{site.data.keyword.cloud_notm}} Controller Manager | v1.30.8-3 | v1.30.9-2 | New version contains updates and security fixes. |
+| {{site.data.keyword.filestorage_full_notm}} for Classic plug-in and monitor | 447 | 449 | New version contains updates and security fixes. |
+| Key Management Service provider | v2.10.9 | v2.10.10 | New version contains updates and security fixes. |
+| {{site.data.keyword.openshiftlong_notm}}. | 4.17.12 | 4.17.14 | See the [{{site.data.keyword.openshiftlong_notm}} release notes](https://docs.openshift.com/container-platform/4.17/release_notes/ocp-4-17-release-notes.html#ocp-4-17-14){: external}. |
+| {{site.data.keyword.openshiftlong_notm}} Control Plane Operator, Metrics Server, and toolkit | 4.17.0+20250102 | 4.17.0+20250207 | See the [{{site.data.keyword.openshiftlong_notm}} toolkit release notes](https://github.com/openshift/ibm-roks-toolkit/releases/tag/v4.17.0+20250207){: external}. |
+| Load balancer and load balancer monitor for {{site.data.keyword.cloud_notm}} Provider | 3079 | 3178 | New version contains updates and security fixes. |
+| {{site.data.keyword.openshiftlong_notm}}. | 4.17.10 | 4.17.12 | See the [{{site.data.keyword.openshiftlong_notm}} release notes](https://docs.openshift.com/container-platform/4.17/release_notes/ocp-4-17-release-notes.html#ocp-4-17-12){: external}. |
+{: caption="Changes since version 4.17.10_1522_openshift" caption-side="bottom"}
+
+
 ### Worker node fix pack 4.17.15_1527_openshift, released 11 February 2025
 {: #cl-boms-41715_1527_openshift_W}
 
@@ -54,8 +74,6 @@ The following table shows the components included in the worker node fix pack 4.
 {: #cl-boms-41715_1527_openshift_W-component-table}
 
 
-
-
 ### Worker node fix pack 4.17.12_1526_openshift, released 29 January 2025
 {: #cl-boms-41712_1526_openshift_W}
 
@@ -68,8 +86,6 @@ The following table shows the components included in the worker node fix pack 4.
 |HAProxy|14daa781a66ca5ed5754656ce53c3cca4af580b5|N/A|
 {: caption="4.17.12_1526_openshift fix pack." caption-side="bottom"}
 {: #cl-boms-41712_1526_openshift_W-component-table}
-
-
 
 
 ### Master fix pack 4.17.10_1522_openshift, released 22 January 2025
