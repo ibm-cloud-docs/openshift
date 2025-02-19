@@ -538,6 +538,7 @@ toc:
               - ts-sbd-cluster-create-quota.md
               - ts-sbd-non-sbd-clusters.md
               - ts-cluster-sbd-image-stream.md
+              - ts-cloud-logs-tags.md
           - topicgroup:
               label: Worker nodes
               topics:

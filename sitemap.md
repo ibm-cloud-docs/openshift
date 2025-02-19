@@ -3536,7 +3536,7 @@ subcollection: openshift
 
     * [Considerations and prerequisites](/docs/openshift?topic=openshift-health-audit#prereqs-apiserver-logs)
 
-    * [Forwarding Kubernetes API audit logs to {{site.data.keyword.la_short}}](/docs/openshift?topic=openshift-health-audit#audit-api-server-la)
+    * [Forwarding Kubernetes API audit logs to Cloud Logs](/docs/openshift?topic=openshift-health-audit#audit-api-server-la)
 
     * [Forwarding Kubernetes API audit logs to a resource in the {{site.data.keyword.cloud_notm}} private network](/docs/openshift?topic=openshift-health-audit#audit-api-server-priv)
 
@@ -10104,12 +10104,6 @@ subcollection: openshift
 
     * [Resources in multizone clusters](/docs/openshift?topic=openshift-regions-and-zones#regions_multizone)
 
-* [Accessing resources](/docs/openshift?topic=openshift-regions-and-zones#endpoint)
-
-    * [Accessing resources from the CLI](/docs/openshift?topic=openshift-regions-and-zones#endpoint_cli)
-
-    * [Accessing resources from the API](/docs/openshift?topic=openshift-regions-and-zones#endpoint_api)
-
 
 ## Supported IBM Cloud and third-party integrations
 {: #sitemap_supported_ibm_cloud_and_third-party_integrations}
@@ -10599,6 +10593,8 @@ subcollection: openshift
 [After creating a version 4.15 cluster, applications running in other clusters in my VPC are failing](/docs/openshift?topic=openshift-ts-sbd-other-clusters#ts-sbd-other-clusters)
 
 [Why don't image streams populate on a secure by default cluster?](/docs/openshift?topic=openshift-ts_cluster_sbd_image_stream#ts_cluster_sbd_image_stream)
+
+[Why can't I connect Cloud Logs to my cluster?](/docs/openshift?topic=openshift-ts-cloud-logs-refresh#ts-cloud-logs-refresh)
 
 
 ### Worker nodes
