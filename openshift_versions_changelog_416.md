@@ -3,7 +3,7 @@
 copyright:
   years: 2024, 2025
 
-lastupdated: "2025-02-19"
+lastupdated: "2025-02-20"
 
 
 keywords: change log, version history, 4.16_openshift
@@ -67,7 +67,7 @@ The following table shows the components included in the worker node fix pack 4.
 | Component | Version | Description |
 | ---- | ---- | ---- |
 |Red Hat OpenShift and Red Hat CoreOS|4.16.32|For more information, see the [change logs](https://docs.openshift.com/container-platform/4.16/release_notes/ocp-4-16-release-notes.html#ocp-4-16-32_release-notes).|
-|HAProxy|03d1ee01e9241d0e5ec93b9eb8986feb2771a01a|N/A|
+|HAProxy|03d1ee01e9241d0e5ec93b9eb8986feb2771a01a| [CVE-2019-12900](https://nvd.nist.gov/vuln/detail/CVE-2019-12900){: external} |
 {: caption="4.16.32_1556_openshift fix pack." caption-side="bottom"}
 {: #cl-boms-41632_1556_openshift_W-component-table}
 

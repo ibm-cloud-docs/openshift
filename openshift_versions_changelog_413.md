@@ -3,7 +3,7 @@
 copyright:
   years: 2024, 2025
 
-lastupdated: "2025-02-19"
+lastupdated: "2025-02-20"
 
 
 keywords: change log, version history, 4.13_openshift
@@ -67,7 +67,7 @@ The following table shows the components included in the worker node fix pack 4.
 | Component | Version | Description |
 | ---- | ---- | ---- |
 |OpenShift|4.13.54|For more information, see the [change logs](https://docs.openshift.com/container-platform/4.13/release_notes/ocp-4-13-release-notes.html#ocp-4-13-54_release-notes).|
-|HAProxy|03d1ee01e9241d0e5ec93b9eb8986feb2771a01a|N/A|
+|HAProxy|03d1ee01e9241d0e5ec93b9eb8986feb2771a01a| [CVE-2019-12900](https://nvd.nist.gov/vuln/detail/CVE-2019-12900){: external} |
 {: caption="4.13.54_1608_openshift fix pack." caption-side="bottom"}
 {: #cl-boms-41354_1608_openshift_W-component-table}
 
