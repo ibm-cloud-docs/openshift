@@ -1,8 +1,8 @@
 ---
 
 copyright: 
-  years: 2014, 2024
-lastupdated: "2024-08-22"
+  years: 2014, 2025
+lastupdated: "2025-02-20"
 
 keywords: openshift, {{site.data.keyword.openshiftlong_notm}}, kubernetes, infrastructure, policy, users, permissions, access, roles
 
@@ -111,8 +111,8 @@ Use the following table to customize classic infrastructure permissions only whe
 
 | Permission | Description |
 | --- | --- |
-| Access All Virtual | Access all worker nodes. |
-| Access All Hardware | Designate access to all bare metal worker nodes.  Without this permission, a user who creates one cluster might not be able to view the bare metal worker nodes of another cluster even if the user has IAM access to both clusters. |
+| Auto virtual server access | Access all worker nodes. |
+| Auto bare metal server access | Designate access to all bare metal worker nodes.  Without this permission, a user who creates one cluster might not be able to view the bare metal worker nodes of another cluster even if the user has IAM access to both clusters. |
 | Add Compute with Public Network Port | Let worker nodes have a port that can be accessible on the public network. |
 | Manage DNS | Set up public load balancer or Ingress networking to expose apps. |
 | Edit Hostname/Domain | Set up public load balancer or Ingress networking to expose apps. |
@@ -124,4 +124,3 @@ Use the following table to customize classic infrastructure permissions only whe
 | Add/Upgrade Storage (Storage Layer) | Create {{site.data.keyword.cloud_notm}} File or Block storage instances to attach as volumes to your apps for persistent storage of data. |
 | Storage Manage | Manage {{site.data.keyword.cloud_notm}} File or Block storage instances that are attached as volumes to your apps for persistent storage of data. |
 {: caption="Table 2: Suggested classic infrastructure permissions" caption-side="bottom"}
-
