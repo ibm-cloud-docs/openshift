@@ -1,1 +1,145 @@
-<?xml version="1.0" encoding="UTF-8"?><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 380.72 338.02"><defs><style>.cls-1,.cls-2,.cls-3,.cls-4{stroke-miterlimit:10;}.cls-1,.cls-3{stroke:#42535c;}.cls-1,.cls-5{fill:#42535c;}.cls-2{fill:#6aa4d9;stroke:#6aa4d9;stroke-width:3px;}.cls-3{fill:none;}.cls-4{fill:#dfe6eb;stroke:#dfe6eb;}.cls-6{letter-spacing:0em;}.cls-7{fill:#231f20;font-family:IBMPlexSans, 'IBM Plex Sans';font-size:12px;}.cls-8{letter-spacing:-.12em;}.cls-9{letter-spacing:-.02em;}.cls-10{letter-spacing:-.02em;}.cls-11{letter-spacing:-.02em;}.cls-12{letter-spacing:-.01em;}.cls-13{letter-spacing:-.02em;}.cls-14{letter-spacing:-.03em;}.cls-15{letter-spacing:0em;}.cls-16{letter-spacing:0em;}.cls-17{letter-spacing:0em;}.cls-18{letter-spacing:0em;}.cls-19{letter-spacing:0em;}.cls-20{letter-spacing:0em;}.cls-21{letter-spacing:.02em;}</style></defs><g id="Layer_1"><circle class="cls-5" cx="21.26" cy="107.51" r="10"/><rect class="cls-4" x="87.76" y="31.01" width="120" height="40"/><rect class="cls-4" x="243.76" y="31.01" width="120" height="40"/><line class="cls-2" x1="70.26" y1="18.01" x2="380.26" y2="18.01"/><line class="cls-2" x1="71.72" y1="16.7" x2="71.72" y2="49.01"/><line class="cls-2" x1="379.22" y1="16.48" x2="379.22" y2="48.79"/><line class="cls-1" x1="141.76" y1="71.51" x2="141.76" y2="338.01"/><line class="cls-1" x1="303.84" y1="71.52" x2="303.84" y2="338.02"/><line class="cls-1" x1="141.76" y1="107.02" x2="31.47" y2="107.02"/><line class="cls-5" x1="303.18" y1="157.01" x2="142.18" y2="156.77"/><line class="cls-3" x1="296.01" y1="157" x2="142.18" y2="156.77"/><polygon class="cls-5" points="294.55 152.01 303.18 157.01 294.54 161.98 294.55 152.01"/><line class="cls-5" x1="303.26" y1="257.01" x2="142.26" y2="256.77"/><line class="cls-3" x1="303.26" y1="257.01" x2="149.43" y2="256.78"/><polygon class="cls-5" points="150.9 251.8 142.26 256.77 150.88 261.77 150.9 251.8"/></g><g id="Text"><text class="cls-7" transform="translate(126.5 55.54)"><tspan class="cls-19" x="0" y="0">k</tspan><tspan x="6.2" y="0">ubelet</tspan></text><text class="cls-7" transform="translate(286.48 55.54)"><tspan x="0" y="0">CR</tspan><tspan class="cls-14" x="15.13" y="0">I</tspan><tspan class="cls-21" x="19.57" y="0">-</tspan><tspan x="24.54" y="0">O</tspan></text><text class="cls-7" transform="translate(181.11 10.19)"><tspan class="cls-10" x="0" y="0">W</tspan><tspan class="cls-6" x="10.51" y="0">or</tspan><tspan class="cls-13" x="21.64" y="0">k</tspan><tspan x="27.76" y="0">er node ho</tspan><tspan class="cls-16" x="85.03" y="0">s</tspan><tspan x="90.79" y="0">t</tspan></text><text class="cls-7" transform="translate(161.39 133.19)"><tspan x="0" y="0">unix:</tspan><tspan class="cls-8" x="26.22" y="0">/</tspan><tspan class="cls-6" x="29.38" y="0">/</tspan><tspan class="cls-18" x="33.97" y="0">v</tspan><tspan x="39.77" y="0">a</tspan><tspan class="cls-12" x="46.18" y="0">r</tspan><tspan x="50.4" y="0">/run</tspan><tspan class="cls-11" x="73.03" y="0">/</tspan><tspan x="77.45" y="0">cri</tspan><tspan class="cls-9" x="90.89" y="0">o</tspan><tspan class="cls-6" x="97.37" y="0">.sock</tspan><tspan class="cls-10" x="0" y="14.4">R</tspan><tspan x="7.5" y="14.4">e</tspan><tspan class="cls-15" x="14.09" y="14.4">c</tspan><tspan class="cls-6" x="20.05" y="14.4">oncile &lt;ope</tspan><tspan class="cls-17" x="82.77" y="14.4">r</tspan><tspan class="cls-6" x="87.13" y="14.4">ation&gt;</tspan></text><text class="cls-7" transform="translate(161.39 231.99)"><tspan x="0" y="0">unix:</tspan><tspan class="cls-8" x="26.22" y="0">/</tspan><tspan class="cls-6" x="29.38" y="0">/</tspan><tspan class="cls-18" x="33.97" y="0">v</tspan><tspan x="39.77" y="0">a</tspan><tspan class="cls-12" x="46.18" y="0">r</tspan><tspan x="50.4" y="0">/run</tspan><tspan class="cls-11" x="73.03" y="0">/</tspan><tspan x="77.45" y="0">cri</tspan><tspan class="cls-9" x="90.89" y="0">o</tspan><tspan class="cls-6" x="97.37" y="0">.sock</tspan><tspan class="cls-10" x="0" y="14.4">R</tspan><tspan x="7.5" y="14.4">e</tspan><tspan class="cls-15" x="14.09" y="14.4">c</tspan><tspan class="cls-6" x="20.05" y="14.4">oncile &lt;ope</tspan><tspan class="cls-17" x="82.77" y="14.4">r</tspan><tspan class="cls-6" x="87.13" y="14.4">ation&gt;</tspan></text><text class="cls-7" transform="translate(0 89.99)"><tspan class="cls-10" x="0" y="0">R</tspan><tspan x="7.5" y="0">eque</tspan><tspan class="cls-20" x="34.45" y="0">s</tspan><tspan x="40.21" y="0">t</tspan></text></g></svg>
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" width="380.7" height="338" version="1.1" viewBox="0 0 380.7 338">
+  <defs>
+    <style>
+      .cls-1, .cls-2, .cls-3 {
+        fill: none;
+      }
+
+      .cls-4 {
+        letter-spacing: 0em;
+      }
+
+      .cls-4, .cls-5, .cls-6, .cls-7, .cls-8, .cls-9, .cls-10, .cls-11 {
+        isolation: isolate;
+      }
+
+      .cls-4, .cls-5, .cls-6, .cls-8, .cls-9, .cls-10, .cls-11 {
+        fill: #231f20;
+        font-family: IBMPlexSans, 'IBM Plex Sans';
+        font-size: 12px;
+      }
+
+      .cls-5 {
+        letter-spacing: 0em;
+      }
+
+      .cls-6 {
+        letter-spacing: -.1em;
+      }
+
+      .cls-12 {
+        fill: #dfe6eb;
+        stroke: #dfe6eb;
+      }
+
+      .cls-12, .cls-2, .cls-3 {
+        stroke-miterlimit: 10;
+      }
+
+      .cls-13 {
+        fill: #42535c;
+      }
+
+      .cls-2 {
+        stroke: #6aa4d9;
+        stroke-width: 3px;
+      }
+
+      .cls-3 {
+        stroke: #42535c;
+      }
+
+      .cls-8 {
+        letter-spacing: 0em;
+      }
+
+      .cls-9 {
+        letter-spacing: 0em;
+      }
+
+      .cls-11 {
+        letter-spacing: 0em;
+      }
+    </style>
+  </defs>
+  <!-- Generator: Adobe Illustrator 28.7.1, SVG Export Plug-In . SVG Version: 1.2.0 Build 142)  -->
+  <g>
+    <g id="Layer_1">
+      <circle class="cls-13" cx="21.5" cy="107.5" r="10"/>
+      <rect class="cls-12" x="88" y="31" width="120" height="40"/>
+      <rect class="cls-12" x="244" y="31" width="120" height="40"/>
+      <line class="cls-2" x1="70.5" y1="18" x2="380.5" y2="18"/>
+      <line class="cls-2" x1="71.9" y1="16.7" x2="71.9" y2="49"/>
+      <line class="cls-2" x1="379.4" y1="16.5" x2="379.4" y2="48.8"/>
+      <line class="cls-3" x1="142" y1="71.5" x2="142" y2="338"/>
+      <line class="cls-3" x1="304.1" y1="71.5" x2="304.1" y2="338"/>
+      <line class="cls-3" x1="142" y1="107" x2="31.7" y2="107"/>
+      <line class="cls-1" x1="303.4" y1="157" x2="142.4" y2="156.8"/>
+      <line class="cls-3" x1="296.2" y1="157" x2="142.4" y2="156.8"/>
+      <polygon class="cls-13" points="294.8 152 303.4 157 294.8 162 294.8 152"/>
+      <line class="cls-1" x1="303.5" y1="257" x2="142.5" y2="256.8"/>
+      <line class="cls-3" x1="303.5" y1="257" x2="149.7" y2="256.8"/>
+      <polygon class="cls-13" points="151.1 251.8 142.5 256.8 151.1 261.8 151.1 251.8"/>
+      <text class="cls-10" transform="translate(121.5 58.1)"><tspan x="0" y="0">kubelet</tspan></text>
+      <g class="cls-7">
+        <text class="cls-10" transform="translate(286.7 55.5)"><tspan x="0" y="0">CR</tspan></text>
+        <text class="cls-9" transform="translate(301.8 55.5)"><tspan x="0" y="0">I</tspan></text>
+        <text class="cls-8" transform="translate(306.3 55.5)"><tspan x="0" y="0">-</tspan></text>
+        <text class="cls-10" transform="translate(311.2 55.5)"><tspan x="0" y="0">O</tspan></text>
+      </g>
+      <g class="cls-7">
+        <text class="cls-4" transform="translate(181.3 10.2)"><tspan x="0" y="0">W</tspan></text>
+        <text class="cls-10" transform="translate(191.8 10.2)"><tspan x="0" y="0">or</tspan></text>
+        <text class="cls-5" transform="translate(203 10.2)"><tspan x="0" y="0">k</tspan></text>
+        <text class="cls-10" transform="translate(209.1 10.2)"><tspan x="0" y="0">er node ho</tspan></text>
+        <text class="cls-10" transform="translate(266.4 10.2)"><tspan x="0" y="0">s</tspan></text>
+        <text class="cls-10" transform="translate(272.1 10.2)"><tspan x="0" y="0">t</tspan></text>
+      </g>
+      <g class="cls-7">
+        <text class="cls-10" transform="translate(161.6 133.2)"><tspan x="0" y="0">unix:</tspan></text>
+        <text class="cls-6" transform="translate(187.8 133.2)"><tspan x="0" y="0">/</tspan></text>
+        <text class="cls-10" transform="translate(191 133.2)"><tspan x="0" y="0">/</tspan></text>
+        <text class="cls-10" transform="translate(195.6 133.2)"><tspan x="0" y="0">v</tspan></text>
+        <text class="cls-10" transform="translate(201.4 133.2)"><tspan x="0" y="0">a</tspan></text>
+        <text class="cls-11" transform="translate(207.8 133.2)"><tspan x="0" y="0">r</tspan></text>
+        <text class="cls-10" transform="translate(212 133.2)"><tspan x="0" y="0">/run</tspan></text>
+        <text class="cls-5" transform="translate(234.6 133.2)"><tspan x="0" y="0">/</tspan></text>
+        <text class="cls-10" transform="translate(239.1 133.2)"><tspan x="0" y="0">cri</tspan></text>
+        <text class="cls-5" transform="translate(252.5 133.2)"><tspan x="0" y="0">o</tspan></text>
+        <text class="cls-10" transform="translate(259 133.2)"><tspan x="0" y="0">.sock</tspan></text>
+        <text class="cls-4" transform="translate(161.6 147.6)"><tspan x="0" y="0">R</tspan></text>
+        <text class="cls-10" transform="translate(169.1 147.6)"><tspan x="0" y="0">e</tspan></text>
+        <text class="cls-10" transform="translate(175.7 147.6)"><tspan x="0" y="0">c</tspan></text>
+        <text class="cls-10" transform="translate(181.7 147.6)"><tspan x="0" y="0">oncile &lt;ope</tspan></text>
+        <text class="cls-10" transform="translate(244.4 147.6)"><tspan x="0" y="0">r</tspan></text>
+        <text class="cls-10" transform="translate(248.8 147.6)"><tspan x="0" y="0">ation&gt;</tspan></text>
+      </g>
+      <g class="cls-7">
+        <text class="cls-10" transform="translate(161.6 232)"><tspan x="0" y="0">unix:</tspan></text>
+        <text class="cls-6" transform="translate(187.8 232)"><tspan x="0" y="0">/</tspan></text>
+        <text class="cls-10" transform="translate(191 232)"><tspan x="0" y="0">/</tspan></text>
+        <text class="cls-10" transform="translate(195.6 232)"><tspan x="0" y="0">v</tspan></text>
+        <text class="cls-10" transform="translate(201.4 232)"><tspan x="0" y="0">a</tspan></text>
+        <text class="cls-11" transform="translate(207.8 232)"><tspan x="0" y="0">r</tspan></text>
+        <text class="cls-10" transform="translate(212 232)"><tspan x="0" y="0">/run</tspan></text>
+        <text class="cls-5" transform="translate(234.6 232)"><tspan x="0" y="0">/</tspan></text>
+        <text class="cls-10" transform="translate(239.1 232)"><tspan x="0" y="0">cri</tspan></text>
+        <text class="cls-5" transform="translate(252.5 232)"><tspan x="0" y="0">o</tspan></text>
+        <text class="cls-10" transform="translate(259 232)"><tspan x="0" y="0">.sock</tspan></text>
+        <text class="cls-4" transform="translate(161.6 246.4)"><tspan x="0" y="0">R</tspan></text>
+        <text class="cls-10" transform="translate(169.1 246.4)"><tspan x="0" y="0">e</tspan></text>
+        <text class="cls-10" transform="translate(175.7 246.4)"><tspan x="0" y="0">c</tspan></text>
+        <text class="cls-10" transform="translate(181.7 246.4)"><tspan x="0" y="0">oncile &lt;ope</tspan></text>
+        <text class="cls-10" transform="translate(244.4 246.4)"><tspan x="0" y="0">r</tspan></text>
+        <text class="cls-10" transform="translate(248.8 246.4)"><tspan x="0" y="0">ation&gt;</tspan></text>
+      </g>
+      <g class="cls-7">
+        <text class="cls-4" transform="translate(.2 90)"><tspan x="0" y="0">R</tspan></text>
+        <text class="cls-10" transform="translate(7.7 90)"><tspan x="0" y="0">eque</tspan></text>
+        <text class="cls-10" transform="translate(34.7 90)"><tspan x="0" y="0">s</tspan></text>
+        <text class="cls-10" transform="translate(40.4 90)"><tspan x="0" y="0">t</tspan></text>
+      </g>
+    </g>
+  </g>
+</svg>
