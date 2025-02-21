@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2025, 2025
-lastupdated: "2025-02-17"
+lastupdated: "2025-02-21"
 
 
 keywords: high availability, disaster recover, HA, DR, responsibilities
@@ -45,7 +45,7 @@ Global load balancing
 
 Your users are less likely to experience downtime when you distribute your apps across multiple worker nodes, zones, and clusters. Built-in capabilities, like load balancing and isolation, increase resiliency against potential failures with hosts, networks, or apps. Review these potential cluster setups that are ordered with increasing degrees of availability. For more information on how IBM Cloud resources are distributed across geographic zones and regions, review the [Locations documentation](/docs/openshift?topic=openshift-regions-and-zones).
 
-![High availability for clusters](images/cs_cluster_ha_roadmap_multizone_public.png){: caption="High availability for clusters" caption-side="bottom"}
+![High availability for clusters](images/cs_cluster_ha_roadmap_multizone_public.svg){: caption="High availability for clusters" caption-side="bottom"}
 
 Single zone clusters 
 :    [Classic only]{: tag-classic-inf} 
@@ -165,7 +165,7 @@ How you configure your cluster impacts the level of availability you achieve for
 
 Review the following potential app setups that are ordered with increasing degrees of availability.
 
-![Stages of high availability for an app](images/cs_app_ha_roadmap-mz.png){: caption="Stages of high availability for an app" caption-side="bottom"}
+![Stages of high availability for an app](images/cs_app_ha_roadmap-mz.svg){: caption="Stages of high availability for an app" caption-side="bottom"}
 
 1. A deployment with n+2 pods that are managed by a replica set on a single node.
 2. A deployment with n+2 pods that are managed by a replica set and spread across multiple nodes (anti-affinity) in a single zone cluster.

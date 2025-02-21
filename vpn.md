@@ -1,8 +1,8 @@
 ---
 
 copyright: 
-  years: 2014, 2024
-lastupdated: "2024-10-10"
+  years: 2014, 2025
+lastupdated: "2025-02-21"
 
 
 keywords: openshift, strongswan, ipsec, on-prem
@@ -52,7 +52,7 @@ Use a Helm chart to configure and deploy the strongSwan IPSec VPN service inside
 
 Because strongSwan is integrated within your cluster, you don't need an external gateway appliance. When VPN connectivity is established, routes are automatically configured on all the worker nodes in the cluster. These routes allow two-way connectivity through the VPN tunnel between pods on any worker node and the remote system. For example, the following diagram shows how an app in {{site.data.keyword.openshiftlong_notm}} can communicate with an on-premises server via a strongSwan VPN connection.
 
-![Flow of traffic between your cluster and an on-premises data center through the strongSwan VPN service.](images/cs_vpn_strongswan.png "Flow of traffic through the strongSwan VPN service"){: caption="Flow of traffic through the strongSwan VPN service" caption-side="bottom"}
+![Flow of traffic between your cluster and an on-premises data center through the strongSwan VPN service.](images/cs_vpn_strongswan.svg "Flow of traffic through the strongSwan VPN service"){: caption="Flow of traffic through the strongSwan VPN service" caption-side="bottom"}
 
 1. An app in your cluster, `myapp`, receives a request from an Ingress or LoadBalancer service and needs to securely connect to data in your on-premises network.
 
@@ -676,7 +676,7 @@ The [Virtual Router Appliance (VRA)](/docs/virtual-router-appliance?topic=virtua
 
 All public and private network traffic that enters or exits the cluster VLANs is routed through a VRA. You can use the VRA as a VPN endpoint to create an encrypted IPSec tunnel between servers in IBM Cloud infrastructure and on-premises resources. For example, the following diagram shows how an app on a worker node in {{site.data.keyword.openshiftlong_notm}} can communicate with an on-premises server via a VRA VPN connection on the private VLAN:
 
-![Expose an app in {{site.data.keyword.openshiftlong_notm}} by using a load balancer.](images/cs_vpn_vyatta.png "Expose an app in {{site.data.keyword.openshiftlong_notm}} by using a load balancer"){: caption="Expose an app in {{site.data.keyword.openshiftlong_notm}} by using a load balancer" caption-side="bottom"}
+![Expose an app in {{site.data.keyword.openshiftlong_notm}} by using a load balancer.](images/cs_vpn_vyatta.svg "Expose an app in {{site.data.keyword.openshiftlong_notm}} by using a load balancer"){: caption="Expose an app in {{site.data.keyword.openshiftlong_notm}} by using a load balancer" caption-side="bottom"}
 
 1. An app in your cluster, `myapp2`, receives a request from an Ingress or LoadBalancer service and needs to securely connect to data in your on-premises network.
 

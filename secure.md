@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2025
-lastupdated: "2025-02-19"
+lastupdated: "2025-02-21"
 
 
 keywords: openshift
@@ -171,14 +171,15 @@ The following image shows the components that are set up for every worker node t
 The image does not include components that ensure secure end-to-end communication to and from the worker node. For more information, see [network security](#network).
 {: note}
 
+![Worker node setup in {{site.data.keyword.openshiftlong_notm}} excluding network security.](images/cs_worker_setup.svg "Worker node setup in {{site.data.keyword.openshiftlong_notm}}"){: caption="Worker node setup in {{site.data.keyword.openshiftlong_notm}} excluding network security" caption-side="bottom"}
 
 
-![Worker node setup in {{site.data.keyword.openshiftlong_notm}} excluding network security.](images/oc_worker_setup.svg "Worker node setup in {{site.data.keyword.openshiftlong_notm}}"){: caption="Worker node setup in {{site.data.keyword.openshiftlong_notm}} excluding network security" caption-side="bottom"}
 
-CIS-compliant RHEL image
-:   Every worker node is set up with a Red Hat Enterprise Linux operating system that implements the benchmarks that are published by the Center of Internet Security (CIS). The user or the owner of the machine can't change this operating system to another operating system. To review the current RHEL version, run `oc get nodes -o wide`. IBM works with internal and external security advisory teams to address potential security compliance vulnerabilities. Security updates and patches for the operating system are made available through {{site.data.keyword.openshiftlong_notm}} and must be installed by the user to keep the worker node secure.
-    {{site.data.keyword.openshiftlong_notm}} uses a Red Hat Enterprise Linux kernel for worker nodes. You can run containers based on any Linux distribution in {{site.data.keyword.openshiftlong_notm}}. Check with your container image vendor to verify that your container images can run on a Red Hat Enterprise kernel.
-    {: important}
+CIS-compliant image
+:   Every worker node is set up with an operating system that implements the benchmarks that are published by the Center of Internet Security (CIS). The user or the owner of the machine can't change this operating system to another operating system. To review the current OS version, run `oc get nodes -o wide`. IBM works with internal and external security advisory teams to address potential security compliance vulnerabilities. Security updates and patches for the operating system are made available through {{site.data.keyword.openshiftlong_notm}} and must be installed by the user to keep the worker node secure.
+
+{{site.data.keyword.openshiftlong_notm}} uses a Linux kernel for worker nodes. You can run containers based on any Linux distribution in {{site.data.keyword.openshiftlong_notm}}. Check with your container image vendor to verify that your container images can run on the kernel.
+{: important}
 
 Continuous monitoring by Site Reliability Engineers (SREs)
 :   The image that is installed on your worker nodes is continuously monitored by IBM Site Reliability Engineers (SREs) to detect vulnerabilities and security compliance issues. To address vulnerabilities, SREs create security patches and fix packs for your worker nodes. Make sure to apply these patches when they are available to ensure a secure environment for your worker nodes and the apps that you run on them.
@@ -487,7 +488,7 @@ For every project that you have in the cluster, make sure to set up proper [RBAC
 
 In a single-tenant cluster, you create one cluster for every group of people that must run workloads in a cluster. Usually, this team is responsible to manage the cluster and to properly configure and secure it. Multi-tenant clusters use multiple projects to isolate tenants and their workloads.
 
-![Deciding between a single tenant or a multi-tenant cluster.](images/cs_single_multitenant.png "Single tenant versus multi-tenant cluster"){: caption="Single tenant versus multi-tenant cluster" caption-side="bottom"}
+![Deciding between a single tenant or a multi-tenant cluster.](images/cs_single_multitenant.svg "Single tenant versus multi-tenant cluster"){: caption="Single tenant versus multi-tenant cluster" caption-side="bottom"}
 
 Deciding between single-tenant and multi-tenant clusters depends on the number of teams that must run workloads in a cluster, their service requirements, the size of the service, and the level of isolation that you want to achieve for your workloads.
 

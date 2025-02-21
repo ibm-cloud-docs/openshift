@@ -1,8 +1,8 @@
 ---
 
 copyright: 
-  years: 2014, 2024
-lastupdated: "2024-10-10"
+  years: 2014, 2025
+lastupdated: "2025-02-21"
 
 
 keywords: openshift, lb2.0, nlb, app protocol, application protocol
@@ -102,7 +102,7 @@ The NLB 2.0 is a Layer 4 load balancer that uses the Linux kernel's IP Virtual S
 The following diagram shows how an NLB 2.0 directs communication from the internet to an app in a single zone cluster.
 {: shortdesc}
 
-![Expose an app in {{site.data.keyword.openshiftlong_notm}} by using a version 2.0 NLB](images/cs_loadbalancer_ipvs_planning.png){: caption="Expose an app in {{site.data.keyword.openshiftlong_notm}} by using a version 2.0 NLB" caption-side="bottom"}
+![Expose an app in {{site.data.keyword.openshiftlong_notm}} by using a version 2.0 NLB](images/cs_loadbalancer_ipvs_planning.svg){: caption="Expose an app in {{site.data.keyword.openshiftlong_notm}} by using a version 2.0 NLB" caption-side="bottom"}
 
 1. A client request to your app uses the public IP address of your NLB and the assigned port on the worker node. In this example, the NLB has a virtual IP address of 169.61.23.130 and runs on the worker node that has the 10.73.13.25 private IP address. Note that if you [create a DNS subdomain](/docs/openshift?topic=openshift-loadbalancer_hostname) for your NLB, users can access your app through the NLB's subdomain instead. A DNS system service resolves the subdomain to the portable public IP address of the NLB.
 
@@ -120,7 +120,7 @@ The following diagram shows how an NLB 2.0 directs communication from the intern
 The following diagram shows how version 2.0 NLBs in each zone direct traffic from the internet to an app in a multizone cluster.
 {: shortdesc}
 
-![Expose an app in {{site.data.keyword.openshiftlong_notm}} by using an NLB 2.0](images/cs_loadbalancer_ipvs_multizone.png){: caption="Expose an app in {{site.data.keyword.openshiftlong_notm}} by using an NLB 2.0" caption-side="bottom"}
+![Expose an app in {{site.data.keyword.openshiftlong_notm}} by using an NLB 2.0](images/cs_loadbalancer_ipvs_multizone.svg){: caption="Expose an app in {{site.data.keyword.openshiftlong_notm}} by using an NLB 2.0" caption-side="bottom"}
 
 1. A request to your app uses the [DNS subdomain](/docs/openshift?topic=openshift-loadbalancer_hostname) for your NLBs. You can also access the NLB in each zone by using its public IP address and port on the worker node. Note that by default, each NLB 2.0 is set up in one zone only. To achieve high availability, you must deploy an NLB 2.0 in every zone where you have app instances.
 
