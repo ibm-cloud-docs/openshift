@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2025
-lastupdated: "2025-02-01"
+lastupdated: "2025-02-21"
 
 
 keywords: openshift, nginx, ingress controller, ingress operator, router
@@ -100,7 +100,7 @@ If you want to customize routing rules for your app, you can use [route-specific
 The following diagram shows how Ingress directs communication from the internet to an app in a classic single-zone cluster.
 {: shortdesc}
 
-![Expose an app in a single-zone cluster by using Ingress](/images/roks_router_ingress_single.png "Expose an app in a single-zone cluster by using Ingress"){: caption="Expose an app in a single-zone cluster by using Ingress" caption-side="bottom"}
+![Expose an app in a single-zone cluster by using Ingress](/images/roks_router_ingress_single.svg "Expose an app in a single-zone cluster by using Ingress"){: caption="Expose an app in a single-zone cluster by using Ingress" caption-side="bottom"}
 
 1. A user sends a request to your app by accessing your app's URL. This URL is the Ingress subdomain for your cluster appended with the Ingress resource path for your exposed app, such as `mycluster-<hash>-0000.us-south.containers.appdomain.cloud/myapp`.
 
@@ -118,7 +118,7 @@ The following diagram shows how Ingress directs communication from the internet 
 The following diagram shows how Ingress directs communication from the internet to an app in a classic multizone cluster.
 {: shortdesc}
 
-![Expose an app in a multizone cluster by using Ingress](/images/roks_router_ingress_multizone.png "Expose an app in a multizone cluster by using Ingress"){: caption="Expose an app in a multizone cluster by using Ingress" caption-side="bottom"}
+![Expose an app in a multizone cluster by using Ingress](/images/roks_router_ingress_multizone.svg "Expose an app in a multizone cluster by using Ingress"){: caption="Expose an app in a multizone cluster by using Ingress" caption-side="bottom"}
 
 1. A user sends a request to your app by accessing your app's URL. This URL is the Ingress subdomain for your cluster appended with the Ingress resource path for your exposed app, such as `mycluster-<hash>-0000.us-south.containers.appdomain.cloud/myapp`.
 
@@ -139,7 +139,7 @@ The following diagram shows how Ingress directs communication from the internet 
 When you create a multizone VPC cluster with the public cloud service endpoint enabled, a public Ingress controller is created by default. The following diagram shows how Ingress directs communication from the internet to an app in a VPC multizone cluster.
 {: shortdesc}
 
-![Publicly expose an app in a multizone VPC cluster by using Ingress](images/roks_router_ingress_vpc.png "Publicly expose an app in a multizone VPC cluster by using Ingress"){: caption="Publicly expose an app in a multizone VPC cluster by using Ingress" caption-side="bottom"}
+![Publicly expose an app in a multizone VPC cluster by using Ingress](images/roks_router_ingress_vpc.svg "Publicly expose an app in a multizone VPC cluster by using Ingress"){: caption="Publicly expose an app in a multizone VPC cluster by using Ingress" caption-side="bottom"}
 
 1. A user sends a request to your app by accessing your app's URL. This URL is the Ingress subdomain for your cluster for your exposed app appended with the Ingress resource path, such as `mycluster-<hash>-0000.us-south.containers.appdomain.cloud/myapp`.
 
@@ -160,7 +160,7 @@ When you create a multizone VPC cluster with the public cloud service endpoint e
 When you create a multizone VPC cluster with the private cloud service endpoint only, a private Ingress controller is created by default. Only clients that are connected to your private VPC network can access apps that are exposed by a private Ingress controller. The following diagram shows how Ingress directs communication from private networks to an app in a VPC multizone cluster.
 {: shortdesc}
 
-![Privately expose an app in a multizone VPC cluster by using Ingress](images/roks_router_ingress_vpc_private.png "Privately expose an app in a multizone VPC cluster by using Ingress"){: caption="Privately expose an app in a multizone VPC cluster by using Ingress" caption-side="bottom"}
+![Privately expose an app in a multizone VPC cluster by using Ingress](images/roks_router_ingress_vpc_private.svg "Privately expose an app in a multizone VPC cluster by using Ingress"){: caption="Privately expose an app in a multizone VPC cluster by using Ingress" caption-side="bottom"}
 
 1. A client that is connected to your private VPC network sends a request to your app by using your app's URL. This URL is the Ingress subdomain for your cluster for your exposed app appended with the Ingress resource path, such as `mycluster-<hash>-0000.us-south.containers.appdomain.cloud/myapp`. For example, you might use the Virtual Private Cloud VPN, {{site.data.keyword.tg_full_notm}}, or {{site.data.keyword.dl_full_notm}} to allow requests from an on-premises network, another VPC, or {{site.data.keyword.cloud_notm}} classic infrastructure to apps that run in your cluster.
 

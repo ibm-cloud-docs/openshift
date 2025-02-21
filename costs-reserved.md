@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2025
-lastupdated: "2025-02-19"
+lastupdated: "2025-02-21"
 
 
 keywords: openshift, reservations, worker node
@@ -209,5 +209,5 @@ If you want to continue with reservations, take the following steps.
 4. Click **Add** to add a new contract. Repeat for each contract that expires within 30 days. 
 5. Select the number of worker nodes. Ensure that the number of worker nodes is sufficient for the capacity you need. For example, if your expiring contract contains 3 worker nodes, your new contract must also contain 3 worker nodes, unless you determine you need more or less capacity.
 6. Select a start date for the new contract. Ensure the following requirements are met:
-  - The start date is no more than 30 days in the future.      
-  - There is no gap between the start date you choose and the expiration date of the expiring contract. You can choose a start date a day or two before the existing one expires to ensure there is no gap and loss of service.    
+    - The start date is no more than 30 days in the future.      
+    - There is no gap between the start date you choose and the expiration date of the expiring contract. You can choose a start date a day or two before the existing one expires to ensure there is no gap and loss of service. 
