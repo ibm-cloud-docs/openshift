@@ -7090,6 +7090,13 @@ subcollection: openshift
 * [{{site.data.keyword.IBM_notm}} Remediations and explanations](/docs/openshift?topic=openshift-benchmarks_412_co#co-benchmark-412-remdiations)
 
 
+## Addons for {{site.data.keyword.openshiftlong_notm}}
+{: #sitemap_addons_for_}
+
+
+[Addons for {{site.data.keyword.openshiftlong_notm}}](/docs/openshift?topic=openshift-addons#addons)
+
+
 ## Add-on version history
 {: #sitemap_add-on_version_history}
 
