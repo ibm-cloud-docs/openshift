@@ -401,6 +401,7 @@ toc:
               - openshift_versions_changelog_412.md
               - benchmarks_412.md
               - benchmarks_412_co.md
+      - addon_landing.md
       - topicgroup:
           label: Add-on version history
           topics:
