@@ -3,7 +3,7 @@
 copyright:
   years: 2024, 2025
 
-lastupdated: "2025-02-25"
+lastupdated: "2025-02-26"
 
 
 keywords: change log, version history, 4.15_openshift
@@ -48,6 +48,7 @@ The following table shows the components included in the worker node fix pack 4.
 
 | Component | Version | Description |
 | ---- | ---- | ---- |
+|RHEL_8|4.18.0-553.40.1.el8_10|Resolves the following CVEs: [RHSA-2025:1675](https://access.redhat.com/errata/RHSA-2025:1675){: external}, [CVE-2024-11187](https://nvd.nist.gov/vuln/detail/CVE-2024-11187){: external}, [RHSA-2025:1266](https://access.redhat.com/errata/RHSA-2025:1266){: external}, [CVE-2024-53104](https://nvd.nist.gov/vuln/detail/CVE-2024-53104){: external}, [RHSA-2024:3043](https://access.redhat.com/errata/RHSA-2024:3043){: external}, [CVE-2024-0690](https://nvd.nist.gov/vuln/detail/CVE-2024-0690){: external}, [RHSA-2025:1301](https://access.redhat.com/errata/RHSA-2025:1301){: external}, [CVE-2020-11023](https://nvd.nist.gov/vuln/detail/CVE-2020-11023){: external}, [RHSA-2025:1517](https://access.redhat.com/errata/RHSA-2025:1517){: external}, and [CVE-2022-49043](https://nvd.nist.gov/vuln/detail/CVE-2022-49043){: external}.|
 |Red Hat OpenShift and Red Hat CoreOS|4.15.45|For more information, see the [change logs](https://docs.openshift.com/container-platform/4.15/release_notes/ocp-4-15-release-notes.html#ocp-4-15-45_release-notes).|
 |HAProxy|1d72cc8c7d02da6ba0340191fa8d9a86550e5090|Resolves the following CVEs: [CVE-2020-11023](https://nvd.nist.gov/vuln/detail/CVE-2020-11023){: external}, and [CVE-2022-49043](https://nvd.nist.gov/vuln/detail/CVE-2022-49043){: external}.|
 {: caption="4.15.45_1577_openshift fix pack." caption-side="bottom"}
@@ -82,6 +83,7 @@ The following table shows the components included in the worker node fix pack 4.
 
 | Component | Version | Description |
 | ---- | ---- | ---- |
+|RHEL_8|4.18.0-553.40.1.el8_10|Resolves the following CVEs: [RHSA-2025:0711](https://access.redhat.com/errata/RHSA-2025:0711){: external}, [CVE-2024-56326](https://nvd.nist.gov/vuln/detail/CVE-2024-56326){: external}, [RHSA-2024:3043](https://access.redhat.com/errata/RHSA-2024:3043){: external}, [CVE-2024-0690](https://nvd.nist.gov/vuln/detail/CVE-2024-0690){: external}, [RHSA-2025:0733](https://access.redhat.com/errata/RHSA-2025:0733){: external}, [CVE-2019-12900](https://nvd.nist.gov/vuln/detail/CVE-2019-12900){: external}, [RHSA-2025:1068](https://access.redhat.com/errata/RHSA-2025:1068){: external}, [CVE-2024-26935](https://nvd.nist.gov/vuln/detail/CVE-2024-26935){: external}, and [CVE-2024-50275](https://nvd.nist.gov/vuln/detail/CVE-2024-50275){: external}.|
 |Red Hat OpenShift and Red Hat CoreOS|4.15.44|For more information, see the [change logs](https://docs.openshift.com/container-platform/4.15/release_notes/ocp-4-15-release-notes.html#ocp-4-15-44_release-notes).|
 |HAProxy|03d1ee01e9241d0e5ec93b9eb8986feb2771a01a| [CVE-2019-12900](https://nvd.nist.gov/vuln/detail/CVE-2019-12900){: external} |
 {: caption="4.15.44_1575_openshift fix pack." caption-side="bottom"}
@@ -96,6 +98,7 @@ The following table shows the components included in the worker node fix pack 4.
 
 | Component | Version | Description |
 | ---- | ---- | ---- |
+|RHEL_8|4.18.0-553.36.1.el8_10|Resolves the following CVEs: [RHSA-2024:3043](https://access.redhat.com/errata/RHSA-2024:3043){: external}, [CVE-2024-0690](https://nvd.nist.gov/vuln/detail/CVE-2024-0690){: external}, [RHSA-2025:0288](https://access.redhat.com/errata/RHSA-2025:0288){: external}, and [CVE-2024-3661](https://nvd.nist.gov/vuln/detail/CVE-2024-3661){: external}.|
 |Red Hat OpenShift and Red Hat CoreOS|4.15.43|For more information, see the [change logs](https://docs.openshift.com/container-platform/4.15/release_notes/ocp-4-15-release-notes.html#ocp-4-15-43_release-notes).|
 |HAProxy|14daa781a66ca5ed5754656ce53c3cca4af580b5|N/A|
 {: caption="4.15.43_1574_openshift fix pack." caption-side="bottom"}
