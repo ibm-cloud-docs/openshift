@@ -3,7 +3,7 @@
 copyright:
   years: 2024, 2025
 
-lastupdated: "2025-02-24"
+lastupdated: "2025-02-26"
 
 
 keywords: change log, version history, IBM Cloud Image Key Synchronizer
