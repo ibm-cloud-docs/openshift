@@ -73,6 +73,7 @@ toc:
           - cluster-create-vpc-gen2.md
           - cluster-create-dedicated-hosts.md
           - satellite_clusters.md
+          - roks_da.md
       - topicgroup: 
           label: Accessing clusters
           topics:

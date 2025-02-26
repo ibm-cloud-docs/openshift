@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2025
-lastupdated: "2025-02-25"
+lastupdated: "2025-02-26"
 
 
 keywords: openshift
@@ -2410,6 +2410,14 @@ subcollection: openshift
 * [Creating {{site.data.keyword.satelliteshort}} clusters from the CLI](/docs/openshift?topic=openshift-satellite-clusters&interface=cli#satcluster-create-cli)
 
 * [Next steps](/docs/openshift?topic=openshift-satellite-clusters&interface=cli#sat-cluster-next-steps)
+
+[Creating clusters with deployable architectures](/docs/openshift?topic=openshift-roks_da#roks_da)
+
+* [Checking your permissions](/docs/openshift?topic=openshift-roks_da#roks_da_permissions)
+
+* [Creating an API key](/docs/openshift?topic=openshift-roks_da#roks_da_api_key)
+
+* [Creating the DA](/docs/openshift?topic=openshift-roks_da#roks_da_creation)
 
 
 ## Accessing clusters
