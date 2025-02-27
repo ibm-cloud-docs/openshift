@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2025
-lastupdated: "2025-02-25"
+lastupdated: "2025-02-27"
 
 
 keywords: kubernetes, release notes, openshift, {{site.data.keyword.openshiftlong_notm}}
@@ -28,6 +28,14 @@ Looking for {{site.data.keyword.cloud_notm}} status, platform announcements, sec
 
 ## February 2025
 {: #openshift-feb25}
+
+### 27 February 2025
+{: #openshift-27february25}
+{: release-note}
+
+OpenShift AI deployment during cluster creation
+:   You can deploy the OpenShift AI operator on a new cluster by using the [OpenShift AI on IBM Cloud](https://cloud.ibm.com/catalog/7a4d68b4-cf8b-40cd-a3d1-f49aff526eb3/architecture/roks-rhoai-c24ae512-8b25-43d7-8fb3-4173c7e94472-global){: external} deployable architecture. 
+
 
 ### 24 February 2025
 {: #openshift-24february25}

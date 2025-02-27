@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2025
-lastupdated: "2025-02-26"
+lastupdated: "2025-02-27"
 
 
 keywords: openshift
@@ -274,6 +274,10 @@ subcollection: openshift
 [Release notes](/docs/openshift?topic=openshift-openshift-relnotes#openshift-relnotes)
 
 * [February 2025](/docs/openshift?topic=openshift-openshift-relnotes#openshift-feb25)
+
+    * [27 February 2025](/docs/openshift?topic=openshift-openshift-relnotes#openshift-27february25)
+
+        * OpenShift AI deployment during cluster creation
 
     * [24 February 2025](/docs/openshift?topic=openshift-openshift-relnotes#openshift-24february25)
 
