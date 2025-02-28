@@ -36,6 +36,8 @@ Review the version history for IBM Storage Operator.
 - Updates the golang base image to 1.22.12. 
 
 
+
+
 ## Version 1.0.0
 {: #ibm-storage-operator-1.0.0}
 

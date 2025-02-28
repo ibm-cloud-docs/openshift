@@ -6,7 +6,7 @@ copyright:
 lastupdated: "2025-02-28"
 
 
-keywords: change log, version history, Openshift AI
+keywords: change log, version history, OpenShift AI
 
 subcollection: openshift
 
@@ -17,10 +17,10 @@ subcollection: openshift
 <!-- The content in this topic is auto-generated except for reuse-snippets indicated with {[ ]}. -->
 
 
-# Openshift AI add-on version change log
+# OpenShift AI add-on version change log
 {: #cl-add-ons-openshift-ai}
 
-Review the version history for Openshift AI.
+Review the version history for OpenShift AI.
 {: shortdesc}
 
 
