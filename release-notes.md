@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2025
-lastupdated: "2025-02-27"
+lastupdated: "2025-02-28"
 
 
 keywords: kubernetes, release notes, openshift, {{site.data.keyword.openshiftlong_notm}}
@@ -28,6 +28,18 @@ Looking for {{site.data.keyword.cloud_notm}} status, platform announcements, sec
 
 ## February 2025
 {: #openshift-feb25}
+
+
+
+
+### 28 February 2025
+{: #openshift-28february25}
+{: release-note}
+
+New! OpenShift Data Foundation Regional Disaster Recovery on {{site.data.keyword.openshiftlong_notm}} clusters
+:   This feature is now available as a Technical Preview. For more information, see [OpenShift Data Foundation Regional Disaster Recovery on {{site.data.keyword.openshiftlong_notm}} clusters](/docs/openshift?topic=openshift_odf_rdr_roks).
+
+
 
 ### 27 February 2025
 {: #openshift-27february25}

@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2025
-lastupdated: "2025-02-27"
+lastupdated: "2025-02-28"
 
 
 keywords: openshift
@@ -274,6 +274,10 @@ subcollection: openshift
 [Release notes](/docs/openshift?topic=openshift-openshift-relnotes#openshift-relnotes)
 
 * [February 2025](/docs/openshift?topic=openshift-openshift-relnotes#openshift-feb25)
+
+    * [28 February 2025](/docs/openshift?topic=openshift-openshift-relnotes#openshift-28february25)
+
+        * New! OpenShift Data Foundation Regional Disaster Recovery on {{site.data.keyword.openshiftlong_notm}} clusters
 
     * [27 February 2025](/docs/openshift?topic=openshift-openshift-relnotes#openshift-27february25)
 
@@ -4816,6 +4820,16 @@ subcollection: openshift
 * [Setting up trusted profiles](/docs/openshift?topic=openshift-storage-odf-trusted-profiles#odf-setup-trusted)
 
     * [Automatically creating a secret by using a Shell script](/docs/openshift?topic=openshift-storage-odf-trusted-profiles#odf-secret-create-truted-profile)
+
+[OpenShift Data Foundation Regional Disaster Recovery on {{site.data.keyword.openshiftlong_notm}} clusters](/docs/openshift?topic=openshift-openshift_odf_rdr_roks#openshift_odf_rdr_roks)
+
+* [Creating the clusters](/docs/openshift?topic=openshift-openshift_odf_rdr_roks#odf-rdr-clusters)
+
+* [Enabling the Red Hat OperatorHub catalog](/docs/openshift?topic=openshift-openshift_odf_rdr_roks#odf-rdr-enable-redhat)
+
+* [Setting up ACM on the hub cluster](/docs/openshift?topic=openshift-openshift_odf_rdr_roks#odf-rdr-install-acm)
+
+* [Testing your disaster recovery configuration](/docs/openshift?topic=openshift-openshift_odf_rdr_roks#odf-rdr-test)
 
 [Removing OpenShift Data Foundation](/docs/openshift?topic=openshift-ocs-manage-deployment#ocs-manage-deployment)
 
