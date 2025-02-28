@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2025
-lastupdated: "2025-01-14"
+lastupdated: "2025-02-28"
 
 
 keywords: openshift, update, upgrade, BOM, bill of materials, versions, patch, 4.9
@@ -75,7 +75,7 @@ The following table shows the changes that are in the master fix pack 4.9.59_160
 {: caption="Changes since version 4.9.59_1597_openshift" caption-side="bottom"}
 
 
-### Worker node fix pack 4.9.59_1601_openshift, released 28th August 2023
+### Worker node fix pack 4.9.59_1601_openshift, released 28 August 2023
 {: #4959_1601_openshift_W}
 
 The following table shows the changes that are in the worker node fix pack 4.9.59_1601_openshift. Worker node patch updates can be applied by updating, reloading (in classic infrastructure), or replacing (in VPC infrastructure) the worker node.

@@ -6774,7 +6774,7 @@ subcollection: openshift
 
     * [Master fix pack 4.13.6_1532_openshift, released 30 August 2023](/docs/openshift?topic=openshift-openshift_changelog_413#4136_1532_openshift_M)
 
-    * [Worker node fix pack 4.13.9_1533_openshift, released 28th August 2023](/docs/openshift?topic=openshift-openshift_changelog_413#4139_1533_openshift_W)
+    * [Worker node fix pack 4.13.9_1533_openshift, released 28 August 2023](/docs/openshift?topic=openshift-openshift_changelog_413#4139_1533_openshift_W)
 
     * [Worker node fix pack 4.13.8_1530_openshift, released 15th August 2023](/docs/openshift?topic=openshift-openshift_changelog_413#4138_1530_openshift_W)
 
@@ -7007,7 +7007,7 @@ subcollection: openshift
 
     * [Master fix pack 4.12.26_1555_openshift, released 30 August 2023](/docs/openshift?topic=openshift-openshift_changelog_412#41226_1555_openshift_M)
 
-    * [Worker node fix pack 4.12.30_1556_openshift, released 28th August 2023](/docs/openshift?topic=openshift-openshift_changelog_412#41230_1556_openshift_W)
+    * [Worker node fix pack 4.12.30_1556_openshift, released 28 August 2023](/docs/openshift?topic=openshift-openshift_changelog_412#41230_1556_openshift_W)
 
     * [Worker node fix pack 4.12.28_1554_openshift, released 15th August 2023](/docs/openshift?topic=openshift-openshift_changelog_412#41228_1554_openshift_W)
 
@@ -8533,7 +8533,7 @@ subcollection: openshift
 
     * [Master fix pack 4.11.47_1567_openshift, released 30 August 2023](/docs/openshift?topic=openshift-openshift_changelog_411#41147_1567_openshift_M)
 
-    * [Worker node fix pack 4.11.47_1568_openshift, released 28th August 2023](/docs/openshift?topic=openshift-openshift_changelog_411#41147_1568_openshift_W)
+    * [Worker node fix pack 4.11.47_1568_openshift, released 28 August 2023](/docs/openshift?topic=openshift-openshift_changelog_411#41147_1568_openshift_W)
 
     * [Worker node fix pack 4.11.46_1566_openshift, released 15th August 2023](/docs/openshift?topic=openshift-openshift_changelog_411#41146_1566_openshift_W)
 
@@ -8740,7 +8740,7 @@ subcollection: openshift
 
     * [Master fix pack 4.10.65_1580_openshift, released 30 August 2023](/docs/openshift?topic=openshift-openshift_changelog_410#41065_1580_openshift_M)
 
-    * [Worker node fix pack 4.10.66_1581_openshift, released 28th August 2023](/docs/openshift?topic=openshift-openshift_changelog_410#41066_1581_openshift_W)
+    * [Worker node fix pack 4.10.66_1581_openshift, released 28 August 2023](/docs/openshift?topic=openshift-openshift_changelog_410#41066_1581_openshift_W)
 
     * [Worker node fix pack 4.10.65_1579_openshift, released 15th August 2023](/docs/openshift?topic=openshift-openshift_changelog_410#41065_1579_openshift_W)
 
@@ -8951,7 +8951,7 @@ subcollection: openshift
 
     * [Master fix pack 4.9.59_1600_openshift, released 30 August 2023](/docs/openshift?topic=openshift-openshift_changelog_49#4959_1600_openshift_M)
 
-    * [Worker node fix pack 4.9.59_1601_openshift, released 28th August 2023](/docs/openshift?topic=openshift-openshift_changelog_49#4959_1601_openshift_W)
+    * [Worker node fix pack 4.9.59_1601_openshift, released 28 August 2023](/docs/openshift?topic=openshift-openshift_changelog_49#4959_1601_openshift_W)
 
     * [Worker node fix pack 4.9.59_1599_openshift, released 15th August 2023](/docs/openshift?topic=openshift-openshift_changelog_49#4959_1599_openshift_W)
 

@@ -1008,7 +1008,7 @@ The following table shows the changes that are in the master fix pack 4.13.6_153
 {: caption="Changes since version 4.13.5_1528_openshift" caption-side="bottom"}
 
 
-### Worker node fix pack 4.13.9_1533_openshift, released 28th August 2023
+### Worker node fix pack 4.13.9_1533_openshift, released 28 August 2023
 {: #4139_1533_openshift_W}
 
 The following table shows the changes that are in the worker node fix pack 4.13.9_1533_openshift. Worker node patch updates can be applied by updating, reloading (in classic infrastructure), or replacing (in VPC infrastructure) the worker node.
