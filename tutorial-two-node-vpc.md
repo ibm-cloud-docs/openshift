@@ -1,8 +1,8 @@
 ---
 
 copyright:
-  years: 2024, 2024
-lastupdated: "2024-09-19"
+  years: 2024, 2025
+lastupdated: "2025-02-28"
 
 
 keywords: kubernetes
@@ -64,7 +64,7 @@ In this tutorial, you create the following resources. There are optional steps t
     ```
     {: codeblock}
 
-1. Uncheck the **Use Full Repository** box.
+1. Clear the **Use Full Repository** box.
 1. Make sure the **Branch**, **Folder**, and **Personal Access Token** fields are empty.
 1. Use the default Terraform version and click **Next**.
 1. In the **Workplace Details** section, give your workspace a name and fill out the remaining fields as desired.

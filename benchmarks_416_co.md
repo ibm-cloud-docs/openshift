@@ -1,8 +1,8 @@
 ---
 
 copyright: 
-  years: 2024, 2024
-lastupdated: "2024-11-20"
+  years: 2024, 2025
+lastupdated: "2025-02-28"
 
 
 keywords: openshift, benchmarks, 4.16, compliance operator, compliance
@@ -56,7 +56,7 @@ The master node configuration is not stored as a set of files; therefore, rules 
 | 1.2.18|Ensure that the `--insecure-bind-address` argument is not set.|Automated|1|Pass |
 | 1.2.19|Ensure that the `--insecure-port` argument is set to 0.|Automated|1|Not checked |
 | 1.2.20|Ensure that the `--secure-port` argument is not set to 0.|Automated|1|Pass |
-| 1.2.21|Ensure that the healthz endpoint is protected by RBAC.|Automated|1|Pass |
+| 1.2.21|Ensure that the `healthz` endpoint is protected by RBAC.|Automated|1|Pass |
 | 1.2.22|Ensure that the `--audit-log-path` argument is set.|Automated|1|Pass |
 | 1.2.23|Ensure that the audit logs are forwarded off the cluster for retention.|Automated|1|[Not checked](#co-benchmark-416-remdiations) |
 | 1.2.24|Ensure that the maximumRetainedFiles argument is set to 10 or as appropriate.|Automated|1|[Not checked](#co-benchmark-416-remdiations) |
@@ -79,7 +79,7 @@ The master node configuration is not stored as a set of files; therefore, rules 
 | Section|Recommendation|Manual/Automated|Level|Result |
 | -- | -- | -- | -- | -- |
 | 1.3.1|Ensure that garbage collection is configured as appropriate.|Manual|1|Not checked |
-| 1.3.2|Ensure that controller manager healthz endpoints are protected by RBAC.|Automated|1|Pass |
+| 1.3.2|Ensure that controller manager `healthz` endpoints are protected by RBAC.|Automated|1|Pass |
 | 1.3.3|Ensure that the `--use-service-account-credentials` argument is set to true.|Automated|1|Pass |
 | 1.3.4|Ensure that the `--service-account-private-key-file` argument is set as appropriate.|Automated|1|Pass |
 | 1.3.5|Ensure that the `--root-ca-file` argument is set as appropriate.|Automated|1|Pass |
@@ -92,7 +92,7 @@ The master node configuration is not stored as a set of files; therefore, rules 
 
 | Section|Recommendation|Manual/Automated|Level|Result |
 | -- | -- | -- | -- | -- |
-| 1.4.1|Ensure that the healthz endpoints for the scheduler are protected by RBAC.|Automated|1|Pass |
+| 1.4.1|Ensure that the `healthz` endpoints for the scheduler are protected by RBAC.|Automated|1|Pass |
 | 1.4.2|Verify that the scheduler API service is protected by authentication and authorization.|Automated|1|Pass |
 {: caption="Section 1.4 Benchmarks for scheduler." caption-side="top"}
 
@@ -106,7 +106,7 @@ The master node configuration is not stored as a set of files; therefore, rules 
 | 2.3|Ensure that the `--auto-tls` argument is not set to true.|Automated|1|Pass |
 | 2.4|Ensure that the `--peer-cert-file` and `--peer-key-file` arguments are set as appropriate.|Automated|1|Pass |
 | 2.5|Ensure that the `--peer-client-cert-auth` argument is set to true.|Automated|1|Pass |
-| 2.6|Ensure that the --peer-auto-tls argument is not set to true.|Automated|1|Pass |
+| 2.6|Ensure that the `--peer-auto-tls` argument is not set to true.|Automated|1|Pass |
 | 2.7|Ensure that a unique Certificate Authority is used for etcd.|Manual|2|[Not checked](#co-benchmark-416-remdiations) |
 {: caption="Section 2 Benchmarks for etcd." caption-side="top"}
 
@@ -174,7 +174,7 @@ Please follow the instruction in [Using the compliance operator](/docs/openshift
 | -- | -- | -- | -- | -- |
 | 5.3.1|Ensure that the CNI in use supports Network Policies.|Manual|1|Pass |
 | 5.3.2|Ensure that all Namespaces have Network Policies define.|Automated|2|[Not checked](#co-benchmark-416-remdiations) |
-{: caption="Section 5.3 Benchmarks for network policies and cni." caption-side="top"}
+{: caption="Section 5.3 Benchmarks for network policies and CNI." caption-side="top"}
 
 ### 5.4 Secrets management
 {: #co-benchmark-416-54}
@@ -199,7 +199,7 @@ Please follow the instruction in [Using the compliance operator](/docs/openshift
 | Section|Recommendation|Manual/Automated|Level|Result |
 | -- | -- | -- | -- | -- |
 | 5.7.1|Create administrative boundaries between resources using namespace.|Manual|1|Not checked |
-| 5.7.2|Ensure that the seccomp profile is set to docker/default in your pod definition.|Manual|2|Not checked |
+| 5.7.2|Ensure that the `seccomp` profile is set to docker/default in your pod definition.|Manual|2|Not checked |
 | 5.7.3|Apply Security Context to Your Pods and Container.|Manual|2|Not checked |
 | 5.7.4|The default namespace should not be use.|Automated|2|Not checked |
 {: caption="Section 5.7 Benchmarks for general policies." caption-side="top"}

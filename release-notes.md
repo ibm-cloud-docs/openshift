@@ -315,7 +315,7 @@ Portworx now supports {{site.data.keyword.openshiftlong_notm}} version 4.16 and 
 :   For more information, see the [change log](/docs/openshift?topic=openshift-cl-add-ons-vpc-file-csi-driver).
 
 Storage Operator cluster add-on patch update.
-:  For more information, see the [change log](/docs/openshift?topic=openshift-versions-ibm-storage-operator).
+:  For more information, see the [change log](/docs/openshift?topic=openshift-cl-add-ons-ibm-storage-operator).
 
 
 ### 05 December 2024
@@ -597,7 +597,7 @@ New! The `gx3d.160x1792.8h100` worker node flavor with H100 GPU support is avail
 :   For more information, see the [change log](/docs/openshift?topic=openshift-cl-add-ons-vpc-file-csi-driver).
 
 Storage Operator cluster add-on patch update.
-:  For more information, see the [change log](/docs/openshift?topic=openshift-versions-ibm-storage-operator).
+:  For more information, see the [change log](/docs/openshift?topic=openshift-cl-add-ons-ibm-storage-operator).
 
 
 Static route add-on version patch update.
@@ -788,7 +788,7 @@ New! Upgrade status command.
 :   For more information, see the [change log](/docs/openshift?topic=openshift-cl-add-ons-vpc-file-csi-driver).
 
 Storage Operator cluster add-on patch update.
-:  For more information, see the [change log](/docs/openshift?topic=openshift-versions-ibm-storage-operator).
+:  For more information, see the [change log](/docs/openshift?topic=openshift-cl-add-ons-ibm-storage-operator).
 
 
 
@@ -900,7 +900,7 @@ New audit events for cluster operations
 :   For more information, see the [change log](/docs/openshift?topic=openshift-cl-add-ons-vpc-file-csi-driver).
 
 Storage Operator cluster add-on patch update.
-:   For more information, see the [change log](/docs/openshift?topic=openshift-versions-ibm-storage-operator).
+:   For more information, see the [change log](/docs/openshift?topic=openshift-cl-add-ons-ibm-storage-operator).
 
 Cluster autoscaler add-on patch updates for {{site.data.keyword.openshiftlong_notm}}.
 :   For more information, see [Cluster autoscaler add-on change log](/docs/openshift?topic=openshift-ca_changelog).

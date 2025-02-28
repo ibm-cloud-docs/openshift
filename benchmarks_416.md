@@ -1,8 +1,8 @@
 ---
 
 copyright: 
-  years: 2024, 2024
-lastupdated: "2024-11-21"
+  years: 2024, 2025
+lastupdated: "2025-02-28"
 
 
 keywords: openshift, benchmarks, 4.16, openshift benchmarks, openshift 4.16
@@ -162,8 +162,8 @@ The Center for Internet Security (CIS) publishes the [CIS Kubernetes Benchmark](
 | --- | --- | --- | --- | --- | --- |
 | 4.1.1 | Ensure that the kubelet service file permissions are set to 644 or more restrictive. | Scored | 1 | Pass | IBM |
 | 4.1.2 | Ensure that the kubelet service file ownership is set to root:root. | Scored | 1 | Pass | IBM |
-| 4.1.3 | Ensure that the proxy kubeconfig file permissions are set to 644 or more restrictive. | Scored | 1 | Pass | IBM |
-| 4.1.4 | Ensure that the proxy kubeconfig file ownership is set to root:root. | Scored | 1 | Pass | IBM |
+| 4.1.3 | Ensure that the proxy `kubeconfig` file permissions are set to 644 or more restrictive. | Scored | 1 | Pass | IBM |
+| 4.1.4 | Ensure that the proxy `kubeconfig` file ownership is set to root:root. | Scored | 1 | Pass | IBM |
 | 4.1.5 | Ensure that the kubelet.conf file permissions are set to 644 or more restrictive. | Scored | 1 | Pass | IBM |
 | 4.1.6 | Ensure that the kubelet.conf file ownership is set to root:root. | Scored | 1 | Pass | IBM |
 | 4.1.7 | Ensure that the certificate authorities file permissions are set to 644 or more restrictive. | Scored | 1 | Pass | IBM |
@@ -202,8 +202,8 @@ The Center for Internet Security (CIS) publishes the [CIS Kubernetes Benchmark](
 | --- | --- | --- | --- | --- | --- |
 | 4.1.1 | Ensure that the kubelet service file permissions are set to 644 or more restrictive. | Scored | 1 | Pass | IBM |
 | 4.1.2 | Ensure that the kubelet service file ownership is set to root:root. | Scored | 1 | Pass | IBM |
-| 4.1.3 | Ensure that the proxy kubeconfig file permissions are set to 644 or more restrictive. | Scored | 1 | Pass | IBM |
-| 4.1.4 | Ensure that the proxy kubeconfig file ownership is set to root:root. | Scored | 1 | Pass | IBM |
+| 4.1.3 | Ensure that the proxy `kubeconfig` file permissions are set to 644 or more restrictive. | Scored | 1 | Pass | IBM |
+| 4.1.4 | Ensure that the proxy `kubeconfig` file ownership is set to root:root. | Scored | 1 | Pass | IBM |
 | 4.1.5 | Ensure that the kubelet.conf file permissions are set to 644 or more restrictive. | Scored | 1 | Pass | IBM |
 | 4.1.6 | Ensure that the kubelet.conf file ownership is set to root:root. | Scored | 1 | Pass | IBM |
 | 4.1.7 | Ensure that the certificate authorities file permissions are set to 644 or more restrictive. | Scored | 1 | Pass | IBM |
@@ -296,7 +296,7 @@ The Center for Internet Security (CIS) publishes the [CIS Kubernetes Benchmark](
 | Section | Recommendation | Scored/Not Scored | Level | Result | Responsibility |
 | --- | --- | --- | --- | --- | --- |
 | 5.7.1 | Create administrative boundaries between resources using namespaces. | Not Scored | 1 | Pass | Shared |
-| 5.7.2 | Ensure that the seccomp profile is set to docker/default in your pod definitions. | Not Scored | 2 | [Fail](#ibm-remediations-and-explanations-416) | Shared |
+| 5.7.2 | Ensure that the `seccomp` profile is set to docker/default in your pod definitions. | Not Scored | 2 | [Fail](#ibm-remediations-and-explanations-416) | Shared |
 | 5.7.3 | Apply Security Context to Your Pods and Containers. | Not Scored | 2 | [Fail](#ibm-remediations-and-explanations-416) | Shared |
 | 5.7.4 | The default namespace should not be used. | Scored | 2 | Pass | Shared |
 {: caption="Section 5.6 General policies benchmark results" caption-side="bottom"}
@@ -338,6 +338,6 @@ The Center for Internet Security (CIS) publishes the [CIS Kubernetes Benchmark](
 | 5.4.1 | {{site.data.keyword.openshiftlong_notm}} deploys some system components that could prefer using secrets as files over secrets as environment variables. |
 | 5.4.2 | {{site.data.keyword.openshiftlong_notm}} can optionally [enable Secrets Manager service](/docs/openshift?topic=openshift-secrets-mgr). |
 | 5.5.1 | {{site.data.keyword.openshiftlong_notm}} can optionally [enable image security enforcement](/docs/openshift?topic=openshift-images#portieris-image-sec). |
-| 5.7.2 | {{site.data.keyword.openshiftlong_notm}} does not annotate all pods with [seccomp profiles](https://kubernetes.io/docs/concepts/security/pod-security-policy/#seccomp){: external}. |
-| 5.7.3 | {{site.data.keyword.openshiftlong_notm}} deploys some system components that do not set a [pod or container *securityContext*](https://kubernetes.io/docs/tasks/configure-pod-container/security-context/){: external}. |
+| 5.7.2 | {{site.data.keyword.openshiftlong_notm}} does not annotate all pods with [`seccomp` profiles](https://kubernetes.io/docs/concepts/security/pod-security-policy/#seccomp){: external}. |
+| 5.7.3 | {{site.data.keyword.openshiftlong_notm}} deploys some system components that do not set a [pod or container `securityContext`](https://kubernetes.io/docs/tasks/configure-pod-container/security-context/){: external}. |
 {: caption="Explanations and remediations" caption-side="bottom"}

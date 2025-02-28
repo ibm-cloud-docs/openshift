@@ -943,7 +943,7 @@ The following table shows the changes that are in the worker node fix pack 4.11.
 
 | Component | Previous | Current | Description |
 | --- | --- | --- | --- |
-| VPC Gen 2 RHEL 8 worker image disk size | N/A | N/A | Fixed regression on previous version where root filesystem partition was 25 GB instead of 100GB for VPC Gen 2 |
+| VPC Gen 2 RHEL 8 worker image disk size | N/A | N/A | Fixed regression on previous version where root file system partition was 25 GB instead of 100GB for VPC Gen 2 |
 {: caption="Changes since version 4.11.9_1526_openshift" caption-side="bottom"}
 
 

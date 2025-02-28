@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2025
-lastupdated: "2025-02-19"
+lastupdated: "2025-02-28"
 
 
 keywords: openshift, kubernetes, logmet, logs, metrics, audit, events
@@ -600,7 +600,7 @@ After the master refresh completes, your logs are sent to the private IP address
 ## Worker node audit logs
 {: #audit-worker}
 
-{{site.data.keyword.openshiftlong_notm}} uses the Linux Auditing System component, `auditd`, to monitor and log activity on the worker nodes. Although worker node auditing is enabled by default, no auditing data is available until you set up log forwarding to a {{site.data.keyword.logs_full_notm}} instance or external server.
+{{site.data.keyword.openshiftlong_notm}} uses the Linux Auditing System component, `auditd`, to monitor and log activity on the worker nodes. Although worker node auditing is enabled by default, no auditing data is available until you set up log forwarding to an {{site.data.keyword.logs_full_notm}} instance or external server.
 {: shortdesc}
 
 ### Understanding the worker node audit configuration
@@ -622,7 +622,7 @@ The logs are stored in the `/var/log/audit` directory on the worker nodes. You c
 ### Setting up log forwarding for worker nodes
 {: #audit-worker-setup}
 
-See [Forwarding logs to an {{site.data.keyword.logs_full_notm}} instance](/docs/containers?topic=containers-health#logging).
+See [Forwarding logs to an {{site.data.keyword.logs_full_notm}} instance](/docs/containers?topic=containers-health).
 {: shortdesc}
 
 

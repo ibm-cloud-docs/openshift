@@ -2,7 +2,7 @@
 
 copyright:
   years: 2025, 2025
-lastupdated: "2025-01-29"
+lastupdated: "2025-02-28"
 
 
 keywords: oauth access, oauth, api server, vpe gateway, vpc
@@ -22,7 +22,7 @@ Not all clusters require these changes. These steps apply only if:
 - You have changed your security groups so that traffic between the cluster workers and master VPE gateway is blocked, **OR**
 - You have modified the `kube-<CLUSTER-ID>` security group, **OR**
 - You applied a different or custom security group to the cluster master's VPE gateway, **OR**
-- All of the following conditions are true. 
+- All the following conditions are true. 
     - Your cluster is a VPC cluster that has only private service endpoints. 
     - Your cluster's OAuth access is the vpe-gateway type.
     - Your cluster uses Secure by Default cluster networking. 
@@ -84,5 +84,3 @@ If your cluster uses Secure by Default (SBD) networking and you modified or rena
     ibmcloud is security-group kube-vpegw-<cluster-id>`
     ```
     {: pre}
-
-
