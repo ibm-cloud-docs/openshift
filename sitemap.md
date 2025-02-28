@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2025
-lastupdated: "2025-02-26"
+lastupdated: "2025-02-28"
 
 
 keywords: openshift
@@ -275,7 +275,15 @@ subcollection: openshift
 
 * [February 2025](/docs/openshift?topic=openshift-openshift-relnotes#openshift-feb25)
 
-    * [24 February 2025](/docs/openshift?topic=openshift-openshift-relnotes#openshift-24february25)
+    * [28 February 2025](/docs/openshift?topic=openshift-openshift-relnotes#openshift-28february25)
+
+        * New! OpenShift Data Foundation Regional Disaster Recovery on {{site.data.keyword.openshiftlong_notm}} clusters
+
+    * [27 February 2025](/docs/openshift?topic=openshift-openshift-relnotes#openshift-feb2725)
+
+        * OpenShift AI deployment during cluster creation
+
+    * [24 February 2025](/docs/openshift?topic=openshift-openshift-relnotes#openshift-feb2425)
 
         * {{site.data.keyword.openshiftlong_notm}} worker node fix packs are available.
 
@@ -4813,6 +4821,16 @@ subcollection: openshift
 
     * [Automatically creating a secret by using a Shell script](/docs/openshift?topic=openshift-storage-odf-trusted-profiles#odf-secret-create-truted-profile)
 
+[OpenShift Data Foundation Regional Disaster Recovery on {{site.data.keyword.openshiftlong_notm}} clusters](/docs/openshift?topic=openshift-openshift_odf_rdr_roks#openshift_odf_rdr_roks)
+
+* [Creating the clusters](/docs/openshift?topic=openshift-openshift_odf_rdr_roks#odf-rdr-clusters)
+
+* [Enabling the Red Hat OperatorHub catalog](/docs/openshift?topic=openshift-openshift_odf_rdr_roks#odf-rdr-enable-redhat)
+
+* [Setting up ACM on the hub cluster](/docs/openshift?topic=openshift-openshift_odf_rdr_roks#odf-rdr-install-acm)
+
+* [Testing your disaster recovery configuration](/docs/openshift?topic=openshift-openshift_odf_rdr_roks#odf-rdr-test)
+
 [Removing OpenShift Data Foundation](/docs/openshift?topic=openshift-ocs-manage-deployment#ocs-manage-deployment)
 
 * [Removing ODF from your apps](/docs/openshift?topic=openshift-ocs-manage-deployment#ocs-remove-apps-storage)
@@ -6756,15 +6774,15 @@ subcollection: openshift
 
     * [Master fix pack 4.13.6_1532_openshift, released 30 August 2023](/docs/openshift?topic=openshift-openshift_changelog_413#4136_1532_openshift_M)
 
-    * [Worker node fix pack 4.13.9_1533_openshift, released 28th August 2023](/docs/openshift?topic=openshift-openshift_changelog_413#4139_1533_openshift_W)
+    * [Worker node fix pack 4.13.9_1533_openshift, released 28 August 2023](/docs/openshift?topic=openshift-openshift_changelog_413#4139_1533_openshift_W)
 
-    * [Worker node fix pack 4.13.8_1530_openshift, released 15th August 2023](/docs/openshift?topic=openshift-openshift_changelog_413#4138_1530_openshift_W)
+    * [Worker node fix pack 4.13.8_1530_openshift, released 15 August 2023](/docs/openshift?topic=openshift-openshift_changelog_413#4138_1530_openshift_W)
 
     * [Worker node fix pack 4.13.6_1529_openshift, released 1 August 2023](/docs/openshift?topic=openshift-openshift_changelog_413#4136_1529_openshift_W)
 
     * [Master fix pack 4.13.5_1528_openshift, released 28 July 2023](/docs/openshift?topic=openshift-openshift_changelog_413#4135_1528_openshift_M)
 
-    * [Worker node fix pack 4.13.4_1526_openshift, released 17th July 2023](/docs/openshift?topic=openshift-openshift_changelog_413#4134_1526_openshift_W)
+    * [Worker node fix pack 4.13.4_1526_openshift, released 17 July 2023](/docs/openshift?topic=openshift-openshift_changelog_413#4134_1526_openshift_W)
 
     * [Worker node fix pack 4.13.4_1525_openshift, released 03 July 2023](/docs/openshift?topic=openshift-openshift_changelog_413#4134_1525_openshift_W)
 
@@ -6989,15 +7007,15 @@ subcollection: openshift
 
     * [Master fix pack 4.12.26_1555_openshift, released 30 August 2023](/docs/openshift?topic=openshift-openshift_changelog_412#41226_1555_openshift_M)
 
-    * [Worker node fix pack 4.12.30_1556_openshift, released 28th August 2023](/docs/openshift?topic=openshift-openshift_changelog_412#41230_1556_openshift_W)
+    * [Worker node fix pack 4.12.30_1556_openshift, released 28 August 2023](/docs/openshift?topic=openshift-openshift_changelog_412#41230_1556_openshift_W)
 
-    * [Worker node fix pack 4.12.28_1554_openshift, released 15th August 2023](/docs/openshift?topic=openshift-openshift_changelog_412#41228_1554_openshift_W)
+    * [Worker node fix pack 4.12.28_1554_openshift, released 15 August 2023](/docs/openshift?topic=openshift-openshift_changelog_412#41228_1554_openshift_W)
 
     * [Worker node fix pack 4.12.26_1553_openshift, released 1 August 2023](/docs/openshift?topic=openshift-openshift_changelog_412#41226_1553_openshift_W)
 
     * [Master fix pack 4.12.24_1552_openshift, released 28 July 2023](/docs/openshift?topic=openshift-openshift_changelog_412#41224_1552_openshift_M)
 
-    * [Worker node fix pack 4.12.24_1551_openshift, released 17th July 2023](/docs/openshift?topic=openshift-openshift_changelog_412#41224_1551_openshift_W)
+    * [Worker node fix pack 4.12.24_1551_openshift, released 17 July 2023](/docs/openshift?topic=openshift-openshift_changelog_412#41224_1551_openshift_W)
 
     * [Worker node fix pack 4.12.22_1550_openshift, released 03 July 2023](/docs/openshift?topic=openshift-openshift_changelog_412#41222_1550_openshift_W)
 
@@ -8515,15 +8533,15 @@ subcollection: openshift
 
     * [Master fix pack 4.11.47_1567_openshift, released 30 August 2023](/docs/openshift?topic=openshift-openshift_changelog_411#41147_1567_openshift_M)
 
-    * [Worker node fix pack 4.11.47_1568_openshift, released 28th August 2023](/docs/openshift?topic=openshift-openshift_changelog_411#41147_1568_openshift_W)
+    * [Worker node fix pack 4.11.47_1568_openshift, released 28 August 2023](/docs/openshift?topic=openshift-openshift_changelog_411#41147_1568_openshift_W)
 
-    * [Worker node fix pack 4.11.46_1566_openshift, released 15th August 2023](/docs/openshift?topic=openshift-openshift_changelog_411#41146_1566_openshift_W)
+    * [Worker node fix pack 4.11.46_1566_openshift, released 15 August 2023](/docs/openshift?topic=openshift-openshift_changelog_411#41146_1566_openshift_W)
 
     * [Worker node fix pack 4.11.45_1565_openshift, released 1 August 2023](/docs/openshift?topic=openshift-openshift_changelog_411#41145_1565_openshift_W)
 
     * [Master fix pack 4.11.44_1564_openshift, released 28 July 2023](/docs/openshift?topic=openshift-openshift_changelog_411#41144_1564_openshift_M)
 
-    * [Worker node fix pack 4.11.44_1563_openshift, released 17th July 2023](/docs/openshift?topic=openshift-openshift_changelog_411#41144_1563_openshift_W)
+    * [Worker node fix pack 4.11.44_1563_openshift, released 17 July 2023](/docs/openshift?topic=openshift-openshift_changelog_411#41144_1563_openshift_W)
 
     * [Worker node fix pack 4.11.43_1562_openshift, released 03 July 2023](/docs/openshift?topic=openshift-openshift_changelog_411#41143_1562_openshift_W)
 
@@ -8722,15 +8740,15 @@ subcollection: openshift
 
     * [Master fix pack 4.10.65_1580_openshift, released 30 August 2023](/docs/openshift?topic=openshift-openshift_changelog_410#41065_1580_openshift_M)
 
-    * [Worker node fix pack 4.10.66_1581_openshift, released 28th August 2023](/docs/openshift?topic=openshift-openshift_changelog_410#41066_1581_openshift_W)
+    * [Worker node fix pack 4.10.66_1581_openshift, released 28 August 2023](/docs/openshift?topic=openshift-openshift_changelog_410#41066_1581_openshift_W)
 
-    * [Worker node fix pack 4.10.65_1579_openshift, released 15th August 2023](/docs/openshift?topic=openshift-openshift_changelog_410#41065_1579_openshift_W)
+    * [Worker node fix pack 4.10.65_1579_openshift, released 15 August 2023](/docs/openshift?topic=openshift-openshift_changelog_410#41065_1579_openshift_W)
 
     * [Worker node fix pack 4.10.64_1578_openshift, released 1 August 2023](/docs/openshift?topic=openshift-openshift_changelog_410#41064_1578_openshift_W)
 
     * [Master fix pack 4.10.63_1577_openshift, released 28 July 2023](/docs/openshift?topic=openshift-openshift_changelog_410#41063_1577_openshift_M)
 
-    * [Worker node fix pack 4.10.63_1576_openshift, released 17th July 2023](/docs/openshift?topic=openshift-openshift_changelog_410#41063_1576_openshift_W)
+    * [Worker node fix pack 4.10.63_1576_openshift, released 17 July 2023](/docs/openshift?topic=openshift-openshift_changelog_410#41063_1576_openshift_W)
 
     * [Worker node fix pack 4.10.62_1575_openshift, released 03 July 2023](/docs/openshift?topic=openshift-openshift_changelog_410#41062_1575_openshift_W)
 
@@ -8933,15 +8951,15 @@ subcollection: openshift
 
     * [Master fix pack 4.9.59_1600_openshift, released 30 August 2023](/docs/openshift?topic=openshift-openshift_changelog_49#4959_1600_openshift_M)
 
-    * [Worker node fix pack 4.9.59_1601_openshift, released 28th August 2023](/docs/openshift?topic=openshift-openshift_changelog_49#4959_1601_openshift_W)
+    * [Worker node fix pack 4.9.59_1601_openshift, released 28 August 2023](/docs/openshift?topic=openshift-openshift_changelog_49#4959_1601_openshift_W)
 
-    * [Worker node fix pack 4.9.59_1599_openshift, released 15th August 2023](/docs/openshift?topic=openshift-openshift_changelog_49#4959_1599_openshift_W)
+    * [Worker node fix pack 4.9.59_1599_openshift, released 15 August 2023](/docs/openshift?topic=openshift-openshift_changelog_49#4959_1599_openshift_W)
 
     * [Worker node fix pack 4.9.59_1598_openshift, released 1 August 2023](/docs/openshift?topic=openshift-openshift_changelog_49#4959_1598_openshift_W)
 
     * [Master fix pack 4.9.59_1597_openshift, released 28 July 2023](/docs/openshift?topic=openshift-openshift_changelog_49#4959_1597_openshift_M)
 
-    * [Worker node fix pack 4.9.59_1596_openshift, released 17th July 2023](/docs/openshift?topic=openshift-openshift_changelog_49#4959_1596_openshift_W)
+    * [Worker node fix pack 4.9.59_1596_openshift, released 17 July 2023](/docs/openshift?topic=openshift-openshift_changelog_49#4959_1596_openshift_W)
 
     * [Worker node fix pack 4.9.59_1595_openshift, released 03 July 2023](/docs/openshift?topic=openshift-openshift_changelog_49#4959_1595_openshift_W)
 

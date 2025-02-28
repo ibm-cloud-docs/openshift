@@ -2,7 +2,7 @@
 
 copyright:
   years: 2024, 2025
-lastupdated: "2025-01-21"
+lastupdated: "2025-02-28"
 
 keywords: logging, cloud logs, logs, log analysis, containers
 
@@ -48,9 +48,9 @@ As of 28 March 2024, the {{site.data.keyword.la_full_notm}} service is deprecate
 
 Logs are generated and written locally for all the following {{site.data.keyword.openshiftlong_notm}} cluster components: worker nodes, containers, applications, persistent storage, Ingress application load balancer, Kubernetes API, and the `kube-system` namespace.
 
-A logging agent collects logs with the extension `*.log` and extensionless files that are stored in the `/var/log` directory of your pod from all namespaces, including `kube-system`. The agent then forwards the logs to your service instance. You can also track user-initiated administrative activity made in your cluster.  {{site.data.keyword.containershort_notm}} automatically generates cluster management events and forwards these event logs to {{site.data.keyword.logs_full_notm}}. For more information, see [Getting started with {{site.data.keyword.logs_full_notm}}](/docs/cloud-logs?topic=cloud-logs-getting-started).
+A logging agent collects logs with the extension `*.log` and extensionless files that are stored in the `/var/log/containers` directory of your pod from all namespaces, including `kube-system`. The agent then forwards the logs to your service instance. You can also track user-initiated administrative activity made in your cluster.  {{site.data.keyword.containershort_notm}} automatically generates cluster management events and forwards these event logs to {{site.data.keyword.logs_full_notm}}. For more information, see [Getting started with {{site.data.keyword.logs_full_notm}}](/docs/cloud-logs?topic=cloud-logs-getting-started).
 
-To deploy a logging agent to your cluster, see [Managing the Logging agent for Red Hat OpenShift on IBM Cloud clusters](/docs/cloud-logs?topic=cloud-logs-agent-openshift) or [Managing the Logging agent for IBM Cloud Kubernetes Service clusters](/docs/cloud-logs?topic=cloud-logs-agent-std-cluster).
+To deploy a logging agent to your cluster, see [Deploying the Logging agent for OpenShift clusters using a Helm chart](/docs/cloud-logs?topic=cloud-logs-agent-helm-os-deploy) or [Deploying the Logging agent for Kubernetes clusters using a Helm chart](/docs/cloud-logs?topic=cloud-logs-agent-helm-kube-deploy).
 
 ## Enabling logging
 {: #log-enable}

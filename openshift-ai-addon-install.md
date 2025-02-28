@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2024, 2025
-lastupdated: "2025-01-27"
+lastupdated: "2025-02-27"
 
 
 keywords: openshift, {{site.data.keyword.openshiftlong_notm}}, ai, add-on
@@ -19,7 +19,10 @@ subcollection: openshift
 # Installing the Red Hat OpenShift AI add-on
 {: #ai-addon-install}
 
-Follow the steps to install the OpenShift AI add-on. 
+Follow the steps to install the OpenShift AI add-on to an existing cluster. 
+
+Want to deploy the OpenShift AI operator on a new cluster? Try the [OpenShift AI on IBM Cloud](https://cloud.ibm.com/catalog/7a4d68b4-cf8b-40cd-a3d1-f49aff526eb3/architecture/roks-rhoai-c24ae512-8b25-43d7-8fb3-4173c7e94472-global){: external} deployable architecture. 
+{: tip}
 
 ## Minimum requirements
 {: #ai-min}
