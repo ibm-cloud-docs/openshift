@@ -42,15 +42,17 @@ New! OpenShift Data Foundation Regional Disaster Recovery on {{site.data.keyword
 
 
 ### 27 February 2025
-{: #openshift-27february25}
+{: #openshift-feb2725}
 {: release-note}
 
 OpenShift AI deployment during cluster creation
 :   You can deploy the OpenShift AI operator on a new cluster by using the [OpenShift AI on IBM Cloud](https://cloud.ibm.com/catalog/7a4d68b4-cf8b-40cd-a3d1-f49aff526eb3/architecture/roks-rhoai-c24ae512-8b25-43d7-8fb3-4173c7e94472-global){: external} deployable architecture. 
 
 
+
+
 ### 24 February 2025
-{: #openshift-24february25}
+{: #openshift-feb2425}
 {: release-note}
 
 

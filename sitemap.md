@@ -279,11 +279,11 @@ subcollection: openshift
 
         * New! OpenShift Data Foundation Regional Disaster Recovery on {{site.data.keyword.openshiftlong_notm}} clusters
 
-    * [27 February 2025](/docs/openshift?topic=openshift-openshift-relnotes#openshift-27february25)
+    * [27 February 2025](/docs/openshift?topic=openshift-openshift-relnotes#openshift-feb2725)
 
         * OpenShift AI deployment during cluster creation
 
-    * [24 February 2025](/docs/openshift?topic=openshift-openshift-relnotes#openshift-24february25)
+    * [24 February 2025](/docs/openshift?topic=openshift-openshift-relnotes#openshift-feb2425)
 
         * {{site.data.keyword.openshiftlong_notm}} worker node fix packs are available.
 
