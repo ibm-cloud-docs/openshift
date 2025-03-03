@@ -40,6 +40,7 @@ Master patch updates are applied automatically. Worker node patch updates can be
 
 
 
+
 ### Worker node fix pack 4.15.45_1577_openshift, released 24 February 2025
 {: #cl-boms-41545_1577_openshift_W}
 
@@ -53,7 +54,6 @@ The following table shows the components included in the worker node fix pack 4.
 |HAProxy|1d72cc8c7d02da6ba0340191fa8d9a86550e5090|Resolves the following CVEs: [CVE-2020-11023](https://nvd.nist.gov/vuln/detail/CVE-2020-11023){: external}, and [CVE-2022-49043](https://nvd.nist.gov/vuln/detail/CVE-2022-49043){: external}.|
 {: caption="4.15.45_1577_openshift fix pack." caption-side="bottom"}
 {: #cl-boms-41545_1577_openshift_W-component-table}
-
 
 
 
@@ -75,6 +75,7 @@ The following table shows the changes that are in the master fix pack 4.15.44_15
 {: caption="Changes since version 4.15.42_1573_openshift" caption-side="bottom"}
 
 
+
 ### Worker node fix pack 4.15.44_1575_openshift, released 11 February 2025
 {: #cl-boms-41544_1575_openshift_W}
 
@@ -85,9 +86,11 @@ The following table shows the components included in the worker node fix pack 4.
 | ---- | ---- | ---- |
 |RHEL_8|4.18.0-553.40.1.el8_10|Resolves the following CVEs: [RHSA-2025:0711](https://access.redhat.com/errata/RHSA-2025:0711){: external}, [CVE-2024-56326](https://nvd.nist.gov/vuln/detail/CVE-2024-56326){: external}, [RHSA-2024:3043](https://access.redhat.com/errata/RHSA-2024:3043){: external}, [CVE-2024-0690](https://nvd.nist.gov/vuln/detail/CVE-2024-0690){: external}, [RHSA-2025:0733](https://access.redhat.com/errata/RHSA-2025:0733){: external}, [CVE-2019-12900](https://nvd.nist.gov/vuln/detail/CVE-2019-12900){: external}, [RHSA-2025:1068](https://access.redhat.com/errata/RHSA-2025:1068){: external}, [CVE-2024-26935](https://nvd.nist.gov/vuln/detail/CVE-2024-26935){: external}, and [CVE-2024-50275](https://nvd.nist.gov/vuln/detail/CVE-2024-50275){: external}.|
 |Red Hat OpenShift and Red Hat CoreOS|4.15.44|For more information, see the [change logs](https://docs.openshift.com/container-platform/4.15/release_notes/ocp-4-15-release-notes.html#ocp-4-15-44_release-notes).|
-|HAProxy|03d1ee01e9241d0e5ec93b9eb8986feb2771a01a| [CVE-2019-12900](https://nvd.nist.gov/vuln/detail/CVE-2019-12900){: external} |
+|HAProxy|03d1ee01e9241d0e5ec93b9eb8986feb2771a01a|Resolves the following CVEs: [CVE-2019-12900](https://nvd.nist.gov/vuln/detail/CVE-2019-12900){: external}.|
 {: caption="4.15.44_1575_openshift fix pack." caption-side="bottom"}
 {: #cl-boms-41544_1575_openshift_W-component-table}
+
+
 
 
 ### Worker node fix pack 4.15.43_1574_openshift, released 29 January 2025
@@ -103,6 +106,7 @@ The following table shows the components included in the worker node fix pack 4.
 |HAProxy|14daa781a66ca5ed5754656ce53c3cca4af580b5|N/A|
 {: caption="4.15.43_1574_openshift fix pack." caption-side="bottom"}
 {: #cl-boms-41543_1574_openshift_W-component-table}
+
 
 
 ### Master fix pack 4.15.42_1573_openshift, released 22 January 2025
@@ -125,6 +129,7 @@ The following table shows the changes that are in the master fix pack 4.15.42_15
 {: caption="Changes since version 4.15.38_1568_openshift" caption-side="bottom"}
 
 
+
 ### Worker node fix pack 4.15.42_1572_openshift, released 13 January 2025
 {: #cl-boms-41542_1572_openshift_W}
 
@@ -136,8 +141,9 @@ The following table shows the components included in the worker node fix pack 4.
 |RHEL_8|4.18.0-553.34.1.el8_10|Resolves the following CVEs: [RHSA-2025:0065](https://access.redhat.com/errata/RHSA-2025:0065){: external}, [CVE-2024-53088](https://nvd.nist.gov/vuln/detail/CVE-2024-53088){: external}, [CVE-2024-53122](https://nvd.nist.gov/vuln/detail/CVE-2024-53122){: external}, [RHSA-2024:3043](https://access.redhat.com/errata/RHSA-2024:3043){: external}, [CVE-2024-0690](https://nvd.nist.gov/vuln/detail/CVE-2024-0690){: external}, [RHSA-2025:0012](https://access.redhat.com/errata/RHSA-2025:0012){: external}, [CVE-2024-35195](https://nvd.nist.gov/vuln/detail/CVE-2024-35195){: external}, [RHSA-2024:11161](https://access.redhat.com/errata/RHSA-2024:11161){: external}, and [CVE-2024-52337](https://nvd.nist.gov/vuln/detail/CVE-2024-52337){: external}.|
 |Red Hat OpenShift and Red Hat CoreOS|4.15.42|For more information, see the [change logs](https://docs.openshift.com/container-platform/4.15/release_notes/ocp-4-15-release-notes.html#ocp-4-15-42_release-notes).|
 |HAProxy|14daa781a66ca5ed5754656ce53c3cca4af580b5|N/A|
-{: caption="Components in version 4.15.42_1572_openshift." caption-side="bottom"}
+{: caption="4.15.42_1572_openshift fix pack." caption-side="bottom"}
 {: #cl-boms-41542_1572_openshift_W-component-table}
+
 
 
 ### Worker node fix pack 4.15.41_1571_openshift, released 30 December 2024
@@ -423,19 +429,6 @@ The following table shows the changes that are in the worker node fix pack 4.15.
 {: caption="Changes since version 4.15.21_1546_openshif" caption-side="bottom"}
 
 
-### Master fix pack 4.15.18_1545_openshift, released 15 July 2024
-{: #41518_1545_openshift_M}
-
-| Component | Previous | Current | Description |
-| --- | --- | --- | --- |
-| etcd | v3.5.13 | v3.5.14 | See the [etcd release notes](https://github.com/etcd-io/etcd/releases/v3.5.14). |
-| IBM Cloud Controller Manager | v1.28.10-5 | v1.28.11-5 | New version contains updates and security fixes. |
-| Load balancer and load balancer monitor for IBM Cloud Provider | 2933 | 2967 | New version contains updates and security fixes. |
-| Red Hat OpenShift on IBM Cloud | 4.15.17 | 4.15.18 | See the [Red Hat OpenShift on IBM Cloud release notes](https://docs.openshift.com/container-platform/4.15/release_notes/ocp-4-15-release-notes.html#ocp-4-15-18) |
-| Red Hat OpenShift on IBM Cloud Control Plane Operator, Metrics Server, and toolkit | 4.15.0+20240603 | 4.15.0+20240709 | See the [Red Hat OpenShift on IBM Cloud toolkit release notes](https://github.com/openshift/ibm-roks-toolkit/releases/tag/v4.15.0+20240709). |
-{: caption="Changes since version 4.15.17_1541_openshift" caption-side="bottom"}
-
-
 ### Worker node fix pack 4.15.21_1546_openshift, released 15 July 2024
 {: #41521_1546_openshift_W}
 
@@ -448,6 +441,19 @@ The following table shows the changes that are in the worker node fix pack 4.15.
 | RHEL 8 Packages | 4.18.0-553.5.1.el8_10 | 4.18.0-553.8.1.el8_10 | Worker node kernel & package updates for [RHSA-2024:4211](https://access.redhat.com/errata/RHSA-2024:4211){: external}, [CVE-2020-26555](https://nvd.nist.gov/vuln/detail/CVE-2020-26555){: external}, [CVE-2021-46909](https://nvd.nist.gov/vuln/detail/CVE-2021-46909){: external}, [CVE-2021-46972](https://nvd.nist.gov/vuln/detail/CVE-2021-46972){: external}, [CVE-2021-47069](https://nvd.nist.gov/vuln/detail/CVE-2021-47069){: external}, [CVE-2021-47073](https://nvd.nist.gov/vuln/detail/CVE-2021-47073){: external}, [CVE-2021-47236](https://nvd.nist.gov/vuln/detail/CVE-2021-47236){: external}, [CVE-2021-47310](https://nvd.nist.gov/vuln/detail/CVE-2021-47310){: external}, [CVE-2021-47311](https://nvd.nist.gov/vuln/detail/CVE-2021-47311){: external}, [CVE-2021-47353](https://nvd.nist.gov/vuln/detail/CVE-2021-47353){: external}, [CVE-2021-47356](https://nvd.nist.gov/vuln/detail/CVE-2021-47356){: external}, [CVE-2021-47456](https://nvd.nist.gov/vuln/detail/CVE-2021-47456){: external}, [CVE-2021-47495](https://nvd.nist.gov/vuln/detail/CVE-2021-47495){: external}, [CVE-2023-5090](https://nvd.nist.gov/vuln/detail/CVE-2023-5090){: external}, [CVE-2023-52464](https://nvd.nist.gov/vuln/detail/CVE-2023-52464){: external}, [CVE-2023-52560](https://nvd.nist.gov/vuln/detail/CVE-2023-52560){: external}, [CVE-2023-52615](https://nvd.nist.gov/vuln/detail/CVE-2023-52615){: external}, [CVE-2023-52626](https://nvd.nist.gov/vuln/detail/CVE-2023-52626){: external}, [CVE-2023-52667](https://nvd.nist.gov/vuln/detail/CVE-2023-52667){: external}, [CVE-2023-52669](https://nvd.nist.gov/vuln/detail/CVE-2023-52669){: external}, [CVE-2023-52675](https://nvd.nist.gov/vuln/detail/CVE-2023-52675){: external}, [CVE-2023-52686](https://nvd.nist.gov/vuln/detail/CVE-2023-52686){: external}, [CVE-2023-52700](https://nvd.nist.gov/vuln/detail/CVE-2023-52700){: external}, [CVE-2023-52703](https://nvd.nist.gov/vuln/detail/CVE-2023-52703){: external}, [CVE-2023-52781](https://nvd.nist.gov/vuln/detail/CVE-2023-52781){: external}, [CVE-2023-52813](https://nvd.nist.gov/vuln/detail/CVE-2023-52813){: external}, [CVE-2023-52835](https://nvd.nist.gov/vuln/detail/CVE-2023-52835){: external}, [CVE-2023-52877](https://nvd.nist.gov/vuln/detail/CVE-2023-52877){: external}, [CVE-2023-52878](https://nvd.nist.gov/vuln/detail/CVE-2023-52878){: external}, [CVE-2023-52881](https://nvd.nist.gov/vuln/detail/CVE-2023-52881){: external}, [CVE-2024-26583](https://nvd.nist.gov/vuln/detail/CVE-2024-26583){: external}, [CVE-2024-26584](https://nvd.nist.gov/vuln/detail/CVE-2024-26584){: external}, [CVE-2024-26585](https://nvd.nist.gov/vuln/detail/CVE-2024-26585){: external}, [CVE-2024-26656](https://nvd.nist.gov/vuln/detail/CVE-2024-26656){: external}, [CVE-2024-26675](https://nvd.nist.gov/vuln/detail/CVE-2024-26675){: external}, [CVE-2024-26735](https://nvd.nist.gov/vuln/detail/CVE-2024-26735){: external}, [CVE-2024-26759](https://nvd.nist.gov/vuln/detail/CVE-2024-26759){: external}, [CVE-2024-26801](https://nvd.nist.gov/vuln/detail/CVE-2024-26801){: external}, [CVE-2024-26804](https://nvd.nist.gov/vuln/detail/CVE-2024-26804){: external}, [CVE-2024-26826](https://nvd.nist.gov/vuln/detail/CVE-2024-26826){: external}, [CVE-2024-26859](https://nvd.nist.gov/vuln/detail/CVE-2024-26859){: external}, [CVE-2024-26906](https://nvd.nist.gov/vuln/detail/CVE-2024-26906){: external}, [CVE-2024-26907](https://nvd.nist.gov/vuln/detail/CVE-2024-26907){: external}, [CVE-2024-26974](https://nvd.nist.gov/vuln/detail/CVE-2024-26974){: external}, [CVE-2024-26982](https://nvd.nist.gov/vuln/detail/CVE-2024-26982){: external}, [CVE-2024-27397](https://nvd.nist.gov/vuln/detail/CVE-2024-27397){: external}, [CVE-2024-27410](https://nvd.nist.gov/vuln/detail/CVE-2024-27410){: external}, [CVE-2024-35789](https://nvd.nist.gov/vuln/detail/CVE-2024-35789){: external}, [CVE-2024-35835](https://nvd.nist.gov/vuln/detail/CVE-2024-35835){: external}, [CVE-2024-35838](https://nvd.nist.gov/vuln/detail/CVE-2024-35838){: external}, [CVE-2024-35845](https://nvd.nist.gov/vuln/detail/CVE-2024-35845){: external}, [CVE-2024-35852](https://nvd.nist.gov/vuln/detail/CVE-2024-35852){: external}, [CVE-2024-35853](https://nvd.nist.gov/vuln/detail/CVE-2024-35853){: external}, [CVE-2024-35854](https://nvd.nist.gov/vuln/detail/CVE-2024-35854){: external}, [CVE-2024-35855](https://nvd.nist.gov/vuln/detail/CVE-2024-35855){: external}, [CVE-2024-35888](https://nvd.nist.gov/vuln/detail/CVE-2024-35888){: external}, [CVE-2024-35890](https://nvd.nist.gov/vuln/detail/CVE-2024-35890){: external}, [CVE-2024-35958](https://nvd.nist.gov/vuln/detail/CVE-2024-35958){: external}, [CVE-2024-35959](https://nvd.nist.gov/vuln/detail/CVE-2024-35959){: external}, [CVE-2024-35960](https://nvd.nist.gov/vuln/detail/CVE-2024-35960){: external}, [CVE-2024-36004](https://nvd.nist.gov/vuln/detail/CVE-2024-36004){: external}, [CVE-2024-36007](https://nvd.nist.gov/vuln/detail/CVE-2024-36007){: external}, [RHSA-2024:4256](https://access.redhat.com/errata/RHSA-2024:4256){: external}, [CVE-2022-48624](https://nvd.nist.gov/vuln/detail/CVE-2022-48624){: external}, [CVE-2024-32487](https://nvd.nist.gov/vuln/detail/CVE-2024-32487){: external}, [RHSA-2024:4249](https://access.redhat.com/errata/RHSA-2024:4249){: external}, [CVE-2024-25629](https://nvd.nist.gov/vuln/detail/CVE-2024-25629){: external}, [RHSA-2024:4264](https://access.redhat.com/errata/RHSA-2024:4264){: external}, [CVE-2023-2953](https://nvd.nist.gov/vuln/detail/CVE-2023-2953){: external}, [RHSA-2024:3043](https://access.redhat.com/errata/RHSA-2024:3043){: external}, [CVE-2024-0690](https://nvd.nist.gov/vuln/detail/CVE-2024-0690){: external}, [RHSA-2024:4262](https://access.redhat.com/errata/RHSA-2024:4262){: external}, [CVE-2023-31346](https://nvd.nist.gov/vuln/detail/CVE-2023-31346){: external}, [RHSA-2024:4252](https://access.redhat.com/errata/RHSA-2024:4252){: external}, [CVE-2024-28182](https://nvd.nist.gov/vuln/detail/CVE-2024-28182){: external}, [RHSA-2024:4260](https://access.redhat.com/errata/RHSA-2024:4260){: external}, [CVE-2024-3651](https://nvd.nist.gov/vuln/detail/CVE-2024-3651){: external}, [RHSA-2024:4231](https://access.redhat.com/errata/RHSA-2024:4231){: external}, [CVE-2024-34064](https://nvd.nist.gov/vuln/detail/CVE-2024-34064){: external}. |
 | HAProxy | e77d4ca | c91c765 | Security fixes for [CVE-2024-28182](https://nvd.nist.gov/vuln/detail/CVE-2023-2953){: external},[CVE-2024-25062](https://nvd.nist.gov/vuln/detail/CVE-2024-28182){: external}. |
 {: caption="Changes since version 4.15.19_1543_openshift" caption-side="bottom"}
+
+
+### Master fix pack 4.15.18_1545_openshift, released 15 July 2024
+{: #41518_1545_openshift_M}
+
+| Component | Previous | Current | Description |
+| --- | --- | --- | --- |
+| etcd | v3.5.13 | v3.5.14 | See the [etcd release notes](https://github.com/etcd-io/etcd/releases/v3.5.14). |
+| IBM Cloud Controller Manager | v1.28.10-5 | v1.28.11-5 | New version contains updates and security fixes. |
+| Load balancer and load balancer monitor for IBM Cloud Provider | 2933 | 2967 | New version contains updates and security fixes. |
+| Red Hat OpenShift on IBM Cloud | 4.15.17 | 4.15.18 | See the [Red Hat OpenShift on IBM Cloud release notes](https://docs.openshift.com/container-platform/4.15/release_notes/ocp-4-15-release-notes.html#ocp-4-15-18) |
+| Red Hat OpenShift on IBM Cloud Control Plane Operator, Metrics Server, and toolkit | 4.15.0+20240603 | 4.15.0+20240709 | See the [Red Hat OpenShift on IBM Cloud toolkit release notes](https://github.com/openshift/ibm-roks-toolkit/releases/tag/v4.15.0+20240709). |
+{: caption="Changes since version 4.15.17_1541_openshift" caption-side="bottom"}
 
 
 ### Worker node fix pack 4.15.19_1543_openshift, released 09 July 2024

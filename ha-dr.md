@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2025, 2025
-lastupdated: "2025-02-21"
+lastupdated: "2025-02-28"
 
 
 keywords: high availability, disaster recover, HA, DR, responsibilities
@@ -70,7 +70,7 @@ Review the features available to you to provide high availability for your apps 
 | [Replica sets](/docs/openshift?topic=openshift-app#replicaset) | To increase the availability of your app, you can specify a replica set in your deployment. If one app instance goes down, Kubernetes automatically spins up a new instance of your app to maintain the specified number of app instances. |
 | Multizone load balancing (Classic) | When you create a multizone classic cluster, a multizone load balancer is automatically created in each zone that your cluster resides in to handle all incoming requests to your apps and load balance requests among application load balancers (ALBs) in your cluster's zones. It also enables health checks for the public Ingress IP addresses. |
 | VPC load balancing (VPC)| When you create a VPC cluster, a VPC load balancer is automatically created for you to handle all incoming requests to your apps and load balance requests among application load balancers (ALBs) in your cluster's zones. It also enables health checks for the public Ingress IP addresses.
-| [Cluster autoscaler](/docs/openshift?topic=openshift-cluster-scaling-classic-vpc&interface=ui) | The cluster autoscaler addon automatically scales the worker pools in your cluster to increase or decrease the number of worker nodes in the worker pool based on the sizing needs of your scheduled workloads. |
+| [Cluster autoscaler](/docs/openshift?topic=openshift-cluster-scaling-classic-vpc&interface=ui) | The cluster autoscaler add-on automatically scales the worker pools in your cluster to increase or decrease the number of worker nodes in the worker pool based on the sizing needs of your scheduled workloads. |
 {: caption="HA features for IBM Cloud Kubernetes Service" caption-side="bottom"}
 
 ## Disaster recovery features
@@ -78,19 +78,19 @@ Review the features available to you to provide high availability for your apps 
 
 The general strategy for disaster recovery is to configure storage and backups of your data with solutions such as Portworx.
 
-Kubernetes Serivce supports the following disaster recovery features:
+Kubernetes Service supports the following disaster recovery features:
 
 | Feature | Description |
 |---------| ----------- |
 | [Portworx](/docs/openshift?topic=openshift-storage_portworx_recovery) | A third-party, highly available software-defined storage solution that you can use to manage local persistent storage for your containerized databases and other stateful apps, or to share data between pods across multiple zones. Review the [prerequisites](https://docs.portworx.com/portworx-enterprise/platform/prerequisites){: external}  |
 | [OpenShift Data Foundation (ODF) Regional Disaster Recovery](/docs/openshift?topic=openshift-openshift_odf_rdr_roks) | A disaster recovery solution that provides an automated "one-click" recovery in the event of a regional disaster. Applications are automatically redeployed to a designated OpenShift Container Platform with an ODF cluster that is available in another region. |
 | [Cloud Object Storage (COS)](/docs/cloud-object-storage) | A persistent, highly available storage option that mounts to your apps, available as a plug-in. Review the [limitations](/docs/openshift?topic=openshift-storage-cos-understand#cos_limitations).|
-| [Autorecovery](/docs/openshift?topic=openshift-health-monitor#autorecovery) | The Autorecovery system uses various checks to query worker node health status. If Autorecovery detects an unhealthy worker node based on the configured checks, Autorecovery triggers a corrective action like rebooting a VPC worker node or reloading the operating system in a classic worker node.|
+| [Autorecovery](/docs/containers?topic=containers-health-monitor#autorecovery) | The Autorecovery system uses various checks to query worker node health status. If Autorecovery detects an unhealthy worker node based on the configured checks, Autorecovery triggers a corrective action like rebooting a VPC worker node or reloading the operating system in a classic worker node.|
 | [Data portability with Velero](/docs/openshift?topic=openshift-data-portability&q=velero&tags=containers#export-velero) | A third-party option for exporting data from your cluster to an IBM COS instance or another s3 provider. | Requires an IBM COS instance and bucket. |
 | [Data portability using the `kubectl` CLI](/docs/openshift?topic=openshift-data-portability&q=velero&tags=containers#export-procedure-kubectl) | Export data by using the `kubectl` CLI. |
 {: caption="DR features for IBM Cloud Kubernetes Service" caption-side="bottom"}
 
-Review [additional options for exporting data](/docs/openshift?topic=openshift-data-portability#data-other), such as rclone or OADP.
+Review [additional options for exporting data](/docs/openshift?topic=openshift-data-portability#data-other), such as `rclone` or OADP.
 {: note}
 
 
@@ -151,9 +151,9 @@ Change management includes tasks such as upgrades, configuration changes, and de
 
 - Use the API, CLI, or console tools to apply the provided worker node updates that include operating system patches, or to request that worker nodes are rebooted, reloaded, or replaced.
 
-- Use the API, CLI, or console tools to apply the provided major and minor [Kubernetes master updates](/docs/openshift?topic=openshift-cs_versions#cs_versions_available) and major, minor, and [patch worker node updates](/docs/openshift?topic=openshift-cs_versions#update_types). Make sure to review the information and requirements for each version update to prevent issues or downtime. 
+- Use the API, CLI, or console tools to apply the provided major and minor [Kubernetes master updates](/docs/containers?topic=containers-cs_versions#cs_versions_available) and major, minor, and [patch worker node updates](/docs/containers?topic=containers-cs_versions#update_types). Make sure to review the information and requirements for each version update to prevent issues or downtime. 
 
-- Make sure your cluster worker nodes run the latest [Ubuntu](/docs/openshift?topic=openshift-ubuntu-migrate) version. 
+- Make sure your cluster worker nodes run the latest [Ubuntu](/docs/containers?topic=containers-ubuntu-migrate) version. 
 
 - Make sure to understand the [release schedules](/docs/openshift?topic=openshift-supported-cluster-addon-versions) for any add-ons you run in your cluster. 
 

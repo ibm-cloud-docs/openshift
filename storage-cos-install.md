@@ -1,8 +1,8 @@
 ---
 
 copyright:
-  years: 2014, 2024
-lastupdated: "2024-10-31"
+  years: 2014, 2025
+lastupdated: "2025-02-28"
 
 
 keywords: kubernetes, openshift
@@ -481,7 +481,7 @@ To remove the `ibmc` Helm plug-in and the `ibm-object-storage-plugin`:
     :   The size of a data chunk that is read from or written to {{site.data.keyword.cos_full_notm}} in megabytes. Storage classes with `perf` in their name are set up with 52 megabytes. Storage classes without `perf` in their name use 16 megabyte chunks. For example, if you want to read a file that is `1GB`, the plug-in reads this file in multiple 16 or 52-megabyte chunks.
     
     `ibm.io/curl-debug`
-    :   Enable the logging of requests that are sent to the {{site.data.keyword.cos_full_notm}} service instance. If enabled, logs are sent to `syslog` and you can [forward the logs to an external logging server](/docs/containers?topic=containers-health#logging). By default, all storage classes are set to `false` to disable this logging feature.
+    :   Enable the logging of requests that are sent to the {{site.data.keyword.cos_full_notm}} service instance. If enabled, logs are sent to `syslog` and you can [forward the logs to an external logging server](/docs/containers?topic=containers-health). By default, all storage classes are set to `false` to disable this logging feature.
     
     `ibm.io/debug-level`
     :   The logging level that is set by the {{site.data.keyword.cos_full_notm}} plug-in. All storage classes are set up with the `WARN` logging level.

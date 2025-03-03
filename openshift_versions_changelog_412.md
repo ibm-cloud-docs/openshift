@@ -40,6 +40,7 @@ Master patch updates are applied automatically. Worker node patch updates can be
 
 
 
+
 ### Worker node fix pack 4.12.73_1627_openshift, released 24 February 2025
 {: #cl-boms-41273_1627_openshift_W}
 
@@ -53,7 +54,6 @@ The following table shows the components included in the worker node fix pack 4.
 |HAProxy|1d72cc8c7d02da6ba0340191fa8d9a86550e5090|Resolves the following CVEs: [CVE-2020-11023](https://nvd.nist.gov/vuln/detail/CVE-2020-11023){: external}, and [CVE-2022-49043](https://nvd.nist.gov/vuln/detail/CVE-2022-49043){: external}.|
 {: caption="4.12.73_1627_openshift fix pack." caption-side="bottom"}
 {: #cl-boms-41273_1627_openshift_W-component-table}
-
 
 
 
@@ -76,6 +76,7 @@ The following table shows the changes that are in the master fix pack 4.12.71_16
 {: caption="Changes since version 4.12.70_1623_openshift" caption-side="bottom"}
 
 
+
 ### Worker node fix pack 4.12.72_1626_openshift, released 11 February 2025
 {: #cl-boms-41272_1626_openshift_W}
 
@@ -86,9 +87,11 @@ The following table shows the components included in the worker node fix pack 4.
 | ---- | ---- | ---- |
 |RHEL_8|4.18.0-553.40.1.el8_10|Resolves the following CVEs: [RHSA-2025:0711](https://access.redhat.com/errata/RHSA-2025:0711){: external}, [CVE-2024-56326](https://nvd.nist.gov/vuln/detail/CVE-2024-56326){: external}, [RHSA-2024:3043](https://access.redhat.com/errata/RHSA-2024:3043){: external}, [CVE-2024-0690](https://nvd.nist.gov/vuln/detail/CVE-2024-0690){: external}, [RHSA-2025:0733](https://access.redhat.com/errata/RHSA-2025:0733){: external}, [CVE-2019-12900](https://nvd.nist.gov/vuln/detail/CVE-2019-12900){: external}, [RHSA-2025:1068](https://access.redhat.com/errata/RHSA-2025:1068){: external}, [CVE-2024-26935](https://nvd.nist.gov/vuln/detail/CVE-2024-26935){: external}, and [CVE-2024-50275](https://nvd.nist.gov/vuln/detail/CVE-2024-50275){: external}.|
 |OpenShift|4.12.72|For more information, see the [change logs](https://docs.openshift.com/container-platform/4.12/release_notes/ocp-4-12-release-notes.html#ocp-4-12-72_release-notes).|
-|HAProxy|03d1ee01e9241d0e5ec93b9eb8986feb2771a01a| [CVE-2019-12900](https://nvd.nist.gov/vuln/detail/CVE-2019-12900){: external} |
+|HAProxy|03d1ee01e9241d0e5ec93b9eb8986feb2771a01a|Resolves the following CVEs: [CVE-2019-12900](https://nvd.nist.gov/vuln/detail/CVE-2019-12900){: external}.|
 {: caption="4.12.72_1626_openshift fix pack." caption-side="bottom"}
 {: #cl-boms-41272_1626_openshift_W-component-table}
+
+
 
 
 ### Worker node fix pack 4.12.71_1624_openshift, released 29 January 2025
@@ -104,6 +107,7 @@ The following table shows the components included in the worker node fix pack 4.
 |HAProxy|14daa781a66ca5ed5754656ce53c3cca4af580b5|N/A|
 {: caption="4.12.71_1624_openshift fix pack." caption-side="bottom"}
 {: #cl-boms-41271_1624_openshift_W-component-table}
+
 
 
 ### Master fix pack 4.12.70_1623_openshift, released 22 January 2025
@@ -127,6 +131,7 @@ The following table shows the changes that are in the master fix pack 4.12.70_16
 {: caption="Changes since version 4.12.69_1618_openshift" caption-side="bottom"}
 
 
+
 ### Worker node fix pack 4.12.71_1622_openshift, released 13 January 2025
 {: #cl-boms-41271_1622_openshift_W}
 
@@ -138,8 +143,9 @@ The following table shows the components included in the worker node fix pack 4.
 |RHEL_8|4.18.0-553.34.1.el8_10|Resolves the following CVEs: [RHSA-2025:0065](https://access.redhat.com/errata/RHSA-2025:0065){: external}, [CVE-2024-53088](https://nvd.nist.gov/vuln/detail/CVE-2024-53088){: external}, [CVE-2024-53122](https://nvd.nist.gov/vuln/detail/CVE-2024-53122){: external}, [RHSA-2024:3043](https://access.redhat.com/errata/RHSA-2024:3043){: external}, [CVE-2024-0690](https://nvd.nist.gov/vuln/detail/CVE-2024-0690){: external}, [RHSA-2025:0012](https://access.redhat.com/errata/RHSA-2025:0012){: external}, [CVE-2024-35195](https://nvd.nist.gov/vuln/detail/CVE-2024-35195){: external}, [RHSA-2024:11161](https://access.redhat.com/errata/RHSA-2024:11161){: external}, and [CVE-2024-52337](https://nvd.nist.gov/vuln/detail/CVE-2024-52337){: external}.|
 |OpenShift|4.12.71|For more information, see the [change logs](https://docs.openshift.com/container-platform/4.12/release_notes/ocp-4-12-release-notes.html#ocp-4-12-71_release-notes).|
 |HAProxy|14daa781a66ca5ed5754656ce53c3cca4af580b5|N/A|
-{: caption="Components in version 4.12.71_1622_openshift." caption-side="bottom"}
+{: caption="4.12.71_1622_openshift fix pack." caption-side="bottom"}
 {: #cl-boms-41271_1622_openshift_W-component-table}
+
 
 
 ### Worker node fix pack 4.12.70_1621_openshift, released 30 December 2024

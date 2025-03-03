@@ -2,7 +2,7 @@
 
 copyright:
   years: 2025, 2025
-lastupdated: "2025-02-07"
+lastupdated: "2025-02-28"
 
 
 keywords: openshift, console, web, connect, private
@@ -140,7 +140,7 @@ Follow these steps to check the connections described in the [connection flow](#
 
     2. If the connection is not successful, make the following checks and resolve any issues you find. 
         1. Check that the hostname portion of the subdomain is resolved via DNS. Use the `dig console-openshift-console.${CONSOLE_LOAD_BALANCER}` command. 
-        2. Verify that there is a route through your VPN to this load balancer subdomain. Verify that the route includes all of the IPs or subnets that the load balancer uses. The output for the `dig console-openshift-console.${CONSOLE_LOAD_BALANCER}` command includes the current load balancer IPs and subnets, but note that these can change as the load balancer scales up or down. 
+        2. Verify that there is a route through your VPN to this load balancer subdomain. Verify that the route includes all the IPs or subnets that the load balancer uses. The output for the `dig console-openshift-console.${CONSOLE_LOAD_BALANCER}` command includes the current load balancer IPs and subnets, but note that these can change as the load balancer scales up or down. 
         3. If you have modified any security groups, ACLs, or custom VPC routes that are applied to the load balancer, check if any changes or rules you applied prevent the connection. If you have not modified any of these components and they use the default values, you can skip this step. 
         4. Check if any security groups, ACLs, or custom VPC routes applied to the VPN prevent the traffic between the VPN and the load balancer. You can test this by temporarily allowing all inbound and outbound traffic through the VPN security group and ACL and then checking if this resolves the issue. If so, make the necessary changes to your security groups, ACLs, or custom routes to allow the traffic.
         
