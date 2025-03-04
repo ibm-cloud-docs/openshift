@@ -5113,6 +5113,8 @@ subcollection: openshift
 
 * [Adding IBM Cloud services to clusters](/docs/openshift?topic=openshift-service-binding#bind-services)
 
+* [Manually adding service credentials to your cluster](/docs/openshift?topic=openshift-service-binding#add_services_manual)
+
 * [Accessing service credentials from your apps](/docs/openshift?topic=openshift-service-binding#adding_app)
 
     * [Mounting the secret as a volume to your pod](/docs/openshift?topic=openshift-service-binding#mount_secret)

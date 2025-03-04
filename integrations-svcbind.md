@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2025
-lastupdated: "2025-02-04"
+lastupdated: "2025-03-04"
 
 
 keywords: kubernetes, openshift
@@ -183,6 +183,34 @@ To add an {{site.data.keyword.cloud_notm}} service to your cluster:
     3. Optional: Compare the service credentials that you decoded in the previous step with the service credentials that you find for your service instance in the {{site.data.keyword.cloud_notm}} dashboard.
 
 6. Now that your service is bound to your cluster, you must configure your app to [access the service credentials in the Kubernetes secret](#adding_app).
+
+## Manually adding service credentials to your cluster
+{: #add_services_manual}
+
+As an alternative to the `service bind` command, you can also manually add service credentials to your cluster by completing the following steps.
+
+1. Get the instance name of the service you want to add to your cluster. 
+    ```sh
+    ibmcloud resource service-instances
+    ```
+    {: pre}
+
+
+1. Create a service key.
+
+    ```sh
+    ibmcloud resource service-key-create NAME [ROLE] --instance-name SERVICE_INSTANCE
+    ```
+    {: pre}
+
+
+1. Copy the `Credentials` section and save it to an extensionless file called `creds`.
+
+1. Create a Kubernetes secret that uses the credentials file you created.
+    ```sh
+    kubectl create secret generic my-secret --from-file=path/to/creds
+    ```
+    {: pre}
 
 ## Accessing service credentials from your apps
 {: #adding_app}
