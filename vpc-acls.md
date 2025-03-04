@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2025
-lastupdated: "2025-02-13"
+lastupdated: "2025-03-04"
 
 
 keywords: openshift, firewall, acl, acls, access control list, rules, security group
@@ -97,7 +97,7 @@ Looking for a simpler security setup? Leave the default ACL for your VPC as-is, 
     | Multizone clusters: Allow worker nodes in one subnet to communicate with the worker nodes in all other subnets within the cluster. Create one rule for each subnet that you want to connect to.  | Allow | ALL | Any | N/A | Other subnet's CIDR | N/A | After 2 |
     | Allow incoming traffic requests to apps that run on your worker nodes. | Allow | TCP | Any | `30000 - 32767` | Any | Any | After 3 |
     | To expose apps by using load balancers or Ingress, allow traffic through VPC load balancers.  | Allow | TCP | Any | `443` | Any | Any | After 4 |
-    | `**` For clusters with public and private service endpoints, allow {{site.data.keyword.redhat_openshift_notm}} Console pods to contact the master | Allow |  ALL |  Master IPs | N/A | Any | N/A | After 5 |
+    | `**` For clusters with public and private service endpoints, allow {{site.data.keyword.redhat_openshift_notm}} Console pods to contact the master | Allow |  ALL |  Any | N/A | Master IPs | N/A | After 5 |
     | `*` Allow access from the {{site.data.keyword.redhat_openshift_notm}} control plane IP addresses that are used to health check and report the overall status of your Ingress components. Create one rule for each [control plane CIDR for the region where your cluster is located](https://github.com/IBM-Cloud/kube-samples/tree/master/control-plane-ips){: external}. | Allow | TCP | Any | `80` | Each [control plane CIDR for the region where your cluster is located](https://github.com/IBM-Cloud/kube-samples/tree/master/control-plane-ips){: external}. | Any | After 6 |
     | Deny all other traffic that does not match the previous rules.  | Deny | ALL | Any | N/A | Any | N/A | Set to bottom |
     {: caption="Required outbound rules" caption-side="bottom"}
