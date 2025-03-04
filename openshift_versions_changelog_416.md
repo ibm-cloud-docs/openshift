@@ -3,7 +3,7 @@
 copyright:
   years: 2024, 2025
 
-lastupdated: "2025-02-28"
+lastupdated: "2025-03-04"
 
 
 keywords: change log, version history, 4.16_openshift
@@ -39,8 +39,6 @@ Master patch updates are applied automatically. Worker node patch updates can be
 {: #416_components}
 
 
-
-
 ### Worker node fix pack 4.16.35_1558_openshift, released 24 February 2025
 {: #cl-boms-41635_1558_openshift_W}
 
@@ -55,8 +53,6 @@ The following table shows the components included in the worker node fix pack 4.
 |HAProxy|1d72cc8c7d02da6ba0340191fa8d9a86550e5090|Resolves the following CVEs: [CVE-2020-11023](https://nvd.nist.gov/vuln/detail/CVE-2020-11023){: external}, and [CVE-2022-49043](https://nvd.nist.gov/vuln/detail/CVE-2022-49043){: external}.|
 {: caption="4.16.35_1558_openshift fix pack." caption-side="bottom"}
 {: #cl-boms-41635_1558_openshift_W-component-table}
-
-
 
 ### Master fix pack 4.16.32_1557_openshift, released 19 February 2025
 {: #41632_1557_openshift_M}
@@ -75,8 +71,6 @@ The following table shows the changes that are in the master fix pack 4.16.32_15
 | {{site.data.keyword.openshiftlong_notm}}. | 4.16.28 | 4.16.32 | See the [{{site.data.keyword.openshiftlong_notm}} release notes](https://docs.openshift.com/container-platform/4.16/release_notes/ocp-4-16-release-notes.html#ocp-4-16-32){: external}. |
 {: caption="Changes since version 4.16.28_1550_openshift" caption-side="bottom"}
 
-
-
 ### Worker node fix pack 4.16.32_1556_openshift, released 11 February 2025
 {: #cl-boms-41632_1556_openshift_W}
 
@@ -92,9 +86,6 @@ The following table shows the components included in the worker node fix pack 4.
 {: caption="4.16.32_1556_openshift fix pack." caption-side="bottom"}
 {: #cl-boms-41632_1556_openshift_W-component-table}
 
-
-
-
 ### Worker node fix pack 4.16.30_1554_openshift, released 29 January 2025
 {: #cl-boms-41630_1554_openshift_W}
 
@@ -109,8 +100,6 @@ The following table shows the components included in the worker node fix pack 4.
 |HAProxy|14daa781a66ca5ed5754656ce53c3cca4af580b5|N/A|
 {: caption="4.16.30_1554_openshift fix pack." caption-side="bottom"}
 {: #cl-boms-41630_1554_openshift_W-component-table}
-
-
 
 ### Master fix pack 4.16.28_1550_openshift, released 22 January 2025
 {: #41628_1550_openshift_M}
@@ -147,7 +136,6 @@ The following table shows the components included in the worker node fix pack 4.
 |HAProxy|14daa781a66ca5ed5754656ce53c3cca4af580b5|N/A|
 {: caption="4.16.29_1549_openshift fix pack." caption-side="bottom"}
 {: #cl-boms-41629_1549_openshift_W-component-table}
-
 
 
 ### Worker node fix pack 4.16.27_1548_openshift, released 30 December 2024

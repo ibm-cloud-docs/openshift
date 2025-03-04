@@ -3,7 +3,7 @@
 copyright:
   years: 2024, 2025
 
-lastupdated: "2025-02-28"
+lastupdated: "2025-03-04"
 
 
 keywords: change log, version history, 4.13_openshift
@@ -39,8 +39,6 @@ Master patch updates are applied automatically. Worker node patch updates can be
 {: #413_components}
 
 
-
-
 ### Worker node fix pack 4.13.55_1610_openshift, released 24 February 2025
 {: #cl-boms-41355_1610_openshift_W}
 
@@ -54,8 +52,6 @@ The following table shows the components included in the worker node fix pack 4.
 |HAProxy|1d72cc8c7d02da6ba0340191fa8d9a86550e5090|Resolves the following CVEs: [CVE-2020-11023](https://nvd.nist.gov/vuln/detail/CVE-2020-11023){: external}, and [CVE-2022-49043](https://nvd.nist.gov/vuln/detail/CVE-2022-49043){: external}.|
 {: caption="4.13.55_1610_openshift fix pack." caption-side="bottom"}
 {: #cl-boms-41355_1610_openshift_W-component-table}
-
-
 
 ### Master fix pack 4.13.54_1609_openshift, released 19 February 2025
 {: #41354_1609_openshift_M}
@@ -74,8 +70,6 @@ The following table shows the changes that are in the master fix pack 4.13.54_16
 | OpenVPN Operator image | v1.5.25 | v1.5.26 | New version contains updates and security fixes. |
 {: caption="Changes since version 4.13.54_1605_openshift" caption-side="bottom"}
 
-
-
 ### Worker node fix pack 4.13.54_1608_openshift, released 11 February 2025
 {: #cl-boms-41354_1608_openshift_W}
 
@@ -90,9 +84,6 @@ The following table shows the components included in the worker node fix pack 4.
 {: caption="4.13.54_1608_openshift fix pack." caption-side="bottom"}
 {: #cl-boms-41354_1608_openshift_W-component-table}
 
-
-
-
 ### Worker node fix pack 4.13.54_1606_openshift, released 29 January 2025
 {: #cl-boms-41354_1606_openshift_W}
 
@@ -106,8 +97,6 @@ The following table shows the components included in the worker node fix pack 4.
 |HAProxy|14daa781a66ca5ed5754656ce53c3cca4af580b5|N/A|
 {: caption="4.13.54_1606_openshift fix pack." caption-side="bottom"}
 {: #cl-boms-41354_1606_openshift_W-component-table}
-
-
 
 ### Master fix pack 4.13.54_1605_openshift, released 22 January 2025
 {: #41354_1605_openshift_M}
@@ -144,7 +133,6 @@ The following table shows the components included in the worker node fix pack 4.
 |HAProxy|14daa781a66ca5ed5754656ce53c3cca4af580b5|N/A|
 {: caption="4.13.54_1604_openshift fix pack." caption-side="bottom"}
 {: #cl-boms-41354_1604_openshift_W-component-table}
-
 
 
 ### Worker node fix pack 4.13.54_1603_openshift, released 30 December 2024

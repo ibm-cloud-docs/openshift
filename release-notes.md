@@ -30,6 +30,15 @@ Looking for {{site.data.keyword.cloud_notm}} status, platform announcements, sec
 
 
 
+### 05 March 2025
+{: #openshift-05march25}
+{: release-note}
+
+Openshift AI cluster add-on patch updates.
+:   For more information, see the [change log](/docs/openshift?topic=openshift-openshift-ai-change-log).
+
+
+
 
 ## February 2025
 {: #openshift-feb25}
