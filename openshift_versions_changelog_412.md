@@ -3,7 +3,7 @@
 copyright:
   years: 2024, 2025
 
-lastupdated: "2025-02-28"
+lastupdated: "2025-03-04"
 
 
 keywords: change log, version history, 4.12_openshift
@@ -41,6 +41,7 @@ Master patch updates are applied automatically. Worker node patch updates can be
 
 
 
+
 ### Worker node fix pack 4.12.73_1627_openshift, released 24 February 2025
 {: #cl-boms-41273_1627_openshift_W}
 
@@ -74,6 +75,7 @@ The following table shows the changes that are in the master fix pack 4.12.71_16
 | OpenVPN Operator image | v1.5.25 | v1.5.26 | New version contains updates and security fixes. |
 | {{site.data.keyword.openshiftlong_notm}}. | 4.12.70 | 4.12.71 | See the [{{site.data.keyword.openshiftlong_notm}} release notes](https://docs.openshift.com/container-platform/4.12/release_notes/ocp-4-12-release-notes.html#ocp-4-12-71){: external}. |
 {: caption="Changes since version 4.12.70_1623_openshift" caption-side="bottom"}
+
 
 
 
@@ -129,6 +131,7 @@ The following table shows the changes that are in the master fix pack 4.12.70_16
 | {{site.data.keyword.openshiftlong_notm}}. | 4.12.69 | 4.12.70 | See the [{{site.data.keyword.openshiftlong_notm}} release notes](https://docs.openshift.com/container-platform/4.12/release_notes/ocp-4-12-release-notes.html#ocp-4-12-70){: external}. |
 | {{site.data.keyword.openshiftlong_notm}} Control Plane Operator, Metrics Server, and toolkit | 4.12.0+20241107 | 4.12.0+20250102 | See the [{{site.data.keyword.openshiftlong_notm}} toolkit release notes](https://github.com/openshift/ibm-roks-toolkit/releases/tag/v4.12.0+20250102){: external}. |
 {: caption="Changes since version 4.12.69_1618_openshift" caption-side="bottom"}
+
 
 
 

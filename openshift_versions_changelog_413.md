@@ -3,7 +3,7 @@
 copyright:
   years: 2024, 2025
 
-lastupdated: "2025-02-28"
+lastupdated: "2025-03-04"
 
 
 keywords: change log, version history, 4.13_openshift
@@ -41,6 +41,7 @@ Master patch updates are applied automatically. Worker node patch updates can be
 
 
 
+
 ### Worker node fix pack 4.13.55_1610_openshift, released 24 February 2025
 {: #cl-boms-41355_1610_openshift_W}
 
@@ -73,6 +74,7 @@ The following table shows the changes that are in the master fix pack 4.13.54_16
 | Load balancer and load balancer monitor for {{site.data.keyword.cloud_notm}} Provider | 3079 | 3178 | New version contains updates and security fixes. |
 | OpenVPN Operator image | v1.5.25 | v1.5.26 | New version contains updates and security fixes. |
 {: caption="Changes since version 4.13.54_1605_openshift" caption-side="bottom"}
+
 
 
 
@@ -128,6 +130,7 @@ The following table shows the changes that are in the master fix pack 4.13.54_16
 | {{site.data.keyword.openshiftlong_notm}}. | 4.13.53 | 4.13.54 | See the [{{site.data.keyword.openshiftlong_notm}} release notes](https://docs.openshift.com/container-platform/4.13/release_notes/ocp-4-13-release-notes.html#ocp-4-13-54){: external}. |
 | {{site.data.keyword.openshiftlong_notm}} Control Plane Operator, Metrics Server, and toolkit | 4.13.0+20241107 | 4.13.0+20250102 | See the [{{site.data.keyword.openshiftlong_notm}} toolkit release notes](https://github.com/openshift/ibm-roks-toolkit/releases/tag/v4.13.0+20250102){: external}. |
 {: caption="Changes since version 4.13.53_1600_openshift" caption-side="bottom"}
+
 
 
 

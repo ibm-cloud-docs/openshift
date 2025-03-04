@@ -3,7 +3,7 @@
 copyright:
   years: 2024, 2025
 
-lastupdated: "2025-02-28"
+lastupdated: "2025-03-04"
 
 
 keywords: change log, version history, 4.14_openshift
@@ -37,6 +37,7 @@ Master patch updates are applied automatically. Worker node patch updates can be
 
 ## Version 4.14
 {: #414_components}
+
 
 
 
@@ -76,6 +77,7 @@ The following table shows the changes that are in the master fix pack 4.14.45_15
 | {{site.data.keyword.openshiftlong_notm}}. | 4.14.43 | 4.14.45 | See the [{{site.data.keyword.openshiftlong_notm}} release notes](https://docs.openshift.com/container-platform/4.14/release_notes/ocp-4-14-release-notes.html#ocp-4-14-45){: external}. |
 | Tigera Operator | v1.32.10 | v1.34.5 | See the [Tigera Operator release notes](https://github.com/tigera/operator/releases/tag/v1.34.5){: external}. |
 {: caption="Changes since version 4.14.43_1595_openshift" caption-side="bottom"}
+
 
 
 
@@ -131,6 +133,7 @@ The following table shows the changes that are in the master fix pack 4.14.43_15
 | {{site.data.keyword.openshiftlong_notm}}. | 4.14.40 | 4.14.43 | See the [{{site.data.keyword.openshiftlong_notm}} release notes](https://docs.openshift.com/container-platform/4.14/release_notes/ocp-4-14-release-notes.html#ocp-4-14-43){: external}. |
 | {{site.data.keyword.openshiftlong_notm}} Control Plane Operator, Metrics Server, and toolkit | 4.14.0+20241107 | 4.14.0+20250102 | See the [{{site.data.keyword.openshiftlong_notm}} toolkit release notes](https://github.com/openshift/ibm-roks-toolkit/releases/tag/v4.14.0+20250102){: external}. |
 {: caption="Changes since version 4.14.40_1590_openshift" caption-side="bottom"}
+
 
 
 

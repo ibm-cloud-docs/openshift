@@ -3,7 +3,7 @@
 copyright:
   years: 2024, 2025
 
-lastupdated: "2025-02-28"
+lastupdated: "2025-03-04"
 
 
 keywords: change log, version history, 4.16_openshift
@@ -41,6 +41,7 @@ Master patch updates are applied automatically. Worker node patch updates can be
 
 
 
+
 ### Worker node fix pack 4.16.35_1558_openshift, released 24 February 2025
 {: #cl-boms-41635_1558_openshift_W}
 
@@ -74,6 +75,7 @@ The following table shows the changes that are in the master fix pack 4.16.32_15
 | Load balancer and load balancer monitor for {{site.data.keyword.cloud_notm}} Provider | 3079 | 3178 | New version contains updates and security fixes. |
 | {{site.data.keyword.openshiftlong_notm}}. | 4.16.28 | 4.16.32 | See the [{{site.data.keyword.openshiftlong_notm}} release notes](https://docs.openshift.com/container-platform/4.16/release_notes/ocp-4-16-release-notes.html#ocp-4-16-32){: external}. |
 {: caption="Changes since version 4.16.28_1550_openshift" caption-side="bottom"}
+
 
 
 
@@ -130,6 +132,7 @@ The following table shows the changes that are in the master fix pack 4.16.28_15
 | {{site.data.keyword.openshiftlong_notm}}. | 4.16.23 | 4.16.28 | See the [{{site.data.keyword.openshiftlong_notm}} release notes](https://docs.openshift.com/container-platform/4.16/release_notes/ocp-4-16-release-notes.html#ocp-4-16-28){: external}. |
 | {{site.data.keyword.openshiftlong_notm}} Control Plane Operator, Metrics Server, and toolkit | 4.16.0+20241107 | 4.16.0+20250102 | See the [{{site.data.keyword.openshiftlong_notm}} toolkit release notes](https://github.com/openshift/ibm-roks-toolkit/releases/tag/v4.16.0+20250102){: external}. |
 {: caption="Changes since version 4.16.23_1545_openshift" caption-side="bottom"}
+
 
 
 
