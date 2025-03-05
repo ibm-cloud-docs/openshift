@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2025
-lastupdated: "2025-03-04"
+lastupdated: "2025-03-05"
 
 
 keywords: openshift
@@ -7140,11 +7140,11 @@ subcollection: openshift
 * [{{site.data.keyword.IBM_notm}} Remediations and explanations](/docs/openshift?topic=openshift-benchmarks_412_co#co-benchmark-412-remdiations)
 
 
-## Addons for {{site.data.keyword.openshiftlong_notm}}
-{: #sitemap_addons_for_}
+## Add-ons for {{site.data.keyword.openshiftlong_notm}}
+{: #sitemap_add-ons_for_}
 
 
-[Addons for {{site.data.keyword.openshiftlong_notm}}](/docs/openshift?topic=openshift-addons#addons)
+[Add-ons for {{site.data.keyword.openshiftlong_notm}}](/docs/openshift?topic=openshift-addons#addons)
 
 
 ## Add-on version history

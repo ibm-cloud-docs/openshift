@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2025
-lastupdated: "2025-03-04"
+lastupdated: "2025-03-05"
 
 
 keywords: kubernetes, release notes, openshift, {{site.data.keyword.openshiftlong_notm}}
@@ -35,7 +35,7 @@ Looking for {{site.data.keyword.cloud_notm}} status, platform announcements, sec
 {: release-note}
 
 Openshift AI cluster add-on patch updates.
-:   For more information, see the [change log](/docs/openshift?topic=openshift-openshift-ai-change-log).
+:   For more information, see the [change log](/docs/openshift?topic=openshift-openshift-cl-add-ons-openshift-ai).
 
 
 
@@ -53,7 +53,7 @@ Openshift AI cluster add-on patch updates.
 {: release-note}
 
 New! OpenShift Data Foundation Regional Disaster Recovery on {{site.data.keyword.openshiftlong_notm}} clusters
-:   This feature is now available as a Technical Preview. For more information, see [OpenShift Data Foundation Regional Disaster Recovery on {{site.data.keyword.openshiftlong_notm}} clusters](/docs/openshift?topic=openshift_odf_rdr_roks).
+:   This feature is now available as a Technical Preview. For more information, see [OpenShift Data Foundation Regional Disaster Recovery on {{site.data.keyword.openshiftlong_notm}} clusters](/docs/openshift?topic=openshift-openshift_odf_rdr_roks).
 
 
 
