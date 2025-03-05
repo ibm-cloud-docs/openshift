@@ -2,9 +2,9 @@
 
 copyright: 
   years: 2024, 2025
-lastupdated: "2025-01-29"
+lastupdated: "2025-03-05"
 
-keywords: {{site.data.keyword.openshiftlong_notm}}, license, entitlement, OCP, Cloud Pak
+keywords: license, entitlement, OCP, Cloud Pak, {{site.data.keyword.openshiftlong_notm}}
 
 subcollection: openshift
 

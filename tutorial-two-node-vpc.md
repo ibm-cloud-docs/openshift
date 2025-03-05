@@ -2,7 +2,7 @@
 
 copyright:
   years: 2024, 2025
-lastupdated: "2025-02-28"
+lastupdated: "2025-03-05"
 
 
 keywords: kubernetes
@@ -94,6 +94,6 @@ In this tutorial, you create the following resources. There are optional steps t
 {: step}
 
 1. Navigate to your Schematics workspace.
-1. From the **Actions** dropdown menu, click **Destroy resources**.
+1. From the **Actions** drop-down menu, click **Destroy resources**.
 1. Wait a few minutes while Schematics deletes the resources from your account.
 1. From the **Actions menu**, click **Delete workspace**.

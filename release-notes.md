@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2025
-lastupdated: "2025-03-04"
+lastupdated: "2025-03-05"
 
 
 keywords: kubernetes, release notes, openshift, {{site.data.keyword.openshiftlong_notm}}
@@ -28,14 +28,22 @@ Looking for {{site.data.keyword.cloud_notm}} status, platform announcements, sec
 ## March 2025
 {: #openshift-mar25}
 
-
-
 ### 05 March 2025
 {: #openshift-05march25}
 {: release-note}
 
+
+
+Migrating from the Observability plug-in to {{site.data.keyword.logs_full_notm}}
+:   Support for the Observability plug-in ends on 28 March 2025. Review and complete the migration steps before support ends. For more information, see [Migrating logging and monitoring agents to Cloud Logs](/docs/openshift?topic=openshift-health#openshift_logging)
+
+
+
 Openshift AI cluster add-on patch updates.
-:   For more information, see the [change log](/docs/openshift?topic=openshift-openshift-ai-change-log).
+:   For more information, see the [change log](/docs/openshift?topic=openshift-openshift-cl-add-ons-openshift-ai).
+
+
+
 
 
 
@@ -53,7 +61,7 @@ Openshift AI cluster add-on patch updates.
 {: release-note}
 
 New! OpenShift Data Foundation Regional Disaster Recovery on {{site.data.keyword.openshiftlong_notm}} clusters
-:   This feature is now available as a Technical Preview. For more information, see [OpenShift Data Foundation Regional Disaster Recovery on {{site.data.keyword.openshiftlong_notm}} clusters](/docs/openshift?topic=openshift_odf_rdr_roks).
+:   This feature is now available as a Technical Preview. For more information, see [OpenShift Data Foundation Regional Disaster Recovery on {{site.data.keyword.openshiftlong_notm}} clusters](/docs/openshift?topic=openshift-openshift_odf_rdr_roks).
 
 
 
