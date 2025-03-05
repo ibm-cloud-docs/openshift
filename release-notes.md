@@ -34,9 +34,15 @@ Looking for {{site.data.keyword.cloud_notm}} status, platform announcements, sec
 
 
 
+Migrating from the Observability plug-in to {{site.data.keyword.logs_full_notm}}
+:   Support for the Observability plug-in ends on 28 March 2025. Review and complete the migration steps before support ends. For more information, see [Migrating from the observability plug-in to Cloud Logs](/docs/openshift?topic=openshift-health) and 
+
+
+
+
+
 Openshift AI cluster add-on patch updates.
 :   For more information, see the [change log](/docs/openshift?topic=openshift-openshift-cl-add-ons-openshift-ai).
-
 
 
 

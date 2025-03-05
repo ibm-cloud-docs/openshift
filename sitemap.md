@@ -277,6 +277,8 @@ subcollection: openshift
 
     * [05 March 2025](/docs/openshift?topic=openshift-openshift-relnotes#openshift-05march25)
 
+        * Migrating from the Observability plug-in to {{site.data.keyword.logs_full_notm}}
+
         * Openshift AI cluster add-on patch updates.
 
 * [February 2025](/docs/openshift?topic=openshift-openshift-relnotes#openshift-feb25)
@@ -3556,7 +3558,11 @@ subcollection: openshift
 
 * [Understanding options for logging](/docs/openshift?topic=openshift-health#oc_logmet_options)
 
-* [Forwarding cluster and app logs to {{site.data.keyword.logs_full_notm}}](/docs/openshift?topic=openshift-health#openshift_logging)
+* [Migrating logging and monitoring agents to Cloud Logs](/docs/openshift?topic=openshift-health#openshift_logging)
+
+    * [Reviewing your observability agents](/docs/openshift?topic=openshift-health#ob-review)
+
+    * [Removing the observability plug-in agents](/docs/openshift?topic=openshift-health#ob-remove)
 
 * [Using the cluster logging operator](/docs/openshift?topic=openshift-health#oc_logging_operator)
 
@@ -3570,7 +3576,11 @@ subcollection: openshift
 
     * [Monitoring {{site.data.keyword.openshiftlong}} storage metrics](/docs/openshift?topic=openshift-health-monitor#monitor-metrics)
 
-* [Forwarding cluster and app metrics to {{site.data.keyword.mon_full_notm}}](/docs/openshift?topic=openshift-health-monitor#openshift_monitoring)
+* [Migrating logging and monitoring agents to Cloud Logs](/docs/openshift?topic=openshift-health-monitor#openshift_monitoring)
+
+    * [Reviewing your observability agents](/docs/openshift?topic=openshift-health-monitor#ob-review-mon)
+
+    * [Removing the observability plug-in agents](/docs/openshift?topic=openshift-health-monitor#ob-remove-mon)
 
 * [Enabling remote health reporting](/docs/openshift?topic=openshift-health-monitor#oc_enable_telemetry_reports)
 
