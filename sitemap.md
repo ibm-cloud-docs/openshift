@@ -275,6 +275,12 @@ subcollection: openshift
 
 * [March 2025](/docs/openshift?topic=openshift-openshift-relnotes#openshift-mar25)
 
+    * [10 March 2025](/docs/openshift?topic=openshift-openshift-relnotes#openshift-10mar25)
+
+        * Cluster autoscaler add-on patch updates for {{site.data.keyword.openshiftlong_notm}}.
+
+        * {{site.data.keyword.cos_full_notm}} plug-in updates.
+
     * [05 March 2025](/docs/openshift?topic=openshift-openshift-relnotes#openshift-05march25)
 
         * Migrating from the Observability plug-in to {{site.data.keyword.logs_full_notm}}
@@ -7218,6 +7224,8 @@ subcollection: openshift
 [Cluster autoscaler add-on change log](/docs/openshift?topic=openshift-ca_changelog#ca_changelog)
 
 * [Version 1.2.3](/docs/openshift?topic=openshift-ca_changelog#0123_ca_addon)
+
+    * [Change log for patch update 1.2.3_540, released 10 March 2025](/docs/openshift?topic=openshift-ca_changelog#123_540_ca)
 
     * [Change log for patch update 1.2.3_512, released 31 October 2024](/docs/openshift?topic=openshift-ca_changelog#123_512_ca)
 

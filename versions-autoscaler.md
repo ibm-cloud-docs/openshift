@@ -1,8 +1,8 @@
 ---
 
 copyright: 
-  years: 2014, 2024
-lastupdated: "2024-11-12"
+  years: 2014, 2025
+lastupdated: "2025-03-10"
 
 
 keywords: autoscaler, add-on, autoscaler change log, cluster autoscaler
@@ -40,6 +40,15 @@ ibmcloud oc cluster addon versions
 
 ## Version 1.2.3
 {: #0123_ca_addon}
+
+### Change log for patch update 1.2.3_540, released 10 March 2025
+{: #123_540_ca}
+
+- Updates golang version to `1.22.11` for cluster version `1.28`, `1.29`, `1.30`, and `1.31`.
+- Updates the `storage-secret-sidecar` image to `v1.3.23`.
+- Updates source code to version `1.28.7`, `1.29.5`, `1.30.3`, and `1.31.1`.
+- Image tags: `1.27.3 123-1`, `1.28.7 123-2`, `1.29.5 123-2`, `1.30.3 123-2`, `1.31.1 123-2`.
+- Resolves [CVE-2024-24789](https://nvd.nist.gov/vuln/detail/CVE-2024-24789){: external}, [CVE-2024-24790](https://nvd.nist.gov/vuln/detail/CVE-2024-24790){: external}, [CVE-2024-34158](https://nvd.nist.gov/vuln/detail/CVE-2024-34158){: external}, [CVE-2024-34155](https://nvd.nist.gov/vuln/detail/CVE-2024-34155){: external}, [CVE-2024-34156](https://nvd.nist.gov/vuln/detail/CVE-2024-34156){: external}, and [CVE-2024-43040](https://nvd.nist.gov/vuln/detail/CVE-2024-43040){: external}.
 
 ### Change log for patch update 1.2.3_512, released 31 October 2024
 {: #123_512_ca}
