@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2025
-lastupdated: "2025-01-09"
+lastupdated: "2025-03-10"
 
 
 keywords: kubernetes, worker nodes, state
@@ -131,7 +131,7 @@ The master is updating its Kubernetes version. The update might be a patch updat
 ## Update cancelled
 {: #cluster-state-cancelled}
 
-The master update is canceled because the cluster was not in a healthy state at the time of the update. Your master remains in this state until your cluster is healthy and you manually update the master. To update the master, use the `ibmcloud oc cluster master update` [command](/docs/containers?topic=containers-kubernetes-service-cli#cs_cluster_update). If you don't want to update the master to the default `major.minor` version during the update, include the `--version` option and specify the latest patch version that is available for the `major.minor` version that you want, such as `1.31`. To list available versions, run `ibmcloud oc versions`.
+The master update is canceled because the cluster was not in a healthy state at the time of the update. Your master remains in this state until your cluster is healthy and you manually update the master. To update the master, use the `ibmcloud oc cluster master update` [command](/docs/containers?topic=containers-kubernetes-service-cli#cs_cluster_update). If you don't want to update the master to the default `major.minor` version during the update, include the `--version` option and specify the latest patch version that is available for the `major.minor` version that you want, such as `1.32`. To list available versions, run `ibmcloud oc versions`.
 
 ## Unavailable
 {: #cluster-state-unavailable}

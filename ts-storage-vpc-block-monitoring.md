@@ -1,8 +1,8 @@
 ---
 
 copyright: 
-  years: 2022, 2024
-lastupdated: "2024-10-31"
+  years: 2022, 2025
+lastupdated: "2025-03-10"
 
 
 keywords: vpc, monitoring, block storage, metrics
@@ -128,7 +128,7 @@ After you complete the following steps, make sure to remove the resources you cr
 
     ```sh
     NAME          STATUS    ROLES    AGE     VERSION              
-    10.111.1.11   Ready     <none>   1d      v1.31+IKS            
+    10.111.1.11   Ready     <none>   1d      v1.32+IKS            
     ```
     {: screen}
 
