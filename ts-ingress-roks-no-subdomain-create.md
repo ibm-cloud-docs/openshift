@@ -1,8 +1,8 @@
 ---
 
 copyright:
-  years: 2014, 2024
-lastupdated: "2024-10-31"
+  years: 2014, 2025
+lastupdated: "2025-03-10"
 
 
 keywords: openshift
@@ -69,7 +69,7 @@ Typically, after the cluster is ready, the Ingress subdomain and secret are crea
 
     ```sh
     ID                                                     Public IP         Private IP      Flavor              State     Status   Zone    Version
-    kube-blrs3b1d0p0p2f7haq0g-mycluster-default-000001f7   169.xx.xxx.xxx    10.xxx.xx.xxx   u3c.2x4.encrypted   deployed   Ready    dal10   1.31
+    kube-blrs3b1d0p0p2f7haq0g-mycluster-default-000001f7   169.xx.xxx.xxx    10.xxx.xx.xxx   u3c.2x4.encrypted   deployed   Ready    dal10   1.32
     ```
     {: screen}
 
