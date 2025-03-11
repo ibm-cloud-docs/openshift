@@ -275,8 +275,6 @@ subcollection: openshift
 
 * [March 2025](/docs/openshift?topic=openshift-openshift-relnotes#openshift-mar25)
 
-    * [11 March 2025](/docs/openshift?topic=openshift-openshift-relnotes#openshift-11march25)
-
     * [10 March 2025](/docs/openshift?topic=openshift-openshift-relnotes#openshift-10mar25)
 
         * Cluster autoscaler add-on patch updates for {{site.data.keyword.openshiftlong_notm}}.
