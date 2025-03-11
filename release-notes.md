@@ -29,11 +29,6 @@ Looking for {{site.data.keyword.cloud_notm}} status, platform announcements, sec
 {: #openshift-mar25}
 
 
-### 11 March 2025
-{: #openshift-11march25}
-{: release-note}
-
-
 
 
 ### 10 March 2025
