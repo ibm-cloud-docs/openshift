@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2025
-lastupdated: "2025-03-10"
+lastupdated: "2025-03-11"
 
 
 keywords: openshift
@@ -274,6 +274,8 @@ subcollection: openshift
 [Release notes](/docs/openshift?topic=openshift-openshift-relnotes#openshift-relnotes)
 
 * [March 2025](/docs/openshift?topic=openshift-openshift-relnotes#openshift-mar25)
+
+    * [11 March 2025](/docs/openshift?topic=openshift-openshift-relnotes#openshift-11march25)
 
     * [10 March 2025](/docs/openshift?topic=openshift-openshift-relnotes#openshift-10mar25)
 
