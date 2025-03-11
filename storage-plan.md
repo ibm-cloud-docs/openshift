@@ -1,8 +1,8 @@
 ---
 
 copyright: 
-  years: 2014, 2024
-lastupdated: "2024-12-12"
+  years: 2014, 2025
+lastupdated: "2025-03-11"
 
 
 keywords: planning, storage, cluster, container storage, cloud storage, kubernetes service, openshift
@@ -247,11 +247,11 @@ The following sections show the options that you have in {{site.data.keyword.ope
 | Deployment guide | [Setting up Portworx](/docs/openshift?topic=openshift-storage_portworx_about). |
 | Supported infrastructure providers | Classic, VPC, Satellite |
 | Ideal data types | Any |
-| Data usage pattern | Read-intensive workloads. Few or no write operations. | Write-intensive workloads. Random read and write operation. Sequential read and write operations | Read-write-intensive workloads |
+| Data usage pattern | Read and write-intensive workloads. | Read-write-intensive workloads |
 | Access | Via file system on mounted volume (plug-in) or via REST API from your app | Via file system on mounted volume or NFS client access to the volume. | Via REST API from your app. |
 | Supported Kubernetes access modes |  \n - ReadWriteMany (RWX)  \n - ReadOnlyMany (ROX)  \n - ReadWriteOnce (RWO) |
 | Performance | High for read operations. Predictable due to assigned IOPS and size when you use non-SDS machines. |Close to bare metal performance for sequential read and write operations when you use SDS machines. Provides [profiles](https://docs.portworx.com/portworx-enterprise/operations/operate-kubernetes/storage-operations/create-pvcs/dynamic-provisioning.html){: external} to run high-performance databases. Possibility to create a storage layer with different performance profiles that your app can choose from.| High if deployed to the same data center as your app. |
-| Consistency| Eventual | Strong | Depends on the DBaaS |
+| Consistency| Strong |
 | Durability | Very high as data slices are dispersed across a cluster of storage nodes. Every node stores only a part of the data. | Very high as three copies of your data are always maintained. | High |
 | Resiliency | High as data slices are dispersed across three zones or regions. Medium, when set up in a single zone region only. | High when set up with replication across three zones. Medium, when you store data in a single zone region only. | Depends on the DBaaS and your setup. |
 | Availability | High due to the distribution across zones or regions. | High when you replicate data across three worker nodes in different zones. | High if you set up multiple instances. |
@@ -275,8 +275,7 @@ The following sections show the options that you have in {{site.data.keyword.ope
 | Supported infrastructure providers | Classic, VPC, Satellite |
 | Ideal data types | Any |
 | Data usage pattern | Write-intensive workloads. Random read and write operation. Sequential read and write operations. |
-| Access | Via file system on mounted volume or via REST API from your app. |
-| Supported write access levels | All |
+| Access | All |
 | Performance | Close to bare metal performance for sequential read and write operations when you use SDS machines. Create a storage layer based on the storage class performance (IOPs) that you need. |
 | Consistency| Strong |
 | Durability | Very high as three copies of your data are always maintained. |
