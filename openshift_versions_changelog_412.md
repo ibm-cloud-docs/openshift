@@ -3,7 +3,7 @@
 copyright:
   years: 2024, 2025
 
-lastupdated: "2025-03-07"
+lastupdated: "2025-03-12"
 
 
 keywords: change log, version history, 4.12_openshift
@@ -37,6 +37,22 @@ Master patch updates are applied automatically. Worker node patch updates can be
 
 ## Version 4.12
 {: #412_components}
+
+
+### Worker node fix pack 4.12.73_1628_openshift, released 11 March 2025
+{: #cl-boms-41273_1628_openshift_W}
+
+The following table shows the components included in the worker node fix pack 4.12.73_1628_openshift. Worker node patch updates can be applied by updating, reloading (in classic infrastructure), or replacing (in VPC infrastructure) the worker node.
+{: shortdesc}
+
+| Component | Version | Description |
+| ---- | ---- | ---- |
+|RHEL_8|4.18.0-553.42.1.el8_10|Resolves the following CVEs: [RHSA-2024:3043](https://access.redhat.com/errata/RHSA-2024:3043){: external}, and [CVE-2024-0690](https://nvd.nist.gov/vuln/detail/CVE-2024-0690){: external}.|
+|OpenShift|4.12.73|For more information, see the [change logs](https://docs.openshift.com/container-platform/4.12/release_notes/ocp-4-12-release-notes.html#ocp-4-12-73_release-notes).|
+|HAProxy|1d72cc8c7d02da6ba0340191fa8d9a86550e5090|N/A|
+{: caption="4.12.73_1628_openshift fix pack." caption-side="bottom"}
+{: #cl-boms-41273_1628_openshift_W-component-table}
+
 
 
 ### Worker node fix pack 4.12.73_1627_openshift, released 24 February 2025
