@@ -3,7 +3,7 @@
 copyright:
   years: 2024, 2025
 
-lastupdated: "2025-03-07"
+lastupdated: "2025-03-12"
 
 
 keywords: change log, version history, 4.17_openshift
@@ -37,6 +37,23 @@ Master patch updates are applied automatically. Worker node patch updates can be
 
 ## Version 4.17
 {: #417_components}
+
+
+### Worker node fix pack 4.17.19_1532_openshift, released 11 March 2025
+{: #cl-boms-41719_1532_openshift_W}
+
+The following table shows the components included in the worker node fix pack 4.17.19_1532_openshift. Worker node patch updates can be applied by updating, reloading (in classic infrastructure), or replacing (in VPC infrastructure) the worker node.
+{: shortdesc}
+
+| Component | Version | Description |
+| ---- | ---- | ---- |
+|RHEL_9|5.14.0-503.29.1.el9_5|N/A|
+|RHEL_8|4.18.0-553.42.1.el8_10|Resolves the following CVEs: [RHSA-2024:3043](https://access.redhat.com/errata/RHSA-2024:3043){: external}, and [CVE-2024-0690](https://nvd.nist.gov/vuln/detail/CVE-2024-0690){: external}.|
+|Red Hat OpenShift and Red Hat CoreOS|4.17.19|For more information, see the [change logs](https://docs.openshift.com/container-platform/4.17/release_notes/ocp-4-17-release-notes.html#ocp-4-17-19_release-notes).|
+|HAProxy|1d72cc8c7d02da6ba0340191fa8d9a86550e5090|N/A|
+{: caption="4.17.19_1532_openshift fix pack." caption-side="bottom"}
+{: #cl-boms-41719_1532_openshift_W-component-table}
+
 
 
 ### Worker node fix pack 4.17.17_1531_openshift, released 24 February 2025
