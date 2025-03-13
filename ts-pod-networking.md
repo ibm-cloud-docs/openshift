@@ -2,7 +2,7 @@
 
 copyright:
   years: 2024, 2025
-lastupdated: "2025-02-01"
+lastupdated: "2025-03-13"
 
 
 keywords: pods, pod connectvity, networking, pod networking, pod trouble shooting, pod debug
@@ -184,14 +184,14 @@ Run `curl`, `ping`, and `nc` commands to test each pod's network connection and 
     ```
     {: screen}
 
-1. Run the `exec` command to log into one pod. 
+1. Run the `exec` command to log in to one pod. 
 
     ```sh
     kubectl exec -it --namespace pod-network-test <pod_name> -- sh
     ```
     {: pre}
 
-1. Run the `curl` command on the pod and note the output. Specify the IP of the pod that you did **not** log into. This tests the network connection between pods on different nodes. 
+1. Run the `curl` command on the pod and note the output. Specify the IP of the pod that you did **not** log in to. This tests the network connection between pods on different nodes. 
 
     ```sh
     curl <pod_ip>:8080
@@ -217,7 +217,7 @@ Run `curl`, `ping`, and `nc` commands to test each pod's network connection and 
     ```
     {: screen}
 
-1. Run the `ping` command on the pod and note the output. Specify the IP of the pod that you did **not** log into with the `exec` command. This tests the network connection between pods on different nodes. 
+1. Run the `ping` command on the pod and note the output. Specify the IP of the pod that you did **not** log in to with the `exec` command. This tests the network connection between pods on different nodes. 
 
     ```sh
     ping -c 5 <pod_ip>
@@ -240,7 +240,7 @@ Run `curl`, `ping`, and `nc` commands to test each pod's network connection and 
     ```
     {: screen}
 
-1. Run the `nc` command on the pod and note the output. Specify the IP of the pod that you did **not** log into with the `exec` command. This tests the network connection between pods on different nodes. 
+1. Run the `nc` command on the pod and note the output. Specify the IP of the pod that you did **not** log in to with the `exec` command. This tests the network connection between pods on different nodes. 
 
     ```sh
     nc -vzw 5 <pod_ip> 8080

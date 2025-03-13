@@ -1,8 +1,8 @@
 ---
 
 copyright: 
-  years: 2023, 2024
-lastupdated: "2024-10-22"
+  years: 2023, 2025
+lastupdated: "2025-03-13"
 
 
 keywords: openshift, {{site.data.keyword.openshiftlong_notm}}, firewall, acl, acls, access control list, rules, security group
@@ -201,7 +201,7 @@ Follow the steps to view details about the VPC security groups.
 {: ui}
 
 1. From the [Security groups for VPC dashboard](https://cloud.ibm.com/infrastructure/network/securityGroups){: external}, find the security groups that are attached to the VPC that your cluster is in.
-1. Click on the security group.
+1. Click the security group.
 
     To sort the security groups by the VPC they are attached to, click the **Virtual Private Cloud** column heading in the table. 
     {: tip}

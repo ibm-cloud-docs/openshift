@@ -1,8 +1,8 @@
 ---
 
 copyright:
-  years: 2014, 2024
-lastupdated: "2024-10-30"
+  years: 2014, 2025
+lastupdated: "2025-03-13"
 
 
 keywords: openshift, {{site.data.keyword.openshiftlong_notm}}, cluster version, 
@@ -45,10 +45,10 @@ You see one or more of the following for an extended period of time.
     {: screen}
 
 
-- You see that a cluster master upgrade was cancelled with a status similar to the following.
+- You see that a cluster master upgrade was canceled with a status similar to the following.
 
     ```txt
-    Version update cancelled. CAE012: Cannot complete cluster master operations because the current OpenShift clusterversion rollout is not complete. For more information, see the troubleshooting docs: 'https://ibm.biz/rhos_clusterversion_ts'
+    Version update canceled. CAE012: Cannot complete cluster master operations because the current OpenShift clusterversion rollout is not complete. For more information, see the troubleshooting docs: 'https://ibm.biz/rhos_clusterversion_ts'
     ```
     {: screen}
 

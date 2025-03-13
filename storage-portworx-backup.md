@@ -1,8 +1,8 @@
 ---
 
 copyright: 
-  years: 2014, 2024
-lastupdated: "2024-07-23"
+  years: 2014, 2025
+lastupdated: "2025-03-13"
 
 
 keywords: portworx, kubernetes, openshift
@@ -69,11 +69,11 @@ Verify that Portworx Backup is correctly installed on your cluster.
 1. If the status changes to **Active**, verify that the Portworx Backup pods, services and jobs are running in your cluster.
     1. From the {{site.data.keyword.cloud_notm}} [Resource list](https://cloud.ibm.com/resources){: external}, select the cluster where you installed PX-Backup.
     1. Open the {{site.data.keyword.redhat_openshift_notm}} web console.
-    1. Click on **Projects**.
+    1. Click **Projects**.
     1. Select the namespace where you installed the Portworx Backup service components.
     1. In the **Inventory** section, select the option to display your pods.
     1. In the **Pods** table, verify that the status of each pod is **Running**.
-    1. Click on **Networking>Routes**.
+    1. Click **Networking>Routes**.
     1. Find the **px-backup-ui** route and verify that a URL is listed in the **Location** column.
     1. Click **Workloads>Jobs**.
     1. Verify that the **pxcentral-post-install-hook** job is complete.
@@ -108,8 +108,8 @@ For VPC clusters
 
 1. From the {{site.data.keyword.cloud_notm}} [Resource list](https://cloud.ibm.com/resources){: external}, select the cluster where you installed PX-Backup.
 1. Open the {{site.data.keyword.redhat_openshift_notm}} web console .
-1. Click on **Networking>Routes**.
-1. Find the **px-backup-ui** route and click on the URL that is listed in the **Location** column to open the Portworx Backup console.
+1. Click **Networking > Routes**.
+1. Find the **px-backup-ui** route and click the URL that is listed in the **Location** column to open the Portworx Backup console.
 1. Log in to the Portworx Backup console. If you are the first user to access the console, you must log in in with the username `admin` and the password `admin`. You are redirected to a registration page to set a unique username and password. Subsequent users must register a new account to access the console.
 
 
@@ -117,7 +117,7 @@ For public classic clusters
 
 1. From the {{site.data.keyword.cloud_notm}} [Resource list](https://cloud.ibm.com/resources){: external}, select the cluster where you installed PX-Backup.
 1. Open the {{site.data.keyword.redhat_openshift_notm}} web console .
-1. Click on **Networking>Routes**.
+1. Click **Networking > Routes**.
 1. Find the **px-backup-ui** route and note the IP address and node port listed in the **Locations** column.
 1. Copy and paste the IP address and node port into your web browser to open the Portworx Backup console.
 1. Log in to the Portworx Backup console. If you are the first user to access the console, you must log in in with the username `admin` and the password `admin`. You are redirected to a registration page to set a unique username and password. Subsequent users must register a new account to access the console.
@@ -138,7 +138,7 @@ Before you begin, [log in to the Portworx Backup console](#px-backup-ui). Note t
 2. [Create service credentials for your {{site.data.keyword.cos_full_notm}} service instance](/docs/openshift?topic=openshift-storage-cos-understand#create_cos_secret). Be sure to enable HMAC authentication by clicking **Advanced Options** in the **Create credential** dialog box and switching the **Include HMAC Credential** parameter to **On**.
 3. Expand your credentials in the service credentials table. Note the **`access_key_id`** and the **`secret_access_key`** in the **`cos_hmac_keys`** section.
 4. [Create a storage bucket in your {{site.data.keyword.cos_full_notm}} instance](/docs/cloud-object-storage?topic=cloud-object-storage-getting-started-cloud-object-storage).
-5. Click on your bucket and note its location.
+5. Click your bucket and note its location.
 6. Open the bucket configuration page and note the endpoint that you must use to connect to your {{site.data.keyword.cos_full_notm}} instance.
     - If you installed Portworx Backup on a private classic cluster, note the **private** endpoint.
     - If you installed Portworx Backup on a private VPC cluster, note the **direct** endpoint.
@@ -272,8 +272,3 @@ You can restore an entire namespace, your apps, or your data to any cluster that
 
 Follow the Portworx documentation to [upgrade PX-backup](https://docs.portworx.com/portworx-backup-on-prem/use-px-backup){: external}
 {: shortdesc}
-
-
-
-
-

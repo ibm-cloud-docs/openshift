@@ -1,8 +1,8 @@
 ---
 
 copyright: 
-  years: 2024, 2024
-lastupdated: "2024-09-04"
+  years: 2024, 2025
+lastupdated: "2025-03-13"
 
 
 keywords: openshift, kubernetes, help, network, connectivity, vpc nlb
@@ -23,7 +23,7 @@ Your VPC NLB does not update when worker nodes are added or removed from your cl
 {: tsSymptoms}
 
 ```sh
-The load balancer was created in zone <zone>. This setting can not be changed.
+The load balancer was created in zone <zone>. This setting cannot be changed.
 ```
 {: screen}
 

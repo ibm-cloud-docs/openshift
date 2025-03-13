@@ -1,8 +1,8 @@
 ---
 
 copyright: 
-  years: 2022, 2024
-lastupdated: "2024-10-30"
+  years: 2022, 2025
+lastupdated: "2025-03-13"
 
 
 keywords: openshift, essvc
@@ -41,7 +41,7 @@ Ensure all secrets that share the same domain have the same CRN.
 1. View all the Ingress secrets for your cluster by running the following command.
 
     ```sh
-    ibmcloud oc ingress secret ls
+    ibmcloud oc ingress secret ls --show-crn
     ```
     {: pre}
     

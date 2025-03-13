@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2024, 2025
-lastupdated: "2025-02-27"
+lastupdated: "2025-03-13"
 
 
 keywords: openshift, {{site.data.keyword.openshiftlong_notm}}, ai, add-on
@@ -139,7 +139,7 @@ Some of these operators might include additional customizations that you can cho
 
 Install the Red Hat OpenShift AI add-on with the UI. 
 
-1. Navigate to your [cluster page](https://cloud.ibm.com/containers/cluster-management/clusters){: external} and click on the relevant cluster. 
+1. Navigate to your [cluster page](https://cloud.ibm.com/containers/cluster-management/clusters){: external} and click the relevant cluster. 
 
 2. On the cluster details page, find the **Add-ons** section. Find the **Red Hat OpenShift AI** option and click **Install**.
 

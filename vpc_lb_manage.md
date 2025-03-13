@@ -1,7 +1,7 @@
 ---
 copyright: 
-  years: 2024, 2024
-lastupdated: "2024-08-21"
+  years: 2024, 2025
+lastupdated: "2025-03-13"
 
 
 keywords: load balancer, vpc, vpc load balancer, lb, persistent
@@ -112,7 +112,7 @@ Want to avoid the complexity of specifying additional TCP ports for health check
 ## Changing a load balancer's subnet or zone
 {: #lbaas_change_subnets}
 
-After you have created a VPC NLB, you can not reconfigure the listening subnet it was created with. If you want to change the listening subnet of an existing VPC NLB, you must delete, update, and reapply the corresponding Kubernetes `LoadBalancer` service.
+After you have created a VPC NLB, you cannot reconfigure the listening subnet it was created with. If you want to change the listening subnet of an existing VPC NLB, you must delete, update, and reapply the corresponding Kubernetes `LoadBalancer` service.
 {: shortdesc}
 
 1. [Log in to your account. If applicable, target the appropriate resource group. Set the context for your cluster.](/docs/containers?topic=containers-access_cluster)
@@ -222,4 +222,3 @@ After you have created a VPC NLB, you can not reconfigure the listening subnet i
     r006-5ecc68f6-c751-409f-b2e0-1c69babf0dc0   kube-c441c43d02mb8mg00r70-3e25d0b5bf03445796fe4ca3f73885cb   Network       subnet-2                                  true        active             online             default  
     ```
     {: pre}
-

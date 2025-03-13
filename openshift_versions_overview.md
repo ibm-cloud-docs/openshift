@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2025
-lastupdated: "2025-03-11"
+lastupdated: "2025-03-13"
 
 
 keywords: openshift, version, update, upgrade
@@ -284,7 +284,7 @@ Clusters running an unsupported version will eventually fail because cluster cer
 
 
 
-IBM provides bi-weekly worker node fix packs. IBM's goal is to remediate detected, legitimate vulnerabilities within a timeframe appropriate for the risks they represent. To ensure the quality and stability of the release, fix packs might be delayed.
+IBM provides bi-weekly worker node fix packs. IBM's goal is to remediate detected, legitimate vulnerabilities within a time frame appropriate for the risks they represent. To ensure the quality and stability of the release, fix packs might be delayed.
 
 For {{site.data.keyword.redhat_openshift_notm}}, fix packs are applied to the latest minor release and patch for the targeted operating system. 
 - For RHEL8 that is 8.9.

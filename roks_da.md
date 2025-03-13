@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2025, 2025
-lastupdated: "2025-02-26"
+lastupdated: "2025-03-13"
 
 
 keywords: deployable architecture, DA
@@ -36,7 +36,7 @@ There are three different DAs that create a cluster or clusters for you. They ar
 ## Checking your permissions
 {: #roks_da_permissions}
 
-Each DA has a set of permissions that the user must have in order to be successful in executing the DA. A DA can not only create the cluster for you, but can also create other complementary services that the cluster can use or integrate with. When executing the DA, a permissions check will be done to ensure you have the necessary permissions to create the resources in the DA. See [IAM roles and actions](https://cloud.ibm.com/docs/openshift?topic=openshift-iam-platform-access-roles) for details on the specific permission needed by related services.
+Each DA has a set of permissions that the user must have in order to be successful in executing the DA. A DA cannot only create the cluster for you, but can also create other complementary services that the cluster can use or integrate with. When executing the DA, a permissions check will be done to ensure you have the necessary permissions to create the resources in the DA. See [IAM roles and actions](https://cloud.ibm.com/docs/openshift?topic=openshift-iam-platform-access-roles) for details on the specific permission needed by related services.
 
 ## Creating an API key
 {: #roks_da_api_key}
@@ -63,4 +63,3 @@ The DA will now begin to execute in the Schematics workspace. The first phase is
 To continue, either fix your validation concerns by clicking **Edit Configuration** or override the validation by providing a comment and clicking **Override and Approve**. Then click **Deploy** to execute the DA terraform. 
 
 After the DA has finished provisioning, you can see your cluster in the [IBM Cloud console](https://cloud.ibm.com/){: external}.
-

@@ -1,8 +1,8 @@
 ---
 
 copyright:
-  years: 2022, 2024
-lastupdated: "2024-07-23"
+  years: 2022, 2025
+lastupdated: "2025-03-13"
 
 
 keywords: kubernetes, openshift
@@ -275,6 +275,5 @@ In this tutorial, you installed the {{site.data.keyword.cos_short}} plug-in in y
 ## Next steps
 {: #storage-cos-quota-next}
 
-
-- Set up the [{{site.data.keyword.cos_short}} CLI](/docs/cloud-object-storage-cli-plugin?topic=cloud-object-storage-cli-plugin-ic-cos-cli) to point to your bucket.
+- Set up the [{{site.data.keyword.cos_short}} CLI](/docs/cloud-object-storage?topic=cloud-object-storage-ic-cos-cli) to point to your bucket.
 - Use the {{site.data.keyword.cos_short}} SDKs to [add storage to your apps](/docs/cloud-object-storage?topic=cloud-object-storage-sdk-gs).
