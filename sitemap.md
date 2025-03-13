@@ -279,6 +279,8 @@ subcollection: openshift
 
         * CLI version `1.0.687` is available.
 
+        * IBM Cloud Image Key Synchronizer cluster add-on patch updates.
+
     * [11 March 2025](/docs/openshift?topic=openshift-openshift-relnotes#openshift-11march25)
 
         * {{site.data.keyword.openshiftlong_notm}} worker node fix packs are available.
@@ -8296,6 +8298,8 @@ subcollection: openshift
 [IBM Cloud Image Key Synchronizer add-on version change log](/docs/openshift?topic=openshift-cl-add-ons-ibm-cloud-image-key-synchronizer#cl-add-ons-ibm-cloud-image-key-synchronizer)
 
 * [Version 1.0.0](/docs/openshift?topic=openshift-cl-add-ons-ibm-cloud-image-key-synchronizer#cl-add-ons-ibm-cloud-image-key-synchronizer-1.0.0)
+
+    * [1.0.0_2640, released 13 March 2025](/docs/openshift?topic=openshift-cl-add-ons-ibm-cloud-image-key-synchronizer#cl-add-ons-ibm-cloud-image-key-synchronizer-100_2640)
 
     * [1.0.0_2557, released 15 January 2025](/docs/openshift?topic=openshift-cl-add-ons-ibm-cloud-image-key-synchronizer#cl-add-ons-ibm-cloud-image-key-synchronizer-100_2557)
 
