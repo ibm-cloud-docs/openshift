@@ -2,7 +2,7 @@
 
 copyright:
   years: 2024, 2025
-lastupdated: "2025-02-24"
+lastupdated: "2025-03-13"
 
 keywords: activity tracker, cluster management, events, logging, openshift
 
@@ -69,7 +69,7 @@ Activity Tracker can be enabled for your cluster during cluster create time.
 ## Viewing activity tracking events for {{site.data.keyword.openshiftlong_notm}}
 {: #at-viewing}
 
-To view events, navigate to the **Observability** page in the [{{site.data.keyword.redhat_openshift_notm}} clusters console](https://cloud.ibm.com/kubernetes/clusters?platformType=openshift){: external}, then click **Activity Tracker**. Click on the instance you want to view events for, then click **Open dashboard**. A separate window appears where you can view your events. 
+To view events, navigate to the **Observability** page in the [{{site.data.keyword.redhat_openshift_notm}} clusters console](https://cloud.ibm.com/kubernetes/clusters?platformType=openshift){: external}, then click **Activity Tracker**. Click the instance you want to view events for, then click **Open dashboard**. A separate window appears where you can view your events. 
 
 
 ### Launching {{site.data.keyword.logs_full_notm}} from the Observability page

@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2025
-lastupdated: "2025-03-10"
+lastupdated: "2025-03-13"
 
 
 keywords: openshift
@@ -575,11 +575,11 @@ Follow the steps to obtain the correct subnet IP addresses to add to your IAM al
 #### Getting your subnet IP addresses in the console
 {: #iam_cidr_ip_console}
 
-1. From the {{site.data.keyword.cloud_notm}} console [resource list](https://cloud.ibm.com/resources), click on your cluster.
+1. From the {{site.data.keyword.cloud_notm}} console [resource list](https://cloud.ibm.com/resources), click your cluster.
 2. Click **Worker nodes**.
 3. Note each **Public VLAN** used by the worker nodes in your cluster. Multiple worker nodes might use the same public VLAN. 
 4. From the [{{site.data.keyword.cloud_notm}} console](https://cloud.ibm.com/) menu ![Menu icon](../icons/icon_hamburger.svg "Menu icon"), click **Infrastructure** > **Classic Infrastructure** > **IP Management** > **VLANs**.
-5. Click on each public VLAN to check if it is used by the worker nodes in your cluster. 
+5. Click each public VLAN to check if it is used by the worker nodes in your cluster. 
 6. For each public VLAN that is used by the worker nodes in your cluster, find the **Subnets** section and note each IP address included in the table. These are the IP addresses that you must include in your allowlist. 
 
 #### Getting your subnet IP addresses in the CLI

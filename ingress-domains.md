@@ -2,7 +2,7 @@
 
 copyright:
   years: 2023, 2025
-lastupdated: "2025-01-03"
+lastupdated: "2025-03-13"
 
 
 keywords: kubernetes, openshift
@@ -37,7 +37,7 @@ You can also use the `service.kubernetes.io/ibm-load-balancer-cloud-provider-dns
 Navigate to the your cluster's **Domains** page to create and manage domains. 
 
 1. In the console, navigate to your [clusters tab](https://cloud.ibm.com/kubernetes/clusters){: external}. 
-2. Click on the cluster where you want to create or change a domain.
+2. Click the cluster where you want to create or change a domain.
 3. Click **Ingress**. 
 4. Click the **Domains** tab. From here, you can manage the domains associated with the cluster. 
 

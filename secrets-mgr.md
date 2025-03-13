@@ -1,8 +1,8 @@
 ---
 
 copyright:
-  years: 2022, 2024
-lastupdated: "2024-07-23"
+  years: 2022, 2025
+lastupdated: "2025-03-13"
 
 
 keywords: secrets manager, secrets, certificates, secret group, CRN
@@ -200,16 +200,16 @@ When you set a default {{site.data.keyword.secrets-manager_short}} instance, all
         {: note}
 
         ```sh
-        ibmcloud oc ingress secret ls --cluster <cluster_name_or_id>
+        ibmcloud oc ingress secret ls --show-crn --cluster <cluster_name_or_id>
         ```
         {: pre}
 
         Example output
 
         ```sh
-        Name                               Namespace  CRN                                                                               Expires On                 Domain                                                   Status    Type   
-        secret-11111aa1a1a11aa1111111-000  default    crn:v1:bluemix:public:secrets-manager:us-south:a/1aa111aa1:secret:a111aa11-11a1   2022-12-21T19:52:29+0000   secret-11111aa1a1a.us-south.containers.appdomain.cloud   created   TLS   
-        secret-22222aa2a2a22aa2222222-000  default    crn:v1:bluemix:public:secrets-manager:us-south:a/2aa222aa2:secret:a222aa22-22a2   2022-12-21T19:52:29+0000   secret-22222aa2a2a.us-south.containers.appdomain.cloud   created   TLS    
+        Name                                Namespace   Expiry              Domains                                Status    Type   CRN
+        secret-11111aa1a1a11aa1111111-000   default     3 months from now   secret-11111aa1a1a.us-s…domain.cloud   created   TLS    crn:v1:bluemix:public:secrets-manager:us-south:a/1aa111aa1:secret:a111aa11-11a1
+        secret-22222aa2a2a22aa2222222-000   default     3 months from now   secret-22222aa2a2a.us-s…domain.cloud   created   TLS    crn:v1:bluemix:public:secrets-manager:us-south:a/2aa222aa2:secret:a222aa22-22a2   
         ```
         {: screen}
 
@@ -229,7 +229,7 @@ The {{site.data.keyword.secrets-manager_short}} instance registered during clust
 {: note}
 
 If you [create a cluster](/docs/openshift?topic=openshift-clusters) in the CLI with the [`ibmcloud oc cluster create classic`](/docs/openshift?topic=openshift-kubernetes-service-cli&interface=cli#cs_cluster_create) or [`ibmcloud oc cluster create vpc-gen2`](/docs/openshift?topic=openshift-kubernetes-service-cli&interface=cli#cli_cluster-create-vpc-gen2), you can specify a {{site.data.keyword.secrets-manager_short}} instance or secret group with the following command options:
-- `--sm-instance`: Use this option to register a {{site.data.keyword.secrets-manager_short}} instance to the cluster by specifying the instance CRN. To find the CRN of a {{site.data.keyword.secrets-manager_short}} instance, run `ibmcloud resource service-instance <name_of_instance>` or navigate to your resource list in the UI and click on the instance.
+- `--sm-instance`: Use this option to register a {{site.data.keyword.secrets-manager_short}} instance to the cluster by specifying the instance CRN. To find the CRN of a {{site.data.keyword.secrets-manager_short}} instance, run `ibmcloud resource service-instance <name_of_instance>` or navigate to your resource list in the UI and click the instance.
 - `--sm-group`: Use this option to specify the ID of the secret group. To find the secret group ID, run `ibmcloud secrets-manager secret-groups`.
 
 If you create a cluster in the UI, follow these steps to specify a {{site.data.keyword.secrets-manager_short}} instance or secret group:
@@ -238,7 +238,7 @@ If you create a cluster in the UI, follow these steps to specify a {{site.data.k
 3. From the **Secrets Manager group** drop down menu, select the secret group you want to apply. 
 4. Create the cluster. 
 5. Check that the {{site.data.keyword.secrets-manager_short}} instance is registered to the cluster.
-    1. When your cluster is fully provisioned, click on the cluster to view the cluster details. Under **Integrations**, find the **Secrets Manager** heading and click **Manage**. 
+    1. When your cluster is fully provisioned, click the cluster to view the cluster details. Under **Integrations**, find the **Secrets Manager** heading and click **Manage**. 
     2. In the side panel, check that correct instance is listed under **Registered Secrets Manager instances**.
     3. To register additional instances to the cluster, click **Register instances**.
     

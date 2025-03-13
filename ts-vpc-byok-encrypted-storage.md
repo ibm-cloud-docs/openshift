@@ -1,7 +1,7 @@
 ---
 copyright:
-  years: 2023, 2024
-lastupdated: "2024-10-30"
+  years: 2023, 2025
+lastupdated: "2025-03-13"
 
 
 keywords: openshift, {{site.data.keyword.openshiftlong_notm}}, byok, debug, help, vpc, storage, encryption
@@ -19,7 +19,7 @@ content-type: troubleshoot
 {: #ts-vpc-byok-encrypted-storage}
 {: support}
 
-The VPC worker nodes can not be provisioned due to a key error with the KMS provider.
+The VPC worker nodes cannot be provisioned due to a key error with the KMS provider.
 {: tsSymptoms}
 
 ```sh

@@ -1,8 +1,8 @@
 ---
 
 copyright:
-  years: 2024, 2024
-lastupdated: "2024-12-12"
+  years: 2024, 2025
+lastupdated: "2025-03-13"
 
 
 keywords: openshift, version, update, upgrade, 4.15, update openshift
@@ -63,7 +63,7 @@ The following table shows the actions that you must take before you [update the 
 | **Unsupported:** Deprecated and removed OpenShift features | For more information, review the [OpenShift version 4.15 deprecated and removed features](https://docs.openshift.com/container-platform/4.15/release_notes/ocp-4-15-release-notes.html#ocp-4-15-deprecated-removed-features) and [Preparing to update to OpenShift Container Platform 4.15](https://docs.openshift.com/container-platform/4.15/updating/preparing_for_updates/updating-cluster-prepare.html) for possible actions required. |
 | Known OpenShift issues | For more information, review the [OpenShift version 4.15 known issues](https://docs.openshift.com/container-platform/4.15/release_notes/ocp-4-15-release-notes.html#ocp-4-15-known-issues) for possible actions required. |
 | Upgrade requires OpenShift cluster version currency | A cluster master upgrade is canceled when the OpenShift cluster version status indicates that an update is already in progress. See [Why does OpenShift show the cluster version is not up to date](/docs/openshift?topic=openshift-ts-cluster-version-downlevel) for details. |
-| Upgrade requires resolution to OpenShift cluster version upgradeable conditions | A cluster master upgrade will now be cancelled if the OpenShift cluster version `Upgradeable` status condition indicates that the cluster is not upgradeable. See [Why do I see a `Cannot complete cluster master upgrade` message?](/docs/openshift?topic=openshift-ts-cluster-master-upgrade) for details. |
+| Upgrade requires resolution to OpenShift cluster version upgradeable conditions | A cluster master upgrade will now be canceled if the OpenShift cluster version `Upgradeable` status condition indicates that the cluster is not upgradeable. See [Why do I see a `Cannot complete cluster master upgrade` message?](/docs/openshift?topic=openshift-ts-cluster-master-upgrade) for details. |
 | VPE gateways changes when creating or updating a VPC cluster to version 4.15 | There are important changes to the VPE gateways used for VPC clusters when creating a 4.15 cluster or updating to 4.15. These changes might require action. To review the changes and determine your required actions, see [VPE gateway creation information](#vpe-gateway-415). |
 {: caption="Changes to make before you update the master to Red Hat OpenShift 4.15" caption-side="bottom"}
 

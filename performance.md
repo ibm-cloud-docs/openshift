@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2025
-lastupdated: "2025-02-01"
+lastupdated: "2025-03-13"
 
 
 keywords: openshift, {{site.data.keyword.openshiftlong_notm}}, kubernetes, kernel, performance
@@ -258,14 +258,14 @@ Before you begin
     - Example command for Bare Metal worker nodes: `ip link set dev bond0 mtu 9000;ip link set dev bond1 mtu 9000;`
     - Example command VPC Gen 2 worker nodes: `ip link set dev ens3 mtu 9000;`
 
-1. Run the following commands to log into a cluster worker node and ping from one node to another. Because your node MTU is only set to 1500 or 1480, **this attempt is expected to fail**. In the following steps, you can run these commands again to verify that changes are successful.
+1. Run the following commands to log in to a cluster worker node and ping from one node to another. Because your node MTU is only set to 1500 or 1480, **this attempt is expected to fail**. In the following steps, you can run these commands again to verify that changes are successful.
     1. List the nodes in your cluster. Save the names and IP addresses of two healthy nodes. 
         ```sh
         oc get nodes -o wide
         ```
         {: pre}
 
-    1. Log into one of the nodes. Specify the name of the node.
+    1. Log in to one of the nodes. Specify the name of the node.
 
         
         ```sh

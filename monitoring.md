@@ -2,7 +2,7 @@
 
 copyright:
   years: 2024, 2025
-lastupdated: "2025-01-13"
+lastupdated: "2025-03-13"
 
 keywords: monitoring, openshift, observability, metrics
 
@@ -42,7 +42,7 @@ Note that a cluster can only be connected to one monitoring service instance at 
 {: #monintoring-enable-existing}
 
 1. If you do not already have a monitoring service instance in your account, [create one](/docs/monitoring?topic=monitoring-provision). 
-2. In the console, navigate to the cluster resource page and click on the relevant cluster. 
+2. In the console, navigate to the cluster resource page and click the relevant cluster. 
 3. Under **Integrations**, find the monitoring option and click **Connect**. 
 4. Select the monitoring service instance you want to connect to your cluster. If you have more than one monitoring service instance, you can filter them by the region they were created in. 
 5. Click **Connect**. 
@@ -59,7 +59,7 @@ Note that a cluster can only be connected to one monitoring service instance at 
 ## Viewing metrics
 {: #monitoring-view}
 
-To view your metrics, navigate to your cluster resource page in the console and click on the relevant cluster. In the **Integrations** section, find the **Monitoring** option and click **Launch**. A separate window opens where you can view your cluster metrics. 
+To view your metrics, navigate to your cluster resource page in the console and click the relevant cluster. In the **Integrations** section, find the **Monitoring** option and click **Launch**. A separate window opens where you can view your cluster metrics. 
 
 ### Launching {{site.data.keyword.mon_full}} from the Observability page
 {: #monitoring-view-ob}

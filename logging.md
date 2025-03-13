@@ -2,7 +2,7 @@
 
 copyright:
   years: 2024, 2025
-lastupdated: "2025-02-28"
+lastupdated: "2025-03-13"
 
 keywords: logging, cloud logs, logs, log analysis, containers
 
@@ -64,7 +64,7 @@ Note that a cluster can only be connected to one logging service instance at a t
 {: #log-enable-existing}
 
 1. If you do not already have a logging service instance in your account, [create one](/docs/cloud-logs?topic=cloud-logs-instance-provision&interface=ui).
-2. In the console, navigate to the cluster resource page and click on the relevant cluster. 
+2. In the console, navigate to the cluster resource page and click the relevant cluster. 
 3. Under **Integrations**, find the logging option and click **Connect**. 
 4. Select the logging service instance you want to connect to your cluster. If you have more than one logging service instance, you can filter them by the region they were created in. 
 5. Click **Connect**. 
@@ -81,7 +81,7 @@ Note that a cluster can only be connected to one logging service instance at a t
 ## Viewing logs
 {: #log-viewing}
 
-To view your logs, navigate to your cluster resource page in the console and click on the relevant cluster. In the **Integrations** section, find the **Logging** option and click **Launch**. A separate window opens where you can view your cluster logs. 
+To view your logs, navigate to your cluster resource page in the console and click the relevant cluster. In the **Integrations** section, find the **Logging** option and click **Launch**. A separate window opens where you can view your cluster logs. 
 
 ## Launching {{site.data.keyword.logs_full_notm}} from the Observability page
 {: #log-launch-standalone-ob}

@@ -1,8 +1,8 @@
 ---
 
 copyright: 
-  years: 2014, 2024
-lastupdated: "2024-10-30"
+  years: 2014, 2025
+lastupdated: "2025-03-13"
 
 
 keywords: kubernetes, openshift
@@ -850,7 +850,7 @@ Create and configure an {{site.data.keyword.cos_full_notm}} service instance to 
     5. Change the **Location** to the region where you want to store your data. Keep in mind that your data might not be allowed to be stored in every region due to legal reasons.  
     6. Click **Create**.
 4. Retrieve the {{site.data.keyword.cos_full_notm}} host name for your bucket.
-    1. Click on your bucket name that you created in the previous step.
+    1. Click your bucket name that you created in the previous step.
     2. In the navigation on the service details page, click **Buckets** > **Configuration**.
     3. Note the public URL that you can use to access the data in your bucket.
 
@@ -1046,7 +1046,7 @@ To back up or restore a PVC by editing the `values.yaml` file:
 7. Verify that your data is successfully backed up or restored.
     * **Backup**:
         1. Find your {{site.data.keyword.cos_full_notm}} service instance in the [{{site.data.keyword.cloud_notm}} resource list](https://cloud.ibm.com/resources).
-        2. From the navigation, select **Buckets** and click on the bucket that you used in your backup configuration. Your backup is displayed as an object in your bucket.
+        2. From the navigation, select **Buckets** and click the bucket that you used in your backup configuration. Your backup is displayed as an object in your bucket.
         3. Review the compressed files. You can download the `*.gz` file, extract the file, and verify the backed-up data.
 
     * **Restore**:

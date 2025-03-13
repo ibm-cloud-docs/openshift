@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2025
-lastupdated: "2025-02-21"
+lastupdated: "2025-03-13"
 
 
 keywords: openshift, reservations, worker node
@@ -204,7 +204,7 @@ To prevent loss of service, you must create new contracts for your existing rese
 If you want to continue with reservations, take the following steps.
 
 1. Log in to the [{{site.data.keyword.openshiftlong_notm}} reservations console](https://cloud.ibm.com/kubernetes/reservations){: external}.
-2. Click on each reservation in the list to view a list of contracts associated with each reservation.
+2. Click each reservation in the list to view a list of contracts associated with each reservation.
 3. For each contract, look at the **Expiration date** column to find contracts that expire within 30 days.   
 4. Click **Add** to add a new contract. Repeat for each contract that expires within 30 days. 
 5. Select the number of worker nodes. Ensure that the number of worker nodes is sufficient for the capacity you need. For example, if your expiring contract contains 3 worker nodes, your new contract must also contain 3 worker nodes, unless you determine you need more or less capacity.

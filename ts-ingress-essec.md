@@ -1,8 +1,8 @@
 ---
 
 copyright: 
-  years: 2022, 2024
-lastupdated: "2024-10-30"
+  years: 2022, 2025
+lastupdated: "2025-03-13"
 
 
 keywords: openshift, essec
@@ -38,7 +38,7 @@ You have secrets in your cluster that have either expired or are about to expire
 Review and update your secrets and domains.
 {: tsResolve}
 
-1. Run the **`ibmcloud oc ingress secret ls`** command and review the output.
+1. Run the **`ibmcloud oc ingress secret ls --show-crn`** command and review the output.
 
     For secrets that are about to expire and are user managed
     :   Ensure the value of the corresponding secret in {{site.data.keyword.secrets-manager_full_notm}} has been updated and run the **`ibmcloud oc ingress secret update`** command for that secret.

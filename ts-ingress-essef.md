@@ -1,8 +1,8 @@
 ---
 
 copyright: 
-  years: 2022, 2024
-lastupdated: "2024-10-30"
+  years: 2022, 2025
+lastupdated: "2025-03-13"
 
 
 keywords: openshift, essef
@@ -41,7 +41,7 @@ Review the secrets in your cluster and update or remove them.
 
 1. List your secrets.
     ```sh
-    ibmcloud oc ingress secret ls
+    ibmcloud oc ingress secret ls --show-crn
     ```
     {: pre}
 
