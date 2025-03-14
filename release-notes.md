@@ -43,6 +43,7 @@ IBM Cloud Image Key Synchronizer cluster add-on patch updates.
 :   For more information, see the [change log](/docs/openshift?topic=openshift-cl-add-ons-ibm-cloud-image-key-synchronizer).
 
 
+
 ### 11 March 2025
 {: #openshift-11march25}
 {: release-note}
