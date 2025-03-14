@@ -1,8 +1,8 @@
 ---
 
 copyright:
-  years: 2022, 2024
-lastupdated: "2024-06-26"
+  years: 2022, 2025
+lastupdated: "2025-03-14"
 
 
 keywords: maintenance, host maintenance, notification, workers, offline
@@ -107,9 +107,9 @@ For workers with the `cx2.`, `bx2.`, or `mx2.` flavors:
     ```
     {: pre}    
 
-3. Reboot the worker. Make sure you include the `--hard` option.
+3. Reboot the worker.
     ```sh
-    ibmcloud oc worker reboot --cluster <cluster_name_or_id> --worker <worker_id> --hard
+    ibmcloud oc worker replace --cluster <cluster_name_or_id> --worker <worker_id>
     ```
     {: pre}
 
@@ -141,6 +141,3 @@ For workers with the `cx2d.`, `bx2d.`, or `mx2d.` flavors:
     ibmcloud oc worker replace --cluster <cluster_name_or_ID> --worker <worker_node_ID>
     ```
     {: pre}
-
-
-
