@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2025
-lastupdated: "2025-03-13"
+lastupdated: "2025-03-17"
 
 
 keywords: kubernetes, release notes, openshift, {{site.data.keyword.openshiftlong_notm}}
@@ -27,6 +27,7 @@ Looking for {{site.data.keyword.cloud_notm}} status, platform announcements, sec
 
 ## March 2025
 {: #openshift-mar25}
+
 
 
 
