@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2023, 2025
-lastupdated: "2025-03-10"
+lastupdated: "2025-03-18"
 
 
 keywords: openshift, {{site.data.keyword.openshiftlong_notm}}, kubernetes, allowlist, operating system, rhel, ubuntu
@@ -26,7 +26,7 @@ Review the following steps to check your {{site.data.keyword.openshiftlong_notm}
 {: #cluster-version-ui}
 {: ui}
 
-1. From the [{{site.data.keyword.redhat_openshift_notm}} clusters console](https://cloud.ibm.com/kubernetes/clusters?platformType=openshift){: external}, review your cluster master version.
+1. From the [console](https://cloud.ibm.com/containers/cluster-management/clusters){: external}, review your cluster master version.
 1. Select your cluster, then select **Worker nodes** to review your worker node version.
 1. Select **Worker pools** then expand your worker pools to see their operating system.
 

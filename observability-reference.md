@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2025
-lastupdated: "2025-01-09"
+lastupdated: "2025-03-18"
 
 
 keywords: openshift, observability commands, observability cli, observability plug-in, logging commands, monitoring commands, logging cli, monitoring cli, logging config, monitoring config
@@ -47,7 +47,7 @@ ibmcloud ob logging agent discover --cluster CLUSTER [--instance LOGGING_INSTANC
 
 **Minimum required permissions**:
 - **Administrator** platform access role and **Manager** service access role for all Kubernetes namespaces in {{site.data.keyword.containerlong_notm}}
-- **Viewer** platform access role for {{site.data.keyword.la_full_notm}}
+- **Viewer** platform access role for {{site.data.keyword.logs_full_notm}}
 
 **Command options**:
 `--cluster CLUSTER`

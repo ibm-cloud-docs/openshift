@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2025
-lastupdated: "2025-03-10"
+lastupdated: "2025-03-18"
 
 
 keywords: kubernetes, openshift
@@ -40,7 +40,7 @@ Seeing errors when you deploy your app? {{site.data.keyword.redhat_openshift_not
 You can create apps through various methods in the {{site.data.keyword.redhat_openshift_notm}} console by using the **Developer** perspective. For more information, see the [{{site.data.keyword.redhat_openshift_notm}} documentation](https://docs.openshift.com/container-platform/4.17/applications/creating_applications/odc-creating-applications-using-developer-perspective.html){: external}.
 {: shortdesc}
 
-1. From the [{{site.data.keyword.redhat_openshift_notm}} clusters console](https://cloud.ibm.com/kubernetes/clusters?platformType=openshift){: external}, select your cluster.
+1. From the [console](https://cloud.ibm.com/containers/cluster-management/clusters){: external}, select your cluster.
 2. Click **{{site.data.keyword.redhat_openshift_notm}} web console**.
 3. From the perspective switcher, select **Developer**. The {{site.data.keyword.redhat_openshift_notm}} web console switches to the Developer perspective, and the menu now offers items such as **+Add**, **Topology**, and **Builds**.
 4. Click **+Add**.

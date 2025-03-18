@@ -1,8 +1,8 @@
 ---
 
 copyright: 
-  years: 2014, 2024
-lastupdated: "2024-05-29"
+  years: 2014, 2025
+lastupdated: "2025-03-18"
 
 
 keywords: kubernetes, openshift
@@ -52,7 +52,7 @@ If this cluster is an existing one, check your cluster capacity.
 
 
 
-1. From the [{{site.data.keyword.redhat_openshift_notm}} clusters console](https://cloud.ibm.com/kubernetes/clusters?platformType=openshift){: external}, select your cluster.
+1. From the [console](https://cloud.ibm.com/containers/cluster-management/clusters){: external}, select your cluster.
 2. Click **{{site.data.keyword.redhat_openshift_notm}} web console**.
 
 3. Check if you have enough capacity in your cluster to deploy your pod.
@@ -85,10 +85,3 @@ If this cluster is an existing one, check your cluster capacity.
     2. If the request exceeds the available capacity, add a worker pool with worker nodes that can fulfill the request. For more information, see [Adding worker nodes to Classic clusters](/docs/openshift?topic=openshift-add-workers-classic) or [Adding worker nodes to VPC clusters](/docs/openshift?topic=openshift-add-workers-vpc).
 
 6. If your pods still stay in a **pending** state after the worker node is fully deployed, review the [Kubernetes documentation](https://kubernetes.io/docs/tasks/debug/debug-application/debug-pods/#my-pod-stays-pending){: external} to further troubleshoot the pending state of your pod.
-
-
-
-
-
-
-

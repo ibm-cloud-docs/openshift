@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2025
-lastupdated: "2025-03-13"
+lastupdated: "2025-03-18"
 
 
 keywords: openshift
@@ -3506,7 +3506,7 @@ subcollection: openshift
 
 * [Locations where logs are generated](/docs/openshift?topic=openshift-logging#log-locations)
 
-* [Locations where logs are sent to {{site.data.keyword.la_full_notm}}](/docs/openshift?topic=openshift-logging#la-legacy-locations)
+* [Locations where logs are sent to {{site.data.keyword.logs_full_notm}}](/docs/openshift?topic=openshift-logging#la-legacy-locations)
 
 * [Locations where logs are sent by {{site.data.keyword.logs_routing_full_notm}}](/docs/openshift?topic=openshift-logging#lr-locations)
 
@@ -10012,7 +10012,7 @@ subcollection: openshift
 {: #sitemap_activity_tracker_events}
 
 
-[{{site.data.keyword.at_full_notm}} events](/docs/openshift?topic=openshift-at_events_ref#at_events_ref)
+[{{site.data.keyword.logs_full_notm}} events](/docs/openshift?topic=openshift-at_events_ref#at_events_ref)
 
 * [Cluster events](/docs/openshift?topic=openshift-at_events_ref#clusters-events)
 
@@ -10048,6 +10048,8 @@ subcollection: openshift
 
 * [Cluster](/docs/openshift?topic=openshift-api-at-iam#ks-cluster)
 
+* [Dedicated hosts](/docs/openshift?topic=openshift-api-at-iam#dedicated-hosts-api)
+
 * [Image security](/docs/openshift?topic=openshift-api-at-iam#image-security)
 
 * [Ingress](/docs/openshift?topic=openshift-api-at-iam#ks-ingress)
@@ -10062,7 +10064,7 @@ subcollection: openshift
 
 * [NLB DNS](/docs/openshift?topic=openshift-api-at-iam#ks-nlb-dns)
 
-* [Observability: {{site.data.keyword.la_short}}](/docs/openshift?topic=openshift-api-at-iam#ks-observability-logging)
+* [Observability](/docs/openshift?topic=openshift-api-at-iam#ks-observability-logging)
 
 * [Observability: {{site.data.keyword.mon_short}}](/docs/openshift?topic=openshift-api-at-iam#ks-observability-monitoring)
 
@@ -11252,6 +11254,8 @@ subcollection: openshift
 
     * [Storage](/docs/openshift?topic=openshift-limitations#classic_storage_limit)
 
+* [User access](/docs/openshift?topic=openshift-limitations#user-access)
+
 * [VPC cluster limitations](/docs/openshift?topic=openshift-limitations#ks_vpc_gen2_limits)
 
     * [Compute](/docs/openshift?topic=openshift-limitations#vpc_gen2_compute_limit)
@@ -11259,6 +11263,8 @@ subcollection: openshift
     * [Networking](/docs/openshift?topic=openshift-limitations#vpc_gen2_networking_limit)
 
     * [Storage](/docs/openshift?topic=openshift-limitations#vpc_gen2_storage_limit)
+
+* [User access](/docs/openshift?topic=openshift-limitations#user-access)
 
 * [{{site.data.keyword.satelliteshort}} cluster limitations](/docs/openshift?topic=openshift-limitations#satellite_limits)
 

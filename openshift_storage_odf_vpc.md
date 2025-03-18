@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2025
-lastupdated: "2025-02-04"
+lastupdated: "2025-03-18"
 
 
 keywords: openshift, openshift data foundation, openshift container storage, ocs
@@ -215,8 +215,8 @@ To install ODF in your cluster, complete the following steps.
 
 1. Before you enable the add-on, review the [change log](/docs/openshift?topic=openshift-cl-add-ons-openshift-data-foundation) for the latest version information. 
 1. [Review the parameter reference](/docs/openshift?topic=openshift-openshift_storage_parameters).
-1. From the [{{site.data.keyword.redhat_openshift_notm}} clusters console](https://cloud.ibm.com/kubernetes/clusters?platformType=openshift){: external}, select the cluster where you want to install the add-on.
-1. On the cluster **Overview** page, on the OpenShift Data Foundation card, click **Install**. The **Install ODF** panel opens.
+1. From the [console](https://cloud.ibm.com/containers/cluster-management/clusters){: external}, select the cluster where you want to install the add-on.
+1. On the OpenShift Data Foundation card, click **Install**. The **Install ODF** panel opens.
 1. In the **Install ODF** panel, enter the configuration parameters that you want to use for your ODF deployment.
 1. Select either **Essentials** or **Advanced** as your billing plan. For more information about billing type, see [Feature support by billing type](/docs/openshift?topic=openshift-ocs-storage-prep&interface=cli#odf-essentials-vs-advanced).
 1. For VPC clusters, select **Remote provisioning** to dynamically provision volumes for ODF by using the {{site.data.keyword.block_storage_is_short}}.

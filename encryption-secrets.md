@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2023, 2025
-lastupdated: "2025-01-23"
+lastupdated: "2025-03-18"
 
 
 keywords: openshift, {{site.data.keyword.openshiftlong_notm}}, kubernetes, red hat, encrypt, security, kms, root key, crk
@@ -95,15 +95,15 @@ You can enable a KMS provider, update the KMS provider instance, or update the r
 
 
 1. [Create a KMS instance and root key](/docs/openshift?topic=openshift-encryption-setup). If you want to use cross account KMS encryption, make sure to create the KMS and root key in the account whose KMS instance you want to use.
-1. From the [{{site.data.keyword.redhat_openshift_notm}} clusters console](https://cloud.ibm.com/kubernetes/clusters?platformType=openshift){: external}, select the cluster that you want to enable encryption for.
-1. From the **Overview** tab, in the **Summary > Key management service** section, click **Enable**. If you already enabled the KMS provider, click **Update**.
+1. From the [console](https://cloud.ibm.com/containers/cluster-management/clusters){: external}, select the cluster that you want to enable encryption for.
+1. In the **Key management service** section, click **Enable**. If you already enabled the KMS provider, click **Update**.
 1. Select the **Key management service instance** and **Root key** that you want to use for the encryption.
 
     During the enablement, you might not be able to access the Kubernetes master such as to update YAML configurations for deployments.
     {: important}
     
 1. Click **Enable** (or **Update**).
-1. Verify that the KMS enablement process is finished. From the **Summary > Master status** section, you can check the progress.
+1. Verify that the KMS enablement process is finished.
     Example output when the enablement is in progress.
     ```sh
     Master status   KMS feature enablement in progress.  

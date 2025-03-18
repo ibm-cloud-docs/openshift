@@ -1,8 +1,8 @@
 ---
 
 copyright: 
-  years: 2014, 2024
-lastupdated: "2024-08-06"
+  years: 2014, 2025
+lastupdated: "2025-03-18"
 
 
 keywords: openshift, node scaling, ca, autoscaler
@@ -26,9 +26,8 @@ You can enable the add-on from the console or the command the line.
 {: #autoscaler-enable-console}
 {: ui}
     
-1. From the [{{site.data.keyword.openshiftlong_notm}} cluster dashboard](https://cloud.ibm.com/kubernetes/clusters), select the cluster where you want to enable autoscaling.
-1. On the **Overview** page, click **Add-ons**.
-1. On the **Add-ons** page, locate the Cluster Autoscaler add-on and click **Install**
+1. From the [{{site.data.keyword.openshiftlong_notm}} cluster dashboard](https://cloud.ibm.com/containers/cluster-management/clusters), select the cluster where you want to enable autoscaling.
+1. In the **Add-ons** section, locate the Cluster Autoscaler add-on and click **Install**
 
 ## Enabling the cluster autoscaler add-on from the CLI
 {: #autoscaler-enable-CLI}
@@ -112,11 +111,9 @@ To update the cluster autoscaler add-on:
 
 1. [Edit the autoscaler ConfigMap](/docs/openshift?topic=openshift-cluster-scaling-install-addon-enable) to stop scaling your working pools.
 
-1. From the [{{site.data.keyword.openshiftlong_notm}} cluster dashboard](https://cloud.ibm.com/kubernetes/clusters), select the cluster where you want to enable autoscaling.
+1. From the [{{site.data.keyword.openshiftlong_notm}} cluster dashboard](https://cloud.ibm.com/containers/cluster-management/clusters), select the cluster where you want to enable autoscaling.
 
-1. On the **Overview** page, click **Add-ons**.
-
-1. On the **Add-ons** page, locate the Cluster Autoscaler add-on and click **Uninstall**
+1. Locate the Cluster Autoscaler add-on and click **Uninstall**
 
 
 ## Removing the cluster autoscaler add-on from the CLI
@@ -139,9 +136,3 @@ To update the cluster autoscaler add-on:
     ```
     {: pre}
     
-
-
-
-
-
-

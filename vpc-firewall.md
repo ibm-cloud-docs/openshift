@@ -1,8 +1,8 @@
 ---
 
 copyright: 
-  years: 2014, 2024
-lastupdated: "2024-04-16"
+  years: 2014, 2025
+lastupdated: "2025-03-18"
 
 
 keywords: openshift, firewall, ips
@@ -13,9 +13,6 @@ subcollection: openshift
 ---
 
 {{site.data.keyword.attribute-definition-list}}
-
-
-
 
 
 # Opening required ports and IP addresses in other network allowlists
@@ -331,4 +328,3 @@ To permit egress to your cluster from another service, modify that service's all
 
 2. Add the subnet CIDRs or individual worker node IP addresses to your service's allowlist or your on-premises allowlist for outbound traffic.
 3. Repeat these steps for each cluster that you want to allow traffic to or from.
-

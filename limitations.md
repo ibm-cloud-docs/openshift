@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2025
-lastupdated: "2025-03-13"
+lastupdated: "2025-03-18"
 
 
 keywords: openshift, http2, quota, app protocol, application protocol
@@ -55,7 +55,7 @@ To view quota limits on cluster-related resources in your {{site.data.keyword.cl
 | Worker pool size | You must always have a minimum of 2 nodes in your cluster. Because of the worker node quota, you are limited in the number of worker pools per cluster and number of worker nodes per worker pool. For example, with the default worker node quota of 500 per region, you might have up to 500 worker pools of 1 worker node each in a region with only 1 cluster. Or, you might have 1 worker pool with up to 500 worker nodes in a region with only 1 cluster. |
 | Red Hat Enterprise Linux CoreOS worker nodes | The maximum amount of zones added to a cluster is 15. For example, 4 RHCOS worker pools with 3 zones each will account for 12/15 of the quota for that cluster. |
 | Cluster naming | To ensure that the Ingress subdomain and certificate are correctly registered, the first 24 characters of the clusters' names must be different. If you create and delete clusters with the same name or names that have the same first 24 characters 5 times or more within 7 days, such as for automation or testing purposes, you might reach the [Let's Encrypt Duplicate Certificate rate limit](/docs/openshift?topic=openshift-cs_rate_limit). |
-| Resource groups | A cluster can be created in only one resource group that you can't change afterward. If you create a cluster in the wrong resource group, you must delete the cluster and re-create it in the correct resource group. Furthermore, if you need to use the `ibmcloud oc cluster service bind` command to [integrate with an {{site.data.keyword.cloud_notm}} service](/docs/openshift?topic=openshift-service-binding#bind-services), that service must be in the same resource group as the cluster. Services that don't use resource groups like {{site.data.keyword.registrylong_notm}} or that don't need service binding like {{site.data.keyword.la_full_notm}} work even if the cluster is in a different resource group. |
+| Resource groups | A cluster can be created in only one resource group that you can't change afterward. If you create a cluster in the wrong resource group, you must delete the cluster and re-create it in the correct resource group. Furthermore, if you need to use the `ibmcloud oc cluster service bind` command to [integrate with an {{site.data.keyword.cloud_notm}} service](/docs/openshift?topic=openshift-service-binding#bind-services), that service must be in the same resource group as the cluster. Services that don't use resource groups like {{site.data.keyword.registrylong_notm}} or that don't need service binding like {{site.data.keyword.logs_full_notm}} work even if the cluster is in a different resource group. |
 {: caption="{{site.data.keyword.openshiftlong_notm}} limitations"}
 
 
@@ -129,6 +129,16 @@ Keep in mind that the [service](#tech_limits) limitations also apply.
 | File storage | Because of the way that {{site.data.keyword.cloud_notm}} NFS file storage configures Linux user permissions, you might encounter errors when you use file storage. If so, you might need to configure [{{site.data.keyword.redhat_openshift_notm}} Security Context Constraints](https://docs.openshift.com/container-platform/4.17/authentication/managing-security-context-constraints.html){: external} or use a different storage type. |
 {: caption="Classic cluster storage limitations"}
 
+## User access
+{:#classic_access_limit}
+
+Keep in mind that the [service](#tech_limits) limitations also apply.
+
+| Category | Description |
+| -------- | ----------- |
+| IP address access | Restricting access for specific users by enabling IP address access is not supported by {{site.data.keyword.openshiftlong_notm}}. If you want to restrict user access or restrict which services and VPCs a user can access, consider [context-based restriction](/docs/openshift?topic=openshift-cbr-tutorial).  |
+{: caption="Classic cluster user access limitations"}
+
 
 
 ## VPC cluster limitations
@@ -185,6 +195,16 @@ Keep in mind that the [service](#tech_limits) limitations also apply.
 | {{site.data.keyword.block_storage_is_short}} | The default storage class in VPC clusters cannot be changed. However, you can [create your own storage class](/docs/openshift?topic=openshift-vpc-block#vpc-customize-storage-class). |
 {: caption="VPC cluster storage limitations"}
 
+## User access
+{:#vpc_access_limit}
+
+Keep in mind that the [service](#tech_limits) limitations also apply.
+
+| Category | Description |
+| -------- | ----------- |
+| IP address access | Restricting access for specific users by enabling IP address access is not supported by {{site.data.keyword.openshiftlong_notm}}. If you want to restrict user access or restrict which services and VPCs a user can access, consider [context-based restriction](/docs/openshift?topic=openshift-cbr-tutorial).  |
+{: caption="VPC cluster user access limitations"}
+
 
 
 ## {{site.data.keyword.satelliteshort}} cluster limitations
@@ -196,7 +216,6 @@ Review the following limitations for [{{site.data.keyword.openshiftlong_notm}} c
 | Category | Description |
 | -------- | ----------- |
 | Cluster add-ons | Review the [unsupported managed add-ons for {{site.data.keyword.redhat_openshift_notm}} clusters](/docs/openshift?topic=openshift-managed-addons#addons-satellite) in a {{site.data.keyword.satelliteshort}} location. For example, the cluster autoscaler and Istio are not supported. |
-| Logging and monitoring | You can't currently use the {{site.data.keyword.openshiftlong_notm}} console or the observability plug-in CLI (`ibmcloud ob`) to enable logging and monitoring for {{site.data.keyword.satelliteshort}} clusters. Instead, you can manually deploy [{{site.data.keyword.la_short}} agents](/docs/log-analysis?topic=log-analysis-tutorial-use-logdna) and [{{site.data.keyword.mon_short}} agents](/docs/monitoring?topic=monitoring-kubernetes_cluster#kubernetes_cluster) to your cluster to forward logs and metrics to {{site.data.keyword.la_full_notm}} and {{site.data.keyword.mon_full_notm}}. |
 | Network |  \n - By default, there is no load balancer controller deployed with {{site.data.keyword.satelliteshort}} clusters and therefore, [Kubernetes LoadBalancer services](https://kubernetes.io/docs/tasks/access-application-cluster/create-external-load-balancer/){: external} are not provision by default. You can integrate your own load balancer solution into clusters, such as [MetalLB](/docs/openshift?topic=openshift-sat-expose-apps#sat-expose-metallb). \n - The hosts that run the worker nodes for your cluster must meet the [host networking](/docs/satellite?topic=satellite-reqs-host-network) and provider-specific requirements, such as for [AWS](/docs/satellite?topic=satellite-aws), [Azure](/docs/satellite?topic=satellite-azure), [GCP](/docs/satellite?topic=satellite-gcp), and [{{site.data.keyword.cloud_notm}}](/docs/satellite?topic=satellite-ibm) (testing and demonstration purposes only). \n - Because VXLAN encapsulation is required for traffic between pods that are on different worker nodes, data transfer speeds between pods on different worker nodes might be slower than the network capability of the hosts. |
 | Storage for worker node hosts | See [Host storage and attached devices](/docs/satellite?topic=satellite-reqs-host-storage). |
 | Storage for apps | No storage provider is installed in your {{site.data.keyword.satelliteshort}} clusters by default. Therefore, no pre-configured Kubernetes storage classes are set up by default in your clusters to store your application data in a Kubernetes persistent volume that is backed by storage device. For options to set up a storage provider, see [Understanding {{site.data.keyword.satelliteshort}} storage templates](/docs/satellite?topic=satellite-storage-template-ov). |

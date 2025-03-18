@@ -1,8 +1,8 @@
 ---
 
 copyright: 
-  years: 2014, 2024
-lastupdated: "2024-05-14"
+  years: 2014, 2025
+lastupdated: "2025-03-18"
 
 
 keywords: openshift, {{site.data.keyword.openshiftlong_notm}}, continuous integration and delivery
@@ -39,7 +39,7 @@ Before you begin, make sure that you have at least the following permissions in 
 
 Follow these steps to create a CI/CD pipeline with a toolchain. A toolchain is a set of tool integrations that support development, deployment, and operations tasks. When configuring the toolchain you can include and configure a Delivery Pipeline that is automatically created and triggered after the toolchain is created.
 
-1. From the [{{site.data.keyword.redhat_openshift_notm}} clusters console](https://cloud.ibm.com/kubernetes/clusters?platformType=openshift){: external}, select the cluster for which you want to set up a continuous delivery pipeline.
+1. From the [console](https://cloud.ibm.com/containers/cluster-management/clusters){: external}, select the cluster for which you want to set up a continuous delivery pipeline.
 2. Select the **DevOps** tab.
 3. Click **Create a toolchain**.
 4. Review the available toolchains. IBM provides pre-defined toolchains that you can use to deploy, test, and monitor Kubernetes-native apps or Helm charts. You can expand each toolchain to find an overview of the tools that are set up for you and to find the scripts in GitHub that are used to configure the toolchain in your cluster. If you know what tools you want to use, you can create your own toolchain.
@@ -47,7 +47,7 @@ Follow these steps to create a CI/CD pipeline with a toolchain. A toolchain is a
 6. Follow the directions in the console to configure your toolchain. Make sure to include the name of your cluster in your toolchain name so that you can easily find the toolchain that is associated with your cluster later. For more information, see [Creating toolchains](/docs/ContinuousDelivery?topic=ContinuousDelivery-toolchains_getting_started).
 7. Select **Delivery Pipeline** to review the stages of your continuous integration and continuous delivery pipeline. After you create your toolchain, your pipeline is automatically kicked off and runs through the stages that you configured. Make sure that your stages run successfully and correct any errors.
 8. Modify your toolchain. You can add more tools to your toolchain or change the stages of your delivery pipeline.
-    1. From the [{{site.data.keyword.redhat_openshift_notm}} clusters console](https://cloud.ibm.com/kubernetes/clusters?platformType=openshift){: external}, select the cluster for which you want to set up a continuous delivery pipeline.
+    1. From the [console](https://cloud.ibm.com/containers/cluster-management/clusters){: external}, select the cluster for which you want to set up a continuous delivery pipeline.
     2. Select the **DevOps** tab.
     3. Select the toolchain that you want to modify.
 
@@ -76,4 +76,3 @@ Kustomize
     
 Operators
 :   With operators, you can manage the lifecycle of the apps in your cluster, including third-party software and services that you integrate into your cluster from the [OperatorHub](https://operatorhub.io/){: external}. You can consistently install, update, and monitor system components by using operators or by making operators available to developers that work in specific projects or across projects. To set up operators, see [Using Operators in clusters](/docs/openshift?topic=openshift-operators#operators_4).
-

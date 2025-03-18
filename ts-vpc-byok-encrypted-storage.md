@@ -1,7 +1,7 @@
 ---
 copyright:
   years: 2023, 2025
-lastupdated: "2025-03-13"
+lastupdated: "2025-03-18"
 
 
 keywords: openshift, {{site.data.keyword.openshiftlong_notm}}, byok, debug, help, vpc, storage, encryption
@@ -53,7 +53,7 @@ Verify that the KMS instance or root key still exist. If either one has been del
     ```
     {: screen}
 
-1. Verify that the root key still exists from the [{{site.data.keyword.redhat_openshift_notm}} clusters console](https://cloud.ibm.com/kubernetes/clusters?platformType=openshift){: external}. 
+1. Verify that the root key still exists from the [console](https://cloud.ibm.com/containers/cluster-management/clusters){: external}. 
 
     1. Log in to the IBM Cloud console.
 

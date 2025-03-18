@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2025
-lastupdated: "2025-03-10"
+lastupdated: "2025-03-18"
 
 
 keywords: kubernetes, openshift, red hat, red hat openshift
@@ -136,7 +136,7 @@ Review the following diagram for an overview of common cluster resources.
 {: step}
 
 
-1. From the [{{site.data.keyword.redhat_openshift_notm}} clusters console](https://cloud.ibm.com/kubernetes/clusters?platformType=openshift){: external}, select your {{site.data.keyword.redhat_openshift_notm}} cluster, then click **OpenShift web console**.
+1. From the [console](https://cloud.ibm.com/containers/cluster-management/clusters){: external}, select your {{site.data.keyword.redhat_openshift_notm}} cluster, then click **OpenShift web console**.
 2. To work with your cluster in the CLI, click your profile **`IAM#user.name@email.com` > Copy Login Command**. Display and copy the `oc login` token command into your command line to authenticate by using the CLI.
 
 
@@ -257,4 +257,4 @@ Review the following diagram for an overview of common cluster resources.
 
 For more information about working with your apps, see the [{{site.data.keyword.redhat_openshift_notm}} developer activities](https://docs.openshift.com/container-platform/4.17/welcome/index.html#developer-activities){: external} documentation.
 
-Install two popular {{site.data.keyword.openshiftlong_notm}} cluster add-ons: [{{site.data.keyword.la_full_notm}}](/docs/openshift?topic=openshift-health#openshift_logging) and [{{site.data.keyword.mon_full_notm}}](/docs/openshift?topic=openshift-health-monitor).
+Install two popular {{site.data.keyword.openshiftlong_notm}} cluster add-ons: [{{site.data.keyword.logs_full_notm}}](/docs/openshift?topic=openshift-health#openshift_logging) and [{{site.data.keyword.mon_full_notm}}](/docs/openshift?topic=openshift-health-monitor).

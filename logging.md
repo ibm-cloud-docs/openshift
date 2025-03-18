@@ -2,7 +2,7 @@
 
 copyright:
   years: 2024, 2025
-lastupdated: "2025-03-13"
+lastupdated: "2025-03-18"
 
 keywords: logging, cloud logs, logs, log analysis, containers
 
@@ -33,10 +33,10 @@ As of 28 March 2024, the {{site.data.keyword.la_full_notm}} service is deprecate
 
 {{site.data.keyword.openshiftlong_notm}} logs are generated in all regions. 
 
-## Locations where logs are sent to {{site.data.keyword.la_full_notm}}
+## Locations where logs are sent to {{site.data.keyword.logs_full_notm}}
 {: #la-legacy-locations}
 
-{{site.data.keyword.openshiftlong_notm}} sends logs to {{site.data.keyword.la_full_notm}} in all regions. 
+{{site.data.keyword.openshiftlong_notm}} sends logs to {{site.data.keyword.logs_full_notm}} in all regions. 
 
 ## Locations where logs are sent by {{site.data.keyword.logs_routing_full_notm}}
 {: #lr-locations}
@@ -162,7 +162,7 @@ You can migrate your clusters from the Console or by using the CLI.
 {: #cloud-logs-console-enable}
 
 
-1. From the cluster dashboard, disable **Log Analysis** and **Activity Tracker**.
+1. From the [console](https://cloud.ibm.com/containers/cluster-management/clusters){: external}, select your cluster.
 1. Enable the **Cloud Logs** [integration](#log-enable-existing).
 
 ### Enabling Cloud Logs in the CLI

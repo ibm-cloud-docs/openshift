@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2025
-lastupdated: "2025-02-01"
+lastupdated: "2025-03-18"
 
 
 keywords: kubernetes, registry, pull secret, secrets, openshift
@@ -424,8 +424,8 @@ See the following commands.
 #### Enabling or disabling image security enforcement from the console
 {: #portieris-enable-ui}
 
-1. From the [{{site.data.keyword.redhat_openshift_notm}} clusters console](https://cloud.ibm.com/kubernetes/clusters?platformType=openshift){: external}, select your cluster.
-2. From the **Overview** tab, in the **Summary** pane, find the **Image security enforcement** field and click **Enable** or **Disable**.
+1. From the [console](https://cloud.ibm.com/containers/cluster-management/clusters){: external}, select your cluster.
+2. Find the **Image security enforcement** field and click **Enable** or **Disable**.
 
 ### Default image policies
 {: #portieris-default-policies}
