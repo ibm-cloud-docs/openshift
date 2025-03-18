@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2025
-lastupdated: "2025-02-03"
+lastupdated: "2025-03-18"
 
 
 keywords: openshift, {{site.data.keyword.openshiftlong_notm}}, kubernetes, audit
@@ -14,26 +14,26 @@ subcollection: openshift
 
 {{site.data.keyword.attribute-definition-list}}
 
+log ana
 
-# {{site.data.keyword.at_full_notm}} events
+# {{site.data.keyword.logs_full_notm}} events
 {: #at_events_ref}
 
-You can view, manage, and audit user-initiated activities in your {{site.data.keyword.openshiftlong}} community Kubernetes or {{site.data.keyword.redhat_openshift_notm}} cluster by using the {{site.data.keyword.at_full}} service.
+You can view, manage, and audit user-initiated activities in your {{site.data.keyword.openshiftlong}} community Kubernetes or {{site.data.keyword.redhat_openshift_notm}} cluster by using the {{site.data.keyword.logs_full_notm}} service.
 {: shortdesc}
 
-{{site.data.keyword.openshiftlong_notm}} automatically generates cluster management events and forwards these event logs to {{site.data.keyword.at_full_notm}}. To access these logs, you must [provision an instance of {{site.data.keyword.at_full_notm}}](/docs/activity-tracker?topic=activity-tracker-getting-started).
+{{site.data.keyword.openshiftlong_notm}} automatically generates cluster management events and forwards these event logs to {{site.data.keyword.logs_full_notm}}.
 
 
 ## Cluster events
 {: #clusters-events}
 
-The following list of cluster events are sent to {{site.data.keyword.at_full_notm}}.
-{: shortdesc}
 
 |Action|Description|
 |------|-----------|
 | `containers-kubernetes.cluster.config` | The Kubernetes configuration file (`kubeconfig`) for a cluster is requested. Depending on the request, the `kubeconfig` might contain administrator or network certificates and secrets to access the cluster. |
 | `containers-kubernetes.cluster.create` | The creation of a cluster is requested. This event is sent for any type of cluster, such as clusters that are created in different infrastructure providers. |
+| `containers-kubernetes.cluster.create-handler` | During cluster creation, this event signals the creation of the cluster network microservices. This event is sent for any type of cluster, such as clusters that are created in different infrastructure providers.  |
 | `containers-kubernetes.cluster.list` | Clusters are listed. The list might be filtered by details such as the infrastructure provider. |
 | `containers-kubernetes.cluster.delete` | A cluster is deleted. |
 | `containers-kubernetes.cluster.get` | Details for a cluster are returned. |
@@ -78,8 +78,6 @@ The following list of cluster events are sent to {{site.data.keyword.at_full_not
 ## Cluster account events
 {: #cluster-account-events}
 
-The following list of account events that are related to managing your clusters are sent to {{site.data.keyword.at_full_notm}}.
-{: shortdesc}
 
 |Action|Description|
 |------|-----------|
@@ -107,8 +105,6 @@ The following list of account events that are related to managing your clusters 
 ## Cluster add-on events
 {: #cluster-addons}
 
-The following list of the cluster add-on events are sent to {{site.data.keyword.at_full_notm}}.
-{: shortdesc}
 
 |Action|Description|
 |------|-----------|
@@ -123,9 +119,6 @@ The following list of the cluster add-on events are sent to {{site.data.keyword.
 
 ## Fluentd logging events
 {: #at-fluentd}
-
-The following list of Fluentd logging events for a cluster are sent to {{site.data.keyword.at_full_notm}}.
-{: shortdesc}
 
 |Action|Description|
 |------|-----------|
@@ -145,8 +138,6 @@ The following list of Fluentd logging events for a cluster are sent to {{site.da
 ## Ingress ALB events
 {: #ingress-alb-events}
 
-The following list of Ingress application load balancer (ALB) events are sent to {{site.data.keyword.at_full_notm}}.
-{: shortdesc}
 
 |Action|Description|
 |------|-----------|
@@ -179,9 +170,6 @@ The following list of Ingress application load balancer (ALB) events are sent to
 ## Ingress secret events
 {: #ingress-secret-events}
 
-The following list of Ingress secret events are sent to {{site.data.keyword.at_full_notm}}.
-{: shortdesc}
-
 |Action|Description|
 |------|-----------|
 | `containers-kubernetes.cluster-ingress-secret.get` | Details for an Ingress secret are viewed. |
@@ -196,8 +184,6 @@ The following list of Ingress secret events are sent to {{site.data.keyword.at_f
 ## Observability events for logging and monitoring
 {: #at-lm}
 
-The following list of the logging and monitoring configuration events are sent to {{site.data.keyword.at_full_notm}} by the {{site.data.keyword.containerlong_notm}} observability plug-in.
-{: shortdesc}
 
 |Action|Description|
 |------|-----------|
@@ -217,8 +203,6 @@ The following list of the logging and monitoring configuration events are sent t
 ## NLB DNS events
 {: #ingress-nlb-dns-events}
 
-The following list of network load balancer (NLB) DNS events are sent to {{site.data.keyword.at_full_notm}}.
-{: shortdesc}
 
 |Action|Description|
 |------|-----------|
@@ -284,8 +268,6 @@ The following table lists the actions related to storage resources and the gener
 ## Worker node and worker pool events
 {: #worker-events}
 
-The following list of worker node and worker pool events are sent to {{site.data.keyword.at_full_notm}}.
-{: shortdesc}
 
 |Action|Description|
 |------|-----------|
@@ -319,12 +301,12 @@ The following list of worker node and worker pool events are sent to {{site.data
 ## Viewing your cluster events
 {: #at-ui}
 
-To [view events](/docs/activity-tracker?topic=activity-tracker-view_events) that are sent to {{site.data.keyword.at_full_notm}}, you select the {{site.data.keyword.at_short}} instance that matches with the location of your {{site.data.keyword.openshiftlong_notm}} cluster.
+To [view events](/docs/cloud-logs?topic=cloud-logs-getting-started) you select the {{site.data.keyword.logs_full_notm}} instance that matches with the location of your {{site.data.keyword.openshiftlong_notm}} cluster.
 {: shortdesc}
 
-The following table shows the {{site.data.keyword.at_short}} location where your events are sent to. To view your events, make sure that you have an {{site.data.keyword.at_short}} instance in the location that matches your cluster location. Note that clusters in the Montreal, Toronto, and Washington, D.C. locations forward all events to the Dallas {{site.data.keyword.at_short}} location.
+The following table shows the {{site.data.keyword.logs_full_notm}} location where your events are sent to. To view your events, make sure that you have an instance in the location that matches your cluster location. Note that clusters in the Montreal, Toronto, and Washington, D.C. locations forward all events to the Dallas location.
 
-| {{site.data.keyword.openshiftlong_notm}} classic location | {{site.data.keyword.at_short}} event location |
+| {{site.data.keyword.openshiftlong_notm}} classic location | {{site.data.keyword.logs_full_notm}} event location |
 |-----|-----|
 | Dallas (dal10, dal12, dal13) | Dallas |
 | Montreal (mon01) | Washington, D.C. |
@@ -343,11 +325,11 @@ The following table shows the {{site.data.keyword.at_short}} location where your
 | Osaka (osa21, osa22, osa23) | Osaka |
 | Singapore (sng01) | Tokyo |
 | Tokyo (tok02, tok04, tok05) | Tokyo |
-{: caption="Corresponding {{site.data.keyword.at_short}} instance and {{site.data.keyword.openshiftlong_notm}} cluster locations." caption-side="bottom"}
+{: caption="Corresponding {{site.data.keyword.logs_full_notm}} instance and {{site.data.keyword.openshiftlong_notm}} cluster locations." caption-side="bottom"}
 
 
 
-| {{site.data.keyword.openshiftlong_notm}} VPC location | {{site.data.keyword.at_short}} event location |
+| {{site.data.keyword.openshiftlong_notm}} VPC location | {{site.data.keyword.logs_full_notm}} event location |
 |-----|-----|
 | Dallas (us-south-1, us-south-2, us-south-3) | Dallas |
 | Frankfurt (eu-de-1, eu-de-2, eu-de-3) | Frankfurt |
@@ -358,4 +340,4 @@ The following table shows the {{site.data.keyword.at_short}} location where your
 | Tokyo (jp-tok-1, jp-tok-2, jp-tok-3) | Tokyo |
 | Toronto (ca-tor-1, ca-tor-2, ca-tor-3) | Toronto |
 | Washington, D.C. (us-east-1, us-east-2, us-east-3) | Washington, D.C. |
-{: caption="Corresponding {{site.data.keyword.at_short}} instance and {{site.data.keyword.openshiftlong_notm}} cluster locations." caption-side="bottom"}
+{: caption="Corresponding {{site.data.keyword.logs_full_notm}} instance and {{site.data.keyword.openshiftlong_notm}} cluster locations." caption-side="bottom"}

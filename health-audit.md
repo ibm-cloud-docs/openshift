@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2025
-lastupdated: "2025-02-28"
+lastupdated: "2025-03-18"
 
 
 keywords: openshift, kubernetes, logmet, logs, metrics, audit, events
@@ -630,7 +630,7 @@ See [Forwarding logs to an {{site.data.keyword.logs_full_notm}} instance](/docs/
 ## Service audit logs
 {: #audit-service}
 
-By default, {{site.data.keyword.openshiftlong_notm}} generates and sends events to {{site.data.keyword.at_full_notm}}. To see these events, you must create an {{site.data.keyword.at_full_notm}} instance. For more information, see [{{site.data.keyword.at_full_notm}} events](/docs/openshift?topic=openshift-at_events_ref).
+By default, {{site.data.keyword.openshiftlong_notm}} generates and sends events to {{site.data.keyword.logs_full_notm}}. To see these events, you must create an {{site.data.keyword.logs_full_notm}} instance. For more information, see [{{site.data.keyword.logs_full_notm}} events](/docs/openshift?topic=openshift-at_events_ref).
 
 
 

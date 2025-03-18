@@ -1,8 +1,8 @@
 ---
 
 copyright: 
-  years: 2014, 2024
-lastupdated: "2024-05-29"
+  years: 2014, 2025
+lastupdated: "2025-03-18"
 
 
 keywords: kubernetes, openshift
@@ -37,7 +37,7 @@ Only one version of the Diagnostics and Debug Tool is available at a time. This 
 ## Enable and run the Diagnostics and Debug Tool add-on
 {: #debug-tool-enable}
 
-1. In the [{{site.data.keyword.redhat_openshift_notm}} clusters console](https://cloud.ibm.com/kubernetes/clusters?platformType=openshift){: external}, click the name of the cluster where you want to install the debug tool add-on.
+1. In the [console](https://cloud.ibm.com/containers/cluster-management/clusters){: external}, click the name of the cluster where you want to install the debug tool add-on.
 
 
 1. On the **Diagnostics and Debug Tool** card, click **Install**.
@@ -53,7 +53,3 @@ Only one version of the Diagnostics and Debug Tool is available at a time. This 
 1. Check the results of each test.
     * If any test fails, click the information icon next to the test's name for information about how to resolve the issue.
     * You can also use the results of tests to gather information, such as complete YAMLs, that can help you debug your cluster in the following sections.
-
-
-
-

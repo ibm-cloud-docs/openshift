@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2025
-lastupdated: "2025-02-14"
+lastupdated: "2025-03-18"
 
 
 keywords: openshift, openshift data foundation, openshift container storage, ocs, classic
@@ -410,8 +410,8 @@ Version 4.11 is currently available for new clusters only. You can't upgrade a 4
 
 1. Before you enable the add-on, review the [change log](/docs/openshift?topic=openshift-cl-add-ons-openshift-data-foundation) for the latest version information. Note that the add-on supports `n+1` cluster versions.
 1. [Review the parameter reference](/docs/openshift?topic=openshift-openshift_storage_parameters).
-1. From the [{{site.data.keyword.redhat_openshift_notm}} clusters console](https://cloud.ibm.com/kubernetes/clusters?platformType=openshift){: external}, select the cluster where you want to install the add-on.
-1. On the cluster **Overview** page, on the OpenShift Data Foundation card, click **Install**. The **Install ODF** panel opens.
+1. From the [console](https://cloud.ibm.com/containers/cluster-management/clusters){: external}, select the cluster where you want to install the add-on.
+1. On the OpenShift Data Foundation card, click **Install**. The **Install ODF** panel opens.
 1. In the **Install ODF** panel, enter the configuration parameters that you want to use for your ODF deployment.
 1. Select either **Essentials** or **Advanced** as your billing plan.
 1. For classic clusters, select **Local storage** to use local volumes on the worker nodes.

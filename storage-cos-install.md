@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2025
-lastupdated: "2025-03-10"
+lastupdated: "2025-03-18"
 
 
 keywords: kubernetes, openshift
@@ -24,8 +24,7 @@ subcollection: openshift
 Install the {{site.data.keyword.cos_full_notm}} plug-in to set up pre-defined storage classes for {{site.data.keyword.cos_full_notm}}. You can use these storage classes to create a PVC to provision {{site.data.keyword.cos_full_notm}} for your apps.
 {: shortdesc}
 
-If you are migrating from RHEL 7 to RHEL 8, you must uninstall and then reinstall the plug-in version `2.2.6` or later. If you are upgrading from a chart version before `2.2.5`, you must uninstall and reinstall the plug-in and then re-create your PVCs and pods or the upgrade will fail.
-{: important}
+
 
 
 

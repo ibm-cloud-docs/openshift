@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2025
-lastupdated: "2025-02-14"
+lastupdated: "2025-03-18"
 
 
 keywords: openshift, satellite, distributed cloud, on-prem, hybrid
@@ -50,7 +50,7 @@ Before you can create clusters in {{site.data.keyword.satellitelong_notm}}, you 
 Use the {{site.data.keyword.cloud_notm}} console to create your {{site.data.keyword.redhat_openshift_notm}} clusters on your {{site.data.keyword.satelliteshort}} infrastructure.
 {: shortdesc}
 
-From the [{{site.data.keyword.redhat_openshift_notm}} clusters console](https://cloud.ibm.com/kubernetes/clusters?platformType=openshift){: external}, click **Create**. Then, review the following sections to set up your cluster.
+From the [console](https://cloud.ibm.com/containers/cluster-management/clusters){: external}, click **Create**. Then, review the following sections to set up your cluster.
 
 Infrastructure
 :   Select **{{site.data.keyword.satelliteshort}}**.

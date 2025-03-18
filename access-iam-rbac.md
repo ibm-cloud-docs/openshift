@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2024, 2025
-lastupdated: "2025-02-01"
+lastupdated: "2025-03-18"
 
 
 keywords: openshift, {{site.data.keyword.openshiftlong_notm}}, kubernetes, infrastructure, rbac, policy, role-based access control
@@ -285,7 +285,7 @@ Verify your custom RBAC or synchronized IAM service access to RBAC roles in your
 ### Checking RBAC roles from the UI
 {: #checking-rbac-ui}
 
-1. Log in to the [{{site.data.keyword.redhat_openshift_notm}} clusters console](https://cloud.ibm.com/kubernetes/clusters?platformType=openshift){: external}.
+1. Log in to the [console](https://cloud.ibm.com/containers/cluster-management/clusters){: external}.
 1. Click the cluster with the RBAC roles that you want to check.
 1. Click the **{{site.data.keyword.redhat_openshift_notm}} web console**.
 

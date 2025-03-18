@@ -33,7 +33,7 @@ Image security compliance with Vulnerability Advisor
 Continuous monitoring of the cluster health
 :   Use the cluster dashboard to quickly see and manage the health of your cluster, worker nodes, and container deployments.
 :   Find detailed consumption metrics by using {{site.data.keyword.mon_full}} and quickly expand your cluster to meet work loads.
-:   Review logging information by using {{site.data.keyword.la_full}} to see detailed cluster activities.
+:   Review logging information by using {{site.data.keyword.logs_full_notm}} to see detailed cluster activities.
 
 Secure exposure of apps to the public
 :   Choose between a public IP address, an {{site.data.keyword.IBM_notm}} provided route, or your own custom domain to access services in your cluster from the internet.

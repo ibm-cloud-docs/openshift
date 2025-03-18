@@ -2,7 +2,7 @@
 
 copyright:
   years: 2024, 2025
-lastupdated: "2025-03-05"
+lastupdated: "2025-03-18"
 
 
 keywords: kubernetes
@@ -84,7 +84,7 @@ In this tutorial, you create the following resources. There are optional steps t
 {: #basic-access-cluster}
 {: step}
 
-1. Navigate to the [{{site.data.keyword.redhat_openshift_notm}} clusters console](https://cloud.ibm.com/kubernetes/clusters?platformType=openshift){: external}.
+1. Navigate to the [console](https://cloud.ibm.com/containers/cluster-management/clusters){: external}.
 1. Select your cluster. The cluster name is `ez-ibm-openshift-vpc-XXX`.
 1. Click **OpenShift web console** to access your cluster. For more information, see [Connecting to the cluster from the console](/docs/openshift?topic=openshift-access_cluster&interface=cli#access_oc_console).
 

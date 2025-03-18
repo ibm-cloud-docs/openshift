@@ -2,19 +2,17 @@
 
 copyright: 
   years: 2014, 2025
-lastupdated: "2025-03-13"
+lastupdated: "2025-03-18"
 
 
 keywords: openshift
 
 subcollection: openshift
 
-
 ---
 
 
 {{site.data.keyword.attribute-definition-list}}
-
 
 
 # Opening required ports and IP addresses in your allowlist

@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2025
-lastupdated: "2025-02-28"
+lastupdated: "2025-03-18"
 
 
 keywords: openshift
@@ -375,11 +375,11 @@ What information is logged?
     - **Containers**: Logs that are written to `STDOUT` or `STDERR`.
     - **Apps**: Logs that are written to a specific path inside your app.
     - **Workers**: Logs from the Red Hat Enterprise Linux operating system that are sent to `/var/log/syslog` and `/var/log/auth.log`.
-    - **{{site.data.keyword.redhat_openshift_notm}} API server**: Every cluster-related action that is sent to the {{site.data.keyword.redhat_openshift_notm}} API server is logged for auditing reasons, including the time, the user, and the affected resource. For more information, see [Kubernetes audit logs](https://kubernetes.io/docs/tasks/debug/debug-cluster/audit/){: external}. You can access these logs by using {{site.data.keyword.at_full_notm}}. For more information, see the [getting started tutorial](/docs/activity-tracker?topic=activity-tracker-getting-started). 
+    - **{{site.data.keyword.redhat_openshift_notm}} API server**: Every cluster-related action that is sent to the {{site.data.keyword.redhat_openshift_notm}} API server is logged for auditing reasons, including the time, the user, and the affected resource. For more information, see [Kubernetes audit logs](https://kubernetes.io/docs/tasks/debug/debug-cluster/audit/){: external}. You can access these logs by using {{site.data.keyword.logs_full_notm}}. For more information, see the [getting started tutorial](/docs/activity-tracker?topic=activity-tracker-getting-started). 
     - **Routers**: Logs inbound network traffic on routes. 
     - **Kubernetes system components**: Logs from the `kubelet`, the `kube-proxy`, and other components that run in the `kube-system` namespace.
 
-To access the logs of your cluster components, set up [{{site.data.keyword.la_full_notm}}](/docs/openshift?topic=openshift-health#openshift_logging). {{site.data.keyword.la_full_notm}} provides access to all your logs and you can aggregate logs and build your own customized views across multiple clusters.
+To access the logs of your cluster components, set up [{{site.data.keyword.logs_full_notm}}](/docs/openshift?topic=openshift-health#openshift_logging). {{site.data.keyword.logs_full_notm}} provides access to all your logs and you can aggregate logs and build your own customized views across multiple clusters.
 
 How can I monitor the health and performance of my cluster?
 :   You can verify the health, capacity, and performance of your apps, services, and worker nodes by monitoring your cluster components and compute resources from the {{site.data.keyword.openshiftlong_notm}} console or CLI, such as the CPU and memory usage. To view more in-depth metrics for your cluster, you can use the built-in monitoring capabilities that are based on open source technologies, such as [Prometheus and Grafana](http://docs.openshift.com/container-platform/4.17/virt/monitoring/virt-monitoring-overview.html){: external}. Prometheus is automatically installed when you create the cluster and you can use the tool to access real-time cluster and app metrics. Prometheus metrics are not stored persistently. To access historic metrics and to compare metrics across multiple clusters, use [{{site.data.keyword.mon_full_notm}}](/docs/openshift?topic=openshift-health-monitor) instead.

@@ -1,8 +1,8 @@
 ---
 
 copyright:
-  years: 2014, 2024
-lastupdated: "2024-10-23"
+  years: 2014, 2025
+lastupdated: "2025-03-18"
 
 
 keywords: openshift, openshift data foundation, openshift container storage, ocs
@@ -24,7 +24,7 @@ subcollection: openshift
 Review the following parameter reference for the OpenShift Data Foundation cluster add-on.
 {: shortdesc}
 
-You can also find the add-on parameters in the [{{site.data.keyword.redhat_openshift_notm}} clusters console](https://cloud.ibm.com/kubernetes/clusters?platformType=openshift){: external} during add-on deployment, or by running the following command and specifying the add-on version you want to use.
+You can also find the add-on parameters in the [console](https://cloud.ibm.com/containers/cluster-management/clusters){: external} during add-on deployment, or by running the following command and specifying the add-on version you want to use.
 {: tip}
 
 ```sh

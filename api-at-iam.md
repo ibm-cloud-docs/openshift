@@ -1,8 +1,8 @@
 ---
 
 copyright: 
-  years: 2014, 2024
-lastupdated: "2024-11-11"
+  years: 2014, 2025
+lastupdated: "2025-03-18"
 
 
 keywords: kubernetes, istio, add-on, openshift
@@ -17,25 +17,21 @@ subcollection: openshift
 
 
 
-
 # IAM and {{site.data.keyword.cloudaccesstrailshort}} action by API method
 {: #api-at-iam}
 
-When you use {{site.data.keyword.openshiftlong}} such as through the command line or console, the service calls application programming interface (API) methods to complete your requests. In {{site.data.keyword.cloud_notm}} IAM, each API operation is associated with an IAM action that the user must have an access role to use the API operation. You can keep track of the requests that you make with an {{site.data.keyword.at_full_notm}} instance.
+When you use {{site.data.keyword.openshiftlong}} such as through the command line or console, the service calls application programming interface (API) methods to complete your requests. In {{site.data.keyword.cloud_notm}} IAM, each API operation is associated with an IAM action that the user must have an access role to use the API operation. You can keep track of the requests that you make with an {{site.data.keyword.logs_full_notm}} instance.
 {: shortdesc}
 
-Review the following list of {{site.data.keyword.cloud_notm}} Identity and Access Management (IAM) actions and {{site.data.keyword.at_full_notm}} events that correspond to each API method in {{site.data.keyword.openshiftlong_notm}}.
+Review the following list of {{site.data.keyword.cloud_notm}} Identity and Access Management (IAM) actions and {{site.data.keyword.logs_full_notm}} events that correspond to each API method in {{site.data.keyword.openshiftlong_notm}}.
 
 For more information, see the following topics.
 - [{{site.data.keyword.openshiftlong_notm}} API docs](https://containers.cloud.ibm.com/global/swagger-global-api/#/){: external}
 - [User access permissions](/docs/openshift?topic=openshift-iam-platform-access-roles)
-- [{{site.data.keyword.at_full_notm}} events](/docs/openshift?topic=openshift-at_events_ref).
+- [{{site.data.keyword.logs_full_notm}} events](/docs/openshift?topic=openshift-at_events_ref).
 
 ## Account
 {: #ks-account}
-
-Review the following account API methods, their corresponding actions in {{site.data.keyword.cloud_notm}} IAM, and the events that are sent to {{site.data.keyword.at_full_notm}} for {{site.data.keyword.openshiftlong_notm}}.
-{: shortdesc}
 
 | API Method | Description | IAM action for the API | Event sent to {{site.data.keyword.cloudaccesstrailshort}} |
 | --- | --- | --- | --- |
@@ -79,9 +75,6 @@ Review the following account API methods, their corresponding actions in {{site.
 ## Cluster
 {: #ks-cluster}
 
-Review the following cluster API methods, their corresponding actions in {{site.data.keyword.cloud_notm}} IAM, and the events that are sent to {{site.data.keyword.at_full_notm}} for {{site.data.keyword.openshiftlong_notm}}.
-{: shortdesc}
-
 | API Method | Description | IAM action for the API | {{site.data.keyword.cloudaccesstrailshort}} event |
 | --- | --- | --- | --- |
 | `DELETE​/v1​/clusters​/{idOrName}` | Delete a cluster. | `containers-kubernetes.cluster.create` | `containers-kubernetes.cluster.delete` |
@@ -117,7 +110,7 @@ Review the following cluster API methods, their corresponding actions in {{site.
 | `GET​/v2​/vpc​/getVPCs` | View available VPCs for the infrastructure provider. | `containers-kubernetes.cluster.read` | N/A |
 | `PATCH​/v1​/clusters​/{idOrName}​/addons` | Enable, disable, or update add-ons for a cluster. | `containers-kubernetes.cluster.create` | `containers-kubernetes.cluster.update`  |
 | `PATCH​/v1​/clusters​/{idOrName}​/subnets​/{subnetId}` | Detach a public or private portable subnet from a cluster. | `containers-kubernetes.cluster.operate` | | `containers-kubernetes.subnet.update` |  |
-| `POST​/v1​/clusters` | Create a cluster. | `containers-kubernetes.cluster.create` | `containers-kubernetes.cluster.create` |
+| `POST​/v1​/clusters` | Create a cluster. | `containers-kubernetes.cluster.create` | `containers-kubernetes.cluster.create`,`containers-kubernetes.cluster.create-handler`|
 | `POST​/v1​/clusters​/{idOrName}​/kms` | Create a key management service (KMS) provider configuration for a cluster. | `containers-kubernetes.cluster.create` | `containers-kubernetes.account.update` |
 | `POST​/v1​/clusters​/{idOrName}​/services` | Bind an {{site.data.keyword.cloud_notm}} service to a cluster. | `containers-kubernetes.cluster.update` | `containers-kubernetes.service.create` |
 | `POST​/v1​/clusters​/{idOrName}​/usersubnets`   | Add an existing user-managed subnet to a cluster. | `containers-kubernetes.cluster.operate` | `containers-kubernetes.subnet.create`  |
@@ -140,6 +133,24 @@ Review the following cluster API methods, their corresponding actions in {{site.
 | `PUT​/v1​/clusters​/{idOrName}​/subnets​/{subnetId}` | Add an existing {{site.data.keyword.cloud_notm}} infrastructure subnet to an existing cluster. | `containers-kubernetes.cluster.operate` | `containers-kubernetes.subnet.update`  |
 {: caption="Cluster API methods, IAM actions, and {{site.data.keyword.cloudaccesstrailshort}} events."}
 
+
+
+## Dedicated hosts
+{: #dedicated-hosts-api}
+
+| API Method | Description | IAM action for the API | {{site.data.keyword.cloudaccesstrailshort}} event |
+| --- | --- | --- | --- |
+| `POST/v2/createDedicatedHostPool` | Create a dedicated host pool. | `containers-kubernetes.cluster.create` | `account-dedicated-host-pool.create` |
+| `GET/v2/getDedicatedHostPools` | List dedicated host pools. | `containers-kubernetes.cluster.view` | `account-dedicated-host-pool.list` |
+| `GET/v2/getDedicatedHostPool` | Get the details of a dedicated host pool. `containers-kubernetes.cluster.view` | `account-dedicated-host-pool.get` | 
+| `POSTv2/removeDedicatedHostPool` | Remove a dedicated host pool. | `containers-kubernetes.cluster.create` | `account-dedicated-host-pool.delete` | 
+| `GETv2/getDedicatedHosts` | List dedicated hosts. | `containers-kubernetes.cluster.view` | `account-dedicated-host.list` |
+| `POST/v2/createDedicatedHost` | Create a dedicated host. | `containers-kubernetes.cluster.create` | `account-dedicated-host.create` |
+| `POST/v2/removeDedicatedHost` | Remove a dedicated host. | `containers-kubernetes.cluster.create` | `account-dedicated-host.delete` |
+| `GET/v2/getDedicatedHost` | Get the details of a dedicated host. | `containers-kubernetes.cluster.view` | `account-dedicated-host.get` |
+| `POST/v2/enableDedicatedHostPlacement` | Enable host placement on a dedicated host pool. | `containers-kubernetes.cluster.create` | `account-dedicated-host-placement.enable` |
+| `POST/v2/disableDedicatedHostPlacement` | Disable host placement on a dedicated host pool. `containers-kubernetes.cluster.create`| `account-dedicated-host-placement.disable` |
+{: caption="Dedicated host API methods, IAM actions, and {{site.data.keyword.cloudaccesstrailshort}} events."}
 
 
 
@@ -181,9 +192,6 @@ Review the following cluster API methods, their corresponding actions in {{site.
 
 ## Ingress ALB
 {: #ks-alb}
-
-Review the following Ingress application load balancer (ALB) API methods, their corresponding actions in {{site.data.keyword.cloud_notm}} IAM, and the events that are sent to {{site.data.keyword.at_full_notm}} for {{site.data.keyword.openshiftlong_notm}}.
-{: shortdesc}
 
 | API Method | Description | IAM action for the API | {{site.data.keyword.cloudaccesstrailshort}} event |
 | --- | --- | --- | --- |
@@ -241,8 +249,6 @@ Review the following Ingress application load balancer (ALB) API methods, their 
 ## Fluentd logging
 {: #ks-logging}
 
-Review the following Fluentd logging configuration API methods, their corresponding actions in {{site.data.keyword.cloud_notm}} IAM, and the events that are sent to {{site.data.keyword.at_full_notm}} for {{site.data.keyword.openshiftlong_notm}}.
-{: shortdesc}
 
 | API Method | Description | IAM action for the API | {{site.data.keyword.cloudaccesstrailshort}} event |
 | --- | --- | --- | --- |
@@ -271,9 +277,7 @@ Review the following Fluentd logging configuration API methods, their correspond
 
 ## NLB DNS
 {: #ks-nlb-dns}
-
-Review the following network load balancer (NLB) domain name system (DNS) API methods, their corresponding actions in {{site.data.keyword.cloud_notm}} IAM, and the events that are sent to {{site.data.keyword.at_full_notm}} for {{site.data.keyword.openshiftlong_notm}}.
-{: shortdesc}     
+  
 
 | API Method | Description | IAM action for the API | {{site.data.keyword.cloudaccesstrailshort}} event |
 | --- | --- | --- | --- |
@@ -296,11 +300,11 @@ Review the following network load balancer (NLB) domain name system (DNS) API me
 
 
 
-## Observability: {{site.data.keyword.la_short}}
+## Observability
 {: #ks-observability-logging}
 
-Review the following observability logging API methods, their corresponding actions in {{site.data.keyword.cloud_notm}} IAM, and the events that are sent to {{site.data.keyword.at_full_notm}} for {{site.data.keyword.openshiftlong_notm}}.
-{: shortdesc} 
+The observability CLI plug-in `ibmcloud ob` and the `v2/observe` endpoints are deprecated and support ends on 28 March 2025. There is no direct replacement, but you can now manage your logging and monitoring integrations from the console or through the Helm charts. For the latest steps, see [Managing the Logging agent for IBM Cloud Kubernetes Service clusters](/docs/cloud-logs?topic=cloud-logs-agent-std-cluster) and [Working with the Kubernetes monitoring agent](/docs/monitoring?topic=monitoring-agent_Kube).
+{: deprecated}
 
 | API Method | Description | IAM action for the API | {{site.data.keyword.cloudaccesstrailshort}} event |
 | --- | --- | --- | --- |
@@ -317,8 +321,8 @@ Review the following observability logging API methods, their corresponding acti
 ## Observability: {{site.data.keyword.mon_short}}
 {: #ks-observability-monitoring}
 
-Review the following observability monitoring API methods, their corresponding actions in {{site.data.keyword.cloud_notm}} IAM, and the events that are sent to {{site.data.keyword.at_full_notm}} for {{site.data.keyword.openshiftlong_notm}}.
-{: shortdesc}
+The observability CLI plug-in `ibmcloud ob` and the `v2/observe` endpoints are deprecated and support ends on 28 March 2025. There is no direct replacement, but you can now manage your logging and monitoring integrations from the console or through the Helm charts. For the latest steps, see [Managing the Logging agent for IBM Cloud Kubernetes Service clusters](/docs/cloud-logs?topic=cloud-logs-agent-std-cluster) and [Working with the Kubernetes monitoring agent](/docs/monitoring?topic=monitoring-agent_Kube).
+{: deprecated}
 
 | API Method | Description | IAM action for the API | {{site.data.keyword.cloudaccesstrailshort}} event |
 | --- | --- | --- | --- |
@@ -337,8 +341,6 @@ Review the following observability monitoring API methods, their corresponding a
 
 Private service endpoint allowlists are deprecated and support ends on 10 February 2025. Migrate from allowlists to context based restrictions as soon as possible. For more information, see [Migrating from a private service endpoint allowlist to context based restrictions (CBR)](/docs/openshift?topic=openshift-pse-to-cbr-migration).
 
-Review the following access control list (ACL) API methods, their corresponding actions in {{site.data.keyword.cloud_notm}} IAM, and the events that are sent to {{site.data.keyword.at_full_notm}} for {{site.data.keyword.openshiftlong_notm}} if you use a private cloud service endpoint allowlist.
-{: shortdesc}
 
 | API Method | Description | IAM action for the API | {{site.data.keyword.cloudaccesstrailshort}} event |
 | --- | --- | --- | --- |
@@ -353,9 +355,7 @@ Review the following access control list (ACL) API methods, their corresponding 
 
 ## Satellite
 {: #sat-api}
-
-Review the following API methods, their corresponding actions in {{site.data.keyword.cloud_notm}} IAM, and the events that are sent to {{site.data.keyword.at_full_notm}} for {{site.data.keyword.satellitelong_notm}}.
-{: shortdesc}     
+    
 
 | API Method | Description | IAM action for the API | {{site.data.keyword.cloudaccesstrailshort}} event |
 | --- | --- | --- | --- |
@@ -378,9 +378,7 @@ Review the following API methods, their corresponding actions in {{site.data.key
 
 ## Storage
 {: #ks-storage}
-
-Review the following storage API methods, their corresponding actions in {{site.data.keyword.cloud_notm}} IAM, and the events that are sent to {{site.data.keyword.at_full_notm}} for {{site.data.keyword.openshiftlong_notm}}.
-{: shortdesc}     
+    
 
 | API Method | Description | IAM action for the API | {{site.data.keyword.cloudaccesstrailshort}} event |
 | --- | --- | --- | --- |
@@ -397,8 +395,6 @@ Review the following storage API methods, their corresponding actions in {{site.
 ## Worker nodes and worker pools
 {: #ks-workers}
 
-Review the following worker node and worker pool API methods, their corresponding actions in {{site.data.keyword.cloud_notm}} IAM, and the events that are sent to {{site.data.keyword.at_full_notm}} for {{site.data.keyword.openshiftlong_notm}}.
-{: shortdesc}
 
 | API Method | Description | IAM action for the API | {{site.data.keyword.cloudaccesstrailshort}} event |
 | --- | --- | --- | --- |

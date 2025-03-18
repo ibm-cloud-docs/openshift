@@ -1,8 +1,8 @@
 ---
 
 copyright: 
-  years: 2014, 2024
-lastupdated: "2024-04-19"
+  years: 2014, 2025
+lastupdated: "2025-03-18"
 
 
 keywords: openshift, autoscaler
@@ -168,7 +168,7 @@ Check the health of the cluster autoscaler pod.
 
 Search the logs of the cluster autoscaler pod for relevant messages, such as failure messages like `lastScaleDownFailTime`, the `Final scale-up plan`, or [cluster autoscaler events](https://github.com/kubernetes/autoscaler/blob/master/cluster-autoscaler/FAQ.md#what-events-are-emitted-by-ca){: external}.
 
-If your cluster autoscaler pod is unhealthy and can't stream logs, check your [{{site.data.keyword.la_full}} instance](https://cloud.ibm.com/observe/logging) for the pod logs. Note that if your cluster administrator did not [enable {{site.data.keyword.la_short}} for your cluster](/docs/containers?topic=containers-health), you might not have any logs to review.
+If your cluster autoscaler pod is unhealthy and can't stream logs, check your {{site.data.keyword instance for the pod logs. Note that if your cluster administrator did not [enable {{site.data.keyword.logs_full_notm}} for your cluster](/docs/containers?topic=containers-health), you might not have any logs to review.
 {: tip}
 
 ```sh
@@ -235,7 +235,3 @@ Optional: If you completed the debugging steps and your cluster still does not s
 {: #ca-debug-more}
 
 Monitor the cluster autoscaler activities in your cluster to see if the issue is resolved. If you still experience issues, see [Feedback, questions, and support](/docs/openshift?topic=openshift-get-help).
-
-
-
-
