@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2025
-lastupdated: "2025-03-18"
+lastupdated: "2025-03-19"
 
 
 keywords: openshift, openshift data foundation, openshift container storage, ocs
@@ -30,24 +30,31 @@ Minimum required permissions
 :   `Administrator` platform access role
 :   `Manager` service access role for the cluster in {{site.data.keyword.containerlong_notm}}.
 
+ODF is supported on private-only VPC clusters beginning with cluster version `4.16.23_1546_openshift` for CoreOS workers and `4.16.21_1544_openshift` for RHEL workers.
+{: note}
+
 
 ## Prerequisites
 {: #ocs-storage-vpc}
 
-Review the following prerequisites.
-{: shortdesc}
 
-1. [Install](/docs/openshift?topic=openshift-cli-install) or update the CLI.
-1. Create a [VPC cluster](/docs/openshift?topic=openshift-clusters) with at least 3 worker nodes. For high availability, create a cluster with at least one worker node per zone across three zones. Each worker node must have a minimum of 16 CPUs and 64 GB RAM. For cluster versions earlier than 4.16, make sure each of your subnets have a public gateway attached.
+- [Install](/docs/openshift?topic=openshift-cli-install) or update the CLI.
+- Create a [VPC cluster](/docs/openshift?topic=openshift-clusters) with at least 3 worker nodes.
+    - For high availability, create a cluster with at least one worker node per zone across three zones. 
+    - Each worker node must have a minimum of 16 CPUs and 64 GB RAM. For cluster versions earlier than 4.16, make sure each of your subnets have a public gateway attached.
+    - Note: You can deploy OpenShift Data Foundation on 3 worker nodes of 16 CPUs and 32 GB RAM, but you must taint your worker nodes to run only ODF pods. You can't run any additional app workloads or system pods on your ODF nodes when you use this setup.
 
-    You can deploy OpenShift Data Foundation on 3 worker nodes of 16 CPUs and 32 GB RAM, but you must taint your worker nodes to run only ODF pods. You can't run any additional app workloads or system pods on your ODF nodes when you use this setup.
-    {: important}
 
-1. For cluster version 4.16 and later, if you enabled the secure by default option, you must manually disable the default operators in `openshift-marketplace` with the following command for ODF to work properly. 
-    ```sh
-    oc patch OperatorHub cluster --type json -p '[{"op": "add", "path": "/spec/disableAllDefaultSources", "value": true}]'
-    ```
-    {: pre}
+
+### Optional: Disable the default operators
+{: #odf-private}
+
+**Private-only clusters**: In private-only clusters, you must manually disable the default operators in `openshift-marketplace` with the following command for ODF to work properly.
+
+```sh
+oc patch OperatorHub cluster --type json -p '[{"op": "add", "path": "/spec/disableAllDefaultSources", "value": true}]'
+```
+{: pre}
 
 
 ### Optional: Setting up an {{site.data.keyword.cos_full_notm}} service instance

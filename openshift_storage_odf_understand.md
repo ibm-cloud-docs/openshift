@@ -1,8 +1,8 @@
 ---
 
 copyright:
-  years: 2014, 2024
-lastupdated: "2024-10-10"
+  years: 2014, 2025
+lastupdated: "2025-03-19"
 
 
 keywords: openshift, openshift data foundation, openshift container storage
@@ -34,6 +34,9 @@ How does OpenShift Data Foundation work?
     - For **VPC clusters**, the storage volumes are {{site.data.keyword.block_storage_is_short}} storage volumes. 
     - For bare metal **Classic clusters**, the storage volumes are local disks on your bare metal worker nodes.
     - For **{{site.data.keyword.satelliteshort}} clusters**, the storage volumes are either local disks on your worker nodes, or you can dynamically provision disks by using a compatible block storage driver.
+
+Can I install OpenShift Data Foundation on private-only VPC clusters?
+:   Yes, you can install ODF on private-only VPC clusters beginning with cluster version `4.16.23_1546_openshift` for CoreOS workers and `4.16.21_1544_openshift` for RHEL workers.
 
 Can I install the OpenShift Data Foundation add-on in {{site.data.keyword.satelliteshort}} clusters?
 :   No. The cluster add-on is available only for Classic and VPC clusters. 

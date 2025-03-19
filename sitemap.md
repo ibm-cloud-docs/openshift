@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2025
-lastupdated: "2025-03-18"
+lastupdated: "2025-03-19"
 
 
 keywords: openshift
@@ -4755,6 +4755,8 @@ subcollection: openshift
 [Deploying OpenShift Data Foundation on VPC clusters](/docs/openshift?topic=openshift-deploy-odf-vpc#deploy-odf-vpc)
 
 * [Prerequisites](/docs/openshift?topic=openshift-deploy-odf-vpc#ocs-storage-vpc)
+
+    * [Optional: Disable the default operators](/docs/openshift?topic=openshift-deploy-odf-vpc#odf-private)
 
     * [Optional: Setting up an {{site.data.keyword.cos_full_notm}} service instance](/docs/openshift?topic=openshift-deploy-odf-vpc#odf-create-cos)
 
