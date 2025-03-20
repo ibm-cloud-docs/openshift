@@ -520,6 +520,7 @@ toc:
               - ts-cluster-cli.md
               - ts-cluster-console-user.md
               - ts-cluster-console-vpe-priv.md
+              - ts-cluster-console-vpe-public.md
               - ts-cluster-create-delete.md
               - ts-cluster-cos-bucket.md
               - ts-cluster-no-resources.md

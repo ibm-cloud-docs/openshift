@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2025
-lastupdated: "2025-03-19"
+lastupdated: "2025-03-20"
 
 
 keywords: openshift
@@ -10530,6 +10530,18 @@ subcollection: openshift
 * [4. Verify connections and troubleshoot](/docs/openshift?topic=openshift-ts-cluster-console-vpe-priv#ts-console-vpe-priv-verify)
 
 * [5. Contact support](/docs/openshift?topic=openshift-ts-cluster-console-vpe-priv#ts-console-vpe-priv-support)
+
+[VPC clusters with a public and private service endpoint: Why can't I connect to the OpenShift console?](/docs/openshift?topic=openshift-ts-cluster-console-vpe-public#ts-cluster-console-vpe-public)
+
+* [1. Understanding the cluster connection flow](/docs/openshift?topic=openshift-ts-cluster-console-vpe-public#ts-console-vpe-public-flow)
+
+* [2. Check your VPC and cluster configuration](/docs/openshift?topic=openshift-ts-cluster-console-vpe-public#ts-console-vpe-public-config)
+
+* [3. Gather cluster data](/docs/openshift?topic=openshift-ts-cluster-console-vpe-public#ts-console-vpe-public-data)
+
+* [4. Verify connections and troubleshoot](/docs/openshift?topic=openshift-ts-cluster-console-vpe-public#ts-console-vpe-public-verify)
+
+* [5. Contact support](/docs/openshift?topic=openshift-ts-cluster-console-vpe-public#ts-console-vpe-public-support)
 
 [Why can't I create or delete clusters or worker nodes?](/docs/openshift?topic=openshift-cluster_infra_errors#cluster_infra_errors)
 
