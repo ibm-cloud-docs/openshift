@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2024, 2025
-lastupdated: "2025-03-13"
+lastupdated: "2025-03-21"
 
 
 keywords: openshift, {{site.data.keyword.openshiftlong_notm}}, ai, add-on
@@ -27,14 +27,16 @@ Want to deploy the OpenShift AI operator on a new cluster? Try the [OpenShift AI
 ## Minimum requirements
 {: #ai-min}
 
-To use the OpenShift AI add-on, your cluster must have at least two 8-core, 32GB memory worker nodes and access to the public internet. 
+To use the OpenShift AI add-on, your cluster must meet the following requirements.
+- Your cluster must be version 4.16 and later.
+- Your cluster must have at least 2 worker nodes. Each worker node must have 8vCPU and 32GB memory and a GPU.
 
 ## Before you begin
 {: #ai-before}
 
 1. [Log in to your account. If applicable, target the appropriate resource group. Set the context for your cluster.](/docs/containers?topic=containers-access_cluster)
 
-1. If you do not already have one, [create a VPC Public Gateway](/docs/vpc?topic=vpc-create-public-gateways).
+1. **Optional**: If you don't already have one, [create a VPC Public Gateway](/docs/vpc?topic=vpc-create-public-gateways).
 
 1. If you want to use the [OpenShift Pipelines, Node Feature Discovery, or NVIDIA GPU operators](/docs/openshift?topic=openshift-ai-addon-install&interface=ui#ai-ops-rec) with the OpenShift AI add-on, you must disable outbound traffic protection. If you do not want to use those operators, skip this step. 
 

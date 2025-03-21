@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2025
-lastupdated: "2025-03-20"
+lastupdated: "2025-03-21"
 
 
 keywords: openshift
@@ -3320,11 +3320,7 @@ subcollection: openshift
 
 [Controlling traffic with ACLs](/docs/openshift?topic=openshift-vpc-acls#vpc-acls)
 
-* [Creating ACLs from the console](/docs/openshift?topic=openshift-vpc-acls#acls_ui)
-
-    * [Creating ACLs with the CLI](/docs/openshift?topic=openshift-vpc-acls#acls_cli)
-
-    * [Required rules for VPCs with a cluster that runs at version 4.14 or later](/docs/openshift?topic=openshift-vpc-acls#acls-128)
+* [Overview of ACLs](/docs/openshift?topic=openshift-vpc-acls#acls-overview)
 
 [Controlling traffic between pods with Kubernetes policies](/docs/openshift?topic=openshift-vpc-kube-policies#vpc-kube-policies)
 
