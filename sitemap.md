@@ -275,6 +275,10 @@ subcollection: openshift
 
 * [March 2025](/docs/openshift?topic=openshift-openshift-relnotes#openshift-mar25)
 
+    * [27 March 2025](/docs/openshift?topic=openshift-openshift-relnotes#openshift-27march25)
+
+        * Openshift AI cluster add-on patch updates.
+
     * [24 March 2025](/docs/openshift?topic=openshift-openshift-relnotes#openshift-24march25)
 
         * {{site.data.keyword.openshiftlong_notm}} worker node fix packs are available.
@@ -7078,6 +7082,8 @@ subcollection: openshift
 [OpenShift AI add-on version change log](/docs/openshift?topic=openshift-cl-add-ons-openshift-ai#cl-add-ons-openshift-ai)
 
 * [Version 416](/docs/openshift?topic=openshift-cl-add-ons-openshift-ai#cl-add-ons-openshift-ai-416)
+
+    * [416.1.0_486, released 27 March 2025](/docs/openshift?topic=openshift-cl-add-ons-openshift-ai#cl-add-ons-openshift-ai-41610_486)
 
     * [416.0.1_474, released 05 March 2025](/docs/openshift?topic=openshift-cl-add-ons-openshift-ai#cl-add-ons-openshift-ai-41601_474)
 
