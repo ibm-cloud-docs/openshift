@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2025
-lastupdated: "2025-03-24"
+lastupdated: "2025-03-27"
 
 
 keywords: kubernetes, release notes, openshift, {{site.data.keyword.openshiftlong_notm}}
@@ -27,6 +27,33 @@ Looking for {{site.data.keyword.cloud_notm}} status, platform announcements, sec
 
 ## March 2025
 {: #openshift-mar25}
+
+
+  
+### 27 March 2025
+{: #openshift-27march25}
+{: release-note}
+
+
+
+
+
+
+
+{{site.data.keyword.openshiftlong_notm}} master fix packs.
+:   Master fix packs are applied automatically over the course of several days. You can choose to use the [`ibmcloud ks cluster master update`](/docs/openshift?topic=openshift-kubernetes-service-cli#cs_cluster_update) command yourself without waiting for the update automation to apply the patch. Review the following change logs for your cluster version.
+:   [Version 4.17 change log](/docs/openshift?topic=openshift-openshift_changelog_417)
+:   [Version 4.16 change log](/docs/openshift?topic=openshift-openshift_changelog_416)
+:   [Version 4.15 change log](/docs/openshift?topic=openshift-openshift_changelog_415)
+:   [Version 4.14 change log](/docs/openshift?topic=openshift-openshift_changelog_414)
+:   [Version 4.13 change log](/docs/openshift?topic=openshift-openshift_changelog_413)
+:   [Version 4.12 change log](/docs/openshift?topic=openshift-openshift_changelog_412)
+
+Openshift AI cluster add-on patch updates.
+:   For more information, see the [change log](/docs/openshift?topic=openshift-cl-add-ons-openshift-ai).
+
+
+
 
 
 ### 24 March 2025
@@ -4188,408 +4215,3 @@ Master fix pack update
 
 
 :   {{site.data.keyword.openshiftlong_notm}} [4.9.25_1534_openshift](/docs/openshift?topic=openshift-openshift_changelog_49) and [4.8.35_1552_openshift](/docs/openshift?topic=openshift-openshift_changelog_48)
-
-
-
-
-
-## March 2022
-{: #openshift-mar22}
-
-### 30 March 2022
-{: #openshift-mar3022}
-{: release-note}
-
-Cluster autoscaler add-on
-:   Version [1.1.0_475](/docs/openshift?topic=openshift-ca_changelog) is available.
-
-:   {{site.data.keyword.openshiftlong_notm}} [4.7.45_1559_openshift](/docs/openshift?topic=openshift-openshift_changelog_47), [4.6.56_1578_openshift](/docs/openshift?topic=openshift-openshift_changelog_46), [3.11.634_1626_openshift](/docs/openshift?topic=openshift-openshift_changelog_311).
-
-### 28 March 2022
-{: #openshift-mar2822}
-{: release-note}
-
-Worker node fix pack update.
-
-:   {{site.data.keyword.redhat_openshift_notm}} [4.9.25_1533_openshift](/docs/openshift?topic=openshift-openshift_changelog_49), [4.8.35_1550_openshift](/docs/openshift?topic=openshift-openshift_changelog_48), [4.7.45_1557_openshift](/docs/openshift?topic=openshift-openshift_changelog_47), [4.6.56_1577_openshift](/docs/openshift?topic=openshift-openshift_changelog_46), [3.11.634_1627_openshift](/docs/openshift?topic=openshift-openshift_changelog_311).
-
-### 24 March 2022
-{: #openshift-mar2422}
-{: release-note}
-
-{{site.data.keyword.cos_full_notm}} plug-in
-:   Version `2.1.13` of the {{site.data.keyword.cos_full_notm}} plug-in [is available](/docs/openshift?topic=openshift-cos_plugin_changelog).
-
-{{site.data.keyword.block_storage_is_short}} add-on.
-:   [Version 4.2.2_900](/docs/openshift?topic=openshift-cl-add-ons-vpc-block-csi-driver) is available.
-
-
-HPCS Router add-on
-:   Versions 4.6.0_1383, 4.7.0_1386, 4.8.0_1385, and 4.9.0_1384 of the [HPCS Router add-on](/docs/openshift?topic=openshift-hpcs-router-changelog) are released.
-Cloud Image Key Synchronizer add-on
-:   Version 1.0.0_906 of the [Cloud Image Key Synchronizer add-on](/docs/openshift?topic=openshift-cl-add-ons-ibm-cloud-image-key-synchronizer) is released.
-
-
-
-### 22 March 2022
-{: #openshift-mar2222}
-{: release-note}
-
-Hong Kong (`HKG02`) and Seoul (`SEO01`) are deprecated and become unsupported later this year.
-:   To prevent any interruption of service, [redeploy your cluster workloads](/docs/openshift?topic=openshift-update_app#copy_apps_cluster) to a [supported data center](/docs/openshift?topic=openshift-regions-and-zones#zones-mz) and remove your Hong Kong (`HKG02`) and Seoul (`SEO01`) clusters by 28 September 2022. Clusters remaining in these data centers after 28 September 2022 will be removed. Cluster creation in these locations will be stopped on 29 April 2022. For more information about data center closures and recommended data centers, see [Data center consolidations](/docs/account?topic=account-dc-closure).
-
-Ingress ALB change log updates
-:   Updated the [Ingress ALB change log](/docs/containers?topic=containers-cl-ingress-alb) for versions `1.1.2_2050_iks`, `1.1.1_1996_iks`, and `0.49.3_1994_iks`.
-
-
-
-
-### 21 March 2022
-{: #openshift-mar2122}
-{: release-note}
-
-CLI change log update
-:   The [CLI change log](/docs/openshift?topic=openshift-cs_cli_changelog) is updated for version 1.0.384.
-
-### 17 March 2022
-{: #openshift-mar1722}
-{: release-note}
-
-{{site.data.keyword.block_storage_is_short}} add-on.
-:   [Version 4.2.1_895](/docs/openshift?topic=openshift-cl-add-ons-vpc-block-csi-driver) is available.
-
-
-
-### 14 March 2022
-{: #openshift-mar1422}
-{: release-note}
-
-
-Worker node fix pack update.
-
-:   {{site.data.keyword.redhat_openshift_notm}} [4.9.23_1530_openshift](/docs/openshift?topic=openshift-openshift_changelog_49), [4.8.32_1548_openshift](/docs/openshift?topic=openshift-openshift_changelog_48), [4.7.44_1554_openshift](/docs/openshift?topic=openshift-openshift_changelog_47), [4.6.55_1575_openshift](/docs/openshift?topic=openshift-openshift_changelog_46), [3.11.570_1624_openshift](/docs/openshift?topic=openshift-openshift_changelog_311).
-
-
-
-HPCS Router add-on
-:   Versions 4.6.0_1360, 4.7.0_1362, 4.8.0_1363, and 4.9.0_1364 of the [HPCS Router add-on](/docs/openshift?topic=openshift-hpcs-router-changelog) are released.
-
-
-### 11 March 2022
-{: #openshift-mar1122}
-{: release-note}
-
-{{site.data.keyword.cos_full_notm}} plug-in
-:   Version `2.1.12` of the {{site.data.keyword.cos_full_notm}} plug-in [is available](/docs/openshift?topic=openshift-cos_plugin_changelog).
-
-
-
-### 10 March 2022
-{: #openshift-mar1022}
-{: release-note}
-
-Cluster autoscaler
-:   **Beta**: Enable the cluster autoscaler on [{{site.data.keyword.satelliteshort}} clusters](/docs/openshift?topic=openshift-cluster-scaling-sat).
-
-{{site.data.keyword.cos_full_notm}} plug-in
-:   **Beta**: Install the {{site.data.keyword.cos_full_notm}} plug-in on {{site.data.keyword.satelliteshort}} clusters.
-
-
-
-### 9 March 2022
-{: #openshift-mar922}
-{: release-note}
-
-
-
-
-OpenShift Data Foundation
-:   [Updating VPC worker nodes that use OpenShift Data Foundation](/docs/openshift?topic=openshift-ocs-manage-deployment).
-
-
-
-### 8 March 2022
-{: #openshift-mar822}
-{: release-note}
-
-Master fix pack update.
-
-:   {{site.data.keyword.redhat_openshift_notm}} [4.9.21_1528_openshift](/docs/openshift?topic=openshift-openshift_changelog_49#4921_1528), [4.8.31_1546_openshift](/docs/openshift?topic=openshift-openshift_changelog_48#4831_1546), [4.7.43_1552_openshift](/docs/openshift?topic=openshift-openshift_changelog_47#4743_1552), [4.6.48_1573_openshift](/docs/openshift?topic=openshift-openshift_changelog_46#4648_1573), [3.11.570_1623_openshift](/docs/openshift?topic=openshift-openshift_changelog_311#311570_1623).
-
-
-
-
-
-## February 2022
-{: #openshift-feb22}
-
-### 28 February 2022
-{: #openshift-feb2822}
-{: release-note}
-
-{{site.data.keyword.block_storage_is_short}} add-on.
-:   [Version 4.2](/docs/openshift?topic=openshift-cl-add-ons-vpc-block-csi-driver) is available.
-
-Cluster autoscaler
-:   Version [1.0.5_415](/docs/openshift?topic=openshift-ca_changelog) is available.
-:   New pages for [Preparing your cluster for autoscaling](/docs/openshift?topic=openshift-cluster-scaling-install-addon), [Installing the cluster autoscaler add-on](/docs/openshift?topic=openshift-cluster-scaling-install-addon), and [Enabling autoscaling](/docs/openshift?topic=openshift-cluster-scaling-install-addon-enable).
-:   New troubleshooting pages for [resizing worker pools](/docs/openshift?topic=openshift-ts-ca-resize) and updating [unbalanced worker pools](/docs/openshift?topic=openshift-ts-ca-unbalanced) in autoscaled clusters. 
-
-
-
-HPCS Router add-on
-:   Versions 4.6.0_1308, 4.7.0_1309, 4.8.0_1310, and 4.9.0_1349 of the [HPCS Router add-on](/docs/openshift?topic=openshift-hpcs-router-changelog) are released.
-
-Cloud Image Key Synchronizer add-on
-:   Version 1.0.0_883 of the [Cloud Image Key Synchronizer add-on](/docs/openshift?topic=openshift-cl-add-ons-ibm-cloud-image-key-synchronizer) is released.
-
-
-
-Worker node fix pack
-
-:   {{site.data.keyword.redhat_openshift_notm}} [4.9.22_1529_openshift](/docs/openshift?topic=openshift-openshift_changelog_49#4922_1529), [4.8.32_1547_openshift](/docs/openshift?topic=openshift-openshift_changelog_48#4832_1547), [4.7.42_1553_openshift](/docs/openshift?topic=openshift-openshift_changelog_47#4742_1553), [4.6.53_1574_openshift](/docs/openshift?topic=openshift-openshift_changelog_46#4653_1572), and [3.11.570_1624_openshift](/docs/openshift?topic=openshift-openshift_changelog_311#311570_1621).
-
-
-### 24 February 2022
-{: #openshift-feb2422}
-{: release-note}
-
-
-Container service CLI 
-:   The [CLI change log](/docs/openshift?topic=openshift-cs_cli_changelog) is updated for version 1.0.374.
-
-
-
-
-
-
-### 23 February 2022
-{: #openshift-feb2322}
-{: release-note}
-
-Cluster autoscaler
-:   Version [1.0.4_410](/docs/openshift?topic=openshift-ca_changelog) is available.
-
-
-
-
-
-### 18 February 2022
-{: #openshift-feb1822}
-{: release-note}
-
-Container service CLI 
-:   The [CLI change log](/docs/openshift?topic=openshift-cs_cli_changelog) is updated for version 1.0.372.
-
-
-### 17 February 2022
-{: #openshift-feb1722}
-{: release-note}
-
-{{site.data.keyword.cos_full_notm}} plug-in
-:   Version `2.1.10` of the {{site.data.keyword.cos_full_notm}} plug-in [is available](/docs/openshift?topic=openshift-cos_plugin_changelog).
-
-
-
-
-### 16 February 2022
-{: #openshift-feb1622}
-{: release-note}
-
-HPCS Router add-on
-:   Version 4.9.0 of the [HPCS Router add-on](/docs/openshift?topic=openshift-hpcs-router-changelog) is available.
-
-
-
-
-
-### 14 February 2022
-{: #openshift-feb1422}
-{: release-note}
-
-Worker node fix pack
-
-:   {{site.data.keyword.redhat_openshift_notm}} [4.9.19_1526_openshift](/docs/openshift?topic=openshift-openshift_changelog_49#4919_1526), [4.8.29_1544_openshift](/docs/openshift?topic=openshift-openshift_changelog_48#4829_1544), [4.7.42_1549_openshift](/docs/openshift?topic=openshift-openshift_changelog_47#4742_1549), [4.6.53_1572_openshift](/docs/openshift?topic=openshift-openshift_changelog_46#4653_1572), and [3.11.570_1621_openshift](/docs/openshift?topic=openshift-openshift_changelog_311#311570_1621).
-
-
-{{site.data.keyword.cos_full_notm}} doc restructuring. 
-:   For more information, see [Setting up {{site.data.keyword.cos_full_notm}}](/docs/openshift?topic=openshift-storage-cos-understand), [Installing the {{site.data.keyword.cos_full_notm}} plug-in](/docs/openshift?topic=openshift-storage_cos_install), [Setting up authorized IP addresses for {{site.data.keyword.cos_full_notm}}](/docs/openshift?topic=openshift-storage_cos_vpc_ip), [Adding {{site.data.keyword.cos_full_notm}} storage to apps](/docs/openshift?topic=openshift-storage_cos_apps),{{site.data.keyword.cos_full_notm}}, and [Storage class reference](/docs/openshift?topic=openshift-storage_cos_reference).
-
-
-{{site.data.keyword.block_storage_is_short}} add-on.
-:   [Version 4.1.3_846](/docs/openshift?topic=openshift-cl-add-ons-vpc-block-csi-driver) is released.
-
-
-### 10 February 2022
-{: #openshift-feb1022}
-{: release-note}
-
-
-Certified Kubernetes
-:   Version [4.9](/docs/openshift?topic=openshift-openshift_changelog_49) release is now certified.
-
-
-
-
-### 9 February 2022
-{: #openshift-feb922}
-{: release-note}
-
-
-
-
-
-New! OpenShift 4.9
-:   You can create or [update clusters to OpenShift version 4.9](/docs/openshift?topic=openshift-openshift_changelog_49). With OpenShift 4.9, you get the latest OpenShift features, as well as component updates on {{site.data.keyword.openshiftlong_notm}}.
-
-Master fix pack and worker node fix pack update
-:   Change log documentation is available for OpenShift version [`4.9.17_1525_openshift` and `4.9.17_1523_openshift`](/docs/openshift?topic=openshift-openshift_changelog_49#4917_1525).
-
-
-
-  
-
-
-
-
-## January 2022
-{: #openshift-jan22}
-
-### 31 January 2022
-{: #openshift-jan3122}
-
-Version change log
-:   Fix pack update.
-
-
-:   {{site.data.keyword.redhat_openshift_notm}} [4.8.28_1543_openshift](/docs/openshift?topic=openshift-openshift_changelog_48#4828_1543), [4.7.41_1548_openshift](/docs/openshift?topic=openshift-openshift_changelog_47#4741_1548), [4.6.53_1571_openshift](/docs/openshift?topic=openshift-openshift_changelog_46#4653_1571), [3.11.570_1620_openshift](/docs/openshift?topic=openshift-openshift_changelog_311#311570_1620).
-
-**New!** Worker node flavor reference
-:   View a list of all available worker node flavors by zone. For more information, see [VPC Gen 2 flavors](/docs/openshift?topic=openshift-classic-flavors) or [Classic flavors](/docs/openshift?topic=openshift-vpc-flavors).
-
-
-
-### 28 January 2022
-{: #openshift-jan2822}
-{: release-note}
-
-**New!** Troubleshooting the {{site.data.keyword.redhat_openshift_notm}} console.
-:   If you receive a 500 error when trying to log in to your {{site.data.keyword.redhat_openshift_notm}} cluster via `oc login` or the console, you can resolve this issue by running the `cluster config` command. For more information, see [500 error when trying to log in to a {{site.data.keyword.redhat_openshift_notm}} cluster](/docs/openshift?topic=openshift-ts_clis#500_error_oc_login).
-:   You must synchronize the IAM user information initially to fix this error. See [500 error when trying to log in to a {{site.data.keyword.redhat_openshift_notm}} cluster via `oc login`](/docs/openshift?topic=openshift-ts_clis#500_error_oc_login).
-
-
-
-### 27 January 2022
-{: #openshift-jan2722}
-{: release-note}
-
-{{site.data.keyword.block_storage_is_short}} add-on.
-:   [Version 4.1.2_834](/docs/openshift?topic=openshift-cl-add-ons-vpc-block-csi-driver) is released.
-
-**New!** Gathering Ingress logs
-:   When troubleshooting Ingress, follow the steps in [gathering Ingress logs](/docs/openshift?topic=openshift-ingress-must-gather) to retrieve useful debugging information.
-
-
-
-
-
-### 25 January 2022
-{: #openshift-jan2522}
-{: release-note}
-
-
-
-HPCS Router add-on
-:   Versions 4.8.0_1232, 4.7.0_1226, and 4.6.0_1227 of the [HPCS Router add-on](/docs/openshift?topic=openshift-hpcs-router-changelog) are released.
-
-Cloud Image Key Synchronizer add-on
-:   Version 1.0.0_834 of the [Cloud Image Key Synchronizer add-on](/docs/openshift?topic=openshift-cl-add-ons-ibm-cloud-image-key-synchronizer) is released.
-
-
-
-### 24 January 2022
-{: #openshift-jan2422}
-{: release-note}
-
-{{site.data.keyword.cos_full_notm}} plug-in
-:   Version `2.1.9` of the {{site.data.keyword.cos_full_notm}} plug-in is released. For more information, see the [{{site.data.keyword.cos_full_notm}} plug-in change log](/docs/openshift?topic=openshift-cos_plugin_changelog).
-
-
-### 20 January 2022
-{: #openshift-jan2022}
-{: release-note}
-
-Cluster autoscaler add-on.
-:   [Version 1.0.4_403](/docs/openshift?topic=openshift-ca_changelog) is released.
-
-{{site.data.keyword.block_storage_is_short}} add-on.
-:   [Version 4.1.1_827](/docs/openshift?topic=openshift-cl-add-ons-vpc-block-csi-driver) is released.
-
-OpenShift Data Foundation
-:   New and updated parameters for OpenShift Data Foundation.
-:   Automatic disk discovery is now available for Classic clusters version 4.8 and later. Enable this feature by setting the `autoDiscoverDevices` parameter to `true` parameter. For more information, see [ODF using local disks](/docs/openshift?topic=openshift-deploy-odf-classic).
-:   The `monDevicePaths` and `monSize` parameters are no longer required for add-on version 4.8 and later.
-
-
-
-### 18 January 2022
-{: #openshift-jan1822}
-{: release-note}
-
-Review the release notes for January 2022.
-{: shortdesc}
-
-**New!** {{site.data.keyword.openshiftlong_notm}} CLI Map
-:   The [{{site.data.keyword.openshiftlong_notm}} CLI Map](/docs/openshift?topic=openshift-icks_map) lists all `ibmcloud oc` commands as they are structured in the CLI. Use this page as a visual reference for how ibmcloud oc commands are organized, or to quickly find a specific command. 
-
-{{site.data.keyword.containershort}} 1.19, 1.20, 1.21, and 1.22 unsupported date change
-:   The [Kubernetes version information and update actions](/docs/containers?topic=containers-cs_versions#cs_versions_available) page has been updated with the new unsupported dates. 
-
-Worker node fix pack update.
-
-
-:   {{site.data.keyword.redhat_openshift_notm}} [4.8.26_1541_openshift](/docs/openshift?topic=openshift-openshift_changelog_48#4826_1541), [4.7.40_1546_openshift](/docs/openshift?topic=openshift-openshift_changelog_47#4740_1546), [4.6.53_1569_openshift](/docs/openshift?topic=openshift-openshift_changelog_46#4653_1569), [3.11.570_1618_openshift](/docs/openshift?topic=openshift-openshift_changelog_311#311570_1618).
-
-### 17 January 2022
-{: #openshift-jan1722}
-{: release-note}
-
-{{site.data.keyword.cos_full_notm}} plug-in
-:   Version `2.1.8` of the {{site.data.keyword.cos_full_notm}} plug-in is released. For more information, see the [{{site.data.keyword.cos_full_notm}} plug-in change log](/docs/openshift?topic=openshift-cos_plugin_changelog).
-
-
-
-
-
-### 11 January 2022
-{: #openshift-jan1121}
-{: release-note}
-  
-HPCS Router add-on
-:   Versions 4.8.0_1125, 4.7.0_1127, and 4.6.0_1126 of the [HPCS Router add-on](/docs/openshift?topic=openshift-hpcs-router-changelog) are released.
-
-Cloud Image Key Synchronizer add-on
-:   Version 1.0.0_804 of the [Cloud Image Key Synchronizer add-on](/docs/openshift?topic=openshift-cl-add-ons-ibm-cloud-image-key-synchronizer) is released.
-
-
-
-
-### 06 January 2022
-{: #openshift-jan0622}
-{: release-note}
-
-
-{{site.data.keyword.block_storage_is_short}} add-on.
-:   [Version 4.1.0_807](/docs/openshift?topic=openshift-cl-add-ons-vpc-block-csi-driver) is released.
-
-
-{{site.data.keyword.containershort}} 1.20 end of support date change
-:   The end of support date of {{site.data.keyword.containershort}} 1.20 is now March 2022. The [Kubernetes version information and update actions](/docs/containers?topic=containers-cs_versions#cs_versions_available) page has been updated with the new date. 
-
-
-### 4 January 2022
-{: #openshift-jan422}
-{: release-note}
-
-Worker node fix pack update
-:   Change log documentation is available for worker node versions [`4.8.24_1540_openshift`](/docs/openshift?topic=openshift-openshift_changelog_48#4824_1540),[`4.7.40_1545_openshift`](/docs/openshift?topic=openshift-openshift_changelog_47#4740_1545), [`4.6.52_1568_openshift`](/docs/openshift?topic=openshift-openshift_changelog_46#4652_1568), and [`3.11.570_1617_openshift`](/docs/openshift?topic=openshift-openshift_changelog_311#311570_1617).

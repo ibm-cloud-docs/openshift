@@ -1,8 +1,8 @@
 ---
 
 copyright:
-  years: 2024
-lastupdated: "2025-01-28"
+  years: 2024, 2025
+lastupdated: "2025-03-26"
 
 keywords:
 
@@ -42,17 +42,19 @@ The following table provides the dependency listing of this service following a 
 | IBM Cloud Virtual Private Cloud | Availability, Instance control, Operations | Yes | Both |  Same zone  |
 | IBM Cloud Databases - databases-for-postgresql | Availability, Instance control, Operations | No | Both |  Same region  |
 | IBM Cloud Classic DNS Servers | Availability, Change management, Instance control | No | Both |  Same data center  |
-| IBM Cloud Identity and Access Management | Access management, Availability, Instance control, Operations, Security compliance | No | Both |  [Global](https://cloud.ibm.com/docs/resiliency?topic=resiliency-ha-redundancy#global-service)  |
+| IBM Cloud Classic Infrastructure Resource Management | Change management, Instance control | No | Both |  [Global](/docs/resiliency?topic=resiliency-ha-redundancy#global-platform)  |
+| IBM Cloud Identity and Access Management | Access management, Availability, Instance control, Operations, Security compliance | No | Both |  [Global](/docs/resiliency?topic=resiliency-ha-redundancy#global-platform)  |
 | IBM Cloud File Storage for Virtual Private Cloud | Availability, Disaster recovery, Instance control | No | Both |  Same zone  |
 | IBM Cloud DNS Services | Availability, Change management, Disaster recovery, Instance control | Yes | Both |  Same region  |
 | IBM Cloud Virtual Servers | Availability, Instance control, Operations | No | Both |  Same data center  |
 | IBM Cloud Load Balancer for VPC | Availability, Operations | No | Both |  Same zone  |
-| Akamai | Availability, Instance control | No | Both |  [Global](https://cloud.ibm.com/docs/resiliency?topic=resiliency-ha-redundancy#global-service)  |
+| Akamai | Availability, Instance control | No | Both |  [Global](/docs/resiliency?topic=resiliency-ha-redundancy#global-platform)  |
 | IBM Cloud Virtual Private Endpoint for VPC | Availability, Instance control | No | Both |  Same zone  |
 | IBM Cloud File Storage | Availability, Disaster recovery, Instance control | No | Both |  Same data center  |
-| IBM Cloud Global Search and Tagging | Availability | No | Both |  [Global](https://cloud.ibm.com/docs/resiliency?topic=resiliency-ha-redundancy#global-service)  |
+| IBM Cloud Global Search and Tagging | Availability | No | Both |  [Global](/docs/resiliency?topic=resiliency-ha-redundancy#global-platform)  |
 | IBM Cloud Block Storage | Availability, Disaster recovery, Instance control | No | Both |  Same data center  |
 | IBM Cloud Block Storage for Virtual Private Cloud | Availability, Instance control | No | Both |  Same zone  |
+| IBM Cloud Public IP Address Management | Change management, Instance control | No | Both |  [Global](/docs/resiliency?topic=resiliency-ha-redundancy#global-platform)  |
 | IBM Cloud Virtual Server for VPC | Availability, Instance control | No | Both |  Same zone  |
 {: row-headers}
 {: caption="IBM Cloud Kubernetes Service and Red Hat OpenShift on IBM Cloud service dependency information - Critical dependencies" caption-side="top"}
@@ -65,15 +67,15 @@ The following table provides the dependency listing of this service following a 
 |Dependencies|Dependency impacts|Customer provided|Control or data plane|Location of dependency|
 |:---|:---|:---|:---|:---|
 | IBM Key Protect for IBM Cloud | Availability, Instance control, Operations, Security compliance | No | Both |  Same region  |
-| IBM Cloud Global Resource Catalog | Availability, Change management, Instance control | No | Both |  [Global](https://cloud.ibm.com/docs/resiliency?topic=resiliency-ha-redundancy#global-service)  |
+| IBM Cloud Global Resource Catalog | Availability, Change management, Instance control | No | Both |  [Global](/docs/resiliency?topic=resiliency-ha-redundancy#global-platform)  |
 | IBM Cloud Bare Metal | Availability, Instance control, Operations | No | Both |  Same data center  |
 | IBM Key Protect for IBM Cloud | Availability, Instance control, Security compliance | Yes | Both |  Same region  |
-| RedHat OpenShift Cluster Manager | Availability | No | Both |  [Global](https://cloud.ibm.com/docs/resiliency?topic=resiliency-ha-redundancy#global-service)  |
+| RedHat OpenShift Cluster Manager | Availability | No | Both |  [Global](/docs/resiliency?topic=resiliency-ha-redundancy#global-platform)  |
 | IBM Cloud Container Registry | Availability, Change management, Instance control, Operations | No | Both |  Same region  |
 | IBM Cloud Classic NTP Servers | Availability, Change management, Instance control | No | Both |  Same data center  |
-| Let's Encrypt | Availability | No | Both |  [Global](https://cloud.ibm.com/docs/resiliency?topic=resiliency-ha-redundancy#global-service)  |
+| Let's Encrypt | Availability | No | Both |  [Global](/docs/resiliency?topic=resiliency-ha-redundancy#global-platform)  |
 | IBM Cloud Hyper Protect Crypto | Availability, Instance control | Yes | Both |  Same region  |
-| IBM Cloud Business Support Services | Availability | No | Both |  [Global](https://cloud.ibm.com/docs/resiliency?topic=resiliency-ha-redundancy#global-service)  |
+| IBM Cloud Business Support Services | Availability | No | Both |  [Global](/docs/resiliency?topic=resiliency-ha-redundancy#global-platform)  |
 {: row-headers}
 {: caption="IBM Cloud Kubernetes Service and Red Hat OpenShift on IBM Cloud service dependency information - Significant dependencies" caption-side="top"}
 {: tab-title="Significant dependencies"}
@@ -113,6 +115,7 @@ The following table provides the dependency listing of this service following a 
 {: class="comparison-tab-table"}
 {: #minimal-deps}
 {: summary="Use the buttons for the dependency level to change the context of the table. This table has row and column headers. The row headers details about the dependency. The column headers identify the dependency. To understand the details about each dependency, navigate to the row to find the dependency that you need more information about interested in."}
+
 
 This table can be used to answer the following questions:
 

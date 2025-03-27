@@ -1,8 +1,8 @@
 ---
 
 copyright: 
-  years: 2023, 2024
-lastupdated: "2024-10-22"
+  years: 2023, 2025
+lastupdated: "2025-03-26"
 
 
 keywords: openshift, {{site.data.keyword.openshiftlong_notm}}, firewall, rules, security group, 4.15, networking, secure by default, outbound traffic protection
@@ -108,7 +108,8 @@ Do not modify the rules in the `kube-<clusterID>` security group as doing so mig
 
 When you create a VPC cluster, a Virtual Private Endpoint (VPE) gateway is created in the same VPC as the cluster. The name of the security is `kube-vpegw-<clusterID>` where `<clusterID>` is the ID of the cluster. The purpose of this VPE gateway is to serve as a gateway to the cluster master which is managed by IBM Cloud. The VPE gateway is assigned a single IP address in each zone in the VPC in which the cluster has workers.
 
-To allow access to a cluster's master only from its worker nodes a security group is created for each cluster master VPE gateway. A remote rule is then created that allows Ingress connectivity from the cluster worker security group to the required ports on the cluster master VPE gateway.
+To allow access to a cluster's master only from its worker nodes a security group is created for each cluster master VPE gateway. A remote rule is then created that allows Ingress connectivity from the cluster worker security group to the required ports on the cluster master VPE gateway. For private connections, including connections coming through a VPC VPN, to connect to the cluster's private service endpoint VPE gateway, TCP traffic is allowed from the subnet CIDRs for every active worker pool of your cluster.  
+
 
 
 
@@ -120,12 +121,14 @@ To allow access to a cluster's master only from its worker nodes a security grou
 | Allows inbound traffic from the cluster worker security group to the openVPN or Konnectivity port. | Inbound | TCP | Konnectivity port | `kube-<clusterID>` |
 | Allows inbound traffic from the cluster worker security group to the Oauth port. | Inbound | TCP | Oauth port | `kube-<clusterID>` |
 | CoreOS-enabled clusters only. Allows inbound traffic from the cluster worker security group to the ignition server port | Inbound | TCP | Ignition server port | `kube-<clusterID>` |
+| Allows inbound traffic from the subnet of every active worker pool in your cluster.`*`  | Inbound | TCP | Server URL node port | Subnet CIDR |
+| Allows inbound traffic from the subnet of every active worker pool in your cluster.`*`  | Inbound | TCP | OAuth port | Subnet CIDR |
 {: caption="Inbound rules in the Master VPE gateway security group" caption-side="bottom"}
 {: summary="The table shows the inbound rules applied to the cluster worker security group. The first column includes purpose of the rule. The second column includes the direction of the rule. The third column includes the protocol. The fourth column includes the ports or values. The fifth column includes remote destination of the rule."}
 
  
 
-
+`*` One rule is added for the subnet of every active worker pool. If you have workers in three zones, then three rules will be added (one for each subnet in that zone).
 
 
 ### Shared VPE gateway security group
