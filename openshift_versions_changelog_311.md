@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2025
-lastupdated: "2025-01-14"
+lastupdated: "2025-03-28"
 
 
 keywords: openshift, update, upgrade, BOM, bill of materials, versions, patch
@@ -60,7 +60,7 @@ The following table shows the changes that are in the worker node fix pack 3.11.
 | Component | Previous | Current | Description |
 | --- | --- | --- | --- |
 | RHEL 7 Packages |N/A|N/A| Worker node package updates for [CVE-2022-24903](https://nvd.nist.gov/vuln/detail/CVE-2022-24903){: external}. |
-| {{site.data.keyword.openshiftshort}} node | 3.11.685 | 3.11.705 | See the [{{site.data.keyword.openshiftshort}} release notes](https://docs.openshift.com/container-platform/3.11/release_notes/ocp_3_11_release_notes.html#ocp-3-11-705){: external}. |
+| {{site.data.keyword.openshiftshort}} node | 3.11.685 | 3.11.705 | See the [{{site.data.keyword.openshiftshort}} release notes](https://docs.redhat.com/documentation/openshift_container_platform/3.11/html/release_notes/release-notes-ocp-3-11-release-notes#ocp-3-11-705){: external}. |
 {: caption="Changes since version 3.11.685_1632_openshift" caption-side="bottom"}
 
 ### Master fix pack 3.11.705_1633_openshift, released 3 June 2022
@@ -76,7 +76,7 @@ The following table shows the changes that are in the master fix pack 3.11.705_1
 | {{site.data.keyword.filestorage_full_notm}} plug-in and monitor | 408 | 410 | Updated universal base image (UBI) to version `8.6-751` to resolve CVEs. |
 | Key Management Service provider | v1.0.26 | v1.0.27 | Updated `Go` to version `1.17.10` and updated the golang dependencies. |
 | Load balancer and load balancer monitor for {{site.data.keyword.cloud_notm}} Provider | 1915 | 1997 | Updated `Go` to version `1.17.10` and updated dependencies. |
-| {{site.data.keyword.openshiftlong_notm}} Control Plane | 3.11.664 | 3.11.705 | See the [{{site.data.keyword.openshiftlong_notm}} release notes](https://docs.openshift.com/container-platform/3.11/release_notes/ocp_3_11_release_notes.html#ocp-3-11-705){: external}. |
+| {{site.data.keyword.openshiftlong_notm}} Control Plane | 3.11.664 | 3.11.705 | See the [{{site.data.keyword.openshiftlong_notm}} release notes](https://docs.redhat.com/documentation/openshift_container_platform/3.11/html/release_notes/release-notes-ocp-3-11-release-notes#ocp-3-11-705){: external}. |
 {: caption="Changes since version 3.11.664_1629_openshift" caption-side="bottom"}
 
 ### Worker node fix pack 3.11.685_1632_openshift, released 23 May 2022
@@ -100,7 +100,7 @@ The following table shows the changes that are in the worker node fix pack 3.11.
 | Component | Previous | Current | Description |
 | --- | --- | --- | --- |
 | RHEL 7 Packages | N/A | N/A | N/A |
-| {{site.data.keyword.openshiftshort}} node | 3.11.664 | 3.11.685 | See the [{{site.data.keyword.openshiftshort}} release notes](https://docs.openshift.com/container-platform/3.11/release_notes/ocp_3_11_release_notes.html#ocp-3-11-685){: external}. |
+| {{site.data.keyword.openshiftshort}} node | 3.11.664 | 3.11.685 | See the [{{site.data.keyword.openshiftshort}} release notes](https://docs.redhat.com/documentation/openshift_container_platform/3.11/html/release_notes/release-notes-ocp-3-11-release-notes#ocp-3-11-685){: external}. |
 | Haproxy | f53b22 | 36b030 | [CVE-2022-1271](https://nvd.nist.gov/vuln/detail/CVE-2022-1271){: external}, [CVE-2022-1154](https://nvd.nist.gov/vuln/detail/CVE-2022-1154){: external}, [CVE-2018-25032](https://nvd.nist.gov/vuln/detail/CVE-2018-25032){: external}. |
 {: caption="Changes since version 3.11.664_openshift" caption-side="bottom"}
 
@@ -118,7 +118,7 @@ The following table shows the changes that are in the master fix pack 3.11.664_1
 | Load balancer and Load balancer monitor for {{site.data.keyword.cloud_notm}} Provider | 1866 | 1915 | Updated the image to resolve CVEs. |
 | OpenVPN client | 2.5.4-r0-IKS-579 | 2.5.6-r0-IKS-592 | Updated `OpenVPN client` to version `2.5.6-r0`. |
 | OpenVPN server | 2.5.4-r0-IKS-578 | 2.5.6-r0-IKS-591 | Updated `OpenVPN server` to version `2.5.6-r0`. |
-| {{site.data.keyword.openshiftshort}} Control Plane | 3.11.634 | 3.11.664 | See the [{{site.data.keyword.openshiftshort}} release notes](https://docs.openshift.com/container-platform/3.11/release_notes/ocp_3_11_release_notes.html#ocp-3-11-664){: external}. |
+| {{site.data.keyword.openshiftshort}} Control Plane | 3.11.634 | 3.11.664 | See the [{{site.data.keyword.openshiftshort}} release notes](https://docs.redhat.com/documentation/openshift_container_platform/3.11/html/release_notes/release-notes-ocp-3-11-release-notes#ocp-3-11-664){: external}. |
 {: caption="Changes since version 3.11.634_1626_openshift" caption-side="bottom"}
 
 
@@ -147,7 +147,7 @@ The following table shows the changes that are in the worker node fix pack 3.11.
 | Component | Previous | Current | Description |
 | --- | --- | --- | --- |
 | RHEL Packages | 3.10.0-1160.59.1 | 3.10.0-1160.62.1 | Kernel and package updates for [CVE-2021-45960](https://nvd.nist.gov/vuln/detail/CVE-2021-45960), [CVE-2021-46143](https://nvd.nist.gov/vuln/detail/CVE-2021-46143), [CVE-2022-22822](https://nvd.nist.gov/vuln/detail/CVE-2022-22822), [CVE-2022-22823](https://nvd.nist.gov/vuln/detail/CVE-2022-22823), [CVE-2022-22824](https://nvd.nist.gov/vuln/detail/CVE-2022-22824), [CVE-2022-22825](https://nvd.nist.gov/vuln/detail/CVE-2022-22825), [CVE-2022-22826](https://nvd.nist.gov/vuln/detail/CVE-2022-22826)   [CVE-2022-22827](https://nvd.nist.gov/vuln/detail/CVE-2022-22827), [CVE-2022-23852](https://nvd.nist.gov/vuln/detail/CVE-2022-23852), [CVE-2022-25235](https://nvd.nist.gov/vuln/detail/CVE-2022-25235), [CVE-2022-25236](https://nvd.nist.gov/vuln/detail/CVE-2022-25236), [CVE-2022-25315](https://nvd.nist.gov/vuln/detail/CVE-2022-25315), [CVE-2021-4028](https://nvd.nist.gov/vuln/detail/CVE-2021-4028), [CVE-2021-4083](https://nvd.nist.gov/vuln/detail/CVE-2021-4083)   [CVE-2022-0778](https://nvd.nist.gov/vuln/detail/CVE-2022-0778). |
-| OpenShift | 3.11.634 | 3.11.664 | See the [OpenShift release notes](https://docs.openshift.com/container-platform/3.11/release_notes/ocp_3_11_release_notes.html#ocp-3-11-664). |
+| OpenShift | 3.11.634 | 3.11.664 | See the [OpenShift release notes](https://docs.redhat.com/documentation/openshift_container_platform/3.11/html/release_notes/release-notes-ocp-3-11-release-notes#ocp-3-11-664). |
 {: caption="Changes since version 3.11.634_1627_openshift" caption-side="bottom"}
 
 
@@ -163,7 +163,7 @@ The following table shows the changes that are in the worker node fix pack 3.11.
 | Cluster health image | v1.1.32 | v1.1.35 | Updated golang dependencies and updated base image to version 102 to fix CVEs. [CVE-2022-23218](https://nvd.nist.gov/vuln/detail/CVE-2022-23218){: external}, [CVE-2022-23219](https://nvd.nist.gov/vuln/detail/CVE-2022-23219){: external} |
 | Key Management Service provider | v1.0.25 | v1.0.26 | Update golang dependencies, update `Go` to version to `1.17.8`, and moved to base image `102` to reduce CVE footprint and handle [CVE-2022-24407](https://nvd.nist.gov/vuln/detail/CVE-2022-24407){: external}. |
 | Load balancer and load balancer monitor for IBM Cloud Provider | 1748 | 1866 | Updated the image to resolve CVEs. Updated to use `Go` version `1.17.8`. |
-| {{site.data.keyword.redhat_openshift_notm}} Control Plane | 3.11.570 | 3.11.634 | See the [Red Hat OpenShift release notes](https://docs.openshift.com/container-platform/3.11/release_notes/ocp_3_11_release_notes.html#ocp-3-11-634){: external} |
+| {{site.data.keyword.redhat_openshift_notm}} Control Plane | 3.11.570 | 3.11.634 | See the [Red Hat OpenShift release notes](https://docs.redhat.com/documentation/openshift_container_platform/3.11/html/release_notes/release-notes-ocp-3-11-release-notes#ocp-3-11-634){: external} |
 | OpenVPN client | 2.5.4-r0-IKS-556 | 2.5.4-r0-IKS-579 | Updated `Go` to version `1.16.15`. |
 | OpenVPN server | 2.5.4-r0-IKS-555 | 2.5.4-r0-IKS-578 | Updated `Go` to version `1.16.15`. |
 | {{site.data.keyword.filestorage_full_notm}} plug-in and monitor | 405 | 407 | Updated `Go` to version `1.16.14`.  Updated `UBI` image to version `8.5-240`. |
@@ -195,7 +195,7 @@ The following table shows the changes that are in the worker node fix pack 3.11.
 | Component | Previous | Current | Description |
 | --- | --- | --- | --- |
 | RHEL 7 Packages | N/A | N/A | N/A |
-| {{site.data.keyword.redhat_openshift_notm}} | 3.11.570 | 3.11.634 | See the [{{site.data.keyword.redhat_openshift_notm}} release notes](https://docs.openshift.com/container-platform/3.11/release_notes/ocp_3_11_release_notes.html#ocp-3-11-634){: external}. |
+| {{site.data.keyword.redhat_openshift_notm}} | 3.11.570 | 3.11.634 | See the [{{site.data.keyword.redhat_openshift_notm}} release notes](https://docs.redhat.com/documentation/openshift_container_platform/3.11/html/release_notes/release-notes-ocp-3-11-release-notes#ocp-3-11-634){: external}. |
 {: caption="Changes since version 3.11.570_1623_openshift" caption-side="bottom"}
 
 
@@ -271,7 +271,7 @@ The following table shows the changes that are in the master fix pack patch upda
 | Cluster health image | v1.1.29 | v1.1.30 | Updated to use `Go` version `1.17.5`, updated Go dependencies and golangci-lint |
 | Key Management Service provider | v1.0.21 | v1.0.22 | Updated `Go` dependencies and golangci-lint |
 | Load balancer and load balancer monitor for IBM Cloud Provider | 1660 | 1748 | Updated the Alpine base image to the `3.15` version to resolve CVEs. Updated to use `Go` version `1.17.6`. |
-| {{site.data.keyword.redhat_openshift_notm}} Control Plane | 3.11.542 | 3.11.570 | See the [{{site.data.keyword.redhat_openshift_notm}} release notes](https://docs.openshift.com/container-platform/3.11/release_notes/ocp_3_11_release_notes.html#ocp-3-11-570){: external} |
+| {{site.data.keyword.redhat_openshift_notm}} Control Plane | 3.11.542 | 3.11.570 | See the [{{site.data.keyword.redhat_openshift_notm}} release notes](https://docs.redhat.com/documentation/openshift_container_platform/3.11/html/release_notes/release-notes-ocp-3-11-release-notes#ocp-3-11-570){: external} |
 | OpenVPN client | 2.4.6-r3-IKS-463 | 2.5.4-r0-IKS-556 | Update base image to alpine `3.15` to address CVEs, no longer set the `--compress config` option, updated scripts. |
 | OpenVPN server | 2.4.6-r3-IKS-462 | 2.5.4-r0-IKS-555 | Update base image to alpine `3.15` to address CVEs, no longer set the `--compress config` option, updated scripts. |
 | {{site.data.keyword.filestorage_full_notm}} plug-in and monitor | 402 | 404 | Updated universal base image (UBI) to the `8.5-218` version to resolve CVEs. Updated to use `Go` version `1.16.13`. |
@@ -317,7 +317,7 @@ The following table shows the changes that are in the worker node fix pack patch
 
 | Component | Previous | Current | Description |
 | --- | --- | --- | --- |
-| {{site.data.keyword.redhat_openshift_notm}} node | 3.11.542 | 3.11.570 | For more information, see the [change logs](https://docs.openshift.com/container-platform/3.11/release_notes/ocp_3_11_release_notes.html#ocp-3-11-570){: external} |
+| {{site.data.keyword.redhat_openshift_notm}} node | 3.11.542 | 3.11.570 | For more information, see the [change logs](https://docs.redhat.com/documentation/openshift_container_platform/3.11/html/release_notes/release-notes-ocp-3-11-release-notes#ocp-3-11-570){: external} |
 {: caption="Changes since version 3.11.542_1612_openshift" caption-side="bottom"}
 
 
@@ -385,7 +385,7 @@ The following table shows the changes that are in the master fix pack patch upda
 | {{site.data.keyword.cloud_notm}} Controller Manager | v1.15.12-404 | v1.15.12-407 | Updated image for [DLA-2797-1](https://lists.debian.org/debian-lts-announce/2021/10/msg00025.html){: external}. |
 | Key Management Service provider | v1.0.18 | v1.0.19 | Updated `Go` module dependencies and to use `Go` version `1.16.9`.  Updated image for [CVE-2021-22946](https://nvd.nist.gov/vuln/detail/CVE-2021-22946){: external}. |
 | Load balancer and load balancer monitor for {{site.data.keyword.cloud_notm}} Provider | 1550 | 1589 | Updated to use `Go` version `1.16.9`. |
-| {{site.data.keyword.redhat_openshift_notm}} | 3.11.524 | 3.11.542 | See the [{{site.data.keyword.redhat_openshift_notm}} release notes](https://docs.openshift.com/container-platform/3.11/release_notes/ocp_3_11_release_notes.html#ocp-3-11-542){: external} |
+| {{site.data.keyword.redhat_openshift_notm}} | 3.11.524 | 3.11.542 | See the [{{site.data.keyword.redhat_openshift_notm}} release notes](https://docs.redhat.com/documentation/openshift_container_platform/3.11/html/release_notes/release-notes-ocp-3-11-release-notes#ocp-3-11-542){: external} |
 | OpenVPN client | 2.4.6-r3-IKS-386 | 2.4.6-r3-IKS-463 | Updated image to implement additional {{site.data.keyword.IBM_notm}} security controls. |
 | OpenVPN server | 2.4.6-r3-IKS-385 | 2.4.6-r3-IKS-462 | Updated image to implement additional {{site.data.keyword.IBM_notm}} security controls. |
 {: caption="Changes since version 3.11.524_1608_openshift" caption-side="bottom"}
@@ -403,7 +403,7 @@ The following table shows the changes that are in the worker node fix pack patch
 | Component | Previous | Current | Description |
 | --- | --- | --- | --- |
 | RHEL 7 Packages| N/A | N/A | Updated worker node image packages for [CVE-2021-42574](https://nvd.nist.gov/vuln/detail/CVE-2021-42574){: external}. |
-| {{site.data.keyword.redhat_openshift_notm}} | 3.11.524 | 3.11.542 | See the [{{site.data.keyword.redhat_openshift_notm}} release notes](https://docs.openshift.com/container-platform/3.11/release_notes/ocp_3_11_release_notes.html#ocp-3-11-542){: external} |
+| {{site.data.keyword.redhat_openshift_notm}} | 3.11.524 | 3.11.542 | See the [{{site.data.keyword.redhat_openshift_notm}} release notes](https://docs.redhat.com/documentation/openshift_container_platform/3.11/html/release_notes/release-notes-ocp-3-11-release-notes#ocp-3-11-542){: external} |
 {: caption="Changes since version 3.11.524_1609_openshift" caption-side="bottom"}
 
 
@@ -422,7 +422,7 @@ The following table shows the changes that are in the master fix pack patch upda
 | etcd | v3.3.25 | v3.3.26 | See the [etcd release notes](https://github.com/etcd-io/etcd/releases/v3.3.26){: external}. |
 | {{site.data.keyword.cloud_notm}} {{site.data.keyword.filestorage_short}} plug-in and monitor | 400 | 401 | Updated universal base image (UBI) to the latest `8.4-210` version to resolve CVEs. |
 | Key Management Service provider | v1.0.17 | v1.0.18 | Updated universal base image (UBI) to the latest `8.4` version to resolve CVEs:  [CVE-2021-36222](https://nvd.nist.gov/vuln/detail/CVE-2021-36222){: external}, [CVE-2021-37750](https://nvd.nist.gov/vuln/detail/CVE-2021-37750){: external}, [CVE-2021-22922](https://nvd.nist.gov/vuln/detail/CVE-2021-22922){: external}, [CVE-2021-22923](https://nvd.nist.gov/vuln/detail/CVE-2021-22923){: external}, and [CVE-2021-22924](https://nvd.nist.gov/vuln/detail/CVE-2021-22924){: external}.  |
-| {{site.data.keyword.redhat_openshift_notm}} Container Platform |  3.11.521 | 3.11.524 | See the [{{site.data.keyword.redhat_openshift_notm}} Container Platform release notes.](https://docs.openshift.com/container-platform/3.11/release_notes/ocp_3_11_release_notes.html#ocp-3-11-524){: external} |
+| {{site.data.keyword.redhat_openshift_notm}} Container Platform |  3.11.521 | 3.11.524 | See the [{{site.data.keyword.redhat_openshift_notm}} Container Platform release notes.](https://docs.redhat.com/documentation/openshift_container_platform/3.11/html/release_notes/release-notes-ocp-3-11-release-notes#ocp-3-11-524){: external} |
 {: caption="Changes since version 3.11.521_1604_openshift" caption-side="bottom"}
 
 
@@ -437,7 +437,7 @@ The following table shows the changes that are in the worker node fix pack patch
 
 | Component | Previous | Current | Description |
 | --- | --- | --- | --- |
-| {{site.data.keyword.redhat_openshift_notm}} node | 3.11.521 | 3.11.524 | See the [{{site.data.keyword.redhat_openshift_notm}} release notes](https://docs.openshift.com/container-platform/3.11/release_notes/ocp_3_11_release_notes.html#ocp-3-11-524){: external}. |
+| {{site.data.keyword.redhat_openshift_notm}} node | 3.11.521 | 3.11.524 | See the [{{site.data.keyword.redhat_openshift_notm}} release notes](https://docs.redhat.com/documentation/openshift_container_platform/3.11/html/release_notes/release-notes-ocp-3-11-release-notes#ocp-3-11-524){: external}. |
 | RHEL 7 Packages | 3.10.0-1160.42.2.el7 | 3.10.0-1160.45.1.el7 | Updated worker node images and kernel with package updates for [CVE-2021-3778](https://nvd.nist.gov/vuln/detail/CVE-2021-3778){: external} and [CVE-2021-3796](https://nvd.nist.gov/vuln/detail/CVE-2021-3796){: external}. |
 | Worker-pool taint automation | N/A | N/A | Fixes known issue related to worker-pool taint automation that prevents workers from getting providerID. |
 {: caption="Changes since version 3.11.524_1606_openshift" caption-side="bottom"}
@@ -454,7 +454,7 @@ The following table shows the changes that are in the worker node fix pack patch
 
 | Component | Previous | Current | Description |
 | --- | --- | --- | --- |
-| OpenShift Container Platform node | 3.11.521 | 3.11.524 | See the [OpenShift Container Platform release notes](https://docs.openshift.com/container-platform/3.11/release_notes/ocp_3_11_release_notes.html#ocp-3-11-524){: external}. The update resolves CVE-2021-25741 (see the [IBM security bulletin](https://www.ibm.com/support/pages/node/6515606){: external}). |
+| OpenShift Container Platform node | 3.11.521 | 3.11.524 | See the [OpenShift Container Platform release notes](https://docs.redhat.com/documentation/openshift_container_platform/3.11/html/release_notes/release-notes-ocp-3-11-release-notes#ocp-3-11-524){: external}. The update resolves CVE-2021-25741 (see the [IBM security bulletin](https://www.ibm.com/support/pages/node/6515606){: external}). |
 {: caption="Changes since version 3.11.521_1605_openshift" caption-side="bottom"}
 
 
@@ -471,7 +471,7 @@ The following table shows the changes that are in the worker node fix pack patch
 | --- | --- | --- | --- |
 | {{site.data.keyword.cloud_notm}} {{site.data.keyword.filestorage_short}} plug-in and monitor | 398 | 400 | Updated to use `Go` version `1.16.7`. Updated universal base image (UBI) to the latest `8.4-208` version to resolve CVEs. |
 | Load balancer and load balancer monitor for {{site.data.keyword.IBM_notm}} Cloud Provider | 1510 | 1550 | Updated image for [CVE-2021-3711](https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2021-3711){: external} and [CVE-2021-3712](https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2021-3712){: external}. |
-|OpenShift Container Platform| 3.11.487 | 3.11.521 | See the [OpenShift Container Platform release notes](https://docs.openshift.com/container-platform/3.11/release_notes/ocp_3_11_release_notes.html#ocp-3-11-521){: external}. |
+|OpenShift Container Platform| 3.11.487 | 3.11.521 | See the [OpenShift Container Platform release notes](https://docs.redhat.com/documentation/openshift_container_platform/3.11/html/release_notes/release-notes-ocp-3-11-release-notes#ocp-3-11-521){: external}. |
 {: caption="Changes since version 3.11.487_1601_openshift" caption-side="bottom"}
 
 
@@ -489,7 +489,7 @@ The following table shows the changes that are in the worker node fix pack patch
 | --- | --- | --- | --- |
 | Disk identification | N/A | N/A | Enhanced the disk identification logic to handle the case of 2+ partitions. |
 | HA proxy | 9c98dc5 | 07f1e9 | Updated image with fixes for [CVE-2021-22922](https://nvd.nist.gov/vuln/detail/CVE-2021-22922){: external}, [CVE-2021-22923](https://nvd.nist.gov/vuln/detail/CVE-2021-22923){: external}, [CVE-2021-22924](https://nvd.nist.gov/vuln/detail/CVE-2021-22924){: external}, [CVE-2021-36222](https://nvd.nist.gov/vuln/detail/CVE-2021-36222){: external}, and [CVE-2021-37750](https://nvd.nist.gov/vuln/detail/CVE-2021-37750){: external}. |
-|OpenShift Container Platform| 3.11.501 | 3.11.521 | See the [OpenShift Container Platform release notes](https://docs.openshift.com/container-platform/3.11/release_notes/ocp_3_11_release_notes.html#ocp-3-11-521){: external}. |
+|OpenShift Container Platform| 3.11.501 | 3.11.521 | See the [OpenShift Container Platform release notes](https://docs.redhat.com/documentation/openshift_container_platform/3.11/html/release_notes/release-notes-ocp-3-11-release-notes#ocp-3-11-521){: external}. |
 {: caption="Changes since version 3.11.501_1603_openshift" caption-side="bottom"}
 
 
@@ -519,7 +519,7 @@ The following table shows the changes that are in the worker node fix pack patch
 
 | Component | Previous | Current | Description |
 | --- | --- | --- | --- |
-| OpenShift Container Platform | 3.11.487 |	3.11.501 | For more information, see the [change logs](https://docs.openshift.com/container-platform/3.11/release_notes/ocp_3_11_release_notes.html#ocp-3-11-501){: external}. |
+| OpenShift Container Platform | 3.11.487 |	3.11.501 | For more information, see the [change logs](https://docs.redhat.com/documentation/openshift_container_platform/3.11/html/release_notes/release-notes-ocp-3-11-release-notes#ocp-3-11-501){: external}. |
 {: caption="Changes since version 3.11.487_1600_openshift" caption-side="bottom"}
 
 
@@ -537,7 +537,7 @@ The following table shows the changes that are in the master fix pack patch upda
 | Cluster health image | v1.1.24 | v1.1.25 | Updated to use `Go` version `1.15.15`. Updated universal base image (UBI) to the latest `8.4` version to resolve CVEs. |
 | Key Management Service provider | v1.0.16 | v1.0.17 | Updated to use `Go` version `1.15.15`. Updated UBI to the latest `8.4` version to resolve CVEs.|
 | Load balancer and load balancer monitor for {{site.data.keyword.cloud_notm}} Provider | 1328 | 1510 | Updated image for [CVE-2020-27780](https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2020-27780){: external}. |
-| {{site.data.keyword.redhat_openshift_notm}} | 3.11.439 | 3.11.487 | See the [OpenShift Container Platform release notes](https://docs.openshift.com/container-platform/3.11/release_notes/ocp_3_11_release_notes.html#ocp-3-11-487){: external}. |
+| {{site.data.keyword.redhat_openshift_notm}} | 3.11.439 | 3.11.487 | See the [OpenShift Container Platform release notes](https://docs.redhat.com/documentation/openshift_container_platform/3.11/html/release_notes/release-notes-ocp-3-11-release-notes#ocp-3-11-487){: external}. |
 {: caption="Changes since version 3.11.465_1599_openshift" caption-side="bottom"}
 
 
@@ -551,7 +551,7 @@ The following table shows the changes that are in the master fix pack patch upda
 | --- | --- | --- | --- |
 | HA proxy | 68e6b3 | 9c98dc | Updated image with fixes for [CVE-2021-27218](https://nvd.nist.gov/vuln/detail/CVE-2021-27218){: external} |
 | RHEL 7 Packages | N/A| N/A| Updated image with fixes for: [CVE-2020-0543](https://nvd.nist.gov/vuln/detail/CVE-2020-0543){: external}, [CVE-2020-0548](https://nvd.nist.gov/vuln/detail/CVE-2020-0548){: external}, [CVE-2020-0549](https://nvd.nist.gov/vuln/detail/CVE-2020-0549){: external}, [CVE-2020-8695](https://nvd.nist.gov/vuln/detail/CVE-2020-8695){: external}, [CVE-2020-8696](https://nvd.nist.gov/vuln/detail/CVE-2020-8696){: external}, [CVE-2020-8698](https://nvd.nist.gov/vuln/detail/CVE-2020-8698){: external}, [CVE-2020-24489](https://nvd.nist.gov/vuln/detail/CVE-2020-24489){: external}, [CVE-2020-24511](https://nvd.nist.gov/vuln/detail/CVE-2020-24511){: external}, and [CVE-2020-24512](https://nvd.nist.gov/vuln/detail/CVE-2020-24512){: external}. |
-| OpenShift Container Platform |3.11.465 | 3.11.487 | See the [OpenShift Container Platform release notes](https://docs.openshift.com/container-platform/3.11/release_notes/ocp_3_11_release_notes.html#ocp-3-11-487){: external}. |
+| OpenShift Container Platform |3.11.465 | 3.11.487 | See the [OpenShift Container Platform release notes](https://docs.redhat.com/documentation/openshift_container_platform/3.11/html/release_notes/release-notes-ocp-3-11-release-notes#ocp-3-11-487){: external}. |
 {: caption="Changes since version 3.11.465_1599_openshift" caption-side="bottom"}
 
 
@@ -603,7 +603,7 @@ The following table shows the changes that are in the worker node fix pack `3.11
 
 | Component | Previous | Current | Description |
 | --------- | -------- | ------- | ----------- |
-| {{site.data.keyword.redhat_openshift_notm}} node | 3.11.462 | 3.11.465 | See the [{{site.data.keyword.redhat_openshift_notm}} release notes](https://docs.openshift.com/container-platform/3.11/release_notes/ocp_3_11_release_notes.html#ocp-3-11-465){: external}. |
+| {{site.data.keyword.redhat_openshift_notm}} node | 3.11.462 | 3.11.465 | See the [{{site.data.keyword.redhat_openshift_notm}} release notes](https://docs.redhat.com/documentation/openshift_container_platform/3.11/html/release_notes/release-notes-ocp-3-11-release-notes#ocp-3-11-465){: external}. |
 | RHEL 7 Packages| N/A | N/A | Updated worker node image with package updates. |
 {: caption="Changes since version 3.11.462_1595_openshift" caption-side="bottom"}
 
@@ -620,7 +620,7 @@ The following table shows the changes that are in the worker node fix pack `3.11
 | Component | Previous | Current | Description |
 | --------- | -------- | ------- | ----------- |
 | HA proxy | 700dc6 | aae810 | Updated image with fixes for [CVE-2021-3520](https://nvd.nist.gov/vuln/detail/CVE-2021-3520){: external}, [CVE-2021-20271](https://nvd.nist.gov/vuln/detail/CVE-2021-20271){: external}, [CVE-2021-3516](https://nvd.nist.gov/vuln/detail/CVE-2021-3516){: external}, [CVE-2021-3517](https://nvd.nist.gov/vuln/detail/CVE-2021-3517){: external}, [CVE-2021-3518](https://nvd.nist.gov/vuln/detail/CVE-2021-3518){: external}, [CVE-2021-3537](https://nvd.nist.gov/vuln/detail/CVE-2021-3537){: external}, and [CVE-2021-3541](https://nvd.nist.gov/vuln/detail/CVE-2021-3541){: external}. |
-| {{site.data.keyword.redhat_openshift_notm}} | 3.11.452 | 3.11.462 | See the [{{site.data.keyword.redhat_openshift_notm}} release notes](https://docs.openshift.com/container-platform/3.11/release_notes/ocp_3_11_release_notes.html#ocp-3-11-462){: external}. |
+| {{site.data.keyword.redhat_openshift_notm}} | 3.11.452 | 3.11.462 | See the [{{site.data.keyword.redhat_openshift_notm}} release notes](https://docs.redhat.com/documentation/openshift_container_platform/3.11/html/release_notes/release-notes-ocp-3-11-release-notes#ocp-3-11-462){: external}. |
 {: caption="Changes since version 3.11.452_1593_openshift" caption-side="bottom"}
 
 
@@ -638,7 +638,7 @@ The following table shows the changes that are in the master fix pack patch upda
 | Cluster health image | v1.1.22 | v1.1.23 | Updated to use `Go` version `1.15.12`. Updated image for [CVE-2021-33194](https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2021-33194){: external}. |
 | {{site.data.keyword.filestorage_full_notm}} plug-in and monitor | 392 | 394 | Updated to use `Go` version `1.15.12`. Updated universal base image (UBI) to version `8.4` to resolve CVEs. |
 | Key Management Service provider | v1.0.14 | v1.0.15 | Updated to use `Go` version `1.15.12`. Updated image for [CVE-2021-33194](https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2021-33194){: external}. |
-| {{site.data.keyword.redhat_openshift_notm}} | 3.11.420 | 3.11.439 | See the [{{site.data.keyword.redhat_openshift_notm}} release notes](https://docs.openshift.com/container-platform/3.11/release_notes/ocp_3_11_release_notes.html#ocp-3-11-439){: external}. |
+| {{site.data.keyword.redhat_openshift_notm}} | 3.11.420 | 3.11.439 | See the [{{site.data.keyword.redhat_openshift_notm}} release notes](https://docs.redhat.com/documentation/openshift_container_platform/3.11/html/release_notes/release-notes-ocp-3-11-release-notes#ocp-3-11-439){: external}. |
 {: caption="Changes since version 3.11.420_1590_openshift" caption-side="bottom"}
 
 
@@ -655,7 +655,7 @@ The following table shows the changes that are in the worker node fix pack `3.11
 | --------- | -------- | ------- | ----------- |
 | HA proxy | 26c5cc | d3dc33 | Updated image with fixes for [CVE-2020-24977](https://nvd.nist.gov/vuln/detail/CVE-2020-24977){: external}, [CVE-2020-13434](https://nvd.nist.gov/vuln/detail/CVE-2020-13434){: external}, [CVE-2020-15358](https://nvd.nist.gov/vuln/detail/CVE-2020-15358){: external}, [CVE-2020-29361](https://nvd.nist.gov/vuln/detail/CVE-2020-29361){: external}, [CVE-2020-29362](https://nvd.nist.gov/vuln/detail/CVE-2020-29362){: external}, [CVE-2020-29363](https://nvd.nist.gov/vuln/detail/CVE-2020-29363){: external}, [CVE-2019-2708](https://nvd.nist.gov/vuln/detail/CVE-2019-2708){: external}, [CVE-2019-13012](https://nvd.nist.gov/vuln/detail/CVE-2019-13012){: external}, [CVE-2020-13543](https://nvd.nist.gov/vuln/detail/CVE-2020-13543){: external}, [CVE-2020-13584](https://nvd.nist.gov/vuln/detail/CVE-2020-13584){: external}, [CVE-2020-9948](https://nvd.nist.gov/vuln/detail/CVE-2020-9948){: external}, [CVE-2020-9951](https://nvd.nist.gov/vuln/detail/CVE-2020-9951){: external}, [CVE-2020-9983](https://nvd.nist.gov/vuln/detail/CVE-2020-9983){: external}, [CVE-2021-27219](https://nvd.nist.gov/vuln/detail/CVE-2021-27219){: external}, [CVE-2020-8231](https://nvd.nist.gov/vuln/detail/CVE-2020-8231){: external}, [CVE-2020-8284](https://nvd.nist.gov/vuln/detail/CVE-2020-8284){: external}, [CVE-2020-8285](https://nvd.nist.gov/vuln/detail/CVE-2020-8285){: external}, [CVE-2020-8286](https://nvd.nist.gov/vuln/detail/CVE-2020-8286){: external}, [CVE-2016-10228](https://nvd.nist.gov/vuln/detail/CVE-2016-10228){: external}, [CVE-2019-25013](https://nvd.nist.gov/vuln/detail/CVE-2019-25013){: external}, [CVE-2019-9169](https://nvd.nist.gov/vuln/detail/CVE-2019-9169){: external}, [CVE-2020-27618](https://nvd.nist.gov/vuln/detail/CVE-2020-27618){: external}, [CVE-2021-3326](https://nvd.nist.gov/vuln/detail/CVE-2021-3326){: external}, [CVE-2020-26116](https://nvd.nist.gov/vuln/detail/CVE-2020-26116){: external}, [CVE-2020-27619](https://nvd.nist.gov/vuln/detail/CVE-2020-27619){: external}, [CVE-2021-23336](https://nvd.nist.gov/vuln/detail/CVE-2021-23336){: external}, [CVE-2021-3177](https://nvd.nist.gov/vuln/detail/CVE-2021-3177){: external}, [CVE-2019-3842](https://nvd.nist.gov/vuln/detail/CVE-2019-3842){: external}, [CVE-2020-13776](https://nvd.nist.gov/vuln/detail/CVE-2020-13776){: external}, [CVE-2020-24330](https://nvd.nist.gov/vuln/detail/CVE-2020-24330){: external}, [CVE-2020-24331](https://nvd.nist.gov/vuln/detail/CVE-2020-24331){: external}, [CVE-2020-24332](https://nvd.nist.gov/vuln/detail/CVE-2020-24332){: external}, [CVE-2017-14502](https://nvd.nist.gov/vuln/detail/CVE-2017-14502){: external}, [CVE-2020-8927](https://nvd.nist.gov/vuln/detail/CVE-2020-8927){: external} and [CVE-2020-28196](https://nvd.nist.gov/vuln/detail/CVE-2020-28196){: external}. |
 | {{site.data.keyword.registrylong_notm}} | N/A | N/A | Added private-only registry support for `ca.icr.io`, `br.icr.io` and `jp2.icr.io`. | 
-| {{site.data.keyword.redhat_openshift_notm}} | 3.11.439 | 3.11.452 | See the [{{site.data.keyword.redhat_openshift_notm}} release notes](https://docs.openshift.com/container-platform/3.11/release_notes/ocp_3_11_release_notes.html#ocp-3-11-452){: external}.| 
+| {{site.data.keyword.redhat_openshift_notm}} | 3.11.439 | 3.11.452 | See the [{{site.data.keyword.redhat_openshift_notm}} release notes](https://docs.redhat.com/documentation/openshift_container_platform/3.11/html/release_notes/release-notes-ocp-3-11-release-notes#ocp-3-11-452){: external}.| 
 | RHEL 7 Packages | 3.10.0-1160.25 | 3.10.0-1160.31 | Updated worker node image with kernel package updates for [CVE-2020-8648](https://nvd.nist.gov/vuln/detail/CVE-2020-8648){: external}, [CVE-2020-12362](https://nvd.nist.gov/vuln/detail/CVE-2020-12362){: external}[CVE-2020-12363](https://nvd.nist.gov/vuln/detail/CVE-2020-12363){: external}[CVE-2020-12364](https://nvd.nist.gov/vuln/detail/CVE-2020-12364){: external}[CVE-2020-27170](https://nvd.nist.gov/vuln/detail/CVE-2020-27170){: external}[CVE-2021-3347](https://nvd.nist.gov/vuln/detail/CVE-2021-3347){: external}, [CVE-2020-24489](https://nvd.nist.gov/vuln/detail/CVE-2020-24489){: external}, [CVE-2020-24511](https://nvd.nist.gov/vuln/detail/CVE-2020-24511){: external}[CVE-2020-24512](https://nvd.nist.gov/vuln/detail/CVE-2020-24512){: external}, [CVE-2020-24513](https://nvd.nist.gov/vuln/detail/CVE-2020-24513){: external} and [CVE-2021-25217](https://nvd.nist.gov/vuln/detail/CVE-2021-25217){: external}.|
 {: caption="Changes since version 3.11.439_1592_openshift" caption-side="bottom"}
 
@@ -689,7 +689,7 @@ The following table shows the changes that are in the worker node fix pack `3.11
 | Component | Previous | Current | Description |
 | --------- | -------- | ------- | ----------- |
 | HA proxy | e0fa2f | 26c5cc | Updated image with fixes for [CVE-2020-26116](https://nvd.nist.gov/vuln/detail/CVE-2020-26116){: external}, [CVE-2020-27619](https://nvd.nist.gov/vuln/detail/CVE-2020-27619){: external}, [CVE-2021-23336](https://nvd.nist.gov/vuln/detail/CVE-2021-23336){: external}, [CVE-2021-3177](https://nvd.nist.gov/vuln/detail/CVE-2021-3177){: external}, [CVE-2019-3842](https://nvd.nist.gov/vuln/detail/CVE-2019-3842){: external}, [CVE-2020-13776](https://nvd.nist.gov/vuln/detail/CVE-2020-13776){: external}, [CVE-2019-18276](https://nvd.nist.gov/vuln/detail/CVE-2019-18276){: external}, [CVE-2020-24977](https://nvd.nist.gov/vuln/detail/CVE-2020-24977){: external}, [CVE-2020-13434](https://nvd.nist.gov/vuln/detail/CVE-2020-13434){: external}, [CVE-2020-15358](https://nvd.nist.gov/vuln/detail/CVE-2020-15358){: external}, [CVE-2019-13012](https://nvd.nist.gov/vuln/detail/CVE-2019-13012){: external}, [CVE-2020-13543](https://nvd.nist.gov/vuln/detail/CVE-2020-13543){: external}, [CVE-2020-13584](https://nvd.nist.gov/vuln/detail/CVE-2020-13584){: external}, [CVE-2020-9948](https://nvd.nist.gov/vuln/detail/CVE-2020-9948){: external}, [CVE-2020-9951](https://nvd.nist.gov/vuln/detail/CVE-2020-9951){: external}, [CVE-2020-9983](https://nvd.nist.gov/vuln/detail/CVE-2020-9983){: external}, [CVE-2020-8231](https://nvd.nist.gov/vuln/detail/CVE-2020-8231){: external}, [CVE-2020-8284](https://nvd.nist.gov/vuln/detail/CVE-2020-8284){: external}, [CVE-2020-8285](https://nvd.nist.gov/vuln/detail/CVE-2020-8285){: external}, [CVE-2020-8286](https://nvd.nist.gov/vuln/detail/CVE-2020-8286){: external}, [CVE-2020-24330](https://nvd.nist.gov/vuln/detail/CVE-2020-24330){: external}, [CVE-2020-24331](https://nvd.nist.gov/vuln/detail/CVE-2020-24331){: external}, [CVE-2020-24332](https://nvd.nist.gov/vuln/detail/CVE-2020-24332){: external}, [CVE-2020-29361](https://nvd.nist.gov/vuln/detail/CVE-2020-29361){: external}, [CVE-2020-29362](https://nvd.nist.gov/vuln/detail/CVE-2020-29362){: external}, [CVE-2020-29363](https://nvd.nist.gov/vuln/detail/CVE-2020-29363){: external}, [CVE-2020-28196](https://nvd.nist.gov/vuln/detail/CVE-2020-28196){: external}, [CVE-2019-2708](https://nvd.nist.gov/vuln/detail/CVE-2019-2708){: external}, [CVE-2016-10228](https://nvd.nist.gov/vuln/detail/CVE-2016-10228){: external}, [CVE-2019-25013](https://nvd.nist.gov/vuln/detail/CVE-2019-25013){: external}, [CVE-2019-9169](https://nvd.nist.gov/vuln/detail/CVE-2019-9169){: external}, [CVE-2020-27618](https://nvd.nist.gov/vuln/detail/CVE-2020-27618){: external}, [CVE-2021-3326](https://nvd.nist.gov/vuln/detail/CVE-2021-3326){: external}, and [CVE-2020-8927](https://nvd.nist.gov/vuln/detail/CVE-2020-8927){: external}. |
-| {{site.data.keyword.redhat_openshift_notm}} node | 3.11.420 | 3.11.439 | See the [{{site.data.keyword.redhat_openshift_notm}} release notes](https://docs.openshift.com/container-platform/3.11/release_notes/ocp_3_11_release_notes.html#ocp-3-11-439){: external}. |
+| {{site.data.keyword.redhat_openshift_notm}} node | 3.11.420 | 3.11.439 | See the [{{site.data.keyword.redhat_openshift_notm}} release notes](https://docs.redhat.com/documentation/openshift_container_platform/3.11/html/release_notes/release-notes-ocp-3-11-release-notes#ocp-3-11-439){: external}. |
 | RHEL 7 Packages | N/A | N/A | Updated worker node image with package updates.|
 {: caption="Changes since version 3.11.420_1588_openshift" caption-side="bottom"}
 
@@ -742,7 +742,7 @@ The following table shows the changes that are in the master fix pack patch upda
 | Cluster health image | v1.1.19 | v1.1.21 | Updated to use `Go` version 1.15.11. Updated image to implement additional {{site.data.keyword.IBM_notm}} security controls and for [CVE-2021-3449](https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2021-3449){: external}, [CVE-2021-3450](https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2021-3450){: external}, and [CVE-2021-20305](https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2021-20305){: external}. |
 | {{site.data.keyword.filestorage_full_notm}} plug-in and monitor | 389 | 390 | Updated to use `Go` version 1.15.9 and for [CVE-2020-28851](https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2020-28851){: external} and [CVE-2021-3121](https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2021-3121){: external}. |
 | Key Management Service provider | v1.0.10 | v1.0.12 | Updated to use `Go` version 1.15.11 and for [CVE-2021-3449](https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2021-3449){: external}, [CVE-2021-3450](https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2021-3450){: external}, and [CVE-2021-20305](https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2021-20305){: external}. |
-| {{site.data.keyword.redhat_openshift_notm}} | 3.11.394 | 3.11.420 | See the [{{site.data.keyword.redhat_openshift_notm}} release notes](https://docs.openshift.com/container-platform/3.11/release_notes/ocp_3_11_release_notes.html#ocp-3-11-420){: external}. |
+| {{site.data.keyword.redhat_openshift_notm}} | 3.11.394 | 3.11.420 | See the [{{site.data.keyword.redhat_openshift_notm}} release notes](https://docs.redhat.com/documentation/openshift_container_platform/3.11/html/release_notes/release-notes-ocp-3-11-release-notes#ocp-3-11-420){: external}. |
 | OpenVPN client | 2.4.6-r3-IKS-301 | 2.4.6-r3-IKS-386 | Updated image to implement additional {{site.data.keyword.IBM_notm}} security controls. |
 | OpenVPN server | 2.4.6-r3-IKS-301 | 2.4.6-r3-IKS-385 | Updated image to implement additional {{site.data.keyword.IBM_notm}} security controls. |
 {: caption="Changes since version 3.11.394_1583_openshift" caption-side="bottom"}
@@ -760,7 +760,7 @@ The following table shows the changes that are in the worker node fix pack `3.11
 | Component | Previous | Current | Description |
 | --------- | -------- | ------- | ----------- |
 | HA proxy | a3b1ff | e0fa2f | The update addresses [CVE-2021-20305](https://nvd.nist.gov/vuln/detail/CVE-2021-20305){: external}. |
-| {{site.data.keyword.redhat_openshift_notm}} node | 3.11.404 | 3.11.420 | See the [{{site.data.keyword.redhat_openshift_notm}} release notes](https://docs.openshift.com/container-platform/3.11/release_notes/ocp_3_11_release_notes.html#ocp-3-11-420){: external}. |
+| {{site.data.keyword.redhat_openshift_notm}} node | 3.11.404 | 3.11.420 | See the [{{site.data.keyword.redhat_openshift_notm}} release notes](https://docs.redhat.com/documentation/openshift_container_platform/3.11/html/release_notes/release-notes-ocp-3-11-release-notes#ocp-3-11-420){: external}. |
 | RHEL 7 Packages | N/A | N/A | Updated worker node images with package updates for [CVE-2021-20305](https://nvd.nist.gov/vuln/detail/CVE-2021-20305){: external}.  |
 {: caption="Changes since version 3.11.404_1585_openshift" caption-side="bottom"}
 
@@ -796,7 +796,7 @@ The following table shows the changes that are in the master fix pack patch upda
 | Cluster health image | v1.1.18 | v1.1.19 | Updated image for [CVE-2020-28851](https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2020-28851){: external}. |
 | {{site.data.keyword.filestorage_full_notm}} plug-in and monitor | 388 | 389 | Updated to use `Go` version 1.15.8. |
 | Load balancer and load balancer monitor for {{site.data.keyword.cloud_notm}} Provider | 1165 | 1274 | Fixed a bug that might cause version 2.0 network load balancers (NLBs) to crash and restart on load balancer updates. |
-| {{site.data.keyword.redhat_openshift_notm}} | 3.11.380 | 3.11.394 | See the [{{site.data.keyword.redhat_openshift_notm}} release notes](https://docs.openshift.com/container-platform/3.11/release_notes/ocp_3_11_release_notes.html#ocp-3-11-394){: external}. |
+| {{site.data.keyword.redhat_openshift_notm}} | 3.11.380 | 3.11.394 | See the [{{site.data.keyword.redhat_openshift_notm}} release notes](https://docs.redhat.com/documentation/openshift_container_platform/3.11/html/release_notes/release-notes-ocp-3-11-release-notes#ocp-3-11-394){: external}. |
 {: caption="Changes since version 3.11.380_1581_openshift" caption-side="bottom"}
 
 
@@ -811,7 +811,7 @@ The following table shows the changes that are in the worker node fix pack `3.11
 
 | Component | Previous | Current | Description |
 | --------- | -------- | ------- | ----------- |
-| {{site.data.keyword.redhat_openshift_notm}} node |     3.11.394 | 3.11.404 | See the [{{site.data.keyword.redhat_openshift_notm}} release notes](https://docs.openshift.com/container-platform/3.11/release_notes/ocp_3_11_release_notes.html#ocp-3-11-404){: external}.|
+| {{site.data.keyword.redhat_openshift_notm}} node |     3.11.394 | 3.11.404 | See the [{{site.data.keyword.redhat_openshift_notm}} release notes](https://docs.redhat.com/documentation/openshift_container_platform/3.11/html/release_notes/release-notes-ocp-3-11-release-notes#ocp-3-11-404){: external}.|
 | RHEL 7 Packages | 3.10.0-1160.15.2.el7 | 3.10.0-1160.21.1.el7 | Updated worker node images with kernel and package updates for [CVE-2019-19532](https://nvd.nist.gov/vuln/detail/CVE-2019-19532){: external}, [CVE-2020-0427](https://nvd.nist.gov/vuln/detail/CVE-2020-0427){: external}, [CVE-2020-7053](https://nvd.nist.gov/vuln/detail/CVE-2020-7053){: external}, [CVE-2020-14351](https://nvd.nist.gov/vuln/detail/CVE-2020-14351){: external}, [CVE-2020-25211](https://nvd.nist.gov/vuln/detail/CVE-2020-25211){: external}, [CVE-2020-25645](https://nvd.nist.gov/vuln/detail/CVE-2020-25645){: external}, [CVE-2020-25656](https://nvd.nist.gov/vuln/detail/CVE-2020-25656){: external}, [CVE-2020-25705](https://nvd.nist.gov/vuln/detail/CVE-2020-25705){: external}, [CVE-2020-28374](https://nvd.nist.gov/vuln/detail/CVE-2020-28374){: external}, [CVE-2020-29661](https://nvd.nist.gov/vuln/detail/CVE-2020-29661){: external}, and [CVE-2021-20265](https://nvd.nist.gov/vuln/detail/CVE-2021-20265){: external}. |
 {: caption="Changes since version 3.11.394_1582_openshift" caption-side="bottom"}
 
@@ -827,7 +827,7 @@ The following table shows the changes that are in the worker node fix pack `3.11
 
 | Component | Previous | Current | Description |
 | --------- | -------- | ------- | ----------- |
-| {{site.data.keyword.redhat_openshift_notm}} node |     3.11.380 | 3.11.394 | See the [{{site.data.keyword.redhat_openshift_notm}} release notes](https://docs.openshift.com/container-platform/3.11/release_notes/ocp_3_11_release_notes.html#ocp-3-11-394){: external}.|
+| {{site.data.keyword.redhat_openshift_notm}} node |     3.11.380 | 3.11.394 | See the [{{site.data.keyword.redhat_openshift_notm}} release notes](https://docs.redhat.com/documentation/openshift_container_platform/3.11/html/release_notes/release-notes-ocp-3-11-release-notes#ocp-3-11-394){: external}.|
 | RHEL 7 Packages | N/A | N/A | Updated worker node with package updates for [CVE-2020-8625](https://nvd.nist.gov/vuln/detail/CVE-2020-8625){: external}, [CVE-2020-14372](https://nvd.nist.gov/vuln/detail/CVE-2020-14372){: external}, [CVE-2020-25632](https://nvd.nist.gov/vuln/detail/CVE-2020-25632){: external}, [CVE-2020-25647](https://nvd.nist.gov/vuln/detail/CVE-2020-25647){: external}, [CVE-2020-27749](https://nvd.nist.gov/vuln/detail/CVE-2020-27749){: external}, [CVE-2020-27779](https://nvd.nist.gov/vuln/detail/CVE-2020-27779){: external}, [CVE-2021-20225](https://nvd.nist.gov/vuln/detail/CVE-2021-20225){: external}, [CVE-2021-20233](https://nvd.nist.gov/vuln/detail/CVE-2021-20233){: external}, and [CVE-2021-27803](https://nvd.nist.gov/vuln/detail/CVE-2021-27803){: external}. |
 {: caption="Changes since version 3.11.380_1581_openshift" caption-side="bottom"}
 
@@ -862,7 +862,7 @@ The following table shows the changes that are in the master fix pack patch upda
 | {{site.data.keyword.filestorage_full_notm}} plug-in and monitor | 385 | 388 | Improved the retry logic for provisioning persistent volume claims (PVCs). |
 | Key Management Service provider | v1.0.7 | v1.0.10 | Updated image for [CVE-2020-1971](https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2020-1971){: external} and [CVE-2020-24659](https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2020-24659){: external}. |
 | Load balancer and load balancer monitor for {{site.data.keyword.cloud_notm}} Provider | 1078 | 1165 | Updated to use `Go` version 1.15.7. |
-| {{site.data.keyword.redhat_openshift_notm}}  | 3.11.346 | 3.11.380 | See the [{{site.data.keyword.redhat_openshift_notm}} release notes](https://docs.openshift.com/container-platform/3.11/release_notes/ocp_3_11_release_notes.html#ocp-3-11-380){: external}. |
+| {{site.data.keyword.redhat_openshift_notm}}  | 3.11.346 | 3.11.380 | See the [{{site.data.keyword.redhat_openshift_notm}} release notes](https://docs.redhat.com/documentation/openshift_container_platform/3.11/html/release_notes/release-notes-ocp-3-11-release-notes#ocp-3-11-380){: external}. |
 {: caption="Changes since version 3.11.346_1578_openshift" caption-side="bottom"}
 
 
@@ -877,7 +877,7 @@ The following table shows the changes that are in the worker node fix pack `3.11
 
 | Component | Previous | Current | Description |
 | --------- | -------- | ------- | ----------- |
-| {{site.data.keyword.redhat_openshift_notm}} | 3.11.374 | 3.11.380 | See the [{{site.data.keyword.redhat_openshift_notm}} release notes](https://docs.openshift.com/container-platform/3.11/release_notes/ocp_3_11_release_notes.html#ocp-3-11-380){: external}. |
+| {{site.data.keyword.redhat_openshift_notm}} | 3.11.374 | 3.11.380 | See the [{{site.data.keyword.redhat_openshift_notm}} release notes](https://docs.redhat.com/documentation/openshift_container_platform/3.11/html/release_notes/release-notes-ocp-3-11-release-notes#ocp-3-11-380){: external}. |
 | RHEL 7 Packages | 3.10.0-1160.11.1.el7 | 3.10.0-1160.15.2.el7 | Updated worker node with image kernel and package updates for: [CVE-2020-10543](https://nvd.nist.gov/vuln/detail/CVE-2020-10543){: external}, [CVE-2020-10878](https://nvd.nist.gov/vuln/detail/CVE-2020-10878){: external}, [CVE-2020-12723](https://nvd.nist.gov/vuln/detail/CVE-2020-12723){: external}, [CVE-2020-15436](https://nvd.nist.gov/vuln/detail/CVE-2020-15436){: external}, [CVE-2020-35513](https://nvd.nist.gov/vuln/detail/CVE-2020-35513){: external}, [CVE-2019-25013](https://nvd.nist.gov/vuln/detail/CVE-2019-25013){: external}, [CVE-2020-10029](https://nvd.nist.gov/vuln/detail/CVE-2020-10029){: external}, [CVE-2020-29573](https://nvd.nist.gov/vuln/detail/CVE-2020-29573){: external}, and [CVE-2020-12321](https://nvd.nist.gov/vuln/detail/CVE-2020-12321){: external}){: external}. |
 {: caption="Changes since version 3.11.374_1579_openshift" caption-side="bottom"}
 
@@ -893,7 +893,7 @@ The following table shows the changes that are in the worker node fix pack `3.11
 
 | Component | Previous | Current | Description |
 | --------- | -------- | ------- | ----------- |
-| {{site.data.keyword.redhat_openshift_notm}} node | 3.11.346 | 3.11.374 | See the [{{site.data.keyword.redhat_openshift_notm}} release notes](https://docs.openshift.com/container-platform/3.11/release_notes/ocp_3_11_release_notes.html#ocp-3-11-374){: external}. |
+| {{site.data.keyword.redhat_openshift_notm}} node | 3.11.346 | 3.11.374 | See the [{{site.data.keyword.redhat_openshift_notm}} release notes](https://docs.redhat.com/documentation/openshift_container_platform/3.11/html/release_notes/release-notes-ocp-3-11-release-notes#ocp-3-11-374){: external}. |
 | RHEL 7 Packages | N/A | N/A | Updated worker node image with package updates for [CVE-2021-3156](https://nvd.nist.gov/vuln/detail/CVE-2021-3156){: external}, [CVE-2020-25684](https://nvd.nist.gov/vuln/detail/CVE-2020-25684){: external}, [CVE-2020-25685](https://nvd.nist.gov/vuln/detail/CVE-2020-25685){: external}, and [CVE-2020-25686](https://nvd.nist.gov/vuln/detail/CVE-2020-25686){: external}. |
 {: caption="Changes since version 3.11.346_1578_openshift" caption-side="bottom"}
 
@@ -943,7 +943,7 @@ The following table shows the changes that are in the master fix pack patch upda
 | Component | Previous | Current | Description |
 | --- | --- | --- | --- |
 | {{site.data.keyword.filestorage_full_notm}} plug-in | N/A | N/A | Updated to run as a root user. |
-| {{site.data.keyword.redhat_openshift_notm}} | 3.11.318 | 3.11.346 | See the [{{site.data.keyword.redhat_openshift_notm}} release notes](https://docs.openshift.com/container-platform/3.11/release_notes/ocp_3_11_release_notes.html#ocp-3-11-346){: external}. The update resolves CVE-2018-1002102 (see the [IBM security bulletin](https://www.ibm.com/support/pages/node/6404300){: external}) and CVE-2020-8559 (see the [IBM security bulletin](https://www.ibm.com/support/pages/node/6404296){: external}). |
+| {{site.data.keyword.redhat_openshift_notm}} | 3.11.318 | 3.11.346 | See the [{{site.data.keyword.redhat_openshift_notm}} release notes](https://docs.redhat.com/documentation/openshift_container_platform/3.11/html/release_notes/release-notes-ocp-3-11-release-notes#ocp-3-11-346){: external}. The update resolves CVE-2018-1002102 (see the [IBM security bulletin](https://www.ibm.com/support/pages/node/6404300){: external}) and CVE-2020-8559 (see the [IBM security bulletin](https://www.ibm.com/support/pages/node/6404296){: external}). |
 {: caption="Changes since version 3.11.318_1575_openshift" caption-side="bottom"}
 
 
@@ -958,7 +958,7 @@ The following table shows the changes that are in the worker node fix pack updat
 | Component | Previous | Current | Description |
 | --- | --- | --- | --- |
 | HA proxy | db4e6d | 9b2dca | Image update for [CVE-2020-1971](https://nvd.nist.gov/vuln/detail/CVE-2020-1971){: external} and [CVE-2020-24659](https://nvd.nist.gov/vuln/detail/CVE-2020-24659){: external}. |
-| {{site.data.keyword.redhat_openshift_notm}} node | 3.11.318 | 3.11.346 | See the [{{site.data.keyword.redhat_openshift_notm}} release notes](https://docs.openshift.com/container-platform/3.11/release_notes/ocp_3_11_release_notes.html#ocp-3-11-346){: external}. |
+| {{site.data.keyword.redhat_openshift_notm}} node | 3.11.318 | 3.11.346 | See the [{{site.data.keyword.redhat_openshift_notm}} release notes](https://docs.redhat.com/documentation/openshift_container_platform/3.11/html/release_notes/release-notes-ocp-3-11-release-notes#ocp-3-11-346){: external}. |
 | RHEL 7 Packages | 3.10.0-1160.6.1.el7 | 3.10.0-1160.11.1.el7 | Updated worker node image with kernel and package updates for: [CVE-2019-18282](https://nvd.nist.gov/vuln/detail/CVE-2019-18282){: external}, [CVE-2020-10769](https://nvd.nist.gov/vuln/detail/CVE-2020-10769){: external}, [CVE-2020-14314](https://nvd.nist.gov/vuln/detail/CVE-2020-14314){: external}, [CVE-2020-14385](https://nvd.nist.gov/vuln/detail/CVE-2020-14385){: external}, [CVE-2020-24394](https://nvd.nist.gov/vuln/detail/CVE-2020-24394){: external}, [CVE-2020-25212](https://nvd.nist.gov/vuln/detail/CVE-2020-25212){: external}, [CVE-2020-25643](https://nvd.nist.gov/vuln/detail/CVE-2020-25643){: external}, and [CVE-2020-1971](https://nvd.nist.gov/vuln/detail/CVE-2020-1971){: external}. |
 {: caption="Changes since version 3.11.318_1575_openshift" caption-side="bottom"}
 
@@ -977,7 +977,7 @@ The following table shows the changes that are in the master fix pack patch upda
 | {{site.data.keyword.filestorage_full_notm}} plug-in and monitor | 379 | 384 | Updated to use `Go` version 1.15.5. Updated image to run as a non-root user and to implement additional {{site.data.keyword.IBM_notm}} security controls. |
 | Key management service (KMS) provider | v1.0.4 | v1.0.5 | Updated image to implement additional {{site.data.keyword.IBM_notm}} security controls. |
 | Load balancer and load balancer monitor for {{site.data.keyword.cloud_notm}} Provider | 203 | 1004 | Updated Alpine base image to version 3.12 and to use `Go` version 1.15.5. Updated image for [CVE-2020-8037](https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2020-8037){: external} and [CVE-2020-28928](https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2020-28928){: external}. Updated image to implement additional {{site.data.keyword.IBM_notm}} security controls. |
-| {{site.data.keyword.redhat_openshift_notm}} | 3.11.306 | 3.11.318 | See the [{{site.data.keyword.redhat_openshift_notm}} release notes](https://docs.openshift.com/container-platform/3.11/release_notes/ocp_3_11_release_notes.html#ocp-3-11-318){: external}. |
+| {{site.data.keyword.redhat_openshift_notm}} | 3.11.306 | 3.11.318 | See the [{{site.data.keyword.redhat_openshift_notm}} release notes](https://docs.redhat.com/documentation/openshift_container_platform/3.11/html/release_notes/release-notes-ocp-3-11-release-notes#ocp-3-11-318){: external}. |
 | OpenVPN client | 2.4.6-r3-IKS-116 | 2.4.6-r3-IKS-301 | Updated image to implement additional {{site.data.keyword.IBM_notm}} security controls. |
 | OpenVPN server | 2.4.6-r3-IKS-131 | 2.4.6-r3-IKS-301 | Updated image to implement additional {{site.data.keyword.IBM_notm}} security controls. |
 {: caption="Changes since version 3.11.306_1573_openshift" caption-side="bottom"}
@@ -1010,7 +1010,7 @@ The following table shows the changes that are in the worker node fix pack updat
 
 | Component | Previous | Current | Description |
 | --- | --- | --- | --- |
-| {{site.data.keyword.redhat_openshift_notm}} node | 3.11.306 | 3.11.318 | See the [{{site.data.keyword.redhat_openshift_notm}} release notes](https://docs.openshift.com/container-platform/3.11/release_notes/ocp_3_11_release_notes.html#ocp-3-11-318){: external}. |
+| {{site.data.keyword.redhat_openshift_notm}} node | 3.11.306 | 3.11.318 | See the [{{site.data.keyword.redhat_openshift_notm}} release notes](https://docs.redhat.com/documentation/openshift_container_platform/3.11/html/release_notes/release-notes-ocp-3-11-release-notes#ocp-3-11-318){: external}. |
 | RHEL 7 Packages |  3.10.0-1160.2.2.el7 | 3.10.0-1160.6.1.el7 | Updated worker node image with kernel and package updates for [CVE-2020-8622](https://nvd.nist.gov/vuln/detail/CVE-2020-8622){: external}, [CVE-2020-8623](https://nvd.nist.gov/vuln/detail/CVE-2020-8623){: external}, [CVE-2020-8624](https://nvd.nist.gov/vuln/detail/CVE-2020-8624){: external}, [CVE-2019-20907](https://nvd.nist.gov/vuln/detail/CVE-2019-20907){: external}, [CVE-2020-15999](https://nvd.nist.gov/vuln/detail/CVE-2020-15999){: external}, [CVE-2020-8177](https://nvd.nist.gov/vuln/detail/CVE-2020-8177){: external}, [CVE-2019-20811](https://nvd.nist.gov/vuln/detail/CVE-2019-20811){: external}, [CVE-2020-14331](https://nvd.nist.gov/vuln/detail/CVE-2020-14331){: external}, [CVE-2020-8695](https://nvd.nist.gov/vuln/detail/CVE-2020-8695){: external}, [CVE-2020-8696](https://nvd.nist.gov/vuln/detail/CVE-2020-8696){: external}, and [CVE-2020-8698](https://nvd.nist.gov/vuln/detail/CVE-2020-8698){: external}.|
 {: caption="Changes since version 3.11.306_1572_openshift" caption-side="bottom"}
 
@@ -1030,7 +1030,7 @@ The following table shows the changes that are in the master fix pack patch upda
 | {{site.data.keyword.cloud_notm}} Controller Manager | v1.15.12-343 | v1.15.12-404 | Updated image for [DLA-2424-1](https://lists.debian.org/debian-lts-announce/2020/10/msg00037.html){: external}. |
 | {{site.data.keyword.filestorage_full_notm}} plug-in and monitor | 378 | 379 | Updated to use the universal base image (UBI) and to use `Go` version 1.15.2. |
 | Key Management Service provider | v1.0.3 | v1.0.4 | Updated image for [DLA-2424-1](https://lists.debian.org/debian-lts-announce/2020/10/msg00037.html){: external}. |
-| {{site.data.keyword.redhat_openshift_notm}} | 3.11.286 | 3.11.306 | See the [{{site.data.keyword.redhat_openshift_notm}} release notes](https://docs.openshift.com/container-platform/3.11/release_notes/ocp_3_11_release_notes.html#ocp-3-11-306){: external}. |
+| {{site.data.keyword.redhat_openshift_notm}} | 3.11.286 | 3.11.306 | See the [{{site.data.keyword.redhat_openshift_notm}} release notes](https://docs.redhat.com/documentation/openshift_container_platform/3.11/html/release_notes/release-notes-ocp-3-11-release-notes#ocp-3-11-306){: external}. |
 {: caption="Changes since version 3.11.286_1570_openshift" caption-side="bottom"}
 
 
@@ -1060,7 +1060,7 @@ The following table shows the changes that are in the worker node fix pack updat
 
 | Component | Previous | Current | Description |
 | --- | --- | --- | --- |
-| {{site.data.keyword.redhat_openshift_notm}} node | 3.11.286 | 3.11.306 | See the [{{site.data.keyword.redhat_openshift_notm}} release notes](https://docs.openshift.com/container-platform/3.11/release_notes/ocp_3_11_release_notes.html#ocp-3-11-306){: external}.|
+| {{site.data.keyword.redhat_openshift_notm}} node | 3.11.286 | 3.11.306 | See the [{{site.data.keyword.redhat_openshift_notm}} release notes](https://docs.redhat.com/documentation/openshift_container_platform/3.11/html/release_notes/release-notes-ocp-3-11-release-notes#ocp-3-11-306){: external}.|
 | RHEL 7 Packages | 3.10.0-1160.2.1.el7 | 3.10.0-1160.2.2.el7 | Updated worker node images with kernel and package updates for [CVE-2020-12351](https://nvd.nist.gov/vuln/detail/CVE-2020-12351){: external} and [CVE-2020-12352](https://nvd.nist.gov/vuln/detail/CVE-2020-12352){: external}.|
 {: caption="Changes since version 3.11.286_1570_openshift" caption-side="bottom"}
 
@@ -1077,7 +1077,7 @@ The following table shows the changes that are in the master fix pack patch upda
 | Component | Previous | Current | Description |
 | --------- | -------- | ------- | ----------- |
 | Cluster health image | v1.1.11 | v1.1.12 | Updated to use `Go` version 1.15.2. |
-| {{site.data.keyword.redhat_openshift_notm}} | 3.11.272 | 3.11.286 | See the [{{site.data.keyword.redhat_openshift_notm}} release notes](https://docs.openshift.com/container-platform/3.11/release_notes/ocp_3_11_release_notes.html#ocp-3-11-286){: external}. |
+| {{site.data.keyword.redhat_openshift_notm}} | 3.11.272 | 3.11.286 | See the [{{site.data.keyword.redhat_openshift_notm}} release notes](https://docs.redhat.com/documentation/openshift_container_platform/3.11/html/release_notes/release-notes-ocp-3-11-release-notes#ocp-3-11-286){: external}. |
 {: caption="Changes since version 3.11.272_1567_openshift" caption-side="bottom"}
 
 
@@ -1122,7 +1122,7 @@ The following table shows the changes that are in the worker node fix pack updat
 
 | Component | Previous | Current | Description |
 | --- | --- | --- | --- |
-| {{site.data.keyword.redhat_openshift_notm}} | 3.11.272    | 3.11.286 | See the [{{site.data.keyword.redhat_openshift_notm}} release notes](https://docs.openshift.com/container-platform/3.11/release_notes/ocp_3_11_release_notes.html#ocp-3-11-286){: external}.|
+| {{site.data.keyword.redhat_openshift_notm}} | 3.11.272    | 3.11.286 | See the [{{site.data.keyword.redhat_openshift_notm}} release notes](https://docs.redhat.com/documentation/openshift_container_platform/3.11/html/release_notes/release-notes-ocp-3-11-release-notes#ocp-3-11-286){: external}.|
 {: caption="Changes since version 3.11.272_1566_openshift" caption-side="bottom"}
 
 
@@ -1141,7 +1141,7 @@ The following table shows the changes that are in the master fix pack patch upda
 | etcd | v3.3.22 | v3.3.25 | See the [etcd release notes](https://github.com/etcd-io/etcd/releases/v3.3.25){: external}. |
 | {{site.data.keyword.filestorage_full_notm}} plug-in and monitor | 377 | 378 | Updated `Go` version for [CVE-2020-16845](https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2020-16845){: external}. |
 | Key Management Service provider | v1.0.1 | v1.0.3 | Updated `Go` version for [CVE-2020-16845](https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2020-16845){: external} and [CVE-2020-24553](https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2020-24553){: external}. |
-| {{site.data.keyword.redhat_openshift_notm}} | 3.11.248 | 3.11.272 | See the [{{site.data.keyword.redhat_openshift_notm}} release notes](https://docs.openshift.com/container-platform/3.11/release_notes/ocp_3_11_release_notes.html#ocp-3-11-272){: external}. |
+| {{site.data.keyword.redhat_openshift_notm}} | 3.11.248 | 3.11.272 | See the [{{site.data.keyword.redhat_openshift_notm}} release notes](https://docs.redhat.com/documentation/openshift_container_platform/3.11/html/release_notes/release-notes-ocp-3-11-release-notes#ocp-3-11-272){: external}. |
 {: caption="Changes since version 3.11.272_1566_openshift" caption-side="bottom"}
 
 
@@ -1173,7 +1173,7 @@ The following table shows the changes that are in the worker node fix pack updat
 | Component | Previous | Current | Description |
 | --- | --- | --- | --- |
 | RHEL 7 packages | 3.10.0-1127.18.2.el7 | 3.10.0-1127.19.1.el7 | Updated worker node image with kernel and package updates. |
-| {{site.data.keyword.redhat_openshift_notm}} node | 3.11.248 | 3.11.272 | See the [{{site.data.keyword.redhat_openshift_notm}} release notes](https://docs.openshift.com/container-platform/3.11/release_notes/ocp_3_11_release_notes.html#ocp-3-11-272){: external}. |
+| {{site.data.keyword.redhat_openshift_notm}} node | 3.11.248 | 3.11.272 | See the [{{site.data.keyword.redhat_openshift_notm}} release notes](https://docs.redhat.com/documentation/openshift_container_platform/3.11/html/release_notes/release-notes-ocp-3-11-release-notes#ocp-3-11-272){: external}. |
 {: caption="Changes since version 3.11.248_1564_openshift" caption-side="bottom"}
 
 
@@ -1192,7 +1192,7 @@ The following table shows the changes that are in the master fix pack patch upda
 | Cluster health image | v1.1.8 | v1.1.9 | Updated to use `Go` version 1.13.13. |
 | {{site.data.keyword.filestorage_full_notm}} plug-in and monitor | 376 | 377 | Fixed a bug that prevents persistent volume claim (PVC) creation failures from being retried. |
 | Key Management Service provider | v1.0.0 | v1.0.1 | Updated image for [CVE-2020-15586](https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2020-15586){: external}. |
-| {{site.data.keyword.redhat_openshift_notm}} | 3.11.232 | 3.11.248 | See the [{{site.data.keyword.redhat_openshift_notm}} release notes](https://docs.openshift.com/container-platform/3.11/release_notes/ocp_3_11_release_notes.html#ocp-3-11-248){: external}. |
+| {{site.data.keyword.redhat_openshift_notm}} | 3.11.232 | 3.11.248 | See the [{{site.data.keyword.redhat_openshift_notm}} release notes](https://docs.redhat.com/documentation/openshift_container_platform/3.11/html/release_notes/release-notes-ocp-3-11-release-notes#ocp-3-11-248){: external}. |
 {: caption="Changes since version 3.11.232_1561_openshift" caption-side="bottom"}
 
 
@@ -1222,7 +1222,7 @@ The following table shows the changes that are in the worker node fix pack updat
 
 | Component | Previous | Current | Description |
 | --- | --- | --- | --- |
-| {{site.data.keyword.redhat_openshift_notm}} node | 3.11.232 | 3.11.248 | See the [{{site.data.keyword.redhat_openshift_notm}} release notes](https://docs.openshift.com/container-platform/3.11/release_notes/ocp_3_11_release_notes.html#ocp-3-11-248){: external}. The update resolves CVE-2020-8558 (see the [IBM security bulletin](https://www.ibm.com/support/pages/node/6319989){: external}). |
+| {{site.data.keyword.redhat_openshift_notm}} node | 3.11.232 | 3.11.248 | See the [{{site.data.keyword.redhat_openshift_notm}} release notes](https://docs.redhat.com/documentation/openshift_container_platform/3.11/html/release_notes/release-notes-ocp-3-11-release-notes#ocp-3-11-248){: external}. The update resolves CVE-2020-8558 (see the [IBM security bulletin](https://www.ibm.com/support/pages/node/6319989){: external}). |
 | RHEL 7 Packages | 3.10.0-1127.13.1.el7 | 3.10.0-1127.18.2.el7 | Updated worker node images with package updates for [CVE-2020-10713](https://nvd.nist.gov/vuln/detail/CVE-2020-10713){: external}, [CVE-2020-14308](https://nvd.nist.gov/vuln/detail/CVE-2020-14308){: external}, [CVE-2020-14309](https://nvd.nist.gov/vuln/detail/CVE-2020-14309){: external}, [CVE-2020-14310](https://nvd.nist.gov/vuln/detail/CVE-2020-14310){: external}, [CVE-2020-14311](https://nvd.nist.gov/vuln/detail/CVE-2020-14311){: external}, [CVE-2020-15705](https://nvd.nist.gov/vuln/detail/CVE-2020-15705){: external}, [CVE-2020-15706](https://nvd.nist.gov/vuln/detail/CVE-2020-15706){: external}, [CVE-2020-15707](https://nvd.nist.gov/vuln/detail/CVE-2020-15707){: external}, [CVE-2019-19527](https://nvd.nist.gov/vuln/detail/CVE-2019-19527){: external}, [CVE-2020-10757](https://nvd.nist.gov/vuln/detail/CVE-2020-10757){: external}, [CVE-2020-12653](https://nvd.nist.gov/vuln/detail/CVE-2020-12653){: external}, and [CVE-2020-12654](https://nvd.nist.gov/vuln/detail/CVE-2020-12654){: external}. |
 {: caption="Changes since version 3.11.232_1558_openshift" caption-side="bottom"}
 
@@ -1257,7 +1257,7 @@ The following table shows the changes that are in the master fix pack update `3.
 | --- | --- | --- | --- |
 | {{site.data.keyword.cloud_notm}} Block Storage driver configuration | N/A | N/A | Added a pod memory limit. |
 | {{site.data.keyword.filestorage_full_notm}} plug-in and monitor configuration | N/A | N/A | Added a pod memory limit. |
-| {{site.data.keyword.redhat_openshift_notm}} | 3.11.219 | 3.11.232 | See the [{{site.data.keyword.redhat_openshift_notm}} release notes](https://docs.openshift.com/container-platform/3.11/release_notes/ocp_3_11_release_notes.html#ocp-3-11-232){: external}. The update resolves CVE-2019-11254 (see the [IBM security bulletin](https://www.ibm.com/support/pages/node/6249873){: external}) and CVE-2020-8555 (see the [IBM security bulletin](https://www.ibm.com/support/pages/node/6249891){: external}). |
+| {{site.data.keyword.redhat_openshift_notm}} | 3.11.219 | 3.11.232 | See the [{{site.data.keyword.redhat_openshift_notm}} release notes](https://docs.redhat.com/documentation/openshift_container_platform/3.11/html/release_notes/release-notes-ocp-3-11-release-notes#ocp-3-11-232){: external}. The update resolves CVE-2019-11254 (see the [IBM security bulletin](https://www.ibm.com/support/pages/node/6249873){: external}) and CVE-2020-8555 (see the [IBM security bulletin](https://www.ibm.com/support/pages/node/6249891){: external}). |
 {: caption="Changes since version 3.11.232_1555_openshift" caption-side="bottom"}
 
 
@@ -1311,8 +1311,8 @@ The following table shows the changes that are in the master fix pack update `3.
 | etcd | Master | v3.3.20 | v3.3.22 | See the [etcd release notes](https://github.com/etcd-io/etcd/releases/v3.3.22){: external}. |
 | {{site.data.keyword.cloud_notm}} Controller Manager | Master | v1.15.12-316 | v1.15.12-343 | Updated to use `calicoctl` version 3.8.9. |
 | {{site.data.keyword.filestorage_full_notm}} plug-in | Master | 373 | 375 | Fixed a bug that might cause error handling to create additional persistent volumes. |
-| {{site.data.keyword.redhat_openshift_notm}} | Master | 3.11.216 | 3.11.219 | See the [{{site.data.keyword.redhat_openshift_notm}} release notes](https://docs.openshift.com/container-platform/3.11/release_notes/ocp_3_11_release_notes.html#ocp-3-11-219){: external}. The master update resolves CVE-2020-8552 (see the [IBM security bulletin](https://www.ibm.com/support/pages/node/6238260){: external}). |
-| {{site.data.keyword.redhat_openshift_notm}} node | Worker | 3.11.219 | 3.11.232 | See the [{{site.data.keyword.redhat_openshift_notm}}  release notes](https://docs.openshift.com/container-platform/3.11/release_notes/ocp_3_11_release_notes.html#ocp-3-11-232){: external}. |
+| {{site.data.keyword.redhat_openshift_notm}} | Master | 3.11.216 | 3.11.219 | See the [{{site.data.keyword.redhat_openshift_notm}} release notes](https://docs.redhat.com/documentation/openshift_container_platform/3.11/html/release_notes/release-notes-ocp-3-11-release-notes#ocp-3-11-219){: external}. The master update resolves CVE-2020-8552 (see the [IBM security bulletin](https://www.ibm.com/support/pages/node/6238260){: external}). |
+| {{site.data.keyword.redhat_openshift_notm}} node | Worker | 3.11.219 | 3.11.232 | See the [{{site.data.keyword.redhat_openshift_notm}}  release notes](https://docs.redhat.com/documentation/openshift_container_platform/3.11/html/release_notes/release-notes-ocp-3-11-release-notes#ocp-3-11-232){: external}. |
 | RHEL 7 packages | Worker | N/A | N/A | Updated worker node images with package updates for [CVE-2020-0543](https://nvd.nist.gov/vuln/detail/CVE-2020-0543){: external}, [CVE-2020-0548](https://nvd.nist.gov/vuln/detail/CVE-2020-0548){: external}, and [CVE-2020-0549](https://nvd.nist.gov/vuln/detail/CVE-2020-0549){: external}. |
 {: caption="Changes since version 3.11.219_1552_openshift" caption-side="bottom"}
 
@@ -1328,7 +1328,7 @@ The following table shows the changes that are in the worker node fix pack updat
 
 | Component | Previous | Current | Description |
 | --- | --- | --- | --- |
-| {{site.data.keyword.redhat_openshift_notm}} node | 3.11.216 | 3.11.219 | See the [{{site.data.keyword.redhat_openshift_notm}} release notes](https://docs.openshift.com/container-platform/3.11/release_notes/ocp_3_11_release_notes.html#ocp-3-11-219){: external}. |
+| {{site.data.keyword.redhat_openshift_notm}} node | 3.11.216 | 3.11.219 | See the [{{site.data.keyword.redhat_openshift_notm}} release notes](https://docs.redhat.com/documentation/openshift_container_platform/3.11/html/release_notes/release-notes-ocp-3-11-release-notes#ocp-3-11-219){: external}. |
 {: caption="Changes since version 3.11.216_1551_openshift" caption-side="bottom"}
 
 
@@ -1349,7 +1349,7 @@ The following table shows the changes that are in the master and worker node upd
 | {{site.data.keyword.filestorage_full_notm}} plug-in and monitor | Master | 358 | 373 | Updated image for [CVE-2020-1967](https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2020-1967){: external} and [CVE-2020-11655](https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2020-11655){: external}. |
 | {{site.data.keyword.cloud_notm}} Paks | Master | N/A | N/A | Removed duplicate repositories in `ClusterImagePolicies` resources that are installed by {{site.data.keyword.cloud_notm}} Paks. |
 | Load balancer and load balancer monitor for {{site.data.keyword.cloud_notm}} Provider | Master | 169 | 203 | Version 2.0 network load balancers (NLB) were updated to fix problems with long-lived network connections to endpoints that failed readiness probes. Updated image for [CVE-2020-1967](https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2020-1967){: external}. |
-| {{site.data.keyword.redhat_openshift_notm}}  | Master | 3.11.200 | 3.11.216 | See the [{{site.data.keyword.redhat_openshift_notm}} release notes](https://docs.openshift.com/container-platform/3.11/release_notes/ocp_3_11_release_notes.html#ocp-3-11-216){: external}. |
+| {{site.data.keyword.redhat_openshift_notm}}  | Master | 3.11.200 | 3.11.216 | See the [{{site.data.keyword.redhat_openshift_notm}} release notes](https://docs.redhat.com/documentation/openshift_container_platform/3.11/html/release_notes/release-notes-ocp-3-11-release-notes#ocp-3-11-216){: external}. |
 | RHEL 7 Packages | Worker | 3.10.0-1127.el7 | 3.10.0-1127.8.2.el7 | Updated worker node images with kernel package updates for [CVE-2017-18595](https://nvd.nist.gov/vuln/detail/CVE-2017-18595){: external}, [CVE-2019-19768](https://nvd.nist.gov/vuln/detail/CVE-2019-19768){: external}, and [CVE-2020-10711](https://nvd.nist.gov/vuln/detail/CVE-2020-10711){: external}. |
 {: caption="Changes since version 3.11.216_1550_openshift" caption-side="bottom"}
 
@@ -1365,7 +1365,7 @@ The following table shows the changes that are in the worker node fix pack updat
 
 | Component | Previous | Current | Description |
 | --- | --- | --- | --- |
-| {{site.data.keyword.redhat_openshift_notm}} node | 3.11.200 | 3.11.216 | See the [{{site.data.keyword.redhat_openshift_notm}} release notes](https://docs.openshift.com/container-platform/3.11/release_notes/ocp_3_11_release_notes.html#ocp-3-11-216){: external}. |
+| {{site.data.keyword.redhat_openshift_notm}} node | 3.11.200 | 3.11.216 | See the [{{site.data.keyword.redhat_openshift_notm}} release notes](https://docs.redhat.com/documentation/openshift_container_platform/3.11/html/release_notes/release-notes-ocp-3-11-release-notes#ocp-3-11-216){: external}. |
 {: caption="Changes since version 3.11.200_1549_openshift" caption-side="bottom"}
 
 
@@ -1401,7 +1401,7 @@ The following table shows the changes that are in the master fix pack update `3.
 | {{site.data.keyword.cloud_notm}} Controller Manager | v1.15.10-252 | v1.15.11-274 | Updated to support the Kubernetes 1.15.11 release and to use `Go` version 1.12.17. |
 | {{site.data.keyword.cloud_notm}} Paks | N/A | N/A | Fixed `ClusterImagePolicies` resources that are installed by {{site.data.keyword.cloud_notm}} Paks which prevent cluster master operations from succeeding. |
 | Key Management Service provider | 277 | v1.0.0 | Updated the {{site.data.keyword.keymanagementservicelong_notm}} `Go` client. |
-| {{site.data.keyword.redhat_openshift_notm}} | 3.11.170 | 3.11.200 | See the [{{site.data.keyword.redhat_openshift_notm}} release notes](https://docs.openshift.com/container-platform/3.11/release_notes/ocp_3_11_release_notes.html#ocp-3-11-200){: external}. |
+| {{site.data.keyword.redhat_openshift_notm}} | 3.11.170 | 3.11.200 | See the [{{site.data.keyword.redhat_openshift_notm}} release notes](https://docs.redhat.com/documentation/openshift_container_platform/3.11/html/release_notes/release-notes-ocp-3-11-release-notes#ocp-3-11-200){: external}. |
 | OpenVPN client | N/A | N/A | Fixed a problem that might cause the `vpn-config` secret in the `kube-system` project to be deleted during cluster master operations. |
 {: caption="Changes since version 3.11.200_1546_openshift" caption-side="bottom"}
 
@@ -1418,7 +1418,7 @@ The following table shows the changes that are in the worker node fix pack updat
 | Component | Previous | Current | Description |
 | --- | --- | --- | --- |
 | HA proxy | 1.8.23 | 1.8.25 | See the [HA proxy change logs](https://www.haproxy.org/download/1.8/src/CHANGELOG){: external}. Contains update for [CVE-2020-11100](https://nvd.nist.gov/vuln/detail/CVE-2020-11100){: external}. |
-| {{site.data.keyword.redhat_openshift_notm}} node | 3.11.188 | 3.11.200 | See the [{{site.data.keyword.redhat_openshift_notm}} release notes](https://docs.openshift.com/container-platform/3.11/release_notes/ocp_3_11_release_notes.html#ocp-3-11-200){: external}. |
+| {{site.data.keyword.redhat_openshift_notm}} node | 3.11.188 | 3.11.200 | See the [{{site.data.keyword.redhat_openshift_notm}} release notes](https://docs.redhat.com/documentation/openshift_container_platform/3.11/html/release_notes/release-notes-ocp-3-11-release-notes#ocp-3-11-200){: external}. |
 | RHEL 7 Packages | 3.10.0-1062.18.1.el7 | 3.10.0-1127.el7 | Updated worker node images with package and kernel updates for [CVE-2015-2716](https://nvd.nist.gov/vuln/detail/CVE-2015-2716){: external}, [CVE-2015-8035](https://nvd.nist.gov/vuln/detail/CVE-2015-8035){: external}, [CVE-2015-9289](https://nvd.nist.gov/vuln/detail/CVE-2015-9289){: external}, [CVE-2016-5131](https://nvd.nist.gov/vuln/detail/CVE-2016-5131){: external}, [CVE-2017-1000476](https://nvd.nist.gov/vuln/detail/CVE-2017-1000476){: external}, [CVE-2017-11166](https://nvd.nist.gov/vuln/detail/CVE-2017-11166){: external}, [CVE-2017-12805](https://nvd.nist.gov/vuln/detail/CVE-2017-12805){: external}, [CVE-2017-12806](https://nvd.nist.gov/vuln/detail/CVE-2017-12806){: external}, [CVE-2017-15412](https://nvd.nist.gov/vuln/detail/CVE-2017-15412){: external}, [CVE-2017-17807](https://nvd.nist.gov/vuln/detail/CVE-2017-17807){: external}, [CVE-2017-18251](https://nvd.nist.gov/vuln/detail/CVE-2017-18251){: external}, [CVE-2017-18252](https://nvd.nist.gov/vuln/detail/CVE-2017-18252){: external}, [CVE-2017-18254](https://nvd.nist.gov/vuln/detail/CVE-2017-18254){: external}, [CVE-2017-18258](https://nvd.nist.gov/vuln/detail/CVE-2017-18258){: external}, [CVE-2017-18271](https://nvd.nist.gov/vuln/detail/CVE-2017-18271){: external}, [CVE-2017-18273](https://nvd.nist.gov/vuln/detail/CVE-2017-18273){: external}, [CVE-2017-6519](https://nvd.nist.gov/vuln/detail/CVE-2017-6519){: external}, [CVE-2018-10177](https://nvd.nist.gov/vuln/detail/CVE-2018-10177){: external}, [CVE-2018-10360](https://nvd.nist.gov/vuln/detail/CVE-2018-10360){: external}, [CVE-2018-10804](https://nvd.nist.gov/vuln/detail/CVE-2018-10804){: external}, [CVE-2018-10805](https://nvd.nist.gov/vuln/detail/CVE-2018-10805){: external}, [CVE-2018-1116](https://nvd.nist.gov/vuln/detail/CVE-2018-1116){: external}, [CVE-2018-11656](https://nvd.nist.gov/vuln/detail/CVE-2018-11656){: external}, [CVE-2018-12599](https://nvd.nist.gov/vuln/detail/CVE-2018-12599){: external}, [CVE-2018-12600](https://nvd.nist.gov/vuln/detail/CVE-2018-12600){: external}, [CVE-2018-13153](https://nvd.nist.gov/vuln/detail/CVE-2018-13153){: external}, [CVE-2018-14404](https://nvd.nist.gov/vuln/detail/CVE-2018-14404){: external}, [CVE-2018-14434](https://nvd.nist.gov/vuln/detail/CVE-2018-14434){: external}, [CVE-2018-14435](https://nvd.nist.gov/vuln/detail/CVE-2018-14435){: external}, [CVE-2018-14436](https://nvd.nist.gov/vuln/detail/CVE-2018-14436){: external}, [CVE-2018-14437](https://nvd.nist.gov/vuln/detail/CVE-2018-14437){: external}, [CVE-2018-14567](https://nvd.nist.gov/vuln/detail/CVE-2018-14567){: external}, [CVE-2018-15607](https://nvd.nist.gov/vuln/detail/CVE-2018-15607){: external}, [CVE-2018-16328](https://nvd.nist.gov/vuln/detail/CVE-2018-16328){: external}, [CVE-2018-16749](https://nvd.nist.gov/vuln/detail/CVE-2018-16749){: external}, [CVE-2018-16750](https://nvd.nist.gov/vuln/detail/CVE-2018-16750){: external}, [CVE-2018-18544](https://nvd.nist.gov/vuln/detail/CVE-2018-18544){: external}, [CVE-2018-18751](https://nvd.nist.gov/vuln/detail/CVE-2018-18751){: external}, [CVE-2018-19985](https://nvd.nist.gov/vuln/detail/CVE-2018-19985){: external}, [CVE-2018-20169](https://nvd.nist.gov/vuln/detail/CVE-2018-20169){: external}, [CVE-2018-20467](https://nvd.nist.gov/vuln/detail/CVE-2018-20467){: external}, [CVE-2018-20852](https://nvd.nist.gov/vuln/detail/CVE-2018-20852){: external}, [CVE-2018-5745](https://nvd.nist.gov/vuln/detail/CVE-2018-5745){: external}, [CVE-2018-7191](https://nvd.nist.gov/vuln/detail/CVE-2018-7191){: external}, [CVE-2018-8804](https://nvd.nist.gov/vuln/detail/CVE-2018-8804){: external}, [CVE-2018-9133](https://nvd.nist.gov/vuln/detail/CVE-2018-9133){: external}, [CVE-2019-10131](https://nvd.nist.gov/vuln/detail/CVE-2019-10131){: external}, [CVE-2019-10207](https://nvd.nist.gov/vuln/detail/CVE-2019-10207){: external}, [CVE-2019-10638](https://nvd.nist.gov/vuln/detail/CVE-2019-10638){: external}, [CVE-2019-10639](https://nvd.nist.gov/vuln/detail/CVE-2019-10639){: external}, [CVE-2019-10650](https://nvd.nist.gov/vuln/detail/CVE-2019-10650){: external}, [CVE-2019-11190](https://nvd.nist.gov/vuln/detail/CVE-2019-11190){: external}, [CVE-2019-11470](https://nvd.nist.gov/vuln/detail/CVE-2019-11470){: external}, [CVE-2019-11472](https://nvd.nist.gov/vuln/detail/CVE-2019-11472){: external}, [CVE-2019-11597](https://nvd.nist.gov/vuln/detail/CVE-2019-11597){: external}, [CVE-2019-11598](https://nvd.nist.gov/vuln/detail/CVE-2019-11598){: external}, [CVE-2019-11884](https://nvd.nist.gov/vuln/detail/CVE-2019-11884){: external}, [CVE-2019-12382](https://nvd.nist.gov/vuln/detail/CVE-2019-12382){: external}, [CVE-2019-12974](https://nvd.nist.gov/vuln/detail/CVE-2019-12974){: external}, [CVE-2019-12975](https://nvd.nist.gov/vuln/detail/CVE-2019-12975){: external}, [CVE-2019-12976](https://nvd.nist.gov/vuln/detail/CVE-2019-12976){: external}, [CVE-2019-12978](https://nvd.nist.gov/vuln/detail/CVE-2019-12978){: external}, [CVE-2019-12979](https://nvd.nist.gov/vuln/detail/CVE-2019-12979){: external}, [CVE-2019-13133](https://nvd.nist.gov/vuln/detail/CVE-2019-13133){: external}, [CVE-2019-13134](https://nvd.nist.gov/vuln/detail/CVE-2019-13134){: external}, [CVE-2019-13135](https://nvd.nist.gov/vuln/detail/CVE-2019-13135){: external}, [CVE-2019-13233](https://nvd.nist.gov/vuln/detail/CVE-2019-13233){: external}, [CVE-2019-13295](https://nvd.nist.gov/vuln/detail/CVE-2019-13295){: external}, [CVE-2019-13297](https://nvd.nist.gov/vuln/detail/CVE-2019-13297){: external}, [CVE-2019-13300](https://nvd.nist.gov/vuln/detail/CVE-2019-13300){: external}, [CVE-2019-13301](https://nvd.nist.gov/vuln/detail/CVE-2019-13301){: external}, [CVE-2019-13304](https://nvd.nist.gov/vuln/detail/CVE-2019-13304){: external}, [CVE-2019-13305](https://nvd.nist.gov/vuln/detail/CVE-2019-13305){: external}, [CVE-2019-13306](https://nvd.nist.gov/vuln/detail/CVE-2019-13306){: external}, [CVE-2019-13307](https://nvd.nist.gov/vuln/detail/CVE-2019-13307){: external}, [CVE-2019-13309](https://nvd.nist.gov/vuln/detail/CVE-2019-13309){: external}, [CVE-2019-13310](https://nvd.nist.gov/vuln/detail/CVE-2019-13310){: external}, [CVE-2019-13311](https://nvd.nist.gov/vuln/detail/CVE-2019-13311){: external}, [CVE-2019-13454](https://nvd.nist.gov/vuln/detail/CVE-2019-13454){: external}, [CVE-2019-13648](https://nvd.nist.gov/vuln/detail/CVE-2019-13648){: external}, [CVE-2019-14283](https://nvd.nist.gov/vuln/detail/CVE-2019-14283){: external}, [CVE-2019-14980](https://nvd.nist.gov/vuln/detail/CVE-2019-14980){: external}, [CVE-2019-14981](https://nvd.nist.gov/vuln/detail/CVE-2019-14981){: external}, [CVE-2019-15139](https://nvd.nist.gov/vuln/detail/CVE-2019-15139){: external}, [CVE-2019-15140](https://nvd.nist.gov/vuln/detail/CVE-2019-15140){: external}, [CVE-2019-15141](https://nvd.nist.gov/vuln/detail/CVE-2019-15141){: external}, [CVE-2019-15221](https://nvd.nist.gov/vuln/detail/CVE-2019-15221){: external}, [CVE-2019-15916](https://nvd.nist.gov/vuln/detail/CVE-2019-15916){: external}, [CVE-2019-16056](https://nvd.nist.gov/vuln/detail/CVE-2019-16056){: external}, [CVE-2019-16708](https://nvd.nist.gov/vuln/detail/CVE-2019-16708){: external}, [CVE-2019-16709](https://nvd.nist.gov/vuln/detail/CVE-2019-16709){: external}, [CVE-2019-16710](https://nvd.nist.gov/vuln/detail/CVE-2019-16710){: external}, [CVE-2019-16711](https://nvd.nist.gov/vuln/detail/CVE-2019-16711){: external}, [CVE-2019-16712](https://nvd.nist.gov/vuln/detail/CVE-2019-16712){: external}, [CVE-2019-16713](https://nvd.nist.gov/vuln/detail/CVE-2019-16713){: external}, [CVE-2019-16746](https://nvd.nist.gov/vuln/detail/CVE-2019-16746){: external}, [CVE-2019-16884](https://nvd.nist.gov/vuln/detail/CVE-2019-16884){: external}, [CVE-2019-17041](https://nvd.nist.gov/vuln/detail/CVE-2019-17041){: external}, [CVE-2019-17042](https://nvd.nist.gov/vuln/detail/CVE-2019-17042){: external}, [CVE-2019-17540](https://nvd.nist.gov/vuln/detail/CVE-2019-17540){: external}, [CVE-2019-17541](https://nvd.nist.gov/vuln/detail/CVE-2019-17541){: external}, [CVE-2019-18660](https://nvd.nist.gov/vuln/detail/CVE-2019-18660){: external}, [CVE-2019-19948](https://nvd.nist.gov/vuln/detail/CVE-2019-19948){: external}, [CVE-2019-19949](https://nvd.nist.gov/vuln/detail/CVE-2019-19949){: external}, [CVE-2019-2737](https://nvd.nist.gov/vuln/detail/CVE-2019-2737){: external}, [CVE-2019-2739](https://nvd.nist.gov/vuln/detail/CVE-2019-2739){: external}, [CVE-2019-2740](https://nvd.nist.gov/vuln/detail/CVE-2019-2740){: external}, [CVE-2019-2805](https://nvd.nist.gov/vuln/detail/CVE-2019-2805){: external}, [CVE-2019-3820](https://nvd.nist.gov/vuln/detail/CVE-2019-3820){: external}, [CVE-2019-3901](https://nvd.nist.gov/vuln/detail/CVE-2019-3901){: external}, [CVE-2019-5436](https://nvd.nist.gov/vuln/detail/CVE-2019-5436){: external}, [CVE-2019-6465](https://nvd.nist.gov/vuln/detail/CVE-2019-6465){: external}, [CVE-2019-6477](https://nvd.nist.gov/vuln/detail/CVE-2019-6477){: external}, [CVE-2019-7175](https://nvd.nist.gov/vuln/detail/CVE-2019-7175){: external}, [CVE-2019-7397](https://nvd.nist.gov/vuln/detail/CVE-2019-7397){: external}, [CVE-2019-7398](https://nvd.nist.gov/vuln/detail/CVE-2019-7398){: external}, [CVE-2019-9503](https://nvd.nist.gov/vuln/detail/CVE-2019-9503){: external}, [CVE-2019-9924](https://nvd.nist.gov/vuln/detail/CVE-2019-9924){: external}, [CVE-2019-9956](https://nvd.nist.gov/vuln/detail/CVE-2019-9956){: external}, [CVE-2020-1702](https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2020-1702){: external}, and[CVE-2020-8945](https://nvd.nist.gov/vuln/detail/CVE-2020-8945){: external}. |
 {: caption="Changes since version 3.11.188_1545_openshift" caption-side="bottom"}
 
@@ -1435,7 +1435,7 @@ The following table shows the changes that are in the worker node fix pack updat
 | Component | Previous | Current | Description |
 | --- | --- | --- | --- |
 | RHEL 7 packages | 3.10.0-1062.12.1.el7 | 3.10.0-1062.18.1.el7 | Updated worker node images with package and kernel updates for [CVE-2019-19921](https://nvd.nist.gov/vuln/detail/CVE-2019-19921){: external}, [CVE-2019-11487](https://nvd.nist.gov/vuln/detail/CVE-2019-11487){: external}, [CVE-2019-17666](https://nvd.nist.gov/vuln/detail/CVE-2019-17666){: external}, and [CVE-2019-19338](https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2019-19338){: external}. |
-| {{site.data.keyword.redhat_openshift_notm}} node | 3.11.170 | 3.11.188 | See the [{{site.data.keyword.redhat_openshift_notm}} release notes](https://docs.openshift.com/container-platform/3.11/release_notes/ocp_3_11_release_notes.html#ocp-3-11-188){: external}.|
+| {{site.data.keyword.redhat_openshift_notm}} node | 3.11.170 | 3.11.188 | See the [{{site.data.keyword.redhat_openshift_notm}} release notes](https://docs.redhat.com/documentation/openshift_container_platform/3.11/html/release_notes/release-notes-ocp-3-11-release-notes#ocp-3-11-188){: external}.|
 {: caption="Changes since version 3.11.170_1544_openshift" caption-side="bottom"}
 
 
@@ -1452,7 +1452,7 @@ The following table shows the changes that are in the master and worker node upd
 | --------- | -------- | ------- | -------- | ----------- |
 | Calico | Master | v3.6.5 | v3.8.6 | See the [Calico release notes](https://docs.tigera.io/archive/v3.8/release-notes/){: external}. |
 | Cluster health | Master | N/A | N/A | Cluster health status now includes links to {{site.data.keyword.cloud_notm}} documentation. |
-| {{site.data.keyword.redhat_openshift_notm}} | Both | 3.11.161 | 3.11.170 | See the [{{site.data.keyword.redhat_openshift_notm}}  release notes](https://docs.openshift.com/container-platform/3.11/release_notes/ocp_3_11_release_notes.html#ocp-3-11-170){: external}. |
+| {{site.data.keyword.redhat_openshift_notm}} | Both | 3.11.161 | 3.11.170 | See the [{{site.data.keyword.redhat_openshift_notm}}  release notes](https://docs.redhat.com/documentation/openshift_container_platform/3.11/html/release_notes/release-notes-ocp-3-11-release-notes#ocp-3-11-170){: external}. |
 | RHEL 7 Packages | Worker | N/A | N/A | Updated worker node images with package updates for [CVE-2020-8597](https://nvd.nist.gov/vuln/detail/CVE-2020-8597){: external}. |
 {: caption="Changes since version 3.11.170_1543" caption-side="bottom"}
 
@@ -1469,7 +1469,7 @@ The following table shows the changes that are in the master fix pack update `3.
 | Component | Previous | Current | Description |
 | --- | --- | --- | --- |
 | Cluster master HA configuration | N/A | N/A | Updated configuration to improve availability during cluster master operations. |
-| Heapster | v1.5.4 | v3.11.161 | Replaces [Kubernetes Heapster](https://github.com/kubernetes-retired/heapster/releases/tag/v1.5.4){: external} with [{{site.data.keyword.redhat_openshift_notm}} Heapster](https://docs.openshift.com/container-platform/3.11/release_notes/ocp_3_11_release_notes.html#ocp-3-11-161){: external}. |
+| Heapster | v1.5.4 | v3.11.161 | Replaces [Kubernetes Heapster](https://github.com/kubernetes-retired/heapster/releases/tag/v1.5.4){: external} with [{{site.data.keyword.redhat_openshift_notm}} Heapster](https://docs.redhat.com/documentation/openshift_container_platform/3.11/html/release_notes/release-notes-ocp-3-11-release-notes#ocp-3-11-161){: external}. |
 | {{site.data.keyword.cloud_notm}} Controller Manager | v1.15.9-240 | v1.15.10-252 | Updated to support the Kubernetes 1.15.10 release. |
 {: caption="Changes since version 3.11.161_1540_openshift" caption-side="bottom"}
 
@@ -1485,7 +1485,7 @@ The following table shows the changes that are in the worker node fix pack updat
 
 | Component | Previous | Current | Description |
 | --- | --- | --- | --- |
-| {{site.data.keyword.redhat_openshift_notm}} node | 3.11.161 | 3.11.170 | See the [{{site.data.keyword.redhat_openshift_notm}} release notes](https://docs.openshift.com/container-platform/3.11/release_notes/ocp_3_11_release_notes.html#ocp-3-11-170){: external}. Fixes [CVE-2019-11244](https://nvd.nist.gov/vuln/detail/CVE-2019-11244){: external}.|
+| {{site.data.keyword.redhat_openshift_notm}} node | 3.11.161 | 3.11.170 | See the [{{site.data.keyword.redhat_openshift_notm}} release notes](https://docs.redhat.com/documentation/openshift_container_platform/3.11/html/release_notes/release-notes-ocp-3-11-release-notes#ocp-3-11-170){: external}. Fixes [CVE-2019-11244](https://nvd.nist.gov/vuln/detail/CVE-2019-11244){: external}.|
 {: caption="Changes since version 3.11.161_1542_openshift" caption-side="bottom"}
 
 
@@ -1554,7 +1554,7 @@ The following table shows the changes that are in the patch `3.11.161_1538_opens
 | {{site.data.keyword.filestorage_full_notm}} plug-in and monitor | 354 | 357 | Made the `ibmc-block-gold` storage class the default storage class for new clusters only. The default storage class for existing clusters is unchanged. Added the following storage classes: `ibmc-file-bronze-gid`, `ibmc-file-silver-gid`, and `ibmc-file-gold-gid`. Fixed bugs in support of [non-root user access to an NFS file share](/docs/openshift?topic=openshift-debug_storage_file){: external}. Resolved [CVE-2019-1551](https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2019-1551){: external}. |
 | Key Management Service provider | 270 | 277 | Updated the {{site.data.keyword.keymanagementservicelong_notm}} Go client. |
 | Load balancer and load balancer monitor for {{site.data.keyword.cloud_notm}} Provider | 159 | 169 | Updated image for [CVE-2019-1551](https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2019-1551){: external}. |
-| {{site.data.keyword.redhat_openshift_notm}} | 3.11.154 | 3.11.161 | See the [{{site.data.keyword.redhat_openshift_notm}} release notes](https://docs.openshift.com/container-platform/3.11/release_notes/ocp_3_11_release_notes.html#ocp-3-11-161){: external}. |
+| {{site.data.keyword.redhat_openshift_notm}} | 3.11.154 | 3.11.161 | See the [{{site.data.keyword.redhat_openshift_notm}} release notes](https://docs.redhat.com/documentation/openshift_container_platform/3.11/html/release_notes/release-notes-ocp-3-11-release-notes#ocp-3-11-161){: external}. |
 | {{site.data.keyword.redhat_openshift_notm}} router configuration | N/A | N/A | Improved general availability of the {{site.data.keyword.redhat_openshift_notm}} router and enhanced the configuration for multizone clusters. Now, the router runs 3 pods with a scheduling configuration that prefers running pods across worker nodes and zones. |
 | OpenVPN server | 2.4.6-r3-IKS-121 | 2.4.6-r3-IKS-131 | Updated image for [CVE-2019-1551](https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2019-1551){: external}. |
 {: caption="Changes since version 3.11.154_1537" caption-side="bottom"}
@@ -1572,7 +1572,7 @@ The following table shows the changes that are in the worker node fix pack `3.11
 | Component | Previous | Current | Description |
 | --------- | -------- | ------- | ----------- |
 | RHEL 7 packages | N/A | N/A | Updated worker node images with package updates for [CVE-2019-11729](https://nvd.nist.gov/vuln/detail/CVE-2019-11729){: external} and [CVE-2019-11745](https://nvd.nist.gov/vuln/detail/CVE-2019-11745){: external}. |
-| {{site.data.keyword.redhat_openshift_notm}} node | 3.11.154 | 3.11.157 | See the [{{site.data.keyword.redhat_openshift_notm}} release notes](https://docs.openshift.com/container-platform/3.11/release_notes/ocp_3_11_release_notes.html#ocp-3-11-157){: external}. |
+| {{site.data.keyword.redhat_openshift_notm}} node | 3.11.154 | 3.11.157 | See the [{{site.data.keyword.redhat_openshift_notm}} release notes](https://docs.redhat.com/documentation/openshift_container_platform/3.11/html/release_notes/release-notes-ocp-3-11-release-notes#ocp-3-11-157){: external}. |
 | Maximum process IDs (PIDs) for pods | N/A | N/A | Updated to support scaling the maximum allowed pod process IDs (PIDs) based on the worker node machine type. |
 {: caption="Changes since version 3.11.154_1534" caption-side="bottom"}
 
@@ -1624,7 +1624,7 @@ The following table shows the changes that are in the worker node fix pack `3.11
 
 | Component | Previous | Current | Description |
 | --------- | -------- | ------- | ----------- |
-| {{site.data.keyword.redhat_openshift_notm}} node | 3.11.153 | 3.11.154 | See the [{{site.data.keyword.redhat_openshift_notm}} release notes](https://docs.openshift.com/container-platform/3.11/release_notes/ocp_3_11_release_notes.html#ocp-3-11-154){: external}.|
+| {{site.data.keyword.redhat_openshift_notm}} node | 3.11.153 | 3.11.154 | See the [{{site.data.keyword.redhat_openshift_notm}} release notes](https://docs.redhat.com/documentation/openshift_container_platform/3.11/html/release_notes/release-notes-ocp-3-11-release-notes#ocp-3-11-154){: external}.|
 | RHEL 7 kernel and packages | 3.10.0-1062.4.1.el7 | 3.10.0-1062.4.3.el7 | Updated worker node images with kernel and package updates for [CVE-2018-12207](https://nvd.nist.gov/vuln/detail/CVE-2018-12207){: external}, [CVE-2019-0154](https://nvd.nist.gov/vuln/detail/CVE-2019-0154){: external}, [CVE-2019-11135](https://nvd.nist.gov/vuln/detail/CVE-2019-11135){: external}, and [CVE-2019-0155](https://nvd.nist.gov/vuln/detail/CVE-2019-0155){: external}.|
 {: caption="Changes since version 3.11.153_1530" caption-side="bottom"}
 
@@ -1645,7 +1645,7 @@ The following table shows the changes that are in the master fix pack `3.11.154_
 | {{site.data.keyword.cloud_notm}} {{site.data.keyword.filestorage_short}} plug-in and monitor | 350 | 353 | Updated to use the `distroless/static` base image and to use `Go` version 1.12.11. |
 | {{site.data.keyword.cloud_notm}} Controller Manager | v1.15.5-119 | v1.15.6-182 | Updated to support the Kubernetes 1.15.6 release. Updated to use `Go` version 1.12.12 and `calicoctl` version v3.8.4. |
 | Key Management Service provider | 237 | 254 | Updated to use `Go` version 1.12.13. |
-| {{site.data.keyword.redhat_openshift_notm}} | 3.11.153 | 3.11.154 | See the [{{site.data.keyword.redhat_openshift_notm}} release notes](https://docs.openshift.com/container-platform/3.11/release_notes/ocp_3_11_release_notes.html#ocp-3-11-154){: external}. Update resolves [CVE-2019-11253](https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2019-11253){: external} (see the [IBM security bulletin](https://www.ibm.com/support/pages/node/1126071){: external}). |
+| {{site.data.keyword.redhat_openshift_notm}} | 3.11.153 | 3.11.154 | See the [{{site.data.keyword.redhat_openshift_notm}} release notes](https://docs.redhat.com/documentation/openshift_container_platform/3.11/html/release_notes/release-notes-ocp-3-11-release-notes#ocp-3-11-154){: external}. Update resolves [CVE-2019-11253](https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2019-11253){: external} (see the [IBM security bulletin](https://www.ibm.com/support/pages/node/1126071){: external}). |
 {: caption="Changes since version 3.11.153_1530" caption-side="bottom"}
 
 
@@ -1677,7 +1677,7 @@ The following table shows the changes that are in the worker node fix pack `3.11
 
 | Component | Previous | Current | Description |
 | --------- | -------- | ------- | ----------- |
-| {{site.data.keyword.redhat_openshift_notm}} node | 3.11.146 | 3.11.153 | See the [{{site.data.keyword.redhat_openshift_notm}} release notes](https://docs.openshift.com/container-platform/3.11/release_notes/ocp_3_11_release_notes.html#ocp-3-11-153){: external}.|
+| {{site.data.keyword.redhat_openshift_notm}} node | 3.11.146 | 3.11.153 | See the [{{site.data.keyword.redhat_openshift_notm}} release notes](https://docs.redhat.com/documentation/openshift_container_platform/3.11/html/release_notes/release-notes-ocp-3-11-release-notes#ocp-3-11-153){: external}.|
 | RHEL 7 packages and kernel |  3.10.0-1062.1.2.el7 | 3.10.0-1062.4.1.el7 | Updated worker node images with kernel and package updates for [CVE-2019-14835](https://nvd.nist.gov/vuln/detail/CVE-2019-14835){: external}, [CVE-2019-14287](https://nvd.nist.gov/vuln/detail/CVE-2019-14287){: external}, [CVE-2019-3846](https://nvd.nist.gov/vuln/detail/CVE-2019-3846){: external} [CVE-2019-10126](https://nvd.nist.gov/vuln/detail/CVE-2019-10126){: external}, [CVE-2019-9506](https://nvd.nist.gov/vuln/detail/CVE-2019-9506){: external}, and [CVE-2018-20856](https://nvd.nist.gov/vuln/detail/CVE-2018-20856){: external}. |
 {: caption="Changes since version 3.11.146_1528" caption-side="bottom"}
 
@@ -1750,7 +1750,7 @@ The following table shows the changes that are in the patch `3.11.146_1525_opens
 | Calico | v3.6.4 | v3.6.4 | See the [Calico release notes](https://docs.tigera.io/archive/v3.6/release-notes/){: external}.|
 | {{site.data.keyword.cloud_notm}} Block Storage driver and plug-in | 1.15.1 | 1.15.2 | Fixed an issue that might cause worker nodes to fail in a `NotReady` status or pods not to start because of networking errors. |
 | {{site.data.keyword.cloud_notm}} Controller Manager | v1.11.10-286 | v1.15.3-112 | Updated to support the Kubernetes 1.15.3 release. |
-| {{site.data.keyword.redhat_openshift_notm}} | 3.11.141 | 3.11.146 | See the [{{site.data.keyword.redhat_openshift_notm}} release notes](https://docs.openshift.com/container-platform/3.11/release_notes/ocp_3_11_release_notes.html#ocp-3-11-146){: external}. Update resolves [CVE-2019-11247](https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2019-11247){: external} (see the [IBM security bulletin](https://www.ibm.com/support/pages/node/1101957){: external}) and [CVE-2019-11249](https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2019-11249){: external} (see the [IBM security bulletin](https://www.ibm.com/support/pages/node/1102029){: external}).|
+| {{site.data.keyword.redhat_openshift_notm}} | 3.11.141 | 3.11.146 | See the [{{site.data.keyword.redhat_openshift_notm}} release notes](https://docs.redhat.com/documentation/openshift_container_platform/3.11/html/release_notes/release-notes-ocp-3-11-release-notes#ocp-3-11-146){: external}. Update resolves [CVE-2019-11247](https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2019-11247){: external} (see the [IBM security bulletin](https://www.ibm.com/support/pages/node/1101957){: external}) and [CVE-2019-11249](https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2019-11249){: external} (see the [IBM security bulletin](https://www.ibm.com/support/pages/node/1102029){: external}).|
 | OpenVPN server | 2.4.6-r3-IKS-115 | 2.4.6-r3-IKS-121 | Image updated for [CVE-2019-1547](https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2019-1547){: external} and [CVE-2019-1563](https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2019-1563){: external}. |
 | RHEL 7 packages and kernel | 3.10.0-1062.1.1 | 3.10.0-1062.1.2 | Updated worker node images with kernel and package updates for [CVE-2019-1125](https://nvd.nist.gov/vuln/detail/CVE-2019-14835){: external}. |
 {: caption="Changes since version 3.11.141_1524" caption-side="bottom"}
@@ -1769,7 +1769,7 @@ The following table shows the changes that are in the patch `3.11.141_1524_opens
 | Component | Previous | Current | Description |
 | --------- | -------- | ------- | ----------- |
 | Key Management Service provider | 212 | 216 | Improved Kubernetes [key management service provider](/docs/openshift?topic=openshift-encryption) caching of {{site.data.keyword.cloud_notm}} IAM tokens. In addition, fixed a problem with Kubernetes secret decryption when the cluster's root key is rotated.|
-| {{site.data.keyword.redhat_openshift_notm}} | 3.11.135 | 3.11.141 | See the [{{site.data.keyword.redhat_openshift_notm}} release notes](https://docs.openshift.com/container-platform/3.11/release_notes/ocp_3_11_release_notes.html#ocp-3-11-141){: external}. |
+| {{site.data.keyword.redhat_openshift_notm}} | 3.11.135 | 3.11.141 | See the [{{site.data.keyword.redhat_openshift_notm}} release notes](https://docs.redhat.com/documentation/openshift_container_platform/3.11/html/release_notes/release-notes-ocp-3-11-release-notes#ocp-3-11-141){: external}. |
 | RHEL 7 packages and kernel | 3.10.0-1062 | 3.10.0-1062.1.1 | Updated worker node images with kernel and package updates for [CVE-2019-1125](https://nvd.nist.gov/vuln/detail/CVE-2019-1125){: external} and [CVE-2019-9500](https://nvd.nist.gov/vuln/detail/CVE-2019-9500){: external}. |
 {: caption="Changes since version 3.11.135_1523" caption-side="bottom"}
 
@@ -1823,7 +1823,7 @@ The following table shows the changes that are in the worker node fix pack `3.11
 | Component | Previous | Current | Description |
 | --------- | -------- | ------- | ----------- |
 | Cluster master HA Proxy | 2.0.1-alpine | 1.8.21-alpine | Moved to HA Proxy 1.8 to fix [socket leak in HA Proxy](https://github.com/haproxy/haproxy/issues/136){: external}. Added a liveliness check to monitor the health of HA Proxy. For more information about other changes, see [release notes](https://www.haproxy.org/download/1.8/src/CHANGELOG){: external}. |
-| {{site.data.keyword.redhat_openshift_notm}} node | 3.11.129 | 3.11.135 | For more information, see the [{{site.data.keyword.redhat_openshift_notm}} release notes](https://docs.openshift.com/container-platform/3.11/release_notes/ocp_3_11_release_notes.html#ocp-3-11-135){: external}. |
+| {{site.data.keyword.redhat_openshift_notm}} node | 3.11.129 | 3.11.135 | For more information, see the [{{site.data.keyword.redhat_openshift_notm}} release notes](https://docs.redhat.com/documentation/openshift_container_platform/3.11/html/release_notes/release-notes-ocp-3-11-release-notes#ocp-3-11-135){: external}. |
 | RHEL 7 kernel | 3.10.0-957.21.3.el7 | 3.10.0-1062.el7 | Updated worker node images with kernel and package updates for [CVE-2018-16881](https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2018-168810){: external}, [CVE-2019-6470](https://nvd.nist.gov/vuln/detail/CVE-2019-6470){: external}, [CVE-2018-14618](https://nvd.nist.gov/vuln/detail/CVE-2018-14618){: external}, [CVE-2018-16062](https://nvd.nist.gov/vuln/detail/CVE-2018-16062){: external}, [CVE-2018-16402](https://nvd.nist.gov/vuln/detail/CVE-2018-16402){: external}, [CVE-2018-16403](https://nvd.nist.gov/vuln/detail/CVE-2018-16403){: external}, [CVE-2018-18310](https://nvd.nist.gov/vuln/detail/CVE-2018-18310){: external}, [CVE-2018-18520](https://nvd.nist.gov/vuln/detail/CVE-2018-18520){: external}, [CVE-2018-18521](https://nvd.nist.gov/vuln/detail/CVE-2018-18521){: external}, [CVE-2019-7149](https://nvd.nist.gov/vuln/detail/CVE-2019-7149){: external}, [CVE-2019-7150](https://nvd.nist.gov/vuln/detail/CVE-2019-7150){: external}, [CVE-2019-7664](https://nvd.nist.gov/vuln/detail/CVE-2019-7664){: external}, [CVE-2019-7665](https://nvd.nist.gov/vuln/detail/CVE-2019-7665){: external}, [CVE-2016-10739](https://nvd.nist.gov/vuln/detail/CVE-2016-10739){: external}, [CVE-2018-16871](https://nvd.nist.gov/vuln/detail/CVE-2018-16871){: external}, [CVE-2018-16884](https://nvd.nist.gov/vuln/detail/CVE-2018-16884){: external}, [CVE-2019-11085](https://nvd.nist.gov/vuln/detail/CVE-2019-11085){: external}, [CVE-2019-11811](https://nvd.nist.gov/vuln/detail/CVE-2019-11811){: external}, [CVE-2018-15686](https://nvd.nist.gov/vuln/detail/CVE-2018-15686){: external}, [CVE-2018-16866](https://nvd.nist.gov/vuln/detail/CVE-2018-16866){: external}, [CVE-2018-16888](https://nvd.nist.gov/vuln/detail/CVE-2018-16888){: external}, [CVE-2018-12327](https://nvd.nist.gov/vuln/detail/CVE-2018-12327){: external}, [CVE-2018-12641](https://nvd.nist.gov/vuln/detail/CVE-2018-12641){: external}, [CVE-2018-12697](https://nvd.nist.gov/vuln/detail/CVE-2018-12697){: external}, [CVE-2018-1000876](https://nvd.nist.gov/vuln/detail/CVE-2018-1000876){: external}, [CVE-2018-16842](https://nvd.nist.gov/vuln/detail/CVE-2018-16842){: external}, [CVE-2018-5741](https://nvd.nist.gov/vuln/detail/CVE-2018-5741){: external}, [CVE-2018-0495](https://nvd.nist.gov/vuln/detail/CVE-2018-0495){: external}, [CVE-2018-12404](https://nvd.nist.gov/vuln/detail/CVE-2018-12404){: external}, [CVE-2018-1122](https://nvd.nist.gov/vuln/detail/CVE-2018-1122){: external}, [CVE-2018-7755](https://nvd.nist.gov/vuln/detail/CVE-2018-7755){: external}, [CVE-2018-8087](https://nvd.nist.gov/vuln/detail/CVE-2018-8087){: external}, [CVE-2018-9363](https://nvd.nist.gov/vuln/detail/CVE-2018-9363){: external}, [CVE-2018-9516](https://nvd.nist.gov/vuln/detail/CVE-2018-9516){: external}, [CVE-2018-9517](https://nvd.nist.gov/vuln/detail/CVE-2018-9517){: external}, [CVE-2018-10853](https://nvd.nist.gov/vuln/detail/CVE-2018-10853){: external}, [CVE-2018-13053](https://nvd.nist.gov/vuln/detail/CVE-2018-13053){: external}, [CVE-2018-13093](https://nvd.nist.gov/vuln/detail/CVE-2018-13093){: external}, [CVE-2018-13094](https://nvd.nist.gov/vuln/detail/CVE-2018-13094){: external}, [CVE-2018-13095](https://nvd.nist.gov/vuln/detail/CVE-2018-13095){: external}, [CVE-2018-14625](https://nvd.nist.gov/vuln/detail/CVE-2018-14625){: external}, [CVE-2018-14734](https://nvd.nist.gov/vuln/detail/CVE-2018-14734){: external}, [CVE-2018-15594](https://nvd.nist.gov/vuln/detail/CVE-2018-15594){: external}, [CVE-2018-16658](https://nvd.nist.gov/vuln/detail/CVE-2018-16658){: external}, [CVE-2018-16885](https://nvd.nist.gov/vuln/detail/CVE-2018-16885){: external}, [CVE-2018-18281](https://nvd.nist.gov/vuln/detail/CVE-2018-18281){: external}, [CVE-2019-3459](https://nvd.nist.gov/vuln/detail/CVE-2019-3459){: external}, [CVE-2019-3460](https://nvd.nist.gov/vuln/detail/CVE-2019-3460){: external}, [CVE-2019-3882](https://nvd.nist.gov/vuln/detail/CVE-2019-3882){: external}, [CVE-2019-3900](https://nvd.nist.gov/vuln/detail/CVE-2019-3900){: external}, [CVE-2019-5489](https://nvd.nist.gov/vuln/detail/CVE-2019-5489){: external}, [CVE-2018-18074](https://nvd.nist.gov/vuln/detail/CVE-2018-18074){: external}, [CVE-2019-3858](https://nvd.nist.gov/vuln/detail/CVE-2019-3858){: external}, [CVE-2019-3861](https://nvd.nist.gov/vuln/detail/CVE-2019-3861){: external}, [CVE-2019-3862](https://nvd.nist.gov/vuln/detail/CVE-2019-3862){: external}, [CVE-2018-14647](https://nvd.nist.gov/vuln/detail/CVE-2018-14647){: external}, [CVE-2019-5010](https://nvd.nist.gov/vuln/detail/CVE-2019-5010){: external}, [CVE-2019-9740](https://nvd.nist.gov/vuln/detail/CVE-2019-9740){: external}, [CVE-2019-9947](https://nvd.nist.gov/vuln/detail/CVE-2019-9947){: external}, [CVE-2019-9948](https://nvd.nist.gov/vuln/detail/CVE-2019-9948){: external}, [CVE-2017-14503](https://nvd.nist.gov/vuln/detail/CVE-2017-14503){: external}, [CVE-2018-1000877](https://nvd.nist.gov/vuln/detail/CVE-2018-1000877){: external}, [CVE-2018-1000878](https://nvd.nist.gov/vuln/detail/CVE-2018-1000878){: external}, [CVE-2019-1000019](https://nvd.nist.gov/vuln/detail/CVE-2019-1000019){: external}, [CVE-2019-1000020](https://nvd.nist.gov/vuln/detail/CVE-2019-1000020){: external}, [CVE-2018-3058](https://nvd.nist.gov/vuln/detail/CVE-2018-3058){: external}, [CVE-2018-3063](https://nvd.nist.gov/vuln/detail/CVE-2018-3063){: external}, [CVE-2018-3066](https://nvd.nist.gov/vuln/detail/CVE-2018-3066){: external}, [CVE-2018-3081](https://nvd.nist.gov/vuln/detail/CVE-2018-3081){: external}, [CVE-2018-3282](https://nvd.nist.gov/vuln/detail/CVE-2018-3282){: external}, [CVE-2019-2503](https://nvd.nist.gov/vuln/detail/CVE-2019-2503){: external}, [CVE-2019-2529](https://nvd.nist.gov/vuln/detail/CVE-2019-2529){: external}, [CVE-2019-2614](https://nvd.nist.gov/vuln/detail/CVE-2019-2614){: external}, [CVE-2019-2627](https://nvd.nist.gov/vuln/detail/CVE-2019-2627){: external}, [CVE-2018-14348](https://nvd.nist.gov/vuln/detail/CVE-2018-14348){: external}, [CVE-2018-15473](https://nvd.nist.gov/vuln/detail/CVE-2018-15473){: external}, [CVE-2018-5383](https://nvd.nist.gov/vuln/detail/CVE-2018-5383){: external}, [CVE-2018-19788](https://nvd.nist.gov/vuln/detail/CVE-2018-19788){: external}, [CVE-2018-0734](https://nvd.nist.gov/vuln/detail/CVE-2018-0734){: external}, [CVE-2019-1559](https://nvd.nist.gov/vuln/detail/CVE-2019-1559){: external}, [CVE-2018-20060](https://nvd.nist.gov/vuln/detail/CVE-2018-20060){: external}, and [CVE-2019-11236](https://nvd.nist.gov/vuln/detail/CVE-2019-11236){: external}. |
 {: caption="Changes since version 3.11.129_1518" caption-side="bottom"}
 
@@ -1860,7 +1860,7 @@ The following table shows the changes that are in the master fix pack `3.11.135_
 | {{site.data.keyword.cloud_notm}} Block Storage driver and plug-in | 1.15 | 1.15.1 | Image updated for [CVE-2019-14697](https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2019-14697){: external}. |
 | {{site.data.keyword.cloud_notm}} {{site.data.keyword.filestorage_short}} plug-in | 347 | 348 | Image updated for [CVE-2019-14697](https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2019-14697){: external}. |
 | Load balancer and load balancer monitor for {{site.data.keyword.cloud_notm}} Provider | 146 | 147 | Image updated for [CVE-2019-14697](https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2019-14697){: external}. |
-| {{site.data.keyword.redhat_openshift_notm}} | 3.11.129 | 3.11.135 | See the [{{site.data.keyword.redhat_openshift_notm}} release notes](https://docs.openshift.com/container-platform/3.11/release_notes/ocp_3_11_release_notes.html#ocp-3-11-135){: external}. |
+| {{site.data.keyword.redhat_openshift_notm}} | 3.11.129 | 3.11.135 | See the [{{site.data.keyword.redhat_openshift_notm}} release notes](https://docs.redhat.com/documentation/openshift_container_platform/3.11/html/release_notes/release-notes-ocp-3-11-release-notes#ocp-3-11-135){: external}. |
 | OpenVPN client | 2.4.6-r3-IKS-90 | 2.4.6-r3-IKS-116 | Image updated for [CVE-2019-14697](https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2019-14697){: external}. |
 | OpenVPN server | 2.4.6-r3-IKS-25 | 2.4.6-r3-IKS-115 | Image updated for [CVE-2019-14697](https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2019-14697){: external}. |
 {: caption="Changes since version 3.11.129_1517" caption-side="bottom"}

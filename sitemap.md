@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2025
-lastupdated: "2025-03-27"
+lastupdated: "2025-03-28"
 
 
 keywords: openshift
@@ -2427,7 +2427,7 @@ subcollection: openshift
 
     * [Managing automatic updates for Ingress ALBs](/docs/openshift?topic=openshift-update&interface=ui#alb)
 
-* [Updating managed add-ons](/docs/openshift?topic=openshift-update&interface=ui#addons)
+* [Updating managed add-ons](/docs/openshift?topic=openshift-update&interface=ui#addons-update)
 
 [Creating and managing dedicated hosts on VPC Gen 2 infrastructure](/docs/openshift?topic=openshift-dedicated-hosts#dedicated-hosts)
 
@@ -5091,7 +5091,7 @@ subcollection: openshift
 
 [IBM Cloud Kubernetes Service API JSON](https://containers.cloud.ibm.com/global/swagger-global-api/swagger.json){: external}
 
-[OpenShift Container Platform REST API](https://docs.openshift.com/container-platform/4.17/rest_api/overview/index.html){: external}
+[OpenShift Container Platform REST API](https://docs.redhat.com/documentation/openshift_container_platform/4.17/html/api_overview/index){: external}
 
 
 ## CLI plug-in reference
@@ -10000,7 +10000,7 @@ subcollection: openshift
 
 * [Your responsibilities for high availability and disaster recovery](/docs/openshift?topic=openshift-iks-ha-dr#feature-responsibilities)
 
-* [Change management](/docs/openshift?topic=openshift-iks-ha-dr#change-management)
+* [Change management](/docs/openshift?topic=openshift-iks-ha-dr#change-management-hadr)
 
 * [Considerations for app and service deployment](/docs/openshift?topic=openshift-iks-ha-dr#app-considerations)
 
@@ -10098,7 +10098,7 @@ subcollection: openshift
 {: #sitemap_related_links}
 
 
-[OpenShift Container Platform documentation](https://docs.openshift.com/){: external}
+[OpenShift Container Platform documentation](https://docs.redhat.com/){: external}
 
 [IBM Developer - Red Hat OpenShift on IBM Cloud](https://developer.ibm.com/components/redhat-openshift-ibm-cloud/){: external}
 

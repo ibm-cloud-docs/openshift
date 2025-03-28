@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2024, 2025
-lastupdated: "2025-03-21"
+lastupdated: "2025-03-28"
 
 
 keywords: openshift, {{site.data.keyword.openshiftlong_notm}}, ai, add-on
@@ -79,10 +79,10 @@ You are responsible for managing these operators, including but not limited to u
 {: important}
 
 The following operators are recommended. 
-- [OpenShift Pipelines](https://docs.openshift.com/pipelines/1.16/about/about-pipelines.html){: external}
-    - [Installing OpenShift Pipelines](https://docs.openshift.com/pipelines/1.16/install_config/installing-pipelines.html){: external}
-- [Node Feature Discovery](https://docs.openshift.com/container-platform/4.16/hardware_enablement/psap-node-feature-discovery-operator.html){: external}
-    - [Installing the Node Feature Discovery Operator](https://docs.openshift.com/container-platform/4.16/hardware_enablement/psap-node-feature-discovery-operator.html#installing-the-node-feature-discovery-operator_psap-node-feature-discovery-operator){: external}
+- [OpenShift Pipelines](https://docs.redhat.com/documentation/red_hat_openshift_pipelines/1.16/html/about_openshift_pipelines/index){: external}
+    - [Installing OpenShift Pipelines](https://docs.redhat.com/documentation/red_hat_openshift_pipelines/1.16/html/installing_and_configuring/installing-pipelines){: external}
+- [Node Feature Discovery](https://docs.redhat.com/documentation/openshift_container_platform/4.16/html/specialized_hardware_and_driver_enablement/psap-node-feature-discovery-operator){: external}
+    - [Installing the Node Feature Discovery Operator](https://docs.redhat.com/documentation/openshift_container_platform/4.16/html/specialized_hardware_and_driver_enablement/psap-node-feature-discovery-operator#installing-the-node-feature-discovery-operator_psap-node-feature-discovery-operator){: external}
 - [NVIDIA GPU Operator](https://docs.nvidia.com/datacenter/cloud-native/gpu-operator/latest/index.html){: external}
     - [Installing the NVIDIA GPU Operator](https://docs.nvidia.com/datacenter/cloud-native/gpu-operator/latest/getting-started.html){: external}
 
@@ -125,10 +125,10 @@ You are responsible for managing these operators, including but not limited to u
 {: important}
 
 The following operators are recommended. 
-- [OpenShift Pipelines](https://docs.openshift.com/pipelines/1.16/about/about-pipelines.html){: external}
-    - [Installing OpenShift Pipelines](https://docs.openshift.com/pipelines/1.16/install_config/installing-pipelines.html){: external}
-- [Node Feature Discovery](https://docs.openshift.com/container-platform/4.16/hardware_enablement/psap-node-feature-discovery-operator.html){: external}
-    - [Installing the Node Feature Discovery Operator](https://docs.openshift.com/container-platform/4.16/hardware_enablement/psap-node-feature-discovery-operator.html#installing-the-node-feature-discovery-operator_psap-node-feature-discovery-operator){: external}
+- [OpenShift Pipelines](https://docs.redhat.com/documentation/red_hat_openshift_pipelines/1.16/html/about_openshift_pipelines/index){: external}
+    - [Installing OpenShift Pipelines](https://docs.redhat.com/documentation/red_hat_openshift_pipelines/1.16/html/installing_and_configuring/installing-pipelines){: external}
+- [Node Feature Discovery](https://docs.redhat.com/documentation/openshift_container_platform/4.16/html/specialized_hardware_and_driver_enablement/psap-node-feature-discovery-operator){: external}
+    - [Installing the Node Feature Discovery Operator](https://docs.redhat.com/documentation/openshift_container_platform/4.16/html/specialized_hardware_and_driver_enablement/psap-node-feature-discovery-operator#installing-the-node-feature-discovery-operator_psap-node-feature-discovery-operator){: external}
 - [NVIDIA GPU Operator](https://docs.nvidia.com/datacenter/cloud-native/gpu-operator/latest/index.html){: external}
     - [Installing the NVIDIA GPU Operator](https://docs.nvidia.com/datacenter/cloud-native/gpu-operator/latest/getting-started.html){: external}
 

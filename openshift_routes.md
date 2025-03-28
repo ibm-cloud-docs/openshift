@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2025
-lastupdated: "2025-03-05"
+lastupdated: "2025-03-28"
 
 
 keywords: openshift, route, router
@@ -236,7 +236,7 @@ If your cluster is created on VPC infrastructure and you enabled only the privat
 Note that even though you create an IngressController resource in the following steps, the IngressController is only required to create and configure the necessary Ingress controller for you. After the Ingress controller is created, you use the Ingress controller directly to create routes.
 
 1. Prepare the domain that you want to use for your Ingress controller.
-    * **Custom domain**: To register a custom domain, work with your Domain Name Service (DNS) provider or [{{site.data.keyword.cloud_notm}} DNS](/docs/dns-svcs?topic=dns-svcs-getting-started). If you want to use the same subdomain for multiple services in your cluster, you can register a wildcard subdomain, such as `*.example.com`. If you use a custom domain, you must also specify the domain certificate in your `IngressController` specification. For more information, see [Setting a custom default certificate](https://docs.openshift.com/container-platform/4.11/networking/ingress-operator.html#nw-ingress-controller-configuration-parameters_configuring-ingress){: external}
+    * **Custom domain**: To register a custom domain, work with your Domain Name Service (DNS) provider or [{{site.data.keyword.cloud_notm}} DNS](/docs/dns-svcs?topic=dns-svcs-getting-started). If you want to use the same subdomain for multiple services in your cluster, you can register a wildcard subdomain, such as `*.example.com`. If you use a custom domain, you must also specify the domain certificate in your `IngressController` specification. For more information, see [Setting a custom default certificate](https://docs.redhat.com/documentation/openshift_container_platform/4.11/html/networking/configuring-ingress#nw-ingress-controller-configuration-parameters_configuring-ingress){: external}
     * **IBM-provided domain**:
         1. List the existing subdomains in your cluster. In the **Subdomain** column of the output, copy the subdomain that has the highest `000<n>` value.
             ```sh
@@ -303,7 +303,7 @@ Note that even though you create an IngressController resource in the following 
         ```
         {: pre}
 
-1. **Optional**: If you want to use Ingress controller sharding so that specific routes are handled by a specific Ingress controller, for example private routes be admitted only to a private router, then you can use either route labels or namespace labels to specify the sharding method. To add the selector during creation time, include it in the `ingresscontroller` yaml under `spec`. For example, to allow an Ingress controller to only handle ingress/routes with label `type=sharded`, you can add a `routeSelector`. For more information, see [Ingress controller sharding](https://docs.openshift.com/container-platform/4.8/networking/ingress-operator.html#nw-ingress-sharding_configuring-ingress){: external}.
+1. **Optional**: If you want to use Ingress controller sharding so that specific routes are handled by a specific Ingress controller, for example private routes be admitted only to a private router, then you can use either route labels or namespace labels to specify the sharding method. To add the selector during creation time, include it in the `ingresscontroller` yaml under `spec`. For example, to allow an Ingress controller to only handle ingress/routes with label `type=sharded`, you can add a `routeSelector`. For more information, see [Ingress controller sharding](https://docs.redhat.com/documentation/openshift_container_platform/4.8/html/networking/configuring-ingress#nw-ingress-sharding_configuring-ingress){: external}.
     ```yaml
       routeSelector:
         matchLabels:
@@ -331,7 +331,7 @@ Note that even though you create an IngressController resource in the following 
         ```
         {: pre}
 
-        Several routes and Ingresses on the cluster depend on the default public ingress controller. Make sure the changes are desired before editing the default Ingress controller. For more information about, see [Ingress controller sharding](https://docs.openshift.com/container-platform/4.8/networking/ingress-operator.html#nw-ingress-sharding_configuring-ingress){: external}.
+        Several routes and Ingresses on the cluster depend on the default public ingress controller. Make sure the changes are desired before editing the default Ingress controller. For more information about, see [Ingress controller sharding](https://docs.redhat.com/documentation/openshift_container_platform/4.8/html/networking/configuring-ingress#nw-ingress-sharding_configuring-ingress){: external}.
         {: note}
     
 
@@ -468,7 +468,7 @@ Note that even though you create an IngressController resource in the following 
         ```
         {: pre}
 
-1. **Optional**: If you want to use Ingress controller sharding so that specific routes are handled by a specific Ingress controller, for example private routes be admitted only to a private router, then you can use either route labels or namespace labels to specify the sharding method. To add the selector during creation time, include it in the `ingresscontroller` yaml under `spec`. For example, to allow an Ingress controller to only handle ingress/routes with label `type=sharded`, you can add a `routeSelector`. For more information, see [Ingress controller sharding](https://docs.openshift.com/container-platform/4.8/networking/ingress-operator.html#nw-ingress-sharding_configuring-ingress){: external}.
+1. **Optional**: If you want to use Ingress controller sharding so that specific routes are handled by a specific Ingress controller, for example private routes be admitted only to a private router, then you can use either route labels or namespace labels to specify the sharding method. To add the selector during creation time, include it in the `ingresscontroller` yaml under `spec`. For example, to allow an Ingress controller to only handle ingress/routes with label `type=sharded`, you can add a `routeSelector`. For more information, see [Ingress controller sharding](https://docs.redhat.com/documentation/openshift_container_platform/4.8/html/networking/configuring-ingress#nw-ingress-sharding_configuring-ingress){: external}.
     ```yaml
       routeSelector:
         matchLabels:

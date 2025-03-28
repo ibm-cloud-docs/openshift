@@ -1,8 +1,8 @@
 ---
 
 copyright:
-  years: 2014, 2024
-lastupdated: "2024-10-10"
+  years: 2014, 2025
+lastupdated: "2025-03-28"
 
 
 keywords: openshift, version, update, upgrade
@@ -66,7 +66,7 @@ The following table shows the actions that you must take before you [update the 
 
 | Type | Description |
 | ---- | ----------- | 
-| **Unsupported:** Deprecated and removed {{site.data.keyword.redhat_openshift_notm}} features | For more information, review [{{site.data.keyword.redhat_openshift_notm}} version 4.9 deprecated and removed features](https://docs.openshift.com/container-platform/4.9/release_notes/ocp-4-9-release-notes.html#ocp-4-9-deprecated-removed-features){: external}. |
+| **Unsupported:** Deprecated and removed {{site.data.keyword.redhat_openshift_notm}} features | For more information, review [{{site.data.keyword.redhat_openshift_notm}} version 4.9 deprecated and removed features](https://docs.redhat.com/documentation/openshift_container_platform/4.9/html/release_notes/ocp-4-9-release-notes#ocp-4-9-deprecated-removed-features){: external}. |
 | **Unsupported:**  Beta versions of numerous Kubernetes APIs | For more information, review [Preparing to upgrade to {{site.data.keyword.redhat_openshift_notm}} Container Platform 4.9](https://access.redhat.com/articles/6329921){: external}, [Kubernetes API and Feature Removals In 1.22: Here’s What You Need To Know](https://kubernetes.io/blog/2021/07/14/upcoming-changes-in-kubernetes-1-22/){: external} and [Deprecated API Migration Guide](https://kubernetes.io/docs/reference/using-api/deprecation-guide/#v1-22){: external}. See [Deprecation Warnings](https://kubernetes.io/blog/2020/09/03/warnings/#deprecation-warnings){: external} for methods to identify use of deprecated APIs. Warnings for components provided by the Red Hat OpenShift on IBM Cloud cluster install can be ignored since they are handled during the update. Note that {{site.data.keyword.openshiftlong_notm}} cluster administrators do not need to provide a manual acknowledgment before the cluster can be upgraded, as mentioned in this Red Hat [article](https://access.redhat.com/articles/6329921){: external}. |
 {: caption="Changes to make before you update the master to {{site.data.keyword.redhat_openshift_notm}} 4.9" caption-side="bottom"}
 

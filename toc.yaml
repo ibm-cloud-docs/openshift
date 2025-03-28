@@ -347,7 +347,7 @@ toc:
               href: https://containers.cloud.ibm.com/global/swagger-global-api/swagger.json
           - link:
               label: OpenShift Container Platform REST API
-              href: https://docs.openshift.com/container-platform/4.17/rest_api/overview/index.html
+              href: https://docs.redhat.com/documentation/openshift_container_platform/4.17/html/api_overview/index
       - topicgroup:
           label: CLI plug-in reference
           topics:
@@ -489,7 +489,7 @@ toc:
           topics:
           - link:
               label: OpenShift Container Platform documentation
-              href: https://docs.openshift.com/
+              href: https://docs.redhat.com/
           - link:
               label: IBM Developer - Red Hat OpenShift on IBM Cloud
               href: https://developer.ibm.com/components/redhat-openshift-ibm-cloud/
