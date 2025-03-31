@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2025
-lastupdated: "2025-03-28"
+lastupdated: "2025-03-31"
 
 
 keywords: openshift
@@ -2439,7 +2439,9 @@ subcollection: openshift
 
 * [Removing dedicated hosts pools in the CLI](/docs/openshift?topic=openshift-dedicated-hosts#remove-dedicated-host-pool-cli)
 
-[Migrating to a new Red Hat Enterprise Linux version](/docs/openshift?topic=openshift-rhel_migrate#rhel_migrate)
+[Migrating to a new operating system](/docs/openshift?topic=openshift-rhel_migrate#rhel_migrate)
+
+* [Migrating to Red Hat Enterprise Linux 9](/docs/openshift?topic=openshift-rhel_migrate#migrate-rhel-9)
 
 [Managing {{site.data.keyword.satelliteshort}} worker pools](/docs/openshift?topic=openshift-satcluster-worker-pools#satcluster-worker-pools)
 

@@ -2,10 +2,10 @@
 
 copyright:
   years: 2022, 2025
-lastupdated: "2025-03-28"
+lastupdated: "2025-03-31"
 
 
-keywords: rhel, os, operating system
+keywords: rhel, os, operating system, rhocs, 418, migration
 
 subcollection: openshift
 
@@ -15,25 +15,25 @@ subcollection: openshift
 
 
 
-# Migrating to a new Red Hat Enterprise Linux version
+# Migrating to a new operating system
 {: #rhel_migrate}
 
-[Virtual Private Cloud]{: tag-vpc} 
+[Classic]{: tag-classic-inf} [VPC]{: tag-vpc}
 
-RHEL 9 is available for {{site.data.keyword.redhat_openshift_notm}} Classic and VPC clusters that run version 4.16 or higher. Follow these steps to migrate your worker nodes from RHEL 8 to RHEL 9.
+Complete the following steps to migrate your worker nodes to a new operating system.
 {: shortdesc}
 
-For more information on RHEL 9, see the [Red Hat OpenShift release notes](https://docs.redhat.com/documentation/red_hat_enterprise_linux/9/html/9.4_release_notes/index){: external}. 
 
-To find your worker node operating system, run the **`ibmcloud oc worker-pools -c CLUSTER`** command.
-{: tip}
+
+## Migrating to Red Hat Enterprise Linux 9
+{: #migrate-rhel-9}
 
 For RHEL 9, the `/tmp` directory is a separate partition that has the `nosuid`, `noexec`, and `nodev` options set. If your apps install to and run scripts or binaries under the `/tmp` directory, they might fail. Update your apps to use the `/var/tmp` directory instead of the `/tmp` directory to run temporary scripts or binaries.
 
-The default `cgroup` implementation is `cgroup` v2. In RHEL 9, `cgroup` v1 is not supported. Review the [Kubernetes migration documentation for `cgroup` v2](https://kubernetes.io/docs/concepts/architecture/cgroups/#migrating-to-cgroup-v2) and verify that your applications fully support `cgroup` v2. There are known issues with older versions of Java that may cause out of memory (OOM) issues for workloads.
+The default `cgroup` implementation is `cgroup` v2. In RHEL 9, `cgroup` v1 isn't supported. Review the [Kubernetes migration documentation for `cgroup` v2](https://kubernetes.io/docs/concepts/architecture/cgroups/#migrating-to-cgroup-v2) and verify that your applications fully support `cgroup` v2. There are known issues with older versions of Java that may cause out of memory (OOM) issues for workloads.
 {: important}
 
-1. Review your worker pool operating systems to determine which pools you need to migrate.
+1. Review your worker pool operating systems to find which pools you need to migrate.
     ```sh
     ibmcloud ks worker-pools -c CLUSTER
     ```
