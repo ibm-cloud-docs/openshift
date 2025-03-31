@@ -11126,7 +11126,7 @@ subcollection: openshift
 
     * [Storage](/docs/openshift?topic=openshift-limitations#classic_storage_limit)
 
-* [User access](/docs/openshift?topic=openshift-limitations#user-access)
+* [User access](/docs/openshift?topic=openshift-limitations#classic_access_limit)
 
 * [VPC cluster limitations](/docs/openshift?topic=openshift-limitations#ks_vpc_gen2_limits)
 
@@ -11136,7 +11136,7 @@ subcollection: openshift
 
     * [Storage](/docs/openshift?topic=openshift-limitations#vpc_gen2_storage_limit)
 
-* [User access](/docs/openshift?topic=openshift-limitations#user-access)
+* [User access](/docs/openshift?topic=openshift-limitations#vpc_access_limit)
 
 * [{{site.data.keyword.satelliteshort}} cluster limitations](/docs/openshift?topic=openshift-limitations#satellite_limits)
 

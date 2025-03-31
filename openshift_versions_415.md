@@ -2,7 +2,7 @@
 
 copyright:
   years: 2024, 2025
-lastupdated: "2025-03-28"
+lastupdated: "2025-03-31"
 
 
 keywords: openshift, version, update, upgrade, 4.15, update openshift
@@ -90,7 +90,7 @@ Example output where the `Upgradeable` status is `False`.
 ```
 {: screen}
 
-If the `Upgradeable` status is `False`, the condition information provides instructions that must be followed before upgrading. For more information, see [Providing the administrator acknowledgment](https://docs.openshift.com/container-platform/4.15/updating/preparing_for_updates/updating-cluster-prepare.html#update-preparing-ack_updating-cluster-prepare){: external}.
+If the `Upgradeable` status is `False`, the condition information provides instructions that must be followed before upgrading. For more information, see [Providing the administrator acknowledgment](https://docs.redhat.com/en/documentation/openshift_container_platform/4.15/html/updating_clusters/preparing-to-update-a-cluster#update-preparing-ack_updating-cluster-prepare){: external}.
 
 ## Important networking changes for VPC clusters created at version 4.15
 {: #understand-sbd}

@@ -520,7 +520,7 @@ The following table shows the changes that are in the master fix pack 4.14.27_15
 | {{site.data.keyword.cloud_notm}} Controller Manager | v1.27.14-1 | v1.27.14-5 | New version contains updates and security fixes. |
 | {{site.data.keyword.cloud_notm}} RBAC Operator | 4c5d156 | 14d0ab5 | New version contains updates and security fixes. |
 | Key Management Service provider | v2.8.10 | v2.8.11 | New version contains updates and security fixes. |
-| {{site.data.keyword.openshiftshort}}. | 4.14.24 | 4.14.27 | https://docs.openshift.com/container-platform/4.14/release_notes/ocp-4-14-release-notes.html |
+| {{site.data.keyword.openshiftshort}}. | 4.14.24 | 4.14.27 | https://docs.redhat.com/en/documentation/openshift_container_platform/4.14/html/release_notes/ocp-4-14-release-notes |
 | Portieris admission controller | v0.13.15 | v0.13.16 | See the [Portieris admission controller release notes](https://github.com/{{site.data.keyword.IBM_notm}}/portieris/releases/tag/v0.13.16){: external}. |
 | {{site.data.keyword.openshiftlong_notm}} Control Plane Operator, Metrics Server, and toolkit | 4.14.0+20240514 | 4.14.0+20240603 | See the [{{site.data.keyword.openshiftlong_notm}} toolkit release notes](https://github.com/openshift/ibm-roks-toolkit/releases/tag/v4.14.0+20240603){: external}. |
 {: caption="Changes since version 4.14.24_1566_openshift" caption-side="bottom"}

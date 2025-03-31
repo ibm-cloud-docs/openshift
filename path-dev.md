@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2025
-lastupdated: "2025-03-18"
+lastupdated: "2025-03-31"
 
 
 keywords: openshift, red hat, red hat openshift, dev
@@ -129,6 +129,7 @@ Use Kubernetes secrets to store confidential information, such as credentials or
 
 
 
+
 ## Expose your app
 {: #dev_expose}
 
@@ -169,14 +170,19 @@ Enhance app capabilities by integrating various external services and catalog se
 {: shortdesc}
 
 1. **Review supported integrations**:
+
     - [All supported integrations](/docs/containers?topic=containers-supported_integrations#supported_integrations)
 
     - [{{site.data.keyword.openshiftlong_notm}} partners](/docs/openshift?topic=openshift-supported_integrations)
 
     - [{{site.data.keyword.cloud_notm}} services and third-party integrations](/docs/openshift?topic=openshift-ibm-3rd-party-integrations)
+
     - [Cloud Paks](/docs/openshift?topic=openshift-openshift_cloud_paks)
+
     - [Operators](/docs/openshift?topic=openshift-operators)
+
 2. **Add services to your cluster**: Ask your cluster administrator to [add the integration to your cluster](/docs/openshift?topic=openshift-learning-path-admin#admin_integrate).
+
 3. **Access services from your app**: Ensure that your app can access the service. For example, to access an IBM Cloud service instance from your app, you must [make the service credentials that are stored in the Kubernetes secret available to your app](/docs/openshift?topic=openshift-service-binding#adding_app).
 
 Need help? Check out [Troubleshooting apps and integrations](/docs/openshift?topic=openshift-debug_worker_nodes).

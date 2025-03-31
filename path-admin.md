@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2025
-lastupdated: "2025-03-18"
+lastupdated: "2025-03-31"
 
 
 keywords: openshift, red hat, red hat openshift, admin
@@ -115,6 +115,7 @@ Set up logging and monitoring to help you troubleshoot issues and improve the he
 
 
 1. **Understand options**: [Choose solutions for app and cluster logging, audit logging, and monitoring](/docs/openshift?topic=openshift-health#oc_logmet_options) based on your needs.
+
 2. **{{site.data.keyword.logs_full_notm}} and {{site.data.keyword.mon_short}}**: To monitor cluster health, forward logs to [{{site.data.keyword.logs_full_notm}}](/docs/openshift?topic=openshift-health#openshift_logging) and metrics to [{{site.data.keyword.mon_full_notm}}](/docs/openshift?topic=openshift-health-monitor).
 
 

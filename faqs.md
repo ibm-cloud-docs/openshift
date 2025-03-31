@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2025
-lastupdated: "2025-01-29"
+lastupdated: "2025-03-31"
 
 
 keywords: openshift, ocp, compliance, security standards, faq, openshift pricing, ocp pricing, openshift charges, ocp charges, openshift price, ocp price, openshift billing, ocp billing, openshift costs, ocp costs
@@ -91,7 +91,7 @@ Kubernetes
 
 Every cluster in {{site.data.keyword.openshiftlong_notm}} is controlled by a dedicated {{site.data.keyword.redhat_openshift_notm}} master that is managed by IBM in an IBM-owned {{site.data.keyword.cloud_notm}} infrastructure account. The {{site.data.keyword.redhat_openshift_notm}} master, including all the master components, compute, networking, and storage resources, is continuously monitored by IBM Site Reliability Engineers (SREs). The SREs apply the latest security standards, detect and remediate malicious activities, and work to ensure reliability and availability of {{site.data.keyword.openshiftlong_notm}}.
 
-Periodically, {{site.data.keyword.redhat_openshift_notm}} releases [major, minor, or patch updates](/docs/containers?topic=containers-cs_versions#update_types). These updates can affect the {{site.data.keyword.redhat_openshift_notm}} API server version or other components in your {{site.data.keyword.redhat_openshift_notm}} master. IBM automatically updates the patch version, but you must update the master major and minor versions. For more information, see [Updating the master](/docs/openshift?topic=openshift-update#master).
+Periodically, {{site.data.keyword.redhat_openshift_notm}} releases [major, minor, or patch updates](/docs/containers?topic=containers-cs_versions#update_types). These updates can affect the {{site.data.keyword.redhat_openshift_notm}} API server version or other components in your {{site.data.keyword.redhat_openshift_notm}} master. IBM automatically updates the patch version, but you must update the master major and minor versions. For more information, see [Updating the master](/docs/openshift?topic=openshift-managed-addons#updating-managed-add-ons).
 
 Worker nodes in standard clusters are provisioned in to your {{site.data.keyword.cloud_notm}} infrastructure account. The worker nodes are dedicated to your account and you are responsible to request timely updates to the worker nodes to ensure that the worker node OS and {{site.data.keyword.openshiftlong_notm}} components apply the latest security updates and patches. Security updates and patches are made available by IBM Site Reliability Engineers (SREs) who continuously monitor the Linux image that is installed on your worker nodes to detect vulnerabilities and security compliance issues. For more information, see [Updating worker nodes](/docs/openshift?topic=openshift-update#worker_node).
 
