@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2025, 2025
-lastupdated: "2025-02-28"
+lastupdated: "2025-03-28"
 
 
 keywords: high availability, disaster recover, HA, DR, responsibilities
@@ -143,7 +143,7 @@ You are responsible for configuring your cluster to achieve the appropriate leve
 You are responsible for the recovery of the workloads that run the cluster and your application data. For more information on your responsibilities for disaster recovery, see [Your responsibilities with using IBM Cloud Kubernetes Service](/docs/openshift?topic=openshift-responsibilities_iks#disaster-recovery).
 
 ## Change management
-{: #change-management}
+{: #change-management-hadr}
 
 Change management includes tasks such as upgrades, configuration changes, and deletion. Keep the following points in mind to reduce downtime or data loss for your workload. 
 

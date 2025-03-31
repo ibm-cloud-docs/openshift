@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2025
-lastupdated: "2025-03-13"
+lastupdated: "2025-03-29"
 
 
 keywords: openshift, version, update, upgrade

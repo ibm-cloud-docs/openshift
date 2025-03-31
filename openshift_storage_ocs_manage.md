@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2025
-lastupdated: "2025-03-18"
+lastupdated: "2025-03-28"
 
 
 keywords: openshift, openshift data foundation, openshift container storage, ocs
@@ -319,7 +319,7 @@ If you want to remove all ODF resources and data from your cluster, [remove the 
 ## Troubleshooting ODF
 {: #odf-troubleshooting-gather}
 
-To gather the information to troubleshoot ODF, you can use the `oc adm must-gather` command and specify the ODF image. For more information, see [Gathering cluster data](https://docs.openshift.com/container-platform/4.17/support/gathering-cluster-data.html).
+To gather the information to troubleshoot ODF, you can use the `oc adm must-gather` command and specify the ODF image. For more information, see [Gathering cluster data](https://docs.redhat.com/documentation/openshift_container_platform/4.17/html/support/gathering-cluster-data).
 {: shortdesc}
 
 Example command:

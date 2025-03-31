@@ -1,8 +1,8 @@
 ---
 
 copyright:
-  years: 2022, 2024
-lastupdated: "2024-10-10"
+  years: 2022, 2025
+lastupdated: "2025-03-28"
 
 
 keywords: openshift, version, update, upgrade, 4.11, update openshift
@@ -78,7 +78,7 @@ Extended update support (EUS)
 :    EUS updates are not available at this time for clusters that run version 4.11.
 
 Pod security admission
-:   Version 4.11 enables a new [Pod security admission controller](https://docs.openshift.com/container-platform/4.11/release_notes/ocp-4-11-release-notes.html#ocp-4-11-auth-pod-security-admission){: external}, which coexists with `SecurityContextConstraints`. The new pod security admission controller in version 4.11 includes warning messages and `kube-apiserver` audit events for pods that violate the Pod Security profile configured for the namespace. There is also a new `PodSecurityViolation "Information"` alert that is generated for pods that violate the pod security audit profile defined for that namespace. For more information about the pod security admission controller, see [Configuring Pod Security admission](/docs/openshift?topic=openshift-pod-security-admission).
+:   Version 4.11 enables a new [Pod security admission controller](https://docs.redhat.com/documentation/openshift_container_platform/4.11/html/release_notes/ocp-4-11-release-notes#ocp-4-11-auth-pod-security-admission){: external}, which coexists with `SecurityContextConstraints`. The new pod security admission controller in version 4.11 includes warning messages and `kube-apiserver` audit events for pods that violate the Pod Security profile configured for the namespace. There is also a new `PodSecurityViolation "Information"` alert that is generated for pods that violate the pod security audit profile defined for that namespace. For more information about the pod security admission controller, see [Configuring Pod Security admission](/docs/openshift?topic=openshift-pod-security-admission).
 
 ### Update before master
 {: #411_before}
@@ -88,9 +88,9 @@ The following table shows the actions that you must take before you [update the 
 
 | Type | Description |
 | --- | --- |
-| **Unsupported:** Deprecated and removed {{site.data.keyword.redhat_openshift_notm}} features | For more information, review the [{{site.data.keyword.redhat_openshift_notm}} version 4.11 deprecated and removed features](https://docs.openshift.com/container-platform/4.11/release_notes/ocp-4-11-release-notes.html#ocp-4-11-deprecated-removed-features){: external}. |
-| Known Red Hat OpenShift issues | For more information about possible required actions, review [Red Hat OpenShift version 4.11 known issues](https://docs.openshift.com/container-platform/4.11/release_notes/ocp-4-11-release-notes.html#ocp-4-11-known-issues){: external}. |
-| `LegacyServiceAccountTokenNoAutoGeneration` feature gate is enabled | For more information, review possible required actions in the `LegacyServiceAccountTokenNoAutoGeneration is on by default` section of the[{{site.data.keyword.redhat_openshift_notm}} version 4.11 notable technical changes](https://docs.openshift.com/container-platform/4.11/release_notes/ocp-4-11-release-notes.html#ocp-4-11-notable-technical-changes). |
+| **Unsupported:** Deprecated and removed {{site.data.keyword.redhat_openshift_notm}} features | For more information, review the [{{site.data.keyword.redhat_openshift_notm}} version 4.11 deprecated and removed features](https://docs.redhat.com/documentation/openshift_container_platform/4.11/html/release_notes/ocp-4-11-release-notes#ocp-4-11-deprecated-removed-features){: external}. |
+| Known Red Hat OpenShift issues | For more information about possible required actions, review [Red Hat OpenShift version 4.11 known issues](https://docs.redhat.com/documentation/openshift_container_platform/4.11/html/release_notes/ocp-4-11-release-notes#ocp-4-11-known-issues){: external}. |
+| `LegacyServiceAccountTokenNoAutoGeneration` feature gate is enabled | For more information, review possible required actions in the `LegacyServiceAccountTokenNoAutoGeneration is on by default` section of the[{{site.data.keyword.redhat_openshift_notm}} version 4.11 notable technical changes](https://docs.redhat.com/documentation/openshift_container_platform/4.11/html/release_notes/ocp-4-11-release-notes#ocp-4-11-notable-technical-changes). |
 | Red Hat OpenShift web console redirect changed | Cluster server URL no longer redirects to the Red Hat OpenShift web console. You must add `/console` to the URL for the redirect. |
 | The kubelet modifications that some Cloud Paks make are causing worker nodes to enter `Critical` when upgrading. | For more information, see [Why do I see a `failed to set feature gates` error when upgrading a worker node?](/docs/openshift?topic=openshift-ts-cloud-pak-ds). |
 {: caption="Changes to make before you update the master to Red Hat OpenShift 4.11" caption-side="bottom"}

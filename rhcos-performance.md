@@ -1,8 +1,8 @@
 ---
 
 copyright: 
-  years: 2022, 2024
-lastupdated: "2024-06-03"
+  years: 2022, 2025
+lastupdated: "2025-03-28"
 
 
 keywords: openshift, kernel, rhcos, cpu pinning, huge pages, numa, core os
@@ -37,7 +37,7 @@ Instead of tuning worker node performance with `MachineConfig` files in {{site.d
 
 [{{site.data.keyword.satelliteshort}}]{: tag-satellite}
 
-Before you can enable NUMA, CPU pinning, and huge pages on your worker nodes, you must deploy the Node Feature Discovery Operator. For more information, see [The Node Feature Discovery Operator](https://docs.openshift.com/container-platform/4.8/scalability_and_performance/psap-node-feature-discovery-operator.html){: external}.
+Before you can enable NUMA, CPU pinning, and huge pages on your worker nodes, you must deploy the Node Feature Discovery Operator. For more information, see [The Node Feature Discovery Operator](https://docs.redhat.com/documentation/openshift_container_platform/4.8/html/scalability_and_performance/node-feature-discovery-operator){: external}.
 
 ## Enabling non-uniform memory access (NUMA), CPU pinning, and huge pages on your worker nodes
 {: #rhcos-numa-pinning-huge}

@@ -2,7 +2,7 @@
 
 copyright:
   years: 2024, 2025
-lastupdated: "2025-03-13"
+lastupdated: "2025-03-28"
 
 
 keywords: openshift, version, update, upgrade, 4.17, update openshift
@@ -20,7 +20,7 @@ subcollection: openshift
 Review information about version 4.17 of {{site.data.keyword.openshiftlong_notm}}. This version is based on Kubernetes version {{site.data.keyword.openshift_417_kube_version}}. 
 {: shortdesc}
 
-Looking for general information about updating clusters, or information on a different version? See [Red Hat {{site.data.keyword.redhat_openshift_notm}} on IBM Cloud version information](/docs/openshift?topic=openshift-openshift_versions) and the version [4.17 release notes](https://docs.openshift.com/container-platform/4.17/release_notes/ocp-4-17-release-notes.html#ocp-4-17-release-notes){: external}.
+Looking for general information about updating clusters, or information on a different version? See [Red Hat {{site.data.keyword.redhat_openshift_notm}} on IBM Cloud version information](/docs/openshift?topic=openshift-openshift_versions) and the version [4.17 release notes](https://docs.redhat.com/documentation/openshift_container_platform/4.17/html/release_notes/ocp-4-17-release-notes#ocp-4-17-release-notes){: external}.
 {: tip}
 
 
@@ -63,8 +63,8 @@ For clusters that run version 4.17 or later, you can use the `oc adm upgrade sta
 | Type | Description |
 | --- | --- |
 | Preparing to update OpenShift | For more information, review the [Preparing to update to OpenShift Container Platform 4.17](https://docs.openshift.com/container-platform/4.17/updating/preparing_for_updates/updating-cluster-prepare.html) for possible actions required. The etcd backup and version selection upgrade preparation actions do not apply to Red Hat OpenShift on IBM Cloud clusters since both of these actions are handled for you. |
-| Deprecated and removed OpenShift features | For more information, review the [OpenShift Container Platform version 4.17 deprecated and removed features](https://docs.openshift.com/container-platform/4.17/release_notes/ocp-4-17-release-notes.html#ocp-4-17-deprecated-removed-features_release-notes) for possible actions required. |
-| Known OpenShift issues | For more information, review the [OpenShift Container Platform version 4.17 known issues](https://docs.openshift.com/container-platform/4.17/release_notes/ocp-4-17-release-notes.html#ocp-4-17-known-issues_release-notes) for possible actions required. |
+| Deprecated and removed OpenShift features | For more information, review the [OpenShift Container Platform version 4.17 deprecated and removed features](https://docs.redhat.com/documentation/openshift_container_platform/4.17/html/release_notes/ocp-4-17-release-notes#ocp-4-17-deprecated-removed-features_release-notes) for possible actions required. |
+| Known OpenShift issues | For more information, review the [OpenShift Container Platform version 4.17 known issues](https://docs.redhat.com/documentation/openshift_container_platform/4.17/html/release_notes/ocp-4-17-release-notes#ocp-4-17-known-issues_release-notes) for possible actions required. |
 | Upgrade requires OpenShift cluster version currency | A cluster master upgrade will be canceled if the OpenShift cluster version status indicates that an update is already in progress. See [Why does OpenShift show the cluster version is not up to date?](/docs/openshift?topic=openshift-ts-cluster-version-downlevel) for details. |
 | Upgrade requires resolution to OpenShift cluster version upgradeable conditions | A cluster master upgrade will be canceled if the OpenShift cluster version `Upgradeable` status condition indicates that the cluster is not upgradeable. To determine if the cluster is upgradeable, see [Checking the Upgradeable status of your cluster](/docs/openshift?topic=openshift-cs_versions_417#status-check-417). |
 | RHEL 9.2 micro-architecture requirement | Red Hat OpenShift on IBM Cloud version 4.17 is based on the RHEL 9.2 host operating system thus increasing the [micro-architecture requirements](https://docs.openshift.com/container-platform/4.17/updating/preparing_for_updates/updating-cluster-prepare.html#rhel-micro-architecture-update-requirements){: external} to x86-64-v2. As a result, host machines for IBM Cloud Satellite must support x86-64-v2 architecture for any location that contains a Red Hat OpenShift on IBM Cloud version 4.17 cluster. See [Host system requirements](/docs/satellite?topic=satellite-host-reqs) for details. In addition, client machines used to run `oc` client version 4.17 must also support x86-64-v2 architecture. Client machines, such as Ubuntu 20, that do not meet this micro-architecture requirement must use a RHEL 8 based `oc` version 4.17 client. Review the list of available `oc` [version 4.17 clients](https://mirror.openshift.com/pub/openshift-v4/clients/ocp/stable-4.17/){: external} |
@@ -107,4 +107,4 @@ You can provision a new cluster with RHEL 9 in the console by specifying the RHE
 
 If you upgrade an existing cluster to version 4.17 and want your worker nodes to run RHEL 9, you must [follow the steps to migrate your worker nodes](/docs/openshift?topic=openshift-rhel_migrate).
 
-For more information on RHEL 9, see the [Red Hat OpenShift release notes](https://docs.redhat.com/en/documentation/red_hat_enterprise_linux/9/html/9.4_release_notes/index){: external}. 
+For more information on RHEL 9, see the [Red Hat OpenShift release notes](https://docs.redhat.com/documentation/red_hat_enterprise_linux/9/html/9.4_release_notes/index){: external}. 

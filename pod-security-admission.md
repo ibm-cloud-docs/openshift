@@ -1,8 +1,8 @@
 ---
 
 copyright: 
-  years: 2022, 2024
-lastupdated: "2024-11-07"
+  years: 2022, 2025
+lastupdated: "2025-03-28"
 
 
 keywords: kubernetes, deploy, openshift, pod security admission, pod security, security profiles
@@ -150,7 +150,7 @@ exemptions:
 {: #pod-security-configure}
 
 
-You can configure the pod security behavior at the namespace level with predefined pod security labels. For more information about configuration, see [Controlling pod security admission synchronization](https://docs.openshift.com/container-platform/4.11/authentication/understanding-and-managing-pod-security-admission.html#security-context-constraints-psa-opting_understanding-and-managing-pod-security-admission){: external} in the Red Hat OpenShift documentation. Note that the steps vary for each cluster version, so make sure you are viewing the steps for the correct version. 
+You can configure the pod security behavior at the namespace level with predefined pod security labels. For more information about configuration, see [Controlling pod security admission synchronization](https://docs.redhat.com/documentation/openshift_container_platform/4.11/html/authentication_and_authorization/understanding-and-managing-pod-security-admission#security-context-constraints-psa-opting_understanding-and-managing-pod-security-admission){: external} in the Red Hat OpenShift documentation. Note that the steps vary for each cluster version, so make sure you are viewing the steps for the correct version. 
 
 For more information about configuring `apiserver` logs for {{site.data.keyword.openshiftshort}}, see [Kubernetes API server audit logs](/docs/openshift?topic=openshift-health-audit#audit-api-server).
 {: tip}
@@ -170,6 +170,6 @@ In this example, the pod is still created and can run as long the service accoun
 ## Additional resources
 {: #pod-sec-additional-resources}
 
-- [Understanding and managing pod security admission](https://docs.openshift.com/container-platform/4.11/authentication/understanding-and-managing-pod-security-admission.html){: external}.
+- [Understanding and managing pod security admission](https://docs.redhat.com/documentation/openshift_container_platform/4.11/html/authentication_and_authorization/understanding-and-managing-pod-security-admission){: external}.
 - [Pod Security Admission in {{site.data.keyword.redhat_openshift_notm}} 4.11](https://www.redhat.com/blog/pod-security-admission-in-openshift-4.11){: external}.
 - [Kubernetes API server audit logs](/docs/openshift?topic=openshift-health-audit#audit-api-server) describes how to configure API server audit logs in the {{site.data.keyword.openshiftlong_notm}} service.

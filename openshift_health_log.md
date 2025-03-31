@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2025
-lastupdated: "2025-03-18"
+lastupdated: "2025-03-28"
 
 
 keywords: oks, iro, openshift, red hat, red hat openshift
@@ -44,7 +44,7 @@ Built-in {{site.data.keyword.redhat_openshift_notm}} logging tools
 :   Built-in view of pod logs in the {{site.data.keyword.redhat_openshift_notm}} web console.
     - Built-in pod logs are not configured with persistent storage. You must integrate with a cloud database to back up the logging data and make it highly available, and manage the logs yourself.
   
-    To set up an [OpenShift Container Platform Elasticsearch, Fluentd, and Kibana EFK stack](https://docs.openshift.com/container-platform/4.17/observability/logging/logging-6.1/log6x-about-6.1.html){: external}, see [installing the cluster logging operator](#oc_logging_operator). Keep in mind that your worker nodes must have at least 4 cores and GB memory to run the cluster logging stack.
+    To set up an [OpenShift Container Platform Elasticsearch, Fluentd, and Kibana EFK stack](https://docs.redhat.com/documentation/openshift_container_platform/4.17/html/logging/logging-6-1){: external}, see [installing the cluster logging operator](#oc_logging_operator). Keep in mind that your worker nodes must have at least 4 cores and GB memory to run the cluster logging stack.
     {: note}
   
 Built-in {{site.data.keyword.redhat_openshift_notm}} audit logging tools
@@ -153,7 +153,7 @@ For more information, see the following links:
 ## Using the cluster logging operator
 {: #oc_logging_operator}
 
-To deploy the OpenShift Container Platform cluster logging operator and stack on your {{site.data.keyword.openshiftlong_notm}} cluster, see the [{{site.data.keyword.redhat_openshift_notm}} documentation](https://docs.openshift.com/container-platform/4.17/observability/logging/logging-6.1/log6x-about-6.1.html){: external}. Additionally, you must update the cluster logging instance to use an {{site.data.keyword.cloud_notm}} Block Storage storage class.
+To deploy the OpenShift Container Platform cluster logging operator and stack on your {{site.data.keyword.openshiftlong_notm}} cluster, see the [{{site.data.keyword.redhat_openshift_notm}} documentation](https://docs.redhat.com/documentation/openshift_container_platform/4.17/html/logging/logging-6-1){: external}. Additionally, you must update the cluster logging instance to use an {{site.data.keyword.cloud_notm}} Block Storage storage class.
 {: shortdesc}
 
 1. Prepare your worker pool to run the operator.

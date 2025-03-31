@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2025
-lastupdated: "2025-03-18"
+lastupdated: "2025-03-28"
 
 
 keywords: openshift, kubernetes, logmet, logs, metrics, audit, events
@@ -39,7 +39,7 @@ Before you set up a Kubernetes API audit configuration, review the following inf
 
 
 
-- **VPC clusters versions 4.15 and later**: Audit logs use the Red Hat Openshift audit policy profile `default` (for default) and `WriteRequestBodies`(for verbose). For more information, see the [Audit log policy](https://docs.openshift.com/container-platform/4.15/security/audit-log-policy-config.html){: external}.
+- **VPC clusters versions 4.15 and later**: Audit logs use the Red Hat OpenShift audit policy profile `default` (for default) and `WriteRequestBodies`(for verbose). For more information, see the [Audit log policy](https://docs.redhat.com/documentation/openshift_container_platform/4.15/html/security_and_compliance/audit-log-policy-config){: external}.
 
 - **All other cluster versions**: Audit logs use the `openshift-audit` policy in the [`kube-samples` repo](https://github.com/IBM-Cloud/kube-samples/blob/master/kube-audit/openshift-audit-policy.yaml){: external}{: external}.
 
@@ -646,4 +646,4 @@ To view the alert:
 
 1. From the {{site.data.keyword.openshiftshort}}, select the **Administrator** view.
 1. Click **Observe** > **Alerting** > **AuditWebhookError**.
-1. To create a notification for this alert, see [Sending notifications to external systems](https://docs.openshift.com/container-platform/4.10/monitoring/managing-alerts.html#sending-notifications-to-external-systems_managing-alerts){: external}.
+1. To create a notification for this alert, see [Sending notifications to external systems](https://docs.redhat.com/documentation/openshift_container_platform/4.10/html/monitoring/managing-alerts#sending-notifications-to-external-systems_managing-alerts){: external}.

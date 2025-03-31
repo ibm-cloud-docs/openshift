@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2025
-lastupdated: "2025-03-18"
+lastupdated: "2025-03-28"
 
 
 keywords: openshift, autoscaler
@@ -168,7 +168,7 @@ Check the health of the cluster autoscaler pod.
 
 Search the logs of the cluster autoscaler pod for relevant messages, such as failure messages like `lastScaleDownFailTime`, the `Final scale-up plan`, or [cluster autoscaler events](https://github.com/kubernetes/autoscaler/blob/master/cluster-autoscaler/FAQ.md#what-events-are-emitted-by-ca){: external}.
 
-If your cluster autoscaler pod is unhealthy and can't stream logs, check your {{site.data.keyword instance for the pod logs. Note that if your cluster administrator did not [enable {{site.data.keyword.logs_full_notm}} for your cluster](/docs/containers?topic=containers-health), you might not have any logs to review.
+If your cluster autoscaler pod is unhealthy and can't stream logs, check your {{site.data.keyword.logs_full_notm}} instance for the pod logs. Note that if your cluster administrator did not [enable {{site.data.keyword.logs_full_notm}} for your cluster](/docs/containers?topic=containers-health), you might not have any logs to review.
 {: tip}
 
 ```sh

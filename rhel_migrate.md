@@ -2,7 +2,7 @@
 
 copyright:
   years: 2022, 2025
-lastupdated: "2025-01-30"
+lastupdated: "2025-03-28"
 
 
 keywords: rhel, os, operating system
@@ -23,7 +23,7 @@ subcollection: openshift
 RHEL 9 is available for {{site.data.keyword.redhat_openshift_notm}} Classic and VPC clusters that run version 4.16 or higher. Follow these steps to migrate your worker nodes from RHEL 8 to RHEL 9.
 {: shortdesc}
 
-For more information on RHEL 9, see the [Red Hat OpenShift release notes](https://docs.redhat.com/en/documentation/red_hat_enterprise_linux/9/html/9.4_release_notes/index){: external}. 
+For more information on RHEL 9, see the [Red Hat OpenShift release notes](https://docs.redhat.com/documentation/red_hat_enterprise_linux/9/html/9.4_release_notes/index){: external}. 
 
 To find your worker node operating system, run the **`ibmcloud oc worker-pools -c CLUSTER`** command.
 {: tip}

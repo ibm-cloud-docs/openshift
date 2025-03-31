@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2025
-lastupdated: "2025-03-19"
+lastupdated: "2025-03-28"
 
 
 keywords: openshift, openshift data foundation, openshift container storage, ocs
@@ -285,7 +285,7 @@ You can install the add-on by using the [`ibmcloud oc cluster addon enable` comm
     ```
     {: pre}
 
-    For the best performance, it's recommended to include the `resourceProfile` option specified as `performance`. This option helps obtain enhanced performance levels based on the availability of resources during deployment. For more information on the `resourceProfile` option, see [Performance profiles](https://docs.redhat.com/en/documentation/red_hat_openshift_data_foundation/4.15/html/4.15_release_notes/new_features#performance_profiles){: external} in the Red Hat OpenShift ODF documentation
+    For the best performance, it's recommended to include the `resourceProfile` option specified as `performance`. This option helps obtain enhanced performance levels based on the availability of resources during deployment. For more information on the `resourceProfile` option, see [Performance profiles](https://docs.redhat.com/documentation/red_hat_openshift_data_foundation/4.15/html/4.15_release_notes/new_features#performance_profiles){: external} in the Red Hat OpenShift ODF documentation
     {: tip}
 
     Example add-on options for version 4.15.0
