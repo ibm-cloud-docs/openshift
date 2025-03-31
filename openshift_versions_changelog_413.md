@@ -529,7 +529,7 @@ The following table shows the changes that are in the master fix pack 4.13.43_15
 | {{site.data.keyword.cloud_notm}} Controller Manager | v1.26.15-16 | v1.26.15-20 | New version contains updates and security fixes. |
 | {{site.data.keyword.cloud_notm}} RBAC Operator | 4c5d156 | 14d0ab5 |New version contains updates and security fixes. |
 | Key Management Service provider | v2.8.10 | v2.8.11 | New version contains updates and security fixes. |
-| {{site.data.keyword.openshiftshort}}. | 4.13.41 | 4.13.43 | https://docs.openshift.com/container-platform/4.13/release_notes/ocp-4-13-release-notes.html |
+| {{site.data.keyword.openshiftshort}}. | 4.13.41 | 4.13.43 | https://docs.redhat.com/en/documentation/openshift_container_platform/4.13/html/release_notes/ocp-4-13-release-notes |
 | OpenVPN client | 2.6.8-r0-IKS-114-amd64 | 2.6.8-r0-IKS-130-amd64 | New version contains updates and security fixes. |
 | OpenVPN Operator image | v1.5.15 | v1.5.16 | New version contains updates and security fixes. |
 | OpenVPN server | 2.6.8-r0-IKS-113-amd64 | 2.6.8-r0-IKS-131-amd64 | New version contains updates and security fixes. |

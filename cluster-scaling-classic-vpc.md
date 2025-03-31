@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2025
-lastupdated: "2025-01-29"
+lastupdated: "2025-03-31"
 
 
 keywords: kubernetes, node scaling, ca, autoscaler, openshift
@@ -42,7 +42,7 @@ The cluster autoscaler periodically scans the cluster to adjust the number of wo
 
 Scanning and scaling up and down happens at regular intervals over time, and depending on the number of worker nodes might take a longer period of time to complete, such as 30 minutes.
 
-The cluster autoscaler adjusts the number of worker nodes by considering the [resource requests](https://kubernetes.io/docs/concepts/configuration/manage-resources-containers/){: external} that you define for your deployments, not actual worker node usage. If your pods and deployments don't request appropriate amounts of resources, you must adjust their configuration files. The cluster autoscaler can't adjust them for you. Also, keep in mind that worker nodes use some compute resources for basic cluster functionality, default and custom [add-ons](/docs/openshift?topic=openshift-update#addons), and [resource reserves](/docs/openshift?topic=openshift-resource-limit-node).
+The cluster autoscaler adjusts the number of worker nodes by considering the [resource requests](https://kubernetes.io/docs/concepts/configuration/manage-resources-containers/){: external} that you define for your deployments, not actual worker node usage. If your pods and deployments don't request appropriate amounts of resources, you must adjust their configuration files. The cluster autoscaler can't adjust them for you. Also, keep in mind that worker nodes use some compute resources for basic cluster functionality, default and custom [add-ons](/docs/openshift?topic=openshift-addons), and [resource reserves](/docs/openshift?topic=openshift-resource-limit-node).
 {: note}
 
 

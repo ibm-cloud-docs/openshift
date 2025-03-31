@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2025
-lastupdated: "2025-03-28"
+lastupdated: "2025-03-31"
 
 
 keywords: openshift, http2, quota, app protocol, application protocol
@@ -44,7 +44,7 @@ To view quota limits on cluster-related resources in your {{site.data.keyword.cl
 | Cluster quota | You can't exceed 100 clusters per region and per [infrastructure provider](/docs/openshift?topic=openshift-overview#what-compute-infra-is-offered). However, as of 01 January 2024, quotas are increased incrementally before reaching 100. If you need more of the resource, [contact IBM Support](/docs/account?topic=account-using-avatar). In the support case, include the new quota limit for the region and infrastructure provider that you want.. To list quotas, run `ibmcloud quota ls`. |
 | Kubernetes | Make sure to review the [Kubernetes project limitations](https://kubernetes.io/docs/setup/best-practices/cluster-large/){: external}. |
 | KMS provider | Customizing the IP addresses that are allowed to connect to your {{site.data.keyword.keymanagementservicefull}} instance is not supported.|
-| {{site.data.keyword.redhat_openshift_notm}} | Make sure to review the [OpenShift Container Platform limitations](https://docs.redhat.com/documentation/openshift_container_platform4.17/html/scalability_and_performance/planning-your-environment-according-to-object-maximums/index){: external} for your version.|
+| {{site.data.keyword.redhat_openshift_notm}} | Make sure to review the [OpenShift Container Platform limitations](https://docs.redhat.com/documentation/openshift_container_platform/4.17/html/scalability_and_performance/planning-your-environment-according-to-object-maximums){: external} for your version.|
 | Kubernetes pod logs | To check the logs for individual app pods, you can use the command line to run `oc logs <pod name>`. Do not use the Kubernetes dashboard to stream logs for your pods, which might cause a disruption in your access to the Kubernetes dashboard. |
 | Monitoring |  - Because IBM manages your cluster master, event alerting for the master is disabled. IBM monitors your cluster master and fixes issues as they are detected. For this reason, in the Administrator perspective of the {{site.data.keyword.redhat_openshift_notm}}, you might see a `Not available` message for the control plane status. \n - The built-in Prometheus alert manager includes two rules that display as active alerts in a `FIRING` state: `KubeControllerManagerDown` and `KubeSchedulerDown`. These components are part of the IBM-managed cluster master, so you can ignore these alerts. |
 | Operating system | Worker nodes must run one of the supported operating systems. You can't create a cluster with worker nodes that run different types of operating systems. For more information, see the [{{site.data.keyword.openshiftshort}} version information](/docs/openshift?topic=openshift-openshift_versions). |
@@ -132,7 +132,7 @@ Keep in mind that the [service](#tech_limits) limitations also apply.
 {: caption="Classic cluster storage limitations"}
 
 ## User access
-{:#classic_access_limit}
+{: #classic_access_limit}
 
 Keep in mind that the [service](#tech_limits) limitations also apply.
 
@@ -198,7 +198,7 @@ Keep in mind that the [service](#tech_limits) limitations also apply.
 {: caption="VPC cluster storage limitations"}
 
 ## User access
-{:#vpc_access_limit}
+{: #vpc_access_limit}
 
 Keep in mind that the [service](#tech_limits) limitations also apply.
 
