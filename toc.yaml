@@ -183,6 +183,7 @@ toc:
           - health-audit.md
           - vpc-flow-logs.md
           - telemetry.md
+          - at-events-ref.md
       - cicd.md
       - topicgroup:
           label: Developing and deploying apps
@@ -455,23 +456,6 @@ toc:
               - openshift_versions_47.md
               - openshift_versions_changelog_47.md
               - benchmarks_47.md
-          - topicgroup:
-              label: Version 4.6 
-              topics:
-              - openshift_versions_46.md
-              - openshift_versions_changelog_46.md
-              - benchmarks_46.md
-          - topicgroup:
-              label: Version 3.11
-              topics:
-              - openshift_versions_311.md
-              - openshift_versions_changelog_311.md
-          - openshift_versions_archive.md
-      - topicgroup:
-          label: Activity Tracker events
-          topics:
-          - at-events-ref.md
-          - api-at-iam.md
       - locations.md
       - openshift_integrations_overview.md
       - service-settings.md
