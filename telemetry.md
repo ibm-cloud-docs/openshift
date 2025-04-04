@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2024, 2025
-lastupdated: "2025-03-28"
+lastupdated: "2025-04-04"
 
 
 keywords: telemetry, remote health, remote monitoring, cluster data, health data
@@ -41,9 +41,10 @@ To enable Telemetry, update your pull secret by adding your OpenShift access tok
     ```
     {: pre}
 
-1. Append the downloaded JSON file to your existing pull secret and apply the changes to the cluster.
+1. Update the secret on your cluster with the pull secret.
+
     ```sh
-    oc set data secret/pull-secret -n openshift-config --from-file=.dockerconfigjson=./<downloaded-pull-secret-name>.json
+    oc set data secret/pull-secret -n openshift-config --from-file=.dockerconfigjson=./pull-secret-original.json
     ```
     {: pre}
 

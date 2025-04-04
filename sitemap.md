@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2025
-lastupdated: "2025-04-03"
+lastupdated: "2025-04-04"
 
 
 keywords: openshift
@@ -2983,16 +2983,6 @@ subcollection: openshift
 
 * [Removing subnets from a cluster](/docs/openshift?topic=openshift-subnets#remove-subnets)
 
-[Changing service endpoints or VLAN connections in {{site.data.keyword.redhat_openshift_notm}} 3.11](/docs/openshift?topic=openshift-cs_network_cluster#cs_network_cluster)
-
-* [Setting up the private cloud service endpoint](/docs/openshift?topic=openshift-cs_network_cluster#set-up-private-se)
-
-* [Setting up the public cloud service endpoint](/docs/openshift?topic=openshift-cs_network_cluster#set-up-public-se)
-
-    * [Steps to enable the public cloud service endpoint](/docs/openshift?topic=openshift-cs_network_cluster#steps-set-up-public)
-
-* [Changing your worker node VLAN connections](/docs/openshift?topic=openshift-cs_network_cluster#change-vlans)
-
 [Setting up classic VPN connectivity](/docs/openshift?topic=openshift-vpn#vpn)
 
 * [Using the strongSwan IPSec VPN service Helm chart](/docs/openshift?topic=openshift-vpn#vpn-setup)
@@ -5113,702 +5103,6 @@ subcollection: openshift
 * [Next steps](/docs/openshift?topic=openshift-remove#cluster-remove-next-steps)
 
 
-## API reference
-{: #sitemap_api_reference}
-
-
-[IBM Cloud Kubernetes Service API](https://containers.cloud.ibm.com/global/swagger-global-api/#/){: external}
-
-[IBM Cloud Kubernetes Service API JSON](https://containers.cloud.ibm.com/global/swagger-global-api/swagger.json){: external}
-
-[OpenShift Container Platform REST API](https://docs.redhat.com/documentation/openshift_container_platform/4.17/html/api_overview/index){: external}
-
-
-## CLI plug-in reference
-{: #sitemap_cli_plug-in_reference}
-
-
-[{{site.data.keyword.openshiftlong_notm}} CLI Map](/docs/openshift?topic=openshift-icks_map#icks_map)
-
-* [ibmcloud oc cluster](/docs/openshift?topic=openshift-icks_map#icks_map_cluster)
-
-* [ibmcloud oc worker](/docs/openshift?topic=openshift-icks_map#icks_map_worker)
-
-* [ibmcloud oc worker-pool](/docs/openshift?topic=openshift-icks_map#icks_map_worker-pool)
-
-* [ibmcloud oc zone](/docs/openshift?topic=openshift-icks_map#icks_map_zone)
-
-* [ibmcloud oc ingress](/docs/openshift?topic=openshift-icks_map#icks_map_ingress)
-
-* [ibmcloud oc logging](/docs/openshift?topic=openshift-icks_map#icks_map_logging)
-
-* [ibmcloud oc nlb-dns](/docs/openshift?topic=openshift-icks_map#icks_map_nlb-dns)
-
-* [ibmcloud oc webhook-create](/docs/openshift?topic=openshift-icks_map#icks_map_webhook-create)
-
-* [ibmcloud oc api-key](/docs/openshift?topic=openshift-icks_map#icks_map_api-key)
-
-* [ibmcloud oc credential](/docs/openshift?topic=openshift-icks_map#icks_map_credential)
-
-* [ibmcloud oc infra-permissions](/docs/openshift?topic=openshift-icks_map#icks_map_infra-permissions)
-
-* [ibmcloud oc kms](/docs/openshift?topic=openshift-icks_map#icks_map_kms)
-
-* [ibmcloud oc quota](/docs/openshift?topic=openshift-icks_map#icks_map_quota)
-
-* [ibmcloud oc subnets](/docs/openshift?topic=openshift-icks_map#icks_map_subnets)
-
-* [ibmcloud oc vlan](/docs/openshift?topic=openshift-icks_map#icks_map_vlan)
-
-* [ibmcloud oc vpcs](/docs/openshift?topic=openshift-icks_map#icks_map_vpcs)
-
-* [ibmcloud oc flavors](/docs/openshift?topic=openshift-icks_map#icks_map_flavors)
-
-* [ibmcloud oc locations](/docs/openshift?topic=openshift-icks_map#icks_map_locations)
-
-* [ibmcloud oc messages](/docs/openshift?topic=openshift-icks_map#icks_map_messages)
-
-* [ibmcloud oc versions](/docs/openshift?topic=openshift-icks_map#icks_map_versions)
-
-* [ibmcloud oc api](/docs/openshift?topic=openshift-icks_map#icks_map_api)
-
-* [ibmcloud oc `init`](/docs/openshift?topic=openshift-icks_map#icks_map_init)
-
-* [ibmcloud oc script](/docs/openshift?topic=openshift-icks_map#icks_map_script)
-
-* [ibmcloud oc security-group](/docs/openshift?topic=openshift-icks_map#icks_map_security_group)
-
-* [ibmcloud oc storage](/docs/openshift?topic=openshift-icks_map#icks_map_storage)
-
-[{{site.data.keyword.openshiftlong_notm}} CLI reference](/docs/openshift?topic=openshift-kubernetes-service-cli#kubernetes-service-cli)
-
-* [{{site.data.keyword.openshiftlong_notm}} commands](/docs/openshift?topic=openshift-kubernetes-service-cli#cli_commands)
-
-* [`cluster` commands](/docs/openshift?topic=openshift-kubernetes-service-cli#cluster)
-
-    * [`ibmcloud oc cluster addon disable`](/docs/openshift?topic=openshift-kubernetes-service-cli#cs_cluster_addon_disable)
-
-    * [`ibmcloud oc cluster addon enable`](/docs/openshift?topic=openshift-kubernetes-service-cli#cs_cluster_addon_enable)
-
-    * [`ibmcloud oc cluster addon get`](/docs/openshift?topic=openshift-kubernetes-service-cli#cs_cluster_addon_get)
-
-    * [`ibmcloud oc cluster addon ls`](/docs/openshift?topic=openshift-kubernetes-service-cli#cs_cluster_addons)
-
-    * [`ibmcloud oc cluster addon options`](/docs/openshift?topic=openshift-kubernetes-service-cli#cs_cluster_addon_options)
-
-    * [`ibmcloud oc cluster addon update`](/docs/openshift?topic=openshift-kubernetes-service-cli#cs_cluster_addon_update)
-
-    * [`ibmcloud oc cluster addon versions`](/docs/openshift?topic=openshift-kubernetes-service-cli#cs_addon_versions)
-
-    * [`ibmcloud oc cluster ca create`](/docs/openshift?topic=openshift-kubernetes-service-cli#cs_cluster_ca_create)
-
-    * [`ibmcloud oc cluster ca get`](/docs/openshift?topic=openshift-kubernetes-service-cli#cs_cluster_ca_get)
-
-    * [`ibmcloud oc cluster ca rotate`](/docs/openshift?topic=openshift-kubernetes-service-cli#cs_cluster_ca_rotate)
-
-    * [`ibmcloud oc cluster ca status`](/docs/openshift?topic=openshift-kubernetes-service-cli#cs_cluster_ca_status)
-
-    * [`ibmcloud oc cluster config`](/docs/openshift?topic=openshift-kubernetes-service-cli#cs_cluster_config)
-
-    * [`ibmcloud oc cluster create classic`](/docs/openshift?topic=openshift-kubernetes-service-cli#cs_cluster_create)
-
-    * [`ibmcloud oc cluster create vpc-gen2`](/docs/openshift?topic=openshift-kubernetes-service-cli#cli_cluster-create-vpc-gen2)
-
-    * [`ibmcloud oc cluster get`](/docs/openshift?topic=openshift-kubernetes-service-cli#cs_cluster_get)
-
-    * [`ibmcloud oc cluster image-security disable`](/docs/openshift?topic=openshift-kubernetes-service-cli#cs-image-security-disable)
-
-    * [`ibmcloud oc cluster image-security enable`](/docs/openshift?topic=openshift-kubernetes-service-cli#cs-image-security-enable)
-
-    * [`ibmcloud oc cluster ls`](/docs/openshift?topic=openshift-kubernetes-service-cli#cs_clusters)
-
-* [`ibmcloud oc cluster master console-oauth-access get`](/docs/openshift?topic=openshift-kubernetes-service-cli#cluster-master-console-oauth-access-get-cli)
-
-    * [Command options](/docs/openshift?topic=openshift-kubernetes-service-cli#cluster-master-console-oauth-access-get-options)
-
-* [`ibmcloud oc cluster master console-oauth-access set`](/docs/openshift?topic=openshift-kubernetes-service-cli#cluster-master-console-oauth-access-set-cli)
-
-    * [Command options](/docs/openshift?topic=openshift-kubernetes-service-cli#cluster-master-console-oauth-access-set-options)
-
-    * [`ibmcloud oc cluster master pod-security get`](/docs/openshift?topic=openshift-kubernetes-service-cli#cluster-master-pod-security-get)
-
-    * [`ibmcloud oc cluster master pod-security policy disable`](/docs/openshift?topic=openshift-kubernetes-service-cli#cluster-master-pod-security-policy-disable)
-
-    * [`ibmcloud oc cluster master pod-security policy enable`](/docs/openshift?topic=openshift-kubernetes-service-cli#cluster-master-pod-security-policy-enable)
-
-    * [`ibmcloud oc cluster master pod-security policy get`](/docs/openshift?topic=openshift-kubernetes-service-cli#cluster-master-pod-security-policy-get)
-
-    * [`ibmcloud oc cluster master pod-security set`](/docs/openshift?topic=openshift-kubernetes-service-cli#cluster-master-pod-security-set)
-
-    * [`ibmcloud oc cluster master pod-security unset`](/docs/openshift?topic=openshift-kubernetes-service-cli#cluster-master-pod-security-unset)
-
-    * [`ibmcloud oc cluster master private-service-endpoint allowlist`](/docs/openshift?topic=openshift-kubernetes-service-cli#cs_master_pse_allowlist)
-
-    * [`ibmcloud oc cluster master private-service-endpoint disable`](/docs/openshift?topic=openshift-kubernetes-service-cli#cs_cluster_master_pse_disable)
-
-    * [`ibmcloud oc cluster master private-service-endpoint enable`](/docs/openshift?topic=openshift-kubernetes-service-cli#cs_cluster_master_pse_enable)
-
-    * [`ibmcloud oc cluster master public-service-endpoint enable`](/docs/openshift?topic=openshift-kubernetes-service-cli#cs_cluster_master_pub_se_enable)
-
-    * [`ibmcloud oc cluster master refresh`](/docs/openshift?topic=openshift-kubernetes-service-cli#cs_apiserver_refresh)
-
-    * [`ibmcloud oc cluster master update`](/docs/openshift?topic=openshift-kubernetes-service-cli#cs_cluster_update)
-
-    * [`ibmcloud oc cluster pull-secret apply`](/docs/openshift?topic=openshift-kubernetes-service-cli#cs_cluster_pull_secret_apply)
-
-    * [`ibmcloud oc cluster rm`](/docs/openshift?topic=openshift-kubernetes-service-cli#cs_cluster_rm)
-
-    * [`ibmcloud oc cluster service bind`](/docs/openshift?topic=openshift-kubernetes-service-cli#cs_cluster_service_bind)
-
-    * [`ibmcloud oc cluster service ls`](/docs/openshift?topic=openshift-kubernetes-service-cli#cs_cluster_services)
-
-    * [`ibmcloud oc cluster service unbind`](/docs/openshift?topic=openshift-kubernetes-service-cli#cs_cluster_service_unbind)
-
-    * [`ibmcloud oc cluster subnet add`](/docs/openshift?topic=openshift-kubernetes-service-cli#cs_cluster_subnet_add)
-
-    * [`ibmcloud oc cluster subnet create`](/docs/openshift?topic=openshift-kubernetes-service-cli#cs_cluster_subnet_create)
-
-    * [`ibmcloud oc cluster subnet detach`](/docs/openshift?topic=openshift-kubernetes-service-cli#cs_cluster_subnet_detach)
-
-    * [Deprecated: `ibmcloud oc cluster user-subnet add`](/docs/openshift?topic=openshift-kubernetes-service-cli#cs_cluster_user_subnet_add)
-
-    * [Deprecated: `ibmcloud oc cluster user-subnet rm`](/docs/openshift?topic=openshift-kubernetes-service-cli#cs_cluster_user_subnet_rm)
-
-* [Beta: `dedicated` commands](/docs/openshift?topic=openshift-kubernetes-service-cli#dedicated_commands)
-
-    * [Beta: `ibmcloud oc dedicated flavors`](/docs/openshift?topic=openshift-kubernetes-service-cli#dedicated_flavors)
-
-    * [Beta: `ibmcloud oc dedicated host create`](/docs/openshift?topic=openshift-kubernetes-service-cli#dedicated_host_create)
-
-    * [Beta: `ibmcloud oc dedicated host get`](/docs/openshift?topic=openshift-kubernetes-service-cli#dedicated_host_get)
-
-    * [Beta: `ibmcloud oc dedicated host ls`](/docs/openshift?topic=openshift-kubernetes-service-cli#dedicated_host_ls)
-
-    * [Beta: `ibmcloud oc dedicated host placement disable`](/docs/openshift?topic=openshift-kubernetes-service-cli#dedicated_host_placement_disable)
-
-    * [Beta: `ibmcloud oc dedicated host placement enable`](/docs/openshift?topic=openshift-kubernetes-service-cli#dedicated_host_placement_enable)
-
-    * [Beta: `ibmcloud oc dedicated host rm`](/docs/openshift?topic=openshift-kubernetes-service-cli#dedicated_host_rm)
-
-    * [Beta: `ibmcloud oc dedicated pool create`](/docs/openshift?topic=openshift-kubernetes-service-cli#dedicated_pool_create)
-
-    * [Beta: `ibmcloud oc dedicated pool get`](/docs/openshift?topic=openshift-kubernetes-service-cli#dedicated_pool_get)
-
-    * [Beta: `ibmcloud oc dedicated pool ls`](/docs/openshift?topic=openshift-kubernetes-service-cli#dedicate_pool_ls)
-
-    * [Beta: `ibmcloud oc dedicated pool rm`](/docs/openshift?topic=openshift-kubernetes-service-cli#dedicated_pool_rm)
-
-* [`worker` commands](/docs/openshift?topic=openshift-kubernetes-service-cli#worker_node_commands)
-
-    * [Deprecated: `ibmcloud oc worker add`](/docs/openshift?topic=openshift-kubernetes-service-cli#cs_worker_add)
-
-    * [`ibmcloud oc worker get`](/docs/openshift?topic=openshift-kubernetes-service-cli#cs_worker_get)
-
-    * [`ibmcloud oc worker ls`](/docs/openshift?topic=openshift-kubernetes-service-cli#cs_workers)
-
-    * [`ibmcloud oc worker reboot`](/docs/openshift?topic=openshift-kubernetes-service-cli#cs_worker_reboot)
-
-    * [`ibmcloud oc worker reload`](/docs/openshift?topic=openshift-kubernetes-service-cli#cs_worker_reload)
-
-    * [`ibmcloud oc worker replace`](/docs/openshift?topic=openshift-kubernetes-service-cli#cli_worker_replace)
-
-    * [`ibmcloud oc worker rm`](/docs/openshift?topic=openshift-kubernetes-service-cli#cs_worker_rm)
-
-    * [`ibmcloud oc worker update`](/docs/openshift?topic=openshift-kubernetes-service-cli#cs_worker_update)
-
-* [`worker-pool` commands](/docs/openshift?topic=openshift-kubernetes-service-cli#worker-pool)
-
-    * [`ibmcloud oc worker-pool create classic`](/docs/openshift?topic=openshift-kubernetes-service-cli#cs_worker_pool_create)
-
-    * [`ibmcloud oc worker-pool create vpc-gen2`](/docs/openshift?topic=openshift-kubernetes-service-cli#cli_worker_pool_create_vpc_gen2)
-
-    * [`ibmcloud oc worker-pool get`](/docs/openshift?topic=openshift-kubernetes-service-cli#cs_worker_pool_get)
-
-    * [`ibmcloud oc worker-pool label rm`](/docs/openshift?topic=openshift-kubernetes-service-cli#cs_worker_pool_label_rm)
-
-    * [`ibmcloud oc worker-pool label set`](/docs/openshift?topic=openshift-kubernetes-service-cli#cs_worker_pool_label_set)
-
-    * [`ibmcloud oc worker-pool ls`](/docs/openshift?topic=openshift-kubernetes-service-cli#cs_worker_pools)
-
-    * [`ibmcloud oc worker-pool operating-system set`](/docs/openshift?topic=openshift-kubernetes-service-cli#worker-pool-operating-system-set-cli)
-
-    * [`ibmcloud oc worker-pool rebalance`](/docs/openshift?topic=openshift-kubernetes-service-cli#cs_rebalance)
-
-    * [`ibmcloud oc worker-pool resize`](/docs/openshift?topic=openshift-kubernetes-service-cli#cs_worker_pool_resize)
-
-    * [`ibmcloud oc worker-pool rm`](/docs/openshift?topic=openshift-kubernetes-service-cli#cs_worker_pool_rm)
-
-    * [`ibmcloud oc worker-pool taint`](/docs/openshift?topic=openshift-kubernetes-service-cli#worker_pool_taint)
-
-    * [`ibmcloud oc worker-pool zones`](/docs/openshift?topic=openshift-kubernetes-service-cli#cs_worker_pool_zones)
-
-* [`zone` commands](/docs/openshift?topic=openshift-kubernetes-service-cli#zone)
-
-    * [`ibmcloud oc zone add classic`](/docs/openshift?topic=openshift-kubernetes-service-cli#cs_zone_add)
-
-    * [`ibmcloud oc zone add vpc-gen2`](/docs/openshift?topic=openshift-kubernetes-service-cli#cli_zone-add-vpc-gen2)
-
-    * [`ibmcloud oc zone ls`](/docs/openshift?topic=openshift-kubernetes-service-cli#cs_datacenters)
-
-    * [`ibmcloud oc zone network-set`](/docs/openshift?topic=openshift-kubernetes-service-cli#cs_zone_network_set)
-
-    * [`ibmcloud oc zone rm`](/docs/openshift?topic=openshift-kubernetes-service-cli#cs_zone_rm)
-
-* [`ingress` commands](/docs/openshift?topic=openshift-kubernetes-service-cli#alb-commands)
-
-    * [`ibmcloud oc ingress alb autoscale get`](/docs/openshift?topic=openshift-kubernetes-service-cli#cs_alb_autoscale_get)
-
-    * [`ibmcloud oc ingress alb autoscale set`](/docs/openshift?topic=openshift-kubernetes-service-cli#cs_alb_autoscale_set)
-
-    * [`ibmcloud oc ingress alb autoscale unset`](/docs/openshift?topic=openshift-kubernetes-service-cli#cs_alb_autoscale_unset)
-
-    * [`ibmcloud oc ingress alb autoupdate disable`](/docs/openshift?topic=openshift-kubernetes-service-cli#cs_alb_autoupdate_disable)
-
-    * [`ibmcloud oc ingress alb autoupdate enable`](/docs/openshift?topic=openshift-kubernetes-service-cli#cs_alb_autoupdate_enable)
-
-    * [`ibmcloud oc ingress alb autoupdate get`](/docs/openshift?topic=openshift-kubernetes-service-cli#cs_alb_autoupdate_get)
-
-    * [`ibmcloud oc ingress alb create classic`](/docs/openshift?topic=openshift-kubernetes-service-cli#cs_alb_create)
-
-    * [`ibmcloud oc ingress alb disable`](/docs/openshift?topic=openshift-kubernetes-service-cli#cs_alb_disable)
-
-    * [`ibmcloud oc ingress alb enable classic`](/docs/openshift?topic=openshift-kubernetes-service-cli#cs_alb_configure)
-
-    * [`ibmcloud oc ingress alb get`](/docs/openshift?topic=openshift-kubernetes-service-cli#cs_alb_get)
-
-    * [`ibmcloud oc ingress alb health-checker disable`](/docs/openshift?topic=openshift-kubernetes-service-cli#cs_alb_healthchecker_disable)
-
-    * [`ibmcloud oc ingress alb health-checker enable`](/docs/openshift?topic=openshift-kubernetes-service-cli#cs_alb_healthchecker_enable)
-
-    * [`ibmcloud oc ingress alb health-checker get`](/docs/openshift?topic=openshift-kubernetes-service-cli#cs_alb_healthchecker_get)
-
-    * [`ibmcloud oc ingress alb ls`](/docs/openshift?topic=openshift-kubernetes-service-cli#cs_albs)
-
-    * [`ibmcloud oc ingress alb update`](/docs/openshift?topic=openshift-kubernetes-service-cli#cs_alb_update)
-
-    * [`ibmcloud oc ingress alb versions`](/docs/openshift?topic=openshift-kubernetes-service-cli#cs_alb_versions)
-
-    * [`ibmcloud oc ingress domain create`](/docs/openshift?topic=openshift-kubernetes-service-cli#ingress-domain-create)
-
-    * [`ibmcloud oc ingress domain default replace`](/docs/openshift?topic=openshift-kubernetes-service-cli#ingress-domain-default-replace)
-
-    * [`ibmcloud oc ingress domain get`](/docs/openshift?topic=openshift-kubernetes-service-cli#ingress-domain-get)
-
-    * [`ibmcloud oc ingress domain ls`](/docs/openshift?topic=openshift-kubernetes-service-cli#ingress-domain-ls)
-
-    * [`ibmcloud oc ingress domain rm`](/docs/openshift?topic=openshift-kubernetes-service-cli#ingress-domain-rm)
-
-    * [`ibmcloud oc ingress domain secret regenerate`](/docs/openshift?topic=openshift-kubernetes-service-cli#ingress-domain-secret-regenerate)
-
-    * [`ibmcloud oc ingress domain secret rm`](/docs/openshift?topic=openshift-kubernetes-service-cli#ingress-domain-secret-rm)
-
-    * [`ibmcloud oc ingress domain update`](/docs/openshift?topic=openshift-kubernetes-service-cli#ingress-domain-update)
-
-    * [`ibmcloud oc ingress instance default set`](/docs/openshift?topic=openshift-kubernetes-service-cli#cs_ingress_instance_default_set)
-
-    * [`ibmcloud oc ingress instance default unset`](/docs/openshift?topic=openshift-kubernetes-service-cli#cs_ingress_instance_default_unset)
-
-    * [`ibmcloud oc ingress instance get`](/docs/openshift?topic=openshift-kubernetes-service-cli#cs_ingress_instance_get)
-
-    * [`ibmcloud oc ingress instance ls`](/docs/openshift?topic=openshift-kubernetes-service-cli#cs_ingress_instance_ls)
-
-    * [`ibmcloud oc ingress instance register`](/docs/openshift?topic=openshift-kubernetes-service-cli#cs_ingress_instance_register)
-
-    * [`ibmcloud oc ingress instance unregister`](/docs/openshift?topic=openshift-kubernetes-service-cli#cs_ingress_instance_unregister)
-
-    * [`ibmcloud oc ingress lb get`](/docs/openshift?topic=openshift-kubernetes-service-cli#cs_ingress_lb_proxy-protocol_get)
-
-    * [`ibmcloud oc ingress lb proxy-protocol disable`](/docs/openshift?topic=openshift-kubernetes-service-cli#cs_ingress_lb_proxy-protocol_disable)
-
-    * [`ibmcloud oc ingress lb proxy-protocol enable`](/docs/openshift?topic=openshift-kubernetes-service-cli#cs_ingress_lb_proxy-protocol_enable)
-
-    * [`ibmcloud oc ingress secret create`](/docs/openshift?topic=openshift-kubernetes-service-cli#cs_ingress_secret_create)
-
-    * [`ibmcloud oc ingress secret field add`](/docs/openshift?topic=openshift-kubernetes-service-cli#cs_ingress_secret_field_add)
-
-    * [`ibmcloud oc ingress secret field ls`](/docs/openshift?topic=openshift-kubernetes-service-cli#cs_ingress_secret_field_ls)
-
-    * [`ibmcloud oc ingress secret field rm`](/docs/openshift?topic=openshift-kubernetes-service-cli#cs_ingress_secret_field_rm)
-
-    * [`ibmcloud oc ingress secret get`](/docs/openshift?topic=openshift-kubernetes-service-cli#cs_ingress_secret_get)
-
-    * [`ibmcloud oc ingress secret ls`](/docs/openshift?topic=openshift-kubernetes-service-cli#cs_ingress_secret_ls)
-
-    * [`ibmcloud oc ingress secret rm`](/docs/openshift?topic=openshift-kubernetes-service-cli#cs_ingress_secret_rm)
-
-    * [`ibmcloud oc ingress secret update`](/docs/openshift?topic=openshift-kubernetes-service-cli#cs_ingress_secret_update)
-
-    * [`ibmcloud oc ingress status-report disable`](/docs/openshift?topic=openshift-kubernetes-service-cli#cs_ingress_status_report_disable)
-
-    * [`ibmcloud oc ingress status-report enable`](/docs/openshift?topic=openshift-kubernetes-service-cli#cs_ingress_status_report_enable)
-
-    * [`ibmcloud oc ingress status-report get`](/docs/openshift?topic=openshift-kubernetes-service-cli#cs_ingress_status_report_get)
-
-    * [`ibmcloud oc ingress status-report ignored-errors add`](/docs/openshift?topic=openshift-kubernetes-service-cli#cs_ingress_status_report_add)
-
-    * [`ibmcloud oc ingress status-report ignored-errors ls`](/docs/openshift?topic=openshift-kubernetes-service-cli#cs_ingress_status_report_ignore_ls)
-
-    * [`ibmcloud oc ingress status-report ignored-errors rm`](/docs/openshift?topic=openshift-kubernetes-service-cli#cs_ingress_status_report_ignore_rm)
-
-* [`nlb-dns` commands](/docs/openshift?topic=openshift-kubernetes-service-cli#nlb-dns)
-
-    * [`ibmcloud oc nlb-dns add`](/docs/openshift?topic=openshift-kubernetes-service-cli#cs_nlb-dns-add)
-
-    * [`ibmcloud oc nlb-dns create classic`](/docs/openshift?topic=openshift-kubernetes-service-cli#cs_nlb-dns-create)
-
-    * [`ibmcloud oc nlb-dns create vpc-gen2`](/docs/openshift?topic=openshift-kubernetes-service-cli#cs_nlb-dns-create-vpc-gen2)
-
-    * [`ibmcloud oc nlb-dns get`](/docs/openshift?topic=openshift-kubernetes-service-cli#cs_nlb-dns-get)
-
-    * [`ibmcloud oc nlb-dns ls`](/docs/openshift?topic=openshift-kubernetes-service-cli#cs_nlb-dns-ls)
-
-    * [`ibmcloud oc nlb-dns monitor configure`](/docs/openshift?topic=openshift-kubernetes-service-cli#cs_nlb-dns-monitor-configure)
-
-    * [`ibmcloud oc nlb-dns monitor disable`](/docs/openshift?topic=openshift-kubernetes-service-cli#cs_nlb-dns-monitor-disable)
-
-    * [`ibmcloud oc nlb-dns monitor enable`](/docs/openshift?topic=openshift-kubernetes-service-cli#cs_nlb-dns-monitor-enable)
-
-    * [`ibmcloud oc nlb-dns monitor get`](/docs/openshift?topic=openshift-kubernetes-service-cli#cs_nlb-dns-monitor-get)
-
-    * [`ibmcloud oc nlb-dns monitor ls`](/docs/openshift?topic=openshift-kubernetes-service-cli#cs_nlb-dns-monitor-ls)
-
-    * [`ibmcloud oc nlb-dns replace`](/docs/openshift?topic=openshift-kubernetes-service-cli#cs_nlb-dns-replace)
-
-    * [`ibmcloud oc nlb-dns rm classic`](/docs/openshift?topic=openshift-kubernetes-service-cli#cs_nlb-dns-rm)
-
-    * [`ibmcloud oc nlb-dns rm vpc-gen2`](/docs/openshift?topic=openshift-kubernetes-service-cli#cs_nlb-dns-rm-vpc-gen2)
-
-    * [Experimental: `ibmcloud oc nlb-dns secret regenerate`](/docs/openshift?topic=openshift-kubernetes-service-cli#cs_nlb-dns-secret-regenerate)
-
-    * [Experimental: `ibmcloud oc nlb-dns secret rm`](/docs/openshift?topic=openshift-kubernetes-service-cli#cs_nlb-dns-secret-rm)
-
-* [`ibmcloud oc vpc secure-by-default enable`](/docs/openshift?topic=openshift-kubernetes-service-cli#vpc-secure-by-default-enable-cli)
-
-    * [Command options](/docs/openshift?topic=openshift-kubernetes-service-cli#vpc-secure-by-default-enable-options)
-
-* [`webhook-create` command](/docs/openshift?topic=openshift-kubernetes-service-cli#cs_webhook_create)
-
-    * [Example `webhook-create` command](/docs/openshift?topic=openshift-kubernetes-service-cli#webhook-create-example)
-
-* [`api-key` commands](/docs/openshift?topic=openshift-kubernetes-service-cli#api_key-commands)
-
-    * [`ibmcloud oc api-key info`](/docs/openshift?topic=openshift-kubernetes-service-cli#cs_api_key_info)
-
-    * [`ibmcloud oc api-key reset`](/docs/openshift?topic=openshift-kubernetes-service-cli#cs_api_key_reset)
-
-* [`credential` commands](/docs/openshift?topic=openshift-kubernetes-service-cli#credential)
-
-    * [`ibmcloud oc credential get`](/docs/openshift?topic=openshift-kubernetes-service-cli#cs_credential_get)
-
-    * [`ibmcloud oc credential set classic`](/docs/openshift?topic=openshift-kubernetes-service-cli#cs_credentials_set)
-
-    * [`ibmcloud oc credential unset`](/docs/openshift?topic=openshift-kubernetes-service-cli#cs_credentials_unset)
-
-* [`infra-permissions` commands](/docs/openshift?topic=openshift-kubernetes-service-cli#infra-commands)
-
-    * [`ibmcloud oc infra-permissions get`](/docs/openshift?topic=openshift-kubernetes-service-cli#infra_permissions_get)
-
-* [`kms` commands](/docs/openshift?topic=openshift-kubernetes-service-cli#ks_kms)
-
-    * [`ibmcloud oc kms crk ls`](/docs/openshift?topic=openshift-kubernetes-service-cli#ks_kms_crk_ls)
-
-    * [`ibmcloud oc kms enable`](/docs/openshift?topic=openshift-kubernetes-service-cli#ks_kms_enable)
-
-    * [`ibmcloud oc kms instance ls`](/docs/openshift?topic=openshift-kubernetes-service-cli#ks_kms_instance_ls)
-
-* [`quota` commands](/docs/openshift?topic=openshift-kubernetes-service-cli#cs_quota)
-
-    * [`ibmcloud oc quota ls`](/docs/openshift?topic=openshift-kubernetes-service-cli#cs_quota_ls)
-
-* [`subnets` command](/docs/openshift?topic=openshift-kubernetes-service-cli#cs_subnets)
-
-* [`vlan` commands](/docs/openshift?topic=openshift-kubernetes-service-cli#vlan)
-
-    * [`ibmcloud oc vlan ls`](/docs/openshift?topic=openshift-kubernetes-service-cli#cs_vlans)
-
-    * [`ibmcloud oc vlan spanning get`](/docs/openshift?topic=openshift-kubernetes-service-cli#cs_vlan_spanning_get)
-
-* [`ibmcloud oc vpc ls`](/docs/openshift?topic=openshift-kubernetes-service-cli#vpc-ls-cli)
-
-    * [Command options](/docs/openshift?topic=openshift-kubernetes-service-cli#vpc-ls-options)
-
-* [`ibmcloud oc vpc outbound-traffic-protection disable`](/docs/openshift?topic=openshift-kubernetes-service-cli#vpc-outbound-traffic-protection-disable-cli)
-
-    * [Command options](/docs/openshift?topic=openshift-kubernetes-service-cli#vpc-outbound-traffic-protection-disable-options)
-
-* [`ibmcloud oc vpc outbound-traffic-protection enable`](/docs/openshift?topic=openshift-kubernetes-service-cli#vpc-outbound-traffic-protection-enable-cli)
-
-    * [Command options](/docs/openshift?topic=openshift-kubernetes-service-cli#vpc-outbound-traffic-protection-enable-options)
-
-* [`flavor` command](/docs/openshift?topic=openshift-kubernetes-service-cli#cs_machine_types)
-
-    * [`flavor get` command](/docs/openshift?topic=openshift-kubernetes-service-cli#cs_flavor_get)
-
-    * [`flavor ls` command](/docs/openshift?topic=openshift-kubernetes-service-cli#cs_flavor_ls)
-
-* [`messages` command](/docs/openshift?topic=openshift-kubernetes-service-cli#cs_messages)
-
-* [locations command](/docs/openshift?topic=openshift-kubernetes-service-cli#cs_supported-locations)
-
-* [`versions` command](/docs/openshift?topic=openshift-kubernetes-service-cli#cs_versions_command)
-
-* [`api` command](/docs/openshift?topic=openshift-kubernetes-service-cli#cs_cli_api)
-
-* [`init` command](/docs/openshift?topic=openshift-kubernetes-service-cli#cs_init)
-
-* [`script` commands](/docs/openshift?topic=openshift-kubernetes-service-cli#script)
-
-    * [`ibmcloud oc script update`](/docs/openshift?topic=openshift-kubernetes-service-cli#script_update)
-
-* [`security-group` commands](/docs/openshift?topic=openshift-kubernetes-service-cli#security_group)
-
-* [`ibmcloud oc security-group ls`](/docs/openshift?topic=openshift-kubernetes-service-cli#security-group-ls-cli)
-
-    * [Command options](/docs/openshift?topic=openshift-kubernetes-service-cli#security-group-ls-options)
-
-    * [`ibmcloud oc security-group reset`](/docs/openshift?topic=openshift-kubernetes-service-cli#security_group_reset)
-
-    * [`ibmcloud oc security-group sync`](/docs/openshift?topic=openshift-kubernetes-service-cli#security_group_sync)
-
-* [Beta: `storage` commands](/docs/openshift?topic=openshift-kubernetes-service-cli#cs_storage)
-
-    * [`ibmcloud oc storage attachment create`](/docs/openshift?topic=openshift-kubernetes-service-cli#cs_storage_att_cr)
-
-    * [`ibmcloud oc storage attachment get`](/docs/openshift?topic=openshift-kubernetes-service-cli#cs_storage_att_get)
-
-    * [`ibmcloud oc storage attachment ls`](/docs/openshift?topic=openshift-kubernetes-service-cli#cs_storage_att_ls)
-
-    * [`ibmcloud oc storage attachment rm`](/docs/openshift?topic=openshift-kubernetes-service-cli#cs_storage_att_rm)
-
-    * [`ibmcloud oc storage volume get`](/docs/openshift?topic=openshift-kubernetes-service-cli#cs_storage_att_ls_c)
-
-    * [`ibmcloud oc storage volume ls`](/docs/openshift?topic=openshift-kubernetes-service-cli#cs_storage_att_ls_2)
-
-* [{{site.data.keyword.satelliteshort}} commands](/docs/openshift?topic=openshift-kubernetes-service-cli#sat_commands)
-
-    * [`ibmcloud oc cluster create satellite`](/docs/openshift?topic=openshift-kubernetes-service-cli#cli_cluster-create-satellite)
-
-    * [`ibmcloud oc cluster master satellite-service-endpoint allowlist add`](/docs/openshift?topic=openshift-kubernetes-service-cli#cluster-master-sat-allowlist-add)
-
-    * [`ibmcloud oc cluster master satellite-service-endpoint allowlist disable`](/docs/openshift?topic=openshift-kubernetes-service-cli#cluster-master-sat-allowlist-disable)
-
-    * [`ibmcloud oc cluster master satellite-service-endpoint allowlist enable`](/docs/openshift?topic=openshift-kubernetes-service-cli#cluster-master-sat-allowlist-enable)
-
-    * [`ibmcloud oc cluster master satellite-service-endpoint allowlist get`](/docs/openshift?topic=openshift-kubernetes-service-cli#cluster-master-sat-allowlist-get)
-
-    * [`ibmcloud oc cluster master satellite-service-endpoint allowlist remove`](/docs/openshift?topic=openshift-kubernetes-service-cli#cluster-master-sat-allowlist-remove)
-
-    * [`ibmcloud oc worker-pool create satellite`](/docs/openshift?topic=openshift-kubernetes-service-cli#cs_worker_pool_create_sat)
-
-    * [`ibmcloud oc zone add satellite`](/docs/openshift?topic=openshift-kubernetes-service-cli#cs_zone_add_sat)
-
-[CLI change log](/docs/openshift?topic=openshift-cs_cli_changelog#cs_cli_changelog)
-
-* [Version 1.0](/docs/openshift?topic=openshift-cs_cli_changelog#10)
-
-* [Version v1.0.687](/docs/openshift?topic=openshift-cs_cli_changelog#cli-010687)
-
-* [Version v1.0.679](/docs/openshift?topic=openshift-cs_cli_changelog#cli-010679)
-
-* [Version v1.0.677](/docs/openshift?topic=openshift-cs_cli_changelog#cli-010677)
-
-* [Version v1.0.674](/docs/openshift?topic=openshift-cs_cli_changelog#cli-010674)
-
-* [Version v1.0.673](/docs/openshift?topic=openshift-cs_cli_changelog#cli-010673)
-
-* [Version v1.0.665](/docs/openshift?topic=openshift-cs_cli_changelog#cli-010665)
-
-* [Version v1.0.657](/docs/openshift?topic=openshift-cs_cli_changelog#cli-010657)
-
-* [Version v1.0.652](/docs/openshift?topic=openshift-cs_cli_changelog#cli-010652)
-
-* [Version v1.0.640](/docs/openshift?topic=openshift-cs_cli_changelog#cli-010640)
-
-* [Version v1.0.638](/docs/openshift?topic=openshift-cs_cli_changelog#cli-010638)
-
-* [Version v1.0.635](/docs/openshift?topic=openshift-cs_cli_changelog#cli-010635)
-
-* [Version v1.0.632](/docs/openshift?topic=openshift-cs_cli_changelog#cli-010632)
-
-* [Version v1.0.630](/docs/openshift?topic=openshift-cs_cli_changelog#cli-010630)
-
-* [Version v1.0.628](/docs/openshift?topic=openshift-cs_cli_changelog#cli-010628)
-
-* [Version v1.0.618](/docs/openshift?topic=openshift-cs_cli_changelog#cli-010618)
-
-* [Version v1.0.617](/docs/openshift?topic=openshift-cs_cli_changelog#cli-010617)
-
-* [Version v1.0.613](/docs/openshift?topic=openshift-cs_cli_changelog#cli-010613)
-
-* [Version v1.0.601](/docs/openshift?topic=openshift-cs_cli_changelog#cli-010601)
-
-* [Version v1.0.597](/docs/openshift?topic=openshift-cs_cli_changelog#cli-01597)
-
-* [Version v1.0.595](/docs/openshift?topic=openshift-cs_cli_changelog#cli-01959)
-
-* [Version v1.0.589](/docs/openshift?topic=openshift-cs_cli_changelog#cli-01589)
-
-* [Version v1.0.579](/docs/openshift?topic=openshift-cs_cli_changelog#cli-01579)
-
-* [Version 0.1.573](/docs/openshift?topic=openshift-cs_cli_changelog#cli-01573)
-
-* [Version v1.0.566](/docs/openshift?topic=openshift-cs_cli_changelog#cli-10566)
-
-* [Version v1.0.540](/docs/openshift?topic=openshift-cs_cli_changelog#cli-10549)
-
-* [Version v1.0.528](/docs/openshift?topic=openshift-cs_cli_changelog#cli-10528)
-
-* [Version v1.0.523](/docs/openshift?topic=openshift-cs_cli_changelog#cli-10523)
-
-* [Version v1.0.516](/docs/openshift?topic=openshift-cs_cli_changelog#cli-10516)
-
-* [Version v1.0.510](/docs/openshift?topic=openshift-cs_cli_changelog#cli-10510)
-
-* [Version v1.0.498](/docs/openshift?topic=openshift-cs_cli_changelog#cli-10498)
-
-* [Version 1.0.489](/docs/openshift?topic=openshift-cs_cli_changelog#cli-10489)
-
-* [Version 1.0.487](/docs/openshift?topic=openshift-cs_cli_changelog#cli-10487)
-
-* [Version 1.0.480](/docs/openshift?topic=openshift-cs_cli_changelog#cli-10480)
-
-* [Version 1.0.471](/docs/openshift?topic=openshift-cs_cli_changelog#cli-10471)
-
-* [Version 1.0.459](/docs/openshift?topic=openshift-cs_cli_changelog#cli-10459)
-
-* [Version 1.0.454](/docs/openshift?topic=openshift-cs_cli_changelog#cli-10454)
-
-* [Version 1.0.452](/docs/openshift?topic=openshift-cs_cli_changelog#cli-10452)
-
-* [Version 1.0.446](/docs/openshift?topic=openshift-cs_cli_changelog#cli-10446)
-
-* [Version 1.0.444](/docs/openshift?topic=openshift-cs_cli_changelog#cli-10444)
-
-* [Version 1.0.439](/docs/openshift?topic=openshift-cs_cli_changelog#cli-10439)
-
-* [Version 1.0.433](/docs/openshift?topic=openshift-cs_cli_changelog#cli-10433)
-
-* [Version 1.0.431](/docs/openshift?topic=openshift-cs_cli_changelog#cli-10431)
-
-* [Version 1.0.430](/docs/openshift?topic=openshift-cs_cli_changelog#cli-10430)
-
-* [Version 1.0.426](/docs/openshift?topic=openshift-cs_cli_changelog#cli-10426)
-
-* [Version 1.0.422](/docs/openshift?topic=openshift-cs_cli_changelog#cli-10422)
-
-* [Version 1.0.420](/docs/openshift?topic=openshift-cs_cli_changelog#cli-10420)
-
-* [Version 1.0.419](/docs/openshift?topic=openshift-cs_cli_changelog#cli-10419)
-
-* [Version 1.0.415](/docs/openshift?topic=openshift-cs_cli_changelog#cli-10415)
-
-* [Version 1.0.408](/docs/openshift?topic=openshift-cs_cli_changelog#cli-10408)
-
-* [Version 1.0.404](/docs/openshift?topic=openshift-cs_cli_changelog#cli-10404)
-
-* [Version 1.0.403](/docs/openshift?topic=openshift-cs_cli_changelog#cli-10403)
-
-* [Version 1.0.394](/docs/openshift?topic=openshift-cs_cli_changelog#cli-10394)
-
-* [Version 1.0.384](/docs/openshift?topic=openshift-cs_cli_changelog#cli-10384)
-
-* [Version 1.0.374](/docs/openshift?topic=openshift-cs_cli_changelog#cli-10374)
-
-* [Version 1.0.372](/docs/openshift?topic=openshift-cs_cli_changelog#cli-10372)
-
-* [Version 1.0.353](/docs/openshift?topic=openshift-cs_cli_changelog#cli-10353)
-
-* [Version 1.0.347](/docs/openshift?topic=openshift-cs_cli_changelog#cli-10347)
-
-* [Version 1.0.344](/docs/openshift?topic=openshift-cs_cli_changelog#cli-10344)
-
-* [Version 1.0.334](/docs/openshift?topic=openshift-cs_cli_changelog#cli-10334)
-
-* [Version 1.0.331](/docs/openshift?topic=openshift-cs_cli_changelog#cli-10331)
-
-* [Version 1.0.327](/docs/openshift?topic=openshift-cs_cli_changelog#cli-10327)
-
-* [Version 1.0.312](/docs/openshift?topic=openshift-cs_cli_changelog#cli-10312)
-
-* [Version 1.0.300](/docs/openshift?topic=openshift-cs_cli_changelog#cli-10300)
-
-* [Version 1.0.295](/docs/openshift?topic=openshift-cs_cli_changelog#cli-10295)
-
-* [Version 1.0.275](/docs/openshift?topic=openshift-cs_cli_changelog#cli-10275)
-
-* [Version 1.0.258](/docs/openshift?topic=openshift-cs_cli_changelog#cli-10258)
-
-* [Version 1.0.233](/docs/openshift?topic=openshift-cs_cli_changelog#cli-10233)
-
-* [Version 1.0.231](/docs/openshift?topic=openshift-cs_cli_changelog#cli-10231)
-
-* [Version 1.0.223](/docs/openshift?topic=openshift-cs_cli_changelog#cli-102238)
-
-* [Version 1.0.208](/docs/openshift?topic=openshift-cs_cli_changelog#cli-10208)
-
-* [Version 1.0.206](/docs/openshift?topic=openshift-cs_cli_changelog#cli-10206)
-
-* [Version 1.0.197](/docs/openshift?topic=openshift-cs_cli_changelog#cli-10197)
-
-* [Version 1.0.178](/docs/openshift?topic=openshift-cs_cli_changelog#cli-10178)
-
-* [Version 1.0.171](/docs/openshift?topic=openshift-cs_cli_changelog#cli-10171)
-
-* [Version 1.0.157](/docs/openshift?topic=openshift-cs_cli_changelog#cli-10157)
-
-* [Version 1.0.143](/docs/openshift?topic=openshift-cs_cli_changelog#cli-10143)
-
-* [Version 1.0.118](/docs/openshift?topic=openshift-cs_cli_changelog#cli-10118)
-
-* [Version 1.0.99](/docs/openshift?topic=openshift-cs_cli_changelog#cli-1099)
-
-* [Version 1.0.94](/docs/openshift?topic=openshift-cs_cli_changelog#cli-1094)
-
-* [Version 1.0.84](/docs/openshift?topic=openshift-cs_cli_changelog#cli-1084)
-
-* [Version 1.0.57](/docs/openshift?topic=openshift-cs_cli_changelog#cli-1057)
-
-* [Version 1.0.28](/docs/openshift?topic=openshift-cs_cli_changelog#cli-1028)
-
-* [Version 1.0.15](/docs/openshift?topic=openshift-cs_cli_changelog#cli-1015)
-
-* [Version 1.0.0](/docs/openshift?topic=openshift-cs_cli_changelog#cli-100)
-
-[Observability CLI plug-in](/docs/openshift?topic=openshift-observability_cli#observability_cli)
-
-* [Logging commands](/docs/openshift?topic=openshift-observability_cli#logging-commands)
-
-    * [`ibmcloud ob logging agent discover`](/docs/openshift?topic=openshift-observability_cli#logging_agent_discover)
-
-    * [`ibmcloud ob logging config create`](/docs/openshift?topic=openshift-observability_cli#logging_config_create)
-
-    * [`ibmcloud ob logging config delete`](/docs/openshift?topic=openshift-observability_cli#logging_config_delete)
-
-    * [`ibmcloud ob logging config list`](/docs/openshift?topic=openshift-observability_cli#logging_config_list)
-
-    * [`ibmcloud ob logging config enable public-endpoint|private-endpoint`](/docs/openshift?topic=openshift-observability_cli#logging_config_enable)
-
-    * [`ibmcloud ob logging config replace`](/docs/openshift?topic=openshift-observability_cli#logging_config_replace)
-
-    * [`ibmcloud ob logging config show`](/docs/openshift?topic=openshift-observability_cli#logging_config_show)
-
-* [Monitoring commands](/docs/openshift?topic=openshift-observability_cli#monitoring_commands_top)
-
-    * [`ibmcloud ob monitoring agent discover`](/docs/openshift?topic=openshift-observability_cli#monitoring_agent_discover)
-
-    * [`ibmcloud ob monitoring config create`](/docs/openshift?topic=openshift-observability_cli#monitoring_config_create)
-
-    * [`ibmcloud ob monitoring config delete`](/docs/openshift?topic=openshift-observability_cli#monitoring_config_delete)
-
-    * [`ibmcloud ob monitoring config list`](/docs/openshift?topic=openshift-observability_cli#monitoring_config_list)
-
-    * [`ibmcloud ob monitoring config enable public-endpoint|private-endpoint`](/docs/openshift?topic=openshift-observability_cli#monitoring_config_enable)
-
-    * [`ibmcloud ob monitoring config replace`](/docs/openshift?topic=openshift-observability_cli#monitoring_config_replace)
-
-    * [`ibmcloud ob monitoring config show`](/docs/openshift?topic=openshift-observability_cli#monitoring_config_show)
-
-
 ## Version history
 {: #sitemap_version_history}
 
@@ -7066,6 +6360,598 @@ subcollection: openshift
 * [{{site.data.keyword.IBM_notm}} Remediations and explanations](/docs/openshift?topic=openshift-benchmarks_412_co#co-benchmark-412-remdiations)
 
 
+## CLI plug-in reference
+{: #sitemap_cli_plug-in_reference}
+
+
+[{{site.data.keyword.openshiftlong_notm}} CLI Map](/docs/openshift?topic=openshift-icks_map#icks_map)
+
+* [ibmcloud oc cluster](/docs/openshift?topic=openshift-icks_map#icks_map_cluster)
+
+* [ibmcloud oc worker](/docs/openshift?topic=openshift-icks_map#icks_map_worker)
+
+* [ibmcloud oc worker-pool](/docs/openshift?topic=openshift-icks_map#icks_map_worker-pool)
+
+* [ibmcloud oc zone](/docs/openshift?topic=openshift-icks_map#icks_map_zone)
+
+* [ibmcloud oc ingress](/docs/openshift?topic=openshift-icks_map#icks_map_ingress)
+
+* [ibmcloud oc logging](/docs/openshift?topic=openshift-icks_map#icks_map_logging)
+
+* [ibmcloud oc nlb-dns](/docs/openshift?topic=openshift-icks_map#icks_map_nlb-dns)
+
+* [ibmcloud oc webhook-create](/docs/openshift?topic=openshift-icks_map#icks_map_webhook-create)
+
+* [ibmcloud oc api-key](/docs/openshift?topic=openshift-icks_map#icks_map_api-key)
+
+* [ibmcloud oc credential](/docs/openshift?topic=openshift-icks_map#icks_map_credential)
+
+* [ibmcloud oc infra-permissions](/docs/openshift?topic=openshift-icks_map#icks_map_infra-permissions)
+
+* [ibmcloud oc kms](/docs/openshift?topic=openshift-icks_map#icks_map_kms)
+
+* [ibmcloud oc quota](/docs/openshift?topic=openshift-icks_map#icks_map_quota)
+
+* [ibmcloud oc subnets](/docs/openshift?topic=openshift-icks_map#icks_map_subnets)
+
+* [ibmcloud oc vlan](/docs/openshift?topic=openshift-icks_map#icks_map_vlan)
+
+* [ibmcloud oc vpcs](/docs/openshift?topic=openshift-icks_map#icks_map_vpcs)
+
+* [ibmcloud oc flavors](/docs/openshift?topic=openshift-icks_map#icks_map_flavors)
+
+* [ibmcloud oc locations](/docs/openshift?topic=openshift-icks_map#icks_map_locations)
+
+* [ibmcloud oc messages](/docs/openshift?topic=openshift-icks_map#icks_map_messages)
+
+* [ibmcloud oc versions](/docs/openshift?topic=openshift-icks_map#icks_map_versions)
+
+* [ibmcloud oc api](/docs/openshift?topic=openshift-icks_map#icks_map_api)
+
+* [ibmcloud oc `init`](/docs/openshift?topic=openshift-icks_map#icks_map_init)
+
+* [ibmcloud oc script](/docs/openshift?topic=openshift-icks_map#icks_map_script)
+
+* [ibmcloud oc security-group](/docs/openshift?topic=openshift-icks_map#icks_map_security_group)
+
+* [ibmcloud oc storage](/docs/openshift?topic=openshift-icks_map#icks_map_storage)
+
+[{{site.data.keyword.openshiftlong_notm}} CLI reference](/docs/openshift?topic=openshift-kubernetes-service-cli#kubernetes-service-cli)
+
+* [{{site.data.keyword.openshiftlong_notm}} commands](/docs/openshift?topic=openshift-kubernetes-service-cli#cli_commands)
+
+* [`cluster` commands](/docs/openshift?topic=openshift-kubernetes-service-cli#cluster)
+
+    * [`ibmcloud oc cluster addon disable`](/docs/openshift?topic=openshift-kubernetes-service-cli#cs_cluster_addon_disable)
+
+    * [`ibmcloud oc cluster addon enable`](/docs/openshift?topic=openshift-kubernetes-service-cli#cs_cluster_addon_enable)
+
+    * [`ibmcloud oc cluster addon get`](/docs/openshift?topic=openshift-kubernetes-service-cli#cs_cluster_addon_get)
+
+    * [`ibmcloud oc cluster addon ls`](/docs/openshift?topic=openshift-kubernetes-service-cli#cs_cluster_addons)
+
+    * [`ibmcloud oc cluster addon options`](/docs/openshift?topic=openshift-kubernetes-service-cli#cs_cluster_addon_options)
+
+    * [`ibmcloud oc cluster addon update`](/docs/openshift?topic=openshift-kubernetes-service-cli#cs_cluster_addon_update)
+
+    * [`ibmcloud oc cluster addon versions`](/docs/openshift?topic=openshift-kubernetes-service-cli#cs_addon_versions)
+
+    * [`ibmcloud oc cluster ca create`](/docs/openshift?topic=openshift-kubernetes-service-cli#cs_cluster_ca_create)
+
+    * [`ibmcloud oc cluster ca get`](/docs/openshift?topic=openshift-kubernetes-service-cli#cs_cluster_ca_get)
+
+    * [`ibmcloud oc cluster ca rotate`](/docs/openshift?topic=openshift-kubernetes-service-cli#cs_cluster_ca_rotate)
+
+    * [`ibmcloud oc cluster ca status`](/docs/openshift?topic=openshift-kubernetes-service-cli#cs_cluster_ca_status)
+
+    * [`ibmcloud oc cluster config`](/docs/openshift?topic=openshift-kubernetes-service-cli#cs_cluster_config)
+
+    * [`ibmcloud oc cluster create classic`](/docs/openshift?topic=openshift-kubernetes-service-cli#cs_cluster_create)
+
+    * [`ibmcloud oc cluster create vpc-gen2`](/docs/openshift?topic=openshift-kubernetes-service-cli#cli_cluster-create-vpc-gen2)
+
+    * [`ibmcloud oc cluster get`](/docs/openshift?topic=openshift-kubernetes-service-cli#cs_cluster_get)
+
+    * [`ibmcloud oc cluster image-security disable`](/docs/openshift?topic=openshift-kubernetes-service-cli#cs-image-security-disable)
+
+    * [`ibmcloud oc cluster image-security enable`](/docs/openshift?topic=openshift-kubernetes-service-cli#cs-image-security-enable)
+
+    * [`ibmcloud oc cluster ls`](/docs/openshift?topic=openshift-kubernetes-service-cli#cs_clusters)
+
+* [`ibmcloud oc cluster master console-oauth-access get`](/docs/openshift?topic=openshift-kubernetes-service-cli#cluster-master-console-oauth-access-get-cli)
+
+    * [Command options](/docs/openshift?topic=openshift-kubernetes-service-cli#cluster-master-console-oauth-access-get-options)
+
+* [`ibmcloud oc cluster master console-oauth-access set`](/docs/openshift?topic=openshift-kubernetes-service-cli#cluster-master-console-oauth-access-set-cli)
+
+    * [Command options](/docs/openshift?topic=openshift-kubernetes-service-cli#cluster-master-console-oauth-access-set-options)
+
+    * [`ibmcloud oc cluster master pod-security get`](/docs/openshift?topic=openshift-kubernetes-service-cli#cluster-master-pod-security-get)
+
+    * [`ibmcloud oc cluster master pod-security policy disable`](/docs/openshift?topic=openshift-kubernetes-service-cli#cluster-master-pod-security-policy-disable)
+
+    * [`ibmcloud oc cluster master pod-security policy enable`](/docs/openshift?topic=openshift-kubernetes-service-cli#cluster-master-pod-security-policy-enable)
+
+    * [`ibmcloud oc cluster master pod-security policy get`](/docs/openshift?topic=openshift-kubernetes-service-cli#cluster-master-pod-security-policy-get)
+
+    * [`ibmcloud oc cluster master pod-security set`](/docs/openshift?topic=openshift-kubernetes-service-cli#cluster-master-pod-security-set)
+
+    * [`ibmcloud oc cluster master pod-security unset`](/docs/openshift?topic=openshift-kubernetes-service-cli#cluster-master-pod-security-unset)
+
+    * [`ibmcloud oc cluster master private-service-endpoint allowlist`](/docs/openshift?topic=openshift-kubernetes-service-cli#cs_master_pse_allowlist)
+
+    * [`ibmcloud oc cluster master private-service-endpoint disable`](/docs/openshift?topic=openshift-kubernetes-service-cli#cs_cluster_master_pse_disable)
+
+    * [`ibmcloud oc cluster master private-service-endpoint enable`](/docs/openshift?topic=openshift-kubernetes-service-cli#cs_cluster_master_pse_enable)
+
+    * [`ibmcloud oc cluster master public-service-endpoint enable`](/docs/openshift?topic=openshift-kubernetes-service-cli#cs_cluster_master_pub_se_enable)
+
+    * [`ibmcloud oc cluster master refresh`](/docs/openshift?topic=openshift-kubernetes-service-cli#cs_apiserver_refresh)
+
+    * [`ibmcloud oc cluster master update`](/docs/openshift?topic=openshift-kubernetes-service-cli#cs_cluster_update)
+
+    * [`ibmcloud oc cluster pull-secret apply`](/docs/openshift?topic=openshift-kubernetes-service-cli#cs_cluster_pull_secret_apply)
+
+    * [`ibmcloud oc cluster rm`](/docs/openshift?topic=openshift-kubernetes-service-cli#cs_cluster_rm)
+
+    * [`ibmcloud oc cluster service bind`](/docs/openshift?topic=openshift-kubernetes-service-cli#cs_cluster_service_bind)
+
+    * [`ibmcloud oc cluster service ls`](/docs/openshift?topic=openshift-kubernetes-service-cli#cs_cluster_services)
+
+    * [`ibmcloud oc cluster service unbind`](/docs/openshift?topic=openshift-kubernetes-service-cli#cs_cluster_service_unbind)
+
+    * [`ibmcloud oc cluster subnet add`](/docs/openshift?topic=openshift-kubernetes-service-cli#cs_cluster_subnet_add)
+
+    * [`ibmcloud oc cluster subnet create`](/docs/openshift?topic=openshift-kubernetes-service-cli#cs_cluster_subnet_create)
+
+    * [`ibmcloud oc cluster subnet detach`](/docs/openshift?topic=openshift-kubernetes-service-cli#cs_cluster_subnet_detach)
+
+    * [Deprecated: `ibmcloud oc cluster user-subnet add`](/docs/openshift?topic=openshift-kubernetes-service-cli#cs_cluster_user_subnet_add)
+
+    * [Deprecated: `ibmcloud oc cluster user-subnet rm`](/docs/openshift?topic=openshift-kubernetes-service-cli#cs_cluster_user_subnet_rm)
+
+* [Beta: `dedicated` commands](/docs/openshift?topic=openshift-kubernetes-service-cli#dedicated_commands)
+
+    * [Beta: `ibmcloud oc dedicated flavors`](/docs/openshift?topic=openshift-kubernetes-service-cli#dedicated_flavors)
+
+    * [Beta: `ibmcloud oc dedicated host create`](/docs/openshift?topic=openshift-kubernetes-service-cli#dedicated_host_create)
+
+    * [Beta: `ibmcloud oc dedicated host get`](/docs/openshift?topic=openshift-kubernetes-service-cli#dedicated_host_get)
+
+    * [Beta: `ibmcloud oc dedicated host ls`](/docs/openshift?topic=openshift-kubernetes-service-cli#dedicated_host_ls)
+
+    * [Beta: `ibmcloud oc dedicated host placement disable`](/docs/openshift?topic=openshift-kubernetes-service-cli#dedicated_host_placement_disable)
+
+    * [Beta: `ibmcloud oc dedicated host placement enable`](/docs/openshift?topic=openshift-kubernetes-service-cli#dedicated_host_placement_enable)
+
+    * [Beta: `ibmcloud oc dedicated host rm`](/docs/openshift?topic=openshift-kubernetes-service-cli#dedicated_host_rm)
+
+    * [Beta: `ibmcloud oc dedicated pool create`](/docs/openshift?topic=openshift-kubernetes-service-cli#dedicated_pool_create)
+
+    * [Beta: `ibmcloud oc dedicated pool get`](/docs/openshift?topic=openshift-kubernetes-service-cli#dedicated_pool_get)
+
+    * [Beta: `ibmcloud oc dedicated pool ls`](/docs/openshift?topic=openshift-kubernetes-service-cli#dedicate_pool_ls)
+
+    * [Beta: `ibmcloud oc dedicated pool rm`](/docs/openshift?topic=openshift-kubernetes-service-cli#dedicated_pool_rm)
+
+* [`worker` commands](/docs/openshift?topic=openshift-kubernetes-service-cli#worker_node_commands)
+
+    * [Deprecated: `ibmcloud oc worker add`](/docs/openshift?topic=openshift-kubernetes-service-cli#cs_worker_add)
+
+    * [`ibmcloud oc worker get`](/docs/openshift?topic=openshift-kubernetes-service-cli#cs_worker_get)
+
+    * [`ibmcloud oc worker ls`](/docs/openshift?topic=openshift-kubernetes-service-cli#cs_workers)
+
+    * [`ibmcloud oc worker reboot`](/docs/openshift?topic=openshift-kubernetes-service-cli#cs_worker_reboot)
+
+    * [`ibmcloud oc worker reload`](/docs/openshift?topic=openshift-kubernetes-service-cli#cs_worker_reload)
+
+    * [`ibmcloud oc worker replace`](/docs/openshift?topic=openshift-kubernetes-service-cli#cli_worker_replace)
+
+    * [`ibmcloud oc worker rm`](/docs/openshift?topic=openshift-kubernetes-service-cli#cs_worker_rm)
+
+    * [`ibmcloud oc worker update`](/docs/openshift?topic=openshift-kubernetes-service-cli#cs_worker_update)
+
+* [`worker-pool` commands](/docs/openshift?topic=openshift-kubernetes-service-cli#worker-pool)
+
+    * [`ibmcloud oc worker-pool create classic`](/docs/openshift?topic=openshift-kubernetes-service-cli#cs_worker_pool_create)
+
+    * [`ibmcloud oc worker-pool create vpc-gen2`](/docs/openshift?topic=openshift-kubernetes-service-cli#cli_worker_pool_create_vpc_gen2)
+
+    * [`ibmcloud oc worker-pool get`](/docs/openshift?topic=openshift-kubernetes-service-cli#cs_worker_pool_get)
+
+    * [`ibmcloud oc worker-pool label rm`](/docs/openshift?topic=openshift-kubernetes-service-cli#cs_worker_pool_label_rm)
+
+    * [`ibmcloud oc worker-pool label set`](/docs/openshift?topic=openshift-kubernetes-service-cli#cs_worker_pool_label_set)
+
+    * [`ibmcloud oc worker-pool ls`](/docs/openshift?topic=openshift-kubernetes-service-cli#cs_worker_pools)
+
+    * [`ibmcloud oc worker-pool operating-system set`](/docs/openshift?topic=openshift-kubernetes-service-cli#worker-pool-operating-system-set-cli)
+
+    * [`ibmcloud oc worker-pool rebalance`](/docs/openshift?topic=openshift-kubernetes-service-cli#cs_rebalance)
+
+    * [`ibmcloud oc worker-pool resize`](/docs/openshift?topic=openshift-kubernetes-service-cli#cs_worker_pool_resize)
+
+    * [`ibmcloud oc worker-pool rm`](/docs/openshift?topic=openshift-kubernetes-service-cli#cs_worker_pool_rm)
+
+    * [`ibmcloud oc worker-pool taint`](/docs/openshift?topic=openshift-kubernetes-service-cli#worker_pool_taint)
+
+    * [`ibmcloud oc worker-pool zones`](/docs/openshift?topic=openshift-kubernetes-service-cli#cs_worker_pool_zones)
+
+* [`zone` commands](/docs/openshift?topic=openshift-kubernetes-service-cli#zone)
+
+    * [`ibmcloud oc zone add classic`](/docs/openshift?topic=openshift-kubernetes-service-cli#cs_zone_add)
+
+    * [`ibmcloud oc zone add vpc-gen2`](/docs/openshift?topic=openshift-kubernetes-service-cli#cli_zone-add-vpc-gen2)
+
+    * [`ibmcloud oc zone ls`](/docs/openshift?topic=openshift-kubernetes-service-cli#cs_datacenters)
+
+    * [`ibmcloud oc zone network-set`](/docs/openshift?topic=openshift-kubernetes-service-cli#cs_zone_network_set)
+
+    * [`ibmcloud oc zone rm`](/docs/openshift?topic=openshift-kubernetes-service-cli#cs_zone_rm)
+
+* [`ingress` commands](/docs/openshift?topic=openshift-kubernetes-service-cli#alb-commands)
+
+    * [`ibmcloud oc ingress alb autoscale get`](/docs/openshift?topic=openshift-kubernetes-service-cli#cs_alb_autoscale_get)
+
+    * [`ibmcloud oc ingress alb autoscale set`](/docs/openshift?topic=openshift-kubernetes-service-cli#cs_alb_autoscale_set)
+
+    * [`ibmcloud oc ingress alb autoscale unset`](/docs/openshift?topic=openshift-kubernetes-service-cli#cs_alb_autoscale_unset)
+
+    * [`ibmcloud oc ingress alb autoupdate disable`](/docs/openshift?topic=openshift-kubernetes-service-cli#cs_alb_autoupdate_disable)
+
+    * [`ibmcloud oc ingress alb autoupdate enable`](/docs/openshift?topic=openshift-kubernetes-service-cli#cs_alb_autoupdate_enable)
+
+    * [`ibmcloud oc ingress alb autoupdate get`](/docs/openshift?topic=openshift-kubernetes-service-cli#cs_alb_autoupdate_get)
+
+    * [`ibmcloud oc ingress alb create classic`](/docs/openshift?topic=openshift-kubernetes-service-cli#cs_alb_create)
+
+    * [`ibmcloud oc ingress alb disable`](/docs/openshift?topic=openshift-kubernetes-service-cli#cs_alb_disable)
+
+    * [`ibmcloud oc ingress alb enable classic`](/docs/openshift?topic=openshift-kubernetes-service-cli#cs_alb_configure)
+
+    * [`ibmcloud oc ingress alb get`](/docs/openshift?topic=openshift-kubernetes-service-cli#cs_alb_get)
+
+    * [`ibmcloud oc ingress alb health-checker disable`](/docs/openshift?topic=openshift-kubernetes-service-cli#cs_alb_healthchecker_disable)
+
+    * [`ibmcloud oc ingress alb health-checker enable`](/docs/openshift?topic=openshift-kubernetes-service-cli#cs_alb_healthchecker_enable)
+
+    * [`ibmcloud oc ingress alb health-checker get`](/docs/openshift?topic=openshift-kubernetes-service-cli#cs_alb_healthchecker_get)
+
+    * [`ibmcloud oc ingress alb ls`](/docs/openshift?topic=openshift-kubernetes-service-cli#cs_albs)
+
+    * [`ibmcloud oc ingress alb update`](/docs/openshift?topic=openshift-kubernetes-service-cli#cs_alb_update)
+
+    * [`ibmcloud oc ingress alb versions`](/docs/openshift?topic=openshift-kubernetes-service-cli#cs_alb_versions)
+
+    * [`ibmcloud oc ingress domain create`](/docs/openshift?topic=openshift-kubernetes-service-cli#ingress-domain-create)
+
+    * [`ibmcloud oc ingress domain default replace`](/docs/openshift?topic=openshift-kubernetes-service-cli#ingress-domain-default-replace)
+
+    * [`ibmcloud oc ingress domain get`](/docs/openshift?topic=openshift-kubernetes-service-cli#ingress-domain-get)
+
+    * [`ibmcloud oc ingress domain ls`](/docs/openshift?topic=openshift-kubernetes-service-cli#ingress-domain-ls)
+
+    * [`ibmcloud oc ingress domain rm`](/docs/openshift?topic=openshift-kubernetes-service-cli#ingress-domain-rm)
+
+    * [`ibmcloud oc ingress domain secret regenerate`](/docs/openshift?topic=openshift-kubernetes-service-cli#ingress-domain-secret-regenerate)
+
+    * [`ibmcloud oc ingress domain secret rm`](/docs/openshift?topic=openshift-kubernetes-service-cli#ingress-domain-secret-rm)
+
+    * [`ibmcloud oc ingress domain update`](/docs/openshift?topic=openshift-kubernetes-service-cli#ingress-domain-update)
+
+    * [`ibmcloud oc ingress instance default set`](/docs/openshift?topic=openshift-kubernetes-service-cli#cs_ingress_instance_default_set)
+
+    * [`ibmcloud oc ingress instance default unset`](/docs/openshift?topic=openshift-kubernetes-service-cli#cs_ingress_instance_default_unset)
+
+    * [`ibmcloud oc ingress instance get`](/docs/openshift?topic=openshift-kubernetes-service-cli#cs_ingress_instance_get)
+
+    * [`ibmcloud oc ingress instance ls`](/docs/openshift?topic=openshift-kubernetes-service-cli#cs_ingress_instance_ls)
+
+    * [`ibmcloud oc ingress instance register`](/docs/openshift?topic=openshift-kubernetes-service-cli#cs_ingress_instance_register)
+
+    * [`ibmcloud oc ingress instance unregister`](/docs/openshift?topic=openshift-kubernetes-service-cli#cs_ingress_instance_unregister)
+
+    * [`ibmcloud oc ingress lb get`](/docs/openshift?topic=openshift-kubernetes-service-cli#cs_ingress_lb_proxy-protocol_get)
+
+    * [`ibmcloud oc ingress lb proxy-protocol disable`](/docs/openshift?topic=openshift-kubernetes-service-cli#cs_ingress_lb_proxy-protocol_disable)
+
+    * [`ibmcloud oc ingress lb proxy-protocol enable`](/docs/openshift?topic=openshift-kubernetes-service-cli#cs_ingress_lb_proxy-protocol_enable)
+
+    * [`ibmcloud oc ingress secret create`](/docs/openshift?topic=openshift-kubernetes-service-cli#cs_ingress_secret_create)
+
+    * [`ibmcloud oc ingress secret field add`](/docs/openshift?topic=openshift-kubernetes-service-cli#cs_ingress_secret_field_add)
+
+    * [`ibmcloud oc ingress secret field ls`](/docs/openshift?topic=openshift-kubernetes-service-cli#cs_ingress_secret_field_ls)
+
+    * [`ibmcloud oc ingress secret field rm`](/docs/openshift?topic=openshift-kubernetes-service-cli#cs_ingress_secret_field_rm)
+
+    * [`ibmcloud oc ingress secret get`](/docs/openshift?topic=openshift-kubernetes-service-cli#cs_ingress_secret_get)
+
+    * [`ibmcloud oc ingress secret ls`](/docs/openshift?topic=openshift-kubernetes-service-cli#cs_ingress_secret_ls)
+
+    * [`ibmcloud oc ingress secret rm`](/docs/openshift?topic=openshift-kubernetes-service-cli#cs_ingress_secret_rm)
+
+    * [`ibmcloud oc ingress secret update`](/docs/openshift?topic=openshift-kubernetes-service-cli#cs_ingress_secret_update)
+
+    * [`ibmcloud oc ingress status-report disable`](/docs/openshift?topic=openshift-kubernetes-service-cli#cs_ingress_status_report_disable)
+
+    * [`ibmcloud oc ingress status-report enable`](/docs/openshift?topic=openshift-kubernetes-service-cli#cs_ingress_status_report_enable)
+
+    * [`ibmcloud oc ingress status-report get`](/docs/openshift?topic=openshift-kubernetes-service-cli#cs_ingress_status_report_get)
+
+    * [`ibmcloud oc ingress status-report ignored-errors add`](/docs/openshift?topic=openshift-kubernetes-service-cli#cs_ingress_status_report_add)
+
+    * [`ibmcloud oc ingress status-report ignored-errors ls`](/docs/openshift?topic=openshift-kubernetes-service-cli#cs_ingress_status_report_ignore_ls)
+
+    * [`ibmcloud oc ingress status-report ignored-errors rm`](/docs/openshift?topic=openshift-kubernetes-service-cli#cs_ingress_status_report_ignore_rm)
+
+* [`nlb-dns` commands](/docs/openshift?topic=openshift-kubernetes-service-cli#nlb-dns)
+
+    * [`ibmcloud oc nlb-dns add`](/docs/openshift?topic=openshift-kubernetes-service-cli#cs_nlb-dns-add)
+
+    * [`ibmcloud oc nlb-dns create classic`](/docs/openshift?topic=openshift-kubernetes-service-cli#cs_nlb-dns-create)
+
+    * [`ibmcloud oc nlb-dns create vpc-gen2`](/docs/openshift?topic=openshift-kubernetes-service-cli#cs_nlb-dns-create-vpc-gen2)
+
+    * [`ibmcloud oc nlb-dns get`](/docs/openshift?topic=openshift-kubernetes-service-cli#cs_nlb-dns-get)
+
+    * [`ibmcloud oc nlb-dns ls`](/docs/openshift?topic=openshift-kubernetes-service-cli#cs_nlb-dns-ls)
+
+    * [`ibmcloud oc nlb-dns monitor configure`](/docs/openshift?topic=openshift-kubernetes-service-cli#cs_nlb-dns-monitor-configure)
+
+    * [`ibmcloud oc nlb-dns monitor disable`](/docs/openshift?topic=openshift-kubernetes-service-cli#cs_nlb-dns-monitor-disable)
+
+    * [`ibmcloud oc nlb-dns monitor enable`](/docs/openshift?topic=openshift-kubernetes-service-cli#cs_nlb-dns-monitor-enable)
+
+    * [`ibmcloud oc nlb-dns monitor get`](/docs/openshift?topic=openshift-kubernetes-service-cli#cs_nlb-dns-monitor-get)
+
+    * [`ibmcloud oc nlb-dns monitor ls`](/docs/openshift?topic=openshift-kubernetes-service-cli#cs_nlb-dns-monitor-ls)
+
+    * [`ibmcloud oc nlb-dns replace`](/docs/openshift?topic=openshift-kubernetes-service-cli#cs_nlb-dns-replace)
+
+    * [`ibmcloud oc nlb-dns rm classic`](/docs/openshift?topic=openshift-kubernetes-service-cli#cs_nlb-dns-rm)
+
+    * [`ibmcloud oc nlb-dns rm vpc-gen2`](/docs/openshift?topic=openshift-kubernetes-service-cli#cs_nlb-dns-rm-vpc-gen2)
+
+    * [Experimental: `ibmcloud oc nlb-dns secret regenerate`](/docs/openshift?topic=openshift-kubernetes-service-cli#cs_nlb-dns-secret-regenerate)
+
+    * [Experimental: `ibmcloud oc nlb-dns secret rm`](/docs/openshift?topic=openshift-kubernetes-service-cli#cs_nlb-dns-secret-rm)
+
+* [`ibmcloud oc vpc secure-by-default enable`](/docs/openshift?topic=openshift-kubernetes-service-cli#vpc-secure-by-default-enable-cli)
+
+    * [Command options](/docs/openshift?topic=openshift-kubernetes-service-cli#vpc-secure-by-default-enable-options)
+
+* [`webhook-create` command](/docs/openshift?topic=openshift-kubernetes-service-cli#cs_webhook_create)
+
+    * [Example `webhook-create` command](/docs/openshift?topic=openshift-kubernetes-service-cli#webhook-create-example)
+
+* [`api-key` commands](/docs/openshift?topic=openshift-kubernetes-service-cli#api_key-commands)
+
+    * [`ibmcloud oc api-key info`](/docs/openshift?topic=openshift-kubernetes-service-cli#cs_api_key_info)
+
+    * [`ibmcloud oc api-key reset`](/docs/openshift?topic=openshift-kubernetes-service-cli#cs_api_key_reset)
+
+* [`credential` commands](/docs/openshift?topic=openshift-kubernetes-service-cli#credential)
+
+    * [`ibmcloud oc credential get`](/docs/openshift?topic=openshift-kubernetes-service-cli#cs_credential_get)
+
+    * [`ibmcloud oc credential set classic`](/docs/openshift?topic=openshift-kubernetes-service-cli#cs_credentials_set)
+
+    * [`ibmcloud oc credential unset`](/docs/openshift?topic=openshift-kubernetes-service-cli#cs_credentials_unset)
+
+* [`infra-permissions` commands](/docs/openshift?topic=openshift-kubernetes-service-cli#infra-commands)
+
+    * [`ibmcloud oc infra-permissions get`](/docs/openshift?topic=openshift-kubernetes-service-cli#infra_permissions_get)
+
+* [`kms` commands](/docs/openshift?topic=openshift-kubernetes-service-cli#ks_kms)
+
+    * [`ibmcloud oc kms crk ls`](/docs/openshift?topic=openshift-kubernetes-service-cli#ks_kms_crk_ls)
+
+    * [`ibmcloud oc kms enable`](/docs/openshift?topic=openshift-kubernetes-service-cli#ks_kms_enable)
+
+    * [`ibmcloud oc kms instance ls`](/docs/openshift?topic=openshift-kubernetes-service-cli#ks_kms_instance_ls)
+
+* [`quota` commands](/docs/openshift?topic=openshift-kubernetes-service-cli#cs_quota)
+
+    * [`ibmcloud oc quota ls`](/docs/openshift?topic=openshift-kubernetes-service-cli#cs_quota_ls)
+
+* [`subnets` command](/docs/openshift?topic=openshift-kubernetes-service-cli#cs_subnets)
+
+* [`vlan` commands](/docs/openshift?topic=openshift-kubernetes-service-cli#vlan)
+
+    * [`ibmcloud oc vlan ls`](/docs/openshift?topic=openshift-kubernetes-service-cli#cs_vlans)
+
+    * [`ibmcloud oc vlan spanning get`](/docs/openshift?topic=openshift-kubernetes-service-cli#cs_vlan_spanning_get)
+
+* [`ibmcloud oc vpc ls`](/docs/openshift?topic=openshift-kubernetes-service-cli#vpc-ls-cli)
+
+    * [Command options](/docs/openshift?topic=openshift-kubernetes-service-cli#vpc-ls-options)
+
+* [`ibmcloud oc vpc outbound-traffic-protection disable`](/docs/openshift?topic=openshift-kubernetes-service-cli#vpc-outbound-traffic-protection-disable-cli)
+
+    * [Command options](/docs/openshift?topic=openshift-kubernetes-service-cli#vpc-outbound-traffic-protection-disable-options)
+
+* [`ibmcloud oc vpc outbound-traffic-protection enable`](/docs/openshift?topic=openshift-kubernetes-service-cli#vpc-outbound-traffic-protection-enable-cli)
+
+    * [Command options](/docs/openshift?topic=openshift-kubernetes-service-cli#vpc-outbound-traffic-protection-enable-options)
+
+* [`flavor` command](/docs/openshift?topic=openshift-kubernetes-service-cli#cs_machine_types)
+
+    * [`flavor get` command](/docs/openshift?topic=openshift-kubernetes-service-cli#cs_flavor_get)
+
+    * [`flavor ls` command](/docs/openshift?topic=openshift-kubernetes-service-cli#cs_flavor_ls)
+
+* [`messages` command](/docs/openshift?topic=openshift-kubernetes-service-cli#cs_messages)
+
+* [locations command](/docs/openshift?topic=openshift-kubernetes-service-cli#cs_supported-locations)
+
+* [`versions` command](/docs/openshift?topic=openshift-kubernetes-service-cli#cs_versions_command)
+
+* [`api` command](/docs/openshift?topic=openshift-kubernetes-service-cli#cs_cli_api)
+
+* [`init` command](/docs/openshift?topic=openshift-kubernetes-service-cli#cs_init)
+
+* [`script` commands](/docs/openshift?topic=openshift-kubernetes-service-cli#script)
+
+    * [`ibmcloud oc script update`](/docs/openshift?topic=openshift-kubernetes-service-cli#script_update)
+
+* [`security-group` commands](/docs/openshift?topic=openshift-kubernetes-service-cli#security_group)
+
+* [`ibmcloud oc security-group ls`](/docs/openshift?topic=openshift-kubernetes-service-cli#security-group-ls-cli)
+
+    * [Command options](/docs/openshift?topic=openshift-kubernetes-service-cli#security-group-ls-options)
+
+    * [`ibmcloud oc security-group reset`](/docs/openshift?topic=openshift-kubernetes-service-cli#security_group_reset)
+
+    * [`ibmcloud oc security-group sync`](/docs/openshift?topic=openshift-kubernetes-service-cli#security_group_sync)
+
+* [Beta: `storage` commands](/docs/openshift?topic=openshift-kubernetes-service-cli#cs_storage)
+
+    * [`ibmcloud oc storage attachment create`](/docs/openshift?topic=openshift-kubernetes-service-cli#cs_storage_att_cr)
+
+    * [`ibmcloud oc storage attachment get`](/docs/openshift?topic=openshift-kubernetes-service-cli#cs_storage_att_get)
+
+    * [`ibmcloud oc storage attachment ls`](/docs/openshift?topic=openshift-kubernetes-service-cli#cs_storage_att_ls)
+
+    * [`ibmcloud oc storage attachment rm`](/docs/openshift?topic=openshift-kubernetes-service-cli#cs_storage_att_rm)
+
+    * [`ibmcloud oc storage volume get`](/docs/openshift?topic=openshift-kubernetes-service-cli#cs_storage_att_ls_c)
+
+    * [`ibmcloud oc storage volume ls`](/docs/openshift?topic=openshift-kubernetes-service-cli#cs_storage_att_ls_2)
+
+* [{{site.data.keyword.satelliteshort}} commands](/docs/openshift?topic=openshift-kubernetes-service-cli#sat_commands)
+
+    * [`ibmcloud oc cluster create satellite`](/docs/openshift?topic=openshift-kubernetes-service-cli#cli_cluster-create-satellite)
+
+    * [`ibmcloud oc cluster master satellite-service-endpoint allowlist add`](/docs/openshift?topic=openshift-kubernetes-service-cli#cluster-master-sat-allowlist-add)
+
+    * [`ibmcloud oc cluster master satellite-service-endpoint allowlist disable`](/docs/openshift?topic=openshift-kubernetes-service-cli#cluster-master-sat-allowlist-disable)
+
+    * [`ibmcloud oc cluster master satellite-service-endpoint allowlist enable`](/docs/openshift?topic=openshift-kubernetes-service-cli#cluster-master-sat-allowlist-enable)
+
+    * [`ibmcloud oc cluster master satellite-service-endpoint allowlist get`](/docs/openshift?topic=openshift-kubernetes-service-cli#cluster-master-sat-allowlist-get)
+
+    * [`ibmcloud oc cluster master satellite-service-endpoint allowlist remove`](/docs/openshift?topic=openshift-kubernetes-service-cli#cluster-master-sat-allowlist-remove)
+
+    * [`ibmcloud oc worker-pool create satellite`](/docs/openshift?topic=openshift-kubernetes-service-cli#cs_worker_pool_create_sat)
+
+    * [`ibmcloud oc zone add satellite`](/docs/openshift?topic=openshift-kubernetes-service-cli#cs_zone_add_sat)
+
+[CLI change log](/docs/openshift?topic=openshift-cs_cli_changelog#cs_cli_changelog)
+
+* [Version 1.0](/docs/openshift?topic=openshift-cs_cli_changelog#10)
+
+* [Version v1.0.687](/docs/openshift?topic=openshift-cs_cli_changelog#cli-010687)
+
+* [Version v1.0.679](/docs/openshift?topic=openshift-cs_cli_changelog#cli-010679)
+
+* [Version v1.0.677](/docs/openshift?topic=openshift-cs_cli_changelog#cli-010677)
+
+* [Version v1.0.674](/docs/openshift?topic=openshift-cs_cli_changelog#cli-010674)
+
+* [Version v1.0.673](/docs/openshift?topic=openshift-cs_cli_changelog#cli-010673)
+
+* [Version v1.0.665](/docs/openshift?topic=openshift-cs_cli_changelog#cli-010665)
+
+* [Version v1.0.657](/docs/openshift?topic=openshift-cs_cli_changelog#cli-010657)
+
+* [Version v1.0.652](/docs/openshift?topic=openshift-cs_cli_changelog#cli-010652)
+
+* [Version v1.0.640](/docs/openshift?topic=openshift-cs_cli_changelog#cli-010640)
+
+* [Version v1.0.638](/docs/openshift?topic=openshift-cs_cli_changelog#cli-010638)
+
+* [Version v1.0.635](/docs/openshift?topic=openshift-cs_cli_changelog#cli-010635)
+
+* [Version v1.0.632](/docs/openshift?topic=openshift-cs_cli_changelog#cli-010632)
+
+* [Version v1.0.630](/docs/openshift?topic=openshift-cs_cli_changelog#cli-010630)
+
+* [Version v1.0.628](/docs/openshift?topic=openshift-cs_cli_changelog#cli-010628)
+
+* [Version v1.0.618](/docs/openshift?topic=openshift-cs_cli_changelog#cli-010618)
+
+* [Version v1.0.617](/docs/openshift?topic=openshift-cs_cli_changelog#cli-010617)
+
+* [Version v1.0.613](/docs/openshift?topic=openshift-cs_cli_changelog#cli-010613)
+
+* [Version v1.0.601](/docs/openshift?topic=openshift-cs_cli_changelog#cli-010601)
+
+* [Version v1.0.597](/docs/openshift?topic=openshift-cs_cli_changelog#cli-01597)
+
+* [Version v1.0.595](/docs/openshift?topic=openshift-cs_cli_changelog#cli-01959)
+
+* [Version v1.0.589](/docs/openshift?topic=openshift-cs_cli_changelog#cli-01589)
+
+* [Version v1.0.579](/docs/openshift?topic=openshift-cs_cli_changelog#cli-01579)
+
+* [Version 0.1.573](/docs/openshift?topic=openshift-cs_cli_changelog#cli-01573)
+
+* [Version v1.0.566](/docs/openshift?topic=openshift-cs_cli_changelog#cli-10566)
+
+* [Version v1.0.540](/docs/openshift?topic=openshift-cs_cli_changelog#cli-10549)
+
+* [Version v1.0.528](/docs/openshift?topic=openshift-cs_cli_changelog#cli-10528)
+
+* [Version v1.0.523](/docs/openshift?topic=openshift-cs_cli_changelog#cli-10523)
+
+* [Version v1.0.516](/docs/openshift?topic=openshift-cs_cli_changelog#cli-10516)
+
+* [Version v1.0.510](/docs/openshift?topic=openshift-cs_cli_changelog#cli-10510)
+
+* [Version v1.0.498](/docs/openshift?topic=openshift-cs_cli_changelog#cli-10498)
+
+* [Version 1.0.489](/docs/openshift?topic=openshift-cs_cli_changelog#cli-10489)
+
+* [Version 1.0.487](/docs/openshift?topic=openshift-cs_cli_changelog#cli-10487)
+
+* [Version 1.0.480](/docs/openshift?topic=openshift-cs_cli_changelog#cli-10480)
+
+* [Version 1.0.471](/docs/openshift?topic=openshift-cs_cli_changelog#cli-10471)
+
+* [Version 1.0.459](/docs/openshift?topic=openshift-cs_cli_changelog#cli-10459)
+
+* [Version 1.0.454](/docs/openshift?topic=openshift-cs_cli_changelog#cli-10454)
+
+* [Version 1.0.452](/docs/openshift?topic=openshift-cs_cli_changelog#cli-10452)
+
+* [Version 1.0.446](/docs/openshift?topic=openshift-cs_cli_changelog#cli-10446)
+
+* [Version 1.0.444](/docs/openshift?topic=openshift-cs_cli_changelog#cli-10444)
+
+* [Version 1.0.439](/docs/openshift?topic=openshift-cs_cli_changelog#cli-10439)
+
+* [Version 1.0.433](/docs/openshift?topic=openshift-cs_cli_changelog#cli-10433)
+
+* [Version 1.0.431](/docs/openshift?topic=openshift-cs_cli_changelog#cli-10431)
+
+* [Version 1.0.430](/docs/openshift?topic=openshift-cs_cli_changelog#cli-10430)
+
+* [Version 1.0.426](/docs/openshift?topic=openshift-cs_cli_changelog#cli-10426)
+
+* [Version 1.0.422](/docs/openshift?topic=openshift-cs_cli_changelog#cli-10422)
+
+* [Version 1.0.420](/docs/openshift?topic=openshift-cs_cli_changelog#cli-10420)
+
+* [Version 1.0.419](/docs/openshift?topic=openshift-cs_cli_changelog#cli-10419)
+
+* [Version 1.0.415](/docs/openshift?topic=openshift-cs_cli_changelog#cli-10415)
+
+* [Version 1.0.408](/docs/openshift?topic=openshift-cs_cli_changelog#cli-10408)
+
+
+## API reference
+{: #sitemap_api_reference}
+
+
+[IBM Cloud Kubernetes Service API](https://containers.cloud.ibm.com/global/swagger-global-api/#/){: external}
+
+[IBM Cloud Kubernetes Service API JSON](https://containers.cloud.ibm.com/global/swagger-global-api/swagger.json){: external}
+
+[OpenShift Container Platform REST API](https://docs.redhat.com/documentation/openshift_container_platform/4.17/html/api_overview/index){: external}
+
+
 ## Add-ons for {{site.data.keyword.openshiftlong_notm}}
 {: #sitemap_add-ons_for_}
 
@@ -7537,48 +7423,6 @@ subcollection: openshift
 
     * [Change log for version 4.2.5_1106, released 12 May 2022](/docs/openshift?topic=openshift-cl-add-ons-vpc-block-csi-driver#425_1106_is_block_relnote)
 
-    * [Change log for version 4.2.3_983, released 11 April 2022](/docs/openshift?topic=openshift-cl-add-ons-vpc-block-csi-driver#423_983_is_block_relnote)
-
-    * [Change log for version 4.2.2_900, released 24 March 2022](/docs/openshift?topic=openshift-cl-add-ons-vpc-block-csi-driver#422_900_is_block_relnote)
-
-    * [Change log for version 4.2.1_895, released 17 March 2022](/docs/openshift?topic=openshift-cl-add-ons-vpc-block-csi-driver#421_895_is_block_relnote)
-
-    * [Change log for version 4.2.0_890, released 28 February 2022](/docs/openshift?topic=openshift-cl-add-ons-vpc-block-csi-driver#420_890_is_block_relnote)
-
-* [Version 4.1](/docs/openshift?topic=openshift-cl-add-ons-vpc-block-csi-driver#041_is_block)
-
-    * [Change log for version 4.1.3_846, released 14 February 2022](/docs/openshift?topic=openshift-cl-add-ons-vpc-block-csi-driver#413_846_is_block_relnote)
-
-    * [Change log for version 4.1.2_834, released 27 January 2022](/docs/openshift?topic=openshift-cl-add-ons-vpc-block-csi-driver#412_834_is_block_relnote)
-
-    * [Change log for version 4.1.1_827, released 20 January 2022](/docs/openshift?topic=openshift-cl-add-ons-vpc-block-csi-driver#0411837_is_block_relnote)
-
-    * [Change log for version 4.1.0_807, released 06 January 2022](/docs/openshift?topic=openshift-cl-add-ons-vpc-block-csi-driver#41_is_block_relnote)
-
-* [Version 4.0](/docs/openshift?topic=openshift-cl-add-ons-vpc-block-csi-driver#0400_is_block)
-
-    * [Change log for version 4.0.3_793, released 22 November 2021](/docs/openshift?topic=openshift-cl-add-ons-vpc-block-csi-driver#403793_is_block_relnote)
-
-    * [Change log for version 4.0.1_780, released 06 October 2021](/docs/openshift?topic=openshift-cl-add-ons-vpc-block-csi-driver#0400780_is_block_relnote)
-
-    * [Change log for version 4.0.0_769, released 16 September 2021](/docs/openshift?topic=openshift-cl-add-ons-vpc-block-csi-driver#0400769_is_block_relnote)
-
-    * [Change log for version 4.0, released 1 September 2021](/docs/openshift?topic=openshift-cl-add-ons-vpc-block-csi-driver#0400_is_block_relnote)
-
-* [Version 3.0.1](/docs/openshift?topic=openshift-cl-add-ons-vpc-block-csi-driver#0301_is_block)
-
-    * [Change log for version 3.0.1, released 15 July 2021](/docs/openshift?topic=openshift-cl-add-ons-vpc-block-csi-driver#301_init)
-
-* [Version 3.0.0](/docs/openshift?topic=openshift-cl-add-ons-vpc-block-csi-driver#0300_is_block)
-
-    * [Change log for patch update 3.0.0_521, released 01 April 2021](/docs/openshift?topic=openshift-cl-add-ons-vpc-block-csi-driver#3.0.0_521)
-
-    * [Change log for version 3.0.0, released 26 February 2021](/docs/openshift?topic=openshift-cl-add-ons-vpc-block-csi-driver#0300_is_block_relnote)
-
-* [Archive](/docs/openshift?topic=openshift-cl-add-ons-vpc-block-csi-driver#unsupported_versions)
-
-    * [Version 2.0.3](/docs/openshift?topic=openshift-cl-add-ons-vpc-block-csi-driver#0203_is_block)
-
 [VPC File CSI Driver add-on version change log](/docs/openshift?topic=openshift-cl-add-ons-vpc-file-csi-driver#cl-add-ons-vpc-file-csi-driver)
 
 * [Version 2.0](/docs/openshift?topic=openshift-cl-add-ons-vpc-file-csi-driver#cl-add-ons-vpc-file-csi-driver-2.0)
@@ -7728,46 +7572,6 @@ subcollection: openshift
 * [Change log for version 2.1.16, released 25 May 2022](/docs/openshift?topic=openshift-cos_plugin_changelog#02116_object_plugin)
 
 * [Change log for version 2.1.15, released 6 May 2022](/docs/openshift?topic=openshift-cos_plugin_changelog#02115_object_plugin)
-
-* [Change log for version 2.1.14, released 13 April 2022](/docs/openshift?topic=openshift-cos_plugin_changelog#02114_object_plugin)
-
-* [Change log for version 2.1.13, released 24 March 2022](/docs/openshift?topic=openshift-cos_plugin_changelog#02113_object_plugin)
-
-* [Change log for version 2.1.12, released 11 March 2022](/docs/openshift?topic=openshift-cos_plugin_changelog#02112_object_plugin)
-
-* [Change log for version 2.1.11, released 1 March 2022](/docs/openshift?topic=openshift-cos_plugin_changelog#02111_object_plugin)
-
-* [Change log for version 2.1.10, released 17 February 2022](/docs/openshift?topic=openshift-cos_plugin_changelog#02110_object_plugin)
-
-* [Change log for version 2.1.9, released 24 January 2022](/docs/openshift?topic=openshift-cos_plugin_changelog#0219_object_plugin)
-
-* [Change log for version 2.1.8, released 17 January 2022](/docs/openshift?topic=openshift-cos_plugin_changelog#0218_object_plugin)
-
-* [Change log for version 2.1.7, released 18 November 2021](/docs/openshift?topic=openshift-cos_plugin_changelog#0217_object_plugin)
-
-* [Change log for version 2.1.6, released 22 October 2021](/docs/openshift?topic=openshift-cos_plugin_changelog#0216_object_plugin)
-
-* [Change log for version 2.1.5, released 5 October 2021](/docs/openshift?topic=openshift-cos_plugin_changelog#0215_object_plugin)
-
-* [Change log for version 2.1.4, released 1 September 2021](/docs/openshift?topic=openshift-cos_plugin_changelog#0214_object_plugin)
-
-* [Change log for version 2.1.3, released 25 August 2021](/docs/openshift?topic=openshift-cos_plugin_changelog#0213_object_plugin)
-
-* [Change log for version 2.1.2, released 22 June 2021](/docs/openshift?topic=openshift-cos_plugin_changelog#0212_object_plugin)
-
-* [Change log for version 2.1.1, released 03 June 2021](/docs/openshift?topic=openshift-cos_plugin_changelog#0211_object_plugin)
-
-* [Change log for version 2.1.0, released 26 May 2021](/docs/openshift?topic=openshift-cos_plugin_changelog#0210_object_plugin)
-
-* [Change log for version 2.0.9, 10 May 2021](/docs/openshift?topic=openshift-cos_plugin_changelog#0209_object_plugin)
-
-* [Change log for version 2.0.8, 19 April 2021](/docs/openshift?topic=openshift-cos_plugin_changelog#0208_object_plugin)
-
-* [Change log for version 2.0.7, 26 March 2021](/docs/openshift?topic=openshift-cos_plugin_changelog#0207_object_plugin)
-
-* [Change log for version 2.0.6, 18 December 2020](/docs/openshift?topic=openshift-cos_plugin_changelog#0206_object_plugin)
-
-* [Change log for version 2.0.5, released 25 November 2020](/docs/openshift?topic=openshift-cos_plugin_changelog#0205_object_plugin)
 
 [Static Route add-on version change log](/docs/openshift?topic=openshift-cl-add-ons-static-route#cl-add-ons-static-route)
 
@@ -7997,50 +7801,6 @@ subcollection: openshift
 
     * [4.9.5, released 20 May 2022](/docs/openshift?topic=openshift-cl-add-ons-openshift-data-foundation#cl-add-ons-openshift-data-foundation-4.9.5)
 
-    * [4.9.4, released 13 April 2022](/docs/openshift?topic=openshift-cl-add-ons-openshift-data-foundation#cl-add-ons-openshift-data-foundation-4.9.4)
-
-    * [4.9.3, released 23 March 2022](/docs/openshift?topic=openshift-cl-add-ons-openshift-data-foundation#cl-add-ons-openshift-data-foundation-4.9.3)
-
-    * [4.9.2, released 24 February 2022](/docs/openshift?topic=openshift-cl-add-ons-openshift-data-foundation#cl-add-ons-openshift-data-foundation-4.9.2)
-
-    * [4.9.1, released 23 February 2022](/docs/openshift?topic=openshift-cl-add-ons-openshift-data-foundation#cl-add-ons-openshift-data-foundation-4.9.1)
-
-    * [4.9.0, released 11 February 2022](/docs/openshift?topic=openshift-cl-add-ons-openshift-data-foundation#cl-add-ons-openshift-data-foundation-4.9.0)
-
-* [Version 4.8.0 archive](/docs/openshift?topic=openshift-cl-add-ons-openshift-data-foundation#cl-add-ons-openshift-data-foundation-4.8-archive)
-
-    * [4.8.31, released 05 May 2023](/docs/openshift?topic=openshift-cl-add-ons-openshift-data-foundation#cl-add-ons-openshift-data-foundation-4.8.31)
-
-    * [4.8.4, released 17 January 2022](/docs/openshift?topic=openshift-cl-add-ons-openshift-data-foundation#cl-add-ons-openshift-data-foundation-4.8.4)
-
-    * [4.8.3, released Jan 07, 2022](/docs/openshift?topic=openshift-cl-add-ons-openshift-data-foundation#cl-add-ons-openshift-data-foundation-4.8.3)
-
-    * [4.8.2, released 03 January 2022](/docs/openshift?topic=openshift-cl-add-ons-openshift-data-foundation#cl-add-ons-openshift-data-foundation-4.8.2)
-
-    * [4.8.1, released 17 November 2021](/docs/openshift?topic=openshift-cl-add-ons-openshift-data-foundation#cl-add-ons-openshift-data-foundation-4.8.1)
-
-    * [4.8.0, released 25 October 2021](/docs/openshift?topic=openshift-cl-add-ons-openshift-data-foundation#cl-add-ons-openshift-data-foundation-4.8.0)
-
-* [Version 4.7.0 archive](/docs/openshift?topic=openshift-cl-add-ons-openshift-data-foundation#cl-add-ons-openshift-data-foundation-4.7-archive)
-
-    * [4.7.14, released 25 October 2021](/docs/openshift?topic=openshift-cl-add-ons-openshift-data-foundation#cl-add-ons-openshift-data-foundation-4.7.14)
-
-    * [4.7.13, released 13 October 2021](/docs/openshift?topic=openshift-cl-add-ons-openshift-data-foundation#cl-add-ons-openshift-data-foundation-4.7.13)
-
-    * [4.7.12, released 30 September 2021](/docs/openshift?topic=openshift-cl-add-ons-openshift-data-foundation#cl-add-ons-openshift-data-foundation-4.7.12)
-
-    * [4.7.11, released 29 September 2021](/docs/openshift?topic=openshift-cl-add-ons-openshift-data-foundation#cl-add-ons-openshift-data-foundation-4.7.11)
-
-    * [4.7.10, released 15 September 2021](/docs/openshift?topic=openshift-cl-add-ons-openshift-data-foundation#cl-add-ons-openshift-data-foundation-4.7.10)
-
-    * [4.7.9, released 06 September 2021](/docs/openshift?topic=openshift-cl-add-ons-openshift-data-foundation#cl-add-ons-openshift-data-foundation-4.7.9)
-
-    * [4.7.8, released 16 August 202](/docs/openshift?topic=openshift-cl-add-ons-openshift-data-foundation#cl-add-ons-openshift-data-foundation-4.7.8)
-
-    * [4.7.7, released 27 July 2021](/docs/openshift?topic=openshift-cl-add-ons-openshift-data-foundation#cl-add-ons-openshift-data-foundation-4.7.7)
-
-    * [4.7.6, released 05 July 2021](/docs/openshift?topic=openshift-cl-add-ons-openshift-data-foundation#cl-add-ons-openshift-data-foundation-4.7.6)
-
 [Back up and restore Helm chart](/docs/openshift?topic=openshift-backup_restore_changelog#backup_restore_changelog)
 
 * [Change log for 1.0.5, released 17 December 2020](/docs/openshift?topic=openshift-backup_restore_changelog#0105_br_chart)
@@ -8056,132 +7816,6 @@ subcollection: openshift
     * [Version 4.9.0_1983, released on 13 Jun 2022](/docs/openshift?topic=openshift-hpcs-router-changelog#4_9_0_1983)
 
     * [Version 4.9.0_1559, released on 4 May 2022](/docs/openshift?topic=openshift-hpcs-router-changelog#4_9_0_1559)
-
-    * [Version 4.9.0_1471, released on 11 April 2022](/docs/openshift?topic=openshift-hpcs-router-changelog#4_9_0_1471)
-
-    * [Version 4.9.0_1384, released on 24 March 2022](/docs/openshift?topic=openshift-hpcs-router-changelog#4_9_0_1384)
-
-    * [Version 4.9.0_1364, released on 14 March 2022](/docs/openshift?topic=openshift-hpcs-router-changelog#4_9_1364)
-
-    * [Version 4.9.0_1349, released on 28 February 2022](/docs/openshift?topic=openshift-hpcs-router-changelog#4_9_0_1349)
-
-    * [Version 4.9.0, released on 16 February 2022](/docs/openshift?topic=openshift-hpcs-router-changelog#4_9_0)
-
-* [Version 4.8.0](/docs/openshift?topic=openshift-hpcs-router-changelog#4_8_0)
-
-    * [Version 4.8.0_2269, released on 14 Jul 2022](/docs/openshift?topic=openshift-hpcs-router-changelog#4_8_0_2269)
-
-    * [Version 4.8.0_2246, released on 7 Jul 2022](/docs/openshift?topic=openshift-hpcs-router-changelog#4_8_0_2246)
-
-    * [Version 4.8.0_1984, released on 13 Jun 2022](/docs/openshift?topic=openshift-hpcs-router-changelog#4_8_0_1984)
-
-    * [Version 4.8.0_1560, released on 4 May 2022](/docs/openshift?topic=openshift-hpcs-router-changelog#4_8_0_1560)
-
-    * [Version 4.8.0_1470, released on 11 April 2022](/docs/openshift?topic=openshift-hpcs-router-changelog#4_8_0_1470)
-
-    * [Version 4.8.0_1385, released on 24 March 2022](/docs/openshift?topic=openshift-hpcs-router-changelog#4_8_0_1385)
-
-    * [Version 4.8.0_1363, released on 14 March 2022](/docs/openshift?topic=openshift-hpcs-router-changelog#4_8_1363)
-
-    * [Version 4.8.0_1310, released on 28 February 2022](/docs/openshift?topic=openshift-hpcs-router-changelog#4_8_0_1310)
-
-    * [Version 4.8.0_1232, released on 25 January 2022](/docs/openshift?topic=openshift-hpcs-router-changelog#4_8_1232)
-
-    * [Version 4.8.0_1125, released on 11 January 2022](/docs/openshift?topic=openshift-hpcs-router-changelog#4_8_1125)
-
-    * [Version 4.8.0_997, released on 16 November 2021](/docs/openshift?topic=openshift-hpcs-router-changelog#4_8_0997)
-
-* [Version 4.7.0](/docs/openshift?topic=openshift-hpcs-router-changelog#4_7_0)
-
-    * [Version 4.7.0_2288, released on 14 Jul 2022](/docs/openshift?topic=openshift-hpcs-router-changelog#4_7_0_2288)
-
-    * [Version 4.7.0_2252, released on 7 Jul 2022](/docs/openshift?topic=openshift-hpcs-router-changelog#4_7_0_2252)
-
-    * [Version 4.7.0_1985, released on 13 Jun 2022](/docs/openshift?topic=openshift-hpcs-router-changelog#4_7_0_1985)
-
-    * [Version 4.7.0_1561, released on 4 May 2022](/docs/openshift?topic=openshift-hpcs-router-changelog#4_7_0_1561)
-
-    * [Version 4.7.0_1469, released on 11 April 2022](/docs/openshift?topic=openshift-hpcs-router-changelog#4_7_0_1469)
-
-    * [Version 4.7.0_1386, released on 24 March 2022](/docs/openshift?topic=openshift-hpcs-router-changelog#4_7_0_1386)
-
-    * [Version 4.7.0_1362, released on 14 March 2022](/docs/openshift?topic=openshift-hpcs-router-changelog#4_7_1362)
-
-    * [Version 4.7.0_1309, released on 28 February 2022](/docs/openshift?topic=openshift-hpcs-router-changelog#4_7_0_1309)
-
-    * [Version 4.7.0_1226, released on 25 January 2022](/docs/openshift?topic=openshift-hpcs-router-changelog#4_7_1226)
-
-    * [Version 4.7.0_1127, released on 11 January 2022](/docs/openshift?topic=openshift-hpcs-router-changelog#4_7_1127)
-
-    * [Version 4.7.0_1013, released on 19 November 2021](/docs/openshift?topic=openshift-hpcs-router-changelog#4_7_1013)
-
-    * [Version 4.7.0_985, released on 16 November 2021](/docs/openshift?topic=openshift-hpcs-router-changelog#4_7_0985)
-
-    * [Version 4.7.0_854, released on 7 September 2021](/docs/openshift?topic=openshift-hpcs-router-changelog#4_7_0854)
-
-* [Version 4.6.0](/docs/openshift?topic=openshift-hpcs-router-changelog#4_6_0)
-
-    * [Version 4.6.0_2289, released on 14 Jul 2022](/docs/openshift?topic=openshift-hpcs-router-changelog#4_6_0_2289)
-
-    * [Version 4.6.0_2245, released on 7 Jul 2022](/docs/openshift?topic=openshift-hpcs-router-changelog#4_6_0_2245)
-
-    * [Version 4.6.0_1986, released on 13 Jun 2022](/docs/openshift?topic=openshift-hpcs-router-changelog#4_6_0_1986)
-
-    * [Version 4.6.0_1570, released on 4 May 2022](/docs/openshift?topic=openshift-hpcs-router-changelog#4_6_0_1570)
-
-    * [Version 4.6.0_1468, released on 11 April 2022](/docs/openshift?topic=openshift-hpcs-router-changelog#4_6_0_1468)
-
-    * [Version 4.6.0_1383, released on 24 March 2022](/docs/openshift?topic=openshift-hpcs-router-changelog#4_6_0_1383)
-
-    * [Version 4.6.0_1360, released on 14 March 2022](/docs/openshift?topic=openshift-hpcs-router-changelog#4_6_1360)
-
-    * [Version 4.6.0_1308, released on 28 February 2022](/docs/openshift?topic=openshift-hpcs-router-changelog#4_6_0_1308)
-
-    * [Version 4.6.0_1227, released on 25 January 2022](/docs/openshift?topic=openshift-hpcs-router-changelog#4_6_1227)
-
-    * [Version 4.6.0_1126, released on 11 January 2022](/docs/openshift?topic=openshift-hpcs-router-changelog#4_6_1126)
-
-    * [Version 4.6.0_1012, released on 19 November 2021](/docs/openshift?topic=openshift-hpcs-router-changelog#4_6_1012)
-
-    * [Version 4.6.0_987, released on 16 November 2021](/docs/openshift?topic=openshift-hpcs-router-changelog#4_6_0987)
-
-    * [Version 4.6.0_860, released on 21 September 2021](/docs/openshift?topic=openshift-hpcs-router-changelog#4_6_0860)
-
-    * [Version 4.6.0_838, released on 23 August 2021](/docs/openshift?topic=openshift-hpcs-router-changelog#4_6_0838)
-
-    * [Version 4.6.0_796, released on 10 August 2021](/docs/openshift?topic=openshift-hpcs-router-changelog#4_6_0796)
-
-    * [Version 4.6.0_750, released on 26 Jul 2021](/docs/openshift?topic=openshift-hpcs-router-changelog#4_6_0750)
-
-    * [Version 4.6.0_696, released on 02 Jun 2021](/docs/openshift?topic=openshift-hpcs-router-changelog#4_6_0696)
-
-    * [Version 4.6.0_678, released on 22 Apr 2021](/docs/openshift?topic=openshift-hpcs-router-changelog#4_6_0678)
-
-    * [Version 4.6.0_663, released on 19 Apr 2021](/docs/openshift?topic=openshift-hpcs-router-changelog#4_6_0663)
-
-    * [Version 4.6.0_654, released on 14 Apr 2021](/docs/openshift?topic=openshift-hpcs-router-changelog#4_6_0654)
-
-    * [Version 4.6.0_646, released on 30 Mar 2021](/docs/openshift?topic=openshift-hpcs-router-changelog#4_6_0646)
-
-* [Version 4.5.0 (Unsupported)](/docs/openshift?topic=openshift-hpcs-router-changelog#4_5_0)
-
-    * [Version 4.5.0_861, released on 21 September 2021](/docs/openshift?topic=openshift-hpcs-router-changelog#4_5_0861)
-
-    * [Version 4.5.0_837, released on 23 August 2021](/docs/openshift?topic=openshift-hpcs-router-changelog#4_5_0837)
-
-    * [Version 4.5.0_790, released on 10 August 2021](/docs/openshift?topic=openshift-hpcs-router-changelog#4_5_0790)
-
-    * [Version 4.5.0_749, released on 26 Jul 2021](/docs/openshift?topic=openshift-hpcs-router-changelog#4_5_0749)
-
-    * [Version 4.5.0_694, released on 02 Jun 2021](/docs/openshift?topic=openshift-hpcs-router-changelog#4_5_0694)
-
-    * [Version 4.5.0_679, released on 22 Apr 2021](/docs/openshift?topic=openshift-hpcs-router-changelog#4_5_0679)
-
-    * [Version 4.5.0_662, released on 19 Apr 2021](/docs/openshift?topic=openshift-hpcs-router-changelog#4_5_0662)
-
-    * [Version 4.5.0_655, released on 14 Apr 2021](/docs/openshift?topic=openshift-hpcs-router-changelog#4_5_0655)
-
-    * [Version 4.5.0_647, released on 30 Mar 2021](/docs/openshift?topic=openshift-hpcs-router-changelog#4_5_0647)
 
 [IBM Cloud Image Key Synchronizer add-on version change log](/docs/openshift?topic=openshift-cl-add-ons-ibm-cloud-image-key-synchronizer#cl-add-ons-ibm-cloud-image-key-synchronizer)
 
@@ -8648,8 +8282,6 @@ subcollection: openshift
 
     * [Worker node fix pack 4.10.12_1517_openshift, released 09 May 2022](/docs/openshift?topic=openshift-openshift_changelog_410#41012_1517_openshift)
 
-    * [Change log for fix pack 4.10.9_1515_openshift (master) and 4.10.10_1516_openshift (worker node), released 27 April 2022](/docs/openshift?topic=openshift-openshift_changelog_410#4109_1515_openshift_and_41010_1516_openshift)
-
 [4.10 CIS Kubernetes Benchmark](/docs/openshift?topic=openshift-cis-benchmark-410#cis-benchmark-410)
 
 * [1 Master node security configuration](/docs/openshift?topic=openshift-cis-benchmark-410#cis-benchmark-1-410)
@@ -8859,26 +8491,6 @@ subcollection: openshift
 
     * [Worker node fix pack 4.9.31_1538_openshift, released 09 May 2022](/docs/openshift?topic=openshift-openshift_changelog_49#4931_1538_openshift)
 
-    * [Master fix pack 4.9.28_1536_openshift, released 26 April 2022](/docs/openshift?topic=openshift-openshift_changelog_49#4928_1536_openshift)
-
-    * [Worker node fix pack 4.9.29_1537_openshift, released 25 April 2022](/docs/openshift?topic=openshift-openshift_changelog_49#4929_1537_openshift)
-
-    * [Worker node fix pack 4.9.26_1535_openshift, released 11 April 2022](/docs/openshift?topic=openshift-openshift_changelog_49#4926_1535_openshift)
-
-    * [Master fix pack 4.9.25_1534_openshift, released 6 April 2022](/docs/openshift?topic=openshift-openshift_changelog_49#4.9.25_1534)
-
-    * [Change log for worker node pack 4.9.25_1532_openshift, released 28 March 2022](/docs/openshift?topic=openshift-openshift_changelog_49#4925_1532)
-
-    * [Change log for worker node pack 4.9.23_1530_openshift, released 14 March 2022](/docs/openshift?topic=openshift-openshift_changelog_49#4923_1530)
-
-    * [Master fix pack 4.9.21_1528_openshift, released 3 March 2022](/docs/openshift?topic=openshift-openshift_changelog_49#4921_1528)
-
-    * [Worker node fix pack 4.9.22_1529_openshift, released 28 February 2022](/docs/openshift?topic=openshift-openshift_changelog_49#4922_1529)
-
-    * [Worker node fix pack 4.9.19_1526_openshift, released 14 February 2022](/docs/openshift?topic=openshift-openshift_changelog_49#4919_1526)
-
-    * [Master fix pack 4.9.17_1525_openshift and worker node fix pack 4.9.17_1523_openshift, released 9 February 2022](/docs/openshift?topic=openshift-openshift_changelog_49#4917_1525)
-
 [4.9 CIS Kubernetes Benchmark](/docs/openshift?topic=openshift-cis-benchmark-49#cis-benchmark-49)
 
 * [1 Master node security configuration](/docs/openshift?topic=openshift-cis-benchmark-49#cis-section-1-49)
@@ -9056,50 +8668,6 @@ subcollection: openshift
 
     * [Worker node fix pack 4.8.39_1556_openshift, released 09 May 2022](/docs/openshift?topic=openshift-openshift_changelog_48#4839_1556_openshift)
 
-    * [Master fix pack 4.8.36_1554_openshift, released 26 April 2022](/docs/openshift?topic=openshift-openshift_changelog_48#4836_1554_openshift)
-
-    * [Worker node fix pack 4.8.37_1555_openshift, released 25 April 2022](/docs/openshift?topic=openshift-openshift_changelog_48#4837_1555_openshift)
-
-    * [Worker node fix pack 4.8.35_1553_openshift, released 11 April 2022](/docs/openshift?topic=openshift-openshift_changelog_48#4835_1553_openshift)
-
-    * [Master fix pack 4.8.35_1552_openshift, released 6 April 2022](/docs/openshift?topic=openshift-openshift_changelog_48#4835_1552)
-
-    * [Change log for worker node pack 4.8.35_1550_openshift, released 28 March 2022](/docs/openshift?topic=openshift-openshift_changelog_48#4835_1550)
-
-    * [Change log for worker node pack 4.8.32_1548_openshift, released 14 March 2022](/docs/openshift?topic=openshift-openshift_changelog_48#4832_1548)
-
-    * [Master fix pack 4.8.31_1546_openshift, released 3 March 2022](/docs/openshift?topic=openshift-openshift_changelog_48#4831_1546)
-
-    * [Worker node fix pack 4.8.32_1547_openshift, released 28 February 2022](/docs/openshift?topic=openshift-openshift_changelog_48#4832_1547)
-
-    * [Worker node fix pack 4.8.29_1544_openshift, released 14 February 2022](/docs/openshift?topic=openshift-openshift_changelog_48#4829_1544)
-
-    * [Worker node fix pack 4.8.28_1543_openshift, released 31 January 2022](/docs/openshift?topic=openshift-openshift_changelog_48#4828_1543)
-
-    * [Master fix pack 4.8.26_1542_openshift, released 26 January 2022](/docs/openshift?topic=openshift-openshift_changelog_48#4826_1542)
-
-    * [Worker node fix pack 4.8.26_1541_openshift, released 18 January 2022](/docs/openshift?topic=openshift-openshift_changelog_48#4826_1541)
-
-    * [Worker node fix pack 4.8.24_1540_openshift, released 4 January 2022](/docs/openshift?topic=openshift-openshift_changelog_48#4824_1540)
-
-    * [Worker node fix pack 4.8.24_1539_openshift, released 20 December 2021](/docs/openshift?topic=openshift-openshift_changelog_48#4824_1539_openshift)
-
-    * [Master fix pack 4.8.21_1537_openshift, released 7 December 2021](/docs/openshift?topic=openshift-openshift_changelog_48#4821_1537)
-
-    * [Worker node fix pack 4.8.22_1538_openshift, released 6 December 2021](/docs/openshift?topic=openshift-openshift_changelog_48#4822_1538)
-
-    * [Worker node fix pack 4.8.20_1536_openshift, released 22 November 2021](/docs/openshift?topic=openshift-openshift_changelog_48#4820_1536)
-
-    * [Master fix pack 4.8.18_1535_openshift, released 17 November 2021](/docs/openshift?topic=openshift-openshift_changelog_48#4818_1535)
-
-    * [Worker node fix pack 4.8.18_1533_openshift, released 10 November 2021](/docs/openshift?topic=openshift-openshift_changelog_48#4818_1533)
-
-    * [Master fix pack 4.8.14_1531_openshift, released 29 October 2021](/docs/openshift?topic=openshift-openshift_changelog_48#4814_1531)
-
-    * [Worker node fix pack 4.8.15_1532_openshift, released 25 October 2021](/docs/openshift?topic=openshift-openshift_changelog_48#4815_1532)
-
-    * [Worker node fix pack 4.8.13_1528_openshift, released 11 October 2021](/docs/openshift?topic=openshift-openshift_changelog_48#48131528_openshift)
-
 [4.8 CIS Kubernetes Benchmark](/docs/openshift?topic=openshift-cis-benchmark-48#cis-benchmark-48)
 
 * [1 Master node security configuration](/docs/openshift?topic=openshift-cis-benchmark-48#cis-section-1-48)
@@ -9214,78 +8782,6 @@ subcollection: openshift
     * [Worker node fix pack 4.7.50_1564_openshift, released 23 May 2022](/docs/openshift?topic=openshift-openshift_changelog_47#4750_1564_openshift)
 
     * [Worker node fix pack 4.7.49_1566_openshift, released 09 May 2022](/docs/openshift?topic=openshift-openshift_changelog_47#4749_1566_openshift)
-
-    * [Master fix pack 4.7.48_1561_openshift, released 26 April 2022](/docs/openshift?topic=openshift-openshift_changelog_47#4748_1561_openshift)
-
-    * [Worker node fix pack 4.7.49_1562_openshift, released 25 April 2022](/docs/openshift?topic=openshift-openshift_changelog_47#4749_1562_openshift)
-
-    * [Worker node fix pack 4.7.46_1560_openshift, released 11 April 2022](/docs/openshift?topic=openshift-openshift_changelog_47#4746_1560_openshift)
-
-    * [Master fix pack 4.7.45_1559_openshift, released 6 April 2022](/docs/openshift?topic=openshift-openshift_changelog_47#4745_1559)
-
-    * [Change log for worker node pack 4.7.45_1557_openshift, released 28 March 2022](/docs/openshift?topic=openshift-openshift_changelog_47#4745_1557)
-
-    * [Change log for worker node pack 4.7.44_1554_openshift, released 14 March 2022](/docs/openshift?topic=openshift-openshift_changelog_47#4744_1554)
-
-    * [Master fix pack 4.7.43_1552_openshift, released 3 March 2022](/docs/openshift?topic=openshift-openshift_changelog_47#4743_1552)
-
-    * [Worker node fix pack 4.7.42_1553_openshift, released 28 February 2022](/docs/openshift?topic=openshift-openshift_changelog_47#4742_1553)
-
-    * [Worker node fix pack 4.7.42_1549_openshift, released 14 February 2022](/docs/openshift?topic=openshift-openshift_changelog_47#4742_1549)
-
-    * [Worker node fix pack 4.7.41_1548_openshift, released 31 January 2022](/docs/openshift?topic=openshift-openshift_changelog_47#4741_1548)
-
-    * [Master fix pack 4.7.40_1547_openshift, released 26 January 2022](/docs/openshift?topic=openshift-openshift_changelog_47#4740_1547)
-
-    * [Worker node fix pack 4.7.40_1546_openshift, released 18 January 2022](/docs/openshift?topic=openshift-openshift_changelog_47#4740_1546)
-
-    * [Worker node fix pack 4.7.40_1545_openshift, released 4 January 2022](/docs/openshift?topic=openshift-openshift_changelog_47#4740_1545)
-
-    * [Worker node fix pack 4.7.40_1544_openshift, released 20 December 2021](/docs/openshift?topic=openshift-openshift_changelog_47#4740_1544_openshift)
-
-    * [Master fix pack 4.7.37_1542_openshift, released 7 December 2021](/docs/openshift?topic=openshift-openshift_changelog_47#4737_1542)
-
-    * [Worker node fix pack 4.7.38_1543_openshift, released 6 December 2021](/docs/openshift?topic=openshift-openshift_changelog_47#4738_1543)
-
-    * [Worker node fix pack 4.7.37_1540_openshift, released 22 November 2021](/docs/openshift?topic=openshift-openshift_changelog_47#4737_1540)
-
-    * [Master fix pack 4.7.36_1539_openshift, released 17 November 2021](/docs/openshift?topic=openshift-openshift_changelog_47#4736_1539)
-
-    * [Worker node fix pack 4.7.36_1538_openshift, released 10 November 2021](/docs/openshift?topic=openshift-openshift_changelog_47#4736_1538)
-
-    * [Master fix pack 4.7.33_1536_openshift, released 29 October 2021](/docs/openshift?topic=openshift-openshift_changelog_47#4733_1536)
-
-    * [Worker node fix pack 4.7.34_1537_openshift, released 25 October 2021](/docs/openshift?topic=openshift-openshift_changelog_47#4734_1537)
-
-    * [Worker node fix pack 4.7.32_1534_openshift, released 11 October 2021](/docs/openshift?topic=openshift-openshift_changelog_47#4732_1534_openshift)
-
-    * [Master fix pack 4.7.30_1532_openshift, released 28 September 2021](/docs/openshift?topic=openshift-openshift_changelog_47#4730_1532)
-
-    * [Worker node fix pack 4.7.31_1533_openshift, released 27 September 2021](/docs/openshift?topic=openshift-openshift_changelog_47#4731_1533)
-
-    * [Worker node fix pack 4.7.29_1531_openshift, released 13 September 2021](/docs/openshift?topic=openshift-openshift_changelog_47#4729_1531)
-
-    * [Worker node fix pack 4.7.24_1530_openshift, released 30 August 2021](/docs/openshift?topic=openshift-openshift_changelog_47#4724_1530)
-
-    * [Master fix pack 4.7.23_1529_openshift, released 25 August 2021](/docs/openshift?topic=openshift-openshift_changelog_47#4723_1529)
-
-    * [Worker node fix pack 4.7.23_1528_openshift, released 16 August 2021](/docs/openshift?topic=openshift-openshift_changelog_47#4723_1528)
-
-    * [Worker node fix pack 4.7.21_1527_openshift, released 02 August 2021](/docs/openshift?topic=openshift-openshift_changelog_47#4721_1527)
-
-    * [Master fix pack 4.7.19_1526_openshift, released 27 July 2021](/docs/openshift?topic=openshift-openshift_changelog_47#4719_1526)
-
-    * [Worker node fix pack 4.7.19_1525_openshift, released 19 July 2021](/docs/openshift?topic=openshift-openshift_changelog_47#4719_1525)
-
-    * [Worker node fix pack 4.7.18_1524_openshift, released 6 July 2021](/docs/openshift?topic=openshift-openshift_changelog_47#4718_1524)
-
-    * [Master fix pack 4.7.16_1523_openshift, released 28 June 2021](/docs/openshift?topic=openshift-openshift_changelog_47#4716_1523)
-
-    * [Worker node fix pack 4.7.16_1522_openshift, released 22 June 2021](/docs/openshift?topic=openshift-openshift_changelog_47#4716_1522)
-
-    * [Worker node fix pack 4.7.13_1521_openshift, released 9 June 2021](/docs/openshift?topic=openshift-openshift_changelog_47#4713_1521)
-
-    * [Master fix pack 4.7.12_1520_openshift, released 9 June 2021](/docs/openshift?topic=openshift-openshift_changelog_47#4712_1520)
 
 [4.7 CIS Kubernetes Benchmark](/docs/openshift?topic=openshift-cis-benchmark-47#cis-benchmark-47)
 
@@ -10061,8 +9557,6 @@ subcollection: openshift
 [Why can't I install a new strongSwan Helm chart release?](/docs/openshift?topic=openshift-cs_strongswan_release#cs_strongswan_release)
 
 [Why does strongSwan VPN connectivity fail after I add or delete worker nodes?](/docs/openshift?topic=openshift-cs_vpn_fails_worker_add#cs_vpn_fails_worker_add)
-
-[Why do OpenSSL connections to Let's Encrypt fail after 30 September 2021?](/docs/openshift?topic=openshift-ts-letsencrypt#ts-letsencrypt)
 
 [Debugging Calico components](/docs/openshift?topic=openshift-calico_log_level#calico_log_level)
 

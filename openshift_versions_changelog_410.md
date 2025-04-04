@@ -2,7 +2,7 @@
 
 copyright:
   years: 2022, 2025
-lastupdated: "2025-03-28"
+lastupdated: "2025-04-04"
 
 
 keywords: openshift, 4.10, update, upgrade, BOM, bill of materials, versions, patch
@@ -1149,20 +1149,3 @@ The following table shows the changes that are in the worker node fix pack 4.10.
 | {{site.data.keyword.openshiftshort}}. | 4.10.10 | 4.10.12 | For more information, see the [change log](https://docs.redhat.com/documentation/openshift_container_platform/4.10/html/release_notes/ocp-4-10-release-notes#ocp-4-10-12){: external}. |
 | HAProxy | f53b22 | 36b030 | [CVE-2022-1271](https://nvd.nist.gov/vuln/detail/CVE-2022-1271){: external}, [CVE-2022-1154](https://nvd.nist.gov/vuln/detail/CVE-2022-1154){: external}, [CVE-2018-25032](https://nvd.nist.gov/vuln/detail/CVE-2018-25032){: external}. |
 {: caption="Changes since version 4.10.10_1516_openshift" caption-side="bottom"}
-
-
-### Change log for fix pack 4.10.9_1515_openshift (master) and 4.10.10_1516_openshift (worker node), released 27 April 2022
-{: #4109_1515_openshift_and_41010_1516_openshift}
-
-| Component | Previous | Current | Description |
-| --- | --- | --- | --- |
-| Calico | v3.21.5 | v3.22.2 | See the [Calico release notes](https://docs.tigera.io/archive){: external}. |
-| Tigera Operator | v1.23.7 | v1.25.7 | See the [Tigera Operator release notes](https://github.com/tigera/operator/releases/tag/v1.25.7){: external}. |
-| IBM Cloud Controller Manager | v1.22.8-7 | v1.23.5-9 | Updated to support the Kubernetes `1.23.5` release and to use Go version `1.17.8`. Classic load balancers are updated to improve availability during updates. In addition, creating a mixed protocol load balancer is not supported. |
-| OpenShift (master) | 4.9.28 | 4.10.9 | See the [OpenShift release notes](https://docs.redhat.com/documentation/openshift_container_platform/4.10/html/release_notes/ocp-4-10-release-notes#ocp-4-10-9){: external}. |
-| OpenShift (worker) | 4.9.29 | 4.10.10 | See the [OpenShift release notes](https://docs.redhat.com/documentation/openshift_container_platform/4.10/html/release_notes/ocp-4-10-release-notes#ocp-4-10-10){: external}. Worker nodes are configured to pull images in parallel. |
-| Red Hat OpenShift Control Plane Operator | v4.9.0-20220412 | v4.10.0-20220420 | See the [{{site.data.keyword.redhat_openshift_notm}} toolkit release notes](https://github.com/openshift/ibm-roks-toolkit/releases/tag/v4.10.0+20220420){: external}. |
-| Red Hat OpenShift configuration | N/A | N/A | Updated the [feature gate configuration](/docs/openshift?topic=openshift-service-settings#feature-gates). |
-| {{site.data.keyword.redhat_openshift_notm}} Metrics Server | v4.9.0-20220412 | v4.10.0-20220420 | See the [{{site.data.keyword.redhat_openshift_notm}} toolkit release notes](https://github.com/openshift/ibm-roks-toolkit/releases/tag/v4.10.0+20220420){: external}. |
-| {{site.data.keyword.redhat_openshift_notm}} toolkit | 4.9.0+20220412 | 4.10.0+20220420 | See the [{{site.data.keyword.redhat_openshift_notm}} toolkit release notes](https://github.com/openshift/ibm-roks-toolkit/releases/tag/v4.10.0+20220420){: external}. |
-{: caption="Changes since version 4.9.28_1536_openshift master and 4.9.29_1537_openshift worker node" caption-side="bottom"}
