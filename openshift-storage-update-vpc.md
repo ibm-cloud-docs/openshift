@@ -2,7 +2,7 @@
 
 copyright:
   years: 2023, 2025
-lastupdated: "2025-03-27"
+lastupdated: "2025-04-07"
 
 
 keywords: openshift, openshift data foundation, openshift container storage, ocs, worker update, worker replace
@@ -96,6 +96,22 @@ Before updating your worker nodes, make sure to back up your app data. Also, pla
     10.241.64.4    Ready    master,worker   22d    v1.21.6+bb8d50a
     ```
     {: screen}
+
+## Make sure the storage cluster is healthy
+{: #scale-down-odf-vpc}
+{: step}
+
+[Major update]{: tag-red} [Minor update]{: tag-blue} [Worker replace]{: tag-green}
+
+Run the following commands to check the storage cluster health.
+
+```sh
+oc get storagecluster -n openshift-storage 
+oc get cephcluster -n openshift-storage 
+```
+{: pre}
+
+Make sure the storage cluster is healthy before continuing.
 
 ## Scale down OpenShift Data Foundation
 {: #scale-down-odf-vpc}
