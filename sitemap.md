@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2025
-lastupdated: "2025-04-04"
+lastupdated: "2025-04-07"
 
 
 keywords: openshift
@@ -272,6 +272,12 @@ subcollection: openshift
 
 
 [Release notes](/docs/openshift?topic=openshift-openshift-relnotes#openshift-relnotes)
+
+* [April 2025](/docs/openshift?topic=openshift-openshift-relnotes#openshift-april25)
+
+    * [08 April 2025](/docs/openshift?topic=openshift-openshift-relnotes#openshift-08april25)
+
+        * {{site.data.keyword.cos_full_notm}} plug-in updates.
 
 * [March 2025](/docs/openshift?topic=openshift-openshift-relnotes#openshift-mar25)
 
@@ -4636,6 +4642,8 @@ subcollection: openshift
 
 * [Determine which storage nodes you want to update or replace](/docs/openshift?topic=openshift-openshift-storage-update-vpc#determine-storage-nodes-vpc)
 
+* [Make sure the storage cluster is healthy](/docs/openshift?topic=openshift-openshift-storage-update-vpc#scale-down-odf-vpc)
+
 * [Scale down OpenShift Data Foundation](/docs/openshift?topic=openshift-openshift-storage-update-vpc#scale-down-odf-vpc)
 
 * [Cordon and drain the worker node](/docs/openshift?topic=openshift-openshift-storage-update-vpc#cordon-drain-worker-node-vpc)
@@ -7486,6 +7494,8 @@ subcollection: openshift
     * [Change log for version 1.0, released 16 May 2023](/docs/openshift?topic=openshift-cl-add-ons-vpc-file-csi-driver#1.0_is_file_relnote)
 
 [{{site.data.keyword.cos_full_notm}} plug-in](/docs/openshift?topic=openshift-cos_plugin_changelog#cos_plugin_changelog)
+
+* [Change log for version 2.2.37, released 07 April 2025](/docs/openshift?topic=openshift-cos_plugin_changelog#02237_object_plugin)
 
 * [Change log for version 2.2.36, released 10 March 2025](/docs/openshift?topic=openshift-cos_plugin_changelog#02236_object_plugin)
 
