@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2025
-lastupdated: "2025-01-21"
+lastupdated: "2025-04-09"
 
 
 keywords: openshift, {{site.data.keyword.openshiftlong_notm}}, iro, openshift, red hat, red hat openshift
@@ -79,7 +79,7 @@ When you create worker nodes by adding a worker pool or cluster, {{site.data.key
 ##### New OCP licenses with reduced pricing, available 9 November 2020
 {: #licenses-on-demand-new}
 
-New OCP licenses include reduced pricing from Red Hat. a {{site.data.keyword.redhat_openshift_notm}} license is billed for every two virtual cores (or one physical cores) of the worker node flavor. Charges vary by the type of worker node that you have, for as long as you have the worker node. For more information, see the [{{site.data.keyword.cloud_notm}} blog](https://www.ibm.com/blog/announcement/run-workloads-by-the-hour-with-red-hat-openshift-on-ibm-cloud/){: external}.
+New OCP licenses include reduced pricing from Red Hat. a {{site.data.keyword.redhat_openshift_notm}} license is billed for every two virtual cores (or one physical cores) of the worker node flavor. Charges vary by the type of worker node that you have, for as long as you have the worker node.
 
 * **Virtual machines (VMs)**: The OCP licenses are billed hourly. For example, you create a worker pool with VMs, test an app for 3 days, and then delete the worker pool. You are billed for only the hours that your worker nodes were deployed.
 * **Physical machines (bare metal)**: The OCP licenses are prorated for the first month that you create the worker nodes in, and then billed monthly for the remaining lifecycle of the worker node. For example, you create a cluster with bare metal worker nodes on 15 August and delete the cluster on 14 September. You are charged a prorated monthly cost for the first month of August, but the full monthly cost for September.

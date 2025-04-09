@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2025
-lastupdated: "2025-04-07"
+lastupdated: "2025-04-09"
 
 
 keywords: openshift
@@ -4642,7 +4642,7 @@ subcollection: openshift
 
 * [Determine which storage nodes you want to update or replace](/docs/openshift?topic=openshift-openshift-storage-update-vpc#determine-storage-nodes-vpc)
 
-* [Make sure the storage cluster is healthy](/docs/openshift?topic=openshift-openshift-storage-update-vpc#scale-down-odf-vpc)
+* [Make sure the storage cluster is healthy](/docs/openshift?topic=openshift-openshift-storage-update-vpc#cluster-health)
 
 * [Scale down OpenShift Data Foundation](/docs/openshift?topic=openshift-openshift-storage-update-vpc#scale-down-odf-vpc)
 
@@ -4962,8 +4962,6 @@ subcollection: openshift
 * [Operator FAQ](/docs/openshift?topic=openshift-operators#operator_faq)
 
 [Using the compliance operator](/docs/openshift?topic=openshift-compliance-operator#compliance-operator)
-
-[Setting up the {{site.data.keyword.redhat_notm}} Marketplace](/docs/openshift?topic=openshift-rh-marketplace#rh-marketplace)
 
 [Adding services by using managed add-ons](/docs/openshift?topic=openshift-managed-addons#managed-addons)
 

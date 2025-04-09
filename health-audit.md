@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2025
-lastupdated: "2025-03-28"
+lastupdated: "2025-04-09"
 
 
 keywords: openshift, kubernetes, logmet, logs, metrics, audit, events
@@ -646,4 +646,4 @@ To view the alert:
 
 1. From the {{site.data.keyword.openshiftshort}}, select the **Administrator** view.
 1. Click **Observe** > **Alerting** > **AuditWebhookError**.
-1. To create a notification for this alert, see [Sending notifications to external systems](https://docs.redhat.com/documentation/openshift_container_platform/4.10/html/monitoring/managing-alerts#sending-notifications-to-external-systems_managing-alerts){: external}.
+1. To create a notification for this alert, see [Sending notifications to external systems](https://docs.redhat.com/en/documentation/openshift_container_platform/4.10/html/monitoring/managing-alerts#sending-notifications-to-external-systems_managing-alerts){: external}.

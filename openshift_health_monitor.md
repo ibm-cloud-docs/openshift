@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2025
-lastupdated: "2025-03-28"
+lastupdated: "2025-04-09"
 
 
 keywords: oks, iro, openshift, red hat, red hat openshift
@@ -77,7 +77,7 @@ The following metrics can be monitored for {{site.data.keyword.openshiftlong}} c
 - `kubelet_volume_stats_inodes_free`
 - `kubelet_volume_stats_inodes_used`
 
-Want to set up storage monitoring alerts for platforms such as email or Slack? See [Sending notifications to external systems](https://docs.redhat.com/documentation/openshift_container_platform/4.10/html/monitoring/managing-alerts#sending-notifications-to-external-systems_managing-alerts){: external} in the {{site.data.keyword.redhat_openshift_notm}} documentation. 
+Want to set up storage monitoring alerts for platforms such as email or Slack? See [Sending notifications to external systems](https://docs.redhat.com/en/documentation/openshift_container_platform/4.10/html/monitoring/managing-alerts#sending-notifications-to-external-systems_managing-alerts){: external} in the {{site.data.keyword.redhat_openshift_notm}} documentation. 
 {: tip}
 
 Before monitoring metrics for {{site.data.keyword.block_storage_is_short}}, you must have a cluster with the {{site.data.keyword.block_storage_is_short}} cluster add-on enabled and you must have a {{site.data.keyword.block_storage_is_short}} volume attached to a worker node. {{site.data.keyword.openshiftlong}} Storage Metrics are populated only for mounted storage volumes.
