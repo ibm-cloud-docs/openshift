@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2025
-lastupdated: "2025-03-31"
+lastupdated: "2025-04-09"
 
 
 keywords: openshift, red hat, red hat openshift, admin
@@ -81,7 +81,7 @@ Review the following optional topics to manage the network connectivity of your 
     - To route responses from your cluster back to your on-premises network in VPN solutions that preserve the request source IP address, add [custom static routes](/docs/openshift?topic=openshift-static-routes) to worker nodes for on-premises subnets.
 - **Subnets and VLANs**:
     - Add or change the available subnets and IP addresses for your [classic cluster](/docs/openshift?topic=openshift-subnets) or [VPC cluster](/docs/openshift?topic=openshift-vpc-subnets).
-    - Classic clusters: Change the [VLAN connections for your worker nodes](/docs/openshift?topic=openshift-cs_network_cluster#change-vlans).
+    - Classic clusters: Change the [VLAN connections for your worker nodes](/docs/containers?topic=containers-cs_network_cluster#change-vlans).
 
 
 

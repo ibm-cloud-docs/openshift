@@ -2,7 +2,7 @@
 
 copyright:
   years: 2023, 2025
-lastupdated: "2025-04-07"
+lastupdated: "2025-04-09"
 
 
 keywords: openshift, openshift data foundation, openshift container storage, ocs, worker update, worker replace
@@ -98,7 +98,7 @@ Before updating your worker nodes, make sure to back up your app data. Also, pla
     {: screen}
 
 ## Make sure the storage cluster is healthy
-{: #scale-down-odf-vpc}
+{: #cluster-health}
 {: step}
 
 [Major update]{: tag-red} [Minor update]{: tag-blue} [Worker replace]{: tag-green}

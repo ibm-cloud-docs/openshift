@@ -1,8 +1,8 @@
 ---
 
 copyright:
-  years: 2014, 2024
-lastupdated: "2024-01-03"
+  years: 2014, 2025
+lastupdated: "2025-04-09"
 
 
 keywords: openshift
@@ -57,8 +57,8 @@ When the components fully provision, a public Ingress controller subdomain is av
 3. Check that your cluster has public connectivity so that the networking components can talk to the master as they deploy.
     * VPC clusters with public and private cloud service endpoints enabled: [Ensure that a public gateway is enabled on each subnet](/docs/openshift?topic=openshift-vpc-subnets#create_vpc_subnet) that your cluster is attached to. Public gateway are required for default components such as the web console and OperatorHub to use a secure, public connection to complete actions such as pulling images from remote, private registries. Note that if only the private service endpoint is enabled for your cluster, no public gateway is required because the private cloud service endpoint is used by default to access OpenShift components such as the OpenShift web console or OperatorHub.
     * Classic clusters:
-        * In the output of Step 2, check that your cluster has a **Public Service Endpoint URL**. If your cluster does not have a public cloud service endpoint, [enable it](/docs/openshift?topic=openshift-cs_network_cluster#set-up-public-se).
-        * Check that at least some worker nodes in your cluster have a **Public IP** address. If no worker node does, you must [set up public VLANs for at least one worker pool](/docs/openshift?topic=openshift-cs_network_cluster#change-vlans).
+        * In the output of Step 2, check that your cluster has a **Public Service Endpoint URL**. If your cluster does not have a public cloud service endpoint, enable it.
+        * Check that at least some worker nodes in your cluster have a **Public IP** address. If no worker node does, you must set up public VLANs for at least one worker pool.
           ```sh
           ibmcloud oc workers -c <cluster_name_or_ID>
           ```
@@ -74,9 +74,3 @@ When the components fully provision, a public Ingress controller subdomain is av
     *  If the Ingress controller subdomain is not updated after two hours of creating the cluster, review the **Master Status** of the cluster again, and follow any troubleshooting steps to resolve the issue.
 
 If the troubleshooting steps don't resolve the issue, see [Getting help](/docs/openshift?topic=openshift-get-help).
-
-
-
-
-
-

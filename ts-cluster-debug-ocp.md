@@ -1,8 +1,8 @@
 ---
 
 copyright:
-  years: 2014, 2024
-lastupdated: "2024-11-06"
+  years: 2014, 2025
+lastupdated: "2025-04-09"
 
 
 keywords: openshift
@@ -73,8 +73,8 @@ Enabling MFA at the user level is not supported. If MFA is enabled for some user
         ```
         {: pre}
 
-    1. In the **Master Status** output, check that your cluster has a **Public Service Endpoint URL**. If your cluster does not have a public cloud service endpoint, [enable it](/docs/openshift?topic=openshift-cs_network_cluster#set-up-public-se).
-    1. Check that at least some worker nodes in your cluster have a **Public IP** address. If no worker node does, you must [set up public VLANs for at least one worker pool](/docs/openshift?topic=openshift-cs_network_cluster#change-vlans).
+    1. In the **Master Status** output, check that your cluster has a **Public Service Endpoint URL**. If your cluster does not have a public cloud service endpoint, enable it.
+    1. Check that at least some worker nodes in your cluster have a **Public IP** address. If no worker node does, you must set up public VLANs for at least one worker pool.
 
         ```sh
         ibmcloud oc workers -c <cluster_name_or_ID>

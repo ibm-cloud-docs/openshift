@@ -2,7 +2,7 @@
 
 copyright:
   years: 2025, 2025
-lastupdated: "2025-03-28"
+lastupdated: "2025-04-09"
 
 
 keywords: openshift, openshift data foundation, openshift container storage, disaster recovery
@@ -128,7 +128,7 @@ Follow these steps to install ACM on the hub cluster and then set up the disaste
         ```
         {: code}
         
-     1. Wait for the Submariner add-on status to show healthy (green). This can take up to 20 minutes. For more information about Submariner setup, see [Deploying Submariner manually](https://docs.redhat.com/documentation/red_hat_advanced_cluster_management_for_kubernetes/2.11/html/networking/networking#deploying-submariner-manually){: external}.
+     1. Wait for the Submariner add-on status to show healthy (green). This can take up to 20 minutes. For more information about Submariner setup, see [Deploying Submariner manually](https://docs.redhat.com/en/documentation/red_hat_advanced_cluster_management_for_kubernetes/2.11/html/networking/networking#deploying-submariner-manually){: external}.
 
 1. Install the OpenShift Data Foundation add-on version 4.17 or later on the primary and secondary managed clusters. Make sure you select the **Enable DR** option and enable NooBaa installation during the ODF installation. For more information, see [Installing the OpenShift Data Foundation add-on](/docs/openshift?topic=openshift-deploy-odf-vpc#install-odf-console-vpc).
 

@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2025
-lastupdated: "2025-03-28"
+lastupdated: "2025-04-09"
 
 
 keywords: openshift, route, router
@@ -606,7 +606,7 @@ If your cluster is created on VPC infrastructure and you enabled the only privat
 ## Moving Ingress controller services across VLANs in classic clusters
 {: #migrate-router-vlan-classic}
 
-When you [change your worker node VLAN connections](/docs/openshift?topic=openshift-cs_network_cluster#change-vlans), the worker nodes are connected to the new VLAN and assigned new public or private IP addresses. However, Ingress controller services can't automatically migrate to the new VLAN because they are assigned a stable, portable public or private IP address from a subnet that belongs to the old VLAN. When your worker nodes and Ingress controllers are connected to different VLANs, the Ingress controllers can't forward incoming network traffic to app pods on your worker nodes. To move your Ingress controller services to a different VLAN, you must create the Ingress controller service on the new VLAN and delete the Ingress controller service on the old VLAN.
+When you change your worker node VLAN connections, the worker nodes are connected to the new VLAN and assigned new public or private IP addresses. However, Ingress controller services can't automatically migrate to the new VLAN because they are assigned a stable, portable public or private IP address from a subnet that belongs to the old VLAN. When your worker nodes and Ingress controllers are connected to different VLANs, the Ingress controllers can't forward incoming network traffic to app pods on your worker nodes. To move your Ingress controller services to a different VLAN, you must create the Ingress controller service on the new VLAN and delete the Ingress controller service on the old VLAN.
 {: shortdesc}
 
 1. Create a Ingress controller service on the new VLAN.
