@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2025
-lastupdated: "2025-04-10"
+lastupdated: "2025-04-15"
 
 
 keywords: openshift
@@ -274,6 +274,10 @@ subcollection: openshift
 [Release notes](/docs/openshift?topic=openshift-openshift-relnotes#openshift-relnotes)
 
 * [April 2025](/docs/openshift?topic=openshift-openshift-relnotes#openshift-april25)
+
+    * [14 April 2025](/docs/openshift?topic=openshift-openshift-relnotes#openshift-14april25)
+
+        * OpenShift Data Foundation cluster add-on patch updates.
 
     * [08 April 2025](/docs/openshift?topic=openshift-openshift-relnotes#openshift-08april25)
 
@@ -7613,21 +7617,31 @@ subcollection: openshift
 
 * [Version 4.17.0](/docs/openshift?topic=openshift-cl-add-ons-openshift-data-foundation#cl-add-ons-openshift-data-foundation-4.17.0)
 
+    * [4.17.5, released 14 April 2025](/docs/openshift?topic=openshift-cl-add-ons-openshift-data-foundation#cl-add-ons-openshift-data-foundation-4175)
+
     * [4.17.1, released 04 February 2025](/docs/openshift?topic=openshift-cl-add-ons-openshift-data-foundation#cl-add-ons-openshift-data-foundation-4171)
 
 * [Version 4.16.0](/docs/openshift?topic=openshift-cl-add-ons-openshift-data-foundation#cl-add-ons-openshift-data-foundation-4.16.0)
 
     * [4.16.6, released 04 February 2025](/docs/openshift?topic=openshift-cl-add-ons-openshift-data-foundation#cl-add-ons-openshift-data-foundation-4166)
 
+    * [4.16.10, released 14 April 2025](/docs/openshift?topic=openshift-cl-add-ons-openshift-data-foundation#cl-add-ons-openshift-data-foundation-41610)
+
 * [Version 4.15.0](/docs/openshift?topic=openshift-cl-add-ons-openshift-data-foundation#cl-add-ons-openshift-data-foundation-4.15.0)
 
     * [4.15.7, released 04 February 2025](/docs/openshift?topic=openshift-cl-add-ons-openshift-data-foundation#cl-add-ons-openshift-data-foundation-4157)
 
+    * [4.15.11, released 14 April 2025](/docs/openshift?topic=openshift-cl-add-ons-openshift-data-foundation#cl-add-ons-openshift-data-foundation-41511)
+
 * [Version 4.14.0](/docs/openshift?topic=openshift-cl-add-ons-openshift-data-foundation#cl-add-ons-openshift-data-foundation-4.14.0)
+
+    * [4.14.21, released 14 April 2025](/docs/openshift?topic=openshift-cl-add-ons-openshift-data-foundation#cl-add-ons-openshift-data-foundation-41421)
 
     * [4.14.17, released 04 February 2025](/docs/openshift?topic=openshift-cl-add-ons-openshift-data-foundation#cl-add-ons-openshift-data-foundation-41417)
 
 * [Version 4.13.0](/docs/openshift?topic=openshift-cl-add-ons-openshift-data-foundation#cl-add-ons-openshift-data-foundation-4.13.0)
+
+    * [4.13.24, released 14 April 2025](/docs/openshift?topic=openshift-cl-add-ons-openshift-data-foundation#cl-add-ons-openshift-data-foundation-41324)
 
     * [4.13.20, released 04 February 2025](/docs/openshift?topic=openshift-cl-add-ons-openshift-data-foundation#cl-add-ons-openshift-data-foundation-41320)
 
