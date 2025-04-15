@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2025
-lastupdated: "2025-03-19"
+lastupdated: "2025-04-15"
 
 
 keywords: openshift, openshift data foundation, openshift container storage
@@ -31,8 +31,8 @@ What is OpenShift Data Foundation?
 How does OpenShift Data Foundation work?
 :   ODF uses these devices to create a virtualized storage layer, where your app data is replicated for high availability. Because ODF abstracts your underlying storage, you can use ODF to create File, Block, or Object storage claims from the same underlying raw block storage.
 :   ODF uses storage volumes in multiples of 3 and replicates your app data across these volumes. The underlying storage volumes that you use for ODF depends on your cluster type.
-    - For **VPC clusters**, the storage volumes are {{site.data.keyword.block_storage_is_short}} storage volumes. 
-    - For bare metal **Classic clusters**, the storage volumes are local disks on your bare metal worker nodes.
+    - For VPC clusters that use virutal machines, the storage volumes are {{site.data.keyword.block_storage_is_short}} storage volumes.
+    - For Classic or VPC clusters that use bare metal workers, the storage volumes are local disks on your bare metal worker nodes.
     - For **{{site.data.keyword.satelliteshort}} clusters**, the storage volumes are either local disks on your worker nodes, or you can dynamically provision disks by using a compatible block storage driver.
 
 Can I install OpenShift Data Foundation on private-only VPC clusters?
@@ -234,7 +234,7 @@ Review the deployment options for your infrastructure provider.
 {: shortdesc}
 
 Virtual Private Cloud (VPC) clusters
-:   You can deploy ODF by using dynamic provisioning with {{site.data.keyword.block_storage_is_short}}. For more information, see [Deploying OpenShift Data Foundation on VPC clusters](/docs/openshift?topic=openshift-deploy-odf-vpc).
+:   You can deploy ODF by using dynamic provisioning with {{site.data.keyword.block_storage_is_short}} or by using local disks on bare metal workers. For more information, see [Deploying OpenShift Data Foundation on VPC clusters](/docs/openshift?topic=openshift-deploy-odf-vpc).
 
 {{site.data.keyword.satelliteshort}} clusters
 :   If you want to deploy ODF to {{site.data.keyword.satelliteshort}} clusters, you can use the {{site.data.keyword.satelliteshort}} storage template. For more information, see the following links.

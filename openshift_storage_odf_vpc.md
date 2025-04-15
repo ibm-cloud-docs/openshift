@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2025
-lastupdated: "2025-03-28"
+lastupdated: "2025-04-15"
 
 
 keywords: openshift, openshift data foundation, openshift container storage, ocs
@@ -226,10 +226,15 @@ To install ODF in your cluster, complete the following steps.
 1. On the OpenShift Data Foundation card, click **Install**. The **Install ODF** panel opens.
 1. In the **Install ODF** panel, enter the configuration parameters that you want to use for your ODF deployment.
 1. Select either **Essentials** or **Advanced** as your billing plan. For more information about billing type, see [Feature support by billing type](/docs/openshift?topic=openshift-ocs-storage-prep&interface=cli#odf-essentials-vs-advanced).
-1. For VPC clusters, select **Remote provisioning** to dynamically provision volumes for ODF by using the {{site.data.keyword.block_storage_is_short}}.
-1. In the **OSD storage class name** field, enter the name of the {{site.data.keyword.block_storage_is_short}} ODF storage class that you want to use to provision storage volumes. For multizone clusters, use a storage class with the `VolumeBindingMode` of `WaitForFirstConsumer`. See the [Storage Class Reference](/docs/openshift?topic=openshift-storage-block-vpc-sc-ref) for more information.
+1. Select the storage class that you want to use:
+    - For VPC clusters that use virtual machines, select **Remote provisioning** to dynamically provision volumes for ODF by using the {{site.data.keyword.block_storage_is_short}}.
+    - For VPC clusters that use {{site.data.keyword.bm_is_short}} worker nodes, select **Local Storage**. If you want to automatically discover the available storage devices on your worker nodes and use them in ODF, select **Local disk discovery**.
+1. In the **OSD storage class name** field:
+    - Enter the name of the storage class that you want to use to provision storage volumes.
+    - For multizone clusters, use a storage class with the `VolumeBindingMode` of `WaitForFirstConsumer`.
+    - For more information, see the [Storage Class Reference](/docs/openshift?topic=openshift-storage-block-vpc-sc-ref).
 1. In the **OSD pod size** field, enter the size of the volume that you want to provision. Enter at least 512Gi.
-1. In the **Worker nodes** field, enter the node names of the worker nodes where you want to deploy ODF. You must enter at least 3 worker node names. To find your node names, run the **`oc get nodes`** command in your cluster. Node names must be comma-separated with no spaces between names.  For example: `10.240.0.24,10.240.0.26,10.240.0.25`.Leave this field blank to deploy ODF on all worker nodes.
+1. In the **Worker nodes** field, enter the node names of the worker nodes where you want to deploy ODF. You must enter at least 3 worker node names. To find your node names, run the **`oc get nodes`** command in your cluster. Node names must be comma-separated with no spaces between names. For example: `10.240.0.24,10.240.0.26,10.240.0.25`. Leave this field blank to deploy ODF on all worker nodes.
 1. In the **Number of OSD disks required** field, enter the number of OSD disks (app storage) to provision on each worker node.
 1. If you want to encrypt the OSD volumes (cluster wide encryption) used by the ODF system pods, select **Enable cluster encryption**.
 1. If you want to enable encryption for the application volumes (app storage), select **Enable volume encryption**.
