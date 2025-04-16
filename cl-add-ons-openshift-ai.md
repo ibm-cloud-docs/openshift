@@ -3,7 +3,7 @@
 copyright:
   years: 2024, 2025
 
-lastupdated: "2025-04-09"
+lastupdated: "2025-04-16"
 
 
 keywords: change log, version history, OpenShift AI
@@ -29,10 +29,16 @@ Review the version history for OpenShift AI.
 {: #cl-add-ons-openshift-ai-416}
 
 
-### 416.1.0_486, released 27 March 2025
-{: #cl-add-ons-openshift-ai-41610_486}
+### 416.1.1_491, released 16 April 2025
+{: #cl-add-ons-openshift-ai-41611_491}
 
 [Default version]{: tag-green}
+
+- Updates Go to version `1.23.8`.
+- Installs Red Hat `openshift-ai` operator version `2.16.2`.
+
+### 416.1.0_486, released 27 March 2025
+{: #cl-add-ons-openshift-ai-41610_486}
 
 - Resolves the following CVEs: [CVE-2025-22868](https://nvd.nist.gov/vuln/detail/CVE-2025-22868){: external}.
 - Updates Go to version `1.23.7`.
