@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2025
-lastupdated: "2025-03-28"
+lastupdated: "2025-04-15"
 
 
 keywords: openshift, openshift data foundation, openshift container storage, ocs
@@ -49,6 +49,7 @@ ODF is supported on private-only VPC clusters beginning with cluster version `4.
 ### Optional: Disable the default operators
 {: #odf-private}
 
+
 **Private-only clusters**: In private-only clusters, you must manually disable the default operators in `openshift-marketplace` with the following command for ODF to work properly.
 
 ```sh
@@ -59,6 +60,7 @@ oc patch OperatorHub cluster --type json -p '[{"op": "add", "path": "/spec/disab
 
 ### Optional: Setting up an {{site.data.keyword.cos_full_notm}} service instance
 {: #odf-create-cos}
+
 
 Complete the following steps to create an {{site.data.keyword.cos_full_notm}} instance which you can use as the default backing store in your ODF deployment. If you don't want to set up {{site.data.keyword.cos_full_notm}}, you can skip this step and [install the add-on](/docs/openshift?topic=openshift-deploy-odf-vpc&interface=cli#install-odf-cli-vpc).
 {: shortdesc}
@@ -117,6 +119,7 @@ If you want to set up {{site.data.keyword.cos_full_notm}} as the default backing
 
 ### Optional: Setting up encryption by using {{site.data.keyword.hscrypto}} or {{site.data.keyword.keymanagementserviceshort}}
 {: #odf-create-hscrypto-vpc}
+
 
 If you want to set up encryption, create an instance of {{site.data.keyword.hscrypto}} or {{site.data.keyword.keymanagementserviceshort}}. Then, create a root key, and a Kubernetes secret that uses your {{site.data.keyword.hscrypto}} or {{site.data.keyword.keymanagementserviceshort}} credentials.
 
@@ -219,26 +222,49 @@ If you are using cluster wide encryption and storage class encryption, your API 
 To install ODF in your cluster, complete the following steps.
 {: shortdesc}
 
+Before you enable the add-on, review the [change log](/docs/openshift?topic=openshift-cl-add-ons-openshift-data-foundation) for the latest version information. Also, [review the parameter reference](/docs/openshift?topic=openshift-openshift_storage_parameters) to understand the installation options.
+{: important}
 
-1. Before you enable the add-on, review the [change log](/docs/openshift?topic=openshift-cl-add-ons-openshift-data-foundation) for the latest version information. 
-1. [Review the parameter reference](/docs/openshift?topic=openshift-openshift_storage_parameters).
+
 1. From the [console](https://cloud.ibm.com/containers/cluster-management/clusters){: external}, select the cluster where you want to install the add-on.
 1. On the OpenShift Data Foundation card, click **Install**. The **Install ODF** panel opens.
 1. In the **Install ODF** panel, enter the configuration parameters that you want to use for your ODF deployment.
-1. Select either **Essentials** or **Advanced** as your billing plan. For more information about billing type, see [Feature support by billing type](/docs/openshift?topic=openshift-ocs-storage-prep&interface=cli#odf-essentials-vs-advanced).
-1. For VPC clusters, select **Remote provisioning** to dynamically provision volumes for ODF by using the {{site.data.keyword.block_storage_is_short}}.
-1. In the **OSD storage class name** field, enter the name of the {{site.data.keyword.block_storage_is_short}} ODF storage class that you want to use to provision storage volumes. For multizone clusters, use a storage class with the `VolumeBindingMode` of `WaitForFirstConsumer`. See the [Storage Class Reference](/docs/openshift?topic=openshift-storage-block-vpc-sc-ref) for more information.
-1. In the **OSD pod size** field, enter the size of the volume that you want to provision. Enter at least 512Gi.
-1. In the **Worker nodes** field, enter the node names of the worker nodes where you want to deploy ODF. You must enter at least 3 worker node names. To find your node names, run the **`oc get nodes`** command in your cluster. Node names must be comma-separated with no spaces between names.  For example: `10.240.0.24,10.240.0.26,10.240.0.25`.Leave this field blank to deploy ODF on all worker nodes.
-1. In the **Number of OSD disks required** field, enter the number of OSD disks (app storage) to provision on each worker node.
-1. If you want to encrypt the OSD volumes (cluster wide encryption) used by the ODF system pods, select **Enable cluster encryption**.
-1. If you want to enable encryption for the application volumes (app storage), select **Enable volume encryption**.
-    1. In the **Instance name** field, enter a unique name for your {{site.data.keyword.hscrypto}} or {{site.data.keyword.keymanagementserviceshort}} instance. 
-    1. In the **Instance type** field, enter the type of encryption instance. 
-    1. In the **Instance ID** field, enter your {{site.data.keyword.hscrypto}} or {{site.data.keyword.keymanagementserviceshort}} instance ID. For example: `d11a1a43-aa0a-40a3-aaa9-5aaa63147aaa`.
-    1. In the **Secret name** field, enter the name of the secret that you created using your {{site.data.keyword.hscrypto}} or {{site.data.keyword.keymanagementserviceshort}} credentials. For example: `ibm-hpcs-secret`.
-    1. In the **Base URL** field, enter the public endpoint of your {{site.data.keyword.hscrypto}} or {{site.data.keyword.keymanagementserviceshort}} instance. For example: `https://api.eu-gb.hs-crypto.cloud.ibm.com:8389`.
-    1. In the **Token URL** field, enter `https://iam.cloud.ibm.com/identity/token`.
+
+
+Billing type
+:   **Essentials** or **Advanced** as your billing plan. For more information about billing type, see [Feature support by billing type](/docs/openshift?topic=openshift-ocs-storage-prep&interface=cli#odf-essentials-vs-advanced).
+
+Storage class
+:   Enter the storage class you want to use.
+    - For VPC clusters that use **Virtual machines**, select **Remote provisioning** to dynamically provision volumes for ODF by using the {{site.data.keyword.block_storage_is_short}}.
+    - For VPC clusters that use **{{site.data.keyword.bm_is_short}} worker nodes**, select **Local Storage**. If you want to automatically discover the available storage devices on your worker nodes and use them in ODF, select **Local disk discovery**.
+
+OSD storage class name
+:   Enter the name of the storage class that you want to use to provision storage volumes.
+    - For VPC clusters with **{{site.data.keyword.bm_is_short}} worker nodes**, select `localblock`.
+    - For multizone clusters, use a storage class with the `VolumeBindingMode` of `WaitForFirstConsumer`.
+    - For a list of stoage classes, see the [Storage Class Reference](/docs/openshift?topic=openshift-storage-block-vpc-sc-ref).
+
+OSD pod size
+:   Enter the size of the volume that you want to provision. Enter at least 512Gi.
+
+Worker nodes
+:   Enter the node names of the worker nodes where you want to deploy ODF. You must enter at least 3 worker node names. To find your node names, run the **`oc get nodes`** command in your cluster. Node names must be comma-separated with no spaces between names. For example: `10.240.0.24,10.240.0.26,10.240.0.25`. Leave this field blank to deploy ODF on all worker nodes.
+
+Number of OSD disks required
+:   Enter the number of OSD disks (app storage) to provision on each worker node.
+
+Enable cluster encryption
+:   Select this option if you want to encrypt the OSD volumes (cluster wide encryption) used by the ODF system pods.
+
+Enable volume encryption
+:   Select this option if you want to enable encryption for the application volumes (app storage).
+    - In the **Instance name** field, enter a unique name for your {{site.data.keyword.hscrypto}} or {{site.data.keyword.keymanagementserviceshort}} instance. 
+    - In the **Instance type** field, enter the type of encryption instance. 
+    - In the **Instance ID** field, enter your {{site.data.keyword.hscrypto}} or {{site.data.keyword.keymanagementserviceshort}} instance ID. For example: `d11a1a43-aa0a-40a3-aaa9-5aaa63147aaa`.
+    - In the **Secret name** field, enter the name of the secret that you created using your {{site.data.keyword.hscrypto}} or {{site.data.keyword.keymanagementserviceshort}} credentials. For example: `ibm-hpcs-secret`.
+    - In the **Base URL** field, enter the public endpoint of your {{site.data.keyword.hscrypto}} or {{site.data.keyword.keymanagementserviceshort}} instance. For example: `https://api.eu-gb.hs-crypto.cloud.ibm.com:8389`.
+    - In the **Token URL** field, enter `https://iam.cloud.ibm.com/identity/token`.
 
 
 1. After you enter the parameters that you want to use, click **Install**
