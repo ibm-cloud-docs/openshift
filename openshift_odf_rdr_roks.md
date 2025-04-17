@@ -2,7 +2,7 @@
 
 copyright:
   years: 2025, 2025
-lastupdated: "2025-04-09"
+lastupdated: "2025-04-17"
 
 
 keywords: openshift, openshift data foundation, openshift container storage, disaster recovery
@@ -111,7 +111,7 @@ Follow these steps to install ACM on the hub cluster and then set up the disaste
       
       1. In the [{{site.data.keyword.redhat_openshift_notm}} clusters console](https://cloud.ibm.com/kubernetes/clusters?platformType=openshift){: external}, change the menu option on the top from **local-cluster** to **All Clusters** to switch to ACM console mode.
       1. Go to **Infrastructure** > **Console** > **Import Cluster**.
-      1. Fill in the details for one of your managed ODF clusters and generate the command. 
+      1. Complete the details for one of your managed ODF clusters and generate the command. 
       1. Click **Copy Command** to copy the import command and run it on the target cluster.
       1. Repeat these steps to import the other managed ODF cluster.
 

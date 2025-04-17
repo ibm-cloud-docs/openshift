@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2025
-lastupdated: "2025-03-11"
+lastupdated: "2025-04-17"
 
 
 keywords: planning, storage, cluster, container storage, cloud storage, kubernetes service, openshift
@@ -42,7 +42,7 @@ If you must persist your data, analyze if your app requires a specific type of s
 Determine the type of data that you want to store.
 :   **Structured data:** Data that you can store in a relational database where you have a table with columns and rows. Data in tables can be connected by using keys and is usually easy to access due to the pre-defined data model. Examples are phone numbers, account numbers, Social Security numbers, or postal codes.
 :   **Semi-structured data:** Data that does not fit into a relational database, but that comes with some organizational properties that you can use to read and analyze this data more easily. Examples are markup language files such as CSV, XML, or JSON.  
-:   **Unstructured data:** Data that does not follow an organizational pattern and that is so complex that you can't store it in a relational database with pre-defined data models. To access this data, you need advanced tools and software. Examples are e-mail messages, videos, photos, audio files, presentations, social media data, or web pages.
+:   **Unstructured data:** Data that does not follow an organizational pattern and that is so complex that you can't store it in a relational database with pre-defined data models. To access this data, you need advanced tools and software. Examples are email messages, videos, photos, audio files, presentations, social media data, or web pages.
 
 If you have structured and unstructured data, try to store each data type separately in a storage solution that is designed for this data type. Using an appropriate storage solution for your data type eases up access to your data and gives you the benefits of performance, scalability, durability, and consistency.
 {: tip}

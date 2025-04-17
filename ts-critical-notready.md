@@ -1,8 +1,8 @@
 ---
 
 copyright:
-  years: 2023, 2024
-lastupdated: "2024-12-06"
+  years: 2023, 2025
+lastupdated: "2025-04-17"
 
 
 keywords: critical, not ready, notready, troubleshooting, worker node status, status
@@ -195,7 +195,7 @@ Follow the steps to gather the relevant worker node data.
     ```
     {: pre}
 
-2. Run the [Diagnostics and Debug Tool](/docs/openshift?topic=openshift-debug-tool)  and the [Openshift Diagnostics and Debug Tool](/docs/openshift?topic=openshift-debug-tool). Export the kube and network test results to a compressed file and save the file to include in your support ticket. If all workers in your cluster are affected, you can skip this step as the debug tools cannot work properly if all worker nodes are disrupted.
+2. Run the [Diagnostics and Debug Tool](/docs/openshift?topic=openshift-debug-tool)  and the [OpenShift Diagnostics and Debug Tool](/docs/openshift?topic=openshift-debug-tool). Export the kube and network test results to a compressed file and save the file to include in your support ticket. If all workers in your cluster are affected, you can skip this step as the debug tools cannot work properly if all worker nodes are disrupted.
 
 3. Show that there are no added mutating or validating webhooks remaining in your cluster by getting the webhook details. Save the command output to include in your support ticket. Note that the following mutating webhooks might remain and do not need to be deleted: `alertmanagerconfigs.openshift`, `managed-storage-validation-webhooks`, `multus.openshift.io`, `performance-addon-operator`, `prometheusrules.openshift.io`,`snapshot.storage.k8s.io`.
 

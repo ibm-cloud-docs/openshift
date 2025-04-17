@@ -1,8 +1,8 @@
 ---
 
 copyright: 
-  years: 2024, 2024
-lastupdated: "2024-08-01"
+  years: 2024, 2025
+lastupdated: "2025-04-17"
 
 
 keywords: openshift, kubernetes, affinity, taint, edge node, edge
@@ -57,7 +57,7 @@ Add the `dedicated=edge` label to worker nodes in your cluster. The labels ensur
         ```
         {: pre}
 
-1. Refresh your cluster master to trigger an update to your VPC loadbalancer member pool.
+1. Refresh your cluster master to trigger an update to your VPC load balancer member pool.
     ```sh
     ibmcloud oc cluster master refresh --cluster <cluster_name_or_ID>
     ```
@@ -72,5 +72,3 @@ Add the `dedicated=edge` label to worker nodes in your cluster. The labels ensur
 
 
 [Isolate routers to edge worker nodes](/docs/openshift?topic=openshift-edge#edge).
-
-

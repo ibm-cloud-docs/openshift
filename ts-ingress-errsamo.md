@@ -1,11 +1,11 @@
 ---
 
 copyright: 
-  years: 2023, 2024
-lastupdated: "2024-10-30"
+  years: 2023, 2025
+lastupdated: "2025-04-17"
 
 
-keywords: openshift, errsamo, loadbalancer service missing
+keywords: openshift, errsamo, load balancer service missing
 
 subcollection: openshift
 

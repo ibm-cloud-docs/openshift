@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2025, 2025
-lastupdated: "2025-03-28"
+lastupdated: "2025-04-17"
 
 
 keywords: high availability, disaster recover, HA, DR, responsibilities
@@ -171,7 +171,7 @@ Review the following potential app setups that are ordered with increasing degre
 2. A deployment with n+2 pods that are managed by a replica set and spread across multiple nodes (anti-affinity) in a single zone cluster.
 3. A deployment with n+2 pods that are managed by a replica set and spread across multiple nodes (anti-affinity) in a multizone cluster across zones.
 
- Review the following documentation for information on creating a highly available work load. 
+ Review the following documentation for information on creating a highly available workload. 
 
 - [Planning highly available deployments](/docs/openshift?topic=openshift-plan_deploy#highly_available_apps)
 - [Cluster high availability strategy](/docs/openshift?topic=openshift-strategy)

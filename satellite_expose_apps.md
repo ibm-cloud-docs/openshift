@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2025
-lastupdated: "2025-02-01"
+lastupdated: "2025-04-17"
 
 
 keywords: openshift, route, Ingress controller
@@ -167,7 +167,7 @@ After you create a load balancer in front of your Ingress controller, you can us
 
 7. Continue with the steps in [Exposing apps with {{site.data.keyword.redhat_openshift_notm}} routes](#sat-expose-routes) to create routes for your apps.
 
-If you configure an external loadbalancer or VIP to register with the subdomain rather than using the default registration, that loadbalancer 
+If you configure an external load balancer or VIP to register with the subdomain rather than using the default registration, that load balancer 
 needs inbound access to the cluster hosts and the cluster hosts need outbound access to the loadbalancer. 
 {: note}
 

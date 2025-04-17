@@ -1,7 +1,7 @@
 ---
 copyright: 
-  years: 2024, 2024
-lastupdated: "2024-10-15"
+  years: 2024, 2025
+lastupdated: "2025-04-17"
 
 keywords: alb, application load balancer, vpc alb, dns, public lb, private lb
 
@@ -147,7 +147,7 @@ To enable your app to receive public or private request:
 Do not delete the subnets that you attached to your cluster during cluster creation or when you add worker nodes in a zone. If you delete a VPC subnet that your cluster used, any load balancers that use IP addresses from the subnet might experience issues, and you might be unable to create new load balancers.
 {: important}
 
-VPC ALBs and NLBs that are not tied to Kubernetes or Openshift clusters can be updated directly by using 'ibmcloud is' commands or the **VPC Infrastructure** section in the console. For example, change a front-end listener's port or health check timeout value. But for VPC load balancers that are tied to Kubernetes or Openshift clusters, any updates to them must be performed via annotations in the Ingress configuration. The IBM Cloud Provider periodically re-syncs with any associated VPC ALBs and NLBs to ensure the running load balancer conforms to the Ingress's expected configuration. So if you make any changes to such a load balancer directly via VPC instead of using Ingress annotations, those changes will be reverted back.
+VPC ALBs and NLBs that are not tied to Kubernetes or OpenShift clusters can be updated directly by using 'ibmcloud is' commands or the **VPC Infrastructure** section in the console. For example, change a front-end listener's port or health check timeout value. But for VPC load balancers that are tied to Kubernetes or OpenShift clusters, any updates to them must be performed via annotations in the Ingress configuration. The IBM Cloud Provider periodically re-syncs with any associated VPC ALBs and NLBs to ensure the running load balancer conforms to the Ingress's expected configuration. So if you make any changes to such a load balancer directly via VPC instead of using Ingress annotations, those changes will be reverted back.
 {: important}
 
 ## Registering a DNS record and TLS certificate
@@ -325,7 +325,7 @@ Review the required and optional VPC ALB annotations and specifications.
 :   The maximum number of health check retries for the VPC load balancer. By default, this value is set to `2`, and has a minimum of `1` and a maximum of `10`.
 
 `service.kubernetes.io/ibm-load-balancer-cloud-provider-vpc-idle-connection-timeout`
-:   The idle connection timeout of the listener in seconds. The default idle timeout is dependent on your account settings. Usually, this value is `50`. However, some allowlisted accounts have larger timeout settings. If you don't set the annotation, your loadbalancers use the timeout setting in your account. You can explicitly specify the timeout by setting this annotation. The minimum is `50`. The maximum is `7200`.
+:   The idle connection timeout of the listener in seconds. The default idle timeout is dependent on your account settings. Usually, this value is `50`. However, some allowlisted accounts have larger timeout settings. If you don't set the annotation, your load balancers use the timeout setting in your account. You can explicitly specify the timeout by setting this annotation. The minimum is `50`. The maximum is `7200`.
 
 
 `service.kubernetes.io/ibm-load-balancer-cloud-provider-dns-name: "example-ingress-domain.<region>.containers.appdomain.cloud"`
