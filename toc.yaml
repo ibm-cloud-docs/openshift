@@ -315,6 +315,7 @@ toc:
           label: Enhancing your cluster with Cloud Paks, Operators, and integrations
           topics:
           - integrations-ibm-third-party.md
+          - oc-virtualization.md
           - openshift_integrations_cloud_paks.md
           - openshift_integrations_operators.md
           - openshift_compliance_operator.md
