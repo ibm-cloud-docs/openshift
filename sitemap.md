@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2025
-lastupdated: "2025-04-16"
+lastupdated: "2025-04-17"
 
 
 keywords: openshift
@@ -4950,6 +4950,14 @@ subcollection: openshift
     * [Other third-party integrations](/docs/openshift?topic=openshift-ibm-3rd-party-integrations#kube-community-helm)
 
     * [Extending {{site.data.keyword.redhat_openshift_notm}} API and software with CRDs and Operators](/docs/openshift?topic=openshift-ibm-3rd-party-integrations#kube-crd-operators)
+
+[Installing the OpenShift Virtualization Operator on {{site.data.keyword.openshiftlong_notm}} clusters](/docs/openshift?topic=openshift-oc-virtualization#oc-virtualization)
+
+* [Prerequisites](/docs/openshift?topic=openshift-oc-virtualization#virt-fs-prereq)
+
+* [Setting up virtualization with {{site.data.keyword.filestorage_vpc_short}}](/docs/openshift?topic=openshift-oc-virtualization#virt-fs-example)
+
+* [Next steps](/docs/openshift?topic=openshift-oc-virtualization#virt-next-steps)
 
 [Adding Cloud Paks, entitlements, or licenses to your cluster](/docs/openshift?topic=openshift-openshift_cloud_paks#openshift_cloud_paks)
 
