@@ -295,7 +295,7 @@ subcollection: openshift
 
         * {{site.data.keyword.openshiftlong_notm}} master fix packs.
 
-        * Openshift AI cluster add-on patch updates.
+        * OpenShift AI cluster add-on patch updates.
 
     * [24 March 2025](/docs/openshift?topic=openshift-openshift-relnotes#openshift-24march25)
 
@@ -321,7 +321,7 @@ subcollection: openshift
 
         * Migrating from the Observability plug-in to {{site.data.keyword.logs_full_notm}}
 
-        * Openshift AI cluster add-on patch updates.
+        * OpenShift AI cluster add-on patch updates.
 
 * [February 2025](/docs/openshift?topic=openshift-openshift-relnotes#openshift-feb25)
 

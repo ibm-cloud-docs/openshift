@@ -1,8 +1,8 @@
 ---
 
 copyright: 
-  years: 2014, 2024
-lastupdated: "2024-12-12"
+  years: 2014, 2025
+lastupdated: "2025-04-17"
 
 
 keywords: portworx, kubernetes, openshift
@@ -17,7 +17,7 @@ subcollection: openshift
 # Installing Portworx in your cluster
 {: #storage_portworx_deploy}
 
-Provision a Portworx service instance from the {{site.data.keyword.cloud_notm}} catalog. After you create the service instance, the latest Portworx enterprise edition (`px-enterprise`) is installed on your cluster by using Helm. In addition, [Stork](https://docs.portworx.com/portworx-enterprise/operations/operate-kubernetes/storage-operations/stateful-applications/stork){: external} is also installed on your {{site.data.keyword.openshiftlong_notm}} cluster. Stork is the Portworx storage scheduler. With Stork, you can co-locate pods with their data and create and restore snapshots of Portworx volumes.
+Provision a Portworx service instance from the {{site.data.keyword.cloud_notm}} catalog. After you create the service instance, the latest Portworx enterprise edition (`px-enterprise`) is installed on your cluster by using Helm. In addition, [Stork](https://docs.portworx.com/portworx-enterprise/operations/operate-kubernetes/storage-operations/stateful-applications/stork){: external} is also installed on your {{site.data.keyword.openshiftlong_notm}} cluster. Stork is the Portworx storage scheduler. With Stork, you can colocate pods with their data and create and restore snapshots of Portworx volumes.
 {: shortdesc}
 
 Looking for instructions about how to update or remove Portworx? See [Updating Portworx](/docs/openshift?topic=openshift-storage_portworx_update) and [Removing Portworx](/docs/openshift?topic=openshift-storage_portworx_removing).
@@ -324,7 +324,7 @@ To access the storage from your app, you must mount the PVC to your app.
     :   A label for the deployment.
     
     `spec.schedulerName`
-    :   Use [Stork](https://docs.portworx.com/portworx-enterprise/operations/operate-kubernetes/storage-operations/stateful-applications/stork){: external} as the scheduler for your Portworx cluster. With Stork, you can co-locate pods with their data, provides seamless migration of pods in case of storage errors and makes it easier to create and restore snapshots of Portworx volumes.
+    :   Use [Stork](https://docs.portworx.com/portworx-enterprise/operations/operate-kubernetes/storage-operations/stateful-applications/stork){: external} as the scheduler for your Portworx cluster. With Stork, you can colocate pods with their data, provides seamless migration of pods in case of storage errors and makes it easier to create and restore snapshots of Portworx volumes.
     
     `spec.containers.image`
     :   The name of the image that you want to use. To list available images in your {{site.data.keyword.registrylong_notm}} account, run `ibmcloud cr image-list`.

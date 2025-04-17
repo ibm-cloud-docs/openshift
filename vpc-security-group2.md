@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2023, 2025
-lastupdated: "2025-03-26"
+lastupdated: "2025-04-17"
 
 
 keywords: openshift, {{site.data.keyword.openshiftlong_notm}}, firewall, rules, security group, 4.15, networking, secure by default, outbound traffic protection
@@ -79,7 +79,7 @@ Do not modify the rules in the `kube-<clusterID>` security group as doing so mig
 | Allows inbound traffic to the pod subnet. | Inbound | All | All | Either 172.17.0.0/18 (the default subnet range) or a custom subnet range that you specify when you create your cluster. |
 | Allows inbound access to self which allows worker-to-worker communication. | Inbound | All | All | `kube-<clusterID>` |
 | Allows inbound ICMP (ping) access. | Inbound | ICMP | type=8 | 0.0.0.0/0 |
-| Allows inbound traffic from nodeports opened by your loadbalancers (ALBs/NLBs). As load balancers are added or removed rules are dynamically added or removed. | Inbound | TCP | Loadbalancer node ports.  | `kube-lbaas-<clusterID>` |
+| Allows inbound traffic from nodeports opened by your load balancers (ALBs/NLBs). As load balancers are added or removed rules are dynamically added or removed. | Inbound | TCP | Loadbalancer node ports.  | `kube-lbaas-<clusterID>` |
 | Allows outbound traffic to the pod subnet. | Outbound | All | All | Either 172.17.0.0/18 (the default subnet range) or a custom subnet range that you specify when you create your cluster. |
 | Allows outbound traffic to the master control plane which allows workers to be provisioned. | Outbound | All | All | 161.26.0.0/16 |
 | Allows outbound access to self which allows worker-to-worker communication. | Outbound | All | All | `kube-<clusterID>` |

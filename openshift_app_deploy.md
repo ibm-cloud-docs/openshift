@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2025
-lastupdated: "2025-03-28"
+lastupdated: "2025-04-17"
 
 
 keywords: kubernetes, openshift
@@ -385,6 +385,6 @@ If you experience issues installing the Node Feature Discovery Operator or the N
 
     In this example, you see a GPU was used to execute the job because the GPU was scheduled in the worker node. If the limit is set to 2, only 2 GPUs are shown.
 
-Now that you deployed a test GPU workload, you might want to set up your cluster to run a tool that relies on GPU processing, such as [IBM Maximo Visual Inspection](https://www.ibm.com/products/maximo/predictive-maintenance){: external}.
+Now that you deployed a test GPU workload, you might want to set up your cluster to run a tool that relies on GPU processing, such as [IBM Maximo Visual Inspection](https://www.ibm.com/products/maximo/asset-performance-management){: external}.
 
     

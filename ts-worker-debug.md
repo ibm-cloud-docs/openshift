@@ -1,8 +1,8 @@
 ---
 
 copyright: 
-  years: 2014, 2024
-lastupdated: "2024-04-17"
+  years: 2014, 2025
+lastupdated: "2025-04-17"
 
 
 keywords: openshift, kubernetes, help, network, connectivity, {{site.data.keyword.openshiftlong_notm}}
@@ -35,7 +35,7 @@ Check the {{site.data.keyword.cloud_notm}} health and status dashboard for any n
 1. [Classic clusters]{: tag-classic-inf} Check the [health dashboard](https://cloud.ibm.com/gen1/infrastructure/health-dashboard){: external} for any {{site.data.keyword.cloud_notm}} emergency maintenance notifications that might affect classic worker nodes in your account. Depending on the nature of the maintenance notification, you might need to reboot or reload your worker nodes. 
 1. Check the {{site.data.keyword.cloud_notm}} [status dashboard](https://cloud.ibm.com/status){: external} for any known problems that might affect your worker nodes or cluster. If any of the following components show an error status, that component might be the cause of your worker node disruptions. 
     - For all clusters, check the **Kubernetes Service** and **Container Registry** components.
-    - For Red Hat Openshift clusters, check the **Red Hat OpenShift on IBM Cloud** component.
+    - For Red Hat OpenShift clusters, check the **Red Hat OpenShift on IBM Cloud** component.
     - For VPC clusters, check the **Virtual Private Cloud**, **Virtual Private Endpoint** and **Virtual Server for VPC** components.
     - For Classic clusters, check the **Classic Infrastructure Provisioning** and **Virtual Servers** components.
 
@@ -88,7 +88,3 @@ Review the infrastructure environment to check for other reasons that might caus
 1. Check with your networking team to make sure that no recent maintenance, such as firewall or subnet updates, might impact the worker node connections.
 2. Review [{{site.data.keyword.cloud_notm}}](https://cloud.ibm.com/status/){: external} for **{{site.data.keyword.openshiftlong_notm}}** and the underlying infrastructure provider, such as **Virtual Servers** for classic, **VPC** related components, or **{{site.data.keyword.satelliteshort}}**.
 3. If you have access to the underlying infrastructure, such as classic **Virtual Servers**, review the details of the corresponding machines for the worker nodes.
-
-
-
-

@@ -1,8 +1,8 @@
 ---
 
 copyright: 
-  years: 2014, 2024
-lastupdated: "2024-11-01"
+  years: 2014, 2025
+lastupdated: "2025-04-17"
 
 
 keywords: portworx, kubernetes, openshift
@@ -95,7 +95,7 @@ Yes. Autopilot can be installed by following the [Installing Autopilot documenta
 
 Contact Portworx support by using one of the following methods.
 
-- Sending an e-mail to `support@purestorage.com`.
+- Sending an email to `support@purestorage.com`.
 
 - Calling `+1 (866) 244-7121` or `+1 (650) 729-4088` in the United States or one of the [International numbers](https://support.purestorage.com/bundle/m_contact_us/page/Pure_Storage_Technical_Services/Technical_Services_Information/topics/reference/r_contact_us.html).
 

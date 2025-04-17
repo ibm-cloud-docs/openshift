@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2025
-lastupdated: "2025-03-28"
+lastupdated: "2025-04-17"
 
 
 keywords: openshift
@@ -137,8 +137,8 @@ If you manually installed admission controllers and you don't want to use them a
 
 You can restriction network connectivity to your cluster master in several ways
 
-- **Enable only the private cloud service endpoint**: The public service endpoint is only required for classic Openshift clusters.  It can be disabled for all VPC clusters.  It can also be disabled for classic Kubernetes clusters as long as your account has [VRF and Service Endpoint enabled](/docs/openshift?topic=openshift-plan_basics#workeruser-master-pub-priv).  This protects your cluster master from attacks on the public network.
-- **Enable context based restrictions**: You can secure network access to your cluster's private and/or public service endpoints using context based restrictions (CBR). Only authorized requests to your cluster master that originate from subnets in the CBR rules are permitted.  For more information, see [Using context based restrictions](/docs/openshift?topic=openshift-cbr).
+- **Enable only the private cloud service endpoint**: The public service endpoint is only required for classic OpenShift clusters. It can be disabled for all VPC clusters. It can also be disabled for classic Kubernetes clusters as long as your account has [VRF and Service Endpoint enabled](/docs/openshift?topic=openshift-plan_basics#workeruser-master-pub-priv).  This protects your cluster master from attacks on the public network.
+- **Enable context based restrictions**: You can secure network access to your cluster's private and public service endpoints using context based restrictions (CBR). Only authorized requests to your cluster master that originate from subnets in the CBR rules are permitted. For more information, see [Using context based restrictions](/docs/openshift?topic=openshift-cbr).
 
 
 
@@ -413,7 +413,7 @@ What are my options to enable trust in my cluster?
 Your worker nodes are installed with [CRI-O](https://cri-o.io/){: external} as the container runtime interface, which is protected by the [Security-Enhanced Linux (SELinux)](https://www.redhat.com/en/topics/linux/what-is-selinux){: external} labeling system.
 {: shortdesc}
 
-When you use Kubernetes to interact with a container image, such as by creating a pod, the kubelet communicates with CRI-O through a Unix socket, `crio.sock`. The Unix socket uses the SELinux labels in the following table to enforce the appropriate system access policies. These labels prevent user containers from being able to access the container runtime socket.
+When you use Kubernetes to interact with a container image, such as by creating a pod, the kubelet communicates with CRI-O through a UNIX socket, `crio.sock`. The UNIX socket uses the SELinux labels in the following table to enforce the appropriate system access policies. These labels prevent user containers from being able to access the container runtime socket.
 
 | Process | SELinux label |
 | --- | --- |

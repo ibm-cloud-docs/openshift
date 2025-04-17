@@ -1,8 +1,8 @@
 ---
 
 copyright:
-  years: 2014, 2024
-lastupdated: "2024-03-27"
+  years: 2014, 2025
+lastupdated: "2025-04-17"
 
 
 keywords: openshift, {{site.data.keyword.openshiftlong_notm}}, node.js, js, java, .net, go, flask, react, python, swift, rails, ruby, spring boot, angular
@@ -260,7 +260,7 @@ A pod disruption budget can help you plan how your app behaves during voluntary 
 :   You can specify the number or percentage of pods that can be unavailable after a disruption occurs. The example uses `maxUnavailable: 1`.
 
 `selector`
-:   Fill in the label to select the set of pods that the `PodDisruptionBudget` applies to. Note that if you used this same label in other pod deployments, the pod applies to those as well.
+:   Enter the label to select the set of pods that the `PodDisruptionBudget` applies to. Note that if you used this same label in other pod deployments, the pod applies to those as well.
 
 For more information, see the [Kubernetes documentation](https://kubernetes.io/docs/tasks/run-application/configure-pdb/){: external}.
 
@@ -622,6 +622,3 @@ spec:
       storage: 24Gi
 ```
 {: codeblock}
-
-
-

@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2025
-lastupdated: "2025-04-15"
+lastupdated: "2025-04-17"
 
 
 keywords: openshift, openshift data foundation, openshift container storage
@@ -171,7 +171,7 @@ Plan to use dedicated storage nodes
 :   In scenarios with heavy workloads, use dedicated storage nodes for ODF. By separating the operations of storage nodes, you can achieve better performance and scalability for your storage infrastructure.
 
 Set up regular monitoring of the Red Hat console
-:   The RedHat console provides valuable insights into the health and performance of your ODF environment. It is recommended to regularly monitor the console to stay informed about any potential issues. The console triggers alerts whenever there are problems detected with ODF, enabling you to take proactive measures.
+:   The Red Hat console provides valuable insights into the health and performance of your ODF environment. It is recommended to regularly monitor the console to stay informed about any potential issues. The console triggers alerts whenever there are problems detected with ODF, enabling you to take proactive measures.
 
 Address capacity warnings promptly
 :   When capacity warnings are issued, it is important to address them promptly. Ignoring or delaying action on these warnings can lead to storage capacity constraints and potential disruptions to your workloads. Treat capacity warnings as an opportunity to assess your storage needs and take appropriate measures to mitigate any potential issues.

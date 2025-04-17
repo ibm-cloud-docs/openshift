@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2025
-lastupdated: "2025-03-13"
+lastupdated: "2025-04-17"
 
 
 keywords: openshift, {{site.data.keyword.openshiftlong_notm}}, kubernetes, kernel, performance
@@ -168,9 +168,6 @@ To revert your worker nodes `sysctl` parameters to the default values, follow th
 
 If a pod has long running TCP connections that are occasionally disconnected when they are idle for a period of time, it might help to change the `sysctl` keepalive settings for the pod. 
 {: shortdesc}
-
-These scenarios and suggested settings are also described in the [Troubleshooting Outgoing Connection Issues with IBM VPC Public and Service Gateways](https://www.ibm.com/blog/troubleshooting-outgoing-connection-issues-with-ibm-vpc-public-and-service-gateways/){: external} blog.
-{: tip}
 
 
 

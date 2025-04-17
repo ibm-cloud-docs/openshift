@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2024, 2025
-lastupdated: "2025-03-28"
+lastupdated: "2025-04-17"
 
 
 keywords: openshift, {{site.data.keyword.openshiftlong_notm}}, ai, add-on
@@ -60,7 +60,7 @@ To use the OpenShift AI add-on, your cluster must meet the following requirement
 {: #ai-custom-step}
 {: cli}
 
-You can enhance your Red Hat Openshift AI projects by specifying different options to include with your add-on installation, such as data pipelines for building portable machine learning workflows or tools for managing and scaling your resources. You can also customize upgrade policies and deletion policies. 
+You can enhance your Red Hat OpenShift AI projects by specifying different options to include with your add-on installation, such as data pipelines for building portable machine learning workflows or tools for managing and scaling your resources. You can also customize upgrade policies and deletion policies. 
 
 Run the command to list all options. For descriptions of each available option, see [OpenShift AI customization options](#custom-options). If you do not include a specific option when you install the add-on, the default value applies. 
 

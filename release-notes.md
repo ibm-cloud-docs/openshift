@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2025
-lastupdated: "2025-04-16"
+lastupdated: "2025-04-17"
 
 
 keywords: kubernetes, release notes, openshift, {{site.data.keyword.openshiftlong_notm}}
@@ -98,7 +98,7 @@ OpenShift Data Foundation cluster add-on patch updates.
 :   [Version 4.13 change log](/docs/openshift?topic=openshift-openshift_changelog_413)
 :   [Version 4.12 change log](/docs/openshift?topic=openshift-openshift_changelog_412)
 
-Openshift AI cluster add-on patch updates.
+OpenShift AI cluster add-on patch updates.
 :   For more information, see the [change log](/docs/openshift?topic=openshift-cl-add-ons-openshift-ai).
 
 
@@ -182,7 +182,7 @@ Migrating from the Observability plug-in to {{site.data.keyword.logs_full_notm}}
 
 
 
-Openshift AI cluster add-on patch updates.
+OpenShift AI cluster add-on patch updates.
 :   For more information, see the [change log](/docs/openshift?topic=openshift-cl-add-ons-openshift-ai).
 
 

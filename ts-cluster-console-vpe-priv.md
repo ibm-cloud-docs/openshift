@@ -2,7 +2,7 @@
 
 copyright:
   years: 2025, 2025
-lastupdated: "2025-02-28"
+lastupdated: "2025-04-17"
 
 
 keywords: openshift, console, web, connect, private
@@ -17,7 +17,7 @@ content-type: troubleshoot
 # Private VPC clusters: Why can't I connect to the OpenShift console?
 {: #ts-cluster-console-vpe-priv}
 
-Troubleshoot problems connecting to the Openshift console on a cluster that has only a private service endpoint.
+Troubleshoot problems connecting to the OpenShift console on a cluster that has only a private service endpoint.
 
 The information in this trouble shooting guide pertains to VPC clusters with only a private service endpoint. 
 {: important}

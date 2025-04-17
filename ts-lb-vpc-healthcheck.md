@@ -2,7 +2,7 @@
 
 copyright:
   years: 2023, 2025
-lastupdated: "2025-03-13"
+lastupdated: "2025-04-17"
 
 
 keywords: load balancer, health checks, vpc load balancer, health status, network
@@ -23,7 +23,7 @@ content-type: troubleshoot
 When you check the Health Status section of your VPC load balancer details, the health checks for your load balancer worker nodes are failing. 
 {: tsSymptoms}
 
-To check the VPC loadbalancer health status, navigate to the [Load balancers for VPC page](https://cloud.ibm.com/infrastructure/network/loadBalancers){: external} in the console. Click the relevant load balancer and review the details in the Health Status section.  
+To check the VPC load balancer health status, navigate to the [Load balancers for VPC page](https://cloud.ibm.com/infrastructure/network/loadBalancers){: external} in the console. Click the relevant load balancer and review the details in the Health Status section.  
 {: tip}
 
 Depending on how your load balancer is configured, failing health checks might be the expected behavior and do not necessarily indicate a problem. If the `externalTrafficPolicy` setting for the load balancer service is set to `Local`, incoming traffic is delivered only to the application pod residing on the node that the traffic enters. If the load balancer tries to connect to any node that does not have an application pod, the traffic is dropped and the health check fails. This is the intended behavior for the `externalTrafficPolicy: Local` setting and ensures that the traffic is routed correctly. 
