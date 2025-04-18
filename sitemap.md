@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2025
-lastupdated: "2025-04-17"
+lastupdated: "2025-04-18"
 
 
 keywords: openshift
@@ -4648,9 +4648,11 @@ subcollection: openshift
 
 [Updating or replacing VPC worker nodes that use OpenShift Data Foundation](/docs/openshift?topic=openshift-openshift-storage-update-vpc#openshift-storage-update-vpc)
 
+* [Check the status of your storage cluster](/docs/openshift?topic=openshift-openshift-storage-update-vpc#storage-cluster-status)
+
 * [Update the cluster master](/docs/openshift?topic=openshift-openshift-storage-update-vpc#update-cluster-master-vpc)
 
-* [Determine which storage nodes you want to update or replace](/docs/openshift?topic=openshift-openshift-storage-update-vpc#determine-storage-nodes-vpc)
+* [Decide which storage nodes you want to update or replace](/docs/openshift?topic=openshift-openshift-storage-update-vpc#determine-storage-nodes-vpc)
 
 * [Make sure the storage cluster is healthy](/docs/openshift?topic=openshift-openshift-storage-update-vpc#cluster-health)
 
