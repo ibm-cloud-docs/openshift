@@ -18,7 +18,6 @@ completion-time: 60m
 ---
 
 
-
 {{site.data.keyword.attribute-definition-list}}
 
 # Updating or replacing VPC worker nodes that use OpenShift Data Foundation
