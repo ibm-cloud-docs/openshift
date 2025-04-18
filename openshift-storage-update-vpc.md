@@ -195,7 +195,7 @@ Make sure the storage cluster is healthy before continuing.
     noobaa-endpoint
     noobaa-operator
 	```
-	{: pre}
+	{: codeblock}
 	
 1. Scale down the deployments that you found in the previous step.
 
