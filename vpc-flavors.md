@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2025
-lastupdated: "2025-03-28"
+lastupdated: "2025-04-22"
 
 
 keywords: openshift, node scaling, ca, autoscaler
@@ -143,6 +143,7 @@ If your account is allowlisted for flavors that are not listed below, you can fi
 | gx3.48x240.2l40s | GPU | 48, 240GB, 32Gbps |  REDHAT_8_64, RHEL_9_64, RHCOS| 100GB BLOCK | N/A | 300gb.5iops-tier, 300gb.10iops-tier, 600gb.5iops-tier, 600gb.10iops-tier, 900gb.5iops-tier, 900gb.10iops-tier, 1200gb.5iops-tier, 1200gb.10iops-tier, 1600gb.5iops-tier, 1600gb.10iops-tier, 2400gb.10iops-tier, 3000gb.10iops-tier, 4000gb.10iops-tier |2 L40S |
 | gx3.64x320.4l4 | GPU | 64, 320GB, 32Gbps |  REDHAT_8_64, RHEL_9_64, RHCOS| 100GB BLOCK | N/A | 300gb.5iops-tier, 300gb.10iops-tier, 600gb.5iops-tier, 600gb.10iops-tier, 900gb.5iops-tier, 900gb.10iops-tier, 1200gb.5iops-tier, 1200gb.10iops-tier, 1600gb.5iops-tier, 1600gb.10iops-tier, 2400gb.10iops-tier, 3000gb.10iops-tier, 4000gb.10iops-tier |4 L4 |
 | gx3d.160x1792.8h100 | GPU | 160, 1792GB, 32Gbps |  REDHAT_8_64, RHEL_9_64, RHCOS| 100GB BLOCK | N/A | 300gb.5iops-tier, 300gb.10iops-tier, 600gb.5iops-tier, 600gb.10iops-tier, 900gb.5iops-tier, 900gb.10iops-tier, 1200gb.5iops-tier, 1200gb.10iops-tier, 1600gb.5iops-tier, 1600gb.10iops-tier, 2400gb.10iops-tier, 3000gb.10iops-tier, 4000gb.10iops-tier |8 H100 |
+| gx3d.160x1792.8h200 | GPU | 160, 1792GB, 32Gbps |  REDHAT_8_64, RHCOS| 100GB BLOCK | N/A | 300gb.5iops-tier, 300gb.10iops-tier, 600gb.5iops-tier, 600gb.10iops-tier, 900gb.5iops-tier, 900gb.10iops-tier, 1200gb.5iops-tier, 1200gb.10iops-tier, 1600gb.5iops-tier, 1600gb.10iops-tier, 2400gb.10iops-tier, 3000gb.10iops-tier, 4000gb.10iops-tier |8 H200 |
 | mx2.128x1024 | Memory | 128, 1024GB, 25Gbps |  REDHAT_7_64, REDHAT_8_64, RHEL_9_64, RHCOS| 100GB BLOCK | N/A | 300gb.5iops-tier, 300gb.10iops-tier, 600gb.5iops-tier, 600gb.10iops-tier, 900gb.5iops-tier, 900gb.10iops-tier, 1200gb.5iops-tier, 1200gb.10iops-tier, 1600gb.5iops-tier, 1600gb.10iops-tier, 2400gb.10iops-tier, 3000gb.10iops-tier, 4000gb.10iops-tier | N/A|
 | mx2.16x128 | Memory | 16, 128GB, 24Gbps |  REDHAT_7_64, REDHAT_8_64, RHEL_9_64, RHCOS| 100GB BLOCK | N/A | 300gb.5iops-tier, 300gb.10iops-tier, 600gb.5iops-tier, 600gb.10iops-tier, 900gb.5iops-tier, 900gb.10iops-tier, 1200gb.5iops-tier, 1200gb.10iops-tier, 1600gb.5iops-tier, 1600gb.10iops-tier, 2400gb.10iops-tier, 3000gb.10iops-tier, 4000gb.10iops-tier | N/A|
 | mx2.16x128.2000gb | Memory | 16, 128GB, 24Gbps |  REDHAT_7_64, REDHAT_8_64, RHEL_9_64, RHCOS| 100GB BLOCK | 2000GB BLOCK | N/A| N/A|
