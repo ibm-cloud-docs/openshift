@@ -275,7 +275,7 @@ subcollection: openshift
 
 * [April 2025](/docs/openshift?topic=openshift-openshift-relnotes#openshift-april25)
 
-    * [21 April 2025](/docs/openshift?topic=openshift-openshift-relnotes#openshift-21april25)
+    * [22 April 2025](/docs/openshift?topic=openshift-openshift-relnotes#openshift-22april25)
 
         * {{site.data.keyword.openshiftlong_notm}} worker node fix packs are available.
 

@@ -30,12 +30,8 @@ Looking for {{site.data.keyword.cloud_notm}} status, platform announcements, sec
 ## April 2025
 {: #openshift-april25}
 
-
-
-
-
-### 21 April 2025
-{: #openshift-21april25}
+### 22 April 2025
+{: #openshift-22april25}
 {: release-note}
 
 
@@ -50,6 +46,10 @@ Looking for {{site.data.keyword.cloud_notm}} status, platform announcements, sec
 :   [Version 4.14 change log](/docs/openshift?topic=openshift-openshift_changelog_414)
 :   [Version 4.13 change log](/docs/openshift?topic=openshift-openshift_changelog_413)
 :   [Version 4.12 change log](/docs/openshift?topic=openshift-openshift_changelog_412)
+
+
+
+
 
 
 
