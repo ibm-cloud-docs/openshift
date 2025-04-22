@@ -277,6 +277,8 @@ subcollection: openshift
 
     * [22 April 2025](/docs/openshift?topic=openshift-openshift-relnotes#openshift-22april25)
 
+        * Cluster autoscaler add-on patch updates for {{site.data.keyword.openshiftlong_notm}}.
+
         * {{site.data.keyword.openshiftlong_notm}} worker node fix packs are available.
 
     * [16 April 2025](/docs/openshift?topic=openshift-openshift-relnotes#openshift-16april25)
@@ -7074,6 +7076,10 @@ subcollection: openshift
     * [416.0.0_424, released 21 January 2025](/docs/openshift?topic=openshift-cl-add-ons-openshift-ai#cl-add-ons-openshift-ai-41600_424)
 
 [Cluster autoscaler add-on change log](/docs/openshift?topic=openshift-ca_changelog#ca_changelog)
+
+* [Version 1.2.4](/docs/openshift?topic=openshift-ca_changelog#0124_ca_addon)
+
+    * [Change log for patch update 1.2.4_629, released 22 April 2025.](/docs/openshift?topic=openshift-ca_changelog#124_629_ca)
 
 * [Version 1.2.3](/docs/openshift?topic=openshift-ca_changelog#0123_ca_addon)
 
