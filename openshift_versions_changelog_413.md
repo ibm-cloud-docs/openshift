@@ -3,7 +3,7 @@
 copyright:
   years: 2024, 2025
 
-lastupdated: "2025-04-24"
+lastupdated: "2025-04-25"
 
 
 keywords: change log, version history, 4.13_openshift
@@ -48,7 +48,7 @@ The following table shows the components included in the worker node fix pack 4.
 | Component | Version | Description |
 | ---- | ---- | ---- |
 |RHEL_8|4.18.0-553.47.1.el8_10|Resolves the following CVEs: [RHSA-2024:3043](https://access.redhat.com/errata/RHSA-2024:3043){: external}, [CVE-2024-0690](https://nvd.nist.gov/vuln/detail/CVE-2024-0690){: external}, [RHSA-2025:3913](https://access.redhat.com/errata/RHSA-2025:3913){: external}, [CVE-2024-8176](https://nvd.nist.gov/vuln/detail/CVE-2024-8176){: external}, [RHSA-2025:3828](https://access.redhat.com/errata/RHSA-2025:3828){: external}, and [CVE-2025-0395](https://nvd.nist.gov/vuln/detail/CVE-2025-0395){: external}.|
-|OpenShift|4.13.57|For more information, see the [change logs](https://docs.openshift.com/container-platform/4.13/release_notes/ocp-4-13-release-notes.html#ocp-4-13-57_release-notes).|
+|OpenShift|4.13.57|For more information, see the [change logs](https://docs.redhat.com/en/documentation/openshift_container_platform/4.13/html/release_notes/ocp-4-13-release-notes#ocp-4-13-57_release-notes).|
 |HAProxy|bb0015364d95e0a2e7ab83d4a659d1541cee183e|Resolves the following CVEs: [CVE-2025-0395](https://nvd.nist.gov/vuln/detail/CVE-2025-0395){: external}, and [CVE-2024-8176](https://nvd.nist.gov/vuln/detail/CVE-2024-8176){: external}.|
 {: caption="4.13.57_1615_openshift fix pack." caption-side="bottom"}
 {: #cl-boms-41357_1615_openshift_W-component-table}

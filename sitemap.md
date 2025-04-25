@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2025
-lastupdated: "2025-04-24"
+lastupdated: "2025-04-25"
 
 
 keywords: openshift
@@ -274,6 +274,10 @@ subcollection: openshift
 [Release notes](/docs/openshift?topic=openshift-openshift-relnotes#openshift-relnotes)
 
 * [April 2025](/docs/openshift?topic=openshift-openshift-relnotes#openshift-april25)
+
+    * [25 April 2025](/docs/openshift?topic=openshift-openshift-relnotes#openshift-25april25)
+
+        * Openshift AI cluster add-on patch updates.
 
     * [22 April 2025](/docs/openshift?topic=openshift-openshift-relnotes#openshift-22april25)
 
@@ -4822,8 +4826,6 @@ subcollection: openshift
 
 * [Using the Portworx key-value database](/docs/openshift?topic=openshift-storage_portworx_kv_store#portworx-kvdb)
 
-    * [Optional: Setting up a Databases for etcd service instance](/docs/openshift?topic=openshift-storage_portworx_kv_store#portworx-kv-db)
-
 [Understanding encryption for Portworx](/docs/openshift?topic=openshift-storage_portworx_encryption#storage_portworx_encryption)
 
 * [Encryption overview](/docs/openshift?topic=openshift-storage_portworx_encryption#px_encryption)
@@ -7068,6 +7070,8 @@ subcollection: openshift
 [OpenShift AI add-on version change log](/docs/openshift?topic=openshift-cl-add-ons-openshift-ai#cl-add-ons-openshift-ai)
 
 * [Version 416](/docs/openshift?topic=openshift-cl-add-ons-openshift-ai#cl-add-ons-openshift-ai-416)
+
+    * [416.1.1_495, released 25 April 2025](/docs/openshift?topic=openshift-cl-add-ons-openshift-ai#cl-add-ons-openshift-ai-41611_495)
 
     * [416.1.1_491, released 16 April 2025](/docs/openshift?topic=openshift-cl-add-ons-openshift-ai#cl-add-ons-openshift-ai-41611_491)
 
