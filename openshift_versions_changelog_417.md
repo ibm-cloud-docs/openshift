@@ -3,7 +3,7 @@
 copyright:
   years: 2024, 2025
 
-lastupdated: "2025-04-24"
+lastupdated: "2025-04-25"
 
 
 keywords: change log, version history, 4.17_openshift
@@ -49,7 +49,7 @@ The following table shows the components included in the worker node fix pack 4.
 | ---- | ---- | ---- |
 |RHEL_9|5.14.0-503.38.1.el9_5|Resolves the following CVEs: [RHSA-2025:3937](https://access.redhat.com/errata/RHSA-2025:3937){: external}, and [CVE-2024-53150](https://nvd.nist.gov/vuln/detail/CVE-2024-53150){: external}.|
 |RHEL_8|4.18.0-553.47.1.el8_10|Resolves the following CVEs: [RHSA-2024:3043](https://access.redhat.com/errata/RHSA-2024:3043){: external}, [CVE-2024-0690](https://nvd.nist.gov/vuln/detail/CVE-2024-0690){: external}, [RHSA-2025:3913](https://access.redhat.com/errata/RHSA-2025:3913){: external}, [CVE-2024-8176](https://nvd.nist.gov/vuln/detail/CVE-2024-8176){: external}, [RHSA-2025:3828](https://access.redhat.com/errata/RHSA-2025:3828){: external}, and [CVE-2025-0395](https://nvd.nist.gov/vuln/detail/CVE-2025-0395){: external}.|
-|Red Hat OpenShift and Red Hat CoreOS|4.17.25|For more information, see the [change logs](https://docs.openshift.com/container-platform/4.17/release_notes/ocp-4-17-release-notes.html#ocp-4-17-25_release-notes).|
+|Red Hat OpenShift and Red Hat CoreOS|4.17.25|For more information, see the [change logs](https://docs.redhat.com/en/documentation/openshift_container_platform/4.17/html/release_notes/ocp-4-17-release-notes#ocp-4-17-25_release-notes).|
 |HAProxy|bb0015364d95e0a2e7ab83d4a659d1541cee183e|Resolves the following CVEs: [CVE-2025-0395](https://nvd.nist.gov/vuln/detail/CVE-2025-0395){: external}, and [CVE-2024-8176](https://nvd.nist.gov/vuln/detail/CVE-2024-8176){: external}.|
 {: caption="4.17.25_1536_openshift fix pack." caption-side="bottom"}
 {: #cl-boms-41725_1536_openshift_W-component-table}
