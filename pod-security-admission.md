@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2022, 2025
-lastupdated: "2025-03-28"
+lastupdated: "2025-04-28"
 
 
 keywords: kubernetes, deploy, openshift, pod security admission, pod security, security profiles
@@ -24,7 +24,7 @@ Pod security admission implements the Kubernetes pod security standards that res
 
 {{site.data.keyword.openshiftlong_notm}} version 4.11 and later includes support for Kubernetes pod security admission. For more information, see [Pod Security Admission](https://kubernetes.io/docs/concepts/security/pod-security-admission/){: external} and [Pod Security Standards](https://kubernetes.io/docs/concepts/security/pod-security-standards/){: external} in the Kubernetes documentation.
 
-Pod Security Admission is always enabled for {{site.data.keyword.openshiftlong_notm}} version 4.11 and later. Earlier versions of Kubernetes use [pod security policies](/docs/containers?topic=containers-psp).
+Pod Security Admission is always enabled for {{site.data.keyword.openshiftlong_notm}} version 4.11 and later. Earlier versions of Kubernetes use pod security policies.
 {: note}
 
 ## Understanding security profiles

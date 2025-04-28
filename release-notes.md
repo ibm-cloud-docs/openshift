@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2025
-lastupdated: "2025-04-25"
+lastupdated: "2025-04-28"
 
 
 keywords: kubernetes, release notes, openshift, {{site.data.keyword.openshiftlong_notm}}
@@ -1417,7 +1417,7 @@ Managing outbound traffic protection in new version 4.15 VPC clusters.
 :   With the introduction of Secure by Default Cluster VPC networking in version 4.15 and later clusters, there are several scenarios where you might need to adjust the security group settings for your clusters to allow outbound traffic to certain resources. For more information, see [Managing outbound traffic protection in VPC clusters](/docs/openshift?topic=openshift-sbd-allow-outbound).
 
 Red Hat CoreOS worker nodes are available for new VPC clusters beginning with version 4.15.
-:   You can now specify the Red Hat Enterprise Linux CoreOS (RHCOS) operating system when you provision a new VPC cluster. Note that the OpenShift Data Foundation and cluster autoscaler add-ons do not yet support RHCOS worker nodes. If you need to install these add-ons in your cluster, use RHEL worker nodes instead. For more information, see the [Red Hat Enterprise Linux CoreOS (RHCOS) documentation](https://docs.redhat.com/documentation/openshift_container_platform/4.10/html/architecture/architecture-rhcos){: external}.
+:   You can now specify the Red Hat Enterprise Linux CoreOS (RHCOS) operating system when you provision a new VPC cluster. Note that the OpenShift Data Foundation and cluster autoscaler add-ons do not yet support RHCOS worker nodes. If you need to install these add-ons in your cluster, use RHEL worker nodes instead. For more information, see the [Red Hat Enterprise Linux CoreOS (RHCOS) documentation](https://docs.redhat.com/en/documentation/openshift_container_platform/4.10/html/architecture/architecture-rhcos){: external}.
 
 
 

@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2025
-lastupdated: "2025-03-28"
+lastupdated: "2025-04-28"
 
 
 keywords: openshift, scc, security context constraint, psp
@@ -31,7 +31,7 @@ Can I also add users or system groups to SCCs?
 :   For system groups such as `system:authenticated`, these groups already are assigned to SCCs. You can see which groups are assigned to an SCC by describing the SCC. If you change the SCC that a system group is assigned to, default components that belong to the system group might experience errors due to the change in permissions.
 
 Are any SCCs set by default?
-:   By default, {{site.data.keyword.openshiftlong_notm}} clusters include a standard set of [{{site.data.keyword.redhat_openshift_notm}} SCCs](#oc_sccs). Additionally, clusters have [IBM SCCs](#ibm_sccs) that closely resemble the [Kubernetes pod security policies of community Kubernetes clusters in {{site.data.keyword.containerlong_notm}}](/docs/containers?topic=containers-psp#ibm_psp). These IBM SCCs are included for improved portability with {{site.data.keyword.cloud_notm}} Private packages such as Cloud Paks.
+:   By default, {{site.data.keyword.openshiftlong_notm}} clusters include a standard set of [{{site.data.keyword.redhat_openshift_notm}} SCCs](#oc_sccs). Additionally, clusters have [IBM SCCs](#ibm_sccs) that closely resemble the Kubernetes pod security policies of community Kubernetes clusters in {{site.data.keyword.containerlong_notm}}. These IBM SCCs are included for improved portability with {{site.data.keyword.cloud_notm}} Private packages such as Cloud Paks.
 
 What SCCs are applied to my resources by default?
 :   If you don't specify a security context, the {{site.data.keyword.redhat_openshift_notm}} `restricted` (or `restricted-v2` in 4.11 and later) security context constraint is applied by default. To check a pod's security context, describe the pod and look for the SCC annotation, such as in the following example.

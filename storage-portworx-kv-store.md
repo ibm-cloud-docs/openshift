@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2025
-lastupdated: "2025-04-25"
+lastupdated: "2025-04-28"
 
 
 keywords: portworx, kubernetes, openshift
@@ -33,9 +33,7 @@ Before you begin, review the [Planning your Portworx setup section](/docs/opensh
 
 The Portworx key-value store serves as the single source of truth for your Portworx cluster. If the key-value store is not available, then you can't work with your Portworx cluster to access or store your data. Existing data is not changed or removed when the Portworx database is unavailable.
 
-To set up your key-value store, choose between the following options.
-- [Automatically set up a key-value database (KVDB) during the Portworx installation](#portworx-kvdb).
-- [Set up a Databases for etcd service instance](#portworx-kv-db).
+To set up your key-value store, [automatically set up a key-value database (KVDB) during the Portworx installation](#portworx-kvdb).
 
 ## Using the Portworx key-value database
 {: #portworx-kvdb}
