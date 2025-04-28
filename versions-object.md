@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2025
-lastupdated: "2025-04-07"
+lastupdated: "2025-04-28"
 
 
 keywords: openshift, {{site.data.keyword.openshiftlong_notm}}, object storage, plug-in, change log
@@ -28,6 +28,7 @@ View information for updates to the {{site.data.keyword.cos_full_notm}} plug-in 
 
 | {{site.data.keyword.cos_full_notm}} plug-in version | Supported? |
 | --- | --- |
+| 2.2.38 | Yes |
 | 2.2.37 | Yes |
 | 2.2.36 | Yes |
 | 2.2.35 | Yes |
@@ -35,6 +36,12 @@ View information for updates to the {{site.data.keyword.cos_full_notm}} plug-in 
 
 Versions are deprecated at n-2 or roughly 3 months after their release date. Plan to keep your add-on updated. For update steps, see [Updating the {{site.data.keyword.cos_full_notm}} plug-in](/docs/openshift?topic=openshift-storage_cos_install#update_cos_plugin).
 {: important}
+
+## Change log for version 2.2.38, released 24 April 2025
+{: #02238_object_plugin}
+
+- Adds a new annotation `ibm.io/bucket-versioning`. The default value for this annotation is `"false"`. To enable bucket versioning set the annotation to `true` in your PVC.
+- Resolves [CVE-2025-0395](https://nvd.nist.gov/vuln/detail/CVE-2025-0395){: external}.
 
 ## Change log for version 2.2.37, released 07 April 2025
 {: #02237_object_plugin}

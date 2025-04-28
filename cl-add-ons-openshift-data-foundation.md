@@ -3,7 +3,7 @@
 copyright:
   years: 2024, 2025
 
-lastupdated: "2025-04-24"
+lastupdated: "2025-04-28"
 
 
 keywords: change log, version history, OpenShift Data Foundation
@@ -54,6 +54,11 @@ Review the version history for OpenShift Data Foundation.
 {: #cl-add-ons-openshift-data-foundation-41610}
 
 - Resolves the following CVEs: [CVE-2025-24528](https://nvd.nist.gov/vuln/detail/CVE-2025-24528){: external}, [CVE-2024-5535](https://nvd.nist.gov/vuln/detail/CVE-2024-5535){: external}, and [CVE-2020-11023](https://nvd.nist.gov/vuln/detail/CVE-2020-11023){: external}.
+
+### 4.16.10, released 25 April 2025
+{: #cl-add-ons-openshift-data-foundation-41610}
+
+- Bug fixes and minor feature enhancements. 
 
 
 

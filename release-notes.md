@@ -31,12 +31,34 @@ Looking for {{site.data.keyword.cloud_notm}} status, platform announcements, sec
 {: #openshift-april25}
 
 
+
+### 27 April 2025
+{: #openshift-27april25}
+{: release-note}
+
+
+
+IBM Cloud Image Key Synchronizer cluster add-on patch updates.
+:   For more information, see the [change log](/docs/openshift?topic=openshift-cl-add-ons-ibm-cloud-image-key-synchronizer).
+
+
+
+
 ### 25 April 2025
 {: #openshift-25april25}
 {: release-note}
 
 Openshift AI cluster add-on patch updates.
 :   For more information, see the [change log](/docs/openshift?topic=openshift-cl-add-ons-openshift-ai).
+
+
+
+### 24 April 2025
+{: #openshift-24april25}
+{: release-note}
+
+{{site.data.keyword.cos_full_notm}} plug-in updates.
+:   For more information, see the [change log](/docs/openshift?topic=openshift-cos_plugin_changelog).
 
 ### 22 April 2025
 {: #openshift-22april25}

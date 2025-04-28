@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2025
-lastupdated: "2025-04-25"
+lastupdated: "2025-04-28"
 
 
 keywords: openshift
@@ -275,9 +275,17 @@ subcollection: openshift
 
 * [April 2025](/docs/openshift?topic=openshift-openshift-relnotes#openshift-april25)
 
+    * [27 April 2025](/docs/openshift?topic=openshift-openshift-relnotes#openshift-27april25)
+
+        * IBM Cloud Image Key Synchronizer cluster add-on patch updates.
+
     * [25 April 2025](/docs/openshift?topic=openshift-openshift-relnotes#openshift-25april25)
 
         * Openshift AI cluster add-on patch updates.
+
+    * [24 April 2025](/docs/openshift?topic=openshift-openshift-relnotes#openshift-24april25)
+
+        * {{site.data.keyword.cos_full_notm}} plug-in updates.
 
     * [22 April 2025](/docs/openshift?topic=openshift-openshift-relnotes#openshift-22april25)
 
@@ -7553,6 +7561,8 @@ subcollection: openshift
 
 [{{site.data.keyword.cos_full_notm}} plug-in](/docs/openshift?topic=openshift-cos_plugin_changelog#cos_plugin_changelog)
 
+* [Change log for version 2.2.38, released 24 April 2025](/docs/openshift?topic=openshift-cos_plugin_changelog#02238_object_plugin)
+
 * [Change log for version 2.2.37, released 07 April 2025](/docs/openshift?topic=openshift-cos_plugin_changelog#02237_object_plugin)
 
 * [Change log for version 2.2.36, released 10 March 2025](/docs/openshift?topic=openshift-cos_plugin_changelog#02236_object_plugin)
@@ -7668,6 +7678,8 @@ subcollection: openshift
     * [4.16.6, released 04 February 2025](/docs/openshift?topic=openshift-cl-add-ons-openshift-data-foundation#cl-add-ons-openshift-data-foundation-4166)
 
     * [4.16.10, released 14 April 2025](/docs/openshift?topic=openshift-cl-add-ons-openshift-data-foundation#cl-add-ons-openshift-data-foundation-41610)
+
+    * [4.16.10, released 25 April 2025](/docs/openshift?topic=openshift-cl-add-ons-openshift-data-foundation#cl-add-ons-openshift-data-foundation-41610)
 
 * [Version 4.15.0](/docs/openshift?topic=openshift-cl-add-ons-openshift-data-foundation#cl-add-ons-openshift-data-foundation-4.15.0)
 
@@ -7898,6 +7910,8 @@ subcollection: openshift
 [IBM Cloud Image Key Synchronizer add-on version change log](/docs/openshift?topic=openshift-cl-add-ons-ibm-cloud-image-key-synchronizer#cl-add-ons-ibm-cloud-image-key-synchronizer)
 
 * [Version 1.0.0](/docs/openshift?topic=openshift-cl-add-ons-ibm-cloud-image-key-synchronizer#cl-add-ons-ibm-cloud-image-key-synchronizer-1.0.0)
+
+    * [1.0.0_2713, released 27 April 2025](/docs/openshift?topic=openshift-cl-add-ons-ibm-cloud-image-key-synchronizer#cl-add-ons-ibm-cloud-image-key-synchronizer-100_2713)
 
     * [1.0.0_2640, released 13 March 2025](/docs/openshift?topic=openshift-cl-add-ons-ibm-cloud-image-key-synchronizer#cl-add-ons-ibm-cloud-image-key-synchronizer-100_2640)
 

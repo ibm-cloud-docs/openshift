@@ -1,8 +1,8 @@
 ---
 
 copyright:
-  years: 2014, 2024
-lastupdated: "2024-09-30"
+  years: 2014, 2025
+lastupdated: "2025-04-28"
 
 
 keywords: openshift, adding object storage, adding storage to cluster, adding pvc, persistent volume claim, object storage pvc
@@ -53,6 +53,7 @@ To add {{site.data.keyword.cos_full_notm}} to your cluster:
         ibm.io/secret-namespace: "<secret-namespace>" # By default, the COS plug-in searches for your secret in the same namespace where you create the PVC. If you created your secret in a namespace other than the namespace where you want to create your PVC, enter the namespace where you created your secret.
         ibm.io/add-mount-param: "<option-1>,<option-2>" # s3fs mount options
         ibm.io/access-policy-allowed-ips: "XX.XXX.XX.XXX, XX.XX.XX.XXX, XX.XX.XX.XX" # A csv of allow listed IPs.
+        ibm.io/bucket-versioning: "false" # Set to true to enable bucket versioning.
     spec:
       accessModes:
         - ReadWriteOnce
@@ -112,6 +113,9 @@ To add {{site.data.keyword.cos_full_notm}} to your cluster:
         
     `secret-namespace`
     :   By default, the COS plug-in searches for your secret in the same namespace where you create the PVC. If you created your secret in a namespace other than the namespace where you want to create your PVC, enter the namespace where you created your secret.
+
+    `ibm.io/bucket-versioning`
+    :   Bucket versioning is set to `false` by default. Set to `true` to enable bucket versioning.
 
 1. Create the PVC in your cluster.
 
