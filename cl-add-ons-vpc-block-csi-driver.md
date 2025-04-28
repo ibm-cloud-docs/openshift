@@ -29,12 +29,6 @@ Review the version history for VPC Block CSI Driver.
 {: #cl-add-ons-vpc-block-csi-driver-5.2}
 
 
-### 5.2.33_735, released 09 May 2025
-{: #cl-add-ons-vpc-block-csi-driver-5233_735}
-
-- Resolves the following CVEs: [CVE-2020-11023](https://nvd.nist.gov/vuln/detail/CVE-2020-11023){: external}, and [CVE-2025-0395](https://nvd.nist.gov/vuln/detail/CVE-2025-0395){: external}.
-- Updates the golang base image to 1.23.8. 
-- Updates the armada-storage-secret to v1.3.26. 
 
 ### 5.2.31_687, released 17 February 2025
 {: #cl-add-ons-vpc-block-csi-driver-5231_687}
@@ -50,12 +44,6 @@ Review the version history for VPC Block CSI Driver.
 {: #cl-add-ons-vpc-block-csi-driver-5.1}
 
 
-### 5.1.34_740, released 09 May 2025
-{: #cl-add-ons-vpc-block-csi-driver-5134_740}
-
-- Resolves the following CVEs: [CVE-2020-11023](https://nvd.nist.gov/vuln/detail/CVE-2020-11023){: external}, and [CVE-2025-0395](https://nvd.nist.gov/vuln/detail/CVE-2025-0395){: external}.
-- Updates the golang base image to 1.23.8. 
-- Updates the armada-storage-secret to v1.2.60. 
 
 ### 5.1.33_685, released 17 February 2025
 {: #cl-add-ons-vpc-block-csi-driver-5133_685}
