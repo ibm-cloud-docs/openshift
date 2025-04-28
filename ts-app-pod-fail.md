@@ -1,11 +1,11 @@
 ---
 
 copyright: 
-  years: 2014, 2024
-lastupdated: "2024-03-27"
+  years: 2014, 2025
+lastupdated: "2025-04-28"
 
 
-keywords: openshift, {{site.data.keyword.openshiftlong_notm}}
+keywords: openshift, {{site.data.keyword.openshiftlong_notm}}, CrashLoopBackOff, pods fail, status, pod, crashing
 
 subcollection: openshift
 
@@ -26,11 +26,11 @@ content-type: troubleshoot
 [Virtual Private Cloud]{: tag-vpc} [Classic infrastructure]{: tag-classic-inf}
 
 
-Your pod was healthy but unexpectedly gets removed or gets stuck in a restart loop.
+Your pod was healthy but unexpectedly gets removed or gets stuck in a restart loop. In some cases, the containers will show a `CrashLoopBackOff` status.
 {: tsSymptoms}
 
 
-Your containers might exceed their resource limits, or your pods might be replaced by higher priority pods.
+Your containers might exceed their resource limits, or your pods might be replaced by higher priority pods.  When a Kubernetes container repeatedly fails to start, it enters a `CrashLoopBackOff` state, indicating a persistent restart loop within a pod. This error often occurs due to various issues preventing the container from launching properly. Common causes can include insufficient memory, resource overload, deployment errors, third-party service issues like DNS errors, missing dependencies, or container failures due to port conflicts. 
 {: tsCauses}
 
 
@@ -116,11 +116,3 @@ To see if your pod is being replaced by higher priority pods:
 7. Repeat steps 1 to 3 for other pods in the cluster, to check what priority class they are using. If those other pods' priority class is higher than your pod, your pod is not provisioned unless there is enough resources for your pod and every pod with higher priority.
 
 8. Contact your cluster admin to add more capacity to your cluster and confirm that the correct priority classes are assigned.
-
-
-
-
-
-
-
-
