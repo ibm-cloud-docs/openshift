@@ -1,8 +1,8 @@
 ---
 
 copyright: 
-  years: 2014, 2024
-lastupdated: "2024-01-03"
+  years: 2014, 2025
+lastupdated: "2025-04-29"
 
 
 keywords: openshift
@@ -115,4 +115,5 @@ The Ingress message provides details of what operation is in progress or informa
 | `The subdomain has TLS secret issues (ERRDSISS).` | For more information, see [Why does the Ingress status show an ERRDSISS error?](/docs/openshift?topic=openshift-ts-ingress-errdsiss).|
 | `The subdomain has DNS resolution issues (ERRDRISS).` | For more information, see [Why does the Ingress status show an ERRDRISS error?](/docs/openshift?topic=openshift-ts-ingress-errdriss).|
 | `The subdomain has incorrect addresses registered (ERRDSIA).` | For more information, see [Why does the Ingress status show an ERRDSIA error?](/docs/openshift?topic=openshift-ts-ingress-errdsia).|
+| `Invalid value for ALB version. (E0061).` | Before updating an ALB, check the list of ingress image versions available in the region using the command `ibmcloud ks ingress alb versions --region <region_id>`. For more information, see [Managing ALBs](/docs/openshift?topic=openshift-ingress-alb-manage).|
 {: caption="Ingress messages" caption-side="bottom"}
