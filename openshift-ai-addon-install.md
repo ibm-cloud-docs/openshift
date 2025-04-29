@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2024, 2025
-lastupdated: "2025-04-22"
+lastupdated: "2025-04-29"
 
 
 keywords: openshift, {{site.data.keyword.openshiftlong_notm}}, ai, add-on
@@ -29,7 +29,7 @@ Want to deploy the OpenShift AI operator on a new cluster? Try the [OpenShift AI
 
 To use the OpenShift AI add-on, your cluster must meet the following requirements.
 - Your cluster must be version 4.16 and later.
-- Your cluster must have at least 2 worker nodes. Each worker node must have 8vCPU and 32GB memory and a GPU.
+- Your cluster requires have at least 2 worker nodes. Each worker node must be a minuimum of 8vCPU and 32GB memory. To use all the capabilities provided by OpenShift AI, at least 1 GPU is recommended.
 - Your worker nodes must use the RHCOS operating system.
 
 ## Before you begin
