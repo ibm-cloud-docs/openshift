@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2025
-lastupdated: "2025-04-25"
+lastupdated: "2025-04-29"
 
 
 keywords: openshift, kubernetes, mzr, szr, multizone, multi az
@@ -25,6 +25,7 @@ subcollection: openshift
 
 This image is an artistic representation and does not reflect actual political or geographic boundaries.
 {: note}
+
 
 
 ## {{site.data.keyword.openshiftlong_notm}} locations
