@@ -1,8 +1,8 @@
 ---
 
 copyright:
-  years: 2024, 2024
-lastupdated: "2024-11-12"
+  years: 2024, 2025
+lastupdated: "2025-04-30"
 
 keywords: data, portability
 
@@ -112,7 +112,7 @@ You can also migrate the clusters resources that you backed up to {{site.data.ke
 
 For more information about restoring Velero snapshots, see [Cluster migration](https://velero.io/docs/v1.14/migration-case/){: external}.
 
-To see an example scenario that uses `velero` in IBM Cloud for migrating from a Classic to VPC cluster, see [Migrate Block Storage PVCs from an IBM Cloud Kubernetes Classic cluster to VPC cluster](https://community.ibm.com/community/user/cloud/blogs/baker-pratt/2024/07/15/migrate-block-storage-pvcs-from-an-ibm-cloud-kuber){: external}.
+To see an example scenario that uses `velero` in IBM Cloud for migrating from a Classic to VPC cluster, see [Migrate Block Storage PVCs from an IBM Cloud Kubernetes Classic cluster to VPC cluster](https://community.ibm.com/community/user/blogs/baker-pratt/2024/07/15/migrate-block-storage-pvcs-from-an-ibm-cloud-kuber){: external}.
 {: tip}
 
 ### Other options for exporting data
