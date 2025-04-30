@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2025
-lastupdated: "2025-04-29"
+lastupdated: "2025-04-30"
 
 
 keywords: openshift, adding object storage, adding storage to cluster, adding pvc, persistent volume claim, object storage pvc
@@ -115,7 +115,7 @@ To add {{site.data.keyword.cos_full_notm}} to your cluster:
     :   By default, the COS plug-in searches for your secret in the same namespace where you create the PVC. If you created your secret in a namespace other than the namespace where you want to create your PVC, enter the namespace where you created your secret.
 
     `ibm.io/bucket-versioning`
-    :   Bucket versioning is set to `false` by default. Set to `true` to enable bucket versioning. For more information, see [Getting started with versioning](/docs/cloud-object-storage?topic=cloud-object-storage-versioning#versioning-getting-started).
+    :   Bucket versioning is set to `false` by default. Set to `true` to enable bucket versioning. Set to `false` to disable versioning for a bucket where versioning is enabled. Note that the service credentials must have Manager or Writer permissions to enable or disable bucket versioning on the bucket. For more information, see [Getting started with versioning](/docs/cloud-object-storage?topic=cloud-object-storage-versioning#versioning-getting-started).
 
 1. Create the PVC in your cluster.
 
