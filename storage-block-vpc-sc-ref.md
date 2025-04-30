@@ -1,8 +1,8 @@
 ---
 
 copyright: 
-  years: 2024, 2024
-lastupdated: "2024-10-10"
+  years: 2024, 2025
+lastupdated: "2025-04-30"
 
 
 keywords: openshift, block storage, deploy apps, storage class reference
@@ -40,7 +40,7 @@ All storage classes use hourly billing. For more information about pricing, see 
 | `ibmc-vpc-block-metro-5iops-tier` | `ext4` | WaitforFirstConsumer | Delete | 
 | `ibmc-vpc-block-metro-retain-5iops-tier` | `ext4` | WaitForFirstConsumer | Retain |
 | `ibmc-vpcblock-odf-5iops` | `ext4` | WaitForFirstConsumer | Delete | 
-| `ibmc-vpcblock-odf-ret-5iops created` | `ext4` | WaitForFirstConsumer Retain |
+| `ibmc-vpcblock-odf-ret-5iops` | `ext4` | WaitForFirstConsumer Retain |
 | `ibmc-vpc-block-custom` | `ext4` | Immediate | Delete |
 | `ibmc-vpc-block-retain-custom` | `ext4` | Immediate | Retain |
 | `ibmc-vpc-block-metro-custom` | `ext4` | WaitforFirstConsumer | Delete |
