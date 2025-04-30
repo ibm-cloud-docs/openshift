@@ -2,7 +2,7 @@
 
 copyright:
   years: 2024, 2025
-lastupdated: "2025-03-18"
+lastupdated: "2025-04-30"
 
 keywords: logging, cloud logs, logs, log analysis, containers
 
@@ -130,17 +130,15 @@ You can view your logs to view details on events that affect your cluster compon
 
 
 
-## Migrating from Log Analysis and Activity Tracker to Cloud Logs
+## Migrating to Cloud Logs
 {: #cloud-logs-migration}
 
-Log Analysis and Activity Tracker are deprecated and support ends on 28 March 2025. For more details about the deprecation, including migration steps, see [Migrating to Cloud Logs](/docs/log-analysis?topic=log-analysis-deprecation_migration).
-{: deprecated}
+Log Analysis and Activity Tracker are no longer supported. For more information, see [Migrating to Cloud Logs](/docs/log-analysis?topic=log-analysis-deprecation_migration).
+{: unsupported}
 
-You need to migrate if your clusters are using the deprecated logging agent.
+You need to migrate if your clusters are using the unsupported logging agent.
 
-Also, the observability CLI plug-in `ibmcloud ob` and the `v2/observe` endpoints are deprecated and support ends on 28 March 2025. You can now manage your logging and monitoring integrations from the console or through the Helm charts.
-
-Check if your clusters are using the deprecated agent.
+Check if your clusters are using the unsupported agent.
 
 1. Run the following command. If a logging config is returned, you must migrate your existing Log Analysis and Activity Tracker instances to Cloud Logs instances.
     ```sh

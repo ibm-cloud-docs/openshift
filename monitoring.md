@@ -2,7 +2,7 @@
 
 copyright:
   years: 2024, 2025
-lastupdated: "2025-03-13"
+lastupdated: "2025-04-30"
 
 keywords: monitoring, openshift, observability, metrics
 
@@ -75,23 +75,9 @@ With {{site.data.keyword.mon_full_notm}}, you can collect cluster and pod metric
 ## Migrating to the new monitoring agent
 {: #migrating-new-agent}
 
-The observability CLI plug-in `ibmcloud ob` and the `v2/observe` endpoints are deprecated and support ends on 28 March 2025. You can now manage your logging and monitoring integrations from the console or through the Helm charts. For the latest steps, see [Working with the Kubernetes agent](/docs/monitoring?topic=monitoring-agent_Kube) or [Working with the Red Hat OpenShift agent](/docs/monitoring?topic=monitoring-agent_openshift).
-{: deprecated}
+The observability CLI plug-in `ibmcloud ob` and the `v2/observe` endpoints are no longer supported. You can now manage your logging and monitoring integrations from the console or through the Helm charts.
+{: unsupported}
 
-If you have a monitoring agent installed that uses the deprecated `ibmcloud ob` plug-in, you must migrate to a new agent.
-
-1. Check whether you need to migrate by running the following command.
-    ```sh
-    ibmcloud ob monitoring config ls --cluster <cluster>
-    ```
-    {: pre}
-
-1. If the output shows a config, delete it.
-    ```sh
-    ibmcloud ob monitoring config delete --cluster INSTANCE --instance INSTANCE
-    ```
-    {: pre}
-
-1. Install the new monitoring agent. For more information, see the following links.
-    - [Working with the Kubernetes agent](/docs/monitoring?topic=monitoring-agent_Kube).
-    - [Working with the Red Hat OpenShift agent](/docs/monitoring?topic=monitoring-agent_openshift).
+For more information, see the following links.
+- [Working with the Kubernetes agent](/docs/monitoring?topic=monitoring-agent_Kube).
+- [Working with the Red Hat OpenShift agent](/docs/monitoring?topic=monitoring-agent_openshift).

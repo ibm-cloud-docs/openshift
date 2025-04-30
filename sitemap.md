@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2025
-lastupdated: "2025-04-28"
+lastupdated: "2025-04-30"
 
 
 keywords: openshift
@@ -3382,7 +3382,7 @@ subcollection: openshift
 
 * [Analyzing {{site.data.keyword.openshiftlong_notm}} logs](/docs/openshift?topic=openshift-logging#cloud-logs)
 
-* [Migrating from Log Analysis and Activity Tracker to Cloud Logs](/docs/openshift?topic=openshift-logging#cloud-logs-migration)
+* [Migrating to Cloud Logs](/docs/openshift?topic=openshift-logging#cloud-logs-migration)
 
 * [Enabling your clusters to use your Cloud Logs instance](/docs/openshift?topic=openshift-logging#migrate-cloud-logs-clusters)
 

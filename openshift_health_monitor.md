@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2025
-lastupdated: "2025-04-09"
+lastupdated: "2025-04-30"
 
 
 keywords: oks, iro, openshift, red hat, red hat openshift
@@ -108,42 +108,15 @@ If your volume is reaching capacity, try setting up [volume expansion](/docs/ope
 ## Migrating logging and monitoring agents to Cloud Logs
 {: #openshift_monitoring}
 
-The observability CLI plug-in `ibmcloud ob` and the `v2/observe` endpoints are deprecated and support ends on 28 March 2025. There is no direct replacement, but you can now manage your logging and monitoring integrations from the console or through the Helm charts. For the latest steps, [Managing the Logging agent for Red Hat OpenShift on IBM Cloud clusters](/docs/cloud-logs?topic=cloud-logs-agent-openshift) and [Working with the Red Hat OpenShift monitoring agent](/docs/monitoring?topic=monitoring-agent_openshift).
-{: deprecated}
+The observability CLI plug-in `ibmcloud ob` and the `v2/observe` endpoints are no longer supported. There is no direct replacement, but you can now manage your logging and monitoring integrations from the console or through the Helm charts. For the latest steps, [Managing the Logging agent for Red Hat OpenShift on IBM Cloud clusters](/docs/cloud-logs?topic=cloud-logs-agent-openshift) and [Working with the Red Hat OpenShift monitoring agent](/docs/monitoring?topic=monitoring-agent_openshift).
+{: unsupported}
 
-
-What happens after 28 March 2025?
-:   You can no longer use the `ob` plugin, Terraform, or API to install observability agents on a cluster or to modify your existing configuration. Sysdig agents continue to send metrics to the specified IBM Cloud Monitoring instance. LogDNA agents can no longer send logs since IBM Cloud Log Analysis is replaced by IBM Cloud Logs. 
-
-What needs to be done before 28 March 2025?
-:   If you are still using {{site.data.keyword.at_short}}, migrate to [Cloud Logs](/docs/log-analysis?topic=log-analysis-deprecation_migration).
-:   If you use observability (`ob`) plugin to install LogDNA or Sysdig agents on your cluster, uninstall the agents and reinstall using the Container dashboard, using Terraform, or manually
+You can no longer use the `ob` plugin, Terraform, or API to install observability agents on a cluster or to modify your existing configuration. Sysdig agents continue to send metrics to the specified IBM Cloud Monitoring instance. LogDNA agents can no longer send logs since IBM Cloud Log Analysis is replaced by IBM Cloud Logs. 
 
 ### Reviewing your observability agents
 {: #ob-review-mon}
 
 The observability plugin installs Sysdig and LogDNA agents in the `ibm-observe` namespace.
-
-Before March 28, 2025:
-
-1)  If needed, install the `ob` plugin and list your logging configs.
-
-1. List your logging configs.
-    ```sh
-    ibmcloud ob logging config list --cluster CLUSTER
-    ```
-    {: pre}
-
-1. List your monitoring configs.    
-    ```sh
-    ibmcloud ob logging config list --cluster CLUSTER
-    ```
-    {: pre}
-
-If there is no logging or monitoring config, then any observability agents in the cluster were not installed with the IKS observability (ob) plugin.
-{: note}
-
-After March 28, 2025:
 
 1. [Access your {{site.data.keyword.redhat_openshift_notm}} cluster](/docs/openshift?topic=openshift-access_cluster).
 
@@ -169,43 +142,26 @@ After March 28, 2025:
 ### Removing the observability plug-in agents
 {: #ob-remove-mon}
 
-* Before 28 March 2025, you can still use the `ob` plug-in to delete your observability configs.
+1. Clean up the daemonsets and configmaps.
     ```sh
-    ibmcloud ob logging config delete --cluster <cluster> --instance <logging instance guid>
+    kubectl delete daemonset logdna-agent -n ibm-observe
+    kubectl delete daemonset sysdig-agent -n ibm-observe
+    kubectl delete configmap <logdna-configmap> -n ibm-observe
+    kubectl delete configmap <sysdig-configmap> -n ibm-observe
     ```
     {: pre}
-    
+
+1. Optional: Delete the namespace. After no other resources are running in the namespace.
     ```sh
-    ibmcloud ob monitoring config delete --cluster <cluster> --instance <monitoring instance guid>
+    kubectl delete namespace ibm-observe
     ```
     {: pre}
-
-* After March 28, 2025, when support for the `ob plugin` ends, you must delete each component individually.
-
-    1. Clean up the daemonsets and configmaps.
-        ```sh
-        kubectl delete daemonset logdna-agent -n ibm-observe
-        kubectl delete daemonset sysdig-agent -n ibm-observe
-        kubectl delete configmap <logdna-configmap> -n ibm-observe
-        kubectl delete configmap <sysdig-configmap> -n ibm-observe
-        ```
-        {: pre}
-
-    1. Optional: Delete the namespace. After no other resources are running in the namespace.
-        ```sh
-        kubectl delete namespace ibm-observe
-        ```
-        {: pre}
 
 After removing the plug-in has been removed, reinstall Logging and Monitoring agents in your cluster using the Cluster dashboard, Terraform, or manually. 
 
 For more information, see the following links:
 - [Managing the Logging agent for Red Hat OpenShift on IBM Cloud clusters](/docs/cloud-logs?topic=cloud-logs-agent-openshift).
 - [Working with the Red Hat OpenShift monitoring agent](/docs/monitoring?topic=monitoring-agent_openshift).
-
-
-
-
 
 
 ## Enabling remote health reporting
