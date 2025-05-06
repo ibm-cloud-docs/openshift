@@ -3,7 +3,7 @@
 copyright:
   years: 2024, 2025
 
-lastupdated: "2025-04-25"
+lastupdated: "2025-05-06"
 
 
 keywords: change log, version history, OpenShift AI
@@ -14,7 +14,7 @@ subcollection: openshift
 
 {{site.data.keyword.attribute-definition-list}}
 
-<!-- The content in this topic is auto-generated except for reuse-snippets indicated with {[ ]}. -->
+
 
 
 # OpenShift AI add-on version change log

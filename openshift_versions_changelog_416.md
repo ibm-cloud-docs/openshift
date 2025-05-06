@@ -3,7 +3,7 @@
 copyright:
   years: 2024, 2025
 
-lastupdated: "2025-05-02"
+lastupdated: "2025-05-06"
 
 
 keywords: change log, version history, 4.16_openshift
@@ -61,6 +61,7 @@ The following table shows the changes that are in the master fix pack 4.16.38_15
 {: caption="Changes since version 4.16.36_1560_openshift" caption-side="bottom"}
 
 
+
 ### Worker node fix pack 4.16.38_1563_openshift, released 21 April 2025
 {: #cl-boms-41638_1563_openshift_W}
 
@@ -77,6 +78,7 @@ The following table shows the components included in the worker node fix pack 4.
 {: #cl-boms-41638_1563_openshift_W-component-table}
 
 
+
 ### Worker node fix pack 4.16.38_1562_openshift, released 08 April 2025
 {: #cl-boms-41638_1562_openshift_W}
 
@@ -91,6 +93,7 @@ The following table shows the components included in the worker node fix pack 4.
 |HAProxy|997a4ab1e89a5c8ccf3a6823785d7ab5e34b0c83|N/A|
 {: caption="4.16.38_1562_openshift fix pack." caption-side="bottom"}
 {: #cl-boms-41638_1562_openshift_W-component-table}
+
 
 
 ### Master fix pack 4.16.36_1560_openshift, released 26 March 2025
@@ -113,6 +116,7 @@ The following table shows the changes that are in the master fix pack 4.16.36_15
 {: caption="Changes since version 4.16.32_1557_openshift" caption-side="bottom"}
 
 
+
 ### Worker node fix pack 4.16.37_1561_openshift, released 24 March 2025
 {: #cl-boms-41637_1561_openshift_W}
 
@@ -127,6 +131,7 @@ The following table shows the components included in the worker node fix pack 4.
 |HAProxy|997a4ab1e89a5c8ccf3a6823785d7ab5e34b0c83|Resolves the following CVEs: [CVE-2024-56171](https://nvd.nist.gov/vuln/detail/CVE-2024-56171){: external}, [CVE-2025-24528](https://nvd.nist.gov/vuln/detail/CVE-2025-24528){: external}, and [CVE-2025-24928](https://nvd.nist.gov/vuln/detail/CVE-2025-24928){: external}.|
 {: caption="4.16.37_1561_openshift fix pack." caption-side="bottom"}
 {: #cl-boms-41637_1561_openshift_W-component-table}
+
 
 
 ### Worker node fix pack 4.16.37_1559_openshift, released 11 March 2025
@@ -145,6 +150,7 @@ The following table shows the components included in the worker node fix pack 4.
 {: #cl-boms-41637_1559_openshift_W-component-table}
 
 
+
 ### Worker node fix pack 4.16.35_1558_openshift, released 24 February 2025
 {: #cl-boms-41635_1558_openshift_W}
 
@@ -159,6 +165,7 @@ The following table shows the components included in the worker node fix pack 4.
 |HAProxy|1d72cc8c7d02da6ba0340191fa8d9a86550e5090|Resolves the following CVEs: [CVE-2020-11023](https://nvd.nist.gov/vuln/detail/CVE-2020-11023){: external}, and [CVE-2022-49043](https://nvd.nist.gov/vuln/detail/CVE-2022-49043){: external}.|
 {: caption="4.16.35_1558_openshift fix pack." caption-side="bottom"}
 {: #cl-boms-41635_1558_openshift_W-component-table}
+
 
 
 ### Master fix pack 4.16.32_1557_openshift, released 19 February 2025
@@ -179,6 +186,7 @@ The following table shows the changes that are in the master fix pack 4.16.32_15
 {: caption="Changes since version 4.16.28_1550_openshift" caption-side="bottom"}
 
 
+
 ### Worker node fix pack 4.16.32_1556_openshift, released 11 February 2025
 {: #cl-boms-41632_1556_openshift_W}
 
@@ -195,6 +203,7 @@ The following table shows the components included in the worker node fix pack 4.
 {: #cl-boms-41632_1556_openshift_W-component-table}
 
 
+
 ### Worker node fix pack 4.16.30_1554_openshift, released 29 January 2025
 {: #cl-boms-41630_1554_openshift_W}
 
@@ -209,6 +218,7 @@ The following table shows the components included in the worker node fix pack 4.
 |HAProxy|14daa781a66ca5ed5754656ce53c3cca4af580b5|N/A|
 {: caption="4.16.30_1554_openshift fix pack." caption-side="bottom"}
 {: #cl-boms-41630_1554_openshift_W-component-table}
+
 
 
 ### Master fix pack 4.16.28_1550_openshift, released 22 January 2025
@@ -231,6 +241,7 @@ The following table shows the changes that are in the master fix pack 4.16.28_15
 {: caption="Changes since version 4.16.23_1545_openshift" caption-side="bottom"}
 
 
+
 ### Worker node fix pack 4.16.29_1549_openshift, released 13 January 2025
 {: #cl-boms-41629_1549_openshift_W}
 
@@ -247,6 +258,7 @@ The following table shows the components included in the worker node fix pack 4.
 {: #cl-boms-41629_1549_openshift_W-component-table}
 
 
+
 ### Worker node fix pack 4.16.27_1548_openshift, released 30 December 2024
 {: #41627_1548_openshift_W}
 
@@ -258,6 +270,7 @@ The following table shows the changes that are in the worker node fix pack 4.16.
 | RHEL 8 Packages | N/A | N/A | Worker node package updates for [RHSA-2024:3043](https://access.redhat.com/errata/RHSA-2024:3043){: external}, [CVE-2024-0690](https://nvd.nist.gov/vuln/detail/CVE-2024-0690){: external}, [RHSA-2024:11161](https://access.redhat.com/errata/RHSA-2024:11161){: external}, [CVE-2024-52337](https://nvd.nist.gov/vuln/detail/CVE-2024-52337){: external}. |
 | {{site.data.keyword.openshiftshort}} and Red Hat CoreOS | 4.16.26 | 4.16.27 | For more information, see the [change logs](https://docs.redhat.com/documentation/openshift_container_platform/4.16/html/release_notes/ocp-4-16-release-notes#ocp-4-16-27_release-notes){: external}. |
 {: caption="Changes since version 4.16.26_1547_openshift" caption-side="bottom"}
+
 
 
 ### Worker node fix pack 4.16.26_1547_openshift, released 16 December 2024
@@ -274,6 +287,7 @@ The following table shows the changes that are in the worker node fix pack 4.16.
 {: caption="Changes since version 4.16.23_1546_openshift" caption-side="bottom"}
 
 
+
 ### Worker node fix pack 4.16.23_1546_openshift, released 05 December 2024
 {: #41623_1546_openshift_W}
 
@@ -287,6 +301,7 @@ The following table shows the changes that are in the worker node fix pack 4.16.
 | HAProxy | N/A | N/A | N/A |
 | {{site.data.keyword.openshiftshort}} and Red Hat CoreOS | 4.16.21 | 4.16.23 | For more information, see the [change logs](https://docs.redhat.com/documentation/openshift_container_platform/4.16/html/release_notes/ocp-4-16-release-notes){: external}. |
 {: caption="Changes since version 4.16.21_1544_openshift" caption-side="bottom"}
+
 
 
 ### Master fix pack 4.16.23_1545_openshift, released 04 December 2024
@@ -308,6 +323,7 @@ The following table shows the changes that are in the master fix pack 4.16.23_15
 {: caption="Changes since version 4.16.19_1543_openshift" caption-side="bottom"}
 
 
+
 ### Worker node fix pack 4.16.21_1544_openshift, released 18 November 2024
 {: #41621_1544_openshift_W}
 
@@ -320,6 +336,7 @@ The following table shows the changes that are in the worker node fix pack 4.16.
 | {{site.data.keyword.openshiftshort}} and Red Hat CoreOS | 4.16.19 | 4.16.21 | For more information, see the [change logs](https://docs.redhat.com/documentation/openshift_container_platform/4.16/html/release_notes/ocp-4-16-release-notes#ocp-4-16-21_release-notes){: external}.	|
 | HAProxy | 885986 | 55c148 | Security fixes for [CVE-2023-45539](https://nvd.nist.gov/vuln/detail/CVE-2023-45539){: external}, [CVE-2024-3596](https://nvd.nist.gov/vuln/detail/CVE-2024-3596){: external}, [CVE-2019-12900](https://nvd.nist.gov/vuln/detail/CVE-2019-12900){: external}, [CVE-2024-50602](https://nvd.nist.gov/vuln/detail/CVE-2024-50602){: external}. |
 {: caption="Changes since version 4.16.19_1542_openshift" caption-side="bottom"}
+
 
 
 ### Master fix pack 4.16.19_1543_openshift, released 13 November 2024
@@ -338,6 +355,7 @@ The following table shows the changes that are in the master fix pack 4.16.19_15
 {: caption="Changes since version 4.16.16_1541_openshift" caption-side="bottom"}
 
 
+
 ### Worker node fix pack 4.16.19_1542_openshift, released 04 November 2024
 {: #41619_1542_openshift_W}
 
@@ -351,6 +369,7 @@ The following table shows the changes that are in the worker node fix pack 4.16.
 | {{site.data.keyword.openshiftshort}} and Red Hat CoreOS	| 4.16.17	| 4.16.19	| For more information, see the [change logs](https://docs.redhat.com/documentation/openshift_container_platform/4.16/html/release_notes/ocp-4-16-release-notes#ocp-4-16-19_release-notes){: external}.	|
 | Haproxy	| N/A	| N/A	| N/A	|
 {: caption="Changes since version 4.16.17_1540_openshift" caption-side="bottom"}
+
 
 
 ### Master fix pack 4.16.16_1541_openshift, released 30 October 2024
@@ -375,6 +394,7 @@ The following table shows the changes that are in the master fix pack 4.16.16_15
 {: caption="Changes since version 4.16.10_1537_openshift" caption-side="bottom"}
 
 
+
 ### Worker node fix pack 4.16.17_1540_openshift, released 21 October 2024
 {: #41617_1540_openshift_W}
 
@@ -390,6 +410,7 @@ The following table shows the changes that are in the worker node fix pack 4.16.
 {: caption="Changes since version 4.16.15_1539_openshift" caption-side="bottom"}
 
 
+
 ### Worker node fix pack 4.16.15_1539_openshift, released 09 October 2024
 {: #41615_1539_openshift_W}
 
@@ -402,6 +423,7 @@ The following table shows the changes that are in the worker node fix pack 4.16.
 | {{site.data.keyword.openshiftshort}} and Red Hat CoreOS | 4.16.13 | 4.16.15 | For more information, see the [change logs](https://docs.redhat.com/documentation/openshift_container_platform/4.16/html/release_notes/ocp-4-16-release-notes#ocp-4-16-15_release-notes){: external}. |
 | Haproxy | 546887ab | 67d03375 | Security fixes for [CVE-2024-4032](https://nvd.nist.gov/vuln/detail/CVE-2024-4032){: external}, [CVE-2024-6232](https://nvd.nist.gov/vuln/detail/CVE-2024-6232){: external}, [CVE-2024-6923](https://nvd.nist.gov/vuln/detail/CVE-2024-6923){: external}, [CVE-2024-45490](https://nvd.nist.gov/vuln/detail/CVE-2024-45490){: external}, [CVE-2024-45491](https://nvd.nist.gov/vuln/detail/CVE-2024-45491){: external}, [CVE-2024-45492](https://nvd.nist.gov/vuln/detail/CVE-2024-45492){: external}. |
 {: caption="Changes since version 4.16.13_1538_openshift" caption-side="bottom"}
+
 
 
 ### Master fix pack 4.16.10_1537_openshift, released 25 September 2024
@@ -425,6 +447,7 @@ The following table shows the changes that are in the master fix pack 4.16.10_15
 {: caption="Changes since version 4.16.7_1532_openshift" caption-side="bottom"}
 
 
+
 ### Worker node fix pack 4.16.13_1538_openshift, released 23 September 2024
 {: #41613_1538_openshift_W}
 
@@ -438,6 +461,7 @@ The following table shows the changes that are in the worker node fix pack 4.16.
 {: caption="Changes since version 4.16.10_1535_openshift" caption-side="bottom"}
 
 
+
 ### Worker node fix pack 4.16.10_1535_openshift, released 10 September 2024
 {: #41610_1535_openshift_W}
 
@@ -449,6 +473,7 @@ The following table shows the changes that are in the worker node fix pack 4.16.
 | {{site.data.keyword.openshiftshort}}. | 4.16.8 | 4.16.10 | For more information, see the [change logs](https://docs.redhat.com/documentation/openshift_container_platform/4.16/html/release_notes/ocp-4-16-release-notes#ocp-4-16-10_release-notes){: external}. |
 | RHEL 8 Packages | N/A | N/A | Worker node package updates for [RHSA-2024:3043](https://access.redhat.com/errata/RHSA-2024:3043){: external}, [CVE-2024-0690](https://nvd.nist.gov/vuln/detail/CVE-2024-0690){: external}, [RHSA-2024:5962](https://access.redhat.com/errata/RHSA-2024:5962){: external}, [CVE-2024-4032](https://nvd.nist.gov/vuln/detail/CVE-2024-4032){: external}, [CVE-2024-6345](https://nvd.nist.gov/vuln/detail/CVE-2024-6345){: external}, [CVE-2024-6923](https://nvd.nist.gov/vuln/detail/CVE-2024-6923){: external}, [CVE-2024-8088](https://nvd.nist.gov/vuln/detail/CVE-2024-8088){: external}. |
 {: caption="Changes since version 4.16.8_1533_openshift" caption-side="bottom"}
+
 
 
 ### Master fix pack 4.16.7_1532_openshift and worker node fix pack 4.16.6_1531_openshift, released 30 August 2024
