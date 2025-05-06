@@ -7095,7 +7095,7 @@ subcollection: openshift
 
 * [Version 416](/docs/openshift?topic=openshift-cl-add-ons-openshift-ai#cl-add-ons-openshift-ai-416)
 
-    * [416.1.1_495, released 25 April 2025](/docs/openshift?topic=openshift-cl-add-ons-openshift-ai#cl-add-ons-openshift-ai-41611_495)
+    * [416.1.2_495, released 25 April 2025](/docs/openshift?topic=openshift-cl-add-ons-openshift-ai#cl-add-ons-openshift-ai-41612_495)
 
     * [416.1.1_491, released 16 April 2025](/docs/openshift?topic=openshift-cl-add-ons-openshift-ai#cl-add-ons-openshift-ai-41611_491)
 

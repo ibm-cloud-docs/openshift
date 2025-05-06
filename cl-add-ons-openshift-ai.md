@@ -29,8 +29,8 @@ Review the version history for OpenShift AI.
 {: #cl-add-ons-openshift-ai-416}
 
 
-### 416.1.1_495, released 25 April 2025
-{: #cl-add-ons-openshift-ai-41611_495}
+### 416.1.2_495, released 25 April 2025
+{: #cl-add-ons-openshift-ai-41612_495}
 
 [Default version]{: tag-green}
 
