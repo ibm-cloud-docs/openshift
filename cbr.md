@@ -1,8 +1,8 @@
 ---
 
 copyright:
-  years: 2022, 2024
-lastupdated: "2024-11-22"
+  years: 2022, 2025
+lastupdated: "2025-05-06"
 
 
 keywords: cbr, context based restrictions, security
@@ -88,6 +88,9 @@ Management APIs
 To follow an example CBR scenario, see [Setting up context-based restrictions](/docs/openshift?topic=openshift-cbr-tutorial).
 {: tip}
 
+To get a list of service reference targets in the CLI, run the `ibmcloud cbr service-ref-targets` command.
+{: tip}
+
 ### Allowing {{site.data.keyword.openshiftlong_notm}} to access other {{site.data.keyword.cloud_notm}} resources by using CBR
 {: #cbr-integrations}
 
@@ -115,7 +118,11 @@ User Management
 Key protect: 
 :   Allow {{site.data.keyword.openshiftlong_notm}} to enable encryption on the cluster.
 
+{{site.data.keyword.block_storage_is_short}} (Server Protect)
+:   Allow {{site.data.keyword.openshiftlong_notm}} to access and encrypt {{site.data.keyword.block_storage_is_short}} volumes.
 
+VPC
+:   Allow {{site.data.keyword.openshiftlong_notm}} access to resources in the VPC.
 
 ## Creating network zones
 {: #create-cbr-network-zone-openshift}

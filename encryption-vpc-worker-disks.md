@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2023, 2025
-lastupdated: "2025-03-18"
+lastupdated: "2025-05-06"
 
 
 keywords: openshift, {{site.data.keyword.openshiftlong_notm}}, kubernetes, red hat, encrypt, security, kms, root key, crk
@@ -42,13 +42,25 @@ You can manage the encryption of the worker nodes by enabling a KMS provider at 
     {{site.data.keyword.openshiftlong_notm}} automatically creates a service-to-service delegation policy for the Cloud Block Storage service in the IBM-managed service account to the KMS provider instance under the account where the KMS instance and CRK reside. This delegation policy is required so that the VPC infrastructure can encrypt the boot volume of the worker nodes in the IBM-managed service account with your customer-provided root key of the KMS provider. 
     {: note}
 
-3. Create a cluster or worker pool that includes the account where the KMS instance resides, the KMS provider instance and root key. Each worker node in the worker pool then is encrypted by the KMS provider that you manage. Each worker pool in your cluster can use the same KMS instance and root key, the same KMS instance with different root keys, or different instances.
+1. **Optional**: If you have context-based restriction enabled on your KMS instnace, complete the following steps.
+
+    1. Create a network zone that includes {{site.data.keyword.block_storage_is_short}}.
+
+        ```sh
+        ibmcloud cbr zone-create --name example-zone-1 --description "Block Storage" --service-ref service_name=server-protect
+        ```
+        {: pre}
+
+    1. Create a new CBR rule that references the network zone you created in the previous step, or update an existing CBR rule. For more information, see [Creating rules by using the CLI](/docs/account?topic=account-context-restrictions-create&interface=cli#context-restrictions-create-rules-cli).
+
+
+1. Create a cluster or worker pool that includes the account where the KMS instance resides, the KMS provider instance and root key. Each worker node in the worker pool then is encrypted by the KMS provider that you manage. Each worker pool in your cluster can use the same KMS instance and root key, the same KMS instance with different root keys, or different instances.
     - **Creating a cluster**: Only the `default` worker pool's nodes are encrypted. After you create the cluster, if you create more worker pools, you must enable encryption in each pool separately. For more information, see [Creating clusters](/docs/openshift?topic=openshift-cluster-create-vpc-gen2&interface=ui) or the [CLI reference documentation](/docs/openshift?topic=openshift-kubernetes-service-cli#cli_cluster-create-vpc-gen2).
 
     - **Creating a worker pool**: For more information, see [Creating VPC worker pools](/docs/openshift?topic=openshift-add-workers-vpc#vpc_add_pool) or the [CLI reference documentation](/docs/openshift?topic=openshift-kubernetes-service-cli#cli_worker_pool_create_vpc_gen2).
 
 
-4. Verify that your worker pool is encrypted by reviewing the worker pool details.
+1. Verify that your worker pool is encrypted by reviewing the worker pool details.
     - **UI**: After selecting your cluster from the [console](https://cloud.ibm.com/containers/cluster-management/clusters){: external}, click **Worker pools**. Then, click your worker pool.
     - **CLI**: Review the **KMS** and **CRK** fields in the output of the following command. Note that the **KMS** and **CRK** fields are displayed only if BYOK encryption is enabled.
         ```sh
@@ -56,7 +68,7 @@ You can manage the encryption of the worker nodes by enabling a KMS provider at 
         ```
         {: codeblock}
 
-5. Optional: [Rotate the root key](/docs/vpc?topic=vpc-vpc-encryption-managing&interface=ui) periodically per your company's security compliance guidelines. For more information, see the [Managing encryption topic in the VPC documentation](/docs/vpc?topic=vpc-vpc-encryption-managing).
+1. Optional: [Rotate the root key](/docs/vpc?topic=vpc-vpc-encryption-managing&interface=ui) periodically per your company's security compliance guidelines. For more information, see the [Managing encryption topic in the VPC documentation](/docs/vpc?topic=vpc-vpc-encryption-managing).
 
     Do not delete your KMS instance. You can't change the KMS instance that is used to encrypt the worker pool. If you disable or delete the root key, your worker nodes enter a `critical` state until you restore the root key and [reboot](/docs/openshift?topic=openshift-kubernetes-service-cli#cs_worker_reboot) the worker nodes.
     {: important}
