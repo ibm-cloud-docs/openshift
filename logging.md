@@ -2,7 +2,7 @@
 
 copyright:
   years: 2024, 2025
-lastupdated: "2025-04-30"
+lastupdated: "2025-05-06"
 
 keywords: logging, cloud logs, logs, log analysis, containers
 
@@ -25,7 +25,7 @@ You can use {{site.data.keyword.logs_routing_full_notm}}, a platform service, to
 You can use {{site.data.keyword.logs_full_notm}} to visualize and alert on platform logs that are generated in your account and routed by {{site.data.keyword.logs_routing_full_notm}} to an {{site.data.keyword.logs_full_notm}} instance.
 
 
-As of 28 March 2024, the {{site.data.keyword.la_full_notm}} service is deprecated and will no longer be supported as of 30 March 2025. Customers will need to migrate to {{site.data.keyword.logs_full_notm}} before 30 March 2025. During the migration period, customers can use {{site.data.keyword.la_full_notm}} along with {{site.data.keyword.logs_full_notm}}. Logging is the same for both services. For information about migrating from {{site.data.keyword.la_full_notm}} to {{site.data.keyword.logs_full_notm}} and running the services in parallel, see [migration planning](/docs/cloud-logs?topic=cloud-logs-migration-intro).
+As of 28 March 2024, the {{site.data.keyword.la_full_notm}} service is deprecated and will no longer be supported as of 30 March 2025. Customers will need to migrate to {{site.data.keyword.logs_full_notm}} before 30 March 2025. During the migration period, customers can use {{site.data.keyword.la_full_notm}} along with {{site.data.keyword.logs_full_notm}}. Logging is the same for both services. Learn more about [{{site.data.keyword.logs_full_notm}}](/docs/cloud-logs?topic=cloud-logs-about-cl). 
 {: important}
 
 ## Locations where logs are generated
@@ -146,7 +146,7 @@ Check if your clusters are using the unsupported agent.
     ```
     {: pre}
 
-1. The Cloud Logs service has provided migration guides for moving your instances. For more information, see [Migrating instances](/docs/cloud-logs?topic=cloud-logs-migration-intro).
+1. The Cloud Logs service has provided migration guides for moving your instances. Learn more about [{{site.data.keyword.logs_full_notm}}](/docs/cloud-logs?topic=cloud-logs-about-cl). 
 
 
 ## Enabling your clusters to use your Cloud Logs instance

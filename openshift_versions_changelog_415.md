@@ -55,7 +55,7 @@ The following table shows the changes that are in the master fix pack 4.15.48_15
 | {{site.data.keyword.cloud_notm}} RBAC Operator | cb4f333 | d1545bd | New version contains updates and security fixes. |
 | Key Management Service provider | v2.9.17 | v2.9.18 | New version contains updates and security fixes. |
 | Portieris admission controller | v0.13.25 | v0.13.26 | See the [Portieris admission controller release notes](https://github.com/{{site.data.keyword.IBM_notm}}/portieris/releases/tag/v0.13.26){: external}. |
-| {{site.data.keyword.openshiftlong_notm}}. | 4.15.46 | 4.15.48 | See the [{{site.data.keyword.openshiftlong_notm}} release notes](https://docs.openshift.com/container-platform/4.15/release_notes/ocp-4-15-release-notes.html#ocp-4-15-48){: external}. |
+| {{site.data.keyword.openshiftlong_notm}}. | 4.15.46 | 4.15.48 | See the [{{site.data.keyword.openshiftlong_notm}} release notes](https://docs.redhat.com/en/documentation/openshift_container_platform/4.15/html/release_notes/ocp-4-15-release-notes#ocp-4-15-48){: external}. |
 | {{site.data.keyword.openshiftlong_notm}} Control Plane Operator, Metrics Server, and toolkit | 4.15.0+20250313 | 4.15.0+20250414 | See the [{{site.data.keyword.openshiftlong_notm}} toolkit release notes](https://github.com/openshift/ibm-roks-toolkit/releases/tag/v4.15.0+20250414){: external}. |
 | Tigera Operator | v1.34.5 | v1.34.8 | See the [Tigera Operator release notes](https://github.com/tigera/operator/releases/tag/v1.34.8){: external}. |
 {: caption="Changes since version 4.15.46_1579_openshift" caption-side="bottom"}
