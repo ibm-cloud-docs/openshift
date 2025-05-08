@@ -3,7 +3,7 @@
 copyright:
   years: 2024, 2025
 
-lastupdated: "2025-05-06"
+lastupdated: "2025-05-08"
 
 
 keywords: change log, version history, 4.14_openshift
@@ -37,6 +37,22 @@ Master patch updates are applied automatically. Worker node patch updates can be
 
 ## Version 4.14
 {: #414_components}
+
+
+### Worker node fix pack 4.14.51_1607_openshift, released 07 May 2025
+{: #cl-boms-41451_1607_openshift_W}
+
+The following table shows the components included in the worker node fix pack 4.14.51_1607_openshift. Worker node patch updates can be applied by updating, reloading (in classic infrastructure), or replacing (in VPC infrastructure) the worker node.
+{: shortdesc}
+
+| Component | Version | Description |
+| ---- | ---- | ---- |
+|RHEL_8|4.18.0-553.51.1.el8_10|Resolves the following CVEs: [RHSA-2024:3043](https://access.redhat.com/errata/RHSA-2024:3043){: external}, [CVE-2024-0690](https://nvd.nist.gov/vuln/detail/CVE-2024-0690){: external}, [RHSA-2025:4051](https://access.redhat.com/errata/RHSA-2025:4051){: external}, [CVE-2024-12243](https://nvd.nist.gov/vuln/detail/CVE-2024-12243){: external}, [RHSA-2025:3893](https://access.redhat.com/errata/RHSA-2025:3893){: external}, [CVE-2024-53150](https://nvd.nist.gov/vuln/detail/CVE-2024-53150){: external}, [CVE-2024-53241](https://nvd.nist.gov/vuln/detail/CVE-2024-53241){: external}, [RHSA-2025:4049](https://access.redhat.com/errata/RHSA-2025:4049){: external}, and [CVE-2024-12133](https://nvd.nist.gov/vuln/detail/CVE-2024-12133){: external}.|
+|OpenShift|4.14.51|For more information, see the [change logs](https://docs.redhat.com/en/documentation/openshift_container_platform/4.14/html/release_notes/ocp-4-14-release-notes.html#ocp-4-14-51_release-notes).|
+|HAProxy|978e3c26ee7634e39a940696aaf57d9e374db5ce|Resolves the following CVEs: [CVE-2024-12243](https://nvd.nist.gov/vuln/detail/CVE-2024-12243){: external}, and [CVE-2024-12133](https://nvd.nist.gov/vuln/detail/CVE-2024-12133){: external}.|
+{: caption="4.14.51_1607_openshift fix pack." caption-side="bottom"}
+{: #cl-boms-41451_1607_openshift_W-component-table}
+
 
 
 ### Master fix pack 4.14.50_1606_openshift, released 30 April 2025
