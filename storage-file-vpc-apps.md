@@ -1,8 +1,8 @@
 ---
 
 copyright: 
-  years: 2022, 2024
-lastupdated: "2024-11-06"
+  years: 2022, 2025
+lastupdated: "2025-05-12"
 
 keywords: kubernetes, openshift
 
@@ -34,13 +34,20 @@ Decide on a storage class. For more information, see the [storage class referenc
 
 Review the following notes and considerations for {{site.data.keyword.filestorage_vpc_short}}.
 
+- Make sure the user who creates the cluster has the Reader, Writer, and Operator permissions for VPC Infrastructure Services.
+- Make sure you [set up a service authorization](/docs/vpc?topic=vpc-file-s2s-auth&interface=ui) from VPC Infrastructure to KMS/HPCS if you plan to use encryption on your file shares.
 - By default, {{site.data.keyword.filestorage_vpc_short}} cluster add-on provisions file shares in the `kube-<clusterID>` security group. This means pods can access file shares across nodes and zones.
-- If you need the following features, you must [create your own storage class](/docs/openshift?topic=openshift-storage-file-vpc-apps#storage-file-vpc-custom-sc).
-    - Your app needs to run as non-root.
-    - Your cluster is in a different resource group from your VPC and subnet.
-    - You need to limit file share access to pods on a given node or in a given zone.
-    - You need to bring your own (BYOK) encryption using a KMS provider such as HPCS or Key Protect.
-    - You need to manually specify the subnet or IP address of the [Virtual Network Interface (VNI)](/docs/vpc?topic=vpc-file-storage-vpc-about&interface=ui#fs-mount-granular-auth).
+- If you are using context-based restrictions, make sure you configure your network zones and rules. For more information, see [Protecting Virtual Private Cloud (VPC) Infrastructure Services with context-based restrictions](/docs/vpc?topic=vpc-cbr&interface=ui).
+
+
+If you need the following features, you must [create your own storage class](/docs/openshift?topic=openshift-storage-file-vpc-apps#storage-file-vpc-custom-sc).
+{: note}
+
+- Your app needs to run as non-root.
+- Your cluster is in a different resource group from your VPC and subnet.
+- You need to limit file share access to pods on a given node or in a given zone.
+- You need to bring your own (BYOK) encryption using a KMS provider such as HPCS or Key Protect.
+- You need to manually specify the subnet or IP address of the [Virtual Network Interface (VNI)](/docs/vpc?topic=vpc-file-storage-vpc-about&interface=ui#fs-mount-granular-auth).
 
 
 
@@ -1102,7 +1109,7 @@ To limit file share access by node, zone, or resource group, you must first crea
 1. Add the following rule to the custom security group you created earlier.
 
     ```sh
-    ibmcloud is sg-rulec CUSTOM-SG inbound tcp --port-min 111 --port-max 2049 --remote 10.240.0.10 # VNI IP
+    ibmcloud is sg-rulec CUSTOM-SG inbound tcp --port-min 111 --port-max 2049 --remote 10.240.0.10 # Worker node IP
     ```
     {: pre}
 
