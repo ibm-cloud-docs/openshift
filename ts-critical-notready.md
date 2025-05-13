@@ -2,7 +2,7 @@
 
 copyright:
   years: 2023, 2025
-lastupdated: "2025-04-17"
+lastupdated: "2025-05-13"
 
 
 keywords: critical, not ready, notready, troubleshooting, worker node status, status
@@ -227,4 +227,257 @@ Follow the steps to gather the relevant worker node data.
         - `last -Fxn2 shutdown reboot`  # determine if last restart was graceful or not
         - `mount | grep -i "(ro"`       # to rule out disk read-only issue.  NOTE: `tmpfs` being `ro` is fine
         - `touch /this`                 # to rule out disk read-only issue
-5. [Open a support ticket](https://cloud.ibm.com/unifiedsupport/cases/form){: external} and attach all the outputs saved in the previous steps.
+
+5. [VPC Clusters]{: tag-classic-inf}: Collect the resource usage from worker nodes by using the `kubectl top` command as in the following example.
+
+    ```sh
+    kubectl top nodes
+    ```
+    {: pre}
+    
+    Example output shows CPU usage in millicores (m) and memory usage in megabytes (Mi).     
+    ```sh
+    NAME          CPU(cores)    CPU%   MEMORY(bytes)   MEMORY%
+    k8s-node-1      250m              12%    800Mi                         40%
+    k8s-node-2      180m               9%     600Mi                         30%
+    k8s-node-3      250m               22%    700Mi                        50%
+    ```
+    {: screen}
+
+    NAME
+    :  The name of the node.
+
+    CPU(cores)
+    :  The current CPU usage in millicores (m). 1000m equals 1 core.
+
+    CPU%
+    :  The percentage of total CPU capacity used on the node.        
+
+    MEMORY(bytes)
+    :   The current memory usage in MiB (megabytes) or GiB (gigabytes).
+
+    MEMORY%
+    :  The percentage of total memory capacity used.   
+       
+    A node with high CPU% or MEMORY% (above 80%) might be overloaded and could require additional resources. A node with low CPU% or MEMORY% (below 20%) might be underutilized, indicating room for workload redistribution. If a node reaches 100% CPU or memory usage, new workloads might fail to schedule or experience performance degradation.
+    {: note}
+
+1. Collect the resource usage from pods by using the following command.
+    ```sh
+    kubectl top pods --all-namespaces
+    ```
+    {: pre}
+    
+    Example output
+    ```sh
+    NAMESPACE       NAME                                  CPU(cores)   MEMORY(bytes)
+    default            my-app-564bc58dad-hk5gn       120m            256Mi
+    default             my-db-789d9c6c4f-tn7mv         300m            512Mi
+    ```
+    {: screen}
+
+    NAME
+    :  The name of the pod.
+    
+    CPU(cores)
+    :  The total CPU used by the pod across all its containers.
+
+    MEMORY(bytes)
+    :   The total memory used by the pod across all its containers.
+
+    If a pod’s CPU usage is high, it might be experiencing CPU throttling, which affects performance. If a pod’s memory usage is close to its limit, it might be at risk of OOM (Out of Memory) errors, where Kubernetes terminates processes to free up memory. A pod with low resource usage might have over-allocated requests, leading to wasted resources.
+    {: note}
+
+1. Check container level metrics by running the `top pod` command.
+
+    ```sh
+    kubectl top pod pod-a --containers -n appns
+    ```sh
+    {: pre}
+
+    Example output
+    ```sh
+    NAME           CONTAINER      CPU(cores)   MEMORY(bytes)
+    pod-a            app-container        100m         300Mi
+    pod-a            db-container           50m          200Mi
+    ```sh
+    {: screen}
+
+1. The `kubectl top` command only shows actual usage, not the requested or limited resources. To compare and analyze the output from the `top` command, check the pod specification by using the following command.
+
+    ```sh
+    kubectl describe pod <pod-name> -n <namespace>
+    ```
+    {: pre}
+   
+    Example output
+    ```yaml
+    Containers:
+     app-container:
+       Requests:
+      cpu: 250m
+      memory: 512Mi
+      Limits:
+      cpu: 500m
+      memory: 1Gi
+     ```
+    {: codeblock}
+
+    If CPU or memory usage exceeds requests, it might indicate under-provisioning, leading to performance issues. If usage is close to the limits, the container might be throttled or terminated when resources are constrained. If usage is significantly lower than requests, the pod may be over-provisioned, wasting resources.
+
+1. Identify which pods are consuming the most CPU.
+
+    ```sh
+    kubectl top pod --all-namespaces | sort -k3 -nr | head -10
+    ```
+    {: pre}
+
+1. Identify high memory consuming pods.
+
+    ```sh
+    kubectl top pod --all-namespaces | sort -k4 -nr | head -10
+    ```
+    {: pre}
+
+1. Monitor system daemon resource usage. DaemonSets, such as `kube-proxy` or monitoring agents, can consume unexpected resources.
+
+    ```sh
+    kubectl top pod -n kube-system
+    ```sh
+    {: pre}
+
+1. If certain system pods consume excessive CPU or memory, tuning requests and limits might be necessary. To track resource changes continuously, use the `watch` command.
+
+    ```sh
+    watch -n 5 kubectl top pod --all-namespaces
+    ```sh
+    {: pre}
+    
+    This command updates the output every 5 seconds, helping to spot spikes or anomalies in resource usage.
+
+
+1. Check for `OOMKilled` events. When Kubernetes reports `OOMKilled`, the pod exceeded its memory limit and was terminated. The pod’s status changes to `crashloopbackoff`.
+
+   ```sh
+   kubectl get events --field-selector involvedObject.name=your-pod-name -n your-namespace
+   ```
+   {: pre}
+
+1. Look for `OOM` messages in logs.
+    ```sh
+    kubectl logs your-pod-name -n your-namespace | grep -i "out of memory"
+    ```
+    {: pre}
+
+1. Check the last state of the container for `OOM` termination.
+
+    ```sh
+    kubectl describe pod your-pod-name -n your-namespace | grep -A 10 "Last State"
+    ```
+    {: pre}
+
+### Collecting worker node logs
+{: #collect-worker-logs}
+
+Follow the steps to [access the worker](https://cloud.ibm.com/docs/containers?topic=containers-cs_ssh_worker#pod-ssh) and collect worker node logs.
+
+1. Gather and save the following log files. Review the logs for possible causes of the worker node disruption, such as a lack of memory or disk space, the disk entering read-only mode, and other issues.
+
+    - `/var/log/containerd.log`
+    - `/var/log/kern.log`
+    - `/var/log/kube-proxy.log`
+    - `/var/log/syslog`
+    - `/var/log/kubelet.log`
+
+1. Run the following commands and save the output to attach to the support ticket.
+
+    Get container stats (requires SSH access to node).
+
+    ```sh
+    crictl stats
+    ```
+    {: pre}
+
+    Get detailed stats for a specific container.
+
+    ```sh
+    crictl stats --id <container-id> --output json
+    ```
+    {: pre}
+
+    Run the commmad to dump running processes.
+    ```sh
+    ps -aux 
+    ```
+    {: pre}
+
+    Get a dynamic, real-time view of running processes and kernel-managed tasks and also resource utilization, including CPU and memory usage.   
+    ```sh
+    top 
+    ```
+    {: pre}
+
+    Get the current system state.
+    ```sh
+    htop
+    ```
+    {: pre}
+
+    Get comprehensive monitoring report with historical data.
+    ```sh
+    atop 
+    ```
+    {: pre}
+
+    Get real-time information about system processes.
+    ```sh
+    btop 
+    ```
+    {: pre}
+
+    Get network connection details.
+    ```sh
+    netstat 
+    ```
+    {: pre}
+
+    Get disk usage information.
+    ```sh
+    df -H
+    ```
+    {: pre}
+
+    Run `vmstat` to get reports about processes, memory, paging, block IO, traps, and CPU activity. This command gets the information at 2 second intervals, 5 times.
+    ```sh
+    vmstat 2 5
+    ```
+    {: pre}
+
+    
+    Run `iostat` to collect disk usage statistics covering throughput, utilization, queue lengths, transaction rates, and more.
+    ```sh
+    iostat -x 1 5 
+    ```
+    {: pre}
+
+    Collect hardware information.
+    ```sh
+    lshw 
+    ```
+    {: pre}
+
+    Find out if the last restart was graceful or not by using the command below.
+    ```sh
+    last -Fxn2 shutdown reboot
+    ```
+    {: pre}
+
+    To rule out the disk issue, verify that disk is writable.
+    ```sh
+    mount | grep -i "(ro"
+    touch /this 
+    ```
+    {: pre}
+
+
+1.  If the issues persists, [open a support ticket](https://cloud.ibm.com/unifiedsupport/cases/form){: external} and attach all the outputs saved in the previous steps.
