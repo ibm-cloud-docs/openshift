@@ -1179,7 +1179,6 @@ To limit file share access by node, zone, or resource group, you must first crea
     ibmcloud is sg-rulec CUSTOM-SG inbound tcp --port-min 111 --port-max 2049 --remote 10.240.1.0/24 # worker pool 1, zone 2 subnet CIDR range
     ibmcloud is sg-rulec CUSTOM-SG inbound tcp --port-min 111 --port-max 2049 --remote 10.241.0.0/24 # worker pool 2, zone 1 subnet CIDR range
     ibmcloud is sg-rulec CUSTOM-SG inbound tcp --port-min 111 --port-max 2049 --remote 10.241.1.0/24 # worker pool 2, zone 2subnet CIDR range
-    ibmcloud is sg-rulec CUSTOM-SG outbound tcp --port-min 111 --port-max 2049 --remote 10.240.1.7 # VNI-IP
     ```
     {: pre}
 
