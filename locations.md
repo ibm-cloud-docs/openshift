@@ -85,6 +85,7 @@ The Milan (`mil01`) datacenter is deprecated and closes on 31 October 2025. Migr
 | Europe | France | Paris | fr-par | par01 | EU Central (`eu-central`, `eu-de`) |
 | Europe | Italy | Milan | it-mil | mil01 | EU Central (`eu-central`, `eu-de`) |
 | Europe | Netherlands | Amsterdam | nl-ams | ams03 | EU Central (`eu-central`, `eu-de`) |
+| North America | Canada | Montreal | ca-mon | mon01 | US East (`us-east`) |
 | North America | Canada | Toronto | ca-tor | tor01 | US East (`us-east`) |
 | North America | United States | San Jose | us-sjc | sjc03, sjc04 | US South (`us-south`) |
 | South America | Brazil | Sao Paulo | br-sao | sao01 | US South (`us-south`) |
@@ -107,6 +108,7 @@ VPC resources are provisioned in a region, which is a separate group of zones wi
 | Europe | Germany | Frankfurt | eu-de | eu-de-1, eu-de-2, eu-de-3 |
 | Europe | Spain | `†` Madrid | eu-es | eu-es-1, eu-es-2, eu-es-3 |
 | Europe | United Kingdom | London | eu-gb | eu-gb-1, eu-gb-2, eu-gb-3 |
+| North America | Canada | Montreal | ca-mon | ca-mon-1, ca-mon-2, ca-mon-3 |
 | North America | Canada | `†` Toronto | ca-tor | ca-tor-1, ca-tor-2, ca-tor-3 |
 | North America | United States | Dallas | us-south | us-south-1, us-south-2, us-south-3 |
 | North America | United States | Washington DC | us-east | us-east-1, us-east-2, us-east-3 |
