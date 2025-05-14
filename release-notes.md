@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2025
-lastupdated: "2025-05-08"
+lastupdated: "2025-05-14"
 
 
 keywords: kubernetes, release notes, openshift, {{site.data.keyword.openshiftlong_notm}}
@@ -29,6 +29,25 @@ Looking for {{site.data.keyword.cloud_notm}} status, platform announcements, sec
 
 ## May 2025
 {: #openshift-may25}
+
+
+
+### 15 May 2025
+{: #openshift-may1525}
+{: release-note}
+
+New! Montreal multizone region
+:   You can now [create VPC clusters](/docs/openshift?topic=openshift-cluster-create-vpc-gen2) in [Montreal](/docs/openshift?topic=openshift-regions-and-zones).
+:   In this MZR, you can only create clusters at version 4.16 and later clusters and can only use RHEL 9 or RHCOS workers nodes.
+:   Also note that in this MZR, only webhooks that access an in-cluster service work. Webhooks that directly access an external, out of cluster, URL are blocked.
+:   Portworx Enterprise and Portworx Backup are not yet supported for private-only clusters in the Montreal region.
+
+### 09 May 2025
+{: #openshift-09may25}
+{: release-note}
+
+VPC Block CSI Driver cluster add-on patch updates.
+:   For more information, see the [change log](/docs/openshift?topic=openshift-cl-add-ons-vpc-block-csi-driver).
 
 
 
