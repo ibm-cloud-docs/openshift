@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2025
-lastupdated: "2025-05-13"
+lastupdated: "2025-05-14"
 
 
 keywords: openshift
@@ -274,6 +274,14 @@ subcollection: openshift
 [Release notes](/docs/openshift?topic=openshift-openshift-relnotes#openshift-relnotes)
 
 * [May 2025](/docs/openshift?topic=openshift-openshift-relnotes#openshift-may25)
+
+    * [15 May 2025](/docs/openshift?topic=openshift-openshift-relnotes#openshift-may1525)
+
+        * New! Montreal multizone region
+
+    * [09 May 2025](/docs/openshift?topic=openshift-openshift-relnotes#openshift-09may25)
+
+        * VPC Block CSI Driver cluster add-on patch updates.
 
     * [07 May 2025](/docs/openshift?topic=openshift-openshift-relnotes#openshift-07may25)
 

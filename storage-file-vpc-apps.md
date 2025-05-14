@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2022, 2025
-lastupdated: "2025-05-12"
+lastupdated: "2025-05-14"
 
 keywords: kubernetes, openshift
 
@@ -1109,7 +1109,7 @@ To limit file share access by node, zone, or resource group, you must first crea
 1. Add the following rule to the custom security group you created earlier.
 
     ```sh
-    ibmcloud is sg-rulec CUSTOM-SG inbound tcp --port-min 111 --port-max 2049 --remote 10.240.0.10 # Worker node IP
+    ibmcloud is sg-rulec CUSTOM-SG inbound tcp --port-min 111 --port-max 2049 --remote 10.240.0.20 # Worker node IP
     ```
     {: pre}
 
