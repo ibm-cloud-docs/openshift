@@ -9051,6 +9051,8 @@ subcollection: openshift
 
 * [Sao Paulo (`br-sao`)](/docs/openshift?topic=openshift-vpc-flavors#sao-paulo-br-sao)
 
+* [Montreal (`ca-mon`)](/docs/openshift?topic=openshift-vpc-flavors#montreal-ca-mon)
+
 * [Toronto (`ca-tor`)](/docs/openshift?topic=openshift-vpc-flavors#toronto-ca-tor)
 
 * [Frankfurt (`eu-de`)](/docs/openshift?topic=openshift-vpc-flavors#frankfurt-eu-de)
