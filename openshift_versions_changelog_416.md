@@ -3,7 +3,7 @@
 copyright:
   years: 2024, 2025
 
-lastupdated: "2025-05-08"
+lastupdated: "2025-05-20"
 
 
 keywords: change log, version history, 4.16_openshift
@@ -37,6 +37,23 @@ Master patch updates are applied automatically. Worker node patch updates can be
 
 ## Version 4.16
 {: #416_components}
+
+
+### Worker node fix pack 4.16.40_1566_openshift, released 19 May 2025
+{: #cl-boms-41640_1566_openshift_W}
+
+The following table shows the components included in the worker node fix pack 4.16.40_1566_openshift. Worker node patch updates can be applied by updating, reloading (in classic infrastructure), or replacing (in VPC infrastructure) the worker node.
+{: shortdesc}
+
+| Component | Version | Description |
+| ---- | ---- | ---- |
+|RHEL_9|5.14.0-503.40.1.el9_5|N/A|
+|RHEL_8|4.18.0-553.52.1.el8_10|Resolves the following CVEs: [RHSA-2025:7531](https://access.redhat.com/errata/RHSA-2025:7531){: external}, [CVE-2022-49011](https://nvd.nist.gov/vuln/detail/CVE-2022-49011){: external}, [CVE-2024-53141](https://nvd.nist.gov/vuln/detail/CVE-2024-53141){: external}, [RHSA-2024:3043](https://access.redhat.com/errata/RHSA-2024:3043){: external}, and [CVE-2024-0690](https://nvd.nist.gov/vuln/detail/CVE-2024-0690){: external}.|
+|Red Hat OpenShift and Red Hat CoreOS|4.16.40|For more information, see the [change logs](https://docs.redhat.com/en/documentation/openshift_container_platform/4.16/html/release_notes/ocp-4-16-release-notes.html#ocp-4-16-40_release-notes).|
+|HAProxy|978e3c26ee7634e39a940696aaf57d9e374db5ce|N/A|
+{: caption="4.16.40_1566_openshift fix pack." caption-side="bottom"}
+{: #cl-boms-41640_1566_openshift_W-component-table}
+
 
 
 ### Worker node fix pack 4.16.39_1565_openshift, released 07 May 2025
