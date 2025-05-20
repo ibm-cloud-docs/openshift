@@ -2,7 +2,7 @@
 
 copyright:
   years: 2023, 2025
-lastupdated: "2025-02-05"
+lastupdated: "2025-05-20"
 
 
 keywords: ingress, configure ingress, annotations, customize ingress, ingress controller, source IP
@@ -163,3 +163,54 @@ HTTP access logs contain information of incoming HTTP requests. Having access lo
     ...
     ```
     {: screen}
+
+
+## Fine-tuning connection handling
+{: #ingress-configure-connection-handling}
+
+The `clientTimeout` and `serverTimeout` parameters are crucial configurations that dictate how long connections remain active between clients, the Ingress controller, and the backend servers. These timeouts play a significant role in optimizing request handling, particularly when dealing with long-lasting client connections, delayed responses from backend servers, and safeguarding valuable resources from being unnecessarily occupied.
+
+If you anticipate that clients will keep connections open for a longer period of time, it is advisable to increase the `clientTimeout` setting to cater to these scenarios. Conversely, if your backend servers have high latency due to high traffic volumes or processing loads, adjusting the `serverTimeout` can provide the necessary allowance for the servers to complete their request processing before the Ingress controller terminates the connection.
+
+You can change the above parameters in your `IngressController` resource:
+
+```yaml
+apiVersion: operator.openshift.io/v1
+kind: IngressController
+ ...
+spec:
+  tuningOptions:
+    clientTimeout: 5s
+    serverTimeout: 5s
+```
+{: codeblock}
+
+For more information about tuning options see the [OpenShift documentation](https://docs.redhat.com/en/documentation/openshift_container_platform/latest/html/operator_apis/ingresscontroller-operator-openshift-io-v1#spec-tuningoptions).
+{: tip}
+
+### Adjusting Timeouts
+{: #adjusting-timeouts-oc}
+
+If your clusters are exposed with IBM Cloud Cloud Internet Services (CIS) / Cloudflare and use Web Application Firewall (WAF) or global load balancing you should set `clientTimeout` and `serverTimeout` to values exceeding 900 seconds to prevent premature connection terminations. For more information, see the [Cloudflare documentation](https://developers.cloudflare.com/fundamentals/reference/connection-limits/#between-cloudflare-and-origin-server).
+{: tip}
+
+1. **Identify your Ingress Controller**: Begin by listing your `IngressController` resources. This can be achieved with the command:
+
+    ```sh
+    oc get ingresscontrollers -n openshift-ingress-operator
+    ```
+    {: pre}
+
+2. **Update the timeout parameters**: To modify the `clientTimeout` and `serverTimeout` parameters for a specific `IngressController`, you can execute a patch command. For example the following command updates the timeout setting for the `default` Ingress Controllers to 905 seconds:
+
+    ```sh
+    oc patch ingresscontrollers default --patch '{"spec": {"tuningOptions":{"clientTimeout": "905s", "serverTimeout": "905s"}}}' --type=merge -n openshift-ingress-operator
+    ```
+    {: pre}
+
+3. **VPC clusters only**: In cases where you are operating within a Virtual Private Cloud (VPC), it is neccesary to tune the idle connection timeout of the VPC load balancer along with your Ingress Controller settings. We recommend choosing a greater idle connection timeout than the timeout settings of your Ingress Controller. The command below demonstrates how to update the idle connection timeout for the `router-default` LoadBalancer service to 910 seconds:
+
+    ```sh
+    oc annotate svc -n openshift-ingress service.kubernetes.io/ibm-load-balancer-cloud-provider-vpc-idle-connection-timeout="910" router-default
+    ```
+    {: pre}

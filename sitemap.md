@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2025
-lastupdated: "2025-05-14"
+lastupdated: "2025-05-20"
 
 
 keywords: openshift
@@ -3970,6 +3970,10 @@ subcollection: openshift
 * [Customizing Ingress routing with annotations](/docs/openshift?topic=openshift-ingress-configure#ingress-configure-annotations)
 
 * [Enabling access logging](/docs/openshift?topic=openshift-ingress-configure#ingress-enable-access-logging)
+
+* [Fine-tuning connection handling](/docs/openshift?topic=openshift-ingress-configure#ingress-configure-connection-handling)
+
+    * [Adjusting Timeouts](/docs/openshift?topic=openshift-ingress-configure#adjusting-timeouts-oc)
 
 [Publicly exposing apps with Ingress](/docs/openshift?topic=openshift-ingress-public-expose#ingress-public-expose)
 
@@ -9830,11 +9834,9 @@ subcollection: openshift
 
 * [Step 1: Check your app deployment and Ingress resource configuration](/docs/openshift?topic=openshift-ingress-debug-roks4#app-debug-ingress-43)
 
-* [Step 2: Run Ingress tests in the Diagnostics and Debug Tool](/docs/openshift?topic=openshift-ingress-debug-roks4#debug-tool-43)
+* [Step 2: Check the health of the Ingress controller](/docs/openshift?topic=openshift-ingress-debug-roks4#errors-43)
 
-* [Step 3: Check the health of the Ingress controller](/docs/openshift?topic=openshift-ingress-debug-roks4#errors-43)
-
-* [Step 4: Ping the Ingress subdomain and Ingress controller public IP address](/docs/openshift?topic=openshift-ingress-debug-roks4#ping-43)
+* [Step 3: Ping the Ingress subdomain and Ingress controller public IP address](/docs/openshift?topic=openshift-ingress-debug-roks4#ping-43)
 
 [Gathering Ingress details for debugging](/docs/openshift?topic=openshift-ingress-must-gather#ingress-must-gather)
 

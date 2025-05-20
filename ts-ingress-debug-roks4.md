@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2025
-lastupdated: "2025-03-18"
+lastupdated: "2025-05-20"
 
 
 keywords: openshift
@@ -99,30 +99,7 @@ Start by checking for errors in your app deployment and the Ingress resource dep
         
 4. Check to see if you reached the maximum number of VPC load balancers permitted per account. Check the [VPC quotas documentation](/docs/vpc?topic=vpc-quotas) for VPC resource quotas across all your VPC clusters in your VPC.
 
-## Step 2: Run Ingress tests in the Diagnostics and Debug Tool
-{: #debug-tool-43}
-
-Use the {{site.data.keyword.containerlong_notm}} Diagnostics and Debug Tool to run Ingress tests and gather pertinent Ingress information from your cluster. To use the debug tool, you can enable the add-on in your cluster.
-{: shortdesc}
-
-1. In the [console](https://cloud.ibm.com/containers/cluster-management/clusters){: external}, click the name of the cluster where you want to install the debug tool add-on.
-
-
-1. On the Diagnostics and Debug Tool card, click **Install**.
-
-1. In the dialog box, click **Install**. Note that it can take a few minutes for the add-on to be installed. To resolve some common issues that you might encounter during the add-on deployment, see [Reviewing add-on state and statuses](/docs/openshift?topic=openshift-debug_addons).</p>
-
-1. On the Diagnostics and Debug Tool card, click **Dashboard**.
-
-1. In the debug tool dashboard, select the **ingress** group of tests. Some tests check for potential warnings, errors, or issues, and some tests only gather information that you can reference while you troubleshoot. For more information about the function of each test, click the information icon next to the test's name.
-
-1. Click **Run**.
-
-1. Check the results of each test.
-    * If any test fails, click the information icon next to the test's name for information about how to resolve the issue.
-    * You can also use the results of tests that only gather information while you debug your Ingress service in the following sections.
-
-## Step 3: Check the health of the Ingress controller
+## Step 2: Check the health of the Ingress controller
 {: #errors-43}
 
 Verify that the Ingress operator and the Ingress controller are healthy. Ingress controllers are managed by the Ingress operator. The Ingress controller forwards requests to the pods for that app only according to the rules defined in the Ingress resource and implemented by the Ingress controller.
@@ -194,7 +171,7 @@ Verify that the Ingress operator and the Ingress controller are healthy. Ingress
 
         * For example, in VPC clusters, you might see an error message such as `The VPC load balancer that routes requests to this Kubernetes LoadBalancer service is offline`. For more information, see [VPC clusters: Why can't my app connect via load balancer?](/docs/openshift?topic=openshift-vpc_ts_lb).
 
-## Step 4: Ping the Ingress subdomain and Ingress controller public IP address
+## Step 3: Ping the Ingress subdomain and Ingress controller public IP address
 {: #ping-43}
 
 Check the availability of the public IP addresses of the Ingress controller and verify your subdomain mappings. Additionally, ensure that the {{site.data.keyword.redhat_openshift_notm}} control plane can access your Ingress controllers to health check them.
