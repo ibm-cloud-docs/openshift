@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2022, 2025
-lastupdated: "2025-05-14"
+lastupdated: "2025-05-20"
 
 keywords: kubernetes, openshift
 
@@ -27,6 +27,7 @@ The following limitations apply to the add-on beta.
 - If your cluster and VPC are in separate resource groups, then before you can provision file shares, you must create your own storage class and provide your VPC resource group ID under the `resourceGroup` section along with the `kube-<clusterID>` security group ID under `securityGroupIDs` section. To retrieve security group ID do the following. For more information, see [Creating your own storage class](/docs/openshift?topic=openshift-storage-file-vpc-apps#storage-file-vpc-custom-sc).
 - New security group rules were introduced in cluster versions 4.11 and later. These rule changes mean that you must sync your security groups before you can use {{site.data.keyword.filestorage_vpc_short}}. For more information, see [Adding {{site.data.keyword.filestorage_vpc_short}} to apps](/docs/containers?topic=containers-storage-file-vpc-apps).
 - New storage classes were added with version 2.0 of the add-on. You can no longer provision new file shares that use the older storage classes. Existing volumes that use the older storage classes continue to function, however you cannot expand the volumes that were created using the older classes. For more information, see the [Migrating to a new storage class](/docs/openshift?topic=openshift-storage-file-vpc-apps#storage-file-expansion-migration).
+- Creating a PVC by using [StorageClassSecrets](https://kubernetes-csi.github.io/docs/secrets-and-credentials-storage-class.html){: external} is not supported.
 
 After you provision a specific type of storage by using a storage class, you can't change the type, or retention policy for the storage device. However, you can [change the size](/docs/openshift?topic=openshift-storage-file-vpc-apps#storage-file-vpc-expansion) and the [IOPS](/docs/vpc?topic=vpc-file-storage-adjusting-iops&interface=ui) if you want to increase your storage capacity and performance. To change the type and retention policy for your storage, you must create a new storage instance and copy the data from the old storage instance to your new one.
 
@@ -1047,6 +1048,24 @@ To limit file share access by node, zone, or resource group, you must first crea
 1. List your clusters and make a note of the cluster ID where you want to deploy file storage.
     ```sh
     ibmcloud ks cluster ls
+    ```
+    {: pre}
+
+1. Get your worker pool details.
+    ```sh
+    ibmcloud ks worker-pool ls --cluster <cluster>
+    ```
+    {: pre}
+    
+2. Get your subnet details.
+    ```sh
+    ibmcloud ks worker-pool get <worker-pool> --cluster <cluster> | grep -A 3 Subnets
+    ```
+    {: pre}
+
+1. Get your subnet CIDRs. Repeat this step for each subnet. You use this CIDR range later.
+    ```sh
+    ibmcloud is subnet <subnet-id> | grep "IPv4 CIDR"
     ```
     {: pre}
 

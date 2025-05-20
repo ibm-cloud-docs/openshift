@@ -57,7 +57,7 @@ New! Montreal multizone region
 :   You can now [create VPC clusters](/docs/openshift?topic=openshift-cluster-create-vpc-gen2) in [Montreal](/docs/openshift?topic=openshift-regions-and-zones).
 :   In this MZR, you can only create clusters at version 4.16 and later clusters and can only use RHEL 9 or RHCOS workers nodes.
 :   Also note that in this MZR, only webhooks that access an in-cluster service work. Webhooks that directly access an external, out of cluster, URL are blocked.
-:   The default installation method for Portworx Enterprise and Portworx Backup is not yet supported for private-only clusters in the Montreal region. Contact Portworx Support if you need to install Portworx Enterprise or Portworx Backup or in a private-only cluster in Montreal. For more information, see [Portworx Support](/docs/openshift?topic=openshift-storage_portworx_about#portworx-billing-support).
+:   The default installation method for Portworx Enterprise and Portworx Backup is not yet supported for private-only clusters in the Montreal region. Contact Portworx Support if you need to install Portworx Enterprise or Portworx Backup in a private-only cluster in Montreal. For more information, see [Portworx Support](/docs/openshift?topic=openshift-storage_portworx_about#portworx-billing-support).
 
 ### 09 May 2025
 {: #openshift-09may25}
