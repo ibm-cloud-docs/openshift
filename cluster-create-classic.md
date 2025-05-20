@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2025
-lastupdated: "2025-04-30"
+lastupdated: "2025-05-20"
 
 
 keywords: openshift, {{site.data.keyword.openshiftlong_notm}}, kubernetes, clusters, worker nodes, worker pools, classic, create
@@ -282,7 +282,7 @@ ibmcloud oc cluster create classic --name cloud_pak_cluster --version 4.17_opens
 Example command to create a Classic cluster with RHEL 9 worker nodes.
 
 ```sh
-ibmcloud oc cluster create classic --name my_cluster --zone dal10 --flavor b3c.4x16 --version 4.9.28_openshift --operating-system REDHAT_9_64
+ibmcloud oc cluster create classic --name my_cluster --zone dal10 --flavor b3c.4x16 --version 4.9.28_openshift --operating-system RHEL_9_64
 ```
 {: pre}
 

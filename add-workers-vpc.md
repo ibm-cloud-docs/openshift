@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2025
-lastupdated: "2025-03-10"
+lastupdated: "2025-05-20"
 
 
 keywords: openshift, {{site.data.keyword.openshiftlong_notm}}, clusters, worker nodes, worker pools, add
@@ -137,7 +137,7 @@ Before you begin, make sure that you have the [**Operator** or **Administrator**
     `--vpc-id VPC`
     :   Specify this  option if the worker pool is the first in the cluster.
 
-    `--operating-system REDHAT_9_64|REDHAT_8_64|RHCOS`
+    `--operating-system RHEL_9_64|REDHAT_8_64|RHCOS`
 :   Optional. The operating system of the worker nodes in your cluster. For a list of available operating systems by cluster version, see the [{{site.data.keyword.openshiftshort}} version information](/docs/openshift?topic=openshift-openshift_versions). If no option is specified, the default operating system that corresponds to the cluster version is used.
 
     `--kms-account-id ACCOUNT`

@@ -2,7 +2,7 @@
 
 copyright:
   years: 2022, 2025
-lastupdated: "2025-03-31"
+lastupdated: "2025-05-20"
 
 
 keywords: rhel, os, operating system, rhocs, 418, migration
@@ -39,10 +39,10 @@ The default `cgroup` implementation is `cgroup` v2. In RHEL 9, `cgroup` v1 isn't
     ```
     {: pre}
 
-1. Specify the `REDHAT_9_64` version for the worker pool. 
+1. Specify the `RHEL_9_64` version for the worker pool. 
 
     ```sh
-    ibmcloud oc worker-pool operating-system set --cluster CLUSTER --worker-pool POOL --operating-system REDHAT_9_64
+    ibmcloud oc worker-pool operating-system set --cluster CLUSTER --worker-pool POOL --operating-system RHEL_9_64
     ```
     {: pre}
 
@@ -65,7 +65,7 @@ The default `cgroup` implementation is `cgroup` v2. In RHEL 9, `cgroup` v1 isn't
     ```
     {: pre}
 
-1. Get the details for your worker pool and workers. In the output, verify that your worker nodes run the `REDHAT_9_64` operating system.
+1. Get the details for your worker pool and workers. In the output, verify that your worker nodes run the `RHEL_9_64` operating system.
 
     Get the details for a worker pool. 
     ```sh
