@@ -3971,6 +3971,10 @@ subcollection: openshift
 
 * [Enabling access logging](/docs/openshift?topic=openshift-ingress-configure#ingress-enable-access-logging)
 
+* [Fine-tuning connection handling](/docs/openshift?topic=openshift-ingress-configure#ingress-configure-connection-handling)
+
+    * [Adjusting Timeouts](/docs/openshift?topic=openshift-ingress-configure#adjusting-timeouts-oc)
+
 [Publicly exposing apps with Ingress](/docs/openshift?topic=openshift-ingress-public-expose#ingress-public-expose)
 
 * [Prerequisites](/docs/openshift?topic=openshift-ingress-public-expose#ingress-public-prereqs)
