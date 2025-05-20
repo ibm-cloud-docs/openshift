@@ -2,7 +2,7 @@
 
 copyright:
   years: 2024, 2025
-lastupdated: "2025-03-28"
+lastupdated: "2025-05-20"
 
 
 keywords: openshift, version, update, upgrade, 4.17, update openshift
@@ -103,7 +103,7 @@ If the `Upgradeable` status is `False`, the condition information provides instr
 
 RHEL 9 is available for Classic or VPC clusters that run version 4.17.
 
-You can provision a new cluster with RHEL 9 in the console by specifying the RHEL operating system for your worker node flavor or [in the CLI](/docs/openshift?topic=openshift-kubernetes-service-cli#cli_cluster-create-vpc-gen2) by including the `--operating-system REDHAT_9_64` option when you run the `ibmcloud oc cluster create` command. 
+You can provision a new cluster with RHEL 9 in the console by specifying the RHEL operating system for your worker node flavor or [in the CLI](/docs/openshift?topic=openshift-kubernetes-service-cli#cli_cluster-create-vpc-gen2) by including the `--operating-system RHEL_9_64` option when you run the `ibmcloud oc cluster create` command. 
 
 If you upgrade an existing cluster to version 4.17 and want your worker nodes to run RHEL 9, you must [follow the steps to migrate your worker nodes](/docs/openshift?topic=openshift-rhel_migrate).
 

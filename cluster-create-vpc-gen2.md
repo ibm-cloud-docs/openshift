@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2025
-lastupdated: "2025-04-30"
+lastupdated: "2025-05-20"
 
 
 keywords: kubernetes, clusters, worker nodes, worker pools, vpc-gen2, openshift, {{site.data.keyword.openshiftlong_notm}}
@@ -186,7 +186,7 @@ Observability integrations
     `--workers <number>`
     :   Specify the number of worker nodes to include in the cluster. If you don't specify this option, a cluster with the minimum value of 1 is created.
 
-    `--operating-system REDHAT_9_64|REDHAT_8_64|RHCOS`
+    `--operating-system RHEL_9_64|REDHAT_8_64|RHCOS`
 :   Optional. The operating system of the worker nodes in your cluster. For a list of available operating systems by cluster version, see the [{{site.data.keyword.openshiftshort}} version information](/docs/openshift?topic=openshift-openshift_versions). If no option is specified, the default operating system that corresponds to the cluster version is used.
 
 
@@ -301,7 +301,7 @@ ibmcloud oc cluster create vpc-gen2 --name my_cluster --zone us-south-1 --flavor
 Example command for a VPC cluster with worker nodes that run the RHEL 9 operating system and outbound traffic protection disabled. 
 
 ```sh
-ibmcloud oc cluster create vpc-gen2 --name my_cluster --zone us-south-1 --flavor b3c.4x16 --vpc_ID VPC-ID --subnet-id SUBNET-ID --operating-system REDHAT_9_64 --disable-outbound-traffic-protection
+ibmcloud oc cluster create vpc-gen2 --name my_cluster --zone us-south-1 --flavor b3c.4x16 --vpc_ID VPC-ID --subnet-id SUBNET-ID --operating-system RHEL_9_64 --disable-outbound-traffic-protection
 ```
 {: pre}
 
