@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2025
-lastupdated: "2025-04-09"
+lastupdated: "2025-05-21"
 
 
 keywords: openshift, version, update, upgrade
@@ -65,7 +65,7 @@ Red Hat Enterprise Linux CoreOS (RHCOS) worker nodes are available only for VPC 
 4.16 (Kubernetes 1.29)
 - Release date: 30 August 2024
 - End of support: 26 August 2026†
-- Operating systems: `RHEL_9_64`, Red Hat CoreOS (`RHCOS`), RHEL 8 (`REDHAT_8_64`) (default)
+- Operating systems: `RHEL_9_64`, Red Hat CoreOS (`RHCOS`), RHEL 8 (`REDHAT_8_64`)
 - [Version information and update actions](/docs/openshift?topic=openshift-cs_versions_416)
 - [Change log](/docs/openshift?topic=openshift-openshift_changelog_416)
 - [{{site.data.keyword.redhat_openshift_notm}} 4.16 release notes overview](https://docs.redhat.com/en/documentation/openshift_container_platform/4.16/html/release_notes/ocp-4-16-release-notes){: external}
@@ -94,7 +94,7 @@ Red Hat Enterprise Linux CoreOS (RHCOS) worker nodes are available only for VPC 
 4.16 (Kubernetes 1.29)
 - Release date: 30 August 2024
 - End of support: 26 August 2026†
-- Operating systems: `RHEL_9_64`, RHEL 8 (`REDHAT_8_64`) (default)
+- Operating systems: `RHEL_9_64`, RHEL 8 (`REDHAT_8_64`)
 - [Version information and update actions](/docs/openshift?topic=openshift-cs_versions_416)
 - [Change log](/docs/openshift?topic=openshift-openshift_changelog_416)
 - [{{site.data.keyword.redhat_openshift_notm}} 4.16 release notes overview](https://docs.redhat.com/en/documentation/openshift_container_platform/4.16/html/release_notes/ocp-4-16-release-notes){: external}
