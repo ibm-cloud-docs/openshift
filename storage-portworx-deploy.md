@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2025
-lastupdated: "2025-04-17"
+lastupdated: "2025-05-22"
 
 
 keywords: portworx, kubernetes, openshift
@@ -22,6 +22,9 @@ Provision a Portworx service instance from the {{site.data.keyword.cloud_notm}} 
 
 Looking for instructions about how to update or remove Portworx? See [Updating Portworx](/docs/openshift?topic=openshift-storage_portworx_update) and [Removing Portworx](/docs/openshift?topic=openshift-storage_portworx_removing).
 {: tip}
+
+The default installation method for Portworx Enterprise and Portworx Backup is not yet supported for private-only clusters in the Montreal region. Contact Portworx Support if you need to install Portworx Enterprise or Portworx Backup in a private-only cluster in Montreal. For more information, see [Portworx Support](/docs/openshift?topic=openshift-storage_portworx_about#portworx-billing-support)
+{: important}
 
 Before you begin:
 - Make sure that you have the correct [permissions](/docs/openshift?topic=openshift-clusters) to create {{site.data.keyword.openshiftlong_notm}} clusters.
