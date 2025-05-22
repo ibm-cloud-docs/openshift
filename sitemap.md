@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2025
-lastupdated: "2025-05-20"
+lastupdated: "2025-05-22"
 
 
 keywords: openshift
@@ -2360,8 +2360,6 @@ subcollection: openshift
 
     * [Accessing classic clusters through the private cloud service endpoint](/docs/openshift?topic=openshift-access_cluster#classic_private_se)
 
-    * [Creating an allowlist for the private cloud service endpoint](/docs/openshift?topic=openshift-access_cluster#private-se-allowlist)
-
 * [Accessing {{site.data.keyword.redhat_openshift_notm}} clusters on {{site.data.keyword.satelliteshort}}](/docs/openshift?topic=openshift-access_cluster#access_cluster_sat)
 
     * [Accessing clusters through the cluster service URL](/docs/openshift?topic=openshift-access_cluster#access_cluster_sat_se)
@@ -2377,6 +2375,8 @@ subcollection: openshift
     * [Using an API key to log in to clusters](/docs/openshift?topic=openshift-access_cluster#access_api_key)
 
     * [Using a service ID to log in to clusters](/docs/openshift?topic=openshift-access_cluster#access_service_id)
+
+    * [Protecting clusters using context based restrictions](/docs/openshift?topic=openshift-access_cluster#protect-service-endpoints-with-cbr)
 
 [Accessing the cluster master with admission controllers and webhooks](/docs/openshift?topic=openshift-access_webhooks#access_webhooks)
 

@@ -2,7 +2,7 @@
 
 copyright:
   years: 2025, 2025
-lastupdated: "2025-04-17"
+lastupdated: "2025-05-22"
 
 
 keywords: openshift, console, web, connect, private
@@ -129,7 +129,7 @@ Follow these steps to check the connections described in the [connection flow](#
         3. Verify that there is a route through your VPN that connects to the cluster API server URL. 
         4. If the cluster apiserver URL contains your cluster ID (which indicates that the cluster uses the VPE gateway for the connection to the cluster apiserver) check that the VPE gateway security group for the cluster master allows traffic from your VPN client subnet. Follow the steps in [Accessing the OpenShift console when OAuth access is set to VPE gateway](/docs/openshift?topic=openshift-console-apiserver-oauthvpe).
         5. Check if any security groups, ACLs, or custom VPC routes applied to the VPN prevent traffic between the VPN and the cluster API server. You can test this by temporarily allowing all inbound and outbound traffic through the VPN security group and ACL and then checking if this resolves the issue. If so, make the necessary changes to your security groups, ACLs, or custom routes to allow the traffic.
-        6. Check if any Context Based Restriction (CBR) rules or private service endpoint allowlist rules on the cluster prevent the client from connecting to the cluster API server. You can test this by temporarily adding a network zone to your CBR rule that allows all IPs and subnets. If this temporary change resolves the issue, make the necessary changes to the rule or allowlist to allow the traffic. 
+        6. Check if any Context Based Restriction (CBR) rules on the cluster prevent the client from connecting to the cluster API server. You can test this by temporarily adding a network zone to your CBR rule that allows all IPs and subnets. If this temporary change resolves the issue, make the necessary changes to the rule to allow the traffic.
 
 4. Verify that the connection to the cluster load balancer exposing the OpenShift console is successful. 
     1. Run the command. Specify the Ingress subdomain you found in the [previous steps](#ts-console-vpe-priv-data).
@@ -156,7 +156,7 @@ Follow these steps to check the connections described in the [connection flow](#
         2. Check that the hostname portion of the cluster OAuth URL is resolved via DNS. Use the `dig $(echo ${CLUSTER_OAUTH_URL} | cut -d/ -f3 | cut -d: -f1)` and specify the cluster OAuth URL. 
         3. Verify that there is a route through your VPN to the cluster master OAuth URL. 
         4. Check if any security groups, ACLs, or custom VPC routes applied to the VPN prevent traffic between the VPN and the cluster OAuth server. You can test this by temporarily allowing all inbound and outbound traffic through the VPN security group and ACL and then checking if this resolves the issue. If so, make the necessary changes to your security groups, ACLs, or custom routes to allow the traffic.
-        5. Check if any Context Based Restriction (CBR) rules or private service endpoint allowlist rules on the cluster prevent the client from connecting to the cluster OAuth server. You can test this by temporarily adding a network zone to your CBR rule that allows all IPs and subnets. If this temporary change resolves the issue, make the necessary changes to the rule or allowlist to allow the traffic.
+        5. Check if any Context Based Restriction (CBR) rules on the cluster prevent the client from connecting to the cluster OAuth server. You can test this by temporarily adding a network zone to your CBR rule that allows all IPs and subnets. If this temporary change resolves the issue, make the necessary changes to the rule to allow the traffic.
 
 6. Verify that the connection to IAM is successful. 
     1. Run the commands.

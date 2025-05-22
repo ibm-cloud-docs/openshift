@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2025
-lastupdated: "2025-03-28"
+lastupdated: "2025-05-22"
 
 
 keywords: openshift, clusters, access, endpoint
@@ -322,60 +322,6 @@ The {{site.data.keyword.redhat_openshift_notm}} master is accessible through the
     Kubernetes Version: v1.18.3+cdb0358
     ```
     {: screen}
-
-### Creating an allowlist for the private cloud service endpoint
-{: #private-se-allowlist}
-
-Private service endpoint allowlists are deprecated and support ends on 10 February 2025. Migrate from allowlists to context based restrictions as soon as possible. For more information, see [Migrating from a private service endpoint allowlist to context based restrictions (CBR)](/docs/openshift?topic=openshift-pse-to-cbr-migration).
-{: deprecated}
-
-Control access to your private cloud service endpoint by creating a subnet allowlist.
-{: shortdesc}
-
-After you [grant users access to your cluster through {{site.data.keyword.cloud_notm}} IAM](/docs/openshift?topic=openshift-iam-platform-access-roles), you can add a secondary layer of security by creating an allowlist for the private cloud service endpoint. Only authorized requests to your cluster master that originate from subnets in the allowlist are permitted through the cluster's private cloud service endpoint.
-
-If you want to allow requests from a different VPC than the one your cluster is in, you must include the cloud service endpoint for that VPC in the allowlist.
-{: note}
-
-For example, to access your cluster's private cloud service endpoint, you must connect to your {{site.data.keyword.cloud_notm}} classic network or your VPC network through a VPN or {{site.data.keyword.dl_full_notm}}. You can add the subnet for the VPN or {{site.data.keyword.dl_short}} tunnel so that only authorized users in your organization can access the private cloud service endpoint from that subnet.
-
-A private cloud service endpoint allowlist can also help prevent users from accessing your cluster after their authorization is revoked. When a user leaves your organization, you remove their {{site.data.keyword.cloud_notm}} IAM permissions that grant them access to the cluster. However, the user might have copied the API key that contains a functional ID's credentials, which contain the necessary IAM permissions for your cluster. That user can still use those credentials and the private cloud service endpoint address to access your cluster from a different subnet, such as from a different {{site.data.keyword.cloud_notm}} account. If you create an allowlist that includes only the subnets for your VPN tunnel in your organization's {{site.data.keyword.cloud_notm}} account, the user's attempted access from another {{site.data.keyword.cloud_notm}} account is denied.
-
-Worker node subnets are automatically added to and removed from your allowlist so that worker nodes can always access the master through the private cloud service endpoint.
-
-Private cloud service endpoint allowlists are limited to 20 subnets and will be unsupported soon. Context based restriction rules are the replacement for this and can contain up to 200 subnets, so if you need more than 20 subnets in your allowlist you should use [Migrating from a private service endpoint allowlist to context based restrictions (CBR)](/docs/openshift?topic=openshift-pse-to-cbr-migration).
-{: tip}
-
-If the public cloud service endpoint is enabled for your cluster, authorized requests are still permitted through the public cloud service endpoint. Therefore, the private cloud service endpoint allowlist is most effective for controlling access to clusters that have only the private cloud service endpoint enabled.
-{: note}
-
-Before you begin:
-* [Access your cluster through the private cloud service endpoint](#access_private_se).
-* [Grant users access to your cluster through {{site.data.keyword.cloud_notm}} IAM](/docs/openshift?topic=openshift-iam-platform-access-roles).
-
-To create a private cloud service endpoint allowlist:
-
-1. Get the subnets that you want to add to the allowlist. For example, you might get the subnet for the connection through your VPN or {{site.data.keyword.dl_short}} tunnel to your {{site.data.keyword.cloud_notm}} private network.
-
-2. Enable the subnet allowlist feature for a cluster's private cloud service endpoint. Now, access to the cluster via the private cloud service endpoint is blocked for any requests that originate from a subnet that is not in the allowlist. Your worker nodes continue to run and have access to the master.
-    ```sh
-    ibmcloud oc cluster master private-service-endpoint allowlist enable --cluster <cluster_name_or_ID>
-    ```
-    {: pre}
-
-3. Add subnets from which authorized users can access your private cloud service endpoint to the allowlist.
-    ```sh
-    ibmcloud oc cluster master private-service-endpoint allowlist add --cluster <cluster_name_or_ID> --subnet <subnet_CIDR> [--subnet <subnet_CIDR> ...]
-    ```
-    {: pre}
-
-4. Verify that the subnets in your allowlist are correct. The allowlist includes subnets that you manually added and subnets that are automatically added and managed by IBM, such as worker node subnets.
-    ```sh
-    ibmcloud oc cluster master private-service-endpoint allowlist get --cluster <cluster_name_or_ID>
-    ```
-    {: pre}
-
-Your authorized users can now continue with [Accessing clusters through the private cloud service endpoint](#access_private_se).
 
 
 
@@ -776,3 +722,26 @@ You can create an {{site.data.keyword.cloud_notm}} IAM service ID, make an API k
     IAM#first.last@email.com       55555ee5-e555-55e5-e5e5-555555ee55ee               IAM:IBMid-666666FFF6
     ```
     {: screen}
+
+
+### Protecting clusters using context based restrictions
+{: #protect-service-endpoints-with-cbr}
+
+Private service endpoint allowlists are no longer supported.  Migrate from private service endpoint allowlists to context based restrictions as soon as possible. For specific migration steps, see [Migrating from a private service endpoint allowlist to context based restrictions (CBR)](/docs/openshift?topic=openshift-pse-to-cbr-migration).
+{: unsupported}
+
+Control access to your public and/or private service endpoints using context based restriction (CBR) rules.
+{: shortdesc}
+
+After you [grant users access to your cluster through {{site.data.keyword.cloud_notm}} IAM](/docs/openshift?topic=openshift-iam-platform-access-roles), you can add a secondary layer of security by creating CBR rules for your cluster's public and private service endpoint. Only authorized requests to your cluster master that originate from subnets in the CBR rules will be allowed.
+
+If you want to allow requests from a different VPC than the one your cluster is in, you must include the cloud service endpoint IP addresss for that VPC in the CBR rules.
+{: note}
+
+For example, to access your cluster's private cloud service endpoint, you must connect to your {{site.data.keyword.cloud_notm}} classic network or your VPC network through a VPN or {{site.data.keyword.dl_full_notm}}. You can specify just the subnet for the VPN or {{site.data.keyword.dl_short}} tunnel to your CBR rules so that only authorized users in your organization can access the private cloud service endpoint from that subnet.
+
+Public CBR rules (if your cluster has a public service endpoint) can also help prevent users from accessing your cluster after their authorization is revoked. When a user leaves your organization, you remove their {{site.data.keyword.cloud_notm}} IAM permissions that grant them access to the cluster. However, the user might have copied the admin kubeconfig file for a cluster, giving them access to that cluster. If you have a public CBR rule that only allows access to your cluster masters from known public subnets that your organization owns, then the user's attempted access from another public IP address will be blocked.
+
+Worker node subnets are automatically added to and removed from the backend CBR implementation (but not the CBR rules/zones), so that worker nodes can always access the cluster master and users do not need to specifically add these to their own CBR rules.
+
+To learn more about protecting your cluster with CBR rules, see [Protecting cluster resources with context-based restrictions](/docs/openshift?topic=openshift-cbr) and [Example context-based restrictions scenarios](/docs/openshift?topic=openshift-cbr-tutorial)
