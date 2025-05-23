@@ -108,8 +108,8 @@ keyword:
   openshift_418_deprecated: 'False'
   openshift_418_kube_version: '1.31'
   openshift_418_release_date: 30 April 2025
-  openshift_418_unsupported_certainty: tentative
-  openshift_418_unsupported_date: null
+  openshift_418_unsupported_certainty: ''
+  openshift_418_unsupported_date: None
   openshift_46_deprecated: 'True'
   openshift_46_kube_version: '1.19'
   openshift_46_release_date: 17 February 2021
@@ -181,8 +181,8 @@ keyword:
   satellite_418_deprecated: 'False'
   satellite_418_kube_version: '1.31'
   satellite_418_release_date: 30 April 2025
-  satellite_418_unsupported_certainty: tentative
-  satellite_418_unsupported_date: null
+  satellite_418_unsupported_certainty: ''
+  satellite_418_unsupported_date: None
   satellite_46_deprecated: 'True'
   satellite_46_kube_version: '1.19'
   satellite_46_release_date: 17 February 2021
