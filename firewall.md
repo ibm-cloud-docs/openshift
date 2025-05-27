@@ -277,7 +277,7 @@ Allow outgoing network traffic from your worker node to {{site.data.keyword.clou
 - `TCP port 443 FROM <each_worker_node_publicIP> TO https://iam.bluemix.net`
 - `TCP port 443 FROM <each_worker_node_publicIP> TO https://iam.cloud.ibm.com`
 
-#### Optional: Allow outgoing network traffic from the worker nodes to {{site.data.keyword.mon_short}} and {{site.data.keyword.la_short}} services
+#### Optional: Allow outgoing network traffic from the worker nodes to {{site.data.keyword.mon_short}} and {{site.data.keyword.logs_full_notm}} services
 {: #firewall-mon-la}
 
 - **{{site.data.keyword.mon_full_notm}}**: 
