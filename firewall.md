@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2025
-lastupdated: "2025-03-18"
+lastupdated: "2025-05-27"
 
 
 keywords: openshift
@@ -285,10 +285,10 @@ Allow outgoing network traffic from your worker node to {{site.data.keyword.clou
     - `TCP port 443, port 6443 FROM <each_worker_node_public_IP> TO <monitoring_public_IP>`
     - Replace *<monitoring_public_IP>* with the [{{site.data.keyword.mon_short}} IP addresses](/docs/monitoring?topic=monitoring-endpoints).
 
-- **{{site.data.keyword.la_full_notm}}**:
+- **{{site.data.keyword.logs_full_notm}}**:
 
     - `TCP port 443, port 80 FROM <each_worker_node_public_IP> TO <logging_public_IP>`
-    - Replace *<logging_public_IP>* with the [{{site.data.keyword.la_short}} IP addresses](/docs/log-analysis?topic=log-analysis-endpoints#endpoints_api_public).
+    - Replace *<logging_public_IP>* with the [{{site.data.keyword.logs_full_notm}} IP addresses](/docs/cloud-logs?topic=cloud-logs-ips2open).
 
 #### Next steps
 {: #firewall_next_steps}
@@ -382,12 +382,12 @@ On 23 June 2022, only the `br-sao` and `ca-tor` regions changed. The remaining r
 | US East, US South | `private.us.icr.io` | 166.9.12.227, 166.9.15.116, 166.9.16.244 | 166.9.250.214, 166.9.250.246, 166.9.251.21 |
 {: caption="IP addresses to open for Registry traffic" caption-side="bottom"}
 
-#### Optional: Set up allowlist rules for {{site.data.keyword.la_full_notm}} and {{site.data.keyword.mon_full_notm}} services
+#### Optional: Set up allowlist rules for {{site.data.keyword.logs_full_notm}} and {{site.data.keyword.mon_full_notm}} services
 {: #firewall_private_mon_la}
 
-To send logging and metric data, set up allowlist rules for your {{site.data.keyword.la_full_notm}} and {{site.data.keyword.mon_full_notm}} services.
+To send logging and metric data, set up allowlist rules for your {{site.data.keyword.logs_full_notm}} and {{site.data.keyword.mon_full_notm}} services.
 
-- [{{site.data.keyword.la_short}} private endpoints](/docs/log-analysis?topic=log-analysis-endpoints#endpoints_api_private)
+- [{{site.data.keyword.logs_full_notm}} private endpoints](/docs/cloud-logs?topic=cloud-logs-endpoints_api#private-endpoints)
 - [{{site.data.keyword.mon_short}} private endpoints](/docs/monitoring?topic=monitoring-endpoints#endpoints_monitoring)
 
 ### Opening ports in a public or private allowlist for inbound traffic

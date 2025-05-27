@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2025
-lastupdated: "2025-05-20"
+lastupdated: "2025-05-27"
 
 
 keywords: openshift, kubernetes, mzr, szr, multizone, multi az
@@ -28,7 +28,7 @@ This image is an artistic representation and does not reflect actual political o
 
 
 
-Montreal (ca-mon) MZR limiations
+Montreal (ca-mon) MZR limitations
 :   **Webhooks**: Only webhooks that access an in-cluster service work. Webhooks that directly access an external, out of cluster, URL are blocked.
 :   **Operating systems**: You can only create clusters at version 4.16 and later in Montreal and can only use RHEL 9 or RHCOS workers nodes.
 

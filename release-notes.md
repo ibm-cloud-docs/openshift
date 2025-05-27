@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2025
-lastupdated: "2025-05-21"
+lastupdated: "2025-05-27"
 
 
 keywords: kubernetes, release notes, openshift, {{site.data.keyword.openshiftlong_notm}}
@@ -4113,7 +4113,7 @@ Worker node fix pack
 {: release-note}
 
 {{site.data.keyword.mon_full_notm}} metrics and label updates
-:   Metrics and labels are now stored and displayed in a Prometheus compatible naming convention. Some metrics and labels are deprecated. For more information, see [Discontinued Metrics and Labels](https://docs.sysdig.com/en/docs/release-notes/enhanced-metric-store/#discontinued-metrics-and-labels){: external} and [removed features](https://docs.sysdig.com/en/docs/release-notes/enhanced-metric-store/#removed-featurees){: external}.
+:   Metrics and labels are now stored and displayed in a Prometheus compatible naming convention. Some metrics and labels are deprecated. For more information, see [Discontinued Metrics and Labels](https://docs.sysdig.com/en/release-notes/enhanced-metric-store/#discontinued-metrics-and-labels){: external} and [removed features](https://docs.sysdig.com/en/release-notes/enhanced-metric-store/#removed-features){: external}.
 
 {{site.data.keyword.block_storage_is_short}} add-on.
 :   [Version 5.0.1-beta_1411](/docs/openshift?topic=openshift-cl-add-ons-vpc-block-csi-driver) is available for allowlisted accounts.

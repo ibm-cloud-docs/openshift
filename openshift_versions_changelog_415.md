@@ -3,7 +3,7 @@
 copyright:
   years: 2024, 2025
 
-lastupdated: "2025-05-20"
+lastupdated: "2025-05-27"
 
 
 keywords: change log, version history, 4.15_openshift
@@ -82,7 +82,7 @@ The following table shows the changes that are in the master fix pack 4.15.48_15
 | --- | --- | --- | --- |
 | Calico | v3.28.2 | v3.28.3 | See the [Calico release notes](https://docs.tigera.io/calico/3.28/release-notes/#v3.28.3){: external}. |
 | Cluster health image | v1.5.13 | v1.5.14 | New version contains updates and security fixes. |
-| etcd | v3.5.18 | v3.5.21 | See the [etcd release notes](https://github.com/coreos/etcd/releases/v3.5.21){: external}. |
+| etcd | v3.5.18 | v3.5.21 | See the [etcd release notes](https://github.com/etcd-io/etcd/releases/v3.5.21){: external}. |
 | {{site.data.keyword.cloud_notm}} Controller Manager | v1.28.15-18 | v1.28.15-23 | New version contains updates and security fixes. |
 | {{site.data.keyword.cloud_notm}} RBAC Operator | cb4f333 | d1545bd | New version contains updates and security fixes. |
 | Key Management Service provider | v2.9.17 | v2.9.18 | New version contains updates and security fixes. |
@@ -555,7 +555,7 @@ The following table shows the changes that are in the master fix pack 4.15.22_15
 
 | Component | Previous | Current | Description |
 | --- | --- | --- | --- |
-| Calico | v3.27.2 | v3.27.4 | See the [Calico release notes](https://docs.tigera.io/calico/3.27/release-notes/#v3.27.4){: external}. |
+| Calico | v3.27.2 | v3.27.4 | See the [Calico release notes](https://archive-os-3-27.netlify.app/calico/3.27/release-notes/#v3.27.4){: external}. |
 | Cluster health image | v1.5.6 | v1.5.7 | New version contains updates and security fixes. |
 | {{site.data.keyword.cloud_notm}} Block Storage driver and plug-in | v2.5.9 | v2.5.12 | New version contains updates and security fixes. |
 | {{site.data.keyword.cloud_notm}} Controller Manager | v1.28.11-5 | v1.28.12-1 | New version contains updates and security fixes. |

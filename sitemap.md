@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2025
-lastupdated: "2025-05-22"
+lastupdated: "2025-05-27"
 
 
 keywords: openshift
@@ -3404,14 +3404,6 @@ subcollection: openshift
 
 * [Analyzing {{site.data.keyword.openshiftlong_notm}} logs](/docs/openshift?topic=openshift-logging#cloud-logs)
 
-* [Migrating to Cloud Logs](/docs/openshift?topic=openshift-logging#cloud-logs-migration)
-
-* [Enabling your clusters to use your Cloud Logs instance](/docs/openshift?topic=openshift-logging#migrate-cloud-logs-clusters)
-
-    * [Enabling Cloud Logs in the console](/docs/openshift?topic=openshift-logging#cloud-logs-console-enable)
-
-    * [Enabling Cloud Logs in the CLI](/docs/openshift?topic=openshift-logging#cloud-logs-cli-enable)
-
 [Monitoring metrics for {{site.data.keyword.openshiftlong_notm}}](/docs/openshift?topic=openshift-monitoring#monitoring)
 
 * [Locations where metrics are generated](/docs/openshift?topic=openshift-monitoring#mon-locations)
@@ -3429,22 +3421,6 @@ subcollection: openshift
 * [Monitoring {{site.data.keyword.openshiftlong_notm}}](/docs/openshift?topic=openshift-monitoring#monitoring-monitor)
 
 * [Migrating to the new monitoring agent](/docs/openshift?topic=openshift-monitoring#migrating-new-agent)
-
-[Activity tracking events for {{site.data.keyword.openshiftlong_notm}}](/docs/openshift?topic=openshift-at_events#at_events)
-
-* [Locations where activity tracking events are generated](/docs/openshift?topic=openshift-at_events#at-locations)
-
-* [Locations where activity tracking events are sent to {{site.data.keyword.at_full_notm}} hosted event search](/docs/openshift?topic=openshift-at_events#at-legacy-locations)
-
-* [Locations where activity tracking events are sent by {{site.data.keyword.atracker_full_notm}}](/docs/openshift?topic=openshift-at_events#atracker-locations)
-
-* [Enabling activity tracking events for {{site.data.keyword.openshiftlong_notm}}](/docs/openshift?topic=openshift-at_events#at-enable)
-
-* [Viewing activity tracking events for {{site.data.keyword.openshiftlong_notm}}](/docs/openshift?topic=openshift-at_events#at-viewing)
-
-    * [Launching {{site.data.keyword.logs_full_notm}} from the Observability page](/docs/openshift?topic=openshift-at_events#log-launch-standalone)
-
-* [List of platform events](/docs/openshift?topic=openshift-at_events#at_actions_platform)
 
 [Logging for clusters](/docs/openshift?topic=openshift-health#health)
 
