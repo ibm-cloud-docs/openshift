@@ -426,7 +426,7 @@ For more information and examples, see the [Habana docs](https://docs.habana.ai/
                   limits:
                       habana.ai/gaudi: 8
                       memory: 409Gi
-                      hugepages-2Mi: 95000Mi
+                      hugepages-2Mi: 9500Mi
     ```
     {: codeblock}
 
