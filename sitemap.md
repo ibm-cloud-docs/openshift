@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2025
-lastupdated: "2025-05-27"
+lastupdated: "2025-05-28"
 
 
 keywords: openshift
@@ -267,6 +267,17 @@ subcollection: openshift
 * [Add integrations](/docs/openshift?topic=openshift-learning-path-dev#dev_integrate)
 
 
+## Red Hat Enterprise Linux (RHEL) deprecation
+{: #sitemap_red_hat_enterprise_linux_rhel_deprecation}
+
+
+[Red Hat Enterprise Linux (RHEL) deprecation](/docs/openshift?topic=openshift-rhel-deprecation#rhel-deprecation)
+
+* [Timeline](/docs/openshift?topic=openshift-rhel-deprecation#timeline)
+
+* [Migration steps](/docs/openshift?topic=openshift-rhel-deprecation#migration)
+
+
 ## Release notes
 {: #sitemap_release_notes}
 
@@ -274,6 +285,22 @@ subcollection: openshift
 [Release notes](/docs/openshift?topic=openshift-openshift-relnotes#openshift-relnotes)
 
 * [May 2025](/docs/openshift?topic=openshift-openshift-relnotes#openshift-may25)
+
+    * [27 May 2025](/docs/openshift?topic=openshift-openshift-relnotes#openshift-27may25)
+
+        * New! {{site.data.keyword.openshiftlong_notm}} 4.18 is available.
+
+        * New! There are new default security group rules in version 4.18 and later.
+
+        * New! Intel Gaudi 3 GPUs.
+
+        * New! RHEL 9 support for Satellite clusters.
+
+        * Default OS change for version 4.16.
+
+        * RHEL operating system deprecation for VPC clusters version 4.18 and later.
+
+        * {{site.data.keyword.openshiftlong_notm}} version 4.14 and 4.15 are now deprecated.
 
     * [20 May 2025](/docs/openshift?topic=openshift-openshift-relnotes#openshift-may2025)
 
@@ -303,7 +330,7 @@ subcollection: openshift
 
     * [25 April 2025](/docs/openshift?topic=openshift-openshift-relnotes#openshift-25april25)
 
-        * Openshift AI cluster add-on patch updates.
+        * OpenShift AI cluster add-on patch updates.
 
     * [24 April 2025](/docs/openshift?topic=openshift-openshift-relnotes#openshift-24april25)
 
@@ -2495,6 +2522,42 @@ subcollection: openshift
 
 [Migrating to a new operating system](/docs/openshift?topic=openshift-rhel_migrate#rhel_migrate)
 
+* [Migrating worker nodes to RHCOS](/docs/openshift?topic=openshift-rhel_migrate#migrate-rhcos)
+
+    * [Step 1: Upgrade your cluster master](/docs/openshift?topic=openshift-rhel_migrate#upgrade-cluster-rhcos)
+
+    * [Step 2: Creating a new RHCOS worker pool](/docs/openshift?topic=openshift-rhel_migrate#create-pool-rhcos)
+
+    * [Step 3: Add worker nodes to your RHCOS worker pool](/docs/openshift?topic=openshift-rhel_migrate#rhcos-add-worker-nodes)
+
+    * [Step 4: Migrate your workloads](/docs/openshift?topic=openshift-rhel_migrate#rhcos-migrate-workloads)
+
+    * [Step 5: Remove the RHEL worker nodes](/docs/openshift?topic=openshift-rhel_migrate#rm-rhel-pool)
+
+* [Migrating NVIDIA GPU resources to RHCOS worker nodes](/docs/openshift?topic=openshift-rhel_migrate#rhcos-migrate-gpu)
+
+    * [Initial environment details](/docs/openshift?topic=openshift-rhel_migrate#env-details)
+
+    * [Step 1: Update the cluster master](/docs/openshift?topic=openshift-rhel_migrate#step-1-update-master)
+
+    * [Step 2: Create an RHCOS cluster worker pool](/docs/openshift?topic=openshift-rhel_migrate#step-2-create-workerpool)
+
+    * [Step 3: Add worker pool labels to the RHCOS worker pool](/docs/openshift?topic=openshift-rhel_migrate#step-3-create-labels)
+
+    * [Step 4: Add RHCOS worker nodes to cluster](/docs/openshift?topic=openshift-rhel_migrate#step-4-add-nodes)
+
+    * [Step 5: Change the driver installer on the RHEL 8 worker nodes to unmanaged](/docs/openshift?topic=openshift-rhel_migrate#step-5-unmanage-driver)
+
+    * [Step 6: Schedule driver installer and other operands to RHCOS worker nodes](/docs/openshift?topic=openshift-rhel_migrate#step-6-schedule-driver)
+
+    * [Step 7: Convert driver installer from RHEL 8 to RHCOS installation method](/docs/openshift?topic=openshift-rhel_migrate#step-7-convert-installation-method)
+
+    * [Step 8: Migrate GPU-dependent workloads to your RHCOS worker nodes](/docs/openshift?topic=openshift-rhel_migrate#step-8-convert-migrate-workloads)
+
+    * [Step 9: Remove labels from your RHCOS worker pool](/docs/openshift?topic=openshift-rhel_migrate#step-9-remove-labels)
+
+    * [Step 10: Scale down or delete RHEL 8 worker pool](/docs/openshift?topic=openshift-rhel_migrate#step-10-remove-rhel-pool)
+
 * [Migrating to Red Hat Enterprise Linux 9](/docs/openshift?topic=openshift-rhel_migrate#migrate-rhel-9)
 
 [Managing {{site.data.keyword.satelliteshort}} worker pools](/docs/openshift?topic=openshift-satcluster-worker-pools#satcluster-worker-pools)
@@ -3662,11 +3725,13 @@ subcollection: openshift
 
 * [Deploying apps to specific worker nodes by using labels](/docs/openshift?topic=openshift-deploy_app&interface=cli#node_affinity)
 
-* [Deploying an app on a GPU machine](/docs/openshift?topic=openshift-deploy_app&interface=cli#gpu_app)
+* [Deploying an app on an NVIDIA GPU machine](/docs/openshift?topic=openshift-deploy_app&interface=cli#gpu_app)
 
     * [Prerequisites](/docs/openshift?topic=openshift-deploy_app&interface=cli#gpu-prereqs)
 
     * [Deploying a workload](/docs/openshift?topic=openshift-deploy_app&interface=cli#gpu-workload)
+
+* [Deploying an app on an Intel GPU machine](/docs/openshift?topic=openshift-deploy_app&interface=cli#intel-gpu-app)
 
 [Testing access to apps with NodePorts](/docs/openshift?topic=openshift-nodeport#nodeport)
 
@@ -5188,6 +5253,115 @@ subcollection: openshift
 * [Major differences](/docs/openshift?topic=openshift-benchmark-comparison#benchmark-comparison-major)
 
 * [Minor differences](/docs/openshift?topic=openshift-benchmark-comparison#benchmark-comparison-minor)
+
+
+### Version 4.18
+{: #sitemap_version_418}
+
+
+[4.18 version information and update actions](/docs/openshift?topic=openshift-cs_versions_418#cs_versions_418)
+
+* [Release timeline](/docs/openshift?topic=openshift-cs_versions_418#release_timeline_418)
+
+* [Preparing to update](/docs/openshift?topic=openshift-cs_versions_418#prep-up-418)
+
+    * [Update before master](/docs/openshift?topic=openshift-cs_versions_418#418_before)
+
+* [Checking the `Upgradeable` status of your cluster](/docs/openshift?topic=openshift-cs_versions_418#status-check-418)
+
+[4.18 version change log](/docs/openshift?topic=openshift-openshift_changelog_418#openshift_changelog_418)
+
+* [Overview](/docs/openshift?topic=openshift-openshift_changelog_418#changelog_overview_418)
+
+* [Version 4.18](/docs/openshift?topic=openshift-openshift_changelog_418#418_components)
+
+    * [Master fix pack 4.18.11_1544_openshift and worker node fix pack 4.18.11_1541_openshift, released 27 May 2025](/docs/openshift?topic=openshift-openshift_changelog_418#openshift_changelog_41811_1544)
+
+[4.18 CIS Kubernetes benchmark](/docs/openshift?topic=openshift-cis-benchmark-418#cis-benchmark-418)
+
+* [1 Master node security configuration](/docs/openshift?topic=openshift-cis-benchmark-418#1-master-node-security-configuration-418)
+
+    * [1.1 Master node configuration files](/docs/openshift?topic=openshift-cis-benchmark-418#11-master-node-configuration-files-418)
+
+    * [1.2 API server](/docs/openshift?topic=openshift-cis-benchmark-418#12-api-server-418)
+
+    * [1.3 Controller manager](/docs/openshift?topic=openshift-cis-benchmark-418#13-controller-manager-418)
+
+    * [1.4 Scheduler](/docs/openshift?topic=openshift-cis-benchmark-418#14-scheduler-418)
+
+* [2 Etcd node configuration](/docs/openshift?topic=openshift-cis-benchmark-418#2-etcd-node-configuration-418)
+
+* [3 Control plane configuration](/docs/openshift?topic=openshift-cis-benchmark-418#3-control-plane-configuration-418)
+
+    * [3.1 Authentication and authorization](/docs/openshift?topic=openshift-cis-benchmark-418#31-authentication-and-authorization-418)
+
+    * [3.2 Logging](/docs/openshift?topic=openshift-cis-benchmark-418#32-logging-418)
+
+* [4 Worker node security configuration (RHEL_9_64)](/docs/openshift?topic=openshift-cis-benchmark-418#4-worker-node-security-configuration-rhel_9_64-418)
+
+    * [4.1 Worker node configuration files](/docs/openshift?topic=openshift-cis-benchmark-418#41-worker-node-configuration-files-418)
+
+    * [4.2 Kubelet](/docs/openshift?topic=openshift-cis-benchmark-418#42-kubelet-418)
+
+* [4 Worker node security configuration (RHCOS)](/docs/openshift?topic=openshift-cis-benchmark-418#4-worker-node-security-configuration-rhcos-418)
+
+    * [4.1 Worker node configuration files](/docs/openshift?topic=openshift-cis-benchmark-418#41-worker-node-configuration-files-418)
+
+    * [4.2 Kubelet](/docs/openshift?topic=openshift-cis-benchmark-418#42-kubelet-418)
+
+* [5 Kubernetes policies](/docs/openshift?topic=openshift-cis-benchmark-418#5-kubernetes-policies-418)
+
+    * [5.1 RBAC and service accounts](/docs/openshift?topic=openshift-cis-benchmark-418#51-rbac-and-service-accounts-418)
+
+    * [5.2 Pod security policies](/docs/openshift?topic=openshift-cis-benchmark-418#52-pod-security-policies-418)
+
+    * [5.3 Network policies and CNI](/docs/openshift?topic=openshift-cis-benchmark-418#53-network-policies-and-cni-418)
+
+    * [5.4 Secrets management](/docs/openshift?topic=openshift-cis-benchmark-418#54-secrets-management-418)
+
+    * [5.5 Extensible admission control](/docs/openshift?topic=openshift-cis-benchmark-418#55-extensible-admission-control-418)
+
+    * [5.7 General policies](/docs/openshift?topic=openshift-cis-benchmark-418#57-general-policies-418)
+
+    * [IBM remediations and explanations](/docs/openshift?topic=openshift-cis-benchmark-418#ibm-remediations-and-explanations-418)
+
+[4.18 compliance operator benchmark](/docs/openshift?topic=openshift-benchmarks_418_co#benchmarks_418_co)
+
+* [1 Control plane components](/docs/openshift?topic=openshift-benchmarks_418_co#co-benchmark-418-cp)
+
+    * [1.1 Master node configuration files](/docs/openshift?topic=openshift-benchmarks_418_co#co-benchmark-418-11)
+
+    * [1.2 API server](/docs/openshift?topic=openshift-benchmarks_418_co#co-benchmark-418-12)
+
+    * [1.3 Controller manager](/docs/openshift?topic=openshift-benchmarks_418_co#co-benchmark-418-13)
+
+    * [1.4 Scheduler](/docs/openshift?topic=openshift-benchmarks_418_co#co-benchmark-418-14)
+
+* [2 etcd](/docs/openshift?topic=openshift-benchmarks_418_co#co-benchmark-418-2)
+
+* [3 Control plane configuration](/docs/openshift?topic=openshift-benchmarks_418_co#co-benchmark-418-3)
+
+    * [3.1 Authentication and authorization](/docs/openshift?topic=openshift-benchmarks_418_co#co-benchmark-418-31)
+
+    * [3.2 Logging](/docs/openshift?topic=openshift-benchmarks_418_co#co-benchmark-418-32)
+
+* [4 Worker nodes](/docs/openshift?topic=openshift-benchmarks_418_co#co-benchmark-418-4)
+
+* [5 Policies](/docs/openshift?topic=openshift-benchmarks_418_co#co-benchmark-418-5)
+
+    * [5.1 RBAC and service accounts](/docs/openshift?topic=openshift-benchmarks_418_co#co-benchmark-418-51)
+
+    * [5.2 Pod security policies](/docs/openshift?topic=openshift-benchmarks_418_co#co-benchmark-418-52)
+
+    * [5.3 Network policies and CNI](/docs/openshift?topic=openshift-benchmarks_418_co#co-benchmark-418-53)
+
+    * [5.4 Secrets management](/docs/openshift?topic=openshift-benchmarks_418_co#co-benchmark-418-54)
+
+    * [5.5 Extensible admission control](/docs/openshift?topic=openshift-benchmarks_418_co#co-benchmark-418-55)
+
+    * [5.7 General policies](/docs/openshift?topic=openshift-benchmarks_418_co#co-benchmark-418-57)
+
+* [Remediations and explanations](/docs/openshift?topic=openshift-benchmarks_418_co#co-benchmark-418-remdiation)
 
 
 ### Version 4.17
@@ -9544,6 +9718,8 @@ subcollection: openshift
     * [Step 3: Get the details for each worker node](/docs/openshift?topic=openshift-debug_worker_nodes#worker-debug-get-details)
 
     * [Step 4: Review the infrastructure provider for the worker node](/docs/openshift?topic=openshift-debug_worker_nodes#worker-debug-rev-infra)
+
+    * [Step 5: Gather the logs and other details about your worker nodes](/docs/openshift?topic=openshift-debug_worker_nodes#worker-debug-must-gather)
 
 [Debugging worker nodes with Kubernetes API](/docs/openshift?topic=openshift-debug-kube-nodes#debug-kube-nodes)
 

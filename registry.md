@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2025
-lastupdated: "2025-03-28"
+lastupdated: "2025-05-28"
 
 
 keywords: openshift, {{site.data.keyword.openshiftlong_notm}}, kubernetes, registry, pull secret, secrets
@@ -1188,7 +1188,9 @@ Wondering what to do next? You can [set up the **entitled** Helm chart repositor
 ## Adding a private registry to the global pull secret
 {: #cluster_global_pull_secret}
 
-With OpenShift Container Platform, you can set up a global image pull secret that each worker node in the cluster can use to pull images from a private registry.
+[RHEL worker nodes]{: tag-red}
+
+In clusters that use only RHEL worker nodes, you can set up a global image pull secret that each worker node in the cluster can use to pull images from a private registry.
 {: shortdesc}
 
 By default, your {{site.data.keyword.openshiftlong_notm}} cluster has a global image pull secret for the following registries, so that default {{site.data.keyword.redhat_openshift_notm}} components can be deployed.
@@ -1347,7 +1349,19 @@ To add private registries, edit the global `pull-secret` in the `openshift-confi
 ## Updating the global pull secret
 {: #oc-pull-secret-cli}
 
-Complete the following steps to update the global pull secret in your {{site.data.keyword.openshiftlong_notm}} cluster.
+[RHCOS worker nodes]{: tag-magenta}
+[RHEL worker nodes]{: tag-red}
+
+In clusters that use RHCOS workers or a combination or RHCOS and RHEL workers, you can complete the following steps to update the global pull secret in your {{site.data.keyword.openshiftlong_notm}} cluster.
+
+By default, your {{site.data.keyword.openshiftlong_notm}} cluster has a global image pull secret for the following registries, so that default {{site.data.keyword.redhat_openshift_notm}} components can be deployed.
+* `cloud.openshift.com`
+* `quay.io`
+* `registry.connect.redhat.com`
+* `registry.redhat.io`
+
+Do not replace the global pull secret with a pull secret that does not have credentials to the default Red Hat registries. If you do, the default {{site.data.keyword.redhat_openshift_notm}} components that are installed in your cluster, such as the OperatorHub, might fail because they can't pull images from these registries.
+{: important}
 
 
 1. Create a secret that has the credentials for the registry you want to use.

@@ -32,6 +32,7 @@ toc:
           topics:
           - path-admin.md
           - path-dev.md
+      - rhel-deprecation.md
       - release-notes.md
   - navgroup: 
       id: tutorial
@@ -341,6 +342,15 @@ toc:
           - openshift_versions_overview.md
           - benchmarks_overview.md
           - benchmark-comparison.md
+          - topicgroup:
+              label: Version 4.18
+              topics:
+              - openshift_versions_418.md
+              - openshift_versions_changelog_418.md
+              - topic: benchmarks_418.md
+                navtitle: 4.18 CIS Kubernetes benchmark
+              - topic: benchmarks_418_co.md
+                navtitle: 4.18 compliance operator benchmark
           - topicgroup:
               label: Version 4.17
               topics:
