@@ -387,6 +387,7 @@ If you experience issues installing the Node Feature Discovery Operator or the N
 
 Now that you deployed a test GPU workload, you might want to set up your cluster to run a tool that relies on GPU processing, such as [IBM Maximo Visual Inspection](https://www.ibm.com/products/maximo/asset-performance-management){: external}.
 
+
     
 ## Deploying an app on an Intel AI Accelerator (Gaudi 3) machine
 {: #intel-gpu-app}
@@ -590,4 +591,4 @@ For more information and examples, see the [Habana docs](https://docs.habana.ai/
     {: screen}
 
 
-    
+ 
