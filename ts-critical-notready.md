@@ -2,7 +2,7 @@
 
 copyright:
   years: 2023, 2025
-lastupdated: "2025-05-13"
+lastupdated: "2025-05-27"
 
 
 keywords: critical, not ready, notready, troubleshooting, worker node status, status
@@ -405,7 +405,7 @@ Follow the steps to [access the worker](https://cloud.ibm.com/docs/containers?to
     ```
     {: pre}
 
-    Run the commmad to dump running processes.
+    Run the command to dump running processes.
     ```sh
     ps -aux 
     ```

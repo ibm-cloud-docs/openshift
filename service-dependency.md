@@ -2,7 +2,7 @@
 
 copyright:
   years: 2024, 2025
-lastupdated: "2025-04-17"
+lastupdated: "2025-05-27"
 
 keywords:
 
@@ -38,24 +38,26 @@ The following table provides the dependency listing of this service following a 
 
 |Dependencies|Dependency impacts|Customer provided|Control or data plane|Location of dependency|
 |:---|:---|:---|:---|:---|
-| IBM Cloud Service Endpoints | Availability, Instance control, Operations, Security compliance | No | Both |  Same data center  |
+| IBM Cloud Service Endpoints | Availability, Instance control, Operations, Security compliance | No | Both |  us-east  |
 | IBM Cloud Virtual Private Cloud | Availability, Instance control, Operations | Yes | Both |  Same zone  |
-| IBM Cloud Databases - databases-for-postgresql | Availability, Instance control, Operations | No | Both |  Same region  |
-| IBM Cloud Classic DNS Servers | Availability, Change management, Instance control | No | Both |  Same data center  |
-| IBM Cloud Classic Infrastructure Resource Management | Change management, Instance control | No | Both |  [Global](/docs/resiliency?topic=resiliency-ha-redundancy#global-platform)  |
-| IBM Cloud Identity and Access Management | Access management, Availability, Instance control, Operations, Security compliance | No | Both |  [Global](/docs/resiliency?topic=resiliency-ha-redundancy#global-platform)  |
-| IBM Cloud File Storage for Virtual Private Cloud | Availability, Disaster recovery, Instance control | No | Both |  Same zone  |
-| IBM Cloud DNS Services | Availability, Change management, Disaster recovery, Instance control | Yes | Both |  Same region  |
-| IBM Cloud Virtual Servers | Availability, Instance control, Operations | No | Both |  Same data center  |
-| IBM Cloud Load Balancer for VPC | Availability, Operations | No | Both |  Same zone  |
-| Akamai | Availability, Instance control | No | Both |  [Global](/docs/resiliency?topic=resiliency-ha-redundancy#global-platform)  |
-| IBM Cloud Virtual Private Endpoint for VPC | Availability, Instance control | No | Both |  Same zone  |
-| IBM Cloud File Storage | Availability, Disaster recovery, Instance control | No | Both |  Same data center  |
-| IBM Cloud Global Search and Tagging | Availability | No | Both |  [Global](/docs/resiliency?topic=resiliency-ha-redundancy#global-platform)  |
 | IBM Cloud Block Storage | Availability, Disaster recovery, Instance control | No | Both |  Same data center  |
 | IBM Cloud Block Storage for Virtual Private Cloud | Availability, Instance control | No | Both |  Same zone  |
+| IBM Cloud File Storage for Virtual Private Cloud | Availability, Disaster recovery, Instance control | No | Both |  Same zone  |
+| IBM Cloud Virtual Servers | Availability, Instance control, Operations | No | Both |  Same data center  |
 | IBM Cloud Public IP Address Management | Change management, Instance control | No | Both |  [Global](/docs/resiliency?topic=resiliency-ha-redundancy#global-platform)  |
+| IBM Cloud Classic Infrastructure Resource Management | Change management, Instance control | No | Both |  [Global](/docs/resiliency?topic=resiliency-ha-redundancy#global-platform)  |
+| IBM Cloud Bare Metal Servers for VPC | Availability, Instance control | No | Both |  Same zone  |
 | IBM Cloud Virtual Server for VPC | Availability, Instance control | No | Both |  Same zone  |
+| IBM Cloud Classic DNS Servers | Availability, Change management, Instance control | No | Both |  Same data center  |
+| IBM Cloud Virtual Private Endpoint for VPC | Availability, Instance control | No | Both |  Same zone  |
+| IBM Cloud Identity and Access Management | Access management, Availability, Instance control, Operations, Security compliance | No | Both |  [Global](/docs/resiliency?topic=resiliency-ha-redundancy#global-platform)  |
+| IBM Cloud Global Search and Tagging | Availability | No | Both |  [Global](/docs/resiliency?topic=resiliency-ha-redundancy#global-platform)  |
+| IBM Cloud DNS Services | Availability, Disaster recovery | Yes | Both |  Same region  |
+| IBM Cloud Databases - databases-for-postgresql | Availability, Instance control, Operations | No | Both |  us-east  |
+| IBM Cloud Load Balancer for VPC | Availability, Operations | No | Both |  Same zone  |
+| IBM Cloud Bare Metal | Availability, Instance control, Operations | No | Both |  Same data center  |
+| Akamai | Availability, Instance control | No | Both |  [Global](/docs/resiliency?topic=resiliency-ha-redundancy#global-platform)  |
+| IBM Cloud File Storage | Availability, Disaster recovery, Instance control | No | Both |  Same data center  |
 {: row-headers}
 {: caption="IBM Cloud Kubernetes Service and Red Hat OpenShift on IBM Cloud service dependency information - Critical dependencies" caption-side="top"}
 {: tab-title="Critical dependencies"}
@@ -66,16 +68,15 @@ The following table provides the dependency listing of this service following a 
 
 |Dependencies|Dependency impacts|Customer provided|Control or data plane|Location of dependency|
 |:---|:---|:---|:---|:---|
-| IBM Key Protect for IBM Cloud | Availability, Instance control, Operations, Security compliance | No | Both |  Same region  |
-| IBM Cloud Global Resource Catalog | Availability, Change management, Instance control | No | Both |  [Global](/docs/resiliency?topic=resiliency-ha-redundancy#global-platform)  |
-| IBM Cloud Bare Metal | Availability, Instance control, Operations | No | Both |  Same data center  |
-| IBM Key Protect for IBM Cloud | Availability, Instance control, Security compliance | Yes | Both |  Same region  |
-| Red Hat OpenShift Cluster Manager | Availability | No | Both |  [Global](/docs/resiliency?topic=resiliency-ha-redundancy#global-platform)  |
-| IBM Cloud Container Registry | Availability, Change management, Instance control, Operations | No | Both |  Same region  |
-| IBM Cloud Classic NTP Servers | Availability, Change management, Instance control | No | Both |  Same data center  |
-| Let's Encrypt | Availability | No | Both |  [Global](/docs/resiliency?topic=resiliency-ha-redundancy#global-platform)  |
-| IBM Cloud Hyper Protect Crypto | Availability, Instance control | Yes | Both |  Same region  |
+| IBM Key Protect for IBM Cloud | Availability, Instance control, Operations, Security compliance | No | Both |  us-east  |
+| IBM Cloud Hyper Protect Crypto | Availability, Instance control | Yes | Both |  us-east  |
+| IBM Cloud Container Registry | Availability, Change management, Instance control, Operations | No | Both |  us-east  |
 | IBM Cloud Business Support Services | Availability | No | Both |  [Global](/docs/resiliency?topic=resiliency-ha-redundancy#global-platform)  |
+| IBM Cloud Classic NTP Servers | Availability, Change management, Instance control | No | Both |  Same data center  |
+| RedHat OpenShift Cluster Manager | Availability | No | Both |  [Global](/docs/resiliency?topic=resiliency-ha-redundancy#global-platform)  |
+| Let's Encrypt | Availability | No | Both |  [Global](/docs/resiliency?topic=resiliency-ha-redundancy#global-platform)  |
+| IBM Cloud Global Resource Catalog | Availability, Change management, Instance control | No | Both |  [Global](/docs/resiliency?topic=resiliency-ha-redundancy#global-platform)  |
+| IBM Key Protect for IBM Cloud | Availability, Instance control, Security compliance | Yes | Both |  us-east  |
 {: row-headers}
 {: caption="IBM Cloud Kubernetes Service and Red Hat OpenShift on IBM Cloud service dependency information - Significant dependencies" caption-side="top"}
 {: tab-title="Significant dependencies"}
@@ -83,39 +84,6 @@ The following table provides the dependency listing of this service following a 
 {: class="comparison-tab-table"}
 {: #significant-deps}
 {: summary="Use the buttons for the dependency level to change the context of the table. This table has row and column headers. The row headers details about the dependency. The column headers identify the dependency. To understand the details about each dependency, navigate to the row to find the dependency that you need more information about interested in."}
-
-|Dependencies|Dependency impacts|Customer provided|Control or data plane|Location of dependency|
-|:---|:---|:---|:---|:---|
-| IBM Cloud Secrets Manager| Change management | Yes | Both |  Same region  |
-| IBM Cloud Secrets Manager| Change management, Disaster recovery, Security compliance | No | Both |  Same region  |
-{: row-headers}
-{: caption="IBM Cloud Kubernetes Service and Red Hat OpenShift on IBM Cloud service dependency information - Medium dependencies" caption-side="top"}
-{: tab-title="Medium dependencies"}
-{: tab-group="service-dependency-data-for-containers-kubernetes"}
-{: class="comparison-tab-table"}
-{: #medium-deps}
-{: summary="Use the buttons for the dependency level to change the context of the table. This table has row and column headers. The row headers details about the dependency. The column headers identify the dependency. To understand the details about each dependency, navigate to the row to find the dependency that you need more information about interested in."}
-
-|Dependencies|Dependency impacts|Customer provided|Control or data plane|Location of dependency|
-|:---|:---|:---|:---|:---|
-| SOS Inventory Management| Security compliance | No | Both |  [Global](https://cloud.ibm.com/docs/resiliency?topic=resiliency-ha-redundancy#global-service)  |
-| PagerDuty| Operations | No | Both |  [Global](https://cloud.ibm.com/docs/resiliency?topic=resiliency-ha-redundancy#global-service)  |
-| OSS Platform| Operations | No | Both |  [Global](https://cloud.ibm.com/docs/resiliency?topic=resiliency-ha-redundancy#global-service)  |
-| IBM Cloud Object Storage| Disaster recovery | No | Both |  Same region  |
-| LaunchDarkly| Operations | No | Both |  [Global](https://cloud.ibm.com/docs/resiliency?topic=resiliency-ha-redundancy#global-service)  |
-| IBM Log Analysis Log Routing| Operations | No | Both |  Same region  |
-| IBM Cloud Activity Tracker event routing| Security compliance | No | Both |  Same region  |
-| Slack| Operations | No | Both |  [Global](https://cloud.ibm.com/docs/resiliency?topic=resiliency-ha-redundancy#global-service)  |
-| IBM Cloud Privileged Access Gateway| Operations, Security compliance | No | Both |  Same region  |
-| IBM Cloud Monitoring| Operations | No | Both |  Same region  |
-{: row-headers}
-{: caption="IBM Cloud Kubernetes Service and Red Hat OpenShift on IBM Cloud service dependency information - Minimal dependencies" caption-side="top"}
-{: tab-title="Minimal dependencies"}
-{: tab-group="service-dependency-data-for-containers-kubernetes"}
-{: class="comparison-tab-table"}
-{: #minimal-deps}
-{: summary="Use the buttons for the dependency level to change the context of the table. This table has row and column headers. The row headers details about the dependency. The column headers identify the dependency. To understand the details about each dependency, navigate to the row to find the dependency that you need more information about interested in."}
-
 
 This table can be used to answer the following questions:
 

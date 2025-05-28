@@ -2,7 +2,7 @@
 
 copyright:
   years: 2023, 2025
-lastupdated: "2025-03-31"
+lastupdated: "2025-05-28"
 
 
 keywords: openshift, version, update, upgrade, 4.14, update openshift
@@ -16,6 +16,13 @@ subcollection: openshift
 
 # 4.14 version information and update actions
 {: #cs_versions_414}
+
+
+
+This version is deprecated. Update your cluster to a [supported version](/docs/openshift?topic=openshift-openshift_versions) as soon as possible.
+{: deprecated}
+
+
 
 Review information about version 4.14 of {{site.data.keyword.openshiftlong_notm}}. This version is based on Kubernetes version {{site.data.keyword.openshift_414_kube_version}}. 
 {: shortdesc}

@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2023, 2025
-lastupdated: "2025-04-17"
+lastupdated: "2025-05-28"
 
 
 keywords: openshift, {{site.data.keyword.openshiftlong_notm}}, firewall, rules, security group, 4.15, networking, secure by default, outbound traffic protection
@@ -90,6 +90,7 @@ Do not modify the rules in the `kube-<clusterID>` security group as doing so mig
 | Allows TCP and UDP traffic through custom DNS resolver for zone `n`.`**` | Outbound | TCP/UDP | Min=53,Max=53 | DNS resolver IP address in zone `n`. |
 | Allows traffic to the entire CSE service range. | Outbound | All | All | 166.8.0.0/14 |
 | Allows traffic to the IAM private endpoint for all zones. The IPs might vary by region. One rule is added per zone the cluster is in. | Outbound | All | All | IAM private endpoint IP address for all zones. |
+| [4.18 and later]{: tag-red} Allows outbound traffic to the instance metadata API. | Outbound | All | All | 169.254.169.254 |
 {: caption="Rules in the kube-clusterID security group" caption-side="bottom"}
 {: summary="The table shows the rules applied to the cluster worker security group. The first column includes protocol of the rule. The second column includes the ports and types. The third column includes remote destination of the rule. The fourth column includes a brief description of the rule."}
 

@@ -3,7 +3,7 @@
 copyright:
   years: 2024, 2025
 
-lastupdated: "2025-05-20"
+lastupdated: "2025-05-28"
 
 
 keywords: change log, version history, 4.17_openshift
@@ -84,7 +84,7 @@ The following table shows the changes that are in the master fix pack 4.17.24_15
 | --- | --- | --- | --- |
 | Calico | v3.28.2 | v3.28.3 | See the [Calico release notes](https://docs.tigera.io/calico/3.28/release-notes/#v3.28.3){: external}. |
 | Cluster health image | v1.6.7 | v1.6.8 | New version contains updates and security fixes. |
-| etcd | v3.5.18 | v3.5.21 | See the [etcd release notes](https://github.com/coreos/etcd/releases/v3.5.21){: external}. |
+| etcd | v3.5.18 | v3.5.21 | See the [etcd release notes](https://github.com/etcd-io/etcd/releases/v3.5.21){: external}. |
 | {{site.data.keyword.cloud_notm}} Controller Manager | v1.30.11-1 | v1.30.11-6 | New version contains updates and security fixes. |
 | {{site.data.keyword.cloud_notm}} RBAC Operator | cb4f333 | d1545bd | New version contains updates and security fixes. |
 | Key Management Service provider | v2.10.11 | v2.10.12 | New version contains updates and security fixes. |

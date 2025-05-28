@@ -1,8 +1,8 @@
 ---
 
 copyright: 
-  years: 2024, 2024
-lastupdated: "2024-10-10"
+  years: 2024, 2025
+lastupdated: "2025-05-28"
 
 
 keywords: openshift, benchmarks, 4.15, compliance operator, compliance
@@ -19,6 +19,13 @@ subcollection: openshift
 
 # 4.15 compliance operator benchmark
 {: #benchmarks_415_co}
+
+
+
+This version is deprecated. Update your cluster to a [supported version](/docs/openshift?topic=openshift-openshift_versions) as soon as possible.
+{: deprecated}
+
+
 
 Review the compliance operator benchmark results for {{site.data.keyword.openshiftlong_notm}} version 4.15.
 {: shortdesc}

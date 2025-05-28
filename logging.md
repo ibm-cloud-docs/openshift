@@ -2,7 +2,7 @@
 
 copyright:
   years: 2024, 2025
-lastupdated: "2025-05-06"
+lastupdated: "2025-05-27"
 
 keywords: logging, cloud logs, logs, log analysis, containers
 
@@ -25,7 +25,7 @@ You can use {{site.data.keyword.logs_routing_full_notm}}, a platform service, to
 You can use {{site.data.keyword.logs_full_notm}} to visualize and alert on platform logs that are generated in your account and routed by {{site.data.keyword.logs_routing_full_notm}} to an {{site.data.keyword.logs_full_notm}} instance.
 
 
-As of 28 March 2024, the {{site.data.keyword.la_full_notm}} service is deprecated and will no longer be supported as of 30 March 2025. Customers will need to migrate to {{site.data.keyword.logs_full_notm}} before 30 March 2025. During the migration period, customers can use {{site.data.keyword.la_full_notm}} along with {{site.data.keyword.logs_full_notm}}. Logging is the same for both services. Learn more about [{{site.data.keyword.logs_full_notm}}](/docs/cloud-logs?topic=cloud-logs-about-cl). 
+As of 28 March 2024, the {{site.data.keyword.la_full_notm}} service is deprecated and is no longer supported. Learn more about [{{site.data.keyword.logs_full_notm}}](/docs/cloud-logs?topic=cloud-logs-about-cl). 
 {: important}
 
 ## Locations where logs are generated
@@ -126,54 +126,3 @@ For information about fields included in every platform log, see [Fields for pla
 {: #cloud-logs}
 
 You can view your logs to view details on events that affect your cluster components. For example, in the event of a pod failure you can view your logs in the dashboard to see related error messages. 
-
-
-
-
-## Migrating to Cloud Logs
-{: #cloud-logs-migration}
-
-Log Analysis and Activity Tracker are no longer supported. For more information, see [Migrating to Cloud Logs](/docs/log-analysis?topic=log-analysis-deprecation_migration).
-{: unsupported}
-
-You need to migrate if your clusters are using the unsupported logging agent.
-
-Check if your clusters are using the unsupported agent.
-
-1. Run the following command. If a logging config is returned, you must migrate your existing Log Analysis and Activity Tracker instances to Cloud Logs instances.
-    ```sh
-    ibmcloud ob logging config ls --cluster <cluster>
-    ```
-    {: pre}
-
-1. The Cloud Logs service has provided migration guides for moving your instances. Learn more about [{{site.data.keyword.logs_full_notm}}](/docs/cloud-logs?topic=cloud-logs-about-cl). 
-
-
-## Enabling your clusters to use your Cloud Logs instance
-{: #migrate-cloud-logs-clusters}
-
-After you’ve migrated your Log Analysis and Activity Tracker instances to Cloud Logs, you must enable your clusters to use the new instances.
-
-You can migrate your clusters from the Console or by using the CLI.
-
-### Enabling Cloud Logs in the console
-{: #cloud-logs-console-enable}
-
-
-1. From the [console](https://cloud.ibm.com/containers/cluster-management/clusters){: external}, select your cluster.
-1. Enable the **Cloud Logs** [integration](#log-enable-existing).
-
-### Enabling Cloud Logs in the CLI
-{: #cloud-logs-cli-enable}
-
-
-1. Delete your deprecated logging config.
-
-    ```sh
-    ibmcloud ob logging config delete --cluster INSTANCE --instance INSTANCE
-    ```
-    {: pre}
-
-1. Enable the Cloud Logs Helm chart in your cluster. For more information, see the following links
-    - [Deploying the Logging agent for OpenShift clusters using a Helm chart](/docs/cloud-logs?topic=cloud-logs-agent-helm-os-deploy).
-    - [Deploying the Logging agent for Kubernetes clusters using a Helm chart](/docs/cloud-logs?topic=cloud-logs-agent-helm-kube-deploy).

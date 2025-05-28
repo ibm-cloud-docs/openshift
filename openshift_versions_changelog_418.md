@@ -1,0 +1,62 @@
+---
+
+copyright:
+  years: 2024, 2025
+
+lastupdated: "2025-05-28"
+
+
+keywords: change log, version history, 4.18_openshift
+
+subcollection: openshift
+
+---
+
+{{site.data.keyword.attribute-definition-list}}
+
+<!-- The content in this topic is auto-generated except for reuse-snippets indicated with {[ ]}. -->
+
+
+# 4.18 version change log
+{: #openshift_changelog_418}
+
+View information of version changes for major, minor, and patch updates that are available for your {{site.data.keyword.openshiftlong}} clusters that run this version. Changes include updates to {{site.data.keyword.redhat_openshift_notm}}, Kubernetes, and {{site.data.keyword.cloud_notm}} Provider components.
+{: shortdesc}
+
+## Overview
+{: #changelog_overview_418}
+
+
+Unless otherwise noted in the change logs, the {{site.data.keyword.cloud_notm}} provider version enables {{site.data.keyword.redhat_openshift_notm}} APIs and features that are at beta. {{site.data.keyword.redhat_openshift_notm}} alpha features are disabled and subject to change.
+{: shortdesc}
+
+Check the [Security Bulletins on {{site.data.keyword.cloud_notm}} Status](https://cloud.ibm.com/status?selected=security){: external} for security vulnerabilities that affect {{site.data.keyword.openshiftlong_notm}}. You can filter the results to view only **Kubernetes Service** security bulletins that are relevant to {{site.data.keyword.openshiftlong_notm}}. Change log entries that address other security vulnerabilities but don't include an {{site.data.keyword.IBM_notm}} security bulletin are for vulnerabilities that are not known to affect {{site.data.keyword.openshiftlong_notm}} in normal usage. If you run privileged containers, run commands on the workers, or execute untrusted code, then you might be at risk.
+
+Master patch updates are applied automatically. Worker node patch updates can be applied by reloading or updating the worker nodes. For more information about major, minor, and patch versions and preparation actions between minor versions, see [{{site.data.keyword.redhat_openshift_notm}} versions](/docs/openshift?topic=openshift-openshift_versions).
+{: tip}
+
+## Version 4.18
+{: #418_components}
+
+
+### Master fix pack 4.18.11_1544_openshift and worker node fix pack 4.18.11_1541_openshift, released 27 May 2025
+{: #openshift_changelog_41811_1544}
+
+| Component | Previous | Current | Description |
+| --- | --- | --- | --- |
+| Calico API server | v3.28.3 | v3.29.2 | See the [Calico release notes](https://docs.projectcalico.org/releases){: external}. |
+| Calico | v3.28.3 | v3.29.2 | See the [Calico release notes](https://docs.projectcalico.org/releases){: external}. |
+| Calico policy controller | v3.28.3 | v3.29.2 | See the [Calico release notes](https://docs.projectcalico.org/releases){: external}. |
+| Calico Typha | v3.28.3 | v3.29.2 | See the [Calico release notes](https://docs.projectcalico.org/releases){: external}. |
+| Cluster health image | v1.6.8 | v1.6.9 | New version contains updates and security fixes. |
+| HA master: etcd-operator image | v2.2.21 | v2.2.23 | New version contains updates and security fixes. |
+| IBM Cloud Controller Manager | v1.30.11-6 | v1.31.9-1 | New version contains updates and security fixes. |
+| IBM Cloud File Storage plug-in and monitor | 449 | 450 | New version contains updates and security fixes. |
+| Key Management Service provider | 2.10.12 | 2.10.13 | New version contains updates and security fixes. |
+| Kubernetes major.minor release | 1.30 | 1.31 | [Kubernetes docs](https://kubernetes.io/docs/home/){: external}. |
+| Load balancer for IBM Cloud Provider | 3232 | 3293 | New version contains updates and security fixes. |
+| OpenShift | 4.17.24-x86_64 | 4.18.11-x86_64 | [OpenShift docs](https://docs.openshift.com/container-platform/){: external}. |
+| Portieris admission controller | v0.13.26 | v0.13.28 | See the [Portieris admission controller release notes](https://github.com/IBM/portieris/releases/tag/v0.13.28){: external}. |
+| Red Hat OpenShift on IBM Cloud Control Plane Operator, Metrics Server, and toolkit | 4.17.0+20250414 | N/A | Red Hat OpenShift on IBM Cloud 4.18 now utilizes [Red Hat Hypershift](https://github.com/openshift/hypershift){: external} in place of the toolkit. Also, see the [Red Hat OpenShift on IBM Cloud toolkit release notes](https://github.com/openshift/ibm-roks-toolkit/releases){: external}. |
+| Tigera Operator | v1.34.8 | v1.36.5 | See the [Tigera Operator release notes](https://github.com/tigera/operator/releases/tag/v1.36.5){: external}. |
+{: caption="Changes since master fix pack 4.17.24_1537_openshift and worker fix pack 4.17.25_1536_openshift." caption-side="bottom"}

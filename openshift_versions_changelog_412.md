@@ -3,7 +3,7 @@
 copyright:
   years: 2024, 2025
 
-lastupdated: "2025-05-20"
+lastupdated: "2025-05-28"
 
 
 keywords: change log, version history, 4.12_openshift
@@ -81,7 +81,7 @@ The following table shows the changes that are in the master fix pack 4.12.75_16
 | Component | Previous | Current | Description |
 | --- | --- | --- | --- |
 | Cluster health image | v1.5.13 | v1.5.14 | New version contains updates and security fixes. |
-| etcd | v3.5.18 | v3.5.21 | See the [etcd release notes](https://github.com/coreos/etcd/releases/v3.5.21){: external}. |
+| etcd | v3.5.18 | v3.5.21 | See the [etcd release notes](https://github.com/etcd-io/etcd/releases/v3.5.21){: external}. |
 | {{site.data.keyword.IBM_notm}} Calico extension | 1647 | 1655 | New version contains security fixes. |
 | {{site.data.keyword.cloud_notm}} RBAC Operator | cb4f333 | d1545bd | New version contains updates and security fixes. |
 | Key Management Service provider | v2.8.20 | v2.8.21 | New version contains updates and security fixes. |
@@ -133,7 +133,7 @@ The following table shows the changes that are in the master fix pack 4.12.73_16
 
 | Component | Previous | Current | Description |
 | --- | --- | --- | --- |
-| Calico | v3.27.4 | v3.27.5 | See the [Calico release notes](https://docs.tigera.io/calico/3.27/release-notes/#v3.27.5){: external}. |
+| Calico | v3.27.4 | v3.27.5 | See the [Calico release notes](https://archive-os-3-27.netlify.app/calico/3.27/release-notes/#v3.27.5){: external}. |
 | Cluster health image | v1.5.10 | v1.5.13 | New version contains updates and security fixes. |
 | etcd | v3.5.17 | v3.5.18 | See the [etcd release notes](https://github.com/etcd-io/etcd/releases/v3.5.18){: external}. |
 | {{site.data.keyword.IBM_notm}} Calico extension | 1624 | 1647 | New version contains security fixes. |
@@ -562,7 +562,7 @@ The following table shows the changes that are in the master fix pack 4.12.60_16
 
 | Component | Previous | Current | Description |
 | --- | --- | --- | --- |
-| Calico | v3.27.2 | v3.27.4 | See the [Calico release notes](https://docs.tigera.io/calico/3.27/release-notes/#v3.27.4){: external}. |
+| Calico | v3.27.2 | v3.27.4 | See the [Calico release notes](https://archive-os-3-27.netlify.app/calico/3.27/release-notes/#v3.27.4){: external}. |
 | Cluster health image | v1.5.6 | v1.5.7 | New version contains updates and security fixes. |
 | etcd | v3.5.13 | v3.5.14 | See the [etcd release notes](https://github.com/etcd-io/etcd/releases/v3.5.14){: external}. |
 | {{site.data.keyword.IBM_notm}} Calico extension | 1595 | 1598 | New version contains security fixes. |
@@ -690,7 +690,7 @@ The following table shows the changes that are in the master fix pack 4.12.56_15
 
 | Component | Previous | Current | Description |
 | --- | --- | --- | --- |
-| Calico | v3.26.4 | v3.27.2 | See the [Calico release notes](https://docs.tigera.io/calico/3.27/release-notes/#v3.27.2){: external}. |
+| Calico | v3.26.4 | v3.27.2 | See the [Calico release notes](https://archive-os-3-27.netlify.app/calico/3.27/release-notes/#v3.27.2){: external}. |
 | Cluster health image | v1.5.4 | v1.5.5 | New version contains updates and security fixes. |
 | {{site.data.keyword.IBM_notm}} Calico extension | 1537 | 1589 | New version contains security fixes. |
 | {{site.data.keyword.cloud_notm}} Block Storage driver and plug-in | v2.4.19 | v2.4.20 | New version contains updates and security fixes. |

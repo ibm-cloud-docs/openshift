@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2025
-lastupdated: "2025-03-18"
+lastupdated: "2025-05-27"
 
 
 keywords: openshift, reservations, worker node
@@ -69,7 +69,7 @@ How do I know how many reserved worker nodes I need?
 What kind of workloads are best suited for reservations?
 :   The following workloads are good candidates to run on reserved worker nodes:
     *   Production workloads
-    *   Mission-critical workloads that must run 24/7
+    *   Mission-critical workloads that must run 24x7
     *   Predictable workloads that have continuous usage and steady states
     *   Workloads that you want to increase high availability for by creating replicas in different zones and regions
 

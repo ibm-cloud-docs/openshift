@@ -2,7 +2,7 @@
 
 copyright:
   years: 2022, 2025
-lastupdated: "2025-03-14"
+lastupdated: "2025-05-28"
 
 
 keywords: maintenance, host maintenance, notification, workers, offline
@@ -64,16 +64,26 @@ Follow the steps to reboot the worker before the maintenance period begins.
 {: shortdesc}
 
 1. Cordon the worker.
+
+
+
     ```sh
-    oc cordon <worker_id>
+    oc adm cordon <worker_id>
     ```
     {: pre}
 
+
+
 2. Drain the worker.
+
+
+
     ```sh
-    oc drain <worker_id>
+    oc adm drain <worker_id>
     ```
-    {: pre}    
+    {: pre}
+
+
 
 3. Reboot the worker. Make sure you include the `--hard` option.
     ```sh
@@ -82,10 +92,15 @@ Follow the steps to reboot the worker before the maintenance period begins.
     {: pre}
 
 4. Mark the worker as available to be scheduled.
+
+
+
     ```sh
-    oc uncordon <worker_id>
+    oc adm uncordon <worker_id>
     ```
     {: pre}
+
+
 
 ### Workers in VPC clusters
 {: #worker-maintenance-vpc}
@@ -96,10 +111,16 @@ For workers in VPC clusters, the steps to take depend on the flavor of the worke
 For workers with the `cx2.`, `bx2.`, or `mx2.` flavors:
 
 1. Cordon the worker.
+
+
+
+
     ```sh
-    oc cordon <worker_id>
+    oc adm cordon <worker_id>
     ```
     {: pre}
+
+
 
 2. Drain the worker.
     ```sh
@@ -114,26 +135,41 @@ For workers with the `cx2.`, `bx2.`, or `mx2.` flavors:
     {: pre}
 
 4. Mark the worker as available to be scheduled.
+
+
+
     ```sh
-    oc uncordon <worker_id>
+    oc adm uncordon <worker_id>
     ```
     {: pre}
+
+
 
 For workers with the `cx2d.`, `bx2d.`, or `mx2d.` flavors:
 
 1. Cordon the worker.
 
+
+
+
     ```sh
-    oc cordon <worker_id>
+    oc adm cordon <worker_id>
     ```
     {: pre}
 
+
+
 2. Drain the worker.
 
+
+
+
     ```sh
-    oc drain <worker_id>
+    oc adm drain <worker_id>
     ```
-    {: pre}    
+    {: pre}
+
+ 
 
 2. Replace the worker. A new worker node is provisioned on a host that is not undergoing maintenance. 
 

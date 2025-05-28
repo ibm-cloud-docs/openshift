@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2025
-lastupdated: "2025-04-17"
+lastupdated: "2025-05-27"
 
 
 keywords: openshift
@@ -375,7 +375,7 @@ What information is logged?
     - **Containers**: Logs that are written to `STDOUT` or `STDERR`.
     - **Apps**: Logs that are written to a specific path inside your app.
     - **Workers**: Logs from the Red Hat Enterprise Linux operating system that are sent to `/var/log/syslog` and `/var/log/auth.log`.
-    - **{{site.data.keyword.redhat_openshift_notm}} API server**: Every cluster-related action that is sent to the {{site.data.keyword.redhat_openshift_notm}} API server is logged for auditing reasons, including the time, the user, and the affected resource. For more information, see [Kubernetes audit logs](https://kubernetes.io/docs/tasks/debug/debug-cluster/audit/){: external}. You can access these logs by using {{site.data.keyword.logs_full_notm}}. For more information, see the [getting started tutorial](/docs/activity-tracker?topic=activity-tracker-getting-started). 
+    - **{{site.data.keyword.redhat_openshift_notm}} API server**: Every cluster-related action that is sent to the {{site.data.keyword.redhat_openshift_notm}} API server is logged for auditing reasons, including the time, the user, and the affected resource. For more information, see [Kubernetes audit logs](https://kubernetes.io/docs/tasks/debug/debug-cluster/audit/){: external}. You can access these logs by using {{site.data.keyword.logs_full_notm}}. 
     - **Routers**: Logs inbound network traffic on routes. 
     - **Kubernetes system components**: Logs from the `kubelet`, the `kube-proxy`, and other components that run in the `kube-system` namespace.
 
@@ -387,7 +387,7 @@ How can I monitor the health and performance of my cluster?
 To set up a host-based intrusion detection system (HIDS) and security event log monitoring (SELM), install third-party tools that are designed to monitor your cluster and containerized apps to detect intrusion or misuse, such as [Twistlock](https://www.paloaltonetworks.com/prisma/cloud){: external} or the [Sysdig `Falco` project](https://sysdig.com/opensource/falco/){: external}.
 
 How can I audit events that happen in my cluster?
-:   You can [set up {{site.data.keyword.cloudaccesstraillong}} in your {{site.data.keyword.openshiftlong_notm}} cluster](/docs/openshift?topic=openshift-at_events_ref). For more information, view the [{{site.data.keyword.cloudaccesstrailshort}} documentation](/docs/activity-tracker?topic=activity-tracker-getting-started).
+:   You can [set up {{site.data.keyword.logs_full_notm}} in your {{site.data.keyword.openshiftlong_notm}} cluster](/docs/openshift?topic=openshift-at_events_ref). For more information, view the Learn more about [{{site.data.keyword.logs_full_notm}} documentation](/docs/cloud-logs?topic=cloud-logs-about-cl).
 
 What are my options to enable trust in my cluster?
 :   By default, {{site.data.keyword.openshiftlong_notm}} provides many features for your cluster components so that you can deploy your containerized apps in a security-rich environment. Extend your level of trust in your cluster to better ensure that what happens within your cluster is what you intended to happen. You can implement trust in your cluster in various ways, as shown in the following diagram.

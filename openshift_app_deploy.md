@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2025
-lastupdated: "2025-04-17"
+lastupdated: "2025-05-28"
 
 
 keywords: kubernetes, openshift
@@ -196,7 +196,7 @@ To deploy apps to specific worker nodes,
 
     4. In the output, verify that the worker node with the private IP address that you identified in the previous step is deployed in this worker pool.
 
-## Deploying an app on a GPU machine
+## Deploying an app on an NVIDIA GPU machine
 {: #gpu_app}
 
 If you have a GPU machine type, you can speed up the processing time required for compute intensive workloads such as AI, machine learning, inferencing, and more.
@@ -386,5 +386,208 @@ If you experience issues installing the Node Feature Discovery Operator or the N
     In this example, you see a GPU was used to execute the job because the GPU was scheduled in the worker node. If the limit is set to 2, only 2 GPUs are shown.
 
 Now that you deployed a test GPU workload, you might want to set up your cluster to run a tool that relies on GPU processing, such as [IBM Maximo Visual Inspection](https://www.ibm.com/products/maximo/asset-performance-management){: external}.
+
+    
+## Deploying an app on an Intel GPU machine
+{: #intel-gpu-app}
+
+Complete the following example to deploy Intel Gaudi’s PyTorch container image that a retreives a Gaudi device by using the `resource.limits` field. Before you begin, make sure your cluster meets the following requirements.
+
+- Version 4.18 and later
+- VPC clusters only
+- RHCOS worker nodes only
+- Intel Gaudi Base [operator v1.20.1 and later](https://catalog.redhat.com/software/container-stacks/detail/6683b2cce45daa25e36bddcb){: external}
+
+For more information and examples, see the [Habana docs](https://docs.habana.ai/en/latest/){: external} and the [quickstart example](https://docs.habana.ai/en/latest/Quick_Start_Guides/Kubernetes_Quick_Start.html){: external}.
+{: tip}
+
+
+
+1. Copy the following example job configuration and save it as a file called `config.yaml`
+    ```yaml
+    apiVersion: batch/v1
+    kind: Job
+    metadata:
+      name: habanalabs-gaudi-demo
+    spec:
+      template:
+          spec:
+            hostIPC: true
+            restartPolicy: OnFailure
+            containers:
+              - name: habana-ai-base-container
+                image: vault.habana.ai/gaudi-docker/1.21.0/ubuntu22.04/habanalabs/pytorch-installer-2.6.0:latest
+                workingDir: /root
+                command: ["hl-smi"]
+                securityContext:
+                  capabilities:
+                      add: ["SYS_NICE"]
+                resources:
+                  limits:
+                      habana.ai/gaudi: 8
+                      memory: 409Gi
+                      hugepages-2Mi: 95000Mi
+    ```
+    {: codeblock}
+
+1. Apply the job in your cluster.
+    ```sh
+    oc apply -f config.yaml
+    ```
+    {: pre}
+
+1. Wait for the pods to start, then verify the job completed.
+    ```sh
+    oc get po -n default
+    ```
+    {: pre}
+
+    Example
+    ```sh
+    NAME                          READY   STATUS      RESTARTS   AGE
+    habanalabs-gaudi-demo-kmdcp   0/1     Completed   0          2m32s
+    ```
+    {: screen}
+
+1. Describe the job pod for more details.
+    ```sh
+    oc describe po habanalabs-gaudi-demo-kmdcp
+    ```
+    {: pre}
+
+    ```sh
+    Name:             habanalabs-gaudi-demo-kmdcp
+    Namespace:        default
+    Priority:         0
+    Service Account:  default
+    Node:             test-csrq76620trmo9r8j7u0-btsstagevpc-gaudi3s-00013059/10.180.0.83
+    Start Time:       Tue, 27 May 2025 14:41:50 -0400
+    Labels:           batch.kubernetes.io/controller-uid=c3b33c8a-5fef-4312-9d59-c8b13c03313a
+                      batch.kubernetes.io/job-name=habanalabs-gaudi-demo
+                      controller-uid=c3b33c8a-5fef-4312-9d59-c8b13c03313a
+                      job-name=habanalabs-gaudi-demo
+    Annotations:      cni.projectcalico.org/containerID: 7c883dfa9c681ee2c4128b1a5412d4dc181842d0de2a4b7b8019eefc06df37ca
+                      cni.projectcalico.org/podIP: 
+                      cni.projectcalico.org/podIPs: 
+    Status:           Succeeded
+    IP:               172.17.151.97
+    IPs:
+      IP:           172.17.151.97
+    Controlled By:  Job/habanalabs-gaudi-demo
+    Containers:
+      habana-ai-base-container:
+        Container ID:  cri-o://d75288e9b467f3f820e05e770bbc3d9a2b11cbf8155a54a129fc083d5d507571
+        Image:         vault.habana.ai/gaudi-docker/1.21.0/ubuntu22.04/habanalabs/pytorch-installer-2.6.0:latest
+        Image ID:      vault.habana.ai/gaudi-docker/1.21.0/ubuntu22.04/habanalabs/pytorch-installer-2.6.0@sha256:cd599626a8f4d1c3a7b354ccf4ef73e19196f09030d02261d4900bf3467a964c
+        Port:          <none>
+        Host Port:     <none>
+        Command:
+          hl-smi
+        State:          Terminated
+          Reason:       Completed
+          Exit Code:    0
+          Started:      Tue, 27 May 2025 14:41:53 -0400
+          Finished:     Tue, 27 May 2025 14:41:54 -0400
+        Ready:          False
+        Restart Count:  0
+        Limits:
+          habana.ai/gaudi:  8
+          hugepages-2Mi:    9500Mi
+          memory:           409Gi
+        Requests:
+          habana.ai/gaudi:  8
+          hugepages-2Mi:    9500Mi
+          memory:           409Gi
+        Environment:        <none>
+        Mounts:
+          /var/run/secrets/kubernetes.io/serviceaccount from kube-api-access-8vn42 (ro)
+    Conditions:
+      Type                        Status
+      PodReadyToStartContainers   False 
+      Initialized                 True 
+      Ready                       False 
+      ContainersReady             False 
+      PodScheduled                True 
+    Volumes:
+      kube-api-access-8vn42:
+        Type:                    Projected (a volume that contains injected data from multiple sources)
+        TokenExpirationSeconds:  3607
+        ConfigMapName:           kube-root-ca.crt
+        ConfigMapOptional:       <nil>
+        DownwardAPI:             true
+        ConfigMapName:           openshift-service-ca.crt
+        ConfigMapOptional:       <nil>
+    QoS Class:                   Burstable
+    Node-Selectors:              <none>
+    Tolerations:                 node.kubernetes.io/memory-pressure:NoSchedule op=Exists
+                                  node.kubernetes.io/not-ready:NoExecute op=Exists for 300s
+                                  node.kubernetes.io/unreachable:NoExecute op=Exists for 300s
+    Events:
+      Type    Reason          Age   From               Message
+      ----    ------          ----  ----               -------
+      Normal  Scheduled       53s   default-scheduler  Successfully assigned default/habanalabs-gaudi-demo-kmdcp to test-csrq76620trmo9r8j7u0-btsstagevpc-gaudi3s-00013059
+      Normal  AddedInterface  52s   multus             Add eth0 [172.17.151.97/32] from k8s-pod-network
+      Normal  Pulling         52s   kubelet            Pulling image "vault.habana.ai/gaudi-docker/1.21.0/ubuntu22.04/habanalabs/pytorch-installer-2.6.0:latest"
+      Normal  Pulled          50s   kubelet            Successfully pulled image "vault.habana.ai/gaudi-docker/1.21.0/ubuntu22.04/habanalabs/pytorch-installer-2.6.0:latest" in 2.146s (2.146s including waiting). Image size: 5188441181 bytes.
+      Normal  Created         50s   kubelet            Created container: habana-ai-base-container
+      Normal  Started         50s   kubelet            Started container habana-ai-base-container
+    ```
+    {: screen}
+
+1. Get the pod logs to see the Gaudi device details.
+    ```sh
+    oc logs habanalabs-gaudi-demo-kmdcp
+    ```
+    {: pre}
+
+    Example output    
+    ```sh
+    +-----------------------------------------------------------------------------+
+    | HL-SMI Version:                              hl-1.21.0-fw-59.2.1.0          |
+    | Driver Version:                                     1.20.1-366eb9c          |
+    | Nic Driver Version:                                 1.20.1-213b09b          |
+    |-------------------------------+----------------------+----------------------+
+    | AIP  Name        Persistence-M| Bus-Id        Disp.A | Volatile Uncor-Events|
+    | Fan  Temp  Perf  Pwr:Usage/Cap|         Memory-Usage | AIP-Util  Compute M. |
+    |===============================+======================+======================|
+    |   0  HL-325L             N/A  | 0000:e9:00.0     N/A |                   0  |
+    | N/A   36C   P0  228W /  900W  |   672MiB / 131072MiB |     0%            0% |
+    |-------------------------------+----------------------+----------------------+
+    |   1  HL-325L             N/A  | 0000:c1:00.0     N/A |                   0  |
+    | N/A   37C   P0  226W /  900W  |   672MiB / 131072MiB |     0%            0% |
+    |-------------------------------+----------------------+----------------------+
+    |   2  HL-325L             N/A  | 0000:b7:00.0     N/A |                   0  |
+    | N/A   36C   P0  225W /  900W  |   672MiB / 131072MiB |     0%            0% |
+    |-------------------------------+----------------------+----------------------+
+    |   3  HL-325L             N/A  | 0000:ad:00.0     N/A |                   0  |
+    | N/A   40C   P0  228W /  900W  |   672MiB / 131072MiB |     0%            0% |
+    |-------------------------------+----------------------+----------------------+
+    |   4  HL-325L             N/A  | 0000:a3:00.0     N/A |                   0  |
+    | N/A   36C   P0  228W /  900W  |   672MiB / 131072MiB |     0%            0% |
+    |-------------------------------+----------------------+----------------------+
+    |   5  HL-325L             N/A  | 0000:df:00.0     N/A |                   0  |
+    | N/A   39C   P0  229W /  900W  |   672MiB / 131072MiB |     0%            0% |
+    |-------------------------------+----------------------+----------------------+
+    |   6  HL-325L             N/A  | 0000:d5:00.0     N/A |                   0  |
+    | N/A   36C   P0  231W /  900W  |   672MiB / 131072MiB |     0%            0% |
+    |-------------------------------+----------------------+----------------------+
+    |   7  HL-325L             N/A  | 0000:cb:00.0     N/A |                   0  |
+    | N/A   38C   P0  227W /  900W  |   672MiB / 131072MiB |     0%            0% |
+    |-------------------------------+----------------------+----------------------+
+    | Compute Processes:                                               AIP Memory |
+    |  AIP       PID   Type   Process name                             Usage      |
+    |=============================================================================|
+    |   0        N/A   N/A    N/A                                      N/A        |
+    |   1        N/A   N/A    N/A                                      N/A        |
+    |   2        N/A   N/A    N/A                                      N/A        |
+    |   3        N/A   N/A    N/A                                      N/A        |
+    |   4        N/A   N/A    N/A                                      N/A        |
+    |   5        N/A   N/A    N/A                                      N/A        |
+    |   6        N/A   N/A    N/A                                      N/A        |
+    |   7        N/A   N/A    N/A                                      N/A        |
+    +=============================================================================+
+    ```
+    {: screen}
+
 
     

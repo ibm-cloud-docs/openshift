@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2025
-lastupdated: "2025-05-21"
+lastupdated: "2025-05-28"
 
 
 keywords: kubernetes, release notes, openshift, {{site.data.keyword.openshiftlong_notm}}
@@ -29,6 +29,40 @@ Looking for {{site.data.keyword.cloud_notm}} status, platform announcements, sec
 
 ## May 2025
 {: #openshift-may25}
+
+
+
+
+### 27 May 2025
+{: #openshift-27may25}
+{: release-note}
+
+New! {{site.data.keyword.openshiftlong_notm}} 4.18 is available.
+:   You can now create or [update clusters to version 4.18](/docs/openshift?topic=openshift-cs_versions_418).
+:   With {{site.data.keyword.openshiftlong_notm}} version 4.18, you get the latest features, as well as component updates on {{site.data.keyword.openshiftlong_notm}}. RHCOS is the default operating system for {{site.data.keyword.openshiftlong_notm}} cluster version 4.18 on VPC. For more information, see the [4.18 change log](/docs/openshift?topic=openshift-openshift_changelog_418).
+
+New! There are new default security group rules in version 4.18 and later.
+:   For more information, see [Understanding secure by default Cluster VPC Networking](/docs/openshift?topic=openshift-vpc-security-group-reference).
+
+New! Intel Gaudi 3 GPUs.
+:   {{site.data.keyword.openshiftlong_notm}} 4.18 supports Intel Gaudi 3 GPUs on RHCOS worker nodes.
+
+New! RHEL 9 support for Satellite clusters.
+:   RHEL 9 is now supported for Satellite clusters at version 4.17 and 4.18. Note that RHEL 9 is not supported in location control planes. RHEL 9 support is available for both legacy and CoreOS-enabled Satellite locations.
+
+Default OS change for version 4.16.
+:   RHEL 9 is now the default operating system for version 4.16.
+
+RHEL operating system deprecation for VPC clusters version 4.18 and later.
+:   Beginning with version 4.18 clusters on VPC, Red Hat Enterprise Linux (RHEL) RHEL worker nodes are deprecated. Support for RHEL worker nodes ends with the release of version 4.21. Migrate your VPC clusters to use RHCOS worker nodes as soon as possible. For more information, see the [RHEL deprecation information](/docs/openshift?topic=openshift-rhel-deprecation) and [Migrating to a new operating system](/docs/openshift?topic=openshift-rhel_migrate).
+
+{{site.data.keyword.openshiftlong_notm}} version 4.14 and 4.15 are now deprecated.
+:   Support for 4.14 ends on {{site.data.keyword.openshift_414_unsupported_date}}.
+:   Support for 4.15 ends on {{site.data.keyword.openshift_415_unsupported_date}}.
+:   Update your cluster to at least [version 4.16](/docs/openshift?topic=openshift-cs_versions_416) as soon as possible.
+
+
+
 
 
 
@@ -131,7 +165,7 @@ IBM Cloud Image Key Synchronizer cluster add-on patch updates.
 {: #openshift-25april25}
 {: release-note}
 
-Openshift AI cluster add-on patch updates.
+OpenShift AI cluster add-on patch updates.
 :   For more information, see the [change log](/docs/openshift?topic=openshift-cl-add-ons-openshift-ai).
 
 
@@ -4113,7 +4147,7 @@ Worker node fix pack
 {: release-note}
 
 {{site.data.keyword.mon_full_notm}} metrics and label updates
-:   Metrics and labels are now stored and displayed in a Prometheus compatible naming convention. Some metrics and labels are deprecated. For more information, see [Discontinued Metrics and Labels](https://docs.sysdig.com/en/docs/release-notes/enhanced-metric-store/#discontinued-metrics-and-labels){: external} and [removed features](https://docs.sysdig.com/en/docs/release-notes/enhanced-metric-store/#removed-featurees){: external}.
+:   Metrics and labels are now stored and displayed in a Prometheus compatible naming convention. Some metrics and labels are deprecated. For more information, see [Discontinued Metrics and Labels](https://docs.sysdig.com/en/release-notes/enhanced-metric-store/#discontinued-metrics-and-labels){: external} and [removed features](https://docs.sysdig.com/en/release-notes/enhanced-metric-store/#removed-features){: external}.
 
 {{site.data.keyword.block_storage_is_short}} add-on.
 :   [Version 5.0.1-beta_1411](/docs/openshift?topic=openshift-cl-add-ons-vpc-block-csi-driver) is available for allowlisted accounts.

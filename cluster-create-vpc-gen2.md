@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2025
-lastupdated: "2025-05-20"
+lastupdated: "2025-05-28"
 
 
 keywords: kubernetes, clusters, worker nodes, worker pools, vpc-gen2, openshift, {{site.data.keyword.openshiftlong_notm}}
@@ -119,8 +119,7 @@ Cluster details
 
 Observability integrations
 :    You can enable additional observability integrations that you want to include on your cluster. Some integrations are automatically enabled if you have an existing platform instance of that integration. In this case, you cannot disable the integration. If you want to use an integration and you have only an existing application instance of that integration, the integration is disabled by default and you must manually enable it.
-:    - [Activity tracking]{: tag-green}: Activity Tracker service captures a record of your IBM Cloud activities and monitors the activity of your account. You can use this service to investigate abnormal activity and critical actions, and comply with regulatory audit requirements. In addition, you can be alerted on actions as they happen. If you disable this integration and want to enable it later, see [Getting started with Activity Tracker](/docs/activity-tracker?topic=activity-tracker-getting-started#gs_step2).
-:    - [Logging]{: tag-dark-teal}: You can use Log Analysis to manage operating system logs, application logs, and platform logs. If you want to enable this integration later, see [Logging for clusters](/docs/openshift?topic=openshift-health&interface=ui).
+:    - [Logging]{: tag-dark-teal}: You can use {{site.data.keyword.logs_full_notm}} to manage operating system logs, application logs, and platform logs. If you want to enable this integration later, see [{{site.data.keyword.logs_full_notm}}](/docs/cloud-logs?topic=cloud-logs-about-cl).
 :    - [Monitoring]{: tag-magenta} and [Workload Protection]{: tag-blue}: The monitoring service integration allows operational visibility into the performance and health of your applications, services, and platforms. If you disable this integration and want to enable it later, see [Monitoring cluster health](/docs/openshift?topic=openshift-health-monitor&interface=ui). The Security and Compliance Center Workload Protection integration finds and prioritizes software vulnerabilities, detects and responds to threats, and manages configurations, permissions, and compliance from source to run. For more information, see the Workload Protection [Getting Started](/docs/workload-protection?topic=workload-protection-getting-started) page.
     - Specify the **Configuration type** to use either new or existing instances of Monitoring and Workload Protection. If you use want to use existing instances of both Monitoring and Workload protection, the instances of each integration must be connected. In this case, specify either the Monitoring or Workload Protection instance you want to use; you cannot specify both instances, but both instances are used as long as they are connected. You can connect existing instances from the details page of either the [Monitoring](https://cloud.ibm.com/observability/monitoring){: external} or [Workload Protection](https://cloud.ibm.com/security-compliance){: external} instance. 
 
@@ -243,7 +242,7 @@ Observability integrations
     When the provisioning of your {{site.data.keyword.redhat_openshift_notm}} master is completed, the state of your cluster changes to **normal**. After the {{site.data.keyword.redhat_openshift_notm}} master is ready, your worker nodes are set up.
     ```sh
     NAME         ID                                   State      Created          Workers    Zone      Version     Resource Group Name   Provider
-    mycluster    aaf97a8843a29941b49a598f516da72101   normal   20170201162433   3          Dallas     4.17.24_1544_openshift      Default               vpc-gen2
+    mycluster    aaf97a8843a29941b49a598f516da72101   normal   20170201162433   3          Dallas     4.17.28_1544_openshift      Default               vpc-gen2
     ```
     {: screen}
 
@@ -256,7 +255,7 @@ Observability integrations
     When the worker nodes are ready, the worker node **State** changes to `normal` and the **Status** changes to `Ready`. When the node **Status** changes to `Ready`, you can access the cluster. Note that even if the cluster is ready, some parts of the cluster that are used by other services, such as Ingress secrets or registry image pull secrets, might still be in process.
     ```sh
     ID                                                     Public IP        Private IP     Flavor              State    Status   Zone    Version
-    kube-blrs3b1d0p0p2f7haq0g-mycluster-default-000001f7   169.xx.xxx.xxx  10.xxx.xx.xxx   b3c.4x16.encrypted  normal   Ready    dal10   4.17.24_1544_openshift
+    kube-blrs3b1d0p0p2f7haq0g-mycluster-default-000001f7   169.xx.xxx.xxx  10.xxx.xx.xxx   b3c.4x16.encrypted  normal   Ready    dal10   4.17.28_1544_openshift
     ```
     {: screen}
 

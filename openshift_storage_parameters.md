@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2025
-lastupdated: "2025-03-18"
+lastupdated: "2025-05-28"
 
 
 keywords: openshift, openshift data foundation, openshift container storage, ocs
@@ -57,7 +57,7 @@ ibmcloud oc cluster addon options --addon openshift-data-foundation --version VE
 | `disableNoobaaLB` | [4.14 and later]{: tag-warm-gray} Specify `true` to disable to NooBaa public load balancer. | `false` | No |
 | `taintNodes` | [4.14 and later]{: tag-warm-gray} Specify `true` to taint the selected worker nodes so that only OpenShift Data Foundation pods can run on those nodes. Use this option only if you limit ODF to a subset of nodes in your cluster. | `false` | No |
 | `addSingleReplicaPool` | [4.14 and later]{: tag-warm-gray} Specify `true` to create a single replica pool without data replication, increasing the risk of data loss, data corruption, and potential system instability. | `false` | No |
-| `prepareForDisasterRecovery` | [4.14 and later]{: tag-warm-gray} Specify `true` to set up the storage system for disaster recovery service with the essential configurations in place. This allows seamless implementation of disaster recovery strategies for your workloads. | `false` | Yes |
+| `prepareForDisasterRecovery` | [4.14 - 4.17]{: tag-warm-gray} Specify `true` to set up the storage system for disaster recovery service with the essential configurations in place. This allows seamless implementation of disaster recovery strategies for your workloads. | `false` | Yes |
 | `useCephRBDAsDefaultStorageClass` | [4.15 and later]{: tag-cool-gray} Set the Ceph RADOS block device (RBD) storage class as the default storage class in the cluster during the deployment of OpenShift Data Foundation. Make sure you remove the existing default storage class before setting this parameter to `true`. | `false` | Yes |
 | `enableNFS` | [4.15 and later]{: tag-cool-gray} Enabling this feature allows you to export Network File System (NFS) data that can then be accessed internally or externally from the OpenShift cluster. | `false` | Yes |
 | `resourceProfile` | [4.15 and later]{: tag-cool-gray} Specify a resource profile based on the availability of resources during deployment. Select either `lean` which requires 24 CPUs and 72GiB memory, `balanced` which requires 30 CPUs and 72 GiB memory, or `performance` which requires 45 CPUs and 96 GiB memory. | `balanced` | Yes |

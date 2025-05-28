@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2025
-lastupdated: "2025-03-18"
+lastupdated: "2025-05-27"
 
 
 keywords: openshift, oc, installing oc, openshift cli, installing oc cli
@@ -46,7 +46,7 @@ You can use the following tools to manage your {{site.data.keyword.openshiftlong
 
 {{../cli/index.md#step3-install-idt-manually}}
 
-To install the `container-service` or `ks` plugin, run the following command.
+To install the `container-service` or `ks` plug-in, run the following command.
 
 ```sh
 ibmcloud plugin install ks
