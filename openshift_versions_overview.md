@@ -55,7 +55,7 @@ Red Hat Enterprise Linux CoreOS (RHCOS) worker nodes are available only for VPC 
 
 
 [Latest]{: tag-green} 4.18 (Kubernetes 1.31)
-- Release date: 30 April 2025
+- Release date: 23 May 2025
 - End of support: 26 May 2027†
 - Operating systems: `RHEL_9_64`, Red Hat CoreOS (`RHCOS`)
 - [Version information and update actions](/docs/openshift?topic=openshift-cs_versions_418)
@@ -84,7 +84,7 @@ Red Hat Enterprise Linux CoreOS (RHCOS) worker nodes are available only for VPC 
 
 
 [Latest]{: tag-green} 4.18 (Kubernetes 1.31)
-- Release date: 30 April 2025
+- Release date: 23 May 2025
 - End of support: 26 May 2027†
 - Operating systems: `RHEL_9_64`, Red Hat CoreOS (`RHCOS`)
 - [Version information and update actions](/docs/openshift?topic=openshift-cs_versions_418)
@@ -145,7 +145,7 @@ Red Hat Enterprise Linux CoreOS (RHCOS) worker nodes are available only for VPC 
 
 
 [Latest]{: tag-green} 4.18 (Kubernetes 1.31)
-- Release date: 30 April 2025
+- Release date: 23 May 2025
 - End of support: 26 May 2027†
 - Operating systems: `RHEL_9_64`, Red Hat CoreOS (`RHCOS`)
 - [Version information and update actions](/docs/openshift?topic=openshift-cs_versions_418)
@@ -206,7 +206,7 @@ Red Hat Enterprise Linux CoreOS (RHCOS) worker nodes are available only for VPC 
 
 
 [Latest]{: tag-green} 4.18 (Kubernetes 1.31)
-- Release date: 30 April 2025
+- Release date: 23 May 2025
 - End of support: 26 May 2027†
 - Operating systems: `RHEL_9_64`
 - [Version information and update actions](/docs/openshift?topic=openshift-cs_versions_418)
