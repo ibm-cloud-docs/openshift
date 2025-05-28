@@ -292,7 +292,7 @@ subcollection: openshift
 
         * New! There are new default security group rules in version 4.18 and later.
 
-        * New! Intel Gaudi 3 AI Accelerators.
+        * New! Intel AI Accelerators (Gaudi 3).
 
         * New! RHEL 9 support for Satellite clusters.
 
@@ -3731,7 +3731,7 @@ subcollection: openshift
 
     * [Deploying a workload](/docs/openshift?topic=openshift-deploy_app&interface=cli#gpu-workload)
 
-* [Deploying an app on an Intel AI Accelerator machine](/docs/openshift?topic=openshift-deploy_app&interface=cli#intel-gpu-app)
+* [Deploying an app on an Intel AI Accelerator (Gaudi 3) machine](/docs/openshift?topic=openshift-deploy_app&interface=cli#intel-gpu-app)
 
 [Testing access to apps with NodePorts](/docs/openshift?topic=openshift-nodeport#nodeport)
 
