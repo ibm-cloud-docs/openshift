@@ -44,8 +44,8 @@ New! {{site.data.keyword.openshiftlong_notm}} 4.18 is available.
 New! There are new default security group rules in version 4.18 and later.
 :   For more information, see [Understanding secure by default Cluster VPC Networking](/docs/openshift?topic=openshift-vpc-security-group-reference).
 
-New! Intel Gaudi 3 GPUs.
-:   {{site.data.keyword.openshiftlong_notm}} 4.18 supports Intel Gaudi 3 GPUs on RHCOS worker nodes.
+New! Intel Gaudi 3 AI Accelerators.
+:   {{site.data.keyword.openshiftlong_notm}} 4.18 supports Intel Gaudi 3 AI Accelerators on RHCOS worker nodes.
 
 New! RHEL 9 support for Satellite clusters.
 :   RHEL 9 is now supported for Satellite clusters at version 4.17 and 4.18. Note that RHEL 9 is not supported in location control planes. RHEL 9 support is available for both legacy and CoreOS-enabled Satellite locations.
