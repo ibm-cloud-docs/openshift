@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2025
-lastupdated: "2025-03-18"
+lastupdated: "2025-05-29"
 
 
 keywords: kubernetes, openshift
@@ -28,6 +28,9 @@ content-type: troubleshoot
 
 While you troubleshoot, you can use the {{site.data.keyword.containerlong_notm}} Diagnostics and Debug Tool to run tests and gather pertinent information from your cluster.
 {: shortdesc}
+
+The Diagnostics and Debug Tool is currently not available in clusters in the Montreal (`ca-mon`) region.
+{: note}
 
 
 Only one version of the Diagnostics and Debug Tool is available at a time. This version is available for all clusters versions. The tool is updated approximately once a month to address vulnerabilities. These updates are applied automatically. When a new version is pushed to a production region, all installed instances in that region are updated.
