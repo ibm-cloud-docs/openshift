@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2025
-lastupdated: "2025-04-17"
+lastupdated: "2025-05-29"
 
 
 keywords: openshift, strongswan, ipsec, on-prem
@@ -87,7 +87,7 @@ Your cluster users can use the strongSwan VPN service to connect to your Kuberne
 ## Configuring the strongSwan VPN in a multizone cluster
 {: #vpn_multizone}
 
-Multizone clusters provide high availability for apps in the event of an outage by making app instances available on worker nodes in multiple zones. However, configuring the strongSwan VPN service in a multizone cluster is more complex than configuring strongSwan in a single-zone cluster.
+Multizone clusters provide high availability for apps if there is an outage by making app instances available on worker nodes in multiple zones. However, configuring the strongSwan VPN service in a multizone cluster is more complex than configuring strongSwan in a single-zone cluster.
 {: shortdesc}
 
 Before you configure strongSwan in a multizone cluster, first try to deploy a strongSwan Helm chart into a single-zone cluster. When you first establish a VPN connection between a single-zone cluster and an on-premises network, you can more easily determine remote network firewall settings that are important for a multizone strongSwan configuration.

@@ -3,7 +3,7 @@
 copyright:
   years: 2024, 2025
 
-lastupdated: "2025-05-13"
+lastupdated: "2025-05-29"
 
 
 keywords: change log, version history, OpenShift Data Foundation
@@ -572,7 +572,7 @@ Updates the UBI.
 ### 4.10.7, released 02 August 2022
 {: #cl-add-ons-openshift-data-foundation-4.10.7}
 
-Adds standalone OCS operator.
+Adds stand-alone OCS operator.
 
 ### 4.10.6, released 12 July 2022
 {: #cl-add-ons-openshift-data-foundation-4.10.6}

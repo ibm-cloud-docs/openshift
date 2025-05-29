@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2025
-lastupdated: "2025-04-17"
+lastupdated: "2025-05-29"
 
 
 keywords: openshift, {{site.data.keyword.openshiftlong_notm}}, node.js, js, java, .net, go, flask, react, python, swift, rails, ruby, spring boot, angular
@@ -93,7 +93,7 @@ template:
 ### Affinity
 {: #affinity}
 
-Specify affinity (co-location) when you want more control over which worker nodes the pods are scheduled on. Affinity affects the pods only at scheduling time. For example, to spread the deployment across worker nodes instead of allowing pods to schedule on the same node, use the `podAntiAffinity` option with your standard clusters. You can define two types of pod anti-affinity: preferred or required.
+Specify affinity (colocation) when you want more control over which worker nodes the pods are scheduled on. Affinity affects the pods only at scheduling time. For example, to spread the deployment across worker nodes instead of allowing pods to schedule on the same node, use the `podAntiAffinity` option with your standard clusters. You can define two types of pod anti-affinity: preferred or required.
 {: shortdesc}
 
 For more information, see the [Kubernetes documentation on Assigning Pods to Nodes](https://kubernetes.io/docs/concepts/scheduling-eviction/assign-pod-node/){: external}.

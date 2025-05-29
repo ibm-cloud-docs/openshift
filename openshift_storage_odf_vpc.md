@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2025
-lastupdated: "2025-04-15"
+lastupdated: "2025-05-29"
 
 
 keywords: openshift, openshift data foundation, openshift container storage, ocs
@@ -243,7 +243,7 @@ OSD storage class name
 :   Enter the name of the storage class that you want to use to provision storage volumes.
     - For VPC clusters with **{{site.data.keyword.bm_is_short}} worker nodes**, select `localblock`.
     - For multizone clusters, use a storage class with the `VolumeBindingMode` of `WaitForFirstConsumer`.
-    - For a list of stoage classes, see the [Storage Class Reference](/docs/openshift?topic=openshift-storage-block-vpc-sc-ref).
+    - For a list of storage classes, see the [Storage Class Reference](/docs/openshift?topic=openshift-storage-block-vpc-sc-ref).
 
 OSD pod size
 :   Enter the size of the volume that you want to provision. Enter at least 512Gi.

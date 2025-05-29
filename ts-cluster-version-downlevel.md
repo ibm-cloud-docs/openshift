@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2025
-lastupdated: "2025-03-13"
+lastupdated: "2025-05-29"
 
 
 keywords: openshift, {{site.data.keyword.openshiftlong_notm}}, cluster version, 
@@ -28,7 +28,7 @@ You see one or more of the following for an extended period of time.
 
 - The OpenShift Web Console displays a banner stating that the cluster is updating and the **Cluster Settings** page shows the current version has a status of `Partial`.
 
-- When you run `ibmcloud oc cluster get --cluster <cluster_name>` command you see a `warning` state and a status indicating cluster operators are down-level.
+- When you run `ibmcloud oc cluster get --cluster <cluster_name>` command you see a `warning` state and a status indicating cluster operators are not at the latest version.
 
     ```txt
     State:                          warning
@@ -56,7 +56,7 @@ You see one or more of the following for an extended period of time.
 A cluster master update to a new patch version or an upgrade to a new minor version has not completed.
 {: tsCauses}
 
-A cluster master update completes soon after updating the Cluster Version Operator. The Cluster Version Operator manages updates to various Cluster Operators, a process which continues after a cluster master update has completed. 
+A cluster master update completes soon after updating the Cluster Version Operator. The Cluster Version Operator manages updates to various Cluster Operators, which continues after a cluster master update has completed. 
 
 ```sh
 $ oc get clusterversion

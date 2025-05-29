@@ -1,8 +1,8 @@
 ---
 
 copyright: 
-  years: 2024, 2024
-lastupdated: "2024-11-21"
+  years: 2024, 2025
+lastupdated: "2025-05-29"
 
 
 keywords: openshift, benchmarks, 4.17, openshift benchmarks, openshift 4.17
@@ -67,14 +67,14 @@ The Center for Internet Security (CIS) publishes the [CIS Kubernetes Benchmark](
 | 1.2.7 | Ensure that the `--authorization-mode` argument is not set to `AlwaysAllow`. | Scored | 1 | Pass | IBM |
 | 1.2.8 | Ensure that the `--authorization-mode` argument includes Node. | Scored | 1 | Pass | IBM |
 | 1.2.9 | Ensure that the `--authorization-mode` argument includes RBAC. | Scored | 1 | Pass | IBM |
-| 1.2.10 | Ensure that the admission control plugin `EventRateLimit` is set. | Not Scored | 1 | [Fail](#ibm-remediations-and-explanations-417) | IBM |
-| 1.2.11 | Ensure that the admission control plugin `AlwaysAdmit` is not set. | Scored | 1 | Pass | IBM |
-| 1.2.12 | Ensure that the admission control plugin `AlwaysPullImages` is set. | Not Scored | 1 | [Fail](#ibm-remediations-and-explanations-417) | IBM |
-| 1.2.13 | Ensure that the admission control plugin `SecurityContextDeny` is set if `PodSecurityPolicy` is not used. | Not Scored | 1 | [Pass](#ibm-remediations-and-explanations-417) | IBM |
-| 1.2.14 | Ensure that the admission control plugin `ServiceAccount` is set. | Scored | 1 | Pass | IBM |
-| 1.2.15 | Ensure that the admission control plugin `NamespaceLifecycle` is set. | Scored | 1 | Pass | IBM |
-| 1.2.16 | Ensure that the admission control plugin `PodSecurityPolicy` is set. | Scored | 1 | [Pass](#ibm-remediations-and-explanations-417) | IBM |
-| 1.2.17 | Ensure that the admission control plugin `NodeRestriction` is set. | Scored | 1 | Pass | IBM |
+| 1.2.10 | Ensure that the admission control plug-in `EventRateLimit` is set. | Not Scored | 1 | [Fail](#ibm-remediations-and-explanations-417) | IBM |
+| 1.2.11 | Ensure that the admission control plug-in `AlwaysAdmit` is not set. | Scored | 1 | Pass | IBM |
+| 1.2.12 | Ensure that the admission control plug-in `AlwaysPullImages` is set. | Not Scored | 1 | [Fail](#ibm-remediations-and-explanations-417) | IBM |
+| 1.2.13 | Ensure that the admission control plug-in `SecurityContextDeny` is set if `PodSecurityPolicy` is not used. | Not Scored | 1 | [Pass](#ibm-remediations-and-explanations-417) | IBM |
+| 1.2.14 | Ensure that the admission control plug-in `ServiceAccount` is set. | Scored | 1 | Pass | IBM |
+| 1.2.15 | Ensure that the admission control plug-in `NamespaceLifecycle` is set. | Scored | 1 | Pass | IBM |
+| 1.2.16 | Ensure that the admission control plug-in `PodSecurityPolicy` is set. | Scored | 1 | [Pass](#ibm-remediations-and-explanations-417) | IBM |
+| 1.2.17 | Ensure that the admission control plug-in `NodeRestriction` is set. | Scored | 1 | Pass | IBM |
 | 1.2.18 | Ensure that the `--insecure-bind-address` argument is not set. | Scored | 1 | Pass | IBM |
 | 1.2.19 | Ensure that the `--insecure-port` argument is set to 0. | Scored | 1 | Pass | IBM |
 | 1.2.20 | Ensure that the `--secure-port` argument is not set to 0. | Scored | 1 | Pass | IBM |
@@ -296,7 +296,7 @@ The Center for Internet Security (CIS) publishes the [CIS Kubernetes Benchmark](
 | Section | Recommendation | Scored/Not Scored | Level | Result | Responsibility |
 | --- | --- | --- | --- | --- | --- |
 | 5.7.1 | Create administrative boundaries between resources using namespaces. | Not Scored | 1 | Pass | Shared |
-| 5.7.2 | Ensure that the seccomp profile is set to docker/default in your pod definitions. | Not Scored | 2 | [Fail](#ibm-remediations-and-explanations-417) | Shared |
+| 5.7.2 | Ensure that the `seccomp` profile is set to docker/default in your pod definitions. | Not Scored | 2 | [Fail](#ibm-remediations-and-explanations-417) | Shared |
 | 5.7.3 | Apply Security Context to Your Pods and Containers. | Not Scored | 2 | [Fail](#ibm-remediations-and-explanations-417) | Shared |
 | 5.7.4 | The default namespace should not be used. | Scored | 2 | Pass | Shared |
 {: caption="Section 5.6 General policies benchmark results" caption-side="bottom"}

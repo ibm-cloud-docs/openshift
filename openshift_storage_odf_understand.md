@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2025
-lastupdated: "2025-04-17"
+lastupdated: "2025-05-29"
 
 
 keywords: openshift, openshift data foundation, openshift container storage
@@ -31,7 +31,7 @@ What is OpenShift Data Foundation?
 How does OpenShift Data Foundation work?
 :   ODF uses these devices to create a virtualized storage layer, where your app data is replicated for high availability. Because ODF abstracts your underlying storage, you can use ODF to create File, Block, or Object storage claims from the same underlying raw block storage.
 :   ODF uses storage volumes in multiples of 3 and replicates your app data across these volumes. The underlying storage volumes that you use for ODF depends on your cluster type.
-    - For VPC clusters that use virutal machines, the storage volumes are {{site.data.keyword.block_storage_is_short}} storage volumes.
+    - For VPC clusters that use virtual machines, the storage volumes are {{site.data.keyword.block_storage_is_short}} storage volumes.
     - For Classic or VPC clusters that use bare metal workers, the storage volumes are local disks on your bare metal worker nodes.
     - For **{{site.data.keyword.satelliteshort}} clusters**, the storage volumes are either local disks on your worker nodes, or you can dynamically provision disks by using a compatible block storage driver.
 
@@ -138,7 +138,7 @@ Meet the minimum worker node specifications
 :   Worker nodes that use ODF should have 16 vCPUs and 64GB of RAM or higher. For IBM Classic clusters, the recommended flavor is `mb4c.32x384.3.8tb.ssd` or higher.
 
 Keep a standby host for high-availability
-:   To ensure high-availability and minimize downtime in the event of a host failure, it is advisable to always keep a standby host.
+:   To ensure high-availability and minimize downtime if a host fails, it is advisable to always keep a standby host.
 
 Meet the storage device count per node recommendations
 :   Plan to have fewer than nine storage devices per node. This helps prevent potential bottlenecks and enhances the efficiency of data access and retrieval.
@@ -150,7 +150,7 @@ Scale up by using default replication factor and storage node configuration
 :   In OpenShift Data Foundation (ODF), the replication factor is set to 3 by default. When you add capacity, plan to add storage nodes in multiples of 3.
 
 Choose the right set up for your needs: Remote storage vs local storage
-:   If you have lower storage needs or are using Virtual Server instances, remote storage can be a convenient and cost-effective option. On the other hand, if you have large storage requirements, a bare metal cluster, or high-performance storage with low network latency, that uses local storage would be more suitable.
+:   If you have lower storage needs or are using Virtual Server instances, remote storage can be a convenient and cost-effective option. However, if you have large storage requirements, a bare metal cluster, or high-performance storage with low network latency, that uses local storage would be more suitable.
 
 Simplify your deployment by using auto discovery feature
 :   In [Classic clusters]{: tag-classic-inf} or environments with local storage, leverage the auto discovery feature to automatically identify and configure the available storage disks in your cluster for ODF. This option eliminates the need for manual disk selection. Unless there are specific disk requirements for ODF provisioning, utilizing the auto discovery feature streamlines the deployment process and reduces the potential for configuration errors.
@@ -162,7 +162,7 @@ Size your deployment
 :   For a detailed analysis of storage requirements, the [Sizing Tool](https://sizer.ocs.ninja/index.html) to determine your storage capacity needed. You can also use the official [Red Hat sizing tool](https://access.redhat.com/labsinfo/ocsst){: external}
 
 Set up periodic backups
-:   Taking periodic backups for the ODF cluster is essential to ensure data protection and facilitate data recovery in the event of a disaster. Without regular backups, recovering data from a catastrophic event becomes significantly more challenging and may lead to permanent data loss.
+:   Taking periodic backups for the ODF cluster is essential to ensure data protection and facilitate data recovery if a disaster occurs. Without regular backups, recovering data from a catastrophic event becomes significantly more challenging and may lead to permanent data loss.
 
 ### Deployment
 {: #odf-deploy}
@@ -202,7 +202,7 @@ Upgrade storage nodes sequentially
 {: #odf-removery}
 
 Replace unhealthy hosts
-:   In the event of a local disaster, it is recommended that an unhealthy cluster host be replaced with a healthy one.
+:   If there is a local disaster, it is recommended that an unhealthy cluster host be replaced with a healthy one.
 
 Follow the documentation to recover OSDs
 :   When an OSD (Object Storage Daemon) goes down in OpenShift Data Foundation (ODF), it is important to follow the recommended steps for recovery. The provided documentation from IBM Cloud Platform provides detailed instructions on how to recover an OSD in such situations.
@@ -211,7 +211,7 @@ Follow the documentation to recover OSDs
 {: #odf-uninstall}
 
 Deleting pods and persistent volumes (PVs)
-:   When deleting resources that utilize ODF storage classes, it is important to follow the recommended procedure. Always delete the associated pods and PVs created using OF storage classes before proceeding with the deletion of other resources.
+:   When deleting resources that use ODF storage classes, it is important to follow the recommended procedure. Always delete the associated pods and PVs created using OF storage classes before proceeding with the deletion of other resources.
 
 Follow the correct cleanup order
 :   When decommissioning or removing ODF from your cluster, make sure you follow the documentation when cleaning up resources. Start by deleting the `ocscluster` resource, which is responsible for managing the ODF. Once the `ocscluster` resource is removed, proceed to remove the ODF add-on from the IBM console. Following this sequence ensures a smooth and proper removal of ODF from your cluster, preventing any potential issues or conflicts.

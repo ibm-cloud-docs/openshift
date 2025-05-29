@@ -3,7 +3,7 @@
 copyright:
   years: 2024, 2025
 
-lastupdated: "2025-05-28"
+lastupdated: "2025-05-29"
 
 
 keywords: change log, version history, 4.18_openshift
@@ -44,10 +44,10 @@ Master patch updates are applied automatically. Worker node patch updates can be
 
 | Component | Previous | Current | Description |
 | --- | --- | --- | --- |
-| Calico API server | v3.28.3 | v3.29.2 | See the [Calico release notes](https://docs.projectcalico.org/releases){: external}. |
-| Calico | v3.28.3 | v3.29.2 | See the [Calico release notes](https://docs.projectcalico.org/releases){: external}. |
-| Calico policy controller | v3.28.3 | v3.29.2 | See the [Calico release notes](https://docs.projectcalico.org/releases){: external}. |
-| Calico Typha | v3.28.3 | v3.29.2 | See the [Calico release notes](https://docs.projectcalico.org/releases){: external}. |
+| Calico API server | v3.28.3 | v3.29.2 | See the [Calico release notes](https://docs.tigera.io/calico/latest/release-notes/){: external}. |
+| Calico | v3.28.3 | v3.29.2 | See the [Calico release notes](https://docs.tigera.io/calico/latest/release-notes/){: external}. |
+| Calico policy controller | v3.28.3 | v3.29.2 | See the [Calico release notes](https://docs.tigera.io/calico/latest/release-notes/){: external}. |
+| Calico Typha | v3.28.3 | v3.29.2 | See the [Calico release notes](https://docs.tigera.io/calico/latest/release-notes/){: external}. |
 | Cluster health image | v1.6.8 | v1.6.9 | New version contains updates and security fixes. |
 | HA master: etcd-operator image | v2.2.21 | v2.2.23 | New version contains updates and security fixes. |
 | IBM Cloud Controller Manager | v1.30.11-6 | v1.31.9-1 | New version contains updates and security fixes. |
@@ -55,8 +55,8 @@ Master patch updates are applied automatically. Worker node patch updates can be
 | Key Management Service provider | 2.10.12 | 2.10.13 | New version contains updates and security fixes. |
 | Kubernetes major.minor release | 1.30 | 1.31 | [Kubernetes docs](https://kubernetes.io/docs/home/){: external}. |
 | Load balancer for IBM Cloud Provider | 3232 | 3293 | New version contains updates and security fixes. |
-| OpenShift | 4.17.24-x86_64 | 4.18.11-x86_64 | [OpenShift docs](https://docs.openshift.com/container-platform/){: external}. |
+| OpenShift | 4.17.24-x86_64 | 4.18.11-x86_64 | [OpenShift docs](https://docs.redhat.com/en/documentation/openshift_container_platform/4.18/html/about/welcome-index){: external}. |
 | Portieris admission controller | v0.13.26 | v0.13.28 | See the [Portieris admission controller release notes](https://github.com/IBM/portieris/releases/tag/v0.13.28){: external}. |
-| Red Hat OpenShift on IBM Cloud Control Plane Operator, Metrics Server, and toolkit | 4.17.0+20250414 | N/A | Red Hat OpenShift on IBM Cloud 4.18 now utilizes [Red Hat Hypershift](https://github.com/openshift/hypershift){: external} in place of the toolkit. Also, see the [Red Hat OpenShift on IBM Cloud toolkit release notes](https://github.com/openshift/ibm-roks-toolkit/releases){: external}. |
+| Red Hat OpenShift on IBM Cloud Control Plane Operator, Metrics Server, and toolkit | 4.17.0+20250414 | N/A | Red Hat OpenShift on IBM Cloud 4.18 now utilizes [Red Hat HyperShift](https://github.com/openshift/hypershift){: external} in place of the toolkit. Also, see the [Red Hat OpenShift on IBM Cloud toolkit release notes](https://github.com/openshift/ibm-roks-toolkit/releases){: external}. |
 | Tigera Operator | v1.34.8 | v1.36.5 | See the [Tigera Operator release notes](https://github.com/tigera/operator/releases/tag/v1.36.5){: external}. |
 {: caption="Changes since master fix pack 4.17.24_1537_openshift and worker fix pack 4.17.25_1536_openshift." caption-side="bottom"}

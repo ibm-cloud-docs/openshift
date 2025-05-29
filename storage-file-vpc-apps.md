@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2022, 2025
-lastupdated: "2025-05-20"
+lastupdated: "2025-05-29"
 
 keywords: kubernetes, openshift
 
@@ -542,7 +542,7 @@ Create a persistent volume claim (PVC) to statically provision {{site.data.keywo
     ```
     {: pre}
 
-1. Create a deployment file name `testpod.yaml` to attach your fileshare to the desired application pod.
+1. Create a deployment file name `testpod.yaml` to attach your fileshare to an application pod.
 
     ```yaml
     apiVersion: apps/v1
@@ -631,7 +631,7 @@ If your cluster and VPC are not in the same resource group, you must specify the
         region: "" # VPC CSI driver will select a region from cluster node's topology. The user can override this default.
         zone: "" # VPC CSI driver will select a region from cluster node's topology. The user can override this default.
         primaryIPID: "" # Existing ID of reserved IP from the same subnet as the file share zone. Zone and region are mandatory for this. SubnetID is not mandatory for this.
-        primaryIPAddress: "" # IPAddress for VNI to be created in the respective subnet of the zone. Zone, region and subnetID are mandatory for this.
+        primaryIPAddress: "" # IPAddress for VNI to be created in the subnet of the zone. Zone, region and subnetID are mandatory for this.
         tags: "" # User can add a list of tags "a, b, c" that will be used at the time of provisioning file share, by default CSI driver has its own tags.
         uid: "0" # The initial user identifier for the file share, by default its root.
         gid: "0" # The initial group identifier for the file share, by default its root.
@@ -843,7 +843,7 @@ Use a key management service (KMS) provider, such as {{site.data.keyword.keymana
         region: "" # VPC CSI driver will select a region from cluster node's topology. The user can override this default.
         zone: "" # VPC CSI driver will select a region from cluster node's topology. The user can override this default.
         primaryIPID: "" # Existing ID of reserved IP from the same subnet as the file share zone. Zone and region are mandatory for this. SubnetID is not mandatory for this.
-        primaryIPAddress: "" # IPAddress for VNI to be created in the respective subnet of the zone. Zone, region and subnetID are mandatory for this.
+        primaryIPAddress: "" # IPAddress for VNI to be created in the subnet of the zone. Zone, region and subnetID are mandatory for this.
         tags: "" # User can add a list of tags "a, b, c" that will be used at the time of provisioning file share, by default CSI driver has its own tags.
         uid: "0" # The initial user identifier for the file share, by default its root.
         gid: "0" # The initial group identifier for the file share, by default its root.
@@ -1035,7 +1035,7 @@ Complete the following steps to set up encryption-in-transit (EIT) for file shar
 
 The default behavior for {{site.data.keyword.filestorage_vpc_short}} cluster add-on is that pods on any node can access file shares. You can also apply more granular control over how pods access your file shares. For example, you might limit file share access to only pods on a specific node, in a specific zone, on a specific worker pool. Review the following scenarios for how you can configure pod access to your file shares.
 
-When a PVC is created, it creates one file share target per PVC and one VNI IP is reserved on that respective subnet in the zone. This means the max number of PVCs for VPC file storage depends on the available IP addresses on that subnet.
+When a PVC is created, it creates one file share target per PVC and one VNI IP is reserved on that subnet in the zone. This means the max number of PVCs for VPC file storage depends on the available IP addresses on that subnet.
 {: note}
 
 If you use the following VNI features to limit pod access to your file shares, your app might not be highly available.

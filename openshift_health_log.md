@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2025
-lastupdated: "2025-04-30"
+lastupdated: "2025-05-29"
 
 
 keywords: oks, iro, openshift, red hat, red hat openshift
@@ -62,7 +62,7 @@ You can no longer use the `ob` plugin, Terraform, or API to install observabilit
 ### Reviewing your observability agents
 {: #ob-review}
 
-The observability plugin installs Sysdig and LogDNA agents in the `ibm-observe` namespace.
+The observability plug-in installs Sysdig and LogDNA agents in the `ibm-observe` namespace.
 
 1. [Access your {{site.data.keyword.redhat_openshift_notm}} cluster](/docs/openshift?topic=openshift-access_cluster).
 
@@ -83,7 +83,7 @@ The observability plugin installs Sysdig and LogDNA agents in the `ibm-observe` 
     ```
     {: pre}
 
-1. Observability agents installed by the observability plug-in use a configmap with the GUID of the IBM Cloud Monitoring instance or the IBM Cloud Log Analysis instance that logs or metrics are being sent to. If your cluster has agents in a namespace other than `ibm-observe` or the configmaps in `ibm-observe` are not named with the instance GUIDs, then these agents were not installed with the IKS observability (ob) plugin.
+1. Observability agents installed by the observability plug-in use a configmap with the GUID of the IBM Cloud Monitoring instance or the IBM Cloud Log Analysis instance that logs or metrics are being sent to. If your cluster has agents in a namespace other than `ibm-observe` or the configmaps in `ibm-observe` are not named with the instance GUIDs, then these agents were not installed with the IKS observability (ob) plug-in.
 
 ### Removing the observability plug-in agents
 {: #ob-remove}

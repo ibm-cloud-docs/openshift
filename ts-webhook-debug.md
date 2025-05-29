@@ -1,8 +1,8 @@
 ---
 
 copyright: 
-  years: 2022, 2024
-lastupdated: "2024-10-30"
+  years: 2022, 2025
+lastupdated: "2025-05-29"
 
 
 keywords: kubernetes, help, network, connectivity, webhooks
@@ -47,7 +47,7 @@ Failing webhooks might also cause problems similar to the following issues.
 A problem in the called service or the secure tunnel can cause requests to fail due to timeouts. You might be unaware that you have admission control webhooks installed until this happens.
 {: tsCauses}
 
-Admission control webhooks provide the ability to validate or modify, or mutate, Kubernetes API requests. These webhooks are called from the cluster `apiserver` or `openshift-apiserver` and typically call a service running in the cluster. Admission control webhooks have rules defining the kind of resource such as pod, namespace, etc and the operation they are called for such as create, update, delete (CRUD).
+Admission control webhooks provide the ability to validate or modify, or mutate, Kubernetes API requests. These webhooks are called from the cluster `apiserver` or `openshift-apiserver` and typically call a service running in the cluster. Admission control webhooks have rules defining the kind of resource such as pod, namespace, etc and the operation they are called for such as create, retrieve, update, delete (CRUD).
 
 Webhooks have a failure policy that indicates whether Kubernetes can ignore connection errors when calling the webhook or whether connection error  must fail the operation. A `ValidatingWebhookConfiguration` resource inspects the request while a `MutatingWebhookConfiguration` resource modifies the request data before it is processed.
 

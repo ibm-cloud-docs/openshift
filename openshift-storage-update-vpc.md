@@ -2,7 +2,7 @@
 
 copyright:
   years: 2023, 2025
-lastupdated: "2025-05-28"
+lastupdated: "2025-05-29"
 
 
 keywords: openshift, openshift data foundation, openshift container storage, ocs, worker update, worker replace
@@ -79,7 +79,7 @@ Before updating your worker nodes, make sure to back up your app data. Also, pla
 	```
 	{: screen}
 
-1. Check the state of the Ceph Storage by running the following command. Verify that the health is `HEALTH_OK`, all OSDs are `up` and `IN` and that all the PGs are `active+clean`. If any of these checks fail, Open a [support case](/docs/account?topic=account-using-avatar). In the case details, be sure to include any relevant log files, error messages, or command outputs..  Resolve any issues before continuing.
+1. Check the state of the Ceph Storage by running the following command. Verify that the health is `HEALTH_OK`, all OSDs are `up` and `IN` and that all the `pgs` are `active+clean`. If any of these checks fail, Open a [support case](/docs/account?topic=account-using-avatar). In the case details, be sure to include any relevant log files, error messages, or command outputs..  Resolve any issues before continuing.
 
 	```sh
 	oc rsh -n openshift-storage $(oc get pods -n openshift-storage -o name -l app=rook-ceph-operator) ceph status -c /var/lib/rook/openshift-storage/openshift-storage.config
@@ -183,7 +183,7 @@ Make sure the storage cluster is healthy before continuing.
 	```
 	{: pre}
 
-	In some cases draining might get stuck when draining Noobaa pods. In this scenario, you can manually delete the noobaa pods, so they get scheduled on a different node.
+	In some cases draining might get stuck when draining Noobaa pods. In this scenario, you can manually delete the NooBaa pods, so they get scheduled on a different node.
 	{: note}
 
 1. Delete any remaining the Noobaa pods in the following order.

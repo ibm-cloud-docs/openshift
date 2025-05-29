@@ -1,7 +1,7 @@
 ---
 copyright: 
   years: 2024, 2025
-lastupdated: "2025-03-28"
+lastupdated: "2025-05-29"
 
 
 keywords: openshift, {{site.data.keyword.openshiftlong_notm}}, ai, add-on
@@ -58,7 +58,7 @@ IBM's responsibilities
 
 Your responsibilities
 :   - Reviewing and understanding the changes included in each update.
-:   - Depending on the update approval policy setting you specify when you install the add-on, you might need to manually approve the changes for the update to apply. For more information, see [How are OpenShift AI addon-on components updated?](#ai-addon-updatehow).
+:   - Depending on the update approval policy setting you specify when you install the add-on, you might need to manually approve the changes for the update to apply. For more information, see [How are OpenShift AI add-on components updated?](#ai-addon-updatehow).
 
 ### Additional operators
 {: #responsible-customer}

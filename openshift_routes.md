@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2025
-lastupdated: "2025-04-09"
+lastupdated: "2025-05-29"
 
 
 keywords: openshift, route, router
@@ -331,7 +331,7 @@ Note that even though you create an IngressController resource in the following 
         ```
         {: pre}
 
-        Several routes and Ingresses on the cluster depend on the default public ingress controller. Make sure the changes are desired before editing the default Ingress controller. For more information about, see [Ingress controller sharding](https://docs.redhat.com/documentation/openshift_container_platform/4.8/html/networking/configuring-ingress#nw-ingress-sharding_configuring-ingress){: external}.
+        Several routes and Ingresses on the cluster depend on the default public ingress controller. Make sure the changes are correct before editing the default Ingress controller. For more information about, see [Ingress controller sharding](https://docs.redhat.com/documentation/openshift_container_platform/4.8/html/networking/configuring-ingress#nw-ingress-sharding_configuring-ingress){: external}.
         {: note}
     
 

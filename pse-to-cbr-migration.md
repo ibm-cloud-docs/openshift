@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2024, 2025
-lastupdated: "2025-05-22"
+lastupdated: "2025-05-29"
 
 
 keywords: kubernetes, private service endpoint, openshift, context based restrictions
@@ -17,7 +17,7 @@ subcollection: openshift
 # Migrating from a private service endpoint allowlist to context based restrictions (CBR)
 {: #pse-to-cbr-migration}
 
-[Private service endpoint allowlists](/docs/openshift?topic=openshift-access_cluster#private-se-allowlist) are no longer supported and context based restrictions (CBR) should be used instead.  If your clusters currently have master private service endpoint allowlists enabled, you will not be able to modify the allowlist, all you can do is disable the allowlist.  Complete the following steps to migrate to using [context based restrictions](/docs/openshift?topic=openshift-cbr) (CBR).
+Private service endpoint allowlists are no longer supported and context based restrictions (CBR) should be used instead.  If your clusters currently have master private service endpoint allowlists enabled, you will not be able to modify the allowlist, all you can do is disable the allowlist.  Complete the following steps to migrate to using [context based restrictions](/docs/openshift?topic=openshift-cbr) (CBR).
 {: shortdesc}
 
 The following instructions cover protecting the private service endpoint of your cluster by using CBR rules. If your cluster has both a public and private service endpoint (PSE), you can also protect your cluster's public service endpoint with CBR.

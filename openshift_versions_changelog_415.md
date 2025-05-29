@@ -3,7 +3,7 @@
 copyright:
   years: 2024, 2025
 
-lastupdated: "2025-05-28"
+lastupdated: "2025-05-29"
 
 
 keywords: change log, version history, 4.15_openshift
@@ -757,7 +757,7 @@ The following table shows the changes that are in the worker node fix pack 4.15.
 
 | Component | Previous | Current | Description |
 | --- | --- | --- | --- |
-| Calico | v3.26.4 | v3.27.2 | See the [Calico release notes](https://docs.tigera.io/calico/3.27/release-notes/). |
+| Calico | v3.26.4 | v3.27.2 | See the [Calico release notes](https://archive-os-3-27.netlify.app/calico/3.27/release-notes/). |
 | IBM Calico extension | 1537 | N/A | Component has been removed. |
 | IBM Cloud Controller Manager | v1.27.12-10 | v1.28.9-1 | New version contains updates and security fixes. |
 | Key Management Service provider (KMS) | v2.8.9 | v2.9.5 | New version contains updates and security fixes. In addition, [both KMS v1 and v2](https://kubernetes.io/docs/tasks/administer-cluster/kms-provider/){: external} are now supported. KMS v1 instances are migrated to KMS v2 on upgrade. KMS v2 is now the default. |

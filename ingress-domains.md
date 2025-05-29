@@ -2,7 +2,7 @@
 
 copyright:
   years: 2023, 2025
-lastupdated: "2025-03-13"
+lastupdated: "2025-05-29"
 
 
 keywords: kubernetes, openshift
@@ -23,7 +23,7 @@ When you create a cluster, an Ingress subdomain is registered by default for you
 This functionality is available in beta and is subject to change.
 {: beta}
 
-{{site.data.keyword.cloud_notm}} provides a managed, internal provider that you can use to create your own domains. With the managed domain provider, you do not need to create and maintain an account with an external provider. You can also utilize health check monitoring for your managed domains. When creating a domain with the internal provider, you specify a subdomain name, such as `exampledomain`, and the new domain is named in the format `exampledomain.<zone>.containers.appdomain.cloud`. 
+{{site.data.keyword.cloud_notm}} provides a managed, internal provider that you can use to create your own domains. With the managed domain provider, you do not need to create and maintain an account with an external provider. You can also use health check monitoring for your managed domains. When creating a domain with the internal provider, you specify a subdomain name, such as `exampledomain`, and the new domain is named in the format `exampledomain.<zone>.containers.appdomain.cloud`. 
 
 You can also use your own {{site.data.keyword.cis_full_notm}} instance as an external provider for your cluster domains.
 

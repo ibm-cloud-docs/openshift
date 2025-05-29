@@ -1,8 +1,8 @@
 ---
 
 copyright: 
-  years: 2014, 2024
-lastupdated: "2024-08-06"
+  years: 2014, 2025
+lastupdated: "2025-05-29"
 
 
 keywords: kubernetes, openshift
@@ -164,7 +164,7 @@ The solution is made up of the following primary components.
 3. SOCIAL MEDIA ANALYTICS provides personalization by detecting customers’ preferences in terms of trends: cuisines, chefs, and ingredients. The analytics connect regional trends with an individual’s Twitter, Pinterest, and Instagram activity.
 4. DEVELOPER-FRIENDLY TOOLS accelerate roll-out of features and  bug fixes.
 
-Back-end inventory systems for product inventory, store replenishment, and product forecasting have a wealth of information, but modern analytics can unlock new insights about how to better move high-end products. By using a combination of {{site.data.keyword.cloudant}} and IBM Streaming Analytics, the CMO can find the sweet spot of ingredients to match to custom in-store events.
+Back-end inventory systems for product inventory, store replenishment, and product forecasting have a wealth of information, but modern analytics can unlock new insights about how to better move high-end products. By using a combination of {{site.data.keyword.cloudant}} and IBM Streaming Analytics, the CMO can find the best ingredients to match to custom in-store events.
 
 {{site.data.keyword.messagehub_full}} acts as the just-in-time events platform to bring in the rapidly changing information from the inventory systems to IBM Streaming Analytics.
 
@@ -212,7 +212,3 @@ Technical solution:
 * Customer traffic and sales increased in stores by making the stores themselves a differentiating asset.
 * At the same time, new insights from social and cognitive analysis improved reduced inventory OpEx (operating expenses).
 * Social sharing in the mobile app also helps to identify and market to new customers.
-
-
-
-
