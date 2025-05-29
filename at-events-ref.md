@@ -186,11 +186,11 @@ You can view, manage, and audit user-initiated activities in your {{site.data.ke
 
 |Action|Description|
 |------|-----------|
-| `containers-kubernetes.observe-logging.create` | A {{site.data.keyword.logs_full_notm}} configuration is created for the cluster. |
-| `containers-kubernetes.observe-logging.get` | The details of a {{site.data.keyword.logs_full_notm}} configuration are returned. |
+| `containers-kubernetes.observe-logging.create` | An {{site.data.keyword.logs_full_notm}} configuration is created for the cluster. |
+| `containers-kubernetes.observe-logging.get` | The details of an {{site.data.keyword.logs_full_notm}} configuration are returned. |
 | `containers-kubernetes.observe-logging.list` | {{site.data.keyword.logs_full_notm}} configurations for a cluster are listed. |
-| `containers-kubernetes.observe-logging.modify` | A {{site.data.keyword.logs_full_notm}} configuration is updated. |
-| `containers-kubernetes.observe-logging.remove` | A {{site.data.keyword.logs_full_notm}} configuration is removed from the cluster.|
+| `containers-kubernetes.observe-logging.modify` | An {{site.data.keyword.logs_full_notm}} configuration is updated. |
+| `containers-kubernetes.observe-logging.remove` | An {{site.data.keyword.logs_full_notm}} configuration is removed from the cluster.|
 | `containers-kubernetes.observe-monitoring.create` | A {{site.data.keyword.mon_short}} configuration is created for the cluster. |
 | `containers-kubernetes.observe-monitoring.get` | The details of a {{site.data.keyword.mon_short}} configuration are returned. |
 | `containers-kubernetes.observe-monitoring.list` | {{site.data.keyword.mon_short}} configurations for a cluster are listed. |
