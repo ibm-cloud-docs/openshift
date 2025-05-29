@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2025
-lastupdated: "2025-05-28"
+lastupdated: "2025-05-29"
 
 
 keywords: openshift, kubernetes, help, network, connectivity, {{site.data.keyword.openshiftlong_notm}}
@@ -90,5 +90,75 @@ Review the infrastructure environment to check for other reasons that might caus
 3. If you have access to the underlying infrastructure, such as classic **Virtual Servers**, review the details of the corresponding machines for the worker nodes.
 
 
+
+
 ### Step 5: Gather the logs and other details about your worker nodes
 {: #worker-debug-must-gather}
+
+The `oc adm must-gather` CLI command collects the information from your cluster for debugging issues. The must-gather tool collects resource definitions, service logs, and more. Note that audit logs are not collected as part of the default set of information to reduce the size of the files.
+
+When you run `oc adm must-gather`, a new pod with a random name is created in a new project on the cluster. The data is collected on that pod and saved in a new directory that starts with `must-gather.local`.
+
+Review the following example commands.
+
+```sh
+oc adm must-gather
+```
+{: pre}
+
+Example command to collect data related to one or more specific features, use the `--image` argument with a specific image.
+
+```sh
+oc adm must-gather \
+--image=registry.redhat.io/container-native-virtualization/cnv-must-gather-rhel9:v4.17.5
+```
+{: pre}
+
+Example command to collect audit logs.
+
+```sh
+oc adm must-gather -- /usr/bin/gather_audit_logs
+```
+{: pre}
+
+
+Example command to run must-gather in a specific namespace.
+```sh
+oc adm must-gather --run-namespace <namespace> \
+--image=registry.redhat.io/container-native-virtualization/cnv-must-gather-rhel9:v4.17.5
+```
+{: pre}
+
+Example commands to collect the logs from a given timeframe.
+
+```sh
+oc adm must-gather --since=24h
+```
+{: pre}
+
+```sh
+oc adm must-gather --since-time=$(date -d '-24 hours' +%Y-%m-%dT%T.%9N%:z )
+```
+{: pre}
+
+Example command to collect network logs.
+
+```sh
+oc adm must-gather -- gather_network_logs
+```
+{: pre}
+
+For more examples and arguments run the following comamnd
+
+```sh
+oc adm must-gather -h
+```
+{: pre}
+
+Example command to create a compressed file from the must-gather directory.
+```sh
+tar cvaf must-gather.tar.gz must-gather.local.5421342344627712289/
+```
+{: pre}
+
+Attach the compressed file to your support case on of the [Red Hat Customer Portal](https://access.redhat.com/support/cases/#/case/list){: external}.

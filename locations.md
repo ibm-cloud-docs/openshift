@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2025
-lastupdated: "2025-05-27"
+lastupdated: "2025-05-29"
 
 
 keywords: openshift, kubernetes, mzr, szr, multizone, multi az
@@ -28,11 +28,12 @@ This image is an artistic representation and does not reflect actual political o
 
 
 
-Montreal (ca-mon) MZR limitations
+Montreal (`ca-mon`) MZR limitations
 :   **Webhooks**: Only webhooks that access an in-cluster service work. Webhooks that directly access an external, out of cluster, URL are blocked.
 :   **Operating systems**: You can only create clusters at version 4.16 and later in Montreal and can only use RHEL 9 or RHCOS workers nodes.
 
 :   **Portworx Enterprise** and **Portworx Backup**: The default installation method for Portworx Enterprise and Portworx Backup is not yet supported for private-only clusters in the Montreal region. Contact Portworx Support if you need to install Portworx Enterprise or Portworx Backup in a private-only cluster in Montreal. For more information, see [Portworx Support](/docs/openshift?topic=openshift-storage_portworx_about#portworx-billing-support).
+:   The Diagnostics and Debug Tool is currently not available in clusters in the Montreal (`ca-mon`) region.
 
 
 

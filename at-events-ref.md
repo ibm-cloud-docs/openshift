@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2025
-lastupdated: "2025-05-27"
+lastupdated: "2025-05-29"
 
 
 keywords: openshift, {{site.data.keyword.openshiftlong_notm}}, kubernetes, audit
@@ -14,7 +14,6 @@ subcollection: openshift
 
 {{site.data.keyword.attribute-definition-list}}
 
-log ana
 
 # {{site.data.keyword.logs_full_notm}} events
 {: #at_events_ref}
