@@ -1,8 +1,8 @@
 ---
 
 copyright:
-  years: 2021, 2024
-lastupdated: "2024-01-03"
+  years: 2021, 2025
+lastupdated: "2025-05-29"
 
 
 keywords: openshift, storage
@@ -39,7 +39,7 @@ The catalog source for your ODF storage cluster is unhealthy.
 Remove all the catalog sources from your cluster.
 {: tsResolve}
 
-1. Remove all catalog sources from your cluster. A new catalog source and respective pods automatically generate.
+1. Remove all catalog sources from your cluster. A new catalog source and pods automatically generate.
     ```sh
     oc -n openshift-marketplace delete catsrc --all
     ```
@@ -50,10 +50,3 @@ Remove all the catalog sources from your cluster.
     oc get pods,catsrc -n openshift-marketplace
     ```
     {: pre}
-
-
-
-
-
-
-

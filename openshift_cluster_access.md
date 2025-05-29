@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2025
-lastupdated: "2025-05-27"
+lastupdated: "2025-05-29"
 
 
 keywords: openshift, clusters, access, endpoint
@@ -730,7 +730,7 @@ You can create an {{site.data.keyword.cloud_notm}} IAM service ID, make an API k
 Private service endpoint allowlists are no longer supported.  Migrate from private service endpoint allowlists to context based restrictions as soon as possible. For specific migration steps, see [Migrating from a private service endpoint allowlist to context based restrictions (CBR)](/docs/openshift?topic=openshift-pse-to-cbr-migration).
 {: unsupported}
 
-Control access to your public and/or private service endpoints using context based restriction (CBR) rules.
+Control access to your public and private service endpoints using context based restriction (CBR) rules.
 {: shortdesc}
 
 After you [grant users access to your cluster through {{site.data.keyword.cloud_notm}} IAM](/docs/openshift?topic=openshift-iam-platform-access-roles), you can add a secondary layer of security by creating CBR rules for your cluster's public and private service endpoint. Only authorized requests to your cluster master that originate from subnets in the CBR rules will be allowed.

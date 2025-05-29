@@ -1,8 +1,8 @@
 ---
 
 copyright:
-  years: 2022, 2024
-lastupdated: "2024-05-07"
+  years: 2022, 2025
+lastupdated: "2025-05-29"
 
 
 keywords: cbr, openshift, context based restrictions, security, cbr scenario, cbr
@@ -153,7 +153,7 @@ In this scenario, you allow different IP addresses or CIDRs to access the public
 ### Allowing different IPs to access different API types over the public and private service endpoints
 {: #cbr-tutorial-scenarios-pub-priv-api-types}
 
-Similar to the previous scenario, in this scenario you allow different IP addresses to access the respective public or private service endpoint for {{site.data.keyword.openshiftlong_notm}} clusters. However, in this scenario, access is further restricted by specific API types for the `cluster` and `management` APIs. For more information about the API types, see [Protecting specific APIs](/docs/openshift?topic=openshift-cbr&interface=cli#protect-api-types-cbr).
+Similar to the previous scenario, in this scenario you allow different IP addresses to access the public or private service endpoint for {{site.data.keyword.openshiftlong_notm}} clusters. However, in this scenario, access is further restricted by specific API types for the `cluster` and `management` APIs. For more information about the API types, see [Protecting specific APIs](/docs/openshift?topic=openshift-cbr&interface=cli#protect-api-types-cbr).
 
 1. Create four network zones, one for each of the IP addresses you want to allow to access either the public or private `cluster` APIs or the public or private `management` APIs. Note that you can include multiple IP addresses or CIDRs, separated by a comma, that you want to allow to access your clusters. 
 
@@ -207,6 +207,3 @@ Similar to the previous scenario, in this scenario you allow different IP addres
     ibmcloud cbr rule-create --api-types crn:v1:bluemix:public:containers-kubernetes::::api-type:cluster --context-attributes "endpointType=public,networkZoneId=PUBLIC-CLUSTER-ZONE-ID" --context-attributes "endpointType=private,networkZoneId=PRIVATE-CLUSTER-ZONE-ID" --description "Separate private and public IPs for cluster APIs" --service-name containers-kubernetes
     ```
     {: pre}
-
-
-

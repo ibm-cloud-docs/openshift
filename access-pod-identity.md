@@ -1,8 +1,8 @@
 ---
 
 copyright: 
-  years: 2014, 2024
-lastupdated: "2024-04-24"
+  years: 2014, 2025
+lastupdated: "2025-05-29"
 
 
 keywords: kubernetes, openshift, infrastructure, rbac, policy
@@ -138,7 +138,7 @@ As an account administrator, create a trusted profile in {{site.data.keyword.clo
 5. For compute service, select **Kubernetes**.
 6. For compute resources, choose among the following options to determine which clusters or resources in the cluster can establish trust.
     * **All service resources**: Any existing and future clusters. To link the trusted profile only to clusters under certain conditions, you can **Add new condition +**. For example, you might add conditions such as only clusters in a resource group, only clusters with a `prod` Kubernetes namespace, or only clusters with a `trusted-profile` Kubernetes service account.
-    * **Specific resources**: A particular cluster. Click **Add another resource +** to select a cluster and fill out conditions such as the Kubernetes namespace or Kubernetes service account that can establish trust.
+    * **Specific resources**: A particular cluster. Click **Add another resource +** to select a cluster and complete the conditions such as the Kubernetes namespace or Kubernetes service account that can establish trust.
     * Click **Continue**.
 
     The Kubernetes namespace and service account names that you enter don't have to exist already. Any future namespaces or service accounts with these names can establish trust. To list existing namespaces, log in to your cluster and run `oc get ns`. To list existing service accounts, log in to your cluster and run `oc get sa -n <namespace>`.
@@ -253,4 +253,3 @@ To configure your application pods to authenticate with {{site.data.keyword.clou
 1. Review the output for the `job completed` and `succeeded` messages to verify the job was a success.
 
 1. If the job succeeded, check your {{site.data.keyword.cloudaccesstrailshort}} global events in Frankfurt to verify the log line with details on the Trusted Profile request. If the job failed, review your configuration and try again.
-

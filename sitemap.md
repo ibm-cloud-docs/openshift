@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2025
-lastupdated: "2025-05-28"
+lastupdated: "2025-05-29"
 
 
 keywords: openshift
@@ -9361,7 +9361,7 @@ subcollection: openshift
 
     * [How can I lock down my cluster if my API key becomes compromised?](/docs/openshift?topic=openshift-faqs#apikey-lockdown)
 
-* [How do I rotate the cluster API key in the event of a leak?](/docs/openshift?topic=openshift-faqs#faq_api_key_leak)
+* [How do I rotate the cluster API key if there is a leak?](/docs/openshift?topic=openshift-faqs#faq_api_key_leak)
 
 * [Where can I find a list of security bulletins that affect my cluster?](/docs/openshift?topic=openshift-faqs#faq_security_bulletins)
 
@@ -9512,7 +9512,7 @@ subcollection: openshift
 
 * [Updating](/docs/openshift?topic=openshift-cluster-states-reference#cluster-state-updating)
 
-* [Update canceled](/docs/openshift?topic=openshift-cluster-states-reference#cluster-state-cancelled)
+* [Update canceled](/docs/openshift?topic=openshift-cluster-states-reference#cluster-state-canceled)
 
 * [Unavailable](/docs/openshift?topic=openshift-cluster-states-reference#cluster-state-unavailable)
 
@@ -9628,7 +9628,7 @@ subcollection: openshift
 
 [Why do I get an `infrastructure operation failed` error when creating a VPC cluster?](/docs/openshift?topic=openshift-ts-resource-group-permissions#ts-resource-group-permissions)
 
-[How do I rotate the cluster API key in the event of a leak?](/docs/openshift?topic=openshift-ts-troubleshoot-api-key-leak#ts-troubleshoot-api-key-leak)
+[How do I rotate the cluster API key if there is a leak?](/docs/openshift?topic=openshift-ts-troubleshoot-api-key-leak#ts-troubleshoot-api-key-leak)
 
 [Why can't the cluster pull images from {{site.data.keyword.registrylong_notm}} during creation?](/docs/openshift?topic=openshift-ts_image_pull_create#ts_image_pull_create)
 

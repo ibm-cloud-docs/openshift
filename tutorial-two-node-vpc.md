@@ -2,7 +2,7 @@
 
 copyright:
   years: 2024, 2025
-lastupdated: "2025-03-18"
+lastupdated: "2025-05-29"
 
 
 keywords: kubernetes
@@ -67,7 +67,7 @@ In this tutorial, you create the following resources. There are optional steps t
 1. Clear the **Use Full Repository** box.
 1. Make sure the **Branch**, **Folder**, and **Personal Access Token** fields are empty.
 1. Use the default Terraform version and click **Next**.
-1. In the **Workplace Details** section, give your workspace a name and fill out the remaining fields as desired.
+1. In the **Workplace Details** section, give your workspace a name and complete the remaining fields.
 1. Click **Next**, then review the information you entered. 
 1. Click **Create**, then wait a few minutes while the Schematics template populates.
 

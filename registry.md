@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2025
-lastupdated: "2025-05-28"
+lastupdated: "2025-05-29"
 
 
 keywords: openshift, {{site.data.keyword.openshiftlong_notm}}, kubernetes, registry, pull secret, secrets
@@ -485,7 +485,7 @@ Want to learn more about how builds, image streams, and the internal registry wo
     ```
     {: pre}
 
-    - `<region>.icr.io/<namespace>/<image>:<tag>`: Use the **Repository** and **Tag** information that you previously retrieved to fill out the {{site.data.keyword.registrylong_notm}} region, namespace, image, and tag name of the image that you want to pull.
+    - `<region>.icr.io/<namespace>/<image>:<tag>`: Use the **Repository** and **Tag** information that you previously retrieved to complete the {{site.data.keyword.registrylong_notm}} region, namespace, image, and tag name of the image that you want to pull.
     - `default/<image>:<tag>`: Enter the information for the internal image stream that you create from the {{site.data.keyword.registrylong_notm}} tagged image. You create this image stream in the `default` project, which is also the project where the image stream is created if you don't specify a project. The values for `<image>:<tag>` typically match the values that you previously retrieved.</td>
     - `--reference-policy=local`: Set this value to `local` so that a copy of the image from {{site.data.keyword.registrylong_notm}} is imported into the local cache of the internal registry and made available to the cluster's projects as an image stream. If you don't include this value, the image stream refers back to {{site.data.keyword.registrylong_notm}} when you use it in your deployments and therefore requires credentials in the project.
     - `--scheduled`: Set this optional option to set up periodic importing of the image from {{site.data.keyword.registrylong_notm}} into the internal registry. The default frequency is 15 minutes. For more information, see the [{{site.data.keyword.redhat_openshift_notm}} documentation](https://docs.redhat.com/documentation/openshift_container_platform/4.17/html/images/managing-image-streams#images-imagestreams-import_image-streams-managing){: external}. 

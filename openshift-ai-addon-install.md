@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2024, 2025
-lastupdated: "2025-04-29"
+lastupdated: "2025-05-29"
 
 
 keywords: openshift, {{site.data.keyword.openshiftlong_notm}}, ai, add-on
@@ -29,7 +29,7 @@ Want to deploy the OpenShift AI operator on a new cluster? Try the [OpenShift AI
 
 To use the OpenShift AI add-on, your cluster must meet the following requirements.
 - Your cluster must be version 4.16 and later.
-- Your cluster requires have at least 2 worker nodes. Each worker node must be a minuimum of 8vCPU and 32GB memory. To use all the capabilities provided by OpenShift AI, at least 1 GPU is recommended.
+- Your cluster requires have at least 2 worker nodes. Each worker node must be a minimum of 8vCPU and 32GB memory. To use all the capabilities provided by OpenShift AI, at least 1 GPU is recommended.
 - Your worker nodes must use the RHCOS operating system.
 
 ## Before you begin
@@ -201,7 +201,7 @@ To include a customization for an operator when you [install the OpenShift AI ad
 | NVIDIA vGPU Manager | `nvidiaVgpuManagerEnabled` | Enable NVIDIA vGPU Manager. | `true` (enabled) \n `false` (disabled) | `true` (enabled) |         
 | NVIDIA VFIO Manager | `nvidiaVfioManagerEnabled` | Enable VFIOManager for configuration to deploy VFIO-PCI. | `true` (enabled) \n `false` (disabled) | `true` (enabled) |        
 | NVIDIA Node Status Exporter | `nvidiaNodeStatusExporterEnabled` | Enable Node Status Exporter. | `true` (enabled) \n `false` (disabled) | `true` (enabled) |  
-| NVIDIA Sandbox Device Plugin | `nvidiaSandboxDevicePluginEnabled` | Enable NVIDIA Sandbox Device Plugin. | `true` (enabled) \n `false` (disabled) | `true` (enabled) |
+| NVIDIA Sandbox Device Plug-in | `nvidiaSandboxDevicePluginEnabled` | Enable NVIDIA Sandbox Device Plugin. | `true` (enabled) \n `false` (disabled) | `true` (enabled) |
 | NVIDA MIG Manager| `nvidiaMigManagerEnabled` |  Enable NVIDIA MIG Manager. | `true` (enabled) \n `false` (disabled) | `true` (enabled) |         
 | NVIDIA vGPU Device Manager| `nvidiaVgpuDeviceManagerEnabled` | Enable NVIDIA vGPU Device Manager. | `true` (enabled) \n `false` (disabled) | `true` (enabled) | 
 | NVIDIA GPUDirect Storage | `nvidiaGpuDirectStorageEnabled` | Enable GPUDirect Storage. | `true` (enabled) \n `false` (disabled) | `true` (enabled) |

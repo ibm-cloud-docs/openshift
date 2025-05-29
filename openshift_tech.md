@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2025
-lastupdated: "2025-04-09"
+lastupdated: "2025-05-29"
 
 
 keywords: openshift, compliance, security standards, red hat openshift, openshift container platform, red hat, openshift architecture, red hat architecture, openshift dependencies,
@@ -176,7 +176,7 @@ Projects
 :   The cluster storage operator makes sure that a default storage class is set.
 
 `openshift-console`, `openshift-console-operator`
-:   The {{site.data.keyword.redhat_openshift_notm}} web console is a user-friendly, web-based interface that you can use to manage the {{site.data.keyword.redhat_openshift_notm}} and Kubernetes resources that run in your cluster. You can also use the console to display an `oc login` token to authenticate to your cluster from a CLI. For more information, see [Navigating the {{site.data.keyword.redhat_openshift_notm}} console](/docs/openshift?topic=openshift-openshift_tutorial#openshift_oc_console).
+:   The {{site.data.keyword.redhat_openshift_notm}} web console is a web-based interface that you can use to manage the {{site.data.keyword.redhat_openshift_notm}} and Kubernetes resources that run in your cluster. You can also use the console to display an `oc login` token to authenticate to your cluster from a CLI. For more information, see [Navigating the {{site.data.keyword.redhat_openshift_notm}} console](/docs/openshift?topic=openshift-openshift_tutorial#openshift_oc_console).
 
 `openshift-dns`, `openshift-dns-operator`
 :   The DNS project includes the components to validate incoming network traffic against the `iptables` rules that are set up on the worker node, and proxies requests that are allowed to enter or leave the cluster.

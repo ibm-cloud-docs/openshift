@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2025
-lastupdated: "2025-03-18"
+lastupdated: "2025-05-29"
 
 
 keywords: kubernetes, openshift
@@ -997,7 +997,7 @@ To back up or restore a PVC by editing the `values.yaml` file:
         ```
         {: screen}
 
-    2. Review the logs of the `ibm-storage-backup` pod to make sure that your backup was successful. When you see the `... backup completed` message in the event logs, your backup completed successfully.
+    2. Review the logs of the `ibm-storage-backup` pod to make sure that your backup was successful. When you see the `... backup completed` message in the logs, your backup completed successfully.
 
         ```sh
         oc logs ibm-storage-backup

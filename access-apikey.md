@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2025
-lastupdated: "2025-05-14"
+lastupdated: "2025-05-29"
 
 
 keywords: openshift, {{site.data.keyword.openshiftlong_notm}}, kubernetes, infrastructure, rbac, policy
@@ -24,7 +24,7 @@ subcollection: openshift
 {{site.data.keyword.openshiftlong_notm}} accesses the infrastructure portfolio and other services that you use in your cluster by using an [API key](/docs/account?topic=account-manapikey). This API key stores the credentials of a user in the account to the infrastructure and other services. {{site.data.keyword.openshiftlong_notm}} uses the API key to order resources in the service, such as new worker nodes or VLANs in IBM Cloud infrastructure.
 {: shortdesc}
 
-By default, the account owner's credentials are stored in the API key. However, to avoid tying your cluster resources to a specific user, such as the account owner, consider using a [functional ID](/docs/account?topic=account-identity-overview#functionalid-bestpract) instead of a personal user. In the event of the account owner leaving the organization or being removed from the account, a functional ID prevents other users from losing access to the account and prevents disruptions to services and commands requiring certain credentials that might not be available after the account owner leaves.
+By default, the account owner's credentials are stored in the API key. However, to avoid tying your cluster resources to a specific user, such as the account owner, consider using a [functional ID](/docs/account?topic=account-identity-overview#functionalid-bestpract) instead of a personal user. If an account owner leaves the organization or is removed from the account, a functional ID prevents other users from losing access to the account and prevents disruptions to services and commands requiring certain credentials that might not be available after the account owner leaves.
 
 Need to remove a user from your account? Make sure you reset your API key. See [Removing user credentials and permissions](#apikey-remove-user).
 {: tip}

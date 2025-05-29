@@ -2,7 +2,7 @@
 
 copyright:
   years: 2022, 2025
-lastupdated: "2025-03-28"
+lastupdated: "2025-05-29"
 
 
 keywords: openshift, version, update, upgrade, 4.11, update openshift
@@ -151,7 +151,7 @@ For more information about creating worker pools and adding worker nodes, see [A
 
 6. [Remove the worker pool](/docs/openshift?topic=openshift-kubernetes-service-cli#cs_worker_pool_rm) that contains the RHEL 7 hosts. 
 
-    Consider scaling down your RHEL 7 worker pool and keeping it for several days before you remove it. This way, you can easily scale the worker pool back up if your workload experiences disruptions during the migration process. After you remove the worker pool, you cannot provision another RHEL 7 worker pool in the event of disruptions. When you have determined that your workload is stable and functions normally, you can safely remove the RHEL 7 worker pool.
+    Consider scaling down your RHEL 7 worker pool and keeping it for several days before you remove it. This way, you can easily scale the worker pool back up if your workload experiences disruptions during the migration process. After you remove the worker pool, you cannot provision another RHEL 7 worker pool if there are disruptions. When you have determined that your workload is stable and functions normally, you can safely remove the RHEL 7 worker pool.
     {: important}
 
     1. List your worker pools and note the name of the worker pool you want to remove.

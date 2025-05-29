@@ -3,7 +3,7 @@
 copyright:
   years: 2024, 2025
 
-lastupdated: "2025-05-13"
+lastupdated: "2025-05-29"
 
 
 keywords: change log, version history, VPC Block CSI Driver
@@ -76,7 +76,7 @@ Review the version history for VPC Block CSI Driver.
 
 - Resolves [CVE-2024-51744](https://nvd.nist.gov/vuln/detail/CVE-2024-51744){: external}.
 - Increases custom volume profile support to a maximum of 16TB.
-- Removes IOPS and capacity validation for custom volume profile from CSI Driver. Now VPC IaaS performs validation and shows the following generic error in case of wrong user input: `The volume profile specified in the request is not valid for the provided capacity and/or IOPS`. Existing VPCs are not impacted.
+- Removes IOPS and capacity validation for custom volume profile from CSI Driver. Now VPC IaaS performs validation and shows the following generic error in case of wrong user input: `The volume profile specified in the request is not valid for the provided capacity or IOPS`. Existing VPCs are not impacted.
 
 ### Change log for version 5.2.24_641, released 20 November 2024
 {: #5.2.24_641_is_block_relnote}

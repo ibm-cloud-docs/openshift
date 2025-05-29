@@ -1,8 +1,8 @@
 ---
 
 copyright: 
-  years: 2024, 2024
-lastupdated: "2024-10-10"
+  years: 2024, 2025
+lastupdated: "2025-05-29"
 
 
 keywords: kubernetes, help, connectivity, debugging, openshift, apps, support, network
@@ -71,7 +71,7 @@ Client                Application Service             Etcd Instance
 
 In the following diagram, the connection is initiated by one of three client pods in an cluster in the `eu-de` region. The client pods connect to a global load balancer (GLB) which then load balances the connection to one of two public VPC application load balancers (ALBs) in `eu-de` and `eu-gb`.
 
-Each of these VPC ALBs is a part of a separate cluster in the respective region. These ALBs route traffic to the OpenShift router pods, which then forward that traffic to the backend pods in the cluster. Those backend pods connect to a Cloudant database to handle the request.
+Each of these VPC ALBs is a part of a separate cluster in their regions. These ALBs route traffic to the OpenShift router pods, which then forward that traffic to the backend pods in the cluster. Those backend pods connect to a Cloudant database to handle the request.
 
 Note that some of these connections are over the public network. Some are over a private network in the same VPC, and some use the private network in {{site.data.keyword.cloud_notm}} between components in a VPC and a service in {{site.data.keyword.cloud_notm}}.
 

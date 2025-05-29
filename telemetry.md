@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2024, 2025
-lastupdated: "2025-04-04"
+lastupdated: "2025-05-29"
 
 
 keywords: telemetry, remote health, remote monitoring, cluster data, health data
@@ -125,7 +125,7 @@ If you are not sure whether Telemetry is already enabled for a cluster, follow t
     ```
     {: pre}
 
-2. Get the pull secret located in the `openshift-config` namespace. Note that this command extracts the data from the secret, base64 decodes it, and then outputs the info into a file. 
+2. Get the pull secret located in the `openshift-config` namespace. Note that this command extracts the data from the secret, base64 decodes it, and then outputs the information into a file. 
     ```sh
     oc get secrets pull-secret -n openshift-config -o template='{{index .data ".dockerconfigjson"}}' | base64 -d > pull-secret.json
     ```

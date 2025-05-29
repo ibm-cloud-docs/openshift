@@ -395,7 +395,7 @@ Now that you deployed a test GPU workload, you might want to set up your cluster
 This feature is available for allowlisted accounts only. To request access, see [Requesting access to allowlisted features](/docs/openshift?topic=openshift-allowlist-request).
 {: note}
 
-Complete the following example to deploy Intel Gaudi’s PyTorch container image that a retreives a Gaudi device by using the `resource.limits` field. Before you begin, make sure your cluster meets the following requirements.
+Complete the following example to deploy Intel Gaudi’s PyTorch container image that a retrieves a Gaudi device by using the `resource.limits` field. Before you begin, make sure your cluster meets the following requirements.
 
 - Version 4.18 and later
 - VPC clusters only

@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2022, 2025
-lastupdated: "2025-04-17"
+lastupdated: "2025-05-29"
 
 
 keywords: kubernetes, openshift
@@ -24,7 +24,7 @@ subcollection: openshift
 Your app that uses {{site.data.keyword.filestorage_vpc_short}} fails with a permissions error.
 {: tsSymptoms}
 
-You created your own storage class to use with an existing file share, but did not specify the correct `uid` and `gid`. When a process runs on UNIX and Linux, the operating system identifies a user with a user ID (UID) and group with a group ID (GID). These IDs determine which system resources a user or group can access. For example, if the file storage user ID is 12345 and its group ID is 6789, then the mount on the host node and in the container must have those same IDs. The container’s main process must match one or both of those IDs to access the file share.
+You created your own storage class to use with an existing file share, but did not specify the correct `uid` and `gid`. When processes run on UNIX and Linux, the operating system identifies a user with a user ID (UID) and group with a group ID (GID). These IDs determine which system resources a user or group can access. For example, if the file storage user ID is 12345 and its group ID is 6789, then the mount on the host node and in the container must have those same IDs. The container’s main process must match one or both of those IDs to access the file share.
 {: tsCauses}
 
 You can resolve the issue in one of the following ways.

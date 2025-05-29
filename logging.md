@@ -2,7 +2,7 @@
 
 copyright:
   years: 2024, 2025
-lastupdated: "2025-05-27"
+lastupdated: "2025-05-29"
 
 keywords: logging, cloud logs, logs, log analysis, containers
 
@@ -125,4 +125,4 @@ For information about fields included in every platform log, see [Fields for pla
 ## Analyzing {{site.data.keyword.openshiftlong_notm}} logs
 {: #cloud-logs}
 
-You can view your logs to view details on events that affect your cluster components. For example, in the event of a pod failure you can view your logs in the dashboard to see related error messages. 
+You can view your logs to view details on events that affect your cluster components. For example, if a pod fails, you can view your logs in the dashboard to see related error messages. 

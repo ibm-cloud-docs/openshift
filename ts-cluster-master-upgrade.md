@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2023, 2025
-lastupdated: "2025-03-31"
+lastupdated: "2025-05-29"
 
 
 keywords: openshift, {{site.data.keyword.openshiftlong_notm}}, kubernetes, help, cluster, upgrades,
@@ -52,7 +52,7 @@ oc get clusterversion version -o json | jq '.status.conditions[] | select(.type 
 1. Migrate any affected components to use the appropriate new API version including tools, workloads, or any other components that run or interact with the cluster. For example, {{site.data.keyword.redhat_openshift_notm}} 4.16 clusters use Kubernetes 1.29 and face the same [deprecations](https://kubernetes.io/docs/reference/using-api/deprecation-guide/#v1-29){: external}.
 
 
-1. After you've successfully migrated off of removed APIs, you can acknowledge that your cluster is ready to upgrade to the next version of {{site.data.keyword.redhat_openshift_notm}}.
+1. After you've successfully migrated off the removed APIs, you can acknowledge that your cluster is ready to upgrade to the next version of {{site.data.keyword.redhat_openshift_notm}}.
 
     Cluster administrators are responsible for ensuring that removed APIs are no longer being used and migration to supported APIs is completed before providing this administrator acknowledgment. IBM Cloud can assist with the evaluation, but cannot identify all possible instances where removed APIs are being used, especially in external tools and idle workloads.
     {: important}

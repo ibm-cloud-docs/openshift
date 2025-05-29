@@ -1,8 +1,8 @@
 ---
 
 copyright: 
-  years: 2023, 2024
-lastupdated: "2024-01-18"
+  years: 2023, 2025
+lastupdated: "2025-05-29"
 
 
 keywords: kubernetes, help, api key, security
@@ -16,7 +16,7 @@ content-type: troubleshoot
 {{site.data.keyword.attribute-definition-list}}
 
 
-# How do I rotate the cluster API key in the event of a leak?
+# How do I rotate the cluster API key if there is a leak?
 {: #ts-troubleshoot-api-key-leak}
 {: support}
 
@@ -65,7 +65,3 @@ To resolve the issue, rotate your cluster credentials.
     {: pre}
 
 1. Note that the new API key is generated immediately. However, the updated secret might take several minutes to populate.
-
-
-
-

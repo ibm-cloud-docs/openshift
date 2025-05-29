@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2025, 2025
-lastupdated: "2025-04-17"
+lastupdated: "2025-05-29"
 
 
 keywords: high availability, disaster recover, HA, DR, responsibilities
@@ -83,7 +83,7 @@ Kubernetes Service supports the following disaster recovery features:
 | Feature | Description |
 |---------| ----------- |
 | [Portworx](/docs/openshift?topic=openshift-storage_portworx_recovery) | A third-party, highly available software-defined storage solution that you can use to manage local persistent storage for your containerized databases and other stateful apps, or to share data between pods across multiple zones. Review the [prerequisites](https://docs.portworx.com/portworx-enterprise/platform/prerequisites){: external}  |
-| [OpenShift Data Foundation (ODF) Regional Disaster Recovery](/docs/openshift?topic=openshift-openshift_odf_rdr_roks) | A disaster recovery solution that provides an automated "one-click" recovery in the event of a regional disaster. Applications are automatically redeployed to a designated OpenShift Container Platform with an ODF cluster that is available in another region. |
+| [OpenShift Data Foundation (ODF) Regional Disaster Recovery](/docs/openshift?topic=openshift-openshift_odf_rdr_roks) | A disaster recovery solution that provides an automated "one-click" recovery if there is a regional disaster. Applications are automatically redeployed to a designated OpenShift Container Platform with an ODF cluster that is available in another region. |
 | [Cloud Object Storage (COS)](/docs/cloud-object-storage) | A persistent, highly available storage option that mounts to your apps, available as a plug-in. Review the [limitations](/docs/openshift?topic=openshift-storage-cos-understand#cos_limitations).|
 | [Autorecovery](/docs/containers?topic=containers-health-monitor#autorecovery) | The Autorecovery system uses various checks to query worker node health status. If Autorecovery detects an unhealthy worker node based on the configured checks, Autorecovery triggers a corrective action like rebooting a VPC worker node or reloading the operating system in a classic worker node.|
 | [Data portability with Velero](/docs/openshift?topic=openshift-data-portability&q=velero&tags=containers#export-velero) | A third-party option for exporting data from your cluster to an IBM COS instance or another s3 provider. | Requires an IBM COS instance and bucket. |
@@ -114,7 +114,7 @@ Review [additional options for exporting data](/docs/openshift?topic=openshift-d
 ### How {{site.data.keyword.IBM_notm}} recovers from failures
 {: #ibm-zone-failure}
 
-In the event of a zone or regional failure, IBM is responsible for the recovery of  components. IBM will attempt to restore the cluster in the same region based on the last state in internal persistent storage. IBM updates and recovers operational components within the cluster, such as the Ingress application load balancer and file storage plug-in.
+If there is a zone or regional failure, IBM is responsible for the recovery of  components. IBM will attempt to restore the cluster in the same region based on the last state in internal persistent storage. IBM updates and recovers operational components within the cluster, such as the Ingress application load balancer and file storage plug-in.
 
 IBM also provides the ability to integrate with other IBM Cloud services such as storage providers so that data can be backed up and restored. It is your responsibility to implement these integrations. 
 

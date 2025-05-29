@@ -2,7 +2,7 @@
 
 copyright:
   years: 2023, 2025
-lastupdated: "2025-05-20"
+lastupdated: "2025-05-29"
 
 
 keywords: ingress, configure ingress, annotations, customize ingress, ingress controller, source IP
@@ -208,7 +208,7 @@ If your clusters are exposed with IBM Cloud Cloud Internet Services (CIS) / Clou
     ```
     {: pre}
 
-3. **VPC clusters only**: In cases where you are operating within a Virtual Private Cloud (VPC), it is neccesary to tune the idle connection timeout of the VPC load balancer along with your Ingress Controller settings. We recommend choosing a greater idle connection timeout than the timeout settings of your Ingress Controller. The command below demonstrates how to update the idle connection timeout for the `router-default` LoadBalancer service to 910 seconds:
+3. **VPC clusters only**: In cases where you are operating within a Virtual Private Cloud (VPC), it is necessary to tune the idle connection timeout of the VPC load balancer along with your Ingress Controller settings. We recommend choosing a greater idle connection timeout than the timeout settings of your Ingress Controller. The command below demonstrates how to update the idle connection timeout for the `router-default` LoadBalancer service to 910 seconds:
 
     ```sh
     oc annotate svc -n openshift-ingress service.kubernetes.io/ibm-load-balancer-cloud-provider-vpc-idle-connection-timeout="910" router-default

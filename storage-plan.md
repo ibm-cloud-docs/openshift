@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2025
-lastupdated: "2025-04-17"
+lastupdated: "2025-05-29"
 
 
 keywords: planning, storage, cluster, container storage, cloud storage, kubernetes service, openshift
@@ -113,7 +113,7 @@ The following image shows the options that you have in {{site.data.keyword.opens
 | Deployment guide | [Setting up {{site.data.keyword.filestorage_short}}](/docs/openshift?topic=openshift-file_storage). |
 | Ideal data types | All |
 | Supported provisioning type | Dynamic and static |
-| Data usage pattern | Random read-write operations, sequential read-write operations, or write-intensive workloads | 
+| Data usage pattern | Random read/write operations, sequential read/write operations, or write-intensive workloads | 
 | Access | Via file system on mounted volume |
 | Supported Kubernetes access modes |  \n - ReadWriteMany (RWX)  \n - ReadOnlyMany (ROX)  \n - ReadWriteOnce (RWO) |
 | Performance | Predictable due to assigned IOPS and size. IOPS are shared between the pods that access the volume.|
@@ -139,7 +139,7 @@ The following image shows the options that you have in {{site.data.keyword.opens
 | Deployment guide | [Setting up {{site.data.keyword.blockstorageshort}}](/docs/openshift?topic=openshift-block_storage). |
 | Ideal data types | All |
 | Supported provisioning type | Dynamic and static |
-| Data usage pattern | Random read-write operations, sequential read-write operations, or write-intensive workloads |
+| Data usage pattern | Random read/write operations, sequential read/write operations, or write-intensive workloads |
 | Access | Via file system on mounted volume. |
 | Supported Kubernetes access modes |  ReadWriteOnce (RWO) |
 | Performance | Predictable due to assigned IOPS and size. IOPS are not shared between pods. |
@@ -166,7 +166,7 @@ The following image shows the options that you have in {{site.data.keyword.opens
 | Deployment guide | [Setting up {{site.data.keyword.filestorage_vpc_short}}](/docs/openshift?topic=openshift-storage-file-vpc-install). |
 | Ideal data types | All |
 | Supported provisioning type | Dynamic and static |
-| Data usage pattern | Random read-write operations, sequential read-write operations, or write-intensive workloads |
+| Data usage pattern | Random read/write operations, sequential read/write operations, or write-intensive workloads |
 | Access | Via file system on mounted volume|
 | Supported Kubernetes access modes |  \n - ReadWriteMany (RWX)  \n - ReadOnlyMany (ROX)  \n - ReadWriteOnce (RWO) Version `1.2` and later. |
 | Performance | Predictable due to assigned IOPS and size. IOPS are not shared between pods. |
@@ -191,7 +191,7 @@ The following image shows the options that you have in {{site.data.keyword.opens
 | Deployment guide | [Setting up {{site.data.keyword.block_storage_is_short}}](/docs/openshift?topic=openshift-vpc-block). |
 | Multizone-capable | No, as specific to a data center. Data can't be shared across zones, unless you implement your own data replication. |
 | Ideal data types | All |
-| Data usage pattern | Random read-write operations, sequential read-write operations, or write-intensive workloads |
+| Data usage pattern | Random read/write operations, sequential read/write operations, or write-intensive workloads |
 | Access | Via file system on mounted volume|
 | Supported Kubernetes access writes | ReadWriteOnce (RWO) |
 | Performance | Predictable due to assigned IOPS and size. IOPS are not shared between pods. |
@@ -247,7 +247,7 @@ The following sections show the options that you have in {{site.data.keyword.ope
 | Deployment guide | [Setting up Portworx](/docs/openshift?topic=openshift-storage_portworx_about). |
 | Supported infrastructure providers | Classic, VPC, Satellite |
 | Ideal data types | Any |
-| Data usage pattern | Read and write-intensive workloads. | Read-write-intensive workloads |
+| Data usage pattern | Read and write-intensive workloads. | Read/write-intensive workloads |
 | Access | Via file system on mounted volume (plug-in) or via REST API from your app | Via file system on mounted volume or NFS client access to the volume. | Via REST API from your app. |
 | Supported Kubernetes access modes |  \n - ReadWriteMany (RWX)  \n - ReadOnlyMany (ROX)  \n - ReadWriteOnce (RWO) |
 | Performance | High for read operations. Predictable due to assigned IOPS and size when you use non-SDS machines. |Close to bare metal performance for sequential read and write operations when you use SDS machines. Provides [profiles](https://docs.portworx.com/portworx-enterprise/operations/operate-kubernetes/storage-operations/create-pvcs/dynamic-provisioning.html){: external} to run high-performance databases. Possibility to create a storage layer with different performance profiles that your app can choose from.| High if deployed to the same data center as your app. |
@@ -298,7 +298,7 @@ The following sections show the options that you have in {{site.data.keyword.ope
 | Deployment guide | [Connect a Cloud Databases deployment to an IBM Cloud Kubernetes Service application](/docs/cloud-databases?topic=cloud-databases-tutorial-k8s-app). |
 | Supported infrastructure providers | Classic, VPC, Satellite |
 | Ideal data types | Depends on the DBaaS |
-| Data usage pattern | Read-write-intensive workloads |
+| Data usage pattern | Read/write-intensive workloads |
 | Access | Via REST API from your app. |
 | Supported Kubernetes access writes | N/A as accessed from the app directly. |
 | Performance | High if deployed to the same data center as your app. |

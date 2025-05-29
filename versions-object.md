@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2025
-lastupdated: "2025-04-28"
+lastupdated: "2025-05-29"
 
 
 keywords: openshift, {{site.data.keyword.openshiftlong_notm}}, object storage, plug-in, change log
@@ -226,8 +226,8 @@ Because this update affects regional storage classes, you must uninstall and rei
 {: #02210_object_plugin}
 
 - Updates the UBI Image to `8.7-1049.1675784874`.
-- Updates the default values for `CPU request` and `CPU limit` to `100m` and `500m` respectively.
-- Updates the default values for `Memory request` and `Memory limit1` to `128Mi` and `500Mi` respectively.
+- Updates the default values for `CPU request` and `CPU limit` to `100m` and `500m`.
+- Updates the default values for `Memory request` and `Memory limit1` to `128Mi` and `500Mi`.
 - Resolves [CVE-2022-47629](https://nvd.nist.gov/vuln/detail/CVE-2022-47629){: external}.
 
 

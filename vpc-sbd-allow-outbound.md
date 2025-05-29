@@ -1,8 +1,8 @@
 ---
 
 copyright: 
-  years: 2024, 2024
-lastupdated: "2024-10-22"
+  years: 2024, 2025
+lastupdated: "2025-05-29"
 
 keywords: openshift, {{site.data.keyword.openshiftlong_notm}}, secure by default, outbound traffic protection, 4.15
 
@@ -417,7 +417,7 @@ VPC cluster workers use the private network to communicate with the cluster mast
 
 In 4.15 and later clusters, falling back to the public network is not an option because public outbound traffic from the cluster workers is blocked. You might want to disable outbound traffic protection to allow this public network backup option, however, there is a better alternative. Instead, if there a temporary issue with the worker-to-master connection over the private network, then, at that time, you can add a temporary security group rule to the `kube-clusterID` security group to allow outbound traffic to the cluster master `apiserver` port. Later, when the problem is resolved, you can remove the temporary rule.
 
-You can choose one of the following options to allow traffic over the public network in the event the private network is down.
+You can choose one of the following options to allow traffic over the public network if the private network is down.
 
 * Add a security group rule to the `kube-clusterID` security group to allow traffic to the API server.
     1. Get your cluster details and note of the API server port.
@@ -457,7 +457,3 @@ You can choose one of the following options to allow traffic over the public net
     ibmcloud oc vpc outbound-traffic-protection disable --cluster CLUSTER
     ```
     {: pre}
-
-
-
-

@@ -1,11 +1,11 @@
 ---
 
 copyright:
-  years: 2024, 2024
-lastupdated: "2024-09-09"
+  years: 2024, 2025
+lastupdated: "2025-05-29"
 
 
-keywords: openshift, troubleshooting, upgrade, oc adm, update, update status
+keywords: openshift, troubleshooting, upgrade, update, update status
 
 subcollection: openshift
 content-type: troubleshoot

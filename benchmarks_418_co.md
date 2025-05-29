@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2024, 2025
-lastupdated: "2025-05-28"
+lastupdated: "2025-05-29"
 
 
 keywords: openshift, benchmarks, 4.18, compliance operator, compliance
@@ -53,13 +53,13 @@ The master node configuration is not stored as a set of files; therefore, rules 
 | 1.2.8|Verify that the Node authorizer is enabled.|Automated|1|Pass |
 | 1.2.9|Verify that RBAC is enabled.|Automated|1|Pass |
 | 1.2.10|Ensure that the APIPriorityAndFairness feature gate is enabled.|Manual|1|Pass |
-| 1.2.11|Ensure that the admission control plugin AlwaysAdmit is not set.|Automated|1|Pass |
-| 1.2.12|Ensure that the admission control plugin AlwaysPullImages is not set.|Manual|1|Pass |
-| 1.2.13|Ensure that the admission control plugin SecurityContextDeny is not set.|Manual|1|Pass |
-| 1.2.14|Ensure that the admission control plugin ServiceAccount is set.|Automated|1|Pass |
-| 1.2.15|Ensure that the admission control plugin NamespaceLifecycle is set.|Automated|1|Pass |
-| 1.2.16|Ensure that the admission control plugin SecurityContextConstraint is set.|Automated|1|Pass |
-| 1.2.17|Ensure that the admission control plugin NodeRestriction is set.|Automated|1|Pass |
+| 1.2.11|Ensure that the admission control plug-in AlwaysAdmit is not set.|Automated|1|Pass |
+| 1.2.12|Ensure that the admission control plug-in AlwaysPullImages is not set.|Manual|1|Pass |
+| 1.2.13|Ensure that the admission control plug-in SecurityContextDeny is not set.|Manual|1|Pass |
+| 1.2.14|Ensure that the admission control plug-in ServiceAccount is set.|Automated|1|Pass |
+| 1.2.15|Ensure that the admission control plug-in NamespaceLifecycle is set.|Automated|1|Pass |
+| 1.2.16|Ensure that the admission control plug-in SecurityContextConstraint is set.|Automated|1|Pass |
+| 1.2.17|Ensure that the admission control plug-in NodeRestriction is set.|Automated|1|Pass |
 | 1.2.18|Ensure that the `--insecure-bind-address` argument is not set.|Automated|1|Pass |
 | 1.2.19|Ensure that the `--insecure-port` argument is set to 0.|Automated|1|Not checked |
 | 1.2.20|Ensure that the `--secure-port` argument is not set to 0.|Automated|1|Pass |
