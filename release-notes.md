@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2025
-lastupdated: "2025-05-28"
+lastupdated: "2025-05-29"
 
 
 keywords: kubernetes, release notes, openshift, {{site.data.keyword.openshiftlong_notm}}
@@ -45,7 +45,7 @@ New! There are new default security group rules in version 4.18 and later.
 :   For more information, see [Understanding secure by default Cluster VPC Networking](/docs/openshift?topic=openshift-vpc-security-group-reference).
 
 New! Intel AI Accelerators (Gaudi 3).
-:   {{site.data.keyword.openshiftlong_notm}} 4.18 supports Intel AI Accelerators (Gaudi 3) on RHCOS worker nodes.
+:   {{site.data.keyword.openshiftlong_notm}} 4.18 supports Intel AI Accelerators (Gaudi 3) on RHCOS worker nodes. This feature is available for allowlisted accounts only. To request access, see [Requesting access to allowlisted features](/docs/openshift?topic=openshift-allowlist-request).
 
 New! RHEL 9 support for Satellite clusters.
 :   RHEL 9 is now supported for Satellite clusters at version 4.17 and 4.18. Note that RHEL 9 is not supported in location control planes. RHEL 9 support is available for both legacy and CoreOS-enabled Satellite locations.
