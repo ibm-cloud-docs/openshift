@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2025
-lastupdated: "2025-05-29"
+lastupdated: "2025-05-30"
 
 
 keywords: openshift
@@ -285,6 +285,10 @@ subcollection: openshift
 [Release notes](/docs/openshift?topic=openshift-openshift-relnotes#openshift-relnotes)
 
 * [May 2025](/docs/openshift?topic=openshift-openshift-relnotes#openshift-may25)
+
+    * [30 May 2025](/docs/openshift?topic=openshift-openshift-relnotes#openshift-30may25)
+
+        * {{site.data.keyword.openshiftlong_notm}} 4.18 is Kubernetes certified
 
     * [27 May 2025](/docs/openshift?topic=openshift-openshift-relnotes#openshift-27may25)
 
@@ -9721,6 +9725,10 @@ subcollection: openshift
 
     * [Step 5: Gather the logs and other details about your worker nodes](/docs/openshift?topic=openshift-debug_worker_nodes#worker-debug-must-gather)
 
+    * [Running the `must-gather` command](/docs/openshift?topic=openshift-debug_worker_nodes#must-gather-oc)
+
+    * [Gathering an SOS report](/docs/openshift?topic=openshift-debug_worker_nodes#sos-report-oc)
+
 [Debugging worker nodes with Kubernetes API](/docs/openshift?topic=openshift-debug-kube-nodes#debug-kube-nodes)
 
 [Common issues with worker nodes](/docs/openshift?topic=openshift-common_worker_nodes_issues#common_worker_nodes_issues)
@@ -10305,6 +10313,16 @@ subcollection: openshift
 
 
 [Contacting support](/docs/openshift?topic=openshift-get-help#get-help)
+
+* [Get your cluster details](/docs/openshift?topic=openshift-get-help#cluster-details)
+
+* [Gather error logs and other information](/docs/openshift?topic=openshift-get-help#gather-logs)
+
+    * [Running the `must-gather` command](/docs/openshift?topic=openshift-get-help#must-gather-oc)
+
+    * [Gathering an SOS report](/docs/openshift?topic=openshift-get-help#sos-report-oc)
+
+* [Open a support case](/docs/openshift?topic=openshift-get-help#support-case)
 
 
 ## Service limitations
