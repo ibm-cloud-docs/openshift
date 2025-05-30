@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2025
-lastupdated: "2025-05-29"
+lastupdated: "2025-05-30"
 
 
 keywords: kubernetes, release notes, openshift, {{site.data.keyword.openshiftlong_notm}}
@@ -31,6 +31,13 @@ Looking for {{site.data.keyword.cloud_notm}} status, platform announcements, sec
 {: #openshift-may25}
 
 
+
+### 30 May 2025
+{: #openshift-30may25}
+{: release-note}
+
+{{site.data.keyword.openshiftlong_notm}} 4.18 is Kubernetes certified
+:   Version [4.17](/docs/openshift?topic=openshift-openshift_changelog_417) release is now certified.
 
 
 ### 27 May 2025

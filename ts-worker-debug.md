@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2025
-lastupdated: "2025-05-29"
+lastupdated: "2025-05-30"
 
 
 keywords: openshift, kubernetes, help, network, connectivity, {{site.data.keyword.openshiftlong_notm}}
@@ -95,6 +95,9 @@ Review the infrastructure environment to check for other reasons that might caus
 ### Step 5: Gather the logs and other details about your worker nodes
 {: #worker-debug-must-gather}
 
+### Running the `must-gather` command
+{: #must-gather-oc}
+
 The `oc adm must-gather` CLI command collects the information from your cluster for debugging issues. The must-gather tool collects resource definitions, service logs, and more. Note that audit logs are not collected as part of the default set of information to reduce the size of the files.
 
 When you run `oc adm must-gather`, a new pod with a random name is created in a new project on the cluster. The data is collected on that pod and saved in a new directory that starts with `must-gather.local`.
@@ -161,4 +164,94 @@ tar cvaf must-gather.tar.gz must-gather.local.5421342344627712289/
 ```
 {: pre}
 
-Attach the compressed file to your support case on of the [Red Hat Customer Portal](https://access.redhat.com/support/cases/#/case/list){: external}.
+Attach the compressed file to your support case.
+
+### Gathering an SOS report
+{: #sos-report-oc}
+
+`sosreport` is a tool that collects configuration details, system information, and diagnostic data from Red Hat Enterprise Linux (RHEL) and Red Hat Enterprise Linux CoreOS (RHCOS) systems. It provides a standardized way to collect diagnostic information relating to a node, which can then be provided to support for issue diagnosis.
+
+In some support interactions, support might ask you to collect a `sosreport` archive for a specific OpenShift Container Platform node. For example, it might be necessary to review system logs or other node-specific data that is not included within the output of `oc adm must-gather`.
+
+The recommended way to generate a `sosreport` for an OpenShift Container Platform cluster node is through a debug pod.
+
+[Access your {{site.data.keyword.redhat_openshift_notm}} cluster](/docs/openshift?topic=openshift-access_cluster).
+
+1. List your worker nodes.
+    ```sh
+    oc get nodes
+    ```
+    {: pre}
+
+1.  Start a a debug session on the target node.
+    ```sh
+    oc debug node/node_name
+    ```
+    {: pre}
+
+    To enter into a debug session on the target node that is tainted with the `NoExecute` effect, add a toleration to a temporary namespace, and start the debug pod in the temp namespace.
+    {: note}
+
+    ```sh
+    oc new-project temp oc patch namespace temp --type=merge -p '{"metadata": {"annotations": { "scheduler.alpha.kubernetes.io/defaultTolerations": "[{\"operator\": \"Exists\"}]"}}}'
+    ```
+    {: pre}
+
+    ```sh
+    oc debug node/my-cluster-node
+    ```
+    {: pre}
+
+1. Set `/host` as the root directory within the debug shell. The debug pod mounts the host’s root file system in `/host` within the pod. By changing the root directory to `/host`, you can run binaries contained in the host’s executable paths.
+    ```sh
+    chroot /host
+    ```
+    {: pre}
+
+    OpenShift Container Platform cluster nodes running Red Hat Enterprise Linux CoreOS (RHCOS) are immutable and rely on Operators to apply cluster changes. Accessing cluster nodes by using SSH is not recommended. However, if the OpenShift Container Platform API is not available, or the kubelet is not properly functioning on the target node, oc operations might be impacted. In such situations, it is possible to access nodes using `ssh core@<node>.<cluster_name>.<base_domain>` instead.
+    {: note}
+
+1. Start a toolbox container, which includes the required binaries and plugins to run the `sosreport`.
+    ```sh
+    toolbox
+    ```
+    {: pre}
+
+
+    If an existing toolbox pod is already running, the toolbox command outputs `'toolbox-' already exists. Trying to start….` Remove the running toolbox container with `podman rm toolbox-` and start a new toolbox container.
+    {: note}
+
+1. Run the `sos report` command and follow the prompts to collect troubleshooting data.
+    ```sh
+    sos report -k crio.all=on -k crio.logs=on -k podman.all=on -k podman.logs=on
+    ```
+    {: pre}
+    
+    Example command to include information on OVN-Kubernetes networking configurations from a node in your report.
+    ```sh
+    sos report --all-logs
+    ```
+    {: pre}
+
+    The `sosreport` output provides the archive’s location and checksum. The following sample output references support case ID 01234567. The file path is outside of the `chroot` environment because the toolbox container mounts the host’s root directory at `/host`.
+    ```sh
+    Your sosreport has been generated and saved in:
+    /host/var/tmp/sosreport-my-cluster-node-01234567-2020-05-28-eyjknxt.tar.xz
+    The checksum is: 382ffc167510fd71b4f12a4f40b97a4e
+    ```
+    {: screen}
+
+1. Output the `sosreport` to a file.
+
+    The debug container mounts the host’s root directory at `/host`. Reference the absolute path from the debug container’s root directory, including `/host`, when specifying target files for concatenation.
+    {: tip}
+
+    ```sh
+    oc debug node/my-cluster-node -- bash -c 'cat /host/var/tmp/sosreport-my-cluster-node-01234567-2020-05-28-eyjknxt.tar.xz' > /tmp/sosreport-my-cluster-node-01234567-2020-05-28-eyjknxt.tar.xz
+    ```
+    {: pre}
+
+    OpenShift Container Platform cluster nodes running Red Hat Enterprise Linux CoreOS (RHCOS) are immutable and rely on Operators to apply cluster changes. Transferring a `sosreport` archive from a cluster node by using `scp` is not recommended. However, if the OpenShift Container Platform API is not available, or the kubelet is not properly functioning on the target node, `oc` operations might be impacted. In such situations, it is possible to copy a `sosreport` archive from a node by running `scp core@<node>.<cluster_name>.<base_domain>:<file_path> <local_path>`.
+    {: note}
+
+1. Upload the file to your support case.

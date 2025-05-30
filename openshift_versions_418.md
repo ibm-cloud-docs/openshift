@@ -2,7 +2,7 @@
 
 copyright:
   years: 2024, 2025
-lastupdated: "2025-05-29"
+lastupdated: "2025-05-30"
 
 
 keywords: openshift, version, update, upgrade, 4.18, update openshift
@@ -22,6 +22,12 @@ Review information about version 4.18 of {{site.data.keyword.openshiftlong_notm}
 
 Looking for general information about updating clusters, or information on a different version? See [Red Hat {{site.data.keyword.redhat_openshift_notm}} on IBM Cloud version information](/docs/openshift?topic=openshift-openshift_versions) and the version [4.18 release notes](https://docs.redhat.com/documentation/openshift_container_platform/4.18/html/release_notes/ocp-4-18-release-notes#ocp-4-17-release-notes){: external}.
 {: tip}
+
+
+
+![This badge indicates Kubernetes version 1.31 certification for {{site.data.keyword.openshiftlong_notm}}](images/certified-kubernetes-color.svg){: caption="Kubernetes version 1.31 certification badge" caption-side="bottom"}
+
+{{site.data.keyword.openshiftlong_notm}} is a Certified Kubernetes product for version 1.31 under the CNCF Kubernetes Software Conformance Certification program. _Kubernetes® is a registered trademark of The Linux Foundation in the United States and other countries, and is used pursuant to a license from The Linux Foundation._
 
 
 
