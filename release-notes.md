@@ -30,14 +30,22 @@ Looking for {{site.data.keyword.cloud_notm}} status, platform announcements, sec
 ## May 2025
 {: #openshift-may25}
 
-
-
 ### 30 May 2025
 {: #openshift-30may25}
 {: release-note}
 
+
+
 {{site.data.keyword.openshiftlong_notm}} 4.18 is Kubernetes certified
-:   Version [4.17](/docs/openshift?topic=openshift-openshift_changelog_417) release is now certified.
+:   Version [4.18](/docs/openshift?topic=openshift-openshift_changelog_418) release is now certified.
+
+Versions 4.12 and 4.13 are unsupported.
+:   Update your cluster to at least [version 4.14](/docs/openshift?topic=openshift-cs_versions_414) as soon as possible.
+
+
+
+
+
 
 
 ### 27 May 2025

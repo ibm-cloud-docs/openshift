@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2025
-lastupdated: "2025-05-29"
+lastupdated: "2025-05-30"
 
 
 keywords: kubernetes, containers, openshift
@@ -26,18 +26,16 @@ The Center for Internet Security (CIS) publishes the [CIS Kubernetes Benchmark](
 
 When a new Kubernetes version is released as part of a [supported {{site.data.keyword.redhat_openshift_notm}} version](/docs/openshift?topic=openshift-openshift_versions), IBM engineers compare the default configuration of a cluster that runs that Kubernetes version against the benchmark and publishes the results in this documentation. You can review how specific versions of your {{site.data.keyword.openshiftlong}} clusters meet the CIS Kubernetes Benchmark.
 
-## Available benchmark versions
+## Supported benchmark versions
 {: #cis-benchmark-versions}
 
-Use the list to find CIS Kubernetes Benchmark results for available versions.
+Use the list to find CIS Kubernetes Benchmark results for supported versions.
 
 - [Version 4.18](/docs/openshift?topic=openshift-cis-benchmark-418)
 - [Version 4.17](/docs/openshift?topic=openshift-cis-benchmark-417)
 - [Version 4.16](/docs/openshift?topic=openshift-cis-benchmark-416)
 - [Version 4.15](/docs/openshift?topic=openshift-cis-benchmark-415)
 - [Version 4.14](/docs/openshift?topic=openshift-cis-benchmark-414)
-- [Version 4.13](/docs/openshift?topic=openshift-cis-benchmark-413)
-- [Version 4.12](/docs/openshift?topic=openshift-cis-benchmark-412)
 
 
 

@@ -1,8 +1,8 @@
 ---
 
 copyright: 
-  years: 2023, 2024
-lastupdated: "2024-10-15"
+  years: 2023, 2025
+lastupdated: "2025-05-30"
 
 
 keywords: openshift, benchmarks, 4.12, openshift benchmarks, openshift 4.12
@@ -22,8 +22,8 @@ subcollection: openshift
 
 
 
-This version is deprecated. Update your cluster to a [supported version](/docs/openshift?topic=openshift-openshift_versions) as soon as possible.
-{: deprecated}
+This version is no longer supported. Update your cluster to a [supported version](/docs/openshift?topic=openshift-openshift_versions) as soon as possible.
+{: important}
 
 
 

@@ -379,20 +379,6 @@ toc:
               - openshift_versions_changelog_414.md
               - benchmarks_414.md
               - benchmarks_414_co.md
-          - topicgroup:
-              label: Version 4.13
-              topics:
-              - openshift_versions_413.md
-              - openshift_versions_changelog_413.md
-              - benchmarks_413.md
-              - benchmarks_413_co.md
-          - topicgroup:
-              label: Version 4.12
-              topics:
-              - openshift_versions_412.md
-              - openshift_versions_changelog_412.md
-              - benchmarks_412.md
-              - benchmarks_412_co.md
       - topicgroup:
           label: CLI plug-in reference
           topics:
@@ -430,6 +416,20 @@ toc:
       - topicgroup:
           label: Archived version history
           topics:
+          - topicgroup:
+              label: Version 4.13
+              topics:
+              - openshift_versions_413.md
+              - openshift_versions_changelog_413.md
+              - benchmarks_413.md
+              - benchmarks_413_co.md
+          - topicgroup:
+              label: Version 4.12
+              topics:
+              - openshift_versions_412.md
+              - openshift_versions_changelog_412.md
+              - benchmarks_412.md
+              - benchmarks_412_co.md
           - topicgroup:
               label: Version 4.11
               topics:

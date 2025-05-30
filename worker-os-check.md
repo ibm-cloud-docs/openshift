@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2023, 2025
-lastupdated: "2025-03-18"
+lastupdated: "2025-05-30"
 
 
 keywords: openshift, {{site.data.keyword.openshiftlong_notm}}, kubernetes, allowlist, operating system, rhel, ubuntu
@@ -137,7 +137,7 @@ You can also log in to your cluster to check the operating system of the worker 
                         kubernetes.io/os=linux
     ...
     System Info:
-        OS Image:                   Ubuntu 20.04.5 LTS
+        OS Image:                   Ubuntu 24.04.5 LTS
         Operating System:           linux
         Architecture:               amd64
         ...

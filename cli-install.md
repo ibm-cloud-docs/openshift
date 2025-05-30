@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2025
-lastupdated: "2025-05-27"
+lastupdated: "2025-05-30"
 
 
 keywords: openshift, oc, installing oc, openshift cli, installing oc cli
@@ -71,5 +71,5 @@ You can use the `oc` CLI to deploy and manage resources in your {{site.data.keyw
     - [OpenShift CLI administrator command reference](https://docs.openshift.com/container-platform/4.17/cli_reference/openshift_cli/administrator-cli-commands.html){: external}.
     - [OpenShift CLI developer command reference](https://docs.openshift.com/container-platform/4.17/cli_reference/openshift_cli/developer-cli-commands.html){: external}.
 
-Red Hat OpenShift on IBM Cloud version 4.16 is now based on the RHEL 9.2 host operating system, which increases the [micro-architecture requirements](https://docs.openshift.com/container-platform/4.16/updating/preparing_for_updates/updating-cluster-prepare.html#rhel-micro-architecture-update-requirements){: external} to x86-64-v2. As a result, host machines for IBM Cloud {{site.data.keyword.satelliteshort}} must support x86-64-v2 architecture for any location that contains a version 4.16 cluster. See [Host system requirements](/docs/satellite?topic=satellite-host-reqs) for more information. In addition, client machines used to run `oc` client version 4.16 must also support x86-64-v2 architecture. Client machines, such as Ubuntu 20, that do not meet this micro-architecture requirement must use a RHEL 8 based `oc` version 4.16 client. Refer to the list of [available `oc` version 4.16 clients](https://mirror.openshift.com/pub/openshift-v4/clients/ocp/stable-4.16/){: external}.
+Red Hat OpenShift on IBM Cloud version 4.16 is now based on the RHEL 9.2 host operating system, which increases the [micro-architecture requirements](https://docs.openshift.com/container-platform/4.16/updating/preparing_for_updates/updating-cluster-prepare.html#rhel-micro-architecture-update-requirements){: external} to x86-64-v2. As a result, host machines for IBM Cloud {{site.data.keyword.satelliteshort}} must support x86-64-v2 architecture for any location that contains a version 4.16 cluster. See [Host system requirements](/docs/satellite?topic=satellite-host-reqs) for more information. In addition, client machines used to run `oc` client version 4.16 must also support x86-64-v2 architecture. Client machines that do not meet this micro-architecture requirement must use a RHEL 8 based `oc` version 4.16 client. Refer to the list of [available `oc` version 4.16 clients](https://mirror.openshift.com/pub/openshift-v4/clients/ocp/stable-4.16/){: external}.
 {: important}

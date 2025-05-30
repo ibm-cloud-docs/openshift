@@ -2,7 +2,7 @@
 
 copyright:
   years: 2023, 2025
-lastupdated: "2025-03-28"
+lastupdated: "2025-05-30"
 
 
 keywords: openshift, version, update, upgrade, 4.12, update openshift
@@ -22,8 +22,8 @@ subcollection: openshift
 
 
 
-This version is deprecated. Update your cluster to a [supported version](/docs/openshift?topic=openshift-openshift_versions) as soon as possible.
-{: deprecated}
+This version is no longer supported. Update your cluster to a [supported version](/docs/openshift?topic=openshift-openshift_versions) as soon as possible.
+{: important}
 
 
 
