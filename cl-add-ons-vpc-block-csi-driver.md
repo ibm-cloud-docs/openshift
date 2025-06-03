@@ -3,7 +3,7 @@
 copyright:
   years: 2024, 2025
 
-lastupdated: "2025-05-29"
+lastupdated: "2025-06-03"
 
 
 keywords: change log, version history, VPC Block CSI Driver
@@ -29,6 +29,22 @@ Review the version history for VPC Block CSI Driver.
 {: #cl-add-ons-vpc-block-csi-driver-5.2}
 
 
+### 5.2.36_778, released 30 May 2025
+{: #cl-add-ons-vpc-block-csi-driver-5236_778}
+
+- Resolves the following CVEs: [CVE-2024-9042](https://nvd.nist.gov/vuln/detail/CVE-2024-9042){: external}, and [CVE-2025-0426](https://nvd.nist.gov/vuln/detail/CVE-2025-0426){: external}.
+- Updates k8s package to 1.32.3 in iks-vpc-block-driver container. 
+- New storage classes ibmc-vpc-block-sdp
+- ibmc-vpc-block-sdp-max-bandwidth
+- and ibmc-vpc-block-sdp-max-bandwidth-sds supported based on new block storage SSD defined performance profile. These classes are available in allowlisted accounts only.
+- `armada-storage-secret v1.3.27`
+- `csi-provisioner v5.2.0`
+- `csi-resizer v1.13.2`
+- `csi-snapshotter v8.2.1`
+- `csi-attacher v4.8.1`
+- `livenessprobe:v2.15.0`
+- `csi-node-driver-registrar v2.13.0`
+
 ### 5.2.33_735, released 09 May 2025
 {: #cl-add-ons-vpc-block-csi-driver-5233_735}
 
@@ -49,6 +65,21 @@ Review the version history for VPC Block CSI Driver.
 ## Version 5.1
 {: #cl-add-ons-vpc-block-csi-driver-5.1}
 
+
+### 5.1.35_763, released 30 May 2025
+{: #cl-add-ons-vpc-block-csi-driver-5135_763}
+
+[Default version]{: tag-green}
+
+- Resolves the following CVEs: [CVE-2024-9042](https://nvd.nist.gov/vuln/detail/CVE-2024-9042){: external}, [CVE-2025-0426](https://nvd.nist.gov/vuln/detail/CVE-2025-0426){: external}, [CVE-2025-22872](https://nvd.nist.gov/vuln/detail/CVE-2025-22872){: external}, and [CVE-2025-30204](https://nvd.nist.gov/vuln/detail/CVE-2025-30204){: external}.
+- Updates k8s package to 1.32.3 in iks-vpc-block-driver container 
+- `armada-storage-secret v1.2.61`
+- `csi-provisioner v5.2.0`
+- `csi-resizer v1.13.2`
+- `csi-snapshotter v8.2.1`
+- `csi-attacher v4.8.1`
+- `livenessprobe:v2.15.0`
+- `csi-node-driver-registrar v2.13.0`
 
 ### 5.1.34_740, released 09 May 2025
 {: #cl-add-ons-vpc-block-csi-driver-5134_740}
