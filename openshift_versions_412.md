@@ -2,7 +2,7 @@
 
 copyright:
   years: 2023, 2025
-lastupdated: "2025-05-30"
+lastupdated: "2025-06-04"
 
 
 keywords: openshift, version, update, upgrade, 4.12, update openshift
@@ -30,7 +30,7 @@ This version is no longer supported. Update your cluster to a [supported version
 Review information about version 4.12 of {{site.data.keyword.openshiftlong_notm}}. This version is based on Kubernetes version 1.25. 
 {: shortdesc}
 
-Looking for general information about updating clusters, or information on a different version? See [Red Hat {{site.data.keyword.redhat_openshift_notm}} on IBM Cloud version information](/docs/openshift?topic=openshift-openshift_versions) and the version [4.12 blog](https://www.redhat.com/blog/whats-new-in-red-hat-openshift-4.12-blog){: external}.
+Looking for general information about updating clusters, or information on a different version? See [Red Hat {{site.data.keyword.redhat_openshift_notm}} on IBM Cloud version information](/docs/openshift?topic=openshift-openshift_versions) and the version [4.12 blog](https://www.redhat.com/en/blog/whats-new-in-red-hat-openshift-4.12-blog){: external}.
 {: tip}
 
 ![This badge indicates Kubernetes version 1.25 certification for {{site.data.keyword.openshiftlong_notm}}](images/certified-kubernetes-color.svg){: caption="Kubernetes version 1.25 certification badge" caption-side="bottom"}

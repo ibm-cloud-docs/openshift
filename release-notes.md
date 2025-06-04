@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2025
-lastupdated: "2025-06-03"
+lastupdated: "2025-06-04"
 
 
 keywords: kubernetes, release notes, openshift, {{site.data.keyword.openshiftlong_notm}}
@@ -3346,107 +3346,3 @@ New troubleshooting doc for how to recover after deleting a portable subnet in C
 
 Cloud Image Key Synchronizer add-on version `1.0.0_1329`.
 :   For more information, see the [change log](/docs/openshift?topic=openshift-cl-add-ons-ibm-cloud-image-key-synchronizer).
-
-
-
-### 2 February 2023
-{: #openshift-feb0223}
-{: release-note}
-
-Istio add-on `1.14` 
-:   Version `1.14` of the managed Istio add-on is no longer supported. For more information, see the [change log](/docs/containers?topic=containers-istio-changelog#v114).
-
-### 1 February 2023
-{: #openshift-feb0123}
-{: release-note}
-
-
-
-Persistent VPC load balancers
-:   You can now create a [persistent VPC load balancer](/docs/openshift?topic=openshift-vpclb_manage#vpc_lb_persist) that remains available even after your cluster is deleted. 
-
-Customized VPC load balancer health checks
-:   For more control over your VPC load balancer health checks, you can use [optional annotations](/docs/openshift?topic=openshift-setup_vpc_alb#vpc_alb_annotations_opt) to customize your health checks with advanced configurations for test intervals, timeouts, and retries.
-
-## January 2023
-{: #openshift-jan23}
-
-### 30 January 2023
-{: #openshift-jan3023}
-{: release-note}
-
-
-
-Master fix packs `4.8.57_1587_openshift`, `4.9.54_1573_openshift`, `4.10.47_1553_openshift`, and `4.11.25_1540_openshift`.
-:   For more information, see the change logs: [4.11](/docs/openshift?topic=openshift-openshift_changelog_411), [4.10](/docs/openshift?topic=openshift-openshift_changelog_410),[4.9](/docs/openshift?topic=openshift-openshift_changelog_49), [4.8](/docs/openshift?topic=openshift-openshift_changelog_48).
-
-
-
-Worker node fix packs `4.8.57_1588_openshift`, `4.9.54_1574_openshift`, `4.10.50_1554_openshift`, and `4.11.25_1541_openshift`.
-:   For more information, see the change logs: [4.11](/docs/openshift?topic=openshift-openshift_changelog_411), [4.10](/docs/openshift?topic=openshift-openshift_changelog_410),[4.9](/docs/openshift?topic=openshift-openshift_changelog_49), [4.8](/docs/openshift?topic=openshift-openshift_changelog_48).
-
-New! Optional secondary disks for worker nodes in VPC clusters.
-:   When you create a VPC cluster, you can specify an optional secondary disk for your worker nodes. Secondary disks are used for the container runtime and are useful in scenarios where more container storage is needed, such as running pods with large images. For more information, see [Creating VPC clusters](/docs/openshift?topic=openshift-cluster-create-vpc-gen2&interface=ui).
-
-
-CLI version `1.0.489`.
-:   For more information, see the [change log](/docs/openshift?topic=openshift-cs_cli_changelog).
-
-
-
-
-
-### 24 January 2023
-{: #openshift-jan2423}
-{: release-note}
-
-CLI version 1.0.487 change log update
-:   The [CLI change log](/docs/openshift?topic=openshift-cs_cli_changelog) is updated for version 1.0.487.
-
-{{site.data.keyword.block_storage_is_short}} add-on versions `4.4.16_1779` and `5.0.5_1784`.
-:   For more information, see [the change log](/docs/openshift?topic=openshift-cl-add-ons-vpc-block-csi-driver).
-
-Cluster autoscaler add-on version `1.0.7_940`.
-:   For more information, see [the change log](/docs/openshift?topic=openshift-ca_changelog).
-
-
-### 23 January 2023
-{: #openshift-jan2323}
-{: release-note}
-
-{{site.data.keyword.cos_full_notm}} plug-in version `2.2.8` is available.
-:   For more information, see the [change log](/docs/openshift?topic=openshift-cos_plugin_changelog).
-
-
-### 16 January 2023
-{: #openshift-jan1723}
-{: release-note}
-
-
-
-Worker node fix packs `4.11.22_1538_openshift`, `4.10.47_1551_openshift`, `4.9.54_1571_openshift`, `4.8.55_1586_openshift`.
-:   For more information, see the change logs: [4.11](/docs/openshift?topic=openshift-openshift_changelog_411), [4.10](/docs/openshift?topic=openshift-openshift_changelog_410),[4.9](/docs/openshift?topic=openshift-openshift_changelog_49), [4.8](/docs/openshift?topic=openshift-openshift_changelog_48).
-
-### 10 January 2023
-{: #openshift-jan1023}
-{: release-note}
-
-{{site.data.keyword.block_storage_is_short}} add-on versions `4.4.15_1764` and `5.0.4_1773`
-:   For more information, see [the change log](/docs/openshift?topic=openshift-cl-add-ons-vpc-block-csi-driver).
-
-Istio add-on versions `1.14.6`, `1.15.4`, and `1.16.1`
-:   For more information, see the [change log](/docs/containers?topic=containers-istio-changelog#1161).
-
-### 9 January 2023
-{: #openshift-jan0923}
-{: release-note}
-
-Cluster autoscaler add-on versions `1.0.5_898`, `1.0.6_899`, `1.0.7_900`, and `1.1.0_897`.
-:   For more information, see [Cluster autoscaler add-on change log](/docs/openshift?topic=openshift-ca_changelog).
-
-### 5 January 2023
-{: #openshift-jan0523}
-{: release-note}
-
-{{site.data.keyword.cos_full_notm}} plug-in version `2.2.7` is available.
-:   For more information, see the [change log](/docs/openshift?topic=openshift-cos_plugin_changelog).
