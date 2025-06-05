@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2025
-lastupdated: "2025-06-03"
+lastupdated: "2025-06-04"
 
 
 keywords: openshift
@@ -1465,58 +1465,6 @@ subcollection: openshift
     * [8 February 2023](/docs/openshift?topic=openshift-openshift-relnotes#openshift-feb0823)
 
         * Cloud Image Key Synchronizer add-on version `1.0.0_1329`.
-
-    * [2 February 2023](/docs/openshift?topic=openshift-openshift-relnotes#openshift-feb0223)
-
-        * Istio add-on `1.14` 
-
-    * [1 February 2023](/docs/openshift?topic=openshift-openshift-relnotes#openshift-feb0123)
-
-        * Persistent VPC load balancers
-
-        * Customized VPC load balancer health checks
-
-* [January 2023](/docs/openshift?topic=openshift-openshift-relnotes#openshift-jan23)
-
-    * [30 January 2023](/docs/openshift?topic=openshift-openshift-relnotes#openshift-jan3023)
-
-        * Master fix packs `4.8.57_1587_openshift`, `4.9.54_1573_openshift`, `4.10.47_1553_openshift`, and `4.11.25_1540_openshift`.
-
-        * Worker node fix packs `4.8.57_1588_openshift`, `4.9.54_1574_openshift`, `4.10.50_1554_openshift`, and `4.11.25_1541_openshift`.
-
-        * New! Optional secondary disks for worker nodes in VPC clusters.
-
-        * CLI version `1.0.489`.
-
-    * [24 January 2023](/docs/openshift?topic=openshift-openshift-relnotes#openshift-jan2423)
-
-        * CLI version 1.0.487 change log update
-
-        * {{site.data.keyword.block_storage_is_short}} add-on versions `4.4.16_1779` and `5.0.5_1784`.
-
-        * Cluster autoscaler add-on version `1.0.7_940`.
-
-    * [23 January 2023](/docs/openshift?topic=openshift-openshift-relnotes#openshift-jan2323)
-
-        * {{site.data.keyword.cos_full_notm}} plug-in version `2.2.8` is available.
-
-    * [16 January 2023](/docs/openshift?topic=openshift-openshift-relnotes#openshift-jan1723)
-
-        * Worker node fix packs `4.11.22_1538_openshift`, `4.10.47_1551_openshift`, `4.9.54_1571_openshift`, `4.8.55_1586_openshift`.
-
-    * [10 January 2023](/docs/openshift?topic=openshift-openshift-relnotes#openshift-jan1023)
-
-        * {{site.data.keyword.block_storage_is_short}} add-on versions `4.4.15_1764` and `5.0.4_1773`
-
-        * Istio add-on versions `1.14.6`, `1.15.4`, and `1.16.1`
-
-    * [9 January 2023](/docs/openshift?topic=openshift-openshift-relnotes#openshift-jan0923)
-
-        * Cluster autoscaler add-on versions `1.0.5_898`, `1.0.6_899`, `1.0.7_900`, and `1.1.0_897`.
-
-    * [5 January 2023](/docs/openshift?topic=openshift-openshift-relnotes#openshift-jan0523)
-
-        * {{site.data.keyword.cos_full_notm}} plug-in version `2.2.7` is available.
 
 
 ## Tutorials library for OpenShift
