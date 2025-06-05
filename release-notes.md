@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2025
-lastupdated: "2025-06-04"
+lastupdated: "2025-06-05"
 
 
 keywords: kubernetes, release notes, openshift, {{site.data.keyword.openshiftlong_notm}}
@@ -111,6 +111,7 @@ RHEL operating system deprecation for VPC clusters version 4.18 and later.
 :   [Version 4.14 change log](/docs/openshift?topic=openshift-openshift_changelog_414)
 :   [Version 4.13 change log](/docs/openshift?topic=openshift-openshift_changelog_413)
 :   [Version 4.12 change log](/docs/openshift?topic=openshift-openshift_changelog_412)
+
 
 
 
