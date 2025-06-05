@@ -29,7 +29,7 @@ Looking for {{site.data.keyword.cloud_notm}} status, platform announcements, sec
 
 
 ## June 2025
-{: #openshift-may25}
+{: #openshift-june25}
 
 ### 02 June 2025
 {: #openshift-02jun25}
@@ -38,7 +38,6 @@ Looking for {{site.data.keyword.cloud_notm}} status, platform announcements, sec
 VPC Block CSI Driver cluster add-on patch updates.
 :   For more information, see the [change log](/docs/openshift?topic=openshift-cl-add-ons-vpc-block-csi-driver).
  
-
 
 
 
@@ -56,6 +55,27 @@ VPC Block CSI Driver cluster add-on patch updates.
 
 Versions 4.12 and 4.13 are unsupported.
 :   Update your cluster to at least [version 4.14](/docs/openshift?topic=openshift-cs_versions_414) as soon as possible.
+
+
+
+
+
+### 28 May 2025
+{: #openshift-28may25}
+{: release-note}
+
+
+
+
+
+{{site.data.keyword.openshiftlong_notm}} master fix packs.
+:   Master fix packs are applied automatically over the course of several days. You can choose to use the [`ibmcloud ks cluster master update`](/docs/openshift?topic=openshift-kubernetes-service-cli#cs_cluster_update) command yourself without waiting for the update automation to apply the patch. Review the following change logs for your cluster version.
+:   [Version 4.17 change log](/docs/openshift?topic=openshift-openshift_changelog_417)
+:   [Version 4.16 change log](/docs/openshift?topic=openshift-openshift_changelog_416)
+:   [Version 4.15 change log](/docs/openshift?topic=openshift-openshift_changelog_415)
+:   [Version 4.14 change log](/docs/openshift?topic=openshift-openshift_changelog_414)
+:   [Version 4.13 change log](/docs/openshift?topic=openshift-openshift_changelog_413)
+:   [Version 4.12 change log](/docs/openshift?topic=openshift-openshift_changelog_412)
 
 
 

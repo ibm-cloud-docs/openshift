@@ -3,7 +3,7 @@
 copyright:
   years: 2024, 2025
 
-lastupdated: "2025-05-30"
+lastupdated: "2025-06-05"
 
 
 keywords: change log, version history, 4.18_openshift
@@ -39,6 +39,20 @@ Master patch updates are applied automatically. Worker node patch updates can be
 {: #418_components}
 
 
+### Master fix pack 4.18.11_1543_openshift, released 28 May 2025
+{: #41811_1544_openshift_M}
+
+The following table shows the changes that are in the master fix pack 4.18.11_1544_openshift. Master patch updates are applied automatically. 
+
+
+
+| Component | Previous | Current | Description |
+| --- | --- | --- | --- |
+| {{site.data.keyword.cloud_notm}} Controller Manager | v1.31.8-3 | v1.31.9-1 | New version contains updates and security fixes. |
+| {{site.data.keyword.filestorage_full_notm}} for Classic plug-in and monitor | 449 | 450 | New version contains updates and security fixes. |
+{: caption="Changes since version 4.18.11_1543_openshift" caption-side="bottom"}
+
+
 ### Master fix pack 4.18.11_1544_openshift and worker node fix pack 4.18.11_1541_openshift, released 27 May 2025
 {: #openshift_changelog_41811_1544}
 
@@ -50,8 +64,8 @@ Master patch updates are applied automatically. Worker node patch updates can be
 | Calico Typha | v3.28.3 | v3.29.2 | See the [Calico release notes](https://docs.tigera.io/calico/latest/release-notes/){: external}. |
 | Cluster health image | v1.6.8 | v1.6.9 | New version contains updates and security fixes. |
 | HA master: etcd-operator image | v2.2.21 | v2.2.23 | New version contains updates and security fixes. |
-| IBM Cloud Controller Manager | v1.30.11-6 | v1.31.9-1 | New version contains updates and security fixes. |
-| IBM Cloud File Storage plug-in and monitor | 449 | 450 | New version contains updates and security fixes. |
+| IBM Cloud Controller Manager | v1.30.11-6 | v1.31.8-3 | New version contains updates and security fixes. |
+| IBM Cloud File Storage plug-in and monitor | 449 | 449 | |
 | Key Management Service provider | 2.10.12 | 2.10.13 | New version contains updates and security fixes. |
 | Kubernetes major.minor release | 1.30 | 1.31 | [Kubernetes docs](https://kubernetes.io/docs/home/){: external}. |
 | Load balancer for IBM Cloud Provider | 3232 | 3293 | New version contains updates and security fixes. |
