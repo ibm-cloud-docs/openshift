@@ -39,6 +39,22 @@ Master patch updates are applied automatically. Worker node patch updates can be
 {: #418_components}
 
 
+### Worker node fix pack 4.18.15_1539_openshift, released 04 June 2025
+{: #cl-boms-41815_1539_openshift_W}
+
+The following table shows the components included in the worker node fix pack 4.18.15_1539_openshift. Worker node patch updates can be applied by updating, reloading (in classic infrastructure), or replacing (in VPC infrastructure) the worker node.
+{: shortdesc}
+
+| Component | Version | Description |
+| ---- | ---- | ---- |
+|RHEL_9|5.14.0-503.40.1.el9_5|N/A|
+|Red Hat OpenShift and Red Hat CoreOS|4.18.15|For more information, see the [change logs](https://docs.redhat.com/en/documentation/openshift_container_platform/4.18/html/release_notes/ocp-4-18-release-notes.html#ocp-4-18-15_release-notes).|
+|HAProxy|978e3c26ee7634e39a940696aaf57d9e374db5ce|N/A|
+{: caption="4.18.15_1539_openshift fix pack." caption-side="bottom"}
+{: #cl-boms-41815_1539_openshift_W-component-table}
+
+
+
 ### Master fix pack 4.18.11_1543_openshift, released 28 May 2025
 {: #41811_1544_openshift_M}
 
@@ -51,6 +67,7 @@ The following table shows the changes that are in the master fix pack 4.18.11_15
 | {{site.data.keyword.cloud_notm}} Controller Manager | v1.31.8-3 | v1.31.9-1 | New version contains updates and security fixes. |
 | {{site.data.keyword.filestorage_full_notm}} for Classic plug-in and monitor | 449 | 450 | New version contains updates and security fixes. |
 {: caption="Changes since version 4.18.11_1543_openshift" caption-side="bottom"}
+
 
 
 ### Master fix pack 4.18.11_1544_openshift and worker node fix pack 4.18.11_1541_openshift, released 27 May 2025
