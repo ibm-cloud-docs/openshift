@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2025
-lastupdated: "2025-06-05"
+lastupdated: "2025-06-06"
 
 
 keywords: openshift, node scaling, ca, autoscaler
@@ -27,6 +27,7 @@ Additional flavor types, including flavors with NVIDIA V100, A100, H100, and H20
 {: note}
 
 The `gx2` bare metal flavors are not available in all zones within a region. For more information, see the [Generation 2 (x2) bare metal profiles availability by region](/docs/vpc?topic=vpc-bare-metal-servers-profile&interface=ui#bare-metal-profile-availability-by-region).
+{: note}
 
 
 
@@ -35,11 +36,10 @@ The Intel AI Accelerator (Gaudi 3) flavor is only compatible with {{site.data.ke
 
 
 
-
-If your account is allowlisted for flavors that are not listed below, you can find a list of available flavors by running **`ibmcloud oc flavor ls`** [command](/docs/openshift?topic=openshift-kubernetes-service-cli#cs_flavor_ls) or review the list of flavors when creating a cluster in the console.
-
 Note the operating system requirements for each flavor. When selecting a flavor in the console, make sure you have the correct zone and operating system selections.
 {: tip}
+
+If your account is allowlisted for flavors that are not listed below, you can find a list of available flavors by running **`ibmcloud oc flavor ls`** [command](/docs/openshift?topic=openshift-kubernetes-service-cli#cs_flavor_ls) or review the list of flavors when creating a cluster in the console.
 
 
 
