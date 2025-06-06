@@ -3,7 +3,7 @@
 copyright:
   years: 2024, 2025
 
-lastupdated: "2025-06-05"
+lastupdated: "2025-06-06"
 
 
 keywords: change log, version history, 4.18_openshift
@@ -82,7 +82,6 @@ The following table shows the changes that are in the master fix pack 4.18.11_15
 | Cluster health image | v1.6.8 | v1.6.9 | New version contains updates and security fixes. |
 | HA master: etcd-operator image | v2.2.21 | v2.2.23 | New version contains updates and security fixes. |
 | IBM Cloud Controller Manager | v1.30.11-6 | v1.31.8-3 | New version contains updates and security fixes. |
-| IBM Cloud File Storage plug-in and monitor | 449 | 449 | |
 | Key Management Service provider | 2.10.12 | 2.10.13 | New version contains updates and security fixes. |
 | Kubernetes major.minor release | 1.30 | 1.31 | [Kubernetes docs](https://kubernetes.io/docs/home/){: external}. |
 | Load balancer for IBM Cloud Provider | 3232 | 3293 | New version contains updates and security fixes. |
