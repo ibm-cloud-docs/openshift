@@ -1,8 +1,8 @@
 ---
 
 copyright: 
-  years: 2014, 2024
-lastupdated: "2024-01-03"
+  years: 2014, 2025
+lastupdated: "2025-06-09"
 
 
 keywords: openshift
@@ -61,10 +61,8 @@ Before you begin, make sure that you have the **Manager** service access role in
 
 6. If you configured [log forwarding](/docs/containers?topic=containers-health), review the node-related logs from the following paths.
     ```txt
-    /var/log/containerd.log
     /var/log/kubelet.log
-    /var/log/kube-proxy.log
-    
+    /var/log/syslog
     /var/log/messages
     ```
     {: screen}
@@ -101,6 +99,3 @@ Before you begin, make sure that you have the **Manager** service access role in
         {: pre}
         
     6. After you identify the workload that causes the issue, continue with [Debugging app deployments](/docs/openshift?topic=openshift-debug_apps).
-
-
-

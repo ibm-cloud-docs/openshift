@@ -2,7 +2,7 @@
 
 copyright:
   years: 2023, 2025
-lastupdated: "2025-05-27"
+lastupdated: "2025-06-09"
 
 
 keywords: critical, not ready, notready, troubleshooting, worker node status, status
@@ -218,7 +218,6 @@ Follow the steps to gather the relevant worker node data.
         - /var/log/cron
         - /var/log/messages
         - /var/log/secure
-        - /var/log/kubelet.log
     3.  Run the following commands and save the output to attach to the support ticket.
         - `ps -aux`                     # Dump running process
         - `df -H`                       # Dump disk usage information
