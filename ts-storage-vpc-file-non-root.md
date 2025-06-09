@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2022, 2025
-lastupdated: "2025-05-29"
+lastupdated: "2025-06-09"
 
 
 keywords: kubernetes, openshift
@@ -42,7 +42,7 @@ You can resolve the issue in one of the following ways.
 
 If you want to use {{site.data.keyword.filestorage_vpc_short}} with static provisioning, you must reference the correct `uid` and `gid`.
 
-1. Create a storage class with the correct `uid` and `gid` that your app needs.
+1. Create a storage class with the correct `uid` and `gid` that your app needs. For a list of storage profiles, see [{{site.data.keyword.filestorage_vpc_short}} profiles]( https://cloud.ibm.com/docs/vpc?topic=vpc-file-storage-profiles).
 
     ```yaml
     apiVersion: storage.k8s.io/v1
@@ -55,7 +55,7 @@ If you want to use {{site.data.keyword.filestorage_vpc_short}} with static provi
         - nfsvers=4.0
         - sec=sys
     parameters:
-      profile: "custom-iops"            # The VPC Storage profile used. /docs/vpc?topic=vpc-block-storage-profiles&interface=ui#tiers-beta
+      profile: "custom-iops"            # The VPC Storage profile used.
       iops: "400"                       # Default IOPS. User can override from secrets
       billingType: "hourly"             # The default billing policy used. User can override this default
       encrypted: "false"                # By default, all PVC using this class will only be provider managed encrypted. The user can override this default
