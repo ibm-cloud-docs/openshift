@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2025
-lastupdated: "2025-05-29"
+lastupdated: "2025-06-12"
 
 
 keywords: openshift, kubernetes, mzr, szr, multizone, multi az
@@ -109,7 +109,7 @@ VPC resources are provisioned in a region, which is a separate group of zones wi
 | Europe | Germany | Frankfurt | eu-de | eu-de-1, eu-de-2, eu-de-3 |
 | Europe | Spain | `†` Madrid | eu-es | eu-es-1, eu-es-2, eu-es-3 |
 | Europe | United Kingdom | London | eu-gb | eu-gb-1, eu-gb-2, eu-gb-3 |
-| North America | Canada | Montreal | ca-mon | ca-mon-1, ca-mon-2, ca-mon-3 |
+| North America | Canada | `†` Montreal | ca-mon | ca-mon-1, ca-mon-2, ca-mon-3 |
 | North America | Canada | `†` Toronto | ca-tor | ca-tor-1, ca-tor-2, ca-tor-3 |
 | North America | United States | Dallas | us-south | us-south-1, us-south-2, us-south-3 |
 | North America | United States | Washington DC | us-east | us-east-1, us-east-2, us-east-3 |
