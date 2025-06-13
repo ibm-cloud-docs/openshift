@@ -554,6 +554,7 @@ toc:
               - ts-openshift-marketplace.md
               - ts-cloud-pak-ds.md
               - ts-workerpool-license-entitlement.md
+              - ts-dupe-logs.md
           - topicgroup:
               label: Permissions and credentials
               topics:

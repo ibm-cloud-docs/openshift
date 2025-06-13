@@ -2,7 +2,7 @@
 
 copyright:
   years: 2022, 2025
-lastupdated: "2025-05-28"
+lastupdated: "2025-06-13"
 
 
 keywords: maintenance, host maintenance, notification, workers, offline
@@ -128,7 +128,7 @@ For workers with the `cx2.`, `bx2.`, or `mx2.` flavors:
     ```
     {: pre}    
 
-3. Reboot the worker.
+3. Replace the worker.
     ```sh
     ibmcloud oc worker replace --cluster <cluster_name_or_id> --worker <worker_id>
     ```

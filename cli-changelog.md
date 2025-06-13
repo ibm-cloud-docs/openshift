@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2025
-lastupdated: "2025-04-04"
+lastupdated: "2025-06-13"
 
 
 keywords: openshift, {{site.data.keyword.openshiftlong_notm}}, oc, ks
@@ -31,6 +31,14 @@ Refer to the following change logs for a summary of changes for each version of 
 
 Review the following changes for 1.0 versions of the CLI plug-in.
 {: shortdesc}
+
+## Version v1.0.706
+{: #cli-010706}
+
+Version 1.0.706 of the CLI was released on 10 June 2025.
+- Adds the `--show-crn` option to the `ibmcloud oc ingress secret field ls` command.
+- Adds the `--delete-openshift-registry-cos-bucket` option to the `ibmcloud oc cluster rm` command for {{site.data.keyword.openshiftlong_notm}} clusters.
+- Includes general refactoring and improvements.
 
 ## Version v1.0.687
 {: #cli-010687}

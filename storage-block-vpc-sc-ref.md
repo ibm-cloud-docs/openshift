@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2024, 2025
-lastupdated: "2025-04-30"
+lastupdated: "2025-06-13"
 
 
 keywords: openshift, block storage, deploy apps, storage class reference
@@ -21,7 +21,7 @@ subcollection: openshift
 
 [Virtual Private Cloud]{: tag-vpc}
 
-Review the following storage class information for {{site.data.keyword.block_storage_is_short}} in {{site.data.keyword.openshiftlong_notm}} clusters.
+Review the following storage class information for {{site.data.keyword.block_storage_is_short}} in {{site.data.keyword.openshiftlong_notm}} clusters. For more information about {{site.data.keyword.block_storage_is_short}}, see [About {{site.data.keyword.block_storage_is_short}}](/docs/vpc?topic=vpc-block-storage-about).
 {: shortdesc}
 
 All storage classes use hourly billing. For more information about pricing, see [Pricing information](https://cloud.ibm.com/infrastructure/provision/vs){: external} and the [corresponding {{site.data.keyword.block_storage_is_short}} tiers](/docs/vpc?topic=vpc-block-storage-profiles#tiers).
@@ -53,4 +53,7 @@ All storage classes use hourly billing. For more information about pricing, see 
 | `ibmc-vpc-block-metro-retain-general-purpose` | `ext4` | WaitforFirstConsumer | Retain | 
 | `ibmc-vpcblock-odf-ret-general` | `ext4` | WaitforFirstConsumer | Retain | 
 | `ibmc-vpcblock-odf-general` | `ext4` | WaitforFirstConsumer | Delete |
+| `ibmc-vpc-block-sdp` | `ext4` | Immediate | Delete |
+| `ibmc-vpc-block-sdp-max-bandwidth` |  Immediate | Delete | 
+| `ibmc-vpc-block-sdp-max-bandwidth-sds` | WaitForFirstConsumer | Delete |
 {: caption="VPC Block storage class reference" caption-side="bottom"}

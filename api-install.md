@@ -1,8 +1,8 @@
 ---
 
 copyright: 
-  years: 2014, 2024
-lastupdated: "2024-03-27"
+  years: 2014, 2025
+lastupdated: "2025-06-13"
 
 
 keywords: openshift, {{site.data.keyword.openshiftlong_notm}}, kubernetes, ic, ks, kubectl, api
@@ -102,37 +102,20 @@ Federated ID
     
     Header 
     :    - `Content-Type: application/x-www-form-urlencoded` 
-         - Authorization: Basic `Yng6Yng=`
-             `Yng6Yng=` equals the URL-encoded authorization for the username **bx** and the password **bx**.
-             {: note}
+         - `Authorization: Basic Yng6Yng=` where `Yng6Yng=` equals the URL-encoded authorization for the username **bx** and the password **bx**. 
          
     Body for {{site.data.keyword.cloud_notm}} username and password
     :    - `grant_type: password` 
-         - `response_type: cloud_iam uaa`
          - `username`: Your {{site.data.keyword.cloud_notm}} username.
          - `password`: Your {{site.data.keyword.cloud_notm}} password. 
-         - `uaa_client_id: cf`
-         - `uaa_client_secret:`
-             Add the `uaa_client_secret` key with no value specified.
-             {: note}
          
     Body for {{site.data.keyword.cloud_notm}} API keys 
-    :    - `grant_type: urn:ibm:params:oauth:grant-type:apikey` 
-         - `response_type: cloud_iam uaa` 
+    :    - `grant_type: urn:ibm:params:oauth:grant-type:apikey`  
          - `apikey`: Your {{site.data.keyword.cloud_notm}} API key 
-         - `uaa_client_id: cf`
-         - `uaa_client_secret:`
-             Add the `uaa_client_secret` key with no value specified.
-             {: note}
          
     Body for {{site.data.keyword.cloud_notm}} one-time passcode
     :    - `grant_type: urn:ibm:params:oauth:grant-type:passcode` 
-         - `response_type: cloud_iam uaa` 
          - `passcode`: Your {{site.data.keyword.cloud_notm}} one-time passcode. Run `ibmcloud login --sso` and follow the instructions in your CLI output to retrieve your one-time passcode by using your web browser. 
-         - `uaa_client_id: cf` 
-         - `uaa_client_secret:`
-             Add the `uaa_client_secret` key with no value specified.
-             {: note}
 
     The following example shows output for the previous request.
 
@@ -140,8 +123,6 @@ Federated ID
     {
     "access_token": "<iam_access_token>",
     "refresh_token": "<iam_refresh_token>",
-    "uaa_token": "<uaa_token>",
-    "uaa_refresh_token": "<uaa_refresh_token>",
     "token_type": "Bearer",
     "expires_in": 3600,
     "expiration": 1493747503
@@ -197,33 +178,23 @@ Federated ID
     
     Header
     :    - `Content-Type: application/x-www-form-urlencoded`
-         - `Authorization: Basic Yng6Yng=`
-             `Yng6Yng=` equals the URL-encoded authorization for the username **bx** and the password **bx**.
+         - `Authorization: Basic Yng6Yng=` where `Yng6Yng=` equals the URL-encoded authorization for the username **bx** and the password **bx**. 
 
     Body for {{site.data.keyword.cloud_notm}} username and password
     :    - `grant_type: password`
-         - `response_type: cloud_iam uaa`
          - `username`: Your {{site.data.keyword.cloud_notm}} username.
-         - `password`: Your {{site.data.keyword.cloud_notm}} password.
-         - `uaa_client_ID: cf`
-         - `uaa_client_secret:` Add the `uaa_client_secret` key with no value specified.   
+         - `password`: Your {{site.data.keyword.cloud_notm}} password. 
          - `bss_account`: The {{site.data.keyword.cloud_notm}} account ID that you retrieved in the previous step.
          
     Body for {{site.data.keyword.cloud_notm}} API keys
     :    - `grant_type: urn:ibm:params:oauth:grant-type:apikey`
-         - `response_type: cloud_iam uaa` 
-         - `apikey`: Your {{site.data.keyword.cloud_notm}} API key. 
-         - `uaa_client_ID: cf` 
-         - `uaa_client_secret:` Add the `uaa_client_secret` key with no value specified.          
+         - `apikey`: Your {{site.data.keyword.cloud_notm}} API key.         
          - `bss_account`: The {{site.data.keyword.cloud_notm}} account ID that you retrieved in the previous step.
          
     Body for {{site.data.keyword.cloud_notm}} one-time passcode
     :    - `grant_type: urn:ibm:params:oauth:grant-type:passcode`
-         - `response_type: cloud_iam uaa`
          - `passcode`: Your {{site.data.keyword.cloud_notm}} passcode. 
-         - `uaa_client_ID: cf` 
-         - `uaa_client_secret:` 
-         - `bss_account`: The {{site.data.keyword.cloud_notm}} account ID that you retrieved in the previous step. Add the `uaa_client_secret` key with no value specified.
+         - `bss_account`: The {{site.data.keyword.cloud_notm}} account ID that you retrieved in the previous step.
 
 
     The following example shows output for the API request.
@@ -301,18 +272,12 @@ Use the following steps if you want to create an {{site.data.keyword.cloud_notm}
     
     Body when using the refresh token
     :    - `grant_type: refresh_token`
-         - `response_type: cloud_iam uaa`
          - `refresh_token:` Your {{site.data.keyword.cloud_notm}} IAM refresh token.
-         - `uaa_client_ID: cf`
-         - `uaa_client_secret:`
-         - `bss_account:` Your {{site.data.keyword.cloud_notm}} account ID. Add the `uaa_client_secret` key with no value specified.
+         - `bss_account:` Your {{site.data.keyword.cloud_notm}} account ID.
           
     Body when using the {{site.data.keyword.cloud_notm}} API key
     :    - `grant_type: urn:ibm:params:oauth:grant-type:apikey`
-         - `response_type: cloud_iam uaa`
          - `apikey:` Your {{site.data.keyword.cloud_notm}} API key.
-         - `uaa_client_ID: cf`
-         - `uaa_client_secret:` Add the `uaa_client_secret` key with no value specified.
 
 
     The following example shows the output of the previous API request.
@@ -321,8 +286,6 @@ Use the following steps if you want to create an {{site.data.keyword.cloud_notm}
     {
         "access_token": "<iam_token>",
         "refresh_token": "<iam_refresh_token>",
-        "uaa_token": "<uaa_token>",
-        "uaa_refresh_token": "<uaa_refresh_token>",
         "token_type": "Bearer",
         "expires_in": 3600,
         "expiration": 1493747503

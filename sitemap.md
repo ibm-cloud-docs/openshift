@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2025
-lastupdated: "2025-06-05"
+lastupdated: "2025-06-13"
 
 
 keywords: openshift
@@ -285,6 +285,10 @@ subcollection: openshift
 [Release notes](/docs/openshift?topic=openshift-openshift-relnotes#openshift-relnotes)
 
 * [June 2025](/docs/openshift?topic=openshift-openshift-relnotes#openshift-june25)
+
+    * [13 June 2025](/docs/openshift?topic=openshift-openshift-relnotes#openshift-13june25)
+
+        * CLI version `1.0.706` is available.
 
     * [04 June 2025](/docs/openshift?topic=openshift-openshift-relnotes#openshift-04jun25)
 
@@ -3677,7 +3681,7 @@ subcollection: openshift
 
 [Installing the Red Hat OpenShift AI add-on](/docs/openshift?topic=openshift-ai-addon-install#ai-addon-install)
 
-* [Minimum requirements](/docs/openshift?topic=openshift-ai-addon-install#ai-min)
+* [Considerations](/docs/openshift?topic=openshift-ai-addon-install#ai-min)
 
 * [Before you begin](/docs/openshift?topic=openshift-ai-addon-install#ai-before)
 
@@ -6097,6 +6101,8 @@ subcollection: openshift
 [CLI change log](/docs/openshift?topic=openshift-cs_cli_changelog#cs_cli_changelog)
 
 * [Version 1.0](/docs/openshift?topic=openshift-cs_cli_changelog#10)
+
+* [Version v1.0.706](/docs/openshift?topic=openshift-cs_cli_changelog#cli-010706)
 
 * [Version v1.0.687](/docs/openshift?topic=openshift-cs_cli_changelog#cli-010687)
 
@@ -9316,6 +9322,8 @@ subcollection: openshift
 * [Upgrading from 4.10 to 4.11](/docs/openshift?topic=openshift-ts-cloud-pak-ds#cdp-feature-gates-411)
 
 [Why do I see a license or entitlement error when creating a worker pool?](/docs/openshift?topic=openshift-ts-workerpool-license-entitlement#ts-workerpool-license-entitlement)
+
+[Why am I seeing duplicate metrics or logs being sent from my clusters?](/docs/openshift?topic=openshift-ts-dupe-logs#ts-dupe-logs)
 
 
 ### Permissions and credentials

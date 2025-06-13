@@ -1,8 +1,8 @@
 ---
 
 copyright: 
-  years: 2022, 2024
-lastupdated: "2024-10-01"
+  years: 2022, 2025
+lastupdated: "2025-06-13"
 
 
 keywords: openshift, block storage, snapshot
@@ -21,7 +21,7 @@ subcollection: openshift
 
 [Virtual Private Cloud]{: tag-vpc} 
 
-{{site.data.keyword.block_storage_is_short}} volume snapshots provide you with a standardized way to copy a volume's contents at a particular point in time without creating an entirely new volume. For more information, see [How snapshots work](/docs/vpc?topic=vpc-snapshots-vpc-about).
+{{site.data.keyword.block_storage_is_short}} volume snapshots provide you with a standardized way to copy a volume's contents at a particular point in time without creating an entirely new volume. For more information about snapshots, see [How snapshots work](/docs/vpc?topic=vpc-snapshots-vpc-about). For more information about {{site.data.keyword.block_storage_is_short}}, see [About {{site.data.keyword.block_storage_is_short}}](/docs/vpc?topic=vpc-block-storage-about).
 {: shortdesc}
 
 

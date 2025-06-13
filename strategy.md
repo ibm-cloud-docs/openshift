@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2025
-lastupdated: "2025-03-28"
+lastupdated: "2025-06-13"
 
 keywords: kubernetes, kubernetes environment, moving to kubernetes, moving to containers, clusters, cluster sizing, openshift, {{site.data.keyword.openshiftlong_notm}}
 
@@ -21,9 +21,6 @@ Design your standard cluster for maximum availability and capacity for your app 
 High availability (HA) is a core discipline in an IT infrastructure to keep your apps up and running, even after a partial or full site failure. The main purpose of high availability is to eliminate potential points of failures in an IT infrastructure. For example, you can prepare for the failure of one system by adding redundancy and setting up failover mechanisms. See [How {{site.data.keyword.cloud_notm}} ensures high availability and disaster recovery](/docs/resiliency?topic=resiliency-ha-redundancy).
 
 To get started planning and sizing your cluster, review these decision points before creating a cluster.
-
-When you're done, [try out the quiz](https://quizzes.12dekrh4l1b4.us-south.codeengine.appdomain.cloud/openshift/strategy/quiz.php).
-{: tip}
 
 
 ## Decide how many clusters to create
@@ -274,8 +271,5 @@ Containers and pods are, by design, short-lived and can fail unexpectedly. For e
 
 ## Next steps
 {: #plan-network-next}
-
-[Test your knowledge with a quiz](https://quizzes.12dekrh4l1b4.us-south.codeengine.appdomain.cloud/openshift/strategy/quiz.php).
-{: tip}
 
 To continue the planning process, choose between [VPC cluster networking](/docs/openshift?topic=openshift-plan_vpc_basics) and [Classic cluster networking](/docs/openshift?topic=openshift-plan_basics). If you're ready to get started creating a cluster, first start by [Preparing your account to create clusters](/docs/openshift?topic=openshift-clusters).
