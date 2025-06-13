@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2025
-lastupdated: "2025-05-22"
+lastupdated: "2025-06-13"
 
 
 keywords: openshift, cli reference, kubernetes cli, openshift cli, {{site.data.keyword.openshiftlong_notm}}
@@ -6138,43 +6138,43 @@ Minimum required permissions
 :    Include this option to enable a new health check monitor for a subdomain.
 
 `--description DESCRIPTION`
-:    A description of the health monitor.
+:    [Deprecated] A description of the health monitor.
 
 `--type TYPE`
 :    The protocol to use for the health check: `HTTP`, `HTTPS`, or `TCP`. Default: `HTTP`
 
 `--method METHOD`
-:    The method to use for the health check. Default for `type` `HTTP` and `HTTPS`: `GET`. Default for `type` `TCP`: `connection_established`.
+:    [Deprecated] The method to use for the health check. Default for `type` `HTTP` and `HTTPS`: `GET`. Default for `type` `TCP`: `connection_established`. This flag is **Deprecated** and will not work after 14 July 2025: all health monitors will use GET!
 
 `--path PATH`
 :    When `type` is `HTTPS`: The endpoint path to health check against. Default: `/`
 
 `--timeout TIMEOUT`
-:    The timeout, in seconds, before the IP is considered unreachable. The health check waits the number of seconds specified in the `interval` parameter before trying to reach the IP again. The value must be an integer in the range 1 - 15. Default: `5`
+:    The timeout, in seconds, before the IP is considered unreachable. The health check waits the number of seconds specified in the `interval` parameter before trying to reach the IP again. The value must be an integer in the range 1 - 60. Default: `5`
 
 `--retries RETRIES`
-:    When a timeout occurs, the number of retries to attempt before the unreachable IP is considered unhealthy. Retries are attempted immediately. The value must be an integer in the range 1 - 5. Default: `2`
+:    [Deprecated] When a timeout occurs, the number of retries to attempt before the unreachable IP is considered unhealthy. Retries are attempted immediately. The value must be an integer in the range 1 - 5. Default: `2`.
 
 `--interval INTERVAL`
-:    The interval, in seconds, between each health check. Short intervals might improve failover time, but increase load on the IPs. The value must be an integer in the range 10 - 3600 and must be greater than `(RETRIES + 1) * TIMEOUT`. Default: `60`
+:    The interval, in seconds, between each health check. Short intervals might improve failover time, but increase load on the IPs. The value must be an integer in the range 60 - 300. Default: `60`. 
 
 `--port PORT`
 :    The port number to connect to for the health check. When `type` is `TCP`, this parameter is required. When `type` is `HTTP` or `HTTPS`, define the port only if you use a port other than 80 for HTTP or 443 for HTTPS. Default for TCP: `0`. Default for HTTP: `80`. Default for HTTPS: `443`.
 
 `--header HEADER`
-:    Required when `type` is `HTTP` or `HTTPS`: HTTP request headers to send in the health check, such as a Host header. The User-Agent header can't be overridden. This option is valid only for type 'HTTP' or 'HTTPS'. To add more than one header to the requests, specify this option multiple times. This option accepts values in the following format: `--header Header-Name=value`. When updating a monitor, the existing headers are replaced by the ones you specify. To delete all existing headers specify the option with an empty value `--header ""`.
+:    [Deprecated] Required when `type` is `HTTP` or `HTTPS`: HTTP request headers to send in the health check, such as a Host header. The User-Agent header can't be overridden. This option is valid only for type 'HTTP' or 'HTTPS'. To add more than one header to the requests, specify this option multiple times. This option accepts values in the following format: `--header Header-Name=value`. When updating a monitor, the existing headers are replaced by the ones you specify. To delete all existing headers specify the option with an empty value `--header ""`. This flag is **Deprecated**, after 14 July 2025 only the "Host" header will be configurable!
 
 `--expected-body BODY STRING`
-:    When `type` is `HTTP` or `HTTPS`: A case-insensitive substring that the health check looks for in the response body. If this string is not found, the IP is considered unhealthy.
+:    [Deprecated] When `type` is `HTTP` or `HTTPS`: A case-insensitive substring that the health check looks for in the response body. If this string is not found, the IP is considered unhealthy.
 
 `--expected-codes HTTP CODES`
-:    When `type` is `HTTP` or `HTTPS`: HTTP codes that the health check looks for in the response. If the HTTP code is not found, the IP is considered unhealthy. Default: `2xx`
+:    [Deprecated] When `type` is `HTTP` or `HTTPS`: HTTP codes that the health check looks for in the response. If the HTTP code is not found, the IP is considered unhealthy. Default: `2xx`. This flag is **Deprecated** and will not work after 14 July 2025: HTTP/HTTPS type monitors will accept all valid HTTP/HTTPS responses.
 
 `--allows-insecure TRUE`
-:    When `type` is `HTTP` or `HTTPS`: Set to `true` to not validate the certificate.
+:    [Deprecated] When `type` is `HTTP` or `HTTPS`: Set to `true` to not validate the certificate. This flag is **Deprecated** and will not work after 14 July 2025: health monitors will not validate the certificate!
 
 `--follows-redirects TRUE`
-:    When `type` is `HTTP` or `HTTPS`: Set to `true` to follow any redirects that are returned by the IP.
+:    [Deprecated] When `type` is `HTTP` or `HTTPS`: Set to `true` to follow any redirects that are returned by the IP.
 
 `--output json`
 :    Optional: Prints the command output in JSON format.
