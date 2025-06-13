@@ -2,7 +2,7 @@
 
 copyright:
   years: 2022, 2025
-lastupdated: "2025-05-28"
+lastupdated: "2025-06-13"
 
 
 keywords: rhel, os, operating system, rhocs, 418, migration
@@ -71,14 +71,6 @@ ibmcloud ks cluster master update --cluster <clusterNameOrID> --version 4.18_ope
 
 1. Run the `ibmcloud oc worker-pool create` command to create a new worker pool.
 
-
-    **Classic**: Example command to create a RHCOS worker pool. For more information about the `worker pool create classic` command, see the [CLI reference](/docs/openshift?topic=openshift-kubernetes-service-cli#cs_worker_pool_create). For more information about creating worker pools and adding worker nodes, see [Adding worker nodes in classic clusters](/docs/openshift?topic=openshift-add-workers-classic).
-
-    ```sh
-    ibmcloud oc worker-pool create classic --name <worker_pool_name> --cluster <cluster_name_or_ID> --flavor <flavor> --size-per-zone <number_of_workers_per_zone> --operating-system RHCOS [--entitlement ocp_entitled]
-    ```
-    {: pre}
-
     **VPC**: Example command to create a RHCOS worker pool. For more information about the `worker pool create vpc-gen2` command, see the [CLI reference](/docs/openshift?topic=openshift-kubernetes-service-cli#cli_worker_pool_create_vpc_gen2) for command details. [Adding worker nodes in VPC clusters](/docs/openshift?topic=openshift-add-workers-vpc).
 
     ```sh
@@ -115,8 +107,8 @@ ibmcloud ks cluster master update --cluster <clusterNameOrID> --version 4.18_ope
 ### Step 3: Add worker nodes to your RHCOS worker pool
 {: #rhcos-add-worker-nodes}
 
-- For VPC steps to add worker-pool zones, see [Adding a zone to a worker pool in a VPC cluster](/docs/openshift?topic=openshift-add-workers-vpc#vpc_add_zone).
-- For Classic steps to add zones, see [Adding a zone to a worker pool](/docs/openshift?topic=openshift-add-workers-classic#add_zone).
+See [Adding a zone to a worker pool in a VPC cluster](/docs/openshift?topic=openshift-add-workers-vpc#vpc_add_zone).
+
 
 
 ### Step 4: Migrate your workloads
