@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2025
-lastupdated: "2025-06-13"
+lastupdated: "2025-06-16"
 
 
 keywords: openshift, cli reference, kubernetes cli, openshift cli, {{site.data.keyword.openshiftlong_notm}}
@@ -6105,82 +6105,75 @@ ibmcloud oc nlb-dns ls --cluster mycluster
 
 
 ### `ibmcloud oc nlb-dns monitor configure`
-{: #cs_nlb-dns-monitor-configure}
+{: #nlb-dns-monitor-configure-cli}
 
-[Classic infrastructure]{: tag-classic-inf}
+Configure a health check monitor for an existing NLB host name in a cluster. To enable the monitor, include the `--enable` flag. To update an existing monitor, include only the flags for the settings that you want to change.
 
-
-Configure and optionally enable a health check monitor for an existing NLB subdomain in a cluster. When you enable a monitor for your subdomain, the monitor health checks the NLB IP in each zone and keeps the DNS lookup results updated based on these health checks.
-{: shortdesc}
-
-You can use this command to create and enable a health check monitor, or to update the settings for an existing health check monitor. To create a new monitor, include the `--enable` option and the options for all settings that you want to configure.
-
-To update an existing monitor, you must include all the options for the settings that you want, including existing settings.
-{: note}
-
-```sh
-ibmcloud oc nlb-dns monitor configure --cluster CLUSTER --nlb-host SUBDOMAIN [--enable] [--description DESCRIPTION] [--type TYPE] [--method METHOD] [--path PATH] [--timeout TIMEOUT] [--retries RETRIES] [--interval INTERVAL] [--port PORT] [--header HEADER] [--expected-body BODY STRING] [--expected-codes HTTP CODES] [--follows-redirects TRUE] [--allows-insecure TRUE] [--output json] [-q]
+```txt
+ibmcloud oc nlb-dns monitor configure --cluster CLUSTER --nlb-host HOST [--allows-insecure] [--description DESCRIPTION] [--enable] [--expected-body BODY] [--expected-codes CODES] [--follows-redirects] [--header HEADER ...] [--interval INTERVAL] [--method METHOD] [--output OUTPUT] [--path PATH] [--port PORT] [-q] [--retries RETRIES] [--timeout TIMEOUT] [--type TYPE]
 ```
 {: pre}
+{: #nlb-dns-monitor-configure-usage}
 
-Minimum required permissions
-:   **Editor** platform access role for the cluster in {{site.data.keyword.containerlong_notm}}
+### Command options
+{: #nlb-dns-monitor-configure-options}
 
-**Command options**:
+`--allows-insecure`
+:    [Deprecated]{: tag-deprecated} Set to `true` to not validate the certificate. This flag is valid only for type `HTTP` or `HTTPS`. Deprecation note: In the future, health monitors will not validate the certificate.
 
-`-c`, `--cluster CLUSTER`
-:    The name or ID of the cluster where the subdomain is registered.
-
-`--nlb-host SUBDOMAIN`
-:    The subdomain to configure a health check monitor for. To list subdomains, run `ibmcloud oc nlb-dns ls --cluster CLUSTER`.
-
-`--enable`
-:    Include this option to enable a new health check monitor for a subdomain.
+`--cluster CLUSTER`, `-c CLUSTER`
+:    Specify the cluster name or ID.
 
 `--description DESCRIPTION`
-:    [Deprecated] A description of the health monitor.
+:    [Deprecated]{: tag-deprecated} Description of the health monitor.
 
-`--type TYPE`
-:    The protocol to use for the health check: `HTTP`, `HTTPS`, or `TCP`. Default: `HTTP`
+`--enable`
+:    Enable the health check monitor for the host name.
 
-`--method METHOD`
-:    [Deprecated] The method to use for the health check. Default for `type` `HTTP` and `HTTPS`: `GET`. Default for `type` `TCP`: `connection_established`. This flag is **Deprecated** and will not work after 14 July 2025: all health monitors will use GET!
+`--expected-body BODY`
+:    [Deprecated]{: tag-deprecated} A case-insensitive sub-string that the health check looks for in the response body. If this string is not found, the IP is considered unhealthy. This flag is valid only for type `HTTP` or `HTTPS`.
 
-`--path PATH`
-:    When `type` is `HTTPS`: The endpoint path to health check against. Default: `/`
+`--expected-codes CODES`
+:    [Deprecated]{: tag-deprecated} HTTP codes that the health check looks for in the response. If the HTTP code is not found, the IP is considered unhealthy. This flag is valid only for type `HTTP` or `HTTPS`. Default: `2xx`. Deprecation note: In the future, HTTP/HTTPS type monitors will accept all valid HTTP/HTTPS responses.
 
-`--timeout TIMEOUT`
-:    The timeout, in seconds, before the IP is considered unreachable. The health check waits the number of seconds specified in the `interval` parameter before trying to reach the IP again. The value must be an integer in the range 1 - 60. Default: `5`
-
-`--retries RETRIES`
-:    [Deprecated] When a timeout occurs, the number of retries to attempt before the unreachable IP is considered unhealthy. Retries are attempted immediately. The value must be an integer in the range 1 - 5. Default: `2`.
-
-`--interval INTERVAL`
-:    The interval, in seconds, between each health check. Short intervals might improve failover time, but increase load on the IPs. The value must be an integer in the range 60 - 300. Default: `60`. 
-
-`--port PORT`
-:    The port number to connect to for the health check. When `type` is `TCP`, this parameter is required. When `type` is `HTTP` or `HTTPS`, define the port only if you use a port other than 80 for HTTP or 443 for HTTPS. Default for TCP: `0`. Default for HTTP: `80`. Default for HTTPS: `443`.
+`--follows-redirects`
+:    [Deprecated]{: tag-deprecated} Set to `true` to follow any redirects that are returned by the IP. This flag is valid only for type `HTTP` or `HTTPS`.
 
 `--header HEADER`
-:    [Deprecated] Required when `type` is `HTTP` or `HTTPS`: HTTP request headers to send in the health check, such as a Host header. The User-Agent header can't be overridden. This option is valid only for type 'HTTP' or 'HTTPS'. To add more than one header to the requests, specify this option multiple times. This option accepts values in the following format: `--header Header-Name=value`. When updating a monitor, the existing headers are replaced by the ones you specify. To delete all existing headers specify the option with an empty value `--header ""`. This flag is **Deprecated**, after 14 July 2025 only the "Host" header will be configurable!
+:    [Deprecated]{: tag-deprecated} HTTP request headers to send in the health check, such as a Host header. The User-Agent header cannot be overridden. This flag is valid only for type `HTTP` or `HTTPS`. To add more than one header to the requests, specify this flag multiple times. This flag accepts values in the following format: `--header Header-Name=value`. When updating a monitor, the existing headers are replaced by the ones you specify. To delete all existing headers specify the flag with an empty value `--header ""`.  Deprecation note: In the future, only the "Host" header will be configurable.
 
-`--expected-body BODY STRING`
-:    [Deprecated] When `type` is `HTTP` or `HTTPS`: A case-insensitive substring that the health check looks for in the response body. If this string is not found, the IP is considered unhealthy.
+`--interval INTERVAL`
+:    The interval, in seconds, between each health check. Short intervals might improve failover time but increase load on the IPs. The value must be greater than (`retries_value` + 1) * `timeout_value`, and must be in the range [60, 300]. Default: `60`
 
-`--expected-codes HTTP CODES`
-:    [Deprecated] When `type` is `HTTP` or `HTTPS`: HTTP codes that the health check looks for in the response. If the HTTP code is not found, the IP is considered unhealthy. Default: `2xx`. This flag is **Deprecated** and will not work after 14 July 2025: HTTP/HTTPS type monitors will accept all valid HTTP/HTTPS responses.
+`--method METHOD`
+:    [Deprecated]{: tag-deprecated} The method to use for the health check. Default for HTTP and HTTPS: `GET`. Default for TCP: `connection_established`. Deprecation note: In the future, all health monitors will use `GET`.
 
-`--allows-insecure TRUE`
-:    [Deprecated] When `type` is `HTTP` or `HTTPS`: Set to `true` to not validate the certificate. This flag is **Deprecated** and will not work after 14 July 2025: health monitors will not validate the certificate!
+`--nlb-host HOST`
+:    The host name. To see existing host names, run `ibmcloud ks nlb-dns ls`.
 
-`--follows-redirects TRUE`
-:    [Deprecated] When `type` is `HTTP` or `HTTPS`: Set to `true` to follow any redirects that are returned by the IP.
+`--output OUTPUT`
+:    Prints the command output in the provided format. Accepted values: `json`
 
-`--output json`
-:    Optional: Prints the command output in JSON format.
+`--path PATH`
+:    The endpoint path to health check against. This flag is valid only for type `HTTP` or `HTTPS`. Default: `/` 
+
+`--port PORT`
+:    The port number to connect to for the health check. When type is TCP, this flag is required. When type is HTTP or HTTPS, use this flag only for ports other than 80 for HTTP or 443 for HTTPS. HTTP default: `80`. HTTPS default: `443`.
 
 `-q`
-:    Optional: Do not show the message of the day or update reminders.
+:    Do not show the message of the day or update reminders.
+
+`--retries RETRIES`
+:    [Deprecated]{: tag-deprecated} When a timeout occurs, the number of retries to attempt before the IP is considered unhealthy. Retries are attempted immediately. Must be in the range [0, 5]. Default: `2`
+
+`--timeout TIMEOUT`
+:    The timeout, in seconds, before the IP is considered unhealthy. Must be in the range [1, 60]. Default: `5`
+
+`--type TYPE`
+:    The protocol to use for the health check. Accepted values: `http`, `https`, `tcp`
+{: #nlb-dns-monitor-configure-options-dl}
+
+
 
 
 #### Example `nlb-dns monitor configure` command
