@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2025
-lastupdated: "2025-06-13"
+lastupdated: "2025-06-16"
 
 
 keywords: kubernetes, lb2.0, nlb, health check, dns, hostname, subdomain, openshift
@@ -176,7 +176,7 @@ Before you begin, [register NLB IPs with a DNS subdomain](#loadbalancer_hostname
     :   The protocol to use for the health check: `HTTP`, `HTTPS`, or `TCP`. Default: `HTTP`.
 
     `--method <method>`
-    :   [Deprecated] The method to use for the health check. Default for `type` `HTTP` and `HTTPS`: `GET`. Default for `type` `TCP`: `connection_established`. This flag is **Deprecated** and will not work after 14 July 2025: all health monitors will use GET!
+    :   [Deprecated] The method to use for the health check. Default for `type` `HTTP` and `HTTPS`: `GET`. Default for `type` `TCP`: `connection_established`. This flag is **Deprecated** and will not work after 18 July 2025: all health monitors will use GET!
 
     `--path <path>`
     :   When `type` is `HTTPS`: The endpoint path to health check against. Default: `/`
@@ -194,16 +194,16 @@ Before you begin, [register NLB IPs with a DNS subdomain](#loadbalancer_hostname
     :   The port number to connect to for the health check. When `type` is `TCP`, this parameter is required. When `type` is `HTTP` or `HTTPS`, define the port only if you use a port other than 80 for HTTP or 443 for HTTPS. Default for TCP: `0`. Default for HTTP: `80`. Default for HTTPS: `443`.
 
     `--header <header>`
-    :   [Deprecated] Required when `type` is `HTTP` or `HTTPS`: HTTP request headers to send in the health check, such as a Host header. The User-Agent header can't be overridden. This option is valid only for type 'HTTP' or 'HTTPS'. To add more than one header to the requests, specify this option multiple times. This option accepts values in the following format: `--header Header-Name=value`. When updating a monitor, the existing headers are replaced by the ones you specify. To delete all existing headers specify the option with an empty value `--header ""`. This flag is **Deprecated**, after 14 July 2025 only the "Host" header will be configurable!
+    :   [Deprecated] Required when `type` is `HTTP` or `HTTPS`: HTTP request headers to send in the health check, such as a Host header. The User-Agent header can't be overridden. This option is valid only for type 'HTTP' or 'HTTPS'. To add more than one header to the requests, specify this option multiple times. This option accepts values in the following format: `--header Header-Name=value`. When updating a monitor, the existing headers are replaced by the ones you specify. To delete all existing headers specify the option with an empty value `--header ""`. This flag is **Deprecated**, after 18 July 2025 only the "Host" header will be configurable!
 
     `--expected-body <expected-body>`
     :   [Deprecated] When `type` is `HTTP` or `HTTPS`: A case-insensitive substring that the health check looks for in the response body. If this string is not found, the IP is considered unhealthy.
 
     `--expected-codes <expected-codes>`
-    :   [Deprecated] When `type` is `HTTP` or `HTTPS`: HTTP codes that the health check looks for in the response. If the HTTP code is not found, the IP is considered unhealthy. Default: `2xx`. This flag is **Deprecated** and will not work after 14 July 2025: HTTP/HTTPS type monitors will accept all valid HTTP/HTTPS responses.
+    :   [Deprecated] When `type` is `HTTP` or `HTTPS`: HTTP codes that the health check looks for in the response. If the HTTP code is not found, the IP is considered unhealthy. Default: `2xx`. This flag is **Deprecated** and will not work after 18 July 2025: HTTP/HTTPS type monitors will accept all valid HTTP/HTTPS responses.
 
     `--allows-insecure <true>`
-    :   [Deprecated] When `type` is `HTTP` or `HTTPS`: Set to `true` to not validate the certificate. This flag is **Deprecated** and will not work after 14 July 2025: health monitors will not validate the certificate!
+    :   [Deprecated] When `type` is `HTTP` or `HTTPS`: Set to `true` to not validate the certificate. This flag is **Deprecated** and will not work after 18 July 2025: health monitors will not validate the certificate!
 
     `--follows-redirects <true>`
     :   [Deprecated] When `type` is `HTTP` or `HTTPS`: Set to `true` to follow any redirects that are returned by the IP.

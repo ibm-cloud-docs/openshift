@@ -2,7 +2,7 @@
 
 copyright:
   years: 2022, 2025
-lastupdated: "2025-06-13"
+lastupdated: "2025-06-16"
 
 
 keywords: rhel, os, operating system, rhocs, 418, migration
@@ -22,7 +22,6 @@ subcollection: openshift
 
 Complete the following steps to migrate your worker nodes to a new operating system.
 {: shortdesc}
-
 
 
 Beginning with cluster version 4.18, Red Hat Enterprise Linux CoreOS (RHCOS) is the default operating system and RHEL worker nodes are deprecated in this version. Support for RHEL worker nodes ends with the release of version 4.21. Migrate your clusters to use RHCOS worker nodes as soon as possible.
