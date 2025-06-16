@@ -286,7 +286,7 @@ subcollection: openshift
 
 * [June 2025](/docs/openshift?topic=openshift-openshift-relnotes#openshift-june25)
 
-    * [13 June 2025](/docs/openshift?topic=openshift-openshift-relnotes#openshift-13june25)
+    * [16 June 2025](/docs/openshift?topic=openshift-openshift-relnotes#openshift-16june25)
 
         * CLI version `1.0.706` is available.
 
