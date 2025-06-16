@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2023, 2025
-lastupdated: "2025-05-27"
+lastupdated: "2025-06-13"
 
 
 keywords: openshift, {{site.data.keyword.openshiftlong_notm}}, kubernetes, red hat, encrypt, security, kms, root key, crk
@@ -39,7 +39,7 @@ You can manage the encryption of the worker nodes by enabling a KMS provider at 
         3. Set the **Target service** to your KMS provider, such as **Key Protect**.
         4. Include at least **Reader** service access.
 
-    {{site.data.keyword.openshiftlong_notm}} automatically creates a service-to-service delegation policy for the Cloud Block Storage service in the IBM-managed service account to the KMS provider instance under the account where the KMS instance and CRK reside. This delegation policy is required so that the VPC infrastructure can encrypt the boot volume of the worker nodes in the IBM-managed service account with your customer-provided root key of the KMS provider. 
+    {{site.data.keyword.openshiftlong_notm}} automatically creates a service-to-service delegation policy for the Cloud Block Storage service in the IBM-managed service account to the KMS provider instance under the account where the KMS instance and CRK reside. This delegation policy is required so that the VPC infrastructure can encrypt the boot volume of the worker nodes in the IBM-managed service account with your customer-provided root key of the KMS provider. If you have issues deploying worker nodes, verify that this delegated authorization policy exists in your [IAM authorizations](https://cloud.ibm.com/iam/authorizations){: external}/
     {: note}
 
 1. **Optional**: If you have context-based restriction enabled on your KMS instance, complete the following steps.

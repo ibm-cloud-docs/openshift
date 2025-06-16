@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2025
-lastupdated: "2025-02-19"
+lastupdated: "2025-06-13"
 
 
 keywords: openshift, block storage, deploy apps
@@ -19,7 +19,7 @@ subcollection: openshift
 # Setting up {{site.data.keyword.block_storage_is_short}}
 {: #vpc-block}
 
-[{{site.data.keyword.block_storage_is_short}}](/docs/vpc?topic=vpc-block-storage-about#vpc-storage-encryption) provides hypervisor-mounted, high-performance data storage for your virtual server instances that you can provision within a VPC.
+[{{site.data.keyword.block_storage_is_short}}](/docs/vpc?topic=vpc-block-storage-about) provides hypervisor-mounted, high-performance data storage for your virtual server instances that you can provision within a VPC.
 {: shortdesc}
 
 You can choose between predefined storage tiers with GB sizes and IOPS that meet the requirements of your workloads. To find out if {{site.data.keyword.block_storage_is_short}} is the right storage option for you, see [Choosing a storage solution](/docs/openshift?topic=openshift-storage-plan). For pricing information, see [Pricing for {{site.data.keyword.block_storage_is_short}}](https://cloud.ibm.com/infrastructure/provision/vs){: external}.

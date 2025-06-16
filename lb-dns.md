@@ -1,8 +1,8 @@
 ---
 
 copyright: 
-  years: 2014, 2024
-lastupdated: "2024-10-30"
+  years: 2014, 2025
+lastupdated: "2025-06-16"
 
 
 keywords: kubernetes, lb2.0, nlb, health check, dns, hostname, subdomain, openshift
@@ -167,53 +167,47 @@ Before you begin, [register NLB IPs with a DNS subdomain](#loadbalancer_hostname
     :   Required: The subdomain to enable a health check monitor for.
 
     `--enable`
-    :   Required: Enable the health check monitor for the subdomain.
+    :   Include this option to enable a new health check monitor for a subdomain.
 
     `--description <description>`
-    :   A description of the health monitor.
+    :   [Deprecated] A description of the health monitor.
 
     `--type <type>`
     :   The protocol to use for the health check: `HTTP`, `HTTPS`, or `TCP`. Default: `HTTP`.
 
-
     `--method <method>`
-    :   The method to use for the health check. Default for `type` `HTTP` and `HTTPS`: `GET`. Default for `type` `TCP`: `connection_established`
-
+    :   [Deprecated] The method to use for the health check. Default for `type` `HTTP` and `HTTPS`: `GET`. Default for `type` `TCP`: `connection_established`. This flag is **Deprecated** and will not work after 18 July 2025: all health monitors will use GET!
 
     `--path <path>`
     :   When `type` is `HTTPS`: The endpoint path to health check against. Default: `/`
 
-
     `--timeout <timeout>`
-    :   The timeout, in seconds, before the IP is considered unhealthy. Default: `5`.
-
+    :   The timeout, in seconds, before the IP is considered unreachable. The health check waits the number of seconds specified in the `interval` parameter before trying to reach the IP again. The value must be an integer in the range 1 - 60. Default: `5`
 
     `--retries <retries>`
-    :   When a timeout occurs, the number of retries to attempt before the IP is considered unhealthy. Retries are attempted immediately. Default: `2`.
-
+    :   [Deprecated] When a timeout occurs, the number of retries to attempt before the unreachable IP is considered unhealthy. Retries are attempted immediately. The value must be an integer in the range 1 - 5. Default: `2`.
 
     `--interval <interval>`
-    :   The interval, in seconds, between each health check. Short intervals might improve failover time, but increase load on the IPs. Default: `60`.
-
+    :   The interval, in seconds, between each health check. Short intervals might improve failover time, but increase load on the IPs. The value must be an integer in the range 60 - 300. Default: `60`. 
 
     `--port <port>`
     :   The port number to connect to for the health check. When `type` is `TCP`, this parameter is required. When `type` is `HTTP` or `HTTPS`, define the port only if you use a port other than 80 for HTTP or 443 for HTTPS. Default for TCP: `0`. Default for HTTP: `80`. Default for HTTPS: `443`.
 
     `--header <header>`
-    :   When `type` is `HTTP` or `HTTPS`: The HTTP request headers to send in the health check, such as a Host header. The User-Agent header can't be overridden. To add more than one header to the requests, specify this option multiple times. This option accepts values in the following format: `--header Header-Name=value`. When updating a monitor, the existing headers are replaced by the ones that you specify. To delete all existing headers, specify the option with an empty value (`--header ""`).
+    :   [Deprecated] Required when `type` is `HTTP` or `HTTPS`: HTTP request headers to send in the health check, such as a Host header. The User-Agent header can't be overridden. This option is valid only for type 'HTTP' or 'HTTPS'. To add more than one header to the requests, specify this option multiple times. This option accepts values in the following format: `--header Header-Name=value`. When updating a monitor, the existing headers are replaced by the ones you specify. To delete all existing headers specify the option with an empty value `--header ""`. This flag is **Deprecated**, after 18 July 2025 only the "Host" header will be configurable!
 
     `--expected-body <expected-body>`
-    :   When `type` is `HTTP` or `HTTPS`: A case-insensitive substring that the health check looks for in the response body. If this string is not found, the IP is considered unhealthy.
+    :   [Deprecated] When `type` is `HTTP` or `HTTPS`: A case-insensitive substring that the health check looks for in the response body. If this string is not found, the IP is considered unhealthy.
 
     `--expected-codes <expected-codes>`
-    :   When `type` is `HTTP` or `HTTPS`: HTTP codes that the health check looks for in the response. If the HTTP code is not found, the IP is considered unhealthy. Default: `2xx`.
-
+    :   [Deprecated] When `type` is `HTTP` or `HTTPS`: HTTP codes that the health check looks for in the response. If the HTTP code is not found, the IP is considered unhealthy. Default: `2xx`. This flag is **Deprecated** and will not work after 18 July 2025: HTTP/HTTPS type monitors will accept all valid HTTP/HTTPS responses.
 
     `--allows-insecure <true>`
-    :   When `type` is `HTTP` or `HTTPS`: Set to `true` to not validate the certificate.
+    :   [Deprecated] When `type` is `HTTP` or `HTTPS`: Set to `true` to not validate the certificate. This flag is **Deprecated** and will not work after 18 July 2025: health monitors will not validate the certificate!
 
     `--follows-redirects <true>`
-    :   When `type` is `HTTP` or `HTTPS`: Set to `true` to follow any redirects that are returned by the IP.
+    :   [Deprecated] When `type` is `HTTP` or `HTTPS`: Set to `true` to follow any redirects that are returned by the IP.
+
 
 
     Example command

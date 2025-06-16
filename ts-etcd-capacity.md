@@ -1,12 +1,14 @@
 ---
 
 copyright:
-  years: 2024, 2024
-lastupdated: "2024-10-30"
-
+  years: 2024, 2025
+lastupdated: "2025-06-13"
 
 keywords: openshift, {{site.data.keyword.openshiftlong_notm}}, etcd, capacity, database, limits
+
 subcollection: openshift
+
+content-type: troubleshoot
 
 ---
 

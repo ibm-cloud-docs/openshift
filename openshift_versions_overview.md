@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2025
-lastupdated: "2025-06-04"
+lastupdated: "2025-06-13"
 
 
 keywords: openshift, version, update, upgrade
@@ -38,9 +38,8 @@ For more details about the {{site.data.keyword.redhat_openshift_notm}} and Kuber
 
 {{site.data.keyword.openshiftlong_notm}} supports the following versions of {{site.data.keyword.redhat_openshift_notm}}. Note that different {{site.data.keyword.redhat_openshift_notm}} versions might support different RHEL versions. 
 
-Red Hat Enterprise Linux CoreOS (RHCOS) worker nodes are available only for VPC clusters that were created at 4.15 and later. Clusters that are upgraded from 4.14 to 4.15 can't use RHCOS workers.
-{: note}
-
+All VPC clusters created at version 4.18 or later can use RHCOS worker nodes. Clusters that were created at versions 4.15, 4.16, or 4.17 can only use RHCOS worker nodes if they were initally created with RHCOS worker nodes, or if they are upgraded to at least version 4.18. 
+{: important}
 
 
 

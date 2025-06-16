@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2022, 2025
-lastupdated: "2025-02-19"
+lastupdated: "2025-06-13"
 
 
 keywords: kubernetes, openshift network
@@ -26,9 +26,6 @@ When you create your cluster, you must choose a networking setup so that certain
 * [Worker-to-master and user-to-master communication](#vpc-workeruser-master): Your worker nodes and your authorized cluster users can communicate with the Kubernetes master securely over virtual private endpoints or cloud service endpoints.
 * [Worker communication to other services or networks](#vpc-worker-services-onprem): Allow your worker nodes to securely communicate with other {{site.data.keyword.cloud_notm}} services, such as {{site.data.keyword.registrylong}}, to on-premises networks, to other VPCs, or to classic infrastructure resources.
 * [External communication to apps that run on worker nodes](#vpc-external-workers): Allow public or private requests into the cluster as well as requests out of the cluster to a public endpoint.
-
-When you're done with this page, [try out the quiz](https://quizzes.12dekrh4l1b4.us-south.codeengine.appdomain.cloud/openshift/networking-vpc/quiz.php).
-{: tip}
 
 
 ## Worker-to-worker communication using VPC subnets
@@ -254,8 +251,5 @@ Ready to get started with a cluster for this scenario? After you plan your [high
 
 ## Next steps
 {: #plan-encryption-next-vpc}
-
-[Test your knowledge with a quiz](https://quizzes.12dekrh4l1b4.us-south.codeengine.appdomain.cloud/openshift/networking-vpc/quiz.php).
-{: tip}
 
 To continue the planning process, learn about protecting sensitive information in your cluster by making decisions about the level of [encryption](/docs/openshift?topic=openshift-encryption) you must configure. If you're ready to get started setting up networking, move on to [Understanding Secure by Default Cluster VPC Networking](/docs/openshift?topic=openshift-vpc-security-group-reference). 
