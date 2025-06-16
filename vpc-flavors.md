@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2025
-lastupdated: "2025-06-13"
+lastupdated: "2025-06-16"
 
 
 keywords: openshift, node scaling, ca, autoscaler
@@ -28,7 +28,7 @@ Review the VPC Gen 2 worker node flavors by metro.
 - The Intel AI Accelerator (Gaudi 3) flavor is only compatible with {{site.data.keyword.openshiftlong_notm}} 4.18.
 - Note the operating system requirements for each flavor. When selecting a flavor in the console, make sure you have the correct zone and operating system selections.
 - If your account is allowlisted for flavors that are not listed below, you can find a list of available flavors by running **`ibmcloud oc flavor ls`** [command](/docs/openshift?topic=openshift-kubernetes-service-cli#cs_flavor_ls) or review the list of flavors when creating a cluster in the console.
-- Network speed for VPC worker nodes is shared between storage and network traffic.By default, the storage allocation is 25% of maximum bandwidth. Network speed, as shown in the tables below, is the network bandwidth available to a worker with a single network interface after deducting the default 25% storage bandwidth allocation.
+- Network speed for VPC worker nodes is shared between storage and network traffic. By default, the storage allocation is 25% of maximum bandwidth. Network speed, as shown in the tables below, is the network bandwidth available to a worker with a single network interface after deducting the default 25% storage bandwidth allocation.
 
 
 
