@@ -3,7 +3,7 @@
 copyright:
   years: 2024, 2025
 
-lastupdated: "2025-06-17"
+lastupdated: "2025-06-18"
 
 
 keywords: change log, version history, 4.18_openshift
@@ -39,6 +39,24 @@ Master patch updates are applied automatically. Worker node patch updates can be
 {: #418_components}
 
 
+### Master fix pack 4.18.11_1547_openshift, released 18 June 2025
+{: #41811_1547_openshift_M}
+
+The following table shows the changes that are in the master fix pack 4.18.11_1547_openshift. Master patch updates are applied automatically. 
+
+
+
+| Component | Previous | Current | Description |
+| --- | --- | --- | --- |
+| Calico | v3.29.2 | v3.29.3 | See the [Calico release notes](https://docs.tigera.io/calico/3.29/release-notes/#v3.29.3){: external}. |
+| {{site.data.keyword.cloud_notm}} Block Storage driver and plug-in | v2.5.17 | v2.5.19 | New version contains updates and security fixes. |
+| {{site.data.keyword.cloud_notm}} Controller Manager | v1.31.9-1 | v1.31.9-4 | New version contains updates and security fixes. |
+| {{site.data.keyword.cloud_notm}} RBAC Operator | d1545bd | 38dc95c | New version contains updates and security fixes. |
+| Key Management Service provider | v2.10.13 | v2.10.14 | New version contains updates and security fixes. |
+| Tigera Operator | v1.36.5 | v1.36.8 | See the [Tigera Operator release notes](https://github.com/tigera/operator/releases/tag/v1.36.8){: external}. |
+{: caption="Changes since version 4.18.11_1544_openshift" caption-side="bottom"}
+
+
 ### Worker node fix pack 4.18.15_1539_openshift, released 04 June 2025
 {: #cl-boms-41815_1539_openshift_W}
 
@@ -54,7 +72,6 @@ The following table shows the components included in the worker node fix pack 4.
 {: #cl-boms-41815_1539_openshift_W-component-table}
 
 
-
 ### Master fix pack 4.18.11_1543_openshift, released 28 May 2025
 {: #41811_1544_openshift_M}
 
@@ -67,7 +84,6 @@ The following table shows the changes that are in the master fix pack 4.18.11_15
 | {{site.data.keyword.cloud_notm}} Controller Manager | v1.31.8-3 | v1.31.9-1 | New version contains updates and security fixes. |
 | {{site.data.keyword.filestorage_full_notm}} for Classic plug-in and monitor | 449 | 450 | New version contains updates and security fixes. |
 {: caption="Changes since version 4.18.11_1543_openshift" caption-side="bottom"}
-
 
 
 ### Master fix pack 4.18.11_1544_openshift and worker node fix pack 4.18.11_1541_openshift, released 27 May 2025
@@ -90,7 +106,6 @@ The following table shows the changes that are in the master fix pack 4.18.11_15
 | Red Hat OpenShift on IBM Cloud Control Plane Operator, Metrics Server, and toolkit | 4.17.0+20250414 | N/A | Red Hat OpenShift on IBM Cloud 4.18 now utilizes [Red Hat HyperShift](https://github.com/openshift/hypershift){: external} in place of the toolkit. Also, see the [Red Hat OpenShift on IBM Cloud toolkit release notes](https://github.com/openshift/ibm-roks-toolkit/releases){: external}. |
 | Tigera Operator | v1.34.8 | v1.36.5 | See the [Tigera Operator release notes](https://github.com/tigera/operator/releases/tag/v1.36.5){: external}. |
 {: caption="Changes since master fix pack 4.17.24_1537_openshift and worker fix pack 4.17.25_1536_openshift." caption-side="bottom"}
-
 
 
 ### Worker node fix pack 4.18.17_1539_openshift, released 16 June 2024
