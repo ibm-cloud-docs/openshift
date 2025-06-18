@@ -286,19 +286,17 @@ subcollection: openshift
 
 * [June 2025](/docs/openshift?topic=openshift-openshift-relnotes#openshift-june25)
 
-    * [18 June 2025](/docs/openshift?topic=openshift-openshift-relnotes#18june25)
-
-        * {{site.data.keyword.openshiftlong_notm}} master fix packs.
-
-    * [16 June 2025](/docs/openshift?topic=openshift-openshift-relnotes#openshift-16june25)
-
-        * {{site.data.keyword.openshiftlong_notm}} worker node fix packs are available.
-
-        * CLI version `1.0.706` is available.
+    * [18 June 2025](/docs/openshift?topic=openshift-openshift-relnotes#openshift-june1825)
 
         * IBM Storage Operator cluster add-on patch updates.
 
         * VPC File CSI Driver cluster add-on patch updates.
+
+    * [16 June 2025](/docs/openshift?topic=openshift-openshift-relnotes#openshift-16june25)
+
+        * CLI version `1.0.706` is available.
+
+        * {{site.data.keyword.openshiftlong_notm}} worker node fix packs are available.
 
     * [04 June 2025](/docs/openshift?topic=openshift-openshift-relnotes#openshift-04jun25)
 
