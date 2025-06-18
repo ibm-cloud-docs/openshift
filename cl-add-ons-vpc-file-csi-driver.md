@@ -3,7 +3,7 @@
 copyright:
   years: 2024, 2025
 
-lastupdated: "2025-05-13"
+lastupdated: "2025-06-18"
 
 
 keywords: change log, version history, VPC File CSI Driver
@@ -28,6 +28,19 @@ Review the version history for VPC File CSI Driver.
 ## Version 2.0
 {: #cl-add-ons-vpc-file-csi-driver-2.0}
 
+
+### 2.0.13_370, released 16 June 2025
+{: #cl-add-ons-vpc-file-csi-driver-2013_370}
+
+- Resolves the following CVEs: [CVE-2025-0395](https://nvd.nist.gov/vuln/detail/CVE-2025-0395){: external}, [CVE-2025-3576](https://nvd.nist.gov/vuln/detail/CVE-2025-3576){: external}, and [CVE-2025-24528](https://nvd.nist.gov/vuln/detail/CVE-2025-24528){: external}.
+- Updates Go to version `1.23.9`.
+- Adds support for users to configure CPU and memory limits and requests for all file containers. 
+- Fixes an issue where the provisioner and resizer containers were restarting due to the client rate-limiter. 
+- Enables leader-election for csi-resizer. 
+- Fixes a warning shown in PVC during volume expansion. 
+- Improves error messages. 
+- Updates k8s client libraries to 1.32. 
+- {'Note': 'Users might see unwanted messages in file-csi-driver-status configmap.'} 
 
 ### 2.0.10_334, released 19 February 2025
 {: #cl-add-ons-vpc-file-csi-driver-2010_334}
