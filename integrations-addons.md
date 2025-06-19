@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2025
-lastupdated: "2025-03-18"
+lastupdated: "2025-06-19"
 
 
 keywords: kubernetes, openshift
@@ -42,11 +42,14 @@ To enable a managed add-on in your cluster from the CLI, use the [`ibmcloud oc c
 
 For more information about the prerequisites for each add-on, see:
 - [{{site.data.keyword.block_storage_is_short}}](/docs/openshift?topic=openshift-vpc-block)
+- [{{site.data.keyword.cos_full_notm}}](/docs/openshift?topic=openshift-storage-cos-install-addon)
 - [Cluster Autoscaler](/docs/openshift?topic=openshift-cluster-scaling-install-addon)
 - [Diagnostics and Debug Tool](/docs/openshift?topic=openshift-debug-tool)
+- [{{site.data.keyword.filestorage_vpc_full_notm}}](/docs/openshift?topic=openshift-storage-file-vpc-install)
 - [HPCS Router](/docs/openshift?topic=openshift-hpcs-router-changelog)
 - [Image Key Synchronizer](/docs/openshift?topic=openshift-images#encrypted-images)
 - [OpenShift Data Foundation](/docs/openshift?topic=openshift-deploy-odf-vpc)
+- [OpenShift AI add-on](/docs/openshift?topic=openshift-ai-addon-install&interface=ui)
 - [Static routes](/docs/openshift?topic=openshift-static-routes)
 
 ## Updating managed add-ons
@@ -58,8 +61,10 @@ The versions of each managed add-on are tested by {{site.data.keyword.cloud_notm
 Review the following links for specific update steps for each add-on.
 - [{{site.data.keyword.block_storage_is_short}}](/docs/openshift?topic=openshift-vpc-block#vpc-addon-update)
 - [Cluster Autoscaler](/docs/openshift?topic=openshift-cluster-scaling-install-addon#cluster-scaling-install-addon-update-addon)
+- [{{site.data.keyword.filestorage_vpc_full_notm}}](/docs/openshift?topic=openshift-storage-file-vpc-managing)
 - [HPCS Router](/docs/openshift?topic=openshift-hpcs-router-changelog)
 - [OpenShift Data Foundation](/docs/openshift?topic=openshift-ocs-manage-deployment)
+- [OpenShift AI add-on](/docs/openshift?topic=openshift-ai-addon-manage)
    
 
 
