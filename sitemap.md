@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2025
-lastupdated: "2025-06-18"
+lastupdated: "2025-06-19"
 
 
 keywords: openshift
@@ -2987,12 +2987,6 @@ subcollection: openshift
 
 * [Understanding options for logging](/docs/openshift?topic=openshift-health#oc_logmet_options)
 
-* [Migrating logging and monitoring agents to Cloud Logs](/docs/openshift?topic=openshift-health#openshift_logging)
-
-    * [Reviewing your observability agents](/docs/openshift?topic=openshift-health#ob-review)
-
-    * [Removing the observability plug-in agents](/docs/openshift?topic=openshift-health#ob-remove)
-
 * [Using the cluster logging operator](/docs/openshift?topic=openshift-health#oc_logging_operator)
 
 [Monitoring cluster health](/docs/openshift?topic=openshift-health-monitor#health-monitor)
@@ -3004,12 +2998,6 @@ subcollection: openshift
     * [Built-in {{site.data.keyword.redhat_openshift_notm}} monitoring tools](/docs/openshift?topic=openshift-health-monitor#built-in-mon-tools)
 
     * [Monitoring {{site.data.keyword.openshiftlong}} storage metrics](/docs/openshift?topic=openshift-health-monitor#monitor-metrics)
-
-* [Migrating logging and monitoring agents to Cloud Logs](/docs/openshift?topic=openshift-health-monitor#openshift_monitoring)
-
-    * [Reviewing your observability agents](/docs/openshift?topic=openshift-health-monitor#ob-review-mon)
-
-    * [Removing the observability plug-in agents](/docs/openshift?topic=openshift-health-monitor#ob-remove-mon)
 
 * [Enabling remote health reporting](/docs/openshift?topic=openshift-health-monitor#oc_enable_telemetry_reports)
 
@@ -6295,6 +6283,8 @@ subcollection: openshift
 
 * [`openshift-data-foundation` 4.17.0](/docs/openshift?topic=openshift-supported-cluster-addon-versions#openshift-data-foundation-4.17.0)
 
+* [`openshift-data-foundation` 4.18.0](/docs/openshift?topic=openshift-supported-cluster-addon-versions#openshift-data-foundation-4.18.0)
+
 * [`static-route` 1.0.0](/docs/openshift?topic=openshift-supported-cluster-addon-versions#static-route-1.0.0)
 
 * [`vpc-block-csi-driver` 5.1](/docs/openshift?topic=openshift-supported-cluster-addon-versions#vpc-block-csi-driver-5.1)
@@ -8771,27 +8761,27 @@ subcollection: openshift
 
 [VPC flavors](/docs/openshift?topic=openshift-vpc-flavors#vpc-flavors)
 
-* [Sydney (`au-syd`)](/docs/openshift?topic=openshift-vpc-flavors#sydney-au-syd)
-
-* [Sao Paulo (`br-sao`)](/docs/openshift?topic=openshift-vpc-flavors#sao-paulo-br-sao)
-
-* [Montreal (`ca-mon`)](/docs/openshift?topic=openshift-vpc-flavors#montreal-ca-mon)
-
-* [Toronto (`ca-tor`)](/docs/openshift?topic=openshift-vpc-flavors#toronto-ca-tor)
+* [Dallas (`us-south`)](/docs/openshift?topic=openshift-vpc-flavors#dallas-us-south)
 
 * [Frankfurt (`eu-de`)](/docs/openshift?topic=openshift-vpc-flavors#frankfurt-eu-de)
 
+* [London (`eu-gb`)](/docs/openshift?topic=openshift-vpc-flavors#london-eu-gb)
+
 * [Madrid (`eu-es`)](/docs/openshift?topic=openshift-vpc-flavors#madrid-eu-es)
 
-* [London (`eu-gb`)](/docs/openshift?topic=openshift-vpc-flavors#london-eu-gb)
+* [Montreal (`ca-mon`)](/docs/openshift?topic=openshift-vpc-flavors#montreal-ca-mon)
 
 * [Osaka (`jp-osa`)](/docs/openshift?topic=openshift-vpc-flavors#osaka-jp-osa)
 
+* [Sao Paulo (`br-sao`)](/docs/openshift?topic=openshift-vpc-flavors#sao-paulo-br-sao)
+
+* [Sydney (`au-syd`)](/docs/openshift?topic=openshift-vpc-flavors#sydney-au-syd)
+
 * [Tokyo (`jp-tok`)](/docs/openshift?topic=openshift-vpc-flavors#tokyo-jp-tok)
 
-* [Washington DC (`us-east`)](/docs/openshift?topic=openshift-vpc-flavors#washington-dc-us-east)
+* [Toronto (`ca-tor`)](/docs/openshift?topic=openshift-vpc-flavors#toronto-ca-tor)
 
-* [Dallas (`us-south`)](/docs/openshift?topic=openshift-vpc-flavors#dallas-us-south)
+* [Washington DC (`us-east`)](/docs/openshift?topic=openshift-vpc-flavors#washington-dc-us-east)
 
 [Classic flavors](/docs/openshift?topic=openshift-classic-flavors#classic-flavors)
 
@@ -8811,11 +8801,9 @@ subcollection: openshift
 
 * [Osaka (`osa`)](/docs/openshift?topic=openshift-classic-flavors#osaka-osa)
 
-* [Paris (`par`)](/docs/openshift?topic=openshift-classic-flavors#paris-par)
+* [San Jose (`sjc`)](/docs/openshift?topic=openshift-classic-flavors#san-jose-sjc)
 
 * [Sao Paulo (`sao`)](/docs/openshift?topic=openshift-classic-flavors#sao-paulo-sao)
-
-* [San Jose (`sjc`)](/docs/openshift?topic=openshift-classic-flavors#san-jose-sjc)
 
 * [Singapore (`sng`)](/docs/openshift?topic=openshift-classic-flavors#singapore-sng)
 

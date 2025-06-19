@@ -2,9 +2,9 @@
 
 copyright:
   years: 2024, 2025
-lastupdated: "2025-05-29"
+lastupdated: "2025-06-19"
 
-keywords: logging, cloud logs, logs, log analysis, containers
+keywords: logging, cloud logs, logs, containers
 
 subcollection: openshift
 
