@@ -21,8 +21,10 @@ subcollection: openshift
 
 Review the classic worker node flavors by metro.
 
+The flavors listed here might differ from what is actually available for your cluster. You can find a list of available flavors specific to your clusters by running **`ibmcloud oc flavor ls`** [command](/docs/openshift?topic=openshift-kubernetes-service-cli#cs_flavor_ls) or review the list of flavors when creating a cluster in the console.
 
-
+These conditions might impact cluster flavor availability:
+- **Operating system specifications**: Some flavors have specific operating system requirements. When selecting a flavor in the console, make sure you have the correct zone and operating system selections for your needs.
 
 
 
