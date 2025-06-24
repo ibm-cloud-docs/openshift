@@ -286,6 +286,10 @@ subcollection: openshift
 
 * [June 2025](/docs/openshift?topic=openshift-openshift-relnotes#openshift-june25)
 
+    * [24 June 2025](/docs/openshift?topic=openshift-openshift-relnotes#24june25)
+
+        * {{site.data.keyword.satelliteshort}} storage template patch updates are available.
+
     * [23 June 2025](/docs/openshift?topic=openshift-openshift-relnotes#23june25)
 
         * IBM Cloud Image Key Synchronizer cluster add-on patch updates.
