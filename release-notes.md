@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2025
-lastupdated: "2025-06-23"
+lastupdated: "2025-06-24"
 
 
 keywords: kubernetes, release notes, openshift, {{site.data.keyword.openshiftlong_notm}}
@@ -31,8 +31,19 @@ Looking for {{site.data.keyword.cloud_notm}} status, platform announcements, sec
 ## June 2025
 {: #openshift-june25}
 
+
+
+### 24 June 2025
+{: #openshift-june2425}
+{: release-note}
+
+{{site.data.keyword.satelliteshort}} storage template patch updates are available.
+:   You can update your {{site.data.keyword.satelliteshort}} storage configurations and assignments to the latest patch from the [{{site.data.keyword.satelliteshort}} console](https://cloud.ibm.com/satellite/locations){: external}, or by running the  command. For more information, see [Which storage templates are available?](/docs/satellite?topic=satellite-storage-template-ov#storage-template-ov-providers) and the [CLI reference](/docs/satellite?topic=satellite-satellite-cli-reference#storage-config-patch-cli).
+
+
+
 ### 23 June 2025
-{: #23june25}
+{: #openshift-june2325}
 {: release-note}
 
 

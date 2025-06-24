@@ -286,7 +286,11 @@ subcollection: openshift
 
 * [June 2025](/docs/openshift?topic=openshift-openshift-relnotes#openshift-june25)
 
-    * [23 June 2025](/docs/openshift?topic=openshift-openshift-relnotes#23june25)
+    * [24 June 2025](/docs/openshift?topic=openshift-openshift-relnotes#openshift-june2425)
+
+        * {{site.data.keyword.satelliteshort}} storage template patch updates are available.
+
+    * [23 June 2025](/docs/openshift?topic=openshift-openshift-relnotes#openshift-june2325)
 
         * IBM Cloud Image Key Synchronizer cluster add-on patch updates.
 
@@ -9344,6 +9348,8 @@ subcollection: openshift
     * [SSH into the worker node on the public network](/docs/openshift?topic=openshift-cs_ssh_worker#public-network-only-classic-debug)
 
     * [Cleaning up after debugging](/docs/openshift?topic=openshift-cs_ssh_worker#ssh-debug-cleanup)
+
+[Why do I see a `Registration failed` error when I try to provision or reload worker nodes?](/docs/openshift?topic=openshift-ts-worker-plan-not-avail#ts-worker-plan-not-avail)
 
 [Pods in the `openshift-markeplace` namespace are in `ImagePullBackOff`](/docs/openshift?topic=openshift-ts-openshift-marketplace#ts-openshift-marketplace)
 
