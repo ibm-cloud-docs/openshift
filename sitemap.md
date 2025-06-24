@@ -9349,6 +9349,8 @@ subcollection: openshift
 
     * [Cleaning up after debugging](/docs/openshift?topic=openshift-cs_ssh_worker#ssh-debug-cleanup)
 
+[Why do I see a `Registration failed` error when I try to provision or reload worker nodes?](/docs/openshift?topic=openshift-ts-worker-plan-not-avail#ts-worker-plan-not-avail)
+
 [Pods in the `openshift-markeplace` namespace are in `ImagePullBackOff`](/docs/openshift?topic=openshift-ts-openshift-marketplace#ts-openshift-marketplace)
 
 [Why do I see a `failed to set feature gates` error when upgrading a worker node?](/docs/openshift?topic=openshift-ts-cloud-pak-ds#ts-cloud-pak-ds)
