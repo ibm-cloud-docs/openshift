@@ -34,7 +34,7 @@ Looking for {{site.data.keyword.cloud_notm}} status, platform announcements, sec
 
 
 ### 24 June 2025
-{: #24june25}
+{: #openshift-june2425}
 {: release-note}
 
 {{site.data.keyword.satelliteshort}} storage template patch updates are available.
@@ -43,7 +43,7 @@ Looking for {{site.data.keyword.cloud_notm}} status, platform announcements, sec
 
 
 ### 23 June 2025
-{: #23june25}
+{: #openshiftjune2325}
 {: release-note}
 
 
