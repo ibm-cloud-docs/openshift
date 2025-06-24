@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2025
-lastupdated: "2025-06-23"
+lastupdated: "2025-06-24"
 
 
 keywords: openshift
@@ -8804,8 +8804,6 @@ subcollection: openshift
 * [Frankfurt (`fra`)](/docs/openshift?topic=openshift-classic-flavors#frankfurt-fra)
 
 * [London (`lon`)](/docs/openshift?topic=openshift-classic-flavors#london-lon)
-
-* [Milan (`mil`)](/docs/openshift?topic=openshift-classic-flavors#milan-mil)
 
 * [Montreal (`mon`)](/docs/openshift?topic=openshift-classic-flavors#montreal-mon)
 

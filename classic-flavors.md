@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2025
-lastupdated: "2025-06-19"
+lastupdated: "2025-06-24"
 
 
 keywords: openshift, {{site.data.keyword.openshiftlong_notm}}, kubernetes, node scaling, ca, autoscaler
@@ -279,53 +279,6 @@ These conditions might impact cluster flavor availability:
 {: #lon-physical-table}
 {: tab-title="Physical"}
 {: tab-group="lon-tables"}
-
-
-## Milan (`mil`)
-{: #milan-mil}
-
-| Name | Data centers | Resources | OS | Primary storage | Secondary storage |
-| ---- | ---- |-------------------------------- | ---- | --------------- | ----------------- |  
-| b3c.16x64  \n(Balanced) | mil01 | 16 cores  \n64GB memory  \n1000Mbps network speed  \n No GPUs |  REDHAT_7_64  \n REDHAT_8_64  \n RHEL_9_64  \n| 25GB SSD | 100GB SSD |
-| b3c.16x64.300gb  \n(Balanced) | mil01 | 16 cores  \n64GB memory  \n1000Mbps network speed  \n No GPUs |  REDHAT_7_64  \n REDHAT_8_64  \n RHEL_9_64  \n| 25GB SSD | 300GB SSD |
-| b3c.32x128  \n(Balanced) | mil01 | 32 cores  \n128GB memory  \n1000Mbps network speed  \n No GPUs |  REDHAT_7_64  \n REDHAT_8_64  \n RHEL_9_64  \n| 25GB SSD | 100GB SSD |
-| b3c.4x16  \n(Balanced) | mil01 | 4 cores  \n16GB memory  \n1000Mbps network speed  \n No GPUs |  REDHAT_7_64  \n REDHAT_8_64  \n RHEL_9_64  \n| 25GB SSD | 100GB SSD |
-| b3c.56x242  \n(Balanced) | mil01 | 56 cores  \n242GB memory  \n1000Mbps network speed  \n No GPUs |  REDHAT_7_64  \n REDHAT_8_64  \n RHEL_9_64  \n| 25GB SSD | 100GB SSD |
-| b3c.8x32  \n(Balanced) | mil01 | 8 cores  \n32GB memory  \n1000Mbps network speed  \n No GPUs |  REDHAT_7_64  \n REDHAT_8_64  \n RHEL_9_64  \n| 25GB SSD | 100GB SSD |
-| c3c.16x16  \n(Compute) | mil01 | 16 cores  \n16GB memory  \n1000Mbps network speed  \n No GPUs |  REDHAT_7_64  \n REDHAT_8_64  \n RHEL_9_64  \n| 25GB SSD | 100GB SSD |
-| c3c.16x32  \n(Compute) | mil01 | 16 cores  \n32GB memory  \n1000Mbps network speed  \n No GPUs |  REDHAT_7_64  \n REDHAT_8_64  \n RHEL_9_64  \n| 25GB SSD | 100GB SSD |
-| c3c.32x32  \n(Compute) | mil01 | 32 cores  \n32GB memory  \n1000Mbps network speed  \n No GPUs |  REDHAT_7_64  \n REDHAT_8_64  \n RHEL_9_64  \n| 25GB SSD | 100GB SSD |
-| c3c.32x64  \n(Compute) | mil01 | 32 cores  \n64GB memory  \n1000Mbps network speed  \n No GPUs |  REDHAT_7_64  \n REDHAT_8_64  \n RHEL_9_64  \n| 25GB SSD | 100GB SSD |
-| m3c.4x32  \n(Memory) | mil01 | 4 cores  \n32GB memory  \n1000Mbps network speed  \n No GPUs |  REDHAT_7_64  \n REDHAT_8_64  \n RHEL_9_64  \n| 25GB SSD | 100GB SSD |
-{: class="simple-tab-table"}
-{: caption="VSI flavors in Milan." caption-side="bottom"}
-{: #mil-virtual-table}
-{: tab-title="Virtual"}
-{: tab-group="mil-tables"}
-
-
-
-| Name | Data centers | Resources | OS | Primary storage | Secondary storage |
-| ---- | ---- |-------------------------------- | ---- | --------------- | ----------------- |  
-| mb4c.20x192  \n(Bare Metal) | mil01 | 20 cores  \n192GB memory  \n10000Mbps network speed  \n No GPUs |  REDHAT_7_64  \n REDHAT_8_64  \n RHEL_9_64  \n| 2000GB HDD | 960GB SSD |
-| mb4c.20x384  \n(Bare Metal) | mil01 | 20 cores  \n384GB memory  \n10000Mbps network speed  \n No GPUs |  REDHAT_7_64  \n REDHAT_8_64  \n RHEL_9_64  \n| 2000GB HDD | 960GB SSD |
-| mb4c.20x64  \n(Bare Metal) | mil01 | 20 cores  \n64GB memory  \n10000Mbps network speed  \n No GPUs |  REDHAT_7_64  \n REDHAT_8_64  \n RHEL_9_64  \n| 2000GB HDD | 960GB SSD |
-| mb4c.20x64.2x1.9tb.ssd  \n(Bare Metal) | mil01 | 20 cores  \n64GB memory  \n10000Mbps network speed  \n No GPUs |  REDHAT_7_64  \n REDHAT_8_64  \n RHEL_9_64  \n| 2000GB HDD | 960GB SSD |
-| mb4c.32x384.3.8tb.ssd  \n(Bare Metal) | mil01 | 32 cores  \n384GB memory  \n10000Mbps network speed  \n No GPUs |  REDHAT_7_64  \n REDHAT_8_64  \n RHEL_9_64  \n| 2000GB HDD | 1920GB SSD |
-| mb4c.32x384.6x3.8tb.ssd  \n(Bare Metal) | mil01 | 32 cores  \n384GB memory  \n10000Mbps network speed  \n No GPUs |  REDHAT_7_64  \n REDHAT_8_64  \n RHEL_9_64  \n| 2000GB HDD | 1920GB SSD |
-| mb4c.32x768.3.8tb.ssd  \n(Bare Metal) | mil01 | 32 cores  \n768GB memory  \n10000Mbps network speed  \n No GPUs |  REDHAT_7_64  \n REDHAT_8_64  \n RHEL_9_64  \n| 2000GB HDD | 960GB SSD |
-| mb4c.48x1536  \n(Bare Metal) | mil01 | 48 cores  \n1536GB memory  \n10000Mbps network speed  \n No GPUs |  REDHAT_7_64  \n REDHAT_8_64  \n RHEL_9_64  \n| 2000GB HDD | 960GB SSD |
-| mb4c.4x32  \n(Bare Metal) | mil01 | 4 cores  \n32GB memory  \n10000Mbps network speed  \n No GPUs |  REDHAT_7_64  \n REDHAT_8_64  \n RHEL_9_64  \n| 2000GB HDD | 2000GB HDD |
-| mb4c.4x32.1.9tb.ssd  \n(Bare Metal) | mil01 | 4 cores  \n32GB memory  \n10000Mbps network speed  \n No GPUs |  REDHAT_7_64  \n REDHAT_8_64  \n RHEL_9_64  \n| 2000GB HDD | 960GB SSD |
-| me4c.4x32  \n(Bare Metal Edge) | mil01 | 4 cores  \n32GB memory  \n10000Mbps network speed  \n No GPUs |  REDHAT_7_64  \n REDHAT_8_64  \n| 2000GB HDD | 2000GB HDD |
-| me4c.4x32.1.9tb.ssd  \n(Bare Metal Edge) | mil01 | 4 cores  \n32GB memory  \n10000Mbps network speed  \n No GPUs |  REDHAT_7_64  \n REDHAT_8_64  \n| 2000GB HDD | 960GB SSD |
-| mg4c.32x384.2xp100  \n(Bare Metal GPUs) | mil01 | 32 cores  \n384GB memory  \n10000Mbps network speed  \n2 P100 GPUs |  REDHAT_7_64  \n REDHAT_8_64  \n RHEL_9_64  \n| 2000GB HDD | 960GB SSD |
-| mg4c.48x384.2xv100  \n(Bare Metal GPUs) | mil01 | 48 cores  \n384GB memory  \n10000Mbps network speed  \n2 V100 GPUs |  REDHAT_7_64  \n REDHAT_8_64  \n RHEL_9_64  \n| 2000GB HDD | 960GB SSD |
-{: class="simple-tab-table"}
-{: caption="Bare metal flavors in Milan." caption-side="bottom"}
-{: #mil-physical-table}
-{: tab-title="Physical"}
-{: tab-group="mil-tables"}
 
 
 ## Montreal (`mon`)
