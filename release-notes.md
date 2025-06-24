@@ -43,7 +43,7 @@ Looking for {{site.data.keyword.cloud_notm}} status, platform announcements, sec
 
 
 ### 23 June 2025
-{: #openshiftjune2325}
+{: #openshift-june2325}
 {: release-note}
 
 
