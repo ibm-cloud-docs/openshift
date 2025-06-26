@@ -2,7 +2,7 @@
 
 copyright:
   years: 2023, 2025
-lastupdated: "2025-05-29"
+lastupdated: "2025-06-25"
 
 
 keywords: kubernetes, openshift
@@ -47,7 +47,7 @@ Navigate to the your cluster's **Domains** page to create and manage domains.
 
 Use the {{site.data.keyword.cloud_notm}} console to create your own domain in your cluster, or add a domain that already exists in your provider account. Follow the console instructions to make the following domain configurations.
 
-If you are using the **{{site.data.keyword.cis_full_notm}}** provider, you must first [set up service-to-service authorization](/docs/account?topic=account-serviceauth&interface=ui#create-auth) for your {{site.data.keyword.cis_full_notm}} instance. Set the source service as `Kubernetes Service`, and the target as `Internet services`. Assign the `Manager` role. 
+If you are using the **{{site.data.keyword.cis_full_notm}}** provider, you must first [set up service-to-service authorization](/docs/account?topic=account-serviceauth&interface=ui#create-auth) for your {{site.data.keyword.cis_full_notm}} instance. Set the source service as `Kubernetes Service`, and the target as `Internet services`. Assign the `Manager` service level role and the `Viewer` platform level role. 
 {: note}
 
 ### Domain details
@@ -126,7 +126,7 @@ Follow the steps to create a domain with {{site.data.keyword.cis_full_notm}}.
 ### Set up service-to-service authorization
 {: #ingress-domain-cis-s2s}
 
-Creating a domain with {{site.data.keyword.cis_full_notm}} requires you to [set up service-to-service authorization](/docs/account?topic=account-serviceauth&interface=ui#create-auth) for your {{site.data.keyword.cis_full_notm}} instance. Set the source service as `Kubernetes Service`, and the target as `Internet services`. Assign the `Manager` role. 
+Creating a domain with {{site.data.keyword.cis_full_notm}} requires you to [set up service-to-service authorization](/docs/account?topic=account-serviceauth&interface=ui#create-auth) for your {{site.data.keyword.cis_full_notm}} instance. Set the source service as `Kubernetes Service`, and the target as `Internet services`. Assign the `Manager` service level role and the `Viewer` platform level role. 
 
 ### Create a domain
 {: #ingress-domain-cis-create}
