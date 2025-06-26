@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2025
-lastupdated: "2025-06-13"
+lastupdated: "2025-06-26"
 
 
 keywords: openshift, block storage, deploy apps
@@ -759,13 +759,15 @@ You might create your own storage class if you want to:
 * Set a custom IOPs value.
 * Set up {{site.data.keyword.block_storage_is_short}} with a file system type other than `ext4`.
 * Set up encryption.
+* Set up SSD defined performance.
 
-1. Review the [Storage class reference](/docs/openshift?topic=openshift-storage-block-vpc-sc-ref) to determine the `profile` that you want to use for your storage class. You can also review the [custom profiles](/docs/vpc?topic=vpc-block-storage-profiles#custom) if you want to specify custom IOPs for your {{site.data.keyword.block_storage_is_short}}.
+Before you begin
+:   Review the [Storage class reference](/docs/openshift?topic=openshift-storage-block-vpc-sc-ref) to determine the `profile` that you want to use for your storage class.
+:   You can also review the [custom profiles](/docs/vpc?topic=vpc-block-storage-profiles#custom) if you want to specify custom IOPs for your {{site.data.keyword.block_storage_is_short}}.
+:   If you want to use an SSD defined performance (SDP) profile, [review the capacity range and IOPs details](/docs/vpc?topic=vpc-block-storage-profiles&interface=ui#defined-performance-profile). Note that when using an SSD defined performance, the capacity of the volume is determine by the IOPs and throughput that you specify. 
+:   You can use an existing storage class as a starting point for creating your own class. Save the details of an existing storage class by using the `oc get sc <storageclass> -o yaml` command.
 
-    If you want to use a pre-installed storage class as a template, you can get the details of a storage class by using the `oc get sc <storageclass> -o yaml` command.
-    {: tip}
-
-2. Create a customized storage class configuration file.
+1. Create a customized storage class configuration file.
 
     ```yaml
     apiVersion: storage.k8s.io/v1
@@ -774,8 +776,8 @@ You might create your own storage class if you want to:
       name: <storage_class_name>
     provisioner: vpc.block.csi.ibm.io
     parameters:
-      profile: "<profile>"
-      csi.storage.k8s.io/fstype: "<file_system_type>"
+      profile: "<profile>" # general-purpose, sdp, 5iops-tier, 10iops-tier, or custom
+      csi.storage.k8s.io/fstype: "<file_system_type>" # xfs, ext3, or ext4
       billingType: "hourly"
       encrypted: "<encrypted_true_false>"
       encryptionKey: "<encryption_key>"
@@ -784,6 +786,7 @@ You might create your own storage class if you want to:
       region: "<region>"
       tags: "<tags>"
       generation: "gc"
+      throughput: "<throughput>" # Example: 2000
       classVersion: "1"
       iops: "<iops>" # Only specify this parameter if you are using a "custom" profile.
     allowVolumeExpansion: (true|false) # Select true or false. Only supported on version 3.0.1 and later
@@ -797,12 +800,11 @@ You might create your own storage class if you want to:
     `name`
     :   Enter a name for your storage class.
     
-    
     `profile`
-    :   Enter the profile that you selected in the previous step, or enter `custom` to use a custom IOPs value. To find supported storage sizes for a specific profile, see [Tiered IOPS profile](/docs/vpc?topic=vpc-block-storage-profiles). Any PVC that uses this storage class must specify a size value that is within this range.
+    :   Enter the profile that you selected in the previous step. Choose `general-purpose`, `sdp`, `5iops-tier`, `10iops-tier`, or custom use a custom IOPs value. To find supported storage sizes for a specific profile, see [Tiered IOPS profile](/docs/vpc?topic=vpc-block-storage-profiles). Any PVC that uses this storage class must specify a size value that is within this range.
         
     `csi.storage.k8s.io/fstype`
-        :   In the parameters, enter the file system for your {{site.data.keyword.block_storage_is_short}} instance. Choose `xfs`, `ext3`, or `ext4`. If you want to modify the ownership or permissions of your volume you must specify the `csi.storage.k8s.io/fstype` in your own storage class and your PVC must have `ReadWriteOnce` as the `accessMode`. The {{site.data.keyword.block_storage_is_short}} driver uses the `ReadWriteOnceWithFSType` `fsGroupPolicy`. For more information, see [CSI driver documentation](https://kubernetes-csi.github.io/docs/support-fsgroup.html#csi-driver-fsgroup-support){: external}.
+    :   In the parameters, enter the file system for your {{site.data.keyword.block_storage_is_short}} instance. Choose `xfs`, `ext3`, or `ext4`. If you want to modify the ownership or permissions of your volume you must specify the `csi.storage.k8s.io/fstype` in your own storage class and your PVC must have `ReadWriteOnce` as the `accessMode`. The {{site.data.keyword.block_storage_is_short}} driver uses the `ReadWriteOnceWithFSType` `fsGroupPolicy`. For more information, see [CSI driver documentation](https://kubernetes-csi.github.io/docs/support-fsgroup.html#csi-driver-fsgroup-support){: external}.
 
     `encrypted`
     :   In the parameters, enter `true` to create a storage class that sets up encryption for your {{site.data.keyword.block_storage_is_short}} volume. If you set this option to `true`, you must provide the root key CRN of your {{site.data.keyword.keymanagementserviceshort}} service instance that you want to use in `parameterencryptionKey`. For more information about encrypting your data, see [Setting up encryption for your {{site.data.keyword.block_storage_is_short}}](#vpc-block-encryption).
@@ -820,7 +822,10 @@ You might create your own storage class if you want to:
     :   In the parameters, enter a space-separated list of tags to apply to your {{site.data.keyword.block_storage_is_short}} instance. Tags can help you find instances more easily or group your instances based on common characteristics, such as the app or the environment that it is used for. 
 
     `iops`
-    :   If you entered `custom` for the `profile`, enter a value for the IOPs that you want your {{site.data.keyword.block_storage_is_short}} to use. Refer to the [{{site.data.keyword.block_storage_is_short}} custom IOPs profile](/docs/vpc?topic=vpc-block-storage-profiles#custom) table for a list of supported IOPs ranges by volume size.
+    :   If you entered `custom` or `sdp` for the `profile`, enter a value for the IOPs that you want your {{site.data.keyword.block_storage_is_short}} to use. Refer to the [{{site.data.keyword.block_storage_is_short}} custom IOPs profile](/docs/vpc?topic=vpc-block-storage-profiles#custom) table for a list of supported IOPs ranges by volume size.
+
+    `throughput`
+    :   Enter this value is you are using an `sdp` profile. For more information, see the [IOPs and throughput details for the SDP profile](/docs/vpc?topic=vpc-block-storage-profiles&interface=ui#defined-performance-profile)
 
     `reclaimPolicy`
     :   Enter the reclaim policy for your storage class. If you want to keep the PV, the physical storage device and your data when you remove the PVC, enter `Retain`. If you want to delete the PV, the physical storage device and your data when you remove the PVC, enter `Delete`.
@@ -850,14 +855,6 @@ You might create your own storage class if you want to:
     
     ```sh
     NAME                                    PROVISIONER            AGE
-    ibmc-vpc-block-10iops-tier              vpc.block.csi.ibm.io   4d21h
-    ibmc-vpc-block-5iops-tier               vpc.block.csi.ibm.io   4d21h
-    ibmc-vpc-block-custom                   vpc.block.csi.ibm.io   4d21h
-    ibmc-vpc-block-general-purpose          vpc.block.csi.ibm.io   4d21h
-    ibmc-vpc-block-retain-10iops-tier       vpc.block.csi.ibm.io   4d21h
-    ibmc-vpc-block-retain-5iops-tier        vpc.block.csi.ibm.io   4d21h
-    ibmc-vpc-block-retain-custom            vpc.block.csi.ibm.io   4d21h
-    ibmc-vpc-block-retain-general-purpose   vpc.block.csi.ibm.io   4d21h
     <custom-storageclass>             vpc.block.csi.ibm.io   4m26s
     ```
     {: screen}

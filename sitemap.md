@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2025
-lastupdated: "2025-06-24"
+lastupdated: "2025-06-26"
 
 
 keywords: openshift
@@ -4150,10 +4150,6 @@ subcollection: openshift
     * [Create a PVC](/docs/openshift?topic=openshift-storage-cos-install-addon#cos-addon-app-pvc)
 
     * [Create a deployment](/docs/openshift?topic=openshift-storage-cos-install-addon#cos-addon-app-dep)
-
-* [Setting up autorecovery for stale volumes](/docs/openshift?topic=openshift-storage-cos-install-addon#cos-addon-autorecovery)
-
-    * [Verifying recovery by simulating an error](/docs/openshift?topic=openshift-storage-cos-install-addon#cos_transport_verify_recovery)
 
 * [Disabling the {{site.data.keyword.cos_full_notm}} add-on](/docs/openshift?topic=openshift-storage-cos-install-addon#disable-cos-addon)
 
