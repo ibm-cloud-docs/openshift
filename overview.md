@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2025
-lastupdated: "2025-03-28"
+lastupdated: "2025-06-26"
 
 
 keywords: openshift, {{site.data.keyword.openshiftlong_notm}}, kubernetes, infrastructure, rbac, policy, providers, benefits
@@ -32,8 +32,6 @@ Review frequently asked questions and key technologies that {{site.data.keyword.
 {: #what-is-kube-overview}
 
 Kubernetes is an open source platform for managing containerized workloads and services across multiple hosts, and offers management tools for deploying, automating, monitoring, and scaling containerized apps with minimal to no manual intervention.
-
-![Kubernetes certification badge](images/certified-kubernetes-color.svg "Deployment setup"){: caption="This badge indicates Kubernetes certification for IBM Cloud Container Service." caption-side="bottom"}
 
 The open source project, Kubernetes, combines running a containerized infrastructure with production workloads, open source contributions, and Docker container management tools. The Kubernetes infrastructure provides an isolated and secure app platform for managing containers that is portable, extensible, and self-healing in case of a failover. For more information, see [What is Kubernetes?](https://www.ibm.com/think/topics/kubernetes){: external}.
 
