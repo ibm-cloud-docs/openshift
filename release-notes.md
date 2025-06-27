@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2025
-lastupdated: "2025-06-24"
+lastupdated: "2025-06-27"
 
 
 keywords: kubernetes, release notes, openshift, {{site.data.keyword.openshiftlong_notm}}
@@ -32,6 +32,13 @@ Looking for {{site.data.keyword.cloud_notm}} status, platform announcements, sec
 {: #openshift-june25}
 
 
+
+### 25 June 2025
+{: #25june25}
+{: release-note}
+
+OpenShift Data Foundation cluster add-on patch updates.
+:   For more information, see the [change log](/docs/openshift?topic=openshift-cl-add-ons-openshift-data-foundation).
 
 ### 24 June 2025
 {: #openshift-june2425}
