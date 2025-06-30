@@ -1,8 +1,8 @@
 ---
 
 copyright: 
-  years: 2014, 2024
-lastupdated: "2024-08-20"
+  years: 2014, 2025
+lastupdated: "2025-06-30"
 
 
 keywords: kubernetes, openshift, user permissions, infrastructure credentials
@@ -22,12 +22,12 @@ content-type: troubleshoot
 When you try to make changes to your cluster, such as creating or deleting worker nodes or other components, you receive an error message similar to one of the following examples. 
 {: tsSymptoms}
 
-```sh
+```txt
 The infrastructure authentication credentials are not authorized for the request.
 ```
 {: screen}
 
-```sh
+```txt
 We were unable to connect to your Softlayer account.
 Creating a standard cluster requires that you have either a
 Pay-As-You-Go account that is linked to an IBM Cloud infrastructure
@@ -36,33 +36,33 @@ CLI to set your Infrastructure API keys.
 ```
 {: screen}
 
-```sh
+```txt
 'Item' must be ordered with permission.
 ```
 {: screen}
 
-```sh
+```txt
 The worker node instance '<ID>' can't be found. Review '<provider>' infrastructure user permissions.
 ```
 {: screen}
 
-```sh
+```txt
 The worker node instance can't be found. Review '<provider>' infrastructure user permissions.
 ```
 {: screen}
 
-```sh
+```txt
 The worker node instance can't be identified. Review '<provider>' infrastructure user permissions.
 ```
 {: screen}
 
-```sh
+```txt
 The IAM token exchange request failed with the message: <message>
 IAM token exchange request failed: <message>
 ```
 {: screen}
 
-```sh
+```txt
 The cluster could not be configured with the registry. Make sure that you have the Administrator role for Container Registry.
 ```
 {: screen}
@@ -180,7 +180,7 @@ Before you begin, [Log in to your account. If applicable, target the appropriate
 When you try to complete an action that requires you to specify an API key, you get an error similar to the following. 
 {: tsSymptoms}
 
-```sh
+```txt
 Error: SoftLayer_Exception_User_Customer_Unauthorized: Invalid API key
 ```
 {: screen}
@@ -213,7 +213,3 @@ If you know the classic infrastructure API key, specify it. If you do not know t
 
 
 3. Try again to complete the action. 
-
-
-
-
