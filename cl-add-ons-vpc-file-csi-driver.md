@@ -3,7 +3,7 @@
 copyright:
   years: 2024, 2025
 
-lastupdated: "2025-06-18"
+lastupdated: "2025-07-01"
 
 
 keywords: change log, version history, VPC File CSI Driver
@@ -65,9 +65,6 @@ Review the version history for VPC File CSI Driver.
 - Updates the armada-storage-secret to v1.2.55. 
 
 
-
-## Version 2.0
-{: #020_is_file}
 
 ### Change log for version 2.0.9_322, released 11 December 2024
 {: #2.0.9_322_is_file_relnote}

@@ -19,36 +19,18 @@ subcollection: openshift
 {{site.data.keyword.openshiftlong_notm}} provides pre-defined storage classes that you can use to provision {{site.data.keyword.filestorage_vpc_short}}. Each storage class specifies the type of {{site.data.keyword.filestorage_vpc_short}} that you provision, including available size, IOPS, file system, and the retention policy. You can also create your own storage classes depending on your use case.
 {: shortdesc}
 
+Review the following notes and considerations before continuing.
 
 
-The following limitations apply to the add-on.
-
+-  After you provision a specific type of storage by using a storage class, you can't change the type, or retention policy for the storage device. However, you can [change the size](/docs/openshift?topic=openshift-storage-file-vpc-apps#storage-file-vpc-expansion) and the [IOPS](/docs/vpc?topic=vpc-file-storage-adjusting-iops&interface=ui) if you want to increase your storage capacity and performance. To change the type and retention policy for your storage, you must create a new storage instance and copy the data from the old storage instance to your new one.
 - If your cluster and VPC are in separate resource groups, then before you can provision file shares, you must create your own storage class and provide your VPC resource group ID under the `resourceGroup` section along with the `kube-<clusterID>` security group ID under `securityGroupIDs` section. To retrieve security group ID do the following. For more information, see [Creating your own storage class](/docs/openshift?topic=openshift-storage-file-vpc-apps#storage-file-vpc-custom-sc).
 - New security group rules were introduced in cluster versions 4.11 and later. These rule changes mean that you must sync your security groups before you can use {{site.data.keyword.filestorage_vpc_short}}. For more information, see [Adding {{site.data.keyword.filestorage_vpc_short}} to apps](/docs/containers?topic=containers-storage-file-vpc-apps).
 - New storage classes were added with version 2.0 of the add-on. You can no longer provision new file shares that use the older storage classes. Existing volumes that use the older storage classes continue to function, however you cannot expand the volumes that were created using the older classes. For more information, see the [Migrating to a new storage class](/docs/openshift?topic=openshift-storage-file-vpc-apps#storage-file-expansion-migration).
 - Creating a PVC by using [StorageClassSecrets](https://kubernetes-csi.github.io/docs/secrets-and-credentials-storage-class.html){: external} is not supported.
-
-After you provision a specific type of storage by using a storage class, you can't change the type, or retention policy for the storage device. However, you can [change the size](/docs/openshift?topic=openshift-storage-file-vpc-apps#storage-file-vpc-expansion) and the [IOPS](/docs/vpc?topic=vpc-file-storage-adjusting-iops&interface=ui) if you want to increase your storage capacity and performance. To change the type and retention policy for your storage, you must create a new storage instance and copy the data from the old storage instance to your new one.
-
-Decide on a storage class. For more information, see the [storage class reference](/docs/openshift?topic=openshift-storage-file-vpc-sc-ref).
-
-Review the following notes and considerations for {{site.data.keyword.filestorage_vpc_short}}.
-
 - Make sure the user who creates the cluster has the Reader, Writer, and Operator permissions for VPC Infrastructure Services.
 - Make sure you [set up a service authorization](/docs/vpc?topic=vpc-file-s2s-auth&interface=ui) from VPC Infrastructure to KMS/HPCS if you plan to use encryption on your file shares.
 - By default, {{site.data.keyword.filestorage_vpc_short}} cluster add-on provisions file shares in the `kube-<clusterID>` security group. This means pods can access file shares across nodes and zones.
 - If you are using context-based restrictions, make sure you configure your network zones and rules. For more information, see [Protecting Virtual Private Cloud (VPC) Infrastructure Services with context-based restrictions](/docs/vpc?topic=vpc-cbr&interface=ui).
-
-
-If you need the following features, you must [create your own storage class](/docs/openshift?topic=openshift-storage-file-vpc-apps#storage-file-vpc-custom-sc).
-{: note}
-
-- Your app needs to run as non-root.
-- Your cluster is in a different resource group from your VPC and subnet.
-- You need to limit file share access to pods on a given node or in a given zone.
-- You need to bring your own (BYOK) encryption using a KMS provider such as HPCS or Key Protect.
-- You need to manually specify the subnet or IP address of the [Virtual Network Interface (VNI)](/docs/vpc?topic=vpc-file-storage-vpc-about&interface=ui#fs-mount-granular-auth).
-
 
 
 New security group rules were introduced in versions 4.11 and later. These rule changes mean you must sync your security groups before you can use {{site.data.keyword.filestorage_vpc_short}}. If your cluster was initially created at version 4.11 or earlier, run the following commands to sync your security group settings.
@@ -595,13 +577,19 @@ Create a persistent volume claim (PVC) to statically provision {{site.data.keywo
 ## Creating your own storage class
 {: #storage-file-vpc-custom-sc}
 
-Create your own customized storage class with the preferred settings for your {{site.data.keyword.filestorage_vpc_short}} instance. The following example uses the `dp2` [profile](https://cloud.ibm.com/docs/vpc?topic=vpc-file-storage-profiles&interface=ui#dp2-profile).
+You can create your own customized storage class with the preferred settings for your {{site.data.keyword.filestorage_vpc_short}} instance. If you need the following features, you must [create your own storage class](/docs/openshift?topic=openshift-storage-file-vpc-apps#storage-file-vpc-custom-sc).
+
+- Your app needs to run as non-root.
+- Your cluster is in a different resource group from your VPC and subnet.
+- You need to limit file share access to pods on a given node or in a given zone.
+- You need to bring your own (BYOK) encryption using a KMS provider such as HPCS or Key Protect.
+- You need to manually specify the subnet or IP address of the [Virtual Network Interface (VNI)](/docs/vpc?topic=vpc-file-storage-vpc-about&interface=ui#fs-mount-granular-auth).
 
 If your cluster and VPC are not in the same resource group, you must specify the VPC resource group ID in the `resourceGroup` section and the `kube-<clusterID>` security group ID in the `securityGroupIDs` section. You can find the ID of the `kube-<clusterID>` security group by running `ibmcloud is sg kube-<cluster-id>  | grep ID`.
 {: important}
 
 
-1. Create a storage class configuration file.
+1. Create a storage class configuration file. The following example uses the `dp2` [profile](https://cloud.ibm.com/docs/vpc?topic=vpc-file-storage-profiles&interface=ui#dp2-profile).
 
     ```yaml
     apiVersion: storage.k8s.io/v1
@@ -937,13 +925,11 @@ Use a key management service (KMS) provider, such as {{site.data.keyword.keymana
 Encryption in-transit is available as a Beta.
 {: beta}
 
-Review the following information about EIT.
+Review the following information about EIT. If you choose to use encryption in-transit, you need to balance your requirements between performance and enhanced security. Encrypting data in-transit can have performance impacts due to the processing that is needed to encrypt and decrypt the data at the endpoints. For more information about encryption in-transit, see [VPC Encryption in Transit](https://cloud.ibm.com/docs/vpc?topic=vpc-file-storage-vpc-about&interface=ui#fs-eit).
 
-- By default, file shares are [encrypted at rest](/docs/vpc?topic=vpc-file-storage-vpc-about&interface=ui#FS-encryption) with IBM-managed encryption.
-- If you choose to use encryption in-transit, you need to balance your requirements between performance and enhanced security. Encrypting data in-transit can have performance impacts due to the processing that is needed to encrypt and decrypt the data at the endpoints. 
+- By default, file shares are [encrypted at rest](/docs/vpc?topic=vpc-file-storage-vpc-about&interface=ui#FS-encryption) with IBM-managed encryption. 
 - EIT is not available for Secure by Default clusters and requires you the disable outbound traffic protection in clusters 4.15 and later.
 - EIT is available for cluster versions 4.16 and later.
-- For more information about encryption in-transit, see [VPC Encryption in Transit](https://cloud.ibm.com/docs/vpc?topic=vpc-file-storage-vpc-about&interface=ui#fs-eit).
 - EIT is not available for statically provisioned volumes. To set up EIT, you must use dynamic provisioning.
 - EIT packages are automatically updated in your cluster when EIT is enabled.
 

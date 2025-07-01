@@ -1,12 +1,9 @@
 ---
 
 copyright:
-years: 2025, 2025
-lastupdated: "2025-03-28"
-
-
+  years: 2025, 2025
+lastupdated: "2025-07-01"
 keywords:  
-
 
 subcollection: openshift
 
@@ -31,3 +28,4 @@ Review the managed add-ons available for {{site.data.keyword.containerlong_notm}
 | Static Route |  Create static routes that allow worker nodes to re-route response packets through a VPN or gateway to an IP address in an on-premises data center. | - [Adding static routes to worker nodes](/docs/containers?topic=containers-static-routes)  \n - [Static Route add-on version change log](/docs/containers?topic=containers-cl-add-ons-static-route) |
 | VPC Block CSI Driver | Copy a storage volume's contents at a particular point in time without creating an entirely new volume. | - [Setting up snapshots with the Block Storage for VPC cluster add-on](/docs/containers?topic=containers-vpc-volume-snapshot)  \n - [VPC Block CSI Driver add-on version change log](/docs/containers?topic=containers-cl-add-ons-vpc-block-csi-driver) | 
 | VPC File CSI Driver | Create persistent volume claims for fast and flexible network-attached, NFS-based File Storage for VPC. | -[Enabling the IBM Cloud File Storage for VPC cluster add-on](/docs/containers?topic=containers-storage-file-vpc-install)  \n - [VPC File CSI Driver add-on version change log](/docs/containers?topic=containers-cl-add-ons-vpc-file-csi-driver) |
+{: caption="Cluster add-ons" caption-side="bottom"}
