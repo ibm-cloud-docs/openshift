@@ -3,7 +3,7 @@
 copyright:
   years: 2024, 2025
 
-lastupdated: "2025-06-03"
+lastupdated: "2025-07-01"
 
 
 keywords: change log, version history, VPC Block CSI Driver
@@ -99,8 +99,7 @@ Review the version history for VPC Block CSI Driver.
 
 
 
-## Version 5.2
-{: #052_is_block}
+
 
 ### Change log for version 5.2.26_657, released 11 December 2024
 {: #5.2.26_657_is_block_relnote}

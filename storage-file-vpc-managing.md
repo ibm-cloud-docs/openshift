@@ -1,8 +1,8 @@
 ---
 
 copyright: 
-  years: 2023, 2024
-lastupdated: "2024-07-23"
+  years: 2023, 2025
+lastupdated: "2025-07-01"
 
 
 keywords: kubernetes, openshift
@@ -23,11 +23,10 @@ subcollection: openshift
 When you set up persistent storage in your cluster, you have three main components: the Kubernetes persistent volume claim (PVC) that requests storage, the Kubernetes persistent volume (PV) that is mounted to a pod and described in the PVC, and the file share. Depending on how you created your storage, you might need to delete all three components separately. 
 {: shortdesc}
 
-The {{site.data.keyword.filestorage_vpc_short}} cluster add-on is available in Beta. 
-{: beta}
 
 
-The following limitations apply to the add-on beta.
+
+The following limitations apply to the add-on.
 
 - It is recommended that your cluster and VPC are part of same resource group. If your cluster and VPC are in separate resource groups, then before you can provision file shares, you must create your own storage class and provide your VPC resource group ID. For more information, see [Creating your own storage class](/docs/openshift?topic=openshift-storage-file-vpc-apps#storage-file-vpc-custom-sc).
 - New security group rules were introduced in cluster versions 4.11 and later. These rule changes mean that you must sync your security groups before you can use {{site.data.keyword.filestorage_vpc_short}}. For more information, see [Adding {{site.data.keyword.filestorage_vpc_short}} to apps](/docs/containers?topic=containers-storage-file-vpc-apps).
@@ -100,62 +99,67 @@ The following limitations apply to the add-on beta.
     ```
     {: screen}
 
+## Setting resource and request limits in the configmap
+{: #edit-vpc-file-configmap}
 
-
-## Updating encryption in-transit (EIT) packages
-{: #storage-file-vpc-eit-packages}
-
-The `PACKAGE_DEPLOYER_VERSION` in the `addon-vpc-file-csi-driver-configmap` indicates the image version of the EIT packages.
-
-When a new image is available, edit the add-on configmap and specify the new image version, to update the packages on your worker nodes.
-
-1. Edit the `addon-vpc-file-csi-driver-configmap` configmap and specify the new image version.
+1. Run the following command to edit the configmap.
 
     ```sh
     oc edit cm addon-vpc-file-csi-driver-configmap -n kube-system
     ```
     {: pre}
 
-    Example output
 
+    Example output.
     ```yaml
-    PACKAGE_DEPLOYER_VERSION: v1.0.0
+    apiVersion: v1
+    data:
+      CSIBlockDriverCPULimit: 300m
+      CSIBlockDriverCPURequest: 75m
+      CSIBlockDriverMemoryLimit: 600Mi
+      CSIBlockDriverMemoryRequest: 150Mi
+      CSIDriverRegistrarCPULimit: 40m
+      CSIDriverRegistrarCPURequest: 10m
+      CSIDriverRegistrarMemoryLimit: 80Mi
+      CSIDriverRegistrarMemoryRequest: 20Mi
+      CSILivenessProbeCPULimit: 20m
+      CSILivenessProbeCPURequest: 5m
+      CSILivenessProbeMemoryLimit: 40Mi
+      CSILivenessProbeMemoryRequest: 10Mi
+      CSINodeDriverCPULimit: 120m
+      CSINodeDriverCPURequest: 30m
+      CSINodeDriverMemoryLimit: 300Mi
+      CSINodeDriverMemoryRequest: 75Mi
+      CSIProvisionerCPULimit: 80m
+      CSIProvisionerCPURequest: 20m
+      CSIProvisionerMemoryLimit: 160Mi
+      CSIProvisionerMemoryRequest: 40Mi
+      CSIResizerCPULimit: 80m
+      CSIResizerCPURequest: 20m
+      CSIResizerMemoryLimit: 160Mi
+      CSIResizerMemoryRequest: 40Mi
+      EIT_ENABLED_WORKER_POOLS: ""
+      ENABLE_EIT: "false"
+      SET_DEFAULT_STORAGE_CLASS: ""
+      SecretSidecarCPULimit: 60m
+      SecretSidecarCPURequest: 15m
+      SecretSidecarMemoryLimit: 80Mi
+      SecretSidecarMemoryRequest: 20Mi
+    kind: ConfigMap
+    metadata:
+      annotations:
+        revision: "2"
+        version: v2.0
+      creationTimestamp: "2025-06-19T11:23:13Z"
+      labels:
+        app.kubernetes.io/name: ibm-vpc-file-csi-driver
+      name: addon-vpc-file-csi-driver-configmap
     ```
-    {: screen}
+    {: codeblock}
+
+1. Edit the parameters as needed then save file.
 
 
-
-1. Follow the status of the update by reviewing the events in the `file-csi-driver-status` config map
-
-    ```sh
-    oc get cm file-csi-driver-status -n kube-system -o yaml
-    ```
-    {: pre}
-
-    ```sh
-      events: |
-    - event: EnableVPCFileCSIDriver
-      description: 'VPC File CSI Driver enable successful, DriverVersion: v2.0.3'
-      timestamp: "2024-06-13 09:17:07"
-    - event: EnableEITRequest
-      description: 'Request received to enableEIT, workerPools: , check the file-csi-driver-status
-        configmap for eit installation status on each node of each workerpool.'
-      timestamp: "2024-06-13 09:17:31"
-    - event: 'Enabling EIT on host: 10.240.0.10'
-      description: 'Package installation successful on host: 10.240.0.10, workerpool:
-        default'
-      timestamp: "2024-06-13 09:17:48"
-    - event: 'Enabling EIT on host: 10.240.0.8'
-      description: 'Package installation successful on host: 10.240.0.8, workerpool: default'
-      timestamp: "2024-06-13 09:17:48"
-    - event: 'Enabling EIT on host: 10.240.0.8'
-      description: 'Package update successful on host: 10.240.0.8, workerpool: default'
-      timestamp: "2024-06-13 09:20:21"
-    - event: 'Enabling EIT on host: 10.240.0.10'
-      description: 'Package update successful on host: 10.240.0.10, workerpool: default'
-      timestamp: "2024-06-13 09:20:21"
-    ```
-    {: screen}
 
 
 
@@ -336,6 +340,3 @@ To clean up persistent data:
     ibmcloud is share-delete (SHARE1 SHARE2 ...)
     ```
     {: pre}
-
-
-

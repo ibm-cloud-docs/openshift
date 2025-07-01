@@ -2,7 +2,7 @@
 
 copyright:
   years: 2024, 2025
-lastupdated: "2025-06-26"
+lastupdated: "2025-07-01"
 
 
 keywords: kubernetes, openshift, object storage add-in, cos
@@ -24,7 +24,6 @@ The {{site.data.keyword.cos_full_notm}} cluster add-on is available in Beta for 
 Prerequisites
 - The {{site.data.keyword.cos_full_notm}} add-on requires at least 0.2 vCPU and 128 MB of memory.
 - Set up a [{{site.data.keyword.cos_full_notm}} instance](/docs/openshift?topic=openshift-storage-cos-understand#create_cos_service).
-- Set up 
 
 ## Understanding bucket creation and removal
 {: #cos-addon-bucket-cd}
@@ -106,6 +105,9 @@ Before you begin: [Access your {{site.data.keyword.redhat_openshift_notm}} clust
 
 1. Save the following configuration as a file called `secret.yaml`.
 
+    - For **IAM credentials**, use a combination of `apiKey` and `serviceId` from Object Storage.
+    - For **HMAC credentials**, use `accessKey` and `secretKey` from Object Storage.
+
     ```yaml
     apiVersion: v1
     kind: Secret
@@ -116,13 +118,48 @@ Before you begin: [Access your {{site.data.keyword.redhat_openshift_notm}} clust
     data:
         bucketName: <base64-encoded-bucket-name>
         apiKey: <base64-encoded-COS-Service-Instance-API-key>
+        serviceID: <base64-encoded-COS-service-ID>
         accessKey: <base64-encoded-HMAC-access-key>
         secretKey: <base64-encoded-HMAC-secret-key>
     stringData:
     # uid: "3000" # Optional: Provide a uid to run as non root user. This must match runAsUser in SecurityContext of pod spec.
     mountOptions: |
+        # Review or update the following default s3fs mount options
+        #max_stat_cache_size=100000
+        #mp_umask=002
+        #parallel_count=8  # value depends on the storage class used
+        #sigv2
+        #use_path_request_style
+        #default_acl=private 
+        #kernel_cache
+        #multipart_size=62
+        #retries=5
+        #allow_other
+        #max_dirty_data=51200
+        
+        # Review or update the following default rclone mount options
+        #--allow-other=true
+        #--daemon=true
+        #acl=private 
+        #upload_cutoff=256Mi 
+        #chunk_size=64Mi 
+        #upload_concurrency=20 
+        #copy_cutoff=1Gi 
+        #memory_pool_flush_time=30s 
+        #disable_checksum=true 
+        #bucket_acl=private 
+        #max_upload_parts=64
+
     ```
     {: codeblock}
+
+    mountOptions
+    :    You can customize the mount options for either `s3fs` or `rclone` by editing the `mountOptions` in your secret. For more information, see the [s3fs mount options](https://github.com/IBM/ibm-object-csi-driver/blob/main/cos-csi-mounter/server/s3fs.go){: external} and the [rclone mount options](https://github.com/IBM/ibm-object-csi-driver/blob/main/cos-csi-mounter/server/rclone.go){: external}.
+
+    Currently, the add-on is enabled to support a fixed set of mount options with proper validation for each mount option. If you want to use any other mount options that are not in the validation list, contact support to enable those options.
+    {: note}
+
+
 
 1. Encode the credentials that you retrieved in the previous section to base64. Repeat this command for each parameter.
     ```sh
@@ -142,25 +179,59 @@ Before you begin: [Access your {{site.data.keyword.redhat_openshift_notm}} clust
 ### Create a PVC
 {: #cos-addon-app-pvc}
 
-1. Save the following configuration to a file called `pvc.yaml`.
+You can either use a single secret across multiple PVCs or one secret per PVC.
 
-    ```yaml
-    apiVersion: v1
-    kind: PersistentVolumeClaim
-    metadata:
-    name: cos-secret-1 # Give your PVC the same name as the secret you created in the previous step.
-    namespace: <namespace> # The namespace where you want to create the PVC.
-    spec:
-    accessModes:
-    - ReadWriteMany
-    resources:
+You can manage this behavior by using the following annotations in the PVC yaml. These annotations help the driver map the PVC to the correct secret.
+
+```yaml
+cos.csi.driver/secret: "<custom-secret>"
+cos.csi.driver/secret-namespace: "<namespace>"
+```
+{: codeblock}
+
+Make sure your secret, PVC, and pods are all in the same namespace
+{: note}
+
+
+Example PVC for a 1-to-1 secret to PVC mapping by giving your PVC the same name as the secret you created earlier.
+```yaml
+apiVersion: v1
+kind: PersistentVolumeClaim
+metadata:
+  name: cos-secret-1 # Give your PVC the same name as the secret you created in the previous step.
+  namespace: <namespace> # The namespace where you want to create the PVC.
+spec:
+  accessModes:
+  - ReadWriteMany
+  resources:
     requests:
-        storage: 10Gi
-    storageClassName: <storage_class_name> # The storage class you want to use.
-    ```
-    {: codeblock}
+      storage: 10Gi
+  storageClassName: <storage_class_name> # The storage class you want to use.
+```
+{: codeblock}
 
-1. Edit the configuration file values. Make sure to specify the same namespace where you created your secret. For a list of storage classes, see the [Storage class reference](#cos-sc-ref-addon).
+
+Example PVC for using 1 secret to many PVCs by using annotations to specify the secret.
+```yaml
+apiVersion: v1
+kind: PersistentVolumeClaim
+metadata:
+  name: cos-csi-pvc1
+  namespace: <namespace> # The namespace where you want to create the PVC.
+  annotations:
+    cos.csi.driver/secret: "<custom-secret>" 
+    cos.csi.driver/secret-namespace: "<namespace>"
+spec:
+  accessModes:
+  - ReadWriteOnce
+  resources:
+    requests:
+      storage: 256Mi
+  storageClassName: <storage_class_name> # The storage class you want to use.
+```
+{: codeblock}
+
+1. Choose one of the previous examples and customize it for your use case. For a list of storage classes, see the [Storage class reference](#cos-sc-ref-addon).
 
 1. Create the PVC.
     ```sh
@@ -266,22 +337,23 @@ Before you begin: [Access your {{site.data.keyword.redhat_openshift_notm}} clust
     ```
     {: screen}
 
-1. Create a secret that has the same name as your PVC.
+1. Recreate your secret with the bucket name included.
     ```yaml
     apiVersion: v1
     kind: Secret
     type: cos-s3-csi-driver
     metadata:
-        name: test-s3 # Name your secret the same name your PVC
-        namespace: default # Specify the namespace where you want to create the secret. In this example, the previous PVC and secret were in the default namespace.
+        name: cos-secret-1 # Name your secret.
+        namespace: <namespace> # Specify the namespace where you want to create the secret.
     data:
         bucketName: <base64-encoded-bucket-name>
-        apiKey: <base64-encoded-COS-Service-Instance-API-key>
         accessKey: <base64-encoded-HMAC-access-key>
         secretKey: <base64-encoded-HMAC-secret-key>
     stringData:
     # uid: "3000" # Optional: Provide a uid to run as non root user. This must match runAsUser in SecurityContext of pod spec.
     mountOptions: |
+        key1=value1
+        key2=value2
     ```
     {: codeblock}
     
@@ -345,14 +417,18 @@ Before you begin: [Access your {{site.data.keyword.redhat_openshift_notm}} clust
     apiVersion: v1
     kind: PersistentVolumeClaim
     metadata:
-    name: test-s3 # Enter the same name as the secret you created earlier.
+    name: cos-csi-pvc1
+    namespace: <namespace> # The namespace where you want to create the PVC.
+    annotations:
+        cos.csi.driver/secret: "cos-secret-1"  # Secret created in step 4
+        cos.csi.driver/secret-namespace: "<secret_namespace>"
     spec:
     accessModes:
     - ReadWriteOnce
     resources:
         requests:
-        storage: 3Gi
-    storageClassName: ibm-object-storage-smart-s3fs
+        storage: 256Mi
+    storageClassName: <storage_class_name> # The storage class you picked based on old storage class mapping.
     ```
     {: codeblock}
 

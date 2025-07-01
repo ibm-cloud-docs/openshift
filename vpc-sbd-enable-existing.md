@@ -34,6 +34,8 @@ Understand that when you enable secure by default on your cluster then only the 
 
 - Verify your cluster is at a version that supports secure by default. Update your cluster to at least 4.15.
 - Verify your cluster is not already secure by default. You can find this by running `ibmcloud ks cluster get` and reviewing the output.
+- Verify that none of your worker nodes are currently in provisioning state.
+
     ```sh
     Retrieving cluster CLUSTER...
     OK
@@ -125,7 +127,10 @@ Complete the following steps to apply the secure by default security group confi
     ```
     {: pre}
 
-1. Wait at least 5 minutes for the process to complete.
+1. Wait for the process to complete. A variety of factors can influence how long it takes to enable your cluster to secure by default. In most cases it is finished in less than 5 minutes. You can verify that the process is finished by inspecting your new security groups.
+    - Your master VPE gateway security group `kube-vpegw-CLUSTERID` contains rules.
+    - Your load balancer security group `kube-lbaas-CLUSTERID` contains rules.
+
 
 1. Replace all worker nodes in your cluster. 
 

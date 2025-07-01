@@ -4010,6 +4010,10 @@ subcollection: openshift
 
 [Enabling the {{site.data.keyword.filestorage_vpc_full_notm}} cluster add-on](/docs/openshift?topic=openshift-storage-file-vpc-install#storage-file-vpc-install)
 
+* [Considerations](/docs/openshift?topic=openshift-storage-file-vpc-install#file-vpc-addon-considerations)
+
+* [Enabling the add-on](/docs/openshift?topic=openshift-storage-file-vpc-install#file-vpc-addon-enable)
+
 * [Next steps](/docs/openshift?topic=openshift-storage-file-vpc-install#vpc-enable-next-steps)
 
 [Adding {{site.data.keyword.filestorage_vpc_short}} to apps](/docs/openshift?topic=openshift-storage-file-vpc-apps#storage-file-vpc-apps)
@@ -4052,7 +4056,7 @@ subcollection: openshift
 
 * [Updating the {{site.data.keyword.filestorage_vpc_short}} cluster add-on](/docs/openshift?topic=openshift-storage-file-vpc-managing#storage-file-vpc-update)
 
-* [Updating encryption in-transit (EIT) packages](/docs/openshift?topic=openshift-storage-file-vpc-managing#storage-file-vpc-eit-packages)
+* [Setting resource and request limits in the configmap](/docs/openshift?topic=openshift-storage-file-vpc-managing#edit-vpc-file-configmap)
 
 * [Disabling the add-on](/docs/openshift?topic=openshift-storage-file-vpc-managing#storage-file-vpc-disable)
 
@@ -6591,8 +6595,6 @@ subcollection: openshift
 
     * [5.1.33_685, released 17 February 2025](/docs/openshift?topic=openshift-cl-add-ons-vpc-block-csi-driver#cl-add-ons-vpc-block-csi-driver-5133_685)
 
-* [Version 5.2](/docs/openshift?topic=openshift-cl-add-ons-vpc-block-csi-driver#052_is_block)
-
     * [Change log for version 5.2.26_657, released 11 December 2024](/docs/openshift?topic=openshift-cl-add-ons-vpc-block-csi-driver#5.2.26_657_is_block_relnote)
 
     * [Change log for version 5.2.24_641, released 20 November 2024](/docs/openshift?topic=openshift-cl-add-ons-vpc-block-csi-driver#5.2.24_641_is_block_relnote)
@@ -6754,8 +6756,6 @@ subcollection: openshift
 * [Version 1.2](/docs/openshift?topic=openshift-cl-add-ons-vpc-file-csi-driver#cl-add-ons-vpc-file-csi-driver-1.2)
 
     * [1.2.14_332, released 19 February 2025](/docs/openshift?topic=openshift-cl-add-ons-vpc-file-csi-driver#cl-add-ons-vpc-file-csi-driver-1214_332)
-
-* [Version 2.0](/docs/openshift?topic=openshift-cl-add-ons-vpc-file-csi-driver#020_is_file)
 
     * [Change log for version 2.0.9_322, released 11 December 2024](/docs/openshift?topic=openshift-cl-add-ons-vpc-file-csi-driver#2.0.9_322_is_file_relnote)
 
@@ -9915,7 +9915,7 @@ subcollection: openshift
 
     * [Storage](/docs/openshift?topic=openshift-limitations#classic_storage_limit)
 
-* [User access](/docs/openshift?topic=openshift-limitations#classic_access_limit)
+* [Classic user access](/docs/openshift?topic=openshift-limitations#classic_access_limit)
 
 * [VPC cluster limitations](/docs/openshift?topic=openshift-limitations#ks_vpc_gen2_limits)
 
@@ -9925,7 +9925,7 @@ subcollection: openshift
 
     * [Storage](/docs/openshift?topic=openshift-limitations#vpc_gen2_storage_limit)
 
-* [User access](/docs/openshift?topic=openshift-limitations#vpc_access_limit)
+* [VPC user access](/docs/openshift?topic=openshift-limitations#vpc_access_limit)
 
 * [{{site.data.keyword.satelliteshort}} cluster limitations](/docs/openshift?topic=openshift-limitations#satellite_limits)
 

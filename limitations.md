@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2025
-lastupdated: "2025-06-16"
+lastupdated: "2025-07-01"
 
 
 keywords: openshift, http2, quota, app protocol, application protocol
@@ -131,7 +131,7 @@ Keep in mind that the [service](#tech_limits) limitations also apply.
 | File storage | Because of the way that {{site.data.keyword.cloud_notm}} NFS file storage configures Linux user permissions, you might encounter errors when you use file storage. If so, you might need to configure [{{site.data.keyword.redhat_openshift_notm}} Security Context Constraints](https://docs.redhat.com/documentation/openshift_container_platform/4.17/html/authentication_and_authorization/managing-pod-security-policies){: external} or use a different storage type. |
 {: caption="Classic cluster storage limitations"}
 
-## User access
+## Classic user access
 {: #classic_access_limit}
 
 Keep in mind that the [service](#tech_limits) limitations also apply.
@@ -197,7 +197,7 @@ Keep in mind that the [service](#tech_limits) limitations also apply.
 | {{site.data.keyword.block_storage_is_short}} | The default storage class in VPC clusters cannot be changed. However, you can [create your own storage class](/docs/openshift?topic=openshift-vpc-block#vpc-customize-storage-class). |
 {: caption="VPC cluster storage limitations"}
 
-## User access
+## VPC user access
 {: #vpc_access_limit}
 
 Keep in mind that the [service](#tech_limits) limitations also apply.
