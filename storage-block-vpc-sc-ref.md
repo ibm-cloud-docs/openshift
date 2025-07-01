@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2024, 2025
-lastupdated: "2025-06-13"
+lastupdated: "2025-07-01"
 
 
 keywords: openshift, block storage, deploy apps, storage class reference
@@ -25,6 +25,9 @@ Review the following storage class information for {{site.data.keyword.block_sto
 {: shortdesc}
 
 All storage classes use hourly billing. For more information about pricing, see [Pricing information](https://cloud.ibm.com/infrastructure/provision/vs){: external} and the [corresponding {{site.data.keyword.block_storage_is_short}} tiers](/docs/vpc?topic=vpc-block-storage-profiles#tiers).
+
+SSD defined performance profiles (SDP) are available in Dallas, Frankfurt, London, Madrid, Osaka, Sao Paulo, Sydney, Tokyo, Toronto, and Washington, D.C. Snapshot creation for SSD defined performance profiles is available in Dallas, Frankfurt, Tokyo, and Washington, D.C.
+{: note}
 
 
 | Name | File system | Volume binding mode | Reclaim policy |

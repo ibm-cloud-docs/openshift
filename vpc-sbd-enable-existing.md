@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2024, 2025
-lastupdated: "2025-04-14"
+lastupdated: "2025-07-01"
 
 keywords: openshift, {{site.data.keyword.openshiftlong_notm}}, secure by default, outbound traffic protection, 4.15
 
