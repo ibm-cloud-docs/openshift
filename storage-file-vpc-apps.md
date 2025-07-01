@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2022, 2025
-lastupdated: "2025-05-29"
+lastupdated: "2025-07-01"
 
 keywords: kubernetes, openshift
 
@@ -16,13 +16,12 @@ subcollection: openshift
 # Adding {{site.data.keyword.filestorage_vpc_short}} to apps
 {: #storage-file-vpc-apps}
 
-{{site.data.keyword.containerlong}} provides pre-defined storage classes that you can use to provision {{site.data.keyword.filestorage_vpc_short}}. Each storage class specifies the type of {{site.data.keyword.filestorage_vpc_short}} that you provision, including available size, IOPS, file system, and the retention policy. You can also create your own storage classes depending on your use case.
+{{site.data.keyword.openshiftlong_notm}} provides pre-defined storage classes that you can use to provision {{site.data.keyword.filestorage_vpc_short}}. Each storage class specifies the type of {{site.data.keyword.filestorage_vpc_short}} that you provision, including available size, IOPS, file system, and the retention policy. You can also create your own storage classes depending on your use case.
 {: shortdesc}
 
-The {{site.data.keyword.filestorage_vpc_short}} cluster add-on is available in Beta. 
-{: beta}
 
-The following limitations apply to the add-on beta.
+
+The following limitations apply to the add-on.
 
 - If your cluster and VPC are in separate resource groups, then before you can provision file shares, you must create your own storage class and provide your VPC resource group ID under the `resourceGroup` section along with the `kube-<clusterID>` security group ID under `securityGroupIDs` section. To retrieve security group ID do the following. For more information, see [Creating your own storage class](/docs/openshift?topic=openshift-storage-file-vpc-apps#storage-file-vpc-custom-sc).
 - New security group rules were introduced in cluster versions 4.11 and later. These rule changes mean that you must sync your security groups before you can use {{site.data.keyword.filestorage_vpc_short}}. For more information, see [Adding {{site.data.keyword.filestorage_vpc_short}} to apps](/docs/containers?topic=containers-storage-file-vpc-apps).
@@ -506,7 +505,6 @@ Create a persistent volume claim (PVC) to statically provision {{site.data.keywo
       csi:
         volumeAttributes:
           nfsServerPath: NFS-SERVER-PATH
-          isEITEnabled: true # The default is false
         driver: vpc.file.csi.ibm.io
         volumeHandle: FILE-SHARE-ID#SHARE-TARGET-ID
     ```
@@ -552,21 +550,21 @@ Create a persistent volume claim (PVC) to statically provision {{site.data.keywo
       labels:
         app: testpod
     spec:
-      replicas: 1
       selector:
         matchLabels:
-          app: testpod
+          app: busybox
       template:
         metadata:
           labels:
-            app: testpod
+            app: busybox
         spec:
           containers:
-          - image: IMAGE # The name of the container image that you want to use.
-            name: CONTAINER-NAME # The name of the container that you want to deploy to your cluster.
+          - name: busybox
+            image: busybox:1.28
+            command: [ "sh", "-c", "sleep 1h" ]
             volumeMounts:
-            - mountPath: /myvol  
-              name: pvc-name 
+            - name: my-vol
+              mountPath: /data/demo # Mount path for the application. 
           volumes:
           - name: pvc-name 
             persistentVolumeClaim:
@@ -936,12 +934,18 @@ Use a key management service (KMS) provider, such as {{site.data.keyword.keymana
 ## Setting up encryption in-transit (EIT)
 {: #storage-file-vpc-eit}
 
+Encryption in-transit is available as a Beta.
+{: beta}
+
 Review the following information about EIT.
+
 - By default, file shares are [encrypted at rest](/docs/vpc?topic=vpc-file-storage-vpc-about&interface=ui#FS-encryption) with IBM-managed encryption.
 - If you choose to use encryption in-transit, you need to balance your requirements between performance and enhanced security. Encrypting data in-transit can have performance impacts due to the processing that is needed to encrypt and decrypt the data at the endpoints. 
 - EIT is not available for Secure by Default clusters and requires you the disable outbound traffic protection in clusters 4.15 and later.
 - EIT is available for cluster versions 4.16 and later.
 - For more information about encryption in-transit, see [VPC Encryption in Transit](https://cloud.ibm.com/docs/vpc?topic=vpc-file-storage-vpc-about&interface=ui#fs-eit).
+- EIT is not available for statically provisioned volumes. To set up EIT, you must use dynamic provisioning.
+- EIT packages are automatically updated in your cluster when EIT is enabled.
 
 
 Complete the following steps to set up encryption-in-transit (EIT) for file shares in your {{site.data.keyword.openshiftlong_notm}} cluster. Enabling EIT installs the required packages on your worker nodes.
@@ -962,7 +966,6 @@ Complete the following steps to set up encryption-in-transit (EIT) for file shar
     data:
       EIT_ENABLED_WORKER_POOLS: "wp1,wp2" # Specify the worker pools where you want to enable EIT. If this field is blank, EIT is not enabled on any worker pools.
       ENABLE_EIT: "true"
-      PACKAGE_DEPLOYER_VERSION: v1.0.0
     kind: ConfigMap
     metadata:
       annotations:
@@ -981,8 +984,8 @@ Complete the following steps to set up encryption-in-transit (EIT) for file shar
         uid: d3c8bbcd-24fa-4203-9352-4ab7aa72a055
       resourceVersion: "1251777"
       uid: 5c9d6679-4135-458b-800d-217b34d27c75
-    ```
-    {: codeblock}
+      ```
+      {: codeblock}
 
 1. After enabling EIT, save and close the config map.
 

@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2022, 2025
-lastupdated: "2025-01-28"
+lastupdated: "2025-07-01"
 
 
 keywords: openshift, file storage, storage class reference, eni
@@ -23,11 +23,6 @@ The available storage classes correspond to the predefined {{site.data.keyword.f
 - All file shares are provisioned with zonal availability.
 - All classes are elastic network interface (ENI) enabled.
 - All classes support cross-zone mounting.
-
-The {{site.data.keyword.filestorage_vpc_short}} cluster add-on is available in Beta. 
-{: beta}
-
-
 
 New storage classes were introduced with version 2.0. You can no longer provision new file shares that use the older storage classes. Also, volume expansion does not work for shares that use the older storage classes. However, existing volumes that use the older storage classes continue to function.
 {: note}

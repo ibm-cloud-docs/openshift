@@ -4010,6 +4010,10 @@ subcollection: openshift
 
 [Enabling the {{site.data.keyword.filestorage_vpc_full_notm}} cluster add-on](/docs/openshift?topic=openshift-storage-file-vpc-install#storage-file-vpc-install)
 
+* [Considerations](/docs/openshift?topic=openshift-storage-file-vpc-install#file-vpc-addon-considerations)
+
+* [Enabling the add-on](/docs/openshift?topic=openshift-storage-file-vpc-install#file-vpc-addon-enable)
+
 * [Next steps](/docs/openshift?topic=openshift-storage-file-vpc-install#vpc-enable-next-steps)
 
 [Adding {{site.data.keyword.filestorage_vpc_short}} to apps](/docs/openshift?topic=openshift-storage-file-vpc-apps#storage-file-vpc-apps)
@@ -4052,7 +4056,7 @@ subcollection: openshift
 
 * [Updating the {{site.data.keyword.filestorage_vpc_short}} cluster add-on](/docs/openshift?topic=openshift-storage-file-vpc-managing#storage-file-vpc-update)
 
-* [Updating encryption in-transit (EIT) packages](/docs/openshift?topic=openshift-storage-file-vpc-managing#storage-file-vpc-eit-packages)
+* [Setting resource and request limits in the configmap](/docs/openshift?topic=openshift-storage-file-vpc-managing#edit-vpc-file-configmap)
 
 * [Disabling the add-on](/docs/openshift?topic=openshift-storage-file-vpc-managing#storage-file-vpc-disable)
 
