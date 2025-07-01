@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2025
-lastupdated: "2025-06-27"
+lastupdated: "2025-07-01"
 
 
 keywords: openshift
@@ -285,6 +285,10 @@ subcollection: openshift
 [Release notes](/docs/openshift?topic=openshift-openshift-relnotes#openshift-relnotes)
 
 * [June 2025](/docs/openshift?topic=openshift-openshift-relnotes#openshift-june25)
+
+    * [30 June 2025](/docs/openshift?topic=openshift-openshift-relnotes#30june25)
+
+        * New! Worker node flavors with AMD MI300x GPU support are available on an allowlist basis for VPC clusters at version 4.18 and later.
 
     * [25 June 2025](/docs/openshift?topic=openshift-openshift-relnotes#25june25)
 
@@ -3232,6 +3236,8 @@ subcollection: openshift
     * [Deploying a workload](/docs/openshift?topic=openshift-deploy_app&interface=cli#gpu-workload)
 
 * [Deploying an app on an Intel AI Accelerator (Gaudi 3) machine](/docs/openshift?topic=openshift-deploy_app&interface=cli#intel-gpu-app)
+
+* [Deploying an app on an AMD MI300x machine](/docs/openshift?topic=openshift-deploy_app&interface=cli#gpu-app-amd)
 
 [Testing access to apps with NodePorts](/docs/openshift?topic=openshift-nodeport#nodeport)
 
@@ -6260,8 +6266,6 @@ subcollection: openshift
 * [`alb-oauth-proxy` 2.0.0](/docs/openshift?topic=openshift-supported-cluster-addon-versions#alb-oauth-proxy-2.0.0)
 
 * [`cluster-autoscaler` 1.1.0](/docs/openshift?topic=openshift-supported-cluster-addon-versions#cluster-autoscaler-1.1.0)
-
-* [`cluster-autoscaler` 1.2.2](/docs/openshift?topic=openshift-supported-cluster-addon-versions#cluster-autoscaler-1.2.2)
 
 * [`cluster-autoscaler` 1.2.3](/docs/openshift?topic=openshift-supported-cluster-addon-versions#cluster-autoscaler-1.2.3)
 

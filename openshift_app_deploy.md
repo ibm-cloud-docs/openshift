@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2025
-lastupdated: "2025-05-29"
+lastupdated: "2025-06-30"
 
 
 keywords: kubernetes, openshift
@@ -592,6 +592,23 @@ For more information and examples, see the [Habana docs](https://docs.habana.ai/
     +=============================================================================+
     ```
     {: screen}
+
+
+## Deploying an app on an AMD MI300x machine
+{: #gpu-app-amd}
+
+
+[Red Hat CoreOS]{: tag-red} [4.18 and later]{: tag-vpc} [VPC]{: tag-vpc}
+
+
+- To install the necessary operators, you must [allow outbound traffic to Red Hat Marketplace and OperatorHub](/docs/openshift?topic=openshift-sbd-allow-outbound#sbd-example-oh).
+- Install the following operators in your cluster:
+    - [NFD Operator](https://docs.redhat.com/en/documentation/openshift_container_platform/4.18/html/specialized_hardware_and_driver_enablement/psap-node-feature-discovery-operator){: external}
+    - [KMM Operator](https://docs.redhat.com/en/documentation/openshift_container_platform/4.18/html/specialized_hardware_and_driver_enablement/kernel-module-management-operator){: external}
+    - [AMD GPU Operator](https://instinct.docs.amd.com/projects/gpu-operator/en/main/installation/openshift-olm.html#install-amd-gpu-operator){: external}
+
+- After installing the operators, follow the AMD documentation to [configure the drivers](https://instinct.docs.amd.com/projects/gpu-operator/en/latest/installation/openshift-olm.html#configuration){: external}. **Note**: Blacklisting in-tree `amdgpu` kernel module is not required.
+
 
 
  

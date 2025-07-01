@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2025
-lastupdated: "2025-06-27"
+lastupdated: "2025-06-30"
 
 
 keywords: kubernetes, release notes, openshift, {{site.data.keyword.openshiftlong_notm}}
@@ -30,6 +30,20 @@ Looking for {{site.data.keyword.cloud_notm}} status, platform announcements, sec
 
 ## June 2025
 {: #openshift-june25}
+
+
+
+### 30 June 2025
+{: #30june25}
+{: release-note}
+
+New! Worker node flavors with AMD MI300x GPU support are available on an allowlist basis for VPC clusters at version 4.18 and later.
+:   To request access to the allowlist, see see [Requesting access to allowlisted features](/docs/openshift?topic=openshift-allowlist-request).
+:   For a list of available worker node flavors for VPC clusters, see [VPC flavors](/docs/openshift?topic=openshift-vpc-flavors).
+:   To deploy an app on a GPU machine, see [Deploying apps on {[product_name]} clusters](/docs/openshift?topic=openshift-deploy_app).
+
+
+
 
 
 
