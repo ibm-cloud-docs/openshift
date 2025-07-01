@@ -755,7 +755,8 @@ The default storage class for the {{site.data.keyword.block_storage_is_short}} c
 Create your own customized storage class with the preferred settings for your {{site.data.keyword.block_storage_is_short}} instance.
 {: shortdesc}
 
-S
+SSD defined performance profiles (SDP) are available in Dallas, Frankfurt, London, Madrid, Osaka, Sao Paulo, Sydney, Tokyo, Toronto, and Washington, D.C. Snapshot creation for SSD defined performance profiles is available in Dallas, Frankfurt, Tokyo, and Washington, D.C.
+{: note}
 
 You might create your own storage class if you want to:
 * Set a custom IOPs value.
