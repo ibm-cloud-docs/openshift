@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2022, 2025
-lastupdated: "2025-06-19"
+lastupdated: "2025-07-01"
 
 keywords: openshift, add-ons, cluster addon
 
@@ -36,15 +36,6 @@ Review the following list of supported cluster add-ons. Each add-on version can 
 - Supported Kubernetes cluster versions: `>=1.20.0 <1.24.0`
 
 - Supported OpenShift cluster versions: `>=4.6.0 <4.13.0`
-
-
-
-## `cluster-autoscaler` 1.2.2 
-{: #cluster-autoscaler-1.2.2}
-
-- Supported Kubernetes cluster versions: `>=1.26.0 <1.31.0`
-
-- Supported OpenShift cluster versions: `>=4.10.0 <4.18.0`
 
 
 
