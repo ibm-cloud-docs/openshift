@@ -125,10 +125,7 @@ Complete the following steps to apply the secure by default security group confi
     ```
     {: pre}
 
-1. Wait for secure by default to be enabled. This typically takes less than 5 minutes, but might take 15 minutes or more in some cases.
-    - For example, enablement might take longer if any of your Load Balancers are in a "Pending" state. This can be due to worker actions like add, remove, or replace happening in the cluster.
-    - To verify that these actions have completed, you can check that none of the Load Balancers in this cluster nor the cluster master VPE gateway named `iks-<clusterID>` are in the old `kube-<vpcID>` security group any more. Note that Load Balancers and other resources from other clusters might still be in this `kube-<vpcID>` security group which is ok.
-    - You can also, check that the `kube-vpegw-<clusterID>` security group has a set of at least two rules that allow inbound traffic from the remote security group `kube-<clusterID>`. This indicates that the enablement work completed successfully and you are ready to replace your cluster worker nodes.
+1. Wait at least 5 minutes for the process to complete.
 
 1. Replace all worker nodes in your cluster. 
 
