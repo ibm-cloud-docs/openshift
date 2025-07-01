@@ -286,11 +286,11 @@ subcollection: openshift
 
 * [June 2025](/docs/openshift?topic=openshift-openshift-relnotes#openshift-june25)
 
-    * [30 June 2025](/docs/openshift?topic=openshift-openshift-relnotes#30june25)
+    * [30 June 2025](/docs/openshift?topic=openshift-openshift-relnotes#openshift-30june25)
 
         * New! Worker node flavors with AMD MI300x GPU support are available on an allowlist basis for VPC clusters at version 4.18 and later.
 
-    * [25 June 2025](/docs/openshift?topic=openshift-openshift-relnotes#25june25)
+    * [25 June 2025](/docs/openshift?topic=openshift-openshift-relnotes#openshift-25june25)
 
         * OpenShift Data Foundation cluster add-on patch updates.
 
