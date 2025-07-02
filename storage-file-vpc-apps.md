@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2022, 2025
-lastupdated: "2025-07-01"
+lastupdated: "2025-07-02"
 
 keywords: kubernetes, openshift
 
@@ -203,7 +203,7 @@ Create a persistent volume claim (PVC) to dynamically provision {{site.data.keyw
 - Existing volumes that use the older storage classes continue to function, however you cannot expand the volumes that were created using the older classes.
 - If you need the volume expansion feature, complete the following steps to migrate your apps to a newer storage class.
 - If you don't need the volume expansion feature, you do not need to migrate and your PVCs continue to function as normal.
-- The following steps cover manual migration. If you use a backup service such as PX backup or Velero, you can use those services to backup and restore your apps to a new storage class.
+- The following steps cover manual migration.
 
 
 1. Find the PVC you want to migrate and make a note of the both the PVC name and the associated PV name.
