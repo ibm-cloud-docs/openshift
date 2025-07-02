@@ -3,7 +3,7 @@
 copyright:
   years: 2024, 2025
 
-lastupdated: "2025-07-01"
+lastupdated: "2025-07-02"
 
 
 keywords: change log, version history, 4.18_openshift
@@ -58,6 +58,22 @@ The following table shows the changes that are in the master fix pack 4.18.11_15
 
 
 
+### Worker node fix pack 4.18.17_1539_openshift, released 16 June 2025
+{: #cl-boms-41817_1539_openshift_W}
+
+The following table shows the components included in the worker node fix pack 4.18.17_1539_openshift. Worker node patch updates can be applied by updating, reloading (in classic infrastructure), or replacing (in VPC infrastructure) the worker node.
+{: shortdesc}
+
+| Component | Version | Description |
+| ---- | ---- | ---- |
+|RHEL_9|5.14.0-503.40.1.el9_5|N/A|
+|Red Hat OpenShift and Red Hat CoreOS|4.18.17|For more information, see the [change logs](https://docs.redhat.com/en/documentation/openshift_container_platform/4.18/html/release_notes/ocp-4-18-release-notes.html#ocp-4-18-17_release-notes).|
+|HAProxy|951efd90b46e95a54751966c644ac37c4c901f92|Resolves the following CVEs: [CVE-2025-4802](https://nvd.nist.gov/vuln/detail/CVE-2025-4802){: external}, [CVE-2025-32414](https://nvd.nist.gov/vuln/detail/CVE-2025-32414){: external}, and [CVE-2025-3576](https://nvd.nist.gov/vuln/detail/CVE-2025-3576){: external}.|
+{: caption="4.18.17_1539_openshift fix pack." caption-side="bottom"}
+{: #cl-boms-41817_1539_openshift_W-component-table}
+
+
+
 ### Worker node fix pack 4.18.15_1539_openshift, released 04 June 2025
 {: #cl-boms-41815_1539_openshift_W}
 
@@ -109,19 +125,3 @@ The following table shows the changes that are in the master fix pack 4.18.11_15
 | Red Hat OpenShift on IBM Cloud Control Plane Operator, Metrics Server, and toolkit | 4.17.0+20250414 | N/A | Red Hat OpenShift on IBM Cloud 4.18 now utilizes [Red Hat HyperShift](https://github.com/openshift/hypershift){: external} in place of the toolkit. Also, see the [Red Hat OpenShift on IBM Cloud toolkit release notes](https://github.com/openshift/ibm-roks-toolkit/releases){: external}. |
 | Tigera Operator | v1.34.8 | v1.36.5 | See the [Tigera Operator release notes](https://github.com/tigera/operator/releases/tag/v1.36.5){: external}. |
 {: caption="Changes since master fix pack 4.17.24_1537_openshift and worker fix pack 4.17.25_1536_openshift." caption-side="bottom"}
-
-
-
-### Worker node fix pack 4.18.17_1539_openshift, released 16 June 2024
-{: #cl-boms-41817_1539_openshift_W}
-
-The following table shows the components included in the worker node fix pack 4.18.17_1539_openshift. Worker node patch updates can be applied by updating, reloading (in classic infrastructure), or replacing (in VPC infrastructure) the worker node.
-{: shortdesc}
-
-| Component | Version | Description |
-| ---- | ---- | ---- |
-|RHEL_9|5.14.0-503.40.1.el9_5|N/A|
-|Red Hat OpenShift and Red Hat CoreOS|4.18.17|For more information, see the [change logs](https://docs.redhat.com/en/documentation/openshift_container_platform/4.18/html/release_notes/ocp-4-18-release-notes.html#ocp-4-18-17_release-notes).|
-|HAProxy|951efd90b46e95a54751966c644ac37c4c901f92|Resolves the following CVEs: [CVE-2025-4802](https://nvd.nist.gov/vuln/detail/CVE-2025-4802){: external}, [CVE-2025-32414](https://nvd.nist.gov/vuln/detail/CVE-2025-32414){: external}, and [CVE-2025-3576](https://nvd.nist.gov/vuln/detail/CVE-2025-3576){: external}.|
-{: caption="4.18.17_1539_openshift fix pack." caption-side="bottom"}
-{: #cl-boms-41817_1539_openshift_W-component-table}
