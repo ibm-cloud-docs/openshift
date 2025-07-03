@@ -3,7 +3,7 @@
 copyright:
   years: 2024, 2025
 
-lastupdated: "2025-07-02"
+lastupdated: "2025-07-03"
 
 
 keywords: change log, version history, 4.15_openshift
@@ -44,6 +44,22 @@ Master patch updates are applied automatically. Worker node patch updates can be
 
 ## Version 4.15
 {: #415_components}
+
+
+### Worker node fix pack 4.15.53_1592_openshift, released 01 July 2025
+{: #cl-boms-41553_1592_openshift_W}
+
+The following table shows the components included in the worker node fix pack 4.15.53_1592_openshift. Worker node patch updates can be applied by updating, reloading (in classic infrastructure), or replacing (in VPC infrastructure) the worker node.
+{: shortdesc}
+
+| Component | Version | Description |
+| ---- | ---- | ---- |
+|RHEL_8|4.18.0-553.58.1.el8_10|Resolves the following CVEs: [RHSA-2024:3043](https://access.redhat.com/errata/RHSA-2024:3043){: external}, [CVE-2024-0690](https://nvd.nist.gov/vuln/detail/CVE-2024-0690){: external}, [RHSA-2025:9142](https://access.redhat.com/errata/RHSA-2025:9142){: external}, [CVE-2025-22871](https://nvd.nist.gov/vuln/detail/CVE-2025-22871){: external}, [RHSA-2025:9580](https://access.redhat.com/errata/RHSA-2025:9580){: external}, [CVE-2022-48919](https://nvd.nist.gov/vuln/detail/CVE-2022-48919){: external}, [CVE-2024-50301](https://nvd.nist.gov/vuln/detail/CVE-2024-50301){: external}, [CVE-2024-53064](https://nvd.nist.gov/vuln/detail/CVE-2024-53064){: external}, and [CVE-2025-21764](https://nvd.nist.gov/vuln/detail/CVE-2025-21764){: external}.|
+|Red Hat OpenShift and Red Hat CoreOS|4.15.53|For more information, see the [change logs](https://docs.redhat.com/en/documentation/openshift_container_platform/4.15/html/release_notes/ocp-4-15-release-notes.html#ocp-4-15-53_release-notes).|
+|HAProxy|951efd90b46e95a54751966c644ac37c4c901f92|N/A|
+{: caption="4.15.53_1592_openshift fix pack." caption-side="bottom"}
+{: #cl-boms-41553_1592_openshift_W-component-table}
+
 
 
 ### Master fix pack 4.15.51_1590_openshift, released 18 June 2025
