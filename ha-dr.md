@@ -19,7 +19,7 @@ subcollection: openshift
 
 [High availability](x2284708){: term} (HA) is the ability for a service to remain operational and accessible in the presence of unexpected failures. [Disaster recovery](#x2113280){: term} is the process of recovering the service instance to a working state. {: shortdesc}
 
-{{site.data.keyword.openshiftlong_notm}} is a highly available regional or zonal service designed for availability during a regional or zonal outage. Kubernetes Service is designed to meet the Service Level Objectives (SLO) with the Standard plan.
+{{site.data.keyword.openshiftlong_notm}} is a highly available regional or zonal service designed for availability during a regional or zonal outage. {{site.data.keyword.openshiftlong_notm}} is designed to meet the Service Level Objectives (SLO) with the Standard plan.
 
 For more information about the available region and data center locations, see Service and infrastructure availability by location.
 
@@ -71,14 +71,14 @@ Review the features available to you to provide high availability for your apps 
 | Multizone load balancing (Classic) | When you create a multizone classic cluster, a multizone load balancer is automatically created in each zone that your cluster resides in to handle all incoming requests to your apps and load balance requests among application load balancers (ALBs) in your cluster's zones. It also enables health checks for the public Ingress IP addresses. |
 | VPC load balancing (VPC)| When you create a VPC cluster, a VPC load balancer is automatically created for you to handle all incoming requests to your apps and load balance requests among application load balancers (ALBs) in your cluster's zones. It also enables health checks for the public Ingress IP addresses.
 | [Cluster autoscaler](/docs/openshift?topic=openshift-cluster-scaling-classic-vpc&interface=ui) | The cluster autoscaler add-on automatically scales the worker pools in your cluster to increase or decrease the number of worker nodes in the worker pool based on the sizing needs of your scheduled workloads. |
-{: caption="HA features for IBM Cloud Kubernetes Service" caption-side="bottom"}
+{: caption="HA features for {{site.data.keyword.openshiftlong_notm}}" caption-side="bottom"}
 
 ## Disaster recovery features
 {: #dr-features}
 
 The general strategy for disaster recovery is to configure storage and backups of your data with solutions such as Portworx.
 
-Kubernetes Service supports the following disaster recovery features:
+{{site.data.keyword.openshiftlong_notm}} supports the following disaster recovery features:
 
 | Feature | Description |
 |---------| ----------- |
@@ -88,7 +88,7 @@ Kubernetes Service supports the following disaster recovery features:
 | [Autorecovery](/docs/containers?topic=containers-health-monitor#autorecovery) | The Autorecovery system uses various checks to query worker node health status. If Autorecovery detects an unhealthy worker node based on the configured checks, Autorecovery triggers a corrective action like rebooting a VPC worker node or reloading the operating system in a classic worker node.|
 | [Data portability with Velero](/docs/openshift?topic=openshift-data-portability&q=velero&tags=containers#export-velero) | A third-party option for exporting data from your cluster to an IBM COS instance or another s3 provider. | Requires an IBM COS instance and bucket. |
 | [Data portability using the `kubectl` CLI](/docs/openshift?topic=openshift-data-portability&q=velero&tags=containers#export-procedure-kubectl) | Export data by using the `kubectl` CLI. |
-{: caption="DR features for IBM Cloud Kubernetes Service" caption-side="bottom"}
+{: caption="DR features for {{site.data.keyword.openshiftlong_notm}}" caption-side="bottom"}
 
 Review [additional options for exporting data](/docs/openshift?topic=openshift-data-portability#data-other), such as `rclone` or OADP.
 {: note}
@@ -103,7 +103,7 @@ Review [additional options for exporting data](/docs/openshift?topic=openshift-d
 | Portworx | RTO = <60s , RPO = <60s - 15m |  Values differ between asynchronous or synchronous (also known as Metro DR) configurations. For more information, see [Setting up disaster recovery with Portworx](/docs/openshift?topic=openshift-storage_portworx_recovery).  |
 | ODF Regional Disaster Recovery | RTO = 0, RPO = 0 | These values apply to the cluster level only. Regional and metro DR is not currently available. |
 | Cloud Object Storage | See the [object storage docs](/docs/cloud-object-storage?topic=cloud-object-storage-cos-ha-dr#rto-rpo-features). | 
-{: caption="RTO/RPO features for IBM Cloud Kubernetes Service" caption-side="bottom"}
+{: caption="RTO/RPO features for {{site.data.keyword.openshiftlong_notm}}" caption-side="bottom"}
 
 ## How {{site.data.keyword.IBM}} helps ensure disaster recovery
 {: #ibm-disaster-recovery}
@@ -140,7 +140,7 @@ Interruptions in network connectivity and short periods of unavailability of a s
 
 You are responsible for configuring your cluster to achieve the appropriate level of availability for your apps and services. The level of availability that you set up for your cluster impacts your coverage under the [{{site.data.keyword.cloud_notm}} HA service level agreement terms](/docs/overview?topic=overview-slas). For example, to receive full HA coverage under the SLA terms, you must set up a multizone cluster with a total of at least 6 worker nodes, two worker nodes per zone that are evenly spread across three zones.
 
-You are responsible for the recovery of the workloads that run the cluster and your application data. For more information on your responsibilities for disaster recovery, see [Your responsibilities with using IBM Cloud Kubernetes Service](/docs/openshift?topic=openshift-responsibilities_iks#disaster-recovery).
+You are responsible for the recovery of the workloads that run the cluster and your application data. For more information on your responsibilities for disaster recovery, see [Your responsibilities with using {{site.data.keyword.openshiftlong_notm}}](/docs/openshift?topic=openshift-responsibilities_iks#disaster-recovery).
 
 ## Change management
 {: #change-management-hadr}
@@ -175,4 +175,4 @@ Review the following potential app setups that are ordered with increasing degre
 
 - [Planning highly available deployments](/docs/openshift?topic=openshift-plan_deploy#highly_available_apps)
 - [Cluster high availability strategy](/docs/openshift?topic=openshift-strategy)
-- [Your responsibilities with using IBM Cloud Kubernetes Service](/docs/openshift?topic=openshift-responsibilities_iks)
+- [Your responsibilities with using {{site.data.keyword.openshiftlong_notm}}](/docs/openshift?topic=openshift-responsibilities_iks)
