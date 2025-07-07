@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2022, 2025
-lastupdated: "2025-06-13"
+lastupdated: "2025-07-07"
 
 
 keywords: kubernetes, openshift network
@@ -222,7 +222,7 @@ In this scenario, you run workloads in a VPC cluster. However, you want these wo
 {: shortdesc}
 
 
-![Network setup for a VPC cluster that extends an on-prem data center.](images/roks_ov_vpc_priv.svg){: caption="Figure 1.Network setup for a VPC cluster that extends an on-prem data center" caption-side="bottom"}
+![Network setup for a VPC cluster that extends an on-prem data center.](images/roks_ov_vpc_priv.svg){: caption="Network setup for a VPC cluster that extends an on-prem data center" caption-side="bottom"}
 
 ### Worker-to-worker communication
 {: #vpc-vpn-worker}
