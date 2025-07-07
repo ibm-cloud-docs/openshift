@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2025
-lastupdated: "2025-06-30"
+lastupdated: "2025-07-07"
 
 
 keywords: kubernetes, openshift
@@ -608,6 +608,149 @@ For more information and examples, see the [Habana docs](https://docs.habana.ai/
     - [AMD GPU Operator](https://instinct.docs.amd.com/projects/gpu-operator/en/main/installation/openshift-olm.html#install-amd-gpu-operator){: external}
 
 - After installing the operators, follow the AMD documentation to [configure the drivers](https://instinct.docs.amd.com/projects/gpu-operator/en/latest/installation/openshift-olm.html#configuration){: external}. **Note**: Blacklisting in-tree `amdgpu` kernel module is not required.
+
+For more information and examples, see the [AMD docs](https://instinct.docs.amd.com/projects/gpu-operator/en/latest/){: external} and the [quick start example](https://instinct.docs.amd.com/projects/gpu-operator/en/latest/usage.html){: external}.
+{: tip}
+
+1. Copy the following example pod configuration and save it as a file called `config.yaml`
+    ```yaml
+    apiVersion: v1
+    kind: Pod
+    metadata:
+      name: amd-smi
+    spec:
+      containers:
+      - image: docker.io/rocm/rocm-terminal:latest
+        name: amd-smi
+        command: ["/bin/bash"]
+        args: ["-c","amd-smi version && amd-smi monitor -ptum"]
+        resources:
+          limits:
+            amd.com/gpu: 8
+          requests:
+            amd.com/gpu: 8
+      restartPolicy: Never
+    ```
+    {: codeblock}
+
+1. Apply the pod in your cluster.
+    ```sh
+    oc apply -f config.yaml
+    ```
+    {: pre}
+
+1. Wait for the pods to start, then verify the job completed.
+    ```sh
+    oc get po -n default
+    ```
+    {: pre}
+
+    Example
+    ```sh
+    NAME       READY   STATUS      RESTARTS   AGE
+    amd-smi    0/1     Completed   0          19m
+    ```
+    {: screen}
+
+1. Describe the job pod for more details.
+    ```sh
+    oc describe po amd-smi
+    ```
+    {: pre}
+
+    ```sh
+    Name:         amd-smi
+    Namespace:    default
+    Priority:     0
+    Node:         test-d18ofps20v1lr6in6ta0-btsstagevpc-gx3d208-00001687/10.240.1.4
+    Start Time:   Mon, 07 Jul 2025 13:32:18 -0500
+    Labels:       <none>
+    Annotations:  cni.projectcalico.org/containerID: 5b5d39f8ebe5ea14250af02031084961285f8b210eea14d2c22704784d957de3
+                  cni.projectcalico.org/podIP: 
+                  cni.projectcalico.org/podIPs: 
+    Status:       Succeeded
+    IP:           172.17.55.73
+    IPs:
+      IP:  172.17.55.73
+    Containers:
+      amd-smi:
+        Container ID:  cri-o://3260f5a2788cc189adbe53d3d49c1bdccc7001df27f0c747d6fa86a3068c9eda
+        Image:         docker.io/rocm/rocm-terminal:latest
+        Image ID:      docker.io/rocm/rocm-terminal@sha256:72b323c5d56c511ea75f7353d0fee04e637390dd4874d414020284627a658014
+        Port:          <none>
+        Host Port:     <none>
+        Command:
+          /bin/bash
+        Args:
+          -c
+          amd-smi version && amd-smi monitor -ptum
+        State:          Terminated
+          Reason:       Completed
+          Exit Code:    0
+          Started:      Mon, 07 Jul 2025 13:32:20 -0500
+          Finished:     Mon, 07 Jul 2025 13:32:20 -0500
+        Ready:          False
+        Restart Count:  0
+        Limits:
+          amd.com/gpu:  8
+        Requests:
+          amd.com/gpu:  8
+        Environment:    <none>
+        Mounts:
+          /var/run/secrets/kubernetes.io/serviceaccount from kube-api-access-tshnq (ro)
+    Conditions:
+      Type                        Status
+      PodReadyToStartContainers   False 
+      Initialized                 True 
+      Ready                       False 
+      ContainersReady             False 
+      PodScheduled                True 
+    Volumes:
+      kube-api-access-tshnq:
+        Type:                    Projected (a volume that contains injected data from multiple sources)
+        TokenExpirationSeconds:  3607
+        ConfigMapName:           kube-root-ca.crt
+        ConfigMapOptional:       <nil>
+        DownwardAPI:             true
+        ConfigMapName:           openshift-service-ca.crt
+        ConfigMapOptional:       <nil>
+    QoS Class:                   BestEffort
+    Node-Selectors:              <none>
+    Tolerations:                 node.kubernetes.io/not-ready:NoExecute op=Exists for 300s
+                                node.kubernetes.io/unreachable:NoExecute op=Exists for 300s
+    Events:
+      Type    Reason          Age   From               Message
+      ----    ------          ----  ----               -------
+      Normal  Scheduled       19m   default-scheduler  Successfully assigned default/amd-smi to test-d18ofps20v1lr6in6ta0-btsstagevpc-gx3d208-00001687
+      Normal  AddedInterface  19m   multus             Add eth0 [172.17.55.73/32] from k8s-pod-network
+      Normal  Pulling         19m   kubelet            Pulling image "docker.io/rocm/rocm-terminal:latest"
+      Normal  Pulled          19m   kubelet            Successfully pulled image "docker.io/rocm/rocm-terminal:latest" in 782ms (782ms including waiting). Image size: 3016399213 bytes.
+      Normal  Created         19m   kubelet            Created container: amd-smi
+      Normal  Started         19m   kubelet            Started container amd-smi
+    ```
+    {: screen}
+
+1. Get the pod logs to see the AMD GPU details.
+    ```sh
+    oc logs amd-smi
+    ```
+    {: pre}
+
+    Example output    
+    ```sh
+    AMDSMI Tool: 25.3.0+ede62f2 | AMDSMI Library version: 25.3.0 | ROCm version: 6.4.0 | amdgpu version: 6.10.5 | amd_hsmp version: N/A
+    WARNING: User is missing the following required groups: render. Please add user to these groups.
+    GPU  POWER   GPU_T   MEM_T   GFX_CLK   GFX%   MEM%  MEM_CLOCK
+      0  141 W   40 °C   36 °C   140 MHz    0 %    0 %    900 MHz
+      1  144 W   42 °C   33 °C   138 MHz    0 %    0 %    900 MHz
+      2  140 W   38 °C   34 °C   142 MHz    0 %    0 %    900 MHz
+      3  142 W   39 °C   34 °C   140 MHz    0 %    0 %    900 MHz
+      4  140 W   38 °C   35 °C   138 MHz    0 %    0 %    900 MHz
+      5  142 W   36 °C   30 °C   138 MHz    0 %    0 %    900 MHz
+      6  137 W   40 °C   35 °C   138 MHz    0 %    0 %    900 MHz
+      7  137 W   38 °C   32 °C   142 MHz    0 %    0 %    900 MHz
+    ```
+    {: screen}
 
 
 

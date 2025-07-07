@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2025, 2025
-lastupdated: "2025-05-29"
+lastupdated: "2025-07-07"
 
 
 keywords: high availability, disaster recover, HA, DR, responsibilities
@@ -17,7 +17,7 @@ subcollection: openshift
 # Understanding high availability and disaster recovery for {{site.data.keyword.openshiftlong_notm}}
 {: #iks-ha-dr}
 
-High availability{: term} (HA) is the ability for a service to remain operational and accessible in the presence of unexpected failures. Disaster recovery{: term} is the process of recovering the service instance to a working state. {: shortdesc}
+[High availability](x2284708){: term} (HA) is the ability for a service to remain operational and accessible in the presence of unexpected failures. [Disaster recovery](#x2113280){: term} is the process of recovering the service instance to a working state. {: shortdesc}
 
 {{site.data.keyword.openshiftlong_notm}} is a highly available regional or zonal service designed for availability during a regional or zonal outage. Kubernetes Service is designed to meet the Service Level Objectives (SLO) with the Standard plan.
 

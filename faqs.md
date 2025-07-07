@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2025
-lastupdated: "2025-05-29"
+lastupdated: "2025-07-07"
 
 
 keywords: openshift, ocp, compliance, security standards, faq, openshift pricing, ocp pricing, openshift charges, ocp charges, openshift price, ocp price, openshift billing, ocp billing, openshift costs, ocp costs
@@ -402,7 +402,7 @@ For a list of supported services, see [Integrating services](/docs/containers?to
 ## How do I install a Cloud Pak in my cluster?
 {: #cloud_pak_manage}
 
-Cloud Paks are integrated with the {{site.data.keyword.cloud_notm}} catalog so that you can quickly configure and install the all the Cloud Pak components into an existing or new {{site.data.keyword.redhat_openshift_notm}} cluster. When you install the Cloud Pak, the Cloud Pak is provisioned with {{site.data.keyword.bpshort}} and a {{site.data.keyword.bpshort}} workspace is created for you. You can use the workspace later to access information about your Cloud Pak installation. You access your Cloud Pak services from the Cloud Pak URL. For more information, consult the [Cloud Pak documentation](https://www.ibm.com/cloud-paks/){: external}.
+Cloud Paks are integrated with the {{site.data.keyword.cloud_notm}} catalog so that you can quickly configure and install the all the Cloud Pak components into an existing or new {{site.data.keyword.redhat_openshift_notm}} cluster. When you install the Cloud Pak, the Cloud Pak is provisioned with {{site.data.keyword.bpshort}} and a {{site.data.keyword.bpshort}} workspace is created for you. You can use the workspace later to access information about your Cloud Pak installation. You access your Cloud Pak services from the Cloud Pak URL. For more information, consult the [Cloud Pak documentation](https://www.ibm.com/products/cloud-paks){: external}.
 
 ## Can I use the {{site.data.keyword.redhat_openshift_notm}} entitlement that comes with my Cloud Pak for my cluster?
 {: #cloud_pak_byo_entitlement}
@@ -420,7 +420,7 @@ Do not exceed your entitlement. Keep in mind that your OpenShift Container Platf
 ## Can I install multiple Cloud Paks in the same {{site.data.keyword.openshiftlong_notm}} cluster?
 {: #cloud_pak_multiple}
 
-Yes, but you might need to add more worker nodes so that each Cloud Pak has enough compute resources to run. Additionally, you might install only one instance of the same Cloud Pak per cluster, such as Cloud Pak for Data; or multiple instances to different projects in the same cluster, such as Cloud Pak for Automation. For sizing information, consult the [Cloud Pak documentation](https://www.ibm.com/cloud-paks/){: external}.
+Yes, but you might need to add more worker nodes so that each Cloud Pak has enough compute resources to run. Additionally, you might install only one instance of the same Cloud Pak per cluster, such as Cloud Pak for Data; or multiple instances to different projects in the same cluster, such as Cloud Pak for Automation. For sizing information, consult the [Cloud Pak documentation](https://www.ibm.com/products/cloud-paks){: external}.
 
 
 
@@ -435,7 +435,7 @@ Depending on the Cloud Pak, you get licensed IBM and open source software bundle
 * **IBM products**: Cloud Paks extend licensed IBM software and middleware from [IBM Marketplace](https://www.ibm.com/products){: external}, and integrate these products with your cluster to modernize, optimize, and run hybrid cloud workloads.
 * **Open-source software**: Cloud Paks might also include open source components for cloud-native and portable hybrid cloud solutions. Typically, open source software is unmanaged and you are responsible to keep your components up-to-date and secure. However, Cloud Paks help you consistently manage the entire lifecycle of the Cloud Pak components and the workloads that you run with them. Because the open source software is bundled together with the Cloud Pak, you get the benefits of IBM support and integration with select {{site.data.keyword.cloud_notm}} features such as access control and billing.
 
-To see the components of each Cloud Pak, consult the [Cloud Pak documentation](https://www.ibm.com/cloud-paks/){: external}.
+To see the components of each Cloud Pak, consult the [Cloud Pak documentation](https://www.ibm.com/products/cloud-paks){: external}.
 
 ## What else do I need to know to use Cloud Paks?
 {: #cloud_paks_other}

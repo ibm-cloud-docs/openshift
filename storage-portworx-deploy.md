@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2025
-lastupdated: "2025-05-22"
+lastupdated: "2025-07-07"
 
 
 keywords: portworx, kubernetes, openshift
@@ -17,7 +17,7 @@ subcollection: openshift
 # Installing Portworx in your cluster
 {: #storage_portworx_deploy}
 
-Provision a Portworx service instance from the {{site.data.keyword.cloud_notm}} catalog. After you create the service instance, the latest Portworx enterprise edition (`px-enterprise`) is installed on your cluster by using Helm. In addition, [Stork](https://docs.portworx.com/portworx-enterprise/operations/operate-kubernetes/storage-operations/stateful-applications/stork){: external} is also installed on your {{site.data.keyword.openshiftlong_notm}} cluster. Stork is the Portworx storage scheduler. With Stork, you can colocate pods with their data and create and restore snapshots of Portworx volumes.
+Provision a Portworx service instance from the {{site.data.keyword.cloud_notm}} catalog. After you create the service instance, the latest Portworx enterprise edition (`px-enterprise`) is installed on your cluster by using Helm. In addition, [Stork](https://docs.portworx.com/portworx-enterprise/deploy-your-applications/stateful-applications/stork){: external} is also installed on your {{site.data.keyword.openshiftlong_notm}} cluster. Stork is the Portworx storage scheduler. With Stork, you can colocate pods with their data and create and restore snapshots of Portworx volumes.
 {: shortdesc}
 
 Looking for instructions about how to update or remove Portworx? See [Updating Portworx](/docs/openshift?topic=openshift-storage_portworx_update) and [Removing Portworx](/docs/openshift?topic=openshift-storage_portworx_removing).
@@ -74,7 +74,7 @@ To install Portworx:
         3. In the **Etcd secret name** field, enter the name of the Kubernetes secret that you created in your cluster to store the Databases for etcd service credentials.
     1. From the **Kubernetes or OpenShift cluster name** drop down list, select the cluster where you want to install Portworx. If your cluster is not listed, make sure that you select the correct {{site.data.keyword.cloud_notm}} region. If the region is correct, verify that you have the correct [permissions](/docs/openshift?topic=openshift-clusters) to view and work with your cluster. Make sure that you select a cluster that meets the [minimum hardware requirements for Portworx](https://docs.portworx.com/portworx-enterprise/platform/prerequisites){: external}.
     1. **Optional**: From the **Portworx secret store type** drop down list, choose the secret store type that you want to use to store the volume encryption key.
-        - **Kubernetes Secret**: Choose this option if you want to store your own custom key to encrypt your volumes in a Kubernetes Secret in your cluster. The secret must not be present before you install Portworx. You can create the secret after you install Portworx. For more information, see the [Portworx documentation](https://docs.portworx.com/portworx-enterprise/operations/key-management/kubernetes-secrets){: external}.
+        - **Kubernetes Secret**: Choose this option if you want to store your own custom key to encrypt your volumes in a Kubernetes Secret in your cluster. The secret must not be present before you install Portworx. You can create the secret after you install Portworx. For more information, see the [Portworx documentation](https://docs.portworx.com/portworx-enterprise/platform/secure/key-management/kubernetes-secrets){: external}.
         - **{{site.data.keyword.keymanagementservicelong_notm}}**: Choose this option if you want to use root keys in {{site.data.keyword.keymanagementservicelong_notm}} to encrypt your volumes. Make sure that you follow the [instructions](/docs/openshift?topic=openshift-storage_portworx_encryption) to create your {{site.data.keyword.keymanagementservicelong_notm}} service instance, and to store the credentials for how to access your service instance in a Kubernetes secret in the `portworx` project before you install Portworx.
     1. **Optional**: If you want to set up a journal device or KVDB devices, enter the device details in the **Advanced Options** field. Choose from the following options for journal devices.
         
@@ -181,7 +181,7 @@ Start creating Portworx volumes by using Kubernetes dynamic provisioning.
     To view the details of a storage class, run `oc describe storageclass <storageclass_name>`.
     {: tip}
 
-2. If you don't want to use an existing storage class, create a customized storage class. For a full list of supported options that you can specify in your storage class, see [Using Dynamic Provisioning](https://docs.portworx.com/portworx-enterprise/operations/operate-kubernetes/storage-operations/create-pvcs/dynamic-provisioning.html){: external}.
+2. If you don't want to use an existing storage class, create a customized storage class. For a full list of supported options that you can specify in your storage class, see [Using Dynamic Provisioning](https://docs.portworx.com/portworx-enterprise/platform/provision-storage/create-pvcs/dynamic-provisioning.html){: external}.
     1. Create a configuration file for your storage class.
         ```yaml
         kind: StorageClass
@@ -282,7 +282,7 @@ To access the storage from your app, you must mount the PVC to your app.
 
 1. Create a configuration file for a deployment that mounts the PVC.
 
-    For tips on how to deploy a stateful set with Portworx, see [StatefulSets](https://portworx.com/blog/cassandra-openshift-run-ha-cassandra-red-hat-openshift/){: external}{: external}. The Portworx documentation also includes examples for how to deploy Cassandra, [Kafka](https://docs.portworx.com/portworx-enterprise/operations/operate-kubernetes/application-install-with-kubernetes/kafka-with-zookeeper){: external}, [ElasticSearch with Kibana](https://docs.portworx.com/portworx-enterprise/operations/operate-kubernetes/application-install-with-kubernetes/elastic-search-and-kibana){: external}, and [WordPress with MySQL](https://docs.portworx.com/portworx-enterprise/operations/operate-kubernetes/application-install-with-kubernetes/wordpress){: external}.
+    For tips on how to deploy a stateful set with Portworx, see [StatefulSets](https://portworx.com/blog/cassandra-openshift-run-ha-cassandra-red-hat-openshift/){: external}{: external}. The Portworx documentation also includes examples for how to deploy Cassandra, [Kafka](https://docs.portworx.com/portworx-enterprise/deploy-your-applications/application-install-with-kubernetes/kafka-with-zookeeper){: external}, [ElasticSearch with Kibana](https://docs.portworx.com/portworx-enterprise/deploy-your-applications/application-install-with-kubernetes/elastic-search-and-kibana){: external}, and [WordPress with MySQL](https://docs.portworx.com/portworx-enterprise/deploy-your-applications/application-install-with-kubernetes/wordpress){: external}.
     {: tip}
 
     ```yaml
@@ -327,7 +327,7 @@ To access the storage from your app, you must mount the PVC to your app.
     :   A label for the deployment.
     
     `spec.schedulerName`
-    :   Use [Stork](https://docs.portworx.com/portworx-enterprise/operations/operate-kubernetes/storage-operations/stateful-applications/stork){: external} as the scheduler for your Portworx cluster. With Stork, you can colocate pods with their data, provides seamless migration of pods in case of storage errors and makes it easier to create and restore snapshots of Portworx volumes.
+    :   Use [Stork](https://docs.portworx.com/portworx-enterprise/deploy-your-applications/stateful-applications/stork){: external} as the scheduler for your Portworx cluster. With Stork, you can colocate pods with their data, provides seamless migration of pods in case of storage errors and makes it easier to create and restore snapshots of Portworx volumes.
     
     `spec.containers.image`
     :   The name of the image that you want to use. To list available images in your {{site.data.keyword.registrylong_notm}} account, run `ibmcloud cr image-list`.
@@ -336,7 +336,7 @@ To access the storage from your app, you must mount the PVC to your app.
     :   The name of the container that you want to deploy to your cluster.
     
     `spec.containers.securityContext.fsGroup`
-    :   Optional: To access your storage with a non-root user, specify the [security context](https://kubernetes.io/docs/tasks/configure-pod-container/security-context/){: external} for your pod and define the set of users that you want to grant access in the `fsGroup` section on your deployment YAML. For more information, see [Accessing Portworx volumes with a non-root user](https://docs.portworx.com/portworx-enterprise/operations/operate-kubernetes/storage-operations/create-pvcs/access-via-non-root-users){: external}.
+    :   Optional: To access your storage with a non-root user, specify the [security context](https://kubernetes.io/docs/tasks/configure-pod-container/security-context/){: external} for your pod and define the set of users that you want to grant access in the `fsGroup` section on your deployment YAML. For more information, see [Accessing Portworx volumes with a non-root user](https://docs.portworx.com/portworx-enterprise/platform/provision-storage/create-pvcs/access-via-non-root-users){: external}.
     
     `spec.containers.volumeMounts.mountPath`
     :   The absolute path of the directory to where the volume is mounted inside the container. If you want to share a volume between different apps, you can specify [volume sub paths](https://kubernetes.io/docs/concepts/storage/volumes/#using-subpath){: external} for each of your apps.

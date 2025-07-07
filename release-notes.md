@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2025
-lastupdated: "2025-07-03"
+lastupdated: "2025-07-07"
 
 
 keywords: kubernetes, release notes, openshift, {{site.data.keyword.openshiftlong_notm}}
@@ -520,7 +520,7 @@ Cluster autoscaler add-on patch updates for {{site.data.keyword.openshiftlong_no
 
 
 Migrating from the Observability plug-in to {{site.data.keyword.logs_full_notm}}
-:   Support for the Observability plug-in ends on 28 March 2025. Review and complete the migration steps before support ends. For more information, see [Migrating logging and monitoring agents to Cloud Logs](/docs/openshift?topic=openshift-health#openshift_logging)
+:   Support for the Observability plug-in ends on 28 March 2025. Review and complete the migration steps before support ends.
 
 
 
