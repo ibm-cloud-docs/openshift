@@ -1,8 +1,8 @@
 ---
 
 copyright: 
-  years: 2014, 2024
-lastupdated: "2024-05-29"
+  years: 2014, 2025
+lastupdated: "2025-07-07"
 
 
 keywords: portworx, kubernetes, openshift
@@ -127,7 +127,7 @@ You can exclude worker nodes from your Portworx cluster or remove the entire Por
 Removing your Portworx cluster removes all the data from your Portworx cluster. Make sure to [create a snapshot for your data and save this snapshot to the cloud](https://docs.portworx.com/portworx-enterprise/operations/operate-kubernetes/storage-operations/create-snapshots){: external}.
 {: important}
 
-- **Remove a worker node from the Portworx cluster:** If you want to remove a worker node that runs Portworx and stores data in your Portworx cluster,  you must migrate existing pods to remaining worker nodes and then uninstall Portworx from the node. For more information, see [Decommission a Portworx node in Kubernetes](https://docs.portworx.com/portworx-enterprise/operations/operate-kubernetes/uninstall/decommission-a-node){: external}.
+- **Remove a worker node from the Portworx cluster:** If you want to remove a worker node that runs Portworx and stores data in your Portworx cluster,  you must migrate existing pods to remaining worker nodes and then uninstall Portworx from the node. For more information, see [Decommission a Portworx node in Kubernetes](https://docs.portworx.com/portworx-enterprise/platform/uninstall/decommission-a-node){: external}.
 - **Remove the Portworx DaemonSet**: When you remove the Portworx DaemonSet, the Portworx containers are removed from your worker nodes. However, the Portworx configuration files remain on the worker nodes and the storage devices, and the data volumes are still intact. You can use the data volumes again if you restart the Portworx DaemonSet and containers by using the same configuration files. For more information, see [Removing the Portworx DaemonSet](#remove_px_daemonset).
 - **Remove Portworx from your cluster:** If you want to remove Portworx and all your data from your cluster, follow the steps to [remove Portworx](#remove_portworx) from your cluster.
 
@@ -169,7 +169,7 @@ To stop billing for Portworx, you must remove the Portworx installation from you
 The following steps remove Portworx from your cluster, including all storage volumes and the data on those volumes.
 {: important}
 
-1. Follow the Portworx documentation to [uninstall Portworx](https://docs.portworx.com/portworx-enterprise/operations/operate-kubernetes/uninstall/uninstall-operator){: external}.
+1. Follow the Portworx documentation to [uninstall Portworx](https://docs.portworx.com/portworx-enterprise/platform/uninstall/uninstall-operator){: external}.
 
 1. Clean up for your Portworx volume attachments, PVCs, and PVs.
     1. List your volume attachments.
@@ -201,7 +201,3 @@ The following steps remove Portworx from your cluster, including all storage vol
     1. From the [{{site.data.keyword.cloud_notm}} resource list](https://cloud.ibm.com/resources), find the Portworx service that you created.
     2. From the actions menu, click **Delete**.
     3. Confirm the deletion of the service instance by clicking **Delete**.
-
-
-
-

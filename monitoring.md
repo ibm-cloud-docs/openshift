@@ -2,7 +2,7 @@
 
 copyright:
   years: 2024, 2025
-lastupdated: "2025-04-30"
+lastupdated: "2025-07-07"
 
 keywords: monitoring, openshift, observability, metrics
 
@@ -79,5 +79,5 @@ The observability CLI plug-in `ibmcloud ob` and the `v2/observe` endpoints are n
 {: unsupported}
 
 For more information, see the following links.
-- [Working with the Kubernetes agent](/docs/monitoring?topic=monitoring-agent_Kube).
-- [Working with the Red Hat OpenShift agent](/docs/monitoring?topic=monitoring-agent_openshift).
+- [Working with the Kubernetes agent](/docs/monitoring?topic=monitoring-kubernetes_cluster).
+- [Working with the Red Hat OpenShift agent](/docs/monitoring?topic=monitoring-openshift_cluster).
