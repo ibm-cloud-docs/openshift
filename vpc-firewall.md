@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2025
-lastupdated: "2025-03-18"
+lastupdated: "2025-07-08"
 
 
 keywords: openshift, firewall, ips
@@ -15,7 +15,7 @@ subcollection: openshift
 {{site.data.keyword.attribute-definition-list}}
 
 
-# Opening required ports and IP addresses in other network allowlists
+# Opening required ports and IP addresses in allowlists
 {: #vpc-firewall}
 
 [Virtual Private Cloud]{: tag-vpc}
@@ -328,3 +328,86 @@ To permit egress to your cluster from another service, modify that service's all
 
 2. Add the subnet CIDRs or individual worker node IP addresses to your service's allowlist or your on-premises allowlist for outbound traffic.
 3. Repeat these steps for each cluster that you want to allow traffic to or from.
+
+## Opening ports in VPC Security Groups or VPC ACLs
+{: #vpc-opening-ports}
+
+If you set up [VPC security groups](/docs/openshift?topic=openshift-vpc-security-group) or [VPC access control lists (ACLs)](/docs/openshift?topic=openshift-vpc-acls) to secure your cluster network, ensure that you create the rules to allow the necessary traffic to communicate with other {{site.data.keyword.cloud_notm}} services. 
+
+### Opening required ports in public allowlists
+{: #vpc-firewall-public}
+
+
+#### Optional: Allow incoming network traffic for Ingress subdomain monitoring 
+{: #firewall-ingress-domain-monitor}
+
+If you want to use the [Ingress domain health monitoring](/docs/openshift?topic=openshift-loadbalancer_hostname#loadbalancer_hostname_monitor) to monitor the health of your service endpoints, you must allow inbound access from the monitoring services.
+
+{{site.data.keyword.openshiftlong_notm}} is transitioning its internal DNS provider from Akamai to IBM NS1. During this transition period, ensure that all IP address ranges of Akamai and NS1 are allowlisted to ensure uninterrupted health monitoring.
+
+By default, monitoring health requests are sent through HTTPS to port 443, therefore you must allowlist traffic from the below IP ranges targeted to port 443. If your health monitor is configured to use HTTP instead, allowlist traffic must be targeted to port 80. Additionally, if you use a custom TCP port, make sure to allow incoming traffic to that port.
+
+For more information see the [IBM NS1 Connect Documentation about monitoring](https://www.ibm.com/docs/en/ns1-connect?topic=monitoring) and the [Akamai GTM Documentation](https://learn.akamai.com/en-us/webhelp/global-traffic-management/global-traffic-management-user-guide/GUID-C1995591-5D7D-42B9-B54F-0CF6C7BD2532.html).
+
+
+##### Akamai GTM Monitoring Ranges
+
+ - `193.108.155.118/32`
+ - `8.18.43.199/32`
+ - `8.18.43.240/32`
+ - `66.198.8.167/32`
+ - `66.198.8.168/32`
+ - `67.220.143.216/31`
+ - `173.205.7.116/31`
+ - `209.249.98.36/31`
+ - `207.126.104.118/31`
+ - `63.217.211.110/31`
+ - `63.217.211.116/31`
+ - `204.2.159.68/31`
+ - `209.107.208.188/31`
+ - `124.40.41.200/29`
+ - `125.252.224.36/31`
+ - `125.56.219.52/31`
+ - `192.204.11.4/31`
+ - `204.1.136.238/31`
+ - `204.2.160.182/31`
+ - `204.201.160.246/31`
+ - `205.185.205.132/31`
+ - `220.90.198.178/31`
+ - `60.254.173.30/31`
+ - `61.111.58.82/31`
+ - `63.235.21.192/31`
+ - `64.145.89.236/31`
+ - `65.124.174.194/31`
+ - `69.31.121.20/31`
+ - `69.31.138.100/31`
+ - `77.67.85.52/31`
+ - `203.69.138.120/30`
+ - `66.198.26.68/30`
+ - `201.33.187.68/30`
+ - `2.16.0.0/13`
+ - `23.0.0.0/12`
+ - `23.192.0.0/11`
+ - `23.32.0.0/11`
+ - `23.64.0.0/14`
+ - `23.72.0.0/13`
+ - `69.192.0.0/16`
+ - `72.246.0.0/15`
+ - `88.221.0.0/16`
+ - `92.122.0.0/15`
+ - `95.100.0.0/15`
+ - `96.16.0.0/15`
+ - `96.6.0.0/15`
+ - `104.64.0.0/10`
+ - `118.214.0.0/16`
+ - `173.222.0.0/15`
+ - `184.24.0.0/13`
+ - `184.50.0.0/15`
+ - `184.84.0.0/14`
+
+
+##### IBM NS1 Connect Monitoring IP Ranges
+
+ - `163.114.225.0/24`
+ - `163.114.230.0/24`
+ - `163.114.231.0/24`

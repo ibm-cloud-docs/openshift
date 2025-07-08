@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2025
-lastupdated: "2025-05-29"
+lastupdated: "2025-07-08"
 
 
 keywords: openshift, route, router
@@ -153,9 +153,9 @@ If you don't need to use a custom domain, you can use an IBM-provided route host
 Allow access through network policies or other firewall rules so that your Ingress controller services are reachable by the Ingress controller health check.
 {: shortdesc}
 
-**Classic**: If you use Calico pre-DNAT network policies or another custom firewall to block incoming traffic to your cluster, you must allow inbound access on port 80 from the {{site.data.keyword.redhat_openshift_notm}} control plane and Akamai's IPv4 IP addresses to the IP addresses of your Ingress controller services so that the {{site.data.keyword.redhat_openshift_notm}} control plane can check the health of your Ingress controllers. For example, if you use Calico policies, [create a Calico pre-DNAT policy](/docs/openshift?topic=openshift-network_policies#isolate_workers) to allow inbound access to your Ingress controllers from [Akamai's source IP addresses](https://github.com/IBM-Cloud/kube-samples/tree/master/akamai/gtm-liveness-test){: external} that are used to check the health of your Ingress controllers on port 80 and the [control plane subnets for the region where your cluster is located](https://github.com/IBM-Cloud/kube-samples/tree/master/control-plane-ips){: external}. Continue to the next step to get the Ingress controller service IP addresses.
+**Classic**: If you use Calico pre-DNAT network policies or another custom firewall to block incoming traffic to your cluster, you must allow inbound access on port 443 from the [Ingress domain health monitor source IP addresses](/docs/openshift?topic=openshift-firewall#firewall-ingress-domain-monitor) to the IP addresses of your Ingress Controller services, so the domain provider can monitor the health of the registered addresses and return only healthy endpoints.
 
-**VPC**: If you set up [VPC security groups](/docs/openshift?topic=openshift-vpc-security-group) or [VPC access control lists (ACLs)](/docs/openshift?topic=openshift-vpc-acls) to secure your cluster network, ensure that you create the rules to allow the necessary traffic from the {{site.data.keyword.redhat_openshift_notm}} control plane IP addresses. Alternatively, to allow the inbound traffic for Ingress controller health checks, you can create one rule to allow all incoming traffic on port 80.
+**VPC**: If you set up [VPC security groups](/docs/openshift?topic=openshift-vpc-security-group) or [VPC access control lists (ACLs)](/docs/openshift?topic=openshift-vpc-acls) to secure your cluster network, ensure that you allow inbound access on port 443 from the [Ingress domain health monitor source IP addresses](/docs/openshift?topic=openshift-vpc-firewall#firewall-ingress-domain-monitor) to the IP addresses of your Ingress Controller services, so the domain provider can monitor the health of the registered addresses and return only healthy endpoints.
 
 ## Setting up public routes
 {: #routes-setup}

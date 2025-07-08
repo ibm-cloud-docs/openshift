@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2025
-lastupdated: "2025-06-17"
+lastupdated: "2025-07-08"
 
 
 keywords: kubernetes, lb2.0, nlb, health check, dns, hostname, subdomain, openshift
@@ -137,6 +137,9 @@ For example, a subdomain that you create for an NLB might look like `mycluster-a
 
 Enable health checks on the NLB IP addresses behind a single subdomain to determine whether they are available or not.
 {: shortdesc}
+
+If you use [Calico pre-DNAT network policies](/docs/openshift?topic=openshift-network_policies), [VPC security groups](/docs/openshift?topic=openshift-vpc-security-group-manage), [VPC access control lists (ACLs)](/docs/openshift?topic=openshift-vpc-acls), or another custom firewall solution to block incoming traffic to Ingress or router services, you must allow incoming traffic from the health monitoring endpoints. For more information, see the [documentation about allowing incoming network traffic for Ingress subdomain monitoring](/docs/openshift?topic=openshift-firewall#firewall-ingress-domain-monitor).
+{: tip}
 
 Before you begin, [register NLB IPs with a DNS subdomain](#loadbalancer_hostname_dns).
 
