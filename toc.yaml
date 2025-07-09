@@ -568,6 +568,13 @@ toc:
               - ts-ca-resize.md
               - ts-ca-unbalanced.md
           - topicgroup:
+              label: Cluster health
+              topics:
+              - ts-network-health.md
+              - ts-network-nhc009.md
+              - ts-network-nhc010.md
+              - ts-network-nhc011.md
+          - topicgroup:
               label: Cluster network
               topics:
               - ts-pod-networking.md

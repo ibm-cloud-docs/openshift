@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2025
-lastupdated: "2025-07-08"
+lastupdated: "2025-07-09"
 
 
 keywords: openshift
@@ -6615,6 +6615,8 @@ subcollection: openshift
 
     * [5.1.33_685, released 17 February 2025](/docs/openshift?topic=openshift-cl-add-ons-vpc-block-csi-driver#cl-add-ons-vpc-block-csi-driver-5133_685)
 
+* [Version 5.2](/docs/openshift?topic=openshift-cl-add-ons-vpc-block-csi-driver#052_is_block_archive)
+
     * [Change log for version 5.2.26_657, released 11 December 2024](/docs/openshift?topic=openshift-cl-add-ons-vpc-block-csi-driver#5.2.26_657_is_block_relnote)
 
     * [Change log for version 5.2.24_641, released 20 November 2024](/docs/openshift?topic=openshift-cl-add-ons-vpc-block-csi-driver#5.2.24_641_is_block_relnote)
@@ -6639,7 +6641,7 @@ subcollection: openshift
 
     * [Change log for version 5.2, released 25 September 2023](/docs/openshift?topic=openshift-cl-add-ons-vpc-block-csi-driver#5.2_is_block_relnote)
 
-* [Version 5.1](/docs/openshift?topic=openshift-cl-add-ons-vpc-block-csi-driver#051_is_block)
+* [Version 5.1](/docs/openshift?topic=openshift-cl-add-ons-vpc-block-csi-driver#051_is_block_archive)
 
     * [Change log for version 5.1.31_656, released 11 December 2024](/docs/openshift?topic=openshift-cl-add-ons-vpc-block-csi-driver#5.1.31_656_is_block_relnote)
 
@@ -9438,6 +9440,25 @@ subcollection: openshift
 [Why can't I resize or rebalance my worker pool?](/docs/openshift?topic=openshift-ts-ca-resize#ts-ca-resize)
 
 [Why are my autoscaled worker pools unbalanced?](/docs/openshift?topic=openshift-ts-ca-unbalanced#ts-ca-unbalanced)
+
+
+### Cluster health
+{: #sitemap_cluster_health}
+
+
+[Checking the status of Network components](/docs/openshift?topic=openshift-network-status#network-status)
+
+* [Getting the status and message](/docs/openshift?topic=openshift-network-status#check_status)
+
+* [Network statuses](/docs/openshift?topic=openshift-network-status#network_status)
+
+* [Network messages](/docs/openshift?topic=openshift-network-status#network_message)
+
+[Why does the Network status show an `NHC009` error?](/docs/openshift?topic=openshift-ts-network-nhc009#ts-network-nhc009)
+
+[Why does the Network status show an `NHC010` error?](/docs/openshift?topic=openshift-ts-network-nhc010#ts-network-nhc010)
+
+[Why does the Network status show an `NHC011` error?](/docs/openshift?topic=openshift-ts-network-nhc011#ts-network-nhc011)
 
 
 ### Cluster network
