@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2025
-lastupdated: "2025-07-03"
+lastupdated: "2025-07-08"
 
 
 keywords: openshift
@@ -2795,7 +2795,7 @@ subcollection: openshift
 
     * [Required policy rules for VPCs with a cluster that runs at version  or later](/docs/openshift?topic=openshift-vpc-kube-policies#policy-rules-128)
 
-[Opening required ports and IP addresses in other network allowlists](/docs/openshift?topic=openshift-vpc-firewall#vpc-firewall)
+[Opening required ports and IP addresses in allowlists](/docs/openshift?topic=openshift-vpc-firewall#vpc-firewall)
 
 * [Opening ports in a corporate allowlist](/docs/openshift?topic=openshift-vpc-firewall#vpc-corporate)
 
@@ -2812,6 +2812,10 @@ subcollection: openshift
     * [Allowing ingress from a cluster to another service](/docs/openshift?topic=openshift-vpc-firewall#vpc-allowlist_workers_ingress)
 
     * [Allowing egress to a cluster from another service](/docs/openshift?topic=openshift-vpc-firewall#vpc-allowlist_workers_egress)
+
+* [Opening ports in VPC Security Groups or VPC ACLs](/docs/openshift?topic=openshift-vpc-firewall#vpc-opening-ports)
+
+    * [Opening required ports in public allowlists](/docs/openshift?topic=openshift-vpc-firewall#vpc-firewall-public)
 
 [Configuring VPC subnets](/docs/openshift?topic=openshift-vpc-subnets#vpc-subnets)
 
