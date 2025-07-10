@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2025
-lastupdated: "2025-03-18"
+lastupdated: "2025-07-10"
 
 
 keywords: openshift
@@ -489,4 +489,4 @@ Before you begin, [install and configure the Calico CLI, and set the context for
     ```
     {: screen}
 
-6. Optional: Forward the logs from `/var/log/syslog` to [{{site.data.keyword.logs_full_notm}}](/docs/openshift?topic=openshift-health#openshift_logging).
+6. Optional: Forward the logs from `/var/log/syslog` to [{{site.data.keyword.logs_full_notm}}](/docs/openshift?topic=openshift-health).

@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2025
-lastupdated: "2025-05-30"
+lastupdated: "2025-07-10"
 
 
 keywords: openshift, {{site.data.keyword.openshiftlong_notm}}, support, get help
@@ -117,7 +117,7 @@ oc adm must-gather -- gather_network_logs
 ```
 {: pre}
 
-For more examples and arguments run the following comamnd
+For more examples and arguments run the following command
 
 ```sh
 oc adm must-gather -h

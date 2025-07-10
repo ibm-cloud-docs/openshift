@@ -3,7 +3,7 @@
 copyright:
   years: 2024, 2025
 
-lastupdated: "2025-07-09"
+lastupdated: "2025-07-10"
 
 
 keywords: change log, version history, 4.15_openshift
@@ -76,7 +76,7 @@ The following table shows the changes that are in the master fix pack 4.15.51_15
 | {{site.data.keyword.cloud_notm}} Controller Manager | v1.28.15-26 | v1.28.15-29 | New version contains updates and security fixes. |
 | {{site.data.keyword.cloud_notm}} RBAC Operator | d1545bd | 38dc95c | New version contains updates and security fixes. |
 | Key Management Service provider | v2.9.19 | v2.9.20 | New version contains updates and security fixes. |
-| {{site.data.keyword.openshiftlong_notm}}. | 4.15.50 | 4.15.51 | See the [{{site.data.keyword.openshiftlong_notm}} release notes](https://docs.openshift.com/container-platform/4.15/release_notes/ocp-4-15-release-notes.html#ocp-4-15-51){: external}. |
+| {{site.data.keyword.openshiftlong_notm}}. | 4.15.50 | 4.15.51 | See the [{{site.data.keyword.openshiftlong_notm}} release notes](https://docs.redhat.com/en/documentation/openshift_container_platform/4.15/html/release_notes/ocp-4-15-release-notes#ocp-4-15-51){: external}. |
 | {{site.data.keyword.openshiftlong_notm}} Control Plane Operator, Metrics Server, and toolkit | 4.15.0+20250509 | 4.15.0+20250609 | See the [{{site.data.keyword.openshiftlong_notm}} toolkit release notes](https://github.com/openshift/ibm-roks-toolkit/releases/tag/v4.15.0+20250609){: external}. |
 | Tigera Operator | v1.34.8 | v1.34.11 | See the [Tigera Operator release notes](https://github.com/tigera/operator/releases/tag/v1.34.11){: external}. |
 {: caption="Changes since version 4.15.50_1587_openshift" caption-side="bottom"}
@@ -129,7 +129,7 @@ The following table shows the changes that are in the master fix pack 4.15.50_15
 | {{site.data.keyword.filestorage_full_notm}} for Classic plug-in and monitor | 449 | 450 | New version contains updates and security fixes. |
 | Key Management Service provider | v2.9.18 | v2.9.19 | New version contains updates and security fixes. |
 | Load balancer and load balancer monitor for {{site.data.keyword.cloud_notm}} Provider | 3232 | 3293 | New version contains updates and security fixes. |
-| {{site.data.keyword.openshiftlong_notm}}. | 4.15.48 | 4.15.50 | See the [{{site.data.keyword.openshiftlong_notm}} release notes](https://docs.openshift.com/container-platform/4.15/release_notes/ocp-4-15-release-notes.html#ocp-4-15-50){: external}. |
+| {{site.data.keyword.openshiftlong_notm}}. | 4.15.48 | 4.15.50 | See the [{{site.data.keyword.openshiftlong_notm}} release notes](https://docs.redhat.com/en/documentation/openshift_container_platform/4.15/html/release_notes/ocp-4-15-release-notes#ocp-4-15-50){: external}. |
 | {{site.data.keyword.openshiftlong_notm}} Control Plane Operator, Metrics Server, and toolkit | 4.15.0+20250414 | 4.15.0+20250509 | See the [{{site.data.keyword.openshiftlong_notm}} toolkit release notes](https://github.com/openshift/ibm-roks-toolkit/releases/tag/v4.15.0+20250509){: external}. |
 | Portieris admission controller | v0.13.26 | v0.13.28 | See the [Portieris admission controller release notes](https://github.com/{{site.data.keyword.IBM_notm}}/portieris/releases/tag/v0.13.28){: external}. |
 {: caption="Changes since version 4.15.48_1584_openshift" caption-side="bottom"}

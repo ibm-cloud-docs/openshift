@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2025, 2025
-lastupdated: "2025-07-09"
+lastupdated: "2025-07-10"
 
 
 keywords: ,
@@ -61,5 +61,5 @@ The Network message provides information about if any components are unhealthy. 
 |--- |--- |
 | `The IAM token exchange request failed.` | For more information, see [Why does the IAM token exchange request failed report in Network status, and show an NHC009 error.?](/docs/openshift?topic=openshift-ts-network-nhc009).|
 | `Exceeded security group rules related quota.` | For more information, see [Why does exceeded security group rules related quota report in Network status, and show an NHC010 error.?](/docs/openshift?topic=openshift-ts-network-nhc010).|
-| `Exceeded security group related quota.` | For more information, see [Why does Exceeded security group related quotareport in Network status, and show an NHC011 error.?](/docs/openshift?topic=openshift-ts-network-nhc011).|
+| `Exceeded security group related quota.` | For more information, see [Why does Exceeded security group related quota report in Network status, and show an NHC011 error.?](/docs/openshift?topic=openshift-ts-network-nhc011).|
 {: caption="Network messages" caption-side="bottom"}
