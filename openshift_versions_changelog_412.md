@@ -3,7 +3,7 @@
 copyright:
   years: 2024, 2025
 
-lastupdated: "2025-07-09"
+lastupdated: "2025-07-10"
 
 
 keywords: change log, version history, 4.12_openshift
@@ -58,7 +58,7 @@ The following table shows the changes that are in the master fix pack 4.12.76_16
 | Cluster health image | v1.5.14 | v1.5.15 | New version contains updates and security fixes. |
 | Key Management Service provider | v2.8.21 | v2.8.22 | New version contains updates and security fixes. |
 | Portieris admission controller | v0.13.26 | v0.13.28 | See the [Portieris admission controller release notes](https://github.com/{{site.data.keyword.IBM_notm}}/portieris/releases/tag/v0.13.28){: external}. |
-| {{site.data.keyword.openshiftlong_notm}}. | 4.12.75 | 4.12.76 | See the [{{site.data.keyword.openshiftlong_notm}} release notes](https://docs.openshift.com/container-platform/4.12/release_notes/ocp-4-12-release-notes.html#ocp-4-12-76){: external}. |
+| {{site.data.keyword.openshiftlong_notm}}. | 4.12.75 | 4.12.76 | See the [{{site.data.keyword.openshiftlong_notm}} release notes](https://docs.redhat.com/en/documentation/openshift_container_platform/4.12/html/release_notes/ocp-4-12-release-notes#ocp-4-12-76){: external}. |
 | {{site.data.keyword.openshiftlong_notm}} Control Plane Operator, Metrics Server, and toolkit | 4.12.0+20250414 | 4.12.0+20250509 | See the [{{site.data.keyword.openshiftlong_notm}} toolkit release notes](https://github.com/openshift/ibm-roks-toolkit/releases/tag/v4.12.0+20250509){: external}. |
 {: caption="Changes since version 4.12.75_1633_openshift" caption-side="bottom"}
 
