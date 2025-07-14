@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2025, 2025
-lastupdated: "2025-07-09"
+lastupdated: "2025-07-14"
 
 keywords: , nhc009, IAM token exchange failed
 
@@ -66,7 +66,7 @@ Review and update your IAM API key.
     ```
     {: pre}
 
-9. For detailed steps, see [Setting the cluster credentials](/docs/openshift?topic=openshift-access-creds#api_key_about){: external} and [Managing IAM access, API keys, trusted profiles, service IDs, and access groups](/docs/cli?topic=cli-ibmcloud_commands_iam){: external}.
+9. For detailed steps, see [Setting the cluster credentials](/docs/openshift?topic=openshift-access-creds){: external} and [Managing IAM access, API keys, trusted profiles, service IDs, and access groups](/docs/cli?topic=cli-ibmcloud_commands_iam){: external}.
 
 10. Wait 30 minutes, then check if the warning is resolved.
 
