@@ -609,6 +609,7 @@ toc:
               - ts-app-16-oc-debug-pod.md
               - ts-sbd-app-not-working.md
               - ts-sbd-nodeport-not-working.md
+              - ts-sbd-vsi-vpe.md
           - topicgroup:
               label: Managed add-ons
               topics:

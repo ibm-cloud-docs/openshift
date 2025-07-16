@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2025
-lastupdated: "2025-07-15"
+lastupdated: "2025-07-16"
 
 
 keywords: openshift
@@ -9591,6 +9591,8 @@ subcollection: openshift
 * [Allowing outbound access](/docs/openshift?topic=openshift-ts-sbd-app-not-working#allow-outbound-ts)
 
 [When I update my cluster to 4.15 or later, my nodeport app no longer works](/docs/openshift?topic=openshift-ts-sbd-nodeport-not-working#ts-sbd-nodeport-not-working)
+
+[Why can't my VSIs access VPE gateway?](/docs/openshift?topic=openshift-ts-sbd-vsi-vpe#ts-sbd-vsi-vpe)
 
 
 ### Managed add-ons
