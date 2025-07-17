@@ -3,7 +3,7 @@
 copyright:
   years: 2024, 2025
 
-lastupdated: "2025-06-18"
+lastupdated: "2025-07-17"
 
 
 keywords: change log, version history, IBM Storage Operator
@@ -28,6 +28,17 @@ Review the version history for IBM Storage Operator.
 ## Version 1.0
 {: #cl-add-ons-ibm-storage-operator-1.0}
 
+
+### 1.0.25_248, released 18 July 2025
+{: #cl-add-ons-ibm-storage-operator-1025_248}
+
+[Default version]{: tag-green}
+
+- Resolves the following CVEs: [CVE-2025-4802](https://nvd.nist.gov/vuln/detail/CVE-2025-4802){: external}, [CVE-2024-23337](https://nvd.nist.gov/vuln/detail/CVE-2024-23337){: external}, and [CVE-2025-48060](https://nvd.nist.gov/vuln/detail/CVE-2025-48060){: external}.
+- Updates Go to version `1.23.10`.
+- Updates the Kubernetes client libraries from 1.32.3 to 1.32.6, ensuring compatibility with newer clusters. 
+- Updates imagePullPolicy to IfNotPresent for all containers in the deployment. 
+- `armada-storage-secret v1.2.64`
 
 ### 1.0.23_230, released 16 June 2025
 {: #cl-add-ons-ibm-storage-operator-1023_230}
