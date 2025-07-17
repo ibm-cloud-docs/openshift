@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2025
-lastupdated: "2025-07-07"
+lastupdated: "2025-07-17"
 
 
 keywords: planning, storage, cluster, container storage, cloud storage, kubernetes service, openshift
@@ -72,6 +72,9 @@ Understand other storage characteristics that impact your choice.
 :   **Availability:** The ability to provide access to your data, even if a data center or a region is unavailable. Availability for your data is usually achieved by adding redundancy and setting up failover mechanisms.
 :   **Scalability:** The ability to extend capacity and customize performance based on your needs.
 :   **Encryption:** The masking of data to prevent visibility when data is accessed by an unauthorized user.
+
+Secondary local storage must be added at the time of worker pool creation. Manually adding storage from the infrastructure level after creating a worker pool is not supported and does not result in additional ephemeral storage in the cluster.
+{: note}
 
 ## Non-persistent storage options
 {: #storage-plan-non-persistent}
