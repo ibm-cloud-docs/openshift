@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2025
-lastupdated: "2025-05-29"
+lastupdated: "2025-07-17"
 
 
 keywords: openshift, compliance, security standards, red hat openshift, openshift container platform, red hat, openshift architecture, red hat architecture, openshift dependencies,
@@ -232,6 +232,7 @@ The following diagram shows the components of your cluster and how they interact
 The following diagram shows the components of your cluster and how they interact when only the [private cloud service endpoint is enabled](/docs/openshift?topic=openshift-plan_vpc_basics#vpc-workeruser-master). Because only the private cloud service endpoint is enabled, your VPC creates a private load balancer for each service for inbound traffic.
 
 ![{{site.data.keyword.openshiftlong_notm}} on VPC cluster architecture with the private cloud service endpoint only](images/arch_roks_vpc_private.svg){: caption="Red Hat OpenShift on VPC cluster architecture with the private cloud service endpoint only" caption-side="bottom"}
+
 
 
 ### VPC master and worker node components

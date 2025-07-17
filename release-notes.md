@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2025
-lastupdated: "2025-07-15"
+lastupdated: "2025-07-17"
 
 
 keywords: kubernetes, release notes, openshift, {{site.data.keyword.openshiftlong_notm}}
@@ -30,6 +30,17 @@ Looking for {{site.data.keyword.cloud_notm}} status, platform announcements, sec
 
 ## July 2025
 {: #openshift-july25}
+
+
+
+### 17 July 2025
+{: #17july25}
+{: release-note}
+
+OpenShift AI cluster add-on patch updates.
+:   For more information, see the [change log](/docs/openshift?topic=openshift-cl-add-ons-openshift-ai).
+
+
 
 ### 15 July 2025
 {: #openshift-15july25}
