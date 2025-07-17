@@ -36,7 +36,7 @@ Review the version history for OpenShift AI.
 
 - Resolves the following CVEs: [CVE-2025-4673](https://nvd.nist.gov/vuln/detail/CVE-2025-4673){: external}, and [CVE-2025-4802](https://nvd.nist.gov/vuln/detail/CVE-2025-4802){: external}.
 - Updates Go to version `1.23.11`.
-- This build fixes the issue with workbench creation faced in Red Hat Openshift-ai 2.19.0 
+- This build fixes the issue with workbench creation faced in Red Hat OpenShift AI 2.19.0 
 - Installs Red Hat `openshift-ai` operator version `2.19.1`.
 
 ### 416.2.2_537, released 23 June 2025
