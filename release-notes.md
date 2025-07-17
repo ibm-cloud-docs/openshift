@@ -31,11 +31,12 @@ Looking for {{site.data.keyword.cloud_notm}} status, platform announcements, sec
 ## July 2025
 {: #openshift-july25}
 
-
-
 ### 17 July 2025
-{: #17july25}
+{: #openshift-17july25}
 {: release-note}
+
+
+
 
 OpenShift AI cluster add-on patch updates.
 :   For more information, see the [change log](/docs/openshift?topic=openshift-cl-add-ons-openshift-ai).

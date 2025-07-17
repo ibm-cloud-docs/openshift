@@ -286,7 +286,7 @@ subcollection: openshift
 
 * [July 2025](/docs/openshift?topic=openshift-openshift-relnotes#openshift-july25)
 
-    * [17 July 2025](/docs/openshift?topic=openshift-openshift-relnotes#17july25)
+    * [17 July 2025](/docs/openshift?topic=openshift-openshift-relnotes#openshift-17july25)
 
         * OpenShift AI cluster add-on patch updates.
 
