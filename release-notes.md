@@ -35,8 +35,12 @@ Looking for {{site.data.keyword.cloud_notm}} status, platform announcements, sec
 {: #openshift-18july25}
 {: release-note}
 
+
+
 Baremetal worker nodes for VPC are available for allowlisted accounts
 :   You can now create VPC clusters that use baremetal worker nodes. For a list of baremetal VPC worker node flavors, see [VPC flavors](/docs/openshift?topic=openshift-vpc-flavors) and select the **Physical** tab for a given region.
+
+
 
 IBM Storage Operator cluster add-on patch updates.
 :   For more information, see the [change log](/docs/openshift?topic=openshift-cl-add-ons-ibm-storage-operator).
