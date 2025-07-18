@@ -3,7 +3,7 @@
 copyright:
   years: 2024, 2025
 
-lastupdated: "2025-07-17"
+lastupdated: "2025-07-18"
 
 
 keywords: change log, version history, IBM Storage Operator
@@ -34,7 +34,7 @@ Review the version history for IBM Storage Operator.
 
 [Default version]{: tag-green}
 
-- Resolves the following CVEs: [CVE-2025-4802](https://nvd.nist.gov/vuln/detail/CVE-2025-4802){: external}, [CVE-2024-23337](https://nvd.nist.gov/vuln/detail/CVE-2024-23337){: external}, and [CVE-2025-48060](https://nvd.nist.gov/vuln/detail/CVE-2025-48060){: external}.
+- Resolves the following CVEs: [CVE-2025-4802](https://nvd.nist.gov/vuln/detail/CVE-2025-4802){: external}, [CVE-2025-4673](https://nvd.nist.gov/vuln/detail/CVE-2025-4673){: external}, [CVE-2024-23337](https://nvd.nist.gov/vuln/detail/CVE-2024-23337){: external}, and [CVE-2025-48060](https://nvd.nist.gov/vuln/detail/CVE-2025-48060){: external}.
 - Updates Go to version `1.23.10`.
 - Updates the Kubernetes client libraries from 1.32.3 to 1.32.6, ensuring compatibility with newer clusters. 
 - Updates imagePullPolicy to IfNotPresent for all containers in the deployment. 
