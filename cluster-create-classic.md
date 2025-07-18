@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2025
-lastupdated: "2025-05-28"
+lastupdated: "2025-07-17"
 
 
 keywords: openshift, {{site.data.keyword.openshiftlong_notm}}, kubernetes, clusters, worker nodes, worker pools, classic, create
@@ -26,7 +26,7 @@ Use the {{site.data.keyword.cloud_notm}} CLI or the {{site.data.keyword.cloud_no
 ## Prerequisites
 {: #classic-cluster-prereqs}
 
-{{site.data.keyword.openshiftlong_notm}} clusters can be created created with a public only or both a public and private service endpoint. Public service endpoints can't be disabled. Therefore, you can't convert a public {{site.data.keyword.redhat_openshift_notm}} cluster to a private one. If you want to create a Classic cluster with a private service endpoint enabled, you must [enable VRF](/docs/account?topic=account-vrf-service-endpoint&interface=ui#vrf) & [service endpoints](/docs/account?topic=account-vrf-service-endpoint&interface=ui#service-endpoint). If you want a private-only cluster, consider creating a VPC cluster.
+{{site.data.keyword.redhat_openshift_notm}} clusters can be created created with a public only or both a public and private service endpoint. Public service endpoints can't be disabled. Therefore, you can't convert a public {{site.data.keyword.redhat_openshift_notm}} cluster to a private one. If you want to create a Classic cluster with a private service endpoint enabled, you must [enable VRF](/docs/account?topic=account-vrf-service-endpoint&interface=ui#vrf) & [service endpoints](/docs/account?topic=account-vrf-service-endpoint&interface=ui#service-endpoint). If you want a private-only cluster, consider creating a VPC cluster.
 {: important}
 
 ## Creating a classic cluster in the console

@@ -31,6 +31,16 @@ Looking for {{site.data.keyword.cloud_notm}} status, platform announcements, sec
 ## July 2025
 {: #openshift-july25}
 
+### 18 July 2025
+{: #openshift-18july25}
+{: release-note}
+
+IBM Storage Operator cluster add-on patch updates.
+:   For more information, see the [change log](/docs/openshift?topic=openshift-cl-add-ons-ibm-storage-operator).
+
+VPC File CSI Driver cluster add-on patch updates.
+:   For more information, see the [change log](/docs/openshift?topic=openshift-cl-add-ons-vpc-file-csi-driver).
+
 ### 17 July 2025
 {: #openshift-17july25}
 {: release-note}
