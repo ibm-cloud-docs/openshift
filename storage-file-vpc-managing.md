@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2023, 2025
-lastupdated: "2025-07-01"
+lastupdated: "2025-07-21"
 
 
 keywords: kubernetes, openshift
@@ -147,9 +147,6 @@ The following limitations apply to the add-on.
       SecretSidecarMemoryRequest: 20Mi
     kind: ConfigMap
     metadata:
-      annotations:
-        revision: "2"
-        version: v2.0
       creationTimestamp: "2025-06-19T11:23:13Z"
       labels:
         app.kubernetes.io/name: ibm-vpc-file-csi-driver

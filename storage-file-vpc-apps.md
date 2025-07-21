@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2022, 2025
-lastupdated: "2025-07-02"
+lastupdated: "2025-07-21"
 
 keywords: kubernetes, openshift
 
@@ -598,8 +598,6 @@ If your cluster and VPC are not in the same resource group, you must specify the
       name: ibmc-vpc-file-custom-sc
       labels:
         app.kubernetes.io/name: ibm-vpc-file-csi-driver
-      annotations:
-        version: v2.0
     provisioner: vpc.file.csi.ibm.io
     mountOptions:
       - hard
@@ -703,8 +701,6 @@ If your cluster and VPC are not in the same resource group, you must specify the
       name: ibmc-vpc-file-custom-sc
       labels:
         app.kubernetes.io/name: ibm-vpc-file-csi-driver
-      annotations:
-        version: v2.0
     provisioner: vpc.file.csi.ibm.io
     mountOptions:
       - hard
@@ -810,8 +806,6 @@ Use a key management service (KMS) provider, such as {{site.data.keyword.keymana
       name: custom-sc-encrypted
       labels:
         app.kubernetes.io/name: ibm-vpc-file-csi-driver
-      annotations:
-        version: v2.0
     provisioner: vpc.file.csi.ibm.io
     mountOptions:
       - hard
@@ -932,6 +926,11 @@ Review the following information about EIT. If you choose to use encryption in-t
 - EIT is available for cluster versions 4.16 and later.
 - EIT is not available for statically provisioned volumes. To set up EIT, you must use dynamic provisioning.
 - EIT packages are automatically updated in your cluster when EIT is enabled.
+- If you choose to use Encryption-in-transit, you need to balance your requirements between performance and enhanced security. Encrypting data in transit can have some performance impact due to the processing that is needed to encrypt and decrypt the data at the endpoints. The impact depends on the workload characteristics. Workloads that perform synchronous writes or bypass VSI caching, such as databases, might have a substantial performance impact when EIT is enabled. To determine EIT’s performance impact, benchmark your workload with and without EIT.
+- Even without EIT, the data moves through a secure data center network. For more information about network security, see [Security in your VPC](/docs/vpc?topic=vpc-security-in-your-vpc) and [Protecting Virtual Private Cloud (VPC) Infrastructure Services with context-based restrictions](/docs/vpc?topic=vpc-cbr).
+
+File Storage for VPC is considered to be a Financial Services Validated service only when encryption-in-transit is enabled. For more information, see [what is a Financial Services Validated service](/docs/framework-financial-services?topic=framework-financial-services-faqs-framework#financial-services-validated).
+{: important}
 
 
 Complete the following steps to set up encryption-in-transit (EIT) for file shares in your {{site.data.keyword.openshiftlong_notm}} cluster. Enabling EIT installs the required packages on your worker nodes.
@@ -954,8 +953,6 @@ Complete the following steps to set up encryption-in-transit (EIT) for file shar
       ENABLE_EIT: "true"
     kind: ConfigMap
     metadata:
-      annotations:
-        version: v2.0.1
       creationTimestamp: "2024-06-18T09:45:48Z"
       labels:
         app.kubernetes.io/name: ibm-vpc-file-csi-driver

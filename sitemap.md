@@ -288,7 +288,7 @@ subcollection: openshift
 
     * [18 July 2025](/docs/openshift?topic=openshift-openshift-relnotes#openshift-18july25)
 
-        * Baremetal worker nodes for VPC are available for allowlisted accounts
+        * Baremetal worker nodes for VPC are now available.
 
         * IBM Storage Operator cluster add-on patch updates.
 
