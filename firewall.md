@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2025
-lastupdated: "2025-07-08"
+lastupdated: "2025-07-21"
 
 
 keywords: openshift
@@ -296,9 +296,10 @@ Allow outgoing network traffic from your worker node to {{site.data.keyword.clou
 
 If you want to use the [Ingress domain health monitoring](/docs/openshift?topic=openshift-loadbalancer_hostname#loadbalancer_hostname_monitor) to monitor the health of your service endpoints, you must allow inbound access from the monitoring services.
 
-{{site.data.keyword.openshiftlong_notm}} is transitioning its internal DNS provider from Akamai to IBM NS1. During this transition period, allowlist all IP address ranges of Akamai and NS1 to ensure uninterrupted health monitoring.
+{{site.data.keyword.openshiftlong_notm}} is transitioning its internal DNS provider from Akamai to IBM NS1. During this transition period, allowlist all IP address ranges of Akamai and IBM NS1 to ensure uninterrupted health monitoring.
 
 By default, monitoring health requests are sent through HTTPS to port 443, therefore you must allowlist traffic from the below IP ranges targeted to port 443. If your health monitor is configured to use HTTP instead, allowlist traffic must be targeted to port 80. Additionally, if you use a custom TCP port, make sure to allow incoming traffic to that port.
+
 
 For more information see the [IBM NS1 Connect Documentation about monitoring](https://www.ibm.com/docs/en/ns1-connect?topic=monitoring) and the [Akamai GTM Documentation](https://learn.akamai.com/en-us/webhelp/global-traffic-management/global-traffic-management-user-guide/GUID-C1995591-5D7D-42B9-B54F-0CF6C7BD2532.html).
 
@@ -371,6 +372,7 @@ For more information see the [IBM NS1 Connect Documentation about monitoring](ht
 {: #firewall_next_steps}
 
 If you use load balancer services, ensure that all traffic that uses the VRRP protocol is allowed between worker nodes on the public and private interfaces. {{site.data.keyword.openshiftlong_notm}} uses the VRRP protocol to manage IP addresses for public and private load balancers.
+
 
 If you use Ingress or routes to expose apps in your cluster, allow incoming network traffic from [Akamai's source IP addresses](https://github.com/IBM-Cloud/kube-samples/tree/master/akamai/gtm-liveness-test){: external} on port 80 to the IP addresses of your router services so that the {{site.data.keyword.redhat_openshift_notm}} control plane can check the health of your routers.
 

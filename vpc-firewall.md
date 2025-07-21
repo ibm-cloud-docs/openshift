@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2025
-lastupdated: "2025-07-08"
+lastupdated: "2025-07-21"
 
 
 keywords: openshift, firewall, ips
@@ -343,9 +343,10 @@ If you set up [VPC security groups](/docs/openshift?topic=openshift-vpc-security
 
 If you want to use the [Ingress domain health monitoring](/docs/openshift?topic=openshift-loadbalancer_hostname#loadbalancer_hostname_monitor) to monitor the health of your service endpoints, you must allow inbound access from the monitoring services.
 
-{{site.data.keyword.openshiftlong_notm}} is transitioning its internal DNS provider from Akamai to IBM NS1. During this transition period, allowlist all IP address ranges of Akamai and NS1 to ensure uninterrupted health monitoring.
+{{site.data.keyword.openshiftlong_notm}} is transitioning its internal DNS provider from Akamai to IBM NS1. During this transition period, allowlist all IP address ranges of Akamai and IBM NS1 to ensure uninterrupted health monitoring.
 
 By default, monitoring health requests are sent through HTTPS to port 443, therefore you must allowlist traffic from the below IP ranges targeted to port 443. If your health monitor is configured to use HTTP instead, allowlist traffic must be targeted to port 80. Additionally, if you use a custom TCP port, make sure to allow incoming traffic to that port.
+
 
 For more information see the [IBM NS1 Connect Documentation about monitoring](https://www.ibm.com/docs/en/ns1-connect?topic=monitoring) and the [Akamai GTM Documentation](https://learn.akamai.com/en-us/webhelp/global-traffic-management/global-traffic-management-user-guide/GUID-C1995591-5D7D-42B9-B54F-0CF6C7BD2532.html).
 
