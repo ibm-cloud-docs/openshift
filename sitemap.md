@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2025
-lastupdated: "2025-07-18"
+lastupdated: "2025-07-21"
 
 
 keywords: openshift
@@ -7222,6 +7222,8 @@ subcollection: openshift
     * [4.9.5, released 20 May 2022](/docs/openshift?topic=openshift-cl-add-ons-openshift-data-foundation#cl-add-ons-openshift-data-foundation-4.9.5)
 
 [Back up and restore Helm chart](/docs/openshift?topic=openshift-backup_restore_changelog#backup_restore_changelog)
+
+* [Change log for 1.0.12, released 21 July 2025](/docs/openshift?topic=openshift-backup_restore_changelog#01012_br_chart)
 
 * [Change log for 1.0.5, released 17 December 2020](/docs/openshift?topic=openshift-backup_restore_changelog#0105_br_chart)
 
