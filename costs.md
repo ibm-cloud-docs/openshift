@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2025
-lastupdated: "2025-06-17"
+lastupdated: "2025-07-21"
 
 
 keywords: openshift, {{site.data.keyword.openshiftlong_notm}}, iro, openshift, red hat, red hat openshift
@@ -142,9 +142,8 @@ Subnets for {{site.data.keyword.openshiftlong_notm}} clusters vary by infrastruc
 
 When you create a multizone cluster or add zones to a single zone cluster, you must have a load balancer to health check Ingress and load balancer IP addresses in each zone, and forward requests to your apps across zones in the region.
 {: shortdesc}
-
 The type of load balancer that is automatically created varies depending on the type of cluster.
-* **Classic clusters**: An Akamai MZLB is automatically created for each multizone cluster. You can view the hourly rate in the pricing summary when you create the cluster.
+* **Classic clusters**: A MZLB is automatically created for each multizone cluster. You can view the hourly rate in the pricing summary when you create the cluster.
 * **VPC clusters**: A Load Balancer for VPC is automatically created in your VPC for your cluster. For cost information, see [Pricing for Load Balancer for VPC](https://cloud.ibm.com/infrastructure/provision/vs){: external}.
 
 
