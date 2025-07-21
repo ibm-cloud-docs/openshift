@@ -39,7 +39,7 @@ Looking for {{site.data.keyword.cloud_notm}} status, platform announcements, sec
 
 
 
-Baremetal worker nodes for VPC are available for allowlisted accounts
+Baremetal worker nodes for VPC are now available.
 :   You can now create VPC clusters that use baremetal worker nodes. For a list of baremetal VPC worker node flavors, see [VPC flavors](/docs/openshift?topic=openshift-vpc-flavors) and select the **Physical** tab for a given region.
 
 

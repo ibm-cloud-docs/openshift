@@ -598,8 +598,6 @@ If your cluster and VPC are not in the same resource group, you must specify the
       name: ibmc-vpc-file-custom-sc
       labels:
         app.kubernetes.io/name: ibm-vpc-file-csi-driver
-      annotations:
-        version: v2.0
     provisioner: vpc.file.csi.ibm.io
     mountOptions:
       - hard
@@ -703,8 +701,6 @@ If your cluster and VPC are not in the same resource group, you must specify the
       name: ibmc-vpc-file-custom-sc
       labels:
         app.kubernetes.io/name: ibm-vpc-file-csi-driver
-      annotations:
-        version: v2.0
     provisioner: vpc.file.csi.ibm.io
     mountOptions:
       - hard
@@ -810,8 +806,6 @@ Use a key management service (KMS) provider, such as {{site.data.keyword.keymana
       name: custom-sc-encrypted
       labels:
         app.kubernetes.io/name: ibm-vpc-file-csi-driver
-      annotations:
-        version: v2.0
     provisioner: vpc.file.csi.ibm.io
     mountOptions:
       - hard
@@ -959,8 +953,6 @@ Complete the following steps to set up encryption-in-transit (EIT) for file shar
       ENABLE_EIT: "true"
     kind: ConfigMap
     metadata:
-      annotations:
-        version: v2.0.1
       creationTimestamp: "2024-06-18T09:45:48Z"
       labels:
         app.kubernetes.io/name: ibm-vpc-file-csi-driver
