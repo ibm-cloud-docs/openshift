@@ -3,7 +3,7 @@
 copyright:
   years: 2024, 2025
 
-lastupdated: "2025-07-18"
+lastupdated: "2025-07-22"
 
 
 keywords: change log, version history, VPC File CSI Driver
@@ -66,15 +66,6 @@ Review the version history for VPC File CSI Driver.
 ## Version 1.2
 {: #cl-add-ons-vpc-file-csi-driver-1.2}
 
-
-### 1.2.16_399, released 18 July 2025
-{: #cl-add-ons-vpc-file-csi-driver-1216_399}
-
-- Resolves the following CVEs: [CVE-2025-3576](https://nvd.nist.gov/vuln/detail/CVE-2025-3576){: external}, [CVE-2025-4802](https://nvd.nist.gov/vuln/detail/CVE-2025-4802){: external}, [CVE-2025-24528](https://nvd.nist.gov/vuln/detail/CVE-2025-24528){: external}, [CVE-2025-0395](https://nvd.nist.gov/vuln/detail/CVE-2025-0395){: external}, [CVE-2024-9042](https://nvd.nist.gov/vuln/detail/CVE-2024-9042){: external}, [CVE-2025-0426](https://nvd.nist.gov/vuln/detail/CVE-2025-0426){: external}, [CVE-2025-22872](https://nvd.nist.gov/vuln/detail/CVE-2025-22872){: external}, and [CVE-2025-24528](https://nvd.nist.gov/vuln/detail/CVE-2025-24528){: external}.
-- Updates Go to version `1.23.10`.
-- Updates k8s client libraries from 1.32.3 to 1.32.6 
-- Updates imagePullPolicy to IfNotPresent for all containers in the deployment. 
-- `armada-storage-secret v1.2.64`
 
 ### 1.2.14_332, released 19 February 2025
 {: #cl-add-ons-vpc-file-csi-driver-1214_332}
