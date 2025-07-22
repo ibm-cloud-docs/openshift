@@ -6825,8 +6825,6 @@ subcollection: openshift
 
 * [Version 1.2](/docs/openshift?topic=openshift-cl-add-ons-vpc-file-csi-driver#cl-add-ons-vpc-file-csi-driver-1.2)
 
-    * [1.2.16_399, released 18 July 2025](/docs/openshift?topic=openshift-cl-add-ons-vpc-file-csi-driver#cl-add-ons-vpc-file-csi-driver-1216_399)
-
     * [1.2.14_332, released 19 February 2025](/docs/openshift?topic=openshift-cl-add-ons-vpc-file-csi-driver#cl-add-ons-vpc-file-csi-driver-1214_332)
 
     * [Change log for version 2.0.9_322, released 11 December 2024](/docs/openshift?topic=openshift-cl-add-ons-vpc-file-csi-driver#2.0.9_322_is_file_relnote)
