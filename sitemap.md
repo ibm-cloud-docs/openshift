@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2025
-lastupdated: "2025-07-22"
+lastupdated: "2025-07-24"
 
 
 keywords: openshift
@@ -2081,6 +2081,8 @@ subcollection: openshift
     * [Step 4: Migrate your workloads](/docs/openshift?topic=openshift-rhel_migrate#rhcos-migrate-workloads)
 
     * [Step 5: Remove the RHEL worker nodes](/docs/openshift?topic=openshift-rhel_migrate#rm-rhel-pool)
+
+    * [Optional Step 5: Uninstall and reinstall the Object Storage plug-in](/docs/openshift?topic=openshift-rhel_migrate#rhel-rm-cos)
 
 * [Migrating NVIDIA GPU resources to RHCOS worker nodes](/docs/openshift?topic=openshift-rhel_migrate#rhcos-migrate-gpu)
 

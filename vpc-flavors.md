@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2025
-lastupdated: "2025-07-18"
+lastupdated: "2025-07-24"
 
 
 keywords: openshift, node scaling, ca, autoscaler
@@ -26,7 +26,7 @@ Review the VPC Gen 2 worker node flavors by metro.
 The flavors listed here might differ from what is actually available for your cluster. You can find a list of available flavors specific to your clusters by running **`ibmcloud oc flavor ls`** [command](/docs/openshift?topic=openshift-kubernetes-service-cli#cs_flavor_ls) or review the list of flavors when creating a cluster in the console.
 
 These conditions might impact cluster flavor availability:
-- **Allowlisted accounts**: Flavors with NVIDIA V100, A100, H100, and H200 GPUs, Intel AI Accelerators (Gaudi 3), or AMD MI300x GPUs are available for allowlisted accounts only. To request access to allowlisted flavors, [request access to the allowlist](/docs/openshift?topic=openshift-allowlist-request).
+- **Allowlisted accounts**: GPU flavors are available for allowlisted accounts only. To request access to allowlisted flavors, [request access to the allowlist](/docs/openshift?topic=openshift-allowlist-request).
 - **Region limitations**: The `gx2` bare metal flavors are not available in all zones within a region. For more information, see the [Generation 2 (x2) bare metal profiles availability by region](/docs/vpc?topic=vpc-bare-metal-servers-profile&interface=ui#bare-metal-profile-availability-by-region).
 - **Version compatibility**: The Intel AI Accelerator (Gaudi 3) flavor is only compatible with {{site.data.keyword.openshiftlong_notm}} 4.18.
 - **Operating system specifications**: Some flavors have specific operating system requirements. When selecting a flavor in the console, make sure you have the correct zone and operating system selections for your needs.
