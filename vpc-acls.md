@@ -52,6 +52,7 @@ Required traffic for clusters
 :   - [VPC service endpoints](/docs/vpc?topic=vpc-service-endpoints-for-vpc)
 :   - [VPC IaaS endpoints](/docs/vpc?topic=vpc-service-endpoints-for-vpc#infrastructure-as-a-service-iaas-endpoints)
 :   - [VPC metadata service IPs](https://cloud.ibm.com/apidocs/vpc-metadata#endpoint-url-metadata)
+:   - All subnets in the VPC
 
 Limitations
 :   If you create multiple clusters that use the same subnets in one VPC, you can't use ACLs to control traffic between the clusters because they share the same subnets. You can use [Calico network policies](/docs/openshift?topic=openshift-network_policies#isolate_workers) to isolate your clusters on the private network.
