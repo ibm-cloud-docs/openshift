@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2025, 2025
-lastupdated: "2025-07-14"
+lastupdated: "2025-07-25"
 
 keywords: , nhc009, IAM token exchange failed
 
@@ -21,7 +21,7 @@ content-type: troubleshoot
 
 [Virtual Private Cloud]{: tag-vpc}
 
-When you check the status of your cluster's network components by running the `ibmcloud ocks cluster health issues --cluster <CLUSTER_ID>`, you see an error similar to the following example.
+When you check the status of your cluster's health by running the `ibmcloud ocks cluster health issues --cluster <CLUSTER_ID>`, you see an error similar to the following example.
 {: tsSymptoms}
 
 ```sh
@@ -33,41 +33,39 @@ NHC009   Network     Error      The IAM token exchange request failed.
 VPC operations rely on IAM API keys for authentication. If the used API key is invalid, expired, or disabled, that can lead to this error.
 {: tsCauses}
 
-Review and update your IAM API key.
+Review and update your IBM Cloud API key used for the IBM Cloud Kubernetes Service.
 {: tsResolve}
 
-1. Find out which API key is used. Check the resource group of your cluster.
+1. Find out which API key is used. Check the resource group of your cluster by running the following command:
     ```sh
     ibmcloud ks cluster get --cluster <Cluster_ID>
     ```
     {: pre}
 
-3. Use the resource group ID to find the associated API key.
+2. To find the associated API key (ApiKey_ID) run the following command and look for the Required API key for IBM Cloud Kubernetes Service for resource group, and save it for later:
     ```sh
     ibmcloud iam api-key --uuid containers-kubernetes-key
     ```
     {: pre}
-   
-5. Verify whether the key is disabled.
+3. Verify whether the key is disabled or not by running:
     ```sh
     ibmcloud iam api-key --activity <ApiKey_ID>
     ```
     {: pre}
-   
-7. If necessary, reset your Kubernetes.
+4. If necessary, you can reset the API key used for the IBM Cloud Kubernetes Service by running:
     ```sh
     ibmcloud ks api-key reset
     ```
     {: pre}
 
-8. Or, if the API key disabled, enable it.
+5. Or if the API key disabled, enable it by running:
     ```sh
     ibmcloud iam api-key-enable <ApiKey_ID>
     ```
     {: pre}
 
-9. For detailed steps, see [Setting the cluster credentials](/docs/openshift?topic=openshift-access-creds){: external} and [Managing IAM access, API keys, trusted profiles, service IDs, and access groups](/docs/cli?topic=cli-ibmcloud_commands_iam){: external}.
+6. For detailed steps, see [Setting the cluster credentials](/docs/openshift?topic=openshift-access-creds){: external} and [Managing IAM access, API keys, trusted profiles, service IDs, and access groups](/docs/cli?topic=cli-ibmcloud_commands_iam){: external}.
 
-10. Wait 30 minutes, then check if the warning is resolved.
+7. After fixing the API key issue you have to wait maximum 30 minutes to see if the warning is resolved.
 
-11. If the issue persists, contact support for further assistance. Open a [support case](/docs/account?topic=account-using-avatar). In the case details, be sure to include any relevant log files, error messages, or command outputs.
+8. If the issue persists, contact support for further assistance. Open a [support case](/docs/account?topic=account-using-avatar). In the case details, be sure to include any relevant log files, error messages, or command outputs.

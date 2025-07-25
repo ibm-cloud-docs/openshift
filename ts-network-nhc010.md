@@ -1,8 +1,9 @@
+
 ---
 
 copyright: 
   years: 2025, 2025
-lastupdated: "2025-07-09"
+lastupdated: "2025-07-25"
 
 keywords: , nhc010, exceeded security group rules quota
 
@@ -21,7 +22,7 @@ content-type: troubleshoot
 
 [Virtual Private Cloud]{: tag-vpc}
 
-When you check the status of your cluster's network components by running the `ibmcloud ocks cluster health issues --cluster <CLUSTER_ID>`, you see an error similar to the following example.
+When you check the status of your cluster's health by running the `ibmcloud ocks cluster health issues --cluster <CLUSTER_ID>`, you see an error similar to the following example.
 {: tsSymptoms}
 
 ```sh
@@ -30,15 +31,15 @@ NHC010   Network     Error      Exceeded security group rules related quota.
 ```
 {: screen}
 
-IBM Cloud enforces a limit of 15 remote security group rules per security group in production environments. If this limit is exceeded, it can prevent your cluster from creating or updating required security group rules. This might also block adding more resources, such as worker nodes.
+IBM Cloud VPC infrastructure enforces limits for security group rules per security group in production environments. If this [limit](docs/vpc?topic=vpc-quotas#service-limits-for-vpc-services){: external} is exceeded, it can prevent your cluster from creating or updating required security group rules. So it means for example you cannot create another cluster.
 {: tsCauses}
 
 Review and adjust your cluster's security group rules.
 {: tsResolve}
 
-1. Each cluster has a dedicated security group named `kube-<CLUSTER_ID>`. First, retrieve your cluster's security group ID (SECURITY_GROUP_ID) by running:
+1. There are multiple security groups associated with a VPC cluster that need to be checked. One example is a shared security group named in the format `kube-vpegw-<VPC_ID>`. Each associated security group typically includes the CLUSTER_ID in its name, making it easier to identify which cluster it belongs to. The shared security group has remote security group rules referencing these associated groups, and it cannot have more than 15 such remote rules. Each cluster in the same VPC has an entry, and once it reaches 15, you cannot create more clusters. To check the number of remote rules, first retrieve the security group ID (SECURITY_GROUP_ID) for the shared security group by running:
     ```sh
-    ibmcloud is security-groups <VPC_ID> --output json | jq -r '.[] | select(.name=="kube-<CLUSTER_ID>") | .id'
+    ibmcloud is security-groups <VPC_ID> --output json | jq -r '.[] | select(.name=="kube-vpegw-<VPC_ID>") | .id'
     ```
     {: pre}
 
@@ -48,11 +49,13 @@ Review and adjust your cluster's security group rules.
     ```
     {: pre}
 
-3. If the count reaches **15**, you are at the quota limit. To resolve this:
+3. If the count reaches the limit. To resolve this:
 
-    - Reduce the number of individual rules by combining them where possible, for example by using CIDR ranges.
-    - Remove duplicate rules that point to the same remote group or IP addresses.
-    - Review and clean up any unnecessary rules.
+    - Use different VPC or cleanup unused clusters in the VPC.
+    - Or if you have added custom remote rules earlier, than you can review them:
+      - Reduce the number of custom individual rules.
+      - Remove duplicate custom rules that point to the same remote group or IP addresses.
+      - Review and clean up any unnecessary custom rules.
 
 4. For IBM Cloud enforced limits, see [VPC Security Group Rule Limits & Quotas](/docs/vpc?topic=vpc-quotas){: external}.
 

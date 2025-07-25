@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2025
-lastupdated: "2025-07-24"
+lastupdated: "2025-07-25"
 
 
 keywords: openshift
@@ -285,6 +285,10 @@ subcollection: openshift
 [Release notes](/docs/openshift?topic=openshift-openshift-relnotes#openshift-relnotes)
 
 * [July 2025](/docs/openshift?topic=openshift-openshift-relnotes#openshift-july25)
+
+    * [25 July 2025](/docs/openshift?topic=openshift-openshift-relnotes#openshift-25july25)
+
+        * Cluster autoscaler add-on patch updates for {{site.data.keyword.openshiftlong_notm}}.
 
     * [22 July 2025](/docs/openshift?topic=openshift-openshift-relnotes#openshift-22july25)
 
@@ -6398,6 +6402,8 @@ subcollection: openshift
     * [Change log for patch update 1.2.4_629, released 22 April 2025.](/docs/openshift?topic=openshift-ca_changelog#124_629_ca)
 
 * [Version 1.2.3](/docs/openshift?topic=openshift-ca_changelog#0123_ca_addon)
+
+    * [Change log for patch update 1.2.3_716, released 25 July 2025.](/docs/openshift?topic=openshift-ca_changelog#123_716_ca)
 
     * [Change log for patch update 1.2.3_540, released 10 March 2025](/docs/openshift?topic=openshift-ca_changelog#123_540_ca)
 
