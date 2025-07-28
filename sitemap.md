@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2025
-lastupdated: "2025-07-25"
+lastupdated: "2025-07-28"
 
 
 keywords: openshift
@@ -6886,6 +6886,8 @@ subcollection: openshift
     * [Change log for version 1.0, released 16 May 2023](/docs/openshift?topic=openshift-cl-add-ons-vpc-file-csi-driver#1.0_is_file_relnote)
 
 [{{site.data.keyword.cos_full_notm}} plug-in](/docs/openshift?topic=openshift-cos_plugin_changelog#cos_plugin_changelog)
+
+* [Change log for version 2.2.39, released 20 June 2025](/docs/openshift?topic=openshift-cos_plugin_changelog#02239_object_plugin)
 
 * [Change log for version 2.2.38, released 24 April 2025](/docs/openshift?topic=openshift-cos_plugin_changelog#02238_object_plugin)
 
