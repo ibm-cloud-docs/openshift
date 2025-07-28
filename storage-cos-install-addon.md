@@ -2,7 +2,7 @@
 
 copyright:
   years: 2024, 2025
-lastupdated: "2025-07-01"
+lastupdated: "2025-07-28"
 
 
 keywords: kubernetes, openshift, object storage add-in, cos
@@ -50,10 +50,11 @@ Before you begin: [Access your {{site.data.keyword.redhat_openshift_notm}} clust
     {: pre}
 
     Example output
-    ```sh
+    ```sh                                                         
     OK
-    Name                        Version            Supported Kubernetes Range   Supported OpenShift Range   Kubernetes Default                   OpenShift Default
-    ibm-object-csi-driver       0.1 (default)      >=1.30.0                     >=4.15.0                    -                                    -
+    Name                        Version            Supported Kubernetes Range   Supported OpenShift Range   Kubernetes Default   OpenShift Default
+    ibm-object-csi-driver       1.0 (default)      >=1.30.0 <1.33.0             unsupported                 -                    -
+    ibm-object-csi-driver       0.1                >=1.30.0 <1.33.0             >=4.15.0 <4.16.0            -                    -                  -                                    -
     ```
     {: screen}
 

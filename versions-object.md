@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2025
-lastupdated: "2025-05-29"
+lastupdated: "2025-07-28"
 
 
 keywords: openshift, {{site.data.keyword.openshiftlong_notm}}, object storage, plug-in, change log
@@ -28,14 +28,20 @@ View information for updates to the {{site.data.keyword.cos_full_notm}} plug-in 
 
 | {{site.data.keyword.cos_full_notm}} plug-in version | Supported? |
 | --- | --- |
+| 2.2.39 | Yes |
 | 2.2.38 | Yes |
 | 2.2.37 | Yes |
-| 2.2.36 | Yes |
-| 2.2.35 | Yes |
 {: caption="{{site.data.keyword.cos_full_notm}} plug-in versions" caption-side="bottom"}
 
 Versions are deprecated at n-2 or roughly 3 months after their release date. Plan to keep your add-on updated. For update steps, see [Updating the {{site.data.keyword.cos_full_notm}} plug-in](/docs/openshift?topic=openshift-storage_cos_install#update_cos_plugin).
 {: important}
+
+## Change log for version 2.2.39, released 20 June 2025
+{: #02239_object_plugin}
+
+- Updates golang to 1.23.10
+- Resolves the following CVEs: CVE-2025-22872, CVE-2025-30204, CVE-2025-4802
+
 
 ## Change log for version 2.2.38, released 24 April 2025
 {: #02238_object_plugin}
