@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2025
-lastupdated: "2025-07-28"
+lastupdated: "2025-07-29"
 
 
 keywords: openshift
@@ -1799,7 +1799,7 @@ subcollection: openshift
 
 * [Create or upgrade your account](/docs/openshift?topic=openshift-clusters#prepare-create-account)
 
-* [Setting user permissions](/docs/openshift?topic=openshift-clusters#prepare-verify-permissions)
+* [Set user permissions](/docs/openshift?topic=openshift-clusters#prepare-verify-permissions)
 
 * [Plan your resource groups](/docs/openshift?topic=openshift-clusters#prepare-resource-groups)
 
@@ -2391,15 +2391,11 @@ subcollection: openshift
 
     * [{{site.data.keyword.cloud_notm}} IAM issuer details for RBAC users](/docs/openshift?topic=openshift-understand-rbac#iam-issuer-users)
 
-[Authorizing pods in your cluster to {{site.data.keyword.cloud_notm}} services with IAM trusted profiles](/docs/openshift?topic=openshift-pod-iam-identity#pod-iam-identity)
+[Authorizing resources with IAM trusted profiles](/docs/openshift?topic=openshift-pod-iam-identity#pod-iam-identity)
 
-* [Prerequisites](/docs/openshift?topic=openshift-pod-iam-identity#iam-identity-prereqs)
+* [Creating an IAM trusted profile](/docs/openshift?topic=openshift-pod-iam-identity#iam-trusted-profile-create)
 
-* [Creating an IAM trusted profile for your cluster in the API](/docs/openshift?topic=openshift-pod-iam-identity&interface=api#iam-identity-create-api)
-
-* [Creating an IAM trusted profile for your cluster in the UI](/docs/openshift?topic=openshift-pod-iam-identity&interface=ui#iam-identity-create-ui)
-
-* [Configure your application pods to authenticate with {{site.data.keyword.cloud_notm}} services](/docs/openshift?topic=openshift-pod-iam-identity&interface=ui#iam-identity-pod)
+* [Configure your application pods to authenticate with {{site.data.keyword.cloud_notm}} services](/docs/openshift?topic=openshift-pod-iam-identity#iam-identity-pod)
 
 [Assigning cluster access by using Terraform for {{site.data.keyword.openshiftlong_notm}}](/docs/openshift?topic=openshift-terraform-setup#terraform-setup)
 
