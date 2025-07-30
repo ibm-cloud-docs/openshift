@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2024, 2025
-lastupdated: "2025-06-13"
+lastupdated: "2025-07-30"
 
 
 keywords: openshift, {{site.data.keyword.openshiftlong_notm}}, ai, add-on
@@ -24,16 +24,22 @@ Follow the steps to install the OpenShift AI add-on to an existing cluster.
 Want to deploy the OpenShift AI operator on a new cluster? Try the [OpenShift AI on IBM Cloud](https://cloud.ibm.com/catalog/7a4d68b4-cf8b-40cd-a3d1-f49aff526eb3/architecture/roks-rhoai-c24ae512-8b25-43d7-8fb3-4173c7e94472-global){: external} deployable architecture. 
 {: tip}
 
-## Considerations
+## Minimum requirements
 {: #ai-min}
 
 Review the following considerations before setting up the add-on. 
 
-- Your cluster must be version 4.16 and later.
+- Your cluster must be version 4.16 or later.
 - Your cluster must have at least 2 worker nodes. Each worker node must have a minimum of 8vCPU and 32GB memory.
 - Your worker nodes must use the RHCOS operating system.
+- You must allow outbound traffic from your cluster to install the required operators.
+
+## Considerations
+{: #ai-consideration}
+
 - To use all the capabilities provided by OpenShift AI, at least 1 GPU is recommended.
 - Your cluster can have a mix of GPU and non-GPU nodes. However, if you use this configuration, make sure to deploy your app on a GPU node to leverage it's resources.
+
 
 ## Before you begin
 {: #ai-before}

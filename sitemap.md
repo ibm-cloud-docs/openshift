@@ -3741,7 +3741,9 @@ subcollection: openshift
 
 [Installing the Red Hat OpenShift AI add-on](/docs/openshift?topic=openshift-ai-addon-install#ai-addon-install)
 
-* [Considerations](/docs/openshift?topic=openshift-ai-addon-install#ai-min)
+* [Minimum requirements](/docs/openshift?topic=openshift-ai-addon-install#ai-min)
+
+* [Considerations](/docs/openshift?topic=openshift-ai-addon-install#ai-consideration)
 
 * [Before you begin](/docs/openshift?topic=openshift-ai-addon-install#ai-before)
 
@@ -4192,26 +4194,6 @@ subcollection: openshift
 [Storage class reference](/docs/openshift?topic=openshift-storage_cos_reference#storage_cos_reference)
 
 * [{{site.data.keyword.cos_full_notm}} Helm chart storage classes](/docs/openshift?topic=openshift-storage_cos_reference#cos-sc-ref-helm)
-
-[Installing the {{site.data.keyword.cos_full_notm}} cluster add-on](/docs/openshift?topic=openshift-storage-cos-install-addon#storage-cos-install-addon)
-
-* [Understanding bucket creation and removal](/docs/openshift?topic=openshift-storage-cos-install-addon#cos-addon-bucket-cd)
-
-* [Enabling the {{site.data.keyword.cos_full_notm}} add-on](/docs/openshift?topic=openshift-storage-cos-install-addon#enable-cos-addon)
-
-* [Deploying an app that uses {{site.data.keyword.cos_full_notm}}](/docs/openshift?topic=openshift-storage-cos-install-addon#cos-addon-app)
-
-    * [Create a Kubernetes secret that contains your COS credentials.](/docs/openshift?topic=openshift-storage-cos-install-addon#cos-addon-app-secret)
-
-    * [Create a PVC](/docs/openshift?topic=openshift-storage-cos-install-addon#cos-addon-app-pvc)
-
-    * [Create a deployment](/docs/openshift?topic=openshift-storage-cos-install-addon#cos-addon-app-dep)
-
-* [Disabling the {{site.data.keyword.cos_full_notm}} add-on](/docs/openshift?topic=openshift-storage-cos-install-addon#disable-cos-addon)
-
-* [Migrating from the Helm plug-in to the cluster add-on](/docs/openshift?topic=openshift-storage-cos-install-addon#cos-addon-migrate-helm)
-
-* [{{site.data.keyword.cos_full_notm}} cluster add-on storage classes](/docs/openshift?topic=openshift-storage-cos-install-addon#cos-sc-ref-addon)
 
 
 ## Setting up OpenShift Data Foundation

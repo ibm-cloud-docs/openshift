@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2022, 2025
-lastupdated: "2025-07-21"
+lastupdated: "2025-07-30"
 
 keywords: kubernetes, openshift
 
@@ -757,7 +757,8 @@ If your cluster and VPC are not in the same resource group, you must specify the
         runAsGroup: 1000
       volumes:
       - name: sec-ctx-vol
-        emptyDir: {}
+        persistentVolumeClaim:
+            claimName: my-pvc
       containers:
       - name: sec-ctx-demo
         image: busybox:1.28
@@ -767,8 +768,6 @@ If your cluster and VPC are not in the same resource group, you must specify the
           mountPath: /data/demo
         securityContext:
           allowPrivilegeEscalation: false
-        persistentVolumeClaim:
-          claimName: my-pvc
     ```
     {: codeblock}
 
@@ -783,7 +782,7 @@ If your cluster and VPC are not in the same resource group, you must specify the
 ## Setting up KMS encryption for {{site.data.keyword.filestorage_vpc_short}}
 {: #storage-file-kms}
 
-Use a key management service (KMS) provider, such as {{site.data.keyword.keymanagementservicelong}}, to create a private root key that you use in your {{site.data.keyword.filestorage_vpc_short}} instance to encrypt data as it is written to storage. After you create the private root key, create your own storage class or a Kubernetes secret with your root key and then use this storage class or secret to provision your {{site.data.keyword.filestorage_vpc_short}} instance.
+Use a key management service (KMS) provider, such as {{site.data.keyword.keymanagementservicelong}} or {{site.data.keyword.hscrypto}}, to create a private root key that you use in your {{site.data.keyword.filestorage_vpc_short}} instance to encrypt data as it is written to storage. After you create the private root key, create your own storage class or a Kubernetes secret with your root key and then use this storage class or secret to provision your {{site.data.keyword.filestorage_vpc_short}} instance.
 {: shortdesc}
 
 
@@ -796,7 +795,7 @@ Use a key management service (KMS) provider, such as {{site.data.keyword.keymana
     - [{{site.data.keyword.hscrypto}} root key](/docs/hs-crypto?topic=hs-crypto-create-root-keys). By default, the root key is created without an expiration date.
 
 
-1. [Set up service to service authorization](/docs/account?topic=account-serviceauth). Authorize {{site.data.keyword.filestorage_vpc_short}} to access {{site.data.keyword.keymanagementservicelong}}. Make sure to give {{site.data.keyword.filestorage_vpc_short}} at least `Reader` access to your KMS instance.
+1. Complete the [prerequisites for customer-managed encryption](/docs/vpc?topic=vpc-vpc-encryption-planning#byok-encryption-prereqs) and authorize {{site.data.keyword.filestorage_vpc_short}} to access {{site.data.keyword.keymanagementservicelong}}. Make sure to give {{site.data.keyword.filestorage_vpc_short}} at least `Reader` access to your KMS instance.
     
 1. Create a custom storage class and specify your KMS details.
     ```yaml
@@ -921,9 +920,14 @@ Encryption in-transit is available as a Beta.
 
 Review the following information about EIT. If you choose to use encryption in-transit, you need to balance your requirements between performance and enhanced security. Encrypting data in-transit can have performance impacts due to the processing that is needed to encrypt and decrypt the data at the endpoints. For more information about encryption in-transit, see [VPC Encryption in Transit](https://cloud.ibm.com/docs/vpc?topic=vpc-file-storage-vpc-about&interface=ui#fs-eit).
 
-- By default, file shares are [encrypted at rest](/docs/vpc?topic=vpc-file-storage-vpc-about&interface=ui#FS-encryption) with IBM-managed encryption. 
-- EIT is not available for Secure by Default clusters and requires you the disable outbound traffic protection in clusters 4.15 and later.
 - EIT is available for cluster versions 4.16 and later.
+- EIT is available only for RHCOS worker nodes.
+- By default, file shares are [encrypted at rest](/docs/vpc?topic=vpc-file-storage-vpc-about&interface=ui#FS-encryption) with IBM-managed encryption. 
+- To use EIT with Secure by Default clusters, you must add the following outbound rule to the `kube-<clusterID>` security group.
+    - **Protocal**: Any
+    - **Source type**: Any
+    - **Source**: 0.0.0.0/0
+    - **Destination** 169.254.169.254.
 - EIT is not available for statically provisioned volumes. To set up EIT, you must use dynamic provisioning.
 - EIT packages are automatically updated in your cluster when EIT is enabled.
 - If you choose to use Encryption-in-transit, you need to balance your requirements between performance and enhanced security. Encrypting data in transit can have some performance impact due to the processing that is needed to encrypt and decrypt the data at the endpoints. The impact depends on the workload characteristics. Workloads that perform synchronous writes or bypass VSI caching, such as databases, might have a substantial performance impact when EIT is enabled. To determine EIT’s performance impact, benchmark your workload with and without EIT.
