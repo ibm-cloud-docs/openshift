@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2023, 2025
-lastupdated: "2025-05-28"
+lastupdated: "2025-07-30"
 
 
 keywords: openshift, {{site.data.keyword.openshiftlong_notm}}, firewall, rules, security group, 4.15, networking, secure by default, outbound traffic protection
@@ -176,6 +176,13 @@ Monitoring clusters with RHCOS worker nodes
 
 VPC cluster quotas
 :   There is a maximum of 15 rules that can target other security groups as their source or destination. By default, {{site.data.keyword.openshiftlong_notm}} applies 1 rule that targets the `kube-<clusterID>` security group for each cluster in the VPC. Because of this quota, only 15 clusters can be created in a given VPC. For more information, see [VPC quotas](/docs/vpc?topic=vpc-quotas).
+
+Encryption in-transit for VPC File Storage.
+:   To use EIT with Secure by Default clusters, you must add the following outbound rule to the `kube-<clusterID>` security group.
+    - **Protocal**: Any 
+    - **Source type**: Any
+    - **Source**: 0.0.0.0/0 
+    - **Destination** 169.254.169.254.
 
 Backup communication over the public network
 :   VPC cluster workers use the private network to communicate with the cluster master. Previously, for VPC clusters that had the public service endpoint enabled, if the private network was blocked or unavailable, then the cluster workers could fall back to using the public network to communicate with the cluster master. In Secure by Default clusters, falling back to the public network is not an option because public outbound traffic from the cluster workers is blocked. You might want to disable outbound traffic protection to allow this public network backup option, however, there is a better alternative. Instead, if there a temporary issue with the worker-to-master connection over the private network, then, at that time, you can add a temporary security group rule to the `kube-clusterID` security group to allow outbound traffic to the cluster master `apiserver` port. Later, when the problem is resolved, you can remove the temporary rule.

@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2025
-lastupdated: "2025-07-28"
+lastupdated: "2025-07-30"
 
 
 keywords: openshift
@@ -285,6 +285,10 @@ subcollection: openshift
 [Release notes](/docs/openshift?topic=openshift-openshift-relnotes#openshift-relnotes)
 
 * [July 2025](/docs/openshift?topic=openshift-openshift-relnotes#openshift-july25)
+
+    * [30 July 2025](/docs/openshift?topic=openshift-openshift-relnotes#openshift-30july25)
+
+        * {{site.data.keyword.openshiftlong_notm}} worker node fix packs are available.
 
     * [25 July 2025](/docs/openshift?topic=openshift-openshift-relnotes#openshift-25july25)
 
@@ -1799,7 +1803,7 @@ subcollection: openshift
 
 * [Create or upgrade your account](/docs/openshift?topic=openshift-clusters#prepare-create-account)
 
-* [Setting user permissions](/docs/openshift?topic=openshift-clusters#prepare-verify-permissions)
+* [Set user permissions](/docs/openshift?topic=openshift-clusters#prepare-verify-permissions)
 
 * [Plan your resource groups](/docs/openshift?topic=openshift-clusters#prepare-resource-groups)
 
@@ -2391,15 +2395,11 @@ subcollection: openshift
 
     * [{{site.data.keyword.cloud_notm}} IAM issuer details for RBAC users](/docs/openshift?topic=openshift-understand-rbac#iam-issuer-users)
 
-[Authorizing pods in your cluster to {{site.data.keyword.cloud_notm}} services with IAM trusted profiles](/docs/openshift?topic=openshift-pod-iam-identity#pod-iam-identity)
+[Authorizing resources with IAM trusted profiles](/docs/openshift?topic=openshift-pod-iam-identity#pod-iam-identity)
 
-* [Prerequisites](/docs/openshift?topic=openshift-pod-iam-identity#iam-identity-prereqs)
+* [Creating an IAM trusted profile](/docs/openshift?topic=openshift-pod-iam-identity#iam-trusted-profile-create)
 
-* [Creating an IAM trusted profile for your cluster in the API](/docs/openshift?topic=openshift-pod-iam-identity&interface=api#iam-identity-create-api)
-
-* [Creating an IAM trusted profile for your cluster in the UI](/docs/openshift?topic=openshift-pod-iam-identity&interface=ui#iam-identity-create-ui)
-
-* [Configure your application pods to authenticate with {{site.data.keyword.cloud_notm}} services](/docs/openshift?topic=openshift-pod-iam-identity&interface=ui#iam-identity-pod)
+* [Configure your application pods to authenticate with {{site.data.keyword.cloud_notm}} services](/docs/openshift?topic=openshift-pod-iam-identity#iam-identity-pod)
 
 [Assigning cluster access by using Terraform for {{site.data.keyword.openshiftlong_notm}}](/docs/openshift?topic=openshift-terraform-setup#terraform-setup)
 
@@ -3741,7 +3741,9 @@ subcollection: openshift
 
 [Installing the Red Hat OpenShift AI add-on](/docs/openshift?topic=openshift-ai-addon-install#ai-addon-install)
 
-* [Considerations](/docs/openshift?topic=openshift-ai-addon-install#ai-min)
+* [Minimum requirements](/docs/openshift?topic=openshift-ai-addon-install#ai-min)
+
+* [Considerations](/docs/openshift?topic=openshift-ai-addon-install#ai-consideration)
 
 * [Before you begin](/docs/openshift?topic=openshift-ai-addon-install#ai-before)
 
@@ -4192,26 +4194,6 @@ subcollection: openshift
 [Storage class reference](/docs/openshift?topic=openshift-storage_cos_reference#storage_cos_reference)
 
 * [{{site.data.keyword.cos_full_notm}} Helm chart storage classes](/docs/openshift?topic=openshift-storage_cos_reference#cos-sc-ref-helm)
-
-[Installing the {{site.data.keyword.cos_full_notm}} cluster add-on](/docs/openshift?topic=openshift-storage-cos-install-addon#storage-cos-install-addon)
-
-* [Understanding bucket creation and removal](/docs/openshift?topic=openshift-storage-cos-install-addon#cos-addon-bucket-cd)
-
-* [Enabling the {{site.data.keyword.cos_full_notm}} add-on](/docs/openshift?topic=openshift-storage-cos-install-addon#enable-cos-addon)
-
-* [Deploying an app that uses {{site.data.keyword.cos_full_notm}}](/docs/openshift?topic=openshift-storage-cos-install-addon#cos-addon-app)
-
-    * [Create a Kubernetes secret that contains your COS credentials.](/docs/openshift?topic=openshift-storage-cos-install-addon#cos-addon-app-secret)
-
-    * [Create a PVC](/docs/openshift?topic=openshift-storage-cos-install-addon#cos-addon-app-pvc)
-
-    * [Create a deployment](/docs/openshift?topic=openshift-storage-cos-install-addon#cos-addon-app-dep)
-
-* [Disabling the {{site.data.keyword.cos_full_notm}} add-on](/docs/openshift?topic=openshift-storage-cos-install-addon#disable-cos-addon)
-
-* [Migrating from the Helm plug-in to the cluster add-on](/docs/openshift?topic=openshift-storage-cos-install-addon#cos-addon-migrate-helm)
-
-* [{{site.data.keyword.cos_full_notm}} cluster add-on storage classes](/docs/openshift?topic=openshift-storage-cos-install-addon#cos-sc-ref-addon)
 
 
 ## Setting up OpenShift Data Foundation
@@ -4823,6 +4805,8 @@ subcollection: openshift
 
 * [Version 4.18](/docs/openshift?topic=openshift-openshift_changelog_418#418_components)
 
+    * [Worker node fix pack 4.18.20_1553_openshift, released 28 July 2025](/docs/openshift?topic=openshift-openshift_changelog_418#cl-boms-41820_1553_openshift_W)
+
     * [Worker node fix pack 4.18.19_1539_openshift, released 14 July 2025](/docs/openshift?topic=openshift-openshift_changelog_418#cl-boms-41819_1539_openshift_W)
 
     * [Worker node fix pack 4.18.18_1539_openshift, released 01 July 2025](/docs/openshift?topic=openshift-openshift_changelog_418#cl-boms-41818_1539_openshift_W)
@@ -4945,6 +4929,8 @@ subcollection: openshift
 * [Overview](/docs/openshift?topic=openshift-openshift_changelog_417#changelog_overview_417)
 
 * [Version 4.17](/docs/openshift?topic=openshift-openshift_changelog_417#417_components)
+
+    * [Worker node fix pack 4.17.36_1548_openshift, released 28 July 2025](/docs/openshift?topic=openshift-openshift_changelog_417#cl-boms-41736_1548_openshift_W)
 
     * [Worker node fix pack 4.17.35_1546_openshift, released 14 July 2025](/docs/openshift?topic=openshift-openshift_changelog_417#cl-boms-41735_1546_openshift_W)
 
@@ -5106,6 +5092,8 @@ subcollection: openshift
 * [Overview](/docs/openshift?topic=openshift-openshift_changelog_416#changelog_overview_416)
 
 * [Version 4.16](/docs/openshift?topic=openshift-openshift_changelog_416#416_components)
+
+    * [Worker node fix pack 4.16.44_1575_openshift, released 28 July 2025](/docs/openshift?topic=openshift-openshift_changelog_416#cl-boms-41644_1575_openshift_W)
 
     * [Worker node fix pack 4.16.43_1573_openshift, released 14 July 2025](/docs/openshift?topic=openshift-openshift_changelog_416#cl-boms-41643_1573_openshift_W)
 
@@ -5299,6 +5287,8 @@ subcollection: openshift
 * [Overview](/docs/openshift?topic=openshift-openshift_changelog_415#changelog_overview_415)
 
 * [Version 4.15](/docs/openshift?topic=openshift-openshift_changelog_415#415_components)
+
+    * [Worker node fix pack 4.15.55_1595_openshift, released 28 July 2025](/docs/openshift?topic=openshift-openshift_changelog_415#cl-boms-41555_1595_openshift_W)
 
     * [Worker node fix pack 4.15.54_1593_openshift, released 14 July 2025](/docs/openshift?topic=openshift-openshift_changelog_415#cl-boms-41554_1593_openshift_W)
 
@@ -5516,6 +5506,8 @@ subcollection: openshift
 * [Overview](/docs/openshift?topic=openshift-openshift_changelog_414#changelog_overview_414)
 
 * [Version 4.14](/docs/openshift?topic=openshift-openshift_changelog_414#414_components)
+
+    * [Worker node fix pack 4.14.53_1617_openshift, released 28 July 2025](/docs/openshift?topic=openshift-openshift_changelog_414#cl-boms-41453_1617_openshift_W)
 
     * [Worker node fix pack 4.14.53_1615_openshift, released 14 July 2025](/docs/openshift?topic=openshift-openshift_changelog_414#cl-boms-41453_1615_openshift_W)
 

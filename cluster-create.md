@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2025
-lastupdated: "2025-06-24"
+lastupdated: "2025-07-29"
 
 
 keywords: openshift, {{site.data.keyword.openshiftlong_notm}}, clusters, worker nodes, worker pools
@@ -32,11 +32,12 @@ After the account administrator makes these preparations, you might not need to 
 [Create or upgrade your account to a billable account ({{site.data.keyword.cloud_notm}} Pay-As-You-Go or Subscription)](https://cloud.ibm.com/registration).{: #cluster_prepare}
 
 
-## Setting user permissions
+## Set user permissions
 {: #prepare-verify-permissions}
 {: step}
 
 Confirm that you [have the required permissions to create clusters](/docs/openshift?topic=openshift-iam-platform-access-roles). Make sure that your account administrator does not assign you the **Administrator** platform access role at the same time as scoping the access policy to a namespace. Otherwise, the permissions might not be set properly.
+
 
 
 ## Plan your resource groups
