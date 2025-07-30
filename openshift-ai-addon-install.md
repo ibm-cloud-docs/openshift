@@ -29,7 +29,7 @@ Want to deploy the OpenShift AI operator on a new cluster? Try the [OpenShift AI
 
 Review the following considerations before setting up the add-on. 
 
-- Your cluster must be version 4.16 or later.
+- Your cluster must be version 4.16 or 4.17.
 - Your cluster must have at least 2 worker nodes. Each worker node must have a minimum of 8vCPU and 32GB memory.
 - Your worker nodes must use the RHCOS operating system.
 - You must allow outbound traffic from your cluster to install the required operators.
