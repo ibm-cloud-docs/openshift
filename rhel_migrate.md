@@ -2,10 +2,10 @@
 
 copyright:
   years: 2022, 2025
-lastupdated: "2025-07-24"
+lastupdated: "2025-07-31"
 
 
-keywords: rhel, os, operating system, rhocs, 418, migration
+keywords: rhel, os, operating system, rhcos, 418, migration
 
 subcollection: openshift
 
@@ -29,7 +29,7 @@ Beginning with cluster version 4.18, Red Hat Enterprise Linux CoreOS (RHCOS) is 
 
 | Milestone | Description |
 | --- | --- |
-| 4.18 release: {{site.data.keyword.openshift_418_release_date}} | Beginning with cluster version 4.18, Red Hat Enterprise Linux CoreOS (RHCOS) is the default operating system and RHEL worker nodes are deprecated in this version. RHEL workers are still available in version 4.18 only to complete the migration to RHOCS workers. |
+| 4.18 release: {{site.data.keyword.openshift_418_release_date}} | Beginning with cluster version 4.18, Red Hat Enterprise Linux CoreOS (RHCOS) is the default operating system and RHEL worker nodes are deprecated in this version. RHEL workers are still available in version 4.18 only to complete the migration to RHCOS workers. |
 | 4.21 release | Cluster version 4.21 supports only RHCOS worker nodes. Migrate your RHEL 9 worker nodes to RHCOS before updating to version 4.21. |
 {: caption="RHEL deprecation timeline" caption-side="bottom"}
 
