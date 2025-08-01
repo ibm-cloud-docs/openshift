@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2025
-lastupdated: "2025-07-29"
+lastupdated: "2025-08-01"
 
 
 keywords: kubernetes, openshift, infrastructure, rbac, policy
@@ -33,8 +33,6 @@ You can enable IAM trusted profiles by running the [`ibmcloud oc cluster master 
 To create a trusted profile in your account, see [Creating trusted profiles](/docs/account?topic=account-create-trusted-profile&interface=ui) in the IAM documentation. Note that to create a trusted profile, you must be the account owner. Additionally, the following access roles are required.
 - Administrator role for all account management services.
 - Administrator role on the IAM Identity Service. For more information, see [IAM Identity Service](/docs/account?topic=account-account-services&interface=ui#identity-service-account-management). 
-- [Additional roles required for your specific resources and components](/docs/openshift?topic=openshift-configure-trusted-profile#tp-minreqs). 
-
 
 
 ## Configure your application pods to authenticate with {{site.data.keyword.cloud_notm}} services

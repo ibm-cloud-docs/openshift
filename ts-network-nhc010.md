@@ -3,7 +3,7 @@
 
 copyright: 
   years: 2025, 2025
-lastupdated: "2025-07-25"
+lastupdated: "2025-08-01"
 
 keywords: , nhc010, exceeded security group rules quota
 
@@ -31,7 +31,7 @@ NHC010   Network     Error      Exceeded security group rules related quota.
 ```
 {: screen}
 
-IBM Cloud VPC infrastructure enforces limits for security group rules per security group in production environments. If this [limit](docs/vpc?topic=vpc-quotas#service-limits-for-vpc-services){: external} is exceeded, it can prevent your cluster from creating or updating required security group rules. So it means for example you cannot create another cluster.
+IBM Cloud VPC infrastructure enforces limits for security group rules per security group in production environments. If this [limit](/docs/vpc?topic=vpc-quotas#service-limits-for-vpc-services){: external} is exceeded, it can prevent your cluster from creating or updating required security group rules. So it means for example you cannot create another cluster.
 {: tsCauses}
 
 Review and adjust your cluster's security group rules.
