@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2025
-lastupdated: "2025-07-31"
+lastupdated: "2025-08-01"
 
 
 keywords: kubernetes, release notes, openshift, {{site.data.keyword.openshiftlong_notm}}
@@ -27,15 +27,12 @@ Looking for {{site.data.keyword.cloud_notm}} status, platform announcements, sec
 
 
 
-
 ## July 2025
 {: #openshift-july25}
 
 ### 31 July 2025
 {: #openshift-31july25}
 {: release-note}
-
-
 
 
 
@@ -46,6 +43,7 @@ Looking for {{site.data.keyword.cloud_notm}} status, platform announcements, sec
 :   [Version 4.16 change log](/docs/openshift?topic=openshift-openshift_changelog_416)
 :   [Version 4.15 change log](/docs/openshift?topic=openshift-openshift_changelog_415)
 :   [Version 4.14 change log](/docs/openshift?topic=openshift-openshift_changelog_414)
+
 
 
 
