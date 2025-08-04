@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2025
-lastupdated: "2025-07-08"
+lastupdated: "2025-08-04"
 
 
 keywords: kubernetes, lb2.0, nlb, health check, dns, hostname, subdomain, openshift
@@ -159,7 +159,7 @@ Before you begin, [register NLB IPs with a DNS subdomain](#loadbalancer_hostname
 
 2. Create a health check monitor for the subdomain. If you don't include a configuration parameter, the default value is used.
     ```sh
-    ibmcloud oc nlb-dns monitor configure --cluster <cluster_name_or_id> --nlb-host <host_name> --enable --description <description> --type <type> --method <method> --path <path> --timeout <timeout> --retries <retries> --interval <interval> --port <port> --header <header> --expected-body <expected-body> --expected-codes <expected-codes> --follows-redirects <true> --allows-insecure <true>
+    ibmcloud oc nlb-dns monitor configure --cluster <cluster_name_or_id> --nlb-host <host_name> --enable --type <type> --path <path> --timeout <timeout> --interval <interval> --port <port> --header <header>
     ```
     {: pre}
 
@@ -172,23 +172,14 @@ Before you begin, [register NLB IPs with a DNS subdomain](#loadbalancer_hostname
     `--enable`
     :   Include this option to enable a new health check monitor for a subdomain.
 
-    `--description <description>`
-    :   [Deprecated] A description of the health monitor.
-
     `--type <type>`
     :   The protocol to use for the health check: `HTTP`, `HTTPS`, or `TCP`. Default: `HTTP`.
-
-    `--method <method>`
-    :   [Deprecated] The method to use for the health check. Default for `type` `HTTP` and `HTTPS`: `GET`. Default for `type` `TCP`: `connection_established`. This flag is **Deprecated** and will not work after 18 July 2025: all health monitors will use GET!
 
     `--path <path>`
     :   When `type` is `HTTPS`: The endpoint path to health check against. Default: `/`
 
     `--timeout <timeout>`
     :   The timeout, in seconds, before the IP is considered unreachable. The health check waits the number of seconds specified in the `interval` parameter before trying to reach the IP again. The value must be an integer in the range 1 - 60. Default: `5`
-
-    `--retries <retries>`
-    :   [Deprecated] When a timeout occurs, the number of retries to attempt before the unreachable IP is considered unhealthy. Retries are attempted immediately. The value must be an integer in the range 1 - 5. Default: `2`.
 
     `--interval <interval>`
     :   The interval, in seconds, between each health check. Short intervals might improve failover time, but increase load on the IPs. The value must be an integer in the range 60 - 300. Default: `60`. 
@@ -197,26 +188,13 @@ Before you begin, [register NLB IPs with a DNS subdomain](#loadbalancer_hostname
     :   The port number to connect to for the health check. When `type` is `TCP`, this parameter is required. When `type` is `HTTP` or `HTTPS`, define the port only if you use a port other than 80 for HTTP or 443 for HTTPS. Default for TCP: `0`. Default for HTTP: `80`. Default for HTTPS: `443`.
 
     `--header <header>`
-    :   [Deprecated] Required when `type` is `HTTP` or `HTTPS`: HTTP request headers to send in the health check, such as a Host header. The User-Agent header can't be overridden. This option is valid only for type 'HTTP' or 'HTTPS'. To add more than one header to the requests, specify this option multiple times. This option accepts values in the following format: `--header Header-Name=value`. When updating a monitor, the existing headers are replaced by the ones you specify. To delete all existing headers specify the option with an empty value `--header ""`. This flag is **Deprecated**, after 18 July 2025 only the "Host" header will be configurable!
-
-    `--expected-body <expected-body>`
-    :   [Deprecated] When `type` is `HTTP` or `HTTPS`: A case-insensitive substring that the health check looks for in the response body. If this string is not found, the IP is considered unhealthy.
-
-    `--expected-codes <expected-codes>`
-    :   [Deprecated] When `type` is `HTTP` or `HTTPS`: HTTP codes that the health check looks for in the response. If the HTTP code is not found, the IP is considered unhealthy. Default: `2xx`. This flag is **Deprecated** and will not work after 18 July 2025: HTTP/HTTPS type monitors will consider endpoints healthy only if they respond with 2xx status codes.
-
-    `--allows-insecure <true>`
-    :   [Deprecated] When `type` is `HTTP` or `HTTPS`: Set to `true` to not validate the certificate. This flag is **Deprecated** and will not work after 18 July 2025: health monitors will not validate the certificate!
-
-    `--follows-redirects <true>`
-    :   [Deprecated] When `type` is `HTTP` or `HTTPS`: Set to `true` to follow any redirects that are returned by the IP.
-
+    :   Required when `type` is `HTTP` or `HTTPS`: HTTP request headers for the health check are limited to the Host header. This flag is valid only for type 'HTTP' or 'HTTPS'. This flag accepts values in the following format: '--header Header-Name=value'. When updating a monitor, the existing headers are replaced by the ones you specify. To delete all existing headers specify the flag with an empty value '--header ""'.
 
 
     Example command
     
     ```sh
-    ibmcloud oc nlb-dns monitor configure --cluster mycluster --nlb-host mycluster-a1b2cdef345678g9hi012j3kl4567890-0001.us-south.containers.appdomain.cloud --enable --description "Login page monitor" --type HTTPS --method GET --path / --timeout 5 --retries 2 --interval 60 --header Host=example.com --header Origin=https://akamai.com --expected-body "healthy" --expected-codes 2xx --follows-redirects true
+    ibmcloud oc nlb-dns monitor configure --cluster mycluster --nlb-host mycluster-a1b2cdef345678g9hi012j3kl4567890-0001.us-south.containers.appdomain.cloud --enable --type HTTPS --path /alive --timeout 5 --interval 60 --header Host=example.com
     ```
     {: pre}
 
@@ -229,26 +207,18 @@ Before you begin, [register NLB IPs with a DNS subdomain](#loadbalancer_hostname
     Example output
 
     ```sh
-    Created On:         2019-04-24 09:01:59.781392 +0000 UTC
-    Modified On:        2020-02-26 15:39:05.273217 +0000 UTC
-    Type:               https
-    Description:        Health check monitor for ingress public hostname
-    Method:             GET
-    Path:               /alive
-    Expected Body:      -
-    Expected Codes:     2xx
-    Follow Redirects:   false
-    Allow Insecure:     true
-    Port:               443
-    Timeout:            5
-    Retries:            2
-    Interval:           15
+    Status:           enabled
+
+    Type:             https
+    Method:           GET
+    Path:             /alive
+    Expected Codes:   2xx
+    Port:             443
+    Timeout:          5
+    Interval:         60
 
     Headers:
-    Origin:    https://akamai.com
     Host:      example.com
-
-    Health Monitor Apply Properties Status:   success
     ```
     {: screen}
 
@@ -262,7 +232,7 @@ Before you begin, [register NLB IPs with a DNS subdomain](#loadbalancer_hostname
 
     ```sh
     Hostname                                                                                Status      Type    Port   Path
-    mycluster-a1b2cdef345678g9hi012j3kl4567890-0001.us-south.containers.appdomain.cloud     Healthy     https   443    /alive
+    mycluster-a1b2cdef345678g9hi012j3kl4567890-0001.us-south.containers.appdomain.cloud     enabled     https   443    /alive
     ```
     {: screen}
 
@@ -297,7 +267,7 @@ ibmcloud oc nlb-dns rm classic --cluster <cluster_name_or_id> --ip <ip> --nlb-ho
 
 If you need to change your health monitor configuration, you can change specific settings. Include only the options for the settings that you want to change.
 ```sh
-ibmcloud oc nlb-dns monitor configure --cluster <cluster_name_or_id> --nlb-host <host_name> --description <description> --type <type> --method <method> --path <path> --timeout <timeout> --retries <retries> --interval <interval> --port <port> --header <header> --expected-body <expected-body> --expected-codes <expected-codes> --follows-redirects <true> --allows-insecure <true>
+ibmcloud oc nlb-dns monitor configure --cluster <cluster_name_or_id> --nlb-host <host_name> --type <type> --path <path> --timeout <timeout> --interval <interval> --port <port> --header <header>
 ```
 {: pre}
 

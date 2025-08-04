@@ -3,7 +3,7 @@
 copyright:
   years: 2024, 2025
 
-lastupdated: "2025-08-01"
+lastupdated: "2025-08-04"
 
 
 keywords: change log, version history, 4.18_openshift
@@ -175,15 +175,10 @@ The following table shows the changes that are in the master fix pack 4.18.11_15
 
 | Component | Previous | Current | Description |
 | --- | --- | --- | --- |
-| Calico API server | v3.28.3 | v3.29.2 | See the [Calico release notes](https://docs.tigera.io/calico/latest/release-notes/){: external}. |
-| Calico | v3.28.3 | v3.29.2 | See the [Calico release notes](https://docs.tigera.io/calico/latest/release-notes/){: external}. |
-| Calico policy controller | v3.28.3 | v3.29.2 | See the [Calico release notes](https://docs.tigera.io/calico/latest/release-notes/){: external}. |
-| Calico Typha | v3.28.3 | v3.29.2 | See the [Calico release notes](https://docs.tigera.io/calico/latest/release-notes/){: external}. |
+| Calico API server, policy controller, and Typha | v3.28.3 | v3.29.2 | See the [Calico release notes](https://docs.tigera.io/calico/latest/release-notes/){: external}. |
 | Cluster health image | v1.6.8 | v1.6.9 | New version contains updates and security fixes. |
-| HA master: etcd-operator image | v2.2.21 | v2.2.23 | New version contains updates and security fixes. |
 | IBM Cloud Controller Manager | v1.30.11-6 | v1.31.8-3 | New version contains updates and security fixes. |
 | Key Management Service provider | 2.10.12 | 2.10.13 | New version contains updates and security fixes. |
-| Kubernetes major.minor release | 1.30 | 1.31 | [Kubernetes docs](https://kubernetes.io/docs/home/){: external}. |
 | Load balancer for IBM Cloud Provider | 3232 | 3293 | New version contains updates and security fixes. |
 | OpenShift | 4.17.24-x86_64 | 4.18.11-x86_64 | [OpenShift docs](https://docs.redhat.com/en/documentation/openshift_container_platform/4.18/html/about/welcome-index){: external}. |
 | Portieris admission controller | v0.13.26 | v0.13.28 | See the [Portieris admission controller release notes](https://github.com/IBM/portieris/releases/tag/v0.13.28){: external}. |

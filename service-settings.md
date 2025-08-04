@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2025
-lastupdated: "2025-05-28"
+lastupdated: "2025-08-04"
 
 
 keywords: openshift, {{site.data.keyword.openshiftlong_notm}}
@@ -42,7 +42,6 @@ Modifying feature gates is not supported in {{site.data.keyword.openshiftlong_no
 
 4.18
 :   `KMSv1=false`
-:   `RotateKubeletServerCertificate=true`
 :   `ServiceAccountTokenNodeBinding=true`
 :   `StrictCostEnforcementForVAP=true`
 :   `StrictCostEnforcementForWebhooks=true`
