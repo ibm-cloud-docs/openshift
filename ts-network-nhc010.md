@@ -3,7 +3,7 @@
 
 copyright: 
   years: 2025, 2025
-lastupdated: "2025-08-01"
+lastupdated: "2025-08-05"
 
 keywords: , nhc010, exceeded security group rules quota
 
@@ -22,7 +22,7 @@ content-type: troubleshoot
 
 [Virtual Private Cloud]{: tag-vpc}
 
-When you check the status of your cluster's health by running the `ibmcloud ocks cluster health issues --cluster <CLUSTER_ID>`, you see an error similar to the following example.
+When you check the status of your cluster's health by running the `ibmcloud oc cluster health issues --cluster <CLUSTER_ID>`, you see an error similar to the following example.
 {: tsSymptoms}
 
 ```sh
