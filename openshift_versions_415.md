@@ -2,7 +2,7 @@
 
 copyright:
   years: 2024, 2025
-lastupdated: "2025-05-28"
+lastupdated: "2025-08-05"
 
 
 keywords: openshift, version, update, upgrade, 4.15, update openshift
@@ -46,7 +46,7 @@ Dates that are marked with a dagger (`†`) are tentative and subject to change.
 
 | Supported? | {{site.data.keyword.redhat_openshift_notm}} / Kubernetes version | Release date | Unsupported date |
 | --- | --- | --- | --- |
-| Supported | 4.15 / {{site.data.keyword.openshift_415_kube_version}} | {{site.data.keyword.openshift_415_release_date}} | {{site.data.keyword.openshift_415_unsupported_date}}`†` |
+| Deprecated | 4.15 / {{site.data.keyword.openshift_415_kube_version}} | {{site.data.keyword.openshift_415_release_date}} | {{site.data.keyword.openshift_415_unsupported_date}}`†` |
 {: caption="Release history for {{site.data.keyword.openshiftlong_notm}} version 4.15." caption-side="bottom"}
 
 ## Preparing to update

@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2025
-lastupdated: "2025-07-07"
+lastupdated: "2025-08-05"
 
 
 keywords: openshift, {{site.data.keyword.openshiftlong_notm}}, oc, ks
@@ -31,6 +31,14 @@ Refer to the following change logs for a summary of changes for each version of 
 
 Review the following changes for 1.0 versions of the CLI plug-in.
 {: shortdesc}
+
+## Version v1.0.714
+{: #cli-010714}
+
+Version 1.0.714 of the CLI was released on 05 August 2025.
+- Removes the `--allows-insecure`, `--description DESCRIPTION`, `--expected-body BODY`,  `--expected-codes CODES`, `--follows-redirects`, and `--method METHOD` options from the `ibmcloud ks nlb-dns monitor configure` command.
+- Includes general refactoring and improvements.
+- Updates the help text.
 
 ## Version v1.0.706
 {: #cli-010706}
