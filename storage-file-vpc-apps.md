@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2022, 2025
-lastupdated: "2025-07-30"
+lastupdated: "2025-08-05"
 
 keywords: kubernetes, openshift
 
@@ -914,9 +914,6 @@ Use a key management service (KMS) provider, such as {{site.data.keyword.keymana
 
 ## Setting up encryption in-transit (EIT)
 {: #storage-file-vpc-eit}
-
-Encryption in-transit is available as a Beta.
-{: beta}
 
 Review the following information about EIT. If you choose to use encryption in-transit, you need to balance your requirements between performance and enhanced security. Encrypting data in-transit can have performance impacts due to the processing that is needed to encrypt and decrypt the data at the endpoints. For more information about encryption in-transit, see [VPC Encryption in Transit](https://cloud.ibm.com/docs/vpc?topic=vpc-file-storage-vpc-about&interface=ui#fs-eit).
 

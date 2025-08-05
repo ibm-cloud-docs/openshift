@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2025, 2025
-lastupdated: "2025-07-25"
+lastupdated: "2025-08-05"
 
 keywords: , nhc009, IAM token exchange failed
 
@@ -21,7 +21,7 @@ content-type: troubleshoot
 
 [Virtual Private Cloud]{: tag-vpc}
 
-When you check the status of your cluster's health by running the `ibmcloud ocks cluster health issues --cluster <CLUSTER_ID>`, you see an error similar to the following example.
+When you check the status of your cluster's health by running the `ibmcloud oc cluster health issues --cluster <CLUSTER_ID>`, you see an error similar to the following example.
 {: tsSymptoms}
 
 ```sh
@@ -42,19 +42,21 @@ Review and update your IBM Cloud API key used for the IBM Cloud Kubernetes Servi
     ```
     {: pre}
 
-2. To find the associated API key (ApiKey_ID) run the following command and look for the Required API key for IBM Cloud Kubernetes Service for resource group, and save it for later:
+2. To find the associated API key run the following command and look for the associated API key for IBM Cloud Kubernetes Service for resource group, and save the ApiKey ID for later:
     ```sh
     ibmcloud iam api-key --uuid containers-kubernetes-key
     ```
     {: pre}
+
 3. Verify whether the key is disabled or not by running:
     ```sh
     ibmcloud iam api-key --activity <ApiKey_ID>
     ```
     {: pre}
+
 4. If necessary, you can reset the API key used for the IBM Cloud Kubernetes Service by running:
     ```sh
-    ibmcloud ks api-key reset
+    ibmcloud ks api-key reset --region <region>
     ```
     {: pre}
 
