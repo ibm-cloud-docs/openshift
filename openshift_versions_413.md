@@ -2,7 +2,7 @@
 
 copyright:
   years: 2023, 2025
-lastupdated: "2025-06-04"
+lastupdated: "2025-08-05"
 
 
 keywords: openshift, version, update, upgrade, 4.13, update openshift
@@ -52,7 +52,7 @@ Dates that are marked with a dagger (`†`) are tentative and subject to change.
 
 | Supported? | {{site.data.keyword.redhat_openshift_notm}} / Kubernetes version | Release date | Unsupported date |
 | --- | --- | --- | --- |
-| Supported | 4.13 / {{site.data.keyword.openshift_413_kube_version}} | {{site.data.keyword.openshift_413_release_date}} | {{site.data.keyword.openshift_413_unsupported_date}}`†` |
+| No | 4.13 / {{site.data.keyword.openshift_413_kube_version}} | {{site.data.keyword.openshift_413_release_date}} | {{site.data.keyword.openshift_413_unsupported_date}}`†` |
 {: caption="Release history for {{site.data.keyword.openshiftlong_notm}} version 4.13." caption-side="bottom"}
 
 ## Preparing to update

@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2025
-lastupdated: "2025-03-28"
+lastupdated: "2025-08-05"
 
 
 keywords: openshift, version, update, upgrade
@@ -49,7 +49,7 @@ Dates that are marked with a dagger (`†`) are tentative and subject to change.
 
 | Supported? | {{site.data.keyword.redhat_openshift_notm}} / Kubernetes version | Release date | Unsupported date |
 | --- | --- | --- | --- |
-| Supported | 4.7 / 1.20 | 09 Jun 2021 | Dec 2022`†` |
+| No | 4.7 / 1.20 | 09 Jun 2021 | Dec 2022`†` |
 {: caption="Release history for Red Hat OpenShift version 4.7." caption-side="bottom"}
 
 ## Preparing to update
