@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2024, 2025
-lastupdated: "2025-03-15"
+lastupdated: "2025-08-06"
 
 
 keywords: openshift, {{site.data.keyword.openshiftlong_notm}}, kubernetes, certificate, rotate, ca rotate
@@ -86,3 +86,12 @@ By default, certificate authority (CA) certificates are administered to secure a
     Action Completed:   2020-08-30T16:41:13+0000
     ```
     {: screen}
+
+10. Because some clients might not allow expired CA certificates in the certificate bundle, download the updated Kubernetes configuration and certificates in your cluster's `kubeconfig` file.
+
+    ```sh
+    ibmcloud oc cluster config -c CLUSTER --admin --network
+    ```
+    {: pre}
+
+11. Update any tooling that relies on the previous certificates. If you use the certificate from your cluster's `kubeconfig` file in your own service such as Travis or Jenkins, or if you use `calicoctl` to manage Calico network policies, update your services and automation to use the new certificates.
