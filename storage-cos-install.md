@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2025
-lastupdated: "2025-07-02"
+lastupdated: "2025-08-06"
 
 
 keywords: kubernetes, openshift
@@ -24,6 +24,10 @@ subcollection: openshift
 Install the {{site.data.keyword.cos_full_notm}} plug-in to set up pre-defined storage classes for {{site.data.keyword.cos_full_notm}}. You can use these storage classes to create a PVC to provision {{site.data.keyword.cos_full_notm}} for your apps.
 {: shortdesc}
 
+
+
+If you want to use the plug-in in a cluster with both RHEL and RHCOS worker nodes, make sure you install or update the plug-in to at least version `2.2.40`.
+{: note}
 
 
 
@@ -98,7 +102,11 @@ Install the `ibmc` Helm plug-in and the `ibm-object-storage-plugin`:
     If the output shows `Error: failed to untar: a file or directory with the name ibm-object-storage-plugin already exists`, delete your `ibm-object-storage-plugin` directory and rerun the `helm fetch` command.
     {: tip}
 
-1. If you use OS X or a Linux distribution, install the {{site.data.keyword.cos_full_notm}} Helm plug-in `ibmc`. The plug-in automatically retrieves your cluster location and to set the API endpoint for your {{site.data.keyword.cos_full_notm}} buckets in your storage classes. If you use Windows as your operating system, continue with the next step.
+1. If your are installing the plug-in for the first time, install the {{site.data.keyword.cos_full_notm}} Helm plug-in `ibmc`. The plug-in automatically retrieves your cluster location and to set the API endpoint for your {{site.data.keyword.cos_full_notm}} buckets in your storage classes. If you use Windows as your operating system, skip this step.
+
+    The `ibmc` plug-in is not supported on Windows.
+    {: note}
+
     1. Install the Helm plug-in.
         ```sh
         helm plugin install ./ibm-object-storage-plugin/helm-ibmc
@@ -197,17 +205,10 @@ If you don't set the `--set quotaLimit=true` option during installation, you can
 {: note}
 
 
-Example `helm ibmc install` commands for OS X and Linux for RHEL and Ubuntu worker nodes.
+Example `helm ibmc install` commands for non-Windows operating systems.
 
 ```sh
-helm ibmc install ibm-object-storage-plugin ibm-helm/ibm-object-storage-plugin --set license=true [--set quotaLimit=true/false] [--set bucketAccessPolicy=false] [--set allowCrossNsSecret=true/false]
-```
-{: pre}
-
-
-Example `helm ibmc install` commands for OS X and Linux for Red Hat OpenShift CoreOS worker nodes.
-```sh
-helm install ibm-object-storage-plugin ./ibm-object-storage-plugin --set license=true --set kubeDriver=/etc/kubernetes --set dcname="${DC_NAME}" --set provider="${CLUSTER_PROVIDER}" --set workerOS="${WORKER_OS}" --set region="${REGION}" --set platform="${PLATFORM}" [--set quotaLimit=true/false] [--set bucketAccessPolicy=false] [--set allowCrossNsSecret=true/false]
+helm ibmc install ibm-object-storage-plugin ibm-helm/ibm-object-storage-plugin --set license=true [--set quotaLimit=true/false] [--set bucketAccessPolicy=true/false] [--set allowCrossNsSecret=true/false]
 ```
 {: pre}
 
@@ -278,10 +279,10 @@ You can upgrade the existing {{site.data.keyword.cos_full_notm}} plug-in to the 
 
 1. Install the most recent version of the `ibm-object-storage-plugin` for your operating system.
 
-    Example `helm ibmc upgrade` command for OS X and Linux.
+    Example `helm ibmc upgrade` command for non-Windows operating systems.
 
     ```sh
-    helm ibmc upgrade ibm-object-storage-plugin ibm-helm/ibm-object-storage-plugin --set license=true [--set bucketAccessPolicy=false]
+    helm ibmc upgrade ibm-object-storage-plugin ibm-helm/ibm-object-storage-plugin --set license=true [--set quotaLimit=true/false] [--set bucketAccessPolicy=true/false] [--set allowCrossNsSecret=true/false]
     ```
     {: pre}
 
