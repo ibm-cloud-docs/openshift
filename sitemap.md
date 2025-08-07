@@ -3773,6 +3773,8 @@ subcollection: openshift
 
 * [Step 2: Install the add-on in the UI](/docs/openshift?topic=openshift-ai-addon-install&interface=ui#ai-install-ui)
 
+* [Optional: Setting up KServe in Advanced mode](/docs/openshift?topic=openshift-ai-addon-install&interface=ui#ai-install-kserve)
+
 * [OpenShift AI customization options](/docs/openshift?topic=openshift-ai-addon-install&interface=ui#custom-options)
 
 * [Customizations for recommended operators](/docs/openshift?topic=openshift-ai-addon-install&interface=ui#rec-ops-custom)
@@ -6333,7 +6335,7 @@ subcollection: openshift
 
 [IBM Cloud Kubernetes Service API JSON](https://containers.cloud.ibm.com/global/swagger-global-api/swagger.json){: external}
 
-[OpenShift Container Platform REST API](https://docs.redhat.com/documentation/openshift_container_platform/4.17/html/api_overview/index){: external}
+[OpenShift Container Platform REST API](https://docs.redhat.com/documentation/openshift_container_platform/4.18/html/api_overview/index){: external}
 
 
 ## Add-ons for {{site.data.keyword.openshiftlong_notm}}
