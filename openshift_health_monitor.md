@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2025
-lastupdated: "2025-06-19"
+lastupdated: "2025-08-07"
 
 
 keywords: oks, iro, openshift, red hat, red hat openshift
@@ -54,9 +54,9 @@ Review the following details about {{site.data.keyword.mon_full_notm}}.
 ### Built-in {{site.data.keyword.redhat_openshift_notm}} monitoring tools
 {: #built-in-mon-tools}
 
-OpenShift includes a preconfigured, preinstalled, and self-updating monitoring stack that provides monitoring for core platform components on a per-cluster basis. This monitoring includes built-in Prometheus and Grafana deployments in the `openshift-monitoring` project for cluster metrics, which is available in a single zone only. You can view and manage your monitoring dashboards, metrics, and alerts from the {{site.data.keyword.redhat_openshift_notm}} web console. For more information, see [Monitoring](https://docs.openshift.com/container-platform/4.17/virt/monitoring/virt-monitoring-overview.html){: external} in the Red Hat OpenShift documentation. 
+OpenShift includes a preconfigured, preinstalled, and self-updating monitoring stack that provides monitoring for core platform components on a per-cluster basis. This monitoring includes built-in Prometheus and Grafana deployments in the `openshift-monitoring` project for cluster metrics, which is available in a single zone only. You can view and manage your monitoring dashboards, metrics, and alerts from the {{site.data.keyword.redhat_openshift_notm}} web console. For more information, see [Monitoring](https://docs.openshift.com/container-platform/4.18/virt/monitoring/virt-monitoring-overview.html){: external} in the Red Hat OpenShift documentation. 
 
-By default, the monitoring stack does not use persistent storage to back up metric history, and instead uses a temporary `EmptyDir` volume in the host file system. The retention period for metrics history ranges from 11 to 15 days, depending on your cluster version. For some workloads, these settings might use a significant amount of disk space and memory, or might not meet requirements for metrics retention. You can configure the monitoring stack to use persistent storage, change the metrics retention policies, or run Prometheus on dedicated nodes. For more information, see [Configuring the monitoring stack](https://docs.redhat.com/documentation/openshift_container_platform/4.17/html/red_hat_build_of_opentelemetry/otel-configuring-metrics-for-monitoring-stack){: external}.
+By default, the monitoring stack does not use persistent storage to back up metric history, and instead uses a temporary `EmptyDir` volume in the host file system. The retention period for metrics history ranges from 11 to 15 days, depending on your cluster version. For some workloads, these settings might use a significant amount of disk space and memory, or might not meet requirements for metrics retention. You can configure the monitoring stack to use persistent storage, change the metrics retention policies, or run Prometheus on dedicated nodes. For more information, see [Configuring the monitoring stack](https://docs.redhat.com/documentation/openshift_container_platform/4.18/html/red_hat_build_of_opentelemetry/otel-configuring-metrics-for-monitoring-stack){: external}.
 
 Note that {{site.data.keyword.openshiftlong_notm}} version 4.16 sets a default 10 GB size retention. 
 
@@ -99,7 +99,7 @@ Before monitoring metrics for {{site.data.keyword.block_storage_is_short}}, you 
     ```
     {: screen}
 
-For more information, see [Monitoring](https://docs.openshift.com/container-platform/4.17/virt/monitoring/virt-monitoring-overview.html){: external}.
+For more information, see [Monitoring](https://docs.openshift.com/container-platform/4.18/virt/monitoring/virt-monitoring-overview.html){: external}.
 
 If your volume is reaching capacity, try setting up [volume expansion](/docs/openshift?topic=openshift-vpc-block#vpc-block-volume-expand).
 {: tip}

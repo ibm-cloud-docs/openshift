@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2025
-lastupdated: "2025-07-31"
+lastupdated: "2025-08-07"
 
 
 keywords: kubernetes, openshift, red hat, red hat openshift
@@ -87,9 +87,9 @@ Review the following diagram for an overview of common cluster resources.
     ```
     {: pre}
 
-1. Run the following command to create a version 4.17 cluster in Washington, DC with 2 worker nodes that have 4 cores and 16 GB memory.
+1. Run the following command to create a version 4.18 cluster in Washington, DC with 2 worker nodes that have 4 cores and 16 GB memory.
     ```sh
-    ibmcloud oc cluster create classic --name my-tutorial-cluster --location wdc04 --version 4.17_openshift --flavor b3c.4x16  --workers 2 --public-service-endpoint
+    ibmcloud oc cluster create classic --name my-tutorial-cluster --location wdc04 --version 4.18_openshift --flavor b3c.4x16  --workers 2 --public-service-endpoint
     ```
     {: pre}
 
@@ -123,7 +123,7 @@ Review the following diagram for an overview of common cluster resources.
     Example output
 
     ```sh
-    Client Version: v4.17.0
+    Client Version: v4.18.0
     Kubernetes Version: v1.32.7.2
     ```
     {: screen}
@@ -255,6 +255,6 @@ Review the following diagram for an overview of common cluster resources.
 ## What's next?
 {: #openshift_next}
 
-For more information about working with your apps, see the [{{site.data.keyword.redhat_openshift_notm}} developer activities](https://docs.redhat.com/documentation/openshift_container_platform/4.17/html/about/welcome-index#developer-activities){: external} documentation.
+For more information about working with your apps, see the [{{site.data.keyword.redhat_openshift_notm}} developer activities](https://docs.redhat.com/documentation/openshift_container_platform/4.18/html/about/welcome-index#developer-activities){: external} documentation.
 
 Install two popular {{site.data.keyword.openshiftlong_notm}} cluster add-ons: [{{site.data.keyword.logs_full_notm}}](/docs/openshift?topic=openshift-health) and [{{site.data.keyword.mon_full_notm}}](/docs/openshift?topic=openshift-health-monitor).

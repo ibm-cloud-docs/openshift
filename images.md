@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2025
-lastupdated: "2025-03-28"
+lastupdated: "2025-08-07"
 
 
 keywords: kubernetes, registry, pull secret, secrets, openshift
@@ -39,7 +39,7 @@ Tekton pipelines
 ## Deploying containers from an existing image stream in the internal registry
 {: #oc_imagestream_deploy}
 
-You can deploy an app from an existing [image stream](https://docs.redhat.com/documentation/openshift_container_platform/4.17/html/images/managing-image-streams){: external} that your cluster administrator set up in the internal registry of your {{site.data.keyword.redhat_openshift_notm}} cluster. For example, your cluster administrator might have [set up the image stream to import an image from an external private registry](/docs/openshift?topic=openshift-registry#imagestream_registry), such as {{site.data.keyword.registrylong_notm}}.
+You can deploy an app from an existing [image stream](https://docs.redhat.com/documentation/openshift_container_platform/4.18/html/images/managing-image-streams){: external} that your cluster administrator set up in the internal registry of your {{site.data.keyword.redhat_openshift_notm}} cluster. For example, your cluster administrator might have [set up the image stream to import an image from an external private registry](/docs/openshift?topic=openshift-registry#imagestream_registry), such as {{site.data.keyword.registrylong_notm}}.
 {: shortdesc}
 
 ### Using an image stream with the CLI

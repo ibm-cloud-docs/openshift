@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2025
-lastupdated: "2025-05-29"
+lastupdated: "2025-08-07"
 
 
 keywords: openshift, clusters, access, endpoint
@@ -544,7 +544,7 @@ You can create an {{site.data.keyword.cloud_notm}} IAM API key and then use the 
         ```
         {: pre}
 
-3. Exchange your {{site.data.keyword.cloud_notm}} IAM API key credentials for a {{site.data.keyword.redhat_openshift_notm}} access token. You can log in from the CLI or API. For more information, see the [{{site.data.keyword.redhat_openshift_notm}} docs](https://docs.redhat.com/documentation/openshift_container_platform/4.17/html/authentication_and_authorization/configuring-internal-oauth){: external}.
+3. Exchange your {{site.data.keyword.cloud_notm}} IAM API key credentials for a {{site.data.keyword.redhat_openshift_notm}} access token. You can log in from the CLI or API. For more information, see the [{{site.data.keyword.redhat_openshift_notm}} docs](https://docs.redhat.com/documentation/openshift_container_platform/4.18/html/authentication_and_authorization/configuring-internal-oauth){: external}.
 
     **Log in by using the `oc` CLI**:
     Log in to your cluster with the `oc login` command. The username (`-u`) is `apikey` and the password (`-p`) is your {{site.data.keyword.cloud_notm}} IAM API key value. To use the private cloud service endpoint, include the `--server=<private_service_endpoint>` option.
@@ -607,7 +607,7 @@ You can create an {{site.data.keyword.cloud_notm}} IAM API key and then use the 
         ```
         {: screen}
 
-    5. Use your cluster master URL and the access token to access the {{site.data.keyword.redhat_openshift_notm}} API, such as to list all the pods in your cluster. For more information, see the [{{site.data.keyword.redhat_openshift_notm}} API documentation](https://docs.redhat.com/documentation/openshift_container_platform/4.17/html/api_overview/index){: external}.
+    5. Use your cluster master URL and the access token to access the {{site.data.keyword.redhat_openshift_notm}} API, such as to list all the pods in your cluster. For more information, see the [{{site.data.keyword.redhat_openshift_notm}} API documentation](https://docs.redhat.com/documentation/openshift_container_platform/4.18/html/api_overview/index){: external}.
 
         Example curl request:
         ```sh
