@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2024, 2025
-lastupdated: "2025-07-30"
+lastupdated: "2025-08-07"
 
 
 keywords: openshift, {{site.data.keyword.openshiftlong_notm}}, ai, add-on
@@ -39,6 +39,7 @@ Review the following considerations before setting up the add-on.
 
 - To use all the capabilities provided by OpenShift AI, at least 1 GPU is recommended.
 - Your cluster can have a mix of GPU and non-GPU nodes. However, if you use this configuration, make sure to deploy your app on a GPU node to leverage it's resources.
+- Beginning with version 2.19.0 of OpenShift AI Operator, KServe is available in either Advanced or Standard mode. By default, when you install KServe using the OpenShift AI using the IBM Cloud add-on, it is installed in Standard mode. If you want to use Advanced mode, you must complete the [optional steps](#ai-install-kserve) after installing the add-on.
 
 
 ## Before you begin
@@ -162,7 +163,35 @@ Install the Red Hat OpenShift AI add-on with the UI.
     You are responsible for managing these operators, including but not limited to updating, monitoring, recovery, and re-installation.
     {: important}
 
-5. Click **Install**. 
+5. Click **Install**.
+
+## Optional: Setting up KServe in Advanced mode
+{: #ai-install-kserve}
+
+If you want to use KServe in Advanced mode, you must complete the following steps.
+
+1. Install the OpenShift Serverless Operator from OperatorHub.
+1. Install the OpenShift Service Mesh Operator from OperatorHub.
+1. Set the serviceMesh management state to `Managed` in your Data Science Cluster Initialization CR.
+    ```yaml
+    serviceMesh:
+        controlPlane:
+            metricsCollection: Istio
+            name: data-science-smcp
+            namespace: istio-system
+        managementState: Managed
+    ```
+    {: pre}
+
+1. Set the kserve serving management state to `Managed` in your Data Science Cluster custom resource.
+    ```yaml
+    kserve:
+        managementState: Managed
+        serving:
+          managementState: Managed
+          name: knative-serving
+    ```
+    {: pre}
 
 ## OpenShift AI customization options
 {: #custom-options}
@@ -216,7 +245,7 @@ To include a customization for an operator when you [install the OpenShift AI ad
 | NVIDIA GPUDirect Storage | `nvidiaGpuDirectStorageEnabled` | Enable GPUDirect Storage. | `true` (enabled) \n `false` (disabled) | `true` (enabled) |
 | NVIDIA CUDA Testing | `nvidiaCudaTest` | Enable NVIDIA CUDA testing.  |`true` (enabled) \n `false` (disabled) | `false` (disabled) |   
 | Pipeline Operator Deletion Policy| `pipelineDeletePolicy` | Retain or delete the operator if the OpenShift AI add-on is removed. | | `Retain` or `Delete` | `Retain` |            
-{: caption="OpenShift AI add-on customizations options and CLI parameters for additional operators." caption-side="bottom"}    
+{: caption="OpenShift AI add-on customizations options and CLI parameters for additional operators." caption-side="bottom"}
 
 
 ## What's next?
