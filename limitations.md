@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2025
-lastupdated: "2025-08-07"
+lastupdated: "2025-08-08"
 
 
 keywords: openshift, http2, quota, app protocol, application protocol
@@ -53,9 +53,8 @@ To view quota limits on cluster-related resources in your {{site.data.keyword.cl
 | [Deprecated]{: tag-red} Time-based one-time passcode (TOTP) | To use [TOTP](/docs/account?topic=account-legacy-mfa#account-based), make sure that you [enable multifactor authentication (MFA)](/docs/account?topic=account-enablemfa) for your entire {{site.data.keyword.cloud_notm}} account. If MFA is enabled only for some users but not at the account level, authentication errors might occur.  |
 | Worker node quota | A maximum 500 worker nodes for any accounts created before 01 January 2024. For accounts created on or after that date, the maximum quota is 200 after a period of lower quotas. Quotas apply per cluster [infrastructure provider](/docs/openshift?topic=openshift-overview#what-compute-infra-is-offered). If you need more of the resource, [contact IBM Support](/docs/account?topic=account-using-avatar). In the support case, include the new quota limit for the region and infrastructure provider that you want.. To list quotas run, `ibmcloud ks quota ls`. |
 | Worker pool size | You must always have a minimum of 2 nodes in your cluster. Because of the worker node quota, you are limited in the number of worker pools per cluster and number of worker nodes per worker pool. For example, with the default worker node quota of 500 per region, you might have up to 500 worker pools of 1 worker node each in a region with only 1 cluster. Or, you might have 1 worker pool with up to 500 worker nodes in a region with only 1 cluster. |
-| Red Hat Enterprise Linux CoreOS worker nodes | The maximum amount of zones added to a cluster is 15. For example, 4 RHCOS worker pools with 3 zones each will account for 12/15 of the quota for that cluster. |
+| Red Hat Enterprise Linux CoreOS worker nodes | The maximum amount of zones added to a cluster is 12. For example, 3 RHCOS worker pools with 3 zones each will account for 9/12 of the quota for that cluster. |
 | Number of worker nodes | Clusters can have a maximum of 500 worker nodes. |
-| Red Hat Enterprise Linux CoreOS worker nodes | The maximum amount of zones added to a cluster is 15. For example, 4 RHCOS worker pools with 3 zones each will account for 12/15 of the quota for that cluster. |
 | Cluster naming | To ensure that the Ingress subdomain and certificate are correctly registered, the first 24 characters of the clusters' names must be different. If you create and delete clusters with the same name or names that have the same first 24 characters 5 times or more within 7 days, such as for automation or testing purposes, you might reach the [Let's Encrypt Duplicate Certificate rate limit](/docs/openshift?topic=openshift-cs_rate_limit). |
 | Resource groups | A cluster can be created in only one resource group that you can't change afterward. If you create a cluster in the wrong resource group, you must delete the cluster and re-create it in the correct resource group. Furthermore, if you need to use the `ibmcloud oc cluster service bind` command to [integrate with an {{site.data.keyword.cloud_notm}} service](/docs/openshift?topic=openshift-service-binding#bind-services), that service must be in the same resource group as the cluster. Services that don't use resource groups like {{site.data.keyword.registrylong_notm}} or that don't need service binding like {{site.data.keyword.logs_full_notm}} work even if the cluster is in a different resource group. |
 {: caption="{{site.data.keyword.openshiftlong_notm}} limitations"}
