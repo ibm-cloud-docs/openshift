@@ -2,10 +2,10 @@
 
 copyright: 
   years: 2025, 2025
-lastupdated: "2025-07-10"
+lastupdated: "2025-08-11"
 
 
-keywords: ,
+keywords: 
 
 subcollection: openshift
 
