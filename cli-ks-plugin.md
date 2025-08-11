@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2025
-lastupdated: "2025-08-07"
+lastupdated: "2025-08-11"
 
 
 keywords: openshift, cli reference, kubernetes cli, openshift cli, {{site.data.keyword.openshiftlong_notm}}
@@ -8429,3 +8429,119 @@ ibmcloud oc zone add satellite --zone ZONE --cluster CLUSTER --worker-pool WORKE
 ibmcloud oc zone add satellite --zone myzone2 --cluster my_cluster -p pool1 -p pool2
 ```
 {: pre}
+
+
+
+
+
+
+## `ibmcloud oc experimental trusted-profile default get`
+{: #experimental-trusted-profile-default-get-cli}
+
+[Expires on 2025-10-03] Get the default trusted profile for clusters created in a resource-group.
+
+```txt
+ibmcloud oc experimental trusted-profile default get --region REGION --resource-group GROUP [--output OUTPUT] [-q]
+```
+{: pre}
+{: #experimental-trusted-profile-default-get-usage}
+
+### Command options
+{: #experimental-trusted-profile-default-get-options}
+
+`--output OUTPUT`
+:    Prints the command output in the provided format. Accepted values: `json`
+
+`-q`
+:    Do not show the message of the day or update reminders.
+
+`--region REGION`
+:    The region where the resource-group is located.
+
+`--resource-group GROUP`
+:    The resource-group whose default trusted profile is to be retrieved.
+{: #experimental-trusted-profile-default-get-options-dl}
+
+
+## `ibmcloud oc experimental trusted-profile default set`
+{: #experimental-trusted-profile-default-set-cli}
+
+[Expires on 2025-10-03] Set the default trusted profile for clusters created in a resource-group.
+
+```txt
+ibmcloud oc experimental trusted-profile default set --region REGION --resource-group GROUP --trusted-profile PROFILE [--output OUTPUT] [-q]
+```
+{: pre}
+{: #experimental-trusted-profile-default-set-usage}
+
+### Command options
+{: #experimental-trusted-profile-default-set-options}
+
+`--output OUTPUT`
+:    Prints the command output in the provided format. Accepted values: `json`
+
+`-q`
+:    Do not show the message of the day or update reminders.
+
+`--region REGION`
+:    The region where the resource group is located.
+
+`--resource-group GROUP`
+:    The resource group ID to set the trusted profile on.
+
+`--trusted-profile PROFILE`
+:    The trusted profile ID.
+{: #experimental-trusted-profile-default-set-options-dl}
+
+
+## `ibmcloud oc experimental trusted-profile get`
+{: #experimental-trusted-profile-get-cli}
+
+[Expires on 2025-10-03] Get trusted profile for a cluster.
+
+```txt
+ibmcloud oc experimental trusted-profile get --cluster CLUSTER [--output OUTPUT] [-q]
+```
+{: pre}
+{: #experimental-trusted-profile-get-usage}
+
+### Command options
+{: #experimental-trusted-profile-get-options}
+
+`--cluster CLUSTER`
+:    The cluster ID to retrieve the trusted profile for.
+
+`--output OUTPUT`
+:    Prints the command output in the provided format. Accepted values: `json`
+
+`-q`
+:    Do not show the message of the day or update reminders.
+{: #experimental-trusted-profile-get-options-dl}
+
+
+## `ibmcloud oc experimental trusted-profile set`
+{: #experimental-trusted-profile-set-cli}
+
+[Expires on 2025-10-03] Set trusted profile on a cluster.
+
+```txt
+ibmcloud oc experimental trusted-profile set --cluster CLUSTER --trusted-profile PROFILE [--output OUTPUT] [-q]
+```
+{: pre}
+{: #experimental-trusted-profile-set-usage}
+
+### Command options
+{: #experimental-trusted-profile-set-options}
+
+`--cluster CLUSTER`
+:    The cluster ID to set the the trusted profile on.
+
+`--output OUTPUT`
+:    Prints the command output in the provided format. Accepted values: `json`
+
+`-q`
+:    Do not show the message of the day or update reminders.
+
+`--trusted-profile PROFILE`
+:    The trusted profile ID.
+{: #experimental-trusted-profile-set-options-dl}

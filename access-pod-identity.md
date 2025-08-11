@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2025
-lastupdated: "2025-08-01"
+lastupdated: "2025-08-11"
 
 
 keywords: kubernetes, openshift, infrastructure, rbac, policy
@@ -26,6 +26,11 @@ You can enable IAM trusted profiles by running the [`ibmcloud oc cluster master 
 {: tip}
 
 
+In IAM
+:   Start by creating an IAM trusted profile. Then, link the trusted profile with your {{site.data.keyword.openshiftlong_notm}} compute resource by selecting conditions to match with your clusters, including a Kubernetes namespace and service account in the clusters. Finally, assign access policies to the {{site.data.keyword.cloud_notm}} services that you want your apps to use.
+
+In your cluster
+:   Through [Kubernetes service account token volume projection](https://kubernetes.io/docs/tasks/configure-pod-container/configure-service-account/#service-account-token-volume-projection){: external}, the apps that run in your linked cluster's [Kubernetes namespace](https://kubernetes.io/docs/concepts/overview/working-with-objects/namespaces/){: external} and use the namespace's service account can exchange the service account public key to get an {{site.data.keyword.cloud_notm}} IAM access token. Your app can use this access token to authenticate API requests to {{site.data.keyword.cloud_notm}} services, such as databases, {{site.data.keyword.watson}}, or VPC infrastructure. Through the access policies of the trusted profile, you control what actions the token lets the app perform. 
 
 ## Creating an IAM trusted profile 
 {: #iam-trusted-profile-create}
@@ -33,6 +38,21 @@ You can enable IAM trusted profiles by running the [`ibmcloud oc cluster master 
 To create a trusted profile in your account, see [Creating trusted profiles](/docs/account?topic=account-create-trusted-profile&interface=ui) in the IAM documentation. Note that to create a trusted profile, you must be the account owner. Additionally, the following access roles are required.
 - Administrator role for all account management services.
 - Administrator role on the IAM Identity Service. For more information, see [IAM Identity Service](/docs/account?topic=account-account-services&interface=ui#identity-service-account-management). 
+- [Additional roles required for your specific resources and components](/docs/openshift?topic=openshift-configure-trusted-profile#tp-minreqs). 
+
+
+## Set the default trusted profile for the cluster
+{: #iam-trusted-profile-set}
+
+To set a trusted profile for a single cluster, run the [`ibmcloud oc experimental trusted-profile set` command](https://test.cloud.ibm.com/docs/containers?topic=containers-kubernetes-service-cli-automated#experimental-trusted-profile-set-cli).
+
+If you want all of the clusters in a resource group to use the same trusted profile, run the [`ibmcloud oc experimental trusted-profile default set` command](https://test.cloud.ibm.com/docs/containers?topic=containers-kubernetes-service-cli-automated#experimental-trusted-profile-default-set-cli). 
+
+
+## Get the details of your trusted profile
+{: #iam-trusted-profile-get}
+
+To get the default trusted profile for clusters in the same resource group, run the [`ibmcloud oc experimental trusted-profile default get` command](https://test.cloud.ibm.com/docs/containers?topic=containers-kubernetes-service-cli-automated#experimental-trusted-profile-default-get-cli).
 
 
 ## Configure your application pods to authenticate with {{site.data.keyword.cloud_notm}} services

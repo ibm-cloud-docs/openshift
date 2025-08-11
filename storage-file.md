@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2025
-lastupdated: "2025-07-29"
+lastupdated: "2025-08-11"
 
 
 keywords: kubernetes, openshift
@@ -1836,3 +1836,8 @@ To clean up persistent data:
 The deletion process might take up to 72 hours to complete.
 {: important}
     
+
+## Assigning trusted profiles to file storage
+{: #file-classic-trusted-profile}
+
+You can use trusted profiles to grant different IBM Cloud identities access to resources in your account, including your storage solutions. Trusted profiles centralize access control, eliminate the need for long-lived API keys, and allow you to scope permissions to the exact minimum required for a specific task. For more information, see [Configuring a trusted profile for storage components](/docs/containers?topic=containers-configure-trusted-profile&interface=ui).

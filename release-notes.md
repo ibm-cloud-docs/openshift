@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2025
-lastupdated: "2025-08-07"
+lastupdated: "2025-08-11"
 
 
 keywords: kubernetes, release notes, openshift, {{site.data.keyword.openshiftlong_notm}}
@@ -27,6 +27,13 @@ Looking for {{site.data.keyword.cloud_notm}} status, platform announcements, sec
 
 ## August 2025
 {: #openshift-aug25}
+
+### 08 August 2025
+{: #openshift-aug0825}
+{: release-note}
+
+Trusted profiles
+:   You can use trusted profiles to control access to your resources, including components such as Block Storage, File Storage, or Cloud Object Storage. For more information, see [Configuring a trusted profile for cluster components](/docs/containers?topic=containers-configure-trusted-profile&interface=ui)
 
 
 

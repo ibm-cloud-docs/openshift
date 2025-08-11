@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2025
-lastupdated: "2025-07-01"
+lastupdated: "2025-08-11"
 
 
 keywords: openshift, block storage, deploy apps
@@ -1305,3 +1305,9 @@ For example:
 - If a value of `20G` is provided, the volume that is created is `19GB`.
 
 Sometimes, the capacity of the volume that is created is less than the requested value. Note that billing applies for the volume that gets created, not the requested volume.
+
+
+## Assigning trusted profiles to block storage
+{: #block-vpc-trusted-profile}
+
+You can use trusted profiles to grant different IBM Cloud identities access to resources in your account, including your storage solutions. Trusted profiles centralize access control, eliminate the need for long-lived API keys, and allow you to scope permissions to the exact minimum required for a specific task. For more information, see [Configuring a trusted profile for storage components](/docs/containers?topic=containers-configure-trusted-profile&interface=ui).
