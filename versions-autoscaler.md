@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2025
-lastupdated: "2025-07-25"
+lastupdated: "2025-08-11"
 
 
 keywords: autoscaler, add-on, autoscaler change log, cluster autoscaler
@@ -68,7 +68,7 @@ ibmcloud oc cluster addon versions
 ### Change log for patch update 1.2.3_716, released 25 July 2025.
 {: #123_716_ca}
 
-- Resovles the following CVEs: CVE-2025-3576, CVE-2025-4673, CVE-2025-4802, CVE-2025-0426, CVE-2024-9042, CVE-2025-0426, CVE-2024-9042.
+- Resolves the following CVEs: CVE-2025-3576, CVE-2025-4673, CVE-2025-4802, CVE-2025-0426, CVE-2024-9042, CVE-2025-0426, CVE-2024-9042.
 - Updates Go to `1.23.10`.
 - Updates storage secret sidecar to `1.3.30`.
 - Image tags: `1.28.7 123-3`, `1.29.5 123-3`, `1.30.4 123-3`, `1.31.2 123-3`.

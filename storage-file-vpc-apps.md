@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2022, 2025
-lastupdated: "2025-08-05"
+lastupdated: "2025-08-11"
 
 keywords: kubernetes, openshift
 
@@ -921,7 +921,7 @@ Review the following information about EIT. If you choose to use encryption in-t
 - EIT is available only for RHCOS worker nodes.
 - By default, file shares are [encrypted at rest](/docs/vpc?topic=vpc-file-storage-vpc-about&interface=ui#FS-encryption) with IBM-managed encryption. 
 - To use EIT with Secure by Default clusters, you must add the following outbound rule to the `kube-<clusterID>` security group.
-    - **Protocal**: Any
+    - **Protocol**: Any
     - **Source type**: Any
     - **Source**: 0.0.0.0/0
     - **Destination** 169.254.169.254.

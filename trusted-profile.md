@@ -28,9 +28,9 @@ By using trusted profiles, you can establish a flexible, secure way for federate
 Benefits of trusted profiles include:
 
 Eliminating the need for long-lived API keys
-:   Grant access to your resources based on a trusted relationship that you establish when you create the trusted profile rather than embeded API keys. This reduces the risk of compromised or leaked credentials. 
+:   Grant access to your resources based on a trusted relationship that you establish when you create the trusted profile rather than embedded API keys. This reduces the risk of compromised or leaked credentials. 
 
-Centeralized access control
+Centralized access control
 :   Manage permissions through a single trusted profile for a simplified process of granting, revoking, or auditing access. 
 
 Scoped permissions
@@ -45,7 +45,7 @@ A minimum set of access policies are required for a trusted profile to be used f
 ### Minimum requirements for all storage components
 {: #tp-minreqs-all}
 
-Create a trust realtionship with the following configuration. These permissions are required for VPC clusters. 
+Create a trust relationship with the following configuration. These permissions are required for VPC clusters. 
 - Compute service type (found under the **Compute resource tab** in the UI) :
     - `Kubernetes`
     - `Red Hat OpenShift`
@@ -70,7 +70,7 @@ Additionally, if you plan to use **Classic infrastructure** you must enable the 
 ### VPC block storage
 {: #tp-minreqs-vpc-block}
 
-Create a trust realtionship with the following configuration.
+Create a trust relationship with the following configuration.
 - Compute service type (found under the **Compute resource tab** in the UI) :
     - `Kubernetes`
     - `Red Hat OpenShift`
@@ -88,7 +88,7 @@ Create access policies with the permissions in the following table.
 ### Classic block storage
 {: #tp-minreqs-classic-block}
 
-Create a trust realtionship with the following configuration.
+Create a trust relationship with the following configuration.
 - Compute service type (found under the **Compute resource tab** in the UI) :
     - `Kubernetes`
     - `Red Hat OpenShift`
@@ -109,7 +109,7 @@ Compute service type  in compute resource  tab instead of Compute resources
 ### VPC file storage
 {: #tp-minreqs-vpc-file}
 
-Create a trust realtionship with the following configuration.
+Create a trust relationship with the following configuration.
 - Compute service type (found under the **Compute resource tab** in the UI) :
     - `Kubernetes`
     - `Red Hat OpenShift`
@@ -127,7 +127,7 @@ Create access policies with the permissions in the following table.
 ### Classic file storage
 {: #tp-minreqs-classic-file}
 
-Create a trust realtionship with the following configuration.
+Create a trust relationship with the following configuration.
 - Compute service type (found under the **Compute resource tab** in the UI) :
     - `Kubernetes`
     - `Red Hat OpenShift`
@@ -145,7 +145,7 @@ Add the permissions in the following table. To enable these permissions, you mus
 ### Cluster autoscaler
 {: #tp-minreqs-autoscaler}
 
-Create a trust realtionship with the following configuration.
+Create a trust relationship with the following configuration.
 - Compute service type (found under the **Compute resource tab** in the UI) :
     - `Kubernetes`
     - `Red Hat OpenShift`
@@ -161,7 +161,7 @@ Create access policies with the permissions in the following table.
 ### Object Storage
 {: #tp-minreqs-cos}
 
-Create a trust realtionship with the following configuration.
+Create a trust relationship with the following configuration.
 - Compute service type (found under the **Compute resource tab** in the UI) :
     - `Kubernetes`
     - `Red Hat OpenShift`
@@ -171,7 +171,7 @@ Create access policies with the permissions in the following table.
 
 | Service name | Required permission | Description |
 | ------------ | ------------------- | ----------- |
-| Kubernetes service  |  **Reader, Viewer** | Enables Kubernetes clusters to interact with the COS plugin. |
+| Kubernetes service  |  **Reader, Viewer** | Enables Kubernetes clusters to interact with the COS plug-in. |
 | VPC Infrastructure service  | **Reader, Viewer** | Enables the communication with VPC to get API calls.  |
 | Resource group | **Viewer** | Specify the resource group where the trusted profile is applied. For operations across multiple resource groups, you must specify all relevant resource groups. |
 {: caption="Minimum permissions for Object storage" caption-side="bottom"}
@@ -179,7 +179,7 @@ Create access policies with the permissions in the following table.
 ### ODF billing agent
 {: #tp-minreqs-odf-billing}
 
-Create a trust realtionship with the following configuration.
+Create a trust relationship with the following configuration.
 - Compute service type (found under the **Compute resource tab** in the UI) :
     - `Kubernetes`
     - `Red Hat OpenShift`
@@ -253,11 +253,11 @@ Once you add a trusted profile to a cluster, it cannot be removed and you cannot
 
 4. **For classic clusters**: Add permissions to the trusted profile by using the UI. 
     1. Log in to your IBM Cloud account and navigate to the Trusted Profiles page. 
-    1. Click on the trusted profile you just created.
+    1. Click the trusted profile you just created.
     2. Navigate to the **Classic Infrastructure** tab.
     3. In the permissions drop down, select the required permissions to meet the [minimum requirements](#tp-minreqs) for the relevant components. 
 
-5. After you have created the trusted profile and assigned the requried access policies, [set the trusted profile](#tp-set-cluster-rg) for either the cluster or the resource group that your clusters are in. Setting the trusted profile applies it to your storage components. 
+5. After you have created the trusted profile and assigned the required access policies, [set the trusted profile](#tp-set-cluster-rg) for either the cluster or the resource group that your clusters are in. Setting the trusted profile applies it to your storage components. 
 
 ## Set up a trusted profile with the UI
 {: #tp-setup-ui}
@@ -281,13 +281,13 @@ Once you add a trusted profile to a cluster, it cannot be removed and you cannot
 4. Click **Create**.
 
 5. **VPC only**. Add access policies to the trusted profile. 
-    1. From the **Trusted profiles** page, click on the trusted profile you just created. 
+    1. From the **Trusted profiles** page, click the trusted profile you just created. 
     2. From the **Access** tab, click **Assign access**.
     3. In the **How do you want to assign access?** section, click **Access policy**.
     4. Add the services and roles to meet the [minimum requirements](#tp-minreqs) for the relevant components. Apply the policy to all resources. 
 
 6. **Classic only**. Add permissions to the trusted profile. 
-    1. From the **Trusted profiles** page, click on the trusted profile you just created.
+    1. From the **Trusted profiles** page, click the trusted profile you just created.
     2. Navigate to the **Classic Infrastructure** tab.
     3. In the permissions drop down, select the required permissions to meet the [minimum requirements](#tp-minreqs) for the relevant components. 
 
@@ -374,7 +374,7 @@ Once you add a trusted profile to a cluster, it cannot be removed and you cannot
         ```
         {: codeblock}
 
-        ```sh            
+        ```sh
         curl --request POST \
         --url https://iam.test.cloud.ibm.com/v1/policies \
         --header 'Content-Type: application/json' \
@@ -493,7 +493,7 @@ Once you add a trusted profile to a cluster, it cannot be removed and you cannot
 
 4. **For classic clusters**: Add permissions to the trusted profile by using the UI. 
     1. Log in to your IBM Cloud account and navigate to the Trusted Profiles page. 
-    2. Click on the trusted profile you just created.
+    2. Click the trusted profile you just created.
     3. Navigate to the **Classic Infrastructure** tab.
     4. In the permissions drop down, select the required permissions to meet the [minimum requirements](#tp-minreqs) for the relevant components. 
 
@@ -579,5 +579,5 @@ Review the following limitations and considerations before you use trusted profi
 Irreversible transition to trusted profile
 :   Once a trusted profile is configured at the cluster or resource group level, reverting to using an API key is not supported. Follow the steps carefully to ensure that the trusted profile is configured correctly. 
 
-Verfication scope is limited to the `kube-system` namespace. 
+Verification scope is limited to the `kube-system` namespace. 
 :   Trusted profile trust validation is currently limited to the `kube-system` namespace for Kubernetes and Red Hat OpenShift clusters. Users experimenting with other trusted profile features or configurations outside this scope may encounter issues. 

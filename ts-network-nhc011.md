@@ -2,9 +2,9 @@
 
 copyright: 
   years: 2025, 2025
-lastupdated: "2025-08-05"
+lastupdated: "2025-08-11"
 
-keywords: , nhc011, exceeded security group quota
+keywords: nhc011, exceeded security group quota
 
 subcollection: openshift
 
