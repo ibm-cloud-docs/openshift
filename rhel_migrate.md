@@ -2,7 +2,7 @@
 
 copyright:
   years: 2022, 2025
-lastupdated: "2025-07-31"
+lastupdated: "2025-08-11"
 
 
 keywords: rhel, os, operating system, rhcos, 418, migration
@@ -161,7 +161,7 @@ If you use the COS plug-in in your cluster, after migrating from RHEL to RHCOS, 
 
 * [Follow the steps to uninstall the COS plug-in](/docs/openshift?topic=openshift-storage_cos_install#remove_cos_plugin).
 
-* [Resintall the plug-in](/docs/openshift?topic=openshift-storage_cos_install#remove_cos_plugin)
+* [Reinstall the plug-in](/docs/openshift?topic=openshift-storage_cos_install#remove_cos_plugin)
 
 ## Migrating NVIDIA GPU resources to RHCOS worker nodes
 {: #rhcos-migrate-gpu}

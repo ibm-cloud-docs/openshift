@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2023, 2025
-lastupdated: "2025-07-30"
+lastupdated: "2025-08-11"
 
 
 keywords: openshift, {{site.data.keyword.openshiftlong_notm}}, firewall, rules, security group, 4.15, networking, secure by default, outbound traffic protection
@@ -179,7 +179,7 @@ VPC cluster quotas
 
 Encryption in-transit for VPC File Storage.
 :   To use EIT with Secure by Default clusters, you must add the following outbound rule to the `kube-<clusterID>` security group.
-    - **Protocal**: Any 
+    - **Protocol**: Any 
     - **Source type**: Any
     - **Source**: 0.0.0.0/0 
     - **Destination** 169.254.169.254.
