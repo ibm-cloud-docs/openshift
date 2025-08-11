@@ -326,6 +326,7 @@ Once you add a trusted profile to a cluster, it cannot be removed and you cannot
             }
         ]
     }'
+    ```
     {: pre}
 	
 3. **For VPC clusters**: Attach access policies to VPC components. This example assigns the minimum permissions required for all storage components.  
@@ -580,4 +581,3 @@ Irreversible transition to trusted profile
 
 Verfication scope is limited to the `kube-system` namespace. 
 :   Trusted profile trust validation is currently limited to the `kube-system` namespace for Kubernetes and Red Hat OpenShift clusters. Users experimenting with other trusted profile features or configurations outside this scope may encounter issues. 
-
