@@ -122,6 +122,7 @@ toc:
       - topicgroup:
           label: Managing access control
           topics:
+          - trusted-profile.md
           - classic-credentials.md
           - access-iam-rbac.md
           - access-pod-identity.md

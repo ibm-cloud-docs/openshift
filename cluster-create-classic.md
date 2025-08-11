@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2025
-lastupdated: "2025-08-07"
+lastupdated: "2025-08-11"
 
 
 keywords: openshift, {{site.data.keyword.openshiftlong_notm}}, kubernetes, clusters, worker nodes, worker pools, classic, create
@@ -29,7 +29,7 @@ Use the {{site.data.keyword.cloud_notm}} CLI or the {{site.data.keyword.cloud_no
 {{site.data.keyword.redhat_openshift_notm}} clusters can be created created with a public only or both a public and private service endpoint. Public service endpoints can't be disabled. Therefore, you can't convert a public {{site.data.keyword.redhat_openshift_notm}} cluster to a private one. If you want to create a Classic cluster with a private service endpoint enabled, you must [enable VRF](/docs/account?topic=account-vrf-service-endpoint&interface=ui#vrf) & [service endpoints](/docs/account?topic=account-vrf-service-endpoint&interface=ui#service-endpoint). If you want a private-only cluster, consider creating a VPC cluster.
 {: important}
 
-
+If you want to enable a trusted profile for your cluster, make sure you have created one in your account. See [Configuring a trusted profile](/docs/containers?topic=containers-configure-trusted-profile&interface=ui) for more information.
 
 
 ## Creating a classic cluster in the console
@@ -71,6 +71,7 @@ Encryption
 
 Cluster details
 :   You can customize the unique cluster name and any [tags](/docs/account?topic=account-tag) that you want to use to organize and identify your {{site.data.keyword.cloud_notm}} resources, such as the `team` or `billing department`. 
+:   If you want to add an existing trusted profile to your cluster, specify the trusted profile's ID. If you do not specify a trusted profile, you can complete the cluster create process with an API key instead. See [Configuring a trusted profile](/docs/containers?topic=containers-configure-trusted-profile&interface=ui) for more information. 
 
 
 Observability integrations
@@ -145,7 +146,7 @@ Create your Classic cluster by using the {{site.data.keyword.cloud_notm}} CLI.
 
 1. Create your standard cluster.
     ```sh
-    ibmcloud oc cluster create classic --zone <zone> --flavor <flavor> --hardware <shared_or_dedicated> --public-vlan <public_VLAN_ID> --private-vlan <private_VLAN_ID> --workers <number> [--operating-system (REDHAT_8_64)] --name <cluster_name> --version <major.minor.patch>_openshift --public-service-endpoint [--private-service-endpoint] [--pod-subnet] [--service-subnet] [--disable-disk-encrypt] [--sm-group GROUP] [--sm-instance INSTANCE] 
+    ibmcloud oc cluster create classic --zone <zone> --flavor <flavor> --hardware <shared_or_dedicated> --public-vlan <public_VLAN_ID> --private-vlan <private_VLAN_ID> --workers <number> [--operating-system (REDHAT_8_64)] --name <cluster_name> --version <major.minor.patch>_openshift --public-service-endpoint [--private-service-endpoint] [--pod-subnet] [--service-subnet] [--disable-disk-encrypt] [--sm-group GROUP] [--sm-instance INSTANCE] [--trusted-profile-id]
     ```
     {: pre}
 
@@ -213,7 +214,9 @@ Create your Classic cluster by using the {{site.data.keyword.cloud_notm}} CLI.
     `--sm-instance INSTANCE`
     :    The CRN of the {{site.data.keyword.secrets-manager_short}} instance. To get the CRN of an instance, run `ibmcloud oc ingress instance ls --cluster CLUSTER`.
 
-    
+
+    `--trusted-profile-id ID`
+    :   Specify the ID of an existing trusted profile to associate with the cluster. With trusted profiles, you can grant access to resources in your account without having to manage separate IAM credentials. See [Configuring a trusted profile](/docs/containers?topic=containers-configure-trusted-profile&interface=ui) for more information.
 
 
 1. Verify that the creation of the cluster was requested. For virtual machines, it can take a few minutes for the worker node machines to be ordered, and for the cluster to be set up and provisioned in your account. Bare metal physical machines are provisioned by manual interaction with IBM Cloud infrastructure, and can take more than one business day to complete.

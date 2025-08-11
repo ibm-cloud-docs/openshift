@@ -1,8 +1,8 @@
 ---
 
 copyright: 
-  years: 2014, 2024
-lastupdated: "2024-10-02"
+  years: 2014, 2025
+lastupdated: "2025-08-11"
 
 
 keywords: kubernetes, openshift
@@ -2175,3 +2175,9 @@ To monitor for instances where pod connectivity to {{site.data.keyword.blockstor
 1. Set the threshold to `>0` and set the severity you want to use for this alert.
 
 1. Select your notification channel and save the alert.
+
+
+## Assigning trusted profiles to block storage
+{: #block-classic-trusted-profile}
+
+You can use trusted profiles to grant different IBM Cloud identities access to resources in your account, including your storage solutions. Trusted profiles centralize access control, eliminate the need for long-lived API keys, and allow you to scope permissions to the exact minimum required for a specific task. For more information, see [Configuring a trusted profile for storage components](/docs/containers?topic=containers-configure-trusted-profile&interface=ui).

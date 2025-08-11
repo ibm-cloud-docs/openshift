@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2025
-lastupdated: "2025-05-27"
+lastupdated: "2025-08-11"
 
 
 keywords: kubernetes, openshift
@@ -164,6 +164,14 @@ If you want to integrate {{site.data.keyword.keymanagementserviceshort}} encrypt
 1. [Install the {{site.data.keyword.cos_full_notm}} plug-in](/docs/openshift?topic=openshift-storage_cos_install), or if you already installed the plug-in, [decide on the configuration](/docs/openshift?topic=openshift-storage_cos_install#configure_cos) for your {{site.data.keyword.cos_full_notm}} bucket.
 
 1. **Optional**: [Add your secret to the default storage classes](/docs/openshift?topic=openshift-storage_cos_install). [Storage Class Reference](/docs/openshift?topic=openshift-storage_cos_reference)
+
+## Assigning trusted profiles to COS storage
+{: #cos-trusted-profile}
+
+You can use trusted profiles to grant different IBM Cloud identities access to resources in your account, including your storage solutions. Trusted profiles centralize access control, eliminate the need for long-lived API keys, and allow you to scope permissions to the exact minimum required for a specific task. For more information, see [Configuring a trusted profile for storage components](/docs/containers?topic=containers-configure-trusted-profile&interface=ui).
+
+
+
 
 
 ## Limitations

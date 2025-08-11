@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2025
-lastupdated: "2025-08-07"
+lastupdated: "2025-08-11"
 
 
 keywords: openshift
@@ -285,6 +285,10 @@ subcollection: openshift
 [Release notes](/docs/openshift?topic=openshift-openshift-relnotes#openshift-relnotes)
 
 * [August 2025](/docs/openshift?topic=openshift-openshift-relnotes#openshift-aug25)
+
+    * [08 August 2025](/docs/openshift?topic=openshift-openshift-relnotes#openshift-aug0825)
+
+        * Trusted profiles
 
     * [07 August 2025](/docs/openshift?topic=openshift-openshift-relnotes#openshift-aug0725)
 
@@ -1821,6 +1825,8 @@ subcollection: openshift
 
 * [Set user permissions](/docs/openshift?topic=openshift-clusters#prepare-verify-permissions)
 
+* [Optional: Create a trusted profile](/docs/openshift?topic=openshift-clusters#prepare-trusted-profile)
+
 * [Plan your resource groups](/docs/openshift?topic=openshift-clusters#prepare-resource-groups)
 
 * [Cluster-specific account setup](/docs/openshift?topic=openshift-clusters#prepare-cluster-account)
@@ -2377,6 +2383,38 @@ subcollection: openshift
 {: #sitemap_managing_access_control}
 
 
+[Configuring a trusted profile for cluster components](/docs/openshift?topic=openshift-configure-trusted-profile#configure-trusted-profile)
+
+* [About trusted profiles](/docs/openshift?topic=openshift-configure-trusted-profile#tp-about)
+
+* [Minimum access requirements](/docs/openshift?topic=openshift-configure-trusted-profile#tp-minreqs)
+
+    * [Minimum requirements for all storage components](/docs/openshift?topic=openshift-configure-trusted-profile#tp-minreqs-all)
+
+    * [Minimum requirements for individual storage components](/docs/openshift?topic=openshift-configure-trusted-profile#tp-minreqs-component)
+
+    * [VPC block storage](/docs/openshift?topic=openshift-configure-trusted-profile#tp-minreqs-vpc-block)
+
+    * [Classic block storage](/docs/openshift?topic=openshift-configure-trusted-profile#tp-minreqs-classic-block)
+
+    * [VPC file storage](/docs/openshift?topic=openshift-configure-trusted-profile#tp-minreqs-vpc-file)
+
+    * [Classic file storage](/docs/openshift?topic=openshift-configure-trusted-profile#tp-minreqs-classic-file)
+
+    * [Cluster autoscaler](/docs/openshift?topic=openshift-configure-trusted-profile#tp-minreqs-autoscaler)
+
+    * [Object Storage](/docs/openshift?topic=openshift-configure-trusted-profile#tp-minreqs-cos)
+
+    * [ODF billing agent](/docs/openshift?topic=openshift-configure-trusted-profile#tp-minreqs-odf-billing)
+
+* [Set up a trusted profile in the CLI](/docs/openshift?topic=openshift-configure-trusted-profile&interface=cli#tp-setup-cli)
+
+* [Set up a trusted profile with the UI](/docs/openshift?topic=openshift-configure-trusted-profile&interface=ui#tp-setup-ui)
+
+* [Set up a trusted profile with the API](/docs/openshift?topic=openshift-configure-trusted-profile&interface=api#tp-setup-api)
+
+* [Limitations and considerations](/docs/openshift?topic=openshift-configure-trusted-profile&interface=api#tp-limitations)
+
 [Understanding Classic infrastructure credentials](/docs/openshift?topic=openshift-classic-credentials#classic-credentials)
 
 * [Accessing a different classic infrastructure account](/docs/openshift?topic=openshift-classic-credentials#credentials)
@@ -2414,6 +2452,10 @@ subcollection: openshift
 [Authorizing resources with IAM trusted profiles](/docs/openshift?topic=openshift-pod-iam-identity#pod-iam-identity)
 
 * [Creating an IAM trusted profile](/docs/openshift?topic=openshift-pod-iam-identity#iam-trusted-profile-create)
+
+* [Set the default trusted profile for the cluster](/docs/openshift?topic=openshift-pod-iam-identity#iam-trusted-profile-set)
+
+* [Get the details of your trusted profile](/docs/openshift?topic=openshift-pod-iam-identity#iam-trusted-profile-get)
 
 * [Configure your application pods to authenticate with {{site.data.keyword.cloud_notm}} services](/docs/openshift?topic=openshift-pod-iam-identity#iam-identity-pod)
 
@@ -3879,6 +3921,8 @@ subcollection: openshift
 
 * [Setting up monitoring for `limited` connectivity PVs](/docs/openshift?topic=openshift-block_storage#storage-block-vpc-limited-monitoring)
 
+* [Assigning trusted profiles to block storage](/docs/openshift?topic=openshift-block_storage#block-classic-trusted-profile)
+
 
 ## Setting up Block Storage for VPC
 {: #sitemap_setting_up_block_storage_for_vpc}
@@ -3922,6 +3966,8 @@ subcollection: openshift
 
 * [Understanding volume request capacity](/docs/openshift?topic=openshift-vpc-block#vpc-block-volume-capacity)
 
+* [Assigning trusted profiles to block storage](/docs/openshift?topic=openshift-vpc-block#block-vpc-trusted-profile)
+
 [Setting up snapshots with the {{site.data.keyword.block_storage_is_short}} cluster add-on](/docs/openshift?topic=openshift-vpc-volume-snapshot#vpc-volume-snapshot)
 
 * [Creating an app](/docs/openshift?topic=openshift-vpc-volume-snapshot#vpc-snapshot-deployment)
@@ -3939,14 +3985,6 @@ subcollection: openshift
 [Customizing the {{site.data.keyword.block_storage_is_short}} configmap](/docs/openshift?topic=openshift-storage-block-vpc-configmap#storage-block-vpc-configmap)
 
 * [{{site.data.keyword.block_storage_is_short}} configmap reference](/docs/openshift?topic=openshift-storage-block-vpc-configmap#storage-block-vpc-configmap-reference)
-
-[Setting up trusted profiles for the {{site.data.keyword.block_storage_is_short}} cluster add-on](/docs/openshift?topic=openshift-storage-block-vpc-trusted-profiles#storage-block-vpc-trusted-profiles)
-
-* [Enabling the {{site.data.keyword.block_storage_is_short}} cluster add-on](/docs/openshift?topic=openshift-storage-block-vpc-trusted-profiles#vpc-addon-enable-trusted)
-
-* [Setting up trusted profiles](/docs/openshift?topic=openshift-storage-block-vpc-trusted-profiles#vpc-block-setup-trusted)
-
-    * [Automatically creating a secret by using a Shell script](/docs/openshift?topic=openshift-storage-block-vpc-trusted-profiles#secret-create-truted-profile)
 
 [Setting up {{site.data.keyword.block_storage_is_short}} for unmanaged clusters](/docs/openshift?topic=openshift-vpc-block-storage-driver-unmanaged#vpc-block-storage-driver-unmanaged)
 
@@ -4065,6 +4103,8 @@ subcollection: openshift
 
     * [Cleaning up persistent storage](/docs/openshift?topic=openshift-file_storage#storage_remove_file)
 
+* [Assigning trusted profiles to file storage](/docs/openshift?topic=openshift-file_storage#file-classic-trusted-profile)
+
 
 ## Setting up File Storage for VPC
 {: #sitemap_setting_up_file_storage_for_vpc}
@@ -4077,6 +4117,8 @@ subcollection: openshift
 * [Enabling the add-on](/docs/openshift?topic=openshift-storage-file-vpc-install#file-vpc-addon-enable)
 
 * [Next steps](/docs/openshift?topic=openshift-storage-file-vpc-install#vpc-enable-next-steps)
+
+* [Assigning trusted profiles to file storage](/docs/openshift?topic=openshift-storage-file-vpc-install#file-vpc-trustedprofile)
 
 [Adding {{site.data.keyword.filestorage_vpc_short}} to apps](/docs/openshift?topic=openshift-storage-file-vpc-apps#storage-file-vpc-apps)
 
@@ -4144,6 +4186,8 @@ subcollection: openshift
     * [Prerequisites](/docs/openshift?topic=openshift-storage-cos-understand#cos-secret-prereqs)
 
     * [Creating an object storage secret in your cluster](/docs/openshift?topic=openshift-storage-cos-understand#cos-secret-create)
+
+* [Assigning trusted profiles to COS storage](/docs/openshift?topic=openshift-storage-cos-understand#cos-trusted-profile)
 
 * [Limitations](/docs/openshift?topic=openshift-storage-cos-understand#cos_limitations)
 
@@ -6219,6 +6263,22 @@ subcollection: openshift
     * [`ibmcloud oc worker-pool create satellite`](/docs/openshift?topic=openshift-kubernetes-service-cli#cs_worker_pool_create_sat)
 
     * [`ibmcloud oc zone add satellite`](/docs/openshift?topic=openshift-kubernetes-service-cli#cs_zone_add_sat)
+
+* [`ibmcloud oc experimental trusted-profile default get`](/docs/openshift?topic=openshift-kubernetes-service-cli#experimental-trusted-profile-default-get-cli)
+
+    * [Command options](/docs/openshift?topic=openshift-kubernetes-service-cli#experimental-trusted-profile-default-get-options)
+
+* [`ibmcloud oc experimental trusted-profile default set`](/docs/openshift?topic=openshift-kubernetes-service-cli#experimental-trusted-profile-default-set-cli)
+
+    * [Command options](/docs/openshift?topic=openshift-kubernetes-service-cli#experimental-trusted-profile-default-set-options)
+
+* [`ibmcloud oc experimental trusted-profile get`](/docs/openshift?topic=openshift-kubernetes-service-cli#experimental-trusted-profile-get-cli)
+
+    * [Command options](/docs/openshift?topic=openshift-kubernetes-service-cli#experimental-trusted-profile-get-options)
+
+* [`ibmcloud oc experimental trusted-profile set`](/docs/openshift?topic=openshift-kubernetes-service-cli#experimental-trusted-profile-set-cli)
+
+    * [Command options](/docs/openshift?topic=openshift-kubernetes-service-cli#experimental-trusted-profile-set-options)
 
 [CLI change log](/docs/openshift?topic=openshift-cs_cli_changelog#cs_cli_changelog)
 

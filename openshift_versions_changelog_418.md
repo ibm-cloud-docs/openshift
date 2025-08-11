@@ -3,7 +3,7 @@
 copyright:
   years: 2024, 2025
 
-lastupdated: "2025-08-04"
+lastupdated: "2025-08-11"
 
 
 keywords: change log, version history, 4.18_openshift
