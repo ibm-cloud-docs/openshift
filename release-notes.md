@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2025
-lastupdated: "2025-08-11"
+lastupdated: "2025-08-12"
 
 
 keywords: kubernetes, release notes, openshift, {{site.data.keyword.openshiftlong_notm}}
@@ -27,6 +27,13 @@ Looking for {{site.data.keyword.cloud_notm}} status, platform announcements, sec
 
 ## August 2025
 {: #openshift-aug25}
+
+### 12 August 2025
+{: #openshift-aug1225}
+{: release-note}
+
+{{site.data.keyword.openshiftlong_notm}} version 1.33 Kubernetes certification
+:   {{site.data.keyword.openshiftlong_notm}} version [1.33](/docs/containers?topic=containers-cs_versions_133) is now Kubernetes certified.
 
 ### 08 August 2025
 {: #openshift-aug0825}
