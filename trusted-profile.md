@@ -327,167 +327,172 @@ Once you add a trusted profile to a cluster, it cannot be removed and you cannot
     ```
     {: pre}
 	
-3. **For VPC clusters**: Attach access policies to VPC components. This example assigns the minimum permissions required for all storage components.  
+3. **For VPC clusters**: Attach access policies to VPC components. These examples assign the minimum permissions required for all storage components.  
        
-        ```sh
-        curl --request POST \
-        --url https://iam.test.cloud.ibm.com/v1/policies \
-        --header 'Content-Type: application/json' \
-        --data '{
-            "type": "access",
-            "description": "Writer, Operator role for VPC infrastructure services",
-            "subjects": [
-                {
-                    "attributes": [
-                        {
-                            "name": "iam_id",
-                            "value": "<IAM_PROFILE>"
-                        }
-                    ]
-                }
-            ],
-            "roles": [
-                {
-                    "role_id": "crn:v1:bluemix:public:iam::::serviceRole:Writer"
-                },
-                {
-                    "role_id": "crn:v1:bluemix:public:iam::::role:Editor"
-                }
-            ],
-            "resources": [
-                {
-                    "attributes": [
-                        {
-                            "name": "accountId",
-                            "value": "<ACCOUNT_ID>"
-                        },
-                        {
-                            "name": "serviceName",
-                            "value": "is"
-                        }
-                    ]
-                }
-            ]
-        }'
-        ```
-        {: codeblock}
+    ```curl
+    curl --request POST \
+    --url https://iam.test.cloud.ibm.com/v1/policies \
+    --header 'Content-Type: application/json' \
+    --data '{
+        "type": "access",
+        "description": "Writer, Operator role for VPC infrastructure services",
+        "subjects": [
+            {
+                "attributes": [
+                    {
+                        "name": "iam_id",
+                        "value": "<IAM_PROFILE>"
+                    }
+                ]
+            }
+        ],
+        "roles": [
+            {
+                "role_id": "crn:v1:bluemix:public:iam::::serviceRole:Writer"
+            },
+            {
+                "role_id": "crn:v1:bluemix:public:iam::::role:Editor"
+            }
+        ],
+        "resources": [
+            {
+                "attributes": [
+                    {
+                        "name": "accountId",
+                        "value": "<ACCOUNT_ID>"
+                    },
+                    {
+                        "name": "serviceName",
+                        "value": "is"
+                    }
+                ]
+            }
+        ]
+    }'
+    ```
+    {: codeblock}
 
-        ```sh
-        curl --request POST \
-        --url https://iam.test.cloud.ibm.com/v1/policies \
-        --header 'Content-Type: application/json' \
-        --data '{
-            "type": "access",
-            "description": "Editor role for billing services",
-            "subjects": [
-                {
-                    "attributes": [
-                        {
-                            "name": "iam_id",
-                            "value": "<IAM_PROFILE>"
-                        }
-                    ]
-                }
-            ],
-            "roles": [
-                {
-                    "role_id": "crn:v1:bluemix:public:iam::::role:Editor"
-                }
-            ],
-            "resources": [
-                {
-                    "attributes": [
-                        {
-                            "name": "accountId",
-                            "value": "<ACCOUNT_ID>"
-                        },
-                        {
-                            "name": "serviceName",
-                            "value": "billing"
-                        }
-                    ]
-                }
-            ]
-        }'
-            
-        curl --request POST \
-        --url https://iam.test.cloud.ibm.com/v1/policies \
-        --header 'Content-Type: application/json' \
-        --data '{	
-            "type": "access",
-            "description": "Administrator role for containers-kubernetes services",
-            "subjects": [
-                {
-                    "attributes": [
-                        {
-                            "name": "iam_id",
-                            "value": "<IAM_PROFILE>"
-                        }
-                    ]
-                }
-            ],
-            "roles": [
-                {
-                    "role_id": "crn:v1:bluemix:public:iam::::role:Administrator"
-                }
-            ],
-            "resources": [
-                {
-                    "attributes": [
-                        {
-                            "name": "accountId",
-                            "value": "<ACCOUNT_ID>"
-                        },
-                        {
-                            "name": "serviceName",
-                            "value": "containers-kubernetes"
-                        }
-                    ]
-                }
-            ]
-        }'
-            
-        curl --request POST \
-        --url https://iam.test.cloud.ibm.com/v1/policies \
-        --header 'Content-Type: application/json' \
-        --data '{	
-            "type": "access",
-            "subjects": [
-                {
-                    "attributes": [
-                        {
-                            "name": "iam_id",
-                            "value": "<IAM_PROFILE>"
-                        }
-                    ]
-                }
-            ],
-            "roles": [
-                {
-                    "role_id": "crn:v1:bluemix:public:iam::::role:Operator"
-                }
-            ],
-            "resources": [
-                {
-                    "attributes": [
-                        {
-                            "name": "accountId",
-                            "value": "<ACCOUNT_ID>"
-                        },
-                        {
-                            "name": "resource",
-                            "value": "<RESOURCE_GROUP_ID>"
-                        },
-                        {
-                            "name": "resourceType",
-                            "value": "resource-group"
-                        },
-                    ]
-                }
-            ]
-        }'
-        ```
-        {: codeblock}
+    ```curl
+    curl --request POST \
+    --url https://iam.test.cloud.ibm.com/v1/policies \
+    --header 'Content-Type: application/json' \
+    --data '{
+        "type": "access",
+        "description": "Editor role for billing services",
+        "subjects": [
+            {
+                "attributes": [
+                    {
+                        "name": "iam_id",
+                        "value": "<IAM_PROFILE>"
+                    }
+                ]
+            }
+        ],
+        "roles": [
+            {
+                "role_id": "crn:v1:bluemix:public:iam::::role:Editor"
+            }
+        ],
+        "resources": [
+            {
+                "attributes": [
+                    {
+                        "name": "accountId",
+                        "value": "<ACCOUNT_ID>"
+                    },
+                    {
+                        "name": "serviceName",
+                        "value": "billing"
+                    }
+                ]
+            }
+        ]
+    }'
+    ```
+    {: codeblock}
+
+    ```curl
+    curl --request POST \
+    --url https://iam.test.cloud.ibm.com/v1/policies \
+    --header 'Content-Type: application/json' \
+    --data '{	
+        "type": "access",
+        "description": "Administrator role for containers-kubernetes services",
+        "subjects": [
+            {
+                "attributes": [
+                    {
+                        "name": "iam_id",
+                        "value": "<IAM_PROFILE>"
+                    }
+                ]
+            }
+        ],
+        "roles": [
+            {
+                "role_id": "crn:v1:bluemix:public:iam::::role:Administrator"
+            }
+        ],
+        "resources": [
+            {
+                "attributes": [
+                    {
+                        "name": "accountId",
+                        "value": "<ACCOUNT_ID>"
+                    },
+                    {
+                        "name": "serviceName",
+                        "value": "containers-kubernetes"
+                    }
+                ]
+            }
+        ]
+    }'
+    {: codeblock}
+        
+    ```curl
+    curl --request POST \
+    --url https://iam.test.cloud.ibm.com/v1/policies \
+    --header 'Content-Type: application/json' \
+    --data '{	
+        "type": "access",
+        "subjects": [
+            {
+                "attributes": [
+                    {
+                        "name": "iam_id",
+                        "value": "<IAM_PROFILE>"
+                    }
+                ]
+            }
+        ],
+        "roles": [
+            {
+                "role_id": "crn:v1:bluemix:public:iam::::role:Operator"
+            }
+        ],
+        "resources": [
+            {
+                "attributes": [
+                    {
+                        "name": "accountId",
+                        "value": "<ACCOUNT_ID>"
+                    },
+                    {
+                        "name": "resource",
+                        "value": "<RESOURCE_GROUP_ID>"
+                    },
+                    {
+                        "name": "resourceType",
+                        "value": "resource-group"
+                    },
+                ]
+            }
+        ]
+    }
+    ```
+    {: codeblock}
 
 4. **For classic clusters**: Add permissions to the trusted profile by using the UI. 
     1. Log in to your IBM Cloud account and navigate to the Trusted Profiles page. 
