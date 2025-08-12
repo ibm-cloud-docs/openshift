@@ -1,9 +1,8 @@
-
 ---
 
 copyright: 
   years: 2025, 2025
-lastupdated: "2025-08-11"
+lastupdated: "2025-08-12"
 
 keywords: nhc010, exceeded security group rules quota
 
