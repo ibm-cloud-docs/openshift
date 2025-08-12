@@ -2413,8 +2413,6 @@ subcollection: openshift
 
 * [Set up a trusted profile with the API](/docs/openshift?topic=openshift-configure-trusted-profile&interface=api#tp-setup-api)
 
-* [Setting the trusted profile for a cluster or resource group](/docs/openshift?topic=openshift-configure-trusted-profile&interface=api#tp-set-cluster-rg)
-
 * [Limitations and considerations](/docs/openshift?topic=openshift-configure-trusted-profile&interface=api#tp-limitations)
 
 [Understanding Classic infrastructure credentials](/docs/openshift?topic=openshift-classic-credentials#classic-credentials)

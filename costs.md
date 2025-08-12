@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2025
-lastupdated: "2025-07-21"
+lastupdated: "2025-08-12"
 
 
 keywords: openshift, {{site.data.keyword.openshiftlong_notm}}, iro, openshift, red hat, red hat openshift
@@ -89,7 +89,8 @@ When you estimate the cost of a new cluster or worker node, the OCP licenses are
 ##### Deprecated: Old OCP licenses for existing worker nodes before 9 November 2020 or deprecated bare metal flavors
 {: #licenses-on-demand-old}
 
-a {{site.data.keyword.redhat_openshift_notm}} license is billed for every four virtual cores (or two physical cores) of the worker node flavor. You are charged for the entire license for each month that you have worker nodes in a `deployed` state. The monthly charge applies to both virtual and physical worker nodes. For example, if you create the cluster on 15 August and delete the cluster on 14 September, you are still charged for the OCP licenses for two monthly periods: August and September.
+A {{site.data.keyword.redhat_openshift_notm}} license is billed for every four virtual cores (or two physical cores) of the worker node flavor. You are charged for the entire license for each month that you have worker nodes in a `deployed` state. The monthly charge applies to both virtual and physical worker nodes. For example, if you create the cluster on 15 August and delete the cluster on 14 September, you are still charged for the OCP licenses for two monthly periods: August and September.
+
 * If you delete your worker node before the end of the month, your monthly license is available for other worker nodes in the same cluster. If the other worker nodes are not the same CPU size, you need additional licenses.
 * If you delete the cluster before the end of the month, you are still charged the entire monthly price for the {{site.data.keyword.redhat_openshift_notm}} license.
 
@@ -142,6 +143,7 @@ Subnets for {{site.data.keyword.openshiftlong_notm}} clusters vary by infrastruc
 
 When you create a multizone cluster or add zones to a single zone cluster, you must have a load balancer to health check Ingress and load balancer IP addresses in each zone, and forward requests to your apps across zones in the region.
 {: shortdesc}
+
 The type of load balancer that is automatically created varies depending on the type of cluster.
 * **Classic clusters**: A MZLB is automatically created for each multizone cluster. You can view the hourly rate in the pricing summary when you create the cluster.
 * **VPC clusters**: A Load Balancer for VPC is automatically created in your VPC for your cluster. For cost information, see [Pricing for Load Balancer for VPC](https://cloud.ibm.com/infrastructure/provision/vs){: external}.
