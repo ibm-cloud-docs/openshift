@@ -1259,13 +1259,6 @@ Static route add-on version patch update.
 :   For more information, see [the change log](/docs/openshift?topic=openshift-cl-add-ons-static-route).
 
 
-### 01 October 2024
-{: #openshift-oct0124}
-{: release-note}
-
-
-New! The {{site.data.keyword.cos_full_notm}} cluster add-on is available in Beta for allowlisted accounts.
-:   For more information, see the [Installing the {{site.data.keyword.cos_full_notm}} cluster add-on](/docs/openshift?topic=openshift-storage-cos-install-addon).
 
 
 

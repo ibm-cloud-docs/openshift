@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2025
-lastupdated: "2025-08-07"
+lastupdated: "2025-08-12"
 
 
 keywords: openshift, compliance, security standards, red hat openshift, openshift container platform, red hat, openshift architecture, red hat architecture, openshift dependencies,
@@ -197,7 +197,7 @@ Projects
 :   OpenShift Container Platform uses the Multus container network interface (CNI) plug-in to allow [multiple pod networks](https://docs.openshift.com/container-platform/4.18/networking/multiple_networks/understanding-multiple-networks.html){: external}. However, you can't configure the cluster to use multiple pod networks. {{site.data.keyword.openshiftlong_notm}} clusters support only Calico, which is set up for your cluster by default. If enabled, [Service Mesh](https://docs.redhat.com/documentation/openshift_container_platform/4.18/html/service_mesh/service-mesh-1-x){: external} uses the Multus plug-in.
 
 `openshift-network-operator`
-:   The [cluster network operator (CNO)](https://docs.redhat.com/en/documentation/openshift_container_platform/4.18/html/networking/networking-operators#cluster-network-operator){: external} manages the cluster network components that are set up by default, such as the CNI pod network provider plug-in and DNS operator.
+:   The [cluster network operator (CNO)](https://docs.redhat.com/en/documentation/openshift_container_platform/4.18/html/networking_operators/cluster-network-operator){: external} manages the cluster network components that are set up by default, such as the CNI pod network provider plug-in and DNS operator.
 
 `openshift-operator-lifecycle-manager`
 :   The [operator lifecycle manager (OLM)](https://docs.openshift.com/container-platform/4.18/operators/understanding/olm/olm-understanding-olm.html){: external} manages the lifecycle of all operators and the catalog that run in the cluster, including the operators for the default components and any custom operators that you add.

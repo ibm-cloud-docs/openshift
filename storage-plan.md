@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2025
-lastupdated: "2025-07-17"
+lastupdated: "2025-08-12"
 
 
 keywords: planning, storage, cluster, container storage, cloud storage, kubernetes service, openshift
@@ -257,7 +257,7 @@ The following sections show the options that you have in {{site.data.keyword.ope
 | Availability | High due to the distribution across zones or regions. | High when you replicate data across three worker nodes in different zones. | High if you set up multiple instances. |
 | Scalability | Scales automatically | Increase volume capacity by resizing the volume. To increase overall storage layer capacity, you must add worker nodes or remote block storage. Both scenarios require monitoring of capacity by the user. | Scales automatically | 
 | Encryption | Bring your own key to protect your data in transit and at rest with {{site.data.keyword.keymanagementservicelong_notm}}. |
-| Backup and recovery| Data is automatically replicated across multiple nodes for high durability. For more information, see the SLA in the [{{site.data.keyword.cos_full_notm}} service terms](http://www.ibm.com/support/customer/csol/terms/?id=i126-7857&lc=en){: external}. Use local or cloud snapshots to save the current state of a volume. For more information, see [Create and use local snapshots](https://docs.portworx.com/portworx-enterprise/operations/operate-kubernetes/storage-operations/create-snapshots){: external}. | Depends on the DBaaS |
+| Backup and recovery| Data is automatically replicated across multiple nodes for high durability. For more information, see the SLA in the [{{site.data.keyword.cos_full_notm}} service terms](http://www.ibm.com/support/customer/csol/terms/?id=i126-7857&lc=en){: external}. Use local or cloud snapshots to save the current state of a volume. For more information, see [Create and use local snapshots](https://docs.portworx.com/portworx-enterprise/operations/create-snapshots){: external}. | Depends on the DBaaS |
 | Common use cases | Multizone clusters. Geographically distributed data. Static big data. Static multimedia content | Web apps, backups, archives, stateful sets, geographically distributed data, running apps across multiple cloud providers, backing storage when you run your own database. High-performance access for single pods. Shared storage access across multiple pods and worker nodes. Multizone clusters, relational and non-relational databases, or geographically distributed data. |
 | Non-ideal use cases | Write-intensive workloads, random write operations, incremental data updates, or transaction databases. |
 {: class="simple-tab-table"}

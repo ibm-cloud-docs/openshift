@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2025
-lastupdated: "2025-07-21"
+lastupdated: "2025-08-12"
 
 
 keywords: openshift
@@ -301,7 +301,7 @@ If you want to use the [Ingress domain health monitoring](/docs/openshift?topic=
 By default, monitoring health requests are sent through HTTPS to port 443, therefore you must allowlist traffic from the below IP ranges targeted to port 443. If your health monitor is configured to use HTTP instead, allowlist traffic must be targeted to port 80. Additionally, if you use a custom TCP port, make sure to allow incoming traffic to that port.
 
 
-For more information see the [IBM NS1 Connect Documentation about monitoring](https://www.ibm.com/docs/en/ns1-connect?topic=monitoring) and the [Akamai GTM Documentation](https://learn.akamai.com/en-us/webhelp/global-traffic-management/global-traffic-management-user-guide/GUID-C1995591-5D7D-42B9-B54F-0CF6C7BD2532.html).
+For more information see the [IBM NS1 Connect Documentation about monitoring](https://www.ibm.com/docs/en/ns1-connect?topic=monitoring) and the [Akamai GTM Documentation](https://techdocs.akamai.com/gtm/docs/welcome-to-global-traffic-management).
 
 
 ##### Akamai GTM Monitoring Ranges

@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2025
-lastupdated: "2025-08-08"
+lastupdated: "2025-08-12"
 
 
 keywords: openshift, http2, quota, app protocol, application protocol
@@ -75,7 +75,7 @@ Review limitations that are specific to {{site.data.keyword.redhat_openshift_not
 | Cluster updates | You must [update your cluster](/docs/openshift?topic=openshift-update) by using the {{site.data.keyword.openshiftlong_notm}} API, CLI, or console tools. You can't update your cluster version from OpenShift Container Platform tools such as the {{site.data.keyword.redhat_openshift_notm}} web console. |
 | Container logs | If you use a container logging operator such as Fluentd to send logs to an ElasticSearch stack, you must [update the cluster logging deployment to use the `ibmc-block-gold` storage class](/docs/openshift?topic=openshift-health#oc_logging_operator). |
 | Private clusters | Depending on the infrastructure provider, your options for private clusters are limited. \n - **VPC**: When you create your VPC cluster in the {{site.data.keyword.cloud_notm}} console, your cluster has both a public and a private cloud service endpoint. If you want only a private cloud service endpoint, you must create the cluster [in the CLI](/docs/openshift?topic=openshift-cluster-create-vpc-gen2&interface=cli) instead, and include the `--disable-public-service-endpoint` option. If you include this option, your cluster is created with routers and Ingress controllers that expose your apps on the private network only by default. If you later want to expose apps to a public network, you must manually create public routers and Ingress controllers. \n - **Classic**: You can enable the public and private cloud service endpoint or the public cloud service endpoint only, but you can't enable the private cloud service endpoint only. After cluster creation, you can't later change the service endpoints.  |
-| Logging | To set up an [OpenShift Container Platform Elasticsearch, Fluentd, and Kibana (EFK) stack](https://docs.redhat.com/documentation/openshift_container_platform/4.18/html/logging/logging-6-1){: external}, see [installing the cluster logging operator](/docs/openshift?topic=openshift-health#oc_logging_operator).|
+| Logging | To set up an [OpenShift Container Platform Elasticsearch, Fluentd, and Kibana (EFK) stack](https://docs.redhat.com/documentation/openshift_container_platform/4.18/html/logging/index){: external}, see [installing the cluster logging operator](/docs/openshift?topic=openshift-health#oc_logging_operator).|
 | Service catalog | The service catalog is not supported. Use [Operators](/docs/openshift?topic=openshift-operators#operators_4) instead. Do not use the OperatorHub to install the service catalog. |
 | Service mesh | The Istio managed add-on is not supported. Instead, use the [Red Hat service mesh operator](https://docs.redhat.com/documentation/openshift_container_platform/4.18/html/service_mesh/service-mesh-1-x){: external}. **Note**: The default {{site.data.keyword.cloud_notm}} configuration of the routers enables host networking, which is not compatible with the service mesh network policy. For the service mesh ingress to work, [apply a network policy](https://gist.githubusercontent.com/kitch/39c504a2ed9e381c2aadea436d5b52e4/raw/d8efa69f41d41425b16bb363a881a98d40d3708c/mesh-policy.yaml){: external}.|
 {: caption="OpenShift Container Platform cluster limitations"}

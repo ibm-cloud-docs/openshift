@@ -3,7 +3,7 @@
 copyright:
   years: 2024, 2025
 
-lastupdated: "2025-08-11"
+lastupdated: "2025-08-12"
 
 
 keywords: change log, version history, 4.16_openshift
@@ -49,7 +49,7 @@ The following table shows the changes that are in the master fix pack 4.16.43_15
 | Component | Previous | Current | Description |
 | --- | --- | --- | --- |
 | Calico | v3.28.4 | v3.28.5 | See the [Calico release notes](https://docs.tigera.io/calico/3.28/release-notes/#calico-open-source-3285-bug-fix-update){: external}. |
-| Calico API server | v3.28.4 | v3.28.5 | See the [Calico release notes](https://docs.projectcalico.org/releases){: external}. |
+| Calico API server | v3.28.4 | v3.28.5 | See the [Calico release notes](https://docs.tigera.io/archive){: external}. |
 | Cluster health image | v1.6.9 | v1.6.10 | New version contains updates and security fixes. |
 | {{site.data.keyword.cloud_notm}} Block Storage driver and plug-in | v2.5.19 | v2.5.20 | New version contains updates and security fixes. |
 | {{site.data.keyword.cloud_notm}} Controller Manager | v1.29.15-12 | v1.29.15-16 | New version contains updates and security fixes. |

@@ -684,10 +684,6 @@ subcollection: openshift
 
         * Static route add-on version patch update.
 
-    * [01 October 2024](/docs/openshift?topic=openshift-openshift-relnotes#openshift-oct0124)
-
-        * New! The {{site.data.keyword.cos_full_notm}} cluster add-on is available in Beta for allowlisted accounts.
-
 * [September 2024](/docs/openshift?topic=openshift-openshift-relnotes#openshift-sep24)
 
     * [26 September 2024](/docs/openshift?topic=openshift-openshift-relnotes#openshift-sep2624)
