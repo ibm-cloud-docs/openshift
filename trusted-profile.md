@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2025, 2025
-lastupdated: "2025-08-11"
+lastupdated: "2025-08-12"
 
 
 keywords: trusted profiles, containers, block storage, openshift
@@ -101,8 +101,6 @@ Add the permissions in the following table. To enable these permissions, you mus
 | `Devices` | **Storage Manage**  |  Enables attachment, detachment, and configuration of Classic block storage on devices.  |
 | `Sales` | **Add/Upgrade Storage(Storage Layer)** | Grants permission to order, upgrade, or modify Classic storage offerings via the Sales APIs. |
 {: caption="Minimum permissions for Classic Block" caption-side="bottom"}
-
-Additionally you must enable the **Add/Upgrade Storage (Storage Layer)** permission. To enable this permission, navigate to the [Trusted profile dashboard](https://cloud.ibm.com/iam/trusted-profiles){: external} in the UI and select the relevant trusted profile. Click **Classic infrastructure**, then expand the options under **Sales** to find the permission. 
 
 Compute service type  in compute resource  tab instead of Compute resources
 
