@@ -286,10 +286,6 @@ subcollection: openshift
 
 * [August 2025](/docs/openshift?topic=openshift-openshift-relnotes#openshift-aug25)
 
-    * [12 August 2025](/docs/openshift?topic=openshift-openshift-relnotes#openshift-aug1225)
-
-        * {{site.data.keyword.openshiftlong_notm}} version 1.33 Kubernetes certification
-
     * [08 August 2025](/docs/openshift?topic=openshift-openshift-relnotes#openshift-aug0825)
 
         * Trusted profiles
