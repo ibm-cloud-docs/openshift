@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2025
-lastupdated: "2025-07-07"
+lastupdated: "2025-08-12"
 
 
 keywords: portworx, kubernetes, openshift
@@ -124,7 +124,7 @@ When you added storage from your Portworx cluster to your app, you have three ma
 You can exclude worker nodes from your Portworx cluster or remove the entire Portworx cluster if you don't want to use Portworx anymore.
 
 
-Removing your Portworx cluster removes all the data from your Portworx cluster. Make sure to [create a snapshot for your data and save this snapshot to the cloud](https://docs.portworx.com/portworx-enterprise/operations/operate-kubernetes/storage-operations/create-snapshots){: external}.
+Removing your Portworx cluster removes all the data from your Portworx cluster. Make sure to [create a snapshot for your data and save this snapshot to the cloud](https://docs.portworx.com/portworx-enterprise/operations/create-snapshots){: external}.
 {: important}
 
 - **Remove a worker node from the Portworx cluster:** If you want to remove a worker node that runs Portworx and stores data in your Portworx cluster,  you must migrate existing pods to remaining worker nodes and then uninstall Portworx from the node. For more information, see [Decommission a Portworx node in Kubernetes](https://docs.portworx.com/portworx-enterprise/platform/uninstall/decommission-a-node){: external}.

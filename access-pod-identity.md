@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2025
-lastupdated: "2025-08-11"
+lastupdated: "2025-08-12"
 
 
 keywords: kubernetes, openshift, infrastructure, rbac, policy
@@ -44,15 +44,15 @@ To create a trusted profile in your account, see [Creating trusted profiles](/do
 ## Set the default trusted profile for the cluster
 {: #iam-trusted-profile-set}
 
-To set a trusted profile for a single cluster, run the [`ibmcloud oc experimental trusted-profile set` command](https://test.cloud.ibm.com/docs/containers?topic=containers-kubernetes-service-cli-automated#experimental-trusted-profile-set-cli).
+To set a trusted profile for a single cluster, run the [`ibmcloud oc experimental trusted-profile set` command](/docs/containers?topic=containers-kubernetes-service-cli#experimental-trusted-profile-set-cli).
 
-If you want all of the clusters in a resource group to use the same trusted profile, run the [`ibmcloud oc experimental trusted-profile default set` command](https://test.cloud.ibm.com/docs/containers?topic=containers-kubernetes-service-cli-automated#experimental-trusted-profile-default-set-cli). 
+If you want all the clusters in a resource group to use the same trusted profile, run the [`ibmcloud oc experimental trusted-profile default set` command](/docs/containers?topic=containers-kubernetes-service-cli#experimental-trusted-profile-default-set-cli). 
 
 
 ## Get the details of your trusted profile
 {: #iam-trusted-profile-get}
 
-To get the default trusted profile for clusters in the same resource group, run the [`ibmcloud oc experimental trusted-profile default get` command](https://test.cloud.ibm.com/docs/containers?topic=containers-kubernetes-service-cli-automated#experimental-trusted-profile-default-get-cli).
+To get the default trusted profile for clusters in the same resource group, run the [`ibmcloud oc experimental trusted-profile default get` command](/docs/containers?topic=containers-kubernetes-service-cli#experimental-trusted-profile-default-get-cli).
 
 
 ## Configure your application pods to authenticate with {{site.data.keyword.cloud_notm}} services
@@ -66,7 +66,7 @@ To complete these steps, you do not need to have the administrator access role. 
 
 Before you begin:
 * [Access your {{site.data.keyword.redhat_openshift_notm}} cluster](/docs/openshift?topic=openshift-access_cluster).
-* Make sure that your account administrator [created an IAM trusted profile for your cluster](/docs/openshift?topic=openshift-pod-iam-identity&interface=api#iam-identity-create-api).
+* Make sure that your account administrator [created an IAM trusted profile for your cluster](/docs/openshift?topic=openshift-pod-iam-identity#iam-trusted-profile-create).
 
 To configure your application pods to authenticate with {{site.data.keyword.cloud_notm}} services:
 

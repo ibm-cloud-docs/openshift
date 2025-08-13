@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2025
-lastupdated: "2025-08-12"
+lastupdated: "2025-08-13"
 
 
 keywords: openshift
@@ -683,10 +683,6 @@ subcollection: openshift
         * Storage Operator cluster add-on patch update.
 
         * Static route add-on version patch update.
-
-    * [01 October 2024](/docs/openshift?topic=openshift-openshift-relnotes#openshift-oct0124)
-
-        * New! The {{site.data.keyword.cos_full_notm}} cluster add-on is available in Beta for allowlisted accounts.
 
 * [September 2024](/docs/openshift?topic=openshift-openshift-relnotes#openshift-sep24)
 
@@ -6432,6 +6428,8 @@ subcollection: openshift
 * [`istio` 1.23](/docs/openshift?topic=openshift-supported-cluster-addon-versions#istio-1.23)
 
 * [`openshift-ai` 416](/docs/openshift?topic=openshift-supported-cluster-addon-versions#openshift-ai-416)
+
+* [`openshift-ai` 417](/docs/openshift?topic=openshift-supported-cluster-addon-versions#openshift-ai-417)
 
 * [`openshift-data-foundation` 4.12.0](/docs/openshift?topic=openshift-supported-cluster-addon-versions#openshift-data-foundation-4.12.0)
 

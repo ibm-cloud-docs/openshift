@@ -3,7 +3,7 @@
 copyright:
   years: 2024, 2025
 
-lastupdated: "2025-08-11"
+lastupdated: "2025-08-13"
 
 
 keywords: change log, version history, 4.18_openshift
@@ -49,7 +49,7 @@ The following table shows the changes that are in the master fix pack 4.18.19_15
 | Component | Previous | Current | Description |
 | --- | --- | --- | --- |
 | Calico | v3.29.3 | v3.29.4 | See the [Calico release notes](https://docs.tigera.io/calico/3.29/release-notes/#calico-open-source-3294-bug-fix-release){: external}. |
-| Calico API server | v3.29.2 | v3.29.4 | See the [Calico release notes](https://docs.projectcalico.org/releases){: external}. |
+| Calico API server | v3.29.2 | v3.29.4 | See the [Calico release notes](https://docs.tigera.io/archive){: external}. |
 | Cluster health image | v1.6.8 | v1.6.10 | New version contains updates and security fixes. |
 | {{site.data.keyword.cloud_notm}} Block Storage driver and plug-in | v2.5.19 | v2.5.20 | New version contains updates and security fixes. |
 | {{site.data.keyword.cloud_notm}} Controller Manager | v1.31.9-4 | v1.31.10-4 | New version contains updates and security fixes. |
@@ -58,9 +58,10 @@ The following table shows the changes that are in the master fix pack 4.18.19_15
 | Key Management Service provider | v2.10.13 | v2.10.15 | New version contains updates and security fixes. |
 | Load balancer and load balancer monitor for {{site.data.keyword.cloud_notm}} Provider | 3232 | 3347 | New version contains updates and security fixes. |
 | Portieris admission controller | v0.13.26 | v0.13.29 | See the [Portieris admission controller release notes](https://github.com/{{site.data.keyword.IBM_notm}}/portieris/releases/tag/v0.13.29){: external}. |
-| {{site.data.keyword.openshiftlong_notm}}. | 4.18.12 | 4.18.19 | See the [{{site.data.keyword.openshiftlong_notm}} release notes](https://docs.openshift.com/container-platform/4.18/release_notes/ocp-4-18-release-notes.html#ocp-4-18-19){: external}. |
+| {{site.data.keyword.openshiftlong_notm}}. | 4.18.12 | 4.18.19 | See the [{{site.data.keyword.openshiftlong_notm}} release notes](https://docs.redhat.com/en/documentation/openshift_container_platform/4.18/html/release_notes/ocp-4-18-release-notes#ocp-4-18-19){: external}. |
 | Tigera Operator | v1.36.8 | v1.36.11 | See the [Tigera Operator release notes](https://github.com/tigera/operator/releases/tag/v1.36.11){: external}. |
 {: caption="Changes since version 4.18.11_1547_openshift" caption-side="bottom"}
+
 
 
 ### Worker node fix pack 4.18.20_1553_openshift, released 28 July 2025
@@ -78,6 +79,7 @@ The following table shows the components included in the worker node fix pack 4.
 {: #cl-boms-41820_1553_openshift_W-component-table}
 
 
+
 ### Worker node fix pack 4.18.19_1539_openshift, released 14 July 2025
 {: #cl-boms-41819_1539_openshift_W}
 
@@ -93,6 +95,7 @@ The following table shows the components included in the worker node fix pack 4.
 {: #cl-boms-41819_1539_openshift_W-component-table}
 
 
+
 ### Worker node fix pack 4.18.18_1539_openshift, released 01 July 2025
 {: #cl-boms-41818_1539_openshift_W}
 
@@ -106,6 +109,7 @@ The following table shows the components included in the worker node fix pack 4.
 |HAProxy|951efd90b46e95a54751966c644ac37c4c901f92|N/A|
 {: caption="4.18.18_1539_openshift fix pack." caption-side="bottom"}
 {: #cl-boms-41818_1539_openshift_W-component-table}
+
 
 
 ### Master fix pack 4.18.11_1547_openshift, released 18 June 2025
@@ -126,6 +130,7 @@ The following table shows the changes that are in the master fix pack 4.18.11_15
 {: caption="Changes since version 4.18.11_1544_openshift" caption-side="bottom"}
 
 
+
 ### Worker node fix pack 4.18.17_1539_openshift, released 16 June 2025
 {: #cl-boms-41817_1539_openshift_W}
 
@@ -139,6 +144,7 @@ The following table shows the components included in the worker node fix pack 4.
 |HAProxy|951efd90b46e95a54751966c644ac37c4c901f92|Resolves the following CVEs: [CVE-2025-4802](https://nvd.nist.gov/vuln/detail/CVE-2025-4802){: external}, [CVE-2025-32414](https://nvd.nist.gov/vuln/detail/CVE-2025-32414){: external}, and [CVE-2025-3576](https://nvd.nist.gov/vuln/detail/CVE-2025-3576){: external}.|
 {: caption="4.18.17_1539_openshift fix pack." caption-side="bottom"}
 {: #cl-boms-41817_1539_openshift_W-component-table}
+
 
 
 ### Worker node fix pack 4.18.15_1539_openshift, released 04 June 2025
@@ -156,6 +162,7 @@ The following table shows the components included in the worker node fix pack 4.
 {: #cl-boms-41815_1539_openshift_W-component-table}
 
 
+
 ### Master fix pack 4.18.11_1543_openshift, released 28 May 2025
 {: #41811_1544_openshift_M}
 
@@ -168,6 +175,7 @@ The following table shows the changes that are in the master fix pack 4.18.11_15
 | {{site.data.keyword.cloud_notm}} Controller Manager | v1.31.8-3 | v1.31.9-1 | New version contains updates and security fixes. |
 | {{site.data.keyword.filestorage_full_notm}} for Classic plug-in and monitor | 449 | 450 | New version contains updates and security fixes. |
 {: caption="Changes since version 4.18.11_1543_openshift" caption-side="bottom"}
+
 
 
 ### Master fix pack 4.18.11_1544_openshift and worker node fix pack 4.18.11_1541_openshift, released 27 May 2025

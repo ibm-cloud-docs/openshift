@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2025
-lastupdated: "2025-07-07"
+lastupdated: "2025-08-12"
 
 
 keywords: portworx, kubernetes, openshift
@@ -26,7 +26,7 @@ Review frequently asked questions to learn more about Portworx and how Portworx 
 
 An SDS solution abstracts storage devices of various types, sizes, or from different vendors that are attached to the worker nodes in your cluster. Worker nodes with available storage on hard disks are added as a node to a storage cluster. In this cluster, the physical storage is virtualized and presented as a virtual storage pool to the user. The storage cluster is managed by the SDS software. If data must be stored on the storage cluster, the SDS software decides where to store the data for highest availability. Your virtual storage comes with a common set of capabilities and services that you can leverage without caring about the actual underlying storage architecture.
 
-[Portworx](https://portworx.com/services/kubernetes-storage/){: external} is a highly available software-defined storage solution that you can use to manage local persistent storage for your containerized databases and other stateful apps, or to share data between pods across multiple zones.
+[Portworx](https://portworx.com/products/portworx-enterprise){: external} is a highly available software-defined storage solution that you can use to manage local persistent storage for your containerized databases and other stateful apps, or to share data between pods across multiple zones.
 {: shortdesc}
 
 An software defined storage (SDS), such as Portworx, solution abstracts storage devices of various types, sizes, or from different vendors that are attached to the worker nodes in your cluster. Worker nodes with available storage on hard disks are added as a node to a storage cluster. In this cluster, the physical storage is virtualized and presented as a virtual storage pool to the user. The storage cluster is managed by the SDS software. If data must be stored on the storage cluster, the SDS software decides where to store the data for highest availability. Your virtual storage comes with a common set of capabilities and services that you can leverage without caring about the actual underlying storage architecture.
@@ -41,7 +41,7 @@ An software defined storage (SDS), such as Portworx, solution abstracts storage 
 |Highly available data with volume replication|Portworx automatically replicates data in your volumes across worker nodes and zones in your cluster so that your data can always be accessed and that your stateful app can be rescheduled to another worker node in case of a worker node failure or reboot. |
 |Support to run `hyper-converged`|Portworx can be configured to run [`hyper-converged`](https://docs.portworx.com/portworx-enterprise/concepts/kubernetes-storage-101/hyperconvergence){: external} to ensure that your compute resources and the storage are always placed onto the same worker node. When your app must be rescheduled, Portworx moves your app to a worker node where one of your volume replicas resides to ensure local-disk access speed and high performance for your stateful app. |
 |Encrypt data with {{site.data.keyword.keymanagementservicelong_notm}}|You can [set up {{site.data.keyword.keymanagementservicelong_notm}} encryption keys](/docs/openshift?topic=openshift-storage_portworx_encryption) that are secured by FIPS 140-2 Level 2 certified cloud-based hardware security modules (HSMs) to protect the data in your volumes. You can choose between using one encryption key to encrypt all your volumes in a cluster or using one encryption key for each volume. Portworx uses this key to encrypt data at rest and during transit when data is sent to a different worker node.|
-|Built-in snapshots and cloud backups|You can save the current state of a volume and its data by creating a [Portworx snapshot](https://docs.portworx.com/portworx-enterprise/operations/operate-kubernetes/storage-operations/create-snapshots){: external}. Snapshots can be stored on your local Portworx cluster or in the cloud.|
+|Built-in snapshots and cloud backups|You can save the current state of a volume and its data by creating a [Portworx snapshot](https://docs.portworx.com/portworx-enterprise/operations/create-snapshots){: external}. Snapshots can be stored on your local Portworx cluster or in the cloud.|
 |Integrated monitoring |You can view the health of your Portworx cluster, including the number of available storage nodes, volumes and available capacity, and analyze your data in Prometheus, Grafana, or Kibana.|
 {: caption="Benefits of using Portworx" caption-side="bottom"}
 
@@ -126,7 +126,7 @@ Creating snapshots of your Portworx volumes
 :   You can save the current state of a volume and its data by creating a Portworx snapshot. Snapshots can be stored on your local Portworx cluster or in the Cloud. For more information, see [Create and use local snapshots](https://docs.portworx.com/portworx-enterprise/deploy-your-applications/application-install-with-kubernetes/cassandra/snapshots){: external}.
 
 Monitoring and managing your Portworx cluster with Lighthouse
-:   You can view the health of your Portworx cluster, including the number of available storage nodes, volumes and available capacity, and analyze your data in [Prometheus, Grafana, or Kibana](https://docs.portworx.com/portworx-enterprise/operations/operate-kubernetes/monitoring){: external}.
+:   You can view the health of your Portworx cluster, including the number of available storage nodes, volumes and available capacity, and analyze your data in [Prometheus, Grafana, or Kibana](https://docs.portworx.com/portworx-enterprise/operations/monitoring){: external}.
 
 Configuring Autopilot 
-:   You can monitor your cluster resources and specify conditions along with actions it should take when those conditions occur. For more information, refer to the [Autopilot docs](https://docs.portworx.com/portworx-enterprise/operations/operate-kubernetes/autopilot){: external}.
+:   You can monitor your cluster resources and specify conditions along with actions it should take when those conditions occur. For more information, refer to the [Autopilot docs](https://docs.portworx.com/portworx-enterprise/operations/scale-portworx-cluster/autopilot){: external}.

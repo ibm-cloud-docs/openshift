@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2025
-lastupdated: "2025-08-07"
+lastupdated: "2025-08-13"
 
 
 keywords: openshift
@@ -305,7 +305,7 @@ Depending on the network that you want to connect your worker nodes to, you can 
 ### Securely expose apps with routes
 {: #expose-apps-with-routes}
 
-If you want to allow incoming network traffic from the internet, you can expose your apps by using [routes](https://docs.openshift.com/container-platform/4.18/networking/routes/route-configuration.html){: external}.  
+If you want to allow incoming network traffic from the internet, you can expose your apps by using [routes](https://docs.redhat.com/en/documentation/openshift_container_platform/4.18/html/ingress_and_load_balancing/configuring-routes){: external}.  
 {: shortdesc}
 
 Every {{site.data.keyword.redhat_openshift_notm}} cluster is automatically set up with a {{site.data.keyword.redhat_openshift_notm}} router that is assigned a unique domain name and secured with a TLS certificate. When you expose your app by using a route, your app is assigned a URL from the {{site.data.keyword.redhat_openshift_notm}} router.
@@ -384,7 +384,7 @@ To access the logs of your cluster components, set up [{{site.data.keyword.logs_
 How can I monitor the health and performance of my cluster?
 :   You can verify the health, capacity, and performance of your apps, services, and worker nodes by monitoring your cluster components and compute resources from the {{site.data.keyword.openshiftlong_notm}} console or CLI, such as the CPU and memory usage. To view more in-depth metrics for your cluster, you can use the built-in monitoring capabilities that are based on open source technologies, such as [Prometheus and Grafana](https://docs.openshift.com/en/container-platform/4.18/virt/monitoring/virt-monitoring-overview.html){: external}. Prometheus is automatically installed when you create the cluster and you can use the tool to access real-time cluster and app metrics. Prometheus metrics are not stored persistently. To access historic metrics and to compare metrics across multiple clusters, use [{{site.data.keyword.mon_full_notm}}](/docs/openshift?topic=openshift-health-monitor) instead.
 
-To set up a host-based intrusion detection system (HIDS) and security event log monitoring (SELM), install third-party tools that are designed to monitor your cluster and containerized apps to detect intrusion or misuse, such as [Twistlock](https://www.paloaltonetworks.com/prisma/cloud){: external} or the [Sysdig `Falco` project](https://sysdig.com/opensource/falco/){: external}.
+To set up a host-based intrusion detection system (HIDS) and security event log monitoring (SELM), install third-party tools that are designed to monitor your cluster and containerized apps to detect intrusion or misuse, such as [Twistlock](https://www.paloaltonetworks.com/prisma/cloud){: external} or the [Sysdig `Falco` project](https://www.sysdig.com/opensource/falco){: external}.
 
 How can I audit events that happen in my cluster?
 :   You can [set up {{site.data.keyword.logs_full_notm}} in your {{site.data.keyword.openshiftlong_notm}} cluster](/docs/openshift?topic=openshift-at_events_ref). For more information, view the Learn more about [{{site.data.keyword.logs_full_notm}} documentation](/docs/cloud-logs?topic=cloud-logs-about-cl).

@@ -209,19 +209,19 @@ Once you add a trusted profile to a cluster, it cannot be removed and you cannot
     ```
     {: pre}
 
-2. Run the command to create a trusted profile. For a complete list of command options, see the [IAM CLI docs](/docs/account?topic=account-ibmcloud_commands_iam&q=tp-rule-create&tags=account#ibmcloud_iam_trusted_profile_create).
+2. Run the command to create a trusted profile. For a complete list of command options, see the [IAM CLI docs](/docs/account?topic=account-ibmcloud_commands_iam#ibmcloud_iam_trusted_profile_create).
     ```sh
     ibmcloud iam trusted-profile-create NAME --description "Identity for storage"
     ```
     {: pre}
 
-3. Attach a rule to scope usage to the `kube‑system` namespace. For a complete list of command options, see the [IAM CLI docs](/docs/account?topic=account-ibmcloud_commands_iam&q=tp-rule-create&tags=account#ibmcloud_iam_trusted_profile_rule_create). 
+3. Attach a rule to scope usage to the `kube‑system` namespace. For a complete list of command options, see the [IAM CLI docs](/docs/account?topic=account-ibmcloud_commands_iam#ibmcloud_iam_trusted_profile_rule_create). 
     ```sh
     ibmcloud iam trusted-profile-rule-create --name NAME --type Profile-CR --cr-type ROKS_SA  --conditions claim:namespace,operator:EQUALS,value:kube-system 
     ```
     {: pre}
 
-4. **For VPC clusters**: Create and assign access policies to the trusted profile. This example assigns the minimum permissions required for all storage components. For a list of permissions required for individual components only, see [Minimum requirements for individual storage components](#tp-minreqs-component). Specify the name or ID of the trusted profile you want to assign the policy to. For a complete list of command options, see the [IAM CLI docs](docs/account?topic=account-ibmcloud_commands_iam&q=tp-rule-create&tags=account#ibmcloud_iam_trusted_profile_policy_create). This step does not apply to classic clusters. 
+4. **For VPC clusters**: Create and assign access policies to the trusted profile. This example assigns the minimum permissions required for all storage components. For a list of permissions required for individual components only, see [Minimum requirements for individual storage components](#tp-minreqs-component). Specify the name or ID of the trusted profile you want to assign the policy to. For a complete list of command options, see the [IAM CLI docs](/docs/account?topic=account-ibmcloud_commands_iam#ibmcloud_iam_trusted_profile_policy_create). This step does not apply to classic clusters. 
     Add policies for the VPC Infrastructure service. 
 
     ```sh
