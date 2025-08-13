@@ -58,7 +58,7 @@ The following table shows the changes that are in the master fix pack 4.18.19_15
 | Key Management Service provider | v2.10.13 | v2.10.15 | New version contains updates and security fixes. |
 | Load balancer and load balancer monitor for {{site.data.keyword.cloud_notm}} Provider | 3232 | 3347 | New version contains updates and security fixes. |
 | Portieris admission controller | v0.13.26 | v0.13.29 | See the [Portieris admission controller release notes](https://github.com/{{site.data.keyword.IBM_notm}}/portieris/releases/tag/v0.13.29){: external}. |
-| {{site.data.keyword.openshiftlong_notm}}. | 4.18.12 | 4.18.19 | See the [{{site.data.keyword.openshiftlong_notm}} release notes](https://docs.openshift.com/container-platform/4.18/release_notes/ocp-4-18-release-notes.html#ocp-4-18-19){: external}. |
+| {{site.data.keyword.openshiftlong_notm}}. | 4.18.12 | 4.18.19 | See the [{{site.data.keyword.openshiftlong_notm}} release notes](https://docs.redhat.com/en/documentation/openshift_container_platform/4.18/html/release_notes/ocp-4-18-release-notes#ocp-4-18-19){: external}. |
 | Tigera Operator | v1.36.8 | v1.36.11 | See the [Tigera Operator release notes](https://github.com/tigera/operator/releases/tag/v1.36.11){: external}. |
 {: caption="Changes since version 4.18.11_1547_openshift" caption-side="bottom"}
 

@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2025
-lastupdated: "2025-08-12"
+lastupdated: "2025-08-13"
 
 
 keywords: openshift
@@ -305,7 +305,7 @@ Depending on the network that you want to connect your worker nodes to, you can 
 ### Securely expose apps with routes
 {: #expose-apps-with-routes}
 
-If you want to allow incoming network traffic from the internet, you can expose your apps by using [routes](https://docs.openshift.com/container-platform/4.18/networking/routes/route-configuration.html){: external}.  
+If you want to allow incoming network traffic from the internet, you can expose your apps by using [routes](https://docs.redhat.com/en/documentation/openshift_container_platform/4.18/html/ingress_and_load_balancing/configuring-routes){: external}.  
 {: shortdesc}
 
 Every {{site.data.keyword.redhat_openshift_notm}} cluster is automatically set up with a {{site.data.keyword.redhat_openshift_notm}} router that is assigned a unique domain name and secured with a TLS certificate. When you expose your app by using a route, your app is assigned a URL from the {{site.data.keyword.redhat_openshift_notm}} router.
