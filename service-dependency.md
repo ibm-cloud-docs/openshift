@@ -2,7 +2,7 @@
 
 copyright:
   years: 2024, 2025
-lastupdated: "2025-07-22"
+lastupdated: "2025-08-13"
 
 keywords:
 
@@ -53,7 +53,7 @@ The following table provides the dependency listing of this service following a 
 | IBM Cloud Identity and Access Management | Access management, Availability, Instance control, Operations, Security compliance | No | Both |  [Global](/docs/resiliency?topic=resiliency-ha-redundancy#global-platform)  |
 | IBM Cloud Global Search and Tagging | Availability | No | Both |  [Global](/docs/resiliency?topic=resiliency-ha-redundancy#global-platform)  |
 | IBM Cloud DNS Services | Availability, Disaster recovery | Yes | Both |  Same region  |
-| IBM Cloud Databases - databases-for-postgresql | Availability, Instance control, Operations | No | Both |  us-east  |
+| ibm-cloud-databases | Availability, Instance control, Operations | No | Both |  us-east  |
 | IBM Cloud Load Balancer for VPC | Availability, Operations | No | Both |  Same zone  |
 | IBM Cloud Bare Metal | Availability, Instance control, Operations | No | Both |  Same data center  |
 | Akamai | Availability, Instance control | No | Both |  [Global](/docs/resiliency?topic=resiliency-ha-redundancy#global-platform)  |

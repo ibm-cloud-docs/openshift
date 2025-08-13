@@ -98,7 +98,7 @@ Review the following list of supported cluster add-ons. Each add-on version can 
 
 - Supported Kubernetes cluster versions:  `N/A` 
 
-- Supported OpenShift cluster versions: `>=4.4.0 <4.20.0`
+- Supported OpenShift cluster versions: `>=4.4.0 <4.19.0`
 
 
 
@@ -117,15 +117,6 @@ Review the following list of supported cluster add-ons. Each add-on version can 
 - Supported Kubernetes cluster versions:  `N/A` 
 
 - Supported OpenShift cluster versions: `>=4.16.0 <4.18.0`
-
-
-
-## `openshift-ai` 417 
-{: #openshift-ai-417}
-
-- Supported Kubernetes cluster versions:  `N/A` 
-
-- Supported OpenShift cluster versions: `>=4.17.0 <4.19.0`
 
 
 
