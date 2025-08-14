@@ -286,6 +286,10 @@ subcollection: openshift
 
 * [August 2025](/docs/openshift?topic=openshift-openshift-relnotes#openshift-aug25)
 
+    * [12 August 2025](/docs/openshift?topic=openshift-openshift-relnotes#openshift-aug1225)
+
+        * CLI version `1.0.715` is available.
+
     * [08 August 2025](/docs/openshift?topic=openshift-openshift-relnotes#openshift-aug0825)
 
         * Trusted profiles
@@ -6279,6 +6283,8 @@ subcollection: openshift
 [CLI change log](/docs/openshift?topic=openshift-cs_cli_changelog#cs_cli_changelog)
 
 * [Version 1.0](/docs/openshift?topic=openshift-cs_cli_changelog#10)
+
+* [Version v1.0.715](/docs/openshift?topic=openshift-cs_cli_changelog#cli-010715)
 
 * [Version v1.0.714](/docs/openshift?topic=openshift-cs_cli_changelog#cli-010714)
 
