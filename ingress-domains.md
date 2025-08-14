@@ -2,7 +2,7 @@
 
 copyright:
   years: 2023, 2025
-lastupdated: "2025-07-21"
+lastupdated: "2025-08-14"
 
 
 keywords: kubernetes, openshift
@@ -56,7 +56,7 @@ If you are using the **{{site.data.keyword.cis_full_notm}}** provider, you must 
 
 - **Domain name**: The name of the domain to create or add to your cluster. This can be a domain that exists in your provider account, or a new domain. 
 - **Provider**: Choose a provider for your domain. To create a managed domain with IBM Cloud's internal provider, choose **Managed**. To use an external provider, choose from the remaining provider types.
-- **Set as default**: Choose whether you want to set the domain as the default for the cluster. The default Ingress domain is used to form a unique URL for each of your apps and is the domain that is referenced by the IP addresses of any public ALBs in your cluster. You can change which domain is set as the default at any time. Setting a default domain replaces the current default. 
+- **Set as default**: Choose whether you want to set the domain as the default for the cluster. The default Ingress domain is used to form a unique URL for each of your apps and is the domain that is referenced by the IP addresses of any public ALBs in your cluster. You can change which domain is set as the default at any time. Setting a default domain replaces the current default. Default domain configuration is not supported for {{site.data.keyword.satelliteshort}} clusters or for {{site.data.keyword.openshiftlong}} clusters running version 4.18 or later.
 
 ### Registration details
 {: #ingress-domains-ui-registration}
