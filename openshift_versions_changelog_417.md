@@ -3,7 +3,7 @@
 copyright:
   years: 2024, 2025
 
-lastupdated: "2025-08-13"
+lastupdated: "2025-08-14"
 
 
 keywords: change log, version history, 4.17_openshift
@@ -37,6 +37,23 @@ Master patch updates are applied automatically. Worker node patch updates can be
 
 ## Version 4.17
 {: #417_components}
+
+
+### Worker node fix pack 4.17.37_1549_openshift, released 12 August 2025
+{: #cl-boms-41737_1549_openshift_W}
+
+The following table shows the components included in the worker node fix pack 4.17.37_1549_openshift. Worker node patch updates can be applied by updating, reloading (in classic infrastructure), or replacing (in VPC infrastructure) the worker node.
+{: shortdesc}
+
+| Component | Version | Description |
+| ---- | ---- | ---- |
+|RHEL_9|5.14.0-503.40.1.el9_5|N/A|
+|RHEL_8|4.18.0-553.63.1.el8_10|Resolves the following CVEs: [RHSA-2025:13589](https://access.redhat.com/errata/RHSA-2025:13589){: external}, [CVE-2021-47670](https://nvd.nist.gov/vuln/detail/CVE-2021-47670){: external}, [CVE-2025-21727](https://nvd.nist.gov/vuln/detail/CVE-2025-21727){: external}, [CVE-2025-21759](https://nvd.nist.gov/vuln/detail/CVE-2025-21759){: external}, [CVE-2025-38085](https://nvd.nist.gov/vuln/detail/CVE-2025-38085){: external}, and [CVE-2025-38159](https://nvd.nist.gov/vuln/detail/CVE-2025-38159){: external}.|
+|Red Hat OpenShift and Red Hat CoreOS|4.17.37|For more information, see the [change logs](https://docs.redhat.com/en/documentation/openshift_container_platform/4.17/html/release_notes/ocp-4-17-release-notes.html#ocp-4-17-37_release-notes).|
+|HAProxy|3a9451f4782fa8e8e9ed60b060dc4393c7e1e31a|Resolves the following CVEs: [CVE-2025-6965](https://nvd.nist.gov/vuln/detail/CVE-2025-6965){: external}, [CVE-2025-8058](https://nvd.nist.gov/vuln/detail/CVE-2025-8058){: external}, and [CVE-2025-7425](https://nvd.nist.gov/vuln/detail/CVE-2025-7425){: external}.|
+{: caption="4.17.37_1549_openshift fix pack." caption-side="bottom"}
+{: #cl-boms-41737_1549_openshift_W-component-table}
+
 
 
 ### Master fix pack 4.17.35_1547_openshift, released 30 July 2025

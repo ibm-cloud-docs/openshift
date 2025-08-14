@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2025
-lastupdated: "2025-08-05"
+lastupdated: "2025-08-14"
 
 
 keywords: openshift, {{site.data.keyword.openshiftlong_notm}}, oc, ks
@@ -31,6 +31,11 @@ Refer to the following change logs for a summary of changes for each version of 
 
 Review the following changes for 1.0 versions of the CLI plug-in.
 {: shortdesc}
+
+## Version v1.0.715
+{: #cli-010715}
+
+Updates the output of `ibmcloud ks cluster get` to include more information about trusted profile IDs.
 
 ## Version v1.0.714
 {: #cli-010714}
