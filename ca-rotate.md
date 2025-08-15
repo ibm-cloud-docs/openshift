@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2024, 2025
-lastupdated: "2025-08-06"
+lastupdated: "2025-08-15"
 
 
 keywords: openshift, {{site.data.keyword.openshiftlong_notm}}, kubernetes, certificate, rotate, ca rotate
@@ -47,8 +47,8 @@ By default, certificate authority (CA) certificates are administered to secure a
 
     ```sh
     Status:             CA certificate creation complete. Ensure that your worker nodes are reloaded before you start a CA certificate rotation.
-    Action Started:     2020-08-30T16:17:56+0000
-    Action Completed:   2020-08-30T16:21:13+0000
+    Action Started:     2024-08-30T16:17:56+0000
+    Action Completed:   2024-08-30T16:21:13+0000
     ```
     {: screen}
 
@@ -59,10 +59,13 @@ By default, certificate authority (CA) certificates are administered to secure a
     ```
     {: pre}
 
-5. Update any tooling that relies on the previous certificates.
-    * If you use the certificate from your cluster's `kubeconfig` file in your own service such as Travis or Jenkins, or if you use `calicoctl` to manage Calico network policies, update your services and automation to use the new certificates.
+5. Verify that the timestamps in your new certificates are later than the timestamp that you found in step 3. To check the date on your certificates, you can use a tool such as [KeyCDN](https://tools.keycdn.com/ssl){: external}.
 
-6. Verify that the timestamps on your new certificates are later than the timestamp that you found in step 3. To check the date on your certificates, you can use a tool such as [KeyCDN](https://tools.keycdn.com/ssl){: external}.
+6. Update any tooling or webhooks that rely on the previous certificates. For example, you might need to update one or more of the following.
+    - If you use the certificate from your cluster's `kubeconfig` file in your own service, such as Jenkins.
+    - If you use `calicoctl` to manage Calico network policies, update your services and automation to use the new certificates.
+    - If you forward audit logs to {{site.data.keyword.logs_full_notm}}, update the certificates for your [master audit webhook](/docs/openshift?topic=openshift-health-audit).
+    - If you forward audit logs over the private network, update the certificates for your [master audit webhook](/docs/containers?topic=containers-health-audit#audit-api-server-priv).
 
 7. [Reload your classic worker nodes](/docs/openshift?topic=openshift-kubernetes-service-cli#cs_worker_reload) or [replace your VPC worker nodes](/docs/openshift?topic=openshift-kubernetes-service-cli#cli_worker_replace) to pick up the certificates that are signed by the new CA.
 
@@ -82,8 +85,8 @@ By default, certificate authority (CA) certificates are administered to secure a
     
     ```sh
     Status:             CA certificate rotation complete.
-    Action Started:     2020-08-30T16:37:56+0000
-    Action Completed:   2020-08-30T16:41:13+0000
+    Action Started:     2024-08-30T16:37:56+0000
+    Action Completed:   2024-08-30T16:41:13+0000
     ```
     {: screen}
 
