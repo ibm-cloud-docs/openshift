@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2025
-lastupdated: "2025-08-14"
+lastupdated: "2025-08-18"
 
 
 keywords: openshift
@@ -285,6 +285,10 @@ subcollection: openshift
 [Release notes](/docs/openshift?topic=openshift-openshift-relnotes#openshift-relnotes)
 
 * [August 2025](/docs/openshift?topic=openshift-openshift-relnotes#openshift-aug25)
+
+    * [19 August 2025](/docs/openshift?topic=openshift-openshift-relnotes#openshift-aug1925)
+
+        * OpenShift AI add-on version 417.
 
     * [14 August 2025](/docs/openshift?topic=openshift-openshift-relnotes#openshift-aug1425)
 
@@ -6474,6 +6478,10 @@ subcollection: openshift
 * [`vpc-file-csi-driver` 2.0](/docs/openshift?topic=openshift-supported-cluster-addon-versions#vpc-file-csi-driver-2.0)
 
 [OpenShift AI add-on version change log](/docs/openshift?topic=openshift-cl-add-ons-openshift-ai#cl-add-ons-openshift-ai)
+
+* [Version 417](/docs/openshift?topic=openshift-cl-add-ons-openshift-ai#cl-add-ons-openshift-ai-417)
+
+    * [417.0.0_533, released 19 August 2025](/docs/openshift?topic=openshift-cl-add-ons-openshift-ai#cl-add-ons-openshift-ai-41700_533)
 
 * [Version 416](/docs/openshift?topic=openshift-cl-add-ons-openshift-ai#cl-add-ons-openshift-ai-416)
 

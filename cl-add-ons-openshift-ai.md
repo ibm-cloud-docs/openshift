@@ -3,7 +3,7 @@
 copyright:
   years: 2024, 2025
 
-lastupdated: "2025-07-17"
+lastupdated: "2025-08-18"
 
 
 keywords: change log, version history, OpenShift AI
@@ -22,6 +22,21 @@ subcollection: "openshift"
 
 Review the version history for OpenShift AI.
 {: shortdesc}
+
+
+
+## Version 417
+{: #cl-add-ons-openshift-ai-417}
+
+
+### 417.0.0_533, released 19 August 2025
+{: #cl-add-ons-openshift-ai-41700_533}
+
+- Updates Go to version `1.23.11`.
+- Installs Red Hat `openshift-ai` operator version `2.22.0`.
+- Optionally installs NFD operator based on latest version available for channel `stable`.
+- Optionally installs NVIDIA GPU operator based on latest version available for channel `stable`.
+- Optionally installs Pipeline operator based on latest version available for channel `latest`.
 
 
 
