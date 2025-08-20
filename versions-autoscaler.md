@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2025
-lastupdated: "2025-08-11"
+lastupdated: "2025-08-20"
 
 
 keywords: autoscaler, add-on, autoscaler change log, cluster autoscaler
@@ -250,13 +250,13 @@ Version 1.1.0 is a {{site.data.keyword.satelliteshort}} Beta release. Patches mi
 - Image tags: `1.19.1 110-5`, `1.20.0 110-5`, `1.21.0 110-5`, `1.22.0 110-5`, `1.23.0 110-5`.
 - Golang updated to `1.18.9`
 - Updates the `storage-secret-sidecar` image to `v1.2.14`
-- Resolves the following CVEs: [CVE-2022-42898](https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2022-42898){: external}, [CVE-2022-41717](https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2022-41717){: external}, [CVE-2022-41720](https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2022-41720){: external}
+- Resolves the following CVEs: [CVE-2022-42898](https://www.cve.org/CVERecord?id=CVE-2022-42898){: external}, [CVE-2022-41717](https://www.cve.org/CVERecord?id=CVE-2022-41717){: external}, [CVE-2022-41720](https://www.cve.org/CVERecord?id=CVE-2022-41720){: external}
 
 ### Change log for patch update 1.1.0_798, released 22 September 2022
 {: #110798_ca}
 
 - Image tags: `1.19.1-110-5`,`1.20.0-110-5`,`1.21.0-110-5`,`1.22.0-110-5`,`1.23.0-110-5`.
-- Resolves [CVE-2022-27664](https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2022-27664){: external}, [CVE-2022-32190](https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2022-32190){: external}.
+- Resolves [CVE-2022-27664](https://www.cve.org/CVERecord?id=CVE-2022-27664){: external}, [CVE-2022-32190](https://www.cve.org/CVERecord?id=CVE-2022-32190){: external}.
 
 ### Change log for patch update 1.1.0_776, released 31 August 2022
 {: #110776_ca}
@@ -549,7 +549,7 @@ Version 1.0.9 version is deprecated and becomes unsupported on 30 April 2024.
 - Image tags: `1.20.0 107-2`, `1.21.0 107-2`, `1.22.0 107-2`, `1.23.0 107-2`, `1.24.0 107-2`, `1.25.0 107-2`.
 - Golang updated to `1.18.9`
 - Updates the `storage-secret-sidecar` image to `v1.2.14`
-- Resolves the following CVEs: [CVE-2022-42898](https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2022-42898){: external}, [CVE-2022-41717](https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2022-41717){: external}, [CVE-2022-41720](https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2022-41720){: external}
+- Resolves the following CVEs: [CVE-2022-42898](https://www.cve.org/CVERecord?id=CVE-2022-42898){: external}, [CVE-2022-41717](https://www.cve.org/CVERecord?id=CVE-2022-41717){: external}, [CVE-2022-41720](https://www.cve.org/CVERecord?id=CVE-2022-41720){: external}
 
 ### Change log for patch update 1.0.7_883, released 3 November 2022
 {: #107883_ca}
@@ -588,7 +588,7 @@ Version 1.0.9 version is deprecated and becomes unsupported on 30 April 2024.
 - Image tags: `1.19.1 106-5`, `1.20.0 106-5`, `1.21.0 106-5`, `1.22.0 106-5`, `1.23.0 106-5`, `1.24.0 106-5`.
 - Golang updated to `1.18.9`
 - Updates the `storage-secret-sidecar` image to `v1.2.14`
-- Resolves the following CVEs: [CVE-2022-42898](https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2022-42898){: external}, [CVE-2022-41717](https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2022-41717){: external}, [CVE-2022-41720](https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2022-41720){: external}
+- Resolves the following CVEs: [CVE-2022-42898](https://www.cve.org/CVERecord?id=CVE-2022-42898){: external}, [CVE-2022-41717](https://www.cve.org/CVERecord?id=CVE-2022-41717){: external}, [CVE-2022-41720](https://www.cve.org/CVERecord?id=CVE-2022-41720){: external}
 
 ### Change log for patch update 1.0.6_828, released 10 October 2022
 {: #106828_ca}
@@ -601,7 +601,7 @@ Version 1.0.9 version is deprecated and becomes unsupported on 30 April 2024.
 {: #106800_ca}
 
 - Image tags: `1.19.1-106-4`, `1.20.0-106-4`, `1.21.0-106-4`, `1.22.0-106-4`, `1.23.0 106-4`, `1.24.0 106-4`.
-- Resolves [CVE-2022-27664](https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2022-27664){: external}, [CVE-2022-32190](https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2022-32190){: external}.
+- Resolves [CVE-2022-27664](https://www.cve.org/CVERecord?id=CVE-2022-27664){: external}, [CVE-2022-32190](https://www.cve.org/CVERecord?id=CVE-2022-32190){: external}.
 
 ### Change log for patch update 1.0.6_774, released 31 August 2022
 {: #106774_ca}
@@ -632,13 +632,13 @@ Version 1.0.9 version is deprecated and becomes unsupported on 30 April 2024.
 - Image tags: `1.19.1 105-6`, `1.20.0 105-6`, `1.21.0 105-6`, `1.22.0 105-6`, `1.23.0 105-6`.
 - Golang updated to `1.18.9`
 - Updates the `storage-secret-sidecar` image to `v1.2.14`
-- Resolves the following CVEs: [CVE-2022-42898](https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2022-42898){: external}, [CVE-2022-41717](https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2022-41717){: external}, [CVE-2022-41720](https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2022-41720){: external}
+- Resolves the following CVEs: [CVE-2022-42898](https://www.cve.org/CVERecord?id=CVE-2022-42898){: external}, [CVE-2022-41717](https://www.cve.org/CVERecord?id=CVE-2022-41717){: external}, [CVE-2022-41720](https://www.cve.org/CVERecord?id=CVE-2022-41720){: external}
 
 ### Change log for patch update 1.0.5_779, released 22 September 2022
 {: #105779_ca}
 
 - Image tags: `1.19.1-105-5`,`1.20.0-105-5`,`1.21.0-105-5`,`1.22.0-105-5`,`1.23.0-105-5`.
-- Resolves [CVE-2022-27664](https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2022-27664){: external}, [CVE-2022-32190](https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2022-32190){: external}.
+- Resolves [CVE-2022-27664](https://www.cve.org/CVERecord?id=CVE-2022-27664){: external}, [CVE-2022-32190](https://www.cve.org/CVERecord?id=CVE-2022-32190){: external}.
 
 ### Change log for patch update 1.0.5_775, released 31 August 2022
 {: #105775_ca}

@@ -323,7 +323,7 @@ Because this change affects storage classes, you must uninstall and reinstall th
 {: #0220_object_plugin}
 
 - Updates the UBI image to `8.6-902.1661794353`
-- Resolves [CVE-2022-32206](https://nvd.nist.gov/vuln/detail/CVE-2022-32206){: external}, [CVE-2022-32208](https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2022-32208){: external}, [CVE-2022-2526](https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2022-2526){: external}.
+- Resolves [CVE-2022-32206](https://nvd.nist.gov/vuln/detail/CVE-2022-32206){: external}, [CVE-2022-32208](https://www.cve.org/CVERecord?id=CVE-2022-32208){: external}, [CVE-2022-2526](https://www.cve.org/CVERecord?id=CVE-2022-2526){: external}.
 - Cloud Pak certification renewed for the plug-in
 
 ## Change log for version 2.1.21, released 24 August 2022
