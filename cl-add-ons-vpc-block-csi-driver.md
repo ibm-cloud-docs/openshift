@@ -3,7 +3,7 @@
 copyright:
   years: 2024, 2025
 
-lastupdated: "2025-07-14"
+lastupdated: "2025-08-20"
 
 
 keywords: change log, version history, VPC Block CSI Driver
@@ -118,7 +118,7 @@ Review the version history for VPC Block CSI Driver.
 
 
 
-## Version 5.2
+## Version 5.2 archive
 {: #052_is_block_archive}
 
 
@@ -234,7 +234,7 @@ Review the version history for VPC Block CSI Driver.
 
 
 
-## Version 5.1
+## Version 5.1 archive
 {: #051_is_block_archive}
 
 ### Change log for version 5.1.31_656, released 11 December 2024
@@ -409,8 +409,8 @@ Review the version history for VPC Block CSI Driver.
 - Fixes a bug in volume expansion for raw block volumes.
 - Removes the `preStop` hook for the `csi-driver-registrar`. 
 
-## Version 5.0
-{: #050_is_block}
+## Version 5.0 archive
+{: #050_is_block_archive}
 
 ### Change log for version 5.0.23_437, released 27 November 2023
 {: #5.0.23_437_is_block_relnote}
@@ -596,191 +596,3 @@ Fixes a bug where the resource group wasn't included in the snapshot creation re
 {: #5.0.0-beta_1125_is_block_relnote}
 
 Adds snapshot support.
-
-
-
-
-## Version 4.4
-{: #044_is_block}
-
-### Change log for version 4.4.17_1829, released 21 February 2023
-{: #4.4.17_1829_is_block_relnote}
-
-- Resolves [CVE-2022-47629](https://nvd.nist.gov/vuln/detail/CVE-2022-47629){: external}.
-
-### Change log for version 4.4.16_1779, released 24 January 2023
-{: #4.4.16_1779_is_block_relnote}
-
-- Updates the storage-secret-sidecar image to `v1.2.15`.
-- Resolves [CVE-2022-43680](https://nvd.nist.gov/vuln/detail/CVE-2022-43680){: external}, [CVE-2022-42010](https://nvd.nist.gov/vuln/detail/CVE-2022-42010){: external}, [CVE-2022-42011](https://nvd.nist.gov/vuln/detail/CVE-2022-42011){: external}, [CVE-2022-42012](https://nvd.nist.gov/vuln/detail/CVE-2022-42012){: external}, [CVE-2022-3821](https://nvd.nist.gov/vuln/detail/CVE-2022-3821){: external}, [CVE-2022-35737](https://nvd.nist.gov/vuln/detail/CVE-2022-35737){: external}, and [CVE-2021-46848](https://nvd.nist.gov/vuln/detail/CVE-2021-46848){: external}.
-
-
-### Change log for version 4.4.15_1764, released 10 January 2023
-{: #4.4.15_1764_is_block_relnote}
-
-- Updates Golang to `1.18.9`.
-- Updates the `storage-secret-sidecar` image to `v1.2.14`.
-- Fixed volume tagging issue related to multiple tags.
-- Resolves the following CVEs:
-    - [CVE-2022-42898](https://nvd.nist.gov/vuln/detail/CVE-2022-42898){: external}
-    - [CVE-2022-41717](https://nvd.nist.gov/vuln/detail/CVE-2022-41717){: external}
-    - [CVE-2022-41720](https://nvd.nist.gov/vuln/detail/CVE-2022-41720){: external}
-
-### Change log for version 4.4.13_1712, released 17 November 2022
-{: #4.4.13_1712_is_block_relnote}
-
-- Updates the `storage-secret-sidecar` image to `v1.2.12`
-- Resolves the following CVEs: 
-    - [CVE-2016-3709](https://nvd.nist.gov/vuln/detail/CVE-2016-3709){: external}
-    - [CVE-2022-30698](https://nvd.nist.gov/vuln/detail/CVE-2022-30698){: external}
-    - [CVE-2022-30699](https://nvd.nist.gov/vuln/detail/CVE-2022-30699){: external}
-    - [CVE-2022-1304](https://nvd.nist.gov/vuln/detail/CVE-2022-1304){: external}
-
-### Change log for version 4.4.12_1700, released 9 November 2022
-{: #4.4.12_1700_is_block_relnote}
-
-- Updates the `storage-secret-sidecar` image to `v1.2.10`, 
-- Updates the `csi-node-driver-registrar` to `v2.5.0`
-- Updates the `livenessprobe` to `v2.6.0`
-- Updates the `csi-provisioner` to `v3.2.1`
-- Updates the `csi-attacher` to `v3.5.0`
-- Updates the `csi-resizer` to `v1.5.0`
-- Resolves the following CVEs: [CVE-2022-37434](https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2022-37434){: external}, [CVE-2022-2509](https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2022-2509){: external}, [CVE-2022-40674](https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2022-40674){: external}, [CVE-2020-35525](https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2020-35525){: external}, [CVE-2020-35527](https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2020-35527){: external}, [CVE-2022-3515](https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2022-3515){: external}.
-
-
-### Change log for version 4.4.11_1614, released 23 September 2022
-{: #4.4.11_1614_is_block_relnote}
-
-- Updates the `storage-secret-sidecar` image to `v1.2.8`.
-- Updates the golang version to `1.18.6`.
-- Resolves the following CVEs: [CVE-2022-27664](https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2022-27664){: external}, [CVE-2022-32190](https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2022-32190){: external}.
-
-
-
-### Change log for version 4.4.10_1578, released 13 September 2022
-{: #4.4.10_1578_is_block_relnote}
-
-- Updates the `storage-secret-sidecar` image to `v1.2.7`
-- Resolves the following CVEs: [CVE-2022-32206](https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2022-32206){: external}, [CVE-2022-32208](https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2022-32208){: external}, [CVE-2022-2526](https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2022-2526){: external}.
-
-
-### Change log for version 4.4.9_1566, released 25 August 2022
-{: #4.4.9_1566_is_block_relnote}
-
-- Updates Golang to version `1.18.5`
-- Updates the `storage-secret-sidecar` image to `v1.2.6`
-- Resolves the following CVEs: [CVE-2022-1586](https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2022-1586){: external}, [CVE-2022-2068](https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2022-2068){: external}, [CVE-2022-1292](https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2022-1292){: external}, [CVE-2022-2097](https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2022-2097){: external}. 
-
-### Change log for version 4.4.8_1550, released 18 July 2022
-{: #4.4.8_1550_is_block_relnote}
-
-- Updates the `storage-secret-sidecar` image to `v1.2.5`
-- Updates Golang to version `1.18.3`
-- Updates UBI image to version `8.6-854`
-- Fixes an issue where volume mounting on node fails with already mounted error.
-- Resolves the following CVEs: [CVE-2022-29824](https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2022-29824){: external}, [CVE-2021-40528](https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2021-40528){: external}, [CVE-2022-22576](https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2022-22576){: external}, [CVE-2022-27774](https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2022-27774){: external}, [CVE-2022-27776](https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2022-27776){: external}, [CVE-2022-27782](https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2022-27782){: external}, [CVE-2022-25313](https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2022-25313){: external}, [CVE-2022-25314](https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2022-25314){: external}. 
-
-
-### Change log for version 4.4.6_1446, released 24 June 2022
-{: #4.4.6_1446_is_block_relnote}
-
-- Includes an update where volume creation or expansion isn't retried if the provided volume capacity is not supported by volume profile.
-- Updates the `storage-secret-sidecar` image to `v1.2.4`
-- Resolves [CVE-2022-1271](https://cve.mitre.org/cgi-bin/cvename.cgi?name=2022-1271){: external}
-- Adds a security fix related with image signing.
-
-
-### Change log for version 4.4.5_1371, released 13 June 2022
-{: #445_1371_is_block_relnote}
-
-- Adds support for IAM trusted profiles.
-- Adds IAM token caching in memory for up to 40 minutes which reduces the number of calls to IAM and improves driver performance.
-- Updates the `storage-secret-sidecar` image to `v1.2.3`.
-- Fixes a volume expansion error handling issue.
-
-
-
-## Version 4.3
-{: #043_is_block}
-
-### Change log for version 4.3.8_1705 released 11 November 2022
-{: #4.3.8_1705_is_block_relnote}
-
-- Updates the `storage-secret-sidecar` image to `v1.2.10`
-- Updates the `csi-node-driver-registrar` to `v2.5.0`
-- Updates the `livenessprobe` to `v2.6.0`
-- Updates the `csi-provisioner` to `v3.2.1` 
-- Updates the `csi-attacher` to `v3.5.0` 
-- Updates the `csi-resizer` to `v1.5.0`
-- Resolves the following CVEs: [CVE-2022-37434](https://nvd.nist.gov/vuln/detail/CVE-2022-37434){: external}, [CVE-2022-2509](https://nvd.nist.gov/vuln/detail/CVE-2022-2509){: external}, [CVE-2022-40674](https://nvd.nist.gov/vuln/detail/CVE-2022-40674){: external}, [CVE-2020-35525](https://nvd.nist.gov/vuln/detail/CVE-2020-35525){: external}, [CVE-2020-35527](https://nvd.nist.gov/vuln/detail/CVE-2020-35527){: external}, [CVE-2022-3515](https://nvd.nist.gov/vuln/detail/CVE-2022-3515){: external}
-
-
-### Change log for version 4.3.7_1613, released 22 September 2022
-{: #4.3.7_1613_is_block_relnote}
-
-- Updates the `storage-secret-sidecar` image to `v1.1.15`.
-- Updates the golang version to `1.18.6`.
-- Resolves the following CVEs: [CVE-2022-27664](https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2022-27664){: external} and [CVE-2022-32190](https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2022-32190){: external}.
-
-
-### Change log for version 4.3.6_1579, released 12 September 2022
-{: #436_1579_is_block_relnote}
-
-- Updates the `storage-secret-sidecar` image to `v1.1.14`
-- Resolves the following CVEs: [CVE-2022-32206](https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2022-32206){: external}, [CVE-2022-32208](https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2022-32208){: external}, [CVE-2022-2526](https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2022-2526){: external}.
-
-### Change log for version 4.3.5_1563, released 24 August 2022
-{: #435_1563_is_block_relnote}
-
-- Updates Golang to version `1.18.5`
-- Updates the `storage-secret-sidecar` image to `v1.1.13`
-- Resolves the following CVEs: [CVE-2022-1586](https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2022-1586){: external}, [CVE-2022-2068](https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2022-2068){: external}, [CVE-2022-1292](https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2022-1292){: external}, [CVE-2022-2097](https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2022-2097){: external}. 
-
-
-### Change log for version 4.3.4_1551, released 18 July 2022
-{: #434_1551_is_block_relnote}
-
-
-- Updates the `storage-secret-sidecar` image to `v1.1.12`
-- Updates Golang to version `1.18.3`
-- Updates UBI image to version `8.6-854`
-- Improves secret watcher in case of secret update.
-- Fixes an issue where volume mounting on node fails with already mounted error.
-- Resolves the following CVEs: [CVE-2022-29824](https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2022-29824){: external}, [CVE-2021-40528](https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2021-40528){: external}, [CVE-2022-22576](https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2022-22576){: external}, [CVE-2022-27774](https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2022-27774){: external}, [CVE-2022-27776](https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2022-27776){: external}, [CVE-2022-27782](https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2022-27782){: external}, [CVE-2022-25313](https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2022-25313){: external}, [CVE-2022-25314](https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2022-25314){: external}.
-
-
-
-
-### Change log for version 4.3.2_1441, released 17 June 2022
-{: #432_1441_is_block_relnote}
-
-- Added security fix related to image signing
-- Updates the `storage-secret-sidecar` image to `v1.1.11`
-- Resolves [CVE-2022-1271](https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2022-1271){: external}
-
-### Change log for version 4.3.0_1163, released 25 May 2022
-{: #430_1163_is_block_relnote}
-
-- Resolves the following CVEs: [CVE-2021-3634](https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2021-3634){: external}, [CVE-2021-3737](https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2021-3737){: external}, [CVE-2021-4189]https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2021-4189){: external}.
-- Updates the `storage-secret-sidecar` image to `v1.1.10`
-- Fixes Volume provisioning failure when in StorageClass Region is provided without zone info
-- Fixes an issue where volume creation fails if only `failure-domain.beta.kubernetes.io/zone` is given in `allowedTopologies`
-- `Region` support is now *DEPRECATED* in the storage class. Providing "region" detail in storage classes is deprecated in this release, this will not cause any issues with either existing PVC or new PVC. For now the default behavior is to get the region detail from the node label only which is now mandatory for all cases.
-
-## Version 4.2
-{: #042_is_block}
-
-
-### Change log for version 4.2.6_1161, released 12 May 2022
-{: #426_1161_is_block_relnote}
-
-- Updates armada-storage-secret to `v1.1.10`
-- Resolves the following CVEs: [CVE-2021-3634](https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2021-3634){: external}, [CVE-2021-3737](https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2021-3737){: external}, [CVE-2021-4189](https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2021-4189){: external}.
-
-
-### Change log for version 4.2.5_1106, released 12 May 2022
-{: #425_1106_is_block_relnote}
-
-- Updates armada-storage-secret to `v1.1.9`
-- Updates the UBI version to `8.5-243.1651231653` 
-- Resolves [CVE-2022-1271](https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2022-1271){: external}.

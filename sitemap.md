@@ -6783,7 +6783,7 @@ subcollection: openshift
 
     * [5.1.33_685, released 17 February 2025](/docs/openshift?topic=openshift-cl-add-ons-vpc-block-csi-driver#cl-add-ons-vpc-block-csi-driver-5133_685)
 
-* [Version 5.2](/docs/openshift?topic=openshift-cl-add-ons-vpc-block-csi-driver#052_is_block_archive)
+* [Version 5.2 archive](/docs/openshift?topic=openshift-cl-add-ons-vpc-block-csi-driver#052_is_block_archive)
 
     * [Change log for version 5.2.26_657, released 11 December 2024](/docs/openshift?topic=openshift-cl-add-ons-vpc-block-csi-driver#5.2.26_657_is_block_relnote)
 
@@ -6809,7 +6809,7 @@ subcollection: openshift
 
     * [Change log for version 5.2, released 25 September 2023](/docs/openshift?topic=openshift-cl-add-ons-vpc-block-csi-driver#5.2_is_block_relnote)
 
-* [Version 5.1](/docs/openshift?topic=openshift-cl-add-ons-vpc-block-csi-driver#051_is_block_archive)
+* [Version 5.1 archive](/docs/openshift?topic=openshift-cl-add-ons-vpc-block-csi-driver#051_is_block_archive)
 
     * [Change log for version 5.1.31_656, released 11 December 2024](/docs/openshift?topic=openshift-cl-add-ons-vpc-block-csi-driver#5.1.31_656_is_block_relnote)
 
@@ -6851,7 +6851,7 @@ subcollection: openshift
 
     * [Change log for version 5.1, released 9 February 2023](/docs/openshift?topic=openshift-cl-add-ons-vpc-block-csi-driver#5.1_is_block_relnote)
 
-* [Version 5.0](/docs/openshift?topic=openshift-cl-add-ons-vpc-block-csi-driver#050_is_block)
+* [Version 5.0 archive](/docs/openshift?topic=openshift-cl-add-ons-vpc-block-csi-driver#050_is_block_archive)
 
     * [Change log for version 5.0.23_437, released 27 November 2023](/docs/openshift?topic=openshift-cl-add-ons-vpc-block-csi-driver#5.0.23_437_is_block_relnote)
 
@@ -6888,52 +6888,6 @@ subcollection: openshift
     * [Change log for version 5.0.1-beta_1411, released 15 June 2022](/docs/openshift?topic=openshift-cl-add-ons-vpc-block-csi-driver#5.0.1-beta_1411_is_block_relnote)
 
     * [Change log for version 5.0.0-beta_1125, released 10 June 2022](/docs/openshift?topic=openshift-cl-add-ons-vpc-block-csi-driver#5.0.0-beta_1125_is_block_relnote)
-
-* [Version 4.4](/docs/openshift?topic=openshift-cl-add-ons-vpc-block-csi-driver#044_is_block)
-
-    * [Change log for version 4.4.17_1829, released 21 February 2023](/docs/openshift?topic=openshift-cl-add-ons-vpc-block-csi-driver#4.4.17_1829_is_block_relnote)
-
-    * [Change log for version 4.4.16_1779, released 24 January 2023](/docs/openshift?topic=openshift-cl-add-ons-vpc-block-csi-driver#4.4.16_1779_is_block_relnote)
-
-    * [Change log for version 4.4.15_1764, released 10 January 2023](/docs/openshift?topic=openshift-cl-add-ons-vpc-block-csi-driver#4.4.15_1764_is_block_relnote)
-
-    * [Change log for version 4.4.13_1712, released 17 November 2022](/docs/openshift?topic=openshift-cl-add-ons-vpc-block-csi-driver#4.4.13_1712_is_block_relnote)
-
-    * [Change log for version 4.4.12_1700, released 9 November 2022](/docs/openshift?topic=openshift-cl-add-ons-vpc-block-csi-driver#4.4.12_1700_is_block_relnote)
-
-    * [Change log for version 4.4.11_1614, released 23 September 2022](/docs/openshift?topic=openshift-cl-add-ons-vpc-block-csi-driver#4.4.11_1614_is_block_relnote)
-
-    * [Change log for version 4.4.10_1578, released 13 September 2022](/docs/openshift?topic=openshift-cl-add-ons-vpc-block-csi-driver#4.4.10_1578_is_block_relnote)
-
-    * [Change log for version 4.4.9_1566, released 25 August 2022](/docs/openshift?topic=openshift-cl-add-ons-vpc-block-csi-driver#4.4.9_1566_is_block_relnote)
-
-    * [Change log for version 4.4.8_1550, released 18 July 2022](/docs/openshift?topic=openshift-cl-add-ons-vpc-block-csi-driver#4.4.8_1550_is_block_relnote)
-
-    * [Change log for version 4.4.6_1446, released 24 June 2022](/docs/openshift?topic=openshift-cl-add-ons-vpc-block-csi-driver#4.4.6_1446_is_block_relnote)
-
-    * [Change log for version 4.4.5_1371, released 13 June 2022](/docs/openshift?topic=openshift-cl-add-ons-vpc-block-csi-driver#445_1371_is_block_relnote)
-
-* [Version 4.3](/docs/openshift?topic=openshift-cl-add-ons-vpc-block-csi-driver#043_is_block)
-
-    * [Change log for version 4.3.8_1705 released 11 November 2022](/docs/openshift?topic=openshift-cl-add-ons-vpc-block-csi-driver#4.3.8_1705_is_block_relnote)
-
-    * [Change log for version 4.3.7_1613, released 22 September 2022](/docs/openshift?topic=openshift-cl-add-ons-vpc-block-csi-driver#4.3.7_1613_is_block_relnote)
-
-    * [Change log for version 4.3.6_1579, released 12 September 2022](/docs/openshift?topic=openshift-cl-add-ons-vpc-block-csi-driver#436_1579_is_block_relnote)
-
-    * [Change log for version 4.3.5_1563, released 24 August 2022](/docs/openshift?topic=openshift-cl-add-ons-vpc-block-csi-driver#435_1563_is_block_relnote)
-
-    * [Change log for version 4.3.4_1551, released 18 July 2022](/docs/openshift?topic=openshift-cl-add-ons-vpc-block-csi-driver#434_1551_is_block_relnote)
-
-    * [Change log for version 4.3.2_1441, released 17 June 2022](/docs/openshift?topic=openshift-cl-add-ons-vpc-block-csi-driver#432_1441_is_block_relnote)
-
-    * [Change log for version 4.3.0_1163, released 25 May 2022](/docs/openshift?topic=openshift-cl-add-ons-vpc-block-csi-driver#430_1163_is_block_relnote)
-
-* [Version 4.2](/docs/openshift?topic=openshift-cl-add-ons-vpc-block-csi-driver#042_is_block)
-
-    * [Change log for version 4.2.6_1161, released 12 May 2022](/docs/openshift?topic=openshift-cl-add-ons-vpc-block-csi-driver#426_1161_is_block_relnote)
-
-    * [Change log for version 4.2.5_1106, released 12 May 2022](/docs/openshift?topic=openshift-cl-add-ons-vpc-block-csi-driver#425_1106_is_block_relnote)
 
 [VPC File CSI Driver add-on version change log](/docs/openshift?topic=openshift-cl-add-ons-vpc-file-csi-driver#cl-add-ons-vpc-file-csi-driver)
 
