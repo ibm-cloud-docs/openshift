@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2025
-lastupdated: "2025-08-06"
+lastupdated: "2025-08-20"
 
 
 keywords: openshift, {{site.data.keyword.openshiftlong_notm}}, object storage, plug-in, change log
@@ -28,13 +28,19 @@ View information for updates to the {{site.data.keyword.cos_full_notm}} plug-in 
 
 | {{site.data.keyword.cos_full_notm}} plug-in version | Supported? |
 | --- | --- |
+| 2.2.41 | Yes |
 | 2.2.40 | Yes |
 | 2.2.39 | Yes |
-| 2.2.38 | Yes |
+
 {: caption="{{site.data.keyword.cos_full_notm}} plug-in versions" caption-side="bottom"}
 
 Versions are deprecated at n-2 or roughly 3 months after their release date. Plan to keep your add-on updated. For update steps, see [Updating the {{site.data.keyword.cos_full_notm}} plug-in](/docs/openshift?topic=openshift-storage_cos_install#update_cos_plugin).
 {: important}
+
+## Change log for version 2.2.41, released 18 August 2025
+{: #02241_object_plugin}
+
+- Resolves [CVE-2025-22871](https://nvd.nist.gov/vuln/detail/CVE-2025-22871){: external}, [CVE-2025-22874](https://nvd.nist.gov/vuln/detail/CVE-2025-22874){: external}, [CVE-2025-4673](https://nvd.nist.gov/vuln/detail/CVE-2025-4673){: external}, and [CVE-2025-8058](https://nvd.nist.gov/vuln/detail/CVE-2025-8058){: external}.
 
 ## Change log for version 2.2.40, released 05 August 2025
 {: #02240_object_plugin}

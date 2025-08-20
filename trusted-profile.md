@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2025, 2025
-lastupdated: "2025-08-12"
+lastupdated: "2025-08-20"
 
 
 keywords: trusted profiles, containers, block storage, openshift
@@ -57,11 +57,11 @@ Create access policies with the permissions in the following table.
 | ------------ | ------------------- | ---- |
 | Billing  |  **Editor** | Editor | Allows viewing and managing billing data such as usage, cost, and reports. Useful for automated cost tracking or budget-aware operations. |
 | Kubernetes service  | **Administrator**  | Enables Kubernetes clusters to interact with storage resources. |
-| VPC Infrastructure service  |  **Writer, Editor** | Writer, Editor | Enables provisioning and management of storage resources. |
-| Resource group | **Viewer** | Specify the resource group where the trusted profile is applied. For operations across multiple resource groups, you must specify all relevant resource groups. Note that if you are creating a custom storage class with the resource group, you must also assign **Viewer** access to the trusted profile for the resource group.
-{: caption="Minimum permissions for all storage components" caption-side="bottom"}
+| VPC Infrastructure service  |  **Writer, Editor** | Writer, Editor, Snapshot Remote Account Restorer | Enables provisioning and management of storage resources. |
+| Resource group | **Viewer** | Specify the resource group where the trusted profile is applied. For operations across multiple resource groups, you must specify all relevant resource groups. Note that if you are creating a custom storage class with the resource group, you must also assign **Viewer** access to the trusted profile for the resource group.  |
 
-Additionally, if you plan to use **Classic infrastructure** you must enable the **Add/Upgrade Storage (Storage Layer)** permission. To enable this permission, navigate to the [Trusted profile dashboard](https://cloud.ibm.com/iam/trusted-profiles){: external} in the UI and select the relevant trusted profile. Click **Classic infrastructure**, then expand the options under **Sales** to find the permission. 
+
+Additionally, if you plan to use **Classic infrastructure** you must enable the **Add/Upgrade Storage (Storage Layer)** and **Storage Manage** permissions. To enable these permissions, navigate to the [Trusted profile dashboard](https://cloud.ibm.com/iam/trusted-profiles){: external} in the UI and select the relevant trusted profile. Click **Classic infrastructure**, then expand the options under **Sales** and **Devices** to find the permission. 
 
 
 ### Minimum requirements for individual storage components
@@ -249,11 +249,13 @@ Once you add a trusted profile to a cluster, it cannot be removed and you cannot
     ```
     {: pre}
 
-4. **For classic clusters**: Add permissions to the trusted profile by using the UI. 
-    1. Log in to your IBM Cloud account and navigate to the Trusted Profiles page. 
-    1. Click the trusted profile you just created.
-    2. Navigate to the **Classic Infrastructure** tab.
-    3. In the permissions drop down, select the required permissions to meet the [minimum requirements](#tp-minreqs) for the relevant components. 
+4. **For classic clusters**: Run the command to add the [minimum required permissions](#tp-minreqs) to the trusted profile. Specify the user ID that is created for the trusted profile. 
+
+    ```sh
+    ibmcloud oc sl user permission-edit TRUSTED_PROFILE_ID --permission NAS_MANAGE,ADD_SERVICE_STORAGE
+    ```
+    {: pre}
+
 
 5. After you have created the trusted profile and assigned the required access policies, [set the trusted profile](#tp-set-cluster-rg) for either the cluster or the resource group that your clusters are in. Setting the trusted profile applies it to your storage components. 
 
@@ -499,7 +501,6 @@ Once you add a trusted profile to a cluster, it cannot be removed and you cannot
     2. Click the trusted profile you just created.
     3. Navigate to the **Classic Infrastructure** tab.
     4. In the permissions drop down, select the required permissions to meet the [minimum requirements](#tp-minreqs) for the relevant components. 
-
 
 
 ## Setting the trusted profile for a cluster or resource group
