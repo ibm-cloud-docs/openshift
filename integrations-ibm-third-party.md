@@ -1,8 +1,8 @@
 ---
 
 copyright: 
-  years: 2014, 2024
-lastupdated: "2024-06-14"
+  years: 2014, 2025
+lastupdated: "2025-08-20"
 
 
 keywords: kubernetes, openshift
@@ -36,7 +36,7 @@ Review the following information to see how {{site.data.keyword.cloud_notm}} pla
 All {{site.data.keyword.cloud_notm}} platform services that support service keys can be integrated by using {{site.data.keyword.openshiftlong_notm}} [service binding](/docs/openshift?topic=openshift-service-binding).
 {: shortdesc}
 
-Service binding is a quick way to create service credentials for an {{site.data.keyword.cloud_notm}} service and store these credentials in a Kubernetes secret in your cluster. The Kubernetes secret is automatically encrypted in etcd to protect your data. Your apps can use the credentials in the secret to access your {{site.data.keyword.cloud_notm}} service instance.
+Service binding is a quick way to create service credentials for an {{site.data.keyword.cloud_notm}} service and store these credentials in a Kubernetes secret in your cluster. You can also enable encryption to further protect your data. Your apps can use the credentials in the secret to access your {{site.data.keyword.cloud_notm}} service instance.
 
 Services that don't support service keys usually provide an API that you can directly use in your app.
 
@@ -119,8 +119,3 @@ You might use custom resource definitions (CRDs) to extend the {{site.data.keywo
 
 
 For more information, see [Operators](/docs/openshift?topic=openshift-operators).
-
-
-
-
-
