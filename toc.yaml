@@ -254,6 +254,7 @@ toc:
           - storage-block-vpc-remove.md
           - storage-block-vpc-migration.md
           - storage-block-vpc-sc-ref.md
+          - storage-block-vpc-unmanaged.md
       - storage-file.md
       - topicgroup:
           label: Setting up File Storage for VPC
