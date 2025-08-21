@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2025
-lastupdated: "2025-08-07"
+lastupdated: "2025-08-21"
 
 
 keywords: kubernetes, openshift
@@ -607,7 +607,7 @@ For more information and examples, see the [Habana docs](https://docs.habana.ai/
     - [KMM Operator](https://docs.redhat.com/en/documentation/openshift_container_platform/4.18/html/specialized_hardware_and_driver_enablement/kernel-module-management-operator){: external}
     - [AMD GPU Operator](https://instinct.docs.amd.com/projects/gpu-operator/en/main/installation/openshift-olm.html#install-amd-gpu-operator){: external}
 
-- After installing the operators, follow the AMD documentation to [configure the drivers](https://instinct.docs.amd.com/projects/gpu-operator/en/latest/installation/openshift-olm.html#configuration){: external}. **Note**: Blacklisting in-tree `amdgpu` kernel module is not required.
+- After installing the operators, follow the AMD documentation to [configure the drivers](https://instinct.docs.amd.com/projects/gpu-operator/en/latest/installation/openshift-olm.html#configuration){: external}. **Note**: Removing in-tree `amdgpu` kernel module from the allowlist is not required.
 
 For more information and examples, see the [AMD docs](https://instinct.docs.amd.com/projects/gpu-operator/en/latest/){: external} and the [quick start example](https://instinct.docs.amd.com/projects/gpu-operator/en/latest/usage.html){: external}.
 {: tip}

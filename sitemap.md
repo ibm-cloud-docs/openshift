@@ -376,7 +376,7 @@ subcollection: openshift
 
         * IBM Cloud Image Key Synchronizer cluster add-on patch updates.
 
-        * Openshift AI cluster add-on patch updates.
+        * OpenShift AI cluster add-on patch updates.
 
     * [18 June 2025](/docs/openshift?topic=openshift-openshift-relnotes#openshift-june1825)
 
