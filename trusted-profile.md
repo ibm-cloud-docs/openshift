@@ -55,10 +55,11 @@ Create access policies with the permissions in the following table.
 
 | Service name |  Required permission | Description |
 | ------------ | ------------------- | ---- |
-| Billing  |  **Editor** | Editor | Allows viewing and managing billing data such as usage, cost, and reports. Useful for automated cost tracking or budget-aware operations. |
+| Billing  |  **Editor** | Allows viewing and managing billing data such as usage, cost, and reports. Useful for automated cost tracking or budget-aware operations. |
 | Kubernetes service  | **Administrator**  | Enables Kubernetes clusters to interact with storage resources. |
-| VPC Infrastructure service  |  **Writer, Editor** | Writer, Editor, Snapshot Remote Account Restorer | Enables provisioning and management of storage resources. |
+| VPC Infrastructure service  |  **Writer, Editor, Snapshot Remote Account Restorer** | Enables provisioning and management of storage resources. |
 | Resource group | **Viewer** | Specify the resource group where the trusted profile is applied. For operations across multiple resource groups, you must specify all relevant resource groups. Note that if you are creating a custom storage class with the resource group, you must also assign **Viewer** access to the trusted profile for the resource group.  |
+{: caption="Minimum permissions for all components" caption-side="bottom"}
 
 
 Additionally, if you plan to use **Classic infrastructure** you must enable the **Add/Upgrade Storage (Storage Layer)** and **Storage Manage** permissions. To enable these permissions, navigate to the [Trusted profile dashboard](https://cloud.ibm.com/iam/trusted-profiles){: external} in the UI and select the relevant trusted profile. Click **Classic infrastructure**, then expand the options under **Sales** and **Devices** to find the permission. 
@@ -83,7 +84,7 @@ Create access policies with the permissions in the following table.
 | Kubernetes service  |  **Operator** | Enables Kubernetes clusters to interact with block storage resources. |
 | VPC Infrastructure service  | **Writer, Editor, Snapshot Remote Account Restorer** | Enables provisioning, management, and cross snapshot operations for block storage resources. | 
 | Resource group | **Viewer** | Specify the resource group where the trusted profile is applied. For operations across multiple resource groups, you must specify all relevant resource groups. Note that if you are creating a custom storage class with the resource group, you must also assign **Viewer** access to the trusted profile for the resource group.  |
-{: caption="Minimum permissions for VPC block" caption-side="bottom"}
+{: caption="Minimum permissions for VPC block storage" caption-side="bottom"}
 
 ### Classic block storage
 {: #tp-minreqs-classic-block}
@@ -100,7 +101,7 @@ Add the permissions in the following table. To enable these permissions, you mus
 | ------------ | ------------------- | ----------- |
 | `Devices` | **Storage Manage**  |  Enables attachment, detachment, and configuration of Classic block storage on devices.  |
 | `Sales` | **Add/Upgrade Storage(Storage Layer)** | Grants permission to order, upgrade, or modify Classic storage offerings via the Sales APIs. |
-{: caption="Minimum permissions for Classic Block" caption-side="bottom"}
+{: caption="Minimum permissions for Classic Block storage" caption-side="bottom"}
 
 Compute service type  in compute resource  tab instead of Compute resources
 
@@ -187,11 +188,11 @@ Create access policies with the permissions in the following table.
 
 | Service name | Required permission | Description |
 | ------------ | ------------------- | ----------- |
-| `billing` | **Editor**  | Billing service. Allows viewing and managing billing data such as usage, cost, and reports. Useful for automated cost tracking or budget-aware operations. |
+| Billing | **Editor**  | Billing service. Allows viewing and managing billing data such as usage, cost, and reports. Useful for automated cost tracking or budget-aware operations. |
 | Kubernetes service  | **Editor** | Enables Kubernetes clusters to interact with block storage. |
 | VPC Infrastructure service  | **Editor, Writer** | Allows provisioning and management of storage resources. |
 | Resource group | **Viewer** | Specify the resource group where the trusted profile is applied. For operations across multiple resource groups, you must specify all relevant resource groups. |
-{: caption="Minimum permissions for ODF" caption-side="bottom"}
+{: caption="Minimum permissions for ODF billing agent" caption-side="bottom"}
 
 
 ## Set up a trusted profile in the CLI
@@ -586,3 +587,6 @@ Irreversible transition to trusted profile
 
 Verification scope is limited to the `kube-system` namespace. 
 :   Trusted profile trust validation is currently limited to the `kube-system` namespace for Kubernetes and Red Hat OpenShift clusters. Users experimenting with other trusted profile features or configurations outside this scope may encounter issues. 
+
+User tags for VPC Block Storage volumes
+:   Due to a known issue, updates to user tags on VPC Block Storage volumes might not be displayed when a trusted profile is implemented. 

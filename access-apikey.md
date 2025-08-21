@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2025
-lastupdated: "2025-05-29"
+lastupdated: "2025-08-21"
 
 
 keywords: openshift, {{site.data.keyword.openshiftlong_notm}}, kubernetes, infrastructure, rbac, policy
@@ -76,4 +76,4 @@ Make sure that the user or functional ID that runs this command has the [require
 ## Removing user credentials and permissions
 {: #apikey-remove-user}
 
-In certain scenarios, such as staffing changes, your organization might need to remove user credentials and permissions from your account. To ensure that processes requiring certain user credentials are not disrupted when a user is removed from the account, you must reset the API key with another user's infrastructure credentials. For more information, see [Removing users](/docs/containers?topic=containers-removing-user-permissions).
+In certain scenarios, such as staffing changes, your organization might need to remove user credentials and permissions from your account. To ensure that processes requiring certain user credentials are not disrupted when a user is removed from the account, you must reset the API key with another user's infrastructure credentials. For more information, see [Removing users](/docs/openshift?topic=openshift-removing-user-permissions).
