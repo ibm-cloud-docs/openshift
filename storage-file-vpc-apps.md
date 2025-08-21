@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2022, 2025
-lastupdated: "2025-08-11"
+lastupdated: "2025-08-21"
 
 keywords: kubernetes, openshift
 
@@ -589,7 +589,7 @@ If your cluster and VPC are not in the same resource group, you must specify the
 {: important}
 
 
-1. Create a storage class configuration file. The following example uses the `dp2` [profile](https://cloud.ibm.com/docs/vpc?topic=vpc-file-storage-profiles&interface=ui#dp2-profile).
+1. Create a storage class configuration file. The following example uses the `dp2` [profile]/docs/vpc?topic=vpc-file-storage-profiles&interface=ui#dp2-profile).
 
     ```yaml
     apiVersion: storage.k8s.io/v1
@@ -915,7 +915,7 @@ Use a key management service (KMS) provider, such as {{site.data.keyword.keymana
 ## Setting up encryption in-transit (EIT)
 {: #storage-file-vpc-eit}
 
-Review the following information about EIT. If you choose to use encryption in-transit, you need to balance your requirements between performance and enhanced security. Encrypting data in-transit can have performance impacts due to the processing that is needed to encrypt and decrypt the data at the endpoints. For more information about encryption in-transit, see [VPC Encryption in Transit](https://cloud.ibm.com/docs/vpc?topic=vpc-file-storage-vpc-about&interface=ui#fs-eit).
+Review the following information about EIT. If you choose to use encryption in-transit, you need to balance your requirements between performance and enhanced security. Encrypting data in-transit can have performance impacts due to the processing that is needed to encrypt and decrypt the data at the endpoints. For more information about encryption in-transit, see [VPC Encryption in Transit](/docs/vpc?topic=vpc-file-storage-vpc-about&interface=ui#fs-eit).
 
 - EIT is available for cluster versions 4.16 and later.
 - EIT is available only for RHCOS worker nodes.

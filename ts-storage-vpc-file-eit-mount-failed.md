@@ -1,8 +1,8 @@
 ---
 
 copyright: 
-  years: 2024, 2024
-lastupdated: "2024-07-16"
+  years: 2024, 2025
+lastupdated: "2025-08-21"
 
 
 keywords: kubernetes, openshift, MountingTargetFailed, encryption in-transit, eit
@@ -32,7 +32,7 @@ Warning FailedMount 65s kubelet Unable to attach or mount volumes: unmounted vol
 New security group rules were introduced in cluster versions 4.11 and later. These rule changes mean that you must sync your security groups before you can use {{site.data.keyword.filestorage_vpc_short}}. For more information, see [Adding {{site.data.keyword.filestorage_vpc_short}} to apps](/docs/containers?topic=containers-storage-file-vpc-apps).
 {: tsCauses}
 
-If your cluster was initially created at a version earlier than 4.11, make sure to sync your security groups by running the [security group sync command](https://cloud.ibm.com/docs/containers?topic=containers-kubernetes-service-cli#security_group_sync).
+If your cluster was initially created at a version earlier than 4.11, make sure to sync your security groups by running the [security group sync command](/docs/containers?topic=containers-kubernetes-service-cli#security_group_sync).
 {: tsResolve}
 
 
@@ -55,5 +55,3 @@ If your cluster was initially created at a version earlier than 4.11, make sure 
 
 If your cluster was created at version 4.11 or later, verify that the node on whichever pod is deployed is allowlisted in the [VNI security group](/docs/containers?topic=containers-storage-file-vpc-apps#storage-file-vpc-vni-prereqs).
 {: note}
-
-
