@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2025
-lastupdated: "2025-08-20"
+lastupdated: "2025-08-21"
 
 
 keywords: openshift, kubernetes, helm, integrations, helm chart
@@ -85,7 +85,7 @@ Can I use existing service credentials when binding?
 :   You can optionally specify the `--key` parameter when running the `service bind` command and provide the name of your existing service credentials. {{site.data.keyword.cloud_notm}} service binding automatically creates a Kubernetes secret with your existing service credentials.
 
 What if my existing credentials are one-time view credentials?
-:   The `service bind` command does not support bringing your own one-time view credentials. So, if you want to use `service bind` command, then do not specify the `--key` paramter. Running the command without the `--key` will create a new set of credentials for you.
+:   The `service bind` command does not support bringing your own one-time view credentials. So, if you want to use `service bind` command, then do not specify the `--key` parameter. Running the command without the `--key` will create a new set of credentials for you.
 :   If you want to use credentials that are one-time view, you must bind the service [manually to your cluster](#add_services_manual). This option allows you to use your existing one-time view credentials.
 
 What if I want to use service credentials that use the private cloud service endpoint?

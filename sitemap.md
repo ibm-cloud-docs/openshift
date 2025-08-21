@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2025
-lastupdated: "2025-08-20"
+lastupdated: "2025-08-21"
 
 
 keywords: openshift
@@ -376,7 +376,7 @@ subcollection: openshift
 
         * IBM Cloud Image Key Synchronizer cluster add-on patch updates.
 
-        * Openshift AI cluster add-on patch updates.
+        * OpenShift AI cluster add-on patch updates.
 
     * [18 June 2025](/docs/openshift?topic=openshift-openshift-relnotes#openshift-june1825)
 
@@ -2422,6 +2422,8 @@ subcollection: openshift
 * [Set up a trusted profile with the UI](/docs/openshift?topic=openshift-configure-trusted-profile&interface=ui#tp-setup-ui)
 
 * [Set up a trusted profile with the API](/docs/openshift?topic=openshift-configure-trusted-profile&interface=api#tp-setup-api)
+
+* [Setting the trusted profile for a cluster or resource group](/docs/openshift?topic=openshift-configure-trusted-profile&interface=api#tp-set-cluster-rg)
 
 * [Limitations and considerations](/docs/openshift?topic=openshift-configure-trusted-profile&interface=api#tp-limitations)
 

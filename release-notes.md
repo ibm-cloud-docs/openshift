@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2025
-lastupdated: "2025-08-20"
+lastupdated: "2025-08-21"
 
 
 keywords: kubernetes, release notes, openshift, {{site.data.keyword.openshiftlong_notm}}
@@ -278,7 +278,7 @@ OpenShift Data Foundation cluster add-on patch updates.
 IBM Cloud Image Key Synchronizer cluster add-on patch updates.
 :   For more information, see the [change log](/docs/openshift?topic=openshift-cl-add-ons-ibm-cloud-image-key-synchronizer).
 
-Openshift AI cluster add-on patch updates.
+OpenShift AI cluster add-on patch updates.
 :   For more information, see the [change log](/docs/openshift?topic=openshift-cl-add-ons-openshift-ai).
 
 ### 18 June 2025

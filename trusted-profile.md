@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2025, 2025
-lastupdated: "2025-08-20"
+lastupdated: "2025-08-21"
 
 
 keywords: trusted profiles, containers, block storage, openshift
@@ -451,6 +451,7 @@ Once you add a trusted profile to a cluster, it cannot be removed and you cannot
             }
         ]
     }'
+    ```
     {: codeblock}
         
     ```curl

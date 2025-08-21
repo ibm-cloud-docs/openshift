@@ -2,7 +2,7 @@
 
 copyright:
   years: 2023, 2025
-lastupdated: "2025-06-09"
+lastupdated: "2025-08-21"
 
 
 keywords: critical, not ready, notready, troubleshooting, worker node status, status
@@ -378,7 +378,7 @@ Follow the steps to gather the relevant worker node data.
 ### Collecting worker node logs
 {: #collect-worker-logs}
 
-Follow the steps to [access the worker](https://cloud.ibm.com/docs/containers?topic=containers-cs_ssh_worker#pod-ssh) and collect worker node logs.
+Follow the steps to [access the worker](/docs/containers?topic=containers-cs_ssh_worker#pod-ssh) and collect worker node logs.
 
 1. Gather and save the following log files. Review the logs for possible causes of the worker node disruption, such as a lack of memory or disk space, the disk entering read-only mode, and other issues.
 
