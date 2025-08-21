@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2025
-lastupdated: "2025-08-11"
+lastupdated: "2025-08-21"
 
 
 keywords: openshift, block storage, deploy apps
@@ -1309,5 +1309,8 @@ Sometimes, the capacity of the volume that is created is less than the requested
 
 ## Assigning trusted profiles to block storage
 {: #block-vpc-trusted-profile}
+
+Due to a known issue, updates to user tags on VPC Block Storage volumes might not be displayed when a trusted profile is implemented. This issue is not present in clusters that do not use trusted profiles. 
+{: important}
 
 You can use trusted profiles to grant different IBM Cloud identities access to resources in your account, including your storage solutions. Trusted profiles centralize access control, eliminate the need for long-lived API keys, and allow you to scope permissions to the exact minimum required for a specific task. For more information, see [Configuring a trusted profile for storage components](/docs/containers?topic=containers-configure-trusted-profile&interface=ui).
