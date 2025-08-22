@@ -3,7 +3,7 @@
 copyright:
   years: 2024, 2025
 
-lastupdated: "2025-07-18"
+lastupdated: "2025-08-22"
 
 
 keywords: change log, version history, IBM Storage Operator
@@ -28,6 +28,16 @@ Review the version history for IBM Storage Operator.
 ## Version 1.0
 {: #cl-add-ons-ibm-storage-operator-1.0}
 
+
+### 1.0.26_258, released 18 August 2025
+{: #cl-add-ons-ibm-storage-operator-1026_258}
+
+[Default version]{: tag-green}
+
+- Updates Go to version `1.23.11`.
+- Fixes an issue with setting the default storage class from the add-on configMap. 
+- Added EIT support for RHEL 9.6 OS.
+- `ibm-vpc-package-deployer v1.0.4`
 
 ### 1.0.25_248, released 18 July 2025
 {: #cl-add-ons-ibm-storage-operator-1025_248}
