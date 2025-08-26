@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2025
-lastupdated: "2025-08-22"
+lastupdated: "2025-08-26"
 
 
 keywords: openshift
@@ -3125,6 +3125,12 @@ subcollection: openshift
 
 * [Understanding options for logging](/docs/openshift?topic=openshift-health#oc_logmet_options)
 
+* [Migrating logging and monitoring agents to Cloud Logs](/docs/openshift?topic=openshift-health#openshift_logging)
+
+    * [Reviewing your observability agents](/docs/openshift?topic=openshift-health#ob-review)
+
+    * [Removing the observability plug-in agents](/docs/openshift?topic=openshift-health#ob-remove)
+
 * [Using the cluster logging operator](/docs/openshift?topic=openshift-health#oc_logging_operator)
 
 [Monitoring cluster health](/docs/openshift?topic=openshift-health-monitor#health-monitor)
@@ -3136,6 +3142,12 @@ subcollection: openshift
     * [Built-in {{site.data.keyword.redhat_openshift_notm}} monitoring tools](/docs/openshift?topic=openshift-health-monitor#built-in-mon-tools)
 
     * [Monitoring {{site.data.keyword.openshiftlong}} storage metrics](/docs/openshift?topic=openshift-health-monitor#monitor-metrics)
+
+* [Migrating logging and monitoring agents to Cloud Logs](/docs/openshift?topic=openshift-health-monitor#openshift_monitoring)
+
+    * [Reviewing your observability agents](/docs/openshift?topic=openshift-health-monitor#ob-review-mon)
+
+    * [Removing the observability plug-in agents](/docs/openshift?topic=openshift-health-monitor#ob-remove-mon)
 
 * [Enabling remote health reporting](/docs/openshift?topic=openshift-health-monitor#oc_enable_telemetry_reports)
 
