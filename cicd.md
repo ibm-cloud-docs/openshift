@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2025
-lastupdated: "2025-03-18"
+lastupdated: "2025-08-27"
 
 
 keywords: openshift, {{site.data.keyword.openshiftlong_notm}}, continuous integration and delivery
@@ -57,8 +57,8 @@ Follow these steps to create a CI/CD pipeline with a toolchain. A toolchain is a
 
 Check out the following integrations and tools that you can use to automate your CI/CD pipeline. 
 
-Codeship
-:   You can use [Codeship](https://www.cloudbees.com/products/codeship){: external} for the continuous integration and delivery of containers.
+CloudBees Unify
+:   You can use [CloudBees Unify](https://www.cloudbees.com/capabilities/ci-cd-workflows){: external} for the continuous integration and delivery of containers.
 
 Grafeas
 :   [Grafeas](https://grafeas.io){: external} is an open source CI/CD service that provides a common way for how to retrieve, store, and exchange metadata during the software supply chain process. For example, if you integrate Grafeas into your app build process, Grafeas can store information about the initiator of the build request, vulnerability scan results, and quality assurance sign-off so that you can make an informed decision if an app can be deployed to production. You can use this metadata in audits or to prove compliance for your software supply chain.
