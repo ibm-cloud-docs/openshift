@@ -1,8 +1,8 @@
 ---
 
 copyright: 
-  years: 2014, 2024
-lastupdated: "2024-05-29"
+  years: 2014, 2025
+lastupdated: "2025-08-29"
 
 
 keywords: portworx, kubernetes, openshift
@@ -37,7 +37,7 @@ Update only one worker node at a time. When the worker node update is complete, 
 {: important}
 
 
-1. [Enter maintenance mode on the worker nodes that you want to update](https://docs.portworx.com/portworx-enterprise/operations/operate-kubernetes/troubleshooting/enter-maintenance-mode){: external}.
+1. [Enter maintenance mode on the worker nodes that you want to update](https://docs.portworx.com/portworx-enterprise/operations/troubleshooting/enter-maintenance-mode){: external}.
 
 2. [Update your VPC worker nodes](/docs/openshift?topic=openshift-update#vpc_worker_node).
 
@@ -62,13 +62,3 @@ Update only one worker node at a time. When the worker node update is complete, 
     {: pre}
 
 7. [Mount the volume to your app](/docs/openshift?topic=openshift-storage_portworx_deploy#mount_pvc).
-
-
-
-
-
-
-
-
-
-

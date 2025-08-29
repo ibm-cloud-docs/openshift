@@ -70,7 +70,7 @@ The following table shows the changes that are in the master fix pack 4.15.55_15
 
 | Component | Previous | Current | Description |
 | --- | --- | --- | --- |
-| etcd | v3.5.21 | v3.5.22 | See the [etcd release notes](https://github.com/coreos/etcd/releases/v3.5.22){: external}. |
+| etcd | v3.5.21 | v3.5.22 | See the [etcd release notes](https://github.com/etcd-io/etcd/releases/v3.5.22){: external}. |
 | {{site.data.keyword.cloud_notm}} Controller Manager | v1.28.15-33 | v1.28.15-35 | New version contains updates and security fixes. |
 | {{site.data.keyword.cloud_notm}} RBAC Operator | 38dc95c | 8a12251 | New version contains updates and security fixes. |
 | Key Management Service provider | v2.9.21 | v2.9.22 | New version contains updates and security fixes. |
