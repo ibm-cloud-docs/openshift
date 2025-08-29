@@ -3,7 +3,7 @@
 copyright:
   years: 2024, 2025
 
-lastupdated: "2025-08-26"
+lastupdated: "2025-08-29"
 
 
 keywords: change log, version history, 4.18_openshift
@@ -39,6 +39,22 @@ Master patch updates are applied automatically. Worker node patch updates can be
 {: #418_components}
 
 
+### Worker node fix pack 4.18.22_1556_openshift, released 26 August 2025
+{: #cl-boms-41822_1556_openshift_W}
+
+The following table shows the components included in the worker node fix pack 4.18.22_1556_openshift. Worker node patch updates can be applied by updating, reloading (in classic infrastructure), or replacing (in VPC infrastructure) the worker node.
+{: shortdesc}
+
+| Component | Version | Description |
+| ---- | ---- | ---- |
+|RHEL_9|5.14.0-503.40.1.el9_5|N/A|
+|Red Hat OpenShift and Red Hat CoreOS|4.18.22|For more information, see the [change logs](https://docs.redhat.com/en/documentation/openshift_container_platform/4.18/html/release_notes/ocp-4-18-release-notes.html#ocp-4-18-22_release-notes).|
+|HAProxy|3293782c542587d0ce46be4d053036b75509f4ef|Resolves the following CVEs: [CVE-2025-5914](https://nvd.nist.gov/vuln/detail/CVE-2025-5914){: external}.|
+{: caption="4.18.22_1556_openshift fix pack." caption-side="bottom"}
+{: #cl-boms-41822_1556_openshift_W-component-table}
+
+
+
 ### Master fix pack 4.18.21_1555_openshift, released 20 August 2025
 {: #41821_1555_openshift_M}
 
@@ -47,12 +63,13 @@ The following table shows the changes that are in the master fix pack 4.18.21_15
 
 | Component | Previous | Current | Description |
 | --- | --- | --- | --- |
-| etcd | v3.5.21 | v3.5.22 | See the [etcd release notes](https://github.com/coreos/etcd/releases/v3.5.22){: external}. |
+| etcd | v3.5.21 | v3.5.22 | See the [etcd release notes](https://github.com/etcd-io/etcd/releases/v3.5.22){: external}. |
 | {{site.data.keyword.cloud_notm}} Controller Manager | v1.31.10-4 | v1.31.11-2 | New version contains updates and security fixes. |
 | {{site.data.keyword.cloud_notm}} RBAC Operator | 38dc95c | 8a12251 | New version contains updates and security fixes. |
 | Key Management Service provider | v2.10.15 | v2.10.16 | New version contains updates and security fixes. |
 | {{site.data.keyword.openshiftlong_notm}} | 4.18.19 | 4.18.21 | See the [{{site.data.keyword.openshiftlong_notm}} release notes](https://docs.redhat.com/en/documentation/openshift_container_platform/4.18/html/release_notes/ocp-4-18-release-notes#ocp-4-18-21_release-notes){: external}. |
 {: caption="Changes since version 4.18.19_1552_openshift" caption-side="bottom"}
+
 
 
 ### Worker node fix pack 4.18.21_1554_openshift, released 12 August 2025
@@ -68,6 +85,7 @@ The following table shows the components included in the worker node fix pack 4.
 |HAProxy|3a9451f4782fa8e8e9ed60b060dc4393c7e1e31a|Resolves the following CVEs: [CVE-2025-6965](https://nvd.nist.gov/vuln/detail/CVE-2025-6965){: external}, [CVE-2025-8058](https://nvd.nist.gov/vuln/detail/CVE-2025-8058){: external}, and [CVE-2025-7425](https://nvd.nist.gov/vuln/detail/CVE-2025-7425){: external}.|
 {: caption="4.18.21_1554_openshift fix pack." caption-side="bottom"}
 {: #cl-boms-41821_1554_openshift_W-component-table}
+
 
 
 ### Master fix pack 4.18.19_1552_openshift, released 30 July 2025
@@ -94,6 +112,7 @@ The following table shows the changes that are in the master fix pack 4.18.19_15
 {: caption="Changes since version 4.18.11_1547_openshift" caption-side="bottom"}
 
 
+
 ### Worker node fix pack 4.18.20_1553_openshift, released 28 July 2025
 {: #cl-boms-41820_1553_openshift_W}
 
@@ -107,6 +126,7 @@ The following table shows the components included in the worker node fix pack 4.
 |HAProxy|b19109a289be3a60985c14bfdaf2b48a472556c0|Resolves the following CVEs: [CVE-2024-54661](https://nvd.nist.gov/vuln/detail/CVE-2024-54661){: external}, [CVE-2024-34397](https://nvd.nist.gov/vuln/detail/CVE-2024-34397){: external}, [CVE-2019-17543](https://nvd.nist.gov/vuln/detail/CVE-2019-17543){: external}, [CVE-2024-52533](https://nvd.nist.gov/vuln/detail/CVE-2024-52533){: external}, and [CVE-2025-4373](https://nvd.nist.gov/vuln/detail/CVE-2025-4373){: external}.|
 {: caption="4.18.20_1553_openshift fix pack." caption-side="bottom"}
 {: #cl-boms-41820_1553_openshift_W-component-table}
+
 
 
 ### Worker node fix pack 4.18.19_1539_openshift, released 14 July 2025
@@ -124,6 +144,7 @@ The following table shows the components included in the worker node fix pack 4.
 {: #cl-boms-41819_1539_openshift_W-component-table}
 
 
+
 ### Worker node fix pack 4.18.18_1539_openshift, released 01 July 2025
 {: #cl-boms-41818_1539_openshift_W}
 
@@ -137,6 +158,7 @@ The following table shows the components included in the worker node fix pack 4.
 |HAProxy|951efd90b46e95a54751966c644ac37c4c901f92|N/A|
 {: caption="4.18.18_1539_openshift fix pack." caption-side="bottom"}
 {: #cl-boms-41818_1539_openshift_W-component-table}
+
 
 
 ### Master fix pack 4.18.11_1547_openshift, released 18 June 2025
@@ -157,6 +179,7 @@ The following table shows the changes that are in the master fix pack 4.18.11_15
 {: caption="Changes since version 4.18.11_1544_openshift" caption-side="bottom"}
 
 
+
 ### Worker node fix pack 4.18.17_1539_openshift, released 16 June 2025
 {: #cl-boms-41817_1539_openshift_W}
 
@@ -170,6 +193,7 @@ The following table shows the components included in the worker node fix pack 4.
 |HAProxy|951efd90b46e95a54751966c644ac37c4c901f92|Resolves the following CVEs: [CVE-2025-4802](https://nvd.nist.gov/vuln/detail/CVE-2025-4802){: external}, [CVE-2025-32414](https://nvd.nist.gov/vuln/detail/CVE-2025-32414){: external}, and [CVE-2025-3576](https://nvd.nist.gov/vuln/detail/CVE-2025-3576){: external}.|
 {: caption="4.18.17_1539_openshift fix pack." caption-side="bottom"}
 {: #cl-boms-41817_1539_openshift_W-component-table}
+
 
 
 ### Worker node fix pack 4.18.15_1539_openshift, released 04 June 2025
@@ -187,6 +211,7 @@ The following table shows the components included in the worker node fix pack 4.
 {: #cl-boms-41815_1539_openshift_W-component-table}
 
 
+
 ### Master fix pack 4.18.11_1543_openshift, released 28 May 2025
 {: #41811_1544_openshift_M}
 
@@ -199,6 +224,7 @@ The following table shows the changes that are in the master fix pack 4.18.11_15
 | {{site.data.keyword.cloud_notm}} Controller Manager | v1.31.8-3 | v1.31.9-1 | New version contains updates and security fixes. |
 | {{site.data.keyword.filestorage_full_notm}} for Classic plug-in and monitor | 449 | 450 | New version contains updates and security fixes. |
 {: caption="Changes since version 4.18.11_1543_openshift" caption-side="bottom"}
+
 
 
 ### Master fix pack 4.18.11_1544_openshift and worker node fix pack 4.18.11_1541_openshift, released 27 May 2025

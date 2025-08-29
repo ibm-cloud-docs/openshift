@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2025
-lastupdated: "2025-08-26"
+lastupdated: "2025-08-29"
 
 
 keywords: oks, iro, openshift, red hat, red hat openshift
@@ -108,10 +108,10 @@ If your volume is reaching capacity, try setting up [volume expansion](/docs/ope
 ## Migrating logging and monitoring agents to Cloud Logs
 {: #openshift_monitoring}
 
-The observability CLI plug-in `ibmcloud ob` and the `v2/observe` endpoints are no longer supported. There is no direct replacement, but you can now manage your logging and monitoring integrations from the console or through the Helm charts. For the latest steps, [Managing the Logging agent for Red Hat OpenShift on IBM Cloud clusters](/docs/cloud-logs?topic=cloud-logs-agent-openshift) and [Working with the Red Hat OpenShift monitoring agent](/docs/monitoring?topic=monitoring-agent_openshift).
+The observability CLI plug-in `ibmcloud ob` and the `v2/observe` endpoints are no longer supported. There is no direct replacement, but you can now manage your logging and monitoring integrations from the console or through the Helm charts. For the latest steps, [Deploying the Logging agent for OpenShift clusters](/docs/cloud-logs?topic=cloud-logs-agent-helm-os-deploy) and [Monitoring a Red Hat OpenShift cluster](/docs/monitoring?topic=monitoring-openshift_cluster).
 {: unsupported}
 
-You can no longer use the `ob` plugin, Terraform, or API to install observability agents on a cluster or to modify your existing configuration. Sysdig agents continue to send metrics to the specified IBM Cloud Monitoring instance. LogDNA agents can no longer send logs since IBM Cloud Log Analysis is replaced by IBM Cloud Logs. 
+You can no longer use the `ob` plug-in, Terraform, or API to install observability agents on a cluster or to modify your existing configuration. Sysdig agents continue to send metrics to the specified IBM Cloud Monitoring instance. LogDNA agents can no longer send logs since IBM Cloud Log Analysis is replaced by IBM Cloud Logs. 
 
 ### Reviewing your observability agents
 {: #ob-review-mon}
@@ -160,8 +160,8 @@ The observability plug-in installs Sysdig and LogDNA agents in the `ibm-observe`
 After removing the plug-in has been removed, reinstall Logging and Monitoring agents in your cluster using the Cluster dashboard, Terraform, or manually. 
 
 For more information, see the following links:
-- [Managing the Logging agent for Red Hat OpenShift on IBM Cloud clusters](/docs/cloud-logs?topic=cloud-logs-agent-openshift).
-- [Working with the Red Hat OpenShift monitoring agent](/docs/monitoring?topic=monitoring-agent_openshift).
+- [Deploying the Logging agent for OpenShift clusters](/docs/cloud-logs?topic=cloud-logs-agent-helm-os-deploy)
+- [Monitoring a Red Hat OpenShift cluster](/docs/monitoring?topic=monitoring-openshift_cluster)
 
 
 ## Enabling remote health reporting

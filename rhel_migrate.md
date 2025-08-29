@@ -2,7 +2,7 @@
 
 copyright:
   years: 2022, 2025
-lastupdated: "2025-08-14"
+lastupdated: "2025-08-29"
 
 
 keywords: rhel, os, operating system, rhcos, 418, migration
@@ -371,7 +371,7 @@ Add the `nvidia.com/gpu.deploy.driver=false` label to your RHEL 8 worker nodes. 
 
 Add the `nvidia.com/gpu.deploy.driver=true` and `nvidia.com/gpu.deploy.operands=true` to your RHCOS workers.
 
-Adding these labels attempts to schedule the driver installer, device plugin, and other operands to the RHCOS worker nodes. Most pods are in the `init` state due to driver installer failing. Driver installer is failing because it is attempting to install the driver by using the RHEL 8 method.
+Adding these labels attempts to schedule the driver installer, device plug-in, and other operands to the RHCOS worker nodes. Most pods are in the `init` state due to driver installer failing. Driver installer is failing because it is attempting to install the driver by using the RHEL 8 method.
 
 Run the `label nodes` command to add labels.
 
