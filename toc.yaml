@@ -571,6 +571,12 @@ toc:
               label: Cluster health
               topics:
               - ts-network-health.md
+              - ts-network-nhc001.md
+              - ts-network-nhc003.md
+              - ts-network-nhc004.md
+              - ts-network-nhc005.md
+              - ts-network-nhc006.md
+              - ts-network-nhc007.md
               - ts-network-nhc009.md
               - ts-network-nhc010.md
               - ts-network-nhc011.md
