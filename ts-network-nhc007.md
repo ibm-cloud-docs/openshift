@@ -1,7 +1,7 @@
 ---
 copyright: 
   years: 2025, 2025
-lastupdated: "2025-09-02"
+lastupdated: "2025-09-03"
 
 keywords: , nhc007, dns traffic blocked
 
@@ -44,66 +44,60 @@ Check your Calico HostEndpoint (HEP) and GlobalNetworkPolicy (GNP) resources, as
 
 1. Check Calico HostEndpoint (HEP) resources
 To list Calico HEPs:
-  ```sh
-  kubectl get hostendpoints.crd.projectcalico.org
-  ```
-  {: pre}
+    ```sh
+    kubectl get hostendpoints.crd.projectcalico.org
+    ```
+    {: pre}
 
 To describe a specific HEP:
-  ```sh
-  kubectl describe hostendpoints.crd.projectcalico.org <hep-name>
-  ```
-  {: pre}
+    ```sh
+    kubectl describe hostendpoints.crd.projectcalico.org <hep-name>
+    ```
+    {: pre}
 
 Check if any HEP configurations might incorrectly apply restrictions to your worker node interfaces.
 
 2. Review Calico GlobalNetworkPolicies (GNP)
 To list GNPs:
-  ```sh
-  kubectl get globalnetworkpolicies.crd.projectcalico.org
-  ```
-  {: pre}
+    ```sh
+    kubectl get globalnetworkpolicies.crd.projectcalico.org
+    ```
+    {: pre}
 
 Inspect specific policies for restrictive DNS rules:
-  ```sh
-  kubectl get globalnetworkpolicies.crd.projectcalico.org <policy-name> -o yaml
-  ```
-  {: pre}
+    ```sh
+    kubectl get globalnetworkpolicies.crd.projectcalico.org <policy-name> -o yaml
+    ```
+    {: pre}
 
 Focus on `egress` rules that affect port 53 or apply to node labels/selectors.
 
 3. Test DNS access from a debug pod
 Run a temporary debug pod, where use the affected worker nodes name for `nodeName`:
-  ```sh
-  kubectl run  -i --tty debug \
-    --image=us.icr.io/armada-master/network-alpine:latest \
-    --restart=Never \
-    --overrides='
-  {
-    "apiVersion": "v1",
-    "spec": {
-      "nodeName": "<node-name>"
-    }
-  }' -- sh 
-  ```
-  {: pre}
+    ```sh
+    kubectl run  -i --tty debug \
+      --image=us.icr.io/armada-master/network-alpine:latest \
+      --restart=Never \
+      --overrides='
+    {
+      "apiVersion": "v1",
+      "spec": {
+        "nodeName": "<node-name>"
+      }
+    }' -- sh 
+    ```
+    {: pre}
 
 Inside the pod:
-  ```sh
-  nslookup ibm.com
-  ```
-  {: pre}
-
-Or:
-
-  ```sh
-  dig ibm.com
-  ```
-  {: pre}
+    ```sh
+    nslookup ibm.com
+    dig ibm.com
+    ```
+    {: pre}
 
 If DNS fails here, it may be due to infrastructure-level blocks.
 
-5. Check ACLs (Access Control Lists)
+4. Check ACLs (Access Control Lists)
 In the IBM Cloud console:
 - Navigate to **VPC > Access control lists**
 - Ensure **outbound rules** allow:
@@ -111,17 +105,18 @@ In the IBM Cloud console:
   - TCP port 53
 
 Or use CLI to inspect ACLs:
-```sh
-ibmcloud is network-acls
-ibmcloud is network-acl <acl-id>
-```
+    ```sh
+    ibmcloud is network-acls
+    ibmcloud is network-acl <acl-id>
+    ```
 
-6. Inspect security group rules
+5. Inspect security group rules
 Find the security groups associated with your worker nodes and then run to check security group settings:
-  ```sh
-  ibmcloud is security-group-rules <security-group-id>
-  ```
+    ```sh
+    ibmcloud is security-group-rules <security-group-id>
+    ```
 
 Ensure there are no outbound rules blocking DNS traffic (UDP/TCP port 53).
 
+6. Review your infrastructure (network appliances, ACLs, etc.) and allow **UDP and TCP port 53** outbound traffic
 7. If DNS is still unreachable after reviewing these items, contact support. Open a [support case](/docs/account?topic=account-using-avatar). In the case details, be sure to include any relevant log files, error messages, or command outputs.

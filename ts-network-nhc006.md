@@ -1,7 +1,7 @@
 ---
 copyright: 
   years: 2025, 2025
-lastupdated: "2025-09-02"
+lastupdated: "2025-09-03"
 
 keywords: , nhc006, dns resolvers unreachable
 
@@ -51,9 +51,9 @@ This warning indicates that some worker nodes are unable to reach one or more DN
     ```
     {: pre}
 
-1. Look for any `egress` rules that block DNS traffic (UDP/TCP port 53). Also check for `selector` fields that might improperly include worker nodes.
+2. Look for any `egress` rules that block DNS traffic (UDP/TCP port 53). Also check for `selector` fields that might improperly include worker nodes.
 
-1. Validate DNS reachability from worker nodes using a debug pod
+3. Validate DNS reachability from worker nodes using a debug pod
     ```sh
     kubectl run  -i --tty debug \
       --image=us.icr.io/armada-master/network-alpine:latest \
@@ -68,7 +68,7 @@ This warning indicates that some worker nodes are unable to reach one or more DN
     ```
     {: pre}
 
-1. Run the following commands inside the debug pod. If these fail, DNS might be blocked by policies or IaaS-level configurations.
+4. Run the following commands inside the debug pod. If these fail, DNS might be blocked by policies or IaaS-level configurations.
 
     ```sh
     nslookup ibm.com
@@ -80,6 +80,5 @@ This warning indicates that some worker nodes are unable to reach one or more DN
     ```
     {: pre}
 
-1. Check IaaS-level firewalls and ACLs.
-1. Ensure subnet ACLs allow **UDP and TCP port 53** outbound.
-1. If the issue continues, contact support for further assistance. Open a [support case](/docs/account?topic=account-using-avatar). In the case details, be sure to include any relevant log files, error messages, or command outputs.
+5. Review your infrastructure (network appliances, ACLs, etc.) and allow **UDP and TCP port 53** outbound traffic.
+6. If the issue continues, contact support for further assistance. Open a [support case](/docs/account?topic=account-using-avatar). In the case details, be sure to include any relevant log files, error messages, or command outputs.
