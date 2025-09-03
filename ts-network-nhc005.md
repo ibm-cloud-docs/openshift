@@ -1,7 +1,7 @@
 ---
 copyright: 
   years: 2025, 2025
-lastupdated: "2025-09-02"
+lastupdated: "2025-09-03"
 
 keywords: , nhc005, calico degraded, tigera operator
 
@@ -46,13 +46,13 @@ Check the logs of the Tigera operator and Calico components to investigate the c
     ```
     {: pre}
 
-1. Check Calico and Calico-typha components status by listing the Calico pods in `calico-system` namespace:
+2. Check Calico and Calico-typha components status by listing the Calico pods in `calico-system` namespace:
     ```sh
     kubectl get pods -n calico-system
     ```
     {: pre}
 
-1. Check the rollout status of deployments and daemonset.
+3. Check the rollout status of deployments and daemonset.
     ```sh
     kubectl rollout status deployment/calico-kube-controllers -n calico-system
     kubectl rollout status deployment/calico-typha -n calico-system
@@ -60,16 +60,16 @@ Check the logs of the Tigera operator and Calico components to investigate the c
     ```
     {: pre}
 
-1. If pods are not ready or stuck in `Init` or `CrashLoopBackOff`, get the pod logs.
+4. If pods are not ready or stuck in `Init` or `CrashLoopBackOff`, get the pod logs.
     ```sh
     kubectl logs <pod-name> -n calico-system
     ```
     {: pre}
 
-1. Look for any configuration errors, networking issues, or crash loops in logs.
+5. Look for any configuration errors, networking issues, or crash loops in logs.
 
-1. After resolving any identified issues, wait a few minutes and recheck the network health.
+6. After resolving any identified issues, wait a few minutes and recheck the network health.
 
-1. For more information, see [Controlling traffic with network policies](https://cloud.ibm.com/docs/containers?topic=containers-network_policies){: external} and [Debugging Calico components](https://cloud.ibm.com/docs/containers?topic=containers-calico_log_level){: external}
+7. For more information, see [Controlling traffic with network policies](https://cloud.ibm.com/docs/containers?topic=containers-network_policies){: external} and [Debugging Calico components](https://cloud.ibm.com/docs/containers?topic=containers-calico_log_level){: external}
 
-1. If the issue persists, contact support for further assistance. Open a [support case](/docs/account?topic=account-using-avatar). In the case details, be sure to include any relevant log files, error messages, or command outputs.
+8. If the issue persists, contact support for further assistance. Open a [support case](/docs/account?topic=account-using-avatar). In the case details, be sure to include any relevant log files, error messages, or command outputs.

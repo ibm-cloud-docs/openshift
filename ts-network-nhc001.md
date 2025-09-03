@@ -1,7 +1,7 @@
 ---
 copyright: 
   years: 2025, 2025
-lastupdated: "2025-09-02"
+lastupdated: "2025-09-03"
 
 keywords: , nhc001, calico progressing, tigera operator
 
@@ -47,7 +47,7 @@ Investigate the logs of the Tigera operator and Calico components to understand 
     {: pre}
 
 
-1. Check Calico and Calico-typha components status by listing Calico pods in `calico-system`. namespace:
+2. Check Calico and Calico-typha components status by listing Calico pods in `calico-system`. namespace:
     ```sh
     kubectl get pods -n calico-system
     ```
@@ -61,12 +61,14 @@ Investigate the logs of the Tigera operator and Calico components to understand 
     ```
     {: pre}
 
-1. If pods are not ready or stuck in `Init` or `CrashLoopBackOff`, get logs:
+3. If pods are not ready or stuck in `Init` or `CrashLoopBackOff`, get logs:
     ```sh
     kubectl logs <pod-name> -n calico-system
     ```
     {: pre}
 
-1. Wait for components to complete rollout. After addressing any issues (e.g., CrashLoopBackOff, image pull errors), wait a few minutes for Tigera to refresh the state.
+4. Wait for components to complete rollout. After addressing any issues (e.g., CrashLoopBackOff, image pull errors), wait a few minutes for Tigera to refresh the state.
 
-1. If the issue continues, contact support for assistance. Open a [support case](/docs/account?topic=account-using-avatar). In the case details, be sure to include any relevant log files, error messages, or command outputs.
+5. For more information, see [Controlling traffic with network policies](https://cloud.ibm.com/docs/containers?topic=containers-network_policies){: external} and [Debugging Calico components](https://cloud.ibm.com/docs/containers?topic=containers-calico_log_level){: external}
+
+6. If the issue continues, contact support for assistance. Open a [support case](/docs/account?topic=account-using-avatar). In the case details, be sure to include any relevant log files, error messages, or command outputs.

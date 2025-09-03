@@ -1,7 +1,7 @@
 ---
 copyright: 
   years: 2025, 2025
-lastupdated: "2025-09-02"
+lastupdated: "2025-09-03"
 
 keywords: , nhc004, vpe gateway hostname resolution
 
@@ -57,25 +57,26 @@ To identify the VPE gateways used by your IBM Cloud Kubernetes Service cluster, 
     ```
     {: pre}
 
-1. Filter the output for `iks-cluster_ID` and look for `Service Endpoints`. This shows the sassociated services, IP addresses, and endpoint names.
+2. Filter the output for `iks-cluster_ID` and look for `Service Endpoints`. This shows the sassociated services, IP addresses, and endpoint names.
 
 
 ### 2. Use the IBM Cloud console to list endpoint gateways
 {: #list-gateways-in-cloud-console}
 
 1. Navigate to **VPC Infrastructure > Endpoint Gateways**
-1. Select your VPC
-1. Review configured gateways for private service access and view DNS/IP information
+2. Select your VPC
+3. Review configured gateways for private service access and view DNS/IP information
 
-1. After finding the VPE gateway hostname complete the following steps.
+### 3. After finding the VPE gateway hostname complete the following steps.
+{: #error-checking}
 
     1. From a pod running on a worker node, launch a debug shell:
         ```sh
-        kubectl run -i --tty debug --image=busybox --restart=Never -- sh
+        kubectl run -i --tty debug --image=us.icr.io/armada-master/network-alpine:latest --restart=Never -- sh
         ```
         {: pre}
 
-    1. Inside the pod, try resolving a VPE gateway hostname.
+    2. Inside the pod, try resolving a VPE gateway hostname.
         ```sh
         nslookup <vpe-hostname>
         ```
@@ -86,7 +87,7 @@ To identify the VPE gateways used by your IBM Cloud Kubernetes Service cluster, 
         ```
         {: pre}
 
-    1. Test DNS resolution directly using a VPC DNS service.
+    3. Test DNS resolution directly using a VPC DNS service.
         ```sh
         dig <vpe-hostname> @161.26.0.7
         ```
@@ -98,19 +99,19 @@ To identify the VPE gateways used by your IBM Cloud Kubernetes Service cluster, 
         ```
         {: pre}
 
-1. If your cluster is using custom DNS configurations (e.g., modified CoreDNS settings), inspect the config.
+4. If your cluster is using custom DNS configurations (e.g., modified CoreDNS settings), inspect the config.
     ```sh
     kubectl get configmap coredns -n kube-system -o yaml
     ```
     {: pre}
 
-1. If required, update the CoreDNS configuration to ensure VPE-resolving DNS servers are included, then reload CoreDNS.
+5. If required, update the CoreDNS configuration to ensure VPE-resolving DNS servers are included, then reload CoreDNS.
     ```sh
     kubectl rollout restart deployment coredns -n kube-system
     ```
     {: pre}
 
-1. Ensure that your VPC DNS settings allow access to the VPE hostnames. In the IBM Cloud console, navigate to **VPC > DNS services** and validate the DNS rules.
+6. Ensure that your VPC DNS settings allow access to the VPE hostnames. In the IBM Cloud console, navigate to **VPC > DNS services** and validate the DNS rules.
 
 - For more on Virtual private endpoint (VPE) gateways in IBM Cloud Kubernetes Service, see [Virtual private endpoint (VPE) gateways](https://cloud.ibm.com/docs/containers?topic=containers-vpc-security-group-reference#sbd-managed-vpe-gateways){: external}.
 

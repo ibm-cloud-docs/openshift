@@ -1,7 +1,7 @@
 ---
 copyright: 
   years: 2025, 2025
-lastupdated: "2025-09-02"
+lastupdated: "2025-09-03"
 
 keywords: , nhc003, container registry unreachable
 
@@ -82,7 +82,7 @@ Ensure the worker nodes have access to the internet and can reach external conta
     {: pre}
 
     ```sh
-     kubectl get gnp
+     kubectl get globalnetworkpolicies.crd.projectcalico.org
     ```
     {: pre}
 
