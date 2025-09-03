@@ -40,6 +40,11 @@ For more details about the {{site.data.keyword.redhat_openshift_notm}} and Kuber
 
 
 
+![OpenShift version support timeline](images/oc.svg "Version support timeline"){: caption="Red Hat OpenShift version support timeline" caption-side="bottom"}
+
+`†` Indicates dates that are tentative and subject to change.
+
+
 All VPC clusters created at version 4.18 or later can use RHCOS worker nodes. Clusters that were created at versions 4.15, 4.16, or 4.17 can only use RHCOS worker nodes if they were initially created with RHCOS worker nodes, or if they are upgraded to at least version 4.18. 
 {: important}
 
