@@ -1,7 +1,7 @@
 ---
 copyright: 
   years: 2025, 2025
-lastupdated: "2025-09-03"
+lastupdated: "2025-09-04"
 
 keywords: , nhc007, dns traffic blocked
 
@@ -42,38 +42,36 @@ This warning indicates that DNS traffic from certain worker nodes is being block
 Check your Calico HostEndpoint (HEP) and GlobalNetworkPolicy (GNP) resources, as well as your ACLs, security groups, and any other network appliances that may block outbound DNS traffic.
 {: tsResolve}
 
-1. Check Calico HostEndpoint (HEP) resources
-To list Calico HEPs:
+1. Review Calico HostEndpoint (HEP) resources to list Calico HEPs and check if any HEP configurations might incorrectly apply restrictions to your worker node interfaces.
+
     ```sh
     kubectl get hostendpoints.crd.projectcalico.org
     ```
     {: pre}
 
-To describe a specific HEP:
+    Example command to to describe a specific HEP.
+
     ```sh
     kubectl describe hostendpoints.crd.projectcalico.org <hep-name>
     ```
     {: pre}
 
-Check if any HEP configurations might incorrectly apply restrictions to your worker node interfaces.
+1. Review Calico GlobalNetworkPolicies (GNP) to list GNPs.
 
-2. Review Calico GlobalNetworkPolicies (GNP)
-To list GNPs:
     ```sh
     kubectl get globalnetworkpolicies.crd.projectcalico.org
     ```
     {: pre}
 
-Inspect specific policies for restrictive DNS rules:
+1. Inspect specific policies for restrictive DNS rules. Focus on `egress` rules that affect port 53 or apply to node labels/selectors.
+
     ```sh
     kubectl get globalnetworkpolicies.crd.projectcalico.org <policy-name> -o yaml
     ```
     {: pre}
 
-Focus on `egress` rules that affect port 53 or apply to node labels/selectors.
+1. Test DNS access from a debug pod, run a temporary debug pod, where use the affected worker nodes name for `nodeName`. If DNS fails here, it may be due to infrastructure-level blocks.
 
-3. Test DNS access from a debug pod
-Run a temporary debug pod, where use the affected worker nodes name for `nodeName`:
     ```sh
     kubectl run  -i --tty debug \
       --image=us.icr.io/armada-master/network-alpine:latest \
@@ -88,35 +86,43 @@ Run a temporary debug pod, where use the affected worker nodes name for `nodeNam
     ```
     {: pre}
 
-Inside the pod:
+1. Run the following commands inside the debug pod.
+
     ```sh
     nslookup ibm.com
+    ```
+    {: pre}
+
+    ```sh
     dig ibm.com
     ```
     {: pre}
 
-If DNS fails here, it may be due to infrastructure-level blocks.
 
-4. Check ACLs (Access Control Lists)
-In the IBM Cloud console:
-- Navigate to **VPC > Access control lists**
-- Ensure **outbound rules** allow:
-  - UDP port 53
-  - TCP port 53
+1. Check ACLs (Access Control Lists).
+    * In the console, navigate to **VPC > Access control lists** and ensure **outbound rules** allow both UDP port 53 and TCP port 53.
 
-Or use CLI to inspect ACLs:
-    ```sh
-    ibmcloud is network-acls
-    ibmcloud is network-acl <acl-id>
-    ```
+    * In the CLI inspect ACLs by running the following commands.
 
-5. Inspect security group rules
-Find the security groups associated with your worker nodes and then run to check security group settings:
+        ```sh
+        ibmcloud is network-acls
+        ```
+        {: pre}
+
+        ```sh
+        ibmcloud is network-acl <acl-id>
+        ```
+        {: pre}
+
+1. Inspect security group rules to find the security groups associated with your worker nodes and then run to check security group settings. Ensure there are no outbound rules blocking DNS traffic (UDP/TCP port 53).
+
     ```sh
     ibmcloud is security-group-rules <security-group-id>
     ```
+    {: pre}
 
-Ensure there are no outbound rules blocking DNS traffic (UDP/TCP port 53).
 
-6. Review your infrastructure (network appliances, ACLs, etc.) and allow **UDP and TCP port 53** outbound traffic
-7. If DNS is still unreachable after reviewing these items, contact support. Open a [support case](/docs/account?topic=account-using-avatar). In the case details, be sure to include any relevant log files, error messages, or command outputs.
+
+1. Review your infrastructure (network appliances, ACLs, etc.) and allow **UDP and TCP port 53** outbound traffic
+
+1. If DNS is still unreachable after reviewing these items, contact support. Open a [support case](/docs/account?topic=account-using-avatar). In the case details, be sure to include any relevant log files, error messages, or command outputs.

@@ -1,7 +1,7 @@
 ---
 copyright: 
   years: 2025, 2025
-lastupdated: "2025-09-03"
+lastupdated: "2025-09-04"
 
 keywords: , nhc004, vpe gateway hostname resolution
 
@@ -70,42 +70,46 @@ To identify the VPE gateways used by your IBM Cloud Kubernetes Service cluster, 
 ### 3. After finding the VPE gateway hostname complete the following steps.
 {: #error-checking}
 
-    1. From a pod running on a worker node, launch a debug shell:
-        ```sh
-        kubectl run -i --tty debug --image=us.icr.io/armada-master/network-alpine:latest --restart=Never -- sh
-        ```
-        {: pre}
+1. From a pod running on a worker node, launch a debug shell:
 
-    2. Inside the pod, try resolving a VPE gateway hostname.
-        ```sh
-        nslookup <vpe-hostname>
-        ```
-        {: pre}
+    ```sh
+    kubectl run -i --tty debug --image=us.icr.io/armada-master/network-alpine:latest --restart=Never -- sh
+    ```
+    {: pre}
 
-        ```sh
-        dig <vpe-hostname>
-        ```
-        {: pre}
+2. Inside the pod, try resolving a VPE gateway hostname.
 
-    3. Test DNS resolution directly using a VPC DNS service.
-        ```sh
-        dig <vpe-hostname> @161.26.0.7
-        ```
-        {: pre}
+    ```sh
+    nslookup <vpe-hostname>
+    ```
+    {: pre}
 
+    ```sh
+    dig <vpe-hostname>
+    ```
+    {: pre}
 
-        ```sh
-        dig <vpe-hostname> @161.26.0.8
-        ```
-        {: pre}
+3. Test DNS resolution directly using a VPC DNS service.
+
+    ```sh
+    dig <vpe-hostname> @161.26.0.7
+    ```
+    {: pre}
+
+    ```sh
+    dig <vpe-hostname> @161.26.0.8
+    ```
+    {: pre}
 
 4. If your cluster is using custom DNS configurations (e.g., modified CoreDNS settings), inspect the config.
+
     ```sh
     kubectl get configmap coredns -n kube-system -o yaml
     ```
     {: pre}
 
 5. If required, update the CoreDNS configuration to ensure VPE-resolving DNS servers are included, then reload CoreDNS.
+
     ```sh
     kubectl rollout restart deployment coredns -n kube-system
     ```
