@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2025
-lastupdated: "2025-08-11"
+lastupdated: "2025-09-04"
 
 
 keywords: openshift, cli reference, kubernetes cli, openshift cli, {{site.data.keyword.openshiftlong_notm}}
@@ -4666,8 +4666,7 @@ Minimum required permissions
 :    Optional: Prints the command output in JSON format.
 
 `--domain-provider PROVIDER`
-:    Optional. The external DNS provider type. Available options are `akamai`, `cis-ext`. If no provider is specified, a domain is created with the IBM-managed internal provider.
-
+:    Optional. The external DNS provider type. Available options are `ns1`, `cis-ext`. If no provider is specified, a domain is created with the IBM-managed internal provider. The default DNS provider is `cis-ext`. For supported providers, see [Setting up a domain for your cluster](https://ibm.biz/containers-ingress-domains).
 
 `--secret-namespace NAMESPACE`
 :    Optional. The namespace that the TLS secret is created in. If no namespace is specified, the secret is created in the `default` namespace.
