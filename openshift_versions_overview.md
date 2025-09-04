@@ -92,6 +92,14 @@ All VPC clusters created at version 4.18 or later can use RHCOS worker nodes. Cl
 - [Change log](/docs/openshift?topic=openshift-openshift_changelog_415)
 - [{{site.data.keyword.redhat_openshift_notm}} 4.15 release notes overview](https://docs.redhat.com/en/documentation/openshift_container_platform/4.15/html/release_notes/ocp-4-15-release-notes){: external}
 
+4.14 (Kubernetes 1.27)
+- Release date: 13 December 2023
+- End of support: 08 January 2026†
+- Operating systems: RHEL 8 (`REDHAT_8_64`)
+- [Version information and update actions](/docs/openshift?topic=openshift-cs_versions_414)
+- [Change log](/docs/openshift?topic=openshift-openshift_changelog_414)
+- [{{site.data.keyword.redhat_openshift_notm}} 4.14 release notes overview](https://docs.redhat.com/en/documentation/openshift_container_platform/4.14/html/release_notes/ocp-4-14-release-notes){: external}
+
 
 ### VPC and Classic clusters
 {: #os-openshift}
