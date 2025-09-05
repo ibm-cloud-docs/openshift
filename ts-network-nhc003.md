@@ -1,7 +1,7 @@
 ---
 copyright: 
   years: 2025, 2025
-lastupdated: "2025-09-03"
+lastupdated: "2025-09-04"
 
 keywords: , nhc003, container registry unreachable
 
@@ -71,6 +71,10 @@ Ensure the worker nodes have access to the internet and can reach external conta
 2. Check if the worker nodes have outbound internet access by running a traceroute or ping from the debug pod.
     ```sh
     traceroute <registry_address>
+    ```
+    {: pre}
+
+    ```sh
     ping <registry_address>
     ```
     {: pre}

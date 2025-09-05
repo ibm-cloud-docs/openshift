@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2025
-lastupdated: "2025-08-20"
+lastupdated: "2025-09-04"
 
 
 keywords: openshift, {{site.data.keyword.openshiftlong_notm}}, oc, ks
@@ -31,6 +31,11 @@ Refer to the following change logs for a summary of changes for each version of 
 
 Review the following changes for 1.0 versions of the CLI plug-in.
 {: shortdesc}
+
+## Version v1.0.717
+{: #cli-010717}
+
+Adds the `--domain-provider` option to the `ingress domain create` command. For more information, see [Setting up a domain for your cluster](https://ibm.biz/containers-ingress-domains).
 
 ## Version v1.0.715
 {: #cli-010715}
