@@ -115,7 +115,7 @@ keyword:
   openshift_418_unsupported_certainty: tentative
   openshift_418_unsupported_date: 26 May 2027
   openshift_419_deprecated: 'False'
-  openshift_419_kube_version: ''
+  openshift_419_kube_version: '1.32'
   openshift_419_release_date: None
   openshift_419_unsupported_certainty: ''
   openshift_419_unsupported_date: None
@@ -193,7 +193,7 @@ keyword:
   satellite_418_unsupported_certainty: tentative
   satellite_418_unsupported_date: 26 May 2027
   satellite_419_deprecated: 'False'
-  satellite_419_kube_version: ''
+  satellite_419_kube_version: '1.32'
   satellite_419_release_date: None
   satellite_419_unsupported_certainty: ''
   satellite_419_unsupported_date: None

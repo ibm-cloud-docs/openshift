@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2025
-lastupdated: "2025-05-30"
+lastupdated: "2025-09-08"
 
 
 keywords: kubernetes, containers, openshift
@@ -31,6 +31,7 @@ When a new Kubernetes version is released as part of a [supported {{site.data.ke
 
 Use the list to find CIS Kubernetes Benchmark results for supported versions.
 
+- [Version 4.19](/docs/openshift?topic=openshift-cis-benchmark-419)
 - [Version 4.18](/docs/openshift?topic=openshift-cis-benchmark-418)
 - [Version 4.17](/docs/openshift?topic=openshift-cis-benchmark-417)
 - [Version 4.16](/docs/openshift?topic=openshift-cis-benchmark-416)
