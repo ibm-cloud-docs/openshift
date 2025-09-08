@@ -36,6 +36,10 @@ New! {{site.data.keyword.openshiftlong_notm}} 4.19 is available.
 :   You can now create or [update clusters to version 4.19](/docs/openshift?topic=openshift-cs_versions_419).
 :   With {{site.data.keyword.openshiftlong_notm}} version 4.19, you get the latest features, as well as component updates on {{site.data.keyword.openshiftlong_notm}}. RHCOS is the default operating system for {{site.data.keyword.openshiftlong_notm}} cluster version 4.19 on VPC. For more information, see the [4.19 change log](/docs/openshift?topic=openshift-openshift_changelog_419).
 
+New! Version support timelines
+:   Version support timeline images are now available to help you plan your cluster update schedule. To view the timelines and end of support dates for cluster versions, see [{{site.data.keyword.openshiftlong_notm}} version information](/docs/openshift?topic=openshift-openshift_versions).
+
+
 
 ### 04 September 2025
 {: #openshift-sep0425}

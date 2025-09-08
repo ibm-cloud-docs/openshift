@@ -290,6 +290,8 @@ subcollection: openshift
 
         * New! {{site.data.keyword.openshiftlong_notm}} 4.19 is available.
 
+        * New! Version support timelines
+
     * [04 September 2025](/docs/openshift?topic=openshift-openshift-relnotes#openshift-sep0425)
 
         * CLI version `1.0.717` is available.
