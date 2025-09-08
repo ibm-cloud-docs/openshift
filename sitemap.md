@@ -286,6 +286,10 @@ subcollection: openshift
 
 * [September 2025](/docs/openshift?topic=openshift-openshift-relnotes#openshift-sep25)
 
+    * [08 September 2025](/docs/openshift?topic=openshift-openshift-relnotes#openshift-sep0825)
+
+        * New! {{site.data.keyword.openshiftlong_notm}} 4.19 is available.
+
     * [04 September 2025](/docs/openshift?topic=openshift-openshift-relnotes#openshift-sep0425)
 
         * CLI version `1.0.717` is available.
@@ -4895,6 +4899,115 @@ subcollection: openshift
 * [Major differences](/docs/openshift?topic=openshift-benchmark-comparison#benchmark-comparison-major)
 
 * [Minor differences](/docs/openshift?topic=openshift-benchmark-comparison#benchmark-comparison-minor)
+
+
+### Version 4.19
+{: #sitemap_version_419}
+
+
+[4.19 version information and update actions](/docs/openshift?topic=openshift-cs_versions_419#cs_versions_419)
+
+* [Release timeline](/docs/openshift?topic=openshift-cs_versions_419#release_timeline_419)
+
+* [Preparing to update](/docs/openshift?topic=openshift-cs_versions_419#prep-up-419)
+
+    * [Update before master](/docs/openshift?topic=openshift-cs_versions_419#419_before)
+
+* [Checking the `Upgradeable` status of your cluster](/docs/openshift?topic=openshift-cs_versions_419#status-check-419)
+
+[4.19 version change log](/docs/openshift?topic=openshift-openshift_changelog_419#openshift_changelog_419)
+
+* [Overview](/docs/openshift?topic=openshift-openshift_changelog_419#changelog_overview_419)
+
+* [Version 4.19](/docs/openshift?topic=openshift-openshift_changelog_419#419_components)
+
+    * [Master fix pack 4.19.9_1541_openshift and worker node fix pack 4.19.9_1540_openshift, released 03 September 2025](/docs/openshift?topic=openshift-openshift_changelog_419#4199_15411M_and_4199_1540W)
+
+[4.19 CIS Kubernetes benchmark](/docs/openshift?topic=openshift-cis-benchmark-419#cis-benchmark-419)
+
+* [1 Master node security configuration](/docs/openshift?topic=openshift-cis-benchmark-419#1-master-node-security-configuration-419)
+
+    * [1.1 Master node configuration files](/docs/openshift?topic=openshift-cis-benchmark-419#11-master-node-configuration-files-419)
+
+    * [1.2 API server](/docs/openshift?topic=openshift-cis-benchmark-419#12-api-server-419)
+
+    * [1.3 Controller manager](/docs/openshift?topic=openshift-cis-benchmark-419#13-controller-manager-419)
+
+    * [1.4 Scheduler](/docs/openshift?topic=openshift-cis-benchmark-419#14-scheduler-419)
+
+* [2 Etcd node configuration](/docs/openshift?topic=openshift-cis-benchmark-419#2-etcd-node-configuration-419)
+
+* [3 Control plane configuration](/docs/openshift?topic=openshift-cis-benchmark-419#3-control-plane-configuration-419)
+
+    * [3.1 Authentication and authorization](/docs/openshift?topic=openshift-cis-benchmark-419#31-authentication-and-authorization-419)
+
+    * [3.2 Logging](/docs/openshift?topic=openshift-cis-benchmark-419#32-logging-419)
+
+* [4 Worker node security configuration (RHEL_9_64)](/docs/openshift?topic=openshift-cis-benchmark-419#4-worker-node-security-configuration-rhel_9_64-419)
+
+    * [4.1 Worker node configuration files](/docs/openshift?topic=openshift-cis-benchmark-419#41-worker-node-configuration-files-419)
+
+    * [4.2 Kubelet](/docs/openshift?topic=openshift-cis-benchmark-419#42-kubelet-419)
+
+* [4 Worker node security configuration (RHCOS)](/docs/openshift?topic=openshift-cis-benchmark-419#4-worker-node-security-configuration-rhcos-419)
+
+    * [4.1 Worker node configuration files](/docs/openshift?topic=openshift-cis-benchmark-419#41-worker-node-configuration-files-419)
+
+    * [4.2 Kubelet](/docs/openshift?topic=openshift-cis-benchmark-419#42-kubelet-419)
+
+* [5 Kubernetes policies](/docs/openshift?topic=openshift-cis-benchmark-419#5-kubernetes-policies-419)
+
+    * [5.1 RBAC and service accounts](/docs/openshift?topic=openshift-cis-benchmark-419#51-rbac-and-service-accounts-419)
+
+    * [5.2 Pod security policies](/docs/openshift?topic=openshift-cis-benchmark-419#52-pod-security-policies-419)
+
+    * [5.3 Network policies and CNI](/docs/openshift?topic=openshift-cis-benchmark-419#53-network-policies-and-cni-419)
+
+    * [5.4 Secrets management](/docs/openshift?topic=openshift-cis-benchmark-419#54-secrets-management-419)
+
+    * [5.5 Extensible admission control](/docs/openshift?topic=openshift-cis-benchmark-419#55-extensible-admission-control-419)
+
+    * [5.7 General policies](/docs/openshift?topic=openshift-cis-benchmark-419#57-general-policies-419)
+
+    * [{{site.data.keyword.IBM_notm}} remediations and explanations](/docs/openshift?topic=openshift-cis-benchmark-419#ibm-remediations-and-explanations-419)
+
+[4.19 compliance operator benchmark](/docs/openshift?topic=openshift-benchmarks-419-co#benchmarks-419-co)
+
+* [1 Control plane components](/docs/openshift?topic=openshift-benchmarks-419-co#control-plane-components-419-co)
+
+    * [1.1 Master node configuration files](/docs/openshift?topic=openshift-benchmarks-419-co#master-node-configuration-files-419-co)
+
+    * [1.2 API server](/docs/openshift?topic=openshift-benchmarks-419-co#api-server-419-co)
+
+    * [1.3 Controller manager](/docs/openshift?topic=openshift-benchmarks-419-co#controller-manager-419-co)
+
+    * [1.4 Scheduler](/docs/openshift?topic=openshift-benchmarks-419-co#scheduler-419-co)
+
+* [2 Etcd](/docs/openshift?topic=openshift-benchmarks-419-co#etcd-419-co)
+
+* [3 Control plane configuration](/docs/openshift?topic=openshift-benchmarks-419-co#control-plane-configuration-419-co)
+
+    * [3.1 Authentication and authorization](/docs/openshift?topic=openshift-benchmarks-419-co#authentication-and-authorization-419-co)
+
+    * [3.2 Logging](/docs/openshift?topic=openshift-benchmarks-419-co#logging-419-co)
+
+* [4 Worker nodes](/docs/openshift?topic=openshift-benchmarks-419-co#worker-nodes-419-co)
+
+* [5 Policies](/docs/openshift?topic=openshift-benchmarks-419-co#policies-419-co)
+
+    * [5.1 RBAC and service accounts](/docs/openshift?topic=openshift-benchmarks-419-co#rbac-and-service-accounts-419-co)
+
+    * [5.2 Pod security policies](/docs/openshift?topic=openshift-benchmarks-419-co#pod-security-policies-419-co)
+
+    * [5.3 Network policies and CNI](/docs/openshift?topic=openshift-benchmarks-419-co#network-policies-and-cni-419-co)
+
+    * [5.4 Secrets management](/docs/openshift?topic=openshift-benchmarks-419-co#secrets-management-419-co)
+
+    * [5.5 Extensible admission control](/docs/openshift?topic=openshift-benchmarks-419-co#extensible-admission-control-419-co)
+
+    * [5.7 General policies](/docs/openshift?topic=openshift-benchmarks-419-co#general-policies-419-co)
+
+* [{{site.data.keyword.IBM_notm}} remediations and explanations](/docs/openshift?topic=openshift-benchmarks-419-co#ibm-remediations-and-explanations-419-co)
 
 
 ### Version 4.18
