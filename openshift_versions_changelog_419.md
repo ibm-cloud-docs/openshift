@@ -3,7 +3,7 @@
 copyright:
   years: 2024, 2025
 
-lastupdated: "2025-09-08"
+lastupdated: "2025-09-10"
 
 
 keywords: change log, version history, 4.19_openshift
@@ -50,6 +50,3 @@ The following table shows the components included in master fix pack 4.19.9_1541
 | Red Hat OpenShift (master) | 4.18.21 | 4.19.9 | See the [Red Hat OpenShift on IBM Cloud release notes](https://docs.redhat.com/en/documentation/openshift_container_platform/4.19/html/release_notes/ocp-4-19-release-notes#ocp-4-19-9_release-notes){: external}. |
 | Red Hat OpenShift (worker) | 4.18.22 | 4.19.9 | See the [Red Hat OpenShift on IBM Cloud release notes](https://docs.redhat.com/en/documentation/openshift_container_platform/4.19/html/release_notes/ocp-4-19-release-notes#ocp-4-19-9_release-notes){: external}. |
 {: caption="Changes since master fix pack 4.18.21_1555_openshift and worker fix pack 4.18.22_1556_openshift" caption-side="bottom"}
-
-
-

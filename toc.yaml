@@ -273,6 +273,7 @@ toc:
           - storage-cos-vpc-ip.md
           - storage-rclone-migration.md
           - storage-cos-reference.md
+          - storage-cos-install-addon.md
       - topicgroup:
           label: Setting up OpenShift Data Foundation
           topics:
