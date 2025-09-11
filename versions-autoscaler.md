@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2025
-lastupdated: "2025-08-20"
+lastupdated: "2025-09-11"
 
 
 keywords: autoscaler, add-on, autoscaler change log, cluster autoscaler
@@ -42,6 +42,9 @@ ibmcloud oc cluster addon versions
 
 ## Version 1.2.4
 {: #0124_ca_addon}
+
+Beginning in version 1.2.4 the `maxEmptyBulkDelete` option is no longer supported. Remove this option from your configmap by running `kubectl edit configmap iks-ca-configmap -n kube-system` command and deleting the option. As a replacement, you can use the `maxScaleDownParallelism` option which was added in version 1.2.4. For more information, see the [configmap reference](#ca-configmap).
+{: important}
 
 ### Change log for patch update 1.2.4_680, released 18 July 2025.
 {: #124_680_ca}
