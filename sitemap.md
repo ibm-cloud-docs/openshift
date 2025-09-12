@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2025
-lastupdated: "2025-09-10"
+lastupdated: "2025-09-12"
 
 
 keywords: openshift
@@ -285,6 +285,14 @@ subcollection: openshift
 [Release notes](/docs/openshift?topic=openshift-openshift-relnotes#openshift-relnotes)
 
 * [September 2025](/docs/openshift?topic=openshift-openshift-relnotes#openshift-sep25)
+
+    * [12 September 2025](/docs/openshift?topic=openshift-openshift-relnotes#openshift-sep1225)
+
+        * OpenShift AI cluster add-on patch updates.
+
+    * [09 September 2025](/docs/openshift?topic=openshift-openshift-relnotes#openshift-sep0925)
+
+        * {{site.data.keyword.openshiftlong_notm}} worker node fix packs are available.
 
     * [08 September 2025](/docs/openshift?topic=openshift-openshift-relnotes#openshift-sep0825)
 
@@ -4947,6 +4955,8 @@ subcollection: openshift
 
     * [Master fix pack 4.19.9_1541_openshift and worker node fix pack 4.19.9_1540_openshift, released 03 September 2025](/docs/openshift?topic=openshift-openshift_changelog_419#4199_15411M_and_4199_1540W)
 
+    * [Worker node fix pack 4.19.10_1543_openshift, released 09 September 2024](/docs/openshift?topic=openshift-openshift_changelog_419#cl-boms-41910_1543_openshift_W)
+
 [4.19 CIS Kubernetes benchmark](/docs/openshift?topic=openshift-cis-benchmark-419#cis-benchmark-419)
 
 * [1 Master node security configuration](/docs/openshift?topic=openshift-cis-benchmark-419#1-master-node-security-configuration-419)
@@ -5077,6 +5087,8 @@ subcollection: openshift
     * [Master fix pack 4.18.11_1543_openshift, released 28 May 2025](/docs/openshift?topic=openshift-openshift_changelog_418#41811_1544_openshift_M)
 
     * [Master fix pack 4.18.11_1544_openshift and worker node fix pack 4.18.11_1541_openshift, released 27 May 2025](/docs/openshift?topic=openshift-openshift_changelog_418#openshift_changelog_41811_1544)
+
+    * [Worker node fix pack 4.18.23_1558_openshift, released 09 September 2024](/docs/openshift?topic=openshift-openshift_changelog_418#cl-boms-41823_1558_openshift_W)
 
 [4.18 CIS Kubernetes benchmark](/docs/openshift?topic=openshift-cis-benchmark-418#cis-benchmark-418)
 
@@ -5246,6 +5258,8 @@ subcollection: openshift
     * [Master fix pack 4.17.5_1517_openshift, released 04 December 2024](/docs/openshift?topic=openshift-openshift_changelog_417#4175_1517_openshift_M)
 
     * [Master fix pack 4.17.4_1515_openshift and worker node fix pack 4.17.4_1516_openshift, released 20 November 2024](/docs/openshift?topic=openshift-openshift_changelog_417#openshift_changelog_4174_1515)
+
+    * [Worker node fix pack 4.17.38_1552_openshift, released 09 September 2024](/docs/openshift?topic=openshift-openshift_changelog_417#cl-boms-41738_1552_openshift_W)
 
 [4.17 CIS Kubernetes Benchmark](/docs/openshift?topic=openshift-cis-benchmark-417#cis-benchmark-417)
 
@@ -5433,6 +5447,8 @@ subcollection: openshift
     * [Worker node fix pack 4.16.13_1538_openshift, released 23 September 2024](/docs/openshift?topic=openshift-openshift_changelog_416#41613_1538_openshift_W)
 
     * [Worker node fix pack 4.16.10_1535_openshift, released 10 September 2024](/docs/openshift?topic=openshift-openshift_changelog_416#41610_1535_openshift_W)
+
+    * [Worker node fix pack 4.16.47_1580_openshift, released 09 September 2024](/docs/openshift?topic=openshift-openshift_changelog_416#cl-boms-41647_1580_openshift_W)
 
     * [Master fix pack 4.16.7_1532_openshift and worker node fix pack 4.16.6_1531_openshift, released 30 August 2024](/docs/openshift?topic=openshift-openshift_changelog_416#openshift_changelog_4167_1532)
 
@@ -5636,6 +5652,8 @@ subcollection: openshift
     * [Worker node fix pack 4.15.33_1560_openshift, released 23 September 2024](/docs/openshift?topic=openshift-openshift_changelog_415#41533_1560_openshift_W)
 
     * [Worker node fix pack 4.15.30_1558_openshift, released 10 September 2024](/docs/openshift?topic=openshift-openshift_changelog_415#41530_1558_openshift_W)
+
+    * [Worker node fix pack 4.15.57_1599_openshift, released 09 September 2024](/docs/openshift?topic=openshift-openshift_changelog_415#cl-boms-41557_1599_openshift_W)
 
     * [Master fix pack 4.15.25_1556_openshift, released 28 August 2024](/docs/openshift?topic=openshift-openshift_changelog_415#41525_1556_openshift_M)
 
@@ -5863,6 +5881,8 @@ subcollection: openshift
     * [Worker node fix pack 4.14.37_1582_openshift, released 23 September 2024](/docs/openshift?topic=openshift-openshift_changelog_414#41437_1582_openshift_W)
 
     * [Worker node fix pack 4.14.35_1580_openshift, released 10 September 2024](/docs/openshift?topic=openshift-openshift_changelog_414#41435_1580_openshift_W)
+
+    * [Worker node fix pack 4.14.56_1621_openshift, released 09 September 2024](/docs/openshift?topic=openshift-openshift_changelog_414#cl-boms-41456_1621_openshift_W)
 
     * [Master fix pack 4.14.34_1578_openshift, released 28 August 2024](/docs/openshift?topic=openshift-openshift_changelog_414#41434_1578_openshift_M)
 
@@ -6687,6 +6707,8 @@ subcollection: openshift
     * [417.0.0_533, released 19 August 2025](/docs/openshift?topic=openshift-cl-add-ons-openshift-ai#cl-add-ons-openshift-ai-41700_533)
 
 * [Version 416](/docs/openshift?topic=openshift-cl-add-ons-openshift-ai#cl-add-ons-openshift-ai-416)
+
+    * [416.2.5_598, released 12 September 2025](/docs/openshift?topic=openshift-cl-add-ons-openshift-ai#cl-add-ons-openshift-ai-41625_598)
 
     * [416.2.3_543, released 17 July 2025](/docs/openshift?topic=openshift-cl-add-ons-openshift-ai#cl-add-ons-openshift-ai-41623_543)
 

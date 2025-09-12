@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2025
-lastupdated: "2025-09-08"
+lastupdated: "2025-09-12"
 
 
 keywords: kubernetes, release notes, openshift, {{site.data.keyword.openshiftlong_notm}}
@@ -27,6 +27,34 @@ Looking for {{site.data.keyword.cloud_notm}} status, platform announcements, sec
 
 ## September 2025
 {: #openshift-sep25}
+
+
+### 12 September 2025
+{: #openshift-sep1225}
+{: release-note}
+
+OpenShift AI cluster add-on patch updates.
+:   For more information, see the [change log](/docs/openshift?topic=openshift-cl-add-ons-openshift-ai).
+
+
+### 09 September 2025
+{: #openshift-sep0925}
+{: release-note}
+
+
+
+
+
+{{site.data.keyword.openshiftlong_notm}} worker node fix packs are available.
+:   Worker node fix packs can be applied by updating or reloading the worker node in classic infrastructure, or replacing the worker node in VPC infrastructure. Review the following change logs for your cluster version.
+:   [Version 4.19 change log](/docs/openshift?topic=openshift-openshift_changelog_419)
+:   [Version 4.18 change log](/docs/openshift?topic=openshift-openshift_changelog_418)
+:   [Version 4.17 change log](/docs/openshift?topic=openshift-openshift_changelog_417)
+:   [Version 4.16 change log](/docs/openshift?topic=openshift-openshift_changelog_416)
+:   [Version 4.15 change log](/docs/openshift?topic=openshift-openshift_changelog_415)
+:   [Version 4.14 change log](/docs/openshift?topic=openshift-openshift_changelog_414)
+
+
 
 ### 08 September 2025
 {: #openshift-sep0825}
