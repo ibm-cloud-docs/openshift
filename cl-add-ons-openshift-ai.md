@@ -3,7 +3,7 @@
 copyright:
   years: 2024, 2025
 
-lastupdated: "2025-08-18"
+lastupdated: "2025-09-12"
 
 
 keywords: change log, version history, OpenShift AI
@@ -44,10 +44,16 @@ Review the version history for OpenShift AI.
 {: #cl-add-ons-openshift-ai-416}
 
 
-### 416.2.3_543, released 17 July 2025
-{: #cl-add-ons-openshift-ai-41623_543}
+### 416.2.5_598, released 12 September 2025
+{: #cl-add-ons-openshift-ai-41625_598}
 
 [Default version]{: tag-green}
+
+- Resolves the following CVEs: [CVE-2025-8058](https://nvd.nist.gov/vuln/detail/CVE-2025-8058){: external}.
+- Updates Go to version `1.24.4`.
+
+### 416.2.3_543, released 17 July 2025
+{: #cl-add-ons-openshift-ai-41623_543}
 
 - Resolves the following CVEs: [CVE-2025-4673](https://nvd.nist.gov/vuln/detail/CVE-2025-4673){: external}, and [CVE-2025-4802](https://nvd.nist.gov/vuln/detail/CVE-2025-4802){: external}.
 - Updates Go to version `1.23.11`.
