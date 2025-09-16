@@ -39,7 +39,7 @@ Master patch updates are applied automatically. Worker node patch updates can be
 {: #418_components}
 
 
-### Worker node fix pack 4.18.23_1558_openshift, released 09 September 2025
+### Worker node fix pack 4.18.23_1558_openshift, released 15 September 2025
 {: #cl-boms-41823_1558_openshift_W}
 
 The following table shows the components included in the worker node fix pack 4.18.23_1558_openshift. Worker node patch updates can be applied by updating, reloading (in classic infrastructure), or replacing (in VPC infrastructure) the worker node.
@@ -47,11 +47,27 @@ The following table shows the components included in the worker node fix pack 4.
 
 | Component | Version | Description |
 | ---- | ---- | ---- |
+|RHEL_9|5.14.0-503.40.1.el9_5|SELinux policy update for container runtime BPF execution to allow workloads like GPU Operators to run successfully|
+|Red Hat OpenShift and Red Hat CoreOS|4.18.23|For more information, see the [change logs](https://docs.redhat.com/en/documentation/openshift_container_platform/4.18/html/release_notes/ocp-4-18-release-notes.html#ocp-4-18-23_release-notes).|
+|HAProxy|e0a48fcf355d98dc769ea048d2fd02044b11ed62|N/A|
+{: caption="4.18.23_1558_openshift fix pack." caption-side="bottom"}
+{: #cl-boms-41823_1558_openshift_W-component-table}
+
+
+
+### Worker node fix pack 4.18.23_1557_openshift, released 09 September 2025
+{: #cl-boms-41823_1557_openshift_W}
+
+The following table shows the components included in the worker node fix pack 4.18.23_1557_openshift. Worker node patch updates can be applied by updating, reloading (in classic infrastructure), or replacing (in VPC infrastructure) the worker node.
+{: shortdesc}
+
+| Component | Version | Description |
+| ---- | ---- | ---- |
 |RHEL_9|5.14.0-503.40.1.el9_5|N/A|
 |Red Hat OpenShift and Red Hat CoreOS|4.18.23|For more information, see the [change logs](https://docs.redhat.com/en/documentation/openshift_container_platform/4.18/html/release_notes/ocp-4-18-release-notes.html#ocp-4-18-23_release-notes).|
 |HAProxy|e0a48fcf355d98dc769ea048d2fd02044b11ed62|Resolves the following CVEs: [CVE-2025-6020](https://nvd.nist.gov/vuln/detail/CVE-2025-6020){: external}, and [CVE-2025-8941](https://nvd.nist.gov/vuln/detail/CVE-2025-8941){: external}.|
-{: caption="4.18.23_1558_openshift fix pack." caption-side="bottom"}
-{: #cl-boms-41823_1558_openshift_W-component-table}
+{: caption="4.18.23_1557_openshift fix pack." caption-side="bottom"}
+{: #cl-boms-41823_1557_openshift_W-component-table}
 
 
 
