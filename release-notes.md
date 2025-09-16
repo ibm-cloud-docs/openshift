@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2025
-lastupdated: "2025-09-12"
+lastupdated: "2025-09-16"
 
 
 keywords: kubernetes, release notes, openshift, {{site.data.keyword.openshiftlong_notm}}
@@ -27,6 +27,20 @@ Looking for {{site.data.keyword.cloud_notm}} status, platform announcements, sec
 
 ## September 2025
 {: #openshift-sep25}
+
+
+
+
+
+### 15 September 2025
+{: #openshift-sep1525}
+{: release-note}
+
+{{site.data.keyword.openshiftlong_notm}} worker node fix packs are available.
+:   Worker node fix packs can be applied by updating or reloading the worker node in classic infrastructure, or replacing the worker node in VPC infrastructure. Review the following change logs for your cluster version.
+:   [Version 4.19 change log](/docs/openshift?topic=openshift-openshift_changelog_419)
+:   [Version 4.18 change log](/docs/openshift?topic=openshift-openshift_changelog_418)
+
 
 
 ### 12 September 2025
@@ -75,7 +89,6 @@ New! Version support timelines
 :   Version support timeline images are now available to help you plan your cluster update schedule. To view the timelines and end of support dates for cluster versions, see [{{site.data.keyword.openshiftlong_notm}} version information](/docs/openshift?topic=openshift-openshift_versions).
 
 
-
 ### 04 September 2025
 {: #openshift-sep0425}
 {: release-note}
@@ -83,6 +96,16 @@ New! Version support timelines
 
 CLI version `1.0.717` is available.
 :   For more information, see [Updating the CLI](/docs/openshift?topic=openshift-cli-update) and the [CLI change log](/docs/openshift?topic=openshift-cs_cli_changelog).
+
+
+
+### 02 September 2025
+{: #openshift-sep0225}
+{: release-note}
+
+OpenShift Data Foundation cluster add-on patch updates.
+:   For more information, see the [change log](/docs/openshift?topic=openshift-cl-add-ons-openshift-data-foundation).
+
 
 ## August 2025
 {: #openshift-aug25}

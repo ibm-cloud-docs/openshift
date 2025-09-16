@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2025
-lastupdated: "2025-09-10"
+lastupdated: "2025-09-16"
 
 
 keywords: openshift, cli reference, kubernetes cli, openshift cli, {{site.data.keyword.openshiftlong_notm}}
@@ -251,7 +251,7 @@ ibmcloud oc cluster addon enable debug-tool --cluster my_cluster
 #### `ibmcloud oc cluster addon enable image-key-synchronizer`
 {: #cs_cluster_addon_enable_image-key-synchronizer}
 
-[Classic infrastructure]{: tag-classic-inf} [Virtual Private Cloud]{: tag-vpc} 
+[Classic infrastructure]{: tag-classic-inf} [Virtual Private Cloud]{: tag-vpc}
 
 Enable the add-on for the [Image Key synchronizer](/docs/openshift?topic=openshift-images#encrypted-images) in a cluster to run an app by using an encrypted image.
 {: shortdesc}
@@ -682,10 +682,10 @@ Minimum required permissions
 `--endpoint ENDPOINT_TYPE`
 :    Optional: Specify the type of endpoint to use to connect to the cluster. If you don't specify this option, the default service endpoint for your cluster is used.
      - `private`: If the private cloud service endpoint is enabled for your cluster, set to `private` to use the private cloud service endpoint for your cluster context. Note you must be in your {{site.data.keyword.cloud_notm}} private network or connected to the private network through a [VPC VPN connection](/docs/vpc?topic=vpc-vpn-onprem-example), or for classic infrastructure, a [classic VPN connection](/docs/iaas-vpn?topic=iaas-vpn-getting-started) or [{{site.data.keyword.dl_full_notm}}](/docs/dl?topic=dl-get-started-with-ibm-cloud-dl).
-     - `link`: To connect to {{site.data.keyword.satellitelong_notm}} clusters from within the {{site.data.keyword.cloud_notm}} private network, set to `link` to use your {{site.data.keyword.satelliteshort}} location's Link endpoint for the cluster context. If you specify this option, you must also specify the `--admin` option. If you are not connected to the {{site.data.keyword.cloud_notm}} private network, this option is not required because the cluster service URL is used. 
+     - `link`: To connect to {{site.data.keyword.satellitelong_notm}} clusters from within the {{site.data.keyword.cloud_notm}} private network, set to `link` to use your {{site.data.keyword.satelliteshort}} location's Link endpoint for the cluster context. If you specify this option, you must also specify the `--admin` option. If you are not connected to the {{site.data.keyword.cloud_notm}} private network, this option is not required because the cluster service URL is used.
         Before you can use the `link` endpoint type, make sure you set up the required **Source** [in your Location](/docs/satellite?topic=satellite-link-endpoint-secure).
         {: note}
-        
+
      - `vpe`: If it is a VPC cluster, set to `vpe` to use the Virtual Private Endpoint gateway for your cluster context. Note you must be connected to the same VPC where the cluster is deployed through [VPC VPN connection](/docs/vpc?topic=vpc-vpn-overview).
 
 `--network`
@@ -827,7 +827,7 @@ Minimum required permissions
 :    Set this option to `cloud_pak` only if you use this cluster with a Cloud Pak that has an OpenShift entitlement. When you specify the number of workers (`--workers`) and flavor (`--flavor`), make sure to specify only the number and size of worker nodes that you are entitled to use in [IBM Passport Advantage](https://www.ibm.com/software/passportadvantage/index.html){: external}. After your cluster is created, you are not charged the {{site.data.keyword.redhat_openshift_notm}} license fee for the entitled worker nodes in the `default` worker pool.
      Do not exceed your entitlement. Keep in mind that your OpenShift Container Platform entitlements can be used with other cloud providers or in other environments. To avoid billing issues later, make sure that you use only what you are entitled to use. For example, you might have an entitlement for the OCP licenses for two worker nodes of 4 CPU and 16 GB memory, and you create this worker pool with two worker nodes of 4 CPU and 16 GB memory. You used your entire entitlement, and you can't use the same entitlement for other worker pools, cloud providers, or environments.
      {: important}
-     
+
      
 
 `-q`
@@ -869,7 +869,7 @@ VPC Gen 2 cluster flavors with instance storage are available for allowlisted ac
 
 
 
-Your VPC cluster is created with both a public and a private cloud service endpoint. Public service endpoints can't later be disabled, and therefore, you can't convert a public cluster to a private cluster. 
+Your VPC cluster is created with both a public and a private cloud service endpoint. Public service endpoints can't later be disabled, and therefore, you can't convert a public cluster to a private cluster.
 {: important}
 
 ```sh
@@ -923,7 +923,7 @@ Minimum required permissions
 :    Optional: Specify one or more cluster level preview features, such as `fips`.
 
 `--dedicated-host-pool POOL`
-:    Optional: The ID of the dedicated host pool where you want to run your workers. 
+:    Optional: The ID of the dedicated host pool where you want to run your workers.
 
 `--workers NUMBER_WORKERS_PER_ZONE`
 :    Optional: Specify the number of worker nodes to include in the cluster. The default value is 1.
@@ -982,7 +982,7 @@ Minimum required permissions
 :    Optional: Include the ID of the root key in the KMS instance to use to encrypt the local disk on the worker nodes in the `default` worker pool. To list available root keys, run `ibmcloud oc kms crk ls --instance-id`. If you include this option, you must also include the `--kms-instance` option.
      Before you can use KMS encryption, you must create a KMS instance and set up the required service authorization in IAM. See [Managing encryption for the worker nodes in your cluster](/docs/openshift?topic=openshift-encryption).
      {: note}
-     
+
 `--sm-group GROUP`
 :    The secret group ID of the {{site.data.keyword.secrets-manager_short}} instance where your secrets are persisted. To get a secret group ID, see the [{{site.data.keyword.secrets-manager_short}} CLI reference](/docs/secrets-manager?topic=secrets-manager-secrets-manager-cli#secrets-manager-cli-secret-groups-command).
 
@@ -1154,7 +1154,7 @@ ibmcloud oc cluster ls -l ams03 -l wdc -l ap
 
 
 
-## `ibmcloud oc cluster master console-oauth-access get`
+### `ibmcloud oc cluster master console-oauth-access get`
 {: #cluster-master-console-oauth-access-get-cli}
 
 Get the OpenShift web console and OAuth server access type.
@@ -1165,7 +1165,7 @@ ibmcloud oc cluster master console-oauth-access get --cluster CLUSTER [--output 
 {: pre}
 {: #cluster-master-console-oauth-access-get-usage}
 
-### Command options
+#### Command options
 {: #cluster-master-console-oauth-access-get-options}
 
 `--cluster CLUSTER`, `-c CLUSTER`
@@ -1179,7 +1179,7 @@ ibmcloud oc cluster master console-oauth-access get --cluster CLUSTER [--output 
 {: #cluster-master-console-oauth-access-get-options-dl}
 
 
-## `ibmcloud oc cluster master console-oauth-access set`
+### `ibmcloud oc cluster master console-oauth-access set`
 {: #cluster-master-console-oauth-access-set-cli}
 
 Set the OpenShift web console and OAuth server access type.
@@ -1190,7 +1190,7 @@ ibmcloud oc cluster master console-oauth-access set --cluster CLUSTER [-f] [-q] 
 {: pre}
 {: #cluster-master-console-oauth-access-set-usage}
 
-### Command options
+#### Command options
 {: #cluster-master-console-oauth-access-set-options}
 
 `--cluster CLUSTER`, `-c CLUSTER`
@@ -1278,7 +1278,7 @@ ibmcloud oc cluster master pod-security policy disable --cluster mycluster
 
 [Virtual Private Cloud]{: tag-vpc} [Classic infrastructure]{: tag-classic-inf}
 
-Enable the pod security policy for a cluster's Kubernetes API server. Note that pod security policies are not available in clusters that run version 1.25 or later. 
+Enable the pod security policy for a cluster's Kubernetes API server. Note that pod security policies are not available in clusters that run version 1.25 or later.
 {: shortdesc}
 
 ```sh
@@ -1313,7 +1313,7 @@ ibmcloud oc cluster master pod-security policy enable --cluster mycluster
 
 [Virtual Private Cloud]{: tag-vpc} [Classic infrastructure]{: tag-classic-inf}
 
-View the pod security policy configuration for a cluster's Kubernetes API server. Note that pod security policies are not available in clusters that run version 1.25 or later. 
+View the pod security policy configuration for a cluster's Kubernetes API server. Note that pod security policies are not available in clusters that run version 1.25 or later.
 {: shortdesc}
 
 ```sh
@@ -1778,7 +1778,7 @@ Minimum required permissions
 
 [Virtual Private Cloud]{: tag-vpc} [Classic infrastructure]{: tag-classic-inf} [{{site.data.keyword.satelliteshort}}]{: tag-satellite}
 
-Update the Kubernetes master and API server. During the update, you can't access or change the cluster. Worker nodes, apps, and resources that were deployed are not modified and continue to run. 
+Update the Kubernetes master and API server. During the update, you can't access or change the cluster. Worker nodes, apps, and resources that were deployed are not modified and continue to run.
 {: shortdesc}
 
 You might need to change your YAML files for future deployments. Review this [release note](/docs/containers?topic=containers-cs_versions) for details.
@@ -3188,7 +3188,7 @@ ibmcloud oc worker-pool create classic --name my_pool --cluster my_cluster --fla
 ### `ibmcloud oc worker-pool create vpc-gen2`
 {: #cli_worker_pool_create_vpc_gen2}
 
-[Virtual Private Cloud]{: tag-vpc} 
+[Virtual Private Cloud]{: tag-vpc}
 
 Add a worker pool to a VPC cluster. No worker nodes are created until you [add zones](#cli_zone-add-vpc-gen2) to the worker pool.
 {: shortdesc}
@@ -3221,7 +3221,7 @@ Minimum required permissions
 :    Choose a flavor for your worker nodes. You can deploy your worker nodes as virtual machines on shared or dedicated hardware. To see flavors that are available in a VPC zone, run `ibmcloud oc flavors --zone <vpc_zone> --provider vpc-gen2`.
 
 `--dedicated-host-pool POOL`
-:    Optional. The ID of the dedicated host pool where you want to run your workers. 
+:    Optional. The ID of the dedicated host pool where you want to run your workers.
 
 `--vpc-id VPC_ID`
 :    Optional: Specify the ID of the VPC in which to create the worker pool's worker nodes. The value must match the VPC ID that the cluster is in. To list the cluster's VPC ID, run `ibmcloud oc cluster get -c <cluster_name_or_ID>`. If this option is not provided, then the worker pool defaults to the VPC ID of existing worker pools in the cluster.
@@ -3466,7 +3466,7 @@ Rebalance a worker pool in a cluster after you delete a worker node. When you ru
 {: shortdesc}
 
 
-For Satellite clusters, do not use the `ibmcloud oc worker-pool rebalance` command if you have manually assigned worker nodes to your worker pool. Rebalancing a pool with manually assigned worker nodes might remove more than the expected number of worker nodes. 
+For Satellite clusters, do not use the `ibmcloud oc worker-pool rebalance` command if you have manually assigned worker nodes to your worker pool. Rebalancing a pool with manually assigned worker nodes might remove more than the expected number of worker nodes.
 {: important}
 
 
@@ -3776,7 +3776,7 @@ ibmcloud oc zone add classic --zone dal10 --cluster my_cluster -p pool1 -p pool2
 ### `ibmcloud oc zone add vpc-gen2`
 {: #cli_zone-add-vpc-gen2}
 
-[Virtual Private Cloud]{: tag-vpc} 
+[Virtual Private Cloud]{: tag-vpc}
 
 After you create a Generation 2 VPC cluster or worker pool, you can add a zone. When you add a zone, worker nodes are added to the new zone to match the number of workers per zone that you specified for the worker pool. You can add more than one zone only if your cluster is in a multizone metro.
 {: shortdesc}
@@ -4039,8 +4039,8 @@ Minimum required permissions
 {: #ingress-alb-autoscale-get-example}
 
 ```sh
-ibmcloud oc ingress alb autoscale get --alb myalb123 --cluster mycluster 
-``` 
+ibmcloud oc ingress alb autoscale get --alb myalb123 --cluster mycluster
+```
 {: pre}
 
 
@@ -4049,7 +4049,7 @@ ibmcloud oc ingress alb autoscale get --alb myalb123 --cluster mycluster
 
 [Virtual Private Cloud]{: tag-vpc} [Classic infrastructure]{: tag-classic-inf}
 
-Configure autoscaling to automatically increase or decrease the number of Ingress ALB pods based on the current load. You can choose to scale pods based on CPU utilization, or you can use custom metrics that you specify. If you base autoscaling configuration on CPU utilization, you specify an average CPU utilization rate as well as a maximum and minimum number of pods to be deployed at any given time. If you choose to specify custom metrics for autoscaling, you pass in a path to a custom metric file. 
+Configure autoscaling to automatically increase or decrease the number of Ingress ALB pods based on the current load. You can choose to scale pods based on CPU utilization, or you can use custom metrics that you specify. If you base autoscaling configuration on CPU utilization, you specify an average CPU utilization rate as well as a maximum and minimum number of pods to be deployed at any given time. If you choose to specify custom metrics for autoscaling, you pass in a path to a custom metric file.
 {: shortdesc}
 
 ```sh
@@ -4092,7 +4092,7 @@ Minimum required permissions
 
 ```sh
 ibmcloud oc ingress alb autoscale set --alb myalb123 --cluster mycluster --max-replicas 5 --min-replicas 2 --cpu-average-utilization 5
-``` 
+```
 {: pre}
 
 
@@ -4130,8 +4130,8 @@ Minimum required permissions
 {: #ingress-alb-autoscale-unset-example}
 
 ```sh
-ibmcloud oc ingress alb autoscale unset --alb myalb123 --cluster mycluster 
-``` 
+ibmcloud oc ingress alb autoscale unset --alb myalb123 --cluster mycluster
+```
 {: pre}
 
 ### `ibmcloud oc ingress alb autoupdate disable`
@@ -4651,16 +4651,16 @@ Minimum required permissions
 :    Required for {{site.data.keyword.cis_full_notm}} domains. The CRN for the {{site.data.keyword.cis_full_notm}} instance.
 
 `--is-default`
-:    Optional. Include this option to set the relevant domain as the default domain for the cluster. 
+:    Optional. Include this option to set the relevant domain as the default domain for the cluster.
 
 `--domain DOMAIN`
 :    The Ingress domain. You can specify an existing domain, or create a new one. For provider specific information on specifying domains, see [Creating your own Ingress domain](/docs/openshift?topic=openshift-ingress-domains).
 
 `--hostname HOSTNAME`
-:    Optional. For VPC clusters. The hostname to register for the domain. 
+:    Optional. For VPC clusters. The hostname to register for the domain.
 
 `--ip IP`
-:    Optional. The IP addresses to register for the domain. 
+:    Optional. The IP addresses to register for the domain.
 
 `--output OUTPUT`
 :    Optional: Prints the command output in JSON format.
@@ -4705,7 +4705,7 @@ Minimum required permissions
 :    Required: The name or ID of the cluster where the domain is applied.
 
 `--domain DOMAIN`
-:   Required. The domain that you want to specify as the new default domain for the cluster. You must specify an existing domain. 
+:   Required. The domain that you want to specify as the new default domain for the cluster. You must specify an existing domain.
 
 `-q`
 :    Optional: Do not show the message of the day or update reminders.
@@ -4724,7 +4724,7 @@ ibmcloud oc ingress domain default replace --cluster CLUSTER --domain DOMAIN [-q
 View the details of an Ingress domain.
 {: shortdesc}
 
-```sh 
+```sh
 ibmcloud oc ingress domain get --cluster CLUSTER --domain DOMAIN [--output OUTPUT] [-q]
 ```
 {: pre}
@@ -4738,7 +4738,7 @@ Minimum required permissions
 :    Required: The name or ID of the cluster where the domain is applied.
 
 `--domain DOMAIN`
-:    Required. The domain that you want to view details for. 
+:    Required. The domain that you want to view details for.
 
 `--output OUTPUT`
 :    Optional: Prints the command output in JSON format.
@@ -4749,7 +4749,7 @@ Minimum required permissions
 #### Example `ingress domain get` command
 {: #ingress-domain-get-example}
 
-```sh 
+```sh
 ibmcloud oc ingress domain get --cluster CLUSTER --domain DOMAIN [--output OUTPUT] [-q]
 ```
 {: pre}
@@ -4808,7 +4808,7 @@ Minimum required permissions
 :    Required: The name or ID of the cluster where the domain is applied.
 
 `--domain DOMAIN`
-:    Required. The domain that you want to remove from the cluster. You cannot specify the default domain. If you want to remove the domain that is currently set as the default for your cluster, you must first [replace the default](#ingress-domain-default-replace) with another domain. 
+:    Required. The domain that you want to remove from the cluster. You cannot specify the default domain. If you want to remove the domain that is currently set as the default for your cluster, you must first [replace the default](#ingress-domain-default-replace) with another domain.
 
 `-f`
 
@@ -4843,7 +4843,7 @@ Minimum required permissions
 :    Required: The name or ID of the cluster where the domain is applied.
 
 `--domain DOMAIN`
-:    Required. The domain you want to regenerate. 
+:    Required. The domain you want to regenerate.
 
 `--output OUTPUT`
 :    Optional: Prints the command output in JSON format.
@@ -4863,7 +4863,7 @@ ibmcloud oc ingress domain secret regenerate --cluster mycluster --domain exampl
 {: #ingress-domain-secret-rm}
 
 Delete the secret for an Ingress domain and prevent future renewal of the certificate.
-{: shortdesc} 
+{: shortdesc}
 
 ```sh
 ibmcloud oc ingress domain secret rm --cluster CLUSTER --domain DOMAIN [-f] [--output OUTPUT] [-q]
@@ -4879,7 +4879,7 @@ Minimum required permissions
 :    Required: The name or ID of the cluster where the domain is applied.
 
 `--domain DOMAIN`
-:    Required. The domain you want to remove the secret from. 
+:    Required. The domain you want to remove the secret from.
 
 `-f`
 
@@ -4900,7 +4900,7 @@ ibmcloud oc ingress domain secret rm --cluster CLUSTER --domain DOMAIN [-f] [--o
 ### `ibmcloud oc ingress domain update`
 {: #ingress-domain-update}
 
-Update an Ingress domain for a cluster to change the hostnames or IP addresses associated with the domain. This command updates all the resources in your cluster with the specified IP addresses or hostnames and changes your app URLs. 
+Update an Ingress domain for a cluster to change the hostnames or IP addresses associated with the domain. This command updates all the resources in your cluster with the specified IP addresses or hostnames and changes your app URLs.
 {: shortdesc}
 
 ```sh
@@ -4920,10 +4920,10 @@ Minimum required permissions
 :    Required: The name or ID of the cluster where the domain is applied.
 
 `--domain DOMAIN`
-:    Required. The domain you want to update. 
+:    Required. The domain you want to update.
 
 `--hostname HOSTNAME`
-:    For VPC clusters. The hostname to register for the domain. 
+:    For VPC clusters. The hostname to register for the domain.
 
 `--ip IP`
 :    The IP addresses to register for the domain. The IP addresses passed in fully replace those that are currently associated with the domain. If you want to keep the current IP addresses, you must include them. Specifying this flag with no values unregisters the current IP addresses from the domain.
@@ -5123,7 +5123,7 @@ Minimum required permissions
 :    Required. The CRN of the IBM Cloud Secret Manager instance.
 
 `--is-default`
-:    Optional. Include this option to also set the registered instance as the default {{site.data.keyword.secrets-manager_short}} instance where all Ingress subdomain certificates are stored. If another instance is already set as default, it is removed. Note that you must manually update any certificates or secrets to upload them to the new default instance. Otherwise, they are uploaded at the next scheduled update time for the secret.  
+:    Optional. Include this option to also set the registered instance as the default {{site.data.keyword.secrets-manager_short}} instance where all Ingress subdomain certificates are stored. If another instance is already set as default, it is removed. Note that you must manually update any certificates or secrets to upload them to the new default instance. Otherwise, they are uploaded at the next scheduled update time for the secret.
 
 `-q`
 :    Optional: Do not show the message of the day or update reminders.
@@ -5214,7 +5214,7 @@ ibmcloud oc ingress lb get --cluster mycluster
 ### `ibmcloud oc ingress lb proxy-protocol disable`
 {: #cs_ingress_lb_proxy-protocol_disable}
 
-[Virtual Private Cloud]{: tag-vpc} 
+[Virtual Private Cloud]{: tag-vpc}
 
 Disable the NGINX PROXY protocol for the load balancers in front of all Ingress ALBs in your cluster so that client connection information is no longer passed in request headers to ALBs.
 {: shortdesc}
@@ -5256,7 +5256,7 @@ ibmcloud oc ingress lb proxy-protocol disable --cluster mycluster
 ### `ibmcloud oc ingress lb proxy-protocol enable`
 {: #cs_ingress_lb_proxy-protocol_enable}
 
-[Virtual Private Cloud]{: tag-vpc} 
+[Virtual Private Cloud]{: tag-vpc}
 
 Enable the [NGINX PROXY protocol](https://docs.nginx.com/nginx/admin-guide/load-balancer/using-proxy-protocol/){: external} for all load balancers that expose Ingress ALBs in your cluster so that client connection information is passed in request headers to ALBs.
 {: shortdesc}
@@ -5307,13 +5307,13 @@ ibmcloud oc ingress lb proxy-protocol enable --cluster mycluster --cidr 1.1.1.1/
 
 [Virtual Private Cloud]{: tag-vpc} [Classic infrastructure]{: tag-classic-inf}
 
-Create an Ingress secret in a cluster for a certificate that is stored in {{site.data.keyword.secrets-manager_full}}. This command can be used to create TLS or non-TLS secrets. 
+Create an Ingress secret in a cluster for a certificate that is stored in {{site.data.keyword.secrets-manager_full}}. This command can be used to create TLS or non-TLS secrets.
 {: shortdesc}
 
 The previous alias for this command, `ibmcloud oc ingress alb cert deploy`, is deprecated. In CLI version 1.0.157 and later, the `ibmcloud oc ingress alb cert` category is deprecated, and these commands are now listed in the `ibmcloud oc ingress secret` subcategory. For more information, see the [CLI change log](/docs/openshift?topic=openshift-cs_cli_changelog#10).
 {: note}
 
-To use the `ibmcloud oc ingress secret create` command, you must have a default [{{site.data.keyword.secrets-manager_short}}](/docs/openshift?topic=openshift-secrets-mgr) instance registered to your cluster. If you do not have a {{site.data.keyword.secrets-manager_short}} instance and your secrets are instead written directly to your cluster, your secrets do not have the required CRN value and you must manage them with `oc` commands. 
+To use the `ibmcloud oc ingress secret create` command, you must have a default [{{site.data.keyword.secrets-manager_short}}](/docs/openshift?topic=openshift-secrets-mgr) instance registered to your cluster. If you do not have a {{site.data.keyword.secrets-manager_short}} instance and your secrets are instead written directly to your cluster, your secrets do not have the required CRN value and you must manage them with `oc` commands.
 {: important}
 
 ```sh
@@ -5337,10 +5337,10 @@ Minimum required permissions
 :    Required: Specify a name for the secret. Make sure that you don't create the secret with the same name as the IBM-provided Ingress secret, which you can find by running `ibmcloud oc cluster get --cluster <cluster_name_or_ID> | grep Ingress`.
 
 `--field CRN`
-:   Required for non-TLS secrets. Add a field to the secret. You can specify more than one field at a time. For more information, see [Managing non-TLS secret fields](/docs/openshift?topic=openshift-secrets#non-tls-field). This option is not supported for TLS secrets. 
-     - To pull in the secret with the default field name for the secret type, use the default field option: `--field <crn>`. This option is available for all non-TLS secret types. 
+:   Required for non-TLS secrets. Add a field to the secret. You can specify more than one field at a time. For more information, see [Managing non-TLS secret fields](/docs/openshift?topic=openshift-secrets#non-tls-field). This option is not supported for TLS secrets.
+     - To pull in the secret with the default field name for the secret type, use the default field option: `--field <crn>`. This option is available for all non-TLS secret types.
      - To specify the field name, use the named field option: `--field name=<crn>`. This option is available for arbitrary and IAM credential secret types.
-     - To use the IBM Cloud {{site.data.keyword.secrets-manager_short}} secret as the prefix, use the prefixed field option: `--field prefix=<crn>`. This option is available for IAM credential, username and password, and key value secret types. 
+     - To use the IBM Cloud {{site.data.keyword.secrets-manager_short}} secret as the prefix, use the prefixed field option: `--field prefix=<crn>`. This option is available for IAM credential, username and password, and key value secret types.
 
 `--namespace NAMESPACE`
 :    Optional: Specify the project that your Ingress resource is deployed to. If your ALB runs the Kubernetes Ingress image, this value is required, because the ALB can identify secrets only in the same project as your Ingress resource. If your ALB runs the {{site.data.keyword.openshiftlong_notm}} Ingress image, and you don't specify a project, the certificate secret is created in a project called `ibm-cert-store`. A reference to this secret is then created in the `default` project, which any Ingress resource in any project can access. While processing requests, the ALB follows the reference to pick up and use the certificate secret from the `ibm-cert-store` project.
@@ -5389,9 +5389,9 @@ Minimum required permissions
 
 `--field CRN`
 :    Required. The secret CRN to add to the field. You can specify more than one field at a time. For more information, see [Managing non-TLS secret fields](/docs/openshift?topic=openshift-secrets#non-tls-field).
-     - To pull in the secret with the default field name for the secret type, use the default field option: `--field <crn>`. This option is available for all non-TLS secret types. 
+     - To pull in the secret with the default field name for the secret type, use the default field option: `--field <crn>`. This option is available for all non-TLS secret types.
      - To specify the field name, use the named field option: `--field name=<crn>`. This option is available for arbitrary and IAM credential secret types.
-     - To use the IBM Cloud {{site.data.keyword.secrets-manager_short}} secret as the prefix, use the prefixed field option: `--field prefix=<crn>`. This option is available for IAM credential, username and password, and key value secret types. 
+     - To use the IBM Cloud {{site.data.keyword.secrets-manager_short}} secret as the prefix, use the prefixed field option: `--field prefix=<crn>`. This option is available for IAM credential, username and password, and key value secret types.
 
 `--namespace NAMESPACE`
 :    Required. The namespace that the secret is deployed to.
@@ -5846,7 +5846,7 @@ ibmcloud oc ingress status-report ignored-errors ls --cluster mycluster
 
 [Virtual Private Cloud]{: tag-vpc} [Classic infrastructure]{: tag-classic-inf}
 
-Remove warnings that are currently ignored by Ingress status for a cluster. Once removed, these warnings are no longer ignored. 
+Remove warnings that are currently ignored by Ingress status for a cluster. Once removed, these warnings are no longer ignored.
 
 ```sh
 ibmcloud oc ingress status-report ignored-errors rm --cluster CLUSTER --code CODE [--code CODE ...] [--output OUTPUT] [-q]
@@ -6137,7 +6137,7 @@ ibmcloud oc nlb-dns monitor configure --cluster CLUSTER --nlb-host HOST [--enabl
 :    Prints the command output in the provided format. Accepted values: `json`
 
 `--path PATH`
-:    The endpoint path to health check against. This flag is valid only for type `HTTP` or `HTTPS`. Default: `/` 
+:    The endpoint path to health check against. This flag is valid only for type `HTTP` or `HTTPS`. Default: `/`
 
 `--port PORT`
 :    The port number to connect to for the health check. When type is TCP, this flag is required. When type is HTTP or HTTPS, use this flag only for ports other than 80 for HTTP or 443 for HTTPS. HTTP default: `80`. HTTPS default: `443`.
@@ -6332,7 +6332,7 @@ ibmcloud oc nlb-dns monitor ls --cluster mycluster
 ### `ibmcloud oc nlb-dns replace`
 {: #cs_nlb-dns-replace}
 
-[Virtual Private Cloud]{: tag-vpc} 
+[Virtual Private Cloud]{: tag-vpc}
 
 Replace the load balancer hostname that is registered with a DNS subdomain. For example, if you create a new VPC load balancer for your app, but you don't want to create a new DNS subdomain through which users can access your app, you can replace the hostname of the old load balancer with the hostname of the new load balancer.
 {: shortdesc}
@@ -6419,7 +6419,7 @@ ibmcloud oc nlb-dns rm classic --cluster mycluster --ip 1.1.1.1 --nlb-host myclu
 ### `ibmcloud oc nlb-dns rm vpc-gen2`
 {: #cs_nlb-dns-rm-vpc-gen2}
 
-[Virtual Private Cloud]{: tag-vpc} 
+[Virtual Private Cloud]{: tag-vpc}
 
 Remove the load balancer hostname (VPC application load balancers) or IP addresses (VPC network load balancers) from the DNS record for that load balancer.
 {: shortdesc}
@@ -7313,7 +7313,7 @@ ibmcloud oc vpc outbound-traffic-protection enable --cluster CLUSTER [-f] [-q]
 ## `flavor` command
 {: #cs_machine_types}
 
-Each flavor includes the amount of virtual CPU, memory, and disk space for each worker node in the cluster. 
+Each flavor includes the amount of virtual CPU, memory, and disk space for each worker node in the cluster.
 {: shortdesc}
 
 By default, the secondary storage disk directory where all container data is stored, is encrypted with LUKS encryption. If the `disable-disk-encrypt` option is included during cluster creation, then the host's container runtime data is not encrypted. [Learn more about the encryption](/docs/openshift?topic=openshift-security#encrypted_disk).
@@ -7768,9 +7768,9 @@ Minimum required permissions
 :    Required: Specify the cluster name or ID. To list available clusters, run `ibmcloud oc cluster ls`.
 
 `--security-group GROUP_ID`
-:    Required: Specify the security group ID. 
+:    Required: Specify the security group ID.
 
-**Example**: 
+**Example**:
 
 ```sh
 ibmcloud oc security-group reset --cluster mycluster --security-group mygroup
@@ -7799,12 +7799,12 @@ Minimum required permissions
 :    Required: Specify the cluster name or ID. To list available clusters, run `ibmcloud oc cluster ls`.
 
 `--security-group GROUP_ID`
-:    Required: Specify the security group ID. 
+:    Required: Specify the security group ID.
 
-**Example**: 
+**Example**:
 
 ```sh
-ibmcloud oc security-group sync --cluster mycluster --security-group mygroup 
+ibmcloud oc security-group sync --cluster mycluster --security-group mygroup
 ```
 {: pre}
 
@@ -7864,7 +7864,7 @@ ibmcloud oc storage attachment create --cluster aa1111aa11aaaaa11aa1 --volume 11
 ### `ibmcloud oc storage attachment get`
 {: #cs_storage_att_get}
 
-[Virtual Private Cloud]{: tag-vpc} 
+[Virtual Private Cloud]{: tag-vpc}
 
 Get the details of a storage volume attachment in your cluster.
 {: shortdesc}
@@ -7901,7 +7901,7 @@ ibmcloud oc storage attachment get --cluster aa1111aa11aaaaa11aa1 --attachment 0
 ### `ibmcloud oc storage attachment ls`
 {: #cs_storage_att_ls}
 
-[Virtual Private Cloud]{: tag-vpc} 
+[Virtual Private Cloud]{: tag-vpc}
 
 List the storage volume attachments for a worker node in your cluster.
 {: shortdesc}
@@ -7936,7 +7936,7 @@ ibmcloud oc storage attachment ls --cluster aa1111aa11aaaaa11aa1 --worker kube-a
 ### `ibmcloud oc storage attachment rm`
 {: #cs_storage_att_rm}
 
-[Virtual Private Cloud]{: tag-vpc} 
+[Virtual Private Cloud]{: tag-vpc}
 
 Remove a storage volume from a worker node in your cluster.
 {: shortdesc}
@@ -8088,7 +8088,7 @@ ibmcloud oc cluster create satellite --location LOCATION --name NAME --version V
 :    Optional. Enter existing labels that describe {{site.data.keyword.satelliteshort}} hosts, formatted as `-hl key=value` pairs, so hosts with matching labels can be automatically assigned as worker nodes for the cluster. To find available host labels, run `ibmcloud sat host get --host <host_name_or_ID> --location <location_name_or_ID>`.
 
 `--infrastructure-topology TOPOLOGY`
-:    Optional. Specify whether the cluster runs a single worker node or the default setup of three of worker nodes. To create a single-node cluster, specify `single-replica`. This option is only supported for {{site.data.keyword.openshiftlong_notm}} version 4.11 or later and requires that you specify a {{site.data.keyword.satelliteshort}} location with CoreOS enabled. **Note that single-node clusters lack high availability and are only recommended for specific circumstances. By provisioning a single-node cluster, you accept that you are more likely to experience downtime and disruptions in your workload.** 
+:    Optional. Specify whether the cluster runs a single worker node or the default setup of three of worker nodes. To create a single-node cluster, specify `single-replica`. This option is only supported for {{site.data.keyword.openshiftlong_notm}} version 4.11 or later and requires that you specify a {{site.data.keyword.satelliteshort}} location with CoreOS enabled. **Note that single-node clusters lack high availability and are only recommended for specific circumstances. By provisioning a single-node cluster, you accept that you are more likely to experience downtime and disruptions in your workload.**
 
 `--operating-system RHEL_9_64|REDHAT_8_64|RHCOS`
 :   Optional. The operating system of the worker nodes in your cluster. For a list of available operating systems by cluster version, see the [{{site.data.keyword.openshiftshort}} version information](/docs/openshift?topic=openshift-openshift_versions). If no option is specified, the default operating system that corresponds to the cluster version is used.
@@ -8105,7 +8105,7 @@ ibmcloud oc cluster create satellite --location LOCATION --name NAME --version V
 :    Note that the pod and service subnets can't overlap. The service subnet is in the 172.21.0.0/16 range by default. This value can't be set to the value of the related location's pod-subnet or service-subnet.
 
 `--pod-network-interface-selection METHOD`
-:    Optional. The method for selecting the node network interface for the internal pod network. The available methods are `can-reach` and `interface`. This option can only be used if you also enable Red Hat CoreOS with the `--operating-system` option. 
+:    Optional. The method for selecting the node network interface for the internal pod network. The available methods are `can-reach` and `interface`. This option can only be used if you also enable Red Hat CoreOS with the `--operating-system` option.
      - To provide a direct URL or IP address, specify `can-reach=<url>` or `can-reach=<ip_address>`. If the network interface can reach the provided URL or IP address, this option is used. For example, use `can-reach=www.exampleurl.com` for specifying a URL and `can-reach=172.19.0.0` for specifying an IP address.
      - To choose an interface with a Regex string, specify `interface=<regex_string>`; for example, `interface=eth.*`.
 
@@ -8133,7 +8133,7 @@ ibmcloud oc cluster create satellite --location LOCATION --name NAME --version V
 :    The CRN of the {{site.data.keyword.secrets-manager_short}} instance. To get the CRN of an instance, run [`ibmcloud oc ingress instance ls --cluster CLUSTER`](#cs_ingress_instance_ls).
 
 `--workers COUNT`
-:    Required when `--host-label` is specified or if you want to [automatically assign hosts](/docs/satellite?topic=satellite-host-autoassign-ov). Specify the number of worker nodes per zone in the default worker pool. The default value is `0`. If you do not specify a value, workers do not automatically assign and you must instead [manually assign](/docs/satellite?topic=satellite-assigning-hosts) workers to your {{site.data.keyword.satelliteshort}} resources. 
+:    Required when `--host-label` is specified or if you want to [automatically assign hosts](/docs/satellite?topic=satellite-host-autoassign-ov). Specify the number of worker nodes per zone in the default worker pool. The default value is `0`. If you do not specify a value, workers do not automatically assign and you must instead [manually assign](/docs/satellite?topic=satellite-assigning-hosts) workers to your {{site.data.keyword.satelliteshort}} resources.
 
 `--zone ZONE`
 :    Optional. The name of the zone to create the default worker pool in. You can start with one zone, and then add the two other zones to your cluster later for high availability. To see the zone names for your location, run `ibmcloud sat location get --location <location_name_or_ID>` and look for the `Host Zones` field. If you don't specify a zone name, the zone name that is alphabetically first is chosen.
@@ -8228,7 +8228,7 @@ ibmcloud oc cluster master satellite-service-endpoint allowlist disable --cluste
 **Example**:
 
 ```sh
-ibmcloud oc cluster master satellite-service-endpoint allowlist disable --cluster my-cluster 
+ibmcloud oc cluster master satellite-service-endpoint allowlist disable --cluster my-cluster
 ```
 {: pre}
 
@@ -8261,7 +8261,7 @@ ibmcloud oc cluster master satellite-service-endpoint allowlist enable --cluster
 **Example**:
 
 ```sh
-ibmcloud oc cluster master satellite-service-endpoint allowlist enable --cluster my-cluster 
+ibmcloud oc cluster master satellite-service-endpoint allowlist enable --cluster my-cluster
 ```
 {: pre}
 
@@ -8291,7 +8291,7 @@ ibmcloud oc cluster master satellite-service-endpoint allowlist get --cluster CL
 **Example**:
 
 ```sh
-ibmcloud oc cluster master satellite-service-endpoint allowlist get --cluster my-cluster 
+ibmcloud oc cluster master satellite-service-endpoint allowlist get --cluster my-cluster
 ```
 {: pre}
 
