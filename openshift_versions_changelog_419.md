@@ -3,7 +3,7 @@
 copyright:
   years: 2024, 2025
 
-lastupdated: "2025-09-15"
+lastupdated: "2025-09-16"
 
 
 keywords: change log, version history, 4.19_openshift
@@ -54,7 +54,7 @@ The following table shows the components included in master fix pack 4.19.9_1541
 
 
 
-### Worker node fix pack 4.19.10_1543_openshift, released 09 September 2024
+### Worker node fix pack 4.19.10_1543_openshift, released 09 September 2025
 {: #cl-boms-41910_1543_openshift_W}
 
 The following table shows the components included in the worker node fix pack 4.19.10_1543_openshift. Worker node patch updates can be applied by updating, reloading (in classic infrastructure), or replacing (in VPC infrastructure) the worker node.
