@@ -286,6 +286,10 @@ subcollection: openshift
 
 * [September 2025](/docs/openshift?topic=openshift-openshift-relnotes#openshift-sep25)
 
+    * [15 September 2025](/docs/openshift?topic=openshift-openshift-relnotes#openshift-sep1525)
+
+        * {{site.data.keyword.openshiftlong_notm}} worker node fix packs are available.
+
     * [12 September 2025](/docs/openshift?topic=openshift-openshift-relnotes#openshift-sep1225)
 
         * OpenShift AI cluster add-on patch updates.
@@ -305,6 +309,10 @@ subcollection: openshift
     * [04 September 2025](/docs/openshift?topic=openshift-openshift-relnotes#openshift-sep0425)
 
         * CLI version `1.0.717` is available.
+
+    * [02 September 2025](/docs/openshift?topic=openshift-openshift-relnotes#openshift-sep0225)
+
+        * OpenShift Data Foundation cluster add-on patch updates.
 
 * [August 2025](/docs/openshift?topic=openshift-openshift-relnotes#openshift-aug25)
 
