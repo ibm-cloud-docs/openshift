@@ -2,7 +2,7 @@
 
 copyright:
   years: 2025, 2025
-lastupdated: "2025-07-31"
+lastupdated: "2025-09-17"
 
 
 keywords: rhel, os, operating system, rhcos, 418, migration, deprecation
@@ -15,6 +15,8 @@ subcollection: openshift
 
 # Red Hat Enterprise Linux (RHEL) deprecation
 {: #rhel-deprecation}
+
+[Virtual Private Cloud]{: tag-vpc}
 
 Review the following information about deprecation of Red Hat Enterprise Linux (RHEL) worker nodes for {{site.data.keyword.openshiftlong_notm}} clusters and the migration to Red Hat Enterprise Linux CoreOS (RHCOS) worker nodes.
 {: shortdesc}
