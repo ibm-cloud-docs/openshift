@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2025
-lastupdated: "2025-08-12"
+lastupdated: "2025-09-17"
 
 
 keywords: openshift, disconnect, airgap, olm, mirror
@@ -38,7 +38,7 @@ Before you begin, [check the status](https://docs.openshift.com/container-platfo
     - [Deleting Operators from a cluster](https://docs.openshift.com/container-platform/4.18/operators/admin/olm-deleting-operators-from-cluster.html){: external}
     - [Creating applications from installed Operators](https://docs.openshift.com/container-platform/4.18/operators/user/olm-creating-apps-from-installed-operators.html){: external}
     - [Making your own custom Operator](https://github.com/operator-framework/community-operators/blob/master/docs/testing-operators.md#testing-operator-deployment-on-openshift){: external}.
-        - For help creating custom Operators, see the [Operator SDK](https://docs.openshift.com/container-platform/4.18/operators/operator_sdk/osdk-about.html){: external} documentation, which includes a guide to build an operator that is based on a [Helm chart](https://docs.redhat.com/documentation/openshift_container_platform/4.7/html/operators/developing-operators){: external}.
+        - For help creating custom Operators, see the [Operator SDK](https://docs.redhat.com/en/documentation/openshift_container_platform/4.18/html/operators/developing-operators#osdk-about){: external} documentation, which includes a guide to build an operator that is based on a [Helm chart](https://docs.redhat.com/documentation/openshift_container_platform/4.7/html/operators/developing-operators){: external}.
         - To manage your custom Operator, see the [Operator Lifecycle Manager](https://docs.openshift.com/en/container-platform/4.18/operators/understanding/olm/olm-understanding-olm.html){: external} documentation.
 2. Review any custom steps to install an operator in your cluster.
     - To set up an [OpenShift Container Platform Elasticsearch, Fluentd, and Kibana (EFK) stack](https://docs.redhat.com/documentation/openshift_container_platform/4.18/html/logging/index){: external}, see [installing the cluster logging operator](/docs/openshift?topic=openshift-health#oc_logging_operator).
