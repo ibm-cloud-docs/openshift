@@ -1,9 +1,9 @@
 ---
 copyright: 
   years: 2025, 2025
-lastupdated: "2025-09-03"
+lastupdated: "2025-09-17"
 
-keywords: , nhc005, calico degraded, tigera operator
+keywords: nhc005, calico degraded, tigera operator
 
 subcollection: openshift
 

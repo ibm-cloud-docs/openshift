@@ -1,9 +1,9 @@
 ---
 copyright: 
   years: 2025, 2025
-lastupdated: "2025-09-04"
+lastupdated: "2025-09-17"
 
-keywords: , nhc003, container registry unreachable
+keywords: nhc003, container registry unreachable
 
 subcollection: openshift
 

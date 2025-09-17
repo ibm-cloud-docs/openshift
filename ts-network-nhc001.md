@@ -1,9 +1,9 @@
 ---
 copyright: 
   years: 2025, 2025
-lastupdated: "2025-09-03"
+lastupdated: "2025-09-17"
 
-keywords: , nhc001, calico progressing, tigera operator
+keywords: nhc001, calico progressing, tigera operator
 
 subcollection: openshift
 

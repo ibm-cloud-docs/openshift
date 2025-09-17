@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2025
-lastupdated: "2025-07-10"
+lastupdated: "2025-09-17"
 
 
 keywords: openshift, {{site.data.keyword.openshiftlong_notm}}, support, get help
@@ -98,7 +98,7 @@ oc adm must-gather --run-namespace <namespace> \
 ```
 {: pre}
 
-Example commands to collect the logs from a given timeframe.
+Example commands to collect the logs from a given time frame.
 
 ```sh
 oc adm must-gather --since=24h
