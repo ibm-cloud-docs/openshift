@@ -1,9 +1,9 @@
 ---
 copyright: 
   years: 2025, 2025
-lastupdated: "2025-09-04"
+lastupdated: "2025-09-17"
 
-keywords: , nhc004, vpe gateway hostname resolution
+keywords: nhc004, vpe gateway hostname resolution
 
 subcollection: openshift
 
@@ -57,7 +57,7 @@ To identify the VPE gateways used by your IBM Cloud Kubernetes Service cluster, 
     ```
     {: pre}
 
-2. Filter the output for `iks-cluster_ID` and look for `Service Endpoints`. This shows the sassociated services, IP addresses, and endpoint names.
+2. Filter the output for `iks-cluster_ID` and look for `Service Endpoints`. This shows the associated services, IP addresses, and endpoint names.
 
 
 ### 2. Use the IBM Cloud console to list endpoint gateways
@@ -101,7 +101,7 @@ To identify the VPE gateways used by your IBM Cloud Kubernetes Service cluster, 
     ```
     {: pre}
 
-4. If your cluster is using custom DNS configurations (e.g., modified CoreDNS settings), inspect the config.
+4. If your cluster is using custom DNS configurations (such as, modified CoreDNS settings), inspect the config.
 
     ```sh
     kubectl get configmap coredns -n kube-system -o yaml
