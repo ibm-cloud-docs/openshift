@@ -2531,7 +2531,7 @@ Minimum required permissions
 **Example**:
 
 ```sh
-ibmcloud oc dedicated pool --flavor-class mb4c.20x64 --metro dal --name mypool
+ibmcloud oc dedicated pool create --flavor-class mb4c.20x64 --metro dal --name mypool
 ```
 {: pre}
 
