@@ -2,7 +2,7 @@
 
 copyright:
   years: 2025, 2025
-lastupdated: "2025-05-22"
+lastupdated: "2025-09-17"
 
 
 keywords: openshift, console, web, connect, private
@@ -113,7 +113,7 @@ Follow these steps to check the connections described in the [connection flow](#
         ```
         {: pre}
 
-    2. If the output shows that any operators are not healthy or are not running at the current version, use the [OpenShift cluster version troubleshooting documentation](https://cloud.ibm.com/docs/openshift?topic=openshift-ts-cluster-version-downlevel) to resolve the issue. Or, you can search the IBM and Red Hat documentation for any specific errors that are shown. 
+    2. If the output shows that any operators are not healthy or are not running at the current version, use the [OpenShift cluster version troubleshooting documentation](/docs/openshift?topic=openshift-ts-cluster-version-downlevel) to resolve the issue. Or, you can search the IBM and Red Hat documentation for any specific errors that are shown. 
     3. If the console operator specifically is not healthy, check the `openshift-console/console...` and `openshift-console-operator/console-operator...` pod logs to see if a security group, ACL or DNS customization is preventing the pods from connecting to either the OAuth port or the OpenShift console URL. A security group, ACL or DNS might be configured in a way that prevents the connection. 
 
 3. Verify that the connection to the cluster master API server is successful. 

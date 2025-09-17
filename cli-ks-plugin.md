@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2025
-lastupdated: "2025-09-16"
+lastupdated: "2025-09-17"
 
 
 keywords: openshift, cli reference, kubernetes cli, openshift cli, {{site.data.keyword.openshiftlong_notm}}
@@ -2531,7 +2531,7 @@ Minimum required permissions
 **Example**:
 
 ```sh
-ibmcloud oc dedicated pool --flavor-class mb4c.20x64 --metro dal --name mypool
+ibmcloud oc dedicated pool create --flavor-class mb4c.20x64 --metro dal --name mypool
 ```
 {: pre}
 
@@ -3814,7 +3814,7 @@ Minimum required permissions
 {: #zone-add-vpc-gen2-example}
 
 ```sh
-ibmcloud oc zone add vpc-gen2 --zone us-south-3 --cluster my_cluster -p pool1 -p pool2
+ibmcloud oc zone add vpc-gen2 --zone us-south-3 --cluster my_cluster --worker-pool pool1 --worker-pool pool2
 ```
 {: pre}
 

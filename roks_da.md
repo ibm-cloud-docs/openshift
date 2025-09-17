@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2025, 2025
-lastupdated: "2025-05-29"
+lastupdated: "2025-09-17"
 
 
 keywords: deployable architecture, DA
@@ -36,12 +36,12 @@ There are three different DAs that create a cluster or clusters for you. They ar
 ## Checking your permissions
 {: #roks_da_permissions}
 
-Each DA has a set of permissions that the user must have to be successful in executing the DA. A DA cannot only create the cluster for you, but can also create other complementary services that the cluster can use or integrate with. When executing the DA, a permissions check will be done to ensure you have the necessary permissions to create the resources in the DA. See [IAM roles and actions](https://cloud.ibm.com/docs/openshift?topic=openshift-iam-platform-access-roles) for details on the specific permission needed by related services.
+Each DA has a set of permissions that the user must have to be successful in executing the DA. A DA cannot only create the cluster for you, but can also create other complementary services that the cluster can use or integrate with. When executing the DA, a permissions check will be done to ensure you have the necessary permissions to create the resources in the DA. See [IAM roles and actions](/docs/openshift?topic=openshift-iam-platform-access-roles) for details on the specific permission needed by related services.
 
 ## Creating an API key
 {: #roks_da_api_key}
 
-To authenticate yourself with the DA, an IBM Cloud API Key is required. After you have all the necessary permissions, [create an API key](https://cloud.ibm.com/docs/account?topic=account-userapikey&interface=ui#create_user_key) and save it for use when executing the DA.
+To authenticate yourself with the DA, an IBM Cloud API Key is required. After you have all the necessary permissions, [create an API key](/docs/account?topic=account-userapikey&interface=ui#create_user_key) and save it for use when executing the DA.
 
 ## Creating the DA
 {: #roks_da_creation}

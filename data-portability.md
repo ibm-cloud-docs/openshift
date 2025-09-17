@@ -2,7 +2,7 @@
 
 copyright:
   years: 2024, 2025
-lastupdated: "2025-04-30"
+lastupdated: "2025-09-17"
 
 keywords: data, portability
 
@@ -120,7 +120,7 @@ To see an example scenario that uses `velero` in IBM Cloud for migrating from a 
 
 | Title | Description |
 | --- | --- |
-| [`Rclone`](https://rclone.org/){: external} | Review the [Migrating Cloud Object Storage (COS) apps and data between IBM Cloud accounts](https://cloud.ibm.com/docs/openshift?topic=openshift-storage-cos-app-migration) tutorial to see how to move data that is one COS bucket to another COS bucket in IBM Cloud or in another cloud provider by using `rclone`. |
+| [`Rclone`](https://rclone.org/){: external} | Review the [Migrating Cloud Object Storage (COS) apps and data between IBM Cloud accounts](/docs/openshift?topic=openshift-storage-cos-app-migration) tutorial to see how to move data that is one COS bucket to another COS bucket in IBM Cloud or in another cloud provider by using `rclone`. |
 | [OpenShift APIs for Data Protection](https://access.redhat.com/articles/5456281){: external} (OADP) | OADP (OpenShift APIs for Data Protection) is an operator that Red Hat has created to create backup and restore APIs for OpenShift clusters. For more information, see [Backup and restore Red Hat OpenShift cluster applications with OADP](https://developer.ibm.com/tutorials/awb-backup-and-restore-redhat-openshift-clusters-with-oadp/){: external} and the [OADP documentation](https://docs.openshift.com/container-platform/4.17/backup_and_restore/application_backup_and_restore/oadp-intro.html){: external} |
 | [Backing up and restoring apps and data with Portworx Backup](/docs/openshift?topic=openshift-storage_portworx_backup#px-backup-storage) | This document walks you through setting up PX Backup. You can configure clusters from other providers and restore data from IBM Cloud to the new provider. |
 | [Wanclouds](https://wanclouds.net/){: external} VPC+ DRaaS (VPC+ Disaster Recovery as a Service) | Review the Wanclouds Multi Cloud Backup, Disaster Recovery and Optimization as a Service. For more information, see the [Wanclouds documentation](https://docs.wanclouds.net/ibm/About-VPC-DRaas/){: external}. |

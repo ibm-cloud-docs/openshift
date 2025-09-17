@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2024, 2025
-lastupdated: "2025-05-29"
+lastupdated: "2025-09-17"
 
 keywords: openshift, {{site.data.keyword.openshiftlong_notm}}, secure by default, outbound traffic protection, 4.15
 
@@ -161,7 +161,7 @@ To revert these changes later and disable OperatorHub, complete the following st
 To access image streams from your cluster, choose from the following options. 
 
 
-* Mirror the images you need to the `icr.io` registry. For more information, see [Pushing images to {{site.data.keyword.registrylong_notm}}](https://cloud.ibm.com/docs/openshift?topic=openshift-images&interface=ui#push-images).
+* Mirror the images you need to the `icr.io` registry. For more information, see [Pushing images to {{site.data.keyword.registrylong_notm}}](/docs/openshift?topic=openshift-images&interface=ui#push-images).
 
 * Disable outbound traffic protection.
     ```sh

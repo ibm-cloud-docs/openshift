@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2025
-lastupdated: "2025-09-16"
+lastupdated: "2025-09-17"
 
 
 keywords: openshift
@@ -906,8 +906,6 @@ subcollection: openshift
 
         * Image Key Synchronizer add-on patch update.
 
-* [May 2024](/docs/openshift?topic=openshift-openshift-relnotes#openshift-may24)
-
     * [29 May 2024](/docs/openshift?topic=openshift-openshift-relnotes#openshift-may2924)
 
         * GPU worker node flavors with Red Hat Enterprise Linux CoreOS (RHCOS).
@@ -1443,180 +1441,6 @@ subcollection: openshift
     * [5 June 2023](/docs/openshift?topic=openshift-openshift-relnotes#openshift-jun523)
 
         * Worker node fix packs `4.9.59_1592_openshift`, `4.10.60_1571_openshift`, `4.11.42_1558_openshift`, and `4.12.19_1546_openshift`.
-
-* [May 2023](/docs/openshift?topic=openshift-openshift-relnotes#openshift-may23)
-
-    * [31 May 2023](/docs/openshift?topic=openshift-openshift-relnotes#openshift-may3123)
-
-        * Master fix packs `4.9.59_1591_openshift`, `4.10.59_1570_openshift`, `4.11.39_1557_openshift`, and `4.12.16_1545_openshift`.
-
-    * [25 May 2023](/docs/openshift?topic=openshift-openshift-relnotes#openshift-may2523)
-
-        * CLI version `1.0.523`.
-
-    * [24 May 2023](/docs/openshift?topic=openshift-openshift-relnotes#openshift-may2423)
-
-        * Worker node fix packs `4.9.59_1590_openshift`, `4.10.59_1569_openshift`, `4.11.40_1556_openshift`, and `4.12.16_1544_openshift`.
-
-    * [16 May 2023](/docs/openshift?topic=openshift-openshift-relnotes#openshift-may1623)
-
-        * {{site.data.keyword.filestorage_vpc_full_notm}} add-on version `1.0`.
-
-    * [15 May 2023](/docs/openshift?topic=openshift-openshift-relnotes#openshift-may1523)
-
-        * Cluster autoscaler add-on versions `1.0.6_1077`, `1.0.7_1076`, `1.0.8_1078`, and `1.1.0_1066`.
-
-        * {{site.data.keyword.filestorage_vpc_full_notm}} add-on version `1.1-beta`
-
-        * {{site.data.keyword.block_storage_is_short}} add-on versions `5.0.12_1963` and `5.1.8_1970`.
-
-    * [10 May 2023](/docs/openshift?topic=openshift-openshift-relnotes#openshift-may1023)
-
-        * Create Classic and VPC clusters with Terraform
-
-    * [9 May 2023](/docs/openshift?topic=openshift-openshift-relnotes#openshift-may0923)
-
-        * Worker node fix packs `4.9.59_1588_openshift`, `4.10.59_1566_openshift`, `4.11.39_1554_openshift`, and `4.12.15_1542_openshift`.
-
-    * [5 May 2023](/docs/openshift?topic=openshift-openshift-relnotes#openshift-may0523)
-
-        * New! OpenShift Data Foundation add-on versions `4.12.4`, `4.11.10`, `4.10.24`, `4.9.26`, and `4.8.31`.
-
-    * [2 May 2023](/docs/openshift?topic=openshift-openshift-relnotes#openshift-may0223)
-
-        * Cloud Image Key Synchronizer add-on version `1.0.0_1523`.
-
-        * Master fix pack `4.12.13_1540_openshift`.
-
-        * {{site.data.keyword.cos_full_notm}} plug-in version `2.2.14`
-
-* [April 2023](/docs/openshift?topic=openshift-openshift-relnotes#openshift-apr23)
-
-    * [27 April 2023](/docs/openshift?topic=openshift-openshift-relnotes#openshift-apr2723)
-
-        * Master fix packs `4.8.57_1600_openshift`, `4.9.59_1587_openshift`, `4.10.56_1565_openshift`, `4.11.35_1552_openshift`, and `4.12.11_1538_openshift`.
-
-    * [26 April 2023](/docs/openshift?topic=openshift-openshift-relnotes#openshift-apr2623)
-
-        * Cluster autoscaler add-on version `1.1.0_1060`.
-
-    * [24 April 2023](/docs/openshift?topic=openshift-openshift-relnotes#openshift-apr2423)
-
-        * Worker node fix packs `4.8.57_1600_openshift`, `4.9.59_1587_openshift`, `4.10.57_1565_openshift`, `4.11.37_1553_openshift`, and `4.12.13_1539_openshift`.
-
-    * [11 April 2023](/docs/openshift?topic=openshift-openshift-relnotes#openshift-apr1123)
-
-        * CLI version `1.0.510`.
-
-        * Worker node fix packs `4.8.57_1598_openshift`, `4.9.59_1585_openshift`, `4.10.55_1563_openshift`, `4.11.34_1550_openshift`, and `4.12.10_1536_openshift`.
-
-    * [5 April 2023](/docs/openshift?topic=openshift-openshift-relnotes#openshift-apr0523)
-
-        * Cluster autoscaler add-on versions `1.0.6_1010`, `1.0.7_1021`, and `1.0.8_1016`.
-
-        * {{site.data.keyword.block_storage_is_short}} add-on versions `5.0.10_1869` and `5.1.6_1872`.
-
-    * [3 April 2023](/docs/openshift?topic=openshift-openshift-relnotes#openshift-apr0323)
-
-        * Pod Security admission 
-
-        * {{site.data.keyword.cos_full_notm}} plug-in version `2.2.13`
-
-* [March 2023](/docs/openshift?topic=openshift-openshift-relnotes#openshift-mar23)
-
-    * [29 March 2023](/docs/openshift?topic=openshift-openshift-relnotes#openshift-mar2923)
-
-        * {{site.data.keyword.block_storage_is_short}} add-on versions `5.0.9_1862` and `5.1.5_1857`.
-
-        * Cluster autoscaler add-on versions `1.0.7_988` and `1.0.8_987`.
-
-    * [28 March 2023](/docs/openshift?topic=openshift-openshift-relnotes#openshift-mar2823)
-
-        * Master fix packs `4.8.57_1596_openshift`, `4.9.57_1583_openshift`, `4.10.53_1561_openshift`, `4.11.31_1548_openshift`, and `4.12.7_1534_openshift`.
-
-        * Worker node fix packs `4.8.57_1597_openshift`, `4.9.57_1584_openshift`, `4.10.54_1562_openshift`, `4.11.32_1549_openshift`, and `4.12.8_1535_openshift`.
-
-    * [21 March 2023](/docs/openshift?topic=openshift-openshift-relnotes#openshift-mar2123)
-
-        * New troubleshooting steps for workers in `Critical` or `NotReady` state. 
-
-    * [20 March 2023](/docs/openshift?topic=openshift-openshift-relnotes#openshift-mar2023)
-
-        * {{site.data.keyword.cos_full_notm}} plug-in version `2.2.12`.
-
-    * [16 March 2023](/docs/openshift?topic=openshift-openshift-relnotes#openshift-mar1623)
-
-        * Cluster autoscaler add-on version `1.1.0_978`.
-
-        * New! OpenShift Data Foundation add-on version `4.12.0`.
-
-    * [14 March 2023](/docs/openshift?topic=openshift-openshift-relnotes#openshift-mar1423)
-
-        * Worker node fix packs `4.8.57_1594_openshift`, `4.9.57_1580_openshift`, `4.10.52_1559_openshift`, `4.11.30_1547_openshift`, and `4.12.6_1531_openshift`.
-
-    * [9 March 2023](/docs/openshift?topic=openshift-openshift-relnotes#openshift-mar0923)
-
-        * Cluster autoscaler add-on version `1.0.8_968`
-
-    * [7 March 2023](/docs/openshift?topic=openshift-openshift-relnotes#openshift-mar0723)
-
-        * Worker node fix packs `4.8.57_1593_openshift`, `4.9.56_1579_openshift`, `4.10.52_1558_openshift`, `4.11.28_1546_openshift`, and `4.12.4_1530_openshift`.
-
-        * Cluster autoscaler add-on version `1.0.6_955` and `1.0.7_956`.
-
-        * {{site.data.keyword.block_storage_is_short}} add-on versions `4.4.17_1829`, `5.0.7_1836`, and `5.1.2_1828`.
-
-    * [3 March 2023](/docs/openshift?topic=openshift-openshift-relnotes#openshift-mar0323)
-
-        * {{site.data.keyword.cos_full_notm}} plug-in version `2.2.10`.
-
-    * [1 March 2023](/docs/openshift?topic=openshift-openshift-relnotes#openshift-mar0123)
-
-        * CLI version `1.0.498`.
-
-        * Cloud Image Key Synchronizer add-on version `1.0.0_1362`.
-
-* [February 2023](/docs/openshift?topic=openshift-openshift-relnotes#openshift-feb23)
-
-    * [27 February 2023](/docs/openshift?topic=openshift-openshift-relnotes#openshift-feb2723)
-
-        * New! {{site.data.keyword.openshiftlong_notm}} 4.12
-
-        * Master fix pack and worker node fix pack update
-
-        * Worker node fix packs `4.8.57_1590_openshift`, `4.9.56_1576_openshift`, `4.10.52_1556_openshift`, `4.11.28_1543_openshift`, and `4.12.4_1528_openshift`.
-
-    * [21 February 2023](/docs/openshift?topic=openshift-openshift-relnotes#openshift-feb2123)
-
-        * {{site.data.keyword.cos_full_notm}} plug-in version `2.2.10`.
-
-        * {{site.data.keyword.block_storage_is_short}} add-on versions `4.4.17_1829`, `5.0.7_1836`, and `5.1.2_1828`.
-
-    * [17 February 2023](/docs/openshift?topic=openshift-openshift-relnotes#openshift-feb1723)
-
-        * Cluster autoscaler add-on version `1.0.7_944`.
-
-    * [14 February 2023](/docs/openshift?topic=openshift-openshift-relnotes#openshift-feb1423)
-
-        * Istio add-on `1.15.5` and `1.16.2`
-
-    * [13 February 2023](/docs/openshift?topic=openshift-openshift-relnotes#openshift-feb1323)
-
-        * {{site.data.keyword.cos_full_notm}} plug-in version `2.2.9` is available.
-
-        * Worker node fix packs `4.8.57_1589_openshift`, `4.9.54_1575_openshift`, `4.10.51_1555_openshift`, and `4.11.26_1542_openshift`.
-
-    * [10 February 2023](/docs/openshift?topic=openshift-openshift-relnotes#openshift-feb1023)
-
-        * New troubleshooting doc for how to recover after deleting a portable subnet in Classic clusters.
-
-    * [9 February 2023](/docs/openshift?topic=openshift-openshift-relnotes#openshift-feb0923)
-
-        * {{site.data.keyword.block_storage_is_short}} add-on version `5.1`.
-
-    * [8 February 2023](/docs/openshift?topic=openshift-openshift-relnotes#openshift-feb0823)
-
-        * Cloud Image Key Synchronizer add-on version `1.0.0_1329`.
 
 
 ## Tutorials library for OpenShift

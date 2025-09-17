@@ -1,8 +1,8 @@
 ---
 
 copyright: 
-  years: 2014, 2024
-lastupdated: "2024-07-16"
+  years: 2014, 2025
+lastupdated: "2025-09-17"
 
 
 keywords: openshift dedicated hosts
@@ -159,7 +159,7 @@ Minimum required permissions
 
 1. List your dedicated host pools and make a note of the pool that you want to remove.
     ```sh
-    ibmcloud oc dedicated host pool ls
+    ibmcloud oc dedicated pool ls
     ```
     {: pre}
     
@@ -190,5 +190,3 @@ Minimum required permissions
     {: pre}
     
     
-
-

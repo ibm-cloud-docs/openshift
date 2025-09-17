@@ -2,7 +2,7 @@
 
 copyright:
   years: 2025, 2025
-lastupdated: "2025-08-12"
+lastupdated: "2025-09-17"
 
 
 keywords: openshift, virtualization, oc virt
@@ -48,7 +48,7 @@ Before you begin, make sure that you have the following.
 - Outbound traffic protection disabled
 - OpenShift Data Foundation installed
 
-To install ODF, see [Deploying OpenShift Data Foundation on VPC clusters](https://cloud.ibm.com/docs/openshift?topic=openshift-deploy-odf-vpc&interface=ui).
+To install ODF, see [Deploying OpenShift Data Foundation on VPC clusters](/docs/openshift?topic=openshift-deploy-odf-vpc&interface=ui).
 {: tip}
 
 ## Setting up virtualization with {{site.data.keyword.filestorage_vpc_short}}
@@ -111,5 +111,5 @@ To install ODF, see [Deploying OpenShift Data Foundation on VPC clusters](https:
 Review the following Red Hat docs for creating and managing VMs in your cluster.
 
 - [Creating virtual machines from Red Hat images overview](https://docs.openshift.com/container-platform/4.17/virt/virtual_machines/creating_vms_rh/virt-creating-vms-from-rh-images-overview.html){: external}.
-- [Creating virtual machines from the command line](https://docs.openshift.com/container-platform/4.17/virt/virtual_machines/creating_vms_rh/virt-creating-vms-from-cli.html){: external}.
+- [Creating virtual machines from the command line](https://docs.redhat.com/en/documentation/openshift_container_platform/4.17/html/virtualization/virtual-machines#virt-creating-vms-from-cli){: external}.
 - [Connecting to virtual machine consoles](https://docs.openshift.com/container-platform/4.17/virt/virtual_machines/virt-accessing-vm-consoles.html){: external}.
