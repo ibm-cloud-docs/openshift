@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2022, 2025
-lastupdated: "2025-06-09"
+lastupdated: "2025-09-17"
 
 
 keywords: kubernetes, openshift
@@ -42,7 +42,7 @@ You can resolve the issue in one of the following ways.
 
 If you want to use {{site.data.keyword.filestorage_vpc_short}} with static provisioning, you must reference the correct `uid` and `gid`.
 
-1. Create a storage class with the correct `uid` and `gid` that your app needs. For a list of storage profiles, see [{{site.data.keyword.filestorage_vpc_short}} profiles]( https://cloud.ibm.com/docs/vpc?topic=vpc-file-storage-profiles).
+1. Create a storage class with the correct `uid` and `gid` that your app needs. For a list of storage profiles, see [{{site.data.keyword.filestorage_vpc_short}} profiles](/docs/vpc?topic=vpc-file-storage-profiles).
 
     ```yaml
     apiVersion: storage.k8s.io/v1

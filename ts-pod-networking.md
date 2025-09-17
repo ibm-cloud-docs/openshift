@@ -2,7 +2,7 @@
 
 copyright:
   years: 2024, 2025
-lastupdated: "2025-08-07"
+lastupdated: "2025-09-17"
 
 
 keywords: pods, pod connectvity, networking, pod networking, pod trouble shooting, pod debug
@@ -24,7 +24,7 @@ Review the options and strategies for debugging connection issues between pods.
 
 Follow these steps to check the health of your components. Networking issues might occur if your cluster components are not up to date or are not in a healthy state.
 
-1. Check that your cluster master and worker nodes run on a supported version and are in a healthy state. If the cluster master or workers do not run a supported version, [make any necessary updates](/docs/openshift?topic=openshift-update) so that they run a supported version. If the status of any components is not `Normal` or `Ready`, review the [cluster master health states](/docs/openshift?topic=openshift-debug_master), [cluster states](/docs/openshift?topic=openshift-cluster-states-reference), [worker node states](/docs/openshift?topic=openshift-worker-node-state-reference), or [steps to troubleshoot `Critical` or `NotReady` worker nodes](https://cloud.ibm.com/docs/openshift?topic=openshift-ts-critical-notready) for more information. Make sure any related issues are resolved before continuing. 
+1. Check that your cluster master and worker nodes run on a supported version and are in a healthy state. If the cluster master or workers do not run a supported version, [make any necessary updates](/docs/openshift?topic=openshift-update) so that they run a supported version. If the status of any components is not `Normal` or `Ready`, review the [cluster master health states](/docs/openshift?topic=openshift-debug_master), [cluster states](/docs/openshift?topic=openshift-cluster-states-reference), [worker node states](/docs/openshift?topic=openshift-worker-node-state-reference), or [steps to troubleshoot `Critical` or `NotReady` worker nodes](/docs/openshift?topic=openshift-ts-critical-notready) for more information. Make sure any related issues are resolved before continuing. 
 
     To check the cluster master version and health:
     ```sh

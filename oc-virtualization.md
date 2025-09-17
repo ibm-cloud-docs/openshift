@@ -2,7 +2,7 @@
 
 copyright:
   years: 2025, 2025
-lastupdated: "2025-08-12"
+lastupdated: "2025-09-17"
 
 
 keywords: openshift, virtualization, oc virt
@@ -48,7 +48,7 @@ Before you begin, make sure that you have the following.
 - Outbound traffic protection disabled
 - OpenShift Data Foundation installed
 
-To install ODF, see [Deploying OpenShift Data Foundation on VPC clusters](https://cloud.ibm.com/docs/openshift?topic=openshift-deploy-odf-vpc&interface=ui).
+To install ODF, see [Deploying OpenShift Data Foundation on VPC clusters](/docs/openshift?topic=openshift-deploy-odf-vpc&interface=ui).
 {: tip}
 
 ## Setting up virtualization with {{site.data.keyword.filestorage_vpc_short}}

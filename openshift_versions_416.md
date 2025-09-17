@@ -2,7 +2,7 @@
 
 copyright:
   years: 2024, 2025
-lastupdated: "2025-05-29"
+lastupdated: "2025-09-17"
 
 
 keywords: openshift, version, update, upgrade, 4.16, update openshift
@@ -75,7 +75,7 @@ For clusters that run version 4.16 or later, you can use the `oc adm upgrade sta
 | Reduced access by unauthenticated users or groups | {{site.data.keyword.redhat_openshift_notm}} on IBM Cloud version 4.16 reduces the permissions given to the `system:anonymous` user and `system:unauthenticated` group. This applies to new clusters only. If you want to use the more secure defaults then remove the `system:unauthenticated` group from the `self-access-reviewers`, `system:oauth-token-deleters`, `system:scope-impersonation`, and `system:webhooks` cluster role bindings. See [Reduce unauthenticated user or group access](https://www.redhat.com/en/blog/what-you-need-to-know-red-hat-openshift-416){: external} for more information. |
 | Legacy service account API token secrets are no longer generated for each service account | {{site.data.keyword.redhat_openshift_notm}} on IBM Cloud version 4.16 no longer automatically generates a legacy service account API token secret for each service account. See [Legacy service account API token secrets are no longer generated for each service account](https://docs.redhat.com/documentation/openshift_container_platform/4.16/html/release_notes/ocp-4-16-release-notes){: external} for more information. | 
 | Calico API server is a managed resource | {{site.data.keyword.redhat_openshift_notm}} on IBM Cloud version 4.16 now manages the installation of and updates to the Calico API server component. If your cluster contains the `calico-apiserver` namespace, then you must uninstall the Calico API server before upgrading. |
-| Default OpenShift cluster monitoring configuration | {{site.data.keyword.redhat_openshift_notm}} on IBM Cloud version 4.16 now creates a default OpenShift cluster monitoring configuration if one doesn't exist. This new default configuration sets a 10 GB retention size which may impact the metrics retention for your cluster. See [Built-in {{site.data.keyword.redhat_openshift_notm}} monitoring tools](https://cloud.ibm.com/docs/openshift?topic=openshift-health-monitor#built-in-mon-tools){: external} for instructions on how you can configure the monitoring stack to use persistent storage, change the metrics retention policies, or run Prometheus on dedicated nodes. |
+| Default OpenShift cluster monitoring configuration | {{site.data.keyword.redhat_openshift_notm}} on IBM Cloud version 4.16 now creates a default OpenShift cluster monitoring configuration if one doesn't exist. This new default configuration sets a 10 GB retention size which may impact the metrics retention for your cluster. See [Built-in {{site.data.keyword.redhat_openshift_notm}} monitoring tools](/docs/openshift?topic=openshift-health-monitor#built-in-mon-tools){: external} for instructions on how you can configure the monitoring stack to use persistent storage, change the metrics retention policies, or run Prometheus on dedicated nodes. |
 {: caption="Changes to make before you update the master to {{site.data.keyword.redhat_openshift_notm}} 4.16" caption-side="bottom"}
 
 ## Update after master
