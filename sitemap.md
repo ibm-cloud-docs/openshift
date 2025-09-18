@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2025
-lastupdated: "2025-09-17"
+lastupdated: "2025-09-18"
 
 
 keywords: openshift
@@ -6527,8 +6527,6 @@ subcollection: openshift
 * [`vpc-block-csi-driver` 5.1](/docs/openshift?topic=openshift-supported-cluster-addon-versions#vpc-block-csi-driver-5.1)
 
 * [`vpc-block-csi-driver` 5.2](/docs/openshift?topic=openshift-supported-cluster-addon-versions#vpc-block-csi-driver-5.2)
-
-* [`vpc-file-csi-driver` 1.2](/docs/openshift?topic=openshift-supported-cluster-addon-versions#vpc-file-csi-driver-1.2)
 
 * [`vpc-file-csi-driver` 2.0](/docs/openshift?topic=openshift-supported-cluster-addon-versions#vpc-file-csi-driver-2.0)
 
