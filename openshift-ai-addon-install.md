@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2024, 2025
-lastupdated: "2025-08-29"
+lastupdated: "2025-09-18"
 
 
 keywords: openshift, {{site.data.keyword.openshiftlong_notm}}, ai, add-on
@@ -119,7 +119,7 @@ ibmcloud oc cluster addon enable openshift-ai --cluster CLUSTER [-f] [--param PA
 ```
 {: pre}
 
-Example command to install the add-on with automatic minor and patch updates, Codeflare, and Kserve enabled.
+Example command to install the add-on with automatic minor and patch updates, CodeFlare, and Kserve enabled.
 
 ```sh
 ibmcloud oc cluster addon enable openshift-ai --cluster CLUSTER --param oaiInstallPlanApproval=Automatic --param oaiCodeflare=Managed --param oaiKserve=Managed
@@ -172,7 +172,7 @@ If you want to use KServe in Advanced mode, you must complete the following step
 
 1. Install the OpenShift Serverless Operator from OperatorHub.
 1. Install the OpenShift Service Mesh Operator from OperatorHub.
-1. Set the serviceMesh management state to `Managed` in your Data Science Cluster Initialization CR.
+1. Set the service mesh management state to `Managed` in your Data Science Cluster Initialization CR.
     ```yaml
     serviceMesh:
         controlPlane:
@@ -183,7 +183,7 @@ If you want to use KServe in Advanced mode, you must complete the following step
     ```
     {: pre}
 
-1. Set the kserve serving management state to `Managed` in your Data Science Cluster custom resource.
+1. Set the KServe serving management state to `Managed` in your Data Science Cluster custom resource.
     ```yaml
     kserve:
         managementState: Managed
@@ -210,7 +210,7 @@ To include an option when you [install the OpenShift AI add-on with the UI](/doc
 | OpenShift AI deletion policy | `oaiDeletePolicy` | Retain or delete any operators or components installed by the add-on if the add-on is removed. | `Retain` or `Delete` | `Retain` |         
 | Open Data Hub Dashboard | `oaiDashboard` | Enable or disable the component. If enabled, it is managed by OpenShift AI platform. | `Managed` to enable \n`Removed` to disable | `Managed` (enabled) |           
 | Kueue | `oaiKueue` | Enable or disable the component. If enabled, it is managed by OpenShift AI platform. | `Managed` to enable \n`Removed` to disable | `Managed` (enabled) |                                       
-| Codeflare | `oaiCodeflare` | Enable or disable the component. If enabled, it is managed by OpenShift AI platform. | `Managed` to enable \n`Removed` to disable | `Managed` (enabled) |                                  
+| CodeFlare | `oaiCodeflare` | Enable or disable the component. If enabled, it is managed by OpenShift AI platform. | `Managed` to enable \n`Removed` to disable | `Managed` (enabled) |                                  
 | ModelMesh Serving | `oaiModelmeshserving` | Enable or disable the component. If enabled, it is managed by OpenShift AI platform. | `Managed` to enable \n`Removed` to disable | `Managed` (enabled) |                           
 | Workbench | `oaiWorkbenches` | Enable or disable the component. If enabled, it is managed by OpenShift AI platform. | `Managed` to enable \n`Removed` to disable | `Managed` (enabled) |                                 
 | Data Science Pipelines | `oaiDataSciencePipelines` | Enable or disable the component. If enabled, it is managed by OpenShift AI platform. | `Managed` to enable \n`Removed` to disable | `Managed` (enabled) |                         
@@ -235,9 +235,9 @@ To include a customization for an operator when you [install the OpenShift AI ad
 | NDF Deletion Policy | `nfdDeletePolicy` |  Retain or delete the operator if the OpenShift AI add-on is removed. | `Retain` or `Delete` | `Retain` |                               
 | NVIDIA Deletion Policy | `nvidiaDeletePolicy` | Retain or delete the operator if the OpenShift AI add-on is removed. | `Retain` or `Delete` | `Retain` |                   
 | NVIDIA Sandbox Workloads | `nvidiaSandboxWorkloads` | Enable management of additional operands required for sandbox workloads. | `true` (enabled) \n  `false` (disabled) | `true` (enabled) |             
-| NVIDIA DCGM Hostengine Deployment | `nvidiaDcgmEnabled` | Enable deployment of the NVIDIA DCGM hostengine as a separate pod. | `true` (enabled) \n `false` (disabled) | `true` (enabled) |                
+| NVIDIA DCGM Hostengine Deployment | `nvidiaDcgmEnabled` | Enable deployment of the NVIDIA DCGM Hostengine as a separate pod. | `true` (enabled) \n `false` (disabled) | `true` (enabled) |                
 | NVIDIA vGPU Manager | `nvidiaVgpuManagerEnabled` | Enable NVIDIA vGPU Manager. | `true` (enabled) \n `false` (disabled) | `true` (enabled) |         
-| NVIDIA VFIO Manager | `nvidiaVfioManagerEnabled` | Enable VFIOManager for configuration to deploy VFIO-PCI. | `true` (enabled) \n `false` (disabled) | `true` (enabled) |        
+| NVIDIA VFIO Manager | `nvidiaVfioManagerEnabled` | Enable VFIO Manager for configuration to deploy VFIO-PCI. | `true` (enabled) \n `false` (disabled) | `true` (enabled) |        
 | NVIDIA Node Status Exporter | `nvidiaNodeStatusExporterEnabled` | Enable Node Status Exporter. | `true` (enabled) \n `false` (disabled) | `true` (enabled) |  
 | NVIDIA Sandbox Device Plug-in | `nvidiaSandboxDevicePluginEnabled` | Enable NVIDIA Sandbox Device Plug-in. | `true` (enabled) \n `false` (disabled) | `true` (enabled) |
 | NVIDA MIG Manager| `nvidiaMigManagerEnabled` |  Enable NVIDIA MIG Manager. | `true` (enabled) \n `false` (disabled) | `true` (enabled) |         

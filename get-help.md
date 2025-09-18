@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2025
-lastupdated: "2025-09-17"
+lastupdated: "2025-09-18"
 
 
 keywords: openshift, {{site.data.keyword.openshiftlong_notm}}, support, get help
@@ -98,7 +98,7 @@ oc adm must-gather --run-namespace <namespace> \
 ```
 {: pre}
 
-Example commands to collect the logs from a given time frame.
+Example commands to collect the logs from a given time.
 
 ```sh
 oc adm must-gather --since=24h
@@ -177,7 +177,7 @@ The recommended way to generate a `sosreport` for an OpenShift Container Platfor
     OpenShift Container Platform cluster nodes running Red Hat Enterprise Linux CoreOS (RHCOS) are immutable and rely on Operators to apply cluster changes. Accessing cluster nodes by using SSH is not recommended. However, if the OpenShift Container Platform API is not available, or the kubelet is not properly functioning on the target node, oc operations might be impacted. In such situations, it is possible to access nodes using `ssh core@<node>.<cluster_name>.<base_domain>` instead.
     {: note}
 
-1. Start a toolbox container, which includes the required binaries and plugins to run the `sosreport`.
+1. Start a toolbox container, which includes the required binaries and plug-ins to run the `sosreport`.
     ```sh
     toolbox
     ```

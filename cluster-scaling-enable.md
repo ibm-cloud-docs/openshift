@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2025
-lastupdated: "2025-09-11"
+lastupdated: "2025-09-18"
 
 
 keywords: openshift, {{site.data.keyword.openshiftlong_notm}}, kubernetes, node scaling, ca, autoscaler
@@ -194,7 +194,7 @@ Customize the cluster autoscaler settings such as the amount of time it waits be
 | `scaleDownDelayAfterFailure` | The amount of time in minutes that the autoscaler must wait after a failure. | `3m` |
 | `kubeClientBurst` | Allowed burst for the Kubernetes client. | `300` |
 | `kubeClientQPS` | The QPS value for Kubernetes client. How many queries are accepted once the burst has been exhausted. | `5.0` |
-| `maxEmptyBulkDelete` | **Only supported in versions prior to 1.2.4** The maximum number of empty nodes that can be deleted by the autoscaler at the same time. | `10` |
+| `maxEmptyBulkDelete` | **Only supported in versions earlier than 1.2.4** The maximum number of empty nodes that can be deleted by the autoscaler at the same time. | `10` |
 | `maxScaleDownParallelism` | **1.2.4 and later**  Maximum number of nodes, both empty and needing to be drained, that can be deleted in parallel. | `10` |
 | `maxGracefulTerminationSec` | The maximum number of seconds the autoscaler waits for pod to end when it scales down a node. | `600` |
 | `maxTotalUnreadyPercentage` | The maximum percentage of unready nodes in the cluster. After this value is exceeded, the autoscaler stops operations. | `45` |
