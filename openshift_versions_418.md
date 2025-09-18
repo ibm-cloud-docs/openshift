@@ -2,7 +2,7 @@
 
 copyright:
   years: 2024, 2025
-lastupdated: "2025-08-04"
+lastupdated: "2025-09-18"
 
 
 keywords: openshift, version, update, upgrade, 4.18, update openshift
@@ -76,6 +76,7 @@ For clusters that run version 4.18 or later, you can use the `oc adm upgrade sta
 | Upgrade requires OpenShift cluster version currency | A cluster master upgrade will be canceled if the OpenShift cluster version status indicates that an update is already in progress. See [Why does OpenShift show the cluster version is not up to date?](/docs/openshift?topic=openshift-ts-cluster-version-downlevel) for details. |
 | Upgrade requires resolution to OpenShift cluster version upgradeable conditions | A cluster master upgrade will be canceled if the OpenShift cluster version Upgradeable status condition indicates that the cluster is not upgradeable. To determine if the cluster is upgradeable, see [Checking the Upgradeable status of your cluster](/docs/openshift?topic=openshift-cs_versions_418#status-check-418). |
 | RHEL 9 is the default operating system | RHEL 9 is the default operating system for Red Hat OpenShift on IBM Cloud version 4.18 Classic or VPC clusters. Upgrading a cluster to version 4.18 does not change the operating system for an existing worker pool. For more information and possible migration actions related to RHEL 9, see [Migrating to a new Red Hat Enterprise Linux version](/docs/openshift?topic=openshift-rhel_migrate). |
+| Node label `node-role.kubernetes.io/master` removed	 | 4.18 clusters no longer set the node-role.kubernetes.io/master node label for version 4.18 worker nodes (RHEL or RHCOS). If your apps rely on this node label, update them accordingly. |
 {: caption="Changes to make before you update the master to {{site.data.keyword.redhat_openshift_notm}} 4.18" caption-side="bottom"}
 
 
