@@ -1,7 +1,7 @@
 ---
 copyright: 
   years: 2025, 2025
-lastupdated: "2025-09-17"
+lastupdated: "2025-09-18"
 
 keywords: nhc007, dns traffic blocked
 
@@ -123,6 +123,6 @@ Check your Calico HostEndpoint (HEP) and GlobalNetworkPolicy (GNP) resources, as
 
 
 
-1. Review your infrastructure (network appliances, ACLs, etc.) and allow **UDP and TCP port 53** outbound traffic
+1. Review your infrastructure (network appliances, ACLs, and so on) and allow **UDP and TCP port 53** outbound traffic
 
 1. If DNS is still unreachable after reviewing these items, contact support. Open a [support case](/docs/account?topic=account-using-avatar). In the case details, be sure to include any relevant log files, error messages, or command outputs.

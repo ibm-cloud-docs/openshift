@@ -2,7 +2,7 @@
 
 copyright:
   years: 2023, 2025
-lastupdated: "2025-08-20"
+lastupdated: "2025-09-18"
 
 
 keywords: openshift, openshift data foundation, openshift container storage, ocs, worker update, worker replace
@@ -183,7 +183,7 @@ Make sure the storage cluster is healthy before continuing.
 	```
 	{: pre}
 
-	In some cases draining might get stuck when draining Noobaa pods. In this scenario, you can manually delete the NooBaa pods, so they get scheduled on a different node.
+	If the Noobaa pods get stuck while draining, you can manually delete the NooBaa pods, so that they get scheduled on a different node.
 	{: note}
 
 1. Delete any remaining the Noobaa pods in the following order.

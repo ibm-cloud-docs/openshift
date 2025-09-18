@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2025
-lastupdated: "2025-08-13"
+lastupdated: "2025-09-18"
 
 
 keywords: openshift
@@ -68,7 +68,7 @@ These components include:
 The {{site.data.keyword.redhat_openshift_notm}} API server and etcd data store are the most sensitive components that run in your {{site.data.keyword.redhat_openshift_notm}} master. You want to prevent unauthorized access to these components because they set and store the configurations for all the resources that run in your cluster, including some security settings of your applications.
 {: shortdesc}
 
-{{site.data.keyword.redhat_openshift_notm}} provides security controls and limits access to protect these components and reduce the risk of cyber-attacks.
+{{site.data.keyword.redhat_openshift_notm}} provides security controls and limits access to protect these components and reduce the risk of attacks.
 
 ### How is access to my API server granted?
 {: #api-server-access}

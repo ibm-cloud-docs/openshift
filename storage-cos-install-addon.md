@@ -2,7 +2,7 @@
 
 copyright:
   years: 2024, 2025
-lastupdated: "2025-09-11"
+lastupdated: "2025-09-18"
 
 
 keywords: kubernetes, openshift, object storage add-in, cos
@@ -25,7 +25,7 @@ Prerequisites
 - The {{site.data.keyword.cos_full_notm}} add-on requires at least 0.4 vCPU and 256 MB of memory.
 - The add-on is available only for Red Hat CoreOS (RHCOS) worker nodes. If your cluster has both RHEL and RHCOS nodes, then the add-on is deployed only on the RHCOS nodes.
 - Set up an [{{site.data.keyword.cos_full_notm}} instance](/docs/openshift?topic=openshift-storage-cos-understand#create_cos_service).
-- **Optional** If you plan to use bucket versioning, your service credentials must have **Manager** or **Writer** permissions to enable or disable bucket versioning on the bucket. For more information, see [Getting started with versioning](https://test.cloud.ibm.com/docs/cloud-object-storage?topic=cloud-object-storage-versioning#versioning-getting-started).
+- **Optional** If you plan to use bucket versioning, your service credentials must have **Manager** or **Writer** permissions to enable or disable bucket versioning on the bucket. For more information, see [Getting started with versioning](/docs/cloud-object-storage?topic=cloud-object-storage-versioning#versioning-getting-started).
 
 
 
@@ -157,8 +157,8 @@ Before you begin: [Access your {{site.data.keyword.redhat_openshift_notm}} clust
     ```
     {: codeblock}
 
-    mountOptions
-    :    You can customize the mount options for either `s3fs` or `rclone` by editing the `mountOptions` in your secret. For more information, see the [s3fs mount options](https://github.com/IBM/ibm-object-csi-driver/blob/main/cos-csi-mounter/server/s3fs.go){: external} and the [rclone mount options](https://github.com/IBM/ibm-object-csi-driver/blob/main/cos-csi-mounter/server/rclone.go){: external}.
+    `mountOptions`
+    :    You can customize the mount options for either `s3fs` or `rclone` by editing the `mountOptions` in your secret. For more information, see the [s3fs mount options](https://github.com/IBM/ibm-object-csi-driver/blob/main/cos-csi-mounter/server/s3fs.go){: external} and the [`rclone` mount options](https://github.com/IBM/ibm-object-csi-driver/blob/main/cos-csi-mounter/server/rclone.go){: external}.
 
     Currently, the add-on is enabled to support a fixed set of mount options with proper validation for each mount option. If you want to use any other mount options that are not in the validation list, contact support to enable those options.
     {: note}

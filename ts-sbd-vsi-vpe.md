@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2025, 2025
-lastupdated: "2025-07-16"
+lastupdated: "2025-09-18"
 
 keywords: openshift, {{site.data.keyword.openshiftlong_notm}}, secure by default, {{site.data.keyword.openshiftlong_notm}}, outbound traffic protection, limitations, vpe, vsi
 
@@ -32,7 +32,7 @@ Review the following scenarios for why your VSI can't access your VPE gateway.
 
 
 
-If you provision a VSI in a VPC containing [secure by default clusters](/docs/openshift?topic=openshift-vpc-security-group-reference) several VPE gateways [are created](/docs/openshift?topic=openshift-vpc-security-group-reference#sbd-managed-vpe-gateways). In a secure by default environment these gateways are attached to a [security group](/docs/openshift?topic=openshift-vpc-security-group-reference#vpc-sg-kube-vpegw-vpc-id) that, by default, only allows inbound traffic from {{site.data.keyword.openshiftlong_notm}} clusters in the VPC. Any standalone VSI will not have access.
+If you provision a VSI in a VPC containing [secure by default clusters](/docs/openshift?topic=openshift-vpc-security-group-reference) several VPE gateways [are created](/docs/openshift?topic=openshift-vpc-security-group-reference#sbd-managed-vpe-gateways). In a secure by default environment these gateways are attached to a [security group](/docs/openshift?topic=openshift-vpc-security-group-reference#vpc-sg-kube-vpegw-vpc-id) that, by default, only allows inbound traffic from {{site.data.keyword.openshiftlong_notm}} clusters in the VPC. Any stand-alone VSI will not have access.
 {: tsCauses}
 
 Choose from one of the following options to resolve the issue.
@@ -63,4 +63,3 @@ Choose from one of the following options to resolve the issue.
         {: pre}
 
 If the issue persists, contact support. Open a [support case](/docs/account?topic=account-using-avatar). In the case details, be sure to include any relevant log files, error messages, or command outputs.
-

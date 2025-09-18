@@ -2,7 +2,7 @@
 
 copyright:
   years: 2025, 2025
-lastupdated: "2025-09-17"
+lastupdated: "2025-09-18"
 
 
 keywords: openshift, openshift data foundation, openshift container storage, disaster recovery
@@ -31,7 +31,7 @@ The following steps for setting ODF Disaster Recovery are available as a **Techn
 
 
 Here are the high-level steps of this solution:
-1. Create the 3 VPC clusters (each in different regions/VPCs). All of them need to have the `--disable-outbound-traffic-protection` parameter.
+1. Create the 3 VPC clusters (each in different regions/VPCs) and set the `--disable-outbound-traffic-protection` parameter for each.
 1. Install ODF on 2 of them.
 1. Install ACM on 1 of them.
 1. Configure ACM to manage the 2 ODF clusters.

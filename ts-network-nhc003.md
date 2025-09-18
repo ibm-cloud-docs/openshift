@@ -1,7 +1,7 @@
 ---
 copyright: 
   years: 2025, 2025
-lastupdated: "2025-09-17"
+lastupdated: "2025-09-18"
 
 keywords: nhc003, container registry unreachable
 
@@ -35,7 +35,7 @@ ibmcloud ks cluster health issue get --cluster <CLUSTER_ID> --issue NHC003
 ```
 {: pre}
 
-This warning means that some of the worker nodes cannot access external container registries, such as Docker Hub, Quay, or IBM Cloud Container Registry, which prevents them from pulling images required by your workloads.
+This warning means that some worker nodes cannot access external container registries, such as Docker Hub, Quay, or IBM Cloud Container Registry, which prevents them from pulling images required by your workloads.
 {: tsCauses}
 
 Ensure the worker nodes have access to the internet and can reach external container registries. Also check network policies, security groups, and firewall settings.
@@ -68,7 +68,7 @@ Ensure the worker nodes have access to the internet and can reach external conta
     ```
     {: pre}
 
-2. Check if the worker nodes have outbound internet access by running a traceroute or ping from the debug pod.
+2. Check if the worker nodes have outbound internet access by running a `traceroute` or ping from the debug pod.
     ```sh
     traceroute <registry_address>
     ```
@@ -94,7 +94,7 @@ Ensure the worker nodes have access to the internet and can reach external conta
 
 4. Verify your cluster's security groups and make sure outbound traffic is allowed. For each worker node, check the security group. Make sure there are no rules blocking HTTPS (TCP port 443) or DNS (UDP port 53).
 
-5. Review your infrastructure (network appliances, security groups, ACLs, etc.) and enable outbound access if necessary.
+5. Review your infrastructure (network appliances, security groups, ACLs, and so on) and enable outbound access if necessary.
 
 6. If you're using private container registries, verify DNS resolution and authentication is working.
 
