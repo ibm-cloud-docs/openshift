@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2025
-lastupdated: "2025-09-17"
+lastupdated: "2025-09-19"
 
 
 keywords: openshift
@@ -2180,7 +2180,7 @@ subcollection: openshift
 
     * [Protecting specific APIs](/docs/openshift?topic=openshift-cbr#protect-api-types-cbr)
 
-    * [Allowing {{site.data.keyword.openshiftlong_notm}} to access other {{site.data.keyword.cloud_notm}} resources by using CBR](/docs/openshift?topic=openshift-cbr#cbr-integrations)
+    * [Ensure {{site.data.keyword.openshiftlong_notm}} can maintain access to other {{site.data.keyword.cloud_notm}} resources when CBR is enabled for them](/docs/openshift?topic=openshift-cbr#cbr-integrations)
 
 * [Creating network zones](/docs/openshift?topic=openshift-cbr#create-cbr-network-zone-openshift)
 
@@ -6527,8 +6527,6 @@ subcollection: openshift
 * [`vpc-block-csi-driver` 5.1](/docs/openshift?topic=openshift-supported-cluster-addon-versions#vpc-block-csi-driver-5.1)
 
 * [`vpc-block-csi-driver` 5.2](/docs/openshift?topic=openshift-supported-cluster-addon-versions#vpc-block-csi-driver-5.2)
-
-* [`vpc-file-csi-driver` 1.2](/docs/openshift?topic=openshift-supported-cluster-addon-versions#vpc-file-csi-driver-1.2)
 
 * [`vpc-file-csi-driver` 2.0](/docs/openshift?topic=openshift-supported-cluster-addon-versions#vpc-file-csi-driver-2.0)
 

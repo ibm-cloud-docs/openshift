@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2022, 2025
-lastupdated: "2025-08-28"
+lastupdated: "2025-09-18"
 
 keywords: openshift, add-ons, cluster addon
 
@@ -24,7 +24,7 @@ Review the following list of supported cluster add-ons. Each add-on version can 
 ## `alb-oauth-proxy` 2.0.0 
 {: #alb-oauth-proxy-2.0.0}
 
-- Supported Kubernetes cluster versions: `>=1.19.0 <1.34.0`
+- Supported Kubernetes cluster versions: `>=1.19.0 <1.35.0`
 
 - Supported OpenShift cluster versions:  `N/A` 
 
@@ -87,7 +87,7 @@ Review the following list of supported cluster add-ons. Each add-on version can 
 ## `ibm-storage-operator` 1.0 
 {: #ibm-storage-operator-1.0}
 
-- Supported Kubernetes cluster versions: `>=1.29.0 <1.34.0`
+- Supported Kubernetes cluster versions: `>=1.29.0 <1.35.0`
 
 - Supported OpenShift cluster versions: `>=4.14.0 <4.20.0`
 
@@ -188,7 +188,7 @@ Review the following list of supported cluster add-ons. Each add-on version can 
 
 - Supported Kubernetes cluster versions:  `N/A` 
 
-- Supported OpenShift cluster versions: `>=4.18.0 <4.19.0`
+- Supported OpenShift cluster versions: `>=4.18.0 <4.20.0`
 
 
 
@@ -204,7 +204,7 @@ Review the following list of supported cluster add-ons. Each add-on version can 
 ## `vpc-block-csi-driver` 5.1 
 {: #vpc-block-csi-driver-5.1}
 
-- Supported Kubernetes cluster versions: `>=1.22.0 <1.34.0`
+- Supported Kubernetes cluster versions: `>=1.22.0 <1.35.0`
 
 - Supported OpenShift cluster versions: `>=4.9.0 <4.20.0`
 
@@ -213,18 +213,9 @@ Review the following list of supported cluster add-ons. Each add-on version can 
 ## `vpc-block-csi-driver` 5.2 
 {: #vpc-block-csi-driver-5.2}
 
-- Supported Kubernetes cluster versions: `>=1.25.0 <1.34.0`
+- Supported Kubernetes cluster versions: `>=1.25.0 <1.35.0`
 
 - Supported OpenShift cluster versions: `>=4.10.0 <4.20.0`
-
-
-
-## `vpc-file-csi-driver` 1.2 
-{: #vpc-file-csi-driver-1.2}
-
-- Supported Kubernetes cluster versions: `>=1.24.0 <1.33.0`
-
-- Supported OpenShift cluster versions: `>=4.10.0 <4.19.0`
 
 
 
