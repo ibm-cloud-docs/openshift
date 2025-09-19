@@ -2,7 +2,7 @@
 
 copyright:
   years: 2022, 2025
-lastupdated: "2025-05-06"
+lastupdated: "2025-09-19"
 
 
 keywords: cbr, context based restrictions, security
@@ -36,14 +36,13 @@ Attempts to access the cluster control plane, which can be restricted by using t
 ## How {{site.data.keyword.openshiftlong_notm}} integrates with context-based restrictions
 {: #cbr-overview}
 
-You can create context-based restrictions (CBR) for {{site.data.keyword.openshiftlong_notm}} resources or for specific APIs. With Context-based restrictions, you can protect the following resources.
+You can create context-based restrictions (CBR) for your cluster control plane APIs or for the IBM Cloud cluster management APIs. With Context-based restrictions, you can protect the following resources.
 
+Cluster Control Plane APIs
+:   Protects access to the {{site.data.keyword.openshiftlong_notm}} APIs for your clusters or specific namespaces in your clusters. For example, your can protect the API to create a Kubernetes namespace.
 
-Protect {{site.data.keyword.openshiftlong_notm}} resources
-:   [Restrict access to clusters, resource groups, or regions](#resources-types-cbr).
-
-Protect specific APIs
-:   Restrict accessing to provisioning and managing clusters and workers. Or, restrict access to Kubernetes APIs such as viewing pods and nodes. For more information, see [Protecting specific APIs](#protect-api-types-cbr).
+Management APIs
+:   Protects access to the {{site.data.keyword.openshiftlong_notm}} APIs for specific clusters. For example, your can protect the API to create a cluster.
 
 Applications running on {{site.data.keyword.openshiftlong_notm}} clusters, for example web servers exposed by a Kubernetes LoadBalancer are not restricted by CBR rules.
 {: note}
@@ -91,7 +90,7 @@ To follow an example CBR scenario, see [Setting up context-based restrictions](/
 To get a list of service reference targets in the CLI, run the `ibmcloud cbr service-ref-targets` command.
 {: tip}
 
-### Allowing {{site.data.keyword.openshiftlong_notm}} to access other {{site.data.keyword.cloud_notm}} resources by using CBR
+### Ensure {{site.data.keyword.openshiftlong_notm}} can maintain access to other {{site.data.keyword.cloud_notm}} resources when CBR is enabled for them
 {: #cbr-integrations}
 
 You must add the `containers-kubernetes` to your network zones for rules created against the following services.
@@ -413,11 +412,10 @@ ibmcloud cbr rule-create --api-types crn:v1:bluemix:public:containers-kubernetes
 {: #cbr-limitations}
 
 - After you create, enforce, or disable enforcement of a rule, it might take up to 10 minutes for the change to take effect.
-- {{site.data.keyword.openshiftlong_notm}} CBR rules that apply to all API types or the `cluster` API types must not reference network zones that contain IPv6 addresses. The APIs included in the `cluster` type don't support IPv6.
-- If you add {{site.data.keyword.openshiftlong_notm}} resources to private-only network zones, the APIs for getting and listing clusters are still accessible over the public network.
-- {{site.data.keyword.openshiftlong_notm}} CBR rules that apply to all API types or the cluster API types must not reference other services like {{site.data.keyword.cos_full_notm}} or {{site.data.keyword.keymanagementserviceshort}}
-- {{site.data.keyword.openshiftlong_notm}} CBR rules that apply to all API types or the cluster API type do not support `Report-only` enforcement for the cluster API type.
-- {{site.data.keyword.openshiftlong_notm}} CBR rules that apply to all API types or the cluster API types are limited to no more than 200 IPs/subnets for private rules, and 500 IPs/subnets for public rules.
-- Due to a limitation with how {{site.data.keyword.openshiftlong_notm}} fetches cluster details, the APIs for getting clusters and listing clusters are still accessible regardless of the CBR rules. This means clusters are still visible (read-only) in the console and CLI. When this limitation is addressed, you must add new rules to protect the APIs for getting clusters and listing clusters.
+- The following limitations apply to {{site.data.keyword.openshiftlong_notm}} CBR rules that apply to all API types or the `cluster` API types: 
+    - They must not reference network zones that contain IPv6 addresses. The APIs included in the `cluster` type don't support IPv6.
+    - They must not reference other services like {{site.data.keyword.cos_full_notm}} or {{site.data.keyword.keymanagementserviceshort}} in the applied network zones.
+    - They do not support `Report-only` enforcement for the cluster API type.
+    - They are limited to no more than 200 IPs/subnets for private rules, and 500 IPs/subnets for public rules.
 - For {{site.data.keyword.openshiftlong_notm}} clusters on VPC with a Public Service Endpoint, if you add public CBR rules to your cluster, make sure to also add the public gateway IP addresses of your VPC subnets to your CBR rules. If you don't include the public gateway IPs, your {{site.data.keyword.redhat_openshift_notm}} Console pods won't work properly because those pods need to access the Oauth port of the cluster master with the public network.
 - Some {{site.data.keyword.openshiftlong_notm}} clusters that were created before 8 October 2022 are not able to enforce public CBR rules for the cluster's APIserver. To check if your cluster supports these public cluster API type CBR rules, run the `ibmcloud ks cluster get -c <CLUSTER-ID>` command. If either of the Service Endpoint URLs starts with the `https://cXXX` (where XXX is any three digit number), then the cluster does support public CBR rules. If the Service Endpoint URLs starts with `https://cX` (where the number after the `c` is a single digit), then the cluster is not able to enforce public CBR rules for the cluster's APIserver. To use public CBR rules, you must create a new cluster.
