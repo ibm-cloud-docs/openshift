@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2025
-lastupdated: "2025-03-28"
+lastupdated: "2025-09-22"
 
 
 keywords: openshift, autoscaler
@@ -172,11 +172,11 @@ If your cluster autoscaler pod is unhealthy and can't stream logs, check your {{
 {: tip}
 
 ```sh
-oc logs -n kube-system <pod_name> > logs.txt
+oc logs -n kube-system <pod_name> -c ibm-iks-cluster-autoscaler > logs.txt
 ```
 {: screen}
 
-## Step 5: Restart the pod
+## Step 6: Restart the pod
 {: #ca-debug-pod-restart}
 
 If you don't find any failures or error messages and you already enabled logging, restart the cluster autoscaler pod. The deployment re-creates the pod.
@@ -231,7 +231,7 @@ Optional: If you completed the debugging steps and your cluster still does not s
 
 5. Edit the `minSize` or `maxSize` parameters and save your changes.
 
-## Step 8: Check if the issue is resolved
+## Step 7: Check if the issue is resolved
 {: #ca-debug-more}
 
 Monitor the cluster autoscaler activities in your cluster to see if the issue is resolved. If you still experience issues, see [Feedback, questions, and support](/docs/openshift?topic=openshift-get-help).

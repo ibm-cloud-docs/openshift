@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2025
-lastupdated: "2025-09-19"
+lastupdated: "2025-09-22"
 
 
 keywords: openshift
@@ -9628,11 +9628,11 @@ subcollection: openshift
 
 * [Step 5: Search the pod logs](/docs/openshift?topic=openshift-debug_cluster_autoscaler#ca-debug-pod-logs)
 
-* [Step 5: Restart the pod](/docs/openshift?topic=openshift-debug_cluster_autoscaler#ca-debug-pod-restart)
+* [Step 6: Restart the pod](/docs/openshift?topic=openshift-debug_cluster_autoscaler#ca-debug-pod-restart)
 
 * [Step 6: Disable and reenable](/docs/openshift?topic=openshift-debug_cluster_autoscaler#ca-debug-disable)
 
-* [Step 8: Check if the issue is resolved](/docs/openshift?topic=openshift-debug_cluster_autoscaler#ca-debug-more)
+* [Step 7: Check if the issue is resolved](/docs/openshift?topic=openshift-debug_cluster_autoscaler#ca-debug-more)
 
 [Autoscaling fails after API key reset](/docs/openshift?topic=openshift-ts-storage-ca-apikey-reset#ts-storage-ca-apikey-reset)
 
