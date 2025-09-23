@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2022, 2025
-lastupdated: "2025-08-21"
+lastupdated: "2025-09-23"
 
 keywords: kubernetes, openshift
 
@@ -584,12 +584,13 @@ You can create your own customized storage class with the preferred settings for
 - You need to limit file share access to pods on a given node or in a given zone.
 - You need to bring your own (BYOK) encryption using a KMS provider such as HPCS or Key Protect.
 - You need to manually specify the subnet or IP address of the [Virtual Network Interface (VNI)](/docs/vpc?topic=vpc-file-storage-vpc-about&interface=ui#fs-mount-granular-auth).
+- You need more control over capacity and bandwidth. In this case, you can use the `rfs` profile. For more information, see [Regional file shares overview](/docs/vpc?topic=vpc-file-storage-profiles&interface=ui#rfs-profile).
 
 If your cluster and VPC are not in the same resource group, you must specify the VPC resource group ID in the `resourceGroup` section and the `kube-<clusterID>` security group ID in the `securityGroupIDs` section. You can find the ID of the `kube-<clusterID>` security group by running `ibmcloud is sg kube-<cluster-id>  | grep ID`.
 {: important}
 
 
-1. Create a storage class configuration file. The following example uses the `dp2` [profile]/docs/vpc?topic=vpc-file-storage-profiles&interface=ui#dp2-profile).
+1. Create a storage class configuration file. The following example uses the `dp2` [profile](/docs/vpc?topic=vpc-file-storage-profiles&interface=ui#dp2-profile).
 
     ```yaml
     apiVersion: storage.k8s.io/v1
@@ -604,7 +605,7 @@ If your cluster and VPC are not in the same resource group, you must specify the
       - nfsvers=4.1
       - sec=sys
     parameters:
-        profile: "dp2"
+        profile: "dp2" # or rfs
         billingType: "hourly" # hourly or monthly
         encrypted: "false"
         encryptionKey: "" # If encrypted is true, then a user must specify the CRK-CRN.
@@ -616,6 +617,8 @@ If your cluster and VPC are not in the same resource group, you must specify the
         zone: "" # VPC CSI driver will select a region from cluster node's topology. The user can override this default.
         primaryIPID: "" # Existing ID of reserved IP from the same subnet as the file share zone. Zone and region are mandatory for this. SubnetID is not mandatory for this.
         primaryIPAddress: "" # IPAddress for VNI to be created in the subnet of the zone. Zone, region and subnetID are mandatory for this.
+        iops: "" # Example: 100, this option is valid only for the dp2 profile.
+        throughput: "" # Example: 2000, this option is valid only for the rfs profile
         tags: "" # User can add a list of tags "a, b, c" that will be used at the time of provisioning file share, by default CSI driver has its own tags.
         uid: "0" # The initial user identifier for the file share, by default its root.
         gid: "0" # The initial group identifier for the file share, by default its root.

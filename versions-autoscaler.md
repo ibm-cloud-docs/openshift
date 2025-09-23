@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2025
-lastupdated: "2025-09-11"
+lastupdated: "2025-09-23"
 
 
 keywords: autoscaler, add-on, autoscaler change log, cluster autoscaler
@@ -40,11 +40,25 @@ ibmcloud oc cluster addon versions
 
 
 
+
+
 ## Version 1.2.4
 {: #0124_ca_addon}
 
 Beginning in version 1.2.4 the `maxEmptyBulkDelete` option is no longer supported. Remove this option from your configmap by running `kubectl edit configmap iks-ca-configmap -n kube-system` command and deleting the option. As a replacement, you can use the `maxScaleDownParallelism` option which was added in version 1.2.4. For more information, see the [configmap reference](#ca-configmap).
 {: important}
+
+### Change log for patch update 1.2.4_793, released 18th September 2025
+{: #124_793_ca}
+
+- Adds support for cluster version 1.33.
+- Updates Golang version to 1.24.0.
+- Updates storage secret sidecar 1.3.32.
+- Resolves the following CVEs: CVE-2025-4563.
+- The `--max-empty-bulk-delete` option is no longer supported. Instead, use the `--max-scale-down-parallelism` option.
+- Adds GPU support with the `--scale-down-gpu-utilization-threshold` option for Nvidia vendors.
+- Image tags: `1.28.7 124-2`, `1.29.5 124-2`, `1.30.5 124-2`, `1.31.3 124-2`, `1.32.2 124-2`, `1.33.0 124-2`.
+
 
 ### Change log for patch update 1.2.4_680, released 18 July 2025.
 {: #124_680_ca}

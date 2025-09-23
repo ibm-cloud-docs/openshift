@@ -3,7 +3,7 @@
 copyright:
   years: 2024, 2025
 
-lastupdated: "2025-09-19"
+lastupdated: "2025-09-23"
 
 
 keywords: change log, version history, VPC File CSI Driver
@@ -28,6 +28,16 @@ Review the version history for VPC File CSI Driver.
 ## Version 2.0
 {: #cl-add-ons-vpc-file-csi-driver-2.0}
 
+
+### 2.0.16_443, released 22 September 2025
+{: #cl-add-ons-vpc-file-csi-driver-2016_443}
+
+[Default version]{: tag-green}
+
+- Resolves the following CVEs: [CVE-2025-8058](https://nvd.nist.gov/vuln/detail/CVE-2025-8058){: external}.
+- Updates Go to version `1.23.12`.
+- {'Adds 3 new storage classes': 'ibmc-vpc-file-regional, ibmc-vpc-file-regional-max-bandwidth, and ibmc-vpc-file-regional-max-bandwidth-sds. These classes are based on VPC regional file share profiles and are available in Beta for allowlisted accounts.'}
+- `armada-storage-secret v1.2.66`
 
 ### 2.0.15_431, released 18 July 2025
 {: #cl-add-ons-vpc-file-csi-driver-2015_431}
