@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2024, 2025
-lastupdated: "2025-09-17"
+lastupdated: "2025-09-23"
 
 keywords: openshift, {{site.data.keyword.openshiftlong_notm}}, secure by default, outbound traffic protection, 4.15
 
@@ -127,7 +127,7 @@ Complete the following steps to apply the secure by default security group confi
     ```
     {: pre}
 
-1. Wait for the process to complete. A variety of factors can influence how long it takes to enable your cluster to secure by default. In most cases it is finished in less than 5 minutes. You can verify that the process is finished by inspecting your new security groups.
+1. Wait for the process to complete. A variety of factors can influence how long it takes to enable your cluster to secure by default. Usually it finishes in less than 5 minutes. You can verify that the process is finished by inspecting your new security groups.
     - Your master VPE gateway security group `kube-vpegw-CLUSTERID` contains rules.
     - Your load balancer security group `kube-lbaas-CLUSTERID` contains rules.
 
