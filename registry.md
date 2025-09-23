@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2025
-lastupdated: "2025-08-07"
+lastupdated: "2025-09-23"
 
 
 keywords: openshift, {{site.data.keyword.openshiftlong_notm}}, kubernetes, registry, pull secret, secrets
@@ -1370,16 +1370,6 @@ Do not replace the global pull secret with a pull secret that does not have cred
     --docker-server=REGISTRY \
     --docker-username=USERNAME \
     --docker-password=PASSWORD \
-    --namespace kube-system
-    ```
-    {: pre}
-
-    Example `create secret` command.
-    ```sh
-    oc create secret docker-registry docker-auth-secret \
-    --docker-server=REGISTRY \
-    --docker-username=cp \
-    --docker-password=ENTITLEMENT-KEY \
     --namespace kube-system
     ```
     {: pre}
