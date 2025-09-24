@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2025, 2025
-lastupdated: "2025-09-17"
+lastupdated: "2025-09-24"
 
 
 keywords: deployable architecture, DA
@@ -52,7 +52,7 @@ To begin, click **Add to Project** in the lower right hand corner. Projects are 
 
 When you open the project, you will see the DA schematics name and version that you previously selected in the **Define Details** section. In the **Configure** section, there are three tabs:
 
-- Security - Enter the API key you created above in the **api_key** text box.
+- Security - Enter the API key you created above in the **`api_key`** text box.
 - Required - Enter all required variables on the **Required** tab.
 - Optional - Enter all optional variables on the **Optional** tab.
 
