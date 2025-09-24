@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2024, 2025
-lastupdated: "2025-09-18"
+lastupdated: "2025-09-24"
 
 
 keywords: openshift, {{site.data.keyword.openshiftlong_notm}}, ai, add-on
@@ -119,7 +119,7 @@ ibmcloud oc cluster addon enable openshift-ai --cluster CLUSTER [-f] [--param PA
 ```
 {: pre}
 
-Example command to install the add-on with automatic minor and patch updates, CodeFlare, and Kserve enabled.
+Example command to install the add-on with automatic minor and patch updates, CodeFlare, and KServe enabled.
 
 ```sh
 ibmcloud oc cluster addon enable openshift-ai --cluster CLUSTER --param oaiInstallPlanApproval=Automatic --param oaiCodeflare=Managed --param oaiKserve=Managed
