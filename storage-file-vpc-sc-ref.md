@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2022, 2025
-lastupdated: "2025-09-23"
+lastupdated: "2025-09-24"
 
 
 keywords: openshift, file storage, storage class reference, eni
@@ -27,7 +27,7 @@ The available storage classes correspond to the predefined {{site.data.keyword.f
 New storage classes were introduced with version 2.0. You can no longer provision new file shares that use the older storage classes. Also, volume expansion does not work for shares that use the older storage classes. However, existing volumes that use the older storage classes continue to function.
 {: note}
 
-Regional file share storage classes are available in Beta for allowlisted account only. For more information, see [Regional file shares overview](/docs/vpc?topic=vpc-file-storage-vpc-about#regional-file-storage-overview). Regional file shares offer more flexibility for specifying capacity and performance along with regional availablity. Encryption in transit for regional file share is not supported by the VPC File CSI Driver add-on.
+Regional file share storage classes are available in Beta for allowlisted account only. For more information, see [Regional file shares overview](/docs/vpc?topic=vpc-file-storage-vpc-about#regional-file-storage-overview). Regional file shares offer more flexibility for specifying capacity and performance along with regional availability. Encryption in transit for regional file share is not supported by the VPC File CSI Driver add-on.
 {: beta}
 
 
@@ -47,8 +47,8 @@ Regional file share storage classes are available in Beta for allowlisted accoun
 | ibmc-vpc-file-retain-1000-iops | 3000 IOPs and `Retain` reclaim policy. |
 | ibmc-vpc-file-retain-3000-iops | 1000 IOPs and `Retain` reclaim policy. |
 | ibmc-vpc-file-retain-500-iops | 500 IOPs and `Retain` reclaim policy. |
-| ibmc-vpc-file-regional | Regional availabilty, `Delete` reclaim policy, and `Immediate` binding |
-| ibmc-vpc-file-regional-max-bandwidth | Regional availabilty, `Delete` reclaim policy, and `Immediate` binding |
+| ibmc-vpc-file-regional | Regional availability, `Delete` reclaim policy, and `Immediate` binding |
+| ibmc-vpc-file-regional-max-bandwidth | Regional availability, `Delete` reclaim policy, and `Immediate` binding |
 | ibmc-vpc-file-regional-max-bandwidth-sds | Regional availability, `Delete` reclaim policy, and `WaitForFirstConsumer` biding |
 {: caption="File Storage for VPC storage classes" caption-side="bottom"}
 
