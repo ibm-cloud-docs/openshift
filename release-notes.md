@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2025
-lastupdated: "2025-09-23"
+lastupdated: "2025-09-25"
 
 
 keywords: kubernetes, release notes, openshift, {{site.data.keyword.openshiftlong_notm}}
@@ -27,6 +27,13 @@ Looking for {{site.data.keyword.cloud_notm}} status, platform announcements, sec
 
 ## September 2025
 {: #openshift-sep25}
+
+### 25 September 2025
+{: #openshift-sep2525}
+{: release-note}
+
+CLI version `1.0.718` is available.
+:   For more information, see [Updating the CLI](/docs/openshift?topic=openshift-cli-update) and the [CLI change log](/docs/openshift?topic=openshift-cs_cli_changelog).
 
 ### 22 September 2025
 {: #openshift-sep2225}

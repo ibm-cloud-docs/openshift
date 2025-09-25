@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2025
-lastupdated: "2025-09-04"
+lastupdated: "2025-09-25"
 
 
 keywords: openshift, {{site.data.keyword.openshiftlong_notm}}, oc, ks
@@ -31,6 +31,11 @@ Refer to the following change logs for a summary of changes for each version of 
 
 Review the following changes for 1.0 versions of the CLI plug-in.
 {: shortdesc}
+
+## Version v1.0.718
+{: #cli-01078}
+
+Extends the experimental date for the `trusted profile` commands.
 
 ## Version v1.0.717
 {: #cli-010717}
