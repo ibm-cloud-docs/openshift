@@ -2,7 +2,7 @@
 
 copyright:
   years: 2024, 2025
-lastupdated: "2025-09-18"
+lastupdated: "2025-09-24"
 
 
 keywords: openshift, version, update, upgrade, 4.19, update openshift
@@ -20,7 +20,7 @@ subcollection: openshift
 Review information about version 4.19 of {{site.data.keyword.openshiftlong_notm}}. This version is based on Kubernetes version {{site.data.keyword.openshift_419_kube_version}}. 
 {: shortdesc}
 
-Looking for general information about updating clusters, or information on a different version? See [Red Hat {{site.data.keyword.redhat_openshift_notm}} on IBM Cloud version information](/docs/openshift?topic=openshift-openshift_versions) and the version [4.19 release notes](https://docs.redhat.com/documentation/openshift_container_platform/4.19/html/release_notes/ocp-4.19-release-notes#ocp-4-17-release-notes){: external}.
+Looking for general information about updating clusters, or information on a different version? See [Red Hat {{site.data.keyword.redhat_openshift_notm}} on IBM Cloud version information](/docs/openshift?topic=openshift-openshift_versions) and the version [4.19 release notes](https://docs.redhat.com/en/documentation/openshift_container_platform/4.19/html/release_notes/index){: external}.
 {: tip}
 
 
