@@ -3,7 +3,7 @@
 copyright:
   years: 2024, 2025
 
-lastupdated: "2025-09-24"
+lastupdated: "2025-09-26"
 
 
 keywords: change log, version history, 4.16_openshift
@@ -37,6 +37,23 @@ Master patch updates are applied automatically. Worker node patch updates can be
 
 ## Version 4.16
 {: #416_components}
+
+
+### Worker node fix pack 4.16.48_1582_openshift, released 23 September 2025
+{: #cl-boms-41648_1582_openshift_W}
+
+The following table shows the components included in the worker node fix pack 4.16.48_1582_openshift. Worker node patch updates can be applied by updating, reloading (in classic infrastructure), or replacing (in VPC infrastructure) the worker node.
+{: shortdesc}
+
+| Component | Version | Description |
+| ---- | ---- | ---- |
+|RHEL_9|5.14.0-503.40.1.el9_5|N/A|
+|RHEL_8|4.18.0-553.75.1.el8_10|Resolves the following CVEs: [RHSA-2025:15904](https://access.redhat.com/errata/RHSA-2025:15904){: external}, [CVE-2025-9566](https://nvd.nist.gov/vuln/detail/CVE-2025-9566){: external}, [RHSA-2025:15471](https://access.redhat.com/errata/RHSA-2025:15471){: external}, [CVE-2022-49985](https://nvd.nist.gov/vuln/detail/CVE-2022-49985){: external}, [CVE-2025-38352](https://nvd.nist.gov/vuln/detail/CVE-2025-38352){: external}, [RHSA-2025:15785](https://access.redhat.com/errata/RHSA-2025:15785){: external}, [CVE-2023-53125](https://nvd.nist.gov/vuln/detail/CVE-2023-53125){: external}, [CVE-2025-38350](https://nvd.nist.gov/vuln/detail/CVE-2025-38350){: external}, [CVE-2025-38392](https://nvd.nist.gov/vuln/detail/CVE-2025-38392){: external}, [CVE-2025-38449](https://nvd.nist.gov/vuln/detail/CVE-2025-38449){: external}, [RHSA-2024:3043](https://access.redhat.com/errata/RHSA-2024:3043){: external}, and [CVE-2024-0690](https://nvd.nist.gov/vuln/detail/CVE-2024-0690){: external}.|
+|Red Hat OpenShift and Red Hat CoreOS|4.16.48|For more information, see the [change logs](https://docs.redhat.com/en/documentation/openshift_container_platform/4.16/html/release_notes/ocp-4-16-release-notes.html#ocp-4-16-48_release-notes).|
+|HAProxy|e0a48fcf355d98dc769ea048d2fd02044b11ed62|N/A|
+{: caption="4.16.48_1582_openshift fix pack." caption-side="bottom"}
+{: #cl-boms-41648_1582_openshift_W-component-table}
+
 
 
 ### Worker node fix pack 4.16.47_1580_openshift, released 09 September 2025
