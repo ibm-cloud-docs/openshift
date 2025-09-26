@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2025
-lastupdated: "2025-09-25"
+lastupdated: "2025-09-26"
 
 
 keywords: kubernetes, release notes, openshift, {{site.data.keyword.openshiftlong_notm}}
@@ -34,6 +34,25 @@ Looking for {{site.data.keyword.cloud_notm}} status, platform announcements, sec
 
 CLI version `1.0.718` is available.
 :   For more information, see [Updating the CLI](/docs/openshift?topic=openshift-cli-update) and the [CLI change log](/docs/openshift?topic=openshift-cs_cli_changelog).
+
+### 23 September 2025
+{: #openshift-sep2325}
+{: release-note}
+
+
+
+
+
+{{site.data.keyword.openshiftlong_notm}} worker node fix packs are available.
+:   Worker node fix packs can be applied by updating or reloading the worker node in classic infrastructure, or replacing the worker node in VPC infrastructure. Review the following change logs for your cluster version.
+:   [Version 4.19 change log](/docs/openshift?topic=openshift-openshift_changelog_419)
+:   [Version 4.18 change log](/docs/openshift?topic=openshift-openshift_changelog_418)
+:   [Version 4.17 change log](/docs/openshift?topic=openshift-openshift_changelog_417)
+:   [Version 4.16 change log](/docs/openshift?topic=openshift-openshift_changelog_416)
+:   [Version 4.15 change log](/docs/openshift?topic=openshift-openshift_changelog_415)
+:   [Version 4.14 change log](/docs/openshift?topic=openshift-openshift_changelog_414)
+
+
 
 ### 22 September 2025
 {: #openshift-sep2225}
