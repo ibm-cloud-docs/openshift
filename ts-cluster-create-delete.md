@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2025
-lastupdated: "2025-03-18"
+lastupdated: "2025-09-26"
 
 
 keywords: kubernetes, openshift
@@ -220,7 +220,7 @@ The {{site.data.keyword.cloud_notm}} account owner or an account administrator m
 ### Using TOTP MFA to create an infrastructure API key for {{site.data.keyword.containerlong_notm}}
 {: #create-api-key-totp-mfa}
 
-1. From the [{{site.data.keyword.cloud_notm}}](https://cloud.ibm.com/){: external} console, select **Manage** > **Access (IAM)** > **Users** and click the name of the account owner. **Note**: If you don't use the account owner's credentials, [ensure that the user whose credentials you use has the correct permissions](/docs/openshift?topic=openshift-iam-platform-access-roles).
+1. From the [{{site.data.keyword.cloud_notm}}](https://cloud.ibm.com/){: external} console, select **Manage** > **Access (IAM)** > **Users** and click the name of the account owner. **Note**: If you don't use the account owner's credentials, [ensure that the identity whose credentials you use has the Administrator platform role in {{site.data.keyword.containerlong_notm}} and, if using a service ID, the Operator platform role in the IAM Identity Service](/docs/openshift?topic=openshift-iam-platform-access-roles).
 2. In the **API Keys** section, find or create a classic infrastructure API key.
 3. Use the infrastructure API key to set the infrastructure API credentials for {{site.data.keyword.containerlong_notm}}. Repeat this command for each region where you create clusters.
     ```sh

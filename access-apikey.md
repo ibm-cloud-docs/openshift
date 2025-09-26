@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2025
-lastupdated: "2025-08-21"
+lastupdated: "2025-09-26"
 
 
 keywords: openshift, {{site.data.keyword.openshiftlong_notm}}, kubernetes, infrastructure, rbac, policy
@@ -34,11 +34,13 @@ Need to remove a user from your account? Make sure you reset your API key. See [
 
 Complete the following steps to reset the API key that is used by the cluster. When the API key is reset, the previous API key that was used, if any, for the region and resource group is now obsolete. You can then delete the old API key from your list of API keys.
 
-If you use the {{site.data.keyword.block_storage_is_short}} or cluster autoscaler add-ons in your cluster, you must re-create the add-on pods after you reset your API key. For more information, see [{{site.data.keyword.block_storage_is_short}} PVC creation fails after API key reset](/docs/openshift?topic=openshift-vpc-block-api-key-reset-ts) and [Autoscaling fails after API key reset](/docs/openshift?topic=openshift-ts-storage-ca-apikey-reset).
-{: important}
+Before you begin:
 
-Make sure that the user or functional ID that runs this command has the [required  permissions](/docs/openshift?topic=openshift-iam-platform-access-roles) including the required permissions for other services or integrations. Target the resource group and region that you want to set the API key for. The user that runs the `api-key reset` command replaces the API key associated with the targeted resource group in the specified region. If that user doesn't have sufficient permissions, other users in the resource group in the specified region might be impacted.
-{: important}
+- If you use the {{site.data.keyword.block_storage_is_short}} or cluster autoscaler add-ons in your cluster, you must re-create the add-on pods after you reset your API key. For more information, see [{{site.data.keyword.block_storage_is_short}} PVC creation fails after API key reset](/docs/openshift?topic=openshift-vpc-block-api-key-reset-ts) and [Autoscaling fails after API key reset](/docs/openshift?topic=openshift-ts-storage-ca-apikey-reset).
+
+- Make sure that the identity that is used to run this command has the required [Administrator platform role in {{site.data.keyword.containerlong_notm}}](/docs/openshift?topic=openshift-iam-platform-access-roles), the Operator platform role in the IAM Identity Service if you are using a service ID, and also the required permissions for the other services or integrations. Target the resource group and region that you want to set the API key for. The user that runs the `api-key reset` command replaces the API key associated with the targeted resource group in the specified region. If that user doesn't have sufficient permissions, other users in the resource group in the specified region might be impacted.
+
+To reset the cluster API key:
 
 1. As the account owner, [invite a functional ID](/docs/account?topic=account-iamuserinv) to your {{site.data.keyword.cloud_notm}}.
 1. [Assign the functional ID the correct permissions](/docs/openshift?topic=openshift-iam-platform-access-roles).
