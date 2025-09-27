@@ -2,7 +2,7 @@
 
 copyright:
   years: 2024, 2025
-lastupdated: "2025-05-29"
+lastupdated: "2025-09-27"
 
 
 keywords: openshift, troubleshooting, upgrade, update, update status
@@ -15,7 +15,7 @@ content-type: troubleshoot
 {{site.data.keyword.attribute-definition-list}}
 
 
-# Viewing cluster upgrade status with the `oc adm upgrade status` command
+# Viewing cluster upgrade status
 {: #upgrade-status}
 {: support}
 
