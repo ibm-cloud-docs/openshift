@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2024, 2025
-lastupdated: "2025-08-07"
+lastupdated: "2025-09-27"
 
 
 keywords: openshift, {{site.data.keyword.openshiftlong_notm}}, kubernetes, infrastructure, rbac, policy, role-based access control
@@ -60,7 +60,7 @@ To learn more about the actions permitted by each RBAC role, check out the {{sit
 
 If you are making your own custom RBAC policies, make sure that you do not edit the existing IBM role bindings that are in the cluster, or create custom role bindings with the same name as the existing IBM bindings. Changes that you make to the IBM-provided RBAC role bindings are not retained on updates.
 
-The `view`, `edit`, `admin`, and `cluster-admin` cluster roles are predefined roles that are automatically created when you assign a user the corresponding {{site.data.keyword.cloud_notm}} IAM service access role. To grant other Kubernetes permissions, you can [create custom RBAC permissions](#rbac). Custom RBAC roles are in addition to and don't change or override any RBAC roles that you might have assigned with service access roles. Note that to create custom RBAC permissions, you must have the IAM **Manager** service access role that gives you the `cluster-admin` Kubernetes RBAC role. However, the other users don't need an IAM service access role if you manage your own custom Kubernetes RBAC roles.
+The `view`, `edit`, `admin`, and `cluster-admin` cluster roles are predefined roles that are automatically created when you assign a user the corresponding {{site.data.keyword.cloud_notm}} IAM service access role. To grant other Kubernetes permissions, you can [create custom RBAC permissions](#rbac). Custom RBAC roles are in addition to and don't change or override any RBAC roles that you might have assigned with service access roles. Note that to create custom RBAC permissions, you must have the IAM **Manager** service access role or the **Administrator** platform role that gives you the `cluster-admin` Kubernetes RBAC role. However, the other users don't need an IAM service access role if you manage your own custom Kubernetes RBAC roles.
 
 ## When do I need to use custom cluster role bindings and role bindings?
 {: #when-do-i-use-custom-rbac}
@@ -90,7 +90,7 @@ To prevent breaking changes, don't change the predefined `view`, `edit`, `admin`
 - **Cluster-wide access**: To allow a user or an access group to access cluster-wide resources or resources in all namespaces, create a cluster role, and apply it with a cluster role binding. This option is useful for controlling access to resources that are not scoped to namespaces, like worker nodes, or resources in all namespaces in your cluster, like pods in each namespace.
 
 - [Log in to your account. If applicable, target the appropriate resource group. Set the context for your cluster.](/docs/containers?topic=containers-access_cluster)
-- Ensure you that have the [**Manager** IAM service access role](/docs/openshift?topic=openshift-iam-platform-access-roles) for all namespaces.
+- Ensure you that have the [**Manager** IAM service access role for all namespaces](/docs/openshift?topic=openshift-iam-platform-access-roles) or the **Administrator** platform role.
 - To assign access to individual users or users in an access group, ensure that the user or group has been assigned at least one IAM platform access role at the {{site.data.keyword.openshiftlong_notm}} service level.
 
 To create custom RBAC permissions,
@@ -301,7 +301,7 @@ Verify your custom RBAC or synchronized IAM service access to RBAC roles in your
 1. [Access your {{site.data.keyword.redhat_openshift_notm}} cluster](/docs/openshift?topic=openshift-access_cluster).
 2. Check that the user is added to the RBAC role. Users are not added to a role binding if they have a higher permission. For example, if users have a cluster role and are in a cluster role binding, they are not added to each individual namespace role binding as well.
 
-    You must be a cluster administrator (**Manager** service access role in all namespaces) to check role bindings and cluster role bindings.
+    You must be a cluster administrator to check role bindings and cluster role bindings. Cluster administrators have the **Manager** service access role in all namespaces or the **Administrator** platform access role. 
     {: note}
 
     * Reader:

@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2025
-lastupdated: "2025-06-09"
+lastupdated: "2025-09-27"
 
 
 keywords: openshift
@@ -27,7 +27,7 @@ content-type: troubleshoot
 If you have access to the cluster, you can debug the worker nodes by using the Kubernetes API on the `Node` resource.
 {: shortdesc}
 
-Before you begin, make sure that you have the **Manager** service access role in all namespaces for the cluster, which corresponds to the `cluster-admin` RBAC role.
+Before you begin, make sure that you have the **Manager** service access role in all namespaces or the **Administrator** platform role for the cluster, which corresponds to the `cluster-admin` RBAC role.
 
 1. [Access your {{site.data.keyword.redhat_openshift_notm}} cluster](/docs/openshift?topic=openshift-access_cluster).
 2. List the worker nodes in your cluster and note the **NAME** of the worker nodes that are not in a `Ready` **STATUS**. Note that the **NAME** is the private IP address of the worker node.

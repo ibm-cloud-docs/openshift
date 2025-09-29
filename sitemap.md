@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2025
-lastupdated: "2025-09-26"
+lastupdated: "2025-09-27"
 
 
 keywords: openshift
@@ -9355,7 +9355,7 @@ subcollection: openshift
 
 * [Understanding the impact of a master outage](/docs/openshift?topic=openshift-debug_master#review-master-outage)
 
-[Viewing cluster upgrade status with the `oc adm upgrade status` command](/docs/openshift?topic=openshift-upgrade-status#upgrade-status)
+[Viewing cluster upgrade status](/docs/openshift?topic=openshift-upgrade-status#upgrade-status)
 
 * [Getting cluster update details](/docs/openshift?topic=openshift-upgrade-status#oc-adm-use)
 

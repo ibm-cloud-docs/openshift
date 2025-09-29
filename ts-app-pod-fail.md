@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2025
-lastupdated: "2025-04-28"
+lastupdated: "2025-09-27"
 
 
 keywords: openshift, {{site.data.keyword.openshiftlong_notm}}, CrashLoopBackOff, pods fail, status, pod, crashing
@@ -26,11 +26,11 @@ content-type: troubleshoot
 [Virtual Private Cloud]{: tag-vpc} [Classic infrastructure]{: tag-classic-inf}
 
 
-Your pod was healthy but unexpectedly gets removed or gets stuck in a restart loop. In some cases, the containers will show a `CrashLoopBackOff` status.
+Your pod was healthy but unexpectedly gets removed or gets stuck in a restart loop. Sometimes the containers show a `CrashLoopBackOff` status.
 {: tsSymptoms}
 
 
-Your containers might exceed their resource limits, or your pods might be replaced by higher priority pods.  When a Kubernetes container repeatedly fails to start, it enters a `CrashLoopBackOff` state, indicating a persistent restart loop within a pod. This error often occurs due to various issues preventing the container from launching properly. Common causes can include insufficient memory, resource overload, deployment errors, third-party service issues like DNS errors, missing dependencies, or container failures due to port conflicts. 
+Your containers might exceed their resource limits, or your pods might be replaced by higher priority pods. When a Kubernetes container repeatedly fails to start, it enters a `CrashLoopBackOff` state, indicating a persistent restart loop within a pod. This error often occurs due to various issues preventing the container from launching properly. Common causes can include insufficient memory, resource overload, deployment errors, third-party service issues like DNS errors, missing dependencies, or container failures due to port conflicts. 
 {: tsCauses}
 
 
