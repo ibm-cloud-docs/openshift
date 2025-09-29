@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2025
-lastupdated: "2025-07-07"
+lastupdated: "2025-09-29"
 
 
 keywords: openshift, ocp, compliance, security standards, faq, openshift pricing, ocp pricing, openshift charges, ocp charges, openshift price, ocp price, openshift billing, ocp billing, openshift costs, ocp costs
@@ -491,3 +491,37 @@ The following operations are blocked when an operating system is unsupported:
 - worker pool zone add
 - instance group resize (patch)
 - autoscaler remove worker (v2/autoscalerRemoveWorker)
+
+
+
+## How much do confidential containers cost?
+{: #conf-cont-cost}
+
+IBM does not charge additional for confidential containers. The cost remains the same for service and standard VSI charges for each confidential pod that starts as a VSI at standard IBM Cloud rates.
+
+## Can I build my own CVM (`podvm`) for confidential containers? 
+{: #conf-cont-cvm}
+
+Yes. The ConfigMap can be configured to point to a Confidential Virtual Machine (CVM) you have configured. IBM does not provide support to build your own. Building an image yourself can introduce problems that IBM Support cannot help with. 
+
+
+## What should I use as a trustee in confidential containers? 
+{: #conf-cont-trustee}
+
+For development, running a simple trustee in Docker/Podman on a VM is sufficient. These containers can also be configured directly in OpenShift. Since the trustee is the attester of the security of the environment though, do not use a trustee within the OpenShift cluster, which is supposed to be untrusted.
+
+For production, use the Intel Trust Authority and configure INITDATA to use the Intel Trust Authority. You must permit your cluster to communicate with Intel, such as security groups, secure by default OpenShift permissions, and so on.
+
+
+
+## Where do I get support for confidential containers? 
+{: #conf-cont-support}
+
+OpenShift Sandboxed Containers Operator on {{site.data.keyword.openshiftlong_notm}} is supported by both Red Hat and IBM. Use standard support channels for both services. If your OpenShift is licensed through IBM Cloud, contact IBM. If you bring your own OpenShift licenses from Red Hat, you can contact Red Hat. 
+
+
+
+## Can confidential containers meet specific security standards, such as NIST 800-53 R5?
+{: #conf-cont-sec}
+
+Contact your IBM team to discuss specific security interests.
