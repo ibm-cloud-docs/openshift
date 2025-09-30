@@ -2,7 +2,7 @@
 
 copyright:
   years: 2023, 2025
-lastupdated: "2025-08-14"
+lastupdated: "2025-09-30"
 
 
 keywords: kubernetes, openshift
@@ -161,7 +161,7 @@ ibmcloud oc ingress domain create --cluster CLUSTER [--crn CRN] [--is-default] [
 :    Optional: Prints the command output in JSON format.
 
 `--domain-provider PROVIDER`
-:    Required. The external DNS provider type. Specify `--cis-ext`.
+:    Required. The external DNS provider type. Specify `cis-ext` .
 
 `--secret-namespace NAMESPACE`
 :    Optional. The namespace that the domain TLS secret is created in. If no namespace is specified, the secret is created in the `default` namespace.
