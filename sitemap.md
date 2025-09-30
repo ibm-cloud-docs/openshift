@@ -286,10 +286,6 @@ subcollection: openshift
 
 * [September 2025](/docs/openshift?topic=openshift-openshift-relnotes#openshift-sep25)
 
-    * [30 September 2025](/docs/openshift?topic=openshift-openshift-relnotes#openshift-sep3025)
-
-        * Security Bulletin: {{site.data.keyword.openshiftlong_notm}} is affected by Kubernetes API server security vulnerabilities
-
     * [25 September 2025](/docs/openshift?topic=openshift-openshift-relnotes#openshift-sep2525)
 
         * CLI version `1.0.718` is available.
