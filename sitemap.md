@@ -6534,6 +6534,8 @@ subcollection: openshift
 
 * [`istio` 1.23](/docs/openshift?topic=openshift-supported-cluster-addon-versions#istio-1.23)
 
+* [`istio` 1.24](/docs/openshift?topic=openshift-supported-cluster-addon-versions#istio-1.24)
+
 * [`openshift-ai` 416](/docs/openshift?topic=openshift-supported-cluster-addon-versions#openshift-ai-416)
 
 * [`openshift-ai` 417](/docs/openshift?topic=openshift-supported-cluster-addon-versions#openshift-ai-417)
