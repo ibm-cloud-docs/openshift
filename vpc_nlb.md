@@ -1,7 +1,7 @@
 ---
 copyright: 
   years: 2024, 2025
-lastupdated: "2025-07-21"
+lastupdated: "2025-10-01"
 
 keywords: nlb, network load balancer, vpc nlb, dns, public lb, private lb
 subcollection: openshift
@@ -349,8 +349,7 @@ Review the required and optional VPC NLB annotations and specifications.
 
 `service.kubernetes.io/ibm-load-balancer-cloud-provider-dns-name: "example-ingress-domain.<region>.containers.appdomain.cloud"`
 :   Version 4.16 or later.
-
-:   Register the load balancer's IP address with the specified [Ingress domain](/docs/openshift?topic=openshift-ingress-domains). If the specified domain does not exist, a domain is created that uses the internal, IBM managed provider (`akamai`). To create a new domain, the name must be unique across all existing domains (not just those on your cluster). Deleting the load balancer service removes the IP address from the domain. However, removing the annotation does not remove the IP address from the domain. 
+:   Register the load balancer's IP address with the specified [Ingress domain](/docs/openshift?topic=openshift-ingress-domains). If the specified domain does not exist, a domain is created that uses the internal, IBM managed provider (`IBM NS1`). To create a new domain, the name must be unique across all existing domains (not just those on your cluster). Deleting the load balancer service removes the IP address from the domain. However, removing the annotation does not remove the IP address from the domain. 
 
 `service.kubernetes.io/ibm-load-balancer-cloud-provider-vpc-member-quota`
 :   Optional. The number of worker nodes per zone that the load balancer routes to. The default value is 8. For a cluster with worker nodes in three zones, this results in the the load balancer routing to 24 total worker nodes. The total number of worker nodes across all zones that the load balancer routes to cannot exceed 50. If the cluster has fewer than 50 worker nodes across all zones, specify 0 to route to all worker nodes in a zone.

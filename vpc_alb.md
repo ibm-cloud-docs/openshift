@@ -1,7 +1,7 @@
 ---
 copyright: 
   years: 2024, 2025
-lastupdated: "2025-07-21"
+lastupdated: "2025-10-01"
 
 keywords: alb, application load balancer, vpc alb, dns, public lb, private lb
 
@@ -330,8 +330,8 @@ Review the required and optional VPC ALB annotations and specifications.
 
 `service.kubernetes.io/ibm-load-balancer-cloud-provider-dns-name: "example-ingress-domain.<region>.containers.appdomain.cloud"`
 :   Version 4.17 or later.
+:   Register the load balancer's IP address with the specified [Ingress domain](/docs/openshift?topic=openshift-ingress-domains). If the specified domain does not exist, a domain is created that uses the internal, IBM managed provider (`IBM NS1`). To create a new domain, the name must be unique across all existing domains (not just those on your cluster). Deleting the load balancer service removes the IP address from the domain. However, removing the annotation does not remove the IP address from the domain.
 
-:   Register the load balancer's IP address with the specified [Ingress domain](/docs/openshift?topic=openshift-ingress-domains). If the specified domain does not exist, a domain is created that uses the internal, IBM managed provider (`akamai`). To create a new domain, the name must be unique across all existing domains (not just those on your cluster). Deleting the load balancer service removes the IP address from the domain. However, removing the annotation does not remove the IP address from the domain. 
 
 
 `service.kubernetes.io/ibm-load-balancer-cloud-provider-vpc-private-dns-instance-crn: "private-dns-crn"`

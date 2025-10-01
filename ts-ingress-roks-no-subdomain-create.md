@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2025
-lastupdated: "2025-07-21"
+lastupdated: "2025-10-01"
 
 
 keywords: openshift
@@ -37,16 +37,16 @@ Even if the cluster is in a `normal` state, the Ingress subdomain and secret mig
 2. After the portable subnet orders are successfully fulfilled, the `ibm-cloud-provider-vlan-ip-config` config map is updated with the portable public and portable private IP addresses.
 3. When the `ibm-cloud-provider-vlan-ip-config` config map is updated, the Ingress controller is triggered for creation.
 4. A load balancer service that exposes the Ingress controller is created and assigned an IP address.
+5. The load balancer IP address is used to register the Ingress subdomain in IBM NS1. IBM NS1 might have latency during the registration process.
 
-5. The load balancer IP address is used to register the Ingress subdomain in Akamai. Akamai might have latency during the registration process.
 
 **VPC clusters**:
 
 1. When you create a VPC cluster, one public and one private VPC load balancer are automatically created outside of your cluster in your VPC.
 2. One public Ingress controller per zone is triggered for creation.
 3. A load balancer service that exposes the Ingress controller is created and assigned a hostname.
+4. The load balancer hostname is used to register the Ingress subdomain in IBM NS1. IBM NS1 might have latency during the registration process.
 
-4. The load balancer hostname is used to register the Ingress subdomain in Akamai. Akamai might have latency during the registration process.
 
 Creating a cluster after deleting a cluster the same or similar name? See [No Ingress subdomain exists after you create clusters of the same or similar name](/docs/openshift?topic=openshift-cs_rate_limit) instead.
 {: tip}
