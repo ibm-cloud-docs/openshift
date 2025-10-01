@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2025
-lastupdated: "2025-08-13"
+lastupdated: "2025-10-01"
 
 
 keywords: openshift, compliance, security standards, red hat openshift, openshift container platform, red hat, openshift architecture, red hat architecture, openshift dependencies,
@@ -52,7 +52,7 @@ Single tenancy
 :  The master and all master components are dedicated only to you, and are not shared with other IBM customers.
 
 Replicas
-:   Master components, including the {{site.data.keyword.redhat_openshift_notm}} API server and etcd data store have three replicas and, if located in a multizone metro, are spread across zones for even higher availability. The master components are backed up every 8 hours.
+:   Master components, including the {{site.data.keyword.redhat_openshift_notm}} API server and etcd data store have three replicas and, if located in a multizone metro, are spread across zones for even higher availability.
 
 `cloud-controller-manager`
 :   The cloud controller manager manages cloud provider-specific components such as the {{site.data.keyword.cloud_notm}} load balancer.
