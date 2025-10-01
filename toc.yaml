@@ -655,7 +655,6 @@ toc:
               - ts-ingress-subdomain-dupe-name.md
               - ts-ingress-vpc-router-zone.md
               - ts-ingress-router-zone.md
-              - nested-ctm.md
               - ts-ingress-operator-degraded.md
               - ts-ingress-errionf.md
               - ts-ingress-erresnf.md

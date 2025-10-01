@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2025
-lastupdated: "2025-09-30"
+lastupdated: "2025-10-01"
 
 
 keywords: openshift
@@ -9901,8 +9901,6 @@ subcollection: openshift
 * [Resolving VLAN issues](/docs/openshift?topic=openshift-cs_subnet_limit_43#resolve_vlan)
 
 * [Resolving multizone Ingress controller service deployment issues](/docs/openshift?topic=openshift-cs_subnet_limit_43#resolve_mzr_router)
-
-[Ingress health checks fail on Akamai Global Load Balancer (GLB) configurations](/docs/openshift?topic=openshift-cs_ingress_health_check_ctm#cs_ingress_health_check_ctm)
 
 [Why does the DNS Operator show a `RouteHealthDegraded` or `can't marshal DNS message` error?](/docs/openshift?topic=openshift-ingress_subdomain_dns_marshal#ingress_subdomain_dns_marshal)
 
