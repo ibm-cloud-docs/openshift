@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2024, 2025
-lastupdated: "2025-09-24"
+lastupdated: "2025-10-01"
 
 
 keywords: openshift, {{site.data.keyword.openshiftlong_notm}}, ai, add-on
@@ -38,7 +38,7 @@ Review the following considerations before setting up the add-on.
 {: #ai-consideration}
 
 - To use all the capabilities provided by OpenShift AI, at least 1 GPU is recommended.
-- Your cluster can have a mix of GPU and non-GPU nodes. However, if you use this configuration, make sure to deploy your app on a GPU node to leverage it's resources.
+- Your cluster can have a mix of GPU and non-GPU nodes. However, if you use this configuration, make sure to deploy your app on a GPU node to leverage its resources.
 - Beginning with version 2.19.0 of OpenShift AI Operator, KServe is available in either Advanced or Standard mode. By default, when you install KServe using the OpenShift AI using the IBM Cloud add-on, it is installed in Standard mode. If you want to use Advanced mode, you must complete the [optional steps](#ai-install-kserve) after installing the add-on.
 
 
@@ -232,7 +232,7 @@ To include a customization for an operator when you [install the OpenShift AI ad
 
 | Customization | CLI Parameter | Description |  CLI Values | Default value |
 | ------------- | --------- | ----------- | --------| ------------- |             
-| NDF Deletion Policy | `nfdDeletePolicy` |  Retain or delete the operator if the OpenShift AI add-on is removed. | `Retain` or `Delete` | `Retain` |                               
+| NFD Deletion Policy | `nfdDeletePolicy` |  Retain or delete the operator if the OpenShift AI add-on is removed. | `Retain` or `Delete` | `Retain` |                               
 | NVIDIA Deletion Policy | `nvidiaDeletePolicy` | Retain or delete the operator if the OpenShift AI add-on is removed. | `Retain` or `Delete` | `Retain` |                   
 | NVIDIA Sandbox Workloads | `nvidiaSandboxWorkloads` | Enable management of additional operands required for sandbox workloads. | `true` (enabled) \n  `false` (disabled) | `true` (enabled) |             
 | NVIDIA DCGM Hostengine Deployment | `nvidiaDcgmEnabled` | Enable deployment of the NVIDIA DCGM Hostengine as a separate pod. | `true` (enabled) \n `false` (disabled) | `true` (enabled) |                
