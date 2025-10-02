@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2025
-lastupdated: "2025-09-25"
+lastupdated: "2025-10-02"
 
 
 keywords: openshift, {{site.data.keyword.openshiftlong_notm}}, oc, ks
@@ -31,6 +31,12 @@ Refer to the following change logs for a summary of changes for each version of 
 
 Review the following changes for 1.0 versions of the CLI plug-in.
 {: shortdesc}
+
+## Version v1.0.724
+{: #cli-01724}
+
+- Includes general refactoring and improvements.
+- Updates the help text.
 
 ## Version v1.0.718
 {: #cli-01078}
