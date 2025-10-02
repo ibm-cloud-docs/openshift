@@ -1,7 +1,7 @@
 ---
 copyright: 
   years: 2025, 2025
-lastupdated: "2025-09-17"
+lastupdated: "2025-10-02"
 
 keywords: nhc004, vpe gateway hostname resolution
 
@@ -40,7 +40,7 @@ Make sure that your worker nodes have correct DNS resolvers configured and can r
 
 To identify the VPE gateways used by your IBM Cloud Kubernetes Service cluster, follow these steps:
 
-### 1. Use the IBM Cloud CLI to list endpoint gateways
+### Step 1. Use the IBM Cloud CLI to list endpoint gateways
 {: #list-gateways-from-cli}
 
 1. Run the following command to list all VPE (endpoint) gateways in your VPC.
@@ -60,14 +60,14 @@ To identify the VPE gateways used by your IBM Cloud Kubernetes Service cluster, 
 2. Filter the output for `iks-cluster_ID` and look for `Service Endpoints`. This shows the associated services, IP addresses, and endpoint names.
 
 
-### 2. Use the IBM Cloud console to list endpoint gateways
+### Step 2. Use the IBM Cloud console to list endpoint gateways
 {: #list-gateways-in-cloud-console}
 
 1. Navigate to **VPC Infrastructure > Endpoint Gateways**
 2. Select your VPC
 3. Review configured gateways for private service access and view DNS/IP information
 
-### 3. After finding the VPE gateway hostname complete the following steps.
+### Step 3. After finding the VPE gateway hostname complete the following steps.
 {: #error-checking}
 
 1. From a pod running on a worker node, launch a debug shell:

@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2025
-lastupdated: "2025-09-26"
+lastupdated: "2025-10-02"
 
 
 keywords: openshift, cli reference, kubernetes cli, openshift cli, {{site.data.keyword.openshiftlong_notm}}
@@ -6125,7 +6125,7 @@ ibmcloud oc nlb-dns monitor configure --cluster CLUSTER --nlb-host HOST [--enabl
 :    Enable the health check monitor for the host name.
 
 `--header HEADER`
-:   Required when `type` is `HTTP` or `HTTPS`: HTTP request headers for the health check are limited to the Host header. This flag is valid only for type 'HTTP' or 'HTTPS'. This flag accepts values in the following format: '--header Header-Name=value'. When updating a monitor, the existing headers are replaced by the ones you specify. To delete all existing headers specify the flag with an empty value '--header ""'.
+:   Required when `type` is `HTTP` or `HTTPS`: HTTP request headers for the health check are limited to the Host header. This flag is valid only for type `HTTP` or `HTTPS`. This flag accepts values in the following format: `--header Header-Name=value`. When updating a monitor, the existing headers are replaced by the ones you specify. To delete all existing headers specify the flag with an empty value `--header ""`.
 
 `--interval INTERVAL`
 :    The interval, in seconds, between each health check. Short intervals might improve failover time but increase load on the IPs. The value must be in the range [60, 300]. Default: `60`
