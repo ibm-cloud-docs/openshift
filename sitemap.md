@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2025
-lastupdated: "2025-10-01"
+lastupdated: "2025-10-02"
 
 
 keywords: openshift
@@ -9699,11 +9699,11 @@ subcollection: openshift
 
 * [How to find the VPE gateways for a VPC cluster](/docs/openshift?topic=openshift-ts-network-nhc004#find-vpe-gateways)
 
-    * [1. Use the IBM Cloud CLI to list endpoint gateways](/docs/openshift?topic=openshift-ts-network-nhc004#list-gateways-from-cli)
+    * [Step 1. Use the IBM Cloud CLI to list endpoint gateways](/docs/openshift?topic=openshift-ts-network-nhc004#list-gateways-from-cli)
 
-    * [2. Use the IBM Cloud console to list endpoint gateways](/docs/openshift?topic=openshift-ts-network-nhc004#list-gateways-in-cloud-console)
+    * [Step 2. Use the IBM Cloud console to list endpoint gateways](/docs/openshift?topic=openshift-ts-network-nhc004#list-gateways-in-cloud-console)
 
-    * [3. After finding the VPE gateway hostname complete the following steps.](/docs/openshift?topic=openshift-ts-network-nhc004#error-checking)
+    * [Step 3. After finding the VPE gateway hostname complete the following steps.](/docs/openshift?topic=openshift-ts-network-nhc004#error-checking)
 
 [Why does the Network status show an `NHC005` error?](/docs/openshift?topic=openshift-ts-network-nhc005#ts-network-nhc005)
 
