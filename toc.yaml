@@ -11,7 +11,7 @@ toc:
     console-page: /kubernetes/overview?platformType=openshift
     product-page: https://www.ibm.com/products/openshift
   entries:
-  - navgroup: 
+  - navgroup:
       id: learn
       topics:
       - getting-started.md
@@ -34,7 +34,7 @@ toc:
           - path-dev.md
       - rhel-deprecation.md
       - release-notes.md
-  - navgroup: 
+  - navgroup:
       id: tutorial
       topics:
       - link:
@@ -43,7 +43,7 @@ toc:
       - openshift_tutorial.md
       - openshift_tutorial_vpc.md
       - tutorial-two-node-vpc.md
-  - navgroup: 
+  - navgroup:
       id: howto
       topics:
       - topicgroup:
@@ -67,7 +67,7 @@ toc:
           - cli-update.md
           - include: ../cli/reference/ibmcloud/uninstall_cli.md
       - api-install.md
-      - topicgroup: 
+      - topicgroup:
           label: Creating clusters
           topics:
           - cluster-create-classic.md
@@ -75,13 +75,13 @@ toc:
           - cluster-create-dedicated-hosts.md
           - satellite_clusters.md
           - roks_da.md
-      - topicgroup: 
+      - topicgroup:
           label: Accessing clusters
           topics:
           - openshift_cluster_access.md
           - cluster-access-admission-control.md
-          - topicgroup: 
-              label: Accessing the OpenShift Console 
+          - topicgroup:
+              label: Accessing the OpenShift Console
               topics:
               - access-type-set.md
               - access_api_oauth_server.md
@@ -134,11 +134,11 @@ toc:
           - openshift_scc.md
           - pod-priority.md
           - kubeapi-priority.md
-          - pod-security-admission.md 
+          - pod-security-admission.md
       - registry.md
       - satellite-clusters-registry.md
       - satellite-registry-pull-secret.md
-      - topicgroup: 
+      - topicgroup:
           label: Controlling network traffic in Classic clusters
           topics:
           - cs_tutorials_policies.md
@@ -162,10 +162,10 @@ toc:
       - topicgroup:
           label: Controlling network traffic in Satellite clusters
           topics:
-            - satellite-network-customization.md
-            - satellite-sriov.md
+          - satellite-network-customization.md
+          - satellite-sriov.md
       - static-routes.md
-      - topicgroup: 
+      - topicgroup:
           label: Setting up the cluster autoscaler
           topics:
           - cluster-scaling-classic-vpc.md
@@ -173,7 +173,7 @@ toc:
           - cluster-scaling-install-addon.md
           - cluster-scaling-enable.md
           - cluster-scaling-deploy-apps.md
-      - topicgroup: 
+      - topicgroup:
           label: Logging and monitoring
           topics:
           - logging.md
@@ -201,7 +201,7 @@ toc:
           - openshift_app_networking.md
           - topicgroup:
               label: Exposing apps with routes
-              topics: 
+              topics:
               - openshift_routes.md
           - topicgroup:
               label: Exposing apps with Classic load balancers
@@ -246,7 +246,7 @@ toc:
       - storage-block.md
       - topicgroup:
           label: Setting up Block Storage for VPC
-          topics: 
+          topics:
           - storage-block-vpc.md
           - storage-block-vpc-snapshot.md
           - storage-block-vpc-configmap.md
@@ -258,11 +258,11 @@ toc:
       - storage-file.md
       - topicgroup:
           label: Setting up File Storage for VPC
-          topics: 
-          - storage-file-vpc-install.md 
+          topics:
+          - storage-file-vpc-install.md
           - storage-file-vpc-apps.md
           - storage-file-vpc-managing.md
-          - storage-file-vpc-sc-ref.md 
+          - storage-file-vpc-sc-ref.md
       - topicgroup:
           label: Setting up Object Storage
           topics:
@@ -297,7 +297,7 @@ toc:
           - openshift_storage_ocs_sc_ref.md
       - topicgroup:
           label: Setting up Portworx
-          topics: 
+          topics:
           - storage-portworx-about.md
           - storage-portworx-plan.md
           - storage-portworx-preparing.md
@@ -323,18 +323,18 @@ toc:
           - integrations-addons.md
           - integrations-helm.md
           - integrations-svcbind.md
-      - topicgroup: 
+      - topicgroup:
           label: Tuning performance
           topics:
           - performance.md
           - rhcos-performance.md
-      - topicgroup: 
+      - topicgroup:
           label: Managing cluster costs
           topics:
           - costs.md
           - costs-reserved.md
       - cluster-remove.md
-  - navgroup: 
+  - navgroup:
       id: reference
       topics:
       - topicgroup:
@@ -411,7 +411,7 @@ toc:
       - topicgroup:
           label: Add-on version history
           topics:
-          - add-on-versions.md 
+          - add-on-versions.md
           - cl-add-ons-openshift-ai.md
           - versions-autoscaler.md
           - cl-add-ons-ibm-storage-operator.md
@@ -569,7 +569,7 @@ toc:
           - topicgroup:
               label: Permissions and credentials
               topics:
-              - ts-perms-creds.md  
+              - ts-perms-creds.md
           - topicgroup:
               label: Cluster autoscaler
               topics:
@@ -632,7 +632,7 @@ toc:
               - ts-addon-debug.md
           - topicgroup:
               label: Load balancers
-              topics: 
+              topics:
               - ts-lb-app.md
               - ts-lb-deploy.md
               - ts-lb-openvpn.md
@@ -643,6 +643,7 @@ toc:
               - ts-lb-sync-failed.md
               - ts-lb-vpc-healthcheck.md
               - ts-nlb-vpc-zone.md
+              - ts-ppnlb-hostname.md
           - topicgroup:
               label: Ingress and routers
               topics:

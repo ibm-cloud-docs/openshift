@@ -9865,6 +9865,8 @@ subcollection: openshift
 
 [VPC Clusters: My VPC NLB has a zone error and does not update](/docs/openshift?topic=openshift-ts-nlb-vpc-zone#ts-nlb-vpc-zone)
 
+[Why does my Private Path NLB contain a `hostname.invalid` error?](/docs/openshift?topic=openshift-ts-ppnlb-hostname#ts-ppnlb-hostname)
+
 
 ### Ingress and routers
 {: #sitemap_ingress_and_routers}
