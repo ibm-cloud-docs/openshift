@@ -1,5 +1,5 @@
 includes:
-  - https://github.ibm.com/cloud-docs/account
-  - https://github.ibm.com/cloud-docs/cli
-  - https://github.ibm.com/cloud-docs/icons
-  - https://github.ibm.com/cloud-docs/containers
+- https://github.ibm.com/cloud-docs/account
+- https://github.ibm.com/cloud-docs/cli
+- https://github.ibm.com/cloud-docs/icons
+- https://github.ibm.com/cloud-docs/containers

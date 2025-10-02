@@ -1,58 +1,57 @@
 {
-    "version": 2,
-    "title": "Red Hat OpenShift on IBM Cloud",
-    "introduction": "Explore the capabilities of Red Hat OpenShift on IBM Cloud and discover how you can deploy apps on highly available clusters.",
-    "product_page": "https://www.ibm.com/products/openshift",
-    "console_page": "/kubernetes/overview?platformType=openshift",
-    "section_topics": {
-      "links": [
-        {
-            "title": "See what's new",
-            "href": "/docs/openshift?topic=openshift-openshift-relnotes"
-          },  
-          {
-            "title": "Understand Red Hat OpenShift on IBM Cloud",
-            "href": "/docs/openshift?topic=openshift-overview"
-          },
-          {
-            "title": "Get started with Red Hat OpenShift on IBM Cloud",
-            "href": "/docs/openshift?topic=openshift-getting-started"
-          },
-          {
-            "title": "Plan your environment",
-            "href": "/docs/openshift?topic=openshift-learning-path-admin#admin_plan"
-          },
-          {
-            "title": "Create a cluster",
-            "href": "/docs/openshift?topic=openshift-learning-path-admin#admin_cluster"
-          },
-          {
-            "title": "Add storage",
-            "href": "/docs/openshift?topic=openshift-learning-path-admin#admin_storage"
-          }
-      ]
-    },
-    "section_highlights": [
+  "version": 2,
+  "title": "Red Hat OpenShift on IBM Cloud",
+  "introduction": "Explore the capabilities of Red Hat OpenShift on IBM Cloud and discover how you can deploy apps on highly available clusters.",
+  "product_page": "https://www.ibm.com/products/openshift",
+  "console_page": "/kubernetes/overview?platformType=openshift",
+  "section_topics": {
+    "links": [
       {
-        "title": "Developer resources",
-        "description": "Find developer resources for Red Hat OpenShift on IBM Cloud.",
-        "href": "https://developer.ibm.com/components/redhat-openshift-ibm-cloud/",
-        "type": "training"
+        "title": "See what's new",
+        "href": "/docs/openshift?topic=openshift-openshift-relnotes"
       },
       {
-        "title": "Training",
-        "description": "Find courses to guide you through using Red Hat OpenShift on IBM Cloud.",
-        "href": "https://www.ibm.com/training/search?query=Red%20Hat%20OpenShift",
-        "type": "training"
+        "title": "Understand Red Hat OpenShift on IBM Cloud",
+        "href": "/docs/openshift?topic=openshift-overview"
+      },
+      {
+        "title": "Get started with Red Hat OpenShift on IBM Cloud",
+        "href": "/docs/openshift?topic=openshift-getting-started"
+      },
+      {
+        "title": "Plan your environment",
+        "href": "/docs/openshift?topic=openshift-learning-path-admin#admin_plan"
+      },
+      {
+        "title": "Create a cluster",
+        "href": "/docs/openshift?topic=openshift-learning-path-admin#admin_cluster"
+      },
+      {
+        "title": "Add storage",
+        "href": "/docs/openshift?topic=openshift-learning-path-admin#admin_storage"
       }
-    ],
-    "section_devtools": {
-      "api": "/apidocs/kubernetes", 
-      "cli": "/docs/openshift?topic=openshift-kubernetes-service-cli", 
-      "terraform": "https://registry.terraform.io/providers/IBM-Cloud/ibm/latest/docs"
+    ]
+  },
+  "section_highlights": [
+    {
+      "title": "Developer resources",
+      "description": "Find developer resources for Red Hat OpenShift on IBM Cloud.",
+      "href": "https://developer.ibm.com/components/redhat-openshift-ibm-cloud/",
+      "type": "training"
     },
-    "section_updates": {
-        "view_more": "/docs/openshift?topic=openshift-openshift-relnotes"
+    {
+      "title": "Training",
+      "description": "Find courses to guide you through using Red Hat OpenShift on IBM Cloud.",
+      "href": "https://www.ibm.com/training/search?query=Red%20Hat%20OpenShift",
+      "type": "training"
     }
-
+  ],
+  "section_devtools": {
+    "api": "/apidocs/kubernetes",
+    "cli": "/docs/openshift?topic=openshift-kubernetes-service-cli",
+    "terraform": "https://registry.terraform.io/providers/IBM-Cloud/ibm/latest/docs"
+  },
+  "section_updates": {
+    "view_more": "/docs/openshift?topic=openshift-openshift-relnotes"
   }
+}
