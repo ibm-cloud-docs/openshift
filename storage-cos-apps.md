@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2025
-lastupdated: "2025-04-30"
+lastupdated: "2025-10-02"
 
 
 keywords: openshift, adding object storage, adding storage to cluster, adding pvc, persistent volume claim, object storage pvc
@@ -92,7 +92,7 @@ To add {{site.data.keyword.cos_full_notm}} to your cluster:
     :   If you created your {{site.data.keyword.cos_full_notm}} service instance in a location that is different from your cluster, enter the private or public cloud service endpoint of your {{site.data.keyword.cos_full_notm}} service instance that you want to use. For more information and an overview of available service endpoints, see [Additional endpoint information](/docs/cloud-object-storage?topic=cloud-object-storage-advanced-endpoints). By default, the `ibmc` Helm plug-in automatically retrieves your cluster location and creates the storage classes by using the {{site.data.keyword.cos_full_notm}} private cloud service endpoint that matches your cluster location. If your classic cluster is in a multizone metro, such as `dal10`, the {{site.data.keyword.cos_full_notm}} private cloud service endpoint for the multizone metro, for example Dallas. To verify that the service endpoint in your storage classes matches the service endpoint of your service instance, run `oc describe storageclass < storageclassname>`. Make sure that you enter your service endpoint in the format `https://< s3fs_private_service_endpoint>` for private cloud service endpoints, or `http://< s3fs_public_service_endpoint>` for public cloud service endpoints. If the service endpoint in your storage class matches the service endpoint of your {{site.data.keyword.cos_full_notm}} service instance, don't include the `ibm.io/endpoint` option in your PVC YAML file.
     
     `ibm.io/add-mount-param`
-    :   Enter mount options for your s3fs Fuse volumes. For example `ibm.io/add-mount-param: "del_cache,retries=6"`. For a list of option, see the [s3fs man pages](https://manpages.ubuntu.com/manpages/xenial/man1/s3fs.1.html){: external}
+    :   Enter mount options for your s3fs Fuse volumes. For example `ibm.io/add-mount-param: "del_cache,retries=6"`. For a list of option, see the [s3fs man pages](https://manpages.ubuntu.com/manpages/questing/en/man1/s3fs.1.html){: external}
     
     `ibm.io/access-policy-allowed-ips`
     :   Enter a comma-separated list of IPs that can access your volumes. For example, `ibm.io/access-policy-allowed-ips: "XX.XXX.XX.XXX, XX.XX.XX.XXX, XX.XX.XX.XX`.
