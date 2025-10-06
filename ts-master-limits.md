@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2025
-lastupdated: "2025-01-13"
+lastupdated: "2025-10-06"
 
 
 keywords: openshift, roks, rhoks, rhos, limits
@@ -44,7 +44,7 @@ You have a few options when it comes to dealing with this.
 
 
 - Identify the cause of the high resource usage and make changes to reduce the usage.
-    - Look for applications that might be generating high load against your master. 
+    - Look for applications that might be generating high load against your master. You can use the [Kubernetes API server audit logs](/docs/openshift?topic=openshift-health-audit) to identify applications causing high resource load.
     - Reduce the number of resources, such as secrets, configmaps, and replicasets.  If a cluster contains a high number of resources, then the queries can cause the master to be overloaded. Use the **`kubectl get raw`** command to find the top resources by count. For example, run 
         ```sh
         kubectl get --raw /metrics | grep ^apiserver_storage_objects | sort -n -k2
@@ -53,6 +53,6 @@ You have a few options when it comes to dealing with this.
 
 - For each resource listed, we recommend avoiding a count above 250 per node. For example, a standard 3-node cluster should not exceed 750 per resource.
 
-- Request a higher resource limit for your master.  To request a higher limit, [open a support ticket](/docs/openshift?topic=openshift-get-help with justification.  Requests are reviewed and granted on a cluster by cluster basis. 
+- Request a higher resource limit for your master.  To request a higher limit, [open a support ticket](/docs/openshift?topic=openshift-get-help) with justification.  Requests are reviewed and granted on a cluster by cluster basis. 
 
 - Do nothing and risk future performance and functional issues in your master control plane.
