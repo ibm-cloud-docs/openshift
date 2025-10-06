@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2025
-lastupdated: "2025-09-23"
+lastupdated: "2025-10-06"
 
 
 keywords: autoscaler, add-on, autoscaler change log, cluster autoscaler
@@ -57,7 +57,7 @@ Beginning in version 1.2.4 the `maxEmptyBulkDelete` option is no longer supporte
 - Resolves the following CVEs: CVE-2025-4563.
 - The `--max-empty-bulk-delete` option is no longer supported. Instead, use the `--max-scale-down-parallelism` option.
 - Adds GPU support with the `--scale-down-gpu-utilization-threshold` option for Nvidia vendors.
-- Image tags: `1.28.7 124-2`, `1.29.5 124-2`, `1.30.5 124-2`, `1.31.3 124-2`, `1.32.2 124-2`, `1.33.0 124-2`.
+- Image tags: `1.28.7 124-4`, `1.29.5 124-4`, `1.30.5 124-4`, `1.31.3 124-4`, `1.32.2 124-4`, `1.33.0 124-4`.
 
 
 ### Change log for patch update 1.2.4_680, released 18 July 2025.
