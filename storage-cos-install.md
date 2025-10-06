@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2025
-lastupdated: "2025-08-06"
+lastupdated: "2025-10-06"
 
 
 keywords: kubernetes, openshift
@@ -58,7 +58,7 @@ Install the `ibmc` Helm plug-in and the `ibm-object-storage-plugin`:
         ```sh
         OK
         ID                                                  Public IP        Private IP     Machine Type           State    Status   Zone    Version
-        kube-dal10-crb1a23b456789ac1b20b2nc1e12b345ab-w26   169.xx.xxx.xxx    10.xxx.xx.xxx   b3c.4x16.encrypted     normal   Ready    dal10   1.32_1523*
+        kube-dal10-crb1a23b456789ac1b20b2nc1e12b345ab-w26   169.xx.xxx.xxx    10.xxx.xx.xxx   b3c.4x16.encrypted     normal   Ready    dal10   1.33_1523*
         ```
         {: screen}
 
