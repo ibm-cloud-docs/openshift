@@ -3,7 +3,7 @@
 copyright:
   years: 2024, 2025
 
-lastupdated: "2025-09-12"
+lastupdated: "2025-10-07"
 
 
 keywords: change log, version history, OpenShift AI
@@ -29,6 +29,14 @@ Review the version history for OpenShift AI.
 {: #cl-add-ons-openshift-ai-417}
 
 
+### 417.0.2_672, released 07 October 2025
+{: #cl-add-ons-openshift-ai-41702_672}
+
+- Resolves the following CVEs: [CVE-2025-10725](https://nvd.nist.gov/vuln/detail/CVE-2025-10725){: external}.
+- Updates Go to version `1.24.4`.
+- This build fixes the secuitry issue found with Red Hat OpenShift AI operator where low-privileged attacker with access to an authenticated account could potentially escalate their access to a full cluster administrator 
+- Installs Red Hat `openshift-ai` operator version `2.22.2`.
+
 ### 417.0.0_533, released 19 August 2025
 {: #cl-add-ons-openshift-ai-41700_533}
 
@@ -44,10 +52,18 @@ Review the version history for OpenShift AI.
 {: #cl-add-ons-openshift-ai-416}
 
 
-### 416.2.5_598, released 12 September 2025
-{: #cl-add-ons-openshift-ai-41625_598}
+### 416.3.0_671, released 07 October 2025
+{: #cl-add-ons-openshift-ai-41630_671}
 
 [Default version]{: tag-green}
+
+- Resolves the following CVEs: [CVE-2025-10725](https://nvd.nist.gov/vuln/detail/CVE-2025-10725){: external}.
+- Updates Go to version `1.24.4`.
+- This build fixes the secuitry issue found with Red Hat OpenShift AI operator where low-privileged attacker with access to an authenticated account could potentially escalate their access to a full cluster administrator 
+- Installs Red Hat `openshift-ai` operator version `2.22.2`.
+
+### 416.2.5_598, released 12 September 2025
+{: #cl-add-ons-openshift-ai-41625_598}
 
 - Resolves the following CVEs: [CVE-2025-8058](https://nvd.nist.gov/vuln/detail/CVE-2025-8058){: external}.
 - Updates Go to version `1.24.4`.
