@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2025
-lastupdated: "2025-10-02"
+lastupdated: "2025-10-07"
 
 
 keywords: openshift
@@ -285,6 +285,10 @@ subcollection: openshift
 [Release notes](/docs/openshift?topic=openshift-openshift-relnotes#openshift-relnotes)
 
 * [October 2025](/docs/openshift?topic=openshift-openshift-relnotes#openshift-oct25)
+
+    * [07 October 2025](/docs/openshift?topic=openshift-openshift-relnotes#openshift-oct0725)
+
+        * OpenShift AI cluster add-on patch updates.
 
     * [02 October 2025](/docs/openshift?topic=openshift-openshift-relnotes#openshift-oct0225)
 
@@ -6574,9 +6578,13 @@ subcollection: openshift
 
 * [Version 417](/docs/openshift?topic=openshift-cl-add-ons-openshift-ai#cl-add-ons-openshift-ai-417)
 
+    * [417.0.2_672, released 07 October 2025](/docs/openshift?topic=openshift-cl-add-ons-openshift-ai#cl-add-ons-openshift-ai-41702_672)
+
     * [417.0.0_533, released 19 August 2025](/docs/openshift?topic=openshift-cl-add-ons-openshift-ai#cl-add-ons-openshift-ai-41700_533)
 
 * [Version 416](/docs/openshift?topic=openshift-cl-add-ons-openshift-ai#cl-add-ons-openshift-ai-416)
+
+    * [416.3.0_671, released 07 October 2025](/docs/openshift?topic=openshift-cl-add-ons-openshift-ai#cl-add-ons-openshift-ai-41630_671)
 
     * [416.2.5_598, released 12 September 2025](/docs/openshift?topic=openshift-cl-add-ons-openshift-ai#cl-add-ons-openshift-ai-41625_598)
 

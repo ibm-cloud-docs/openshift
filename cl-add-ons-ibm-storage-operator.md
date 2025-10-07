@@ -3,7 +3,7 @@
 copyright:
   years: 2024, 2025
 
-lastupdated: "2025-09-29"
+lastupdated: "2025-10-07"
 
 
 keywords: change log, version history, IBM Storage Operator
@@ -72,7 +72,7 @@ Review the version history for IBM Storage Operator.
 - Updates rolling update strategy for operator controller pods to prevent reconciliation delays. 
 - Updates to the EIT packages are now automatically applied if EIT is already installed. 
 - Updates the Kubernetes 1.32 client libraries, ensuring compatibility with newer clusters. 
-- Adds the capability in the operator to persist the `addon-vpc-file-csi-driver-configmap` and `file-csi-driver-status configmaps`.
+- Adds the capability in the operator to persist the `addon-vpc-file-csi-driver-configmap` and `file-csi-driver-status` configmaps.
 
 ### 1.0.17_173, released 19 February 2025
 {: #cl-add-ons-ibm-storage-operator-1017_173}
