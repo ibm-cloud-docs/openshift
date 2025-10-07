@@ -2068,6 +2068,8 @@ subcollection: openshift
 
 [Setting the cluster credentials](/docs/openshift?topic=openshift-access-creds#access-creds)
 
+* [Considerations](/docs/openshift?topic=openshift-access-creds#creds-considerations)
+
 * [Resetting the cluster API key](/docs/openshift?topic=openshift-access-creds#admin-set-credentials)
 
 * [Removing user credentials and permissions](/docs/openshift?topic=openshift-access-creds#apikey-remove-user)
