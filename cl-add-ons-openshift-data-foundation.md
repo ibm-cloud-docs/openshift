@@ -3,7 +3,7 @@
 copyright:
   years: 2024, 2025
 
-lastupdated: "2025-09-16"
+lastupdated: "2025-10-09"
 
 
 keywords: change log, version history, OpenShift Data Foundation
@@ -22,6 +22,17 @@ subcollection: "openshift"
 
 Review the version history for OpenShift Data Foundation.
 {: shortdesc}
+
+
+
+## Version 4.19.0
+{: #cl-add-ons-openshift-data-foundation-4.19.0}
+
+
+### 4.19.1, released 09 October 2025
+{: #cl-add-ons-openshift-data-foundation-4191}
+
+- Initial release.
 
 
 
