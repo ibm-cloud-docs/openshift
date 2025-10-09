@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2025
-lastupdated: "2025-10-08"
+lastupdated: "2025-10-09"
 
 
 keywords: openshift
@@ -7175,6 +7175,10 @@ subcollection: openshift
     * [1.0.0_649, released 8 September 2021](/docs/openshift?topic=openshift-cl-add-ons-static-route#cl-add-ons-static-route-100_649)
 
 [OpenShift Data Foundation add-on version change log](/docs/openshift?topic=openshift-cl-add-ons-openshift-data-foundation#cl-add-ons-openshift-data-foundation)
+
+* [Version 4.19.0](/docs/openshift?topic=openshift-cl-add-ons-openshift-data-foundation#cl-add-ons-openshift-data-foundation-4.19.0)
+
+    * [4.19.1, released 09 October 2025](/docs/openshift?topic=openshift-cl-add-ons-openshift-data-foundation#cl-add-ons-openshift-data-foundation-4191)
 
 * [Version 4.18.0](/docs/openshift?topic=openshift-cl-add-ons-openshift-data-foundation#cl-add-ons-openshift-data-foundation-4.18.0)
 
