@@ -3,7 +3,7 @@
 copyright:
   years: 2024, 2025
 
-lastupdated: "2025-10-06"
+lastupdated: "2025-10-10"
 
 
 keywords: change log, version history, 4.14_openshift
@@ -14,7 +14,7 @@ subcollection: openshift
 
 {{site.data.keyword.attribute-definition-list}}
 
-<!-- The content in this topic is auto-generated except for reuse-snippets indicated with {[ ]}. -->
+
 
 
 # 4.14 version change log
