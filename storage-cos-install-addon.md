@@ -2,7 +2,7 @@
 
 copyright:
   years: 2024, 2025
-lastupdated: "2025-09-18"
+lastupdated: "2025-10-13"
 
 
 keywords: kubernetes, openshift, object storage add-in, cos
@@ -18,12 +18,10 @@ subcollection: openshift
 # Installing the {{site.data.keyword.cos_full_notm}} cluster add-on
 {: #storage-cos-install-addon}
 
-The {{site.data.keyword.cos_full_notm}} cluster add-on is available in Beta for allowlisted accounts only. To get added to the allowlist, contact support. For more information, see [Requesting access to allowlisted features](/docs/containers?topic=containers-allowlist-request). The add-on is available only for Kubernetes clusters.
-{: beta}
 
-Prerequisites
-- The {{site.data.keyword.cos_full_notm}} add-on requires at least 0.4 vCPU and 256 MB of memory.
-- The add-on is available only for Red Hat CoreOS (RHCOS) worker nodes. If your cluster has both RHEL and RHCOS nodes, then the add-on is deployed only on the RHCOS nodes.
+Prerequisites:
+- The {{site.data.keyword.cos_full_notm}} add-on requires at least 0.3 vCPU and 360 MB of memory.
+- The add-on is available for Red Hat CoreOS (RHCOS) and Ubuntu worker nodes. If your cluster has both RHEL and RHCOS nodes, then the add-on is deployed only on the RHCOS nodes.
 - Set up an [{{site.data.keyword.cos_full_notm}} instance](/docs/openshift?topic=openshift-storage-cos-understand#create_cos_service).
 - **Optional** If you plan to use bucket versioning, your service credentials must have **Manager** or **Writer** permissions to enable or disable bucket versioning on the bucket. For more information, see [Getting started with versioning](/docs/cloud-object-storage?topic=cloud-object-storage-versioning#versioning-getting-started).
 
@@ -118,14 +116,14 @@ Before you begin: [Access your {{site.data.keyword.redhat_openshift_notm}} clust
         name: cos-secret-1 # Name your secret. This same name is used for the PVC in the following steps.
         namespace: <namespace> # Specify the namespace where you want to create the secret.
     data:
-        bucketName: <base64-encoded-bucket-name>
-        apiKey: <base64-encoded-COS-Service-Instance-API-key>
-        serviceID: <base64-encoded-COS-service-ID>
-        accessKey: <base64-encoded-HMAC-access-key>
-        secretKey: <base64-encoded-HMAC-secret-key>
+        apiKey: <base64-encoded-COS-Service-Instance-apikey>
+        serviceID: <base64-encoded-COS-resource_instance_id>
+        accessKey: <base64-encoded-HMAC-access_key_id>
+        secretKey: <base64-encoded-HMAC-secret_access_key>
         kp-root-key-crn: <CRN> # Key Protect or HPCS root key crn in base64 encoded format
-        bucketVersioning: false # Bucket versioning is set to false by default. Set to true to enable bucket versioning. Set to false to disable versioning for a bucket where versioning is enabled.
     stringData:
+        bucketName: <bucket-name>
+        bucketVersioning: false # Bucket versioning is set to false by default. Set to true to enable bucket versioning. Set to false to disable versioning for a bucket where versioning is enabled.
     # uid: "3000" # Optional: Provide a uid to run as non root user. This must match runAsUser in SecurityContext of pod spec.
     mountOptions: |
         # Review or update the following default s3fs mount options
@@ -250,30 +248,30 @@ spec:
     apiVersion: apps/v1
     kind: Deployment
     metadata:
-    name: <name>
-    labels:
+      name: <name>
+      labels:
         app: <name>
     spec:
-    replicas: 1
-    selector:
-    matchLabels:
-    app: <name>
-    template:
-    metadata:
-        labels:
+      replicas: 1
+      selector:
+        matchLabels:
+          app: <name>
+      template:
+        metadata:
+          labels:
         app: <name>
         spec:
-    containers:
-    - name: app-frontend
-        image: <image> # Enter your app image. 
-        imagePullPolicy: IfNotPresent
-        volumeMounts:
+          containers:
+          - name: app-frontend
+            image: <image> # Enter your app image.
+            imagePullPolicy: IfNotPresent
+            volumeMounts:
             - mountPath: <path_you_want_to_mount_the_volume_on> # For example `/dev`
-    name: cos-csi-volume
-    volumes:
-        - name: cos-csi-volume
-        persistentVolumeClaim:
-        claimName: <pvc_name> # Enter the name of the PVC you created earlier.
+              name: cos-csi-volume
+          volumes:
+          - name: cos-csi-volume
+            persistentVolumeClaim:
+              claimName: <pvc_name> # Enter the name of the PVC you created earlier.
     ```
     {: codeblock}
 
@@ -287,6 +285,9 @@ spec:
 
 ## Disabling the {{site.data.keyword.cos_full_notm}} add-on
 {: #disable-cos-addon}
+
+The existing secrets, PVCs, and deployments are not deleted by disabling the add-on or by patch updates. There are no disruptions to existing customer workloads.
+{: note}
 
 1. Run the following command to disable the add-on.
     ```sh
@@ -339,7 +340,7 @@ spec:
     ```
     {: screen}
 
-1. Recreate your secret with the bucket name included.
+1. Re-create your secret with the bucket name included.
     ```yaml
     apiVersion: v1
     kind: Secret
@@ -348,10 +349,10 @@ spec:
         name: cos-secret-1 # Name your secret.
         namespace: <namespace> # Specify the namespace where you want to create the secret.
     data:
-        bucketName: <base64-encoded-bucket-name>
         accessKey: <base64-encoded-HMAC-access-key>
         secretKey: <base64-encoded-HMAC-secret-key>
     stringData:
+        bucketName: <bucket-name>
     # uid: "3000" # Optional: Provide a uid to run as non root user. This must match runAsUser in SecurityContext of pod spec.
     mountOptions: |
         key1=value1
@@ -403,7 +404,6 @@ spec:
                 ibm.io/secret-name: satstoragesecret
                 pv.kubernetes.io/bind-completed: yes
                 pv.kubernetes.io/bound-by-controller: yes
-                volume.beta.kubernetes.io/storage-provisioner: ibm.io/ibmc-s3fs
                 volume.kubernetes.io/storage-provisioner: ibm.io/ibmc-s3fs
     Finalizers:    [kubernetes.io/pvc-protection]
     Capacity:      3Gi
@@ -423,7 +423,6 @@ spec:
     namespace: <namespace> # The namespace where you want to create the PVC.
     annotations:
         cos.csi.driver/secret: "cos-secret-1"  # Secret created in step 4
-        cos.csi.driver/secret-namespace: "<secret_namespace>"
     spec:
     accessModes:
     - ReadWriteOnce
