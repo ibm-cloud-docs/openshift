@@ -3,7 +3,7 @@
 copyright:
   years: 2024, 2025
 
-lastupdated: "2025-10-10"
+lastupdated: "2025-10-13"
 
 
 keywords: change log, version history, 4.18_openshift
@@ -37,6 +37,22 @@ Master patch updates are applied automatically. Worker node patch updates can be
 
 ## Version 4.18
 {: #418_components}
+
+
+### Worker node fix pack 4.18.25_1564_openshift, released 08 October 2025
+{: #cl-boms-41825_1564_openshift_W}
+
+The following table shows the components included in the worker node fix pack 4.18.25_1564_openshift. Worker node patch updates can be applied by updating, reloading (in classic infrastructure), or replacing (in VPC infrastructure) the worker node.
+{: shortdesc}
+
+| Component | Version | Description |
+| ---- | ---- | ---- |
+|RHEL_9|5.14.0-503.40.1.el9_5|N/A|
+|Red Hat OpenShift and Red Hat CoreOS|4.18.25|For more information, see the [change logs](https://docs.redhat.com/en/documentation/openshift_container_platform/4.18/html/release_notes/ocp-4-18-release-notes.html#ocp-4-18-25_release-notes).|
+|HAProxy|e0a48fcf355d98dc769ea048d2fd02044b11ed62|N/A|
+{: caption="4.18.25_1564_openshift fix pack." caption-side="bottom"}
+{: #cl-boms-41825_1564_openshift_W-component-table}
+
 
 
 ### Worker node fix pack 4.18.24_1560_openshift, released 23 September 2025
