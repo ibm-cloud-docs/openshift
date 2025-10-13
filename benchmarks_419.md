@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2025, 2025
-lastupdated: "2025-09-08"
+lastupdated: "2025-10-13"
 
 keywords: openshift, benchmarks, 4.19, openshift benchmarks, openshift 4.19
 
@@ -103,7 +103,7 @@ The Center for Internet Security (CIS) publishes the [CIS Kubernetes Benchmark](
 | 1.3.4 | Ensure that the `--service-account-private-key-file` argument is set as appropriate. | Scored | 1 | Pass | {{site.data.keyword.IBM_notm}} |
 | 1.3.5 | Ensure that the `--root-ca-file` argument is set as appropriate. | Scored | 1 | Pass | {{site.data.keyword.IBM_notm}} |
 | 1.3.6 | Ensure that the `RotateKubeletServerCertificate` argument is set to `true`. | Scored | 2 | Pass | {{site.data.keyword.IBM_notm}} |
-| 1.3.7 | Ensure that the `--bind-address` argument is set to `127.0.0.1`. | Scored | 1 | Pass | {{site.data.keyword.IBM_notm}} |
+| 1.3.7 | Ensure that the `--bind-address` argument is set to `127.0.0.1`. | Scored | 1 | [Fail](#ibm-remediations-and-explanations-419) | {{site.data.keyword.IBM_notm}} |
 {: caption="Section 1.3 Controller manager benchmark results" caption-side="bottom"}
 
 ### 1.4 Scheduler
@@ -112,7 +112,7 @@ The Center for Internet Security (CIS) publishes the [CIS Kubernetes Benchmark](
 | Section | Recommendation | Scored? | Level | Result | Responsibility |
 | --- | --- | --- | --- | --- | --- |
 | 1.4.1 | Ensure that the `--profiling` argument is set to `false`. | Scored | 1 | Pass | {{site.data.keyword.IBM_notm}} |
-| 1.4.2 | Ensure that the `--bind-address` argument is set to `127.0.0.1`. | Scored | 1 | Pass | {{site.data.keyword.IBM_notm}} |
+| 1.4.2 | Ensure that the `--bind-address` argument is set to `127.0.0.1`. | Scored | 1 | [Fail](#ibm-remediations-and-explanations-419) | {{site.data.keyword.IBM_notm}} |
 {: caption="Section 1.4 Scheduler benchmark results" caption-side="bottom"}
 
 ## 2 Etcd node configuration
@@ -314,6 +314,8 @@ The Center for Internet Security (CIS) publishes the [CIS Kubernetes Benchmark](
 | 1.2.25 | {{site.data.keyword.openshiftlong_notm}} can optionally [enable Kubernetes API server auditing](/docs/openshift?topic=openshift-health-audit). |
 | 1.2.33 | {{site.data.keyword.openshiftlong_notm}} can optionally [enable a Kubernetes Key Management Service (KMS) provider](/docs/openshift?topic=openshift-encryption#cluster-secret-encryption). |
 | 1.2.34 | {{site.data.keyword.openshiftlong_notm}} can optionally [enable a Kubernetes Key Management Service (KMS) provider](/docs/openshift?topic=openshift-encryption#cluster-secret-encryption). |
+| 1.3.7 | The Controller Manager IP address cannot be restricted to `127.0.0.1`. The {{site.data.keyword.IBM_notm}} configuration is required so health checks can be performed against it. It is not exposed publicly or privately to customers. |
+| 1.4.2 | The Scheduler IP address cannot be restricted to `127.0.0.1`. The {{site.data.keyword.IBM_notm}} configuration is required so health checks can be performed against it. It is not exposed publicly or privately to customers. |
 | 3.2.1 | {{site.data.keyword.openshiftlong_notm}} can optionally [enable Kubernetes API server auditing](/docs/openshift?topic=openshift-health-audit). |
 | 3.2.2 | {{site.data.keyword.openshiftlong_notm}} can optionally [enable Kubernetes API server auditing](/docs/openshift?topic=openshift-health-audit). |
 | 4.2.6 | {{site.data.keyword.openshiftlong_notm}} does not protect kernel defaults to allow customers to tune kernel parameters. |
@@ -338,5 +340,3 @@ The Center for Internet Security (CIS) publishes the [CIS Kubernetes Benchmark](
 | 5.7.2 | {{site.data.keyword.openshiftlong_notm}} does not annotate all pods with [`seccomp` profiles](https://kubernetes.io/docs/concepts/security/pod-security-policy/#seccomp){: external}. |
 | 5.7.3 | {{site.data.keyword.openshiftlong_notm}} deploys some system components that do not set a [pod or container `securityContext`](https://kubernetes.io/docs/tasks/configure-pod-container/security-context/){: external}. |
 {: caption="Section {{site.data.keyword.IBM_notm}} remediations and explanations benchmark results" caption-side="bottom"}
-
-
