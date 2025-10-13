@@ -3707,6 +3707,8 @@ subcollection: openshift
 
 [About the Red Hat OpenShift AI add-on](/docs/openshift?topic=openshift-ai-addon-about#ai-addon-about)
 
+* [Supported versions](/docs/openshift?topic=openshift-ai-addon-about#ai-addon-version)
+
 * [What gets deployed when I install the OpenShift AI add-on?](/docs/openshift?topic=openshift-ai-addon-about#ai-addon-deployed)
 
 * [Who is responsible for managing the OpenShift AI add-on components and required operators?](/docs/openshift?topic=openshift-ai-addon-about#ai-addon-responsibility)

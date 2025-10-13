@@ -1,7 +1,7 @@
 ---
 copyright: 
   years: 2024, 2025
-lastupdated: "2025-05-29"
+lastupdated: "2025-10-13"
 
 
 keywords: openshift, {{site.data.keyword.openshiftlong_notm}}, ai, add-on
@@ -16,11 +16,24 @@ subcollection: openshift
 {: #ai-addon-about}
 
 Use the OpenShift AI add-on to quickly deploy OpenShift AI in {{site.data.keyword.openshiftshort}}.
+{: shortdesc}
 
 Red Hat OpenShift AI is a flexible, scalable artificial intelligence and machine learning platform that enables enterprises to create and deliver AI-enabled applications at scale across hybrid cloud environments. OpenShift AI enables data acquisition and preparation, model training and fine-tuning, model serving and model monitoring, and hardware acceleration. For more information on the features and benefits of OpenShift AI, see [What is Red Hat OpenShift AI?](https://www.redhat.com/en/products/ai/openshift-ai){: external}.
 
 Want to deploy the OpenShift AI operator on a new cluster? Try the [OpenShift AI on IBM Cloud](https://cloud.ibm.com/catalog/7a4d68b4-cf8b-40cd-a3d1-f49aff526eb3/architecture/roks-rhoai-c24ae512-8b25-43d7-8fb3-4173c7e94472-global){: external} deployable architecture. 
 {: tip}
+
+## Supported versions
+{: #ai-addon-version}
+
+Review the supported OpenShift AI add-on versions and the corresponding [OpenShift AI](https://www.redhat.com/en/products/ai/openshift-ai){: external} and [{{site.data.keywod.openshiftshort}}](/docs/openshift?topic=openshift-openshift_versions) versions. 
+
+| OpenShift AI add-on version | Red Hat OpenShift AI version |	Supported Red Hat OpenShift on IBM Cloud versions |
+| --------------------------  | ---------------------------- | -------------------------------------------------- |
+| 4.16 | 2.22 | 4.16, 4.17 | 
+| 4.17 | 2.22 | 4.17, 4.18 |
+{: caption="Supported AI add-on versions and corresponding versions for Red Hat OpenShift AI and Red Hat OpenShift on IBM Cloud". caption-side="bottom"}
+
 
 
 ## What gets deployed when I install the OpenShift AI add-on?
