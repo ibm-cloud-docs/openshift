@@ -348,19 +348,15 @@ toc:
               topics:
               - openshift_versions_419.md
               - openshift_versions_changelog_419.md
-              - topic: benchmarks_419.md
-                navtitle: 4.19 CIS Kubernetes benchmark
-              - topic: benchmarks_419_co.md
-                navtitle: 4.19 compliance operator benchmark
+              - benchmarks_419.md
+              - benchmarks_419_co.md
           - topicgroup:
               label: Version 4.18
               topics:
               - openshift_versions_418.md
               - openshift_versions_changelog_418.md
-              - topic: benchmarks_418.md
-                navtitle: 4.18 CIS Kubernetes benchmark
-              - topic: benchmarks_418_co.md
-                navtitle: 4.18 compliance operator benchmark
+              - benchmarks_418.md
+              - benchmarks_418_co.md
           - topicgroup:
               label: Version 4.17
               topics:

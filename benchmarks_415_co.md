@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2024, 2025
-lastupdated: "2025-10-13"
+lastupdated: "2025-10-14"
 
 keywords: openshift, benchmarks, 4.15, openshift benchmarks, openshift 4.15, compliance operator, compliance
 
@@ -12,7 +12,7 @@ subcollection: openshift
 
 {{site.data.keyword.attribute-definition-list}}
 
-# {{site.data.keyword.openshiftlong_notm}} version 4.15 compliance operator benchmark
+# 4.15 compliance operator benchmark
 {: #benchmarks-415-co}
 
 Review the compliance operator benchmark results for {{site.data.keyword.openshiftlong_notm}} version 4.15. 
