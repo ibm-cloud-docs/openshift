@@ -298,6 +298,10 @@ subcollection: openshift
 
         * OpenShift AI cluster add-on patch updates.
 
+    * [03 October 2025](/docs/openshift?topic=openshift-openshift-relnotes#openshift-oct0325)
+
+        * {{site.data.keyword.openshiftlong_notm}} master fix packs.
+
     * [02 October 2025](/docs/openshift?topic=openshift-openshift-relnotes#openshift-oct0225)
 
         * CLI version `1.0.724` is available.
