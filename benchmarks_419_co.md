@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2025, 2025
-lastupdated: "2025-09-08"
+lastupdated: "2025-10-14"
 
 keywords: openshift, benchmarks, 4.19, openshift benchmarks, openshift 4.19, compliance operator, compliance
 
@@ -12,7 +12,7 @@ subcollection: openshift
 
 {{site.data.keyword.attribute-definition-list}}
 
-# {{site.data.keyword.openshiftlong_notm}} version 4.19 compliance operator benchmark
+# 4.19 compliance operator benchmark
 {: #benchmarks-419-co}
 
 Review the compliance operator benchmark results for {{site.data.keyword.openshiftlong_notm}} version 4.19. 
@@ -242,4 +242,3 @@ Review information from {{site.data.keyword.IBM_notm}} on the CIS Benchmark resu
 | 5.2.8 | Red Hat OpenShift on {{site.data.keyword.IBM_notm}} Cloud installs custom `SCCs`. |
 | 5.3.2 | Red Hat OpenShift on {{site.data.keyword.IBM_notm}} Cloud has a set of default Calico network policies defined and additional network policies can optionally be added. |
 {: caption="Details for {{site.data.keyword.IBM_notm}} remediations and explanations." caption-side="top"}
-

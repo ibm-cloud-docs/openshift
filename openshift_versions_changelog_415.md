@@ -3,7 +3,7 @@
 copyright:
   years: 2024, 2025
 
-lastupdated: "2025-10-13"
+lastupdated: "2025-10-14"
 
 
 keywords: change log, version history, 4.15_openshift
@@ -59,6 +59,26 @@ The following table shows the components included in the worker node fix pack 4.
 |HAProxy|e0a48fcf355d98dc769ea048d2fd02044b11ed62|N/A|
 {: caption="4.15.58_1605_openshift fix pack." caption-side="bottom"}
 {: #cl-boms-41558_1605_openshift_W-component-table}
+
+
+
+### Master fix pack 4.15.57_1605_openshift, released 07 October 2025
+{: #41557_1605_openshift_M}
+
+The following table shows the changes that are in the master fix pack 4.15.57_1605_openshift. Master patch updates are applied automatically. 
+
+
+
+| Component | Previous | Current | Description |
+| --- | --- | --- | --- |
+| etcd | v3.5.22 | v3.5.23 | See the [etcd release notes](https://github.com/coreos/etcd/releases/v3.5.23){: external}. |
+| {{site.data.keyword.cloud_notm}} Controller Manager | v1.28.15-35 | v1.28.15-41 | New version contains updates and security fixes. |
+| {{site.data.keyword.filestorage_full_notm}} for Classic plug-in and monitor | 451 | 452 | New version contains updates and security fixes. |
+| Key Management Service provider | v2.9.22 | v2.9.24 | New version contains updates and security fixes. |
+| Portieris admission controller | v0.13.29 | v0.13.30 | See the [Portieris admission controller release notes](https://github.com/{{site.data.keyword.IBM_notm}}/portieris/releases/tag/v0.13.30){: external}. |
+| {{site.data.keyword.openshiftlong_notm}}. | 4.15.55 | 4.15.57 | See the [{{site.data.keyword.openshiftlong_notm}} release notes](https://docs.openshift.com/container-platform/4.15/release_notes/ocp-4-15-release-notes.html#ocp-4-15-57){: external}. |
+| {{site.data.keyword.openshiftlong_notm}} Control Plane Operator, Metrics Server, and toolkit | 4.15.0+20250808 | 4.15.0+20250821 | See the [{{site.data.keyword.openshiftlong_notm}} toolkit release notes](https://github.com/openshift/ibm-roks-toolkit/releases/tag/v4.15.0+20250821){: external}. |
+{: caption="Changes since version 4.15.55_1597_openshift" caption-side="bottom"}
 
 
 

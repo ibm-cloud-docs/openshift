@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2023, 2025
-lastupdated: "2025-10-13"
+lastupdated: "2025-10-14"
 
 keywords: openshift, benchmarks, 4.14, openshift benchmarks, openshift 4.14, compliance operator, compliance
 
@@ -12,7 +12,7 @@ subcollection: openshift
 
 {{site.data.keyword.attribute-definition-list}}
 
-# {{site.data.keyword.openshiftlong_notm}} version 4.14 compliance operator benchmark
+# 4.14 compliance operator benchmark
 {: #benchmarks-414-co}
 
 Review the compliance operator benchmark results for {{site.data.keyword.openshiftlong_notm}} version 4.14. 
@@ -163,7 +163,8 @@ Follow the instruction in [Using the compliance operator](/docs/openshift?topic=
 | 5.7.3|Apply Security Context to Your Pods and Containers. |Manual|2|Not checked |
 | 5.7.4|The default namespace should not be used. |Automated|2|Not checked |
 
-## <a name="remediations-and-explanations">ibm remediations and explanations</a>
+## IBM remediations and explanations
+{: #ibm-remediations-and-explanations-414-co}
 
 Review information from {{site.data.keyword.IBM_notm}} on the CIS Benchmark results.
 

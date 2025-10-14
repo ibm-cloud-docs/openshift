@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2025
-lastupdated: "2025-10-13"
+lastupdated: "2025-10-14"
 
 
 keywords: openshift
@@ -297,6 +297,8 @@ subcollection: openshift
     * [07 October 2025](/docs/openshift?topic=openshift-openshift-relnotes#openshift-oct0725)
 
         * OpenShift AI cluster add-on patch updates.
+
+        * {{site.data.keyword.openshiftlong_notm}} master fix packs.
 
     * [02 October 2025](/docs/openshift?topic=openshift-openshift-relnotes#openshift-oct0225)
 
@@ -4825,6 +4827,8 @@ subcollection: openshift
 
     * [Worker node fix pack 4.19.14_1549_openshift, released 08 October 2025](/docs/openshift?topic=openshift-openshift_changelog_419#cl-boms-41914_1549_openshift_W)
 
+    * [Master fix pack 4.19.13_1548_openshift, released 07 October 2025](/docs/openshift?topic=openshift-openshift_changelog_419#41913_1548_openshift_M)
+
     * [Worker node fix pack 4.19.12_1545_openshift, released 23 September 2025](/docs/openshift?topic=openshift-openshift_changelog_419#cl-boms-41912_1545_openshift_W)
 
     * [Worker node fix pack 4.19.10_1543_openshift, released 15 September 2025](/docs/openshift?topic=openshift-openshift_changelog_419#cl-boms-41910_1543_openshift_W)
@@ -4941,6 +4945,8 @@ subcollection: openshift
 * [Version 4.18](/docs/openshift?topic=openshift-openshift_changelog_418#418_components)
 
     * [Worker node fix pack 4.18.25_1564_openshift, released 08 October 2025](/docs/openshift?topic=openshift-openshift_changelog_418#cl-boms-41825_1564_openshift_W)
+
+    * [Master fix pack 4.18.24_1563_openshift, released 07 October 2025](/docs/openshift?topic=openshift-openshift_changelog_418#41824_1563_openshift_M)
 
     * [Worker node fix pack 4.18.24_1560_openshift, released 23 September 2025](/docs/openshift?topic=openshift-openshift_changelog_418#cl-boms-41824_1560_openshift_W)
 
@@ -5083,6 +5089,8 @@ subcollection: openshift
 
     * [Worker node fix pack 4.17.40_1558_openshift, released 08 October 2025](/docs/openshift?topic=openshift-openshift_changelog_417#cl-boms-41740_1558_openshift_W)
 
+    * [Master fix pack 4.17.40_1557_openshift, released 07 October 2025](/docs/openshift?topic=openshift-openshift_changelog_417#41740_1557_openshift_M)
+
     * [Worker node fix pack 4.17.39_1554_openshift, released 23 September 2025](/docs/openshift?topic=openshift-openshift_changelog_417#cl-boms-41739_1554_openshift_W)
 
     * [Worker node fix pack 4.17.38_1552_openshift, released 09 September 2025](/docs/openshift?topic=openshift-openshift_changelog_417#cl-boms-41738_1552_openshift_W)
@@ -5147,7 +5155,7 @@ subcollection: openshift
 
     * [Master fix pack 4.17.4_1515_openshift and worker node fix pack 4.17.4_1516_openshift, released 20 November 2024](/docs/openshift?topic=openshift-openshift_changelog_417#openshift_changelog_4174_1515)
 
-[{{site.data.keyword.openshiftlong_notm}} version 4.17 CIS Kubernetes benchmark](/docs/openshift?topic=openshift-cis-benchmark-417#cis-benchmark-417)
+[4.17 CIS Kubernetes benchmark](/docs/openshift?topic=openshift-cis-benchmark-417#cis-benchmark-417)
 
 * [1 Master node security configuration](/docs/openshift?topic=openshift-cis-benchmark-417#1-master-node-security-configuration-417)
 
@@ -5195,7 +5203,7 @@ subcollection: openshift
 
     * [{{site.data.keyword.IBM_notm}} remediations and explanations](/docs/openshift?topic=openshift-cis-benchmark-417#ibm-remediations-and-explanations-417)
 
-[{{site.data.keyword.openshiftlong_notm}} version 4.17 compliance operator benchmark](/docs/openshift?topic=openshift-benchmarks-417-co#benchmarks-417-co)
+[4.17 compliance operator benchmark](/docs/openshift?topic=openshift-benchmarks-417-co#benchmarks-417-co)
 
 * [1 Control plane components](/docs/openshift?topic=openshift-benchmarks-417-co#control-plane-components-417-co)
 
@@ -5259,6 +5267,8 @@ subcollection: openshift
 * [Version 4.16](/docs/openshift?topic=openshift-openshift_changelog_416#416_components)
 
     * [Worker node fix pack 4.16.49_1586_openshift, released 08 October 2025](/docs/openshift?topic=openshift-openshift_changelog_416#cl-boms-41649_1586_openshift_W)
+
+    * [Master fix pack 4.16.48_1585_openshift, released 07 October 2025](/docs/openshift?topic=openshift-openshift_changelog_416#41648_1585_openshift_M)
 
     * [Worker node fix pack 4.16.48_1582_openshift, released 23 September 2025](/docs/openshift?topic=openshift-openshift_changelog_416#cl-boms-41648_1582_openshift_W)
 
@@ -5342,7 +5352,7 @@ subcollection: openshift
 
     * [Master fix pack 4.16.7_1532_openshift and worker node fix pack 4.16.6_1531_openshift, released 30 August 2024](/docs/openshift?topic=openshift-openshift_changelog_416#openshift_changelog_4167_1532)
 
-[{{site.data.keyword.openshiftlong_notm}} version 4.16 CIS Kubernetes benchmark](/docs/openshift?topic=openshift-cis-benchmark-416#cis-benchmark-416)
+[4.16 CIS Kubernetes benchmark](/docs/openshift?topic=openshift-cis-benchmark-416#cis-benchmark-416)
 
 * [1 Master node security configuration](/docs/openshift?topic=openshift-cis-benchmark-416#1-master-node-security-configuration-416)
 
@@ -5390,7 +5400,7 @@ subcollection: openshift
 
     * [{{site.data.keyword.IBM_notm}} remediations and explanations](/docs/openshift?topic=openshift-cis-benchmark-416#ibm-remediations-and-explanations-416)
 
-[{{site.data.keyword.openshiftlong_notm}} version 4.16 compliance operator benchmark](/docs/openshift?topic=openshift-benchmarks-416-co#benchmarks-416-co)
+[4.16 compliance operator benchmark](/docs/openshift?topic=openshift-benchmarks-416-co#benchmarks-416-co)
 
 * [1 Control plane components](/docs/openshift?topic=openshift-benchmarks-416-co#control-plane-components-416-co)
 
@@ -5468,6 +5478,8 @@ subcollection: openshift
 * [Version 4.15](/docs/openshift?topic=openshift-openshift_changelog_415#415_components)
 
     * [Worker node fix pack 4.15.58_1605_openshift, released 08 October 2025](/docs/openshift?topic=openshift-openshift_changelog_415#cl-boms-41558_1605_openshift_W)
+
+    * [Master fix pack 4.15.57_1605_openshift, released 07 October 2025](/docs/openshift?topic=openshift-openshift_changelog_415#41557_1605_openshift_M)
 
     * [Worker node fix pack 4.15.57_1601_openshift, released 23 September 2025](/docs/openshift?topic=openshift-openshift_changelog_415#cl-boms-41557_1601_openshift_W)
 
@@ -5583,7 +5595,7 @@ subcollection: openshift
 
     * [Worker node fix pack 4.15.9_1531_openshift, released 22 April 2024](/docs/openshift?topic=openshift-openshift_changelog_415#4159_1531_openshift_W)
 
-[{{site.data.keyword.openshiftlong_notm}} version 4.15 CIS Kubernetes benchmark](/docs/openshift?topic=openshift-cis-benchmark-415#cis-benchmark-415)
+[4.15 CIS Kubernetes benchmark](/docs/openshift?topic=openshift-cis-benchmark-415#cis-benchmark-415)
 
 * [1 Master node security configuration](/docs/openshift?topic=openshift-cis-benchmark-415#1-master-node-security-configuration-415)
 
@@ -5631,7 +5643,7 @@ subcollection: openshift
 
     * [{{site.data.keyword.IBM_notm}} remediations and explanations](/docs/openshift?topic=openshift-cis-benchmark-415#ibm-remediations-and-explanations-415)
 
-[{{site.data.keyword.openshiftlong_notm}} version 4.15 compliance operator benchmark](/docs/openshift?topic=openshift-benchmarks-415-co#benchmarks-415-co)
+[4.15 compliance operator benchmark](/docs/openshift?topic=openshift-benchmarks-415-co#benchmarks-415-co)
 
 * [1 Control plane components](/docs/openshift?topic=openshift-benchmarks-415-co#control-plane-components-415-co)
 
@@ -5701,6 +5713,8 @@ subcollection: openshift
 * [Version 4.14](/docs/openshift?topic=openshift-openshift_changelog_414#414_components)
 
     * [Worker node fix pack 4.14.57_1628_openshift, released 08 October 2025](/docs/openshift?topic=openshift-openshift_changelog_414#cl-boms-41457_1628_openshift_W)
+
+    * [Master fix pack 4.14.56_1627_openshift, released 07 October 2025](/docs/openshift?topic=openshift-openshift_changelog_414#41456_1627_openshift_M)
 
     * [Worker node fix pack 4.14.56_1623_openshift, released 23 September 2025](/docs/openshift?topic=openshift-openshift_changelog_414#cl-boms-41456_1623_openshift_W)
 
@@ -5838,7 +5852,7 @@ subcollection: openshift
 
     * [Master fix pack 4.14.5_1539_openshift and worker node fix pack 4.14.4_1538_openshift, released 13 December 2023](/docs/openshift?topic=openshift-openshift_changelog_414#4.14.5_1539_openshiftM_4.14.4_1538_openshiftW)
 
-[{{site.data.keyword.openshiftlong_notm}} version 4.14 CIS Kubernetes benchmark](/docs/openshift?topic=openshift-cis-benchmark-414#cis-benchmark-414)
+[4.14 CIS Kubernetes benchmark](/docs/openshift?topic=openshift-cis-benchmark-414#cis-benchmark-414)
 
 * [1 Master node security configuration](/docs/openshift?topic=openshift-cis-benchmark-414#1-master-node-security-configuration-414)
 
@@ -5880,7 +5894,7 @@ subcollection: openshift
 
     * [{{site.data.keyword.IBM_notm}} remediations and explanations](/docs/openshift?topic=openshift-cis-benchmark-414#ibm-remediations-and-explanations-414)
 
-[{{site.data.keyword.openshiftlong_notm}} version 4.14 compliance operator benchmark](/docs/openshift?topic=openshift-benchmarks-414-co#benchmarks-414-co)
+[4.14 compliance operator benchmark](/docs/openshift?topic=openshift-benchmarks-414-co#benchmarks-414-co)
 
     * [1.1 Master node configuration files](/docs/openshift?topic=openshift-benchmarks-414-co#Master-Node-Configuration-Files-414-co)
 
@@ -5910,7 +5924,7 @@ subcollection: openshift
 
     * [5.7 General policies](/docs/openshift?topic=openshift-benchmarks-414-co#General-Policies-414-co)
 
-* [<a name="remediations-and-explanations">ibm remediations and explanations</a>](/docs/openshift?topic=openshift-benchmarks-414-co#a-nameremediations-and-explanationsibm-remediations-and-explanationsa)
+* [IBM remediations and explanations](/docs/openshift?topic=openshift-benchmarks-414-co#ibm-remediations-and-explanations-414-co)
 
 
 ## CLI plug-in reference

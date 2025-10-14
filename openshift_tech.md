@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2025
-lastupdated: "2025-10-01"
+lastupdated: "2025-10-14"
 
 
 keywords: openshift, compliance, security standards, red hat openshift, openshift container platform, red hat, openshift architecture, red hat architecture, openshift dependencies,
@@ -188,7 +188,7 @@ Projects
 :   {{site.data.keyword.redhat_openshift_notm}} uses [routes](https://docs.redhat.com/en/documentation/openshift_container_platform/4.18/html/ingress_and_load_balancing/configuring-routes){: external} to directly expose an app's service on a hostname so that external clients can reach the service. To create routes, the cluster uses the Ingress operator. You can also use [Ingress](/docs/openshift?topic=openshift-ingress-about-roks4) to expose apps externally and customize routing. Ingress consists of three components: the Ingress operator, Ingress controller, and Route resources. The Ingress controller maps the service to the hostname. By default, the Ingress controller includes two replicas. Make sure that your cluster has at least two worker nodes so that the Ingress controller can run on separate compute hosts for higher availability.
 
 `openshift-marketplace`
-:   The marketplace includes the [OperatorHub](https://docs.openshift.com/container-platform/4.18/operators/understanding/olm-understanding-operatorhub.html){: external} that comes with the {{site.data.keyword.redhat_openshift_notm}} cluster by default. The OperatorHub includes operators from Red Hat and 3rd-party providers. Keep in mind that these operators are provided by the community, might not integrate with your cluster, and are not supported by IBM. You can [enable operators](/docs/openshift?topic=openshift-operators) from the OperatorHub in {{site.data.keyword.redhat_openshift_notm}} web console.
+:   The marketplace includes the [OperatorHub](https://docs.redhat.com/en/documentation/openshift_container_platform/4.18/html/operators/understanding-operators#olm-understanding-operatorhub){: external} that comes with the {{site.data.keyword.redhat_openshift_notm}} cluster by default. The OperatorHub includes operators from Red Hat and 3rd-party providers. Keep in mind that these operators are provided by the community, might not integrate with your cluster, and are not supported by IBM. You can [enable operators](/docs/openshift?topic=openshift-operators) from the OperatorHub in {{site.data.keyword.redhat_openshift_notm}} web console.
 
 `openshift-monitoring`
 :   OpenShift Container Platform includes a [built-in monitoring stack](https://docs.openshift.com/en/container-platform/4.18/virt/monitoring/virt-monitoring-overview.html){: external} for your cluster, that includes metrics and alert managing capabilities. For a comparison of the built-in monitoring stack and other options such as {{site.data.keyword.mon_full_notm}}, see [Understanding options for logging and monitoring](/docs/openshift?topic=openshift-health).
