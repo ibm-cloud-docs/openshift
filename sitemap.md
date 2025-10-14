@@ -5926,7 +5926,7 @@ subcollection: openshift
 
     * [5.7 General policies](/docs/openshift?topic=openshift-benchmarks-414-co#General-Policies-414-co)
 
-* [<a name="remediations-and-explanations">ibm remediations and explanations</a>](/docs/openshift?topic=openshift-benchmarks-414-co#a-nameremediations-and-explanationsibm-remediations-and-explanationsa)
+* [IBM remediations and explanations](/docs/openshift?topic=openshift-benchmarks-414-co#ibm-remediations-and-explanations-414-co)
 
 
 ## CLI plug-in reference

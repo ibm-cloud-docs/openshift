@@ -163,7 +163,8 @@ Follow the instruction in [Using the compliance operator](/docs/openshift?topic=
 | 5.7.3|Apply Security Context to Your Pods and Containers. |Manual|2|Not checked |
 | 5.7.4|The default namespace should not be used. |Automated|2|Not checked |
 
-## <a name="remediations-and-explanations">ibm remediations and explanations</a>
+## IBM remediations and explanations
+{: #ibm-remediations-and-explanations-414-co}
 
 Review information from {{site.data.keyword.IBM_notm}} on the CIS Benchmark results.
 
