@@ -286,10 +286,6 @@ subcollection: openshift
 
 * [October 2025](/docs/openshift?topic=openshift-openshift-relnotes#openshift-oct25)
 
-    * [15 October 2025](/docs/openshift?topic=openshift-openshift-relnotes#openshift-oct1525)
-
-        * {{site.data.keyword.openshiftlong_notm}} master fix packs.
-
     * [13 October 2025](/docs/openshift?topic=openshift-openshift-relnotes#openshift-oct1325)
 
         * New! General availability of the {{site.data.keyword.cos_full_notm}} cluster add-on
