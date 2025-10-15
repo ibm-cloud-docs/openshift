@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2025
-lastupdated: "2025-10-14"
+lastupdated: "2025-10-15"
 
 
 keywords: openshift
@@ -285,6 +285,10 @@ subcollection: openshift
 [Release notes](/docs/openshift?topic=openshift-openshift-relnotes#openshift-relnotes)
 
 * [October 2025](/docs/openshift?topic=openshift-openshift-relnotes#openshift-oct25)
+
+    * [15 October 2025](/docs/openshift?topic=openshift-openshift-relnotes#openshift-oct1525)
+
+        * {{site.data.keyword.openshiftlong_notm}} master fix packs.
 
     * [13 October 2025](/docs/openshift?topic=openshift-openshift-relnotes#openshift-oct1325)
 
