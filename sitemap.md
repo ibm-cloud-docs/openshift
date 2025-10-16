@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2025
-lastupdated: "2025-10-15"
+lastupdated: "2025-10-16"
 
 
 keywords: openshift
@@ -6538,9 +6538,7 @@ subcollection: openshift
 {: #sitemap_api_reference}
 
 
-[IBM Cloud Kubernetes Service API](https://containers.cloud.ibm.com/global/swagger-global-api/#/){: external}
-
-[IBM Cloud Kubernetes Service API JSON](https://containers.cloud.ibm.com/global/swagger-global-api/swagger.json){: external}
+[Red Hat OpenShift on IBM Cloud API](https://cloud.ibm.com/apidocs/kubernetes/containers-v1-v2){: external}
 
 [OpenShift Container Platform REST API](https://docs.redhat.com/documentation/openshift_container_platform/4.18/html/api_overview/index){: external}
 
