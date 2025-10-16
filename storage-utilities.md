@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2025
-lastupdated: "2025-05-29"
+lastupdated: "2025-10-16"
 
 
 keywords: kubernetes, openshift
@@ -470,7 +470,7 @@ If you want to detach a volume, delete the PV. Detached volumes are still author
 ## VPC: Adding raw {{site.data.keyword.block_storage_is_short}} to VPC worker nodes by using the API
 {: #vpc_api_attach}
 
-You can use the {{site.data.keyword.containershort_notm}} API to attach and detach raw, unformatted [{{site.data.keyword.blockstorageshort}}](https://containers.cloud.ibm.com/global/swagger-global-api/#/storage/GetClassicVolume){: external} to a worker node in your VPC cluster.
+You can use the {{site.data.keyword.containershort_notm}} API to attach and detach raw, unformatted [{{site.data.keyword.blockstorageshort}}](https://cloud.ibm.com/apidocs/kubernetes/containers-v1-v2){: external} to a worker node in your VPC cluster.
 {: shortdesc}
 
 You can attach a volume to one worker node only. Make sure that the volume is in the same zone as the worker node for the attachment to succeed.

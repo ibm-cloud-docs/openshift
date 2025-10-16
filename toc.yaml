@@ -395,11 +395,8 @@ toc:
           label: API reference
           topics:
           - link:
-              label: IBM Cloud Kubernetes Service API
-              href: https://containers.cloud.ibm.com/global/swagger-global-api/#/
-          - link:
-              label: IBM Cloud Kubernetes Service API JSON
-              href: https://containers.cloud.ibm.com/global/swagger-global-api/swagger.json
+              label: Red Hat OpenShift on IBM Cloud API
+              href: https://cloud.ibm.com/apidocs/kubernetes/containers-v1-v2
           - link:
               label: OpenShift Container Platform REST API
               href: https://docs.redhat.com/documentation/openshift_container_platform/4.18/html/api_overview/index
