@@ -1,7 +1,7 @@
 ---
 copyright: 
   years: 2024, 2025
-lastupdated: "2025-10-13"
+lastupdated: "2025-10-16"
 
 
 keywords: openshift, {{site.data.keyword.openshiftlong_notm}}, ai, add-on
@@ -26,7 +26,7 @@ Want to deploy the OpenShift AI operator on a new cluster? Try the [OpenShift AI
 ## Supported versions
 {: #ai-addon-version}
 
-Review the supported OpenShift AI add-on versions and the corresponding [OpenShift AI](https://www.redhat.com/en/products/ai/openshift-ai){: external} and [{{site.data.keywod.openshiftshort}}](/docs/openshift?topic=openshift-openshift_versions) versions. 
+Review the supported OpenShift AI add-on versions and the corresponding [OpenShift AI](https://www.redhat.com/en/products/ai/openshift-ai){: external} and [{{site.data.keyword.openshiftshort}}](/docs/openshift?topic=openshift-openshift_versions) versions. 
 
 | OpenShift AI add-on version | Red Hat OpenShift AI version |	Supported Red Hat OpenShift on IBM Cloud versions |
 | --------------------------  | ---------------------------- | -------------------------------------------------- |
