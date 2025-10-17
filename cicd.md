@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2025
-lastupdated: "2025-08-27"
+lastupdated: "2025-10-17"
 
 
 keywords: openshift, {{site.data.keyword.openshiftlong_notm}}, continuous integration and delivery
@@ -65,9 +65,6 @@ Grafeas
 
 {{site.data.keyword.deliverypipelinelong}}
 :   With your app configuration files organized in a source control management system such as Git, you can build your pipeline to test and deploy code to different environments, such as `test` and `prod`. {{site.data.keyword.contdelivery_full}} allows you to automate your app builds and container deployments to Kubernetes clusters by using a toolchain. You can also check out [this tutorial on Continuous Deployment to Kubernetes](/docs/ContinuousDelivery?topic=ContinuousDelivery-tutorial-cd-kubernetes).
-
-Razee
-:   [Razee](https://razee.io/){: external} is an open-source project that automates and manages the deployment of Kubernetes resources across clusters, environments, and cloud providers, and helps you to visualize deployment information for your resources so that you can monitor the rollout process and find deployment issues more quickly. For more information about Razee and how to set up Razee in your cluster to automate your deployment process, see the [Razee documentation](https://github.com/razee-io/Razee){: external}.
 
 
 

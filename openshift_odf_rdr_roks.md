@@ -2,7 +2,7 @@
 
 copyright:
   years: 2025, 2025
-lastupdated: "2025-09-18"
+lastupdated: "2025-10-17"
 
 
 keywords: openshift, openshift data foundation, openshift container storage, disaster recovery
@@ -103,8 +103,13 @@ By default, the Red Hat OperatorHub catalog is disabled. You need to enable it m
 Follow these steps to install ACM on the hub cluster and then set up the disaster recovery policy.
 {: shortdesc}
 
+
+
+
+
 1. Install ACM version 2.12 or later on the hub cluster from the [{{site.data.keyword.redhat_openshift_notm}} clusters console](https://cloud.ibm.com/kubernetes/clusters?platformType=openshift){: external}.
   
+
 1. From **Operators** > **Installed Operators**, create a `MultiClusterHub` instance.
   
 1. Open the ACM Console and import the 2 managed ODF clusters to the ACM hub.

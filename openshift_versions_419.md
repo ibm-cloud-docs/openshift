@@ -2,7 +2,7 @@
 
 copyright:
   years: 2024, 2025
-lastupdated: "2025-09-24"
+lastupdated: "2025-10-17"
 
 
 keywords: openshift, version, update, upgrade, 4.19, update openshift
@@ -57,7 +57,7 @@ For Satellite clusters: The 4.19 RHCOS image is not yet supported in Satellite. 
 The [Satellite Location Sizing Requirements](/docs/satellite?topic=satellite-location-sizing) for hosting {{site.data.keyword.openshiftlong_notm}} version 4.19 clusters are the same regardless of whether the location is RHEL (non-CoreOS) or CoreOS-enabled. The requirements for location nodes are the same as those for [CoreOS-enabled locations](/docs/satellite?topic=satellite-location-sizing#control-plane-how-many-clusters-rhcos).
 {: important}
 
-[Portworx](/docs/containers?topic=containers-storage_portworx_about) does not yet support version 4.19. Do not upgrade your cluster to version 4.19 if your apps use Portworx. For more information, see [Supported OpenShift versions](https://docs.portworx.com/portworx-enterprise/platform/openshift/ocp-ibm-cloud/before-you-begin#supported-openshift-versions){: external}
+[Portworx](/docs/containers?topic=containers-storage_portworx_about) does not yet support version 4.19. Do not upgrade your cluster to version 4.19 if your apps use Portworx. For more information, see [Supported OpenShift versions](https://docs.portworx.com/portworx-enterprise/platform/ibm-cloud#supported-openshift-versions){: external}
 {: important}
 
 
