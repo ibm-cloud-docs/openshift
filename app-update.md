@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2025
-lastupdated: "2025-08-12"
+lastupdated: "2025-10-17"
 
 
 keywords: kubernetes, openshift, red hat, red hat openshift, update, upgrade, openshift
@@ -226,7 +226,7 @@ To see a list of supported integrations and steps for setting up a continuous de
 ## Copying deployments to another cluster
 {: #copy_apps_cluster}
 
-When you use a [version control system such as Git](/docs/openshift?topic=openshift-plan_deploy#deploy_organize), configuration management projects such as [`kustomize`](/docs/openshift?topic=openshift-kustomize), or continuous delivery tools such as [Razee](https://razee.io/){: external} in your cluster, you can deploy your app configuration files quickly from cluster to cluster. Sometimes you have only a few deployments that you tested in a cluster and prefer to copy these deployments and redeploy in another cluster.
+When you use a [version control system such as Git](/docs/openshift?topic=openshift-plan_deploy#deploy_organize), configuration management projects such as [`kustomize`](/docs/openshift?topic=openshift-kustomize), or continuous delivery tools in your cluster, you can deploy your app configuration files quickly from cluster to cluster. Sometimes you have only a few deployments that you tested in a cluster and prefer to copy these deployments and redeploy in another cluster.
 {: shortdesc}
 
 Before you begin, you need two clusters and the **Manager** [service access role](/docs/openshift?topic=openshift-iam-platform-access-roles) for all projects in both clusters so that you can copy all the resources from one cluster and deploy them to another.

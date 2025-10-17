@@ -3,7 +3,7 @@
 copyright:
   years: 2024, 2025
 
-lastupdated: "2025-10-14"
+lastupdated: "2025-10-17"
 
 
 keywords: change log, version history, 4.18_openshift
@@ -65,12 +65,12 @@ The following table shows the changes that are in the master fix pack 4.18.24_15
 | Component | Previous | Current | Description |
 | --- | --- | --- | --- |
 | Calico | v3.29.4 | v3.29.5 | See the [Calico release notes](https://docs.tigera.io/calico/3.29/release-notes/#v3.29.5){: external}. |
-| etcd | v3.5.22 | v3.5.23 | See the [etcd release notes](https://github.com/coreos/etcd/releases/v3.5.23){: external}. |
+| etcd | v3.5.22 | v3.5.23 | See the [etcd release notes](https://github.com/etcd-io/etcd/releases/v3.5.23){: external}. |
 | {{site.data.keyword.cloud_notm}} Controller Manager | v1.31.13-1 | v1.31.13-2 | https://github.ibm.com/alchemy-containers/armada-lb/compare/v1.31.13-1...v1.31.13-2 |
 | {{site.data.keyword.filestorage_full_notm}} for Classic plug-in and monitor | 451 | 452 | New version contains updates and security fixes. |
 | Key Management Service provider | v2.10.16 | v2.10.17 | New version contains updates and security fixes. |
 | Portieris admission controller | v0.13.29 | v0.13.30 | See the [Portieris admission controller release notes](https://github.com/{{site.data.keyword.IBM_notm}}/portieris/releases/tag/v0.13.30){: external}. |
-| {{site.data.keyword.openshiftlong_notm}}. | 4.18.21 | 4.18.24 | See the [{{site.data.keyword.openshiftlong_notm}} release notes](https://docs.openshift.com/container-platform/4.18/release_notes/ocp-4-18-release-notes.html#ocp-4-18-24){: external}. |
+| {{site.data.keyword.openshiftlong_notm}}. | 4.18.21 | 4.18.24 | See the [{{site.data.keyword.openshiftlong_notm}} release notes](https://docs.redhat.com/en/documentation/openshift_container_platform/4.18/html/release_notes/ocp-4-18-release-notes#ocp-4-18-24){: external}. |
 | Tigera Operator | v1.36.11 | v1.36.13 | See the [Tigera Operator release notes](https://github.com/tigera/operator/releases/tag/v1.36.13){: external}. |
 {: caption="Changes since version 4.18.21_1555_openshift" caption-side="bottom"}
 
@@ -85,7 +85,7 @@ The following table shows the components included in the worker node fix pack 4.
 | Component | Version | Description |
 | ---- | ---- | ---- |
 |RHEL_9|5.14.0-503.40.1.el9_5|N/A|
-|Red Hat OpenShift and Red Hat CoreOS|4.18.24|For more information, see the [change logs](https://docs.redhat.com/en/documentation/openshift_container_platform/4.18/html/release_notes/ocp-4-18-release-notes.html#ocp-4-18-24_release-notes).|
+|Red Hat OpenShift and Red Hat CoreOS|4.18.24|For more information, see the [change logs](https://docs.redhat.com/en/documentation/openshift_container_platform/4.18/html/release_notes/ocp-4-18-release-notes#ocp-4-18-24).|
 |HAProxy|e0a48fcf355d98dc769ea048d2fd02044b11ed62|N/A|
 {: caption="4.18.24_1560_openshift fix pack." caption-side="bottom"}
 {: #cl-boms-41824_1560_openshift_W-component-table}

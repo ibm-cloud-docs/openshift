@@ -2,7 +2,7 @@
 
 copyright:
   years: 2024, 2025
-lastupdated: "2025-09-18"
+lastupdated: "2025-10-17"
 
 
 keywords: openshift, version, update, upgrade, 4.18, update openshift
@@ -52,7 +52,7 @@ Dates that are marked with a dagger (`†`) are tentative and subject to change.
 Review changes that you might need to make when you [update a cluster](/docs/openshift?topic=openshift-update) to version 4.18. This information summarizes updates that are likely to have an impact on deployed apps when you update.
 {: shortdesc}
 
-[Portworx](/docs/containers?topic=containers-storage_portworx_about) does not yet support version 4.18. Do not upgrade your cluster to version 4.18 if your apps use Portworx. For more information, see [Supported OpenShift versions](https://docs.portworx.com/portworx-enterprise/platform/openshift/ocp-ibm-cloud/before-you-begin#supported-openshift-versions){: external}
+[Portworx](/docs/containers?topic=containers-storage_portworx_about) does not yet support version 4.18. Do not upgrade your cluster to version 4.18 if your apps use Portworx. For more information, see [Supported OpenShift versions](https://docs.portworx.com/portworx-enterprise/platform/ibm-cloud#supported-openshift-versions){: external}
 {: important}
 
 The [Satellite Location Sizing Requirements](/docs/satellite?topic=satellite-location-sizing) for hosting {{site.data.keyword.openshiftlong_notm}} version 4.18 clusters are now the same regardless of whether the location is RHEL (non-CoreOS) or CoreOS-enabled. The requirements for location nodes are the same as those for [CoreOS-enabled locations](/docs/satellite?topic=satellite-location-sizing#control-plane-how-many-clusters-rhcos).
