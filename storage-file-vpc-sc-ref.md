@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2022, 2025
-lastupdated: "2025-09-24"
+lastupdated: "2025-10-22"
 
 
 keywords: openshift, file storage, storage class reference, eni
@@ -23,13 +23,6 @@ The available storage classes correspond to the predefined {{site.data.keyword.f
 - All file shares are provisioned with zonal availability except `regional` classes which have regional availability.
 - All classes are elastic network interface (ENI) enabled.
 - All classes support cross-zone mounting.
-
-New storage classes were introduced with version 2.0. You can no longer provision new file shares that use the older storage classes. Also, volume expansion does not work for shares that use the older storage classes. However, existing volumes that use the older storage classes continue to function.
-{: note}
-
-Regional file share storage classes are available in Beta for allowlisted account only. For more information, see [Regional file shares overview](/docs/vpc?topic=vpc-file-storage-vpc-about#regional-file-storage-overview). Regional file shares offer more flexibility for specifying capacity and performance along with regional availability. Encryption in transit for regional file share is not supported by the VPC File CSI Driver add-on.
-{: beta}
-
 
 | Name | Description |
 | --- | --- |
