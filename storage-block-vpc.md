@@ -24,8 +24,6 @@ subcollection: openshift
 
 You can choose between predefined storage tiers with GB sizes and IOPS that meet the requirements of your workloads. To find out if {{site.data.keyword.block_storage_is_short}} is the right storage option for you, see [Choosing a storage solution](/docs/openshift?topic=openshift-storage-plan). For pricing information, see [Pricing for {{site.data.keyword.block_storage_is_short}}](https://cloud.ibm.com/infrastructure/provision/vs){: external}.
 
-
-
 The {{site.data.keyword.block_storage_is_short}} cluster add-on is enabled by default on VPC clusters.
 
 
@@ -34,6 +32,8 @@ The {{site.data.keyword.block_storage_is_short}} cluster add-on is enabled by de
 
 In this quick start guide, you create a 10Gi 5IOPS tier {{site.data.keyword.block_storage_is_short}} volume in your cluster by creating a PVC to dynamically provision the volume. Then, you create an app deployment that mounts your PVC.
 {: shortdesc}
+
+Before you begin, choose from the [available generation 2 storage classes](/docs/containers?topic=containers-storage-block-vpc-sc-ref).
 
 Your {{site.data.keyword.block_storage_is_short}} volumes can be mounted by multiple pods as long as those pods are scheduled on the same node.
 {: note}
@@ -47,6 +47,23 @@ Your {{site.data.keyword.block_storage_is_short}} volumes can be mounted by mult
       name: my-pvc
     spec:
       storageClassName: ibmc-vpc-block-5iops-tier
+      accessModes:
+        - ReadWriteOnce
+      resources:
+        requests:
+          storage: 10Gi
+    ```
+    {: codeblock}
+
+    Example using the `ibmc-vpc-block-sdp` storage class:
+
+    ```yaml
+    apiVersion: v1
+    kind: PersistentVolumeClaim
+    metadata:
+      name: my-pvc
+    spec:
+      storageClassName: ibmc-vpc-block-sdp
       accessModes:
         - ReadWriteOnce
       resources:
