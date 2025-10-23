@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2022, 2025
-lastupdated: "2025-10-22"
+lastupdated: "2025-10-23"
 
 
 keywords: openshift, file storage, storage class reference, eni
@@ -23,6 +23,14 @@ The available storage classes correspond to the predefined {{site.data.keyword.f
 - All file shares are provisioned with zonal availability except `regional` classes which have regional availability.
 - All classes are elastic network interface (ENI) enabled.
 - All classes support cross-zone mounting.
+
+Regional file share storage classes are available in Beta for allowlisted account only. For more information, see [Regional file shares overview](/docs/vpc?topic=vpc-file-storage-vpc-about#regional-file-storage-overview). Regional file shares offer more flexibility for specifying capacity and performance along with regional availability. Encryption in transit for regional file share is not supported by the VPC File CSI Driver add-on.
+{: beta}
+
+The [regional file share](/docs/vpc?topic=vpc-file-storage-vpc-about#regional-file-storage-overview) (`rfs`) profile is the second-generation profile in the defined performance profile family. With this profile, you can create file shares with more flexibility for specifying capacity and performance along with regional availability. Regional file shares can be a better choice for workloads that prioritize durability, availability, or symmetric access across zones over low latency.
+- Volume size can range between 1 GiB to 32,000 GiB.
+- Volume performance is fixed at 35,000 IOPS.
+- The tunable throughput range is 1-8192 Mbps.
 
 | Name | Description |
 | --- | --- |

@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2024, 2025
-lastupdated: "2025-10-22"
+lastupdated: "2025-10-23"
 
 
 keywords: openshift, block storage, deploy apps, storage class reference
@@ -30,6 +30,10 @@ The SSD defined performance (`sdp`) profile is a second-generation volume profil
 - Volume size can range from 1 - 32,000 GB.
 - Volume performance can range from 3000 - 64,000 IOPS.
 - The throughput range is 125-1024 Mbps (1000-8192 Mbps).
+- Boot volumes can expand beyond 250 GB.
+- Snapshot provisioning is allowed for both attached and detached volumes.
+
+After provisioning, you can fine tune the [IOPS](/docs/vpc?topic=vpc-adjusting-volume-iops&interface=ui) and [throughput](/docs/vpc?topic=vpc-adjusting-volume-throughput&interface=ui) of a volume in the CLI, UI, or by accessing the PVC.
 
 For more information, see [Block Storage capacity and performance](/docs/vpc?topic=vpc-capacity-performance&interface=ui) and [SSD defined performance profile](/docs/vpc?topic=vpc-block-storage-profiles&interface=ui#defined-performance-profile).
 

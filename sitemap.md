@@ -1807,9 +1807,7 @@ subcollection: openshift
 
 * [Automating cluster deployments with the API](/docs/openshift?topic=openshift-cs_api_install#cs_api)
 
-* [Refreshing IAM access tokens and obtaining new refresh tokens with the API](/docs/openshift?topic=openshift-cs_api_install#cs_api_refresh)
-
-* [Refreshing {{site.data.keyword.cloud_notm}} IAM access tokens and obtaining new refresh tokens with the CLI](/docs/openshift?topic=openshift-cs_api_install#cs_cli_refresh)
+* [Refreshing IAM access tokens with the API](/docs/openshift?topic=openshift-cs_api_install#cs_api_refresh)
 
 
 ## Creating clusters
