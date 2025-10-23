@@ -5916,6 +5916,8 @@ subcollection: openshift
 
 [4.14 compliance operator benchmark](/docs/openshift?topic=openshift-benchmarks-414-co#benchmarks-414-co)
 
+* [1 Control plane components](/docs/openshift?topic=openshift-benchmarks-414-co#Control-Plane-Components-414-co)
+
     * [1.1 Master node configuration files](/docs/openshift?topic=openshift-benchmarks-414-co#Master-Node-Configuration-Files-414-co)
 
     * [1.2 API server](/docs/openshift?topic=openshift-benchmarks-414-co#API-Server-414-co)
@@ -5926,11 +5928,15 @@ subcollection: openshift
 
 * [2 Etcd](/docs/openshift?topic=openshift-benchmarks-414-co#etcd-414-co)
 
+* [3 Control plane configuration](/docs/openshift?topic=openshift-benchmarks-414-co#Control-Plane-Configuration-414-co)
+
     * [3.1 Authentication and authorization](/docs/openshift?topic=openshift-benchmarks-414-co#Authentication-and-Authorization-414-co)
 
     * [3.2 Logging](/docs/openshift?topic=openshift-benchmarks-414-co#Logging-414-co)
 
 * [4 Worker nodes](/docs/openshift?topic=openshift-benchmarks-414-co#Worker-Nodes-414-co)
+
+* [5 Policies](/docs/openshift?topic=openshift-benchmarks-414-co#Policies-414-co)
 
     * [5.1 RBAC and service accounts](/docs/openshift?topic=openshift-benchmarks-414-co#RBAC-and-Service-Accounts-414-co)
 

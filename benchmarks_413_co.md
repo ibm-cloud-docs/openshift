@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2023, 2025
-lastupdated: "2025-05-30"
+lastupdated: "2025-10-23"
 
 
 keywords: openshift, benchmarks, 4.13, compliance operator, compliance
@@ -139,7 +139,7 @@ The master node configuration is not stored as a set of files; therefore, rules 
 | -- | -- | -- | -- | -- |
 | 3.2.1|Ensure that a minimal audit policy is created. |Automated|1|Pass |
 | 3.2.2|Ensure that the audit policy covers key security concerns. |Manual|2|Pass |
-{: caption="Section 3.3 Logging benchmark results"}
+{: caption="Section 3.2 Logging benchmark results"}
 
 ## 4 Worker Nodes
 {: #co-benchmark-413-4}
