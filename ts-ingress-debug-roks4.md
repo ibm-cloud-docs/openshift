@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2025
-lastupdated: "2025-10-01"
+lastupdated: "2025-10-23"
 
 
 keywords: openshift
@@ -169,7 +169,7 @@ Verify that the Ingress operator and the Ingress controller are healthy. Ingress
         ```
         {: pre}
 
-        * For example, in VPC clusters, you might see an error message such as `The VPC load balancer that routes requests to this Kubernetes LoadBalancer service is offline`. For more information, see [VPC clusters: Why can't my app connect via load balancer?](/docs/openshift?topic=openshift-vpc_ts_lb).
+        For example, in VPC clusters, you might see an error message such as `The VPC load balancer that routes requests to this Kubernetes LoadBalancer service is offline`. For more information, see [VPC clusters: Why can't my app connect via load balancer?](/docs/openshift?topic=openshift-vpc_ts_lb).
 
 ## Step 3: Ping the Ingress subdomain and Ingress controller public IP address
 {: #ping-43}
@@ -178,10 +178,9 @@ Check the availability of the public IP addresses of the Ingress controller and 
 {: shortdesc}
 
 1. Verify that your Ingress controller services are reachable by the Ingress controller health check.
-   * **Classic**: If you use Calico pre-DNAT network policies or another custom firewall to block incoming traffic to your cluster, you must allow inbound access on port 80 or 443 from the {{site.data.keyword.redhat_openshift_notm}} control plane and IBM NS1's IPv4 IP addresses to the IP addresses of your Ingress controller services so that the {{site.data.keyword.redhat_openshift_notm}} control plane can check the health of your Ingress controllers. For example, if you use Calico policies, [create a Calico pre-DNAT policy](/docs/openshift?topic=openshift-policy_tutorial#lesson3) to allow inbound access to your Ingress controllers from [IBM NS1's source IP addresses](/docs/containers?topic=containers-firewall#firewall-ingress-domain-monitor) that are used to check the health of your Ingress controllers on port 80 and the [control plane subnets for the region where your cluster is located](https://github.com/IBM-Cloud/kube-samples/tree/master/control-plane-ips){: external}. Continue to the next step to get the Ingress controller service IP addresses.
 
-    
-    
+    * **Classic**: If you use Calico pre-DNAT network policies or another custom firewall to block incoming traffic to your cluster, you must allow inbound access on port 80 or 443 from the {{site.data.keyword.redhat_openshift_notm}} control plane and IBM NS1's IPv4 IP addresses to the IP addresses of your Ingress controller services so that the {{site.data.keyword.redhat_openshift_notm}} control plane can check the health of your Ingress controllers. For example, if you use Calico policies, [create a Calico pre-DNAT policy](/docs/openshift?topic=openshift-policy_tutorial#lesson3) to allow inbound access to your Ingress controllers from [IBM NS1's source IP addresses](/docs/containers?topic=containers-firewall#firewall-ingress-domain-monitor) that are used to check the health of your Ingress controllers on port 80 and the [control plane subnets for the region where your cluster is located](https://github.com/IBM-Cloud/kube-samples/tree/master/control-plane-ips){: external}. Continue to the next step to get the Ingress controller service IP addresses.
+
     * **VPC**: If you have a custom security group on the VPC LBaaS (LoadBalancer-as-a-Service) instances for the cluster ingress, ensure that the security group rules allow the necessary health-check traffic from the Kubernetes [control plane IP addresses](https://github.com/IBM-Cloud/kube-samples/tree/master/control-plane-ips){: external} to port 443.
 
 2. Get the external IP addresses that the Ingress controller services are listening on. If you have a multizone cluster, note that the Ingress controller service in the first zone where you have workers nodes is always named `router-default`, and Ingress controller services in the zones that you subsequently add to your cluster have names such as `router-dal12`. In VPC clusters, the external IP addresses are behind a hostname that is assigned by the VPC load balancer, such as `aabb1122-us-south.lb.appdomain.cloud`.
