@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2023, 2025
-lastupdated: "2025-10-14"
+lastupdated: "2025-10-23"
 
 keywords: openshift, benchmarks, 4.14, openshift benchmarks, openshift 4.14, compliance operator, compliance
 
@@ -20,6 +20,7 @@ Review the compliance operator benchmark results for {{site.data.keyword.openshi
 
 ## 1 Control plane components
 {: #Control-Plane-Components-414-co}
+
 ### 1.1 Master node configuration files
 {: #Master-Node-Configuration-Files-414-co}
 
@@ -27,6 +28,8 @@ The master node configuration is not stored as a set of files; and therefore, ru
 
 ### 1.2 API server
 {: #API-Server-414-co}
+
+
 | Section|Recommendation|Manual/Automated|Level|Result |
 | -- | -- | -- | -- | -- |
 | 1.2.1|Ensure that anonymous requests are authorized. |Automated|1|Pass |
@@ -64,8 +67,12 @@ The master node configuration is not stored as a set of files; and therefore, ru
 | 1.2.33|Ensure that the `--encryption-provider-config` argument is set as appropriate. |Manual|1|[Not checked](#ibm-remediations-and-explanations-414-co) |
 | 1.2.34|Ensure that encryption providers are appropriately configured. |Manual|1|[Not checked](#ibm-remediations-and-explanations-414-co) |
 | 1.2.35|Ensure that the API Server only makes use of Strong Cryptographic Ciphers. |Manual|1|Pass |
+{: caption="Section 1.2 API server benchmark results"}
+
 ### 1.3 Controller manager
 {: #Controller-Manager-414-co}
+
+
 | Section|Recommendation|Manual/Automated|Level|Result |
 | -- | -- | -- | -- | -- |
 | 1.3.1|Ensure that garbage collection is configured as appropriate. |Manual|1|Not checked |
@@ -75,14 +82,22 @@ The master node configuration is not stored as a set of files; and therefore, ru
 | 1.3.5|Ensure that the `--root-ca-file` argument is set as appropriate. |Automated|1|MISSING |
 | 1.3.6|Ensure that the `RotateKubeletServerCertificate` argument is set to true. |Automated|2|Pass |
 | 1.3.7|Ensure that the `--bind-address` argument is set to `127.0.0.1`. |Automated|1|Pass |
+{: caption="Section 1.3 Controller manager benchmark results"}
+
 ### 1.4 Scheduler
 {: #Scheduler-414-co}
+
+
 | Section|Recommendation|Manual/Automated|Level|Result |
 | -- | -- | -- | -- | -- |
 | 1.4.1|Ensure that the `healthz` endpoints for the scheduler are protected by RBAC. |Automated|1|MISSING |
 | 1.4.2|Verify that the scheduler API service is protected by authentication and authorization. |Automated|1|Pass |
+{: caption="Section 1.4 Scheduler benchmark results"}
+
 ## 2 Etcd
 {: #etcd-414-co}
+
+
 | Section|Recommendation|Manual/Automated|Level|Result |
 | -- | -- | -- | -- | -- |
 | 2.1|Ensure that the `--cert-file` and `--key-file` arguments are set as appropriate. |Automated|1|Pass |
@@ -92,19 +107,30 @@ The master node configuration is not stored as a set of files; and therefore, ru
 | 2.5|Ensure that the `--peer-client-cert-auth` argument is set to true. |Automated|1|Pass |
 | 2.6|Ensure that the `--peer-auto-tls` argument is not set to true. |Automated|1|Pass |
 | 2.7|Ensure that a unique Certificate Authority is used for etcd. |Manual|2|[Not checked](#ibm-remediations-and-explanations-414-co) |
+{: caption="Section 2 etcd benchmark results"}
+
 ## 3 Control plane configuration
 {: #Control-Plane-Configuration-414-co}
+
 ### 3.1 Authentication and authorization
 {: #Authentication-and-Authorization-414-co}
+
+
 | Section|Recommendation|Manual/Automated|Level|Result |
 | -- | -- | -- | -- | -- |
 | 3.1.1|Client certificate authentication should not be used for users. |Manual|2|Pass |
+{: caption="Section 3.1 Authentication and Authorization benchmark results"}
+
 ### 3.2 Logging
 {: #Logging-414-co}
+
+
 | Section|Recommendation|Manual/Automated|Level|Result |
 | -- | -- | -- | -- | -- |
 | 3.2.1|Ensure that a minimal audit policy is created. |Automated|1|Pass |
 | 3.2.2|Ensure that the audit policy covers key security concerns. |Manual|2|Pass |
+{: caption="Section 3.3 Logging benchmark results"}
+
 ## 4 Worker nodes
 {: #Worker-Nodes-414-co}
 
@@ -114,8 +140,11 @@ Follow the instruction in [Using the compliance operator](/docs/openshift?topic=
 
 ## 5 Policies
 {: #Policies-414-co}
+
 ### 5.1 RBAC and service accounts
 {: #RBAC-and-Service-Accounts-414-co}
+
+
 | Section|Recommendation|Manual/Automated|Level|Result |
 | -- | -- | -- | -- | -- |
 | 5.1.1|Ensure that the cluster-admin role is only used where required. |Manual|1|Pass |
@@ -124,8 +153,12 @@ Follow the instruction in [Using the compliance operator](/docs/openshift?topic=
 | 5.1.4|Minimize access to create pods. |Manual|1|Not checked |
 | 5.1.5|Ensure that default service accounts are not actively used. |Automated|1|Not checked |
 | 5.1.6|Ensure that Service Account Tokens are only mounted where necessary. |Manual|1|Not checked |
+{: caption="Section 5.1 RBAC and Service Accounts benchmark results"}
+
 ### 5.2 Pod security policies
 {: #Pod-Security-Policies-414-co}
+
+
 | Section|Recommendation|Manual/Automated|Level|Result |
 | -- | -- | -- | -- | -- |
 | 5.2.1|Minimize the admission of privileged containers. |Manual|1|Not checked |
@@ -137,42 +170,60 @@ Follow the instruction in [Using the compliance operator](/docs/openshift?topic=
 | 5.2.7|Minimize the admission of containers with the NET_RAW capability. |Manual|1|Not checked |
 | 5.2.8|Minimize the admission of containers with added capabilities. |Manual|1|[Not checked](#ibm-remediations-and-explanations-414-co) |
 | 5.2.9|Minimize the admission of containers with capabilities assigned. |Manual|2|Not checked |
+{: caption="Section 5.2 Pod Security Policies benchmark results"}
+
 ### 5.3 Network policies and CNI
 {: #Network-Policies-and-CNI-414-co}
+
+
 | Section|Recommendation|Manual/Automated|Level|Result |
 | -- | -- | -- | -- | -- |
 | 5.3.1|Ensure that the CNI in use supports Network Policies. |Manual|1|Pass |
 | 5.3.2|Ensure that all Namespaces have Network Policies defined. |Automated|2|[Not checked](#ibm-remediations-and-explanations-414-co) |
+{: caption="Section 5.3 Network policies and CNI benchmark results"}
+
 ### 5.4 Secrets management
 {: #Secrets-Management-414-co}
+
+
 | Section|Recommendation|Manual/Automated|Level|Result |
 | -- | -- | -- | -- | -- |
 | 5.4.1|Prefer using secrets as files over secrets as environment variables. |Manual|1|Not checked |
 | 5.4.2|Consider external secret storage. |Manual|2|Not checked |
+{: caption="Section 5.4 Secrets management benchmark results"}
+
 ### 5.5 Extensible admission control
 {: #Extensible-Admission-Control-414-co}
+
+
 | Section|Recommendation|Manual/Automated|Level|Result |
 | -- | -- | -- | -- | -- |
 | 5.5.1|Configure Image Provenance using image controller configuration parameters. |Manual|2|Not checked |
+{: caption="Section 5.5 Extensible admission control benchmark results"}
+
 ### 5.7 General policies
 {: #General-Policies-414-co}
+
+
 | Section|Recommendation|Manual/Automated|Level|Result |
 | -- | -- | -- | -- | -- |
 | 5.7.1|Create administrative boundaries between resources using namespaces. |Manual|1|Not checked |
 | 5.7.2|Ensure that the `seccomp` profile is set to docker/default in your pod definitions. |Manual|2|Not checked |
 | 5.7.3|Apply Security Context to Your Pods and Containers. |Manual|2|Not checked |
 | 5.7.4|The default namespace should not be used. |Automated|2|Not checked |
+{: caption="Section 5.7 General policies benchmark results"}
 
 ## IBM remediations and explanations
 {: #ibm-remediations-and-explanations-414-co}
 
 Review information from {{site.data.keyword.IBM_notm}} on the CIS Benchmark results.
 
-| Section | Recommendation/Explanation                                   |
-| ------- | ------------------------------------------------------------ |
+| Section | Recommendation/Explanation |
+| --- | --- |
 | 1.2.23 | Red Hat OpenShift on {{site.data.keyword.IBM_notm}} Cloud can optionally enable Kubernetes API server auditing. |
 | 1.2.33 | Red Hat OpenShift on {{site.data.keyword.IBM_notm}} Cloud can optionally enable a Kubernetes Key Management Service (KMS) provider. |
 | 1.2.34 | Red Hat OpenShift on {{site.data.keyword.IBM_notm}} Cloud can optionally enable a Kubernetes Key Management Service (KMS) provider. |
 | 2.7 | Red Hat OpenShift on {{site.data.keyword.IBM_notm}} Cloud configures a unique Certificate Authority for etcd. |
 | 5.2.8 | Red Hat OpenShift on {{site.data.keyword.IBM_notm}} Cloud installs custom `SCCs`. |
 | 5.3.2 | Red Hat OpenShift on {{site.data.keyword.IBM_notm}} Cloud has a set of default Calico network policies defined and additional network policies can optionally be added. |
+{: caption="Remediations and explanations"}

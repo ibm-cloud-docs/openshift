@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2022, 2025
-lastupdated: "2025-09-23"
+lastupdated: "2025-10-22"
 
 keywords: kubernetes, openshift
 
@@ -577,7 +577,9 @@ Create a persistent volume claim (PVC) to statically provision {{site.data.keywo
 ## Creating your own storage class
 {: #storage-file-vpc-custom-sc}
 
-You can create your own customized storage class with the preferred settings for your {{site.data.keyword.filestorage_vpc_short}} instance. If you need the following features, you must [create your own storage class](/docs/openshift?topic=openshift-storage-file-vpc-apps#storage-file-vpc-custom-sc).
+You can create your own customized storage class with the preferred settings for your {{site.data.keyword.filestorage_vpc_short}} instance. 
+
+If you need the following features, you must [create your own storage class](/docs/openshift?topic=openshift-storage-file-vpc-apps#storage-file-vpc-custom-sc).
 
 - Your app needs to run as non-root.
 - Your cluster is in a different resource group from your VPC and subnet.
@@ -796,7 +798,6 @@ Use a key management service (KMS) provider, such as {{site.data.keyword.keymana
 1. Create a root key in your KMS instance.
     - [{{site.data.keyword.keymanagementserviceshort}} root key](/docs/key-protect?topic=key-protect-create-root-keys#create-root-keys).
     - [{{site.data.keyword.hscrypto}} root key](/docs/hs-crypto?topic=hs-crypto-create-root-keys). By default, the root key is created without an expiration date.
-
 
 1. Complete the [prerequisites for customer-managed encryption](/docs/vpc?topic=vpc-vpc-encryption-planning#byok-encryption-prereqs) and authorize {{site.data.keyword.filestorage_vpc_short}} to access {{site.data.keyword.keymanagementservicelong}}. Make sure to give {{site.data.keyword.filestorage_vpc_short}} at least `Reader` access to your KMS instance.
     

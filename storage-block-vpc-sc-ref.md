@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2024, 2025
-lastupdated: "2025-08-13"
+lastupdated: "2025-10-22"
 
 
 keywords: openshift, block storage, deploy apps, storage class reference
@@ -28,8 +28,8 @@ All storage classes use hourly billing. For more information about pricing, see 
 
 The SSD defined performance (`sdp`) profile is a second-generation volume profile that offers more flexibility than the previous custom profile when it comes to specifying capacity and performance. By using the `sdp` profile, you can specify the capacity, and the maximum throughput limit. 
 - Volume size can range from 1 - 32,000 GB.
-- Volume performance can range of 3000 - 64,000 IOPS.
-- Throughput range is 125-1024 Mbps (1000-8192 Mbps).
+- Volume performance can range from 3000 - 64,000 IOPS.
+- The throughput range is 125-1024 Mbps (1000-8192 Mbps).
 
 For more information, see [Block Storage capacity and performance](/docs/vpc?topic=vpc-capacity-performance&interface=ui) and [SSD defined performance profile](/docs/vpc?topic=vpc-block-storage-profiles&interface=ui#defined-performance-profile).
 

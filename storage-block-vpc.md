@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2025
-lastupdated: "2025-08-21"
+lastupdated: "2025-10-22"
 
 
 keywords: openshift, block storage, deploy apps
@@ -752,7 +752,7 @@ The default storage class for the {{site.data.keyword.block_storage_is_short}} c
 ### Creating your own storage class
 {: #vpc-customize-storage-class}
 
-Create your own customized storage class with the preferred settings for your {{site.data.keyword.block_storage_is_short}} instance.
+Create your own customized storage class with the preferred settings for your {{site.data.keyword.block_storage_is_short}} instance. 
 {: shortdesc}
 
 SSD defined performance profiles (SDP) are available in Dallas, Frankfurt, London, Madrid, Osaka, Sao Paulo, Sydney, Tokyo, Toronto, and Washington, D.C. Snapshot creation for SSD defined performance profiles is available in Dallas, Frankfurt, Tokyo, and Washington, D.C.
@@ -765,12 +765,17 @@ You might create your own storage class if you want to:
 * Set up SSD defined performance.
 
 Before you begin
-:   Review the [Storage class reference](/docs/openshift?topic=openshift-storage-block-vpc-sc-ref) to determine the `profile` that you want to use for your storage class.
-:   You can also review the [custom profiles](/docs/vpc?topic=vpc-block-storage-profiles#custom) if you want to specify custom IOPs for your {{site.data.keyword.block_storage_is_short}}.
-:   If you want to use an SSD defined performance (SDP) profile, [review the capacity range and IOPs details](/docs/vpc?topic=vpc-block-storage-profiles&interface=ui#defined-performance-profile). Note that when using an SSD defined performance, the capacity of the volume is determine by the IOPs and throughput that you specify. 
-:   You can use an existing storage class as a starting point for creating your own class. Save the details of an existing storage class by using the `oc get sc <storageclass> -o yaml` command.
+- Review the [Storage class reference](/docs/openshift?topic=openshift-storage-block-vpc-sc-ref) to determine the `profile` that you want to use for your storage class.
 
-1. Create a customized storage class configuration file.
+- You can also review the [custom profiles](/docs/vpc?topic=vpc-block-storage-profiles#custom) if you want to specify custom IOPs for your {{site.data.keyword.block_storage_is_short}}.
+
+- If you want to use an SSD defined performance (SDP) profile, [review the capacity range and IOPs details](/docs/vpc?topic=vpc-block-storage-profiles&interface=ui#defined-performance-profile). Note that when using an SSD defined performance, the capacity of the volume is determine by the IOPs and throughput that you specify. 
+
+- You can use an existing storage class as a starting point for creating your own class. Save the details of an existing storage class by using the `oc get sc <storageclass> -o yaml` command.
+
+To create a custom storage class:
+
+1. Create a customized storage class configuration file in the following format.
 
     ```yaml
     apiVersion: storage.k8s.io/v1
@@ -838,7 +843,6 @@ Before you begin
 
     `volumeBindingMode`
     :   Choose if you want to delay the creation of the {{site.data.keyword.block_storage_is_short}} instance until the first pod that uses this storage is ready to be scheduled. To delay the creation, enter `WaitForFirstConsumer`. To create the instance when you create the PVC, enter `Immediate`.
-
 
 3. Create the customized storage class in your cluster.
 

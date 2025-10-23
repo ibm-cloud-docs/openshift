@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2025
-lastupdated: "2025-09-18"
+lastupdated: "2025-10-22"
 
 
 keywords: openshift
@@ -120,7 +120,7 @@ Fine-grained access control
     - **Classic infrastructure:** Enables access to your classic infrastructure resources. Example actions that are permitted by classic infrastructure roles are viewing the details of cluster worker node machines or editing networking and storage resources.
     - **VPC infrastructure:** Enables access to VPC infrastructure resources. Example actions that are permitted by VPC infrastructure roles are creating a VPC, adding subnets, changing floating IP addresses, and creating VPC Block Storage instances.
 
-    For more information about access control in a cluster, see [Assigning cluster access](/docs/openshift?topic=openshift-iam-platform-access-roles.
+    For more information about access control in a cluster, see [Assigning cluster access](/docs/openshift?topic=openshift-iam-platform-access-roles).
 
 Admission controllers
 :   Admission controllers are implemented for specific features in Kubernetes and {{site.data.keyword.openshiftlong_notm}}. With admission controllers, you can set up policies in your cluster that determine whether a particular action in the cluster is allowed or not. In the policy, you can specify conditions when a user can't perform an action, even if this action is part of the general permissions that you assigned the user by using RBAC roles. Therefore, admission controllers can provide an extra layer of security for your cluster before an API request is processed by the {{site.data.keyword.redhat_openshift_notm}} API server.
