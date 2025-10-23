@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2025
-lastupdated: "2025-10-22"
+lastupdated: "2025-10-23"
 
 
 keywords: openshift, block storage, deploy apps
@@ -752,7 +752,7 @@ The default storage class for the {{site.data.keyword.block_storage_is_short}} c
 ### Creating your own storage class
 {: #vpc-customize-storage-class}
 
-Create your own customized storage class with the preferred settings for your {{site.data.keyword.block_storage_is_short}} instance. 
+Create your own customized storage class with the preferred settings for your {{site.data.keyword.block_storage_is_short}} instance. By using the SDP profile, you can specify the capacity, and the maximum throughput limit.
 {: shortdesc}
 
 SSD defined performance profiles (SDP) are available in Dallas, Frankfurt, London, Madrid, Osaka, Sao Paulo, Sydney, Tokyo, Toronto, and Washington, D.C. Snapshot creation for SSD defined performance profiles is available in Dallas, Frankfurt, Tokyo, and Washington, D.C.
@@ -772,6 +772,8 @@ Before you begin
 - If you want to use an SSD defined performance (SDP) profile, [review the capacity range and IOPs details](/docs/vpc?topic=vpc-block-storage-profiles&interface=ui#defined-performance-profile). Note that when using an SSD defined performance, the capacity of the volume is determine by the IOPs and throughput that you specify. 
 
 - You can use an existing storage class as a starting point for creating your own class. Save the details of an existing storage class by using the `oc get sc <storageclass> -o yaml` command.
+
+- To keep costs low, you can initially provision a PVC with low capacity, minimum IOPS, and minimum throughput using the `ibmc-vpc-block-sdp` storage class, which has a minimum of 3000 IOPS and 1000 Throughput (Mbps). After provisioning, you can access the PVC and adjust the [IOPS](/docs/vpc?topic=vpc-adjusting-volume-iops&interface=ui) and [throughput](/docs/vpc?topic=vpc-adjusting-volume-throughput&interface=ui) as needs are better defined.
 
 To create a custom storage class:
 
@@ -843,6 +845,36 @@ To create a custom storage class:
 
     `volumeBindingMode`
     :   Choose if you want to delay the creation of the {{site.data.keyword.block_storage_is_short}} instance until the first pod that uses this storage is ready to be scheduled. To delay the creation, enter `WaitForFirstConsumer`. To create the instance when you create the PVC, enter `Immediate`.
+
+    Example storage class selection:
+
+    If you provision a 9.6TB PVC using the `ibmc-vpc-block-5iops-tier` storage class, the maximum IOPS is 48,000 and the maximum throughput is 6144 Mbps. However, with the `ibmc-vpc-block-sdp-max-bandwidth` storage class, the maximum IOPS is 64,000 and maximum throughput is 8192 Mbps. 
+
+    ```yaml
+    apiVersion: storage.k8s.io/v1
+    kind: StorageClass
+    metadata:
+      name: ibmc-vpc-block-sdp-max-bandwidth
+    provisioner: vpc.block.csi.ibm.io
+    parameters:
+      profile: "sdp" # general-purpose, sdp, 5iops-tier, 10iops-tier, or custom
+      csi.storage.k8s.io/fstype: "ext4" # xfs, ext3, or ext4
+      billingType: "hourly"
+      encrypted: "false"
+      encryptionKey: ""
+      resourceGroup: ""
+      zone: "us-east"
+      region: "tor01"
+      tags: "tag"
+      generation: "gc"
+      throughput: "8192" # Example: 2000
+      classVersion: "1"
+      iops: "64000" # Only specify this parameter if you are using a "custom" profile.
+    allowVolumeExpansion: true # Select true or false. Only supported on version 3.0.1 and later
+    volumeBindingMode: Immediate
+    reclaimPolicy: "Delete"
+    ```
+    {: codeblock}
 
 3. Create the customized storage class in your cluster.
 

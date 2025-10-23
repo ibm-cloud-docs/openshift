@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2022, 2025
-lastupdated: "2025-10-22"
+lastupdated: "2025-10-23"
 
 keywords: kubernetes, openshift
 
@@ -577,7 +577,7 @@ Create a persistent volume claim (PVC) to statically provision {{site.data.keywo
 ## Creating your own storage class
 {: #storage-file-vpc-custom-sc}
 
-You can create your own customized storage class with the preferred settings for your {{site.data.keyword.filestorage_vpc_short}} instance. 
+You can create your own customized storage class with the preferred settings for your {{site.data.keyword.filestorage_vpc_short}} instance. To keep costs low, you can initially provision a PVC with minimum throughput, then later you can access the PVC and adjust the [throughput](/docs/vpc?topic=vpc-file-storage-expand-capacity&interface=ui) as needs are better defined.
 
 If you need the following features, you must [create your own storage class](/docs/openshift?topic=openshift-storage-file-vpc-apps#storage-file-vpc-custom-sc).
 
@@ -627,6 +627,53 @@ If your cluster and VPC are not in the same resource group, you must specify the
         classVersion: "1"
     reclaimPolicy: "Delete"
     allowVolumeExpansion: true
+    ```
+    {: codeblock}
+
+
+    Example storage class selection:
+
+    If you provision a 10Gi PVC by using the `ibmc-vpc-file-min-iops` storage class, then the maximum IOPS is 1,000. The default allocated is 100 and throughput is fixed to 210 Mbps, which is not tunable.
+
+    However, if you provision a 10Gi PVC by using the `ibmc-vpc-file-regional` storage class, then the IOPS is fixed to 35,000 and the maximum throughput is tunable up to 8192 Mbps, even though it defaults to 8 Mbps.
+
+    For another example, if you initially provision a PVC with a size less than 16 TB and fixed IOPS 500 by using the `ibmc-vpc-file-500-iops` storage class, the IOPS and throughput is fixed and calculated based on size and IOPS.
+
+    To expand that PVC beyond 16 TB, then the `ibmc-vpc-file-500-iops` storage class cannot work. By using the `ibmc-vpc-file-regional-max-bandwidth` storage class instead, a PVC of any size can be provisioned up to 32 TB and has up to 35000 IOPS and a default throughput of 8192 Mbps, which is tunable.
+
+
+    ```yaml
+    apiVersion: storage.k8s.io/v1
+    kind: StorageClass
+    metadata:
+      name: ibmc-vpc-file-regional-max-bandwidth
+      labels:
+        app.kubernetes.io/name: ibm-vpc-file-csi-driver
+      annotations:
+        version: v2.0
+        revision: "1"
+    provisioner: vpc.file.csi.ibm.io
+    mountOptions:
+      - hard
+      - nfsvers=4.1
+      - sec=sys
+    parameters:
+      profile: "rfs" # general-purpose, sdp, 5iops-tier, 10iops-tier, or custom
+      billingType: "hourly"
+      encrypted: "false"
+      encryptionKey: ""
+      resourceGroup: ""
+      throughput: "8192" # Example: 2000
+      classVersion: "1"
+      isENIEnabled: "true"   # VPC File Share ENI/VNI feature will be used by all PVCs created with this storage class.
+      securityGroupIDs: ""   # By default cluster security group i.e kube-<clusterID> will be used. User can provide their own command separated SGs.
+      subnetID: ""         # User can provide subnetID in which the ENI/VNI will be created.If not provided CSI driver will use the subnetID available in the cluster' VPC zone.
+      primaryIPID: ""      # Existing ID of reserved IP from any of subnets within the VPC,subnetID is not mandatory for this.
+      primaryIPAddress: "" # IPAddress for ENI/VNI to be created in the respective subnet,subnetID is mandatory for this.
+      uid: "0"             # The initial user identifier for the file share, by default its root.
+      gid: "0"             # The initial group identifier for the file share, by default its root.
+    allowVolumeExpansion: true # Select true or false. Only supported on version 3.0.1 and later
+    reclaimPolicy: "Delete"
     ```
     {: codeblock}
 
