@@ -26,7 +26,7 @@ Review the following storage class information for {{site.data.keyword.block_sto
 
 All storage classes use hourly billing. For more information about pricing, see [Pricing information](https://cloud.ibm.com/infrastructure/provision/vs){: external} and the [corresponding {{site.data.keyword.block_storage_is_short}} tiers](/docs/vpc?topic=vpc-block-storage-profiles#tiers).
 
-The SSD defined performance (`sdp`) profile is a second-generation volume profile that offers more flexibility than the previous custom profile when it comes to specifying capacity and performance. By using the `sdp` profile, you can specify the capacity, and the maximum throughput limit. 
+The SSD defined performance (`sdp`) profiles are second-generation volume profiles that offers more flexibility than the previous custom profiles when it comes to specifying capacity and performance. By using a `sdp` profile, you can specify the capacity, and the maximum throughput limit. 
 - Volume size can range from 1 - 32,000 GB.
 - Volume performance can range from 3000 - 64,000 IOPS.
 - The throughput range is 125-1024 Mbps (1000-8192 Mbps).
