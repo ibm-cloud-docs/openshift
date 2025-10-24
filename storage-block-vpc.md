@@ -33,7 +33,8 @@ The {{site.data.keyword.block_storage_is_short}} cluster add-on is enabled by de
 In this quick start guide, you create a 10Gi 5IOPS tier {{site.data.keyword.block_storage_is_short}} volume in your cluster by creating a PVC to dynamically provision the volume. Then, you create an app deployment that mounts your PVC.
 {: shortdesc}
 
-Now available, [generation 2 storage classes](/docs/openshift?topic=openshift-storage-block-vpc-sc-ref).
+Now available, you can choose a [second-generation storage class](/docs/openshift?topic=openshift-storage-block-vpc-sc-ref).
+{: tip}
 
 Your {{site.data.keyword.block_storage_is_short}} volumes can be mounted by multiple pods as long as those pods are scheduled on the same node.
 {: note}

@@ -61,7 +61,8 @@ New security group rules were introduced in versions 4.11 and later. These rule 
 
 Create a persistent volume claim (PVC) to dynamically provision {{site.data.keyword.filestorage_vpc_short}} for your cluster. Dynamic provisioning automatically creates the matching persistent volume (PV) and orders the file share in your account.
 
-Now available, you can choose a [second-generation storage classes](/docs/openshift?topic=openshift-storage-file-vpc-sc-ref).
+Now available, you can choose a [second-generation storage class](/docs/openshift?topic=openshift-storage-file-vpc-sc-ref).
+{: tip}
 
 1. [Access your {{site.data.keyword.redhat_openshift_notm}} cluster](/docs/openshift?topic=openshift-access_cluster).
 
