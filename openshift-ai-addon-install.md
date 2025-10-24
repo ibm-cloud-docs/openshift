@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2024, 2025
-lastupdated: "2025-10-01"
+lastupdated: "2025-10-24"
 
 
 keywords: openshift, {{site.data.keyword.openshiftlong_notm}}, ai, add-on
@@ -33,6 +33,17 @@ Review the following considerations before setting up the add-on.
 - Your cluster must have at least 2 worker nodes. Each worker node must have a minimum of 8vCPU and 32GB memory.
 - Your worker nodes must use the RHCOS operating system.
 - You must allow outbound traffic from your cluster to install the required operators.
+
+## Supported versions
+{: #versions}
+
+Review the supported OpenShift AI add-on versions and the corresponding [OpenShift AI](https://www.redhat.com/en/products/ai/openshift-ai){: external} and [{{site.data.keyword.openshiftshort}}](/docs/openshift?topic=openshift-openshift_versions) versions. 
+
+| OpenShift AI add-on version | Red Hat OpenShift AI version |	Supported Red Hat OpenShift on IBM Cloud versions |
+| --------------------------  | ---------------------------- | -------------------------------------------------- |
+| 416 | 2.22 | 4.16, 4.17 | 
+| 417 | 2.22 | 4.17, 4.18 |
+{: caption="Supported AI add-on versions and corresponding versions for Red Hat OpenShift AI and Red Hat OpenShift on IBM Cloud". caption-side="bottom"}
 
 ## Considerations
 {: #ai-consideration}
@@ -110,6 +121,8 @@ To include the recommended operators when installing the add-on with the CLI, sp
 - OpenShift Pipelines: `--parameter pipelineEnabled=true`
 - Node Feature Discovery: `--parameter nfdEnabled=true`
 - NVIDIA GPU Operator: `--parameter nvidiaEnabled=true`
+
+For a list of available versions, see [Supported versions](#versions).
 
 
 Installation command.
