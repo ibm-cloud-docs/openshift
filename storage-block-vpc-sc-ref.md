@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2024, 2025
-lastupdated: "2025-10-23"
+lastupdated: "2025-10-24"
 
 
 keywords: openshift, block storage, deploy apps, storage class reference
@@ -41,33 +41,33 @@ SSD defined performance profiles (SDP) are available in Dallas, Frankfurt, Londo
 {: note}
 
 
-| Name | File system | Volume binding mode | Reclaim policy |
-| --- | --- | --- | --- |
-| `ibmc-vpc-block-10iops-tier` | `ext4` | Immediate | Delete |
-| `ibmc-vpc-block-retain-10iops-tier` | `ext4` | Immediate | Retain |
-| `ibmc-vpc-block-metro-10iops-tier` | `ext4` | WaitForFirstConsumer | Delete |
-| `ibmc-vpc-block-metro-retain-10iops-tier` | `ext4` | WaitForFirstConsumer | Retain |
-| `ibmc-vpcblock-odf-10iops` | `ext4` | WaitForFirstConsumer | Delete |
-| `ibmc-vpcblock-odf-ret-10iops` | `ext4` | WaitForFirstConsumer | Retain |
-| `ibmc-vpc-block-5iops-tier` | `ext4` | Immediate | Delete | 
-| `ibmc-vpc-block-retain-5iops-tier` | `ext4` | Immediate | Retain |
-| `ibmc-vpc-block-metro-5iops-tier` | `ext4` | WaitforFirstConsumer | Delete | 
-| `ibmc-vpc-block-metro-retain-5iops-tier` | `ext4` | WaitForFirstConsumer | Retain |
-| `ibmc-vpcblock-odf-5iops` | `ext4` | WaitForFirstConsumer | Delete | 
-| `ibmc-vpcblock-odf-ret-5iops` | `ext4` | WaitForFirstConsumer Retain |
-| `ibmc-vpc-block-custom` | `ext4` | Immediate | Delete |
-| `ibmc-vpc-block-retain-custom` | `ext4` | Immediate | Retain |
-| `ibmc-vpc-block-metro-custom` | `ext4` | WaitforFirstConsumer | Delete |
-| `ibmc-vpc-block-metro-retain-custom` | `ext4` | WaitForFirstConsumer | Retain |
-| `ibmc-vpcblock-odf-custom` | `ext4` | WaitForFirstConsumer | Delete | 
-| `ibmc-vpcblock-odf-ret-custom` | `ext4` | WaitForFirstConsumer | Retain |
-| `ibmc-vpc-block-general-purpose` | `ext4` | Immediate | Delete | 
-| `ibmc-vpc-block-retain-general-purpose` | `ext4` | Immediate | Retain | 
-| `ibmc-vpc-block-metro-general-purpose` | `ext4` | WaitforFirstConsumer | Delete | 
-| `ibmc-vpc-block-metro-retain-general-purpose` | `ext4` | WaitforFirstConsumer | Retain | 
-| `ibmc-vpcblock-odf-ret-general` | `ext4` | WaitforFirstConsumer | Retain | 
-| `ibmc-vpcblock-odf-general` | `ext4` | WaitforFirstConsumer | Delete |
-| `ibmc-vpc-block-sdp` | `ext4` | Immediate | Delete |
-| `ibmc-vpc-block-sdp-max-bandwidth` |  `ext4` | Immediate | Delete | 
-| `ibmc-vpc-block-sdp-max-bandwidth-sds` |`ext4` | WaitForFirstConsumer | Delete |
+| Name | File system | Volume binding mode | Reclaim policy | Generation |
+| --- | --- | --- | --- | --- |
+| `ibmc-vpc-block-sdp` | `ext4` | Immediate | Delete | Second generation |
+| `ibmc-vpc-block-sdp-max-bandwidth` |  `ext4` | Immediate | Delete | Second generation |
+| `ibmc-vpc-block-sdp-max-bandwidth-sds` |`ext4` | WaitForFirstConsumer | Delete | Second generation |
+| `ibmc-vpc-block-10iops-tier` | `ext4` | Immediate | Delete | First generation |
+| `ibmc-vpc-block-retain-10iops-tier` | `ext4` | Immediate | Retain | First generation |
+| `ibmc-vpc-block-metro-10iops-tier` | `ext4` | WaitForFirstConsumer | Delete | First generation |
+| `ibmc-vpc-block-metro-retain-10iops-tier` | `ext4` | WaitForFirstConsumer | Retain | First generation |
+| `ibmc-vpcblock-odf-10iops` | `ext4` | WaitForFirstConsumer | Delete | First generation |
+| `ibmc-vpcblock-odf-ret-10iops` | `ext4` | WaitForFirstConsumer | Retain | First generation |
+| `ibmc-vpc-block-5iops-tier` | `ext4` | Immediate | Delete |  First generation |
+| `ibmc-vpc-block-retain-5iops-tier` | `ext4` | Immediate | Retain | First generation |
+| `ibmc-vpc-block-metro-5iops-tier` | `ext4` | WaitforFirstConsumer | Delete |  First generation |
+| `ibmc-vpc-block-metro-retain-5iops-tier` | `ext4` | WaitForFirstConsumer | Retain | First generation |
+| `ibmc-vpcblock-odf-5iops` | `ext4` | WaitForFirstConsumer | Delete |  First generation |
+| `ibmc-vpcblock-odf-ret-5iops` | `ext4` | WaitForFirstConsumer Retain | First generation |
+| `ibmc-vpc-block-custom` | `ext4` | Immediate | Delete | First generation |
+| `ibmc-vpc-block-retain-custom` | `ext4` | Immediate | Retain | First generation |
+| `ibmc-vpc-block-metro-custom` | `ext4` | WaitforFirstConsumer | Delete | First generation |
+| `ibmc-vpc-block-metro-retain-custom` | `ext4` | WaitForFirstConsumer | Retain | First generation |
+| `ibmc-vpcblock-odf-custom` | `ext4` | WaitForFirstConsumer | Delete | First generation |
+| `ibmc-vpcblock-odf-ret-custom` | `ext4` | WaitForFirstConsumer | Retain | First generation |
+| `ibmc-vpc-block-general-purpose` | `ext4` | Immediate | Delete |  First generation |
+| `ibmc-vpc-block-retain-general-purpose` | `ext4` | Immediate | Retain |  First generation |
+| `ibmc-vpc-block-metro-general-purpose` | `ext4` | WaitforFirstConsumer | Delete | First generation |
+| `ibmc-vpc-block-metro-retain-general-purpose` | `ext4` | WaitforFirstConsumer | Retain | First generation |
+| `ibmc-vpcblock-odf-ret-general` | `ext4` | WaitforFirstConsumer | Retain | First generation |
+| `ibmc-vpcblock-odf-general` | `ext4` | WaitforFirstConsumer | Delete | First generation |
 {: caption="VPC Block storage class reference" caption-side="bottom"}

@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2022, 2025
-lastupdated: "2025-10-23"
+lastupdated: "2025-10-24"
 
 keywords: kubernetes, openshift
 
@@ -61,7 +61,7 @@ New security group rules were introduced in versions 4.11 and later. These rule 
 
 Create a persistent volume claim (PVC) to dynamically provision {{site.data.keyword.filestorage_vpc_short}} for your cluster. Dynamic provisioning automatically creates the matching persistent volume (PV) and orders the file share in your account.
 
-Before you begin, choose from the [available generation 2 storage classes](/docs/containers?topic=containers-storage-file-vpc-sc-ref).
+Now available, you can choose a [second-generation storage classes](/docs/openshift?topic=openshift-storage-file-vpc-sc-ref).
 
 1. [Access your {{site.data.keyword.redhat_openshift_notm}} cluster](/docs/openshift?topic=openshift-access_cluster).
 
@@ -594,7 +594,9 @@ If your cluster and VPC are not in the same resource group, you must specify the
 {: important}
 
 
-1. Create a storage class configuration file. The following example uses the `dp2` [profile](/docs/vpc?topic=vpc-file-storage-profiles&interface=ui#dp2-profile).
+1. Create a storage class configuration file. The following example uses the `dp2` [profile](/docs/vpc?topic=vpc-file-storage-profiles&interface=ui#dp2-profile). Choose between a [first-generation and a second-generation](/docs/openshift?topic=openshift-storage-file-vpc-sc-ref) storage class.
+
+    First-generation example:
 
     ```yaml
     apiVersion: storage.k8s.io/v1
@@ -633,15 +635,15 @@ If your cluster and VPC are not in the same resource group, you must specify the
     {: codeblock}
 
 
-    Example storage class selection:
+    Second-generation example:
 
-    If you provision a 10Gi PVC by using the `ibmc-vpc-file-min-iops` storage class, then the maximum IOPS is 1,000. The default allocated is 100 and throughput is fixed to 210 Mbps, which is not tunable.
+    If you provision a 10Gi PVC by using the first-generation `ibmc-vpc-file-min-iops` storage class, then the maximum IOPS is 1,000. The default allocated is 100 and throughput is fixed to 210 Mbps, which is not tunable.
 
-    However, if you provision a 10Gi PVC by using the `ibmc-vpc-file-regional` storage class, then the IOPS is fixed to 35,000 and the maximum throughput is tunable up to 8192 Mbps, even though it defaults to 8 Mbps.
+    However, if you provision a 10Gi PVC by using the second-generation `ibmc-vpc-file-regional` storage class, then the IOPS is fixed to 35,000 and the maximum throughput is tunable up to 8192 Mbps, even though it defaults to 8 Mbps.
 
-    For another example, if you initially provision a PVC with a size less than 16 TB and fixed IOPS 500 by using the `ibmc-vpc-file-500-iops` storage class, the IOPS and throughput is fixed and calculated based on size and IOPS.
+    For another example, if you initially provision a PVC with a size less than 16 TB and fixed IOPS 500 by using the first-generation `ibmc-vpc-file-500-iops` storage class, the IOPS and throughput is fixed and calculated based on size and IOPS.
 
-    To expand that PVC beyond 16 TB, then the `ibmc-vpc-file-500-iops` storage class cannot work. By using the `ibmc-vpc-file-regional-max-bandwidth` storage class instead, a PVC of any size can be provisioned up to 32 TB and has up to 35000 IOPS and a default throughput of 8192 Mbps, which is tunable.
+    To expand that PVC beyond 16 TB, then the first-generation `ibmc-vpc-file-500-iops` storage class cannot work. By using the second-generation `ibmc-vpc-file-regional-max-bandwidth` storage class instead, a PVC of any size can be provisioned up to 32 TB and has up to 35000 IOPS and a default throughput of 8192 Mbps, which is tunable.
 
 
     ```yaml
