@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2025
-lastupdated: "2025-10-23"
+lastupdated: "2025-10-24"
 
 
 keywords: openshift
@@ -3715,8 +3715,6 @@ subcollection: openshift
 
 [About the Red Hat OpenShift AI add-on](/docs/openshift?topic=openshift-ai-addon-about#ai-addon-about)
 
-* [Supported versions](/docs/openshift?topic=openshift-ai-addon-about#ai-addon-version)
-
 * [What gets deployed when I install the OpenShift AI add-on?](/docs/openshift?topic=openshift-ai-addon-about#ai-addon-deployed)
 
 * [Who is responsible for managing the OpenShift AI add-on components and required operators?](/docs/openshift?topic=openshift-ai-addon-about#ai-addon-responsibility)
@@ -3736,6 +3734,8 @@ subcollection: openshift
 [Installing the Red Hat OpenShift AI add-on](/docs/openshift?topic=openshift-ai-addon-install#ai-addon-install)
 
 * [Minimum requirements](/docs/openshift?topic=openshift-ai-addon-install#ai-min)
+
+* [Supported versions](/docs/openshift?topic=openshift-ai-addon-install#versions)
 
 * [Considerations](/docs/openshift?topic=openshift-ai-addon-install#ai-consideration)
 
