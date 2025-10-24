@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2025
-lastupdated: "2025-10-23"
+lastupdated: "2025-10-24"
 
 
 keywords: openshift, block storage, deploy apps
@@ -33,12 +33,15 @@ The {{site.data.keyword.block_storage_is_short}} cluster add-on is enabled by de
 In this quick start guide, you create a 10Gi 5IOPS tier {{site.data.keyword.block_storage_is_short}} volume in your cluster by creating a PVC to dynamically provision the volume. Then, you create an app deployment that mounts your PVC.
 {: shortdesc}
 
-Before you begin, choose from the [available generation 2 storage classes](/docs/containers?topic=containers-storage-block-vpc-sc-ref).
+Now available, you can choose a [second-generation storage class](/docs/openshift?topic=openshift-storage-block-vpc-sc-ref).
+{: tip}
 
 Your {{site.data.keyword.block_storage_is_short}} volumes can be mounted by multiple pods as long as those pods are scheduled on the same node.
 {: note}
 
-1. Create a file for your PVC and name it `pvc.yaml`.
+1. Create a file for your PVC and name it `pvc.yaml`. Choose between a [first-generation and a second-generation](/docs/openshift?topic=openshift-storage-block-vpc-sc-ref) storage class.
+
+    First-generation example using the `ibmc-vpc-block-5iops-tier` storage class:
 
     ```yaml
     apiVersion: v1
@@ -55,7 +58,7 @@ Your {{site.data.keyword.block_storage_is_short}} volumes can be mounted by mult
     ```
     {: codeblock}
 
-    Example using the `ibmc-vpc-block-sdp` storage class:
+    Second-generation example using the `ibmc-vpc-block-sdp` storage class:
 
     ```yaml
     apiVersion: v1
@@ -794,7 +797,9 @@ Before you begin
 
 To create a custom storage class:
 
-1. Create a customized storage class configuration file in the following format.
+1. Create a customized storage class configuration file in the following format. Choose between a [first-generation and a second-generation](/docs/openshift?topic=openshift-storage-block-vpc-sc-ref) storage class.
+
+    First generation example:
 
     ```yaml
     apiVersion: storage.k8s.io/v1
@@ -863,9 +868,9 @@ To create a custom storage class:
     `volumeBindingMode`
     :   Choose if you want to delay the creation of the {{site.data.keyword.block_storage_is_short}} instance until the first pod that uses this storage is ready to be scheduled. To delay the creation, enter `WaitForFirstConsumer`. To create the instance when you create the PVC, enter `Immediate`.
 
-    Example storage class selection:
+    Second-generation example:
 
-    If you provision a 9.6TB PVC using the `ibmc-vpc-block-5iops-tier` storage class, the maximum IOPS is 48,000 and the maximum throughput is 6144 Mbps. However, with the `ibmc-vpc-block-sdp-max-bandwidth` storage class, the maximum IOPS is 64,000 and maximum throughput is 8192 Mbps. 
+    If you provision a 9.6TB PVC using the first-generation `ibmc-vpc-block-5iops-tier` storage class, the maximum IOPS is 48,000 and the maximum throughput is 6144 Mbps. However, with the second-generation `ibmc-vpc-block-sdp-max-bandwidth` storage class, the maximum IOPS is 64,000 and maximum throughput is 8192 Mbps. 
 
     ```yaml
     apiVersion: storage.k8s.io/v1

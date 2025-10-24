@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2022, 2025
-lastupdated: "2025-10-23"
+lastupdated: "2025-10-24"
 
 keywords: kubernetes, openshift
 
@@ -24,7 +24,7 @@ Review the following notes and considerations before continuing.
 
 -  After you provision a specific type of storage by using a storage class, you can't change the type, or retention policy for the storage device. However, you can [change the size](/docs/openshift?topic=openshift-storage-file-vpc-apps#storage-file-vpc-expansion) and the [IOPS](/docs/vpc?topic=vpc-file-storage-adjusting-iops&interface=ui) if you want to increase your storage capacity and performance. To change the type and retention policy for your storage, you must create a new storage instance and copy the data from the old storage instance to your new one.
 - If your cluster and VPC are in separate resource groups, then before you can provision file shares, you must create your own storage class and provide your VPC resource group ID under the `resourceGroup` section along with the `kube-<clusterID>` security group ID under `securityGroupIDs` section. To retrieve security group ID do the following. For more information, see [Creating your own storage class](/docs/openshift?topic=openshift-storage-file-vpc-apps#storage-file-vpc-custom-sc).
-- New security group rules were introduced in cluster versions 4.11 and later. These rule changes mean that you must sync your security groups before you can use {{site.data.keyword.filestorage_vpc_short}}. For more information, see [Adding {{site.data.keyword.filestorage_vpc_short}} to apps](/docs/containers?topic=containers-storage-file-vpc-apps).
+- New security group rules were introduced in cluster versions 4.11 and later. These rule changes mean that you must sync your security groups before you can use {{site.data.keyword.filestorage_vpc_short}}. For more information, see [Adding {{site.data.keyword.filestorage_vpc_short}} to apps](/docs/openshift?topic=openshift-storage-file-vpc-apps).
 - New storage classes were added with version 2.0 of the add-on. You can no longer provision new file shares that use the older storage classes. Existing volumes that use the older storage classes continue to function, however you cannot expand the volumes that were created using the older classes. For more information, see the [Migrating to a new storage class](/docs/openshift?topic=openshift-storage-file-vpc-apps#storage-file-expansion-migration).
 - Creating a PVC by using [StorageClassSecrets](https://kubernetes-csi.github.io/docs/secrets-and-credentials-storage-class.html){: external} is not supported.
 - Make sure the user who creates the cluster has the Reader, Writer, and Operator permissions for VPC Infrastructure Services.
@@ -61,7 +61,8 @@ New security group rules were introduced in versions 4.11 and later. These rule 
 
 Create a persistent volume claim (PVC) to dynamically provision {{site.data.keyword.filestorage_vpc_short}} for your cluster. Dynamic provisioning automatically creates the matching persistent volume (PV) and orders the file share in your account.
 
-Before you begin, choose from the [available generation 2 storage classes](/docs/containers?topic=containers-storage-file-vpc-sc-ref).
+Now available, you can choose a [second-generation storage class](/docs/openshift?topic=openshift-storage-file-vpc-sc-ref).
+{: tip}
 
 1. [Access your {{site.data.keyword.redhat_openshift_notm}} cluster](/docs/openshift?topic=openshift-access_cluster).
 
@@ -594,7 +595,9 @@ If your cluster and VPC are not in the same resource group, you must specify the
 {: important}
 
 
-1. Create a storage class configuration file. The following example uses the `dp2` [profile](/docs/vpc?topic=vpc-file-storage-profiles&interface=ui#dp2-profile).
+1. Create a storage class configuration file. The following example uses the `dp2` [profile](/docs/vpc?topic=vpc-file-storage-profiles&interface=ui#dp2-profile). Choose between a [first-generation and a second-generation](/docs/openshift?topic=openshift-storage-file-vpc-sc-ref) storage class.
+
+    First-generation example:
 
     ```yaml
     apiVersion: storage.k8s.io/v1
@@ -633,15 +636,15 @@ If your cluster and VPC are not in the same resource group, you must specify the
     {: codeblock}
 
 
-    Example storage class selection:
+    Second-generation example:
 
-    If you provision a 10Gi PVC by using the `ibmc-vpc-file-min-iops` storage class, then the maximum IOPS is 1,000. The default allocated is 100 and throughput is fixed to 210 Mbps, which is not tunable.
+    If you provision a 10Gi PVC by using the first-generation `ibmc-vpc-file-min-iops` storage class, then the maximum IOPS is 1,000. The default allocated is 100 and throughput is fixed to 210 Mbps, which is not tunable.
 
-    However, if you provision a 10Gi PVC by using the `ibmc-vpc-file-regional` storage class, then the IOPS is fixed to 35,000 and the maximum throughput is tunable up to 8192 Mbps, even though it defaults to 8 Mbps.
+    However, if you provision a 10Gi PVC by using the second-generation `ibmc-vpc-file-regional` storage class, then the IOPS is fixed to 35,000 and the maximum throughput is tunable up to 8192 Mbps, even though it defaults to 8 Mbps.
 
-    For another example, if you initially provision a PVC with a size less than 16 TB and fixed IOPS 500 by using the `ibmc-vpc-file-500-iops` storage class, the IOPS and throughput is fixed and calculated based on size and IOPS.
+    For another example, if you initially provision a PVC with a size less than 16 TB and fixed IOPS 500 by using the first-generation `ibmc-vpc-file-500-iops` storage class, the IOPS and throughput is fixed and calculated based on size and IOPS.
 
-    To expand that PVC beyond 16 TB, then the `ibmc-vpc-file-500-iops` storage class cannot work. By using the `ibmc-vpc-file-regional-max-bandwidth` storage class instead, a PVC of any size can be provisioned up to 32 TB and has up to 35000 IOPS and a default throughput of 8192 Mbps, which is tunable.
+    To expand that PVC beyond 16 TB, then the first-generation `ibmc-vpc-file-500-iops` storage class cannot work. By using the second-generation `ibmc-vpc-file-regional-max-bandwidth` storage class instead, a PVC of any size can be provisioned up to 32 TB and has up to 35000 IOPS and a default throughput of 8192 Mbps, which is tunable.
 
 
     ```yaml
