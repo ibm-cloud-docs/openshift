@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2025
-lastupdated: "2025-05-29"
+lastupdated: "2025-10-27"
 
 
 keywords: kubernetes, openshift
@@ -28,6 +28,9 @@ content-type: troubleshoot
 
 While you troubleshoot, you can use the {{site.data.keyword.containerlong_notm}} Diagnostics and Debug Tool to run tests and gather pertinent information from your cluster.
 {: shortdesc}
+
+The Diagnostics and Debug Tool is deprecated and support ends on 20 December 2025. Uninstall the Diagnostics and Debug Tool from your clusters before support ends.
+{: deprecated}
 
 The Diagnostics and Debug Tool is currently not available in clusters in the Montreal (`ca-mon`) region.
 {: note}
@@ -56,3 +59,11 @@ Only one version of the Diagnostics and Debug Tool is available at a time. This 
 1. Check the results of each test.
     * If any test fails, click the information icon next to the test's name for information about how to resolve the issue.
     * You can also use the results of tests to gather information, such as complete YAMLs, that can help you debug your cluster in the following sections.
+
+## Removing the Diagnostics and Debug Tool
+{: #debug-remove}
+
+1. In the [console](https://cloud.ibm.com/containers/cluster-management/clusters){: external}, click the name of the cluster where you want to remove the debug tool add-on.
+
+
+1. On the **Diagnostics and Debug Tool** card, click **Options** > **Uninstall**.

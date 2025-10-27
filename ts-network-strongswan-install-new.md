@@ -1,8 +1,8 @@
 ---
 
 copyright: 
-  years: 2014, 2024
-lastupdated: "2024-01-03"
+  years: 2014, 2025
+lastupdated: "2025-10-27"
 
 
 keywords: openshift
@@ -25,7 +25,8 @@ content-type: troubleshoot
 
 [Classic infrastructure]{: tag-classic-inf}
 
-
+The strongSwan IPSec VPN addon is deprecated, and will be unsupported on December 20, 2025.  See [Classic VPN connectivity](/docs/openshift?topic=openshift-vpn#vpn) for other options
+{: note}
 
 You modify your strongSwan Helm chart and try to install your new release by running `helm install vpn iks-charts/strongswan -f config.yaml`. However, you see the following error:
 {: tsSymptoms}
@@ -65,9 +66,3 @@ Delete and re-install the Helm chart.
     helm install vpn iks-charts/strongswan -f config.yaml
     ```
     {: pre}
-
-
-
-
-
-

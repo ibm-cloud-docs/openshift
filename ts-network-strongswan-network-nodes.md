@@ -1,8 +1,8 @@
 ---
 
 copyright: 
-  years: 2014, 2024
-lastupdated: "2024-01-03"
+  years: 2014, 2025
+lastupdated: "2025-10-27"
 
 
 keywords: openshift
@@ -25,7 +25,8 @@ content-type: troubleshoot
 
 [Classic infrastructure]{: tag-classic-inf}
 
-
+The strongSwan IPSec VPN addon is deprecated, and will be unsupported on December 20, 2025.  See [Classic VPN connectivity](/docs/openshift?topic=openshift-vpn#vpn) for other options
+{: note}
 
 You previously established a working VPN connection by using the strongSwan IPSec VPN service. However, after you added or deleted a worker node on your cluster, you experience one or more of the following symptoms:
 {: tsSymptoms}
@@ -122,7 +123,3 @@ Update the Helm chart values to reflect the worker node changes.
 
     * If the VPN connection has a status of `ESTABLISHED`, the VPN connection was successful. No further action is needed.
     * If you are still having connection issues, see [Why can't I establish VPN connectivity with the strongSwan Helm chart?](/docs/openshift?topic=openshift-cs_vpn_fails) to further troubleshoot your VPN connection.
-
-
-
-

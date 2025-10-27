@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2025
-lastupdated: "2025-10-24"
+lastupdated: "2025-10-27"
 
 
 keywords: openshift
@@ -285,6 +285,10 @@ subcollection: openshift
 [Release notes](/docs/openshift?topic=openshift-openshift-relnotes#openshift-relnotes)
 
 * [October 2025](/docs/openshift?topic=openshift-openshift-relnotes#openshift-oct25)
+
+    * [23 October 2025](/docs/openshift?topic=openshift-openshift-relnotes#openshift-oct2325)
+
+        * The Diagnostics and Debug Tool is deprecated and support ends on 20 December 2025.
 
     * [22 October 2025](/docs/openshift?topic=openshift-openshift-relnotes#openshift-oct2225)
 
@@ -1668,7 +1672,7 @@ subcollection: openshift
 
     * [{{site.data.keyword.BluDirectLink}} for communication over the private network with resources in on-premises data centers](/docs/openshift?topic=openshift-plan_basics#worker-services-onprem-direct-link)
 
-    * [strongSwan IPSec VPN connection for communication over the public network with resources in on-premises data centers](/docs/openshift?topic=openshift-plan_basics#worker-services-onprem-strongswan)
+    * [VPN connection for communication over the public network with resources in on-premises data centers](/docs/openshift?topic=openshift-plan_basics#worker-services-onprem-vpn)
 
 * [External communication to apps that run on worker nodes](/docs/openshift?topic=openshift-plan_basics#external-workers)
 
@@ -2636,7 +2640,7 @@ subcollection: openshift
 
 [Setting up classic VPN connectivity](/docs/openshift?topic=openshift-vpn#vpn)
 
-* [Using the strongSwan IPSec VPN service Helm chart](/docs/openshift?topic=openshift-vpn#vpn-setup)
+* [(Deprecated) Using the strongSwan IPSec VPN service Helm chart](/docs/openshift?topic=openshift-vpn#vpn-setup)
 
 * [strongSwan VPN service considerations](/docs/openshift?topic=openshift-vpn#strongswan_limitations)
 
@@ -9355,6 +9359,8 @@ subcollection: openshift
 [Running tests with the Diagnostics and Debug Tool](/docs/openshift?topic=openshift-debug-tool#debug-tool)
 
 * [Enable and run the Diagnostics and Debug Tool add-on](/docs/openshift?topic=openshift-debug-tool#debug-tool-enable)
+
+* [Removing the Diagnostics and Debug Tool](/docs/openshift?topic=openshift-debug-tool#debug-remove)
 
 
 ## Troubleshooting apps in {{site.data.keyword.openshiftlong_notm}}
