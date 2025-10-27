@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2025
-lastupdated: "2025-08-20"
+lastupdated: "2025-10-27"
 
 
 keywords: kubernetes, openshift
@@ -49,7 +49,6 @@ Because {{site.data.keyword.openshiftlong_notm}} lets you create a cluster on {{
 Supported persistent storage solutions, such as {{site.data.keyword.cloud_notm}} {{site.data.keyword.filestorage_short}}, {{site.data.keyword.cloud_notm}} Block Storage, or {{site.data.keyword.cos_full}} are integrated as Kubernetes drivers and can be set up by using [Helm charts](/docs/openshift?topic=openshift-helm). The Helm chart automatically sets up Kubernetes storage classes, the storage provider, and the storage driver in your cluster. You can use the storage classes to provision persistent storage by using persistent volume claims (PVCs). For more information, see [Planning highly available persistent storage](/docs/openshift?topic=openshift-storage-plan).
 
 To secure your cluster network or connect to an on-prem data center, you can configure one of the following options:
-- [strongSwan IPSec VPN Service](/docs/openshift?topic=openshift-vpn#vpn-setup)
 - [{{site.data.keyword.BluDirectLink}}](/docs/dl?topic=dl-get-started-with-ibm-cloud-dl)
 - [Virtual Router Appliance (VRA)](/docs/openshift?topic=openshift-vpn#vyatta)
 

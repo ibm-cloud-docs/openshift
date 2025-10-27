@@ -1,11 +1,11 @@
 ---
 
 copyright: 
-  years: 2014, 2024
-lastupdated: "2024-04-04"
+  years: 2014, 2025
+lastupdated: "2025-10-27"
 
 
-keywords: openshift, strongswan, ipsec, on-prem, vpnaas, direct link
+keywords: openshift, ipsec, on-prem, vpnaas, direct link
 
 subcollection: openshift
 
@@ -104,7 +104,3 @@ To get started, see [Setting up access to classic infrastructure](/docs/vpc?topi
 {: #vpc-use-transit-gw}
 
 If you plan to connect multiple VPCs to classic infrastructure, you can use {{site.data.keyword.tg_full_notm}} to manage access between your VPCs in multiple regions to resources in your {{site.data.keyword.cloud_notm}} classic infrastructure. To get started, see the [{{site.data.keyword.tg_short}} documentation](/docs/transit-gateway?topic=transit-gateway-getting-started).
-
-
-
-

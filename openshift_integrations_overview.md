@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2025
-lastupdated: "2025-10-17"
+lastupdated: "2025-10-27"
 
 
 keywords: kubernetes, openshift
@@ -26,7 +26,7 @@ Learn more about the following {{site.data.keyword.IBM}}, {{site.data.keyword.cl
 |Service|Description|
 |----|----|
 | {{site.data.keyword.cloud_notm}} platform services | {{site.data.keyword.cloud_notm}} platform services that support service keys can be integrated by using [service binding](/docs/openshift?topic=openshift-service-binding). |
-| {{site.data.keyword.cloud_notm}} classic infrastructure services | Your {{site.data.keyword.redhat_openshift_notm}} cluster is based on fully integrated {{site.data.keyword.cloud_notm}} classic infrastructure services such as Virtual Servers, Bare Metal Servers, or VLANs. You create and work with these services instances by using the {{site.data.keyword.containerlong_notm}} API, CLI, or console. To secure your cluster network or connect to an on-prem data center, you can configure one of the following options:  \n - [strongSwan IPSec VPN Service](/docs/openshift?topic=openshift-vpn#vpn-setup)  \n - [{{site.data.keyword.BluDirectLink}}](/docs/dl?topic=dl-get-started-with-ibm-cloud-dl)  \n - [Virtual Router Appliance (VRA)](/docs/openshift?topic=openshift-vpn#vyatta) |
+| {{site.data.keyword.cloud_notm}} classic infrastructure services | Your {{site.data.keyword.redhat_openshift_notm}} cluster is based on fully integrated {{site.data.keyword.cloud_notm}} classic infrastructure services such as Virtual Servers, Bare Metal Servers, or VLANs. You create and work with these services instances by using the {{site.data.keyword.containerlong_notm}} API, CLI, or console. To secure your cluster network or connect to an on-prem data center, you can configure one of the following options:  \n - [{{site.data.keyword.BluDirectLink}}](/docs/dl?topic=dl-get-started-with-ibm-cloud-dl)  \n - [Virtual Router Appliance (VRA)](/docs/openshift?topic=openshift-vpn#vyatta) |
 | {{site.data.keyword.cloud_notm}} storage | Supported persistent storage solutions, such as {{site.data.keyword.cloud_notm}} {{site.data.keyword.filestorage_short}}, {{site.data.keyword.cloud_notm}} Block Storage, or {{site.data.keyword.cos_full_notm}} are integrated as Kubernetes drivers and can be set up by using Helm charts. The storage documentation for each solution includes instructions to install and manage storage. For more information about choosing a persistent storage solution, see [Planning highly available persistent storage](/docs/openshift?topic=openshift-storage-plan). |
 | Cluster autoscaler | With the `ibm-iks-cluster-autoscaler` plug-in, you can scale the worker pools in your cluster automatically to increase or decrease the number of worker nodes in the worker pool based on the sizing requests of your scheduled workloads. For more information, see [Scaling clusters](/docs/openshift?topic=openshift-cluster-scaling-install-addon). |
 | Diagnostics and debug tool | While you troubleshoot, you can use the [{{site.data.keyword.containerlong_notm}} Diagnostics and Debug Tool add-on](/docs/openshift?topic=openshift-debug-tool) to run tests and gather pertinent information from your cluster. |

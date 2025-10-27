@@ -1,8 +1,8 @@
 ---
 
 copyright: 
-  years: 2014, 2024
-lastupdated: "2024-01-03"
+  years: 2014, 2025
+lastupdated: "2025-10-27"
 
 
 keywords: openshift
@@ -25,7 +25,8 @@ content-type: troubleshoot
 
 [Classic infrastructure]{: tag-classic-inf}
 
-
+The strongSwan IPSec VPN addon is deprecated, and will be unsupported on December 20, 2025.  See [Classic VPN connectivity](/docs/openshift?topic=openshift-vpn#vpn) for other options
+{: note}
 
 When you check VPN connectivity by running `oc exec $STRONGSWAN_POD -- ipsec status`, you don't see a status of `ESTABLISHED`, or the VPN pod is in an `ERROR` state or continues to crash and restart.
 {: tsSymptoms}
@@ -55,7 +56,3 @@ To establish VPN connectivity with the strongSwan Helm chart, you might need to 
         {: pre}
 
         The tool outputs several pages of information as it runs various tests for common networking issues. Output lines that begin with `ERROR`, `WARNING`, `VERIFY`, or `CHECK` indicate possible errors with the VPN connectivity.
-
-
-
-

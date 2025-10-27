@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2025
-lastupdated: "2025-10-22"
+lastupdated: "2025-10-27"
 
 
 keywords: openshift
@@ -258,7 +258,7 @@ The more apps or worker nodes that you expose publicly, the more steps you must 
 ### What if I want to connect my cluster to an on-prem data center?
 {: #onprem-network-setup}
 
-To connect your worker nodes and apps to an on-prem data center, you can configure a [VPN IPSec endpoint with a strongSwan service, a Virtual Router Appliance, or with a Fortigate Security Appliance](/docs/openshift?topic=openshift-vpn#vpn).
+To connect your worker nodes and apps to an on-prem data center, you can configure a [Virtual Router Appliance or a Fortigate Security Appliance](/docs/openshift?topic=openshift-vpn#vpn).
 
 ### Network segmentation and privacy for VPC clusters
 {: #network_segmentation_vpc}

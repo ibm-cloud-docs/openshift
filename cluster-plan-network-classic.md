@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2022, 2025
-lastupdated: "2025-06-13"
+lastupdated: "2025-10-27"
 
 
 keywords: kubernetes, openshift network, classic
@@ -106,12 +106,12 @@ If you use Calico policies or a gateway appliance to control the public or priva
 
 To connect your cluster with your on-premises data center, such as with {{site.data.keyword.icpfull_notm}}, you can set up [{{site.data.keyword.dl_full_notm}}](/docs/dl?topic=dl-get-started-with-ibm-cloud-dl). With {{site.data.keyword.dl_full_notm}}, you create a direct, private connection between your remote network environments and {{site.data.keyword.openshiftlong_notm}} without routing over the public internet.
 
-### strongSwan IPSec VPN connection for communication over the public network with resources in on-premises data centers
-{: #worker-services-onprem-strongswan}
+### VPN connection for communication over the public network with resources in on-premises data centers
+{: #worker-services-onprem-vpn}
 
-Set up a [strongSwan IPSec VPN service](https://www.strongswan.org/about.html){: external} directly in your cluster. The strongSwan IPSec VPN service provides a secure end-to-end communication channel over the internet that is based on the industry-standard Internet Protocol Security (IPSec) protocol suite. To set up a secure connection between your cluster and an on-premises network, [configure and deploy the strongSwan IPSec VPN service](/docs/openshift?topic=openshift-vpn#vpn-setup) directly in a pod in your cluster.
+Set up a VPN service in your cluster to provides a secure end-to-end communication channel over the internet between your cluster and an on-premises network.  Several open source options exist, see [Classic VPN connectivity](/docs/openshift?topic=openshift-vpn#vpn).
 
-If you plan to use a gateway appliance, set up an IPSec VPN endpoint on a gateway appliance, such as a Virtual Router Appliance (Vyatta). Then, [configure the strongSwan IPSec VPN service](/docs/openshift?topic=openshift-vpn#vpn-setup) in your cluster to use the VPN endpoint on your gateway. If you don't want to use strongSwan, you can [set up VPN connectivity directly with VRA](/docs/openshift?topic=openshift-vpn#vyatta).
+If you plan to use a gateway appliance, set up a [VPN endpoint on a gateway appliance](/docs/openshift?topic=openshift-vpn#vyatta), such as a Virtual Router Appliance (Vyatta).
 {: note}
 
 If you plan to connect your cluster to on-premises networks, check out the following helpful information:
@@ -171,7 +171,7 @@ You can choose to allow worker-to-master and user-to-master communication over t
 
 Your worker nodes can automatically, securely communicate with other {{site.data.keyword.cloud_notm}} services that support private cloud service endpoints over your IBM Cloud infrastructure private network. If an {{site.data.keyword.cloud_notm}} service does not support private cloud service endpoints, workers can securely communicate with the services over the public network. You can lock down the public or private interfaces of worker nodes by using Calico network policies for public network or private network isolation. You might need to allow access to the public and private IP addresses of the services that you want to use in these Calico isolation policies.
 
-If your worker nodes need to access services in private networks outside of your {{site.data.keyword.cloud_notm}} account, you can configure and deploy the strongSwan IPSec VPN service in your cluster or leverage {{site.data.keyword.cloud_notm}} {{site.data.keyword.dl_full_notm}} services to connect to these networks.
+If your worker nodes need to access services in private networks outside of your {{site.data.keyword.cloud_notm}} account, see [Setting up private network connectivity](/docs/openshift?topic=openshift-vpn)
 
 ### External communication to apps that run on worker nodes with internet-facing workloads
 {: #internet-facing-external}
@@ -198,7 +198,7 @@ You can set up your gateway appliance with custom network policies to provide de
 ### Worker communication to other services or networks with a gateway appliance
 {: #limited-public-gw-services}
 
-To securely connect your worker nodes and apps to an on-premises network or services outside of {{site.data.keyword.cloud_notm}}, set up an IPSec VPN endpoint on your gateway appliance and the strongSwan IPSec VPN service in your cluster to use the gateway VPN endpoint. If you don't want to use strongSwan, you can set up VPN connectivity directly with VRA.
+To securely connect your worker nodes and apps to an on-premises network or services outside of {{site.data.keyword.cloud_notm}}, see [setting up private network connectivity](/docs/openshift?topic=openshift-vpn)
 
 Your worker nodes can securely communicate with other {{site.data.keyword.cloud_notm}} services and public services outside of {{site.data.keyword.cloud_notm}} through your gateway appliance. You can configure your firewall allow access to the public and private IP addresses of only the services that you want to use
 

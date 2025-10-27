@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2025
-lastupdated: "2025-08-12"
+lastupdated: "2025-10-27"
 
 
 keywords: openshift, http2, quota, app protocol, application protocol
@@ -113,7 +113,7 @@ Keep in mind that the [service](#tech_limits) limitations also apply.
 | {{site.data.keyword.redhat_openshift_notm}} web console | The web console cannot be exposed on the private network on clusters that have both public and private endpoints. If you want to expose the web console on the private network, your cluster cannot have a public endpoint enabled.  | 
 | Private VLANs only | Private network load balancers (NLBs) can't be registered with the domain name server (DNS), so the cluster can't be created with only a private network interface. Worker nodes must be connected to both public and private VLANs. You can still create a private service to expose your apps on only the private network. |
 | Service endpoints | When you create a cluster, you can enable the public and private cloud service endpoint or the public cloud service endpoint only, but you can't enable the private cloud service endpoint only. After cluster creation, you can't later change the service endpoints. | 
-| strongSwan VPN service | See [strongSwan VPN service considerations](/docs/openshift?topic=openshift-vpn#strongswan_limitations). |
+| (Deprecated) strongSwan VPN service | See [strongSwan VPN service considerations](/docs/openshift?topic=openshift-vpn#strongswan_limitations). |
 | Service IP addresses | You can have 65,000 IP addresses per cluster in the 172.21.0.0/16 range that you can assign to Kubernetes services within the cluster. |
 | Subnets per VLAN | Each VLAN has a limit of 40 subnets. |
 {: caption="Classic cluster networking limitations"}

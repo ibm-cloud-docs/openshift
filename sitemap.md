@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2025
-lastupdated: "2025-10-24"
+lastupdated: "2025-10-27"
 
 
 keywords: openshift
@@ -1668,7 +1668,7 @@ subcollection: openshift
 
     * [{{site.data.keyword.BluDirectLink}} for communication over the private network with resources in on-premises data centers](/docs/openshift?topic=openshift-plan_basics#worker-services-onprem-direct-link)
 
-    * [strongSwan IPSec VPN connection for communication over the public network with resources in on-premises data centers](/docs/openshift?topic=openshift-plan_basics#worker-services-onprem-strongswan)
+    * [VPN connection for communication over the public network with resources in on-premises data centers](/docs/openshift?topic=openshift-plan_basics#worker-services-onprem-vpn)
 
 * [External communication to apps that run on worker nodes](/docs/openshift?topic=openshift-plan_basics#external-workers)
 
@@ -2636,7 +2636,7 @@ subcollection: openshift
 
 [Setting up classic VPN connectivity](/docs/openshift?topic=openshift-vpn#vpn)
 
-* [Using the strongSwan IPSec VPN service Helm chart](/docs/openshift?topic=openshift-vpn#vpn-setup)
+* [(Deprecated) Using the strongSwan IPSec VPN service Helm chart](/docs/openshift?topic=openshift-vpn#vpn-setup)
 
 * [strongSwan VPN service considerations](/docs/openshift?topic=openshift-vpn#strongswan_limitations)
 
