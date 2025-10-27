@@ -286,6 +286,8 @@ subcollection: openshift
 
 * [October 2025](/docs/openshift?topic=openshift-openshift-relnotes#openshift-oct25)
 
+    * [27 October 2025](/docs/openshift?topic=openshift-openshift-relnotes#openshift-oct2725)
+
     * [23 October 2025](/docs/openshift?topic=openshift-openshift-relnotes#openshift-oct2325)
 
         * The Diagnostics and Debug Tool is deprecated and support ends on 20 December 2025.

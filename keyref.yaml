@@ -47,10 +47,6 @@ keyword:
   kubernetes_133_release_date: 31 July 2025
   kubernetes_133_unsupported_certainty: tentative
   kubernetes_133_unsupported_date: 14 October 2026
-  kubernetes_134_deprecated: 'False'
-  kubernetes_134_release_date: None
-  kubernetes_134_unsupported_certainty: ''
-  kubernetes_134_unsupported_date: None
   openshift_410_RHEL_7_unsupported_date: 6 December 2022
   openshift_410_RHEL_8_unsupported_date: ''
   openshift_410_deprecated: 'True'
@@ -107,10 +103,10 @@ keyword:
   openshift_418_unsupported_certainty: tentative
   openshift_418_unsupported_date: 26 May 2027
   openshift_419_deprecated: 'False'
-  openshift_419_kube_version: '1.32'
-  openshift_419_release_date: 3 September 2025
-  openshift_419_unsupported_certainty: tentative
-  openshift_419_unsupported_date: 26 May 2027
+  openshift_419_kube_version: ''
+  openshift_419_release_date: None
+  openshift_419_unsupported_certainty: ''
+  openshift_419_unsupported_date: None
   openshift_46_deprecated: 'True'
   openshift_46_kube_version: '1.19'
   openshift_46_release_date: 17 February 2021
@@ -185,10 +181,10 @@ keyword:
   satellite_418_unsupported_certainty: tentative
   satellite_418_unsupported_date: 26 May 2027
   satellite_419_deprecated: 'False'
-  satellite_419_kube_version: '1.32'
-  satellite_419_release_date: 3 September 2025
-  satellite_419_unsupported_certainty: tentative
-  satellite_419_unsupported_date: 26 May 2027
+  satellite_419_kube_version: ''
+  satellite_419_release_date: None
+  satellite_419_unsupported_certainty: ''
+  satellite_419_unsupported_date: None
   satellite_46_deprecated: 'True'
   satellite_46_kube_version: '1.19'
   satellite_46_release_date: 17 February 2021
