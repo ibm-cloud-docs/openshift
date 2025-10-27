@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2025
-lastupdated: "2025-09-15"
+lastupdated: "2025-10-27"
 
 
 keywords: openshift, version, update, upgrade
@@ -60,14 +60,6 @@ All VPC clusters created at version 4.18 or later can use RHCOS worker nodes. Cl
 {: #os-openshift-with-coreos}
 
 
-[Latest]{: tag-green} 4.19 (Kubernetes 1.32)
-- Release date: 3 September 2025
-- End of support: 26 May 2027†
-- Operating systems: `RHEL_9_64`*, Red Hat CoreOS (`RHCOS`)
-- [Version information and update actions](/docs/openshift?topic=openshift-cs_versions_419)
-- [Change log](/docs/openshift?topic=openshift-openshift_changelog_419)
-- [{{site.data.keyword.redhat_openshift_notm}} 4.19 release notes overview](https://docs.redhat.com/en/documentation/openshift_container_platform/4.19/html/release_notes/ocp-4-19-release-notes){: external}
-
 [Default]{: tag-purple} 4.18 (Kubernetes 1.31)
 - Release date: 23 May 2025
 - End of support: 26 May 2027†
@@ -112,14 +104,6 @@ All VPC clusters created at version 4.18 or later can use RHCOS worker nodes. Cl
 ### VPC and Classic clusters
 {: #os-openshift}
 
-
-[Latest]{: tag-green} 4.19 (Kubernetes 1.32)
-- Release date: 3 September 2025
-- End of support: 26 May 2027†
-- Operating systems: `RHEL_9_64`*, Red Hat CoreOS (`RHCOS`)
-- [Version information and update actions](/docs/openshift?topic=openshift-cs_versions_419)
-- [Change log](/docs/openshift?topic=openshift-openshift_changelog_419)
-- [{{site.data.keyword.redhat_openshift_notm}} 4.19 release notes overview](https://docs.redhat.com/en/documentation/openshift_container_platform/4.19/html/release_notes/ocp-4-19-release-notes){: external}
 
 [Default]{: tag-purple} 4.18 (Kubernetes 1.31)
 - Release date: 23 May 2025
@@ -166,14 +150,6 @@ All VPC clusters created at version 4.18 or later can use RHCOS worker nodes. Cl
 {: #os-satellite-with-coreos}
 
 
-[Latest]{: tag-green} 4.19 (Kubernetes 1.32)
-- Release date: 3 September 2025
-- End of support: 26 May 2027†
-- Operating systems: `RHEL_9_64`, Red Hat CoreOS (`RHCOS`)
-- [Version information and update actions](/docs/openshift?topic=openshift-cs_versions_419)
-- [Change log](/docs/openshift?topic=openshift-openshift_changelog_419)
-- [{{site.data.keyword.redhat_openshift_notm}} 4.19 release notes overview](https://docs.redhat.com/en/documentation/openshift_container_platform/4.19/html/release_notes/ocp-4-19-release-notes){: external}
-
 [Default]{: tag-purple} 4.18 (Kubernetes 1.31)
 - Release date: 23 May 2025
 - End of support: 26 May 2027†
@@ -218,14 +194,6 @@ All VPC clusters created at version 4.18 or later can use RHCOS worker nodes. Cl
 ### Clusters in Satellite locations without CoreOS enabled
 {: #os-satellite-without-coreos}
 
-
-[Latest]{: tag-green} 4.19 (Kubernetes 1.32)
-- Release date: 3 September 2025
-- End of support: 26 May 2027†
-- Operating systems: `RHEL_9_64`
-- [Version information and update actions](/docs/openshift?topic=openshift-cs_versions_419)
-- [Change log](/docs/openshift?topic=openshift-openshift_changelog_419)
-- [{{site.data.keyword.redhat_openshift_notm}} 4.19 release notes overview](https://docs.redhat.com/en/documentation/openshift_container_platform/4.19/html/release_notes/ocp-4-19-release-notes){: external}
 
 [Default]{: tag-purple} 4.18 (Kubernetes 1.31)
 - Release date: 23 May 2025
