@@ -286,6 +286,10 @@ subcollection: openshift
 
 * [October 2025](/docs/openshift?topic=openshift-openshift-relnotes#openshift-oct25)
 
+    * [23 October 2025](/docs/openshift?topic=openshift-openshift-relnotes#openshift-oct2325)
+
+        * The Diagnostics and Debug Tool is deprecated and support ends on 20 December 2025.
+
     * [22 October 2025](/docs/openshift?topic=openshift-openshift-relnotes#openshift-oct2225)
 
         * CLI version `1.0.727` is available.
@@ -9355,6 +9359,8 @@ subcollection: openshift
 [Running tests with the Diagnostics and Debug Tool](/docs/openshift?topic=openshift-debug-tool#debug-tool)
 
 * [Enable and run the Diagnostics and Debug Tool add-on](/docs/openshift?topic=openshift-debug-tool#debug-tool-enable)
+
+* [Removing the Diagnostics and Debug Tool](/docs/openshift?topic=openshift-debug-tool#debug-remove)
 
 
 ## Troubleshooting apps in {{site.data.keyword.openshiftlong_notm}}
