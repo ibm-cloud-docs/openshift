@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2025
-lastupdated: "2025-10-27"
+lastupdated: "2025-10-28"
 
 
 keywords: openshift
@@ -9126,6 +9126,26 @@ subcollection: openshift
 
 
 [Service dependencies](/docs/openshift?topic=openshift-service-dependencies#service-dependencies)
+
+* [Data and Control plane deployment for an MZR](/docs/openshift?topic=openshift-service-dependencies#data-and-control-plane-deployment-for-an-mzr)
+
+* [Data and Control plane deployment for an NGDC MZR](/docs/openshift?topic=openshift-service-dependencies#data-and-control-plane-deployment-for-an-ngdc-mzr)
+
+* [Understanding service dependency data](/docs/openshift?topic=openshift-service-dependencies#understand-dependency-data)
+
+    * [What is the expected impact to the functions described?](/docs/openshift?topic=openshift-service-dependencies#expected-impact)
+
+    * [What services does my service depend on?](/docs/openshift?topic=openshift-service-dependencies#dependent-services)
+
+    * [What function does the dependency impact?](/docs/openshift?topic=openshift-service-dependencies#function-impact)
+
+    * [What does customer provided mean for dependencies?](/docs/openshift?topic=openshift-service-dependencies#customer-provided-dep)
+
+    * [Where do dependency services need to be deployed regarding my service?](/docs/openshift?topic=openshift-service-dependencies#deploy-dependencies)
+
+    * [Where are the separate control plane and data plane located, if applicable?](/docs/openshift?topic=openshift-service-dependencies#separate-plans)
+
+* [Additional resources](/docs/openshift?topic=openshift-service-dependencies#additional-resources)
 
 
 ## Worker node flavors
