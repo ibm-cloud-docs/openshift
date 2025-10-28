@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2025
-lastupdated: "2025-10-27"
+lastupdated: "2025-10-28"
 
 
 keywords: kubernetes, release notes, openshift, {{site.data.keyword.openshiftlong_notm}}
@@ -27,6 +27,13 @@ Looking for {{site.data.keyword.cloud_notm}} status, platform announcements, sec
 
 ## October 2025
 {: #openshift-oct25}
+
+### 28 October 2025
+{: #openshift-oct2825}
+{: release-note}
+
+The strongSwan IPSec VPN Service is deprecated
+:    Support the strongSwan IPSec VPN Service ends on 20 December 2025. If you are using the strongSwan IPSec VPN Service in your Classic cluster you must switch to an alternative way to connect your classic cluster to a separate network. For more information, see [Setting up classic VPN connectivity](https://cloud.ibm.com/docs/openshift?topic=openshift-vpn).
 
 
 
