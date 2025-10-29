@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2025
-lastupdated: "2025-10-22"
+lastupdated: "2025-10-29"
 
 
 keywords: openshift, cli reference, kubernetes cli, openshift cli, {{site.data.keyword.openshiftlong_notm}}
@@ -1003,7 +1003,7 @@ Minimum required permissions
 {: #cluster-create-vpc-gen2-example}
 
 ```sh
-ibmcloud oc cluster create vpc-gen2 --name mycluster --version 4.18_openshift --zone us-south-1 --vpc-id a0123456-78b9-0c1d-23d4-567890123ef4 --subnet-id 1ab23c45-6789-0123-456d-789ef01gh234 --flavor bx2.4x16 --workers 3
+ibmcloud oc cluster create vpc-gen2 --name mycluster --version 4.19_openshift --zone us-south-1 --vpc-id a0123456-78b9-0c1d-23d4-567890123ef4 --subnet-id 1ab23c45-6789-0123-456d-789ef01gh234 --flavor bx2.4x16 --workers 3
 ```
 {: pre}
 
@@ -8154,7 +8154,7 @@ Do not exceed your entitlement. Keep in mind that your OpenShift Container Platf
 The following example creates a {{site.data.keyword.satelliteshort}} cluster with the `REDHAT_8_64` operating system.
 
 ```sh
-ibmcloud sat cluster create satellite --name mysatcluster --location my-location --pull-secret <secret> --operating-system REDHAT_8_64 --version 4.18_openshift -hl cpu=4 -hl memory=16265432 --workers 3 --zone myzone1
+ibmcloud sat cluster create satellite --name mysatcluster --location my-location --pull-secret <secret> --operating-system REDHAT_8_64 --version 4.19_openshift -hl cpu=4 -hl memory=16265432 --workers 3 --zone myzone1
 ```
 {: pre}
 

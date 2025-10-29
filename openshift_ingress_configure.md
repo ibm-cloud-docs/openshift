@@ -2,7 +2,7 @@
 
 copyright:
   years: 2023, 2025
-lastupdated: "2025-08-13"
+lastupdated: "2025-10-29"
 
 
 keywords: ingress, configure ingress, annotations, customize ingress, ingress controller, source IP
@@ -87,7 +87,7 @@ By default, the Ingress controller receives connections that contain only the so
 ## Customizing Ingress routing with annotations
 {: #ingress-configure-annotations}
 
-If you want to customize routing rules for your app, you can use [route-specific HAProxy annotations](https://docs.redhat.com/en/documentation/openshift_container_platform/4.18/html/ingress_and_load_balancing/configuring-routes){: external} in the Ingress resources that you define.
+If you want to customize routing rules for your app, you can use [route-specific HAProxy annotations](https://docs.redhat.com/en/documentation/openshift_container_platform/4.19/html/ingress_and_load_balancing/configuring-routes){: external} in the Ingress resources that you define.
 
 These supported annotations are in the format `haproxy.router.openshift.io/<annotation>` or `router.openshift.io/<annotation>`.{{site.data.keyword.containerlong_notm}} annotations (`ingress.bluemix.net/<annotation>`) and NGINX annotations (`nginx.ingress.kubernetes.io/<annotation>`) are not supported for the Ingress controller or the Ingress resource in {{site.data.keyword.redhat_openshift_notm}} version 4.
 
