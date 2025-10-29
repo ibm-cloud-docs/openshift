@@ -3359,6 +3359,8 @@ subcollection: openshift
 
 * [Moving Ingress controller services across VLANs in classic clusters](/docs/openshift?topic=openshift-openshift_routes#migrate-router-vlan-classic)
 
+* [Managing port 80 on the Openshift default router](/docs/openshift?topic=openshift-openshift_routes#managing-port-80-on-the-openshift-default-router)
+
 
 ### Exposing apps with Classic load balancers
 {: #sitemap_exposing_apps_with_classic_load_balancers}

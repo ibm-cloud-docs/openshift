@@ -757,3 +757,31 @@ When you change your worker node VLAN connections, the worker nodes are connecte
     {: pre}
 
 1. Optional: If you no longer need the subnets on the old VLANs, you can [remove them](/docs/openshift?topic=openshift-subnets#remove-subnets).
+
+## Managing port 80 on the Openshift default router
+
+In clusters created on or after 01 December 2025, port 80 is blocked by default for all ALBs. Custers created before this date are not affected.
+{: note}
+
+You can manage port 80 on your OpenShift default router. Note that any changes you make are to all OpenShift default routers in your cluster. 
+
+* To get the status of port 80 on your Openshift default router, run the following command.
+
+    ```sh
+    ibmcloud oc ingress security port80 get --cluster <cluster_name_or_ID>
+    ```
+    {: pre}
+
+* To enable port 80 on your Openshift default router, run the following command.
+
+    ```sh
+    ibmcloud oc ingress security port80 enable --cluster <cluster_name_or_ID>
+    ```
+    {: pre}
+
+* To disable port 80 on your Openshift default router, run the following command.
+
+    ```sh
+    ibmcloud oc ingress security port80 disable --cluster <cluster_name_or_ID>
+    ```
+    {: pre}
