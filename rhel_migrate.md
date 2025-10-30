@@ -2,7 +2,7 @@
 
 copyright:
   years: 2022, 2025
-lastupdated: "2025-08-29"
+lastupdated: "2025-10-30"
 
 
 keywords: rhel, os, operating system, rhcos, 418, migration
@@ -188,24 +188,20 @@ The NVIDIA GPU operator isn't capable of simultaneously managing driver installa
 {: important}
 
 
-- Migrating a {{site.data.keyword.openshiftlong_notm}} version 4.17 on VPC with RHEL 8 worker nodes to version 4.18 with RHCOS worker nodes.
-- Version 4.17 does not support RHCOS worker nodes.
-- Version 4.17 supports RHEL 8 and RHEL 9 (exclusions apply).
-- Version 4.18 does not support RHEL 8 worker nodes.
-- Version supports only RHCOS and RHEL 9.
-- NVIDIA GPU operator does not support RHEL 9 operating system.
-
-
 Complete the following steps to migrate NVIDIA GPU operator driver installations from RHEL 8 to RHCOS worker nodes. This example specifically describes migration steps for the the following cluster configuration:
 
 ### Initial environment details
 {: #env-details}
 
-- {{site.data.keyword.openshiftlong_notm}} 4.17 VPC cluster
-- RHEL 8 worker nodes using NVIDIA GPU flavors
-- NVIDIA GPU operator installed
-- NVIDIA GPU operator's ClusterPolicy installed
-- Operator, ClusterPolicy, and operands ready
+Review the details and notes for migrating an {{site.data.keyword.openshiftlong_notm}} version 4.17 on VPC with RHEL 8 worker nodes to version 4.18 with RHCOS worker nodes.
+
+Version 4.18 supports only RHCOS and RHEL 9. However, the NVIDIA GPU operator does not support RHEL 9 operating system. Therefore, you must migrate to RHCOS when updating to 4.18.
+{: note}
+
+Before you begin, make sure the cluster meets the following requirements.
+
+- A 4.17 VPC cluster with RHEL 8 worker nodes using NVIDIA GPU flavors.
+- The NVIDIA GPU operator, ClusterPolicy, and operands are all installed and `Ready`.
 
 1. Get the details of the `nvidia-gpu-operator`.
     ```sh
