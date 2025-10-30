@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2025
-lastupdated: "2025-10-29"
+lastupdated: "2025-10-30"
 
 
 keywords: openshift
@@ -4786,13 +4786,11 @@ subcollection: openshift
 
 * [Available {{site.data.keyword.redhat_openshift_notm}} versions](/docs/openshift?topic=openshift-openshift_versions#openshift_versions_available)
 
-    * [VPC clusters with CoreOS enabled](/docs/openshift?topic=openshift-openshift_versions#os-openshift-with-coreos)
+    * [VPC clusters](/docs/openshift?topic=openshift-openshift_versions#os-vpc-gen2)
 
-    * [VPC and Classic clusters](/docs/openshift?topic=openshift-openshift_versions#os-openshift)
+    * [Classic clusters](/docs/openshift?topic=openshift-openshift_versions#os-classic)
 
-    * [Clusters in Satellite locations with CoreOS enabled](/docs/openshift?topic=openshift-openshift_versions#os-satellite-with-coreos)
-
-    * [Clusters in Satellite locations without CoreOS enabled](/docs/openshift?topic=openshift-openshift_versions#os-satellite-without-coreos)
+    * [Clusters in Satellite locations](/docs/openshift?topic=openshift-openshift_versions#os-sat)
 
 * [Release lifecycle](/docs/openshift?topic=openshift-openshift_versions#release_lifecycle)
 
