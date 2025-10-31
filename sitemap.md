@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2025
-lastupdated: "2025-10-30"
+lastupdated: "2025-10-31"
 
 
 keywords: openshift
@@ -3359,7 +3359,7 @@ subcollection: openshift
 
 * [Moving Ingress controller services across VLANs in classic clusters](/docs/openshift?topic=openshift-openshift_routes#migrate-router-vlan-classic)
 
-* [Managing port 80 on the Openshift default router](/docs/openshift?topic=openshift-openshift_routes#managing-port-80-on-the-openshift-default-router)
+* [Managing port 80 on the OpenShift default router](/docs/openshift?topic=openshift-openshift_routes#port80)
 
 
 ### Exposing apps with Classic load balancers
