@@ -286,6 +286,10 @@ subcollection: openshift
 
 * [October 2025](/docs/openshift?topic=openshift-openshift-relnotes#openshift-oct25)
 
+    * [31 October 2025](/docs/openshift?topic=openshift-openshift-relnotes#openshift-oct3125)
+
+        * {{site.data.keyword.openshiftlong_notm}} version 4.14 and 4.15 are deprecated.
+
     * [28 October 2025](/docs/openshift?topic=openshift-openshift-relnotes#openshift-oct2825)
 
         * The strongSwan IPSec VPN Service is deprecated
