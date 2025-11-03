@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2025
-lastupdated: "2025-10-31"
+lastupdated: "2025-11-03"
 
 
 keywords: openshift
@@ -289,6 +289,8 @@ subcollection: openshift
     * [31 October 2025](/docs/openshift?topic=openshift-openshift-relnotes#openshift-oct3125)
 
         * {{site.data.keyword.openshiftlong_notm}} version 4.14 and 4.15 are deprecated.
+
+        * Version 4.19 is now the default version for {{site.data.keyword.openshiftlong_notm}}.
 
     * [28 October 2025](/docs/openshift?topic=openshift-openshift-relnotes#openshift-oct2825)
 
