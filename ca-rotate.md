@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2024, 2025
-lastupdated: "2025-08-15"
+lastupdated: "2025-11-03"
 
 
 keywords: openshift, {{site.data.keyword.openshiftlong_notm}}, kubernetes, certificate, rotate, ca rotate
@@ -98,3 +98,30 @@ By default, certificate authority (CA) certificates are administered to secure a
     {: pre}
 
 11. Update any tooling that relies on the previous certificates. If you use the certificate from your cluster's `kubeconfig` file in your own service such as Travis or Jenkins, or if you use `calicoctl` to manage Calico network policies, update your services and automation to use the new certificates.
+
+
+## Certificate rotation states
+{: #cert-rotate-states}
+
+Review the following table for information on each state of the certificate rotation process.
+
+
+| State | Description |
+| --- | --- |
+| CA certificate creation in progress. | New certificates are being created for the rotation process and being put into the certificate chain. |
+| CA certificate creation complete. Ensure that your worker nodes are reloaded before you start a CA certificate rotation. | New certificates have been created and put into the certificate chain. |
+| CA certificate rotation in progress. | The certificate rotation is in progress. The old certificates are being removed from the certificate chain. |
+| CA certificate rotation complete. | The old certificates have been removed from the certificate chain. |
+{: caption="Certificate rotation states" caption-side="bottom"}
+
+
+## FAQ about certificate rotation
+{: #cert-rotate-faq}
+
+
+My cluster contains CA certificates that are valid until 2030. Will the clusters operate until 2030 without requiring a CA rotation?
+:   Yes. However, if an Administrator should no longer have access, then the CA certificates should be rotated.
+
+
+My cluster shows `Action Started` and `Action Completed` timestamps from several years ago. What actions are expected in this case?
+:   When a CA rotation is started, the expectation is that the CA rotation is completed. The CA rotation process is responsibility of the user.
