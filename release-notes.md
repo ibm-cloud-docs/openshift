@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2025
-lastupdated: "2025-10-31"
+lastupdated: "2025-11-03"
 
 
 keywords: kubernetes, release notes, openshift, {{site.data.keyword.openshiftlong_notm}}
@@ -38,6 +38,9 @@ Looking for {{site.data.keyword.cloud_notm}} status, platform announcements, sec
 :   Support for 4.14 ends on {{site.data.keyword.openshift_414_unsupported_date}}.
 :   Support for 4.15 ends on {{site.data.keyword.openshift_415_unsupported_date}}.
 :   Update your cluster to at least [version 4.16](/docs/openshift?topic=openshift-cs_versions_416) as soon as possible.
+
+Version 4.19 is now the default version for {{site.data.keyword.openshiftlong_notm}}.
+:   For a complete list of available versions, see the [version information](/docs/openshift?topic=openshift-openshift_versions).
 
 
 
