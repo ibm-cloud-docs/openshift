@@ -2106,6 +2106,10 @@ subcollection: openshift
 
 [Rotating CA certificates in your cluster](/docs/openshift?topic=openshift-cert-rotate#cert-rotate)
 
+* [Certificate rotation states](/docs/openshift?topic=openshift-cert-rotate#cert-rotate-states)
+
+* [FAQ about certificate rotation](/docs/openshift?topic=openshift-cert-rotate#cert-rotate-faq)
+
 [Adding tags and labels to clusters](/docs/openshift?topic=openshift-worker-tag-label#worker-tag-label)
 
 * [Adding tags to clusters with the console](/docs/openshift?topic=openshift-worker-tag-label&interface=ui#add-tags-console)
