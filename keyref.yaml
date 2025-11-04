@@ -77,13 +77,13 @@ keyword:
   openshift_414_kube_version: '1.27'
   openshift_414_release_date: 13 December 2023
   openshift_414_unsupported_certainty: tentative
-  openshift_414_unsupported_date: 14 December 2025
+  openshift_414_unsupported_date: 08 January 2026
   openshift_415_RHEL_8_unsupported_date: ''
   openshift_415_deprecated: 'True'
   openshift_415_kube_version: '1.28'
   openshift_415_release_date: 24 April 2024
   openshift_415_unsupported_certainty: tentative
-  openshift_415_unsupported_date: 14 December 2025
+  openshift_415_unsupported_date: 08 January 2026
   openshift_416_RHEL_8_unsupported_date: ''
   openshift_416_RHEL_9_unsupported_date: ''
   openshift_416_deprecated: 'False'
@@ -160,13 +160,13 @@ keyword:
   satellite_414_kube_version: '1.27'
   satellite_414_release_date: 13 December 2023
   satellite_414_unsupported_certainty: tentative
-  satellite_414_unsupported_date: 14 December 2025
+  satellite_414_unsupported_date: 08 January 2026
   satellite_415_RHEL_8_unsupported_date: ''
   satellite_415_deprecated: 'True'
   satellite_415_kube_version: '1.28'
   satellite_415_release_date: 24 April 2024
   satellite_415_unsupported_certainty: tentative
-  satellite_415_unsupported_date: 14 December 2025
+  satellite_415_unsupported_date: 08 January 2026
   satellite_416_RHEL_8_unsupported_date: ''
   satellite_416_deprecated: 'False'
   satellite_416_kube_version: '1.29'
