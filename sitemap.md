@@ -3763,21 +3763,23 @@ subcollection: openshift
 
 * [Before you begin](/docs/openshift?topic=openshift-ai-addon-install&interface=ui#ai-before)
 
-* [Step 1: Choose customization options](/docs/openshift?topic=openshift-ai-addon-install&interface=cli#ai-custom-step)
+* [Step 1: Choose customization options](/docs/openshift?topic=openshift-ai-addon-install&interface=ui#ai-custom-step)
 
-* [Step 2: Review the recommended operators](/docs/openshift?topic=openshift-ai-addon-install&interface=cli#ai-ops-rec-cli)
+* [Step 2: Review additional recommended operators](/docs/openshift?topic=openshift-ai-addon-install&interface=cli#ai-ops-rec-cli)
 
 * [Step 3: Install the add-on in the CLI](/docs/openshift?topic=openshift-ai-addon-install&interface=cli#ai-install-cli)
 
-* [Step 1: Review the recommended operators](/docs/openshift?topic=openshift-ai-addon-install&interface=ui#ai-ops-rec)
+* [Step 2: Review the additional recommended operators](/docs/openshift?topic=openshift-ai-addon-install&interface=ui#ai-ops-rec)
 
-* [Step 2: Install the add-on in the UI](/docs/openshift?topic=openshift-ai-addon-install&interface=ui#ai-install-ui)
+* [Step 3: Install the add-on in the UI](/docs/openshift?topic=openshift-ai-addon-install&interface=ui#ai-install-ui)
+
+* [Step 4: Access the OpenShift AI dashboard](/docs/openshift?topic=openshift-ai-addon-install&interface=ui#ai-dashboard)
 
 * [Optional: Setting up KServe in Advanced mode](/docs/openshift?topic=openshift-ai-addon-install&interface=ui#ai-install-kserve)
 
 * [OpenShift AI customization options](/docs/openshift?topic=openshift-ai-addon-install&interface=ui#custom-options)
 
-* [Customizations for recommended operators](/docs/openshift?topic=openshift-ai-addon-install&interface=ui#rec-ops-custom)
+* [Additional recommended operators](/docs/openshift?topic=openshift-ai-addon-install&interface=ui#rec-ops-custom)
 
 * [What's next?](/docs/openshift?topic=openshift-ai-addon-install&interface=ui#ai-addon-install-next)
 

@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2024, 2025
-lastupdated: "2025-10-28"
+lastupdated: "2025-11-05"
 
 
 keywords: openshift, {{site.data.keyword.openshiftlong_notm}}, ai, add-on
@@ -105,18 +105,18 @@ Review the supported OpenShift AI add-on versions and the corresponding [OpenShi
 
 ## Step 1: Choose customization options 
 {: #ai-custom-step}
-{: cli}
 
-You can enhance your Red Hat OpenShift AI projects by specifying different options to include with your add-on installation, such as data pipelines for building portable machine learning workflows or tools for managing and scaling your resources. You can also customize upgrade policies and deletion policies. 
 
-Run the command to list all options. For descriptions of each available option, see [OpenShift AI customization options](#custom-options). If you do not include a specific option when you install the add-on, the default value applies. 
+You can enhance your Red Hat OpenShift AI projects by specifying different options to include with your add-on installation, such as data pipelines for building portable machine learning workflows or tools for managing and scaling your resources. You can also customize upgrade policies and deletion policies. For descriptions of each available option, see [OpenShift AI customization options](#custom-options). If you do not include a specific option when you install the add-on, the default value applies. These options are managed by the Red Hat OpenShift AI platform. 
+
+In the CLI, run the command to list all options. In the UI, these options are listed in the **Capabilities** section during installation. 
 
 ```sh
 ibmcloud oc cluster addon options --addon openshift-ai
 ```
 {: pre}
 
-## Step 2: Review the recommended operators
+## Step 2: Review additional recommended operators
 {: #ai-ops-rec-cli}
 {: cli}
 
@@ -164,7 +164,7 @@ ibmcloud oc cluster addon enable openshift-ai --cluster CLUSTER --param oaiInsta
 ```
 {: pre}
 
-## Step 1: Review the recommended operators
+## Step 2: Review the additional recommended operators
 {: #ai-ops-rec}
 {: ui}
 
@@ -184,7 +184,7 @@ The following operators are recommended.
 
 Some of these operators might include additional customizations that you can choose to specify when you install the add-on. Review the list of [customizations available for the recommended operators](/docs/openshift?topic=openshift-ai-addon-install&interface=cli#ai-ops-rec-cli).
 
-## Step 2: Install the add-on in the UI
+## Step 3: Install the add-on in the UI
 {: #ai-install-ui}
 {: ui}
 
@@ -202,6 +202,17 @@ Install the Red Hat OpenShift AI add-on with the UI.
     {: important}
 
 5. Click **Install**.
+
+## Step 4: Access the OpenShift AI dashboard
+{: #ai-dashboard}
+
+After you install the OpenShift AI add-on, you can access the [OpenShift AI dashboard](https://docs.redhat.com/en/documentation/red_hat_openshift_ai_cloud_service/1/html/getting_started_with_red_hat_openshift_ai_cloud_service/logging-in_get-started?extIdCarryOver=true&sc_cid=RHCTG0180000382536#viewing-installed-components_get-started){: external}. 
+
+1. From your cluster overview page, click **OpenShift web console**.
+2. From the **Application launcher** ![Application launcher](../icons/thumbnail.svg "Application launcher"), select the **Red Hat OpenShift AI** dashboard option. 
+3. If prompted, click `Log in with OpenShift`.
+
+
 
 ## Optional: Setting up KServe in Advanced mode
 {: #ai-install-kserve}
@@ -234,17 +245,17 @@ If you want to use KServe in Advanced mode, you must complete the following step
 ## OpenShift AI customization options
 {: #custom-options}
 
-Review the customization options available for the OpenShift AI add-on.
+Review the customization options available for the OpenShift AI add-on. These operators are managed by the Red Hat OpenShift AI platform. 
 
 To include an option when you [install the OpenShift AI add-on with the CLI](/docs/openshift?topic=openshift-ai-addon-install&interface=cli#ai-install-cli), include the option with the `--parameter PARAM=VALUE` format when you run the `ibmcloud oc cluster addon enable openshift-ai`. For example, to install the add-on with the Data Science Pipelines option, specify `--parameter oaiDataSciencePipelines=Managed`.
 {: cli}
 
-To include an option when you [install the OpenShift AI add-on with the UI](/docs/openshift?topic=openshift-ai-addon-install&interface=ui#ai-install-ui), click to enable the option when prompted. 
+To include an option when you [install the OpenShift AI add-on with the UI](/docs/openshift?topic=openshift-ai-addon-install&interface=ui#ai-install-ui), click to enable the option when prompted. These options are included in the **Capabilities** section. 
 {: ui}
 
-| Customization | CLI Parameter | Description | CLI Values | Default value |
+| Customization | CLI Parameter | Description | Values | Default value |
 | ------------- | --------- | ----------- | ------ | ------------- |
-| OpenShift AI approval policy | `oaiInstallPlanApproval` | Apply minor and patch updates automatically or manually. | `Automatic` or `Manual` |  `Automatic` |                   
+| OpenShift AI platform minor and patch updates approval policy | `oaiInstallPlanApproval` | Apply minor and patch updates automatically or manually. | `Automatic` or `Manual` |  `Automatic` |                   
 | OpenShift AI deletion policy | `oaiDeletePolicy` | Retain or delete any operators or components installed by the add-on if the add-on is removed. | `Retain` or `Delete` | `Retain` |         
 | Open Data Hub Dashboard | `oaiDashboard` | Enable or disable the component. If enabled, it is managed by OpenShift AI platform. | `Managed` to enable \n`Removed` to disable | `Managed` (enabled) |           
 | Kueue | `oaiKueue` | Enable or disable the component. If enabled, it is managed by OpenShift AI platform. | `Managed` to enable \n`Removed` to disable | `Managed` (enabled) |                                       
@@ -257,37 +268,44 @@ To include an option when you [install the OpenShift AI add-on with the UI](/doc
 {: caption="OpenShift AI add-on customization options and CLI parameters." caption-side="bottom"}            
 
 
-## Customizations for recommended operators
+## Additional recommended operators
 {: #rec-ops-custom}
 
-Review the [recommended operators](/docs/openshift?topic=openshift-ai-addon-install&interface=ui#ai-ops-rec) and the optional customizations you can include during installation. 
+Review the [recommended operators](/docs/openshift?topic=openshift-ai-addon-install&interface=ui#ai-ops-rec) and the optional customizations you can include during installation. You are responsible for managing these operators, including but not limited to updating, monitoring, recovery, and re-installation.
 
 To include a customization for an operator when you [install the OpenShift AI add-on with the CLI](/docs/openshift?topic=openshift-ai-addon-install&interface=cli#ai-install-cli), include the option with the `--parameter PARAM=VALUE` format when you run the `ibmcloud oc cluster addon enable openshift-ai`. For example, to include the NVIDIA GPUDirect Storage customization for the NVIDIA operator, specify `--parameter nvidiaGpuDirectStorageEnabled=true`.
 {: cli}
 
-To include a customization for an operator when you [install the OpenShift AI add-on with the UI](/docs/openshift?topic=openshift-ai-addon-install&interface=ui#ai-install-ui), click to enable the option when prompted. 
+To include a customization for an operator when you [install the OpenShift AI add-on with the UI](/docs/openshift?topic=openshift-ai-addon-install&interface=ui#ai-install-ui), click to enable the option when prompted. Note that there are additional NVIDIA operators with default settings that can only be changed in the CLI, or by editing the ClusterPolicy.
 {: ui}
 
-| Customization | CLI Parameter | Description |  CLI Values | Default value |
-| ------------- | --------- | ----------- | --------| ------------- |             
-| NFD Deletion Policy | `nfdDeletePolicy` |  Retain or delete the operator if the OpenShift AI add-on is removed. | `Retain` or `Delete` | `Retain` |                               
-| NVIDIA Deletion Policy | `nvidiaDeletePolicy` | Retain or delete the operator if the OpenShift AI add-on is removed. | `Retain` or `Delete` | `Retain` |                   
-| NVIDIA Sandbox Workloads | `nvidiaSandboxWorkloads` | Enable management of additional operands required for sandbox workloads. | `true` (enabled) \n  `false` (disabled) | `true` (enabled) |             
-| NVIDIA DCGM Hostengine Deployment | `nvidiaDcgmEnabled` | Enable deployment of the NVIDIA DCGM Hostengine as a separate pod. | `true` (enabled) \n `false` (disabled) | `true` (enabled) |                
-| NVIDIA vGPU Manager | `nvidiaVgpuManagerEnabled` | Enable NVIDIA vGPU Manager. | `true` (enabled) \n `false` (disabled) | `true` (enabled) |         
-| NVIDIA VFIO Manager | `nvidiaVfioManagerEnabled` | Enable VFIO Manager for configuration to deploy VFIO-PCI. | `true` (enabled) \n `false` (disabled) | `true` (enabled) |        
-| NVIDIA Node Status Exporter | `nvidiaNodeStatusExporterEnabled` | Enable Node Status Exporter. | `true` (enabled) \n `false` (disabled) | `true` (enabled) |  
-| NVIDIA Sandbox Device Plug-in | `nvidiaSandboxDevicePluginEnabled` | Enable NVIDIA Sandbox Device Plug-in. | `true` (enabled) \n `false` (disabled) | `true` (enabled) |
-| NVIDA MIG Manager| `nvidiaMigManagerEnabled` |  Enable NVIDIA MIG Manager. | `true` (enabled) \n `false` (disabled) | `true` (enabled) |         
-| NVIDIA vGPU Device Manager| `nvidiaVgpuDeviceManagerEnabled` | Enable NVIDIA vGPU Device Manager. | `true` (enabled) \n `false` (disabled) | `true` (enabled) | 
-| NVIDIA GPUDirect Storage | `nvidiaGpuDirectStorageEnabled` | Enable GPUDirect Storage. | `true` (enabled) \n `false` (disabled) | `true` (enabled) |
-| NVIDIA CUDA Testing | `nvidiaCudaTest` | Enable NVIDIA CUDA testing.  |`true` (enabled) \n `false` (disabled) | `false` (disabled) |   
-| Pipeline Operator Deletion Policy| `pipelineDeletePolicy` | Retain or delete the operator if the OpenShift AI add-on is removed. | | `Retain` or `Delete` | `Retain` |            
-{: caption="OpenShift AI add-on customizations options and CLI parameters for additional operators." caption-side="bottom"}
 
+| Customization | CLI Parameter | Description | Value | Default setting |
+| ------------- | --------- | ----------- | --------| ------------- |             
+| Node Feature Discovery deletion policy | `nfdDeletePolicy` |  Retain or delete the operator if the OpenShift AI add-on is removed. | `Retain` (default) or `Delete` | `Retain` |                               
+| NVIDIA GPU Operator deletion policy | `nvidiaDeletePolicy` | Retain or delete the operator if the OpenShift AI add-on is removed. | `Retain` (default) or `Delete` | `Retain` |   
+| NVIDIA CUDA post-installation testing | `nvidiaCudaTest` | Enable NVIDIA CUDA testing.  |`true` (enabled, default) \n `false` (disabled) | `false` (disabled) |   
+| Pipeline Operator deletion policy| `pipelineDeletePolicy` | Retain or delete the operator if the OpenShift AI add-on is removed. | | `Retain` (default) or `Delete` | `Retain` |            
+{: caption="OpenShift AI add-on customizations options for additional operators. These settings can be changed during installation in the CLI or UI." caption-side="bottom"}
+
+The following NVIDIA GPU operators apply with the default settings. You can only change these settings during installation if you install the add-on with the CLI. After installation, you can change these settings, in either the UI or the CLI, by editing the ClusterPolicy. 
+
+| Customization | CLI Parameter | Description |  CLI values | UI default setting | 
+| ------------- | --------- | ----------- | --------| ------------- |   
+| NVIDIA Sandbox Workloads | `nvidiaSandboxWorkloads` | Enable management of additional operands required for sandbox workloads. | `true` (enabled, default) \n  `false` (disabled) | `Enabled` |  
+| NVIDIA vGPU Manager | `nvidiaVgpuManagerEnabled` | Enable NVIDIA vGPU Manager. | `true` (enabled, default) \n `false` (disabled) | `Enabled` |   
+| NVIDIA GPUDirect Storage | `nvidiaGpuDirectStorageEnabled` | Enable GPUDirect Storage. | `true` (enabled, default) \n `false` (disabled) | `Enabled` |
+| NVIDIA Node Status Exporter | `nvidiaNodeStatusExporterEnabled` | Enable Node Status Exporter. | `true` (enabled, default) \n `false` (disabled) | `Enabled` |
+| NVIDIA Virtual Function I/O Manager | `nvidiaVfioManagerEnabled` | Enable VFIO Manager for configuration to deploy VFIO-PCI. | `true` (enabled, default) \n `false` (disabled) | `Enabled` |   
+| NVIDIA Sandbox Device Plug-in | `nvidiaSandboxDevicePluginEnabled` | Enable NVIDIA Sandbox Device Plug-in. | `true` (enabled, default) \n `false` (disabled) | `Enabled` |
+| NVIDA Multi Instance GPU Manager| `nvidiaMigManagerEnabled` |  Enable NVIDIA Multi Instance GPU Manager. | `true` (enabled, default) \n `false` (disabled) | `Enabled` |   
+| NVIDIA Data Center GPU Manager Hostengine Deployment | `nvidiaDcgmEnabled` | Enable deployment of the NVIDIA Data Center GPU Manager Hostengine as a separate pod. | `true` (enabled, default) \n `false` (disabled) | `Enabled` |  
+| NVIDIA vGPU Device Manager| `nvidiaVgpuDeviceManagerEnabled` | Enable NVIDIA vGPU Device Manager. | `true` (enabled, default) \n `false` (disabled) | `Enabled` |
+{: caption="OpenShift AI add-on customizations options for additional operators. These settings can be changed during installation in the CLI only." caption-side="bottom"}
 
 ## What's next?
 {: #ai-addon-install-next}
 
+- Try out a [tutorial for using OpenShift AI for fraud detection](https://docs.redhat.com/en/documentation/red_hat_openshift_ai_self-managed/2.22/html/openshift_ai_tutorial_-_fraud_detection_example/index){: external}
 - See information on [managing the OpenShift AI add-on](/docs/openshift?topic=openshift-ai-addon-manage).
 - Make sure you understand the [update process](/docs/openshift?topic=openshift-ai-addon-manage#ai-addon-update) for the OpenShift AI add-on.
