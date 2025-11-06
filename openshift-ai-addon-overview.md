@@ -1,7 +1,7 @@
 ---
 copyright: 
   years: 2024, 2025
-lastupdated: "2025-10-24"
+lastupdated: "2025-11-05"
 
 
 keywords: openshift, {{site.data.keyword.openshiftlong_notm}}, ai, add-on
@@ -21,6 +21,9 @@ Use the OpenShift AI add-on to quickly deploy OpenShift AI in {{site.data.keywor
 Red Hat OpenShift AI is a flexible, scalable artificial intelligence and machine learning platform that enables enterprises to create and deliver AI-enabled applications at scale across hybrid cloud environments. OpenShift AI enables data acquisition and preparation, model training and fine-tuning, model serving and model monitoring, and hardware acceleration. For more information on the features and benefits of OpenShift AI, see [What is Red Hat OpenShift AI?](https://www.redhat.com/en/products/ai/openshift-ai){: external}.
 
 Want to deploy the OpenShift AI operator on a new cluster? Try the [OpenShift AI on IBM Cloud](https://cloud.ibm.com/catalog/7a4d68b4-cf8b-40cd-a3d1-f49aff526eb3/architecture/roks-rhoai-c24ae512-8b25-43d7-8fb3-4173c7e94472-global){: external} deployable architecture. 
+{: tip}
+
+Already have the addon installed? Try out a [tutorial for using OpenShift AI for fraud detection](https://docs.redhat.com/en/documentation/red_hat_openshift_ai_self-managed/2.22/html/openshift_ai_tutorial_-_fraud_detection_example/index){: external}
 {: tip}
 
 ## What gets deployed when I install the OpenShift AI add-on?
