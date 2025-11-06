@@ -2994,6 +2994,10 @@ subcollection: openshift
 
 [Setting up horizontal pod autoscaling on GPU worker nodes](/docs/openshift?topic=openshift-cluster-scaling-hpa-gpu#cluster-scaling-hpa-gpu)
 
+* [Prerequisites](/docs/openshift?topic=openshift-cluster-scaling-hpa-gpu#hpa-gpu-prereqs)
+
+* [Setting up HPA](/docs/openshift?topic=openshift-cluster-scaling-hpa-gpu#hpa-gpu-setup)
+
 
 ## Logging and monitoring
 {: #sitemap_logging_and_monitoring}
@@ -6627,6 +6631,8 @@ subcollection: openshift
 * [`istio` 1.23](/docs/openshift?topic=openshift-supported-cluster-addon-versions#istio-1.23)
 
 * [`istio` 1.24](/docs/openshift?topic=openshift-supported-cluster-addon-versions#istio-1.24)
+
+* [`istio` 1.25](/docs/openshift?topic=openshift-supported-cluster-addon-versions#istio-1.25)
 
 * [`openshift-ai` 416](/docs/openshift?topic=openshift-supported-cluster-addon-versions#openshift-ai-416)
 
