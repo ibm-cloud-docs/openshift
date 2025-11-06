@@ -2992,6 +2992,8 @@ subcollection: openshift
 
 * [Horizontal pod autoscaling (HPA)](/docs/openshift?topic=openshift-cluster-scaling-install-addon-deploy-apps#hpca)
 
+[Setting up horizontal pod autoscaling on GPU worker nodes](/docs/openshift?topic=openshift-cluster-scaling-hpa-gpu#cluster-scaling-hpa-gpu)
+
 
 ## Logging and monitoring
 {: #sitemap_logging_and_monitoring}
