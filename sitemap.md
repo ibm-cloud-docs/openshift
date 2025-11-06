@@ -292,8 +292,6 @@ subcollection: openshift
 
         * Version 4.19 is now the default version for {{site.data.keyword.openshiftlong_notm}}.
 
-        * {{site.data.keyword.openshiftlong_notm}} version 4.14 and 4.15 are deprecated.
-
     * [28 October 2025](/docs/openshift?topic=openshift-openshift-relnotes#openshift-oct2825)
 
         * The strongSwan IPSec VPN Service is deprecated

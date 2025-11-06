@@ -43,11 +43,6 @@ Looking for {{site.data.keyword.cloud_notm}} status, platform announcements, sec
 Version 4.19 is now the default version for {{site.data.keyword.openshiftlong_notm}}.
 :   For a complete list of available versions, see the [version information](/docs/openshift?topic=openshift-openshift_versions).
 
-{{site.data.keyword.openshiftlong_notm}} version 4.14 and 4.15 are deprecated.
-:   Support for 4.14 ends on {{site.data.keyword.openshift_414_unsupported_date}}.
-:   Support for 4.15 ends on {{site.data.keyword.openshift_415_unsupported_date}}.
-:   Update your cluster to at least [version 4.16](/docs/openshift?topic=openshift-cs_versions_416) as soon as possible.
-
 
 
 ### 28 October 2025
