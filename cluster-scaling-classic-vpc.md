@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2025
-lastupdated: "2025-03-31"
+lastupdated: "2025-11-06"
 
 
 keywords: kubernetes, node scaling, ca, autoscaler, openshift
@@ -28,6 +28,7 @@ With the `cluster-autoscaler` add-on, you can scale the worker pools in your {{s
 
 You can't enable the cluster autoscaler on worker pools that use reservations.
 {: important}
+
 
 
 
@@ -73,6 +74,11 @@ Can I increase the minimum size per zone to trigger a scale up my cluster to tha
 
 How is this behavior different from worker pools that are not managed by the cluster autoscaler?
 :   When you [create a worker pool](/docs/openshift?topic=openshift-add-workers-vpc), you specify how many worker nodes per zone it has. The worker pool maintains that number of worker nodes until you [resize](/docs/openshift?topic=openshift-kubernetes-service-cli#cs_worker_pool_resize) or [rebalance](/docs/openshift?topic=openshift-kubernetes-service-cli#cs_rebalance) it. The worker pool does not add or remove worker nodes for you. If you have more pods than can be scheduled, the pods remain in pending state until you resize the worker pool. When you enable the cluster autoscaler for a worker pool, worker nodes are scaled up or down in response to your pod spec settings and resource requests. You don't need to resize or rebalance the worker pool manually.
+
+How does GPU autoscaling work?
+:   Autoscaling GPU worker nodes is supported only with cluster autoscaler version 1.2.4 and later and only with NVIDIA GPUs worker node flavors. Scale up happens when a pod goes into pending state due to GPU resource crunch. The autoscaler then scales up the cluster by adding more nodes. Scale down happens when the utilization goes below the configured `scaleDownGPUUtilizationThreshold`. When this happens, the node is considered for scale down.
+
+
 
 
 ## Following scalable deployment practices
