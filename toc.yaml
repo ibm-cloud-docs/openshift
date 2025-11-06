@@ -173,6 +173,7 @@ toc:
           - cluster-scaling-install-addon.md
           - cluster-scaling-enable.md
           - cluster-scaling-deploy-apps.md
+          - cluster-scaling-hpa-gpu.md
       - topicgroup:
           label: Logging and monitoring
           topics:
