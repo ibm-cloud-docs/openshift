@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2025
-lastupdated: "2025-11-03"
+lastupdated: "2025-11-06"
 
 
 keywords: kubernetes, release notes, openshift, {{site.data.keyword.openshiftlong_notm}}
@@ -25,6 +25,7 @@ Use the release notes to learn about the latest changes to the documentation tha
 Looking for {{site.data.keyword.cloud_notm}} status, platform announcements, security bulletins, or maintenance notifications? See [{{site.data.keyword.cloud_notm}} status](https://cloud.ibm.com/status?selected=status).
 {: tip}
 
+
 ## October 2025
 {: #openshift-oct25}
 
@@ -41,6 +42,11 @@ Looking for {{site.data.keyword.cloud_notm}} status, platform announcements, sec
 
 Version 4.19 is now the default version for {{site.data.keyword.openshiftlong_notm}}.
 :   For a complete list of available versions, see the [version information](/docs/openshift?topic=openshift-openshift_versions).
+
+{{site.data.keyword.openshiftlong_notm}} version 4.14 and 4.15 are deprecated.
+:   Support for 4.14 ends on {{site.data.keyword.openshift_414_unsupported_date}}.
+:   Support for 4.15 ends on {{site.data.keyword.openshift_415_unsupported_date}}.
+:   Update your cluster to at least [version 4.16](/docs/openshift?topic=openshift-cs_versions_416) as soon as possible.
 
 
 
