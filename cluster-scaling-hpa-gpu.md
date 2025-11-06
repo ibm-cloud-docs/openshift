@@ -23,10 +23,16 @@ Review the following steps to enable horizontal pod autoscaling on your GPU work
 Why horizontal pod autoscaling?
 :   You might want to configure horizontal pod autoscaling to scale the number of pods when the workload consumes more or less than a certain amount of GPU. Because GPUs are an expensive resource you might not want workloads to be run at the fullest capacity long periods of time. Instead, you can scale pods or up down based on the running workload in the cluster.
 
-To configure HPA, the following components to be installed on your cluster.
+## Prerequisites
+{: #hpa-gpu-prereqs}
+
+To configure HPA, the following components must be installed on your cluster.
 - NVIDIA Data Center GPU Manager (DCGM) exporter to gather GPU metrics in Kubernetes. The DCGM exporter exposes GPU metrics for Prometheus which can be visualized using Grafana.
 - Prometheus and the Prometheus adapter to generate custom metrics.
 
+
+## Setting up HPA
+{: #hpa-gpu-setup}
 
 1. Install the Data Center GPU Manager exporter from OperatorHub by searching for `NVIDIA GPU Operator` and installing the operator.
 
@@ -155,5 +161,3 @@ To configure HPA, the following components to be installed on your cluster.
     Normal  SuccessfulRescale  50s   horizontal-pod-autoscaler  New size: 3; reason: pods metric DCGM_FI_DEV_GPU_UTIL above target
     ``` 
     {: screen}
-
-
