@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2025
-lastupdated: "2025-11-06"
+lastupdated: "2025-11-07"
 
 
 keywords: openshift
@@ -2315,6 +2315,34 @@ subcollection: openshift
 * [Deleting a rule from the CLI](/docs/openshift?topic=openshift-pse-to-cbr-migration&interface=cli#pse-cbr-remove-cli)
 
 * [Next steps](/docs/openshift?topic=openshift-pse-to-cbr-migration&interface=cli#pse-cbr-next)
+
+[Creating confidential containers](/docs/openshift?topic=openshift-confidential-containers#confidential-containers)
+
+* [What are confidential containers?](/docs/openshift?topic=openshift-confidential-containers#what-is-it?)
+
+* [Prerequisites](/docs/openshift?topic=openshift-confidential-containers#prerequisites)
+
+* [Step 1: Installing the operator](/docs/openshift?topic=openshift-confidential-containers#install-operator)
+
+* [Step 2: Setting up the CLI](/docs/openshift?topic=openshift-confidential-containers#cli-setup)
+
+* [Step 3: Importing the peer pod image](/docs/openshift?topic=openshift-confidential-containers#peer-pod-image)
+
+* [Step 4: Creating an API key or trusted profile](/docs/openshift?topic=openshift-confidential-containers#api-key-or-trusted-profile)
+
+* [Step 5: Creating an SSH key (Optional)](/docs/openshift?topic=openshift-confidential-containers#ssh-key)
+
+* [Step 6: Configuring confidential containers](/docs/openshift?topic=openshift-confidential-containers#configure-confidential-containers)
+
+* [Step 7: Configuring a trust authority](/docs/openshift?topic=openshift-confidential-containers#trustee)
+
+* [Step 8: Running a confidential container workload](/docs/openshift?topic=openshift-confidential-containers#run-workload)
+
+* [Removing workloads and tools](/docs/openshift?topic=openshift-confidential-containers#uninstall)
+
+    * [Removing workloads](/docs/openshift?topic=openshift-confidential-containers#uninstall_workloads)
+
+    * [Uninstalling the operator](/docs/openshift?topic=openshift-confidential-containers#uninstall_operator)
 
 
 ## Managing access control
@@ -9388,6 +9416,16 @@ subcollection: openshift
 
 * [What operations are blocked if my cluster is running an unsupported operating system?](/docs/openshift?topic=openshift-faqs#unsupported_os)
 
+* [How much do confidential containers cost?](/docs/openshift?topic=openshift-faqs#conf-cont-cost)
+
+* [Can I build my own CVM (`podvm`) for confidential containers?](/docs/openshift?topic=openshift-faqs#conf-cont-cvm)
+
+* [What should I use as a trustee in confidential containers?](/docs/openshift?topic=openshift-faqs#conf-cont-trustee)
+
+* [Where do I get support for confidential containers?](/docs/openshift?topic=openshift-faqs#conf-cont-support)
+
+* [Can confidential containers meet specific security standards, such as NIST 800-53 R5?](/docs/openshift?topic=openshift-faqs#conf-cont-sec)
+
 
 ## Best practices for {{site.data.keyword.openshiftlong_notm}}
 {: #sitemap_best_practices_for_}
@@ -9775,6 +9813,8 @@ subcollection: openshift
 [Why do I see a license or entitlement error when creating a worker pool?](/docs/openshift?topic=openshift-ts-workerpool-license-entitlement#ts-workerpool-license-entitlement)
 
 [Why am I seeing duplicate metrics or logs being sent from my clusters?](/docs/openshift?topic=openshift-ts-dupe-logs#ts-dupe-logs)
+
+[How do I troubleshoot confidential containers?](/docs/openshift?topic=openshift-ts-confidential-containers#ts-confidential-containers)
 
 
 ### Permissions and credentials
