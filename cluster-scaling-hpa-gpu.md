@@ -30,10 +30,6 @@ To configure HPA, the following components must be installed on your cluster.
 - NVIDIA Data Center GPU Manager (DCGM) exporter to gather GPU metrics in Kubernetes. The DCGM exporter exposes GPU metrics for Prometheus which can be visualized using Grafana.
 - Prometheus and the Prometheus adapter to generate custom metrics.
 
-
-## Setting up HPA
-{: #hpa-gpu-setup}
-
 1. [Install the NVIDIA GPU Operator](https://docs.nvidia.com/datacenter/cloud-native/openshift/latest/steps-overview.html){: external}
 
 
@@ -82,6 +78,12 @@ To configure HPA, the following components must be installed on your cluster.
     helm upgrade --install prometheus-adapter prometheus-community/prometheus-adapter --set prometheus.url="http://prom-stack-kube-prometheus-prometheus.default.svc.cluster.local"
     ```
     {: pre}
+
+
+## Setting up HPA
+{: #hpa-gpu-setup}
+
+Complete the following steps to create a deployment that uses HPA.
 
 1. Create a deployment.
     ```yaml
