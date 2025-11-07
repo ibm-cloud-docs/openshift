@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2025
-lastupdated: "2025-11-06"
+lastupdated: "2025-11-07"
 
 
 keywords: openshift, {{site.data.keyword.openshiftlong_notm}}, kubernetes, node scaling, ca, autoscaler, gpu, hpa
@@ -34,7 +34,7 @@ To configure HPA, the following components must be installed on your cluster.
 ## Setting up HPA
 {: #hpa-gpu-setup}
 
-1. Install the Data Center GPU Manager exporter from OperatorHub by searching for `NVIDIA GPU Operator` and installing the operator.
+1. [Install the NVIDIA GPU Operator](https://docs.nvidia.com/datacenter/cloud-native/openshift/latest/steps-overview.html){: external}
 
 
 1. Install Prometheus.
