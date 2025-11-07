@@ -119,6 +119,7 @@ toc:
           - cbr.md
           - cbr-tutorial.md
           - pse-to-cbr-migration.md
+          - confidential-containers.md
       - topicgroup:
           label: Managing access control
           topics:
@@ -560,6 +561,7 @@ toc:
               - ts-cloud-pak-ds.md
               - ts-workerpool-license-entitlement.md
               - ts-dupe-logs.md
+              - ts-confidential-containers.md
           - topicgroup:
               label: Permissions and credentials
               topics:
