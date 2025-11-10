@@ -205,7 +205,7 @@ The following table shows the changes that are in the master fix pack 4.14.53_16
 
 | Component | Previous | Current | Description |
 | --- | --- | --- | --- |
-| Calico | v3.28.4 | v3.28.5 | See the [Calico release notes](https://docs.tigera.io/calico/3.28/release-notes/#calico-open-source-3285-bug-fix-update){: external}. |
+| Calico | v3.28.4 | v3.28.5 | See the [Calico release notes](https://archive-os-3-28.netlify.app/calico/3.28/release-notes/#calico-open-source-3285-bug-fix-update){: external}. |
 | Cluster health image | v1.5.15 | v1.5.16 | New version contains updates and security fixes. |
 | {{site.data.keyword.IBM_notm}} Calico extension | 1655 | 1672 | New version contains security fixes. |
 | {{site.data.keyword.cloud_notm}} Block Storage driver and plug-in | v2.5.19 | v2.5.20 | New version contains updates and security fixes. |
@@ -278,7 +278,7 @@ The following table shows the changes that are in the master fix pack 4.14.52_16
 
 | Component | Previous | Current | Description |
 | --- | --- | --- | --- |
-| Calico | v3.28.3 | v3.28.4 | See the [Calico release notes](https://docs.tigera.io/calico/3.28/release-notes/#v3.28.4){: external}. |
+| Calico | v3.28.3 | v3.28.4 | See the [Calico release notes](https://archive-os-3-28.netlify.app/calico/3.28/release-notes/#v3.28.4){: external}. |
 | {{site.data.keyword.cloud_notm}} Block Storage driver and plug-in | v2.5.17 | v2.5.19 | New version contains updates and security fixes. |
 | {{site.data.keyword.cloud_notm}} Controller Manager | v1.27.16-38 | v1.27.16-41 | New version contains updates and security fixes. |
 | {{site.data.keyword.cloud_notm}} RBAC Operator | d1545bd | 38dc95c | New version contains updates and security fixes. |
@@ -384,7 +384,7 @@ The following table shows the changes that are in the master fix pack 4.14.50_16
 
 | Component | Previous | Current | Description |
 | --- | --- | --- | --- |
-| Calico | v3.28.2 | v3.28.3 | See the [Calico release notes](https://docs.tigera.io/calico/3.28/release-notes/#v3.28.3){: external}. |
+| Calico | v3.28.2 | v3.28.3 | See the [Calico release notes](https://archive-os-3-28.netlify.app/calico/3.28/release-notes/#v3.28.3){: external}. |
 | Cluster health image | v1.5.13 | v1.5.14 | New version contains updates and security fixes. |
 | etcd | v3.5.18 | v3.5.21 | See the [etcd release notes](https://github.com/etcd-io/etcd/releases/v3.5.21){: external}. |
 | {{site.data.keyword.IBM_notm}} Calico extension | 1647 | 1655 | New version contains security fixes. |
@@ -510,7 +510,7 @@ The following table shows the changes that are in the master fix pack 4.14.45_15
 
 | Component | Previous | Current | Description |
 | --- | --- | --- | --- |
-| Calico | v3.27.4 | v3.28.2 | See the [Calico release notes](https://docs.tigera.io/calico/3.28/release-notes/#v3.28.2){: external}. |
+| Calico | v3.27.4 | v3.28.2 | See the [Calico release notes](https://archive-os-3-28.netlify.app/calico/3.28/release-notes/#v3.28.2){: external}. |
 | {{site.data.keyword.IBM_notm}} Calico extension | 1619 | 1624 | New version contains security fixes. |
 | {{site.data.keyword.cloud_notm}} Block Storage driver and plug-in | v2.5.16 | v2.5.17 | New version contains updates and security fixes. |
 | {{site.data.keyword.cloud_notm}} Controller Manager | v1.27.16-21 | v1.27.16-24 | New version contains updates and security fixes. |

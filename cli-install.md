@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2025
-lastupdated: "2025-10-29"
+lastupdated: "2025-11-10"
 
 
 keywords: openshift, oc, installing oc, openshift cli, installing oc cli
@@ -63,7 +63,7 @@ You can use the `oc` CLI to deploy and manage resources in your {{site.data.keyw
 
 
 
-- If you already have a Red Hat account, install the OpenShift CLI. For more information, see the [Getting started with the OpenShift CLI](https://docs.openshift.com/container-platform/4.19/cli_reference/openshift_cli/getting-started-cli.html){: external}.
+- If you already have a Red Hat account, install the OpenShift CLI. For more information, see the [Getting started with the OpenShift CLI](https://docs.redhat.com/en/documentation/openshift_container_platform/4.19/html/cli_tools/openshift-cli-oc){: external}.
 
 - If you don't have a Red Hat account, you can download the OpenShift CLI from the [console](https://cloud.ibm.com/containers/cluster-management/clusters){: external} after you create an OpenShift cluster.
 

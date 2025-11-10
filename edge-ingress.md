@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2024, 2025
-lastupdated: "2025-10-29"
+lastupdated: "2025-11-10"
 
 
 keywords: openshift, kubernetes, affinity, taint, edge node, edge
@@ -87,7 +87,7 @@ To isolate your workload to edge worker nodes:
     ```
     {: pre}
     
-1. Set the `spec.nodePlacement` field to the following. For more information, see the [Red Hat documentation](https://docs.redhat.com/en/documentation/openshift_container_platform/4.19#nw-ingress-controller-configuration-parameters_configuring-ingress){: external}. 
+1. Set the `spec.nodePlacement` field to the following. For more information, see the [Red Hat documentation](https://docs.redhat.com/en/documentation/openshift_container_platform/4.19/html-single/networking_operators/index#nw-ingress-controller-configuration-parameters_configuring-ingress){: external}. 
     ```yaml
     nodePlacement:
       nodeSelector:
