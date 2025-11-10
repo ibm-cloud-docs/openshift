@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2025
-lastupdated: "2025-10-29"
+lastupdated: "2025-11-10"
 
 
 keywords: openshift, compliance, security standards, red hat openshift, openshift container platform, red hat, openshift architecture, red hat architecture, openshift dependencies,
@@ -145,7 +145,7 @@ CRI-O container runtime
 :   Your worker nodes are installed with [CRI-O](https://cri-o.io/){: external} as the container runtime interface. For more information, see [Container runtime](/docs/openshift?topic=openshift-security#container-runtime).
 
 Projects
-:   {{site.data.keyword.redhat_openshift_notm}} organizes your resources into projects, which are Kubernetes namespaces with annotations, and includes many more components than community Kubernetes clusters to run {{site.data.keyword.redhat_openshift_notm}} features such as the catalog. Select components of projects are described in the following rows. For more information, see [Working with projects](https://docs.openshift.com/en/container-platform/4.19/applications/projects/working-with-projects.html){: external}.
+:   {{site.data.keyword.redhat_openshift_notm}} organizes your resources into projects, which are Kubernetes namespaces with annotations, and includes many more components than community Kubernetes clusters to run {{site.data.keyword.redhat_openshift_notm}} features such as the catalog. Select components of projects are described in the following rows. For more information, see [Working on a project](https://docs.redhat.com/en/documentation/openshift_container_platform/4.19/html/building_applications/building-applications-overview#working-on-a-project){: external}.
 
 `calico-system`, `tigera-operator`
 :   Calico manages network policies for your cluster, and includes a few components to manage container network connectivity, IP address assignment, and network traffic control. The Tigera operator installs and manages the lifecycle of Calico components.
@@ -191,7 +191,7 @@ Projects
 :   The marketplace includes the [OperatorHub](https://docs.redhat.com/en/documentation/openshift_container_platform/4.19/html/operators/understanding-operators#olm-understanding-operatorhub){: external} that comes with the {{site.data.keyword.redhat_openshift_notm}} cluster by default. The OperatorHub includes operators from Red Hat and 3rd-party providers. Keep in mind that these operators are provided by the community, might not integrate with your cluster, and are not supported by IBM. You can [enable operators](/docs/openshift?topic=openshift-operators) from the OperatorHub in {{site.data.keyword.redhat_openshift_notm}} web console.
 
 `openshift-monitoring`
-:   OpenShift Container Platform includes a [built-in monitoring stack](https://docs.openshift.com/en/container-platform/4.19/virt/monitoring/virt-monitoring-overview.html){: external} for your cluster, that includes metrics and alert managing capabilities. For a comparison of the built-in monitoring stack and other options such as {{site.data.keyword.mon_full_notm}}, see [Understanding options for logging and monitoring](/docs/openshift?topic=openshift-health).
+:   OpenShift Container Platform includes a [built-in monitoring stack](https://docs.redhat.com/en/documentation/openshift_container_platform/4.19/html/monitoring/about-openshift-container-platform-monitoring){: external} for your cluster, that includes metrics and alert managing capabilities. For a comparison of the built-in monitoring stack and other options such as {{site.data.keyword.mon_full_notm}}, see [Understanding options for logging and monitoring](/docs/openshift?topic=openshift-health).
 
 `openshift-multus`
 :   OpenShift Container Platform uses the Multus container network interface (CNI) plug-in to allow [multiple pod networks](https://docs.redhat.com/en/documentation/openshift_container_platform/4.19/html/multiple_networks/understanding-multiple-networks){: external}. However, you can't configure the cluster to use multiple pod networks. {{site.data.keyword.openshiftlong_notm}} clusters support only Calico, which is set up for your cluster by default. If enabled, [Service Mesh](https://docs.redhat.com/documentation/openshift_container_platform/4.19/html/service_mesh/service-mesh-1-x){: external} uses the Multus plug-in.
@@ -200,7 +200,7 @@ Projects
 :   The [cluster network operator (CNO)](https://docs.redhat.com/en/documentation/openshift_container_platform/4.19/html/networking_operators/cluster-network-operator){: external} manages the cluster network components that are set up by default, such as the CNI pod network provider plug-in and DNS operator.
 
 `openshift-operator-lifecycle-manager`
-:   The [operator lifecycle manager (OLM)](https://docs.openshift.com/container-platform/4.19/operators/understanding/olm/olm-understanding-olm.html){: external} manages the lifecycle of all operators and the catalog that run in the cluster, including the operators for the default components and any custom operators that you add.
+:   The [operator lifecycle manager (OLM)](https://docs.redhat.com/en/documentation/openshift_container_platform/4.19/html/operators/understanding-operators#operator-lifecycle-manager-olm){: external} manages the lifecycle of all operators and the catalog that run in the cluster, including the operators for the default components and any custom operators that you add.
 
 `openshift-service-ca`, `openshift-service-ca-operator`
 :   The certificate authority (CA) operator runs certificate signing and injects certificates into API server resources and configmaps in the cluster. For more information, see the [GitHub project](https://github.com/openshift/service-ca-operator){: external}.

@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2024, 2025
-lastupdated: "2025-10-29"
+lastupdated: "2025-11-10"
 
 
 keywords: openshift, {{site.data.keyword.openshiftlong_notm}}, kubernetes, infrastructure, rbac, policy, role-based access control
@@ -444,7 +444,7 @@ The following table shows the permissions that are granted by each RBAC role to 
 ### {{site.data.keyword.cloud_notm}} IAM issuer details for RBAC users
 {: #iam-issuer-users}
 
-Users with a service access role to {{site.data.keyword.openshiftlong_notm}} in IAM are given [corresponding user roles in RBAC](#rbac_ref). The RBAC user details include a unique issuer ID, subject identifier claim, and {{site.data.keyword.redhat_openshift_notm}} username. These details vary with the {{site.data.keyword.redhat_openshift_notm}} version of the cluster. When you update a cluster from a previous version, the details are automatically updated. RBAC usernames are prefixed by `IAM#`, such as in the output of `oc get users`. For more information about how OpenID authentication works, see the [{{site.data.keyword.redhat_openshift_notm}} documentation](https://docs.openshift.com/container-platform/4.19/authentication/identity_providers/configuring-oidc-identity-provider.html){: external}.
+Users with a service access role to {{site.data.keyword.openshiftlong_notm}} in IAM are given [corresponding user roles in RBAC](#rbac_ref). The RBAC user details include a unique issuer ID, subject identifier claim, and {{site.data.keyword.redhat_openshift_notm}} username. These details vary with the {{site.data.keyword.redhat_openshift_notm}} version of the cluster. When you update a cluster from a previous version, the details are automatically updated. RBAC usernames are prefixed by `IAM#`, such as in the output of `oc get users`. For more information about how OpenID authentication works, see the [{{site.data.keyword.redhat_openshift_notm}} documentation](https://docs.redhat.com/en/documentation/openshift_container_platform/4.19/html/authentication_and_authorization/external-auth#external-auth-configuring_external-auth){: external}.
 {: shortdesc}
 
 You might use this information if you build automation tooling within the cluster that relies on the user details to authenticate with the {{site.data.keyword.redhat_openshift_notm}} API server.

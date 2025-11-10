@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2024, 2025
-lastupdated: "2025-11-05"
+lastupdated: "2025-11-10"
 
 
 keywords: openshift, {{site.data.keyword.openshiftlong_notm}}, ai, add-on
@@ -41,8 +41,10 @@ Review the supported OpenShift AI add-on versions and the corresponding [OpenShi
 
 | OpenShift AI add-on version | Red Hat OpenShift AI version |	Supported Red Hat OpenShift on IBM Cloud versions |
 | --------------------------  | ---------------------------- | -------------------------------------------------- |
-| 416 | 2.22 | 4.16, 4.17 | 
+| 418 | 2.22 | 4.18, 4.19 |
 | 417 | 2.22 | 4.17, 4.18 |
+| 416 | 2.22 | 4.16, 4.17 | 
+
 {: caption="Supported AI add-on versions and corresponding versions for Red Hat OpenShift AI and Red Hat OpenShift on IBM Cloud". caption-side="bottom"}
 
 ## Considerations

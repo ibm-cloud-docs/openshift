@@ -208,7 +208,7 @@ The following table shows the changes that are in the master fix pack 4.16.43_15
 
 | Component | Previous | Current | Description |
 | --- | --- | --- | --- |
-| Calico | v3.28.4 | v3.28.5 | See the [Calico release notes](https://docs.tigera.io/calico/3.28/release-notes/#calico-open-source-3285-bug-fix-update){: external}. |
+| Calico | v3.28.4 | v3.28.5 | See the [Calico release notes](https://archive-os-3-28.netlify.app/calico/3.28/release-notes/#calico-open-source-3285-bug-fix-update){: external}. |
 | Calico API server | v3.28.4 | v3.28.5 | See the [Calico release notes](https://docs.tigera.io/archive){: external}. |
 | Cluster health image | v1.6.9 | v1.6.10 | New version contains updates and security fixes. |
 | {{site.data.keyword.cloud_notm}} Block Storage driver and plug-in | v2.5.19 | v2.5.20 | New version contains updates and security fixes. |
@@ -284,7 +284,7 @@ The following table shows the changes that are in the master fix pack 4.16.41_15
 
 | Component | Previous | Current | Description |
 | --- | --- | --- | --- |
-| Calico | v3.28.3 | v3.28.4 | See the [Calico release notes](https://docs.tigera.io/calico/3.28/release-notes/#v3.28.4){: external}. |
+| Calico | v3.28.3 | v3.28.4 | See the [Calico release notes](https://archive-os-3-28.netlify.app/calico/3.28/release-notes/#v3.28.4){: external}. |
 | {{site.data.keyword.cloud_notm}} Block Storage driver and plug-in | v2.5.17 | v2.5.19 | New version contains updates and security fixes. |
 | {{site.data.keyword.cloud_notm}} Controller Manager | v1.29.15-9 | v1.29.15-12 | New version contains updates and security fixes. |
 | {{site.data.keyword.cloud_notm}} RBAC Operator | d1545bd | 38dc95c | New version contains updates and security fixes. |
@@ -394,7 +394,7 @@ The following table shows the changes that are in the master fix pack 4.16.38_15
 
 | Component | Previous | Current | Description |
 | --- | --- | --- | --- |
-| Calico | v3.28.2 | v3.28.3 | See the [Calico release notes](https://docs.tigera.io/calico/3.28/release-notes/#v3.28.3){: external}. |
+| Calico | v3.28.2 | v3.28.3 | See the [Calico release notes](https://archive-os-3-28.netlify.app/calico/3.28/release-notes/#v3.28.3){: external}. |
 | Cluster health image | v1.6.7 | v1.6.8 | New version contains updates and security fixes. |
 | etcd | v3.5.18 | v3.5.21 | See the [etcd release notes](https://github.com/etcd-io/etcd/releases/v3.5.21){: external}. |
 | {{site.data.keyword.cloud_notm}} Controller Manager | v1.29.15-1 | v1.29.15-6 | New version contains updates and security fixes. |
@@ -727,7 +727,7 @@ The following table shows the changes that are in the master fix pack 4.16.16_15
 
 | Component | Previous | Current | Description |
 | --- | --- | --- | --- |
-| Calico | v3.28.1 | v3.28.2 | See the [Calico release notes](https://docs.tigera.io/calico/3.28/release-notes/#v3.28.2){: external}. |
+| Calico | v3.28.1 | v3.28.2 | See the [Calico release notes](https://archive-os-3-28.netlify.app/calico/3.28/release-notes/#v3.28.2){: external}. |
 | Cluster health image | v1.6.2 | v1.6.3 | New version contains updates and security fixes. |
 | etcd | v3.5.15 | v3.5.16 | See the [etcd release notes](https://github.com/etcd-io/etcd/releases/v3.5.16){: external}. |
 | {{site.data.keyword.cloud_notm}} Controller Manager | v1.29.9-1 | v1.29.9-6 | New version contains updates and security fixes. |
@@ -827,7 +827,7 @@ The following table shows the changes that are in the worker node fix pack 4.16.
 
 | Component | Previous | Current | Description |
 | --- | --- | --- | --- |
-| Calico | v3.27.4 | v3.28.1 | See the [Calico release notes](https://docs.tigera.io/calico/3.28/release-notes/){: external}. |
+| Calico | v3.27.4 | v3.28.1 | See the [Calico release notes](https://archive-os-3-28.netlify.app/calico/3.28/release-notes/){: external}. |
 | Cluster health image | v1.5.8 | v1.6.2 | New version contains updates and security fixes. |
 | IBM Cloud Controller Manager | v1.28.13-1 | v1.29.8-1 | New version contains updates and security fixes. |
 | Key Management Service provider | v2.9.9 | v2.10.4 | New version contains updates and security fixes. In addition, only [KMS v2](https://kubernetes.io/docs/tasks/administer-cluster/kms-provider/){: external} is supported. KMS v1 instances were migrated to KMS v2 as part of the Red Hat OpenShift on IBM Cloud version 4.15 release. |
