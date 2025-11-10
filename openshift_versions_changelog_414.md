@@ -3,7 +3,7 @@
 copyright:
   years: 2024, 2025
 
-lastupdated: "2025-10-23"
+lastupdated: "2025-11-10"
 
 
 keywords: change log, version history, 4.14_openshift
@@ -44,6 +44,22 @@ Master patch updates are applied automatically. Worker node patch updates can be
 
 ## Version 4.14
 {: #414_components}
+
+
+### Worker node fix pack 4.14.58_1630_openshift, released 06 November 2025
+{: #cl-boms-41458_1630_openshift_W}
+
+The following table shows the components included in the worker node fix pack 4.14.58_1630_openshift. Worker node patch updates can be applied by updating, reloading (in classic infrastructure), or replacing (in VPC infrastructure) the worker node.
+{: shortdesc}
+
+| Component | Version | Description |
+| ---- | ---- | ---- |
+|RHEL_8|4.18.0-553.79.1.el8_10|Resolves the following CVEs: [RHSA-2025:17397](https://access.redhat.com/errata/RHSA-2025:17397){: external}, [CVE-2025-38527](https://nvd.nist.gov/vuln/detail/CVE-2025-38527){: external}, [CVE-2025-39730](https://nvd.nist.gov/vuln/detail/CVE-2025-39730){: external}, [RHSA-2025:17797](https://access.redhat.com/errata/RHSA-2025:17797){: external}, [CVE-2022-50228](https://nvd.nist.gov/vuln/detail/CVE-2022-50228){: external}, [CVE-2023-53305](https://nvd.nist.gov/vuln/detail/CVE-2023-53305){: external}, [RHSA-2025:18286](https://access.redhat.com/errata/RHSA-2025:18286){: external}, and [CVE-2025-5318](https://nvd.nist.gov/vuln/detail/CVE-2025-5318){: external}.|
+|OpenShift|4.14.58|For more information, see the [change logs](https://docs.redhat.com/en/documentation/openshift_container_platform/4.14/html/release_notes/ocp-4-14-release-notes.html#ocp-4-14-58_release-notes).|
+|HAProxy|fbe9b8146f23bbd12b2566a79fa897d5981e7273|Resolves the following CVEs: [CVE-2025-5318](https://nvd.nist.gov/vuln/detail/CVE-2025-5318){: external}.|
+{: caption="4.14.58_1630_openshift fix pack." caption-side="bottom"}
+{: #cl-boms-41458_1630_openshift_W-component-table}
+
 
 
 ### Worker node fix pack 4.14.57_1629_openshift, released 21 October 2025
