@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2024, 2025
-lastupdated: "2025-11-10"
+lastupdated: "2025-11-11"
 
 
 keywords: openshift, {{site.data.keyword.openshiftlong_notm}}, ai, add-on
@@ -44,7 +44,6 @@ Review the supported OpenShift AI add-on versions and the corresponding [OpenShi
 | 418 | 2.22 | 4.18, 4.19 |
 | 417 | 2.22 | 4.17, 4.18 |
 | 416 | 2.22 | 4.16, 4.17 | 
-
 {: caption="Supported AI add-on versions and corresponding versions for Red Hat OpenShift AI and Red Hat OpenShift on IBM Cloud". caption-side="bottom"}
 
 ## Considerations
@@ -94,7 +93,7 @@ Review the supported OpenShift AI add-on versions and the corresponding [OpenShi
     Disabling outbound traffic protection permits all external network connections. See [Managing outbound traffic protection in VPC clusters](/docs/openshift?topic=openshift-sbd-allow-outbound) for more information.
     {: note}
 
-    1. In the console, navigate to your [Clusters page](https://cloud.ibm.com/containers/cluster-management/clusters){: external} and click on the relevant cluster.
+    1. In the console, navigate to your [Clusters page](https://cloud.ibm.com/containers/cluster-management/clusters){: external} and click the relevant cluster.
     2. On the Overview page for the cluster, find the **Networking** section and select the **Outbound traffic protection disabled** option.
 
 1. Enable OperatorHub on your cluster.

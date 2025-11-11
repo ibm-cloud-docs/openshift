@@ -2,7 +2,7 @@
 
 copyright:
   years: 2024, 2025
-lastupdated: "2025-10-28"
+lastupdated: "2025-11-11"
 
 keywords:
 
@@ -75,7 +75,7 @@ The following dependencies apply to the following deployment locations: Amsterda
 | {{site.data.keyword.registrylong}} | Availability, Change management, Instance control, Operations | No | Both |  Washington DC (us-east)  |
 | IBM Cloud Business Support Services | Availability | No | Both |  [Global](/docs/resiliency?topic=resiliency-ha-redundancy#global-platform)  |
 | IBM Cloud Classic NTP Servers | Availability, Change management, Instance control | No | Both |  Same data center  |
-| RedHat OpenShift Cluster Manager | Availability | No | Both |  [Global](/docs/resiliency?topic=resiliency-ha-redundancy#global-platform)  |
+| Red Hat OpenShift Cluster Manager | Availability | No | Both |  [Global](/docs/resiliency?topic=resiliency-ha-redundancy#global-platform)  |
 | Let's Encrypt | Availability | No | Both |  [Global](/docs/resiliency?topic=resiliency-ha-redundancy#global-platform)  |
 | IBM Cloud Global Resource Catalog | Availability, Change management, Instance control | No | Both |  [Global](/docs/resiliency?topic=resiliency-ha-redundancy#global-platform)  |
 | {{site.data.keyword.keymanagementservicefull}} | Availability, Instance control, Security compliance | Yes | Both |  Washington DC (us-east)  |
@@ -153,7 +153,7 @@ The following dependencies apply to the following deployment locations: Montreal
 | IBM Cloud Hyper Protect Crypto | Availability, Instance control | Yes | Both |  Washington DC (us-east)  |
 | {{site.data.keyword.registrylong}} | Availability, Change management, Instance control, Operations | No | Both |  Washington DC (us-east)  |
 | IBM Cloud Business Support Services | Availability | No | Both |  [Global](/docs/resiliency?topic=resiliency-ha-redundancy#global-platform)  |
-| RedHat OpenShift Cluster Manager | Availability | No | Both |  [Global](/docs/resiliency?topic=resiliency-ha-redundancy#global-platform)  |
+| Red Hat OpenShift Cluster Manager | Availability | No | Both |  [Global](/docs/resiliency?topic=resiliency-ha-redundancy#global-platform)  |
 | Let's Encrypt | Availability | No | Both |  [Global](/docs/resiliency?topic=resiliency-ha-redundancy#global-platform)  |
 | IBM Cloud Global Resource Catalog | Availability, Change management, Instance control | No | Both |  [Global](/docs/resiliency?topic=resiliency-ha-redundancy#global-platform)  |
 | {{site.data.keyword.keymanagementservicefull}} | Availability, Instance control, Security compliance | Yes | Both |  Washington DC (us-east)  |

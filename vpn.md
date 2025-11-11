@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2025
-lastupdated: "2025-10-27"
+lastupdated: "2025-11-11"
 
 
 keywords: openshift, strongswan, ipsec, on-prem
@@ -29,7 +29,7 @@ With VPN connectivity, you can securely connect apps in a {{site.data.keyword.re
 
 To connect your worker nodes and apps to an on-premises data center, you can configure one of the following options.
 
-- **(Deprecated) strongSwan IPSec VPN Service**: The strongSwan IPSec VPN addon is now deprecated, and will be unsupported on December 20, 2025.  If you have an existing classic cluster that is using strongSwan and want a solution that runs as a set of pods in your cluster, there are several open source options, including [WireGuard](https://hub.docker.com/r/linuxserver/wireguard){: external}, OpenVPN, and [strongSwan](https://strongswan.org/){: external}.  If you are looking for a VPN option on a new cluster, we recommend using a VPC cluster along with IBM Cloud's VPN as a Service.
+- **(Deprecated) strongSwan IPSec VPN Service**: The strongSwan IPSec VPN add-on is now deprecated, and will be unsupported on December 20, 2025.  If you have an existing classic cluster that is using strongSwan and want a solution that runs as a set of pods in your cluster, there are several open source options, including [WireGuard](https://hub.docker.com/r/linuxserver/wireguard){: external}, OpenVPN, and [strongSwan](https://strongswan.org/){: external}.  If you are looking for a VPN option on a new cluster, we recommend using a VPC cluster along with IBM Cloud's VPN as a Service.
 
 - **{{site.data.keyword.BluDirectLink}}**: [{{site.data.keyword.dl_full_notm}}](/docs/dl?topic=dl-dl-about) allows you to create a direct, private connection between your remote network environments and {{site.data.keyword.openshiftlong_notm}} without routing over the public internet. The {{site.data.keyword.dl_full_notm}} offerings are useful when you must implement hybrid workloads, cross-provider workloads, large or frequent data transfers, or private workloads. To choose an {{site.data.keyword.dl_full_notm}} offering and set up an {{site.data.keyword.dl_full_notm}} connection, see [Get Started with IBM Cloud {{site.data.keyword.dl_full_notm}}](/docs/dl?topic=dl-get-started-with-ibm-cloud-dl) in the {{site.data.keyword.dl_full_notm}} documentation.
 
@@ -47,7 +47,7 @@ The `172.16.0.0/16`, `172.18.0.0/16`, `172.19.0.0/16`, and `172.20.0.0/16` subne
 ## (Deprecated) Using the strongSwan IPSec VPN service Helm chart
 {: #vpn-setup}
 
-The strongSwan IPSec VPN addon is deprecated, and will be unsupported on December 20, 2025.  See above for other options.
+The strongSwan IPSec VPN add-on is deprecated, and will be unsupported on December 20, 2025.  See above for other options.
 {: note}
 
 Use a Helm chart to configure and deploy the strongSwan IPSec VPN service inside of a Kubernetes pod.
@@ -73,7 +73,7 @@ Because strongSwan is integrated within your cluster, you don't need an external
 Before using the strongSwan Helm chart, review the following considerations and limitations.
 {: shortdesc}
 
-- The strongSwan IPSec VPN addon is deprecated, and will be unsupported on December 20, 2025.  You should choose another option
+- The strongSwan IPSec VPN add-on is deprecated, and will be unsupported on December 20, 2025.  You should choose another option
 - The strongSwan Helm chart is supported only for classic clusters, and is not supported for VPC clusters. For VPN information for VPC clusters, see [Setting up VPC VPN connectivity](/docs/openshift?topic=openshift-vpc-vpnaas).
 - The strongSwan Helm chart requires NAT traversal to be enabled by the remote VPN endpoint. NAT traversal requires UDP port 4500 in addition to the default IPSec UDP port of 500. Both UDP ports need to be allowed through any firewall that is configured.
 - The strongSwan Helm chart does not support route-based IPSec VPNs.
