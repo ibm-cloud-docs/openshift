@@ -286,6 +286,16 @@ subcollection: openshift
 
 * [November 2025](/docs/openshift?topic=openshift-openshift-relnotes#openshift-nov25)
 
+    * [11 November 2025](/docs/openshift?topic=openshift-openshift-relnotes#openshift-nov1125)
+
+        * CLI version `1.0.732` is available.
+
+        * {{site.data.keyword.block_storage_is_short}} cluster add-on patch updates.
+
+        * VPC File CSI Driver cluster add-on patch updates.
+
+        * OpenShift AI cluster add-on patch updates.
+
     * [07 October 2025](/docs/openshift?topic=openshift-openshift-relnotes#openshift-nov0725)
 
         * {{site.data.keyword.openshiftlong_notm}} worker node fix packs are available.
@@ -6520,6 +6530,8 @@ subcollection: openshift
 [CLI change log](/docs/openshift?topic=openshift-cs_cli_changelog#cs_cli_changelog)
 
 * [Version 1.0](/docs/openshift?topic=openshift-cs_cli_changelog#10)
+
+* [Version v1.0.732](/docs/openshift?topic=openshift-cs_cli_changelog#cli-01732)
 
 * [Version v1.0.727](/docs/openshift?topic=openshift-cs_cli_changelog#cli-01727)
 

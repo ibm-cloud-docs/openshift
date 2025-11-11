@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2025
-lastupdated: "2025-11-10"
+lastupdated: "2025-11-11"
 
 
 keywords: kubernetes, release notes, openshift, {{site.data.keyword.openshiftlong_notm}}
@@ -27,6 +27,24 @@ Looking for {{site.data.keyword.cloud_notm}} status, platform announcements, sec
 
 ## November 2025
 {: #openshift-nov25}
+
+
+### 11 November 2025
+{: #openshift-nov1125}
+{: release-note}
+
+CLI version `1.0.732` is available.
+:   For more information, see [Updating the CLI](/docs/openshift?topic=openshift-cli-update) and the [CLI change log](/docs/openshift?topic=openshift-cs_cli_changelog).
+
+{{site.data.keyword.block_storage_is_short}} cluster add-on patch updates.
+:   For more information, see the [add-on change log](/docs/openshift?topic=openshift-cl-add-ons-vpc-block-csi-driver).
+
+VPC File CSI Driver cluster add-on patch updates.
+:   For more information, see the [change log](/docs/openshift?topic=openshift-cl-add-ons-vpc-file-csi-driver).
+
+OpenShift AI cluster add-on patch updates.
+:   For more information, see the [change log](/docs/openshift?topic=openshift-cl-add-ons-openshift-ai).
+
 
 ### 07 October 2025
 {: #openshift-nov0725}
