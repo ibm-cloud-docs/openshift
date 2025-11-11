@@ -286,6 +286,10 @@ subcollection: openshift
 
 * [November 2025](/docs/openshift?topic=openshift-openshift-relnotes#openshift-nov25)
 
+    * [12 November 2025](/docs/openshift?topic=openshift-openshift-relnotes#openshift-nov1225)
+
+        * {{site.data.keyword.cos_full_notm}} plug-in updates.
+
     * [11 November 2025](/docs/openshift?topic=openshift-openshift-relnotes#openshift-nov1125)
 
         * CLI version `1.0.732` is available.
@@ -7221,6 +7225,8 @@ subcollection: openshift
     * [Change log for version 1.0, released 16 May 2023](/docs/openshift?topic=openshift-cl-add-ons-vpc-file-csi-driver#1.0_is_file_relnote)
 
 [{{site.data.keyword.cos_full_notm}} plug-in](/docs/openshift?topic=openshift-cos_plugin_changelog#cos_plugin_changelog)
+
+* [Change log for version 2.2.42, released 12 November 2025](/docs/openshift?topic=openshift-cos_plugin_changelog#02242_object_plugin)
 
 * [Change log for version 2.2.41, released 18 August 2025](/docs/openshift?topic=openshift-cos_plugin_changelog#02241_object_plugin)
 
