@@ -1,8 +1,8 @@
 ---
 
 copyright:
-  years: 2023, 2024
-lastupdated: "2024-02-05"
+  years: 2023, 2025
+lastupdated: "2025-11-11"
 
 
 keywords: secret, certificate, field, tls, non-tls, rotate, ingress
@@ -121,11 +121,12 @@ By storing custom TLS certificates in [{{site.data.keyword.secrets-manager_short
 To manage non-TLS secrets, you can use the `ibmcloud oc ingress secret` commands. 
 {: shortdesc}
 
-There are 4 types of non-TLS secrets:
+There are 5 types of non-TLS secrets:
 - **Arbitrary secrets** hold one string value. 
 - **IAM credentials** hold an IAM API key.
 - **Username and password secrets** hold a username and password as two separate values.
-- **Key values** hold JSON values. 
+- **Key values** hold JSON values.
+- **Custom credentials** holds custom (string) values.
 
 Learn how you can centrally manage your non-TLS secrets with [{{site.data.keyword.secrets-manager_full_notm}}](/docs/openshift?topic=openshift-secrets-mgr). With {{site.data.keyword.secrets-manager_short}}, you can create managed Kubernetes secrets, update your secrets automatically, create secret groups that control who has access to the secrets in your cluster, and more.
 {: tip} 
@@ -214,7 +215,7 @@ There are three ways to specify the `--field` option. The one you choose depends
 | ------ | ------ | ----------- | ---------------------- |
 | Default | `--field <crn>` | The name of the added field is the [default field name](#default-field-name) for the secret type of the given CRN. | All non-TLS secret types |
 | Named | `--field <name>=<crn>` | Use this option to specify a name for the added field. The name of the added field is the value specified for `<name>`. | - Arbitrary \n - IAM credentials |
-| Prefixed | `--field prefix=<crn>` | The name of the added field is the [default field name](#default-field-name) for the secret type specified by the given CRN, prefixed by the name of the secret specified by the `<crn>` and an underscore. | - IAM credentials \n - username/password \n - key/value |
+| Prefixed | `--field prefix=<crn>` | The name of the added field is the [default field name](#default-field-name) for the secret type specified by the given CRN, prefixed by the name of the secret specified by the `<crn>` and an underscore. | - IAM credentials \n - username/password \n - key/value \n - Custom credentials |
 {: caption="Options for adding fields to non-TLS secrets"}
 
 
@@ -279,6 +280,3 @@ Are my secrets automatically updated if I do not create and register a [{{site.d
 
 I created secrets that reference the default Ingress certificate, but I did not create and register a [{{site.data.keyword.secrets-manager_short}}](/docs/openshift?topic=openshift-secrets-mgr) instance. How do I manage my secrets?
 :   If you don't register a {{site.data.keyword.secrets-manager_short}} instance, {{site.data.keyword.openshiftlong_notm}} automatically updates only the default Ingress secret. You are responsible for managing any other secrets by using **`kubectl`** commands or another rotation method. If your secrets reference the default Ingress certificate, remove them by using **`ibmcloud ks ingress secret rm`**.
-
-
-
