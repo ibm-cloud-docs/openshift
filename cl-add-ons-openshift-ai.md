@@ -3,7 +3,7 @@
 copyright:
   years: 2024, 2025
 
-lastupdated: "2025-10-14"
+lastupdated: "2025-11-11"
 
 
 keywords: change log, version history, OpenShift AI
@@ -25,12 +25,30 @@ Review the version history for OpenShift AI.
 
 
 
+## Version 418
+{: #cl-add-ons-openshift-ai-418}
+
+
+### v418.0.0_295927267, released 11 November 2025
+{: #cl-add-ons-openshift-ai-v41800_295927267}
+
+- Resolves the following CVEs: [CVE-2025-23266](https://nvd.nist.gov/vuln/detail/CVE-2025-23266){: external}, and [CVE-2025-23267](https://nvd.nist.gov/vuln/detail/CVE-2025-23267){: external}.
+- Updates Go to version `1.25.3`.
+- Installs Red Hat `openshift-ai` operator version `2.22.2`.
+- Optionally installs NFD operator based on latest version available for channel `stable`.
+- Optionally installs NVIDIA GPU operator based on latest version available for channel `stable`.
+- Optionally installs Pipeline operator based on latest version available for channel `latest`.
+
+
+
 ## Version 417
 {: #cl-add-ons-openshift-ai-417}
 
 
 ### 417.0.2_672, released 07 October 2025
 {: #cl-add-ons-openshift-ai-41702_672}
+
+[Default version]{: tag-green}
 
 - Resolves the following CVEs: [CVE-2025-10725](https://nvd.nist.gov/vuln/detail/CVE-2025-10725){: external}.
 - Updates Go to version `1.24.4`.
