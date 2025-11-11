@@ -3,7 +3,7 @@
 copyright:
   years: 2024, 2025
 
-lastupdated: "2025-11-05"
+lastupdated: "2025-11-11"
 
 
 keywords: change log, version history, VPC Block CSI Driver
@@ -28,6 +28,13 @@ Review the version history for VPC Block CSI Driver.
 ## Version 5.2
 {: #cl-add-ons-vpc-block-csi-driver-5.2}
 
+
+### 5.2.41_296897820, released 12 November 2025
+{: #cl-add-ons-vpc-block-csi-driver-5241_296897820}
+
+- Resolves the following CVEs: [CVE-2025-61725](https://nvd.nist.gov/vuln/detail/CVE-2025-61725){: external}, [CVE-2025-61723](https://nvd.nist.gov/vuln/detail/CVE-2025-61723){: external}, [CVE-2025-58189](https://nvd.nist.gov/vuln/detail/CVE-2025-58189){: external}, and [CVE-2025-58185](https://nvd.nist.gov/vuln/detail/CVE-2025-58185){: external}.
+- Updates Go to version `1.25.3`.
+- `armada-storage-secret v1.3.36`
 
 ### 5.2.40_293222012, released 05 November 2025
 {: #cl-add-ons-vpc-block-csi-driver-5240_293222012}
@@ -82,6 +89,13 @@ Review the version history for VPC Block CSI Driver.
 ## Version 5.1
 {: #cl-add-ons-vpc-block-csi-driver-5.1}
 
+
+### 5.1.40_296898008, released 12 November 2025
+{: #cl-add-ons-vpc-block-csi-driver-5140_296898008}
+
+- Resolves the following CVEs: [CVE-2025-61725](https://nvd.nist.gov/vuln/detail/CVE-2025-61725){: external}, [CVE-2025-61723](https://nvd.nist.gov/vuln/detail/CVE-2025-61723){: external}, [CVE-2025-58189](https://nvd.nist.gov/vuln/detail/CVE-2025-58189){: external}, and [CVE-2025-58185](https://nvd.nist.gov/vuln/detail/CVE-2025-58185){: external}.
+- Updates Go to version `1.25.3`.
+- `armada-storage-secret v1.2.70`
 
 ### 5.1.39_293222093, released 05 November 2025
 {: #cl-add-ons-vpc-block-csi-driver-5139_293222093}
