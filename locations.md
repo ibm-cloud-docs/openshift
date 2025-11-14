@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2025
-lastupdated: "2025-10-27"
+lastupdated: "2025-11-14"
 
 
 keywords: openshift, kubernetes, mzr, szr, multizone, multi az
@@ -84,7 +84,6 @@ The Milan (`mil01`) datacenter is deprecated and closes on 31 October 2025. Migr
 | Asia Pacific | India | Chennai | in-che | che01 | AP North (`ap-north`, `jp-tok`) |
 | Asia Pacific | Singapore | Singapore | sng-mtr | sng01 | AP North (`ap-north`, `jp-tok`) |
 | Europe | France | Paris | fr-par | par01 | EU Central (`eu-central`, `eu-de`) |
-| Europe | Italy | Milan | it-mil | mil01 | EU Central (`eu-central`, `eu-de`) |
 | Europe | Netherlands | Amsterdam | nl-ams | ams03 | EU Central (`eu-central`, `eu-de`) |
 | North America | Canada | Montreal | ca-mon | mon01 | US East (`us-east`) |
 | North America | Canada | Toronto | ca-tor | tor01 | US East (`us-east`) |
