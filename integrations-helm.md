@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2025
-lastupdated: "2025-03-28"
+lastupdated: "2025-11-17"
 
 
 keywords: kubernetes, openshift
@@ -24,7 +24,7 @@ subcollection: openshift
 You can add complex {{site.data.keyword.redhat_openshift_notm}} apps to your cluster by using Helm charts.
 {: shortdesc}
 
-In {{site.data.keyword.redhat_openshift_notm}} clusters that run version 4, use [Operators](/docs/openshift?topic=openshift-operators) instead of Helm charts. If you have custom Helm charts, you can create a [Helm-based Operator](https://docs.redhat.com/documentation/openshift_container_platform/4.7/html/operators/developing-operators){: external} instead.
+In {{site.data.keyword.redhat_openshift_notm}} clusters that run version 4, use [Operators](/docs/openshift?topic=openshift-operators) instead of Helm charts. If you have custom Helm charts, you can create a [Helm-based Operator](https://docs.redhat.com/en/documentation/openshift_container_platform/4.7/html/operators/developing-operators){: external} instead.
 {: tip}
 
 ## About Helm in {{site.data.keyword.openshiftlong_notm}}

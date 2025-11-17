@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2025
-lastupdated: "2025-11-10"
+lastupdated: "2025-11-17"
 
 
 keywords: openshift, disconnect, airgap, olm, mirror
@@ -38,7 +38,7 @@ Before you begin, [check the status](https://docs.redhat.com/en/documentation/op
     - [Deleting Operators from a cluster](https://docs.redhat.com/en/documentation/openshift_container_platform/4.19/html/operators/administrator-tasks#olm-status-viewing-cli_olm-status){: external}
     - [Creating applications from installed Operators](https://docs.redhat.com/en/documentation/openshift_container_platform/4.19/html/operators/user-tasks#olm-creating-apps-from-installed-operators){: external}
     - [Making your own custom Operator](https://github.com/operator-framework/community-operators/blob/master/docs/testing-operators.md#testing-operator-deployment-on-openshift){: external}.
-        - For help creating custom Operators, see the [Operator SDK](https://docs.redhat.com/en/documentation/openshift_container_platform/4.19/html/operators/developing-operators#osdk-about){: external} documentation, which includes a guide to build an operator that is based on a [Helm chart](https://docs.redhat.com/documentation/openshift_container_platform/4.7/html/operators/developing-operators){: external}.
+        - For help creating custom Operators, see the [Operator SDK](https://docs.redhat.com/en/documentation/openshift_container_platform/4.19/html/operators/developing-operators#osdk-about){: external} documentation, which includes a guide to build an operator that is based on a [Helm chart](https://docs.redhat.com/en/documentation/openshift_container_platform/4.7/html/operators/developing-operators){: external}.
         - To manage your custom Operator, see the [Operator Lifecycle Manager](https://docs.redhat.com/en/documentation/openshift_container_platform/4.19/html/operators/understanding-operators#operator-lifecycle-manager-olm){: external} documentation.
 2. Review any custom steps to install an operator in your cluster.
     - To set up an [OpenShift Container Platform Elasticsearch, Fluentd, and Kibana (EFK) stack](https://docs.redhat.com/documentation/openshift_container_platform/4.19/html/logging/index){: external}, see [installing the cluster logging operator](/docs/openshift?topic=openshift-health#oc_logging_operator).

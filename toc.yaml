@@ -486,7 +486,7 @@ toc:
           topics:
           - link:
               label: OpenShift Container Platform documentation
-              href: https://docs.redhat.com/
+              href: https://docs.redhat.com/en
           - link:
               label: IBM Developer - Red Hat OpenShift on IBM Cloud
               href: https://developer.ibm.com/components/redhat-openshift-ibm-cloud/

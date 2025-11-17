@@ -2,7 +2,7 @@
 
 copyright:
   years: 2022, 2025
-lastupdated: "2025-08-05"
+lastupdated: "2025-11-17"
 
 
 keywords: openshift, version, update, upgrade, 4.10
@@ -37,7 +37,7 @@ If you have Portworx installed, follow the steps to upgrade your installation to
 Gateway-enabled clusters on Classic infrastructure are deprecated and will be unsupported soon. The end of support dates are linked directly to the end of support of {{site.data.keyword.openshiftlong_notm}} version 4.9. Gateway-enabled clusters are not supported on version 4.10 and later. If your cluster is gateway-enabled cluster, plan to create a new cluster before support ends. If you need similar functionality, consider creating a cluster on VPC infrastructure.
 {: important} 
 
-[Extended update support (EUS) updates](https://docs.redhat.com/documentation/openshift_container_platform/4.10/html/updating_clusters/preparing-eus-eus-upgrade){: external} are not available at this time for {{site.data.keyword.openshiftlong_notm}} version 4.10 clusters.
+[Extended update support (EUS) updates](https://docs.redhat.com/en/documentation/openshift_container_platform/4.10/html/updating_clusters/preparing-eus-eus-upgrade){: external} are not available at this time for {{site.data.keyword.openshiftlong_notm}} version 4.10 clusters.
 {: note}
 
 
@@ -79,7 +79,7 @@ The following table shows the actions that you must take before you [update the 
 
 | Type | Description |
 | --- | --- |
-| **Unsupported:** Deprecated and removed {{site.data.keyword.redhat_openshift_notm}} features | For more information, review the [{{site.data.keyword.redhat_openshift_notm}} version 4.10 deprecated and removed features](https://docs.redhat.com/documentation/openshift_container_platform/4.10/html/release_notes/ocp-4-10-release-notes#ocp-4-10-deprecated-removed-features){: external}. |
+| **Unsupported:** Deprecated and removed {{site.data.keyword.redhat_openshift_notm}} features | For more information, review the [{{site.data.keyword.redhat_openshift_notm}} version 4.10 deprecated and removed features](https://docs.redhat.com/en/documentation/openshift_container_platform/4.10/html/release_notes/ocp-4-10-release-notes#ocp-4-10-deprecated-removed-features){: external}. |
 | Kubernetes API server metrics job name changed | Kubernetes API server metrics now use job `kube-apiserver` rather than `cluster-version-operator`. Update any custom metrics and alerts to use the new job name. |
 | **Deprecated**: RHEL 7 | RHEL 7 is deprecated in version 4.10. [Migrate your worker nodes to RHEL 8](#410_rhel-migrate). |
 | Updated default container network `sysctls` | New containers running on the pod network have the following `sysctl` tuning applied by default: `net.ipv4.tcp_keepalive_intvl=15`, `net.ipv4.tcp_keepalive_probes=6` and `net.ipv4.tcp_keepalive_time=40`. If your apps rely on the previous defaults, you must update your app deployment to customize the `sysctl` settings. For more information, see [Optimizing network keepalive `sysctl` settings](/docs/openshift?topic=openshift-kernel#keepalive-iks). |

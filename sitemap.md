@@ -9350,7 +9350,7 @@ subcollection: openshift
 {: #sitemap_related_links}
 
 
-[OpenShift Container Platform documentation](https://docs.redhat.com/){: external}
+[OpenShift Container Platform documentation](https://docs.redhat.com/en){: external}
 
 [IBM Developer - Red Hat OpenShift on IBM Cloud](https://developer.ibm.com/components/redhat-openshift-ibm-cloud/){: external}
 
