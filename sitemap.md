@@ -286,6 +286,10 @@ subcollection: openshift
 
 * [November 2025](/docs/openshift?topic=openshift-openshift-relnotes#openshift-nov25)
 
+    * [17 November 2025](/docs/openshift?topic=openshift-openshift-relnotes#openshift-nov1725)
+
+        * {{site.data.keyword.cos_full_notm}} add-on patch updates.
+
     * [12 November 2025](/docs/openshift?topic=openshift-openshift-relnotes#openshift-nov1225)
 
         * {{site.data.keyword.cos_full_notm}} plug-in updates.
@@ -7226,6 +7230,12 @@ subcollection: openshift
 
     * [Change log for version 1.0, released 16 May 2023](/docs/openshift?topic=openshift-cl-add-ons-vpc-file-csi-driver#1.0_is_file_relnote)
 
+[IBM Object CSI Driver add-on version change log](/docs/openshift?topic=openshift-cl-add-ons-ibm-object-csi-driver#cl-add-ons-ibm-object-csi-driver)
+
+* [Version 1.0](/docs/openshift?topic=openshift-cl-add-ons-ibm-object-csi-driver#cl-add-ons-ibm-object-csi-driver-1.0)
+
+    * [v1.0.13_297764008, released 14 November 2025](/docs/openshift?topic=openshift-cl-add-ons-ibm-object-csi-driver#cl-add-ons-ibm-object-csi-driver-v1013_297764008)
+
 [{{site.data.keyword.cos_full_notm}} plug-in](/docs/openshift?topic=openshift-cos_plugin_changelog#cos_plugin_changelog)
 
 * [Change log for version 2.2.42, released 12 November 2025](/docs/openshift?topic=openshift-cos_plugin_changelog#02242_object_plugin)
@@ -9340,7 +9350,7 @@ subcollection: openshift
 {: #sitemap_related_links}
 
 
-[OpenShift Container Platform documentation](https://docs.redhat.com/){: external}
+[OpenShift Container Platform documentation](https://docs.redhat.com/en){: external}
 
 [IBM Developer - Red Hat OpenShift on IBM Cloud](https://developer.ibm.com/components/redhat-openshift-ibm-cloud/){: external}
 

@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2025
-lastupdated: "2025-08-05"
+lastupdated: "2025-11-17"
 
 
 keywords: openshift, version, update, upgrade
@@ -68,5 +68,5 @@ The following table shows the actions that you must take before you [update the 
 | Type | Description |
 | ---- | ----------- |
 | Kubernetes snapshot CRDs | {{site.data.keyword.containerlong_notm}} installs Kubernetes snapshot custom resource definition (CRD) version `v1beta1`. If you use other Kubernetes snapshot CRD versions `v1` or `v1alpha1`, you must change the version to `v1beta1`. To check the currently installed version of your snapshot CRDs, run `grep snapshot.storage.k8s.io <<(kubectl get apiservices)`. Follow the Kubernetes documentation to [Upgrade from v1alpha1 to v1beta1](https://github.com/kubernetes-csi/external-snapshotter#upgrade-from-v1alpha1-to-v1beta1){: external} to make sure that your snapshot CRDs are at the correct `v1beta1` version. The steps to downgrade from version `v1` to `v1beta1` are the same as those to upgrade from `v1alpha1`. Do not follow the instructions to upgrade from version `v1beta1` to version `v1`. |
-| **Unsupported:** Deprecated and removed {{site.data.keyword.redhat_openshift_notm}} features | For more information, review the [{{site.data.keyword.redhat_openshift_notm}} version 4.7 deprecated and removed features](https://docs.redhat.com/documentation/openshift_container_platform/4.7/html/release_notes/ocp-4-7-release-notes#ocp-4-7-deprecated-removed-features){: external}. |
+| **Unsupported:** Deprecated and removed {{site.data.keyword.redhat_openshift_notm}} features | For more information, review the [{{site.data.keyword.redhat_openshift_notm}} version 4.7 deprecated and removed features](https://docs.redhat.com/en/documentation/openshift_container_platform/4.7/html/release_notes/ocp-4-7-release-notes#ocp-4-7-deprecated-removed-features){: external}. |
 {: caption="Changes to make before you update the master to Red Hat OpenShift 4.7" caption-side="bottom"}

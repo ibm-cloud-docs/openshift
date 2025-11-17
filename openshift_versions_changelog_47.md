@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2025
-lastupdated: "2025-08-20"
+lastupdated: "2025-11-17"
 
 
 keywords: openshift, update, upgrade, BOM, bill of materials, versions, patch
@@ -96,7 +96,7 @@ The following table shows the changes that are in the master fix pack 4.7.60_159
 | Load balancer and load balancer monitor for {{site.data.keyword.cloud_notm}} Provider | 2110 | 2325 | Update `Go` to version `1.19.1` and update dependencies. |
 | OpenVPN Operator image | v1.4.11 | v1.4.13 | Updated the `ansible operator base image` to `v1.25.2` to resolve CVEs. |
 | {{site.data.keyword.openshiftshort}} Control Plane Operator | v4.7.0-20221104 | v4.7.0-20221205 | See the [{{site.data.keyword.openshiftlong_notm}} toolkit release notes](https://github.com/openshift/ibm-roks-toolkit/releases/tag/v4.7.0+20221205){: external}. |
-| {{site.data.keyword.openshiftlong_notm}}. | 4.7.59 | 4.7.60 | See the [{{site.data.keyword.openshiftlong_notm}} Release Notes](https://docs.redhat.com/documentation/openshift_container_platform/4.7/html/release_notes/ocp-4-7-release-notes#ocp-4-7-60){: external}. |
+| {{site.data.keyword.openshiftlong_notm}}. | 4.7.59 | 4.7.60 | See the [{{site.data.keyword.openshiftlong_notm}} Release Notes](https://docs.redhat.com/en/documentation/openshift_container_platform/4.7/html/release_notes/ocp-4-7-release-notes#ocp-4-7-60){: external}. |
 | {{site.data.keyword.openshiftlong_notm}} Metrics Server and toolkit | v4.7.0-20221104 | v4.7.0-20221205 | See the [{{site.data.keyword.openshiftlong_notm}} toolkit release notes](https://github.com/openshift/ibm-roks-toolkit/releases/tag/v4.7.0+20221205){: external}. |
 {: caption="Changes since version 4.7.59_1589_openshift" caption-side="bottom"}
 
@@ -126,7 +126,7 @@ The following table shows the changes that are in the worker node fix pack 4.7.6
 | --- | --- | --- | --- |
 | RHEL 7 Packages |N/A|N/A| Worker node package updates for [CVE-2022-21233](https://nvd.nist.gov/vuln/detail/CVE-2022-21233){: external}, [CVE-2022-23816](https://nvd.nist.gov/vuln/detail/CVE-2022-23816){: external}, [CVE-2022-23825](https://nvd.nist.gov/vuln/detail/CVE-2022-23825){: external}, [CVE-2022-2588](https://nvd.nist.gov/vuln/detail/CVE-2022-2588){: external}, [CVE-2022-26373](https://nvd.nist.gov/vuln/detail/CVE-2022-26373){: external}, [CVE-2022-29900](https://nvd.nist.gov/vuln/detail/CVE-2022-29900){: external}, [CVE-2022-29901](https://nvd.nist.gov/vuln/detail/CVE-2022-29901){: external}, [CVE-2022-41974](https://nvd.nist.gov/vuln/detail/CVE-2022-41974){: external}. |
 | RHEL 8 Packages |N/A|N/A| Worker node package updates for [CVE-2015-20107](https://nvd.nist.gov/vuln/detail/CVE-2015-20107){: external}, [CVE-2016-3709](https://nvd.nist.gov/vuln/detail/CVE-2016-3709){: external}, [CVE-2020-0256](https://nvd.nist.gov/vuln/detail/CVE-2020-0256){: external}, [CVE-2020-35525](https://nvd.nist.gov/vuln/detail/CVE-2020-35525){: external}, [CVE-2020-35527](https://nvd.nist.gov/vuln/detail/CVE-2020-35527){: external}, [CVE-2020-36516](https://nvd.nist.gov/vuln/detail/CVE-2020-36516){: external}, [CVE-2020-36558](https://nvd.nist.gov/vuln/detail/CVE-2020-36558){: external}, [CVE-2021-0308](https://nvd.nist.gov/vuln/detail/CVE-2021-0308){: external}, [CVE-2021-25220](https://nvd.nist.gov/vuln/detail/CVE-2021-25220){: external}, [CVE-2021-30002](https://nvd.nist.gov/vuln/detail/CVE-2021-30002){: external}, [CVE-2021-36221](https://nvd.nist.gov/vuln/detail/CVE-2021-36221){: external}, [CVE-2021-3640](https://nvd.nist.gov/vuln/detail/CVE-2021-3640){: external}, [CVE-2021-41190](https://nvd.nist.gov/vuln/detail/CVE-2021-41190){: external}, [CVE-2022-0168](https://nvd.nist.gov/vuln/detail/CVE-2022-0168){: external}, [CVE-2022-0494](https://nvd.nist.gov/vuln/detail/CVE-2022-0494){: external}, [CVE-2022-0617](https://nvd.nist.gov/vuln/detail/CVE-2022-0617){: external}, [CVE-2022-0854](https://nvd.nist.gov/vuln/detail/CVE-2022-0854){: external}, [CVE-2022-1016](https://nvd.nist.gov/vuln/detail/CVE-2022-1016){: external}, [CVE-2022-1048](https://nvd.nist.gov/vuln/detail/CVE-2022-1048){: external}, [CVE-2022-1055](https://nvd.nist.gov/vuln/detail/CVE-2022-1055){: external}, [CVE-2022-1184](https://nvd.nist.gov/vuln/detail/CVE-2022-1184){: external}, [CVE-2022-1304](https://nvd.nist.gov/vuln/detail/CVE-2022-1304){: external}, [CVE-2022-1353](https://nvd.nist.gov/vuln/detail/CVE-2022-1353){: external}, [CVE-2022-1708](https://nvd.nist.gov/vuln/detail/CVE-2022-1708){: external}, [CVE-2022-1852](https://nvd.nist.gov/vuln/detail/CVE-2022-1852){: external}, [CVE-2022-20368](https://nvd.nist.gov/vuln/detail/CVE-2022-20368){: external}, [CVE-2022-2078](https://nvd.nist.gov/vuln/detail/CVE-2022-2078){: external}, [CVE-2022-21499](https://nvd.nist.gov/vuln/detail/CVE-2022-21499){: external}, [CVE-2022-22624](https://nvd.nist.gov/vuln/detail/CVE-2022-22624){: external}, [CVE-2022-22628](https://nvd.nist.gov/vuln/detail/CVE-2022-22628){: external}, [CVE-2022-22629](https://nvd.nist.gov/vuln/detail/CVE-2022-22629){: external}, [CVE-2022-22662](https://nvd.nist.gov/vuln/detail/CVE-2022-22662){: external}, [CVE-2022-23816](https://nvd.nist.gov/vuln/detail/CVE-2022-23816){: external}, [CVE-2022-23825](https://nvd.nist.gov/vuln/detail/CVE-2022-23825){: external}, [CVE-2022-23960](https://nvd.nist.gov/vuln/detail/CVE-2022-23960){: external}, [CVE-2022-24448](https://nvd.nist.gov/vuln/detail/CVE-2022-24448){: external}, [CVE-2022-24795](https://nvd.nist.gov/vuln/detail/CVE-2022-24795){: external}, [CVE-2022-2509](https://nvd.nist.gov/vuln/detail/CVE-2022-2509){: external}, [CVE-2022-2586](https://nvd.nist.gov/vuln/detail/CVE-2022-2586){: external}, [CVE-2022-2588](https://nvd.nist.gov/vuln/detail/CVE-2022-2588){: external}, [CVE-2022-26373](https://nvd.nist.gov/vuln/detail/CVE-2022-26373){: external}, [CVE-2022-2639](https://nvd.nist.gov/vuln/detail/CVE-2022-2639){: external}, [CVE-2022-26700](https://nvd.nist.gov/vuln/detail/CVE-2022-26700){: external}, [CVE-2022-26709](https://nvd.nist.gov/vuln/detail/CVE-2022-26709){: external}, [CVE-2022-26710](https://nvd.nist.gov/vuln/detail/CVE-2022-26710){: external}, [CVE-2022-26716](https://nvd.nist.gov/vuln/detail/CVE-2022-26716){: external}, [CVE-2022-26717](https://nvd.nist.gov/vuln/detail/CVE-2022-26717){: external}, [CVE-2022-26719](https://nvd.nist.gov/vuln/detail/CVE-2022-26719){: external}, [CVE-2022-27191](https://nvd.nist.gov/vuln/detail/CVE-2022-27191){: external}, [CVE-2022-27404](https://nvd.nist.gov/vuln/detail/CVE-2022-27404){: external}, [CVE-2022-27405](https://nvd.nist.gov/vuln/detail/CVE-2022-27405){: external}, [CVE-2022-27406](https://nvd.nist.gov/vuln/detail/CVE-2022-27406){: external}, [CVE-2022-27950](https://nvd.nist.gov/vuln/detail/CVE-2022-27950){: external}, [CVE-2022-28390](https://nvd.nist.gov/vuln/detail/CVE-2022-28390){: external}, [CVE-2022-28893](https://nvd.nist.gov/vuln/detail/CVE-2022-28893){: external}, [CVE-2022-29162](https://nvd.nist.gov/vuln/detail/CVE-2022-29162){: external}, [CVE-2022-2938](https://nvd.nist.gov/vuln/detail/CVE-2022-2938){: external}, [CVE-2022-29581](https://nvd.nist.gov/vuln/detail/CVE-2022-29581){: external}, [CVE-2022-2989](https://nvd.nist.gov/vuln/detail/CVE-2022-2989){: external}, [CVE-2022-2990](https://nvd.nist.gov/vuln/detail/CVE-2022-2990){: external}, [CVE-2022-29900](https://nvd.nist.gov/vuln/detail/CVE-2022-29900){: external}, [CVE-2022-29901](https://nvd.nist.gov/vuln/detail/CVE-2022-29901){: external}, [CVE-2022-30293](https://nvd.nist.gov/vuln/detail/CVE-2022-30293){: external}, [CVE-2022-32746](https://nvd.nist.gov/vuln/detail/CVE-2022-32746){: external}, [CVE-2022-3515](https://nvd.nist.gov/vuln/detail/CVE-2022-3515){: external}, [CVE-2022-36946](https://nvd.nist.gov/vuln/detail/CVE-2022-36946){: external}, [CVE-2022-37434](https://nvd.nist.gov/vuln/detail/CVE-2022-37434){: external}, [CVE-2022-3787](https://nvd.nist.gov/vuln/detail/CVE-2022-3787){: external}, [CVE-2022-40674](https://nvd.nist.gov/vuln/detail/CVE-2022-40674){: external}, [CVE-2022-41974](https://nvd.nist.gov/vuln/detail/CVE-2022-41974){: external}. |
-| {{site.data.keyword.openshiftshort}}. | 4.7.59 | 4.7.60 | For more information, see the [change log](https://docs.redhat.com/documentation/openshift_container_platform/4.7/html/release_notes/ocp-4-7-release-notes#ocp-4-7-60){: external}. |
+| {{site.data.keyword.openshiftshort}}. | 4.7.59 | 4.7.60 | For more information, see the [change log](https://docs.redhat.com/en/documentation/openshift_container_platform/4.7/html/release_notes/ocp-4-7-release-notes#ocp-4-7-60){: external}. |
 {: caption="Changes since version 4.7.59_1588_openshift" caption-side="top"}
 
 
@@ -226,7 +226,7 @@ The following table shows the changes that are in the master fix pack 4.7.59_158
 | {{site.data.keyword.cloud_notm}} Block Storage driver and plug-in | v2.2.9 | v2.3.1 | Updated to `Go` version `1.18.6`. Updated universal base image (UBI) to version `8.6-941` to resolve CVEs. |
 | {{site.data.keyword.filestorage_full_notm}} plug-in and monitor | 414 | 416 | Updated to `Go` version `1.18.6`. Updated universal base image (UBI) to version `8.6-941` to resolve CVEs. |
 | Key Management Service Provider | v2.5.8 | v2.5.9 | Updated `Go` dependencies and to `Go` version `1.18.6`. |
-| {{site.data.keyword.openshiftshort}} | 4.7.56 | 4.7.59 | See the [{{site.data.keyword.openshiftshort}} Release Notes](https://docs.redhat.com/documentation/openshift_container_platform/4.7/html/release_notes/ocp-4-7-release-notes#ocp-4-7-59){: external}. |
+| {{site.data.keyword.openshiftshort}} | 4.7.56 | 4.7.59 | See the [{{site.data.keyword.openshiftshort}} Release Notes](https://docs.redhat.com/en/documentation/openshift_container_platform/4.7/html/release_notes/ocp-4-7-release-notes#ocp-4-7-59){: external}. |
 | OpenVPN Operator image | v1.4.8 | v1.4.9 | Updated ansible operator base image to `v1.23.0` to resolve CVEs. |
 | {{site.data.keyword.openshiftshort}} Control Plane Operator | v4.7.0-20220816 | v4.7.0-20220920 | See the [{{site.data.keyword.openshiftlong_notm}} toolkit release notes](https://github.com/openshift/ibm-roks-toolkit/releases/tag/v4.7.0+20220920){: external}. |
 | {{site.data.keyword.openshiftlong_notm}} Metrics Server | v4.7.0-20220816 | v4.7.0-20220920 | See the [{{site.data.keyword.openshiftlong_notm}} toolkit release notes](https://github.com/openshift/ibm-roks-toolkit/releases/tag/v4.7.0+20220920){: external}. |
@@ -244,7 +244,7 @@ The following table shows the changes that are in the worker node fix pack 4.7.5
 | --- | --- | --- | --- |
 | RHEL 7 Packages |N/A|N/A|N/A|
 | RHEL 8 Packages | 4.18.0-372.19.1 | 4.18.0-372.26.1 |N/A|
-| {{site.data.keyword.openshiftshort}}. | 4.7.56 | 4.7.59 | For more information, see the [change log](https://docs.redhat.com/documentation/openshift_container_platform/4.7/html/release_notes/ocp-4-7-release-notes#ocp-4-7-59){: external}. |
+| {{site.data.keyword.openshiftshort}}. | 4.7.56 | 4.7.59 | For more information, see the [change log](https://docs.redhat.com/en/documentation/openshift_container_platform/4.7/html/release_notes/ocp-4-7-release-notes#ocp-4-7-59){: external}. |
 {: caption="Changes since version 4.7.56_1581_openshift" caption-side="bottom"}
 
 
@@ -281,7 +281,7 @@ The following table shows the changes that are in the master fix pack 4.7.56_158
 | {{site.data.keyword.cloud_notm}} RBAC Operator | 0a187a4 | dc1725a | Updated `Go` dependencies and to `Go` version `1.18.3`. |
 | Key Management Service provider | v2.5.7 | v2.5.8 | Updated `Go` dependencies. |
 | Load balancer and load balancer monitor for {{site.data.keyword.cloud_notm}} Provider | 2058 | 2110 | Updated `Go` dependencies and to `Go` version `1.17.13`. |
-| {{site.data.keyword.openshiftshort}}. | 4.7.53 | 4.7.56 | See the [{{site.data.keyword.openshiftshort}} Release Notes](https://docs.redhat.com/documentation/openshift_container_platform/4.7/html/release_notes/ocp-4-7-release-notes#ocp-4-7-56){: external}. |
+| {{site.data.keyword.openshiftshort}}. | 4.7.53 | 4.7.56 | See the [{{site.data.keyword.openshiftshort}} Release Notes](https://docs.redhat.com/en/documentation/openshift_container_platform/4.7/html/release_notes/ocp-4-7-release-notes#ocp-4-7-56){: external}. |
 | OpenVPN client | 2.5.6-r1-IKS-629 | 2.5.6-r1-IKS-648 | Update image for [CVE-2022-2097](https://nvd.nist.gov/vuln/detail/CVE-2022-2097){: external} and [CVE-2022-37434](https://nvd.nist.gov/vuln/detail/CVE-2022-37434){: external}. |
 | OpenVPN Operator image | v1.4.7 | v1.4.8 | Updated Ansible operator base image to version `v1.22.2` to resolve CVEs. |
 | OpenVPN server | 2.5.6-r1-IKS-628 | 2.5.6-r1-IKS-647 | Update image for [CVE-2022-2097](https://nvd.nist.gov/vuln/detail/CVE-2022-2097){: external} and [CVE-2022-37434](https://nvd.nist.gov/vuln/detail/CVE-2022-37434){: external}. |
@@ -301,7 +301,7 @@ The following table shows the changes that are in the worker node fix pack 4.7.5
 | Component | Previous | Current | Description |
 | --- | --- | --- | --- |
 | RHEL 7 Packages |N/A|N/A| Worker node package updates for [CVE-2022-2526](https://nvd.nist.gov/vuln/detail/CVE-2022-2526){: external}. |
-| {{site.data.keyword.openshiftshort}}. | 4.7.55 | 4.7.56 | For more information, see the [change log](https://docs.redhat.com/documentation/openshift_container_platform/4.7/html/release_notes/ocp-4-7-release-notes#ocp-4-7-56){: external}. |
+| {{site.data.keyword.openshiftshort}}. | 4.7.55 | 4.7.56 | For more information, see the [change log](https://docs.redhat.com/en/documentation/openshift_container_platform/4.7/html/release_notes/ocp-4-7-release-notes#ocp-4-7-56){: external}. |
 | HAPROXY | 6514a2 | c1634f | [CVE-2022-32206](https://nvd.nist.gov/vuln/detail/CVE-2022-32206){: external}, [CVE-2022-32208](https://nvd.nist.gov/vuln/detail/CVE-2022-32208){: external}
 {: caption="Changes since version 4.7.55_1576_openshift" caption-side="bottom"}
 
@@ -328,7 +328,7 @@ The following table shows the changes that are in the worker node fix pack 4.7.5
 | Component | Previous | Current | Description |
 | --- | --- | --- | --- |
 | RHEL 7 Packages |N/A|N/A|N/A|
-| {{site.data.keyword.openshiftshort}}. | 4.7.54 | 4.7.55 | For more information, see the [change log](https://docs.redhat.com/documentation/openshift_container_platform/4.7/html/release_notes/ocp-4-7-release-notes#ocp-4-7-55){: external}. |
+| {{site.data.keyword.openshiftshort}}. | 4.7.54 | 4.7.55 | For more information, see the [change log](https://docs.redhat.com/en/documentation/openshift_container_platform/4.7/html/release_notes/ocp-4-7-release-notes#ocp-4-7-55){: external}. |
 {: caption="Changes since version 4.7.54_1572_openshift" caption-side="bottom"}
 
 
@@ -350,7 +350,7 @@ The following table shows the changes that are in the master fix pack 4.7.53_157
 | {{site.data.keyword.cloud_notm}} RBAC Operator | 8c96932 | 0a187a4 | Updated universal base image (UBI) to resolve CVEs. |
 | Key Management Service provider | v2.5.6 | v2.5.7 | Updated `Go` dependencies and to use `Go` version `1.18.4`. |
 | Load balancer and load balancer monitor for {{site.data.keyword.cloud_notm}} Provider | 1998 | 2058 | Updated image for [CVE-2022-2097](https://nvd.nist.gov/vuln/detail/CVE-2022-2097){: external}. |
-| {{site.data.keyword.openshiftshort}}. | 4.7.52 | 4.7.53 | See the [{{site.data.keyword.openshiftshort}} release notes](https://docs.redhat.com/documentation/openshift_container_platform/4.7/html/release_notes/ocp-4-7-release-notes#ocp-4-7-53){: external}. |
+| {{site.data.keyword.openshiftshort}}. | 4.7.52 | 4.7.53 | See the [{{site.data.keyword.openshiftshort}} release notes](https://docs.redhat.com/en/documentation/openshift_container_platform/4.7/html/release_notes/ocp-4-7-release-notes#ocp-4-7-53){: external}. |
 | OpenVPN client | 2.5.6-r0-IKS-592 | 2.5.6-r1-IKS-629 | Updated Alpine base image to version `3.16` to resolve CVEs. Updated OpenVPN to version `2.5.6-r1`. |
 | OpenVPN Operator image | v1.4.6 | v1.4.7 | Updated Ansible operator base image to version `v1.22.1` to resolve CVEs. |
 | OpenVPN server | 2.5.6-r0-IKS-591 | 2.5.6-r1-IKS-628 | Updated Alpine base image to version `3.16` to resolve CVEs. Updated OpenVPN to version `2.5.6-r1`. |
@@ -370,7 +370,7 @@ The following table shows the changes that are in the worker node fix pack 4.7.5
 | Component | Previous | Current | Description |
 | --- | --- | --- | --- |
 | RHEL 7 Packages | 3.10.0-1160.66.1 | 3.10.0-1160.71.1 | Worker node package updates for [CVE-2020-26116](https://nvd.nist.gov/vuln/detail/CVE-2020-26116){: external}, [CVE-2020-26137](https://nvd.nist.gov/vuln/detail/CVE-2020-26137){: external}, [CVE-2021-3177](https://nvd.nist.gov/vuln/detail/CVE-2021-3177){: external}, [CVE-2022-0391](https://nvd.nist.gov/vuln/detail/CVE-2022-0391){: external}, [CVE-2022-1729](https://nvd.nist.gov/vuln/detail/CVE-2022-1729){: external}, [CVE-2022-1966](https://nvd.nist.gov/vuln/detail/CVE-2022-1966){: external}. |
-| {{site.data.keyword.openshiftshort}}. | 4.7.53 | 4.7.54 | For more information, see the [change log](https://docs.redhat.com/documentation/openshift_container_platform/4.7/html/release_notes/ocp-4-7-release-notes#ocp-4-7-54){: external}. |
+| {{site.data.keyword.openshiftshort}}. | 4.7.53 | 4.7.54 | For more information, see the [change log](https://docs.redhat.com/en/documentation/openshift_container_platform/4.7/html/release_notes/ocp-4-7-release-notes#ocp-4-7-54){: external}. |
 {: caption="Changes since version 4.7.53_1571_openshift" caption-side="bottom"}
 
 
@@ -414,7 +414,7 @@ The following table shows the changes that are in the master fix pack 4.7.52_156
 | {{site.data.keyword.cloud_notm}} Controller Manager | v1.20.15-11 | v1.20.15-14 | Update prometheus/client_golang@v1.7.1 to `v1.11.1`. |
 | Key Management Service provider | v2.5.5 | v2.5.6 | Updated `Go` to version `1.17.11` and also updated the dependencies. |
 | OpenVPN Operator image | v1.4.5 | v1.4.6 | Update base image to version `v1.22.0` to resolve CVEs. |
-| {{site.data.keyword.openshiftshort}}. | 4.7.50 | 4.7.52 | See the [{{site.data.keyword.openshiftshort}} release notes](https://docs.redhat.com/documentation/openshift_container_platform/4.7/html/release_notes/ocp-4-7-release-notes#ocp-4-7-52){: external}. |
+| {{site.data.keyword.openshiftshort}}. | 4.7.50 | 4.7.52 | See the [{{site.data.keyword.openshiftshort}} release notes](https://docs.redhat.com/en/documentation/openshift_container_platform/4.7/html/release_notes/ocp-4-7-release-notes#ocp-4-7-52){: external}. |
 | {{site.data.keyword.openshiftshort}} Control Plane Operator | v4.7.0-20220509 | v4.7.0-20220614 | See the [{{site.data.keyword.openshiftlong_notm}} toolkit release notes](https://github.com/openshift/ibm-roks-toolkit/releases/tag/v4.7.0%2B20220614){: external}. |
 | {{site.data.keyword.openshiftlong_notm}} Metrics Server and toolkit | v4.7.0-20220509 | v4.7.0-20220614 | See the [{{site.data.keyword.openshiftlong_notm}} toolkit release notes](https://github.com/openshift/ibm-roks-toolkit/releases/tag/v4.7.0%2B20220614){: external}. |
 {: caption="Changes since version 4.7.50_1565_openshift" caption-side="bottom"}
@@ -430,7 +430,7 @@ The following table shows the changes that are in the worker node fix pack 4.7.5
 | --- | --- | --- | --- |
 | RHEL 7 Packages |N/A|N/A| Worker node package updates for [CVE-2022-1271](https://nvd.nist.gov/vuln/detail/CVE-2022-1271){: external}. |
 | Haproxy | 468c09 | 04f862 | [CVE-2022-1271](https://nvd.nist.gov/vuln/detail/CVE-2022-1271){: external}. |
-| {{site.data.keyword.openshiftshort}}. | 4.7.51 | 4.7.53 | For more information, see the [change log](https://docs.redhat.com/documentation/openshift_container_platform/4.7/html/release_notes/ocp-4-7-release-notes#ocp-4-7-53){: external}. |
+| {{site.data.keyword.openshiftshort}}. | 4.7.51 | 4.7.53 | For more information, see the [change log](https://docs.redhat.com/en/documentation/openshift_container_platform/4.7/html/release_notes/ocp-4-7-release-notes#ocp-4-7-53){: external}. |
 {: caption="Changes since version 4.7.51_1566_openshift" caption-side="bottom"}
 
 
@@ -443,7 +443,7 @@ The following table shows the changes that are in the worker node fix pack 4.7.5
 | Component | Previous | Current | Description |
 | --- | --- | --- | --- |
 | RHEL 7 Packages |N/A|N/A| Worker node package updates for [CVE-2022-24903](https://nvd.nist.gov/vuln/detail/CVE-2022-24903){: external}. |
-| {{site.data.keyword.openshiftshort}}. | 4.7.50 | 4.7.51 | For more information, see the [change log](https://docs.redhat.com/documentation/openshift_container_platform/4.7/html/release_notes/ocp-4-7-release-notes#ocp-4-7-51){: external}. |
+| {{site.data.keyword.openshiftshort}}. | 4.7.50 | 4.7.51 | For more information, see the [change log](https://docs.redhat.com/en/documentation/openshift_container_platform/4.7/html/release_notes/ocp-4-7-release-notes#ocp-4-7-51){: external}. |
 {: caption="Changes since version 4.7.50_1564_openshift" caption-side="bottom"}
 
 
@@ -466,7 +466,7 @@ The following table shows the changes that are in the master fix pack 4.7.50_156
 | Load balancer and load balancer monitor for {{site.data.keyword.cloud_notm}} Provider | 1916 | 1998 | Updated `Go` to version `1.17.10` and updated dependencies. |
 | OpenVPN Operator image | v1.4.3 | v1.4.5 | Updated base image to `v1.21.0` for CVE remediation. |
 | Portieris admission controller | v0.10.3 | v0.12.4 | See the [Portieris admission controller release notes](https://github.com/{{site.data.keyword.IBM_notm}}/portieris/releases/tag/v0.12.4){: external}. |
-| {{site.data.keyword.openshiftshort}}. | 4.7.48 | 4.7.50 | See the [{{site.data.keyword.openshiftshort}} release notes](https://docs.redhat.com/documentation/openshift_container_platform/4.7/html/release_notes/ocp-4-7-release-notes#ocp-4-7-50){: external}. |
+| {{site.data.keyword.openshiftshort}}. | 4.7.48 | 4.7.50 | See the [{{site.data.keyword.openshiftshort}} release notes](https://docs.redhat.com/en/documentation/openshift_container_platform/4.7/html/release_notes/ocp-4-7-release-notes#ocp-4-7-50){: external}. |
 | {{site.data.keyword.openshiftshort}} Control Plane Operator | v4.7.0-20220411 | v4.7.0-20220509 | See the [{{site.data.keyword.openshiftlong_notm}} toolkit release notes](https://github.com/openshift/ibm-roks-toolkit/releases/tag/v4.7.0+20220509){: external}. |
 | {{site.data.keyword.openshiftlong_notm}} Metrics Server | v4.7.0-20220411 | v4.7.0-20220509 | See the [{{site.data.keyword.openshiftlong_notm}} toolkit release notes](https://github.com/openshift/ibm-roks-toolkit/releases/tag/v4.7.0+20220509){: external}. |
 | {{site.data.keyword.openshiftlong_notm}} toolkit | 4.7.0+20220411 | 4.7.0+20220509 | See the [{{site.data.keyword.openshiftlong_notm}} toolkit release notes](https://github.com/openshift/ibm-roks-toolkit/releases/tag/v4.7.0+20220509){: external}. |
@@ -481,7 +481,7 @@ The following table shows the changes that are in the worker node fix pack 4.7.5
 
 | Component | Previous | Current | Description |
 | --- | --- | --- | --- |
-| {{site.data.keyword.openshiftshort}}. | 4.7.49 | 4.7.50 | For more information, see the [change log](https://docs.redhat.com/documentation/openshift_container_platform/4.7/html/release_notes/ocp-4-7-release-notes#ocp-4-7-50){: external}. |
+| {{site.data.keyword.openshiftshort}}. | 4.7.49 | 4.7.50 | For more information, see the [change log](https://docs.redhat.com/en/documentation/openshift_container_platform/4.7/html/release_notes/ocp-4-7-release-notes#ocp-4-7-50){: external}. |
 | RHEL 7 Packages | 3.10.0-1160.62.1 | 3.10.0-1160.66.1 | Worker node kernel & package updates for [CVE-2018-25032](https://nvd.nist.gov/vuln/detail/CVE-2018-25032){: external}, [CVE-2022-1271](https://nvd.nist.gov/vuln/detail/CVE-2022-1271){: external}, [CVE-2022-0492](https://nvd.nist.gov/vuln/detail/CVE-2022-0492){: external}. |
 | HA proxy | 36b0307 | 468c09 | [CVE-2021-3634](https://nvd.nist.gov/vuln/detail/CVE-2021-3634){: external}. |
 {: caption="Changes since version 4.7.49_1566_openshift" caption-side="bottom"}
