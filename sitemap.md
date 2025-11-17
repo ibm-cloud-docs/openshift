@@ -286,10 +286,6 @@ subcollection: openshift
 
 * [November 2025](/docs/openshift?topic=openshift-openshift-relnotes#openshift-nov25)
 
-    * [16 November 2025](/docs/openshift?topic=openshift-openshift-relnotes#openshift-nov1625)
-
-        * {{site.data.keyword.openshiftlong_notm}} version 1.30 is unsupported.
-
     * [12 November 2025](/docs/openshift?topic=openshift-openshift-relnotes#openshift-nov1225)
 
         * {{site.data.keyword.cos_full_notm}} plug-in updates.
