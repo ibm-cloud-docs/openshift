@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2025
-lastupdated: "2025-11-14"
+lastupdated: "2025-11-17"
 
 
 keywords: openshift
@@ -285,6 +285,10 @@ subcollection: openshift
 [Release notes](/docs/openshift?topic=openshift-openshift-relnotes#openshift-relnotes)
 
 * [November 2025](/docs/openshift?topic=openshift-openshift-relnotes#openshift-nov25)
+
+    * [16 November 2025](/docs/openshift?topic=openshift-openshift-relnotes#openshift-nov1625)
+
+        * {{site.data.keyword.openshiftlong_notm}} version 1.30 is unsupported.
 
     * [12 November 2025](/docs/openshift?topic=openshift-openshift-relnotes#openshift-nov1225)
 
@@ -9357,7 +9361,7 @@ subcollection: openshift
 
 * [Check for current maintenance windows or an incident in progress](/docs/openshift?topic=openshift-best-practices#monbp-checcurmaninprog)
 
-* [Take advantage of multiple {{site.data.keyword.Bluemix_notm}} locations](/docs/openshift?topic=openshift-best-practices#monbp-multpreg)
+* [Take advantage of multiple {{site.data.keyword.cloud_notm}} locations](/docs/openshift?topic=openshift-best-practices#monbp-multpreg)
 
 * [Subscribing to email notifications](/docs/openshift?topic=openshift-best-practices#monbp-subscribing)
 
