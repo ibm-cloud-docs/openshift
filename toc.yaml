@@ -412,6 +412,7 @@ toc:
           - cl-add-ons-ibm-storage-operator.md
           - cl-add-ons-vpc-block-csi-driver.md
           - cl-add-ons-vpc-file-csi-driver.md
+          - cl-add-ons-ibm-object-csi-driver.md
           - versions-object.md
           - cl-add-ons-static-route.md
           - cl-add-ons-openshift-data-foundation.md

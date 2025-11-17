@@ -28,6 +28,17 @@ Looking for {{site.data.keyword.cloud_notm}} status, platform announcements, sec
 ## November 2025
 {: #openshift-nov25}
 
+### 17 November 2025
+{: #openshift-nov1725}
+{: release-note}
+
+{{site.data.keyword.cos_full_notm}} add-on patch updates.
+:   For more information, see the [change log](/docs/openshift?topic=openshift-cl-add-ons-ibm-object-csi-driver).
+
+
+
+
+
 
 
 ### 12 November 2025
