@@ -2,7 +2,7 @@
 
 copyright:
   years: 2023, 2025
-lastupdated: "2025-10-29"
+lastupdated: "2025-11-17"
 
 
 keywords: openshift, openshift data foundation, openshift container storage, ocs, worker update
@@ -65,7 +65,7 @@ Before updating your worker nodes, make sure to back up your app data. Also, pla
 
     Example command:
     ```sh
-    ibmcloud oc cluster master update --cluster mycluster --version 4.19.13 --force-update
+    ibmcloud oc cluster master update --cluster mycluster --version 4.19.17 --force-update
     ```
     {: pre}
     

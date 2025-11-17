@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2025
-lastupdated: "2025-11-14"
+lastupdated: "2025-11-17"
 
 
 keywords: openshift
@@ -9357,7 +9357,7 @@ subcollection: openshift
 
 * [Check for current maintenance windows or an incident in progress](/docs/openshift?topic=openshift-best-practices#monbp-checcurmaninprog)
 
-* [Take advantage of multiple {{site.data.keyword.Bluemix_notm}} locations](/docs/openshift?topic=openshift-best-practices#monbp-multpreg)
+* [Take advantage of multiple {{site.data.keyword.cloud_notm}} locations](/docs/openshift?topic=openshift-best-practices#monbp-multpreg)
 
 * [Subscribing to email notifications](/docs/openshift?topic=openshift-best-practices#monbp-subscribing)
 
