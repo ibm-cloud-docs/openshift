@@ -3,7 +3,7 @@
 copyright:
   years: 2024, 2025
 
-lastupdated: "2025-10-10"
+lastupdated: "2025-11-18"
 
 
 keywords: change log, version history, 4.12_openshift
@@ -1236,7 +1236,7 @@ The following table shows the changes that are in the worker node fix pack 4.12.
 
 | Component | Previous | Current | Description |
 | --- | --- | --- | --- |
-| {{site.data.keyword.openshiftshort}}. | 4.12.28 | 4.12.30 | For more information, see the [change log](https://docs.redhat.com/documentation/openshift_container_platform/4.12/html/release_notes/ocp-4-12-release-notes#ocp-4-12-30){: external}. |
+| {{site.data.keyword.openshiftshort}}. | 4.12.28 | 4.12.30 | For more information, see the [change log](https://docs.redhat.com/en/documentation/openshift_container_platform/4.12/html/release_notes/ocp-4-12-release-notes#ocp-4-12-30){: external}. |
 {: caption="Changes since version 4.12.28_1554_openshift" caption-side="bottom"}
 
 

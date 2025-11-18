@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2025
-lastupdated: "2025-06-24"
+lastupdated: "2025-11-18"
 
 
 keywords: openshift, {{site.data.keyword.openshiftlong_notm}}, kubernetes, node scaling, ca, autoscaler
@@ -25,6 +25,7 @@ The flavors listed here might differ from what is actually available for your cl
 
 These conditions might impact cluster flavor availability:
 - **Operating system specifications**: Some flavors have specific operating system requirements. When selecting a flavor in the console, make sure you have the correct zone and operating system selections for your needs.
+- **Pricing**: For pricing information, see the [{{site.data.keyword.openshiftlong_notm}} console](https://cloud.ibm.com/containers/cluster-management/catalog/pricing?platformType=openshift){: external}.
 
 
 
