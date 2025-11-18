@@ -1,8 +1,8 @@
 ---
 
 copyright:
-  years: 2022, 2024
-lastupdated: "2024-11-07"
+  years: 2022, 2025
+lastupdated: "2025-11-18"
 
 
 keywords: openshift, ingress, troubleshoot ingress, ingress operator, ingress cluster operator, ingress operator degraded, erriodeg
@@ -88,7 +88,7 @@ oc get clusteroperator ingress
     - For more information, see [Creating a Red Hat OpenShift cluster in your Virtual Private Cloud](/docs/openshift?topic=openshift-vpc_rh_tutorial), [Configuring VPC subnets](/docs/openshift?topic=openshift-vpc-subnets#vpc_basics_pgw) and [Creating and managing VPC security groups](/docs/openshift?topic=openshift-vpc-security-group-manage).
 
 1. Ensure that no firewall rules block the canary traffic.
-    **VPC**: canary traffic originates from one of the worker nodes, flows through a VPC Public Gateway and arrives to the public side of the VPC Load Balancer instance. Configure your VPC Security Groups to allow this communication. For more information, see [Controlling traffic with VPC security groups](/docs/openshift?topic=openshift-vpc-security-group).
+    **VPC**: canary traffic originates from one of the worker nodes, flows through a VPC Public Gateway and arrives to the public side of the VPC Load Balancer instance. Configure your VPC Security Groups to allow this communication. For more information, see [Understanding secure by default cluster VPC networking](/docs/openshift?topic=openshift-vpc-security-group-reference) and [Creating and managing VPC security groups](/docs/openshift?topic=openshift-vpc-security-group-manage).
     **Classic**: canary traffic originates from the public IP address of one of the worker nodes and arrives to the public IP address of your classic load balancers. Configure your network policies to allow this communication. For more information, see [Controlling traffic with network policies on classic clusters](/docs/openshift?topic=openshift-network_policies).
 
 ## Next steps

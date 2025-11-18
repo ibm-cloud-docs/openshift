@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2025
-lastupdated: "2025-07-24"
+lastupdated: "2025-11-18"
 
 
 keywords: openshift, kubernetes, firewall, acl, acls, access control list, rules, security group
@@ -27,7 +27,6 @@ For more information about Secure by Default, review the following links.
 - [Managing outbound traffic protection in VPC clusters](/docs/openshift?topic=openshift-sbd-allow-outbound).
 
 If your cluster was created at version 1.29 and earlier, review the following links.
-- [Understanding VPC security groups in version 1.29 and earlier](/docs/openshift?topic=openshift-vpc-security-group).
 - [Enabling secure by default for clusters created at 1.29 and earlier](/docs/openshift?topic=openshift-vpc-sbd-enable-existing).
 
 

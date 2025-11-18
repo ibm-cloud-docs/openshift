@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2025
-lastupdated: "2025-11-17"
+lastupdated: "2025-11-18"
 
 
 keywords: openshift, route, router
@@ -155,7 +155,7 @@ Allow access through network policies or other firewall rules so that your Ingre
 
 **Classic**: If you use Calico pre-DNAT network policies or another custom firewall to block incoming traffic to your cluster, you must allow inbound access on port 443 from the [Ingress domain health monitor source IP addresses](/docs/openshift?topic=openshift-firewall#firewall-ingress-domain-monitor) to the IP addresses of your Ingress Controller services, so the domain provider can monitor the health of the registered addresses and return only healthy endpoints.
 
-**VPC**: If you set up [VPC security groups](/docs/openshift?topic=openshift-vpc-security-group) or [VPC access control lists (ACLs)](/docs/openshift?topic=openshift-vpc-acls) to secure your cluster network, ensure that you allow inbound access on port 443 from the [Ingress domain health monitor source IP addresses](/docs/openshift?topic=openshift-vpc-firewall#firewall-ingress-domain-monitor) to the IP addresses of your Ingress Controller services, so the domain provider can monitor the health of the registered addresses and return only healthy endpoints.
+**VPC**: If you set up VPC security groups or VPC access control lists (ACLs) to secure your cluster network, ensure that you allow inbound access on port 443 from the [Ingress domain health monitor source IP addresses](/docs/openshift?topic=openshift-vpc-firewall#firewall-ingress-domain-monitor) to the IP addresses of your Ingress Controller services, so the domain provider can monitor the health of the registered addresses and return only healthy endpoints.
 
 ## Setting up public routes
 {: #routes-setup}

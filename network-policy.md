@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2025
-lastupdated: "2025-07-10"
+lastupdated: "2025-11-18"
 
 
 keywords: openshift
@@ -23,7 +23,7 @@ subcollection: openshift
 
 [Classic clusters]{: tag-classic-inf}
 
-This network policy information is specific to classic clusters. For network policy information for VPC clusters, see [Controlling traffic with security groups](/docs/openshift?topic=openshift-vpc-security-group).
+This network policy information is specific to classic clusters. For VPC clusters, see see [Understanding Secure by Default cluster VPC networking](/docs/openshift?topic=openshift-vpc-security-group-reference).
 {: note}
 
 Every {{site.data.keyword.openshiftlong}} cluster comes with a network plug-in called Calico. Default network policies secure the public network interface of every worker node in the cluster.

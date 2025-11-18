@@ -1,8 +1,8 @@
 ---
 
 copyright:
-  years: 2023, 2024
-lastupdated: "2024-08-22"
+  years: 2023, 2025
+lastupdated: "2025-11-18"
 
 
 keywords: ingress, expose apps, privately expose, private ingress, ingress vpc
@@ -31,7 +31,7 @@ Before you get started with Ingress, review the following prerequisites.
     - **Manager** service access role in all {{site.data.keyword.containerlong_notm}} namespaces ({{site.data.keyword.redhat_openshift_notm}} projects).
 - If a zone fails, you might see intermittent failures in requests to apps that are exposed by the Ingress controller in that zone.
 - To ensure high availability, at least two worker nodes per zone are recommended.
-* VPC clusters: [Allow traffic requests that are routed by Ingress to node ports on your worker nodes](/docs/openshift?topic=openshift-vpc-security-group).
+* VPC clusters: Allow traffic requests that are routed by Ingress to node ports on your worker nodes. For more information, see [Understanding secure by default cluster VPC networking](/docs/openshift?topic=openshift-vpc-security-group-reference) and [Creating and managing VPC security groups](/docs/openshift?topic=openshift-vpc-security-group-manage).
 * VPC multizone clusters: If you created a cluster in the CLI and later manually added zones to your worker pools with the `ibmcloud oc zone add vpc-gen2` command, you must [update the VPC load balancer that exposes the Ingress controller](/docs/openshift?topic=openshift-router-mzr-error) to include subnets for all zones in your cluster.
 * Classic clusters: Enable a [Virtual Router Function (VRF)](/docs/account?topic=account-vrf-service-endpoint&interface=ui) for your IBM Cloud infrastructure account.  To check whether a VRF is already enabled, use the `ibmcloud account show` command. If you can't or don't want to enable VRF, enable [VLAN spanning](/docs/vlans?topic=vlans-vlan-spanning#vlan-spanning). When a VRF or VLAN spanning is enabled, the Ingress controller can route packets to various subnets in the account.
 
@@ -402,6 +402,3 @@ http://<subdomain2>.<domain>/<app1_path>
 
 Can't connect to your app through Ingress? Try [Troubleshooting Ingress](/docs/openshift?topic=openshift-ingress-status).
 {: tip}
-
-
-

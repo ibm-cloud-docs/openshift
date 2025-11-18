@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2023, 2025
-lastupdated: "2025-08-11"
+lastupdated: "2025-11-18"
 
 
 keywords: openshift, {{site.data.keyword.openshiftlong_notm}}, firewall, rules, security group, 4.15, networking, secure by default, outbound traffic protection
@@ -69,9 +69,13 @@ The following VPE gateways are created automatically when you create a VPC clust
 ### Worker security group
 {: #vpc-sg-kube-clusterid}
 
-When you create an {{site.data.keyword.openshiftlong_notm}} VPC cluster, a security group is created for all the workers, or nodes, for the given cluster. The name of the security group is `kube-<clusterID>` where `<clusterID>` is the ID of the cluster. If new nodes are added to the cluster later, those nodes are added to the cluster security group automatically.
+When you create an {{site.data.keyword.openshiftlong_notm}} VPC cluster, a security group is created for all the workers, or nodes, for the given cluster.
 
-Do not modify the rules in the `kube-<clusterID>` security group as doing so might cause disruptions in network connectivity between the workers of the cluster and the control cluster.
+- The name of the security group is `kube-<clusterID>` where `<clusterID>` is the ID of the cluster.
+- If new nodes are added to the cluster later, those nodes are added to the cluster security group automatically.
+- Rules are dynamically added or removed as needed by load balancers.
+- Rules that are added in the node port range are automatically removed if they aren't needed. If customers want to allow incoming traffic to a node port service, you must add the rule to allow traffic after you created the node port service.
+- Do not modify the rules in the `kube-<clusterID>` security group as doing so might cause disruptions in network connectivity between the workers of the cluster and the control cluster.
 
 
 | Description | Direction | Protocol | Ports or values | Source or destination |
@@ -90,6 +94,7 @@ Do not modify the rules in the `kube-<clusterID>` security group as doing so mig
 | Allows TCP and UDP traffic through custom DNS resolver for zone `n`.`**` | Outbound | TCP/UDP | Min=53,Max=53 | DNS resolver IP address in zone `n`. |
 | Allows traffic to the entire CSE service range. | Outbound | All | All | 166.8.0.0/14 |
 | Allows traffic to the IAM private endpoint for all zones. The IPs might vary by region. One rule is added per zone the cluster is in. | Outbound | All | All | IAM private endpoint IP address for all zones. |
+|  Allows outbound traffic to the instance metadata API. | Outbound | All | All | 169.254.169.254 |
 | [4.18 and later]{: tag-red} Allows outbound traffic to the instance metadata API. | Outbound | All | All | 169.254.169.254 |
 {: caption="Rules in the kube-clusterID security group" caption-side="bottom"}
 {: summary="The table shows the rules applied to the cluster worker security group. The first column includes protocol of the rule. The second column includes the ports and types. The third column includes remote destination of the rule. The fourth column includes a brief description of the rule."}
@@ -152,7 +157,12 @@ There is a maximum of 15 rules that can target other security groups as their so
 ### Load balancer services security group
 {: #vpc-sg-kube-lbaas-cluster-ID}
 
-The default security group that is attached to all load balancers (ALBs and NLBs). The name of the security group is `kube-lbaas-<clusterID>` where `<clusterID>` is the ID of your cluster. Each cluster gets their own unique security group which is shared by all the load balancers in the cluster. The following example show the rules added to the load balancer security group by a cluster that uses a single ALB. The rules on this security group are added or deleted dynamically as load balancers are added, removed, or updated. Note that SDNLBs do not support attaching security groups.
+The default security group that is attached to all load balancers (ALBs and NLBs).
+- Each cluster gets their own unique security group which is shared by all the load balancers in the cluster.
+- The name of the security group is `kube-lbaas-<clusterID>` where `<clusterID>` is the ID of your cluster.
+- The rules on this security group are added or deleted dynamically as load balancers are added, removed, or updated. Note that SDNLBs do not support attaching security groups.
+- You can add rules to this security group. However, some rules might be removed if they are incompatible with the other rules or if they break functionality.(?)
+
 
 | Description | Direction | Protocol | Port or value | Source or destination |
 | ---- | ---- | ---- | ---- | ---- |
@@ -161,6 +171,16 @@ The default security group that is attached to all load balancers (ALBs and NLBs
 | Load balancer listens on port 443 allowing inbound access from that port. | Inbound | TCP | Public LB port. Example `443` | 0.0.0.0/0 |
 {: caption="Load balancer security group rules" caption-side="bottom"}
 {: summary="The table shows the rules applied to the Load balancer security group. The first column includes purpose of the rule. The second column includes the direction of the rule. The third column includes the protocol. The fourth column includes the ports or values. The fifth column includes remote destination of the rule."}
+
+## User-provided {{site.data.keyword.security-groups}}
+{: #user-provided-sgs}
+
+When you create a VPC cluster, you can provide up to four additional security groups that you own.
+
+
+
+For more information, see [Creating and managing VPC security groups](/docs/openshift?topic=openshift-vpc-security-group-manage).
+
 
 ## Limitations
 {: #vpc-sg-limitations}

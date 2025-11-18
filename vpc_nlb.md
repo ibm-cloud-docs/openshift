@@ -1,7 +1,7 @@
 ---
 copyright: 
   years: 2024, 2025
-lastupdated: "2025-10-01"
+lastupdated: "2025-11-18"
 
 keywords: nlb, network load balancer, vpc nlb, dns, public lb, private lb
 subcollection: openshift
@@ -333,7 +333,7 @@ Review the required and optional VPC NLB annotations and specifications.
 :  This annotation sets the health check protocol on the VPC load balancer resource associated with the Kubernetes load balancer service. Available options are `http`, `https`, or `tcp`. Usually, the VPC LB health check protocol is determined by the value of the `externalTrafficPolicy` setting in the Kubernetes load balancer service specification. However, this annotation overrides that logic. This annotation does **not** alter how Kubernetes, and kube-proxy in particular, behaves in regards to the various settings of `externalTrafficPolicy`.
 
 `service.kubernetes.io/ibm-load-balancer-cloud-provider-vpc-health-check-port`
-:  The TCP port that is used for the health checks. This annotation applies only if `ibm-load-balancer-cloud-provider-vpc-health-check-protocol` is also specified. If the specified TCP port is outside of the Kubernetes node port range (30,000-32,767), the VPC security group applied to the cluster worker nodes must be [modified](/docs/openshift?topic=openshift-vpc-security-group-manage) to allow inbound traffic on the port. If this annotation is applied to a Kubernetes load balancer service associated with a VPC ALB, the outbound rules of the security group assigned to the VPC ALB must be [modified](/docs/openshift?topic=openshift-vpc-security-group-manage) to allow outbound traffic to the specified TCP port. 
+:  The TCP port that is used for the health checks. This annotation applies only if `ibm-load-balancer-cloud-provider-vpc-health-check-protocol` is also specified. If the specified TCP port is outside of the Kubernetes node port range (30,000-32,767), the VPC security group applied to the cluster worker nodes must be modified to allow inbound traffic on the port. If this annotation is applied to a Kubernetes load balancer service associated with a VPC ALB, the outbound rules of the security group assigned to the VPC ALB must be modified to allow outbound traffic to the specified TCP port. For more information, see [Understanding secure by default cluster VPC networking](/docs/openshift?topic=openshift-vpc-security-group-reference) and [Creating and managing VPC security groups](/docs/openshift?topic=openshift-vpc-security-group-manage).
 
 `service.kubernetes.io/ibm-load-balancer-cloud-provider-vpc-health-check-path`
 :   The health check URL path for HTTP and HTTPs health checks. This annotation applies only if `ibm-load-balancer-cloud-provider-vpc-health-check-protocol` is set to `http` or `https`. The URL path must be in the format of an [origin-form request target](https://www.rfc-editor.org/rfc/rfc7230#section-5.3.1){: external}. If this annotation is not specified and the `ibm-load-balancer-cloud-provider-vpc-health-check-protocol` annotation is set to `http` or `https`, the  default value `/` is applied.
