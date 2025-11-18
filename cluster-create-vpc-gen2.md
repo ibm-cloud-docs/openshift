@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2025
-lastupdated: "2025-11-17"
+lastupdated: "2025-11-18"
 
 
 keywords: kubernetes, clusters, worker nodes, worker pools, vpc-gen2, openshift, {{site.data.keyword.openshiftlong_notm}}
@@ -111,7 +111,7 @@ Ingress secrets management
 :   [{{site.data.keyword.secrets-manager_full_notm}}](/docs/openshift?topic=openshift-secrets-mgr) centrally manages Ingress subdomain certificates and other secrets in your cluster. You can choose to register a {{site.data.keyword.secrets-manager_short}} instance to your cluster during the cluster create process. You can also specify a secret group that you can use to control access to the secrets in your cluster. Both of these options can be configured or changed after you have created the cluster.
 
 VPC security groups
-:   Provide up to four custom security groups to apply to all worker nodes on the VPC cluster instead of the default VPC security group. The default VPC security group will not be applied. For more information, see [Controlling traffic with VPC security groups](/docs/openshift?topic=openshift-vpc-security-group).
+:   Provide up to four custom security groups to apply to all worker nodes on the VPC cluster in addition to the `kube-<clusterID>` security group. For more information, see [Understanding Secure by Default cluster VPC networking](/docs/containers?topic=containers-vpc-security-group-reference).
 
 
 Cluster details

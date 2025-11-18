@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2025
-lastupdated: "2025-11-17"
+lastupdated: "2025-11-18"
 
 
 keywords: openshift
@@ -1237,292 +1237,6 @@ subcollection: openshift
     * [4 December 2023](/docs/openshift?topic=openshift-openshift-relnotes#openshift-dec0423)
 
         * Worker node fix packs are available. 
-
-* [November 2023](/docs/openshift?topic=openshift-openshift-relnotes#openshift-nov23)
-
-    * [29 November 2023](/docs/openshift?topic=openshift-openshift-relnotes#openshift-nov2923)
-
-        * Worker node fix packs are available. 
-
-        * OpenShift Data Foundation add-on versions `4.10.32`, `4.11.12`, and `4.12.13`.
-
-    * [27 November 2023](/docs/openshift?topic=openshift-openshift-relnotes#openshift-nov2723)
-
-        * The Beta {{site.data.keyword.filestorage_vpc_short}} cluster add-on is now available to all accounts.
-
-        * Cluster autoscaler add-on patch updates `1.2.0_290`, `1.0.9_290`, `1.0.8_292`, and `1.0.7_291`.
-
-        * {{site.data.keyword.block_storage_is_short}} add-on versions `5.0.23_437` and `5.1.16_446`, and `5.2.11_447`.
-
-        * {{site.data.keyword.filestorage_vpc_full_notm}} add-on patch `1.1.10_93` and `1.2.3_97`.
-
-        * You can now apply your Red Hat OpenShift entitlement to {{site.data.keyword.satelliteshort}} clusters and worker pools.
-
-    * [20 November 2023](/docs/openshift?topic=openshift-openshift-relnotes#openshift-nov2023)
-
-        * You can now specify a custom pod subnet size when creating a VPC cluster.
-
-        * {{site.data.keyword.cos_full_notm}} plug-in version `2.2.22`.
-
-    * [15 November 2023](/docs/openshift?topic=openshift-openshift-relnotes#openshift-nov1523)
-
-        * The cluster autoscaler add-on now supports version 1.28 clusters.
-
-        * Master fix packs are available. 
-
-    * [13 November 2023](/docs/openshift?topic=openshift-openshift-relnotes#openshift-nov1323)
-
-        * {{site.data.keyword.cos_full_notm}} plug-in version `2.2.21`.
-
-        * {{site.data.keyword.block_storage_is_short}} add-on versions `5.0.21_401` and `5.1.15_419`, and `5.2.10_428`.
-
-        * Cluster autoscaler add-on patch updates `1.0.9_195`, `1.0.8_233`, and `1.0.7_185`.
-
-        * {{site.data.keyword.filestorage_vpc_full_notm}} add-on patch `1.1.9_87`.
-
-    * [10 November 2023](/docs/openshift?topic=openshift-openshift-relnotes#openshift-nov1023)
-
-        * Updated sorting and formatting for the Classic and VPC cluster flavor pages.
-
-    * [9 November 2023](/docs/openshift?topic=openshift-openshift-relnotes#openshift-nov0923)
-
-        * Worker node fix packs are available.
-
-    * [7 November 2023](/docs/openshift?topic=openshift-openshift-relnotes#openshift-nov0723)
-
-        * CLI version `1.0.579` is available.
-
-* [October 2023](/docs/openshift?topic=openshift-openshift-relnotes#openshift-oct23)
-
-    * [31 October 2023](/docs/openshift?topic=openshift-openshift-relnotes#openshift-oct3123)
-
-        * VNI functionality for limiting access to {{site.data.keyword.filestorage_vpc_short}} by node, zone, worker pool and more.
-
-        * {{site.data.keyword.filestorage_vpc_full_notm}} add-on version `1.2`.
-
-    * [30 October 2023](/docs/openshift?topic=openshift-openshift-relnotes#openshift-oct3023)
-
-        * {{site.data.keyword.cos_full_notm}} plug-in version `2.2.20`
-
-        * Setting up alerts for {{site.data.keyword.blockstorageshort}} PVs with limited network connectivity.
-
-    * [25 October 2023](/docs/openshift?topic=openshift-openshift-relnotes#openshift-oct2523)
-
-        * Master fix packs are available.
-
-        * Cloud Image Key Synchronizer add-on version `1.0.0_1936`.
-
-    * [23 October 2023](/docs/openshift?topic=openshift-openshift-relnotes#openshift-oct2323)
-
-        * Worker node fix packs are available. 
-
-        * Ingress ALB version `1.8.4_5586_ikss`
-
-    * [18 October 2023](/docs/openshift?topic=openshift-openshift-relnotes#openshift-oct1823)
-
-        * Cloud Image Key Synchronizer add-on version `1.0.0_1921`.
-
-    * [17 October 2023](/docs/openshift?topic=openshift-openshift-relnotes#openshift-oct1723)
-
-        * Ingress ALB versions `1.8.1_5543_iks`, `1.6.4_5544_iks`, and `1.5.1_5542_iks`
-
-    * [11 October 2023](/docs/openshift?topic=openshift-openshift-relnotes#openshift-oct1123)
-
-        * Ingress ALB versions `1.5.1_5436_iks`, `1.6.4_5435_iks`, and `1.8.1_5434_iks`
-
-        * {{site.data.keyword.cos_full_notm}} plug-in version `2.2.19`
-
-    * [10 October 2023](/docs/openshift?topic=openshift-openshift-relnotes#openshift-oct1023)
-
-        * CLI version `1.0.573` is available.
-
-        * Best practices for OpenShift Data Foundation
-
-    * [9 October 2023](/docs/openshift?topic=openshift-openshift-relnotes#openshift-oct923)
-
-        * Worker node fix packs are available.
-
-    * [4 October 2023](/docs/openshift?topic=openshift-openshift-relnotes#openshift-oct423)
-
-        * Cluster autoscaler add-on version `1.0.9_134`.
-
-    * [3 October 2023](/docs/openshift?topic=openshift-openshift-relnotes#openshift-oct323)
-
-        * Cloud Image Key Synchronizer add-on version `1.0.0_1831`.
-
-* [September 2023](/docs/openshift?topic=openshift-openshift-relnotes#openshift-sep23)
-
-    * [27 September 2023](/docs/openshift?topic=openshift-openshift-relnotes#openshift-sep2723)
-
-        * Worker node fix packs are available.
-
-    * [25 September 2023](/docs/openshift?topic=openshift-openshift-relnotes#openshift-sep2523)
-
-        * {{site.data.keyword.block_storage_is_short}} add-on version `5.2`.
-
-    * [20 September 2023](/docs/openshift?topic=openshift-openshift-relnotes#openshift-sep2023)
-
-        * Master fix packs are available.
-
-    * [18 September 2023](/docs/openshift?topic=openshift-openshift-relnotes#openshift-sep1823)
-
-        * CLI version `1.0.566` is available.
-
-    * [15 September 2023](/docs/openshift?topic=openshift-openshift-relnotes#openshift-sep1523)
-
-        * Cluster autoscaler add-on versions `1.0.9_103`,`1.0.8_104`, and `1.0.7_102`.
-
-    * [14 September 2023](/docs/openshift?topic=openshift-openshift-relnotes#openshift-sep1423)
-
-        * {{site.data.keyword.filestorage_vpc_full_notm}} add-on version `1.1.7_49`
-
-        * {{site.data.keyword.block_storage_is_short}} add-on versions `5.0.19_358` and `5.1.13_345`.
-
-    * [12 September 2023](/docs/openshift?topic=openshift-openshift-relnotes#openshift-sep1223)
-
-        * Worker node fix packs are available.
-
-    * [7 September 2023](/docs/openshift?topic=openshift-openshift-relnotes#openshift-sep723)
-
-        * {{site.data.keyword.cos_full_notm}} plug-in version `2.2.18`
-
-* [August 2023](/docs/openshift?topic=openshift-openshift-relnotes#openshift-aug23)
-
-    * [30 August 2023](/docs/openshift?topic=openshift-openshift-relnotes#openshift-aug2023)
-
-        * Master fix packs are available.
-
-    * [29 August 2023](/docs/openshift?topic=openshift-openshift-relnotes#openshift-aug2923)
-
-        * New! Madrid multizone region
-
-        * Worker node fix packs are available.
-
-    * [15 August 2023](/docs/openshift?topic=openshift-openshift-relnotes#openshift-aug1523)
-
-        * Worker node fix packs are available.
-
-    * [7 August 2023](/docs/openshift?topic=openshift-openshift-relnotes#openshift-aug0723)
-
-        * Cluster autoscaler add-on versions `1.0.9_81`,`1.0.8_82`, and `1.0.7_83`.
-
-    * [3 August 2023](/docs/openshift?topic=openshift-openshift-relnotes#openshift-aug0323)
-
-        * CIS benchmarks for {{site.data.keyword.redhat_openshift_notm}} version 4.13.
-
-    * [1 August 2023](/docs/openshift?topic=openshift-openshift-relnotes#openshift-aug0123)
-
-        * Worker node fix packs are available.
-
-        * {{site.data.keyword.block_storage_is_short}} add-on versions `5.0.17_266` and `5.1.12_285`.
-
-* [July 2023](/docs/openshift?topic=openshift-openshift-relnotes#openshift-july23)
-
-    * [28 July 2023](/docs/openshift?topic=openshift-openshift-relnotes#openshift-july2823)
-
-        * Master fix packs are available.
-
-        * {{site.data.keyword.cos_full_notm}} plug-in version `2.2.17`.
-
-    * [27 July 2023](/docs/openshift?topic=openshift-openshift-relnotes#openshift-july2723)
-
-        * {{site.data.keyword.filestorage_vpc_full_notm}} add-on version `1.1.6`
-
-    * [24 July 2023](/docs/openshift?topic=openshift-openshift-relnotes#openshift-july2423)
-
-        * Cluster autoscaler add-on version `1.0.9_70`.
-
-        * Static route add-on version `1.0.0_1122`.
-
-    * [21 July 2023](/docs/openshift?topic=openshift-openshift-relnotes#openshift-july2123)
-
-        * Cluster autoscaler add-on update command.
-
-    * [19 July 2023](/docs/openshift?topic=openshift-openshift-relnotes#openshift-july1923)
-
-        * CLI version `1.0.540` is available.
-
-    * [17 July 2023](/docs/openshift?topic=openshift-openshift-relnotes#openshift-july1723)
-
-        * Worker node fix packs `4.9.59_1596_openshift`, `4.10.63_1576_openshift`, `4.11.44_1563_openshift`, `4.12.24_1551_openshift`, and `4.13.4_1526_openshift`.
-
-    * [13 July 2023](/docs/openshift?topic=openshift-openshift-relnotes#openshift-july1323)
-
-        * Cloud Image Key Synchronizer add-on version `1.0.0_1701`.
-
-    * [11 July 2023](/docs/openshift?topic=openshift-openshift-relnotes#openshift-july1123)
-
-        * New! OpenShift Data Foundation add-on version `4.13.0`.
-
-    * [6 July 2023](/docs/openshift?topic=openshift-openshift-relnotes#openshift-july623)
-
-        * Cluster autoscaler add-on version `1.0.8_56` and `1.0.7_57`.
-
-        * Pod security admission updates
-
-    * [3 July 2023](/docs/openshift?topic=openshift-openshift-relnotes#openshift-july323)
-
-        * {{site.data.keyword.cos_full_notm}} plug-in version `2.2.16`
-
-        * {{site.data.keyword.filestorage_vpc_full_notm}} add-on version `1.1`
-
-        * Worker node fix packs `4.9.59_1595_openshift`, `4.10.62_1575_openshift`, `4.11.43_1562_openshift`, `4.12.22_1550_openshift`, and `4.13.4_1525_openshift`.
-
-* [June 2023](/docs/openshift?topic=openshift-openshift-relnotes#openshift-jun23)
-
-    * [28 June 2023](/docs/openshift?topic=openshift-openshift-relnotes#openshift-jun2823)
-
-        * New! OpenShift Data Foundation add-on versions `4.12.6`, `4.11.12`, `4.10.27`, and `4.9.29`.
-
-    * [27 June 2023](/docs/openshift?topic=openshift-openshift-relnotes#openshift-jun2723)
-
-        * Master fix packs `4.9.59_1594_openshift`, `4.10.61_1574_openshift`, `4.11.42_1561_openshift`, `4.12.20_1549_openshift`, and `4.13.0_1524_openshift`.
-
-        * Compliance Operator benchmarks
-
-    * [26 June 2023](/docs/openshift?topic=openshift-openshift-relnotes#openshift-jun2623)
-
-        * CLI version `1.0.528`.
-
-    * [22 June 2023](/docs/openshift?topic=openshift-openshift-relnotes#openshift-jun2223)
-
-        * Cluster autoscaler add-on version `1.0.9_44`.
-
-        * Certified Kubernetes
-
-    * [21 June 2023](/docs/openshift?topic=openshift-openshift-relnotes#openshift-jun2123)
-
-        * {{site.data.keyword.block_storage_is_short}} add-on versions `5.0.16_127` and `5.1.11_126`.
-
-    * [20 June 2023](/docs/openshift?topic=openshift-openshift-relnotes#openshift-jun2023)
-
-        * Worker node fix pack updates
-
-    * [19 June 2023](/docs/openshift?topic=openshift-openshift-relnotes#openshift-jun1923)
-
-        * {{site.data.keyword.cos_full_notm}} plug-in version `2.2.15`
-
-    * [15 June 2023](/docs/openshift?topic=openshift-openshift-relnotes#openshift-jun1523)
-
-        * Cloud Image Key Synchronizer add-on version `1.0.0_1633`.
-
-    * [14 June 2023](/docs/openshift?topic=openshift-openshift-relnotes#openshift-jun1423)
-
-        * New! {{site.data.keyword.openshiftlong_notm}} 4.13
-
-        * New! Red Hat OpenShift console access for cluster version 4.13
-
-        * Master fix pack and worker node fix pack update
-
-        * Remote health monitoring
-
-    * [9 June 2023](/docs/openshift?topic=openshift-openshift-relnotes#openshift-jun923)
-
-        * New! OpenShift Data Foundation add-on versions `4.12.5`, `4.11.11`, `4.10.26`, and `4.9.28`.
-
-    * [5 June 2023](/docs/openshift?topic=openshift-openshift-relnotes#openshift-jun523)
-
-        * Worker node fix packs `4.9.59_1592_openshift`, `4.10.60_1571_openshift`, `4.11.42_1558_openshift`, and `4.12.19_1546_openshift`.
 
 
 ## Tutorials library for OpenShift
@@ -2767,6 +2481,8 @@ subcollection: openshift
 
     * [Load balancer services security group](/docs/openshift?topic=openshift-vpc-security-group-reference#vpc-sg-kube-lbaas-cluster-ID)
 
+* [User-provided {{site.data.keyword.security-groups}}](/docs/openshift?topic=openshift-vpc-security-group-reference#user-provided-sgs)
+
 * [Limitations](/docs/openshift?topic=openshift-vpc-security-group-reference#vpc-sg-limitations)
 
 [Managing outbound traffic protection in VPC clusters](/docs/openshift?topic=openshift-sbd-allow-outbound#sbd-allow-outbound)
@@ -2815,43 +2531,11 @@ subcollection: openshift
 
 * [Enabling secure by default](/docs/openshift?topic=openshift-vpc-sbd-enable-existing#existing-cluster-sbd-enable)
 
-[Understanding VPC security groups in version 4.14 and earlier](/docs/openshift?topic=openshift-vpc-security-group#vpc-security-group)
-
-* [Virtual private endpoint (VPE) gateways](/docs/openshift?topic=openshift-vpc-security-group#managed-vpe-gateways)
-
-* [Managed security groups](/docs/openshift?topic=openshift-vpc-security-group#managed-sgs)
-
-    * [Security groups applied to cluster workers](/docs/openshift?topic=openshift-vpc-security-group#vpc-sg-cluster-workers)
-
-    * [Security groups applied to VPE gateways and VPC ALBs](/docs/openshift?topic=openshift-vpc-security-group#vpc-sg-vpe-alb)
-
-* [Minimum inbound and outbound requirements](/docs/openshift?topic=openshift-vpc-security-group#vpc-sg-inbound-outbound)
-
-    * [Required inbound and outbound rules for cluster workers](/docs/openshift?topic=openshift-vpc-security-group#required-group-rules-workers)
-
-    * [Required rules for VPCs with a cluster that runs at version 4.14 or later](/docs/openshift?topic=openshift-vpc-security-group#rules-sg-128)
-
-    * [Required inbound and outbound rules for VPC ALBs](/docs/openshift?topic=openshift-vpc-security-group#required-group-rules-alb)
-
-* [Allow the worker nodes to connect to the public service endpoint IPs for the OAuth service](/docs/openshift?topic=openshift-vpc-security-group#worker-node-public-service-endpoint-previous)
-
-* [Allow worker nodes to connect to the Ingress LoadBalancer](/docs/openshift?topic=openshift-vpc-security-group#vpc-security-group-loadbalancer-outbound-vr)
-
 [Creating and managing VPC security groups](/docs/openshift?topic=openshift-vpc-security-group-manage#vpc-security-group-manage)
 
 * [Adding security groups during cluster creation](/docs/openshift?topic=openshift-vpc-security-group-manage#vpc-sg-cluster)
 
     * [If you only want the default security groups](/docs/openshift?topic=openshift-vpc-security-group-manage#default-sgs-only)
-
-    * [If you want the cluster security group and your own additional security groups](/docs/openshift?topic=openshift-vpc-security-group-manage#cluster-customer-sgs)
-
-    * [If you only want your own security groups](/docs/openshift?topic=openshift-vpc-security-group-manage#customer-sgs-only)
-
-* [Adding security groups to worker pools during creation](/docs/openshift?topic=openshift-vpc-security-group-manage#vpc-sg-worker-pool)
-
-    * [If you do not want to attach additional security groups to the worker pool](/docs/openshift?topic=openshift-vpc-security-group-manage#no-worker-sgs)
-
-    * [If you want to attach extra security groups to the worker pool](/docs/openshift?topic=openshift-vpc-security-group-manage#worker-sgs)
 
 * [Viewing security groups](/docs/openshift?topic=openshift-vpc-security-group-manage&interface=cli#vpc-sg-cli)
 
@@ -2860,10 +2544,6 @@ subcollection: openshift
 * [Creating security group rules in the console](/docs/openshift?topic=openshift-vpc-security-group-manage&interface=ui#security-group-inbound-rules)
 
 * [Creating security group rules in the command line](/docs/openshift?topic=openshift-vpc-security-group-manage&interface=cli#security_groups_cli)
-
-* [Allow worker nodes to connect to the public service endpoint IP addresses for the Oauth service](/docs/openshift?topic=openshift-vpc-security-group-manage&interface=cli#worker-node-public-service-endpoint)
-
-* [Allow worker nodes to connect to the Ingress LoadBalancer](/docs/openshift?topic=openshift-vpc-security-group-manage&interface=cli#vpc-security-group-loadbalancer-outbound)
 
 [Controlling traffic with ACLs](/docs/openshift?topic=openshift-vpc-acls#vpc-acls)
 

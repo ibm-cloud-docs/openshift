@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2025
-lastupdated: "2025-10-01"
+lastupdated: "2025-11-18"
 
 
 keywords: openshift, firewall, ips
@@ -332,7 +332,7 @@ To permit egress to your cluster from another service, modify that service's all
 ## Opening ports in VPC Security Groups or VPC ACLs
 {: #vpc-opening-ports}
 
-If you set up [VPC security groups](/docs/openshift?topic=openshift-vpc-security-group) or [VPC access control lists (ACLs)](/docs/openshift?topic=openshift-vpc-acls) to secure your cluster network, ensure that you create the rules to allow the necessary traffic to communicate with other {{site.data.keyword.cloud_notm}} services. 
+If you set up [VPC security groups](/docs/openshift?topic=openshift-vpc-security-group-manage) or [VPC access control lists (ACLs)](/docs/openshift?topic=openshift-vpc-acls) to secure your cluster network, ensure that you create the rules to allow the necessary traffic to communicate with other {{site.data.keyword.cloud_notm}} services. 
 
 ### Opening required ports in public allowlists
 {: #vpc-firewall-public}

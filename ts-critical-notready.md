@@ -2,7 +2,7 @@
 
 copyright:
   years: 2023, 2025
-lastupdated: "2025-08-21"
+lastupdated: "2025-11-18"
 
 
 keywords: critical, not ready, notready, troubleshooting, worker node status, status
@@ -87,7 +87,7 @@ Some steps are specific to a specialized area, such as networking or automation.
 
 1. Check if there were any recent changes to your cluster, environment, or account that might impact your worker nodes. If so, revert the changes and then check the worker node status to determine if the changes caused the issue.
     - For classic clusters, check any firewall or gateway, such as Virtual Router Appliance, Vyatta, or Juniper that manages traffic for cluster workers. Look for changes or issues that might drop or redirect traffic from cluster workers. 
-    - For VPC clusters, check if any changes were made to the default security group and ACLs on the VPC or the worker nodes. If any modifications were made, ensure that you are allowing all necessary traffic from the cluster worker nodes to the cluster master, container registry, and other critical services. For more information, see [Controlling Traffic with VPC Security Groups](/docs/openshift?topic=openshift-vpc-security-group&interface=ui) and [Controlling traffic with ACLs](/docs/openshift?topic=openshift-vpc-acls&interface=ui).
+    - For VPC clusters, check if any changes were made to the default security group and ACLs on the VPC or the worker nodes. If any modifications were made, ensure that you are allowing all necessary traffic from the cluster worker nodes to the cluster master, container registry, and other critical services. For more information, see [Understanding secure by default cluster VPC networking](/docs/openshift?topic=openshift-vpc-security-group-reference) and [Creating and managing VPC security groups](/docs/openshift?topic=openshift-vpc-security-group-manage) and [Controlling traffic with ACLs](/docs/openshift?topic=openshift-vpc-acls&interface=ui).
     - For VPC clusters, check any custom routing rules for changes that might be blocking traffic from the cluster `apiserver`.
     - Check any Calico or Kubernetes network policies that are applied to the cluster and make sure that they do not block traffic from the worker node to the cluster `apiservice`, container registry, or other critical services. 
 1. Check if the applications, security, or monitoring components in your cluster are overloading the cluster `apiserver` with requests, which might cause disruptions for your worker nodes.

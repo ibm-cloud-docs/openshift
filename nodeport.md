@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2025
-lastupdated: "2025-09-02"
+lastupdated: "2025-11-18"
 
 
 keywords: openshift, app access
@@ -65,7 +65,7 @@ If you don't already have an app ready, you can use a Kubernetes example app cal
 Before you begin
 
 * [Access your {{site.data.keyword.redhat_openshift_notm}} cluster](/docs/openshift?topic=openshift-access_cluster).
-* VPC clusters: [Allow traffic requests that are routed to NodePorts on your worker nodes](/docs/openshift?topic=openshift-vpc-security-group).
+* VPC clusters: Allow traffic requests that are routed to NodePorts on your worker nodes. For more information, see [Understanding secure by default cluster VPC networking](/docs/openshift?topic=openshift-vpc-security-group-reference) and [Creating and managing VPC security groups](/docs/openshift?topic=openshift-vpc-security-group-manage).
 
 To use a NodePort,
 
