@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2025
-lastupdated: "2025-11-18"
+lastupdated: "2025-11-19"
 
 
 keywords: openshift, route, router
@@ -236,7 +236,7 @@ If your cluster is created on VPC infrastructure and you enabled only the privat
 Note that even though you create an IngressController resource in the following steps, the IngressController is only required to create and configure the necessary Ingress controller for you. After the Ingress controller is created, you use the Ingress controller directly to create routes.
 
 1. Prepare the domain that you want to use for your Ingress controller.
-    * **Custom domain**: To register a custom domain, work with your Domain Name Service (DNS) provider or [{{site.data.keyword.cloud_notm}} DNS](/docs/dns-svcs?topic=dns-svcs-getting-started). If you want to use the same subdomain for multiple services in your cluster, you can register a wildcard subdomain, such as `*.example.com`. If you use a custom domain, you must also specify the domain certificate in your `IngressController` specification. For more information, see [Setting a custom default certificate](https://docs.redhat.com/en/documentation/openshift_container_platform/4.19/html/networking/configuring-ingress#nw-ingress-controller-configuration-parameters_configuring-ingress){: external}
+    * **Custom domain**: To register a custom domain, work with your Domain Name Service (DNS) provider or [{{site.data.keyword.cloud_notm}} DNS](/docs/dns-svcs?topic=dns-svcs-getting-started). If you want to use the same subdomain for multiple services in your cluster, you can register a wildcard subdomain, such as `*.example.com`. If you use a custom domain, you must also specify the domain certificate in your `IngressController` specification. For more information, see [Setting a custom default certificate](https://docs.redhat.com/en/documentation/openshift_container_platform/4.19/html/security_and_compliance/configuring-certificates){: external}
     * **IBM-provided domain**:
         1. List the existing subdomains in your cluster. In the **Subdomain** column of the output, copy the subdomain that has the highest `000<n>` value.
             ```sh

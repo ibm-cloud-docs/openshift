@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2025
-lastupdated: "2025-11-11"
+lastupdated: "2025-11-19"
 
 
 keywords: openshift, cli reference, kubernetes cli, openshift cli, {{site.data.keyword.openshiftlong_notm}}
@@ -7713,7 +7713,7 @@ To use this command to prepare your automation scripts for the release of versio
 
 [Virtual Private Cloud]{: tag-vpc} [Classic infrastructure]{: tag-classic-inf}
 
-Reset or sync a security group to the [default traffic rules](/docs/openshift?topic=openshift-vpc-security-group&interface=ui#vpc-sg-inbound-outbound).
+Reset or sync a security group to the [default traffic rules](/docs/openshift?topic=openshift-vpc-security-group-reference).
 {: shortdesc}
 
 ## `ibmcloud oc security-group ls`
@@ -7754,7 +7754,7 @@ ibmcloud oc security-group ls --cluster CLUSTER [--attached-to ATTACHED] [--mana
 
 [Virtual Private Cloud]{: tag-vpc} [Classic infrastructure]{: tag-classic-inf}
 
-[Deletes all existing security group rules and reapplies the default rules](/docs/openshift?topic=openshift-vpc-security-group&interface=ui#vpc-sg-inbound-outbound).
+[Deletes all existing security group rules and reapplies the default rules](/docs/openshift?topic=openshift-vpc-security-group-reference).
 {: shortdesc}
 
 ```sh
@@ -7785,7 +7785,7 @@ ibmcloud oc security-group reset --cluster mycluster --security-group mygroup
 
 [Virtual Private Cloud]{: tag-vpc} [Classic infrastructure]{: tag-classic-inf}
 
-Reapplies the [default security group rules](/docs/openshift?topic=openshift-vpc-security-group&interface=ui#vpc-sg-inbound-outbound) to add any missing rules. Does not delete preexisting rules.
+Reapplies the [default security group rules](/docs/openshift?topic=openshift-vpc-security-group-reference) to add any missing rules. Does not delete preexisting rules.
 {: shortdesc}
 
 ```sh
