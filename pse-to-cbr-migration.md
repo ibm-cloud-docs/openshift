@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2024, 2025
-lastupdated: "2025-05-29"
+lastupdated: "2025-11-19"
 
 
 keywords: kubernetes, private service endpoint, openshift, context based restrictions
@@ -58,7 +58,6 @@ Now that you've verified your allowlist is working as expected, you can continue
 
 ## Step 1: Review the details of your allowlist
 {: #pse-cbr-review}
-{: step}
 
 1. Get your PSE allowlist details.
 
@@ -89,7 +88,7 @@ Now that you've verified your allowlist is working as expected, you can continue
 
 ## Step 2: Creating a network zone
 {: #pse-cbr-create}
-{: cli}
+
 
 Create a CBR network zone that contains the same subnets as your existing custom private service endpoint allowlist.
 
@@ -306,7 +305,7 @@ To remove subnets from the zone, you can use the same command and omit the subne
 ## Removing context based restrictions from the private service endpoint
 {: #pse-cbr-remove}
 
-## Deleting a rule from the console
+### Deleting a rule from the console
 {: #pse-cbr-remove-ui}
 {: ui}
 
@@ -316,7 +315,7 @@ To remove subnets from the zone, you can use the same command and omit the subne
 
 1. Add or remove subnets, VPCs, or services to your network zone to control which resources can access your chosen clusters.
 
-## Deleting a rule from the CLI
+### Deleting a rule from the CLI
 {: #pse-cbr-remove-cli}
 {: cli}
 
