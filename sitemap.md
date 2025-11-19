@@ -6918,6 +6918,8 @@ subcollection: openshift
 
 [{{site.data.keyword.cos_full_notm}} plug-in](/docs/openshift?topic=openshift-cos_plugin_changelog#cos_plugin_changelog)
 
+* [Change log for version 2.2.44, released 13 November 2025](/docs/openshift?topic=openshift-cos_plugin_changelog#02244_object_plugin)
+
 * [Change log for version 2.2.42, released 12 November 2025](/docs/openshift?topic=openshift-cos_plugin_changelog#02242_object_plugin)
 
 * [Change log for version 2.2.41, released 18 August 2025](/docs/openshift?topic=openshift-cos_plugin_changelog#02241_object_plugin)
