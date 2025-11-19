@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2023, 2025
-lastupdated: "2025-11-18"
+lastupdated: "2025-11-19"
 
 
 keywords: openshift, {{site.data.keyword.openshiftlong_notm}}, firewall, rules, security group, 4.15, networking, secure by default, outbound traffic protection
@@ -161,7 +161,7 @@ The default security group that is attached to all load balancers (ALBs and NLBs
 - Each cluster gets their own unique security group which is shared by all the load balancers in the cluster.
 - The name of the security group is `kube-lbaas-<clusterID>` where `<clusterID>` is the ID of your cluster.
 - The rules on this security group are added or deleted dynamically as load balancers are added, removed, or updated. Note that SDNLBs do not support attaching security groups.
-- You can add rules to this security group. However, some rules might be removed if they are incompatible with the other rules or if they break functionality.(?)
+- You can add rules to this security group. However, some rules might be removed if they are incompatible with the other rules or if they break functionality.
 
 
 | Description | Direction | Protocol | Port or value | Source or destination |
