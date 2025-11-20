@@ -3,7 +3,7 @@
 copyright:
   years: 2024, 2025
 
-lastupdated: "2025-11-10"
+lastupdated: "2025-11-20"
 
 
 keywords: change log, version history, 4.19_openshift
@@ -37,6 +37,23 @@ Master patch updates are applied automatically. Worker node patch updates can be
 
 ## Version 4.19
 {: #419_components}
+
+
+### Worker node fix pack 4.19.18_1554_openshift, released 17 November 2025
+{: #cl-boms-41918_1554_openshift_W}
+
+The following table shows the components included in the worker node fix pack 4.19.18_1554_openshift. Worker node patch updates can be applied by updating, reloading (in classic infrastructure), or replacing (in VPC infrastructure) the worker node.
+{: shortdesc}
+
+| Component | Version | Description |
+| ---- | ---- | ---- |
+|RHEL 9|5.14.0-570.60.1.el9_6|Resolves the following CVEs: [RHSA-2025:19951](https://access.redhat.com/errata/RHSA-2025:19951){: external}, [CVE-2025-40778](https://nvd.nist.gov/vuln/detail/CVE-2025-40778){: external}, [CVE-2025-40780](https://nvd.nist.gov/vuln/detail/CVE-2025-40780){: external}, [RHSA-2025:19105](https://access.redhat.com/errata/RHSA-2025:19105){: external}, [CVE-2023-53331](https://nvd.nist.gov/vuln/detail/CVE-2023-53331){: external}, [CVE-2025-39718](https://nvd.nist.gov/vuln/detail/CVE-2025-39718){: external}, [CVE-2025-39730](https://nvd.nist.gov/vuln/detail/CVE-2025-39730){: external}, [CVE-2025-39751](https://nvd.nist.gov/vuln/detail/CVE-2025-39751){: external}, [CVE-2025-39819](https://nvd.nist.gov/vuln/detail/CVE-2025-39819){: external}, [RHSA-2025:19409](https://access.redhat.com/errata/RHSA-2025:19409){: external}, [CVE-2022-50367](https://nvd.nist.gov/vuln/detail/CVE-2022-50367){: external}, [CVE-2023-53494](https://nvd.nist.gov/vuln/detail/CVE-2023-53494){: external}, and [CVE-2025-39702](https://nvd.nist.gov/vuln/detail/CVE-2025-39702){: external}.|
+|Red Hat OpenShift|4.19.18|For more information, see the [change logs](https://docs.redhat.com/en/documentation/openshift_container_platform/4.19/html/release_notes/ocp-4-19-release-notes.html#ocp-4-19-18_release-notes).|
+|Red Hat CoreOS|4.19.18|For more information, see the [change logs](https://docs.redhat.com/en/documentation/openshift_container_platform/4.19/html/release_notes/ocp-4-19-release-notes.html#ocp-4-19-18_release-notes).|
+|HAProxy|fbe9b8146f23bbd12b2566a79fa897d5981e7273|N/A|
+{: caption="4.19.18_1554_openshift fix pack." caption-side="bottom"}
+{: #cl-boms-41918_1554_openshift_W-component-table}
+
 
 
 ### Worker node fix pack 4.19.17_1551_openshift, released 06 November 2025

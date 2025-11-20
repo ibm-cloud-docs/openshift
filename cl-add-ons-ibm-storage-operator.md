@@ -3,7 +3,7 @@
 copyright:
   years: 2024, 2025
 
-lastupdated: "2025-10-07"
+lastupdated: "2025-11-20"
 
 
 keywords: change log, version history, IBM Storage Operator
@@ -37,7 +37,7 @@ Review the version history for IBM Storage Operator.
 - Resolves the following CVEs: [CVE-2025-8058](https://nvd.nist.gov/vuln/detail/CVE-2025-8058){: external}.
 - Updates Go to version `1.23.12`.
 - Adds EIT support for OpenShift clusters with RHEL worker nodes.
-- {'Adds 3 new storage classes': 'ibmc-vpc-file-regional, ibmc-vpc-file-regional-max-bandwidth, and ibmc-vpc-file-regional-max-bandwidth-sds. These classes are based on VPC regional file share profiles and are available in Beta for allowlisted accounts.'}
+- Adds 3 new storage classes: ibmc-vpc-file-regional, ibmc-vpc-file-regional-max-bandwidth, and ibmc-vpc-file-regional-max-bandwidth-sds. These classes are based on VPC regional file share profiles and are available in Beta for allowlisted accounts.
 - `ibm-vpc-package-deployer v1.0.5`
 
 ### 1.0.26_258, released 18 August 2025
