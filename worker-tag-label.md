@@ -1,8 +1,8 @@
 ---
 
 copyright: 
-  years: 2014, 2024
-lastupdated: "2024-03-27"
+  years: 2014, 2025
+lastupdated: "2025-11-21"
 
 
 keywords: openshift, {{site.data.keyword.openshiftlong_notm}}, clusters, worker nodes, worker pools, tag, label
@@ -17,12 +17,20 @@ subcollection: openshift
 
 
 
-# Adding tags and labels to clusters
+# Tagging and labeling clusters and services
 {: #worker-tag-label}
 
-
-You can assign a tag to {{site.data.keyword.openshiftlong_notm}} clusters to help manage your {{site.data.keyword.cloud_notm}} resources. For example, you might add `key:value` tags to your cluster and other cloud resources so that your billing department track resources, such as `costctr:1234`. Tags are visible account-wide. For more information, see [Working with tags](/docs/account?topic=account-tag).
+When you create a cluster, services or resources that are created and used by that cluster are tagged to indicate which cluster is using them. You can also manually tag {{site.data.keyword.openshiftlong_notm}} clusters to help manage your {{site.data.keyword.cloud_notm}} resources. For example, you might add `key:value` tags to your cluster and other cloud resources so that your billing department track resources, such as `costctr:1234`. Tags are visible account-wide. For more information, see [Working with tags](/docs/account?topic=account-tag).
 {: shortdesc}
+
+
+
+- Service tags added to services used by {{site.data.keyword.openshiftlong_notm}} are in the format `containers-kubernetes:cluster:CLUSTER-ID`.
+- Service tags are added asynchronously after services are provisioned and can take some time to appear.
+- Service tags cannot be modified or deleted by the customer only the service that creates them.
+- User tags are added manually by users in the account.
+- The following resources are tagged with {{site.data.keyword.openshiftlong_notm}} service tags.
+	- Secondary storage volumes.
 
 Tags are not the same thing as Kubernetes labels. [Kubernetes labels](https://kubernetes.io/docs/concepts/overview/working-with-objects/labels/){: external} are `key:value` pairs that can be used as selectors for the resources that are in your cluster, such as adding a label to worker pool to [deploy an app to only certain worker nodes](/docs/openshift?topic=openshift-deploy_app#node_affinity). Tags are an {{site.data.keyword.cloud_notm}} tool that you can use to filter your {{site.data.keyword.cloud_notm}} resources, such as clusters, storage devices, or {{site.data.keyword.watson}} services.
 {: note}
@@ -30,12 +38,29 @@ Tags are not the same thing as Kubernetes labels. [Kubernetes labels](https://ku
 Do not include personal information in your tags. Learn more about [securing your personal information](/docs/containers?topic=containers-security#pi) when you work with Kubernetes resources.
 {: important}
 
-Choose among the following options:
 
-*   [Create a cluster in the console](/docs/openshift?topic=openshift-clusters) with a tag. You can't create a cluster with a tag in the CLI.
-*   Add tags to an existing cluster in the console or CLI.
+## Finding {{site.data.keyword.BluSoftlayer_notm}} resources with service tags from a specific cluster
+{: #finding-services-tags}
 
-## Adding tags to clusters with the console
+1. Get your cluster ID.
+    ```sh
+    ibmcloud oc cluster ls
+    ```
+    {: pre}
+
+1. To find a list of services that were created or are being used by that cluster, run the following command.
+    ```sh
+    ibmcloud resource search 'service_tags:"containers-kubernetes:cluster:CLUSTER-ID"'
+    ```
+    {: pre}
+
+    Example command.
+    ```sh
+    ibmcloud resource search 'service_tags:"containers-kubernetes:cluster:d4f0si2w06ftldhe3s80"'
+    ```
+    {: pre}		
+
+## Manually adding user tags to clusters in the console
 {: #add-tags-console}
 {: ui}
 
@@ -46,7 +71,7 @@ Choose among the following options:
 1. Enter the tag that you want to add to your cluster. To assign a key-value pair, use a colon such as `costctr:1234`.
 
 
-## Adding tags to clusters with the CLI
+## Manually adding user tags to clusters by using the CLI
 {: #add-tags-cli}
 {: cli}
 
@@ -69,7 +94,7 @@ Choose among the following options:
 
 
 
-## Adding labels to existing worker pools
+## Manually adding labels to existing worker pools
 {: #worker_pool_labels}
 
 You can assign a worker pool a label when you create the worker pool, or later by following these steps. After a worker pool is labeled, all existing and subsequent worker nodes get this label. You might use labels to deploy specific workloads only to worker nodes in the worker pool, such as [edge nodes for load balancer network traffic](/docs/openshift?topic=openshift-edge).
@@ -161,5 +186,3 @@ Before you begin: [Access your {{site.data.keyword.redhat_openshift_notm}} clust
     {: pre}
 
 After you label your worker pool, you can use the [label in your app deployments](/docs/openshift?topic=openshift-app#label) so that your workloads run on only these worker nodes, or [taints](https://kubernetes.io/docs/concepts/scheduling-eviction/taint-and-toleration/){: external} to prevent deployments from running on these worker nodes.
-
-
