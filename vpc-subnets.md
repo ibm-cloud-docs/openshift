@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2025
-lastupdated: "2025-03-25"
+lastupdated: "2025-11-21"
 
 
 keywords: openshift, {{site.data.keyword.openshiftlong_notm}} kubernetes, ips, vlans, networking, public gateway
@@ -139,15 +139,7 @@ Within one VPC, you can create only one public gateway per zone, but that public
 ### Virtual private endpoints (VPE)
 {: #vpc_basics_vpe}
 
-Worker nodes can communicate with the Kubernetes master through the cluster's [virtual private endpoint (VPE)](/docs/vpc?topic=vpc-about-vpe).
-{: shortdesc}
-
-A VPE is a virtual IP address that is bound to an endpoint gateway. One VPE gateway resource is created per cluster in your VPC. One IP address from one subnet in each zone where your cluster has worker nodes is automatically used for the VPE gateway, and the worker nodes in this zone use this IP address to communicate with the Kubernetes master. To view the VPE gateway details for your cluster, open the [Virtual private endpoint gateways for VPC dashboard](https://cloud.ibm.com/infrastructure/network/endpointGateways){: external} and look for the VPE gateway in the format `iks-<cluster_ID>`.
-
-Note that your worker nodes automatically use the VPE that is created by default in your VPC. However, if you enabled the [public cloud service endpoint for your cluster](/docs/openshift?topic=openshift-plan_vpc_basics#vpc-workeruser-master), worker-to-master traffic is established half over the public endpoint and half over the VPE for protection from potential outages of the public or private network.
-
-Do not delete any IP addresses on your subnets that are used for VPEs.
-{: important}
+Review [Understanding secure by default Cluster VPC Networking](/docs/openshift?topic=openshift-vpc-security-group-reference) for information about VPEs.
 
 ### Network segmentation
 {: #vpc_basics_segmentation}
