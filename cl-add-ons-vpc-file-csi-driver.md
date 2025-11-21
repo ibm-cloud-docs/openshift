@@ -60,15 +60,6 @@ Review the version history for VPC File CSI Driver.
 - `armada-storage-secret v1.2.66`
 
 
-### 2.0.15_431, released 18 July 2025
-{: #cl-add-ons-vpc-file-csi-driver-2015_431}
-
-[Default version]{: tag-green}
-
-- Updates Go to version `1.23.11`.
-- `armada-storage-secret v1.2.65`
-
-
 ### 2.0.14_403, released 18 July 2025
 {: #cl-add-ons-vpc-file-csi-driver-2014_403}
 
@@ -79,6 +70,15 @@ Review the version history for VPC File CSI Driver.
 - Updates k8s client libraries from 1.32.3 to 1.32.6 
 - Updates imagePullPolicy to IfNotPresent for all containers in the deployment. 
 - `armada-storage-secret v1.2.64`
+
+
+### 2.0.15_431, released 18 July 2025
+{: #cl-add-ons-vpc-file-csi-driver-2015_431}
+
+[Default version]{: tag-green}
+
+- Updates Go to version `1.23.11`.
+- `armada-storage-secret v1.2.65`
 
 
 ### 2.0.13_370, released 16 June 2025
