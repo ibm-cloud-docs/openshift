@@ -2,7 +2,7 @@
 
 copyright:
   years: 2022, 2025
-lastupdated: "2025-10-30"
+lastupdated: "2025-11-21"
 
 
 keywords: rhel, os, operating system, rhcos, 418, migration
@@ -40,9 +40,6 @@ The steps to migrate to RHCOS are different based on your use case. Review the f
 
 [Migrating GPU worker nodes to RHCOS](#rhcos-migrate-gpu)
 :   If you have GPU worker nodes, follow these steps to migrate to RHCOS.
-
-Looking for Terraform steps? For more information, see this blog post for steps on how to migrate to RHCOS by using Terraform.
-{: tip}
 
 ## Migrating worker nodes to RHCOS
 {: #migrate-rhcos}

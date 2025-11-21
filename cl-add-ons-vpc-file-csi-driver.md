@@ -3,7 +3,7 @@
 copyright:
   years: 2024, 2025
 
-lastupdated: "2025-11-11"
+lastupdated: "2025-11-21"
 
 
 keywords: change log, version history, VPC File CSI Driver
@@ -38,6 +38,7 @@ Review the version history for VPC File CSI Driver.
 - Updates Go to version `1.25.3`.
 - `armada-storage-secret v1.2.70`
 
+
 ### 2.0.19_294159886, released 05 November 2025
 {: #cl-add-ons-vpc-file-csi-driver-2019_294159886}
 
@@ -46,6 +47,7 @@ Review the version history for VPC File CSI Driver.
 - Resolves the following CVEs: [CVE-2025-5187](https://nvd.nist.gov/vuln/detail/CVE-2025-5187){: external}.
 - Updates k8s client libraries from 1.32.6 to 1.32.8 
 - `armada-storage-secret v1.2.69`
+
 
 ### 2.0.16_443, released 22 September 2025
 {: #cl-add-ons-vpc-file-csi-driver-2016_443}
@@ -57,6 +59,7 @@ Review the version history for VPC File CSI Driver.
 - {'Adds 3 new storage classes': 'ibmc-vpc-file-regional, ibmc-vpc-file-regional-max-bandwidth, and ibmc-vpc-file-regional-max-bandwidth-sds. These classes are based on VPC regional file share profiles and are available in Beta for allowlisted accounts.'}
 - `armada-storage-secret v1.2.66`
 
+
 ### 2.0.15_431, released 18 July 2025
 {: #cl-add-ons-vpc-file-csi-driver-2015_431}
 
@@ -64,6 +67,7 @@ Review the version history for VPC File CSI Driver.
 
 - Updates Go to version `1.23.11`.
 - `armada-storage-secret v1.2.65`
+
 
 ### 2.0.14_403, released 18 July 2025
 {: #cl-add-ons-vpc-file-csi-driver-2014_403}
@@ -75,6 +79,7 @@ Review the version history for VPC File CSI Driver.
 - Updates k8s client libraries from 1.32.3 to 1.32.6 
 - Updates imagePullPolicy to IfNotPresent for all containers in the deployment. 
 - `armada-storage-secret v1.2.64`
+
 
 ### 2.0.13_370, released 16 June 2025
 {: #cl-add-ons-vpc-file-csi-driver-2013_370}
@@ -89,6 +94,7 @@ Review the version history for VPC File CSI Driver.
 - Updates k8s client libraries to 1.32. 
 - {'Note': 'Users might see unwanted messages in file-csi-driver-status configmap.'} 
 
+
 ### 2.0.10_334, released 19 February 2025
 {: #cl-add-ons-vpc-file-csi-driver-2010_334}
 
@@ -96,6 +102,7 @@ Review the version history for VPC File CSI Driver.
 - Resiliency improvement to use VPC Storage service API for tagging volumes. This doesn't impact existing or new PVCs. This reduces the number of Kubernetes service API calls. 
 - Updates the golang base image to 1.22.12. 
 - Updates the armada-storage-secret to v1.2.55. 
+
 
 
 
@@ -110,6 +117,7 @@ Review the version history for VPC File CSI Driver.
 - Resiliency improvement to use VPC Storage service API for tagging volumes. This doesn't impact existing or new PVCs. This reduces the number of Kubernetes service API calls. 
 - Updates the golang base image to 1.22.12. 
 - Updates the armada-storage-secret to v1.2.55. 
+
 
 
 

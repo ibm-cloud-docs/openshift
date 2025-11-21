@@ -1852,13 +1852,15 @@ subcollection: openshift
 
 * [FAQ about certificate rotation](/docs/openshift?topic=openshift-cert-rotate#cert-rotate-faq)
 
-[Adding tags and labels to clusters](/docs/openshift?topic=openshift-worker-tag-label#worker-tag-label)
+[Tagging and labeling clusters and services](/docs/openshift?topic=openshift-worker-tag-label#worker-tag-label)
 
-* [Adding tags to clusters with the console](/docs/openshift?topic=openshift-worker-tag-label&interface=ui#add-tags-console)
+* [Finding {{site.data.keyword.BluSoftlayer_notm}} resources with service tags from a specific cluster](/docs/openshift?topic=openshift-worker-tag-label#finding-services-tags)
 
-* [Adding tags to clusters with the CLI](/docs/openshift?topic=openshift-worker-tag-label&interface=cli#add-tags-cli)
+* [Manually adding user tags to clusters in the console](/docs/openshift?topic=openshift-worker-tag-label&interface=ui#add-tags-console)
 
-* [Adding labels to existing worker pools](/docs/openshift?topic=openshift-worker-tag-label&interface=cli#worker_pool_labels)
+* [Manually adding user tags to clusters by using the CLI](/docs/openshift?topic=openshift-worker-tag-label&interface=cli#add-tags-cli)
+
+* [Manually adding labels to existing worker pools](/docs/openshift?topic=openshift-worker-tag-label&interface=cli#worker_pool_labels)
 
 [Checking worker node resource reserves](/docs/openshift?topic=openshift-resource-limit-node#resource-limit-node)
 
@@ -7109,8 +7111,6 @@ subcollection: openshift
     * [4.14.17, released 04 February 2025](/docs/openshift?topic=openshift-cl-add-ons-openshift-data-foundation#cl-add-ons-openshift-data-foundation-41417)
 
 * [Version 4.13.0](/docs/openshift?topic=openshift-cl-add-ons-openshift-data-foundation#cl-add-ons-openshift-data-foundation-4.13.0)
-
-    * [4.13.32, released 24 November 2025](/docs/openshift?topic=openshift-cl-add-ons-openshift-data-foundation#cl-add-ons-openshift-data-foundation-41332)
 
     * [4.13.30, released 02 September 2025](/docs/openshift?topic=openshift-cl-add-ons-openshift-data-foundation#cl-add-ons-openshift-data-foundation-41330)
 

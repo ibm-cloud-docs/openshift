@@ -3,7 +3,7 @@
 copyright:
   years: 2024, 2025
 
-lastupdated: "2025-11-11"
+lastupdated: "2025-11-21"
 
 
 keywords: change log, version history, VPC Block CSI Driver
@@ -36,6 +36,7 @@ Review the version history for VPC Block CSI Driver.
 - Updates Go to version `1.25.3`.
 - `armada-storage-secret v1.3.36`
 
+
 ### 5.2.40_293222012, released 05 November 2025
 {: #cl-add-ons-vpc-block-csi-driver-5240_293222012}
 
@@ -43,6 +44,7 @@ Review the version history for VPC Block CSI Driver.
 - Updates Go to version `1.23.12`.
 - Updates k8s package to 1.32.8 in iks-vpc-block-driver container 
 - `armada-storage-secret v1.3.35`
+
 
 ### 5.2.38_828, released 14 July 2025
 {: #cl-add-ons-vpc-block-csi-driver-5238_828}
@@ -52,6 +54,7 @@ Review the version history for VPC Block CSI Driver.
 - Updates k8s package to 1.32.6 in iks-vpc-block-driver container 
 - Updates imagePullPolicy to IfNotPresent for all containers in the deployment. 
 - `armada-storage-secret v1.3.30`
+
 
 ### 5.2.36_778, released 30 May 2025
 {: #cl-add-ons-vpc-block-csi-driver-5236_778}
@@ -69,12 +72,14 @@ Review the version history for VPC Block CSI Driver.
 - `livenessprobe:v2.15.0`
 - `csi-node-driver-registrar v2.13.0`
 
+
 ### 5.2.33_735, released 09 May 2025
 {: #cl-add-ons-vpc-block-csi-driver-5233_735}
 
 - Resolves the following CVEs: [CVE-2020-11023](https://nvd.nist.gov/vuln/detail/CVE-2020-11023){: external}, and [CVE-2025-0395](https://nvd.nist.gov/vuln/detail/CVE-2025-0395){: external}.
 - Updates the golang base image to 1.23.8. 
 - Updates the armada-storage-secret to v1.3.26. 
+
 
 ### 5.2.31_687, released 17 February 2025
 {: #cl-add-ons-vpc-block-csi-driver-5231_687}
@@ -83,6 +88,7 @@ Review the version history for VPC Block CSI Driver.
 - Resiliency improvement to use VPC Storage service API for tagging volumes. This doesn't impact existing or new PVCs. This reduces the number of Kubernetes service API calls. 
 - Updates the golang base image to 1.22.12. 
 - Updates the armada-storage-secret to v1.3.22. 
+
 
 
 
@@ -97,6 +103,7 @@ Review the version history for VPC Block CSI Driver.
 - Updates Go to version `1.25.3`.
 - `armada-storage-secret v1.2.70`
 
+
 ### 5.1.39_293222093, released 05 November 2025
 {: #cl-add-ons-vpc-block-csi-driver-5139_293222093}
 
@@ -104,6 +111,7 @@ Review the version history for VPC Block CSI Driver.
 - Updates Go to version `1.23.12`.
 - Updates k8s package to 1.32.8 in iks-vpc-block-driver container 
 - `armada-storage-secret v1.2.69`
+
 
 ### 5.1.37_827, released 14 July 2025
 {: #cl-add-ons-vpc-block-csi-driver-5137_827}
@@ -115,6 +123,7 @@ Review the version history for VPC Block CSI Driver.
 - Updates k8s package to 1.32.6 in iks-vpc-block-driver container 
 - Updates imagePullPolicy to IfNotPresent for all containers in the deployment. 
 - `armada-storage-secret v1.2.64`
+
 
 ### 5.1.35_763, released 30 May 2025
 {: #cl-add-ons-vpc-block-csi-driver-5135_763}
@@ -131,12 +140,14 @@ Review the version history for VPC Block CSI Driver.
 - `livenessprobe:v2.15.0`
 - `csi-node-driver-registrar v2.13.0`
 
+
 ### 5.1.34_740, released 09 May 2025
 {: #cl-add-ons-vpc-block-csi-driver-5134_740}
 
 - Resolves the following CVEs: [CVE-2020-11023](https://nvd.nist.gov/vuln/detail/CVE-2020-11023){: external}, and [CVE-2025-0395](https://nvd.nist.gov/vuln/detail/CVE-2025-0395){: external}.
 - Updates the golang base image to 1.23.8. 
 - Updates the armada-storage-secret to v1.2.60. 
+
 
 ### 5.1.33_685, released 17 February 2025
 {: #cl-add-ons-vpc-block-csi-driver-5133_685}
@@ -145,6 +156,7 @@ Review the version history for VPC Block CSI Driver.
 - Resiliency improvement to use VPC Storage service API for tagging volumes. This doesn't impact existing or new PVCs. This reduces the number of Kubernetes service API calls. 
 - Updates the golang base image to 1.22.12. 
 - Updates the armada-storage-secret to v1.2.55. 
+
 
 
 

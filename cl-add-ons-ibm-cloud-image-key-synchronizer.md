@@ -3,7 +3,7 @@
 copyright:
   years: 2024, 2025
 
-lastupdated: "2025-09-08"
+lastupdated: "2025-11-21"
 
 
 keywords: change log, version history, IBM Cloud Image Key Synchronizer
@@ -34,10 +34,12 @@ Review the version history for IBM Cloud Image Key Synchronizer.
 
 - Updates Go to version `1.24`.
 
+
 ### 1.0.0_2880, released 22 July 2025
 {: #cl-add-ons-ibm-cloud-image-key-synchronizer-100_2880}
 
 - Updates Go to version `1.24`.
+
 
 ### 1.0.0_2824, released 23 June 2025
 {: #cl-add-ons-ibm-cloud-image-key-synchronizer-100_2824}
@@ -45,41 +47,51 @@ Review the version history for IBM Cloud Image Key Synchronizer.
 - Resolves the following CVEs: [CVE-2025-22872](https://nvd.nist.gov/vuln/detail/CVE-2025-22872){: external}.
 - Updates Go to version `1.24`.
 
+
 ### 1.0.0_2713, released 27 April 2025
 {: #cl-add-ons-ibm-cloud-image-key-synchronizer-100_2713}
 
 - Resolves the following CVEs: [CVE-2025-22870](https://nvd.nist.gov/vuln/detail/CVE-2025-22870){: external}.
 
+
 ### 1.0.0_2640, released 13 March 2025
 {: #cl-add-ons-ibm-cloud-image-key-synchronizer-100_2640}
+
 
 
 ### 1.0.0_2557, released 15 January 2025
 {: #cl-add-ons-ibm-cloud-image-key-synchronizer-100_2557}
 
 
+
 ### 1.0.0_2450, released 30 October 2024
 {: #cl-add-ons-ibm-cloud-image-key-synchronizer-100_2450}
+
 
 
 ### 1.0.0_2382, released 04 September 2024
 {: #cl-add-ons-ibm-cloud-image-key-synchronizer-100_2382}
 
 
+
 ### 1.0.0_2308, released 09 July 2024
 {: #cl-add-ons-ibm-cloud-image-key-synchronizer-100_2308}
+
 
 
 ### 1.0.0_2258, released 06 June 2024
 {: #cl-add-ons-ibm-cloud-image-key-synchronizer-100_2258}
 
 
+
 ### 1.0.0_2244, released 04 June 2024
 {: #cl-add-ons-ibm-cloud-image-key-synchronizer-100_2244}
 
 
+
 ### 1.0.0_2186, released 08 May 2024
 {: #cl-add-ons-ibm-cloud-image-key-synchronizer-100_2186}
+
 
 
 
