@@ -3,7 +3,7 @@
 copyright:
   years: 2024, 2025
 
-lastupdated: "2025-05-13"
+lastupdated: "2025-11-21"
 
 
 keywords: change log, version history, Static Route
@@ -37,11 +37,13 @@ Review the version history for Static Route.
 - CVE-2024-45338 
 - Fix CVE-2024-45337 and CVE-2024-45338
 
+
 ### 1.0.0_1581, released 14 November 2024
 {: #cl-add-ons-static-route-100_1581}
 
 - Updates to the latest `ubi-minimal` base image for the operator build. 
 - `addon-static-route v1.0.0_1581`
+
 
 
 
