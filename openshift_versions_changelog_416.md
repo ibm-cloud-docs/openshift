@@ -3,7 +3,7 @@
 copyright:
   years: 2024, 2025
 
-lastupdated: "2025-11-20"
+lastupdated: "2025-11-24"
 
 
 keywords: change log, version history, 4.16_openshift
@@ -55,7 +55,23 @@ The following table shows the components included in the worker node fix pack 4.
 {: caption="4.16.52_1593_openshift fix pack." caption-side="bottom"}
 {: #cl-boms-41652_1593_openshift_W-component-table}
 
+### Master fix pack 4.16.51_1592_openshift, released 15 November 2025
+{: #41651_1592_openshift_M}
 
+The following table shows the changes that are in the master fix pack 4.16.51_1592_openshift. Master patch updates are applied automatically. 
+
+| Component | Previous | Current | Description |
+| --- | --- | --- | --- |
+| Calico | v3.29.5 | v3.29.6 | See the [Calico release notes](https://docs.tigera.io/calico/3.29/release-notes/#calico-open-source-3296-bug-fix-release). |
+| etcd | v3.5.23 | v3.5.24 | See the [etcd release notes](https://github.com/coreos/etcd/releases/v3.5.24). |
+| IBM Cloud Block Storage driver and plug-in | v2.5.20 | v2.5.22 | New version contains updates and security fixes. |
+| IBM Cloud Controller Manager | v1.29.15-24 | v1.29.15-28 | New version contains updates and security fixes. |
+| Key Management Service provider | v2.10.17 | v2.10.18 | New version contains updates and security fixes. |
+| Portieris admission controller | v0.13.30 | v0.13.31 | See the [Portieris admission controller release notes](https://github.com/IBM/portieris/releases/tag/v0.13.31) |
+| Red Hat OpenShift on IBM Cloud | 4.16.48 | 4.16.51 | See the [Red Hat OpenShift on IBM Cloud release notes](https://docs.redhat.com/en/documentation/openshift_container_platform/4.16/html/release_notes/ocp-4-16-release-notes#ocp-4-16-51_release-notes). |
+| Red Hat OpenShift on IBM Cloud Control Plane Operator, Metrics Server, and toolkit | v4.16.0+20250821 | v4.16.0+20251015 | See the [Red Hat OpenShift on IBM Cloud toolkit release notes](https://github.com/openshift/ibm-roks-toolkit/releases/tag/v4.16.0+20251015). |
+| Tigera Operator | v1.36.13 | v1.36.14 | See the [Tigera Operator release notes](https://github.com/tigera/operator/releases/tag/v1.36.14). |
+{: caption="Changes since 4.16.48_1585_openshift." caption-side="bottom"}
 
 ### Worker node fix pack 4.16.51_1588_openshift, released 06 November 2025
 {: #cl-boms-41651_1588_openshift_W}
