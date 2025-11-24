@@ -286,10 +286,6 @@ subcollection: openshift
 
 * [November 2025](/docs/openshift?topic=openshift-openshift-relnotes#openshift-nov25)
 
-    * [24 November 2025](/docs/openshift?topic=openshift-openshift-relnotes#openshift-nov2425)
-
-        * {{site.data.keyword.openshiftlong_notm}} master fix packs.
-
     * [18 November 2025](/docs/openshift?topic=openshift-openshift-relnotes#openshift-nov1825)
 
         * {{site.data.keyword.openshiftlong_notm}} worker node fix packs are available.
