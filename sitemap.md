@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2025
-lastupdated: "2025-11-21"
+lastupdated: "2025-11-24"
 
 
 keywords: openshift
@@ -2682,11 +2682,19 @@ subcollection: openshift
 {: #sitemap_setting_up_the_cluster_autoscaler}
 
 
-[Preparing classic and VPC clusters for autoscaling](/docs/openshift?topic=openshift-cluster-scaling-classic-vpc#cluster-scaling-classic-vpc)
+[Preparing your cluster for autoscaling](/docs/openshift?topic=openshift-cluster-scaling-classic-vpc#cluster-scaling-classic-vpc)
 
-* [Understanding scale-up and scale-down](/docs/openshift?topic=openshift-cluster-scaling-classic-vpc#ca_about)
+* [Understanding autoscaling](/docs/openshift?topic=openshift-cluster-scaling-classic-vpc#ca_about)
 
-* [Following scalable deployment practices](/docs/openshift?topic=openshift-cluster-scaling-classic-vpc#scalable-practices)
+    * [What are the best practices for autoscaling?](/docs/openshift?topic=openshift-cluster-scaling-classic-vpc#scalable-practices)
+
+    * [Can I change how scale-up and scale-down work?](/docs/openshift?topic=openshift-cluster-scaling-classic-vpc#customize-scale-up-down)
+
+    * [Can I increase the minimum size per zone to trigger a scale up my cluster to that size?](/docs/openshift?topic=openshift-cluster-scaling-classic-vpc#trigger-scale-up)
+
+    * [How is this behavior different from worker pools that are not managed by the cluster autoscaler?](/docs/openshift?topic=openshift-cluster-scaling-classic-vpc#scaling-pools-differences)
+
+    * [How does GPU autoscaling work?](/docs/openshift?topic=openshift-cluster-scaling-classic-vpc#scaling-gpus)
 
     * [Can I autoscale multiple worker pools at once?](/docs/openshift?topic=openshift-cluster-scaling-classic-vpc#scalable-practices-multiple)
 
@@ -2698,9 +2706,9 @@ subcollection: openshift
 
     * [Can I use taints and tolerations with autoscaled worker pools?](/docs/openshift?topic=openshift-cluster-scaling-classic-vpc#scalable-practices-taints)
 
-* [Rebalancing or resizing autoscaled worker pools](/docs/openshift?topic=openshift-cluster-scaling-classic-vpc#ca_update_worker_node_pool)
+* [Preparing clusters for autoscaling](/docs/openshift?topic=openshift-cluster-scaling-classic-vpc#prepare-autoscale-classic-vpc)
 
-* [Preparing classic or VPC Gen 2 clusters for autoscaling](/docs/openshift?topic=openshift-cluster-scaling-classic-vpc#prepare-autoscale-classic-vpc)
+* [Next steps](/docs/openshift?topic=openshift-cluster-scaling-classic-vpc#autoscaling-next-steps)
 
 [Preparing {{site.data.keyword.satelliteshort}} clusters for autoscaling](/docs/openshift?topic=openshift-cluster-scaling-sat#cluster-scaling-sat)
 
@@ -2739,6 +2747,8 @@ subcollection: openshift
 * [Prerequisites](/docs/openshift?topic=openshift-cluster-scaling-hpa-gpu#hpa-gpu-prereqs)
 
 * [Setting up HPA](/docs/openshift?topic=openshift-cluster-scaling-hpa-gpu#hpa-gpu-setup)
+
+[Rebalancing or resizing autoscaled worker pools](/docs/openshift?topic=openshift-ca_update_worker_node_pool#ca_update_worker_node_pool)
 
 
 ## Logging and monitoring
@@ -6465,6 +6475,10 @@ subcollection: openshift
     * [416.0.0_424, released 21 January 2025](/docs/openshift?topic=openshift-cl-add-ons-openshift-ai#cl-add-ons-openshift-ai-41600_424)
 
 [Cluster autoscaler add-on change log](/docs/openshift?topic=openshift-ca_changelog#ca_changelog)
+
+* [Version 2.0.0](/docs/openshift?topic=openshift-ca_changelog#0124_ca_addon)
+
+    * [Change log for patch update 2.0.0-1_300225698, released 24 November 2025](/docs/openshift?topic=openshift-ca_changelog#2.0.0-1-300225698_ca)
 
 * [Version 1.2.4](/docs/openshift?topic=openshift-ca_changelog#0124_ca_addon)
 

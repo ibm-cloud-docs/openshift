@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2025
-lastupdated: "2025-10-06"
+lastupdated: "2025-11-24"
 
 
 keywords: autoscaler, add-on, autoscaler change log, cluster autoscaler
@@ -39,7 +39,16 @@ ibmcloud oc cluster addon versions
 {: pre}
 
 
+## Version 2.0.0
+{: #0124_ca_addon}
 
+### Change log for patch update 2.0.0-1_300225698, released 24 November 2025
+{: #2.0.0-1-300225698_ca}
+
+- Adds support for scale down to 0. 
+- Updates base golang version to `1.25.3`.
+- Updates storage secret sidecar `1.3.35`.
+- Image tags: `1.30.5-v200-1`, `1.31.3-v200-1`, `1.32.2-v200-1`, `1.33.0-v200-1`.
 
 
 ## Version 1.2.4
