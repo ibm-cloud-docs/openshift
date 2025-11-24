@@ -3908,6 +3908,18 @@ subcollection: openshift
 
 * [Cleaning up persistent storage](/docs/openshift?topic=openshift-storage-file-vpc-managing#vpc-storage-remove-file)
 
+[Setting up snapshots with the {{site.data.keyword.filestorage_vpc_short}} cluster add-on](/docs/openshift?topic=openshift-vpc-volume-snapshot-file#vpc-volume-snapshot-file)
+
+* [Creating an app](/docs/openshift?topic=openshift-vpc-volume-snapshot-file#vpc-snapshot-deployment-file)
+
+* [Creating a volume snapshot](/docs/openshift?topic=openshift-vpc-volume-snapshot-file#vpc-create-snapshot)
+
+* [Restoring from a volume snapshot](/docs/openshift?topic=openshift-vpc-volume-snapshot-file#vpc-restore-from-snapshot)
+
+* [Restoring static snapshots](/docs/openshift?topic=openshift-vpc-volume-snapshot-file#file-static-snapshot-restore)
+
+* [Turning off snapshots](/docs/openshift?topic=openshift-vpc-volume-snapshot-file#vpc-turn-off-snapshots)
+
 [Storage class reference](/docs/openshift?topic=openshift-storage-file-vpc-sc-ref#storage-file-vpc-sc-ref)
 
 

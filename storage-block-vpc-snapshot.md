@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2022, 2025
-lastupdated: "2025-06-13"
+lastupdated: "2025-11-24"
 
 
 keywords: openshift, block storage, snapshot
@@ -52,7 +52,7 @@ Create an example Persistent Volume Claim (PVC) and deploy a pod that references
     
 1. Verify that the driver pods are deployed and the status is `Running`.
     ```sh
-    kubectl get pods -n kube-system | grep vpc-block-csi
+    oc get pods -n kube-system | grep vpc-block-csi
     ```
     {: pre}
     
@@ -83,13 +83,13 @@ Create an example Persistent Volume Claim (PVC) and deploy a pod that references
     {: codeblock}
 
     ```sh
-    kubectl create -f pvc.yaml
+    oc create -f pvc.yaml
     ```
     {: pre}
 
 1. Verify that the PVC is created and is in a `Bound` state.
     ```sh
-    kubectl get pvc
+    oc get pvc
     ```
     {: pre}
 
@@ -132,13 +132,13 @@ Create an example Persistent Volume Claim (PVC) and deploy a pod that references
     {: codeblock}
 
     ```sh
-    kubectl create -f pod.yaml
+    oc create -f pod.yaml
     ```
     {: pre}
 
 1. Verify that the pod is running in your cluster. 
     ```sh
-    kubectl get pods
+    oc get pods
     ```
     {: pre}
     
@@ -151,7 +151,7 @@ Create an example Persistent Volume Claim (PVC) and deploy a pod that references
 
 1. Now that you have created the pod, log in to the pod and create a text file to use for the snapshot. 
     ```sh
-    kubectl exec -it POD_NAME /bin/bash
+    oc exec -it POD_NAME /bin/bash
     ```
     {: pre}
 
@@ -173,6 +173,7 @@ After you create a deployment and a PVC, you can create the volume snapshot reso
 You can creating snapshots only when a volume is attached to a pod.
 {: note}
 
+1. Make sure you have **Share Snapshot Operator** permissions in IAM.
 
 1. Create a volume snapshot resource in your cluster by using the `ibmc-vpcblock-snapshot` snapshot class that is deployed when you enabled the add-on. Save the following VolumeSnapshot configuration to a file called `snapvol.yaml`. 
 
@@ -189,14 +190,14 @@ You can creating snapshots only when a volume is attached to a pod.
     {: codeblock}
 
     ```sh
-    kubectl create -f snapvol.yaml
+    oc create -f snapvol.yaml
     ```
     {: pre}
 
 1. Verify that the snapshot is ready to use.
 
     ```sh
-    kubectl get volumesnapshots
+    oc get volumesnapshots
     ```
     {: pre}
     
@@ -235,11 +236,10 @@ After you deploy the snapshot resources, you can restore data to a new volume by
 
 1. Verify that the PVC is created and is in a `Bound` state. 
     ```sh
-    kubectl get pvc
+    oc get pvc
     ```
     {: pre}
-    
-    
+
     ```sh
     NAME                   STATUS   VOLUME                                     CAPACITY   ACCESS MODES   STORAGECLASS                AGE
     restore-pvc            Bound    pvc-4ede7630-5a49-4bae-b34d-dc528acfb884   10Gi       RWO            ibmc-vpc-block-5iops-tier   18h
@@ -278,13 +278,13 @@ After you deploy the snapshot resources, you can restore data to a new volume by
     {: codeblock}
 
     ```sh
-    kubectl create -f podtwo.yaml
+    oc create -f podtwo.yaml
     ```
     {: pre}
 
 1. Verify that the pod is created.
     ```sh
-    kubectl get pods
+    oc get pods
     ```
     {: pre}
     
@@ -298,7 +298,7 @@ After you deploy the snapshot resources, you can restore data to a new volume by
 
 1. Log in to the newly created pod and verify that the sample text file you created earlier is saved to the new pod. 
     ```sh
-    kubectl exec -it POD_NAME /bin/bash
+    oc exec -it POD_NAME /bin/bash
     root@POD_NAME :/# cd myvolumepath/
     root@POD_NAME :/myvolumepath# ls
     lost+found  new.txt
@@ -315,6 +315,7 @@ After you deploy the snapshot resources, you can restore data to a new volume by
 
 
 
+
 ## Turning off snapshots
 {: #vpc-turn-off-snapshots}
 
@@ -323,7 +324,7 @@ By default, snapshot functionality is enabled when using the {{site.data.keyword
 
 1. Save the current configmap from your cluster to your local machine.
     ```sh
-    kubectl get cm -n kube-system addon-vpc-block-csi-driver-configmap -o yaml >> snapshotconfigmap.yaml
+    oc get cm -n kube-system addon-vpc-block-csi-driver-configmap -o yaml >> snapshotconfigmap.yaml
     ```
     {: pre}
 
@@ -331,7 +332,7 @@ By default, snapshot functionality is enabled when using the {{site.data.keyword
 
 1. Save the file and apply your changes. 
     ```sh
-    kubectl apply -f snapshotconfigmap.yaml
+    oc apply -f snapshotconfigmap.yaml
     ```
     {: pre}
 
