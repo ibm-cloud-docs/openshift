@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2023, 2025
-lastupdated: "2025-11-21"
+lastupdated: "2025-12-01"
 
 
 keywords: openshift, {{site.data.keyword.openshiftlong_notm}}, firewall, rules, security group, 4.15, networking, secure by default, outbound traffic protection
@@ -83,7 +83,7 @@ All supported VPC clusters have a VPE Gateway for the cluster master that gets c
 | [Shared VPE gateway security group](#vpc-sg-kube-vpegw-vpc-id) | `kube-vpegw-<vpcID>` |
 | [Load balancer services security group](#vpc-sg-kube-vpegw-vpc-id) | `kube-lbaas-<clusterID>` |
 {: caption="Managed security groups" caption-side="bottom"}
-{: summary="The table shows the managed security groups created for VPC clusters. The first column includes name of the securityg group. The second column includes the naming convention."}
+{: summary="The table shows the managed security groups created for VPC clusters. The first column includes name of the security group. The second column includes the naming convention."}
 
 
 ### Worker security group
