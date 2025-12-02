@@ -65,7 +65,7 @@ The following table shows the changes that are in the master fix pack 4.17.42_15
 | Component | Previous | Current | Description |
 | --- | --- | --- | --- |
 | Calico | v3.29.5 | v3.29.6 | See the [Calico release notes](https://docs.tigera.io/calico/3.29/release-notes/#calico-open-source-3296-bug-fix-release). |
-| etcd | v3.5.23 | v3.5.24 | See the [etcd release notes](https://github.com/coreos/etcd/releases/v3.5.24). |
+| etcd | v3.5.23 | v3.5.24 | See the [etcd release notes](https://github.com/etcd-io/etcd/releases/v3.5.24). |
 | IBM Cloud Block Storage driver and plug-in | v2.5.20 | v2.5.22 | New version contains updates and security fixes. |
 | IBM Cloud Controller Manager | v1.30.14-12 | v1.30.14-16 | New version contains updates and security fixes. |
 | Key Management Service provider | v2.10.17 | v2.10.18 | New version contains updates and security fixes. |

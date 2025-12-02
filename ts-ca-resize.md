@@ -1,8 +1,8 @@
 ---
 
 copyright: 
-  years: 2014, 2024
-lastupdated: "2024-01-03"
+  years: 2014, 2025
+lastupdated: "2025-12-02"
 
 
 keywords: openshift, autoscaler
@@ -20,10 +20,12 @@ content-type: troubleshoot
 When the cluster autoscaler is enabled for a worker pool, you can't [resize](/docs/openshift?topic=openshift-kubernetes-service-cli#cs_worker_pool_resize) or [rebalance](/docs/openshift?topic=openshift-kubernetes-service-cli#cs_rebalance) your worker pools. 
 {: tsSymptoms}
 
-
-You must edit the ConfigMap to change the worker pool minimum or maximum sizes, or disable cluster autoscaling for that worker pool. Don't use the `ibmcloud oc worker rm` [command](/docs/openshift?topic=openshift-kubernetes-service-cli#cs_worker_rm) to remove individual worker nodes from your worker pool, which can unbalance the worker pool. 
+If you disable worker pools before you disable the `cluster-autoscaler` add-on, the worker pools can't be resized manually. 
 {: tsCauses}
 
-See [Resizing or rebalancing autoscaled worker pools](/docs/openshift?topic=openshift-cluster-scaling-classic-vpc#ca_update_worker_node_pool). Further, if you don't disable the worker pools before you disable the `cluster-autoscaler` add-on, the worker pools can't be resized manually. Reinstall the cluster autoscaler, edit the ConfigMap to disable the worker pool, and try again.
+You must edit the ConfigMap to change the worker pool minimum or maximum sizes, or disable cluster autoscaling for that worker pool. See [Can I change how scale-up and scale-down work?](/docs/openshift?topic=openshift-cluster-scaling-classic-vpc#customize-scale-up-down).
 {: tsResolve}
 
+Don't use the `ibmcloud oc worker rm` [command](/docs/openshift?topic=openshift-kubernetes-service-cli#cs_worker_rm) to remove individual worker nodes from your worker pool, which can unbalance the worker pool.
+
+If you disabled the autoscaler, reinstall the cluster autoscaler, edit the ConfigMap to disable the worker pool, and try again.

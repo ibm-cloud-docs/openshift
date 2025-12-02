@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2025
-lastupdated: "2025-11-24"
+lastupdated: "2025-12-02"
 
 
 keywords: kubernetes, node scaling, ca, autoscaler, openshift
@@ -116,9 +116,9 @@ Yes. Beginning with add-on version 2.0.0, you can set the cluster autoscaler `mi
     - Scales the selected pool from 0 -> 1 automatically.
 - Additionally, in version 2.0.0: two new optional settings are available in the `iks-ca-configmap` in the `kube-system` namespace: `OSReservedMemoryGi` and `OSReservedCPUMili`
     - These values represent the amount of CPU and memory that the operating system should reserve on each worker node.
-    - The kernel utilisation can't be adjusted using these values, as those are already defined.
+    - The kernel utilization can't be adjusted using these values, as those are already defined.
     - The autoscaler subtracts these values from the node’s capacity when computing allocatable resources for scheduling simulations.
-    - By default, the autoscaler uses the recommended OS-reserved values, but users can override them to adjust how much capacity is considered schedulable.
+    - By default, the autoscaler uses the recommended OS-reserved values, but users can override them to adjust how much capacity can be scheduled.
 
 - Note that unless you [disable](/docs/openshift?topic=openshift-kubernetes-service-cli#cs_alb_configure) all public ALBs in each zone of your cluster. You must change the `minSize` to `2` worker nodes per zone so that the ALB pods can be spread for high availability.
 

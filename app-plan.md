@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2025
-lastupdated: "2025-11-10"
+lastupdated: "2025-12-02"
 
 
 keywords: kubernetes, deploy, app, openshift
@@ -177,7 +177,7 @@ Before you begin: [Access your {{site.data.keyword.redhat_openshift_notm}} clust
 ## Understanding Kubernetes objects for apps
 {: #kube-objects}
 
-With Kubernetes, you declare many types of objects in YAML configuration files such as pods, deployments, and jobs. These objects describe things like what containerized apps are running, what resources they use, and what policies manage their behavior for restarting, updating, replicating, and more. For more information, see the Kubernetes docs for [Configuration best practices](https://kubernetes.io/docs/concepts/configuration/overview/){: external}.
+With Kubernetes, you declare many types of objects in YAML configuration files such as pods, deployments, and jobs. These objects describe things like what containerized apps are running, what resources they use, and what policies manage their behavior for restarting, updating, replicating, and more. For more information, see the Kubernetes docs for [Configuration best practices](https://kubernetes.io/blog/2025/11/25/configuration-good-practices/){: external}.
 {: shortdesc}
 
 ### I thought that I needed to put my app in a container. Now what's all this stuff about pods?
