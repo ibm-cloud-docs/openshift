@@ -3,7 +3,7 @@
 copyright:
   years: 2024, 2025
 
-lastupdated: "2025-11-21"
+lastupdated: "2025-11-30"
 
 
 keywords: change log, version history, OpenShift AI
@@ -46,10 +46,17 @@ Review the version history for OpenShift AI.
 {: #cl-add-ons-openshift-ai-417}
 
 
-### 417.0.2_672, released 07 October 2025
-{: #cl-add-ons-openshift-ai-41702_672}
+### 417.0.4_300761316, released 27 November 2025
+{: #cl-add-ons-openshift-ai-41704_300761316}
 
 [Default version]{: tag-green}
+
+- Resolves the following CVEs: [CVE-2025-23266](https://nvd.nist.gov/vuln/detail/CVE-2025-23266){: external}, [CVE-2025-23267](https://nvd.nist.gov/vuln/detail/CVE-2025-23267){: external}, [CVE-2025-47906](https://nvd.nist.gov/vuln/detail/CVE-2025-47906){: external}, [CVE-2025-61724](https://nvd.nist.gov/vuln/detail/CVE-2025-61724){: external}, [CVE-2025-47912](https://nvd.nist.gov/vuln/detail/CVE-2025-47912){: external}, [CVE-2025-61723](https://nvd.nist.gov/vuln/detail/CVE-2025-61723){: external}, [CVE-2025-58189](https://nvd.nist.gov/vuln/detail/CVE-2025-58189){: external}, and [CVE-2025-58185](https://nvd.nist.gov/vuln/detail/CVE-2025-58185){: external}.
+- Updates Go to version `1.25.3`.
+
+
+### 417.0.2_672, released 07 October 2025
+{: #cl-add-ons-openshift-ai-41702_672}
 
 - Resolves the following CVEs: [CVE-2025-10725](https://nvd.nist.gov/vuln/detail/CVE-2025-10725){: external}.
 - Updates Go to version `1.24.4`.
@@ -73,10 +80,15 @@ Review the version history for OpenShift AI.
 {: #cl-add-ons-openshift-ai-416}
 
 
+### 416.3.1_300541549, released 27 November 2025
+{: #cl-add-ons-openshift-ai-41631_300541549}
+
+- Resolves the following CVEs: [CVE-2025-23266](https://nvd.nist.gov/vuln/detail/CVE-2025-23266){: external}, [CVE-2025-23267](https://nvd.nist.gov/vuln/detail/CVE-2025-23267){: external}, [CVE-2025-47906](https://nvd.nist.gov/vuln/detail/CVE-2025-47906){: external}, [CVE-2025-61724](https://nvd.nist.gov/vuln/detail/CVE-2025-61724){: external}, [CVE-2025-47912](https://nvd.nist.gov/vuln/detail/CVE-2025-47912){: external}, [CVE-2025-61723](https://nvd.nist.gov/vuln/detail/CVE-2025-61723){: external}, [CVE-2025-58189](https://nvd.nist.gov/vuln/detail/CVE-2025-58189){: external}, and [CVE-2025-58185](https://nvd.nist.gov/vuln/detail/CVE-2025-58185){: external}.
+- Updates Go to version `1.25.3`.
+
+
 ### 416.3.0_671, released 07 October 2025
 {: #cl-add-ons-openshift-ai-41630_671}
-
-[Default version]{: tag-green}
 
 - Resolves the following CVEs: [CVE-2025-10725](https://nvd.nist.gov/vuln/detail/CVE-2025-10725){: external}.
 - Updates Go to version `1.24.4`.

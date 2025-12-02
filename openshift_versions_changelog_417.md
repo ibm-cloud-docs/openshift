@@ -3,7 +3,7 @@
 copyright:
   years: 2024, 2025
 
-lastupdated: "2025-11-24"
+lastupdated: "2025-12-02"
 
 
 keywords: change log, version history, 4.17_openshift
@@ -55,6 +55,8 @@ The following table shows the components included in the worker node fix pack 4.
 {: caption="4.17.43_1563_openshift fix pack." caption-side="bottom"}
 {: #cl-boms-41743_1563_openshift_W-component-table}
 
+
+
 ### Master fix pack 4.17.42_1562_openshift, released 15 November 2025
 {: #41742_1562_openshift_M}
 
@@ -72,6 +74,7 @@ The following table shows the changes that are in the master fix pack 4.17.42_15
 | Red Hat OpenShift on IBM Cloud Control Plane Operator, Metrics Server, and toolkit | v4.17.0+20250821 | v4.17.0+20251015 | See the [Red Hat OpenShift on IBM Cloud toolkit release notes](https://github.com/openshift/ibm-roks-toolkit/releases/tag/v4.17.0+20251015). |
 | Tigera Operator | v1.36.13 | v1.36.14 | See the [Tigera Operator release notes](https://github.com/tigera/operator/releases/tag/v1.36.14). |
 {: caption="Changes since 4.17.40_1557_openshift." caption-side="bottom"}
+
 
 
 ### Worker node fix pack 4.17.42_1560_openshift, released 06 November 2025

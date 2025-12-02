@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2025
-lastupdated: "2025-11-11"
+lastupdated: "2025-12-01"
 
 
 keywords: openshift, {{site.data.keyword.openshiftlong_notm}}, oc, ks
@@ -35,7 +35,7 @@ Review the following changes for 1.0 versions of the CLI plug-in.
 ## Version v1.0.732
 {: #cli-01732} 
 
-- Adds network plug-in details to the output of the `cluster get` commamnd.
+- Adds network plug-in details to the output of the `cluster get` command.
 - Includes general refactoring and improvements.
 - Updates the help text.
 

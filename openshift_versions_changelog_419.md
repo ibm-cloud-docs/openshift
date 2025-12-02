@@ -3,7 +3,7 @@
 copyright:
   years: 2024, 2025
 
-lastupdated: "2025-11-24"
+lastupdated: "2025-12-02"
 
 
 keywords: change log, version history, 4.19_openshift
@@ -55,6 +55,7 @@ The following table shows the components included in the worker node fix pack 4.
 {: #cl-boms-41918_1554_openshift_W-component-table}
 
 
+
 ### Master fix pack 4.19.17_1553_openshift, released 15 November 2025
 {: #41917_1553_openshift_M}
 
@@ -71,6 +72,8 @@ The following table shows the changes that are in the master fix pack 4.19.17_15
 | Red Hat OpenShift on IBM Cloud | 4.19.13 | 4.19.17 | See the [Red Hat OpenShift on IBM Cloud release notes](https://docs.redhat.com/en/documentation/openshift_container_platform/4.19/html/release_notes/ocp-4-19-release-notes#ocp-4-19-17_release-notes). |
 | Tigera Operator | v1.36.13 | v1.36.14 | See the [Tigera Operator release notes](https://github.com/tigera/operator/releases/tag/v1.36.14). |
 {: caption="Changes since 4.19.13_1548_openshift." caption-side="bottom"}
+
+
 
 ### Worker node fix pack 4.19.17_1551_openshift, released 06 November 2025
 {: #cl-boms-41917_1551_openshift_W}
