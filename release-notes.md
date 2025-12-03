@@ -25,6 +25,23 @@ Use the release notes to learn about the latest changes to the documentation tha
 Looking for {{site.data.keyword.cloud_notm}} status, platform announcements, security bulletins, or maintenance notifications? See [{{site.data.keyword.cloud_notm}} status](https://cloud.ibm.com/status?selected=status).
 {: tip}
 
+## December 2025
+{: #openshift-dec25}
+
+### 02 December 2025
+{: #openshift-dec0225}
+{: release-note}
+
+Cluster autoscaler add-on patch updates for {{site.data.keyword.openshiftlong_notm}}.
+:   For more information, see [Cluster autoscaler add-on change log](/docs/openshift?topic=openshift-ca_changelog).
+
+{{site.data.keyword.cos_full_notm}} add-on patch updates.
+:   For more information, see the [change log](/docs/openshift?topic=openshift-cl-add-ons-ibm-object-csi-driver).
+
+
+
+
+
 ## November 2025
 {: #openshift-nov25}
 
