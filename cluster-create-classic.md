@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2025
-lastupdated: "2025-11-17"
+lastupdated: "2025-12-03"
 
 
 keywords: openshift, {{site.data.keyword.openshiftlong_notm}}, kubernetes, clusters, worker nodes, worker pools, classic, create
@@ -29,7 +29,7 @@ Use the {{site.data.keyword.cloud_notm}} CLI or the {{site.data.keyword.cloud_no
 {{site.data.keyword.redhat_openshift_notm}} clusters can be created created with a public only or both a public and private service endpoint. Public service endpoints can't be disabled. Therefore, you can't convert a public {{site.data.keyword.redhat_openshift_notm}} cluster to a private one. If you want to create a Classic cluster with a private service endpoint enabled, you must [enable VRF](/docs/account?topic=account-vrf-service-endpoint&interface=ui#vrf) & [service endpoints](/docs/account?topic=account-vrf-service-endpoint&interface=ui#service-endpoint). If you want a private-only cluster, consider creating a VPC cluster.
 {: important}
 
-If you want to enable a trusted profile for your cluster, make sure you have created one in your account. See [Configuring a trusted profile](/docs/containers?topic=containers-configure-trusted-profile&interface=ui) for more information.
+If you want to enable a trusted profile for your cluster, make sure you have created one in your account. See [Configuring a trusted profile](/docs/openshift?topic=openshift-configure-trusted-profile&interface=ui) for more information.
 
 
 ## Creating a classic cluster in the console
@@ -60,7 +60,7 @@ Worker pool
 
 
 Master service endpoint
-:    Service endpoints provide communication to the master. You can choose to configure your cluster with a public only or both a public and a private cloud service endpoint. For more information about what setup is required to run internet-facing apps, or to keep your cluster private, see [Planning your cluster network setup](/docs/containers?topic=containers-plan_vpc_basics#vpc-pgw). You cannot change the cloud service endpoints after you create the cluster.
+:    Service endpoints provide communication to the master. You can choose to configure your cluster with a public only or both a public and a private cloud service endpoint. For more information about what setup is required to run internet-facing apps, or to keep your cluster private, see [Planning your cluster network setup](/docs/openshift?topic=openshift-plan_vpc_basics#vpc-pgw). You cannot change the cloud service endpoints after you create the cluster.
 
 Ingress secrets management
 :   [{{site.data.keyword.secrets-manager_full_notm}}](/docs/openshift?topic=openshift-secrets-mgr) centrally manages Ingress subdomain certificates and other secrets in your cluster. You can choose to register a {{site.data.keyword.secrets-manager_short}} instance to your cluster during the cluster create process. You can also specify a secret group that you can use to control access to the secrets in your cluster. Both of these options can be configured or changed after you have created the cluster. 
@@ -71,7 +71,7 @@ Encryption
 
 Cluster details
 :   You can customize the unique cluster name and any [tags](/docs/account?topic=account-tag) that you want to use to organize and identify your {{site.data.keyword.cloud_notm}} resources, such as the `team` or `billing department`. 
-:   If you want to add an existing trusted profile to your cluster, specify the trusted profile's ID. If you do not specify a trusted profile, you can complete the cluster create process with an API key instead. See [Configuring a trusted profile](/docs/containers?topic=containers-configure-trusted-profile&interface=ui) for more information. 
+:   If you want to add an existing trusted profile to your cluster, specify the trusted profile's ID. If you do not specify a trusted profile, you can complete the cluster create process with an API key instead. See [Configuring a trusted profile](/docs/openshift?topic=openshift-configure-trusted-profile&interface=ui) for more information. 
 
 
 Observability integrations
@@ -216,7 +216,7 @@ Create your Classic cluster by using the {{site.data.keyword.cloud_notm}} CLI.
 
 
     `--trusted-profile-id ID`
-    :   Specify the ID of an existing trusted profile to associate with the cluster. With trusted profiles, you can grant access to resources in your account without having to manage separate IAM credentials. See [Configuring a trusted profile](/docs/containers?topic=containers-configure-trusted-profile&interface=ui) for more information.
+    :   Specify the ID of an existing trusted profile to associate with the cluster. With trusted profiles, you can grant access to resources in your account without having to manage separate IAM credentials. See [Configuring a trusted profile](/docs/openshift?topic=openshift-configure-trusted-profile&interface=ui) for more information.
 
 
 1. Verify that the creation of the cluster was requested. For virtual machines, it can take a few minutes for the worker node machines to be ordered, and for the cluster to be set up and provisioned in your account. Bare metal physical machines are provisioned by manual interaction with IBM Cloud infrastructure, and can take more than one business day to complete.
@@ -405,7 +405,7 @@ Terraform on {{site.data.keyword.cloud_notm}} enables predictable and consistent
 {: #cluster-create-classic-next-steps}
 
 * Isolate networking workloads to edge worker nodes [in classic clusters without a gateway](/docs/openshift?topic=openshift-edge).
-* Expose your apps with [public networking services](/docs/openshift?topic=openshift-cs_network_planning#openshift_routers) or [private networking services](/docs/openshift?topic=openshift-cs_network_planning#private_access). If you have multiple public clusters with exposed apps, consider connecting them with a [global load balancer](/docs/containers?topic=containers-strategy#plan_locations) for high availability. 
+* Expose your apps with [public networking services](/docs/openshift?topic=openshift-cs_network_planning#openshift_routers) or [private networking services](/docs/openshift?topic=openshift-cs_network_planning#private_access). If you have multiple public clusters with exposed apps, consider connecting them with a [global load balancer](/docs/openshift?topic=openshift-strategy#plan_locations) for high availability. 
 * Connect your cluster with services in private networks outside of your {{site.data.keyword.cloud_notm}} account by setting up [{{site.data.keyword.dl_full_notm}}](/docs/dl?topic=dl-get-started-with-ibm-cloud-dl).
 * Create Calico host network policies to isolate your cluster on the [public network](/docs/openshift?topic=openshift-network_policies#isolate_workers_public) and on the [private network](/docs/openshift?topic=openshift-network_policies#isolate_workers).
 * If you use a gateway appliance, such as a Virtual Router Appliance (VRA), [open up the required ports and IP addresses](/docs/openshift?topic=openshift-firewall#firewall_inbound) in the public firewall to permit inbound traffic to networking services. If you also have a firewall on the private network, [allow communication between worker nodes and let your cluster access infrastructure resources over the private network](/docs/openshift?topic=openshift-firewall#firewall_private).

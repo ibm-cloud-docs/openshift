@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2025
-lastupdated: "2025-11-18"
+lastupdated: "2025-12-03"
 
 
 keywords: kubernetes, clusters, worker nodes, worker pools, vpc-gen2, openshift, {{site.data.keyword.openshiftlong_notm}}
@@ -43,7 +43,7 @@ Use the {{site.data.keyword.cloud_notm}} CLI or the {{site.data.keyword.cloud_no
 
 * If you want to create a cluster that runs on dedicated hardware, you must first use the CLI to [create a dedicated host pool](/docs/openshift?topic=openshift-dedicated-hosts#setup-dedicated-host-cli) in your account.
 
-*If you want to enable a trusted profile for your cluster, make sure you have created one in your account. See [Configuring a trusted profile](/docs/containers?topic=containers-configure-trusted-profile&interface=ui) for more information.
+*If you want to enable a trusted profile for your cluster, make sure you have created one in your account. See [Configuring a trusted profile](/docs/openshift?topic=openshift-configure-trusted-profile&interface=ui) for more information.
 
 
 ## Creating a VPC cluster in the console
@@ -88,7 +88,7 @@ Worker pool encryption
 :    Manage encryption of your worker nodes by enabling a key management service (KMS) provider at the worker pool level. Select your KMS instance and CRN.
 
 Master service endpoint
-:    Service endpoints provide communication to the master. You can choose to configure your cluster with a public service endpoint or both a public and a private cloud service endpoint. For more information about what setup is required to run internet-facing apps, or to keep your cluster private, see [Planning your cluster network setup](/docs/containers?topic=containers-plan_vpc_basics#vpc-pgw). You cannot change the cloud service endpoints after you create the cluster.
+:    Service endpoints provide communication to the master. You can choose to configure your cluster with a public service endpoint or both a public and a private cloud service endpoint. For more information about what setup is required to run internet-facing apps, or to keep your cluster private, see [Planning your cluster network setup](/docs/openshift?topic=openshift-plan_vpc_basics#vpc-pgw). You cannot change the cloud service endpoints after you create the cluster.
 
 
 
@@ -111,13 +111,13 @@ Ingress secrets management
 :   [{{site.data.keyword.secrets-manager_full_notm}}](/docs/openshift?topic=openshift-secrets-mgr) centrally manages Ingress subdomain certificates and other secrets in your cluster. You can choose to register a {{site.data.keyword.secrets-manager_short}} instance to your cluster during the cluster create process. You can also specify a secret group that you can use to control access to the secrets in your cluster. Both of these options can be configured or changed after you have created the cluster.
 
 VPC security groups
-:   Provide up to four custom security groups to apply to all worker nodes on the VPC cluster in addition to the `kube-<clusterID>` security group. For more information, see [Understanding Secure by Default cluster VPC networking](/docs/containers?topic=containers-vpc-security-group-reference).
+:   Provide up to four custom security groups to apply to all worker nodes on the VPC cluster in addition to the `kube-<clusterID>` security group. For more information, see [Understanding Secure by Default cluster VPC networking](/docs/openshift?topic=openshift-vpc-security-group-reference).
 
 
 Cluster details
 :   You can customize the unique **Cluster name** and any [tags](/docs/account?topic=account-tag) that you want to use to organize and identify your {{site.data.keyword.cloud_notm}} resources, such as the `team` or `billing department`.
 :   Choose the **Resource group** to create your cluster in. A cluster can be created in only one resource group, and after the cluster is created, you can't change its resource group. To create clusters in a resource group other than the default, you must have at least the [**Viewer** role](/docs/openshift?topic=openshift-iam-platform-access-roles) for the resource group.
-:   If you want to add an existing trusted profile to your cluster, specify the trusted profile's ID. If you do not specify a trusted profile, you can complete the cluster create process with an API key instead. See [Configuring a trusted profile](/docs/containers?topic=containers-configure-trusted-profile&interface=ui) for more information.
+:   If you want to add an existing trusted profile to your cluster, specify the trusted profile's ID. If you do not specify a trusted profile, you can complete the cluster create process with an API key instead. See [Configuring a trusted profile](/docs/openshift?topic=openshift-configure-trusted-profile&interface=ui) for more information.
 
 Observability integrations
 :    You can enable additional observability integrations that you want to include on your cluster. Some integrations are automatically enabled if you have an existing platform instance of that integration. In this case, you cannot disable the integration. If you want to use an integration and you have only an existing application instance of that integration, the integration is disabled by default and you must manually enable it.
@@ -205,7 +205,7 @@ Observability integrations
 
 
     `--trusted-profile-id ID`
-    :   Specify the ID of an existing trusted profile to associate with the cluster. With trusted profiles, you can grant access to resources in your account without having to manage separate IAM credentials. See [Configuring a trusted profile](/docs/containers?topic=containers-configure-trusted-profile&interface=ui) for more information.
+    :   Specify the ID of an existing trusted profile to associate with the cluster. With trusted profiles, you can grant access to resources in your account without having to manage separate IAM credentials. See [Configuring a trusted profile](/docs/openshift?topic=openshift-configure-trusted-profile&interface=ui) for more information.
 
     `--pod-subnet`
     :   In the first cluster that you create in a VPC, the default pod subnet is `172.17.0.0/18`. 

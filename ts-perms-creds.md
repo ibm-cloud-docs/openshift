@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2025
-lastupdated: "2025-06-30"
+lastupdated: "2025-12-03"
 
 
 keywords: kubernetes, openshift, user permissions, infrastructure credentials
@@ -197,14 +197,14 @@ There are multiple reasons why this error can occur.
 If you know the classic infrastructure API key, specify it. If you do not know the infrastructure API key or you think it might have been deleted, follow these steps.
 {: tsResolve}
 
-1. [Reset the classic infrastructure API key](/docs/containers?topic=containers-kubernetes-service-cli#cs_credentials_set).
+1. [Reset the classic infrastructure API key](/docs/openshift?topic=openshift-kubernetes-service-cli#cs_credentials_set).
 
     ```sh
     ibmcloud oc credential set classic --infrastructure-api-key API_KEY --infrastructure-username USERNAME --region REGION [-q]
     ```
     {: pre}
 
-2. Run the command to [update the credential on the cluster](/docs/containers?topic=containers-kubernetes-service-cli#cs_api_key_reset). 
+2. Run the command to [update the credential on the cluster](/docs/openshift?topic=openshift-kubernetes-service-cli#cs_api_key_reset). 
 
     ```sh
     ibmcloud oc api-key reset --region REGION [-q]

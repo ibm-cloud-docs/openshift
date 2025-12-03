@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2025
-lastupdated: "2025-08-11"
+lastupdated: "2025-12-03"
 
 
 keywords: kubernetes, openshift
@@ -71,7 +71,7 @@ Follow these steps to create a Kubernetes secret for the credentials of an {{sit
 
 
 * Make sure that you have the **Manager** service access role for the cluster.
-* [Set up your KMS provider](/docs/containers?topic=containers-encryption-setup).
+* [Set up your KMS provider](/docs/openshift?topic=openshift-encryption-setup).
 * Retrieve the **`apikey`**, or the **`access_key_id`** and the **`secret_access_key`** of your [{{site.data.keyword.cos_full_notm}} service credentials](#service_credentials). Note that the service credentials must be enough for the bucket operations that your app needs to perform. For example, if your app reads data from a bucket, the service credentials you see in your secret must have **Reader** permissions at minimum.
 
 

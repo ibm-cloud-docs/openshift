@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2025
-lastupdated: "2025-08-11"
+lastupdated: "2025-12-03"
 
 
 keywords: openshift, {{site.data.keyword.openshiftlong_notm}}, clusters, worker nodes, worker pools
@@ -44,7 +44,7 @@ Confirm that you [have the required permissions to create clusters](/docs/opensh
 {: #prepare-trusted-profile}
 {: step}
 
-You can use trusted profiles to grant different IBM Cloud identities access to resources in your account, including your clusters or apps. Based on the settings you apply to the trusted profile, you can control which users can use the profile to access resources. When you create a cluster, you can specify a trusted profile that allows those users to access the cluster. See [Configuring a trusted profile](/docs/containers?topic=containers-configure-trusted-profile&interface=ui) for more information.
+You can use trusted profiles to grant different IBM Cloud identities access to resources in your account, including your clusters or apps. Based on the settings you apply to the trusted profile, you can control which users can use the profile to access resources. When you create a cluster, you can specify a trusted profile that allows those users to access the cluster. See [Configuring a trusted profile](/docs/openshift?topic=openshift-configure-trusted-profile&interface=ui) for more information.
 
 ## Plan your resource groups
 {: #prepare-resource-groups}

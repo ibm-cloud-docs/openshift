@@ -1,7 +1,7 @@
 ---
 copyright: 
   years: 2025, 2025
-lastupdated: "2025-10-02"
+lastupdated: "2025-12-03"
 
 keywords: nhc004, vpe gateway hostname resolution
 
@@ -117,7 +117,7 @@ To identify the VPE gateways used by your IBM Cloud Kubernetes Service cluster, 
 
 6. Ensure that your VPC DNS settings allow access to the VPE hostnames. In the IBM Cloud console, navigate to **VPC > DNS services** and validate the DNS rules.
 
-- For more on Virtual private endpoint (VPE) gateways in IBM Cloud Kubernetes Service, see [Virtual private endpoint (VPE) gateways](/docs/containers?topic=containers-vpc-security-group-reference#sbd-managed-vpe-gateways){: external}.
+- For more on Virtual private endpoint (VPE) gateways in IBM Cloud Kubernetes Service, see [Virtual private endpoint (VPE) gateways](/docs/openshift?topic=openshift-vpc-security-group-reference#sbd-managed-vpe-gateways){: external}.
 
 - After corrections, wait a few minutes and recheck the cluster health status.
 
