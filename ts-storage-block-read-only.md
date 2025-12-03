@@ -1,8 +1,8 @@
 ---
 
 copyright: 
-  years: 2014, 2024
-lastupdated: "2024-01-03"
+  years: 2014, 2025
+lastupdated: "2025-12-03"
 
 
 keywords: openshift
@@ -44,7 +44,7 @@ Verify the plug-in version, re-create your app, and safely reload your worker no
     ```
     {: pre}
 
-2. Verify that you use the [latest version of the {{site.data.keyword.cloud_notm}} Block Storage plug-in](https://cloud.ibm.com/kubernetes/helm/iks-charts/ibmcloud-block-storage-plugin). If not, [update your plug-in](/docs/containers?topic=containers-block_storage#update_block).
+2. Verify that you use the [latest version of the {{site.data.keyword.cloud_notm}} Block Storage plug-in](https://cloud.ibm.com/kubernetes/helm/iks-charts/ibmcloud-block-storage-plugin). If not, [update your plug-in](/docs/openshift?topic=openshift-block_storage#update_block).
 3. If you used a Kubernetes deployment for your pod, restart the pod that is failing by removing the pod and letting Kubernetes re-create it. If you did not use a deployment, retrieve the YAML file that was used to create your pod by running `oc get pod <pod_name> -o yaml >pod.yaml`. Then, delete and manually re-create the pod.
     ```sh
     oc delete pod <pod_name>
@@ -72,10 +72,3 @@ Verify the plug-in version, re-create your app, and safely reload your worker no
         {: pre}
 
     3. Safely [reload the worker node](/docs/openshift?topic=openshift-kubernetes-service-cli#cs_worker_reload).
-
-
-
-
-
-
-

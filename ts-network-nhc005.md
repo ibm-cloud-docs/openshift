@@ -1,7 +1,7 @@
 ---
 copyright: 
   years: 2025, 2025
-lastupdated: "2025-09-17"
+lastupdated: "2025-12-03"
 
 keywords: nhc005, calico degraded, tigera operator
 
@@ -70,6 +70,6 @@ Check the logs of the Tigera operator and Calico components to investigate the c
 
 6. After resolving any identified issues, wait a few minutes and recheck the network health.
 
-7. For more information, see [Controlling traffic with network policies](/docs/containers?topic=containers-network_policies){: external} and [Debugging Calico components](/docs/containers?topic=containers-calico_log_level){: external}
+7. For more information, see [Controlling traffic with network policies](/docs/openshift?topic=openshift-network_policies){: external} and [Debugging Calico components](/docs/openshift?topic=openshift-calico_log_level){: external}
 
 8. If the issue persists, contact support for further assistance. Open a [support case](/docs/account?topic=account-using-avatar). In the case details, be sure to include any relevant log files, error messages, or command outputs.

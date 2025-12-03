@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2025
-lastupdated: "2025-12-02"
+lastupdated: "2025-12-03"
 
 
 keywords: openshift
@@ -284,7 +284,19 @@ subcollection: openshift
 
 [Release notes](/docs/openshift?topic=openshift-openshift-relnotes#openshift-relnotes)
 
+* [December 2025](/docs/openshift?topic=openshift-openshift-relnotes#openshift-dec25)
+
+    * [02 December 2025](/docs/openshift?topic=openshift-openshift-relnotes#openshift-dec0225)
+
+        * Cluster autoscaler add-on patch updates for {{site.data.keyword.openshiftlong_notm}}.
+
+        * {{site.data.keyword.cos_full_notm}} add-on patch updates.
+
 * [November 2025](/docs/openshift?topic=openshift-openshift-relnotes#openshift-nov25)
+
+    * [27 November 2025](/docs/openshift?topic=openshift-openshift-relnotes#openshift-nov2725)
+
+        * OpenShift AI cluster add-on patch updates.
 
     * [18 November 2025](/docs/openshift?topic=openshift-openshift-relnotes#openshift-nov1825)
 

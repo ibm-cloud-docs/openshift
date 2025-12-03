@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2025
-lastupdated: "2025-11-24"
+lastupdated: "2025-12-03"
 
 
 keywords: kubernetes, release notes, openshift, {{site.data.keyword.openshiftlong_notm}}
@@ -25,8 +25,35 @@ Use the release notes to learn about the latest changes to the documentation tha
 Looking for {{site.data.keyword.cloud_notm}} status, platform announcements, security bulletins, or maintenance notifications? See [{{site.data.keyword.cloud_notm}} status](https://cloud.ibm.com/status?selected=status).
 {: tip}
 
+## December 2025
+{: #openshift-dec25}
+
+### 02 December 2025
+{: #openshift-dec0225}
+{: release-note}
+
+Cluster autoscaler add-on patch updates for {{site.data.keyword.openshiftlong_notm}}.
+:   For more information, see [Cluster autoscaler add-on change log](/docs/openshift?topic=openshift-ca_changelog).
+
+{{site.data.keyword.cos_full_notm}} add-on patch updates.
+:   For more information, see the [change log](/docs/openshift?topic=openshift-cl-add-ons-ibm-object-csi-driver).
+
+
+
+
+
 ## November 2025
 {: #openshift-nov25}
+
+
+
+### 27 November 2025
+{: #openshift-nov2725}
+{: release-note}
+
+OpenShift AI cluster add-on patch updates.
+:   For more information, see the [change log](/docs/openshift?topic=openshift-cl-add-ons-openshift-ai).
+
 
 ### 18 November 2025
 {: #openshift-nov1825}
@@ -462,7 +489,7 @@ CLI version `1.0.715` is available.
 {: release-note}
 
 Trusted profiles
-:   You can use trusted profiles to control access to your resources, including components such as Block Storage, File Storage, or Cloud Object Storage. For more information, see [Configuring a trusted profile for cluster components](/docs/containers?topic=containers-configure-trusted-profile&interface=ui)
+:   You can use trusted profiles to control access to your resources, including components such as Block Storage, File Storage, or Cloud Object Storage. For more information, see [Configuring a trusted profile for cluster components](/docs/openshift?topic=openshift-configure-trusted-profile&interface=ui)
 
 
 
@@ -1765,7 +1792,7 @@ Static route add-on version patch update.
 {: release-note}
 
 New! The {{site.data.keyword.cloud}} and Compliance Center Workload Protection integration is available for VPC clusters in the UI. 
-:   For more information, see the list of Observability Integrations in [Creating a VPC cluster in the console](/docs/containers?topic=containers-cluster-create-vpc-gen2&interface=ui#clusters_vpcg2_ui).
+:   For more information, see the list of Observability Integrations in [Creating a VPC cluster in the console](/docs/openshift?topic=openshift-cluster-create-vpc-gen2&interface=ui#clusters_vpcg2_ui).
 
 ### 12 September 2024
 {: #openshift-sep1224}

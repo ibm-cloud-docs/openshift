@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2025
-lastupdated: "2025-10-06"
+lastupdated: "2025-12-03"
 
 
 keywords: openshift
@@ -313,7 +313,7 @@ For more information see the [IBM NS1 Connect Documentation about monitoring](ht
 
 If you use load balancer services, ensure that all traffic that uses the VRRP protocol is allowed between worker nodes on the public and private interfaces. {{site.data.keyword.openshiftlong_notm}} uses the VRRP protocol to manage IP addresses for public and private load balancers.
 
-If you use Ingress or routes to expose apps in your cluster, allow incoming network traffic from [IBM NS1's source IP addresses](/docs/containers?topic=containers-firewall#firewall-ingress-domain-monitor) on port 80 to the IP addresses of your router services so that the {{site.data.keyword.redhat_openshift_notm}} control plane can check the health of your routers.
+If you use Ingress or routes to expose apps in your cluster, allow incoming network traffic from [IBM NS1's source IP addresses](/docs/openshift?topic=openshift-firewall#firewall-ingress-domain-monitor) on port 80 to the IP addresses of your router services so that the {{site.data.keyword.redhat_openshift_notm}} control plane can check the health of your routers.
 
 
 

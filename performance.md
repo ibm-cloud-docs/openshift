@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2025
-lastupdated: "2025-11-10"
+lastupdated: "2025-12-03"
 
 
 keywords: openshift, {{site.data.keyword.openshiftlong_notm}}, kubernetes, kernel, performance
@@ -378,7 +378,7 @@ Before you begin
       You can also edit the resource directly by running `oc edit installation.operator.tigera.io default`.
       {: tip}
 
-7. Apply these changes to all your nodes by carefully rebooting all nodes. Make sure you have tested this process on a development cluster before you continue with this step, as these changes could cause disruptions to your workload. To reboot your nodes, it is recommended that you [cordon, drain, and reboot](/docs/containers?topic=containers-host-maintenance#worker-maintenance-classic) your nodes one by one. 
+7. Apply these changes to all your nodes by carefully rebooting all nodes. Make sure you have tested this process on a development cluster before you continue with this step, as these changes could cause disruptions to your workload. To reboot your nodes, it is recommended that you [cordon, drain, and reboot](/docs/openshift?topic=openshift-host-maintenance#worker-maintenance-classic) your nodes one by one. 
 
 If you are completing these steps on a production cluster, you should use the same process you use for updating or replacing production nodes. It is highly recommended that you test this entire process on a test cluster before you complete these steps on a production cluster. 
 {: important}

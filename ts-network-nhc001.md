@@ -1,7 +1,7 @@
 ---
 copyright: 
   years: 2025, 2025
-lastupdated: "2025-09-17"
+lastupdated: "2025-12-03"
 
 keywords: nhc001, calico progressing, tigera operator
 
@@ -69,6 +69,6 @@ Investigate the logs of the Tigera operator and Calico components to understand 
 
 4. Wait for components to complete rollout. After addressing any issues (such as, CrashLoopBackOff, image pull errors), wait a few minutes for Tigera to refresh the state.
 
-5. For more information, see [Controlling traffic with network policies](/docs/containers?topic=containers-network_policies){: external} and [Debugging Calico components](/docs/containers?topic=containers-calico_log_level){: external}
+5. For more information, see [Controlling traffic with network policies](/docs/openshift?topic=openshift-network_policies){: external} and [Debugging Calico components](/docs/openshift?topic=openshift-calico_log_level){: external}
 
 6. If the issue continues, contact support for assistance. Open a [support case](/docs/account?topic=account-using-avatar). In the case details, be sure to include any relevant log files, error messages, or command outputs.

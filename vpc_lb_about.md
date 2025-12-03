@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2025
-lastupdated: "2025-05-29"
+lastupdated: "2025-12-03"
 
 
 keywords: kubernetes, openshift, app protocol, application protocol
@@ -88,7 +88,7 @@ The following diagram illustrates how a user accesses an app from the internet t
 In VPC clusters, set up a layer-4 [Network Load Balancer for VPC](/docs/vpc?topic=vpc-network-load-balancers) (VPC NLB) in each zone of your cluster to serve as the external entry point for incoming requests to an app.
 {: shortdesc}
 
-VPC NLBs provide several advantages, such as providing higher throughput and better performance by utilizing direct server return (DSR). With DSR, the worker node can send app response packets directly to the client IP address and skip the VPC NLB, decreasing the amount of traffic that the VPC NLB must handle. Additionally, you can configure the VPC NLB to include source IP address preservation on all client requests by including the [`externalTrafficPolicy: Local` specification](/docs/containers?topic=containers-setup_vpc_nlb#vpc_nlb_annotations). 
+VPC NLBs provide several advantages, such as providing higher throughput and better performance by utilizing direct server return (DSR). With DSR, the worker node can send app response packets directly to the client IP address and skip the VPC NLB, decreasing the amount of traffic that the VPC NLB must handle. Additionally, you can configure the VPC NLB to include source IP address preservation on all client requests by including the [`externalTrafficPolicy: Local` specification](/docs/openshift?topic=openshift-setup_vpc_nlb#vpc_nlb_annotations). 
 
 * Standard VPC NLB names have a format `kube-<cluster_ID>-<kubernetes_lb_service_UID>`. To see your cluster ID, run `ibmcloud oc cluster get --cluster <cluster_name>`. To see the Kubernetes `LoadBalancer` service UID, run `oc get svc myloadbalancer -o yaml` and look for the **metadata.uid** field in the output. The hyphens (-) are removed from the Kubernetes `LoadBalancer` service UID in the VPC NLB name.
 

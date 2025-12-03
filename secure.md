@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2025
-lastupdated: "2025-11-18"
+lastupdated: "2025-12-03"
 
 
 keywords: openshift
@@ -125,7 +125,7 @@ Fine-grained access control
 Admission controllers
 :   Admission controllers are implemented for specific features in Kubernetes and {{site.data.keyword.openshiftlong_notm}}. With admission controllers, you can set up policies in your cluster that determine whether a particular action in the cluster is allowed or not. In the policy, you can specify conditions when a user can't perform an action, even if this action is part of the general permissions that you assigned the user by using RBAC roles. Therefore, admission controllers can provide an extra layer of security for your cluster before an API request is processed by the {{site.data.keyword.redhat_openshift_notm}} API server.
   
-When you create a cluster, {{site.data.keyword.openshiftlong_notm}} automatically installs the default [Kubernetes admission controllers](https://kubernetes.io/docs/reference/access-authn-authz/admission-controllers/){: external} in a particular order in the {{site.data.keyword.redhat_openshift_notm}} master, which can't be changed by the user. Review the order of default admission controllers by cluster version in the [`kube-apiserver` component reference information](/docs/containers?topic=containers-service-settings#kube-apiserver).
+When you create a cluster, {{site.data.keyword.openshiftlong_notm}} automatically installs the default [Kubernetes admission controllers](https://kubernetes.io/docs/reference/access-authn-authz/admission-controllers/){: external} in a particular order in the {{site.data.keyword.redhat_openshift_notm}} master, which can't be changed by the user. Review the order of default admission controllers by cluster version in the [`kube-apiserver` component reference information](/docs/openshift?topic=openshift-service-settings#kube-apiserver).
 
 You can [install your own admission controllers in the cluster](https://kubernetes.io/docs/reference/access-authn-authz/extensible-admission-controllers/#admission-webhooks){: external} or choose an optional admission controller, such as [Portieris](/docs/openshift?topic=openshift-images#portieris-image-sec). With Portieris, you can block container deployments from unsigned images. 
 

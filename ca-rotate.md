@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2024, 2025
-lastupdated: "2025-11-03"
+lastupdated: "2025-12-03"
 
 
 keywords: openshift, {{site.data.keyword.openshiftlong_notm}}, kubernetes, certificate, rotate, ca rotate
@@ -65,7 +65,7 @@ By default, certificate authority (CA) certificates are administered to secure a
     - If you use the certificate from your cluster's `kubeconfig` file in your own service, such as Jenkins.
     - If you use `calicoctl` to manage Calico network policies, update your services and automation to use the new certificates.
     - If you forward audit logs to {{site.data.keyword.logs_full_notm}}, update the certificates for your [master audit webhook](/docs/openshift?topic=openshift-health-audit).
-    - If you forward audit logs over the private network, update the certificates for your [master audit webhook](/docs/containers?topic=containers-health-audit#audit-api-server-priv).
+    - If you forward audit logs over the private network, update the certificates for your [master audit webhook](/docs/openshift?topic=openshift-health-audit#audit-api-server-priv).
 
 7. [Reload your classic worker nodes](/docs/openshift?topic=openshift-kubernetes-service-cli#cs_worker_reload) or [replace your VPC worker nodes](/docs/openshift?topic=openshift-kubernetes-service-cli#cli_worker_replace) to pick up the certificates that are signed by the new CA.
 
