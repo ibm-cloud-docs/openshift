@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2025
-lastupdated: "2025-09-19"
+lastupdated: "2025-12-02"
 
 
 keywords: openshift, {{site.data.keyword.openshiftlong_notm}}, node.js, js, java, .net, go, flask, react, python, swift, rails, ruby, spring boot, angular
@@ -303,7 +303,7 @@ spec:
 ```
 {: codeblock}
 
-If you have a requirement to deploy `hostNetwork` pods to listen on specific ports or to use a `hostPort` to expose your app pods on a specific port on the worker node, use a port in the `11000-11200` range. {{site.data.keyword.openshiftlong_notm}} designates the `11000-11200` port range on worker nodes for this purpose to avoid conflicts with local ports and other ports that {{site.data.keyword.openshiftlong_notm}} uses. Because `hostNetwork` pods and `hostPorts` refer to a particular worker node IP address, the pods are limited to run only on that worker node. If something unanticipated happens, such as the worker node being removed or running out of resources, your pod can't be rescheduled. If you want to expose a pod’s port on the worker node, consider using a [`NodePort` service](/docs/openshift?topic=openshift-nodeport) instead. For more information, see the [Kubernetes best practices documentation](https://kubernetes.io/docs/concepts/configuration/overview/#services){: external}.
+If you have a requirement to deploy `hostNetwork` pods to listen on specific ports or to use a `hostPort` to expose your app pods on a specific port on the worker node, use a port in the `11000-11200` range. {{site.data.keyword.openshiftlong_notm}} designates the `11000-11200` port range on worker nodes for this purpose to avoid conflicts with local ports and other ports that {{site.data.keyword.openshiftlong_notm}} uses. Because `hostNetwork` pods and `hostPorts` refer to a particular worker node IP address, the pods are limited to run only on that worker node. If something unanticipated happens, such as the worker node being removed or running out of resources, your pod can't be rescheduled. If you want to expose a pod’s port on the worker node, consider using a [`NodePort` service](/docs/openshift?topic=openshift-nodeport) instead. For more information, see the [Kubernetes best practices documentation](https://kubernetes.io/blog/2025/11/25/configuration-good-practices/#service-configuration-and-networking){: external}.
 {: important}
 
 ### Configmaps for container environment variables

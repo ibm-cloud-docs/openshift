@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2024, 2025
-lastupdated: "2025-10-29"
+lastupdated: "2025-12-02"
 
 
 keywords: telemetry, remote health, remote monitoring, cluster data, health data
@@ -68,7 +68,7 @@ To enable Telemetry, update your pull secret by adding your OpenShift access tok
     ```
     {: codeblock}
 
-1. For classic infrastructure, [reload all worker nodes in your cluster](/docs/openshift?topic=openshift-kubernetes-service-cli#cs_worker_reload). For VPC infrastructure, [replace all worker nodes in your cluster](/docs/containers?topic=containers-kubernetes-service-cli#cli_worker_replace).
+1. For classic infrastructure, [reload all worker nodes in your cluster](/docs/openshift?topic=openshift-kubernetes-service-cli#cs_worker_reload). For VPC infrastructure, [replace all worker nodes in your cluster](/docs/openshift?topic=openshift-kubernetes-service-cli#cli_worker_replace).
 
 1. Open the [{{site.data.keyword.redhat_openshift_notm}} console](https://console.redhat.com/openshift){: external} and navigate to the **Clusters** page. Telemetry is enabled when your cluster type is `RHOIC`. Note that it might take a few minutes for the changes to reflect in the console. If you want to verify Telemetry enablement in the CLI, see [Checking if Telemetry is enabled for a cluster](#telemetry_check).
 
@@ -94,7 +94,7 @@ You might want to disable this remote health reporting to comply with privacy la
     {: screen}
 
 2. Follow the {{site.data.keyword.redhat_openshift_notm}} instructions to [update the global pull secret in the cluster to disable remote health reporting](https://docs.redhat.com/en/documentation/openshift_container_platform/4.19/html/support/remote-health-monitoring-with-connected-clusters){: external}.
-3. To pick up the global configuration changes by reloading or rebooting the worker nodes in your cluster. [reload all the worker nodes in your cluster](/docs/openshift?topic=openshift-kubernetes-service-cli#cs_worker_reload). For VPC infrastructure, [replace all worker nodes in your cluster](/docs/containers?topic=containers-kubernetes-service-cli#cli_worker_replace).
+3. To pick up the global configuration changes by reloading or rebooting the worker nodes in your cluster. [reload all the worker nodes in your cluster](/docs/openshift?topic=openshift-kubernetes-service-cli#cs_worker_reload). For VPC infrastructure, [replace all worker nodes in your cluster](/docs/openshift?topic=openshift-kubernetes-service-cli#cli_worker_replace).
 
     1. Note the **ID** of the worker nodes in your cluster.
         ```sh
@@ -102,7 +102,7 @@ You might want to disable this remote health reporting to comply with privacy la
         ```
         {: pre}
 
-    2. For classic infrastructure, [reload all the worker nodes in your cluster](/docs/openshift?topic=openshift-kubernetes-service-cli#cs_worker_reload). For VPC infrastructure, [replace all worker nodes in your cluster](/docs/containers?topic=containers-kubernetes-service-cli#cli_worker_replace). Make sure to leave enough worker nodes running at the same time for you apps to avoid an outage. 
+    2. For classic infrastructure, [reload all the worker nodes in your cluster](/docs/openshift?topic=openshift-kubernetes-service-cli#cs_worker_reload). For VPC infrastructure, [replace all worker nodes in your cluster](/docs/openshift?topic=openshift-kubernetes-service-cli#cli_worker_replace). Make sure to leave enough worker nodes running at the same time for you apps to avoid an outage. 
 
 
 4. After the worker nodes are back in a healthy state, verify that the telemetry reporting pod no longer runs in your cluster.
