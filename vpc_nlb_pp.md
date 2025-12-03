@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2024, 2025
-lastupdated: "2025-11-18"
+lastupdated: "2025-12-03"
 
 keywords: private path nlb, private path network load balancer, vpc nlb, private lb
 subcollection: openshift
@@ -19,8 +19,6 @@ subcollection: openshift
 
 In fully private VPC environments with no public Internet access, you can use a Private Path Network Load Balancer to balance the network traffic flowing to the applications running in your VPC clusters. For more information, see the [Private Path service use cases](/docs/vpc?topic=vpc-private-path-service-intro#pps-use-cases).
 
-Private Path Network Load Balancers for VPC are available in Beta and their functionality is subject to change.
-{: beta}
 
 ## Prerequisites
 {: #vpc_nlb_pp_pre}

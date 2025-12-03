@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2025
-lastupdated: "2025-08-15"
+lastupdated: "2025-12-03"
 
 
 keywords: openshift, kubernetes, logmet, logs, metrics, audit, events
@@ -649,7 +649,7 @@ By default, {{site.data.keyword.openshiftlong_notm}} generates and sends events 
 ### Viewing `AuditWebhookError` alerts in auditing-enabled clusters
 {: #audit-webhook-error-410}
 
-{{site.data.keyword.openshiftlong_notm}} clusters version 4.10 and later have an `AuditWebhookError` alert that fires when the audit webhook crashes or is deleted.
+{{site.data.keyword.openshiftlong_notm}} clusters version have an `AuditWebhookError` alert that fires when the audit webhook crashes or is deleted.
 {: shortdesc}
 
 To view the alert:
