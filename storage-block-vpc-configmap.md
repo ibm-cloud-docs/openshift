@@ -1,11 +1,11 @@
 ---
 
 copyright: 
-  years: 2022, 2024
-lastupdated: "2024-01-03"
+  years: 2022, 2025
+lastupdated: "2025-12-03"
 
 
-keywords: openshift, block storage, snapshot
+keywords: openshift, block storage, snapshot, add-on, configmap
 
 subcollection: openshift
 
@@ -105,4 +105,3 @@ data:
   VolumeAttachmentLimit: "12" #container: iks-vpc-block-driver
 ```
 {: codeblock}
-
