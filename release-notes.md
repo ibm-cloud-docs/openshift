@@ -45,6 +45,16 @@ Cluster autoscaler add-on patch updates for {{site.data.keyword.openshiftlong_no
 ## November 2025
 {: #openshift-nov25}
 
+
+
+### 27 November 2025
+{: #openshift-nov2725}
+{: release-note}
+
+OpenShift AI cluster add-on patch updates.
+:   For more information, see the [change log](/docs/openshift?topic=openshift-cl-add-ons-openshift-ai).
+
+
 ### 18 November 2025
 {: #openshift-nov1825}
 {: release-note}
