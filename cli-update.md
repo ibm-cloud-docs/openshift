@@ -1,16 +1,13 @@
 ---
 
 copyright: 
-  years: 2014, 2024
-lastupdated: "2024-01-03"
+  years: 2014, 2025
+lastupdated: "2025-12-03"
 
 
-keywords: openshift, oc, openshift cli, update
-
+keywords: openshift, kubernetes, ic, ks, oc, oc, openshift cli, update
 
 subcollection: openshift
-
- 
 
 
 ---
@@ -31,5 +28,3 @@ Review the following sections to update the `ibmcloud` CLI and any plug-ins that
 
 
 {{../cli/reference/ibmcloud/extend_cli.md#cli-update-plugin}}
-
-
