@@ -286,6 +286,10 @@ subcollection: openshift
 
 * [December 2025](/docs/openshift?topic=openshift-openshift-relnotes#openshift-dec25)
 
+    * [04 December 2025](/docs/openshift?topic=openshift-openshift-relnotes#openshift-dec0425)
+
+        * IBM Cloud Image Key Synchronizer cluster add-on patch updates.
+
     * [02 December 2025](/docs/openshift?topic=openshift-openshift-relnotes#openshift-dec0225)
 
         * Cluster autoscaler add-on patch updates for {{site.data.keyword.openshiftlong_notm}}.
@@ -3923,6 +3927,20 @@ subcollection: openshift
 * [Understanding your storage removal options](/docs/openshift?topic=openshift-storage-file-vpc-managing#vpc-storage-delete-options-file)
 
 * [Cleaning up persistent storage](/docs/openshift?topic=openshift-storage-file-vpc-managing#vpc-storage-remove-file)
+
+[Setting up snapshots with the {{site.data.keyword.filestorage_vpc_short}} cluster add-on](/docs/openshift?topic=openshift-vpc-volume-snapshot-file#vpc-volume-snapshot-file)
+
+* [Prerequisites](/docs/openshift?topic=openshift-vpc-volume-snapshot-file#snapshot-file-pre)
+
+* [Creating an app](/docs/openshift?topic=openshift-vpc-volume-snapshot-file#vpc-snapshot-deployment-file)
+
+* [Creating a volume snapshot](/docs/openshift?topic=openshift-vpc-volume-snapshot-file#vpc-create-snapshot)
+
+* [Restoring from a volume snapshot](/docs/openshift?topic=openshift-vpc-volume-snapshot-file#vpc-restore-from-snapshot)
+
+* [Restoring static snapshots](/docs/openshift?topic=openshift-vpc-volume-snapshot-file#file-static-snapshot-restore)
+
+* [Turning off snapshots](/docs/openshift?topic=openshift-vpc-volume-snapshot-file#vpc-turn-off-snapshots)
 
 [Storage class reference](/docs/openshift?topic=openshift-storage-file-vpc-sc-ref#storage-file-vpc-sc-ref)
 
@@ -9754,6 +9772,10 @@ subcollection: openshift
 * [Verifying the read and write permissions for the non-root user](/docs/openshift?topic=openshift-cs_storage_nonroot#verify-rw-permissions)
 
 [Why are the file systems for worker nodes changed to read-only?](/docs/openshift?topic=openshift-readonly_nodes#readonly_nodes)
+
+[Why can't I restore my {{site.data.keyword.filestorage_vpc_short}} snapshot to a PVC?](/docs/openshift?topic=openshift-ts-storage-vpc-file-snapshot-restore#ts-storage-vpc-file-snapshot-restore)
+
+[Why can't I restore my {{site.data.keyword.filestorage_vpc_short}} snapshot to a PVC?](/docs/openshift?topic=openshift-ts-storage-vpc-file-snapshot-delete#ts-storage-vpc-file-snapshot-delete)
 
 [Why do I see a `MountingTargetFailed` error for {{site.data.keyword.filestorage_vpc_short}}?](/docs/openshift?topic=openshift-ts-storage-vpc-file-eit-mount-failed#ts-storage-vpc-file-eit-mount-failed)
 
