@@ -2,8 +2,8 @@
 
 copyright:
   years: 2014, 2025
-lastupdated: "2025-11-04"
 
+lastupdated: "2025-12-04"
 
 keywords: openshift, version, update, upgrade
 
@@ -49,7 +49,7 @@ All VPC clusters created at version 4.18 or later can use RHCOS worker nodes. Cl
 {: important}
 
 
-
+<!--<qna:latest-version>-->
 
 
 
@@ -98,7 +98,7 @@ All VPC clusters created at version 4.18 or later can use RHCOS worker nodes. Cl
 |4.14 (Kubernetes 1.27) [Deprecated]{: tag-deprecated} |13 December 2023|08 January 2026|Red Hat CoreOS,  \nRHEL 8 (default)| - [4.14 details and update actions](/docs/openshift?topic=openshift-cs_versions_414)  \n - [Change log](/docs/openshift?topic=openshift-openshift_changelog_414)  \n - [Release notes](https://docs.redhat.com/en/documentation/openshift_container_platform/4.14/html/release_notes/ocp-4-14-release-notes){: external}|
 {: caption="Available versions for clusters in Satellite locations" caption-side="bottom"}
 
-
+<!--</qna:latest-version>-->
 
 `†` Indicates dates that are tentative and subject to change.
 `*` Indicates operating systems that are deprecated.

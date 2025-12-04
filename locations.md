@@ -1,14 +1,13 @@
 ---
 
-copyright: 
+copyright:
   years: 2014, 2025
-lastupdated: "2025-11-14"
 
+lastupdated: "2025-12-04"
 
 keywords: openshift, kubernetes, mzr, szr, multizone, multi az
 
 subcollection: openshift
-
 
 ---
 

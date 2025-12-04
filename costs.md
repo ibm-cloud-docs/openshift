@@ -1,14 +1,13 @@
 ---
 
-copyright: 
+copyright:
   years: 2014, 2025
-lastupdated: "2025-12-03"
 
+lastupdated: "2025-12-04"
 
 keywords: openshift, {{site.data.keyword.openshiftlong_notm}}, iro, openshift, red hat, red hat openshift
 
 subcollection: openshift
-
 
 ---
 
