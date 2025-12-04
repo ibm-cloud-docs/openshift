@@ -1,14 +1,13 @@
 ---
 
-copyright: 
+copyright:
   years: 2014, 2025
-lastupdated: "2025-10-29"
 
+lastupdated: "2025-12-04"
 
 keywords: openshift, {{site.data.keyword.openshiftlong_notm}}, kubernetes, infrastructure, rbac, policy, providers, benefits
 
 subcollection: openshift
-
 
 ---
 
