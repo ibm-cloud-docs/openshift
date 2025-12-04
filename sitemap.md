@@ -286,6 +286,10 @@ subcollection: openshift
 
 * [December 2025](/docs/openshift?topic=openshift-openshift-relnotes#openshift-dec25)
 
+    * [04 December 2025](/docs/openshift?topic=openshift-openshift-relnotes#openshift-dec0425)
+
+        * IBM Cloud Image Key Synchronizer cluster add-on patch updates.
+
     * [02 December 2025](/docs/openshift?topic=openshift-openshift-relnotes#openshift-dec0225)
 
         * Cluster autoscaler add-on patch updates for {{site.data.keyword.openshiftlong_notm}}.

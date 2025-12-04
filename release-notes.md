@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2025
-lastupdated: "2025-12-03"
+lastupdated: "2025-12-04"
 
 
 keywords: kubernetes, release notes, openshift, {{site.data.keyword.openshiftlong_notm}}
@@ -27,6 +27,16 @@ Looking for {{site.data.keyword.cloud_notm}} status, platform announcements, sec
 
 ## December 2025
 {: #openshift-dec25}
+
+### 04 December 2025
+{: #openshift-dec0425}
+{: release-note}
+
+
+
+IBM Cloud Image Key Synchronizer cluster add-on patch updates.
+:   For more information, see the [change log](/docs/openshift?topic=openshift-cl-add-ons-ibm-cloud-image-key-synchronizer).
+
 
 ### 02 December 2025
 {: #openshift-dec0225}
