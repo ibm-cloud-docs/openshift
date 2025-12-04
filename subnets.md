@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2025
-lastupdated: "2025-12-03"
+lastupdated: "2025-12-04"
 
 
 keywords: openshift
@@ -49,7 +49,7 @@ To see the VLANs that are provisioned in each zone for your account, run `ibmclo
 IBM Cloud infrastructure manages the VLANs that are automatically provisioned when you create your first cluster in a zone. If you let a VLAN become unused, such as by removing all worker nodes from a VLAN, IBM Cloud infrastructure reclaims the VLAN. After, if you need a new VLAN, [contact {{site.data.keyword.cloud_notm}} support](/docs/vlans?topic=vlans-ordering-premium-vlans#ordering-premium-vlans).
 
 Can I change my VLAN decision later?
-:   You can change your VLAN setup by modifying the worker pools in your cluster. For more information, see [Changing your worker node VLAN connections](/docs/openshift?topic=openshift-cs_network_cluster#change-vlans).
+:   You can change your VLAN setup by modifying the worker pools in your cluster. For more information, see [Changing your worker node VLAN connections](/docs/containers?topic=containers-cs_network_cluster#change-vlans).
 
 
 ### Subnets and IP addresses
