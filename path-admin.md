@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2025
-lastupdated: "2025-12-03"
+lastupdated: "2025-12-04"
 
 
 keywords: openshift, red hat, red hat openshift, admin
@@ -81,7 +81,6 @@ Review the following optional topics to manage the network connectivity of your 
     - To route responses from your cluster back to your on-premises network in VPN solutions that preserve the request source IP address, add [custom static routes](/docs/openshift?topic=openshift-static-routes) to worker nodes for on-premises subnets.
 - **Subnets and VLANs**:
     - Add or change the available subnets and IP addresses for your [classic cluster](/docs/openshift?topic=openshift-subnets) or [VPC cluster](/docs/openshift?topic=openshift-vpc-subnets).
-    - Classic clusters: Change the [VLAN connections for your worker nodes](/docs/openshift?topic=openshift-cs_network_cluster#change-vlans).
 
 
 
@@ -178,7 +177,6 @@ Manage your cluster and worker nodes through each phase of the cluster lifecycle
 - **Autoscaling**: [Automatically increase or decrease the number of worker nodes](/docs/openshift?topic=openshift-cluster-scaling-install-addon) based on the sizing needs of your scheduled workloads.
 - **Updating**: Keep your environment up-to-date by frequently [updating clusters, worker nodes, and cluster components](/docs/openshift?topic=openshift-update). While you update, refer to these version reference pages:
     - [{{site.data.keyword.openshiftshort}} version information](/docs/openshift?topic=openshift-openshift_versions)
-    - [Fluentd and Ingress ALB change log](/docs/openshift?topic=openshift-cl-ingress-alb)
 - **Removing**: [Remove clusters and clean up related resources](/docs/openshift?topic=openshift-remove).
 
 
