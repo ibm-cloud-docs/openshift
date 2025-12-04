@@ -264,6 +264,7 @@ toc:
           - storage-file-vpc-install.md
           - storage-file-vpc-apps.md
           - storage-file-vpc-managing.md
+          - storage-file-vpc-snapshot.md
           - storage-file-vpc-sc-ref.md
       - topicgroup:
           label: Setting up Object Storage
