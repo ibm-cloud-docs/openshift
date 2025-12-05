@@ -15,7 +15,7 @@ subcollection: openshift
 {{site.data.keyword.attribute-definition-list}}
 
 
-# Setting up snapshots with the {{site.data.keyword.filestorage_vpc_short}} cluster add-on
+# Setting up snapshots for {{site.data.keyword.filestorage_vpc_short}}
 {: #vpc-volume-snapshot-file}
 
 [Virtual Private Cloud]{: tag-vpc} 
@@ -82,14 +82,14 @@ Create an example Persistent Volume Claim (PVC) and deploy a pod that references
     apiVersion: v1
     kind: PersistentVolumeClaim
     metadata:
-      name: csi-file-pvc
+    name: csi-file-pvc
     spec:
-      accessModes:
-      - ReadWriteOnce
-      resources:
+    accessModes:
+    - ReadWriteMany
+    resources:
         requests:
-          storage: 10Gi
-      storageClassName: ibmc-vpc-file-min-iops
+        storage: 10Gi
+    storageClassName: ibmc-vpc-file-min-iops
     ```
     {: codeblock}
 
@@ -116,29 +116,30 @@ Create an example Persistent Volume Claim (PVC) and deploy a pod that references
     apiVersion: apps/v1
     kind: Deployment
     metadata:
-      name: my-deployment
-      labels:
+    name: my-deployment
+    labels:
         app: my-deployment
     spec:
-      replicas: 1
-      selector:
+    replicas: 1
+    selector:
         matchLabels:
-          app: my-deployment
-      template:
+        app: my-deployment
+    template:
         metadata:
-          labels:
+        labels:
             app: my-deployment
         spec:
-          containers:
-          - image: nginx # Your containerized app image
+        containers:
+        - image: nginx # Your containerized app image
             name: container-name 
             volumeMounts:
             - mountPath: /myvolumepath  # Mount path for PVC
-              name: my-vol # Volume mount name
-          volumes:
-          - name: my-vol  # Volume resource name
+            name: my-vol # Volume mount name
+        volumes:
+        - name: my-vol  # Volume resource name
             persistentVolumeClaim:
-              claimName: csi-file-pvc  # The name of the PVC you created earlier
+            claimName: csi-file-pvc  # The name of the PVC you created earlier
+
     ```
     {: codeblock}
 
@@ -235,7 +236,7 @@ After you deploy the snapshot resources, you can restore data to a new volume by
         kind: VolumeSnapshot
         apiGroup: snapshot.storage.k8s.io
       accessModes:
-        - ReadWriteOnce
+        - ReadWriteMany
       resources:
         requests:
           storage: 10Gi
