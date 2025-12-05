@@ -3,7 +3,7 @@
 copyright:
   years: 2014, 2025
 
-lastupdated: "2025-12-04"
+lastupdated: "2025-12-05"
 
 keywords: openshift, {{site.data.keyword.openshiftlong_notm}}, kubernetes, clusters, worker nodes, worker pools, classic, create
 
@@ -61,7 +61,7 @@ Worker pool
 
 
 Master service endpoint
-:    Service endpoints provide communication to the master. You can choose to configure your cluster with a public only or both a public and a private cloud service endpoint. For more information about what setup is required to run internet-facing apps, or to keep your cluster private, see [Planning your cluster network setup](/docs/openshift?topic=openshift-plan_vpc_basics#vpc-pgw). You cannot change the cloud service endpoints after you create the cluster.
+:    Service endpoints provide communication to the master. You can choose to configure your cluster with a public only or both a public and a private cloud service endpoint. For more information about what setup is required to run internet-facing apps, or to keep your cluster private, see [Planning your cluster network setup](/docs/openshift?topic=openshift-plan_vpc_basics). You cannot change the cloud service endpoints after you create the cluster.
 
 Ingress secrets management
 :   [{{site.data.keyword.secrets-manager_full_notm}}](/docs/openshift?topic=openshift-secrets-mgr) centrally manages Ingress subdomain certificates and other secrets in your cluster. You can choose to register a {{site.data.keyword.secrets-manager_short}} instance to your cluster during the cluster create process. You can also specify a secret group that you can use to control access to the secrets in your cluster. Both of these options can be configured or changed after you have created the cluster. 

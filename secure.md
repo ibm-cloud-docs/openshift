@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2025
-lastupdated: "2025-12-03"
+lastupdated: "2025-12-05"
 
 
 keywords: openshift
@@ -125,7 +125,7 @@ Fine-grained access control
 Admission controllers
 :   Admission controllers are implemented for specific features in Kubernetes and {{site.data.keyword.openshiftlong_notm}}. With admission controllers, you can set up policies in your cluster that determine whether a particular action in the cluster is allowed or not. In the policy, you can specify conditions when a user can't perform an action, even if this action is part of the general permissions that you assigned the user by using RBAC roles. Therefore, admission controllers can provide an extra layer of security for your cluster before an API request is processed by the {{site.data.keyword.redhat_openshift_notm}} API server.
   
-When you create a cluster, {{site.data.keyword.openshiftlong_notm}} automatically installs the default [Kubernetes admission controllers](https://kubernetes.io/docs/reference/access-authn-authz/admission-controllers/){: external} in a particular order in the {{site.data.keyword.redhat_openshift_notm}} master, which can't be changed by the user. Review the order of default admission controllers by cluster version in the [`kube-apiserver` component reference information](/docs/openshift?topic=openshift-service-settings#kube-apiserver).
+When you create a cluster, {{site.data.keyword.openshiftlong_notm}} automatically installs the default [Kubernetes admission controllers](https://kubernetes.io/docs/reference/access-authn-authz/admission-controllers/){: external} in a particular order in the {{site.data.keyword.redhat_openshift_notm}} master, which can't be changed by the user. Review the order of default admission controllers by cluster version in the [component reference information](/docs/openshift?topic=openshift-service-settings).
 
 You can [install your own admission controllers in the cluster](https://kubernetes.io/docs/reference/access-authn-authz/extensible-admission-controllers/#admission-webhooks){: external} or choose an optional admission controller, such as [Portieris](/docs/openshift?topic=openshift-images#portieris-image-sec). With Portieris, you can block container deployments from unsigned images. 
 
@@ -438,7 +438,7 @@ Every deployment is based on an image that holds the instructions for how to spi
 {: shortdesc}
 
 Should I use a public or a private registry to store my images?
-:   Public registries, such as Docker Hub, can be used to get started with Docker images and Kubernetes to create your first containerized app in a cluster. But when it comes to enterprise applications, avoid registries that you don't know or don't trust to protect your cluster from malicious images. Keep your images in a private registry, like the one provided in {{site.data.keyword.registrylong_notm}} or the [internal registry](https://docs.redhat.com/documentation/openshift_container_platform/4.19/html/registry/registry-overview-1){: external} that is automatically set up in your {{site.data.keyword.redhat_openshift_notm}} cluster, and make sure to control access to the registry and the image content that can be pushed.
+:   Public registries, such as Docker Hub, can be used to get started with Docker images and Kubernetes to create your first containerized app in a cluster. But when it comes to enterprise applications, avoid registries that you don't know or don't trust to protect your cluster from malicious images. Keep your images in a private registry, like the one provided in {{site.data.keyword.registrylong_notm}} or the [internal registry](https://docs.redhat.com/en/documentation/openshift_container_platform/4.19/html/registry/registry-overview-1){: external} that is automatically set up in your {{site.data.keyword.redhat_openshift_notm}} cluster, and make sure to control access to the registry and the image content that can be pushed.
 
 Why is it important to check images against vulnerabilities?
 :   Research shows that most malicious attacks leverage known software vulnerabilities and weak system configurations. When you deploy a container from an image, the container spins up with the OS and extra binaries that you described in the image. Just like you protect your virtual or physical machine, you must eliminate known vulnerabilities in the OS and binaries that you use inside the container to protect your app from being accessed by unauthorized users.
@@ -480,7 +480,7 @@ What is a {{site.data.keyword.redhat_openshift_notm}} project and why should I u
 :   Every cluster is set up with a set of default {{site.data.keyword.redhat_openshift_notm}} projects that include the deployments and services that are required for {{site.data.keyword.openshiftlong_notm}} to run properly and manage the cluster. For more information, see the [service architecture](/docs/openshift?topic=openshift-service-architecture). 
 :   Cluster administrators automatically have access to these projects and can set up additional projects in the cluster. In addition, cluster users who are granted access to the cluster can create their own project and, as the creator of the project, can manage the project with administrator permissions. However, cluster users don't have access to other projects by default, unless they are granted access by a cluster administrator. 
 
-For every project that you have in the cluster, make sure to set up proper [RBAC policies](/docs/openshift?topic=openshift-understand-rbac) to limit access to this project, control what gets deployed, and to set proper [resource quotas and limit ranges](https://docs.redhat.com/documentation/openshift_container_platform/3.2/html/developer_guide/index){: external}.
+For every project that you have in the cluster, make sure to set up proper [RBAC policies](/docs/openshift?topic=openshift-understand-rbac) to limit access to this project, control what gets deployed, and to set proper [resource quotas and limit ranges](https://docs.redhat.com/en/documentation/openshift_container_platform/3.2/html/developer_guide/index){: external}.
 {: important}
 
 ### Should I set up a single-tenant or a multi-tenant cluster?
@@ -521,11 +521,11 @@ If you want to block privileged containers from running in your cluster, conside
 {: important}
 
 Apply OS security settings to pods
-:   You can customize the default [security context constraints](https://docs.redhat.com/documentation/openshift_container_platform/3.2/html/cluster_administration/index){: external} to control the user ID and group ID that can run inside the container, or the user ID and group ID that owns the volume mount path. Setting a specific user ID helps facilitate a least privilege model. If the security context does not specify a user, Kubernetes automatically uses the user that is specified in the container image. For more information , see [Configuring security context constraints](/docs/openshift?topic=openshift-openshift_scc).
+:   You can customize the default [security context constraints](https://docs.redhat.com/en/documentation/openshift_container_platform/3.2/html/cluster_administration/index){: external} to control the user ID and group ID that can run inside the container, or the user ID and group ID that owns the volume mount path. Setting a specific user ID helps facilitate a least privilege model. If the security context does not specify a user, Kubernetes automatically uses the user that is specified in the container image. For more information , see [Configuring security context constraints](/docs/openshift?topic=openshift-openshift_scc).
     {: tip}
 
 Set CPU and memory limits for containers
-:   Every container requires a specific amount of CPU and memory to properly start and to continue to run. You can define [Limit ranges](https://docs.redhat.com/documentation/openshift_container_platform/3.2/html/developer_guide/dev-guide-compute-resources){: external} for your containers or pods to limit the amount of CPU and memory that they can consume. If no limits for CPU and memory are set, and the container is busy, the container uses all the resources that are available. This high consumption of resources might affect other containers on the worker node that don't have enough resources to properly start or run, and puts your worker node at risk for denial-of-service attacks.
+:   Every container requires a specific amount of CPU and memory to properly start and to continue to run. You can define [Limit ranges](https://docs.redhat.com/en/documentation/openshift_container_platform/3.2/html/developer_guide/dev-guide-compute-resources){: external} for your containers or pods to limit the amount of CPU and memory that they can consume. If no limits for CPU and memory are set, and the container is busy, the container uses all the resources that are available. This high consumption of resources might affect other containers on the worker node that don't have enough resources to properly start or run, and puts your worker node at risk for denial-of-service attacks.
 
 
 

@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2022, 2025
-lastupdated: "2025-12-03"
+lastupdated: "2025-12-05"
 
 
 keywords: kubernetes, openshift
@@ -52,10 +52,6 @@ This page lists all `ibmcloud oc` commands as they are structured in the CLI. Fo
     * [`ibmcloud oc cluster image-security enable`](/docs/openshift?topic=openshift-kubernetes-service-cli#cs-image-security-enable)
 * [`ibmcloud oc cluster ls`](/docs/openshift?topic=openshift-kubernetes-service-cli#cs_clusters)
 * **`cluster master`**: View and modify the master for a cluster.
-    * **`cluster master audit-webhook`**: View and modify the audit webhook configuration for a cluster's Kubernetes API server.
-        * [`ibmcloud oc cluster master audit-webhook get`](/docs/openshift?topic=openshift-kubernetes-service-cli#cs_apiserver_config_get) 
-        * [`ibmcloud oc cluster master audit-webhook set`](/docs/openshift?topic=openshift-kubernetes-service-cli#cs_apiserver_config_set) 
-        * [`ibmcloud oc cluster master audit-webhook unset`](/docs/openshift?topic=openshift-kubernetes-service-cli#cs_apiserver_config_unset)
     * **`cluster master pod-security`**: View and modify your Pod Security configurations.
         * [`ibmcloud oc cluster master pod-security get`](/docs/openshift?topic=openshift-kubernetes-service-cli#cluster-master-pod-security-get)
         * [`ibmcloud oc cluster master pod-security set`](/docs/openshift?topic=openshift-kubernetes-service-cli#cluster-master-pod-security-set)
@@ -79,7 +75,6 @@ This page lists all `ibmcloud oc` commands as they are structured in the CLI. Fo
             * [`ibmcloud oc cluster master satellite-service-endpoint allowlist remove`](/docs/openshift?topic=openshift-kubernetes-service-cli#cluster-master-sat-allowlist-remove)
         * [`ibmcloud oc cluster master private-service-endpoint enable`](/docs/openshift?topic=openshift-kubernetes-service-cli#cs_cluster_master_pse_enable)
     * **`cluster master public-service-endpoint`**: Manage the public service endpoint of a cluster.
-        * [`ibmcloud oc cluster master public-service-endpoint disable`](/docs/openshift?topic=openshift-kubernetes-service-cli#cs_cluster_master_pub_se_disable)
         * [`ibmcloud oc cluster master public-service-endpoint enable`](/docs/openshift?topic=openshift-kubernetes-service-cli#cs_cluster_master_pub_se_enable)
     * [`ibmcloud oc cluster master refresh`](/docs/openshift?topic=openshift-kubernetes-service-cli#cs_apiserver_refresh)
     * [`ibmcloud oc cluster master update`](/docs/openshift?topic=openshift-kubernetes-service-cli#cs_cluster_update)
@@ -162,11 +157,9 @@ This page lists all `ibmcloud oc` commands as they are structured in the CLI. Fo
         * [`ibmcloud oc ingress alb autoupdate get`](/docs/openshift?topic=openshift-kubernetes-service-cli#cs_alb_autoupdate_get)
     * **`ingress alb create`**: Create an Ingress ALB in a cluster.
         * [`ibmcloud oc ingress alb create classic`](/docs/openshift?topic=openshift-kubernetes-service-cli#cs_alb_create)
-        * [`ibmcloud oc ingress alb create vpc-gen2`](/docs/openshift?topic=openshift-kubernetes-service-cli#cli_alb-create-vpc-gen2)
     * [`ibmcloud oc ingress alb disable`](/docs/openshift?topic=openshift-kubernetes-service-cli#cs_alb_disable)
     * **`ingress alb enable`**: Enable an Ingress ALB in a cluster.
         * [`ibmcloud oc ingress alb enable classic`](/docs/openshift?topic=openshift-kubernetes-service-cli#cs_alb_configure)
-        * [`ibmcloud oc ingress alb enable vpc-gen2`](/docs/openshift?topic=openshift-kubernetes-service-cli#cli_alb_configure_vpc_gen2)
     * [`ibmcloud oc ingress alb get`](/docs/openshift?topic=openshift-kubernetes-service-cli#cs_alb_get)
     * **`ingress alb health-checker`**: Manage the Ingress ALB health checker.
         * [`ibmcloud oc ingress alb health-checker disable`](/docs/openshift?topic=openshift-kubernetes-service-cli#cs_alb_healthchecker_disable)
@@ -196,27 +189,6 @@ This page lists all `ibmcloud oc` commands as they are structured in the CLI. Fo
     * [`ibmcloud oc ingress status-report ignore rm`](/docs/openshift?topic=openshift-kubernetes-service-cli#cs_ingress_status_report_ignore_rm)
     
 
-## ibmcloud oc logging
-{: #icks_map_logging}
-
-[Forward logs from your cluster.](/docs/openshift?topic=openshift-kubernetes-service-cli#logging_commands).
-{: shortdesc}
-
-* **`logging autoupdate`**: Manage automatic updates of the Fluentd add-on in a cluster.
-    * [`ibmcloud oc logging autoupdate disable`](/docs/openshift?topic=openshift-kubernetes-service-cli#cs_log_autoupdate_disable)
-    * [`ibmcloud oc logging autoupdate enable`](/docs/openshift?topic=openshift-kubernetes-service-cli#cs_log_autoupdate_enable)
-    * [`ibmcloud oc logging autoupdate get`](/docs/openshift?topic=openshift-kubernetes-service-cli#cs_log_autoupdate_get)
-* **`logging config`**: View or modify log forwarding configurations for a cluster.
-    * [`ibmcloud oc logging config create`](/docs/openshift?topic=openshift-kubernetes-service-cli#cs_logging_create)
-    * [`ibmcloud oc logging config get`](/docs/openshift?topic=openshift-kubernetes-service-cli#cs_logging_get)
-    * [`ibmcloud oc logging config rm`](/docs/openshift?topic=openshift-kubernetes-service-cli#cs_logging_rm)
-    * [`ibmcloud oc logging config update`](/docs/openshift?topic=openshift-kubernetes-service-cli#cs_logging_update)
-* **`logging filter`**: View or modify log filters for a cluster.
-    * [`ibmcloud oc logging filter create`](/docs/openshift?topic=openshift-kubernetes-service-cli#cs_log_filter_create)
-    * [`ibmcloud oc logging filter get`](/docs/openshift?topic=openshift-kubernetes-service-cli#cs_log_filter_view)
-    * [`ibmcloud oc logging filter rm`](/docs/openshift?topic=openshift-kubernetes-service-cli#cs_log_filter_delete)
-    * [`ibmcloud oc logging filter update`](/docs/openshift?topic=openshift-kubernetes-service-cli#cs_log_filter_update)
-* [`ibmcloud oc logging refresh`](/docs/openshift?topic=openshift-kubernetes-service-cli#cs_logging_refresh)
 
 ## ibmcloud oc nlb-dns
 {: #icks_map_nlb-dns}

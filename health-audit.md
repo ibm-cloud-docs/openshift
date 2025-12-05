@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2025
-lastupdated: "2025-12-03"
+lastupdated: "2025-12-05"
 
 
 keywords: openshift, kubernetes, logmet, logs, metrics, audit, events
@@ -39,7 +39,7 @@ Before you set up a Kubernetes API audit configuration, review the following inf
 
 
 
-- **VPC clusters versions 4.15 and later**: Audit logs use the Red Hat OpenShift audit policy profile `default` (for default) and `WriteRequestBodies`(for verbose). For more information, see the [Audit log policy](https://docs.redhat.com/documentation/openshift_container_platform/4.15/html/security_and_compliance/audit-log-policy-config){: external}.
+- **VPC clusters versions 4.15 and later**: Audit logs use the Red Hat OpenShift audit policy profile `default` (for default) and `WriteRequestBodies`(for verbose). For more information, see the [Audit log policy](https://docs.redhat.com/en/documentation/openshift_container_platform/4.15/html/security_and_compliance/audit-log-policy-config){: external}.
 
 - **All other cluster versions**: Audit logs use the `openshift-audit` policy in the [`kube-samples` repo](https://github.com/IBM-Cloud/kube-samples/blob/master/kube-audit/openshift-audit-policy.yaml){: external}{: external}.
 

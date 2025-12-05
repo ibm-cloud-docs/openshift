@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2025, 2025
-lastupdated: "2025-12-04"
+lastupdated: "2025-12-05"
 
 
 keywords: openshift, containers, file storage for vpc, snapshots,
@@ -20,7 +20,7 @@ subcollection: openshift
 
 [Virtual Private Cloud]{: tag-vpc} 
 
-{{site.data.keyword.filestorage_vpc_short}} volume snapshots provide you with a standardized way to copy a volume's contents at a particular point in time without creating an entirely new volume. Snapshots are supported for both zonal(dp2) and regional (rfs) based storage classes. For more information about snapshots, see [How snapshots work](https://cloud.ibm.com/docs/vpc?topic=vpc-fs-snapshots-about). 
+{{site.data.keyword.filestorage_vpc_short}} volume snapshots provide you with a standardized way to copy a volume's contents at a particular point in time without creating an entirely new volume. Snapshots are supported for both zonal(dp2) and regional (rfs) based storage classes. For more information about snapshots, see [How snapshots work](/docs/vpc?topic=vpc-fs-snapshots-about). 
 {: shortdesc}
 
 For more information about {{site.data.keyword.filestorage_vpc_short}}, see [About {{site.data.keyword.filestorage_vpc_short}}](/docs/vpc?topic=vpc-file-storage-vpc-about).
@@ -497,6 +497,3 @@ By default, snapshot functionality is enabled when using the {{site.data.keyword
     oc apply -f snapshotconfigmap.yaml
     ```
     {: pre}
-
-
-

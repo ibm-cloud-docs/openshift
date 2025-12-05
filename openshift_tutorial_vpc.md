@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2025
-lastupdated: "2025-11-11"
+lastupdated: "2025-12-05"
 
 
 keywords: kubernetes, openshift, red hat, red hat openshift
@@ -188,7 +188,7 @@ Quickly deploy a new sample app that is available to requests from inside the cl
     ```
     {: pre}
 
-2. Build the sample app [from the source code](https://github.com/IBM/container-service-getting-started-wt){: external}. With the {{site.data.keyword.redhat_openshift_notm}} `new-app` command, you can refer to a directory in a remote repository that contains the Dockerfile and app code to build your image. The command builds the image, stores the image in the local Docker registry, and creates the app deployment configurations (`dc`) and services (`svc`). For more information about creating new apps, [see the {{site.data.keyword.redhat_openshift_notm}} docs](https://docs.redhat.com/documentation/openshift_container_platform/4.19/html/building_applications/creating-applications){: external}.
+2. Build the sample app [from the source code](https://github.com/IBM/container-service-getting-started-wt){: external}. With the {{site.data.keyword.redhat_openshift_notm}} `new-app` command, you can refer to a directory in a remote repository that contains the Dockerfile and app code to build your image. The command builds the image, stores the image in the local Docker registry, and creates the app deployment configurations (`dc`) and services (`svc`). For more information about creating new apps, [see the {{site.data.keyword.redhat_openshift_notm}} docs](https://docs.redhat.com/en/documentation/openshift_container_platform/4.19/html/building_applications/creating-applications){: external}.
     ```sh
     oc new-app --name hello-world https://github.com/IBM/container-service-getting-started-wt --context-dir="Lab 1"
     ```

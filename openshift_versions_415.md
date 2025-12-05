@@ -2,7 +2,7 @@
 
 copyright:
   years: 2024, 2025
-lastupdated: "2025-08-05"
+lastupdated: "2025-12-05"
 
 
 keywords: openshift, version, update, upgrade, 4.15, update openshift
@@ -27,7 +27,7 @@ This version is deprecated. Update your cluster to a [supported version](/docs/o
 Review information about version 4.15 of {{site.data.keyword.openshiftlong_notm}}. This version is based on Kubernetes version {{site.data.keyword.openshift_415_kube_version}}. 
 {: shortdesc}
 
-Looking for general information about updating clusters, or information on a different version? See [Red Hat {{site.data.keyword.redhat_openshift_notm}} on IBM Cloud version information](/docs/openshift?topic=openshift-openshift_versions) and the version [4.15 release notes](https://docs.redhat.com/documentation/openshift_container_platform/4.15/html/release_notes/ocp-4-15-release-notes){: external}.
+Looking for general information about updating clusters, or information on a different version? See [Red Hat {{site.data.keyword.redhat_openshift_notm}} on IBM Cloud version information](/docs/openshift?topic=openshift-openshift_versions) and the version [4.15 release notes](https://docs.redhat.com/en/documentation/openshift_container_platform/4.15/html/release_notes/ocp-4-15-release-notes){: external}.
 {: tip}
 
 ![This badge indicates Kubernetes version 1.28 certification for {{site.data.keyword.openshiftlong_notm}}](images/certified-kubernetes-color.svg){: caption="Kubernetes version 1.28 certification badge" caption-side="bottom"}
@@ -67,8 +67,8 @@ The following table shows the actions that you must take before you [update the 
 
 | Type | Description |
 | --- | --- |
-| **Unsupported:** Deprecated and removed OpenShift features | For more information, review the [OpenShift version 4.15 deprecated and removed features](https://docs.redhat.com/documentation/openshift_container_platform/4.15/html/release_notes/ocp-4-15-release-notes#ocp-4-15-deprecated-removed-features) and [Preparing to update to OpenShift Container Platform 4.15](https://docs.openshift.com/container-platform/4.15/updating/preparing_for_updates/updating-cluster-prepare.html) for possible actions required. |
-| Known OpenShift issues | For more information, review the [OpenShift version 4.15 known issues](https://docs.redhat.com/documentation/openshift_container_platform/4.15/html/release_notes/ocp-4-15-release-notes#ocp-4-15-known-issues) for possible actions required. |
+| **Unsupported:** Deprecated and removed OpenShift features | For more information, review the [OpenShift version 4.15 deprecated and removed features](https://docs.redhat.com/en/documentation/openshift_container_platform/4.15/html/release_notes/ocp-4-15-release-notes#ocp-4-15-deprecated-removed-features) and [Preparing to update to OpenShift Container Platform 4.15](https://docs.openshift.com/container-platform/4.15/updating/preparing_for_updates/updating-cluster-prepare.html) for possible actions required. |
+| Known OpenShift issues | For more information, review the [OpenShift version 4.15 known issues](https://docs.redhat.com/en/documentation/openshift_container_platform/4.15/html/release_notes/ocp-4-15-release-notes#ocp-4-15-known-issues) for possible actions required. |
 | Upgrade requires OpenShift cluster version currency | A cluster master upgrade is canceled when the OpenShift cluster version status indicates that an update is already in progress. See [Why does OpenShift show the cluster version is not up to date](/docs/openshift?topic=openshift-ts-cluster-version-downlevel) for details. |
 | Upgrade requires resolution to OpenShift cluster version upgradeable conditions | A cluster master upgrade will now be canceled if the OpenShift cluster version `Upgradeable` status condition indicates that the cluster is not upgradeable. See [Why do I see a `Cannot complete cluster master upgrade` message?](/docs/openshift?topic=openshift-ts-cluster-master-upgrade) for details. |
 | VPE gateways changes when creating or updating a VPC cluster to version 4.15 | There are important changes to the VPE gateways used for VPC clusters when creating a 4.15 cluster or updating to 4.15. These changes might require action. To review the changes and determine your required actions, see [VPE gateway creation information](#vpe-gateway-415). |
