@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2024, 2025
-lastupdated: "2025-12-02"
+lastupdated: "2025-12-05"
 
 
 keywords: telemetry, remote health, remote monitoring, cluster data, health data
@@ -16,7 +16,7 @@ subcollection: openshift
 # Telemetry for remote health monitoring
 {: #telemetry}
 
-Telemetry is a remote health monitoring feature that collects anonymized aggregated data about your cluster, such as the health of your components and the number and types of resources in use. If you have a public cluster that runs version 4.14 or later and was provisioned on or after 28 Feb 2024, you can elect to have your own Telemetry data visible in the Red Hat Hybrid Console under your Red Hat account for your use. For more information on Telemetry, such as the type of data collected, see [About Telemetry](https://docs.redhat.com/documentation/openshift_container_platform/4.1/html/telemetry/about-telemetry){: external} in the {{site.data.keyword.redhat_openshift_notm}} documentation. 
+Telemetry is a remote health monitoring feature that collects anonymized aggregated data about your cluster, such as the health of your components and the number and types of resources in use. If you have a public cluster that runs version 4.14 or later and was provisioned on or after 28 Feb 2024, you can elect to have your own Telemetry data visible in the Red Hat Hybrid Console under your Red Hat account for your use. For more information on Telemetry, such as the type of data collected, see [About Telemetry](https://docs.redhat.com/en/documentation/openshift_container_platform/4.1/html/telemetry/about-telemetry){: external} in the {{site.data.keyword.redhat_openshift_notm}} documentation. 
 {: shortdesc}
 
 

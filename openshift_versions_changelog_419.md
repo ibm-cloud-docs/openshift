@@ -3,7 +3,7 @@
 copyright:
   years: 2024, 2025
 
-lastupdated: "2025-12-04"
+lastupdated: "2025-12-05"
 
 
 keywords: change log, version history, 4.19_openshift
@@ -65,7 +65,7 @@ The following table shows the changes that are in the master fix pack 4.19.17_15
 | Component | Previous | Current | Description |
 | --- | --- | --- | --- |
 | Calico | v3.29.5 | v3.29.6 | See the [Calico release notes](https://docs.tigera.io/calico/3.29/release-notes/#calico-open-source-3296-bug-fix-release){: external}. |
-| etcd | v3.5.23 | v3.5.24 | See the [etcd release notes](https://github.com/coreos/etcd/releases/v3.5.24){: external}. |
+| etcd | v3.5.23 | v3.5.24 | See the [etcd release notes](https://github.com/etcd-io/etcd/releases/v3.5.24){: external}. |
 | {{site.data.keyword.cloud_notm}} Block Storage driver and plug-in | v2.5.20 | v2.5.22 | New version contains updates and security fixes. |
 | {{site.data.keyword.cloud_notm}} Controller Manager | v1.32.9-2 | v1.32.9-6 | New version contains updates and security fixes. |
 | Key Management Service provider | v2.10.17 | v2.10.18 | New version contains updates and security fixes. |

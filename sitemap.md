@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2025
-lastupdated: "2025-12-04"
+lastupdated: "2025-12-05"
 
 
 keywords: openshift
@@ -5817,8 +5817,6 @@ subcollection: openshift
 
 * [ibmcloud oc ingress](/docs/openshift?topic=openshift-icks_map#icks_map_ingress)
 
-* [ibmcloud oc logging](/docs/openshift?topic=openshift-icks_map#icks_map_logging)
-
 * [ibmcloud oc nlb-dns](/docs/openshift?topic=openshift-icks_map#icks_map_nlb-dns)
 
 * [ibmcloud oc webhook-create](/docs/openshift?topic=openshift-icks_map#icks_map_webhook-create)
@@ -6418,7 +6416,7 @@ subcollection: openshift
 
 [Red Hat OpenShift on IBM Cloud API](https://cloud.ibm.com/apidocs/kubernetes/containers-v1-v2){: external}
 
-[OpenShift Container Platform REST API](https://docs.redhat.com/documentation/openshift_container_platform/4.19/html/api_overview/index){: external}
+[OpenShift Container Platform REST API](https://docs.redhat.com/en/documentation/openshift_container_platform/4.19/html/api_overview/index){: external}
 
 
 ## Add-ons for {{site.data.keyword.openshiftlong_notm}}

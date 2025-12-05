@@ -2,7 +2,7 @@
 
 copyright:
   years: 2024, 2025
-lastupdated: "2025-11-21"
+lastupdated: "2025-12-05"
 
 
 keywords: openshift, version, update, upgrade, 4.18, update openshift
@@ -20,7 +20,7 @@ subcollection: openshift
 Review information about version 4.18 of {{site.data.keyword.openshiftlong_notm}}. This version is based on Kubernetes version {{site.data.keyword.openshift_418_kube_version}}. 
 {: shortdesc}
 
-Looking for general information about updating clusters, or information on a different version? See [Red Hat {{site.data.keyword.redhat_openshift_notm}} on IBM Cloud version information](/docs/openshift?topic=openshift-openshift_versions) and the version [4.18 release notes](https://docs.redhat.com/documentation/openshift_container_platform/4.18/html/release_notes/ocp-4-18-release-notes#ocp-4-17-release-notes){: external}.
+Looking for general information about updating clusters, or information on a different version? See [Red Hat {{site.data.keyword.redhat_openshift_notm}} on IBM Cloud version information](/docs/openshift?topic=openshift-openshift_versions) and the version [4.18 release notes](https://docs.redhat.com/en/documentation/openshift_container_platform/4.18/html/release_notes/ocp-4-18-release-notes#ocp-4-17-release-notes){: external}.
 {: tip}
 
 
