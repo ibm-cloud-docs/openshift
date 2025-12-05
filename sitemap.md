@@ -6440,6 +6440,8 @@ subcollection: openshift
 
 * [`cluster-autoscaler` 1.2.4](/docs/openshift?topic=openshift-supported-cluster-addon-versions#cluster-autoscaler-1.2.4)
 
+* [`cluster-autoscaler` 2.0.0](/docs/openshift?topic=openshift-supported-cluster-addon-versions#cluster-autoscaler-2.0.0)
+
 * [`csutil` 1.0.0](/docs/openshift?topic=openshift-supported-cluster-addon-versions#csutil-1.0.0)
 
 * [`csutil-experimental` 1.0.0](/docs/openshift?topic=openshift-supported-cluster-addon-versions#csutil-experimental-1.0.0)
