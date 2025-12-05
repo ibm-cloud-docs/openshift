@@ -15,7 +15,7 @@ subcollection: openshift
 {{site.data.keyword.attribute-definition-list}}
 
 
-# Setting up snapshots with the {{site.data.keyword.filestorage_vpc_short}} cluster add-on
+# Setting up snapshots for {{site.data.keyword.filestorage_vpc_short}}
 {: #vpc-volume-snapshot-file}
 
 [Virtual Private Cloud]{: tag-vpc} 
@@ -85,7 +85,7 @@ Create an example Persistent Volume Claim (PVC) and deploy a pod that references
       name: csi-file-pvc
     spec:
       accessModes:
-      - ReadWriteOnce
+      - ReadWriteMany
       resources:
         requests:
           storage: 10Gi
@@ -235,7 +235,7 @@ After you deploy the snapshot resources, you can restore data to a new volume by
         kind: VolumeSnapshot
         apiGroup: snapshot.storage.k8s.io
       accessModes:
-        - ReadWriteOnce
+        - ReadWriteMany
       resources:
         requests:
           storage: 10Gi

@@ -3928,7 +3928,7 @@ subcollection: openshift
 
 * [Cleaning up persistent storage](/docs/openshift?topic=openshift-storage-file-vpc-managing#vpc-storage-remove-file)
 
-[Setting up snapshots with the {{site.data.keyword.filestorage_vpc_short}} cluster add-on](/docs/openshift?topic=openshift-vpc-volume-snapshot-file#vpc-volume-snapshot-file)
+[Setting up snapshots for {{site.data.keyword.filestorage_vpc_short}}](/docs/openshift?topic=openshift-vpc-volume-snapshot-file#vpc-volume-snapshot-file)
 
 * [Prerequisites](/docs/openshift?topic=openshift-vpc-volume-snapshot-file#snapshot-file-pre)
 
