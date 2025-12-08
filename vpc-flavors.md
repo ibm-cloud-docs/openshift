@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2025
-lastupdated: "2025-11-24"
+lastupdated: "2025-12-08"
 
 
 keywords: openshift, node scaling, ca, autoscaler
@@ -36,6 +36,58 @@ These conditions might impact cluster flavor availability:
 
 
 
+
+
+## Chennai (`in-che`)
+{: #chennai-in-che}
+
+| Name | Data centers | Resources | OS | Primary storage | Secondary storage | Secondary storage options (GB / iops-tier)|
+| ---- | ---- |-------------------------------- | ---- | --------------- | ----------------- |  -------------- | 
+| bx3d.128x640  \n(Balanced) | in-che-1  \nin-che-2  \nin-che-3 | 128 cores  \n640GB memory  \n32Gbps network speed  \n No GPUs |  REDHAT_8_64  \n RHEL_9_64  \n RHCOS  \n| 100GB BLOCK | N/A | 300 / 5  \n 300 / 10  \n 600 / 5  \n 600 / 10  \n 900 / 5  \n 900 / 10  \n 1200 / 5  \n 1200 / 10  \n 1600 / 5  \n 1600 / 10  \n 2400 / 10  \n 3000 / 10  \n 4000 / 10  \n|
+| bx3d.16x80  \n(Balanced) | in-che-1  \nin-che-2  \nin-che-3 | 16 cores  \n80GB memory  \n24Gbps network speed  \n No GPUs |  REDHAT_8_64  \n RHEL_9_64  \n RHCOS  \n| 100GB BLOCK | N/A | 300 / 5  \n 300 / 10  \n 600 / 5  \n 600 / 10  \n 900 / 5  \n 900 / 10  \n 1200 / 5  \n 1200 / 10  \n 1600 / 5  \n 1600 / 10  \n 2400 / 10  \n 3000 / 10  \n 4000 / 10  \n|
+| bx3d.176x880  \n(Balanced) | in-che-1  \nin-che-2  \nin-che-3 | 176 cores  \n880GB memory  \n32Gbps network speed  \n No GPUs |  REDHAT_8_64  \n RHEL_9_64  \n RHCOS  \n| 100GB BLOCK | N/A | 300 / 5  \n 300 / 10  \n 600 / 5  \n 600 / 10  \n 900 / 5  \n 900 / 10  \n 1200 / 5  \n 1200 / 10  \n 1600 / 5  \n 1600 / 10  \n 2400 / 10  \n 3000 / 10  \n 4000 / 10  \n|
+| bx3d.24x120  \n(Balanced) | in-che-1  \nin-che-2  \nin-che-3 | 24 cores  \n120GB memory  \n32Gbps network speed  \n No GPUs |  REDHAT_8_64  \n RHEL_9_64  \n RHCOS  \n| 100GB BLOCK | N/A | 300 / 5  \n 300 / 10  \n 600 / 5  \n 600 / 10  \n 900 / 5  \n 900 / 10  \n 1200 / 5  \n 1200 / 10  \n 1600 / 5  \n 1600 / 10  \n 2400 / 10  \n 3000 / 10  \n 4000 / 10  \n|
+| bx3d.32x160  \n(Balanced) | in-che-1  \nin-che-2  \nin-che-3 | 32 cores  \n160GB memory  \n32Gbps network speed  \n No GPUs |  REDHAT_8_64  \n RHEL_9_64  \n RHCOS  \n| 100GB BLOCK | N/A | 300 / 5  \n 300 / 10  \n 600 / 5  \n 600 / 10  \n 900 / 5  \n 900 / 10  \n 1200 / 5  \n 1200 / 10  \n 1600 / 5  \n 1600 / 10  \n 2400 / 10  \n 3000 / 10  \n 4000 / 10  \n|
+| bx3d.48x240  \n(Balanced) | in-che-1  \nin-che-2  \nin-che-3 | 48 cores  \n240GB memory  \n32Gbps network speed  \n No GPUs |  REDHAT_8_64  \n RHEL_9_64  \n RHCOS  \n| 100GB BLOCK | N/A | 300 / 5  \n 300 / 10  \n 600 / 5  \n 600 / 10  \n 900 / 5  \n 900 / 10  \n 1200 / 5  \n 1200 / 10  \n 1600 / 5  \n 1600 / 10  \n 2400 / 10  \n 3000 / 10  \n 4000 / 10  \n|
+| bx3d.4x20  \n(Balanced) | in-che-1  \nin-che-2  \nin-che-3 | 4 cores  \n20GB memory  \n6Gbps network speed  \n No GPUs |  REDHAT_8_64  \n RHEL_9_64  \n RHCOS  \n| 100GB BLOCK | N/A | 300 / 5  \n 300 / 10  \n 600 / 5  \n 600 / 10  \n 900 / 5  \n 900 / 10  \n 1200 / 5  \n 1200 / 10  \n 1600 / 5  \n 1600 / 10  \n|
+| bx3d.64x320  \n(Balanced) | in-che-1  \nin-che-2  \nin-che-3 | 64 cores  \n320GB memory  \n32Gbps network speed  \n No GPUs |  REDHAT_8_64  \n RHEL_9_64  \n RHCOS  \n| 100GB BLOCK | N/A | 300 / 5  \n 300 / 10  \n 600 / 5  \n 600 / 10  \n 900 / 5  \n 900 / 10  \n 1200 / 5  \n 1200 / 10  \n 1600 / 5  \n 1600 / 10  \n 2400 / 10  \n 3000 / 10  \n 4000 / 10  \n|
+| bx3d.8x40  \n(Balanced) | in-che-1  \nin-che-2  \nin-che-3 | 8 cores  \n40GB memory  \n12Gbps network speed  \n No GPUs |  REDHAT_8_64  \n RHEL_9_64  \n RHCOS  \n| 100GB BLOCK | N/A | 300 / 5  \n 300 / 10  \n 600 / 5  \n 600 / 10  \n 900 / 5  \n 900 / 10  \n 1200 / 5  \n 1200 / 10  \n 1600 / 5  \n 1600 / 10  \n 2400 / 10  \n 3000 / 10  \n 4000 / 10  \n|
+| bx3d.96x480  \n(Balanced) | in-che-1  \nin-che-2  \nin-che-3 | 96 cores  \n480GB memory  \n32Gbps network speed  \n No GPUs |  REDHAT_8_64  \n RHEL_9_64  \n RHCOS  \n| 100GB BLOCK | N/A | 300 / 5  \n 300 / 10  \n 600 / 5  \n 600 / 10  \n 900 / 5  \n 900 / 10  \n 1200 / 5  \n 1200 / 10  \n 1600 / 5  \n 1600 / 10  \n 2400 / 10  \n 3000 / 10  \n 4000 / 10  \n|
+| cx3d.128x320  \n(Compute) | in-che-1  \nin-che-2  \nin-che-3 | 128 cores  \n320GB memory  \n32Gbps network speed  \n No GPUs |  REDHAT_8_64  \n RHEL_9_64  \n RHCOS  \n| 100GB BLOCK | N/A | 300 / 5  \n 300 / 10  \n 600 / 5  \n 600 / 10  \n 900 / 5  \n 900 / 10  \n 1200 / 5  \n 1200 / 10  \n 1600 / 5  \n 1600 / 10  \n 2400 / 10  \n 3000 / 10  \n 4000 / 10  \n|
+| cx3d.16x40  \n(Compute) | in-che-1  \nin-che-2  \nin-che-3 | 16 cores  \n40GB memory  \n24Gbps network speed  \n No GPUs |  REDHAT_8_64  \n RHEL_9_64  \n RHCOS  \n| 100GB BLOCK | N/A | 300 / 5  \n 300 / 10  \n 600 / 5  \n 600 / 10  \n 900 / 5  \n 900 / 10  \n 1200 / 5  \n 1200 / 10  \n 1600 / 5  \n 1600 / 10  \n 2400 / 10  \n 3000 / 10  \n 4000 / 10  \n|
+| cx3d.176x440  \n(Compute) | in-che-1  \nin-che-2  \nin-che-3 | 176 cores  \n440GB memory  \n32Gbps network speed  \n No GPUs |  REDHAT_8_64  \n RHEL_9_64  \n RHCOS  \n| 100GB BLOCK | N/A | 300 / 5  \n 300 / 10  \n 600 / 5  \n 600 / 10  \n 900 / 5  \n 900 / 10  \n 1200 / 5  \n 1200 / 10  \n 1600 / 5  \n 1600 / 10  \n 2400 / 10  \n 3000 / 10  \n 4000 / 10  \n|
+| cx3d.24x60  \n(Compute) | in-che-1  \nin-che-2  \nin-che-3 | 24 cores  \n60GB memory  \n32Gbps network speed  \n No GPUs |  REDHAT_8_64  \n RHEL_9_64  \n RHCOS  \n| 100GB BLOCK | N/A | 300 / 5  \n 300 / 10  \n 600 / 5  \n 600 / 10  \n 900 / 5  \n 900 / 10  \n 1200 / 5  \n 1200 / 10  \n 1600 / 5  \n 1600 / 10  \n 2400 / 10  \n 3000 / 10  \n 4000 / 10  \n|
+| cx3d.32x80  \n(Compute) | in-che-1  \nin-che-2  \nin-che-3 | 32 cores  \n80GB memory  \n32Gbps network speed  \n No GPUs |  REDHAT_8_64  \n RHEL_9_64  \n RHCOS  \n| 100GB BLOCK | N/A | 300 / 5  \n 300 / 10  \n 600 / 5  \n 600 / 10  \n 900 / 5  \n 900 / 10  \n 1200 / 5  \n 1200 / 10  \n 1600 / 5  \n 1600 / 10  \n 2400 / 10  \n 3000 / 10  \n 4000 / 10  \n|
+| cx3d.48x120  \n(Compute) | in-che-1  \nin-che-2  \nin-che-3 | 48 cores  \n120GB memory  \n32Gbps network speed  \n No GPUs |  REDHAT_8_64  \n RHEL_9_64  \n RHCOS  \n| 100GB BLOCK | N/A | 300 / 5  \n 300 / 10  \n 600 / 5  \n 600 / 10  \n 900 / 5  \n 900 / 10  \n 1200 / 5  \n 1200 / 10  \n 1600 / 5  \n 1600 / 10  \n 2400 / 10  \n 3000 / 10  \n 4000 / 10  \n|
+| cx3d.64x160  \n(Compute) | in-che-1  \nin-che-2  \nin-che-3 | 64 cores  \n160GB memory  \n32Gbps network speed  \n No GPUs |  REDHAT_8_64  \n RHEL_9_64  \n RHCOS  \n| 100GB BLOCK | N/A | 300 / 5  \n 300 / 10  \n 600 / 5  \n 600 / 10  \n 900 / 5  \n 900 / 10  \n 1200 / 5  \n 1200 / 10  \n 1600 / 5  \n 1600 / 10  \n 2400 / 10  \n 3000 / 10  \n 4000 / 10  \n|
+| cx3d.8x20  \n(Compute) | in-che-1  \nin-che-2  \nin-che-3 | 8 cores  \n20GB memory  \n12Gbps network speed  \n No GPUs |  REDHAT_8_64  \n RHEL_9_64  \n RHCOS  \n| 100GB BLOCK | N/A | 300 / 5  \n 300 / 10  \n 600 / 5  \n 600 / 10  \n 900 / 5  \n 900 / 10  \n 1200 / 5  \n 1200 / 10  \n 1600 / 5  \n 1600 / 10  \n 2400 / 10  \n 3000 / 10  \n 4000 / 10  \n|
+| cx3d.96x240  \n(Compute) | in-che-1  \nin-che-2  \nin-che-3 | 96 cores  \n240GB memory  \n32Gbps network speed  \n No GPUs |  REDHAT_8_64  \n RHEL_9_64  \n RHCOS  \n| 100GB BLOCK | N/A | 300 / 5  \n 300 / 10  \n 600 / 5  \n 600 / 10  \n 900 / 5  \n 900 / 10  \n 1200 / 5  \n 1200 / 10  \n 1600 / 5  \n 1600 / 10  \n 2400 / 10  \n 3000 / 10  \n 4000 / 10  \n|
+| mx3d.128x1280  \n(Memory) | in-che-1  \nin-che-2  \nin-che-3 | 128 cores  \n1280GB memory  \n32Gbps network speed  \n No GPUs |  REDHAT_8_64  \n RHEL_9_64  \n RHCOS  \n| 100GB BLOCK | N/A | 300 / 5  \n 300 / 10  \n 600 / 5  \n 600 / 10  \n 900 / 5  \n 900 / 10  \n 1200 / 5  \n 1200 / 10  \n 1600 / 5  \n 1600 / 10  \n 2400 / 10  \n 3000 / 10  \n 4000 / 10  \n|
+| mx3d.16x160  \n(Memory) | in-che-1  \nin-che-2  \nin-che-3 | 16 cores  \n160GB memory  \n24Gbps network speed  \n No GPUs |  REDHAT_8_64  \n RHEL_9_64  \n RHCOS  \n| 100GB BLOCK | N/A | 300 / 5  \n 300 / 10  \n 600 / 5  \n 600 / 10  \n 900 / 5  \n 900 / 10  \n 1200 / 5  \n 1200 / 10  \n 1600 / 5  \n 1600 / 10  \n 2400 / 10  \n 3000 / 10  \n 4000 / 10  \n|
+| mx3d.176x1760  \n(Memory) | in-che-1  \nin-che-2  \nin-che-3 | 176 cores  \n1760GB memory  \n32Gbps network speed  \n No GPUs |  REDHAT_8_64  \n RHEL_9_64  \n RHCOS  \n| 100GB BLOCK | N/A | 300 / 5  \n 300 / 10  \n 600 / 5  \n 600 / 10  \n 900 / 5  \n 900 / 10  \n 1200 / 5  \n 1200 / 10  \n 1600 / 5  \n 1600 / 10  \n 2400 / 10  \n 3000 / 10  \n 4000 / 10  \n|
+| mx3d.24x240  \n(Memory) | in-che-1  \nin-che-2  \nin-che-3 | 24 cores  \n240GB memory  \n32Gbps network speed  \n No GPUs |  REDHAT_8_64  \n RHEL_9_64  \n RHCOS  \n| 100GB BLOCK | N/A | 300 / 5  \n 300 / 10  \n 600 / 5  \n 600 / 10  \n 900 / 5  \n 900 / 10  \n 1200 / 5  \n 1200 / 10  \n 1600 / 5  \n 1600 / 10  \n 2400 / 10  \n 3000 / 10  \n 4000 / 10  \n|
+| mx3d.32x320  \n(Memory) | in-che-1  \nin-che-2  \nin-che-3 | 32 cores  \n320GB memory  \n32Gbps network speed  \n No GPUs |  REDHAT_8_64  \n RHEL_9_64  \n RHCOS  \n| 100GB BLOCK | N/A | 300 / 5  \n 300 / 10  \n 600 / 5  \n 600 / 10  \n 900 / 5  \n 900 / 10  \n 1200 / 5  \n 1200 / 10  \n 1600 / 5  \n 1600 / 10  \n 2400 / 10  \n 3000 / 10  \n 4000 / 10  \n|
+| mx3d.48x480  \n(Memory) | in-che-1  \nin-che-2  \nin-che-3 | 48 cores  \n480GB memory  \n32Gbps network speed  \n No GPUs |  REDHAT_8_64  \n RHEL_9_64  \n RHCOS  \n| 100GB BLOCK | N/A | 300 / 5  \n 300 / 10  \n 600 / 5  \n 600 / 10  \n 900 / 5  \n 900 / 10  \n 1200 / 5  \n 1200 / 10  \n 1600 / 5  \n 1600 / 10  \n 2400 / 10  \n 3000 / 10  \n 4000 / 10  \n|
+| mx3d.4x40  \n(Memory) | in-che-1  \nin-che-2  \nin-che-3 | 4 cores  \n40GB memory  \n6Gbps network speed  \n No GPUs |  REDHAT_8_64  \n RHEL_9_64  \n RHCOS  \n| 100GB BLOCK | N/A | 300 / 5  \n 300 / 10  \n 600 / 5  \n 600 / 10  \n 900 / 5  \n 900 / 10  \n 1200 / 5  \n 1200 / 10  \n 1600 / 5  \n 1600 / 10  \n|
+| mx3d.64x640  \n(Memory) | in-che-1  \nin-che-2  \nin-che-3 | 64 cores  \n640GB memory  \n32Gbps network speed  \n No GPUs |  REDHAT_8_64  \n RHEL_9_64  \n RHCOS  \n| 100GB BLOCK | N/A | 300 / 5  \n 300 / 10  \n 600 / 5  \n 600 / 10  \n 900 / 5  \n 900 / 10  \n 1200 / 5  \n 1200 / 10  \n 1600 / 5  \n 1600 / 10  \n 2400 / 10  \n 3000 / 10  \n 4000 / 10  \n|
+| mx3d.8x80  \n(Memory) | in-che-1  \nin-che-2  \nin-che-3 | 8 cores  \n80GB memory  \n12Gbps network speed  \n No GPUs |  REDHAT_8_64  \n RHEL_9_64  \n RHCOS  \n| 100GB BLOCK | N/A | 300 / 5  \n 300 / 10  \n 600 / 5  \n 600 / 10  \n 900 / 5  \n 900 / 10  \n 1200 / 5  \n 1200 / 10  \n 1600 / 5  \n 1600 / 10  \n 2400 / 10  \n 3000 / 10  \n 4000 / 10  \n|
+| mx3d.96x960  \n(Memory) | in-che-1  \nin-che-2  \nin-che-3 | 96 cores  \n960GB memory  \n32Gbps network speed  \n No GPUs |  REDHAT_8_64  \n RHEL_9_64  \n RHCOS  \n| 100GB BLOCK | N/A | 300 / 5  \n 300 / 10  \n 600 / 5  \n 600 / 10  \n 900 / 5  \n 900 / 10  \n 1200 / 5  \n 1200 / 10  \n 1600 / 5  \n 1600 / 10  \n 2400 / 10  \n 3000 / 10  \n 4000 / 10  \n|
+{: class="simple-tab-table"}
+{: caption="VSI flavors in Chennai." caption-side="bottom"}
+{: #in-che-virtual-table}
+{: tab-title="Virtual"}
+{: tab-group="in-che-tables"}
+
+
+
+| Name | Data centers | Resources | OS | Primary storage | Secondary storage | Secondary storage options (GB / iops-tier)|
+| ---- | ---- |-------------------------------- | ---- | --------------- | ----------------- |  -------------- | 
+|No flavors available.| N/A | N/A | N/A | N/A | N/A | N/A |
+{: class="simple-tab-table"}
+{: caption="Bare metal flavors in Chennai." caption-side="bottom"}
+{: #in-che-physical-table}
+{: tab-title="Physical"}
+{: tab-group="in-che-tables"}
 
 
 ## Dallas (`us-south`)

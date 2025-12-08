@@ -1,11 +1,11 @@
 ---
 
 copyright: 
-  years: 2014, 2024
-lastupdated: "2024-05-29"
+  years: 2014, 2025
+lastupdated: "2025-12-08"
 
 
-keywords: kubernetes, openshift
+keywords: kubernetes, openshift, containers not starting
 
 subcollection: openshift
 
@@ -14,8 +14,6 @@ content-type: troubleshoot
 ---
 
 {{site.data.keyword.attribute-definition-list}}
-
-
 
 
 
@@ -42,7 +40,6 @@ You notice one or more of the following issues:
 
 * When you run the following command, one or more of the `calico-node` pods fail to start on a worker node and are in the `CrashLoopBackOff` state.
 
-    
     ```sh
     oc logs -n calico-system <calico-node_pod>
     ```
@@ -250,10 +247,3 @@ Ensuring that IP blocks are free is especially important for all classic cluster
     calicoctl datastore migrate unlock
     ```
     {: pre}
-
-
-
-
-
-
-

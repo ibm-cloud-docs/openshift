@@ -1,8 +1,8 @@
 ---
 
 copyright: 
-  years: 2022, 2024
-lastupdated: "2024-10-30"
+  years: 2022, 2025
+lastupdated: "2025-12-08"
 
 
 keywords: kubernetes, openshift, fsck, file system check
@@ -35,7 +35,7 @@ options)
 ```
 {: screen}
 
-The disk is corrupted.
+The disk is corrupted. Disk corruption occurs when a Persistent Volume (PV) is actively in read/write mode and the associated Pod is force deleted or the node is restarted/reloaded before the Pod is properly evicted or when the volume was still attached. In these scenarios, the unmount process does not complete correctly, leaving the volume in an inconsistent state. This typically happens during workflows that perform node reloads or updates immediately after draining, without verifying that all pods have migrated and volumes are detached.
 {: tsCauses}
 
 

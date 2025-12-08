@@ -3,7 +3,7 @@
 copyright:
   years: 2014, 2025
 
-lastupdated: "2025-12-05"
+lastupdated: "2025-12-08"
 
 keywords: openshift, kubernetes, mzr, szr, multizone, multi az
 
@@ -24,6 +24,13 @@ subcollection: openshift
 
 This image is an artistic representation and does not reflect actual political or geographic boundaries.
 {: note}
+
+
+Chennai (`in-che`) MZR limiations
+:   **Operating systems**: You can only create clusters at version 4.16 and later in Chennai and can only use RHEL 9 or RHCOS workers nodes.
+
+:   **Baremetal workers**: Baremetal VPC worker nodes are not available in Chennai.
+:   **Portworx**: Portworx is not yet supported in Chennai.
 
 
 
@@ -80,6 +87,7 @@ The Milan (`mil01`) datacenter is deprecated and closes on 31 October 2025. Migr
 
 | Geography | Country | Metro | Region | Zone | Managed from region |
 | --- | --- | --- | --- | --- | --- |
+| Asia Pacific | India | Chennai | in-che | che01 | AP North (`ap-north`, `jp-tok`) |
 | Asia Pacific | Singapore | Singapore | sng-mtr | sng01 | AP North (`ap-north`, `jp-tok`) |
 | Europe | France | Paris | fr-par | par01 | EU Central (`eu-central`, `eu-de`) |
 | Europe | Netherlands | Amsterdam | nl-ams | ams03 | EU Central (`eu-central`, `eu-de`) |
@@ -101,6 +109,7 @@ VPC resources are provisioned in a region, which is a separate group of zones wi
 | Geography | Country | Metro | Region | Zones |
 | --- | --- | --- | --- | --- |
 | Asia Pacific | Australia | Sydney | au-syd | au-syd-1, au-syd-2, au-syd-3 |
+| Asia Pacific | India | Chennai | in-che | in-che-1, in-che-2, in-che-3 |
 | Asia Pacific | Japan | Osaka | jp-osa | jp-osa-1, jp-osa-2, jp-osa-3 |
 | Asia Pacific | Japan | Tokyo | jp-tok | jp-tok-1, jp-tok-2, jp-tok-3 |
 | Europe | Germany | Frankfurt | eu-de | eu-de-1, eu-de-2, eu-de-3 |
