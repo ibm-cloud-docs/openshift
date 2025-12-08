@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2025
-lastupdated: "2025-12-05"
+lastupdated: "2025-12-08"
 
 
 keywords: openshift, {{site.data.keyword.openshiftlong_notm}}, kubernetes, registry, pull secret, secrets
@@ -79,7 +79,7 @@ Public registry
 
 
 Classic clusters
-:   Your {{site.data.keyword.redhat_openshift_notm}} cluster is set up by default with an internal registry that uses {{site.data.keyword.filestorage_short}} as the backing storage. When you delete the cluster, the internal registry and its images are also deleted. If you want to persist your images, consider using a private registry such as {{site.data.keyword.registrylong_notm}}, backing up your images to persistent storage such as {{site.data.keyword.objectstorageshort}}, or creating a separate, stand-alone {{site.data.keyword.redhat_openshift_notm}} container registry (OCR) cluster. For more information, see the [{{site.data.keyword.redhat_openshift_notm}} docs](https://docs.redhat.com/en/documentation/openshift_container_platform/4.19/html/registry/registry-overview-1){: external}.
+:   Your {{site.data.keyword.redhat_openshift_notm}} cluster is set up by default with an internal registry that uses {{site.data.keyword.filestorage_short}} as the backing storage. When you delete the cluster, the internal registry and its images are also deleted. If you want to persist your images, consider using a private registry such as {{site.data.keyword.registrylong_notm}}, backing up your images to persistent storage such as {{site.data.keyword.objectstorageshort}}, or creating a separate, stand-alone {{site.data.keyword.redhat_openshift_notm}} container registry (OCR) cluster. For more information, see the [{{site.data.keyword.redhat_openshift_notm}} docs](https://docs.redhat.com/en/documentation/openshift_container_platform/4.19/html/registry/registry-overview){: external}.
 
 VPC clusters
 :   The internal registry of your {{site.data.keyword.redhat_openshift_notm}} cluster backs up your images to a bucket that is automatically created in an {{site.data.keyword.cos_full_notm}} instance in your account. Any data that is stored in the object storage bucket remains even if you delete the cluster.
@@ -460,7 +460,7 @@ By default, your {{site.data.keyword.openshiftlong_notm}} cluster is set up to p
 If you update your image in {{site.data.keyword.registrylong_notm}}, the image is not pulled automatically into the internal registry of your {{site.data.keyword.redhat_openshift_notm}} cluster. Instead, [configure periodic importing](https://docs.redhat.com/en/documentation/openshift_container_platform/4.19/html/images/managing-image-streams#images-imagestreams-import_image-streams-managing){: external}, or repeat these steps to tag the image. Depending on the image pull policy that you use in your deployment, you might also need to restart your deployment.
 {: note}
 
-Want to learn more about how builds, image streams, and the internal registry work together? Read the [{{site.data.keyword.redhat_openshift_notm}} docs](https://docs.redhat.com/en/documentation/openshift_container_platform/4.19/html/registry/registry-overview-1){: external}, or check out [this blog on managing container images](https://blog.cloudowski.com/articles/why-managing-container-images-on-openshift-is-better-than-on-kubernetes){: external}.
+Want to learn more about how builds, image streams, and the internal registry work together? Read the [{{site.data.keyword.redhat_openshift_notm}} docs](https://docs.redhat.com/en/documentation/openshift_container_platform/4.19/html/registry/registry-overview){: external}, or check out [this blog on managing container images](https://blog.cloudowski.com/articles/why-managing-container-images-on-openshift-is-better-than-on-kubernetes){: external}.
 {: tip}
 
 1. [Access your {{site.data.keyword.redhat_openshift_notm}} cluster](/docs/openshift?topic=openshift-access_cluster).
