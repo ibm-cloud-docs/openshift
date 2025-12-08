@@ -8824,6 +8824,8 @@ subcollection: openshift
 
 [VPC flavors](/docs/openshift?topic=openshift-vpc-flavors#vpc-flavors)
 
+* [Chennai (`in-che`)](/docs/openshift?topic=openshift-vpc-flavors#chennai-in-che)
+
 * [Dallas (`us-south`)](/docs/openshift?topic=openshift-vpc-flavors#dallas-us-south)
 
 * [Frankfurt (`eu-de`)](/docs/openshift?topic=openshift-vpc-flavors#frankfurt-eu-de)
