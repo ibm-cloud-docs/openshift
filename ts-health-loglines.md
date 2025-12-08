@@ -1,11 +1,11 @@
 ---
 
 copyright: 
-  years: 2014, 2024
-lastupdated: "2024-03-06"
+  years: 2014, 2025
+lastupdated: "2025-12-08"
 
 
-keywords: openshift
+keywords: openshift, kubernetes, help, network, connectivity, log lines
 
 subcollection: openshift
 
@@ -14,9 +14,6 @@ content-type: troubleshoot
 ---
 
 {{site.data.keyword.attribute-definition-list}}
-
-
-
 
 
 # Why are my log lines so long?
@@ -38,7 +35,3 @@ To limit line length, you can configure your own logger to have a maximum length
 {: tsResolve}
 
 For example, if you are using Log4j for your logger, you can use an [`EnhancedPatternLayout`](https://logging.apache.org/log4j/1.x/apidocs/org/apache/log4j/EnhancedPatternLayout.html){: external} to limit the `stack_trace` to 15KB.
-
-
-
-

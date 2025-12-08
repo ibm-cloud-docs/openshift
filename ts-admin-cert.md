@@ -1,11 +1,11 @@
 ---
 
 copyright: 
-  years: 2022, 2024
-lastupdated: "2024-01-03"
+  years: 2022, 2025
+lastupdated: "2025-12-08"
 
 
-keywords: certificate, secret, create certificate, troubleshoot certificate, troubleshoot secret
+keywords: openshift, certificate, secret, create certificate, troubleshoot certificate, troubleshoot secret
 
 subcollection: openshift
 

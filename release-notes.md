@@ -28,6 +28,14 @@ Looking for {{site.data.keyword.cloud_notm}} status, platform announcements, sec
 ## December 2025
 {: #openshift-dec25}
 
+### 08 December 2025
+{: #openshift-dec0825}
+{: release-note}
+
+New! Chennai multizone region for VPC
+:   You can now create clusters on VPC infrastructure in the Chennai, India (`in-che`) [location](/docs/openshift?topic=openshift-regions-and-zones).
+
+
 ### 04 December 2025
 {: #openshift-dec0425}
 {: release-note}

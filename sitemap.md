@@ -286,6 +286,10 @@ subcollection: openshift
 
 * [December 2025](/docs/openshift?topic=openshift-openshift-relnotes#openshift-dec25)
 
+    * [08 December 2025](/docs/openshift?topic=openshift-openshift-relnotes#openshift-dec0825)
+
+        * New! Chennai multizone region for VPC
+
     * [04 December 2025](/docs/openshift?topic=openshift-openshift-relnotes#openshift-dec0425)
 
         * IBM Cloud Image Key Synchronizer cluster add-on patch updates.
