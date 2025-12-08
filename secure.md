@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2025
-lastupdated: "2025-12-05"
+lastupdated: "2025-12-08"
 
 
 keywords: openshift
@@ -438,7 +438,7 @@ Every deployment is based on an image that holds the instructions for how to spi
 {: shortdesc}
 
 Should I use a public or a private registry to store my images?
-:   Public registries, such as Docker Hub, can be used to get started with Docker images and Kubernetes to create your first containerized app in a cluster. But when it comes to enterprise applications, avoid registries that you don't know or don't trust to protect your cluster from malicious images. Keep your images in a private registry, like the one provided in {{site.data.keyword.registrylong_notm}} or the [internal registry](https://docs.redhat.com/en/documentation/openshift_container_platform/4.19/html/registry/registry-overview-1){: external} that is automatically set up in your {{site.data.keyword.redhat_openshift_notm}} cluster, and make sure to control access to the registry and the image content that can be pushed.
+:   Public registries, such as Docker Hub, can be used to get started with Docker images and Kubernetes to create your first containerized app in a cluster. But when it comes to enterprise applications, avoid registries that you don't know or don't trust to protect your cluster from malicious images. Keep your images in a private registry, like the one provided in {{site.data.keyword.registrylong_notm}} or the [internal registry](https://docs.redhat.com/en/documentation/openshift_container_platform/4.19/html/registry/registry-overview){: external} that is automatically set up in your {{site.data.keyword.redhat_openshift_notm}} cluster, and make sure to control access to the registry and the image content that can be pushed.
 
 Why is it important to check images against vulnerabilities?
 :   Research shows that most malicious attacks leverage known software vulnerabilities and weak system configurations. When you deploy a container from an image, the container spins up with the OS and extra binaries that you described in the image. Just like you protect your virtual or physical machine, you must eliminate known vulnerabilities in the OS and binaries that you use inside the container to protect your app from being accessed by unauthorized users.

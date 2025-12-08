@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2025
-lastupdated: "2025-12-05"
+lastupdated: "2025-12-08"
 
 
 keywords: openshift, compliance, security standards, red hat openshift, openshift container platform, red hat, openshift architecture, red hat architecture, openshift dependencies,
@@ -182,7 +182,7 @@ Projects
 :   The DNS project includes the components to validate incoming network traffic against the `iptables` rules that are set up on the worker node, and proxies requests that are allowed to enter or leave the cluster.
 
 `openshift-image-registry`
-:   {{site.data.keyword.redhat_openshift_notm}} provides an internal [container image registry](https://docs.redhat.com/en/documentation/openshift_container_platform/4.19/html/registry/registry-overview-1){: external} that you can use to locally manage and view images through the console. Alternatively, you can [set up the private {{site.data.keyword.registrylong_notm}}](/docs/openshift?topic=openshift-registry#openshift_iccr) or [import images from {{site.data.keyword.registrylong_notm}} to the internal registry](/docs/openshift?topic=openshift-registry#imagestream_registry). The internal registry comes with a {{site.data.keyword.filestorage_short}} volume in your IBM Cloud infrastructure account to [store the registry images](/docs/openshift?topic=openshift-registry#openshift_internal_registry). The file storage volume is provisioned through the `image-registry-storage` persistent volume claim (PVC).
+:   {{site.data.keyword.redhat_openshift_notm}} provides an internal [container image registry](https://docs.redhat.com/en/documentation/openshift_container_platform/4.19/html/registry/registry-overview){: external} that you can use to locally manage and view images through the console. Alternatively, you can [set up the private {{site.data.keyword.registrylong_notm}}](/docs/openshift?topic=openshift-registry#openshift_iccr) or [import images from {{site.data.keyword.registrylong_notm}} to the internal registry](/docs/openshift?topic=openshift-registry#imagestream_registry). The internal registry comes with a {{site.data.keyword.filestorage_short}} volume in your IBM Cloud infrastructure account to [store the registry images](/docs/openshift?topic=openshift-registry#openshift_internal_registry). The file storage volume is provisioned through the `image-registry-storage` persistent volume claim (PVC).
 
 `openshift-ingress`, `openshift-ingress-operator`
 :   {{site.data.keyword.redhat_openshift_notm}} uses [routes](https://docs.redhat.com/en/documentation/openshift_container_platform/4.19/html/ingress_and_load_balancing/configuring-routes){: external} to directly expose an app's service on a hostname so that external clients can reach the service. To create routes, the cluster uses the Ingress operator. You can also use [Ingress](/docs/openshift?topic=openshift-ingress-about-roks4) to expose apps externally and customize routing. Ingress consists of three components: the Ingress operator, Ingress controller, and Route resources. The Ingress controller maps the service to the hostname. By default, the Ingress controller includes two replicas. Make sure that your cluster has at least two worker nodes so that the Ingress controller can run on separate compute hosts for higher availability.
