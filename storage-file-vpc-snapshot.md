@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2025, 2025
-lastupdated: "2025-12-05"
+lastupdated: "2025-12-09"
 
 
 keywords: openshift, containers, file storage for vpc, snapshots,
@@ -36,7 +36,7 @@ If the PVC (file share) is deleted, then all the corresponding snapshots owned b
 {: #snapshot-file-pre}
 
 - Make sure you have the {{site.data.keyword.filestorage_vpc_short}} add-on installed in your cluster.
-- Make sure you have **Share Snapshot Operator** role in IAM.
+- Make sure you have **Share Snapshot Operator** [permissions in IAM](/docs/account?topic=account-iam-service-roles-actions#is.share-roles).
 
 
 ## Creating an app
@@ -82,14 +82,14 @@ Create an example Persistent Volume Claim (PVC) and deploy a pod that references
     apiVersion: v1
     kind: PersistentVolumeClaim
     metadata:
-    name: csi-file-pvc
+      name: csi-file-pvc
     spec:
-    accessModes:
-    - ReadWriteMany
-    resources:
+      accessModes:
+      - ReadWriteMany
+      resources:
         requests:
-        storage: 10Gi
-    storageClassName: ibmc-vpc-file-min-iops
+          storage: 10Gi
+      storageClassName: ibmc-vpc-file-min-iops
     ```
     {: codeblock}
 
@@ -163,16 +163,16 @@ Create an example Persistent Volume Claim (PVC) and deploy a pod that references
 
 1. Now that you have created the pod, log in to the pod and create a text file to use for the snapshot. 
     ```sh
-    oc exec -it POD_NAME /bin/bash
+    oc exec -it POD_NAME -- /bin/bash
     ```
     {: pre}
 
     Example commands to create a new text file.
 
     ```sh
-		root@my-deployment-58dd7c89b6-8zdcl:/# cd myvolumepath/
-		root@my-deployment-58dd7c89b6-8zdcl:/myvolumepath# echo "hi" > new.txt
-		root@my-deployment-58dd7c89b6-8zdcl:/myvolumepath# exit
+    root@my-deployment-58dd7c89b6-8zdcl:/# cd myvolumepath/
+    root@my-deployment-58dd7c89b6-8zdcl:/myvolumepath# echo "hi" > new.txt
+    root@my-deployment-58dd7c89b6-8zdcl:/myvolumepath# exit
     ```
     {: screen}
 
@@ -182,7 +182,7 @@ Create an example Persistent Volume Claim (PVC) and deploy a pod that references
 
 After you create a deployment and a PVC, you can create the volume snapshot resources.
 
-1. Make sure you have **Share Snapshot Operator** permissions in IAM.
+1. Make sure you have **Share Snapshot Operator** [permissions in IAM](/docs/account?topic=account-iam-service-roles-actions#is.share-roles).
 
 1. Create a volume snapshot resource in your cluster by using the `ibmc-vpcfile-snapshot` snapshot class that is deployed when you enabled the add-on. Save the following VolumeSnapshot configuration to a file called `snapvol.yaml`. 
 
@@ -192,7 +192,7 @@ After you create a deployment and a PVC, you can create the volume snapshot reso
     metadata:
       name: snapshot-csi-file-pvc
     spec:
-      volumeSnapshotClassName: ibmc-vpcfile-snapshot
+      volumeSnapshotClassName: ibmc-vpcfile-snapshot-delete
       source:
         persistentVolumeClaimName: csi-file-pvc
     ```
@@ -213,7 +213,7 @@ After you create a deployment and a PVC, you can create the volume snapshot reso
     Example output where `READYTOUSE` is `true`.
     ```sh
     NAME                            READYTOUSE   SOURCEPVC              SOURCESNAPSHOTCONTENT   RESTORESIZE   SNAPSHOTCLASS SNAPSHOTCONTENT                                    CREATIONTIME   AGE
-    ibmc-vpcfile-snapshot   true         csi-file-pvc                           1Gi           ibmc-vpcfile-snapshot   snapcontent-9c374fbf-43a6-48d6-afc5-e76e1ab7c12b   18h            18h
+    ibmc-vpcfile-snapshot   true         csi-file-pvc                           10Gi           ibmc-vpcfile-snapshot   snapcontent-9c374fbf-43a6-48d6-afc5-e76e1ab7c12b   18h            18h
     ```
     {: screen}
 
@@ -259,32 +259,32 @@ After you deploy the snapshot resources, you can restore data to a new volume by
 
 1. Create a second YAML configuration file for a deployment that mounts the PVC that you created.
     ```yaml
-		apiVersion: apps/v1
-		kind: Deployment
-		metadata:
-			name: podtwo
-			labels:
-				app: podtwo
-		spec:
-			replicas: 1
-			selector:
-				matchLabels:
-					app: podtwo
-			template:
-				metadata:
-					labels:
-						app: podtwo
-				spec:
-					containers:
-					- image: nginx # Your containerized app image
-						name: container-name
-						volumeMounts:
-						- mountPath: /myvolumepath  # Mount path for pvc from container
-							name: my-vol # Volume mount name
-					volumes:
-					- name: my-vol  # Volume resource name
-						persistentVolumeClaim:
-							claimName: restore-pvc   # The name of the PVC that you created earlier
+    apiVersion: apps/v1
+    kind: Deployment
+    metadata:
+      name: podtwo
+      labels:
+        app: podtwo
+    spec:
+      replicas: 1
+      selector:
+        matchLabels:
+          app: podtwo
+      template:
+        metadata:
+          labels:
+            app: podtwo
+        spec:
+          containers:
+          - image: nginx # Your containerized app image
+            name: container-name
+            volumeMounts:
+            - mountPath: /myvolumepath  # Mount path for pvc from container
+              name: my-vol # Volume mount name
+          volumes:
+          - name: my-vol  # Volume resource name
+            persistentVolumeClaim:
+            claimName: restore-pvc   # The name of the PVC that you created earlier
     ```
     {: codeblock}
 
@@ -309,7 +309,7 @@ After you deploy the snapshot resources, you can restore data to a new volume by
 
 1. Log in to the newly created pod and verify that the sample text file you created earlier is saved to the new pod. 
     ```sh
-    oc exec -it POD_NAME /bin/bash
+    oc exec -it POD_NAME -- /bin/bash
     root@POD_NAME :/# cd myvolumepath/
     root@POD_NAME :/myvolumepath# ls
     lost+found  new.txt
@@ -348,16 +348,16 @@ After you deploy the snapshot resources, you can restore data to a new volume by
     apiVersion: snapshot.storage.k8s.io/v1
     kind: VolumeSnapshotContent
     metadata:
-    name: static-file-snapshot-cnt
+      name: static-file-snapshot-cnt
     spec:
-    volumeSnapshotClassName: ibmc-vpcfile-snapshot-retain
-    deletionPolicy: Retain
-    driver: vpc.file.csi.ibm.io
-    source:
-      snapshotHandle: crn:v1:staging:public:is:us-south-3:a/77f2bceddaeb577dcaddb4073fe82c1c::share-snapshot:r134-1b3af00c-7a07-4ba7-b005-f6723c5b5e98/r134-164521b1-f5c1-4968-9605-a7aaa7e6cd2f  # Enter the CRN of the snapshot you created earlier. For example crn:v1:public:is:us-south:a/8ee729d7f903db130b00257d91b6977f::snapshot:r134-64c3ad8e-786e-4f54-9b63-388615811ba6
-    volumeSnapshotRef:
-      name: static-file-snapshot
-      namespace: default
+      volumeSnapshotClassName: ibmc-vpcfile-snapshot-retain
+      deletionPolicy: Retain
+      driver: vpc.file.csi.ibm.io
+      source:
+        snapshotHandle: crn:v1:staging:public:is:us-south-3:a/77f2bceddaeb577dcaddb4073fe82c1c::share-snapshot:r134-1b3af00c-7a07-4ba7-b005-f6723c5b5e98/r134-164521b1-f5c1-4968-9605-a7aaa7e6cd2f  # Enter the CRN of the snapshot you created earlier. For example crn:v1:public:is:us-south:a/8ee729d7f903db130b00257d91b6977f::snapshot:r134-64c3ad8e-786e-4f54-9b63-388615811ba6
+      volumeSnapshotRef:
+        name: static-file-snapshot
+        namespace: default
     ```
     {: codeblock}
 
@@ -378,11 +378,11 @@ After you deploy the snapshot resources, you can restore data to a new volume by
     apiVersion: snapshot.storage.k8s.io/v1
     kind: VolumeSnapshot
     metadata:
-    name: static-file-snapshot
-    namespace: default
+      name: static-file-snapshot
+      namespace: default
     spec:
-    volumeSnapshotClassName: ibmc-vpcfile-snapshot-retain
-    source:
+      volumeSnapshotClassName: ibmc-vpcfile-snapshot-retain
+      source:
         volumeSnapshotContentName: static-file-snapshot-cnt # Enter the name of the VolumeSnapshotContent that you created in the previous step.
     ```
     {: codeblock}
@@ -398,18 +398,18 @@ After you deploy the snapshot resources, you can restore data to a new volume by
     apiVersion: v1
     kind: PersistentVolumeClaim
     metadata:
-    name: restore-static-pvc
+      name: restore-static-pvc
     spec:
-    storageClassName: ibmc-vpc-file-min-iops
-    dataSource:
+      storageClassName: ibmc-vpc-file-min-iops
+      dataSource:
         name: static-file-snapshot
         kind: VolumeSnapshot
         apiGroup: snapshot.storage.k8s.io
-    accessModes:
+      accessModes:
         - ReadWriteMany
-    resources:
+       resources:
         requests:
-        storage: 10Gi
+          storage: 10Gi
     ```
     {: codeblock}
 
@@ -424,29 +424,29 @@ After you deploy the snapshot resources, you can restore data to a new volume by
     apiVersion: apps/v1
     kind: Deployment
     metadata:
-    name: my-deployment
-    labels:
+      name: my-deployment
+      labels:
         app: my-deployment
     spec:
-    replicas: 1
-    selector:
+      replicas: 1
+      selector:
         matchLabels:
-        app: my-deployment
-    template:
+          app: my-deployment
+      template:
         metadata:
-        labels:
+          labels:
             app: my-deployment
         spec:
-        containers:
-        - image: nginx # Your containerized app image
+          containers:
+          - image: nginx # Your containerized app image
             name: container-name 
             volumeMounts:
             - mountPath: /myvolumepath  # Mount path for PVC
-            name: my-vol # Volume mount name
-        volumes:
-        - name: my-vol  # Volume resource name
+              name: my-vol # Volume mount name
+           volumes:
+          - name: my-vol  # Volume resource name
             persistentVolumeClaim:
-            claimName: restore-static-pvc  # The name of the PVC you created earlier
+              claimName: restore-static-pvc  # The name of the PVC you created earlier
     ```
     {: codeblock}
 
@@ -491,7 +491,12 @@ By default, snapshot functionality is enabled when using the {{site.data.keyword
     ```
     {: pre}
 
-1. Edit the `IsSnapshotEnabled` parameter to `false`.
+1. Edit the `IS_SNAPSHOT_ENABLED` paramter to `false`.
+
+    ```txt
+    IS_SNAPSHOT_ENABLED:false
+    ```
+    {: codeblock}
 
 1. Save the file and apply your changes. 
     ```sh

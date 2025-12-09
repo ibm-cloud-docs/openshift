@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2025, 2025
-lastupdated: "2025-12-04"
+lastupdated: "2025-12-09"
 
 
 keywords: kubernetes, openshift, {{site.data.keyword.filestorage_vpc_short}}, snapshot, restore
@@ -15,7 +15,7 @@ subcollection: openshift
 {{site.data.keyword.attribute-definition-list}}
 
 
-# Why can't I restore my {{site.data.keyword.filestorage_vpc_short}} snapshot to a PVC?
+# Why can't I delete my {{site.data.keyword.filestorage_vpc_short}} snapshot to a PVC?
 {: #ts-storage-vpc-file-snapshot-delete}
 {: support}
 
@@ -74,5 +74,3 @@ Remove the finalizers and continue deleting the resources. Note that stale volum
         {: pre}
 
     1. If the issue persists, contact support. Open a [support case](/docs/account?topic=account-using-avatar). In the case details, be sure to include any relevant log files, error messages, or command outputs.
-
-
