@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2025, 2025
-lastupdated: "2025-12-09"
+lastupdated: "2025-12-10"
 
 
 keywords: openshift, containers, file storage for vpc, snapshots,
@@ -106,7 +106,7 @@ Create an example Persistent Volume Claim (PVC) and deploy a pod that references
 
     ```sh
     NAME           STATUS   VOLUME                                     CAPACITY   ACCESS MODES   STORAGECLASS             VOLUMEATTRIBUTESCLASS   AGE
-    csi-file-pvc   Bound    pvc-9873bd7e-41a8-4234-a9bf-271b8ca7e4f9   10Gi       RWO            ibmc-vpc-file-min-iops   <unset>                 5
+    csi-file-pvc   Bound    pvc-9873bd7e-41a8-4234-a9bf-271b8ca7e4f9   10Gi       RWM          ibmc-vpc-file-min-iops   <unset>                 5
     ```
     {: screen}
 
@@ -180,11 +180,11 @@ Create an example Persistent Volume Claim (PVC) and deploy a pod that references
 ## Creating a volume snapshot
 {: #vpc-create-snapshot}
 
-After you create a deployment and a PVC, you can create the volume snapshot resources.
+After you create a deployment and a PVC, you can create the volume snapshots.
 
 1. Make sure you have **Share Snapshot Operator** [permissions in IAM](/docs/account?topic=account-iam-service-roles-actions#is.share-roles).
 
-1. Create a volume snapshot resource in your cluster by using the `ibmc-vpcfile-snapshot` snapshot class that is deployed when you enabled the add-on. Save the following VolumeSnapshot configuration to a file called `snapvol.yaml`. 
+1. Create a volume snapshot in your cluster by using the `ibmc-vpcfile-snapshot` snapshot class that is deployed when you enabled the add-on. Save the following VolumeSnapshot configuration to a file called `snapvol.yaml`. 
 
     ```yaml
     apiVersion: snapshot.storage.k8s.io/v1
@@ -213,14 +213,14 @@ After you create a deployment and a PVC, you can create the volume snapshot reso
     Example output where `READYTOUSE` is `true`.
     ```sh
     NAME                            READYTOUSE   SOURCEPVC              SOURCESNAPSHOTCONTENT   RESTORESIZE   SNAPSHOTCLASS SNAPSHOTCONTENT                                    CREATIONTIME   AGE
-    ibmc-vpcfile-snapshot   true         csi-file-pvc                           10Gi           ibmc-vpcfile-snapshot   snapcontent-9c374fbf-43a6-48d6-afc5-e76e1ab7c12b   18h            18h
+    ibmc-vpcfile-snapshot   true         csi-file-pvc                           10Gi           ibmc-vpcfile-snapshot-delete   snapcontent-9c374fbf-43a6-48d6-afc5-e76e1ab7c12b   18h            18h
     ```
     {: screen}
 
 ## Restoring from a volume snapshot
 {: #vpc-restore-from-snapshot}
 
-After you deploy the snapshot resources, you can restore data to a new volume by using the snapshot. Creating a PVC dynamically provisions a new volume with snapshot data.
+After you deploy the volume snapshot, you can restore data to a new volume by using the snapshot. Creating a PVC dynamically provisions a new volume with snapshot data.
 
 
 1. Create a second PVC that references your volume snapshot. 
@@ -252,7 +252,7 @@ After you deploy the snapshot resources, you can restore data to a new volume by
     
     ```sh
     NAME           STATUS   VOLUME                                     CAPACITY   ACCESS MODES   STORAGECLASS             VOLUMEATTRIBUTESCLASS   AGE
-    csi-file-pvc   Bound    pvc-9873bd7e-41a8-4234-a9bf-271b8ca7e4f9   10Gi       RWO            ibmc-vpc-file-min-iops   <unset>                 9m16s
+    csi-file-pvc   Bound    pvc-9873bd7e-41a8-4234-a9bf-271b8ca7e4f9   10Gi       RWM            ibmc-vpc-file-min-iops   <unset>                 9m16s
     restore-pvc    Bound    pvc-04dc8d6c-ac75-48b1-989d-ed67deb35911   10Gi       RWX            ibmc-vpc-file-min-iops   <unset>                 116s
     ```
     {: screen}
@@ -262,18 +262,18 @@ After you deploy the snapshot resources, you can restore data to a new volume by
     apiVersion: apps/v1
     kind: Deployment
     metadata:
-      name: podtwo
+      name: restore-pod
       labels:
-        app: podtwo
+        app: restore-pod
     spec:
       replicas: 1
       selector:
         matchLabels:
-          app: podtwo
+          app: restore-pod
       template:
         metadata:
           labels:
-            app: podtwo
+            app: restore-pod
         spec:
           containers:
           - image: nginx # Your containerized app image
@@ -289,7 +289,7 @@ After you deploy the snapshot resources, you can restore data to a new volume by
     {: codeblock}
 
     ```sh
-    oc create -f podtwo.yaml
+    oc create -f restore-pod.yaml
     ```
     {: pre}
 
@@ -302,8 +302,8 @@ After you deploy the snapshot resources, you can restore data to a new volume by
     
     ```sh
     NAME                          READY   STATUS    RESTARTS   AGE
-    POD_NAME                      1/1     Running   0          30m
-    POD2_NAME                     1/1     Running   0          46h
+    restore-pod-1                      1/1     Running   0          30m
+    pod-2                     1/1     Running   0          46h
     ```
     {: screen}
 
@@ -443,7 +443,7 @@ After you deploy the snapshot resources, you can restore data to a new volume by
             volumeMounts:
             - mountPath: /myvolumepath  # Mount path for PVC
               name: my-vol # Volume mount name
-           volumes:
+          volumes:
           - name: my-vol  # Volume resource name
             persistentVolumeClaim:
               claimName: restore-static-pvc  # The name of the PVC you created earlier

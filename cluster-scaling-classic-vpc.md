@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2025
-lastupdated: "2025-12-02"
+lastupdated: "2025-12-10"
 
 
 keywords: kubernetes, node scaling, ca, autoscaler, openshift
@@ -51,6 +51,14 @@ You can't enable the cluster autoscaler on worker pools that use reservations.
     *   Your pending pod resource requests and certain metadata that you associate with the workload, such as anti-affinity, labels to place pods only on certain flavors, or [pod disruption budgets](https://kubernetes.io/docs/concepts/workloads/pods/disruptions/){: external}.
     *   The worker pools that the cluster autoscaler manages, potentially across zones in a multizone cluster.
 
+- Earlier versions of the cluster autoscaler relied only on existing worker nodes for scheduling simulations. For example, if a worker pool scaled down to 0 nodes, the autoscaler had no information about that pool’s capacity or labels, which meant that it could not scale the worker pool back up. As a result, scale-to-zero was not supported.
+- Beginning with version 2.0.0, the autoscaler creates a template node for every worker pool. This template is used to provide a model of the allocatable CPU, memory, labels, and taints of a new node in the pool.
+- Additionally, in version 2.0.0, two new optional settings are available in the `iks-ca-configmap` in the `kube-system` namespace: `OSReservedMemoryGi` and `OSReservedCPUMili`.
+    - These values represent the amount of CPU and memory that the operating system reserves on each worker node.
+    - The kernel utilization can't be adjusted using these values, as those are already defined.
+    - The autoscaler subtracts these values from the node’s capacity when computing allocatable resources for scheduling simulations.
+    - By default, the autoscaler uses the recommended OS-reserved values, but users can override them to adjust how much capacity can be scheduled.
+
 For more information, see the Kubernetes Cluster Autoscaler FAQ for [How does scale-up work?](https://github.com/kubernetes/autoscaler/blob/master/cluster-autoscaler/FAQ.md#how-does-scale-up-work){: external} and [How does scale-down work?](https://github.com/kubernetes/autoscaler/blob/master/cluster-autoscaler/FAQ.md#how-does-scale-down-work){: external}.
 {: tip}
 
@@ -60,7 +68,6 @@ For more information, see the Kubernetes Cluster Autoscaler FAQ for [How does sc
 - Make the most out of the cluster autoscaler by using the following strategies for your worker node and workload deployment strategies. For more information, see the [Kubernetes Cluster Autoscaler FAQ](https://github.com/kubernetes/autoscaler/blob/master/cluster-autoscaler/FAQ.md){: external}.
 - [Try out the cluster autoscaler](/docs/openshift?topic=openshift-cluster-scaling-install-addon) with a few test workloads to get a good feel for how [scale-up and scale-down work](#ca_about), you might want to configure, and any other aspects that you might want, like [overprovisioning](/docs/openshift?topic=openshift-cluster-scaling-install-addon-deploy-apps#ca_scaleup) worker nodes or [limiting apps](/docs/openshift?topic=openshift-cluster-scaling-install-addon-deploy-apps).
 - Then, clean up your test environment and plan to include these custom values and additional settings with a fresh installation of the cluster autoscaler.
-
 
 
 ### Can I change how scale-up and scale-down work?
@@ -106,21 +113,24 @@ The cluster autoscaler scales your cluster in response to your workload [resourc
 ### Can I scale down a worker pool to zero (0) nodes?
 {: #scalable-practices-zero}
 
-Yes. Beginning with add-on version 2.0.0, you can set the cluster autoscaler `minSize` to `0`. 
 
-- Earlier versions of the cluster autoscaler relied only on existing worker nodes for scheduling simulations. For example, if a worker pool scaled down to 0 nodes, the autoscaler had no information about that pool’s capacity or labels. Which meant that it could not scale the worker pool back up. As a result, scale-to-zero was not supported.
-- Beginning with version 2.0.0, the autoscaler creates a template node for every worker pool. This template is used to provide a model of the allocatable CPU, memory, labels and taints of a new node in the pool.
-- When pods are pending, the autoscaler:
-    - Simulates scheduling on each pool’s template node, even when the pool has 0 nodes.
-    - Identifies pools that can run the workload.
-    - Scales the selected pool from 0 -> 1 automatically.
-- Additionally, in version 2.0.0: two new optional settings are available in the `iks-ca-configmap` in the `kube-system` namespace: `OSReservedMemoryGi` and `OSReservedCPUMili`
-    - These values represent the amount of CPU and memory that the operating system should reserve on each worker node.
-    - The kernel utilization can't be adjusted using these values, as those are already defined.
-    - The autoscaler subtracts these values from the node’s capacity when computing allocatable resources for scheduling simulations.
-    - By default, the autoscaler uses the recommended OS-reserved values, but users can override them to adjust how much capacity can be scheduled.
+Yes! Starting with Cluster Autoscaler add-on version 2.0.0, you can scale specific worker pools down to zero nodes.
 
-- Note that unless you [disable](/docs/openshift?topic=openshift-kubernetes-service-cli#cs_alb_configure) all public ALBs in each zone of your cluster. You must change the `minSize` to `2` worker nodes per zone so that the ALB pods can be spread for high availability.
+Why is this useful?
+:   Scaling to zero helps save costs when no workloads are running. The autoscaler automatically brings nodes back when needed.
+
+How does it work?
+:   When there are no pods to run, the autoscaler can reduce the worker pool to 0 nodes.
+If new pods need resources, the autoscaler automatically scales the pool back up.
+
+What do you need to do?
+:   - Check your add-on version and ensure that you are using v2.0.0 or later.
+:   - Set `minSize = 0` for the worker pool in your autoscaler configuration. If you have public ALBs enabled, set `minSize = 2` per zone for high availability.
+
+What is the cluster quorum requirement?
+:   Note that the entire cluster cannot scale down to zero. A minimum number of nodes must remain active to keep the cluster healthy and maintain etcd quorum. If this quorum is satisfied, you can scale down other worker pools to zero.
+
+
 
 
 ### Can I optimize my deployments for autoscaling?
