@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2025
-lastupdated: "2025-10-29"
+lastupdated: "2025-12-10"
 
 
 keywords: openshift, nginx, ingress controller, ingress operator, router
@@ -179,7 +179,7 @@ When you create a multizone VPC cluster with the private cloud service endpoint 
 ## How can I customize routing?
 {: #custom-routing}
 
-If you want to customize routing rules for your app, you can use [route-specific HAProxy annotations](https://docs.redhat.com/en/documentation/openshift_container_platform/4.19/html/ingress_and_load_balancing/configuring-routes){: external} that manages traffic for your app.
+If you want to customize routing rules for your app, you can use [route-specific HAProxy annotations](https://docs.redhat.com/en/documentation/openshift_container_platform/4.19/html/ingress_and_load_balancing/routes){: external} that manages traffic for your app.
 
 These supported annotations are in the format `haproxy.router.openshift.io/<annotation>` or `router.openshift.io/<annotation>`.
 
