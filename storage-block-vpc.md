@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2025
-lastupdated: "2025-10-24"
+lastupdated: "2025-12-10"
 
 
 keywords: openshift, block storage, deploy apps
@@ -24,7 +24,8 @@ subcollection: openshift
 
 You can choose between predefined storage tiers with GB sizes and IOPS that meet the requirements of your workloads. To find out if {{site.data.keyword.block_storage_is_short}} is the right storage option for you, see [Choosing a storage solution](/docs/openshift?topic=openshift-storage-plan). For pricing information, see [Pricing for {{site.data.keyword.block_storage_is_short}}](https://cloud.ibm.com/infrastructure/provision/vs){: external}.
 
-The {{site.data.keyword.block_storage_is_short}} cluster add-on is enabled by default on VPC clusters.
+- The {{site.data.keyword.block_storage_is_short}} cluster add-on is enabled by default on VPC clusters.
+- If you disable the {{site.data.keyword.block_storage_is_short}} add-on, it remains disabled until you enable it again. It is not enabled when you refresh or update the cluster master.
 
 
 ## Quick start for {{site.data.keyword.cloud_notm}} {{site.data.keyword.block_storage_is_short}}
