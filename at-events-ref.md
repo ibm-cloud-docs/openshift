@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2025
-lastupdated: "2025-05-29"
+lastupdated: "2025-12-11"
 
 
 keywords: openshift, {{site.data.keyword.openshiftlong_notm}}, kubernetes, audit
@@ -315,7 +315,6 @@ The following table shows the {{site.data.keyword.logs_full_notm}} location wher
 | Washington, D.C. (wdc04, wdc06, wdc07) | Washington, D.C. |
 | Amsterdam (ams03) | Frankfurt |
 | Frankfurt (fra02, fra04, fra05) | Frankfurt |
-| Milan (mil01) | Frankfurt |
 | Paris (par01) | Frankfurt |
 | London (lon02, lon04, lon05, lon06) | London |
 | Sydney (syd01, syd04, syd05) | Sydney |

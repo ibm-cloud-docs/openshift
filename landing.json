@@ -29,6 +29,10 @@
       {
         "title": "Add storage",
         "href": "/docs/openshift?topic=openshift-learning-path-admin#admin_storage"
+      },
+      {
+        "title": "Version history",
+        "href": "/docs/openshift?topic=openshift-openshift_versions"
       }
     ]
   },

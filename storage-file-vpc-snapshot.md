@@ -2,10 +2,10 @@
 
 copyright: 
   years: 2025, 2025
-lastupdated: "2025-12-10"
+lastupdated: "2025-12-11"
 
 
-keywords: openshift, containers, file storage for vpc, snapshots,
+keywords: openshift, containers, file storage for vpc, snapshots, create snapshot
 
 subcollection: openshift
 
@@ -213,7 +213,7 @@ After you create a deployment and a PVC, you can create the volume snapshots.
     Example output where `READYTOUSE` is `true`.
     ```sh
     NAME                            READYTOUSE   SOURCEPVC              SOURCESNAPSHOTCONTENT   RESTORESIZE   SNAPSHOTCLASS SNAPSHOTCONTENT                                    CREATIONTIME   AGE
-    ibmc-vpcfile-snapshot   true         csi-file-pvc                           10Gi           ibmc-vpcfile-snapshot-delete   snapcontent-9c374fbf-43a6-48d6-afc5-e76e1ab7c12b   18h            18h
+    ibmc-vpcfile-snapshot-delete   true         csi-file-pvc                           10Gi           ibmc-vpcfile-snapshot-delete   snapcontent-9c374fbf-43a6-48d6-afc5-e76e1ab7c12b   18h            18h
     ```
     {: screen}
 
@@ -253,7 +253,7 @@ After you deploy the volume snapshot, you can restore data to a new volume by us
     ```sh
     NAME           STATUS   VOLUME                                     CAPACITY   ACCESS MODES   STORAGECLASS             VOLUMEATTRIBUTESCLASS   AGE
     csi-file-pvc   Bound    pvc-9873bd7e-41a8-4234-a9bf-271b8ca7e4f9   10Gi       RWM            ibmc-vpc-file-min-iops   <unset>                 9m16s
-    restore-pvc    Bound    pvc-04dc8d6c-ac75-48b1-989d-ed67deb35911   10Gi       RWX            ibmc-vpc-file-min-iops   <unset>                 116s
+    restore-pvc    Bound    pvc-04dc8d6c-ac75-48b1-989d-ed67deb35911   10Gi       RWM            ibmc-vpc-file-min-iops   <unset>                 116s
     ```
     {: screen}
 
@@ -327,6 +327,7 @@ After you deploy the volume snapshot, you can restore data to a new volume by us
 ## Restoring static snapshots
 {: #file-static-snapshot-restore}
 
+Complete the following steps to restore a static snapshot.
 
 1. [Log in to your account. If applicable, target the appropriate resource group. Set the context for your cluster.](/docs/containers?topic=containers-access_cluster)
 
