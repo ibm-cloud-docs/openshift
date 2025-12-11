@@ -2,10 +2,10 @@
 
 copyright: 
   years: 2022, 2025
-lastupdated: "2025-11-24"
+lastupdated: "2025-12-11"
 
 
-keywords: openshift, block storage, snapshot
+keywords: openshift, block storage for vpc, snapshot, restore snapshot, create snapshot
 
 subcollection: openshift
 
