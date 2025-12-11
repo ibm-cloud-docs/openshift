@@ -422,32 +422,32 @@ Complete the following steps to restore a static snapshot.
     Redeploy your app.
 
     ```yaml
-		apiVersion: apps/v1
-		kind: Deployment
-		metadata:
-			name: my-deployment
-			labels:
-				app: my-deployment
-		spec:
-			replicas: 1
-			selector:
-				matchLabels:
-					app: my-deployment
-			template:
-				metadata:
-					labels:
-						app: my-deployment
-				spec:
-					containers:
-					- image: nginx # Your containerized app image
-						name: container-name 
-						volumeMounts:
-						- mountPath: /myvolumepath  # Mount path for PVC
-							name: my-vol # Volume mount name
-					volumes:
-					- name: my-vol  # Volume resource name
-						persistentVolumeClaim:
-							claimName: restore-static-pvc  # The name of the PVC you created earlier
+    apiVersion: apps/v1
+    kind: Deployment
+    metadata:
+      name: my-deployment
+      labels:
+        app: my-deployment
+    spec:
+      replicas: 1
+      selector:
+        matchLabels:
+          app: my-deployment
+      template:
+        metadata:
+          labels:
+            app: my-deployment
+        spec:
+          containers:
+          - image: nginx # Your containerized app image
+            name: container-name 
+            volumeMounts:
+            - mountPath: /myvolumepath  # Mount path for PVC
+              name: my-vol # Volume mount name
+          volumes:
+          - name: my-vol  # Volume resource name
+            persistentVolumeClaim:
+              claimName: restore-static-pvc  # The name of the PVC you created earlier
     ```
     {: codeblock}
 
