@@ -165,7 +165,6 @@ The following table shows the components included in the worker node fix pack 4.
 The following table shows the changes that are in the master fix pack 4.15.57_1605_openshift. Master patch updates are applied automatically. 
 
 
-
 | Component | Previous | Current | Description |
 | --- | --- | --- | --- |
 | etcd | v3.5.22 | v3.5.23 | See the [etcd release notes](https://github.com/etcd-io/etcd/releases/v3.5.23){: external}. |
@@ -261,7 +260,6 @@ The following table shows the components included in the worker node fix pack 4.
 The following table shows the changes that are in the master fix pack 4.15.54_1594_openshift. Master patch updates are applied automatically. 
 
 
-
 | Component | Previous | Current | Description |
 | --- | --- | --- | --- |
 | Calico | v3.28.4 | v3.28.5 | See the [Calico release notes](https://archive-os-3-28.netlify.app/calico/3.28/release-notes/#calico-open-source-3285-bug-fix-update){: external}. |
@@ -329,7 +327,6 @@ The following table shows the components included in the worker node fix pack 4.
 The following table shows the changes that are in the master fix pack 4.15.51_1590_openshift. Master patch updates are applied automatically. 
 
 
-
 | Component | Previous | Current | Description |
 | --- | --- | --- | --- |
 | Calico | v3.28.3 | v3.28.4 | See the [Calico release notes](https://archive-os-3-28.netlify.app/calico/3.28/release-notes/#v3.28.4){: external}. |
@@ -377,7 +374,6 @@ The following table shows the components included in the worker node fix pack 4.
 {: #41550_1587_openshift_M}
 
 The following table shows the changes that are in the master fix pack 4.15.50_1587_openshift. Master patch updates are applied automatically. 
-
 
 
 | Component | Previous | Current | Description |
@@ -429,7 +425,6 @@ The following table shows the components included in the worker node fix pack 4.
 The following table shows the changes that are in the master fix pack 4.15.48_1584_openshift. Master patch updates are applied automatically. 
 
 
-
 | Component | Previous | Current | Description |
 | --- | --- | --- | --- |
 | Calico | v3.28.2 | v3.28.3 | See the [Calico release notes](https://archive-os-3-28.netlify.app/calico/3.28/release-notes/#v3.28.3){: external}. |
@@ -479,7 +474,6 @@ The following table shows the components included in the worker node fix pack 4.
 {: #41546_1579_openshift_M}
 
 The following table shows the changes that are in the master fix pack 4.15.46_1579_openshift. Master patch updates are applied automatically. 
-
 
 
 | Component | Previous | Current | Description |
@@ -546,7 +540,6 @@ The following table shows the components included in the worker node fix pack 4.
 The following table shows the changes that are in the master fix pack 4.15.44_1576_openshift. Master patch updates are applied automatically. 
 
 
-
 | Component | Previous | Current | Description |
 | --- | --- | --- | --- |
 | {{site.data.keyword.cloud_notm}} Block Storage driver and plug-in | v2.5.16 | v2.5.17 | New version contains updates and security fixes. |
@@ -592,7 +585,6 @@ The following table shows the components included in the worker node fix pack 4.
 {: #41542_1573_openshift_M}
 
 The following table shows the changes that are in the master fix pack 4.15.42_1573_openshift. Master patch updates are applied automatically. 
-
 
 
 | Component | Previous | Current | Description |
@@ -670,7 +662,6 @@ The following table shows the changes that are in the worker node fix pack 4.15.
 The following table shows the changes that are in the master fix pack 4.15.38_1568_openshift. Master patch updates are applied automatically. 
 
 
-
 | Component | Previous | Current | Description |
 | --- | --- | --- | --- |
 | {{site.data.keyword.cloud_notm}} Controller Manager | v1.28.15-2 | v1.28.15-4 | New version contains updates and security fixes. |
@@ -702,7 +693,6 @@ The following table shows the changes that are in the worker node fix pack 4.15.
 The following table shows the changes that are in the master fix pack 4.15.36_1566_openshift. Master patch updates are applied automatically. 
 
 
-
 | Component | Previous | Current | Description |
 | --- | --- | --- | --- |
 | {{site.data.keyword.cloud_notm}} Block Storage driver and plug-in | v2.5.15 | v2.5.16 | New version contains updates and security fixes. |
@@ -729,7 +719,6 @@ The following table shows the changes that are in the worker node fix pack 4.15.
 {: #41536_1564_openshift_M}
 
 The following table shows the changes that are in the master fix pack 4.15.36_1564_openshift. Master patch updates are applied automatically. 
-
 
 
 | Component | Previous | Current | Description |
@@ -782,7 +771,6 @@ The following table shows the changes that are in the worker node fix pack 4.15.
 The following table shows the changes that are in the master fix pack 4.15.30_1559_openshift. Master patch updates are applied automatically. 
 
 
-
 | Component | Previous | Current | Description |
 | --- | --- | --- | --- |
 | {{site.data.keyword.cloud_notm}} Block Storage driver and plug-in | v2.5.13 | v2.5.15 | New version contains updates and security fixes. |
@@ -826,7 +814,6 @@ The following table shows the changes that are in the worker node fix pack 4.15.
 {: #41525_1556_openshift_M}
 
 The following table shows the changes that are in the master fix pack 4.15.25_1556_openshift. Master patch updates are applied automatically. 
-
 
 
 | Component | Previous | Current | Description |
@@ -874,7 +861,6 @@ The following table shows the changes that are in the worker node fix pack 4.15.
 {: #41522_1554_openshift_M}
 
 The following table shows the changes that are in the master fix pack 4.15.22_1554_openshift. Master patch updates are applied automatically. 
-
 
 
 | Component | Previous | Current | Description |
@@ -953,7 +939,6 @@ The following table shows the changes that are in the worker node fix pack 4.15.
 The following table shows the changes that are in the master fix pack 4.15.17_1541_openshift. Master patch updates are applied automatically. 
 
 
-
 | Component | Previous | Current | Description |
 | --- | --- | --- | --- |
 | Cluster health image | v1.5.5 | v1.5.6 | New version contains updates and security fixes. |
@@ -1000,7 +985,6 @@ The following table shows the changes that are in the worker node fix pack 4.15.
 The following table shows the changes that are in the master fix pack 4.15.14_1537_openshift. Master patch updates are applied automatically. 
 
 
-
 | Component | Previous | Current | Description |
 | --- | --- | --- | --- |
 | Cluster health image | v1.5.4 | v1.5.5 | New version contains updates and security fixes. |
@@ -1031,7 +1015,6 @@ The following table shows the changes that are in the worker node fix pack 4.15.
 {: #41511_1534_openshift_M}
 
 The following table shows the changes that are in the master fix pack 4.15.11_1534_openshift. Master patch updates are applied automatically. 
-
 
 
 | Component | Previous | Current | Description |

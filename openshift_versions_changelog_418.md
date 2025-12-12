@@ -159,7 +159,6 @@ The following table shows the components included in the worker node fix pack 4.
 The following table shows the changes that are in the master fix pack 4.18.24_1563_openshift. Master patch updates are applied automatically. 
 
 
-
 | Component | Previous | Current | Description |
 | --- | --- | --- | --- |
 | Calico | v3.29.4 | v3.29.5 | See the [Calico release notes](https://docs.tigera.io/calico/3.29/release-notes/#v3.29.5){: external}. |
@@ -270,7 +269,6 @@ The following table shows the components included in the worker node fix pack 4.
 The following table shows the changes that are in the master fix pack 4.18.19_1552_openshift. Master patch updates are applied automatically. 
 
 
-
 | Component | Previous | Current | Description |
 | --- | --- | --- | --- |
 | Calico | v3.29.3 | v3.29.4 | See the [Calico release notes](https://docs.tigera.io/calico/3.29/release-notes/#calico-open-source-3294-bug-fix-release){: external}. |
@@ -339,7 +337,6 @@ The following table shows the components included in the worker node fix pack 4.
 The following table shows the changes that are in the master fix pack 4.18.11_1547_openshift. Master patch updates are applied automatically. 
 
 
-
 | Component | Previous | Current | Description |
 | --- | --- | --- | --- |
 | Calico | v3.29.2 | v3.29.3 | See the [Calico release notes](https://docs.tigera.io/calico/3.29/release-notes/#v3.29.3){: external}. |
@@ -385,7 +382,6 @@ The following table shows the components included in the worker node fix pack 4.
 {: #41811_1544_openshift_M}
 
 The following table shows the changes that are in the master fix pack 4.18.11_1544_openshift. Master patch updates are applied automatically. 
-
 
 
 | Component | Previous | Current | Description |

@@ -165,7 +165,6 @@ The following table shows the components included in the worker node fix pack 4.
 The following table shows the changes that are in the master fix pack 4.17.40_1557_openshift. Master patch updates are applied automatically. 
 
 
-
 | Component | Previous | Current | Description |
 | --- | --- | --- | --- |
 | Calico | v3.29.4 | v3.29.5 | See the [Calico release notes](https://docs.tigera.io/calico/3.29/release-notes/#v3.29.5){: external}. |
@@ -267,7 +266,6 @@ The following table shows the components included in the worker node fix pack 4.
 The following table shows the changes that are in the master fix pack 4.17.35_1547_openshift. Master patch updates are applied automatically. 
 
 
-
 | Component | Previous | Current | Description |
 | --- | --- | --- | --- |
 | Calico | v3.28.4 | v3.29.4 | See the [Calico release notes](https://docs.tigera.io/calico/3.29/release-notes/#calico-open-source-3294-bug-fix-release){: external}. |
@@ -339,7 +337,6 @@ The following table shows the components included in the worker node fix pack 4.
 The following table shows the changes that are in the master fix pack 4.17.28_1543_openshift. Master patch updates are applied automatically. 
 
 
-
 | Component | Previous | Current | Description |
 | --- | --- | --- | --- |
 | Calico | v3.28.3 | v3.28.4 | See the [Calico release notes](https://archive-os-3-28.netlify.app/calico/3.28/release-notes/#v3.28.4){: external}. |
@@ -388,7 +385,6 @@ The following table shows the components included in the worker node fix pack 4.
 {: #41728_1540_openshift_M}
 
 The following table shows the changes that are in the master fix pack 4.17.28_1540_openshift. Master patch updates are applied automatically. 
-
 
 
 | Component | Previous | Current | Description |
@@ -442,7 +438,6 @@ The following table shows the components included in the worker node fix pack 4.
 The following table shows the changes that are in the master fix pack 4.17.24_1537_openshift. Master patch updates are applied automatically. 
 
 
-
 | Component | Previous | Current | Description |
 | --- | --- | --- | --- |
 | Calico | v3.28.2 | v3.28.3 | See the [Calico release notes](https://archive-os-3-28.netlify.app/calico/3.28/release-notes/#v3.28.3){: external}. |
@@ -494,7 +489,6 @@ The following table shows the components included in the worker node fix pack 4.
 {: #41718_1533_openshift_M}
 
 The following table shows the changes that are in the master fix pack 4.17.18_1533_openshift. Master patch updates are applied automatically. 
-
 
 
 | Component | Previous | Current | Description |
@@ -564,7 +558,6 @@ The following table shows the components included in the worker node fix pack 4.
 The following table shows the changes that are in the master fix pack 4.17.14_1530_openshift. Master patch updates are applied automatically. 
 
 
-
 | Component | Previous | Current | Description |
 | --- | --- | --- | --- |
 | {{site.data.keyword.cloud_notm}} Block Storage driver and plug-in | v2.5.16 | v2.5.17 | New version contains updates and security fixes. |
@@ -614,7 +607,6 @@ The following table shows the components included in the worker node fix pack 4.
 {: #41710_1522_openshift_M}
 
 The following table shows the changes that are in the master fix pack 4.17.10_1522_openshift. Master patch updates are applied automatically. 
-
 
 
 | Component | Previous | Current | Description |
@@ -692,7 +684,6 @@ The following table shows the changes that are in the worker node fix pack 4.17.
 {: #4175_1517_openshift_M}
 
 The following table shows the changes that are in the master fix pack 4.17.5_1517_openshift. Master patch updates are applied automatically. 
-
 
 
 | Component | Previous | Current | Description |
