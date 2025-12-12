@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2025, 2025
-lastupdated: "2025-12-11"
+lastupdated: "2025-12-12"
 
 
 keywords: openshift, containers, file storage for vpc, snapshots, create snapshot
@@ -184,7 +184,7 @@ After you create a deployment and a PVC, you can create the volume snapshots.
 
 1. Make sure you have **Share Snapshot Operator** [permissions in IAM](/docs/account?topic=account-iam-service-roles-actions#is.share-roles).
 
-1. Create a volume snapshot in your cluster by using the `ibmc-vpcfile-snapshot` snapshot class that is deployed when you enabled the add-on. Save the following VolumeSnapshot configuration to a file called `snapvol.yaml`. 
+1. Create a volume snapshot in your cluster by using the `ibmc-vpcfile-snapshot-delete` snapshot class that is deployed when you enabled the add-on. Save the following VolumeSnapshot configuration to a file called `snapvol.yaml`. 
 
     ```yaml
     apiVersion: snapshot.storage.k8s.io/v1
