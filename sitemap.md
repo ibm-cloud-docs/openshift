@@ -286,6 +286,10 @@ subcollection: openshift
 
 * [December 2025](/docs/openshift?topic=openshift-openshift-relnotes#openshift-dec25)
 
+    * [12 December 2025](/docs/openshift?topic=openshift-openshift-relnotes#openshift-dec1225)
+
+        * {{site.data.keyword.openshiftlong_notm}} master fix packs.
+
     * [08 December 2025](/docs/openshift?topic=openshift-openshift-relnotes#openshift-dec0825)
 
         * New! Chennai multizone region for VPC
