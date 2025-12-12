@@ -49,7 +49,7 @@ keyword:
   kubernetes_133_unsupported_date: 14 October 2026
   kubernetes_134_deprecated: 'False'
   kubernetes_134_release_date: 20 November 2025
-  kubernetes_134_unsupported_certainty: ''
+  kubernetes_134_unsupported_certainty: tentative
   kubernetes_134_unsupported_date: 27 November 2026
   kubernetes_default_deprecated: 'False'
   kubernetes_default_release_date: 31 July 2025
