@@ -3,7 +3,7 @@
 copyright:
   years: 2024, 2025
 
-lastupdated: "2025-11-21"
+lastupdated: "2025-12-12"
 
 
 keywords: change log, version history, Static Route
@@ -24,7 +24,6 @@ Review the version history for Static Route.
 {: shortdesc}
 
 
-
 ## Version 1.0.0
 {: #cl-add-ons-static-route-1.0.0}
 
@@ -43,8 +42,6 @@ Review the version history for Static Route.
 
 - Updates to the latest `ubi-minimal` base image for the operator build. 
 - `addon-static-route v1.0.0_1581`
-
-
 
 
 ### 1.0.0_1415, released 3 October 2024

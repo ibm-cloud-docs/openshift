@@ -3,7 +3,7 @@
 copyright:
   years: 2024, 2025
 
-lastupdated: "2025-11-21"
+lastupdated: "2025-12-12"
 
 
 keywords: change log, version history, VPC File CSI Driver
@@ -22,7 +22,6 @@ subcollection: "openshift"
 
 Review the version history for VPC File CSI Driver.
 {: shortdesc}
-
 
 
 ## Version 2.0
@@ -104,8 +103,6 @@ Review the version history for VPC File CSI Driver.
 - Updates the armada-storage-secret to v1.2.55. 
 
 
-
-
 ## Version 1.2
 {: #cl-add-ons-vpc-file-csi-driver-1.2}
 
@@ -117,8 +114,6 @@ Review the version history for VPC File CSI Driver.
 - Resiliency improvement to use VPC Storage service API for tagging volumes. This doesn't impact existing or new PVCs. This reduces the number of Kubernetes service API calls. 
 - Updates the golang base image to 1.22.12. 
 - Updates the armada-storage-secret to v1.2.55. 
-
-
 
 
 ### Change log for version 2.0.9_322, released 11 December 2024

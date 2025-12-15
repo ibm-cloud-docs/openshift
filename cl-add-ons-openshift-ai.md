@@ -3,7 +3,7 @@
 copyright:
   years: 2024, 2025
 
-lastupdated: "2025-11-30"
+lastupdated: "2025-12-12"
 
 
 keywords: change log, version history, OpenShift AI
@@ -24,7 +24,6 @@ Review the version history for OpenShift AI.
 {: shortdesc}
 
 
-
 ## Version 418
 {: #cl-add-ons-openshift-ai-418}
 
@@ -38,8 +37,6 @@ Review the version history for OpenShift AI.
 - Optionally installs NFD operator based on latest version available for channel `stable`.
 - Optionally installs NVIDIA GPU operator based on latest version available for channel `stable`.
 - Optionally installs Pipeline operator based on latest version available for channel `latest`.
-
-
 
 
 ## Version 417
@@ -72,8 +69,6 @@ Review the version history for OpenShift AI.
 - Optionally installs NFD operator based on latest version available for channel `stable`.
 - Optionally installs NVIDIA GPU operator based on latest version available for channel `stable`.
 - Optionally installs Pipeline operator based on latest version available for channel `latest`.
-
-
 
 
 ## Version 416

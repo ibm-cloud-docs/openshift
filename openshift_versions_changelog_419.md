@@ -159,7 +159,6 @@ The following table shows the components included in the worker node fix pack 4.
 The following table shows the changes that are in the master fix pack 4.19.13_1548_openshift. Master patch updates are applied automatically. 
 
 
-
 | Component | Previous | Current | Description |
 | --- | --- | --- | --- |
 | Calico | v3.29.4 | v3.29.5 | See the [Calico release notes](https://docs.tigera.io/calico/3.29/release-notes/#v3.29.5){: external}. |

@@ -3,7 +3,7 @@
 copyright:
   years: 2024, 2025
 
-lastupdated: "2025-11-21"
+lastupdated: "2025-12-12"
 
 
 keywords: change log, version history, VPC Block CSI Driver
@@ -22,7 +22,6 @@ subcollection: "openshift"
 
 Review the version history for VPC Block CSI Driver.
 {: shortdesc}
-
 
 
 ## Version 5.2
@@ -90,8 +89,6 @@ Review the version history for VPC Block CSI Driver.
 - Updates the armada-storage-secret to v1.3.22. 
 
 
-
-
 ## Version 5.1
 {: #cl-add-ons-vpc-block-csi-driver-5.1}
 
@@ -156,8 +153,6 @@ Review the version history for VPC Block CSI Driver.
 - Resiliency improvement to use VPC Storage service API for tagging volumes. This doesn't impact existing or new PVCs. This reduces the number of Kubernetes service API calls. 
 - Updates the golang base image to 1.22.12. 
 - Updates the armada-storage-secret to v1.2.55. 
-
-
 
 
 ## Version 5.2 archive

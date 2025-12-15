@@ -3,7 +3,7 @@
 copyright:
   years: 2024, 2025
 
-lastupdated: "2025-11-21"
+lastupdated: "2025-12-12"
 
 
 keywords: change log, version history, IBM Storage Operator
@@ -22,7 +22,6 @@ subcollection: "openshift"
 
 Review the version history for IBM Storage Operator.
 {: shortdesc}
-
 
 
 ## Version 1.0
@@ -83,8 +82,6 @@ Review the version history for IBM Storage Operator.
 
 - Resolves the following CVEs: [CVE-2024-5535](https://nvd.nist.gov/vuln/detail/CVE-2024-5535){: external}.
 - Updates the golang base image to 1.22.12. 
-
-
 
 
 
