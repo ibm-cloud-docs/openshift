@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2025
-lastupdated: "2025-12-10"
+lastupdated: "2025-12-16"
 
 
 keywords: openshift, block, debug, help
@@ -276,4 +276,4 @@ If you use a `oc` CLI version that does not match at least the major.minor versi
         ```
         {: pre}
 
-    4. If a more recent version is available, install this version. For instructions, see [Updating the {{site.data.keyword.cloud_notm}} Block Storage plug-in](/docs/openshift?topic=openshift-block_storage#update_block).
+    4. If a more recent version is available, install this version. For instructions, see [Updating the {{site.data.keyword.cloud_notm}} Block Storage plug-in](/docs/openshift?topic=openshift-vpc-block#vpc-addon-update).

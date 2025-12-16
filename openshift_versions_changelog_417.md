@@ -3,7 +3,7 @@
 copyright:
   years: 2024, 2025
 
-lastupdated: "2025-12-12"
+lastupdated: "2025-12-16"
 
 
 keywords: change log, version history, 4.17_openshift
@@ -48,7 +48,7 @@ The following table shows the changes that are in the master fix pack 4.17.44_15
 | Component | Previous | Current | Description |
 | --- | --- | --- | --- |
 | Cluster health image | v1.6.10 | v1.6.13 | New version contains updates and security fixes. |
-| etcd | v3.5.24 | v3.5.25 | See the [etcd release notes](https://github.com/coreos/etcd/releases/v3.5.25){: external}. |
+| etcd | v3.5.24 | v3.5.25 | See the [etcd release notes](https://github.com/etcd-io/etcd/releases/v3.5.25){: external}. |
 | {{site.data.keyword.cloud_notm}} Controller Manager | v1.30.14-16 | v1.30.14-22 | New version contains updates and security fixes. |
 | Key Management Service provider | v2.10.17 | 2.10.19 | New version contains updates and security fixes. |
 | Portieris admission controller | v0.13.31 | v0.13.33 | See the [Portieris admission controller release notes](https://github.com/{{site.data.keyword.IBM_notm}}/portieris/releases/tag/v0.13.33){: external}. |

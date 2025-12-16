@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2025
-lastupdated: "2025-12-12"
+lastupdated: "2025-12-16"
 
 
 keywords: kubernetes, release notes, openshift, {{site.data.keyword.openshiftlong_notm}}
@@ -865,8 +865,8 @@ Versions 4.12 and 4.13 are unsupported.
 :   [Version 4.16 change log](/docs/openshift?topic=openshift-openshift_changelog_416)
 :   [Version 4.15 change log](/docs/openshift?topic=openshift-openshift_changelog_415)
 :   [Version 4.14 change log](/docs/openshift?topic=openshift-openshift_changelog_414)
-:   [Version 4.13 change log](/docs/openshift?topic=openshift-openshift_changelog_413)
-:   [Version 4.12 change log](/docs/openshift?topic=openshift-openshift_changelog_412)
+:   Version 4.13 change log
+:   Version 4.12 change log
 
 
 
@@ -920,8 +920,8 @@ RHEL operating system deprecation for VPC clusters version 4.18 and later.
 :   [Version 4.16 change log](/docs/openshift?topic=openshift-openshift_changelog_416)
 :   [Version 4.15 change log](/docs/openshift?topic=openshift-openshift_changelog_415)
 :   [Version 4.14 change log](/docs/openshift?topic=openshift-openshift_changelog_414)
-:   [Version 4.13 change log](/docs/openshift?topic=openshift-openshift_changelog_413)
-:   [Version 4.12 change log](/docs/openshift?topic=openshift-openshift_changelog_412)
+:   Version 4.13 change log
+:   Version 4.12 change log
 
 
 
@@ -959,8 +959,8 @@ VPC Block CSI Driver cluster add-on patch updates.
 :   [Version 4.16 change log](/docs/openshift?topic=openshift-openshift_changelog_416)
 :   [Version 4.15 change log](/docs/openshift?topic=openshift-openshift_changelog_415)
 :   [Version 4.14 change log](/docs/openshift?topic=openshift-openshift_changelog_414)
-:   [Version 4.13 change log](/docs/openshift?topic=openshift-openshift_changelog_413)
-:   [Version 4.12 change log](/docs/openshift?topic=openshift-openshift_changelog_412)
+:   Version 4.13 change log
+:   Version 4.12 change log
 
 
 
@@ -983,8 +983,8 @@ VPC Block CSI Driver cluster add-on patch updates.
 :   [Version 4.16 change log](/docs/openshift?topic=openshift-openshift_changelog_416)
 :   [Version 4.15 change log](/docs/openshift?topic=openshift-openshift_changelog_415)
 :   [Version 4.14 change log](/docs/openshift?topic=openshift-openshift_changelog_414)
-:   [Version 4.13 change log](/docs/openshift?topic=openshift-openshift_changelog_413)
-:   [Version 4.12 change log](/docs/openshift?topic=openshift-openshift_changelog_412)
+:   Version 4.13 change log
+:   Version 4.12 change log
 
 
 
@@ -1035,8 +1035,8 @@ Cluster autoscaler add-on patch updates for {{site.data.keyword.openshiftlong_no
 :   [Version 4.16 change log](/docs/openshift?topic=openshift-openshift_changelog_416)
 :   [Version 4.15 change log](/docs/openshift?topic=openshift-openshift_changelog_415)
 :   [Version 4.14 change log](/docs/openshift?topic=openshift-openshift_changelog_414)
-:   [Version 4.13 change log](/docs/openshift?topic=openshift-openshift_changelog_413)
-:   [Version 4.12 change log](/docs/openshift?topic=openshift-openshift_changelog_412)
+:   Version 4.13 change log
+:   Version 4.12 change log
 
 
 
@@ -1096,8 +1096,8 @@ OpenShift Data Foundation cluster add-on patch updates.
 :   [Version 4.16 change log](/docs/openshift?topic=openshift-openshift_changelog_416)
 :   [Version 4.15 change log](/docs/openshift?topic=openshift-openshift_changelog_415)
 :   [Version 4.14 change log](/docs/openshift?topic=openshift-openshift_changelog_414)
-:   [Version 4.13 change log](/docs/openshift?topic=openshift-openshift_changelog_413)
-:   [Version 4.12 change log](/docs/openshift?topic=openshift-openshift_changelog_412)
+:   Version 4.13 change log
+:   Version 4.12 change log
 
 OpenShift AI cluster add-on patch updates.
 :   For more information, see the [change log](/docs/openshift?topic=openshift-cl-add-ons-openshift-ai).
@@ -1120,8 +1120,8 @@ OpenShift AI cluster add-on patch updates.
 :   [Version 4.16 change log](/docs/openshift?topic=openshift-openshift_changelog_416)
 :   [Version 4.15 change log](/docs/openshift?topic=openshift-openshift_changelog_415)
 :   [Version 4.14 change log](/docs/openshift?topic=openshift-openshift_changelog_414)
-:   [Version 4.13 change log](/docs/openshift?topic=openshift-openshift_changelog_413)
-:   [Version 4.12 change log](/docs/openshift?topic=openshift-openshift_changelog_412)
+:   Version 4.13 change log
+:   Version 4.12 change log
 
 
 
@@ -1154,8 +1154,8 @@ IBM Cloud Image Key Synchronizer cluster add-on patch updates.
 :   [Version 4.16 change log](/docs/openshift?topic=openshift-openshift_changelog_416)
 :   [Version 4.15 change log](/docs/openshift?topic=openshift-openshift_changelog_415)
 :   [Version 4.14 change log](/docs/openshift?topic=openshift-openshift_changelog_414)
-:   [Version 4.13 change log](/docs/openshift?topic=openshift-openshift_changelog_413)
-:   [Version 4.12 change log](/docs/openshift?topic=openshift-openshift_changelog_412)
+:   Version 4.13 change log
+:   Version 4.12 change log
 
 
 
@@ -1233,8 +1233,8 @@ OpenShift AI deployment during cluster creation
 :   [Version 4.16 change log](/docs/openshift?topic=openshift-openshift_changelog_416)
 :   [Version 4.15 change log](/docs/openshift?topic=openshift-openshift_changelog_415)
 :   [Version 4.14 change log](/docs/openshift?topic=openshift-openshift_changelog_414)
-:   [Version 4.13 change log](/docs/openshift?topic=openshift-openshift_changelog_413)
-:   [Version 4.12 change log](/docs/openshift?topic=openshift-openshift_changelog_412)
+:   Version 4.13 change log
+:   Version 4.12 change log
 
 
 
@@ -1256,8 +1256,8 @@ OpenShift AI deployment during cluster creation
 :   [Version 4.16 change log](/docs/openshift?topic=openshift-openshift_changelog_416)
 :   [Version 4.15 change log](/docs/openshift?topic=openshift-openshift_changelog_415)
 :   [Version 4.14 change log](/docs/openshift?topic=openshift-openshift_changelog_414)
-:   [Version 4.13 change log](/docs/openshift?topic=openshift-openshift_changelog_413)
-:   [Version 4.12 change log](/docs/openshift?topic=openshift-openshift_changelog_412)
+:   Version 4.13 change log
+:   Version 4.12 change log
 
 
 
@@ -1285,8 +1285,8 @@ CLI version `1.0.679` is available.
 :   [Version 4.16 change log](/docs/openshift?topic=openshift-openshift_changelog_416)
 :   [Version 4.15 change log](/docs/openshift?topic=openshift-openshift_changelog_415)
 :   [Version 4.14 change log](/docs/openshift?topic=openshift-openshift_changelog_414)
-:   [Version 4.13 change log](/docs/openshift?topic=openshift-openshift_changelog_413)
-:   [Version 4.12 change log](/docs/openshift?topic=openshift-openshift_changelog_412)
+:   Version 4.13 change log
+:   Version 4.12 change log
 
 
 
@@ -1352,8 +1352,8 @@ Version 4.17 is now the default version for {{site.data.keyword.openshiftlong_no
 :   [Version 4.16 change log](/docs/openshift?topic=openshift-openshift_changelog_416)
 :   [Version 4.15 change log](/docs/openshift?topic=openshift-openshift_changelog_415)
 :   [Version 4.14 change log](/docs/openshift?topic=openshift-openshift_changelog_414)
-:   [Version 4.13 change log](/docs/openshift?topic=openshift-openshift_changelog_413)
-:   [Version 4.12 change log](/docs/openshift?topic=openshift-openshift_changelog_412)
+:   Version 4.13 change log
+:   Version 4.12 change log
 
 
 
@@ -1380,8 +1380,8 @@ Version 4.17 is now the default version for {{site.data.keyword.openshiftlong_no
 :   [Version 4.16 change log](/docs/openshift?topic=openshift-openshift_changelog_416)
 :   [Version 4.15 change log](/docs/openshift?topic=openshift-openshift_changelog_415)
 :   [Version 4.14 change log](/docs/openshift?topic=openshift-openshift_changelog_414)
-:   [Version 4.13 change log](/docs/openshift?topic=openshift-openshift_changelog_413)
-:   [Version 4.12 change log](/docs/openshift?topic=openshift-openshift_changelog_412)
+:   Version 4.13 change log
+:   Version 4.12 change log
 
 
 
@@ -1410,8 +1410,8 @@ New! Red Hat OpenShift AI add-on
 :   [Version 4.16 change log](/docs/openshift?topic=openshift-openshift_changelog_416)
 :   [Version 4.15 change log](/docs/openshift?topic=openshift-openshift_changelog_415)
 :   [Version 4.14 change log](/docs/openshift?topic=openshift-openshift_changelog_414)
-:   [Version 4.13 change log](/docs/openshift?topic=openshift-openshift_changelog_413)
-:   [Version 4.12 change log](/docs/openshift?topic=openshift-openshift_changelog_412)
+:   Version 4.13 change log
+:   Version 4.12 change log
 
 
 
@@ -1444,8 +1444,8 @@ Portworx now supports {{site.data.keyword.openshiftlong_notm}} version 4.16 and 
 :   [Version 4.16 change log](/docs/openshift?topic=openshift-openshift_changelog_416)
 :   [Version 4.15 change log](/docs/openshift?topic=openshift-openshift_changelog_415)
 :   [Version 4.14 change log](/docs/openshift?topic=openshift-openshift_changelog_414)
-:   [Version 4.13 change log](/docs/openshift?topic=openshift-openshift_changelog_413)
-:   [Version 4.12 change log](/docs/openshift?topic=openshift-openshift_changelog_412)
+:   Version 4.13 change log
+:   Version 4.12 change log
 
 
 
@@ -1467,8 +1467,8 @@ Portworx now supports {{site.data.keyword.openshiftlong_notm}} version 4.16 and 
 :   [Version 4.16 change log](/docs/openshift?topic=openshift-openshift_changelog_416)
 :   [Version 4.15 change log](/docs/openshift?topic=openshift-openshift_changelog_415)
 :   [Version 4.14 change log](/docs/openshift?topic=openshift-openshift_changelog_414)
-:   [Version 4.13 change log](/docs/openshift?topic=openshift-openshift_changelog_413)
-:   [Version 4.12 change log](/docs/openshift?topic=openshift-openshift_changelog_412)
+:   Version 4.13 change log
+:   Version 4.12 change log
 
 
 
@@ -1500,8 +1500,8 @@ Storage Operator cluster add-on patch update.
 :   [Version 4.16 change log](/docs/openshift?topic=openshift-openshift_changelog_416)
 :   [Version 4.15 change log](/docs/openshift?topic=openshift-openshift_changelog_415)
 :   [Version 4.14 change log](/docs/openshift?topic=openshift-openshift_changelog_414)
-:   [Version 4.13 change log](/docs/openshift?topic=openshift-openshift_changelog_413)
-:   [Version 4.12 change log](/docs/openshift?topic=openshift-openshift_changelog_412)
+:   Version 4.13 change log
+:   Version 4.12 change log
 
 
 
@@ -1519,8 +1519,8 @@ Storage Operator cluster add-on patch update.
 :   [Version 4.16 change log](/docs/openshift?topic=openshift-openshift_changelog_416)
 :   [Version 4.15 change log](/docs/openshift?topic=openshift-openshift_changelog_415)
 :   [Version 4.14 change log](/docs/openshift?topic=openshift-openshift_changelog_414)
-:   [Version 4.13 change log](/docs/openshift?topic=openshift-openshift_changelog_413)
-:   [Version 4.12 change log](/docs/openshift?topic=openshift-openshift_changelog_412)
+:   Version 4.13 change log
+:   Version 4.12 change log
 
 
 
@@ -1584,8 +1584,8 @@ CLI version `1.0.674` is available.
 :   [Version 4.16 change log](/docs/openshift?topic=openshift-openshift_changelog_416)
 :   [Version 4.15 change log](/docs/openshift?topic=openshift-openshift_changelog_415)
 :   [Version 4.14 change log](/docs/openshift?topic=openshift-openshift_changelog_414)
-:   [Version 4.13 change log](/docs/openshift?topic=openshift-openshift_changelog_413)
-:   [Version 4.12 change log](/docs/openshift?topic=openshift-openshift_changelog_412)
+:   Version 4.13 change log
+:   Version 4.12 change log
 
 
 
@@ -1613,8 +1613,8 @@ CLI version `1.0.673` is available.
 :   [Version 4.16 change log](/docs/openshift?topic=openshift-openshift_changelog_416)
 :   [Version 4.15 change log](/docs/openshift?topic=openshift-openshift_changelog_415)
 :   [Version 4.14 change log](/docs/openshift?topic=openshift-openshift_changelog_414)
-:   [Version 4.13 change log](/docs/openshift?topic=openshift-openshift_changelog_413)
-:   [Version 4.12 change log](/docs/openshift?topic=openshift-openshift_changelog_412)
+:   Version 4.13 change log
+:   Version 4.12 change log
 
 
 
@@ -1639,8 +1639,8 @@ New! A new tutorial is available for {{site.data.keyword.openshiftlong_notm}} th
 :   [Version 4.16 change log](/docs/openshift?topic=openshift-openshift_changelog_416)
 :   [Version 4.15 change log](/docs/openshift?topic=openshift-openshift_changelog_415)
 :   [Version 4.14 change log](/docs/openshift?topic=openshift-openshift_changelog_414)
-:   [Version 4.13 change log](/docs/openshift?topic=openshift-openshift_changelog_413)
-:   [Version 4.12 change log](/docs/openshift?topic=openshift-openshift_changelog_412)
+:   Version 4.13 change log
+:   Version 4.12 change log
 
 
 
@@ -1663,8 +1663,8 @@ New! A new tutorial is available for {{site.data.keyword.openshiftlong_notm}} th
 :   [Version 4.16 change log](/docs/openshift?topic=openshift-openshift_changelog_416)
 :   [Version 4.15 change log](/docs/openshift?topic=openshift-openshift_changelog_415)
 :   [Version 4.14 change log](/docs/openshift?topic=openshift-openshift_changelog_414)
-:   [Version 4.13 change log](/docs/openshift?topic=openshift-openshift_changelog_413)
-:   [Version 4.12 change log](/docs/openshift?topic=openshift-openshift_changelog_412)
+:   Version 4.13 change log
+:   Version 4.12 change log
 
 
 
@@ -1698,8 +1698,8 @@ OpenShift Data Foundation cluster add-on patch updates.
 :   [Version 4.16 change log](/docs/openshift?topic=openshift-openshift_changelog_416)
 :   [Version 4.15 change log](/docs/openshift?topic=openshift-openshift_changelog_415)
 :   [Version 4.14 change log](/docs/openshift?topic=openshift-openshift_changelog_414)
-:   [Version 4.13 change log](/docs/openshift?topic=openshift-openshift_changelog_413)
-:   [Version 4.12 change log](/docs/openshift?topic=openshift-openshift_changelog_412)
+:   Version 4.13 change log
+:   Version 4.12 change log
 
 
 
@@ -1734,8 +1734,8 @@ Red Hat Enterprise Linux 9 is now available for {{site.data.keyword.openshiftlon
 :   [Version 4.16 change log](/docs/openshift?topic=openshift-openshift_changelog_416)
 :   [Version 4.15 change log](/docs/openshift?topic=openshift-openshift_changelog_415)
 :   [Version 4.14 change log](/docs/openshift?topic=openshift-openshift_changelog_414)
-:   [Version 4.13 change log](/docs/openshift?topic=openshift-openshift_changelog_413)
-:   [Version 4.12 change log](/docs/openshift?topic=openshift-openshift_changelog_412)
+:   Version 4.13 change log
+:   Version 4.12 change log
 
 
 
@@ -1798,8 +1798,8 @@ Static route add-on version patch update.
 :   [Version 4.16 change log](/docs/openshift?topic=openshift-openshift_changelog_416)
 :   [Version 4.15 change log](/docs/openshift?topic=openshift-openshift_changelog_415)
 :   [Version 4.14 change log](/docs/openshift?topic=openshift-openshift_changelog_414)
-:   [Version 4.13 change log](/docs/openshift?topic=openshift-openshift_changelog_413)
-:   [Version 4.12 change log](/docs/openshift?topic=openshift-openshift_changelog_412)
+:   Version 4.13 change log
+:   Version 4.12 change log
 
 
 
@@ -1827,8 +1827,8 @@ Static route add-on version patch update.
 :   [Version 4.16 change log](/docs/openshift?topic=openshift-openshift_changelog_416)
 :   [Version 4.15 change log](/docs/openshift?topic=openshift-openshift_changelog_415)
 :   [Version 4.14 change log](/docs/openshift?topic=openshift-openshift_changelog_414)
-:   [Version 4.13 change log](/docs/openshift?topic=openshift-openshift_changelog_413)
-:   [Version 4.12 change log](/docs/openshift?topic=openshift-openshift_changelog_412)
+:   Version 4.13 change log
+:   Version 4.12 change log
 
 
 
@@ -1888,8 +1888,8 @@ CLI version `1.0.657` is available.
 :   [Version 4.16 change log](/docs/openshift?topic=openshift-openshift_changelog_416)
 :   [Version 4.15 change log](/docs/openshift?topic=openshift-openshift_changelog_415)
 :   [Version 4.14 change log](/docs/openshift?topic=openshift-openshift_changelog_414)
-:   [Version 4.13 change log](/docs/openshift?topic=openshift-openshift_changelog_413)
-:   [Version 4.12 change log](/docs/openshift?topic=openshift-openshift_changelog_412)
+:   Version 4.13 change log
+:   Version 4.12 change log
 
 
 
@@ -1933,8 +1933,8 @@ New! Upgrade status command.
 :   Master fix packs are applied automatically over the course of several days. You can choose to use the [`ibmcloud ks cluster master update`](/docs/openshift?topic=openshift-kubernetes-service-cli#cs_cluster_update) command yourself without waiting for the update automation to apply the patch. Review the following change logs for your cluster version.
 :   [Version 4.15 change log](/docs/openshift?topic=openshift-openshift_changelog_415)
 :   [Version 4.14 change log](/docs/openshift?topic=openshift-openshift_changelog_414)
-:   [Version 4.13 change log](/docs/openshift?topic=openshift-openshift_changelog_413)
-:   [Version 4.12 change log](/docs/openshift?topic=openshift-openshift_changelog_412)
+:   Version 4.13 change log
+:   Version 4.12 change log
 
 
 
@@ -1959,8 +1959,8 @@ Storage Operator cluster add-on patch update.
 :   Worker node fix packs can be applied by updating or reloading the worker node in classic infrastructure, or replacing the worker node in VPC infrastructure. Review the following change logs for your cluster version.
 :   [Version 4.15 change log](/docs/openshift?topic=openshift-openshift_changelog_415)
 :   [Version 4.14 change log](/docs/openshift?topic=openshift-openshift_changelog_414)
-:   [Version 4.13 change log](/docs/openshift?topic=openshift-openshift_changelog_413)
-:   [Version 4.12 change log](/docs/openshift?topic=openshift-openshift_changelog_412)
+:   Version 4.13 change log
+:   Version 4.12 change log
 
 
 
@@ -1996,8 +1996,8 @@ New audit events for cluster operations
 :   Master fix packs are applied automatically over the course of several days. You can choose to use the [`ibmcloud ks cluster master update`](/docs/openshift?topic=openshift-kubernetes-service-cli#cs_cluster_update) command yourself without waiting for the update automation to apply the patch. Review the following change logs for your cluster version.
 :   [Version 4.15 change log](/docs/openshift?topic=openshift-openshift_changelog_415)
 :   [Version 4.14 change log](/docs/openshift?topic=openshift-openshift_changelog_414)
-:   [Version 4.13 change log](/docs/openshift?topic=openshift-openshift_changelog_413)
-:   [Version 4.12 change log](/docs/openshift?topic=openshift-openshift_changelog_412)
+:   Version 4.13 change log
+:   Version 4.12 change log
 
 
 
@@ -2015,8 +2015,8 @@ New audit events for cluster operations
 :   Worker node fix packs can be applied by updating or reloading the worker node in classic infrastructure, or replacing the worker node in VPC infrastructure. Review the following change logs for your cluster version.
 :   [4.15](/docs/openshift?topic=openshift-openshift_changelog_415)
 :   [4.14](/docs/openshift?topic=openshift-openshift_changelog_414)
-:   [4.13](/docs/openshift?topic=openshift-openshift_changelog_413)
-:   [4.12](/docs/openshift?topic=openshift-openshift_changelog_412)
+:   4.13
+:   4.12
 
 
 
@@ -2048,8 +2048,8 @@ New audit events for cluster operations
 :   Worker node fix packs can be applied by updating or reloading the worker node in classic infrastructure, or replacing the worker node in VPC infrastructure. Review the following change logs for your cluster version.
 :   [4.15](/docs/openshift?topic=openshift-openshift_changelog_415)
 :   [4.14](/docs/openshift?topic=openshift-openshift_changelog_414)
-:   [4.13](/docs/openshift?topic=openshift-openshift_changelog_413)
-:   [4.12](/docs/openshift?topic=openshift-openshift_changelog_412)
+:   4.13
+:   4.12
 
 
 
@@ -2106,8 +2106,8 @@ OpenShift Data Foundation cluster add-on patch updates.
 :   Worker node fix packs can be applied by updating or reloading the worker node in classic infrastructure, or replacing the worker node in VPC infrastructure. Review the following change logs for your cluster version.
 :   [4.15](/docs/openshift?topic=openshift-openshift_changelog_415)
 :   [4.14](/docs/openshift?topic=openshift-openshift_changelog_414)
-:   [4.13](/docs/openshift?topic=openshift-openshift_changelog_413)
-:   [4.12](/docs/openshift?topic=openshift-openshift_changelog_412)
+:   4.13
+:   4.12
 
 
 
@@ -2168,8 +2168,8 @@ Cluster autoscaler add-on patch update for {{site.data.keyword.openshiftlong_not
 :   Master fix packs are applied automatically over the course of several days. You can choose to use the [`ibmcloud ks cluster master update`](/docs/openshift?topic=openshift-kubernetes-service-cli#cs_cluster_update) command yourself without waiting for the update automation to apply the patch. Worker node fix packs can be applied by updating or reloading the worker node in classic infrastructure, or replacing the worker node in VPC infrastructure. Review the following change logs for your cluster version.
 :   [4.15](/docs/openshift?topic=openshift-openshift_changelog_415)
 :   [4.14](/docs/openshift?topic=openshift-openshift_changelog_414)
-:   [4.13](/docs/openshift?topic=openshift-openshift_changelog_413)
-:   [4.12](/docs/openshift?topic=openshift-openshift_changelog_412)
+:   4.13
+:   4.12
 
 
 
@@ -2214,8 +2214,8 @@ Version 4.15 is the default version for {{site.data.keyword.openshiftlong_notm}}
 :   Worker node fix packs can be applied by updating or reloading the worker node in classic infrastructure, or replacing the worker node in VPC infrastructure. Review the following change logs for your cluster version.
 :   [4.15](/docs/openshift?topic=openshift-openshift_changelog_415)
 :   [4.14](/docs/openshift?topic=openshift-openshift_changelog_414)
-:   [4.13](/docs/openshift?topic=openshift-openshift_changelog_413)
-:   [4.12](/docs/openshift?topic=openshift-openshift_changelog_412)
+:   4.13
+:   4.12
 
 Image Key Synchronizer add-on patch update.
 :   For more information, see the [change log](/docs/openshift?topic=openshift-cl-add-ons-ibm-cloud-image-key-synchronizer).
@@ -2247,8 +2247,8 @@ GPU worker node flavors with Red Hat Enterprise Linux CoreOS (RHCOS).
 :   Master fix packs are applied automatically over the course of several days. You can choose to use the [`ibmcloud ks cluster master update`](/docs/openshift?topic=openshift-kubernetes-service-cli#cs_cluster_update) command yourself without waiting for the update automation to apply the patch. Worker node fix packs can be applied by updating or reloading the worker node in classic infrastructure, or replacing the worker node in VPC infrastructure. Review the following change logs for your cluster version.
 :   [4.15](/docs/openshift?topic=openshift-openshift_changelog_415)
 :   [4.14](/docs/openshift?topic=openshift-openshift_changelog_414)
-:   [4.13](/docs/openshift?topic=openshift-openshift_changelog_413)
-:   [4.12](/docs/openshift?topic=openshift-openshift_changelog_412)
+:   4.13
+:   4.12
 
 
 
@@ -2266,8 +2266,8 @@ GPU worker node flavors with Red Hat Enterprise Linux CoreOS (RHCOS).
 :   Worker node fix packs can be applied by updating or reloading the worker node in classic infrastructure, or replacing the worker node in VPC infrastructure. Review the following change logs for your cluster version.
 :   [4.15](/docs/openshift?topic=openshift-openshift_changelog_415)
 :   [4.14](/docs/openshift?topic=openshift-openshift_changelog_414)
-:   [4.13](/docs/openshift?topic=openshift-openshift_changelog_413)
-:   [4.12](/docs/openshift?topic=openshift-openshift_changelog_412)
+:   4.13
+:   4.12
 
 
 
@@ -2337,8 +2337,8 @@ Image Key Synchronizer add-on patch update.
 :   Worker node fix packs can be applied by updating or reloading the worker node in classic infrastructure, or replacing the worker node in VPC infrastructure. Review the following change logs for your cluster version.
 :   [4.15](/docs/openshift?topic=openshift-openshift_changelog_415)
 :   [4.14](/docs/openshift?topic=openshift-openshift_changelog_414)
-:   [4.13](/docs/openshift?topic=openshift-openshift_changelog_413)
-:   [4.12](/docs/openshift?topic=openshift-openshift_changelog_412)
+:   4.13
+:   4.12
 
 
 
@@ -2398,8 +2398,8 @@ Red Hat CoreOS worker nodes are available for new VPC clusters beginning with ve
 {{site.data.keyword.openshiftlong_notm}} master and worker node fix packs.
 :   Master fix packs are applied automatically over the course of several days. You can choose to use the [`ibmcloud ks cluster master update`](/docs/openshift?topic=openshift-kubernetes-service-cli#cs_cluster_update) command yourself without waiting for the update automation to apply the patch. Worker node fix packs can be applied by updating or reloading the worker node in classic infrastructure, or replacing the worker node in VPC infrastructure. Review the following change logs for your cluster version.
 :   [4.14](/docs/openshift?topic=openshift-openshift_changelog_414)
-:   [4.13](/docs/openshift?topic=openshift-openshift_changelog_413)
-:   [4.12](/docs/openshift?topic=openshift-openshift_changelog_412)
+:   4.13
+:   4.12
 
 
 
@@ -2430,8 +2430,8 @@ Red Hat CoreOS worker nodes are available for new VPC clusters beginning with ve
 Worker node fix packs are available {{site.data.keyword.openshiftlong_notm}}. 
 :    Worker node updates can be applied by updating or reloading the worker node in classic infrastructure, or replacing the worker node in VPC infrastructure. Review the following change logs for your cluster version.
 :   [4.14](/docs/openshift?topic=openshift-openshift_changelog_414)
-:   [4.13](/docs/openshift?topic=openshift-openshift_changelog_413)
-:   [4.12](/docs/openshift?topic=openshift-openshift_changelog_412)
+:   4.13
+:   4.12
 
 
 
@@ -2473,8 +2473,8 @@ Image Key Synchronizer add-on patch update.
 
 Master patch updates for {{site.data.keyword.openshiftlong_notm}} clusters. Master patches are applied automatically over the course of several days. You can choose to use the [`ibmcloud ks cluster master update`](/docs/openshift?topic=openshift-kubernetes-service-cli#cs_cluster_update) command yourself without waiting for the update automation to apply the patch. Review the change logs for your cluster version. 
 :   [4.14](/docs/openshift?topic=openshift-openshift_changelog_414)
-:   [4.13](/docs/openshift?topic=openshift-openshift_changelog_413)
-:   [4.12](/docs/openshift?topic=openshift-openshift_changelog_412)
+:   4.13
+:   4.12
 
 
 
@@ -2489,8 +2489,8 @@ Master patch updates for {{site.data.keyword.openshiftlong_notm}} clusters. Mast
 Worker node fix packs are available {{site.data.keyword.openshiftlong_notm}}. 
 :    Worker node updates can be applied by updating or reloading the worker node in classic infrastructure, or replacing the worker node in VPC infrastructure. Review the following change logs for your cluster version.
 :   [4.14](/docs/openshift?topic=openshift-openshift_changelog_414)
-:   [4.13](/docs/openshift?topic=openshift-openshift_changelog_413)
-:   [4.12](/docs/openshift?topic=openshift-openshift_changelog_412)
+:   4.13
+:   4.12
 
 
 
@@ -2512,8 +2512,8 @@ New! NVIDIA L40 GPU support. You can now create VPC clusters with worker nodes w
 Worker node fix packs are available {{site.data.keyword.openshiftlong_notm}}. 
 :    Worker node updates can be applied by updating or reloading the worker node in classic infrastructure, or replacing the worker node in VPC infrastructure. Review the following change logs for your cluster version.
 :   [4.14](/docs/openshift?topic=openshift-openshift_changelog_414)
-:   [4.13](/docs/openshift?topic=openshift-openshift_changelog_413)
-:   [4.12](/docs/openshift?topic=openshift-openshift_changelog_412)
+:   4.13
+:   4.12
 
 Version 4.14 the default version for {{site.data.keyword.openshiftlong_notm}}.
 :   For a complete list of available versions, see the [version information](/docs/openshift?topic=openshift-openshift_versions).
@@ -2548,7 +2548,7 @@ Version 4.11 is no longer supported.
 
 
 {{site.data.keyword.openshiftlong_notm}} version 4.10 is no longer supported.
-:   Update your cluster to at least [version 4.11](/docs/openshift?topic=openshift-cs_versions_411) as soon as possible.
+:   Update your cluster to at least version 4.11 as soon as possible.
 
 
 CLI version `1.0.601` is available.
@@ -2578,9 +2578,9 @@ Enable remote health monitoring with Telemetry
 
 Master patch updates for {{site.data.keyword.openshiftlong_notm}} clusters. Master patches are applied automatically over the course of several days. You can choose to use the [`ibmcloud ks cluster master update`](/docs/openshift?topic=openshift-kubernetes-service-cli#cs_cluster_update) command yourself without waiting for the update automation to apply the patch. Review the change logs for your cluster version. 
 :   [4.14](/docs/openshift?topic=openshift-openshift_changelog_414)
-:   [4.13](/docs/openshift?topic=openshift-openshift_changelog_413)
-:   [4.12](/docs/openshift?topic=openshift-openshift_changelog_412)
-:   [4.11](/docs/openshift?topic=openshift-openshift_changelog_411)
+:   4.13
+:   4.12
+:   4.11
 
 
 
@@ -2600,9 +2600,9 @@ Worker node fix packs are available {{site.data.keyword.openshiftlong_notm}}.
 :    Worker node updates can be applied by updating or reloading the worker node in classic infrastructure, or replacing the worker node in VPC infrastructure.
 :    Review the following change logs for your cluster version.
     - [4.14.13_1553_openshift](/docs/openshift?topic=openshift-openshift_changelog_414)
-    - [4.13.34_1563_openshift](/docs/openshift?topic=openshift-openshift_changelog_413)
-    - [4.12.50_1582_openshift](/docs/openshift?topic=openshift-openshift_changelog_412)
-    - [4.11.58_1597_openshift](/docs/openshift?topic=openshift-openshift_changelog_411)
+    - 4.13.34_1563_openshift
+    - 4.12.50_1582_openshift
+    - 4.11.58_1597_openshift
 
 
 
@@ -2682,9 +2682,9 @@ Worker node fix packs are available {{site.data.keyword.openshiftlong_notm}}.
 :    Worker node updates can be applied by updating or reloading the worker node in classic infrastructure, or replacing the worker node in VPC infrastructure.
 :    Review the following change logs for your cluster version.
     - [4.14.11_1547_openshift](/docs/openshift?topic=openshift-openshift_changelog_414)
-    - [4.13.32_1557_openshift](/docs/openshift?topic=openshift-openshift_changelog_413)
-    - [4.12.49_1578_openshift](/docs/openshift?topic=openshift-openshift_changelog_412)
-    - [4.11.58_1591_openshift](/docs/openshift?topic=openshift-openshift_changelog_411)
+    - 4.13.32_1557_openshift
+    - 4.12.49_1578_openshift
+    - 4.11.58_1591_openshift
 
 
 
@@ -2718,9 +2718,9 @@ CLI version `1.0.595` is available.
 Master fix packs are available for {{site.data.keyword.openshiftlong_notm}}
 :   Review the change logs for your cluster version. Master patch updates are applied automatically.
 :   [4.14.8_1545_openshift](/docs/openshift?topic=openshift-openshift_changelog_414)
-:   [4.13.28_1555_openshift](/docs/openshift?topic=openshift-openshift_changelog_413)
-:   [4.12.46_1576_openshift](/docs/openshift?topic=openshift-openshift_changelog_412)
-:   [4.11.56_1589_openshift](/docs/openshift?topic=openshift-openshift_changelog_411)
+:   4.13.28_1555_openshift
+:   4.12.46_1576_openshift
+:   4.11.56_1589_openshift
 
 
 
@@ -2744,10 +2744,10 @@ Worker node fix packs are available.
 :    Worker node updates can be applied by updating or reloading the worker node in classic infrastructure, or replacing the worker node in VPC infrastructure.
 :    Review the following change logs for your cluster version.
     - [4.14.10_1546_openshift](/docs/openshift?topic=openshift-openshift_changelog_414)
-    - [4.13.30_1556_openshift](/docs/openshift?topic=openshift-openshift_changelog_413)
-    - [4.12.47_1577_openshift](/docs/openshift?topic=openshift-openshift_changelog_412)
-    - [4.11.57_1590_openshift](/docs/openshift?topic=openshift-openshift_changelog_411)
-    - [4.10.67_1597_openshift](/docs/openshift?topic=openshift-openshift_changelog_410)
+    - 4.13.30_1556_openshift
+    - 4.12.47_1577_openshift
+    - 4.11.57_1590_openshift
+    - 4.10.67_1597_openshift
 
 
 
@@ -2788,10 +2788,10 @@ Worker node fix packs are available.
 :    Worker node updates can be applied by updating or reloading the worker node in classic infrastructure, or replacing the worker node in VPC infrastructure.
 :    Review the following change logs for your cluster version.
     - [4.14.8_1544_openshift](/docs/openshift?topic=openshift-openshift_changelog_414)
-    - [4.13.28_1554_openshift](/docs/openshift?topic=openshift-openshift_changelog_413)
-    - [4.12.46_1575_openshift](/docs/openshift?topic=openshift-openshift_changelog_412)
-    - [4.11.56_1588_openshift](/docs/openshift?topic=openshift-openshift_changelog_411)
-    - [4.10.67_1596_openshift](/docs/openshift?topic=openshift-openshift_changelog_410)
+    - 4.13.28_1554_openshift
+    - 4.12.46_1575_openshift
+    - 4.11.56_1588_openshift
+    - 4.10.67_1596_openshift
 
 
 
@@ -2856,143 +2856,7 @@ Worker node fix packs are available.
 :    Worker node updates can be applied by updating or reloading the worker node in classic infrastructure, or replacing the worker node in VPC infrastructure.
 :    Review the following change logs for your cluster version.
     - [4.14.6_1542_openshift](/docs/openshift?topic=openshift-openshift_changelog_414)
-    - [4.13.26_1553_openshift](/docs/openshift?topic=openshift-openshift_changelog_413)
-    - [4.12.45_1574_openshift](/docs/openshift?topic=openshift-openshift_changelog_412)
-    - [4.11.55_1587_openshift](/docs/openshift?topic=openshift-openshift_changelog_411)
-    - [4.10.67_1595_openshift](/docs/openshift?topic=openshift-openshift_changelog_410)
-
-
-
-
-## December 2023
-{: #openshift-dec23}
-
-### 18 December 2023
-{: #openshift-dec1823}
-{: release-note}
-
-
-
-
-
-Worker node fix packs are available. 
-:    Worker node updates can be applied by updating or reloading the worker node in classic infrastructure, or replacing the worker node in VPC infrastructure.
-:    Review the following change logs for your cluster version.
-    - [4.13.26_1552_openshift](/docs/openshift?topic=openshift-openshift_changelog_413)
-    - [4.12.45_1573_openshift](/docs/openshift?topic=openshift-openshift_changelog_412)
-    - [4.11.55_1586_openshift](/docs/openshift?topic=openshift-openshift_changelog_411)
-    - [4.10.67_1594_openshift](/docs/openshift?topic=openshift-openshift_changelog_410)
-
-
-
-
-### 15 December 2023
-{: #openshift-dec1523}
-{: release-note}
-
-New APIs for setting and getting the OAuth access type for private-only VPC clusters.
-:   You can now use the `POST /network/v2/oauth-access-type/{idOrName}/set` and the `GET /network/v2/oauth-access-type/{idOrName}` to set the OAuth and console access type for your cluster. For more information, see [Setting the OAuth access type for VPC clusters](/docs/openshift?topic=openshift-setting-oauth-access-type).
-
-
-
-
-### 14 December 2023
-{: #openshift-dec1423}
-{: release-note}
-
-Information on worker node removal priority.
-:   Details are available for [automated worker node removal](/docs/openshift?topic=openshift-update#worker-scaledown-logic) when scaling down a worker pool.
-
-
-Kubernetes version 1.24 is unsupported.
-:   Update your cluster to at least version 1.25 as soon as possible.
-
-
-
-
-
-### 13 December 2023
-{: #openshift-dec1323}
-{: release-note}
-
-{{site.data.keyword.openshiftlong_notm}} 4.14.
-:   You can create or [update clusters to version 4.14](/docs/openshift?topic=openshift-openshift_changelog_414). With {{site.data.keyword.openshiftlong_notm}} version 4.14, you get the latest features, as well as component updates on {{site.data.keyword.openshiftlong_notm}}.
-
-Networking changes for VPC clusters 4.14 and later.
-:   In version 4.13 and earlier, VPC clusters pulled container images through a private cloud service endpoint for {{site.data.keyword.registrylong_notm}}. For version 4.14 and later, this network path is updated so that images are pulled through a VPE gateway instead of a private service endpoint. For more information, see the [4.14 change log](/docs/openshift?topic=openshift-openshift_changelog_414).
-
-Red Hat OpenShift OAuth and console access changes for cluster version 4.14.
-:   For clusters that run version 4.14, the default method for accessing the Red Hat OpenShift console is through the private service endpoint. This change is a reversion of changes introduced in 4.13. For more information, see the following docs.
-:   - **Previous**: [4.13 change log](/docs/openshift?topic=openshift-openshift_changelog_413).
-:   - **Current**: [4.14 change log](/docs/openshift?topic=openshift-openshift_changelog_414).
- 
-Master fix pack and worker node fix pack update.
-:   {{site.data.keyword.openshiftlong_notm}} [master fix pack 4.13.0_1522_openshift and worker node fix pack 4.13.1_1521_openshift](/docs/openshift?topic=openshift-openshift_changelog_414) are available.
-
-Certified Kubernetes
-:   Version [4.14](/docs/openshift?topic=openshift-openshift_changelog_414) release is now certified.
-
-
-
-
-
-
-### 12 December 2023
-{: #openshift-dec1223}
-{: release-note}
-
-Updating the global pull secret in {{site.data.keyword.satelliteshort}} clusters
-:   You can update the global pull secret in {{site.data.keyword.satelliteshort}} clusters to pull images from a private registry, such as the Cloud Pak Entitled Registry. For more information, see [Updating the global pull secret in {{site.data.keyword.satelliteshort}} clusters](/docs/openshift?topic=openshift-satellite-registry-pull-secret).
-
-
-
-
-
-### 11 December 2023
-{: #openshift-dec1123}
-{: release-note}
-
-{{site.data.keyword.openshiftlong_notm}} version 4.11 is deprecated.
-:   Update your cluster to at least [version 4.12](/docs/openshift?topic=openshift-cs_versions_412) as soon as possible.
-
-
-
-
-
-
-### 6 December 2023
-{: #openshift-dec0623}
-{: release-note}
-
-
-
-
-
-Master fix packs are available. 
-:   Review the change logs for your cluster version. Master patch updates are applied automatically.
-:   [4.13.23_1550_openshift](/docs/openshift?topic=openshift-openshift_changelog_413)
-:   [4.12.44_1571_openshift](/docs/openshift?topic=openshift-openshift_changelog_412)
-:   [4.11.53_1584_openshift](/docs/openshift?topic=openshift-openshift_changelog_411)
-
-
-
-
-
-
-
-### 4 December 2023
-{: #openshift-dec0423}
-{: release-note}
-
-
-
-
-
-Worker node fix packs are available. 
-:    Worker node updates can be applied by updating or reloading the worker node in classic infrastructure, or replacing the worker node in VPC infrastructure.
-:    Review the following change logs for your cluster version.
-    - [4.13.24_1551_openshift](/docs/openshift?topic=openshift-openshift_changelog_413)
-    - [4.12.44_1572_openshift](/docs/openshift?topic=openshift-openshift_changelog_412)
-    - [4.11.54_1585_openshift](/docs/openshift?topic=openshift-openshift_changelog_411)
-    - [4.10.67_1593_openshift](/docs/openshift?topic=openshift-openshift_changelog_410)
-  
+    - 4.13.26_1553_openshift
+    - 4.12.45_1574_openshift
+    - 4.11.55_1587_openshift
+    - 4.10.67_1595_openshift

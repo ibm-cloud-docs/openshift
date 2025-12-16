@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2025
-lastupdated: "2025-02-21"
+lastupdated: "2025-12-16"
 
 
 keywords: openshift, firewall, acl, acls, access control list, rules, security group
@@ -135,33 +135,3 @@ The `spec.podSelector.matchLabels` section lists the labels for the Srv1 back-en
 Traffic can now flow from finance microservices to the accounts Srv1 back end. The accounts Srv1 back end can respond to finance microservices, but can't establish a reverse traffic connection.
 
 In this example, all traffic from all microservices in the finance namespace is permitted. You can't allow traffic from specific app pods in another namespace because `podSelector` and `namespaceSelector` can't be combined.
-
-### Required policy rules for VPCs with a cluster that runs at version  or later
-{: #policy-rules-128}
-
-In version 1.27 and earlier, VPC clusters pull images from the IBM Cloud Container Registry through a private cloud service endpoint for the Container Registry. For version  and later, this network path is updated so that images are pulled through a VPE gateway instead of a private service endpoint. This change affects all clusters in a VPC; when you create or update a single cluster in a VPC to version , all clusters in that VPC, regardless of their version or type, have their network path updated. For more information, see [Networking changes for VPC clusters](/docs/containers?topic=containers-cs_versions_128#networking_128).
-
-If you have a cluster in your VPC that runs version  or later and you use Calico policies to restrict outbound connections from cluster workers, you must add the following policy rule to allow connections to the VPE Gateway for Registry. This policy must be created for each zone in the VPC and must specify the entire VPC address prefix range for the zone as the destination CIDR. To find the VPC address prefix range for each zone in the VPC, run `ibmcloud is vpc-address-prefixes <vpc_name_or_id>`.
-
-```yaml
-apiVersion: projectcalico.org/v3
-kind: GlobalNetworkPolicy
-metadata:
-  name: allow-vpe-gateway-registry
-spec:
-  egress:
-  - action: Allow
-    destination:
-      nets:
-      - <entire-vpc-address-prefix-range> # example: 10.245.0.0/16
-      ports:
-      - 443
-      - 4443
-    protocol: TCP
-    source: {}
-  order: 500
-  selector: ibm.role == 'worker_private'
-  types:
-  - Egress
-```
-{: codeblock}

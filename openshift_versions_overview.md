@@ -3,7 +3,7 @@
 copyright:
   years: 2014, 2025
 
-lastupdated: "2025-12-11"
+lastupdated: "2025-12-16"
 
 keywords: openshift, version, update, upgrade
 
@@ -157,6 +157,3 @@ To keep your nodes secure, you must install worker node fix packs as soon as pos
 
 Unsupported clusters are not provided with security and patch updates and are not supported by {{site.data.keyword.cloud_notm}} Support. Although your cluster and apps might continue to run for a time, you can no longer create, reload, or take other corrective actions on your cluster master or worker nodes when an issue occurs. You can still delete the cluster or worker nodes, or update the cluster to the next version. Review the potential impacts and immediately [update the cluster](/docs/openshift?topic=openshift-update#update) to continue receiving important security updates and support. If your cluster master is two or more versions behind the oldest supported version, you must [make a new cluster](/docs/openshift?topic=openshift-clusters#clusters) and [deploy your apps](/docs/openshift?topic=openshift-deploy_app) to the new cluster.
 {: shortdesc}
-
-**Unsupported {{site.data.keyword.openshiftshort}} versions**: 
-:   [Archived version history](/docs/openshift?topic=openshift-sitemap#sitemap_archived_version_history)
