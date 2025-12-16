@@ -163,7 +163,7 @@ keyword:
   openshift_latest_release_date: 3 September 2025
   openshift_latest_unsupported_certainty: tentative
   openshift_latest_unsupported_date: 26 May 2027
-  openshift_latest_version: 4.19
+  openshift_latest_version: '4.19'
   satellite_410_RHEL_7_unsupported_date: 6 December 2022
   satellite_410_RHEL_8_unsupported_date: ''
   satellite_410_deprecated: 'True'
@@ -264,4 +264,4 @@ keyword:
   satellite_latest_release_date: 3 September 2025
   satellite_latest_unsupported_certainty: tentative
   satellite_latest_unsupported_date: 26 May 2027
-  satellite_latest_version: 4.19
+  satellite_latest_version: '4.19'
