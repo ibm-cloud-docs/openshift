@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2025
-lastupdated: "2025-12-12"
+lastupdated: "2025-12-16"
 
 
 keywords: openshift
@@ -1227,50 +1227,6 @@ subcollection: openshift
         * OpenShift Data Foundation add-on version `4.13.9`.
 
     * [2 January 2024](/docs/openshift?topic=openshift-openshift-relnotes#openshift-jan0224)
-
-        * Worker node fix packs are available. 
-
-* [December 2023](/docs/openshift?topic=openshift-openshift-relnotes#openshift-dec23)
-
-    * [18 December 2023](/docs/openshift?topic=openshift-openshift-relnotes#openshift-dec1823)
-
-        * Worker node fix packs are available. 
-
-    * [15 December 2023](/docs/openshift?topic=openshift-openshift-relnotes#openshift-dec1523)
-
-        * New APIs for setting and getting the OAuth access type for private-only VPC clusters.
-
-    * [14 December 2023](/docs/openshift?topic=openshift-openshift-relnotes#openshift-dec1423)
-
-        * Information on worker node removal priority.
-
-        * Kubernetes version 1.24 is unsupported.
-
-    * [13 December 2023](/docs/openshift?topic=openshift-openshift-relnotes#openshift-dec1323)
-
-        * {{site.data.keyword.openshiftlong_notm}} 4.14.
-
-        * Networking changes for VPC clusters 4.14 and later.
-
-        * Red Hat OpenShift OAuth and console access changes for cluster version 4.14.
-
-        * Master fix pack and worker node fix pack update.
-
-        * Certified Kubernetes
-
-    * [12 December 2023](/docs/openshift?topic=openshift-openshift-relnotes#openshift-dec1223)
-
-        * Updating the global pull secret in {{site.data.keyword.satelliteshort}} clusters
-
-    * [11 December 2023](/docs/openshift?topic=openshift-openshift-relnotes#openshift-dec1123)
-
-        * {{site.data.keyword.openshiftlong_notm}} version 4.11 is deprecated.
-
-    * [6 December 2023](/docs/openshift?topic=openshift-openshift-relnotes#openshift-dec0623)
-
-        * Master fix packs are available. 
-
-    * [4 December 2023](/docs/openshift?topic=openshift-openshift-relnotes#openshift-dec0423)
 
         * Worker node fix packs are available. 
 
@@ -2596,8 +2552,6 @@ subcollection: openshift
 * [Isolate app services within a namespace](/docs/openshift?topic=openshift-vpc-kube-policies#services_one_ns)
 
 * [Isolate app services between namespaces](/docs/openshift?topic=openshift-vpc-kube-policies#services_across_ns)
-
-    * [Required policy rules for VPCs with a cluster that runs at version  or later](/docs/openshift?topic=openshift-vpc-kube-policies#policy-rules-128)
 
 [Opening required ports and IP addresses in allowlists](/docs/openshift?topic=openshift-vpc-firewall#vpc-firewall)
 

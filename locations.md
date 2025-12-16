@@ -3,7 +3,7 @@
 copyright:
   years: 2014, 2025
 
-lastupdated: "2025-12-08"
+lastupdated: "2025-12-16"
 
 keywords: openshift, kubernetes, mzr, szr, multizone, multi az
 
@@ -81,9 +81,6 @@ If you create a classic cluster in a region with only one data center, the highl
 {: shortdesc}
 
 Classic regions with one data center are managed from the regional endpoint located in the nearest region that supports classic data centers, such as `mon01` to `us-east` or `sao01` to `us-south`.
-
-The Milan (`mil01`) datacenter is deprecated and closes on 31 October 2025. Migrate your {{site.data.keyword.openshiftlong_notm}} on IBM Cloud clusters currently hosted in `mil01` to another IBM Cloud datacenter by 31 October 2025.
-{: deprecated}
 
 | Geography | Country | Metro | Region | Zone | Managed from region |
 | --- | --- | --- | --- | --- | --- |
