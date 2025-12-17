@@ -3,7 +3,7 @@
 copyright:
   years: 2024, 2025
 
-lastupdated: "2025-12-12"
+lastupdated: "2025-12-17"
 
 
 keywords: change log, version history, VPC File CSI Driver
@@ -26,6 +26,19 @@ Review the version history for VPC File CSI Driver.
 
 ## Version 2.0
 {: #cl-add-ons-vpc-file-csi-driver-2.0}
+
+
+### v2.0.21_301434433, released 05 December 2025
+{: #cl-add-ons-vpc-file-csi-driver-v2021_301434433}
+
+[Default version]{: tag-green}
+
+- Resolves the following CVEs: [CVE-2025-9230](https://nvd.nist.gov/vuln/detail/CVE-2025-9230){: external}.
+- Updates Go to version `1.25.4`.
+- Introduces Beta Snapshot support in the VPC File CSI Driver for DP2 and RFS profile-based storage classes.
+- Introduces support for default VolumeSnapshotClasses to enhance the user experience when creating snapshots, including ibmc-vpcfile-snapshot-delete and ibmc-vpcfile-snapshot-retain.
+- `csi-snapshotter v8.2.1`
+- `armada-storage-secret v1.2.71`
 
 
 ### 2.0.20_296667134, released 12 November 2025

@@ -3,7 +3,7 @@
 copyright:
   years: 2024, 2025
 
-lastupdated: "2025-12-12"
+lastupdated: "2025-12-17"
 
 
 keywords: change log, version history, IBM Storage Operator
@@ -26,6 +26,16 @@ Review the version history for IBM Storage Operator.
 
 ## Version 1.0
 {: #cl-add-ons-ibm-storage-operator-1.0}
+
+
+### v1.0.29_301949998, released 05 December 2025
+{: #cl-add-ons-ibm-storage-operator-v1029_301949998}
+
+[Default version]{: tag-green}
+
+- Resolves the following CVEs: [CVE-2025-9230](https://nvd.nist.gov/vuln/detail/CVE-2025-9230){: external}.
+- Updates Go to version `1.25.4`.
+- Adds support for enabling and disabling the snapshot functionality by using the IS_SNAPSHOT_ENABLED flag. Snapshots are enabled by default.
 
 
 ### 1.0.27_264, released 22 September 2025
