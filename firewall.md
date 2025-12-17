@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2025
-lastupdated: "2025-12-12"
+lastupdated: "2025-12-17"
 
 
 keywords: openshift
@@ -384,7 +384,7 @@ To permit worker nodes to communicate with {{site.data.keyword.registrylong_notm
 - `TCP port 443 FROM <each_worker_node_privateIP> TO <registry_ip>`
 - Replace `<registry_ip>` with the registry IP address to which you want to allow traffic. The global registry stores IBM-provided public images, and regional registries store your own private or public images.
 
-On 23 June 2022, only the `br-sao` and `ca-tor` regions changed. The remaining regions changed on 5 July 2022. For more information, see [{{site.data.keyword.registryshort}} private IP addresses changed on 5 July 2022](/docs/Registry?topic=Registry-registry_notices_iam_private_network).
+On 23 June 2022, only the `br-sao` and `ca-tor` regions changed. The remaining regions changed on 5 July 2022.
 {: note}
 
 | {{site.data.keyword.openshiftlong_notm}} region | Registry address  | Registry private IP addresses until 5 July 2022 | Registry private IP addresses after 5 July 2022 |
