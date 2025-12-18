@@ -396,21 +396,21 @@ Complete the following steps to restore a static snapshot.
 1. Create a PVC. Save the following configuration as a file called `pvc2.yaml`.
 
     ```yaml
-		apiVersion: v1
-		kind: PersistentVolumeClaim
-		metadata:
-			name: restore-static-pvc
-		spec:
-			storageClassName: ibmc-vpc-file-min-iops
-			dataSource:
-				name: static-file-snapshot
-				kind: VolumeSnapshot
-				apiGroup: snapshot.storage.k8s.io
-			accessModes:
-				- ReadWriteMany
-			resources:
-				requests:
-					storage: 10Gi
+    apiVersion: v1
+    kind: PersistentVolumeClaim
+    metadata:
+      name: restore-static-pvc
+    spec:
+      storageClassName: ibmc-vpc-file-min-iops
+      dataSource:
+        name: static-file-snapshot
+        kind: VolumeSnapshot
+        apiGroup: snapshot.storage.k8s.io
+      accessModes:
+        - ReadWriteMany
+      resources:
+        requests:
+          storage: 10Gi
     ```
     {: codeblock}
 
