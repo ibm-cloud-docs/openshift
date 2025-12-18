@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2025
-lastupdated: "2025-12-17"
+lastupdated: "2025-12-18"
 
 
 keywords: kubernetes, release notes, openshift, {{site.data.keyword.openshiftlong_notm}}
@@ -2559,7 +2559,7 @@ Version 4.14 the default version for {{site.data.keyword.openshiftlong_notm}}.
 {: release-note}
 
 Version 4.11 is no longer supported.
-:   Update your cluster to at least [version 4.12](/docs/openshift?topic=openshift-cs_versions_412) as soon as possible.
+:   Update your cluster to at least version 4.12 as soon as possible.
 
 
 

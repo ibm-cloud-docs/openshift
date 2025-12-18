@@ -2,7 +2,7 @@
 
 copyright:
   years: 2024, 2025
-lastupdated: "2025-11-21"
+lastupdated: "2025-12-18"
 
 
 keywords: openshift, version, update, upgrade, 4.19, update openshift
@@ -54,7 +54,7 @@ Review changes that you might need to make when you [update a cluster](/docs/ope
 For Satellite clusters: The 4.19 RHCOS image is not yet supported in Satellite. To create a CoreOS-enabled Satellite cluster with version 4.19, you must provision an RHCOS host at version 4.18 or earlier and attach the host to your location. Then, assign the host to your 4.19 cluster. After the host is assigned to your cluster, it automatically updates to match the Red Hat OpenShift version of the cluster, including 4.19. 
 {: important}
 
-The [Satellite Location Sizing Requirements](/docs/satellite?topic=satellite-location-sizing) for hosting {{site.data.keyword.openshiftlong_notm}} version 4.19 clusters are the same regardless of whether the location is RHEL (non-CoreOS) or CoreOS-enabled. The requirements for location nodes are the same as those for [CoreOS-enabled locations](/docs/satellite?topic=satellite-location-sizing#control-plane-how-many-clusters-rhcos).
+The [Satellite Location Sizing Requirements](/docs/satellite?topic=satellite-location-sizing) for hosting {{site.data.keyword.openshiftlong_notm}} version 4.19 clusters are the same regardless of whether the location is RHEL (non-CoreOS) or CoreOS-enabled. The requirements for location nodes are the same as those for [CoreOS-enabled locations](/docs/satellite?topic=satellite-location-sizing).
 {: important}
 
 
