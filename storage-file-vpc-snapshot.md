@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2025, 2025
-lastupdated: "2025-12-12"
+lastupdated: "2025-12-18"
 
 
 keywords: openshift, containers, file storage for vpc, snapshots, create snapshot
@@ -408,7 +408,7 @@ Complete the following steps to restore a static snapshot.
         apiGroup: snapshot.storage.k8s.io
       accessModes:
         - ReadWriteMany
-       resources:
+      resources:
         requests:
           storage: 10Gi
     ```
