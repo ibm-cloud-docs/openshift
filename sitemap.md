@@ -3471,7 +3471,7 @@ subcollection: openshift
 
 * [Considerations](/docs/openshift?topic=openshift-ai-addon-install#ai-consideration)
 
-* [Before you begin](/docs/openshift?topic=openshift-ai-addon-install&interface=cli#ai-before)
+* [Prerequisites](/docs/openshift?topic=openshift-ai-addon-install&interface=cli#ai-before)
 
 * [Before you begin](/docs/openshift?topic=openshift-ai-addon-install&interface=ui#ai-before-ui)
 
