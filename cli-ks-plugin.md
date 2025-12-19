@@ -183,6 +183,34 @@ Minimum required permissions
 
 
 
+#### `ibmcloud oc cluster addon disable vpc-block-csi-driver`
+{: #cs_cluster_addon_disable_vpc-block-csi-driver}
+
+[Classic infrastructure]{: tag-classic-inf}
+
+
+Disable the [{{site.data.keyword.vpc_short}} Block Storage CSI Driver](/docs/openshift?topic=openshift-vpc-block) add-on.
+{: shortdesc}
+
+```sh
+ibmcloud oc cluster addon disable vpc-block-csi-driver --cluster CLUSTER [-f]
+```
+{: pre}
+
+Minimum required permissions
+:   **Administrator** platform access role for the cluster in {{site.data.keyword.containerlong_notm}}
+
+**Command options**:
+
+`--cluster CLUSTER`
+:    Required: The name or ID of the cluster.
+
+`-f`
+:    Optional: Force the command to run with no user prompts.
+
+
+
+
 ### `ibmcloud oc cluster addon enable`
 {: #cs_cluster_addon_enable}
 
