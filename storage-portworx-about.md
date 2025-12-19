@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2025
-lastupdated: "2025-12-08"
+lastupdated: "2025-12-19"
 
 
 keywords: portworx, kubernetes, openshift
@@ -114,7 +114,7 @@ All set? Let's start with [creating a cluster with an SDS worker pool of at leas
 
 
 Using existing Portworx volumes
-:   If you have an existing Portworx volume that you created manually or that was not automatically deleted when you deleted the PVC, you can statically provision the corresponding PV and PVC and use this volume with your app. For more information, see [Using existing volumes](https://docs.portworx.com/portworx-enterprise/platform/provision-storage/create-pvcs/using-preprovisioned-volumes){: external}.
+:   If you have an existing Portworx volume that you created manually or that was not automatically deleted when you deleted the PVC, you can statically provision the corresponding PV and PVC and use this volume with your app. For more information, see [Using existing volumes](https://docs.portworx.com/portworx-enterprise/provision-storage/create-pvcs/using-preprovisioned-volumes){: external}.
 
 Running stateful sets on Portworx
 :   If you have a stateful app that you want to deploy as a stateful set into your cluster, you can set up your stateful set to use storage from your Portworx cluster. For more information, see [Create a MySQL StatefulSet](https://docs.portworx.com/portworx-enterprise/deploy-your-applications/application-install-with-kubernetes/cassandra){: external}.

@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2025
-lastupdated: "2025-10-17"
+lastupdated: "2025-12-19"
 
 
 keywords: kubernetes, openshift, red hat, red hat openshift, update, upgrade, openshift
@@ -42,7 +42,7 @@ Canary or A/B deployment
 ## Scaling apps
 {: #app_scaling}
 
-With Kubernetes, you can enable [horizontal pod autoscaling](https://kubernetes.io/docs/tasks/run-application/horizontal-pod-autoscale/){: external} to automatically increase or decrease the number of instances of your apps based on CPU.
+With Kubernetes, you can enable [horizontal pod autoscaling](https://kubernetes.io/docs/concepts/workloads/autoscaling/horizontal-pod-autoscale/){: external} to automatically increase or decrease the number of instances of your apps based on CPU.
 {: shortdesc}
 
 Want to scale your worker nodes instead of your pods? Check out the [cluster autoscaler](/docs/openshift?topic=openshift-cluster-scaling-install-addon).
