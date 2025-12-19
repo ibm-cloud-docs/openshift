@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2025
-lastupdated: "2025-07-07"
+lastupdated: "2025-12-19"
 
 
 keywords: portworx, kubernetes, openshift
@@ -181,7 +181,7 @@ Start creating Portworx volumes by using Kubernetes dynamic provisioning.
     To view the details of a storage class, run `oc describe storageclass <storageclass_name>`.
     {: tip}
 
-2. If you don't want to use an existing storage class, create a customized storage class. For a full list of supported options that you can specify in your storage class, see [Using Dynamic Provisioning](https://docs.portworx.com/portworx-enterprise/platform/provision-storage/create-pvcs/dynamic-provisioning.html){: external}.
+2. If you don't want to use an existing storage class, create a customized storage class. For a full list of supported options that you can specify in your storage class, see [Using Dynamic Provisioning](https://docs.portworx.com/portworx-enterprise/provision-storage/create-pvcs/dynamic-provisioning){: external}.
     1. Create a configuration file for your storage class.
         ```yaml
         kind: StorageClass
@@ -336,7 +336,7 @@ To access the storage from your app, you must mount the PVC to your app.
     :   The name of the container that you want to deploy to your cluster.
     
     `spec.containers.securityContext.fsGroup`
-    :   Optional: To access your storage with a non-root user, specify the [security context](https://kubernetes.io/docs/tasks/configure-pod-container/security-context/){: external} for your pod and define the set of users that you want to grant access in the `fsGroup` section on your deployment YAML. For more information, see [Accessing Portworx volumes with a non-root user](https://docs.portworx.com/portworx-enterprise/platform/provision-storage/create-pvcs/access-via-non-root-users){: external}.
+    :   Optional: To access your storage with a non-root user, specify the [security context](https://kubernetes.io/docs/tasks/configure-pod-container/security-context/){: external} for your pod and define the set of users that you want to grant access in the `fsGroup` section on your deployment YAML. For more information, see [Accessing Portworx volumes with a non-root user](https://docs.portworx.com/portworx-enterprise/provision-storage/create-pvcs/access-via-non-root-users){: external}.
     
     `spec.containers.volumeMounts.mountPath`
     :   The absolute path of the directory to where the volume is mounted inside the container. If you want to share a volume between different apps, you can specify [volume sub paths](https://kubernetes.io/docs/concepts/storage/volumes/#using-subpath){: external} for each of your apps.

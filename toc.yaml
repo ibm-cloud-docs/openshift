@@ -450,7 +450,6 @@ toc:
       - include: ../account/status-bps.md
       - faqs.md
       - best-practices.md
-      - ts-debug-tool.md
       - ts-cluster-debug.md
       - topicgroup:
           label: Troubleshooting
@@ -545,9 +544,6 @@ toc:
               - ts-network-roks-subdomain-missing.md
               - ts-network-calico-node.md
               - ts-network-subnet-recover.md
-              - ts-network-strongswan-vpn.md
-              - ts-network-strongswan-install-new.md
-              - ts-network-strongswan-network-nodes.md
               - ts-calico-log-level.md
               - ts-ip-whitelist-annotation.md
               - ts-keepalive-sysctl.md

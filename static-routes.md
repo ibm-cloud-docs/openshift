@@ -1,11 +1,11 @@
 ---
 
 copyright: 
-  years: 2014, 2024
-lastupdated: "2024-03-15"
+  years: 2014, 2025
+lastupdated: "2025-12-19"
 
 
-keywords: openshift, vpn, on-prem, gateway, static
+keywords: openshift, kubernetes, vyatta, ipsec, on-premises, vpn, gateway, static route, routing table
 
 subcollection: openshift
 
@@ -216,10 +216,3 @@ After you [enable the static route add-on](#enable-add-on), you can create and a
             subnet: 10.94.227.46/24
     ```
     {: screen}
-
-
-
-
-
-
-

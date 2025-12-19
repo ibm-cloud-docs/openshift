@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2025
-lastupdated: "2025-08-12"
+lastupdated: "2025-12-19"
 
 
 keywords: planning, storage, cluster, container storage, cloud storage, kubernetes service, openshift
@@ -250,7 +250,7 @@ The following sections show the options that you have in {{site.data.keyword.ope
 | Data usage pattern | Read and write-intensive workloads. | Read/write-intensive workloads |
 | Access | Via file system on mounted volume (plug-in) or via REST API from your app | Via file system on mounted volume or NFS client access to the volume. | Via REST API from your app. |
 | Supported Kubernetes access modes |  \n - ReadWriteMany (RWX)  \n - ReadOnlyMany (ROX)  \n - ReadWriteOnce (RWO) |
-| Performance | High for read operations. Predictable due to assigned IOPS and size when you use non-SDS machines. |Close to bare metal performance for sequential read and write operations when you use SDS machines. Provides [profiles](https://docs.portworx.com/portworx-enterprise/platform/provision-storage/create-pvcs/dynamic-provisioning.html){: external} to run high-performance databases. Possibility to create a storage layer with different performance profiles that your app can choose from.| High if deployed to the same data center as your app. |
+| Performance | High for read operations. Predictable due to assigned IOPS and size when you use non-SDS machines. |Close to bare metal performance for sequential read and write operations when you use SDS machines. Provides [profiles](https://docs.portworx.com/portworx-enterprise/provision-storage/create-pvcs/dynamic-provisioning){: external} to run high-performance databases. Possibility to create a storage layer with different performance profiles that your app can choose from.| High if deployed to the same data center as your app. |
 | Consistency| Strong |
 | Durability | Very high as data slices are dispersed across a cluster of storage nodes. Every node stores only a part of the data. | Very high as three copies of your data are always maintained. | High |
 | Resiliency | High as data slices are dispersed across three zones or regions. Medium, when set up in a single zone region only. | High when set up with replication across three zones. Medium, when you store data in a single zone region only. | Depends on the DBaaS and your setup. |

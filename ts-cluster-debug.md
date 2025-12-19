@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2025
-lastupdated: "2025-04-09"
+lastupdated: "2025-12-19"
 
 
 keywords: openshift, {{site.data.keyword.openshiftlong_notm}}, troubleshooting apps, app debugging, application troublshooting in clusters
@@ -103,8 +103,7 @@ Troubleshooting actions that you've already taken.
 Once you know the app flow, the specific error you are seeing, and where that error is coming from, you can gather more detailed data from the components involved. This might include the following logs.
 
 - Pod and process logs on the impacted components.
-- Cluster node logs such as `syslog` or `/var/log/messages`. For {{site.data.keyword.openshiftlong_notm}}, you can either use the Diagnostics and Debug Tool, or you can get `syslog` and other logs directly from the nodes.
-    - [Debug tool](/docs/openshift?topic=openshift-debug-tool).
+- Cluster node logs such as `syslog` or `/var/log/messages`. For {{site.data.keyword.openshiftlong_notm}}, you can get `syslog` and other logs directly from the nodes.
     - [Cluster node access](/docs/openshift?topic=openshift-cs_ssh_worker)
 - Packet trace information. Running [`tcpdump`](https://www.redhat.com/en/blog/introduction-using-tcpdump-linux-command-line) is a common way to get packet trace information.
 
