@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2025
-lastupdated: "2025-12-05"
+lastupdated: "2025-12-19"
 
 
 keywords: openshift, http2, quota, app protocol, application protocol
@@ -113,8 +113,6 @@ Keep in mind that the [service](#tech_limits) limitations also apply.
 | {{site.data.keyword.redhat_openshift_notm}} web console | The web console cannot be exposed on the private network on clusters that have both public and private endpoints. If you want to expose the web console on the private network, your cluster cannot have a public endpoint enabled.  | 
 | Private VLANs only | Private network load balancers (NLBs) can't be registered with the domain name server (DNS), so the cluster can't be created with only a private network interface. Worker nodes must be connected to both public and private VLANs. You can still create a private service to expose your apps on only the private network. |
 | Service endpoints | When you create a cluster, you can enable the public and private cloud service endpoint or the public cloud service endpoint only, but you can't enable the private cloud service endpoint only. After cluster creation, you can't later change the service endpoints. | 
-| (Deprecated) strongSwan VPN service | See [strongSwan VPN service considerations](/docs/openshift?topic=openshift-vpn#strongswan_limitations). |
-| Service IP addresses | You can have 65,000 IP addresses per cluster in the 172.21.0.0/16 range that you can assign to Kubernetes services within the cluster. |
 | Subnets per VLAN | Each VLAN has a limit of 40 subnets. |
 {: caption="Classic cluster networking limitations"}
 
@@ -178,7 +176,6 @@ Keep in mind that the [service](#tech_limits) limitations also apply.
 | Pod network | VPC access control lists (ACLs) filter incoming and outgoing traffic for your cluster at the subnet level, and security groups filter incoming and outgoing traffic for your cluster at the worker nodes level. To control traffic within the cluster at the pod-to-pod level, you can't use VPC security groups or ACLs. Instead, use [Calico](/docs/openshift?topic=openshift-network_policies) and [Kubernetes network policies](/docs/openshift?topic=openshift-vpc-kube-policies), which can control the pod-level network traffic that uses IP in IP encapsulation. |
 | Public gateway | If the public service endpoint is enabled, you must attach a public gateway to each VPC subnet so that your worker nodes can communicate on the public network. Default {{site.data.keyword.redhat_openshift_notm}} components, such as the web console and OperatorHub, require public network access.|
 | Service endpoints | When you create your VPC cluster in the {{site.data.keyword.cloud_notm}} console, your cluster has both a public and a private cloud service endpoint. If you want only a private cloud service endpoint, you must create the cluster [in the CLI](/docs/openshift?topic=openshift-cluster-create-vpc-gen2&interface=cli) instead, and include the `--disable-public-service-endpoint` option. If you include this option, your cluster is created with routers and Ingress controllers that expose your apps on the private network only by default. If you later want to expose apps to a public network, you must manually create public routers and Ingress controllers.|
-| strongSwan VPN service | The strongSwan service is not supported. To connect your cluster to resources in an on-premises network or another VPC, see [Using VPN with your VPC](/docs/vpc?topic=vpc-vpn-onprem-example). |
 | Subnets |  \n - See [VPC networking limitations](/docs/openshift?topic=openshift-vpc-subnets#vpc_basics_limitations). \n - Do not delete the subnets that you attach to your cluster during cluster creation or when you add worker nodes in a zone. If you delete a VPC subnet that your cluster used, any load balancers that use IP addresses from the subnet might experience issues, and you might be unable to create new load balancers.  |
 | VPC load balancer | See [VPC load balancer limitations](/docs/openshift?topic=openshift-vpclb-about#vpclb_limit). |
 {: caption="VPC cluster networking limitations"}

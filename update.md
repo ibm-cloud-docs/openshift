@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2025
-lastupdated: "2025-12-05"
+lastupdated: "2025-12-19"
 
 
 keywords: openshift, {{site.data.keyword.openshiftlong_notm}}, upgrade, version, update cluster, update worker nodes, update cluster components, update cluster master
@@ -545,7 +545,7 @@ Are there components that I can't update separately from the cluster?
 * `vpn`
 
 Can I install other plug-ins or add-ons than the default components?
-:   Yes. {{site.data.keyword.openshiftlong_notm}} provides other plug-ins and add-ons that you can choose from to add capabilities to your cluster. For example, you might want to enable IBM-managed add-ons in your cluster, such as the Diagnostics and Debug Tool. You must update these add-ons separately by following the steps to [update managed add-ons](/docs/openshift?topic=openshift-managed-addons#updating-managed-add-ons).
+:   Yes. {{site.data.keyword.openshiftlong_notm}} provides other plug-ins and add-ons that you can choose from to add capabilities to your cluster. For example, you might want to enable IBM-managed add-ons in your cluster. You must update these add-ons separately by following the steps to [update managed add-ons](/docs/openshift?topic=openshift-managed-addons#updating-managed-add-ons).
 
 ### Managing automatic updates for Fluentd
 {: #logging-up}

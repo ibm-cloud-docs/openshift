@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2024, 2025
-lastupdated: "2025-12-05"
+lastupdated: "2025-12-19"
 
 
 keywords: openshift, {{site.data.keyword.openshiftlong_notm}}, ai, add-on
@@ -81,7 +81,7 @@ Review the supported OpenShift AI add-on versions and the corresponding [OpenShi
 
 
 ## Before you begin
-{: #ai-before}
+{: #ai-before-ui}
 {: ui}
 
 1. [Log in to your account. If applicable, target the appropriate resource group. Set the context for your cluster.](/docs/containers?topic=containers-access_cluster)

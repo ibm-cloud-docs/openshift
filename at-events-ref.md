@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2025
-lastupdated: "2025-12-11"
+lastupdated: "2025-12-19"
 
 
 keywords: openshift, {{site.data.keyword.openshiftlong_notm}}, kubernetes, audit
@@ -112,7 +112,6 @@ You can view, manage, and audit user-initiated activities in your {{site.data.ke
 | `containers-kubernetes.cluster-addon.list` | Cluster add-ons are listed. |
 | `containers-kubernetes.cluster-addon.update` | A cluster add-on is updated. |
 | `containers-kubernetes.cluster-addon-dashboard.start` | The Kubernetes dashboard proxy is started. |
-| `containers-kubernetes.cluster-addon-debugtool-dashboard.start` | The diagnostics and debug tool add-on dashboard is started. |
 | `containers-kubernetes.cluster-addon-terminal.start` | **Deprecated**: Starts the Kubernetes web terminal proxy. |
 {: caption="Cluster add-on events" caption-side="bottom"}
 

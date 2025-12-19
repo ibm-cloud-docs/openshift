@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2025
-lastupdated: "2025-09-18"
+lastupdated: "2025-12-19"
 
 
 keywords: openshift, kubernetes, help, network, connectivity, {{site.data.keyword.openshiftlong_notm}}
@@ -48,7 +48,6 @@ If your worker node is not functioning as expected, you can follow these steps t
 
 1. [Update your cluster and worker nodes to the latest version](/docs/openshift?topic=openshift-update#update).
 2. [Update your command line tools](/docs/openshift?topic=openshift-cli-update).
-3. [Run tests in the Diagnostics and Debug Tool add-on](/docs/openshift?topic=openshift-debug-tool). 
 
 
 ## Debugging your worker node

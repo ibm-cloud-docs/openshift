@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2025
-lastupdated: "2025-09-10"
+lastupdated: "2025-12-19"
 
 
 keywords: kubernetes, openshift
@@ -21,7 +21,7 @@ subcollection: openshift
 # Adding services by using managed add-ons
 {: #managed-addons}
 
-Managed {{site.data.keyword.openshiftlong_notm}} add-ons are an easy way to enhance your cluster with extra capabilities and open-source capabilities, such as the Diagnostics and Debug Tool, {{site.data.keyword.block_storage_is_short}}, or the Cluster Autoscaler. The version of the driver, plug-in, or open-source tool that you add to your cluster is tested by IBM and approved to be used in {{site.data.keyword.openshiftlong_notm}}.
+Managed {{site.data.keyword.openshiftlong_notm}} add-ons are an easy way to enhance your cluster with extra capabilities. The version of the driver, plug-in, or open-source tool that you add to your cluster is tested by IBM and approved to be used in {{site.data.keyword.openshiftlong_notm}}.
 {: shortdesc}
 
 The managed add-ons that you can install in your cluster depend on the type of cluster, the container platform, and the infrastructure provider that you choose.
@@ -44,7 +44,6 @@ For more information about the prerequisites for each add-on, see:
 - [{{site.data.keyword.block_storage_is_short}}](/docs/openshift?topic=openshift-vpc-block)
 - [{{site.data.keyword.cos_full_notm}}](/docs/openshift?topic=openshift-storage-cos-install-addon)
 - [Cluster Autoscaler](/docs/openshift?topic=openshift-cluster-scaling-install-addon)
-- [Diagnostics and Debug Tool](/docs/openshift?topic=openshift-debug-tool)
 - [{{site.data.keyword.filestorage_vpc_full_notm}}](/docs/openshift?topic=openshift-storage-file-vpc-install)
 - [HPCS Router](/docs/openshift?topic=openshift-hpcs-router-changelog)
 - [Image Key Synchronizer](/docs/openshift?topic=openshift-images#encrypted-images)
@@ -123,7 +122,6 @@ Review which managed add-ons are available for {{site.data.keyword.redhat_opensh
 
 The following list of add-ons for clusters are supported in {{site.data.keyword.satelliteshort}} locations.
 
-- [Diagnostics and Debug Tool](/docs/openshift?topic=openshift-debug-tool)
 - [HPCS Router](/docs/openshift?topic=openshift-hpcs-router-changelog)
 - [Image Key Synchronizer](/docs/openshift?topic=openshift-images#encrypted-images)
 - **Deprecated**: [Kubernetes web terminal](/docs/openshift?topic=openshift-cli-install)

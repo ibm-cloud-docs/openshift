@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2025
-lastupdated: "2025-12-17"
+lastupdated: "2025-12-19"
 
 
 keywords: openshift
@@ -2418,44 +2418,6 @@ subcollection: openshift
 
 [Setting up classic VPN connectivity](/docs/openshift?topic=openshift-vpn#vpn)
 
-* [(Deprecated) Using the strongSwan IPSec VPN service Helm chart](/docs/openshift?topic=openshift-vpn#vpn-setup)
-
-* [strongSwan VPN service considerations](/docs/openshift?topic=openshift-vpn#strongswan_limitations)
-
-* [Configuring the strongSwan VPN in a multizone cluster](/docs/openshift?topic=openshift-vpn#vpn_multizone)
-
-    * [Configuring a single outbound VPN connection from a multizone cluster](/docs/openshift?topic=openshift-vpn#multizone_one_outbound)
-
-    * [Configuring a single inbound VPN connection to a multizone cluster](/docs/openshift?topic=openshift-vpn#multizone_one_inbound)
-
-    * [Configuring an inbound VPN connection in each zone of a multizone cluster](/docs/openshift?topic=openshift-vpn#multizone_multiple)
-
-* [Configuring the strongSwan Helm chart](/docs/openshift?topic=openshift-vpn#vpn_configure)
-
-    * [Step 1: Get the strongSwan Helm chart](/docs/openshift?topic=openshift-vpn#strongswan_1)
-
-    * [Step 2: Configure basic IPSec settings](/docs/openshift?topic=openshift-vpn#strongswan_2)
-
-    * [Step 3: Select inbound or outbound VPN connection](/docs/openshift?topic=openshift-vpn#strongswan_3)
-
-    * [Step 4: Access cluster resources over the VPN connection](/docs/openshift?topic=openshift-vpn#strongswan_4)
-
-    * [Step 5: Access remote network resources over the VPN connection](/docs/openshift?topic=openshift-vpn#strongswan_5)
-
-    * [Step 6 (optional): Enable monitoring with the Slack webhook integration](/docs/openshift?topic=openshift-vpn#strongswan_6)
-
-    * [Step 7: Deploy the Helm chart](/docs/openshift?topic=openshift-vpn#strongswan_7)
-
-* [Testing and verifying strongSwan VPN connectivity](/docs/openshift?topic=openshift-vpn#vpn_test)
-
-* [Limiting strongSwan VPN traffic by namespace or worker node](/docs/openshift?topic=openshift-vpn#limit)
-
-    * [Limiting strongSwan VPN traffic by namespace](/docs/openshift?topic=openshift-vpn#limit_namespace)
-
-    * [Limiting strongSwan VPN traffic by worker node](/docs/openshift?topic=openshift-vpn#limit_worker)
-
-* [Upgrading or disabling the strongSwan Helm chart](/docs/openshift?topic=openshift-vpn#vpn_upgrade)
-
 * [Using a Virtual Router Appliance](/docs/openshift?topic=openshift-vpn#vyatta)
 
 
@@ -3509,7 +3471,7 @@ subcollection: openshift
 
 * [Before you begin](/docs/openshift?topic=openshift-ai-addon-install&interface=cli#ai-before)
 
-* [Before you begin](/docs/openshift?topic=openshift-ai-addon-install&interface=ui#ai-before)
+* [Before you begin](/docs/openshift?topic=openshift-ai-addon-install&interface=ui#ai-before-ui)
 
 * [Step 1: Choose customization options](/docs/openshift?topic=openshift-ai-addon-install&interface=ui#ai-custom-step)
 
@@ -7846,17 +7808,6 @@ subcollection: openshift
 * [Subscribe to RSS](/docs/openshift?topic=openshift-best-practices-service#bp-4)
 
 
-## Running tests with the Diagnostics and Debug Tool
-{: #sitemap_running_tests_with_the_diagnostics_and_debug_tool}
-
-
-[Running tests with the Diagnostics and Debug Tool](/docs/openshift?topic=openshift-debug-tool#debug-tool)
-
-* [Enable and run the Diagnostics and Debug Tool add-on](/docs/openshift?topic=openshift-debug-tool#debug-tool-enable)
-
-* [Removing the Diagnostics and Debug Tool](/docs/openshift?topic=openshift-debug-tool#debug-remove)
-
-
 ## Troubleshooting apps in {{site.data.keyword.openshiftlong_notm}}
 {: #sitemap_troubleshooting_apps_in_}
 
@@ -8321,12 +8272,6 @@ subcollection: openshift
 * [Workarounds for `calico-node`](/docs/openshift?topic=openshift-ts-network-calico-node#ts-network-calico-node-work)
 
 [I deleted a portable subnet and now my Classic cluster my Load Balancers are failing. How do I recover?](/docs/openshift?topic=openshift-ts-network-subnet-recover#ts-network-subnet-recover)
-
-[Why can't I establish VPN connectivity with the strongSwan Helm chart?](/docs/openshift?topic=openshift-cs_vpn_fails#cs_vpn_fails)
-
-[Why can't I install a new strongSwan Helm chart release?](/docs/openshift?topic=openshift-cs_strongswan_release#cs_strongswan_release)
-
-[Why does strongSwan VPN connectivity fail after I add or delete worker nodes?](/docs/openshift?topic=openshift-cs_vpn_fails_worker_add#cs_vpn_fails_worker_add)
 
 [Debugging Calico components](/docs/openshift?topic=openshift-calico_log_level#calico_log_level)
 

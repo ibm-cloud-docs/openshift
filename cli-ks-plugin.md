@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2025
-lastupdated: "2025-12-12"
+lastupdated: "2025-12-19"
 
 
 keywords: openshift, cli reference, kubernetes cli, openshift cli, {{site.data.keyword.openshiftlong_notm}}
@@ -75,32 +75,6 @@ Create, view, and modify clusters and cluster settings, such as add-on, subnet, 
 
 Disable a managed add-on in an existing cluster. This command must be combined with one of the following subcommands for the managed add-on that you want to disable.
 {: shortdesc}
-
-#### `ibmcloud oc cluster addon disable debug-tool`
-{: #cs_cluster_addon_disable_debug}
-
-[Virtual Private Cloud]{: tag-vpc} [Classic infrastructure]{: tag-classic-inf}
-
-Disable the add-on for the {{site.data.keyword.containerlong_notm}} Diagnostics and Debug Tool.
-{: shortdesc}
-
-```sh
-ibmcloud oc cluster addon disable debug-tool --cluster CLUSTER [-f]
-```
-{: pre}
-
-
-Minimum required permissions
-:   **Administrator** platform access role for the cluster in {{site.data.keyword.containerlong_notm}}
-
-**Command options**:
-
-`-c`, `--cluster CLUSTER`
-:    Required: The name or ID of the cluster.
-
-`-f`
-:    Optional: Force the command to run with no user prompts.
-
 
 #### `ibmcloud oc cluster addon disable image-key-synchronizer`
 {: #cs_cluster_addon_disable_image-key-synchronizer}
@@ -215,38 +189,6 @@ Minimum required permissions
 Enable a managed add-on in an existing cluster. This command must be combined with one of the following subcommands for the managed add-on that you want to enable.
 {: shortdesc}
 
-#### `ibmcloud oc cluster addon enable debug-tool`
-{: #cs_cluster_addon_enable_debug}
-
-[Virtual Private Cloud]{: tag-vpc} [Classic infrastructure]{: tag-classic-inf}
-
-Enable the add-on for the [{{site.data.keyword.containerlong_notm}} Diagnostics and Debug Tool](/docs/openshift?topic=openshift-debug-tool) in a cluster.
-{: shortdesc}
-
-```sh
-ibmcloud oc cluster addon enable debug-tool --cluster CLUSTER [--version VERSION]
-```
-{: pre}
-
-Minimum required permissions
-:   **Administrator** platform access role for the cluster in {{site.data.keyword.containerlong_notm}}
-
-**Command options**:
-
-`-c`, `--cluster CLUSTER`
-:    Required: The name or ID of the cluster.
-
-`--version VERSION`
-:    Optional: Specify the version of the add-on to install. If no version is specified, the default version is installed.
-
-
-##### Example `addon enable debug-tool` command
-{: #addon-enable-debug-tool}
-
-```sh
-ibmcloud oc cluster addon enable debug-tool --cluster my_cluster
-```
-{: pre}
 
 #### `ibmcloud oc cluster addon enable image-key-synchronizer`
 {: #cs_cluster_addon_enable_image-key-synchronizer}
