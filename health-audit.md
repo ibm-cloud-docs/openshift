@@ -462,7 +462,7 @@ To prepare the production-ready deployment, a private key and TLS certificate si
     {: pre}
     
 11. The audit webhook is now ready to receive events over an encrypted connection. When configuring the audit webhook in the full guide above, you must use the `https` version of the `--remote-server` URL instead:
-    ```
+    ```txt
     https://127.0.0.1:2040/api/v1/namespaces/ibm-kube-audit/services/https:ibmcloud-kube-audit-service:https/proxy/post`
     ```
     {: pre}

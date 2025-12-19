@@ -54,7 +54,7 @@ Review the supported OpenShift AI add-on versions and the corresponding [OpenShi
 - Beginning with version 2.19.0 of OpenShift AI Operator, KServe is available in either Advanced or Standard mode. By default, when you install KServe using the OpenShift AI using the IBM Cloud add-on, it is installed in Standard mode. If you want to use Advanced mode, you must complete the [optional steps](#ai-install-kserve) after installing the add-on.
 
 
-## Before you begin
+## Prerequisites
 {: #ai-before}
 {: cli}
 
