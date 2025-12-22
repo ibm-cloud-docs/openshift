@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2025
-lastupdated: "2025-12-19"
+lastupdated: "2025-12-22"
 
 
 keywords: openshift
@@ -8391,6 +8391,8 @@ subcollection: openshift
 [VPC Clusters: My VPC NLB has a zone error and does not update](/docs/openshift?topic=openshift-ts-nlb-vpc-zone#ts-nlb-vpc-zone)
 
 [Why does my Private Path NLB contain a `hostname.invalid` error?](/docs/openshift?topic=openshift-ts-ppnlb-hostname#ts-ppnlb-hostname)
+
+[VPC clusters: Security Group Protocol error creating or updating LoadBalancer](/docs/openshift?topic=openshift-vpc_ts_lb_security_group_error#vpc_ts_lb_security_group_error)
 
 
 ### Ingress and routers
