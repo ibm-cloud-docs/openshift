@@ -587,6 +587,7 @@ toc:
               - ts-lb-vpc-healthcheck.md
               - ts-nlb-vpc-zone.md
               - ts-ppnlb-hostname.md
+              - ts-vpc-lb-sg-protocol-fail.md
           - topicgroup:
               label: Ingress and routers
               topics:
