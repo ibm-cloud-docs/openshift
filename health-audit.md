@@ -1,8 +1,8 @@
 ---
 
 copyright: 
-  years: 2014, 2025
-lastupdated: "2025-12-19"
+  years: 2014, 2026
+lastupdated: "2026-01-06"
 
 
 keywords: openshift, kubernetes, logmet, logs, metrics, audit, events
@@ -243,7 +243,7 @@ The Kubernetes audit system in your cluster consists of an audit webhook, a log 
     ```
     {: screen}
 
-8. For a production-ready deployment, [prepare that now](#production-ready-deployment-preparation). If you do not require a production solution, skip this step.
+8. For a production-ready deployment, [prepare that now](#prod-ready-deployment). If you do not require a production solution, skip this step.
 
 9. Check the certificate authority status. If your certificates are nearing expiration, follow the steps to [rotate your certificates](/docs/openshift?topic=openshift-cert-rotate).
     ```sh

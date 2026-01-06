@@ -285,7 +285,7 @@ The strongSwan IPSec VPN Service is deprecated
 {: release-note}
 
 The Diagnostics and Debug Tool is deprecated and support ends on 20 December 2025.
-:   Uninstall the Diagnostics and Debug Tool from your clusters before support ends. For more information, see [Running the Diagnostics and Debug Tool](/docs/openshift?topic=openshift-debug-tool).
+:   Uninstall the Diagnostics and Debug Tool from your clusters before support ends.
 
 
 ### 22 October 2025
