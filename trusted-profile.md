@@ -1,8 +1,8 @@
 ---
 
 copyright: 
-  years: 2025, 2025
-lastupdated: "2025-08-21"
+  years: 2025, 2026
+lastupdated: "2026-01-06"
 
 
 keywords: trusted profiles, containers, block storage, openshift
@@ -301,7 +301,7 @@ Once you add a trusted profile to a cluster, it cannot be removed and you cannot
 
     ```sh
     curl --request POST \
-    --url https://iam.test.cloud.ibm.com/v1/profiles \
+    --url https://iam.cloud.ibm.com/v1/profiles \
     --header 'Content-Type: application/json' \
     --data '{
         "name":"<PROFILE_NAME>",
@@ -314,7 +314,7 @@ Once you add a trusted profile to a cluster, it cannot be removed and you cannot
 
     ```sh
     curl --request POST \
-    --url https://iam.test.cloud.ibm.com/v1/profiles/<PROFILE_NAME>/rules \
+    --url https://iam.cloud.ibm.com/v1/profiles/<PROFILE_NAME>/rules \
     --header 'Content-Type: application/json' \
     --data '{
         "type": "Profile-CR",
@@ -334,7 +334,7 @@ Once you add a trusted profile to a cluster, it cannot be removed and you cannot
        
     ```curl
     curl --request POST \
-    --url https://iam.test.cloud.ibm.com/v1/policies \
+    --url https://iam.cloud.ibm.com/v1/policies \
     --header 'Content-Type: application/json' \
     --data '{
         "type": "access",
@@ -377,7 +377,7 @@ Once you add a trusted profile to a cluster, it cannot be removed and you cannot
 
     ```curl
     curl --request POST \
-    --url https://iam.test.cloud.ibm.com/v1/policies \
+    --url https://iam.cloud.ibm.com/v1/policies \
     --header 'Content-Type: application/json' \
     --data '{
         "type": "access",
@@ -417,7 +417,7 @@ Once you add a trusted profile to a cluster, it cannot be removed and you cannot
 
     ```curl
     curl --request POST \
-    --url https://iam.test.cloud.ibm.com/v1/policies \
+    --url https://iam.cloud.ibm.com/v1/policies \
     --header 'Content-Type: application/json' \
     --data '{	
         "type": "access",
@@ -457,7 +457,7 @@ Once you add a trusted profile to a cluster, it cannot be removed and you cannot
         
     ```curl
     curl --request POST \
-    --url https://iam.test.cloud.ibm.com/v1/policies \
+    --url https://iam.cloud.ibm.com/v1/policies \
     --header 'Content-Type: application/json' \
     --data '{	
         "type": "access",

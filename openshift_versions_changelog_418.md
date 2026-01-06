@@ -3,7 +3,7 @@
 copyright:
   years: 2024, 2026
 
-lastupdated: "2026-01-05"
+lastupdated: "2026-01-06"
 
 
 keywords: change log, version history, 4.18_openshift
@@ -195,7 +195,7 @@ The following table shows the changes that are in the master fix pack 4.18.24_15
 | --- | --- | --- | --- |
 | Calico | v3.29.4 | v3.29.5 | See the [Calico release notes](https://docs.tigera.io/calico/3.29/release-notes/#v3.29.5){: external}. |
 | etcd | v3.5.22 | v3.5.23 | See the [etcd release notes](https://github.com/etcd-io/etcd/releases/v3.5.23){: external}. |
-| {{site.data.keyword.cloud_notm}} Controller Manager | v1.31.13-1 | v1.31.13-2 | https://github.ibm.com/alchemy-containers/armada-lb/compare/v1.31.13-1...v1.31.13-2 |
+| {{site.data.keyword.cloud_notm}} Controller Manager | v1.31.13-1 | v1.31.13-2 | New version contains updates and security fixes. |
 | {{site.data.keyword.filestorage_full_notm}} for Classic plug-in and monitor | 451 | 452 | New version contains updates and security fixes. |
 | Key Management Service provider | v2.10.16 | v2.10.17 | New version contains updates and security fixes. |
 | Portieris admission controller | v0.13.29 | v0.13.30 | See the [Portieris admission controller release notes](https://github.com/{{site.data.keyword.IBM_notm}}/portieris/releases/tag/v0.13.30){: external}. |

@@ -1,8 +1,8 @@
 ---
 
 copyright:
-  years: 2023, 2025
-lastupdated: "2025-11-11"
+  years: 2023, 2026
+lastupdated: "2026-01-06"
 
 
 keywords: secret, certificate, field, tls, non-tls, rotate, ingress
@@ -190,8 +190,8 @@ kind: Secret
 metadata:
   annotations:
     ingress.cloud.ibm.com/cert-source: ibm
-    razee.io/build-url: https://travis.ibm.com/alchemy-containers/armada-ingress-secret-mgr/builds/78876583
-    razee.io/source-url: https://github.ibm.com/alchemy-containers/armada-ingress-secret-mgr/commit/651fa822632128163cf638c47f0a14b1e0e2915a
+    razee.io/build-url: https://url.com
+    razee.io/source-url: https://url.com
   creationTimestamp: "2022-11-08T19:45:05Z"
   name: example-secret
   namespace: default
