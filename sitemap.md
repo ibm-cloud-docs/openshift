@@ -4132,6 +4132,12 @@ subcollection: openshift
 
     * [Automatically creating a secret by using a Shell script](/docs/openshift?topic=openshift-storage-odf-trusted-profiles#odf-secret-create-truted-profile)
 
+[Migrating from Hyper Protect Crypto Services to Key Protect](/docs/openshift?topic=openshift-migrate_hpcs_kp#migrate_hpcs_kp)
+
+* [Considerations for custom storage classes](/docs/openshift?topic=openshift-migrate_hpcs_kp#custom-storageclass)
+
+* [Migration steps](/docs/openshift?topic=openshift-migrate_hpcs_kp#migration-steps)
+
 [OpenShift Data Foundation Regional Disaster Recovery on {{site.data.keyword.openshiftlong_notm}} clusters](/docs/openshift?topic=openshift-openshift_odf_rdr_roks#openshift_odf_rdr_roks)
 
 * [Creating the clusters](/docs/openshift?topic=openshift-openshift_odf_rdr_roks#odf-rdr-clusters)
