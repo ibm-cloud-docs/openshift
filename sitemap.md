@@ -8403,7 +8403,7 @@ subcollection: openshift
 
 [Why does my Private Path NLB contain a `hostname.invalid` error?](/docs/openshift?topic=openshift-ts-ppnlb-hostname#ts-ppnlb-hostname)
 
-[VPC clusters: Security Group Protocol error creating or updating LoadBalancer](/docs/openshift?topic=openshift-vpc_ts_lb_security_group_error#vpc_ts_lb_security_group_error)
+[VPC clusters: Security group protocol error creating or updating a LoadBalancer](/docs/openshift?topic=openshift-vpc_ts_lb_security_group_error#vpc_ts_lb_security_group_error)
 
 
 ### Ingress and routers
