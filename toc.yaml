@@ -641,6 +641,7 @@ toc:
               - ts-storage-vpc-file-eit-unresponsive.md
               - ts-storage-vpc-file-eit-access.md
               - ts-storage-vpc-file-eit-pvc-fails.md
+              - ts-storage-classic-file-access-denied.md
               - ts-storage-feedback.md
           - topicgroup:
               label: Block Storage

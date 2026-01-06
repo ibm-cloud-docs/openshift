@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2026
-lastupdated: "2026-01-05"
+lastupdated: "2026-01-06"
 
 
 keywords: openshift
@@ -283,6 +283,10 @@ subcollection: openshift
 
 
 [Release notes](/docs/openshift?topic=openshift-openshift-relnotes#openshift-relnotes)
+
+* [January 2026](/docs/openshift?topic=openshift-openshift-relnotes#openshift-jan26)
+
+    * [06 January 2026](/docs/openshift?topic=openshift-openshift-relnotes#openshift-jan0626)
 
 * [December 2025](/docs/openshift?topic=openshift-openshift-relnotes#openshift-dec25)
 
@@ -8560,6 +8564,12 @@ subcollection: openshift
 [Why do I see a `MetadataServiceNotEnabled` error for {{site.data.keyword.filestorage_vpc_short}}?](/docs/openshift?topic=openshift-ts-storage-vpc-file-eit-access#ts-storage-vpc-file-eit-access)
 
 [Why does PVC creation fail for {{site.data.keyword.filestorage_vpc_short}}?](/docs/openshift?topic=openshift-ts-storage-vpc-file-eit-pvc-fails#ts-storage-vpc-file-eit-pvc-fails)
+
+[Classic: Why am I denied server access when mounting a volume to a worker node?](/docs/openshift?topic=openshift-ts-storage-file-access-denied#ts-storage-file-access-denied)
+
+* [In the CLI](/docs/openshift?topic=openshift-ts-storage-file-access-denied#cli)
+
+* [In the UI](/docs/openshift?topic=openshift-ts-storage-file-access-denied#ui)
 
 [Storage: Feedback, questions, and support](/docs/openshift?topic=openshift-getting_help_storage#getting_help_storage)
 

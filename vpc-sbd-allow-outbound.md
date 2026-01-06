@@ -1,8 +1,8 @@
 ---
 
 copyright: 
-  years: 2024, 2025
-lastupdated: "2025-09-17"
+  years: 2024, 2026
+lastupdated: "2026-01-06"
 
 keywords: openshift, {{site.data.keyword.openshiftlong_notm}}, secure by default, outbound traffic protection, 4.15
 
@@ -433,8 +433,8 @@ You can choose one of the following options to allow traffic over the public net
         Name:                           prestg-sbd-vpc-4.15
         ID:                             coekl4a107ovqfndhh60
         ...
-        Public Service Endpoint URL:    https://c100-e.containers.pretest.cloud.ibm.com:30685
-        Private Service Endpoint URL:   https://c100.private.containers.pretest.cloud.ibm.com:30685
+        Public Service Endpoint URL:    https://c100-e.containers.cloud.ibm.com:30685
+        Private Service Endpoint URL:   https://c100.private.containers.cloud.ibm.com:30685
         ...
         ```
         {: screen}
