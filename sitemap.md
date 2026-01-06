@@ -284,10 +284,6 @@ subcollection: openshift
 
 [Release notes](/docs/openshift?topic=openshift-openshift-relnotes#openshift-relnotes)
 
-* [January 2026](/docs/openshift?topic=openshift-openshift-relnotes#openshift-jan26)
-
-    * [06 January 2026](/docs/openshift?topic=openshift-openshift-relnotes#openshift-jan0626)
-
 * [December 2025](/docs/openshift?topic=openshift-openshift-relnotes#openshift-dec25)
 
     * [29 December 2025](/docs/openshift?topic=openshift-openshift-relnotes#openshift-dec2925)
