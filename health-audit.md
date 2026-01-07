@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2026
-lastupdated: "2026-01-06"
+lastupdated: "2026-01-07"
 
 
 keywords: openshift, kubernetes, logmet, logs, metrics, audit, events
@@ -64,7 +64,7 @@ To get started, follow the instructions to send Kubernetes API audit logs [to a 
 To forward audit logs to {{site.data.keyword.logs_full_notm}}, you can create a Kubernetes audit system by using the provided image and deployment.
 {: shortdesc}
 
-The following example uses the `icr.io/ibm/ibmcloud-kube-audit-to-ibm-cloud-logs` image to forward logs to {{site.data.keyword.logs_full_notm}}. This image is usable as a production solution when configured [correctly](#prod-ready-deployment). For a more automated solution, configure and maintain your own log forwarding image.
+The following example uses the `icr.io/ibm/ibmcloud-kube-audit-to-ibm-cloud-logs` image to forward logs to {{site.data.keyword.logs_full_notm}}. If you only need a proof of concept, you may skip the [secure setup step](#secure-setup). For a more automated solution, configure and maintain your own log forwarding image.
 {: important}
 
 Previously the, `icr.io/ibm/ibmcloud-kube-audit-to-logdna` was used to forward logs. This image is deprecated and support ends soon. Update your log forwarding setup to use the `icr.io/ibm/ibmcloud-kube-audit-to-ibm-cloud-logs` instead.
@@ -243,7 +243,7 @@ The Kubernetes audit system in your cluster consists of an audit webhook, a log 
     ```
     {: screen}
 
-8. For a production-ready deployment, [prepare that now](#prod-ready-deployment). If you do not require a production solution, skip this step.
+8. [Encrypt traffic in transit with HTTPS.](#secure-setup) If you only need a proof of concept audit log forwarder, skip this step.
 
 9. Check the certificate authority status. If your certificates are nearing expiration, follow the steps to [rotate your certificates](/docs/openshift?topic=openshift-cert-rotate).
     ```sh
@@ -287,7 +287,7 @@ The Kubernetes audit system in your cluster consists of an audit webhook, a log 
     ```
     {: pre}
     
-    For a production solution and after completing production-ready preparations in [step 8](#prod-ready-deployment), set `remote-server` to this `https` URL instead:
+    If you configured HTTPS in [step 8](#secure-setup), set `remote-server` to this `https` URL instead:
     {: note}
     
     ```sh
@@ -344,8 +344,8 @@ Update the pod to the latest available on the current tag with `kubectl rollout 
 {: tip}
 
 
-### Production-ready deployment preparation
-{: #prod-ready-deployment}
+### Manage updates, rotate certificates, and encrypt in transit with HTTPS
+{: #secure-setup}
 
 A few important things to note before preparing to forward logs:
 
@@ -353,7 +353,7 @@ A few important things to note before preparing to forward logs:
 2. This deployment is manually installed and managed. Switching from this deployment to another may result in audit log downtime.
 3. The certificate generated below can be rotated. Rotation requires manual steps to replace the secret and restart the deployment.
 
-To prepare the production-ready deployment, a private key and TLS certificate signed by the kube-apiserver are required.
+To secure the deployment with encryption in transit, a private key and TLS certificate signed by the kube-apiserver are required.
 
 1. After applying the YAML file in [step 4](#apply-deployment), wait for the Service resource to populate the cluster IP. Save that to the shell variable `$cluster_ip`.
     ```sh
