@@ -2793,7 +2793,7 @@ subcollection: openshift
 
     * [Forwarding Kubernetes API audit logs to Cloud Logs](/docs/openshift?topic=openshift-health-audit#audit-api-server-la)
 
-    * [Production-ready deployment preparation](/docs/openshift?topic=openshift-health-audit#prod-ready-deployment)
+    * [Manage updates, rotate certificates, and encrypt in transit with HTTPS](/docs/openshift?topic=openshift-health-audit#secure-setup)
 
     * [Forwarding Kubernetes API audit logs to a resource in the {{site.data.keyword.cloud_notm}} private network](/docs/openshift?topic=openshift-health-audit#audit-api-server-priv)
 
