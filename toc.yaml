@@ -433,18 +433,6 @@ toc:
           - vpc-flavors.md
           - classic-flavors.md
       - data-portability.md
-      - topicgroup:
-          label: Related links
-          topics:
-          - link:
-              label: OpenShift Container Platform documentation
-              href: https://docs.redhat.com/en
-          - link:
-              label: IBM Developer - Red Hat OpenShift on IBM Cloud
-              href: https://developer.ibm.com/components/redhat-openshift-ibm-cloud/
-          - link:
-              label: OpenShift interactive learning portal
-              href: https://developers.redhat.com/learn
   - navgroup:
       id: help
       topics:
