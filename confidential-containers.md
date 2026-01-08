@@ -1,8 +1,8 @@
 ---
 
 copyright:
-  years: 2025, 2025
-lastupdated: "2025-11-07"
+  years: 2025, 2026
+lastupdated: "2026-01-08"
 
 keywords: confidential containers
 
@@ -533,7 +533,7 @@ Attestation is a critical part of confidential containers. You must validate sup
       metadata:
         name: mypod
         annotations:
-          io.katacontainers.config.hypervisor.cc_init_data: $INITDATA
+          io.katacontainers.config.runtime.cc_init_data: $INITDATA
     spec:
       runtimeClassName: kata-remote
     ```
