@@ -2,7 +2,7 @@
 
 copyright:
   years: 2025, 2026
-lastupdated: "2026-01-06"
+lastupdated: "2026-01-08"
 
 
 keywords: key protect, hpcs, kp, migrate, odf, encryption
@@ -63,6 +63,7 @@ Follow these steps if you want to migrate data from a source cluster that uses O
 3. Create a service credential in the COS instance.
     1. [Select the same COS instance](https://cloud.ibm.com/objectstorage/instances){: external} that you created the bucket in, then click **Service credentials**.
     2. Create a credential with the `Object Writer` role and the `Manager permission`. Select the option to include HMAC credential. 
+
     
     3. In the service credentials list, click to expand the service credential you just created. Note the `access_key_id` and `secret_access_key` and save them in a secure file as `aws_access_key_id` and `aws_secret_access_key` respectively. 
 
