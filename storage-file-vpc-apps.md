@@ -1,8 +1,8 @@
 ---
 
 copyright: 
-  years: 2022, 2025
-lastupdated: "2025-10-24"
+  years: 2022, 2026
+lastupdated: "2026-01-08"
 
 keywords: kubernetes, openshift
 
@@ -974,7 +974,7 @@ Use a key management service (KMS) provider, such as {{site.data.keyword.keymana
 Review the following information about EIT. If you choose to use encryption in-transit, you need to balance your requirements between performance and enhanced security. Encrypting data in-transit can have performance impacts due to the processing that is needed to encrypt and decrypt the data at the endpoints. For more information about encryption in-transit, see [VPC Encryption in Transit](/docs/vpc?topic=vpc-file-storage-vpc-about&interface=ui#fs-eit).
 
 - EIT is available for cluster versions 4.16 and later.
-- EIT is available only for RHCOS worker nodes.
+- EIT is not available for RHCOS worker nodes.
 - By default, file shares are [encrypted at rest](/docs/vpc?topic=vpc-file-storage-vpc-about&interface=ui#FS-encryption) with IBM-managed encryption. 
 - To use EIT with Secure by Default clusters, you must add the following outbound rule to the `kube-<clusterID>` security group.
     - **Protocol**: Any
