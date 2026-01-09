@@ -37,8 +37,6 @@ Looking for {{site.data.keyword.cloud_notm}} status, platform announcements, sec
 {: release-note}
 
 {{site.data.keyword.openshiftlong_notm}} version 4.14 and 4.15 are no longer supported.
-:   Support for 4.14 ends on {{site.data.keyword.openshift_414_unsupported_date}}.
-:   Support for 4.15 ends on {{site.data.keyword.openshift_415_unsupported_date}}.
 :   Update your cluster to at least [version 4.16](/docs/openshift?topic=openshift-cs_versions_416) as soon as possible.
 
 
