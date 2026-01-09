@@ -1,8 +1,8 @@
 ---
 
 copyright: 
-  years: 2014, 2025
-lastupdated: "2025-10-06"
+  years: 2014, 2026
+lastupdated: "2026-01-09"
 
 
 keywords: kubernetes, containers, openshift
@@ -36,8 +36,6 @@ Use the list to find CIS Kubernetes Benchmark results for supported versions.
 - [Version 4.18](/docs/openshift?topic=openshift-cis-benchmark-418)
 - [Version 4.17](/docs/openshift?topic=openshift-cis-benchmark-417)
 - [Version 4.16](/docs/openshift?topic=openshift-cis-benchmark-416)
-- [Version 4.15](/docs/openshift?topic=openshift-cis-benchmark-415)
-- [Version 4.14](/docs/openshift?topic=openshift-cis-benchmark-414)
 
 
 
