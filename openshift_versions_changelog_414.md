@@ -3,7 +3,7 @@
 copyright:
   years: 2024, 2026
 
-lastupdated: "2026-01-05"
+lastupdated: "2026-01-09"
 
 
 keywords: change log, version history, 4.14_openshift
@@ -22,8 +22,8 @@ subcollection: openshift
 
 
 
-This version is deprecated. Update your cluster to a [supported version](/docs/openshift?topic=openshift-openshift_versions) as soon as possible.
-{: deprecated}
+This version is no longer supported. Update your cluster to a [supported version](/docs/openshift?topic=openshift-openshift_versions) as soon as possible.
+{: important}
 
 
 

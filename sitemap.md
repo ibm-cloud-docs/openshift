@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2026
-lastupdated: "2026-01-08"
+lastupdated: "2026-01-09"
 
 
 keywords: openshift
@@ -283,6 +283,12 @@ subcollection: openshift
 
 
 [Release notes](/docs/openshift?topic=openshift-openshift-relnotes#openshift-relnotes)
+
+* [January 2026](/docs/openshift?topic=openshift-openshift-relnotes#openshift-jan26)
+
+    * [08 January 2026](/docs/openshift?topic=openshift-openshift-relnotes#openshift-jan0826)
+
+        * {{site.data.keyword.openshiftlong_notm}} version 4.14 and 4.15 are no longer supported.
 
 * [December 2025](/docs/openshift?topic=openshift-openshift-relnotes#openshift-dec25)
 

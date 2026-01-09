@@ -1,8 +1,8 @@
 ---
 
 copyright: 
-  years: 2024, 2025
-lastupdated: "2025-10-14"
+  years: 2024, 2026
+lastupdated: "2026-01-09"
 
 keywords: openshift, benchmarks, 4.15, openshift benchmarks, openshift 4.15
 
@@ -14,6 +14,13 @@ subcollection: openshift
 
 # 4.15 CIS Kubernetes benchmark
 {: #cis-benchmark-415}
+
+
+
+This version is no longer supported. Update your cluster to a [supported version](/docs/openshift?topic=openshift-openshift_versions) as soon as possible.
+{: important}
+
+
 
 The Center for Internet Security (CIS) publishes the [CIS Kubernetes Benchmark](https://www.cisecurity.org/benchmark/kubernetes/){: external} as a framework of specific steps to configure Kubernetes more securely and with standards that are commensurate to various industry regulations. This document contains the results of the version 1.5 CIS Kubernetes benchmark for clusters that run {{site.data.keyword.openshiftlong_notm}} version 4.15. For more information or help understanding the benchmark, see [Using the benchmark](/docs/openshift?topic=openshift-cis-benchmark).
 {: shortdesc}
