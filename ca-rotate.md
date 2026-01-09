@@ -1,8 +1,8 @@
 ---
 
 copyright: 
-  years: 2024, 2025
-lastupdated: "2025-12-03"
+  years: 2024, 2026
+lastupdated: "2026-01-09"
 
 
 keywords: openshift, {{site.data.keyword.openshiftlong_notm}}, kubernetes, certificate, rotate, ca rotate
@@ -118,10 +118,20 @@ Review the following table for information on each state of the certificate rota
 ## FAQ about certificate rotation
 {: #cert-rotate-faq}
 
+Does IBM perform automatic CA rotation for clusters?
+:   No, IBM does not perform automatic CA rotations. Users are responsible for executing the CA rotation process.
 
-My cluster contains CA certificates that are valid until 2030. Will the clusters operate until 2030 without requiring a CA rotation?
-:   Yes. However, if an Administrator should no longer have access, then the CA certificates should be rotated.
+When should CA certificates be rotated?
+:   When existing access to the cluster needs to be revoked. Specifically, if a cluster administrator should no longer have access to the cluster as they may have generated certificates signed by the current CA to access the cluster.
 
+Does IBM automatically extend the expiration of CA certificates?
+:   Yes, new CA certificates are generated using the existing private key. This enables the certificates to have a new expiry date while still allowing the existing intermediate and end-entity certificates to be successfully validated.
 
-My cluster shows `Action Started` and `Action Completed` timestamps from several years ago. What actions are expected in this case?
-:   When a CA rotation is started, the expectation is that the CA rotation is completed. The CA rotation process is responsibility of the user.
+My cluster's CA status has a state of CA certificate creation complete, what actions are expected in this case?
+:   The expectation is that once the CA rotation processes has been started, it is completed. This ensures that intermediate and end-entity certificates generated with the prior CA are invalidated.
+
+My cluster's CA status shows `Action Started` and `Action Completed` timestamps from several years ago. What actions are expected in this case?
+:   None. This indicates that a CA rotation was started and completed as the timestamps indiciate.
+
+Does performing CA rotation result in a shorter validity period than the current certificate?
+:   Yes, it is possible that performing a rotation can result in the validity period of the new certificate being shorter than the previous certificate. This is due to a shortening of the default certificate expiry length.
