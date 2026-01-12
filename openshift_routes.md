@@ -1,8 +1,8 @@
 ---
 
 copyright:
-  years: 2014, 2025
-lastupdated: "2025-12-10"
+  years: 2014, 2026
+lastupdated: "2026-01-12"
 
 
 keywords: openshift, route, router
@@ -761,7 +761,7 @@ When you change your worker node VLAN connections, the worker nodes are connecte
 ## Managing port 80 on the OpenShift default router
 {: #port80}
 
-In VPC clusters created on or after 12 January 2026, port 80 is blocked by default for all ALBs. Clusters created before this date are not affected.
+In VPC clusters created on or after 26 January 2026, port 80 is blocked by default for all ALBs. Clusters created before this date are not affected.
 {: note}
 
 You can manage port 80 on your OpenShift default router. Note that any changes you make are to all OpenShift default routers in your cluster. 
