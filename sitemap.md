@@ -286,6 +286,10 @@ subcollection: openshift
 
 * [January 2026](/docs/openshift?topic=openshift-openshift-relnotes#openshift-jan26)
 
+    * [13 January 2026](/docs/openshift?topic=openshift-openshift-relnotes#openshift-jan1326)
+
+        * {{site.data.keyword.cos_full_notm}} plug-in updates.
+
     * [08 January 2026](/docs/openshift?topic=openshift-openshift-relnotes#openshift-jan0826)
 
         * {{site.data.keyword.openshiftlong_notm}} version 4.14 and 4.15 are no longer supported.
