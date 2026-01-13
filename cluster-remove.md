@@ -1,8 +1,8 @@
 ---
 
 copyright: 
-  years: 2014, 2024
-lastupdated: "2024-03-27"
+  years: 2014, 2026
+lastupdated: "2026-01-13"
 
 
 keywords: openshift, {{site.data.keyword.openshiftlong_notm}}, kubernetes, clusters, worker nodes, worker pools, delete
@@ -33,6 +33,9 @@ No backups are created of your cluster or your data in your persistent storage. 
 {: important}
 
 **Classic clusters only**: When you remove a cluster, you also remove any subnets that were automatically provisioned when you created the cluster and that you created by using the `ibmcloud oc cluster subnet create` command. However, if you manually added existing subnets to your cluster by using the `ibmcloud oc cluster subnet add` command, these subnets are not removed from your IBM Cloud infrastructure account and you can reuse them in other clusters.
+{: note}
+
+**VPC clusters only**: Shared VPE Gateways created to access other IBM services are not deleted when a VPC cluster is deleted because other clusters or other resources in the VPC might still be using them.  See [Next Steps](#cluster-remove-next-steps) for more information about these shared VPE Gateways.
 {: note}
 
 
@@ -124,9 +127,10 @@ When you remove {{site.data.keyword.redhat_openshift_notm}} clusters or worker n
 
 - After the cluster is no longer listed when you run the `ibmcloud oc cluster ls` command, you can reuse the name of a removed cluster.
 - **Classic clusters only**: If you kept the subnets, you can [reuse them in a new cluster](/docs/openshift?topic=openshift-subnets#subnets_custom) or manually delete them later from your IBM Cloud infrastructure portfolio.
-- **VPC clusters only**: If you have infrastructure resources that you no longer want to use, such as the VPC or subnets, remove these resources in the VPC portal.
+- **VPC clusters only**:
+
+    - If you have infrastructure resources that you no longer want to use, such as the VPC or subnets, remove these resources in the VPC portal.
+    - When the first VPC cluster is created in a VPC, several VPE Gateways are created for IBM services such as Container Registry and Cloud Object Store.  These VPE Gateways have names that start with "iks-" and are shared with all the VPC clusters in that VPC.  These shared VPE Gateways are not deleted, even if all the clusters in a VPC are deleted, in case other resources are using them.  If you no longer have any VPC clusters in the VPC, and if no other resources are using these shared VPE Gateways, then you can delete these from the VPC portal.
+
 - **Persistent storage**: If you kept the persistent storage, you can delete your storage later through the {{site.data.keyword.cloud_notm}} console for the corresponding storage service.
 - **{{site.data.keyword.satelliteshort}} clusters**:  If you have hosts attached to your location that you no longer want to use, remove them. For more information see [Removing hosts and locations](/docs/satellite?topic=satellite-host-remove).
-
-
-
