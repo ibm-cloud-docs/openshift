@@ -1470,16 +1470,6 @@ subcollection: openshift
 
 * [Next steps](/docs/openshift?topic=openshift-encryption#plan-storage-next)
 
-[{{site.data.keyword.openshiftlong_notm}} storage overview](/docs/openshift?topic=openshift-storage-plan#storage-plan)
-
-* [Non-persistent storage options](/docs/openshift?topic=openshift-storage-plan#storage-plan-non-persistent)
-
-* [Single zone clusters](/docs/openshift?topic=openshift-storage-plan#storage-plan-single-zone)
-
-* [Multizone clusters](/docs/openshift?topic=openshift-storage-plan#storage-plan-multizone)
-
-* [Next steps](/docs/openshift?topic=openshift-storage-plan#plan-document-next)
-
 [Documenting your environment architecture](/docs/openshift?topic=openshift-document-environment#document-environment)
 
 * [Step 1: Understanding your app and architecture](/docs/openshift?topic=openshift-document-environment#understand-arch)
@@ -3455,8 +3445,8 @@ subcollection: openshift
 [Deploying the Sysdig agent on edge worker nodes](/docs/openshift?topic=openshift-edge-sysdig#edge-sysdig)
 
 
-## Setting up OpenShift AI
-{: #sitemap_setting_up_openshift_ai}
+## OpenShift AI add-on
+{: #sitemap_openshift_ai_add-on}
 
 
 [About the Red Hat OpenShift AI add-on](/docs/openshift?topic=openshift-ai-addon-about#ai-addon-about)
@@ -3526,92 +3516,27 @@ subcollection: openshift
 * [Getting support for the OpenShift AI add-on](/docs/openshift?topic=openshift-ai-addon-manage#ai-addon-support)
 
 
-## Enabling the IBM Storage Operator cluster add-on
-{: #sitemap_enabling_the_ibm_storage_operator_cluster_add-on}
+## Storage
+{: #sitemap_storage}
 
 
-[Enabling the IBM Storage Operator cluster add-on](/docs/openshift?topic=openshift-storage-operator#storage-operator)
+[{{site.data.keyword.openshiftlong_notm}} storage overview](/docs/openshift?topic=openshift-storage-plan#storage-plan)
+
+* [Non-persistent storage options](/docs/openshift?topic=openshift-storage-plan#storage-plan-non-persistent)
+
+* [Single zone clusters](/docs/openshift?topic=openshift-storage-plan#storage-plan-single-zone)
+
+* [Multizone clusters](/docs/openshift?topic=openshift-storage-plan#storage-plan-multizone)
+
+* [Next steps](/docs/openshift?topic=openshift-storage-plan#plan-document-next)
+
+[Storage Operator add-on](/docs/openshift?topic=openshift-storage-operator#storage-operator)
 
 * [Disabling the `ibm-storage-operator` add-on](/docs/openshift?topic=openshift-storage-operator#storage-operator-disable)
 
 
-## Setting up {{site.data.keyword.blockstorageshort}}
-{: #sitemap_setting_up_}
-
-
-[Setting up {{site.data.keyword.blockstorageshort}}](/docs/openshift?topic=openshift-block_storage#block_storage)
-
-* [Quick start for {{site.data.keyword.cloud_notm}} {{site.data.keyword.blockstorageshort}}](/docs/openshift?topic=openshift-block_storage#block_qs)
-
-* [Deciding on the block storage configuration](/docs/openshift?topic=openshift-block_storage#block_predefined_storageclass)
-
-* [Setting up encryption for {{site.data.keyword.blockstorageshort}}](/docs/openshift?topic=openshift-block_storage#block_encryption_setup)
-
-    * [Encrypting volume data by using your own storage class](/docs/openshift?topic=openshift-block_storage#encrypt_custom_sc)
-
-    * [Create a PVC that references your {{site.data.keyword.blockstorageshort}} secret](/docs/openshift?topic=openshift-block_storage#pvc_encrypt_label)
-
-    * [Verifying the encryption of your {{site.data.keyword.blockstorageshort}} volumes](/docs/openshift?topic=openshift-block_storage#block_encrypt)
-
-* [Adding block storage to apps](/docs/openshift?topic=openshift-block_storage#add_block)
-
-* [Using existing block storage in your cluster](/docs/openshift?topic=openshift-block_storage#existing_block)
-
-    * [Retrieving the information of your existing block storage](/docs/openshift?topic=openshift-block_storage#existing-block-1)
-
-    * [Creating a persistent volume (PV) and a matching persistent volume claim (PVC)](/docs/openshift?topic=openshift-block_storage#existing-block-2)
-
-* [Using block storage in a stateful set](/docs/openshift?topic=openshift-block_storage#block_statefulset)
-
-    * [Creating the PVC by using dynamic provisioning when you create a stateful set](/docs/openshift?topic=openshift-block_storage#block_dynamic_statefulset)
-
-    * [Static provisioning by using existing PVCs with a stateful set](/docs/openshift?topic=openshift-block_storage#block_static_statefulset)
-
-* [Changing the size and IOPS of your existing storage device](/docs/openshift?topic=openshift-block_storage#block_change_storage_configuration)
-
-* [Backing up and restoring data](/docs/openshift?topic=openshift-block_storage#block_backup_restore)
-
-    * [Setting up periodic snapshots](/docs/openshift?topic=openshift-block_storage#block-snaps)
-
-    * [Replicating snapshots to another zone](/docs/openshift?topic=openshift-block_storage#block-replicate)
-
-    * [Duplicating storage](/docs/openshift?topic=openshift-block_storage#block-dupe)
-
-    * [Backing up data to {{site.data.keyword.cos_full}}](/docs/openshift?topic=openshift-block_storage#block-cos-backup)
-
-    * [Copying data to and from pods and containers](/docs/openshift?topic=openshift-block_storage#block-cp)
-
-* [Storage class reference](/docs/openshift?topic=openshift-block_storage#block_storageclass_reference)
-
-    * [Bronze](/docs/openshift?topic=openshift-block_storage#bronze-block)
-
-    * [Silver](/docs/openshift?topic=openshift-block_storage#silver-block)
-
-    * [Gold](/docs/openshift?topic=openshift-block_storage#gold-block)
-
-    * [Custom](/docs/openshift?topic=openshift-block_storage#custom-block)
-
-* [Sample customized storage classes](/docs/openshift?topic=openshift-block_storage#block_custom_storageclass)
-
-    * [Creating topology-aware storage](/docs/openshift?topic=openshift-block_storage#topology_yaml)
-
-    * [Specifying the zone and region](/docs/openshift?topic=openshift-block_storage#block_multizone_yaml)
-
-    * [Mounting block storage with an `XFS` file system](/docs/openshift?topic=openshift-block_storage#xfs)
-
-* [Removing persistent storage from a cluster](/docs/openshift?topic=openshift-block_storage#cleanup_block)
-
-    * [Understanding your storage removal options](/docs/openshift?topic=openshift-block_storage#storage_delete_options_block)
-
-    * [Cleaning up persistent storage](/docs/openshift?topic=openshift-block_storage#storage_remove_block)
-
-* [Setting up monitoring for `limited` connectivity PVs](/docs/openshift?topic=openshift-block_storage#storage-block-vpc-limited-monitoring)
-
-* [Assigning trusted profiles to block storage](/docs/openshift?topic=openshift-block_storage#block-classic-trusted-profile)
-
-
-## Setting up Block Storage for VPC
-{: #sitemap_setting_up_block_storage_for_vpc}
+### Block Storage for VPC add-on
+{: #sitemap_block_storage_for_vpc_add-on}
 
 
 [Setting up {{site.data.keyword.block_storage_is_short}}](/docs/openshift?topic=openshift-vpc-block#vpc-block)
@@ -3742,80 +3667,79 @@ subcollection: openshift
 
     * [Ubuntu ConfigMap](/docs/openshift?topic=openshift-vpc-block-storage-driver-unmanaged#vpc-block-ubuntu-cm)
 
+[Block Storage for Classic](/docs/openshift?topic=openshift-block_storage#block_storage)
 
-## Setting up {{site.data.keyword.filestorage_short}}
-{: #sitemap_setting_up_1}
+* [Quick start for {{site.data.keyword.cloud_notm}} {{site.data.keyword.blockstorageshort}}](/docs/openshift?topic=openshift-block_storage#block_qs)
+
+* [Deciding on the block storage configuration](/docs/openshift?topic=openshift-block_storage#block_predefined_storageclass)
+
+* [Setting up encryption for {{site.data.keyword.blockstorageshort}}](/docs/openshift?topic=openshift-block_storage#block_encryption_setup)
+
+    * [Encrypting volume data by using your own storage class](/docs/openshift?topic=openshift-block_storage#encrypt_custom_sc)
+
+    * [Create a PVC that references your {{site.data.keyword.blockstorageshort}} secret](/docs/openshift?topic=openshift-block_storage#pvc_encrypt_label)
+
+    * [Verifying the encryption of your {{site.data.keyword.blockstorageshort}} volumes](/docs/openshift?topic=openshift-block_storage#block_encrypt)
+
+* [Adding block storage to apps](/docs/openshift?topic=openshift-block_storage#add_block)
+
+* [Using existing block storage in your cluster](/docs/openshift?topic=openshift-block_storage#existing_block)
+
+    * [Retrieving the information of your existing block storage](/docs/openshift?topic=openshift-block_storage#existing-block-1)
+
+    * [Creating a persistent volume (PV) and a matching persistent volume claim (PVC)](/docs/openshift?topic=openshift-block_storage#existing-block-2)
+
+* [Using block storage in a stateful set](/docs/openshift?topic=openshift-block_storage#block_statefulset)
+
+    * [Creating the PVC by using dynamic provisioning when you create a stateful set](/docs/openshift?topic=openshift-block_storage#block_dynamic_statefulset)
+
+    * [Static provisioning by using existing PVCs with a stateful set](/docs/openshift?topic=openshift-block_storage#block_static_statefulset)
+
+* [Changing the size and IOPS of your existing storage device](/docs/openshift?topic=openshift-block_storage#block_change_storage_configuration)
+
+* [Backing up and restoring data](/docs/openshift?topic=openshift-block_storage#block_backup_restore)
+
+    * [Setting up periodic snapshots](/docs/openshift?topic=openshift-block_storage#block-snaps)
+
+    * [Replicating snapshots to another zone](/docs/openshift?topic=openshift-block_storage#block-replicate)
+
+    * [Duplicating storage](/docs/openshift?topic=openshift-block_storage#block-dupe)
+
+    * [Backing up data to {{site.data.keyword.cos_full}}](/docs/openshift?topic=openshift-block_storage#block-cos-backup)
+
+    * [Copying data to and from pods and containers](/docs/openshift?topic=openshift-block_storage#block-cp)
+
+* [Storage class reference](/docs/openshift?topic=openshift-block_storage#block_storageclass_reference)
+
+    * [Bronze](/docs/openshift?topic=openshift-block_storage#bronze-block)
+
+    * [Silver](/docs/openshift?topic=openshift-block_storage#silver-block)
+
+    * [Gold](/docs/openshift?topic=openshift-block_storage#gold-block)
+
+    * [Custom](/docs/openshift?topic=openshift-block_storage#custom-block)
+
+* [Sample customized storage classes](/docs/openshift?topic=openshift-block_storage#block_custom_storageclass)
+
+    * [Creating topology-aware storage](/docs/openshift?topic=openshift-block_storage#topology_yaml)
+
+    * [Specifying the zone and region](/docs/openshift?topic=openshift-block_storage#block_multizone_yaml)
+
+    * [Mounting block storage with an `XFS` file system](/docs/openshift?topic=openshift-block_storage#xfs)
+
+* [Removing persistent storage from a cluster](/docs/openshift?topic=openshift-block_storage#cleanup_block)
+
+    * [Understanding your storage removal options](/docs/openshift?topic=openshift-block_storage#storage_delete_options_block)
+
+    * [Cleaning up persistent storage](/docs/openshift?topic=openshift-block_storage#storage_remove_block)
+
+* [Setting up monitoring for `limited` connectivity PVs](/docs/openshift?topic=openshift-block_storage#storage-block-vpc-limited-monitoring)
+
+* [Assigning trusted profiles to block storage](/docs/openshift?topic=openshift-block_storage#block-classic-trusted-profile)
 
 
-[Setting up {{site.data.keyword.filestorage_short}}](/docs/openshift?topic=openshift-file_storage#file_storage)
-
-* [Quick start for {{site.data.keyword.filestorage_short}}](/docs/openshift?topic=openshift-file_storage#file_qs)
-
-* [Deciding on the {{site.data.keyword.filestorage_short}} configuration](/docs/openshift?topic=openshift-file_storage#file_predefined_storageclass)
-
-    * [File storage types](/docs/openshift?topic=openshift-file_storage#file-types)
-
-    * [IOPS](/docs/openshift?topic=openshift-file_storage#file-iops)
-
-    * [Reclaim policy](/docs/openshift?topic=openshift-file_storage#file-reclaim)
-
-    * [Billing type](/docs/openshift?topic=openshift-file_storage#file-billing)
-
-* [Adding {{site.data.keyword.filestorage_short}} to apps](/docs/openshift?topic=openshift-file_storage#add_file)
-
-* [Using existing {{site.data.keyword.filestorage_short}} in your cluster](/docs/openshift?topic=openshift-file_storage#existing_file)
-
-    * [Preparing your existing storage](/docs/openshift?topic=openshift-file_storage#existing-file-1)
-
-    * [Creating a persistent volume and a persistent volume claim](/docs/openshift?topic=openshift-file_storage#existing-file-2)
-
-* [Using {{site.data.keyword.filestorage_short}} in a stateful set](/docs/openshift?topic=openshift-file_storage#file_statefulset)
-
-    * [Creating the PVC when you create a stateful set by using dynamic provisioning](/docs/openshift?topic=openshift-file_storage#file_dynamic_statefulset)
-
-    * [Static provisioning: Using an existing PVC with your stateful set](/docs/openshift?topic=openshift-file_storage#file_static_statefulset)
-
-* [Changing the size and IOPS of your existing storage device](/docs/openshift?topic=openshift-file_storage#file_change_storage_configuration)
-
-* [Changing the default NFS version](/docs/openshift?topic=openshift-file_storage#nfs_version)
-
-    * [Creating a customized storage class with a specific NFS version](/docs/openshift?topic=openshift-file_storage#custom-sc-nfs-creat)
-
-    * [Changing your existing PV to use a different NFS version](/docs/openshift?topic=openshift-file_storage#changing-pv-nfs)
-
-* [Backing up and restoring data](/docs/openshift?topic=openshift-file_storage#file_backup_restore)
-
-    * [Setting up periodic snapshots](/docs/openshift?topic=openshift-file_storage#file-snapshots)
-
-    * [Replicating snapshots to another zone](/docs/openshift?topic=openshift-file_storage#file-replicate-snapshot-diff-zone)
-
-    * [Duplicating storage](/docs/openshift?topic=openshift-file_storage#file-dupe-storage)
-
-    * [Backing up data to {{site.data.keyword.cos_full}}](/docs/openshift?topic=openshift-file_storage#file-backup-helm)
-
-    * [Copying data to and from pods and containers](/docs/openshift?topic=openshift-file_storage#file-cp-data)
-
-* [Storage class reference](/docs/openshift?topic=openshift-file_storage#file_storageclass_reference)
-
-* [Sample customized storage classes](/docs/openshift?topic=openshift-file_storage#file_custom_storageclass)
-
-    * [Creating topology-aware storage](/docs/openshift?topic=openshift-file_storage#file-topology)
-
-    * [Specifying the zone for multizone clusters](/docs/openshift?topic=openshift-file_storage#file_multizone_yaml)
-
-    * [Changing the default NFS version](/docs/openshift?topic=openshift-file_storage#nfs_version_class)
-
-* [Removing persistent storage from a cluster](/docs/openshift?topic=openshift-file_storage#cleanup_file)
-
-    * [Understanding your storage removal options](/docs/openshift?topic=openshift-file_storage#storage_delete_options_file)
-
-    * [Cleaning up persistent storage](/docs/openshift?topic=openshift-file_storage#storage_remove_file)
-
-* [Assigning trusted profiles to file storage](/docs/openshift?topic=openshift-file_storage#file-classic-trusted-profile)
-
-
-## Setting up File Storage for VPC
-{: #sitemap_setting_up_file_storage_for_vpc}
+### File Storage for VPC add-on
+{: #sitemap_file_storage_for_vpc_add-on}
 
 
 [Enabling the {{site.data.keyword.filestorage_vpc_full_notm}} cluster add-on](/docs/openshift?topic=openshift-storage-file-vpc-install#storage-file-vpc-install)
@@ -3892,9 +3816,75 @@ subcollection: openshift
 
 [Storage class reference](/docs/openshift?topic=openshift-storage-file-vpc-sc-ref#storage-file-vpc-sc-ref)
 
+[File Storage for Classic](/docs/openshift?topic=openshift-file_storage#file_storage)
 
-## Setting up Object Storage
-{: #sitemap_setting_up_object_storage}
+* [Quick start for {{site.data.keyword.filestorage_short}}](/docs/openshift?topic=openshift-file_storage#file_qs)
+
+* [Deciding on the {{site.data.keyword.filestorage_short}} configuration](/docs/openshift?topic=openshift-file_storage#file_predefined_storageclass)
+
+    * [File storage types](/docs/openshift?topic=openshift-file_storage#file-types)
+
+    * [IOPS](/docs/openshift?topic=openshift-file_storage#file-iops)
+
+    * [Reclaim policy](/docs/openshift?topic=openshift-file_storage#file-reclaim)
+
+    * [Billing type](/docs/openshift?topic=openshift-file_storage#file-billing)
+
+* [Adding {{site.data.keyword.filestorage_short}} to apps](/docs/openshift?topic=openshift-file_storage#add_file)
+
+* [Using existing {{site.data.keyword.filestorage_short}} in your cluster](/docs/openshift?topic=openshift-file_storage#existing_file)
+
+    * [Preparing your existing storage](/docs/openshift?topic=openshift-file_storage#existing-file-1)
+
+    * [Creating a persistent volume and a persistent volume claim](/docs/openshift?topic=openshift-file_storage#existing-file-2)
+
+* [Using {{site.data.keyword.filestorage_short}} in a stateful set](/docs/openshift?topic=openshift-file_storage#file_statefulset)
+
+    * [Creating the PVC when you create a stateful set by using dynamic provisioning](/docs/openshift?topic=openshift-file_storage#file_dynamic_statefulset)
+
+    * [Static provisioning: Using an existing PVC with your stateful set](/docs/openshift?topic=openshift-file_storage#file_static_statefulset)
+
+* [Changing the size and IOPS of your existing storage device](/docs/openshift?topic=openshift-file_storage#file_change_storage_configuration)
+
+* [Changing the default NFS version](/docs/openshift?topic=openshift-file_storage#nfs_version)
+
+    * [Creating a customized storage class with a specific NFS version](/docs/openshift?topic=openshift-file_storage#custom-sc-nfs-creat)
+
+    * [Changing your existing PV to use a different NFS version](/docs/openshift?topic=openshift-file_storage#changing-pv-nfs)
+
+* [Backing up and restoring data](/docs/openshift?topic=openshift-file_storage#file_backup_restore)
+
+    * [Setting up periodic snapshots](/docs/openshift?topic=openshift-file_storage#file-snapshots)
+
+    * [Replicating snapshots to another zone](/docs/openshift?topic=openshift-file_storage#file-replicate-snapshot-diff-zone)
+
+    * [Duplicating storage](/docs/openshift?topic=openshift-file_storage#file-dupe-storage)
+
+    * [Backing up data to {{site.data.keyword.cos_full}}](/docs/openshift?topic=openshift-file_storage#file-backup-helm)
+
+    * [Copying data to and from pods and containers](/docs/openshift?topic=openshift-file_storage#file-cp-data)
+
+* [Storage class reference](/docs/openshift?topic=openshift-file_storage#file_storageclass_reference)
+
+* [Sample customized storage classes](/docs/openshift?topic=openshift-file_storage#file_custom_storageclass)
+
+    * [Creating topology-aware storage](/docs/openshift?topic=openshift-file_storage#file-topology)
+
+    * [Specifying the zone for multizone clusters](/docs/openshift?topic=openshift-file_storage#file_multizone_yaml)
+
+    * [Changing the default NFS version](/docs/openshift?topic=openshift-file_storage#nfs_version_class)
+
+* [Removing persistent storage from a cluster](/docs/openshift?topic=openshift-file_storage#cleanup_file)
+
+    * [Understanding your storage removal options](/docs/openshift?topic=openshift-file_storage#storage_delete_options_file)
+
+    * [Cleaning up persistent storage](/docs/openshift?topic=openshift-file_storage#storage_remove_file)
+
+* [Assigning trusted profiles to file storage](/docs/openshift?topic=openshift-file_storage#file-classic-trusted-profile)
+
+
+### Object Storage
+{: #sitemap_object_storage}
 
 
 [Setting up your {{site.data.keyword.cos_full_notm}} instance](/docs/openshift?topic=openshift-storage-cos-understand#storage-cos-understand)
@@ -4000,8 +3990,8 @@ subcollection: openshift
 * [{{site.data.keyword.cos_full_notm}} cluster add-on storage classes](/docs/openshift?topic=openshift-storage-cos-install-addon#cos-sc-ref-addon)
 
 
-## Setting up OpenShift Data Foundation
-{: #sitemap_setting_up_openshift_data_foundation}
+### OpenShift Data Foundation add-on
+{: #sitemap_openshift_data_foundation_add-on}
 
 
 [Understanding OpenShift Data Foundation](/docs/openshift?topic=openshift-ocs-storage-prep#ocs-storage-prep)
@@ -4030,12 +4020,7 @@ subcollection: openshift
 
 * [Deploying OpenShift Data Foundation](/docs/openshift?topic=openshift-ocs-storage-prep#odf-deploy-options)
 
-
-### Setting up OpenShift Data Foundation for VPC clusters
-{: #sitemap_setting_up_openshift_data_foundation_for_vpc_clusters}
-
-
-[Deploying OpenShift Data Foundation on VPC clusters](/docs/openshift?topic=openshift-deploy-odf-vpc#deploy-odf-vpc)
+[VPC: Installing ODF](/docs/openshift?topic=openshift-deploy-odf-vpc#deploy-odf-vpc)
 
 * [Prerequisites](/docs/openshift?topic=openshift-deploy-odf-vpc#ocs-storage-vpc)
 
@@ -4063,7 +4048,7 @@ subcollection: openshift
 
 * [Storage class reference](/docs/openshift?topic=openshift-deploy-odf-vpc&interface=cli#ocs-reference-section)
 
-[Updating or replacing VPC worker nodes that use OpenShift Data Foundation](/docs/openshift?topic=openshift-openshift-storage-update-vpc#openshift-storage-update-vpc)
+[VPC: Updating ODF](/docs/openshift?topic=openshift-openshift-storage-update-vpc#openshift-storage-update-vpc)
 
 * [Check the status of your storage cluster](/docs/openshift?topic=openshift-openshift-storage-update-vpc#storage-cluster-status)
 
@@ -4087,12 +4072,7 @@ subcollection: openshift
 
 * [Update your cluster resource](/docs/openshift?topic=openshift-openshift-storage-update-vpc#update-ocs-resource-yaml-vpc)
 
-
-### Setting up OpenShift Data Foundation for Classic clusters
-{: #sitemap_setting_up_openshift_data_foundation_for_classic_clusters}
-
-
-[Deploying OpenShift Data Foundation on Classic clusters](/docs/openshift?topic=openshift-deploy-odf-classic#deploy-odf-classic)
+[Classic: Installing ODF](/docs/openshift?topic=openshift-deploy-odf-classic#deploy-odf-classic)
 
 * [Planning your setup](/docs/openshift?topic=openshift-deploy-odf-classic#odf-classic-plan)
 
@@ -4112,7 +4092,7 @@ subcollection: openshift
 
 * [Limitations](/docs/openshift?topic=openshift-deploy-odf-classic&interface=cli#odf-limitations-classic)
 
-[Updating Classic worker nodes that use OpenShift Data Foundation](/docs/openshift?topic=openshift-openshift-storage-update-classic#openshift-storage-update-classic)
+[Classic: Updating ODF](/docs/openshift?topic=openshift-openshift-storage-update-classic#openshift-storage-update-classic)
 
 * [Update the cluster master](/docs/openshift?topic=openshift-openshift-storage-update-classic#update-cluster-master-classic)
 
@@ -4191,8 +4171,8 @@ subcollection: openshift
 [Storage class reference](/docs/openshift?topic=openshift-ocs-sc-ref#ocs-sc-ref)
 
 
-## Setting up Portworx
-{: #sitemap_setting_up_portworx}
+### Portworx
+{: #sitemap_portworx}
 
 
 [About Portworx](/docs/openshift?topic=openshift-storage_portworx_about#storage_portworx_about)
@@ -4305,11 +4285,6 @@ subcollection: openshift
 
 * [Gathering logs](/docs/openshift?topic=openshift-storage_portworx_support#portworx_logs)
 
-
-## IBM Cloud storage utilities
-{: #sitemap_ibm_cloud_storage_utilities}
-
-
 [IBM Cloud storage utilities](/docs/openshift?topic=openshift-utilities#utilities)
 
 * [Classic: Installing the IBM Cloud Block Storage Attacher plug-in (beta)](/docs/openshift?topic=openshift-utilities#block_storage_attacher)
@@ -4341,11 +4316,6 @@ subcollection: openshift
 * [Setting up {{site.data.keyword.mon_full_notm}} for storage volumes](/docs/openshift?topic=openshift-utilities#monitor_storage)
 
     * [Troubleshooting persistent storage when an {{site.data.keyword.mon_full_notm}} alert is triggered](/docs/openshift?topic=openshift-utilities#monitor_storage_ts)
-
-
-## Backing up and restoring storage data
-{: #sitemap_backing_up_and_restoring_storage_data}
-
 
 [Backing up and restoring storage data](/docs/openshift?topic=openshift-storage_br#storage_br)
 
@@ -8625,7 +8595,7 @@ subcollection: openshift
 
 
 ### Object Storage
-{: #sitemap_object_storage}
+{: #sitemap_object_storage1}
 
 
 [Debugging {{site.data.keyword.cos_full_notm}} failures](/docs/openshift?topic=openshift-debug_storage_cos#debug_storage_cos)

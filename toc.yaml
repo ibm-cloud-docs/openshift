@@ -53,7 +53,6 @@ toc:
           - cluster-plan-network-vpc.md
           - cluster-plan-network-classic.md
           - encryption.md
-          - storage-plan.md
           - document-environment.md
       - topicgroup:
           label: Preparing your account
@@ -239,83 +238,88 @@ toc:
           - edge-workload-prevent.md
           - edge-sysdig.md
       - topicgroup:
-          label: Setting up OpenShift AI
+          label: OpenShift AI add-on
           topics:
           - openshift-ai-addon-overview.md
           - openshift-ai-addon-install.md
           - openshift-ai-addon-manage.md
-      - storage-operator.md
-      - storage-block.md
       - topicgroup:
-          label: Setting up Block Storage for VPC
+          label: Storage
           topics:
-          - storage-block-vpc.md
-          - storage-block-vpc-snapshot.md
-          - storage-block-vpc-configmap.md
-          - storage-block-vpc-unmanaged.md
-          - storage-block-vpc-remove.md
-          - storage-block-vpc-migration.md
-          - storage-block-vpc-sc-ref.md
-          - storage-block-vpc-unmanaged.md
-      - storage-file.md
-      - topicgroup:
-          label: Setting up File Storage for VPC
-          topics:
-          - storage-file-vpc-install.md
-          - storage-file-vpc-apps.md
-          - storage-file-vpc-managing.md
-          - storage-file-vpc-snapshot.md
-          - storage-file-vpc-sc-ref.md
-      - topicgroup:
-          label: Setting up Object Storage
-          topics:
-          - storage-cos-understand.md
-          - storage-cos-install.md
-          - storage-cos-apps.md
-          - storage-cos-tutorial-quota.md
-          - storage-cos-vpc-ip.md
-          - storage-rclone-migration.md
-          - storage-cos-reference.md
-          - storage-cos-install-addon.md
-      - topicgroup:
-          label: Setting up OpenShift Data Foundation
-          topics:
-          - openshift_storage_odf_understand.md
+          - storage-plan.md
+          - topic: storage-operator.md
+            navtitle: Storage Operator add-on
           - topicgroup:
-              label: Setting up OpenShift Data Foundation for VPC clusters
+              label: Block Storage for VPC add-on
               topics:
-              - openshift_storage_odf_vpc.md
-              - openshift-storage-update-vpc.md
+              - storage-block-vpc.md
+              - storage-block-vpc-snapshot.md
+              - storage-block-vpc-configmap.md
+              - storage-block-vpc-unmanaged.md
+              - storage-block-vpc-remove.md
+              - storage-block-vpc-migration.md
+              - storage-block-vpc-sc-ref.md
+              - storage-block-vpc-unmanaged.md
+          - topic: storage-block.md
+            navtitle: Block Storage for Classic
           - topicgroup:
-              label: Setting up OpenShift Data Foundation for Classic clusters
+              label: File Storage for VPC add-on
               topics:
-              - openshift_storage_odf_classic.md
-              - openshift-storage-update-classic.md
-          - openshift_storage_odf_apps.md
-          - openshift_storage_odf_trusted_profile.md
-          - hpcs-kp-migration.md
-          - openshift_odf_rdr_roks.md
-          - openshift_storage_ocs_manage.md
-          - openshift_storage_noobaa.md
-          - openshift_storage_parameters.md
-          - openshift_storage_ocs_sc_ref.md
-      - topicgroup:
-          label: Setting up Portworx
-          topics:
-          - storage-portworx-about.md
-          - storage-portworx-plan.md
-          - storage-portworx-preparing.md
-          - storage-portworx-kv-store.md
-          - storage-portworx-encryption.md
-          - storage-portworx-deploy.md
-          - storage-portworx-autopilot.md
-          - storage-portworx-update.md
-          - storage-portworx-recovery.md
-          - storage-portworx-backup.md
-          - storage-portworx-removing.md
-          - storage-portworx-support.md
-      - storage-utilities.md
-      - storage-br.md
+              - storage-file-vpc-install.md
+              - storage-file-vpc-apps.md
+              - storage-file-vpc-managing.md
+              - storage-file-vpc-snapshot.md
+              - storage-file-vpc-sc-ref.md
+          - topic: storage-file.md
+            navtitle: File Storage for Classic
+          - topicgroup:
+              label: Object Storage
+              topics:
+              - storage-cos-understand.md
+              - storage-cos-install.md
+              - storage-cos-apps.md
+              - storage-cos-tutorial-quota.md
+              - storage-cos-vpc-ip.md
+              - storage-rclone-migration.md
+              - storage-cos-reference.md
+              - storage-cos-install-addon.md
+          - topicgroup:
+              label: OpenShift Data Foundation add-on
+              topics:
+              - openshift_storage_odf_understand.md
+              - topic: openshift_storage_odf_vpc.md
+                navtitle: 'VPC: Installing ODF'
+              - topic: openshift-storage-update-vpc.md
+                navtitle: 'VPC: Updating ODF'
+              - topic: openshift_storage_odf_classic.md
+                navtitle: 'Classic: Installing ODF'
+              - topic: openshift-storage-update-classic.md
+                navtitle: 'Classic: Updating ODF'
+              - openshift_storage_odf_apps.md
+              - openshift_storage_odf_trusted_profile.md
+              - hpcs-kp-migration.md
+              - openshift_odf_rdr_roks.md
+              - openshift_storage_ocs_manage.md
+              - openshift_storage_noobaa.md
+              - openshift_storage_parameters.md
+              - openshift_storage_ocs_sc_ref.md
+          - topicgroup:
+              label: Portworx
+              topics:
+              - storage-portworx-about.md
+              - storage-portworx-plan.md
+              - storage-portworx-preparing.md
+              - storage-portworx-kv-store.md
+              - storage-portworx-encryption.md
+              - storage-portworx-deploy.md
+              - storage-portworx-autopilot.md
+              - storage-portworx-update.md
+              - storage-portworx-recovery.md
+              - storage-portworx-backup.md
+              - storage-portworx-removing.md
+              - storage-portworx-support.md
+          - storage-utilities.md
+          - storage-br.md
       - topicgroup:
           label: Enhancing your cluster with Cloud Paks, Operators, and integrations
           topics:
