@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2026
-lastupdated: "2026-01-09"
+lastupdated: "2026-01-13"
 
 
 keywords: openshift
@@ -7007,6 +7007,8 @@ subcollection: openshift
     * [v1.0.13_297764008, released 14 November 2025](/docs/openshift?topic=openshift-cl-add-ons-ibm-object-csi-driver#cl-add-ons-ibm-object-csi-driver-v1013_297764008)
 
 [{{site.data.keyword.cos_full_notm}} plug-in](/docs/openshift?topic=openshift-cos_plugin_changelog#cos_plugin_changelog)
+
+* [Change log for version 2.2.46, released 13 January 2026](/docs/openshift?topic=openshift-cos_plugin_changelog#02246_object_plugin)
 
 * [Change log for version 2.2.45, released 28 November 2025](/docs/openshift?topic=openshift-cos_plugin_changelog#02245_object_plugin)
 
