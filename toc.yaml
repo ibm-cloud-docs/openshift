@@ -16,8 +16,13 @@ toc:
       topics:
       - getting-started.md
       - overview.md
-      - responsibilities.md
-      - satellite-resp.md
+      - topic: openshift_tech.md
+        navtitle: Service architecture
+      - topicgroup:
+          label: Your responsibilities
+          topics:
+          - responsibilities.md
+          - satellite-resp.md
       - topicgroup:
           label: Use cases
           topics:
@@ -38,7 +43,7 @@ toc:
       id: tutorial
       topics:
       - link:
-          label: Tutorials library for OpenShift
+          label: OpenShift tutorials
           href: https://cloud.ibm.com/docs?tab=tutorials&tags=openshift&page=1&pageSize=20
       - openshift_tutorial.md
       - openshift_tutorial_vpc.md
@@ -47,18 +52,18 @@ toc:
       id: howto
       topics:
       - topicgroup:
-          label: Planning to create clusters
+          label: Account setup
+          topics:
+          - cluster-create.md
+          - iam-platform-access-roles.md
+      - topicgroup:
+          label: Cluster planning
           topics:
           - strategy.md
           - cluster-plan-network-vpc.md
           - cluster-plan-network-classic.md
           - encryption.md
           - document-environment.md
-      - topicgroup:
-          label: Preparing your account
-          topics:
-          - cluster-create.md
-          - iam-platform-access-roles.md
       - topicgroup:
           label: Installing the CLI
           topics:
@@ -67,7 +72,7 @@ toc:
           - include: ../cli/reference/ibmcloud/uninstall_cli.md
       - api-install.md
       - topicgroup:
-          label: Creating clusters
+          label: Cluster creation
           topics:
           - cluster-create-classic.md
           - cluster-create-vpc-gen2.md
@@ -75,7 +80,7 @@ toc:
           - satellite_clusters.md
           - roks_da.md
       - topicgroup:
-          label: Accessing clusters
+          label: Clusters access
           topics:
           - openshift_cluster_access.md
           - cluster-access-admission-control.md
@@ -86,7 +91,7 @@ toc:
               - access_api_oauth_server.md
               - cluster-access-wireguard.md
       - topicgroup:
-          label: Managing clusters
+          label: Cluster management
           topics:
           - topicgroup:
               label: Adding worker nodes
@@ -113,25 +118,15 @@ toc:
               topics:
               - costs.md
               - costs-reserved.md
-      - cluster-remove.md
+          - cluster-remove.md
       - topicgroup:
-          label: Setting up encryption
+          label: Encryption
           topics:
           - encryption-setup.md
           - encryption-secrets.md
           - encryption-vpc-worker-disks.md
       - topicgroup:
-          label: Enhancing security
-          topics:
-          - secure.md
-          - openshift_tech.md
-          - data-security.md
-          - cbr.md
-          - cbr-tutorial.md
-          - pse-to-cbr-migration.md
-          - confidential-containers.md
-      - topicgroup:
-          label: Managing access control
+          label: Access management
           topics:
           - trusted-profile.md
           - classic-credentials.md
@@ -140,15 +135,24 @@ toc:
           - terraform-cluster-access.md
           - removing-users.md
       - topicgroup:
-          label: Securing cluster workloads
+          label: Security
           topics:
+          - secure.md
+          - data-security.md
+          - cbr.md
+          - cbr-tutorial.md
+          - pse-to-cbr-migration.md
+          - confidential-containers.md
           - openshift_scc.md
           - pod-priority.md
           - kubeapi-priority.md
           - pod-security-admission.md
-      - registry.md
-      - satellite-clusters-registry.md
-      - satellite-registry-pull-secret.md
+      - topicgroup:
+          label: Images and registries
+          topics:
+          - registry.md
+          - satellite-clusters-registry.md
+          - satellite-registry-pull-secret.md
       - topicgroup:
           label: Networking
           topics:
@@ -178,18 +182,7 @@ toc:
               - satellite-network-customization.md
               - satellite-sriov.md
       - topicgroup:
-          label: Logging and monitoring
-          topics:
-          - logging.md
-          - monitoring.md
-          - openshift_health_log.md
-          - openshift_health_monitor.md
-          - health-audit.md
-          - vpc-flow-logs.md
-          - telemetry.md
-          - at-events-ref.md
-      - topicgroup:
-          label: Developing and deploying apps
+          label: App deployment
           topics:
           - app-plan.md
           - images.md
@@ -199,16 +192,13 @@ toc:
           - app-update.md
           - kustomize.md
           - cicd.md
-      - topicgroup:
-          label: Exposing apps
-          topics:
           - openshift_app_networking.md
           - topicgroup:
-              label: Exposing apps with routes
+              label: Routes
               topics:
               - openshift_routes.md
           - topicgroup:
-              label: Exposing apps with Classic load balancers
+              label: Classic load balancers
               topics:
               - lb-about.md
               - lb.md
@@ -217,7 +207,7 @@ toc:
               - edge-vpc-lb.md
               - lb-dns.md
           - topicgroup:
-              label: Exposing apps with VPC load balancers
+              label: VPC load balancers
               topics:
               - vpc_lb_about.md
               - vpc_alb.md
@@ -225,7 +215,7 @@ toc:
               - vpc_nlb_pp.md
               - vpc_lb_manage.md
           - topicgroup:
-              label: Exposing apps with Ingress
+              label: Ingress
               topics:
               - openshift_ingress_qs_roks4.md
               - openshift_ingress_about_roks4.md
@@ -241,7 +231,7 @@ toc:
           - edge-workload-prevent.md
           - edge-sysdig.md
       - topicgroup:
-          label: Cluster autoscaler add-on
+          label: Autoscaling
           topics:
           - cluster-scaling-classic-vpc.md
           - cluster-scaling-sat.md
@@ -251,9 +241,9 @@ toc:
           - cluster-scaling-hpa-gpu.md
           - cluster-scaling-resize.md
       - topic: static-routes.md
-        navtitle: Static route add-on
+        navtitle: Static routes
       - topicgroup:
-          label: OpenShift AI add-on
+          label: OpenShift AI
           topics:
           - openshift-ai-addon-overview.md
           - openshift-ai-addon-install.md
@@ -347,6 +337,17 @@ toc:
           - integrations-addons.md
           - integrations-helm.md
           - integrations-svcbind.md
+      - topicgroup:
+          label: Observability
+          topics:
+          - logging.md
+          - monitoring.md
+          - openshift_health_log.md
+          - openshift_health_monitor.md
+          - health-audit.md
+          - vpc-flow-logs.md
+          - telemetry.md
+          - at-events-ref.md
   - navgroup:
       id: reference
       topics:
@@ -399,7 +400,7 @@ toc:
               - benchmarks_414.md
               - benchmarks_414_co.md
       - topicgroup:
-          label: CLI plug-in reference
+          label: CLI reference
           topics:
           - cli-map.md
           - cli-ks-plugin.md
@@ -676,7 +677,7 @@ toc:
               - ts-storage-cos-plugin-dep.md
               - ts-storage-cos-csi-addon.md
           - topicgroup:
-              label: Portworx Storage
+              label: Portworx
               topics:
               - ts-storage-debug-portworx.md
               - link:
