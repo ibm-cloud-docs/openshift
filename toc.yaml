@@ -84,15 +84,15 @@ toc:
               topics:
               - access-type-set.md
               - access_api_oauth_server.md
-          - cluster-access-wireguard.md
+              - cluster-access-wireguard.md
       - topicgroup:
-          label: Adding worker nodes
+          label: Managing clusters
           topics:
-          - add-workers-classic.md
-          - add-workers-vpc.md
-      - topicgroup:
-          label: Managing the cluster and worker node lifecycle
-          topics:
+          - topicgroup:
+              label: Adding worker nodes
+              topics:
+              - add-workers-classic.md
+              - add-workers-vpc.md
           - worker-os-check.md
           - update.md
           - dedicated-hosts.md
@@ -103,6 +103,17 @@ toc:
           - ca-rotate.md
           - worker-tag-label.md
           - resource-limit-node.md
+          - topicgroup:
+              label: Tuning performance
+              topics:
+              - performance.md
+              - rhcos-performance.md
+          - topicgroup:
+              label: Managing cluster costs
+              topics:
+              - costs.md
+              - costs-reserved.md
+      - cluster-remove.md
       - topicgroup:
           label: Setting up encryption
           topics:
@@ -139,41 +150,33 @@ toc:
       - satellite-clusters-registry.md
       - satellite-registry-pull-secret.md
       - topicgroup:
-          label: Controlling network traffic in Classic clusters
+          label: Networking
           topics:
-          - cs_tutorials_policies.md
-          - network-policy.md
-          - firewall.md
-          - subnets.md
-          - vpn.md
-      - topicgroup:
-          label: Controlling network traffic in VPC clusters
-          topics:
-          - vpc-security-group2.md
-          - vpc-sbd-allow-outbound.md
-          - vpc-sbd-enable-existing.md
-          - vpc-security-group-manage.md
-          - vpc-acls.md
-          - vpc-kube-policies.md
-          - vpc-firewall.md
-          - vpc-subnets.md
-          - vpc-vpn.md
-      - topicgroup:
-          label: Controlling network traffic in Satellite clusters
-          topics:
-          - satellite-network-customization.md
-          - satellite-sriov.md
-      - static-routes.md
-      - topicgroup:
-          label: Setting up the cluster autoscaler
-          topics:
-          - cluster-scaling-classic-vpc.md
-          - cluster-scaling-sat.md
-          - cluster-scaling-install-addon.md
-          - cluster-scaling-enable.md
-          - cluster-scaling-deploy-apps.md
-          - cluster-scaling-hpa-gpu.md
-          - cluster-scaling-resize.md
+          - topicgroup:
+              label: Classic clusters
+              topics:
+              - cs_tutorials_policies.md
+              - network-policy.md
+              - firewall.md
+              - subnets.md
+              - vpn.md
+          - topicgroup:
+              label: VPC clusters
+              topics:
+              - vpc-security-group2.md
+              - vpc-sbd-allow-outbound.md
+              - vpc-sbd-enable-existing.md
+              - vpc-security-group-manage.md
+              - vpc-acls.md
+              - vpc-kube-policies.md
+              - vpc-firewall.md
+              - vpc-subnets.md
+              - vpc-vpn.md
+          - topicgroup:
+              label: Satellite clusters
+              topics:
+              - satellite-network-customization.md
+              - satellite-sriov.md
       - topicgroup:
           label: Logging and monitoring
           topics:
@@ -185,7 +188,6 @@ toc:
           - vpc-flow-logs.md
           - telemetry.md
           - at-events-ref.md
-      - cicd.md
       - topicgroup:
           label: Developing and deploying apps
           topics:
@@ -196,6 +198,7 @@ toc:
           - nodeport.md
           - app-update.md
           - kustomize.md
+          - cicd.md
       - topicgroup:
           label: Exposing apps
           topics:
@@ -238,6 +241,18 @@ toc:
           - edge-workload-prevent.md
           - edge-sysdig.md
       - topicgroup:
+          label: Cluster autoscaler add-on
+          topics:
+          - cluster-scaling-classic-vpc.md
+          - cluster-scaling-sat.md
+          - cluster-scaling-install-addon.md
+          - cluster-scaling-enable.md
+          - cluster-scaling-deploy-apps.md
+          - cluster-scaling-hpa-gpu.md
+          - cluster-scaling-resize.md
+      - topic: static-routes.md
+        navtitle: Static route add-on
+      - topicgroup:
           label: OpenShift AI add-on
           topics:
           - openshift-ai-addon-overview.md
@@ -246,7 +261,8 @@ toc:
       - topicgroup:
           label: Storage
           topics:
-          - storage-plan.md
+          - topic: storage-plan.md
+            navtitle: Storage overview
           - topic: storage-operator.md
             navtitle: Storage Operator add-on
           - topicgroup:
@@ -321,7 +337,7 @@ toc:
           - storage-utilities.md
           - storage-br.md
       - topicgroup:
-          label: Enhancing your cluster with Cloud Paks, Operators, and integrations
+          label: Cloud Paks, Operators, and integrations
           topics:
           - integrations-ibm-third-party.md
           - oc-virtualization.md
@@ -331,17 +347,6 @@ toc:
           - integrations-addons.md
           - integrations-helm.md
           - integrations-svcbind.md
-      - topicgroup:
-          label: Tuning performance
-          topics:
-          - performance.md
-          - rhcos-performance.md
-      - topicgroup:
-          label: Managing cluster costs
-          topics:
-          - costs.md
-          - costs-reserved.md
-      - cluster-remove.md
   - navgroup:
       id: reference
       topics:
