@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2026
-lastupdated: "2026-01-14"
+lastupdated: "2026-01-15"
 
 
 keywords: kubernetes, release notes, openshift, {{site.data.keyword.openshiftlong_notm}}
@@ -30,6 +30,7 @@ Looking for {{site.data.keyword.cloud_notm}} status, platform announcements, sec
 ## January 2026
 {: #openshift-jan26}
 
+
 ### 14 January 2026
 {: #openshift-jan1426}
 {: release-note}
@@ -43,6 +44,23 @@ CLI version `1.0.745` is available.
 
 {{site.data.keyword.cos_full_notm}} plug-in updates.
 :   For more information, see the [change log](/docs/openshift?topic=openshift-cos_plugin_changelog).
+
+### 12 January 2026
+{: #openshift-jan1226}
+{: release-note}
+
+
+
+
+
+{{site.data.keyword.openshiftlong_notm}} worker node fix packs are available.
+:   Worker node fix packs can be applied by updating or reloading the worker node in classic infrastructure, or replacing the worker node in VPC infrastructure. Review the following change logs for your cluster version.
+:   [Version 4.19 change log](/docs/openshift?topic=openshift-openshift_changelog_419)
+:   [Version 4.18 change log](/docs/openshift?topic=openshift-openshift_changelog_418)
+:   [Version 4.17 change log](/docs/openshift?topic=openshift-openshift_changelog_417)
+:   [Version 4.16 change log](/docs/openshift?topic=openshift-openshift_changelog_416)
+
+
 
 
 
