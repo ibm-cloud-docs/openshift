@@ -39,7 +39,7 @@ Master patch updates are applied automatically. Worker node patch updates can be
 {: #418_components}
 
 
-### Change log for Master fix pack 4.18.30_1576_openshift, released 21 January 2026
+### Master fix pack 4.18.30_1576_openshift, released 21 January 2026
 {: #41830_1576_openshift_M}
 
 The following table shows the changes that are in the master fix pack 4.18.30_1576_openshift. Master patch updates are applied automatically. 
@@ -106,7 +106,7 @@ The following table shows the components included in the worker node fix pack 4.
 {: #cl-boms-41830_1572_openshift_W-component-table}
 
 
-### Change log for Master fix pack 4.18.28_1571_openshift, released 10 December 2025
+### Master fix pack 4.18.28_1571_openshift, released 10 December 2025
 {: #41828_1571_openshift_M}
 
 The following table shows the changes that are in the master fix pack 4.18.28_1571_openshift. Master patch updates are applied automatically. 

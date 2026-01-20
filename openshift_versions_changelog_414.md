@@ -3,7 +3,7 @@
 copyright:
   years: 2024, 2026
 
-lastupdated: "2026-01-09"
+lastupdated: "2026-01-20"
 
 
 keywords: change log, version history, 4.14_openshift
@@ -76,7 +76,7 @@ The following table shows the components included in the worker node fix pack 4.
 {: #cl-boms-41460_1638_openshift_W-component-table}
 
 
-### Change log for Master fix pack 4.14.59_1637_openshift, released 10 December 2025
+### Master fix pack 4.14.59_1637_openshift, released 10 December 2025
 {: #41459_1637_openshift_M}
 
 The following table shows the changes that are in the master fix pack 4.14.59_1637_openshift. Master patch updates are applied automatically. 
