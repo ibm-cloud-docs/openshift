@@ -302,6 +302,10 @@ subcollection: openshift
 
 * [January 2026](/docs/openshift?topic=openshift-openshift-relnotes#openshift-jan26)
 
+    * [21 January 2026](/docs/openshift?topic=openshift-openshift-relnotes#openshift-jan2126)
+
+        * {{site.data.keyword.openshiftlong_notm}} master fix packs.
+
     * [14 January 2026](/docs/openshift?topic=openshift-openshift-relnotes#openshift-jan1426)
 
         * CLI version `1.0.745` is available.
