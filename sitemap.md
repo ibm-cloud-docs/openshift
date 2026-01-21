@@ -79,27 +79,6 @@ subcollection: openshift
 * [Related resources](/docs/openshift?topic=openshift-overview#kubernetes-resources)
 
 
-## Service architecture
-{: #sitemap_service_architecture}
-
-
-[Service architecture](/docs/openshift?topic=openshift-service-architecture#service-architecture)
-
-* [Classic {{site.data.keyword.redhat_openshift_notm}} architecture](/docs/openshift?topic=openshift-service-architecture#service-architecture-4)
-
-    * [{{site.data.keyword.redhat_openshift_notm}} master components](/docs/openshift?topic=openshift-service-architecture#service-architecture-4-master)
-
-    * [{{site.data.keyword.redhat_openshift_notm}} worker node components](/docs/openshift?topic=openshift-service-architecture#service-architecture-4-workers)
-
-* [VPC cluster service architecture](/docs/openshift?topic=openshift-service-architecture#service-architecture_vpc)
-
-    * [Cluster with public and private cloud service endpoints](/docs/openshift?topic=openshift-service-architecture#vpc-service-arch-public-and-private)
-
-    * [Cluster with private cloud service endpoint only](/docs/openshift?topic=openshift-service-architecture#vpc-service-arch-private-only)
-
-    * [VPC master and worker node components](/docs/openshift?topic=openshift-service-architecture#service-arch-vpc-4)
-
-
 ## Your responsibilities
 {: #sitemap_your_responsibilities}
 
@@ -7532,51 +7511,33 @@ subcollection: openshift
 [Supported IBM Cloud and third-party integrations](/docs/openshift?topic=openshift-supported_integrations#supported_integrations)
 
 
-## Default service settings for {{site.data.keyword.redhat_openshift_notm}} components
-{: #sitemap_default_service_settings_for_components}
+## Service settings
+{: #sitemap_service_settings}
 
 
-[Default service settings for {{site.data.keyword.redhat_openshift_notm}} components](/docs/openshift?topic=openshift-service-settings#service-settings)
+[Architecture](/docs/openshift?topic=openshift-service-architecture#service-architecture)
+
+* [Classic {{site.data.keyword.redhat_openshift_notm}} architecture](/docs/openshift?topic=openshift-service-architecture#service-architecture-4)
+
+    * [{{site.data.keyword.redhat_openshift_notm}} master components](/docs/openshift?topic=openshift-service-architecture#service-architecture-4-master)
+
+    * [{{site.data.keyword.redhat_openshift_notm}} worker node components](/docs/openshift?topic=openshift-service-architecture#service-architecture-4-workers)
+
+* [VPC cluster service architecture](/docs/openshift?topic=openshift-service-architecture#service-architecture_vpc)
+
+    * [Cluster with public and private cloud service endpoints](/docs/openshift?topic=openshift-service-architecture#vpc-service-arch-public-and-private)
+
+    * [Cluster with private cloud service endpoint only](/docs/openshift?topic=openshift-service-architecture#vpc-service-arch-private-only)
+
+    * [VPC master and worker node components](/docs/openshift?topic=openshift-service-architecture#service-arch-vpc-4)
+
+[Default settings](/docs/openshift?topic=openshift-service-settings#service-settings)
 
 * [Feature gates](/docs/openshift?topic=openshift-service-settings#feature-gates)
 
 * [Global settings](/docs/openshift?topic=openshift-service-settings#global-settings)
 
-
-## Understanding high availability and disaster recovery for {{site.data.keyword.openshiftlong_notm}}
-{: #sitemap_understanding_high_availability_and_disaster_recovery_for_}
-
-
-[Understanding high availability and disaster recovery for {{site.data.keyword.openshiftlong_notm}}](/docs/openshift?topic=openshift-iks-ha-dr#iks-ha-dr)
-
-* [High availability architecture](/docs/openshift?topic=openshift-iks-ha-dr#ha-architecture)
-
-    * [Resource distribution for high availability.](/docs/openshift?topic=openshift-iks-ha-dr#ha-architecture-dist)
-
-* [High availability features](/docs/openshift?topic=openshift-iks-ha-dr#ha-features)
-
-* [Disaster recovery features](/docs/openshift?topic=openshift-iks-ha-dr#dr-features)
-
-* [Recovery time objective (RTO) and recovery point objective (RPO)](/docs/openshift?topic=openshift-iks-ha-dr#rto-rpo-features)
-
-* [How {{site.data.keyword.IBM}} helps ensure disaster recovery](/docs/openshift?topic=openshift-iks-ha-dr#ibm-disaster-recovery)
-
-    * [How {{site.data.keyword.IBM_notm}} recovers from failures](/docs/openshift?topic=openshift-iks-ha-dr#ibm-zone-failure)
-
-* [How {{site.data.keyword.IBM_notm}} maintains services](/docs/openshift?topic=openshift-iks-ha-dr#ibm-service-maintenance)
-
-* [Your responsibilities for high availability and disaster recovery](/docs/openshift?topic=openshift-iks-ha-dr#feature-responsibilities)
-
-* [Change management](/docs/openshift?topic=openshift-iks-ha-dr#change-management-hadr)
-
-* [Considerations for app and service deployment](/docs/openshift?topic=openshift-iks-ha-dr#app-considerations)
-
-
-## Service dependencies
-{: #sitemap_service_dependencies}
-
-
-[Service dependencies](/docs/openshift?topic=openshift-service-dependencies#service-dependencies)
+[Dependencies](/docs/openshift?topic=openshift-service-dependencies#service-dependencies)
 
 * [Data and Control plane deployment for an MZR](/docs/openshift?topic=openshift-service-dependencies#data-and-control-plane-deployment-for-an-mzr)
 
@@ -7597,6 +7558,36 @@ subcollection: openshift
     * [Where are the separate control plane and data plane located, if applicable?](/docs/openshift?topic=openshift-service-dependencies#separate-plans)
 
 * [Additional resources](/docs/openshift?topic=openshift-service-dependencies#additional-resources)
+
+[Limitations](/docs/openshift?topic=openshift-limitations#limitations)
+
+* [Service and quota limitations](/docs/openshift?topic=openshift-limitations#tech_limits)
+
+    * [{{site.data.keyword.openshiftlong_notm}} cluster limitations](/docs/openshift?topic=openshift-limitations#ocp4_limitations)
+
+* [Classic cluster limitations](/docs/openshift?topic=openshift-limitations#classic_limits)
+
+    * [Compute](/docs/openshift?topic=openshift-limitations#classic_compute_limit)
+
+    * [Networking](/docs/openshift?topic=openshift-limitations#classic_networking_limit)
+
+    * [Storage](/docs/openshift?topic=openshift-limitations#classic_storage_limit)
+
+* [Classic user access](/docs/openshift?topic=openshift-limitations#classic_access_limit)
+
+* [VPC cluster limitations](/docs/openshift?topic=openshift-limitations#ks_vpc_gen2_limits)
+
+    * [Compute](/docs/openshift?topic=openshift-limitations#vpc_gen2_compute_limit)
+
+    * [Networking](/docs/openshift?topic=openshift-limitations#vpc_gen2_networking_limit)
+
+    * [Storage](/docs/openshift?topic=openshift-limitations#vpc_gen2_storage_limit)
+
+* [VPC user access](/docs/openshift?topic=openshift-limitations#vpc_access_limit)
+
+* [{{site.data.keyword.satelliteshort}} cluster limitations](/docs/openshift?topic=openshift-limitations#satellite_limits)
+
+* [Unsupported features and operators in {{site.data.keyword.openshiftlong_notm}}](/docs/openshift?topic=openshift-limitations#not-supported-features-table)
 
 
 ## Worker node flavors
@@ -7679,6 +7670,35 @@ subcollection: openshift
 * [Exported data formats](/docs/openshift?topic=openshift-data-portability#data-portability-data-formats)
 
 * [Data ownership](/docs/openshift?topic=openshift-data-portability#data-ownership)
+
+
+## Understanding high availability and disaster recovery for {{site.data.keyword.openshiftlong_notm}}
+{: #sitemap_understanding_high_availability_and_disaster_recovery_for_}
+
+
+[Understanding high availability and disaster recovery for {{site.data.keyword.openshiftlong_notm}}](/docs/openshift?topic=openshift-iks-ha-dr#iks-ha-dr)
+
+* [High availability architecture](/docs/openshift?topic=openshift-iks-ha-dr#ha-architecture)
+
+    * [Resource distribution for high availability.](/docs/openshift?topic=openshift-iks-ha-dr#ha-architecture-dist)
+
+* [High availability features](/docs/openshift?topic=openshift-iks-ha-dr#ha-features)
+
+* [Disaster recovery features](/docs/openshift?topic=openshift-iks-ha-dr#dr-features)
+
+* [Recovery time objective (RTO) and recovery point objective (RPO)](/docs/openshift?topic=openshift-iks-ha-dr#rto-rpo-features)
+
+* [How {{site.data.keyword.IBM}} helps ensure disaster recovery](/docs/openshift?topic=openshift-iks-ha-dr#ibm-disaster-recovery)
+
+    * [How {{site.data.keyword.IBM_notm}} recovers from failures](/docs/openshift?topic=openshift-iks-ha-dr#ibm-zone-failure)
+
+* [How {{site.data.keyword.IBM_notm}} maintains services](/docs/openshift?topic=openshift-iks-ha-dr#ibm-service-maintenance)
+
+* [Your responsibilities for high availability and disaster recovery](/docs/openshift?topic=openshift-iks-ha-dr#feature-responsibilities)
+
+* [Change management](/docs/openshift?topic=openshift-iks-ha-dr#change-management-hadr)
+
+* [Considerations for app and service deployment](/docs/openshift?topic=openshift-iks-ha-dr#app-considerations)
 
 
 ## Monitoring status best practices
@@ -8741,41 +8761,6 @@ subcollection: openshift
     * [Gathering an SOS report](/docs/openshift?topic=openshift-get-help#sos-report-oc)
 
 * [Open a support case](/docs/openshift?topic=openshift-get-help#support-case)
-
-
-## Service limitations
-{: #sitemap_service_limitations}
-
-
-[Service limitations](/docs/openshift?topic=openshift-limitations#limitations)
-
-* [Service and quota limitations](/docs/openshift?topic=openshift-limitations#tech_limits)
-
-    * [{{site.data.keyword.openshiftlong_notm}} cluster limitations](/docs/openshift?topic=openshift-limitations#ocp4_limitations)
-
-* [Classic cluster limitations](/docs/openshift?topic=openshift-limitations#classic_limits)
-
-    * [Compute](/docs/openshift?topic=openshift-limitations#classic_compute_limit)
-
-    * [Networking](/docs/openshift?topic=openshift-limitations#classic_networking_limit)
-
-    * [Storage](/docs/openshift?topic=openshift-limitations#classic_storage_limit)
-
-* [Classic user access](/docs/openshift?topic=openshift-limitations#classic_access_limit)
-
-* [VPC cluster limitations](/docs/openshift?topic=openshift-limitations#ks_vpc_gen2_limits)
-
-    * [Compute](/docs/openshift?topic=openshift-limitations#vpc_gen2_compute_limit)
-
-    * [Networking](/docs/openshift?topic=openshift-limitations#vpc_gen2_networking_limit)
-
-    * [Storage](/docs/openshift?topic=openshift-limitations#vpc_gen2_storage_limit)
-
-* [VPC user access](/docs/openshift?topic=openshift-limitations#vpc_access_limit)
-
-* [{{site.data.keyword.satelliteshort}} cluster limitations](/docs/openshift?topic=openshift-limitations#satellite_limits)
-
-* [Unsupported features and operators in {{site.data.keyword.openshiftlong_notm}}](/docs/openshift?topic=openshift-limitations#not-supported-features-table)
 
 
 ## Requesting access to allowlisted features

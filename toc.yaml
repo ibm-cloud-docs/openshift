@@ -16,8 +16,6 @@ toc:
       topics:
       - getting-started.md
       - overview.md
-      - topic: openshift_tech.md
-        navtitle: Service architecture
       - topicgroup:
           label: Your responsibilities
           topics:
@@ -433,16 +431,24 @@ toc:
           - cl-add-ons-ibm-cloud-image-key-synchronizer.md
       - locations.md
       - openshift_integrations_overview.md
-      - service-settings.md
-      - ha-dr.md
-      - topic: service-dependency.md
-        navtitle: Service dependencies
+      - topicgroup:
+          label: Service settings
+          topics:
+          - topic: openshift_tech.md
+            navtitle: Architecture
+          - topic: service-settings.md
+            navtitle: Default settings
+          - topic: service-dependency.md
+            navtitle: Dependencies
+          - topic: limitations.md
+            navtitle: Limitations
       - topicgroup:
           label: Worker node flavors
           topics:
           - vpc-flavors.md
           - classic-flavors.md
       - data-portability.md
+      - ha-dr.md
   - navgroup:
       id: help
       topics:
@@ -698,6 +704,5 @@ toc:
               - ts-storage-ocs-missing-pods.md
               - ts-storage-ocs-unresolved.md
       - get-help.md
-      - limitations.md
       - allowlist-request.md
       - sitemap.md
