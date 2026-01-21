@@ -30,6 +30,7 @@ Looking for {{site.data.keyword.cloud_notm}} status, platform announcements, sec
 ## January 2026
 {: #openshift-jan26}
 
+
 ### 21 January 2026
 {: #openshift-jan2126}
 {: release-note}
@@ -68,6 +69,8 @@ VPC Block CSI Driver cluster add-on patch updates.
 
 CLI version `1.0.745` is available.
 :   For more information, see [Updating the CLI](/docs/openshift?topic=openshift-cli-update) and the [CLI change log](/docs/openshift?topic=openshift-cs_cli_changelog).
+
+
 
 ### 13 January 2026
 {: #openshift-jan1326}
