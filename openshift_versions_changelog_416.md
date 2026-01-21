@@ -3,7 +3,7 @@
 copyright:
   years: 2024, 2026
 
-lastupdated: "2026-01-15"
+lastupdated: "2026-01-20"
 
 
 keywords: change log, version history, 4.16_openshift
@@ -37,6 +37,25 @@ Master patch updates are applied automatically. Worker node patch updates can be
 
 ## Version 4.16
 {: #416_components}
+
+
+### Master fix pack 4.16.54_1600_openshift, released 21 January 2026
+{: #41654_1600_openshift_M}
+
+The following table shows the changes that are in the master fix pack 4.16.54_1600_openshift. Master patch updates are applied automatically. 
+
+
+| Component | Previous | Current | Description |
+| --- | --- | --- | --- |
+| Calico | v3.29.6 | v3.29.7 | See the [Calico release notes](https://docs.tigera.io/calico/3.29/release-notes/#calico-open-source-3297-bug-fix-release){: external}. |
+| Cluster health image | v1.6.10 | v1.6.13 | New version contains updates and security fixes. |
+| etcd | v3.5.24 | v3.5.26 | See the [etcd release notes](https://github.com/coreos/etcd/releases/v3.5.26){: external}. |
+| {{site.data.keyword.cloud_notm}} Controller Manager | v1.29.15-28 | v1.29.15-38 | New version contains updates and security fixes. |
+| Key Management Service provider | v2.10.18 | 2.10.20 | New version contains updates and security fixes. |
+| Portieris admission controller | v0.13.31 | v0.13.33 | See the [Portieris admission controller release notes](https://github.com/{{site.data.keyword.IBM_notm}}/portieris/releases/tag/v0.13.33){: external}. |
+| {{site.data.keyword.openshiftlong_notm}}. | 4.16.51 | 4.16.54 | See the [{{site.data.keyword.openshiftlong_notm}} release notes](https://docs.redhat.com/en/documentation/openshift_container_platform/4.16/html/release_notes/ocp-4-16-release-notes#ocp-4-16-54_release-notes){: external}. |
+| Tigera Operator | v1.36.14 | v1.36.16 | See the [Tigera Operator release notes](https://github.com/tigera/operator/releases/tag/v1.36.16){: external}. |
+{: caption="Changes since version 4.16.52-1595-openshift" caption-side="bottom"}
 
 
 ### Worker node fix pack 4.16.54_1598_openshift, released 12 January 2026
@@ -90,7 +109,7 @@ The following table shows the components included in the worker node fix pack 4.
 {: #cl-boms-41654_1596_openshift_W-component-table}
 
 
-### Change log for Master fix pack 4.16.52_1595_openshift, released 10 December 2025
+### Master fix pack 4.16.52_1595_openshift, released 10 December 2025
 {: #41652_1595_openshift_M}
 
 The following table shows the changes that are in the master fix pack 4.16.52_1595_openshift. Master patch updates are applied automatically. 
