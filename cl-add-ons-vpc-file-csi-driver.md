@@ -1,9 +1,9 @@
 ---
 
 copyright:
-  years: 2024, 2025
+  years: 2024, 2026
 
-lastupdated: "2025-12-17"
+lastupdated: "2026-01-21"
 
 
 keywords: change log, version history, VPC File CSI Driver
@@ -26,6 +26,17 @@ Review the version history for VPC File CSI Driver.
 
 ## Version 2.0
 {: #cl-add-ons-vpc-file-csi-driver-2.0}
+
+
+### v2.0.22_310489003, released 21 January 2026
+{: #cl-add-ons-vpc-file-csi-driver-v2022_310489003}
+
+[Default version]{: tag-green}
+
+- Resolves the following CVEs: [CVE-2025-13281](https://nvd.nist.gov/vuln/detail/CVE-2025-13281){: external}, [CVE-2025-8291](https://nvd.nist.gov/vuln/detail/CVE-2025-8291){: external}, [CVE-2025-61729](https://nvd.nist.gov/vuln/detail/CVE-2025-61729){: external}, [CVE-2025-61727](https://nvd.nist.gov/vuln/detail/CVE-2025-61727){: external}, [CVE-2025-6069](https://nvd.nist.gov/vuln/detail/CVE-2025-6069){: external}, [CVE-2024-5642](https://nvd.nist.gov/vuln/detail/CVE-2024-5642){: external}, and [CVE-2025-6075](https://nvd.nist.gov/vuln/detail/CVE-2025-6075){: external}.
+- Updates k8s client libraries from 1.32.8 to 1.32.10. 
+- Fixed an issue where the EIT enablement was not working in tainted worker pools. 
+- `armada-storage-secret v1.2.74`
 
 
 ### v2.0.21_301434433, released 05 December 2025

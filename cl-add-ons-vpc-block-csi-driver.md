@@ -1,9 +1,9 @@
 ---
 
 copyright:
-  years: 2024, 2025
+  years: 2024, 2026
 
-lastupdated: "2025-12-12"
+lastupdated: "2026-01-21"
 
 
 keywords: change log, version history, VPC Block CSI Driver
@@ -26,6 +26,14 @@ Review the version history for VPC Block CSI Driver.
 
 ## Version 5.2
 {: #cl-add-ons-vpc-block-csi-driver-5.2}
+
+
+### v5.2.42_310488886, released 21 January 2026
+{: #cl-add-ons-vpc-block-csi-driver-v5242_310488886}
+
+- Resolves the following CVEs: [CVE-2025-61727](https://nvd.nist.gov/vuln/detail/CVE-2025-61727){: external}, [CVE-2025-61729](https://nvd.nist.gov/vuln/detail/CVE-2025-61729){: external}, [CVE-2025-4598](https://nvd.nist.gov/vuln/detail/CVE-2025-4598){: external}, and [CVE-2025-13281](https://nvd.nist.gov/vuln/detail/CVE-2025-13281){: external}.
+- Updates K8s client libraries from 1.32.8 to 1.32.10 in iks-vpc-block-driver container 
+- `armada-storage-secret v1.3.39`
 
 
 ### 5.2.41_296897820, released 12 November 2025
@@ -91,6 +99,14 @@ Review the version history for VPC Block CSI Driver.
 
 ## Version 5.1
 {: #cl-add-ons-vpc-block-csi-driver-5.1}
+
+
+### v5.1.41_310494703, released 21 January 2026
+{: #cl-add-ons-vpc-block-csi-driver-v5141_310494703}
+
+- Resolves the following CVEs: [CVE-2025-61727](https://nvd.nist.gov/vuln/detail/CVE-2025-61727){: external}, [CVE-2025-61729](https://nvd.nist.gov/vuln/detail/CVE-2025-61729){: external}, [CVE-2025-4598](https://nvd.nist.gov/vuln/detail/CVE-2025-4598){: external}, and [CVE-2025-13281](https://nvd.nist.gov/vuln/detail/CVE-2025-13281){: external}.
+- Updates K8s client libraries from 1.32.8 to 1.32.10 in iks-vpc-block-driver container 
+- `armada-storage-secret v1.2.74`
 
 
 ### 5.1.40_296898008, released 12 November 2025
