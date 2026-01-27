@@ -1,9 +1,9 @@
 ---
 
 copyright:
-  years: 2014, 2025
+  years: 2014, 2026
 
-lastupdated: "2025-12-19"
+lastupdated: "2026-01-27"
 
 keywords: openshift, kubernetes, mzr, szr, multizone, multi az
 
@@ -26,7 +26,7 @@ This image is an artistic representation and does not reflect actual political o
 {: note}
 
 
-Chennai (`in-che`) MZR limiations
+Chennai (`in-che`) MZR limitations
 :   **Operating systems**: You can only create clusters at version 4.16 and later in Chennai and can only use RHEL 9 or RHCOS workers nodes.
 
 :   **Baremetal workers**: Baremetal VPC worker nodes are not available in Chennai.
