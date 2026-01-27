@@ -1,8 +1,8 @@
 ---
 
 copyright: 
-  years: 2025, 2025
-lastupdated: "2025-12-09"
+  years: 2025, 2026
+lastupdated: "2026-01-27"
 
 
 keywords: kubernetes, openshift, {{site.data.keyword.filestorage_vpc_short}}, snapshot, restore
@@ -40,7 +40,7 @@ shares_access_forbidden
 There are several reasons why you might not be able to create snapshots. To debug the issue, complete the following steps to gather the required log files before contacting support.
 {: tsCauses}
 
-1. Describe your volumesnapshot and review the status.
+1. Describe your volume snapshot and review the status.
     ```sh
     kubectl describe volumesnapshot VOLUMESNAPSHOT
     ```
@@ -63,5 +63,3 @@ There are several reasons why you might not be able to create snapshots. To debu
     {: pre}
 
 1. If the issue persists, contact support. Open a [support case](/docs/account?topic=account-using-avatar). In the case details, be sure to include any relevant log files, error messages, or command outputs.
-
-
