@@ -32,7 +32,7 @@ Warning ProvisioningFailed  19s        vpc.file.csi.ibm.io_ibm-vpc-file-csi-cont
 ```
 {: screen}
 
-You might see this error if you have deleted the original PVC that was used to create the snapshot. This results in the removal of all of its respective snapshots. Another possilbe reason is that you manually deleted the snapshot from your VPC resources.
+You might see this error if you have deleted the original PVC that was used to create the snapshot. This results in the removal of all of each of its snapshots. Another possible reason is that you manually deleted the snapshot from your VPC resources.
 {: tsCauses}
 
 
