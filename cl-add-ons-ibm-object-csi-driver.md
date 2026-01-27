@@ -1,9 +1,9 @@
 ---
 
 copyright:
-  years: 2024, 2025
+  years: 2024, 2026
 
-lastupdated: "2025-12-12"
+lastupdated: "2026-01-27"
 
 
 keywords: change log, version history, IBM Object CSI Driver
@@ -35,4 +35,4 @@ Review the version history for IBM Object CSI Driver.
 
 - Resolves the following CVEs: [CVE-2025-58185](https://nvd.nist.gov/vuln/detail/CVE-2025-58185){: external}, [CVE-2025-58189](https://nvd.nist.gov/vuln/detail/CVE-2025-58189){: external}, [CVE-2025-61723](https://nvd.nist.gov/vuln/detail/CVE-2025-61723){: external}, [CVE-2025-61725](https://nvd.nist.gov/vuln/detail/CVE-2025-61725){: external}, and [CVE-2025-5318](https://nvd.nist.gov/vuln/detail/CVE-2025-5318){: external}.
 - Updates Go to version `1.25.4`.
-- Update mountOptions for existing S3FS and Rclone storageclasses for improved performance. 
+- Update mountOptions for existing S3FS and `rclone` storage classes for improved performance. 

@@ -1,8 +1,8 @@
 ---
 
 copyright: 
-  years: 2025, 2025
-lastupdated: "2025-12-04"
+  years: 2025, 2026
+lastupdated: "2026-01-27"
 
 
 keywords: kubernetes, openshift, {{site.data.keyword.filestorage_vpc_short}}, snapshot, restore
@@ -32,11 +32,11 @@ Warning ProvisioningFailed  19s        vpc.file.csi.ibm.io_ibm-vpc-file-csi-cont
 ```
 {: screen}
 
-You might see this error if you have deleted the original PVC that was used to create the snapshot. This results in the removal of all of its respective snapshots. Another possilbe reason is that you manually deleted the snapshot from your VPC resources.
+You might see this error if you have deleted the original PVC that was used to create the snapshot. This results in the removal of all of each of its snapshots. Another possible reason is that you manually deleted the snapshot from your VPC resources.
 {: tsCauses}
 
 
-1. Delete the Kubernetes objects like the PVC, volumesnapshot and volumesnapshotcontent
+1. Delete the Kubernetes objects like the PVC, volume snapshot and volume snapshot content
 
 	```sh
 	kubectl delete pvc PVC

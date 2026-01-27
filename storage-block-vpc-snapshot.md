@@ -1,8 +1,8 @@
 ---
 
 copyright: 
-  years: 2022, 2025
-lastupdated: "2025-12-11"
+  years: 2022, 2026
+lastupdated: "2026-01-27"
 
 
 keywords: openshift, block storage for vpc, snapshot, restore snapshot, create snapshot
@@ -175,7 +175,7 @@ You can creating snapshots only when a volume is attached to a pod.
 
 1. Make sure you have **Share Snapshot Operator** permissions in IAM.
 
-1. Create a volume snapshot resource in your cluster by using the `ibmc-vpcblock-snapshot` snapshot class that is deployed when you enabled the add-on. Save the following VolumeSnapshot configuration to a file called `snapvol.yaml`. 
+1. Create a volume snapshot resource in your cluster by using the `ibmc-vpcblock-snapshot` snapshot class that is deployed when you enabled the add-on. Save the following `VolumeSnapshot` configuration to a file called `snapvol.yaml`. 
 
     ```yaml
     apiVersion: snapshot.storage.k8s.io/v1

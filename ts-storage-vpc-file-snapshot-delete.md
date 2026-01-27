@@ -1,8 +1,8 @@
 ---
 
 copyright: 
-  years: 2025, 2025
-lastupdated: "2025-12-09"
+  years: 2025, 2026
+lastupdated: "2026-01-27"
 
 
 keywords: kubernetes, openshift, {{site.data.keyword.filestorage_vpc_short}}, snapshot, restore
@@ -21,7 +21,7 @@ subcollection: openshift
 
 [Virtual Private Cloud]{: tag-vpc}
 
-When you try to remove your volumesnapshot and volumesnapshotcontents objects, the removal fails, but your volume snapshot object shows a ReadyToUse status as false.
+When you try to remove your volume snapshot and volumesnapshotcontents objects, the removal fails, but your volume snapshot object shows a ReadyToUse status as false.
 {: tsSymptoms}
 
 
@@ -29,7 +29,7 @@ There are finalizers preventing the resources from being removed.
 {: tsCauses}
 
 
-Remove the finalizers and continue deleting the resources. Note that stale volumesnapshot and volumesnapshotcontents objects can cause unnecessary CreateSnapshot requests, which can eventually lead to request spamming.
+Remove the finalizers and continue deleting the resources. Note that stale `volumesnapshot` and `volumesnapshotcontents` objects can cause unnecessary `CreateSnapshot` requests, which can eventually lead to request spamming.
 {: tsResolve}
 
 * If the volumesnapshot and volumesnapshotcontent objects are included as a single mapping, follow these steps.
