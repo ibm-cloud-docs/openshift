@@ -1,8 +1,8 @@
 ---
 
 copyright:
-  years: 2025, 2025
-lastupdated: "2025-12-18"
+  years: 2025, 2026
+lastupdated: "2026-01-29"
 
 
 keywords: openshift, openshift data foundation, openshift container storage, disaster recovery
@@ -164,6 +164,21 @@ Follow these steps to install ACM on the hub cluster and then set up the disaste
 1. Install ODF Multicluster Orchestrator to the ACM hub cluster. For more information, see [Installing ODF Multicluster Orchestrator on Hub cluster](https://docs.redhat.com/en/documentation/red_hat_openshift_data_foundation/4.16/html-single/configuring_openshift_data_foundation_disaster_recovery_for_openshift_workloads/index#installing-odf-multicluster-orchestrator_rdr){: external}.
   
 1. Create a DR Policy for both managed ODF clusters with a sync interval of 5 minutes. For more information, see [Creating Disaster Recovery Policy on Hub cluster](https://docs.redhat.com/en/documentation/red_hat_openshift_data_foundation/4.16/html-single/configuring_openshift_data_foundation_disaster_recovery_for_openshift_workloads/index?extIdCarryOver=true&sc_cid=701f2000001OH7EAAW#creating-disaster-recovery-policy-on-hub-cluster_rdr){: external}. 
+
+1. **Optional**: Review the [operators](#operators) you can install to enhance ODF Regional Disaster Recovery features.
+
+## Optional operators for ODF Regional Disaster Recovery
+{: #operators}
+
+Review the optional operators you can install on your ACM hub or managed clusters to enhance ODF Regional Disaster Recovery features. Note that IBM is not responsible for managing these operators. 
+
+You are responsible for managing these operators, including but not limited to updating, monitoring, recovery, and re-installation.
+{: important}
+
+| Operator | Description | Additional information |
+|---|---|---|
+| OpenShift API for Data Protection (OADP) Operator | - Use to create backup and restore APIs for OpenShift clusters. \n - Install on **managed clusters**.  | [Introduction to OpenShift API for data protection](https://docs.redhat.com/en/documentation/openshift_container_platform/4.18/html/backup_and_restore/oadp-application-backup-and-restore#oadp-introduction){: external} |
+| Submariner | - Provides direct networking between two or more Kubernetes clusters in your environment. \n - Install on **managed clusters**. | [Submariner](https://docs.redhat.com/en/documentation/red_hat_advanced_cluster_management_for_kubernetes/2.2/html/manage_cluster/submariner){: external} |
   
 ## Testing your disaster recovery configuration
 {: #odf-rdr-test}
