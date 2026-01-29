@@ -4066,8 +4066,6 @@ subcollection: openshift
 
 * [Setting up ACM on the hub cluster](/docs/openshift?topic=openshift-openshift_odf_rdr_roks#odf-rdr-install-acm)
 
-* [Optional operators for ODF Regional Disaster Recovery](/docs/openshift?topic=openshift-openshift_odf_rdr_roks#operators)
-
 * [Testing your disaster recovery configuration](/docs/openshift?topic=openshift-openshift_odf_rdr_roks#odf-rdr-test)
 
 [Removing OpenShift Data Foundation](/docs/openshift?topic=openshift-ocs-manage-deployment#ocs-manage-deployment)
