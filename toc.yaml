@@ -487,7 +487,6 @@ toc:
               - ts-cluster-pending.md
               - ts-cluster-view-work.md
               - ts-master-limits.md
-              - ts-admin-cert.md
               - ts-health-loglines.md
               - ts-vpc-byok-encrypted-storage.md
               - ts-etcd-alerts.md

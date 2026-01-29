@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2026
-lastupdated: "2026-01-28"
+lastupdated: "2026-01-29"
 
 
 keywords: openshift
@@ -8014,8 +8014,6 @@ subcollection: openshift
 [Why can't I view or work with my cluster?](/docs/openshift?topic=openshift-cs_cluster_access#cs_cluster_access)
 
 [Why does my cluster master status say it is approaching its resource limit?](/docs/openshift?topic=openshift-master_resource_limit#master_resource_limit)
-
-[Why can't I create a new admin certificate?](/docs/openshift?topic=openshift-ts_admin-cert#ts_admin-cert)
 
 [Why are my log lines so long?](/docs/openshift?topic=openshift-long_lines#long_lines)
 
