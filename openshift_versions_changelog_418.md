@@ -3,7 +3,7 @@
 copyright:
   years: 2024, 2026
 
-lastupdated: "2026-01-20"
+lastupdated: "2026-01-29"
 
 
 keywords: change log, version history, 4.18_openshift
@@ -37,6 +37,23 @@ Master patch updates are applied automatically. Worker node patch updates can be
 
 ## Version 4.18
 {: #418_components}
+
+
+### Worker node fix pack 4.18.31_1577_openshift, released 27 January 2026
+{: #cl-boms-41831_1577_openshift_W}
+
+The following table shows the components included in the worker node fix pack 4.18.31_1577_openshift. Worker node patch updates can be applied by updating, reloading (in classic infrastructure), or replacing (in VPC infrastructure) the worker node.
+{: shortdesc}
+
+| Component | Version | Description |
+| ---- | ---- | ---- |
+|RHEL 9 (VPC)|5.14.0-570.60.1.el9_6|Resolves the following CVEs: [RHSA-2025:19930](https://access.redhat.com/errata/RHSA-2025:19930){: external}, [CVE-2024-36350](https://nvd.nist.gov/vuln/detail/CVE-2024-36350){: external}, [CVE-2024-36357](https://nvd.nist.gov/vuln/detail/CVE-2024-36357){: external}, and [CVE-2025-40300](https://nvd.nist.gov/vuln/detail/CVE-2025-40300){: external}.|
+|RHEL 9 (Classic)|5.14.0-570.60.1.el9_6|Resolves the following CVEs: [RHSA-2025:19930](https://access.redhat.com/errata/RHSA-2025:19930){: external}, [CVE-2024-36350](https://nvd.nist.gov/vuln/detail/CVE-2024-36350){: external}, [CVE-2024-36357](https://nvd.nist.gov/vuln/detail/CVE-2024-36357){: external}, and [CVE-2025-40300](https://nvd.nist.gov/vuln/detail/CVE-2025-40300){: external}.|
+|Red Hat OpenShift|4.18.31|For more information, see the [change logs](https://docs.redhat.com/en/documentation/openshift_container_platform/4.18/html/release_notes/ocp-4-18-release-notes.html#ocp-4-18-31_release-notes).|
+|Red Hat CoreOS|4.18.31|For more information, see the [change logs](https://docs.redhat.com/en/documentation/openshift_container_platform/4.18/html/release_notes/ocp-4-18-release-notes.html#ocp-4-18-31_release-notes).|
+|HAProxy|c9cb5ad988e916d184d1c308d4f2e5c502d99523|Resolves the following CVEs: [CVE-2025-68973](https://nvd.nist.gov/vuln/detail/CVE-2025-68973){: external}, [CVE-2025-13601](https://nvd.nist.gov/vuln/detail/CVE-2025-13601){: external}, and [CVE-2025-9230](https://nvd.nist.gov/vuln/detail/CVE-2025-9230){: external}.|
+{: caption="4.18.31_1577_openshift fix pack." caption-side="bottom"}
+{: #cl-boms-41831_1577_openshift_W-component-table}
 
 
 ### Master fix pack 4.18.30_1576_openshift, released 21 January 2026
