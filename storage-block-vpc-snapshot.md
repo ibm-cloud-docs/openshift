@@ -25,7 +25,7 @@ subcollection: openshift
 {: shortdesc}
 
 
-The {{site.data.keyword.block_storage_is_short}} cluster add-on automatically creates both volumes and snapshots in the same VPC resource group where the cluster is deployed. Due to a current limitation, specifying the resource group in your storage class does not override this behavior. Make sure you to allow for this behavior if you plan to use snapshots as you might hit resource group quotas.
+The {{site.data.keyword.block_storage_is_short}} cluster add-on automatically creates both volumes and snapshots in the same VPC resource group where the cluster is deployed. Due to a current limitation, specifying the resource group in your storage class does not override this behavior. Make sure you allow for this behavior if you plan to use snapshots as you might hit resource group quotas.
 {: important}
 
 
