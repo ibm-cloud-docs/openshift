@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2026
-lastupdated: "2026-01-21"
+lastupdated: "2026-02-09"
 
 
 keywords: kubernetes, clusters, worker nodes, worker pools, vpc-gen2, openshift, {{site.data.keyword.openshiftlong_notm}}
@@ -337,7 +337,7 @@ ibmcloud oc zone add vpc-gen2 --zone ZONE --cluster <cluster_name_or_ID> --worke
 * To create a VPC cluster with Terraform, you first create a Terraform configuration file that declares the type of cluster resource you want to create. Then, you apply the Terraform configuration file.
 * For more information on Terraform, see [About Terraform on {{site.data.keyword.cloud_notm}}](/docs/ibm-cloud-provider-for-terraform?topic=ibm-cloud-provider-for-terraform-about).
 
-* The [Terraform IBM Modules](https://github.com/terraform-ibm-modules/terraform-ibm-base-ocp-vpc?tab=readme-ov-file#red-hat-openshift-vpc-cluster-on-ibm-cloud-module) repository provides related infrastructure code and examples you may find useful.
+* The module [Red Hat OpenShift VPC cluster on IBM Cloud](https://github.com/terraform-ibm-modules/terraform-ibm-base-ocp-vpc?tab=readme-ov-file#red-hat-openshift-vpc-cluster-on-ibm-cloud-module) provides related infrastructure code and examples you may find useful.
 
 
 **Before you begin:**
