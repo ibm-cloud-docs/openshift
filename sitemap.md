@@ -295,6 +295,10 @@ subcollection: openshift
 
         * {{site.data.keyword.openshiftlong_notm}} worker node fix packs are available.
 
+    * [06 February 2026](/docs/openshift?topic=openshift-openshift-relnotes#openshift-feb0626)
+
+        * {{site.data.keyword.cos_full_notm}} plug-in updates.
+
     * [04 February 2026](/docs/openshift?topic=openshift-openshift-relnotes#openshift-feb0426)
 
         * New! {{site.data.keyword.openshiftlong_notm}} 4.20 is available.
@@ -6509,6 +6513,8 @@ subcollection: openshift
     * [v1.0.13_297764008, released 14 November 2025](/docs/openshift?topic=openshift-cl-add-ons-ibm-object-csi-driver#cl-add-ons-ibm-object-csi-driver-v1013_297764008)
 
 [{{site.data.keyword.cos_full_notm}} plug-in](/docs/openshift?topic=openshift-cos_plugin_changelog#cos_plugin_changelog)
+
+* [Change log for version 2.2.47, released 06 February 2026](/docs/openshift?topic=openshift-cos_plugin_changelog#02247_object_plugin)
 
 * [Change log for version 2.2.46, released 13 January 2026](/docs/openshift?topic=openshift-cos_plugin_changelog#02246_object_plugin)
 

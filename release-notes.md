@@ -66,6 +66,14 @@ VPC Block CSI Driver cluster add-on patch updates.
 
 
 
+### 06 February 2026
+{: #openshift-feb0626}
+{: release-note}
+
+{{site.data.keyword.cos_full_notm}} plug-in updates.
+:   For more information, see the [change log](/docs/openshift?topic=openshift-cos_plugin_changelog).
+
+
 
 
 
