@@ -30,6 +30,24 @@ Looking for {{site.data.keyword.cloud_notm}} status, platform announcements, sec
 ## February 2026
 {: #openshift-feb26}
 
+### 10 February 2026
+{: #openshift-feb1026}
+{: release-note}
+
+IBM Cloud Image Key Synchronizer cluster add-on patch updates.
+:   For more information, see the [change log](/docs/openshift?topic=openshift-cl-add-ons-ibm-cloud-image-key-synchronizer).
+
+
+
+VPC File CSI Driver cluster add-on patch updates.
+:   For more information, see the [change log](/docs/openshift?topic=openshift-cl-add-ons-vpc-file-csi-driver).
+
+IBM Storage Operator cluster add-on patch updates.
+:   For more information, see the [change log](/docs/openshift?topic=openshift-cl-add-ons-ibm-storage-operator).
+
+VPC Block CSI Driver cluster add-on patch updates.
+:   For more information, see the [change log](/docs/openshift?topic=openshift-cl-add-ons-vpc-block-csi-driver).
+
 ### 09 February 2026
 {: #openshift-feb0926}
 {: release-note}
@@ -48,24 +66,6 @@ Looking for {{site.data.keyword.cloud_notm}} status, platform announcements, sec
 
 
 
-
-### 10 February 2026
-{: #openshift-feb1026}
-{: release-note}
-
-IBM Cloud Image Key Synchronizer cluster add-on patch updates.
-:   For more information, see the [change log](/docs/openshift?topic=openshift-cl-add-ons-ibm-cloud-image-key-synchronizer).
-
-
-
-VPC File CSI Driver cluster add-on patch updates.
-:   For more information, see the [change log](/docs/openshift?topic=openshift-cl-add-ons-vpc-file-csi-driver).
-
-IBM Storage Operator cluster add-on patch updates.
-:   For more information, see the [change log](/docs/openshift?topic=openshift-cl-add-ons-ibm-storage-operator).
-
-VPC Block CSI Driver cluster add-on patch updates.
-:   For more information, see the [change log](/docs/openshift?topic=openshift-cl-add-ons-vpc-block-csi-driver).
 
 
 

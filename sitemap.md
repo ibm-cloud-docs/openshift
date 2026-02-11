@@ -281,10 +281,6 @@ subcollection: openshift
 
 * [February 2026](/docs/openshift?topic=openshift-openshift-relnotes#openshift-feb26)
 
-    * [09 February 2026](/docs/openshift?topic=openshift-openshift-relnotes#openshift-feb0926)
-
-        * {{site.data.keyword.openshiftlong_notm}} worker node fix packs are available.
-
     * [10 February 2026](/docs/openshift?topic=openshift-openshift-relnotes#openshift-feb1026)
 
         * IBM Cloud Image Key Synchronizer cluster add-on patch updates.
@@ -294,6 +290,10 @@ subcollection: openshift
         * IBM Storage Operator cluster add-on patch updates.
 
         * VPC Block CSI Driver cluster add-on patch updates.
+
+    * [09 February 2026](/docs/openshift?topic=openshift-openshift-relnotes#openshift-feb0926)
+
+        * {{site.data.keyword.openshiftlong_notm}} worker node fix packs are available.
 
     * [04 February 2026](/docs/openshift?topic=openshift-openshift-relnotes#openshift-feb0426)
 
