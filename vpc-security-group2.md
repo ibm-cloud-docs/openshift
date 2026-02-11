@@ -1,8 +1,8 @@
 ---
 
 copyright: 
-  years: 2023, 2025
-lastupdated: "2025-12-01"
+  years: 2023, 2026
+lastupdated: "2026-02-11"
 
 
 keywords: openshift, {{site.data.keyword.openshiftlong_notm}}, firewall, rules, security group, 4.15, networking, secure by default, outbound traffic protection
@@ -100,22 +100,22 @@ When you create an {{site.data.keyword.openshiftlong_notm}} VPC cluster, a secur
 
 | Description | Direction | Protocol | Ports or values | Source or destination |
 | --- | --- | --- | --- | --- |
-| Allows inbound traffic to the pod subnet. | Inbound | All | All | Either 172.17.0.0/18 (the default subnet range) or a custom subnet range that you specify when you create your cluster. |
-| Allows inbound access to self which allows worker-to-worker communication. | Inbound | All | All | `kube-<clusterID>` |
+| Allows inbound traffic to the pod subnet. | Inbound | ICMP/TCP/UDP | All | Either 172.17.0.0/18 (the default subnet range) or a custom subnet range that you specify when you create your cluster. |
+| Allows inbound access to self which allows worker-to-worker communication. | Inbound | ICMP/TCP/UDP | All | `kube-<clusterID>` |
 | Allows inbound ICMP (ping) access. | Inbound | ICMP | type=8 | 0.0.0.0/0 |
 | Allows inbound traffic from nodeports opened by your load balancers (ALBs/NLBs). As load balancers are added or removed rules are dynamically added or removed. | Inbound | TCP | Loadbalancer node ports.  | `kube-lbaas-<clusterID>` |
-| Allows outbound traffic to the pod subnet. | Outbound | All | All | Either 172.17.0.0/18 (the default subnet range) or a custom subnet range that you specify when you create your cluster. |
-| Allows outbound traffic to the master control plane which allows workers to be provisioned. | Outbound | All | All | 161.26.0.0/16 |
-| Allows outbound access to self which allows worker-to-worker communication. | Outbound | All | All | `kube-<clusterID>` |
-| Allows outbound traffic to the master VPE gateway security group. | Outbound | All | All | `kube-vpegw-<clusterID>` |
-| Allows outbound traffic to the shared VPE gateway security group. | Outbound | All | All | `kube-vpegw-<vpcID>` |
+| Allows outbound traffic to the pod subnet. | Outbound | ICMP/TCP/UDP | All | Either 172.17.0.0/18 (the default subnet range) or a custom subnet range that you specify when you create your cluster. |
+| Allows outbound traffic to the master control plane which allows workers to be provisioned. | Outbound | ICMP/TCP/UDP | All | 161.26.0.0/16 |
+| Allows outbound access to self which allows worker-to-worker communication. | Outbound | ICMP/TCP/UDP | All | `kube-<clusterID>` |
+| Allows outbound traffic to the master VPE gateway security group. | Outbound | ICMP/TCP/UDP | All | `kube-vpegw-<clusterID>` |
+| Allows outbound traffic to the shared VPE gateway security group. | Outbound | ICMP/TCP/UDP | All | `kube-vpegw-<vpcID>` |
 | Allows traffic to the public endpoint through the oauth port for all zones of the MZR where the cluster is located.`*`| Outbound | TCP | Oauth port | Public endpoint IPs for all zones of the MZR. |
 | Allows TCP traffic through Ingress ALB | Outbound | TCP | Ports:Min=443,Max=443 | ALB Public IP address `n` |
 | Allows TCP and UDP traffic through custom DNS resolver for zone `n`.`**` | Outbound | TCP/UDP | Min=53,Max=53 | DNS resolver IP address in zone `n`. |
-| Allows traffic to the entire CSE service range. | Outbound | All | All | 166.8.0.0/14 |
-| Allows traffic to the IAM private endpoint for all zones. The IPs might vary by region. One rule is added per zone the cluster is in. | Outbound | All | All | IAM private endpoint IP address for all zones. |
-|  Allows outbound traffic to the instance metadata API. | Outbound | All | All | 169.254.169.254 |
-| [4.18 and later]{: tag-red} Allows outbound traffic to the instance metadata API. | Outbound | All | All | 169.254.169.254 |
+| Allows traffic to the entire CSE service range. | Outbound | ICMP/TCP/UDP | All | 166.8.0.0/14 |
+| Allows traffic to the IAM private endpoint for all zones. The IPs might vary by region. One rule is added per zone the cluster is in. | Outbound | ICMP/TCP/UDP | All | IAM private endpoint IP address for all zones. |
+|  Allows outbound traffic to the instance metadata API. | Outbound | ICMP/TCP/UDP | All | 169.254.169.254 |
+| [4.18 and later]{: tag-red} Allows outbound traffic to the instance metadata API. | Outbound | ICMP/TCP/UDP | All | 169.254.169.254 |
 {: caption="Rules in the kube-clusterID security group" caption-side="bottom"}
 {: summary="The table shows the rules applied to the cluster worker security group. The first column includes protocol of the rule. The second column includes the ports and types. The third column includes remote destination of the rule. The fourth column includes a brief description of the rule."}
 
