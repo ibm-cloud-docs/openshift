@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2024, 2026
-lastupdated: "2026-01-06"
+lastupdated: "2026-02-11"
 
 keywords: openshift, {{site.data.keyword.openshiftlong_notm}}, secure by default, outbound traffic protection, 4.15
 
@@ -82,7 +82,7 @@ ibmcloud oc vpc outbound-traffic-protection disable --cluster CLUSTER
 You can add a security group rule to the cluster worker security group (`kube-<clusterID>`) that allows access to the specific external site. Repeat this step for each site or subnet that your cluster needs to access. For more information, [Example scenarios for selectively allowing outbound traffic](#sbd-examples).
 
 ```sh
-ibmcloud is sg-rulec kube-<clusterID> outbound all --remote <IP-address-or-subnet>
+ibmcloud is sg-rulec kube-<clusterID> outbound icmp_tcp_udp --remote <IP-address-or-subnet>
 ```
 {: pre}
 
@@ -339,7 +339,7 @@ To allow access to the external URL or service for your webhook, you can choose 
     1. Create a rule for each IP address that is returned.
 
         ```sh
-        ibmcloud is sg-rulec kube-<clusterID> outbound all --remote <IP-address-or-subnet>
+        ibmcloud is sg-rulec kube-<clusterID> outbound icmp_tcp_udp --remote <IP-address-or-subnet>
         ```
         {: pre}
 
@@ -373,7 +373,7 @@ The following example uses the github.com APIs at `api.github.com`.
 1. Add each of the CIDRs you found in the previous step as the destination of an outbound security group rule on the `kube-clusterID` security group. Alternatively, you can create a custom security group that you add to your cluster workers at cluster create time.
 
     ```sh
-    ibmcloud is sg-rulec kube-<clusterID> outbound all --remote <IP-address-or-subnet>
+    ibmcloud is sg-rulec kube-<clusterID> outbound icmp_tcp_udp --remote <IP-address-or-subnet>
     ```
     {: pre}
 
@@ -390,7 +390,7 @@ In version 4.15 and later clusters, the hub and spoke model does not work withou
 1. Update the clusters in the spoke VPC so they can access the hub VPC by adding rules to the `kube-<clusterID>` security group for each spoke cluster. Make sure to add an outbound rule to **each** VPC subnet CIDR the hub cluster workers are deployed in. For example, if a spoke is connecting to a single hub and that hub has workers in three zones, then three rules must be added to the spoke's `kube-<clusterID>` security group, one for each subnet.
 
     ```sh
-    ibmcloud is sg-rulec kube-<spoke-clusterID> outbound all --remote <hub-subnet-CIDR>
+    ibmcloud is sg-rulec kube-<spoke-clusterID> outbound icmp_tcp_udp --remote <hub-subnet-CIDR>
     ```
     {: pre}
 
@@ -405,7 +405,7 @@ In version 4.15 and later clusters, the hub and spoke model does not work withou
 
 1. Add an inbound rule from **each** VPC subnet that the spoke workers are deployed in. For example, if spokes are deployed to three different zones but to a single subnet in each of those zones, then three rules are added to the hub’s shared VPE Gateway security groups.
     ```sh
-    ibmcloud is sg-rulec kube-vpegw-<hub-vpcID> inbound all --remote <spoke-subnet-CIDR>
+    ibmcloud is sg-rulec kube-vpegw-<hub-vpcID> inbound icmp_tcp_udp --remote <spoke-subnet-CIDR>
     ```
     {: pre}
 

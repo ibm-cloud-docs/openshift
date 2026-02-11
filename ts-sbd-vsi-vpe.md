@@ -1,8 +1,8 @@
 ---
 
 copyright: 
-  years: 2025, 2025
-lastupdated: "2025-09-18"
+  years: 2025, 2026
+lastupdated: "2026-02-11"
 
 keywords: openshift, {{site.data.keyword.openshiftlong_notm}}, secure by default, {{site.data.keyword.openshiftlong_notm}}, outbound traffic protection, limitations, vpe, vsi
 
@@ -52,13 +52,13 @@ Choose from one of the following options to resolve the issue.
 
     1. Add the following remote rule to `kube-vpegw-<vpcID>` from your VSI's security group
         ```sh
-        ibmcloud is sg-rulec <kube-vpegw-vpcID> inbound all --remote <your-VSI-SG-ID>
+        ibmcloud is sg-rulec <kube-vpegw-vpcID> inbound icmp_tcp_udp --remote <your-VSI-SG-ID>
         ```
         {: pre}
 
     1. Add a remote rule from your VSI security group to `kube-vpegw-<vpcID>`.
         ```sh
-        ibmcloud is sg-rulec <your-VSI-SG> outbound all --remote  <ID of kube-vpegw-vpcID>
+        ibmcloud is sg-rulec <your-VSI-SG> outbound icmp_tcp_udp --remote  <ID of kube-vpegw-vpcID>
         ```
         {: pre}
 
