@@ -1969,11 +1969,9 @@ subcollection: openshift
 
 * [About trusted profiles](/docs/openshift?topic=openshift-configure-trusted-profile#tp-about)
 
-* [Minimum access requirements](/docs/openshift?topic=openshift-configure-trusted-profile#tp-minreqs)
+* [Minimum access requirements for all storage components](/docs/openshift?topic=openshift-configure-trusted-profile#tp-minreqs-all)
 
-    * [Minimum requirements for all storage components](/docs/openshift?topic=openshift-configure-trusted-profile#tp-minreqs-all)
-
-    * [Minimum requirements for individual storage components](/docs/openshift?topic=openshift-configure-trusted-profile#tp-minreqs-component)
+* [Minimum access requirements for individual storage components](/docs/openshift?topic=openshift-configure-trusted-profile#tp-minreqs-component)
 
     * [VPC block storage](/docs/openshift?topic=openshift-configure-trusted-profile#tp-minreqs-vpc-block)
 
