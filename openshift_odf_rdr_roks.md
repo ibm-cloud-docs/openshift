@@ -170,8 +170,8 @@ Follow these steps to install ACM on the hub cluster and then set up the disaste
         apiVersion: multicluster.x-k8s.io/v1alpha1
         kind: ServiceExport
         metadata:
-            name: ocs-provider-server
-            namespace: openshift-storage
+          name: ocs-provider-server
+          namespace: openshift-storage
         ```
         {: screen}
 
