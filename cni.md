@@ -21,7 +21,7 @@ Review the following information for selecting a container network interface (CN
 
 In {{site.data.keyword.openshiftlong_notm}} version 4.20 and later, Calico is the default CNI, but clusters that use RHCOS worker nodes have the option of selecting Open Virtual Network (OVN) as their cluster CNI. 
 
-Calico [Default]{: tag-warm-grey}
+Calico [Default]{: tag-teal}
 :   Calico is a single platform for networking, network security, and observability for any Kubernetes distribution in the cloud, on-premises, or at the edge. Whether you're just starting with Kubernetes or operating at scale, Calico's open source, enterprise, and cloud editions provide the networking, security, and observability you need. For more information, see [Calico documentation](https://docs.tigera.io/calico/latest/about/){: external}.
 
 Open Virutal Network (OVN) [4.20 and later]{: tag-red} [RHCOS worker nodes only]{: tag-magenta}
@@ -50,10 +50,3 @@ If you plan to use OVN, you must ensure that your VPC subnets don't overlap with
 | Non-pod resources created |  The `calico` CNI binary, `calico-ipam` CNI binary, and various other CNI binaries are copied to each node by `install-cni` initContainer on `calico-node`. | - `openshift-ovn-kubernetes` namespace, `ovnkube-node` on each node with 8 containers, `ovnkube-controller` watches resources, allocates pod IPs, and translates resources into OVN logical entries in `nbdb`. Also handles CNI add and delete.  \n - `nbdb` stores logical entries.  \n - `northd` converts logical entries from `nbdb` to logical flows in `sbdb`.  \n - `sbdb` stores logical flows.  \n - `ovn-controller` converts logical flows in `sbdb` and programs OVS switch.  \n - `ovn-acl-logging`.  \n - `kube-rbac-proxy-node` protects node metrics so only authorized users can scrape them.  \n - `kube-rbac-proxy-ovn-metrics` protects OVN metrics so only authorized users can scrape them. |
 | Connections between pods | - The `calico-node` pod initially connects to the kube apiserver via local haproxy in proxy pod listening on TCP 172.20.0.1:2040 to get `calico-typha` pod list.  \n - The `calico-node` pod connects to one of the `calico-typha` pods on TCP port 5473 to listen for cluster resource updates.  \n - The `calico-node` pod runs bird BGP daemon that connects in a full mesh to all other `calico-node` bird BGP daemons on TCP port 179.  \n - Pod to pod traffic happens directly for pods on nodes in the same subnet and protocol/port the pod is using and uses IPinIP with no port for encapsulated traffic. | - The `ovnkube-controller` container on each node connects to kube apiserver via local haproxy in proxy pod listening on TCP `172.20.0.1:2040` for resource watches.  \n - All pod to pod traffic happens over the Geneve tunnel on UDP port 6081.   - For more information, see [Configuring your firewall](https://docs.redhat.com/en/documentation/openshift_container_platform/4.20/html/installation_configuration/configuring-firewall){: external}. |
 {: caption="Calico and OVN comparison table" caption-side="bottom"}
-
-
-
-
-
-
-
