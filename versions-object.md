@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2026
-lastupdated: "2026-01-13"
+lastupdated: "2026-02-11"
 
 
 keywords: openshift, {{site.data.keyword.openshiftlong_notm}}, object storage, plug-in, change log
@@ -28,13 +28,20 @@ View information for updates to the {{site.data.keyword.cos_full_notm}} plug-in 
 
 | {{site.data.keyword.cos_full_notm}} plug-in version | Supported? |
 | --- | --- |
+| 2.2.47 | Yes |
 | 2.2.46 | Yes |
 | 2.2.45 | Yes |
-| 2.2.41 | Yes |
 {: caption="{{site.data.keyword.cos_full_notm}} plug-in versions" caption-side="bottom"}
 
 Versions are deprecated at n-2 or roughly 3 months after their release date. Plan to keep your add-on updated. For update steps, see [Updating the {{site.data.keyword.cos_full_notm}} plug-in](/docs/openshift?topic=openshift-storage_cos_install#update_cos_plugin).
 {: important}
+
+
+## Change log for version 2.2.47, released 06 February 2026
+{: #02247_object_plugin}
+
+- Adds support for Kubernetes version 1.35.
+- Resolves the following CVEs: [CVE-2025-15467](https://exchange.xforce.ibmcloud.com/vulnerabilities/CVE-2025-15467){: external}, [CVE-2025-11187](https://exchange.xforce.ibmcloud.com/vulnerabilities/CVE-2025-11187){: external}, [CVE-2025-15468](https://exchange.xforce.ibmcloud.com/vulnerabilities/CVE-2025-15468){: external}, [CVE-2025-15469](https://exchange.xforce.ibmcloud.com/vulnerabilities/CVE-2025-15469){: external}, [CVE-2025-66199](https://exchange.xforce.ibmcloud.com/vulnerabilities/CVE-2025-66199){: external}, [CVE-2025-68160](https://exchange.xforce.ibmcloud.com/vulnerabilities/CVE-2025-68160){: external}, [CVE-2025-69418](https://exchange.xforce.ibmcloud.com/vulnerabilities/CVE-2025-69418){: external}, [CVE-2025-69419](https://exchange.xforce.ibmcloud.com/vulnerabilities/CVE-2025-69419){: external}, [CVE-2025-69420](https://exchange.xforce.ibmcloud.com/vulnerabilities/CVE-2025-69420){: external}, [CVE-2025-69421](https://exchange.xforce.ibmcloud.com/vulnerabilities/CVE-2025-69421){: external}, [CVE-2026-22795](https://exchange.xforce.ibmcloud.com/vulnerabilities/CVE-2026-22795){: external}, [CVE-2026-22796](https://exchange.xforce.ibmcloud.com/vulnerabilities/CVE-2026-22796){: external}.
 
 
 ## Change log for version 2.2.46, released 13 January 2026
