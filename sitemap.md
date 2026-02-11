@@ -4022,7 +4022,7 @@ subcollection: openshift
 
 * [Enabling the OpenShift Data Foundation add-on](/docs/openshift?topic=openshift-storage-odf-trusted-profiles#odf-addon-enable-trusted)
 
-* [Setting up trusted profiles](/docs/openshift?topic=openshift-storage-odf-trusted-profiles#odf-setup-trusted)
+* [Setting up trusted profiles for ODF](/docs/openshift?topic=openshift-storage-odf-trusted-profiles#odf-setup-trusted)
 
     * [Automatically creating a secret by using a Shell script](/docs/openshift?topic=openshift-storage-odf-trusted-profiles#odf-secret-create-truted-profile)
 

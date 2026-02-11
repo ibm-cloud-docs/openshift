@@ -1,8 +1,8 @@
 ---
 
 copyright:
-  years: 2023, 2024
-lastupdated: "2024-01-18"
+  years: 2023, 2026
+lastupdated: "2026-02-11"
 
 
 keywords: openshift, openshift data foundation, openshift container storage, trusted profile
@@ -23,7 +23,7 @@ subcollection: openshift
 [Virtual Private Cloud]{: tag-vpc}  [Classic clusters]{: tag-classic-inf}
 
 
-You can use trusted profiles to limit the access that running pods in your cluster have to other resources in your account or cluster. For more information about trusted profiles, see [Creating trusted profiles](/docs/account?topic=account-create-trusted-profile).
+You can use trusted profiles for ODF to limit the access that running pods in your cluster have to other resources in your account or cluster. For more information about trusted profiles, see [Creating trusted profiles](/docs/account?topic=account-create-trusted-profile).
 {: shortdesc}
 
 
@@ -60,7 +60,7 @@ You can use trusted profiles to limit the access that running pods in your clust
     ```
     {: screen}
 
-## Setting up trusted profiles
+## Setting up trusted profiles for ODF
 {: #odf-setup-trusted}
 
 1. Follow the steps to [create a trusted profile](/docs/account?topic=account-create-trusted-profile&interface=ui). In the **Conditions** for the profile, be sure to specify the following access.
@@ -280,8 +280,3 @@ You can use trusted profiles to limit the access that running pods in your clust
     oc logs ibm-storage-metrics-agent-xxx -c storage-secret-sidecar -n kube-system
     ```
     {: pre}
-
-
-
-
-
