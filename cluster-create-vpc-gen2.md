@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2026
-lastupdated: "2026-01-21"
+lastupdated: "2026-02-11"
 
 
 keywords: kubernetes, clusters, worker nodes, worker pools, vpc-gen2, openshift, {{site.data.keyword.openshiftlong_notm}}
@@ -87,7 +87,9 @@ Additional flavor types, including flavors with NVIDIA V100, A100, H100, and H20
 Worker pool encryption
 :    Manage encryption of your worker nodes by enabling a key management service (KMS) provider at the worker pool level. Select your KMS instance and CRN.
 
-Master service endpoint
+
+
+Network settings
 :    Service endpoints provide communication to the master. You can choose to configure your cluster with a public service endpoint or both a public and a private cloud service endpoint. For more information about what setup is required to run internet-facing apps, or to keep your cluster private, see [Planning your cluster network setup](/docs/openshift?topic=openshift-plan_vpc_basics). You cannot change the cloud service endpoints after you create the cluster.
 
 
@@ -98,11 +100,8 @@ Internal registry
 
 
 
-
-Outbound traffic protection [4.15 and later]{: tag-red} 
+Outbound traffic protection 
 :   The default behavior for clusters at version 4.15 and later is to allow only the necessary networking traffic for the cluster to function and disable all other outbound connections. If you have apps or services that require connection to the public Internet, such as GitHub repositories, Docker Hub, `quay.io`, the Red Hat Marketplace and OperatorHub, note that you must either disable outbound traffic protection completely (so that all outbound traffic is allowed), or add security group rules to allow only the outbound traffic that you require.
-
-
 
 Cluster encryption
 :    Enable data encryption with a key management service (KMS) to encrypt secrets and other sensitive information in your cluster. You can also [enable KMS](/docs/openshift?topic=openshift-encryption-setup) later.
@@ -158,8 +157,7 @@ Observability integrations
 
 4. Create the cluster in your VPC. You can use the `ibmcloud oc cluster create vpc-gen2` command to create a single zone cluster in your VPC with worker nodes that are connected to one VPC subnet only. If you want to create a multizone cluster, you can use the {{site.data.keyword.cloud_notm}} console, or [add more zones](/docs/openshift?topic=openshift-add-workers-vpc) to your cluster after the cluster is created. The cluster takes a few minutes to provision.
     ```sh
-    ibmcloud oc cluster create vpc-gen2 --name <cluster_name> --zone <vpc_zone> --vpc-id <vpc_ID> --subnet-id <vpc_subnet_ID> --flavor <worker_flavor> --version 4.19_openshift --cos-instance <COS_CRN> --workers <number_workers_per_zone> [--sm-group GROUP] [--sm-instance INSTANCE] [--trusted-profile-id ID] [--pod-subnet] [--service-subnet] [--disable-public-service-endpoint] [[--kms-account-id <kms_account_ID>] --kms-instance <KMS_instance_ID> --crk <root_key_ID>] [--secondary-storage STORAGE] [--disable-outbound-traffic-protection] [--operating-system SYSTEM]
-
+    ibmcloud oc cluster create vpc-gen2 --name <cluster_name> --zone <vpc_zone> --vpc-id <vpc_ID> --subnet-id <vpc_subnet_ID> --flavor <worker_flavor> --version 4.19_openshift --cos-instance <COS_CRN> --workers <number_workers_per_zone> [--sm-group GROUP] [--sm-instance INSTANCE] [--trusted-profile-id ID] [--pod-subnet] [--service-subnet] [--disable-public-service-endpoint] [[--kms-account-id <kms_account_ID>] --kms-instance <KMS_instance_ID> --crk <root_key_ID>] [--secondary-storage STORAGE] [--disable-outbound-traffic-protection] [--operating-system SYSTEM] [--cni CNI]
     ```
     {: pre}
 
@@ -236,8 +234,13 @@ Observability integrations
     `--secondary-storage STORAGE`
     :    Optional. The storage option for the flavor. For example, `900gb.5iops-tier`. When you add a secondary disk, that disk is used for the container runtime, while the primary disk is used for the operating system. To view the storage options for a flavor, run the `ibmcloud oc flavor get --flavor FLAVOR --zone ZONE --provider vpc-gen2` command. To view a list of VPC worker node flavors, see [VPC flavors](/docs/openshift?topic=openshift-vpc-flavors&interface=ui).
 
-    `--disable-outbound-traffic-protection` [4.15 and later]{: tag-red} 
-    :   Optional.
+    `--disable-outbound-traffic-protection`
+    :   Optional. Disable outbound traffic protection.
+
+
+    `--cni CNI`
+    :    Set the network plugin for the cluster. Calico is set by default. Accepted values: `Calico`, `OVNKubernetes`.
+
     
 5. Verify that the creation of the cluster was requested. It can take a few minutes for the worker node machines to be ordered, and for the cluster to be set up and provisioned in your account.
     ```sh
@@ -337,7 +340,7 @@ ibmcloud oc zone add vpc-gen2 --zone ZONE --cluster <cluster_name_or_ID> --worke
 * To create a VPC cluster with Terraform, you first create a Terraform configuration file that declares the type of cluster resource you want to create. Then, you apply the Terraform configuration file.
 * For more information on Terraform, see [About Terraform on {{site.data.keyword.cloud_notm}}](/docs/ibm-cloud-provider-for-terraform?topic=ibm-cloud-provider-for-terraform-about).
 
-* The [Terraform IBM Modules](https://github.com/terraform-ibm-modules/terraform-ibm-base-ocp-vpc?tab=readme-ov-file#red-hat-openshift-vpc-cluster-on-ibm-cloud-module) repository provides related infrastructure code and examples you may find useful.
+* The module [Red Hat OpenShift VPC cluster on IBM Cloud](https://github.com/terraform-ibm-modules/terraform-ibm-base-ocp-vpc?tab=readme-ov-file#red-hat-openshift-vpc-cluster-on-ibm-cloud-module) provides related infrastructure code and examples you may find useful.
 
 
 **Before you begin:**

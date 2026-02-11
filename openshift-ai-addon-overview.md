@@ -1,7 +1,7 @@
 ---
 copyright: 
   years: 2024, 2026
-lastupdated: "2026-01-27"
+lastupdated: "2026-02-09"
 
 
 keywords: openshift, {{site.data.keyword.openshiftlong_notm}}, ai, add-on
@@ -24,9 +24,6 @@ Want to deploy the OpenShift AI operator on a new cluster? Try the [OpenShift AI
 {: tip}
 
 Already have the add-on installed? Try out a [tutorial for using OpenShift AI for fraud detection](https://docs.redhat.com/en/documentation/red_hat_openshift_ai_self-managed/2.22/html/openshift_ai_tutorial_-_fraud_detection_example/index){: external}
-{: tip}
-
-To get started quickly with the Terraform, use the [QuickStart DA solution](https://github.com/terraform-ibm-modules/terraform-ibm-ocp-ai/tree/main/solutions/quickstart){: external}
 {: tip}
 
 ## What gets deployed when I install the OpenShift AI add-on?

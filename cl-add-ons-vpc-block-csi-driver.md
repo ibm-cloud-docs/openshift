@@ -3,7 +3,7 @@
 copyright:
   years: 2024, 2026
 
-lastupdated: "2026-01-21"
+lastupdated: "2026-02-10"
 
 
 keywords: change log, version history, VPC Block CSI Driver
@@ -26,6 +26,13 @@ Review the version history for VPC Block CSI Driver.
 
 ## Version 5.2
 {: #cl-add-ons-vpc-block-csi-driver-5.2}
+
+
+### v5.2.44_316463149, released 10 February 2026
+{: #cl-add-ons-vpc-block-csi-driver-v5244_316463149}
+
+- Resolves the following CVEs: [CVE-2025-15467](https://nvd.nist.gov/vuln/detail/CVE-2025-15467){: external}, [CVE-2025-11187](https://nvd.nist.gov/vuln/detail/CVE-2025-11187){: external}, [CVE-2025-15468](https://nvd.nist.gov/vuln/detail/CVE-2025-15468){: external}, [CVE-2025-15469](https://nvd.nist.gov/vuln/detail/CVE-2025-15469){: external}, [CVE-2025-66199](https://nvd.nist.gov/vuln/detail/CVE-2025-66199){: external}, [CVE-2025-68160](https://nvd.nist.gov/vuln/detail/CVE-2025-68160){: external}, [CVE-2025-69418](https://nvd.nist.gov/vuln/detail/CVE-2025-69418){: external}, [CVE-2025-69419](https://nvd.nist.gov/vuln/detail/CVE-2025-69419){: external}, [CVE-2025-69420](https://nvd.nist.gov/vuln/detail/CVE-2025-69420){: external}, [CVE-2025-69421](https://nvd.nist.gov/vuln/detail/CVE-2025-69421){: external}, [CVE-2026-22795](https://nvd.nist.gov/vuln/detail/CVE-2026-22795){: external}, [CVE-2026-22796](https://nvd.nist.gov/vuln/detail/CVE-2026-22796){: external}, [CVE-2025-9086](https://nvd.nist.gov/vuln/detail/CVE-2025-9086){: external}, [CVE-2025-61726](https://nvd.nist.gov/vuln/detail/CVE-2025-61726){: external}, and [CVE-2025-61730](https://nvd.nist.gov/vuln/detail/CVE-2025-61730){: external}.
+- `armada-storage-secret v1.3.40`
 
 
 ### v5.2.42_310488886, released 21 January 2026
@@ -99,6 +106,13 @@ Review the version history for VPC Block CSI Driver.
 
 ## Version 5.1
 {: #cl-add-ons-vpc-block-csi-driver-5.1}
+
+
+### v5.1.43_316462421, released 10 February 2026
+{: #cl-add-ons-vpc-block-csi-driver-v5143_316462421}
+
+- Resolves the following CVEs: [CVE-2025-15467](https://nvd.nist.gov/vuln/detail/CVE-2025-15467){: external}, [CVE-2025-11187](https://nvd.nist.gov/vuln/detail/CVE-2025-11187){: external}, [CVE-2025-15468](https://nvd.nist.gov/vuln/detail/CVE-2025-15468){: external}, [CVE-2025-15469](https://nvd.nist.gov/vuln/detail/CVE-2025-15469){: external}, [CVE-2025-66199](https://nvd.nist.gov/vuln/detail/CVE-2025-66199){: external}, [CVE-2025-68160](https://nvd.nist.gov/vuln/detail/CVE-2025-68160){: external}, [CVE-2025-69418](https://nvd.nist.gov/vuln/detail/CVE-2025-69418){: external}, [CVE-2025-69419](https://nvd.nist.gov/vuln/detail/CVE-2025-69419){: external}, [CVE-2025-69420](https://nvd.nist.gov/vuln/detail/CVE-2025-69420){: external}, [CVE-2025-69421](https://nvd.nist.gov/vuln/detail/CVE-2025-69421){: external}, [CVE-2026-22795](https://nvd.nist.gov/vuln/detail/CVE-2026-22795){: external}, [CVE-2026-22796](https://nvd.nist.gov/vuln/detail/CVE-2026-22796){: external}, and [CVE-2025-9086](https://nvd.nist.gov/vuln/detail/CVE-2025-9086){: external}.
+- `armada-storage-secret v1.2.75`
 
 
 ### v5.1.41_310494703, released 21 January 2026

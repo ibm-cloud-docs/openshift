@@ -1,8 +1,8 @@
 ---
 
 copyright: 
-  years: 2025, 2025
-lastupdated: "2025-12-09"
+  years: 2025, 2026
+lastupdated: "2026-02-09"
 
 
 keywords: deployable architecture, DA
@@ -26,9 +26,9 @@ Creating a secure, compliant, and tailored {{site.data.keyword.openshiftlong}} c
 
 There are three different DAs that create a cluster or clusters for you. They are:
 
-- [Red Hat OpenShift Container Platform on VPC Landing Zone](https://cloud.ibm.com/catalog/architecture/deploy-arch-ibm-slz-ocp-95fccffc-ae3b-42df-b6d9-80be5914d852-global){: external} - This DA creates a {{site.data.keyword.openshiftlong}} cluster environment that adheres to the IBM Financial Services Cloud reference architecture. The [Terraform IBM Modules](https://github.com/terraform-ibm-modules/terraform-ibm-base-ocp-vpc?tab=readme-ov-file#red-hat-openshift-vpc-cluster-on-ibm-cloud-module) repository provides related infrastructure code and examples you may find useful.
+- [Red Hat OpenShift Container Platform on VPC Landing Zone](https://cloud.ibm.com/catalog/architecture/deploy-arch-ibm-slz-ocp-95fccffc-ae3b-42df-b6d9-80be5914d852-global){: external} - This solution creates a {{site.data.keyword.openshiftlong}} cluster environment that adheres to the IBM Financial Services Cloud reference architecture. The [Red Hat OpenShift VPC cluster on IBM Cloud module](https://github.com/terraform-ibm-modules/terraform-ibm-base-ocp-vpc?tab=readme-ov-file#red-hat-openshift-vpc-cluster-on-ibm-cloud-module) repository provides related infrastructure code and examples you may find useful.
 
-- [OpenShift AI on IBM Cloud](https://cloud.ibm.com/catalog/7a4d68b4-cf8b-40cd-a3d1-f49aff526eb3/architecture/roks-rhoai-c24ae512-8b25-43d7-8fb3-4173c7e94472-global){: external} - This Community Registry DA will create a cluster for you with GPU-based worker nodes and install the Red Hat OpenShift AI operator and all its dependents. For guidance on Terraform usage refer [Terraform IBM Modules](https://github.com/terraform-ibm-modules/terraform-ibm-ocp-ai?tab=readme-ov-file#red-hat-openshift-ai-on-ibm-cloud).
+- [OpenShift AI on IBM Cloud](https://cloud.ibm.com/catalog/7a4d68b4-cf8b-40cd-a3d1-f49aff526eb3/architecture/roks-rhoai-c24ae512-8b25-43d7-8fb3-4173c7e94472-global){: external} - This Community Registry solution will create a cluster for you with GPU-based worker nodes and install the Red Hat OpenShift AI operator and all its dependents.
 
 - [Red Hat OpenShift on IBM Cloud Starters](https://cloud.ibm.com/catalog/7a4d68b4-cf8b-40cd-a3d1-f49aff526eb3/architecture/roks-tryit-137000f7-e552-464f-866c-a1b5a3bc8d56-global){: external} - This Community Registry DA will create a simple cluster for your with or without integrated logging and monitoring.
 

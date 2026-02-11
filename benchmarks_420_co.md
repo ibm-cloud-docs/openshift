@@ -1,10 +1,10 @@
 ---
 
 copyright: 
-  years: 2024, 2026
-lastupdated: "2026-01-09"
+  years: 2026, 2026
+lastupdated: "2026-02-11"
 
-keywords: openshift, benchmarks, 4.15, openshift benchmarks, openshift 4.15, compliance operator, compliance
+keywords: openshift, benchmarks, 4.20, openshift benchmarks, openshift 4.20, compliance operator, compliance
 
 subcollection: openshift
 
@@ -12,28 +12,21 @@ subcollection: openshift
 
 {{site.data.keyword.attribute-definition-list}}
 
-# 4.15 compliance operator benchmark
-{: #benchmarks-415-co}
+# 4.20 compliance operator benchmark
+{: #benchmarks-420-co}
 
-
-
-This version is no longer supported. Update your cluster to a [supported version](/docs/openshift?topic=openshift-openshift_versions) as soon as possible.
-{: important}
-
-
-
-Review the compliance operator benchmark results for {{site.data.keyword.openshiftlong_notm}} version 4.15. 
+Review the compliance operator benchmark results for {{site.data.keyword.openshiftlong_notm}} version 4.20. 
 {: shortdesc}
 
 
 
 ## 1 Control plane components
-{: #control-plane-components-415-co}
+{: #control-plane-components-420-co}
 
 
 
 ### 1.1 Master node configuration files
-{: #master-node-configuration-files-415-co}
+{: #master-node-configuration-files-420-co}
 
 
 The master node configuration is not stored as a set of files; and therefore, rules in section 1.1 are out of the scope of the automated check by the compliance operator.
@@ -41,7 +34,7 @@ The master node configuration is not stored as a set of files; and therefore, ru
 
 
 ### 1.2 API server
-{: #api-server-415-co}
+{: #api-server-420-co}
 
 | Section|Recommendation|Manual/Automated|Level|Result |
 | -- | -- | -- | -- | -- |
@@ -54,7 +47,7 @@ The master node configuration is not stored as a set of files; and therefore, ru
 | 1.2.7|Ensure that the `--authorization-mode` argument is not set to `AlwaysAllow`. |Automated|1|Pass |
 | 1.2.8|Verify that the Node authorizer is enabled. |Automated|1|Pass |
 | 1.2.9|Verify that RBAC is enabled. |Automated|1|Pass |
-| 1.2.10|Ensure that the `APIPriorityAndFairness` feature gate is enabled. |Manual|1|Pass |
+| 1.2.10|Ensure that the `APIPriorityAndFairness` feature gate is enabled. |Manual|1|Not checked |
 | 1.2.11|Ensure that the admission control plug-in `AlwaysAdmit` is not set. |Automated|1|Pass |
 | 1.2.12|Ensure that the admission control plug-in `AlwaysPullImages` is not set. |Manual|1|Pass |
 | 1.2.13|Ensure that the admission control plug-in `SecurityContextDeny` is not set. |Manual|1|Pass |
@@ -67,9 +60,9 @@ The master node configuration is not stored as a set of files; and therefore, ru
 | 1.2.20|Ensure that the `--secure-port` argument is not set to 0. |Automated|1|Pass |
 | 1.2.21|Ensure that the `healthz` endpoint is protected by RBAC. |Automated|1|Pass |
 | 1.2.22|Ensure that the `--audit-log-path` argument is set. |Automated|1|Pass |
-| 1.2.23|Ensure that the audit logs are forwarded off the cluster for retention. |Automated|1|[Not checked](#ibm-remediations-and-explanations-415-co) |
-| 1.2.24|Ensure that the `maximumRetainedFiles` argument is set to `10` or as appropriate. |Automated|1|[Not checked](#ibm-remediations-and-explanations-415-co) |
-| 1.2.25|Ensure that the `maximumFileSizeMegabytes` argument is set to `100` or as appropriate. |Automated|1|[Not checked](#ibm-remediations-and-explanations-415-co) |
+| 1.2.23|Ensure that the audit logs are forwarded off the cluster for retention. |Automated|1|[Not checked](#ibm-remediations-and-explanations-420-co) |
+| 1.2.24|Ensure that the `maximumRetainedFiles` argument is set to `10` or as appropriate. |Automated|1|[Not checked](#ibm-remediations-and-explanations-420-co) |
+| 1.2.25|Ensure that the `maximumFileSizeMegabytes` argument is set to `100` or as appropriate. |Automated|1|[Not checked](#ibm-remediations-and-explanations-420-co) |
 | 1.2.26|Ensure that the `--request-timeout` argument is set as appropriate. |Automated|1|Pass |
 | 1.2.27|Ensure that the `--service-account-lookup` argument is set to true. |Automated|1|Pass |
 | 1.2.28|Ensure that the `--service-account-key-file` argument is set as appropriate. |Automated|1|Pass |
@@ -77,14 +70,14 @@ The master node configuration is not stored as a set of files; and therefore, ru
 | 1.2.30|Ensure that the `--tls-cert-file` and `--tls-private-key-file` arguments are set as appropriate. |Automated|1|Pass |
 | 1.2.31|Ensure that the `--client-ca-file` argument is set as appropriate. |Automated|1|Pass |
 | 1.2.32|Ensure that the `--etcd-cafile` argument is set as appropriate. |Automated|1|Pass |
-| 1.2.33|Ensure that the `--encryption-provider-config` argument is set as appropriate. |Manual|1|[Not checked](#ibm-remediations-and-explanations-415-co) |
-| 1.2.34|Ensure that encryption providers are appropriately configured. |Manual|1|[Not checked](#ibm-remediations-and-explanations-415-co) |
+| 1.2.33|Ensure that the `--encryption-provider-config` argument is set as appropriate. |Manual|1|[Not checked](#ibm-remediations-and-explanations-420-co) |
+| 1.2.34|Ensure that encryption providers are appropriately configured. |Manual|1|[Not checked](#ibm-remediations-and-explanations-420-co) |
 | 1.2.35|Ensure that the API Server only makes use of Strong Cryptographic Ciphers. |Manual|1|Pass |
 {: caption="Benchmarks for api server." caption-side="top"}
 
 
 ### 1.3 Controller manager
-{: #controller-manager-415-co}
+{: #controller-manager-420-co}
 
 | Section|Recommendation|Manual/Automated|Level|Result |
 | -- | -- | -- | -- | -- |
@@ -99,7 +92,7 @@ The master node configuration is not stored as a set of files; and therefore, ru
 
 
 ### 1.4 Scheduler
-{: #scheduler-415-co}
+{: #scheduler-420-co}
 
 | Section|Recommendation|Manual/Automated|Level|Result |
 | -- | -- | -- | -- | -- |
@@ -109,7 +102,7 @@ The master node configuration is not stored as a set of files; and therefore, ru
 
 
 ## 2 Etcd
-{: #etcd-415-co}
+{: #etcd-420-co}
 
 | Section|Recommendation|Manual/Automated|Level|Result |
 | -- | -- | -- | -- | -- |
@@ -119,17 +112,17 @@ The master node configuration is not stored as a set of files; and therefore, ru
 | 2.4|Ensure that the `--peer-cert-file` and `--peer-key-file` arguments are set as appropriate. |Automated|1|Pass |
 | 2.5|Ensure that the `--peer-client-cert-auth` argument is set to true. |Automated|1|Pass |
 | 2.6|Ensure that the `--peer-auto-tls` argument is not set to true. |Automated|1|Pass |
-| 2.7|Ensure that a unique Certificate Authority is used for etcd. |Manual|2|[Not checked](#ibm-remediations-and-explanations-415-co) |
+| 2.7|Ensure that a unique Certificate Authority is used for etcd. |Manual|2|[Not checked](#ibm-remediations-and-explanations-420-co) |
 {: caption="Benchmarks for etcd." caption-side="top"}
 
 
 ## 3 Control plane configuration
-{: #control-plane-configuration-415-co}
+{: #control-plane-configuration-420-co}
 
 
 
 ### 3.1 Authentication and authorization
-{: #authentication-and-authorization-415-co}
+{: #authentication-and-authorization-420-co}
 
 | Section|Recommendation|Manual/Automated|Level|Result |
 | -- | -- | -- | -- | -- |
@@ -138,7 +131,7 @@ The master node configuration is not stored as a set of files; and therefore, ru
 
 
 ### 3.2 Logging
-{: #logging-415-co}
+{: #logging-420-co}
 
 | Section|Recommendation|Manual/Automated|Level|Result |
 | -- | -- | -- | -- | -- |
@@ -148,7 +141,7 @@ The master node configuration is not stored as a set of files; and therefore, ru
 
 
 ## 4 Worker nodes
-{: #worker-nodes-415-co}
+{: #worker-nodes-420-co}
 
 
 Follow the instruction in [Using the compliance operator](/docs/openshift?topic=openshift-compliance-operator) to perform automated check for worker node configuration.
@@ -158,12 +151,12 @@ Follow the instruction in [Using the compliance operator](/docs/openshift?topic=
 
 
 ## 5 Policies
-{: #policies-415-co}
+{: #policies-420-co}
 
 
 
 ### 5.1 RBAC and service accounts
-{: #rbac-and-service-accounts-415-co}
+{: #rbac-and-service-accounts-420-co}
 
 | Section|Recommendation|Manual/Automated|Level|Result |
 | -- | -- | -- | -- | -- |
@@ -177,7 +170,7 @@ Follow the instruction in [Using the compliance operator](/docs/openshift?topic=
 
 
 ### 5.2 Pod security policies
-{: #pod-security-policies-415-co}
+{: #pod-security-policies-420-co}
 
 | Section|Recommendation|Manual/Automated|Level|Result |
 | -- | -- | -- | -- | -- |
@@ -188,23 +181,23 @@ Follow the instruction in [Using the compliance operator](/docs/openshift?topic=
 | 5.2.5|Minimize the admission of containers with `allowPrivilegeEscalation`. |Automated|1|Not checked |
 | 5.2.6|Minimize the admission of root containers. |Manual|2|Not checked |
 | 5.2.7|Minimize the admission of containers with the NET_RAW capability. |Manual|1|Not checked |
-| 5.2.8|Minimize the admission of containers with added capabilities. |Manual|1|[Not checked](#ibm-remediations-and-explanations-415-co) |
+| 5.2.8|Minimize the admission of containers with added capabilities. |Manual|1|[Not checked](#ibm-remediations-and-explanations-420-co) |
 | 5.2.9|Minimize the admission of containers with capabilities assigned. |Manual|2|Not checked |
 {: caption="Benchmarks for pod security policies." caption-side="top"}
 
 
 ### 5.3 Network policies and CNI
-{: #network-policies-and-cni-415-co}
+{: #network-policies-and-cni-420-co}
 
 | Section|Recommendation|Manual/Automated|Level|Result |
 | -- | -- | -- | -- | -- |
 | 5.3.1|Ensure that the CNI in use supports Network Policies. |Manual|1|Pass |
-| 5.3.2|Ensure that all Namespaces have Network Policies defined. |Automated|2|[Not checked](#ibm-remediations-and-explanations-415-co) |
+| 5.3.2|Ensure that all Namespaces have Network Policies defined. |Automated|2|[Not checked](#ibm-remediations-and-explanations-420-co) |
 {: caption="Benchmarks for network policies and CNI." caption-side="top"}
 
 
 ### 5.4 Secrets management
-{: #secrets-management-415-co}
+{: #secrets-management-420-co}
 
 | Section|Recommendation|Manual/Automated|Level|Result |
 | -- | -- | -- | -- | -- |
@@ -214,7 +207,7 @@ Follow the instruction in [Using the compliance operator](/docs/openshift?topic=
 
 
 ### 5.5 Extensible admission control
-{: #extensible-admission-control-415-co}
+{: #extensible-admission-control-420-co}
 
 | Section|Recommendation|Manual/Automated|Level|Result |
 | -- | -- | -- | -- | -- |
@@ -223,7 +216,7 @@ Follow the instruction in [Using the compliance operator](/docs/openshift?topic=
 
 
 ### 5.7 General policies
-{: #general-policies-415-co}
+{: #general-policies-420-co}
 
 | Section|Recommendation|Manual/Automated|Level|Result |
 | -- | -- | -- | -- | -- |
@@ -234,7 +227,7 @@ Follow the instruction in [Using the compliance operator](/docs/openshift?topic=
 {: caption="Benchmarks for general policies." caption-side="top"}
 
 ## {{site.data.keyword.IBM_notm}} remediations and explanations
-{: #ibm-remediations-and-explanations-415-co}
+{: #ibm-remediations-and-explanations-420-co}
 
 Review information from {{site.data.keyword.IBM_notm}} on the CIS Benchmark results.
 
@@ -249,3 +242,4 @@ Review information from {{site.data.keyword.IBM_notm}} on the CIS Benchmark resu
 | 5.2.8 | Red Hat OpenShift on {{site.data.keyword.IBM_notm}} Cloud installs custom `SCCs`. |
 | 5.3.2 | Red Hat OpenShift on {{site.data.keyword.IBM_notm}} Cloud has a set of default Calico network policies defined and additional network policies can optionally be added. |
 {: caption="Details for {{site.data.keyword.IBM_notm}} remediations and explanations." caption-side="top"}
+
