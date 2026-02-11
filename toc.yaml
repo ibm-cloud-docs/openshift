@@ -169,6 +169,7 @@ toc:
               - vpc-sbd-allow-outbound.md
               - vpc-sbd-enable-existing.md
               - vpc-security-group-manage.md
+              - cni.md
               - vpc-acls.md
               - vpc-kube-policies.md
               - vpc-firewall.md
@@ -325,9 +326,11 @@ toc:
           - storage-utilities.md
           - storage-br.md
       - topicgroup:
-          label: Cloud Paks, Operators, and integrations
+          label: Add-ons, Cloud Paks, Operators, and integrations
           topics:
+          - addon_landing.md
           - integrations-ibm-third-party.md
+          - openshift_integrations_overview.md
           - oc-virtualization.md
           - openshift_integrations_cloud_paks.md
           - openshift_integrations_operators.md
@@ -356,6 +359,12 @@ toc:
           - benchmarks_overview.md
           - benchmark-comparison.md
           - topicgroup:
+              label: Version 4.20
+              topics:
+              - openshift_versions_420.md
+              - openshift_versions_changelog_420.md
+              - benchmarks_420_co.md
+          - topicgroup:
               label: Version 4.19
               topics:
               - openshift_versions_419.md
@@ -383,20 +392,6 @@ toc:
               - openshift_versions_changelog_416.md
               - benchmarks_416.md
               - benchmarks_416_co.md
-          - topicgroup:
-              label: Version 4.15
-              topics:
-              - openshift_versions_415.md
-              - openshift_versions_changelog_415.md
-              - benchmarks_415.md
-              - benchmarks_415_co.md
-          - topicgroup:
-              label: Version 4.14
-              topics:
-              - openshift_versions_414.md
-              - openshift_versions_changelog_414.md
-              - benchmarks_414.md
-              - benchmarks_414_co.md
       - topicgroup:
           label: CLI reference
           topics:
@@ -412,7 +407,6 @@ toc:
           - link:
               label: OpenShift Container Platform REST API
               href: https://docs.redhat.com/en/documentation/openshift_container_platform/4.19/html/api_overview/index
-      - addon_landing.md
       - topicgroup:
           label: Add-on version history
           topics:
@@ -429,11 +423,10 @@ toc:
           - versions-backup-restore.md
           - openshift_versions_hpcs_router.md
           - cl-add-ons-ibm-cloud-image-key-synchronizer.md
-      - locations.md
-      - openshift_integrations_overview.md
       - topicgroup:
           label: Service settings
           topics:
+          - locations.md
           - topic: openshift_tech.md
             navtitle: Architecture
           - topic: service-settings.md
@@ -447,14 +440,19 @@ toc:
           topics:
           - vpc-flavors.md
           - classic-flavors.md
-      - data-portability.md
-      - ha-dr.md
+      - topic: data-portability.md
+        navtitle: Data portability
+      - topic: ha-dr.md
+        navtitle: High-availability and disaster recovery
   - navgroup:
       id: help
       topics:
       - include: ../account/status-bps.md
-      - faqs.md
-      - best-practices.md
+        navtitle: Monitoring account status
+      - topic: best-practices.md
+        navtitle: Best practices
+      - topic: faqs.md
+        navtitle: FAQ
       - topicgroup:
           label: Troubleshooting
           topics:

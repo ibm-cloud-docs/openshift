@@ -1,8 +1,8 @@
 ---
 
 copyright: 
-  years: 2014, 2025
-lastupdated: "2025-09-08"
+  years: 2014, 2026
+lastupdated: "2026-02-11"
 
 
 keywords: openshift, {{site.data.keyword.openshiftlong_notm}}
@@ -40,6 +40,11 @@ Review the feature gates that are applied to all master and worker node componen
 Modifying feature gates is not supported in {{site.data.keyword.openshiftlong_notm}}.
 {: important}
 
+
+4.20
+:   `KMSv1=false`
+:   `DisableNodeKubeProxyVersion=false`
+
 4.19
 :   `KMSv1=false`
 
@@ -58,53 +63,7 @@ Modifying feature gates is not supported in {{site.data.keyword.openshiftlong_no
 :   `KMSv1=false`
 :   `StructuredAuthenticationConfiguration=true`
 
-4.15
-:   Community feature gates applied.
 
-4.14
-:   `RetroactiveDefaultStorageClass=false`
-
-4.13
-:   `RetroactiveDefaultStorageClass=false`
-
-4.12
-:   Community feature gates applied.
-
-4.11
-:   Community feature gates applied. 
-
-4.10
-:   `ServiceLBNodePortControl=false`
-  
-4.9
-:   `ServiceLBNodePortControl=false`
-
-4.8
-:   `ServiceLoadBalancerClass=true`
-:   `LegacyNodeRoleBehavior=false`
-:   `DownwardAPIHugePages=true`
-
-4.7
-:   `LegacyNodeRoleBehavior=false`
-:   `RemoveSelfLink=false`
-
-4.6
-:   `APIPriorityAndFairness=true`
-:   `LegacyNodeRoleBehavior=false`
-:   `SCTPSupport=false`
-:   `ServiceAppProtocol=false`
-
-4.5
-:   `ExperimentalCriticalPodAnnotation=true`
-:   `LocalStorageCapacityIsolation=false`
-
-4.4
-:   `ExperimentalCriticalPodAnnotation=true`
-:   `LocalStorageCapacityIsolation=false`
-
-4.3
-:   `ExperimentalCriticalPodAnnotation=true`
-:   `LocalStorageCapacityIsolation=false`
 
 
 

@@ -68,6 +68,21 @@ VPC Block CSI Driver cluster add-on patch updates.
 :   For more information, see the [change log](/docs/openshift?topic=openshift-cl-add-ons-vpc-block-csi-driver).
 
 
+
+### 04 February 2026
+{: #openshift-feb0426}
+{: release-note}
+
+New! {{site.data.keyword.openshiftlong_notm}} 4.20 is available.
+:   You can now create or [update clusters to version 4.20](/docs/openshift?topic=openshift-cs_versions_419).
+:   With {{site.data.keyword.openshiftlong_notm}} version 4.20, you get the latest features, as well as component updates on {{site.data.keyword.openshiftlong_notm}}. RHCOS is the default operating system for {{site.data.keyword.openshiftlong_notm}} cluster version 4.20 on VPC. For more information, see the [4.19 change log](/docs/openshift?topic=openshift-openshift_changelog_419).
+
+New! Container network interface (CNI) selection in version 4.20 and later.
+:   In VPC clusters version 4.20 and later that use RHCOS worker nodes, you can now select Open Virtual Network as your cluster CNI. For more information, see [Creating VPC clusters](/docs/openshift?topic=openshift-cluster-create-vpc-gen2) and [Selecting a container network interface](/docs/openshift?topic=openshift-cni). This option is currently available in the CLI only.
+
+
+
+
 ## January 2026
 {: #openshift-jan26}
 
@@ -2869,178 +2884,3 @@ Worker node fix packs are available {{site.data.keyword.openshiftlong_notm}}.
     - 4.13.32_1557_openshift
     - 4.12.49_1578_openshift
     - 4.11.58_1591_openshift
-
-
-
-
-
-
-### 08 February 2024
-{: #openshift-feb0824}
-{: release-note}
-
-CLI version `1.0.595` is available.
-:   For more information, see [Updating the CLI](/docs/openshift?topic=openshift-cli-update) and the [CLI change log](/docs/openshift?topic=openshift-cs_cli_changelog).
-
-{{site.data.keyword.block_storage_is_short}} add-on versions `5.2.15_501` and `5.1.21_506` are available.
-:   For more information, see the [change log](/docs/openshift?topic=openshift-cl-add-ons-vpc-block-csi-driver).
-
-{{site.data.keyword.filestorage_vpc_full_notm}} add-on version `1.2.6_130` is available.
-:   For more information, see the [change log](/docs/openshift?topic=openshift-cl-add-ons-vpc-file-csi-driver).
-
-
-
-
-### 01 February 2024
-{: #openshift-feb0124}
-{: release-note}
-
-
-
-
-
-Master fix packs are available for {{site.data.keyword.openshiftlong_notm}}
-:   Review the change logs for your cluster version. Master patch updates are applied automatically.
-:   [4.14.8_1545_openshift](/docs/openshift?topic=openshift-openshift_changelog_414)
-:   4.13.28_1555_openshift
-:   4.12.46_1576_openshift
-:   4.11.56_1589_openshift
-
-
-
-
-{{site.data.keyword.openshiftlong_notm}} cluster autoscaler add-on patch update `1.0.8_346`.
-:   For more information, see [the change log](/docs/openshift?topic=openshift-ca_changelog).
-
-
-## January 2024
-{: #openshift-jan24}
-
-### 30 January 2024
-{: #openshift-jan3024}
-{: release-note}
-
-
-
-
-
-Worker node fix packs are available. 
-:    Worker node updates can be applied by updating or reloading the worker node in classic infrastructure, or replacing the worker node in VPC infrastructure.
-:    Review the following change logs for your cluster version.
-    - [4.14.10_1546_openshift](/docs/openshift?topic=openshift-openshift_changelog_414)
-    - 4.13.30_1556_openshift
-    - 4.12.47_1577_openshift
-    - 4.11.57_1590_openshift
-    - 4.10.67_1597_openshift
-
-
-
-### 29 January 2024
-{: #openshift-jan2924}
-{: release-note}
-
-{{site.data.keyword.cos_full_notm}} plug-in version `2.2.23`.
-:   For more information, see the [change log](/docs/openshift?topic=openshift-cos_plugin_changelog).
-
-
-
-
-
-### 19 January 2024
-{: #openshift-jan1924}
-{: release-note}
-
-CLI version `1.0.589` is available.
-:   For more information, see [Updating the CLI](/docs/openshift?topic=openshift-cli-update) and the [CLI change log](/docs/openshift?topic=openshift-cs_cli_changelog).
-
-
-
-OpenShift Data Foundation add-on version `4.14.0`.
-:   For more information, see the [change log](/docs/openshift?topic=openshift-cl-add-ons-openshift-data-foundation).
-
-
-
-### 17 January 2024
-{: #openshift-jan1724}
-{: release-note}
-
-
-
-
-
-Worker node fix packs are available. 
-:    Worker node updates can be applied by updating or reloading the worker node in classic infrastructure, or replacing the worker node in VPC infrastructure.
-:    Review the following change logs for your cluster version.
-    - [4.14.8_1544_openshift](/docs/openshift?topic=openshift-openshift_changelog_414)
-    - 4.13.28_1554_openshift
-    - 4.12.46_1575_openshift
-    - 4.11.56_1588_openshift
-    - 4.10.67_1596_openshift
-
-
-
-
-### 16 January 2024
-{: #openshift-jan1624}
-{: release-note}
-
-Cluster autoscaler add-on patch updates `1.2.0_322` and `1.0.9_328`.
-:   For more information, see [the change log](/docs/openshift?topic=openshift-ca_changelog).
-
-
-
-
-
-
-Image Key Synchronizer add-on version `1.0.0_2015`.
-:   For more information, see the [change log](/docs/openshift?topic=openshift-cl-add-ons-ibm-cloud-image-key-synchronizer).
-
-
-
-
-
-### 10 January 2024
-{: #openshift-jan1024}
-{: release-note}
-
-Subscribe to the {{site.data.keyword.cloud_notm}} documentation release notes via RSS.
-:   You can get notified via RSS about documentation updates for {{site.data.keyword.openshiftlong_notm}} such as worker node fix packs, new cluster versions, new cluster add-on versions, and more.  For more information, see [Subscribing to an RSS feed](/docs/openshift?topic=openshift-best-practices-service#bp-4).
-
-
-
-{{site.data.keyword.filestorage_vpc_full_notm}} cluster add-on patch update `1.2.5_107`.
-:   For more information, see [the change log](/docs/openshift?topic=openshift-cl-add-ons-vpc-file-csi-driver).
-
-{{site.data.keyword.block_storage_is_short}} cluster add-on patch updates `5.2.14_485` and `5.1.19_486`.
-:   For more information, see the [change log](/docs/openshift?topic=openshift-cl-add-ons-vpc-block-csi-driver).
-
-
-
-
-### 8 January 2024
-{: #openshift-jan0824}
-{: release-note}
-
-OpenShift Data Foundation add-on version `4.13.9`.
-:   For more information, see the [change log](/docs/openshift?topic=openshift-cl-add-ons-openshift-data-foundation).
-
-
-
-
-
-### 2 January 2024
-{: #openshift-jan0224}
-{: release-note}
-
-
-
-
-
-Worker node fix packs are available. 
-:    Worker node updates can be applied by updating or reloading the worker node in classic infrastructure, or replacing the worker node in VPC infrastructure.
-:    Review the following change logs for your cluster version.
-    - [4.14.6_1542_openshift](/docs/openshift?topic=openshift-openshift_changelog_414)
-    - 4.13.26_1553_openshift
-    - 4.12.45_1574_openshift
-    - 4.11.55_1587_openshift
-    - 4.10.67_1595_openshift

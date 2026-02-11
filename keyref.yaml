@@ -137,7 +137,7 @@ keyword:
   openshift_420_kube_version: '1.33'
   openshift_420_release_date: 04 February 2026
   openshift_420_unsupported_certainty: tentative
-  openshift_420_unsupported_date: 01 January 2028
+  openshift_420_unsupported_date: 19 January 2028
   openshift_46_deprecated: 'True'
   openshift_46_kube_version: '1.19'
   openshift_46_release_date: 17 February 2021
@@ -238,7 +238,7 @@ keyword:
   satellite_420_kube_version: '1.33'
   satellite_420_release_date: 04 February 2026
   satellite_420_unsupported_certainty: tentative
-  satellite_420_unsupported_date: 01 January 2028
+  satellite_420_unsupported_date: 19 January 2028
   satellite_46_deprecated: 'True'
   satellite_46_kube_version: '1.19'
   satellite_46_release_date: 17 February 2021
