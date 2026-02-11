@@ -1969,11 +1969,9 @@ subcollection: openshift
 
 * [About trusted profiles](/docs/openshift?topic=openshift-configure-trusted-profile#tp-about)
 
-* [Minimum access requirements](/docs/openshift?topic=openshift-configure-trusted-profile#tp-minreqs)
+* [Minimum access requirements for all storage components](/docs/openshift?topic=openshift-configure-trusted-profile#tp-minreqs-all)
 
-    * [Minimum requirements for all storage components](/docs/openshift?topic=openshift-configure-trusted-profile#tp-minreqs-all)
-
-    * [Minimum requirements for individual storage components](/docs/openshift?topic=openshift-configure-trusted-profile#tp-minreqs-component)
+* [Minimum access requirements for individual storage components](/docs/openshift?topic=openshift-configure-trusted-profile#tp-minreqs-component)
 
     * [VPC block storage](/docs/openshift?topic=openshift-configure-trusted-profile#tp-minreqs-vpc-block)
 
@@ -4022,7 +4020,7 @@ subcollection: openshift
 
 * [Enabling the OpenShift Data Foundation add-on](/docs/openshift?topic=openshift-storage-odf-trusted-profiles#odf-addon-enable-trusted)
 
-* [Setting up trusted profiles](/docs/openshift?topic=openshift-storage-odf-trusted-profiles#odf-setup-trusted)
+* [Setting up trusted profiles for ODF](/docs/openshift?topic=openshift-storage-odf-trusted-profiles#odf-setup-trusted)
 
     * [Automatically creating a secret by using a Shell script](/docs/openshift?topic=openshift-storage-odf-trusted-profiles#odf-secret-create-truted-profile)
 

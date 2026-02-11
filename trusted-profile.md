@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2025, 2026
-lastupdated: "2026-01-06"
+lastupdated: "2026-02-11"
 
 
 keywords: trusted profiles, containers, block storage, openshift
@@ -37,13 +37,10 @@ Scoped permissions
 :   Adhere to the principle of least privilege by creating profiles with the exact minimum permissions required to complete a specific task.
 
 
-## Minimum access requirements
-{: #tp-minreqs}
-
-A minimum set of access policies are required for a trusted profile to be used for your storage components. 
-
-### Minimum requirements for all storage components
+## Minimum access requirements for all storage components
 {: #tp-minreqs-all}
+
+A minimum set of access policies are required for a trusted profile to be used for your storage components. The policies in this section are required to set up trusted profiles for all storage storage components.
 
 Create a trust relationship with the following configuration. These permissions are required for VPC clusters. 
 - Compute service type (found under the **Compute resource tab** in the UI) :
@@ -65,8 +62,10 @@ Create access policies with the permissions in the following table.
 Additionally, if you plan to use **Classic infrastructure** you must enable the **Add/Upgrade Storage (Storage Layer)** and **Storage Manage** permissions. To enable these permissions, navigate to the [Trusted profile dashboard](https://cloud.ibm.com/iam/trusted-profiles){: external} in the UI and select the relevant trusted profile. Click **Classic infrastructure**, then expand the options under **Sales** and **Devices** to find the permission. 
 
 
-### Minimum requirements for individual storage components
+## Minimum access requirements for individual storage components
 {: #tp-minreqs-component}
+
+A minimum set of access policies are required for a trusted profile to be used for your storage components. 
 
 ### VPC block storage
 {: #tp-minreqs-vpc-block}
