@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2026
-lastupdated: "2026-02-11"
+lastupdated: "2026-02-12"
 
 
 keywords: openshift
@@ -4524,6 +4524,54 @@ subcollection: openshift
     * [Worker node fix pack 4.20.13_1537_openshift, released 09 February 2026](/docs/openshift?topic=openshift-openshift_changelog_420#cl-boms-42013_1537_openshift_W)
 
     * [Master and worker fixpacks 4.20.12_1536_openshift and 4.20.10_1535_openshift, released 04 January 2026](/docs/openshift?topic=openshift-openshift_changelog_420#42012_1536M_and_42010_1535W)
+
+[4.20 CIS Kubernetes benchmark](/docs/openshift?topic=openshift-cis-benchmark-420#cis-benchmark-420)
+
+* [1 Master node security configuration](/docs/openshift?topic=openshift-cis-benchmark-420#1-master-node-security-configuration-420)
+
+    * [1.1 Master node configuration files](/docs/openshift?topic=openshift-cis-benchmark-420#11-master-node-configuration-files-420)
+
+    * [1.2 API server](/docs/openshift?topic=openshift-cis-benchmark-420#12-api-server-420)
+
+    * [1.3 Controller manager](/docs/openshift?topic=openshift-cis-benchmark-420#13-controller-manager-420)
+
+    * [1.4 Scheduler](/docs/openshift?topic=openshift-cis-benchmark-420#14-scheduler-420)
+
+* [2 Etcd node configuration](/docs/openshift?topic=openshift-cis-benchmark-420#2-etcd-node-configuration-420)
+
+* [3 Control plane configuration](/docs/openshift?topic=openshift-cis-benchmark-420#3-control-plane-configuration-420)
+
+    * [3.1 Authentication and authorization](/docs/openshift?topic=openshift-cis-benchmark-420#31-authentication-and-authorization-420)
+
+    * [3.2 Logging](/docs/openshift?topic=openshift-cis-benchmark-420#32-logging-420)
+
+* [4 Worker node security configuration (RHEL_9_64)](/docs/openshift?topic=openshift-cis-benchmark-420#4-worker-node-security-configuration-rhel_9_64-420)
+
+    * [4.1 Worker node configuration files](/docs/openshift?topic=openshift-cis-benchmark-420#41-worker-node-configuration-files-420)
+
+    * [4.2 Kubelet](/docs/openshift?topic=openshift-cis-benchmark-420#42-kubelet-420)
+
+* [4 Worker node security configuration (RHCOS)](/docs/openshift?topic=openshift-cis-benchmark-420#4-worker-node-security-configuration-rhcos-420)
+
+    * [4.1 Worker node configuration files](/docs/openshift?topic=openshift-cis-benchmark-420#41-worker-node-configuration-files-420)
+
+    * [4.2 Kubelet](/docs/openshift?topic=openshift-cis-benchmark-420#42-kubelet-420)
+
+* [5 Kubernetes policies](/docs/openshift?topic=openshift-cis-benchmark-420#5-kubernetes-policies-420)
+
+    * [5.1 RBAC and service accounts](/docs/openshift?topic=openshift-cis-benchmark-420#51-rbac-and-service-accounts-420)
+
+    * [5.2 Pod security policies](/docs/openshift?topic=openshift-cis-benchmark-420#52-pod-security-policies-420)
+
+    * [5.3 Network policies and CNI](/docs/openshift?topic=openshift-cis-benchmark-420#53-network-policies-and-cni-420)
+
+    * [5.4 Secrets management](/docs/openshift?topic=openshift-cis-benchmark-420#54-secrets-management-420)
+
+    * [5.5 Extensible admission control](/docs/openshift?topic=openshift-cis-benchmark-420#55-extensible-admission-control-420)
+
+    * [5.7 General policies](/docs/openshift?topic=openshift-cis-benchmark-420#57-general-policies-420)
+
+    * [{{site.data.keyword.IBM_notm}} remediations and explanations](/docs/openshift?topic=openshift-cis-benchmark-420#ibm-remediations-and-explanations-420)
 
 [4.20 compliance operator benchmark](/docs/openshift?topic=openshift-benchmarks-420-co#benchmarks-420-co)
 
