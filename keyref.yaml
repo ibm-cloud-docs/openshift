@@ -166,7 +166,7 @@ keyword:
   openshift_latest_docs: /docs/openshift?topic=openshift-openshift_changelog_420
   openshift_latest_release_date: 04 February 2026
   openshift_latest_unsupported_certainty: tentative
-  openshift_latest_unsupported_date: 01 January 2028
+  openshift_latest_unsupported_date: 19 January 2028
   openshift_latest_version: '4.20'
   satellite_410_RHEL_7_unsupported_date: 6 December 2022
   satellite_410_RHEL_8_unsupported_date: ''
@@ -267,5 +267,5 @@ keyword:
   satellite_latest_docs: /docs/openshift?topic=openshift-openshift_changelog_420
   satellite_latest_release_date: 04 February 2026
   satellite_latest_unsupported_certainty: tentative
-  satellite_latest_unsupported_date: 01 January 2028
+  satellite_latest_unsupported_date: 19 January 2028
   satellite_latest_version: '4.20'
