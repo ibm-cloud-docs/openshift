@@ -363,6 +363,7 @@ toc:
               topics:
               - openshift_versions_420.md
               - openshift_versions_changelog_420.md
+              - benchmarks_420.md
               - benchmarks_420_co.md
           - topicgroup:
               label: Version 4.19
