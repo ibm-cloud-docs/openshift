@@ -245,6 +245,12 @@ keyword:
   satellite_420_release_date: 04 February 2026
   satellite_420_unsupported_certainty: tentative
   satellite_420_unsupported_date: 19 January 2028
+  satellite_421_RHEL_9_unsupported_date: ''
+  satellite_421_deprecated: 'False'
+  satellite_421_kube_version: '1.33'
+  satellite_421_release_date: 04 February 2026
+  satellite_421_unsupported_certainty: tentative
+  satellite_421_unsupported_date: 19 January 2028
   satellite_46_deprecated: 'True'
   satellite_46_kube_version: '1.19'
   satellite_46_release_date: 17 February 2021
