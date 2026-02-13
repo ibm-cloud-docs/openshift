@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2026
-lastupdated: "2026-02-12"
+lastupdated: "2026-02-13"
 
 
 keywords: openshift
@@ -4523,7 +4523,7 @@ subcollection: openshift
 
     * [Worker node fix pack 4.20.13_1537_openshift, released 09 February 2026](/docs/openshift?topic=openshift-openshift_changelog_420#cl-boms-42013_1537_openshift_W)
 
-    * [Master and worker fixpacks 4.20.12_1536_openshift and 4.20.10_1535_openshift, released 04 January 2026](/docs/openshift?topic=openshift-openshift_changelog_420#42012_1536M_and_42010_1535W)
+    * [Master and worker fixpacks 4.20.12_1536_openshift and 4.20.10_1535_openshift, released 04 February 2026](/docs/openshift?topic=openshift-openshift_changelog_420#42012_1536M_and_42010_1535W)
 
 [4.20 CIS Kubernetes benchmark](/docs/openshift?topic=openshift-cis-benchmark-420#cis-benchmark-420)
 
