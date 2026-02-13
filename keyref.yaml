@@ -138,6 +138,12 @@ keyword:
   openshift_420_release_date: 04 February 2026
   openshift_420_unsupported_certainty: tentative
   openshift_420_unsupported_date: 19 January 2028
+  openshift_421_RHEL_9_unsupported_date: ''
+  openshift_421_deprecated: 'False'
+  openshift_421_kube_version: '1.33'
+  openshift_421_release_date: 04 February 2026
+  openshift_421_unsupported_certainty: tentative
+  openshift_421_unsupported_date: 19 January 2028
   openshift_46_deprecated: 'True'
   openshift_46_kube_version: '1.19'
   openshift_46_release_date: 17 February 2021
