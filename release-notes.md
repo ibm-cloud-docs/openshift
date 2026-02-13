@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2026
-lastupdated: "2026-02-11"
+lastupdated: "2026-02-13"
 
 
 keywords: kubernetes, release notes, openshift, {{site.data.keyword.openshiftlong_notm}}
@@ -86,7 +86,7 @@ New! {{site.data.keyword.openshiftlong_notm}} 4.20 is available.
 :   With {{site.data.keyword.openshiftlong_notm}} version 4.20, you get the latest features, as well as component updates on {{site.data.keyword.openshiftlong_notm}}. RHCOS is the default operating system for {{site.data.keyword.openshiftlong_notm}} cluster version 4.20 on VPC. For more information, see the [4.19 change log](/docs/openshift?topic=openshift-openshift_changelog_419).
 
 New! Container network interface (CNI) selection in version 4.20 and later.
-:   In VPC clusters version 4.20 and later that use RHCOS worker nodes, you can now select Open Virtual Network as your cluster CNI. For more information, see [Creating VPC clusters](/docs/openshift?topic=openshift-cluster-create-vpc-gen2) and [Selecting a container network interface](/docs/openshift?topic=openshift-cni). This option is currently available in the CLI only.
+:   In VPC clusters version 4.20 and later that use RHCOS worker nodes, you can now select Open Virtual Network as your cluster CNI. For more information, see [Creating VPC clusters](/docs/openshift?topic=openshift-cluster-create-vpc-gen2) and [Selecting a container network interface](/docs/openshift?topic=openshift-cni). This option is currently available via the CLI or API only.
 
 
 
