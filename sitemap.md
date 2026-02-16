@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2026
-lastupdated: "2026-02-13"
+lastupdated: "2026-02-16"
 
 
 keywords: openshift
@@ -7547,6 +7547,8 @@ subcollection: openshift
 * [Disabling or removing a webhook](/docs/openshift?topic=openshift-ts-webhook-debug#webhook-disable-rm)
 
 [Why do I see a `Cannot complete cluster master upgrade` message?](/docs/openshift?topic=openshift-ts-cluster-master-upgrade#ts-cluster-master-upgrade)
+
+[Why can't I create or renew my CA cert?](/docs/openshift?topic=openshift-ts-cert-failed#ts-cert-failed)
 
 [Why does OpenShift show the cluster version is not up to date?](/docs/openshift?topic=openshift-ts-cluster-version-downlevel#ts-cluster-version-downlevel)
 

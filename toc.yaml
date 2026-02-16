@@ -471,6 +471,7 @@ toc:
               - ts-cluster-debug-ocp.md
               - ts-webhook-debug.md
               - ts-cluster-master-upgrade.md
+              - ts-cert-failed.md
               - ts-cluster-version-downlevel.md
               - ts-cluster-cli.md
               - ts-cluster-console-user.md
