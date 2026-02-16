@@ -2,7 +2,7 @@
 
 copyright:
   years: 2025, 2026
-lastupdated: "2026-02-11"
+lastupdated: "2026-02-16"
 
 
 keywords: openshift, openshift data foundation, openshift container storage, disaster recovery
@@ -23,7 +23,7 @@ subcollection: openshift
 [Virtual Private Cloud]{: tag-vpc}
 [4.17 and later]{: tag-red}
 
-Regional Disaster Recovery ensures business continuity during the unavailability of a geographical region. You can use Red Hat Advanced cluster management (ACM) to set up the Regional Disaster Recovery solutions for ODF clusters.
+Regional Disaster Recovery ensures business continuity during the unavailability of a geographical region. You can use Red Hat Advanced Cluster Management (ACM) to set up the Regional Disaster Recovery solutions for ODF clusters.
 {: shortdesc}
 
 The following steps for setting ODF Disaster Recovery are available as a **Technical Preview** only and **not for production use**.
@@ -97,28 +97,13 @@ By default, the Red Hat OperatorHub catalog is disabled. You need to enable it m
     ```
     {: pre}   
 
-## Setting up ACM on the hub cluster
+## Using ACM to set up Regional Diaster Recovery
 {: #odf-rdr-install-acm}
 
 Follow these steps to install ACM on the hub cluster and then set up the disaster recovery policy.
 {: shortdesc}
 
-
-
-
-
-1. Install ACM version 2.12 or later on the hub cluster from the [{{site.data.keyword.redhat_openshift_notm}} clusters console](https://cloud.ibm.com/kubernetes/clusters?platformType=openshift){: external}.
-  
-
-1. From **Operators** > **Installed Operators**, create a `MultiClusterHub` instance.
-  
-1. Open the ACM Console and import the 2 managed ODF clusters to the ACM hub.
-      
-    1. In the [{{site.data.keyword.redhat_openshift_notm}} clusters console](https://cloud.ibm.com/kubernetes/clusters?platformType=openshift){: external}, change the menu option on the top from **local-cluster** to **All Clusters** to switch to ACM console mode.
-    1. Go to **Infrastructure** > **Console** > **Import Cluster**.
-    1. Complete the details for one of your managed ODF clusters and generate the command. 
-    1. Click **Copy Command** to copy the import command and run it on the target cluster.
-    1. Repeat these steps to import the other managed ODF cluster.
+1. [Follow the steps to install the ACM add-on. Be sure to import any ODF clusters you want to apply a disaster recovery policy to](/docs/openshift?topic=openshift-acm-install-cli).
 
 1. Configure the Submariner add-on from the ACM Console.
 
@@ -187,6 +172,21 @@ Follow these steps to install ACM on the hub cluster and then set up the disaste
   
 1. Create a DR Policy for both managed ODF clusters with a sync interval of 5 minutes. For more information, see [Creating Disaster Recovery Policy on Hub cluster](https://docs.redhat.com/en/documentation/red_hat_openshift_data_foundation/4.16/html-single/configuring_openshift_data_foundation_disaster_recovery_for_openshift_workloads/index?extIdCarryOver=true&sc_cid=701f2000001OH7EAAW#creating-disaster-recovery-policy-on-hub-cluster_rdr){: external}. 
 
+1. **Optional**: Review the [operators](#operators) you can install to enhance ODF Regional Disaster Recovery features.
+
+## Optional operators for ODF Regional Disaster Recovery
+{: #operators}
+
+Review the optional operators you can install on your ACM hub or managed clusters to enhance ODF Regional Disaster Recovery features. Note that IBM is not responsible for managing these operators. 
+
+You are responsible for managing these operators, including but not limited to updating, monitoring, recovery, and re-installation.
+{: important}
+
+| Operator | Description | Additional information |
+|---|---|---|
+| OpenShift API for Data Protection (OADP) Operator | - Use to create backup and restore APIs for OpenShift clusters. \n - Install on **managed clusters**.  | [Introduction to OpenShift API for data protection](https://docs.redhat.com/en/documentation/openshift_container_platform/4.18/html/backup_and_restore/oadp-application-backup-and-restore#oadp-introduction){: external} |
+| Submariner | - Provides direct networking between two or more Kubernetes clusters in your environment. \n - Install on **managed clusters**. | [Submariner](https://docs.redhat.com/en/documentation/red_hat_advanced_cluster_management_for_kubernetes/2.2/html/manage_cluster/submariner){: external} |
+{: caption="Optional operators for ODF Regional Disaster Recovery" caption-side="bottom"}
 
   
 ## Testing your disaster recovery configuration
