@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2026
-lastupdated: "2026-01-30"
+lastupdated: "2026-02-16"
 
 
 keywords: kubernetes, openshift, red hat, red hat openshift
@@ -54,12 +54,6 @@ In this tutorial, you create the following resources by using the CLI. There are
 - A classic cluster with 2 worker nodes
 - A simple Hello World app deployed to your cluster
 - A route to expose your app
-
-
-## Overview of cluster resources
-{: #cluster-arch-tut-overview}
-
-Review the following diagram for an overview of common cluster resources.
 
 ![Cluster architecture](images/cs-app-components1.svg){: caption="Cluster architecture" caption-side="bottom"}
 

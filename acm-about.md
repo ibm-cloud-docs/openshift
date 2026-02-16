@@ -2,7 +2,7 @@
 
 copyright:
   years: 2025, 2026
-lastupdated: "2026-02-13"
+lastupdated: "2026-02-16"
 
 
 keywords: openshift, acm, advanced cluster management, manage cluster, management, addon, add-on, acm addon
@@ -26,14 +26,14 @@ The Advanced Cluster Management add-on is available for select regions only.
 {: important}
 
 ACM provides the following key capabilities for cluster and VM management.
-    - Full lifecycle management of Kubernetes clusters and VMs
-    - Policy-based governance 
-    - Configuration compliance
-    - GitOps-enabled application deployment across multiple environments
-    - operational consistency
-    - Security enforcement
-    - Fleet-wide visibility for clusters and VMs
-    - Disaster recovery
+- Full lifecycle management of Kubernetes clusters and VMs
+- Policy-based governance 
+- Configuration compliance
+- GitOps-enabled application deployment across multiple environments
+- operational consistency
+- Security enforcement
+- Fleet-wide visibility for clusters and VMs
+- Disaster recovery
 
 
 When you install ACM, you choose between two plans that provide additional features and benefits on top of those listed above: **ACM for Virtualization**, which simplifies the management of VMs deployed to Red Hat OpenShift clusters, or **ACM for Kubernetes**, which provides tools to manage clusters and applications, whether containerized or virtualized, from a central console.
@@ -52,8 +52,8 @@ Review the description of each ACM plan.
 :   - ACM for Virtualization is a centralized tool that simplifies the management of virtual machines (VMs) deployed to Red Hat OpenShift® Virtualization Engine clusters as well as the clusters themselves. This license type provides a centralized platform for provisioning, monitoring and decomissioning VMs across multiple clusters.
 :   - This solution is a version of Red Hat Advanced Cluster Management for Kubernetes and is designed for organizations that want to manage VMs exclusively.
 
-    For the ACM for Virtualization plan, it is recommended that your managed clusters run bare metal worker nodes.  
-    {: tip}
+For the ACM for Virtualization plan, it is recommended that your managed clusters run bare metal worker nodes.  
+{: tip}
 
 
 [Advanced Cluster Management for Kubernetes](#kube)
