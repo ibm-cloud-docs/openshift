@@ -4065,7 +4065,9 @@ subcollection: openshift
 
 * [Enabling the Red Hat OperatorHub catalog](/docs/openshift?topic=openshift-openshift_odf_rdr_roks#odf-rdr-enable-redhat)
 
-* [Setting up ACM on the hub cluster](/docs/openshift?topic=openshift-openshift_odf_rdr_roks#odf-rdr-install-acm)
+* [Using ACM to set up Regional Diaster Recovery](/docs/openshift?topic=openshift-openshift_odf_rdr_roks#odf-rdr-install-acm)
+
+* [Optional operators for ODF Regional Disaster Recovery](/docs/openshift?topic=openshift-openshift_odf_rdr_roks#operators)
 
 * [Testing your disaster recovery configuration](/docs/openshift?topic=openshift-openshift_odf_rdr_roks#odf-rdr-test)
 
