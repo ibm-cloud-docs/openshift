@@ -1,8 +1,8 @@
 ---
 
 copyright: 
-  years: 2014, 2025
-lastupdated: "2025-12-05"
+  years: 2014, 2026
+lastupdated: "2026-02-16"
 
 
 keywords: kubernetes, deploy, app, openshift
@@ -406,7 +406,6 @@ The following tips can help you organize your deployment YAML files.
     {: codeblock}
 
 * You can use the `oc apply -f` command to apply to an entire directory, not just a single file.
-* Try out the [`kustomize` project](/docs/openshift?topic=openshift-kustomize) that you can use to help write, customize, and reuse your Kubernetes resource YAML configurations.
 
 Within the YAML file, you can use labels or annotations as metadata to manage your deployments.
 
@@ -443,9 +442,7 @@ Set up a continuous integration and delivery (CI/CD) pipeline
 :   With your app configuration files organized in a source control management system such as Git, you can build your pipeline to test and deploy code to different environments, such as `test` and `prod`. Work with your cluster administrator to [set up continuous integration and delivery](/docs/openshift?topic=openshift-cicd).
 
 Package your app configuration files
-:   Package your app with tools like Kustomize or Helm.
-    - With the `kustomize` [project](/docs/openshift?topic=openshift-kustomize), you can write, customize, and reuse your Kubernetes resource YAML configurations.
-    - With the [Helm](https://helm.sh/docs/){: external} Kubernetes package manager, you can specify all Kubernetes resources that your app requires in a Helm chart. Then, you can use Helm to create the YAML configuration files and deploy these files in your cluster. You can also [integrate {{site.data.keyword.cloud_notm}}-provided Helm charts](https://cloud.ibm.com/kubernetes/helm){: external} to extend your cluster's capabilities, such as with a block storage plug-in.
+:   With the [Helm](https://helm.sh/docs/){: external} Kubernetes package manager, you can specify all Kubernetes resources that your app requires in a Helm chart. Then, you can use Helm to create the YAML configuration files and deploy these files in your cluster. You can also [integrate {{site.data.keyword.cloud_notm}}-provided Helm charts](https://cloud.ibm.com/kubernetes/helm){: external} to extend your cluster's capabilities, such as with a block storage plug-in.
         
 Are you looking to create YAML file templates? Some people use Helm to do just that, or you might try out other community tools such as [`ytt`](https://get-ytt.io/){: external}.
 

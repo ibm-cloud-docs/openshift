@@ -14,8 +14,10 @@ toc:
   - navgroup:
       id: learn
       topics:
-      - getting-started.md
-      - overview.md
+      - topic: getting-started.md
+        navtitle: Getting started
+      - topic: overview.md
+        navtitle: Understanding the service
       - topicgroup:
           label: Your responsibilities
           topics:
@@ -189,8 +191,6 @@ toc:
           - openshift_app_deploy.md
           - nodeport.md
           - app-update.md
-          - kustomize.md
-          - cicd.md
           - openshift_app_networking.md
           - topicgroup:
               label: Routes
@@ -335,7 +335,6 @@ toc:
           topics:
           - addon_landing.md
           - integrations-ibm-third-party.md
-          - openshift_integrations_overview.md
           - oc-virtualization.md
           - openshift_integrations_cloud_paks.md
           - openshift_integrations_operators.md

@@ -31,11 +31,11 @@ subcollection: openshift
 
 
 
-## Getting started with {{site.data.keyword.openshiftlong_notm}}
-{: #sitemap_getting_started_with_}
+## Getting started
+{: #sitemap_getting_started}
 
 
-[Getting started with {{site.data.keyword.openshiftlong_notm}}](/docs/openshift?topic=openshift-getting-started#getting-started)
+[Getting started](/docs/openshift?topic=openshift-getting-started#getting-started)
 
 * [Review the basics](/docs/openshift?topic=openshift-getting-started#getting-started-basics)
 
@@ -50,11 +50,11 @@ subcollection: openshift
 * [What's next?](/docs/openshift?topic=openshift-getting-started#getting-started-whats-next)
 
 
-## Understanding {{site.data.keyword.openshiftlong_notm}}
-{: #sitemap_understanding_}
+## Understanding the service
+{: #sitemap_understanding_the_service}
 
 
-[Understanding {{site.data.keyword.openshiftlong_notm}}](/docs/openshift?topic=openshift-overview#overview)
+[Understanding the service](/docs/openshift?topic=openshift-overview#overview)
 
 * [What is Kubernetes?](/docs/openshift?topic=openshift-overview#what-is-kube-overview)
 
@@ -1253,8 +1253,6 @@ subcollection: openshift
 * [Objectives](/docs/openshift?topic=openshift-openshift_tutorial#openshift_objectives)
 
 * [What you'll get](/docs/openshift?topic=openshift-openshift_tutorial#openshift_get)
-
-* [Overview of cluster resources](/docs/openshift?topic=openshift-openshift_tutorial#cluster-arch-tut-overview)
 
 * [Prerequisites](/docs/openshift?topic=openshift-openshift_tutorial#openshift_prereqs)
 
@@ -2834,16 +2832,6 @@ subcollection: openshift
 
 * [Copying deployments to another cluster](/docs/openshift?topic=openshift-update_app#copy_apps_cluster)
 
-[Packaging apps for reuse in multiple environments with Kustomize](/docs/openshift?topic=openshift-kustomize#kustomize)
-
-[Continuous integration and delivery for app development and deployment](/docs/openshift?topic=openshift-cicd#cicd)
-
-* [Before you begin](/docs/openshift?topic=openshift-cicd#cicd_before)
-
-* [Creating a toolchain with Delivery Pipeline](/docs/openshift?topic=openshift-cicd#cicd_toolchain)
-
-* [Other resources for automating your pipeline](/docs/openshift?topic=openshift-cicd#cicd-other)
-
 [Choosing an app exposure service](/docs/openshift?topic=openshift-cs_network_planning#cs_network_planning)
 
 * [Understanding options for exposing apps](/docs/openshift?topic=openshift-cs_network_planning#external)
@@ -4288,8 +4276,6 @@ subcollection: openshift
     * [Other third-party integrations](/docs/openshift?topic=openshift-ibm-3rd-party-integrations#kube-community-helm)
 
     * [Extending {{site.data.keyword.redhat_openshift_notm}} API and software with CRDs and Operators](/docs/openshift?topic=openshift-ibm-3rd-party-integrations#kube-crd-operators)
-
-[Supported IBM Cloud and third-party integrations](/docs/openshift?topic=openshift-supported_integrations#supported_integrations)
 
 [Installing the OpenShift Virtualization Operator on {{site.data.keyword.openshiftlong_notm}} clusters](/docs/openshift?topic=openshift-oc-virtualization#oc-virtualization)
 
