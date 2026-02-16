@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2026
-lastupdated: "2026-02-13"
+lastupdated: "2026-02-16"
 
 
 keywords: openshift
@@ -3416,6 +3416,47 @@ subcollection: openshift
 * [Disabling the add-on](/docs/openshift?topic=openshift-ai-addon-manage#ai-addon-disable)
 
 * [Getting support for the OpenShift AI add-on](/docs/openshift?topic=openshift-ai-addon-manage#ai-addon-support)
+
+
+## Advanced Cluster Management (select regions only)
+{: #sitemap_advanced_cluster_management_select_regions_only}
+
+
+[About the Advanced Cluster Management add-on (select regions only)](/docs/openshift?topic=openshift-acm-about#acm-about)
+
+* [How it works](/docs/openshift?topic=openshift-acm-about#how)
+
+* [ACM plan overviews](/docs/openshift?topic=openshift-acm-about#overviews)
+
+* [ACM for Virtualization](/docs/openshift?topic=openshift-acm-about#virt)
+
+* [ACM for Kubernetes](/docs/openshift?topic=openshift-acm-about#kube)
+
+* [Next steps](/docs/openshift?topic=openshift-acm-about#next)
+
+[Setting up the Advanced Cluster Management add-on (select regions only)](/docs/openshift?topic=openshift-acm#acm)
+
+* [Before you begin](/docs/openshift?topic=openshift-acm#before)
+
+* [Create a trusted profile for ACM](/docs/openshift?topic=openshift-acm#trust-prof)
+
+* [Preparing secrets for ACM](/docs/openshift?topic=openshift-acm#prep-secret)
+
+* [Installing ACM from the UI](/docs/openshift?topic=openshift-acm&interface=ui#install-ui)
+
+* [Installing ACM from the CLI](/docs/openshift?topic=openshift-acm&interface=cli#install-cli)
+
+* [ACM operators](/docs/openshift?topic=openshift-acm&interface=cli#operators)
+
+    * [Automatically installed operators](/docs/openshift?topic=openshift-acm&interface=cli#auto-op)
+
+    * [Optional operators](/docs/openshift?topic=openshift-acm&interface=cli#optional-op)
+
+* [Adding, updating, or removing a managed cluster after ACM is deployed](/docs/openshift?topic=openshift-acm&interface=cli#after)
+
+* [Upgrading the ACM version](/docs/openshift?topic=openshift-acm&interface=cli#upgrade)
+
+* [Deleting the ACM add-on](/docs/openshift?topic=openshift-acm&interface=cli#delete)
 
 
 ## Storage
@@ -7506,6 +7547,8 @@ subcollection: openshift
 * [Disabling or removing a webhook](/docs/openshift?topic=openshift-ts-webhook-debug#webhook-disable-rm)
 
 [Why do I see a `Cannot complete cluster master upgrade` message?](/docs/openshift?topic=openshift-ts-cluster-master-upgrade#ts-cluster-master-upgrade)
+
+[Why can't I create or renew my CA cert?](/docs/openshift?topic=openshift-ts-cert-failed#ts-cert-failed)
 
 [Why does OpenShift show the cluster version is not up to date?](/docs/openshift?topic=openshift-ts-cluster-version-downlevel#ts-cluster-version-downlevel)
 
