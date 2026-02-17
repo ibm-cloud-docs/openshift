@@ -3,7 +3,7 @@
 copyright:
   years: 2026, 2026
 
-lastupdated: "2026-02-13"
+lastupdated: "2026-02-17"
 
 
 keywords: change log, version history, 4.20_openshift
@@ -37,6 +37,24 @@ Master patch updates are applied automatically. Worker node patch updates can be
 
 ## Version 4.20
 {: #420_components}
+
+
+### Change log for Master fix pack 4.20.13_1538_openshift, released 18 February 2026
+{: #42013_1538_openshift_M}
+
+The following table shows the changes that are in the master fix pack 4.20.13_1538_openshift. Master patch updates are applied automatically. 
+
+
+| Component | Previous | Current | Description |
+| --- | --- | --- | --- |
+| Calico | v3.30.4 | v3.30.6 | See the [Calico release notes](https://docs.tigera.io/calico/3.30/release-notes/#calico-open-source-3306-bug-fix-release){: external}. |
+| {{site.data.keyword.cloud_notm}} Controller Manager | v1.33.7-4 | v1.33.7-8 | New version contains updates and security fixes. |
+| {{site.data.keyword.filestorage_full_notm}} for Classic plug-in and monitor | 452 | v453 | New version contains updates and security fixes. |
+| Key Management Service provider | v2.10.20 | 2.10.21 | New version contains updates and security fixes. |
+| Portieris admission controller | v0.13.33 | v0.13.35 | See the [Portieris admission controller release notes](https://github.com/{{site.data.keyword.IBM_notm}}/portieris/releases/tag/v0.13.35){: external}. |
+| {{site.data.keyword.openshiftlong_notm}}. | 4.20.12 | 4.20.13 | See the [{{site.data.keyword.openshiftlong_notm}} release notes](https://docs.redhat.com/en/documentation/openshift_container_platform/4.20/html/release_notes/ocp-4-20-release-notes#ocp-4-20-13_release-notes){: external}. |
+| Tigera Operator | v1.38.8 | v1.38.11 | See the [Tigera Operator release notes](https://github.com/tigera/operator/releases/tag/v1.38.11){: external}. |
+{: caption="Changes since version 4.20.12-1536-openshift" caption-side="bottom"}
 
 
 ### Worker node fix pack 4.20.13_1537_openshift, released 09 February 2026
