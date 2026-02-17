@@ -2602,6 +2602,8 @@ subcollection: openshift
 
     * [Opening required ports in public allowlists](/docs/openshift?topic=openshift-vpc-firewall#vpc-firewall-public)
 
+* [Updating IAM allowlists for {{site.data.keyword.containershort}} network zones](/docs/openshift?topic=openshift-vpc-firewall#iam_firewall)
+
 [Configuring VPC subnets](/docs/openshift?topic=openshift-vpc-subnets#vpc-subnets)
 
 * [Overview of VPC networking in {{site.data.keyword.openshiftlong_notm}}](/docs/openshift?topic=openshift-vpc-subnets#vpc_basics)
