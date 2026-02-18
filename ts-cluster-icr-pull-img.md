@@ -1,8 +1,8 @@
 ---
 
 copyright: 
-  years: 2014, 2024
-lastupdated: "2024-05-29"
+  years: 2014, 2026
+lastupdated: "2026-02-18"
 
 
 keywords: kubernetes, openshift
@@ -26,7 +26,7 @@ content-type: troubleshoot
 [Virtual Private Cloud]{: tag-vpc} [Classic infrastructure]{: tag-classic-inf}
 
 
-When you created a cluster, you received an error message similar to the following.
+When you created a cluster, you received an error message similar to the following example.
 {: tsSymptoms}
 
 
@@ -52,9 +52,3 @@ Steps:
     {: pre}
 
 2. [Use the `ibmcloud oc cluster pull-secret apply` command](/docs/openshift?topic=openshift-kubernetes-service-cli#cs_cluster_pull_secret_apply) to re-create an image pull secret with the appropriate registry credentials.
-
-
-
-
-
-

@@ -1,8 +1,8 @@
 ---
 
 copyright: 
-  years: 2025, 2025
-lastupdated: "2025-09-10"
+  years: 2025, 2026
+lastupdated: "2026-02-18"
 
 
 keywords: openshift, cos, mount error, libfuse
@@ -19,7 +19,7 @@ content-type: troubleshoot
 # Why do I see a volume mounting error when using the {{site.data.keyword.cos_full_notm}} plug-in?
 {: #ts-cos-storage-dep}
 
-When deploying an app that uses the COS plug-in, you see an error message similar the following.
+When deploying an app that uses the COS plug-in, you see an error message similar to the following example.
 {: tsSymptoms}
 
 ```sh
@@ -27,7 +27,7 @@ Error mounting volume: s3fs mount failed: s3fs: error while loading shared libra
 ```
 {: screen}
 
-The plug-in version you are using is deprecated. Update your COS plug-in to a supported version.
+The plug-in version that you are using is deprecated. Update your COS plug-in to a supported version.
 {: tsCauses}
 
 Follow the steps to update the COS plug-in.

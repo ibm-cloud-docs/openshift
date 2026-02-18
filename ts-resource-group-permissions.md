@@ -1,8 +1,8 @@
 ---
 
 copyright: 
-  years: 2024, 2024
-lastupdated: "2024-10-30"
+  years: 2024, 2026
+lastupdated: "2026-02-18"
 
 
 keywords: openshift, {{site.data.keyword.openshiftlong_notm}}, subnet, detach, specified subnet, infrastructure operation failed
@@ -20,7 +20,7 @@ content-type: troubleshoot
 {: #ts-resource-group-permissions}
 {: support}
 
-When you try to create a VPC cluster, you see an error message similar to the following.
+When you try to create a VPC cluster, you see an error message similar to the following example.
 {: tsSymptoms}
 
 ```sh

@@ -1,8 +1,8 @@
 ---
 
 copyright:
-  years: 2014, 2024
-lastupdated: "2024-01-03"
+  years: 2014, 2026
+lastupdated: "2026-02-18"
 
 
 keywords: openshift
@@ -24,7 +24,7 @@ content-type: troubleshoot
 [Virtual Private Cloud]{: tag-vpc} [Classic infrastructure]{: tag-classic-inf} 
 
 
-After you create or update a cluster, the master status returns a VPN server configuration error message similar to the following.
+After you create or update a cluster, the master status returns a VPN server configuration error message similar to the following example.
 {: tsSymptoms}
 
 ```sh
@@ -39,9 +39,3 @@ The infrastructure credentials that are associated with the resource group that 
 
 [Complete the troubleshooting guide](/docs/openshift?topic=openshift-cluster_infra_errors) to check and update the infrastructure credentials that are used for the resource group.
 {: tsResolve}
-
-
-
-
-
-

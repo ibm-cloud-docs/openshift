@@ -1,8 +1,8 @@
 ---
 
 copyright: 
-  years: 2022, 2024
-lastupdated: "2024-01-03"
+  years: 2022, 2026
+lastupdated: "2026-02-18"
 
 
 keywords: openshift, calico, node
@@ -33,7 +33,7 @@ Your worker nodes might enter a `NetworkUnavailable` or `Node network unavailabl
 
 When Calico is updated, the `node.kubernetes.io/network-unavailable:NoSchedule` taint is added to your worker node and the `Node network unavailable` condition becomes `True`. Both of these conditions are cleared when Calico restarts, which typically takes only a few seconds.
 
-While this happens, you might see an error message similar to the following.
+While this happens, you might see an error message similar to the following example.
 
 ```sh
 [Kubernetes] Node network unavailable is Triggered on kubernetes.node.name = 10.184.XXX.XXX
@@ -76,4 +76,3 @@ You can use one of the following methods to work around the issue and get the `c
 4. Cordon the new node but don't drain it. Delete the VPN pod and wait for it to start on another worker. Uncordon the node.
 
 After performing any of the previous workarounds, the `calico-node` pod can start successfully.
-

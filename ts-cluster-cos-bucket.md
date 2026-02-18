@@ -1,8 +1,8 @@
 ---
 
 copyright:
-  years: 2014, 2024
-lastupdated: "2024-05-14"
+  years: 2014, 2026
+lastupdated: "2026-02-18"
 
 
 keywords: openshift
@@ -24,7 +24,7 @@ content-type: troubleshoot
 **Infrastructure provider**: VPC 
 
 
-When you create a cluster, you see an error message similar to the following.
+When you create a cluster, you see an error message similar to the following example.
 {: tsSymptoms}
 
 ```sh
@@ -85,9 +85,3 @@ Manually set up your cluster to back up the internal registry to an {{site.data.
     4. From the [{{site.data.keyword.cloud_notm}} console resource list](https://cloud.ibm.com/resources), select your **Cloud Object Storage** instance.
     5. From the menu, click **Buckets**, then click the bucket that you used for your {{site.data.keyword.openshiftlong_notm}} cluster.
     6. Review the recent **Objects** to see your backed up images from the internal registry of your {{site.data.keyword.openshiftlong_notm}} cluster.
-
-
-
-
-
-

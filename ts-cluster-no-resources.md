@@ -1,8 +1,8 @@
 ---
 
 copyright:
-  years: 2014, 2024
-lastupdated: "2024-01-03"
+  years: 2014, 2026
+lastupdated: "2026-02-18"
 
 
 keywords: openshift
@@ -25,7 +25,7 @@ content-type: troubleshoot
 [Virtual Private Cloud]{: tag-vpc} [Classic infrastructure]{: tag-classic-inf} 
 
 
-When you are running an `oc` command such as `oc get nodes` or `oc get secrets`, you see an error message similar to the following.
+When you are running an `oc` command such as `oc get nodes` or `oc get secrets`, you see an error message similar to the following example.
 {: tsSymptoms}
 
 ```sh
@@ -40,9 +40,3 @@ Your {{site.data.keyword.redhat_openshift_notm}} token is expired. {{site.data.k
 
 Re-authenticate with the {{site.data.keyword.redhat_openshift_notm}} token by [copying the `oc login` command from the web console](/docs/openshift?topic=openshift-access_cluster#access_public_se) or [creating an API key](/docs/openshift?topic=openshift-access_cluster#access_api_key).
 {: tsResolve}
-
-
-
-
-
-
