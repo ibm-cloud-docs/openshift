@@ -3,7 +3,7 @@
 copyright:
   years: 2024, 2026
 
-lastupdated: "2026-02-11"
+lastupdated: "2026-02-17"
 
 
 keywords: change log, version history, 4.18_openshift
@@ -37,6 +37,24 @@ Master patch updates are applied automatically. Worker node patch updates can be
 
 ## Version 4.18
 {: #418_components}
+
+
+### Change log for Master fix pack 4.18.32_1579_openshift, released 18 February 2026
+{: #41832_1579_openshift_M}
+
+The following table shows the changes that are in the master fix pack 4.18.32_1579_openshift. Master patch updates are applied automatically. 
+
+
+| Component | Previous | Current | Description |
+| --- | --- | --- | --- |
+| Cluster health image | v1.6.13 | v1.6.14 | New version contains updates and security fixes. |
+| {{site.data.keyword.cloud_notm}} Block Storage driver and plug-in | v2.5.22 | v2.5.24 | New version contains updates and security fixes. |
+| {{site.data.keyword.cloud_notm}} Controller Manager | v1.31.14-7 | v1.31.14-11 | New version contains updates and security fixes. |
+| {{site.data.keyword.filestorage_full_notm}} for Classic plug-in and monitor | 452 | v453 | New version contains updates and security fixes. |
+| Key Management Service provider | v2.10.20 | 2.10.21 | New version contains updates and security fixes. |
+| Portieris admission controller | v0.13.33 | v0.13.35 | See the [Portieris admission controller release notes](https://github.com/{{site.data.keyword.IBM_notm}}/portieris/releases/tag/v0.13.35){: external}. |
+| {{site.data.keyword.openshiftlong_notm}}. | 4.18.30 | 4.18.32 | See the [{{site.data.keyword.openshiftlong_notm}} release notes](https://docs.redhat.com/en/documentation/openshift_container_platform/4.18/html/release_notes/ocp-4-18-release-notes#ocp-4-18-32_release-notes){: external}. |
+{: caption="Changes since version 4.18.30-1576-openshift" caption-side="bottom"}
 
 
 ### Worker node fix pack 4.18.32_1578_openshift, released 09 February 2026
