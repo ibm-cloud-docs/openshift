@@ -1,8 +1,8 @@
 ---
 
 copyright: 
-  years: 2025, 2025
-lastupdated: "2025-10-20"
+  years: 2025, 2026
+lastupdated: "2026-02-18"
 
 
 keywords: openshift, kubernetes, help, network, private path nlb, ppnlb
@@ -22,7 +22,7 @@ content-type: troubleshoot
 
 
 
-When describing your LoadBalancer by using the `oc describe svc SERVICENAME -n NAMESPACE` command, you see an error message similar to the following.
+When describing your LoadBalancer by using the `oc describe svc SERVICENAME -n NAMESPACE` command, you see an error message similar to the following example.
 {: tsSymptoms}
 
 ```sh

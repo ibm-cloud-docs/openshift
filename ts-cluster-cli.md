@@ -1,8 +1,8 @@
 ---
 
 copyright: 
-  years: 2014, 2025
-lastupdated: "2025-03-18"
+  years: 2014, 2026
+lastupdated: "2026-02-18"
 
 
 keywords: kubernetes, openshift
@@ -53,7 +53,7 @@ This task requires the [**Administrator** {{site.data.keyword.cloud_notm}} IAM p
 {: #kubectl_fails}
 
 
-When you run `kubectl` or `oc` commands against your cluster, your commands fail with an error message similar to the following.
+When you run `kubectl` or `oc` commands against your cluster, your commands fail with an error message similar to the following example.
 {: tsSymptoms}
 
 ```sh
@@ -94,7 +94,7 @@ If you have multiple clusters at different versions or different container platf
 {: #roks_timeout}
 
 
-You try to connect to a pod, such as logging in with `oc exec` or getting logs with `oc logs`. The pod is healthy, but you see an error message similar to the following.
+You try to connect to a pod, such as logging in with `oc exec` or getting logs with `oc logs`. The pod is healthy, but you see an error message similar to the following example.
 {: tsSymptoms}
 
 ```sh
@@ -121,7 +121,7 @@ Before you begin: [Access your {{site.data.keyword.redhat_openshift_notm}} clust
 {: #500_error_oc_login}
 
 
-When you try to log in to a {{site.data.keyword.redhat_openshift_notm}} cluster via `oc login` for the first time and you see an error message similar to the following.
+When you try to log in to a {{site.data.keyword.redhat_openshift_notm}} cluster via `oc login` for the first time and you see an error message similar to the following example.
 {: tsSymptoms}
 
 ```txt

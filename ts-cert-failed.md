@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2026, 2026
-lastupdated: "2026-02-16"
+lastupdated: "2026-02-18"
 
 
 keywords: kubernetes, openshift, ca cert, certificate authority, rotate
@@ -24,7 +24,7 @@ content-type: troubleshoot
 
 [Virtual Private Cloud]{: tag-vpc} [Classic infrastructure]{: tag-classic-inf}
 
-When you run the `cluster ca create` command, you see an error message similar to the following.
+When you run the `cluster ca create` command, you see an error message similar to the following example.
 {: tsSymptoms}
 
 ```sh
@@ -66,6 +66,3 @@ To complete the rotation process, you must reload or replace your worker nodes.
     {: pre}
 
 1. If the issue persists, contact support. Open a [support case](/docs/account?topic=account-using-avatar). In the case details, be sure to include any relevant log files, error messages, or command outputs.
-
-
-

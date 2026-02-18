@@ -1,8 +1,8 @@
 ---
 
 copyright: 
-  years: 2024, 2024
-lastupdated: "2024-10-30"
+  years: 2024, 2026
+lastupdated: "2026-02-18"
 
 
 keywords: kubernetes, openshift, MountingTargetFailed, encryption in-transit, eit
@@ -20,7 +20,7 @@ subcollection: openshift
 
 [Virtual Private Cloud]{: tag-vpc}
 
-PVC creation fails with an error message similar to the following.
+PVC creation fails with an error message similar to the following example.
 {: tsSymptoms}
 
 ```sh

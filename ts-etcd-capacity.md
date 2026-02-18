@@ -1,8 +1,8 @@
 ---
 
 copyright:
-  years: 2024, 2025
-lastupdated: "2025-06-13"
+  years: 2024, 2026
+lastupdated: "2026-02-18"
 
 keywords: openshift, {{site.data.keyword.openshiftlong_notm}}, etcd, capacity, database, limits
 
@@ -23,7 +23,7 @@ content-type: troubleshoot
 
 [Virtual Private Cloud]{: tag-vpc} [Classic infrastructure]{: tag-classic-inf} [{{site.data.keyword.satelliteshort}}]{: tag-satellite}
 
-You see an error message similar to the following.
+You see an error message similar to the following example.
 {: tsSymptoms}
 
 ```sh

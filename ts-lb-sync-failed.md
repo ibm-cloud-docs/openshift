@@ -1,8 +1,8 @@
 ---
 
 copyright: 
-  years: 2014, 2024
-lastupdated: "2024-01-03"
+  years: 2014, 2026
+lastupdated: "2026-02-18"
 
 
 keywords: openshift
@@ -21,7 +21,7 @@ content-type: troubleshoot
 {: #ts-loadbalancer-sync-failed}
 {: support}
 
-When setting up load balancing on my VPC cluster, I see an error message similar to the following.
+When setting up load balancing on my VPC cluster, I see an error message similar to the following example.
 {: tsSymptoms}
 
 ```sh
@@ -37,5 +37,3 @@ To resolve this issue, add the control plane IPs for the region where your clust
 {: tsResolve}
 
 For a list of control plane IPs by region, see the `IBM/kube-samples` [repo](https://github.com/IBM-Cloud/kube-samples/tree/master/control-plane-ips){: external}
-
-

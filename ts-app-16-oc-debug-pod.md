@@ -1,8 +1,8 @@
 ---
 
 copyright:
-  years: 2014, 2024
-lastupdated: "2024-01-03"
+  years: 2014, 2026
+lastupdated: "2026-02-18"
 
 
 keywords: openshift, debug
@@ -24,7 +24,7 @@ content-type: troubleshoot
 
 
 
-When you run the `oc debug` command on a private cluster, you see an error message similar to the following.
+When you run the `oc debug` command on a private cluster, you see an error message similar to the following example.
 {: tsSymptoms}
 
 ```sh
@@ -57,10 +57,3 @@ To resolve this issue, pull an `ocp-release` image from `quay.io` and push it to
     oc debug node/<node-name> --image=icr.io/<namespace>/<image>:<tag>
     ```
     {: pre}
-
-
-
-
-
-
-
