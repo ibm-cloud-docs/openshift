@@ -1,8 +1,8 @@
 ---
 
 copyright: 
-  years: 2024, 2025
-lastupdated: "2025-12-19"
+  years: 2024, 2026
+lastupdated: "2026-02-19"
 
 
 keywords: openshift, {{site.data.keyword.openshiftlong_notm}}, ai, add-on
@@ -54,15 +54,27 @@ Review the supported OpenShift AI add-on versions and the corresponding [OpenShi
 - Beginning with version 2.19.0 of OpenShift AI Operator, KServe is available in either Advanced or Standard mode. By default, when you install KServe using the OpenShift AI using the IBM Cloud add-on, it is installed in Standard mode. If you want to use Advanced mode, you must complete the [optional steps](#ai-install-kserve) after installing the add-on.
 
 
-## Prerequisites
+## Before you begin
 {: #ai-before}
 {: cli}
+
+Complete these steps before you install the add-on. 
 
 1. [Log in to your account. If applicable, target the appropriate resource group. Set the context for your cluster.](/docs/containers?topic=containers-access_cluster)
 
 1. **Optional**: If you don't already have one, [create a VPC Public Gateway](/docs/vpc?topic=vpc-create-public-gateways).
 
-1. If you want to use the [OpenShift Pipelines, Node Feature Discovery, or NVIDIA GPU operators](/docs/openshift?topic=openshift-ai-addon-install&interface=ui#ai-ops-rec) with the OpenShift AI add-on, you must disable outbound traffic protection. If you do not want to use those operators, skip this step. 
+1. If you want to use the [OpenShift Pipelines, Node Feature Discovery, or NVIDIA GPU operators](/docs/openshift?topic=openshift-ai-addon-install&interface=ui#ai-ops-rec) with the OpenShift AI add-on, you must enable OperatorHub on your cluster and disable outbound traffic protection. If you do not want to use those operators, skip this step. 
+
+    1. Enable OperatorHub on your cluster.
+
+    ```sh
+    oc patch operatorhub cluster --type json -p '[{"op": "add", "path": "/spec/disableAllDefaultSources", "value": false}]' 
+    ```
+    {: pre}
+
+    
+    2. Disable outbound traffic protection. 
 
     Disabling outbound traffic protection permits all external network connections. See [Managing outbound traffic protection in VPC clusters](/docs/openshift?topic=openshift-sbd-allow-outbound) for more information.
     {: note}
@@ -72,36 +84,34 @@ Review the supported OpenShift AI add-on versions and the corresponding [OpenShi
     ```
     {: pre}
 
-1. Enable OperatorHub on your cluster.
-
-    ```sh
-    oc patch operatorhub cluster --type json -p '[{"op": "add", "path": "/spec/disableAllDefaultSources", "value": false}]' 
-    ```
-    {: pre}
-
 
 ## Before you begin
 {: #ai-before-ui}
 {: ui}
 
+Complete these steps before you install the add-on. 
+
 1. [Log in to your account. If applicable, target the appropriate resource group. Set the context for your cluster.](/docs/containers?topic=containers-access_cluster)
 
 1. **Optional**: If you don't already have one, [create a VPC Public Gateway](/docs/vpc?topic=vpc-create-public-gateways).
 
-1. If you want to use the [OpenShift Pipelines, Node Feature Discovery, or NVIDIA GPU operators](/docs/openshift?topic=openshift-ai-addon-install&interface=ui#ai-ops-rec) with the OpenShift AI add-on, you must disable outbound traffic protection. If you do not want to use those operators, skip this step. 
+1. If you want to use the [OpenShift Pipelines, Node Feature Discovery, or NVIDIA GPU operators](/docs/openshift?topic=openshift-ai-addon-install&interface=ui#ai-ops-rec) with the OpenShift AI add-on, you must enable OperatorHub on your cluster and disable outbound traffic protection. If you do not want to use those operators, skip this step. 
 
-    Disabling outbound traffic protection permits all external network connections. See [Managing outbound traffic protection in VPC clusters](/docs/openshift?topic=openshift-sbd-allow-outbound) for more information.
-    {: note}
-
-    1. In the console, navigate to your [Clusters page](https://cloud.ibm.com/containers/cluster-management/clusters){: external} and click the relevant cluster.
-    2. On the Overview page for the cluster, find the **Networking** section and select the **Outbound traffic protection disabled** option.
-
-1. Enable OperatorHub on your cluster.
+    1. Enable OperatorHub on your cluster.
 
     ```sh
     oc patch operatorhub cluster --type json -p '[{"op": "add", "path": "/spec/disableAllDefaultSources", "value": false}]' 
     ```
     {: pre}
+
+    2. Disable outbound protection. 
+
+        Disabling outbound traffic protection permits all external network connections. See [Managing outbound traffic protection in VPC clusters](/docs/openshift?topic=openshift-sbd-allow-outbound) for more information.
+        {: note}
+
+        1. In the console, navigate to your [Clusters page](https://cloud.ibm.com/containers/cluster-management/clusters){: external} and click the relevant cluster.
+        2. On the Overview page for the cluster, find the **Networking** section and select the **Outbound traffic protection disabled** option.
+
 
 
 ## Step 1: Choose customization options 
