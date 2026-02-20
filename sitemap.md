@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2026
-lastupdated: "2026-02-19"
+lastupdated: "2026-02-20"
 
 
 keywords: openshift
@@ -3373,7 +3373,7 @@ subcollection: openshift
 
 * [Before you begin](/docs/openshift?topic=openshift-ai-addon-install&interface=cli#ai-before)
 
-* [Before you begin](/docs/openshift?topic=openshift-ai-addon-install&interface=ui#ai-before-ui)
+* [Prerequisites](/docs/openshift?topic=openshift-ai-addon-install&interface=ui#ai-before-ui)
 
 * [Step 1: Choose customization options](/docs/openshift?topic=openshift-ai-addon-install&interface=ui#ai-custom-step)
 
