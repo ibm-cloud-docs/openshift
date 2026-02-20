@@ -85,7 +85,7 @@ Complete these steps before you install the add-on.
     {: pre}
 
 
-## Before you begin
+## Prerequisites
 {: #ai-before-ui}
 {: ui}
 
