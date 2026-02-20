@@ -2,7 +2,7 @@
 
 copyright:
   years: 2025, 2026
-lastupdated: "2026-02-16"
+lastupdated: "2026-02-20"
 
 
 keywords: openshift, openshift data foundation, openshift container storage, disaster recovery
@@ -121,7 +121,7 @@ Follow these steps to install ACM on the hub cluster and then set up the disaste
         
     1. Wait for the Submariner add-on status to show healthy (green). This can take up to 20 minutes. For more information about Submariner setup, see [Deploying Submariner manually](https://docs.redhat.com/en/documentation/red_hat_advanced_cluster_management_for_kubernetes/2.11/html/networking/networking#deploying-submariner-manually){: external}.
 
-1. Install the OpenShift Data Foundation add-on version 4.17 or later on the primary and secondary managed clusters. Make sure you select the **Enable DR** option and enable NooBaa installation during the ODF installation. For more information, see [Installing the OpenShift Data Foundation add-on](/docs/openshift?topic=openshift-deploy-odf-vpc#install-odf-console-vpc).
+1. Install the OpenShift Data Foundation add-on version 4.17 or later on the primary and secondary managed clusters. Make sure that you select the **Enable DR** option and enable NooBaa installation during the ODF installation. For more information, see [Installing the OpenShift Data Foundation add-on](/docs/openshift?topic=openshift-deploy-odf-vpc#install-odf-console-vpc).
 
 1. In the `storagecluster` resource’s `multiClusterService` section, update the `ACM Managed Cluster Name` to allow ODF to use GlobalNet. For more information, see [Creating an OpenShift Data Foundation cluster on managed clusters](https://docs.redhat.com/documentation/red_hat_openshift_data_foundation/4.17/html/configuring_openshift_data_foundation_disaster_recovery_for_openshift_workloads/rdr-solution#creating-odf-cluster-on-managed-clusters_rdr){: external}.
     ```sh

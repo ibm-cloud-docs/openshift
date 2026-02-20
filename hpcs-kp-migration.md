@@ -2,7 +2,7 @@
 
 copyright:
   years: 2025, 2026
-lastupdated: "2026-01-08"
+lastupdated: "2026-02-20"
 
 
 keywords: key protect, hpcs, kp, migrate, odf, encryption
@@ -148,7 +148,7 @@ Follow these steps if you want to migrate data from a source cluster that uses O
 
 7. On the source cluster, create a ClusterResource to backup the application namespace data before migration. If you are migrating an individual cluster rather than migrating between separate clusters, you should also create backup YAML configurations for the StorageClass and PVC. 
 
-    If you are migrating an individual cluster that uses a custom storage class, make sure you have read the information in [Considerations for custom storage classes](#custom-storageclass) before you proceed with creating and restoring backups.
+    If you are migrating an individual cluster that uses a custom storage class, make sure that you have read the information in [Considerations for custom storage classes](#custom-storageclass) before you proceed with creating and restoring backups.
     {: important}
 
     ```yaml

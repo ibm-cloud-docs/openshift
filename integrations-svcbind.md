@@ -1,8 +1,8 @@
 ---
 
 copyright: 
-  years: 2014, 2025
-lastupdated: "2025-08-21"
+  years: 2014, 2026
+lastupdated: "2026-02-20"
 
 
 keywords: openshift, kubernetes, helm, integrations, helm chart
@@ -89,7 +89,7 @@ What if my existing credentials are one-time view credentials?
 :   If you want to use credentials that are one-time view, you must bind the service [manually to your cluster](#add_services_manual). This option allows you to use your existing one-time view credentials.
 
 What if I want to use service credentials that use the private cloud service endpoint?
-:   By default, the `service bind` command creates service credentials with the public cloud service endpoint. To use the private cloud service endpoint, you must manually create service credentials for your service that use the private cloud service endpoint, and then use the `--key` option to specify the name of the existing service credentials. If you plan to bring your own credentials, make sure your existing credentials are **not** one-time view credentials. For more information, see [One-time credentials](/docs/account?topic=account-service_credentials&interface=ui#onetime-credentials).
+:   By default, the `service bind` command creates service credentials with the public cloud service endpoint. To use the private cloud service endpoint, you must manually create service credentials for your service that use the private cloud service endpoint, and then use the `--key` option to specify the name of the existing service credentials. If you plan to bring your own credentials, make sure that your existing credentials are **not** one-time view credentials. For more information, see [One-time credentials](/docs/account?topic=account-service_credentials&interface=ui#onetime-credentials).
 :   Your service might not yet support private cloud service endpoints.
 
 Review the following sections for steps to bind service credentials to your cluster.
@@ -135,7 +135,7 @@ To add an {{site.data.keyword.cloud_notm}} service to your cluster:
 
 4. Bind the service to your cluster to create service credentials for your service that use the public cloud service endpoint and store the credentials in a Kubernetes secret. If you have existing service credentials, use the `--key` option to specify the name of the credentials. For IAM-enabled services, the credentials are automatically created with the **Writer** service access role, but you can use the `--role` option to specify a different service access role. If you use the `--key` option, don't include the `--role` option.
 
-    If you plan to bring your own credentials, make sure your existing credentials are **not** one-time view credentials or use the recommended way of manually saving the service credentials to your cluster. For more information, see [One-time credentials](/docs/account?topic=account-service_credentials&interface=ui#onetime-credentials).
+    If you plan to bring your own credentials, make sure that your existing credentials are **not** one-time view credentials or use the recommended way of manually saving the service credentials to your cluster. For more information, see [One-time credentials](/docs/account?topic=account-service_credentials&interface=ui#onetime-credentials).
     {: note}
 
     ```sh

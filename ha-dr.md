@@ -1,8 +1,8 @@
 ---
 
 copyright: 
-  years: 2025, 2025
-lastupdated: "2025-07-07"
+  years: 2025, 2026
+lastupdated: "2026-02-20"
 
 
 keywords: high availability, disaster recover, HA, DR, responsibilities
@@ -153,7 +153,7 @@ Change management includes tasks such as upgrades, configuration changes, and de
 
 - Use the API, CLI, or console tools to apply the provided major and minor [Kubernetes master updates](/docs/containers?topic=containers-cs_versions#cs_versions_available) and major, minor, and [patch worker node updates](/docs/containers?topic=containers-cs_versions#update_types). Make sure to review the information and requirements for each version update to prevent issues or downtime. 
 
-- Make sure your cluster worker nodes run the latest [Ubuntu](/docs/containers?topic=containers-ubuntu-migrate) version. 
+- Make sure that your cluster worker nodes run the latest [Ubuntu](/docs/containers?topic=containers-ubuntu-migrate) version. 
 
 - Make sure to understand the [release schedules](/docs/openshift?topic=openshift-supported-cluster-addon-versions) for any add-ons you run in your cluster. 
 

@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2026
-lastupdated: "2026-01-30"
+lastupdated: "2026-02-20"
 
 
 keywords: kubernetes, openshift
@@ -26,7 +26,7 @@ Install the {{site.data.keyword.cos_full_notm}} plug-in to set up pre-defined st
 
 
 
-If you want to use the plug-in in a cluster with both RHEL and RHCOS worker nodes, make sure you install or update the plug-in to at least version `2.2.40`.
+If you want to use the plug-in in a cluster with both RHEL and RHCOS worker nodes, make sure that you install or update the plug-in to at least version `2.2.40`.
 {: note}
 
 

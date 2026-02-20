@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2022, 2026
-lastupdated: "2026-02-03"
+lastupdated: "2026-02-20"
 
 
 keywords: openshift, block storage for vpc, snapshot, restore snapshot, create snapshot
@@ -25,7 +25,7 @@ subcollection: openshift
 {: shortdesc}
 
 
-The {{site.data.keyword.block_storage_is_short}} cluster add-on automatically creates both volumes and snapshots in the same VPC resource group where the cluster is deployed. Due to a current limitation, specifying the resource group in your storage class does not override this behavior. Make sure you allow for this behavior if you plan to use snapshots as you might hit resource group quotas.
+The {{site.data.keyword.block_storage_is_short}} cluster add-on automatically creates both volumes and snapshots in the same VPC resource group where the cluster is deployed. Due to a current limitation, specifying the resource group in your storage class does not override this behavior. Make sure that you allow for this behavior if you plan to use snapshots as you might hit resource group quotas.
 {: important}
 
 
@@ -173,7 +173,7 @@ After you create a deployment and a PVC, you can create the volume snapshot reso
 You can creating snapshots only when a volume is attached to a pod.
 {: note}
 
-1. Make sure you have **Share Snapshot Operator** permissions in IAM.
+1. Make sure that you have **Share Snapshot Operator** permissions in IAM.
 
 1. Create a volume snapshot resource in your cluster by using the `ibmc-vpcblock-snapshot` snapshot class that is deployed when you enabled the add-on. Save the following `VolumeSnapshot` configuration to a file called `snapvol.yaml`. 
 

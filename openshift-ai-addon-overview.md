@@ -1,7 +1,7 @@
 ---
 copyright: 
   years: 2024, 2026
-lastupdated: "2026-02-09"
+lastupdated: "2026-02-20"
 
 
 keywords: openshift, {{site.data.keyword.openshiftlong_notm}}, ai, add-on
@@ -31,7 +31,7 @@ Already have the add-on installed? Try out a [tutorial for using OpenShift AI fo
 
 Installing the add-on deploys the OpenShift AI operator, which is managed by IBM. You can choose to also install additional operators that are recommended for the use of certain OpenShift AI features, but are not managed by IBM. 
 
-To avoid disruptions to your workload, make sure you understand [your responsibilities for managing and maintaining](#ai-addon-responsibility) the operators used for the OpenShift AI add-on. The OpenShift AI operator is managed by IBM, however any additional operators that you chose to include in the installation are not managed by IBM. You are responsible for managing and maintaining these additional operators.
+To avoid disruptions to your workload, make sure that you understand [your responsibilities for managing and maintaining](#ai-addon-responsibility) the operators used for the OpenShift AI add-on. The OpenShift AI operator is managed by IBM, however any additional operators that you chose to include in the installation are not managed by IBM. You are responsible for managing and maintaining these additional operators.
 {: important}
 
 These following operators are recommended for the OpenShift AI add-on. If they are not already installed on your cluster, you can choose to include them in the add-on installation. Or, you can install them at anytime by using OperatorHub or by following the operator-specific installation steps. 
@@ -92,7 +92,7 @@ The OpenShift AI operator is managed by IBM. Therefore IBM notifies you when upd
 Depending on the approval policy you specify when you first install the add-on, you might need to review and approve the update plan before the update can be applied. 
 If you specify the `Manual` approval policy, then you must manually approve most update plans. If you specify the `Automatic` approval policy, then you do not need to review any updates. In the case of minor or patch updates, only certain parts of the update might need to be reviewed. Additionally, the type of update determines how the update is applied. Major updates require you to run a command, but minor and patch updates are applied automatically (after you manually approve the plan, if required). For more detailed explanation, see [Updating the IBM-managed OpenShift AI operator](/docs/openshift?topic=openshift-ai-addon-manage#ai-addon-update). 
 
-Version rollbacks are not supported. You cannot undo an update to the OpenShift AI operator. Take this into consideration and make sure you choose your update strategy carefully, especially if you choose the `Automatic` approval policy. 
+Version rollbacks are not supported. You cannot undo an update to the OpenShift AI operator. Take this into consideration and make sure that you choose your update strategy carefully, especially if you choose the `Automatic` approval policy. 
 {: important}
 
 ### Updating operators not managed by IBM

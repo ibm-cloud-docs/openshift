@@ -2,7 +2,7 @@
 
 copyright:
   years: 2025, 2026
-lastupdated: "2026-02-13"
+lastupdated: "2026-02-20"
 
 
 keywords: openshift, acm, advanced cluster management, manage cluster, management, addon, add-on, acm addon
@@ -34,13 +34,13 @@ The cluster that you install ACM on is the **hub cluster**. During or after the 
 Review the following prerequisite steps and information before you install the ACM add-on.
 
 1. Review the [ACM plan types](/docs/openshift?topic=openshift-acm-about&interface=ui#overviews) and decide which plan you want to use. Note that for ACM for Virtualization, it is recommended that your managed clusters run bare metal worker nodes. 
-1. Make sure your clusters meet the following requirements.
-    - Your **hub cluster** must be a VPC cluster with at least **3** worker nodes that run **RHCOS** and a minimum of **6 VCPU and 64GB RAM**. For high availability, make sure your cluster has at least one worker node per zone across 3 zones.
+1. Make sure that your clusters meet the following requirements.
+    - Your **hub cluster** must be a VPC cluster with at least **3** worker nodes that run **RHCOS** and a minimum of **6 VCPU and 64GB RAM**. For high availability, make sure that your cluster has at least one worker node per zone across 3 zones.
     - Each **managed cluster** must have at least **3** worker nodes that run **RHCOS** and a minimum of **6 VCPU and 64GB RAM**. 
     - In addition, if you want to use the **ACM for Virtualization** plan, it is recommended that you use **bare metal worker nodes**. For the **ACM for Kubernetes** plan, managed clusters can run either **bare metal nodes** or **VSIs**.
 1. Review the [operators that are automatically installed](#auto-op}) by the ACM add-on and the [optional operators](#optional-op) that you can install as enhancements.
 1. You must have the [Administrator platform access role and the Manager service access role](/docs/openshift?topic=openshift-iam-platform-access-roles) for the cluster in IBM Cloud Kubernetes Service. 
-1. You must have a VPC cluster with at least 3 worker nodes. Each worker node must have a minimum of 4 CPUs and 16GB RAM. For high availability, make sure your cluster has at least one worker node per zone across 3 zones. 
+1. You must have a VPC cluster with at least 3 worker nodes. Each worker node must have a minimum of 4 CPUs and 16GB RAM. For high availability, make sure that your cluster has at least one worker node per zone across 3 zones. 
 1. [Create a trusted profile on your cluster to use for ACM](#trusted-prof).
 1. For each cluster you want to manage with ACM, you must create a secret on the hub cluster with the managed cluster's access token and server URL. This step can be completed before or after installation.  See [Preparing secrets for ACM](#prep-secret). 
 1. [Install or update the CLI](/docs/openshift?topic=openshift-cli-install).
@@ -374,7 +374,3 @@ Follow the steps to delete the ACM add-on.
     ibmcloud oc cluster addon disable acm -f --cluster <cluster_id>
     ```
     {: pre}
-
-
-
-

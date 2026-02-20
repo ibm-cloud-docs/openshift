@@ -1,8 +1,8 @@
 ---
 
 copyright: 
-  years: 2024, 2025
-lastupdated: "2025-03-05"
+  years: 2024, 2026
+lastupdated: "2026-02-20"
 
 keywords: license, entitlement, OCP, Cloud Pak, {{site.data.keyword.openshiftlong_notm}}
 
@@ -33,7 +33,7 @@ The Cloud Pak license might not be assigned to your IBM Cloud account.
 Follow the steps to check your existing licenses and to assign the Cloud Pak license to your IBM Cloud account. 
 {: tsResolve}
 
-Before you begin, make sure you have at least the Editor platform access role for License and Entitlement. 
+Before you begin, make sure that you have at least the Editor platform access role for License and Entitlement. 
 
 1. Log in to the [IBM Cloud console](https://cloud.ibm.com/){: external} and navigate to `Manage` > `Account`.
 2. Click `Licenses and entitlements`.

@@ -1,8 +1,8 @@
 ---
 
 copyright:
-  years: 2014, 2025
-lastupdated: "2025-05-29"
+  years: 2014, 2026
+lastupdated: "2026-02-20"
 
 
 keywords: openshift, openshift data foundation, openshift container storage
@@ -156,7 +156,7 @@ Simplify your deployment by using auto discovery feature
 :   In [Classic clusters]{: tag-classic-inf} or environments with local storage, leverage the auto discovery feature to automatically identify and configure the available storage disks in your cluster for ODF. This option eliminates the need for manual disk selection. Unless there are specific disk requirements for ODF provisioning, utilizing the auto discovery feature streamlines the deployment process and reduces the potential for configuration errors.
 
 Use metro storage classes for ODF installations on remote storage
-:   When performing an ODF installation that uses remote storage, make sure you use a storage class that has a `VolumeBindingMode` of `WaitForFirstConsumer` which delays the creation of the Block Storage until the first pod that uses this storage is ready to be scheduled.
+:   When performing an ODF installation that uses remote storage, make sure that you use a storage class that has a `VolumeBindingMode` of `WaitForFirstConsumer` which delays the creation of the Block Storage until the first pod that uses this storage is ready to be scheduled.
 
 Size your deployment
 :   For a detailed analysis of storage requirements, the [Sizing Tool](https://sizer.ocs.ninja/index.html) to determine your storage capacity needed. You can also use the official [Red Hat sizing tool](https://access.redhat.com/labsinfo/ocsst){: external}
@@ -214,7 +214,7 @@ Deleting pods and persistent volumes (PVs)
 :   When deleting resources that use ODF storage classes, it is important to follow the recommended procedure. Always delete the associated pods and PVs created using OF storage classes before proceeding with the deletion of other resources.
 
 Follow the correct cleanup order
-:   When decommissioning or removing ODF from your cluster, make sure you follow the documentation when cleaning up resources. Start by deleting the `ocscluster` resource, which is responsible for managing the ODF. Once the `ocscluster` resource is removed, proceed to remove the ODF add-on from the IBM console. Following this sequence ensures a smooth and proper removal of ODF from your cluster, preventing any potential issues or conflicts.
+:   When decommissioning or removing ODF from your cluster, make sure that you follow the documentation when cleaning up resources. Start by deleting the `ocscluster` resource, which is responsible for managing the ODF. Once the `ocscluster` resource is removed, proceed to remove the ODF add-on from the IBM console. Following this sequence ensures a smooth and proper removal of ODF from your cluster, preventing any potential issues or conflicts.
 
 ### Troubleshooting
 {: #odf-ts-bp}

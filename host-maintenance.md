@@ -1,8 +1,8 @@
 ---
 
 copyright:
-  years: 2022, 2025
-lastupdated: "2025-06-13"
+  years: 2022, 2026
+lastupdated: "2026-02-20"
 
 
 keywords: maintenance, host maintenance, notification, workers, offline
@@ -85,7 +85,7 @@ Follow the steps to reboot the worker before the maintenance period begins.
 
 
 
-3. Reboot the worker. Make sure you include the `--hard` option.
+3. Reboot the worker. Make sure that you include the `--hard` option.
     ```sh
     ibmcloud oc worker reboot --cluster <cluster_name_or_id> --worker <worker_id> --hard
     ```

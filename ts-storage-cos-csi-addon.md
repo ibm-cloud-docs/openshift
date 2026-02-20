@@ -1,8 +1,8 @@
 ---
 
 copyright: 
-  years: 2025, 2025
-lastupdated: "2025-01-28"
+  years: 2025, 2026
+lastupdated: "2026-02-20"
 
 
 keywords: openshift
@@ -78,7 +78,7 @@ If any CSI driver pod is in `CrashLoopBackOff` state, you can try the following 
 
 1. If the issue persists, contact support. Open a [support case](/docs/account?topic=account-using-avatar). In the case details, be sure to include any relevant log files, error messages, or command outputs.
 
-If you need to contact support for further help, make sure you gather the following details for the support ticket.
+If you need to contact support for further help, make sure that you gather the following details for the support ticket.
 
 * Add-on health status and add-on version mentioned above.
 

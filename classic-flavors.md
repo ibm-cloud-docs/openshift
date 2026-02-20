@@ -1,8 +1,8 @@
 ---
 
 copyright: 
-  years: 2014, 2025
-lastupdated: "2025-11-18"
+  years: 2014, 2026
+lastupdated: "2026-02-20"
 
 
 keywords: openshift, {{site.data.keyword.openshiftlong_notm}}, kubernetes, node scaling, ca, autoscaler
@@ -24,7 +24,7 @@ Review the classic worker node flavors by metro.
 The flavors listed here might differ from what is actually available for your cluster. You can find a list of available flavors specific to your clusters by running **`ibmcloud oc flavor ls`** [command](/docs/openshift?topic=openshift-kubernetes-service-cli#cs_flavor_ls) or review the list of flavors when creating a cluster in the console.
 
 These conditions might impact cluster flavor availability:
-- **Operating system specifications**: Some flavors have specific operating system requirements. When selecting a flavor in the console, make sure you have the correct zone and operating system selections for your needs.
+- **Operating system specifications**: Some flavors have specific operating system requirements. When selecting a flavor in the console, make sure that you have the correct zone and operating system selections for your needs.
 - **Pricing**: For pricing information, see the [{{site.data.keyword.openshiftlong_notm}} console](https://cloud.ibm.com/containers/cluster-management/catalog/pricing?platformType=openshift){: external}.
 
 

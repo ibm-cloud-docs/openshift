@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2022, 2026
-lastupdated: "2026-01-08"
+lastupdated: "2026-02-20"
 
 keywords: kubernetes, openshift
 
@@ -28,9 +28,9 @@ Review the following notes and considerations before continuing.
 - New storage classes were added with version 2.0 of the add-on. You can no longer provision new file shares that use the older storage classes. Existing volumes that use the older storage classes continue to function, however you cannot expand the volumes that were created using the older classes. For more information, see the [Migrating to a new storage class](/docs/openshift?topic=openshift-storage-file-vpc-apps#storage-file-expansion-migration).
 - Creating a PVC by using [StorageClassSecrets](https://kubernetes-csi.github.io/docs/secrets-and-credentials-storage-class.html){: external} is not supported.
 - Make sure the user who creates the cluster has the Reader, Writer, and Operator permissions for VPC Infrastructure Services.
-- Make sure you [set up a service authorization](/docs/vpc?topic=vpc-file-s2s-auth&interface=ui) from VPC Infrastructure to KMS/HPCS if you plan to use encryption on your file shares.
+- Make sure that you [set up a service authorization](/docs/vpc?topic=vpc-file-s2s-auth&interface=ui) from VPC Infrastructure to KMS/HPCS if you plan to use encryption on your file shares.
 - By default, {{site.data.keyword.filestorage_vpc_short}} cluster add-on provisions file shares in the `kube-<clusterID>` security group. This means pods can access file shares across nodes and zones.
-- If you are using context-based restrictions, make sure you configure your network zones and rules. For more information, see [Protecting Virtual Private Cloud (VPC) Infrastructure Services with context-based restrictions](/docs/vpc?topic=vpc-cbr&interface=ui).
+- If you are using context-based restrictions, make sure that you configure your network zones and rules. For more information, see [Protecting Virtual Private Cloud (VPC) Infrastructure Services with context-based restrictions](/docs/vpc?topic=vpc-cbr&interface=ui).
 
 
 New security group rules were introduced in versions 4.11 and later. These rule changes mean you must sync your security groups before you can use {{site.data.keyword.filestorage_vpc_short}}. If your cluster was initially created at version 4.11 or earlier, run the following commands to sync your security group settings.
@@ -318,9 +318,9 @@ New storage classes were introduced with version 2.0. Volume expansion does not 
 ### Before you begin
 {: #before-vpc-file-expansion}
 
-* To use volume expansion, make sure you [update your add-on to at least version 2.0](/docs/openshift?topic=openshift-storage-file-vpc-managing).
+* To use volume expansion, make sure that you [update your add-on to at least version 2.0](/docs/openshift?topic=openshift-storage-file-vpc-managing).
 
-* Make sure your app is using one of the [latest storage classes](/docs/openshift?topic=openshift-storage-file-vpc-sc-ref). For migration steps, see [Migrating to a new storage class](#storage-file-expansion-migration)
+* Make sure that your app is using one of the [latest storage classes](/docs/openshift?topic=openshift-storage-file-vpc-sc-ref). For migration steps, see [Migrating to a new storage class](#storage-file-expansion-migration)
 
 * If you don't have a running app, begin by deploying the [quick start example PVC and Deployment](#vpc-add-file-dynamic). 
 
@@ -1166,7 +1166,7 @@ To limit file share access by node, zone, or resource group, you must first crea
 ### Limiting file share access to pods on one worker node
 {: #storage-file-vpc-vni-one-worker}
 
-1. Make sure you have [completed the prerequisites](#storage-file-vpc-vni-prereqs).
+1. Make sure that you have [completed the prerequisites](#storage-file-vpc-vni-prereqs).
 
 1. Add the following rule to the custom security group you created earlier.
 
@@ -1187,7 +1187,7 @@ To limit file share access by node, zone, or resource group, you must first crea
 ### Limiting file share access to pods on worker nodes in a single zone
 {: #storage-file-vpc-vni-one-zone}
 
-1. Make sure you have [completed the prerequisites](#storage-file-vpc-vni-prereqs).
+1. Make sure that you have [completed the prerequisites](#storage-file-vpc-vni-prereqs).
 
 1. Add the following rule to the custom security group you created earlier.
 
@@ -1209,7 +1209,7 @@ To limit file share access by node, zone, or resource group, you must first crea
 ### Limiting file share access to pods on worker nodes in a single worker pool
 {: #storage-file-vpc-vni-one-pool}
 
-1. Make sure you have [completed the prerequisites](#storage-file-vpc-vni-prereqs).
+1. Make sure that you have [completed the prerequisites](#storage-file-vpc-vni-prereqs).
 
 1. Create inbound rules for each worker pool subnet range.
 
@@ -1232,7 +1232,7 @@ To limit file share access by node, zone, or resource group, you must first crea
 ### Limiting file share access to pods on worker nodes in multiple worker pools
 {: #storage-file-vpc-vni-multiple-pools}
 
-1. Make sure you have [completed the prerequisites](#storage-file-vpc-vni-prereqs).
+1. Make sure that you have [completed the prerequisites](#storage-file-vpc-vni-prereqs).
 
 1. Add the following rules to your custom security group. Specify the worker pools and the subnet CIDR ranges as the remote or source.
 

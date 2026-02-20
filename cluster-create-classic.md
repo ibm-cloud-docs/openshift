@@ -3,7 +3,7 @@
 copyright:
   years: 2014, 2026
 
-lastupdated: "2026-02-19"
+lastupdated: "2026-02-20"
 
 keywords: openshift, {{site.data.keyword.openshiftlong_notm}}, kubernetes, clusters, worker nodes, worker pools, classic, create
 
@@ -30,7 +30,7 @@ Use the {{site.data.keyword.cloud_notm}} CLI or the {{site.data.keyword.cloud_no
 {{site.data.keyword.redhat_openshift_notm}} clusters can be created created with a public only or both a public and private service endpoint. Public service endpoints can't be disabled. Therefore, you can't convert a public {{site.data.keyword.redhat_openshift_notm}} cluster to a private one. If you want to create a Classic cluster with a private service endpoint enabled, you must [enable VRF](/docs/account?topic=account-vrf-service-endpoint&interface=ui#vrf) & [service endpoints](/docs/account?topic=account-vrf-service-endpoint&interface=ui#service-endpoint). If you want a private-only cluster, consider creating a VPC cluster.
 {: important}
 
-If you want to enable a trusted profile for your cluster, make sure you have created one in your account. See [Configuring a trusted profile](/docs/openshift?topic=openshift-configure-trusted-profile&interface=ui) for more information.
+If you want to enable a trusted profile for your cluster, make sure that you have created one in your account. See [Configuring a trusted profile](/docs/openshift?topic=openshift-configure-trusted-profile&interface=ui) for more information.
 
 
 ## Creating a classic cluster in the console
@@ -313,7 +313,7 @@ Terraform on {{site.data.keyword.cloud_notm}} enables predictable and consistent
 
 **Before you begin:**
 * [Install the Terraform CLI and the {{site.data.keyword.cloud_notm}} Provider plug-in](/docs/ibm-cloud-provider-for-terraform?topic=ibm-cloud-provider-for-terraform-setup_cli#tf_installation).
-* Make sure you have an {{site.data.keyword.cloud_notm}} [API key](/docs/account?topic=account-userapikey&interface=ui#create_user_key). 
+* Make sure that you have an {{site.data.keyword.cloud_notm}} [API key](/docs/account?topic=account-userapikey&interface=ui#create_user_key). 
 
 
 

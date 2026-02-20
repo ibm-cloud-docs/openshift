@@ -1,8 +1,8 @@
 ---
 
 copyright: 
-  years: 2014, 2025
-lastupdated: "2025-12-19"
+  years: 2014, 2026
+lastupdated: "2026-02-20"
 
 
 keywords: openshift, {{site.data.keyword.openshiftlong_notm}}, troubleshooting apps, app debugging, application troublshooting in clusters
@@ -65,10 +65,10 @@ The following steps help you troubleshoot application problems within your clust
 {: #ts-3}
 {: step}
 
-When documenting details about the problem, be as specific as possible. For example, `Our app occasionally gets 502 Gateway errors when trying to retrieve transaction logs` is not helpful because it is not specific. Make sure you narrow down the problem as much as possible before documenting it. When documenting the problem, try to include the following.
+When documenting details about the problem, be as specific as possible. For example, `Our app occasionally gets 502 Gateway errors when trying to retrieve transaction logs` is not helpful because it is not specific. Make sure that you narrow down the problem as much as possible before documenting it. When documenting the problem, try to include the following.
 
 Environment architecture
-:   Make sure you have documented your environment architecture so that you understand the components involved. For more information, see [Documenting your environment architecture](/docs/openshift?topic=openshift-document-environment).
+:   Make sure that you have documented your environment architecture so that you understand the components involved. For more information, see [Documenting your environment architecture](/docs/openshift?topic=openshift-document-environment).
 
 Error messages and component details.
 :   Provide the full error message and include details about which component is producing the error. For example, "All three app pods in clusterID ABCDEF occasionally fail on HTTPS calls to GET /transaction-logs from the global load balancer with the error `HTTP 502 Gateway Error: Web server received an invalid response while acting as a gateway or proxy server...`".
