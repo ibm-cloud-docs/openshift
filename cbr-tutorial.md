@@ -1,8 +1,8 @@
 ---
 
 copyright:
-  years: 2022, 2025
-lastupdated: "2025-05-29"
+  years: 2022, 2026
+lastupdated: "2026-02-20"
 
 
 keywords: cbr, openshift, context based restrictions, security, cbr scenario, cbr
@@ -44,7 +44,7 @@ In the following steps, you start by creating a network zone, or allowlist, that
 ## Prerequisites
 {: #cbr-tutorial-prereqs}
 
-Before beginning this tutorial, make sure you have created or installed the following resources and tools.
+Before beginning this tutorial, make sure that you have created or installed the following resources and tools.
 
 - An {{site.data.keyword.cloud_notm}} account. For more information, see [Creating an account](/docs/account?topic=account-account-getting-started).
 - The CLI tools including the {{site.data.keyword.cloud_notm}} CLI, the Containers service CLI plug-in, and the CBR plug-in. For more information, see [Getting started with the {{site.data.keyword.cloud_notm}} CLI](/docs/cli?topic=cli-getting-started).

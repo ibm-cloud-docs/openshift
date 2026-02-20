@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2025, 2026
-lastupdated: "2026-01-27"
+lastupdated: "2026-02-20"
 
 
 keywords: kubernetes, openshift, {{site.data.keyword.filestorage_vpc_short}}, snapshot, restore
@@ -46,9 +46,9 @@ There are several reasons why you might not be able to create snapshots. To debu
     ```
     {: pre}
 
-    * If there is a `shares_snapshot_operation_not_allowed` error, make sure you have been allowlisted for regional file share access and contact IBM VPC Support team.
+    * If there is a `shares_snapshot_operation_not_allowed` error, make sure that you have been allowlisted for regional file share access and contact IBM VPC Support team.
 
-    * If there is a `shares_access_forbidden` error, make sure you have **Share Snapshot Operator** [permissions in IAM](/docs/account?topic=account-iam-service-roles-actions#is.share-roles).
+    * If there is a `shares_access_forbidden` error, make sure that you have **Share Snapshot Operator** [permissions in IAM](/docs/account?topic=account-iam-service-roles-actions#is.share-roles).
 
 1. If issue still persist then get the logs of the `ibm-vpc-file-csi-controller-XXX` driver and sidecar pod. Replace `ibm-vpc-file-csi-controller-XXX` with the exact pod name from your cluster.
 

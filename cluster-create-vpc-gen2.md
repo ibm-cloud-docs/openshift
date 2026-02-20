@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2026
-lastupdated: "2026-02-19"
+lastupdated: "2026-02-20"
 
 
 keywords: kubernetes, clusters, worker nodes, worker pools, vpc-gen2, openshift, {{site.data.keyword.openshiftlong_notm}}
@@ -43,7 +43,7 @@ Use the {{site.data.keyword.cloud_notm}} CLI or the {{site.data.keyword.cloud_no
 
 * If you want to create a cluster that runs on dedicated hardware, you must first use the CLI to [create a dedicated host pool](/docs/openshift?topic=openshift-dedicated-hosts#setup-dedicated-host-cli) in your account.
 
-*If you want to enable a trusted profile for your cluster, make sure you have created one in your account. See [Configuring a trusted profile](/docs/openshift?topic=openshift-configure-trusted-profile&interface=ui) for more information.
+*If you want to enable a trusted profile for your cluster, make sure that you have created one in your account. See [Configuring a trusted profile](/docs/openshift?topic=openshift-configure-trusted-profile&interface=ui) for more information.
 
 
 ## Creating a VPC cluster in the console
@@ -78,7 +78,7 @@ Worker Pool
      
 :    - **Encrypt local disk**: By default, [worker nodes feature AES 256-bit disk encryption](/docs/openshift?topic=openshift-security#workernodes). You can choose to turn off disk encryption when you create the cluster. If you enable encryption, each worker node in the worker pool then is encrypted by using the KMS provider credentials that you manage. Only the `default` worker pool's nodes are encrypted. After you create the cluster, if you create more worker pools, you must enable encryption in each pool separately. Each worker pool in your cluster can use the same KMS instance and root key, the same KMS instance with different root keys, or different instances.
 :   - **Secondary Storage**: You can provision a secondary disk to your worker nodes, such as a `900gb.5iops-tier` block storage disk. When you add a secondary disk, that disk is used for the container runtime, while the primary disk is used for the operating system. Secondary disks are useful in scenarios where more container storage is needed, such as running pods with large images. Note that when using secondary storage, pods might not be able to use the full IOPS/bandwidth capabilities of the volumes because of the overlay file systems. Secondary disks are provisioned in your account and you can see them in VPC console. The charges for these disks are separate to the cost of each worker and show as a different line item on your bill. These secondary volumes also count toward the quota usage for the your account. If you plan to use secondary storage on nodes where Persistent Volumes could be attached it is highly recommended to use the 10-iops tiers or higher. This is because the storage bandwidth allocation for the nodes is shared between secondary storage volumes and any attached PVCs. When using 5-iops, tiers this can lead to degraded performance for pulling images or for pods writing to the storage. For more information on bandwidth allocation see [Bandwidth Allocation in Virtual Server Instances](https://www.ibm.com/products/tutorials/bandwidth-allocation-in-virtual-server-instances).{: external}
-:   - **GPU**: If you plan to deploy AI, visual, or high-quality graphics workloads to your cluster, make sure you select a GPU worker node flavor.
+:   - **GPU**: If you plan to deploy AI, visual, or high-quality graphics workloads to your cluster, make sure that you select a GPU worker node flavor.
 
 Additional flavor types, including flavors with NVIDIA V100, A100, H100, and H200 GPUs are available for allowlisted accounts only. To request access to other allowlisted flavors, [request access to the allowlist](/docs/openshift?topic=openshift-allowlist-request).
 {: note}
@@ -346,7 +346,7 @@ ibmcloud oc zone add vpc-gen2 --zone ZONE --cluster <cluster_name_or_ID> --worke
 **Before you begin:**
 
 * [Install the Terraform CLI and the {{site.data.keyword.cloud_notm}} Provider plug-in](/docs/ibm-cloud-provider-for-terraform?topic=ibm-cloud-provider-for-terraform-setup_cli#tf_installation).
-* Make sure you have an {{site.data.keyword.cloud_notm}} [API key](/docs/account?topic=account-userapikey&interface=ui#create_user_key).
+* Make sure that you have an {{site.data.keyword.cloud_notm}} [API key](/docs/account?topic=account-userapikey&interface=ui#create_user_key).
 
 1. Create a Terraform provider file. Save the file in your Terraform directory. For more information, see the [Terraform IBM Cloud Provider documentation](https://registry.terraform.io/providers/IBM-Cloud/ibm/latest/docs){: external}.
 

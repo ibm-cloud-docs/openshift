@@ -1,8 +1,8 @@
 ---
 
 copyright:
-  years: 2022, 2025
-lastupdated: "2025-12-02"
+  years: 2022, 2026
+lastupdated: "2026-02-20"
 
 
 keywords: rhel, os, operating system, rhcos, 418, migration
@@ -97,7 +97,7 @@ ibmcloud ks cluster master update --cluster <clusterNameOrID> --version 4.18_ope
     ```
     {: screen}
 
-1. Add one or more zones to your worker pool. When you add a zone, the number of worker nodes you specified with the `--size-per-zone` option are added to the zone. These worker nodes run the RHCOS operating system. It's recommended that the zones you add to the RHCOS worker pool match the zones added to the RHEL worker pool that you are replacing. To view the zones attached to a worker pool, run `ibmcloud oc worker-pool zones --worker-pool WORKER_POOL --cluster CLUSTER`. If you add zones that do not match those of RHEL worker pool, make sure your workloads will not be impacted by moving them to a new zone. Note that File or Block storage are not supported across zones. 
+1. Add one or more zones to your worker pool. When you add a zone, the number of worker nodes you specified with the `--size-per-zone` option are added to the zone. These worker nodes run the RHCOS operating system. It's recommended that the zones you add to the RHCOS worker pool match the zones added to the RHEL worker pool that you are replacing. To view the zones attached to a worker pool, run `ibmcloud oc worker-pool zones --worker-pool WORKER_POOL --cluster CLUSTER`. If you add zones that do not match those of RHEL worker pool, make sure that your workloads will not be impacted by moving them to a new zone. Note that File or Block storage are not supported across zones. 
 
 
 ### Step 3: Add worker nodes to your RHCOS worker pool
@@ -520,7 +520,7 @@ The default `cgroup` implementation is `cgroup` v2. In RHEL 9, `cgroup` v1 isn't
 
 1. Update each worker node in the worker pool by running the [`ibmcloud oc worker update`](/docs/openshift?topic=openshift-kubernetes-service-cli#cs_worker_update) for Classic clusters or [`ibmcloud oc worker replace`](/docs/openshift?topic=openshift-kubernetes-service-cli#cli_worker_replace) for VPC clusters. 
 
-    Make sure you have enough worker nodes to support your workload while you update or replace the relevant worker nodes. For more information, see [Updating VPC worker nodes](/docs/containers?topic=containers-update&interface=ui#vpc_worker_node) or [Updating classic worker nodes](/docs/containers?topic=containers-update&interface=ui#worker_node).
+    Make sure that you have enough worker nodes to support your workload while you update or replace the relevant worker nodes. For more information, see [Updating VPC worker nodes](/docs/containers?topic=containers-update&interface=ui#vpc_worker_node) or [Updating classic worker nodes](/docs/containers?topic=containers-update&interface=ui#worker_node).
     {: tip}
 
     Example command to update Classic worker nodes.

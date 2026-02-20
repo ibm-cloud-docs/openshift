@@ -1,8 +1,8 @@
 ---
 
 copyright: 
-  years: 2022, 2025
-lastupdated: "2025-12-05"
+  years: 2022, 2026
+lastupdated: "2026-02-20"
 
 
 keywords: openshift, {{site.data.keyword.openshiftlong_notm}}, webhooks, admission control, 
@@ -46,7 +46,7 @@ If you must use webhooks, keep in mind the following best practices and consider
     {: important}
 
 - Set appropriate CPU and memory [resource requests and limits](/docs/openshift?topic=openshift-app#resourcereq) for your webhook.
-- Add [liveness and readiness probes](/docs/openshift?topic=openshift-app#probe) to help make sure your webhook container is running and ready to serve requests.
+- Add [liveness and readiness probes](/docs/openshift?topic=openshift-app#probe) to help make sure that your webhook container is running and ready to serve requests.
 - Set pod [anti-affinity scheduling rules](/docs/openshift?topic=openshift-app#affinity) to prefer that your webhook pods run on different worker nodes and zones when possible. You might use [pod topology](https://kubernetes.io/docs/concepts/scheduling-eviction/topology-spread-constraints/){: external} instead. However, avoid [taints](https://kubernetes.io/docs/concepts/scheduling-eviction/taint-and-toleration/){: external} or forced affinity that might restrict where the webhook pods can be scheduled.
 - [Set pod priority](/docs/openshift?topic=openshift-pod_priority) to `system-cluster-critical` for the webhook pods so that other pods can't take resources from your webhook pods.
 - Scope your webhook to the appropriate project. Avoid webhooks that process resources that run in system-critical projects that are set up in your cluster by default, such as `kube-system`, `ibm-system`, `ibm-operators`, `calico-apiserver`, `calico-system`, `tigera-operator` and `openshift-*` projects.

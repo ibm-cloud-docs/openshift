@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2025, 2026
-lastupdated: "2026-01-27"
+lastupdated: "2026-02-20"
 
 
 keywords: openshift, containers, file storage for vpc, snapshots, create snapshot
@@ -35,8 +35,8 @@ If the PVC (file share) is deleted, then all the corresponding snapshots owned b
 ## Prerequisites
 {: #snapshot-file-pre}
 
-- Make sure you have the {{site.data.keyword.filestorage_vpc_short}} add-on installed in your cluster.
-- Make sure you have **Share Snapshot Operator** [permissions in IAM](/docs/account?topic=account-iam-service-roles-actions#is.share-roles).
+- Make sure that you have the {{site.data.keyword.filestorage_vpc_short}} add-on installed in your cluster.
+- Make sure that you have **Share Snapshot Operator** [permissions in IAM](/docs/account?topic=account-iam-service-roles-actions#is.share-roles).
 
 
 ## Creating an app
@@ -182,7 +182,7 @@ Create an example Persistent Volume Claim (PVC) and deploy a pod that references
 
 After you create a deployment and a PVC, you can create the volume snapshots.
 
-1. Make sure you have **Share Snapshot Operator** [permissions in IAM](/docs/account?topic=account-iam-service-roles-actions#is.share-roles).
+1. Make sure that you have **Share Snapshot Operator** [permissions in IAM](/docs/account?topic=account-iam-service-roles-actions#is.share-roles).
 
 1. Create a volume snapshot in your cluster by using the `ibmc-vpcfile-snapshot-delete` snapshot class that is deployed when you enabled the add-on. Save the following `VolumeSnapshot` configuration to a file called `snapvol.yaml`. 
 

@@ -1,8 +1,8 @@
 ---
 
 copyright:
-  years: 2023, 2024
-lastupdated: "2024-06-20"
+  years: 2023, 2026
+lastupdated: "2026-02-20"
 
 
 keywords: openshift, route, network, satellite
@@ -115,7 +115,7 @@ However, in {{site.data.keyword.satelliteshort}} locations where multiple networ
 To limit the range, you restrict the listening addresses for NodePort services at the cluster level. This restriction allows the cluster administrator to limit access to a specific network interface by using the IP subnet as the allowed listening address range. Complete the following steps to reconfigure the `kube-proxy` component to limit the listening address range for your NodePort services.
 
 
-Incorrectly configuring the `node-port-addresses` might isolate your services from valid sources. Make sure you plan for all the required subnets your service needs. {{site.data.keyword.cloud_notm}} doesn't require access to any subnet to manage your clusters.
+Incorrectly configuring the `node-port-addresses` might isolate your services from valid sources. Make sure that you plan for all the required subnets your service needs. {{site.data.keyword.cloud_notm}} doesn't require access to any subnet to manage your clusters.
 {: important}
 
 
@@ -174,5 +174,3 @@ After all pods are restarted, your cluster is configured with the restricted sub
 
 You can further restrict the traffic by using `NetworkPolicies` [on a per-service basis](https://kubernetes.io/docs/concepts/services-networking/network-policies/){: external}.
 {: tip}
-
-

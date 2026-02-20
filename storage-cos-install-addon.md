@@ -1,8 +1,8 @@
 ---
 
 copyright:
-  years: 2024, 2025
-lastupdated: "2025-10-13"
+  years: 2024, 2026
+lastupdated: "2026-02-20"
 
 
 keywords: kubernetes, openshift, object storage add-in, cos
@@ -190,7 +190,7 @@ cos.csi.driver/secret: "<custom-secret>"
 ```
 {: codeblock}
 
-Make sure your secret, PVC, and pods are all in the same namespace
+Make sure that your secret, PVC, and pods are all in the same namespace
 {: note}
 
 

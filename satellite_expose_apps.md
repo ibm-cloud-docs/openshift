@@ -1,8 +1,8 @@
 ---
 
 copyright:
-  years: 2014, 2025
-lastupdated: "2025-12-10"
+  years: 2014, 2026
+lastupdated: "2026-02-20"
 
 
 keywords: openshift, route, Ingress controller
@@ -38,7 +38,7 @@ You have several options for exposing apps in {{site.data.keyword.satelliteshort
 MetalLB is a load-balancer implementation for bare metal Kubernetes clusters, using standard routing protocols. For more information, see [About MetalLB and the MetalLB Operator](https://docs.redhat.com/en/documentation/openshift_container_platform/4.19/html/networking_operators/metallb-operator){: external} in the {{site.data.keyword.redhat_openshift_notm}} documentation.
 {: shortdesc}
 
-To install and configure MetalLB, follow the instructions under [Installing the MetalLB Operator](https://docs.redhat.com/en/documentation/openshift_container_platform/4.19/html/networking_operators/metallb-operator#metallb-operator-install){: external} in the {{site.data.keyword.redhat_openshift_notm}} documentation. Before you begin, make sure you have a dedicated subnet (`IPAddressPool`) for the external IP of the `LoadBalancer` services. Check that the IP addresses included in the `IPAddressPool` are not reserved or used for other purposes, otherwise the load balancing function might fail. 
+To install and configure MetalLB, follow the instructions under [Installing the MetalLB Operator](https://docs.redhat.com/en/documentation/openshift_container_platform/4.19/html/networking_operators/metallb-operator#metallb-operator-install){: external} in the {{site.data.keyword.redhat_openshift_notm}} documentation. Before you begin, make sure that you have a dedicated subnet (`IPAddressPool`) for the external IP of the `LoadBalancer` services. Check that the IP addresses included in the `IPAddressPool` are not reserved or used for other purposes, otherwise the load balancing function might fail. 
 
 ## Exposing apps with {{site.data.keyword.redhat_openshift_notm}} routes
 {: #sat-expose-routes}

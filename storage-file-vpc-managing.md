@@ -1,8 +1,8 @@
 ---
 
 copyright: 
-  years: 2023, 2025
-lastupdated: "2025-12-03"
+  years: 2023, 2026
+lastupdated: "2026-02-20"
 
 
 keywords: kubernetes, openshift
@@ -186,7 +186,7 @@ Disabling the `vpc-file-csi-driver` removes the encryption in-transit packages f
 ## Understanding your storage removal options
 {: #vpc-storage-delete-options-file}
 
-Tagging was not supported in version 1.2. This impacts the removal of file shares when a cluster is deleted with the `--force-delete-storage` option. Make sure you clean up all PVCs that were created with version 1.2 of the add-on before deleting your cluster.
+Tagging was not supported in version 1.2. This impacts the removal of file shares when a cluster is deleted with the `--force-delete-storage` option. Make sure that you clean up all PVCs that were created with version 1.2 of the add-on before deleting your cluster.
 {: note}
 
 Removing persistent storage from your {{site.data.keyword.cloud_notm}} account varies depending on how you provisioned the storage and what components you already removed.

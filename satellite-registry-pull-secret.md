@@ -1,8 +1,8 @@
 ---
 
 copyright:
-  years: 2023, 2024
-lastupdated: "2024-08-13"
+  years: 2023, 2026
+lastupdated: "2026-02-20"
 
 
 keywords: openshift, satellite, distributed cloud, on-prem, hybrid, images, private registry, pull secret
@@ -144,7 +144,7 @@ Complete the following steps to update the global pull secret in your {{site.dat
 
 Complete the following steps to use {{site.data.keyword.satelliteshort}} config to apply the global pull secret across your {{site.data.keyword.satelliteshort}} clusters and cluster groups.
 
-1. [Make sure you enable {{site.data.keyword.satelliteshort}} config](/docs/satellite?topic=satellite-setup-clusters-satconfig).
+1. [Make sure that you enable {{site.data.keyword.satelliteshort}} config](/docs/satellite?topic=satellite-setup-clusters-satconfig).
 1. [Add your clusters to cluster groups](/docs/satellite?topic=satellite-setup-clusters-satconfig-groups).
 1. Create a secret in one of your {{site.data.keyword.satelliteshort}} clusters. Note that this secret will be deleted later.
     ```sh
@@ -319,4 +319,3 @@ Complete the following steps to use {{site.data.keyword.satelliteshort}} config 
 
 You can also view and manage your configurations and subscriptions from the [{{site.data.keyword.satelliteshort}} console](https://cloud.ibm.com/satellite/locations){: external}.
 {: tip}
-

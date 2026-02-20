@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2025, 2026
-lastupdated: "2026-02-11"
+lastupdated: "2026-02-20"
 
 
 keywords: trusted profiles, containers, block storage, openshift
@@ -200,7 +200,7 @@ Create access policies with the permissions in the following table.
 
 Follow the steps to create and set up a trusted profile in the CLI.
 
-Once you add a trusted profile to a cluster, it cannot be removed and you cannot resume using an API key for your resources. Make sure you follow these steps carefully to ensure that your trusted profile is set up correctly. 
+Once you add a trusted profile to a cluster, it cannot be removed and you cannot resume using an API key for your resources. Make sure that you follow these steps carefully to ensure that your trusted profile is set up correctly. 
 {: important}
 
 1. Log in to the IBM Cloud CLI. 
@@ -265,7 +265,7 @@ Once you add a trusted profile to a cluster, it cannot be removed and you cannot
 
 Follow the steps to create and set up a trusted profile in the CLI.
 
-Once you add a trusted profile to a cluster, it cannot be removed and you cannot resume using an API key for your resources. Make sure you follow these steps carefully to ensure that your trusted profile is set up correctly. 
+Once you add a trusted profile to a cluster, it cannot be removed and you cannot resume using an API key for your resources. Make sure that you follow these steps carefully to ensure that your trusted profile is set up correctly. 
 {: important}
 
 1. Log in to your IBM Cloud account and navigate to the Trusted Profiles page. 
@@ -509,10 +509,10 @@ Once you add a trusted profile to a cluster, it cannot be removed and you cannot
 
 When you set a trusted profile for your cluster, it applies to your storage components. You can set a trusted profile for an individual cluster, or to a resource group. 
 
-Once you add a trusted profile to a cluster, it cannot be removed and you cannot resume using an API key for your resources. Make sure you follow these steps carefully to ensure that your trusted profile is set up correctly. 
+Once you add a trusted profile to a cluster, it cannot be removed and you cannot resume using an API key for your resources. Make sure that you follow these steps carefully to ensure that your trusted profile is set up correctly. 
 {: important}
 
-1. Make sure you have created a trusted profile that meets the [minimum requirements for storage components](#tp-minreqs). 
+1. Make sure that you have created a trusted profile that meets the [minimum requirements for storage components](#tp-minreqs). 
 
 2. Assign the trusted profile to your cluster, or to the resource group that your cluster is in. If you assign a trusted profile to a resource group, it applies to all clusters in the resource group.
 

@@ -1,8 +1,8 @@
 ---
 
 copyright: 
-  years: 2024, 2025
-lastupdated: "2025-01-28"
+  years: 2024, 2026
+lastupdated: "2026-02-20"
 
 
 keywords: openshift, {{site.data.keyword.openshiftlong_notm}}, ai, add-on
@@ -26,7 +26,7 @@ Use the following information to manage the OpenShift AI add-on.
 
 Version updates for the OpenShift AI operator follow the schedule of version updates for the OpenShift AI Platform. If the OpenShift AI Platform releases a patch, minor, or major version update, a corresponding update is made available for the add-on. Based on the approval policy (`oaiInstallPlanApproval`) you set when the add-on was installed, you may need to manually approve and apply certain updates. 
 
-Version rollbacks are not supported. You cannot undo an update to the OpenShift AI operator. Take this into consideration and make sure you choose your update strategy carefully, especially if you choose the `Automatic` approval policy. 
+Version rollbacks are not supported. You cannot undo an update to the OpenShift AI operator. Take this into consideration and make sure that you choose your update strategy carefully, especially if you choose the `Automatic` approval policy. 
 {: important}
 
 ### Major updates
