@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2026
-lastupdated: "2026-02-17"
+lastupdated: "2026-02-23"
 
 
 keywords: kubernetes, release notes, openshift, {{site.data.keyword.openshiftlong_notm}}
@@ -29,6 +29,16 @@ Looking for {{site.data.keyword.cloud_notm}} status, platform announcements, sec
 
 ## February 2026
 {: #openshift-feb26}
+
+### 23 February 2026
+{: #openshift-feb2326}
+{: release-note}
+
+IBM Cloud Image Key Synchronizer cluster add-on patch updates.
+:   For more information, see the [change log](/docs/openshift?topic=openshift-cl-add-ons-ibm-cloud-image-key-synchronizer).
+
+
+
 
 ### 18 February 2026
 {: #openshift-feb1826}

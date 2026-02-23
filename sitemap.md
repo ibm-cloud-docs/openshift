@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2026
-lastupdated: "2026-02-20"
+lastupdated: "2026-02-23"
 
 
 keywords: openshift
@@ -280,6 +280,10 @@ subcollection: openshift
 [Release notes](/docs/openshift?topic=openshift-openshift-relnotes#openshift-relnotes)
 
 * [February 2026](/docs/openshift?topic=openshift-openshift-relnotes#openshift-feb26)
+
+    * [23 February 2026](/docs/openshift?topic=openshift-openshift-relnotes#openshift-feb2326)
+
+        * IBM Cloud Image Key Synchronizer cluster add-on patch updates.
 
     * [18 February 2026](/docs/openshift?topic=openshift-openshift-relnotes#openshift-feb1826)
 
@@ -7016,6 +7020,8 @@ subcollection: openshift
 [IBM Cloud Image Key Synchronizer add-on version change log](/docs/openshift?topic=openshift-cl-add-ons-ibm-cloud-image-key-synchronizer#cl-add-ons-ibm-cloud-image-key-synchronizer)
 
 * [Version 1.0.0](/docs/openshift?topic=openshift-cl-add-ons-ibm-cloud-image-key-synchronizer#cl-add-ons-ibm-cloud-image-key-synchronizer-1.0.0)
+
+    * [1.0.0_318859798, released 23 February 2026](/docs/openshift?topic=openshift-cl-add-ons-ibm-cloud-image-key-synchronizer#cl-add-ons-ibm-cloud-image-key-synchronizer-100_318859798)
 
     * [1.0.0_315380368, released 10 February 2026](/docs/openshift?topic=openshift-cl-add-ons-ibm-cloud-image-key-synchronizer#cl-add-ons-ibm-cloud-image-key-synchronizer-100_315380368)
 
