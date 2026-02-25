@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2026
-lastupdated: "2026-02-19"
+lastupdated: "2026-02-25"
 
 
 keywords: kubernetes, openshift, red hat, red hat openshift
@@ -35,7 +35,7 @@ Create an {{site.data.keyword.openshiftlong}} cluster in your Virtual Private Cl
 
 - {{site.data.keyword.openshiftlong_notm}} gives you all the [advantages of a managed offering](/docs/openshift?topic=openshift-overview) for your cluster infrastructure environment, while using the [{{site.data.keyword.redhat_openshift_notm}} tooling and catalog](https://docs.redhat.com/en/documentation/openshift_container_platform/4.19/html/extensions/catalogs){: external} that runs on Red Hat Enterprise Linux for your app deployments.
 - VPC gives you the security of a private cloud environment with the dynamic scalability of a public cloud. VPC uses the next version of {{site.data.keyword.openshiftlong_notm}} [infrastructure providers](/docs/openshift?topic=openshift-overview#what-compute-infra-is-offered), with a select group of v2 API, CLI, and console functionality.
-- Alternatively, you can use the [Red Hat OpenShift VPC cluster on IBM Cloud module](https://github.com/terraform-ibm-modules/terraform-ibm-base-ocp-vpc#red-hat-openshift-vpc-cluster-on-ibm-cloud-module) to provision the cluster.
+- This tutorial creates a cluster in VPC using ibmcloud CLI commands. Alternatively, you can use an open-source and enterprise-ready Terraform module for deploying an [OpenShift cluster on VPC infrastructure](https://registry.terraform.io/modules/terraform-ibm-modules/base-ocp-vpc/ibm/latest){: external}. You can explore more modules in the [Terraform IBM Modules registry](https://registry.terraform.io/namespaces/terraform-ibm-modules){: external}.
 
 ## Audience
 {: #vpc_rh_audience}
@@ -348,7 +348,6 @@ When you create a Kubernetes `LoadBalancer` service in your cluster, a VPC load 
         oc delete all -l app=hello-world -n hello-world
         ```
         {: pre}
-
 
 
 ## What's next?

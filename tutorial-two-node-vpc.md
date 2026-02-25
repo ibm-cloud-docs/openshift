@@ -1,8 +1,8 @@
 ---
 
 copyright:
-  years: 2024, 2025
-lastupdated: "2025-05-29"
+  years: 2024, 2026
+lastupdated: "2026-02-25"
 
 
 keywords: kubernetes
@@ -33,6 +33,8 @@ Create an {{site.data.keyword.openshiftlong_notm}} cluster in a Virtual Private 
 This tutorial is designed for account administrators who want to learn about {{site.data.keyword.openshiftlong_notm}} and Schematics.
 
 Alternatively, you can use this tutorial to set up a small testing environment for administrators who are already familiar with OpenShift, VPC, and Schematics.
+
+**Infrastructure as Code Alternative**: If you prefer using Terraform directly, consider the [Red Hat OpenShift VPC cluster module](https://registry.terraform.io/modules/terraform-ibm-modules/base-ocp-vpc/ibm/latest){: external} from [Terraform IBM Modules](https://cloud.ibm.com/docs/ibm-cloud-provider-for-terraform?topic=ibm-cloud-provider-for-terraform-about-tim). This pre-configured module provides a best-practice implementation for automated cluster provisioning.
 
 To complete this tutorial, you must have the at least the following permissions in IAM. For more information, see [IAM roles and actions](/docs/account?topic=account-iam-service-roles-actions).
 

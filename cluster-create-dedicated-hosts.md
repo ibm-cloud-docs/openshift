@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2022, 2026
-lastupdated: "2026-02-19"
+lastupdated: "2026-02-25"
 
 
 keywords: openshift, clusters, dedicated hosts
@@ -21,15 +21,16 @@ subcollection: openshift
 # Creating clusters on dedicated hosts for VPC
 {: #cluster-create-dedicated-hosts}
 
-[Virtual Private Cloud]{: tag-vpc} 
+[Virtual Private Cloud]{: tag-vpc}
 
 
-Follow the steps to create a dedicated host in a dedicated host pool. Then, provision a cluster on your dedicated host infrastructure in the CLI. For steps to create a cluster on dedicated hosts in the console, review the information in [Creating VPC clusters](/docs/openshift?topic=openshift-cluster-create-vpc-gen2&interface=ui). The [IBM Dedicated Host Module](https://github.com/terraform-ibm-modules/terraform-ibm-dedicated-host?tab=readme-ov-file#ibm-dedicated-host-module) provides related infrastructure code and examples you may find useful.
+Follow the steps to create a dedicated host in a dedicated host pool. Then, provision a cluster on your dedicated host infrastructure in the CLI. For steps to create a cluster on dedicated hosts in the console, review the information in [Creating VPC clusters](/docs/openshift?topic=openshift-cluster-create-vpc-gen2&interface=ui).The Terraform [IBM Dedicated Host Module](https://registry.terraform.io/modules/terraform-ibm-modules/dedicated-host/ibm/latest){: external} provides an Infrastructure as Code (IaC) alternative, offering reusable infrastructure code and examples that may be useful.
+
 {: shortdesc}
- 
+
 1. List available dedicated host flavors. Note the flavor and flavor class that you want to use to create a dedicated host. 
 
-    ```sh 
+    ```sh
     ibmcloud oc flavors --provider vpc-gen2 --zone us-south-1
     ```
     {: pre}
