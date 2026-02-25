@@ -2,7 +2,7 @@
 
 copyright:
   years: 2025, 2026
-lastupdated: "2026-02-20"
+lastupdated: "2026-02-25"
 
 
 keywords: openshift, acm, advanced cluster management, manage cluster, management, addon, add-on, acm addon
@@ -233,7 +233,7 @@ Use the CLI to install the ACM add-on on the hub cluster.
     ```
     {: pre}
 
-3. If you want to import clusters to be managed by the add-on, follow the steps in [Preparing secrets for ACM](#prep-secret) and save the cluster ID and the name and namespace of the secret you create on the hub cluster. You can also complete this process after the add-on is installed on the hub cluster, however additional steps are required to [import managed clusters after installation](#after). 
+3. If you want to import clusters to be managed by the add-on and, follow the steps in [Preparing secrets for ACM](#prep-secret) if you have not already done so. Be sure to save the cluster ID and the name and namespace of the secret you create on the hub cluster. You can also complete this process after the add-on is installed on the hub cluster, however additional steps are required to [import managed clusters after installation](#after). 
 
 4. Run the command to enable the add-on. Be sure to specify the `billingPlan` and `isLicenseAccepted` parameters, as well as the optional `--managedClusters` parameter if you want to import clusters during the installation process.  
 
@@ -269,8 +269,38 @@ Use the CLI to install the ACM add-on on the hub cluster.
     ```
     {: pre}
 
-5. **Optional**: Review the [additional operators](#optional-op) you can install to enhance ACM features.
+1. Verify that the add-on installed. It might take several minutes for the add-on to show in the following outputs. 
 
+    1. On the hub cluster, check that the `acmhub` resource is created.
+        ```sh
+        oc get acmhub
+        ```
+        {: pre}
+
+        Example output.
+
+        ```sh
+            NAME       AGE
+            acm-auto   1h
+        ```
+        {: screen}
+
+    2. On the hub cluster, check the `acmhub` status.
+
+        ```sh
+        oc describe acmhubstatus 
+        ```
+        {: pre}
+
+        Example output. 
+
+        ```sh
+        status
+            phase: Ready
+        ```
+        {: screen}
+
+5. **Optional**: Review the [additional operators](#optional-op) you can install to enhance ACM features.
 
 
 
@@ -305,11 +335,19 @@ You are responsible for managing these operators, including but not limited to u
 | Red Hat OpenShift Virtualization Operator | - Use to manage VM workloads alongside container workloads. \n - Install on **managed clusters**. \n - Available for bare metal clusters only (only applies to the managed cluster). | [Installing the OpenShift Virtualization Operator](https://cloud.ibm.com/docs/openshift?topic=openshift-oc-virtualization) |
 {: caption="Optional operators for ACM." caption-side="bottom"}
 
+## Importing managed clusters after ACM is installed
+{: #import}
 
-## Adding, updating, or removing a managed cluster after ACM is deployed
-{: #after}
+There are several ways to import clusters to manage with ACM. Before you can import a cluster, make sure you have [created the required secret for ACM](#prep-secret). 
 
-To add or remove a managed cluster from an ACM instance, you must edit the `managedClusters` section of the ACM custom resource on the hub cluster.
+All clusters mangaged by ACM must belong to a cluster set. You can create a new cluster set, or you can add clusters to the `Default` cluster set. If no cluster set is specified, managed clusters are added to the `Default` option.
+{: tip}
+
+
+### Importing a managed cluster using the CLI
+{: #import_cli}
+
+To import a managed cluster using the CLI, edit the ACM resource to include the cluster to manage.
 
 1. Run the command to edit the ACM resource.
 
@@ -318,9 +356,7 @@ To add or remove a managed cluster from an ACM instance, you must edit the `mana
     ```
     {: pre}
 
-2. In the `managedClusters` section of the resource, add the cluster ID, the cluster secret, the namespace for the secret, and the action you want to implement for the cluster. See the example below for formatting. For the action, specify `Import`, `Update`, or `Delete`. Note that to delete a cluster, you do not need the secret or the secret namespace. 
-
-    The following example adds `cluster_id_1`, updates `cluster_id_2`, and deletes `cluster_id_3` from the ACM instance.
+2. In the `managedClusters` section of the resource, add the cluster ID, the name of the cluster secret created for ACM, the namespace for the secret, and specify the `Import` action. See the example below for formatting. The following example imports `cluster_id_1`.
 
     ```json
     managedclusters:
@@ -328,11 +364,78 @@ To add or remove a managed cluster from an ACM instance, you must edit the `mana
         secretname: "managed-secret-1"
         secretnamespace: "managed-namespace" # The namespace that the secret was created in
         action: "Import"
+    ```
+    {: screen}
+
+3. Save and apply the changes.
+
+### Importing a managed cluster by using the OpenShift token and API server URL
+{: #import-token-url}
+
+Gather the OpenShift token and API server URL for the cluster you want to import, then use the ACM console to import the cluster. 
+
+1. In the IBM Cloud console, navigate to your [cluster list](https://cloud.ibm.com/containers/cluster-management/clusters){: external} and click on the cluster you want to import. 
+
+2. From the cluster details page, click **OpenShift web console**.
+
+3. Click the username drop down, shown with the format `IAM#username`. From the drop down, click **Copy login command**.
+
+4. Click **Display token** to display your login commands. Find the command that begins with `oc login` and save the API token (`sha256~XXXX`) and the server URL.
+
+5. Navigate to your ACM console. Click **Infrastructure** > **Clusters** > **Import an existing cluster**.
+
+6. Follow the prompts to import your cluster and specify the API token and server URL in the parameters section. 
+
+### Importing a managed cluster by using the kubeconfig
+{: #import-kubeconfig}
+
+Gather your kubeconfig details, then use the ACM console to import cluster. 
+
+1. From the IBM Cloud CLI, run the following command to get the kubeconfig for the cluster you want to import. Save the kubeconfig file contents displayed in the output.
+    ```sh
+    ibmcloud ks cluster config --cluster <cluster_name> --admin --output yaml
+    ```
+    {: pre}
+
+2. Navigate to your ACM console. Click **Infrastructure** > **Clusters** > **Import an existing cluster**.
+
+3. Follow the prompts to import your cluster and include the kubeconfig contents in the parameters section.
+
+
+### Importing a managed cluster by using a generated command
+{: #import-generate}
+
+Use the ACM console to generate a command to import a cluster, then run that command on the cluster you want to import. 
+
+1. Navigate to your ACM console. Click **Infrastructure** > **Clusters** > **Import an existing cluster**.
+2. Select the option to generate an import command. Copy the command.
+3. Login to the IBM Cloud CLI and run the command on the cluster you want to import. 
+
+
+## Updating or removing a managed cluster
+{: #after}
+
+To remove or update managed cluster from an ACM instance, you must edit the `managedClusters` section of the ACM custom resource on the hub cluster.
+
+1. Run the command to edit the ACM resource.
+
+    ```sh
+    oc edit acmhub <resource_name>
+    ```
+    {: pre}
+
+2. In the `managedClusters` section of the resource, add the cluster ID, the name of the cluster secret created for ACM, the namespace for the secret, and the action you want to implement for the cluster. See the example below for formatting. For the action, specify, `Delete` or `Update`. Note that to delete a cluster, you do not need the secret or the secret namespace. 
+
+    The following example deletes`cluster_id_1` and updates `cluster_id_2`.
+
+    ```json
+    managedclusters:
+      - clusterid: "cluster_id_1"
+        action: "Delete"
       - clusterid: "cluster_id_2"
         secretname: "managed-secret-2"
         secretnamespace: "managed-namespace-2" # The namespace that the secret was created in
-      - clusterid: "cluster_id_3"
-        action: "Delete"  
+        action: "Update"  
     ```
     {: screen}
 
