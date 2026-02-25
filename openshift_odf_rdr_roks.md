@@ -2,7 +2,7 @@
 
 copyright:
   years: 2025, 2026
-lastupdated: "2026-02-20"
+lastupdated: "2026-02-25"
 
 
 keywords: openshift, openshift data foundation, openshift container storage, disaster recovery
@@ -26,108 +26,141 @@ subcollection: openshift
 Regional Disaster Recovery ensures business continuity during the unavailability of a geographical region. You can use Red Hat Advanced Cluster Management (ACM) to set up the Regional Disaster Recovery solutions for ODF clusters.
 {: shortdesc}
 
-The following steps for setting ODF Disaster Recovery are available as a **Technical Preview** only and **not for production use**.
-{: preview}
-
 
 Here are the high-level steps of this solution:
-1. Create the 3 VPC clusters (each in different regions/VPCs) and set the `--disable-outbound-traffic-protection` parameter for each.
-1. Install ODF on 2 of them.
-1. Install ACM on 1 of them.
-1. Configure ACM to manage the 2 ODF clusters.
+1. Create 3 VPC clusters, each in different regions or VPCs, and allow outbound traffic on each. One will be the hub cluster that you install ACM on to. The remaining 2 will be the managed ODF clusters (1 primary and 1 secondary backup).
+1. Install ACM on 1 of the clusters you created. This will be the hub cluster.
+1. Configure ACM and import the remaining 2 clusters so they can be managed by ACM. These will be the managed clusters.
+1. Install Submariner on the 2 managed clusters to establish connectivity between them.
+1. Install ODF on the 2 managed clusters. 
+1. Configure the Regional Disaster Recovery policy. 
 
-With this set up, the ACM cluster manages the ODF clusters. So if one ODF cluster goes down, then the ACM cluster rolls over the apps and data from that cluster to the other cluster.
+With this set up, the hub cluster that you installed ACM on manages the ODF clusters. In the event that your primary ODF cluster becomes unavailable, the hub cluster rolls over the apps and data from the primary ODF cluster to the secondary ODF cluster.
 
-## Creating the clusters
-{: #odf-rdr-clusters}
+## Applications and workloads supported for Regional Disaster Recovery
+{: #app_support}
 
-Create 3 [VPC clusters](/docs/openshift?topic=openshift-clusters) in different regions. Make sure to include the `--disable-outbound-traffic-protection` parameter. 
+Review the types of applications and workloads that you can apply Regional Diaster Recovery for. 
+
+Subscription-based
+:   An application is deployed from an external source, such as GitHub, a Helm repo, or Object Storage. 
+:   For more information, see [Creating a sample Subscription-based application](https://docs.redhat.com/en/documentation/red_hat_openshift_data_foundation/4.19/html-single/configuring_openshift_data_foundation_disaster_recovery_for_openshift_workloads/index#subscription-based-apps_manage-mdr){: external} in the Red Hat documentation.
+
+ApplicationSet-based
+:   An application is depoyed from a GitHub repo using the GitOps operator, which manages continuous delivery. This includes two subtypes:
+:   - **GitOps Pull Model (ArgoCD pull)**: A managed cluster pulls the application from GitHub using the GitOps operator. 
+:   - **GitOps Push Model (ArgoCD push)**: The GitOps operator pushes the application to the managed cluster during deployments and updates. 
+:   For more information, see [Creating Application-set based applications](https://docs.redhat.com/en/documentation/red_hat_openshift_data_foundation/4.19/html-single/configuring_openshift_data_foundation_disaster_recovery_for_openshift_workloads/index#creating-applicationset-application_manage-mdr){: external} in the Red Hat documentation.
+:   For more information on the GitOps subtypes, see [Deploying Argo CD with Push and Pull model](https://docs.redhat.com/en/documentation/red_hat_advanced_cluster_management_for_kubernetes/2.15/html/gitops/gitops-overview#gitops-push-pull){: external} in the Red Hat documentation. 
+
+Discovered applications
+:   An application was pre-deployed in a managed cluster without using ACM. In this case, you can use ACM discovery for the pre-installed app and still configure the DR policy. 
+:  For more information, see [Disaster recovery protection for discovered applications](https://docs.redhat.com/en/documentation/red_hat_openshift_data_foundation/4.20/html-single/configuring_openshift_data_foundation_disaster_recovery_for_openshift_workloads/index#protect-discovered-apps-regionaldr_manage-rdr){: external} in the Red Hat documentation. 
+
+Applications that include VM deployments
+:   A VM-based application is deployed onto the managed cluster from the ACM console. These VM applications can be subscription based, applicationSet based, or discovered, as described previously. Options to start, stop, pause and delete VM operations are available from the ACM console for these types of applications. 
+:   For more information, see [Red Hat Advanced Cluster Management for Virtualization](https://www.redhat.com/en/resources/advanced-cluster-management-for-virtualization-datasheet){: external} in the Red Hat documentation. 
+
+
+## Step 1. Creating the clusters
+{: #clusters-cli}
+{: cli}
+
+Create 3 [VPC clusters](/docs/openshift?topic=openshift-cluster-create-vpc-gen2) in different regions. 
 {: shortdesc} 
 
-1. Create managed cluster 1 in `us-east`, which will be the primary ODF cluster.
-    ```sh
-    ibmcloud ks cluster create vpc-gen2 --flavor bx2.16x64 --name managed-cluster-1-dr-odf --subnet-id 0767-5c97dd71-95e7-4f26-a31b-e2c7a8ad16f7 --vpc-id r014-8ac09b7e-99d0-460d-96bf-2dfe3eac1041 --zone us-east-2  --version 4.17.10_openshift --workers 3 --cos-instance crn:v1:bluemix:public:cloud-object-storage:global:a/c468d8824937fecd8a0860fe0f379bf9:3887cefc-edcc-48df-a05e-ac3f02df10d5:: --disable-outbound-traffic-protection
-    ```
-    {: pre}
+For each cluster, make sure to allow outbound traffic by including the `--disable-outbound-traffic-protection` parameter in the CLI or selecting the option to disable outbound traffic protection in the UI.
+{: important}
 
-1. Create managed cluster 2 in `jp-tok`, which will be the secondary ODF cluster. Ensure that managed cluster 2 does not have overlapping network with managed cluster 1.
-    ```sh
-    ibmcloud ks cluster create vpc-gen2 --flavor bx2.16x64 --name managed-cluster-2-dr-odf --subnet-id 02e7-4f2da612-6327-4968-88db-41d92c3e9c1b --vpc-id r022-fd23415e-fab0-42b1-b6da-567cc6f3df0c --zone jp-tok-1 --version 4.17.10_openshift  --workers 3 --cos-instance crn:v1:bluemix:public:cloud-object-storage:global:a/c468d8824937fecd8a0860fe0f379bf9:3887cefc-edcc-48df-a05e-ac3f02df10d5:: --disable-outbound-traffic-protection
-    ```
-    {: pre}
+1. [Create a VPC cluster](/docs/openshift?topic=openshift-cluster-create-vpc-gen2) in `us-east` to install ACM on. This is the hub cluster that you can use to manage your ODF clusters. Make sure your hub cluster has at least 3 worker nodes that run RHCOS and a minimum of 6 VCPU and 64 GB, and meets all of the [prequisites for ACM](/docs/openshift?topic=openshift-acm&interface=ui#before). 
 
-1. Create a hub cluster in `us-east` to install ACM on.
-    ```sh
-    ibmcloud ks cluster create vpc-gen2 --flavor bx2.8x32 --name acm-hub-cluster-dr-odf --subnet-id 0767-5c97dd71-95e7-4f26-a31b-e2c7a8ad16f7 --vpc-id r014-8ac09b7e-99d0-460d-96bf-2dfe3eac1041 --zone us-east-2 --version 4.17.10_openshift --workers 3 --cos-instance crn:v1:bluemix:public :cloud-object-storage:global:a/c468d8824937fecd8a0860fe0f379bf9:3887cefc-edcc-48df-a05e-ac3f02df10d5:: --disable-outbound-traffic-protection
-    ```
-    {: pre}
+Example command to create a cluster for ACM in `us-east`.
 
-## Enabling the Red Hat OperatorHub catalog
-{: #odf-rdr-enable-redhat}
+  ```sh
+  ibmcloud ks cluster create vpc-gen2 --flavor bx2.8x32 --name acm-hub-cluster-dr-odf --subnet-id 0767-5c97dd71-95e7-4f26-a31b-e2c7a8ad16f7 --vpc-id r014-8ac09b7e-99d0-460d-96bf-2dfe3eac1041 --zone us-east-2 --version 4.19.23_openshift --workers 3 --cos-instance crn:v1:bluemix:public :cloud-object-storage:global:a/c468d8824937fecd8a0860fe0f379bf9:3887cefc-edcc-48df-a05e-ac3f02df10d5:: --disable-outbound-traffic-protection
+  ```
+  {: pre}
 
-By default, the Red Hat OperatorHub catalog is disabled. You need to enable it manually.
-{: shortdesc}
+1. If you have not already done so, make sure your hub cluster has a [trusted profile](/docs/openshift?topic=openshift-acm&interface=ui#trust-prof) for ACM.
 
-1. Run the following command.
-    ```sh
-    kubectl edit operatorhub cluster -n openshift-marketplace
-    ```
-    {: pre}
+1. [Create a VPC cluster](/docs/openshift?topic=openshift-cluster-create-vpc-gen2) in `us-east` with at least 3 worker nodes that run RHCOS and a minimum flavor of `6x64` and with outbound traffic protection disabled. This will be the primary managed ODF cluster.
 
-1. Update `disableAllDefaultSources` value to `false`.
+Example command to create a cluster in `us-east.`
 
-1. Verify that all marketplace pods are up.
-    ```yaml
-    spec:
-    disableAllDefaultSources: false
-    status:
-      sources:
-      - disabled: false
-        name: redhat-operators
-        status: Success
-      - disabled: false
-        name: certified-operators
-        status: Success
-      - disabled: false
-        name: community-operators
-        status: Success
-      - disabled: false
-        name: redhat-marketplace
-        status: Success
-    ```
-    {: pre}   
+  ```sh
+  ibmcloud ks cluster create vpc-gen2 --flavor bx2.16x64 --name managed-cluster-1-dr-odf --subnet-id 0767-5c97dd71-95e7-4f26-a31b-e2c7a8ad16f7 --vpc-id r014-8ac09b7e-99d0-460d-96bf-2dfe3eac1041 --zone us-east-2  --version 4.19.23_openshift --workers 3 --cos-instance crn:v1:bluemix:public:cloud-object-storage:global:a/c468d8824937fecd8a0860fe0f379bf9:3887cefc-edcc-48df-a05e-ac3f02df10d5:: --disable-outbound-traffic-protection
+  ```
+  {: pre}
 
-## Using ACM to set up Regional Diaster Recovery
-{: #odf-rdr-install-acm}
 
-Follow these steps to install ACM on the hub cluster and then set up the disaster recovery policy.
-{: shortdesc}
+1. [Create a VPC cluster](/docs/openshift?topic=openshift-cluster-create-vpc-gen2) in `jp-tok` with at least 3 worker nodes that run RHCOS and a minimum flavor of `6x64` and with outbound traffic protection disabled. This will be the secondary managed ODF cluster. For high availability, make sure that the secondary cluster's network does not overlap with the primary cluster's network. 
 
-1. [Follow the steps to install the ACM add-on. Be sure to import any ODF clusters you want to apply a disaster recovery policy to](/docs/openshift?topic=openshift-acm-install-cli).
+Example command to create an ODF cluster in `jp-tok`. 
 
-1. Configure the Submariner add-on from the ACM Console.
+  ```sh
+  ibmcloud ks cluster create vpc-gen2 --flavor bx2.16x64 --name managed-cluster-2-dr-odf --subnet-id 02e7-4f2da612-6327-4968-88db-41d92c3e9c1b --vpc-id r022-fd23415e-fab0-42b1-b6da-567cc6f3df0c --zone jp-tok-1 --version 4.19.23_openshift  --workers 3 --cos-instance crn:v1:bluemix:public:cloud-object-storage:global:a/c468d8824937fecd8a0860fe0f379bf9:3887cefc-edcc-48df-a05e-ac3f02df10d5:: --disable-outbound-traffic-protection
+  ```
+  {: pre}
 
-    1. Create a cluster set and add the managed clusters to the cluster set.
-    1. Select to install Submariner add-ons for the cluster set.
-    1. Select the managed ODF clusters as target clusters for add-on installation. 
-    1. When reviewing the configuration for both clusters, change the following settings as shown and leave the rest as default. Then click **Install**.
-        ```sh
-          globalnetEnabled: true (checked)
-          gateways: 2
-          NATTEnable: false (unchecked)
-          cableDriver: vxlan.
-        ```
-        {: code}
-        
-    1. Wait for the Submariner add-on status to show healthy (green). This can take up to 20 minutes. For more information about Submariner setup, see [Deploying Submariner manually](https://docs.redhat.com/en/documentation/red_hat_advanced_cluster_management_for_kubernetes/2.11/html/networking/networking#deploying-submariner-manually){: external}.
 
-1. Install the OpenShift Data Foundation add-on version 4.17 or later on the primary and secondary managed clusters. Make sure that you select the **Enable DR** option and enable NooBaa installation during the ODF installation. For more information, see [Installing the OpenShift Data Foundation add-on](/docs/openshift?topic=openshift-deploy-odf-vpc#install-odf-console-vpc).
+### Step 2. Install ACM on the hub cluster
+{: #hub-acm-install} 
 
-1. In the `storagecluster` resource’s `multiClusterService` section, update the `ACM Managed Cluster Name` to allow ODF to use GlobalNet. For more information, see [Creating an OpenShift Data Foundation cluster on managed clusters](https://docs.redhat.com/documentation/red_hat_openshift_data_foundation/4.17/html/configuring_openshift_data_foundation_disaster_recovery_for_openshift_workloads/rdr-solution#creating-odf-cluster-on-managed-clusters_rdr){: external}.
-    ```sh
-    kubectl patch storagecluster -n openshift-storage ocs-storagecluster --type merge -p'{"spec":{"network":{"multiClusterService":{"clusterID":"managed-cluster-1-dr-odf","enabled":true}}}}’
-    ```
-    {: pre}
+Prepare your hub cluster and install ACM.
+
+1. For both the primary and seconday managed clusters, create the [required secrets for ACM](/docs/openshift?topic=openshift-acm&interface=ui#prep-secret). This step is required to manage your ODF clusters with the hub cluster. Note that these instructions also include creating secrets on the hub cluster. 
+
+2. Follow the steps to [install the ACM add-on onto the hub cluster](/docs/openshift?topic=openshift-acm&interface=cli). You do not need to repeat the instruction to prepare secrets on the cluster if you completed the previous step. 
+
+### Step 3. Import the clusters to be managed by the hub cluster
+{: #import}
+
+Follow the steps to [import the primary and secondary managed clusters](/docs/openshift?topic=openshift-acm#import) so that they can be managed by the hub cluster. 
+
+
+### Step 4. Configure the Submariner add-on
+{: #submariner}
+
+Follow the steps to install and configure the Submariner add-on, which establishes connectivity across your two managed clusters. These steps use the ACM console. For more detailed information, see [Deploying Subarminer by using the console](https://docs.redhat.com/en/documentation/red_hat_advanced_cluster_management_for_kubernetes/2.11/html/networking/networking#deploying-submariner-console){: external} in the Red Hat Documentation. 
+
+1. Navigate to the ACM console. Then click **Fleet Management** > **Infrastructure** > **Clusters** > **Clusterset**. 
+1. Click **Create a cluster set**. Follow the prompts to add your two managed clusters to the cluster set. 
+1. Click the option to install the Submariner add-on to the cluster set.
+1. Select the managed clusters as target clusters for add-on installation. 
+1. When reviewing the configuration for both clusters, change the following settings as shown and leave the rest as default. Then click **Install**.
+  ```sh
+    globalnetEnabled: true (checked)
+    gateways: 2
+    NATTEnable: false (unchecked)
+    cableDriver: vxlan.
+  ```
+  {: code}
+    
+1. Wait for the Submariner add-on status to show healthy (green). This can take up to 20 minutes. 
+
+
+### Step 5. Install and configure OpenShift Data Foundation
+{: #odf_install}
+
+Install and configure ODF on your 2 managed clusters. Make sure to complete these steps on both the primary and secondary managed cluster. 
+
+1. Follow the steps to [install the OpenShift Data Foundation add-on](/docs/openshift?topic=openshift-deploy-odf-vpc&interface=cli#install-odf-cli-vpc) onto your 2 managed clusters. Specify the default ODF version or later. Make sure you include the option to enable NooBaa as an add-on option during the installation. 
+
+1. Verify that the ODF foundation installed successfully. In the output, check that the status says `Ready`.
+  ```sh
+  oc get storagecluster -n openshift-storage ocs-storagecluster -o jsonpath='{.status.phase}{"\n"}'
+  ```
+  {: screen}
+
+1. Run the command to update the `ACM Managed Cluster Name` in the `storageCluster` resource’s `multiClusterService` section. This allows ODF to use GlobalNet. For more information, see [Creating an OpenShift Data Foundation cluster on managed clusters](https://docs.redhat.com/documentation/red_hat_openshift_data_foundation/4.17/html/configuring_openshift_data_foundation_disaster_recovery_for_openshift_workloads/rdr-solution#creating-odf-cluster-on-managed-clusters_rdr){: external}.
+
+Make sure to replace `<managed_cluster_name>` in the command with the name of your managed cluster.
+{: important}
+
+  ```sh
+  kubectl patch storagecluster -n openshift-storage ocs-storagecluster --type merge -p'{"spec":{"network":{"multiClusterService":{"clusterID":"<managed_cluster_name>","enabled":true}}}}’
+  ```
+  {: pre}
 
 1. Verify the service exports. This might take a few minutes to show in the output.
     ```sh
@@ -147,32 +180,123 @@ Follow these steps to install ACM on the hub cluster and then set up the disaste
     ```
     {: screen} 
 
-1. If you enabled GlobalNet when you installed Submariner, connect the StorageCluster with the `ocs-provider-server` ServiceExport.
-
-    1. Copy the following yaml to create a ServiceExport called `ocs-provider-server`. Create the resource on both the primary managed cluster and the secondary managed cluster.
+1. Create a service export for `ocs-provider-server` by using the following YAML.
     
-        ```yaml
-        apiVersion: multicluster.x-k8s.io/v1alpha1
-        kind: ServiceExport
-        metadata:
-          name: ocs-provider-server
-          namespace: openshift-storage
-        ```
-        {: screen}
+  ```yaml
+  apiVersion: multicluster.x-k8s.io/v1alpha1
+  kind: ServiceExport
+  metadata:
+    name: ocs-provider-server
+    namespace: openshift-storage
+  ```
+  {: screen}
 
-    1. Run the command to add an annotation to the StorageCluster. Complete this step on both the primary managed cluster and the secondary managed cluster.
+1. Run the command to update the `storageCluster` resource to use the `ocs-provider-server` service export you created.
   
-    ```sh
-    oc annotate storagecluster ocs-storagecluster -n openshift-storage ocs.openshift.io/api-server-exported-address=<managedcluser_name>.ocs-provider-server.openshift-storage.svc.clusterset.local:500511. 
-    ```
-    {: pre}
+  ```sh
+  oc annotate storagecluster ocs-storagecluster -n openshift-storage ocs.openshift.io/api-server-exported-address=<managed_cluster_name>.ocs-provider-server.openshift-storage.svc.clusterset.local:500511. 
+  ```
+  {: pre}
+
+1. Verify that the `storageCluster` resource is ready. 
+
+  ```sh
+  oc get storagecluster -n openshift-storage
+  ```
+  {: pre} 
+
+  Example output. 
+
+  ```sh
+  NAME                    PHASE   
+  ocs-storagecluster      Ready    
+  ```
+  {: screen}
 
 
-1. Install ODF Multicluster Orchestrator to the ACM hub cluster. For more information, see [Installing ODF Multicluster Orchestrator on Hub cluster](https://docs.redhat.com/en/documentation/red_hat_openshift_data_foundation/4.16/html-single/configuring_openshift_data_foundation_disaster_recovery_for_openshift_workloads/index#installing-odf-multicluster-orchestrator_rdr){: external}.
+### Step 6. Configure the Regional Diaster Recovery policy
+{: #rdr-configure}
+
+Configure the ODF RDR policy. 
+
+1. Follow the steps to [install the ODF Multicluster Orchestrator](https://docs.redhat.com/en/documentation/red_hat_openshift_data_foundation/4.16/html-single/configuring_openshift_data_foundation_disaster_recovery_for_openshift_workloads/index#installing-odf-multicluster-orchestrator_mdr){: external} onto the **ACM hub cluster**. To ensure compatibility, make sure you install the **same version number** as the ODF version you installed onto the managed clusters in the previous section. 
+1. Verify the installation by checking that the operator pods are running. 
+
+  ```sh
+  oc get pods -n openshift-operators
+  ```
+  {: pre}
+
+  Example output.
+
+  ```sh
+  NAME                                        READY   STATUS       RESTARTS    AGE
+  odf-multicluster-console-6845b795b9-blxrn   1/1     Running      0           4d20h
+  odfmo-controller-manager-f9d9dfb59-jbrsd    1/1     Running      0           4d20h
+  ramen-hub-operator-6fb887f885-fss4w         2/2     Running      0           4d20h
+  ```
+  {: pre}
+
+1. On the **ACM hub cluster**, create a DR policy with a 5 minute sync interval and specify each managed cluster in the parameters. This creates NooBaa object buckets on both managed clusters and enables ODF Ceph block pool mirroring for volume replication. 
+  1. Navigate to the ACM console, then click **Fleet management** > **Data services** > **Disaster Recovery** > **Policies** > **Create DR Policy**.
+  2. Create a DR policy that includes the following parameters.
+      - Connected clusters: <primary_managed_cluster_name>, <secondary_managed_cluster_name>
+      - Replication policy: Asynchronous
+      - Replication interval: 5m
+
+1. On the hub cluster, run the commands to verify that the DR policy was created and applied to the managed clusters. 
+
+  ```sh
+  oc get drpolicy <drpolicy_name> -o jsonpath='{.status.conditions[].reason}{"\n"}
+  ```
+  {: pre}
   
-1. Create a DR Policy for both managed ODF clusters with a sync interval of 5 minutes. For more information, see [Creating Disaster Recovery Policy on Hub cluster](https://docs.redhat.com/en/documentation/red_hat_openshift_data_foundation/4.16/html-single/configuring_openshift_data_foundation_disaster_recovery_for_openshift_workloads/index?extIdCarryOver=true&sc_cid=701f2000001OH7EAAW#creating-disaster-recovery-policy-on-hub-cluster_rdr){: external}. 
+  ```sh
+  oc get drclusters
+  ```
+  {: pre}
+
+  Example output. 
+
+  ```sh
+  NAME        AGE
+  managed-cluster1   4m42s
+  managed-cluster2   4m42s
+  
+1. On each managed cluster, verify that the DR policy was applied and is in a healthy state.
+
+  ```sh
+  oc get csv,pod -n openshift-dr-system
+  ```
+  {: pre}
+
+  Example output.
+
+  ```sh
+  NAME                                                                          DISPLAY                         VERSION        REPLACES   PHASE
+  clusterserviceversion.operators.coreos.com/odr-cluster-operator.v4.15.0       Openshift DR Cluster Operator   4.15.0                    Succeeded
+  clusterserviceversion.operators.coreos.com/volsync-product.v0.8.0             VolSync                         0.8.0                     Succeeded
+
+  NAME                                             READY   STATUS    RESTARTS   AGE
+  pod/ramen-dr-cluster-operator-6467cf5d4c-cc8kz   2/2     Running   0          3d12h
+  ```
+  {: screen}
+
+  ```sh
+  oc get cephblockpool ocs-storagecluster-cephblockpool -n openshift-storage -o jsonpath='{.status.mirroringStatus.summary}{"\n"}'
+  ```
+  {: pre}
+
+  Example output.
+
+  ```sh
+  {"daemon_health":"OK","health":"OK","image_health":"OK","states":{}}
+  ```
+  {: screen}
 
 1. **Optional**: Review the [operators](#operators) you can install to enhance ODF Regional Disaster Recovery features.
+
+1. **Optional**: [Test your disaster recovery configuration](#odf-rdr-test). 
 
 ## Optional operators for ODF Regional Disaster Recovery
 {: #operators}

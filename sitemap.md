@@ -3454,7 +3454,17 @@ subcollection: openshift
 
     * [Optional operators](/docs/openshift?topic=openshift-acm&interface=cli#optional-op)
 
-* [Adding, updating, or removing a managed cluster after ACM is deployed](/docs/openshift?topic=openshift-acm&interface=cli#after)
+* [Importing managed clusters after ACM is installed](/docs/openshift?topic=openshift-acm&interface=cli#import)
+
+    * [Importing a managed cluster using the CLI](/docs/openshift?topic=openshift-acm&interface=cli#import_cli)
+
+    * [Importing a managed cluster by using the OpenShift token and API server URL](/docs/openshift?topic=openshift-acm&interface=cli#import-token-url)
+
+    * [Importing a managed cluster by using the kubeconfig](/docs/openshift?topic=openshift-acm&interface=cli#import-kubeconfig)
+
+    * [Importing a managed cluster by using a generated command](/docs/openshift?topic=openshift-acm&interface=cli#import-generate)
+
+* [Updating or removing a managed cluster](/docs/openshift?topic=openshift-acm&interface=cli#after)
 
 * [Upgrading the ACM version](/docs/openshift?topic=openshift-acm&interface=cli#upgrade)
 
@@ -4075,15 +4085,23 @@ subcollection: openshift
 
 [OpenShift Data Foundation Regional Disaster Recovery on {{site.data.keyword.openshiftlong_notm}} clusters](/docs/openshift?topic=openshift-openshift_odf_rdr_roks#openshift_odf_rdr_roks)
 
-* [Creating the clusters](/docs/openshift?topic=openshift-openshift_odf_rdr_roks#odf-rdr-clusters)
+* [Applications and workloads supported for Regional Disaster Recovery](/docs/openshift?topic=openshift-openshift_odf_rdr_roks#app_support)
 
-* [Enabling the Red Hat OperatorHub catalog](/docs/openshift?topic=openshift-openshift_odf_rdr_roks#odf-rdr-enable-redhat)
+* [Step 1. Creating the clusters](/docs/openshift?topic=openshift-openshift_odf_rdr_roks&interface=cli#clusters-cli)
 
-* [Using ACM to set up Regional Diaster Recovery](/docs/openshift?topic=openshift-openshift_odf_rdr_roks#odf-rdr-install-acm)
+    * [Step 2. Install ACM on the hub cluster](/docs/openshift?topic=openshift-openshift_odf_rdr_roks&interface=cli#hub-acm-install)
 
-* [Optional operators for ODF Regional Disaster Recovery](/docs/openshift?topic=openshift-openshift_odf_rdr_roks#operators)
+    * [Step 3. Import the clusters to be managed by the hub cluster](/docs/openshift?topic=openshift-openshift_odf_rdr_roks&interface=cli#import)
 
-* [Testing your disaster recovery configuration](/docs/openshift?topic=openshift-openshift_odf_rdr_roks#odf-rdr-test)
+    * [Step 4. Configure the Submariner add-on](/docs/openshift?topic=openshift-openshift_odf_rdr_roks&interface=cli#submariner)
+
+    * [Step 5. Install and configure OpenShift Data Foundation](/docs/openshift?topic=openshift-openshift_odf_rdr_roks&interface=cli#odf_install)
+
+    * [Step 6. Configure the Regional Diaster Recovery policy](/docs/openshift?topic=openshift-openshift_odf_rdr_roks&interface=cli#rdr-configure)
+
+* [Optional operators for ODF Regional Disaster Recovery](/docs/openshift?topic=openshift-openshift_odf_rdr_roks&interface=cli#operators)
+
+* [Testing your disaster recovery configuration](/docs/openshift?topic=openshift-openshift_odf_rdr_roks&interface=cli#odf-rdr-test)
 
 [Removing OpenShift Data Foundation](/docs/openshift?topic=openshift-ocs-manage-deployment#ocs-manage-deployment)
 
