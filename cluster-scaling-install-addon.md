@@ -1,8 +1,8 @@
 ---
 
 copyright: 
-  years: 2014, 2025
-lastupdated: "2025-07-30"
+  years: 2014, 2026
+lastupdated: "2026-02-26"
 
 
 keywords: openshift, node scaling, ca, autoscaler
@@ -85,7 +85,7 @@ Release updates
 
 To update the cluster autoscaler add-on:
 
-1. Check the version of the cluster autoscaler add-on that is deployed in your cluster. If an update is available, review the [release notes](/docs/openshift?topic=openshift-ca_changelog) for the latest add-on version.
+1. Check the version of the cluster autoscaler add-on that is deployed in your cluster. If an update is available, review the [release notes](/docs/openshift?topic=openshift-cl-add-ons-cluster-autoscaler) for the latest add-on version.
     ```sh
     ibmcloud oc cluster addon ls --cluster <cluster_name>
     ```
