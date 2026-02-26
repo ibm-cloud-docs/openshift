@@ -20,6 +20,21 @@ subcollection: "openshift"
 # VPC Block CSI Driver add-on version change log
 {: #cl-add-ons-vpc-block-csi-driver}
 
+
+Patch updates
+:   Patch updates are delivered automatically by IBM and don't contain any feature updates or changes in the supported add-on and cluster versions.
+
+Release updates
+:   Release updates contain new features or changes in the supported add-on or cluster versions. You must manually apply release updates to your cluster autoscaler add-on.
+
+To view a list of add-ons and the supported cluster versions, run the following command or see the [Supported cluster add-ons table](/docs/openshift?topic=openshift-supported-cluster-addon-versions).
+
+```sh
+ibmcloud oc cluster addon versions
+```
+{: pre}
+
+
 Review the version history for VPC Block CSI Driver.
 {: shortdesc}
 

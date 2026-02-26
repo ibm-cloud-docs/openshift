@@ -97,7 +97,7 @@ For each cluster, make sure to allow outbound traffic by including the `--disabl
     {: pre}
 
 
-### Step 2. Install ACM on the hub cluster
+## Step 2. Install ACM on the hub cluster
 {: #hub-acm-install} 
 
 Prepare your hub cluster and install ACM.
@@ -106,13 +106,13 @@ Prepare your hub cluster and install ACM.
 
 2. Follow the steps to [install the ACM add-on onto the hub cluster](/docs/openshift?topic=openshift-acm&interface=cli). You do not need to repeat the instruction to prepare secrets on the cluster if you completed the previous step. 
 
-### Step 3. Import the clusters to be managed by the hub cluster
+## Step 3. Import the clusters to be managed by the hub cluster
 {: #import}
 
 Follow the steps to [import the primary and secondary managed clusters](/docs/openshift?topic=openshift-acm#import) so that they can be managed by the hub cluster. 
 
 
-### Step 4. Configure the Submariner add-on
+## Step 4. Configure the Submariner add-on
 {: #submariner}
 
 Follow the steps to install and configure the Submariner add-on, which establishes connectivity across your two managed clusters. These steps use the ACM console. For more detailed information, see [Deploying Subarminer by using the console](https://docs.redhat.com/en/documentation/red_hat_advanced_cluster_management_for_kubernetes/2.11/html/networking/networking#deploying-submariner-console){: external} in the Red Hat Documentation. 
@@ -122,18 +122,18 @@ Follow the steps to install and configure the Submariner add-on, which establish
 1. Click the option to install the Submariner add-on to the cluster set.
 1. Select the managed clusters as target clusters for add-on installation. 
 1. When reviewing the configuration for both clusters, change the following settings as shown and leave the rest as default. Then click **Install**.
-  ```sh
+    ```sh
     globalnetEnabled: true (checked)
     gateways: 2
     NATTEnable: false (unchecked)
     cableDriver: vxlan.
-  ```
-  {: code}
+    ```
+    {: code}
     
 1. Wait for the Submariner add-on status to show healthy (green). This can take up to 20 minutes. 
 
 
-### Step 5. Install and configure OpenShift Data Foundation
+## Step 5. Install and configure OpenShift Data Foundation
 {: #odf_install}
 
 Install and configure ODF on your 2 managed clusters. Make sure to complete these steps on both the primary and secondary managed cluster. 
@@ -208,7 +208,7 @@ Install and configure ODF on your 2 managed clusters. Make sure to complete thes
     {: screen}
 
 
-### Step 6. Configure the Regional Diaster Recovery policy
+## Step 6. Configure the Regional Diaster Recovery policy
 {: #rdr-configure}
 
 Configure the ODF RDR policy. 

@@ -3,7 +3,7 @@
 copyright:
   years: 2024, 2026
 
-lastupdated: "2026-01-27"
+lastupdated: "2026-02-26"
 
 
 keywords: change log, version history, IBM Object CSI Driver
@@ -19,6 +19,21 @@ subcollection: "openshift"
 
 # IBM Object CSI Driver add-on version change log
 {: #cl-add-ons-ibm-object-csi-driver}
+
+
+Patch updates
+:   Patch updates are delivered automatically by IBM and don't contain any feature updates or changes in the supported add-on and cluster versions.
+
+Release updates
+:   Release updates contain new features or changes in the supported add-on or cluster versions. You must manually apply release updates to your cluster autoscaler add-on.
+
+To view a list of add-ons and the supported cluster versions, run the following command or see the [Supported cluster add-ons table](/docs/openshift?topic=openshift-supported-cluster-addon-versions).
+
+```sh
+ibmcloud oc cluster addon versions
+```
+{: pre}
+
 
 Review the version history for IBM Object CSI Driver.
 {: shortdesc}

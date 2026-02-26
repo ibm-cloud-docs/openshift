@@ -301,6 +301,10 @@ subcollection: openshift
 
         * {{site.data.keyword.openshiftlong_notm}} master fix packs.
 
+        * Cluster autoscaler cluster add-on patch updates.
+
+        * Cluster autoscaler cluster add-on patch updates.
+
     * [10 February 2026](/docs/openshift?topic=openshift-openshift-relnotes#openshift-feb1026)
 
         * IBM Cloud Image Key Synchronizer cluster add-on patch updates.
@@ -4097,15 +4101,15 @@ subcollection: openshift
 
 * [Step 1. Creating the clusters](/docs/openshift?topic=openshift-openshift_odf_rdr_roks&interface=cli#clusters-cli)
 
-    * [Step 2. Install ACM on the hub cluster](/docs/openshift?topic=openshift-openshift_odf_rdr_roks&interface=cli#hub-acm-install)
+* [Step 2. Install ACM on the hub cluster](/docs/openshift?topic=openshift-openshift_odf_rdr_roks&interface=cli#hub-acm-install)
 
-    * [Step 3. Import the clusters to be managed by the hub cluster](/docs/openshift?topic=openshift-openshift_odf_rdr_roks&interface=cli#import)
+* [Step 3. Import the clusters to be managed by the hub cluster](/docs/openshift?topic=openshift-openshift_odf_rdr_roks&interface=cli#import)
 
-    * [Step 4. Configure the Submariner add-on](/docs/openshift?topic=openshift-openshift_odf_rdr_roks&interface=cli#submariner)
+* [Step 4. Configure the Submariner add-on](/docs/openshift?topic=openshift-openshift_odf_rdr_roks&interface=cli#submariner)
 
-    * [Step 5. Install and configure OpenShift Data Foundation](/docs/openshift?topic=openshift-openshift_odf_rdr_roks&interface=cli#odf_install)
+* [Step 5. Install and configure OpenShift Data Foundation](/docs/openshift?topic=openshift-openshift_odf_rdr_roks&interface=cli#odf_install)
 
-    * [Step 6. Configure the Regional Diaster Recovery policy](/docs/openshift?topic=openshift-openshift_odf_rdr_roks&interface=cli#rdr-configure)
+* [Step 6. Configure the Regional Diaster Recovery policy](/docs/openshift?topic=openshift-openshift_odf_rdr_roks&interface=cli#rdr-configure)
 
 * [Optional operators for ODF Regional Disaster Recovery](/docs/openshift?topic=openshift-openshift_odf_rdr_roks&interface=cli#operators)
 
@@ -6139,243 +6143,251 @@ subcollection: openshift
 
     * [416.0.0_424, released 21 January 2025](/docs/openshift?topic=openshift-cl-add-ons-openshift-ai#cl-add-ons-openshift-ai-41600_424)
 
-[Cluster autoscaler add-on change log](/docs/openshift?topic=openshift-ca_changelog#ca_changelog)
+[Cluster autoscaler add-on version change log](/docs/openshift?topic=openshift-cl-add-ons-cluster-autoscaler#cl-add-ons-cluster-autoscaler)
 
-* [Version 2.0.0](/docs/openshift?topic=openshift-ca_changelog#0124_ca_addon)
+* [Version 2.0.0](/docs/openshift?topic=openshift-cl-add-ons-cluster-autoscaler#cl-add-ons-cluster-autoscaler-2.0.0)
 
-    * [Change log for patch update 2.0.0-2_302959219, released 2 December 2025](/docs/openshift?topic=openshift-ca_changelog#2.0.0-2_302959219_ca)
+    * [v200-4_316755565, released 18 February 2026](/docs/openshift?topic=openshift-cl-add-ons-cluster-autoscaler#cl-add-ons-cluster-autoscaler-v200-4_316755565)
 
-* [Version 1.2.4](/docs/openshift?topic=openshift-ca_changelog#0124_ca_addon)
+* [Version 1.2.4](/docs/openshift?topic=openshift-cl-add-ons-cluster-autoscaler#cl-add-ons-cluster-autoscaler-1.2.4)
 
-    * [Change log for patch update 1.2.4_793, released 18th September 2025](/docs/openshift?topic=openshift-ca_changelog#124_793_ca)
+    * [v124-7_312863411, released 16 February 2026](/docs/openshift?topic=openshift-cl-add-ons-cluster-autoscaler#cl-add-ons-cluster-autoscaler-v124-7_312863411)
 
-    * [Change log for patch update 1.2.4_680, released 18 July 2025.](/docs/openshift?topic=openshift-ca_changelog#124_680_ca)
+* [Version 2.0.0 (2025 and earlier)](/docs/openshift?topic=openshift-cl-add-ons-cluster-autoscaler#0124_ca_addon)
 
-    * [Change log for patch update 1.2.4_629, released 22 April 2025.](/docs/openshift?topic=openshift-ca_changelog#124_629_ca)
+    * [Change log for patch update 2.0.0-2_302959219, released 2 December 2025](/docs/openshift?topic=openshift-cl-add-ons-cluster-autoscaler#2.0.0-2_302959219_ca)
 
-* [Version 1.2.3](/docs/openshift?topic=openshift-ca_changelog#0123_ca_addon)
+* [Version 1.2.4 (2025 and earlier)](/docs/openshift?topic=openshift-cl-add-ons-cluster-autoscaler#0124_ca_addon)
 
-    * [Change log for patch update 1.2.3_716, released 25 July 2025.](/docs/openshift?topic=openshift-ca_changelog#123_716_ca)
+    * [Change log for patch update 1.2.4_793, released 18th September 2025](/docs/openshift?topic=openshift-cl-add-ons-cluster-autoscaler#124_793_ca)
 
-    * [Change log for patch update 1.2.3_540, released 10 March 2025](/docs/openshift?topic=openshift-ca_changelog#123_540_ca)
+    * [Change log for patch update 1.2.4_680, released 18 July 2025.](/docs/openshift?topic=openshift-cl-add-ons-cluster-autoscaler#124_680_ca)
 
-    * [Change log for patch update 1.2.3_512, released 31 October 2024](/docs/openshift?topic=openshift-ca_changelog#123_512_ca)
+    * [Change log for patch update 1.2.4_629, released 22 April 2025.](/docs/openshift?topic=openshift-cl-add-ons-cluster-autoscaler#124_629_ca)
 
-* [Version 1.2.2](/docs/openshift?topic=openshift-ca_changelog#0122_ca_addon)
+* [Version 1.2.3](/docs/openshift?topic=openshift-cl-add-ons-cluster-autoscaler#0123_ca_addon)
 
-    * [Change log for patch update 1.2.2_466, released 15 July 2024](/docs/openshift?topic=openshift-ca_changelog#122_466_ca)
+    * [Change log for patch update 1.2.3_716, released 25 July 2025.](/docs/openshift?topic=openshift-cl-add-ons-cluster-autoscaler#123_716_ca)
 
-    * [Change log for patch update 1.2.2_452, released 20 June 2024](/docs/openshift?topic=openshift-ca_changelog#122452_ca)
+    * [Change log for patch update 1.2.3_540, released 10 March 2025](/docs/openshift?topic=openshift-cl-add-ons-cluster-autoscaler#123_540_ca)
 
-* [Version 1.2.1](/docs/openshift?topic=openshift-ca_changelog#0121_ca_addon)
+    * [Change log for patch update 1.2.3_512, released 31 October 2024](/docs/openshift?topic=openshift-cl-add-ons-cluster-autoscaler#123_512_ca)
 
-    * [Change log for patch update 1.2.1_467, released 15 July 2024](/docs/openshift?topic=openshift-ca_changelog#121_467_ca)
+* [Version 1.2.2](/docs/openshift?topic=openshift-cl-add-ons-cluster-autoscaler#0122_ca_addon)
 
-    * [Change log for patch update 1.2.1_444, released 21 June 2024](/docs/openshift?topic=openshift-ca_changelog#121444_ca)
+    * [Change log for patch update 1.2.2_466, released 15 July 2024](/docs/openshift?topic=openshift-cl-add-ons-cluster-autoscaler#122_466_ca)
 
-    * [Change log for patch update 1.2.1_425, released 05 May 2024](/docs/openshift?topic=openshift-ca_changelog#121425_ca)
+    * [Change log for patch update 1.2.2_452, released 20 June 2024](/docs/openshift?topic=openshift-cl-add-ons-cluster-autoscaler#122452_ca)
 
-    * [Change log for patch update 1.2.1_418, released 02 April 2024](/docs/openshift?topic=openshift-ca_changelog#121418_ca)
+* [Version 1.2.1](/docs/openshift?topic=openshift-cl-add-ons-cluster-autoscaler#0121_ca_addon)
 
-    * [Change log for patch update 1.2.1_395, released 28 February 2024](/docs/openshift?topic=openshift-ca_changelog#121395_ca)
+    * [Change log for patch update 1.2.1_467, released 15 July 2024](/docs/openshift?topic=openshift-cl-add-ons-cluster-autoscaler#121_467_ca)
 
-* [Version 1.2.0](/docs/openshift?topic=openshift-ca_changelog#0120_ca_addon)
+    * [Change log for patch update 1.2.1_444, released 21 June 2024](/docs/openshift?topic=openshift-cl-add-ons-cluster-autoscaler#121444_ca)
 
-    * [Change log for patch update 1.2.0_468, released 15 July 2024](/docs/openshift?topic=openshift-ca_changelog#120_468_ca)
+    * [Change log for patch update 1.2.1_425, released 05 May 2024](/docs/openshift?topic=openshift-cl-add-ons-cluster-autoscaler#121425_ca)
 
-    * [Change log for patch update 1.2.0_443, released 21 June 2024](/docs/openshift?topic=openshift-ca_changelog#120443_ca)
+    * [Change log for patch update 1.2.1_418, released 02 April 2024](/docs/openshift?topic=openshift-cl-add-ons-cluster-autoscaler#121418_ca)
 
-    * [Change log for patch update 1.2.0_426, released 05 May 2024](/docs/openshift?topic=openshift-ca_changelog#120426_ca)
+    * [Change log for patch update 1.2.1_395, released 28 February 2024](/docs/openshift?topic=openshift-cl-add-ons-cluster-autoscaler#121395_ca)
 
-    * [Change log for patch update 1.2.0_410, released 02 April 2024](/docs/openshift?topic=openshift-ca_changelog#120410_ca)
+* [Version 1.2.0](/docs/openshift?topic=openshift-cl-add-ons-cluster-autoscaler#0120_ca_addon)
 
-    * [Change log for patch update 1.2.0_365, released 21 February 2024](/docs/openshift?topic=openshift-ca_changelog#120365_ca)
+    * [Change log for patch update 1.2.0_468, released 15 July 2024](/docs/openshift?topic=openshift-cl-add-ons-cluster-autoscaler#120_468_ca)
 
-    * [Change log for patch update 1.2.0_322, released 16 January 2024](/docs/openshift?topic=openshift-ca_changelog#120322_ca)
+    * [Change log for patch update 1.2.0_443, released 21 June 2024](/docs/openshift?topic=openshift-cl-add-ons-cluster-autoscaler#120443_ca)
 
-    * [Change log for patch update 1.2.0_290, released 27 November 2023](/docs/openshift?topic=openshift-ca_changelog#120290_ca)
+    * [Change log for patch update 1.2.0_426, released 05 May 2024](/docs/openshift?topic=openshift-cl-add-ons-cluster-autoscaler#120426_ca)
 
-    * [Change log for patch update 1.2.0_228, released 15 November 2023](/docs/openshift?topic=openshift-ca_changelog#120228_ca)
+    * [Change log for patch update 1.2.0_410, released 02 April 2024](/docs/openshift?topic=openshift-cl-add-ons-cluster-autoscaler#120410_ca)
 
-* [Version 1.1.0 (Beta)](/docs/openshift?topic=openshift-ca_changelog#0110_ca_addon)
+    * [Change log for patch update 1.2.0_365, released 21 February 2024](/docs/openshift?topic=openshift-cl-add-ons-cluster-autoscaler#120365_ca)
 
-    * [Change log for patch update 1.1.0_362, released 16 February 2024](/docs/openshift?topic=openshift-ca_changelog#110362_ca)
+    * [Change log for patch update 1.2.0_322, released 16 January 2024](/docs/openshift?topic=openshift-cl-add-ons-cluster-autoscaler#120322_ca)
 
-    * [Change log for patch update 1.1.0_1066, released 15 May 2023](/docs/openshift?topic=openshift-ca_changelog#111066_ca)
+    * [Change log for patch update 1.2.0_290, released 27 November 2023](/docs/openshift?topic=openshift-cl-add-ons-cluster-autoscaler#120290_ca)
 
-    * [Change log for patch update 1.1.0_1060, released 26 April 2023](/docs/openshift?topic=openshift-ca_changelog#111060_ca)
+    * [Change log for patch update 1.2.0_228, released 15 November 2023](/docs/openshift?topic=openshift-cl-add-ons-cluster-autoscaler#120228_ca)
 
-    * [Change log for patch update 1.1.0_978, released 16 March 2023](/docs/openshift?topic=openshift-ca_changelog#110978_ca)
+* [Version 1.1.0 (Beta)](/docs/openshift?topic=openshift-cl-add-ons-cluster-autoscaler#0110_ca_addon)
 
-    * [Change log for patch update 1.1.0_897, released 9 January 2023](/docs/openshift?topic=openshift-ca_changelog#110897_ca)
+    * [Change log for patch update 1.1.0_362, released 16 February 2024](/docs/openshift?topic=openshift-cl-add-ons-cluster-autoscaler#110362_ca)
 
-    * [Change log for patch update 1.1.0_798, released 22 September 2022](/docs/openshift?topic=openshift-ca_changelog#110798_ca)
+    * [Change log for patch update 1.1.0_1066, released 15 May 2023](/docs/openshift?topic=openshift-cl-add-ons-cluster-autoscaler#111066_ca)
 
-    * [Change log for patch update 1.1.0_776, released 31 August 2022](/docs/openshift?topic=openshift-ca_changelog#110776_ca)
+    * [Change log for patch update 1.1.0_1060, released 26 April 2023](/docs/openshift?topic=openshift-cl-add-ons-cluster-autoscaler#111060_ca)
 
-    * [Change log for patch update 1.1.0_729, released 21 July 2022](/docs/openshift?topic=openshift-ca_changelog#110729_ca)
+    * [Change log for patch update 1.1.0_978, released 16 March 2023](/docs/openshift?topic=openshift-cl-add-ons-cluster-autoscaler#110978_ca)
 
-    * [Change log for patch update 1.1.0_682, released 30 June 2022](/docs/openshift?topic=openshift-ca_changelog#110682_ca)
+    * [Change log for patch update 1.1.0_897, released 9 January 2023](/docs/openshift?topic=openshift-cl-add-ons-cluster-autoscaler#110897_ca)
 
-    * [Change log for patch update 1.1.0_615, released 16 May 2022](/docs/openshift?topic=openshift-ca_changelog#110615_ca)
+    * [Change log for patch update 1.1.0_798, released 22 September 2022](/docs/openshift?topic=openshift-cl-add-ons-cluster-autoscaler#110798_ca)
 
-    * [Change log for patch update 1.1.0_475, released 30 March 2022](/docs/openshift?topic=openshift-ca_changelog#110475_ca)
+    * [Change log for patch update 1.1.0_776, released 31 August 2022](/docs/openshift?topic=openshift-cl-add-ons-cluster-autoscaler#110776_ca)
 
-    * [Change log for patch update 1.1.0_429, released 16 March 2022](/docs/openshift?topic=openshift-ca_changelog#110429_ca)
+    * [Change log for patch update 1.1.0_729, released 21 July 2022](/docs/openshift?topic=openshift-cl-add-ons-cluster-autoscaler#110729_ca)
 
-* [Version 1.0.9](/docs/openshift?topic=openshift-ca_changelog#0109_ca_addon)
+    * [Change log for patch update 1.1.0_682, released 30 June 2022](/docs/openshift?topic=openshift-cl-add-ons-cluster-autoscaler#110682_ca)
 
-    * [Change log for patch update 1.0.9_411, released 02 April 2024](/docs/openshift?topic=openshift-ca_changelog#109411_ca)
+    * [Change log for patch update 1.1.0_615, released 16 May 2022](/docs/openshift?topic=openshift-cl-add-ons-cluster-autoscaler#110615_ca)
 
-    * [Change log for patch update 1.0.9_377, released 21 February 2024](/docs/openshift?topic=openshift-ca_changelog#109377_ca)
+    * [Change log for patch update 1.1.0_475, released 30 March 2022](/docs/openshift?topic=openshift-cl-add-ons-cluster-autoscaler#110475_ca)
 
-    * [Change log for patch update 1.0.9_328, released 16 January 2024](/docs/openshift?topic=openshift-ca_changelog#109328_ca)
+    * [Change log for patch update 1.1.0_429, released 16 March 2022](/docs/openshift?topic=openshift-cl-add-ons-cluster-autoscaler#110429_ca)
 
-    * [Change log for patch update 1.0.9_290, released 27 November 2023](/docs/openshift?topic=openshift-ca_changelog#109290_ca)
+* [Version 1.0.9](/docs/openshift?topic=openshift-cl-add-ons-cluster-autoscaler#0109_ca_addon)
 
-    * [Change log for patch update 1.0.9_195, released 13 November 2023](/docs/openshift?topic=openshift-ca_changelog#109195_ca)
+    * [Change log for patch update 1.0.9_411, released 02 April 2024](/docs/openshift?topic=openshift-cl-add-ons-cluster-autoscaler#109411_ca)
 
-    * [Change log for patch update 1.0.9_134, released 04 October 2023](/docs/openshift?topic=openshift-ca_changelog#109134_ca)
+    * [Change log for patch update 1.0.9_377, released 21 February 2024](/docs/openshift?topic=openshift-cl-add-ons-cluster-autoscaler#109377_ca)
 
-    * [Change log for patch update 1.0.9_103, released 15 September 2023](/docs/openshift?topic=openshift-ca_changelog#109103_ca)
+    * [Change log for patch update 1.0.9_328, released 16 January 2024](/docs/openshift?topic=openshift-cl-add-ons-cluster-autoscaler#109328_ca)
 
-    * [Change log for patch update 1.0.9_81, released 07 August 2023](/docs/openshift?topic=openshift-ca_changelog#10981_ca)
+    * [Change log for patch update 1.0.9_290, released 27 November 2023](/docs/openshift?topic=openshift-cl-add-ons-cluster-autoscaler#109290_ca)
 
-    * [Change log for patch update 1.0.9_70, released 24 July 2023](/docs/openshift?topic=openshift-ca_changelog#10970_ca)
+    * [Change log for patch update 1.0.9_195, released 13 November 2023](/docs/openshift?topic=openshift-cl-add-ons-cluster-autoscaler#109195_ca)
 
-    * [Change log for patch update 1.0.9_44, released 22 June 2023](/docs/openshift?topic=openshift-ca_changelog#10944_ca)
+    * [Change log for patch update 1.0.9_134, released 04 October 2023](/docs/openshift?topic=openshift-cl-add-ons-cluster-autoscaler#109134_ca)
 
-* [Version 1.0.8](/docs/openshift?topic=openshift-ca_changelog#0108_ca_addon)
+    * [Change log for patch update 1.0.9_103, released 15 September 2023](/docs/openshift?topic=openshift-cl-add-ons-cluster-autoscaler#109103_ca)
 
-    * [Change log for patch update 1.0.8_346, released 01 February  2024](/docs/openshift?topic=openshift-ca_changelog#108346_ca)
+    * [Change log for patch update 1.0.9_81, released 07 August 2023](/docs/openshift?topic=openshift-cl-add-ons-cluster-autoscaler#10981_ca)
 
-    * [Change log for patch update 1.0.8_292, released 27 November 2023](/docs/openshift?topic=openshift-ca_changelog#108292_ca)
+    * [Change log for patch update 1.0.9_70, released 24 July 2023](/docs/openshift?topic=openshift-cl-add-ons-cluster-autoscaler#10970_ca)
 
-    * [Change log for patch update 1.0.8_233, released 13 November 2023](/docs/openshift?topic=openshift-ca_changelog#108233_ca)
+    * [Change log for patch update 1.0.9_44, released 22 June 2023](/docs/openshift?topic=openshift-cl-add-ons-cluster-autoscaler#10944_ca)
 
-    * [Change log for patch update 1.0.8_104, released 15 September 2023](/docs/openshift?topic=openshift-ca_changelog#108104_ca)
+* [Version 1.0.8](/docs/openshift?topic=openshift-cl-add-ons-cluster-autoscaler#0108_ca_addon)
 
-    * [Change log for patch update 1.0.8_82, released 7 August 2023](/docs/openshift?topic=openshift-ca_changelog#10882_ca)
+    * [Change log for patch update 1.0.8_346, released 01 February  2024](/docs/openshift?topic=openshift-cl-add-ons-cluster-autoscaler#108346_ca)
 
-    * [Change log for patch update 1.0.8_56, released 6 July 2023](/docs/openshift?topic=openshift-ca_changelog#10856_ca)
+    * [Change log for patch update 1.0.8_292, released 27 November 2023](/docs/openshift?topic=openshift-cl-add-ons-cluster-autoscaler#108292_ca)
 
-    * [Change log for patch update 1.0.8_1078, released 15 May 2023](/docs/openshift?topic=openshift-ca_changelog#1081078_ca)
+    * [Change log for patch update 1.0.8_233, released 13 November 2023](/docs/openshift?topic=openshift-cl-add-ons-cluster-autoscaler#108233_ca)
 
-    * [Change log for patch update 1.0.8_1016, released 5 April 2023](/docs/openshift?topic=openshift-ca_changelog#1081016_ca)
+    * [Change log for patch update 1.0.8_104, released 15 September 2023](/docs/openshift?topic=openshift-cl-add-ons-cluster-autoscaler#108104_ca)
 
-    * [Change log for patch update 1.0.8_987, released 29 March 2023](/docs/openshift?topic=openshift-ca_changelog#108987_ca)
+    * [Change log for patch update 1.0.8_82, released 7 August 2023](/docs/openshift?topic=openshift-cl-add-ons-cluster-autoscaler#10882_ca)
 
-    * [Change log for patch update 1.0.8_968, released 9 March 2023](/docs/openshift?topic=openshift-ca_changelog#108968_ca)
+    * [Change log for patch update 1.0.8_56, released 6 July 2023](/docs/openshift?topic=openshift-cl-add-ons-cluster-autoscaler#10856_ca)
 
-* [Version 1.0.7](/docs/openshift?topic=openshift-ca_changelog#0107_ca_addon)
+    * [Change log for patch update 1.0.8_1078, released 15 May 2023](/docs/openshift?topic=openshift-cl-add-ons-cluster-autoscaler#1081078_ca)
 
-    * [Change log for patch update 1.0.7_291, released 27 November 2023](/docs/openshift?topic=openshift-ca_changelog#107291_ca)
+    * [Change log for patch update 1.0.8_1016, released 5 April 2023](/docs/openshift?topic=openshift-cl-add-ons-cluster-autoscaler#1081016_ca)
 
-    * [Change log for patch update 1.0.7_185, released 13 November 2023](/docs/openshift?topic=openshift-ca_changelog#107_185_ca)
+    * [Change log for patch update 1.0.8_987, released 29 March 2023](/docs/openshift?topic=openshift-cl-add-ons-cluster-autoscaler#108987_ca)
 
-    * [Change log for patch update 1.0.7_102, released 15 September 2023](/docs/openshift?topic=openshift-ca_changelog#107102_ca)
+    * [Change log for patch update 1.0.8_968, released 9 March 2023](/docs/openshift?topic=openshift-cl-add-ons-cluster-autoscaler#108968_ca)
 
-    * [Change log for patch update 1.0.7_83, released 7 August 2023](/docs/openshift?topic=openshift-ca_changelog#10783_ca)
+* [Version 1.0.7](/docs/openshift?topic=openshift-cl-add-ons-cluster-autoscaler#0107_ca_addon)
 
-    * [Change log for patch update 1.0.7_57, released 6 July 2023](/docs/openshift?topic=openshift-ca_changelog#10757_ca)
+    * [Change log for patch update 1.0.7_291, released 27 November 2023](/docs/openshift?topic=openshift-cl-add-ons-cluster-autoscaler#107291_ca)
 
-    * [Change log for patch update 1.0.7_1076, released 15 May 2023](/docs/openshift?topic=openshift-ca_changelog#1071076_ca)
+    * [Change log for patch update 1.0.7_185, released 13 November 2023](/docs/openshift?topic=openshift-cl-add-ons-cluster-autoscaler#107_185_ca)
 
-    * [Change log for patch update 1.0.7_1021, released 5 April 2023](/docs/openshift?topic=openshift-ca_changelog#1071021_ca)
+    * [Change log for patch update 1.0.7_102, released 15 September 2023](/docs/openshift?topic=openshift-cl-add-ons-cluster-autoscaler#107102_ca)
 
-    * [Change log for patch update 1.0.7_988, released 29 March 2023](/docs/openshift?topic=openshift-ca_changelog#107988_ca)
+    * [Change log for patch update 1.0.7_83, released 7 August 2023](/docs/openshift?topic=openshift-cl-add-ons-cluster-autoscaler#10783_ca)
 
-    * [Change log for patch update 1.0.7_956, released 7 March 2023](/docs/openshift?topic=openshift-ca_changelog#107956_ca)
+    * [Change log for patch update 1.0.7_57, released 6 July 2023](/docs/openshift?topic=openshift-cl-add-ons-cluster-autoscaler#10757_ca)
 
-    * [Change log for patch update 1.0.7_944, released 17 February 2023](/docs/openshift?topic=openshift-ca_changelog#107944_ca)
+    * [Change log for patch update 1.0.7_1076, released 15 May 2023](/docs/openshift?topic=openshift-cl-add-ons-cluster-autoscaler#1071076_ca)
 
-    * [Change log for patch update 1.0.7_940, released 24 January 2023:](/docs/openshift?topic=openshift-ca_changelog#107940_ca)
+    * [Change log for patch update 1.0.7_1021, released 5 April 2023](/docs/openshift?topic=openshift-cl-add-ons-cluster-autoscaler#1071021_ca)
 
-    * [Change log for patch update 1.0.7_900, released 9 January 2023](/docs/openshift?topic=openshift-ca_changelog#107900_ca)
+    * [Change log for patch update 1.0.7_988, released 29 March 2023](/docs/openshift?topic=openshift-cl-add-ons-cluster-autoscaler#107988_ca)
 
-    * [Change log for patch update 1.0.7_883, released 3 November 2022](/docs/openshift?topic=openshift-ca_changelog#107883_ca)
+    * [Change log for patch update 1.0.7_956, released 7 March 2023](/docs/openshift?topic=openshift-cl-add-ons-cluster-autoscaler#107956_ca)
 
-* [Version 1.0.6](/docs/openshift?topic=openshift-ca_changelog#0106_ca_addon)
+    * [Change log for patch update 1.0.7_944, released 17 February 2023](/docs/openshift?topic=openshift-cl-add-ons-cluster-autoscaler#107944_ca)
 
-    * [Change log for patch update 1.0.6_1077, released 15 May 2023](/docs/openshift?topic=openshift-ca_changelog#1061077_ca)
+    * [Change log for patch update 1.0.7_940, released 24 January 2023:](/docs/openshift?topic=openshift-cl-add-ons-cluster-autoscaler#107940_ca)
 
-    * [Change log for patch update 1.0.6_1010, released 5 April 2023](/docs/openshift?topic=openshift-ca_changelog#1061010_ca)
+    * [Change log for patch update 1.0.7_900, released 9 January 2023](/docs/openshift?topic=openshift-cl-add-ons-cluster-autoscaler#107900_ca)
 
-    * [Change log for patch update 1.0.6_955, released 7 March 2023](/docs/openshift?topic=openshift-ca_changelog#106955_ca)
+    * [Change log for patch update 1.0.7_883, released 3 November 2022](/docs/openshift?topic=openshift-cl-add-ons-cluster-autoscaler#107883_ca)
 
-    * [Change log for patch update 1.0.6_899, released 9 January 2023](/docs/openshift?topic=openshift-ca_changelog#106899_ca)
+* [Version 1.0.6](/docs/openshift?topic=openshift-cl-add-ons-cluster-autoscaler#0106_ca_addon)
 
-    * [Change log for patch update 1.0.6_828, released 10 October 2022](/docs/openshift?topic=openshift-ca_changelog#106828_ca)
+    * [Change log for patch update 1.0.6_1077, released 15 May 2023](/docs/openshift?topic=openshift-cl-add-ons-cluster-autoscaler#1061077_ca)
 
-    * [Change log for patch update 1.0.6_800, released 22 September 2022](/docs/openshift?topic=openshift-ca_changelog#106800_ca)
+    * [Change log for patch update 1.0.6_1010, released 5 April 2023](/docs/openshift?topic=openshift-cl-add-ons-cluster-autoscaler#1061010_ca)
 
-    * [Change log for patch update 1.0.6_774, released 31 August 2022](/docs/openshift?topic=openshift-ca_changelog#106774_ca)
+    * [Change log for patch update 1.0.6_955, released 7 March 2023](/docs/openshift?topic=openshift-cl-add-ons-cluster-autoscaler#106955_ca)
 
-    * [Change log for patch update 1.0.6_763, released 17 August 2022](/docs/openshift?topic=openshift-ca_changelog#106763_ca)
+    * [Change log for patch update 1.0.6_899, released 9 January 2023](/docs/openshift?topic=openshift-cl-add-ons-cluster-autoscaler#106899_ca)
 
-    * [Change log for patch update 1.0.6_742, released 15 July 2022](/docs/openshift?topic=openshift-ca_changelog#106742_ca)
+    * [Change log for patch update 1.0.6_828, released 10 October 2022](/docs/openshift?topic=openshift-cl-add-ons-cluster-autoscaler#106828_ca)
 
-* [Version 1.0.5](/docs/openshift?topic=openshift-ca_changelog#0105_ca_addon)
+    * [Change log for patch update 1.0.6_800, released 22 September 2022](/docs/openshift?topic=openshift-cl-add-ons-cluster-autoscaler#106800_ca)
 
-    * [Change log for patch update 1.0.5_898, released 9 January 2023](/docs/openshift?topic=openshift-ca_changelog#105898_ca)
+    * [Change log for patch update 1.0.6_774, released 31 August 2022](/docs/openshift?topic=openshift-cl-add-ons-cluster-autoscaler#106774_ca)
 
-    * [Change log for patch update 1.0.5_779, released 22 September 2022](/docs/openshift?topic=openshift-ca_changelog#105779_ca)
+    * [Change log for patch update 1.0.6_763, released 17 August 2022](/docs/openshift?topic=openshift-cl-add-ons-cluster-autoscaler#106763_ca)
 
-    * [Change log for patch update 1.0.5_775, released 31 August 2022](/docs/openshift?topic=openshift-ca_changelog#105775_ca)
+    * [Change log for patch update 1.0.6_742, released 15 July 2022](/docs/openshift?topic=openshift-cl-add-ons-cluster-autoscaler#106742_ca)
 
-    * [Change log for patch update 1.0.5_754, released 17 August 2022](/docs/openshift?topic=openshift-ca_changelog#105754_ca)
+* [Version 1.0.5](/docs/openshift?topic=openshift-cl-add-ons-cluster-autoscaler#0105_ca_addon)
 
-    * [Change log for patch update 1.0.5_728, released 19 July 2022](/docs/openshift?topic=openshift-ca_changelog#105728_ca)
+    * [Change log for patch update 1.0.5_898, released 9 January 2023](/docs/openshift?topic=openshift-cl-add-ons-cluster-autoscaler#105898_ca)
 
-    * [Change log for patch update 1.0.5_694, released 30 June 2022](/docs/openshift?topic=openshift-ca_changelog#105694_ca)
+    * [Change log for patch update 1.0.5_779, released 22 September 2022](/docs/openshift?topic=openshift-cl-add-ons-cluster-autoscaler#105779_ca)
 
-    * [Change log for patch update 1.0.5_628, released 16 May 2022](/docs/openshift?topic=openshift-ca_changelog#105628_ca)
+    * [Change log for patch update 1.0.5_775, released 31 August 2022](/docs/openshift?topic=openshift-cl-add-ons-cluster-autoscaler#105775_ca)
 
-    * [Change log for patch update 1.0.5_415, released 28 February 2022](/docs/openshift?topic=openshift-ca_changelog#104415_ca)
+    * [Change log for patch update 1.0.5_754, released 17 August 2022](/docs/openshift?topic=openshift-cl-add-ons-cluster-autoscaler#105754_ca)
 
-* [Version 1.0.4](/docs/openshift?topic=openshift-ca_changelog#0104_ca_addon)
+    * [Change log for patch update 1.0.5_728, released 19 July 2022](/docs/openshift?topic=openshift-cl-add-ons-cluster-autoscaler#105728_ca)
 
-    * [Change log for patch update 1.0.4_410, released 23 February 2022](/docs/openshift?topic=openshift-ca_changelog#104410_ca)
+    * [Change log for patch update 1.0.5_694, released 30 June 2022](/docs/openshift?topic=openshift-cl-add-ons-cluster-autoscaler#105694_ca)
 
-    * [Change log for patch update 1.0.4_403, released 20 January 2022](/docs/openshift?topic=openshift-ca_changelog#104403_ca)
+    * [Change log for patch update 1.0.5_628, released 16 May 2022](/docs/openshift?topic=openshift-cl-add-ons-cluster-autoscaler#105628_ca)
 
-    * [Change log for patch update 1.0.4_387, released 22 November 2021](/docs/openshift?topic=openshift-ca_changelog#104387_ca)
+    * [Change log for patch update 1.0.5_415, released 28 February 2022](/docs/openshift?topic=openshift-cl-add-ons-cluster-autoscaler#104415_ca)
 
-    * [Change log for patch update 1.0.4_374, released 7 October 2021](/docs/openshift?topic=openshift-ca_changelog#104374_ca)
+* [Version 1.0.4](/docs/openshift?topic=openshift-cl-add-ons-cluster-autoscaler#0104_ca_addon)
 
-* [Version 1.0.3](/docs/openshift?topic=openshift-ca_changelog#0103_ca_addon)
+    * [Change log for patch update 1.0.4_410, released 23 February 2022](/docs/openshift?topic=openshift-cl-add-ons-cluster-autoscaler#104410_ca)
 
-    * [Change log for patch update 1.0.3_360, released 26 August 2021](/docs/openshift?topic=openshift-ca_changelog#103360_ca)
+    * [Change log for patch update 1.0.4_403, released 20 January 2022](/docs/openshift?topic=openshift-cl-add-ons-cluster-autoscaler#104403_ca)
 
-    * [Change log for patch update 1.0.3_352, released 23 June 2021](/docs/openshift?topic=openshift-ca_changelog#103352_ca)
+    * [Change log for patch update 1.0.4_387, released 22 November 2021](/docs/openshift?topic=openshift-cl-add-ons-cluster-autoscaler#104387_ca)
 
-* [Version 1.0.2](/docs/openshift?topic=openshift-ca_changelog#0102_ca_addon)
+    * [Change log for patch update 1.0.4_374, released 7 October 2021](/docs/openshift?topic=openshift-cl-add-ons-cluster-autoscaler#104374_ca)
 
-    * [Change log for patch update 1.0.2_267, released 10 May 2021](/docs/openshift?topic=openshift-ca_changelog#102267_ca)
+* [Version 1.0.3](/docs/openshift?topic=openshift-cl-add-ons-cluster-autoscaler#0103_ca_addon)
 
-    * [Change log for patch update 1.0.2_256, released 19 April 2021](/docs/openshift?topic=openshift-ca_changelog#102256_ca)
+    * [Change log for patch update 1.0.3_360, released 26 August 2021](/docs/openshift?topic=openshift-cl-add-ons-cluster-autoscaler#103360_ca)
 
-    * [Change log for patch update 1.0.2_249, released 01 April 2021](/docs/openshift?topic=openshift-ca_changelog#102249_ca)
+    * [Change log for patch update 1.0.3_352, released 23 June 2021](/docs/openshift?topic=openshift-cl-add-ons-cluster-autoscaler#103352_ca)
 
-    * [Change log for patch update 1.0.2_224, released 09 March 2021](/docs/openshift?topic=openshift-ca_changelog#10224_ca)
+* [Version 1.0.2](/docs/openshift?topic=openshift-cl-add-ons-cluster-autoscaler#0102_ca_addon)
 
-* [Version 1.0.1](/docs/openshift?topic=openshift-ca_changelog#0101_ca_addon)
+    * [Change log for patch update 1.0.2_267, released 10 May 2021](/docs/openshift?topic=openshift-cl-add-ons-cluster-autoscaler#102267_ca)
 
-    * [Change log for patch update 1.0.1_219, released 16 February 2021](/docs/openshift?topic=openshift-ca_changelog#101219_ca)
+    * [Change log for patch update 1.0.2_256, released 19 April 2021](/docs/openshift?topic=openshift-cl-add-ons-cluster-autoscaler#102256_ca)
 
-    * [Change log for patch update 1.0.1_210, released 13 January 2021](/docs/openshift?topic=openshift-ca_changelog#101210_ca)
+    * [Change log for patch update 1.0.2_249, released 01 April 2021](/docs/openshift?topic=openshift-cl-add-ons-cluster-autoscaler#102249_ca)
 
-    * [Change log for patch update 1.0.1_205, released 15 December 2020](/docs/openshift?topic=openshift-ca_changelog#101205_ca)
+    * [Change log for patch update 1.0.2_224, released 09 March 2021](/docs/openshift?topic=openshift-cl-add-ons-cluster-autoscaler#10224_ca)
 
-    * [Change log for patch update 1.0.1_195, released 10 December 2020](/docs/openshift?topic=openshift-ca_changelog#101195_ca)
+* [Version 1.0.1](/docs/openshift?topic=openshift-cl-add-ons-cluster-autoscaler#0101_ca_addon)
 
-    * [Change log for patch update 1.0.1_146, released 03 December 2020](/docs/openshift?topic=openshift-ca_changelog#101146_ca)
+    * [Change log for patch update 1.0.1_219, released 16 February 2021](/docs/openshift?topic=openshift-cl-add-ons-cluster-autoscaler#101219_ca)
 
-    * [Change log for patch update 1.0.1_128, released 27 October 2020](/docs/openshift?topic=openshift-ca_changelog#101128_ca)
+    * [Change log for patch update 1.0.1_210, released 13 January 2021](/docs/openshift?topic=openshift-cl-add-ons-cluster-autoscaler#101210_ca)
 
-    * [Change log for patch update 1.0.1_124, released 16 October 2020](/docs/openshift?topic=openshift-ca_changelog#101124_ca)
+    * [Change log for patch update 1.0.1_205, released 15 December 2020](/docs/openshift?topic=openshift-cl-add-ons-cluster-autoscaler#101205_ca)
 
-    * [Change log for patch update 1.0.1_114, released 10 September 2020](/docs/openshift?topic=openshift-ca_changelog#101114_ca)
+    * [Change log for patch update 1.0.1_195, released 10 December 2020](/docs/openshift?topic=openshift-cl-add-ons-cluster-autoscaler#101195_ca)
+
+    * [Change log for patch update 1.0.1_146, released 03 December 2020](/docs/openshift?topic=openshift-cl-add-ons-cluster-autoscaler#101146_ca)
+
+    * [Change log for patch update 1.0.1_128, released 27 October 2020](/docs/openshift?topic=openshift-cl-add-ons-cluster-autoscaler#101128_ca)
+
+    * [Change log for patch update 1.0.1_124, released 16 October 2020](/docs/openshift?topic=openshift-cl-add-ons-cluster-autoscaler#101124_ca)
+
+    * [Change log for patch update 1.0.1_114, released 10 September 2020](/docs/openshift?topic=openshift-cl-add-ons-cluster-autoscaler#101114_ca)
 
 [IBM Storage Operator add-on version change log](/docs/openshift?topic=openshift-cl-add-ons-ibm-storage-operator#cl-add-ons-ibm-storage-operator)
 
