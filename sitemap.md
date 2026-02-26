@@ -281,6 +281,14 @@ subcollection: openshift
 
 * [February 2026](/docs/openshift?topic=openshift-openshift-relnotes#openshift-feb26)
 
+    * [26 February 2026](/docs/openshift?topic=openshift-openshift-relnotes#openshift-feb2626)
+
+        * VPC File CSI Driver cluster add-on patch updates.
+
+        * IBM Storage Operator cluster add-on patch updates.
+
+        * VPC Block CSI Driver cluster add-on patch updates.
+
     * [24 February 2026](/docs/openshift?topic=openshift-openshift-relnotes#openshift-feb2426)
 
         * {{site.data.keyword.cos_full_notm}} plug-in updates.
