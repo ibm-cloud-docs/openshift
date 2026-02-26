@@ -303,6 +303,8 @@ subcollection: openshift
 
         * Cluster autoscaler cluster add-on patch updates.
 
+    * [16 February 2026](/docs/openshift?topic=openshift-openshift-relnotes#openshift-feb1626)
+
         * Cluster autoscaler cluster add-on patch updates.
 
     * [10 February 2026](/docs/openshift?topic=openshift-openshift-relnotes#openshift-feb1026)

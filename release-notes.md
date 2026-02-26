@@ -85,6 +85,12 @@ Cluster autoscaler cluster add-on patch updates.
 
 
 
+### 16 February 2026
+{: #openshift-feb1626}
+{: release-note}
+
+
+
 Cluster autoscaler cluster add-on patch updates.
 :   For more information, see the [change log](/docs/openshift?topic=openshift-cl-add-ons-cluster-autoscaler).
 
