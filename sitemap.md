@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2026
-lastupdated: "2026-02-25"
+lastupdated: "2026-02-26"
 
 
 keywords: openshift
@@ -280,6 +280,14 @@ subcollection: openshift
 [Release notes](/docs/openshift?topic=openshift-openshift-relnotes#openshift-relnotes)
 
 * [February 2026](/docs/openshift?topic=openshift-openshift-relnotes#openshift-feb26)
+
+    * [26 February 2026](/docs/openshift?topic=openshift-openshift-relnotes#openshift-feb2626)
+
+        * VPC File CSI Driver cluster add-on patch updates.
+
+        * IBM Storage Operator cluster add-on patch updates.
+
+        * VPC Block CSI Driver cluster add-on patch updates.
 
     * [24 February 2026](/docs/openshift?topic=openshift-openshift-relnotes#openshift-feb2426)
 
@@ -6373,6 +6381,8 @@ subcollection: openshift
 
 * [Version 1.0](/docs/openshift?topic=openshift-cl-add-ons-ibm-storage-operator#cl-add-ons-ibm-storage-operator-1.0)
 
+    * [v1.0.32_319681464, released 26 February 2026](/docs/openshift?topic=openshift-cl-add-ons-ibm-storage-operator#cl-add-ons-ibm-storage-operator-v1032_319681464)
+
     * [v1.0.31_316468084, released 10 February 2026](/docs/openshift?topic=openshift-cl-add-ons-ibm-storage-operator#cl-add-ons-ibm-storage-operator-v1031_316468084)
 
     * [v1.0.30_310464697, released 21 January 2026](/docs/openshift?topic=openshift-cl-add-ons-ibm-storage-operator#cl-add-ons-ibm-storage-operator-v1030_310464697)
@@ -6405,6 +6415,8 @@ subcollection: openshift
 
 * [Version 5.2](/docs/openshift?topic=openshift-cl-add-ons-vpc-block-csi-driver#cl-add-ons-vpc-block-csi-driver-5.2)
 
+    * [v5.2.45_319683178, released 26 February 2026](/docs/openshift?topic=openshift-cl-add-ons-vpc-block-csi-driver#cl-add-ons-vpc-block-csi-driver-v5245_319683178)
+
     * [v5.2.44_316463149, released 10 February 2026](/docs/openshift?topic=openshift-cl-add-ons-vpc-block-csi-driver#cl-add-ons-vpc-block-csi-driver-v5244_316463149)
 
     * [v5.2.42_310488886, released 21 January 2026](/docs/openshift?topic=openshift-cl-add-ons-vpc-block-csi-driver#cl-add-ons-vpc-block-csi-driver-v5242_310488886)
@@ -6422,6 +6434,8 @@ subcollection: openshift
     * [5.2.31_687, released 17 February 2025](/docs/openshift?topic=openshift-cl-add-ons-vpc-block-csi-driver#cl-add-ons-vpc-block-csi-driver-5231_687)
 
 * [Version 5.1](/docs/openshift?topic=openshift-cl-add-ons-vpc-block-csi-driver#cl-add-ons-vpc-block-csi-driver-5.1)
+
+    * [v5.1.44_319682969, released 26 February 2026](/docs/openshift?topic=openshift-cl-add-ons-vpc-block-csi-driver#cl-add-ons-vpc-block-csi-driver-v5144_319682969)
 
     * [v5.1.43_316462421, released 10 February 2026](/docs/openshift?topic=openshift-cl-add-ons-vpc-block-csi-driver#cl-add-ons-vpc-block-csi-driver-v5143_316462421)
 
@@ -6548,6 +6562,8 @@ subcollection: openshift
 [VPC File CSI Driver add-on version change log](/docs/openshift?topic=openshift-cl-add-ons-vpc-file-csi-driver#cl-add-ons-vpc-file-csi-driver)
 
 * [Version 2.0](/docs/openshift?topic=openshift-cl-add-ons-vpc-file-csi-driver#cl-add-ons-vpc-file-csi-driver-2.0)
+
+    * [v2.0.24_319692587, released 26 February 2026](/docs/openshift?topic=openshift-cl-add-ons-vpc-file-csi-driver#cl-add-ons-vpc-file-csi-driver-v2024_319692587)
 
     * [v2.0.23_316463584, released 10 February 2026](/docs/openshift?topic=openshift-cl-add-ons-vpc-file-csi-driver#cl-add-ons-vpc-file-csi-driver-v2023_316463584)
 
