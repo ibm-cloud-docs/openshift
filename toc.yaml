@@ -417,7 +417,7 @@ toc:
           topics:
           - add-on-versions.md
           - cl-add-ons-openshift-ai.md
-          - versions-autoscaler.md
+          - cl-add-ons-cluster-autoscaler.md
           - cl-add-ons-ibm-storage-operator.md
           - cl-add-ons-vpc-block-csi-driver.md
           - cl-add-ons-vpc-file-csi-driver.md

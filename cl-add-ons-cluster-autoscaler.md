@@ -1,35 +1,31 @@
 ---
 
-copyright: 
-  years: 2014, 2025
-lastupdated: "2025-12-02"
+copyright:
+  years: 2024, 2026
+
+lastupdated: "2026-02-26"
 
 
-keywords: autoscaler, add-on, autoscaler change log, cluster autoscaler
+keywords: change log, version history, Cluster autoscaler
 
-subcollection: openshift
-
+subcollection: "openshift"
 
 ---
 
 {{site.data.keyword.attribute-definition-list}}
 
 
-# Cluster autoscaler add-on change log
-{: #ca_changelog}
 
 
-View information for patch updates to the cluster autoscaler add-on in your {{site.data.keyword.openshiftlong_notm}} clusters.
-{: shortdesc}
+# Cluster autoscaler add-on version change log
+{: #cl-add-ons-cluster-autoscaler}
 
 
 Patch updates
 :   Patch updates are delivered automatically by IBM and don't contain any feature updates or changes in the supported add-on and cluster versions.
 
 Release updates
-:   Release updates contain new features for the cluster autoscaler or changes in the supported add-on or cluster versions. You must manually apply release updates to your cluster autoscaler add-on. To update your cluster autoscaler add-on, see [Updating the cluster autoscaler add-on](/docs/openshift?topic=openshift-cluster-scaling-install-addon#cluster-scaling-install-addon-update-addon).
-
-Refer to the following tables for a summary of changes for each version of the [cluster autoscaler add-on](/docs/openshift?topic=openshift-cluster-scaling-install-addon).
+:   Release updates contain new features or changes in the supported add-on or cluster versions. You must manually apply release updates to your cluster autoscaler add-on.
 
 To view a list of add-ons and the supported cluster versions, run the following command or see the [Supported cluster add-ons table](/docs/openshift?topic=openshift-supported-cluster-addon-versions).
 
@@ -39,7 +35,49 @@ ibmcloud oc cluster addon versions
 {: pre}
 
 
+Review the version history for Cluster autoscaler.
+{: shortdesc}
+
+
 ## Version 2.0.0
+{: #cl-add-ons-cluster-autoscaler-2.0.0}
+
+
+### v200-4_316755565, released 18 February 2026
+{: #cl-add-ons-cluster-autoscaler-v200-4_316755565}
+
+- Resolves the following CVEs: [CVE-2025-13281](https://nvd.nist.gov/vuln/detail/CVE-2025-13281){: external}.
+- Update storage secret sidecar v1.3.40 
+- `1.30.7 200-4`
+- `1.31.5 200-4`
+- `1.32.5 200-4`
+- `1.33.3 200-4`
+- `1.34.2 200-4.`
+
+
+## Version 1.2.4
+{: #cl-add-ons-cluster-autoscaler-1.2.4}
+
+
+### v124-7_312863411, released 16 February 2026
+{: #cl-add-ons-cluster-autoscaler-v124-7_312863411}
+
+- Resolves the following CVEs: [CVE-2025-4563](https://nvd.nist.gov/vuln/detail/CVE-2025-4563){: external}, [CVE-2025-5187](https://nvd.nist.gov/vuln/detail/CVE-2025-5187){: external}, [CVE-2025-13281](https://nvd.nist.gov/vuln/detail/CVE-2025-13281){: external}, [CVE-2025-30204](https://nvd.nist.gov/vuln/detail/CVE-2025-30204){: external}, and [CVE-2025-22872](https://nvd.nist.gov/vuln/detail/CVE-2025-22872){: external}.
+- Updates Go to version `1.25.4`.
+- Update storage secret sidecar v1.3.39 
+- Adds support for cluster version 1.34.
+- 1.34 has functionality to cordon node before terminating via the `--cordon-node-before-terminating flag`.
+- `1.28.7 124-7`
+- `1.29.5 124-7`
+- `1.30.7 124-7`
+- `1.31.5 124-7`
+- `1.32.5 124-7`
+- `1.33.3 124-7`
+- `1.34.2 124-7.`
+
+
+
+## Version 2.0.0 (2025 and earlier)
 {: #0124_ca_addon}
 
 ### Change log for patch update 2.0.0-2_302959219, released 2 December 2025
@@ -52,7 +90,7 @@ ibmcloud oc cluster addon versions
 - Image tags: `1.30.7-v200-2`, `1.31.5-v200-2`, `1.32.4-v200-2`, `1.33.2-v200-2`, `1.34.1-v200-2`.
 
 
-## Version 1.2.4
+## Version 1.2.4 (2025 and earlier)
 {: #0124_ca_addon}
 
 Beginning in version 1.2.4 the `maxEmptyBulkDelete` option is no longer supported. Remove this option from your configmap by running `kubectl edit configmap iks-ca-configmap -n kube-system` command and deleting the option. As a replacement, you can use the `maxScaleDownParallelism` option which was added in version 1.2.4. For more information, see the [configmap reference](#ca-configmap).
