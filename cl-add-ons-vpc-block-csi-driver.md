@@ -3,7 +3,7 @@
 copyright:
   years: 2024, 2026
 
-lastupdated: "2026-02-25"
+lastupdated: "2026-02-26"
 
 
 keywords: change log, version history, VPC Block CSI Driver
@@ -28,6 +28,11 @@ Review the version history for VPC Block CSI Driver.
 {: #cl-add-ons-vpc-block-csi-driver-5.2}
 
 
+### v5.2.45_319683178, released 26 February 2026
+{: #cl-add-ons-vpc-block-csi-driver-v5245_319683178}
+
+- Resolves the following CVEs: [CVE-2025-14104](https://nvd.nist.gov/vuln/detail/CVE-2025-14104){: external}, and [CVE-2025-68121](https://nvd.nist.gov/vuln/detail/CVE-2025-68121){: external}.
+- `armada-storage-secret v1.3.41`
 
 
 ### v5.2.44_316463149, released 10 February 2026
@@ -110,6 +115,11 @@ Review the version history for VPC Block CSI Driver.
 {: #cl-add-ons-vpc-block-csi-driver-5.1}
 
 
+### v5.1.44_319682969, released 26 February 2026
+{: #cl-add-ons-vpc-block-csi-driver-v5144_319682969}
+
+- Resolves the following CVEs: [CVE-2025-14104](https://nvd.nist.gov/vuln/detail/CVE-2025-14104){: external}, [CVE-2025-47911](https://nvd.nist.gov/vuln/detail/CVE-2025-47911){: external}, [CVE-2026-0915](https://nvd.nist.gov/vuln/detail/CVE-2026-0915){: external}, [CVE-2025-68121](https://nvd.nist.gov/vuln/detail/CVE-2025-68121){: external}, and [CVE-2025-58190](https://nvd.nist.gov/vuln/detail/CVE-2025-58190){: external}.
+- `armada-storage-secret v1.2.76`
 
 
 ### v5.1.43_316462421, released 10 February 2026
