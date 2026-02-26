@@ -1,8 +1,8 @@
 ---
 
 copyright: 
-  years: 2014, 2025
-lastupdated: "2025-09-22"
+  years: 2014, 2026
+lastupdated: "2026-02-26"
 
 
 keywords: openshift, autoscaler
@@ -44,7 +44,7 @@ Before you begin: [Access your {{site.data.keyword.redhat_openshift_notm}} clust
     ```
     {: screen}
 
-2. Compare the version that runs in your cluster against the latest version in Cluster autoscaler add-on [change log](/docs/openshift?topic=openshift-ca_changelog).
+2. Compare the version that runs in your cluster against the latest version in Cluster autoscaler add-on [change log](/docs/openshift?topic=openshift-cl-add-ons-cluster-autoscaler).
 3. If your version is outdated, deploy the latest cluster autoscaler version to your cluster. 
 
 ## Step 2: Check the configuration

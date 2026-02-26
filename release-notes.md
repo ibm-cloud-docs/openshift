@@ -364,7 +364,7 @@ IBM Cloud Image Key Synchronizer cluster add-on patch updates.
 {: release-note}
 
 Cluster autoscaler add-on patch updates for {{site.data.keyword.openshiftlong_notm}}.
-:   For more information, see [Cluster autoscaler add-on change log](/docs/openshift?topic=openshift-ca_changelog).
+:   For more information, see [Cluster autoscaler add-on change log](/docs/openshift?topic=openshift-cl-add-ons-cluster-autoscaler).
 
 {{site.data.keyword.cos_full_notm}} add-on patch updates.
 :   For more information, see the [change log](/docs/openshift?topic=openshift-cl-add-ons-ibm-object-csi-driver).
@@ -641,7 +641,7 @@ CLI version `1.0.718` is available.
 {: release-note}
 
 Cluster autoscaler add-on patch updates for {{site.data.keyword.openshiftlong_notm}}.
-:   For more information, see [Cluster autoscaler add-on change log](/docs/openshift?topic=openshift-ca_changelog).
+:   For more information, see [Cluster autoscaler add-on change log](/docs/openshift?topic=openshift-cl-add-ons-cluster-autoscaler).
 
 VPC File CSI Driver cluster add-on patch updates.
 :   For more information, see the [change log](/docs/openshift?topic=openshift-cl-add-ons-vpc-file-csi-driver).
@@ -889,7 +889,7 @@ CLI version `1.0.714` is available.
 {: release-note}
 
 Cluster autoscaler add-on patch updates for {{site.data.keyword.openshiftlong_notm}}.
-:   For more information, see [Cluster autoscaler add-on change log](/docs/openshift?topic=openshift-ca_changelog).
+:   For more information, see [Cluster autoscaler add-on change log](/docs/openshift?topic=openshift-cl-add-ons-cluster-autoscaler).
 
 
 
@@ -923,7 +923,7 @@ VPC File CSI Driver cluster add-on patch updates.
 :   For more information, see the [change log](/docs/openshift?topic=openshift-cl-add-ons-vpc-file-csi-driver).
 
 Cluster autoscaler add-on patch updates for {{site.data.keyword.openshiftlong_notm}}.
-:   For more information, see [Cluster autoscaler add-on change log](/docs/openshift?topic=openshift-ca_changelog).
+:   For more information, see [Cluster autoscaler add-on change log](/docs/openshift?topic=openshift-cl-add-ons-cluster-autoscaler).
 
 ### 17 July 2025
 {: #openshift-17july25}
@@ -1295,7 +1295,7 @@ OpenShift AI cluster add-on patch updates.
 {: release-note}
 
 Cluster autoscaler add-on patch updates for {{site.data.keyword.openshiftlong_notm}}.
-:   For more information, see [Cluster autoscaler add-on change log](/docs/openshift?topic=openshift-ca_changelog).
+:   For more information, see [Cluster autoscaler add-on change log](/docs/openshift?topic=openshift-cl-add-ons-cluster-autoscaler).
 
 
 
@@ -1439,7 +1439,7 @@ IBM Cloud Image Key Synchronizer cluster add-on patch updates.
 {: release-note}
 
 Cluster autoscaler add-on patch updates for {{site.data.keyword.openshiftlong_notm}}.
-:   For more information, see [Cluster autoscaler add-on change log](/docs/openshift?topic=openshift-ca_changelog).
+:   For more information, see [Cluster autoscaler add-on change log](/docs/openshift?topic=openshift-cl-add-ons-cluster-autoscaler).
 
 {{site.data.keyword.cos_full_notm}} plug-in updates.
 :   For more information, see the [change log](/docs/openshift?topic=openshift-cos_plugin_changelog).
@@ -2336,7 +2336,7 @@ Storage Operator cluster add-on patch update.
 :   For more information, see the [change log](/docs/openshift?topic=openshift-cl-add-ons-ibm-storage-operator).
 
 Cluster autoscaler add-on patch updates for {{site.data.keyword.openshiftlong_notm}}.
-:   For more information, see [Cluster autoscaler add-on change log](/docs/openshift?topic=openshift-ca_changelog).
+:   For more information, see [Cluster autoscaler add-on change log](/docs/openshift?topic=openshift-cl-add-ons-cluster-autoscaler).
 
 
 
@@ -2411,7 +2411,7 @@ Storage optimized flavors for {{site.data.keyword.openshiftlong_notm}} VPC clust
 {: release-note}
 
 Cluster autoscaler add-on patch updates for {{site.data.keyword.openshiftlong_notm}}.
-:   For more information, see [Cluster autoscaler add-on change log](/docs/openshift?topic=openshift-ca_changelog).
+:   For more information, see [Cluster autoscaler add-on change log](/docs/openshift?topic=openshift-cl-add-ons-cluster-autoscaler).
 
 {{site.data.keyword.block_storage_is_short}} add-on patch updates.
 :   For more information, see the [change log](/docs/openshift?topic=openshift-cl-add-ons-vpc-block-csi-driver).
@@ -2424,7 +2424,7 @@ Cluster autoscaler add-on patch updates for {{site.data.keyword.openshiftlong_no
 {: release-note}
 
 Cluster autoscaler add-on patch update for {{site.data.keyword.openshiftlong_notm}}.
-:   For more information, see [Cluster autoscaler add-on change log](/docs/openshift?topic=openshift-ca_changelog).
+:   For more information, see [Cluster autoscaler add-on change log](/docs/openshift?topic=openshift-cl-add-ons-cluster-autoscaler).
 
 
 
@@ -2619,7 +2619,7 @@ Image Key Synchronizer add-on patch update.
 {: release-note}
 
 {{site.data.keyword.openshiftlong_notm}} cluster autoscaler add-on patch updates.
-:   For more information, see [the change log](/docs/openshift?topic=openshift-ca_changelog).
+:   For more information, see [the change log](/docs/openshift?topic=openshift-cl-add-ons-cluster-autoscaler).
 
 ### 02 May 2024
 {: #openshift-may0224}
@@ -2716,7 +2716,7 @@ Worker node fix packs are available {{site.data.keyword.openshiftlong_notm}}.
 
 
 {{site.data.keyword.openshiftlong_notm}} cluster autoscaler add-on patch updates.
-:   For more information, see [the change log](/docs/openshift?topic=openshift-ca_changelog).
+:   For more information, see [the change log](/docs/openshift?topic=openshift-cl-add-ons-cluster-autoscaler).
 
 Version 1.0.9 of the cluster autoscaler add-on is deprecated with an end of support date of 30 April 2024.
 :   Update to a supported version of the add-on before 30 April 2024.
@@ -2834,7 +2834,7 @@ CLI version `1.0.601` is available.
 {: release-note}
 
 {{site.data.keyword.openshiftlong_notm}} cluster autoscaler version 1.2.1 is available.
-:   Version 1.2.1 of the autoscaler adds support for cluster version 1.29. For more information, see [the change log](/docs/openshift?topic=openshift-ca_changelog).
+:   Version 1.2.1 of the autoscaler adds support for cluster version 1.29. For more information, see [the change log](/docs/openshift?topic=openshift-cl-add-ons-cluster-autoscaler).
 
 
 Operators FAQ
@@ -2914,7 +2914,7 @@ New worker node flavors are available with L4 GPUs.
 
 
 {{site.data.keyword.openshiftlong_notm}} cluster autoscaler add-on patch updates `1.0.9_377` and `1.2.0_365`.
-:   For more information, see [the change log](/docs/openshift?topic=openshift-ca_changelog).
+:   For more information, see [the change log](/docs/openshift?topic=openshift-cl-add-ons-cluster-autoscaler).
 
 
 
@@ -2934,7 +2934,7 @@ A new tutorial is available for creating a small {{site.data.keyword.redhat_open
 
 
 {{site.data.keyword.openshiftlong_notm}} cluster autoscaler add-on patch update `1.1.0_362`.
-:   For more information, see [the change log](/docs/openshift?topic=openshift-ca_changelog).
+:   For more information, see [the change log](/docs/openshift?topic=openshift-cl-add-ons-cluster-autoscaler).
 
 
 

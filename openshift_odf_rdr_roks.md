@@ -15,8 +15,6 @@ subcollection: openshift
 {{site.data.keyword.attribute-definition-list}}
 
 
-
-
 # OpenShift Data Foundation Regional Disaster Recovery on {{site.data.keyword.openshiftlong_notm}} clusters
 {: #openshift_odf_rdr_roks}
 
@@ -26,6 +24,8 @@ subcollection: openshift
 Regional Disaster Recovery ensures business continuity during the unavailability of a geographical region. You can use Red Hat Advanced Cluster Management (ACM) to set up the Regional Disaster Recovery solutions for ODF clusters.
 {: shortdesc}
 
+The following steps for setting ODF Disaster Recovery are available as a **Technical Preview** only and **not for production use**. For information on ACM specificially, see (Setting up the ACM add-on)[/docs/openshift?topic=openshift-acm&interface=ui].
+{: preview}
 
 Here are the high-level steps of this solution:
 1. Create 3 VPC clusters, each in different regions or VPCs, and allow outbound traffic on each. One will be the hub cluster that you install ACM on to. The remaining 2 will be the managed ODF clusters (1 primary and 1 secondary backup).
@@ -144,7 +144,7 @@ Install and configure ODF on your 2 managed clusters. Make sure to complete thes
     ```sh
     oc get storagecluster -n openshift-storage ocs-storagecluster -o jsonpath='{.status.phase}{"\n"}'
     ```
-    {: screen}
+    {: pre}
 
 1. Run the command to update the `ACM Managed Cluster Name` in the `storageCluster` resource’s `multiClusterService` section. This allows ODF to use GlobalNet. For more information, see [Creating an OpenShift Data Foundation cluster on managed clusters](https://docs.redhat.com/documentation/red_hat_openshift_data_foundation/4.17/html/configuring_openshift_data_foundation_disaster_recovery_for_openshift_workloads/rdr-solution#creating-odf-cluster-on-managed-clusters_rdr){: external}.
 
