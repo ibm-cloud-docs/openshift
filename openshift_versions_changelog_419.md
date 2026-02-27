@@ -3,7 +3,7 @@
 copyright:
   years: 2024, 2026
 
-lastupdated: "2026-02-17"
+lastupdated: "2026-02-27"
 
 
 keywords: change log, version history, 4.19_openshift
@@ -37,6 +37,23 @@ Master patch updates are applied automatically. Worker node patch updates can be
 
 ## Version 4.19
 {: #419_components}
+
+
+### Worker node fix pack 4.19.24_1569_openshift, released 24 February 2026
+{: #cl-boms-41924_1569_openshift_W}
+
+The following table shows the components included in the worker node fix pack 4.19.24_1569_openshift. Worker node patch updates can be applied by updating, reloading (in classic infrastructure), or replacing (in VPC infrastructure) the worker node.
+{: shortdesc}
+
+| Component | Version | Description |
+| ---- | ---- | ---- |
+|RHEL 9 (VPC)|5.14.0-570.62.1.el9_6|CIS benchmark compliance [1.6.3 ](https://workbench.cisecurity.org/sections/2758919/recommendations/4466876)|
+|RHEL 9 (Classic)|5.14.0-570.62.1.el9_6|CIS benchmark compliance [1.6.3 ](https://workbench.cisecurity.org/sections/2758919/recommendations/4466876)|
+|Red Hat OpenShift|4.19.24|For more information, see the [change logs](https://docs.redhat.com/en/documentation/openshift_container_platform/4.19/html/release_notes/ocp-4-19-release-notes.html#ocp-4-19-24_release-notes).|
+|Red Hat CoreOS|4.19.24|For more information, see the [change logs](https://docs.redhat.com/en/documentation/openshift_container_platform/4.19/html/release_notes/ocp-4-19-release-notes.html#ocp-4-19-24_release-notes). CIS benchmark compliance [5.2.2](https://workbench.cisecurity.org/sections/1594521/recommendations/2564440), [5.2.3](https://workbench.cisecurity.org/sections/1594521/recommendations/2564444), [5.2.4](https://workbench.cisecurity.org/sections/1594521/recommendations/2564446), [5.2.18](https://workbench.cisecurity.org/sections/1594521/recommendations/2564555)|
+|HAProxy|2bf1aebe51a37cd9b4661656ce21e53f918166ea|Resolves the following CVEs: [CVE-2025-6176](https://nvd.nist.gov/vuln/detail/CVE-2025-6176){: external}.|
+{: caption="4.19.24_1569_openshift fix pack." caption-side="bottom"}
+{: #cl-boms-41924_1569_openshift_W-component-table}
 
 
 ### Change log for Master fix pack 4.19.23_1568_openshift, released 18 February 2026
