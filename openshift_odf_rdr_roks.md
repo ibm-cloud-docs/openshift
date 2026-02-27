@@ -2,7 +2,7 @@
 
 copyright:
   years: 2025, 2026
-lastupdated: "2026-02-26"
+lastupdated: "2026-02-27"
 
 
 keywords: openshift, openshift data foundation, openshift container storage, disaster recovery
@@ -24,7 +24,7 @@ subcollection: openshift
 Regional Disaster Recovery ensures business continuity during the unavailability of a geographical region. You can use Red Hat Advanced Cluster Management (ACM) to set up the Regional Disaster Recovery solutions for ODF clusters.
 {: shortdesc}
 
-The following steps for setting ODF Disaster Recovery are available as a **Technical Preview** only and **not for production use**. For information on ACM specificially, see (Setting up the ACM add-on)[/docs/openshift?topic=openshift-acm&interface=ui].
+The following steps for setting ODF Disaster Recovery are available as a **Technical Preview** only and **not for production use**. For information on ACM specificially, see [Setting up the ACM add-on](/docs/openshift?topic=openshift-acm&interface=ui).
 {: preview}
 
 Here are the high-level steps of this solution:

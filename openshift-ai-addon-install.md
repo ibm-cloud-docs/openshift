@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2024, 2026
-lastupdated: "2026-02-20"
+lastupdated: "2026-02-27"
 
 
 keywords: openshift, {{site.data.keyword.openshiftlong_notm}}, ai, add-on
@@ -317,6 +317,7 @@ The following NVIDIA GPU operators apply with the default settings. You can only
 ## What's next?
 {: #ai-addon-install-next}
 
-- Try out a [tutorial for using OpenShift AI for fraud detection](https://docs.redhat.com/en/documentation/red_hat_openshift_ai_self-managed/2.22/html/openshift_ai_tutorial_-_fraud_detection_example/index){: external}
+- Try out a [tutorial for using OpenShift AI for fraud detection](https://docs.redhat.com/en/documentation/red_hat_openshift_ai_self-managed/2.22/html/openshift_ai_tutorial_-_fraud_detection_example/index){: external}.
+- Learn how you can [use OpenShift AI to deploy a model you trained with InstructLab](/docs/instructlab?topic=instructlab-deploy#deploy-rhoai).
 - See information on [managing the OpenShift AI add-on](/docs/openshift?topic=openshift-ai-addon-manage).
 - Make sure that you understand the [update process](/docs/openshift?topic=openshift-ai-addon-manage#ai-addon-update) for the OpenShift AI add-on.
