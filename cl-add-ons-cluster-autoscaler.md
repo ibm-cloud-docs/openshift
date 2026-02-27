@@ -3,7 +3,7 @@
 copyright:
   years: 2024, 2026
 
-lastupdated: "2026-02-26"
+lastupdated: "2026-02-27"
 
 
 keywords: change log, version history, Cluster autoscaler
@@ -74,6 +74,7 @@ Review the version history for Cluster autoscaler.
 - `1.32.5 124-7`
 - `1.33.3 124-7`
 - `1.34.2 124-7.`
+
 
 
 
