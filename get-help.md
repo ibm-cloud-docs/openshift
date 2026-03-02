@@ -1,8 +1,8 @@
 ---
 
 copyright: 
-  years: 2014, 2025
-lastupdated: "2025-12-19"
+  years: 2014, 2026
+lastupdated: "2026-03-02"
 
 
 keywords: openshift, {{site.data.keyword.openshiftlong_notm}}, support, get help
@@ -23,6 +23,9 @@ Still having issues with your cluster? Review different ways to get help and sup
 {: shortdesc}
 
 Before you open a support case, gather relevant information about your cluster environment.
+{: tip}
+
+Looking for the Diagnostics and Debug tool? That add-on is no longer supported. [IBM Cloud Monitoring](docs/openshift?topic=openshift-monitoring) is recommended for monitoring and diagnosing problems in your cluster. Additional troubleshooting links that might be relevant include [Troubleshooting worker nodes in Critical or NotReady state](/docs/openshift?topic=openshift-ts-critical-notready) and [Troubleshooting apps in IBM Cloud Kubernetes Service](/docs/openshift?topic=openshift-debug_clusters).
 {: tip}
 
 ## Get your cluster details
