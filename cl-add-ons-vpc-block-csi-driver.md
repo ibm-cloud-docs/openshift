@@ -3,7 +3,7 @@
 copyright:
   years: 2024, 2026
 
-lastupdated: "2026-02-26"
+lastupdated: "2026-03-02"
 
 
 keywords: change log, version history, VPC Block CSI Driver
@@ -41,6 +41,14 @@ Review the version history for VPC Block CSI Driver.
 
 ## Version 5.2
 {: #cl-add-ons-vpc-block-csi-driver-5.2}
+
+
+### v5.2.46_321044202, released 02 March 2026
+{: #cl-add-ons-vpc-block-csi-driver-v5246_321044202}
+
+- Resolves the following CVEs: [CVE-2026-0861](https://nvd.nist.gov/vuln/detail/CVE-2026-0861){: external}, [CVE-2025-15281](https://nvd.nist.gov/vuln/detail/CVE-2025-15281){: external}, and [CVE-2026-0915](https://nvd.nist.gov/vuln/detail/CVE-2026-0915){: external}.
+- Supports the creation of snapshot in the user defined resource group. 
+- `armada-storage-secret v1.3.42`
 
 
 ### v5.2.45_319683178, released 26 February 2026
@@ -128,6 +136,13 @@ Review the version history for VPC Block CSI Driver.
 
 ## Version 5.1
 {: #cl-add-ons-vpc-block-csi-driver-5.1}
+
+
+### v5.1.46_321044176 , released 02 March 2026
+{: #cl-add-ons-vpc-block-csi-driver-v5146_321044176 }
+
+- Resolves the following CVEs: [CVE-2026-0861](https://nvd.nist.gov/vuln/detail/CVE-2026-0861){: external}, [CVE-2025-15281](https://nvd.nist.gov/vuln/detail/CVE-2025-15281){: external}, and [CVE-2026-0915](https://nvd.nist.gov/vuln/detail/CVE-2026-0915){: external}.
+- `armada-storage-secret v1.2.77`
 
 
 ### v5.1.44_319682969, released 26 February 2026
