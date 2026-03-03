@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2026
-lastupdated: "2026-03-02"
+lastupdated: "2026-03-03"
 
 
 keywords: openshift
@@ -280,6 +280,10 @@ subcollection: openshift
 [Release notes](/docs/openshift?topic=openshift-openshift-relnotes#openshift-relnotes)
 
 * [March 2026](/docs/openshift?topic=openshift-openshift-relnotes#openshift-mar26)
+
+    * [03 March 2026](/docs/openshift?topic=openshift-openshift-relnotes#openshift-mar0326)
+
+        * Openshift AI cluster add-on patch updates.
 
     * [02 March 2026](/docs/openshift?topic=openshift-openshift-relnotes#openshift-mar0226)
 
@@ -6139,9 +6143,13 @@ subcollection: openshift
 
 * [Version 418](/docs/openshift?topic=openshift-cl-add-ons-openshift-ai#cl-add-ons-openshift-ai-418)
 
+    * [v418.1.0_320919095, released 03 March 2026](/docs/openshift?topic=openshift-cl-add-ons-openshift-ai#cl-add-ons-openshift-ai-v41810_320919095)
+
     * [v418.0.0_295927267, released 11 November 2025](/docs/openshift?topic=openshift-cl-add-ons-openshift-ai#cl-add-ons-openshift-ai-v41800_295927267)
 
 * [Version 417](/docs/openshift?topic=openshift-cl-add-ons-openshift-ai#cl-add-ons-openshift-ai-417)
+
+    * [v417.1.0_320919116, released 03 March 2026](/docs/openshift?topic=openshift-cl-add-ons-openshift-ai#cl-add-ons-openshift-ai-v41710_320919116)
 
     * [417.0.4_300761316, released 27 November 2025](/docs/openshift?topic=openshift-cl-add-ons-openshift-ai#cl-add-ons-openshift-ai-41704_300761316)
 
@@ -6168,6 +6176,8 @@ subcollection: openshift
     * [416.1.0_486, released 27 March 2025](/docs/openshift?topic=openshift-cl-add-ons-openshift-ai#cl-add-ons-openshift-ai-41610_486)
 
     * [416.0.1_474, released 05 March 2025](/docs/openshift?topic=openshift-cl-add-ons-openshift-ai#cl-add-ons-openshift-ai-41601_474)
+
+    * [v416.4.0_320919164, released 03 March 2025](/docs/openshift?topic=openshift-cl-add-ons-openshift-ai#cl-add-ons-openshift-ai-v41640_320919164)
 
     * [416.0.0_424, released 21 January 2025](/docs/openshift?topic=openshift-cl-add-ons-openshift-ai#cl-add-ons-openshift-ai-41600_424)
 
