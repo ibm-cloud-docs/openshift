@@ -7467,6 +7467,8 @@ subcollection: openshift
 
 * [Keep your command line tools up to date](/docs/openshift?topic=openshift-best-practices-service#bp-2)
 
+* [Regularly rotate your CA certificates](/docs/openshift?topic=openshift-best-practices-service#bp-ca)
+
 * [Document your environment architecture](/docs/openshift?topic=openshift-best-practices-service#bp-3)
 
 * [Subscribe to RSS](/docs/openshift?topic=openshift-best-practices-service#bp-4)

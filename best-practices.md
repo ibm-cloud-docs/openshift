@@ -1,8 +1,8 @@
 ---
 
 copyright: 
-  years: 2024, 2024
-lastupdated: "2024-11-01"
+  years: 2024, 2026
+lastupdated: "2026-03-05"
 
 
 keywords: openshift, {{site.data.keyword.openshiftlong_notm}}, best practices
@@ -31,6 +31,11 @@ Make sure to [update your cluster](/docs/openshift?topic=openshift-update) regul
 In the command line, you are notified when updates to the `ibmcloud` CLI and plug-ins are available. Be sure to keep your CLI up-to-date so that you can use all available commands and options.
 
 Make sure that [your `oc` CLI](/docs/openshift?topic=openshift-cli-install) client matches the same Kubernetes version as your cluster server. [Kubernetes does not support](https://kubernetes.io/releases/version-skew-policy/){: external} `oc` client versions that are 2 or more versions apart from the server version (n +/- 2).
+
+## Regularly rotate your CA certificates
+{: #bp-ca}
+
+Regular rotation of certificate authority (CA) certificates is recommended for security purposes. The steps for CA rotation include reloading or replacing worker nodes, so consider rotating CA certificates whenever you update your worker nodes. For more information, see [Rotating CA certificates in your cluster](/docs/containers?topic=containers-cert-rotate).
 
 ## Document your environment architecture
 {: #bp-3}
