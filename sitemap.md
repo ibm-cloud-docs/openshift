@@ -299,6 +299,8 @@ subcollection: openshift
 
         * VPC Block CSI Driver cluster add-on patch updates.
 
+        * VPC Block CSI Driver cluster add-on patch updates.
+
 * [February 2026](/docs/openshift?topic=openshift-openshift-relnotes#openshift-feb26)
 
     * [27 February 2026](/docs/openshift?topic=openshift-openshift-relnotes#openshift-feb2726)
@@ -6830,6 +6832,8 @@ subcollection: openshift
 [OpenShift Data Foundation add-on version change log](/docs/openshift?topic=openshift-cl-add-ons-openshift-data-foundation#cl-add-ons-openshift-data-foundation)
 
 * [Version 4.20.0](/docs/openshift?topic=openshift-cl-add-ons-openshift-data-foundation#cl-add-ons-openshift-data-foundation-4.20.0)
+
+    * [4.20.1, released 05 March 2026](/docs/openshift?topic=openshift-cl-add-ons-openshift-data-foundation#cl-add-ons-openshift-data-foundation-4201)
 
 * [Version 4.19.0](/docs/openshift?topic=openshift-cl-add-ons-openshift-data-foundation#cl-add-ons-openshift-data-foundation-4.19.0)
 
