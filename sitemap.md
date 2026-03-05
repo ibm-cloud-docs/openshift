@@ -281,6 +281,8 @@ subcollection: openshift
 
 * [March 2026](/docs/openshift?topic=openshift-openshift-relnotes#openshift-mar26)
 
+    * [05 March 2026](/docs/openshift?topic=openshift-openshift-relnotes#openshift-mar0526)
+
     * [03 March 2026](/docs/openshift?topic=openshift-openshift-relnotes#openshift-mar0326)
 
         * Openshift AI cluster add-on patch updates.
@@ -294,6 +296,8 @@ subcollection: openshift
         * VPC File CSI Driver cluster add-on patch updates.
 
         * IBM Storage Operator cluster add-on patch updates.
+
+        * VPC Block CSI Driver cluster add-on patch updates.
 
         * VPC Block CSI Driver cluster add-on patch updates.
 
@@ -6831,6 +6835,8 @@ subcollection: openshift
 
 * [Version 4.20.0](/docs/openshift?topic=openshift-cl-add-ons-openshift-data-foundation#cl-add-ons-openshift-data-foundation-4.20.0)
 
+    * [4.20.1, released 05 March 2026](/docs/openshift?topic=openshift-cl-add-ons-openshift-data-foundation#cl-add-ons-openshift-data-foundation-4201)
+
 * [Version 4.19.0](/docs/openshift?topic=openshift-cl-add-ons-openshift-data-foundation#cl-add-ons-openshift-data-foundation-4.19.0)
 
     * [4.19.7, released 03 March 2026](/docs/openshift?topic=openshift-cl-add-ons-openshift-data-foundation#cl-add-ons-openshift-data-foundation-4197)
@@ -7460,6 +7466,8 @@ subcollection: openshift
 * [Keep your cluster environment up to date](/docs/openshift?topic=openshift-best-practices-service#bp-1)
 
 * [Keep your command line tools up to date](/docs/openshift?topic=openshift-best-practices-service#bp-2)
+
+* [Regularly rotate your CA certificates](/docs/openshift?topic=openshift-best-practices-service#bp-ca)
 
 * [Document your environment architecture](/docs/openshift?topic=openshift-best-practices-service#bp-3)
 

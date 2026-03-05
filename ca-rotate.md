@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2024, 2026
-lastupdated: "2026-01-09"
+lastupdated: "2026-03-05"
 
 
 keywords: openshift, {{site.data.keyword.openshiftlong_notm}}, kubernetes, certificate, rotate, ca rotate
@@ -20,6 +20,9 @@ subcollection: openshift
 
 Revoke existing certificate authority (CA) certificates in your cluster and issue new CA certificates.
 {: shortdesc}
+
+Regularly rotating your CA certificates is recommended to keep your setup secure.
+{: important}
 
 By default, certificate authority (CA) certificates are administered to secure access to various components of your cluster, such as the master API server. As you use your cluster, you might want to revoke the certificates issued by the existing CA. For example, the administrators of your team might use a certificate signing request (CSR) to manually generate certificates that are signed by the cluster's CA for worker nodes in the cluster. If an administrator leaves your organization, you can ensure that they no longer have admin access to your cluster by creating a new CA and certificates for your cluster, and removing the old CA and certificates.
 

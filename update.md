@@ -1,8 +1,8 @@
 ---
 
 copyright:
-  years: 2014, 2025
-lastupdated: "2025-12-19"
+  years: 2014, 2026
+lastupdated: "2026-03-05"
 
 
 keywords: openshift, {{site.data.keyword.openshiftlong_notm}}, upgrade, version, update cluster, update worker nodes, update cluster components, update cluster master
@@ -64,6 +64,9 @@ What process can I follow to update the master?
 
 Before you begin, make sure that you have the [**Operator** or **Administrator** IAM platform access role](/docs/openshift?topic=openshift-iam-platform-access-roles).
 
+Updates to the cluster master are blocked if a certificate authority (CA) certificate rotation is in progress. Wait for a rotation to complete before you update the cluster master.
+{: note}
+
 To update the {{site.data.keyword.redhat_openshift_notm}} master _major_ or _minor_ version:
 
 1. Review the [{{site.data.keyword.openshiftshort}} version information](/docs/openshift?topic=openshift-openshift_versions) and make any updates marked _Update before master_.
@@ -113,6 +116,9 @@ You notice that an update is available for your worker nodes in a [classic infra
 
 For more information, see [Update types](/docs/containers?topic=containers-cs_versions#update_types).
 {: shortdesc}
+
+It is good practice to [rotate your CA certificates](/docs/containers?topic=containers-cert-rotate) whenever you update your worker nodes, as the longest step of certificate rotation includes reloading or replacing your worker nodes.
+{: tip}
 
 What happens to my apps during an update?
 :   If you run apps as part of a deployment on worker nodes that you update, the apps are rescheduled onto other worker nodes in the cluster. These worker nodes might be in a different worker pool, or if you have stand-alone worker nodes, apps might be scheduled onto stand-alone worker nodes. To avoid downtime for your app, you must ensure that you have enough capacity in the cluster to carry the workload.
@@ -309,6 +315,9 @@ You notice that an update is available for your worker nodes in a VPC cluster. W
 
 If you have Portworx deployed in your cluster, follow the steps to [update VPC worker nodes with Portworx volumes](/docs/openshift?topic=openshift-storage_portworx_update#portworx_vpc_up).
 {: important}
+
+It is good practice to [rotate your CA certificates](/docs/containers?topic=containers-cert-rotate) whenever you update your worker nodes, as the longest step of certificate rotation includes reloading or replacing your worker nodes.
+{: tip}
 
 
 
