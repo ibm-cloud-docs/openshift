@@ -281,6 +281,8 @@ subcollection: openshift
 
 * [March 2026](/docs/openshift?topic=openshift-openshift-relnotes#openshift-mar26)
 
+    * [05 March 2026](/docs/openshift?topic=openshift-openshift-relnotes#openshift-mar0526)
+
     * [03 March 2026](/docs/openshift?topic=openshift-openshift-relnotes#openshift-mar0326)
 
         * Openshift AI cluster add-on patch updates.

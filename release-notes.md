@@ -31,6 +31,13 @@ Looking for {{site.data.keyword.cloud_notm}} status, platform announcements, sec
 {: #openshift-mar26}
 
 
+### 05 March 2026
+{: #openshift-mar0526}
+{: release-note}
+
+
+  
+
 
 ### 03 March 2026
 {: #openshift-mar0326}
@@ -54,6 +61,7 @@ IBM Cloud Image Key Synchronizer cluster add-on patch updates.
 
 OpenShift Data Foundation cluster add-on patch updates.
 :   For more information, see the [change log](/docs/openshift?topic=openshift-cl-add-ons-openshift-data-foundation).
+
 
 
 ### 02 March 2026
