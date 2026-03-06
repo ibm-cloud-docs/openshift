@@ -52,7 +52,7 @@ keyword:
   kubernetes_134_unsupported_certainty: tentative
   kubernetes_134_unsupported_date: 20 January 2027
   kubernetes_135_deprecated: 'False'
-  kubernetes_135_release_date: 25 February 2026
+  kubernetes_135_release_date: 05 March 2026
   kubernetes_135_unsupported_certainty: tentative
   kubernetes_135_unsupported_date: 28 April 2027
   kubernetes_default_deprecated: 'False'
@@ -63,7 +63,7 @@ keyword:
   kubernetes_default_version: '1.34'
   kubernetes_latest_deprecated: 'False'
   kubernetes_latest_docs: /docs/containers?topic=containers-changelog_135
-  kubernetes_latest_release_date: 25 February 2026
+  kubernetes_latest_release_date: 05 March 2026
   kubernetes_latest_unsupported_certainty: tentative
   kubernetes_latest_unsupported_date: 28 April 2027
   kubernetes_latest_version: '1.35'
