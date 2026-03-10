@@ -98,8 +98,8 @@ All VPC clusters created at version 4.18 or later can use RHCOS worker nodes. Cl
 
 <!--</qna:latest-version>-->
 
-`†` Indicates dates that are tentative and subject to change.
-`*` Indicates operating systems that are deprecated.
+- `†` Indicates dates that are tentative and subject to change.
+- `*` Indicates operating systems that are deprecated.
 
 Unsupported versions:
 :    For information about unsupported versions, see the [archive](#version-archive). 
