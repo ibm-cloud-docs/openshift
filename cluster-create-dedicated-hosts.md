@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2022, 2026
-lastupdated: "2026-02-25"
+lastupdated: "2026-03-10"
 
 
 keywords: openshift, clusters, dedicated hosts
@@ -25,7 +25,6 @@ subcollection: openshift
 
 
 Follow the steps to create a dedicated host in a dedicated host pool. Then, provision a cluster on your dedicated host infrastructure in the CLI. For steps to create a cluster on dedicated hosts in the console, review the information in [Creating VPC clusters](/docs/openshift?topic=openshift-cluster-create-vpc-gen2&interface=ui).The Terraform [IBM Dedicated Host Module](https://registry.terraform.io/modules/terraform-ibm-modules/dedicated-host/ibm/latest){: external} provides an Infrastructure as Code (IaC) alternative, offering reusable infrastructure code and examples that may be useful.
-
 {: shortdesc}
 
 1. List available dedicated host flavors. Note the flavor and flavor class that you want to use to create a dedicated host. 
