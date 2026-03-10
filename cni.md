@@ -2,7 +2,7 @@
 
 copyright:
   years: 2026, 2026
-lastupdated: "2026-02-12"
+lastupdated: "2026-03-10"
 
 keywords: openshift, networking, cni
 
@@ -33,6 +33,9 @@ Open Virutal Network (OVN) [4.20 and later]{: tag-red} [RHCOS worker nodes only]
 Review the following table to compare the features and functionality of Calico and OVN.
 
 If you plan to use OVN, you must ensure that your VPC subnets don't overlap with the additional subnets specified in the following table. If there is a subnet overlap, pod to pod networking will fail.
+{: important}
+
+Layer2 and layer3 user defined networks (UDN) are not supported with workloads that use DHCP, such as Openshift Virtualisation VMs.
 {: important}
 
 | Component | Calico | OVN-Kubernetes |
