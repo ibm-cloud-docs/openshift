@@ -2,7 +2,7 @@
 
 copyright:
   years: 2025, 2026
-lastupdated: "2026-02-27"
+lastupdated: "2026-03-10"
 
 
 keywords: openshift, openshift data foundation, openshift container storage, disaster recovery
@@ -232,11 +232,11 @@ Configure the ODF RDR policy.
     {: pre}
 
 1. On the **ACM hub cluster**, create a DR policy with a 5 minute sync interval and specify each managed cluster in the parameters. This creates NooBaa object buckets on both managed clusters and enables ODF Ceph block pool mirroring for volume replication. 
-  1. Navigate to the ACM console, then click **Fleet management** > **Data services** > **Disaster Recovery** > **Policies** > **Create DR Policy**.
-  2. Create a DR policy that includes the following parameters.
-      - Connected clusters: <primary_managed_cluster_name>, <secondary_managed_cluster_name>
-      - Replication policy: Asynchronous
-      - Replication interval: 5m
+    1. Navigate to the ACM console, then click **Fleet management** > **Data services** > **Disaster Recovery** > **Policies** > **Create DR Policy**.
+    2. Create a DR policy that includes the following parameters.
+        - Connected clusters: <primary_managed_cluster_name>, <secondary_managed_cluster_name>
+        - Replication policy: Asynchronous
+        - Replication interval: 5m
 
 1. On the hub cluster, run the commands to verify that the DR policy was created and applied to the managed clusters. 
 
@@ -303,7 +303,7 @@ You are responsible for managing these operators, including but not limited to u
 {: important}
 
 | Operator | Description | Additional information |
-|---|---|---|
+| --- | --- | --- |
 | OpenShift API for Data Protection (OADP) Operator | - Use to create backup and restore APIs for OpenShift clusters. \n - Install on **managed clusters**.  | [Introduction to OpenShift API for data protection](https://docs.redhat.com/en/documentation/openshift_container_platform/4.18/html/backup_and_restore/oadp-application-backup-and-restore#oadp-introduction){: external} |
 | Submariner | - Provides direct networking between two or more Kubernetes clusters in your environment. \n - Install on **managed clusters**. | [Submariner](https://docs.redhat.com/en/documentation/red_hat_advanced_cluster_management_for_kubernetes/2.2/html/manage_cluster/submariner){: external} |
 {: caption="Optional operators for ODF Regional Disaster Recovery" caption-side="bottom"}
