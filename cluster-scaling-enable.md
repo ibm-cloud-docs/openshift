@@ -1,8 +1,8 @@
 ---
 
 copyright: 
-  years: 2014, 2025
-lastupdated: "2025-11-24"
+  years: 2014, 2026
+lastupdated: "2026-03-10"
 
 
 keywords: openshift, {{site.data.keyword.openshiftlong_notm}}, kubernetes, node scaling, ca, autoscaler
@@ -158,67 +158,250 @@ Customize the cluster autoscaler settings such as the amount of time it waits be
 {: #ca-configmap}
 
 
-| Parameter | Description | Default |
-| --- | --- | --- |
-| `expander` | How the cluster autoscaler determines which worker pool to scale if you have multiple worker pools.  \n - `random`: Selects randomly between `most-pods` and `least-waste`.  \n - `most-pods`: Selects the worker pool that is able to schedule the most pods when scaling up. Use this method if you are using `nodeSelector` to make sure that pods land on specific worker nodes.  \n - `least-waste`: Selects the worker pool that has the least unused CPU after scaling up. If two worker pools use the same amount of CPU resources after scaling up, the worker pool with the least unused memory is selected. | `random` |
-| `prometheusScrape` | Set to `true` to send Prometheus metrics. To stop sending metrics, set to `false`. | `true` |
-| `ignoreDaemonSetsUtilization` | Ignores autoscaler DaemonSet pods when calculating resource utilization for scale-down. | `false` |
-| `imagePullPolicy` | When to pull the Docker image.  \n - `Always`: Pulls the image every time that the pod is started.  \n - `IfNotPresent`: Pulls the image only if the image isn't already present locally.  \n - `Never`: Assumes that the image exists locally and never pulls the image. | `Always` |
-| `livenessProbeFailureThreshold` | The number of times that the `kubelet` retries a liveness probe after the pod starts and the first liveness probe fails. After the failure threshold is reached, the container is restarted and the pod is marked `Unready` for a readiness probe, if applicable. | `3` |
-| `livenessProbePeriodSeconds` | The interval in seconds that the `kubelet` performs a liveness probe. | `600` |
-| `livenessProbeTimeoutSeconds` | The time in seconds after which the liveness probe times out. | `10` |
-| `maxBulkSoftTaintCount` | The maximum number of worker nodes that can be tainted or untainted with `PreferNoSchedule` at the same time. To disable this feature, set to `0`. | `0` |
-| `maxBulkSoftTaintTime` | The maximum amount of time that worker nodes can be tainted or untainted with `PreferNoSchedule` at the same time. | `10m` |
-| `maxFailingTime` | The maximum time in minutes that the cluster autoscaler pod runs without a completed action before the pod is automatically restarted. | `15m` |
-| `maxInactivity` | The maximum time in minutes that the cluster autoscaler pod runs without any recorded activity before the pod is automatically restarted. | `10m` |
-| `maxNodeProvisionTime` | The maximum amount of time in minutes that a worker node can take to begin provisioning before the cluster autoscaler cancels the scale-up request. | `120m` |
-| `maxNodeGroupBinpackingDuration` |  Maximum time in seconds spent in bin packing simulation for each worker-pool. | `10s` |
-| `maxNodesPerScaleUp` | Maximum number of nodes that can be added in a single scale up. This is intended strictly for optimizing autoscaler algorithm latency and should not be used as a rate limit for scale-up. | `1000` |
-| `maxRetryGap` | The maximum time in seconds to retry after failing to connect to the service API. Use this parameter and the `retryAttempts` parameter to adjust the retry window for the cluster autoscaler. | `60` |
-| `parallelDrain` | Set to `true` to allow parallel draining of nodes. | `false` |
-| `maxScaleDownParallelism` | The maximum number of nodes, both empty and still needing to be drained, that can be deleted in parallel. | `10` |
-| `maxDrainParallelism` | Maximum number of nodes that still need to be drained that can be drained and deleted in parallel. | `1` |
-| `nodeDeletionBatcherInterval` | How long in minutes that the autoscaler can gather nodes to delete them in batch. | `0m` |
-| `nodeDeleteDelayAfterTaint` | How long in seconds to wait before deleting a node after tainting it. | `5s` |
-| `enforceNodeGroupMinSize` | Set this value to `true` to scale up the worker pool to the configured min size if needed. | `false` |
-| `resourcesLimitsCPU` | The maximum amount of worker node CPU that the `ibm-iks-cluster-autoscaler` pod can consume. | `600m` |
-| `resourcesLimitsMemory` | The maximum amount of worker node memory that the `ibm-iks-cluster-autoscaler` pod can consume. | `600Mi` |
-| `coresTotal` | The minimum and maximum number of cores in the cluster. Cluster autoscaler does not scale the cluster beyond these numbers. | `0:320000` |
-| `memoryTotal` | Minimum and maximum amount of memory in gigabytes for the cluster. Cluster autoscaler does not scale the cluster beyond these numbers. | `0:6400000` |
-| `resourcesRequestsCPU` | The minimum amount of worker node CPU that the `ibm-iks-cluster-autoscaler` pod starts with. | `200m` |
-| `resourcesRequestsMemory` | The minimum amount of worker node memory that the `ibm-iks-cluster-autoscaler` pod starts with. | `200Mi` |
-| `retryAttempts` | The maximum number of attempts to retry after failing to connect to the service API. Use this parameter and the `maxRetryGap` parameter to adjust the retry window for the cluster autoscaler. | `64` |
-| `logLevel` | The log level for the autoscaler. Logging levels are `info`, `debug`, `warning`, `error` | `info` |
-| `scaleDownDelayAfterAdd` | The amount of time after scale up that scale down evaluation resumes. The default value for `scaleDownDelayAfterAdd` is 10 minutes. | `10m` |
-| `scaleDownDelayAfterDelete` | The amount of time after node deletion that scale down evaluation resumes. The default value for `scaleDownDelayAfterDelete` is the same as the `scan-interval` which is `1m` | `1m` |
-| `scaleDownDelayAfterFailure` | The amount of time in minutes that the autoscaler must wait after a failure. | `3m` |
-| `kubeClientBurst` | Allowed burst for the Kubernetes client. | `300` |
-| `kubeClientQPS` | The QPS value for Kubernetes client. How many queries are accepted once the burst has been exhausted. | `5.0` |
-| `maxEmptyBulkDelete` | **Only supported in versions earlier than 1.2.4** The maximum number of empty nodes that can be deleted by the autoscaler at the same time. | `10` |
-| `maxScaleDownParallelism` | **1.2.4 and later**  Maximum number of nodes, both empty and needing to be drained, that can be deleted in parallel. | `10` |
-| `maxGracefulTerminationSec` | The maximum number of seconds the autoscaler waits for pod to end when it scales down a node. | `600` |
-| `maxTotalUnreadyPercentage` | The maximum percentage of unready nodes in the cluster. After this value is exceeded, the autoscaler stops operations. | `45` |
-| `okTotalUnreadyCount` | Number of allowed unready nodes, irrespective of the `maxTotalUnreadyPercentage` value. | `3` |
-| `unremovableNodeRecheckTimeout` | The timeout in minutes before the autoscaler rechecks a node that couldn't be removed in earlier attempt. | `5m` |
-| `scaleDownUnneededTime` | The amount of time in minutes that a worker node must be unnecessary before it can be scaled down. | `10m` |
-| `scaleDownUtilizationThreshold` | The worker node utilization threshold. If the worker node utilization is less than the threshold, the worker node is considered to be scaled down. Worker node utilization is calculated as the sum of the CPU and memory resources that are requested by all pods that run on the worker node, divided by the worker node resource capacity. | `0.5` |
-| `scaleDownUnreadyTime` | The amount of time in minutes that autoscaler must wait before an unready node is considered for scale down. | `20m` |
-| `scaleDownNonEmptyCandidatesCount` | The maximum number of non-empty nodes considered in one iteration as candidates for scale down with drain. | `30` |
-| `scaleDownCandidatesPoolRatio` | The ratio of nodes that are considered as additional non-empty candidates for scale down when some candidates from previous iteration are no longer valid. | `0.1` |
-| `scaleDownCandidatesPoolMinCount` | The minimum number of nodes that are considered as additional non-empty candidates for scale down when some candidates from previous iterations are no longer valid. | `50` |
-| `scaleDownEnabled` | When set to `false`, the autoscaler does not perform scale down. | `true` |
-| `scaleDownUnreadyEnabled` | When set to `true` unready nodes are scheduled for scale down. | `true` |
-| `scanInterval` | Set how often in minutes that the cluster autoscaler scans for workload usage that triggers scaling up or down. | `1m` |
-| `skipNodesWithLocalStorage` | When set to `true`, worker nodes that have pods that are saving data to local storage are not scaled down. The default value is `true` |
-| `skipNodesWithSystemPods` | When set to `true`, worker nodes that have `kube-system` pods are not scaled down. Do not set the value to `false` because scaling down `kube-system` pods might have unexpected results. | `true` |
-| `expendablePodsPriorityCutoff` | Pods with priority under the cutoff are expendable. They can be removed without consideration during scale down and they don't cause scale up. Pods that `PodPriority` set to null are not expendable. | `-10` |
-| `minReplicaCount` | The minimum number of replicas that a replicaSet or replication controller must allow to be deleted during scale down. | `0` |
-| `maxPodEvictionTime` | Maximum time the autoscaler tries to evict a pod before stopping. | `2m` | 
-| `newPodScaleUpDelay` | Pods newer than this value in seconds are not considered for scale-up. Can be increased for individual pods through the `cluster-autoscaler.kubernetes.io/pod-scale-up-delay` annotation. | `0s` |
-| `balancingIgnoreLabel` | The node label key to ignore during zone balancing. Apart from the fixed node labels, the autoscaler can ignore an additional 5 node labels during zone balancing. For example, `balancingIgnoreLabel1:label1`, `balancingIgnoreLabel2: custom-label2`. |
-| `workerPoolsConfig.json` | The worker pools that you want to autoscale, including their minimum and maximum number of worker nodes per zone.  \n - `{"name": "<pool_name>","minSize": 1,"maxSize": 2,"enabled":false}`.  \n - `<pool_name>`: The name or ID of the worker pool that you want to enable or disable for autoscaling. To list available worker pools, run `ibmcloud oc worker-pool ls --cluster <cluster_name_or_ID>`  \n - `maxSize: <number_of_workers>`: The maximum number of worker nodes per zone that the cluster autoscaler can scale up to. The value must be equal to or greater than the value that you set for the `minSize: <number_of_workers>` size.  \n - `min=<number_of_workers>`: The minimum number of worker nodes per zone that the cluster autoscaler can scale down to. The value must be `2` or greater so that your ALB pods can be spread for high availability. If you [disabled](/docs/openshift?topic=openshift-kubernetes-service-cli#cs_alb_configure) all public ALBs in each zone of your standard cluster, you can set the value to `1`. Keep in mind that setting a `min` size does not automatically trigger a scale-up. The `min` size is a threshold so that the cluster autoscaler does not scale to fewer than this minimum number of worker nodes per zone. If your cluster does not have this number of worker nodes per zone yet, the cluster autoscaler does not scale up until you have workload resource requests that require more resources.  \n - `enabled=`: When `true`, the cluster autoscaler can scale your worker pool. When `false`, the cluster autoscaler won't scale the worker pool. Later, if you want to remove the cluster autoscaler, you must first disable each worker pool in the ConfigMap. If you enable a worker pool for autoscaling and then later add a zone to this worker pool, restart the cluster autoscaler pod so that it picks up this change: `oc delete pod -n kube-system <cluster_autoscaler_pod>`. | By default, the `default` worker pool is **not** enabled, with a `max` value of `2` and a `min` value of `1` |
-| `scaleDownGPUUtilizationThreshold` | The sum of GPU requests of all pods running on the node divided by the node's allocatable resources. When resource requests are less than this threshold, a node can be considered for scale down. The utilization calculation only considers GPU resources. CPU and memory utilization are ignored. | `0.5` |
-| `OSReservedMemoryGi` | The amount of reserved memory in GiB. | `0.3` |
-| `OSReservedCPUMili` | The amount of reserved CPU in MiliCPU. | `30` |
-{: caption="Autoscaler add-on parameter reference" caption-side="bottom"}  
+
+`expander`
+:   How the cluster autoscaler determines which worker pool to scale if you have multiple worker pools. The default value is `random`.
+:   `random`: Selects randomly between `most-pods` and `least-waste`.
+:   `most-pods`: Selects the worker pool that is able to schedule the most pods when scaling up. Use this method if you are using `nodeSelector` to make sure that pods land on specific worker nodes.
+:   `least-waste`: Selects the worker pool that has the least unused CPU after scaling up. If two worker pools use the same amount of CPU resources after scaling up, the worker pool with the least unused memory is selected.
+
+
+`prometheusScrape`
+:   Set to `true` to send Prometheus metrics. To stop sending metrics, set to `false`.
+
+
+`ignoreDaemonSetsUtilization`
+:   Ignores autoscaler DaemonSet pods when calculating resource utilization for scale-down. The default value is `false`.
+
+
+`imagePullPolicy`
+:   When to pull the Docker image. The default value is `Always`.
+:   `Always`: Pulls the image every time that the pod is started.
+:   `IfNotPresent`: Pulls the image only if the image isn't already present locally.  \n - `Never`: Assumes that the image exists locally and never pulls the image.
+
+
+`livenessProbeFailureThreshold`
+:   The number of times that the `kubelet` retries a liveness probe after the pod starts and the first liveness probe fails. After the failure threshold is reached, the container is restarted and the pod is marked `Unready` for a readiness probe, if applicable. The default value is `3`.
+
+
+`livenessProbePeriodSeconds`
+:   The interval in seconds that the `kubelet` performs a liveness probe. The default value is `600`.
+
+
+`livenessProbeTimeoutSeconds`
+:   The time in seconds after which the liveness probe times out. The default value is `10`.
+
+
+`maxBulkSoftTaintCount`
+:   The maximum number of worker nodes that can be tainted or untainted with `PreferNoSchedule` at the same time. To disable this feature, set to `0`. The default value is `0`.
+
+
+`maxBulkSoftTaintTime`
+:   The maximum amount of time that worker nodes can be tainted or untainted with `PreferNoSchedule` at the same time. The default value is `10m`.
+
+
+`maxFailingTime`
+:   The maximum time in minutes that the cluster autoscaler pod runs without a completed action before the pod is automatically restarted. The default value is `15m`.
+
+
+`maxInactivity`
+:   The maximum time in minutes that the cluster autoscaler pod runs without any recorded activity before the pod is automatically restarted. The default value is `10m`.
+
+
+`maxNodeProvisionTime`
+:   The maximum amount of time in minutes that a worker node can take to begin provisioning before the cluster autoscaler cancels the scale-up request. The default value is `120m`.
+
+
+`maxNodeGroupBinpackingDuration`
+:   Maximum time in seconds spent in bin packing simulation for each worker-pool. | `10s` |
+| `maxNodesPerScaleUp`. Maximum number of nodes that can be added in a single scale up. This is intended strictly for optimizing autoscaler algorithm latency and should not be used as a rate limit for scale-up. The default value is `1000`.
+
+
+`maxRetryGap`
+:   The maximum time in seconds to retry after failing to connect to the service API. Use this parameter and the `retryAttempts` parameter to adjust the retry window for the cluster autoscaler. The default value is `60`.
+
+
+`parallelDrain`
+:   Set to `true` to allow parallel draining of nodes. The default value is `false`.
+
+
+`maxScaleDownParallelism`
+:   The maximum number of nodes, both empty and still needing to be drained, that can be deleted in parallel. The default value is `10`.
+
+
+`maxDrainParallelism`
+:   Maximum number of nodes that still need to be drained that can be drained and deleted in parallel. The default value is `1`.
+
+
+`nodeDeletionBatcherInterval`
+:   How long in minutes that the autoscaler can gather nodes to delete them in batch. The deafault value is `0m`.
+
+
+`nodeDeleteDelayAfterTaint`
+:   How long in seconds to wait before deleting a node after tainting it. The default value is `5s`.
+
+
+`enforceNodeGroupMinSize`
+:   Set this value to `true` to scale up the worker pool to the configured min size if needed. The default value is `false`.
+
+
+`resourcesLimitsCPU`
+:   The maximum amount of worker node CPU that the `ibm-iks-cluster-autoscaler` pod can consume. The default value is `600m`.
+
+
+`resourcesLimitsMemory`
+:   The maximum amount of worker node memory that the `ibm-iks-cluster-autoscaler` pod can consume. The default value is `600Mi`.
+
+
+`coresTotal`
+:   The minimum and maximum number of cores in the cluster. Cluster autoscaler does not scale the cluster beyond these numbers. The default value is `0:320000`.
+
+
+`memoryTotal`
+:   Minimum and maximum amount of memory in gigabytes for the cluster. Cluster autoscaler does not scale the cluster beyond these numbers. The default value is `0:6400000`.
+
+
+`resourcesRequestsCPU`
+:   The minimum amount of worker node CPU that the `ibm-iks-cluster-autoscaler` pod starts with. The default value is `200m`.
+
+
+`resourcesRequestsMemory`
+:   The minimum amount of worker node memory that the `ibm-iks-cluster-autoscaler` pod starts with. The default value is `200Mi`.
+
+
+`retryAttempts`
+:   The maximum number of attempts to retry after failing to connect to the service API. Use this parameter and the `maxRetryGap` parameter to adjust the retry window for the cluster autoscaler. | The default value is `64`.
+
+
+`logLevel`
+:   The log level for the autoscaler. Logging levels are `info`, `debug`, `warning`, `error`. The default value is  `info`.
+
+
+`scaleDownDelayAfterAdd`
+:   The amount of time after scale up that scale down evaluation resumes. The default value is `10m`.
+
+
+`scaleDownDelayAfterDelete` | The amount of time after node deletion that scale down evaluation resumes. The default value is the same as the `scan-interval` which is `1m`.
+
+
+`scaleDownDelayAfterFailure`
+:   The amount of time in minutes that the autoscaler must wait after a failure. The default value is `3m`.
+
+
+`kubeClientBurst`
+:   Allowed burst for the Kubernetes client. The default value is `300`.
+
+
+`kubeClientQPS`
+:   The QPS value for Kubernetes client. How many queries are accepted once the burst has been exhausted. The default value is `5.0`.
+
+
+`maxEmptyBulkDelete`
+:   **Only supported in versions earlier than 1.2.4** The maximum number of empty nodes that can be deleted by the autoscaler at the same time. The default value is `10`.
+
+
+`maxScaleDownParallelism`
+:   **1.2.4 and later**  Maximum number of nodes, both empty and needing to be drained, that can be deleted in parallel. The default value is `10`.
+
+
+`maxGracefulTerminationSec`
+:   The maximum number of seconds the autoscaler waits for pod to end when it scales down a node. The default value is `600`.
+
+
+`maxTotalUnreadyPercentage`
+:   The maximum percentage of unready nodes in the cluster. After this value is exceeded, the autoscaler stops operations. The default value is `45`.
+
+
+`okTotalUnreadyCount`
+:   Number of allowed unready nodes, irrespective of the `maxTotalUnreadyPercentage` value. The default value is `3`.
+
+
+`unremovableNodeRecheckTimeout`
+:   The timeout in minutes before the autoscaler rechecks a node that couldn't be removed in earlier attempt. The default value is `5m`.
+
+
+`scaleDownUnneededTime`
+:   The amount of time in minutes that a worker node must be unnecessary before it can be scaled down. The default value is `10m`.
+
+
+`scaleDownUtilizationThreshold`
+:   The worker node utilization threshold. If the worker node utilization is less than the threshold, the worker node is considered to be scaled down. Worker node utilization is calculated as the sum of the CPU and memory resources that are requested by all pods that run on the worker node, divided by the worker node resource capacity. | The default value is `0.5`.
+
+
+`scaleDownUnreadyTime`
+:   The amount of time in minutes that autoscaler must wait before an unready node is considered for scale down. The default value is `20m`.
+
+
+`scaleDownNonEmptyCandidatesCount`
+:   The maximum number of non-empty nodes considered in one iteration as candidates for scale down with drain. | The default value is `30`.
+
+
+`scaleDownCandidatesPoolRatio`
+:   The ratio of nodes that are considered as additional non-empty candidates for scale down when some candidates from previous iteration are no longer valid. The default value is `0.1`.
+
+
+`scaleDownCandidatesPoolMinCount`
+:   The minimum number of nodes that are considered as additional non-empty candidates for scale down when some candidates from previous iterations are no longer valid. The default value is `50`.
+
+
+`scaleDownEnabled`
+:   When set to `false`, the autoscaler does not perform scale down. The default value is `true`.
+
+
+`scaleDownUnreadyEnabled`
+:   When set to `true` unready nodes are scheduled for scale down. The default value is `true`.
+
+
+`scanInterval`
+:   Set how often in minutes that the cluster autoscaler scans for workload usage that triggers scaling up or down. The default value is `1m`.
+
+
+`skipNodesWithLocalStorage`
+:   When set to `true`, worker nodes that have pods that are saving data to local storage are not scaled down. The default value is `true`.
+
+
+`skipNodesWithSystemPods`
+:   When set to `true`, worker nodes that have `kube-system` pods are not scaled down. Do not set the value to `false` because scaling down `kube-system` pods might have unexpected results. The default value is `true`.
+
+
+`expendablePodsPriorityCutoff`
+:   Pods with priority under the cutoff are expendable. They can be removed without consideration during scale down and they don't cause scale up. Pods that `PodPriority` set to null are not expendable. The default value is `-10`.
+
+
+`minReplicaCount`
+:   The minimum number of replicas that a replicaSet or replication controller must allow to be deleted during scale down. The default value is `0`.
+
+
+`maxPodEvictionTime`
+:   Maximum time the autoscaler tries to evict a pod before stopping. The default value is `2m`.
+
+
+`newPodScaleUpDelay`
+:   Pods newer than this value in seconds are not considered for scale-up. Can be increased for individual pods through the `cluster-autoscaler.kubernetes.io/pod-scale-up-delay` annotation. The default value is `0s`.
+
+
+`balancingIgnoreLabel`
+:   The node label key to ignore during zone balancing. Apart from the fixed node labels, the autoscaler can ignore an additional 5 node labels during zone balancing. For example, `balancingIgnoreLabel1:label1`, `balancingIgnoreLabel2: custom-label2`.
+
+
+`workerPoolsConfig.json`
+:   The worker pools that you want to autoscale, including their minimum and maximum number of worker nodes per zone in the format `{"name": "<pool_name>","minSize": 1,"maxSize": 2,"enabled":false}`.
+:   `<pool_name>`: The name or ID of the worker pool that you want to enable or disable for autoscaling. To list available worker pools, run `ibmcloud oc worker-pool ls --cluster <cluster_name_or_ID>`.
+:   `maxSize: <number_of_workers>`: The maximum number of worker nodes per zone that the cluster autoscaler can scale up to. The value must be equal to or greater than the value that you set for the `minSize: <number_of_workers>` size.
+:   `min=<number_of_workers>`: The minimum number of worker nodes per zone that the cluster autoscaler can scale down to. If you need your ALB pods to be spread for high availability, you must set the value to at least 2. If you [disabled](/docs/openshift?topic=openshift-kubernetes-service-cli#cs_alb_configure) all public ALBs in each zone of your standard cluster, you can set the value to `0`. Keep in mind that setting a `min` size does not automatically trigger a scale-up. The `min` size is a threshold so that the cluster autoscaler does not scale to fewer than this minimum number of worker nodes per zone. If your cluster does not have this number of worker nodes per zone yet, the cluster autoscaler does not scale up until you have workload resource requests that require more resources.
+:   `enabled=`: When `true`, the cluster autoscaler can scale your worker pool. When `false`, the cluster autoscaler won't scale the worker pool. Later, if you want to remove the cluster autoscaler, you must first disable each worker pool in the ConfigMap. If you enable a worker pool for autoscaling and then later add a zone to this worker pool, restart the cluster autoscaler pod so that it picks up this change: `oc delete pod -n kube-system <cluster_autoscaler_pod>`.
+:   By default, the `default` worker pool is **not** enabled, with a `max` value of `2` and a `min` value of `1`.
+
+
+`scaleDownGPUUtilizationThreshold`
+:   The sum of GPU requests of all pods running on the node divided by the node's allocatable resources. When resource requests are less than this threshold, a node can be considered for scale down. The utilization calculation only considers GPU resources. CPU and memory utilization are ignored. The default value is `0.5`.
+
+
+`OSReservedMemoryGi`
+:   The amount of reserved memory in GiB. The default value is `0.3`.
+
+
+`OSReservedCPUMili`
+:   The amount of reserved CPU in MiliCPU. The default value is `30`.
+
     
