@@ -3,7 +3,7 @@
 copyright:
   years: 2014, 2026
 
-lastupdated: "2026-02-26"
+lastupdated: "2026-03-10"
 
 keywords: openshift, version, update, upgrade
 
@@ -42,11 +42,12 @@ For more details about the {{site.data.keyword.redhat_openshift_notm}} and Kuber
 
 ![OpenShift version support timeline](images/oc.svg "Version support timeline"){: caption="Red Hat OpenShift version support timeline" caption-side="bottom"}
 
-`†` Indicates dates that are tentative and subject to change.
-`*` Indicates operating systems that are deprecated.
-
 All VPC clusters created at version 4.18 or later can use RHCOS worker nodes. Clusters that were created at versions 4.15, 4.16, or 4.17 can only use RHCOS worker nodes if they were initially created with RHCOS worker nodes, or if they are upgraded to at least version 4.18. 
 {: important}
+
+- `†` Indicates dates that are tentative and subject to change.
+- `*` Indicates operating systems that are deprecated.
+
 
 
 <!--<qna:latest-version>-->
@@ -97,8 +98,8 @@ All VPC clusters created at version 4.18 or later can use RHCOS worker nodes. Cl
 
 <!--</qna:latest-version>-->
 
-`†` Indicates dates that are tentative and subject to change.
-`*` Indicates operating systems that are deprecated.
+- `†` Indicates dates that are tentative and subject to change.
+- `*` Indicates operating systems that are deprecated.
 
 Unsupported versions:
 :    For information about unsupported versions, see the [archive](#version-archive). 
