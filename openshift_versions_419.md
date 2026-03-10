@@ -1,8 +1,8 @@
 ---
 
 copyright:
-  years: 2024, 2025
-lastupdated: "2025-12-18"
+  years: 2024, 2026
+lastupdated: "2026-03-10"
 
 
 keywords: openshift, version, update, upgrade, 4.19, update openshift
@@ -72,6 +72,7 @@ For clusters that run version 4.19 or later, you can use the `oc adm upgrade sta
 | Preparing to update OpenShift | For more information, review the [Preparing to update to OpenShift Container Platform 4.19](https://docs.redhat.com/en/documentation/openshift_container_platform/4.19/html/updating_clusters/preparing-to-update-a-cluster){: external} for possible actions required. The etcd backup, version selection, and SDN removal upgrade preparation actions do not apply to Red Hat OpenShift on IBM Cloud clusters since etcd backups and version selection actions are handled for you, and Calico is used instead of SDN. |
 | Deprecated and removed OpenShift features | For more information, review the [OpenShift Container Platform version 4.19 deprecated and removed features](https://docs.redhat.com/en/documentation/openshift_container_platform/4.19/html/release_notes/ocp-4-19-release-notes#ocp-4-19-deprecated-removed-features_release-notes){: external} for possible actions required. |
 | Upgrade requires administrator acknowledgment | After you have evaluated your cluster for any removed APIs and have migrated any removed APIs, you can acknowledge that your cluster is ready to upgrade from OpenShift Container Platform 4.18 to 4.19.. See [Providing the administrator acknowledgment](https://docs.redhat.com/en/documentation/openshift_container_platform/4.19/html/updating_clusters/preparing-to-update-a-cluster#update-preparing-ack_updating-cluster-prepare){: external} for details. |
+| RHEL operating system | Beginning with cluster version 4.18, Red Hat Enterprise Linux CoreOS (RHCOS) is the default operating system in Classic and VPC clusters and RHEL worker nodes are deprecated. Classic or VPC clusters. Upgrading a cluster to version 4.18 does not change the operating system for an existing worker pool. For more information and possible migration actions, see [Red Hat Enterprise Linux (RHEL) deprecation](/docs/openshift?topic=openshift-rhel-deprecation). |
 | Known OpenShift issues | For more information, review the [OpenShift Container Platform version 4.19 known issues](https://docs.redhat.com/en/documentation/openshift_container_platform/4.19/html/release_notes/ocp-4-19-release-notes#ocp-4-19-known-issues_release-notes){: external} for possible actions required. |
 | Upgrade requires OpenShift cluster version currency | A cluster master upgrade will be canceled if the OpenShift cluster version status indicates that an update is already in progress. See [Why does OpenShift show the cluster version is not up to date?](/docs/openshift?topic=openshift-ts-cluster-version-downlevel) for details. |
 | Upgrade requires resolution to OpenShift cluster version upgradeable conditions | A cluster master upgrade will be canceled if the OpenShift cluster version Upgradeable status condition indicates that the cluster is not upgradeable. To determine if the cluster is upgradeable, see [Checking the Upgradeable status of your cluster](/docs/openshift?topic=openshift-cs_versions_419#status-check-419){: external}. |
