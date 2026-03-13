@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2024, 2026
-lastupdated: "2026-03-05"
+lastupdated: "2026-03-13"
 
 
 keywords: openshift, {{site.data.keyword.openshiftlong_notm}}, kubernetes, certificate, rotate, ca rotate
@@ -49,7 +49,7 @@ By default, certificate authority (CA) certificates are administered to secure a
     Example output
 
     ```sh
-    Status:             CA certificate creation complete. Ensure that your worker nodes are reloaded before you start a CA certificate rotation.
+    Status:             CA certificate created. Reload your worker nodes then begin the CA certificate rotation.
     Action Started:     2024-08-30T16:17:56+0000
     Action Completed:   2024-08-30T16:21:13+0000
     ```
@@ -130,7 +130,7 @@ When should CA certificates be rotated?
 Does IBM automatically extend the expiration of CA certificates?
 :   Yes, new CA certificates are generated using the existing private key. This enables the certificates to have a new expiry date while still allowing the existing intermediate and end-entity certificates to be successfully validated.
 
-My cluster's CA status has a state of CA certificate creation complete, what actions are expected in this case?
+My cluster's CA status has a state of "CA certificate created", what actions are expected in this case?
 :   The expectation is that once the CA rotation processes has been started, it is completed. This ensures that intermediate and end-entity certificates generated with the prior CA are invalidated.
 
 My cluster's CA status shows `Action Started` and `Action Completed` timestamps from several years ago. What actions are expected in this case?

@@ -3,7 +3,7 @@
 copyright:
   years: 2024, 2026
 
-lastupdated: "2026-02-27"
+lastupdated: "2026-03-13"
 
 
 keywords: change log, version history, 4.17_openshift
@@ -37,6 +37,25 @@ Master patch updates are applied automatically. Worker node patch updates can be
 
 ## Version 4.17
 {: #417_components}
+
+
+### Worker node fix pack 4.17.50_1575_openshift, released 11 March 2026
+{: #cl-boms-41750_1575_openshift_W}
+
+The following table shows the components included in the worker node fix pack 4.17.50_1575_openshift. Worker node patch updates can be applied by updating, reloading (in classic infrastructure), or replacing (in VPC infrastructure) the worker node.
+{: shortdesc}
+
+| Component | Version | Description |
+| ---- | ---- | ---- |
+|RHEL 9 (VPC)|5.14.0-570.62.1.el9_6|N/A|
+|RHEL 9 (Classic)|5.14.0-570.62.1.el9_6|N/A|
+|RHEL 8 (VPC)|4.18.0-553.107.1.el8_10|Resolves the following CVEs: [RHSA-2026:2264](https://access.redhat.com/errata/RHSA-2026:2264){: external}, [CVE-2025-68349](https://nvd.nist.gov/vuln/detail/CVE-2025-68349){: external}, [CVE-2025-38403](https://nvd.nist.gov/vuln/detail/CVE-2025-38403){: external}, [CVE-2025-40158](https://nvd.nist.gov/vuln/detail/CVE-2025-40158){: external}, [CVE-2025-40135](https://nvd.nist.gov/vuln/detail/CVE-2025-40135){: external}, [CVE-2025-40170](https://nvd.nist.gov/vuln/detail/CVE-2025-40170){: external}, [CVE-2026-22998](https://nvd.nist.gov/vuln/detail/CVE-2026-22998){: external}, [CVE-2025-40269](https://nvd.nist.gov/vuln/detail/CVE-2025-40269){: external}, [CVE-2022-50673](https://nvd.nist.gov/vuln/detail/CVE-2022-50673){: external}, [RHSA-2026:2720](https://access.redhat.com/errata/RHSA-2026:2720){: external}, [CVE-2025-40168](https://nvd.nist.gov/vuln/detail/CVE-2025-40168){: external}, [CVE-2025-40304](https://nvd.nist.gov/vuln/detail/CVE-2025-40304){: external}, [CVE-2023-53762](https://nvd.nist.gov/vuln/detail/CVE-2023-53762){: external}, [RHSA-2026:3083](https://access.redhat.com/errata/RHSA-2026:3083){: external}, [CVE-2025-38129](https://nvd.nist.gov/vuln/detail/CVE-2025-38129){: external}, [CVE-2025-38248](https://nvd.nist.gov/vuln/detail/CVE-2025-38248){: external}, [CVE-2025-40064](https://nvd.nist.gov/vuln/detail/CVE-2025-40064){: external}, [CVE-2025-68800](https://nvd.nist.gov/vuln/detail/CVE-2025-68800){: external}, and [CVE-2026-23074](https://nvd.nist.gov/vuln/detail/CVE-2026-23074){: external}.|
+|RHEL 8 (Classic)|4.18.0-553.107.1.el8_10|Resolves the following CVEs: [RHSA-2026:2264](https://access.redhat.com/errata/RHSA-2026:2264){: external}, [CVE-2025-68349](https://nvd.nist.gov/vuln/detail/CVE-2025-68349){: external}, [CVE-2025-38403](https://nvd.nist.gov/vuln/detail/CVE-2025-38403){: external}, [CVE-2025-40158](https://nvd.nist.gov/vuln/detail/CVE-2025-40158){: external}, [CVE-2025-40135](https://nvd.nist.gov/vuln/detail/CVE-2025-40135){: external}, [CVE-2025-40170](https://nvd.nist.gov/vuln/detail/CVE-2025-40170){: external}, [CVE-2026-22998](https://nvd.nist.gov/vuln/detail/CVE-2026-22998){: external}, [CVE-2025-40269](https://nvd.nist.gov/vuln/detail/CVE-2025-40269){: external}, [CVE-2022-50673](https://nvd.nist.gov/vuln/detail/CVE-2022-50673){: external}, [RHSA-2026:2720](https://access.redhat.com/errata/RHSA-2026:2720){: external}, [CVE-2025-40168](https://nvd.nist.gov/vuln/detail/CVE-2025-40168){: external}, [CVE-2025-40304](https://nvd.nist.gov/vuln/detail/CVE-2025-40304){: external}, [CVE-2023-53762](https://nvd.nist.gov/vuln/detail/CVE-2023-53762){: external}, [RHSA-2026:3083](https://access.redhat.com/errata/RHSA-2026:3083){: external}, [CVE-2025-38129](https://nvd.nist.gov/vuln/detail/CVE-2025-38129){: external}, [CVE-2025-38248](https://nvd.nist.gov/vuln/detail/CVE-2025-38248){: external}, [CVE-2025-40064](https://nvd.nist.gov/vuln/detail/CVE-2025-40064){: external}, [CVE-2025-68800](https://nvd.nist.gov/vuln/detail/CVE-2025-68800){: external}, and [CVE-2026-23074](https://nvd.nist.gov/vuln/detail/CVE-2026-23074){: external}.|
+|Red Hat OpenShift|4.17.50|For more information, see the [change logs](https://docs.redhat.com/en/documentation/openshift_container_platform/4.17/html/release_notes/ocp-4-17-release-notes.html#ocp-4-17-50_release-notes).|
+|Red Hat CoreOS|4.17.50|For more information, see the [change logs](https://docs.redhat.com/en/documentation/openshift_container_platform/4.17/html/release_notes/ocp-4-17-release-notes.html#ocp-4-17-50_release-notes).|
+|HAProxy|965c403695b15b3410d87a3772002edbc5ed2569|Resolves the following CVEs: [CVE-2025-69419](https://nvd.nist.gov/vuln/detail/CVE-2025-69419){: external}.|
+{: caption="4.17.50_1575_openshift fix pack." caption-side="bottom"}
+{: #cl-boms-41750_1575_openshift_W-component-table}
 
 
 ### Worker node fix pack 4.17.49_1574_openshift, released 24 February 2026
