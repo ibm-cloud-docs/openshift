@@ -3,7 +3,7 @@
 copyright:
   years: 2024, 2026
 
-lastupdated: "2026-03-05"
+lastupdated: "2026-03-16"
 
 
 keywords: change log, version history, OpenShift Data Foundation
@@ -43,6 +43,14 @@ Review the version history for OpenShift Data Foundation.
 {: #cl-add-ons-openshift-data-foundation-4.20.0}
 
 
+### 4.20.3, released 16 March 2026
+{: #cl-add-ons-openshift-data-foundation-4203}
+
+- Resolves the following CVEs: [CVE-2026-27141](https://nvd.nist.gov/vuln/detail/CVE-2026-27141){: external}, [CVE-2026-0861](https://nvd.nist.gov/vuln/detail/CVE-2026-0861){: external}, [CVE-2025-15281](https://nvd.nist.gov/vuln/detail/CVE-2025-15281){: external}, [CVE-2026-0915](https://nvd.nist.gov/vuln/detail/CVE-2026-0915){: external}, [CVE-2025-61727](https://nvd.nist.gov/vuln/detail/CVE-2025-61727){: external}, [CVE-2025-61729](https://nvd.nist.gov/vuln/detail/CVE-2025-61729){: external}, [CVE-2025-61726](https://nvd.nist.gov/vuln/detail/CVE-2025-61726){: external}, [CVE-2025-61730](https://nvd.nist.gov/vuln/detail/CVE-2025-61730){: external}, and [CVE-2025-68121](https://nvd.nist.gov/vuln/detail/CVE-2025-68121){: external}.
+- Updates Go to version `1.25.7`.
+- VA fixes. 
+
+
 ### 4.20.1, released 05 March 2026
 {: #cl-add-ons-openshift-data-foundation-4201}
 
@@ -52,6 +60,14 @@ Review the version history for OpenShift Data Foundation.
 
 ## Version 4.19.0
 {: #cl-add-ons-openshift-data-foundation-4.19.0}
+
+
+### 4.19.8, released 16 March 2026
+{: #cl-add-ons-openshift-data-foundation-4198}
+
+- Resolves the following CVEs: [CVE-2026-27141](https://nvd.nist.gov/vuln/detail/CVE-2026-27141){: external}.
+- Updates Go to version `1.25.7`.
+- VA fixes. 
 
 
 ### 4.19.7, released 03 March 2026
@@ -78,6 +94,14 @@ Review the version history for OpenShift Data Foundation.
 
 ## Version 4.18.0
 {: #cl-add-ons-openshift-data-foundation-4.18.0}
+
+
+### 4.18.12, released 16 March 2026
+{: #cl-add-ons-openshift-data-foundation-41812}
+
+- Resolves the following CVEs: [CVE-2026-27141](https://nvd.nist.gov/vuln/detail/CVE-2026-27141){: external}.
+- Updates Go to version `1.25.7`.
+- VA fixes. 
 
 
 ### 4.18.11, released 03 March 2026
@@ -119,6 +143,14 @@ Review the version history for OpenShift Data Foundation.
 
 ## Version 4.17.0
 {: #cl-add-ons-openshift-data-foundation-4.17.0}
+
+
+### 4.17.17, released 16 March 2026
+{: #cl-add-ons-openshift-data-foundation-41717}
+
+- Resolves the following CVEs: [CVE-2026-27141](https://nvd.nist.gov/vuln/detail/CVE-2026-27141){: external}.
+- Updates Go to version `1.25.7`.
+- VA fixes. 
 
 
 ### 4.17.16, released 03 March 2026
@@ -166,6 +198,14 @@ Review the version history for OpenShift Data Foundation.
 
 ## Version 4.16.0
 {: #cl-add-ons-openshift-data-foundation-4.16.0}
+
+
+### 4.16.23, released 16 March 2026
+{: #cl-add-ons-openshift-data-foundation-41623}
+
+- Resolves the following CVEs: [CVE-2026-27141](https://nvd.nist.gov/vuln/detail/CVE-2026-27141){: external}.
+- Updates Go to version `1.25.7`.
+- VA fixes. 
 
 
 ### 4.16.21, released 03 March 2026
@@ -219,6 +259,14 @@ Review the version history for OpenShift Data Foundation.
 
 ## Version 4.15.0
 {: #cl-add-ons-openshift-data-foundation-4.15.0}
+
+
+### 4.15.23, released 16 March 2026
+{: #cl-add-ons-openshift-data-foundation-41523}
+
+- Resolves the following CVEs: [CVE-2026-27141](https://nvd.nist.gov/vuln/detail/CVE-2026-27141){: external}.
+- Updates Go to version `1.25.7`.
+- VA fixes. 
 
 
 ### 4.15.22, released 03 March 2026
