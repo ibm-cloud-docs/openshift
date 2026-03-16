@@ -1799,7 +1799,7 @@ subcollection: openshift
 
 * [Updating managed add-ons](/docs/openshift?topic=openshift-update&interface=ui#addons-update)
 
-[Creating and managing dedicated hosts on VPC Gen 2 infrastructure](/docs/openshift?topic=openshift-dedicated-hosts#dedicated-hosts)
+[Creating and managing dedicated hosts on VPC infrastructure](/docs/openshift?topic=openshift-dedicated-hosts#dedicated-hosts)
 
 * [Setting up dedicated hosts in the CLI](/docs/openshift?topic=openshift-dedicated-hosts#setup-dedicated-host-cli)
 

@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2026
-lastupdated: "2026-02-20"
+lastupdated: "2026-03-16"
 
 
 keywords: openshift, {{site.data.keyword.openshiftlong_notm}}, kubernetes, kernel, performance
@@ -253,7 +253,7 @@ Review the following cases in which you might need to modify the default Calico 
 Before you begin
 :   If your worker nodes still run the default MTU value, increase the MTU value for your worker nodes first before you increase the MTU value for the Calico plug-in. For example, you can apply the following daemon set to change the MTU for your worker nodes to 9000 bytes. Note the interface names that are used in the **`ip link`** command vary depending on the type of your worker nodes.
     - Example command for Bare Metal worker nodes: `ip link set dev bond0 mtu 9000;ip link set dev bond1 mtu 9000;`
-    - Example command VPC Gen 2 worker nodes: `ip link set dev ens3 mtu 9000;`
+    - Example command VPC worker nodes: `ip link set dev ens3 mtu 9000;`
 
 1. Run the following commands to log in to a cluster worker node and ping from one node to another. Because your node MTU is only set to 1500 or 1480, **this attempt is expected to fail**. In the following steps, you can run these commands again to verify that changes are successful.
     1. List the nodes in your cluster. Save the names and IP addresses of two healthy nodes. 

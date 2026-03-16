@@ -1,8 +1,8 @@
 ---
 
 copyright: 
-  years: 2014, 2025
-lastupdated: "2025-09-17"
+  years: 2014, 2026
+lastupdated: "2026-03-16"
 
 
 keywords: openshift dedicated hosts
@@ -16,7 +16,7 @@ subcollection: openshift
 
 
 
-# Creating and managing dedicated hosts on VPC Gen 2 infrastructure
+# Creating and managing dedicated hosts on VPC infrastructure
 {: #dedicated-hosts}
 
 [Virtual Private Cloud]{: tag-vpc}
