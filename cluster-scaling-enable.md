@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2026
-lastupdated: "2026-03-10"
+lastupdated: "2026-03-16"
 
 
 keywords: openshift, {{site.data.keyword.openshiftlong_notm}}, kubernetes, node scaling, ca, autoscaler
@@ -210,8 +210,11 @@ Customize the cluster autoscaler settings such as the amount of time it waits be
 
 
 `maxNodeGroupBinpackingDuration`
-:   Maximum time in seconds spent in bin packing simulation for each worker-pool. | `10s` |
-| `maxNodesPerScaleUp`. Maximum number of nodes that can be added in a single scale up. This is intended strictly for optimizing autoscaler algorithm latency and should not be used as a rate limit for scale-up. The default value is `1000`.
+:   Maximum time in seconds spent in bin packing simulation for each worker-pool. The default value is `10s`.
+
+
+`maxNodesPerScaleUp`
+:   Maximum number of nodes that can be added in a single scale up. This is intended strictly for optimizing autoscaler algorithm latency and should not be used as a rate limit for scale-up. The default value is `1000`.
 
 
 `maxRetryGap`
