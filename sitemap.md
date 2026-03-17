@@ -281,6 +281,10 @@ subcollection: openshift
 
 * [March 2026](/docs/openshift?topic=openshift-openshift-relnotes#openshift-mar26)
 
+    * [17 March 2026](/docs/openshift?topic=openshift-openshift-relnotes#openshift-mar1726)
+
+        * {{site.data.keyword.cos_full_notm}} plug-in updates.
+
     * [16 March 2026](/docs/openshift?topic=openshift-openshift-relnotes#openshift-mar1626)
 
         * OpenShift Data Foundation cluster add-on patch updates.
@@ -6724,6 +6728,8 @@ subcollection: openshift
     * [v1.0.13_297764008, released 14 November 2025](/docs/openshift?topic=openshift-cl-add-ons-ibm-object-csi-driver#cl-add-ons-ibm-object-csi-driver-v1013_297764008)
 
 [{{site.data.keyword.cos_full_notm}} plug-in](/docs/openshift?topic=openshift-cos_plugin_changelog#cos_plugin_changelog)
+
+* [Change log for version 2.2.49, released 17 March 2026](/docs/openshift?topic=openshift-cos_plugin_changelog#02249_object_plugin)
 
 * [Change log for version 2.2.48, released 24 February 2026](/docs/openshift?topic=openshift-cos_plugin_changelog#02248_object_plugin)
 
