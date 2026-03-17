@@ -1,8 +1,8 @@
 ---
 
 copyright: 
-  years: 2023, 2025
-lastupdated: "2025-06-13"
+  years: 2023, 2026
+lastupdated: "2026-03-17"
 
 
 keywords: openshift, {{site.data.keyword.openshiftlong_notm}}, kubernetes, red hat, encrypt, security, kms, root key, crk
@@ -21,6 +21,9 @@ subcollection: openshift
 
 
 By default, the one primary disk of VPC worker nodes is AES-256 bit encrypted at rest by the [underlying VPC infrastructure provider](/docs/vpc?topic=vpc-block-storage-about#vpc-storage-encryption).
+
+There is a temporary limitation when using a Key Protect single tenant instance for bring your own key (BYOK) encyrption for boot disk and cluster encryption. To use a single tenant instance with your cluster, you must ensure that their service-to-service authorizaiton policy is scoped to the Key Protect service or instance level and not to a key or key ring. This limiation applies only to Key Protect single tenant instances.
+{: important}
 
 
 You can manage the encryption of the worker nodes by enabling a KMS provider at the worker pool level.
