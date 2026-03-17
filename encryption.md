@@ -1,8 +1,8 @@
 ---
 
 copyright: 
-  years: 2014, 2025
-lastupdated: "2025-06-13"
+  years: 2014, 2026
+lastupdated: "2026-03-17"
 
 
 keywords: openshift, {{site.data.keyword.openshiftlong_notm}}, kubernetes, red hat, encrypt, security, kms, root key, crk
@@ -40,6 +40,7 @@ The following table outlines the encryption options for {{site.data.keyword.open
 ## Control plane
 {: #control-plane-encryption}
 
+
 Control plane encryption is managed by IBM.
 - Components in the {{site.data.keyword.redhat_openshift_notm}} master boot up on a LUKS-encrypted drive using an IBM-managed key.
 - The etcd component of the master stores the configuration files of your Kubernetes resources, such as deployments and secrets.
@@ -52,6 +53,9 @@ Control plane encryption is managed by IBM.
 {: #worker-node-encryption}
 
 Attached disks are used to boot your worker node, host the container file system, and store locally pulled images. The encryption and number of disks varies by infrastructure provider.
+
+There is a temporary limitation when using a Key Protect single tenant insntance for bring your own key (BYOK) encyrption for worker node boot disk and cluster secret encryption. To use a single tenant instance with your cluster, you must ensure that their service-to-service authorizaiton policy is scoped to the Key Protect service or instance level and not to a key or key ring. This limiation applies only to Key Protect single tenant instances.
+{: important}
 
 VPC worker nodes
 :   By default, the one primary disk of VPC worker nodes is AES-256 bit encrypted at rest by the [underlying VPC infrastructure provider](/docs/vpc?topic=vpc-block-storage-about#vpc-storage-encryption). You can manage the encryption of the worker nodes by enabling a KMS provider at the worker pool level. For more information, about encryption VPC worker node disks, see [Setting up worker node disk encryption for VPC clusters](/docs/openshift?topic=openshift-encryption-vpc-worker-disks).
@@ -71,6 +75,9 @@ Classic worker nodes
 {: #cluster-secret-encryption}
 
 Kubernetes secrets are base64 encoded by default. You can further protect Kubernetes secrets and any credentials stored in secrets by enabling a key management service (KMS) provider, such as {{site.data.keyword.keymanagementservicefull}} or {{site.data.keyword.hscrypto}}.
+
+There is a temporary limitation when using a Key Protect single tenant insntance for bring your own key (BYOK) encyrption for worker node boot disk and cluster secret encryption. To use a single tenant instance with your cluster, you must ensure that their service-to-service authorizaiton policy is scoped to the Key Protect service or instance level and not to a key or key ring. This limiation applies only to Key Protect single tenant instances.
+{: important}
 
 When you enable a key management service (KMS) provider for your cluster, you bring your own root key. The root key is used to encrypt the data encryption keys (DEKs) which are then used to encrypt the secrets in your cluster. The root key is stored in the KMS provider instance that you control. The encrypted DEKs are stored in etcd and can only be unencrypted using the root key from the KMS provider. For more information about how key encryption works, see [Envelope encryption](/docs/key-protect?topic=key-protect-envelope-encryption).
 

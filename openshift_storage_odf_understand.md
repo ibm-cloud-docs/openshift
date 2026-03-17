@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2026
-lastupdated: "2026-02-20"
+lastupdated: "2026-03-17"
 
 
 keywords: openshift, openshift data foundation, openshift container storage
@@ -105,7 +105,7 @@ The Multicloud Object Gateway consists of the open source tool [NooBaa](https://
 ## Feature support by billing type
 {: #odf-essentials-vs-advanced}
 
-| Feature support | Essentials | Advanced |
+| Feature | Essentials | Advanced |
 | --- | --- | --- |
 | Block storage | Yes | Yes |
 | File storage | Yes | Yes |
@@ -119,6 +119,7 @@ The Multicloud Object Gateway consists of the open source tool [NooBaa](https://
 | Regional disaster recovery with replication | No | Yes | 
 | Stretched Clusters - Metro high availability and disaster recover | No | Yes |
 | Multi-cluster - Metro high availability and disaster recover | No | Yes |
+| Cost per vCPU hour | $0.022  | $0.029 |
 {: caption="Billing plan overview"}
 
 
