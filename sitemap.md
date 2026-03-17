@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2026
-lastupdated: "2026-03-16"
+lastupdated: "2026-03-17"
 
 
 keywords: openshift
@@ -6120,6 +6120,8 @@ subcollection: openshift
 * [`csutil-experimental` 1.0.0](/docs/openshift?topic=openshift-supported-cluster-addon-versions#csutil-experimental-1.0.0)
 
 * [`debug-tool` 2.0.0](/docs/openshift?topic=openshift-supported-cluster-addon-versions#debug-tool-2.0.0)
+
+* [`ibm-object-csi-driver` 1.0](/docs/openshift?topic=openshift-supported-cluster-addon-versions#ibm-object-csi-driver-1.0)
 
 * [`ibm-storage-operator` 1.0](/docs/openshift?topic=openshift-supported-cluster-addon-versions#ibm-storage-operator-1.0)
 
