@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2024, 2026
-lastupdated: "2026-03-13"
+lastupdated: "2026-03-19"
 
 
 keywords: openshift, {{site.data.keyword.openshiftlong_notm}}, kubernetes, certificate, rotate, ca rotate
@@ -112,7 +112,7 @@ Review the following table for information on each state of the certificate rota
 | State | Description |
 | --- | --- |
 | CA certificate creation in progress. | New certificates are being created for the rotation process and being put into the certificate chain. |
-| CA certificate creation complete. Ensure that your worker nodes are reloaded before you start a CA certificate rotation. | New certificates have been created and put into the certificate chain. |
+| CA certificate created and awaiting rotation. Reload your worker nodes then begin CA certificate rotation. | New certificates have been created and put into the certificate chain. The rotation is not yet in progress. |
 | CA certificate rotation in progress. | The certificate rotation is in progress. The old certificates are being removed from the certificate chain. |
 | CA certificate rotation complete. | The old certificates have been removed from the certificate chain. |
 {: caption="Certificate rotation states" caption-side="bottom"}
