@@ -2,7 +2,7 @@
 
 copyright:
   years: 2025, 2026
-lastupdated: "2026-02-20"
+lastupdated: "2026-03-23"
 
 
 keywords: key protect, hpcs, kp, migrate, odf, encryption
@@ -15,8 +15,8 @@ subcollection: openshift
 {{site.data.keyword.attribute-definition-list}}
 
 
-# Migrating from Hyper Protect Crypto Services to Key Protect
-{: #migrate_hpcs_kp}
+# Migrating from Hyper Protect Crypto Services to Key Protect for ODF
+{: #migrate_hpcs_kp_odf}
 
 
 Migrate your Hyper Protect Crypto Services (HPCS) encryption for ODF to use Key Protect (KP) instead. 

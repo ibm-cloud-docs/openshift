@@ -3,7 +3,7 @@
 copyright:
   years: 2024, 2026
 
-lastupdated: "2026-03-02"
+lastupdated: "2026-03-23"
 
 
 keywords: change log, version history, IBM Storage Operator
@@ -41,6 +41,8 @@ Review the version history for IBM Storage Operator.
 
 ## Version 1.0
 {: #cl-add-ons-ibm-storage-operator-1.0}
+
+
 
 
 ### v1.0.34_321366482, released 02 March 2026
