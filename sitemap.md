@@ -4004,6 +4004,24 @@ subcollection: openshift
 
 * [{{site.data.keyword.cos_full_notm}} cluster add-on storage classes](/docs/openshift?topic=openshift-storage-cos-install-addon#cos-sc-ref-addon)
 
+[COS: Migrating from HPCS to Key Protect](/docs/openshift?topic=openshift-migrate_hpcs_kp_odf#migrate_hpcs_kp_odf)
+
+* [Before you begin](/docs/openshift?topic=openshift-migrate_hpcs_kp_odf#before)
+
+* [Prerequisites for migration](/docs/openshift?topic=openshift-migrate_hpcs_kp_odf#pre)
+
+* [Migration steps](/docs/openshift?topic=openshift-migrate_hpcs_kp_odf#steps)
+
+    * [Step 1. List PVCs to migrate](/docs/openshift?topic=openshift-migrate_hpcs_kp_odf#pvc)
+
+    * [Step 2. List pods to migrate](/docs/openshift?topic=openshift-migrate_hpcs_kp_odf#pods)
+
+    * [Step 3. Create new secrets](/docs/openshift?topic=openshift-migrate_hpcs_kp_odf#secrets-new)
+
+    * [Step 4. Recreate PVCs](/docs/openshift?topic=openshift-migrate_hpcs_kp_odf#pvcs-new)
+
+    * [Step 5. Update pods](/docs/openshift?topic=openshift-migrate_hpcs_kp_odf#pods-new)
+
 
 ### OpenShift Data Foundation add-on
 {: #sitemap_openshift_data_foundation_add-on}
@@ -4137,11 +4155,11 @@ subcollection: openshift
 
     * [Automatically creating a secret by using a Shell script](/docs/openshift?topic=openshift-storage-odf-trusted-profiles#odf-secret-create-truted-profile)
 
-[Migrating from Hyper Protect Crypto Services to Key Protect](/docs/openshift?topic=openshift-migrate_hpcs_kp#migrate_hpcs_kp)
+[ODF: Migrating from HPCS to Key Protect](/docs/openshift?topic=openshift-migrate_hpcs_kp_odf#migrate_hpcs_kp_odf)
 
-* [Considerations for custom storage classes](/docs/openshift?topic=openshift-migrate_hpcs_kp#custom-storageclass)
+* [Considerations for custom storage classes](/docs/openshift?topic=openshift-migrate_hpcs_kp_odf#custom-storageclass)
 
-* [Migration steps](/docs/openshift?topic=openshift-migrate_hpcs_kp#migration-steps)
+* [Migration steps](/docs/openshift?topic=openshift-migrate_hpcs_kp_odf#migration-steps)
 
 [OpenShift Data Foundation Regional Disaster Recovery on {{site.data.keyword.openshiftlong_notm}} clusters](/docs/openshift?topic=openshift-openshift_odf_rdr_roks#openshift_odf_rdr_roks)
 

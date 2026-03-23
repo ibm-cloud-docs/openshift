@@ -293,6 +293,8 @@ toc:
               - storage-rclone-migration.md
               - storage-cos-reference.md
               - storage-cos-install-addon.md
+              - topic: hpcs-kp-migration-cos.md
+                navtitle: 'COS: Migrating from HPCS to Key Protect'
           - topicgroup:
               label: OpenShift Data Foundation add-on
               topics:
@@ -307,7 +309,8 @@ toc:
                 navtitle: 'Classic: Updating ODF'
               - openshift_storage_odf_apps.md
               - openshift_storage_odf_trusted_profile.md
-              - hpcs-kp-migration.md
+              - topic: hpcs-kp-migration.md
+                navtitle: 'ODF: Migrating from HPCS to Key Protect'
               - openshift_odf_rdr_roks.md
               - openshift_storage_ocs_manage.md
               - openshift_storage_noobaa.md
