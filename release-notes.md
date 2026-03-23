@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2026
-lastupdated: "2026-03-17"
+lastupdated: "2026-03-23"
 
 
 keywords: kubernetes, release notes, openshift, {{site.data.keyword.openshiftlong_notm}}
@@ -30,7 +30,18 @@ Looking for {{site.data.keyword.cloud_notm}} status, platform announcements, sec
 ## March 2026
 {: #openshift-mar26}
 
+### 24 March 2026
+{: #openshift-mar2426}
+{: release-note}
 
+IBM Object CSI Driver cluster add-on patch updates.
+:   For more information, see the [change log](/docs/openshift?topic=openshift-cl-add-ons-ibm-object-csi-driver).
+
+IBM Storage Operator cluster add-on patch updates.
+:   For more information, see the [change log](/docs/openshift?topic=openshift-cl-add-ons-ibm-storage-operator).
+
+VPC File CSI Driver cluster add-on patch updates.
+:   For more information, see the [change log](/docs/openshift?topic=openshift-cl-add-ons-vpc-file-csi-driver).
 
 ### 17 March 2026
 {: #openshift-mar1726}

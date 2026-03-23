@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2026
-lastupdated: "2026-03-17"
+lastupdated: "2026-03-23"
 
 
 keywords: openshift
@@ -280,6 +280,14 @@ subcollection: openshift
 [Release notes](/docs/openshift?topic=openshift-openshift-relnotes#openshift-relnotes)
 
 * [March 2026](/docs/openshift?topic=openshift-openshift-relnotes#openshift-mar26)
+
+    * [24 March 2026](/docs/openshift?topic=openshift-openshift-relnotes#openshift-mar2426)
+
+        * IBM Object CSI Driver cluster add-on patch updates.
+
+        * IBM Storage Operator cluster add-on patch updates.
+
+        * VPC File CSI Driver cluster add-on patch updates.
 
     * [17 March 2026](/docs/openshift?topic=openshift-openshift-relnotes#openshift-mar1726)
 
