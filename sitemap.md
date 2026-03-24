@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2026
-lastupdated: "2026-03-23"
+lastupdated: "2026-03-24"
 
 
 keywords: openshift
@@ -288,6 +288,8 @@ subcollection: openshift
         * IBM Storage Operator cluster add-on patch updates.
 
         * VPC File CSI Driver cluster add-on patch updates.
+
+        * IBM Cloud Image Key Synchronizer cluster add-on patch updates.
 
     * [17 March 2026](/docs/openshift?topic=openshift-openshift-relnotes#openshift-mar1726)
 
@@ -6481,6 +6483,8 @@ subcollection: openshift
 
 * [Version 1.0](/docs/openshift?topic=openshift-cl-add-ons-ibm-storage-operator#cl-add-ons-ibm-storage-operator-1.0)
 
+    * [v1.0.35_325672265, released 24 March 2026](/docs/openshift?topic=openshift-cl-add-ons-ibm-storage-operator#cl-add-ons-ibm-storage-operator-v1035_325672265)
+
     * [v1.0.34_321366482, released 02 March 2026](/docs/openshift?topic=openshift-cl-add-ons-ibm-storage-operator#cl-add-ons-ibm-storage-operator-v1034_321366482)
 
     * [v1.0.32_319681464, released 26 February 2026](/docs/openshift?topic=openshift-cl-add-ons-ibm-storage-operator#cl-add-ons-ibm-storage-operator-v1032_319681464)
@@ -6669,6 +6673,8 @@ subcollection: openshift
 
 * [Version 2.0](/docs/openshift?topic=openshift-cl-add-ons-vpc-file-csi-driver#cl-add-ons-vpc-file-csi-driver-2.0)
 
+    * [v2.0.26_325670948, released 24 March 2026](/docs/openshift?topic=openshift-cl-add-ons-vpc-file-csi-driver#cl-add-ons-vpc-file-csi-driver-v2026_325670948)
+
     * [v2.0.25_321043855, released 02 March 2026](/docs/openshift?topic=openshift-cl-add-ons-vpc-file-csi-driver#cl-add-ons-vpc-file-csi-driver-v2025_321043855)
 
     * [v2.0.24_319692587, released 26 February 2026](/docs/openshift?topic=openshift-cl-add-ons-vpc-file-csi-driver#cl-add-ons-vpc-file-csi-driver-v2024_319692587)
@@ -6750,6 +6756,8 @@ subcollection: openshift
 [IBM Object CSI Driver add-on version change log](/docs/openshift?topic=openshift-cl-add-ons-ibm-object-csi-driver#cl-add-ons-ibm-object-csi-driver)
 
 * [Version 1.0](/docs/openshift?topic=openshift-cl-add-ons-ibm-object-csi-driver#cl-add-ons-ibm-object-csi-driver-1.0)
+
+    * [v1.0.17_320539369, released 24 March 2026](/docs/openshift?topic=openshift-cl-add-ons-ibm-object-csi-driver#cl-add-ons-ibm-object-csi-driver-v1017_320539369)
 
     * [v1.0.13_297764008, released 14 November 2025](/docs/openshift?topic=openshift-cl-add-ons-ibm-object-csi-driver#cl-add-ons-ibm-object-csi-driver-v1013_297764008)
 
@@ -7196,6 +7204,8 @@ subcollection: openshift
 [IBM Cloud Image Key Synchronizer add-on version change log](/docs/openshift?topic=openshift-cl-add-ons-ibm-cloud-image-key-synchronizer#cl-add-ons-ibm-cloud-image-key-synchronizer)
 
 * [Version 1.0.0](/docs/openshift?topic=openshift-cl-add-ons-ibm-cloud-image-key-synchronizer#cl-add-ons-ibm-cloud-image-key-synchronizer-1.0.0)
+
+    * [1.0.0_325458899, released 24 March 2026](/docs/openshift?topic=openshift-cl-add-ons-ibm-cloud-image-key-synchronizer#cl-add-ons-ibm-cloud-image-key-synchronizer-100_325458899)
 
     * [1.0.0_320394467, released 03 March 2026](/docs/openshift?topic=openshift-cl-add-ons-ibm-cloud-image-key-synchronizer#cl-add-ons-ibm-cloud-image-key-synchronizer-100_320394467)
 
