@@ -7421,6 +7421,8 @@ subcollection: openshift
 
 * [Montreal (`ca-mon`)](/docs/openshift?topic=openshift-vpc-flavors#montreal-ca-mon)
 
+* [Mumbai (`in-mum`)](/docs/openshift?topic=openshift-vpc-flavors#mumbai-in-mum)
+
 * [Osaka (`jp-osa`)](/docs/openshift?topic=openshift-vpc-flavors#osaka-jp-osa)
 
 * [Sao Paulo (`br-sao`)](/docs/openshift?topic=openshift-vpc-flavors#sao-paulo-br-sao)
