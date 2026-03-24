@@ -2,7 +2,7 @@
 
 copyright:
   years: 2025, 2026
-lastupdated: "2026-03-23"
+lastupdated: "2026-03-24"
 
 
 keywords: key protect, hpcs, kp, migrate, cos, encryption
@@ -16,7 +16,7 @@ subcollection: openshift
 
 
 # Migrating from Hyper Protect Crypto Services to Key Protect for COS
-{: #migrate_hpcs_kp_odf}
+{: #migrate_hpcs_kp_cos}
 
 Migrate your Hyper Protect Crypto Services (HPCS) encryption for the {{site.data.keyword.cos_full_notm}} s3fs plugin to use Key Protect (KP) instead. 
 {: shortdesc}
@@ -216,4 +216,3 @@ Update the pods so they point to the new PVCs.
     {: pre}
 
 5. Repeat these steps for each pod that needs to be manually migrated. 
-

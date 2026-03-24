@@ -4008,23 +4008,23 @@ subcollection: openshift
 
 * [{{site.data.keyword.cos_full_notm}} cluster add-on storage classes](/docs/openshift?topic=openshift-storage-cos-install-addon#cos-sc-ref-addon)
 
-[COS: Migrating from HPCS to Key Protect](/docs/openshift?topic=openshift-migrate_hpcs_kp_odf#migrate_hpcs_kp_odf)
+[COS: Migrating from HPCS to Key Protect](/docs/openshift?topic=openshift-migrate_hpcs_kp_cos#migrate_hpcs_kp_cos)
 
-* [Before you begin](/docs/openshift?topic=openshift-migrate_hpcs_kp_odf#before)
+* [Before you begin](/docs/openshift?topic=openshift-migrate_hpcs_kp_cos#before)
 
-* [Prerequisites for migration](/docs/openshift?topic=openshift-migrate_hpcs_kp_odf#pre)
+* [Prerequisites for migration](/docs/openshift?topic=openshift-migrate_hpcs_kp_cos#pre)
 
-* [Migration steps](/docs/openshift?topic=openshift-migrate_hpcs_kp_odf#steps)
+* [Migration steps](/docs/openshift?topic=openshift-migrate_hpcs_kp_cos#steps)
 
-    * [Step 1. List PVCs to migrate](/docs/openshift?topic=openshift-migrate_hpcs_kp_odf#pvc)
+    * [Step 1. List PVCs to migrate](/docs/openshift?topic=openshift-migrate_hpcs_kp_cos#pvc)
 
-    * [Step 2. List pods to migrate](/docs/openshift?topic=openshift-migrate_hpcs_kp_odf#pods)
+    * [Step 2. List pods to migrate](/docs/openshift?topic=openshift-migrate_hpcs_kp_cos#pods)
 
-    * [Step 3. Create new secrets](/docs/openshift?topic=openshift-migrate_hpcs_kp_odf#secrets-new)
+    * [Step 3. Create new secrets](/docs/openshift?topic=openshift-migrate_hpcs_kp_cos#secrets-new)
 
-    * [Step 4. Recreate PVCs](/docs/openshift?topic=openshift-migrate_hpcs_kp_odf#pvcs-new)
+    * [Step 4. Recreate PVCs](/docs/openshift?topic=openshift-migrate_hpcs_kp_cos#pvcs-new)
 
-    * [Step 5. Update pods](/docs/openshift?topic=openshift-migrate_hpcs_kp_odf#pods-new)
+    * [Step 5. Update pods](/docs/openshift?topic=openshift-migrate_hpcs_kp_cos#pods-new)
 
 
 ### OpenShift Data Foundation add-on
