@@ -37,6 +37,9 @@ Looking for {{site.data.keyword.cloud_notm}} status, platform announcements, sec
 {: #openshift-mar2426}
 {: release-note}
 
+New! Mumbai multizone region for VPC
+:   You can now create clusters on VPC infrastructure in the Mumbai, India (`in-mum`) [location](/docs/openshift?topic=openshift-regions-and-zones).
+
 
 
 IBM Object CSI Driver cluster add-on patch updates.

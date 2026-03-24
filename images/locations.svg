@@ -66,13 +66,19 @@
       <rect class="cls-9" width="1080" height="540"/>
       <rect class="cls-8" width="1080" height="540"/>
       <g class="cls-6">
-        <text class="cls-7" transform="translate(64 432.2)"><tspan x="0" y="0">Classic regions with one data center</tspan></text>
+        <g class="cls-6">
+          <text class="cls-7" transform="translate(64 432.2)"><tspan x="0" y="0">Classic regions with one data center</tspan></text>
+        </g>
       </g>
       <g class="cls-6">
-        <text class="cls-7" transform="translate(864 237.2)"><tspan x="0" y="0">Tokyo</tspan></text>
+        <g class="cls-6">
+          <text class="cls-7" transform="translate(864 237.2)"><tspan x="0" y="0">Tokyo</tspan></text>
+        </g>
       </g>
       <g class="cls-6">
-        <text class="cls-7" transform="translate(64 468.6)"><tspan x="0" y="0">Classic regions + VPC multizone regions</tspan></text>
+        <g class="cls-6">
+          <text class="cls-7" transform="translate(64 468.6)"><tspan x="0" y="0">Classic regions + VPC multizone regions</tspan></text>
+        </g>
       </g>
       <path class="cls-4" d="M734.2,238.3h-.4v.4h.4v-.4Z"/>
       <path class="cls-4" d="M734.2,238.3h-.4v.4h.4v-.4Z"/>
@@ -428,7 +434,7 @@
       <path class="cls-2" d="M578.9,137.4l-2,1.1-1-.5-.5.5-2.4.5-.3.8h-1.5l-1.5.8h-.7l-1,.5-1.3.5-.8-.3-.3-1.6h-1.3l-.5-1.1h-1l-.5-4.3.8-.8-.5-2.2-.3-1.3-.5-1.9v-2.6l1.3-1.3v-1.3l1-.3.5-1.3,1-1.1.8-.3.5-1.9,1-.5,1.5-1.9,1-3.5h1l.8-1.1-.3-1.1.3-1.3-2-2.2-1.8-.5-.5-2.2.5-2.7-.5-2.2-1.5-1.1,1-1.9-3.3-2.7h-1.5l-1.5-1.3-.5-1.3,1-.8h1.5l2,2.4,1.8.3,1.8-.8h1.3l1,.5h.8l1.5-1.3.3-3.2,2-1.1h2l2.3,1.1v2.7l-1.5,2.2v1.3l2,1.3,1,2.4-1.5,2.2,2.3,4-.3,3.2.3,2.2-.5,2.4,1,1.1-.5,1.3,1,2.2v1.6l-1,1.9.5,1.6,1.5.5,2,3-4.3,5.9-2.5,4-.5,2.8h0Z"/>
       <path class="cls-2" d="M576.9,153.3l-2.6.3-1.3-.5-.8-1.6h-1.3l-1.6.3-.5-1.1-1.3-.5v-2.2l-1-.8.3-.5,2.9-2.4h1.8l1.3-.5,1,.3,3.1.3-.8,4.5.8,2.1v2.3h0Z"/>
       <path class="cls-2" d="M570.9,80.8l.2.8h-1.2l1-.8Z"/>
-      <path class="cls-2" d="M580.1,90.2v-2.7l-2.3-1.4-2,.3-2,1.1-.3,3.2-1.8,1.4h-.5l-1-.5h-1.3l-1.8.8-1.8-.5-2-2.2h-1.5l-1,.8h-1.3l-.5,2.2-1.3.5-1.3-.5-1.5.3-.5,1.6-1.8.5-.8,1.4-1.8,1.6.8.5-.3,1.4-2.5,3-1.3.5-1,1.6.8,1.6-.5,5.1-1.5,2.7,1.3,2.4-1.3,1.9-2.3-.8-1.3,1.9v4.6l.5,6.8,1,1.6v2.4l-1.5.5v.8l1,1.6-.5,1.9-.8,1.1-.5,5.1-.3,1.4-.5,2.4-.5-1.6v-1.5l-1.3-1.4.5-1.6-.8-.3-.5.5v1.6l-1,1.1h-1.3l.3-.5-1,.8v.8l-1.5,2.4-1,.8-1.3,1.1-1.5.8-.8-1.6.8-1.4-.8-.3-.3.5h-1.3v-1.4h-.5l-.8-1.4.3-.8,1-.3v-1.1l.8-1.1-.8-.3-.5.8-1,.3v-1.1l.3-1.1,1-.5.5-1.1,1-1.6.3-1.1-.5.3-1,1.4h-.8l-.8-.5.8-1.1-.3-.5-.5-.5-.3-1.1,1.5-.3h.8l.8-.3.8-.3,1-.3.3-.8-1,.3-.8.3h-2l-.5.5-1.3-.3.3-1.9-.3-1.6.5-.5v-.8l.5-.8.8-.3.8-1.6h2v-.5l-.8-.3.3-.8,1-.3v-1.1l1-.8h1l.3-.8,1.5-1.1.8.3.3-.8.8-.5.3-2.2,3.3-3.8v-1.1l2-3,1-.3.8-1.1-1,.3v-.5l.8-1.1.5-2.2.3-1.9h1.5l.8-1.1-.8-.5-1.3.5v-1.6l.8-.3,1.5-1.6,1-.8h1l.8-.5-1-.3v-.3l1-.3h1v-.4c0,0-1.7,0-1.7,0l2-1.9.8.5.8-.3-.3-1.4h1.8l.3-.5h-1l-1.3.3,1-1.1h1.3l.8-.8v-.5l.5-1.1,1.3-.3.3.5.8-.5v-.8l1,.3h.5l-1-.8.5-.8h.8l.3.8.5-1.4.5-.5.8.3-.5.8-.3,1.1.3.5h.8l.5-.8v-1.1l.8-.5,1.3-.3.3.5h.8l.3-.5-2-1.1.3-.5,1-.3,1.3.3,1,1.1.5.5,1.5-.3-.3-1.1.8-1.1,1.3-.3.5-.5.8-.5-.8-.5.3-.8h.8l1.8.3.5.5-1,.5-1,1.1-.3,1.9,1.8-1.1.5-1.4,1-1.4h1l-.5.5.5.5.8-1.4-.3-1.1,1.7.5,1,.8-1,.8.8.5.8-.8,1-.3,3.3,2.2-1.5,1.6-2.6-.5-.3.5,2,1.1v.5l.8.3,1.3-.8,1,.5-3.3,1.4v.5l-1.2.9h0Z"/>
+      <path class="cls-2" d="M580.1,90.2v-2.7l-2.3-1.4-2,.3-2,1.1-.3,3.2-1.8,1.4h-.5l-1-.5h-1.3l-1.8.8-1.8-.5-2-2.2h-1.5l-1,.8h-1.3l-.5,2.2-1.3.5-1.3-.5-1.5.3-.5,1.6-1.8.5-.8,1.4-1.8,1.6.8.5-.3,1.4-2.5,3-1.3.5-1,1.6.8,1.6-.5,5.1-1.5,2.7,1.3,2.4-1.3,1.9-2.3-.8-1.3,1.9v4.6l.5,6.8,1,1.6v2.4l-1.5.5v.8l1,1.6-.5,1.9-.8,1.1-.5,5.1-.3,1.4-.5,2.4-.5-1.6v-1.5l-1.3-1.4.5-1.6-.8-.3-.5.5v1.6l-1,1.1h-1.3l.3-.5-1,.8v.8l-1.5,2.4-1,.8-1.3,1.1-1.5.8-.8-1.6.8-1.4-.8-.3-.3.5h-1.3v-1.4h-.5l-.8-1.4.3-.8,1-.3v-1.1l.8-1.1-.8-.3-.5.8-1,.3v-1.1l.3-1.1,1-.5.5-1.1,1-1.6.3-1.1-.5.3-1,1.4h-.8l-.8-.5.8-1.1-.3-.5-.5-.5-.3-1.1,1.5-.3h.8l.8-.3.8-.3,1-.3.3-.8-1,.3-.8.3h-2l-.5.5-1.3-.3.3-1.9-.3-1.6.5-.5v-.8l.5-.8.8-.3.8-1.6h2v-.5l-.8-.3.3-.8,1-.3v-1.1l1-.8h1l.3-.8,1.5-1.1.8.3.3-.8.8-.5.3-2.2,3.3-3.8v-1.1l2-3,1-.3.8-1.1-1,.3v-.5l.8-1.1.5-2.2.3-1.9h1.5l.8-1.1-.8-.5-1.3.5v-1.6l.8-.3,1.5-1.6,1-.8h1l.8-.5-1-.3v-.3l1-.3h1v-.4h-1.7l2-1.9.8.5.8-.3-.3-1.4h1.8l.3-.5h-1l-1.3.3,1-1.1h1.3l.8-.8v-.5l.5-1.1,1.3-.3.3.5.8-.5v-.8l1,.3h.5l-1-.8.5-.8h.8l.3.8.5-1.4.5-.5.8.3-.5.8-.3,1.1.3.5h.8l.5-.8v-1.1l.8-.5,1.3-.3.3.5h.8l.3-.5-2-1.1.3-.5,1-.3,1.3.3,1,1.1.5.5,1.5-.3-.3-1.1.8-1.1,1.3-.3.5-.5.8-.5-.8-.5.3-.8h.8l1.8.3.5.5-1,.5-1,1.1-.3,1.9,1.8-1.1.5-1.4,1-1.4h1l-.5.5.5.5.8-1.4-.3-1.1,1.7.5,1,.8-1,.8.8.5.8-.8,1-.3,3.3,2.2-1.5,1.6-2.6-.5-.3.5,2,1.1v.5l.8.3,1.3-.8,1,.5-3.3,1.4v.5l-1.2.9h0Z"/>
       <path class="cls-2" d="M561.9,166l-.5-4.4,1-1.5h5.4l4.4,1,2.3,3.1-1.6,2.3-1,2.1-2.1.8v1l-.8.8-2.1-.8-.5-1-.8.3-1-2.3-1-.5-1.7-.9h0Z"/>
       <path class="cls-2" d="M586.4,179.5l-2.3.8-.5,1.6-1.3.5-3.9-1.6-1,.5-1.6-.5h-1.3l-1.6-.8-1.8.3-2.3,2.7-.3-2.4-2.1-2.2,2.1-2.2-1.6-2.7v-3l2.1.8.8-.8v-1.1l2.1-.8,1-2.2,1.6-2.4h1l2.1-2.7h1.6l1.3,1.4,1.3-.3,1.6.3,1,1.4.3,4.3,1,2.4,2.6,2.7-.5,1.9h-1l-1-.5h-1l.3,1.6,1,1.1.3,1.9h0Z"/>
       <path class="cls-2" d="M577.8,161.5l-2,2.7h-1l-2.3-3.2-4.3-1.1h-5.4l-1,1.6-.8-1.3.3-1.3,1.3-1.3-.3-2.7,1.5-.5,1.8-.8.5,1.6,1.5,2.2,1.8-.3.5-3.2-.3-1.3v-.5l1.5-.3h1.3l.8,1.6,1.3.5,2.5-.3v3l1,1.6-.2,3.3h0Z"/>
@@ -579,7 +585,7 @@
       <path class="cls-2" d="M954.8,384.7l-.5.2v.5l.5.5.7-.2-.7-1Z"/>
       <path class="cls-2" d="M954.7,388.4l.8-.3v-.9h-.8v1.2h0Z"/>
       <path class="cls-2" d="M955.9,406.4h.5l.7-.6-.7-.6-.2.3-.3.9h0Z"/>
-      <path class="cls-2" d="M861.1,457.5l1-1.3,1.3-.3,3.8-1.3.3-1.6-.3-2.4,2-4.3-.3-1.1,1.5-3v-1.2l2.6-3.5.8-1.3v-.8l1-1.6v-.8l-.3-1.9.8-2.4v-3.5l.5-1.6-1.3-1.6-.3-1.9.5-4-.3-.5-.8.8-1-1.9-1.3-2.4-1-.8-1.5-1.6-.3-1.9h-.5l-1,.3-1.5-1.3.3-2.7-1.3-1.6-.3-1.3-.3-.8-1.8-.3-1-1.6-1.8-.3-.5-1.9-.5-1.3-.5-3.2-1.3-1.6-.3-4.8-.8-.5-1.3-.8-.5-.3-.5,1.1-.5-2.4-1-2.7-.3-1.9-.8-.8v-1.9l-.8-.8-.5.3-.5,1.9-.3,1.1-.8.5-.3,1.1.8,1.1-.5.5-.5.8v1.3l.8,1.1-.3,1.3-.8,3-.8,4.3-1.5,1.3h-2l-1.3-1.3-.8-.8-1.8-.8-1.8-1.6-.3-.8h-1.5l-.3-.8-1.3-.8-.8-.5.3-1.1.8-.8v-2.2l1.3-.8.5-.5.3-1.3v-1.3h-.8l-1,.3-.5-.5h-2l-1.3-.8h-2.6l-1.3-1.1h-2v.5l1.8,1.1-.5,1.3-3.1-.3-1.3.3-1.3,1.3v1.1l-.5.5-1,2.7,1.3,1.3v1.3l-.3.8-.5-1.3h-1.8v-.8h0l-.8.8-1.8-4-1,.3-.8.5h-.8l-1,1.3-.8-.3-1.3,1.1v1.3l-1.5.3-.5,3.2h-.7l-.8.3h-.2c0-.1.5.7.5.7l-1.3.3-1.3-1.6-.8,1.1-.5,1.9-.3,1.3.8.5-1.5,2.2-.5.8-2.3,1.6-.8.5h-2.3l-.8,1.1-1.5.3-1.3,1.3h-1.3l-.8-.5-1,.3-2,2.2h-.3l-1.5.8-1,1.6-.5-.8-.3-.5-.5.8-1,6.2.5,1.9,1,3.2v1.1h-.3l-.8-1.3h-.3l.3.8.5,1.3-.3.5-1.8-3.2h-.5v.5l2.3,4,.3,1.1.8,1.6v.8l1.5,2.2v.8l.3,4.6,1,1.6.3,1.3.5,2.4-.3.8-.5,3.2-.8.3-.3,1.3.3,1.3,2.3.5.8,1.3,2.3.3h2.8l.5-.3v-1.3l1.5-.5.8-.8,2.3-.8.8-.5h3.6l.5.5h1.8l1.3-1.1v-1.1l2-1.3h1.3l2-1.9,3.1-.3,3.3-1.6,5.4-.5,2.6,2.4,1.3-.5,2.3.8,1.3,2.7,1.5,1.3v1.9l-.5.8.5.8,1.8.8,1.3-1.1-.3-1.3,2-2.7.8-.5.3-1.1,1.3.3-.3,1.9-1,1.6-.3,1.9-.8.8-.5.5v1.1h1.3l1.3-1.3v-1.1h1l.8,1.3-1.5.8.5,1.1,2,.8.5,1.1,1,1.1-.5,1.9,1,1.3.5,1.3,1,.8,1.8.5.5.5h1l4.3,1.9-.3-1.6,1.3-.5.8-1.9,2,.3-.3,1.9,1.3,1.1,1.8-.3,1.5-.8.2-1h0Z"/>
+      <path class="cls-2" d="M861.1,457.5l1-1.3,1.3-.3,3.8-1.3.3-1.6-.3-2.4,2-4.3-.3-1.1,1.5-3v-1.2l2.6-3.5.8-1.3v-.8l1-1.6v-.8l-.3-1.9.8-2.4v-3.5l.5-1.6-1.3-1.6-.3-1.9.5-4-.3-.5-.8.8-1-1.9-1.3-2.4-1-.8-1.5-1.6-.3-1.9h-.5l-1,.3-1.5-1.3.3-2.7-1.3-1.6-.3-1.3-.3-.8-1.8-.3-1-1.6-1.8-.3-.5-1.9-.5-1.3-.5-3.2-1.3-1.6-.3-4.8-.8-.5-1.3-.8-.5-.3-.5,1.1-.5-2.4-1-2.7-.3-1.9-.8-.8v-1.9l-.8-.8-.5.3-.5,1.9-.3,1.1-.8.5-.3,1.1.8,1.1-.5.5-.5.8v1.3l.8,1.1-.3,1.3-.8,3-.8,4.3-1.5,1.3h-2l-1.3-1.3-.8-.8-1.8-.8-1.8-1.6-.3-.8h-1.5l-.3-.8-1.3-.8-.8-.5.3-1.1.8-.8v-2.2l1.3-.8.5-.5.3-1.3v-1.3h-.8l-1,.3-.5-.5h-2l-1.3-.8h-2.6l-1.3-1.1h-2v.5l1.8,1.1-.5,1.3-3.1-.3-1.3.3-1.3,1.3v1.1l-.5.5-1,2.7,1.3,1.3v1.3l-.3.8-.5-1.3h-1.8v-.8h0l-.8.8-1.8-4-1,.3-.8.5h-.8l-1,1.3-.8-.3-1.3,1.1v1.3l-1.5.3-.5,3.2h-.7l-.8.3h-.2c0-.1.5.7.5.7l-1.3.3-1.3-1.6-.8,1.1-.5,1.9-.3,1.3.8.5-1.5,2.2-.5.8-2.3,1.6-.8.5h-2.3l-.8,1.1-1.5.3-1.3,1.3h-1.3l-.8-.5-1,.3-2,2.2h-.3l-1.5.8-1,1.6-.5-.8-.3-.5-.5.8-1,6.2.5,1.9,1,3.2v1.1h-.3l-.8-1.3h-.3l.3.8.5,1.3-.3.5-1.8-3.2h-.5v.5l2.3,4,.3,1.1.8,1.6v.8l1.5,2.2v.8l.3,4.6,1,1.6.3,1.3.5,2.4-.3.8-.5,3.2-.8.3-.3,1.3.3,1.3,2.3.5.8,1.3,2.3.3h2.8l.5-.3v-1.3l1.5-.5.8-.8,2.3-.8.8-.5h3.6l.5.5h1.8l1.3-1.1v-1.1l2-1.3h1.3l2-1.9,3.1-.3,3.3-1.6,5.4-.5,2.6,2.4,1.3-.5,2.3.8,1.3,2.7,1.5,1.3v1.9l-.5.8.5.8,1.8.8,1.3-1.1-.3-1.3,2-2.7.8-.5.3-1.1,1.3.3-.3,1.9-1,1.6-.3,1.9-.8.8-.5.5v1.1h1.3l1.3-1.3v-1.1h1l.8,1.3-1.5.8.5,1.1,2,.8.5,1.1,1,1.1-.5,1.9,1,1.3.5,1.3,1,.8,1.8.5.5.5h1l4.3,1.9-.3-1.6,1.3-.5.8-1.9,2,.3-.3,1.9,1.3,1.1,1.8-.3,1.5-.8.2-1h-.1Z"/>
       <path class="cls-2" d="M830.9,246.6l-1.1-.5-1.1.3-1.1,1.4-1.6.3-1,.9.8,1.9h1.1l.5-1.4,1.1-.8.8.3,1.1-.3.5-2.1h0Z"/>
       <path class="cls-2" d="M821.4,247.7l1.9,1.1.2,1.1.7,1.6-1.2,1.9-.2,2.9-1.4.5v-1.6h-.5l-.5.8-.5-.3.2-2.4h.2l.2-.5.2-.3.2-.8v-.5l-.2-.5v-.3l-.9,1.1-.9-1.1-.2-1.3,1.4-.5,1.3-.9Z"/>
       <path class="cls-2" d="M818.4,245.2v1.2h-1.2v-.3l1.2-.9Z"/>
@@ -878,129 +884,210 @@
       <path class="cls-2" d="M597.4,241v-1.6l3.7-1.1,1,.5,2.9-.5,3.1-1.1,2.1-.5.5.8-2.9,2.4,1.3,2.4-1,3-.5.8-4.4,3.2-.5,1.1-2.4.5-2.9,2.4h-1.8l.8-4.1.5-1.1v-1.1l1-.8-.3-2.2.3-2.4-.5-.6h0Z"/>
       <path class="cls-2" d="M602.5,250.3l.5-1.1,4.3-3.2.5-.5v-.3l1-2.9-1.3-2.4,2.8-2.4,1.8-1.3,1.8.5.8,1.1,1.5-.3,2,4h1.3l.8,1.1-2.3,5.3,2.5,3.7,1.8.3,1.8,3.2v3.2l1.3,1.9-.8,1.1-2.3-.5-.8,1.1.3,1.3-4.3.5-4.1-2.1v-2.7l-2.5-1.9-3.8-2.7-3.1-1.1-1.5-2.9Z"/>
       <g class="cls-6">
-        <text class="cls-7" transform="translate(885 448.2)"><tspan x="0" y="0">Sydney</tspan></text>
+        <g class="cls-6">
+          <text class="cls-7" transform="translate(885 448.2)"><tspan x="0" y="0">Sydney</tspan></text>
+        </g>
       </g>
       <g class="cls-6">
-        <text class="cls-7" transform="translate(355 215.2)"><tspan x="0" y="0">Montreal</tspan></text>
+        <g class="cls-6">
+          <text class="cls-7" transform="translate(355 215.2)"><tspan x="0" y="0">Montreal</tspan></text>
+        </g>
       </g>
       <g class="cls-6">
-        <text class="cls-7" transform="translate(150 243.2)"><tspan x="0" y="0">San Jose</tspan></text>
+        <g class="cls-6">
+          <text class="cls-7" transform="translate(150 243.2)"><tspan x="0" y="0">San Jose</tspan></text>
+        </g>
       </g>
       <g class="cls-6">
-        <text class="cls-7" transform="translate(720 311.2)"><tspan x="0" y="0">Chennai</tspan></text>
+        <g class="cls-6">
+          <text class="cls-7" transform="translate(720 311.2)"><tspan x="0" y="0">Chennai</tspan></text>
+        </g>
       </g>
       <g class="cls-6">
-        <text class="cls-7" transform="translate(774 338.2)"><tspan x="0" y="0">Singapore</tspan></text>
+        <g class="cls-6">
+          <text class="cls-7" transform="translate(774 338.2)"><tspan x="0" y="0">Singapore</tspan></text>
+        </g>
       </g>
       <g class="cls-6">
-        <text class="cls-7" transform="translate(850 258.2)"><tspan x="0" y="0">Osaka</tspan></text>
+        <g class="cls-6">
+          <text class="cls-7" transform="translate(850 258.2)"><tspan x="0" y="0">Osaka</tspan></text>
+        </g>
       </g>
       <path class="cls-12" d="M538.8,175.7c1.6,6.1-2,12.4-8.1,14.1-6.1,1.6-12.4-2-14.1-8.1-1.6-6.1,2-12.4,8.1-14.1,6.2-1.7,12.5,2,14.1,8.1Z"/>
       <g class="cls-6">
-        <text class="cls-7" transform="translate(525 184.2)"><tspan x="0" y="0">I</tspan></text>
+        <g class="cls-6">
+          <text class="cls-7" transform="translate(525 184.2)"><tspan x="0" y="0">I</tspan></text>
+        </g>
       </g>
       <g class="cls-6">
-        <text class="cls-7" transform="translate(542 184.2)"><tspan x="0" y="0">Amsterdam</tspan></text>
+        <g class="cls-6">
+          <text class="cls-7" transform="translate(542 184.2)"><tspan x="0" y="0">Amsterdam</tspan></text>
+        </g>
       </g>
       <g class="cls-6">
-        <text class="cls-7" transform="translate(473.1 204.2)"><tspan x="0" y="0">Paris</tspan></text>
+        <g class="cls-6">
+          <text class="cls-7" transform="translate(473.1 204.2)"><tspan x="0" y="0">Paris</tspan></text>
+        </g>
       </g>
       <path class="cls-11" d="M859.8,229.7c1.6,6.1-2,12.4-8.1,14.1-6.1,1.6-12.4-2-14.1-8.1-1.6-6.1,2-12.4,8.1-14.1,6.2-1.7,12.5,2,14.1,8.1Z"/>
       <g class="cls-6">
-        <text class="cls-7" transform="translate(842.8 238.2)"><tspan x="0" y="0">II</tspan></text>
+        <g class="cls-6">
+          <text class="cls-7" transform="translate(842.8 238.2)"><tspan x="0" y="0">II</tspan></text>
+        </g>
       </g>
       <path class="cls-11" d="M846.8,240.7c1.6,6.1-2,12.4-8.1,14.1-6.1,1.6-12.4-2-14.1-8.1-1.6-6.1,2-12.4,8.1-14.1,6.2-1.7,12.5,2,14.1,8.1Z"/>
       <g class="cls-6">
-        <text class="cls-7" transform="translate(829.8 249.2)"><tspan x="0" y="0">II</tspan></text>
+        <g class="cls-6">
+          <text class="cls-7" transform="translate(829.8 249.2)"><tspan x="0" y="0">II</tspan></text>
+        </g>
       </g>
       <path class="cls-11" d="M879.8,439.7c1.6,6.1-2,12.4-8.1,14.1-6.1,1.6-12.4-2-14.1-8.1-1.6-6.1,2-12.4,8.1-14.1,6.2-1.7,12.5,2,14.1,8.1Z"/>
       <g class="cls-6">
-        <text class="cls-7" transform="translate(862.8 448.2)"><tspan x="0" y="0">II</tspan></text>
+        <g class="cls-6">
+          <text class="cls-7" transform="translate(862.8 448.2)"><tspan x="0" y="0">II</tspan></text>
+        </g>
       </g>
       <g class="cls-6">
-        <text class="cls-7" transform="translate(556.4 202.2)"><tspan x="0" y="0">Frankfurt</tspan></text>
+        <g class="cls-6">
+          <text class="cls-7" transform="translate(556.4 202.2)"><tspan x="0" y="0">Frankfurt</tspan></text>
+        </g>
       </g>
       <path class="cls-11" d="M550.8,193.7c1.6,6.1-2,12.4-8.1,14.1-6.1,1.6-12.4-2-14.1-8.1-1.6-6.1,2-12.4,8.1-14.1,6.2-1.7,12.5,2,14.1,8.1Z"/>
       <g class="cls-6">
-        <text class="cls-7" transform="translate(533.8 202.2)"><tspan x="0" y="0">II</tspan></text>
+        <g class="cls-6">
+          <text class="cls-7" transform="translate(533.8 202.2)"><tspan x="0" y="0">II</tspan></text>
+        </g>
       </g>
       <g class="cls-6">
-        <text class="cls-7" transform="translate(297.4 254.2)"><tspan x="0" y="0">Dallas</tspan></text>
+        <g class="cls-6">
+          <text class="cls-7" transform="translate(297.4 254.2)"><tspan x="0" y="0">Dallas</tspan></text>
+        </g>
       </g>
       <path class="cls-11" d="M291.8,245.7c1.6,6.1-2,12.4-8.1,14.1-6.1,1.6-12.4-2-14.1-8.1-1.6-6.1,2-12.4,8.1-14.1,6.2-1.7,12.5,2,14.1,8.1h0Z"/>
       <g class="cls-6">
-        <text class="cls-7" transform="translate(274.8 254.2)"><tspan x="0" y="0">II</tspan></text>
+        <g class="cls-6">
+          <text class="cls-7" transform="translate(274.8 254.2)"><tspan x="0" y="0">II</tspan></text>
+        </g>
       </g>
       <g class="cls-6">
-        <text class="cls-7" transform="translate(348 238.2)"><tspan x="0" y="0">Washington, DC</tspan></text>
+        <g class="cls-6">
+          <text class="cls-7" transform="translate(348 238.2)"><tspan x="0" y="0">Washington, DC</tspan></text>
+        </g>
       </g>
       <path class="cls-11" d="M342.8,229.7c1.6,6.1-2,12.4-8.1,14.1-6.1,1.6-12.4-2-14.1-8.1-1.6-6.1,2-12.4,8.1-14.1,6.2-1.7,12.5,2,14.1,8.1Z"/>
       <g class="cls-6">
-        <text class="cls-7" transform="translate(325.8 238.2)"><tspan x="0" y="0">II</tspan></text>
+        <g class="cls-6">
+          <text class="cls-7" transform="translate(325.8 238.2)"><tspan x="0" y="0">II</tspan></text>
+        </g>
       </g>
       <g class="cls-6">
-        <text class="cls-7" transform="translate(421 409.2)"><tspan x="0" y="0">São Paulo</tspan></text>
+        <g class="cls-6">
+          <text class="cls-7" transform="translate(421 409.2)"><tspan x="0" y="0">São Paulo</tspan></text>
+        </g>
       </g>
       <path class="cls-11" d="M415.8,400.7c1.6,6.1-2,12.4-8.1,14.1-6.1,1.6-12.4-2-14.1-8.1-1.6-6.1,2-12.4,8.1-14.1,6.2-1.7,12.5,2,14.1,8.1Z"/>
       <g class="cls-6">
-        <text class="cls-7" transform="translate(398.8 409.2)"><tspan x="0" y="0">II</tspan></text>
+        <g class="cls-6">
+          <text class="cls-7" transform="translate(398.8 409.2)"><tspan x="0" y="0">II</tspan></text>
+        </g>
       </g>
       <g class="cls-6">
-        <text class="cls-7" transform="translate(446 185.2)"><tspan x="0" y="0">London</tspan></text>
+        <g class="cls-6">
+          <text class="cls-7" transform="translate(446 185.2)"><tspan x="0" y="0">London</tspan></text>
+        </g>
       </g>
       <path class="cls-11" d="M519.8,176.7c1.6,6.1-2,12.4-8.1,14.1-6.1,1.6-12.4-2-14.1-8.1-1.6-6.1,2-12.4,8.1-14.1,6.2-1.7,12.5,2,14.1,8.1Z"/>
       <g class="cls-6">
-        <text class="cls-7" transform="translate(502.8 185.2)"><tspan x="0" y="0">II</tspan></text>
+        <g class="cls-6">
+          <text class="cls-7" transform="translate(502.8 185.2)"><tspan x="0" y="0">II</tspan></text>
+        </g>
       </g>
       <g class="cls-6">
-        <text class="cls-7" transform="translate(258 221.2)"><tspan x="0" y="0">Toronto</tspan></text>
+        <g class="cls-6">
+          <text class="cls-7" transform="translate(258 221.2)"><tspan x="0" y="0">Toronto</tspan></text>
+        </g>
       </g>
       <path class="cls-11" d="M333.8,212.7c1.6,6.1-2,12.4-8.1,14.1-6.1,1.6-12.4-2-14.1-8.1-1.6-6.1,2-12.4,8.1-14.1,6.2-1.7,12.5,2,14.1,8.1Z"/>
       <g class="cls-6">
-        <text class="cls-7" transform="translate(316.8 221.2)"><tspan x="0" y="0">II</tspan></text>
+        <g class="cls-6">
+          <text class="cls-7" transform="translate(316.8 221.2)"><tspan x="0" y="0">II</tspan></text>
+        </g>
       </g>
       <path class="cls-12" d="M48.8,423.7c1.6,6.1-2,12.4-8.1,14.1-6.1,1.6-12.4-2-14.1-8.1-1.6-6.1,2-12.4,8.1-14.1,6.2-1.7,12.5,2,14.1,8.1Z"/>
       <g class="cls-6">
-        <text class="cls-7" transform="translate(35 432.2)"><tspan x="0" y="0">I</tspan></text>
+        <g class="cls-6">
+          <text class="cls-7" transform="translate(35 432.2)"><tspan x="0" y="0">I</tspan></text>
+        </g>
       </g>
       <path class="cls-11" d="M48.8,460c1.6,6.1-2,12.4-8.1,14.1-6.1,1.6-12.4-2-14.1-8.1-1.6-6.1,2-12.4,8.1-14.1,6.2-1.7,12.5,2,14.1,8.1Z"/>
       <g class="cls-6">
-        <text class="cls-7" transform="translate(31.8 468.6)"><tspan x="0" y="0">II</tspan></text>
+        <g class="cls-6">
+          <text class="cls-7" transform="translate(31.8 468.6)"><tspan x="0" y="0">II</tspan></text>
+        </g>
       </g>
       <path class="cls-12" d="M715.8,303.7c1.6,6.1-2,12.4-8.1,14.1-6.1,1.6-12.4-2-14.1-8.1-1.6-6.1,2-12.4,8.1-14.1,6.2-1.7,12.5,2,14.1,8.1Z"/>
       <path class="cls-12" d="M769.8,329.7c1.6,6.1-2,12.4-8.1,14.1-6.1,1.6-12.4-2-14.1-8.1-1.6-6.1,2-12.4,8.1-14.1,6.2-1.7,12.5,2,14.1,8.1Z"/>
       <g class="cls-6">
-        <text class="cls-7" transform="translate(756 338.2)"><tspan x="0" y="0">I</tspan></text>
+        <g class="cls-6">
+          <text class="cls-7" transform="translate(756 338.2)"><tspan x="0" y="0">I</tspan></text>
+        </g>
       </g>
       <path class="cls-12" d="M350.8,205.7c1.6,6.1-2,12.4-8.1,14.1-6.1,1.6-12.4-2-14.1-8.1-1.6-6.1,2-12.4,8.1-14.1,6.2-1.7,12.5,2,14.1,8.1Z"/>
       <g class="cls-6">
-        <text class="cls-7" transform="translate(337 214.2)"><tspan x="0" y="0">I</tspan></text>
+        <g class="cls-6">
+          <text class="cls-7" transform="translate(337 214.2)"><tspan x="0" y="0">I</tspan></text>
+        </g>
       </g>
       <path class="cls-12" d="M233.8,235.7c1.6,6.1-2,12.4-8.1,14.1-6.1,1.6-12.4-2-14.1-8.1-1.6-6.1,2-12.4,8.1-14.1,6.2-1.7,12.5,2,14.1,8.1Z"/>
       <g class="cls-6">
-        <text class="cls-7" transform="translate(220 244.2)"><tspan x="0" y="0">I</tspan></text>
+        <g class="cls-6">
+          <text class="cls-7" transform="translate(220 244.2)"><tspan x="0" y="0">I</tspan></text>
+        </g>
       </g>
       <path class="cls-12" d="M531.8,195.7c1.6,6.1-2,12.4-8.1,14.1-6.1,1.6-12.4-2-14.1-8.1-1.6-6.1,2-12.4,8.1-14.1,6.2-1.7,12.5,2,14.1,8.1Z"/>
       <g class="cls-6">
-        <text class="cls-7" transform="translate(518 204.2)"><tspan x="0" y="0">I</tspan></text>
+        <g class="cls-6">
+          <text class="cls-7" transform="translate(518 204.2)"><tspan x="0" y="0">I</tspan></text>
+        </g>
       </g>
       <path class="cls-10" d="M513,223.8c1.6,6.1-2,12.4-8.1,14.1-6.1,1.6-12.4-2-14.1-8.1-1.6-6.1,2-12.4,8.1-14.1,6.2-1.6,12.5,2,14.1,8.1Z"/>
       <g class="cls-6">
-        <text class="cls-7" transform="translate(493.1 231.7)"><tspan x="0" y="0">III</tspan></text>
+        <g class="cls-6">
+          <text class="cls-7" transform="translate(493.1 231.7)"><tspan x="0" y="0">III</tspan></text>
+        </g>
       </g>
       <g class="cls-6">
-        <text class="cls-7" transform="translate(458.1 254.3)"><tspan x="0" y="0">Madrid</tspan></text>
+        <g class="cls-6">
+          <text class="cls-7" transform="translate(458.1 254.3)"><tspan x="0" y="0">Madrid</tspan></text>
+        </g>
       </g>
       <g class="cls-6">
-        <text class="cls-7" transform="translate(64 504.2)"><tspan x="0" y="0">VPC multizone regions</tspan></text>
+        <g class="cls-6">
+          <text class="cls-7" transform="translate(64 504.2)"><tspan x="0" y="0">VPC multizone regions</tspan></text>
+        </g>
       </g>
       <path class="cls-10" d="M48.8,495.7c1.6,6.1-2,12.4-8.1,14.1-6.1,1.6-12.4-2-14.1-8.1-1.6-6.1,2-12.4,8.1-14.1,6.2-1.7,12.5,2,14.1,8.1Z"/>
       <g class="cls-6">
-        <text class="cls-7" transform="translate(29.5 504.2)"><tspan x="0" y="0">III</tspan></text>
+        <g class="cls-6">
+          <text class="cls-7" transform="translate(29.5 504.2)"><tspan x="0" y="0">III</tspan></text>
+        </g>
       </g>
       <path class="cls-10" d="M715.4,303.8c1.6,6.1-2,12.4-8.1,14.1-6.1,1.6-12.4-2-14.1-8.1-1.6-6.1,2-12.4,8.1-14.1,6.2-1.7,12.5,2,14.1,8.1Z"/>
       <g class="cls-6">
-        <text class="cls-7" transform="translate(695.7 312.2)"><tspan x="0" y="0">III</tspan></text>
+        <g class="cls-6">
+          <text class="cls-7" transform="translate(695.7 312.2)"><tspan x="0" y="0">III</tspan></text>
+        </g>
+      </g>
+      <g class="cls-6">
+        <g class="cls-6">
+          <text class="cls-7" transform="translate(686.8 283.4)"><tspan x="0" y="0">Mumbai</tspan></text>
+        </g>
+      </g>
+      <path class="cls-10" d="M688.2,286.4c1.6,6.1-2,12.4-8.1,14.1-6.1,1.6-12.4-2-14.1-8.1-1.6-6.1,2-12.4,8.1-14.1,6.2-1.7,12.5,2,14.1,8.1Z"/>
+      <g class="cls-6">
+        <g class="cls-6">
+          <text class="cls-7" transform="translate(668.4 294.6)"><tspan x="0" y="0">III</tspan></text>
+        </g>
       </g>
     </g>
   </g>

@@ -283,6 +283,8 @@ subcollection: openshift
 
     * [24 March 2026](/docs/openshift?topic=openshift-openshift-relnotes#openshift-mar2426)
 
+        * New! Mumbai multizone region for VPC
+
         * IBM Object CSI Driver cluster add-on patch updates.
 
         * IBM Storage Operator cluster add-on patch updates.
