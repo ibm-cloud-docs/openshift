@@ -113,6 +113,7 @@ VPC resources are provisioned in a region, which is a separate group of zones wi
 | --- | --- | --- | --- | --- |
 | Asia Pacific | Australia | Sydney | au-syd | au-syd-1, au-syd-2, au-syd-3 |
 | Asia Pacific | India | Chennai | in-che | in-che-1, in-che-2, in-che-3 |
+| Asia Pacific | India | Mumbai | in-mum | in-mum-1, in-mum-2, in-mum-3 |
 | Asia Pacific | Japan | Osaka | jp-osa | jp-osa-1, jp-osa-2, jp-osa-3 |
 | Asia Pacific | Japan | Tokyo | jp-tok | jp-tok-1, jp-tok-2, jp-tok-3 |
 | Europe | Germany | Frankfurt | eu-de | eu-de-1, eu-de-2, eu-de-3 |
