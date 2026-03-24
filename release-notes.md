@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2026
-lastupdated: "2026-03-23"
+lastupdated: "2026-03-24"
 
 
 keywords: kubernetes, release notes, openshift, {{site.data.keyword.openshiftlong_notm}}
@@ -30,9 +30,15 @@ Looking for {{site.data.keyword.cloud_notm}} status, platform announcements, sec
 ## March 2026
 {: #openshift-mar26}
 
+
+
+
 ### 24 March 2026
 {: #openshift-mar2426}
 {: release-note}
+
+New! Mumbai multizone region for VPC
+:   You can now create clusters on VPC infrastructure in the Mumbai, India (`in-mum`) [location](/docs/openshift?topic=openshift-regions-and-zones).
 
 
 
@@ -44,6 +50,12 @@ IBM Storage Operator cluster add-on patch updates.
 
 VPC File CSI Driver cluster add-on patch updates.
 :   For more information, see the [change log](/docs/openshift?topic=openshift-cl-add-ons-vpc-file-csi-driver).
+
+IBM Cloud Image Key Synchronizer cluster add-on patch updates.
+:   For more information, see the [change log](/docs/openshift?topic=openshift-cl-add-ons-ibm-cloud-image-key-synchronizer).
+
+
+
 
 ### 17 March 2026
 {: #openshift-mar1726}

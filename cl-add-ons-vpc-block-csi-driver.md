@@ -3,7 +3,7 @@
 copyright:
   years: 2024, 2026
 
-lastupdated: "2026-03-06"
+lastupdated: "2026-03-24"
 
 
 keywords: change log, version history, VPC Block CSI Driver
@@ -41,6 +41,8 @@ Review the version history for VPC Block CSI Driver.
 
 ## Version 5.2
 {: #cl-add-ons-vpc-block-csi-driver-5.2}
+
+
 
 
 ### v5.2.46_321044202, released 02 March 2026
@@ -136,6 +138,8 @@ Review the version history for VPC Block CSI Driver.
 
 ## Version 5.1
 {: #cl-add-ons-vpc-block-csi-driver-5.1}
+
+
 
 
 ### v5.1.46_321044176, released 02 March 2026
