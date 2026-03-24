@@ -3,7 +3,7 @@
 copyright:
   years: 2026, 2026
 
-lastupdated: "2026-03-16"
+lastupdated: "2026-03-24"
 
 
 keywords: change log, version history, 4.20_openshift
@@ -37,6 +37,29 @@ Master patch updates are applied automatically. Worker node patch updates can be
 
 ## Version 4.20
 {: #420_components}
+
+
+### Change log for Master fix pack 4.20.15_1542_openshift, released 25 March 2026
+{: #42015_1542_openshift_M}
+
+The following table shows the changes that are in the master fix pack 4.20.15_1542_openshift. Master patch updates are applied automatically. 
+
+
+| Component | Previous | Current | Description |
+| --- | --- | --- | --- |
+| Calico | v3.30.4 | v3.30.6 | See the [Calico release notes](https://docs.tigera.io/calico/3.30/release-notes/#calico-open-source-3306-bug-fix-release){: external}. |
+| Cluster health image | v1.6.14 | v1.6.15 | New version contains updates and security fixes. |
+| etcd | v3.5.26 | v3.5.27 | See the [etcd release notes](https://github.com/coreos/etcd/releases/v3.5.27){: external}. |
+| {{site.data.keyword.cloud_notm}} Block Storage driver and plug-in | v2.5.24 | v2.5.25 | New version contains updates and security fixes. |
+| {{site.data.keyword.cloud_notm}} Controller Manager | v1.33.7-7 | v1.33.9-1 | New version contains updates and security fixes. |
+| {{site.data.keyword.filestorage_full_notm}} for Classic plug-in and monitor | 452 | v454 | New version contains updates and security fixes. |
+| {{site.data.keyword.cloud_notm}} RBAC Operator | 8a12251 | 6212368 | New version contains updates and security fixes. |
+| Key Management Service provider | v2.10.20 | 2.10.22 | New version contains updates and security fixes. |
+| Load balancer and load balancer monitor for {{site.data.keyword.cloud_notm}} Provider | 3347 | 3563 | New version contains updates and security fixes. |
+| Portieris admission controller | v0.13.33 | v0.13.36 | See the [Portieris admission controller release notes](https://github.com/{{site.data.keyword.IBM_notm}}/portieris/releases/tag/v0.13.36){: external}. |
+| {{site.data.keyword.openshiftlong_notm}}. | 4.20.12 | 4.20.15 | See the [{{site.data.keyword.openshiftlong_notm}} release notes](https://docs.redhat.com/en/documentation/openshift_container_platform/4.20/html/release_notes/ocp-4-20-release-notes#ocp-4-20-15_release-notes){: external}. |
+| Tigera Operator | v1.38.8 | v1.38.11 | See the [Tigera Operator release notes](https://github.com/tigera/operator/releases/tag/v1.38.11){: external}. |
+{: caption="Changes since version 4.20.13-1538-openshift" caption-side="bottom"}
 
 
 ### Worker node fix pack 4.20.15_1540_openshift, released 11 March 2026
