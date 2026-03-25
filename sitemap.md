@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2026
-lastupdated: "2026-03-24"
+lastupdated: "2026-03-25"
 
 
 keywords: openshift
@@ -6182,6 +6182,8 @@ subcollection: openshift
 * [`istio` 1.25](/docs/openshift?topic=openshift-supported-cluster-addon-versions#istio-1.25)
 
 * [`istio` 1.26](/docs/openshift?topic=openshift-supported-cluster-addon-versions#istio-1.26)
+
+* [`istio` 1.27](/docs/openshift?topic=openshift-supported-cluster-addon-versions#istio-1.27)
 
 * [`openshift-ai` 416](/docs/openshift?topic=openshift-supported-cluster-addon-versions#openshift-ai-416)
 
