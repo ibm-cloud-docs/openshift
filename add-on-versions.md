@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2022, 2026
-lastupdated: "2026-03-17"
+lastupdated: "2026-03-25"
 
 keywords: openshift, add-ons, cluster addon
 
@@ -131,6 +131,15 @@ Review the following list of supported cluster add-ons. Each add-on version can 
 
 ## `istio` 1.26 
 {: #istio-1.26}
+
+- Supported Kubernetes cluster versions: `>=1.31.0 <1.34.0`
+
+- Supported OpenShift cluster versions:  `N/A` 
+
+
+
+## `istio` 1.27 
+{: #istio-1.27}
 
 - Supported Kubernetes cluster versions: `>=1.31.0 <1.34.0`
 
