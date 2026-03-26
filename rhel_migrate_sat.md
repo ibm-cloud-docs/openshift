@@ -1,11 +1,11 @@
 ---
 
 copyright:
-  years: 2022, 2026
+  years: 2026, 2026
 lastupdated: "2026-03-26"
 
 
-keywords: rhel, os, operating system, rhcos, 418, migration, vpc
+keywords: rhel, os, operating system, rhcos, 418, migration, satellite
 
 subcollection: openshift
 
@@ -15,35 +15,14 @@ subcollection: openshift
 
 
 
-# Migrating VPC worker nodes to RHCOS
+# Migrating Satellite worker nodes to RHCOS
 {: #rhel_migrate}
 
-[Virtual Private Cloud]{: tag-vpc}
+[Satellite]{: tag-satellite}
 
-Complete the following steps to migrate your VPC worker nodes to RHCOS
+Complete the following steps to migrate your Satellite worker nodes to RHCOS
 {: shortdesc}
 
-The information on this page applies to VPC clusters only. It does not apply to Satellite or Classic clusters.
-{: important}
-
-Beginning with cluster version 4.18:
-- Red Hat Enterprise Linux CoreOS (RHCOS) is the default operating system for VPC clusters.
-- RHEL worker nodes are deprecated for VPC clusters.
-- Support for RHEL worker nodes on VPC ends with the release of version 4.21.
-
-Migrate your VPC clusters to use RHCOS worker nodes as soon as possible.
-{: important}
-
-| Milestone | Description |
-| --- | --- |
-| 4.18 release: {{site.data.keyword.openshift_418_release_date}} | Beginning with cluster version 4.18, Red Hat Enterprise Linux CoreOS (RHCOS) is the default operating system and RHEL worker nodes are deprecated in this version. RHEL workers are still available in version 4.18 only to complete the migration to RHCOS workers. |
-| 4.21 release | Cluster version 4.21 supports only RHCOS worker nodes. Migrate your RHEL 9 worker nodes to RHCOS before updating to version 4.21. |
-{: caption="RHEL deprecation timeline" caption-side="bottom"}
-
-
-
-
-Complete the following steps to migrate your worker nodes to RHCOS.
 
 To migrate to RHCOS, you must provision a new worker pool, then delete the previous RHEL worker pool. The new worker pool must reside in the same zone as the previous worker pool. 
 
@@ -66,13 +45,13 @@ ibmcloud ks cluster master update --cluster <clusterNameOrID> --version 4.18_ope
 
 1. Run the `ibmcloud oc worker-pool create` command to create a new worker pool.
 
-    Example command to create a RHCOS worker pool. For more information about the `worker pool create vpc-gen2` command, see the [CLI reference](/docs/openshift?topic=openshift-kubernetes-service-cli#cli_worker_pool_create_vpc_gen2) for command details. [Adding worker nodes in VPC clusters](/docs/openshift?topic=openshift-add-workers-vpc).
-
+    
+    Example command to create a RHCOS worker pool. Note that for {{site.data.keyword.satelliteshort}} clusters, you must first [attach hosts to your location](/docs/satellite?topic=satellite-attach-hosts) before you can create a worker pool.
+    
     ```sh
-    ibmcloud oc worker-pool create vpc-gen2 --name <worker_pool_name> --cluster <cluster_name_or_ID> --flavor <flavor> --size-per-zone <number_of_workers_per_zone> --operating-system RHCOS [--entitlement ocp_entitled]
+    ibmcloud oc worker-pool create satellite --cluster CLUSTER --host-label "os=RHCOS" --name NAME --size-per-zone SIZE --operating-system RHCOS --zone ZONE [--label LABEL]
     ```
     {: pre}
-    
 
 
 1. Verify that the worker pool is created and note the worker pool ID.
@@ -152,3 +131,13 @@ If you use the COS plug-in in your cluster, after migrating from RHEL to RHCOS, 
 * [Follow the steps to uninstall the COS plug-in](/docs/openshift?topic=openshift-storage_cos_install#remove_cos_plugin).
 
 * [Reinstall the plug-in](/docs/openshift?topic=openshift-storage_cos_install#remove_cos_plugin)
+
+
+
+
+
+
+
+
+
+

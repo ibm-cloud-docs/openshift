@@ -1841,47 +1841,64 @@ subcollection: openshift
 
 * [Removing dedicated hosts pools in the CLI](/docs/openshift?topic=openshift-dedicated-hosts#remove-dedicated-host-pool-cli)
 
-[Migrating to a new operating system](/docs/openshift?topic=openshift-rhel_migrate#rhel_migrate)
 
-* [Migrating worker nodes to RHCOS](/docs/openshift?topic=openshift-rhel_migrate#migrate-rhcos)
+### Migrating to a new OS
+{: #sitemap_migrating_to_a_new_os}
 
-    * [Step 1: Upgrade your cluster master](/docs/openshift?topic=openshift-rhel_migrate#upgrade-cluster-rhcos)
 
-    * [Step 2: Creating a new RHCOS worker pool](/docs/openshift?topic=openshift-rhel_migrate#create-pool-rhcos)
+[Migrating VPC worker nodes to RHCOS](/docs/openshift?topic=openshift-rhel_migrate#rhel_migrate)
 
-    * [Step 3: Add worker nodes to your RHCOS worker pool](/docs/openshift?topic=openshift-rhel_migrate#rhcos-add-worker-nodes)
+* [Step 1: Upgrade your cluster master](/docs/openshift?topic=openshift-rhel_migrate#upgrade-cluster-rhcos)
 
-    * [Step 4: Migrate your workloads](/docs/openshift?topic=openshift-rhel_migrate#rhcos-migrate-workloads)
+* [Step 2: Creating a new RHCOS worker pool](/docs/openshift?topic=openshift-rhel_migrate#create-pool-rhcos)
 
-    * [Step 5: Remove the RHEL worker nodes](/docs/openshift?topic=openshift-rhel_migrate#rm-rhel-pool)
+* [Step 3: Add worker nodes to your RHCOS worker pool](/docs/openshift?topic=openshift-rhel_migrate#rhcos-add-worker-nodes)
+
+* [Step 4: Migrate your workloads](/docs/openshift?topic=openshift-rhel_migrate#rhcos-migrate-workloads)
+
+* [Step 5: Remove the RHEL worker nodes](/docs/openshift?topic=openshift-rhel_migrate#rm-rhel-pool)
 
     * [Optional Step 5: Uninstall and reinstall the Object Storage plug-in](/docs/openshift?topic=openshift-rhel_migrate#rhel-rm-cos)
 
-* [Migrating NVIDIA GPU resources to RHCOS worker nodes](/docs/openshift?topic=openshift-rhel_migrate#rhcos-migrate-gpu)
+[Migrating Satellite worker nodes to RHCOS](/docs/openshift?topic=openshift-rhel_migrate#rhel_migrate)
 
-    * [Initial environment details](/docs/openshift?topic=openshift-rhel_migrate#env-details)
+* [Step 1: Upgrade your cluster master](/docs/openshift?topic=openshift-rhel_migrate#upgrade-cluster-rhcos)
 
-    * [Step 1: Update the cluster master](/docs/openshift?topic=openshift-rhel_migrate#step-1-update-master)
+* [Step 2: Creating a new RHCOS worker pool](/docs/openshift?topic=openshift-rhel_migrate#create-pool-rhcos)
 
-    * [Step 2: Create an RHCOS cluster worker pool](/docs/openshift?topic=openshift-rhel_migrate#step-2-create-workerpool)
+* [Step 3: Add worker nodes to your RHCOS worker pool](/docs/openshift?topic=openshift-rhel_migrate#rhcos-add-worker-nodes)
 
-    * [Step 3: Add worker pool labels to the RHCOS worker pool](/docs/openshift?topic=openshift-rhel_migrate#step-3-create-labels)
+* [Step 4: Migrate your workloads](/docs/openshift?topic=openshift-rhel_migrate#rhcos-migrate-workloads)
 
-    * [Step 4: Add RHCOS worker nodes to cluster](/docs/openshift?topic=openshift-rhel_migrate#step-4-add-nodes)
+* [Step 5: Remove the RHEL worker nodes](/docs/openshift?topic=openshift-rhel_migrate#rm-rhel-pool)
 
-    * [Step 5: Change the driver installer on the RHEL 8 worker nodes to unmanaged](/docs/openshift?topic=openshift-rhel_migrate#step-5-unmanage-driver)
+    * [Optional Step 5: Uninstall and reinstall the Object Storage plug-in](/docs/openshift?topic=openshift-rhel_migrate#rhel-rm-cos)
 
-    * [Step 6: Schedule driver installer and other operands to RHCOS worker nodes](/docs/openshift?topic=openshift-rhel_migrate#step-6-schedule-driver)
+[Migrating NVIDIA GPU resources to RHCOS worker nodes](/docs/openshift?topic=openshift-rhcos-migrate-gpu#rhcos-migrate-gpu)
 
-    * [Step 7: Convert driver installer from RHEL 8 to RHCOS installation method](/docs/openshift?topic=openshift-rhel_migrate#step-7-convert-installation-method)
+    * [Initial environment details](/docs/openshift?topic=openshift-rhcos-migrate-gpu#env-details)
 
-    * [Step 8: Migrate GPU-dependent workloads to your RHCOS worker nodes](/docs/openshift?topic=openshift-rhel_migrate#step-8-convert-migrate-workloads)
+    * [Step 1: Update the cluster master](/docs/openshift?topic=openshift-rhcos-migrate-gpu#step-1-update-master)
 
-    * [Step 9: Remove labels from your RHCOS worker pool](/docs/openshift?topic=openshift-rhel_migrate#step-9-remove-labels)
+    * [Step 2: Create an RHCOS cluster worker pool](/docs/openshift?topic=openshift-rhcos-migrate-gpu#step-2-create-workerpool)
 
-    * [Step 10: Scale down or delete RHEL 8 worker pool](/docs/openshift?topic=openshift-rhel_migrate#step-10-remove-rhel-pool)
+    * [Step 3: Add worker pool labels to the RHCOS worker pool](/docs/openshift?topic=openshift-rhcos-migrate-gpu#step-3-create-labels)
 
-* [Migrating to Red Hat Enterprise Linux 9](/docs/openshift?topic=openshift-rhel_migrate#migrate-rhel-9)
+    * [Step 4: Add RHCOS worker nodes to cluster](/docs/openshift?topic=openshift-rhcos-migrate-gpu#step-4-add-nodes)
+
+    * [Step 5: Change the driver installer on the RHEL 8 worker nodes to unmanaged](/docs/openshift?topic=openshift-rhcos-migrate-gpu#step-5-unmanage-driver)
+
+    * [Step 6: Schedule driver installer and other operands to RHCOS worker nodes](/docs/openshift?topic=openshift-rhcos-migrate-gpu#step-6-schedule-driver)
+
+    * [Step 7: Convert driver installer from RHEL 8 to RHCOS installation method](/docs/openshift?topic=openshift-rhcos-migrate-gpu#step-7-convert-installation-method)
+
+    * [Step 8: Migrate GPU-dependent workloads to your RHCOS worker nodes](/docs/openshift?topic=openshift-rhcos-migrate-gpu#step-8-convert-migrate-workloads)
+
+    * [Step 9: Remove labels from your RHCOS worker pool](/docs/openshift?topic=openshift-rhcos-migrate-gpu#step-9-remove-labels)
+
+    * [Step 10: Scale down or delete RHEL 8 worker pool](/docs/openshift?topic=openshift-rhcos-migrate-gpu#step-10-remove-rhel-pool)
+
+[Migrating to Red Hat Enterprise Linux 9](/docs/openshift?topic=openshift-migrate-rhel-9#migrate-rhel-9)
 
 [Managing {{site.data.keyword.satelliteshort}} worker pools](/docs/openshift?topic=openshift-satcluster-worker-pools#satcluster-worker-pools)
 

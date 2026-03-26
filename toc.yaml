@@ -101,7 +101,13 @@ toc:
           - worker-os-check.md
           - update.md
           - dedicated-hosts.md
-          - rhel_migrate.md
+          - topicgroup:
+              label: Migrating to a new OS
+              topics:
+              - rhel_migrate.md
+              - rhel_migrate_sat.md
+              - rhel_migrate_gpu.md
+              - rhel_migrate_9.md
           - sat-worker-pool-manage.md
           - host-maintenance.md
           - access-apikey.md

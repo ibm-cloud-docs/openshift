@@ -49,6 +49,6 @@ Review and complete the following steps for migration.
 1. Understand the timeline and plan for key milestone dates.
 3. Work with your CSM or TAM if one is assigned to your account.
 1. Complete the migration steps that apply to your use case.
-    - [Migrating worker nodes to RHCOS](/docs/openshift?topic=openshift-rhel_migrate#migrate-rhcos).
+    - [Migrating worker nodes to RHCOS](/docs/openshift?topic=openshift-rhel_migrate).
     - [Migrating GPU worker nodes to RHCOS](/docs/openshift?topic=openshift-rhel_migrate#rhcos-migrate-gpu).
 1. Verify your migration.
