@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2026
-lastupdated: "2026-03-25"
+lastupdated: "2026-03-26"
 
 
 keywords: openshift
@@ -280,6 +280,10 @@ subcollection: openshift
 [Release notes](/docs/openshift?topic=openshift-openshift-relnotes#openshift-relnotes)
 
 * [March 2026](/docs/openshift?topic=openshift-openshift-relnotes#openshift-mar26)
+
+    * [02 February 2026](/docs/openshift?topic=openshift-openshift-relnotes#openshift-feb0226)
+
+        * VPC Block CSI Driver cluster add-on patch updates.
 
     * [25 March 2026](/docs/openshift?topic=openshift-openshift-relnotes#openshift-mar2526)
 
@@ -6549,6 +6553,8 @@ subcollection: openshift
 
     * [v5.2.44_316463149, released 10 February 2026](/docs/openshift?topic=openshift-cl-add-ons-vpc-block-csi-driver#cl-add-ons-vpc-block-csi-driver-v5244_316463149)
 
+    * [v5.2.43_313466999, released 02 February 2026](/docs/openshift?topic=openshift-cl-add-ons-vpc-block-csi-driver#cl-add-ons-vpc-block-csi-driver-v5243_313466999)
+
     * [v5.2.42_310488886, released 21 January 2026](/docs/openshift?topic=openshift-cl-add-ons-vpc-block-csi-driver#cl-add-ons-vpc-block-csi-driver-v5242_310488886)
 
     * [5.2.41_296897820, released 12 November 2025](/docs/openshift?topic=openshift-cl-add-ons-vpc-block-csi-driver#cl-add-ons-vpc-block-csi-driver-5241_296897820)
@@ -6572,6 +6578,8 @@ subcollection: openshift
     * [v5.1.44_319682969, released 26 February 2026](/docs/openshift?topic=openshift-cl-add-ons-vpc-block-csi-driver#cl-add-ons-vpc-block-csi-driver-v5144_319682969)
 
     * [v5.1.43_316462421, released 10 February 2026](/docs/openshift?topic=openshift-cl-add-ons-vpc-block-csi-driver#cl-add-ons-vpc-block-csi-driver-v5143_316462421)
+
+    * [v5.1.42_313460253, released 02 February 2026](/docs/openshift?topic=openshift-cl-add-ons-vpc-block-csi-driver#cl-add-ons-vpc-block-csi-driver-v5142_313460253)
 
     * [v5.1.41_310494703, released 21 January 2026](/docs/openshift?topic=openshift-cl-add-ons-vpc-block-csi-driver#cl-add-ons-vpc-block-csi-driver-v5141_310494703)
 
