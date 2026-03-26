@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2026
-lastupdated: "2026-03-25"
+lastupdated: "2026-03-26"
 
 
 keywords: openshift
@@ -262,11 +262,11 @@ subcollection: openshift
 * [Add integrations](/docs/openshift?topic=openshift-learning-path-dev#dev_integrate)
 
 
-## Red Hat Enterprise Linux (RHEL) deprecation
-{: #sitemap_red_hat_enterprise_linux_rhel_deprecation}
+## RHEL deprecation for VPC clusters
+{: #sitemap_rhel_deprecation_for_vpc_clusters}
 
 
-[Red Hat Enterprise Linux (RHEL) deprecation](/docs/openshift?topic=openshift-rhel-deprecation#rhel-deprecation)
+[RHEL deprecation for VPC clusters](/docs/openshift?topic=openshift-rhel-deprecation#rhel-deprecation)
 
 * [Timeline](/docs/openshift?topic=openshift-rhel-deprecation#timeline)
 
@@ -298,6 +298,8 @@ subcollection: openshift
         * VPC File CSI Driver cluster add-on patch updates.
 
         * IBM Cloud Image Key Synchronizer cluster add-on patch updates.
+
+        * Cluster autoscaler cluster add-on patch updates.
 
     * [17 March 2026](/docs/openshift?topic=openshift-openshift-relnotes#openshift-mar1726)
 
@@ -386,6 +388,10 @@ subcollection: openshift
         * New! {{site.data.keyword.openshiftlong_notm}} 4.20 is available.
 
         * New! Container network interface (CNI) selection in version 4.20 and later.
+
+    * [02 February 2026](/docs/openshift?topic=openshift-openshift-relnotes#openshift-feb0226)
+
+        * VPC Block CSI Driver cluster add-on patch updates.
 
 * [January 2026](/docs/openshift?topic=openshift-openshift-relnotes#openshift-jan26)
 
@@ -2438,6 +2444,10 @@ subcollection: openshift
 * [Updating the global pull secret](/docs/openshift?topic=openshift-satellite-registry-pull-secret#satellite-pull-secret-cli)
 
 * [Updating the global pull secret by using {{site.data.keyword.satelliteshort}} config](/docs/openshift?topic=openshift-satellite-registry-pull-secret#satellite-pull-secret-config)
+
+[Adding a trusted CA to {{site.data.keyword.openshiftlong_notm}}](/docs/openshift?topic=openshift-trusted-ca#trusted-ca)
+
+* [Adding a trusted CA to your cluster](/docs/openshift?topic=openshift-trusted-ca#trusted-ca-install)
 
 
 ## Networking
@@ -6257,9 +6267,13 @@ subcollection: openshift
 
 * [Version 2.0.0](/docs/openshift?topic=openshift-cl-add-ons-cluster-autoscaler#cl-add-ons-cluster-autoscaler-2.0.0)
 
+    * [v200-6-0_326846817, released 24 March 2026](/docs/openshift?topic=openshift-cl-add-ons-cluster-autoscaler#cl-add-ons-cluster-autoscaler-v200-6-0_326846817)
+
     * [v200-4_316755565, released 18 February 2026](/docs/openshift?topic=openshift-cl-add-ons-cluster-autoscaler#cl-add-ons-cluster-autoscaler-v200-4_316755565)
 
 * [Version 1.2.4](/docs/openshift?topic=openshift-cl-add-ons-cluster-autoscaler#cl-add-ons-cluster-autoscaler-1.2.4)
+
+    * [v124-8-0_326847250, released 24 March 2026](/docs/openshift?topic=openshift-cl-add-ons-cluster-autoscaler#cl-add-ons-cluster-autoscaler-v124-8-0_326847250)
 
     * [v124-7_312863411, released 16 February 2026](/docs/openshift?topic=openshift-cl-add-ons-cluster-autoscaler#cl-add-ons-cluster-autoscaler-v124-7_312863411)
 
@@ -6549,6 +6563,8 @@ subcollection: openshift
 
     * [v5.2.44_316463149, released 10 February 2026](/docs/openshift?topic=openshift-cl-add-ons-vpc-block-csi-driver#cl-add-ons-vpc-block-csi-driver-v5244_316463149)
 
+    * [v5.2.43_313466999, released 02 February 2026](/docs/openshift?topic=openshift-cl-add-ons-vpc-block-csi-driver#cl-add-ons-vpc-block-csi-driver-v5243_313466999)
+
     * [v5.2.42_310488886, released 21 January 2026](/docs/openshift?topic=openshift-cl-add-ons-vpc-block-csi-driver#cl-add-ons-vpc-block-csi-driver-v5242_310488886)
 
     * [5.2.41_296897820, released 12 November 2025](/docs/openshift?topic=openshift-cl-add-ons-vpc-block-csi-driver#cl-add-ons-vpc-block-csi-driver-5241_296897820)
@@ -6572,6 +6588,8 @@ subcollection: openshift
     * [v5.1.44_319682969, released 26 February 2026](/docs/openshift?topic=openshift-cl-add-ons-vpc-block-csi-driver#cl-add-ons-vpc-block-csi-driver-v5144_319682969)
 
     * [v5.1.43_316462421, released 10 February 2026](/docs/openshift?topic=openshift-cl-add-ons-vpc-block-csi-driver#cl-add-ons-vpc-block-csi-driver-v5143_316462421)
+
+    * [v5.1.42_313460253, released 02 February 2026](/docs/openshift?topic=openshift-cl-add-ons-vpc-block-csi-driver#cl-add-ons-vpc-block-csi-driver-v5142_313460253)
 
     * [v5.1.41_310494703, released 21 January 2026](/docs/openshift?topic=openshift-cl-add-ons-vpc-block-csi-driver#cl-add-ons-vpc-block-csi-driver-v5141_310494703)
 

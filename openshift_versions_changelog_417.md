@@ -3,7 +3,7 @@
 copyright:
   years: 2024, 2026
 
-lastupdated: "2026-03-24"
+lastupdated: "2026-03-26"
 
 
 keywords: change log, version history, 4.17_openshift
@@ -57,8 +57,7 @@ The following table shows the changes that are in the master fix pack 4.17.50_15
 | Load balancer and load balancer monitor for {{site.data.keyword.cloud_notm}} Provider | 3347 | 3563 | New version contains updates and security fixes. |
 | Portieris admission controller | v0.13.33 | v0.13.36 | See the [Portieris admission controller release notes](https://github.com/{{site.data.keyword.IBM_notm}}/portieris/releases/tag/v0.13.36){: external}. |
 | {{site.data.keyword.openshiftlong_notm}}. | 4.17.45 | 4.17.50 | See the [{{site.data.keyword.openshiftlong_notm}} release notes](https://docs.redhat.com/en/documentation/openshift_container_platform/4.17/html/release_notes/ocp-4-17-release-notes#ocp-4-17-50_release-notes){: external}. |
-| {{site.data.keyword.openshiftlong_notm}} Control Plane Operator, Metrics Server, and toolkit | v4.17.0+20251015 | v4.17.0+20260312 | See the [{{site.data.keyword.openshiftlong_notm}} toolkit release notes](https://github.com/openshift/ibm-roks-toolkit/releases/tag/v4.17.0+20260312){: external}.
- |
+| {{site.data.keyword.openshiftlong_notm}} Control Plane Operator, Metrics Server, and toolkit | v4.17.0+20251015 | v4.17.0+20260312 | See the [{{site.data.keyword.openshiftlong_notm}} toolkit release notes](https://github.com/openshift/ibm-roks-toolkit/releases/tag/v4.17.0+20260312){: external}. |
 {: caption="Changes since version 4.17.48-1573-openshift" caption-side="bottom"}
 
 

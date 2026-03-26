@@ -1,8 +1,8 @@
 ---
 
 copyright:
-  years: 2025, 2025
-lastupdated: "2025-09-17"
+  years: 2025, 2026
+lastupdated: "2026-03-26"
 
 
 keywords: rhel, os, operating system, rhcos, 418, migration, deprecation
@@ -13,15 +13,18 @@ subcollection: openshift
 
 {{site.data.keyword.attribute-definition-list}}
 
-# Red Hat Enterprise Linux (RHEL) deprecation
+# RHEL deprecation for VPC clusters
 {: #rhel-deprecation}
 
-[Virtual Private Cloud]{: tag-vpc}
+[Virtual Private Cloud only]{: tag-vpc}
 
-Review the following information about deprecation of Red Hat Enterprise Linux (RHEL) worker nodes for {{site.data.keyword.openshiftlong_notm}} clusters and the migration to Red Hat Enterprise Linux CoreOS (RHCOS) worker nodes.
+Review the following information about the deprecation of Red Hat Enterprise Linux (RHEL) worker nodes for VPC clusters and the migration to Red Hat Enterprise Linux CoreOS (RHCOS) worker nodes.
 {: shortdesc}
 
-Beginning with version 4.18 clusters on VPC, Red Hat Enterprise Linux (RHEL) RHEL worker nodes are deprecated. Support for RHEL worker nodes ends with the release of version 4.21. Migrate your clusters to use RHCOS worker nodes as soon as possible.
+The information on this page applies to VPC clusters only. It does not apply to Satellite or Classic clusters.
+{: important}
+
+Beginning with version 4.18 clusters on VPC infrastructure, Red Hat Enterprise Linux (RHEL) RHEL worker nodes are deprecated. Support for RHEL worker nodes ends with the release of version 4.21. Migrate your clusters to use RHCOS worker nodes as soon as possible.
 {: deprecated}
 
 Red Hat Enterprise Linux CoreOS (RHCOS) is the default operating system and beginning with version 4.21, RHCOS will be the only supported operated system for {{site.data.keyword.openshiftlong_notm}}.
