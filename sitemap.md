@@ -281,8 +281,6 @@ subcollection: openshift
 
 * [March 2026](/docs/openshift?topic=openshift-openshift-relnotes#openshift-mar26)
 
-    * [26 March 2026](/docs/openshift?topic=openshift-openshift-relnotes#openshift-mar2626)
-
     * [25 March 2026](/docs/openshift?topic=openshift-openshift-relnotes#openshift-mar2526)
 
         * {{site.data.keyword.openshiftlong_notm}} master fix packs.
