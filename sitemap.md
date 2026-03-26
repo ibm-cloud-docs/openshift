@@ -262,11 +262,11 @@ subcollection: openshift
 * [Add integrations](/docs/openshift?topic=openshift-learning-path-dev#dev_integrate)
 
 
-## Red Hat Enterprise Linux (RHEL) deprecation
-{: #sitemap_red_hat_enterprise_linux_rhel_deprecation}
+## RHEL deprecation for VPC clusters
+{: #sitemap_rhel_deprecation_for_vpc_clusters}
 
 
-[Red Hat Enterprise Linux (RHEL) deprecation](/docs/openshift?topic=openshift-rhel-deprecation#rhel-deprecation)
+[RHEL deprecation for VPC clusters](/docs/openshift?topic=openshift-rhel-deprecation#rhel-deprecation)
 
 * [Timeline](/docs/openshift?topic=openshift-rhel-deprecation#timeline)
 
@@ -2444,6 +2444,10 @@ subcollection: openshift
 * [Updating the global pull secret](/docs/openshift?topic=openshift-satellite-registry-pull-secret#satellite-pull-secret-cli)
 
 * [Updating the global pull secret by using {{site.data.keyword.satelliteshort}} config](/docs/openshift?topic=openshift-satellite-registry-pull-secret#satellite-pull-secret-config)
+
+[Adding a trusted CA to {{site.data.keyword.openshiftlong_notm}}](/docs/openshift?topic=openshift-trusted-ca#trusted-ca)
+
+* [Adding a trusted CA to your cluster](/docs/openshift?topic=openshift-trusted-ca#trusted-ca-install)
 
 
 ## Networking

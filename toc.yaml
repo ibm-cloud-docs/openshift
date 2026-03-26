@@ -153,6 +153,7 @@ toc:
           - registry.md
           - satellite-clusters-registry.md
           - satellite-registry-pull-secret.md
+          - trusted-ca.md
       - topicgroup:
           label: Networking
           topics:
