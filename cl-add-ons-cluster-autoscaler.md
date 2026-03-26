@@ -3,7 +3,7 @@
 copyright:
   years: 2024, 2026
 
-lastupdated: "2026-02-27"
+lastupdated: "2026-03-26"
 
 
 keywords: change log, version history, Cluster autoscaler
@@ -43,6 +43,18 @@ Review the version history for Cluster autoscaler.
 {: #cl-add-ons-cluster-autoscaler-2.0.0}
 
 
+### v200-6-0_326846817, released 24 March 2026
+{: #cl-add-ons-cluster-autoscaler-v200-6-0_326846817}
+
+- Update storage secret sidecar 1.3.43 
+- Fix issue where scale down to 0 was not working in CA 1.34 
+- `1.30.7 200-6`
+- `1.31.5 200-6`
+- `1.32.5 200-6`
+- `1.33.3 200-6`
+- `1.34.2 200-6.`
+
+
 ### v200-4_316755565, released 18 February 2026
 {: #cl-add-ons-cluster-autoscaler-v200-4_316755565}
 
@@ -57,6 +69,19 @@ Review the version history for Cluster autoscaler.
 
 ## Version 1.2.4
 {: #cl-add-ons-cluster-autoscaler-1.2.4}
+
+
+### v124-8-0_326847250, released 24 March 2026
+{: #cl-add-ons-cluster-autoscaler-v124-8-0_326847250}
+
+- Update storage secret sidecar 1.3.43 
+- `1.28.7 124-8`
+- `1.29.5 124-8`
+- `1.30.7 124-8`
+- `1.31.5 124-8`
+- `1.32.5 124-8`
+- `1.33.3 124-8`
+- `1.34.2 124-8.`
 
 
 ### v124-7_312863411, released 16 February 2026
