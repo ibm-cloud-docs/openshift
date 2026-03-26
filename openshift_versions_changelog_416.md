@@ -76,7 +76,7 @@ The following table shows the components included in the worker node fix pack 4.
 |Red Hat OpenShift|4.16.57|For more information, see the [change logs](https://docs.redhat.com/en/documentation/openshift_container_platform/4.16/html/release_notes/ocp-4-16-release-notes.html#ocp-4-16-57_release-notes).|
 |Red Hat CoreOS|4.16.57|For more information, see the [change logs](https://docs.redhat.com/en/documentation/openshift_container_platform/4.16/html/release_notes/ocp-4-16-release-notes.html#ocp-4-16-57_release-notes).|
 |HAProxy|965c403695b15b3410d87a3772002edbc5ed2569|Resolves the following CVEs: [CVE-2025-69419](https://nvd.nist.gov/vuln/detail/CVE-2025-69419){: external}.|
-{: caption="Components in the 4.16.57_1605_openshift worker node fix pack" caption-side="bottom"}
+{: caption="4.16.57_1605_openshift fix pack." caption-side="bottom"}
 {: #cl-boms-41657_1605_openshift_W-component-table}
 
 
