@@ -24,10 +24,10 @@ Review the following information about the deprecation of Red Hat Enterprise Lin
 The information on this page applies to VPC clusters only. It does not apply to Satellite or Classic clusters.
 {: important}
 
-Beginning with version 4.18 clusters on VPC infrastructure, Red Hat Enterprise Linux (RHEL) RHEL worker nodes are deprecated. Support for RHEL worker nodes ends with the release of version 4.21. Migrate your clusters to use RHCOS worker nodes as soon as possible.
+Beginning with version 4.18 clusters on VPC infrastructure, Red Hat Enterprise Linux (RHEL) worker nodes are deprecated. Support for RHEL worker nodes ends with the release of version 4.21. Migrate your clusters to use RHCOS worker nodes as soon as possible.
 {: deprecated}
 
-Red Hat Enterprise Linux CoreOS (RHCOS) is the default operating system and beginning with version 4.21, RHCOS will be the only supported operated system for {{site.data.keyword.openshiftlong_notm}}.
+Red Hat Enterprise Linux CoreOS (RHCOS) is the default operating system and beginning with version 4.21, RHCOS is the only supported operated system for {{site.data.keyword.openshiftlong_notm}}.
 
 RHCOS represents the next generation of single-purpose container operating system technology by providing the quality standards of RHEL with automated, remote upgrade features.
 
