@@ -283,10 +283,6 @@ subcollection: openshift
 
     * [26 March 2026](/docs/openshift?topic=openshift-openshift-relnotes#openshift-mar2626)
 
-    * [02 February 2026](/docs/openshift?topic=openshift-openshift-relnotes#openshift-feb0226)
-
-        * VPC Block CSI Driver cluster add-on patch updates.
-
     * [25 March 2026](/docs/openshift?topic=openshift-openshift-relnotes#openshift-mar2526)
 
         * {{site.data.keyword.openshiftlong_notm}} master fix packs.
@@ -392,6 +388,10 @@ subcollection: openshift
         * New! {{site.data.keyword.openshiftlong_notm}} 4.20 is available.
 
         * New! Container network interface (CNI) selection in version 4.20 and later.
+
+    * [02 February 2026](/docs/openshift?topic=openshift-openshift-relnotes#openshift-feb0226)
+
+        * VPC Block CSI Driver cluster add-on patch updates.
 
 * [January 2026](/docs/openshift?topic=openshift-openshift-relnotes#openshift-jan26)
 

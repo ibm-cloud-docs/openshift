@@ -37,13 +37,6 @@ Looking for {{site.data.keyword.cloud_notm}} status, platform announcements, sec
 
 
 
-### 02 February 2026
-{: #openshift-feb0226}
-{: release-note}
-
-VPC Block CSI Driver cluster add-on patch updates.
-:   For more information, see the [change log](/docs/openshift?topic=openshift-cl-add-ons-vpc-block-csi-driver).
-
 
 ### 25 March 2026
 {: #openshift-mar2526}
@@ -336,6 +329,12 @@ New! Container network interface (CNI) selection in version 4.20 and later.
 
 
 
+### 02 February 2026
+{: #openshift-feb0226}
+{: release-note}
+
+VPC Block CSI Driver cluster add-on patch updates.
+:   For more information, see the [change log](/docs/openshift?topic=openshift-cl-add-ons-vpc-block-csi-driver).
 
 ## January 2026
 {: #openshift-jan26}
