@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2026
-lastupdated: "2026-03-26"
+lastupdated: "2026-03-27"
 
 
 keywords: openshift
@@ -1860,19 +1860,19 @@ subcollection: openshift
 
     * [Optional Step 5: Uninstall and reinstall the Object Storage plug-in](/docs/openshift?topic=openshift-rhel_migrate#rhel-rm-cos)
 
-[Migrating Satellite worker nodes to RHCOS](/docs/openshift?topic=openshift-rhel_migrate#rhel_migrate)
+[Migrating Satellite worker nodes to RHCOS](/docs/openshift?topic=openshift-rhel_migrate_sat#rhel_migrate_sat)
 
-* [Step 1: Upgrade your cluster master](/docs/openshift?topic=openshift-rhel_migrate#upgrade-cluster-rhcos)
+* [Step 1: Upgrade your cluster master](/docs/openshift?topic=openshift-rhel_migrate_sat#upgrade-cluster-rhcos)
 
-* [Step 2: Creating a new RHCOS worker pool](/docs/openshift?topic=openshift-rhel_migrate#create-pool-rhcos)
+* [Step 2: Creating a new RHCOS worker pool](/docs/openshift?topic=openshift-rhel_migrate_sat#create-pool-rhcos)
 
-* [Step 3: Add worker nodes to your RHCOS worker pool](/docs/openshift?topic=openshift-rhel_migrate#rhcos-add-worker-nodes)
+* [Step 3: Add worker nodes to your RHCOS worker pool](/docs/openshift?topic=openshift-rhel_migrate_sat#rhcos-add-worker-nodes)
 
-* [Step 4: Migrate your workloads](/docs/openshift?topic=openshift-rhel_migrate#rhcos-migrate-workloads)
+* [Step 4: Migrate your workloads](/docs/openshift?topic=openshift-rhel_migrate_sat#rhcos-migrate-workloads)
 
-* [Step 5: Remove the RHEL worker nodes](/docs/openshift?topic=openshift-rhel_migrate#rm-rhel-pool)
+* [Step 5: Remove the RHEL worker nodes](/docs/openshift?topic=openshift-rhel_migrate_sat#rm-rhel-pool)
 
-    * [Optional Step 5: Uninstall and reinstall the Object Storage plug-in](/docs/openshift?topic=openshift-rhel_migrate#rhel-rm-cos)
+    * [Optional Step 5: Uninstall and reinstall the Object Storage plug-in](/docs/openshift?topic=openshift-rhel_migrate_sat#rhel-rm-cos)
 
 [Migrating NVIDIA GPU resources to RHCOS worker nodes](/docs/openshift?topic=openshift-rhcos-migrate-gpu#rhcos-migrate-gpu)
 
