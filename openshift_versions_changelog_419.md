@@ -3,7 +3,7 @@
 copyright:
   years: 2024, 2026
 
-lastupdated: "2026-03-24"
+lastupdated: "2026-03-29"
 
 
 keywords: change log, version history, 4.19_openshift
@@ -60,6 +60,23 @@ The following table shows the changes that are in the master fix pack 4.19.25_15
 | {{site.data.keyword.openshiftlong_notm}}. | 4.19.21 | 4.19.25 | See the [{{site.data.keyword.openshiftlong_notm}} release notes](https://docs.redhat.com/en/documentation/openshift_container_platform/4.19/html/release_notes/ocp-4-19-release-notes#ocp-4-19-25_release-notes){: external}. |
 | Tigera Operator | v1.36.16 | v1.38.11 | See the [Tigera Operator release notes](https://github.com/tigera/operator/releases/tag/v1.38.11){: external}. |
 {: caption="Changes since version 4.19.23-1568-openshift" caption-side="bottom"}
+
+
+### Worker node fix pack 4.19.26_1572_openshift, released 24 March 2026
+{: #cl-boms-41926_1572_openshift_W}
+
+The following table shows the components included in the worker node fix pack 4.19.26_1572_openshift. Worker node patch updates can be applied by updating, reloading (in classic infrastructure), or replacing (in VPC infrastructure) the worker node.
+{: shortdesc}
+
+| Component | Version | Description |
+| ---- | ---- | ---- |
+|RHEL 9 (VPC)|5.14.0-570.62.1.el9_6|N/A|
+|RHEL 9 (Classic)|5.14.0-570.62.1.el9_6|N/A|
+|Red Hat OpenShift|4.19.26|For more information, see the [change logs](https://docs.redhat.com/en/documentation/openshift_container_platform/4.19/html/release_notes/ocp-4-19-release-notes.html#ocp-4-19-26_release-notes).|
+|Red Hat CoreOS|4.19.26|For more information, see the [change logs](https://docs.redhat.com/en/documentation/openshift_container_platform/4.19/html/release_notes/ocp-4-19-release-notes.html#ocp-4-19-26_release-notes). CIS benchmark compliance [3.4.2.3](https://workbench.cisecurity.org/sections/1594542/recommendations/2564568).|
+|HAProxy|10c8639e6b5829d0af51a22755e13756f34630cf|Resolves the following CVEs: [CVE-2025-15281](https://nvd.nist.gov/vuln/detail/CVE-2025-15281){: external}, and [CVE-2026-0915](https://nvd.nist.gov/vuln/detail/CVE-2026-0915){: external}.|
+{: caption="4.19.26_1572_openshift fix pack." caption-side="bottom"}
+{: #cl-boms-41926_1572_openshift_W-component-table}
 
 
 ### Worker node fix pack 4.19.24_1570_openshift, released 11 March 2026

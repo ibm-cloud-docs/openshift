@@ -3,7 +3,7 @@
 copyright:
   years: 2024, 2026
 
-lastupdated: "2026-03-24"
+lastupdated: "2026-03-29"
 
 
 keywords: change log, version history, 4.18_openshift
@@ -58,6 +58,23 @@ The following table shows the changes that are in the master fix pack 4.18.34_15
 | Portieris admission controller | v0.13.33 | v0.13.36 | See the [Portieris admission controller release notes](https://github.com/{{site.data.keyword.IBM_notm}}/portieris/releases/tag/v0.13.36){: external}. |
 | {{site.data.keyword.openshiftlong_notm}}. | 4.18.30 | 4.18.34 | See the [{{site.data.keyword.openshiftlong_notm}} release notes](https://docs.redhat.com/en/documentation/openshift_container_platform/4.18/html/release_notes/ocp-4-18-release-notes#ocp-4-18-34_release-notes){: external}. |
 {: caption="Changes since version 4.18.32-1579-openshift" caption-side="bottom"}
+
+
+### Worker node fix pack 4.18.35_1583_openshift, released 24 March 2026
+{: #cl-boms-41835_1583_openshift_W}
+
+The following table shows the components included in the worker node fix pack 4.18.35_1583_openshift. Worker node patch updates can be applied by updating, reloading (in classic infrastructure), or replacing (in VPC infrastructure) the worker node.
+{: shortdesc}
+
+| Component | Version | Description |
+| ---- | ---- | ---- |
+|RHEL 9 (VPC)|5.14.0-570.62.1.el9_6|N/A|
+|RHEL 9 (Classic)|5.14.0-570.62.1.el9_6|N/A|
+|Red Hat OpenShift|4.18.35|For more information, see the [change logs](https://docs.redhat.com/en/documentation/openshift_container_platform/4.18/html/release_notes/ocp-4-18-release-notes.html#ocp-4-18-35_release-notes).|
+|Red Hat CoreOS|4.18.35|For more information, see the [change logs](https://docs.redhat.com/en/documentation/openshift_container_platform/4.18/html/release_notes/ocp-4-18-release-notes.html#ocp-4-18-35_release-notes). CIS benchmark compliance [3.4.2.3](https://workbench.cisecurity.org/sections/1594542/recommendations/2564568).|
+|HAProxy|10c8639e6b5829d0af51a22755e13756f34630cf|Resolves the following CVEs: [CVE-2025-15281](https://nvd.nist.gov/vuln/detail/CVE-2025-15281){: external}, and [CVE-2026-0915](https://nvd.nist.gov/vuln/detail/CVE-2026-0915){: external}.|
+{: caption="4.18.35_1583_openshift fix pack." caption-side="bottom"}
+{: #cl-boms-41835_1583_openshift_W-component-table}
 
 
 ### Worker node fix pack 4.18.34_1581_openshift, released 11 March 2026
