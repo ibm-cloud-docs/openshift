@@ -2,7 +2,7 @@
 
 copyright:
   years: 2026, 2026
-lastupdated: "2026-03-26"
+lastupdated: "2026-03-27"
 
 
 keywords: rhel, os, operating system, rhcos, 418, migration, satellite
@@ -16,7 +16,7 @@ subcollection: openshift
 
 
 # Migrating Satellite worker nodes to RHCOS
-{: #rhel_migrate}
+{: #rhel_migrate_sat}
 
 [Satellite]{: tag-satellite}
 
@@ -131,13 +131,3 @@ If you use the COS plug-in in your cluster, after migrating from RHEL to RHCOS, 
 * [Follow the steps to uninstall the COS plug-in](/docs/openshift?topic=openshift-storage_cos_install#remove_cos_plugin).
 
 * [Reinstall the plug-in](/docs/openshift?topic=openshift-storage_cos_install#remove_cos_plugin)
-
-
-
-
-
-
-
-
-
-
