@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2026
-lastupdated: "2026-03-17"
+lastupdated: "2026-03-31"
 
 
 keywords: openshift, {{site.data.keyword.openshiftlong_notm}}, object storage, plug-in, change log
@@ -28,14 +28,20 @@ View information for updates to the {{site.data.keyword.cos_full_notm}} plug-in 
 
 | {{site.data.keyword.cos_full_notm}} plug-in version | Supported? |
 | --- | --- |
+| 2.2.50 | Yes |
 | 2.2.49 | Yes |
 | 2.2.48 | Yes |
-| 2.2.47 | Yes |
 {: caption="{{site.data.keyword.cos_full_notm}} plug-in versions" caption-side="bottom"}
 
 Versions are deprecated at n-2 or roughly 3 months after their release date. Plan to keep your add-on updated. For update steps, see [Updating the {{site.data.keyword.cos_full_notm}} plug-in](/docs/openshift?topic=openshift-storage_cos_install#update_cos_plugin).
 {: important}
 
+
+## Change log for version 2.2.50, released 27 March 2026
+{: #02250_object_plugin}
+
+- Adds support for the `in-mum` region.
+- Resolves [CVE-2026-33186](https://exchange.xforce.ibmcloud.com/vulnerabilities/CVE-2026-33186){: external}.
 
 ## Change log for version 2.2.49, released 17 March 2026
 {: #02249_object_plugin}
