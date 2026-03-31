@@ -2,7 +2,7 @@
 
 copyright:
   years: 2022, 2026
-lastupdated: "2026-02-20"
+lastupdated: "2026-03-31"
 
 
 keywords: maintenance, host maintenance, notification, workers, offline
@@ -78,10 +78,19 @@ Follow the steps to reboot the worker before the maintenance period begins.
 
 
 
+
+    Example drain command
     ```sh
     oc adm drain <worker_id>
     ```
     {: pre}
+
+    Example drain command for Cloud Pak for Data
+    ```sh
+    oc adm drain <worker_id> --force --delete-emptydir-data --ignore-daemonsets
+    ```
+    {: pre}
+
 
 
 
@@ -122,11 +131,26 @@ For workers with the `cx2.`, `bx2.`, or `mx2.` flavors:
 
 
 
-2. Drain the worker.
+2. Drain the worker. In some scenarios, such as Cloud Pak for Data, you might need to specify additional drain options.
+
+
+
+
+    Example drain command
     ```sh
-    oc drain <worker_id>
+    oc adm drain <worker_id>
     ```
-    {: pre}    
+    {: pre}
+
+    Example drain command for Cloud Pak for Data
+    ```sh
+    oc adm drain <worker_id> --force --delete-emptydir-data --ignore-daemonsets
+    ```
+    {: pre}
+
+
+
+
 
 3. Replace the worker.
     ```sh
@@ -159,21 +183,28 @@ For workers with the `cx2d.`, `bx2d.`, or `mx2d.` flavors:
 
 
 
-2. Drain the worker.
+2. Drain the worker. In some scenarios, such as Cloud Pak for Data, you might need to specify additional drain options.
 
 
 
 
+    Example drain command
     ```sh
     oc adm drain <worker_id>
     ```
     {: pre}
 
- 
+    Example drain command for Cloud Pak for Data
+    ```sh
+    oc adm drain <worker_id> --force --delete-emptydir-data --ignore-daemonsets
+    ```
+    {: pre}
 
-2. Replace the worker. A new worker node is provisioned on a host that is not undergoing maintenance. 
+
+
+3. Replace the worker. A new worker node is provisioned on a host that is not undergoing maintenance.
 
     ```sh
-    ibmcloud oc worker replace --cluster <cluster_name_or_ID> --worker <worker_node_ID>
+    ibmcloud oc worker replace --cluster <cluster_name_or_id> --worker <worker_id>
     ```
     {: pre}

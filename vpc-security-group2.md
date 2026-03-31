@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2023, 2026
-lastupdated: "2026-02-11"
+lastupdated: "2026-03-30"
 
 
 keywords: openshift, {{site.data.keyword.openshiftlong_notm}}, firewall, rules, security group, 4.15, networking, secure by default, outbound traffic protection
@@ -45,15 +45,19 @@ When the first VPC cluster at {{site.data.keyword.openshiftlong_notm}} 4.14+ is 
 
 The following VPE gateways are created automatically when you create a VPC cluster. 
 
-| VPE Gateway | Description |
-| --- | --- |
-| {{site.data.keyword.registrylong_notm}} | Pull container images from {{site.data.keyword.registrylong_notm}} to apps running in your cluster. |
-| {{site.data.keyword.cos_full_notm}} s3 gateway | Access the {{site.data.keyword.cos_full_notm}} APIs. |
-| {{site.data.keyword.cos_full_notm}} config gateway | Backup container images to {{site.data.keyword.cos_full_notm}} |
-| {{site.data.keyword.openshiftlong_notm}} | Access the {{site.data.keyword.openshiftlong_notm}} APIs to create clusters, add worker pools, and more. |
-| {{site.data.keyword.vpc_short}} | Access VPC APIs to provision and manage resources that are part of the VPC Infrastructure as a Service (IaaS). |
+| VPE Gateway | Description | DNS Names |
+| --- | --- | --- |
+| {{site.data.keyword.registrylong_notm}} | Pull container images from {{site.data.keyword.registrylong_notm}} to apps running in your cluster. | `icr.io`, `*.icr.io` |
+| {{site.data.keyword.cos_full_notm}} s3 gateway | Access the {{site.data.keyword.cos_full_notm}} APIs. | `s3.direct.<region>.cloud-object-storage.appdomain.cloud`, `*.s3.direct.<region>.cloud-object-storage.appdomain.cloud` |
+| {{site.data.keyword.cos_full_notm}} config gateway | Backup container images to {{site.data.keyword.cos_full_notm}} | `config.direct.cloud-object-storage.cloud.ibm.com` |
+| {{site.data.keyword.openshiftlong_notm}} (ca-mon, in-che, in-mum) | Access the {{site.data.keyword.openshiftlong_notm}} APIs to create clusters, add worker pools, and more. | `private.<region>.containers.cloud.ibm.com` |
+| {{site.data.keyword.openshiftlong_notm}} (other regions) | Access the {{site.data.keyword.openshiftlong_notm}} APIs to create clusters, add worker pools, and more. | `api.<region>.containers.cloud.ibm.com` |
+| {{site.data.keyword.vpc_short}} | Access VPC APIs to provision and manage resources that are part of the VPC Infrastructure as a Service (IaaS). | `<region>.private.iaas.cloud.ibm.com` |
 {: caption="Shared VPE gateways" caption-side="bottom"}
-{: summary="The table shows the VPE gateways created for VPC clusters. The first column includes name of the gateway. The second column includes a brief description."}
+{: summary="The table shows the VPE gateways created for VPC clusters. The first column includes name of the gateway. The second column includes a brief description. The third column includes the DNS names."}
+
+
+
 
 
 ### Non-shared VPE gateways

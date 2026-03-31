@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2022, 2026
-lastupdated: "2026-02-20"
+lastupdated: "2026-03-31"
 
 
 keywords: openshift, block storage for vpc, snapshot, restore snapshot, create snapshot
@@ -25,7 +25,7 @@ subcollection: openshift
 {: shortdesc}
 
 
-The {{site.data.keyword.block_storage_is_short}} cluster add-on automatically creates both volumes and snapshots in the same VPC resource group where the cluster is deployed. Due to a current limitation, specifying the resource group in your storage class does not override this behavior. Make sure that you allow for this behavior if you plan to use snapshots as you might hit resource group quotas.
+By default, the {{site.data.keyword.block_storage_is_short}} cluster add-on creates volumes and snapshots in the same VPC resource group where the cluster is deployed. However, starting with add-on version 5.2.46 and later, you can create snapshots in a different resource group by specifying the `resourceGroup` parameter in your `VolumeSnapshotClass`. For more information, see [Creating snapshots in a different resource group](#vpc-snapshot-different-rg).
 {: important}
 
 
@@ -170,7 +170,7 @@ Create an example Persistent Volume Claim (PVC) and deploy a pod that references
 
 After you create a deployment and a PVC, you can create the volume snapshot resources. 
 
-You can creating snapshots only when a volume is attached to a pod.
+You can create snapshots only when a volume is attached to a pod.
 {: note}
 
 1. Make sure that you have **Share Snapshot Operator** permissions in IAM.
@@ -201,12 +201,111 @@ You can creating snapshots only when a volume is attached to a pod.
     ```
     {: pre}
     
-    Example output where `READYTOUSE` is `true`.
+    Example output where `READYTOUSE` is `true`:
     ```sh
-    NAME                            READYTOUSE   SOURCEPVC              SOURCESNAPSHOTCONTENT   RESTORESIZE   SNAPSHOTCLASS SNAPSHOTCONTENT                                    CREATIONTIME   AGE
-    ibmc-vpcblock-snapshot   true         csi-block-pvc                           1Gi           ibmc-vpcblock-snapshot   snapcontent-9c374fbf-43a6-48d6-afc5-e76e1ab7c12b   18h            18h
+    NAME                       READYTOUSE   SOURCEPVC       SOURCESNAPSHOTCONTENT   RESTORESIZE   SNAPSHOTCLASS           SNAPSHOTCONTENT                                    CREATIONTIME   AGE
+    snapshot-csi-block-pvc     true         csi-block-pvc                           1Gi           ibmc-vpcblock-snapshot   snapcontent-9c374fbf-43a6-48d6-afc5-e76e1ab7c12b   18h            18h
     ```
     {: screen}
+
+
+## Creating snapshots in a different resource group
+{: #vpc-snapshot-different-rg}
+
+Starting with {{site.data.keyword.block_storage_is_short}} cluster add-on version 5.2.46 and later, you can create volume snapshots in a resource group that is different from your cluster's resource group. This feature provides greater flexibility in resource organization, quota management, and access control.
+{: shortdesc}
+
+
+- **Version requirement**: This feature is supported only in add-on version 5.2.46 and later.
+- **Default behavior**: If you don't specify a `resourceGroup` parameter or if you specify an empty string, snapshots are created in the cluster's resource group.
+
+
+### Prerequisites
+{: #vpc-snapshot-different-rg-prereqs}
+
+Before you begin, make sure you have the following permissions in IAM:
+- **VPC Infrastructure Services (is)**: Editor and Writer
+- **Kubernetes Service (container-kubernetes)**: Operator
+- **Resource Group**: Viewer for each resource group where you want to create snapshots
+
+### Creating a custom VolumeSnapshotClass
+{: #vpc-snapshot-custom-class}
+
+To create snapshots in a different resource group, you must create a custom `VolumeSnapshotClass` that specifies the target resource group ID.
+
+1. Get the resource group ID where you want to create the snapshot.
+    ```sh
+    ibmcloud resource groups
+    ```
+    {: pre}
+
+1. Create a `VolumeSnapshotClass` configuration file. Save the following YAML to a file called `vpc-snap-custom-rg.yaml`. Replace `<RESOURCE_GROUP_ID>` with your target resource group ID.
+
+    ```yaml
+    apiVersion: snapshot.storage.k8s.io/v1
+    kind: VolumeSnapshotClass
+    metadata:
+      name: vpc-snap-custom-rg
+    driver: vpc.block.csi.ibm.io
+    deletionPolicy: Delete
+    parameters:
+      resourceGroup: <RESOURCE_GROUP_ID>
+    ```
+    {: codeblock}
+
+    The `resourceGroup` parameter must be the resource group ID, not the resource group name.
+    {: important}
+
+1. Create the `VolumeSnapshotClass` in your cluster.
+    ```sh
+    oc create -f vpc-snap-custom-rg.yaml
+    ```
+    {: pre}
+
+1. Verify that the `VolumeSnapshotClass` is created.
+    ```sh
+    oc get volumesnapshotclass
+    ```
+    {: pre}
+
+### Creating a snapshot with a custom resource group
+{: #vpc-snapshot-create-custom-rg}
+
+After you create the custom `VolumeSnapshotClass`, you can create snapshots that reference it.
+
+1. Create a `VolumeSnapshot` configuration file that references your custom snapshot class. Save the following YAML to a file called `snapshot-custom-rg.yaml`.
+
+    ```yaml
+    apiVersion: snapshot.storage.k8s.io/v1
+    kind: VolumeSnapshot
+    metadata:
+      name: snapshot-custom-rg
+    spec:
+      volumeSnapshotClassName: vpc-snap-custom-rg
+      source:
+        persistentVolumeClaimName: csi-block-pvc
+    ```
+    {: codeblock}
+
+1. Create the snapshot.
+    ```sh
+    oc create -f snapshot-custom-rg.yaml
+    ```
+    {: pre}
+
+1. Verify that the snapshot is ready to use.
+    ```sh
+    oc get volumesnapshots
+    ```
+    {: pre}
+
+1. Verify that the snapshot was created in the target resource group by using the IBM Cloud CLI.
+    ```sh
+    ibmcloud target -g <RESOURCE_GROUP_NAME>
+    ibmcloud is snapshots
+    ```
+    {: pre}
+
 
 ## Restoring from a volume snapshot
 {: #vpc-restore-from-snapshot}
@@ -349,4 +448,4 @@ Deploy the snapshot validation webhook to validate user input. For more informat
 Review the following troubleshooting topics.
 
 - [Why can't I create snapshots?](/docs/openshift?topic=openshift-ts-storage-snapshotfails).
-- [Why can't I delete my `volumesnapshot` resources](/docs/openshift?topic=openshift-ts-storage-volumesnapshotdelete).
+- [Why can't I delete my `volumesnapshot` resources?](/docs/openshift?topic=openshift-ts-storage-volumesnapshotdelete)

@@ -2,7 +2,7 @@
 
 copyright:
   years: 2022, 2026
-lastupdated: "2026-03-26"
+lastupdated: "2026-03-31"
 
 
 keywords: rhel, os, operating system, rhel 9, 418, migration, classic
@@ -50,10 +50,10 @@ The default `cgroup` implementation is `cgroup` v2. In RHEL 9, `cgroup` v1 isn't
     ```
     {: pre}
 
-    Example command to replace VPC worker nodes.
+    Example command to update VPC worker nodes.
 
     ```sh
-    ibmcloud oc worker replace --cluster CLUSTER --worker WORKER_ID
+    ibmcloud oc worker replace --cluster CLUSTER --worker WORKER_ID --update
     ```
     {: pre}
 
@@ -67,6 +67,6 @@ The default `cgroup` implementation is `cgroup` v2. In RHEL 9, `cgroup` v1 isn't
 
     Get the details for a worker node. 
     ```sh
-    ibmcloud oc worker get --cluster CLUSTER --worker WORKER_NODE_ID 
+    ibmcloud oc worker get --cluster CLUSTER --worker WORKER_NODE_ID
     ```
     {: pre}
