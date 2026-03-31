@@ -1886,7 +1886,7 @@ subcollection: openshift
 
 [Migrating NVIDIA GPU resources to RHCOS worker nodes](/docs/openshift?topic=openshift-rhcos-migrate-gpu#rhcos-migrate-gpu)
 
-    * [Initial environment details](/docs/openshift?topic=openshift-rhcos-migrate-gpu#env-details)
+* [Initial environment details](/docs/openshift?topic=openshift-rhcos-migrate-gpu#env-details)
 
     * [Step 1: Update the cluster master](/docs/openshift?topic=openshift-rhcos-migrate-gpu#step-1-update-master)
 

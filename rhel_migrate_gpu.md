@@ -2,7 +2,7 @@
 
 copyright:
   years: 2022, 2026
-lastupdated: "2026-03-26"
+lastupdated: "2026-03-31"
 
 
 keywords: rhel, os, operating system, rhel 9, 418, migration, vpc, rhcos
@@ -44,7 +44,7 @@ The NVIDIA GPU operator isn't capable of simultaneously managing driver installa
 
 Complete the following steps to migrate NVIDIA GPU operator driver installations from RHEL 8 to RHCOS worker nodes. This example specifically describes migration steps for the the following cluster configuration:
 
-### Initial environment details
+## Initial environment details
 {: #env-details}
 
 Review the details and notes for migrating an {{site.data.keyword.openshiftlong_notm}} version 4.17 on VPC with RHEL 8 worker nodes to version 4.18 with RHCOS worker nodes.
