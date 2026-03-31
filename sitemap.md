@@ -3645,6 +3645,14 @@ subcollection: openshift
 
 * [Creating a volume snapshot](/docs/openshift?topic=openshift-vpc-volume-snapshot#vpc-create-snapshot)
 
+* [Creating snapshots in a different resource group](/docs/openshift?topic=openshift-vpc-volume-snapshot#vpc-snapshot-different-rg)
+
+    * [Prerequisites](/docs/openshift?topic=openshift-vpc-volume-snapshot#vpc-snapshot-different-rg-prereqs)
+
+    * [Creating a custom VolumeSnapshotClass](/docs/openshift?topic=openshift-vpc-volume-snapshot#vpc-snapshot-custom-class)
+
+    * [Creating a snapshot with a custom resource group](/docs/openshift?topic=openshift-vpc-volume-snapshot#vpc-snapshot-create-custom-rg)
+
 * [Restoring from a volume snapshot](/docs/openshift?topic=openshift-vpc-volume-snapshot#vpc-restore-from-snapshot)
 
 * [Turning off snapshots](/docs/openshift?topic=openshift-vpc-volume-snapshot#vpc-turn-off-snapshots)
