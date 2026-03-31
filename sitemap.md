@@ -281,6 +281,10 @@ subcollection: openshift
 
 * [March 2026](/docs/openshift?topic=openshift-openshift-relnotes#openshift-mar26)
 
+    * [31 March 2026](/docs/openshift?topic=openshift-openshift-relnotes#openshift-mar3126)
+
+        * VPC File CSI Driver cluster add-on patch updates.
+
     * [27 March 2026](/docs/openshift?topic=openshift-openshift-relnotes#openshift-mar2726)
 
         * {{site.data.keyword.openshiftlong_notm}} worker node fix packs are available.
