@@ -283,6 +283,8 @@ subcollection: openshift
 
     * [31 March 2026](/docs/openshift?topic=openshift-openshift-relnotes#openshift-mar3126)
 
+        * CLI version 1.0.680 is available
+
         * VPC File CSI Driver cluster add-on patch updates.
 
     * [27 March 2026](/docs/openshift?topic=openshift-openshift-relnotes#openshift-mar2726)
@@ -5874,6 +5876,8 @@ subcollection: openshift
 
     * [`ibmcloud oc ingress lb get`](/docs/openshift?topic=openshift-kubernetes-service-cli#cs_ingress_lb_proxy-protocol_get)
 
+    * [`ibmcloud oc ingress lb backend set`](/docs/openshift?topic=openshift-kubernetes-service-cli#cs_ingress_lb_backend_set)
+
     * [`ibmcloud oc ingress lb proxy-protocol disable`](/docs/openshift?topic=openshift-kubernetes-service-cli#cs_ingress_lb_proxy-protocol_disable)
 
     * [`ibmcloud oc ingress lb proxy-protocol enable`](/docs/openshift?topic=openshift-kubernetes-service-cli#cs_ingress_lb_proxy-protocol_enable)
@@ -6079,6 +6083,8 @@ subcollection: openshift
 [CLI change log](/docs/openshift?topic=openshift-cs_cli_changelog#cs_cli_changelog)
 
 * [Version 1.0](/docs/openshift?topic=openshift-cs_cli_changelog#10)
+
+* [Version v1.0.680](/docs/openshift?topic=openshift-cs_cli_changelog#cli-01680)
 
 * [Version v1.0.745](/docs/openshift?topic=openshift-cs_cli_changelog#cli-01745)
 

@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2026
-lastupdated: "2026-03-16"
+lastupdated: "2026-03-31"
 
 
 keywords: openshift, cli reference, kubernetes cli, openshift cli, {{site.data.keyword.openshiftlong_notm}}
@@ -2969,7 +2969,7 @@ Minimum required permissions
 :    Required: The name or ID of a worker node.
 
 `--update`
-:    Include this option to update the worker node to the same major and minor version of the master and the latest patch.
+:    Include this option to update the worker node to the same major and minor version of the master and the latest patch. Also updates the operating system if the worker pool operating system has been updated.
 
 `-f`
 :    Optional: Force the command to run with no user prompts.
@@ -5183,6 +5183,48 @@ Minimum required permissions
 ibmcloud oc ingress lb get --cluster mycluster
 ```
 {: pre}
+
+### `ibmcloud oc ingress lb backend set`
+{: #cs_ingress_lb_backend_set}
+
+[Virtual Private Cloud]{: tag-vpc}
+
+Set the Ingress controller currently exposed by the VPC ALB load balancer.
+{: shortdesc}
+
+VPC Gen 2 clusters support multiple Ingress controllers, such as the Kubernetes Ingress controller and Traefik. Use this command to switch which Ingress controller is exposed by your public or private VPC load balancer. Ensure your backend Ingress controller is running before executing this command.
+
+```sh
+ibmcloud oc ingress lb backend set --cluster CLUSTER [--private-backend BACKEND] [--public-backend BACKEND] [-q]
+```
+{: pre}
+
+Minimum required permissions
+:   **Operator** platform access role for the cluster in {{site.data.keyword.containerlong_notm}}
+
+**Command options**:
+
+`-c`, `--cluster CLUSTER`
+:    Required: The name or ID of the cluster.
+
+`--private-backend BACKEND`
+:    Optional: The Ingress controller to expose via the private load balancer. Supported values: `kubernetes`, `traefik`. To remove the backend configuration, specify an empty string.
+
+`--public-backend BACKEND`
+:    Optional: The Ingress controller to expose via the public load balancer. Supported values: `kubernetes`, `traefik`. To remove the backend configuration, specify an empty string.
+
+`-q`
+:    Optional: Do not show the message of the day or update reminders.
+
+
+#### Example `ingress lb backend set` command
+{: #ingress-lb-backend-set-example}
+
+```sh
+ibmcloud oc ingress lb backend set --cluster mycluster --public-backend traefik
+```
+{: pre}
+
 
 ### `ibmcloud oc ingress lb proxy-protocol disable`
 {: #cs_ingress_lb_proxy-protocol_disable}

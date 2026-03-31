@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2026
-lastupdated: "2026-01-14"
+lastupdated: "2026-03-31"
 
 
 keywords: openshift, {{site.data.keyword.openshiftlong_notm}}, oc, ks
@@ -31,6 +31,16 @@ Refer to the following change logs for a summary of changes for each version of 
 
 Review the following changes for 1.0 versions of the CLI plug-in.
 {: shortdesc}
+
+## Version v1.0.680
+{: #cli-01680}
+
+Version 1.0.680 of the CLI was released on 31 March 2026.
+- Adds the `ibmcloud ks ingress lb backend set` command to configure which Ingress controller (Kubernetes or Traefik) is exposed by VPC load balancers.
+- Updates the `ibmcloud ks worker replace --update` command to also update the worker node operating system when the worker pool OS has been updated.
+- Extends ALB version information to include Traefik Ingress controller versions and status.
+- Adds Satellite host update severity indicators to help identify control plane hosts that need updates.
+- Includes general refactoring and improvements.
 
 ## Version v1.0.745
 {: #cli-01745}
