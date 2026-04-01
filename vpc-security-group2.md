@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2023, 2026
-lastupdated: "2026-03-30"
+lastupdated: "2026-04-01"
 
 
 keywords: openshift, {{site.data.keyword.openshiftlong_notm}}, firewall, rules, security group, 4.15, networking, secure by default, outbound traffic protection
@@ -43,7 +43,7 @@ When the first VPC cluster at {{site.data.keyword.openshiftlong_notm}} 4.14+ is 
 ### Shared VPE gateways
 {: #shared-gateways}
 
-The following VPE gateways are created automatically when you create a VPC cluster. 
+The following VPE gateways are created automatically when you create a VPC cluster.
 
 | VPE Gateway | Description | DNS Names |
 | --- | --- | --- |
@@ -53,10 +53,9 @@ The following VPE gateways are created automatically when you create a VPC clust
 | {{site.data.keyword.openshiftlong_notm}} (ca-mon, in-che, in-mum) | Access the {{site.data.keyword.openshiftlong_notm}} APIs to create clusters, add worker pools, and more. | `private.<region>.containers.cloud.ibm.com` |
 | {{site.data.keyword.openshiftlong_notm}} (other regions) | Access the {{site.data.keyword.openshiftlong_notm}} APIs to create clusters, add worker pools, and more. | `api.<region>.containers.cloud.ibm.com` |
 | {{site.data.keyword.vpc_short}} | Access VPC APIs to provision and manage resources that are part of the VPC Infrastructure as a Service (IaaS). | `<region>.private.iaas.cloud.ibm.com` |
+
 {: caption="Shared VPE gateways" caption-side="bottom"}
 {: summary="The table shows the VPE gateways created for VPC clusters. The first column includes name of the gateway. The second column includes a brief description. The third column includes the DNS names."}
-
-
 
 
 
