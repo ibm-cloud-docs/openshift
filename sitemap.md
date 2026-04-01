@@ -1043,7 +1043,7 @@ subcollection: openshift
 
     * [16 September 2024](/docs/openshift?topic=openshift-openshift-relnotes#openshift-sep1624)
 
-        * New! The {{site.data.keyword.cloud}} and Compliance Center Workload Protection integration is available for VPC clusters in the UI. 
+        * New! The {{site.data.keyword.cloud}} and Compliance Center Workload Protection integration is available for VPC clusters in the UI.
 
     * [12 September 2024](/docs/openshift?topic=openshift-openshift-relnotes#openshift-sep1224)
 
@@ -1249,7 +1249,7 @@ subcollection: openshift
 
     * [09 April 2024](/docs/openshift?topic=openshift-openshift-relnotes#openshift-apr0924)
 
-        * Worker node fix packs are available {{site.data.keyword.openshiftlong_notm}}. 
+        * Worker node fix packs are available {{site.data.keyword.openshiftlong_notm}}.
 
     * [03 April 2024](/docs/openshift?topic=openshift-openshift-relnotes#openshift-apr0324)
 
@@ -1263,17 +1263,17 @@ subcollection: openshift
 
     * [27 March 2024](/docs/openshift?topic=openshift-openshift-relnotes#openshift-mar2724)
 
-        * Master patch updates for {{site.data.keyword.openshiftlong_notm}} clusters. Master patches are applied automatically over the course of several days. You can choose to use the [`ibmcloud ks cluster master update`](/docs/openshift?topic=openshift-kubernetes-service-cli#cs_cluster_update) command yourself without waiting for the update automation to apply the patch. Review the change logs for your cluster version. 
+        * Master patch updates for {{site.data.keyword.openshiftlong_notm}} clusters. Master patches are applied automatically over the course of several days. You can choose to use the [`ibmcloud ks cluster master update`](/docs/openshift?topic=openshift-kubernetes-service-cli#cs_cluster_update) command yourself without waiting for the update automation to apply the patch. Review the change logs for your cluster version.
 
     * [25 March 2024](/docs/openshift?topic=openshift-openshift-relnotes#openshift-mar2524)
 
-        * Worker node fix packs are available {{site.data.keyword.openshiftlong_notm}}. 
+        * Worker node fix packs are available {{site.data.keyword.openshiftlong_notm}}.
 
         * New! NVIDIA L40 GPU support. You can now create VPC clusters with worker nodes which have NVIDIA L40 GPUs.
 
     * [15 March 2024](/docs/openshift?topic=openshift-openshift-relnotes#openshift-mar1524)
 
-        * Worker node fix packs are available {{site.data.keyword.openshiftlong_notm}}. 
+        * Worker node fix packs are available {{site.data.keyword.openshiftlong_notm}}.
 
         * Version 4.14 the default version for {{site.data.keyword.openshiftlong_notm}}.
 
@@ -1303,11 +1303,11 @@ subcollection: openshift
 
         * Enable remote health monitoring with Telemetry
 
-        * Master patch updates for {{site.data.keyword.openshiftlong_notm}} clusters. Master patches are applied automatically over the course of several days. You can choose to use the [`ibmcloud ks cluster master update`](/docs/openshift?topic=openshift-kubernetes-service-cli#cs_cluster_update) command yourself without waiting for the update automation to apply the patch. Review the change logs for your cluster version. 
+        * Master patch updates for {{site.data.keyword.openshiftlong_notm}} clusters. Master patches are applied automatically over the course of several days. You can choose to use the [`ibmcloud ks cluster master update`](/docs/openshift?topic=openshift-kubernetes-service-cli#cs_cluster_update) command yourself without waiting for the update automation to apply the patch. Review the change logs for your cluster version.
 
     * [27 February 2024](/docs/openshift?topic=openshift-openshift-relnotes#openshift-feb2724)
 
-        * Worker node fix packs are available {{site.data.keyword.openshiftlong_notm}}. 
+        * Worker node fix packs are available {{site.data.keyword.openshiftlong_notm}}.
 
         * CLI version `1.0.597` is available.
 
@@ -1333,7 +1333,7 @@ subcollection: openshift
 
     * [13 February 2024](/docs/openshift?topic=openshift-openshift-relnotes#openshift-feb1324)
 
-        * Worker node fix packs are available {{site.data.keyword.openshiftlong_notm}}. 
+        * Worker node fix packs are available {{site.data.keyword.openshiftlong_notm}}.
 
 
 ## OpenShift tutorials
@@ -7756,6 +7756,8 @@ subcollection: openshift
 * [Where do I get support for confidential containers?](/docs/openshift?topic=openshift-faqs#conf-cont-support)
 
 * [Can confidential containers meet specific security standards, such as NIST 800-53 R5?](/docs/openshift?topic=openshift-faqs#conf-cont-sec)
+
+* [What is the default time zone for my VPC worker nodes?](/docs/openshift?topic=openshift-faqs#vpc)
 
 
 ## Troubleshooting
