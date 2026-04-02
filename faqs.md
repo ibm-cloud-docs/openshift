@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2026
-lastupdated: "2026-04-01"
+lastupdated: "2026-04-02"
 
 
 keywords: openshift, ocp, compliance, security standards, faq, openshift pricing, ocp pricing, openshift charges, ocp charges, openshift price, ocp price, openshift billing, ocp billing, openshift costs, ocp costs
@@ -519,6 +519,73 @@ For production, use the Intel Trust Authority and configure INITDATA to use the 
 
 OpenShift Sandboxed Containers Operator on {{site.data.keyword.openshiftlong_notm}} is supported by both Red Hat and IBM. Use standard support channels for both services. If your OpenShift is licensed through IBM Cloud, contact IBM. If you bring your own OpenShift licenses from Red Hat, you can contact Red Hat.
 
+## How many peer pods can I run per worker node?
+{: #conf-cont-peerpods-limit}
+
+The number of peer pods you can run per worker node is controlled by multiple limits:
+
+1. `PEERPODS_LIMIT_PER_NODE` setting: This configurable limit in the `peer-pods-cm` ConfigMap controls the maximum number of peer pod VSIs that can be scheduled per worker node. The default value is `10`. You can increase this value, but you must also consider the other constraints below.
+
+2. Kubernetes pod limit: Kubernetes limits the total number of pods per node based on the number of vCPUs (10 pods per vCPU). For example, a 16x64 worker node can support up to 110 pods. Since each peer pod is backed by a Kubernetes pod construct on the worker node, this limit applies even though the actual workload runs in a separate VSI.
+
+3. Worker node CPU and memory: Each peer pod consumes approximately 250m CPU and 120Mi memory on the worker node for the Kubernetes pod construct. You must ensure your worker nodes have sufficient CPU and memory to support the desired number of peer pods.
+
+To increase the `PEERPODS_LIMIT_PER_NODE` value:
+
+1. Update the [`peer-pods-cm`](openshift/confidential-containers.md:362) ConfigMap in the `openshift-sandboxed-containers-operator` namespace.
+
+    ```sh
+    oc -n openshift-sandboxed-containers-operator patch cm peer-pods-cm \
+      --type merge \
+      -p '{"data":{"PEERPODS_LIMIT_PER_NODE":"24"}}'
+    ```
+    {: pre}
+
+2. Restart the Cloud API Adapter daemonset.
+
+    ```sh
+    oc -n openshift-sandboxed-containers-operator rollout restart daemonset/osc-caa-ds
+    ```
+    {: pre}
+
+3. Verify the new limit is applied.
+
+    ```sh
+    oc get nodes -o json | jq -r '[.items[] | select (.status.allocatable["kata.peerpods.io/vm"] != null)| .status.allocatable["kata.peerpods.io/vm"] | tonumber] | add'
+    ```
+    {: pre}
+
+When calculating the optimal `PEERPODS_LIMIT_PER_NODE` value, consider your worker node profile. For example, with a 16x64 worker node (16 vCPUs), the theoretical maximum based on CPU alone would be approximately 24 peer pods per node (assuming 250m CPU per peer pod and accounting for other system processes). However, you are also constrained by the Kubernetes pod limit of 110 pods per node.
+
+## What does the Insufficient kata.peerpods.io/vm error mean?
+{: #conf-cont-insufficient-vm}
+
+If you see an error like the following when scheduling peer pods:
+
+```
+Warning FailedScheduling 0/30 nodes are available: 9 Insufficient kata.peerpods.io/vm. preemption: 0/30 nodes are available: 9 No preemption victims found for incoming pod.
+```
+
+This error indicates that you have reached the `PEERPODS_LIMIT_PER_NODE` limit on your worker nodes. The `kata.peerpods.io/vm` resource represents the number of peer pod slots available on each worker node.
+
+To resolve this issue:
+
+1. Check the current limit and allocation.
+
+    ```sh
+    oc get nodes -o json | jq '.items[] | {name: .metadata.name, allocatable: .status.allocatable["kata.peerpods.io/vm"], capacity: .status.capacity["kata.peerpods.io/vm"]}'
+    ```
+    {: pre}
+
+2. Check how many peer pods are currently running.
+
+    ```sh
+    oc get pods -A -o json | jq '.items[] | select(.spec.runtimeClassName == "kata-remote") | "\(.metadata.namespace)/\(.metadata.name)"' | wc -l
+    ```
+    {: pre}
+3. Increase the [`PEERPODS_LIMIT_PER_NODE`](openshift/confidential-containers.md:380) value as described in [How many peer pods can I run per worker node?](#conf-cont-peerpods-limit).
+
+4. Alternatively, add more worker nodes to your cluster to increase total capacity.
 
 
 ## Can confidential containers meet specific security standards, such as NIST 800-53 R5?

@@ -438,6 +438,7 @@ toc:
           - versions-backup-restore.md
           - openshift_versions_hpcs_router.md
           - cl-add-ons-ibm-cloud-image-key-synchronizer.md
+          - cl-confidential-containers.md
       - topicgroup:
           label: Service settings
           topics:

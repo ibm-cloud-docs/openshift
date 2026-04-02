@@ -1,8 +1,8 @@
 ---
 
 copyright:
-  years: 2025, 2025
-lastupdated: "2025-11-07"
+  years: 2025, 2026
+lastupdated: "2026-04-02"
 
 
 keywords: openshift
@@ -164,4 +164,106 @@ To start troubleshooting issues, run the following commands to gather as much da
     ```
     {: pre}
 
+1. Check peer pods capacity and limits.
 
+    a. Check the current peer pods limit across all worker nodes.
+
+    ```bash
+    oc get nodes -o json | jq -r '[.items[] | select (.status.allocatable["kata.peerpods.io/vm"] != null)| .status.allocatable["kata.peerpods.io/vm"] | tonumber] | add'
+    ```
+    {: pre}
+
+    b. Check the allocated resources on each worker node.
+
+    ```bash
+    for n in $(oc get nodes -o name); do
+      echo "=== $n ==="
+      oc describe "$n" | sed -n '/Allocated resources:/,/Events:/p'
+    done
+    ```
+    {: pre}
+
+    c. Count the number of peer pods currently running.
+
+    ```bash
+    oc get pods -A -o json | jq '.items[] | select(.spec.runtimeClassName == "kata-remote") | "\(.metadata.namespace)/\(.metadata.name)"' | wc -l
+    ```
+    {: pre}
+
+## Common issues and resolutions
+{: #ts-confidential-containers-common}
+
+### Insufficient kata.peerpods.io/vm error
+{: #ts-conf-cont-insufficient-vm}
+
+If you see an error like the following when scheduling peer pods:
+
+```
+Warning FailedScheduling 0/30 nodes are available: 9 Insufficient kata.peerpods.io/vm. preemption: 0/30 nodes are available: 9 No preemption victims found for incoming pod.
+```
+
+This error indicates that you have reached the `PEERPODS_LIMIT_PER_NODE` limit on your worker nodes. The default limit is 10 peer pods per worker node.
+
+To resolve this issue:
+
+1. Verify the current limit and how many peer pods are running.
+
+    ```bash
+    oc get nodes -o json | jq '.items[] | {name: .metadata.name, allocatable: .status.allocatable["kata.peerpods.io/vm"], capacity: .status.capacity["kata.peerpods.io/vm"]}'
+    ```
+    {: pre}
+
+2. Increase the [`PEERPODS_LIMIT_PER_NODE`](openshift/confidential-containers.md:380) value in the [`peer-pods-cm`](openshift/confidential-containers.md:362) ConfigMap.
+
+    ```bash
+    oc -n openshift-sandboxed-containers-operator patch cm peer-pods-cm \
+      --type merge \
+      -p '{"data":{"PEERPODS_LIMIT_PER_NODE":"24"}}'
+    ```
+    {: pre}
+
+3. Restart the Cloud API Adapter daemonset.
+
+    ```bash
+    oc -n openshift-sandboxed-containers-operator rollout restart daemonset/osc-caa-ds
+    ```
+    {: pre}
+
+4. Verify the new limit is applied.
+
+    ```bash
+    oc get nodes -o json | jq -r '[.items[] | select (.status.allocatable["kata.peerpods.io/vm"] != null)| .status.allocatable["kata.peerpods.io/vm"] | tonumber] | add'
+    ```
+    {: pre}
+
+For more information about peer pods limits and capacity planning, see [How many peer pods can I run per worker node?](/docs/openshift?topic=openshift-faqs#conf-cont-peerpods-limit).
+
+### Insufficient CPU error
+{: #ts-conf-cont-insufficient-cpu}
+
+If you see an error like the following when scheduling peer pods:
+
+```
+Warning FailedScheduling 0/3 nodes are available: 3 Insufficient cpu. preemption: 0/3 nodes are available: 3 No preemption victims found for incoming pod.
+```
+
+This error indicates that your worker nodes do not have enough CPU resources available. Each peer pod consumes approximately 250m CPU on the worker node for the Kubernetes pod construct, even though the actual workload runs in a separate VSI.
+
+To resolve this issue:
+
+1. Check the CPU allocation on your worker nodes.
+
+    ```bash
+    for n in $(oc get nodes -o name); do
+      echo "=== $n ==="
+      oc describe "$n" | sed -n '/Allocated resources:/,/Events:/p'
+    done
+    ```
+    {: pre}
+
+2. Choose one of the following options:
+
+    - Add more worker nodes to your cluster
+    - Use worker nodes with more vCPUs
+    - Reduce the `PEERPODS_LIMIT_PER_NODE` value to match your worker node capacity
+    - Remove other workloads from the worker nodes to free up CPU resources

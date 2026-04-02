@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2026
-lastupdated: "2026-04-01"
+lastupdated: "2026-04-02"
 
 
 keywords: openshift
@@ -278,6 +278,12 @@ subcollection: openshift
 
 
 [Release notes](/docs/openshift?topic=openshift-openshift-relnotes#openshift-relnotes)
+
+* [April 2026](/docs/openshift?topic=openshift-openshift-relnotes#openshift-apr26)
+
+    * [02 April 2026](/docs/openshift?topic=openshift-openshift-relnotes#openshift-apr0226)
+
+        * IBM Object CSI Driver cluster add-on patch updates.
 
 * [March 2026](/docs/openshift?topic=openshift-openshift-relnotes#openshift-mar26)
 
@@ -2346,6 +2352,8 @@ subcollection: openshift
 * [Step 5: Creating an SSH key (Optional)](/docs/openshift?topic=openshift-confidential-containers#ssh-key)
 
 * [Step 6: Configuring confidential containers](/docs/openshift?topic=openshift-confidential-containers#configure-confidential-containers)
+
+    * [Monitoring and adjusting peer pods limits](/docs/openshift?topic=openshift-confidential-containers#monitor-peerpods-limits)
 
 * [Step 7: Configuring a trust authority](/docs/openshift?topic=openshift-confidential-containers#trustee)
 
@@ -6854,6 +6862,8 @@ subcollection: openshift
 
 * [Version 1.0](/docs/openshift?topic=openshift-cl-add-ons-ibm-object-csi-driver#cl-add-ons-ibm-object-csi-driver-1.0)
 
+    * [v1.0.18_320539369, released 02 April 2026](/docs/openshift?topic=openshift-cl-add-ons-ibm-object-csi-driver#cl-add-ons-ibm-object-csi-driver-v1018_320539369)
+
     * [v1.0.17_320539369, released 24 March 2026](/docs/openshift?topic=openshift-cl-add-ons-ibm-object-csi-driver#cl-add-ons-ibm-object-csi-driver-v1017_320539369)
 
     * [v1.0.13_297764008, released 14 November 2025](/docs/openshift?topic=openshift-cl-add-ons-ibm-object-csi-driver#cl-add-ons-ibm-object-csi-driver-v1013_297764008)
@@ -7402,6 +7412,24 @@ subcollection: openshift
 
     * [1.0.0_438, released on 30 March 2021](/docs/openshift?topic=openshift-cl-add-ons-ibm-cloud-image-key-synchronizer#1_0_0438)
 
+[Confidential containers](/docs/openshift?topic=openshift-cl-confidential-containers#cl-confidential-containers)
+
+* [Version 20260319-02](/docs/openshift?topic=openshift-cl-confidential-containers#cl-confidential-containers-20260319-02)
+
+    * [20260319-02, released 19 March 2026](/docs/openshift?topic=openshift-cl-confidential-containers#cl-confidential-containers-20260319-02)
+
+* [Version 20260318-10](/docs/openshift?topic=openshift-cl-confidential-containers#cl-confidential-containers-20260318-10)
+
+    * [20260318-10, released 18 March 2026](/docs/openshift?topic=openshift-cl-confidential-containers#cl-confidential-containers-20260318-10)
+
+* [Version 20260312-07-hardened](/docs/openshift?topic=openshift-cl-confidential-containers#cl-confidential-containers-20260312-07-hardened)
+
+    * [20260312-07-hardened, released 12 March 2026](/docs/openshift?topic=openshift-cl-confidential-containers#cl-confidential-containers-20260312-07-hardened)
+
+* [Version 20260303-01](/docs/openshift?topic=openshift-cl-confidential-containers#cl-confidential-containers-20260303-01)
+
+    * [20260303-01, released 03 March 2026](/docs/openshift?topic=openshift-cl-confidential-containers#cl-confidential-containers-20260303-01)
+
 
 ## Service settings
 {: #sitemap_service_settings}
@@ -7755,6 +7783,10 @@ subcollection: openshift
 
 * [Where do I get support for confidential containers?](/docs/openshift?topic=openshift-faqs#conf-cont-support)
 
+* [How many peer pods can I run per worker node?](/docs/openshift?topic=openshift-faqs#conf-cont-peerpods-limit)
+
+* [What does the Insufficient kata.peerpods.io/vm error mean?](/docs/openshift?topic=openshift-faqs#conf-cont-insufficient-vm)
+
 * [Can confidential containers meet specific security standards, such as NIST 800-53 R5?](/docs/openshift?topic=openshift-faqs#conf-cont-sec)
 
 * [What is the default time zone for my VPC worker nodes?](/docs/openshift?topic=openshift-faqs#vpc)
@@ -8101,6 +8133,12 @@ subcollection: openshift
 [Why am I seeing duplicate metrics or logs being sent from my clusters?](/docs/openshift?topic=openshift-ts-dupe-logs#ts-dupe-logs)
 
 [How do I troubleshoot confidential containers?](/docs/openshift?topic=openshift-ts-confidential-containers#ts-confidential-containers)
+
+* [Common issues and resolutions](/docs/openshift?topic=openshift-ts-confidential-containers#ts-confidential-containers-common)
+
+    * [Insufficient kata.peerpods.io/vm error](/docs/openshift?topic=openshift-ts-confidential-containers#ts-conf-cont-insufficient-vm)
+
+    * [Insufficient CPU error](/docs/openshift?topic=openshift-ts-confidential-containers#ts-conf-cont-insufficient-cpu)
 
 
 ### Permissions and credentials
