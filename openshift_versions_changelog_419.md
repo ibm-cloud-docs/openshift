@@ -3,7 +3,7 @@
 copyright:
   years: 2024, 2026
 
-lastupdated: "2026-03-29"
+lastupdated: "2026-04-03"
 
 
 keywords: change log, version history, 4.19_openshift
@@ -39,7 +39,7 @@ Master patch updates are applied automatically. Worker node patch updates can be
 {: #419_components}
 
 
-### Change log for Master fix pack 4.19.25_1572_openshift, released 25 March 2026
+### Change log for Master fix pack 4.19.25_1572_openshift, released 02 April 2026
 {: #41925_1572_openshift_M}
 
 The following table shows the changes that are in the master fix pack 4.19.25_1572_openshift. Master patch updates are applied automatically. 
