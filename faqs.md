@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2026
-lastupdated: "2026-04-02"
+lastupdated: "2026-04-03"
 
 
 keywords: openshift, ocp, compliance, security standards, faq, openshift pricing, ocp pricing, openshift charges, ocp charges, openshift price, ocp price, openshift billing, ocp billing, openshift costs, ocp costs
@@ -562,7 +562,7 @@ When calculating the optimal `PEERPODS_LIMIT_PER_NODE` value, consider your work
 
 If you see an error like the following when scheduling peer pods:
 
-```
+```sh
 Warning FailedScheduling 0/30 nodes are available: 9 Insufficient kata.peerpods.io/vm. preemption: 0/30 nodes are available: 9 No preemption victims found for incoming pod.
 ```
 
@@ -583,6 +583,7 @@ To resolve this issue:
     oc get pods -A -o json | jq '.items[] | select(.spec.runtimeClassName == "kata-remote") | "\(.metadata.namespace)/\(.metadata.name)"' | wc -l
     ```
     {: pre}
+
 3. Increase the [`PEERPODS_LIMIT_PER_NODE`](openshift/confidential-containers.md:380) value as described in [How many peer pods can I run per worker node?](#conf-cont-peerpods-limit).
 
 4. Alternatively, add more worker nodes to your cluster to increase total capacity.

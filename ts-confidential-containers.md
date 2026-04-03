@@ -2,7 +2,7 @@
 
 copyright:
   years: 2025, 2026
-lastupdated: "2026-04-02"
+lastupdated: "2026-04-03"
 
 
 keywords: openshift
@@ -198,7 +198,7 @@ To start troubleshooting issues, run the following commands to gather as much da
 
 If you see an error like the following when scheduling peer pods:
 
-```
+```sh
 Warning FailedScheduling 0/30 nodes are available: 9 Insufficient kata.peerpods.io/vm. preemption: 0/30 nodes are available: 9 No preemption victims found for incoming pod.
 ```
 
@@ -243,7 +243,7 @@ For more information about peer pods limits and capacity planning, see [How many
 
 If you see an error like the following when scheduling peer pods:
 
-```
+```sh
 Warning FailedScheduling 0/3 nodes are available: 3 Insufficient cpu. preemption: 0/3 nodes are available: 3 No preemption victims found for incoming pod.
 ```
 
