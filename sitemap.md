@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2026
-lastupdated: "2026-03-31"
+lastupdated: "2026-04-03"
 
 
 keywords: openshift
@@ -279,6 +279,14 @@ subcollection: openshift
 
 [Release notes](/docs/openshift?topic=openshift-openshift-relnotes#openshift-relnotes)
 
+* [April 2026](/docs/openshift?topic=openshift-openshift-relnotes#openshift-apr26)
+
+    * [02 April 2026](/docs/openshift?topic=openshift-openshift-relnotes#openshift-apr0226)
+
+        * {{site.data.keyword.openshiftlong_notm}} master fix packs.
+
+        * IBM Object CSI Driver cluster add-on patch updates.
+
 * [March 2026](/docs/openshift?topic=openshift-openshift-relnotes#openshift-mar26)
 
     * [31 March 2026](/docs/openshift?topic=openshift-openshift-relnotes#openshift-mar3126)
@@ -292,8 +300,6 @@ subcollection: openshift
         * {{site.data.keyword.openshiftlong_notm}} worker node fix packs are available.
 
     * [25 March 2026](/docs/openshift?topic=openshift-openshift-relnotes#openshift-mar2526)
-
-        * {{site.data.keyword.openshiftlong_notm}} master fix packs.
 
         * VPC Block CSI Driver cluster add-on patch updates.
 
@@ -1041,7 +1047,7 @@ subcollection: openshift
 
     * [16 September 2024](/docs/openshift?topic=openshift-openshift-relnotes#openshift-sep1624)
 
-        * New! The {{site.data.keyword.cloud}} and Compliance Center Workload Protection integration is available for VPC clusters in the UI. 
+        * New! The {{site.data.keyword.cloud}} and Compliance Center Workload Protection integration is available for VPC clusters in the UI.
 
     * [12 September 2024](/docs/openshift?topic=openshift-openshift-relnotes#openshift-sep1224)
 
@@ -1247,7 +1253,7 @@ subcollection: openshift
 
     * [09 April 2024](/docs/openshift?topic=openshift-openshift-relnotes#openshift-apr0924)
 
-        * Worker node fix packs are available {{site.data.keyword.openshiftlong_notm}}. 
+        * Worker node fix packs are available {{site.data.keyword.openshiftlong_notm}}.
 
     * [03 April 2024](/docs/openshift?topic=openshift-openshift-relnotes#openshift-apr0324)
 
@@ -1261,17 +1267,17 @@ subcollection: openshift
 
     * [27 March 2024](/docs/openshift?topic=openshift-openshift-relnotes#openshift-mar2724)
 
-        * Master patch updates for {{site.data.keyword.openshiftlong_notm}} clusters. Master patches are applied automatically over the course of several days. You can choose to use the [`ibmcloud ks cluster master update`](/docs/openshift?topic=openshift-kubernetes-service-cli#cs_cluster_update) command yourself without waiting for the update automation to apply the patch. Review the change logs for your cluster version. 
+        * Master patch updates for {{site.data.keyword.openshiftlong_notm}} clusters. Master patches are applied automatically over the course of several days. You can choose to use the [`ibmcloud ks cluster master update`](/docs/openshift?topic=openshift-kubernetes-service-cli#cs_cluster_update) command yourself without waiting for the update automation to apply the patch. Review the change logs for your cluster version.
 
     * [25 March 2024](/docs/openshift?topic=openshift-openshift-relnotes#openshift-mar2524)
 
-        * Worker node fix packs are available {{site.data.keyword.openshiftlong_notm}}. 
+        * Worker node fix packs are available {{site.data.keyword.openshiftlong_notm}}.
 
         * New! NVIDIA L40 GPU support. You can now create VPC clusters with worker nodes which have NVIDIA L40 GPUs.
 
     * [15 March 2024](/docs/openshift?topic=openshift-openshift-relnotes#openshift-mar1524)
 
-        * Worker node fix packs are available {{site.data.keyword.openshiftlong_notm}}. 
+        * Worker node fix packs are available {{site.data.keyword.openshiftlong_notm}}.
 
         * Version 4.14 the default version for {{site.data.keyword.openshiftlong_notm}}.
 
@@ -1301,11 +1307,11 @@ subcollection: openshift
 
         * Enable remote health monitoring with Telemetry
 
-        * Master patch updates for {{site.data.keyword.openshiftlong_notm}} clusters. Master patches are applied automatically over the course of several days. You can choose to use the [`ibmcloud ks cluster master update`](/docs/openshift?topic=openshift-kubernetes-service-cli#cs_cluster_update) command yourself without waiting for the update automation to apply the patch. Review the change logs for your cluster version. 
+        * Master patch updates for {{site.data.keyword.openshiftlong_notm}} clusters. Master patches are applied automatically over the course of several days. You can choose to use the [`ibmcloud ks cluster master update`](/docs/openshift?topic=openshift-kubernetes-service-cli#cs_cluster_update) command yourself without waiting for the update automation to apply the patch. Review the change logs for your cluster version.
 
     * [27 February 2024](/docs/openshift?topic=openshift-openshift-relnotes#openshift-feb2724)
 
-        * Worker node fix packs are available {{site.data.keyword.openshiftlong_notm}}. 
+        * Worker node fix packs are available {{site.data.keyword.openshiftlong_notm}}.
 
         * CLI version `1.0.597` is available.
 
@@ -1331,7 +1337,7 @@ subcollection: openshift
 
     * [13 February 2024](/docs/openshift?topic=openshift-openshift-relnotes#openshift-feb1324)
 
-        * Worker node fix packs are available {{site.data.keyword.openshiftlong_notm}}. 
+        * Worker node fix packs are available {{site.data.keyword.openshiftlong_notm}}.
 
 
 ## OpenShift tutorials
@@ -2344,6 +2350,8 @@ subcollection: openshift
 * [Step 5: Creating an SSH key (Optional)](/docs/openshift?topic=openshift-confidential-containers#ssh-key)
 
 * [Step 6: Configuring confidential containers](/docs/openshift?topic=openshift-confidential-containers#configure-confidential-containers)
+
+    * [Monitoring and adjusting peer pods limits](/docs/openshift?topic=openshift-confidential-containers#monitor-peerpods-limits)
 
 * [Step 7: Configuring a trust authority](/docs/openshift?topic=openshift-confidential-containers#trustee)
 
@@ -4715,7 +4723,7 @@ subcollection: openshift
 
 * [Version 4.20](/docs/openshift?topic=openshift-openshift_changelog_420#420_components)
 
-    * [Change log for Master fix pack 4.20.15_1542_openshift, released 25 March 2026](/docs/openshift?topic=openshift-openshift_changelog_420#42015_1542_openshift_M)
+    * [Change log for Master fix pack 4.20.15_1542_openshift, released 02 April 2026](/docs/openshift?topic=openshift-openshift_changelog_420#42015_1542_openshift_M)
 
     * [Worker node fix pack 4.20.16_1542_openshift, released 24 March 2026](/docs/openshift?topic=openshift-openshift_changelog_420#cl-boms-42016_1542_openshift_W)
 
@@ -4836,7 +4844,7 @@ subcollection: openshift
 
 * [Version 4.19](/docs/openshift?topic=openshift-openshift_changelog_419#419_components)
 
-    * [Change log for Master fix pack 4.19.25_1572_openshift, released 25 March 2026](/docs/openshift?topic=openshift-openshift_changelog_419#41925_1572_openshift_M)
+    * [Change log for Master fix pack 4.19.25_1572_openshift, released 02 April 2026](/docs/openshift?topic=openshift-openshift_changelog_419#41925_1572_openshift_M)
 
     * [Worker node fix pack 4.19.26_1572_openshift, released 24 March 2026](/docs/openshift?topic=openshift-openshift_changelog_419#cl-boms-41926_1572_openshift_W)
 
@@ -4989,7 +4997,7 @@ subcollection: openshift
 
 * [Version 4.18](/docs/openshift?topic=openshift-openshift_changelog_418#418_components)
 
-    * [Change log for Master fix pack 4.18.34_1583_openshift, released 25 March 2026](/docs/openshift?topic=openshift-openshift_changelog_418#41834_1583_openshift_M)
+    * [Change log for Master fix pack 4.18.34_1583_openshift, released 02 April 2026](/docs/openshift?topic=openshift-openshift_changelog_418#41834_1583_openshift_M)
 
     * [Worker node fix pack 4.18.35_1583_openshift, released 24 March 2026](/docs/openshift?topic=openshift-openshift_changelog_418#cl-boms-41835_1583_openshift_W)
 
@@ -5166,7 +5174,7 @@ subcollection: openshift
 
 * [Version 4.17](/docs/openshift?topic=openshift-openshift_changelog_417#417_components)
 
-    * [Change log for Master fix pack 4.17.50_1578_openshift, released 25 March 2026](/docs/openshift?topic=openshift-openshift_changelog_417#41750_1578_openshift_M)
+    * [Change log for Master fix pack 4.17.50_1578_openshift, released 02 April 2026](/docs/openshift?topic=openshift-openshift_changelog_417#41750_1578_openshift_M)
 
     * [Worker node fix pack 4.17.51_1578_openshift, released 24 March 2026](/docs/openshift?topic=openshift-openshift_changelog_417#cl-boms-41751_1578_openshift_W)
 
@@ -5379,7 +5387,7 @@ subcollection: openshift
 
 * [Version 4.16](/docs/openshift?topic=openshift-openshift_changelog_416#416_components)
 
-    * [Change log for Master fix pack 4.16.57_1608_openshift, released 25 March 2026](/docs/openshift?topic=openshift-openshift_changelog_416#41657_1608_openshift_M)
+    * [Change log for Master fix pack 4.16.57_1608_openshift, released 02 April 2026](/docs/openshift?topic=openshift-openshift_changelog_416#41657_1608_openshift_M)
 
     * [Worker node fix pack 4.16.58_1608_openshift, released 24 March 2026](/docs/openshift?topic=openshift-openshift_changelog_416#cl-boms-41658_1608_openshift_W)
 
@@ -5873,6 +5881,8 @@ subcollection: openshift
     * [`ibmcloud oc ingress instance unregister`](/docs/openshift?topic=openshift-kubernetes-service-cli#cs_ingress_instance_unregister)
 
     * [`ibmcloud oc ingress lb get`](/docs/openshift?topic=openshift-kubernetes-service-cli#cs_ingress_lb_proxy-protocol_get)
+
+    * [`ibmcloud oc ingress lb backend set`](/docs/openshift?topic=openshift-kubernetes-service-cli#cs_ingress_lb_backend_set)
 
     * [`ibmcloud oc ingress lb proxy-protocol disable`](/docs/openshift?topic=openshift-kubernetes-service-cli#cs_ingress_lb_proxy-protocol_disable)
 
@@ -6848,6 +6858,8 @@ subcollection: openshift
 
 * [Version 1.0](/docs/openshift?topic=openshift-cl-add-ons-ibm-object-csi-driver#cl-add-ons-ibm-object-csi-driver-1.0)
 
+    * [v1.0.18_320539369, released 02 April 2026](/docs/openshift?topic=openshift-cl-add-ons-ibm-object-csi-driver#cl-add-ons-ibm-object-csi-driver-v1018_320539369)
+
     * [v1.0.17_320539369, released 24 March 2026](/docs/openshift?topic=openshift-cl-add-ons-ibm-object-csi-driver#cl-add-ons-ibm-object-csi-driver-v1017_320539369)
 
     * [v1.0.13_297764008, released 14 November 2025](/docs/openshift?topic=openshift-cl-add-ons-ibm-object-csi-driver#cl-add-ons-ibm-object-csi-driver-v1013_297764008)
@@ -7396,6 +7408,24 @@ subcollection: openshift
 
     * [1.0.0_438, released on 30 March 2021](/docs/openshift?topic=openshift-cl-add-ons-ibm-cloud-image-key-synchronizer#1_0_0438)
 
+[Confidential containers](/docs/openshift?topic=openshift-cl-confidential-containers#cl-confidential-containers)
+
+* [Version 20260319-02](/docs/openshift?topic=openshift-cl-confidential-containers#cl-confidential-containers-20260319-02)
+
+    * [20260319-02, released 19 March 2026](/docs/openshift?topic=openshift-cl-confidential-containers#cl-confidential-containers-20260319-02)
+
+* [Version 20260318-10](/docs/openshift?topic=openshift-cl-confidential-containers#cl-confidential-containers-20260318-10)
+
+    * [20260318-10, released 18 March 2026](/docs/openshift?topic=openshift-cl-confidential-containers#cl-confidential-containers-20260318-10)
+
+* [Version 20260312-07-hardened](/docs/openshift?topic=openshift-cl-confidential-containers#cl-confidential-containers-20260312-07-hardened)
+
+    * [20260312-07-hardened, released 12 March 2026](/docs/openshift?topic=openshift-cl-confidential-containers#cl-confidential-containers-20260312-07-hardened)
+
+* [Version 20260303-01](/docs/openshift?topic=openshift-cl-confidential-containers#cl-confidential-containers-20260303-01)
+
+    * [20260303-01, released 03 March 2026](/docs/openshift?topic=openshift-cl-confidential-containers#cl-confidential-containers-20260303-01)
+
 
 ## Service settings
 {: #sitemap_service_settings}
@@ -7749,7 +7779,13 @@ subcollection: openshift
 
 * [Where do I get support for confidential containers?](/docs/openshift?topic=openshift-faqs#conf-cont-support)
 
+* [How many peer pods can I run per worker node?](/docs/openshift?topic=openshift-faqs#conf-cont-peerpods-limit)
+
+* [What does the Insufficient kata.peerpods.io/vm error mean?](/docs/openshift?topic=openshift-faqs#conf-cont-insufficient-vm)
+
 * [Can confidential containers meet specific security standards, such as NIST 800-53 R5?](/docs/openshift?topic=openshift-faqs#conf-cont-sec)
+
+* [What is the default time zone for my VPC worker nodes?](/docs/openshift?topic=openshift-faqs#vpc)
 
 
 ## Troubleshooting
@@ -8093,6 +8129,12 @@ subcollection: openshift
 [Why am I seeing duplicate metrics or logs being sent from my clusters?](/docs/openshift?topic=openshift-ts-dupe-logs#ts-dupe-logs)
 
 [How do I troubleshoot confidential containers?](/docs/openshift?topic=openshift-ts-confidential-containers#ts-confidential-containers)
+
+* [Common issues and resolutions](/docs/openshift?topic=openshift-ts-confidential-containers#ts-confidential-containers-common)
+
+    * [Insufficient kata.peerpods.io/vm error](/docs/openshift?topic=openshift-ts-confidential-containers#ts-conf-cont-insufficient-vm)
+
+    * [Insufficient CPU error](/docs/openshift?topic=openshift-ts-confidential-containers#ts-conf-cont-insufficient-cpu)
 
 
 ### Permissions and credentials

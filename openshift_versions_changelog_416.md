@@ -3,7 +3,7 @@
 copyright:
   years: 2024, 2026
 
-lastupdated: "2026-03-29"
+lastupdated: "2026-04-03"
 
 
 keywords: change log, version history, 4.16_openshift
@@ -39,7 +39,7 @@ Master patch updates are applied automatically. Worker node patch updates can be
 {: #416_components}
 
 
-### Change log for Master fix pack 4.16.57_1608_openshift, released 25 March 2026
+### Change log for Master fix pack 4.16.57_1608_openshift, released 02 April 2026
 {: #41657_1608_openshift_M}
 
 The following table shows the changes that are in the master fix pack 4.16.57_1608_openshift. Master patch updates are applied automatically. 
@@ -57,7 +57,8 @@ The following table shows the changes that are in the master fix pack 4.16.57_16
 | Load balancer and load balancer monitor for {{site.data.keyword.cloud_notm}} Provider | 3347 | 3563 | New version contains updates and security fixes. |
 | Portieris admission controller | v0.13.33 | v0.13.36 | See the [Portieris admission controller release notes](https://github.com/{{site.data.keyword.IBM_notm}}/portieris/releases/tag/v0.13.36){: external}. |
 | {{site.data.keyword.openshiftlong_notm}}. | 4.16.54 | 4.16.57 | See the [{{site.data.keyword.openshiftlong_notm}} release notes](https://docs.redhat.com/en/documentation/openshift_container_platform/4.16/html/release_notes/ocp-4-16-release-notes#ocp-4-16-57_release-notes){: external}. |
-| {{site.data.keyword.openshiftlong_notm}} Control Plane Operator, Metrics Server, and toolkit | v4.16.0+20251015 | v4.16.0+20260312 | See the [{{site.data.keyword.openshiftlong_notm}} toolkit release notes](https://github.com/openshift/ibm-roks-toolkit/releases/tag/v4.16.0+20260312){: external}. |
+| {{site.data.keyword.openshiftlong_notm}} Control Plane Operator, Metrics Server, and toolkit | v4.16.0+20251015 | v4.16.0+20260312 | See the [{{site.data.keyword.openshiftlong_notm}} toolkit release notes](https://github.com/openshift/ibm-roks-toolkit/releases/tag/v4.16.0+20260312){: external}.
+ |
 {: caption="Changes since version 4.16.56-1603-openshift" caption-side="bottom"}
 
 

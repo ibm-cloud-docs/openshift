@@ -2,7 +2,7 @@
 
 copyright:
   years: 2025, 2026
-lastupdated: "2026-01-08"
+lastupdated: "2026-04-02"
 
 keywords: confidential containers
 
@@ -376,9 +376,13 @@ After the Operator is installed, create ConfigMaps to allow Kata to handle workl
       VXLAN_PORT: ""
       TUNNEL_TYPE: ""
       INITDATA: ""
+      PEERPODS_LIMIT_PER_NODE: "10"
     EOF
     ```
     {: pre}
+
+    The `PEERPODS_LIMIT_PER_NODE` setting controls the maximum number of peer pod VSIs that can be scheduled per worker node. The default value is `10`. You can increase this value based on your worker node capacity, but note that you are also constrained by Kubernetes pod limits (110 pods per node for a 16x64 worker) and available CPU resources on the worker node. Each peer pod consumes approximately 250m CPU and 120Mi memory on the worker node for the Kubernetes pod construct, even though the actual workload runs in a separate VSI. For more information, see the [FAQ](/docs/openshift?topic=openshift-faqs#conf-cont-peerpods-limit).
+    {: note}
 
 1. Apply the ConfigMap. 
 
@@ -434,9 +438,63 @@ After the Operator is installed, create ConfigMaps to allow Kata to handle workl
         - `uninstalling`: The Kata uninstallation is in progress.
         - `uninstalled`: Kata is uninstalled successfully from the node.
 
-1. When the labels are updated and in the `waiting_for_reboot` state, [reboot](/docs/openshift?topic=openshift-kubernetes-service-cli#cs_worker_reboot) each worker node one at a time. 
+1. When the labels are updated and in the `waiting_for_reboot` state, [reboot](/docs/openshift?topic=openshift-kubernetes-service-cli#cs_worker_reboot) each worker node one at a time.
 
 When you run `oc get nodes` and each worker node is in the `installed` state, the installation is complete.
+
+### Monitoring and adjusting peer pods limits
+{: #monitor-peerpods-limits}
+
+After installation, you can monitor the peer pods capacity and adjust the `PEERPODS_LIMIT_PER_NODE` setting if needed.
+
+1. Check the current peer pods limit across all worker nodes:
+
+    ```sh
+    oc get nodes -o json | jq -r '[.items[] | select (.status.allocatable["kata.peerpods.io/vm"] != null)| .status.allocatable["kata.peerpods.io/vm"] | tonumber] | add'
+    ```
+    {: pre}
+
+2. Check the allocated resources on each worker node:
+
+    ```sh
+    for n in $(oc get nodes -o name); do
+      echo "=== $n ==="
+      oc describe "$n" | sed -n '/Allocated resources:/,/Events:/p'
+    done
+    ```
+    {: pre}
+
+3. Count the number of peer pods currently running:
+
+    ```sh
+    oc get pods -A -o json | jq '.items[] | select(.spec.runtimeClassName == "kata-remote") | "\(.metadata.namespace)/\(.metadata.name)"' | wc -l
+    ```
+    {: pre}
+
+4. To increase the `PEERPODS_LIMIT_PER_NODE` value after installation:
+
+    a. Update the ConfigMap.
+
+    ```sh
+    oc -n openshift-sandboxed-containers-operator patch cm peer-pods-cm \
+      --type merge \
+      -p '{"data":{"PEERPODS_LIMIT_PER_NODE":"24"}}'
+    ```
+    {: pre}
+
+    b. Restart the Cloud API Adapter daemonset.
+
+    ```sh
+    oc -n openshift-sandboxed-containers-operator rollout restart daemonset/osc-caa-ds
+    ```
+    {: pre}
+
+    c. Verify the new limit is applied.
+
+    ```sh
+    oc get nodes -o json | jq -r '[.items[] | select (.status.allocatable["kata.peerpods.io/vm"] != null)| .status.allocatable["kata.peerpods.io/vm"] | tonumber] | add'
+    ```
+    {: pre}
 
 
 ## Step 7: Configuring a trust authority

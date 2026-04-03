@@ -1,8 +1,8 @@
 ---
 
 copyright: 
-  years: 2014, 2025
-lastupdated: "2025-10-16"
+  years: 2014, 2026
+lastupdated: "2026-04-01"
 
 
 keywords: kubernetes, openshift
@@ -21,20 +21,27 @@ subcollection: openshift
 # IBM Cloud storage utilities
 {: #utilities}
 
+This topic covers utilities for managing raw, unformatted block storage in {{site.data.keyword.containerlong_notm}} clusters. The utilities and procedures differ depending on your cluster infrastructure type.
+{: shortdesc}
+
+Classic clusters
+:   Use the {{site.data.keyword.cloud_notm}} Block Storage Attacher plug-in to attach raw block storage to classic worker nodes.
+
+VPC clusters
+:   Use the {{site.data.keyword.cloud_notm}} API or CLI to attach raw {{site.data.keyword.block_storage_is_short}} to VPC worker nodes. See [Adding raw {{site.data.keyword.block_storage_is_short}} to VPC worker nodes](#vpc_api_attach).
+
+
 ## Classic: Installing the IBM Cloud Block Storage Attacher plug-in (beta)
 {: #block_storage_attacher}
 
-Use the {{site.data.keyword.cloud_notm}} Block Storage Attacher plug-in to attach raw, unformatted, and unmounted block storage to a classic worker node in your cluster.  
+Use the {{site.data.keyword.cloud_notm}} Block Storage Attacher plug-in to attach raw, unformatted, and unmounted block storage to a classic worker node in your cluster.
 {: shortdesc}
 
-The {{site.data.keyword.cloud_notm}} Block Storage Attacher plug-in is available for classic worker nodes only. If you want to attach raw, unformatted block storage to a VPC worker node, see [Adding raw {{site.data.keyword.block_storage_is_short}} worker nodes](#vpc_api_attach).
-{: note}
-
-For example, you want to store your data with a software-defined storage solution (SDS), such as [Portworx](/docs/openshift?topic=openshift-storage_portworx_about), but you don't want to use classic bare metal worker nodes that are optimized for SDS usage and that come with extra local disks. To add local disks to your classic non-SDS worker node, you must manually create your block storage devices in your {{site.data.keyword.cloud_notm}} infrastructure account and use the {{site.data.keyword.cloud_notm}} Block Volume Attacher to attach the storage to your non-SDS worker node.
+For example, to store your data with a software-defined storage solution (SDS), such as [Portworx](/docs/openshift?topic=openshift-storage_portworx_about), without using classic bare metal worker nodes that are optimized for SDS usage and that come with extra local disks. To add local disks to your classic non-SDS worker node, you must manually create your block storage devices in your {{site.data.keyword.cloud_notm}} infrastructure account and use the {{site.data.keyword.cloud_notm}} Block Volume Attacher to attach the storage to your non-SDS worker node.
 
 The {{site.data.keyword.cloud_notm}} Block Volume Attacher plug-in creates pods on every worker node in your cluster as part of a daemon set and sets up a Kubernetes storage class that you later use to attach the block storage device to your non-SDS worker node.
 
-Looking for instructions for how to update or remove the {{site.data.keyword.cloud_notm}} Block Volume Attacher plug-in? See [Updating the plug-in](#update_block_attacher) and [Removing the plug-in](#remove_block_attacher).
+For instructions on updating or removing the {{site.data.keyword.cloud_notm}} Block Volume Attacher plug-in, see [Updating the plug-in](#update_block_attacher) and [Removing the plug-in](#remove_block_attacher).
 {: tip}
 
 1. [Follow the instructions](/docs/openshift?topic=openshift-helm#install_v3) to install the Helm client version 3 on your local machine.
@@ -206,31 +213,24 @@ If you don't want to provision and use the {{site.data.keyword.cloud_notm}} Bloc
 
 The removal of the storage class is successful if no storage class is displayed in your CLI output.
 
-    
-
-
-
 ## Classic: Manually adding block storage to specific worker nodes
 {: #manual_block}
 
-Use this option if you want to add different block storage configurations, add block storage to a subset of worker nodes only, or to have more control over the provisioning process.
+Use this option to add different block storage configurations, add block storage to a subset of worker nodes only, or to have more control over the provisioning process.
 {: shortdesc}
 
-The instructions in this topic are available for classic worker nodes only. If you want to attach raw, unformatted block storage to a VPC worker node, see [Adding raw {{site.data.keyword.block_storage_is_short}} to worker nodes](#vpc_api_attach).
-{: note}
-
-1. List the worker nodes in your cluster and note the private IP address and the zone of the non-SDS worker nodes where you want to add a block storage device.
+1. List the worker nodes in your cluster and note the private IP address and the zone of the non-SDS worker nodes where you add a block storage device.
 
     ```sh
     ibmcloud oc worker ls --cluster <cluster_name_or_ID>
     ```
     {: pre}
 
-2. Review step 3 and 4 in [Deciding on your block storage configuration](/docs/openshift?topic=openshift-block_storage#block_predefined_storageclass) to choose the type, size, and number of IOPS for the block storage device that you want to add to your non-SDS worker node.    
+2. Review steps 3 and 4 in [Deciding on your block storage configuration](/docs/openshift?topic=openshift-block_storage#block_predefined_storageclass) to choose the type, size, and number of IOPS for the block storage device to add to your non-SDS worker node.
 
 3. Create the block storage device in the same zone that your non-SDS worker node is in.
 
-    Example for provisioning 20 GB endurance block storage with two IOPS per GB.
+    Example for provisioning 20 GB endurance block storage with 2 IOPS per GB.
     
     ```sh
     ibmcloud sl block volume-order --storage-type endurance --size 20 --tier 2 --os-type LINUX --datacenter dal10
@@ -283,7 +283,7 @@ The instructions in this topic are available for classic worker nodes only. If y
     ```
     {: screen}
 
-6. Authorize the non-SDS worker node to access the block storage device. Replace `<volume_ID>` with the volume ID of your block storage device that you retrieved earlier, and `<private_worker_IP>` with the private IP address of the non-SDS worker node where you want to attach the device.
+6. Authorize the non-SDS worker node to access the block storage device. Replace `<volume_ID>` with the volume ID of your block storage device that you retrieved earlier, and `<private_worker_IP>` with the private IP address of the non-SDS worker node where you attach the device.
 
     ```sh
     ibmcloud sl block access-authorize <volume_ID> -p <private_worker_IP>
@@ -324,10 +324,7 @@ The instructions in this topic are available for classic worker nodes only. If y
 To attach the block storage device to a non-SDS worker node, you must create a persistent volume (PV) with the {{site.data.keyword.cloud_notm}} Block Volume Attacher storage class and the details of your block storage device.
 {: shortdesc}
 
-The instructions in this topic are available for classic worker nodes only. If you want to attach raw, unformatted block storage to a VPC worker node, see [Adding raw {{site.data.keyword.block_storage_is_short}} to worker nodes](#vpc_api_attach).
-{: note}
-
-- Make sure that you [manually](#manual_block) added raw, unformatted, and unmounted block storage to your non-SDS worker nodes.
+- Ensure that you [manually](#manual_block) added raw, unformatted, and unmounted block storage to your non-SDS worker nodes.
 - [Access your {{site.data.keyword.redhat_openshift_notm}} cluster](/docs/openshift?topic=openshift-access_cluster).
 - Install the [block storage attacher plug-in](#block_storage_attacher).
 
@@ -343,7 +340,7 @@ The instructions in this topic are available for classic worker nodes only. If y
 
         2. Review the configuration for your PVs.
 
-    - If you manually added block storage:**
+    - If you manually added block storage:
         1. Create a `pv.yaml` file. The following command creates the file with the `nano` editor.
         
             ```sh
@@ -396,7 +393,7 @@ The instructions in this topic are available for classic worker nodes only. If y
         :   Enter the LUN ID of your block storage device that you retrieved earlier.
         
         `ibm.io/nodeip`
-        :   Enter the private IP address of the worker node where you want to attach the block storage device and that you authorized earlier to access your block storage device.
+        :   Enter the private IP address of the worker node where you attach the block storage device and that you authorized earlier to access your block storage device.
         
         `ibm.io/volID`
         :   Enter the ID of the block storage volume that you retrieved earlier.
@@ -473,14 +470,12 @@ If you want to detach a volume, delete the PV. Detached volumes are still author
 You can use the {{site.data.keyword.containershort_notm}} API to attach and detach raw, unformatted [{{site.data.keyword.blockstorageshort}}](https://cloud.ibm.com/apidocs/kubernetes/containers-v1-v2){: external} to a worker node in your VPC cluster.
 {: shortdesc}
 
-You can attach a volume to one worker node only. Make sure that the volume is in the same zone as the worker node for the attachment to succeed.
+You can attach a volume to one worker node only. Ensure that the volume is in the same zone as the worker node for the attachment to succeed.
 {: note}
 
 You can also attach, detach, and list the volume attachments of your worker nodes by using the CLI. For more information, see the [storage CLI reference](/docs/openshift?topic=openshift-kubernetes-service-cli#cs_storage).
 {: tip}
 
-The instructions in this topic are available for VPC worker nodes only. If you want to attach raw, unformatted block storage to a classic worker node, you must install the [{{site.data.keyword.cloud_notm}} Block Storage attacher plug-in](#block_storage_attacher).
-{: note}
 
 Before you begin:
 
@@ -504,7 +499,7 @@ Before you begin:
     ```
     {: pre}
 
-5. Retrieve the ID of the worker node that you want to attach to the {{site.data.keyword.blockstorageshort}} instance. Make sure to select a worker node that is located in the same zone as your {{site.data.keyword.blockstorageshort}} volume.
+5. Retrieve the ID of the worker node to attach to the {{site.data.keyword.blockstorageshort}} instance. Ensure that you select a worker node that is located in the same zone as your {{site.data.keyword.blockstorageshort}} volume.
 
     ```sh
     ibmcloud oc worker ls --cluster <cluster_name_or_ID>
@@ -527,7 +522,7 @@ Before you begin:
     :   The unique ID or the name that is assigned to your cluster. You can retrieve this ID by running `ibmcloud oc cluster ls`.
     
     `worker_ID`
-    :   The unique ID that is assigned to the worker node where you want to attach your volume. You can retrieve this value by running `ibmcloud oc worker ls -c <cluster_name>`.
+    :   The unique ID that is assigned to the worker node where you attach your volume. You can retrieve this value by running `ibmcloud oc worker ls -c <cluster_name>`.
     
     `volume_ID`
     :   The unique ID that is assigned to your {{site.data.keyword.blockstorageshort}} volume. You can retrieve a list of your {{site.data.keyword.blockstorageshort}} volumes by running `ibmcloud is volumes`.
@@ -562,7 +557,7 @@ You can use a `DELETE` request to detach storage from a VPC worker node.
 Detaching storage from your VPC cluster does not remove your {{site.data.keyword.blockstorageshort}} volume or the data that is stored in the volume. You continue to get billed until [you manually delete the volume](/docs/vpc?topic=vpc-managing-block-storage).
 {: important}
 
-1. Identify the storage volume that you want to remove and note the volume ID.
+1. Identify the storage volume to remove and note the volume ID.
 
     ```sh
     ibmcloud is volumes
@@ -576,14 +571,14 @@ Detaching storage from your VPC cluster does not remove your {{site.data.keyword
     ```
     {: pre}
 
-3. Retrieve a list of your PVs. This command returns a list of your PVs that you can then you use to determine which PVC uses the volume that you want to remove.
+3. Retrieve a list of your PVs. This command returns a list of your PVs that you can use to determine which PVC uses the volume to remove.
 
     ```sh
     oc get pv
     ```
     {: pre}
 
-4. Describe the PV that uses the volume. If you don't know which PV uses the volume that you want to remove, you can run the `describe pv` command on each PV in your cluster. Note the PVC that uses the PV.
+4. Describe the PV that uses the volume. If you don't know which PV uses the volume to remove, you can run the `describe pv` command on each PV in your cluster. Note the PVC that uses the PV.
 
     ```sh
     oc describe pv <pv_name>
@@ -673,7 +668,7 @@ You can use a `GET` request to retrieve volume attachment details for a VPC work
     ```
     {: pre}
 
-3. Retrieve the ID of the worker node for which you want to see volume attachment details. Make sure to select a worker node that is located in the same zone as your {{site.data.keyword.blockstorageshort}} instance.
+3. Retrieve the ID of the worker node for which you want to see volume attachment details. Ensure that you select a worker node that is located in the same zone as your {{site.data.keyword.blockstorageshort}} instance.
 
     ```sh
     ibmcloud oc worker ls --cluster <cluster_name_or_ID>
@@ -718,24 +713,21 @@ You can use a `GET` request to retrieve volume attachment details for a VPC work
 You can use the {{site.data.keyword.containershort_notm}} CLI to attach and detach raw, unformatted {{site.data.keyword.blockstorageshort}} to a worker node in your VPC cluster.
 {: shortdesc}
 
-You can attach a volume to one worker node only. Make sure that the volume is in the same zone as the worker node for the attachment to succeed.
-{: note}
-
-The instructions in this topic are available for VPC worker nodes only. If you want to attach raw, unformatted block storage to a classic worker node, you must install the [{{site.data.keyword.cloud_notm}} Block Storage attacher plug-in](#block_storage_attacher).
+You can attach a volume to one worker node only. Ensure that the volume is in the same zone as the worker node for the attachment to succeed.
 {: note}
 
 Before you begin:
 
 [Access your {{site.data.keyword.redhat_openshift_notm}} cluster](/docs/openshift?topic=openshift-access_cluster).
 
-1. List your storage volumes and note the ID of the volume that you want to attach.
+1. List your storage volumes and note the ID of the volume to attach.
 
     ```sh
     ibmcloud is vols
     ```
     {: pre}
 
-1. List the worker nodes in your cluster and note the ID of the worker node where you want to attach your volume.
+1. List the worker nodes in your cluster and note the ID of the worker node where you attach your volume.
 
     ```sh
     ibmcloud oc worker ls -c <cluster_name_or_ID>
@@ -758,7 +750,7 @@ You can remove storage from your worker node by using the `ibmcloud oc storage a
 
 [Log in to your account. If applicable, target the appropriate resource group. Set the context for your cluster.](/docs/containers?topic=containers-access_cluster)
 
-1. List your storage volumes and note the ID of the volume that you want to remove.
+1. List your storage volumes and note the ID of the volume to remove.
     ```sh
     ibmcloud is vols
     ```
@@ -829,7 +821,7 @@ What happens when I install the Helm chart?
 :   When you install the Helm chart, a Kubernetes pod is created in your cluster that performs a one-time or periodic backup of your PVC data, or restores data from {{site.data.keyword.cos_full_notm}} to a PVC. You configure your backup or restore in the `values.yaml` file that is provided with the Helm chart or by setting options in the `helm install` command.
 
 What limitations do I need to be aware of?
-:   If you want to back up or restore data of a block storage PVC, your PVC must not be mounted to an app. Block storage is mounted with a RWO access mode. This access allows only one pod to be mounted to the block storage at a time. To back up or restore your data, you must remove the pod that uses the storage to unmount the PVC. After the backup or restoring of data is finished, you can re-create your pod and mount the backed up or restored PVC.
+:   To back up or restore data of a block storage PVC, your PVC must not be mounted to an app. Block storage is mounted with a RWO access mode. This access allows only one pod to be mounted to the block storage at a time. To back up or restore your data, you must remove the pod that uses the storage to unmount the PVC. After the backup or restoring of data is finished, you can re-create your pod and mount the backed up or restored PVC.
 
 What do I need before I get started?
 :   To back up or restore data to {{site.data.keyword.cos_full_notm}}, you must [set up an {{site.data.keyword.cos_full_notm}} service instance, create service credentials to access the service, and create a bucket that can hold your data](#backup_restore_setup_object_storage).  
@@ -837,7 +829,7 @@ What do I need before I get started?
 ### Setting up an {{site.data.keyword.cos_full_notm}} service instance
 {: #backup_restore_setup_object_storage}
 
-Create and configure an {{site.data.keyword.cos_full_notm}} service instance to serve as the repository for the data that you want to back up.
+Create and configure an {{site.data.keyword.cos_full_notm}} service instance to serve as the repository for the data to back up.
 {: shortdesc}
 
 1. Create an [{{site.data.keyword.cos_full_notm}} service instance](/docs/openshift?topic=openshift-storage-cos-understand#create_cos_service) that uses HMAC credentials.
@@ -846,8 +838,8 @@ Create and configure an {{site.data.keyword.cos_full_notm}} service instance to 
     1. In the navigation on the service details page, click **Buckets**.
     2. Click **Create bucket**. A dialog box is displayed.
     3. Enter a unique name for your bucket. The name must be unique within {{site.data.keyword.cos_full_notm}} across all regions and across all {{site.data.keyword.cloud_notm}} accounts.
-    4. From the **Resiliency** list, select the level of availability that you want for your data. For more information, see [{{site.data.keyword.cos_full_notm}} regions and endpoints](/docs/cloud-object-storage?topic=cloud-object-storage-endpoints). For VPC clusters, make a note of the direct endpoint. For example: `s3.direct.us.cloud-object-storage.appdomain.cloud`.
-    5. Change the **Location** to the region where you want to store your data. Keep in mind that your data might not be allowed to be stored in every region due to legal reasons.  
+    4. From the **Resiliency** list, select the level of availability for your data. For more information, see [{{site.data.keyword.cos_full_notm}} regions and endpoints](/docs/cloud-object-storage?topic=cloud-object-storage-endpoints). For VPC clusters, make a note of the direct endpoint. For example: `s3.direct.us.cloud-object-storage.appdomain.cloud`.
+    5. Change the **Location** to the region where you store your data. Keep in mind that your data might not be allowed to be stored in every region due to legal reasons.
     6. Click **Create**.
 4. Retrieve the {{site.data.keyword.cos_full_notm}} host name for your bucket.
     1. Click your bucket name that you created in the previous step.
@@ -863,8 +855,8 @@ You can use the {{site.data.keyword.cloud_notm}} Backup Restore Helm chart to ba
 {: shortdesc}
 
 Before you begin:
-- Make sure that you have a PVC that you can back up or restore data to. For more information about how to create a PVC, see [Adding file storage to apps](/docs/openshift?topic=openshift-file_storage#add_file) and [Adding block storage to apps](/docs/openshift?topic=openshift-block_storage#add_block).
-- If you want to back up a block storage PVC, make sure that your PVC is not mounted to an app. Block storage is mounted with a RWO access mode. This access allows only one pod to be mounted to the block storage at a time. To back up your data, you must remove the app pod that mounts the storage. To check whether a pod is mounted to your PVC, run the following command.
+- Ensure that you have a PVC that you can back up or restore data to. For more information about how to create a PVC, see [Adding file storage to apps](/docs/openshift?topic=openshift-file_storage#add_file) and [Adding block storage to apps](/docs/openshift?topic=openshift-block_storage#add_block).
+- To back up a block storage PVC, ensure that your PVC is not mounted to an app. Block storage is mounted with a RWO access mode. This access allows only one pod to be mounted to the block storage at a time. To back up your data, you must remove the app pod that mounts the storage. To check whether a pod is mounted to your PVC, run the following command.
 
     ```sh
     oc get pods --all-namespaces -o=jsonpath='{range .items[*]}{"\n"}{.metadata.name}{":\t"}{range .spec.volumes[*]}{.persistentVolumeClaim.claimName}{" "}{end}{end}' | grep "<pvc_name>"
@@ -933,19 +925,19 @@ To back up or restore a PVC by editing the `values.yaml` file:
     :   **Backup**: Enter the name of the backup that you want to create in {{site.data.keyword.cos_full_notm}}. **Restore**: Enter the name of the backup that you created with the {{site.data.keyword.cloud_notm}} Backup Restore Helm chart in {{site.data.keyword.cos_full_notm}}. If you have multiple full backups in your {{site.data.keyword.cos_full_notm}} service instance, the PVC is restored with the data of the last full backup. If you have incremental backups, the PVC is restored with the data of the last full backup, including all incremental backups up to the day where you start the restore.
     
     `PVC_NAMES`
-    :   **Backup**: Enter the name of the PVC that you want to back up. If you want to back up multiple PVCs, add each PVC to the list of PVCs. To list available PVCs in your cluster that you can back up, run `oc get pvc`. **Restore**: Enter the name of the PVC to which you want to restore data from {{site.data.keyword.cos_full_notm}}. You can restore data to one PVC at a time only. To list available PVCs in your cluster that you can restore data to, run `oc get pvc`.
+    :   **Backup**: Enter the name of the PVC to back up. To back up multiple PVCs, add each PVC to the list of PVCs. To list available PVCs in your cluster that you can back up, run `oc get pvc`. **Restore**: Enter the name of the PVC to which you restore data from {{site.data.keyword.cos_full_notm}}. You can restore data to one PVC at a time only. To list available PVCs in your cluster that you can restore data to, run `oc get pvc`.
     
     `CHART_TYPE`
-    :   Enter the name of the chart type that you want to deploy. Enter `backup` to deploy the backup chart. Enter `restore` to deploy the restore chart.
+    :   Enter the name of the chart type to deploy. Enter `backup` to deploy the backup chart. Enter `restore` to deploy the restore chart.
     
     `BACKUP_TYPE`
-    :   Required only for backups. Enter `full` to create a full backup, or `incremental` if you want to back up only new or changed files. If you choose `incremental`, you must specify the `SCHEDULING_INFO` and `SCHEDULING_TYPE` option. If you don't specify the `BACKUP_TYPE` option, a full backup is created by default. 
+    :   Required only for backups. Enter `full` to create a full backup, or `incremental` to back up only new or changed files. If you choose `incremental`, you must specify the `SCHEDULING_INFO` and `SCHEDULING_TYPE` option. If you don't specify the `BACKUP_TYPE` option, a full backup is created by default.
     
     `SCHEDULE_TYPE`
-    :   Required only for backups. Enter `periodic` to create scheduled backups, or leave this option empty to create a one-time backup. If you want to create periodic backups, you must define the backup interval in the `SCHEDULE_INFO` option.
+    :   Required only for backups. Enter `periodic` to create scheduled backups, or leave this option empty to create a one-time backup. To create periodic backups, you must define the backup interval in the `SCHEDULE_INFO` option.
     
     `SCHEDULE_INFO`
-    :   Required only for backups. If you want to create periodic backups, you must decide on the backup schedule. Choose between `hourly`, `daily`, or `weekly`. If you set this option, you must set `SCHEDULE_TYPE` to `periodic`.
+    :   Required only for backups. To create periodic backups, you must decide on the backup schedule. Choose between `hourly`, `daily`, or `weekly`. If you set this option, you must set `SCHEDULE_TYPE` to `periodic`.
     
 4. Save and close the `values.yaml` file.
 
@@ -1081,13 +1073,13 @@ To back up or restore a PVC by editing the `values.yaml` file:
             {: codeblock}
 
             `spec.containers.image`
-            :   The name of the image that you want to use. To list available images in your {{site.data.keyword.registrylong_notm}} account, run `ibmcloud cr image-list`.
+            :   The name of the image to use. To list available images in your {{site.data.keyword.registrylong_notm}} account, run `ibmcloud cr image-list`.
             
             `spec.containers.name`
-            :   The name of the container that you want to deploy to your cluster.
+            :   The name of the container to deploy to your cluster.
             
             `spec.containers.volumeMounts.mountPath`
-            :   The absolute path of the directory to where the volume is mounted inside the container. Data that is written to the mount path is stored under the root directory in your physical block storage instance. If you want to share a volume between different apps, you can specify [volume sub paths](https://kubernetes.io/docs/concepts/storage/volumes/#using-subpath){: external} for each of your apps.
+            :   The absolute path of the directory to where the volume is mounted inside the container. Data that is written to the mount path is stored under the root directory in your physical block storage instance. To share a volume between different apps, you can specify [volume sub paths](https://kubernetes.io/docs/concepts/storage/volumes/#using-subpath){: external} for each of your apps.
             
             `spec.containers.volumeMounts.name`
             :   The name of the volume to mount to your pod.
@@ -1096,7 +1088,7 @@ To back up or restore a PVC by editing the `values.yaml` file:
             :   The name of the volume to mount to your pod. Typically this name is the same as `volumeMounts/name`
             
             `volumes.persistentVolumeClaim.claimName`
-            :   The name of the PVC that binds the PV that you want to use.
+            :   The name of the PVC that binds the PV to use.
 
         2. Create the deployment.
         
@@ -1161,7 +1153,7 @@ Set up alerts in {{site.data.keyword.mon_full_notm}} for your workloads that are
 
 When a storage volume is down, your app pods that are using storage have a low file system I/O, have network errors, or crash which causes the replica count to go down. You can set up alerts in {{site.data.keyword.mon_full_notm}} to get notified if the file system operations for your app drop under a specific threshold, if network errors occur, or if your app pods don't reach a `Ready` state.
 
-1. From the [console](https://cloud.ibm.com/containers/cluster-management/clusters){: external}, select the cluster where you want to set up alerts for your storage volumes.
+1. From the [console](https://cloud.ibm.com/containers/cluster-management/clusters){: external}, select the cluster where you set up alerts for your storage volumes.
 
 2. In the **Monitoring** section, click **Connect** to connect an existing {{site.data.keyword.mon_full_notm}} instance to your cluster. If you don't have an instance, click **Create an instance** to create one. For more information about how to set up an {{site.data.keyword.mon_full_notm}} instance, see [Provisioning an instance](/docs/monitoring?topic=monitoring-provision).
 
