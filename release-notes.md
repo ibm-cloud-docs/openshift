@@ -29,6 +29,8 @@ Looking for {{site.data.keyword.cloud_notm}} status, platform announcements, sec
 ## April 2026
 {: #openshift-apr26}
 
+
+
 ### 02 April 2026
 {: #openshift-apr0226}
 {: release-note}
@@ -47,20 +49,12 @@ Looking for {{site.data.keyword.cloud_notm}} status, platform announcements, sec
 
 
 
-
-
-
-## April 2026
-{: #openshift-apr26}
-
-
-
-### 02 April 2026
-{: #openshift-apr0226}
-{: release-note}
-
 IBM Object CSI Driver cluster add-on patch updates.
 :   For more information, see the [change log](/docs/openshift?topic=openshift-cl-add-ons-ibm-object-csi-driver).
+
+
+
+
 
 ## March 2026
 {: #openshift-mar26}

@@ -285,10 +285,6 @@ subcollection: openshift
 
         * {{site.data.keyword.openshiftlong_notm}} master fix packs.
 
-* [April 2026](/docs/openshift?topic=openshift-openshift-relnotes#openshift-apr26)
-
-    * [02 April 2026](/docs/openshift?topic=openshift-openshift-relnotes#openshift-apr0226)
-
         * IBM Object CSI Driver cluster add-on patch updates.
 
 * [March 2026](/docs/openshift?topic=openshift-openshift-relnotes#openshift-mar26)
