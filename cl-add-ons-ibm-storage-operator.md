@@ -3,7 +3,7 @@
 copyright:
   years: 2024, 2026
 
-lastupdated: "2026-03-31"
+lastupdated: "2026-04-06"
 
 
 keywords: change log, version history, IBM Storage Operator
@@ -43,14 +43,6 @@ Review the version history for IBM Storage Operator.
 {: #cl-add-ons-ibm-storage-operator-1.0}
 
 
-### v1.0.35_325672265, released 31 March 2026
-{: #cl-add-ons-ibm-storage-operator-v1035_325672265}
-
-[Default version]{: tag-green}
-
-- Resolves the following CVEs: [CVE-2026-33186](https://nvd.nist.gov/vuln/detail/CVE-2026-33186){: external}.
-- Updates Go to version `1.25.8`.
-- `armada-storage-secret v1.2.79`
 
 
 ### v1.0.35_325672265, released 24 March 2026
