@@ -7429,7 +7429,7 @@ subcollection: openshift
 
 [Locations](/docs/openshift?topic=openshift-regions-and-zones#regions-and-zones)
 
-    * [VPC multizone regions](/docs/openshift?topic=openshift-regions-and-zones#zones-vpc)
+* [VPC multizone regions](/docs/openshift?topic=openshift-regions-and-zones#zones-vpc)
 
 * [Classic regions](/docs/openshift?topic=openshift-regions-and-zones#locations-classic)
 
@@ -7437,7 +7437,7 @@ subcollection: openshift
 
     * [Classic regions with one data center](/docs/openshift?topic=openshift-regions-and-zones#zones-sz)
 
-    * [{{site.data.keyword.satelliteshort}} regions](/docs/openshift?topic=openshift-regions-and-zones#sat-regions-openshift)
+* [{{site.data.keyword.satelliteshort}} regions](/docs/openshift?topic=openshift-regions-and-zones#sat-regions-openshift)
 
 * [Where are the resources?](/docs/openshift?topic=openshift-regions-and-zones#regions_resources)
 

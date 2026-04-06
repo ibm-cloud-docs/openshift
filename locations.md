@@ -22,37 +22,29 @@ subcollection: openshift
 
 
 
+## VPC multizone regions
+{: #zones-vpc}
 
+VPC resources are provisioned in a region, which is a separate group of zones within a metro. The zones are mapped to separate data centers to ensure that resources are distributed evenly across zones in a multizone architecture. In the API and CLI, zones use the regional zone name in the API and command line (`us-south-1`), but in the console, zones use by the data center location (`Dallas 1`). For the data center code that the VPC zone and location corresponds to, such as `us-south-1` and `DAL10`, see [Multizone regions](/docs/overview?topic=overview-locations#table-mzr).
+{: shortdesc}
 
-
-Mumbai (`in-mum`) MZR limitations
+Mumbai (`in-mum`) VPC MZR limitations
 :   **Operating systems**: You can only create clusters at version 4.16 and later in Mumbai and can only use RHEL 9 or RHCOS workers nodes.
 
 :   **Baremetal workers**: Baremetal VPC worker nodes are not available in Mumbai.
 :   **Portworx**: Portworx is not yet supported in Mumbai.
 
-
-Chennai (`in-che`) MZR limitations
+Chennai (`in-che`) VPC MZR limitations
 :   **Operating systems**: You can only create clusters at version 4.16 and later in Chennai and can only use RHEL 9 or RHCOS workers nodes.
 
 :   **Baremetal workers**: Baremetal VPC worker nodes are not available in Chennai.
 :   **Portworx**: Portworx is not yet supported in Chennai.
 
-
-
-Montreal (`ca-mon`) MZR limitations
+Montreal (`ca-mon`) VPC MZR limitations
 :   **Webhooks**: Only webhooks that access an in-cluster service work. Webhooks that directly access an external, out of cluster, URL are blocked.
 :   **Operating systems**: You can only create clusters at version 4.16 and later in Montreal and can only use RHEL 9 or RHCOS workers nodes.
 
 :   **Portworx Enterprise** and **Portworx Backup**: The default installation method for Portworx Enterprise and Portworx Backup is not yet supported for private-only clusters in the Montreal region. Contact Portworx Support if you need to install Portworx Enterprise or Portworx Backup in a private-only cluster in Montreal. For more information, see [Portworx Support](/docs/openshift?topic=openshift-storage_portworx_about#portworx-billing-support).
-
-
-
-### VPC multizone regions
-{: #zones-vpc}
-
-VPC resources are provisioned in a region, which is a separate group of zones within a metro. The zones are mapped to separate data centers to ensure that resources are distributed evenly across zones in a multizone architecture. In the API and CLI, zones use the regional zone name in the API and command line (`us-south-1`), but in the console, zones use by the data center location (`Dallas 1`). For the data center code that the VPC zone and location corresponds to, such as `us-south-1` and `DAL10`, see [Multizone regions](/docs/overview?topic=overview-locations#table-mzr).
-{: shortdesc}
 
 ![{{site.data.keyword.openshiftlong_notm}} VPC multizone regions](images/locations-vpc.svg){: caption="{{site.data.keyword.openshiftlong_notm}} locations" caption-side="bottom"}
 
@@ -149,7 +141,7 @@ This image is an artistic representation and does not reflect actual political o
 
 
 
-### {{site.data.keyword.satelliteshort}} regions
+## {{site.data.keyword.satelliteshort}} regions
 {: #sat-regions-openshift}
 
 To see a list of the supported `Managed from` regions for {{site.data.keyword.satelliteshort}} clusters, [Supported {{site.data.keyword.satelliteshort}} locations](/docs/satellite?topic=satellite-sat-regions).
