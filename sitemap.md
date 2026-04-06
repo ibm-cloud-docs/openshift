@@ -281,6 +281,10 @@ subcollection: openshift
 
 * [April 2026](/docs/openshift?topic=openshift-openshift-relnotes#openshift-apr26)
 
+    * [06 April 2026](/docs/openshift?topic=openshift-openshift-relnotes#openshift-apr0626)
+
+        * CLI version 1.0.756 is available
+
     * [02 April 2026](/docs/openshift?topic=openshift-openshift-relnotes#openshift-apr0226)
 
         * {{site.data.keyword.openshiftlong_notm}} master fix packs.
@@ -6089,6 +6093,8 @@ subcollection: openshift
 [CLI change log](/docs/openshift?topic=openshift-cs_cli_changelog#cs_cli_changelog)
 
 * [Version 1.0](/docs/openshift?topic=openshift-cs_cli_changelog#10)
+
+* [Version v1.0.756](/docs/openshift?topic=openshift-cs_cli_changelog#cli-01756)
 
 * [Version v1.0.745](/docs/openshift?topic=openshift-cs_cli_changelog#cli-01745)
 
