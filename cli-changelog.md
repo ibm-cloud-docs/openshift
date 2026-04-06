@@ -39,7 +39,7 @@ Review the following changes for 1.0 versions of the CLI plug-in.
 
 Version 1.0.756 of the CLI was released on 06 April 2026.
 - Adds the `ibmcloud ks ingress lb backend set` command to configure which Ingress controller (Kubernetes or Traefik) is exposed by VPC load balancers.
-- Updates the `ibmcloud ks worker replace --update` command to also update the worker node operating system when the worker pool OS has been updated.
+- Updates the help text for `ibmcloud ks worker replace --update` command to indicate that the command updates the worker node operating system when the worker pool OS has been updated.
 - Extends ALB version information to include Traefik Ingress controller versions and status.
 - Adds Satellite host update severity indicators to help identify control plane hosts that need updates.
 - Includes general refactoring and improvements.
