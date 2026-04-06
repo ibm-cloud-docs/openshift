@@ -7429,13 +7429,13 @@ subcollection: openshift
 
 [Locations](/docs/openshift?topic=openshift-regions-and-zones#regions-and-zones)
 
-* [{{site.data.keyword.openshiftlong_notm}} locations](/docs/openshift?topic=openshift-regions-and-zones#locations)
+    * [VPC multizone regions](/docs/openshift?topic=openshift-regions-and-zones#zones-vpc)
+
+* [Classic regions](/docs/openshift?topic=openshift-regions-and-zones#locations-classic)
 
     * [Classic regions with multiple data centers](/docs/openshift?topic=openshift-regions-and-zones#zones-mz)
 
     * [Classic regions with one data center](/docs/openshift?topic=openshift-regions-and-zones#zones-sz)
-
-    * [VPC multizone regions](/docs/openshift?topic=openshift-regions-and-zones#zones-vpc)
 
     * [{{site.data.keyword.satelliteshort}} regions](/docs/openshift?topic=openshift-regions-and-zones#sat-regions-openshift)
 
