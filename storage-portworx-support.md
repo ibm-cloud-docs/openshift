@@ -56,6 +56,7 @@ Before you begin: [Access your {{site.data.keyword.redhat_openshift_notm}} clust
         sudo ./px_logcollect.sh
         ```
         {: pre}
+
     - To collect logs from specific worker nodes only, run:
         ```sh
         sudo ./px_logcollect.sh --workers <worker-IP> <worker-IP> <worker-IP>
