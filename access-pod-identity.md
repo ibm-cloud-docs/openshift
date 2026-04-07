@@ -1,8 +1,8 @@
 ---
 
 copyright: 
-  years: 2014, 2025
-lastupdated: "2025-12-03"
+  years: 2014, 2026
+lastupdated: "2026-04-07"
 
 
 keywords: kubernetes, openshift, infrastructure, rbac, policy
@@ -38,7 +38,7 @@ In your cluster
 To create a trusted profile in your account, see [Creating trusted profiles](/docs/account?topic=account-create-trusted-profile&interface=ui) in the IAM documentation. Note that to create a trusted profile, you must be the account owner. Additionally, the following access roles are required.
 - Administrator role for all account management services.
 - Administrator role on the IAM Identity Service. For more information, see [IAM Identity Service](/docs/account?topic=account-account-services&interface=ui#identity-service-account-management). 
-- [Additional roles required for your specific resources and components](/docs/openshift?topic=openshift-configure-trusted-profile#tp-minreqs). 
+- [Additional roles required for your specific resources and components](/docs/openshift?topic=openshift-configure-trusted-profile#tp-minreqs-all).
 
 
 ## Set the default trusted profile for the cluster

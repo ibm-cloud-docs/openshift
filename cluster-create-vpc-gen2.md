@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2026
-lastupdated: "2026-03-31"
+lastupdated: "2026-04-07"
 
 
 keywords: kubernetes, clusters, worker nodes, worker pools, vpc-gen2, openshift, {{site.data.keyword.openshiftlong_notm}}
@@ -416,7 +416,7 @@ ibmcloud oc zone add vpc-gen2 --zone ZONE --cluster <cluster_name_or_ID> --worke
     :   - `subnet_id`: Required. The ID of the VPC subnet that you want to use for your worker nodes. To find existing subnets, run `ibmcloud oc subnets --provider classic --zone <zone>`.
     :   - `name`: Required. The zone name for the default worker pool. To see available zones, run `ibmcloud oc zones --provider vpc-gen2`.
 
-    b) Alternatively, if you prefer to use [Terraform IBM Modules](https://cloud.ibm.com/docs/ibm-cloud-provider-for-terraform?topic=ibm-cloud-provider-for-terraform-about-tim), you can refer the below example to provision [Red Hat OpenShift Cluster on VPC Gen2](https://registry.terraform.io/modules/terraform-ibm-modules/base-ocp-vpc/ibm/latest){: external}
+    b) Alternatively, if you prefer to use [Terraform IBM Modules](/docs/ibm-cloud-provider-for-terraform?topic=ibm-cloud-provider-for-terraform-about-tim), you can refer the below example to provision [Red Hat OpenShift Cluster on VPC Gen2](https://registry.terraform.io/modules/terraform-ibm-modules/base-ocp-vpc/ibm/latest){: external}
 
     ```sh
         locals {

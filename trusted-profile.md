@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2025, 2026
-lastupdated: "2026-02-20"
+lastupdated: "2026-04-07"
 
 
 keywords: trusted profiles, containers, block storage, openshift
@@ -249,7 +249,7 @@ Once you add a trusted profile to a cluster, it cannot be removed and you cannot
     ```
     {: pre}
 
-4. **For classic clusters**: Run the command to add the [minimum required permissions](#tp-minreqs) to the trusted profile. Specify the user ID that is created for the trusted profile. 
+4. **For classic clusters**: Run the command to add the [minimum required permissions](#tp-minreqs-all) to the trusted profile. Specify the user ID that is created for the trusted profile.
 
     ```sh
     ibmcloud oc sl user permission-edit TRUSTED_PROFILE_ID --permission NAS_MANAGE,ADD_SERVICE_STORAGE
@@ -284,12 +284,12 @@ Once you add a trusted profile to a cluster, it cannot be removed and you cannot
     1. From the **Trusted profiles** page, click the trusted profile you just created. 
     2. From the **Access** tab, click **Assign access**.
     3. In the **How do you want to assign access?** section, click **Access policy**.
-    4. Add the services and roles to meet the [minimum requirements](#tp-minreqs) for the relevant components. Apply the policy to all resources. 
+    4. Add the services and roles to meet the [minimum requirements](#tp-minreqs-all) for the relevant components. Apply the policy to all resources.
 
 6. **Classic only**. Add permissions to the trusted profile. 
     1. From the **Trusted profiles** page, click the trusted profile you just created.
     2. Navigate to the **Classic Infrastructure** tab.
-    3. In the permissions drop down, select the required permissions to meet the [minimum requirements](#tp-minreqs) for the relevant components. 
+    3. In the permissions drop down, select the required permissions to meet the [minimum requirements](#tp-minreqs-all) for the relevant components.
 
 
 ## Set up a trusted profile with the API
@@ -512,7 +512,7 @@ When you set a trusted profile for your cluster, it applies to your storage comp
 Once you add a trusted profile to a cluster, it cannot be removed and you cannot resume using an API key for your resources. Make sure that you follow these steps carefully to ensure that your trusted profile is set up correctly. 
 {: important}
 
-1. Make sure that you have created a trusted profile that meets the [minimum requirements for storage components](#tp-minreqs). 
+1. Make sure that you have created a trusted profile that meets the [minimum requirements for storage components](#tp-minreqs-all).
 
 2. Assign the trusted profile to your cluster, or to the resource group that your cluster is in. If you assign a trusted profile to a resource group, it applies to all clusters in the resource group.
 

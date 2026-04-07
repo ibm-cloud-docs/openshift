@@ -1,8 +1,8 @@
 ---
 
 copyright: 
-  years: 2014, 2025
-lastupdated: "2025-12-04"
+  years: 2014, 2026
+lastupdated: "2026-04-07"
 
 
 keywords: openshift, red hat, red hat openshift, admin
@@ -132,8 +132,8 @@ Set up an image registry and a continuous integration and delivery (CI/CD) pipel
     - **Internal {{site.data.keyword.redhat_openshift_notm}} container registry**: The [internal registry](/docs/openshift?topic=openshift-registry#openshift_internal_registry) is set up by default, with the images stored in an attached storage device. You can also choose to [pull an image from a private registry](/docs/openshift?topic=openshift-registry#imagestream_registry) like {{site.data.keyword.registrylong_notm}} into the image stream of the internal registry so that the image is available locally to all the projects in the cluster.
     - **Private registry**: Your cluster is set up to pull images from [{{site.data.keyword.registrylong_notm}}](/docs/openshift?topic=openshift-registry#openshift_iccr) in the `default` project only. To pull images from a private registry in other projects, [create an image pull secret](/docs/openshift?topic=openshift-registry#other) in the other projects or [import an image from your private registry into the internal registry image stream](/docs/openshift?topic=openshift-registry#imagestream_registry).
 2. **CI/CD**:
-    - Review available [options for automating app deployment](/docs/openshift?topic=openshift-cicd).
-    - Set up toolchains with [{{site.data.keyword.deliverypipelinelong}}](/docs/openshift?topic=openshift-cicd).
+    - Review available options for automating app deployment.
+    - Set up toolchains with {{site.data.keyword.deliverypipelinelong}}.
 
 ## Add storage
 {: #admin_storage}
