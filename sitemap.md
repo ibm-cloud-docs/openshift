@@ -4309,9 +4309,9 @@ subcollection: openshift
 
 * [How do I get support?](/docs/openshift?topic=openshift-storage_portworx_about#portworx-billing-support)
 
-* [What's next?](/docs/openshift?topic=openshift-storage_portworx_about#about-px-next)
+* [Next steps](/docs/openshift?topic=openshift-storage_portworx_about#about-px-next)
 
-* [Exploring other Portworx features](/docs/openshift?topic=openshift-storage_portworx_about#features)
+* [Explore other Portworx features](/docs/openshift?topic=openshift-storage_portworx_about#features)
 
 [Planning your Portworx setup](/docs/openshift?topic=openshift-storage_portworx_plan#storage_portworx_plan)
 
@@ -4319,7 +4319,7 @@ subcollection: openshift
 
 * [Overview of the Portworx lifecycle](/docs/openshift?topic=openshift-storage_portworx_plan#portowrx_lifecycle)
 
-* [Creating a secret to store the KMS credentials](/docs/openshift?topic=openshift-storage_portworx_plan#px_create_km_secret)
+* [Encryption planning](/docs/openshift?topic=openshift-storage_portworx_plan#px_create_km_secret)
 
 [Preparing your cluster for Portworx](/docs/openshift?topic=openshift-storage_portworx_preparing#storage_portworx_preparing)
 

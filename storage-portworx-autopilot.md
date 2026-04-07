@@ -1,8 +1,8 @@
 ---
 
 copyright: 
-  years: 2023, 2025
-lastupdated: "2025-12-08"
+  years: 2023, 2026
+lastupdated: "2026-04-07"
 
 
 keywords: portworx, openshift, autopilot
@@ -18,7 +18,7 @@ subcollection: openshift
 # Installing Autopilot for Portworx
 {: #storage-portworx-autopilot}
 
-Autopilot allows you to specify monitoring conditions in your cluster to react and apply changes when certain conditions occur without direct intervention. For more information about Autopilot, see the [Portworx documentation](https://docs.portworx.com/portworx-enterprise/operations/scale-portworx-cluster/autopilot){: external}
+Autopilot lets you define monitoring conditions in your cluster and automatically apply changes when those conditions occur. For more information about Autopilot, see the [Portworx documentation](https://docs.portworx.com/portworx-enterprise/operations/scale-portworx-cluster/autopilot){: external}.
 {: shortdesc}
 
 ## Prerequisites
@@ -31,29 +31,31 @@ Autopilot allows you to specify monitoring conditions in your cluster to react a
 
 1. Autopilot requires a running Prometheus instance in your cluster. To set up Prometheus, see [Monitor your Portworx cluster](https://docs.portworx.com/portworx-enterprise/operations/observability){: external}.
 
-1. Make sure Prometheus is enabled, or edit your `storageCluster` resource and enable it by setting `enabled: true`.
+1. Make sure that Prometheus is enabled. If it is not enabled, edit your `storageCluster` resource and set `enabled: true` in the Prometheus configuration.
 
+    Verify that the Prometheus service exists:
     ```sh
-    kubectl get service -n kube-system prometheus
+    oc get service -n kube-system prometheus
     ```
     {: pre}
 
-    ```sh
+    Example Prometheus configuration:
+    ```yaml
     monitoring:
-    prometheus:
+      prometheus:
         alertManager:
-        enabled: true
+          enabled: true
         enabled: true
         exportMetrics: true
         resources: {}
-    telemetry: {}
+      telemetry: {}
     ```
-    {: screen}
+    {: codeblock}
 
 1. Verify that the Prometheus instance has been created.
 
     ```sh
-    kubectl get service -n kube-system prometheus
+    oc get service -n kube-system prometheus
     ```
     {: pre}
 
@@ -86,11 +88,11 @@ Autopilot allows you to specify monitoring conditions in your cluster to react a
 1. Deploy Autopilot to your cluster. 
 
     ```sh
-    kubectl apply -f autopilot.yaml
+    oc apply -f autopilot.yaml
     ```
     {: pre}
 
 ## Creating Rules
 {: #storage-px-create-rules}
 
-Now that you have installed autopilot in your cluster, refer to the [Portworx documentation](https://docs.portworx.com/portworx-enterprise/operations/scale-portworx-cluster/autopilot/how-to-use/working-with-rules){: external} on how to create custom rules and actions for your autopilot configuration.
+Now that you have installed Autopilot in your cluster, see the [Portworx documentation](https://docs.portworx.com/portworx-enterprise/operations/scale-portworx-cluster/autopilot/how-to-use/working-with-rules){: external} to create custom rules and actions for your Autopilot configuration.
