@@ -1,8 +1,8 @@
 ---
 
 copyright: 
-  years: 2014, 2025
-lastupdated: "2025-07-07"
+  years: 2014, 2026
+lastupdated: "2026-04-07"
 
 
 keywords: portworx, kubernetes, openshift
@@ -51,10 +51,10 @@ The following image illustrates the decryption workflow in Portworx when you set
 ## Setting up volume encryption 
 {: #storage-portworx-volume-encryption}
 
-To protect your data in a Portworx volume, you can create an instance of a KMS provider such as {{site.data.keyword.keymanagementservicelong_notm}} or {{site.data.keyword.hscrypto}}. 
+To protect data in a Portworx volume, you can use a key management service (KMS) provider such as {{site.data.keyword.keymanagementservicelong_notm}} or {{site.data.keyword.hscrypto}}.
 {: shortdesc}
 
-If you don't want to use {{site.data.keyword.keymanagementservicelong_notm}} or {{site.data.keyword.hscrypto}} root keys to encrypt your volumes, you can select **Kubernetes Secret** as your Portworx secret store type during the Portworx installation. This setting gives you the option to store your own custom encryption key in a Kubernetes secret after you install Portworx. For more information, see the [Portworx documentation](https://docs.portworx.com/portworx-enterprise/platform/secure/key-management/kubernetes-secrets){: external}.
+If you don't want to use {{site.data.keyword.keymanagementservicelong_notm}} or {{site.data.keyword.hscrypto}} root keys to encrypt your volumes, you can select **Kubernetes Secret** as your Portworx secret store type during the Portworx installation. This option lets you store your own custom encryption key in a Kubernetes secret after you install Portworx. For more information, see the [Portworx documentation](https://docs.portworx.com/portworx-enterprise/platform/secure/key-management/kubernetes-secrets){: external}.
 {: tip}
 
 ### Getting your KMS instance and credentials

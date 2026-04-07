@@ -1,8 +1,8 @@
 ---
 
 copyright: 
-  years: 2014, 2025
-lastupdated: "2025-12-19"
+  years: 2014, 2026
+lastupdated: "2026-04-07"
 
 
 keywords: portworx, kubernetes, openshift
@@ -24,12 +24,10 @@ Review frequently asked questions to learn more about Portworx and how Portworx 
 ## What is software-defined storage (SDS)?
 {: #about-px-sds}
 
-An SDS solution abstracts storage devices of various types, sizes, or from different vendors that are attached to the worker nodes in your cluster. Worker nodes with available storage on hard disks are added as a node to a storage cluster. In this cluster, the physical storage is virtualized and presented as a virtual storage pool to the user. The storage cluster is managed by the SDS software. If data must be stored on the storage cluster, the SDS software decides where to store the data for highest availability. Your virtual storage comes with a common set of capabilities and services that you can leverage without caring about the actual underlying storage architecture.
+An SDS solution abstracts storage devices that are attached to worker nodes in your cluster. These devices can vary in type, size, and vendor. Worker nodes with available hard-disk storage are added as nodes in a storage cluster. In this cluster, the physical storage is virtualized and presented as a virtual storage pool. The SDS software manages the storage cluster and decides where to store data for the highest availability. Your virtual storage includes a common set of capabilities and services, regardless of the underlying storage architecture.
 
 [Portworx](https://portworx.com/products/portworx-enterprise){: external} is a highly available software-defined storage solution that you can use to manage local persistent storage for your containerized databases and other stateful apps, or to share data between pods across multiple zones.
 {: shortdesc}
-
-An software defined storage (SDS), such as Portworx, solution abstracts storage devices of various types, sizes, or from different vendors that are attached to the worker nodes in your cluster. Worker nodes with available storage on hard disks are added as a node to a storage cluster. In this cluster, the physical storage is virtualized and presented as a virtual storage pool to the user. The storage cluster is managed by the SDS software. If data must be stored on the storage cluster, the SDS software decides where to store the data for highest availability. Your virtual storage comes with a common set of capabilities and services that you can leverage without caring about the actual underlying storage architecture.
 
 
 ## What are the benefits of Portworx?
@@ -48,9 +46,9 @@ An software defined storage (SDS), such as Portworx, solution abstracts storage 
 ## How does Portworx work?
 {: #about-px-work}
 
-As a software defined storage solution, Portworx aggregates available storage that is attached to your worker nodes and creates a unified persistent storage layer for containerized databases or other stateful apps that you want to run in the cluster. By using volume replication of each container-level volume across multiple worker nodes, Portworx ensures data persistence and data accessibility across zones.
+As a software-defined storage solution, Portworx aggregates storage that is attached to your worker nodes and creates a unified persistent storage layer for your stateful apps. Portworx replicates each volume across multiple worker nodes to help ensure data persistence and accessibility across zones.
 
-Portworx also comes with additional features that you can use for your stateful apps, such as volume snapshots, volume encryption, isolation, and an integrated Storage Orchestrator for Kubernetes (Stork) to ensure optimal placement of volumes in the cluster. For more information, see the [Portworx documentation](https://docs.portworx.com/){: external}.
+Portworx also includes features such as volume snapshots, volume encryption, isolation, and Storage Orchestrator for Kubernetes (Stork) to help optimize volume placement in the cluster. For more information, see the [Portworx documentation](https://docs.portworx.com/){: external}.
 
 ## What are the requirements to run Portworx?
 {: #about-px-requirments}
@@ -103,30 +101,28 @@ Contact Portworx support by using one of the following methods.
 
 
 
-## What's next?
+## Next steps
 {: #about-px-next}
 
-All set? Let's start with [creating a cluster with an SDS worker pool of at least three worker nodes](/docs/openshift?topic=openshift-clusters). If you want to include non-SDS worker nodes into your Portworx cluster, [add raw block storage](/docs/openshift?topic=openshift-utilities#manual_block) to each worker node. After your cluster is prepared, [install Portworx](/docs/openshift?topic=openshift-storage_portworx_deploy) in your cluster and create your first hyper-converged storage cluster.
+To get started, [create a cluster with an SDS worker pool of at least three worker nodes](/docs/openshift?topic=openshift-clusters). If you want to include non-SDS worker nodes in your Portworx cluster, [add raw block storage](/docs/openshift?topic=openshift-utilities#manual_block) to each worker node. After your cluster is prepared, [install Portworx](/docs/openshift?topic=openshift-storage_portworx_deploy) in your cluster and create your first hyper-converged storage cluster.
 
-
-## Exploring other Portworx features
+## Explore other Portworx features
 {: #features}
 
-
 Using existing Portworx volumes
-:   If you have an existing Portworx volume that you created manually or that was not automatically deleted when you deleted the PVC, you can statically provision the corresponding PV and PVC and use this volume with your app. For more information, see [Using existing volumes](https://docs.portworx.com/portworx-enterprise/provision-storage/create-pvcs/using-preprovisioned-volumes){: external}.
+:   If you have an existing Portworx volume that you created manually, or that was not automatically deleted when you deleted the PVC, you can statically provision the corresponding PV and PVC and use the volume with your app. For more information, see [Using existing volumes](https://docs.portworx.com/portworx-enterprise/provision-storage/create-pvcs/using-preprovisioned-volumes){: external}.
 
-Running stateful sets on Portworx
-:   If you have a stateful app that you want to deploy as a stateful set into your cluster, you can set up your stateful set to use storage from your Portworx cluster. For more information, see [Create a MySQL StatefulSet](https://docs.portworx.com/portworx-enterprise/deploy-your-applications/application-install-with-kubernetes/cassandra){: external}.
+Running StatefulSets on Portworx
+:   If you have a stateful app that you want to deploy as a StatefulSet in your cluster, you can configure it to use storage from your Portworx cluster. For more information, see [Create a MySQL StatefulSet](https://docs.portworx.com/portworx-enterprise/deploy-your-applications/application-install-with-kubernetes/cassandra){: external}.
 
 Running your pods hyperconverged
-:   You can configure your Portworx cluster to schedule pods on the same worker node where the pod's volume resides. This setup is also referred to as `hyperconverged` and can improve the data storage performance. For more information, see [Run pods on same host as a volume](https://docs.portworx.com/portworx-enterprise/operations/tune-performance/hyperconvergence){: external}.
+:   You can configure your Portworx cluster to schedule pods on the same worker node where the pod volume resides. This setup is also referred to as `hyperconverged` and can improve storage performance. For more information, see [Run pods on same host as a volume](https://docs.portworx.com/portworx-enterprise/operations/tune-performance/hyperconvergence){: external}.
 
 Creating snapshots of your Portworx volumes
-:   You can save the current state of a volume and its data by creating a Portworx snapshot. Snapshots can be stored on your local Portworx cluster or in the Cloud. For more information, see [Create and use local snapshots](https://docs.portworx.com/portworx-enterprise/deploy-your-applications/application-install-with-kubernetes/cassandra/snapshots){: external}.
+:   You can save the current state of a volume and its data by creating a Portworx snapshot. Snapshots can be stored on your local Portworx cluster or in the cloud. For more information, see [Create and use local snapshots](https://docs.portworx.com/portworx-enterprise/deploy-your-applications/application-install-with-kubernetes/cassandra/snapshots){: external}.
 
 Monitoring and managing your Portworx cluster with Lighthouse
-:   You can view the health of your Portworx cluster, including the number of available storage nodes, volumes and available capacity, and analyze your data in [Prometheus, Grafana, or Kibana](https://docs.portworx.com/portworx-enterprise/operations/observability){: external}.
+:   You can view the health of your Portworx cluster, including the number of available storage nodes, volumes, and available capacity. You can also analyze your data in [Prometheus, Grafana, or Kibana](https://docs.portworx.com/portworx-enterprise/operations/observability){: external}.
 
-Configuring Autopilot 
-:   You can monitor your cluster resources and specify conditions along with actions it should take when those conditions occur. For more information, refer to the [Autopilot docs](https://docs.portworx.com/portworx-enterprise/operations/scale-portworx-cluster/autopilot){: external}.
+Configuring Autopilot
+:   You can monitor cluster resources and specify conditions and actions for Autopilot to take when those conditions occur. For more information, see the [Autopilot documentation](https://docs.portworx.com/portworx-enterprise/operations/scale-portworx-cluster/autopilot){: external}.

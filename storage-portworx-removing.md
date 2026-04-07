@@ -1,8 +1,8 @@
 ---
 
 copyright: 
-  years: 2014, 2025
-lastupdated: "2025-08-12"
+  years: 2014, 2026
+lastupdated: "2026-04-07"
 
 
 keywords: portworx, kubernetes, openshift
@@ -18,8 +18,11 @@ subcollection: openshift
 # Removing Portworx
 {: #storage_portworx_removing}
 
-Remove a [Portworx volume](#remove_pvc_apps_volumes), a [storage node](#remove_storage_node_cluster-px), or the [entire Portworx cluster](#remove_storage_node_cluster-px) if you don't need it anymore.
+Remove a [Portworx volume](#remove_pvc_apps_volumes), a [storage node](#remove_storage_node_cluster-px), or the [entire Portworx cluster](#remove_storage_node_cluster-px) if you no longer need it.
 {: shortdesc}
+
+Some Portworx removal actions permanently delete data. Review the warnings in this topic before you continue.
+{: important}
 
 ## Removing Portworx volumes from apps
 {: #remove_pvc_apps_volumes}
@@ -124,7 +127,7 @@ When you added storage from your Portworx cluster to your app, you have three ma
 You can exclude worker nodes from your Portworx cluster or remove the entire Portworx cluster if you don't want to use Portworx anymore.
 
 
-Removing your Portworx cluster removes all the data from your Portworx cluster. Make sure to [create a snapshot for your data and save this snapshot to the cloud](https://docs.portworx.com/portworx-enterprise/operations/create-snapshots){: external}.
+Removing your Portworx cluster removes all data from the Portworx cluster. Before you continue, make sure that you [create a snapshot of your data and save it to the cloud](https://docs.portworx.com/portworx-enterprise/operations/create-snapshots){: external}.
 {: important}
 
 - **Remove a worker node from the Portworx cluster:** If you want to remove a worker node that runs Portworx and stores data in your Portworx cluster,  you must migrate existing pods to remaining worker nodes and then uninstall Portworx from the node. For more information, see [Decommission a Portworx node in Kubernetes](https://docs.portworx.com/portworx-enterprise/platform/uninstall/decommission-a-node){: external}.
@@ -171,29 +174,28 @@ The following steps remove Portworx from your cluster, including all storage vol
 
 1. Follow the Portworx documentation to [uninstall Portworx](https://docs.portworx.com/portworx-enterprise/platform/uninstall/uninstall-operator){: external}.
 
-1. Clean up for your Portworx volume attachments, PVCs, and PVs.
+1. Clean up Portworx volume attachments, PVCs, and PVs.
     1. List your volume attachments.
         ```sh
-        kubectl get volumeattachments
+        oc get volumeattachments
         ```
         {: pre}
 
     1. Delete the Portworx volume attachments.
         ```sh
-        kubectl delete volumeattachments ATTACHMENT-NAME
+        oc delete volumeattachments ATTACHMENT-NAME
         ```
         {: pre}
 
-    1. Delete the PVC that starts with name `px-do-not-delete`.
+    1. Delete the PVC that starts with the name `px-do-not-delete`.
         ```sh
-        kubectl delete pvc px-do-not-delete-*** -n PORTWOX-NAMESPACE
+        oc delete pvc px-do-not-delete-*** -n PORTWORX-NAMESPACE
         ```
         {: pre}
-
 
     1. Delete the PVs that were created for Portworx and are in the `Released` state.
         ```sh
-        kubectl delete pv PV-NAME
+        oc delete pv PV-NAME
         ```
         {: pre}
 

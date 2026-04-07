@@ -1,8 +1,8 @@
 ---
 
 copyright: 
-  years: 2014, 2025
-lastupdated: "2025-12-17"
+  years: 2014, 2026
+lastupdated: "2026-04-07"
 
 
 keywords: portworx, kubernetes, openshift
@@ -19,7 +19,7 @@ subcollection: openshift
 # Updating Portworx in your cluster
 {: #storage_portworx_update}
 
-Looking to update Portworx in a Classic cluster? For more information, see [Updating Classic worker nodes](/docs/openshift?topic=openshift-update&interface=ui#worker_node).
+If you use Portworx in a classic cluster, see [Updating Classic worker nodes](/docs/openshift?topic=openshift-update&interface=ui#worker_node). The following steps focus on VPC worker node updates.
 
 
 ## VPC: Updating worker nodes with Portworx volumes
@@ -30,7 +30,7 @@ Looking to update Portworx in a Classic cluster? For more information, see [Upda
 When you update a worker node in a VPC cluster, the worker node is removed from your cluster and replaced with a new worker node. If Portworx volumes are attached to the worker node that you replaced, you must attach the volumes to the new worker node.
 {: shortdesc}
 
-Update only one worker node at a time. When the worker node update is complete, attach your {{site.data.keyword.block_storage_is_short}} and restart the Portworx pod.
+Update only one worker node at a time. After the worker node update is complete, reattach your {{site.data.keyword.block_storage_is_short}} volume and restart the Portworx pod.
 {: important}
 
 
@@ -52,7 +52,7 @@ Update only one worker node at a time. When the worker node update is complete, 
     ```
     {: pre}
 
-6. Exit maintenance mode
+6. Exit maintenance mode.
     ```sh
     pxctl service maintenance --exit
     ```

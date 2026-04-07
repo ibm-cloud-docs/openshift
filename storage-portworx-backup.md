@@ -1,8 +1,8 @@
 ---
 
 copyright: 
-  years: 2014, 2025
-lastupdated: "2025-08-12"
+  years: 2014, 2026
+lastupdated: "2026-04-07"
 
 
 keywords: portworx, kubernetes, openshift
@@ -23,7 +23,7 @@ subcollection: openshift
 Portworx Backup is a Portworx proprietary backup solution that is compatible with any {{site.data.keyword.openshiftlong_notm}} cluster. You can use Portworx Backup to back up and restore {{site.data.keyword.openshiftlong_notm}} resources, apps and data across multiple clusters. For more information on Portworx Backup, see [Understanding Portworx Backup](https://portworx.com/products/portworx-backup){: external}.
 {: shortdesc}
 
-To back up the data in your persistent volumes, you must have a storage class that supports snapshots in your cluster. Clusters with Portworx Enterprise have storage classes available that support snapshots by default. However, for clusters that don't have Portworx Enterprise, you must have a storage classes with snapshot support to back up your persistent volume data. The {{site.data.keyword.blockstorageshort}} driver, and the {{site.data.keyword.filestorage_short}} driver don't have storage classes that support snapshots. If you have workloads that use these drivers, you can use Portworx Backup to back up your apps, but not the data in the persistent volumes. For more information see [Backing up and restoring cluster data with Portworx Backup](#px-backup-and-restore).
+To back up data in your persistent volumes, your cluster must have a storage class that supports snapshots. Clusters with Portworx Enterprise include storage classes with snapshot support by default. For clusters without Portworx Enterprise, you must use a storage class with snapshot support to back up persistent volume data. The {{site.data.keyword.blockstorageshort}} driver and the {{site.data.keyword.filestorage_short}} driver do not provide storage classes with snapshot support. If your workloads use these drivers, you can use Portworx Backup to back up your apps, but not the data in the persistent volumes. For more information, see [Backing up and restoring cluster data with Portworx Backup](#px-backup-and-restore).
 
 Consider using Portworx Enterprise which provides options to have 3 replicas of your data in the cluster spread across multiple zones. In case of zonal storage failures, Portworx recommends using PX enterprise to get benefit of this feature. This helps ensure availability at data level in addition to application level availability.
 {: tip}
@@ -36,7 +36,7 @@ Portworx Backup is not supported for {{site.data.keyword.satelliteshort}} cluste
 {: #px-backup-install}
 
 Before you begin:
-- Make sure that your cluster meets the [minimum Portworx requirements](https://docs.portworx.com/portworx-enterprise/platform/prerequisites){: external}. 
+- Make sure that your cluster meets the [minimum Portworx requirements](https://docs.portworx.com/portworx-enterprise/platform/prerequisites){: external} for compute, memory, and supported storage.
 - [Log in to your cluster](/docs/openshift?topic=openshift-access_cluster).
 - Provision and attach 320Gi of block storage to your cluster. See [Setting {{site.data.keyword.cloud_notm}} Block Storage](/docs/openshift?topic=openshift-block_storage) or [Setting up Block Storage for VPC](/docs/openshift?topic=openshift-vpc-block).
 
@@ -202,7 +202,7 @@ If a cluster that you want to back up with Portworx Backup does not have Portwor
 2. Open a text editor and paste the command.
 3. Copy the URL in the command and enter it in to your web browser to open the YAML file for the Stork installation.
 4. Copy and paste the entire YAML file into a new file in your text editor.
-5. If the cluster you want to add is a private cluster, find the **image** field and replace `openstorage/stork:<version_number>` with `icr.io/ext/portworx/stork:<version_numer>`. To find the latest available version of Stork, see the [Stork releases](https://github.com/libopenstorage/stork/releases){: external}.
+5. If the cluster that you want to add is a private cluster, find the **image** field and replace `openstorage/stork:<version_number>` with `icr.io/ext/portworx/stork:<version_number>`. Use the same Stork version number in the replacement image reference. To find the latest available version of Stork, see the [Stork releases](https://github.com/libopenstorage/stork/releases){: external}.
     ```sh
     - --health-monitor-interval=120
     - --webhook-controller=false
