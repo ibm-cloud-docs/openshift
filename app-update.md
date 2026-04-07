@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2026
-lastupdated: "2026-02-16"
+lastupdated: "2026-04-07"
 
 
 keywords: kubernetes, openshift, red hat, red hat openshift, update, upgrade, openshift
@@ -220,7 +220,7 @@ To manage rolling updates to your apps:
 With {{site.data.keyword.cloud_notm}} and other open source tools, you can set up continuous integration and delivery (CI/CD), version control, tool chains, and more to help automate app development and deployment.
 {: shortdesc}
 
-To see a list of supported integrations and steps for setting up a continuous delivery pipeline, see [Setting up continuous integration and delivery](/docs/openshift?topic=openshift-cicd).
+To see a list of supported integrations and steps for setting up a continuous delivery pipeline, review the available integrations in the {{site.data.keyword.cloud_notm}} console and related cluster documentation.
 
 
 ## Copying deployments to another cluster

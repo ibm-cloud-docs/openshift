@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2026
-lastupdated: "2026-02-16"
+lastupdated: "2026-04-07"
 
 
 keywords: kubernetes, deploy, app, openshift
@@ -439,7 +439,7 @@ If you want to run your app in multiple clusters, public and private environment
 {: shortdesc}
 
 Set up a continuous integration and delivery (CI/CD) pipeline
-:   With your app configuration files organized in a source control management system such as Git, you can build your pipeline to test and deploy code to different environments, such as `test` and `prod`. Work with your cluster administrator to [set up continuous integration and delivery](/docs/openshift?topic=openshift-cicd).
+:   With your app configuration files organized in a source control management system such as Git, you can build your pipeline to test and deploy code to different environments, such as `test` and `prod`. Work with your cluster administrator to set up continuous integration and delivery.
 
 Package your app configuration files
 :   With the [Helm](https://helm.sh/docs/){: external} Kubernetes package manager, you can specify all Kubernetes resources that your app requires in a Helm chart. Then, you can use Helm to create the YAML configuration files and deploy these files in your cluster. You can also [integrate {{site.data.keyword.cloud_notm}}-provided Helm charts](https://cloud.ibm.com/kubernetes/helm){: external} to extend your cluster's capabilities, such as with a block storage plug-in.

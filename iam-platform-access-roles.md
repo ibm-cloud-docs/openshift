@@ -1,8 +1,8 @@
 ---
 
 copyright: 
-  years: 2014, 2025
-lastupdated: "2025-02-20"
+  years: 2014, 2026
+lastupdated: "2026-04-07"
 
 keywords: openshift, {{site.data.keyword.openshiftlong_notm}}, kubernetes, infrastructure, policy, users, permissions, access, roles
 
@@ -21,7 +21,11 @@ subcollection: openshift
 
 Review the following table for a list of Platform and Service roles and their associated actions.
 
+
+
+
 {{../account/iam-service-roles.md#containers-kubernetes-roles}}
+
 
 For a list of all IBM services and their associated roles and actions, see [IAM roles and actions](/docs/account?topic=account-iam-service-roles-actions). For more information about setting up your account and resources, see [best practices for organizing users, teams, and applications](/docs/account?topic=account-account_setup).
 {: tip}

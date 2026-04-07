@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2026
-lastupdated: "2026-02-16"
+lastupdated: "2026-04-07"
 
 
 keywords: openshift, red hat, red hat openshift, dev
@@ -112,7 +112,7 @@ Perform rolling updates and rollbacks of apps without downtime for your users.
 1. **Update strategy**: [Plan your strategy for keeping your app up-to-date](/docs/openshift?topic=openshift-update_app#updating_apps).
 2. **Set up updates**:
     - Add a [rolling update to your deployment file](/docs/openshift?topic=openshift-update_app#app_rolling)
-    - Set up [a continuous delivery pipeline for a cluster](/docs/openshift?topic=openshift-cicd).
+    - Set up a continuous delivery pipeline for a cluster.
 3. **Scaling**: Enable [horizontal pod autoscaling](/docs/openshift?topic=openshift-update_app#app_scaling) to automatically increase or decrease the number of instances of your apps based on CPU.
 
 
