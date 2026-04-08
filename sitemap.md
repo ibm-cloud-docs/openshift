@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2026
-lastupdated: "2026-04-07"
+lastupdated: "2026-04-08"
 
 
 keywords: openshift
@@ -281,11 +281,17 @@ subcollection: openshift
 
 * [April 2026](/docs/openshift?topic=openshift-openshift-relnotes#openshift-apr26)
 
+    * [08 April 2026](/docs/openshift?topic=openshift-openshift-relnotes#openshift-apr0826)
+
+        * Version 4.20 is now the default version for {{site.data.keyword.openshiftlong_notm}}.
+
     * [07 April 2026](/docs/openshift?topic=openshift-openshift-relnotes#openshift-apr0726)
 
         * IBM Storage Operator cluster add-on patch updates.
 
     * [06 April 2026](/docs/openshift?topic=openshift-openshift-relnotes#openshift-apr0626)
+
+        * {{site.data.keyword.openshiftlong_notm}} worker node fix packs are available.
 
         * CLI version 1.0.756 is available
 
@@ -4731,6 +4737,8 @@ subcollection: openshift
 
 * [Version 4.20](/docs/openshift?topic=openshift-openshift_changelog_420#420_components)
 
+    * [Worker node fix pack 4.20.17_1543_openshift, released 06 April 2026](/docs/openshift?topic=openshift-openshift_changelog_420#cl-boms-42017_1543_openshift_W)
+
     * [Change log for Master fix pack 4.20.15_1542_openshift, released 02 April 2026](/docs/openshift?topic=openshift-openshift_changelog_420#42015_1542_openshift_M)
 
     * [Worker node fix pack 4.20.16_1542_openshift, released 24 March 2026](/docs/openshift?topic=openshift-openshift_changelog_420#cl-boms-42016_1542_openshift_W)
@@ -4851,6 +4859,8 @@ subcollection: openshift
 * [Overview](/docs/openshift?topic=openshift-openshift_changelog_419#changelog_overview_419)
 
 * [Version 4.19](/docs/openshift?topic=openshift-openshift_changelog_419#419_components)
+
+    * [Worker node fix pack 4.19.27_1573_openshift, released 06 April 2026](/docs/openshift?topic=openshift-openshift_changelog_419#cl-boms-41927_1573_openshift_W)
 
     * [Change log for Master fix pack 4.19.25_1572_openshift, released 02 April 2026](/docs/openshift?topic=openshift-openshift_changelog_419#41925_1572_openshift_M)
 
@@ -5004,6 +5014,8 @@ subcollection: openshift
 * [Overview](/docs/openshift?topic=openshift-openshift_changelog_418#changelog_overview_418)
 
 * [Version 4.18](/docs/openshift?topic=openshift-openshift_changelog_418#418_components)
+
+    * [Worker node fix pack 4.18.36_1584_openshift, released 06 April 2026](/docs/openshift?topic=openshift-openshift_changelog_418#cl-boms-41836_1584_openshift_W)
 
     * [Change log for Master fix pack 4.18.34_1583_openshift, released 02 April 2026](/docs/openshift?topic=openshift-openshift_changelog_418#41834_1583_openshift_M)
 
@@ -5181,6 +5193,8 @@ subcollection: openshift
 * [Overview](/docs/openshift?topic=openshift-openshift_changelog_417#changelog_overview_417)
 
 * [Version 4.17](/docs/openshift?topic=openshift-openshift_changelog_417#417_components)
+
+    * [Worker node fix pack 4.17.52_1579_openshift, released 06 April 2026](/docs/openshift?topic=openshift-openshift_changelog_417#cl-boms-41752_1579_openshift_W)
 
     * [Change log for Master fix pack 4.17.50_1578_openshift, released 02 April 2026](/docs/openshift?topic=openshift-openshift_changelog_417#41750_1578_openshift_M)
 
@@ -5394,6 +5408,8 @@ subcollection: openshift
 * [Overview](/docs/openshift?topic=openshift-openshift_changelog_416#changelog_overview_416)
 
 * [Version 4.16](/docs/openshift?topic=openshift-openshift_changelog_416#416_components)
+
+    * [Worker node fix pack 4.16.58_1609_openshift, released 06 April 2026](/docs/openshift?topic=openshift-openshift_changelog_416#cl-boms-41658_1609_openshift_W)
 
     * [Change log for Master fix pack 4.16.57_1608_openshift, released 02 April 2026](/docs/openshift?topic=openshift-openshift_changelog_416#41657_1608_openshift_M)
 
@@ -6223,7 +6239,7 @@ subcollection: openshift
 
 [Red Hat OpenShift on IBM Cloud API](https://cloud.ibm.com/apidocs/kubernetes/containers-v1-v2){: external}
 
-[OpenShift Container Platform REST API](https://docs.redhat.com/en/documentation/openshift_container_platform/4.19/html/api_overview/index){: external}
+[OpenShift Container Platform REST API](https://docs.redhat.com/en/documentation/openshift_container_platform/4.20/html/api_overview/index){: external}
 
 
 ## Add-on version history

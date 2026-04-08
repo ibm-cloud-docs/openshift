@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2026
-lastupdated: "2026-01-12"
+lastupdated: "2026-04-08"
 
 
 keywords: openshift, route, router
@@ -141,8 +141,8 @@ The following diagram shows how a Ingress controller directs network traffic fro
 | ---------- | -------- |
 | Simple | If you don't need TLS encryption, create a simple route to handle non-encrypted HTTP traffic. |
 | Passthrough | When you want TLS connections to pass uninterruptedly from the client to your app pod, create a passthrough route. The router is not involved in TLS termination for encrypted HTTPS traffic, so the app pod must terminate the TLS connection. This type can also be used for HTTP/2 and for non-HTTP TLS endpoints. |
-| Edge | When your app pod is exposed on a non-encrypted HTTP endpoint, but you must handle encrypted HTTPS traffic, create an edge route. The TLS connection between the client and the router service is terminated, and the connection between the router service and your app pod is unencrypted. For more information, see the [{{site.data.keyword.redhat_openshift_notm}} edge route documentation](https://docs.redhat.com/en/documentation/openshift_container_platform/4.19/html/ingress_and_load_balancing/routes#nw-ingress-creating-an-edge-route-with-a-custom-certificate_secured-routes){: external}. |
-| Re-encrypt | When your app pod is exposed on an encrypted HTTPS endpoint and you must handle HTTPS traffic, create a re-encrypt route. The TLS connection between the client and the router service is terminated, and a new TLS connection between the router service and your app pod is created. For more information, see the [{{site.data.keyword.redhat_openshift_notm}} re-encrypt route documentation](https://docs.redhat.com/en/documentation/openshift_container_platform/4.19/html/ingress_and_load_balancing/routes#nw-ingress-creating-a-reencrypt-route-with-a-custom-certificate_creating-advanced-routes){: external}. |
+| Edge | When your app pod is exposed on a non-encrypted HTTP endpoint, but you must handle encrypted HTTPS traffic, create an edge route. The TLS connection between the client and the router service is terminated, and the connection between the router service and your app pod is unencrypted. For more information, see the [{{site.data.keyword.redhat_openshift_notm}} edge route documentation](https://docs.redhat.com/en/documentation/openshift_container_platform/4.20/html/ingress_and_load_balancing/routes#nw-ingress-creating-an-edge-route-with-a-custom-certificate_secured-routes){: external}. |
+| Re-encrypt | When your app pod is exposed on an encrypted HTTPS endpoint and you must handle HTTPS traffic, create a re-encrypt route. The TLS connection between the client and the router service is terminated, and a new TLS connection between the router service and your app pod is created. For more information, see the [{{site.data.keyword.redhat_openshift_notm}} re-encrypt route documentation](https://docs.redhat.com/en/documentation/openshift_container_platform/4.20/html/ingress_and_load_balancing/routes#nw-ingress-creating-a-reencrypt-route-with-a-custom-certificate_creating-advanced-routes){: external}. |
 {: caption="Types of routes based on TLS termination"}
 
 If you don't need to use a custom domain, you can use an IBM-provided route hostname in the format `<service_name>-<project>.<cluster_name>-<random_hash>-0000.<region>.containers.appdomain.cloud`.
@@ -207,13 +207,13 @@ If your cluster is created on classic infrastructure, or if your cluster is crea
         {: pre}
 
         Need to handle HTTP/2 connections? After you create the route, run `oc edit route <app_service_name>` and change the route's `targetPort` value to `https`. You can test the route by running `curl -I --http2 https://<route> --insecure`.
-    * Edge: If you use a custom domain, include `--hostname`, `--cert`, and `--key` options, and optionally the `--ca-cert` option. For more information about the TLS certificate requirements, see the [{{site.data.keyword.redhat_openshift_notm}} edge route documentation](https://docs.redhat.com/en/documentation/openshift_container_platform/4.19/html/ingress_and_load_balancing/routes#nw-ingress-creating-an-edge-route-with-a-custom-certificate_secured-routes){: external}.
+    * Edge: If you use a custom domain, include `--hostname`, `--cert`, and `--key` options, and optionally the `--ca-cert` option. For more information about the TLS certificate requirements, see the [{{site.data.keyword.redhat_openshift_notm}} edge route documentation](https://docs.redhat.com/en/documentation/openshift_container_platform/4.20/html/ingress_and_load_balancing/routes#nw-ingress-creating-an-edge-route-with-a-custom-certificate_secured-routes){: external}.
         ```sh
         oc create route edge --service <app_service_name> [--hostname <subdomain> --cert <tls.crt> --key <tls.key> --ca-cert <ca.crt>]
         ```
         {: pre}
 
-    * Re-encrypt: If you use a custom domain, include `--hostname`, `--cert`, and `--key` options, and optionally the `--ca-cert` option. For more information about the TLS certificate requirements, see the [{{site.data.keyword.redhat_openshift_notm}} re-encrypt route documentation](https://docs.redhat.com/en/documentation/openshift_container_platform/4.19/html/ingress_and_load_balancing/routes#nw-ingress-creating-a-reencrypt-route-with-a-custom-certificate_secured-routes){: external}.
+    * Re-encrypt: If you use a custom domain, include `--hostname`, `--cert`, and `--key` options, and optionally the `--ca-cert` option. For more information about the TLS certificate requirements, see the [{{site.data.keyword.redhat_openshift_notm}} re-encrypt route documentation](https://docs.redhat.com/en/documentation/openshift_container_platform/4.20/html/ingress_and_load_balancing/routes#nw-ingress-creating-a-reencrypt-route-with-a-custom-certificate_secured-routes){: external}.
         ```sh
         oc create route reencrypt --service <app_service_name> --dest-ca-cert <destca.crt> [--hostname <subdomain> --cert <tls.crt> --key <tls.key> --ca-cert <ca.crt>]
         ```
@@ -225,7 +225,7 @@ If your cluster is created on classic infrastructure, or if your cluster is crea
     ```
     {: pre}
 
-1. Optional: Customize default routing rules with [optional configurations](https://docs.redhat.com/en/documentation/openshift_container_platform/4.19/html/ingress_and_load_balancing/routes){: external}. For example, you can use route-specific HAProxy annotations.
+1. Optional: Customize default routing rules with [optional configurations](https://docs.redhat.com/en/documentation/openshift_container_platform/4.20/html/ingress_and_load_balancing/routes){: external}. For example, you can use route-specific HAProxy annotations.
 
 ### Setting up public routes in VPC clusters with a private cloud service endpoint only
 {: #routes-public-vpc-privse}
@@ -236,7 +236,7 @@ If your cluster is created on VPC infrastructure and you enabled only the privat
 Note that even though you create an IngressController resource in the following steps, the IngressController is only required to create and configure the necessary Ingress controller for you. After the Ingress controller is created, you use the Ingress controller directly to create routes.
 
 1. Prepare the domain that you want to use for your Ingress controller.
-    * **Custom domain**: To register a custom domain, work with your Domain Name Service (DNS) provider or [{{site.data.keyword.cloud_notm}} DNS](/docs/dns-svcs?topic=dns-svcs-getting-started). If you want to use the same subdomain for multiple services in your cluster, you can register a wildcard subdomain, such as `*.example.com`. If you use a custom domain, you must also specify the domain certificate in your `IngressController` specification. For more information, see [Setting a custom default certificate](https://docs.redhat.com/en/documentation/openshift_container_platform/4.19/html/security_and_compliance/configuring-certificates){: external}
+    * **Custom domain**: To register a custom domain, work with your Domain Name Service (DNS) provider or [{{site.data.keyword.cloud_notm}} DNS](/docs/dns-svcs?topic=dns-svcs-getting-started). If you want to use the same subdomain for multiple services in your cluster, you can register a wildcard subdomain, such as `*.example.com`. If you use a custom domain, you must also specify the domain certificate in your `IngressController` specification. For more information, see [Setting a custom default certificate](https://docs.redhat.com/en/documentation/openshift_container_platform/4.20/html/security_and_compliance/configuring-certificates){: external}
     * **IBM-provided domain**:
         1. List the existing subdomains in your cluster. In the **Subdomain** column of the output, copy the subdomain that has the highest `000<n>` value.
             ```sh
@@ -303,7 +303,7 @@ Note that even though you create an IngressController resource in the following 
         ```
         {: pre}
 
-1. **Optional**: If you want to use Ingress controller sharding so that specific routes are handled by a specific Ingress controller, for example private routes be admitted only to a private router, then you can use either route labels or namespace labels to specify the sharding method. To add the selector during creation time, include it in the `ingresscontroller` yaml under `spec`. For example, to allow an Ingress controller to only handle ingress/routes with label `type=sharded`, you can add a `routeSelector`. For more information, see [Ingress controller sharding](https://docs.redhat.com/en/documentation/openshift_container_platform/4.19/html/networking_overview/index#nw-ingress-sharding_configuring-ingress){: external}.
+1. **Optional**: If you want to use Ingress controller sharding so that specific routes are handled by a specific Ingress controller, for example private routes be admitted only to a private router, then you can use either route labels or namespace labels to specify the sharding method. To add the selector during creation time, include it in the `ingresscontroller` yaml under `spec`. For example, to allow an Ingress controller to only handle ingress/routes with label `type=sharded`, you can add a `routeSelector`. For more information, see [Ingress controller sharding](https://docs.redhat.com/en/documentation/openshift_container_platform/4.20/html/networking_overview/index#nw-ingress-sharding_configuring-ingress){: external}.
     ```yaml
       routeSelector:
         matchLabels:
@@ -331,7 +331,7 @@ Note that even though you create an IngressController resource in the following 
         ```
         {: pre}
 
-        Several routes and Ingresses on the cluster depend on the default public ingress controller. Make sure the changes are correct before editing the default Ingress controller. For more information about, see [Ingress controller sharding](https://docs.redhat.com/en/documentation/openshift_container_platform/4.19/html/networking_overview/index#nw-ingress-sharding_configuring-ingress){: external}.
+        Several routes and Ingresses on the cluster depend on the default public ingress controller. Make sure the changes are correct before editing the default Ingress controller. For more information about, see [Ingress controller sharding](https://docs.redhat.com/en/documentation/openshift_container_platform/4.20/html/networking_overview/index#nw-ingress-sharding_configuring-ingress){: external}.
         {: note}
     
 
@@ -355,13 +355,13 @@ Note that even though you create an IngressController resource in the following 
         {: pre}
 
         Need to handle HTTP/2 connections? After you create the route, run `oc edit route <app_service_name>` and change the route's `targetPort` value to `https`. You can test the route by running `curl -I --http2 https://<route> --insecure`.
-    * Edge: If you use a custom domain, include `--hostname`, `--cert`, and `--key` options, and optionally the `--ca-cert` option. For more information about the TLS certificate requirements, see the [{{site.data.keyword.redhat_openshift_notm}} edge route documentation](https://docs.redhat.com/en/documentation/openshift_container_platform/4.19/html/ingress_and_load_balancing/routes#nw-ingress-creating-an-edge-route-with-a-custom-certificate_secured-routes){: external}.
+    * Edge: If you use a custom domain, include `--hostname`, `--cert`, and `--key` options, and optionally the `--ca-cert` option. For more information about the TLS certificate requirements, see the [{{site.data.keyword.redhat_openshift_notm}} edge route documentation](https://docs.redhat.com/en/documentation/openshift_container_platform/4.20/html/ingress_and_load_balancing/routes#nw-ingress-creating-an-edge-route-with-a-custom-certificate_secured-routes){: external}.
         ```sh
         oc create route edge --service <app_service_name> [--hostname <subdomain> --cert <tls.crt> --key <tls.key> --ca-cert <ca.crt>]
         ```
         {: pre}
 
-    * Re-encrypt: If you use a custom domain, include `--hostname`, `--cert`, and `--key` options, and optionally the `--ca-cert` option. For more information about the TLS certificate requirements, see the [{{site.data.keyword.redhat_openshift_notm}} re-encrypt route documentation](https://docs.redhat.com/en/documentation/openshift_container_platform/4.19/html/ingress_and_load_balancing/routes#nw-ingress-creating-a-reencrypt-route-with-a-custom-certificate_secured-routes){: external}.
+    * Re-encrypt: If you use a custom domain, include `--hostname`, `--cert`, and `--key` options, and optionally the `--ca-cert` option. For more information about the TLS certificate requirements, see the [{{site.data.keyword.redhat_openshift_notm}} re-encrypt route documentation](https://docs.redhat.com/en/documentation/openshift_container_platform/4.20/html/ingress_and_load_balancing/routes#nw-ingress-creating-a-reencrypt-route-with-a-custom-certificate_secured-routes){: external}.
         ```sh
         oc create route reencrypt --service <app_service_name> --dest-ca-cert <destca.crt> [--hostname <subdomain> --cert <tls.crt> --key <tls.key> --ca-cert <ca.crt>]
         ```
@@ -373,7 +373,7 @@ Note that even though you create an IngressController resource in the following 
     ```
     {: pre}
 
-1. Optional: Customize the public Ingress controller's routing rules with [optional configurations](https://docs.redhat.com/en/documentation/openshift_container_platform/4.19/html/ingress_and_load_balancing/routes){: external}. For example, you can use route-specific HAProxy annotations.
+1. Optional: Customize the public Ingress controller's routing rules with [optional configurations](https://docs.redhat.com/en/documentation/openshift_container_platform/4.20/html/ingress_and_load_balancing/routes){: external}. For example, you can use route-specific HAProxy annotations.
 
 1. To create routes for more apps by using the same subdomain, you can repeat steps 7 - 10 so that the route is generated by the same public Ingress controller. If you want to create routes for more apps by using a different subdomain, repeat all steps in this section to create a new public Ingress controller with a different domain.
 
@@ -468,7 +468,7 @@ Note that even though you create an IngressController resource in the following 
         ```
         {: pre}
 
-1. **Optional**: If you want to use Ingress controller sharding so that specific routes are handled by a specific Ingress controller, for example private routes be admitted only to a private router, then you can use either route labels or namespace labels to specify the sharding method. To add the selector during creation time, include it in the `ingresscontroller` yaml under `spec`. For example, to allow an Ingress controller to only handle ingress/routes with label `type=sharded`, you can add a `routeSelector`. For more information, see [Ingress controller sharding](https://docs.redhat.com/en/documentation/openshift_container_platform/4.19/html/networking_overview/index#nw-ingress-sharding_configuring-ingress){: external}.
+1. **Optional**: If you want to use Ingress controller sharding so that specific routes are handled by a specific Ingress controller, for example private routes be admitted only to a private router, then you can use either route labels or namespace labels to specify the sharding method. To add the selector during creation time, include it in the `ingresscontroller` yaml under `spec`. For example, to allow an Ingress controller to only handle ingress/routes with label `type=sharded`, you can add a `routeSelector`. For more information, see [Ingress controller sharding](https://docs.redhat.com/en/documentation/openshift_container_platform/4.20/html/networking_overview/index#nw-ingress-sharding_configuring-ingress){: external}.
     ```yaml
       routeSelector:
         matchLabels:
@@ -516,13 +516,13 @@ Note that even though you create an IngressController resource in the following 
         {: pre}
 
         Need to handle HTTP/2 connections? After you create the route, run `oc edit route <app_service_name>` and change the route's `targetPort` value to `https`. You can test the route by running `curl -I --http2 https://<route> --insecure`.
-    * Edge: If you use a custom domain, include the `--cert` and `--key` options, and optionally the `--ca-cert` option. For more information about the TLS certificate requirements, see the [{{site.data.keyword.redhat_openshift_notm}} edge route documentation](https://docs.redhat.com/en/documentation/openshift_container_platform/4.19/html/ingress_and_load_balancing/routes#nw-ingress-creating-an-edge-route-with-a-custom-certificate_secured-routes){: external}.
+    * Edge: If you use a custom domain, include the `--cert` and `--key` options, and optionally the `--ca-cert` option. For more information about the TLS certificate requirements, see the [{{site.data.keyword.redhat_openshift_notm}} edge route documentation](https://docs.redhat.com/en/documentation/openshift_container_platform/4.20/html/ingress_and_load_balancing/routes#nw-ingress-creating-an-edge-route-with-a-custom-certificate_secured-routes){: external}.
         ```sh
         oc create route edge --service <app_service_name> --hostname <subdomain> [--cert <tls.crt> --key <tls.key> --ca-cert <ca.crt>]
         ```
         {: pre}
 
-    * Re-encrypt: If you use a custom domain, include the `--cert` and `--key` options, and optionally the `--ca-cert` option. For more information about the TLS certificate requirements, see the [{{site.data.keyword.redhat_openshift_notm}} re-encrypt route documentation](https://docs.redhat.com/en/documentation/openshift_container_platform/4.19/html/ingress_and_load_balancing/routes#nw-ingress-creating-a-reencrypt-route-with-a-custom-certificate_secured-routes){: external}.
+    * Re-encrypt: If you use a custom domain, include the `--cert` and `--key` options, and optionally the `--ca-cert` option. For more information about the TLS certificate requirements, see the [{{site.data.keyword.redhat_openshift_notm}} re-encrypt route documentation](https://docs.redhat.com/en/documentation/openshift_container_platform/4.20/html/ingress_and_load_balancing/routes#nw-ingress-creating-a-reencrypt-route-with-a-custom-certificate_secured-routes){: external}.
         ```sh
         oc create route reencrypt --service <app_service_name> --dest-ca-cert <destca.crt> --hostname <subdomain> [--cert <tls.crt> --key <tls.key> --ca-cert <ca.crt>]
         ```
@@ -534,7 +534,7 @@ Note that even though you create an IngressController resource in the following 
     ```
     {: pre}
 
-1. Optional: Customize the private Ingress controller's routing rules with [optional configurations](https://docs.redhat.com/en/documentation/openshift_container_platform/4.19/html/ingress_and_load_balancing/routes){: external}. For example, you can use route-specific HAProxy annotations.
+1. Optional: Customize the private Ingress controller's routing rules with [optional configurations](https://docs.redhat.com/en/documentation/openshift_container_platform/4.20/html/ingress_and_load_balancing/routes){: external}. For example, you can use route-specific HAProxy annotations.
 
 1. To create routes for more apps by using the same subdomain, you can repeat steps 7 - 10 so that the route is generated by the same private Ingress controller. If you want to create routes for more apps by using a different subdomain, repeat all steps in this section to create a new private Ingress controller.
 
@@ -581,13 +581,13 @@ If your cluster is created on VPC infrastructure and you enabled the only privat
 
         Need to handle HTTP/2 connections? After you create the route, run `oc edit route <app_service_name>` and change the route's `targetPort` value to `https`. You can test the route by running `curl -I --http2 https://<route> --insecure`.
         
-    * Edge: If you use a custom domain, include `--hostname`, `--cert`, and `--key` options, and optionally the `--ca-cert` option. For more information about the TLS certificate requirements, see the [{{site.data.keyword.redhat_openshift_notm}} edge route documentation](https://docs.redhat.com/en/documentation/openshift_container_platform/4.19/html/ingress_and_load_balancing/routes#nw-ingress-creating-an-edge-route-with-a-custom-certificate_secured-routes){: external}.
+    * Edge: If you use a custom domain, include `--hostname`, `--cert`, and `--key` options, and optionally the `--ca-cert` option. For more information about the TLS certificate requirements, see the [{{site.data.keyword.redhat_openshift_notm}} edge route documentation](https://docs.redhat.com/en/documentation/openshift_container_platform/4.20/html/ingress_and_load_balancing/routes#nw-ingress-creating-an-edge-route-with-a-custom-certificate_secured-routes){: external}.
         ```sh
         oc create route edge --service <app_service_name> [--hostname <subdomain> --cert <tls.crt> --key <tls.key> --ca-cert <ca.crt>]
         ```
         {: pre}
 
-    * Re-encrypt: If you use a custom domain, include `--hostname`, `--cert`, and `--key` options, and optionally the `--ca-cert` option. For more information about the TLS certificate requirements, see the [{{site.data.keyword.redhat_openshift_notm}} re-encrypt route documentation](https://docs.redhat.com/en/documentation/openshift_container_platform/4.19/html/ingress_and_load_balancing/routes#nw-ingress-creating-a-reencrypt-route-with-a-custom-certificate_secured-routes){: external}.
+    * Re-encrypt: If you use a custom domain, include `--hostname`, `--cert`, and `--key` options, and optionally the `--ca-cert` option. For more information about the TLS certificate requirements, see the [{{site.data.keyword.redhat_openshift_notm}} re-encrypt route documentation](https://docs.redhat.com/en/documentation/openshift_container_platform/4.20/html/ingress_and_load_balancing/routes#nw-ingress-creating-a-reencrypt-route-with-a-custom-certificate_secured-routes){: external}.
         ```sh
         oc create route reencrypt --service <app_service_name> --dest-ca-cert <destca.crt> [--hostname <subdomain> --cert <tls.crt> --key <tls.key> --ca-cert <ca.crt>]
         ```
@@ -599,7 +599,7 @@ If your cluster is created on VPC infrastructure and you enabled the only privat
     ```
     {: pre}
 
-1. Optional: Customize default routing rules with [optional configurations](https://docs.redhat.com/en/documentation/openshift_container_platform/4.19/html/ingress_and_load_balancing/routes){: external}. For example, you can use route-specific HAProxy annotations.
+1. Optional: Customize default routing rules with [optional configurations](https://docs.redhat.com/en/documentation/openshift_container_platform/4.20/html/ingress_and_load_balancing/routes){: external}. For example, you can use route-specific HAProxy annotations.
 
 
 
