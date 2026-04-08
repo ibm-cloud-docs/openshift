@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2026
-lastupdated: "2026-04-03"
+lastupdated: "2026-04-08"
 
 
 keywords: kubernetes, openshift, red hat, red hat openshift
@@ -33,7 +33,7 @@ completion-time: 45m
 Create an {{site.data.keyword.openshiftlong}} cluster in your Virtual Private Cloud (VPC).
 {: shortdesc}
 
-- {{site.data.keyword.openshiftlong_notm}} gives you all the [advantages of a managed offering](/docs/openshift?topic=openshift-overview) for your cluster infrastructure environment, while using the [{{site.data.keyword.redhat_openshift_notm}} tooling and catalog](https://docs.redhat.com/en/documentation/openshift_container_platform/4.19/html/extensions/catalogs){: external} that runs on Red Hat Enterprise Linux for your app deployments.
+- {{site.data.keyword.openshiftlong_notm}} gives you all the [advantages of a managed offering](/docs/openshift?topic=openshift-overview) for your cluster infrastructure environment, while using the [{{site.data.keyword.redhat_openshift_notm}} tooling and catalog](https://docs.redhat.com/en/documentation/openshift_container_platform/4.20/html/extensions/catalogs){: external} that runs on Red Hat Enterprise Linux for your app deployments.
 - VPC gives you the security of a private cloud environment with the dynamic scalability of a public cloud. VPC uses the next version of {{site.data.keyword.openshiftlong_notm}} [infrastructure providers](/docs/openshift?topic=openshift-overview#what-compute-infra-is-offered), with a select group of v2 API, CLI, and console functionality.
 - This tutorial creates a cluster in VPC using ibmcloud CLI commands. Alternatively, you can use an open-source and enterprise-ready Terraform module for deploying an [OpenShift cluster on VPC infrastructure](https://registry.terraform.io/modules/terraform-ibm-modules/base-ocp-vpc/ibm/latest){: external}. You can explore more modules in the [Terraform IBM Modules registry](https://registry.terraform.io/namespaces/terraform-ibm-modules){: external}.
 
@@ -129,9 +129,9 @@ Create an {{site.data.keyword.cloud_notm}} Virtual Private Cloud (VPC) environme
     {: pre}
 
 4. Create a cluster in your VPC in the same zone as the subnet.
-    The following command creates a version 4.19 cluster in Dallas with the minimum configuration of 2 worker nodes that have at least 4 cores and 16 GB memory so that default {{site.data.keyword.redhat_openshift_notm}} components can deploy. For more information about the command options, see the [`cluster create vpc-gen2` CLI reference docs](/docs/openshift?topic=openshift-kubernetes-service-cli#cli_cluster-create-vpc-gen2).
+    The following command creates a version 4.20 cluster in Dallas with the minimum configuration of 2 worker nodes that have at least 4 cores and 16 GB memory so that default {{site.data.keyword.redhat_openshift_notm}} components can deploy. For more information about the command options, see the [`cluster create vpc-gen2` CLI reference docs](/docs/openshift?topic=openshift-kubernetes-service-cli#cli_cluster-create-vpc-gen2).
     ```sh
-    ibmcloud oc cluster create vpc-gen2 --name myvpc-cluster --zone us-south-1 --version 4.19_openshift --flavor bx2.4x16 --workers 2 [--operating-system REDHAT_8_64] --vpc-id <vpc_ID> --subnet-id <vpc_subnet_ID> --cos-instance <cos_crn> --disable-outbound-traffic-protection
+    ibmcloud oc cluster create vpc-gen2 --name myvpc-cluster --zone us-south-1 --version 4.20_openshift --flavor bx2.4x16 --workers 2 [--operating-system REDHAT_8_64] --vpc-id <vpc_ID> --subnet-id <vpc_subnet_ID> --cos-instance <cos_crn> --disable-outbound-traffic-protection
     ```
     {: pre}
 
@@ -166,7 +166,7 @@ Create an {{site.data.keyword.cloud_notm}} Virtual Private Cloud (VPC) environme
     Example output
 
     ```sh
-    Client Version: v4.19.0
+    Client Version: v4.20.0
     Kubernetes Version: v1.34.6.2
     ```
     {: screen}
@@ -189,7 +189,7 @@ Quickly deploy a new sample app that is available to requests from inside the cl
     ```
     {: pre}
 
-2. Build the sample app [from the source code](https://github.com/IBM/container-service-getting-started-wt){: external}. With the {{site.data.keyword.redhat_openshift_notm}} `new-app` command, you can refer to a directory in a remote repository that contains the Dockerfile and app code to build your image. The command builds the image, stores the image in the local Docker registry, and creates the app deployment configurations (`dc`) and services (`svc`). For more information about creating new apps, [see the {{site.data.keyword.redhat_openshift_notm}} docs](https://docs.redhat.com/en/documentation/openshift_container_platform/4.19/html/building_applications/creating-applications){: external}.
+2. Build the sample app [from the source code](https://github.com/IBM/container-service-getting-started-wt){: external}. With the {{site.data.keyword.redhat_openshift_notm}} `new-app` command, you can refer to a directory in a remote repository that contains the Dockerfile and app code to build your image. The command builds the image, stores the image in the local Docker registry, and creates the app deployment configurations (`dc`) and services (`svc`). For more information about creating new apps, [see the {{site.data.keyword.redhat_openshift_notm}} docs](https://docs.redhat.com/en/documentation/openshift_container_platform/4.20/html/building_applications/creating-applications){: external}.
     ```sh
     oc new-app --name hello-world https://github.com/IBM/container-service-getting-started-wt --context-dir="Lab 1"
     ```

@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2026
-lastupdated: "2026-04-03"
+lastupdated: "2026-04-08"
 
 
 keywords: kubernetes, openshift, red hat, red hat openshift
@@ -81,9 +81,9 @@ In this tutorial, you create the following resources by using the CLI. There are
     ```
     {: pre}
 
-1. Run the following command to create a version 4.19 cluster in Washington, DC with 2 worker nodes that have 4 cores and 16 GB memory.
+1. Run the following command to create a version 4.20 cluster in Washington, DC with 2 worker nodes that have 4 cores and 16 GB memory.
     ```sh
-    ibmcloud oc cluster create classic --name my-tutorial-cluster --location wdc04 --version 4.19_openshift --flavor b3c.4x16  --workers 2 --public-service-endpoint
+    ibmcloud oc cluster create classic --name my-tutorial-cluster --location wdc04 --version 4.20_openshift --flavor b3c.4x16  --workers 2 --public-service-endpoint
     ```
     {: pre}
 
@@ -117,7 +117,7 @@ In this tutorial, you create the following resources by using the CLI. There are
     Example output
 
     ```sh
-    Client Version: v4.19.0
+    Client Version: v4.20.0
     Kubernetes Version: v1.34.6.2
     ```
     {: screen}
