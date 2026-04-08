@@ -1380,7 +1380,7 @@ VPC Block CSI Driver cluster add-on patch updates.
 :   Version [4.18](/docs/openshift?topic=openshift-openshift_changelog_418) release is now certified.
 
 Versions 4.12 and 4.13 are unsupported.
-:   Update your cluster to at least [version 4.14](/docs/openshift?topic=openshift-cs_versions_414) as soon as possible.
+:   Update your cluster to at least [version 4.14](/docs/openshift?topic=openshift-openshift_versions_414) as soon as possible.
 
 
 
@@ -2549,8 +2549,8 @@ New audit events for cluster operations
 
 {{site.data.keyword.openshiftlong_notm}} worker node fix packs.
 :   Worker node fix packs can be applied by updating or reloading the worker node in classic infrastructure, or replacing the worker node in VPC infrastructure. Review the following change logs for your cluster version.
-:   [4.15](/docs/openshift?topic=openshift-openshift_changelog_415)
-:   [4.14](/docs/openshift?topic=openshift-openshift_changelog_414)
+:   4.15
+:   4.14
 :   4.13
 :   4.12
 
@@ -2574,7 +2574,7 @@ New audit events for cluster operations
 
 {{site.data.keyword.openshiftlong_notm}} master fix packs.
 :   You can use the [`ibmcloud ks cluster master update`](/docs/openshift?topic=openshift-kubernetes-service-cli#cs_cluster_update) command yourself without waiting for the update automation to apply the patch.
-:   [4.15](/docs/openshift?topic=openshift-openshift_changelog_415)
+:   4.15
 
 
 
@@ -2582,8 +2582,8 @@ New audit events for cluster operations
 
 {{site.data.keyword.openshiftlong_notm}} worker node fix packs.
 :   Worker node fix packs can be applied by updating or reloading the worker node in classic infrastructure, or replacing the worker node in VPC infrastructure. Review the following change logs for your cluster version.
-:   [4.15](/docs/openshift?topic=openshift-openshift_changelog_415)
-:   [4.14](/docs/openshift?topic=openshift-openshift_changelog_414)
+:   4.15
+:   4.14
 :   4.13
 :   4.12
 
@@ -2640,8 +2640,8 @@ OpenShift Data Foundation cluster add-on patch updates.
 
 {{site.data.keyword.openshiftlong_notm}} worker node fix packs.
 :   Worker node fix packs can be applied by updating or reloading the worker node in classic infrastructure, or replacing the worker node in VPC infrastructure. Review the following change logs for your cluster version.
-:   [4.15](/docs/openshift?topic=openshift-openshift_changelog_415)
-:   [4.14](/docs/openshift?topic=openshift-openshift_changelog_414)
+:   4.15
+:   4.14
 :   4.13
 :   4.12
 
@@ -2702,8 +2702,8 @@ Cluster autoscaler add-on patch update for {{site.data.keyword.openshiftlong_not
 
 {{site.data.keyword.openshiftlong_notm}} master and worker node fix packs.
 :   Master fix packs are applied automatically over the course of several days. You can choose to use the [`ibmcloud ks cluster master update`](/docs/openshift?topic=openshift-kubernetes-service-cli#cs_cluster_update) command yourself without waiting for the update automation to apply the patch. Worker node fix packs can be applied by updating or reloading the worker node in classic infrastructure, or replacing the worker node in VPC infrastructure. Review the following change logs for your cluster version.
-:   [4.15](/docs/openshift?topic=openshift-openshift_changelog_415)
-:   [4.14](/docs/openshift?topic=openshift-openshift_changelog_414)
+:   4.15
+:   4.14
 :   4.13
 :   4.12
 
@@ -2748,8 +2748,8 @@ Version 4.15 is the default version for {{site.data.keyword.openshiftlong_notm}}
 
 {{site.data.keyword.openshiftlong_notm}} worker node fix packs.
 :   Worker node fix packs can be applied by updating or reloading the worker node in classic infrastructure, or replacing the worker node in VPC infrastructure. Review the following change logs for your cluster version.
-:   [4.15](/docs/openshift?topic=openshift-openshift_changelog_415)
-:   [4.14](/docs/openshift?topic=openshift-openshift_changelog_414)
+:   4.15
+:   4.14
 :   4.13
 :   4.12
 
@@ -2781,8 +2781,8 @@ GPU worker node flavors with Red Hat Enterprise Linux CoreOS (RHCOS).
 
 {{site.data.keyword.openshiftlong_notm}} master packs.
 :   Master fix packs are applied automatically over the course of several days. You can choose to use the [`ibmcloud ks cluster master update`](/docs/openshift?topic=openshift-kubernetes-service-cli#cs_cluster_update) command yourself without waiting for the update automation to apply the patch. Worker node fix packs can be applied by updating or reloading the worker node in classic infrastructure, or replacing the worker node in VPC infrastructure. Review the following change logs for your cluster version.
-:   [4.15](/docs/openshift?topic=openshift-openshift_changelog_415)
-:   [4.14](/docs/openshift?topic=openshift-openshift_changelog_414)
+:   4.15
+:   4.14
 :   4.13
 :   4.12
 
@@ -2800,8 +2800,8 @@ GPU worker node flavors with Red Hat Enterprise Linux CoreOS (RHCOS).
 
 {{site.data.keyword.openshiftlong_notm}} worker node fix packs.
 :   Worker node fix packs can be applied by updating or reloading the worker node in classic infrastructure, or replacing the worker node in VPC infrastructure. Review the following change logs for your cluster version.
-:   [4.15](/docs/openshift?topic=openshift-openshift_changelog_415)
-:   [4.14](/docs/openshift?topic=openshift-openshift_changelog_414)
+:   4.15
+:   4.14
 :   4.13
 :   4.12
 
@@ -2835,8 +2835,8 @@ OpenShift Data Foundation add-on version `4.15.0` is available.
 
 {{site.data.keyword.openshiftlong_notm}} master fix packs.
 :   Master fix packs are applied automatically over the course of several days. You can choose to use the [`ibmcloud ks cluster master update`](/docs/openshift?topic=openshift-kubernetes-service-cli#cs_cluster_update) command yourself without waiting for the update automation to apply the patch. Review the following change logs for your cluster version.
-:   [4.15](/docs/openshift?topic=openshift-openshift_changelog_415)
-:   [4.14](/docs/openshift?topic=openshift-openshift_changelog_414)
+:   4.15
+:   4.14
 
 
 
@@ -2871,8 +2871,8 @@ Image Key Synchronizer add-on patch update.
 
 {{site.data.keyword.openshiftlong_notm}} worker node fix packs.
 :   Worker node fix packs can be applied by updating or reloading the worker node in classic infrastructure, or replacing the worker node in VPC infrastructure. Review the following change logs for your cluster version.
-:   [4.15](/docs/openshift?topic=openshift-openshift_changelog_415)
-:   [4.14](/docs/openshift?topic=openshift-openshift_changelog_414)
+:   4.15
+:   4.14
 :   4.13
 :   4.12
 
@@ -2909,14 +2909,14 @@ Image Key Synchronizer add-on patch update.
 
 
 {{site.data.keyword.openshiftlong_notm}} 4.15 is available.
-:   You can create or [update clusters to version 4.15](/docs/openshift?topic=openshift-cs_versions_415). With {{site.data.keyword.openshiftlong_notm}} version 4.15, you get the latest features, as well as component updates on {{site.data.keyword.openshiftlong_notm}}. For more information, see the [4.15 change log](/docs/openshift?topic=openshift-openshift_changelog_415).
+:   You can create or [update clusters to version 4.15](/docs/openshift?topic=openshift-openshift_versions_415). With {{site.data.keyword.openshiftlong_notm}} version 4.15, you get the latest features, as well as component updates on {{site.data.keyword.openshiftlong_notm}}. For more information, see the [4.15 change log](/docs/openshift?topic=openshift-openshift_versions_changelog_415).
 
 Important networking changes for {{site.data.keyword.openshiftlong_notm}} VPC clusters created with version 4.15.
-:   For more information, see the [4.15 version information](/docs/openshift?topic=openshift-cs_versions_415) and [Understanding Secure by Default Cluster VPC Networking](/docs/openshift?topic=openshift-vpc-security-group-reference).
+:   For more information, see the [4.15 version information](/docs/openshift?topic=openshift-openshift_versions_415) and [Understanding Secure by Default Cluster VPC Networking](/docs/openshift?topic=openshift-vpc-security-group-reference).
 
 Important changes to the default cluster provisioning behavior for new VPC clusters beginning with version 4.15.
 :   Beginning with version 4.15, there is a new option available at cluster creation time via the UI, CLI, API, and Terraform. This new option manages outbound traffic protection for the cluster. The default behavior is to have outbound traffic protection enabled, which means new version 4.15 VPC clusters won't have access the public internet by default. If your cluster needs access to the public internet, you must specifically include the option (from the UI, CLI, API, and Terraform) to disable outbound traffic protection. Note that you can also disable outbound traffic protection after your cluster is created. You can also selectively allow outbound traffic as needed after your cluster is created. If you provision clusters via automation, make sure to adjust your automation accordingly.
-:   For more information, see the [4.15 version information](/docs/openshift?topic=openshift-cs_versions_415), [Understanding Secure by Default Cluster VPC Networking](/docs/openshift?topic=openshift-vpc-security-group-reference), and [Managing outbound traffic protection in VPC clusters](/docs/openshift?topic=openshift-sbd-allow-outbound).
+:   For more information, see the [4.15 version information](/docs/openshift?topic=openshift-openshift_versions_415), [Understanding Secure by Default Cluster VPC Networking](/docs/openshift?topic=openshift-vpc-security-group-reference), and [Managing outbound traffic protection in VPC clusters](/docs/openshift?topic=openshift-sbd-allow-outbound).
 
 Managing outbound traffic protection in new version 4.15 VPC clusters.
 :   With the introduction of Secure by Default Cluster VPC networking in version 4.15 and later clusters, there are several scenarios where you might need to adjust the security group settings for your clusters to allow outbound traffic to certain resources. For more information, see [Managing outbound traffic protection in VPC clusters](/docs/openshift?topic=openshift-sbd-allow-outbound).
@@ -2933,7 +2933,7 @@ Red Hat CoreOS worker nodes are available for new VPC clusters beginning with ve
 
 {{site.data.keyword.openshiftlong_notm}} master and worker node fix packs.
 :   Master fix packs are applied automatically over the course of several days. You can choose to use the [`ibmcloud ks cluster master update`](/docs/openshift?topic=openshift-kubernetes-service-cli#cs_cluster_update) command yourself without waiting for the update automation to apply the patch. Worker node fix packs can be applied by updating or reloading the worker node in classic infrastructure, or replacing the worker node in VPC infrastructure. Review the following change logs for your cluster version.
-:   [4.14](/docs/openshift?topic=openshift-openshift_changelog_414)
+:   4.14
 :   4.13
 :   4.12
 
@@ -2965,7 +2965,7 @@ Red Hat CoreOS worker nodes are available for new VPC clusters beginning with ve
 
 Worker node fix packs are available {{site.data.keyword.openshiftlong_notm}}.
 :    Worker node updates can be applied by updating or reloading the worker node in classic infrastructure, or replacing the worker node in VPC infrastructure. Review the following change logs for your cluster version.
-:   [4.14](/docs/openshift?topic=openshift-openshift_changelog_414)
+:   4.14
 :   4.13
 :   4.12
 
@@ -3008,7 +3008,7 @@ Image Key Synchronizer add-on patch update.
 
 
 Master patch updates for {{site.data.keyword.openshiftlong_notm}} clusters. Master patches are applied automatically over the course of several days. You can choose to use the [`ibmcloud ks cluster master update`](/docs/openshift?topic=openshift-kubernetes-service-cli#cs_cluster_update) command yourself without waiting for the update automation to apply the patch. Review the change logs for your cluster version.
-:   [4.14](/docs/openshift?topic=openshift-openshift_changelog_414)
+:   4.14
 :   4.13
 :   4.12
 
@@ -3024,7 +3024,7 @@ Master patch updates for {{site.data.keyword.openshiftlong_notm}} clusters. Mast
 
 Worker node fix packs are available {{site.data.keyword.openshiftlong_notm}}.
 :    Worker node updates can be applied by updating or reloading the worker node in classic infrastructure, or replacing the worker node in VPC infrastructure. Review the following change logs for your cluster version.
-:   [4.14](/docs/openshift?topic=openshift-openshift_changelog_414)
+:   4.14
 :   4.13
 :   4.12
 
@@ -3047,7 +3047,7 @@ New! NVIDIA L40 GPU support. You can now create VPC clusters with worker nodes w
 
 Worker node fix packs are available {{site.data.keyword.openshiftlong_notm}}.
 :    Worker node updates can be applied by updating or reloading the worker node in classic infrastructure, or replacing the worker node in VPC infrastructure. Review the following change logs for your cluster version.
-:   [4.14](/docs/openshift?topic=openshift-openshift_changelog_414)
+:   4.14
 :   4.13
 :   4.12
 
@@ -3113,7 +3113,7 @@ Enable remote health monitoring with Telemetry
 
 
 Master patch updates for {{site.data.keyword.openshiftlong_notm}} clusters. Master patches are applied automatically over the course of several days. You can choose to use the [`ibmcloud ks cluster master update`](/docs/openshift?topic=openshift-kubernetes-service-cli#cs_cluster_update) command yourself without waiting for the update automation to apply the patch. Review the change logs for your cluster version.
-:   [4.14](/docs/openshift?topic=openshift-openshift_changelog_414)
+:   4.14
 :   4.13
 :   4.12
 :   4.11
@@ -3135,7 +3135,7 @@ Master patch updates for {{site.data.keyword.openshiftlong_notm}} clusters. Mast
 Worker node fix packs are available {{site.data.keyword.openshiftlong_notm}}.
 :    Worker node updates can be applied by updating or reloading the worker node in classic infrastructure, or replacing the worker node in VPC infrastructure.
 :    Review the following change logs for your cluster version.
-    - [4.14.13_1553_openshift](/docs/openshift?topic=openshift-openshift_changelog_414)
+    - 4.14.13_1553_openshift
     - 4.13.34_1563_openshift
     - 4.12.50_1582_openshift
     - 4.11.58_1597_openshift
@@ -3217,7 +3217,7 @@ A new tutorial is available for creating a small {{site.data.keyword.redhat_open
 Worker node fix packs are available {{site.data.keyword.openshiftlong_notm}}.
 :    Worker node updates can be applied by updating or reloading the worker node in classic infrastructure, or replacing the worker node in VPC infrastructure.
 :    Review the following change logs for your cluster version.
-    - [4.14.11_1547_openshift](/docs/openshift?topic=openshift-openshift_changelog_414)
+    - 4.14.11_1547_openshift
     - 4.13.32_1557_openshift
     - 4.12.49_1578_openshift
     - 4.11.58_1591_openshift

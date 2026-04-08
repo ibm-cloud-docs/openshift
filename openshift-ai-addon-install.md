@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2024, 2026
-lastupdated: "2026-02-27"
+lastupdated: "2026-04-08"
 
 
 keywords: openshift, {{site.data.keyword.openshiftlong_notm}}, ai, add-on
@@ -217,7 +217,7 @@ Install the Red Hat OpenShift AI add-on with the UI.
 ## Step 4: Access the OpenShift AI dashboard
 {: #ai-dashboard}
 
-After you install the OpenShift AI add-on, you can access the [OpenShift AI dashboard](https://docs.redhat.com/en/documentation/red_hat_openshift_ai_cloud_service/1/html/getting_started_with_red_hat_openshift_ai_cloud_service/logging-in_get-started?extIdCarryOver=true&sc_cid=RHCTG0180000382536#viewing-installed-components_get-started){: external}. 
+After you install the OpenShift AI add-on, you can access the [OpenShift AI dashboard](https://docs.redhat.com/en/documentation/red_hat_openshift_ai_cloud_service/1/html/getting_started_with_red_hat_openshift_ai_cloud_service/logging-in_get-started){: external}.
 
 1. From your cluster overview page, click **OpenShift web console**.
 2. From the **Application launcher** ![Application launcher](../icons/thumbnail.svg "Application launcher"), select the **Red Hat OpenShift AI** dashboard option. 
