@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2026
-lastupdated: "2026-04-07"
+lastupdated: "2026-04-08"
 
 
 keywords: kubernetes, release notes, openshift, {{site.data.keyword.openshiftlong_notm}}
@@ -30,6 +30,16 @@ Looking for {{site.data.keyword.cloud_notm}} status, platform announcements, sec
 {: #openshift-apr26}
 
 
+
+### 08 April 2026
+{: #openshift-apr0826}
+{: release-note}
+
+Version 4.20 is now the default version for {{site.data.keyword.openshiftlong_notm}}.
+:   For a complete list of available versions, see the [version information](/docs/openshift?topic=openshift-openshift_versions).
+
+
+
 ### 07 April 2026
 {: #openshift-apr0726}
 {: release-note}
@@ -42,6 +52,20 @@ IBM Storage Operator cluster add-on patch updates.
 ### 06 April 2026
 {: #openshift-apr0626}
 {: release-note}
+
+
+
+
+
+{{site.data.keyword.openshiftlong_notm}} worker node fix packs are available.
+:   Worker node fix packs can be applied by updating or reloading the worker node in classic infrastructure, or replacing the worker node in VPC infrastructure. Review the following change logs for your cluster version.
+:   [Version 4.20 change log](/docs/openshift?topic=openshift-openshift_changelog_420)
+:   [Version 4.19 change log](/docs/openshift?topic=openshift-openshift_changelog_419)
+:   [Version 4.18 change log](/docs/openshift?topic=openshift-openshift_changelog_418)
+:   [Version 4.17 change log](/docs/openshift?topic=openshift-openshift_changelog_417)
+:   [Version 4.16 change log](/docs/openshift?topic=openshift-openshift_changelog_416)
+
+
 
 CLI version 1.0.756 is available
 :   For more information, see the [CLI change log](/docs/openshift?topic=openshift-cs_cli_changelog).
