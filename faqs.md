@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2026
-lastupdated: "2026-04-03"
+lastupdated: "2026-04-08"
 
 
 keywords: openshift, ocp, compliance, security standards, faq, openshift pricing, ocp pricing, openshift charges, ocp charges, openshift price, ocp price, openshift billing, ocp billing, openshift costs, ocp costs
@@ -532,7 +532,7 @@ The number of peer pods you can run per worker node is controlled by multiple li
 
 To increase the `PEERPODS_LIMIT_PER_NODE` value:
 
-1. Update the [`peer-pods-cm`](openshift/confidential-containers.md:362) ConfigMap in the `openshift-sandboxed-containers-operator` namespace.
+1. Update the [`peer-pods-cm`](/docs/openshift?topic=openshift-confidential-containers#peer-pods-cm) ConfigMap in the `openshift-sandboxed-containers-operator` namespace.
 
     ```sh
     oc -n openshift-sandboxed-containers-operator patch cm peer-pods-cm \
@@ -584,7 +584,7 @@ To resolve this issue:
     ```
     {: pre}
 
-3. Increase the [`PEERPODS_LIMIT_PER_NODE`](openshift/confidential-containers.md:380) value as described in [How many peer pods can I run per worker node?](#conf-cont-peerpods-limit).
+3. Increase the [`PEERPODS_LIMIT_PER_NODE`](/docs/openshift?topic=openshift-confidential-containers#peerpods-limit) value as described in [How many peer pods can I run per worker node?](#conf-cont-peerpods-limit).
 
 4. Alternatively, add more worker nodes to your cluster to increase total capacity.
 

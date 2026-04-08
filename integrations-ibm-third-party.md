@@ -1,8 +1,8 @@
 ---
 
 copyright: 
-  years: 2014, 2025
-lastupdated: "2025-10-27"
+  years: 2014, 2026
+lastupdated: "2026-04-08"
 
 
 keywords: kubernetes, openshift
@@ -86,7 +86,7 @@ Supported integrations depend on the container platform, the infrastructure prov
 ### Integrations operated in partnership
 {: #open-source-partners}
 
-Review the [{{site.data.keyword.openshiftlong_notm}} partners](/docs/openshift?topic=openshift-supported_integrations) and the benefit of each solution that they provide.
+Review the [{{site.data.keyword.openshiftlong_notm}} partners](/docs/openshift?topic=openshift-ibm-3rd-party-integrations) and the benefit of each solution that they provide.
 
 
 ### Managed add-ons
