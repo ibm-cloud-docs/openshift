@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2024, 2026
-lastupdated: "2026-02-20"
+lastupdated: "2026-04-09"
 
 keywords: license, entitlement, OCP, Cloud Pak, {{site.data.keyword.openshiftlong_notm}}
 
@@ -38,4 +38,4 @@ Before you begin, make sure that you have at least the Editor platform access ro
 1. Log in to the [IBM Cloud console](https://cloud.ibm.com/){: external} and navigate to `Manage` > `Account`.
 2. Click `Licenses and entitlements`.
 3. Check if the correct Cloud Pak license is assigned to your account. 
-4. If the Cloud Pak license is not assigned to your account, navigate to [IBM Passport Advantage](https://www.ibm.com/software/passportadvantage/index.html){: external} to assign the license to the account. 
+4. If the Cloud Pak license is not assigned to your account, navigate to [IBM Passport Advantage](https://www.ibm.com/software/passportadvantage){: external} to assign the license to the account.

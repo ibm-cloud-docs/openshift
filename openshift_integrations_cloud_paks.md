@@ -1,8 +1,8 @@
 ---
 
 copyright:
-  years: 2014, 2025
-lastupdated: "2025-07-07"
+  years: 2014, 2026
+lastupdated: "2026-04-09"
 
 
 keywords: openshift, integrations, entitlements, ocp entitled, licenses, license, red hat, {{site.data.keyword.openshiftlong_notm}}
@@ -47,7 +47,7 @@ Before you begin:
 * Verify that your account administrator [set up your {{site.data.keyword.cloud_notm}} account with the Cloud Pak entitlement](#oc_cloud_paks_assign).
 * Make sure that you have the [required permissions to create a cluster](/docs/openshift?topic=openshift-iam-platform-access-roles).
 
-1. Add your entitlement from [IBM Passport Advantage](https://www.ibm.com/software/passportadvantage/index.html){: external} to your {{site.data.keyword.openshiftlong_notm}} cluster.
+1. Add your entitlement from [IBM Passport Advantage](https://www.ibm.com/software/passportadvantage){: external} to your {{site.data.keyword.openshiftlong_notm}} cluster.
     *  **For new clusters**: [Create a cluster](/docs/openshift?topic=openshift-kubernetes-service-cli#cs_cluster_create) with the `--entitlement ocp_entitled` option. When you specify the number of workers (`--workers`) and flavor (`--flavor`), make sure to specify only the number and size of worker nodes that you are entitled to use. You can optionally specify the worker node operating system (`--operating-system`). After your cluster is created, you are not charged the {{site.data.keyword.redhat_openshift_notm}} license fee for the entitled worker nodes in the `default` worker pool. If you want to use a different worker pool for your Cloud Pak, follow the steps for existing clusters.
     * **For existing clusters or worker pools other than the `default`**: Create a [worker pool](/docs/openshift?topic=openshift-kubernetes-service-cli#cs_worker_pool_create) with the `--entitlement ocp_entitled` option. When you specify the number of workers (`--size-per-zone`) and flavor (`--flavor`), make sure to specify only the number and size of worker nodes that you are entitled to use. After creation, your worker pool does not charge you the {{site.data.keyword.redhat_openshift_notm}} license fee for your entitled worker nodes.
 
