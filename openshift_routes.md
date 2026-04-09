@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2026
-lastupdated: "2026-04-08"
+lastupdated: "2026-04-09"
 
 
 keywords: openshift, route, router
@@ -55,7 +55,7 @@ In your VPC infrastructure dashboard, the VPC load balancer reports as healthy o
 The following diagram shows how a router directs network traffic from the internet to an app in a single-zone, classic cluster.
 {: shortdesc}
 
-![Expose an app in a single-zone {{site.data.keyword.redhat_openshift_notm}} cluster by using a router](images/roks-router.svg){: caption="Expose an app in a single-zone cluster by using a router" caption-side="bottom"}
+![Router traffic flow diagram](images/roks-router.svg "Diagram showing traffic flow from internet through DNS to router service, then to app pods in a single-zone classic cluster"){: caption="Expose an app in a single-zone cluster by using a router" caption-side="bottom"}
 
 1. A request to your app uses the route hostname that you set up for your app.
 
@@ -71,7 +71,7 @@ The following diagram shows how a router directs network traffic from the intern
 The following diagram shows how a router directs network traffic from the internet to an app in a multizone, classic cluster.
 {: shortdesc}
 
-![Expose an app in a multizone {{site.data.keyword.redhat_openshift_notm}} cluster by using a router](images/roks-router-multi.svg){: caption="Expose an app in a multizone cluster by using a router" caption-side="bottom"}
+![Multizone router traffic flow diagram](images/roks-router-multi.svg "Diagram showing traffic flow from internet through DNS and MZLB to router services across multiple zones, then to app pods in a multizone classic cluster"){: caption="Expose an app in a multizone cluster by using a router" caption-side="bottom"}
 
 1. A request to your app uses the route hostname that you set up for your app.
 
@@ -92,7 +92,7 @@ When you create a multizone VPC cluster with the public cloud service endpoint e
 
 The following diagram shows how a Ingress controller directs network traffic from the internet to an app in a multizone, VPC cluster.
 
-![Expose an app in a multizone VPC cluster by using an Ingress controller](images/traffic-flow-multizone-vpc-public.svg "Expose an app in a multizone VPC cluster by using an Ingress controller"){: caption="Expose an app in a multizone VPC cluster by using an Ingress controller" caption-side="bottom"}
+![VPC Ingress controller traffic flow diagram](images/traffic-flow-multizone-vpc-public.svg "Diagram showing traffic flow from internet through VPC load balancer to Ingress controller services across multiple zones, then to app pods in a multizone VPC cluster"){: caption="Expose an app in a multizone VPC cluster by using an Ingress controller" caption-side="bottom"}
 
 
 

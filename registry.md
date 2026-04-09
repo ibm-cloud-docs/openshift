@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2026
-lastupdated: "2026-04-08"
+lastupdated: "2026-04-09"
 
 
 keywords: openshift, {{site.data.keyword.openshiftlong_notm}}, kubernetes, registry, pull secret, secrets
@@ -98,6 +98,271 @@ Your images in your {{site.data.keyword.redhat_openshift_notm}} cluster internal
 However, if the bucket fails to create when you create your cluster, you must manually create a bucket and set up your cluster to use the bucket. In the meantime, the internal registry uses an `emptyDir` Kubernetes volume that stores your container images on the secondary disk of your worker node. The `emptyDir` volumes are not considered persistent highly available storage, and if you delete the pods that use the image, the image is automatically deleted.
 
 To manually create a bucket for your internal registry, see [Cluster create error about cloud object storage bucket](/docs/openshift?topic=openshift-ts_cos_bucket_cluster_create).
+
+### Configuring a COS bucket for your cluster registry
+{: #configure-cos-registry}
+
+You can manually configure an {{site.data.keyword.cos_full_notm}} bucket for your cluster's internal image registry. This is useful when you need to set up or reconfigure the registry storage backend.
+{: shortdesc}
+
+#### Before you begin
+{: #cos-registry-prereqs}
+
+* You must have an existing {{site.data.keyword.openshiftlong_notm}} cluster and an {{site.data.keyword.cos_full_notm}} instance.
+* [Access your {{site.data.keyword.redhat_openshift_notm}} cluster](/docs/openshift?topic=openshift-access_cluster).
+
+#### Configuring the COS bucket
+{: #cos-registry-steps}
+
+1. Set environment variables for your cluster and {{site.data.keyword.cos_short}} instance.
+
+    ```sh
+    export CLUSTER_NAME=<cluster_name>
+    export COS_INSTANCE_ID=<cos_instance_id>
+    export CLUSTER_ID=$(ibmcloud ks cluster get --cluster $CLUSTER_NAME --json | jq -r .id)
+    ```
+    {: pre}
+
+1. Check the current image registry operator configuration.
+
+    ```sh
+    oc get configs.imageregistry.operator.openshift.io/cluster -o yaml
+    ```
+    {: pre}
+
+1. Temporarily set the operator to `Removed` mode. If the registry is already active, disable it to avoid conflicts.
+
+    ```sh
+    oc patch configs.imageregistry.operator.openshift.io/cluster \
+    --type=merge -p '{"spec":{"managementState":"Removed"}}'
+    ```
+    {: pre}
+
+1. Check if the registry uses `emptyDir`, which means no COS bucket is configured.
+
+    ```yaml
+    storage:
+      emptyDir: {}
+      managementState: Managed
+    ```
+    {: codeblock}
+
+1. Create an {{site.data.keyword.cos_short}} bucket for your cluster. Replace `<region>` with your preferred region, such as `us-south` or `eu-de`.
+
+    ```sh
+    RANDOM_SUFFIX=$(LC_ALL=C tr -dc 'a-z0-9' </dev/urandom | head -c 6)
+    COS_BUCKET_NAME="roks-${CLUSTER_ID}-${RANDOM_SUFFIX}"
+    ibmcloud cos bucket-create \
+      --bucket "$COS_BUCKET_NAME" \
+      --ibm-service-instance-id "$COS_INSTANCE_ID" \
+      --class standard \
+      --region <region>
+    ```
+    {: pre}
+
+1. Remove the `emptyDir` field from the registry configuration.
+
+    ```sh
+    oc patch configs.imageregistry.operator.openshift.io/cluster \
+      --type=json \
+      -p '[{"op": "remove", "path": "/spec/storage/emptyDir"}]'
+    ```
+    {: pre}
+
+1. Configure the registry to use S3 storage ({{site.data.keyword.cos_short}}). Update the `region` and `regionEndpoint` values to match your bucket's region.
+
+    ```sh
+    oc patch configs.imageregistry.operator.openshift.io/cluster --type=merge -p "$(cat <<EOF
+    {
+    "spec": {
+      "managementState": "Unmanaged",
+        "storage": {
+          "s3": {
+            "bucket": "$COS_BUCKET_NAME",
+            "region": "<region>-standard",
+            "regionEndpoint": "https://s3.direct.<region>.cloud-object-storage.appdomain.cloud",
+            "trustedCA": {
+              "name": ""
+            },
+            "virtualHostedStyle": false
+          }
+        }
+      }
+    }
+    EOF
+    )"
+    ```
+    {: pre}
+
+    For example, if your bucket is in `eu-de`, use `region: "eu-de-standard"` and `regionEndpoint: "https://s3.direct.eu-de.cloud-object-storage.appdomain.cloud"`.
+    {: tip}
+
+1. Verify the image registry operator configuration.
+
+    ```sh
+    oc get configs.imageregistry.operator.openshift.io/cluster -o yaml
+    ```
+    {: pre}
+
+1. Create a service credential key for the COS instance and extract the HMAC credentials.
+
+    ```sh
+    ibmcloud resource service-key-create roks-$CLUSTER_ID-key \
+    --instance-id "$COS_INSTANCE_ID" \
+    -p '{"HMAC": true}' \
+    -o json > service-key.json
+
+    # Extract values with jq
+    ACCESS_KEY=$(jq -r '.credentials.cos_hmac_keys.access_key_id' service-key.json)
+    SECRET_KEY=$(jq -r '.credentials.cos_hmac_keys.secret_access_key' service-key.json)
+
+    # Create credentials file
+    cat <<EOF > creds.txt
+    [default]
+    aws_access_key_id = $ACCESS_KEY
+    aws_secret_access_key = $SECRET_KEY
+    EOF
+    ```
+    {: pre}
+
+    This creates a `creds.txt` file with your {{site.data.keyword.cos_short}} credentials.
+    {: note}
+
+    Example credentials file
+
+    ```sh
+    [default]
+    aws_access_key_id = f1ab5fcf7XXXXXXXXXb2a14e046
+    aws_secret_access_key = 4c78ddfa763XXXXXXX23d1cc9350d1
+    ```
+    {: screen}
+
+1. Create the `image-registry-private-configuration-user` secret if it does not exist.
+
+    ```sh
+    oc create secret generic image-registry-private-configuration-user -n openshift-image-registry
+    ```
+    {: pre}
+
+1. Update the secret with the access credentials.
+
+    ```sh
+    oc patch secret image-registry-private-configuration-user \
+    -n openshift-image-registry \
+    --type merge \
+    -p "{
+        \"data\": {
+        \"REGISTRY_STORAGE_S3_ACCESSKEY\": \"$(echo -n "$ACCESS_KEY" | base64)\",
+        \"REGISTRY_STORAGE_S3_SECRETKEY\": \"$(echo -n "$SECRET_KEY" | base64)\"
+        }
+    }"
+    ```
+    {: pre}
+
+1. Create the `image-registry-private-configuration` secret if it does not exist.
+
+    ```sh
+    oc create secret generic image-registry-private-configuration -n openshift-image-registry
+    ```
+    {: pre}
+
+1. Update the main image registry secret with the full {{site.data.keyword.cos_short}} credentials file.
+
+    ```sh
+    CREDENTIALS_B64=$(base64 -i creds.txt | tr -d '\n')
+
+    oc patch secret image-registry-private-configuration \
+    -n openshift-image-registry \
+    --type merge \
+    -p "{\"data\": {\"credentials\": \"${CREDENTIALS_B64}\"}}"
+    ```
+    {: pre}
+
+1. Set the image registry operator to `Managed` mode.
+
+    ```sh
+    oc patch configs.imageregistry.operator.openshift.io/cluster \
+    --type=merge -p '{"spec":{"managementState":"Managed"}}'
+    ```
+    {: pre}
+
+1. Restart the image registry deployment.
+
+    ```sh
+    oc rollout restart deployment image-registry -n openshift-image-registry
+    ```
+    {: pre}
+
+1. Verify that the registry is in a healthy state.
+
+    ```sh
+    oc get clusteroperator image-registry
+    ```
+    {: pre}
+
+### Troubleshooting COS registry configuration
+{: #cos-registry-troubleshooting}
+
+If you encounter issues with your {{site.data.keyword.cos_short}} registry configuration, try the following troubleshooting steps.
+
+1. Check that the `image-registry` pod is running.
+
+    ```sh
+    oc project openshift-image-registry
+    oc get pods
+    ```
+    {: pre}
+
+    Example output
+
+    ```sh
+    NAME                              READY   STATUS    RESTARTS   AGE
+    image-registry-7d8b57c98f-m92t7   1/1     Running   0          3h53m
+    node-ca-62p88                     1/1     Running   0          5h12m
+    node-ca-6s8vx                     1/1     Running   0          5h17m
+    node-ca-b5jwl                     1/1     Running   0          4h56m
+    node-ca-chl7k                     1/1     Running   0          5h17m
+    node-ca-l6tlb                     1/1     Running   0          4h55m
+    node-ca-q4vw8                     1/1     Running   0          4h55m
+    ```
+    {: screen}
+
+1. Check the cluster operator `image-registry` status.
+
+    ```sh
+    oc describe clusteroperator image-registry
+    ```
+    {: pre}
+
+1. If needed, temporarily remove the S3 backend configuration and revert to `emptyDir` to unlock the operator.
+
+    ```sh
+    oc patch configs.imageregistry.operator.openshift.io/cluster --type=merge -p '{
+    "spec": {
+        "managementState": "Managed",
+        "storage": {
+          "emptyDir": {}
+        }
+    }
+    }'
+    ```
+    {: pre}
+
+1. Check the pods in the `openshift-image-registry` namespace.
+
+    ```sh
+    oc get pods -n openshift-image-registry
+    ```
+    {: pre}
+
+1. Check the deployed configuration environment variables.
+
+    ```sh
+    oc get pod -n openshift-image-registry -l docker-registry=default -o jsonpath='{.items[0].spec.containers[0].env}' | jq
+    ```
+    {: pre}
+
+For more information about configuring the registry, see [Setting up and configuring the registry](https://docs.redhat.com/en/documentation/openshift_container_platform/4.7/html/registry/setting-up-and-configuring-the-registry#configuring-registry-storage-aws-user-infrastructure){: external}.
 
 ### Storing images in the internal registry in Classic clusters
 {: #storage_internal_registry}

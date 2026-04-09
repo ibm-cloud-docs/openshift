@@ -1,8 +1,8 @@
 ---
 
 copyright:
-  years: 2014, 2024
-lastupdated: "2024-01-03"
+  years: 2014, 2026
+lastupdated: "2026-04-09"
 
 
 keywords: openshift
@@ -24,6 +24,8 @@ content-type: troubleshoot
 
 [Virtual Private Cloud]{: tag-vpc} [Classic infrastructure]{: tag-classic-inf}
 
+Learn how to resolve permission denied errors related to security context constraints (SCC) when building or running pods.
+{: shortdesc}
 
 A system pod or other pod that uses a security context constraint (SCC) has an operation that keeps retrying but fails with a `permission denied` error. For example, you might log in to the internal `image-registry` pod and try to run `docker push`.
 {: tsSymptoms}
@@ -52,7 +54,7 @@ Change the pod's SCC permissions.
     ```
     {: pre}
 
-    Example output
+    Example output:
 
     ```sh
     NAME:               image-registry-1234567
@@ -72,7 +74,7 @@ Change the pod's SCC permissions.
     ```
     {: pre}
 
-    Example output
+    Example output:
 
     ```sh
     NAME:                        anyuid
@@ -100,9 +102,3 @@ Change the pod's SCC permissions.
     oc delete pod -n <project> <pod>
     ```
     {: pre}
-
-
-
-
-
-

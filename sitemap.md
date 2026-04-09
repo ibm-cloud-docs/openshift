@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2026
-lastupdated: "2026-04-08"
+lastupdated: "2026-04-09"
 
 
 keywords: openshift
@@ -2430,6 +2430,10 @@ subcollection: openshift
 
     * [Backing up your internal image registry to {{site.data.keyword.cos_full_notm}}](/docs/openshift?topic=openshift-registry#cos_image_registry)
 
+    * [Configuring a COS bucket for your cluster registry](/docs/openshift?topic=openshift-registry#configure-cos-registry)
+
+    * [Troubleshooting COS registry configuration](/docs/openshift?topic=openshift-registry#cos-registry-troubleshooting)
+
     * [Storing images in the internal registry in Classic clusters](/docs/openshift?topic=openshift-registry#storage_internal_registry)
 
     * [Storing images in the worker node empty directory](/docs/openshift?topic=openshift-registry#emptydir_internal_registry)
@@ -3186,6 +3190,10 @@ subcollection: openshift
 
 
 [Quick start for Ingress](/docs/openshift?topic=openshift-ingress-qs-roks4#ingress-qs-roks4)
+
+* [Before you begin](/docs/openshift?topic=openshift-ingress-qs-roks4#ingress-qs-prereqs)
+
+* [Exposing your app with Ingress](/docs/openshift?topic=openshift-ingress-qs-roks4#ingress-qs-steps)
 
 [About Ingress](/docs/openshift?topic=openshift-ingress-about-roks4#ingress-about-roks4)
 

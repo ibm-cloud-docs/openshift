@@ -1,8 +1,8 @@
 ---
 
 copyright:
-  years: 2014, 2025
-lastupdated: "2025-04-09"
+  years: 2014, 2026
+lastupdated: "2026-04-09"
 
 
 keywords: openshift
@@ -123,8 +123,8 @@ Check that your cluster is set up properly. If you just created your cluster, wa
         ```
         {: pre}
 
-4. Check the cluster **State**. If the state is not **normal**, see [Debugging clusters(#debug_clusters).
-5. Check the **Master health**. If the state is not **normal**, see [Reviewing master health(#debug_master).
+4. Check the cluster **State**. If the state is not **normal**, see [Debugging clusters](#debug_clusters).
+5. Check the **Master health**. If the state is not **normal**, see [Reviewing master health](#debug_master).
 6. Check the worker nodes that the {{site.data.keyword.redhat_openshift_notm}} components might run on. If the state is not **normal**, see [Debugging worker nodes](/docs/openshift?topic=openshift-debug_worker_nodes).
     ```sh
     ibmcloud oc worker ls -c <cluster_name_or_ID>

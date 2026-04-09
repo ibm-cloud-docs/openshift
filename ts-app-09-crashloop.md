@@ -1,8 +1,8 @@
 ---
 
 copyright:
-  years: 2014, 2024
-lastupdated: "2024-01-03"
+  years: 2014, 2026
+lastupdated: "2026-04-09"
 
 
 keywords: openshift
@@ -24,6 +24,8 @@ content-type: troubleshoot
 
 [Virtual Private Cloud]{: tag-vpc} [Classic infrastructure]{: tag-classic-inf}
 
+Learn how to resolve issues when your pods are in a `CrashLoopBackOff` status.
+{: shortdesc}
 
 Your pods are in a `CrashLoopBackOff` status.
 {: tsSymptoms}
@@ -35,9 +37,3 @@ When you try to deploy an app that works on community Kubernetes platforms, you 
 
 Make sure that you review the [common scenarios where you might need to modify your apps](/docs/openshift?topic=openshift-plan_deploy#openshift_move_apps_scenarios) and follow the docs in the [Moving your apps to OpenShift topic](/docs/openshift?topic=openshift-deploy_app#openshift_move_apps).
 {: tsResolve}
-
-
-
-
-
-

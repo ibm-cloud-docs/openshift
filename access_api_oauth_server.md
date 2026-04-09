@@ -1,8 +1,8 @@
 ---
 
 copyright:
-  years: 2025, 2025
-lastupdated: "2025-02-28"
+  years: 2025, 2026
+lastupdated: "2026-04-09"
 
 
 keywords: oauth access, oauth, api server, vpe gateway, vpc
@@ -17,6 +17,7 @@ subcollection: openshift
 {: #console-apiserver-oauthvpe}
 
 For certain VPC clusters, setting the OAuth access to the VPE gateway type might prevent you from accessing the OpenShift web console. When OAuth access is set to the VPE gateway type, some cluster configurations require you to add security group rules that allow connections from the VPN to the cluster API server and OAuth server. These connections are required to access the OpenShift console. For more information, see [Understanding the cluster connection flow](/docs/openshift?topic=openshift-ts-cluster-console-vpe-priv#ts-console-vpe-priv-flow).
+{: shortdesc}
 
 Not all clusters require these changes. These steps apply only if:
 - You have changed your security groups so that traffic between the cluster workers and master VPE gateway is blocked, **OR**
