@@ -1,8 +1,8 @@
 ---
 
 copyright:
-  years: 2014, 2024
-lastupdated: "2024-01-03"
+  years: 2014, 2026
+lastupdated: "2026-04-09"
 
 
 keywords: openshift
@@ -28,7 +28,7 @@ content-type: troubleshoot
 
 
 When you try to push container images to the internal {{site.data.keyword.redhat_openshift_notm}} container image registry, the push fails with a message similar to the following.
-{: tsSymptoms} 
+{: tsSymptoms}
 
 ```sh
 dial tcp 161.26.0.28:443: connect: network is unreachable
@@ -41,17 +41,11 @@ dial tcp 161.26.0.28:443: connect: network is unreachable
 
 
 Modify the custom resource of the internal image registry operator to proxy container image traffic through the internal registry pods to the direct {{site.data.keyword.cos_short}} endpoints.
-{: tsResolve} 
+{: tsResolve}
 
-Run the following command to patch the `configs.imageregistry.operator.openshift.io/cluster` resource to set the `disableRedirect` property to `true`. 
+Run the following command to patch the `configs.imageregistry.operator.openshift.io/cluster` resource to set the `disableRedirect` property to `true`.
 
 ```sh
 oc patch configs.imageregistry.operator.openshift.io/cluster --patch '{"spec":{"disableRedirect":true}}' --type=merge
 ```
 {: pre}
-
-
-
-
-
-

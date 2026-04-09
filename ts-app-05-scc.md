@@ -17,7 +17,7 @@ content-type: troubleshoot
 
 
 
-# Why does pod not build with a permission denied error because of security context constraint (SCC)?
+# Why does my pod not build with a permission denied error because of security context constraint (SCC)?
 {: #ts-app-scc}
 {: troubleshoot}
 {: support}
@@ -27,17 +27,17 @@ content-type: troubleshoot
 Learn how to resolve permission denied errors related to security context constraints (SCC) when building or running pods.
 {: shortdesc}
 
-A system pod or other pod that uses a security context constraint (SCC) has an operation that keeps retrying but fails with a `permission denied` error. For example, you might log in to the internal `image-registry` pod and try to run `docker push`.
+A system pod or other pod that uses a security context constraint (SCC) has an operation that keeps retrying but fails with a `permission denied` error. For example, you might log in to the internal `image-registry` pod and try to run a `docker push` command.
 {: tsSymptoms}
 
-Example error message when pushing an image to the internal registry:
+Example error message when pushing an image to the internal registry.
 ```sh
 error: build error: Failed to push image: error copying layers and metadata
 ```
 {: screen}
 
 
-The pod might use an SCC or belong to a system group that uses an SCC without the correct permission. You might have added a system group to an SCC by running `oc adm policy add-scc-to-group <scc> system:<group>`.
+The pod might use an SCC or belong to a system group that uses an SCC without the correct permissions. You might have added a system group to an SCC by running the `oc adm policy add-scc-to-group <scc> system:<group>` command.
 {: tsCauses}
 
 If the pod mounts a volume, the pod's permissions that are authorized by the SCC might no longer allow the pod to read or write data to the volume.
@@ -54,7 +54,7 @@ Change the pod's SCC permissions.
     ```
     {: pre}
 
-    Example output:
+    Example output
 
     ```sh
     NAME:               image-registry-1234567
@@ -74,7 +74,7 @@ Change the pod's SCC permissions.
     ```
     {: pre}
 
-    Example output:
+    Example output
 
     ```sh
     NAME:                        anyuid

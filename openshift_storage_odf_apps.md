@@ -1,8 +1,8 @@
 ---
 
 copyright:
-  years: 2014, 2024
-lastupdated: "2024-01-03"
+  years: 2014, 2026
+lastupdated: "2026-04-09"
 
 
 keywords: openshift, openshift data foundation, openshift container storage, ocs
@@ -17,10 +17,10 @@ subcollection: openshift
 
 
 
-# Deploying an app on OpenShift Data Foundation
+# Deploying an app on {{site.data.keyword.odf_long}}
 {: #odf-deploy-app}
 
-After you install the OpenShift Data Foundation add-on for your {{site.data.keyword.openshiftlong}} cluster, you can use the ODF storage classes to create a persistent volume claim (PVC). Then, refer to the PVC in your deployment so that your app can save and use data from the underlying ODF storage device.
+After you install the {{site.data.keyword.odf_long}} add-on for your {{site.data.keyword.openshiftlong}} cluster, you can use the ODF storage classes to create a persistent volume claim (PVC). Then, refer to the PVC in your deployment so that your app can save and use data from the underlying ODF storage device.
 {: shortdesc}
 
 Minimum required permissions
@@ -46,7 +46,7 @@ Minimum required permissions
     {: screen}
 
 
-1. Create a PVC that refers to the storage class that you want to use. Save and edit the following PVC configuration file to refer to the storage class that you want to use. If you enabled encryption with {{site.data.keyword.hscrypto}}, you can use the storage class `ocs-storagecluster-ceph-rbd-encrypted` which supports encryption.
+1. Create a PVC that refers to the storage class that you want to use. Save and edit the following PVC configuration file to refer to the storage class that you want to use. If you enabled encryption with {{site.data.keyword.hscrypto}}, you can use the storage class `ocs-storagecluster-ceph-rbd-encrypted`, which supports encryption.
     **Example PVC for using the `ocs-storagecluster-cephfs` storage class.**
     ```yaml
     apiVersion: v1
@@ -140,12 +140,3 @@ Minimum required permissions
         exit
         ```
         {: pre}
-
-
-
-
-
-
-
-
-

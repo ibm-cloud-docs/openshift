@@ -4230,7 +4230,7 @@ subcollection: openshift
 
 * [Update your cluster resource](/docs/openshift?topic=openshift-openshift-storage-update-classic#update-ocs-resource-yaml-classic)
 
-[Deploying an app on OpenShift Data Foundation](/docs/openshift?topic=openshift-odf-deploy-app#odf-deploy-app)
+[Deploying an app on {{site.data.keyword.odf_long}}](/docs/openshift?topic=openshift-odf-deploy-app#odf-deploy-app)
 
 [Setting up trusted profiles for the OpenShift Data Foundation add-on](/docs/openshift?topic=openshift-storage-odf-trusted-profiles#storage-odf-trusted-profiles)
 
@@ -8327,7 +8327,7 @@ subcollection: openshift
 
 [Why can't I push images to the internal registry from outside the VPC network?](/docs/openshift?topic=openshift-ts-app-ocr-vpc-push#ts-app-ocr-vpc-push)
 
-[Why does pod not build with a permission denied error because of security context constraint (SCC)?](/docs/openshift?topic=openshift-ts-app-scc#ts-app-scc)
+[Why does my pod not build with a permission denied error because of security context constraint (SCC)?](/docs/openshift?topic=openshift-ts-app-scc#ts-app-scc)
 
 [Why do images fail to pull from registry with `ImagePullBackOff` or authorization errors?](/docs/openshift?topic=openshift-ts-app-image-pull#ts-app-image-pull)
 
