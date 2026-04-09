@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2026
-lastupdated: "2026-02-18"
+lastupdated: "2026-04-09"
 
 
 keywords: openshift, console, user, error
@@ -21,6 +21,7 @@ content-type: troubleshoot
 {: #ts-cluster-ocp-console}
 
 When you try to access the {{site.data.keyword.openshiftshort}} web console, you see an error message similar to the following example.
+{: tsSymptoms}
 
 ```sh
 Could not find user.

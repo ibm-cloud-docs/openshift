@@ -2,7 +2,7 @@
 
 copyright:
   years: 2022, 2026
-lastupdated: "2026-04-08"
+lastupdated: "2026-04-09"
 
 
 keywords: openshift, ingress, troubleshoot ingress, ingress operator, ingress cluster operator, missing ip addresses, errrna
@@ -22,6 +22,9 @@ content-type: troubleshoot
 {: support}
 
 [Virtual Private Cloud]{: tag-vpc} [Classic infrastructure]{: tag-classic-inf} [{{site.data.keyword.satelliteshort}}]{: tag-satellite}
+
+Learn how to resolve `ERRRNA` errors when one or more routes are not admitted by the Ingress Controller.
+{: shortdesc}
 
 You can use the `ibmcloud oc ingress status-report ignored-errors add` command to add an error to the ignored-errors list. Ignored errors still appear in the output of the `ibmcloud oc ingress status-report get` command, but are ignored when calculating the overall Ingress Status.
 {: tip}

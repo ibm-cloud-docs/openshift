@@ -1,11 +1,11 @@
 ---
 
 copyright:
-  years: 2023, 2024
-lastupdated: "2024-10-30"
+  years: 2023, 2026
+lastupdated: "2026-04-09"
 
 
-keywords: openshift, debug, cloud pak, daemson set, feature gates, failed to set
+keywords: openshift, debug, cloud pak, daemon set, feature gates, failed to set
 
 subcollection: openshift
 content-type: troubleshoot
@@ -20,6 +20,9 @@ content-type: troubleshoot
 {: troubleshoot}
 {: support}
 
+
+Learn how to resolve `failed to set feature gates` errors when upgrading worker nodes in clusters with Cloud Pak installations.
+{: shortdesc}
 
 When you try to upgrade a worker node in a cluster with a Cloud Pak installation, the worker node goes from `Ready` to `Critical` and stays in `Critical`. Check if a ConfigMap exists for the Cloud Pak deployer by running `kubectl get cm cloud-pak-node-fix-config -n kube-system -o yaml`.
 {: tsSymptoms}

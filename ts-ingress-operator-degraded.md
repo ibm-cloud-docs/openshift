@@ -1,8 +1,8 @@
 ---
 
 copyright:
-  years: 2014, 2024
-lastupdated: "2024-03-04"
+  years: 2014, 2026
+lastupdated: "2026-04-09"
 
 
 keywords: openshift
@@ -23,6 +23,8 @@ content-type: troubleshoot
 
 [Virtual Private Cloud]{: tag-vpc} [Classic infrastructure]{: tag-classic-inf}
 
+Learn how to resolve DNS Operator errors related to `RouteHealthDegraded` or `can't marshal DNS message`.
+{: shortdesc}
 
 You receive an error message similar to one of the following.
 {: tsSymptoms}
@@ -81,7 +83,8 @@ Update your cluster master and worker nodes.
     ```
     {: pre}
 
-    Example output
+    Example output:
+    
     ```sh
     NAME READY STATUS RESTARTS AGE
     dns-operator-111aa1aaab-xxxx1 2/2 Running 0 5h49m
@@ -134,13 +137,3 @@ Update your cluster master and worker nodes.
     Address: XXX.XX.XXX.XXX
     ```
     {: codeblock}
-
-
-
-
-
-
-
-
-
-

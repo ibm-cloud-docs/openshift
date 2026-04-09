@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2022, 2026
-lastupdated: "2026-02-20"
+lastupdated: "2026-04-09"
 
 keywords: kubernetes, openshift
 
@@ -29,6 +29,10 @@ Review the following notes and considerations before continuing.
 - Creating a PVC by using [StorageClassSecrets](https://kubernetes-csi.github.io/docs/secrets-and-credentials-storage-class.html){: external} is not supported.
 - Make sure the user who creates the cluster has the Reader, Writer, and Operator permissions for VPC Infrastructure Services.
 - Make sure that you [set up a service authorization](/docs/vpc?topic=vpc-file-s2s-auth&interface=ui) from VPC Infrastructure to KMS/HPCS if you plan to use encryption on your file shares.
+
+IBM Cloud is changing dedicated key management services from Hyper Protect Crypto Services to Key Protect Dedicated.
+{: note}
+
 - By default, {{site.data.keyword.filestorage_vpc_short}} cluster add-on provisions file shares in the `kube-<clusterID>` security group. This means pods can access file shares across nodes and zones.
 - If you are using context-based restrictions, make sure that you configure your network zones and rules. For more information, see [Protecting Virtual Private Cloud (VPC) Infrastructure Services with context-based restrictions](/docs/vpc?topic=vpc-cbr&interface=ui).
 

@@ -3,7 +3,7 @@
 copyright:
   years: 2026, 2026
 
-lastupdated: "2026-04-08"
+lastupdated: "2026-04-09"
 
 
 keywords: change log, version history, 4.20_openshift
@@ -66,7 +66,7 @@ The following table shows the changes that are in the master fix pack 4.20.15_15
 | --- | --- | --- | --- |
 | Calico | v3.30.4 | v3.30.6 | See the [Calico release notes](https://docs.tigera.io/calico/3.30/release-notes/#calico-open-source-3306-bug-fix-release){: external}. |
 | Cluster health image | v1.6.14 | v1.6.15 | New version contains updates and security fixes. |
-| etcd | v3.5.26 | v3.5.27 | See the [etcd release notes](https://github.com/coreos/etcd/releases/v3.5.27){: external}. |
+| etcd | v3.5.26 | v3.5.27 | See the [etcd release notes](https://github.com/etcd-io/etcd/releases/v3.5.27){: external}. |
 | {{site.data.keyword.cloud_notm}} Block Storage driver and plug-in | v2.5.24 | v2.5.25 | New version contains updates and security fixes. |
 | {{site.data.keyword.cloud_notm}} Controller Manager | v1.33.7-7 | v1.33.9-1 | New version contains updates and security fixes. |
 | {{site.data.keyword.filestorage_full_notm}} for Classic plug-in and monitor | 452 | v454 | New version contains updates and security fixes. |
@@ -107,7 +107,7 @@ The following table shows the components included in the worker node fix pack 4.
 |RHEL 9 (VPC)|5.14.0-570.62.1.el9_6|N/A|
 |RHEL 9 (Classic)|5.14.0-570.62.1.el9_6|N/A|
 |Red Hat OpenShift|4.20.15|For more information, see the [change logs](https://docs.redhat.com/en/documentation/openshift_container_platform/4.20/html/release_notes/ocp-4-20-release-notes.html#ocp-4-20-15_release-notes).|
-|Red Hat CoreOS|4.20.15|For more information, see the [change logs](https://docs.redhat.com/en/documentation/openshift_container_platform/4.20/html/release_notes/ocp-4-20-release-notes.html#ocp-4-20-15_release-notes). CIS benchmark compliance [1.1.3.2](https://workbench.cisecurity.org/sections/1594516/recommendations/2564412), [1.1.3.3](https://workbench.cisecurity.org/sections/1594516/recommendations/2564414), [3.4.2](https://workbench.cisecurity.org/benchmarks/11478/sections/1594542), [4.2.2.3](https://workbench.cisecurity.org/sections/1594553/recommendations/2564633)|
+|Red Hat CoreOS|4.20.15|For more information, see the [change logs](https://docs.redhat.com/en/documentation/openshift_container_platform/4.20/html/release_notes/ocp-4-20-release-notes.html#ocp-4-20-15_release-notes). CIS benchmark compliance [1.1.3.2](https://workbench.cisecurity.org/sections/1594516/recommendations/2564412), [1.1.3.3](https://workbench.cisecurity.org/sections/1594516/recommendations/2564414), [3.4.2](https://workbench.cisecurity.org), [4.2.2.3](https://workbench.cisecurity.org/sections/1594553/recommendations/2564633)|
 |HAProxy|965c403695b15b3410d87a3772002edbc5ed2569|Resolves the following CVEs: [CVE-2025-69419](https://nvd.nist.gov/vuln/detail/CVE-2025-69419){: external}.|
 {: caption="4.20.15_1540_openshift fix pack." caption-side="bottom"}
 {: #cl-boms-42015_1540_openshift_W-component-table}

@@ -1,8 +1,8 @@
 ---
 
 copyright:
-  years: 2022, 2025
-lastupdated: "2025-11-18"
+  years: 2022, 2026
+lastupdated: "2026-04-09"
 
 
 keywords: openshift, ingress, troubleshoot ingress, ingress operator, ingress cluster operator, ingress operator degraded, erriodeg
@@ -24,6 +24,9 @@ content-type: troubleshoot
 
 
 [Virtual Private Cloud]{: tag-vpc} [Classic infrastructure]{: tag-classic-inf} [{{site.data.keyword.satelliteshort}}]{: tag-satellite}
+
+Learn how to resolve `ERRIODEG` errors when the Ingress Operator is in a degraded state.
+{: shortdesc}
 
 You can use the `ibmcloud oc ingress status-report ignored-errors add` command to add an error to the ignored-errors list. Ignored errors still appear in the output of the `ibmcloud oc ingress status-report get` command, but are ignored when calculating the overall Ingress Status.
 {: tip}

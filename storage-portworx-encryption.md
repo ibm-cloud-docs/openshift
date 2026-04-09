@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2026
-lastupdated: "2026-04-07"
+lastupdated: "2026-04-09"
 
 
 keywords: portworx, kubernetes, openshift
@@ -62,6 +62,9 @@ If you don't want to use {{site.data.keyword.keymanagementservicelong_notm}} or 
 
 #### Setting up volume encryption with {{site.data.keyword.hscrypto}}
 {: #storage-portworx-encryption-hpcs}
+
+IBM Cloud is changing dedicated key management services from Hyper Protect Crypto Services to Key Protect Dedicated.
+{: note}
 
 1. [Create a service instance](/docs/hs-crypto?topic=hs-crypto-provision&interface=ui).
 

@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2026
-lastupdated: "2026-02-18"
+lastupdated: "2026-04-09"
 
 
 keywords: openshift
@@ -21,8 +21,10 @@ content-type: troubleshoot
 {: #ts_cos_bucket_cluster_create}
 {: support}
 
-**Infrastructure provider**: VPC 
+**Infrastructure provider**: VPC
 
+Learn how to resolve cloud object storage bucket errors when creating a VPC cluster.
+{: shortdesc}
 
 When you create a cluster, you see an error message similar to the following example.
 {: tsSymptoms}

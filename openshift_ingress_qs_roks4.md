@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2026
-lastupdated: "2026-01-16"
+lastupdated: "2026-04-09"
 
 
 keywords: openshift, nginx, ingress controller
@@ -20,6 +20,19 @@ subcollection: openshift
 
 Quickly expose your app to the Internet by creating an Ingress resource.
 {: shortdesc}
+
+## Before you begin
+{: #ingress-qs-prereqs}
+
+- You must have an app deployed in your cluster. If you don't have an app deployed yet, see [Deploying apps in {{site.data.keyword.redhat_openshift_notm}} clusters](/docs/openshift?topic=openshift-deploy_app).
+- Make sure you have the [**Writer** or **Manager** {{site.data.keyword.cloud_notm}} IAM service access role](/docs/openshift?topic=openshift-iam-platform-access-roles) for the cluster.
+- [Access your {{site.data.keyword.redhat_openshift_notm}} cluster](/docs/openshift?topic=openshift-access_cluster).
+
+Not sure whether to use Ingress or Routes? See [Choosing among load balancing solutions](/docs/openshift?topic=openshift-cs_network_planning#load-balancing-comparison).
+{: tip}
+
+## Exposing your app with Ingress
+{: #ingress-qs-steps}
 
 1. Create a Kubernetes `ClusterIP` service for your app deployment.
     ```sh

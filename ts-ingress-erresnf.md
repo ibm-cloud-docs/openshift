@@ -1,8 +1,8 @@
 ---
 
 copyright:
-  years: 2022, 2024
-lastupdated: "2024-10-30"
+  years: 2022, 2026
+lastupdated: "2026-04-09"
 
 
 keywords: openshift, ingress, troubleshoot ingress, ingress operator, ingress cluster operator, external service missing, erresnf
@@ -24,9 +24,11 @@ content-type: troubleshoot
 
 [{{site.data.keyword.satelliteshort}}]{: tag-satellite}
 
+Learn how to resolve `ERRESNF` errors when the external service for the default Ingress Controller is missing.
+{: shortdesc}
+
 You can use the `ibmcloud oc ingress status-report ignored-errors add` command to add an error to the ignored-errors list. Ignored errors still appear in the output of the `ibmcloud oc ingress status-report get` command, but are ignored when calculating the overall Ingress Status.
 {: tip}
-
 
 When you check the status of your cluster's Ingress components by running the `ibmcloud oc ingress status-report get` command, you see an error similar to the following.
 {: tsSymptoms}

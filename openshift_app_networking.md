@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2026
-lastupdated: "2026-04-08"
+lastupdated: "2026-04-09"
 
 
 keywords: openshift, networking
@@ -26,7 +26,7 @@ Securely expose your apps to external traffic by using {{site.data.keyword.redha
 ## Understanding options for exposing apps
 {: #external}
 
-To securely expose your apps to external traffic, you can use choose from the following services.
+To securely expose your apps to external traffic, you can choose from the following services.
 {: shortdesc}
 
 [{{site.data.keyword.redhat_openshift_notm}} Ingress controller](/docs/openshift?topic=openshift-openshift_routes)
@@ -125,7 +125,7 @@ You can't use multiple app exposure methods for one app.
 
 
 | Name | Load-balancing method | Use case | Implementation |
-| --- | --- | --- | --- |
+| ---- | --------------------- | -------- | -------------- |
 | Route | HTTP(S) load balancing that exposes the app with a subdomain and uses custom routing rules | Implement custom routing rules and SSL termination for multiple apps. Choose this method to remain {{site.data.keyword.redhat_openshift_notm}}-native; for example, you can use the {{site.data.keyword.redhat_openshift_notm}} web console to create and manage routes. | [Create a route](/docs/openshift?topic=openshift-openshift_routes#routes-public-classic) by using the default public Ingress controller in clusters with a public cloud service endpoint, or [create a route](/docs/openshift?topic=openshift-openshift_routes#routes-public-vpc-privse) by using a custom public Ingress controller in clusters with a private cloud service endpoint only. | 
 | VPC load balancer | Basic load balancing that exposes the app with a hostname. | Quickly expose one app to the public with a VPC load balancer-assigned hostname. | [Create a public `LoadBalancer` service](/docs/openshift?topic=openshift-vpclb-about){: external} in your cluster. A multizonal VPC load balancer is automatically created in your VPC that assigns a hostname to your `LoadBalancer`service for your app. | 
 | Ingress | HTTP(S) load balancing that exposes the app with a subdomain and uses custom routing rules. | Implement custom routing rules and SSL termination for multiple apps. | [Create an Ingress resource](/docs/openshift?topic=openshift-ingress-public-expose&interface=ui#ingress-public-se) for the default public Ingress controller in clusters with a public cloud service endpoint, or [create an Ingress resource](/docs/openshift?topic=openshift-ingress-public-expose#ingress-public-expose-vpc-private-se) for a custom public Ingress controller in clusters with a private cloud service endpoint only. | 
@@ -164,9 +164,9 @@ Because the default Calico network policies allow inbound public traffic to thes
 
 Check out the following methods for private app networking:
 
-|Name|Load-balancing method|Use case|Implementation|
-|----|---------------------|--------|--------------|
-| Route | HTTP(S) load balancing that exposes the app with a subdomain and uses custom routing rules|Implement custom routing rules and SSL termination for multiple apps. Choose this method to remain {{site.data.keyword.redhat_openshift_notm}}-native; for example, you can use the {{site.data.keyword.redhat_openshift_notm}} web console to create and manage routes.|  \n 1. [Create a `ClusterIP` service](https://kubernetes.io/docs/concepts/services-networking/service/#defining-a-service){: external} to assign an internal IP address to your app.  \n 2. [Create an Ingress controller](/docs/openshift?topic=openshift-openshift_routes#private-routes-setup-43) that is exposed by a private load balancer.  \n 3. [Set up a {{site.data.keyword.redhat_openshift_notm}} route](https://docs.redhat.com/en/documentation/openshift_container_platform/4.20/html/building_applications/deployments#route-based-deployment-strategies){: external}.  \n 4. Customize routing rules with [optional configurations](https://docs.redhat.com/en/documentation/openshift_container_platform/4.20/html/ingress_and_load_balancing/routes){: external}. |
+| Name | Load-balancing method | Use case | Implementation |
+| ---- | --------------------- | -------- | -------------- |
+| Route | HTTP(S) load balancing that exposes the app with a subdomain and uses custom routing rules | Implement custom routing rules and SSL termination for multiple apps. Choose this method to remain {{site.data.keyword.redhat_openshift_notm}}-native; for example, you can use the {{site.data.keyword.redhat_openshift_notm}} web console to create and manage routes. | 1. [Create a `ClusterIP` service](https://kubernetes.io/docs/concepts/services-networking/service/#defining-a-service){: external} to assign an internal IP address to your app. \n 2. [Create an Ingress controller](/docs/openshift?topic=openshift-openshift_routes#private-routes-setup-43) that is exposed by a private load balancer. \n 3. [Set up a {{site.data.keyword.redhat_openshift_notm}} route](https://docs.redhat.com/en/documentation/openshift_container_platform/4.20/html/building_applications/deployments#route-based-deployment-strategies){: external}. \n 4. Customize routing rules with [optional configurations](https://docs.redhat.com/en/documentation/openshift_container_platform/4.20/html/ingress_and_load_balancing/routes){: external}. |
 | NodePort | Port on a worker node that exposes the app on the worker's private IP address|Test private access to one app or provide access for only a short amount of time.|  \n 1. [Create a NodePort service](/docs/openshift?topic=openshift-nodeport).  \n 2. A NodePort service opens a port on a worker node over both the private and public IP address of the worker node. You must use a [Calico preDNAT network policy](/docs/openshift?topic=openshift-network_policies#block_ingress) to block traffic to the public NodePorts. |
 | NLB 1.0 | Basic load balancing that exposes the app with a private IP address|Quickly expose one app to a private network with a private IP address.|  \n 1. [Create a private NLB service](/docs/openshift?topic=openshift-loadbalancer). An NLB with a portable private IP address still has a public node port open on every worker node.  \n 2. Create a [Calico preDNAT network policy](/docs/openshift?topic=openshift-network_policies#block_ingress) to block traffic to the public NodePorts. |
 | NLB v2.0 | DSR load balancing that exposes the app with a private IP address|Expose an app that might receive high levels of traffic to a private network with an IP address.|  \n 1. Complete the [prerequisites](/docs/openshift?topic=openshift-loadbalancer-v2#ipvs_provision).  \n 2. Create a private NLB 2.0 in a [single](/docs/openshift?topic=openshift-loadbalancer-v2#ipvs_single_zone_config) or [multizone](/docs/openshift?topic=openshift-loadbalancer-v2#ipvs_multi_zone_config) cluster. An NLB with a portable private IP address still has a public node port open on every worker node.  \n 3. Create a [Calico preDNAT network policy](/docs/openshift?topic=openshift-network_policies#block_ingress) to block traffic to the public NodePorts. |
@@ -182,8 +182,8 @@ To make an app available over a private network only in a VPC cluster, choose a 
 {: shortdesc}
 
 
-|Name|Load-balancing method|Use case|Implementation|
-|----|---------------------|--------|--------------|
+| Name | Load-balancing method | Use case | Implementation |
+| ---- | --------------------- | -------- | -------------- |
 |Route|HTTP(S) load balancing that exposes the app with a subdomain and uses custom routing rules|Implement custom routing rules and SSL termination for multiple apps. Choose this method to remain {{site.data.keyword.redhat_openshift_notm}}-native; for example, you can use the {{site.data.keyword.redhat_openshift_notm}} web console to create and manage routes.|[Create an Ingress controller by using the default private Ingress controller in clusters with a private cloud service endpoint only](/docs/openshift?topic=openshift-openshift_routes#private-routes-setup-43), or [create a route by using a custom private Ingress controller in clusters with a public cloud service endpoint](/docs/openshift?topic=openshift-openshift_routes#routes-private-vpc-privse).|
 |NodePort|Port on a worker node that exposes the app on the worker's private IP address|Test private access to one app or provide access for only a short amount of time.|[Create a private NodePort service](/docs/openshift?topic=openshift-nodeport).|
 |VPC load balancer|Basic load balancing that exposes the app with a private hostname|Quickly expose one app to a private network with a VPC load balancer-assigned private hostname.|[Create a private `LoadBalancer` service](/docs/openshift?topic=openshift-vpclb-about) in your cluster. A multizonal VPC load balancer is automatically created in your VPC that assigns a hostname to your `LoadBalancer` service for your app.|

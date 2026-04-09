@@ -1,8 +1,8 @@
 ---
 
 copyright:
-  years: 2014, 2024
-lastupdated: "2024-01-03"
+  years: 2014, 2026
+lastupdated: "2026-04-09"
 
 
 keywords: openshift
@@ -24,6 +24,8 @@ content-type: troubleshoot
 
 [Virtual Private Cloud]{: tag-vpc} [Classic infrastructure]{: tag-classic-inf}
 
+Learn how to resolve issues when you can't push or pull Docker images from your local machine to the cluster's built-in Docker registry.
+{: shortdesc}
 
 You can't push or pull Docker images from your local machine to the cluster's built-in Docker registry.
 {: tsSymptoms}
@@ -35,9 +37,3 @@ By default, the Docker registry is available internally within the cluster. You 
 
 Create a route for the image registry service. For more information, see [Setting up a secure external route for the internal registry](/docs/openshift?topic=openshift-registry#route_internal_registry).
 {: tsResolve}
-
-
-
-
-
-

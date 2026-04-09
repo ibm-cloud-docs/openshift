@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2026
-lastupdated: "2026-03-17"
+lastupdated: "2026-04-09"
 
 
 keywords: openshift, openshift data foundation, openshift container storage
@@ -76,7 +76,7 @@ Review the following diagram and table to learn more about OpenShift Data Founda
 ## Multicloud Object Gateway overview
 {: #understanding-noobaa}
 
-The Multicloud Object Gateway consists of the open source tool [NooBaa](https://www.noobaa.io/){: external} and is a component of OpenShift Data Foundation. With the Multicloud Object Gateway, you can manage objects and buckets across cloud providers.
+The Multicloud Object Gateway consists of the open source tool [NooBaa](https://github.com/noobaa/noobaa-core){: external} and is a component of OpenShift Data Foundation. With the Multicloud Object Gateway, you can manage objects and buckets across cloud providers.
 {: shortdesc}
 
 ![Multicloud Object Gateway overview](images/noobaa.svg "NooBaa overview"){: caption="Multicloud Object Gateway overview" caption-side="bottom"}
