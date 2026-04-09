@@ -1,8 +1,8 @@
 ---
 
 copyright:
-  years: 2014, 2025
-lastupdated: "2025-03-28"
+  years: 2014, 2026
+lastupdated: "2026-04-09"
 
 
 keywords: openshift, openshift data foundation, openshift container storage, ocs, classic
@@ -103,6 +103,9 @@ If you want to set up {{site.data.keyword.cos_full_notm}} as the default backing
 {: #odf-create-hscrypto-classic}
 
 If you want to set up encryption, create an instance of {{site.data.keyword.hscrypto}} or {{site.data.keyword.keymanagementserviceshort}}. Then, create a root key, and a Kubernetes secret that uses your {{site.data.keyword.hscrypto}} or {{site.data.keyword.keymanagementserviceshort}} credentials.
+
+IBM Cloud is changing dedicated key management services from Hyper Protect Crypto Services to Key Protect Dedicated.
+{: note}
 
 Your API key for {{site.data.keyword.hscrypto}} or {{site.data.keyword.keymanagementserviceshort}} must have the following minimum required permissions:
 :   `Reader`
