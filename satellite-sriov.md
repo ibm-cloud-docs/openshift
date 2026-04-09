@@ -1,8 +1,8 @@
 ---
 
 copyright:
-  years: 2022, 2024
-lastupdated: "2024-01-03"
+  years: 2022, 2026
+lastupdated: "2026-04-09"
 
 
 keywords: satellite, hybrid, multicloud, sriov, nic, network
@@ -31,14 +31,14 @@ Supported network interface controllers
 
 1. [Create a {{site.data.keyword.satelliteshort}} location](/docs/satellite?topic=satellite-locations).
 1. [Set up your location control plane](/docs/satellite?topic=satellite-setup-control-plane).
-1. [Attach more hosts to your location](/docs/satellite?topic=satellite-attach-hosts) to use as worker nodes in your cluster. The hosts that you want to use as worker nodes must have a [Supported NIC](https://docs.openshift.com/container-platform/4.6/networking/hardware_networks/installing-sriov-operator.html){: exteral}.
+1. [Attach more hosts to your location](/docs/satellite?topic=satellite-attach-hosts) to use as worker nodes in your cluster. The hosts that you want to use as worker nodes must have a [supported NIC](https://docs.openshift.com/container-platform/4.6/networking/hardware_networks/installing-sriov-operator.html){: external}.
 
 ## Installing the SR-IOV network operator
 {: #sriov-install-operator}
 
 [Access your {{site.data.keyword.redhat_openshift_notm}} cluster](/docs/openshift?topic=openshift-access_cluster).
 
-1. Follow the steps to [Install the operator in your cluster](https://docs.openshift.com/container-platform/4.9/networking/hardware_networks/installing-sriov-operator.html#installing-sr-iov-operator_installing-sriov-operator){: external}. Make sure to set the **Update Approval** policy to **Manual**. 
+1. Follow the steps to [install the operator in your cluster](https://docs.openshift.com/container-platform/4.9/networking/hardware_networks/installing-sriov-operator.html#installing-sr-iov-operator_installing-sriov-operator){: external}. Make sure to set the **Update Approval** policy to **Manual**.
 
 1. Get the details of the `ClusterServiceVersion` in the `openshift-sriov-network-operator` namespace.
     ```sh

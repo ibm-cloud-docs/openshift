@@ -31,7 +31,7 @@ You can't push or pull Docker images from your local machine to the cluster's bu
 {: tsSymptoms}
 
 
-By default, the Docker registry is available internally within the cluster. You can build apps from remote directories such as GitHub or DockerHub by using the `oc new-app` command. Or you can expose your Docker registry such as with a route or load balancer so that you can push and pull images from your local machine.
+By default, the Docker registry is available internally within the cluster. You can build apps from remote directories such as GitHub or Docker Hub by using the `oc new-app` command. Or, you can expose your Docker registry such as with a route or load balancer so that you can push and pull images from your local machine.
 {: tsCauses}
 
 

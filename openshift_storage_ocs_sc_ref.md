@@ -1,8 +1,8 @@
 ---
 
 copyright:
-  years: 2014, 2024
-lastupdated: "2024-01-03"
+  years: 2014, 2026
+lastupdated: "2026-04-09"
 
 
 keywords: openshift, openshift data foundation, openshift container storage, storage classes
@@ -67,9 +67,9 @@ The ODF storage classes all support dynamic provisioning and are multizone capab
 | Resiliency | High |
 | Scalability | Multizone |
 | Encryption | At rest |
-{: caption="Ceph FS storage class details." caption-side="bottom"}
+{: caption="Ceph RBD encrypted storage class details." caption-side="bottom"}
 {: #ocs_sc3}
-{: tab-title="ocs-storagecluster-ceph-rbd-encyrpted"}
+{: tab-title="ocs-storagecluster-ceph-rbd-encrypted"}
 {: tab-group="sc_ref"}
 {: class="simple-tab-table"}
 {: summary="The first column contains a feature of the storage class. The second column contains a brief description of the feature."}
@@ -89,18 +89,3 @@ The ODF storage classes all support dynamic provisioning and are multizone capab
 {: tab-group="sc_ref"}
 {: class="simple-tab-table"}
 {: summary="The first column contains a feature of the storage class. The second column contains a brief description of the feature."}
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-

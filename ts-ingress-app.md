@@ -1,8 +1,8 @@
 ---
 
 copyright: 
-  years: 2014, 2024
-lastupdated: "2024-01-03"
+  years: 2014, 2026
+lastupdated: "2026-04-09"
 
 
 keywords: openshift
@@ -38,7 +38,7 @@ First, check that your cluster is fully deployed and has at least 2 worker nodes
 {: tsResolve}
 
 ```sh
-ibmcloud oc worker ls --cluster <cluster_name_or_ID>
+ibmcloud ks worker ls --cluster <cluster_name_or_ID>
 ```
 {: pre}
 
@@ -46,7 +46,3 @@ In your CLI output, make sure that the **Status** of your worker nodes displays 
 
 * If your standard cluster is fully deployed and has at least 2 worker nodes per zone, but no **Ingress Subdomain** is available, see [Why does no Ingress subdomain exist after cluster creation?](/docs/containers?topic=containers-ingress_subdomain).
 * For other issues, troubleshoot your Ingress setup by following the steps in [Debugging Ingress](/docs/openshift?topic=openshift-ingress-debug-roks4).
-
-
-
-
