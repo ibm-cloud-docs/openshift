@@ -1,8 +1,8 @@
 ---
 
 copyright: 
-  years: 2014, 2024
-lastupdated: "2024-01-03"
+  years: 2014, 2026
+lastupdated: "2026-04-10"
 
 
 keywords: openshift
@@ -52,29 +52,33 @@ Before you begin:
 * [Create persistent storage](/docs/openshift?topic=openshift-file_storage#add_file).
 * [Access your {{site.data.keyword.redhat_openshift_notm}} cluster](/docs/openshift?topic=openshift-access_cluster).
 
-Steps:
+Complete the following steps.
 
-1. Copy the `norootsquash` daemon set [deployment YAML file](https://github.com/IBM-Cloud/kube-samples/tree/master/daemonset-sample){: external}
+1. Copy the `norootsquash` daemon set [deployment YAML file](https://github.com/IBM-Cloud/kube-samples/tree/master/daemonset-sample){: external}.
 
-2. Create the `norootsquash` daemon set deployment.
+1. Create the `norootsquash` daemon set deployment.
+
     ```sh
     oc apply -f norootsquash.yaml
     ```
     {: pre}
 
-3. Get the name of the pod that your storage volume is mounted to. This pod is not the same as the `norootsquash`  pods.
+1. Get the name of the pod that your storage volume is mounted to. This pod is not the same as the `norootsquash` pods.
+
     ```sh
     oc get pods
     ```
     {: pre}
 
-4. Log in to the pod.
+1. Log in to the pod.
+
     ```sh
     oc exec -it mypod /bin/bash
     ```
     {: pre}
 
-5. Verify that the permissions to the mount path are `root`.
+1. Verify that the permissions to the mount path are `root`.
+
     ```sh
     root@mypod:/# ls -al /mnt/myvol/
     total 8
@@ -83,19 +87,13 @@ Steps:
     ```
     {: pre}
 
-    This output shows that the UID in the first row is now owned by `root` (instead of previously `nobody`).
+    This output shows that the UID in the first row is now owned by `root` (instead of `nobody`).
 
-6. If the UID is owned by `nobody`, exit the pod and reboot your cluster's worker nodes. Wait for the nodes to reboot.
+1. If the UID is owned by `nobody`, exit the pod and reboot your cluster's worker nodes. Wait for the nodes to reboot.
+
     ```sh
     ibmcloud oc worker reboot --cluster <my_cluster> --worker <my_worker1>,<my_worker2>
     ```
     {: pre}
 
-7. Repeat Steps 4 and 5 to verify the permissions.
-
-
-
-
-
-
-
+1. Repeat steps 4 and 5 to verify the permissions.

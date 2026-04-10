@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2026
-lastupdated: "2026-04-08"
+lastupdated: "2026-04-10"
 
 
 keywords: openshift, cli reference, kubernetes cli, openshift cli, {{site.data.keyword.openshiftlong_notm}}
@@ -2843,10 +2843,10 @@ ibmcloud oc worker reboot --cluster my_cluster -w kube-dal10-cr18a61a63a6a94b658
 ### `ibmcloud oc worker reload`
 {: #cs_worker_reload}
 
-[Classic infrastructure]{: tag-classic-inf}
+[Classic infrastructure]{: tag-classic-inf} [Virtual Private Cloud]{: tag-vpc}
 
 
-Reload the configurations for a Classic worker node. To reload a worker node in a VPC cluster, use the [**`ibmcloud oc worker replace`** command](#cli_worker_replace) instead.
+Delete the data, reimage, and reinstall Kubernetes with the latest patch version on one or more worker nodes. This action cannot be undone. Classic nodes and bare metal VPC nodes are supported.
 {: shortdesc}
 
 A reload can be useful if your worker node experiences problems, such as slow performance or if your worker node is stuck in an unhealthy state. During the reload, your worker node machine is updated with the latest image and data is deleted if not [stored outside the worker node](/docs/openshift?topic=openshift-storage-plan). The worker node public and private IP address remain the same after the reload operation.
@@ -2874,7 +2874,7 @@ Before you reload your worker node, make sure that you have enough capacity in o
 
 
 ```sh
-ibmcloud oc worker reload --cluster CLUSTER --worker WORKER_ID [--skip-master-healthcheck] [-f] [-q]
+ibmcloud oc worker reload --worker WORKER_ID [--worker WORKER_ID ...] [--skip-master-healthcheck] [-f] [-q]
 ```
 {: pre}
 
@@ -2882,9 +2882,6 @@ Minimum required permissions
 :   **Operator** platform access role for the cluster in {{site.data.keyword.containerlong_notm}}
 
 **Command options**:
-
-`-c`, `--cluster CLUSTER`
-:    Required: The name or ID of the cluster.
 
 `-w, --worker WORKER`
 :    Specify a worker node ID. To reload multiple worker nodes, use multiple options, such as `-w worker1_id -w worker2_id`.

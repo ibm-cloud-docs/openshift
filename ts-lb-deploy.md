@@ -1,8 +1,8 @@
 ---
 
 copyright: 
-  years: 2014, 2024
-lastupdated: "2024-01-03"
+  years: 2014, 2026
+lastupdated: "2026-04-10"
 
 
 keywords: openshift
@@ -56,7 +56,9 @@ Then, [create a cluster](/docs/openshift?topic=openshift-kubernetes-service-cli#
 If you have another VLAN that is available, you can [set up VLAN spanning](/docs/vlans?topic=vlans-vlan-spanning#vlan-spanning) in your existing cluster. After, you can add new worker nodes to the cluster that use the other VLAN with available subnets. To check if VLAN spanning is already enabled, use the `ibmcloud oc vlan spanning get --region <region>` [command](/docs/openshift?topic=openshift-kubernetes-service-cli#cs_vlan_spanning_get).
 
 If you are not using all the subnets in the VLAN, you can reuse subnets on the VLAN by adding them to your cluster.
+
 1. Check that the subnet that you want to use is available.
+
     The infrastructure account that you use might be shared across multiple {{site.data.keyword.cloud_notm}} accounts. In this case, even if you run the `ibmcloud oc subnets` command to see subnets with **Bound Clusters**, you can see information only for your clusters. Check with the infrastructure account owner to make sure that the subnets are available and not in use by any other account or team.
     {: note}
 
@@ -83,7 +85,3 @@ If you are not using all the subnets in the VLAN, you can reuse subnets on the V
     oc get svc -n kube-system
     ```
     {: pre}
-
-
-
-

@@ -1,8 +1,8 @@
 ---
 
 copyright: 
-  years: 2014, 2024
-lastupdated: "2024-01-03"
+  years: 2014, 2026
+lastupdated: "2026-04-10"
 
 
 keywords: openshift
@@ -45,21 +45,17 @@ Warning  ProvisioningFailed  23s (x3 over 83s)     ibm.io/ibmc-s3fs_ibmcloud-obj
 You might have used the wrong storage class to access your existing bucket, you tried to access a bucket that you did not create, or there has been a change in the endpoints that are used in the storage class. You can't access a bucket that you did not create.
 {: tsCauses}
 
-
-Verify your bucket details and storage class and recreate your PVC.
+Verify your bucket details and storage class, then recreate your PVC.
 {: tsResolve}
 
 1. From the [{{site.data.keyword.cloud_notm}} dashboard](https://cloud.ibm.com/){: external}, select your {{site.data.keyword.cos_full_notm}} service instance.
+
 1. Select **Buckets**.
+
 1. Review the **Class** and **Location** information for your existing bucket.
+
 1. Choose the appropriate [storage class](/docs/openshift?topic=openshift-storage_cos_reference).
+
 1. Make sure that you provide the correct name of your existing bucket.
-1. Update the PVC yaml with `ibm.io/endpoint: <regional-endpoint>` value.
 
-
-
-
-
-
-
-
+1. Update the PVC YAML with the `ibm.io/endpoint: <regional-endpoint>` value.

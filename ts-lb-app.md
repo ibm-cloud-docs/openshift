@@ -1,8 +1,8 @@
 ---
 
 copyright: 
-  years: 2014, 2024
-lastupdated: "2024-01-03"
+  years: 2014, 2026
+lastupdated: "2026-04-10"
 
 
 keywords: openshift
@@ -41,7 +41,7 @@ Your NLB service might not be working properly for one of the following reasons:
 
 
 Check that you set up a standard cluster that is fully deployed and has at least two worker nodes to ensure high availability for your NLB service.
-{: tsResolve} 
+{: tsResolve}
 
 1. List your worker nodes. In your CLI output, make sure that the **Status** of your worker nodes displays **Ready** and that the **Machine Type** shows a flavor other than **free**.
 
@@ -69,7 +69,7 @@ Check that you set up a standard cluster that is fully deployed and has at least
           ports:
            - protocol: TCP
              port: 8080
-             targetPort: 8080 # Optional. By default, the `targetPort` is set to match the `port` value unless specified otherwise. 
+             targetPort: 8080 # Optional. By default, the `targetPort` is set to match the `port` value unless specified otherwise.
           externalTrafficPolicy: Local
         ```
         {: screen}
@@ -94,7 +94,7 @@ Check that you set up a standard cluster that is fully deployed and has at least
           ports:
            - protocol: TCP
              port: 8080
-             targetPort: 8080 # Optional. By default, the `targetPort` is set to match the `port` value unless specified otherwise. 
+             targetPort: 8080 # Optional. By default, the `targetPort` is set to match the `port` value unless specified otherwise.
         ```
         {: screen}
 
@@ -111,20 +111,20 @@ Check that you set up a standard cluster that is fully deployed and has at least
 
     Look for the following error messages.
 
-    Clusters with one node must use services of type NodePort
-    :   To use the NLB service, you must have a standard cluster with at least two worker nodes.
-    
-    No cloud provider IPs are available to fulfill the NLB service request. Add a portable subnet to the cluster and try again.
-    :   This error message indicates that no portable public IP addresses remaining to be allocated to your NLB service. Refer to [Adding subnets to clusters](/docs/openshift?topic=openshift-subnets#subnets) to find information about how to request portable public IP addresses for your cluster. After portable public IP addresses are available to the cluster, the NLB service is automatically created.
-    
-    Requested cloud provider IP `<cloud-provider-ip>` is not available. The following cloud provider IPs are available: `<available-cloud-provider-ips>`
-    :   You defined a portable public IP address for your load balancer YAML by using the `loadBalancerIP` section, but this portable public IP address is not available in your portable public subnet. In the `loadBalancerIP` section your configuration script, remove the existing IP address and add one of the available portable public IP addresses. You can also remove the `loadBalancerIP` section from your script so that an available portable public IP address can be allocated automatically.
-    
-    No available nodes for NLB services
-    :   You don't have enough worker nodes to deploy an NLB service. One reason might be that you deployed a standard cluster with more than one worker node, but the provisioning of the worker nodes failed.
-        1. List available worker nodes by running `oc get nodes`.
-        2. If at least two available worker nodes are found, list the worker node details by running `ibmcloud oc worker get --cluster <cluster_name_or_ID> --worker <worker_ID>`.
-        3. Make sure that the public and private VLAN IDs for the worker nodes that were returned by the `oc get nodes` and the `ibmcloud oc worker get` commands match.
+Clusters with one node must use services of type NodePort
+:   To use the NLB service, you must have a standard cluster with at least two worker nodes.
+
+No cloud provider IPs are available to fulfill the NLB service request. Add a portable subnet to the cluster and try again.
+:   This error message indicates that no portable public IP addresses remain to be allocated to your NLB service. Refer to [Adding subnets to clusters](/docs/openshift?topic=openshift-subnets#subnets) to find information about how to request portable public IP addresses for your cluster. After portable public IP addresses are available to the cluster, the NLB service is automatically created.
+
+Requested cloud provider IP `<cloud-provider-ip>` is not available. The following cloud provider IPs are available: `<available-cloud-provider-ips>`
+:   You defined a portable public IP address for your load balancer YAML by using the `loadBalancerIP` section, but this portable public IP address is not available in your portable public subnet. In the `loadBalancerIP` section of your configuration script, remove the existing IP address and add one of the available portable public IP addresses. You can also remove the `loadBalancerIP` section from your script so that an available portable public IP address can be allocated automatically.
+
+No available nodes for NLB services
+:   You don't have enough worker nodes to deploy an NLB service. One reason might be that you deployed a standard cluster with more than one worker node, but the provisioning of the worker nodes failed.
+    1. List available worker nodes by running `oc get nodes`.
+    2. If at least two available worker nodes are found, list the worker node details by running `ibmcloud oc worker get --cluster <cluster_name_or_ID> --worker <worker_ID>`.
+    3. Make sure that the public and private VLAN IDs for the worker nodes that were returned by the `oc get nodes` and the `ibmcloud oc worker get` commands match.
 
 5. If you use a custom domain to connect to your NLB service, make sure that your custom domain is mapped to the public IP address of your NLB service.
     1. Find the public IP address of your NLB service.
@@ -134,7 +134,3 @@ Check that you set up a standard cluster that is fully deployed and has at least
         {: pre}
 
     2. Check that your custom domain is mapped to the portable public IP address of your NLB service in the Pointer record (PTR).
-
-
-
-

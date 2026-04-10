@@ -1,8 +1,8 @@
 ---
 
 copyright: 
-  years: 2014, 2024
-lastupdated: "2024-01-03"
+  years: 2014, 2026
+lastupdated: "2026-04-10"
 
 
 keywords: openshift
@@ -63,20 +63,15 @@ Remove and reinstall the Helm chart with increased resource requests and limits.
 {: tsResolve}
 
 1. Remove the Helm chart.
+
     ```sh
     helm uninstall <release_name> iks-charts/ibmcloud-block-storage-plugin -n <namespace>
     ```
     {: pre}
 
-2. Reinstall the Helm chart and increase the resource requests and limits by using the `--set` option when running `helm install`. The following example command sets the `plugin.resources.requests.memory` value to `200Mi` and the `plugin.resources.requests.cpu` value to `100m`. You can pass multiple values by using the `--set` option for each value that you want to pass.
+1. Reinstall the Helm chart and increase the resource requests and limits by using the `--set` option when running `helm install`. The following example command sets the `plugin.resources.requests.memory` value to `200Mi` and the `plugin.resources.requests.cpu` value to `100m`. You can pass multiple values by using the `--set` option for each value that you want to pass.
 
     ```sh
     helm install <release_name> iks-charts/ibmcloud-block-storage-plugin -n <namespace> --set plugin.resources.requests.memory=200Mi --set plugin.resources.requests.cpu=100m
     ```
     {: pre}
-
-
-
-
-
-

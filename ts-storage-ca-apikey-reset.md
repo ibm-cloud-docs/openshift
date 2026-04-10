@@ -1,8 +1,8 @@
 ---
 
 copyright: 
-  years: 2014, 2024
-lastupdated: "2024-01-03"
+  years: 2014, 2026
+lastupdated: "2026-04-10"
 
 
 keywords: openshift, storage
@@ -24,19 +24,17 @@ content-type: troubleshoot
 {: #ts-storage-ca-apikey-reset}
 {: support}
 
-**Infrastructure provider**:
-VPC
+**Infrastructure provider**: VPC
 
 
 After you reset your API key, autoscaling fails with an IAM permission error.
 {: tsSymptoms}
 
 
-Resetting your API key means the credentials the cluster autoscaler add-on uses is no longer valid. After resetting your API key, you must reset the cluster autoscaler controller to use the latest API key for volume provisioning.
+Resetting your API key means the credentials that the cluster autoscaler add-on uses are no longer valid. After resetting your API key, you must reset the cluster autoscaler controller to use the latest API key for volume provisioning.
 {: tsCauses}
 
-
-After resetting your API key, you must re-create the cluster autoscaler controller pod. To re-create the controller pod, delete it by running the following command:
+After resetting your API key, you must re-create the cluster autoscaler controller pod. To re-create the controller pod, delete it by running the following commands.
 {: tsResolve}
 
 1. Get the autoscaler pod name.
@@ -52,10 +50,3 @@ After resetting your API key, you must re-create the cluster autoscaler controll
     oc delete pod -n kube-system cluster-autoscaler-pod
     ```
     {: pre}
-
-
-
-
-
-
-

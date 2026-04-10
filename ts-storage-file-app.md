@@ -1,8 +1,8 @@
 ---
 
 copyright: 
-  years: 2014, 2024
-lastupdated: "2024-01-03"
+  years: 2014, 2026
+lastupdated: "2026-04-10"
 
 
 keywords: openshift
@@ -49,15 +49,8 @@ When you mount a PVC to your pod, you might experience errors when accessing or 
 3. Review common errors that can occur when you mount a PVC to a pod.
 
 | Symptom or error message | Description | Steps to resolve |
-| --- | --- | --- |
-| Your pod is stuck in a `ContainerCreating` state. `MountVolume.SetUp failed for volume ... read-only file system`. | The {{site.data.keyword.cloud_notm}} infrastructure back end experienced network problems. To protect your data and to avoid data corruption, {{site.data.keyword.cloud_notm}} automatically disconnected the file storage server to prevent write operations on NFS file shares. | See [File storage: File systems for worker nodes change to read-only](/docs/openshift?topic=openshift-readonly_nodes) |
+|--------------------------|-------------|------------------|
+| Your pod is stuck in a `ContainerCreating` state. `MountVolume.SetUp failed for volume ... read-only file system` | The {{site.data.keyword.cloud_notm}} infrastructure back end experienced network problems. To protect your data and to avoid data corruption, {{site.data.keyword.cloud_notm}} automatically disconnected the file storage server to prevent write operations on NFS file shares. | See [File storage: File systems for worker nodes change to read-only](/docs/openshift?topic=openshift-readonly_nodes) |
 | `write-permission` `don't have required permission` `can't create directory '/bitnami/mariadb/data': Permission denied` | In your deployment, you specified a non-root user to own the NFS file storage mount path. By default, non-root users don't have write permission on the volume mount path for NFS-backed storage. | See [File storage: App fails when a non-root user owns the NFS file storage mount path](/docs/openshift?topic=openshift-nonroot) |
 | After you specified a non-root user to own the NFS file storage mount path or deployed a Helm chart with a non-root user ID specified, the user can't write to the mounted storage. | The deployment or Helm chart configuration specifies the security context for the pod's `fsGroup` (group ID) and `runAsUser` (user ID) | See [File storage: Adding non-root user access to persistent storage fails](/docs/openshift?topic=openshift-cs_storage_nonroot) |
-{: caption="{{site.data.keyword.filestorage_short}} error messages" caption-side="bottom"}
-
-
-
-
-
-
-
+{: caption="File storage error messages" caption-side="bottom"}
