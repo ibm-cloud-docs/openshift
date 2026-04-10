@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2026
-lastupdated: "2026-04-09"
+lastupdated: "2026-04-10"
 
 
 keywords: openshift, openshift data foundation, openshift container storage, ocs
@@ -17,10 +17,10 @@ subcollection: openshift
 
 
 
-# Deploying an app on {{site.data.keyword.odf_long}}
+# Deploying an app on OpenShift Data Foundation
 {: #odf-deploy-app}
 
-After you install the {{site.data.keyword.odf_long}} add-on for your {{site.data.keyword.openshiftlong}} cluster, you can use the ODF storage classes to create a persistent volume claim (PVC). Then, refer to the PVC in your deployment so that your app can save and use data from the underlying ODF storage device.
+After you install the OpenShift Data Foundation add-on for your {{site.data.keyword.openshiftlong}} cluster, you can use the ODF storage classes to create a persistent volume claim (PVC). Then, refer to the PVC in your deployment so that your app can save and use data from the underlying ODF storage device.
 {: shortdesc}
 
 Minimum required permissions
