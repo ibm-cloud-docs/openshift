@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2026
-lastupdated: "2026-04-09"
+lastupdated: "2026-04-10"
 
 
 keywords: openshift
@@ -119,7 +119,7 @@ Check that your cluster is set up properly. If you just created your cluster, wa
 
     3. [Update the worker nodes](/docs/openshift?topic=openshift-update#worker_node) to match the cluster master version.
         ```sh
-        ibmcloud oc worker update -c <cluster_name_or_ID> -w <worker1_ID> -w <worker2_ID> -w<worker3_ID>
+        ibmcloud oc worker update -c <cluster_name_or_ID> -w <worker1_ID> -w <worker2_ID> -w <worker3_ID>
         ```
         {: pre}
 

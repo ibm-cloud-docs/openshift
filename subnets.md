@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2026
-lastupdated: "2026-01-30"
+lastupdated: "2026-04-10"
 
 
 keywords: openshift
@@ -175,7 +175,7 @@ To create a cluster by using existing subnets:
 1. Get the subnet ID and the ID of the VLAN that the subnet is on.
 
     ```sh
-    ibmcloud oc subnets --provider classic
+    ibmcloud oc subnets --provider PROVIDER
     ```
     {: pre}
 
