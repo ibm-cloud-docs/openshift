@@ -2,7 +2,7 @@
 
 copyright:
   years: 2025, 2026
-lastupdated: "2026-04-08"
+lastupdated: "2026-04-10"
 
 
 keywords: openshift
@@ -213,7 +213,7 @@ To resolve this issue:
     ```
     {: pre}
 
-2. Increase the [`PEERPODS_LIMIT_PER_NODE`](/docs/openshift?topic=openshift-confidential-containers#peerpods-limit) value in the [`peer-pods-cm`](/docs/openshift?topic=openshift-confidential-containers#peer-pods-cm) ConfigMap.
+2. Increase the `PEERPODS_LIMIT_PER_NODE` value in the `peer-pods-cm` ConfigMap. For more information, see [Creating confidential containers](/docs/openshift?topic=openshift-confidential-containers).
 
     ```bash
     oc -n openshift-sandboxed-containers-operator patch cm peer-pods-cm \

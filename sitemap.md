@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2026
-lastupdated: "2026-04-09"
+lastupdated: "2026-04-10"
 
 
 keywords: openshift
@@ -4238,7 +4238,7 @@ subcollection: openshift
 
 * [Setting up trusted profiles for ODF](/docs/openshift?topic=openshift-storage-odf-trusted-profiles#odf-setup-trusted)
 
-    * [Automatically creating a secret by using a Shell script](/docs/openshift?topic=openshift-storage-odf-trusted-profiles#odf-secret-create-truted-profile)
+    * [Automatically creating a secret by using a Shell script](/docs/openshift?topic=openshift-storage-odf-trusted-profiles#odf-secret-create-trusted-profile)
 
 [ODF: Migrating from HPCS to Key Protect](/docs/openshift?topic=openshift-migrate_hpcs_kp_odf#migrate_hpcs_kp_odf)
 

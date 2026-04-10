@@ -1,8 +1,8 @@
 ---
 
 copyright:
-  years: 2025, 2025
-lastupdated: "2025-09-17"
+  years: 2025, 2026
+lastupdated: "2026-04-10"
 
 
 keywords: openshift, virtualization, oc virt
@@ -80,9 +80,9 @@ To install ODF, see [Deploying OpenShift Data Foundation on VPC clusters](/docs/
 
 1. Wait a few minutes for the changes to take effect.
 
-1. [Subscribe to the OpenShift Virtualization catalog by using the CLI](https://docs.openshift.com/container-platform/4.17/virt/install/installing-virt.html#virt-subscribing-cli_installing-virt){: external}.
+1. [Subscribe to the OpenShift Virtualization catalog by using the CLI](https://docs.redhat.com/en/documentation/openshift_container_platform/4.17/html/virtualization/installing#virt-subscribing-cli_installing-virt){: external}.
 
-1. Follow the steps to [Deploy the OpenShift Virtualization Operator by using the CLI](https://docs.openshift.com/container-platform/4.17/virt/install/installing-virt.html#installing-virt-operator-cli_installing-virt){: external}.
+1. Follow the steps to [Deploy the OpenShift Virtualization Operator by using the CLI](https://docs.redhat.com/en/documentation/openshift_container_platform/4.17/html/virtualization/installing#installing-virt-operator-cli_installing-virt){: external}.
 
 1. Wait until `StorageProfile` resources are created for each StorageClass. As CDI does not automatically recognize VPC File storage properties, you need to properly set it up.
 
@@ -110,6 +110,6 @@ To install ODF, see [Deploying OpenShift Data Foundation on VPC clusters](/docs/
 
 Review the following Red Hat docs for creating and managing VMs in your cluster.
 
-- [Creating virtual machines from Red Hat images overview](https://docs.openshift.com/container-platform/4.17/virt/virtual_machines/creating_vms_rh/virt-creating-vms-from-rh-images-overview.html){: external}.
+- [Creating virtual machines from Red Hat images overview](https://docs.redhat.com/en/documentation/openshift_container_platform/4.17/html/virtualization/virtual-machines#virt-creating-vms-from-rh-images-overview){: external}.
 - [Creating virtual machines from the command line](https://docs.redhat.com/en/documentation/openshift_container_platform/4.17/html/virtualization/virtual-machines#virt-creating-vms-from-cli){: external}.
-- [Connecting to virtual machine consoles](https://docs.openshift.com/container-platform/4.17/virt/virtual_machines/virt-accessing-vm-consoles.html){: external}.
+- [Connecting to virtual machine consoles](https://docs.redhat.com/en/documentation/openshift_container_platform/4.17/html/virtualization/virtual-machines#virt-accessing-vm-consoles){: external}.

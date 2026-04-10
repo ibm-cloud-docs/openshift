@@ -2,7 +2,7 @@
 
 copyright:
   years: 2025, 2026
-lastupdated: "2026-03-27"
+lastupdated: "2026-04-10"
 
 
 keywords: rhel, os, operating system, rhcos, 418, migration, deprecation
@@ -50,5 +50,5 @@ Review and complete the following steps for migration.
 3. Work with your CSM or TAM if one is assigned to your account.
 1. Complete the migration steps that apply to your use case.
     - [Migrating VPC worker nodes to RHCOS](/docs/openshift?topic=openshift-rhel_migrate).
-    - [Migrating GPU worker nodes to RHCOS](/docs/openshift?topic=openshift-rhel_migrate#rhcos-migrate-gpu).
+    - [Migrating GPU worker nodes to RHCOS](/docs/openshift?topic=openshift-rhel_migrate).
 1. Verify your migration.

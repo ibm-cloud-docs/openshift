@@ -2,7 +2,7 @@
 
 copyright:
   years: 2023, 2026
-lastupdated: "2026-02-11"
+lastupdated: "2026-04-10"
 
 
 keywords: openshift, openshift data foundation, openshift container storage, trusted profile
@@ -71,7 +71,7 @@ You can use trusted profiles for ODF to limit the access that running pods in yo
 
 1. After you create your trusted profile, copy the ID from the **Trusted profiles** page in the console.
 
-1. Decide if you want to use the **Profile ID** or an **API key** in the Kubernetes secret that the add-on uses. You can create the secret by using the ID or API key for the trusted profile. Save the following text and enter your credentials. You can follow the steps to create the secret manually or you can use the shell script to [automatically create the secret in your cluster](#odf-secret-create-truted-profile).
+1. Decide if you want to use the **Profile ID** or an **API key** in the Kubernetes secret that the add-on uses. You can create the secret by using the ID or API key for the trusted profile. Save the following text and enter your credentials. You can follow the steps to create the secret manually or you can use the shell script to [automatically create the secret in your cluster](#odf-secret-create-trusted-profile).
 
 
     Example credentials with pod identity:
@@ -128,7 +128,7 @@ You can use trusted profiles for ODF to limit the access that running pods in yo
     {: pre}
 
 ### Automatically creating a secret by using a Shell script
-{: #odf-secret-create-truted-profile}
+{: #odf-secret-create-trusted-profile}
 
 1. Follow the steps to [create a trusted profile](/docs/account?topic=account-create-trusted-profile&interface=ui). In the **Conditions** for the profile, be sure to specify the following access.
     * Allow access when **Namespace** equals `kube-system`
