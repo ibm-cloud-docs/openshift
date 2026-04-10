@@ -2,7 +2,7 @@
 
 copyright:
   years: 2022, 2026
-lastupdated: "2026-04-09"
+lastupdated: "2026-04-10"
 
 
 keywords: satellite, hybrid, multicloud, sriov, nic, network
@@ -20,25 +20,25 @@ subcollection: openshift
 
 [{{site.data.keyword.satelliteshort}}]{: tag-satellite}
 
-Single Root I/O Virtualization (SR-IOV) allows you to share a single, supported network device with multiple pods in your {{site.data.keyword.satelliteshort}} cluster. You can enable SR-IOV in your cluster by installing and configuring the SR-IOV network operator. For more information about SR-IOV, see [About Single Root I/O Virtualization (SR-IOV) hardware networks](https://docs.openshift.com/container-platform/4.6/networking/hardware_networks/about-sriov.html){: external}.
+Single Root I/O Virtualization (SR-IOV) allows you to share a single, supported network device with multiple pods in your {{site.data.keyword.satelliteshort}} cluster. You can enable SR-IOV in your cluster by installing and configuring the SR-IOV network operator. For more information about SR-IOV, see [About Single Root I/O Virtualization (SR-IOV) hardware networks](https://docs.redhat.com/en/documentation/openshift_container_platform/4.6/html/networking/hardware-networks#about-sriov){: external}.
 {: shortdesc}
 
 Supported network interface controllers
-:   The SR-IOV Network Operator can be used with supported network interface controllers (NICs) only. For more information, see [Supported NICs](https://docs.openshift.com/container-platform/4.6/networking/hardware_networks/installing-sriov-operator.html).
+:   The SR-IOV Network Operator can be used with supported network interface controllers (NICs) only. For more information, see [Supported NICs](https://docs.redhat.com/en/documentation/openshift_container_platform/4.6/html/networking/hardware-networks#installing-sriov-operator).
 
 ## Prerequisites for using SR-IOV
 {: #sriov-prereqs}
 
 1. [Create a {{site.data.keyword.satelliteshort}} location](/docs/satellite?topic=satellite-locations).
 1. [Set up your location control plane](/docs/satellite?topic=satellite-setup-control-plane).
-1. [Attach more hosts to your location](/docs/satellite?topic=satellite-attach-hosts) to use as worker nodes in your cluster. The hosts that you want to use as worker nodes must have a [supported NIC](https://docs.openshift.com/container-platform/4.6/networking/hardware_networks/installing-sriov-operator.html){: external}.
+1. [Attach more hosts to your location](/docs/satellite?topic=satellite-attach-hosts) to use as worker nodes in your cluster. The hosts that you want to use as worker nodes must have a [supported NIC](https://docs.redhat.com/en/documentation/openshift_container_platform/4.6/html/networking/hardware-networks#installing-sriov-operator){: external}.
 
 ## Installing the SR-IOV network operator
 {: #sriov-install-operator}
 
 [Access your {{site.data.keyword.redhat_openshift_notm}} cluster](/docs/openshift?topic=openshift-access_cluster).
 
-1. Follow the steps to [install the operator in your cluster](https://docs.openshift.com/container-platform/4.9/networking/hardware_networks/installing-sriov-operator.html#installing-sr-iov-operator_installing-sriov-operator){: external}. Make sure to set the **Update Approval** policy to **Manual**.
+1. Follow the steps to [install the operator in your cluster](https://docs.redhat.com/en/documentation/openshift_container_platform/4.9/html/networking/hardware-networks#installing-sr-iov-operator_installing-sriov-operator){: external}. Make sure to set the **Update Approval** policy to **Manual**.
 
 1. Get the details of the `ClusterServiceVersion` in the `openshift-sriov-network-operator` namespace.
     ```sh
@@ -89,7 +89,7 @@ Supported network interface controllers
    
 1. Save and close the DaemonSet.
 
-1. You can now begin [configuring your SRIOV-enabled network device](https://docs.openshift.com/container-platform/4.6/networking/hardware_networks/configuring-sriov-device.html){: external}.
+1. You can now begin [configuring your SRIOV-enabled network device](https://docs.redhat.com/en/documentation/openshift_container_platform/4.6/html/networking/hardware-networks#configuring-sriov-device){: external}.
 
 The default Calico network interface for pod-to-pod network is always present in all pod networking stacks, including pods that have an SR-IOV network attachment. This means, that in such pods, the Calico network interface is also present next to SR-IOV virtual interfaces. Also, the Calico interface provides the default gateway for IP routing.
 {: note}

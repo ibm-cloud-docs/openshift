@@ -2,7 +2,7 @@
 
 copyright:
   years: 2026, 2026
-lastupdated: "2026-03-27"
+lastupdated: "2026-04-10"
 
 
 keywords: rhel, os, operating system, rhcos, 418, migration, satellite
@@ -85,7 +85,7 @@ See [Adding a zone to a worker pool in a VPC cluster](/docs/openshift?topic=open
 If you have software-defined storage (SDS) solutions like OpenShift Data Foundation or Portworx, update your storage configurations to include the new worker nodes and verify your workloads before removing your RHEL worker nodes.
 {: important}
 
-For more information about rescheduling workloads, see [Safely Drain a Node](https://kubernetes.io/docs/tasks/administer-cluster/safely-drain-node/){: external} in the Kubernetes docs or [Understanding how to evacuate pods on nodes](https://docs.openshift.com/container-platform/4.9/nodes/nodes/nodes-nodes-working.html){: external} in the {{site.data.keyword.redhat_openshift_notm}} docs.
+For more information about rescheduling workloads, see [Safely Drain a Node](https://kubernetes.io/docs/tasks/administer-cluster/safely-drain-node/){: external} in the Kubernetes docs or [Understanding how to evacuate pods on nodes](https://docs.redhat.com/en/documentation/openshift_container_platform/4.9/html/nodes/working-with-nodes#nodes-nodes-working){: external} in the {{site.data.keyword.redhat_openshift_notm}} docs.
 {: tip}
 
 * Migrate per pod by cordoning node and deleting individual pods.

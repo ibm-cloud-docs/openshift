@@ -532,7 +532,7 @@ The number of peer pods you can run per worker node is controlled by multiple li
 
 To increase the `PEERPODS_LIMIT_PER_NODE` value:
 
-1. Update the [`peer-pods-cm`](/docs/openshift?topic=openshift-confidential-containers#peer-pods-cm) ConfigMap in the `openshift-sandboxed-containers-operator` namespace.
+1. Update the `peer-pods-cm` ConfigMap in the `openshift-sandboxed-containers-operator` namespace. For more information, see [Creating confidential containers](/docs/openshift?topic=openshift-confidential-containers).
 
     ```sh
     oc -n openshift-sandboxed-containers-operator patch cm peer-pods-cm \

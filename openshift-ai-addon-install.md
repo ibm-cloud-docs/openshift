@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2024, 2026
-lastupdated: "2026-04-08"
+lastupdated: "2026-04-10"
 
 
 keywords: openshift, {{site.data.keyword.openshiftlong_notm}}, ai, add-on
@@ -217,7 +217,7 @@ Install the Red Hat OpenShift AI add-on with the UI.
 ## Step 4: Access the OpenShift AI dashboard
 {: #ai-dashboard}
 
-After you install the OpenShift AI add-on, you can access the [OpenShift AI dashboard](https://docs.redhat.com/en/documentation/red_hat_openshift_ai_cloud_service/1/html/getting_started_with_red_hat_openshift_ai_cloud_service/logging-in_get-started){: external}.
+After you install the OpenShift AI add-on, you can access the OpenShift AI dashboard.
 
 1. From your cluster overview page, click **OpenShift web console**.
 2. From the **Application launcher** ![Application launcher](../icons/thumbnail.svg "Application launcher"), select the **Red Hat OpenShift AI** dashboard option. 
@@ -317,7 +317,7 @@ The following NVIDIA GPU operators apply with the default settings. You can only
 ## What's next?
 {: #ai-addon-install-next}
 
-- Try out a [tutorial for using OpenShift AI for fraud detection](https://docs.redhat.com/en/documentation/red_hat_openshift_ai_self-managed/2.22/html/openshift_ai_tutorial_-_fraud_detection_example/index){: external}.
+- Try out a [tutorial for using OpenShift AI for fraud detection](https://docs.redhat.com/en/documentation/red_hat_openshift_ai_self-managed/3.4){: external}.
 - Learn how you can [use OpenShift AI to deploy a model you trained with InstructLab](/docs/instructlab?topic=instructlab-deploy#deploy-rhoai).
 - See information on [managing the OpenShift AI add-on](/docs/openshift?topic=openshift-ai-addon-manage).
 - Make sure that you understand the [update process](/docs/openshift?topic=openshift-ai-addon-manage#ai-addon-update) for the OpenShift AI add-on.

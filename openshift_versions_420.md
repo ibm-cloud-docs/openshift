@@ -2,7 +2,7 @@
 
 copyright:
   years: 2026, 2026
-lastupdated: "2026-03-10"
+lastupdated: "2026-04-10"
 
 
 keywords: openshift, version, update, upgrade, 4.20, update openshift
@@ -78,7 +78,7 @@ For clusters that run version 4.20 or later, you can use the `oc adm upgrade sta
 | RHEL operating system | Beginning with cluster version 4.18, Red Hat Enterprise Linux CoreOS (RHCOS) is the default operating system in Classic and VPC clusters and RHEL worker nodes are deprecated. Classic or VPC clusters. Upgrading a cluster to version 4.18 does not change the operating system for an existing worker pool. For more information and possible migration actions, see [Red Hat Enterprise Linux (RHEL) deprecation](/docs/openshift?topic=openshift-rhel-deprecation). |
 | Known OpenShift issues | For more information, review the [OpenShift Container Platform version 4.20 known issues](https://docs.redhat.com/en/documentation/openshift_container_platform/4.20/html/release_notes/ocp-4-20-release-notes#ocp-release-known-issues_release-notes) for possible actions required. |
 | Upgrade requires OpenShift cluster version currency | A cluster master upgrade will be cancelled if the OpenShift cluster version status indicates that an update is already in progress. See [Why does OpenShift show the cluster version is not up to date?](https://cloud.ibm.com/docs/openshift?topic=openshift-ts-cluster-version-downlevel) for details. |
-| Upgrade requires resolution to OpenShift cluster version upgradeable conditions | A cluster master upgrade will be cancelled if the OpenShift cluster version Upgradeable status condition indicates that the cluster is not upgradeable. To determine if the cluster is upgradeable, see [Checking the Upgradeable status of your cluster](/docs/openshift?topic=openshift-cs_versions_419#status-check-420). |
+| Upgrade requires resolution to OpenShift cluster version upgradeable conditions | A cluster master upgrade will be cancelled if the OpenShift cluster version Upgradeable status condition indicates that the cluster is not upgradeable. To determine if the cluster is upgradeable, see [Checking the Upgradeable status of your cluster](/docs/openshift?topic=openshift-cs_versions_420#status-check-420). |
 {: caption="Changes to make before you update the master to {{site.data.keyword.redhat_openshift_notm}} 4.20" caption-side="bottom"}
 
 
