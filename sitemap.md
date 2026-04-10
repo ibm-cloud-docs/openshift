@@ -4230,7 +4230,7 @@ subcollection: openshift
 
 * [Update your cluster resource](/docs/openshift?topic=openshift-openshift-storage-update-classic#update-ocs-resource-yaml-classic)
 
-[Deploying an app on {{site.data.keyword.odf_long}}](/docs/openshift?topic=openshift-odf-deploy-app#odf-deploy-app)
+[Deploying an app on OpenShift Data Foundation](/docs/openshift?topic=openshift-odf-deploy-app#odf-deploy-app)
 
 [Setting up trusted profiles for the OpenShift Data Foundation add-on](/docs/openshift?topic=openshift-storage-odf-trusted-profiles#storage-odf-trusted-profiles)
 
@@ -7749,7 +7749,7 @@ subcollection: openshift
 
 * [Does the service offer support for bare metal and GPU?](/docs/openshift?topic=openshift-faqs#bare_metal_gpu)
 
-* [What is the smallest size cluster that I can make?](/docs/openshift?topic=openshift-faqs#smallest_cluster)
+* [What is the minimum size cluster that I can make?](/docs/openshift?topic=openshift-faqs#smallest_cluster)
 
 * [Which versions does the service support?](/docs/openshift?topic=openshift-faqs#supported_kube_versions)
 
