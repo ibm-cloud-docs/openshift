@@ -3,7 +3,7 @@
 copyright:
   years: 2014, 2026
 
-lastupdated: "2026-04-06"
+lastupdated: "2026-04-10"
 
 keywords: openshift, kubernetes, mzr, szr, multizone, multi az
 
@@ -32,13 +32,11 @@ Mumbai (`in-mum`) VPC MZR limitations
 :   **Operating systems**: You can only create clusters at version 4.16 and later in Mumbai and can only use RHEL 9 or RHCOS workers nodes.
 
 :   **Baremetal workers**: Baremetal VPC worker nodes are not available in Mumbai.
-:   **Portworx**: Portworx is not yet supported in Mumbai.
 
 Chennai (`in-che`) VPC MZR limitations
 :   **Operating systems**: You can only create clusters at version 4.16 and later in Chennai and can only use RHEL 9 or RHCOS workers nodes.
 
 :   **Baremetal workers**: Baremetal VPC worker nodes are not available in Chennai.
-:   **Portworx**: Portworx is not yet supported in Chennai.
 
 Montreal (`ca-mon`) VPC MZR limitations
 :   **Webhooks**: Only webhooks that access an in-cluster service work. Webhooks that directly access an external, out of cluster, URL are blocked.
