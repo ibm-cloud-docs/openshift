@@ -7749,7 +7749,7 @@ subcollection: openshift
 
 * [Does the service offer support for bare metal and GPU?](/docs/openshift?topic=openshift-faqs#bare_metal_gpu)
 
-* [What is the smallest size cluster that I can make?](/docs/openshift?topic=openshift-faqs#smallest_cluster)
+* [What is the minimum size cluster that I can make?](/docs/openshift?topic=openshift-faqs#smallest_cluster)
 
 * [Which versions does the service support?](/docs/openshift?topic=openshift-faqs#supported_kube_versions)
 

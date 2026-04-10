@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2026
-lastupdated: "2026-04-08"
+lastupdated: "2026-04-10"
 
 
 keywords: kubernetes, deploy, app, openshift
@@ -183,11 +183,11 @@ With Kubernetes, you declare many types of objects in YAML configuration files s
 ### I thought that I needed to put my app in a container. Now what's all this stuff about pods?
 {: #deploy_pods}
 
-A [pod](https://kubernetes.io/docs/concepts/workloads/pods/){: external} is the smallest deployable unit that Kubernetes can manage. You put your container (or a group of containers) into a pod and use the pod configuration file to tell the pod how to run the container and share resources with other pods. All containers that you put into a pod run in a shared context, which means that they share the virtual or physical machine.
+A [pod](https://kubernetes.io/docs/concepts/workloads/pods/){: external} is the most basic deployable unit that Kubernetes can manage. You put your container (or a group of containers) into a pod and use the pod configuration file to tell the pod how to run the container and share resources with other pods. All containers that you put into a pod run in a shared context, which means that they share the virtual or physical machine.
 {: shortdesc}
 
 What to put in a container
-:    As you think about your application's components, consider whether they have significantly different resource requirements for things like CPU and memory. Could some components run at a best effort, where going down for a little while to divert resources to other areas is acceptable? Is another component customer-facing, so it's critical for it to stay up? Split them up into separate containers. You can always deploy them to the same pod so that they run together in sync.
+:    As you think about your application's components, consider whether they have significantly different resource requirements for things like CPU and memory. Could some components run at a best effort, where going down for a short time to divert resources to other areas is acceptable? Is another component customer-facing, so it's critical for it to stay up? Split them up into separate containers. You can always deploy them to the same pod so that they run together in sync.
 
 What to put in a pod
 :   The containers for your app don't always have to be in the same pod. In fact, if you have a component that is stateful and difficult to scale, such as a database service, put it in a different pod that you can schedule on a worker node with more resources to handle the workload. If your containers work correctly if they run on different worker nodes, then use multiple pods. If they need to be on the same machine and scale together, group the containers into the same pod.
@@ -253,7 +253,7 @@ The following table describes why you might create different types of Kubernetes
 
 | Object | Description |
 | --- | --- |
-| [`Pod`](https://kubernetes.io/docs/concepts/workloads/pods/){: external} | A pod is the smallest deployable unit for your workloads, and can hold a single or multiple containers. Similar to containers, pods are disposable and are often used for unit testing of app features. To avoid downtime for your app, consider deploying pods with a Kubernetes controller, such as a deployment. A deployment helps you to manage multiple pods, replicas, pod scaling, rollouts, and more. |
+| [`Pod`](https://kubernetes.io/docs/concepts/workloads/pods/){: external} | A pod is the most basic deployable unit for your workloads, and can hold a single or multiple containers. Similar to containers, pods are disposable and are often used for unit testing of app features. To avoid downtime for your app, consider deploying pods with a Kubernetes controller, such as a deployment. A deployment helps you to manage multiple pods, replicas, pod scaling, rollouts, and more. |
 | [`ReplicaSet`](https://kubernetes.io/docs/concepts/workloads/controllers/replicaset/){: external} | A replica set makes sure that multiple replicas of your pod are running, and reschedules a pod if the pod goes down. You might create a replica set to test how pod scheduling works, but to manage app updates, rollouts, and scaling, create a deployment instead. |
 | [`Deployment`](https://kubernetes.io/docs/concepts/workloads/controllers/deployment/){: external} | A deployment is a controller that manages a pod or [replica set](https://kubernetes.io/docs/concepts/workloads/controllers/replicaset/){: external} of pod templates. You can create pods or replica sets without a deployment to test app features. For a production-level setup, use deployments to manage app updates, rollouts, and scaling. |
 | [`StatefulSet`](https://kubernetes.io/docs/concepts/workloads/controllers/statefulset/){: external} | Similar to deployments, a stateful set is a controller that manages a replica set of pods. Unlike deployments, a stateful set ensures that your pod has a unique network identity that maintains its state across rescheduling. When you want to run workloads in the cloud, try to [design your app to be stateless](/docs/openshift?topic=openshift-overview) so that your service instances are independent from each other and can fail without a service interruption. However, some apps, such as databases, must be stateful. For those cases, consider to create a stateful set and use [file](/docs/openshift?topic=openshift-file_storage#file_statefulset), [block](/docs/openshift?topic=openshift-block_storage#block_statefulset), or [object](/docs/openshift?topic=openshift-storage_cos_apps#cos_statefulset) storage as the persistent storage for your stateful set. You can also install [Portworx](/docs/openshift?topic=openshift-storage_portworx_about) on your bare metal worker nodes and use Portworx as a highly available software-defined storage solution to manage persistent storage for your stateful set. |
@@ -348,7 +348,7 @@ Use deployments and replica sets to deploy your app and its dependencies
     By using Deployments, you can track any deployed revisions. You can use this history to roll back to a previous version if you encounter that your updates are not working as expected.
 
 Include enough replicas for your app's workload, plus two
-:   To make your app even more highly available and more resilient to failure, consider including extra replicas than the minimum to handle the expected workload. Extra replicas can handle the workload in case a pod crashes and the replica set did not yet recover the crashed pod. For protection against two simultaneous failures, include two extra replicas. This setup is an N+2 pattern, where N is the number of replicas to handle the incoming workload and +2 is an extra two replicas. As long as your cluster has enough space, you can have as many pods as you want.
+:   To make your app even more highly available and more resilient to failure, consider including additional replicas beyond the minimum to handle the expected workload. Additional replicas can handle the workload in case a pod crashes and the replica set did not yet recover the crashed pod. For protection against two simultaneous failures, include two additional replicas. This setup is an N+2 pattern, where N is the number of replicas to handle the incoming workload and +2 is two additional replicas. As long as your cluster has enough space, you can have as many pods as you want.
 
 Spread pods across multiple nodes (anti-affinity)
 :   When you create your deployment, each pod can be deployed to the same worker node. This is known as affinity, or colocation. To protect your app against worker node failure, you can configure your deployment to spread your pods across multiple worker nodes by using the `podAntiAffinity` option with your standard clusters. You can define two types of pod anti-affinity: preferred or required.

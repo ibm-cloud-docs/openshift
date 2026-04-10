@@ -249,11 +249,11 @@ Yes, you can provision your worker node as a single-tenant physical bare metal s
 
 For more information about available bare metal flavors and how bare metal is different from virtual machines, see the [planning guidance](/docs/openshift?topic=openshift-strategy#env_flavors_node).
 
-## What is the smallest size cluster that I can make?
+## What is the minimum size cluster that I can make?
 {: #smallest_cluster}
 {: faq}
 
-Note that running the smallest possible cluster does not meet the service level agreement (SLA) to receive support. Also, keep in mind that some services, such as Ingress, require highly available worker node setups. You might not be able to run these services or your apps in clusters with only two nodes in a worker pool. For more information, see the [Planning your cluster for high availability](/docs/openshift?topic=openshift-strategy).
+Note that running a minimal cluster does not meet the service level agreement (SLA) to receive support. Also, keep in mind that some services, such as Ingress, require highly available worker node setups. You might not be able to run these services or your apps in clusters with only two nodes in a worker pool. For more information, see the [Planning your cluster for high availability](/docs/openshift?topic=openshift-strategy).
 {: important}
 
 Classic or VPC clusters
