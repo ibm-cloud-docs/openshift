@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2026
-lastupdated: "2026-04-07"
+lastupdated: "2026-04-10"
 
 
 keywords: portworx, kubernetes, openshift
@@ -119,7 +119,7 @@ Running your pods hyperconverged
 :   You can configure your Portworx cluster to schedule pods on the same worker node where the pod volume resides. This setup is also referred to as `hyperconverged` and can improve storage performance. For more information, see [Run pods on same host as a volume](https://docs.portworx.com/portworx-enterprise/operations/tune-performance/hyperconvergence){: external}.
 
 Creating snapshots of your Portworx volumes
-:   You can save the current state of a volume and its data by creating a Portworx snapshot. Snapshots can be stored on your local Portworx cluster or in the cloud. For more information, see [Create and use local snapshots](https://docs.portworx.com/portworx-enterprise/deploy-your-applications/application-install-with-kubernetes/cassandra/snapshots){: external}.
+:   You can save the current state of a volume and its data by creating a Portworx snapshot. Snapshots can be stored on your local Portworx cluster or in the cloud. For more information, see [Create and use local snapshots](https://docs.portworx.com/portworx-enterprise/deploy-your-applications/application-install-with-kubernetes/cassandra/storage-operations-with-cassandra){: external}.
 
 Monitoring and managing your Portworx cluster with Lighthouse
 :   You can view the health of your Portworx cluster, including the number of available storage nodes, volumes, and available capacity. You can also analyze your data in [Prometheus, Grafana, or Kibana](https://docs.portworx.com/portworx-enterprise/operations/observability){: external}.

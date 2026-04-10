@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2025, 2026
-lastupdated: "2026-04-07"
+lastupdated: "2026-04-10"
 
 
 keywords: trusted profiles, containers, block storage, openshift
@@ -501,7 +501,7 @@ Once you add a trusted profile to a cluster, it cannot be removed and you cannot
     1. Log in to your IBM Cloud account and navigate to the Trusted Profiles page. 
     2. Click the trusted profile you just created.
     3. Navigate to the **Classic Infrastructure** tab.
-    4. In the permissions drop down, select the required permissions to meet the [minimum requirements](#tp-minreqs) for the relevant components. 
+    4. In the permissions drop down, select the required permissions to meet the [minimum requirements](#tp-minreqs-all) for the relevant components.
 
 
 ## Setting the trusted profile for a cluster or resource group

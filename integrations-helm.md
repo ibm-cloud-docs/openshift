@@ -1,8 +1,8 @@
 ---
 
 copyright: 
-  years: 2014, 2025
-lastupdated: "2025-11-17"
+  years: 2014, 2026
+lastupdated: "2026-04-10"
 
 
 keywords: kubernetes, openshift
@@ -33,7 +33,7 @@ In {{site.data.keyword.redhat_openshift_notm}} clusters that run version 4, use 
 ### What is Helm and how do I use it?
 {: #what-is-helm}
 
-[Helm](https://helm.sh){: external} is a Kubernetes package manager that uses Helm charts to define, install, and upgrade complex Kubernetes apps in your cluster. Helm charts package the specifications to generate YAML files for Kubernetes resources that build your app. These Kubernetes resources are automatically applied in your cluster and assigned a version by Helm. You can also use Helm to specify and package your own app and let Helm generate the YAML files for your Kubernetes resources.
+[Helm](https://helm.sh/){: external} is a Kubernetes package manager that uses Helm charts to define, install, and upgrade complex Kubernetes apps in your cluster. Helm charts package the specifications to generate YAML files for Kubernetes resources that build your app. These Kubernetes resources are automatically applied in your cluster and assigned a version by Helm. You can also use Helm to specify and package your own app and let Helm generate the YAML files for your Kubernetes resources.
 
 ### What Helm charts are supported in {{site.data.keyword.openshiftlong_notm}}?
 {: #supported-charts}
