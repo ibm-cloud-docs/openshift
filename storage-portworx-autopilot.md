@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2023, 2026
-lastupdated: "2026-04-07"
+lastupdated: "2026-04-10"
 
 
 keywords: portworx, openshift, autopilot
@@ -95,4 +95,4 @@ Autopilot lets you define monitoring conditions in your cluster and automaticall
 ## Creating Rules
 {: #storage-px-create-rules}
 
-Now that you have installed Autopilot in your cluster, see the [Portworx documentation](https://docs.portworx.com/portworx-enterprise/operations/scale-portworx-cluster/autopilot/how-to-use/working-with-rules){: external} to create custom rules and actions for your Autopilot configuration.
+Now that you have installed Autopilot in your cluster, see the [Portworx documentation](https://docs.portworx.com/portworx-enterprise/operations/scale-portworx-cluster/autopilot/working-with-rules){: external} to create custom rules and actions for your Autopilot configuration.
