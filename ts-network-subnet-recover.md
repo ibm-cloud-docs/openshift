@@ -22,7 +22,7 @@ content-type: troubleshoot
 
 [Classic]{: tag-classic}
 
-your cluster is experiencing network errors.
+Your cluster is experiencing network errors.
 {: tsSymptoms}
 
 A portable subnet was deleted.
