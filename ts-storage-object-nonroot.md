@@ -1,8 +1,8 @@
 ---
 
 copyright: 
-  years: 2014, 2024
-lastupdated: "2024-01-03"
+  years: 2014, 2026
+lastupdated: "2026-04-10"
 
 
 keywords: openshift
@@ -50,6 +50,7 @@ Updating permissions during the pod deployment might prevent your pod from getti
 To resolve this issue, before you mount the PVC to your app pod, create another pod to set the correct permission for the non-root user.
 
 1. To check the permissions of your files in your bucket, create a configuration file for your `test-permission` pod and name the file `test-permission.yaml`.
+
     ```yaml
     apiVersion: v1
     kind: Pod
@@ -135,7 +136,7 @@ To resolve this issue, before you mount the PVC to your app pod, create another 
     ```
     {: pre}
 
-1. Wait for the pod to go into a `Completed` state. 
+1. Wait for the pod to go into a `Completed` state.
 
     ```sh
     oc get pod fix-permission
@@ -189,15 +190,8 @@ To resolve this issue, before you mount the PVC to your app pod, create another 
 
 1. Mount the PVC to the app with the non-root user.
 
-
 Set `runAsUser` and `fsGroup` to the same values in your deployment YAML.
 {: important}
 
 After you set the correct file permissions in your {{site.data.keyword.cos_full_notm}} service instance, don't upload files by using the console or the REST API. Use the {{site.data.keyword.cos_full_notm}} plug-in to add files to your service instance.
 {: tip}
-
-
-
-
-
-

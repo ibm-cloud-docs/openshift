@@ -1,8 +1,8 @@
 ---
 
 copyright: 
-  years: 2023, 2024
-lastupdated: "2024-01-03"
+  years: 2023, 2026
+lastupdated: "2026-04-10"
 
 
 keywords: openshift, dns
@@ -23,7 +23,7 @@ content-type: troubleshoot
 {: #ts-slow-dns-lookup}
 {: support}
 
-Certain containers that are based on Alpine Linux, such as NGINX, have issues with DNS query handling that can cause them to not process valid DNS responses. A small percentage of DNS lookups from these pods can take over 5 seconds instead of the typical <80ms. If the timeout that is set for your application is less than 5 seconds, the DNS lookups can time out.
+Certain containers that are based on Alpine Linux, such as NGINX, have issues with DNS query handling that can cause them to not process valid DNS responses. A small percentage of DNS lookups from these pods can take over 5 seconds instead of the typical less than 80 ms. If the timeout that is set for your application is less than 5 seconds, the DNS lookups can time out.
 {: tsSymptoms}
 
 To test whether your pod has this problem, log in to it and verify that curl is installed. You can install curl with the `apk add curl` command. Then, inside the pod run the following command.
@@ -40,7 +40,7 @@ You can resolve this issue in one of the following ways.
 {: tsResolve}
 
 - (Preferred) Use a base image for your container that does not have this problem, such as Alpine 3.18. You can also replace Alpine with [ubi-minimal](https://hub.docker.com/r/redhat/ubi8-minimal){: external}.
-- Add `options single-request-reopen` or `options single-request` options to the client pod's `/etc/resolv.conf` file. For example, use the following `postStart` command to add these options to your pod. These options tell the DNS client to send out only one request (A or AAAA) at a time, and avoids the problem where two responses come back at nearly the same time.
+- Add `options single-request-reopen` or `options single-request` to the client pod's `/etc/resolv.conf` file. For example, use the following `postStart` command to add these options to your pod. These options tell the DNS client to send out only one request (A or AAAA) at a time, and avoid the problem where two responses come back at nearly the same time.
 
 ```yaml
   lifecycle:
@@ -54,6 +54,3 @@ You can resolve this issue in one of the following ways.
 ```
 {: codeblock}
   
-
-
-

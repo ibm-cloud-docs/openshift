@@ -1,8 +1,8 @@
 ---
 
 copyright: 
-  years: 2014, 2024
-lastupdated: "2024-01-03"
+  years: 2014, 2026
+lastupdated: "2026-04-10"
 
 
 keywords: block, debug, help
@@ -42,7 +42,8 @@ You tried to expand the volume size of an existing {{site.data.keyword.block_sto
 Verify that your PVC supports volume expansion, then create an app pod that uses your PVC.
 {: tsResolve}
 
-1. Describe your existing PVC. Verify that `allowVolumeExpansion` is set to `true`.
+1. Describe your existing PVC and verify that `allowVolumeExpansion` is set to `true`.
+
     ```sh
     oc describe pvc <pvc-name>
     ```
@@ -51,32 +52,29 @@ Verify that your PVC supports volume expansion, then create an app pod that uses
 1. Create an app pod that uses your PVC and deploy it to your cluster.
 
 1. Edit the PVC and increase the value in the `spec.resources.requests.storage` field.
+
     ```sh
     oc edit pvc <pvc-name>
     ```
     {: pre}
 
 1. Get the details of your PVC and make a note of the PV name.
+
     ```sh
     oc get pvc <pvc-name>
     ```
     {: pre}
 
-1. Describe your PV and make a note of the volume ID
+1. Describe your PV and make a note of the volume ID.
+
     ```sh
     oc describe PV
     ```
     {: pre}
 
 1. Get the details of your {{site.data.keyword.block_storage_is_short}} volume and verify the capacity.
+
     ```sh
     ibmcloud is vol <volume-ID>
     ```
     {: pre}
-
-
-
-
-
-
-

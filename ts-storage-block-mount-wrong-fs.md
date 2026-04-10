@@ -1,8 +1,8 @@
 ---
 
 copyright: 
-  years: 2014, 2024
-lastupdated: "2024-01-03"
+  years: 2014, 2026
+lastupdated: "2026-04-10"
 
 
 keywords: openshift
@@ -75,14 +75,9 @@ Update the file system in the existing PV from `ext4` to `XFS`.
     ```
     {: pre}
 
-    Example output:
+    Example output
+
     ```sh
     Filesystem Type Size Used Avail Use% Mounted on /dev/mapper/3600a098031234546d5d4c9876654e35 xfs 20G 33M 20G 1% /myvolumepath
     ```
     {: screen}
-
-
-
-
-
-
