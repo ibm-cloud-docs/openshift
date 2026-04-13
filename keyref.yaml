@@ -55,6 +55,10 @@ keyword:
   kubernetes_135_release_date: 05 March 2026
   kubernetes_135_unsupported_certainty: tentative
   kubernetes_135_unsupported_date: 28 April 2027
+  kubernetes_136_deprecated: 'False'
+  kubernetes_136_release_date: 05 March 2026
+  kubernetes_136_unsupported_certainty: tentative
+  kubernetes_136_unsupported_date: 28 April 2027
   kubernetes_default_deprecated: 'False'
   kubernetes_default_docs: /docs/containers?topic=containers-changelog_134
   kubernetes_default_release_date: 20 November 2025
