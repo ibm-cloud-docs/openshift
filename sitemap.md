@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2026
-lastupdated: "2026-04-10"
+lastupdated: "2026-04-14"
 
 
 keywords: openshift
@@ -4262,7 +4262,7 @@ subcollection: openshift
 
 * [Step 6. Configure the Regional Diaster Recovery policy](/docs/openshift?topic=openshift-openshift_odf_rdr_roks&interface=cli#rdr-configure)
 
-* [Optional operators for ODF Regional Disaster Recovery](/docs/openshift?topic=openshift-openshift_odf_rdr_roks&interface=cli#operators)
+* [Optional operators for ODF Regional Disaster Recovery](/docs/openshift?topic=openshift-openshift_odf_rdr_roks&interface=cli#odf-rdr-operators)
 
 * [Testing your disaster recovery configuration](/docs/openshift?topic=openshift-openshift_odf_rdr_roks&interface=cli#odf-rdr-test)
 

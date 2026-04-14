@@ -1,8 +1,8 @@
 ---
 
 copyright:
-  years: 2014, 2024
-lastupdated: "2024-10-04"
+  years: 2014, 2026
+lastupdated: "2026-04-14"
 
 
 keywords: openshift, noobaa, openshift container storage, openshift data foundation, storage classes
@@ -20,17 +20,17 @@ subcollection: openshift
 # Managing the Multi-Cloud Object Gateway
 {: #odf-manage-noobaa}
 
-You can use NooBaa to manage your s3 compatible object storage resources, like IBM {{site.data.keyword.cos_short}}, AWS s3, or Azure Blob storage. With NooBaa, you can also create and manage your object storage consistently across clusters and zones.
+You can use NooBaa to manage your S3-compatible object storage resources, such as IBM {{site.data.keyword.cos_short}}, Amazon S3, or Azure Blob storage. With NooBaa, you can also create and manage your object storage consistently across clusters and zones.
 {: shortdesc}
 
 
 ## Setting up backing stores by using the NooBaa CLI
 {: #odf-backingstore}
 
-Backing stores are NooBaa resources for managing your s3 compatible services and buckets. When you create a backing store, you provide your s3 service credentials like your access key ID, secret access key, and endpoint for your object storage service. After you add backing stores to your cluster, you can [create bucket classes](#odf-bucketclass) which allow you to configure data federation policies for your s3 compatible storage services.
+Backing stores are NooBaa resources for managing your S3-compatible services and buckets. When you create a backing store, you provide your S3 service credentials, such as your access key ID, secret access key, and endpoint for your object storage service. After you add backing stores to your cluster, you can [create bucket classes](#odf-bucketclass), which allow you to configure data federation policies for your S3-compatible storage services.
 {: shortdesc}
 
-After you deploy ODF, you can configure more backing stores in your storage cluster. You can create a backing store by using any s3 compatible object store such as AWS or {{site.data.keyword.cos_full_notm}}.
+After you deploy ODF, you can configure more backing stores in your storage cluster. You can create a backing store by using any S3-compatible object store, such as Amazon S3 or {{site.data.keyword.cos_full_notm}}.
 
 You can also create and manage your backing stores in the {{site.data.keyword.redhat_openshift_notm}} web console.
 {: tip}
@@ -60,9 +60,9 @@ To add a backing store to your storage cluster by using the NooBaa CLI:
     ```
     {: screen}
 
-1. Get the details of the service that you want to use. If you want to set up an {{site.data.keyword.cos_full_notm}}, get your HMAC credentials. For more information, see [Using HMAC credentials](/docs/cloud-object-storage?topic=cloud-object-storage-uhc-hmac-credentials-main). The following example command shows the configuration parameters that are required to create a backing store by using an {{site.data.keyword.cos_full_notm}} service instance.
+1. Get the details of the service that you want to use. If you want to set up {{site.data.keyword.cos_full_notm}}, get your HMAC credentials. For more information, see [Using HMAC credentials](/docs/cloud-object-storage?topic=cloud-object-storage-uhc-hmac-credentials-main). The following example command shows the configuration parameters that are required to create a backing store by using a {{site.data.keyword.cos_full_notm}} service instance.
     ```sh
-    noobaa backingstore create ibm-cos <backing-store-name> -n openshift-storage --access-key=<access-key> --endpoint=<endpoint> --secret-key=<secret-key> --target-bucket<target-bucket>
+    noobaa backingstore create ibm-cos <backing-store-name> -n openshift-storage --access-key=<access-key> --endpoint=<endpoint> --secret-key=<secret-key> --target-bucket=<target-bucket>
     ```
     {: pre}
 
@@ -103,17 +103,17 @@ After you have [installed ODF](/docs/openshift?topic=openshift-deploy-odf-vpc) a
     apiVersion: noobaa.io/v1alpha1
     kind: BucketClass
     metadata:
-    labels:
+      labels:
         app: noobaa
-    name: mirror-bucket-class
-    namespace: openshift-storage
+      name: mirror-bucket-class
+      namespace: openshift-storage
     spec:
-    placementPolicy:
+      placementPolicy:
         tiers:
         - backingStores:
-        - backing-store-one
-        - backing-store-two
-        placement: Mirror
+          - backing-store-one
+          - backing-store-two
+          placement: Mirror
     ```
     {: codeblock}
 
@@ -124,11 +124,13 @@ After you create backing stores and a bucket class, create a storage class to ma
 
 1. Create a storage class YAML file that contains a name for your storage class in the format `<name>-noobaa.noobaa.io`, the name of the bucket class that you want to use, and the provisioner set to `openshift-storage.noobaa.io/obc`.
     ```yaml
+    apiVersion: storage.k8s.io/v1
+    kind: StorageClass
     metadata:
-        name: <name>-noobaa.noobaa.io
-      parameters:
-    bucketclass: <bucket-class-name>
+      name: <name>-noobaa.noobaa.io
     provisioner: openshift-storage.noobaa.io/obc
+    parameters:
+      bucketclass: <bucket-class-name>
     reclaimPolicy: Delete
     volumeBindingMode: Immediate
     ```
@@ -157,10 +159,10 @@ After you create backing stores and a bucket class, you can create an object buc
     apiVersion: objectbucket.io/v1alpha1
     kind: ObjectBucketClaim
     metadata:
-        name: cos-obc
-      spec:
-    storageClassName: cos-noobaa.noobaa.io
-    bucketName: cos-bucket
+      name: cos-obc
+    spec:
+      storageClassName: cos-noobaa.noobaa.io
+      bucketName: cos-bucket
     ```
     {: codeblock}
 

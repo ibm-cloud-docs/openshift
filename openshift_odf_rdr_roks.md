@@ -2,7 +2,7 @@
 
 copyright:
   years: 2025, 2026
-lastupdated: "2026-04-08"
+lastupdated: "2026-04-14"
 
 
 keywords: openshift, openshift data foundation, openshift container storage, disaster recovery
@@ -290,12 +290,12 @@ Configure the ODF RDR policy.
     ```
     {: screen}
 
-1. **Optional**: Review the [operators](#operators) you can install to enhance ODF Regional Disaster Recovery features.
+1. **Optional**: Review the [operators](#odf-rdr-operators) you can install to enhance ODF Regional Disaster Recovery features.
 
-1. **Optional**: [Test your disaster recovery configuration](#odf-rdr-test). 
+1. **Optional**: [Test your disaster recovery configuration](#odf-rdr-test).
 
 ## Optional operators for ODF Regional Disaster Recovery
-{: #operators}
+{: #odf-rdr-operators}
 
 Review the optional operators you can install on your ACM hub or managed clusters to enhance ODF Regional Disaster Recovery features. Note that IBM is not responsible for managing these operators. 
 

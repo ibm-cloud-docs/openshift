@@ -1,8 +1,8 @@
 ---
 
 copyright:
-  years: 2014, 2025
-lastupdated: "2025-02-21"
+  years: 2014, 2026
+lastupdated: "2026-04-14"
 
 
 keywords: openshift, nginx, ingress controller, openshift ingress, ingress, exposing apps
@@ -17,7 +17,7 @@ subcollection: openshift
 # Planning your Ingress setup
 {: #ingress-roks4}
 
-Expose multiple apps in your {{site.data.keyword.openshiftlong}} cluster by creating Ingress resources that are managed by the Ingress controller.
+Expose multiple apps in your {{site.data.keyword.openshiftlong}} cluster by creating Ingress resources that are managed by the Ingress Controller.
 {: shortdesc}
 
 For information about how to expose apps in {{site.data.keyword.satelliteshort}}, see [Exposing apps in {{site.data.keyword.satelliteshort}} clusters](/docs/openshift?topic=openshift-sat-expose-apps).
@@ -27,13 +27,13 @@ For information about how to expose apps in {{site.data.keyword.satelliteshort}}
 ## Planning networking for single or multiple projects
 {: #multiple_projects}
 
-One Ingress resource is required per project where you have apps that you want to expose.
+One Ingress resource is required for each project that contains apps that you want to expose.
 {: shortdesc}
 
 ### All apps are in one project
 {: #one-project}
 
-If the apps in your cluster are all in the same project, you must create one Ingress resource to define the routing rules for the apps that you want to expose.
+If all the apps in your cluster are in the same project, create one Ingress resource to define the routing rules for the apps that you want to expose.
 {: shortdesc}
 
 For example, if you have `app1` and `app2` exposed by services in a development project, you can create an Ingress resource in the project. The resource specifies `domain.net` as the host and registers the paths that each app listens on with `domain.net`.
@@ -45,7 +45,7 @@ Note that if you want to use different domains for the apps within the same proj
 ### Apps are in multiple projects
 {: #multi-project}
 
-If the apps in your cluster are in different projects, you must create one Ingress resource for each project to define the app's routing rules.
+If the apps in your cluster are in different projects, create one Ingress resource for each project to define the app routing rules.
 {: shortdesc}
 
 You can either define the same domain in multiple resources, or use a wildcard domain to specify different subdomains within the Ingress resource for each project.
@@ -73,7 +73,7 @@ Now, both URLs resolve to the same domain. However, because the resource in the 
 ### Multiple domains within a project
 {: #multi-domains-project}
 
-Within an individual project, you can use one domain to access all the apps in the project. If you want to use different domains for the apps within an individual project, use a wildcard domain. When a wildcard domain is registered, multiple subdomains all resolve to the same host. Then, you can use one resource to specify multiple subdomain hosts within that resource. Alternatively, you can create multiple Ingress resources in the project and specify a different subdomain in each Ingress resource.
+Within an individual project, you can use one domain to access all the apps in the project. If you want to use different domains for apps in one project, use a wildcard domain. When a wildcard domain is registered, multiple subdomains all resolve to the same host. Then, you can use one resource to specify multiple subdomain hosts within that resource. Alternatively, you can create multiple Ingress resources in the project and specify a different subdomain in each Ingress resource.
 {: shortdesc}
 
 ![One resource is required per project](images/cs_ingress_single_ns_multi_subs.svg){: caption="One resource is required per project" caption-side="bottom"}

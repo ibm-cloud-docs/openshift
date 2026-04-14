@@ -1,8 +1,8 @@
 ---
 
 copyright: 
-  years: 2022, 2025
-lastupdated: "2025-11-17"
+  years: 2022, 2026
+lastupdated: "2026-04-14"
 
 
 keywords: openshift, kernel, rhcos, cpu pinning, huge pages, numa, core os
@@ -25,7 +25,7 @@ subcollection: openshift
 Supported worker node operating systems
 :   Red Hat CoreOS (`RHCOS`)
 
-You can tune your Red Hat CoreOS worker node performance by enabling CPU Pinning, non-uniform memory access (NUMA), and huge pages configurations. These configurations can be beneficial for applications that have strict performance requirements. However, these customizations might cause issues with scheduling workloads.
+You can tune your Red Hat CoreOS worker node performance by enabling CPU pinning, non-uniform memory access (NUMA), and huge pages. These configurations can benefit applications that have strict performance requirements. However, these customizations might cause workload scheduling issues.
 {: shortdesc}
 
 Instead of tuning worker node performance with `MachineConfig` files in {{site.data.keyword.redhat_openshift_notm}}, you can modify the host with a `daemonset` file. For more information, see [Changing the Calico MTU](/docs/openshift?topic=openshift-kernel#calico-mtu) or [Tuning performance for Red Hat CoreOS worker nodes](/docs/openshift?topic=openshift-rhcos-performance).
@@ -37,7 +37,7 @@ Instead of tuning worker node performance with `MachineConfig` files in {{site.d
 
 [{{site.data.keyword.satelliteshort}}]{: tag-satellite}
 
-Before you can enable NUMA, CPU pinning, and huge pages on your worker nodes, you must deploy the Node Feature Discovery Operator. For more information, see [The Node Feature Discovery Operator](https://docs.redhat.com/en/documentation/openshift_container_platform/4.8/html/scalability_and_performance/node-feature-discovery-operator){: external}.
+Before you can enable NUMA, CPU pinning, and huge pages on your worker nodes, you must deploy the Node Feature Discovery Operator. For more information, see [Node Feature Discovery Operator](https://docs.redhat.com/en/documentation/openshift_container_platform/4.8/html/scalability_and_performance/node-feature-discovery-operator){: external}.
 
 ## Enabling non-uniform memory access (NUMA), CPU pinning, and huge pages on your worker nodes
 {: #rhcos-numa-pinning-huge}
@@ -46,7 +46,7 @@ Before you can enable NUMA, CPU pinning, and huge pages on your worker nodes, yo
 
 Before you begin, make sure that you have deployed the [Node Feature Discovery Operator](#rhcos-node-feature-discovery).
 
-1. Save the following `DaemonSet` to a file called `customize.yaml`
+1. Save the following `DaemonSet` to a file called `customize.yaml`.
 
     ```yaml
     ---
@@ -214,7 +214,7 @@ Before you begin, make sure that you have deployed the [Node Feature Discovery O
     :   Enter the number of huge pages that you want to allocate. For example: `2048`. If you don't want to enable huge pages, enter `0`. The more huge pages you allocate, the less overall memory is available to your applications.
     
     `TOPOLOGY_MANAGER_POLICY_VALUE`
-    :   Enter the topology manager policies that you want to use. The `best-effort` topology is recommended to ensure maximum scheduling availability. However, you can use other topologies for more strict requirements validation while reducing workload scheduling availability. For more information, see [Topology manager](https://kubernetes.io/docs/tasks/administer-cluster/topology-manager/){: external}. 
+    :   Enter the topology manager policy that you want to use. The `best-effort` policy is recommended to ensure maximum scheduling availability. However, you can use other policies for stricter requirements validation while reducing workload scheduling availability. For more information, see [Topology Manager](https://kubernetes.io/docs/tasks/administer-cluster/topology-manager/){: external}.
     
     You can edit the `nodeSelector` section to only apply the configuration to a subset of your worker nodes.
     {: tip}
