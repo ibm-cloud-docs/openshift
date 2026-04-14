@@ -1,8 +1,8 @@
 ---
 
 copyright: 
-  years: 2022, 2024
-lastupdated: "2024-01-03"
+  years: 2022, 2026
+lastupdated: "2026-04-14"
 
 
 keywords: openshift, compliance operator, benchmark comparison
@@ -21,7 +21,7 @@ subcollection: openshift
 # Comparing the CIS Kubernetes and the Compliance Operator benchmarks
 {: #benchmark-comparison}
 
-Review the following tables for an overview of the differences between the CIS Kubernetes and the compliance operator benchmarks.
+Review the following tables for an overview of the differences between the CIS Kubernetes benchmark and the Compliance Operator benchmark.
 {: shortdesc}
 
 ## Major differences
@@ -41,19 +41,19 @@ Review the following tables for an overview of the differences between the CIS K
 | 1.3.1 | Ensure that the `--terminated-pod-gc-threshold` option is set as appropriate. | Ensure that garbage collection is configured as appropriate. | Different parameter names. |
 | 1.3.2 | Ensure that the `--profiling` option is set to `false`. | Ensure that controller manager `healthz` endpoints are protected by RBAC. | Profiling is enabled by default in {{site.data.keyword.redhat_openshift_notm}}, but the profiling data is sent through the  `healthz` port and the port must be protected by RBAC. |
 | 1.4.1 | Ensure that the `--profiling` option is set to `false`. | Ensure that the `healthz` endpoints for the scheduler are protected by RBAC. | Profiling is enabled by default in {{site.data.keyword.redhat_openshift_notm}}, but the profiling data is sent via `healthz` port and the port must be protected by RBAC. |
-| 1.4.2 | Ensure that the `--bind-address` option is set to `127.0.0.1`. | Verify that the scheduler API service is protected by authentication and authorization. | {{site.data.keyword.redhat_openshift_notm}} has different operator than vanilla kubernetes, and configuration for its security differs |
-| 4.1.3 | Ensure that the proxy `kubeconfig` file permissions are set to `644` or more restrictive. | **If proxy `kubeconfig` file exists**,ensure that permissions are set to 644 or more restrictive. | In {{site.data.keyword.redhat_openshift_notm}}, the file is automatically created by `sdn` controller in a secure manner. |
-| 4.1.4 | Ensure that the proxy `kubeconfig` file ownership is set to `root:root`. | **If proxy `kubeconfig` file exists**,ensure that ownership is set to `root:root` | In {{site.data.keyword.redhat_openshift_notm}}, the file is automatically created by `sdn` controller in a secure manner. |
+| 1.4.2 | Ensure that the `--bind-address` option is set to `127.0.0.1`. | Verify that the scheduler API service is protected by authentication and authorization. | {{site.data.keyword.redhat_openshift_notm}} uses a different operator than Kubernetes, and its security configuration differs. |
+| 4.1.3 | Ensure that the proxy `kubeconfig` file permissions are set to `644` or more restrictive. | **If the proxy `kubeconfig` file exists**, ensure that permissions are set to `644` or more restrictive. | In {{site.data.keyword.redhat_openshift_notm}}, the file is automatically created by the `sdn` controller in a secure manner. |
+| 4.1.4 | Ensure that the proxy `kubeconfig` file ownership is set to `root:root`. | **If the proxy `kubeconfig` file exists**, ensure that ownership is set to `root:root`. | In {{site.data.keyword.redhat_openshift_notm}}, the file is automatically created by the `sdn` controller in a secure manner. |
 {: caption="Major difference between the CIS Kubernetes Benchmark and the {{site.data.keyword.redhat_openshift_notm}} Compliance Operator Benchmark" caption-side="bottom"}
 
 ## Minor differences
 {: #benchmark-comparison-minor}
 
-| Section | CIS Kubernetes benchmark| Compliance Operator benchmark | Description |
-| ---| --- | --- | --- |
+| Section | CIS Kubernetes benchmark | Compliance Operator benchmark | Description |
+| --- | --- | --- | --- |
 | 1.1.19 | Ensure that the Kubernetes PKI directory and file ownership is set to `root:root`. | Ensure that the {{site.data.keyword.redhat_openshift_notm}} PKI directory and file ownership is set to `root:root`. | Kubernetes > {{site.data.keyword.redhat_openshift_notm}} |
-| 1.1.20 | Ensure that the Kubernetes PKI certificate file permissions are set to `644` or more restrictive. | Ensure that the {{site.data.keyword.redhat_openshift_notm}} PKI certificate file permissions are set to 644 or more restrictive | Kubernetes > {{site.data.keyword.redhat_openshift_notm}} |
-| 1.1.21 | Ensure that the Kubernetes PKI key file permissions are set to 600 | Ensure that the {{site.data.keyword.redhat_openshift_notm}} PKI key file permissions are set to 600 | Kubernetes > {{site.data.keyword.redhat_openshift_notm}} |
+| 1.1.20 | Ensure that the Kubernetes PKI certificate file permissions are set to `644` or more restrictive. | Ensure that the {{site.data.keyword.redhat_openshift_notm}} PKI certificate file permissions are set to `644` or more restrictive. | Kubernetes > {{site.data.keyword.redhat_openshift_notm}} |
+| 1.1.21 | Ensure that the Kubernetes PKI key file permissions are set to `600`. | Ensure that the {{site.data.keyword.redhat_openshift_notm}} PKI key file permissions are set to `600`. | Kubernetes > {{site.data.keyword.redhat_openshift_notm}} |
 | 1.2.4 | Ensure that the `--kubelet-https` option is set to `true` | Use https for kubelet connections. | No option specified for {{site.data.keyword.redhat_openshift_notm}}. |
 | 1.2.5 | Ensure that the `--kubelet-client-certificate` and `--kubelet-client-key` options are set as appropriate. | Ensure that the kubelet uses certificates to authenticate | No option specified for {{site.data.keyword.redhat_openshift_notm}}. |
 | 1.2.6 | Ensure that the `--kubelet-certificate-authority` option is set as appropriate. | Verify that the kubelet certificate authority is set as appropriate | No option specified for {{site.data.keyword.redhat_openshift_notm}}. |

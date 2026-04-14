@@ -3,7 +3,7 @@
 copyright:
   years: 2026, 2026
 
-lastupdated: "2026-04-13"
+lastupdated: "2026-04-14"
 
 
 keywords: change log, version history, 4.20_openshift
@@ -107,7 +107,7 @@ The following table shows the components included in the worker node fix pack 4.
 |RHEL 9 (VPC)|5.14.0-570.62.1.el9_6|N/A|
 |RHEL 9 (Classic)|5.14.0-570.62.1.el9_6|N/A|
 |Red Hat OpenShift|4.20.15|For more information, see the [change logs](https://docs.redhat.com/en/documentation/openshift_container_platform/4.20/html/release_notes/ocp-4-20-release-notes.html#ocp-4-20-15_release-notes).|
-|Red Hat CoreOS|4.20.15|For more information, see the [change logs](https://docs.redhat.com/en/documentation/openshift_container_platform/4.20/html/release_notes/ocp-4-20-release-notes.html#ocp-4-20-15_release-notes). CIS benchmark compliance [1.1.3.2](https://workbench.cisecurity.org/sections/1594516/recommendations/2564412), [1.1.3.3](https://workbench.cisecurity.org/sections/1594516/recommendations/2564414), [3.4.2](https://workbench.cisecurity.org/benchmarks/11478/sections/1594542), [4.2.2.3](https://workbench.cisecurity.org/sections/1594553/recommendations/2564633)|
+|Red Hat CoreOS|4.20.15|For more information, see the [change logs](https://docs.redhat.com/en/documentation/openshift_container_platform/4.20/html/release_notes/ocp-4-20-release-notes.html#ocp-4-20-15_release-notes). CIS benchmark compliance [1.1.3.2](https://workbench.cisecurity.org/sections/1594516/recommendations/2564412), [1.1.3.3](https://workbench.cisecurity.org/sections/1594516/recommendations/2564414), [3.4.2](https://workbench.cisecurity.org), [4.2.2.3](https://workbench.cisecurity.org/sections/1594553/recommendations/2564633)|
 |HAProxy|965c403695b15b3410d87a3772002edbc5ed2569|Resolves the following CVEs: [CVE-2025-69419](https://nvd.nist.gov/vuln/detail/CVE-2025-69419){: external}.|
 {: caption="4.20.15_1540_openshift fix pack." caption-side="bottom"}
 {: #cl-boms-42015_1540_openshift_W-component-table}

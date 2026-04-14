@@ -3,7 +3,7 @@
 copyright:
   years: 2014, 2026
 
-lastupdated: "2026-04-08"
+lastupdated: "2026-04-14"
 
 keywords: openshift, version, update, upgrade
 
@@ -29,7 +29,7 @@ Unless otherwise noted in the change logs, the {{site.data.keyword.cloud_notm}} 
 
 Check the [Security Bulletins on {{site.data.keyword.cloud_notm}} Status](https://cloud.ibm.com/status?selected=security) for security vulnerabilities that affect {{site.data.keyword.openshiftlong_notm}}. You can filter the results to view only **Kubernetes Service** security bulletins that are relevant to {{site.data.keyword.openshiftlong_notm}}. Change log entries that address other security vulnerabilities but don't also refer to an {{site.data.keyword.IBM_notm}} security bulletin are for vulnerabilities that are not known to affect {{site.data.keyword.openshiftlong_notm}} in normal usage. If you run privileged containers, run commands on the workers, or execute untrusted code, then you might be at risk.
 
-Master patch updates are applied automatically. Worker node patch updates can be applied by reloading or updating the worker nodes. For more information about major, minor, and patch versions and preparation actions between minor versions, see [{{site.data.keyword.redhat_openshift_notm}} versions](/docs/openshift?topic=openshift-openshift_versions).
+Master patch updates are applied automatically. Worker node patch updates can be applied by reloading or updating the worker nodes. For more information about major, minor, and patch versions and preparation actions between minor versions, see [{{site.data.keyword.redhat_openshift_notm}} version information](/docs/openshift?topic=openshift-openshift_versions).
 
 For more details about the {{site.data.keyword.redhat_openshift_notm}} and Kubernetes project versions, review the {{site.data.keyword.redhat_openshift_notm}} release notes.
 
@@ -102,7 +102,7 @@ All VPC clusters created at version 4.18 or later can use RHCOS worker nodes. Cl
 - `*` Indicates operating systems that are deprecated.
 
 Unsupported versions:
-:    For information about unsupported versions, see the [archive](#version-archive). 
+:    For information about unsupported versions, see the [archive](#version-archive).
 
 
 ## Release lifecycle
