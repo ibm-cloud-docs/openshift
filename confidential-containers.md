@@ -146,6 +146,7 @@ To import the peer pod image:
 1. Run the [`image-create`](/docs/vpc?topic=vpc-vpc-reference#image-create) command.{: cli}
 
     ```sh
+    # Note IMAGE_NAME does not support capitalization. 
     ibmcloud is image-create "IMAGE_NAME" --file cos://us-south/podvm-image/rhel9-podvm-latest.qcow2  --os-name red-9-amd64
     ```
     {: pre}
