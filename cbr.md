@@ -1,8 +1,8 @@
 ---
 
 copyright:
-  years: 2022, 2025
-lastupdated: "2025-09-19"
+  years: 2022, 2026
+lastupdated: "2026-04-15"
 
 
 keywords: cbr, context based restrictions, security
@@ -23,12 +23,12 @@ subcollection: openshift
 Context-based restrictions give account owners and administrators the ability to define and enforce access restrictions for {{site.data.keyword.cloud}} resources based on the context of access requests. Access to {{site.data.keyword.openshiftlong_notm}} resources can be controlled with context-based restrictions and identity and access management policies.
 {: shortdesc}
 
-These restrictions work with traditional IAM policies, which are based on identity, to provide an extra layer of protection. Unlike IAM policies, context-based restrictions don't assign access. Context-based restrictions check that an access request comes from an allowed context that you configure. Since both IAM access and context-based restrictions enforce access, context-based restrictions offer protection even in the face of compromised or mismanaged credentials. For more information, see [What are context-based restrictions](/docs/account?topic=account-context-restrictions-whatis).
+These restrictions work with traditional IAM policies, which are based on identity, to provide an extra layer of protection. Unlike IAM policies, context-based restrictions don't assign access. Context-based restrictions check that an access request comes from an allowed context that you configure. Since both IAM access and context-based restrictions enforce access, context-based restrictions offer protection even in the face of compromised or mismanaged credentials. For more information, see [What are context-based restrictions](/docs/iam?topic=iam-context-restrictions-whatis).
 
 A user must have the Administrator role on the {{site.data.keyword.openshiftlong_notm}} service to create, update, or delete rules. And a user must have either the Editor or Administrator role on the Context-based restrictions service to create, update, or delete network zones.
 {: note}
 
-Any {{site.data.keyword.cloudaccesstrailshort}} or audit log events generated come from the context-based restrictions service, and not {{site.data.keyword.openshiftlong_notm}}. For more information, see [Monitoring context-based restrictions](/docs/account?topic=account-cbr-monitor). 
+Any {{site.data.keyword.cloudaccesstrailshort}} or audit log events generated come from the context-based restrictions service, and not {{site.data.keyword.openshiftlong_notm}}. For more information, see [Monitoring context-based restrictions](/docs/iam?topic=iam-cbr-monitor).
 
 Attempts to access the cluster control plane, which can be restricted by using the `Cluster` API type, do not generate {{site.data.keyword.cloudaccesstrailshort}} or audit log events.
 {: note}
@@ -257,7 +257,7 @@ Example payload to add multiple services, IP addresses, and VPCs to a network zo
 {: ui}
 
 1. Determine the resources that you want add to your allowlist.
-1. Follow the steps to [create context-based restrictions in the console](/docs/account?topic=account-context-restrictions-create). Add the Kubernetes service to your network zones to allow {{site.data.keyword.openshiftlong_notm}} to access services and resources in your account.
+1. Follow the steps to [create context-based restrictions in the console](/docs/iam?topic=iam-context-restrictions-create). Add the Kubernetes service to your network zones to allow {{site.data.keyword.openshiftlong_notm}} to access services and resources in your account.
 
 
 
@@ -403,7 +403,7 @@ ibmcloud cbr rule-create --api-types crn:v1:bluemix:public:containers-kubernetes
 {: ui}
 
 1. [Review the available contexts](#cbr-overview) and determine the rules you want to create.
-1. Follow the steps to [create context-based restrictions in the console](/docs/account?topic=account-context-restrictions-create).
+1. Follow the steps to [create context-based restrictions in the console](/docs/iam?topic=iam-context-restrictions-create).
 
 
 

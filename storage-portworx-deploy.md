@@ -1,8 +1,8 @@
 ---
 
 copyright: 
-  years: 2014, 2025
-lastupdated: "2025-12-19"
+  years: 2014, 2026
+lastupdated: "2026-04-15"
 
 
 keywords: portworx, kubernetes, openshift
@@ -61,7 +61,7 @@ To install Portworx:
     
     1. In the **Tag** field, enter the name of the cluster where you want to install Portworx. After you create the Portworx service instance, you can't see the cluster that you installed Portworx into. To find the cluster more easily later, make sure that you enter the cluster name and any additional information as tags.
     
-    1. Enter an {{site.data.keyword.cloud_notm}} API key to retrieve the list of clusters that you have access to. If you don't have an API key, see [Managing user API keys](/docs/account?topic=account-userapikey). After you enter the API key, the **Kubernetes or OpenShift cluster name** field appears.
+    1. Enter an {{site.data.keyword.cloud_notm}} API key to retrieve the list of clusters that you have access to. If you don't have an API key, see [Managing user API keys](/docs/iam?topic=iam-userapikey). After you enter the API key, the **Kubernetes or OpenShift cluster name** field appears.
     1. Enter a unique **Portworx cluster name**.
     1. In the **Cloud Drives** menu:
         1. Select **Use Cloud Drives** (VPC Clusters only) to dynamically provision {{site.data.keyword.block_storage_is_short}} for Portworx. After selecting **Use Cloud Drives**, select the **Storage class name** and the **Size** of the block storage drives that you want to provision.

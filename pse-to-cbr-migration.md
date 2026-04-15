@@ -1,8 +1,8 @@
 ---
 
 copyright: 
-  years: 2024, 2025
-lastupdated: "2025-11-19"
+  years: 2024, 2026
+lastupdated: "2026-04-15"
 
 
 keywords: kubernetes, private service endpoint, openshift, context based restrictions
@@ -228,7 +228,7 @@ The following instructions describe how to use the CLI to create a network zone.
     | `networkZoneId` | Specify the `NETWORK-ZONE-ID` of the zone you created earlier. |
     {: caption="CBR rule create example 2" caption-side="bottom"}
 
-When creating a rule, if you see an error message that says `A rule with the same resource attributes already exists`, then you already have a CBR rule protecting your cluster. In this case, you must update your existing rule to add your network zone. For more information, see the [CBR rule-update](/docs/account?topic=account-cbr-plugin#cbr-cli-rule-update-command) documentation.
+When creating a rule, if you see an error message that says `A rule with the same resource attributes already exists`, then you already have a CBR rule protecting your cluster. In this case, you must update your existing rule to add your network zone. For more information, see the [CBR rule-update](/docs/iam?topic=iam-cbr-plugin#cbr-cli-rule-update-command) documentation.
 {: tip}
 
 ## Step 4: Disabling the private service endpoint allowlist
@@ -334,4 +334,4 @@ For more information about CBR, see the following links.
 
 - [Protecting cluster resources with context-based restrictions]/docs/openshift?topic=openshift-cbr&interface=ui).
 - [Example context-based restrictions scenarios](/docs/openshift?topic=openshift-cbr-tutorial).
-- [CBR CLI reference](/docs/account?topic=account-cbr-plugin).
+- [CBR CLI reference](/docs/iam?topic=iam-cbr-plugin).

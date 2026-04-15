@@ -1,8 +1,8 @@
 ---
 
-copyright: 
-  years: 2014, 2024
-lastupdated: "2024-05-10"
+copyright:
+  years: 2014, 2026
+lastupdated: "2026-04-15"
 
 
 keywords: openshift
@@ -55,7 +55,8 @@ Could not place order. There are insufficient resources behind router 'router_na
 {: screen}
 
 **Description and resolution**:
-The zone that you selected might not have enough infrastructure capacity to provision your worker nodes. Or, you might have exceeded a limit in your IBM Cloud infrastructure account. 
+
+The zone that you selected might not have enough infrastructure capacity to provision your worker nodes. Or, you might have exceeded a limit in your IBM Cloud infrastructure account.
 
 To resolve, try one of the following options:
 * Infrastructure resource availability in zones can fluctuate often. Wait a few minutes and try again.
@@ -92,7 +93,7 @@ The location provided for this order is invalid
 
 **Description and resolution**:
 
-Your IBM Cloud infrastructure is not set up to order compute resources in the selected data center. Contact [{{site.data.keyword.cloud_notm}} support](/docs/openshift?topic=openshift-get-help) to verify that you account is set up correctly.
+Your IBM Cloud infrastructure is not set up to order compute resources in the selected data center. Contact [{{site.data.keyword.cloud_notm}} support](/docs/openshift?topic=openshift-get-help) to verify that your account is set up correctly.
 
 ## Permissions error
 {: #permissions-error}
@@ -170,7 +171,7 @@ The owner of the API key that is used to access the IBM Cloud infrastructure por
 
 As the **user**, follow these steps:
 1. If you have access to multiple accounts, make sure that you are logged in to the account where you want to work with {{site.data.keyword.openshiftlong_notm}}.
-2. Run `ibmcloud oc api-key info --cluster <cluster_name_or_ID>` to view the current API key owner that is used to access the IBM Cloud infrastructure portfolio. 
+2. Run `ibmcloud oc api-key info --cluster <cluster_name_or_ID>` to view the current API key owner that is used to access the IBM Cloud infrastructure portfolio.
 3. Run `ibmcloud account list` to view the owner of the {{site.data.keyword.cloud_notm}} account that you currently use.
 4. Contact the owner of the {{site.data.keyword.cloud_notm}} account and report that the API key owner has insufficient permissions in IBM Cloud infrastructure or might be pending to be deleted.
 
@@ -178,7 +179,3 @@ As the **account owner**, follow these steps:
 1. Review the [required classic permissions in IBM Cloud infrastructure](/docs/openshift?topic=openshift-iam-platform-access-roles) to perform the action that previously failed. For the VPC infrastructure provider, the API key owner must have the **Administrator** platform access role.
 2. Fix the permissions of the API key owner or create a new API key by using the [`ibmcloud oc api-key reset --region <region>`](/docs/openshift?topic=openshift-kubernetes-service-cli#cs_api_key_reset) command.
 3. If you or another account admin manually set IBM Cloud infrastructure credentials in your account, run [`ibmcloud oc credential unset --region <region>`](/docs/openshift?topic=openshift-kubernetes-service-cli#cs_credentials_unset) to remove the credentials from your account.
-
-
-
-

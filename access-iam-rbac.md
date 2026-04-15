@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2024, 2026
-lastupdated: "2026-04-08"
+lastupdated: "2026-04-15"
 
 
 keywords: openshift, {{site.data.keyword.openshiftlong_notm}}, kubernetes, infrastructure, rbac, policy, role-based access control
@@ -173,8 +173,8 @@ To create custom RBAC permissions,
     | `apiVersion` |  Use `rbac.authorization.k8s.io/v1`.|
     | `metadata.namespace` | * For kind `RoleBinding`: Specify the Kubernetes namespace to which access is granted. \n * For kind `ClusterRoleBinding`: Don't use the `namespace` field. |
     | `metadata.name` | Name the role binding or cluster role binding. |
-    | `subjects.kind` | Specify the kind as one of the following: \n * `User`: Bind the RBAC role or cluster role to an individual user in your account.  \n * `Group`: Bind the RBAC role or cluster role to an [{{site.data.keyword.cloud_notm}} IAM access group](/docs/account?topic=account-groups#groups) in your account. \n * `ServiceAccount`: Bind the RBAC role or cluster role to a service account in a namespace in your cluster. |
-    | `subjects.name` | * `User`: Append the individual user's email address to `IAM#` as follows: `IAM#user@email.com`. \n * `Group`: Specify the name of the [{{site.data.keyword.cloud_notm}} IAM access group](/docs/account?topic=account-groups#groups) in your account. \n * For `ServiceAccount`: Specify the service account name. |
+    | `subjects.kind` | Specify the kind as one of the following: \n * `User`: Bind the RBAC role or cluster role to an individual user in your account.  \n * `Group`: Bind the RBAC role or cluster role to an [{{site.data.keyword.cloud_notm}} IAM access group](/docs/iam?topic=iam-groups#groups) in your account. \n * `ServiceAccount`: Bind the RBAC role or cluster role to a service account in a namespace in your cluster. |
+    | `subjects.name` | * `User`: Append the individual user's email address to `IAM#` as follows: `IAM#user@email.com`. \n * `Group`: Specify the name of the [{{site.data.keyword.cloud_notm}} IAM access group](/docs/iam?topic=iam-groups#groups) in your account. \n * For `ServiceAccount`: Specify the service account name. |
     | `subjects.apiGroup` | * `User` or `Group`: Use `rbac.authorization.k8s.io`. \n * For `ServiceAccount`: Don't include this field. |
     | `subjects.namespace` | `ServiceAccount` only: Specify the name of the Kubernetes namespace that the service account is deployed to. |
     | `roleRef.kind` | Enter the same value as the `kind` in the role `.yaml` file: `Role` or `ClusterRole`. |

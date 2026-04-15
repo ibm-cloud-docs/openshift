@@ -1,8 +1,8 @@
 ---
 
 copyright: 
-  years: 2022, 2025
-lastupdated: "2025-09-26"
+  years: 2022, 2026
+lastupdated: "2026-04-15"
 
 
 keywords: openshift, {{site.data.keyword.openshiftlong_notm}}, kubernetes, infrastructure, rbac, policy
@@ -48,7 +48,7 @@ To avoid this issue for future users, consider using a functional ID user for th
     {: pre}
 
 3. **API key**: If the user's username is returned, use another user's credentials to set the API key.
-    1. [Invite a functional ID user](/docs/account?topic=account-iamuserinv) to your {{site.data.keyword.cloud_notm}} account to use to set the API key infrastructure credentials, instead of a personal user. In case a person leaves the team, the functional ID user remains the API key owner.
+    1. [Invite a functional ID user](/docs/iam?topic=iam-iamuserinv) to your {{site.data.keyword.cloud_notm}} account to use to set the API key infrastructure credentials, instead of a personal user. In case a person leaves the team, the functional ID user remains the API key owner.
     2. [Ensure that the identity used to set the API key has the Administrator platform role in {{site.data.keyword.containerlong_notm}}, and if you are using a service ID, the Operator platform role in the IAM Identity Service](/docs/openshift?topic=openshift-iam-platform-access-roles).
     3. Log in as the functional ID.
         ```sh

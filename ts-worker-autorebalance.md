@@ -1,8 +1,8 @@
 ---
 
-copyright: 
-  years: 2014, 2024
-lastupdated: "2024-01-18"
+copyright:
+  years: 2014, 2026
+lastupdated: "2026-04-15"
 
 
 keywords: openshift
@@ -42,12 +42,5 @@ By default, your worker pools are set to automatically rebalance when you replac
 You might also have issued the `remove` command shortly after the `replace` command. If the `remove` command is processed before the `replace` command, the worker pool automatic rebalancing is still disabled, so your worker node is not replaced.
 {: note}
 
-
 To enable automatic rebalancing, [rebalance](/docs/openshift?topic=openshift-kubernetes-service-cli#cs_rebalance) or [resize](/docs/openshift?topic=openshift-kubernetes-service-cli#cs_worker_pool_resize) your worker pool. Now, when you replace a worker node, another worker node is created for you.
 {: tsResolve}
-
-
-
-
-
-

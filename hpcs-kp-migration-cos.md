@@ -2,7 +2,7 @@
 
 copyright:
   years: 2025, 2026
-lastupdated: "2026-03-24"
+lastupdated: "2026-04-15"
 
 
 keywords: key protect, hpcs, kp, migrate, cos, encryption
@@ -57,7 +57,7 @@ Complete these steps before you begin.
 
 1. If you have a COS helm chart installed on your cluster, ensure that it [runs the latest version](https://helm.sh/docs/helm/helm_upgrade/){: external}. 
 2. If you do not already have one, make a new Key Protect instance and a new set of Key Protect keys for encryption. Make sure your Key Protect instance is created in the same region as your cluster. This is required for the Key Protect instance to access your COS resources. 
-3. [Create a service-to-service authorization](/docs/account?topic=account-serviceauth&interface=ui#create-auth) for Key Protect to access your COS resources. Set the **source** service as Key Protect and the **target** service as COS, and set the access level to at least **Reader**. 
+3. [Create a service-to-service authorization](/docs/iam?topic=iam-serviceauth&interface=ui#create-auth) for Key Protect to access your COS resources. Set the **source** service as Key Protect and the **target** service as COS, and set the access level to at least **Reader**. 
 
 ## Migration steps
 {: #steps}

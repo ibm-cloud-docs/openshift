@@ -1,8 +1,8 @@
 ---
 
-copyright: 
-  years: 2023, 2024
-lastupdated: "2024-03-27"
+copyright:
+  years: 2023, 2026
+lastupdated: "2026-04-15"
 
 
 keywords: openshift, {{site.data.keyword.openshiftlong_notm}}, kubernetes, red hat, encrypt, security, kms, root key, crk
@@ -27,7 +27,7 @@ You can protect Kubernetes secrets and any credentials stored in your secrets by
 Do not delete root keys in your KMS instance, even if you rotate to a new key. If you delete a root key that a cluster uses, the cluster becomes unusable, loses all its data, and can't be recovered. Similarly, if you disable a root key, operations that rely on reading secrets fail. Unlike deleting a root key, however, you can reenable a disabled key to make your cluster usable again.
 {: important}
 
-Before you can enable a key management service (KMS) provider in your cluster, you must first create a KMS instance and a root key. 
+Before you can enable a key management service (KMS) provider in your cluster, you must first create a KMS instance and a root key.
 
 1. Create an instance of the KMS provider that you want to use.
     - [{{site.data.keyword.keymanagementserviceshort}}](/docs/key-protect?topic=key-protect-provision#provision).
@@ -54,7 +54,7 @@ Before you can enable a key management service (KMS) provider in your cluster, y
         * For example, to create an instance and root key, you need at least the **Editor** platform and **Writer** service access roles for your KMS provider.
         * If you plan to use an existing KMS instance and root key, you need at least the **Viewer** platform and **Reader** service access roles for your KMS provider.
 
-1. **Optional** Complete the following additional steps if you plan to [set up worker node disk encryption for a VPC cluster](/docs/openshift?topic=openshift-encryption-vpc-worker-disks).
+1. **Optional**: Complete the following additional steps if you plan to [set up worker node disk encryption for a VPC cluster](/docs/openshift?topic=openshift-encryption-vpc-worker-disks).
 
 1. Create a cluster and enable secret encryption.
 
@@ -67,5 +67,3 @@ You can rotate the root key from your KMS instance. This action automatically re
 
 * {{site.data.keyword.keymanagementservicefull}}: See [Rotating your keys](/docs/key-protect?topic=key-protect-getting-started-tutorial#get-started-next-steps-best-practices-key-rotate).
 * {{site.data.keyword.hscrypto}}: See [Rotating root keys manually](/docs/hs-crypto?topic=hs-crypto-rotate-keys).
-
-

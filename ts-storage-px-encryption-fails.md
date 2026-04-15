@@ -1,8 +1,8 @@
 ---
 
-copyright: 
-  years: 2014, 2024
-lastupdated: "2024-01-03"
+copyright:
+  years: 2014, 2026
+lastupdated: "2026-04-15"
 
 
 keywords: openshift
@@ -41,7 +41,6 @@ The endpoint that you entered in your Kubernetes secret is incorrect. If the KMS
 
 For more information about enabling encryption on your Portworx volumes, see [Setting up encryption](/docs/openshift?topic=openshift-storage_portworx_encryption).
 
-
 Edit your Kubernetes secret to include the correct endpoint for your KMS provider.
 {: tsResolve}
 
@@ -64,12 +63,5 @@ Edit your Kubernetes secret to include the correct endpoint for your KMS provide
 
 4. Save and close your Kubernetes secret to reapply it to your cluster.
 
-
 If you find information that you entered incorrectly or you must change the setup of your cluster, correct the information or the cluster setup.
 {: note}
-
-
-
-
-
-

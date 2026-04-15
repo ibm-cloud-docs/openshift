@@ -1,8 +1,8 @@
 ---
 
 copyright: 
-  years: 2014, 2025
-lastupdated: "2025-08-29"
+  years: 2014, 2026
+lastupdated: "2026-04-15"
 
 
 keywords: openshift, block storage
@@ -155,7 +155,7 @@ Create an image pull secret in your cluster. The secret you create is used to pu
 
 1. Review and retrieve the following values for your image pull secret.
     * `<docker-username>` - Enter the string: `iamapikey`.
-    * `<docker-password>` - Enter your IAM API key. For more information about IAM API keys, see [Understanding API keys](/docs/account?topic=account-manapikey).
+    * `<docker-password>` - Enter your IAM API key. For more information about IAM API keys, see [Understanding API keys](/docs/iam?topic=iam-manapikey).
     * `<docker-email>` - Enter the string: `iamapikey`.
 
 1. Run the following command to create the image pull secret in your cluster. Note that your secret must be named `icr-io-secret`.

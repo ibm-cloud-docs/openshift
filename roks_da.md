@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2025, 2026
-lastupdated: "2026-02-25"
+lastupdated: "2026-04-15"
 
 
 keywords: deployable architecture, DA
@@ -41,7 +41,7 @@ Each DA has a set of permissions that the user must have to be successful in exe
 ## Creating an API key
 {: #roks_da_api_key}
 
-To authenticate yourself with the DA, an IBM Cloud API Key is required. After you have all the necessary permissions, [create an API key](/docs/account?topic=account-userapikey&interface=ui#create_user_key) and save it for use when executing the DA.
+To authenticate yourself with the DA, an IBM Cloud API Key is required. After you have all the necessary permissions, [create an API key](/docs/iam?topic=iam-userapikey&interface=ui#create_user_key) and save it for use when executing the DA.
 
 ## Creating the DA
 {: #roks_da_creation}

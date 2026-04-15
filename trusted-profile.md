@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2025, 2026
-lastupdated: "2026-04-10"
+lastupdated: "2026-04-15"
 
 
 keywords: trusted profiles, containers, block storage, openshift
@@ -209,13 +209,13 @@ Once you add a trusted profile to a cluster, it cannot be removed and you cannot
     ```
     {: pre}
 
-2. Run the command to create a trusted profile. For a complete list of command options, see the [IAM CLI docs](/docs/account?topic=account-ibmcloud_commands_iam#ibmcloud_iam_trusted_profile_create).
+2. Run the command to create a trusted profile. For a complete list of command options, see the [IAM CLI docs](/docs/iam?topic=iam-ibmcloud_commands_iam#ibmcloud_iam_trusted_profile_create).
     ```sh
     ibmcloud iam trusted-profile-create NAME --description "Identity for storage"
     ```
     {: pre}
 
-3. Attach a rule to scope usage to the `kube‑system` namespace. For a complete list of command options, see the [IAM CLI docs](/docs/account?topic=account-ibmcloud_commands_iam#ibmcloud_iam_trusted_profile_rule_create). 
+3. Attach a rule to scope usage to the `kube‑system` namespace. For a complete list of command options, see the [IAM CLI docs](/docs/iam?topic=iam-ibmcloud_commands_iam#ibmcloud_iam_trusted_profile_rule_create). 
     ```sh
     ibmcloud iam trusted-profile-rule-create --name NAME --type Profile-CR --cr-type ROKS_SA  --conditions claim:namespace,operator:EQUALS,value:kube-system 
     ```

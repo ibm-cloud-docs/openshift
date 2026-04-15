@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2026
-lastupdated: "2026-04-07"
+lastupdated: "2026-04-15"
 
 
 keywords: kubernetes, openshift, infrastructure, rbac, policy
@@ -35,9 +35,9 @@ In your cluster
 ## Creating an IAM trusted profile 
 {: #iam-trusted-profile-create}
 
-To create a trusted profile in your account, see [Creating trusted profiles](/docs/account?topic=account-create-trusted-profile&interface=ui) in the IAM documentation. Note that to create a trusted profile, you must be the account owner. Additionally, the following access roles are required.
+To create a trusted profile in your account, see [Creating trusted profiles](/docs/iam?topic=iam-create-trusted-profile&interface=ui) in the IAM documentation. Note that to create a trusted profile, you must be the account owner. Additionally, the following access roles are required.
 - Administrator role for all account management services.
-- Administrator role on the IAM Identity Service. For more information, see [IAM Identity Service](/docs/account?topic=account-account-services&interface=ui#identity-service-account-management). 
+- Administrator role on the IAM Identity Service. For more information, see [IAM Identity Service](/docs/iam?topic=iam-account-services&interface=ui#identity-service-account-management).
 - [Additional roles required for your specific resources and components](/docs/openshift?topic=openshift-configure-trusted-profile#tp-minreqs-all).
 
 
@@ -61,7 +61,7 @@ To get the default trusted profile for clusters in the same resource group, run 
 Give application pods that run in your {{site.data.keyword.openshiftlong}} cluster access to {{site.data.keyword.cloud_notm}} services by using trusted profiles in {{site.data.keyword.cloud_notm}} Identity and Access Management (IAM). As a developer, you can configure your application pods to authenticate with {{site.data.keyword.cloud_notm}} services in clusters that are linked to an IAM trusted profile set up.
 {: shortdesc}
 
-To complete these steps, you do not need to have the administrator access role. However, you must meet the following requirements: **Viewer** [platform](/docs/openshift?topic=openshift-iam-platform-access-roles) access role; **Writer** [service](/docs/openshift?topic=openshift-iam-platform-access-roles) access role for the cluster in {{site.data.keyword.cloud_notm}} IAM for **{{site.data.keyword.containershort}}**; the `iam-identity.profile.create` and `iam-identity.profile.linkToResource` actions for the [IAM identity service](/docs/account?topic=account-iam-service-roles-actions#iam-identity-roles).
+To complete these steps, you do not need to have the administrator access role. However, you must meet the following requirements: **Viewer** [platform](/docs/openshift?topic=openshift-iam-platform-access-roles) access role; **Writer** [service](/docs/openshift?topic=openshift-iam-platform-access-roles) access role for the cluster in {{site.data.keyword.cloud_notm}} IAM for **{{site.data.keyword.containershort}}**; the `iam-identity.profile.create` and `iam-identity.profile.linkToResource` actions for the [IAM identity service](/docs/iam?topic=iam-iam-service-roles-actions#iam-identity-roles).
 {: note}
 
 Before you begin:
