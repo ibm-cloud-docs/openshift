@@ -1,8 +1,8 @@
 ---
 
-copyright: 
-  years: 2014, 2024
-lastupdated: "2024-01-26"
+copyright:
+  years: 2014, 2026
+lastupdated: "2026-04-15"
 
 
 keywords: kubernetes, help, network, connectivity, openshift
@@ -12,7 +12,6 @@ subcollection: openshift
 content-type: troubleshoot
 
 ---
-
 
 {{site.data.keyword.attribute-definition-list}}
 
@@ -50,7 +49,6 @@ Describe your PVC and review the common error messages.
 
 2. Review common error message descriptions and resolutions.
 
-
 | Error message | Description | Steps to resolve |
 | --- | --- | --- |
 | `can't get credentials: can't get secret <secret_name>: secrets "<secret_name>" not found` | The Kubernetes secret that holds your {{site.data.keyword.cos_full_notm}} service credentials does not exist in the same namespace as the PVC or pod. | See [PVC or pod creation fails due to not finding the Kubernetes secret](/docs/openshift?topic=openshift-cos_secret_access_fails).|
@@ -73,8 +71,3 @@ Describe your PVC and review the common error messages.
 | `TokenManagerRetrieveError: error retrieving the token` | This error occurs when you create a PVC with IAM credentials on a cluster that does not have public outbound access.| If your cluster does not have public outbound access, [create an {{site.data.keyword.cos_full_notm}} instance that uses HMAC credentials](/docs/openshift?topic=openshift-storage-cos-understand#create_cos_service).|
 | `set-access-policy not supported for classic cluster` | This error occurs when you install the `ibm-object-storage-plugin` in a Classic cluster and set the `bucketAccessPolicy=true` option. The `bucketAccessPolicy=true` option is only used with VPC clusters.| [Install the plug-in](/docs/openshift?topic=openshift-storage_cos_install) and set the `bucketAccessPolicy=false` option. |
 {: caption="Block Storage error messages" caption-side="bottom"}
-
-
-
-
-

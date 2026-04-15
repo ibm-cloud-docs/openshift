@@ -1,8 +1,8 @@
 ---
 
 copyright: 
-  years: 2014, 2025
-lastupdated: "2025-10-07"
+  years: 2014, 2026
+lastupdated: "2026-04-15"
 
 
 keywords: openshift, {{site.data.keyword.openshiftlong_notm}}, kubernetes, infrastructure, rbac, policy
@@ -21,7 +21,7 @@ subcollection: openshift
 {: help}
 {: support}
 
-{{site.data.keyword.openshiftlong_notm}} accesses the infrastructure portfolio and other services needed by your cluster by using an [API key](/docs/account?topic=account-manapikey). This API key stores the credentials of a user in the account to the infrastructure and other services. {{site.data.keyword.openshiftlong_notm}} uses the API key to order resources in the service, such as new worker nodes or VLANs.
+{{site.data.keyword.openshiftlong_notm}} accesses the infrastructure portfolio and other services needed by your cluster by using an [API key](/docs/iam?topic=iam-manapikey). This API key stores the credentials of a user in the account to the infrastructure and other services. {{site.data.keyword.openshiftlong_notm}} uses the API key to order resources in the service, such as new worker nodes or VLANs.
 {: shortdesc}
 
 ## Considerations
@@ -36,7 +36,7 @@ Before resetting your cluster API key, consider the following:
     - The most recent user to run the `api-key reset` targeting the resource group and specifying the region.
     - If neither of these have occurred, there are no stored credentials in the resource group in the region.
 
-- To avoid tying your cluster resources to a specific user, like the account owner, consider using a [functional ID](/docs/account?topic=account-identity-overview#functionalid-bestpract) or a [service ID](/docs/account?topic=account-identity-overview#serviceid-bestpract) instead of a personal user. Using an identity such as a functional ID or service ID prevents other users from losing access to the account and prevents disruptions to services and commands that require certain credentials that might not be available after the API key owner leaves.
+- To avoid tying your cluster resources to a specific user, like the account owner, consider using a [functional ID](/docs/iam?topic=iam-identity-overview#functionalid-bestpract) or a [service ID](/docs/iam?topic=iam-identity-overview#serviceid-bestpract) instead of a personal user. Using an identity such as a functional ID or service ID prevents other users from losing access to the account and prevents disruptions to services and commands that require certain credentials that might not be available after the API key owner leaves.
 
 - Make sure that the identity that is used to run this command has the required [Administrator platform role in {{site.data.keyword.containerlong_notm}}](/docs/openshift?topic=openshift-iam-platform-access-roles), the Operator platform role in the IAM Identity Service if you are using a service ID, and also the required permissions for the other services or integrations. Target the resource group that you want to set the API key for. The user that runs the `api-key reset` command replaces the API key associated with the targeted resource group in the specified region. If that user doesn't have sufficient permissions, other users in the resource group in the specified region might be impacted.
 

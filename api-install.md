@@ -1,8 +1,8 @@
 ---
 
 copyright: 
-  years: 2014, 2025
-lastupdated: "2025-10-23"
+  years: 2014, 2026
+lastupdated: "2026-04-15"
 
 
 keywords: openshift, {{site.data.keyword.openshiftlong_notm}}, kubernetes, ic, ks, kubectl, api
@@ -83,11 +83,11 @@ The {{site.data.keyword.openshiftlong_notm}} API requires header information tha
 To authenticate with {{site.data.keyword.openshiftlong_notm}}, you must provide an {{site.data.keyword.cloud_notm}} Identity and Access Management (IAM) token that is generated with your {{site.data.keyword.cloud_notm}} credentials and that includes the {{site.data.keyword.cloud_notm}} account ID where the cluster was created. Depending on the way you authenticate with {{site.data.keyword.cloud_notm}}, you can choose between the following options to automate the creation of your {{site.data.keyword.cloud_notm}} IAM token.
 
 Unfederated ID
-:    - **Generate an {{site.data.keyword.cloud_notm}} API key:** As an alternative to using the {{site.data.keyword.cloud_notm}} username and password, you can use [{{site.data.keyword.cloud_notm}} API keys](/docs/account?topic=account-userapikey&interface=ui#create_user_key). {{site.data.keyword.cloud_notm}} API keys are dependent on the {{site.data.keyword.cloud_notm}} account they are generated for. You can't combine your {{site.data.keyword.cloud_notm}} API key with a different account ID in the same {{site.data.keyword.cloud_notm}} IAM token. To access clusters that were created with an account other than the one your {{site.data.keyword.cloud_notm}} API key is based on, you must log in to the account to generate a new API key.
+:    - **Generate an {{site.data.keyword.cloud_notm}} API key:** As an alternative to using the {{site.data.keyword.cloud_notm}} username and password, you can use [{{site.data.keyword.cloud_notm}} API keys](/docs/iam?topic=iam-userapikey&interface=ui#create_user_key). {{site.data.keyword.cloud_notm}} API keys are dependent on the {{site.data.keyword.cloud_notm}} account they are generated for. You can't combine your {{site.data.keyword.cloud_notm}} API key with a different account ID in the same {{site.data.keyword.cloud_notm}} IAM token. To access clusters that were created with an account other than the one your {{site.data.keyword.cloud_notm}} API key is based on, you must log in to the account to generate a new API key.
      - **{{site.data.keyword.cloud_notm}} username and password:** You can follow the steps in this topic to fully automate the creation of your {{site.data.keyword.cloud_notm}} IAM access token.
      
 Federated ID
-:    - **Generate an {{site.data.keyword.cloud_notm}} API key:** [{{site.data.keyword.cloud_notm}} API keys](/docs/account?topic=account-userapikey&interface=ui#create_user_key) are dependent on the {{site.data.keyword.cloud_notm}} account they are generated for. You can't combine your {{site.data.keyword.cloud_notm}} API key with a different account ID in the same {{site.data.keyword.cloud_notm}} IAM token. To access clusters that were created with an account other than the one your {{site.data.keyword.cloud_notm}} API key is based on, you must log in to the account to generate a new API key.
+:    - **Generate an {{site.data.keyword.cloud_notm}} API key:** [{{site.data.keyword.cloud_notm}} API keys](/docs/iam?topic=iam-userapikey&interface=ui#create_user_key) are dependent on the {{site.data.keyword.cloud_notm}} account they are generated for. You can't combine your {{site.data.keyword.cloud_notm}} API key with a different account ID in the same {{site.data.keyword.cloud_notm}} IAM token. To access clusters that were created with an account other than the one your {{site.data.keyword.cloud_notm}} API key is based on, you must log in to the account to generate a new API key.
      - **Use a one-time passcode:** If you authenticate with {{site.data.keyword.cloud_notm}} by using a one-time passcode, you can't fully automate the creation of your {{site.data.keyword.cloud_notm}} IAM token because the retrieval of your one-time passcode requires a manual interaction with your web browser. To fully automate the creation of your {{site.data.keyword.cloud_notm}} IAM token, you must create an {{site.data.keyword.cloud_notm}} API key instead.
 
 - **API key:** To generate your [{{site.data.keyword.cloud_notm}}](https://cloud.ibm.com/) API key do as follows.
@@ -253,7 +253,7 @@ When you use the API for automation, be sure to rely on the responses from the A
 Every {{site.data.keyword.cloud_notm}} Identity and Access Management (IAM) access token that is issued via the API expires after one hour. You must refresh your access token regularly to assure access to the {{site.data.keyword.cloud_notm}} API.
 {: shortdesc}
 
-Before you begin, make sure that you have an [{{site.data.keyword.cloud_notm}} API key](/docs/account?topic=account-userapikey&interface=ui#create_user_key) that you can use to request a new access token.
+Before you begin, make sure that you have an [{{site.data.keyword.cloud_notm}} API key](/docs/iam?topic=iam-userapikey&interface=ui#create_user_key) that you can use to request a new access token.
 
 Use the following steps if you want to obtain a new {{site.data.keyword.cloud_notm}} IAM token.
 

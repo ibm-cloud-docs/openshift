@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2026
-lastupdated: "2026-04-09"
+lastupdated: "2026-04-15"
 
 
 keywords: portworx, kubernetes, openshift
@@ -70,7 +70,7 @@ IBM Cloud is changing dedicated key management services from Hyper Protect Crypt
 
 1. [Create a root key](/docs/hs-crypto?topic=hs-crypto-create-root-keys&interface=ui).
 
-1. [Create a service ID](/docs/account?topic=account-serviceids&interface=cli#serviceids).
+1. [Create a service ID](/docs/iam?topic=iam-serviceids&interface=cli#serviceids).
 
 1. **Private clusters**: [Create a virtual private endpoint gateway](/docs/vpc?topic=vpc-ordering-endpoint-gateway&interface=ui#vpe-creating-ui) that allows access to your KMS instance. Make sure to bind at least 1 IP address from each subnet in your VPC to the VPE.
 
@@ -84,7 +84,7 @@ IBM Cloud is changing dedicated key management services from Hyper Protect Crypt
 
 1. [Create a root key](/docs/key-protect?topic=key-protect-create-root-keys&interface=ui).
 
-1. [Create a service ID](/docs/account?topic=account-serviceids&interface=cli#serviceids).
+1. [Create a service ID](/docs/iam?topic=iam-serviceids&interface=cli#serviceids).
 
 1. [Retrieve the region](/docs/key-protect?topic=key-protect-regions#regions) where you created your service instance and make a note. You need this value later when you create your secret.
 

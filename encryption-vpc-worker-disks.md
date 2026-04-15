@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2023, 2026
-lastupdated: "2026-03-17"
+lastupdated: "2026-04-15"
 
 
 keywords: openshift, {{site.data.keyword.openshiftlong_notm}}, kubernetes, red hat, encrypt, security, kms, root key, crk
@@ -54,7 +54,7 @@ You can manage the encryption of the worker nodes by enabling a KMS provider at 
         ```
         {: pre}
 
-    1. Create a new CBR rule that references the network zone you created in the previous step, or update an existing CBR rule. For more information, see [Creating rules by using the CLI](/docs/account?topic=account-context-restrictions-create&interface=cli#context-restrictions-create-rules-cli).
+    1. Create a new CBR rule that references the network zone you created in the previous step, or update an existing CBR rule. For more information, see [Creating rules by using the CLI](/docs/iam?topic=iam-context-restrictions-create&interface=cli#context-restrictions-create-rules-cli).
 
 
 1. Create a cluster or worker pool that includes the account where the KMS instance resides, the KMS provider instance and root key. Each worker node in the worker pool then is encrypted by the KMS provider that you manage. Each worker pool in your cluster can use the same KMS instance and root key, the same KMS instance with different root keys, or different instances.

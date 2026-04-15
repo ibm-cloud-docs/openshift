@@ -2,7 +2,7 @@
 
 copyright:
   years: 2025, 2026
-lastupdated: "2026-02-25"
+lastupdated: "2026-04-15"
 
 
 keywords: openshift, acm, advanced cluster management, manage cluster, management, addon, add-on, acm addon
@@ -50,7 +50,7 @@ Review the following prerequisite steps and information before you install the A
 
 Follow the steps to create a trusted profile to use for ACM.
 
-1. Follow the steps to [create a trusted profile](/docs/account?topic=account-create-trusted-profile&interface=ui). In the **Conditions** for the profile, be sure to specify the following access.
+1. Follow the steps to [create a trusted profile](/docs/iam?topic=iam-create-trusted-profile&interface=ui). In the **Conditions** for the profile, be sure to specify the following access.
     * Allow access when **Namespace** equals `kube-system`
     * Satellite Service Roles - Satellite Link Administrator, Reader
     * Kubernetes Service Roles - Manager, Editor

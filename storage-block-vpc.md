@@ -1,8 +1,8 @@
 ---
 
 copyright: 
-  years: 2014, 2025
-lastupdated: "2025-12-10"
+  years: 2014, 2026
+lastupdated: "2026-04-15"
 
 
 keywords: openshift, block storage, deploy apps
@@ -621,7 +621,7 @@ Enabling encryption for {{site.data.keyword.block_storage_is_short}} impacts per
     - [{{site.data.keyword.keymanagementserviceshort}} root key](/docs/key-protect?topic=key-protect-create-root-keys#create-root-keys).
     - [{{site.data.keyword.hscrypto}} root key](/docs/hs-crypto?topic=hs-crypto-create-root-keys). By default, the root key is created without an expiration date.
 
-1. [Set up service to service authorization](/docs/account?topic=account-serviceauth). Authorize {{site.data.keyword.block_storage_is_short}} to access {{site.data.keyword.keymanagementservicelong}}. Make sure to give {{site.data.keyword.block_storage_is_short}} at least `Reader` access to your KMS instance.
+1. [Set up service to service authorization](/docs/iam?topic=iam-serviceauth). Authorize {{site.data.keyword.block_storage_is_short}} to access {{site.data.keyword.keymanagementservicelong}}. Make sure to give {{site.data.keyword.block_storage_is_short}} at least `Reader` access to your KMS instance.
     
 
 1. [Decide if you want to store the {{site.data.keyword.keymanagementserviceshort}} root key CRN in a customized storage class or in a Kubernetes secret](/docs/openshift?topic=openshift-vpc-block#vpc-customize-default). Then, follow the steps to create a customized storage class or a Kubernetes secret.

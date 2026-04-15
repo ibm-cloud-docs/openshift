@@ -1,8 +1,8 @@
 ---
 
 copyright: 
-  years: 2023, 2025
-lastupdated: "2025-01-29"
+  years: 2023, 2026
+lastupdated: "2026-04-15"
 
 
 keywords: openshift, {{site.data.keyword.openshiftlong_notm}}, kubernetes, oauth, console, access, vpe, pse, network
@@ -81,7 +81,7 @@ You can use the `POST /network/v2/oauth-access-type/{idOrName}/set` API to set t
 
 1. [Access your {{site.data.keyword.redhat_openshift_notm}} cluster](/docs/openshift?topic=openshift-access_cluster).
 1. Get the name or ID of your cluster. To list the clusters that you have access to, use the `GET /v1/clusters` API or run `ibmcloud ks cluster ls`.
-1. [Generate an IAM token](/docs/account?topic=account-iamtoken_from_apikey&interface=ui).
+1. [Generate an IAM token](/docs/iam?topic=iam-iamtoken_from_apikey&interface=ui).
 
 1. Run the following request. Replace `{idOrName}` with the name or ID of your cluster.
 
@@ -122,5 +122,3 @@ You can use the `GET /network/v2/oauth-access-type/{idOrName}` API to get the ac
 1. Review the output and verify the OAuth access type.
    - [4.13 clusters]{: tag-red}: If the value is empty, the `vpegw` behavior is being used.
    - [4.14 clusters]{: tag-red} and later: If the value is empty, the `legacy` behavior is being used.
-
-

@@ -1,8 +1,8 @@
 ---
 
 copyright: 
-  years: 2014, 2024
-lastupdated: "2024-05-29"
+  years: 2014, 2026
+lastupdated: "2026-04-15"
 
 
 keywords: kubernetes, openshift
@@ -140,7 +140,7 @@ The following steps assume that the API key stores the credentials of a service 
     ```
     {: screen}
 
-2. Verify that the service ID is assigned at least an {{site.data.keyword.cloud_notm}} IAM **Reader** [service access role policy for {{site.data.keyword.registrylong_notm}}](/docs/Registry?topic=Registry-user#create). If the service ID does not have the **Reader** service access role, [edit the IAM policies](/docs/account?topic=account-serviceids&interface=ui#update_serviceid). If the policies are correct, continue with the next step to see if the credentials are valid.
+2. Verify that the service ID is assigned at least an {{site.data.keyword.cloud_notm}} IAM **Reader** [service access role policy for {{site.data.keyword.registrylong_notm}}](/docs/Registry?topic=Registry-user#create). If the service ID does not have the **Reader** service access role, [edit the IAM policies](/docs/iam?topic=iam-serviceids&interface=ui#update_serviceid). If the policies are correct, continue with the next step to see if the credentials are valid.
     ```sh
     ibmcloud iam service-policies <service_ID_name>
     ```
@@ -211,12 +211,3 @@ The following steps assume that the API key stores the credentials of a service 
         {: pre}
 
     7. Check that the pull secret is either referenced directly from the deployment or from the service account that the deployment uses. If you still can't resolve the issue, [contact support](/docs/openshift?topic=openshift-get-help).
-
-
-
-
-
-
-
-
-

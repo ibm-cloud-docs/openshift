@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2026
-lastupdated: "2026-04-08"
+lastupdated: "2026-04-15"
 
 
 keywords: openshift, http2, quota, app protocol, application protocol
@@ -24,7 +24,7 @@ subcollection: openshift
 {: shortdesc}
 
 
-If you anticipate reaching any of the following {{site.data.keyword.openshiftlong_notm}} limitations, [contact IBM Support](/docs/account?topic=account-using-avatar) and provide the cluster ID, the new quota limit, and the region in your support ticket.
+If you anticipate reaching any of the following {{site.data.keyword.openshiftlong_notm}} limitations, [contact IBM Support](/docs/iam?topic=iam-using-avatar) and provide the cluster ID, the new quota limit, and the region in your support ticket.
 {: tip}
 
 ## Service and quota limitations
@@ -50,7 +50,7 @@ To view quota limits on cluster-related resources in your {{site.data.keyword.cl
 | Operating system | Worker nodes must run one of the supported operating systems. You can't create a cluster with worker nodes that run different types of operating systems. For more information, see the [{{site.data.keyword.openshiftshort}} version information](/docs/openshift?topic=openshift-openshift_versions). |
 | OperatorHub catalog | To use the OperatorHub catalog in private clusters see [Disabling OperatorHub and mirroring catalog source images to `icr.io`](/docs/openshift?topic=openshift-operators#mirror-operatorhub). |
 | Pod instances | You can run 110 pods per worker node. If you have worker nodes with 11 CPU cores or more, you can support 10 pods per core, up to a limit of 250 pods per worker node. The number of pods includes `kube-system` and `ibm-system` pods that run on the worker node. For improved performance, consider limiting the number of pods that you run per compute core so that you don't overuse the worker node. For example, on a worker node with a `b3c.4x16` flavor, you might run 10 pods per core that use no more than 75% of the worker node total capacity. |
-| [Deprecated]{: tag-red} Time-based one-time passcode (TOTP) | To use [TOTP](/docs/account?topic=account-legacy-mfa#account-based), make sure that you [enable multifactor authentication (MFA)](/docs/account?topic=account-enablemfa) for your entire {{site.data.keyword.cloud_notm}} account. If MFA is enabled only for some users but not at the account level, authentication errors might occur.  |
+| [Deprecated]{: tag-red} Time-based one-time passcode (TOTP) | To use [TOTP](/docs/iam?topic=iam-legacy-mfa#account-based), make sure that you [enable multifactor authentication (MFA)](/docs/iam?topic=iam-enablemfa) for your entire {{site.data.keyword.cloud_notm}} account. If MFA is enabled only for some users but not at the account level, authentication errors might occur.  |
 | Worker node quota | A maximum 500 worker nodes for any accounts created before 01 January 2024. For accounts created on or after that date, the maximum quota is 200 after a period of lower quotas. Quotas apply per cluster [infrastructure provider](/docs/openshift?topic=openshift-overview#what-compute-infra-is-offered). If you need more of the resource, [contact IBM Support](/docs/account?topic=account-using-avatar). In the support case, include the new quota limit for the region and infrastructure provider that you want.. To list quotas run, `ibmcloud ks quota ls`. |
 | Worker pool size | You must always have a minimum of 2 nodes in your cluster. Because of the worker node quota, you are limited in the number of worker pools per cluster and number of worker nodes per worker pool. For example, with the default worker node quota of 500 per region, you might have up to 500 worker pools of 1 worker node each in a region with only 1 cluster. Or, you might have 1 worker pool with up to 500 worker nodes in a region with only 1 cluster. |
 | Red Hat Enterprise Linux CoreOS worker nodes | The maximum amount of zones added to a cluster is 12. For example, 3 RHCOS worker pools with 3 zones each will account for 9/12 of the quota for that cluster. |

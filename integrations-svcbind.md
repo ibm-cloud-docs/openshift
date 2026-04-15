@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2026
-lastupdated: "2026-02-20"
+lastupdated: "2026-04-15"
 
 
 keywords: openshift, kubernetes, helm, integrations, helm chart
@@ -27,7 +27,7 @@ What is {{site.data.keyword.cloud_notm}} service binding?
 :   Service binding is a quick way to create service credentials for an {{site.data.keyword.cloud_notm}} service by using its public cloud service endpoint and storing these credentials in a Kubernetes secret in your cluster. To bind a service to your cluster, you must provision an instance of the service first. Then, you can either bind services [manually to your cluster](#add_services_manual) or you can use the `service bind` CLI [command](#bind-services) to create the service credentials and the Kubernetes secret.
 
 What types of services can I bind to my cluster?
-:   You can bind services that are enabled for {{site.data.keyword.cloud_notm}} Identity and Access Management (IAM). IAM-enabled services offer more granular access control and can be managed in an {{site.data.keyword.cloud_notm}} resource group. For more information, see [Managing access to resources](/docs/account?topic=account-assign-access-resources). To find a list of supported {{site.data.keyword.cloud_notm}} services, see the [{{site.data.keyword.cloud_notm}} catalog](https://cloud.ibm.com/catalog).
+:   You can bind services that are enabled for {{site.data.keyword.cloud_notm}} Identity and Access Management (IAM). IAM-enabled services offer more granular access control and can be managed in an {{site.data.keyword.cloud_notm}} resource group. For more information, see [Managing access to resources](/docs/iam?topic=iam-assign-access-resources). To find a list of supported {{site.data.keyword.cloud_notm}} services, see the [{{site.data.keyword.cloud_notm}} catalog](https://cloud.ibm.com/catalog).
 
 How can I make my cluster secrets even more secure?
 :   Ask your cluster admin to [enable a key management service provider](/docs/openshift?topic=openshift-encryption) in your cluster to encrypt new and existing secrets, such as the secret that stores the credentials of your {{site.data.keyword.cloud_notm}} service instances.

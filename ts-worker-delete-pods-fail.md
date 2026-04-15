@@ -1,8 +1,8 @@
 ---
 
-copyright: 
-  years: 2014, 2024
-lastupdated: "2024-02-16"
+copyright:
+  years: 2014, 2026
+lastupdated: "2026-04-15"
 
 
 keywords: openshift
@@ -39,7 +39,6 @@ oc -n calico-system get pods
 
 When you delete all worker nodes in your cluster, no worker node exists for the `calico-kube-controllers` pod to run on. The Calico controller pod's data can't be updated to remove the data of the deleted worker nodes. When the Calico controller pod begins to run again on the new worker nodes, its data is not updated for the new worker nodes, and it does not start the `calico-node` pods.
 {: tsCauses}
-
 
 Delete the existing `calico-node` worker node entries so that new pods can be created.
 {: tsResolve}
@@ -92,9 +91,3 @@ Delete the existing `calico-node` worker node entries so that new pods can be cr
 
 To prevent this error in the future, never delete all worker nodes in your cluster. Always run at least one worker node in your cluster, and if you use Ingress or routes to expose apps, run at least two worker nodes per zone.
 {: note}
-
-
-
-
-
-

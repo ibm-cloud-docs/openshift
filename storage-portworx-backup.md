@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2026
-lastupdated: "2026-04-07"
+lastupdated: "2026-04-15"
 
 
 keywords: portworx, kubernetes, openshift
@@ -50,7 +50,7 @@ If you are installing Portworx Backup in a newly provisioned cluster, [you must 
 3. Enter the name for your Portworx Backup service in the **Service name** field.
 4. Select the resource group where you want to create the Portworx Backup service.
 5. In the **Tag** field, enter the name of the cluster where you want to install PX-Backup. After you complete the installation, you can't see the name of the cluster where you installed PX-Backup. To find the cluster more easily later, make sure that you enter the cluster name and any additional information as tags.
-6. Enter your {{site.data.keyword.cloud_notm}} API key. After you enter the API key, the **Kubernetes or OpenShift cluster name** field appears. If you don't have an {{site.data.keyword.cloud_notm}} API key, see [Creating an API key](/docs/account?topic=account-userapikey&interface=ui#create_user_key) to create one.
+6. Enter your {{site.data.keyword.cloud_notm}} API key. After you enter the API key, the **Kubernetes or OpenShift cluster name** field appears. If you don't have an {{site.data.keyword.cloud_notm}} API key, see [Creating an API key](/docs/iam?topic=iam-userapikey&interface=ui#create_user_key) to create one.
 7. In the **Kubernetes or OpenShift cluster name** field, select the cluster where you want to install PX-Backup.
 8. Enter the name of the {{site.data.keyword.redhat_openshift_notm}} project where you want to install your Portworx Backup service components. Do not use the `kube-system` or `default` namespace. If the {{site.data.keyword.redhat_openshift_notm}} project that you enter does not already exist in your cluster, it is automatically created during the installation.
 9. Select an existing storage class in your cluster to provision persistent volumes for the Portworx Backup service. The service uses this storage to store service metadata and is not used to back up your apps and data. [Your apps and data are backed up to an {{site.data.keyword.cos_full_notm}} service instance](#px-backup-storage).
