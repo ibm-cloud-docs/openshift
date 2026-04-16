@@ -6149,14 +6149,6 @@ subcollection: openshift
 
     * [`ibmcloud oc vlan spanning get`](/docs/openshift?topic=openshift-kubernetes-service-cli#cs_vlan_spanning_get)
 
-* [`vni` commands](/docs/openshift?topic=openshift-kubernetes-service-cli#vni)
-
-    * [`ibmcloud oc vni attach baremetal`](/docs/openshift?topic=openshift-kubernetes-service-cli#cs_vni_attach_baremetal)
-
-    * [`ibmcloud oc vni detach`](/docs/openshift?topic=openshift-kubernetes-service-cli#cs_vni_detach)
-
-    * [`ibmcloud oc vni ls`](/docs/openshift?topic=openshift-kubernetes-service-cli#cs_vni_ls)
-
 * [`ibmcloud oc vpc ls`](/docs/openshift?topic=openshift-kubernetes-service-cli#vpc-ls-cli)
 
     * [Command options](/docs/openshift?topic=openshift-kubernetes-service-cli#vpc-ls-options)
