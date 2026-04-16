@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2026
-lastupdated: "2026-04-14"
+lastupdated: "2026-04-16"
 
 
 keywords: openshift
@@ -1747,6 +1747,12 @@ subcollection: openshift
     * [Accessing clusters from the public network](/docs/openshift?topic=openshift-access_cluster#sat_public_access)
 
 * [Accessing VPC clusters through the Virtual Private Endpoint Gateway](/docs/openshift?topic=openshift-access_cluster#vpc_vpe)
+
+* [Creating additional Virtual Private Endpoint gateways in other VPCs and accounts](/docs/openshift?topic=openshift-access_cluster#vpc_cluster_new_vpe_access)
+
+    * [Example: Target account commands](/docs/openshift?topic=openshift-access_cluster#vpc_cluster_new_vpe_target_example)
+
+    * [Example: Source account commands](/docs/openshift?topic=openshift-access_cluster#vpc_cluster_new_vpe_source_example)
 
 * [Accessing clusters from automation tools by using an API key](/docs/openshift?topic=openshift-access_cluster#access_automation)
 
