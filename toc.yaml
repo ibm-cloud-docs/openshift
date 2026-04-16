@@ -260,6 +260,13 @@ toc:
           - acm-about.md
           - acm-addon.md
       - topicgroup:
+          label: OpenShift Virtualization
+          topics:
+          - virt-overview.md
+          - virt-plan.md
+          - virt-storage-setup.md
+          - oc-virtualization.md
+      - topicgroup:
           label: Storage
           topics:
           - topic: storage-plan.md
@@ -345,13 +352,6 @@ toc:
           topics:
           - addon_landing.md
           - integrations-ibm-third-party.md
-          - topicgroup:
-              label: OpenShift Virtualization
-              topics:
-              - virt-overview.md
-              - virt-plan.md
-              - virt-storage-setup.md
-              - oc-virtualization.md
           - openshift_integrations_cloud_paks.md
           - openshift_integrations_operators.md
           - openshift_compliance_operator.md

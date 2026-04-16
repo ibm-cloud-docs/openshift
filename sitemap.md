@@ -3614,6 +3614,125 @@ subcollection: openshift
 * [Deleting the ACM add-on](/docs/openshift?topic=openshift-acm&interface=cli#delete)
 
 
+## OpenShift Virtualization
+{: #sitemap_openshift_virtualization}
+
+
+[Understanding OpenShift Virtualization](/docs/openshift?topic=openshift-virt-overview#virt-overview)
+
+* [What is OpenShift Virtualization?](/docs/openshift?topic=openshift-virt-overview#virt-what-is)
+
+* [Requirements](/docs/openshift?topic=openshift-virt-overview#virt-requirements)
+
+* [Supported configurations](/docs/openshift?topic=openshift-virt-overview#virt-supported-configs)
+
+    * [Cluster requirements](/docs/openshift?topic=openshift-virt-overview#virt-cluster-reqs)
+
+    * [Bare metal flavors](/docs/openshift?topic=openshift-virt-overview#virt-bm-flavors)
+
+    * [Storage options](/docs/openshift?topic=openshift-virt-overview#virt-storage-options)
+
+    * [Networking options](/docs/openshift?topic=openshift-virt-overview#virt-networking-options)
+
+* [Limitations](/docs/openshift?topic=openshift-virt-overview#virt-limitations)
+
+* [Next steps](/docs/openshift?topic=openshift-virt-overview#virt-next-steps)
+
+[Planning your OpenShift Virtualization deployment](/docs/openshift?topic=openshift-virt-plan#virt-plan)
+
+* [Prerequisites](/docs/openshift?topic=openshift-virt-plan#virt-prereqs)
+
+* [Planning your cluster configuration](/docs/openshift?topic=openshift-virt-plan#virt-plan-cluster)
+
+    * [Choosing bare metal flavors](/docs/openshift?topic=openshift-virt-plan#virt-plan-flavors)
+
+    * [Worker pool architecture](/docs/openshift?topic=openshift-virt-plan#virt-plan-worker-pools)
+
+* [Planning your storage solution](/docs/openshift?topic=openshift-virt-plan#virt-plan-storage)
+
+    * [Storage decision matrix](/docs/openshift?topic=openshift-virt-plan#virt-storage-matrix)
+
+    * [Storage options](/docs/openshift?topic=openshift-virt-plan#virt-storage-options)
+
+* [Planning your networking setup](/docs/openshift?topic=openshift-virt-plan#virt-plan-networking)
+
+    * [Networking options](/docs/openshift?topic=openshift-virt-plan#virt-plan-networking)
+
+    * [Installing the NMState operator](/docs/openshift?topic=openshift-virt-plan#virt-plan-nmstate)
+
+* [Node placement](/docs/openshift?topic=openshift-virt-plan#virt-plan-node-placement)
+
+* [Sizing and optimization](/docs/openshift?topic=openshift-virt-plan#virt-plan-sizing)
+
+* [Next steps](/docs/openshift?topic=openshift-virt-plan#virt-plan-next-steps)
+
+[Setting up storage for OpenShift Virtualization](/docs/openshift?topic=openshift-virt-storage-setup#virt-storage-setup)
+
+* [Before you begin](/docs/openshift?topic=openshift-virt-storage-setup#virt-storage-prereqs)
+
+* [Option 1: Setting up OpenShift Data Foundation](/docs/openshift?topic=openshift-virt-storage-setup#virt-storage-odf)
+
+    * [Prerequisites for ODF](/docs/openshift?topic=openshift-virt-storage-setup#virt-storage-odf-prereqs)
+
+    * [Installing ODF from the console](/docs/openshift?topic=openshift-virt-storage-setup#virt-storage-odf-ui)
+
+    * [Installing ODF from the CLI](/docs/openshift?topic=openshift-virt-storage-setup#virt-storage-odf-cli)
+
+    * [Verifying ODF installation](/docs/openshift?topic=openshift-virt-storage-setup#virt-storage-odf-verify)
+
+* [Option 2: Setting up VPC File Storage](/docs/openshift?topic=openshift-virt-storage-setup#virt-storage-vpc-file)
+
+    * [Prerequisites for VPC File Storage](/docs/openshift?topic=openshift-virt-storage-setup#virt-storage-vpc-file-prereqs)
+
+    * [Step 1: Disable VPC Block Storage as default](/docs/openshift?topic=openshift-virt-storage-setup#virt-storage-vpc-file-disable-block)
+
+    * [Step 2: Install the VPC File CSI driver](/docs/openshift?topic=openshift-virt-storage-setup#virt-storage-vpc-file-install)
+
+    * [Step 3: Set a default storage class](/docs/openshift?topic=openshift-virt-storage-setup#virt-storage-vpc-file-default)
+
+    * [Step 4: Configure storage profiles for VPC File Storage](/docs/openshift?topic=openshift-virt-storage-setup#virt-storage-vpc-file-profiles)
+
+    * [Verifying VPC File Storage installation](/docs/openshift?topic=openshift-virt-storage-setup#virt-storage-vpc-file-verify)
+
+* [Storage comparison](/docs/openshift?topic=openshift-virt-storage-setup#virt-storage-comparison)
+
+* [Troubleshooting storage setup](/docs/openshift?topic=openshift-virt-storage-setup#virt-storage-troubleshoot)
+
+    * [ODF installation fails](/docs/openshift?topic=openshift-virt-storage-setup#virt-storage-ts-odf-fail)
+
+    * [VPC File Storage PVCs remain pending](/docs/openshift?topic=openshift-virt-storage-setup#virt-storage-ts-vpc-pending)
+
+    * [Storage profiles not updated](/docs/openshift?topic=openshift-virt-storage-setup#virt-storage-ts-profiles)
+
+* [Next steps](/docs/openshift?topic=openshift-virt-storage-setup#virt-storage-next-steps)
+
+[Installing the OpenShift Virtualization Operator](/docs/openshift?topic=openshift-oc-virtualization#oc-virtualization)
+
+* [Before you begin](/docs/openshift?topic=openshift-oc-virtualization#virt-install-prereqs)
+
+* [Installing the OpenShift Virtualization Operator from the console](/docs/openshift?topic=openshift-oc-virtualization#virt-install-console)
+
+* [Installing the OpenShift Virtualization Operator from the CLI](/docs/openshift?topic=openshift-oc-virtualization#virt-install-cli)
+
+* [Creating the HyperConverged custom resource](/docs/openshift?topic=openshift-oc-virtualization#virt-install-hyperconverged)
+
+    * [Understanding node placement](/docs/openshift?topic=openshift-oc-virtualization#virt-install-node-placement)
+
+    * [Creating the HyperConverged CR from the console](/docs/openshift?topic=openshift-oc-virtualization#virt-install-hc-console)
+
+    * [Creating the HyperConverged CR from the CLI](/docs/openshift?topic=openshift-oc-virtualization#virt-install-hc-cli)
+
+* [Verifying the installation](/docs/openshift?topic=openshift-oc-virtualization#virt-install-verify)
+
+* [Troubleshooting installation issues](/docs/openshift?topic=openshift-oc-virtualization#virt-install-troubleshoot)
+
+    * [HyperConverged resource fails to deploy](/docs/openshift?topic=openshift-oc-virtualization#virt-install-ts-hc-fail)
+
+    * [Operator installation fails](/docs/openshift?topic=openshift-oc-virtualization#virt-install-ts-operator-fail)
+
+* [Next steps](/docs/openshift?topic=openshift-oc-virtualization#virt-install-next-steps)
+
+
 ## Storage
 {: #sitemap_storage}
 
@@ -4479,125 +4598,6 @@ subcollection: openshift
     * [Other third-party integrations](/docs/openshift?topic=openshift-ibm-3rd-party-integrations#kube-community-helm)
 
     * [Extending {{site.data.keyword.redhat_openshift_notm}} API and software with CRDs and Operators](/docs/openshift?topic=openshift-ibm-3rd-party-integrations#kube-crd-operators)
-
-
-### OpenShift Virtualization
-{: #sitemap_openshift_virtualization}
-
-
-[Understanding OpenShift Virtualization](/docs/openshift?topic=openshift-virt-overview#virt-overview)
-
-* [What is OpenShift Virtualization?](/docs/openshift?topic=openshift-virt-overview#virt-what-is)
-
-* [Requirements](/docs/openshift?topic=openshift-virt-overview#virt-requirements)
-
-* [Supported configurations](/docs/openshift?topic=openshift-virt-overview#virt-supported-configs)
-
-    * [Cluster requirements](/docs/openshift?topic=openshift-virt-overview#virt-cluster-reqs)
-
-    * [Bare metal flavors](/docs/openshift?topic=openshift-virt-overview#virt-bm-flavors)
-
-    * [Storage options](/docs/openshift?topic=openshift-virt-overview#virt-storage-options)
-
-    * [Networking options](/docs/openshift?topic=openshift-virt-overview#virt-networking-options)
-
-* [Limitations](/docs/openshift?topic=openshift-virt-overview#virt-limitations)
-
-* [Next steps](/docs/openshift?topic=openshift-virt-overview#virt-next-steps)
-
-[Planning your OpenShift Virtualization deployment](/docs/openshift?topic=openshift-virt-plan#virt-plan)
-
-* [Prerequisites](/docs/openshift?topic=openshift-virt-plan#virt-prereqs)
-
-* [Planning your cluster configuration](/docs/openshift?topic=openshift-virt-plan#virt-plan-cluster)
-
-    * [Choosing bare metal flavors](/docs/openshift?topic=openshift-virt-plan#virt-plan-flavors)
-
-    * [Worker pool architecture](/docs/openshift?topic=openshift-virt-plan#virt-plan-worker-pools)
-
-* [Planning your storage solution](/docs/openshift?topic=openshift-virt-plan#virt-plan-storage)
-
-    * [Storage decision matrix](/docs/openshift?topic=openshift-virt-plan#virt-storage-matrix)
-
-    * [Storage options](/docs/openshift?topic=openshift-virt-plan#virt-storage-options)
-
-* [Planning your networking setup](/docs/openshift?topic=openshift-virt-plan#virt-plan-networking)
-
-    * [Networking options](/docs/openshift?topic=openshift-virt-plan#virt-plan-networking)
-
-    * [Installing the NMState operator](/docs/openshift?topic=openshift-virt-plan#virt-plan-nmstate)
-
-* [Node placement](/docs/openshift?topic=openshift-virt-plan#virt-plan-node-placement)
-
-* [Sizing and optimization](/docs/openshift?topic=openshift-virt-plan#virt-plan-sizing)
-
-* [Next steps](/docs/openshift?topic=openshift-virt-plan#virt-plan-next-steps)
-
-[Setting up storage for OpenShift Virtualization](/docs/openshift?topic=openshift-virt-storage-setup#virt-storage-setup)
-
-* [Before you begin](/docs/openshift?topic=openshift-virt-storage-setup#virt-storage-prereqs)
-
-* [Option 1: Setting up OpenShift Data Foundation](/docs/openshift?topic=openshift-virt-storage-setup#virt-storage-odf)
-
-    * [Prerequisites for ODF](/docs/openshift?topic=openshift-virt-storage-setup#virt-storage-odf-prereqs)
-
-    * [Installing ODF from the console](/docs/openshift?topic=openshift-virt-storage-setup#virt-storage-odf-ui)
-
-    * [Installing ODF from the CLI](/docs/openshift?topic=openshift-virt-storage-setup#virt-storage-odf-cli)
-
-    * [Verifying ODF installation](/docs/openshift?topic=openshift-virt-storage-setup#virt-storage-odf-verify)
-
-* [Option 2: Setting up VPC File Storage](/docs/openshift?topic=openshift-virt-storage-setup#virt-storage-vpc-file)
-
-    * [Prerequisites for VPC File Storage](/docs/openshift?topic=openshift-virt-storage-setup#virt-storage-vpc-file-prereqs)
-
-    * [Step 1: Disable VPC Block Storage as default](/docs/openshift?topic=openshift-virt-storage-setup#virt-storage-vpc-file-disable-block)
-
-    * [Step 2: Install the VPC File CSI driver](/docs/openshift?topic=openshift-virt-storage-setup#virt-storage-vpc-file-install)
-
-    * [Step 3: Set a default storage class](/docs/openshift?topic=openshift-virt-storage-setup#virt-storage-vpc-file-default)
-
-    * [Step 4: Configure storage profiles for VPC File Storage](/docs/openshift?topic=openshift-virt-storage-setup#virt-storage-vpc-file-profiles)
-
-    * [Verifying VPC File Storage installation](/docs/openshift?topic=openshift-virt-storage-setup#virt-storage-vpc-file-verify)
-
-* [Storage comparison](/docs/openshift?topic=openshift-virt-storage-setup#virt-storage-comparison)
-
-* [Troubleshooting storage setup](/docs/openshift?topic=openshift-virt-storage-setup#virt-storage-troubleshoot)
-
-    * [ODF installation fails](/docs/openshift?topic=openshift-virt-storage-setup#virt-storage-ts-odf-fail)
-
-    * [VPC File Storage PVCs remain pending](/docs/openshift?topic=openshift-virt-storage-setup#virt-storage-ts-vpc-pending)
-
-    * [Storage profiles not updated](/docs/openshift?topic=openshift-virt-storage-setup#virt-storage-ts-profiles)
-
-* [Next steps](/docs/openshift?topic=openshift-virt-storage-setup#virt-storage-next-steps)
-
-[Installing the OpenShift Virtualization Operator](/docs/openshift?topic=openshift-oc-virtualization#oc-virtualization)
-
-* [Before you begin](/docs/openshift?topic=openshift-oc-virtualization#virt-install-prereqs)
-
-* [Installing the OpenShift Virtualization Operator from the console](/docs/openshift?topic=openshift-oc-virtualization#virt-install-console)
-
-* [Installing the OpenShift Virtualization Operator from the CLI](/docs/openshift?topic=openshift-oc-virtualization#virt-install-cli)
-
-* [Creating the HyperConverged custom resource](/docs/openshift?topic=openshift-oc-virtualization#virt-install-hyperconverged)
-
-    * [Understanding node placement](/docs/openshift?topic=openshift-oc-virtualization#virt-install-node-placement)
-
-    * [Creating the HyperConverged CR from the console](/docs/openshift?topic=openshift-oc-virtualization#virt-install-hc-console)
-
-    * [Creating the HyperConverged CR from the CLI](/docs/openshift?topic=openshift-oc-virtualization#virt-install-hc-cli)
-
-* [Verifying the installation](/docs/openshift?topic=openshift-oc-virtualization#virt-install-verify)
-
-* [Troubleshooting installation issues](/docs/openshift?topic=openshift-oc-virtualization#virt-install-troubleshoot)
-
-    * [HyperConverged resource fails to deploy](/docs/openshift?topic=openshift-oc-virtualization#virt-install-ts-hc-fail)
-
-    * [Operator installation fails](/docs/openshift?topic=openshift-oc-virtualization#virt-install-ts-operator-fail)
-
-* [Next steps](/docs/openshift?topic=openshift-oc-virtualization#virt-install-next-steps)
 
 [Adding Cloud Paks, entitlements, or licenses to your cluster](/docs/openshift?topic=openshift-openshift_cloud_paks#openshift_cloud_paks)
 
