@@ -75,7 +75,6 @@ Single-pool setup
 
 Multi-zone deployments
 :   - ODF requires 3+ zones for high availability
-    - VNIs are zone-specific; avoid cross-zone VM migration when using VNIs
 
 ## Planning your storage solution
 {: #virt-plan-storage}
@@ -119,11 +118,7 @@ VPC File Storage
 Basic networking (4.17+)
 :   Default pod network, Services, Routes, VPC load balancers
 
-Advanced with VNIs (4.20+)
-:   - Direct VPC connectivity, floating IPs, network preservation during migration
-    - Requires: NMState operator, OVS bridges, UDNs
-    - VNIs are zone-specific
-    - Generally available with OpenShift 4.20
+
 
 The VNI feature is generally available. A small number of accounts may still be blocked; contact IBM Cloud support if you need access.
 {: note}
