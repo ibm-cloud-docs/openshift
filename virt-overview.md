@@ -69,20 +69,9 @@ The following VPC bare metal flavors are supported for OpenShift Virtualization:
 | `cx2d.metal.96x192` | 2 | 96 | 192 GB | 100 Gbps | 480 GB NVME | All |
 | `mx2.metal.96x768` | 2 | 96 | 768 GB | 100 Gbps | - | All |
 | `mx2d.metal.96x768` | 2 | 96 | 768 GB | 100 Gbps | 480 GB NVME | All |
-| `bx3d.metal.48x256` | 3 | 24 | 256 GB | 200 Gbps | 480 GB NVME | 4.17+ |
-| `bx3d.metal.64x256` | 3 | 32 | 256 GB | 200 Gbps | 480 GB NVME | 4.17+ |
-| `bx3d.metal.192x1024` | 3 | 96 | 1024 GB | 200 Gbps | 480 GB NVME | 4.17+ |
-| `cx3d.metal.48x128` | 3 | 24 | 128 GB | 200 Gbps | 480 GB NVME | 4.17+ |
-| `cx3d.metal.64x128` | 3 | 32 | 128 GB | 200 Gbps | 480 GB NVME | 4.17+ |
-| `mx3d.metal.16x128` | 3 | 8 | 128 GB | 200 Gbps | 480 GB NVME | 4.17+ |
-| `mx3d.metal.48x512` | 3 | 24 | 512 GB | 200 Gbps | 480 GB NVME | 4.17+ |
-| `mx3d.metal.64x512` | 3 | 32 | 512 GB | 200 Gbps | 480 GB NVME | 4.17+ |
-| `mx3d.metal.96x1024` | 3 | 48 | 1024 GB | 200 Gbps | 480 GB NVME | 4.17+ |
-| `mx3d.metal.128x1024` | 3 | 64 | 1024 GB | 200 Gbps | 480 GB NVME | 4.17+ |
 {: caption="Supported bare metal flavors for OpenShift Virtualization"}
 
-Generation 2 flavors with `d` suffix and all Generation 3 flavors include NVME local storage, which is recommended for OpenShift Data Foundation deployments. Generation 3 flavors offer improved network performance (200 Gbps) and are available for clusters running OpenShift 4.17 and later.
-{: tip}
+
 
 ### Storage options
 {: #virt-storage-options}
