@@ -3658,8 +3658,6 @@ subcollection: openshift
 
     * [Networking options](/docs/openshift?topic=openshift-virt-plan#virt-plan-networking)
 
-    * [Installing the NMState operator](/docs/openshift?topic=openshift-virt-plan#virt-plan-nmstate)
-
 * [Node placement](/docs/openshift?topic=openshift-virt-plan#virt-plan-node-placement)
 
 * [Sizing and optimization](/docs/openshift?topic=openshift-virt-plan#virt-plan-sizing)

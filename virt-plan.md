@@ -49,13 +49,13 @@ Cluster
 
 Select bare metal flavors based on your workload requirements. For a complete list of supported flavors, see [Bare metal flavors](/docs/openshift?topic=openshift-virt-overview#virt-bm-flavors).
 
-**For OpenShift Data Foundation (ODF)**
+For OpenShift Data Foundation (ODF)
 :   Use bare metal flavors with the `d` suffix or `3d` in the name, which include NVME local storage. ODF requires local disks for optimal performance.
 
-**For VPC File Storage**
+For VPC File Storage
 :   Any supported bare metal flavor can be used. However, flavors with local storage are still recommended for better overall performance.
 
-**Workload considerations**
+Workload considerations
 :   - **High-performance workloads**: Choose bare metal flavors with local storage and ODF
 :   - **Memory-intensive workloads**: Choose `mx` series bare metal flavors
 :   - **Compute-intensive workloads**: Choose `cx` series bare metal flavors
@@ -119,97 +119,6 @@ Basic networking (4.17+)
 :   Default pod network, Services, Routes, VPC load balancers
 
 
-
-### Installing the NMState operator
-{: #virt-plan-nmstate}
-
-The Kubernetes NMState operator is required for advanced networking with VNIs. Install it before configuring virtual network interfaces.
-
-**From the console**
-
-1. In the OpenShift console, navigate to **Ecosystem** > **OperatorHub** (or **Operators** > **OperatorHub** in earlier versions).
-
-2. Search for **Kubernetes NMState Operator**.
-
-3. Click the **Kubernetes NMState Operator** tile and then click **Install**.
-
-4. On the Install Operator page, accept the default settings:
-   - **Update channel**: stable
-   - **Installation mode**: All namespaces on the cluster
-   - **Installed Namespace**: openshift-nmstate
-   - **Update approval**: Automatic
-
-5. Click **Install**.
-
-6. Wait for the operator installation to complete.
-
-**From the CLI**
-
-1. Create the namespace for the NMState operator.
-   ```sh
-   cat <<EOF | oc apply -f -
-   apiVersion: v1
-   kind: Namespace
-   metadata:
-     name: openshift-nmstate
-   EOF
-   ```
-   {: codeblock}
-
-2. Create an OperatorGroup.
-   ```sh
-   cat <<EOF | oc apply -f -
-   apiVersion: operators.coreos.com/v1
-   kind: OperatorGroup
-   metadata:
-     name: openshift-nmstate
-     namespace: openshift-nmstate
-   spec: {}
-   EOF
-   ```
-   {: codeblock}
-
-3. Create a Subscription to install the operator.
-   ```sh
-   cat <<EOF | oc apply -f -
-   apiVersion: operators.coreos.com/v1alpha1
-   kind: Subscription
-   metadata:
-     name: kubernetes-nmstate-operator
-     namespace: openshift-nmstate
-   spec:
-     channel: stable
-     name: kubernetes-nmstate-operator
-     source: redhat-operators
-     sourceNamespace: openshift-marketplace
-   EOF
-   ```
-   {: codeblock}
-
-4. Verify the operator installation.
-   ```sh
-   oc get csv -n openshift-nmstate
-   ```
-   {: pre}
-
-5. Create an NMState instance.
-   ```sh
-   cat <<EOF | oc apply -f -
-   apiVersion: nmstate.io/v1
-   kind: NMState
-   metadata:
-     name: nmstate
-   EOF
-   ```
-   {: codeblock}
-
-6. Verify the NMState pods are running.
-   ```sh
-   oc get pods -n openshift-nmstate
-   ```
-   {: pre}
-
-For more information, see [Installing the Kubernetes NMState Operator](https://docs.redhat.com/en/documentation/openshift_container_platform/4.20/html-single/networking_operators/index#installing-the-kubernetes-nmstate-operator-cli){: external}.
 
 ## Node placement
 {: #virt-plan-node-placement}
