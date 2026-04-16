@@ -31,18 +31,6 @@ Looking for {{site.data.keyword.cloud_notm}} status, platform announcements, sec
 
 
 
-### 11 April 2026
-{: #openshift-apr1126}
-{: release-note}
-
-Virtual Network Interface (VNI) support for OpenShift Virtualization on bare metal workers
-:   VNI support enables direct VPC network connectivity for virtual machines on OpenShift Virtualization with bare metal workers. VNIs can float with VMs during live migration within the same zone and support DHCP or static IP assignment. For more information, see [Using Virtual Network Interfaces with OpenShift Virtualization](/docs/openshift?topic=openshift-vni-virtualization).
-:   **Requirements:** VPC infrastructure, OpenShift 4.20+, bare metal worker nodes. Currently available to allowlisted accounts only. To request access, see [Requesting access to allowlisted features](/docs/openshift?topic=openshift-allowlist-request).
-
-
-
-
-
 ### 08 April 2026
 {: #openshift-apr0826}
 {: release-note}

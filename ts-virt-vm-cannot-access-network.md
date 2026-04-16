@@ -66,5 +66,3 @@ To resolve the issue,
    oc logs -n openshift-ovn-kubernetes -l app=ovnkube-node
    ```
    {: pre}
-
-6. Review [Managing virtual network interfaces for OpenShift Virtualization](/docs/openshift?topic=openshift-vni-virtualization) to confirm that the UDN, VLAN, and VNI configuration matches your VM networking design.

@@ -417,4 +417,3 @@ After setting up storage:
 
 1. [Install the OpenShift Virtualization Operator](/docs/openshift?topic=openshift-virt-install)
 2. [Create and manage virtual machines](/docs/openshift?topic=openshift-virt-manage-vms)
-3. [Configure virtual network interfaces (optional)](/docs/openshift?topic=openshift-vni-virtualization)

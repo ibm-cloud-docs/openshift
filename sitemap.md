@@ -281,10 +281,6 @@ subcollection: openshift
 
 * [April 2026](/docs/openshift?topic=openshift-openshift-relnotes#openshift-apr26)
 
-    * [11 April 2026](/docs/openshift?topic=openshift-openshift-relnotes#openshift-apr1126)
-
-        * Virtual Network Interface (VNI) support for OpenShift Virtualization on bare metal workers
-
     * [08 April 2026](/docs/openshift?topic=openshift-openshift-relnotes#openshift-apr0826)
 
         * Version 4.20 is now the default version for {{site.data.keyword.openshiftlong_notm}}.

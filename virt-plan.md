@@ -270,4 +270,3 @@ After planning your deployment:
 
 1. [Set up storage for OpenShift Virtualization](/docs/openshift?topic=openshift-virt-storage-setup)
 2. [Install the OpenShift Virtualization Operator](/docs/openshift?topic=openshift-virt-install)
-3. [Configure virtual network interfaces (optional)](/docs/openshift?topic=openshift-vni-virtualization)
