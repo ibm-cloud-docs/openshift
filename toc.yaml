@@ -345,7 +345,13 @@ toc:
           topics:
           - addon_landing.md
           - integrations-ibm-third-party.md
-          - oc-virtualization.md
+          - topicgroup:
+              label: OpenShift Virtualization
+              topics:
+              - virt-overview.md
+              - virt-plan.md
+              - virt-storage-setup.md
+              - oc-virtualization.md
           - openshift_integrations_cloud_paks.md
           - openshift_integrations_operators.md
           - openshift_compliance_operator.md
@@ -588,6 +594,19 @@ toc:
               - ts-sbd-app-not-working.md
               - ts-sbd-nodeport-not-working.md
               - ts-sbd-vsi-vpe.md
+          - topicgroup:
+              label: OpenShift Virtualization
+              topics:
+              - ts-virt-operator-install-fails.md
+              - ts-virt-hyperconverged-deployment-fails.md
+              - ts-virt-vm-disks-fail-to-provision.md
+              - ts-virt-pvcs-pending.md
+              - ts-virt-odf-installation-fails.md
+              - ts-virt-vm-fails-to-start.md
+              - ts-virt-live-migration-fails.md
+              - ts-virt-vm-cannot-access-network.md
+              - ts-virt-vm-performance-is-poor.md
+              - ts-virt-live-migration-is-slow.md
           - topicgroup:
               label: Managed add-ons
               topics:

@@ -2,7 +2,7 @@
 
 copyright:
   years: 2023, 2026
-lastupdated: "2026-02-20"
+lastupdated: "2026-04-16"
 
 
 keywords: openshift, route, network, satellite
@@ -19,7 +19,7 @@ subcollection: openshift
 # Customizing your network setup in {{site.data.keyword.satelliteshort}} locations and clusters
 {: #satellite-network-customization}
 
-[{{site.data.keyword.satelliteshort}}]{: tag-satellite} [Red Hat CoreOS]{: tag-red}
+[{{site.data.keyword.satelliteshort}}]{: tag-satellite} [Red Hat CoreOS]{: tag-magenta}
 
 There are several features that you can use to customize your {{site.data.keyword.satelliteshort}} network setup to better isolate and segment the services and workloads running in your location. Review the following sections for more information. 
 

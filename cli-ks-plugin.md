@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2026
-lastupdated: "2026-04-10"
+lastupdated: "2026-04-16"
 
 
 keywords: openshift, cli reference, kubernetes cli, openshift cli, {{site.data.keyword.openshiftlong_notm}}
@@ -53,6 +53,7 @@ The following tables list the `ibmcloud oc` command groups. For a complete list 
 | [Quota commands](#cs_quota) | View the quota and limits for cluster-related resources in your IBM Cloud account. |
 | [Subnets commands](#cs_subnets) | List available subnets in your IBM Cloud infrastructure account. |
 | [VLAN commands](#vlan) | List public and private VLANs for a zone and view the VLAN spanning status.|
+| [VNI commands](#vni) | Attach, detach, and list Virtual Network Interfaces on bare metal worker nodes.|
 | [VPCS commands](#vpc-ls-cli) | List all VPCs in the targeted resource group. If no resource group is targeted, then all VPCs in the account are listed.|
 | [Flavor commands](#cs_machine_types) | Get the information of a flavor or list available flavors for a zone. |
 | [Locations commands](#cs_supported-locations) | List the locations that are supported by IBM Cloud Kubernetes Service. |
@@ -7241,6 +7242,157 @@ Minimum required permissions
 
 ```sh
 ibmcloud oc vlan spanning get --region us-south
+```
+{: pre}
+
+
+
+## `vni` commands
+{: #vni}
+
+[Virtual Private Cloud]{: tag-vpc}
+[Bare metal worker nodes only]{: tag-warm-gray}
+
+Attach, detach, and list Virtual Network Interfaces on bare metal worker nodes.
+{: shortdesc}
+
+### `ibmcloud oc vni attach baremetal`
+{: #cs_vni_attach_baremetal}
+
+[Virtual Private Cloud]{: tag-vpc}
+[Bare metal worker nodes only]{: tag-warm-gray}
+
+Attach a Virtual Network Interface to a bare metal worker node or cluster.
+{: shortdesc}
+
+```sh
+ibmcloud oc vni attach baremetal --vlan VLAN --vni VNI [--auto-delete] [--output OUTPUT] [-q] (--cluster-id ID | --worker WORKER)
+```
+{: pre}
+
+**Minimum required permissions**: **Operator** platform access role for the cluster in {{site.data.keyword.containerlong_notm}}
+
+**Command options**:
+
+`--cluster-id ID`, `-c ID`
+:    The ID of the cluster. To list cluster IDs, run `ibmcloud oc clusters`. Specify either `--cluster-id` or `--worker`, but not both. When you specify `--cluster-id`, the VNI is configured as a floating attachment that can follow workloads between workers in the same zone.
+
+`--worker WORKER`, `-w WORKER`
+:    The ID of the worker node. To list worker IDs, run `ibmcloud oc workers --cluster CLUSTER`. Specify either `--worker` or `--cluster-id`, but not both. When you specify `--worker`, the VNI is attached to that specific worker node only.
+
+`--vni VNI`
+:    Required: The ID of the Virtual Network Interface to attach.
+
+`--vlan VLAN`
+:    Required: The VLAN ID for the bare metal node attachment. Range: 1-500. This VLAN ID must match the VLAN ID configured in your User Defined Network.
+
+`--auto-delete`
+:    Optional: Automatically delete the VNI when it is removed from the cluster.
+
+`--output OUTPUT`
+:    Prints the command output in the provided format. Accepted values: `json`
+
+`-q`
+:    Do not show the message of the day or update reminders.
+
+#### Example `vni attach baremetal` command
+{: #vni-attach-baremetal-example}
+
+Attach a VNI to a specific worker node:
+```sh
+ibmcloud oc vni attach baremetal --vni 0716-aac49630-f3b4-4ef6-9a3a-5145481697ba --worker kube-c9pqfcmw0tq431jdnrrg-mycluster-default-00000123 --vlan 251
+```
+{: pre}
+
+Attach a floating VNI to a cluster:
+```sh
+ibmcloud oc vni attach baremetal --vni 0716-aac49630-f3b4-4ef6-9a3a-5145481697ba --cluster-id c9pqfcmw0tq431jdnrrg --vlan 251 --auto-delete
+```
+{: pre}
+
+### `ibmcloud oc vni detach`
+{: #cs_vni_detach}
+
+[Virtual Private Cloud]{: tag-vpc}
+[Bare metal worker nodes only]{: tag-warm-gray}
+
+Detach a Virtual Network Interface from a worker node or cluster.
+{: shortdesc}
+
+```sh
+ibmcloud oc vni detach --vni VNI [--output OUTPUT] [-q] (--cluster-id ID | --worker WORKER)
+```
+{: pre}
+
+**Minimum required permissions**: **Operator** platform access role for the cluster in {{site.data.keyword.containerlong_notm}}
+
+**Command options**:
+
+`--cluster-id ID`, `-c ID`
+:    The ID of the cluster. To list cluster IDs, run `ibmcloud oc clusters`. Specify either `--cluster-id` or `--worker`, but not both.
+
+`--worker WORKER`, `-w WORKER`
+:    The ID of the worker node. To list worker IDs, run `ibmcloud oc workers --cluster CLUSTER`. Specify either `--worker` or `--cluster-id`, but not both. For floating VNIs, you must first list the VNIs to find the current worker ID.
+
+`--vni VNI`
+:    Required: The ID of the Virtual Network Interface to detach.
+
+`--output OUTPUT`
+:    Prints the command output in the provided format. Accepted values: `json`
+
+`-q`
+:    Do not show the message of the day or update reminders.
+
+#### Example `vni detach` command
+{: #vni-detach-example}
+
+```sh
+ibmcloud oc vni detach --vni 0716-aac49630-f3b4-4ef6-9a3a-5145481697ba --worker kube-c9pqfcmw0tq431jdnrrg-mycluster-default-00000123
+```
+{: pre}
+
+### `ibmcloud oc vni ls`
+{: #cs_vni_ls}
+
+[Virtual Private Cloud]{: tag-vpc}
+[Bare metal worker nodes only]{: tag-warm-gray}
+
+List Virtual Network Interfaces attached to a cluster or worker node.
+{: shortdesc}
+
+```sh
+ibmcloud oc vni ls [--output OUTPUT] [-q] (--cluster-id ID | --worker WORKER)
+```
+{: pre}
+
+**Minimum required permissions**: **Viewer** platform access role for the cluster in {{site.data.keyword.containerlong_notm}}
+
+**Command options**:
+
+`--cluster-id ID`, `-c ID`
+:    The ID of the cluster. To list cluster IDs, run `ibmcloud oc clusters`. Specify either `--cluster-id` or `--worker`, but not both.
+
+`--worker WORKER`, `-w WORKER`
+:    The ID of the worker node. To list worker IDs, run `ibmcloud oc workers --cluster CLUSTER`. Specify either `--worker` or `--cluster-id`, but not both.
+
+`--output OUTPUT`
+:    Prints the command output in the provided format. Accepted values: `json`
+
+`-q`
+:    Do not show the message of the day or update reminders.
+
+#### Example `vni ls` command
+{: #vni-ls-example}
+
+List all VNIs attached to a cluster:
+```sh
+ibmcloud oc vni ls --cluster-id c9pqfcmw0tq431jdnrrg
+```
+{: pre}
+
+List VNIs attached to a specific worker:
+```sh
+ibmcloud oc vni ls --worker kube-c9pqfcmw0tq431jdnrrg-mycluster-default-00000123
 ```
 {: pre}
 
