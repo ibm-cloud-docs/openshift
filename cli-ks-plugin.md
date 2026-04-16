@@ -53,7 +53,6 @@ The following tables list the `ibmcloud oc` command groups. For a complete list 
 | [Quota commands](#cs_quota) | View the quota and limits for cluster-related resources in your IBM Cloud account. |
 | [Subnets commands](#cs_subnets) | List available subnets in your IBM Cloud infrastructure account. |
 | [VLAN commands](#vlan) | List public and private VLANs for a zone and view the VLAN spanning status.|
-| [VNI commands](#vni) | Attach, detach, and list Virtual Network Interfaces on bare metal worker nodes.|
 | [VPCS commands](#vpc-ls-cli) | List all VPCs in the targeted resource group. If no resource group is targeted, then all VPCs in the account are listed.|
 | [Flavor commands](#cs_machine_types) | Get the information of a flavor or list available flavors for a zone. |
 | [Locations commands](#cs_supported-locations) | List the locations that are supported by IBM Cloud Kubernetes Service. |
