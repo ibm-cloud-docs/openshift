@@ -48,11 +48,7 @@ To resolve the issue,
    ```
    {: pre}
 
-3. If you use VNI-based networking, review the VNI attachments for the cluster.
-   ```sh
-   ibmcloud ks vni ls --cluster-id <cluster_id>
-   ```
-   {: pre}
+
 
 4. Check the User Defined Network configuration.
    ```sh

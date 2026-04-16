@@ -120,9 +120,6 @@ Basic networking (4.17+)
 
 
 
-The VNI feature is generally available. A small number of accounts may still be blocked; contact IBM Cloud support if you need access.
-{: note}
-
 ### Installing the NMState operator
 {: #virt-plan-nmstate}
 
