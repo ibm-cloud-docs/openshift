@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2026
-lastupdated: "2026-04-10"
+lastupdated: "2026-04-16"
 
 
 keywords: openshift, cli reference, kubernetes cli, openshift cli, {{site.data.keyword.openshiftlong_notm}}
@@ -7243,6 +7243,10 @@ Minimum required permissions
 ibmcloud oc vlan spanning get --region us-south
 ```
 {: pre}
+
+
+
+
 
 
 
