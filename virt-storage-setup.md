@@ -2,7 +2,7 @@
 
 copyright:
   years: 2025, 2026
-lastupdated: "2026-04-16"
+lastupdated: "2026-04-17"
 
 keywords: openshift, virtualization, storage, odf, vpc file, openshift data foundation
 
@@ -126,7 +126,7 @@ For more information about ODF parameters, see [OpenShift Data Foundation parame
      --param "osdStorageClassName=localblock" \
      --param "autoDiscoverDevices=true" \
      --param "resourceProfile=performance" \
-     --param "enableVirtualization=true"
+     --param "setDefaultStorageClassForVirtualization=true"
    ```
    {: pre}
 
