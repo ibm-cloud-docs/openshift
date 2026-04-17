@@ -151,7 +151,9 @@ After the operator is installed, create a HyperConverged custom resource to depl
 
 {{site.data.keyword.openshiftlong_notm}} clusters do not have nodes labeled as `master`. You must configure node placement policies to specify where virtualization components and VM workloads run.
 
-**Recommended configuration**
+#### Recommended configuration
+{: #virt-install-node-placement-recommended}
+
 - **Infrastructure components**: Deploy on VSI worker nodes for cost optimization
 - **VM workloads**: Deploy on bare metal worker nodes for best performance
 
