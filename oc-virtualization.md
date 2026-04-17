@@ -2,7 +2,7 @@
 
 copyright:
   years: 2025, 2026
-lastupdated: "2026-04-16"
+lastupdated: "2026-04-17"
 
 keywords: openshift, virtualization, operator, hyperconverged, kubevirt
 
@@ -179,7 +179,7 @@ After the operator is installed, create a HyperConverged custom resource to depl
 ### Creating the HyperConverged CR from the CLI
 {: #virt-install-hc-cli}
 
-Create a HyperConverged custom resource with node placement policies.
+Create a HyperConverged custom resource with the default configuration.
 
 ```yaml
 cat <<EOF | oc apply -f -
@@ -189,20 +189,9 @@ metadata:
   name: kubevirt-hyperconverged
   namespace: openshift-cnv
 spec:
-  infra:
-    nodePlacement:
-      nodeSelector:
-        node-role.kubernetes.io/infra: ""
-  workloads:
-    nodePlacement:
-      nodeSelector:
-        node-role.kubernetes.io/worker: ""
 EOF
 ```
 {: codeblock}
-
-Adjust the node selectors based on your cluster's node labels. You can use `oc get nodes --show-labels` to view available labels.
-{: tip}
 
 ## Verifying the installation
 {: #virt-install-verify}

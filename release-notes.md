@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2026
-lastupdated: "2026-04-16"
+lastupdated: "2026-04-17"
 
 
 keywords: kubernetes, release notes, openshift, {{site.data.keyword.openshiftlong_notm}}
@@ -28,6 +28,15 @@ Looking for {{site.data.keyword.cloud_notm}} status, platform announcements, sec
 
 ## April 2026
 {: #openshift-apr26}
+
+
+
+### 14 April 2026
+{: #openshift-apr1426}
+{: release-note}
+
+VPC Block CSI Driver cluster add-on patch updates.
+:   For more information, see the [change log](/docs/openshift?topic=openshift-cl-add-ons-vpc-block-csi-driver).
 
 
 
