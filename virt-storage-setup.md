@@ -198,7 +198,8 @@ For more information about deploying ODF, see [Deploying OpenShift Data Foundati
 ### Step 2: Install the VPC File CSI driver
 {: #virt-storage-vpc-file-install}
 
-**From the console**
+#### From the console
+{: #virt-storage-vpc-file-install-console}
 
 1. In your cluster dashboard, click **Add-ons**.
 
@@ -208,7 +209,8 @@ For more information about deploying ODF, see [Deploying OpenShift Data Foundati
 
 4. Wait for the add-on to reach a **Normal** state.
 
-**From the CLI**
+#### From the CLI
+{: #virt-storage-vpc-file-install-cli}
 
 1. Enable the VPC File CSI driver add-on.
    ```sh
@@ -267,7 +269,8 @@ After installing the OpenShift Virtualization Operator, you must configure stora
 This step must be completed after installing the OpenShift Virtualization Operator.
 {: important}
 
-**Option 1: Patch all VPC File storage profiles (recommended)**
+#### Option 1: Patch all VPC File storage profiles (recommended)
+{: #virt-storage-vpc-file-patch-all}
 
 Use this utility command to patch all storage profiles for the VPC File CSI provisioner:
 
@@ -287,7 +290,8 @@ done
 ```
 {: pre}
 
-**Option 2: Manually edit a specific storage profile**
+#### Option 2: Manually edit a specific storage profile
+{: #virt-storage-vpc-file-patch-manual}
 
 1. List available storage profiles.
    ```sh
