@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2026
-lastupdated: "2026-04-06"
+lastupdated: "2026-04-20"
 
 
 keywords: openshift, {{site.data.keyword.openshiftlong_notm}}, oc, ks
@@ -31,6 +31,19 @@ Refer to the following change logs for a summary of changes for each version of 
 
 Review the following changes for 1.0 versions of the CLI plug-in.
 {: shortdesc}
+
+
+
+## Version v1.0.759
+{: #cli-01759}
+
+Version 1.0.759 of the CLI was released on 20 April 2026.
+- Enhances the `ibmcloud ks worker reload` command to support VPC bare metal worker nodes in addition to classic worker nodes.
+- Updates the `ibmcloud ks worker reload` command to make the `--cluster` flag optional. The cluster is now automatically determined from the worker ID. Note: The `--cluster` flag is deprecated and will be ignored if provided.
+- Extends the expiration date for experimental `trusted-profile` commands from 14 April 2026 to 14 July 2026.
+- Migrates the `worker reload` command to use the GraphQL API for improved performance and support for VPC bare metal nodes.
+- Updates dependencies including apigateway, service-engine, and various Go modules.
+- Includes general refactoring and improvements.
 
 
 
