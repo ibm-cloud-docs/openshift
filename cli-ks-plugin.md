@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2026
-lastupdated: "2026-04-16"
+lastupdated: "2026-04-20"
 
 
 keywords: openshift, cli reference, kubernetes cli, openshift cli, {{site.data.keyword.openshiftlong_notm}}
@@ -2846,7 +2846,7 @@ ibmcloud oc worker reboot --cluster my_cluster -w kube-dal10-cr18a61a63a6a94b658
 [Classic infrastructure]{: tag-classic-inf} [Virtual Private Cloud]{: tag-vpc}
 
 
-Delete the data, reimage, and reinstall Kubernetes with the latest patch version on one or more worker nodes. This action cannot be undone. Classic nodes and bare metal VPC nodes are supported.
+Delete the data, reimage, and reinstall Kubernetes with the latest patch version on one or more worker nodes. This action cannot be undone. Classic nodes and VPC bare metal nodes are supported.
 {: shortdesc}
 
 A reload can be useful if your worker node experiences problems, such as slow performance or if your worker node is stuck in an unhealthy state. During the reload, your worker node machine is updated with the latest image and data is deleted if not [stored outside the worker node](/docs/openshift?topic=openshift-storage-plan). The worker node public and private IP address remain the same after the reload operation.
@@ -2864,9 +2864,9 @@ Before you reload your worker node, make sure that you have enough capacity in o
 
     The **name** that is returned in this command is the private IP address that is assigned to your worker node. You can find more information about your worker node when you run the `ibmcloud oc worker ls --cluster <cluster_name_or_ID>` command and look for the worker node with the same **Private IP** address.
 
-2. Reload the worker node. As part of the reload process, the pods that run on the worker node are drained and rescheduled onto remaining worker nodes in the cluster. The worker node is also cordoned, or marked as unavailable for future pod scheduling. Use the worker node ID that is returned from the `ibmcloud oc worker ls --cluster <cluster_name_or_ID>` command.
+2. Reload the worker node. As part of the reload process, the pods that run on the worker node are drained and rescheduled onto remaining worker nodes in the cluster. The worker node is also cordoned, or marked as unavailable for future pod scheduling. Use the worker node ID that is returned from the `ibmcloud oc worker ls --cluster <cluster_name_or_ID>` command. Note that the `--cluster` flag is now optional as the cluster is automatically determined from the worker ID.
     ```sh
-    ibmcloud oc worker reload --cluster <cluster_name_or_ID> --worker <worker_name_or_ID>
+    ibmcloud oc worker reload --worker <worker_name_or_ID>
     ```
     {: pre}
 
@@ -2874,7 +2874,7 @@ Before you reload your worker node, make sure that you have enough capacity in o
 
 
 ```sh
-ibmcloud oc worker reload --worker WORKER_ID [--worker WORKER_ID ...] [--skip-master-healthcheck] [-f] [-q]
+ibmcloud oc worker reload --worker WORKER_ID [--worker WORKER_ID ...] [--cluster CLUSTER] [--skip-master-healthcheck] [-f] [-q]
 ```
 {: pre}
 
@@ -2885,6 +2885,9 @@ Minimum required permissions
 
 `-w, --worker WORKER`
 :    Specify a worker node ID. To reload multiple worker nodes, use multiple options, such as `-w worker1_id -w worker2_id`.
+
+`-c, --cluster CLUSTER`
+:    **Deprecated**. The cluster is automatically determined from the worker ID. This flag is ignored if provided.
 
 `--skip-master-healthcheck`
 :    Skip a health check of your master before reloading or rebooting your worker nodes.
@@ -8453,7 +8456,7 @@ ibmcloud oc zone add satellite --zone myzone2 --cluster my_cluster -p pool1 -p p
 ## `ibmcloud oc experimental trusted-profile default get`
 {: #experimental-trusted-profile-default-get-cli}
 
-[Expires on 2025-12-17] Get the default trusted profile for clusters created in a resource-group.
+[Expires on 2026-07-14] Get the default trusted profile for clusters created in a resource-group.
 
 ```txt
 ibmcloud oc experimental trusted-profile default get --region REGION --resource-group GROUP [--output OUTPUT] [-q]
@@ -8481,7 +8484,7 @@ ibmcloud oc experimental trusted-profile default get --region REGION --resource-
 ## `ibmcloud oc experimental trusted-profile default set`
 {: #experimental-trusted-profile-default-set-cli}
 
-[Expires on 2025-12-17] Set the default trusted profile for clusters created in a resource-group.
+[Expires on 2026-07-14] Set the default trusted profile for clusters created in a resource-group.
 
 ```txt
 ibmcloud oc experimental trusted-profile default set --region REGION --resource-group GROUP --trusted-profile PROFILE [--output OUTPUT] [-q]
@@ -8512,7 +8515,7 @@ ibmcloud oc experimental trusted-profile default set --region REGION --resource-
 ## `ibmcloud oc experimental trusted-profile get`
 {: #experimental-trusted-profile-get-cli}
 
-[Expires on 2025-12-17] Get trusted profile for a cluster.
+[Expires on 2026-07-14] Get trusted profile for a cluster.
 
 ```txt
 ibmcloud oc experimental trusted-profile get --cluster CLUSTER [--output OUTPUT] [-q]
@@ -8537,7 +8540,7 @@ ibmcloud oc experimental trusted-profile get --cluster CLUSTER [--output OUTPUT]
 ## `ibmcloud oc experimental trusted-profile set`
 {: #experimental-trusted-profile-set-cli}
 
-[Expires on 2025-12-17] Set trusted profile on a cluster.
+[Expires on 2026-07-14] Set trusted profile on a cluster.
 
 ```txt
 ibmcloud oc experimental trusted-profile set --cluster CLUSTER --trusted-profile PROFILE [--output OUTPUT] [-q]
