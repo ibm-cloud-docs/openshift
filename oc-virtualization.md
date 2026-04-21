@@ -2,7 +2,7 @@
 
 copyright:
   years: 2025, 2026
-lastupdated: "2026-04-17"
+lastupdated: "2026-04-21"
 
 keywords: openshift, virtualization, operator, hyperconverged, kubevirt
 
@@ -279,7 +279,7 @@ If the operator installation fails:
 After installing OpenShift Virtualization:
 
 - [Create and manage virtual machines](https://docs.redhat.com/en/documentation/openshift_container_platform/4.20/html/virtualization/virtual-machines){: external}
-
+- [Configure virtual network interfaces](/docs/openshift?topic=openshift-vni-virtualization) (4.20 and later)
 - [Set up VM templates and images](https://docs.redhat.com/en/documentation/openshift_container_platform/4.20/html/virtualization/virtual-machines#virt-creating-vms-from-rh-images-overview){: external}
 
 For complete installation instructions, see [Installing OpenShift Virtualization](https://docs.redhat.com/en/documentation/openshift_container_platform/4.20/html-single/virtualization/index#installing-virt){: external} in the Red Hat documentation.
