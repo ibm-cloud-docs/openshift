@@ -1366,12 +1366,6 @@ subcollection: openshift
         * Worker node fix packs are available {{site.data.keyword.openshiftlong_notm}}.
 
 
-## OpenShift tutorials
-{: #sitemap_openshift-tutorials}
-
-[OpenShift tutorials](https://cloud.ibm.com/docs?tab=tutorials&tags=openshift&page=1&pageSize=20){: external}
-
-
 ## Setting up your first classic cluster in the CLI
 {: #sitemap_setting_up_your_first_classic_cluster_in_the_cli}
 
@@ -1437,6 +1431,12 @@ subcollection: openshift
 * [Access your OpenShift cluster](/docs/openshift?topic=openshift-tutorial-two-node#basic-access-cluster)
 
 * [Optional: Clean up the resources](/docs/openshift?topic=openshift-tutorial-two-node#basic-cleanup)
+
+
+## OpenShift tutorials
+{: #sitemap_openshift-tutorials}
+
+[OpenShift tutorials](https://cloud.ibm.com/docs?tab=tutorials&tags=openshift&page=1&pageSize=20){: external}
 
 
 ## Account setup
@@ -3650,7 +3650,12 @@ subcollection: openshift
 
 * [Next steps](/docs/openshift?topic=openshift-virt-overview#virt-next-steps)
 
-[Planning your OpenShift Virtualization deployment](/docs/openshift?topic=openshift-virt-plan#virt-plan)
+
+### Manual OpenShift Virtualization deployment
+{: #sitemap_manual_openshift_virtualization_deployment}
+
+
+[Planning your deployment](/docs/openshift?topic=openshift-virt-plan#virt-plan)
 
 * [Prerequisites](/docs/openshift?topic=openshift-virt-plan#virt-prereqs)
 
@@ -3676,7 +3681,7 @@ subcollection: openshift
 
 * [Next steps](/docs/openshift?topic=openshift-virt-plan#virt-plan-next-steps)
 
-[Setting up storage for OpenShift Virtualization](/docs/openshift?topic=openshift-virt-storage-setup#virt-storage-setup)
+[Setting up storage](/docs/openshift?topic=openshift-virt-storage-setup#virt-storage-setup)
 
 * [Before you begin](/docs/openshift?topic=openshift-virt-storage-setup#virt-storage-prereqs)
 
@@ -3716,7 +3721,7 @@ subcollection: openshift
 
 * [Next steps](/docs/openshift?topic=openshift-virt-storage-setup#virt-storage-next-steps)
 
-[Installing the OpenShift Virtualization Operator](/docs/openshift?topic=openshift-oc-virtualization#oc-virtualization)
+[Installing the operator](/docs/openshift?topic=openshift-oc-virtualization#oc-virtualization)
 
 * [Before you begin](/docs/openshift?topic=openshift-oc-virtualization#virt-install-prereqs)
 

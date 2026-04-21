@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2026
-lastupdated: "2026-04-14"
+lastupdated: "2026-04-21"
 
 
 keywords: openshift, noobaa, openshift container storage, openshift data foundation, storage classes
@@ -60,7 +60,7 @@ To add a backing store to your storage cluster by using the NooBaa CLI:
     ```
     {: screen}
 
-1. Get the details of the service that you want to use. If you want to set up {{site.data.keyword.cos_full_notm}}, get your HMAC credentials. For more information, see [Using HMAC credentials](/docs/cloud-object-storage?topic=cloud-object-storage-uhc-hmac-credentials-main). The following example command shows the configuration parameters that are required to create a backing store by using a {{site.data.keyword.cos_full_notm}} service instance.
+1. Get the details of the service that you want to use. If you want to set up {{site.data.keyword.cos_full_notm}}, get your HMAC credentials. For more information, see [Using HMAC credentials](/docs/cloud-object-storage?topic=cloud-object-storage-uhc-hmac-credentials-main). The following example command shows the configuration parameters that are required to create a backing store by using an {{site.data.keyword.cos_full_notm}} service instance.
     ```sh
     noobaa backingstore create ibm-cos <backing-store-name> -n openshift-storage --access-key=<access-key> --endpoint=<endpoint> --secret-key=<secret-key> --target-bucket=<target-bucket>
     ```
