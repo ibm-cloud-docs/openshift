@@ -42,12 +42,12 @@ toc:
   - navgroup:
       id: tutorial
       topics:
-      - link:
-          label: OpenShift tutorials
-          href: https://cloud.ibm.com/docs?tab=tutorials&tags=openshift&page=1&pageSize=20
       - openshift_tutorial.md
       - openshift_tutorial_vpc.md
       - tutorial-two-node-vpc.md
+      - link:
+          label: OpenShift tutorials
+          href: https://cloud.ibm.com/docs?tab=tutorials&tags=openshift&page=1&pageSize=20
   - navgroup:
       id: howto
       topics:
@@ -263,10 +263,16 @@ toc:
           label: OpenShift Virtualization
           topics:
           - virt-overview.md
-          - virt-plan.md
-          - virt-storage-setup.md
-          - oc-virtualization.md
-          - vni-virtualization.md
+          - topicgroup:
+              label: Manual OpenShift Virtualization deployment
+              topics:
+              - topic: virt-plan.md
+                navtitle: Planning your deployment
+              - topic: virt-storage-setup.md
+                navtitle: Setting up storage
+              - topic: oc-virtualization.md
+                navtitle: Installing the operator
+              - topic: vni-virtualization.md
       - topicgroup:
           label: Storage
           topics:
