@@ -38,9 +38,9 @@ Review the following changes for 1.0 versions of the CLI plug-in.
 
 Version 1.0.760 of the CLI was released on 21 April 2026.
 - Adds experimental `ibmcloud ks experimental vni` command group for managing Virtual Network Interfaces (VNI) on VPC clusters. The new commands include:
-  - `ibmcloud ks experimental vni attach` - Attach a VNI to a worker node (supports both bare metal and virtual nodes)
-  - `ibmcloud ks experimental vni detach` - Detach a VNI from a worker node
-  - `ibmcloud ks experimental vni ls` - List VNIs attached to a cluster or specific worker node
+- `ibmcloud ks experimental vni attach` - Attach a VNI to a worker node (supports both bare metal and virtual nodes)
+- `ibmcloud ks experimental vni detach` - Detach a VNI from a worker node
+- `ibmcloud ks experimental vni ls` - List VNIs attached to a cluster or specific worker node
 - Includes general refactoring and improvements.
 
 ## Version v1.0.759

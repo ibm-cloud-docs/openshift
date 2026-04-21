@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2026
-lastupdated: "2026-04-17"
+lastupdated: "2026-04-21"
 
 
 keywords: openshift, ibmc, helm
@@ -86,7 +86,7 @@ Review the following steps based on the error type.
 
     2. Try out the `ibm` Helm plug-in.
     
-		```sh
+	    ```sh
 		helm ibmc --help
 		```
 		{: pre}
