@@ -3,7 +3,7 @@
 copyright:
   years: 2026, 2026
 
-lastupdated: "2026-04-16"
+lastupdated: "2026-04-21"
 
 keywords: openshift virtualization, live migration, vmim, rwx, vni, zone
 
@@ -67,3 +67,5 @@ To resolve the issue,
    oc logs -n openshift-cnv -l kubevirt.io=virt-handler
    ```
    {: pre}
+
+6. If the VM uses VNIs, confirm that the migration stays within the same zone. For more information, see [Managing virtual network interfaces for OpenShift Virtualization](/docs/openshift?topic=openshift-vni-virtualization#vni-about).

@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2026
-lastupdated: "2026-04-20"
+lastupdated: "2026-04-21"
 
 
 keywords: openshift, {{site.data.keyword.openshiftlong_notm}}, oc, ks
@@ -33,6 +33,15 @@ Review the following changes for 1.0 versions of the CLI plug-in.
 {: shortdesc}
 
 
+## Version v1.0.760
+{: #cli-01760}
+
+Version 1.0.760 of the CLI was released on 21 April 2026.
+- Adds experimental `ibmcloud ks experimental vni` command group for managing Virtual Network Interfaces (VNI) on VPC clusters. The new commands include:
+  - `ibmcloud ks experimental vni attach` - Attach a VNI to a worker node (supports both bare metal and virtual nodes)
+  - `ibmcloud ks experimental vni detach` - Detach a VNI from a worker node
+  - `ibmcloud ks experimental vni ls` - List VNIs attached to a cluster or specific worker node
+- Includes general refactoring and improvements.
 
 ## Version v1.0.759
 {: #cli-01759}
@@ -44,6 +53,8 @@ Version 1.0.759 of the CLI was released on 20 April 2026.
 - Migrates the `worker reload` command to use the GraphQL API for improved performance and support for VPC bare metal nodes.
 - Updates dependencies including apigateway, service-engine, and various Go modules.
 - Includes general refactoring and improvements.
+
+
 
 
 

@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2026
-lastupdated: "2026-04-20"
+lastupdated: "2026-04-21"
 
 
 keywords: openshift
@@ -280,6 +280,10 @@ subcollection: openshift
 [Release notes](/docs/openshift?topic=openshift-openshift-relnotes#openshift-relnotes)
 
 * [April 2026](/docs/openshift?topic=openshift-openshift-relnotes#openshift-apr26)
+
+    * [21 April 2026](/docs/openshift?topic=openshift-openshift-relnotes#openshift-apr2126)
+
+        * CLI version 1.0.760 is available
 
     * [20 April 2026](/docs/openshift?topic=openshift-openshift-relnotes#openshift-apr2026)
 
@@ -3738,6 +3742,58 @@ subcollection: openshift
 
 * [Next steps](/docs/openshift?topic=openshift-oc-virtualization#virt-install-next-steps)
 
+[Managing virtual network interfaces for OpenShift Virtualization](/docs/openshift?topic=openshift-vni-virtualization#vni-virtualization)
+
+* [Understanding Virtual Network Interfaces](/docs/openshift?topic=openshift-vni-virtualization#vni-about)
+
+    * [Key features](/docs/openshift?topic=openshift-vni-virtualization#vni-features)
+
+    * [Cross-account attachment](/docs/openshift?topic=openshift-vni-virtualization#vni-cross-account)
+
+* [Prerequisites](/docs/openshift?topic=openshift-vni-virtualization#vni-prereqs)
+
+* [Creating overlay UDNs for Pods and VMs](/docs/openshift?topic=openshift-vni-virtualization#vni-overlay-udns)
+
+    * [Creating a Primary UDN](/docs/openshift?topic=openshift-vni-virtualization#vni-primary-udn)
+
+    * [Creating a Secondary UDN](/docs/openshift?topic=openshift-vni-virtualization#vni-secondary-udn)
+
+* [Exposing VMs with VPC load balancers](/docs/openshift?topic=openshift-vni-virtualization#vni-alb-lbaas)
+
+* [Setting up localnet user defined networks](/docs/openshift?topic=openshift-vni-virtualization#vni-setup-localnet)
+
+    * [Installing the NMState operator](/docs/openshift?topic=openshift-vni-virtualization#vni-install-nmstate)
+
+    * [Creating the OVS bridge](/docs/openshift?topic=openshift-vni-virtualization#vni-create-bridge)
+
+    * [Creating a localnet user defined network](/docs/openshift?topic=openshift-vni-virtualization#vni-create-udn)
+
+* [Attaching VNIs to your cluster](/docs/openshift?topic=openshift-vni-virtualization#vni-attach)
+
+    * [Before you begin](/docs/openshift?topic=openshift-vni-virtualization#vni-attach-prereqs)
+
+    * [Attaching a VNI](/docs/openshift?topic=openshift-vni-virtualization#vni-attach-steps)
+
+    * [Example](/docs/openshift?topic=openshift-vni-virtualization#vni-attach-example)
+
+* [Listing VNI attachments](/docs/openshift?topic=openshift-vni-virtualization#vni-list)
+
+    * [Example output](/docs/openshift?topic=openshift-vni-virtualization#vni-list-example)
+
+* [Detaching VNIs](/docs/openshift?topic=openshift-vni-virtualization#vni-detach)
+
+    * [Example](/docs/openshift?topic=openshift-vni-virtualization#vni-detach-example)
+
+* [Using VNIs with OpenShift Virtualization](/docs/openshift?topic=openshift-vni-virtualization#vni-use-virtualization)
+
+* [Troubleshooting VNIs](/docs/openshift?topic=openshift-vni-virtualization#vni-troubleshooting)
+
+    * [Why can't I attach regular pods to localnet UDNs?](/docs/openshift?topic=openshift-vni-virtualization#vni-ts-pods)
+
+    * [Why is live migration pending across worker pools?](/docs/openshift?topic=openshift-vni-virtualization#vni-ts-migration)
+
+    * [Why are dynamic attached VNIs not working?](/docs/openshift?topic=openshift-vni-virtualization#vni-ts-not-working)
+
 
 ## Storage
 {: #sitemap_storage}
@@ -6245,6 +6301,8 @@ subcollection: openshift
 
 * [Version 1.0](/docs/openshift?topic=openshift-cs_cli_changelog#10)
 
+* [Version v1.0.760](/docs/openshift?topic=openshift-cs_cli_changelog#cli-01760)
+
 * [Version v1.0.759](/docs/openshift?topic=openshift-cs_cli_changelog#cli-01759)
 
 * [Version v1.0.756](/docs/openshift?topic=openshift-cs_cli_changelog#cli-01756)
@@ -8516,6 +8574,12 @@ subcollection: openshift
 [Why does live migration fail for a virtual machine?](/docs/openshift?topic=openshift-ts-virt-live-migration-fails#ts-virt-live-migration-fails)
 
 [Why can't a virtual machine access the network?](/docs/openshift?topic=openshift-ts-virt-vm-cannot-access-network#ts-virt-vm-cannot-access-network)
+
+[Why does a VNI attachment fail?](/docs/openshift?topic=openshift-ts-virt-vni-attachment-fails#ts-virt-vni-attachment-fails)
+
+[Why is the localnet user defined network not working?](/docs/openshift?topic=openshift-ts-virt-localnet-udn-not-working#ts-virt-localnet-udn-not-working)
+
+[Why can't VMs with VNI attachments communicate?](/docs/openshift?topic=openshift-ts-virt-vni-vms-cannot-communicate#ts-virt-vni-vms-cannot-communicate)
 
 [Why is virtual machine performance poor?](/docs/openshift?topic=openshift-ts-virt-vm-performance-is-poor#ts-virt-vm-performance-is-poor)
 

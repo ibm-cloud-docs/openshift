@@ -266,6 +266,7 @@ toc:
           - virt-plan.md
           - virt-storage-setup.md
           - oc-virtualization.md
+          - vni-virtualization.md
       - topicgroup:
           label: Storage
           topics:
@@ -605,6 +606,9 @@ toc:
               - ts-virt-vm-fails-to-start.md
               - ts-virt-live-migration-fails.md
               - ts-virt-vm-cannot-access-network.md
+              - ts-virt-vni-attachment-fails.md
+              - ts-virt-localnet-udn-not-working.md
+              - ts-virt-vni-vms-cannot-communicate.md
               - ts-virt-vm-performance-is-poor.md
               - ts-virt-live-migration-is-slow.md
           - topicgroup:

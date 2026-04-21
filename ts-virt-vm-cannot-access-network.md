@@ -3,7 +3,7 @@
 copyright:
   years: 2026, 2026
 
-lastupdated: "2026-04-16"
+lastupdated: "2026-04-21"
 
 keywords: openshift virtualization, vm network, user defined network, vni, ovn
 
@@ -48,6 +48,11 @@ To resolve the issue,
    ```
    {: pre}
 
+3. If you use VNI-based networking, review the VNI attachments for the cluster.
+   ```sh
+   ibmcloud ks experimental vni ls --cluster-id <cluster_id>
+   ```
+   {: pre}
 
 
 4. Check the User Defined Network configuration.
@@ -62,3 +67,5 @@ To resolve the issue,
    oc logs -n openshift-ovn-kubernetes -l app=ovnkube-node
    ```
    {: pre}
+
+6. Review [Managing virtual network interfaces for OpenShift Virtualization](/docs/openshift?topic=openshift-vni-virtualization) to confirm that the UDN, VLAN, and VNI configuration matches your VM networking design.

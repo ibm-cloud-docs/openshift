@@ -2,7 +2,7 @@
 
 copyright:
   years: 2025, 2026
-lastupdated: "2026-04-17"
+lastupdated: "2026-04-21"
 
 keywords: openshift, virtualization, storage, odf, vpc file, openshift data foundation
 
@@ -421,3 +421,4 @@ After setting up storage:
 
 1. [Install the OpenShift Virtualization Operator](/docs/openshift?topic=openshift-virt-install)
 2. [Create and manage virtual machines](/docs/openshift?topic=openshift-virt-manage-vms)
+3. [Configure virtual network interfaces (optional)](/docs/openshift?topic=openshift-vni-virtualization)
