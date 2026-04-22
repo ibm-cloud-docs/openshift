@@ -285,15 +285,15 @@ subcollection: openshift
 
         * CLI version 1.0.760 is available
 
-    * [17 April 2026](/docs/openshift?topic=openshift-openshift-relnotes#openshift-apr1726)
-
-        * {{site.data.keyword.cos_full_notm}} plug-in version 2.2.51 is available.
-
     * [20 April 2026](/docs/openshift?topic=openshift-openshift-relnotes#openshift-apr2026)
 
         * CLI version 1.0.759 is available
 
         * {{site.data.keyword.openshiftlong_notm}} worker node fix packs are available.
+
+    * [17 April 2026](/docs/openshift?topic=openshift-openshift-relnotes#openshift-apr1726)
+
+        * {{site.data.keyword.cos_full_notm}} plug-in version 2.2.51 is available.
 
     * [14 April 2026](/docs/openshift?topic=openshift-openshift-relnotes#openshift-apr1426)
 

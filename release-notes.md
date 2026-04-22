@@ -38,12 +38,6 @@ Looking for {{site.data.keyword.cloud_notm}} status, platform announcements, sec
 CLI version 1.0.760 is available
 :   For more information, see the [CLI change log](/docs/openshift?topic=openshift-cs_cli_changelog).
 
-### 17 April 2026
-{: #openshift-apr1726}
-{: release-note}
-
-{{site.data.keyword.cos_full_notm}} plug-in version 2.2.51 is available.
-:   For more information, see the [change log](/docs/openshift?topic=openshift-cos_plugin_changelog).
 
 ### 20 April 2026
 {: #openshift-apr2026}
@@ -64,6 +58,14 @@ CLI version 1.0.759 is available
 :   [Version 4.17 change log](/docs/openshift?topic=openshift-openshift_changelog_417)
 :   [Version 4.16 change log](/docs/openshift?topic=openshift-openshift_changelog_416)
 
+
+
+### 17 April 2026
+{: #openshift-apr1726}
+{: release-note}
+
+{{site.data.keyword.cos_full_notm}} plug-in version 2.2.51 is available.
+:   For more information, see the [change log](/docs/openshift?topic=openshift-cos_plugin_changelog).
 
 
 ### 14 April 2026
