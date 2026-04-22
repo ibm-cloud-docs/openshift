@@ -285,9 +285,15 @@ subcollection: openshift
 
         * CLI version 1.0.760 is available
 
+    * [17 April 2026](/docs/openshift?topic=openshift-openshift-relnotes#openshift-apr1726)
+
+        * {{site.data.keyword.cos_full_notm}} plug-in version 2.2.51 is available.
+
     * [20 April 2026](/docs/openshift?topic=openshift-openshift-relnotes#openshift-apr2026)
 
         * CLI version 1.0.759 is available
+
+        * {{site.data.keyword.openshiftlong_notm}} worker node fix packs are available.
 
     * [14 April 2026](/docs/openshift?topic=openshift-openshift-relnotes#openshift-apr1426)
 
@@ -4941,6 +4947,8 @@ subcollection: openshift
 
 * [Version 4.20](/docs/openshift?topic=openshift-openshift_changelog_420#420_components)
 
+    * [Worker node fix pack 4.20.18_1544_openshift, released 20 April 2026](/docs/openshift?topic=openshift-openshift_changelog_420#cl-boms-42018_1544_openshift_W)
+
     * [Worker node fix pack 4.20.17_1543_openshift, released 06 April 2026](/docs/openshift?topic=openshift-openshift_changelog_420#cl-boms-42017_1543_openshift_W)
 
     * [Change log for Master fix pack 4.20.15_1542_openshift, released 02 April 2026](/docs/openshift?topic=openshift-openshift_changelog_420#42015_1542_openshift_M)
@@ -5063,6 +5071,8 @@ subcollection: openshift
 * [Overview](/docs/openshift?topic=openshift-openshift_changelog_419#changelog_overview_419)
 
 * [Version 4.19](/docs/openshift?topic=openshift-openshift_changelog_419#419_components)
+
+    * [Worker node fix pack 4.19.28_1574_openshift, released 20 April 2026](/docs/openshift?topic=openshift-openshift_changelog_419#cl-boms-41928_1574_openshift_W)
 
     * [Worker node fix pack 4.19.27_1573_openshift, released 06 April 2026](/docs/openshift?topic=openshift-openshift_changelog_419#cl-boms-41927_1573_openshift_W)
 
@@ -5218,6 +5228,8 @@ subcollection: openshift
 * [Overview](/docs/openshift?topic=openshift-openshift_changelog_418#changelog_overview_418)
 
 * [Version 4.18](/docs/openshift?topic=openshift-openshift_changelog_418#418_components)
+
+    * [Worker node fix pack 4.18.37_1585_openshift, released 20 April 2026](/docs/openshift?topic=openshift-openshift_changelog_418#cl-boms-41837_1585_openshift_W)
 
     * [Worker node fix pack 4.18.36_1584_openshift, released 06 April 2026](/docs/openshift?topic=openshift-openshift_changelog_418#cl-boms-41836_1584_openshift_W)
 
@@ -5397,6 +5409,8 @@ subcollection: openshift
 * [Overview](/docs/openshift?topic=openshift-openshift_changelog_417#changelog_overview_417)
 
 * [Version 4.17](/docs/openshift?topic=openshift-openshift_changelog_417#417_components)
+
+    * [Worker node fix pack 4.17.52_1580_openshift, released 20 April 2026](/docs/openshift?topic=openshift-openshift_changelog_417#cl-boms-41752_1580_openshift_W)
 
     * [Worker node fix pack 4.17.52_1579_openshift, released 06 April 2026](/docs/openshift?topic=openshift-openshift_changelog_417#cl-boms-41752_1579_openshift_W)
 
@@ -5612,6 +5626,8 @@ subcollection: openshift
 * [Overview](/docs/openshift?topic=openshift-openshift_changelog_416#changelog_overview_416)
 
 * [Version 4.16](/docs/openshift?topic=openshift-openshift_changelog_416#416_components)
+
+    * [Worker node fix pack 4.16.59_1610_openshift, released 20 April 2026](/docs/openshift?topic=openshift-openshift_changelog_416#cl-boms-41659_1610_openshift_W)
 
     * [Worker node fix pack 4.16.58_1609_openshift, released 06 April 2026](/docs/openshift?topic=openshift-openshift_changelog_416#cl-boms-41658_1609_openshift_W)
 
@@ -7103,6 +7119,8 @@ subcollection: openshift
     * [v1.0.13_297764008, released 14 November 2025](/docs/openshift?topic=openshift-cl-add-ons-ibm-object-csi-driver#cl-add-ons-ibm-object-csi-driver-v1013_297764008)
 
 [{{site.data.keyword.cos_full_notm}} plug-in](/docs/openshift?topic=openshift-cos_plugin_changelog#cos_plugin_changelog)
+
+* [Change log for version 2.2.51, released 17 April 2026](/docs/openshift?topic=openshift-cos_plugin_changelog#02251_object_plugin)
 
 * [Change log for version 2.2.50, released 27 March 2026](/docs/openshift?topic=openshift-cos_plugin_changelog#02250_object_plugin)
 
