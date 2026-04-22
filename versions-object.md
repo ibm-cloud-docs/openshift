@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2026
-lastupdated: "2026-03-31"
+lastupdated: "2026-04-22"
 
 
 keywords: openshift, {{site.data.keyword.openshiftlong_notm}}, object storage, plug-in, change log
@@ -28,14 +28,19 @@ View information for updates to the {{site.data.keyword.cos_full_notm}} plug-in 
 
 | {{site.data.keyword.cos_full_notm}} plug-in version | Supported? |
 | --- | --- |
+| 2.2.51 | Yes |
 | 2.2.50 | Yes |
 | 2.2.49 | Yes |
-| 2.2.48 | Yes |
 {: caption="{{site.data.keyword.cos_full_notm}} plug-in versions" caption-side="bottom"}
 
 Versions are deprecated at n-2 or roughly 3 months after their release date. Plan to keep your add-on updated. For update steps, see [Updating the {{site.data.keyword.cos_full_notm}} plug-in](/docs/openshift?topic=openshift-storage_cos_install#update_cos_plugin).
 {: important}
 
+
+## Change log for version 2.2.51, released 17 April 2026
+{: #02251_object_plugin}
+
+- Resolves [CVE-2026-32281](https://exchange.xforce.ibmcloud.com/vulnerabilities/CVE-2026-32281){: external} and [CVE-2026-32289](https://exchange.xforce.ibmcloud.com/vulnerabilities/CVE-2026-32289){: external}.
 
 ## Change log for version 2.2.50, released 27 March 2026
 {: #02250_object_plugin}
@@ -46,7 +51,7 @@ Versions are deprecated at n-2 or roughly 3 months after their release date. Pla
 ## Change log for version 2.2.49, released 17 March 2026
 {: #02249_object_plugin}
 
-Resolves the following CVEs: CVE-2026-25679, CVE-2026-27139, CVE-2026-27142
+- Resolves the following CVEs: CVE-2026-25679, CVE-2026-27139, and CVE-2026-27142.
 
 ## Change log for version 2.2.48, released 24 February 2026
 {: #02248_object_plugin}

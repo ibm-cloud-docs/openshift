@@ -1,8 +1,8 @@
 ---
 
-copyright: 
+copyright:
   years: 2024, 2026
-lastupdated: "2026-03-19"
+lastupdated: "2026-04-22"
 
 
 keywords: openshift, {{site.data.keyword.openshiftlong_notm}}, kubernetes, certificate, rotate, ca rotate
@@ -85,7 +85,7 @@ By default, certificate authority (CA) certificates are administered to secure a
     {: pre}
 
     Example output
-    
+
     ```sh
     Status:             CA certificate rotation complete.
     Action Started:     2024-08-30T16:37:56+0000
@@ -111,10 +111,11 @@ Review the following table for information on each state of the certificate rota
 
 | State | Description |
 | --- | --- |
-| CA certificate creation in progress. | New certificates are being created for the rotation process and being put into the certificate chain. |
-| CA certificate created and awaiting rotation. Reload your worker nodes then begin CA certificate rotation. | New certificates have been created and put into the certificate chain. The rotation is not yet in progress. |
-| CA certificate rotation in progress. | The certificate rotation is in progress. The old certificates are being removed from the certificate chain. |
-| CA certificate rotation complete. | The old certificates have been removed from the certificate chain. |
+| `CA certificate creation in progress.` | New certificates are being created for the rotation process and being put into the certificate chain. |
+| `CA certificate created and awaiting rotation. Reload your worker nodes then begin CA certificate rotation.` | New certificates have been created and put into the certificate chain. The rotation is not yet in progress. |
+| `CA certificate rotation in progress.` | The certificate rotation is in progress. The old certificates are being removed from the certificate chain. |
+| `CA certificate rotation complete.` | The old certificates have been removed from the certificate chain. |
+| empty status | A certificate rotation has never been started or completed. |
 {: caption="Certificate rotation states" caption-side="bottom"}
 
 
