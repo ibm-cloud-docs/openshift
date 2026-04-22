@@ -47,7 +47,7 @@ Review the supported OpenShift AI add-on versions and the corresponding [OpenShi
 | 416 | 2.25.2 | 4.16, 4.17 |
 {: caption="Supported AI add-on versions and corresponding versions for Red Hat OpenShift AI and Red Hat OpenShift on IBM Cloud". caption-side="bottom"}
 
-Upgrading from version 4.18 to 4.19 is not supported. Only new installations of version 4.19 are allowed. For more information, see [OpenShift AI add-on version 4.19 changes](/docs/openshift?topic=openshift-ai-addon-about#ai-addon-version-419).
+Upgrading from version 418 to 419 is not supported. Only new installations of version 419 are allowed. For more information, see [OpenShift AI add-on version 419 changes](/docs/openshift?topic=openshift-ai-addon-about#ai-addon-version-419).
 {: important}
 
 ## Considerations
