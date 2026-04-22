@@ -3530,17 +3530,17 @@ subcollection: openshift
 
     * [Updating operators not managed by IBM](/docs/openshift?topic=openshift-ai-addon-about#ai-addon-updatehow-notmanaged)
 
-* [OpenShift AI add-on version 4.19 changes](/docs/openshift?topic=openshift-ai-addon-about#ai-addon-version-419)
+* [OpenShift AI add-on version 419 changes](/docs/openshift?topic=openshift-ai-addon-about#ai-addon-version-419)
 
-    * [Components removed in version 4.19](/docs/openshift?topic=openshift-ai-addon-about#ai-419-removed)
+    * [Components removed in version 419](/docs/openshift?topic=openshift-ai-addon-about#ai-419-removed)
 
-    * [Components renamed in version 4.19](/docs/openshift?topic=openshift-ai-addon-about#ai-419-renamed)
+    * [Components renamed in version 419](/docs/openshift?topic=openshift-ai-addon-about#ai-419-renamed)
 
-    * [New components in version 4.19](/docs/openshift?topic=openshift-ai-addon-about#ai-419-new)
+    * [New components in version 419](/docs/openshift?topic=openshift-ai-addon-about#ai-419-new)
 
     * [Setting up the Trainer component](/docs/openshift?topic=openshift-ai-addon-about#ai-419-trainer-setup)
 
-    * [Upgrade restrictions for version 4.19](/docs/openshift?topic=openshift-ai-addon-about#ai-419-upgrade-restrictions)
+    * [Upgrade restrictions for version 419](/docs/openshift?topic=openshift-ai-addon-about#ai-419-upgrade-restrictions)
 
 * [What's next?](/docs/openshift?topic=openshift-ai-addon-about#ai-addon-ov-next)
 
@@ -4298,6 +4298,12 @@ subcollection: openshift
 * [Migrating from the Helm plug-in to the cluster add-on](/docs/openshift?topic=openshift-storage-cos-install-addon#cos-addon-migrate-helm)
 
 * [{{site.data.keyword.cos_full_notm}} cluster add-on storage classes](/docs/openshift?topic=openshift-storage-cos-install-addon#cos-sc-ref-addon)
+
+    * [Storage class parameters](/docs/openshift?topic=openshift-storage-cos-install-addon#cos-sc-ref-addon-params)
+
+    * [Default `s3fs` storage class mount options](/docs/openshift?topic=openshift-storage-cos-install-addon#cos-sc-ref-addon-s3fs)
+
+    * [Default `rclone` storage class mount options](/docs/openshift?topic=openshift-storage-cos-install-addon#cos-sc-ref-addon-rclone)
 
 [COS: Migrating from HPCS to Key Protect](/docs/openshift?topic=openshift-migrate_hpcs_kp_cos#migrate_hpcs_kp_cos)
 

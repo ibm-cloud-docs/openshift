@@ -2,7 +2,7 @@
 
 copyright:
   years: 2024, 2026
-lastupdated: "2026-02-20"
+lastupdated: "2026-04-22"
 
 
 keywords: kubernetes, openshift, object storage add-in, cos
@@ -122,41 +122,32 @@ Before you begin: [Access your {{site.data.keyword.redhat_openshift_notm}} clust
         secretKey: <base64-encoded-HMAC-secret_access_key>
         kp-root-key-crn: <CRN> # Key Protect or HPCS root key crn in base64 encoded format
     stringData:
-        bucketName: <bucket-name>
+        bucketName: <bucket-name> # Optional. If you don't provide a bucket name, a bucket with the naming convention s3fs-timestamp-xxx or rclone-timestamp-xxx is created.
         bucketVersioning: false # Bucket versioning is set to false by default. Set to true to enable bucket versioning. Set to false to disable versioning for a bucket where versioning is enabled.
     # uid: "3000" # Optional: Provide a uid to run as non root user. This must match runAsUser in SecurityContext of pod spec.
     mountOptions: |
         # Review or update the following default s3fs mount options
+        #multipart_size=52
+        #multireq_max=20
+        #max_dirty_data=5120
+        #parallel_count=20
         #max_stat_cache_size=100000
-        #mp_umask=002
-        #parallel_count=8  # value depends on the storage class used
-        #sigv2
-        #use_path_request_style
-        #default_acl=private 
-        #kernel_cache
-        #multipart_size=62
         #retries=5
-        #allow_other
-        #max_dirty_data=51200
+        #kernel_cache
         
         # Review or update the following default rclone mount options
-        #--allow-other=true
-        #--daemon=true
-        #acl=private 
-        #upload_cutoff=256Mi 
-        #chunk_size=64Mi 
-        #upload_concurrency=20 
-        #copy_cutoff=1Gi 
-        #memory_pool_flush_time=30s 
-        #disable_checksum=true 
-        #bucket_acl=private 
-        #max_upload_parts=64
+        #acl=private
+        #bucket_acl=private
+        #upload_cutoff=100Mi
+        #chunk_size=16Mi
+        #max_upload_parts=1000
+        #upload_concurrency=8
 
     ```
     {: codeblock}
 
     `mountOptions`
-    :    You can customize the mount options for either `s3fs` or `rclone` by editing the `mountOptions` in your secret. For more information, see the [s3fs mount options](https://github.com/IBM/ibm-object-csi-driver/blob/main/cos-csi-mounter/server/s3fs.go){: external} and the [`rclone` mount options](https://github.com/IBM/ibm-object-csi-driver/blob/main/cos-csi-mounter/server/rclone.go){: external}.
+    :   You can customize the mount options for either `s3fs` or `rclone` by editing the `mountOptions` in your secret. Align the options that you specify with the storage class that your PVC uses. To review the default values for a storage class, run `oc describe storageclass <storageclass_name>` or `oc describe storageclass <storageclass_name>`. For more information, see the [s3fs mount options](https://github.com/IBM/ibm-object-csi-driver/blob/main/cos-csi-mounter/server/s3fs.go){: external} and the [`rclone` mount options](https://github.com/IBM/ibm-object-csi-driver/blob/main/cos-csi-mounter/server/rclone.go){: external}.
 
     Currently, the add-on is enabled to support a fixed set of mount options with proper validation for each mount option. If you want to use any other mount options that are not in the validation list, contact support to enable those options.
     {: note}
@@ -463,14 +454,70 @@ The existing secrets, PVCs, and deployments are not deleted by disabling the add
 ## {{site.data.keyword.cos_full_notm}} cluster add-on storage classes
 {: #cos-sc-ref-addon}
 
-| Name | Reclaim policy | Binding mode |
-| --- | --- | --- |
-| ibm-object-storage-smart-rclone | Delete | Immediate |
-| ibm-object-storage-smart-rclone-retain | Retain | Immediate |
-| ibm-object-storage-smart-s3fs | Delete | Immediate |
-| ibm-object-storage-smart-s3fs-retain | Retain | Immediate |
-| ibm-object-storage-standard-rclone | Delete | Immediate |
-| ibm-object-storage-standard-rclone-retain | Retain | Immediate |
-| ibm-object-storage-standard-s3fs |  Delete | Immediate |
-| ibm-object-storage-standard-s3fs-retain | Retain | Immediate |
-{: caption="COS cluster add-on storage classes." caption-side="bottom"}
+The {{site.data.keyword.cos_full_notm}} cluster add-on provides storage classes for the `s3fs` and `rclone` mounters. Choose a storage class that fits your data access requirements. The storage class determines the bucket class, reclaim policy, and default mount behavior for the bucket that is created for your workload.
+
+Standard
+:   Use for hot data that you access frequently, such as data for web or mobile apps.
+
+Smart
+:   Use for workloads and data that do not follow a specific usage pattern, or when the usage pattern is difficult to predict.
+
+| Name | Bucket class | Mounter | Reclaim policy | Binding mode |
+| --- | --- | --- | --- | --- |
+| ibm-object-storage-smart-rclone | Smart | `rclone` | Delete | Immediate |
+| ibm-object-storage-smart-rclone-retain | Smart | `rclone` | Retain | Immediate |
+| ibm-object-storage-smart-s3fs | Smart | `s3fs` | Delete | Immediate |
+| ibm-object-storage-smart-s3fs-retain | Smart | `s3fs` | Retain | Immediate |
+| ibm-object-storage-standard-rclone | Standard | `rclone` | Delete | Immediate |
+| ibm-object-storage-standard-rclone-retain | Standard | `rclone` | Retain | Immediate |
+| ibm-object-storage-standard-s3fs | Standard | `s3fs` | Delete | Immediate |
+| ibm-object-storage-standard-s3fs-retain | Standard | `s3fs` | Retain | Immediate |
+{: caption="COS cluster add-on storage classes" caption-side="bottom"}
+
+To review the detailed bucket configuration for a storage class, run `oc describe storageclass <storageclass_name>` or `oc describe storageclass <storageclass_name>`.
+
+### Storage class parameters
+{: #cos-sc-ref-addon-params}
+
+All cluster add-on storage classes include the following core parameters.
+
+| Parameter | Description |
+| --- | --- |
+| `client` | Identifies the client type that the driver uses. The add-on storage classes use `awss3`. |
+| `cosEndpoint` | Defines the {{site.data.keyword.cos_full_notm}} endpoint for the bucket region. |
+| `csi.storage.k8s.io/node-publish-secret-name` | References the name of the secret that contains your {{site.data.keyword.cos_full_notm}} credentials. |
+| `csi.storage.k8s.io/node-publish-secret-namespace` | References the namespace of the secret that contains your {{site.data.keyword.cos_full_notm}} credentials. |
+| `locationConstraint` | Defines the bucket class and region, such as `au-syd-smart` or `au-syd-standard`. |
+| `mounter` | Specifies whether the storage class uses the `s3fs` or `rclone` mounter. |
+{: caption="Core parameters for COS cluster add-on storage classes" caption-side="bottom"}
+
+### Default `s3fs` storage class mount options
+{: #cos-sc-ref-addon-s3fs}
+
+The `s3fs` storage classes use the following default mount options.
+
+| Mount option | Description |
+| --- | --- |
+| `multipart_size=52` | Sets the part size, in MB, for each multipart request. |
+| `multireq_max=20` | Sets the maximum number of parallel requests for listing objects. |
+| `max_dirty_data=5120` | Flushes dirty data to S3 after a specified number of MB are written. The minimum supported value is `50`. A value of `-1` disables this behavior. |
+| `parallel_count=20` | Sets the number of parallel requests for uploading large objects. `s3fs` uploads large objects by using multipart requests and sends requests in parallel. |
+| `max_stat_cache_size=100000` | Sets the maximum number of entries in the stat cache and symbolic link cache. |
+| `retries=5` | Sets the number of times to retry a failed S3 transaction. |
+| `kernel_cache` | Enables the kernel buffer cache for the volume mount point. Data that is read from {{site.data.keyword.cos_full_notm}} is stored in the kernel cache to help provide faster read access. Kernel cache is enabled for the standard and smart `s3fs` storage classes. |
+{: caption="Default mount options for COS add-on `s3fs` storage classes" caption-side="bottom"}
+
+### Default `rclone` storage class mount options
+{: #cos-sc-ref-addon-rclone}
+
+The `rclone` storage classes use the following default mount options.
+
+| Mount option | Description |
+| --- | --- |
+| `acl=private` | Ensures that uploaded objects are not publicly accessible. |
+| `bucket_acl=private` | Sets the default ACL for buckets that `rclone` creates to `private`. |
+| `upload_cutoff=100Mi` | Uploads files larger than `100 MiB` by using multipart upload. Smaller files are uploaded in a single request. |
+| `chunk_size=16Mi` | Sets the size of each part in a multipart upload. |
+| `max_upload_parts=1000` | Sets the maximum number of parts per multipart upload and indirectly caps the maximum supported file size with the configured `chunk_size`. With `chunk_size=16Mi`, the maximum file size is `16 GiB`. |
+| `upload_concurrency=8` | Sets the number of parts that are uploaded in parallel during a multipart upload. |
+{: caption="Default mount options for COS add-on `rclone` storage classes" caption-side="bottom"}

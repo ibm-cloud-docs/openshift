@@ -101,44 +101,44 @@ Version rollbacks are not supported. You cannot undo an update to the OpenShift 
 You are responsible for updating all operators that are not managed by IBM. IBM does not notify you of available updates or provide support related to updates for these operators. Refer to the provider documentation for information on keeping these operators up to date.
 
 
-## OpenShift AI add-on version 4.19 changes
+## OpenShift AI add-on version 419 changes
 {: #ai-addon-version-419}
 
-OpenShift AI add-on version 4.19 includes Red Hat OpenShift AI version 3.3.0 and introduces significant changes to the platform. Review the following information before installing or upgrading to version 4.19.
+OpenShift AI add-on version 419 includes Red Hat OpenShift AI version 3.3.0 and introduces significant changes to the platform. Review the following information before installing or upgrading to version 419.
 
-Upgrading from version 4.18 to 4.19 is not supported. Only fresh installations of version 4.19 are allowed.
+Upgrading from version 418 to 419 is not supported. Only fresh installations of version 419 are allowed.
 {: important}
 
-### Components removed in version 4.19
+### Components removed in version 419
 {: #ai-419-removed}
 
-The following components have been removed in OpenShift AI add-on version 4.19:
+The following components have been removed in OpenShift AI add-on version 419:
 
 CodeFlare
-:   The CodeFlare component is no longer available in version 4.19.
+:   The CodeFlare component is no longer available in version 419.
 
 ModelMeshServing
-:   The ModelMeshServing component is no longer available in version 4.19.
+:   The ModelMeshServing component is no longer available in version 419.
 
-### Components renamed in version 4.19
+### Components renamed in version 419
 {: #ai-419-renamed}
 
-The following components have been renamed in OpenShift AI add-on version 4.19:
+The following components have been renamed in OpenShift AI add-on version 419:
 
 DataSciencePipeline
 :   This component has been renamed to **AIPipelines**.
 
-### New components in version 4.19
+### New components in version 419
 {: #ai-419-new}
 
-The following new components are available in OpenShift AI add-on version 4.19. You can enable or disable these components during installation by using the CLI parameters or UI options.
+The following new components are available in OpenShift AI add-on version 419. You can enable or disable these components during installation by using the CLI parameters or UI options.
 
 | Customization | CLI Parameter | Description | Values | Default value |
 | ------------- | ------------- | ----------- | ------ | ------------- |
 | FeastOperator | `oaiFeastOperator` | Enable or disable the component. If enabled, it is managed by OpenShift AI platform. | `Managed` or `Removed` | `Managed` |
 | Trainer | `oaiTrainer` | Enable or disable the component. If enabled, you must install the JobSet Operator and cert-manager operator from OperatorHub. | `Managed` or `Removed` | `Removed` |
 | AIPipelines | `oaiAIPipelines` | Enable or disable the component. If enabled, it is managed by OpenShift AI platform. | `Managed` or `Removed` | `Managed` |
-{: caption="New components in OpenShift AI add-on version 4.19" caption-side="bottom"}
+{: caption="New components in OpenShift AI add-on version 419" caption-side="bottom"}
 
 ### Setting up the Trainer component
 {: #ai-419-trainer-setup}
@@ -149,17 +149,17 @@ If you enable the Trainer component, you must install additional operators to ge
 2. Install the cert-manager operator from OperatorHub.
 3. Complete the additional configuration steps as described in the [Red Hat OpenShift documentation](https://docs.redhat.com/en/documentation/openshift_container_platform/4.18/html/ai_workloads/jobset-operator#js-install_js-install){: external}.
 
-### Upgrade restrictions for version 4.19
+### Upgrade restrictions for version 419
 {: #ai-419-upgrade-restrictions}
 
-Upgrading from OpenShift AI add-on version 4.18 to version 4.19 is not supported due to significant architectural changes in version 4.19.
+Upgrading from OpenShift AI add-on version 418 to version 419 is not supported due to significant architectural changes in version 419.
 {: important}
 
-Do not run the `ibmcloud oc cluster addon update openshift-ai` command to upgrade from version 4.18 to 4.19. Do not use the UI to upgrade from version 4.18 to 4.19. Only fresh installations of version 4.19 are supported.
+Do not run the `ibmcloud oc cluster addon update openshift-ai` command to upgrade from version 418 to 419. Do not use the UI to upgrade from version 418 to 419. Only fresh installations of version 419 are supported.
 
-To use version 4.19, you must:
-1. Remove the existing OpenShift AI add-on version 4.18 from your cluster.
-2. Perform a fresh installation of OpenShift AI add-on version 4.19.
+To use version 419, you must:
+1. Remove the existing OpenShift AI add-on version 418 from your cluster.
+2. Perform a fresh installation of OpenShift AI add-on version 419.
 
 For installation instructions, see [Installing the Red Hat OpenShift AI add-on](/docs/openshift?topic=openshift-ai-addon-install).
 
