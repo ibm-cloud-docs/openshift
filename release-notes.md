@@ -38,6 +38,8 @@ CLI version 1.0.762 is available
 
 
 
+
+
 ### 21 April 2026
 {: #openshift-apr2126}
 {: release-note}
