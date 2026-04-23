@@ -1,8 +1,8 @@
 ---
 
 copyright: 
-  years: 2014, 2025
-lastupdated: "2025-08-11"
+  years: 2014, 2026
+lastupdated: "2026-04-23"
 
 
 keywords: kubernetes, openshift
@@ -269,7 +269,7 @@ You can enable encryption by creating a Kubernetes secret that uses your persona
 
 [Log in to your account. If applicable, target the appropriate resource group. Set the context for your cluster.](/docs/containers?topic=containers-access_cluster)
 
-1. Make sure that you are assigned the Editor platform access role and the Writer service access role for {{site.data.keyword.keymanagementserviceshort}} so that you can create your own root key that you use to encrypt your {{site.data.keyword.blockstorageshort}} instance. You can review your IAM access roles in the [IAM console](https://cloud.ibm.com/iam){: external}. For more information about IAM roles, see [IAM access](/docs/account?topic=account-userroles).
+1. Make sure that you are assigned the Editor platform access role and the Writer service access role for {{site.data.keyword.keymanagementserviceshort}} so that you can create your own root key that you use to encrypt your {{site.data.keyword.blockstorageshort}} instance. You can review your IAM access roles in the [IAM console](https://cloud.ibm.com/iam){: external}. For more information about IAM roles, see [IAM access](/docs/iam?topic=iam-userroles).
 2. If you don't have a {{site.data.keyword.keymanagementserviceshort}} instance, [provision one](/docs/key-protect?topic=key-protect-provision).
 3. [Create a root key](/docs/key-protect?topic=key-protect-create-root-keys). By default, the root key is created without an expiration date.
 4. Create an IAM service ID. Replace `<service_ID_name>` with the name that you want to assign to your service ID. This service ID is used to access your {{site.data.keyword.keymanagementserviceshort}} instance from your {{site.data.keyword.blockstorageshort}} volume.

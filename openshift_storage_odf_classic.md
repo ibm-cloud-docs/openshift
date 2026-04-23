@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2026
-lastupdated: "2026-04-09"
+lastupdated: "2026-04-23"
 
 
 keywords: openshift, openshift data foundation, openshift container storage, ocs, classic
@@ -124,7 +124,7 @@ If you are using cluster wide encryption and storage class encryption, your API 
 
 1. After creating your instance and root key, make a note of your {{site.data.keyword.hscrypto}} or {{site.data.keyword.keymanagementserviceshort}} instance name, instance ID, root key ID, and public endpoint.
 
-1. Create a [service ID](/docs/account?topic=account-serviceids), [API key](/docs/account?topic=account-serviceidapikeys), and [access policy](/docs/account?topic=account-assign-access-resources) that allows access to either {{site.data.keyword.hscrypto}} and {{site.data.keyword.openshiftshort}} or {{site.data.keyword.keymanagementserviceshort}} and {{site.data.keyword.openshiftshort}}. Make a note of the API that you create. 
+1. Create a [service ID](/docs/iam?topic=iam-serviceids), [API key](/docs/iam?topic=iam-serviceidapikeys), and [access policy](/docs/iam?topic=iam-assign-access-resources) that allows access to either {{site.data.keyword.hscrypto}} and {{site.data.keyword.openshiftshort}} or {{site.data.keyword.keymanagementserviceshort}} and {{site.data.keyword.openshiftshort}}. Make a note of the API that you create. 
 
 [Access your {{site.data.keyword.redhat_openshift_notm}} cluster](/docs/openshift?topic=openshift-access_cluster).
 

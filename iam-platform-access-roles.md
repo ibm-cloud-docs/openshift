@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2026
-lastupdated: "2026-04-15"
+lastupdated: "2026-04-23"
 
 keywords: openshift, {{site.data.keyword.openshiftlong_notm}}, kubernetes, infrastructure, policy, users, permissions, access, roles
 
@@ -26,7 +26,7 @@ Review the following table for a list of Platform and Service roles and their as
 
 
 
-For a list of all IBM services and their associated roles and actions, see [IAM roles and actions](/docs/account?topic=account-iam-service-roles-actions). For more information about setting up your account and resources, see [best practices for organizing users, teams, and applications](/docs/account?topic=account-account_setup).
+For a list of all IBM services and their associated roles and actions, see [IAM roles and actions](/docs/iam?topic=iam-iam-service-roles-actions). For more information about setting up your account and resources, see [best practices for organizing users, teams, and applications](/docs/account?topic=account-account_setup).
 {: tip}
 
 
@@ -57,7 +57,7 @@ Review the following permissions that you need to create a cluster including the
 {: caption="IAM roles needed to create a cluster." caption-side="bottom"}
 
 
-Consider saving the permissions outlined in the earlier table as a custom IAM role. This way, you can assign users to the custom role instead of assigning each individual service. For more information, see the following example custom roles or the IAM documentation for [Creating custom roles](/docs/account?topic=account-custom-roles&interface=ui).
+Consider saving the permissions outlined in the earlier table as a custom IAM role. This way, you can assign users to the custom role instead of assigning each individual service. For more information, see the following example custom roles or the IAM documentation for [Creating custom roles](/docs/iam?topic=iam-custom-roles&interface=ui).
 {: tip}
 
 
@@ -65,7 +65,7 @@ Consider saving the permissions outlined in the earlier table as a custom IAM ro
 ## Example custom IAM roles
 {: #example-iam}
 
-The following table provides some example use cases and the corresponding IAM roles for those cases. You can use these examples or create your own custom roles. For more information, see [Creating custom roles](/docs/account?topic=account-custom-roles&interface=ui).
+The following table provides some example use cases and the corresponding IAM roles for those cases. You can use these examples or create your own custom roles. For more information, see [Creating custom roles](/docs/iam?topic=iam-custom-roles&interface=ui).
 
 
 | Example custom role | Permissions |
