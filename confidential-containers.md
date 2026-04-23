@@ -2,7 +2,7 @@
 
 copyright:
   years: 2025, 2026
-lastupdated: "2026-04-02"
+lastupdated: "2026-04-23"
 
 keywords: confidential containers
 
@@ -146,6 +146,7 @@ To import the peer pod image:
 1. Run the [`image-create`](/docs/vpc?topic=vpc-vpc-reference#image-create) command.{: cli}
 
     ```sh
+    # Note IMAGE_NAME is a placeholder variable. Image names do not support capitalization.
     ibmcloud is image-create "IMAGE_NAME" --file cos://us-south/podvm-image/rhel9-podvm-latest.qcow2  --os-name red-9-amd64
     ```
     {: pre}
