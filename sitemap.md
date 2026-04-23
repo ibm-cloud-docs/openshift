@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2026
-lastupdated: "2026-04-22"
+lastupdated: "2026-04-23"
 
 
 keywords: openshift
@@ -3529,18 +3529,6 @@ subcollection: openshift
     * [Updating the OpenShift AI operator](/docs/openshift?topic=openshift-ai-addon-about#ai-addon-updatehow-managed)
 
     * [Updating operators not managed by IBM](/docs/openshift?topic=openshift-ai-addon-about#ai-addon-updatehow-notmanaged)
-
-* [OpenShift AI add-on version 419 changes](/docs/openshift?topic=openshift-ai-addon-about#ai-addon-version-419)
-
-    * [Components removed in version 419](/docs/openshift?topic=openshift-ai-addon-about#ai-419-removed)
-
-    * [Components renamed in version 419](/docs/openshift?topic=openshift-ai-addon-about#ai-419-renamed)
-
-    * [New components in version 419](/docs/openshift?topic=openshift-ai-addon-about#ai-419-new)
-
-    * [Setting up the Trainer component](/docs/openshift?topic=openshift-ai-addon-about#ai-419-trainer-setup)
-
-    * [Upgrade restrictions for version 419](/docs/openshift?topic=openshift-ai-addon-about#ai-419-upgrade-restrictions)
 
 * [What's next?](/docs/openshift?topic=openshift-ai-addon-about#ai-addon-ov-next)
 
