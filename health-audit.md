@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2026
-lastupdated: "2026-01-07"
+lastupdated: "2026-04-23"
 
 
 keywords: openshift, kubernetes, logmet, logs, metrics, audit, events
@@ -72,7 +72,7 @@ Previously the, `icr.io/ibm/ibmcloud-kube-audit-to-logdna` was used to forward l
 
 The Kubernetes audit system in your cluster consists of an audit webhook, a log collection service and web server app, and a logging agent. The webhook collects the Kubernetes API server events from your cluster master. The log collection service is a Kubernetes `ClusterIP` service that is created from an image from the public {{site.data.keyword.cloud_notm}} registry. This service exposes a simple HTTP web server app that is exposed only on the cluster's network. The web server app parses the log data from the audit webhook and creates each log as a unique JSON line. Finally, the logging agent forwards the logs from the web server app to {{site.data.keyword.logs_full_notm}}, where you can view the logs.
 
-**Before you begin**: Ensure that you reviewed the [considerations and prerequisites](#prereqs-apiserver-logs) and that you have the [**Administrator** {{site.data.keyword.cloud_notm}} IAM platform access role](/docs/account?topic=account-userroles) for {{site.data.keyword.logs_full_notm}}.
+**Before you begin**: Ensure that you reviewed the [considerations and prerequisites](#prereqs-apiserver-logs) and that you have the [**Administrator** {{site.data.keyword.cloud_notm}} IAM platform access role](/docs/iam?topic=iam-userroles) for {{site.data.keyword.logs_full_notm}}.
 
 1. Target the global container registry for public {{site.data.keyword.cloud_notm}} images.
     ```sh

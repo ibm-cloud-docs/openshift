@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2026
-lastupdated: "2026-04-10"
+lastupdated: "2026-04-23"
 
 
 keywords: openshift
@@ -504,12 +504,12 @@ If you want to access services that run inside or outside {{site.data.keyword.cl
 ## Updating IAM allowlists for {{site.data.keyword.containershort}} network zones
 {: #iam_firewall}
 
-By default, all IP addresses can be used to log in to the {{site.data.keyword.cloud_notm}} console and perform actions to manage your cluster, such as creating, updating, deleting or viewing credentials. In the IBM Cloud Identity and Access Management (IAM) console, you can [create an allowlist by specifying which IP addresses have access](/docs/account?topic=account-ips), and all other IP addresses are restricted.
+By default, all IP addresses can be used to log in to the {{site.data.keyword.cloud_notm}} console and perform actions to manage your cluster, such as creating, updating, deleting or viewing credentials. In the IBM Cloud Identity and Access Management (IAM) console, you can [create an allowlist by specifying which IP addresses have access](/docs/iam?topic=iam-ips), and all other IP addresses are restricted.
 {: shortdesc} 
 
 In your allowlist, you must also configure network zones in the {{site.data.keyword.openshiftlong_notm}} control plane for the region where your cluster is located so that {{site.data.keyword.openshiftlong_notm}} can create or access components such as Ingress ALBs  or the {{site.data.keyword.redhat_openshift_notm}} web console, which requires all control plane IP addresses.
 
-Before you begin, the following steps require you to change the IAM allowlist for the user whose credentials are used for the cluster's region and resource group infrastructure permissions. If you are the credentials owner, you can change your own IAM allowlist settings. If you are not the credentials owner, but you are assigned the **Editor** or **Administrator** IBM Cloud IAM platform access role for the [User Management service](/docs/account?topic=account-account-services), you can update the networks for the credentials owner.
+Before you begin, the following steps require you to change the IAM allowlist for the user whose credentials are used for the cluster's region and resource group infrastructure permissions. If you are the credentials owner, you can change your own IAM allowlist settings. If you are not the credentials owner, but you are assigned the **Editor** or **Administrator** IBM Cloud IAM platform access role for the [User Management service](/docs/iam?topic=iam-account-services), you can update the networks for the credentials owner.
 
 1. Identify what user credentials are used for the cluster's region and resource group infrastructure permissions.
 

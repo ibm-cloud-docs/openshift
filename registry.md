@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2026
-lastupdated: "2026-04-15"
+lastupdated: "2026-04-23"
 
 
 keywords: openshift, {{site.data.keyword.openshiftlong_notm}}, kubernetes, registry, pull secret, secrets
@@ -940,7 +940,7 @@ What if I don't have image pull secrets in the `default` {{site.data.keyword.red
 :   You can check the image pull secrets by [logging in to your cluster](/docs/openshift?topic=openshift-access_cluster) and running `oc get secrets -n default | grep "icr-io"`. If no `icr` secrets are listed, the person who created the cluster might not have had the required permissions to {{site.data.keyword.registrylong_notm}} in IAM. See [Updating existing clusters to use the API key image pull secret](#imagePullSecret_migrate_api_key).
 
 Can I restrict pull access to a certain regional registry?
-:   Yes, you can [edit the existing IAM policy of the service ID](/docs/account?topic=account-serviceids&interface=ui#update_serviceid) that restricts the **Reader** service access role to that regional registry or a registry resource such as a namespace. Before you can customize registry IAM policies, you must [enable {{site.data.keyword.cloud_notm}} IAM policies for {{site.data.keyword.registrylong_notm}}](/docs/Registry?topic=Registry-user#user).
+:   Yes, you can [edit the existing IAM policy of the service ID](/docs/iam?topic=iam-serviceids&interface=ui#update_serviceid) that restricts the **Reader** service access role to that regional registry or a registry resource such as a namespace. Before you can customize registry IAM policies, you must [enable {{site.data.keyword.cloud_notm}} IAM policies for {{site.data.keyword.registrylong_notm}}](/docs/Registry?topic=Registry-user#user).
 
 Want to make your registry credentials even more secured Ask your cluster admin to [enable a key management service provider](/docs/openshift?topic=openshift-encryption) in your cluster to encrypt Kubernetes secrets in your cluster, such as the image pull secret that stores your registry credentials.
 {: tip}
@@ -1005,9 +1005,9 @@ Before you begin
     ```
     {: pre}
 
-4. If your account [restricts service ID creation](/docs/account?topic=account-restrict-service-id-create), add the **Service ID creator** role to **Identity and Access Management** in the console (`iam-identity` in the API or CLI).
+4. If your account [restricts service ID creation](/docs/iam?topic=iam-restrict-service-id-create), add the **Service ID creator** role to **Identity and Access Management** in the console (`iam-identity` in the API or CLI).
  
-5. If your account [restricts API key creation](/docs/account?topic=account-allow-api-create), add the **User API key creator** role to **Identity and Access Management** in the console (`iam-identity` in the API or CLI).
+5. If your account [restricts API key creation](/docs/iam?topic=iam-allow-api-create), add the **User API key creator** role to **Identity and Access Management** in the console (`iam-identity` in the API or CLI).
 
 ### Updating your image pull secret
 {: #update-pull-secret}
@@ -1053,7 +1053,7 @@ To update your cluster image pull secret in the `default` Kubernetes namespace.
     * To pull images in {{site.data.keyword.redhat_openshift_notm}} projects other than `default` or from other {{site.data.keyword.cloud_notm}} accounts, [copy or create another image pull secret](#other).
     * To restrict the image pull secret access to particular registry resources such as namespaces or regions:
         1. Make sure that [{{site.data.keyword.cloud_notm}} IAM policies for {{site.data.keyword.registrylong_notm}} are enabled](/docs/Registry?topic=Registry-user).
-        1. [Edit the {{site.data.keyword.cloud_notm}} IAM policies](/docs/account?topic=account-serviceids&interface=ui#update_serviceid) for the service ID, or [create another image pull secret](#other_registry_accounts).
+        1. [Edit the {{site.data.keyword.cloud_notm}} IAM policies](/docs/iam?topic=iam-serviceids&interface=ui#update_serviceid) for the service ID, or [create another image pull secret](#other_registry_accounts).
 
 
 

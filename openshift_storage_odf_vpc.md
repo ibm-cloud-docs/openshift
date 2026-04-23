@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2026
-lastupdated: "2026-04-09"
+lastupdated: "2026-04-23"
 
 
 keywords: openshift, openshift data foundation, openshift container storage, ocs
@@ -143,7 +143,7 @@ If you are using cluster wide encryption and storage class encryption, your API 
 
 1. After creating your instance and root key, make a note of your {{site.data.keyword.hscrypto}} or {{site.data.keyword.keymanagementserviceshort}} instance name, instance ID, root key ID, and public endpoint.
 
-1. Create a [service ID](/docs/account?topic=account-serviceids), [API key](/docs/account?topic=account-serviceidapikeys), and [access policy](/docs/account?topic=account-assign-access-resources) that allows access to either {{site.data.keyword.hscrypto}} and {{site.data.keyword.openshiftshort}} or {{site.data.keyword.keymanagementserviceshort}} and {{site.data.keyword.openshiftshort}}. Make a note of the API that you create.
+1. Create a [service ID](/docs/iam?topic=iam-serviceids), [API key](/docs/iam?topic=iam-serviceidapikeys), and [access policy](/docs/iam?topic=iam-assign-access-resources) that allows access to either {{site.data.keyword.hscrypto}} and {{site.data.keyword.openshiftshort}} or {{site.data.keyword.keymanagementserviceshort}} and {{site.data.keyword.openshiftshort}}. Make a note of the API that you create.
 
 1. **Private clusters**: Create a virtual private endpoint gateway that allows access to your KMS instance. Make sure to bind at least 1 IP address from each subnet in your VPC to the VPE.
     - [{{site.data.keyword.hscrypto}}](/docs/hs-crypto?topic=hs-crypto-virtual-private-endpoints-for-vpc&interface=cli#vpe-gateway-configure-for-hpcs).
@@ -410,7 +410,7 @@ You can install the add-on by using the [`ibmcloud oc cluster addon enable` comm
 
 
 * [Install the Terraform CLI and the {{site.data.keyword.cloud_notm}} Provider plug-in](/docs/ibm-cloud-provider-for-terraform?topic=ibm-cloud-provider-for-terraform-setup_cli#tf_installation).
-* Make sure that you have an {{site.data.keyword.cloud_notm}} [API key](/docs/account?topic=account-userapikey&interface=ui#create_user_key). 
+* Make sure that you have an {{site.data.keyword.cloud_notm}} [API key](/docs/iam?topic=iam-userapikey&interface=ui#create_user_key). 
 
 1. Create a Terraform provider file. Save the file in your Terraform directory. For more information, see the [Terraform IBM Cloud Provider documentation](https://registry.terraform.io/providers/IBM-Cloud/ibm/latest/docs){: external}. 
 

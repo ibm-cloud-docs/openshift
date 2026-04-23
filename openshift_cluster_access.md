@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2026
-lastupdated: "2026-04-16"
+lastupdated: "2026-04-23"
 
 
 keywords: openshift, clusters, access, endpoint
@@ -1036,7 +1036,7 @@ The following example shows commands run in the source account to create a VPE g
 ### Using an API key to log in to clusters
 {: #access_api_key}
 
-You can create an {{site.data.keyword.cloud_notm}} IAM API key and then use the API key to log in to a {{site.data.keyword.redhat_openshift_notm}} cluster. With API keys, you can use the credentials of one user or shared account to access a cluster, instead of logging in individually. You might also create an API key for a [service ID](#access_service_id). For more information, see [Understanding API keys](/docs/account?topic=account-manapikey).
+You can create an {{site.data.keyword.cloud_notm}} IAM API key and then use the API key to log in to a {{site.data.keyword.redhat_openshift_notm}} cluster. With API keys, you can use the credentials of one user or shared account to access a cluster, instead of logging in individually. You might also create an API key for a [service ID](#access_service_id). For more information, see [Understanding API keys](/docs/iam?topic=iam-manapikey).
 {: shortdesc}
 
 1. Create an {{site.data.keyword.cloud_notm}} API key.
@@ -1135,7 +1135,7 @@ You can create an {{site.data.keyword.cloud_notm}} IAM API key and then use the 
 ### Using a service ID to log in to clusters
 {: #access_service_id}
 
-You can create an {{site.data.keyword.cloud_notm}} IAM service ID, make an API key for the service ID, and then use the API key to log in to a {{site.data.keyword.redhat_openshift_notm}} cluster. You might use service IDs so that apps that are hosted in other clusters or clouds can access your cluster's services. Because service IDs are not tied to a specific user, your apps can authenticate if individual users leave your account. For more information, see [Creating and working with service IDs](/docs/account?topic=account-serviceids).
+You can create an {{site.data.keyword.cloud_notm}} IAM service ID, make an API key for the service ID, and then use the API key to log in to a {{site.data.keyword.redhat_openshift_notm}} cluster. You might use service IDs so that apps that are hosted in other clusters or clouds can access your cluster's services. Because service IDs are not tied to a specific user, your apps can authenticate if individual users leave your account. For more information, see [Creating and working with service IDs](/docs/iam?topic=iam-serviceids).
 {: shortdesc}
 
 1. Create an {{site.data.keyword.cloud_notm}} IAM service ID for your cluster that is used for the IAM policies and API key credentials. Be sure to give the service ID a description that helps you retrieve the service ID later, such as including the cluster name.

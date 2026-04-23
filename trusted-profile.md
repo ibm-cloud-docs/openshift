@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2025, 2026
-lastupdated: "2026-04-15"
+lastupdated: "2026-04-23"
 
 
 keywords: trusted profiles, containers, block storage, openshift
@@ -221,7 +221,7 @@ Once you add a trusted profile to a cluster, it cannot be removed and you cannot
     ```
     {: pre}
 
-4. **For VPC clusters**: Create and assign access policies to the trusted profile. This example assigns the minimum permissions required for all storage components. For a list of permissions required for individual components only, see [Minimum requirements for individual storage components](#tp-minreqs-component). Specify the name or ID of the trusted profile you want to assign the policy to. For a complete list of command options, see the [IAM CLI docs](/docs/account?topic=account-ibmcloud_commands_iam#ibmcloud_iam_trusted_profile_policy_create). This step does not apply to classic clusters. 
+4. **For VPC clusters**: Create and assign access policies to the trusted profile. This example assigns the minimum permissions required for all storage components. For a list of permissions required for individual components only, see [Minimum requirements for individual storage components](#tp-minreqs-component). Specify the name or ID of the trusted profile you want to assign the policy to. For a complete list of command options, see the [IAM CLI docs](/docs/iam?topic=iam-ibmcloud_commands_iam#ibmcloud_iam_trusted_profile_policy_create). This step does not apply to classic clusters. 
     Add policies for the VPC Infrastructure service. 
 
     ```sh

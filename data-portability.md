@@ -1,8 +1,8 @@
 ---
 
 copyright:
-  years: 2024, 2025
-lastupdated: "2025-09-17"
+  years: 2024, 2026
+lastupdated: "2026-04-23"
 
 keywords: data, portability
 
@@ -76,7 +76,7 @@ The following example exports data from {{site.data.keyword.openshiftlong_notm}}
     ```
     {: codeblock}
 
-1. Create an [IAM Access Group](/docs/account?topic=account-groups&interface=ui) and assign the Service ID of the COS credentials from Step 3 to Cloud Object Storage. Include **Manager** and **Viewer** permissions. This gives Velero access to read and write to the COS bucket that you created.
+1. Create an [IAM Access Group](/docs/iam?topic=iam-groups&interface=ui) and assign the Service ID of the COS credentials from Step 3 to Cloud Object Storage. Include **Manager** and **Viewer** permissions. This gives Velero access to read and write to the COS bucket that you created.
 
 1. [Access your {{site.data.keyword.redhat_openshift_notm}} cluster](/docs/openshift?topic=openshift-access_cluster).
 
