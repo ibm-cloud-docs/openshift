@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2026
-lastupdated: "2026-04-21"
+lastupdated: "2026-04-23"
 
 
 keywords: openshift, {{site.data.keyword.openshiftlong_notm}}, oc, ks
@@ -32,6 +32,19 @@ Refer to the following change logs for a summary of changes for each version of 
 Review the following changes for 1.0 versions of the CLI plug-in.
 {: shortdesc}
 
+
+## Version v1.0.762
+{: #cli-01762}
+
+Version 1.0.762 of the CLI was released on 23 April 2026.
+- Adds support for the Headlamp add-on management commands:
+  - `ibmcloud ks cluster addon enable headlamp` - Enable the Headlamp add-on for a cluster
+  - `ibmcloud ks cluster addon update headlamp` - Update the Headlamp add-on
+  - `ibmcloud ks cluster addon disable headlamp` - Disable the Headlamp add-on
+- Extends ALB version information to include Traefik Ingress controller versions and status alongside Kubernetes Ingress versions.
+- Updates the `ibmcloud ks ingress alb versions` command output to display both Kubernetes and Traefik Ingress controller versions with their respective statuses.
+- Refactors ALB version listing functionality for improved code organization.
+- Includes general refactoring and improvements.
 
 ## Version v1.0.760
 {: #cli-01760}

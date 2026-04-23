@@ -281,6 +281,10 @@ subcollection: openshift
 
 * [April 2026](/docs/openshift?topic=openshift-openshift-relnotes#openshift-apr26)
 
+    * [23 April 2026](/docs/openshift?topic=openshift-openshift-relnotes#openshift-apr2326)
+
+        * CLI version 1.0.762 is available
+
     * [21 April 2026](/docs/openshift?topic=openshift-openshift-relnotes#openshift-apr2126)
 
         * CLI version 1.0.760 is available
@@ -6327,6 +6331,8 @@ subcollection: openshift
 [CLI change log](/docs/openshift?topic=openshift-cs_cli_changelog#cs_cli_changelog)
 
 * [Version 1.0](/docs/openshift?topic=openshift-cs_cli_changelog#10)
+
+* [Version v1.0.762](/docs/openshift?topic=openshift-cs_cli_changelog#cli-01762)
 
 * [Version v1.0.760](/docs/openshift?topic=openshift-cs_cli_changelog#cli-01760)
 
