@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2026
-lastupdated: "2026-04-23"
+lastupdated: "2026-04-24"
 
 
 keywords: openshift
@@ -6485,6 +6485,8 @@ subcollection: openshift
 * [`csutil-experimental` 1.0.0](/docs/openshift?topic=openshift-supported-cluster-addon-versions#csutil-experimental-1.0.0)
 
 * [`debug-tool` 2.0.0](/docs/openshift?topic=openshift-supported-cluster-addon-versions#debug-tool-2.0.0)
+
+* [`headlamp` 0.1.0](/docs/openshift?topic=openshift-supported-cluster-addon-versions#headlamp-0.1.0)
 
 * [`ibm-object-csi-driver` 1.0](/docs/openshift?topic=openshift-supported-cluster-addon-versions#ibm-object-csi-driver-1.0)
 
