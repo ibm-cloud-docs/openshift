@@ -2,7 +2,7 @@
 
 copyright:
   years: 2024, 2026
-lastupdated: "2026-04-22"
+lastupdated: "2026-04-27"
 
 
 keywords: openshift, {{site.data.keyword.openshiftlong_notm}}, kubernetes, certificate, rotate, ca rotate
@@ -21,7 +21,7 @@ subcollection: openshift
 Revoke existing certificate authority (CA) certificates in your cluster and issue new CA certificates.
 {: shortdesc}
 
-Regularly rotating your CA certificates is recommended to keep your setup secure.
+Regularly rotating your CA certificates is recommended to keep your setup secure. It is good practice to [rotate your CA certificates](/docs/containers?topic=containers-cert-rotate) whenever you update your worker nodes, as the longest step of certificate rotation includes reloading or replacing your worker nodes.
 {: important}
 
 By default, certificate authority (CA) certificates are administered to secure access to various components of your cluster, such as the master API server. As you use your cluster, you might want to revoke the certificates issued by the existing CA. For example, the administrators of your team might use a certificate signing request (CSR) to manually generate certificates that are signed by the cluster's CA for worker nodes in the cluster. If an administrator leaves your organization, you can ensure that they no longer have admin access to your cluster by creating a new CA and certificates for your cluster, and removing the old CA and certificates.
@@ -40,7 +40,7 @@ By default, certificate authority (CA) certificates are administered to secure a
     ```
     {: pre}
 
-3. Check the status of the CA creation. In the output, note the timestamp in the **Action Completed** field.
+3. Check the status of the CA creation. In the output, note the timestamp in the **Action Completed** field. For a description of each status, see [Certificate states and timestamps](#cert-rotate-states).
     ```sh
     ibmcloud oc cluster ca status -c CLUSTER
     ```
@@ -102,20 +102,26 @@ By default, certificate authority (CA) certificates are administered to secure a
 
 11. Update any tooling that relies on the previous certificates. If you use the certificate from your cluster's `kubeconfig` file in your own service such as Travis or Jenkins, or if you use `calicoctl` to manage Calico network policies, update your services and automation to use the new certificates.
 
+## Rotation impacts on cluster upgrades
+{: #cert-upgrade-impact}
 
-## Certificate rotation states
+Updates to the cluster master are blocked if a CA certificate rotation is in progress. Complete the rotation before you update the cluster master. To check the [status]((#cert-rotate-states)) of a CA certificate rotation, run `ibmcloud oc cluster ca status -c CLUSTER`.
+
+
+## Certificate states and timestamps
 {: #cert-rotate-states}
 
-Review the following table for information on each state of the certificate rotation process.
+To check the CA status, run `ibmcloud oc cluster ca status -c CLUSTER`.
 
+The timestamps in the output indicate the start and completion time for the action that initiated the current status. The following table includes descriptions for each possible status.
 
-| State | Description |
-| --- | --- |
-| `CA certificate creation in progress.` | New certificates are being created for the rotation process and being put into the certificate chain. |
-| `CA certificate created and awaiting rotation. Reload your worker nodes then begin CA certificate rotation.` | New certificates have been created and put into the certificate chain. The rotation is not yet in progress. |
-| `CA certificate rotation in progress.` | The certificate rotation is in progress. The old certificates are being removed from the certificate chain. |
-| `CA certificate rotation complete.` | The old certificates have been removed from the certificate chain. |
-| empty status | A certificate rotation has never been started or completed. |
+| State | Description | Impact on cluster upgrade |
+| --- | --- | -- |
+| `CA certificate creation in progress.` | New certificates are being created for the rotation process and being put into the certificate chain. | Cluster upgrade blocked |
+| `CA certificate created and awaiting rotation. Reload your worker nodes then begin CA certificate rotation.` | New certificates have been created and put into the certificate chain. | Cluster upgrade blocked |
+| `CA certificate rotation in progress.` | The certificate rotation is in progress. The old certificates are being removed from the certificate chain. | Cluster upgrade blocked |
+| `CA certificate rotation complete.` | The old certificates have been removed from the certificate chain. | Cluster upgrade not blocked |
+| empty status | A certificate rotation has never been started or completed. | Cluster upgrade not blocked |
 {: caption="Certificate rotation states" caption-side="bottom"}
 
 
@@ -126,16 +132,16 @@ Does IBM perform automatic CA rotation for clusters?
 :   No, IBM does not perform automatic CA rotations. Users are responsible for executing the CA rotation process.
 
 When should CA certificates be rotated?
-:   When existing access to the cluster needs to be revoked. Specifically, if a cluster administrator should no longer have access to the cluster as they may have generated certificates signed by the current CA to access the cluster.
+:   CA certificates should be rotated when existing access to the cluster needs to be revoked. Specifically, if a cluster administrator should no longer have access to the cluster as they may have generated certificates signed by the current CA to access the cluster.
 
 Does IBM automatically extend the expiration of CA certificates?
 :   Yes, new CA certificates are generated using the existing private key. This enables the certificates to have a new expiry date while still allowing the existing intermediate and end-entity certificates to be successfully validated.
 
 My cluster's CA status has a state of "CA certificate created", what actions are expected in this case?
-:   The expectation is that once the CA rotation processes has been started, it is completed. This ensures that intermediate and end-entity certificates generated with the prior CA are invalidated.
+:   Creating new CA certificates is the first step of the rotation. The expectation is that once the CA rotation processes has been started, it is completed by following [all steps in the process](#cert-rotate). This ensures that intermediate and end-entity certificates generated with the prior CA are invalidated.
 
 My cluster's CA status shows `Action Started` and `Action Completed` timestamps from several years ago. What actions are expected in this case?
-:   None. This indicates that a CA rotation was started and completed as the timestamps indiciate.
+:   The timestamps indicate the start and completion time for the action that initiated the current CA status. The action you must take depends on the [rotation status](#cert-rotate-states). For example, if your CA status is `CA certificate created and awaiting rotation. Reload your worker nodes then begin CA certificate rotation`, then the certificate creation was started and completed at the time indicated in the timestamp, but the full rotation is not completed.
 
 Does performing CA rotation result in a shorter validity period than the current certificate?
 :   Yes, it is possible that performing a rotation can result in the validity period of the new certificate being shorter than the previous certificate. This is due to a shortening of the default certificate expiry length.

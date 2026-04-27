@@ -2006,7 +2006,9 @@ subcollection: openshift
 
 [Rotating CA certificates in your cluster](/docs/openshift?topic=openshift-cert-rotate#cert-rotate)
 
-* [Certificate rotation states](/docs/openshift?topic=openshift-cert-rotate#cert-rotate-states)
+* [Rotation impacts on cluster upgrades](/docs/openshift?topic=openshift-cert-rotate#cert-upgrade-impact)
+
+* [Certificate states and timestamps](/docs/openshift?topic=openshift-cert-rotate#cert-rotate-states)
 
 * [FAQ about certificate rotation](/docs/openshift?topic=openshift-cert-rotate#cert-rotate-faq)
 
@@ -2724,6 +2726,8 @@ subcollection: openshift
     * [Considerations for hub and spoke VPCs with outbound traffic protection](/docs/openshift?topic=openshift-sbd-allow-outbound#sbd-example-hubspoke)
 
     * [Allowing temporary traffic to the cluster API server over the public network](/docs/openshift?topic=openshift-sbd-allow-outbound#sbd-example-api-server-backup)
+
+    * [Verifying the Sysdig integration on private-only RHCOS clusters](/docs/openshift?topic=openshift-sbd-allow-outbound#sbd-example-sysdig)
 
 [Enabling secure by default for clusters created at 4.14 and earlier](/docs/openshift?topic=openshift-vpc-sbd-enable-existing#vpc-sbd-enable-existing)
 
@@ -8284,6 +8288,8 @@ subcollection: openshift
 [After creating a version 4.15 cluster, applications running in other clusters in my VPC are failing](/docs/openshift?topic=openshift-ts-sbd-other-clusters#ts-sbd-other-clusters)
 
 [Why don't image streams populate on a secure by default cluster?](/docs/openshift?topic=openshift-ts_cluster_sbd_image_stream#ts_cluster_sbd_image_stream)
+
+[Why are `sysdig-agent` pods in `CrashLoopBackOff` on a private-only RHCOS cluster?](/docs/openshift?topic=openshift-ts-cluster-sysdig-ebpf#ts-cluster-sysdig-ebpf)
 
 [Why can't I connect Cloud Logs to my cluster?](/docs/openshift?topic=openshift-ts-cloud-logs-refresh#ts-cloud-logs-refresh)
 
