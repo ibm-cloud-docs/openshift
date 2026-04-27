@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2026
-lastupdated: "2026-04-23"
+lastupdated: "2026-04-27"
 
 
 keywords: openshift
@@ -6486,6 +6486,8 @@ subcollection: openshift
 
 * [`debug-tool` 2.0.0](/docs/openshift?topic=openshift-supported-cluster-addon-versions#debug-tool-2.0.0)
 
+* [`headlamp` 0.1.0](/docs/openshift?topic=openshift-supported-cluster-addon-versions#headlamp-0.1.0)
+
 * [`ibm-object-csi-driver` 1.0](/docs/openshift?topic=openshift-supported-cluster-addon-versions#ibm-object-csi-driver-1.0)
 
 * [`ibm-storage-operator` 1.0](/docs/openshift?topic=openshift-supported-cluster-addon-versions#ibm-storage-operator-1.0)
@@ -6505,6 +6507,8 @@ subcollection: openshift
 * [`openshift-ai` 417](/docs/openshift?topic=openshift-supported-cluster-addon-versions#openshift-ai-417)
 
 * [`openshift-ai` 418](/docs/openshift?topic=openshift-supported-cluster-addon-versions#openshift-ai-418)
+
+* [`openshift-ai` 419](/docs/openshift?topic=openshift-supported-cluster-addon-versions#openshift-ai-419)
 
 * [`openshift-data-foundation` 4.15.0](/docs/openshift?topic=openshift-supported-cluster-addon-versions#openshift-data-foundation-4.15.0)
 
