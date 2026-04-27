@@ -3546,6 +3546,18 @@ subcollection: openshift
 
     * [Updating operators not managed by IBM](/docs/openshift?topic=openshift-ai-addon-about#ai-addon-updatehow-notmanaged)
 
+* [OpenShift AI add-on version 419 changes](/docs/openshift?topic=openshift-ai-addon-about#ai-addon-version-419)
+
+    * [Components removed in version 419](/docs/openshift?topic=openshift-ai-addon-about#ai-419-removed)
+
+    * [Components renamed in version 419](/docs/openshift?topic=openshift-ai-addon-about#ai-419-renamed)
+
+    * [New components in version 419](/docs/openshift?topic=openshift-ai-addon-about#ai-419-new)
+
+    * [Setting up the Trainer component](/docs/openshift?topic=openshift-ai-addon-about#ai-419-trainer-setup)
+
+    * [Upgrade restrictions for version 419](/docs/openshift?topic=openshift-ai-addon-about#ai-419-upgrade-restrictions)
+
 * [What's next?](/docs/openshift?topic=openshift-ai-addon-about#ai-addon-ov-next)
 
 [Installing the Red Hat OpenShift AI add-on](/docs/openshift?topic=openshift-ai-addon-install#ai-addon-install)

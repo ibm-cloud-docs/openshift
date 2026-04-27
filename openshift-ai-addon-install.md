@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2024, 2026
-lastupdated: "2026-04-23"
+lastupdated: "2026-04-27"
 
 
 keywords: openshift, {{site.data.keyword.openshiftlong_notm}}, ai, add-on
@@ -39,15 +39,16 @@ Review the following considerations before setting up the add-on.
 
 Review the supported OpenShift AI add-on versions and the corresponding [OpenShift AI](https://www.redhat.com/en/products/ai/openshift-ai){: external} and [{{site.data.keyword.openshiftshort}}](/docs/openshift?topic=openshift-openshift_versions) versions. 
 
-| OpenShift AI add-on version | Red Hat OpenShift AI version |	Supported Red Hat OpenShift on IBM Cloud versions |
+| OpenShift AI add-on version | Red Hat OpenShift AI version |	Supported cluster versions |
 | --------------------------  | ---------------------------- | -------------------------------------------------- |
-
+| [419](/docs/openshift?topic=openshift-ai-addon-about#ai-addon-version-419) | 3.3.0 | 4.19, 4.20 |
 | 418 | 2.25.2 | 4.18, 4.19 |
 | 417 | 2.25.2 | 4.17, 4.18 |
 | 416 | 2.25.2 | 4.16, 4.17 |
 {: caption="Supported AI add-on versions and corresponding versions for Red Hat OpenShift AI and Red Hat OpenShift on IBM Cloud". caption-side="bottom"}
 
-
+Upgrading from version 418 to 419 is not supported. Only new installations of version 419 are allowed. For more information, see [OpenShift AI add-on version 419 changes](/docs/openshift?topic=openshift-ai-addon-about#ai-addon-version-419).
+{: important}
 
 ## Considerations
 {: #ai-consideration}
