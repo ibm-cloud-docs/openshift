@@ -281,6 +281,20 @@ subcollection: openshift
 
 * [April 2026](/docs/openshift?topic=openshift-openshift-relnotes#openshift-apr26)
 
+    * [27 April 2026](/docs/openshift?topic=openshift-openshift-relnotes#openshift-apr2726)
+
+        * {{site.data.keyword.openshiftlong_notm}} master fix packs.
+
+        * IBM Storage Operator cluster add-on patch updates.
+
+        * VPC File CSI Driver cluster add-on patch updates.
+
+    * [26 April 2026](/docs/openshift?topic=openshift-openshift-relnotes#openshift-apr2626)
+
+        * Openshift AI cluster add-on patch updates.
+
+        * IBM Object CSI Driver cluster add-on patch updates.
+
     * [23 April 2026](/docs/openshift?topic=openshift-openshift-relnotes#openshift-apr2326)
 
         * CLI version 1.0.762 is available
@@ -1992,7 +2006,9 @@ subcollection: openshift
 
 [Rotating CA certificates in your cluster](/docs/openshift?topic=openshift-cert-rotate#cert-rotate)
 
-* [Certificate rotation states](/docs/openshift?topic=openshift-cert-rotate#cert-rotate-states)
+* [Rotation impacts on cluster upgrades](/docs/openshift?topic=openshift-cert-rotate#cert-upgrade-impact)
+
+* [Certificate states and timestamps](/docs/openshift?topic=openshift-cert-rotate#cert-rotate-states)
 
 * [FAQ about certificate rotation](/docs/openshift?topic=openshift-cert-rotate#cert-rotate-faq)
 
@@ -2710,6 +2726,8 @@ subcollection: openshift
     * [Considerations for hub and spoke VPCs with outbound traffic protection](/docs/openshift?topic=openshift-sbd-allow-outbound#sbd-example-hubspoke)
 
     * [Allowing temporary traffic to the cluster API server over the public network](/docs/openshift?topic=openshift-sbd-allow-outbound#sbd-example-api-server-backup)
+
+    * [Verifying the Sysdig integration on private-only RHCOS clusters](/docs/openshift?topic=openshift-sbd-allow-outbound#sbd-example-sysdig)
 
 [Enabling secure by default for clusters created at 4.14 and earlier](/docs/openshift?topic=openshift-vpc-sbd-enable-existing#vpc-sbd-enable-existing)
 
@@ -3533,6 +3551,18 @@ subcollection: openshift
     * [Updating the OpenShift AI operator](/docs/openshift?topic=openshift-ai-addon-about#ai-addon-updatehow-managed)
 
     * [Updating operators not managed by IBM](/docs/openshift?topic=openshift-ai-addon-about#ai-addon-updatehow-notmanaged)
+
+* [OpenShift AI add-on version 419 changes](/docs/openshift?topic=openshift-ai-addon-about#ai-addon-version-419)
+
+    * [Components removed in version 419](/docs/openshift?topic=openshift-ai-addon-about#ai-419-removed)
+
+    * [Components renamed in version 419](/docs/openshift?topic=openshift-ai-addon-about#ai-419-renamed)
+
+    * [New components in version 419](/docs/openshift?topic=openshift-ai-addon-about#ai-419-new)
+
+    * [Setting up the Trainer component](/docs/openshift?topic=openshift-ai-addon-about#ai-419-trainer-setup)
+
+    * [Upgrade restrictions for version 419](/docs/openshift?topic=openshift-ai-addon-about#ai-419-upgrade-restrictions)
 
 * [What's next?](/docs/openshift?topic=openshift-ai-addon-about#ai-addon-ov-next)
 
@@ -4945,6 +4975,8 @@ subcollection: openshift
 
 * [Version 4.20](/docs/openshift?topic=openshift-openshift_changelog_420#420_components)
 
+    * [Master fix pack 4.20.18_1545_openshift, released 27 April 2026](/docs/openshift?topic=openshift-openshift_changelog_420#cl-boms_master-42018_1545_openshift_M)
+
     * [Worker node fix pack 4.20.18_1544_openshift, released 20 April 2026](/docs/openshift?topic=openshift-openshift_changelog_420#cl-boms-42018_1544_openshift_W)
 
     * [Worker node fix pack 4.20.17_1543_openshift, released 06 April 2026](/docs/openshift?topic=openshift-openshift_changelog_420#cl-boms-42017_1543_openshift_W)
@@ -5069,6 +5101,8 @@ subcollection: openshift
 * [Overview](/docs/openshift?topic=openshift-openshift_changelog_419#changelog_overview_419)
 
 * [Version 4.19](/docs/openshift?topic=openshift-openshift_changelog_419#419_components)
+
+    * [Master fix pack 4.19.25_1576_openshift, released 27 April 2026](/docs/openshift?topic=openshift-openshift_changelog_419#cl-boms_master-41925_1576_openshift_M)
 
     * [Worker node fix pack 4.19.28_1574_openshift, released 20 April 2026](/docs/openshift?topic=openshift-openshift_changelog_419#cl-boms-41928_1574_openshift_W)
 
@@ -5226,6 +5260,8 @@ subcollection: openshift
 * [Overview](/docs/openshift?topic=openshift-openshift_changelog_418#changelog_overview_418)
 
 * [Version 4.18](/docs/openshift?topic=openshift-openshift_changelog_418#418_components)
+
+    * [Master fix pack 4.18.37_1586_openshift, released 27 April 2026](/docs/openshift?topic=openshift-openshift_changelog_418#cl-boms_master-41837_1586_openshift_M)
 
     * [Worker node fix pack 4.18.37_1585_openshift, released 20 April 2026](/docs/openshift?topic=openshift-openshift_changelog_418#cl-boms-41837_1585_openshift_W)
 
@@ -5407,6 +5443,8 @@ subcollection: openshift
 * [Overview](/docs/openshift?topic=openshift-openshift_changelog_417#changelog_overview_417)
 
 * [Version 4.17](/docs/openshift?topic=openshift-openshift_changelog_417#417_components)
+
+    * [Master fix pack 4.17.52_1582_openshift, released 27 April 2026](/docs/openshift?topic=openshift-openshift_changelog_417#cl-boms_master-41752_1582_openshift_M)
 
     * [Worker node fix pack 4.17.52_1580_openshift, released 20 April 2026](/docs/openshift?topic=openshift-openshift_changelog_417#cl-boms-41752_1580_openshift_W)
 
@@ -5624,6 +5662,8 @@ subcollection: openshift
 * [Overview](/docs/openshift?topic=openshift-openshift_changelog_416#changelog_overview_416)
 
 * [Version 4.16](/docs/openshift?topic=openshift-openshift_changelog_416#416_components)
+
+    * [Master fix pack 4.16.59_1613_openshift, released 27 April 2026](/docs/openshift?topic=openshift-openshift_changelog_416#cl-boms_master-41659_1613_openshift_M)
 
     * [Worker node fix pack 4.16.59_1610_openshift, released 20 April 2026](/docs/openshift?topic=openshift-openshift_changelog_416#cl-boms-41659_1610_openshift_W)
 
@@ -6532,6 +6572,10 @@ subcollection: openshift
 
 [OpenShift AI add-on version change log](/docs/openshift?topic=openshift-cl-add-ons-openshift-ai#cl-add-ons-openshift-ai)
 
+* [Version 419](/docs/openshift?topic=openshift-cl-add-ons-openshift-ai#cl-add-ons-openshift-ai-419)
+
+    * [v419.0.0_333601315, released 26 April 2026](/docs/openshift?topic=openshift-cl-add-ons-openshift-ai#cl-add-ons-openshift-ai-v41900_333601315)
+
 * [Version 418](/docs/openshift?topic=openshift-cl-add-ons-openshift-ai#cl-add-ons-openshift-ai-418)
 
     * [v418.1.0_320919095, released 03 March 2026](/docs/openshift?topic=openshift-cl-add-ons-openshift-ai#cl-add-ons-openshift-ai-v41810_320919095)
@@ -6826,6 +6870,8 @@ subcollection: openshift
 
 * [Version 1.0](/docs/openshift?topic=openshift-cl-add-ons-ibm-storage-operator#cl-add-ons-ibm-storage-operator-1.0)
 
+    * [v1.0.37_333899629, released 27 April 2026](/docs/openshift?topic=openshift-cl-add-ons-ibm-storage-operator#cl-add-ons-ibm-storage-operator-v1037_333899629)
+
     * [v1.0.36_328998949, released 07 April 2026](/docs/openshift?topic=openshift-cl-add-ons-ibm-storage-operator#cl-add-ons-ibm-storage-operator-v1036_328998949)
 
     * [v1.0.35_325672265, released 24 March 2026](/docs/openshift?topic=openshift-cl-add-ons-ibm-storage-operator#cl-add-ons-ibm-storage-operator-v1035_325672265)
@@ -7030,6 +7076,8 @@ subcollection: openshift
 
 * [Version 2.0](/docs/openshift?topic=openshift-cl-add-ons-vpc-file-csi-driver#cl-add-ons-vpc-file-csi-driver-2.0)
 
+    * [v2.0.28_333900419, released 27 April 2026](/docs/openshift?topic=openshift-cl-add-ons-vpc-file-csi-driver#cl-add-ons-vpc-file-csi-driver-v2028_333900419)
+
     * [v2.0.27_329001706, released 07 April 2026](/docs/openshift?topic=openshift-cl-add-ons-vpc-file-csi-driver#cl-add-ons-vpc-file-csi-driver-v2027_329001706)
 
     * [v2.0.26_325670948, released 24 March 2026](/docs/openshift?topic=openshift-cl-add-ons-vpc-file-csi-driver#cl-add-ons-vpc-file-csi-driver-v2026_325670948)
@@ -7115,6 +7163,8 @@ subcollection: openshift
 [IBM Object CSI Driver add-on version change log](/docs/openshift?topic=openshift-cl-add-ons-ibm-object-csi-driver#cl-add-ons-ibm-object-csi-driver)
 
 * [Version 1.0](/docs/openshift?topic=openshift-cl-add-ons-ibm-object-csi-driver#cl-add-ons-ibm-object-csi-driver-1.0)
+
+    * [v1.0.19_333133599, released 26 April 2026](/docs/openshift?topic=openshift-cl-add-ons-ibm-object-csi-driver#cl-add-ons-ibm-object-csi-driver-v1019_333133599)
 
     * [v1.0.18_320539369, released 02 April 2026](/docs/openshift?topic=openshift-cl-add-ons-ibm-object-csi-driver#cl-add-ons-ibm-object-csi-driver-v1018_320539369)
 
@@ -8238,6 +8288,8 @@ subcollection: openshift
 [After creating a version 4.15 cluster, applications running in other clusters in my VPC are failing](/docs/openshift?topic=openshift-ts-sbd-other-clusters#ts-sbd-other-clusters)
 
 [Why don't image streams populate on a secure by default cluster?](/docs/openshift?topic=openshift-ts_cluster_sbd_image_stream#ts_cluster_sbd_image_stream)
+
+[Why are `sysdig-agent` pods in `CrashLoopBackOff` on a private-only RHCOS cluster?](/docs/openshift?topic=openshift-ts-cluster-sysdig-ebpf#ts-cluster-sysdig-ebpf)
 
 [Why can't I connect Cloud Logs to my cluster?](/docs/openshift?topic=openshift-ts-cloud-logs-refresh#ts-cloud-logs-refresh)
 

@@ -3,7 +3,7 @@
 copyright:
   years: 2024, 2026
 
-lastupdated: "2026-03-03"
+lastupdated: "2026-04-27"
 
 
 keywords: change log, version history, OpenShift AI
@@ -37,6 +37,21 @@ ibmcloud oc cluster addon versions
 
 Review the version history for OpenShift AI.
 {: shortdesc}
+
+
+## Version 419
+{: #cl-add-ons-openshift-ai-419}
+
+
+### v419.0.0_333601315, released 26 April 2026
+{: #cl-add-ons-openshift-ai-v41900_333601315}
+
+- Resolves the following CVEs: [CVE-2026-25679](https://nvd.nist.gov/vuln/detail/CVE-2026-25679){: external}, [CVE-2026-33211](https://nvd.nist.gov/vuln/detail/CVE-2026-33211){: external}, [CVE-2026-33186](https://nvd.nist.gov/vuln/detail/CVE-2026-33186){: external}, and [CVE-2026-27139](https://nvd.nist.gov/vuln/detail/CVE-2026-27139){: external}.
+- Updates Go to version `1.25.9`.
+- Installs Red Hat `openshift-ai` operator version `3.3.0`.
+- Optionally installs NFD operator based on latest version available for channel `stable`.
+- Optionally installs NVIDIA GPU operator based on latest version available for channel `stable`.
+- Optionally installs Pipeline operator based on latest version available for channel `latest`.
 
 
 ## Version 418

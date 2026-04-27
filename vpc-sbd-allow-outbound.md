@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2024, 2026
-lastupdated: "2026-02-11"
+lastupdated: "2026-04-27"
 
 keywords: openshift, {{site.data.keyword.openshiftlong_notm}}, secure by default, outbound traffic protection, 4.15
 
@@ -457,3 +457,15 @@ You can choose one of the following options to allow traffic over the public net
     ibmcloud oc vpc outbound-traffic-protection disable --cluster CLUSTER
     ```
     {: pre}
+
+
+
+
+
+
+
+
+### Verifying the Sysdig integration on private-only RHCOS clusters
+{: #sbd-example-sysdig}
+
+If `sysdig-agent` pods are in `CrashLoopBackOff` on a private-only cluster that uses RHCOS workers, you can either disable outbound traffic protection or update the Sysdig agent to use the eBPF driver. For more information, see [Why are `sysdig-agent` pods in `CrashLoopBackOff` on a private-only RHCOS cluster?](/docs/openshift?topic=openshift-ts-cluster-sysdig-ebpf).

@@ -3,7 +3,7 @@
 copyright:
   years: 2024, 2026
 
-lastupdated: "2026-04-22"
+lastupdated: "2026-04-27"
 
 
 keywords: change log, version history, 4.16_openshift
@@ -37,6 +37,23 @@ Master patch updates are applied automatically. Worker node patch updates can be
 
 ## Version 4.16
 {: #416_components}
+
+
+### Master fix pack 4.16.59_1613_openshift, released 27 April 2026
+{: #cl-boms_master-41659_1613_openshift_M}
+
+The following table shows the components that are in the master fix pack 4.16.59_1613_openshift. Master patch updates are applied automatically.
+{: shortdesc}
+
+| Component | Version | Description |
+| ---- | ---- | ---- |
+|etcd|v3.5.29|See the [etcd release notes](https://github.com/coreos/etcd/releases/v3.5.29).|
+|IBM Cloud Controller Manager|v1.29.15-49|New version contains updates and security fixes.|
+|Key Management Service provider|2.10.23|New version contains updates and security fixes.|
+|Portieris admission controller|v0.13.37|See the [Portieris admission controller release notes](https://github.com/IBM/portieris/releases/tag/v0.13.37)|
+|Red Hat OpenShift on IBM Cloud|4.16.59|See the [Red Hat OpenShift on IBM Cloud release notes](https://docs.redhat.com/en/documentation/openshift_container_platform/4.16/html/release_notes/ocp-4-16-release-notes#ocp-4-16-59_release-notes).|
+{: caption="4.16.59_1613_openshift fix pack." caption-side="bottom"}
+{: #cl-boms_master-41659_1613_openshift_M-component-table}
 
 
 ### Worker node fix pack 4.16.59_1610_openshift, released 20 April 2026

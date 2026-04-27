@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2026
-lastupdated: "2026-04-10"
+lastupdated: "2026-04-27"
 
 
 keywords: oks, iro, openshift, red hat, red hat openshift
@@ -32,7 +32,7 @@ To help understand when to use the built-in {{site.data.keyword.redhat_openshift
 
 
 
-**Monitoring limitation in private-only clusters with RHCOS worker nodes**: The monitoring agent relies on kernel headers in the operating system, however RHCOS doesn't have kernel headers. In this scenario, the agent reaches back to `sysdig.com` to use the pre-compiled agent. In clusters with no public network access this process fails. To allow monitoring on RHCOS clusters, you must either [allow outbound traffic](/docs/openshift?topic=openshift-sbd-allow-outbound#existing-cluster-sbd) or see the Sysdig documentation for [installing the agent on air-gapped environments](https://docs.sysdig.com/en/docs/administration/on-premises-deployments/installation/airgapped-installation/){: external}.
+**Monitoring limitation in private-only clusters with RHCOS worker nodes**: The monitoring agent relies on kernel headers in the operating system, however RHCOS doesn't have kernel headers. In this scenario, the agent reaches back to `sysdig.com` to use the pre-compiled agent. In clusters with no public network access this process fails. To allow monitoring on RHCOS clusters, you must either [allow outbound traffic](/docs/openshift?topic=openshift-sbd-allow-outbound#existing-cluster-sbd), [enable the eBPF driver for the Sysdig agent](/docs/openshift?topic=openshift-ts-cluster-sysdig-ebpf), or see the Sysdig documentation for [installing the agent on air-gapped environments](https://docs.sysdig.com/en/docs/administration/on-premises-deployments/installation/airgapped-installation/){: external}.
 {: important}
 
 
