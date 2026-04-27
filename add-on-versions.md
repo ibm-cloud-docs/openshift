@@ -1,8 +1,8 @@
 ---
 
-copyright:
+copyright: 
   years: 2022, 2026
-lastupdated: "2026-04-24"
+lastupdated: "2026-04-27"
 
 keywords: openshift, add-ons, cluster addon
 
@@ -15,22 +15,22 @@ subcollection: openshift
 # Supported cluster add-on versions
 {: #supported-cluster-addon-versions}
 
-Review the following list of supported cluster add-ons. Each add-on version can be used on any cluster version included in the range of supported cluster versions.
+Review the following list of supported cluster add-ons. Each add-on version can be used on any cluster version included in the range of supported cluster versions. 
 {: shortdesc}
 
 
 
 
-## `alb-oauth-proxy` 2.0.0
+## `alb-oauth-proxy` 2.0.0 
 {: #alb-oauth-proxy-2.0.0}
 
 - Supported Kubernetes cluster versions: `>=1.19.0 <1.36.0`
 
-- Supported OpenShift cluster versions:  `N/A`
+- Supported OpenShift cluster versions:  `N/A` 
 
 
 
-## `cluster-autoscaler` 1.1.0
+## `cluster-autoscaler` 1.1.0 
 {: #cluster-autoscaler-1.1.0}
 
 - Supported Kubernetes cluster versions: `>=1.20.0 <1.24.0`
@@ -39,7 +39,7 @@ Review the following list of supported cluster add-ons. Each add-on version can 
 
 
 
-## `cluster-autoscaler` 1.2.4
+## `cluster-autoscaler` 1.2.4 
 {: #cluster-autoscaler-1.2.4}
 
 - Supported Kubernetes cluster versions: `>=1.28.0 <1.35.0`
@@ -48,7 +48,7 @@ Review the following list of supported cluster add-ons. Each add-on version can 
 
 
 
-## `cluster-autoscaler` 2.0.0
+## `cluster-autoscaler` 2.0.0 
 {: #cluster-autoscaler-2.0.0}
 
 - Supported Kubernetes cluster versions: `>=1.31.0 <1.35.0`
@@ -57,7 +57,7 @@ Review the following list of supported cluster add-ons. Each add-on version can 
 
 
 
-## `csutil` 1.0.0
+## `csutil` 1.0.0 
 {: #csutil-1.0.0}
 
 - Supported Kubernetes cluster versions: `>=1.20.0 <1.36.0`
@@ -66,7 +66,7 @@ Review the following list of supported cluster add-ons. Each add-on version can 
 
 
 
-## `csutil-experimental` 1.0.0
+## `csutil-experimental` 1.0.0 
 {: #csutil-experimental-1.0.0}
 
 - Supported Kubernetes cluster versions: `>=1.20.0 <1.36.0`
@@ -75,7 +75,7 @@ Review the following list of supported cluster add-ons. Each add-on version can 
 
 
 
-## `debug-tool` 2.0.0
+## `debug-tool` 2.0.0 
 {: #debug-tool-2.0.0}
 
 - Supported Kubernetes cluster versions: `>=1.26.0 <1.35.0`
@@ -84,16 +84,16 @@ Review the following list of supported cluster add-ons. Each add-on version can 
 
 
 
-## `headlamp` 0.1.0
+## `headlamp` 0.1.0 
 {: #headlamp-0.1.0}
 
 - Supported Kubernetes cluster versions: `>=1.31.0 <1.36.0`
 
-- Supported OpenShift cluster versions:  `N/A`
+- Supported OpenShift cluster versions:  `N/A` 
 
 
 
-## `ibm-object-csi-driver` 1.0
+## `ibm-object-csi-driver` 1.0 
 {: #ibm-object-csi-driver-1.0}
 
 - Supported Kubernetes cluster versions: `>=1.31.0 <1.36.0`
@@ -102,7 +102,7 @@ Review the following list of supported cluster add-ons. Each add-on version can 
 
 
 
-## `ibm-storage-operator` 1.0
+## `ibm-storage-operator` 1.0 
 {: #ibm-storage-operator-1.0}
 
 - Supported Kubernetes cluster versions: `>=1.29.0 <1.36.0`
@@ -111,133 +111,142 @@ Review the following list of supported cluster add-ons. Each add-on version can 
 
 
 
-## `image-key-synchronizer` 1.0.0
+## `image-key-synchronizer` 1.0.0 
 {: #image-key-synchronizer-1.0.0}
 
-- Supported Kubernetes cluster versions:  `N/A`
+- Supported Kubernetes cluster versions:  `N/A` 
 
 - Supported OpenShift cluster versions: `>=4.4.0 <4.21.0`
 
 
 
-## `istio` 1.24
+## `istio` 1.24 
 {: #istio-1.24}
 
 - Supported Kubernetes cluster versions: `>=1.29.0 <1.33.0`
 
-- Supported OpenShift cluster versions:  `N/A`
+- Supported OpenShift cluster versions:  `N/A` 
 
 
 
-## `istio` 1.25
+## `istio` 1.25 
 {: #istio-1.25}
 
 - Supported Kubernetes cluster versions: `>=1.29.0 <1.33.0`
 
-- Supported OpenShift cluster versions:  `N/A`
+- Supported OpenShift cluster versions:  `N/A` 
 
 
 
-## `istio` 1.26
+## `istio` 1.26 
 {: #istio-1.26}
 
 - Supported Kubernetes cluster versions: `>=1.31.0 <1.34.0`
 
-- Supported OpenShift cluster versions:  `N/A`
+- Supported OpenShift cluster versions:  `N/A` 
 
 
 
-## `istio` 1.27
+## `istio` 1.27 
 {: #istio-1.27}
 
 - Supported Kubernetes cluster versions: `>=1.31.0 <1.34.0`
 
-- Supported OpenShift cluster versions:  `N/A`
+- Supported OpenShift cluster versions:  `N/A` 
 
 
 
-## `openshift-ai` 416
+## `openshift-ai` 416 
 {: #openshift-ai-416}
 
-- Supported Kubernetes cluster versions:  `N/A`
+- Supported Kubernetes cluster versions:  `N/A` 
 
 - Supported OpenShift cluster versions: `>=4.16.0 <4.18.0`
 
 
 
-## `openshift-ai` 417
+## `openshift-ai` 417 
 {: #openshift-ai-417}
 
-- Supported Kubernetes cluster versions:  `N/A`
+- Supported Kubernetes cluster versions:  `N/A` 
 
 - Supported OpenShift cluster versions: `>=4.17.0 <4.19.0`
 
 
 
-## `openshift-ai` 418
+## `openshift-ai` 418 
 {: #openshift-ai-418}
 
-- Supported Kubernetes cluster versions:  `N/A`
+- Supported Kubernetes cluster versions:  `N/A` 
 
 - Supported OpenShift cluster versions: `>=4.18.0 <4.20.0`
 
 
 
-## `openshift-data-foundation` 4.15.0
-{: #openshift-data-foundation-4.15.0}
+## `openshift-ai` 419 
+{: #openshift-ai-419}
 
-- Supported Kubernetes cluster versions:  `N/A`
-
-- Supported OpenShift cluster versions: `>=4.15.0 <4.17.0`
-
-
-
-## `openshift-data-foundation` 4.16.0
-{: #openshift-data-foundation-4.16.0}
-
-- Supported Kubernetes cluster versions:  `N/A`
-
-- Supported OpenShift cluster versions: `>=4.16.0 <4.18.0`
-
-
-
-## `openshift-data-foundation` 4.17.0
-{: #openshift-data-foundation-4.17.0}
-
-- Supported Kubernetes cluster versions:  `N/A`
-
-- Supported OpenShift cluster versions: `>=4.17.0 <4.19.0`
-
-
-
-## `openshift-data-foundation` 4.18.0
-{: #openshift-data-foundation-4.18.0}
-
-- Supported Kubernetes cluster versions:  `N/A`
-
-- Supported OpenShift cluster versions: `>=4.18.0 <4.20.0`
-
-
-
-## `openshift-data-foundation` 4.19.0
-{: #openshift-data-foundation-4.19.0}
-
-- Supported Kubernetes cluster versions:  `N/A`
+- Supported Kubernetes cluster versions:  `N/A` 
 
 - Supported OpenShift cluster versions: `>=4.19.0 <4.21.0`
 
 
 
-## `openshift-data-foundation` 4.20.0
+## `openshift-data-foundation` 4.15.0 
+{: #openshift-data-foundation-4.15.0}
+
+- Supported Kubernetes cluster versions:  `N/A` 
+
+- Supported OpenShift cluster versions: `>=4.15.0 <4.17.0`
+
+
+
+## `openshift-data-foundation` 4.16.0 
+{: #openshift-data-foundation-4.16.0}
+
+- Supported Kubernetes cluster versions:  `N/A` 
+
+- Supported OpenShift cluster versions: `>=4.16.0 <4.18.0`
+
+
+
+## `openshift-data-foundation` 4.17.0 
+{: #openshift-data-foundation-4.17.0}
+
+- Supported Kubernetes cluster versions:  `N/A` 
+
+- Supported OpenShift cluster versions: `>=4.17.0 <4.19.0`
+
+
+
+## `openshift-data-foundation` 4.18.0 
+{: #openshift-data-foundation-4.18.0}
+
+- Supported Kubernetes cluster versions:  `N/A` 
+
+- Supported OpenShift cluster versions: `>=4.18.0 <4.20.0`
+
+
+
+## `openshift-data-foundation` 4.19.0 
+{: #openshift-data-foundation-4.19.0}
+
+- Supported Kubernetes cluster versions:  `N/A` 
+
+- Supported OpenShift cluster versions: `>=4.19.0 <4.21.0`
+
+
+
+## `openshift-data-foundation` 4.20.0 
 {: #openshift-data-foundation-4.20.0}
 
-- Supported Kubernetes cluster versions:  `N/A`
+- Supported Kubernetes cluster versions:  `N/A` 
 
 - Supported OpenShift cluster versions: `>=4.20.0 <4.21.0`
 
 
 
-## `static-route` 1.0.0
+## `static-route` 1.0.0 
 {: #static-route-1.0.0}
 
 - Supported Kubernetes cluster versions: `>=1.26.0 <1.36.0`
@@ -246,7 +255,7 @@ Review the following list of supported cluster add-ons. Each add-on version can 
 
 
 
-## `vpc-block-csi-driver` 5.1
+## `vpc-block-csi-driver` 5.1 
 {: #vpc-block-csi-driver-5.1}
 
 - Supported Kubernetes cluster versions: `>=1.22.0 <1.36.0`
@@ -255,7 +264,7 @@ Review the following list of supported cluster add-ons. Each add-on version can 
 
 
 
-## `vpc-block-csi-driver` 5.2
+## `vpc-block-csi-driver` 5.2 
 {: #vpc-block-csi-driver-5.2}
 
 - Supported Kubernetes cluster versions: `>=1.25.0 <1.36.0`
@@ -264,7 +273,7 @@ Review the following list of supported cluster add-ons. Each add-on version can 
 
 
 
-## `vpc-file-csi-driver` 2.0
+## `vpc-file-csi-driver` 2.0 
 {: #vpc-file-csi-driver-2.0}
 
 - Supported Kubernetes cluster versions: `>=1.29.0 <1.36.0`
