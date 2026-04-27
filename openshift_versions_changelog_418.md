@@ -3,7 +3,7 @@
 copyright:
   years: 2024, 2026
 
-lastupdated: "2026-04-22"
+lastupdated: "2026-04-27"
 
 
 keywords: change log, version history, 4.18_openshift
@@ -37,6 +37,30 @@ Master patch updates are applied automatically. Worker node patch updates can be
 
 ## Version 4.18
 {: #418_components}
+
+
+### Master fix pack 4.18.37_1586_openshift, released 27 April 2026
+{: #cl-boms_master-41837_1586_openshift_M}
+
+The following table shows the components that are in the master fix pack 4.18.37_1586_openshift. Master patch updates are applied automatically.
+{: shortdesc}
+
+| Component | Version | Description |
+| ---- | ---- | ---- |
+|Calico|v3.30.7|See the [Calico release notes](https://docs.tigera.io/calico/3.30/release-notes/#calico-open-source-3307-bug-fix-release).|
+|Cluster health image|v1.6.15|New version contains updates and security fixes.|
+|etcd|v3.5.29|See the [etcd release notes](https://github.com/coreos/etcd/releases/v3.5.29).|
+|IBM Cloud Block Storage driver and plug-in|v2.5.25|New version contains updates and security fixes.|
+|IBM Cloud Controller Manager|v1.31.14-19|New version contains updates and security fixes.|
+|IBM Cloud File Storage for Classic plug-in and monitor|v454|New version contains updates and security fixes.|
+|IBM Cloud RBAC Operator|6212368|New version contains updates and security fixes.|
+|Key Management Service provider|2.10.23|New version contains updates and security fixes.|
+|Load balancer and load balancer monitor for IBM Cloud Provider|3563|New version contains updates and security fixes.|
+|Portieris admission controller|v0.13.37|See the [Portieris admission controller release notes](https://github.com/IBM/portieris/releases/tag/v0.13.37)|
+|Red Hat OpenShift on IBM Cloud|4.18.37|See the [Red Hat OpenShift on IBM Cloud release notes](https://docs.redhat.com/en/documentation/openshift_container_platform/4.18/html/release_notes/ocp-4-18-release-notes#ocp-4-18-37_release-notes).|
+|Tigera Operator|v1.38.13|See the [Tigera Operator release notes](https://github.com/tigera/operator/releases/tag/v1.38.13).|
+{: caption="4.18.37_1586_openshift fix pack." caption-side="bottom"}
+{: #cl-boms_master-41837_1586_openshift_M-component-table}
 
 
 ### Worker node fix pack 4.18.37_1585_openshift, released 20 April 2026
