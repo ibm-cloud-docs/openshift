@@ -1,8 +1,8 @@
 ---
 
 copyright:
-  years: 2023, 2025
-lastupdated: "2025-03-05"
+  years: 2023, 2026
+lastupdated: "2026-04-28"
 
 
 keywords: openshift, {{site.data.keyword.openshiftlong_notm}}, kubernetes cluster, red hat openshift, openshift container platform, red hat, create openshift cluster, vpc cluster, classic cluster, clusters
@@ -22,6 +22,15 @@ subcollection: openshift
 {{site.data.keyword.openshiftlong_notm}} is a managed Kubernetes service to create your own cluster of compute hosts where you can deploy and manage containerized apps on IBM Cloud. Combined with an intuitive user experience, built-in security and isolation, and advanced tools to secure, manage, and monitor your cluster workloads, you can rapidly deliver highly available and secure containerized apps in the public cloud.
 {: shortdesc}
 
+## Ready to create your first cluster?
+{: #getting-started-quick-start}
+
+If you already have an IBM Cloud account and want to get started immediately:
+
+[Create a cluster now](https://cloud.ibm.com/kubernetes/catalog/create?platformType=openshift){: external}
+
+Don't have an account? [Sign up for IBM Cloud](https://cloud.ibm.com/registration?target=/kubernetes/catalog/create?platformType=openshift){: external}
+
 Complete the following steps to get familiar with the basics, understand the service components, create your first cluster, and deploy a starter app.
 
 ## Review the basics
@@ -38,6 +47,15 @@ Already familiar with containers and {{site.data.keyword.openshiftlong_notm}}? C
 
 To set up your {{site.data.keyword.cloud_notm}} account so that you can create clusters, see [Preparing your account to create clusters](/docs/openshift?topic=openshift-clusters).
 
+You'll need to be logged into IBM Cloud to create clusters. If you don't have an account yet, you can [create one](https://cloud.ibm.com/registration){: external}.
+{: tip}
+
+### Pricing considerations
+{: #getting-started-pricing}
+
+Pricing varies based on worker node flavor, number of nodes, and infrastructure type (VPC or Classic). [View detailed pricing information](https://cloud.ibm.com/kubernetes/catalog/about?platformType=openshift#pricing){: external}.
+{: note}
+
 If you've already prepared your account and you're ready to create a cluster, continue to the next step.
 
 ## Create a cluster environment strategy
@@ -46,7 +64,7 @@ If you've already prepared your account and you're ready to create a cluster, co
 
 Review the decision points in the [Creating a cluster environment strategy](/docs/openshift?topic=openshift-strategy) doc to begin designing your setup.
 
-Not sure where to start? Try following a tutorial in the next step.
+Most users who create a cluster do so within a couple of hours. Follow this guide to get your first cluster running quickly.
 {: tip}
 
 
@@ -70,7 +88,7 @@ Follow a tutorial, or set up your own custom cluster environment. Review the fol
 | Custom deployment | Intermediate | 1-3 hours | [Create a custom cluster on VPC infrastructure](/docs/openshift?topic=openshift-cluster-create-vpc-gen2). |
 {: caption="Options for creating a cluster" caption-side="bottom"}
 
-Already have a cluster? Continue to the next step to deploy a sample app!
+Already have a cluster? **[Learn how to access it](/docs/openshift?topic=openshift-access_cluster)** and continue to the next step to deploy a sample app!
 
 
 
@@ -99,9 +117,24 @@ After you create your cluster, deploy a sample app from the {{site.data.keyword.
 
 
 
+## Quick actions
+{: #getting-started-quick-actions}
+
+Already have a cluster? Jump to these common next steps:
+
+Access your cluster
+:   Connect to your cluster and run kubectl commands. For more information, see [Accessing clusters](/docs/openshift?topic=openshift-access_cluster).
+
+Install the CLI
+:   Set up your local development environment. For more information, see [Installing the CLI](/docs/openshift?topic=openshift-cli-install).
+
+Deploy your first app
+:   Get hands-on with a sample application. For more information, see [Deploying apps](/docs/openshift?topic=openshift-app).
+
+Need to check pricing first? [View Red Hat OpenShift on IBM Cloud pricing](https://cloud.ibm.com/kubernetes/catalog/about?platformType=openshift#pricing){: external}.
+
 ## What's next?
 {: #getting-started-whats-next}
-
 
 Check out the curated learning paths
 - [Learning path for administrators](/docs/openshift?topic=openshift-learning-path-admin).

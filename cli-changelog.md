@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2026
-lastupdated: "2026-04-23"
+lastupdated: "2026-04-28"
 
 
 keywords: openshift, {{site.data.keyword.openshiftlong_notm}}, oc, ks
@@ -32,6 +32,13 @@ Refer to the following change logs for a summary of changes for each version of 
 Review the following changes for 1.0 versions of the CLI plug-in.
 {: shortdesc}
 
+
+## Version v1.0.763
+{: #cli-01763}
+
+Version 1.0.763 of the CLI was released on 28 April 2026.
+- Updates the Headlamp add-on to beta status.
+- Includes general refactoring and improvements.
 
 ## Version v1.0.762
 {: #cli-01762}

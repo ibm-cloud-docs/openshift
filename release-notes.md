@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2026
-lastupdated: "2026-04-27"
+lastupdated: "2026-04-28"
 
 
 keywords: kubernetes, release notes, openshift, {{site.data.keyword.openshiftlong_notm}}
@@ -28,6 +28,22 @@ Looking for {{site.data.keyword.cloud_notm}} status, platform announcements, sec
 
 ## April 2026
 {: #openshift-apr26}
+
+
+### 28 April 2026
+{: #openshift-apr2826}
+{: release-note}
+
+
+
+RHEL 9 worker node support extended to version 4.22
+:   Support for Red Hat Enterprise Linux (RHEL) 9 worker nodes on VPC clusters has been extended. RHEL worker nodes will now be supported through version 4.21, with end of support occurring at the release of version 4.22. For more information, see [RHEL deprecation for VPC clusters](/docs/openshift?topic=openshift-rhel-deprecation).
+
+
+
+CLI version 1.0.763 is available
+:   For more information, see the [CLI change log](/docs/openshift?topic=openshift-cs_cli_changelog).
+
 
 
 ### 27 April 2026

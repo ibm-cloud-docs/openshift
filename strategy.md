@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2026
-lastupdated: "2026-03-16"
+lastupdated: "2026-04-28"
 
 keywords: kubernetes, kubernetes environment, moving to kubernetes, moving to containers, clusters, cluster sizing, openshift, {{site.data.keyword.openshiftlong_notm}}
 
@@ -126,15 +126,25 @@ The operating systems available to you depend on the cluster type you chose.
 
 
 
-Red Hat Enterprise Linux (RHEL) version 8
-:   [Classic]{: tag-classic-inf} [VPC]{: tag-vpc} [Satellite]{: tag-satellite}
-:   Red Hat Enterprise Linux on IBM Cloud provides enterprises with a robust and scalable environment, built with security in mind, and tailored for critical workloads. Organizations unlock access to high availability, disaster recovery, and streamlined management capabilities by joining the Red Hat Enterprise Linux platform with IBM Cloud's infrastructure. For an overview of RHEL 8, see [Why run Linux on IBM Cloud?](https://www.redhat.com/en/topics/linux/linux-on-ibm-cloud){: external}.
-
-
-
 Red Hat Enterprise Linux CoreOS (RHCOS) 
 :   [VPC]{: tag-vpc} [Satellite]{: tag-satellite}
 :   Available for clusters created at version 4.15 and later. Red Hat Enterprise Linux CoreOS (RHCOS) is specifically designed for the Red Hat OpenShift Container Platform (OCP). While leveraging the stability and security of Red Hat Enterprise Linux (RHEL), RHCOS is lightweight and minimal, focusing on running containerized workloads efficiently and at scale. Because it consists of RHEL components, you get the same level of security as RHEL plus the added bonus of having a more minimal container centric footprint, read-only file system, image-based deployments, and more. For an overview of RHCOS, see [Red Hat Enterprise Linux CoreOS (RHCOS)](https://docs.redhat.com/en/documentation/openshift_container_platform/4.15/html/architecture/architecture-rhcos){: external}. RHCOS worker nodes for VPC clusters are available only for clusters that were created at a version that supports RHCOS. Clusters that are upgraded from a version that does not support RHCOS to a version that does can't use RHCOS workers.
+
+Beginning with version 4.18, RHEL worker nodes are deprecated for VPC clusters. Support for RHEL worker nodes ends with the release of version 4.22. For more information, see [RHEL deprecation for VPC clusters](/docs/openshift?topic=openshift-rhel-deprecation).
+{: deprecated}
+
+
+Red Hat Enterprise Linux (RHEL) version 9
+:   [Classic]{: tag-classic-inf} [VPC]{: tag-vpc}
+:   Available for clusters created at version 4.16 and later. Red Hat Enterprise Linux on IBM Cloud provides enterprises with a robust and scalable environment, built with security in mind, and tailored for critical workloads. Organizations unlock access to high availability, disaster recovery, and streamlined management capabilities by joining the Red Hat Enterprise Linux platform with IBM Cloud's infrastructure. For an overview of RHEL 9, see [Why run Linux on IBM Cloud?](https://www.redhat.com/en/topics/linux/linux-on-ibm-cloud){: external}.
+
+Red Hat Enterprise Linux (RHEL) version 8
+:   [Classic]{: tag-classic-inf} [VPC]{: tag-vpc}
+:   Available for clusters created at version 4.15 and earlier. RHEL 8 reached end of life on 31 May 2024. For more information, see [Red Hat Enterprise Linux 8 Life Cycle](https://access.redhat.com/support/policy/updates/errata#RHEL8_Life_Cycle){: external}.
+
+
+
+
 
 
 
