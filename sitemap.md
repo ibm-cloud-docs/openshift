@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2026
-lastupdated: "2026-04-27"
+lastupdated: "2026-04-28"
 
 
 keywords: openshift
@@ -37,15 +37,21 @@ subcollection: openshift
 
 [Getting started](/docs/openshift?topic=openshift-getting-started#getting-started)
 
+* [Ready to create your first cluster?](/docs/openshift?topic=openshift-getting-started#getting-started-quick-start)
+
 * [Review the basics](/docs/openshift?topic=openshift-getting-started#getting-started-basics)
 
 * [Prepare your account](/docs/openshift?topic=openshift-getting-started#getting-started-prepare-account)
+
+    * [Pricing considerations](/docs/openshift?topic=openshift-getting-started#getting-started-pricing)
 
 * [Create a cluster environment strategy](/docs/openshift?topic=openshift-getting-started#getting-started-strategy)
 
 * [Create a cluster](/docs/openshift?topic=openshift-getting-started#getting-started-create)
 
 * [Deploy a sample app](/docs/openshift?topic=openshift-getting-started#getting-started-deploy-app)
+
+* [Quick actions](/docs/openshift?topic=openshift-getting-started#getting-started-quick-actions)
 
 * [What's next?](/docs/openshift?topic=openshift-getting-started#getting-started-whats-next)
 
@@ -280,6 +286,12 @@ subcollection: openshift
 [Release notes](/docs/openshift?topic=openshift-openshift-relnotes#openshift-relnotes)
 
 * [April 2026](/docs/openshift?topic=openshift-openshift-relnotes#openshift-apr26)
+
+    * [28 April 2026](/docs/openshift?topic=openshift-openshift-relnotes#openshift-apr2826)
+
+        * RHEL 9 worker node support extended to version 4.22
+
+        * CLI version 1.0.763 is available
 
     * [27 April 2026](/docs/openshift?topic=openshift-openshift-relnotes#openshift-apr2726)
 
@@ -6186,6 +6198,8 @@ subcollection: openshift
 
     * [`ibmcloud oc ingress secret update`](/docs/openshift?topic=openshift-kubernetes-service-cli#cs_ingress_secret_update)
 
+    * [`ibmcloud oc ingress status`](/docs/openshift?topic=openshift-kubernetes-service-cli#cs_ingress_status)
+
     * [`ibmcloud oc ingress status-report disable`](/docs/openshift?topic=openshift-kubernetes-service-cli#cs_ingress_status_report_disable)
 
     * [`ibmcloud oc ingress status-report enable`](/docs/openshift?topic=openshift-kubernetes-service-cli#cs_ingress_status_report_enable)
@@ -6277,6 +6291,14 @@ subcollection: openshift
     * [`ibmcloud oc vlan ls`](/docs/openshift?topic=openshift-kubernetes-service-cli#cs_vlans)
 
     * [`ibmcloud oc vlan spanning get`](/docs/openshift?topic=openshift-kubernetes-service-cli#cs_vlan_spanning_get)
+
+    * [`ibmcloud oc experimental vni attach baremetal`](/docs/openshift?topic=openshift-kubernetes-service-cli#experimental-vni-attach-baremetal-cli)
+
+    * [`ibmcloud oc experimental vni attach virtual`](/docs/openshift?topic=openshift-kubernetes-service-cli#experimental-vni-attach-virtual-cli)
+
+    * [`ibmcloud oc experimental vni detach`](/docs/openshift?topic=openshift-kubernetes-service-cli#experimental-vni-detach-cli)
+
+    * [`ibmcloud oc experimental vni ls`](/docs/openshift?topic=openshift-kubernetes-service-cli#experimental-vni-ls-cli)
 
 * [`ibmcloud oc vpc ls`](/docs/openshift?topic=openshift-kubernetes-service-cli#vpc-ls-cli)
 
@@ -6371,6 +6393,8 @@ subcollection: openshift
 [CLI change log](/docs/openshift?topic=openshift-cs_cli_changelog#cs_cli_changelog)
 
 * [Version 1.0](/docs/openshift?topic=openshift-cs_cli_changelog#10)
+
+* [Version v1.0.763](/docs/openshift?topic=openshift-cs_cli_changelog#cli-01763)
 
 * [Version v1.0.762](/docs/openshift?topic=openshift-cs_cli_changelog#cli-01762)
 
