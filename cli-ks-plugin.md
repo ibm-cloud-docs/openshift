@@ -111,6 +111,8 @@ ibmcloud oc cluster addon disable image-key-synchronizer --cluster my_cluster
 
 
 
+
+
 #### `ibmcloud oc cluster addon disable kube-terminal`
 {: #cs_cluster_addon_disable_kube-terminal}
 
