@@ -8329,6 +8329,8 @@ subcollection: openshift
 
 [Why can't I connect Cloud Logs to my cluster?](/docs/openshift?topic=openshift-ts-cloud-logs-refresh#ts-cloud-logs-refresh)
 
+[Why are `sysdig-agent` pods in `CrashLoopBackOff` on a private-only RHCOS cluster?](/docs/openshift?topic=openshift-ts-cluster-sysdig-ebpf#ts-cluster-sysdig-ebpf)
+
 
 ### Worker nodes
 {: #sitemap_worker_nodes}

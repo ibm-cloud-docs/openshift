@@ -529,6 +529,7 @@ toc:
               - ts-sbd-non-sbd-clusters.md
               - ts-cluster-sbd-image-stream.md
               - ts-cloud-logs-tags.md
+              - ts-cluster-sysdig-ebpf.md
           - topicgroup:
               label: Worker nodes
               topics:
