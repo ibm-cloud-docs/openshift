@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2025, 2026
-lastupdated: "2026-04-15"
+lastupdated: "2026-04-29"
 
 
 keywords: high availability, disaster recover, HA, DR, responsibilities
@@ -126,7 +126,7 @@ All upgrades follow {{site.data.keyword.IBM_notm}} service best practices, inclu
 
 Complex changes are enabled and disabled with feature flags to control exposure.
 
-Changes that impact customer workloads are detailed in {{site.data.keyword.cloud_notm}} notifications. For more information about planned maintenance, announcements, and release notes that impact this service, see [Monitoring notifications and status](/docs/iam?topic=iam-viewing-cloud-status).
+Changes that impact customer workloads are detailed in {{site.data.keyword.cloud_notm}} notifications. For more information about planned maintenance, announcements, and release notes that impact this service, see [Monitoring notifications and status](/docs/get-support?topic=get-support-viewing-cloud-status).
 
 ## Your responsibilities for high availability and disaster recovery
 {: #feature-responsibilities}

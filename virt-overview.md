@@ -2,7 +2,7 @@
 
 copyright:
   years: 2025, 2026
-lastupdated: "2026-04-21"
+lastupdated: "2026-04-29"
 
 keywords: openshift, virtualization, virtual machines, vms, bare metal
 
@@ -120,4 +120,4 @@ Advanced networking with VNIs (4.20+)
 
 - [Planning your OpenShift Virtualization deployment](/docs/openshift?topic=openshift-virt-plan)
 - [Setting up storage for OpenShift Virtualization](/docs/openshift?topic=openshift-virt-storage-setup)
-- [Installing the OpenShift Virtualization Operator](/docs/openshift?topic=openshift-virt-install)
+- [Installing the OpenShift Virtualization Operator](/docs/openshift?topic=openshift-virt-overview)

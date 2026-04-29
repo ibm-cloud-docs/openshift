@@ -1489,7 +1489,7 @@ VPC Block CSI Driver cluster add-on patch updates.
 :   Version [4.18](/docs/openshift?topic=openshift-openshift_changelog_418) release is now certified.
 
 Versions 4.12 and 4.13 are unsupported.
-:   Update your cluster to at least [version 4.14](/docs/openshift?topic=openshift-openshift_versions_414) as soon as possible.
+:   Update your cluster to at least [version 4.14](/docs/openshift?topic=openshift-openshift_versions_412) as soon as possible.
 
 
 
@@ -3018,14 +3018,14 @@ Image Key Synchronizer add-on patch update.
 
 
 {{site.data.keyword.openshiftlong_notm}} 4.15 is available.
-:   You can create or [update clusters to version 4.15](/docs/openshift?topic=openshift-openshift_versions_415). With {{site.data.keyword.openshiftlong_notm}} version 4.15, you get the latest features, as well as component updates on {{site.data.keyword.openshiftlong_notm}}. For more information, see the [4.15 change log](/docs/openshift?topic=openshift-openshift_versions_changelog_415).
+:   You can create or [update clusters to version 4.15](/docs/openshift?topic=openshift-openshift_versions_416). With {{site.data.keyword.openshiftlong_notm}} version 4.15, you get the latest features, as well as component updates on {{site.data.keyword.openshiftlong_notm}}. For more information, see the [4.15 change log](/docs/openshift?topic=openshift-openshift_versions_changelog_416).
 
 Important networking changes for {{site.data.keyword.openshiftlong_notm}} VPC clusters created with version 4.15.
-:   For more information, see the [4.15 version information](/docs/openshift?topic=openshift-openshift_versions_415) and [Understanding Secure by Default Cluster VPC Networking](/docs/openshift?topic=openshift-vpc-security-group-reference).
+:   For more information, see the [4.15 version information](/docs/openshift?topic=openshift-openshift_versions_416) and [Understanding Secure by Default Cluster VPC Networking](/docs/openshift?topic=openshift-vpc-security-group-reference).
 
 Important changes to the default cluster provisioning behavior for new VPC clusters beginning with version 4.15.
 :   Beginning with version 4.15, there is a new option available at cluster creation time via the UI, CLI, API, and Terraform. This new option manages outbound traffic protection for the cluster. The default behavior is to have outbound traffic protection enabled, which means new version 4.15 VPC clusters won't have access the public internet by default. If your cluster needs access to the public internet, you must specifically include the option (from the UI, CLI, API, and Terraform) to disable outbound traffic protection. Note that you can also disable outbound traffic protection after your cluster is created. You can also selectively allow outbound traffic as needed after your cluster is created. If you provision clusters via automation, make sure to adjust your automation accordingly.
-:   For more information, see the [4.15 version information](/docs/openshift?topic=openshift-openshift_versions_415), [Understanding Secure by Default Cluster VPC Networking](/docs/openshift?topic=openshift-vpc-security-group-reference), and [Managing outbound traffic protection in VPC clusters](/docs/openshift?topic=openshift-sbd-allow-outbound).
+:   For more information, see the [4.15 version information](/docs/openshift?topic=openshift-openshift_versions_416), [Understanding Secure by Default Cluster VPC Networking](/docs/openshift?topic=openshift-vpc-security-group-reference), and [Managing outbound traffic protection in VPC clusters](/docs/openshift?topic=openshift-sbd-allow-outbound).
 
 Managing outbound traffic protection in new version 4.15 VPC clusters.
 :   With the introduction of Secure by Default Cluster VPC networking in version 4.15 and later clusters, there are several scenarios where you might need to adjust the security group settings for your clusters to allow outbound traffic to certain resources. For more information, see [Managing outbound traffic protection in VPC clusters](/docs/openshift?topic=openshift-sbd-allow-outbound).

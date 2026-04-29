@@ -2,7 +2,7 @@
 
 copyright:
   years: 2026, 2026
-lastupdated: "2026-04-21"
+lastupdated: "2026-04-29"
 
 keywords: openshift, vni, virtual network interface, virtualization, bare metal, localnet, udn
 
@@ -67,7 +67,7 @@ Before you begin, make sure that you have the following resources and permission
 - A {{site.data.keyword.openshiftlong_notm}} cluster at version 4.20 or later with bare metal worker nodes
 - VPC infrastructure with VNIs created
 - RHCOS operating system on worker nodes
-- [OpenShift Virtualization Operator installed](/docs/openshift?topic=openshift-virt-install)
+- [OpenShift Virtualization Operator installed](/docs/openshift?topic=openshift-virt-overview)
 - [Storage configured for OpenShift Virtualization](/docs/openshift?topic=openshift-virt-storage-setup)
 - The **Operator** platform access role for **Kubernetes Service** in {{site.data.keyword.cloud_notm}} IAM
 - The **Editor** or **Administrator** platform access role for VPC Infrastructure Services in {{site.data.keyword.cloud_notm}} IAM
@@ -133,7 +133,7 @@ Secondary UDN configuration is similar to Primary UDN, but with the role set to 
 ## Exposing VMs with VPC load balancers
 {: #vni-alb-lbaas}
 
-You can expose VMs without using UDN or localnet VNI by using VPC Application Load Balancers. For more information about configuring load balancers, see [About VPC load balancers](/docs/openshift?topic=openshift-vpc-lbaas).
+You can expose VMs without using UDN or localnet VNI by using VPC Application Load Balancers. For more information about configuring load balancers, see [About VPC load balancers](/docs/openshift?topic=openshift-vpc_lbaas).
 
 ## Setting up localnet user defined networks
 {: #vni-setup-localnet}

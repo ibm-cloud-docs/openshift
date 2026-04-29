@@ -2,7 +2,7 @@
 
 copyright:
   years: 2024, 2026
-lastupdated: "2026-04-23"
+lastupdated: "2026-04-29"
 
 
 keywords: pods, pod connectvity, networking, pod networking, pod trouble shooting, pod debug
@@ -328,4 +328,4 @@ Review the outputs from the earlier section to help find the cause of your pod n
 
 - If the DNS lookups from the `dig` commands failed,  See the [Red Hat DNS troubleshooting information](https://access.redhat.com/solutions/3804501){: external}. 
 
-If you are still unable to resolve your pod networking issue, [open a support case](/docs/iam?topic=iam-open-case) and include a detailed description of the problem, how you have tried to solve it, what kinds of tests you ran, and [relevant logs](/docs/openshift?topic=openshift-debug_clusters&interface=ui#ts-5) for your pods and worker nodes. For more information on opening a support case and what information to include, see the [general debugging guide](/docs/openshift?topic=openshift-debug_clusters&interface=ui#ts-3).
+If you are still unable to resolve your pod networking issue, [open a support case](/docs/openshift?topic=openshift-get-help) and include a detailed description of the problem, how you have tried to solve it, what kinds of tests you ran, and [relevant logs](/docs/openshift?topic=openshift-debug_clusters&interface=ui#ts-5) for your pods and worker nodes. For more information on opening a support case and what information to include, see the [general debugging guide](/docs/openshift?topic=openshift-debug_clusters&interface=ui#ts-3).
