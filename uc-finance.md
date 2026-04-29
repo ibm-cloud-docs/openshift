@@ -1,34 +1,27 @@
 ---
 
-copyright: 
-  years: 2014, 2024
-lastupdated: "2024-05-29"
-
+copyright:
+  years: 2014, 2026
+lastupdated: "2026-04-29"
 
 keywords: kubernetes, openshift
 
 subcollection: openshift
 
-
 ---
 
 {{site.data.keyword.attribute-definition-list}}
 
-
-
-
-
 # Financial services use cases for {{site.data.keyword.cloud_notm}}
 {: #cs_uc_finance}
 
-These use cases highlight how workloads on {{site.data.keyword.openshiftlong}} can
-take advantage of high availability, high-performance compute, easy spin-up of clusters for faster development, and AI from {{site.data.keyword.ibmwatson}}.
+These use cases highlight how workloads on {{site.data.keyword.openshiftlong}} can take advantage of high availability, high-performance compute, easy spin-up of clusters for faster development, and AI from {{site.data.keyword.ibmwatson}}.
 {: shortdesc}
 
 ## Mortgage company trims costs and accelerates regulatory compliance
 {: #uc_mortgage}
 
-A Risk Management VP for a residential mortgage company processes 70 million records a day, but the on-premises system was slow and also inaccurate. IT expenses soared because hardware quickly went out of date and wasn't utilized fully. While they waited for hardware provisioning, their regulatory compliance slowed.  
+A Risk Management VP for a residential mortgage company processes 70 million records a day, but the on-premises system was slow and inaccurate. IT expenses soared because hardware quickly went out of date and wasn't fully utilized. While they waited for hardware provisioning, their regulatory compliance slowed.
 {: shortdesc}
 
 ### Context
@@ -36,11 +29,11 @@ A Risk Management VP for a residential mortgage company processes 70 million rec
 
 To improve risk analysis, the company looked to {{site.data.keyword.openshiftlong_notm}} and IBM Cloud Analytic services to reduce costs, increase worldwide availability, and ultimately accelerate regulatory compliance. With {{site.data.keyword.openshiftlong_notm}} in multiple regions, their analysis apps can be containerized and deployed across the globe, improving availability and addressing local regulations. Those deployments are accelerated with familiar open source tools, already part of {{site.data.keyword.openshiftlong_notm}}.
 
-They started by containerizing the analysis apps and putting them in the cloud. In a flash, their hardware headaches went away. They were able to easily design Kubernetes clusters to fit their high-performance CPU, RAM, storage, and security needs. And when their analysis apps change, they can add or shrink compute without huge hardware investments. With the {{site.data.keyword.openshiftlong_notm}} horizontal scaling, their apps scale with the growing number of records, resulting in faster regulatory reports. {{site.data.keyword.openshiftlong_notm}} provides elastic compute resources around the world that are secure and capable.
+They started by containerizing the analysis apps and putting them in the cloud. In a flash, their hardware headaches went away. They were able to easily design Kubernetes clusters to fit their high-performance CPU, RAM, storage, and security needs. And when their analysis apps change, they can add or shrink compute without huge hardware investments. With the {{site.data.keyword.openshiftlong_notm}} horizontal scaling, their apps scale with the growing number of records, resulting in faster regulatory reports. {{site.data.keyword.openshiftlong_notm}} provides elastic compute resources around the world that are secure and high-performing.
 
-Now those apps receive high-volume data from a data warehouse on {{site.data.keyword.cloudant}}. Cloud-based storage in {{site.data.keyword.cloudant}} ensures higher availability than when it was locked in an on-premises system. Since availability is essential, the apps are deployed across global data centers: for DR and for latency too.
+Now those apps receive high-volume data from a data warehouse on {{site.data.keyword.cloudant}}. Cloud-based storage in {{site.data.keyword.cloudant}} ensures higher availability than when it was locked in an on-premises system. Since availability is essential, the apps are deployed across global data centers for disaster recovery and latency reduction.
 
-They also accelerated their risk analysis and compliance. Their predictive and risk analytics functions, such as Monte Carlo calculations, are now constantly updated through iterative agile deployments. Container orchestration is handled by a managed Kubernetes so that operations costs are reduced too. Ultimately risk analysis for mortgages is more responsive to the fast-paced changes in the market.
+They also accelerated their risk analysis and compliance. Their predictive and risk analytics functions, such as Monte Carlo calculations, are now constantly updated through iterative agile deployments. Container orchestration is handled by managed Kubernetes so that operations costs are reduced. Ultimately, risk analysis for mortgages is more responsive to the fast-paced changes in the market.
 
 * Heightened need for better financial risk management drives increases in regulatory oversight. The same needs drive the associated review in risk assessment processes and disclosure of more granular, integrated, and abundant regulatory reporting.
 * High Performance Computing Grids are the key infrastructure components for financial modeling.
@@ -50,7 +43,7 @@ The problem of the company is scale and time to delivery.
 Their current environment is 7+ years old, on-premises, and with limited compute, storage, and I/O capacity.
 Server refreshes are costly and take a long time to complete.
 Software and app updates follow an informal process and aren't repeatable.
-The actual HPC grid is hard to program against. The API is too complex for new Developers who join the team and requires non-documented knowledge.
+The actual HPC grid is hard to program against. The API is too complex for new developers who join the team and requires undocumented knowledge.
 And major app upgrades take 6 - 9 months to complete.
 
 ### Solution
@@ -82,10 +75,10 @@ This solution provides the immediate benefit of scalability. By using Kubernetes
 ### Results
 {: #uc_mortgage_results}
 
-* Complex financial simulations are completed in 25% of the time than was previously possible with the existing on-premises systems.
-* Time to deployment improved from the previous 6 - 9 months to 1 - 3 weeks on average. This improvement occurs because {{site.data.keyword.openshiftlong_notm}} allows for a disciplined, controlled process for ramping up app containers and replacing them with newer versions. Reporting bugs can be fixed quickly, addressing issues, such as accuracy.
-* Regulatory reporting costs were reduced with a consistent, scalable set of storage and compute services that {{site.data.keyword.openshiftlong_notm}} and {{site.data.keyword.cloudant}} bring.
-* Over time, the original apps that were initially moved to the cloud were restructured into cooperative microservices that run on {{site.data.keyword.openshiftlong_notm}}. This action further sped up development and time to deploy and allowed more innovation due to the relative ease of experimentation. They also released innovative apps with newer versions of microservices to take advantage of market and business conditions (that is, so called situational apps and microservices).
+* Complex financial simulations are completed in 25% of the time that was previously possible with the existing on-premises systems.
+* Time to deployment improved from the previous 6 - 9 months to 1 - 3 weeks on average. This improvement occurs because {{site.data.keyword.openshiftlong_notm}} allows for a disciplined, controlled process for ramping up app containers and replacing them with newer versions. Reporting bugs can be fixed quickly, addressing issues such as accuracy.
+* Regulatory reporting costs were reduced with a consistent, scalable set of storage and compute services that {{site.data.keyword.openshiftlong_notm}} and {{site.data.keyword.cloudant}} provide.
+* Over time, the original apps that were initially moved to the cloud were restructured into cooperative microservices that run on {{site.data.keyword.openshiftlong_notm}}. This action further sped up development and time to deploy and allowed more innovation due to the relative ease of experimentation. They also released innovative apps with newer versions of microservices to take advantage of market and business conditions (that is, situational apps and microservices).
 
 
 ## Payment tech company streamlines developer productivity, deploying AI-enabled tools to their partners 4 times faster
@@ -173,7 +166,3 @@ Security first: With bare metal for {{site.data.keyword.openshiftlong_notm}}, th
 * In parallel, the provider implemented simple time-boxed iterations to get a handle on the existing technical debt.
 * With the number of transactions they process, they can scale their operations exponentially.
 * At the same time, new fraud analysis with {{site.data.keyword.watson}} increased the speed of detection and prevention, reducing fraud 4 times more than the region’s average.
-
-
-
-

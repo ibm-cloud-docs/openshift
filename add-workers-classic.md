@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2026
-lastupdated: "2026-01-30"
+lastupdated: "2026-04-29"
 
 
 keywords: openshift, {{site.data.keyword.openshiftlong_notm}}, clusters, worker nodes, worker pools, add, classic
@@ -43,7 +43,7 @@ Want to save on your classic worker node costs? [Create a reservation](/docs/con
 You can add worker nodes to your classic cluster by creating a new worker pool.
 {: shortdesc}
 
-Before you begin, make sure that you have the [**Operator** or **Administrator** IAM platform access role](/docs/openshift?topic=openshift-iam-platform-access-roles.
+Before you begin, make sure that you have the [**Operator** or **Administrator** IAM platform access role](/docs/openshift?topic=openshift-iam-platform-access-roles).
 
 1. Retrieve the **Worker Zones** of your cluster and choose the zone where you want to deploy the worker nodes in your worker pool. If you have a single zone cluster, you must use the zone that you see in the **Worker Zones** field. For multizone clusters, you can choose any of the existing **Worker Zones** of your cluster, or add one of the [multizone locations](/docs/openshift?topic=openshift-regions-and-zones#zones-mz) for the region that your cluster is in. You can list available zones by running `ibmcloud oc zone ls`.
     ```sh

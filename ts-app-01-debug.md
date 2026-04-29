@@ -1,9 +1,8 @@
 ---
 
-copyright: 
-  years: 2014, 2024
-lastupdated: "2024-05-29"
-
+copyright:
+  years: 2014, 2026
+lastupdated: "2026-04-29"
 
 keywords: kubernetes, openshift
 
@@ -15,10 +14,6 @@ content-type: troubleshoot
 
 {{site.data.keyword.attribute-definition-list}}
 
-
-
-
-
 # Debugging app deployments
 {: #debug_apps}
 {: support}
@@ -27,7 +22,6 @@ content-type: troubleshoot
 
 Review the options that you have to debug your app deployments and find the root causes for failures.
 {: shortdesc}
-
 
 Before you begin, ensure you have the [**Writer** or **Manager** {{site.data.keyword.cloud_notm}} IAM service access role](/docs/openshift?topic=openshift-iam-platform-access-roles) for the namespace where your app is deployed.
 
@@ -58,9 +52,9 @@ Before you begin, ensure you have the [**Writer** or **Manager** {{site.data.key
         ```
         {: pre}
 
-    3. Curl the app from within the container. If the port is not accessible, the service might not be listening on the correct port or the app might have issues. Update the configuration file for the service with the correct port and redeploy or investigate potential issues with the app.
+    3. Curl the app from within the container. If the port is not accessible, the service might not be listening on the correct port or the app might have issues. Update the configuration file for the service with the correct port and redeploy, or investigate potential issues with the app.
         ```sh
-        curl localhost: <port>
+        curl localhost:<port>
         ```
         {: pre}
 
@@ -105,11 +99,3 @@ Before you begin, ensure you have the [**Writer** or **Manager** {{site.data.key
         curl <host_name>.<domain>
         ```
         {: pre}
-
-
-
-
-
-
-
-

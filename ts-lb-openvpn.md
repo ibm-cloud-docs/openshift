@@ -1,9 +1,8 @@
 ---
 
 copyright:
-  years: 2014, 2024
-lastupdated: "2024-01-18"
-
+  years: 2014, 2026
+lastupdated: "2026-04-29"
 
 keywords: openshift
 
@@ -14,13 +13,11 @@ content-type: troubleshoot
 
 {{site.data.keyword.attribute-definition-list}}
 
-
 # Classic clusters: Why does the master status have an ingress IP address for NLB error?
 {: #rhoks_ts_openvpn_subnet}
 {: support}
 
 [Classic infrastructure]{: tag-classic-inf}
-
 
 When you run `ibmcloud oc cluster get -c <cluster_name_or_ID>`, you see the following error message in the **Master Status** field.
 {: tsSymptoms}
@@ -32,14 +29,11 @@ CAE003: Unable to determine the ingress IP address for the network load balancer
 
 Additionally, when you run `ibmcloud oc nlb-dns create` to create a subdomain for a network load balancer (NLB), the command might fail with a message that the cluster is not found, the input parameters are incorrect, or you don't have the required roles.
 
-
-The Konnectivity server could not be configured because load balancer IP address that exposes the default Ingress controller could not be found. The Ingress controller's load balancer service might not have been assigned an IP address because your cluster does not have a subnet with available portable IP addresses, or the load balancer setup did not complete.
+The Konnectivity server could not be configured because the load balancer IP address that exposes the default Ingress controller could not be found. The Ingress controller's load balancer service might not have been assigned an IP address because your cluster does not have a subnet with available portable IP addresses, or the load balancer setup did not complete.
 {: tsCauses}
 
-
-Verify that your cluster has available subnets, and that the load balancer setup completed successfully.
+Verify that your cluster has available subnets and that the load balancer setup completed successfully.
 {: tsResolve}
-
 
 ## Verifying that your cluster has available subnets
 {: #verify_subnets}
@@ -53,18 +47,18 @@ Verify that your cluster has available subnets, and that the load balancer setup
     Example output
 
     ```sh
-    NAME:                           <cluster_name>   
+    NAME:                           <cluster_name>
     ...
 
     Subnet VLANs
-    VLAN ID   Subnet CIDR        Public   User-managed   
-    2345678   10.xxx.xx.xxx/29   false    false   
+    VLAN ID   Subnet CIDR        Public   User-managed
+    2345678   10.xxx.xx.xxx/29   false    false
     2876543   169.xx.xxx.xxx/29  true     false
     ```
     {: screen}
 
 2. If the cluster does not have a subnet, [create a subnet for the cluster](/docs/openshift?topic=openshift-subnets#request) or [add an existing subnet from your account to the cluster](/docs/openshift?topic=openshift-subnets#add-existing).
-3. If the cluster does have a subnet, [check for available portable IP addresses](/docs/openshift?topic=openshift-subnets#review_ip) and if necessary, [add more portable IP address by adding a subnet](/docs/openshift?topic=openshift-subnets#adding_ips).
+3. If the cluster does have a subnet, [check for available portable IP addresses](/docs/openshift?topic=openshift-subnets#review_ip) and if necessary, [add more portable IP addresses by adding a subnet](/docs/openshift?topic=openshift-subnets#adding_ips).
 4. Refresh the master to restart the Konnectivity setup so that it uses the available subnet.
     ```sh
     ibmcloud oc cluster master refresh --cluster <cluster_name_or_ID>
@@ -91,9 +85,3 @@ Verify that your cluster has available subnets, and that the load balancer setup
     ibmcloud oc cluster master refresh --cluster <cluster_name_or_ID>
     ```
     {: pre}
-
-
-
-
-
-

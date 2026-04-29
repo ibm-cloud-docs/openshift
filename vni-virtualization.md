@@ -67,7 +67,7 @@ Before you begin, make sure that you have the following resources and permission
 - A {{site.data.keyword.openshiftlong_notm}} cluster at version 4.20 or later with bare metal worker nodes
 - VPC infrastructure with VNIs created
 - RHCOS operating system on worker nodes
-- [OpenShift Virtualization Operator installed](/docs/openshift?topic=openshift-virt-overview)
+- [OpenShift Virtualization Operator installed](/docs/openshift?topic=openshift-oc-virtualization)
 - [Storage configured for OpenShift Virtualization](/docs/openshift?topic=openshift-virt-storage-setup)
 - The **Operator** platform access role for **Kubernetes Service** in {{site.data.keyword.cloud_notm}} IAM
 - The **Editor** or **Administrator** platform access role for VPC Infrastructure Services in {{site.data.keyword.cloud_notm}} IAM

@@ -1,9 +1,8 @@
 ---
 
-copyright: 
-  years: 2014, 2024
-lastupdated: "2024-01-03"
-
+copyright:
+  years: 2014, 2026
+lastupdated: "2026-04-29"
 
 keywords: openshift
 
@@ -15,26 +14,17 @@ content-type: troubleshoot
 
 {{site.data.keyword.attribute-definition-list}}
 
-
-
-
-
 # After a worker node updates or reloads, why do duplicate nodes and pods appear?
 {: #cs_duplicate_nodes}
 {: support}
 
-
-
 [Virtual Private Cloud]{: tag-vpc} [Classic infrastructure]{: tag-classic-inf}
-
 
 When you run `oc get nodes`, you see duplicate worker nodes with the status **`NotReady`**. The worker nodes with **`NotReady`** have public IP addresses, while the worker nodes with **`Ready`** have private IP addresses.
 {: tsSymptoms}
 
-
-Older clusters listed worker nodes by the cluster's public IP address. Now, worker nodes are listed by the cluster's private IP address. When you reload or update a node, the IP address is changed, but the reference to the public IP address remains.
+Older clusters listed worker nodes by the cluster's public IP address. Now, worker nodes are listed by the cluster's private IP address. When you reload or update a node, the IP address changes, but the reference to the public IP address remains.
 {: tsCauses}
-
 
 Service is not disrupted due to these duplicates, but you can remove the old worker node references from the API server.
 {: tsResolve}
@@ -43,9 +33,3 @@ Service is not disrupted due to these duplicates, but you can remove the old wor
 oc delete node <node_name1> <node_name2>
 ```
 {: pre}
-
-
-
-
-
-

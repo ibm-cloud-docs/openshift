@@ -262,9 +262,10 @@ toc:
       - topicgroup:
           label: OpenShift Virtualization
           topics:
-          - virt-overview.md
+          - topic: virt-overview.md
+            navtitle: Understanding OpenShift Virtualization
           - topicgroup:
-              label: Manual OpenShift Virtualization deployment
+              label: Manual deployment
               topics:
               - topic: virt-plan.md
                 navtitle: Planning your deployment
@@ -272,7 +273,11 @@ toc:
                 navtitle: Setting up storage
               - topic: oc-virtualization.md
                 navtitle: Installing the operator
+          - topicgroup:
+              label: Configuring virtual machines
+              topics:
               - topic: vni-virtualization.md
+                navtitle: Managing virtual network interfaces
       - topicgroup:
           label: Storage
           topics:
