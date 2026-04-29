@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2026
-lastupdated: "2026-04-23"
+lastupdated: "2026-04-29"
 
 
 keywords: openshift, http2, quota, app protocol, application protocol
@@ -24,7 +24,7 @@ subcollection: openshift
 {: shortdesc}
 
 
-If you anticipate reaching any of the following {{site.data.keyword.openshiftlong_notm}} limitations, [contact IBM Support](/docs/iam?topic=iam-using-avatar) and provide the cluster ID, the new quota limit, and the region in your support ticket.
+If you anticipate reaching any of the following {{site.data.keyword.openshiftlong_notm}} limitations, [contact IBM Support](/docs/openshift?topic=openshift-get-help) and provide the cluster ID, the new quota limit, and the region in your support ticket.
 {: tip}
 
 ## Service and quota limitations
@@ -109,7 +109,7 @@ Keep in mind that the [service](#tech_limits) limitations also apply.
 | Category | Description |
 | -------- | ----------- |
 | Ingress ALBs |  \n - The Ingress application load balancer (ALB) can process 32,768 connections per second. If your Ingress traffic exceeds this number,  [scale up the number of ALB replicas](/docs/containers?topic=containers-comm-ingress-annotations) in your cluster to handle the increased workload. \n - ALBs that run the [{{site.data.keyword.openshiftlong_notm}} custom Ingress image](/docs/containers?topic=containers-managed-ingress-about) only: HTTP/2 is not supported. \n - ALBs that run the [{{site.data.keyword.openshiftlong_notm}} custom Ingress image] (/docs/containers?topic=containers-managed-ingress-about) only: The names of the `ClusterIP` services that expose your apps must be unique across all namespaces in your cluster.  |
-| Network load balancers (NLB)| - You can't create version 2.0 network load balancers (NLB 2.0) to expose your apps. \n - You can't create subdomains for private NLBs. \n - You can register up to 128 subdomains. This limit can be lifted on request by opening a [support case](/docs/iam?topic=iam-using-avatar).  | 
+| Network load balancers (NLB)| - You can't create version 2.0 network load balancers (NLB 2.0) to expose your apps. \n - You can't create subdomains for private NLBs. \n - You can register up to 128 subdomains. This limit can be lifted on request by opening a [support case](/docs/openshift?topic=openshift-get-help).  | 
 | {{site.data.keyword.redhat_openshift_notm}} web console | The web console cannot be exposed on the private network on clusters that have both public and private endpoints. If you want to expose the web console on the private network, your cluster cannot have a public endpoint enabled.  | 
 | Private VLANs only | Private network load balancers (NLBs) can't be registered with the domain name server (DNS), so the cluster can't be created with only a private network interface. Worker nodes must be connected to both public and private VLANs. You can still create a private service to expose your apps on only the private network. |
 | Service endpoints | When you create a cluster, you can enable the public and private cloud service endpoint or the public cloud service endpoint only, but you can't enable the private cloud service endpoint only. After cluster creation, you can't later change the service endpoints. | 
@@ -123,7 +123,7 @@ Keep in mind that the [service](#tech_limits) limitations also apply.
 
 | Category | Description |
 | -------- | ----------- |
-| Volume instances | You can have a total of 250 IBM Cloud infrastructure file and block storage volumes per account. If you mount more than this amount, you might see an `out of capacity` message when you provision persistent volumes. For more FAQ, see the [file](/docs/FileStorage?topic=FileStorage-file-storage-faqs#provision) and [block](/docs/BlockStorage?topic=BlockStorage-block-storage-faqs#authlimit) storage docs. If you want to mount more volumes, [contact IBM Support](/docs/iam?topic=iam-using-avatar). In your support ticket, include your account ID and the new file or block storage volume quota that you want.  |
+| Volume instances | You can have a total of 250 IBM Cloud infrastructure file and block storage volumes per account. If you mount more than this amount, you might see an `out of capacity` message when you provision persistent volumes. For more FAQ, see the [file](/docs/FileStorage?topic=FileStorage-file-storage-faqs#provision) and [block](/docs/BlockStorage?topic=BlockStorage-block-storage-faqs#authlimit) storage docs. If you want to mount more volumes, [contact IBM Support](/docs/openshift?topic=openshift-get-help). In your support ticket, include your account ID and the new file or block storage volume quota that you want.  |
 | Portworx | Review the [Portworx limitations](/docs/openshift?topic=openshift-storage_portworx_plan#portworx_limitations). |
 | File storage | Because of the way that {{site.data.keyword.cloud_notm}} NFS file storage configures Linux user permissions, you might encounter errors when you use file storage. If so, you might need to configure [{{site.data.keyword.redhat_openshift_notm}} Security Context Constraints](https://docs.redhat.com/en/documentation/openshift_container_platform/4.20/html/authentication_and_authorization/managing-pod-security-policies){: external} or use a different storage type. |
 {: caption="Classic cluster storage limitations"}

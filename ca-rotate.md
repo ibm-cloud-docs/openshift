@@ -2,7 +2,7 @@
 
 copyright:
   years: 2024, 2026
-lastupdated: "2026-04-27"
+lastupdated: "2026-04-29"
 
 
 keywords: openshift, {{site.data.keyword.openshiftlong_notm}}, kubernetes, certificate, rotate, ca rotate
@@ -105,7 +105,7 @@ By default, certificate authority (CA) certificates are administered to secure a
 ## Rotation impacts on cluster upgrades
 {: #cert-upgrade-impact}
 
-Updates to the cluster master are blocked if a CA certificate rotation is in progress. Complete the rotation before you update the cluster master. To check the [status]((#cert-rotate-states)) of a CA certificate rotation, run `ibmcloud oc cluster ca status -c CLUSTER`.
+Updates to the cluster master are blocked if a CA certificate rotation is in progress. Complete the rotation before you update the cluster master. To check the [status](#cert-rotate-states) of a CA certificate rotation, run `ibmcloud oc cluster ca status -c CLUSTER`.
 
 
 ## Certificate states and timestamps

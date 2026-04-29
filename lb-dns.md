@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2026
-lastupdated: "2026-04-15"
+lastupdated: "2026-04-29"
 
 
 keywords: kubernetes, lb2.0, nlb, health check, dns, hostname, subdomain, openshift
@@ -61,7 +61,7 @@ Expose your app to the public internet by creating a subdomain for the network l
 Before you begin:
 * Review the following limitations.
     * You can't create subdomains for private NLBs.
-    * You can register up to 128 subdomains. This limit can be lifted on request by opening a [support case](/docs/iam?topic=iam-using-avatar).
+    * You can register up to 128 subdomains. This limit can be lifted on request by opening a [support case](/docs/openshift?topic=openshift-get-help).
 * [Create an NLB for your app in a single-zone cluster](/docs/openshift?topic=openshift-loadbalancer#lb_config) or [create NLBs in each zone of a multizone cluster](/docs/openshift?topic=openshift-loadbalancer#multi_zone_config).
 
 To create a subdomain for one or more NLB IP addresses:

@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2026
-lastupdated: "2026-04-15"
+lastupdated: "2026-04-29"
 
 
 keywords: kubernetes, openshift
@@ -1208,4 +1208,4 @@ When an alert is triggered, review the alert details in {{site.data.keyword.mon_
 * [Troubleshooting worker nodes](/docs/openshift?topic=openshift-kubernetes-service-cli#cs_worker_reload).
 * [Troubleshooting apps](/docs/openshift?topic=openshift-debug_apps).
 * [Troubleshooting clusters](/docs/openshift?topic=openshift-debug_clusters).
-* [Open a support case](/docs/iam?topic=iam-using-avatar).
+* [Open a support case](/docs/openshift?topic=openshift-get-help).

@@ -2,7 +2,7 @@
 
 copyright:
   years: 2025, 2026
-lastupdated: "2026-04-21"
+lastupdated: "2026-04-29"
 
 keywords: openshift, virtualization, planning, prerequisites, bare metal
 
@@ -183,5 +183,5 @@ Security
 After planning your deployment:
 
 1. [Set up storage for OpenShift Virtualization](/docs/openshift?topic=openshift-virt-storage-setup)
-2. [Install the OpenShift Virtualization Operator](/docs/openshift?topic=openshift-virt-install)
+2. [Install the OpenShift Virtualization Operator](/docs/openshift?topic=openshift-virt-overview)
 3. [Configure virtual network interfaces (optional)](/docs/openshift?topic=openshift-vni-virtualization)
