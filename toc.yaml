@@ -291,8 +291,10 @@ toc:
               - storage-block-vpc-migration.md
               - storage-block-vpc-sc-ref.md
               - storage-block-vpc-unmanaged.md
-          - topic: storage-block.md
-            navtitle: Block Storage for Classic
+          - topicgroup:
+              label: Block Storage for Classic
+              topics:
+              - storage-block.md
           - topicgroup:
               label: File Storage for VPC add-on
               topics:
@@ -521,7 +523,6 @@ toc:
               - ts-sbd-cluster-create-quota.md
               - ts-sbd-non-sbd-clusters.md
               - ts-cluster-sbd-image-stream.md
-              - ts-cluster-sysdig-ebpf.md
               - ts-cloud-logs-tags.md
           - topicgroup:
               label: Worker nodes
