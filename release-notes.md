@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2026
-lastupdated: "2026-04-28"
+lastupdated: "2026-04-29"
 
 
 keywords: kubernetes, release notes, openshift, {{site.data.keyword.openshiftlong_notm}}
@@ -36,7 +36,7 @@ Looking for {{site.data.keyword.cloud_notm}} status, platform announcements, sec
 
 
 
-RHEL 9 worker node support extended to version 4.22
+RHEL 9 worker node support extended to version 4.21
 :   Support for Red Hat Enterprise Linux (RHEL) 9 worker nodes on VPC clusters has been extended. RHEL worker nodes will now be supported through version 4.21, with end of support occurring at the release of version 4.22. For more information, see [RHEL deprecation for VPC clusters](/docs/openshift?topic=openshift-rhel-deprecation).
 
 

@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2026
-lastupdated: "2026-04-28"
+lastupdated: "2026-04-29"
 
 
 keywords: openshift
@@ -289,7 +289,7 @@ subcollection: openshift
 
     * [28 April 2026](/docs/openshift?topic=openshift-openshift-relnotes#openshift-apr2826)
 
-        * RHEL 9 worker node support extended to version 4.22
+        * RHEL 9 worker node support extended to version 4.21
 
         * CLI version 1.0.763 is available
 
