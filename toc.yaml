@@ -262,9 +262,10 @@ toc:
       - topicgroup:
           label: OpenShift Virtualization
           topics:
-          - virt-overview.md
+          - topic: virt-overview.md
+            navtitle: Understanding OpenShift Virtualization
           - topicgroup:
-              label: Manual OpenShift Virtualization deployment
+              label: Manual deployment
               topics:
               - topic: virt-plan.md
                 navtitle: Planning your deployment
@@ -272,7 +273,11 @@ toc:
                 navtitle: Setting up storage
               - topic: oc-virtualization.md
                 navtitle: Installing the operator
+          - topicgroup:
+              label: Configuring virtual machines
+              topics:
               - topic: vni-virtualization.md
+                navtitle: Managing virtual network interfaces
       - topicgroup:
           label: Storage
           topics:
@@ -291,8 +296,10 @@ toc:
               - storage-block-vpc-migration.md
               - storage-block-vpc-sc-ref.md
               - storage-block-vpc-unmanaged.md
-          - topic: storage-block.md
-            navtitle: Block Storage for Classic
+          - topicgroup:
+              label: Block Storage for Classic
+              topics:
+              - storage-block.md
           - topicgroup:
               label: File Storage for VPC add-on
               topics:
@@ -521,8 +528,8 @@ toc:
               - ts-sbd-cluster-create-quota.md
               - ts-sbd-non-sbd-clusters.md
               - ts-cluster-sbd-image-stream.md
-              - ts-cluster-sysdig-ebpf.md
               - ts-cloud-logs-tags.md
+              - ts-cluster-sysdig-ebpf.md
           - topicgroup:
               label: Worker nodes
               topics:

@@ -2,7 +2,7 @@
  
 copyright:
   years: 2024, 2026
-lastupdated: "2026-04-27"
+lastupdated: "2026-04-29"
  
  
 keywords: openshift, sysdig, ebpf, rhcos, crashloopbackoff, monitoring

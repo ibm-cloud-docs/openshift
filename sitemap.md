@@ -3684,27 +3684,31 @@ subcollection: openshift
 
 [Understanding OpenShift Virtualization](/docs/openshift?topic=openshift-virt-overview#virt-overview)
 
-* [What is OpenShift Virtualization?](/docs/openshift?topic=openshift-virt-overview#virt-what-is)
+* [Overview](/docs/openshift?topic=openshift-virt-overview#virt-what-is)
 
-* [Requirements](/docs/openshift?topic=openshift-virt-overview#virt-requirements)
+* [Deployment options](/docs/openshift?topic=openshift-virt-overview#virt-deployment-options)
 
-* [Supported configurations](/docs/openshift?topic=openshift-virt-overview#virt-supported-configs)
+    * [Manual deployment (For custom configurations)](/docs/openshift?topic=openshift-virt-overview#virt-manual-deployment)
 
-    * [Cluster requirements](/docs/openshift?topic=openshift-virt-overview#virt-cluster-reqs)
+* [Common requirements](/docs/openshift?topic=openshift-virt-overview#virt-requirements)
 
-    * [Bare metal flavors](/docs/openshift?topic=openshift-virt-overview#virt-bm-flavors)
+* [Supported bare metal flavors](/docs/openshift?topic=openshift-virt-overview#virt-bm-flavors)
+
+* [Storage and networking](/docs/openshift?topic=openshift-virt-overview#virt-storage-networking)
 
     * [Storage options](/docs/openshift?topic=openshift-virt-overview#virt-storage-options)
 
-    * [Networking options](/docs/openshift?topic=openshift-virt-overview#virt-networking-options)
+    * [Networking capabilities](/docs/openshift?topic=openshift-virt-overview#virt-networking-options)
+
+* [Key capabilities](/docs/openshift?topic=openshift-virt-overview#virt-capabilities)
 
 * [Limitations](/docs/openshift?topic=openshift-virt-overview#virt-limitations)
 
-* [Next steps](/docs/openshift?topic=openshift-virt-overview#virt-next-steps)
+* [Getting started](/docs/openshift?topic=openshift-virt-overview#virt-next-steps)
 
 
-### Manual OpenShift Virtualization deployment
-{: #sitemap_manual_openshift_virtualization_deployment}
+### Manual deployment
+{: #sitemap_manual_deployment}
 
 
 [Planning your deployment](/docs/openshift?topic=openshift-virt-plan#virt-plan)
@@ -3799,7 +3803,12 @@ subcollection: openshift
 
 * [Next steps](/docs/openshift?topic=openshift-oc-virtualization#virt-install-next-steps)
 
-[Managing virtual network interfaces for OpenShift Virtualization](/docs/openshift?topic=openshift-vni-virtualization#vni-virtualization)
+
+### Configuring virtual machines
+{: #sitemap_configuring_virtual_machines}
+
+
+[Managing virtual network interfaces](/docs/openshift?topic=openshift-vni-virtualization#vni-virtualization)
 
 * [Understanding Virtual Network Interfaces](/docs/openshift?topic=openshift-vni-virtualization#vni-about)
 
@@ -4011,7 +4020,12 @@ subcollection: openshift
 
     * [Ubuntu ConfigMap](/docs/openshift?topic=openshift-vpc-block-storage-driver-unmanaged#vpc-block-ubuntu-cm)
 
-[Block Storage for Classic](/docs/openshift?topic=openshift-block_storage#block_storage)
+
+### Block Storage for Classic
+{: #sitemap_block_storage_for_classic}
+
+
+[Setting up {{site.data.keyword.blockstorageshort}}](/docs/openshift?topic=openshift-block_storage#block_storage)
 
 * [Quick start for {{site.data.keyword.cloud_notm}} {{site.data.keyword.blockstorageshort}}](/docs/openshift?topic=openshift-block_storage#block_qs)
 
@@ -8313,9 +8327,9 @@ subcollection: openshift
 
 [Why don't image streams populate on a secure by default cluster?](/docs/openshift?topic=openshift-ts_cluster_sbd_image_stream#ts_cluster_sbd_image_stream)
 
-[Why are `sysdig-agent` pods in `CrashLoopBackOff` on a private-only RHCOS cluster?](/docs/openshift?topic=openshift-ts-cluster-sysdig-ebpf#ts-cluster-sysdig-ebpf)
-
 [Why can't I connect Cloud Logs to my cluster?](/docs/openshift?topic=openshift-ts-cloud-logs-refresh#ts-cloud-logs-refresh)
+
+[Why are `sysdig-agent` pods in `CrashLoopBackOff` on a private-only RHCOS cluster?](/docs/openshift?topic=openshift-ts-cluster-sysdig-ebpf#ts-cluster-sysdig-ebpf)
 
 
 ### Worker nodes

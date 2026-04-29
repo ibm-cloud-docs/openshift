@@ -1,21 +1,16 @@
 ---
 
-copyright: 
-  years: 2014, 2024
-lastupdated: "2024-05-29"
-
+copyright:
+  years: 2014, 2026
+lastupdated: "2026-04-29"
 
 keywords: kubernetes, openshift
 
 subcollection: openshift
 
-
 ---
 
 {{site.data.keyword.attribute-definition-list}}
-
-
-
 
 # Healthcare use cases for {{site.data.keyword.cloud_notm}}
 {: #cs_uc_health}
@@ -23,20 +18,20 @@ subcollection: openshift
 These use cases highlight how workloads on {{site.data.keyword.openshiftlong}} benefit from the public cloud. They have secure compute on isolated bare metal, easy spin-up of clusters for faster development, migration from virtual machines, and data sharing in cloud databases.
 {: shortdesc}
 
-
 ## Healthcare provider migrates workloads from inefficient VMs to Ops-friendly containers for reporting and patient systems
 {: #uc_migrate}
 
-An IT Exec for a healthcare provider has business reporting and patient systems on-premises. Those systems go through slow enhancement cycles, which leads to stagnant patient service levels.  
+An IT Exec for a healthcare provider has business reporting and patient systems on-premises. Those systems go through slow enhancement cycles, which leads to stagnant patient service levels.
 {: shortdesc}
 
-To improve patient service, the provider looked to {{site.data.keyword.openshiftlong_notm}} and {{site.data.keyword.contdelivery_full}} to reduce IT expenses and accelerate development, all on a secure platform. The provider’s high-use SaaS systems, which held both patient record systems and business report apps, needed updates frequently.  Yet, the provider's developers were overwhelmed with administering the hardware, network, and even the Kubernetes stack on their own. The provider also wanted to counteract increasing labor costs and a decreasing budget.
+To improve patient service, the provider looked to {{site.data.keyword.openshiftlong_notm}} and {{site.data.keyword.contdelivery_full}} to reduce IT expenses and accelerate development, all on a secure platform. The provider's high-use SaaS systems, which held both patient record systems and business report apps, needed frequent updates.  Yet, the provider's developers were overwhelmed with administering the hardware, network, and even the Kubernetes stack on their own. The provider also wanted to counteract increasing labor costs and a decreasing budget.
 
-They started by containerizing their SaaS systems and putting them in the cloud. From that first step, they went from over-built hardware in a private data center to customizable compute that reduces IT operations, maintenance, and energy. To host the SaaS apps, they easily designed Kubernetes clusters to fit their CPU, RAM, and storage needs. They used {{site.data.keyword.icp4dfull_notm}} to provide the familiar analytics tools from their on-prem environment.  Another factor for decreased staff costs is that IBM manages Kubernetes, so the provider can focus on delivering better customer service. 
+They started by containerizing their SaaS systems and putting them in the cloud. From that first step, they went from over-built hardware in a private data center to customizable compute that reduces IT operations, maintenance, and energy. To host the SaaS apps, they easily designed Kubernetes clusters to fit their CPU, RAM, and storage needs. They used {{site.data.keyword.icp4dfull_notm}} to provide the familiar analytics tools from their on-premises environment.  Another factor for decreased staff costs is that IBM manages Kubernetes, so the provider can focus on delivering better customer service.
 
-Accelerated development is a key win for the IT Exec. With the move to public cloud, Developers can experiment easily with Node.js SDK, pushing changes to Development and Test systems, scaled out on separate clusters. Those pushes were automated with open toolchains and {{site.data.keyword.contdelivery_full}}. Updates to the SaaS system no longer languished in slow, error-prone build processes. The Developers can deliver incremental updates to their users, daily or even more frequently.  Also, logging and monitoring for the SaaS systems, especially how the patient front-end and back-end reports interact, rapidly integrate into the system. Developers don’t waste time building complex logging systems, just to be able to troubleshoot live systems.
+Accelerated development is a key win for the IT Exec. With the move to public cloud, Developers can experiment easily with Node.js SDK, pushing changes to Development and Test systems, scaled out on separate clusters. Those pushes were automated with open toolchains and {{site.data.keyword.contdelivery_full}}. Updates to the SaaS system no longer languished in slow, error-prone build processes. The Developers can deliver incremental updates to their users daily or even more frequently. Also, logging and monitoring for the SaaS systems, especially how the patient front-end and back-end reports interact, rapidly integrate into the system. Developers don't waste time building complex logging systems just to be able to troubleshoot live systems.
 
 Security first: With bare metal for {{site.data.keyword.openshiftlong_notm}}, the sensitive patient workloads now have familiar isolation but within the flexibility of public cloud. From that core, Vulnerability Advisor provides scanning:
+
 * Image vulnerability scanning
 * Policy scanning based on ISO 27k
 
@@ -45,9 +40,9 @@ Secure patient data leads to happier patients.
 ### Context
 {: #uc_migrate_context}
 
-* Technical debt, which is coupled with long release cycles, is hindering the provider’s business-critical patient management and reporting systems.
+* Technical debt, which is coupled with long release cycles, is hindering the provider's business-critical patient management and reporting systems.
 * Their back-office and front-office custom apps are delivered on-premises in monolithic virtual machine images.
-* They need to overhaul their processes, methods, and tools but don’t know quite where to start.
+* They need to overhaul their processes, methods, and tools but don't know where to start.
 * Their technical debt is growing, not shrinking, from an inability to release quality software to keep up with market demands.
 * Security is a primary concern, and this issue is adding to the delivery burden, which causes even more delays.
 * Capital expense budgets are under tight control, and IT feels they don't have the budget or staff to create the needed testing and staging landscapes with their in-house systems.
@@ -67,7 +62,7 @@ Compute, storage, and I/O services run in the public cloud with secure access to
 {: #uc_migrate_step2}
 
 * Migrate virtual machine images to container images that run in {{site.data.keyword.openshiftlong_notm}} in the public cloud.
-* Deploy {{site.data.keyword.icp4dfull_notm}}, so that developers have their familiar analytics tools on the cloud.
+* Deploy {{site.data.keyword.icp4dfull_notm}} so that developers have their familiar analytics tools on the cloud.
 * Provide standardized DevOps dashboards and practices through Kubernetes.
 * Enable scaling compute resources for batch and other back-office workloads that run infrequently.
 * Use {{site.data.keyword.SecureGatewayfull}} to maintain secure connections to on-premises DBMS.
@@ -104,7 +99,7 @@ Much of the CI/CD process itself is automated with IBM's Continuous Delivery ser
 {: #uc_migrate_results}
 
 * Lifting the existing monolithic VMs into cloud-hosted containers was a first step that allowed the provider to save on capital costs and begin learning modern DevOps practices. 
-* With the Cloud Pak deployed, the provider offloaded the full stack support of their data analytics tools to IBM, even the lifecycle management of those tools. Their developers were then unburdened from operations tasks and could focus on new features and updates. 
+* With the Cloud Pak deployed, the provider offloaded the full stack support of their data analytics tools to IBM, even the lifecycle management of those tools. Their developers were then unburdened from operations tasks and could focus on new features and updates.
 * Reconfiguring key monolithic apps to a set of fine-grained microservices greatly reduced delivery time for patches, bug fixes, and new features.
 * In parallel, the provider implemented simple time-boxed iterations to get a handle on the existing technical debt.
 
@@ -216,7 +211,3 @@ Technical solution:
 * Microservices greatly reduce time to delivery for patches, bug fixes, and new features. Initial development is fast, and updates are frequent.
 * Researchers have access to clinical data and can share clinical data, while they comply with local regulations.
 * Patients who participate in disease research feel confident that their data is secure and making a difference, when it is shared with large research teams.
-
-
-
-

@@ -1,9 +1,8 @@
 ---
 
-copyright: 
-  years: 2014, 2024
-lastupdated: "2024-05-14"
-
+copyright:
+  years: 2014, 2026
+lastupdated: "2026-04-29"
 
 keywords: kubernetes, openshift, help, network, connectivity
 
@@ -13,12 +12,7 @@ content-type: troubleshoot
 
 ---
 
-
 {{site.data.keyword.attribute-definition-list}}
-
-
-
-
 
 # Why can't the ownership of the mount path be changed?
 {: #cos_mountpath_error}
@@ -32,8 +26,7 @@ This troubleshooting topic applies only to {{site.data.keyword.redhat_openshift_
 
 
 
-
-You created a deployment that mounts an {{site.data.keyword.cos_full_notm}} bucket to your app. During the deployment, you try to change the ownership of the volume mount path, but this action fails. You see error messages similar to the following:
+You created a deployment that mounts an {{site.data.keyword.cos_full_notm}} bucket to your app. During the deployment, you try to change the ownership of the volume mount path, but this action fails. You see error messages similar to the following examples.
 {: tsSymptoms}
 
 ```sh
@@ -42,15 +35,8 @@ chown: changing ownership of '<volume_mount_path>': Operation not permitted
 ```
 {: screen}
 
-
 When you create a bucket in {{site.data.keyword.cos_full_notm}}, the bucket is managed by `s3fs-fuse`. The UID and GID that own the volume mount path are automatically set by Fuse when you mount the bucket to your app and can't be changed.
 {: tsCauses}
 
-
-You can't change the ownership of the volume mount path. However, you can change the UID and GID for a file or a directory that is stored under your volume mount path. For more information, see [Object storage: Accessing files with a non-root user fails](/docs/openshift?topic=openshift-cos_nonroot_access).
+You can't change the ownership of the volume mount path. However, you can change the UID and GID for a file or directory that is stored under your volume mount path. For more information, see [Object storage: Accessing files with a non-root user fails](/docs/openshift?topic=openshift-cos_nonroot_access).
 {: tsResolve}
-
-
-
-
-
