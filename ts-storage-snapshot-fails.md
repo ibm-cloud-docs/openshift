@@ -1,8 +1,8 @@
 ---
 
 copyright: 
-  years: 2022, 2024
-lastupdated: "2024-10-30"
+  years: 2022, 2026
+lastupdated: "2026-04-30"
 
 
 keywords: openshift, storage, snapshot, volumesnapshot
@@ -56,4 +56,4 @@ There are several reasons why you might not be able to create snapshots. To debu
     ```
     {: pre}
     
-1. Open a [support case](/docs/account?topic=account-using-avatar). In the case details, be sure to include any relevant log files, error messages, or command outputs.
+1. Open a [support case](/docs/support?topic=support-using-avatar). In the case details, be sure to include any relevant log files, error messages, or command outputs.

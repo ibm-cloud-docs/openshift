@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2026
-lastupdated: "2026-04-29"
+lastupdated: "2026-04-30"
 
 
 keywords: openshift, {{site.data.keyword.openshiftlong_notm}}, troubleshooting apps, app debugging, application troublshooting in clusters
@@ -121,4 +121,4 @@ Once you know the app flow, the specific error you are seeing, and where that er
 ## Next steps
 {: #advanced-ts-next}
 
-If the issue persists, contact support. Open a [support case](/docs/account?topic=account-using-avatar). In the case details, be sure to include any relevant log files, error messages, or command outputs.
+If the issue persists, contact support. Open a [support case](/docs/support?topic=support-using-avatar). In the case details, be sure to include any relevant log files, error messages, or command outputs.

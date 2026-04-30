@@ -1,7 +1,7 @@
 ---
 copyright: 
-  years: 2025, 2025
-lastupdated: "2025-12-03"
+  years: 2025, 2026
+lastupdated: "2026-04-30"
 
 keywords: nhc004, vpe gateway hostname resolution
 
@@ -121,4 +121,4 @@ To identify the VPE gateways used by your IBM Cloud Kubernetes Service cluster, 
 
 - After corrections, wait a few minutes and recheck the cluster health status.
 
-- If the issue persists, contact support for further assistance. Open a [support case](/docs/account?topic=account-using-avatar). In the case details, be sure to include any relevant log files, error messages, or command outputs.
+- If the issue persists, contact support for further assistance. Open a [support case](/docs/support?topic=support-using-avatar). In the case details, be sure to include any relevant log files, error messages, or command outputs.

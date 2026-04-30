@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2022, 2026
-lastupdated: "2026-02-20"
+lastupdated: "2026-04-30"
 
 
 keywords: openshift, errdsiss, nlb dns
@@ -54,4 +54,4 @@ Check the `SSL Cert Status` of your managed domains and, if needed, regenerate t
     `not_eligible` status.
     :   The domain must be available in public DNS otherwise certificate generation will never succeed. Make sure that your domain is registered in public DNS and run the **`ibmcloud oc nlb-dns secret regenerate`** to force a new validation.
 1. Wait 10-15 minutes, then check if the warning is resolved.
-1. If the issue persists, contact support. Open a [support case](/docs/account?topic=account-using-avatar). In the case details, be sure to include any relevant log files, error messages, or command outputs.
+1. If the issue persists, contact support. Open a [support case](/docs/support?topic=support-using-avatar). In the case details, be sure to include any relevant log files, error messages, or command outputs.

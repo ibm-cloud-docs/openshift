@@ -1,8 +1,8 @@
 ---
 
 copyright: 
-  years: 2024, 2024
-lastupdated: "2024-10-30"
+  years: 2024, 2026
+lastupdated: "2026-04-30"
 
 
 keywords: openshift, {{site.data.keyword.openshiftlong_notm}}, storage, container creating, file
@@ -97,4 +97,4 @@ New security group rules were introduced in versions 4.11 and later. These rule 
 
 * If your cluster was created at version 4.11 and later, verify that the worker node where pod is deployed is allowlisted in the VNI security group.
 
-1. If the issue persists, contact support. Open a [support case](/docs/account?topic=account-using-avatar). In the case details, be sure to include any relevant log files, error messages, or command outputs.
+1. If the issue persists, contact support. Open a [support case](/docs/support?topic=support-using-avatar). In the case details, be sure to include any relevant log files, error messages, or command outputs.

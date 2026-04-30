@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2025, 2026
-lastupdated: "2026-01-27"
+lastupdated: "2026-04-30"
 
 
 keywords: kubernetes, openshift, {{site.data.keyword.filestorage_vpc_short}}, snapshot, restore
@@ -96,4 +96,4 @@ You might see this error if you have deleted the original PVC that was used to c
     ```
     {: pre}
 
-1. If the issue persists, contact support. Open a [support case](/docs/account?topic=account-using-avatar). In the case details, be sure to include any relevant log files, error messages, or command outputs.
+1. If the issue persists, contact support. Open a [support case](/docs/support?topic=support-using-avatar). In the case details, be sure to include any relevant log files, error messages, or command outputs.

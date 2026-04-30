@@ -1,7 +1,7 @@
 ---
 copyright:
-  years: 2023, 2025
-lastupdated: "2025-03-18"
+  years: 2023, 2026
+lastupdated: "2026-04-30"
 
 
 keywords: openshift, {{site.data.keyword.openshiftlong_notm}}, byok, debug, help, vpc, storage, encryption
@@ -64,4 +64,4 @@ Verify that the KMS instance or root key still exist. If either one has been del
 
 1. If either instance or the root key has been disabled or deleted, you must recreate them. For more information, see [Setting up a KMS provider](/docs/openshift?topic=openshift-encryption-setup).
 
-1. If the issue persists, contact support. Open a [support case](/docs/account?topic=account-using-avatar). In the case details, be sure to include any relevant log files, error messages, or command outputs.
+1. If the issue persists, contact support. Open a [support case](/docs/support?topic=support-using-avatar). In the case details, be sure to include any relevant log files, error messages, or command outputs.

@@ -1,8 +1,8 @@
 ---
 
 copyright: 
-  years: 2022, 2024
-lastupdated: "2024-10-30"
+  years: 2022, 2026
+lastupdated: "2026-04-30"
 
 
 keywords: openshift, {{site.data.keyword.openshiftlong_notm}}, snapshot, storage
@@ -77,4 +77,4 @@ If the `volumesnapshot` object is deleted, but `volumesnapshotcontent` object st
     {: pre}
 
 
-If the issue persists, contact support. Open a [support case](/docs/account?topic=account-using-avatar). In the case details, be sure to include any relevant log files, error messages, or command outputs.
+If the issue persists, contact support. Open a [support case](/docs/support?topic=support-using-avatar). In the case details, be sure to include any relevant log files, error messages, or command outputs.

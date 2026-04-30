@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2025, 2026
-lastupdated: "2026-02-18"
+lastupdated: "2026-04-30"
 
 
 keywords: openshift, kubernetes, help, network, private path nlb, ppnlb
@@ -49,4 +49,4 @@ Recreate your PPNLB to resolve the issue.
 1. Delete all associated resources linked to the service.
 1. Delete and recreate the PPNLB service.
 1. Verify that `hostname.invalid` no longer appears in the LoadBalancer Ingress field and that no warnings are present in the **Events** section when you describe the service.
-1. If the issue persists, contact support. Open a [support case](/docs/account?topic=account-using-avatar). In the case details, be sure to include any relevant log files, error messages, or command outputs.
+1. If the issue persists, contact support. Open a [support case](/docs/support?topic=support-using-avatar). In the case details, be sure to include any relevant log files, error messages, or command outputs.

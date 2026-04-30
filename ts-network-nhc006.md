@@ -1,7 +1,7 @@
 ---
 copyright: 
-  years: 2025, 2025
-lastupdated: "2025-09-18"
+  years: 2025, 2026
+lastupdated: "2026-04-30"
 
 keywords: nhc006, dns resolvers unreachable
 
@@ -81,4 +81,4 @@ This warning indicates that some worker nodes are unable to reach one or more DN
     {: pre}
 
 5. Review your infrastructure (network appliances, ACLs, and so on) and allow **UDP and TCP port 53** outbound traffic.
-6. If the issue continues, contact support for further assistance. Open a [support case](/docs/account?topic=account-using-avatar). In the case details, be sure to include any relevant log files, error messages, or command outputs.
+6. If the issue continues, contact support for further assistance. Open a [support case](/docs/support?topic=support-using-avatar). In the case details, be sure to include any relevant log files, error messages, or command outputs.

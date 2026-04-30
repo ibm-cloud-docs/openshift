@@ -1,8 +1,8 @@
 ---
 
 copyright: 
-  years: 2022, 2025
-lastupdated: "2025-09-18"
+  years: 2022, 2026
+lastupdated: "2026-04-30"
 
 
 keywords: kubernetes, help, network, connectivity, webhooks
@@ -204,4 +204,4 @@ Complete the following steps to identify the webhook that is causing the issue. 
     ```
     {: pre}
 
-1. If the issue persists, contact support. Open a [support case](/docs/account?topic=account-using-avatar). In the case details, be sure to include any relevant log files, error messages, or command outputs.
+1. If the issue persists, contact support. Open a [support case](/docs/support?topic=support-using-avatar). In the case details, be sure to include any relevant log files, error messages, or command outputs.
