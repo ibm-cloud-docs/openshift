@@ -33,6 +33,13 @@ Review the following changes for 1.0 versions of the CLI plug-in.
 {: shortdesc}
 
 
+## Version v1.0.765
+{: #cli-01765}
+
+Version 1.0.765 of the CLI was released on 30 April 2026.
+- Simplifies VNI list query and JSON output for improved performance and clarity.
+- Includes general refactoring and improvements.
+
 ## Version v1.0.763
 {: #cli-01763}
 
