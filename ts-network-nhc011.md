@@ -1,8 +1,8 @@
 ---
 
 copyright: 
-  years: 2025, 2025
-lastupdated: "2025-08-11"
+  years: 2025, 2026
+lastupdated: "2026-04-30"
 
 keywords: nhc011, exceeded security group quota
 
@@ -62,4 +62,4 @@ Review and reduce the number of security groups in your VPC.
 
 7. Wait a few minutes, then recheck your cluster status.
 
-8. If the issue persists, contact support for further assistance. Open a [support case](/docs/account?topic=account-using-avatar). In the case details, be sure to include any relevant log files, error messages, or command outputs.
+8. If the issue persists, contact support for further assistance. Open a [support case](/docs/support?topic=support-using-avatar). In the case details, be sure to include any relevant log files, error messages, or command outputs.

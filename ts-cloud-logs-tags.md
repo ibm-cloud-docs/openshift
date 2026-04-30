@@ -1,8 +1,8 @@
 ---
 
 copyright: 
-  years: 2025, 2025
-lastupdated: "2025-02-19"
+  years: 2025, 2026
+lastupdated: "2026-04-30"
 
 
 keywords: openshift
@@ -34,5 +34,4 @@ To resolve this issue, complete the following steps.
 
 1. After deleting the tags, retry connecting to Cloud Logs.
 
-1. If the issue persists, contact support. Open a [support case](/docs/account?topic=account-using-avatar). In the case details, be sure to include any relevant log files, error messages, or command outputs.
-
+1. If the issue persists, contact support. Open a [support case](/docs/support?topic=support-using-avatar). In the case details, be sure to include any relevant log files, error messages, or command outputs.

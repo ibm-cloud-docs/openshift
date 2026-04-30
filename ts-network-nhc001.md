@@ -1,7 +1,7 @@
 ---
 copyright: 
-  years: 2025, 2025
-lastupdated: "2025-12-03"
+  years: 2025, 2026
+lastupdated: "2026-04-30"
 
 keywords: nhc001, calico progressing, tigera operator
 
@@ -71,4 +71,4 @@ Investigate the logs of the Tigera operator and Calico components to understand 
 
 5. For more information, see [Controlling traffic with network policies](/docs/openshift?topic=openshift-network_policies){: external} and [Debugging Calico components](/docs/openshift?topic=openshift-calico_log_level){: external}
 
-6. If the issue continues, contact support for assistance. Open a [support case](/docs/account?topic=account-using-avatar). In the case details, be sure to include any relevant log files, error messages, or command outputs.
+6. If the issue continues, contact support for assistance. Open a [support case](/docs/support?topic=support-using-avatar). In the case details, be sure to include any relevant log files, error messages, or command outputs.

@@ -1,8 +1,8 @@
 ---
 
 copyright: 
-  years: 2014, 2024
-lastupdated: "2024-10-30"
+  years: 2014, 2026
+lastupdated: "2026-04-30"
 
 
 keywords: openshift, kubernetes, help, network, connectivity, ingress, must gather
@@ -99,4 +99,4 @@ Run the following commands to gather the required logs and details for debugging
     {: pre}
     
 
-1. Save the information you've gathered and Open a [support case](/docs/account?topic=account-using-avatar). In the case details, be sure to include any relevant log files, error messages, or command outputs.
+1. Save the information you've gathered and Open a [support case](/docs/support?topic=support-using-avatar). In the case details, be sure to include any relevant log files, error messages, or command outputs.

@@ -1,8 +1,8 @@
 ---
 
 copyright:
-  years: 2025, 2025
-lastupdated: "2025-09-17"
+  years: 2025, 2026
+lastupdated: "2026-04-30"
 
 
 keywords: openshift, console, web, connect, public
@@ -153,4 +153,4 @@ Follow these steps to check the connections described in the [connection flow](#
 ## 5. Contact support
 {: #ts-console-vpe-public-support}
 
-If you completed all the above steps and have not resolved the issue, contact support. Open a [support case](/docs/account?topic=account-using-avatar). In the case details, be sure to include any relevant log files, error messages, or command outputs.. 
+If you completed all the above steps and have not resolved the issue, contact support. Open a [support case](/docs/support?topic=support-using-avatar). In the case details, be sure to include any relevant log files, error messages, or command outputs.. 

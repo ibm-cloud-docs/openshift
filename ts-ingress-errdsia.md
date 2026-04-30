@@ -1,8 +1,8 @@
 ---
 
 copyright: 
-  years: 2022, 2024
-lastupdated: "2024-10-30"
+  years: 2022, 2026
+lastupdated: "2026-04-30"
 
 
 keywords: openshift, errdsia, nlb-dns, dns add, dns remove
@@ -63,4 +63,4 @@ Identify and update any NLB-DNS subdomains that have incorrect addresses registe
     
 1. Wait a 15-30 minutes, then check if the warning is resolved.
 
-1. If the issue persists, contact support. Open a [support case](/docs/account?topic=account-using-avatar). In the case details, be sure to include any relevant log files, error messages, or command outputs.
+1. If the issue persists, contact support. Open a [support case](/docs/support?topic=support-using-avatar). In the case details, be sure to include any relevant log files, error messages, or command outputs.

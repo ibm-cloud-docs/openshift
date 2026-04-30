@@ -2,7 +2,7 @@
 
 copyright:
   years: 2023, 2026
-lastupdated: "2026-04-08"
+lastupdated: "2026-04-30"
 
 
 keywords: openshift, openshift data foundation, openshift container storage, ocs, worker update, worker replace
@@ -79,7 +79,7 @@ Before updating your worker nodes, make sure to back up your app data. Also, pla
 	```
 	{: screen}
 
-1. Check the state of the Ceph Storage by running the following command. Verify that the health is `HEALTH_OK`, all OSDs are `up` and `IN` and that all the `pgs` are `active+clean`. If any of these checks fail, Open a [support case](/docs/account?topic=account-using-avatar). In the case details, be sure to include any relevant log files, error messages, or command outputs..  Resolve any issues before continuing.
+1. Check the state of the Ceph Storage by running the following command. Verify that the health is `HEALTH_OK`, all OSDs are `up` and `IN` and that all the `pgs` are `active+clean`. If any of these checks fail, Open a [support case](/docs/support?topic=support-using-avatar). In the case details, be sure to include any relevant log files, error messages, or command outputs..  Resolve any issues before continuing.
 
 	```sh
 	oc rsh -n openshift-storage $(oc get pods -n openshift-storage -o name -l app=rook-ceph-operator) ceph status -c /var/lib/rook/openshift-storage/openshift-storage.config
@@ -328,7 +328,7 @@ Make sure the storage cluster is healthy before continuing.
 
 [Major update]{: tag-red} [Minor update]{: tag-blue} [Worker replace]{: tag-green}
 
-1. Verify OSD pod has come up on the replaced node in a `running` state. If the pod is running, continue to [step 7](#add-storage-node-vpc). If the pod has failed, perform the following steps.If more than one OSD pod is not `Running`, stop and contact support. Open a [support case](/docs/account?topic=account-using-avatar). In the case details, be sure to include any relevant log files, error messages, or command outputs.
+1. Verify OSD pod has come up on the replaced node in a `running` state. If the pod is running, continue to [step 7](#add-storage-node-vpc). If the pod has failed, perform the following steps.If more than one OSD pod is not `Running`, stop and contact support. Open a [support case](/docs/support?topic=support-using-avatar). In the case details, be sure to include any relevant log files, error messages, or command outputs.
 
 1. Navigate to the `openshift-storage` project.
 

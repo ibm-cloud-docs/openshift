@@ -1,7 +1,7 @@
 ---
 copyright: 
-  years: 2025, 2025
-lastupdated: "2025-09-18"
+  years: 2025, 2026
+lastupdated: "2026-04-30"
 
 keywords: nhc003, container registry unreachable
 
@@ -100,4 +100,4 @@ Ensure the worker nodes have access to the internet and can reach external conta
 
 7. After applying the fixes, wait a few minutes and recheck the cluster health.
 
-8. If the issue persists, contact support for further assistance. Open a [support case](/docs/account?topic=account-using-avatar). In the case details, be sure to include any relevant log files, error messages, or command outputs.
+8. If the issue persists, contact support for further assistance. Open a [support case](/docs/support?topic=support-using-avatar). In the case details, be sure to include any relevant log files, error messages, or command outputs.

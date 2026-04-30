@@ -1,8 +1,8 @@
 ---
 
 copyright:
-  years: 2014, 2025
-lastupdated: "2025-05-29"
+  years: 2014, 2026
+lastupdated: "2026-04-30"
 
 
 keywords: openshift, {{site.data.keyword.openshiftlong_notm}}, cluster version, 
@@ -135,4 +135,4 @@ Begin by getting more detailed information about the cluster operator update pro
     - Continue checking the status and logs of the operator pods for further debugging of the issue. Sometimes the operators are degraded, but that does not mean the updates have failed or are not working.
 
 
-1. If you are not able to identify or resolve the problems, or if the issue persists, contact support. Open a [support case](/docs/account?topic=account-using-avatar). In the case details, be sure to include any relevant log files, error messages, or command outputs.
+1. If you are not able to identify or resolve the problems, or if the issue persists, contact support. Open a [support case](/docs/support?topic=support-using-avatar). In the case details, be sure to include any relevant log files, error messages, or command outputs.

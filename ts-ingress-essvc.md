@@ -1,8 +1,8 @@
 ---
 
 copyright: 
-  years: 2022, 2025
-lastupdated: "2025-03-13"
+  years: 2022, 2026
+lastupdated: "2026-04-30"
 
 
 keywords: openshift, essvc
@@ -55,4 +55,4 @@ Ensure all secrets that share the same domain have the same CRN.
     {: tip}
 
 
-1. If the issue persists, contact support. Open a [support case](/docs/account?topic=account-using-avatar). In the case details, be sure to include any relevant log files, error messages, or command outputs.
+1. If the issue persists, contact support. Open a [support case](/docs/support?topic=support-using-avatar). In the case details, be sure to include any relevant log files, error messages, or command outputs.

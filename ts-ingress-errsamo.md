@@ -1,8 +1,8 @@
 ---
 
 copyright: 
-  years: 2023, 2025
-lastupdated: "2025-04-17"
+  years: 2023, 2026
+lastupdated: "2026-04-30"
 
 
 keywords: openshift, errsamo, load balancer service missing
@@ -76,4 +76,4 @@ Complete the following steps to troubleshoot the issue.
     
 1. Wait 10 to 15 minutes, then check if the load balancer got an address assigned. If not, check the events again.
 
-1. If you see a different error, repeat the troubleshooting steps. If the issue persists, contact support. Open a [support case](/docs/account?topic=account-using-avatar). In the case details, be sure to include any relevant log files, error messages, or command outputs.
+1. If you see a different error, repeat the troubleshooting steps. If the issue persists, contact support. Open a [support case](/docs/support?topic=support-using-avatar). In the case details, be sure to include any relevant log files, error messages, or command outputs.

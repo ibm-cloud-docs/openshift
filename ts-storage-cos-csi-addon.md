@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2025, 2026
-lastupdated: "2026-02-20"
+lastupdated: "2026-04-30"
 
 
 keywords: openshift
@@ -56,7 +56,7 @@ Follow these steps to gather gather details about the issue.
     ```
     {: pre}
   
-If any CSI driver pod is in `ImagePullBackOff` state, that means the image used for pods creation is not available in the registry or there might be permission issues. Gather the output from the previous steps and, contact support. Open a [support case](/docs/account?topic=account-using-avatar). In the case details, be sure to include any relevant log files, error messages, or command outputs.
+If any CSI driver pod is in `ImagePullBackOff` state, that means the image used for pods creation is not available in the registry or there might be permission issues. Gather the output from the previous steps and, contact support. Open a [support case](/docs/support?topic=support-using-avatar). In the case details, be sure to include any relevant log files, error messages, or command outputs.
   
 If any CSI driver pod is in `CrashLoopBackOff` state, you can try the following steps:
 
@@ -76,7 +76,7 @@ If any CSI driver pod is in `CrashLoopBackOff` state, you can try the following 
 
 1. Upgrade the add-on to the latest version for a possible fix.
 
-1. If the issue persists, contact support. Open a [support case](/docs/account?topic=account-using-avatar). In the case details, be sure to include any relevant log files, error messages, or command outputs.
+1. If the issue persists, contact support. Open a [support case](/docs/support?topic=support-using-avatar). In the case details, be sure to include any relevant log files, error messages, or command outputs.
 
 If you need to contact support for further help, make sure that you gather the following details for the support ticket.
 

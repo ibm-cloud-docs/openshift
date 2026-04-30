@@ -1,8 +1,8 @@
 ---
 
 copyright: 
-  years: 2025, 2025
-lastupdated: "2025-08-11"
+  years: 2025, 2026
+lastupdated: "2026-04-30"
 
 keywords: nhc009, IAM token exchange failed
 
@@ -70,4 +70,4 @@ Review and update your IBM Cloud API key used for the IBM Cloud Kubernetes Servi
 
 7. After fixing the API key issue you have to wait maximum 30 minutes to see if the warning is resolved.
 
-8. If the issue persists, contact support for further assistance. Open a [support case](/docs/account?topic=account-using-avatar). In the case details, be sure to include any relevant log files, error messages, or command outputs.
+8. If the issue persists, contact support for further assistance. Open a [support case](/docs/support?topic=support-using-avatar). In the case details, be sure to include any relevant log files, error messages, or command outputs.

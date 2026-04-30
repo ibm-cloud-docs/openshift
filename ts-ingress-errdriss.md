@@ -1,8 +1,8 @@
 ---
 
 copyright: 
-  years: 2022, 2025
-lastupdated: "2025-12-03"
+  years: 2022, 2026
+lastupdated: "2026-04-30"
 
 
 keywords: openshift, errdriss, secret generation failed
@@ -67,4 +67,4 @@ Review and update your managed subdomains.
 1. Wait 10-15 minutes, then check if the warning is resolved.
 
 
-1. If the issue persists, contact support. Open a [support case](/docs/account?topic=account-using-avatar). In the case details, be sure to include any relevant log files, error messages, or command outputs.
+1. If the issue persists, contact support. Open a [support case](/docs/support?topic=support-using-avatar). In the case details, be sure to include any relevant log files, error messages, or command outputs.

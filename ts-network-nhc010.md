@@ -1,8 +1,8 @@
 ---
 
 copyright: 
-  years: 2025, 2025
-lastupdated: "2025-08-12"
+  years: 2025, 2026
+lastupdated: "2026-04-30"
 
 keywords: nhc010, exceeded security group rules quota
 
@@ -64,4 +64,4 @@ Review and adjust your cluster's security group rules.
 
 7. After making adjustments, wait a few minutes and check if the warning clears.
 
-8. If the issue persists, contact support for further assistance. Open a [support case](/docs/account?topic=account-using-avatar). In the case details, be sure to include any relevant log files, error messages, or command outputs.
+8. If the issue persists, contact support for further assistance. Open a [support case](/docs/support?topic=support-using-avatar). In the case details, be sure to include any relevant log files, error messages, or command outputs.
