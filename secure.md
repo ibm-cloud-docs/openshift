@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2026
-lastupdated: "2026-04-08"
+lastupdated: "2026-05-01"
 
 
 keywords: openshift
@@ -271,7 +271,7 @@ To protect your network and limit the range of damage that a user can do when ac
 
 By default, worker nodes are connected to [VPC subnets](/docs/openshift?topic=openshift-vpc-subnets) on the private network only and don't have a public network interface. All public ingress to your worker nodes is blocked. Public egress from your worker nodes is only allowed if the workers are connected to a VPC subnet that has a public gateway.
 
-To access default {{site.data.keyword.redhat_openshift_notm}} components such as the web console or OperatorHub without being connected to your VPC's private network, you must attach a [public gateway](/docs/vpc?topic=vpc-about-networking-for-vpc#public-gateway-for-external-connectivity) to the VPC subnets that the worker nodes are deployed to. All egress is permitted for worker nodes on a subnet with an attached public gateway, but all ingress is still blocked.
+To access default {{site.data.keyword.redhat_openshift_notm}} components such as the web console or OperatorHub without being connected to your VPC's private network, you must attach a [public gateway](/docs/vpc?topic=vpc-about-networking-for-vpc) to the VPC subnets that the worker nodes are deployed to. All egress is permitted for worker nodes on a subnet with an attached public gateway, but all ingress is still blocked.
 
 If you deploy apps in your cluster that must receive traffic requests from the internet, you can [create a VPC load balancer](/docs/openshift?topic=openshift-vpclb-about) to expose your apps. To allow ingress network traffic to your apps, you must configure your VPC load balancer for the ingress network traffic that you want to receive. 
 
