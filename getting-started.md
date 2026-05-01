@@ -2,7 +2,7 @@
 
 copyright:
   years: 2023, 2026
-lastupdated: "2026-04-29"
+lastupdated: "2026-05-01"
 
 
 keywords: openshift, {{site.data.keyword.openshiftlong_notm}}, kubernetes cluster, red hat openshift, openshift container platform, red hat, create openshift cluster, vpc cluster, classic cluster, clusters
@@ -27,7 +27,7 @@ subcollection: openshift
 
 If you already have an IBM Cloud account and want to get started immediately:
 
-[Create a cluster now](https://cloud.ibm.com/kubernetes/catalog/create?platformType=openshift){: external}
+[Create a cluster now](https://cloud.ibm.com/containers/cluster-management/catalog/create?platformType=openshift){: external}
 
 Don't have an account? [Sign up for IBM Cloud](https://cloud.ibm.com/registration?target=/kubernetes/catalog/create?platformType=openshift){: external}
 
