@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2026
-lastupdated: "2026-04-30"
+lastupdated: "2026-05-01"
 
 
 keywords: openshift, ibmc, helm
@@ -86,9 +86,9 @@ Review the following steps based on the error type.
 
     2. Try out the `ibm` Helm plug-in.
     
-	 ```sh
-	 helm ibmc --help
-	 ```
-	 {: pre}
+        ```sh
+        helm ibmc --help
+        ```
+        {: pre}
 
 3. [Continue installing the {{site.data.keyword.cos_full_notm}} plug-in](/docs/openshift?topic=openshift-storage_cos_install).
