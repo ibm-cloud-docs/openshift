@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2026
-lastupdated: "2026-04-10"
+lastupdated: "2026-05-01"
 
 
 keywords: openshift, {{site.data.keyword.openshiftlong_notm}} kubernetes, ips, vlans, networking, public gateway
@@ -50,7 +50,7 @@ Do not delete the subnets that you attach to your cluster during cluster creatio
 When you [create your VPC subnet](https://cloud.ibm.com/infrastructure/provision/network){: external}, make sure to create a subnet with enough IP addresses for your cluster, such as 256. You can't change the number of IP addresses that a VPC subnet has later.
 
 Keep in mind the following IP address reservations.
-- 5 IP addresses are [reserved by VPC](/docs/vpc?topic=vpc-about-networking-for-vpc#addresses-reserved-by-the-system) from each subnet by default.
+- 5 IP addresses are [reserved by VPC](/docs/vpc?topic=vpc-about-networking-for-vpc) from each subnet by default.
 - 1 IP address from one subnet in each zone where your cluster has worker nodes is required for the [virtual private endpoints (VPE) gateway](#vpc_basics_vpe).
 - 1 IP address is required per worker node in your cluster.
 - 1 IP address is required each time that you update or replace a worker node. These IP addresses are eventually reclaimed and available for reuse.
@@ -127,14 +127,14 @@ Range requirements
 ### Public gateways
 {: #vpc_basics_pgw}
 
-A public gateway enables a subnet and all worker nodes that are attached to the subnet to establish outbound connections to the internet. If both the public and private cloud service endpoints are enabled for your cluster, you must enable a [public gateway](/docs/vpc?topic=vpc-about-networking-for-vpc#public-gateway-for-external-connectivity) on the VPC subnets that worker nodes are deployed to to access default {{site.data.keyword.redhat_openshift_notm}} components without being connected to your VPC's private network.
+A public gateway enables a subnet and all worker nodes that are attached to the subnet to establish outbound connections to the internet. If both the public and private cloud service endpoints are enabled for your cluster, you must enable a [public gateway](/docs/vpc?topic=vpc-about-networking-for-vpc) on the VPC subnets that worker nodes are deployed to to access default {{site.data.keyword.redhat_openshift_notm}} components without being connected to your VPC's private network.
 {: shortdesc}
 
 When you create a VPC cluster and enable both the public and private cloud service endpoints during cluster creation, the public cloud service endpoint is used by default for access to components such as the {{site.data.keyword.redhat_openshift_notm}} web console for your cluster. In order for console pods to establish a secure, public connection over the internet through the public service endpoint, you must enable a public gateway on each VPC subnet that your worker nodes are deployed to.
 
 When you create a VPC cluster and enable only the private cloud service endpoint during cluster creation, the private cloud service endpoint is used by default to access {{site.data.keyword.redhat_openshift_notm}} components such as the {{site.data.keyword.redhat_openshift_notm}} web console or OperatorHub. You must be connected to the private VPC network, such as through a VPN connection, to access these components or run `kubectl` commands on your cluster. Also, if an {{site.data.keyword.cloud_notm}} service does not support private cloud service endpoints, your worker nodes must be connected to a subnet that has a public gateway attached to it. The pods on those worker nodes can securely communicate with the services over the public network through the subnet's public gateway. Note that a public gateway is not required on your subnets to allow inbound network traffic from the internet to `LoadBalancer` services or ALBs.
 
-Within one VPC, you can create only one public gateway per zone, but that public gateway can be attached to multiple subnets within the zone. For more information about public gateways, see the [Networking for VPC documentation](/docs/vpc?topic=vpc-about-networking-for-vpc#public-gateway-for-external-connectivity).
+Within one VPC, you can create only one public gateway per zone, but that public gateway can be attached to multiple subnets within the zone. For more information about public gateways, see the [Networking for VPC documentation](/docs/vpc?topic=vpc-about-networking-for-vpc).
 
 ### Virtual private endpoints (VPE)
 {: #vpc_basics_vpe}

@@ -2,7 +2,7 @@
 
 copyright:
   years: 2025, 2026
-lastupdated: "2026-04-14"
+lastupdated: "2026-05-01"
 
 
 keywords: openshift, openshift data foundation, openshift container storage, disaster recovery
@@ -75,7 +75,7 @@ For each cluster, make sure to allow outbound traffic by including the `--disabl
 1. [Create a VPC cluster](/docs/openshift?topic=openshift-cluster-create-vpc-gen2) in `us-east` to install ACM on. This is the hub cluster that you can use to manage your ODF clusters. Make sure your hub cluster has at least 3 worker nodes that run RHCOS and a minimum of 6 VCPU and 64 GB, and meets all of the [prequisites for ACM](/docs/openshift?topic=openshift-acm&interface=ui#before). The following example command creates a cluster for ACM in `us-east`.
 
     ```sh
-    ibmcloud ks cluster create vpc-gen2 --flavor bx2.8x32 --name acm-hub-cluster-dr-odf --subnet-id 0101-0a10101-01a0-1a010-a10b-a101a0a101a0 --vpc-id r010-1aa01a0a-11a0-101a-01aa-1aaa0aaa1001 --zone us-east-2 --version 4.20.15_openshift --workers 3 --cos-instance crn:v1:bluemix:public :cloud-object-storage:global:a/a101a0101010aaaa1a0101aa0a101aa0:000aaaa-aaaa-10aa-a01a-aa1a01aa10a0:: --disable-outbound-traffic-protection
+    ibmcloud ks cluster create vpc-gen2 --flavor bx2.8x32 --name acm-hub-cluster-dr-odf --subnet-id 0101-0a10101-01a0-1a010-a10b-a101a0a101a0 --vpc-id r010-1aa01a0a-11a0-101a-01aa-1aaa0aaa1001 --zone us-east-2 --version 4.20.18_openshift --workers 3 --cos-instance crn:v1:bluemix:public :cloud-object-storage:global:a/a101a0101010aaaa1a0101aa0a101aa0:000aaaa-aaaa-10aa-a01a-aa1a01aa10a0:: --disable-outbound-traffic-protection
     ```
     {: pre}
 
@@ -84,7 +84,7 @@ For each cluster, make sure to allow outbound traffic by including the `--disabl
 1. [Create a VPC cluster](/docs/openshift?topic=openshift-cluster-create-vpc-gen2) in `us-east` with at least 3 worker nodes that run RHCOS and a minimum flavor of `6x64` and with outbound traffic protection disabled. This will be the primary managed ODF cluster. The following example command creates a cluster in `us-east.`
 
     ```sh
-    ibmcloud ks cluster create vpc-gen2 --flavor bx2.8x32 --name managed-cluster-1-dr-odf --subnet-id 0101-0a10101-01a0-1a010-a10b-a101a0a101a0 --vpc-id r010-1aa01a0a-11a0-101a-01aa-1aaa0aaa1001 --zone us-east-2 --version 4.20.15_openshift --workers 3 --cos-instance crn:v1:bluemix:public :cloud-object-storage:global:a/a101a0101010aaaa1a0101aa0a101aa0:000aaaa-aaaa-10aa-a01a-aa1a01aa10a0:: --disable-outbound-traffic-protection
+    ibmcloud ks cluster create vpc-gen2 --flavor bx2.8x32 --name managed-cluster-1-dr-odf --subnet-id 0101-0a10101-01a0-1a010-a10b-a101a0a101a0 --vpc-id r010-1aa01a0a-11a0-101a-01aa-1aaa0aaa1001 --zone us-east-2 --version 4.20.18_openshift --workers 3 --cos-instance crn:v1:bluemix:public :cloud-object-storage:global:a/a101a0101010aaaa1a0101aa0a101aa0:000aaaa-aaaa-10aa-a01a-aa1a01aa10a0:: --disable-outbound-traffic-protection
     ```
     {: pre}
 
@@ -92,7 +92,7 @@ For each cluster, make sure to allow outbound traffic by including the `--disabl
 1. [Create a VPC cluster](/docs/openshift?topic=openshift-cluster-create-vpc-gen2) in `jp-tok` with at least 3 worker nodes that run RHCOS and a minimum flavor of `6x64` and with outbound traffic protection disabled. This will be the secondary managed ODF cluster. For high availability, make sure that the secondary cluster's network does not overlap with the primary cluster's network. The following example command creates a cluster in `jp-tok`.
 
     ```sh
-    ibmcloud ks cluster create vpc-gen2 --flavor bx2.8x32 --name managed-cluster-2-dr-odf --subnet-id 0101-0a10101-01a0-1a010-a10b-a101a0a101a0 --vpc-id r010-1aa01a0a-11a0-101a-01aa-1aaa0aaa1001 --zone jp-tok --version 4.20.15_openshift --workers 3 --cos-instance crn:v1:bluemix:public :cloud-object-storage:global:a/a101a0101010aaaa1a0101aa0a101aa0:000aaaa-aaaa-10aa-a01a-aa1a01aa10a0:: --disable-outbound-traffic-protection
+    ibmcloud ks cluster create vpc-gen2 --flavor bx2.8x32 --name managed-cluster-2-dr-odf --subnet-id 0101-0a10101-01a0-1a010-a10b-a101a0a101a0 --vpc-id r010-1aa01a0a-11a0-101a-01aa-1aaa0aaa1001 --zone jp-tok --version 4.20.18_openshift --workers 3 --cos-instance crn:v1:bluemix:public :cloud-object-storage:global:a/a101a0101010aaaa1a0101aa0a101aa0:000aaaa-aaaa-10aa-a01a-aa1a01aa10a0:: --disable-outbound-traffic-protection
     ```
     {: pre}
 

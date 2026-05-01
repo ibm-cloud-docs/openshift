@@ -2,7 +2,7 @@
 
 copyright:
   years: 2023, 2026
-lastupdated: "2026-04-30"
+lastupdated: "2026-05-01"
 
 
 keywords: openshift, openshift data foundation, openshift container storage, ocs, worker update, worker replace
@@ -125,7 +125,7 @@ Repeat these health checks before repeating the update procedure for additional 
 
 	Example command:
 	```sh
-	ibmcloud oc cluster master update --cluster mycluster --version 4.20.15 --force-update
+	ibmcloud oc cluster master update --cluster mycluster --version 4.20.18 --force-update
 	```
 	{: pre}
 	

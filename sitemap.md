@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2026
-lastupdated: "2026-04-29"
+lastupdated: "2026-05-01"
 
 
 keywords: openshift
@@ -286,6 +286,10 @@ subcollection: openshift
 [Release notes](/docs/openshift?topic=openshift-openshift-relnotes#openshift-relnotes)
 
 * [April 2026](/docs/openshift?topic=openshift-openshift-relnotes#openshift-apr26)
+
+    * [30 April 2026](/docs/openshift?topic=openshift-openshift-relnotes#openshift-apr3026)
+
+        * CLI version 1.0.765 is available
 
     * [28 April 2026](/docs/openshift?topic=openshift-openshift-relnotes#openshift-apr2826)
 
@@ -6408,6 +6412,8 @@ subcollection: openshift
 
 * [Version 1.0](/docs/openshift?topic=openshift-cs_cli_changelog#10)
 
+* [Version v1.0.765](/docs/openshift?topic=openshift-cs_cli_changelog#cli-01765)
+
 * [Version v1.0.763](/docs/openshift?topic=openshift-cs_cli_changelog#cli-01763)
 
 * [Version v1.0.762](/docs/openshift?topic=openshift-cs_cli_changelog#cli-01762)
@@ -6579,6 +6585,8 @@ subcollection: openshift
 * [`istio` 1.26](/docs/openshift?topic=openshift-supported-cluster-addon-versions#istio-1.26)
 
 * [`istio` 1.27](/docs/openshift?topic=openshift-supported-cluster-addon-versions#istio-1.27)
+
+* [`istio` 1.28](/docs/openshift?topic=openshift-supported-cluster-addon-versions#istio-1.28)
 
 * [`openshift-ai` 416](/docs/openshift?topic=openshift-supported-cluster-addon-versions#openshift-ai-416)
 
