@@ -2,7 +2,7 @@
 
 copyright:
   years: 2025, 2026
-lastupdated: "2026-04-29"
+lastupdated: "2026-05-04"
 
 keywords: openshift, virtualization, virtual machines, vms, bare metal
 
@@ -134,7 +134,6 @@ Flavors with `d` suffix include NVME local storage, which is required for OpenSh
 | Storage | Performance | Snapshots | Cloning | Best for |
 |---------|-------------|-----------|---------|----------|
 | OpenShift Data Foundation | High | Yes | Yes | Production, high I/O workloads |
-| VPC File Storage | Moderate | No | No | Development, cost-sensitive |
 | IBM Storage Fusion | High | Yes | Yes | Enterprise with backup needs |
 {: caption="Storage options for OpenShift Virtualization" caption-side="bottom"}
 

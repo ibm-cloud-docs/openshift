@@ -2,7 +2,7 @@
 
 copyright:
   years: 2025, 2026
-lastupdated: "2026-04-29"
+lastupdated: "2026-05-04"
 
 keywords: openshift, virtualization, planning, prerequisites, bare metal
 
@@ -52,8 +52,7 @@ Select bare metal flavors based on your workload requirements. For a complete li
 For OpenShift Data Foundation (ODF)
 :   Use bare metal flavors with the `d` suffix or `3d` in the name, which include NVME local storage. ODF requires local disks for optimal performance.
 
-For VPC File Storage
-:   Any supported bare metal flavor can be used. However, flavors with local storage are still recommended for better overall performance.
+
 
 Workload considerations
 :   - **High-performance workloads**: Choose bare metal flavors with local storage and ODF
@@ -73,9 +72,16 @@ Single-pool setup
 :   - All components on bare metal nodes
     - Simpler but higher cost
 
+Single-zone deployments (recommended for virtualization)
+:   - Minimizes storage latency for VM workloads
+    - Simplifies VNI configuration (VNIs are zone-specific)
+    - Reduces cross-zone storage replication overhead
+
 Multi-zone deployments
-:   - ODF requires 3+ zones for high availability
-    - VNIs are zone-specific; avoid cross-zone VM migration when using VNIs
+:   - Provides better high availability
+    - ODF requires 3+ zones for HA
+    - Cross-zone storage replication can impact VM performance
+    - Avoid cross-zone VM migration when using VNIs
 
 ## Planning your storage solution
 {: #virt-plan-storage}
@@ -85,14 +91,14 @@ OpenShift Virtualization requires storage that supports ReadWriteMany (RWX) acce
 ### Storage decision matrix
 {: #virt-storage-matrix}
 
-| Use case | OpenShift Data Foundation | VPC File Storage |
-|----------|---------------------------|------------------|
-| High availability (multi-zone) | Recommended | Not recommended |
-| High read/write workloads | Recommended | Possible with high IOPS classes |
-| Low read/write or non-production | Costly | Recommended |
-| Snapshot and cloning support | Supported | Not supported |
-| Live migration | Supported | Supported |
-| Cost | Higher | Lower |
+| Use case | OpenShift Data Foundation |
+|----------|---------------------------|
+| High availability (multi-zone) | Recommended |
+| High read/write workloads | Recommended |
+| Low read/write or non-production | Costly |
+| Snapshot and cloning support | Supported |
+| Live migration | Supported |
+| Cost | Higher |
 {: caption="Storage solution comparison"}
 
 ### Storage options
@@ -103,12 +109,7 @@ OpenShift Data Foundation (ODF)
     - Requires: Bare metal with local NVME storage, 3+ nodes, 3+ zones for HA
     - See [Understanding ODF](/docs/openshift?topic=openshift-ocs-storage-prep)
 
-VPC File Storage
-:   - Best for: Development, cost-sensitive, low-moderate I/O
-    - Requires: Any bare metal flavor, VPC File CSI driver
-    - No snapshot/cloning support
-    - Recommended classes: `ibmc-vpc-file-1000-iops` or `ibmc-vpc-file-6000-iops`
-    - See [VPC File Storage profiles](/docs/vpc?topic=vpc-file-storage-profiles)
+
 
 ## Planning your networking setup
 {: #virt-plan-networking}
@@ -153,9 +154,12 @@ Example strategy
 {: #virt-plan-sizing}
 
 Minimum cluster
-:   3 bare metal nodes, 1 or 3 zones
+:   3 bare metal nodes in a single zone
 
-Production cluster
+Production cluster (single-zone recommended)
+:   3+ bare metal nodes in a single zone, additional VSI nodes for infrastructure
+
+Production cluster (multi-zone for HA)
 :   3+ bare metal nodes per zone, 3 zones, additional VSI nodes for infrastructure
 
 VM resource planning
@@ -163,8 +167,7 @@ VM resource planning
     - Example: 96 vCPU node provides ~86 vCPU for VMs
 
 Cost optimization
-:   1. Use VPC File Storage for non-production
-    2. Deploy infrastructure on VSIs
+:   Deploy infrastructure on VSIs
     3. Right-size VM resources
     4. Use appropriate storage IOPS classes
     5. Consider reserved capacity for long-term use

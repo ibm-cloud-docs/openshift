@@ -183,6 +183,7 @@ toc:
               - vpc-kube-policies.md
               - vpc-firewall.md
               - vpc-subnets.md
+              - vpc-vni.md
               - vpc-vpn.md
           - topicgroup:
               label: Satellite clusters

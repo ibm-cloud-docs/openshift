@@ -2845,6 +2845,26 @@ subcollection: openshift
 
     * [Creating VPC subnets for classic access from the CLI](/docs/openshift?topic=openshift-vpc-subnets&interface=cli#ca_subnet_cli)
 
+[Understanding Virtual Network Interfaces in VPC clusters](/docs/openshift?topic=openshift-vpc-vni#vpc-vni)
+
+* [What are Virtual Network Interfaces?](/docs/openshift?topic=openshift-vpc-vni#vpc-vni-about)
+
+* [VNI architecture in OpenShift clusters](/docs/openshift?topic=openshift-vpc-vni#vpc-vni-architecture)
+
+    * [Static VNIs](/docs/openshift?topic=openshift-vpc-vni#vpc-vni-static)
+
+    * [Dynamic VNIs](/docs/openshift?topic=openshift-vpc-vni#vpc-vni-dynamic)
+
+* [Key capabilities](/docs/openshift?topic=openshift-vpc-vni#vpc-vni-capabilities)
+
+* [Use cases](/docs/openshift?topic=openshift-vpc-vni#vpc-vni-use-cases)
+
+* [Limitations and considerations](/docs/openshift?topic=openshift-vpc-vni#vpc-vni-limitations)
+
+* [Prerequisites](/docs/openshift?topic=openshift-vpc-vni#vpc-vni-prereqs)
+
+* [Next steps](/docs/openshift?topic=openshift-vpc-vni#vpc-vni-next-steps)
+
 [Setting up VPC VPN connectivity](/docs/openshift?topic=openshift-vpc-vpnaas#vpc-vpnaas)
 
 * [Communication with resources in on-premises data centers](/docs/openshift?topic=openshift-vpc-vpnaas#onprem)
@@ -3757,7 +3777,7 @@ subcollection: openshift
 
 * [Before you begin](/docs/openshift?topic=openshift-virt-storage-setup#virt-storage-prereqs)
 
-* [Option 1: Setting up OpenShift Data Foundation](/docs/openshift?topic=openshift-virt-storage-setup#virt-storage-odf)
+* [Setting up OpenShift Data Foundation](/docs/openshift?topic=openshift-virt-storage-setup#virt-storage-odf)
 
     * [Prerequisites for ODF](/docs/openshift?topic=openshift-virt-storage-setup#virt-storage-odf-prereqs)
 
@@ -3767,29 +3787,11 @@ subcollection: openshift
 
     * [Verifying ODF installation](/docs/openshift?topic=openshift-virt-storage-setup#virt-storage-odf-verify)
 
-* [Option 2: Setting up VPC File Storage](/docs/openshift?topic=openshift-virt-storage-setup#virt-storage-vpc-file)
-
-    * [Prerequisites for VPC File Storage](/docs/openshift?topic=openshift-virt-storage-setup#virt-storage-vpc-file-prereqs)
-
-    * [Step 1: Disable VPC Block Storage as default](/docs/openshift?topic=openshift-virt-storage-setup#virt-storage-vpc-file-disable-block)
-
-    * [Step 2: Install the VPC File CSI driver](/docs/openshift?topic=openshift-virt-storage-setup#virt-storage-vpc-file-install)
-
-    * [Step 3: Set a default storage class](/docs/openshift?topic=openshift-virt-storage-setup#virt-storage-vpc-file-default)
-
-    * [Step 4: Configure storage profiles for VPC File Storage](/docs/openshift?topic=openshift-virt-storage-setup#virt-storage-vpc-file-profiles)
-
-    * [Verifying VPC File Storage installation](/docs/openshift?topic=openshift-virt-storage-setup#virt-storage-vpc-file-verify)
-
 * [Storage comparison](/docs/openshift?topic=openshift-virt-storage-setup#virt-storage-comparison)
 
 * [Troubleshooting storage setup](/docs/openshift?topic=openshift-virt-storage-setup#virt-storage-troubleshoot)
 
     * [ODF installation fails](/docs/openshift?topic=openshift-virt-storage-setup#virt-storage-ts-odf-fail)
-
-    * [VPC File Storage PVCs remain pending](/docs/openshift?topic=openshift-virt-storage-setup#virt-storage-ts-vpc-pending)
-
-    * [Storage profiles not updated](/docs/openshift?topic=openshift-virt-storage-setup#virt-storage-ts-profiles)
 
 * [Next steps](/docs/openshift?topic=openshift-virt-storage-setup#virt-storage-next-steps)
 
