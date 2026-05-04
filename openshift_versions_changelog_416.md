@@ -3,7 +3,7 @@
 copyright:
   years: 2024, 2026
 
-lastupdated: "2026-04-27"
+lastupdated: "2026-05-04"
 
 
 keywords: change log, version history, 4.16_openshift
@@ -47,7 +47,7 @@ The following table shows the components that are in the master fix pack 4.16.59
 
 | Component | Version | Description |
 | ---- | ---- | ---- |
-|etcd|v3.5.29|See the [etcd release notes](https://github.com/coreos/etcd/releases/v3.5.29).|
+|etcd|v3.5.29|See the [etcd release notes](https://github.com/etcd-io/etcd/releases/v3.5.29).|
 |IBM Cloud Controller Manager|v1.29.15-49|New version contains updates and security fixes.|
 |Key Management Service provider|2.10.23|New version contains updates and security fixes.|
 |Portieris admission controller|v0.13.37|See the [Portieris admission controller release notes](https://github.com/IBM/portieris/releases/tag/v0.13.37)|

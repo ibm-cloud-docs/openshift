@@ -3,7 +3,7 @@
 copyright:
   years: 2024, 2026
 
-lastupdated: "2026-03-16"
+lastupdated: "2026-05-04"
 
 
 keywords: change log, version history, OpenShift Data Foundation
@@ -39,8 +39,22 @@ Review the version history for OpenShift Data Foundation.
 {: shortdesc}
 
 
+## Version 4.21.0
+{: #cl-add-ons-openshift-data-foundation-4.21.0}
+
+
+
+
 ## Version 4.20.0
 {: #cl-add-ons-openshift-data-foundation-4.20.0}
+
+
+### 4.20.6, released 01 May 2026
+{: #cl-add-ons-openshift-data-foundation-4206}
+
+- Resolves the following CVEs: [CVE-2026-34986](https://nvd.nist.gov/vuln/detail/CVE-2026-34986){: external}, [CVE-2026-32281](https://nvd.nist.gov/vuln/detail/CVE-2026-32281){: external}, [CVE-2026-27135](https://nvd.nist.gov/vuln/detail/CVE-2026-27135){: external}, [CVE-2026-32288](https://nvd.nist.gov/vuln/detail/CVE-2026-32288){: external}, and [CVE-2026-32289](https://nvd.nist.gov/vuln/detail/CVE-2026-32289){: external}.
+- Updates Go to version `1.25.9`.
+- VA fixes. 
 
 
 ### 4.20.3, released 16 March 2026
@@ -60,6 +74,14 @@ Review the version history for OpenShift Data Foundation.
 
 ## Version 4.19.0
 {: #cl-add-ons-openshift-data-foundation-4.19.0}
+
+
+### 4.19.11, released 01 May 2026
+{: #cl-add-ons-openshift-data-foundation-41911}
+
+- Resolves the following CVEs: [CVE-2026-34986](https://nvd.nist.gov/vuln/detail/CVE-2026-34986){: external}, [CVE-2026-32281](https://nvd.nist.gov/vuln/detail/CVE-2026-32281){: external}, [CVE-2026-32288](https://nvd.nist.gov/vuln/detail/CVE-2026-32288){: external}, and [CVE-2026-32289](https://nvd.nist.gov/vuln/detail/CVE-2026-32289){: external}.
+- Updates Go to version `1.25.9`.
+- VA fixes. 
 
 
 ### 4.19.8, released 16 March 2026
@@ -94,6 +116,14 @@ Review the version history for OpenShift Data Foundation.
 
 ## Version 4.18.0
 {: #cl-add-ons-openshift-data-foundation-4.18.0}
+
+
+### 4.18.15, released 01 May 2026
+{: #cl-add-ons-openshift-data-foundation-41815}
+
+- Resolves the following CVEs: [CVE-2026-34986](https://nvd.nist.gov/vuln/detail/CVE-2026-34986){: external}, [CVE-2026-32281](https://nvd.nist.gov/vuln/detail/CVE-2026-32281){: external}, [CVE-2026-32288](https://nvd.nist.gov/vuln/detail/CVE-2026-32288){: external}, and [CVE-2026-32289](https://nvd.nist.gov/vuln/detail/CVE-2026-32289){: external}.
+- Updates Go to version `1.25.9`.
+- VA fixes. 
 
 
 ### 4.18.12, released 16 March 2026
@@ -143,6 +173,14 @@ Review the version history for OpenShift Data Foundation.
 
 ## Version 4.17.0
 {: #cl-add-ons-openshift-data-foundation-4.17.0}
+
+
+### 4.17.20, released 01 May 2026
+{: #cl-add-ons-openshift-data-foundation-41720}
+
+- Resolves the following CVEs: [CVE-2026-34986](https://nvd.nist.gov/vuln/detail/CVE-2026-34986){: external}, [CVE-2026-32281](https://nvd.nist.gov/vuln/detail/CVE-2026-32281){: external}, [CVE-2026-32288](https://nvd.nist.gov/vuln/detail/CVE-2026-32288){: external}, and [CVE-2026-32289](https://nvd.nist.gov/vuln/detail/CVE-2026-32289){: external}.
+- Updates Go to version `1.25.9`.
+- VA fixes. 
 
 
 ### 4.17.17, released 16 March 2026
@@ -198,6 +236,14 @@ Review the version history for OpenShift Data Foundation.
 
 ## Version 4.16.0
 {: #cl-add-ons-openshift-data-foundation-4.16.0}
+
+
+### 4.16.26, released 01 May 2026
+{: #cl-add-ons-openshift-data-foundation-41626}
+
+- Resolves the following CVEs: [CVE-2026-34986](https://nvd.nist.gov/vuln/detail/CVE-2026-34986){: external}, [CVE-2026-32281](https://nvd.nist.gov/vuln/detail/CVE-2026-32281){: external}, [CVE-2026-32288](https://nvd.nist.gov/vuln/detail/CVE-2026-32288){: external}, and [CVE-2026-32289](https://nvd.nist.gov/vuln/detail/CVE-2026-32289){: external}.
+- Updates Go to version `1.25.9`.
+- VA fixes. 
 
 
 ### 4.16.23, released 16 March 2026
@@ -259,6 +305,14 @@ Review the version history for OpenShift Data Foundation.
 
 ## Version 4.15.0
 {: #cl-add-ons-openshift-data-foundation-4.15.0}
+
+
+### 4.15.26, released 01 May 2026
+{: #cl-add-ons-openshift-data-foundation-41526}
+
+- Resolves the following CVEs: [CVE-2026-34986](https://nvd.nist.gov/vuln/detail/CVE-2026-34986){: external}, [CVE-2026-32281](https://nvd.nist.gov/vuln/detail/CVE-2026-32281){: external}, [CVE-2026-32288](https://nvd.nist.gov/vuln/detail/CVE-2026-32288){: external}, and [CVE-2026-32289](https://nvd.nist.gov/vuln/detail/CVE-2026-32289){: external}.
+- Updates Go to version `1.25.9`.
+- VA fixes. 
 
 
 ### 4.15.23, released 16 March 2026

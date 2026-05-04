@@ -2,12 +2,14 @@
 
 copyright:
   years: 2014, 2026
-lastupdated: "2026-04-28"
+lastupdated: "2026-05-04"
 
 
 keywords: openshift, cli reference, kubernetes cli, openshift cli, {{site.data.keyword.openshiftlong_notm}}
 
 subcollection: openshift
+
+content-type: cli-docs
 
 
 ---

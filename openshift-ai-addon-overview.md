@@ -1,7 +1,7 @@
 ---
 copyright: 
   years: 2024, 2026
-lastupdated: "2026-04-27"
+lastupdated: "2026-05-04"
 
 
 keywords: openshift, {{site.data.keyword.openshiftlong_notm}}, ai, add-on
@@ -20,11 +20,9 @@ Use the OpenShift AI add-on to quickly deploy OpenShift AI in {{site.data.keywor
 
 Red Hat OpenShift AI is a flexible, scalable artificial intelligence and machine learning platform that enables enterprises to create and deliver AI-enabled applications at scale across hybrid cloud environments. OpenShift AI enables data acquisition and preparation, model training and fine-tuning, model serving and model monitoring, and hardware acceleration. For more information on the features and benefits of OpenShift AI, see [What is Red Hat OpenShift AI?](https://www.redhat.com/en/products/ai/openshift-ai){: external}.
 
-Want to deploy the OpenShift AI operator on a new cluster? Try the [OpenShift AI on IBM Cloud](https://cloud.ibm.com/catalog/7a4d68b4-cf8b-40cd-a3d1-f49aff526eb3/architecture/roks-rhoai-c24ae512-8b25-43d7-8fb3-4173c7e94472-global){: external} deployable architecture. 
-{: tip}
+- Want to deploy the OpenShift AI operator on a new cluster? Try the [OpenShift AI on IBM Cloud](https://cloud.ibm.com/catalog/7a4d68b4-cf8b-40cd-a3d1-f49aff526eb3/architecture/roks-rhoai-c24ae512-8b25-43d7-8fb3-4173c7e94472-global){: external} deployable architecture. 
+- Already have the add-on installed? Try out a [tutorial for using OpenShift AI for fraud detection](https://docs.redhat.com/en/documentation/red_hat_openshift_ai_self-managed/3.4){: external}
 
-Already have the add-on installed? Try out a [tutorial for using OpenShift AI for fraud detection](https://docs.redhat.com/en/documentation/red_hat_openshift_ai_self-managed/3.4){: external}
-{: tip}
 
 ## What gets deployed when I install the OpenShift AI add-on?
 {: #ai-addon-deployed}
@@ -104,10 +102,15 @@ You are responsible for updating all operators that are not managed by IBM. IBM 
 ## OpenShift AI add-on version 419 changes
 {: #ai-addon-version-419}
 
-OpenShift AI add-on version 419 includes Red Hat OpenShift AI version 3.3.0 and introduces significant changes to the platform. Review the following information before installing or upgrading to version 419.
-
-Upgrading from version 418 to 419 is not supported. Only fresh installations of version 419 are allowed.
+Upgrading from version 418 to 419 is not supported. Attempting to upgrade to 419 results in a breaking change. Disabling the older version of the add-on while enabling version 419 on the same setup may result in an unrecoverable state. Only fresh installations of version 419 are allowed.
 {: important}
+
+Do not attempt a manual update or migration until official guidelines are published.
+{: note}
+
+OpenShift AI add-on version 419 includes Red Hat OpenShift AI version 3.3.0 and introduces significant changes to the platform. Do not modify your existing add-on version in an attempt to obtain version 419.
+
+
 
 ### Components removed in version 419
 {: #ai-419-removed}
@@ -155,13 +158,14 @@ If you enable the Trainer component, you must install additional operators to ge
 Upgrading from OpenShift AI add-on version 418 to version 419 is not supported due to significant architectural changes in version 419.
 {: important}
 
-Do not run the `ibmcloud oc cluster addon update openshift-ai` command to upgrade from version 418 to 419. Do not use the UI to upgrade from version 418 to 419. Only fresh installations of version 419 are supported.
+To use 419, you can't have previously installed any version of the add-on. You must perform a fresh installation of OpenShift AI add-on version 419.
 
-To use version 419, you must:
-1. Remove the existing OpenShift AI add-on version 418 from your cluster.
-2. Perform a fresh installation of OpenShift AI add-on version 419.
+- Do not run the `ibmcloud oc cluster addon update openshift-ai` command to upgrade from version 418 to 419.
+- Do not attempt to upgrade from version 418 to 419.
 
-For installation instructions, see [Installing the Red Hat OpenShift AI add-on](/docs/openshift?topic=openshift-ai-addon-install).
+Do not attempt a manual update or migration until official guidelines are published.
+{: note}
+
 
 ## What's next?
 {: #ai-addon-ov-next}
