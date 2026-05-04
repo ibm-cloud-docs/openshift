@@ -3821,11 +3821,6 @@ subcollection: openshift
 
 * [Next steps](/docs/openshift?topic=openshift-oc-virtualization#virt-install-next-steps)
 
-
-### Configuring virtual machines
-{: #sitemap_configuring_virtual_machines}
-
-
 [Managing virtual network interfaces](/docs/openshift?topic=openshift-vni-virtualization#vni-virtualization)
 
 * [Understanding Virtual Network Interfaces](/docs/openshift?topic=openshift-vni-virtualization#vni-about)
@@ -8726,8 +8721,8 @@ subcollection: openshift
 [Why can't my VSIs access VPE gateway?](/docs/openshift?topic=openshift-ts-sbd-vsi-vpe#ts-sbd-vsi-vpe)
 
 
-### OpenShift Virtualization
-{: #sitemap_openshift_virtualization1}
+### OpenShift Virtualization troubleshooting
+{: #sitemap_openshift_virtualization_troubleshooting}
 
 
 [Why does the OpenShift Virtualization Operator installation fail?](/docs/openshift?topic=openshift-ts-virt-operator-install-fails#ts-virt-operator-install-fails)
