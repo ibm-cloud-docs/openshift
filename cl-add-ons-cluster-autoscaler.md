@@ -3,7 +3,7 @@
 copyright:
   years: 2024, 2026
 
-lastupdated: "2026-03-26"
+lastupdated: "2026-05-04"
 
 
 keywords: change log, version history, Cluster autoscaler
@@ -41,6 +41,18 @@ Review the version history for Cluster autoscaler.
 
 ## Version 2.0.0
 {: #cl-add-ons-cluster-autoscaler-2.0.0}
+
+
+### v200-7-0_332133224, released 30 April 2026
+{: #cl-add-ons-cluster-autoscaler-v200-7-0_332133224}
+
+- Update storage secret sidecar 1.3.44 
+- `1.30.7 200-7`
+- `1.31.5 200-7`
+- `1.32.7 200-7`
+- `1.33.4 200-7`
+- `1.34.4 200-7`
+- `1.35.0 200-7`
 
 
 ### v200-6-0_326846817, released 24 March 2026
