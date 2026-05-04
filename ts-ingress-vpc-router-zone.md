@@ -1,8 +1,8 @@
 ---
 
 copyright:
-  years: 2014, 2024
-lastupdated: "2024-01-03"
+  years: 2014, 2026
+lastupdated: "2026-05-04"
 
 
 keywords: openshift
@@ -24,7 +24,7 @@ content-type: troubleshoot
 [Virtual Private Cloud]{: tag-vpc}
 
 
-You create a multizone VPC cluster. However, when you run `ibmcloud is load-balancers` to find the VPC load balancer that exposes the Ingress controller, the VPC subnet for only one zone in your cluster is listed instead of the subnets for all zones in your cluster. In the output, look for the VPC load balancer **Name** that starts with `kube-crtmgr-<cluster_ID>`.
+You create a multizone VPC cluster. However, when you run `ibmcloud is load-balancers` to find the VPC load balancer that exposes the Ingress controller, the VPC subnet for only one zone in your cluster is listed instead of the subnets for all zones in your cluster. In the output, look for the VPC load balancer name that starts with `kube-crtmgr-<cluster_ID>`.
 {: tsSymptoms}
 
 ```sh
@@ -35,10 +35,8 @@ r006-d044af9b-92bf-4047-8f77-a7b86efcb923   kube-bsaucubd07dhl66e4tgg-1f4f408ce6
 
 
 
-When you create a {{site.data.keyword.redhat_openshift_notm}} cluster on VPC infrastructure in the CLI, the cluster is initially created with worker nodes in one zone only.
-{: tsCauses} 
-
-You then make the cluster multizone by manually adding zones to your worker pools with the `ibmcloud oc zone add vpc-gen2` command. Currently, when you add zones to your cluster, the Ingress controller is not updated with the VPC subnets for the new zones, and does not route requests to apps in the new zones.
+When you create a {{site.data.keyword.redhat_openshift_notm}} cluster on VPC infrastructure in the CLI, the cluster is initially created with worker nodes in one zone only. You then make the cluster multizone by manually adding zones to your worker pools with the `ibmcloud oc zone add vpc-gen2` command. Currently, when you add zones to your cluster, the Ingress controller is not updated with the VPC subnets for the new zones, and does not route requests to apps in the new zones.
+{: tsCauses}
 
 Restart the Ingress controller so that a new VPC load balancer is created, which registers the Ingress controller behind a hostname and forwards traffic to the Ingress controller. Then, update your Ingress subdomain to use the new VPC load balancer hostname.
 {: tsResolve}
@@ -63,8 +61,11 @@ Restart the Ingress controller so that a new VPC load balancer is created, which
     ```
     {: pre}
     
-    After running the `delete svc` command to delete the service, you might need to remove the finalizers to fully remove the service. Run the following command to delete the finalizers on the service. `oc get svc -n openshift-ingress router-default -o=json | jq '.metadata.finalizers = null' | kubectl apply -f -`
-    {: note}
+    After running the `delete svc` command to delete the service, you might need to remove the finalizers to fully remove the service. Run the following command to delete the finalizers on the service:
+    ```sh
+    oc get svc -n openshift-ingress router-default -o=json | jq '.metadata.finalizers = null' | kubectl apply -f -
+    ```
+    {: pre}
 
 3. Verify that the new VPC load balancer that exposes the Ingress controller has **Provision status** of `active` and an **Operating status** of `online`. Also, verify that the **Subnets** list now includes subnets for each zone of your cluster.
     ```sh
@@ -72,7 +73,7 @@ Restart the Ingress controller so that a new VPC load balancer is created, which
     ```
     {: pre}
 
-    In the output, look for the VPC load balancer **Name** that starts with `kube-crtmgr-<cluster_ID>`.
+    In the output, look for the VPC load balancer name that starts with `kube-crtmgr-<cluster_ID>`.
     ```sh
     ID                                          Name                                                         Family        Subnets               Is public   Provision status   Operating status   Resource group
     r006-d044af9b-92bf-4047-8f77-a7b86efcb923   kube-bsaucubd07dhl66e4tgg-1f4f408ce6d2485499bcbdec0fa2d306   Application   mysubnet-us-south-1, mysubnet-us-south-2, mysubnet-us-south-3   true        active             online             default
@@ -126,6 +127,3 @@ Restart the Ingress controller so that a new VPC load balancer is created, which
     mycluster-d84d4d2137685d8446c88eacf59b5038-0000.us-south.containers.appdomain.cloud   1234abcd-us-south.lb.appdomain.cloud   created           cluster-d84d4d2137685d8446c88eacf59b5038-0000   openshift-ingress
     ```
     {: screen}
-
-
-

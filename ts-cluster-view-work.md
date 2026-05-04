@@ -1,8 +1,8 @@
 ---
 
 copyright: 
-  years: 2014, 2024
-lastupdated: "2024-05-29"
+  years: 2014, 2024, 2026
+lastupdated: "2026-05-04"
 
 
 keywords: kubernetes, openshift
@@ -25,10 +25,8 @@ content-type: troubleshoot
 
 [Virtual Private Cloud]{: tag-vpc} [Classic infrastructure]{: tag-classic-inf}
 
-You are not able to find a cluster. When you run `ibmcloud oc cluster ls`, the cluster is not listed in the output.
+You can't find a cluster. When you run `ibmcloud oc cluster ls`, the cluster is not listed in the output. Or, you can't work with a cluster. When you run `ibmcloud oc cluster config` or other cluster-specific commands, the cluster is not found.
 {: tsSymptoms}
-
-Or, you are not able to work with a cluster. When you run `ibmcloud oc cluster config` or other cluster-specific commands, the cluster is not found.
 
 
 
@@ -53,7 +51,7 @@ To check your user access permissions:
     {: pre}
 
 2. Check if you have access to the cluster and to the resource group that the cluster is in.
-    1. Look for a policy that has a **Resource Group Name** value of the cluster's resource group and a **Memo** value of `Policy applies to the resource group`. If you have this policy, you have access to the resource group. For example, this policy indicates that a user has access to the `test-rg` resource group:
+    1. Look for a policy that has a **Resource Group Name** value of the cluster's resource group and a **Memo** value of `Policy applies to the resource group`. If you have this policy, you have access to the resource group. For example, the following policy indicates that a user has access to the `test-rg` resource group:
         ```sh
         Policy ID:   3ec2c069-fc64-4916-af9e-e6f318e2a16c
         Roles:       Viewer
@@ -64,7 +62,7 @@ To check your user access permissions:
         ```
         {: screen}
 
-    2. Look for a policy that has a **Resource Group Name** value of the cluster's resource group, a **Service Name** value of `containers-kubernetes` or no value, and a **Memo** value of `Policy applies to the resource(s) within the resource group`. If you this policy, you have access to clusters or to all resources within the resource group. For example, this policy indicates that a user has access to clusters in the `test-rg` resource group:
+    2. Look for a policy that has a **Resource Group Name** value of the cluster's resource group, a **Service Name** value of `containers-kubernetes` or no value, and a **Memo** value of `Policy applies to the resource(s) within the resource group`. If you have this policy, you have access to clusters or to all resources within the resource group. For example, the following policy indicates that a user has access to clusters in the `test-rg` resource group:
         ```sh
         Policy ID:   e0ad889d-56ba-416c-89ae-a03f3cd8eeea
         Roles:       Administrator
@@ -83,7 +81,7 @@ To check your user access permissions:
     3. If you have both of these policies, skip to Step 4, first bullet. If you don't have the policy from Step 2a, but you do have the policy from Step 2b, skip to Step 4, second bullet. If you don't have either of these policies, continue to Step 3.
 
 3. Check if you have access to the cluster, but not as part of access to the resource group that the cluster is in.
-    1. Look for a policy that has no values besides the **Policy ID** and **Roles** fields. If you have this policy, you have access to the cluster as part of access to the entire account. For example, this policy indicates that a user has access to all resources in the account:
+    1. Look for a policy that has no values besides the **Policy ID** and **Roles** fields. If you have this policy, you have access to the cluster as part of access to the entire account. For example, the following policy indicates that a user has access to all resources in the account:
         ```sh
         Policy ID:   8898bdfd-d520-49a7-85f8-c0d382c4934e
         Roles:       Administrator, Manager
@@ -96,7 +94,7 @@ To check your user access permissions:
         ```
         {: screen}
 
-    2. Look for a policy that has a **Service Name** value of `containers-kubernetes` and a **Service Instance** value of the cluster's ID. You can find a cluster ID by running `ibmcloud oc cluster get --cluster <cluster_name>`. For example, this policy indicates that a user has access to a specific cluster:
+    2. Look for a policy that has a **Service Name** value of `containers-kubernetes` and a **Service Instance** value of the cluster's ID. You can find a cluster ID by running `ibmcloud oc cluster get --cluster <cluster_name>`. For example, the following policy indicates that a user has access to a specific cluster:
         ```sh
         Policy ID:   140555ce-93ac-4fb2-b15d-6ad726795d90
         Roles:       Administrator
@@ -114,7 +112,7 @@ To check your user access permissions:
 4. Depending on your access policies, choose one of the following options. 
 
     - If you have access to the cluster and to the resource group that the cluster is in:
-        1. Target the resource group. **Note**: You can't work with clusters in other resource groups until you change this resource group.
+        1. Target the resource group. You can't work with clusters in other resource groups until you change this resource group.
             ```sh
             ibmcloud target -g <resource_group>
             ```
@@ -152,6 +150,3 @@ To check your user access permissions:
             ibmcloud oc cluster config --cluster <cluster_name_or_ID>
             ```
             {: pre}
-
-
-

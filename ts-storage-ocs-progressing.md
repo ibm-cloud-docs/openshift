@@ -1,8 +1,8 @@
 ---
 
 copyright:
-  years: 2021, 2024
-lastupdated: "2024-01-03"
+  years: 2021, 2026
+lastupdated: "2026-05-04"
 
 
 keywords: openshift, storage
@@ -27,13 +27,13 @@ To determine why your storage cluster status is stuck, describe your storage clu
 
 1. [Access your {{site.data.keyword.redhat_openshift_notm}} cluster](/docs/openshift?topic=openshift-access_cluster).
 
-2. Run the command to describe NooBaa. Note any error messages in the `Events` section of the output.
+1. Run the command to describe NooBaa. Note any error messages in the `Events` section of the output.
     ```sh 
     oc describe noobaa -n openshift-storage
     ```
     {: pre}
 
-3. List the name of your ODF storage cluster.
+1. List the name of your ODF storage cluster.
     ```sh
     oc get ocscluster
     ```
@@ -46,7 +46,7 @@ To determine why your storage cluster status is stuck, describe your storage clu
     ```
     {: screen}
 
-4. Describe your ODF storage cluster. Note any error messages in the `Events` section of the output.
+1. Describe your ODF storage cluster. Note any error messages in the `Events` section of the output.
     ```sh 
     oc describe ocscluster <ocscluster_name>
     ```
@@ -68,13 +68,4 @@ Error: Cloud credentials secret "ibm-cloud-cos-creds" is not ready yet
 ```
 {: screen}
 
-You want to use {{site.data.keyword.cos_full_notm}} as a backing store for your ODF cluster, but the credentials specified in the `ibm-cloud-cos-creds` secret are invalid. 
-
-Verify your {{site.data.keyword.cos_short}} credentials and [update the Kubernetes secret for your {{site.data.keyword.cos_short}} service credentials](/docs/openshift?topic=openshift-storage-cos-understand#create_cos_secret).
-
-
-
-
-
-
-
+You want to use {{site.data.keyword.cos_full_notm}} as a backing store for your ODF cluster, but the credentials specified in the `ibm-cloud-cos-creds` secret are invalid. Verify your {{site.data.keyword.cos_short}} credentials and [update the Kubernetes secret for your {{site.data.keyword.cos_short}} service credentials](/docs/openshift?topic=openshift-storage-cos-understand#create_cos_secret).
