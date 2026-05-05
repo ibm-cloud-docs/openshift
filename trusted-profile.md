@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2025, 2026
-lastupdated: "2026-04-23"
+lastupdated: "2026-05-04"
 
 
 keywords: trusted profiles, containers, block storage, openshift
@@ -40,10 +40,10 @@ Scoped permissions
 ## Minimum access requirements for all storage components
 {: #tp-minreqs-all}
 
-A minimum set of access policies are required for a trusted profile to be used for your storage components. The policies in this section are required to set up trusted profiles for all storage storage components.
+A minimum set of access policies are required for a trusted profile to be used for your storage components. The policies in this section are required to set up trusted profiles for all storage components.
 
-Create a trust relationship with the following configuration. These permissions are required for VPC clusters. 
-- Compute service type (found under the **Compute resource tab** in the UI) :
+Create a trust relationship with the following configuration. These permissions are required for VPC clusters.
+- Compute service type (found under the **Compute resource** tab in the UI):
     - `Kubernetes`
     - `Red Hat OpenShift`
 - Trusted namespace: `kube-system`.
@@ -59,7 +59,7 @@ Create access policies with the permissions in the following table.
 {: caption="Minimum permissions for all components" caption-side="bottom"}
 
 
-Additionally, if you plan to use **Classic infrastructure** you must enable the **Add/Upgrade Storage (Storage Layer)** and **Storage Manage** permissions. To enable these permissions, navigate to the [Trusted profile dashboard](https://cloud.ibm.com/iam/trusted-profiles){: external} in the UI and select the relevant trusted profile. Click **Classic infrastructure**, then expand the options under **Sales** and **Devices** to find the permission. 
+Additionally, if you plan to use **Classic infrastructure**, you must enable the **Add/Upgrade Storage (Storage Layer)** and **Storage Manage** permissions. To enable these permissions, navigate to the [Trusted profile dashboard](https://cloud.ibm.com/iam/trusted-profiles){: external} in the UI and select the relevant trusted profile. Click **Classic infrastructure**, then expand the options under **Sales** and **Devices** to find the permissions.
 
 
 ## Minimum access requirements for individual storage components
@@ -71,7 +71,7 @@ A minimum set of access policies are required for a trusted profile to be used f
 {: #tp-minreqs-vpc-block}
 
 Create a trust relationship with the following configuration.
-- Compute service type (found under the **Compute resource tab** in the UI) :
+- Compute service type (found under the **Compute resource** tab in the UI):
     - `Kubernetes`
     - `Red Hat OpenShift`
 - Trusted namespace: `kube-system`.
@@ -89,7 +89,7 @@ Create access policies with the permissions in the following table.
 {: #tp-minreqs-classic-block}
 
 Create a trust relationship with the following configuration.
-- Compute service type (found under the **Compute resource tab** in the UI) :
+- Compute service type (found under the **Compute resource** tab in the UI):
     - `Kubernetes`
     - `Red Hat OpenShift`
 - Trusted namespace: `kube-system`.
@@ -102,13 +102,12 @@ Add the permissions in the following table. To enable these permissions, you mus
 | `Sales` | **Add/Upgrade Storage(Storage Layer)** | Grants permission to order, upgrade, or modify Classic storage offerings via the Sales APIs. |
 {: caption="Minimum permissions for Classic Block storage" caption-side="bottom"}
 
-Compute service type  in compute resource  tab instead of Compute resources
 
 ### VPC file storage
 {: #tp-minreqs-vpc-file}
 
 Create a trust relationship with the following configuration.
-- Compute service type (found under the **Compute resource tab** in the UI) :
+- Compute service type (found under the **Compute resource** tab in the UI):
     - `Kubernetes`
     - `Red Hat OpenShift`
 - Trusted namespace: `kube-system`.
@@ -126,7 +125,7 @@ Create access policies with the permissions in the following table.
 {: #tp-minreqs-classic-file}
 
 Create a trust relationship with the following configuration.
-- Compute service type (found under the **Compute resource tab** in the UI) :
+- Compute service type (found under the **Compute resource** tab in the UI):
     - `Kubernetes`
     - `Red Hat OpenShift`
 - Trusted namespace: `kube-system`.
@@ -144,7 +143,7 @@ Add the permissions in the following table. To enable these permissions, you mus
 {: #tp-minreqs-autoscaler}
 
 Create a trust relationship with the following configuration.
-- Compute service type (found under the **Compute resource tab** in the UI) :
+- Compute service type (found under the **Compute resource** tab in the UI):
     - `Kubernetes`
     - `Red Hat OpenShift`
 - Trusted namespace: `kube-system`.
@@ -160,7 +159,7 @@ Create access policies with the permissions in the following table.
 {: #tp-minreqs-cos}
 
 Create a trust relationship with the following configuration.
-- Compute service type (found under the **Compute resource tab** in the UI) :
+- Compute service type (found under the **Compute resource** tab in the UI):
     - `Kubernetes`
     - `Red Hat OpenShift`
 - Trusted namespace: `kube-system`.
@@ -178,7 +177,7 @@ Create access policies with the permissions in the following table.
 {: #tp-minreqs-odf-billing}
 
 Create a trust relationship with the following configuration.
-- Compute service type (found under the **Compute resource tab** in the UI) :
+- Compute service type (found under the **Compute resource** tab in the UI):
     - `Kubernetes`
     - `Red Hat OpenShift`
 - Trusted namespace: `kube-system`.
@@ -263,7 +262,7 @@ Once you add a trusted profile to a cluster, it cannot be removed and you cannot
 {: #tp-setup-ui}
 {: ui}
 
-Follow the steps to create and set up a trusted profile in the CLI.
+Follow the steps to create and set up a trusted profile in the UI.
 
 Once you add a trusted profile to a cluster, it cannot be removed and you cannot resume using an API key for your resources. Make sure that you follow these steps carefully to ensure that your trusted profile is set up correctly. 
 {: important}
@@ -275,8 +274,8 @@ Once you add a trusted profile to a cluster, it cannot be removed and you cannot
 3. Create a trust relationship with the {{site.data.keyword.openshiftlong_notm}} service. 
     1. In the **Select trusted entity type** section, click **Compute resources**.
     2. Under **Create trust relationship**, choose **Red Hat OpenShift**.
-    3. Select **All service resources**. Then add a condition to allow access when **Namespace** is **Equal** to `kube-system`. 
-        - Note: You can instead choose specific resources that exist in your account. 
+    3. Select **All service resources**. Then, add a condition to allow access when **Namespace** is **Equal** to `kube-system`.
+        - You can instead choose specific resources that exist in your account.
 
 4. Click **Create**.
 
@@ -582,10 +581,10 @@ Once you add a trusted profile to a cluster, it cannot be removed and you cannot
 Review the following limitations and considerations before you use trusted profiles. 
 
 Irreversible transition to trusted profile
-:   Once a trusted profile is configured at the cluster or resource group level, reverting to using an API key is not supported. Follow the steps carefully to ensure that the trusted profile is configured correctly. 
+:   After a trusted profile is configured at the cluster or resource group level, reverting to using an API key is not supported. Follow the steps carefully to ensure that the trusted profile is configured correctly.
 
-Verification scope is limited to the `kube-system` namespace. 
-:   Trusted profile trust validation is currently limited to the `kube-system` namespace for Kubernetes and Red Hat OpenShift clusters. Users experimenting with other trusted profile features or configurations outside this scope may encounter issues. 
+Verification scope is limited to the `kube-system` namespace
+:   Trusted profile trust validation is currently limited to the `kube-system` namespace for Kubernetes and Red Hat OpenShift clusters. Users experimenting with other trusted profile features or configurations outside this scope might encounter issues.
 
 User tags for VPC Block Storage volumes
-:   Due to a known issue, updates to user tags on VPC Block Storage volumes might not be displayed when a trusted profile is implemented. 
+:   Due to a known issue, updates to user tags on VPC Block Storage volumes might not be displayed when a trusted profile is implemented.

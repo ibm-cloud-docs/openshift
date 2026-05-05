@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2026
-lastupdated: "2026-05-04"
+lastupdated: "2026-05-05"
 
 
 keywords: openshift
@@ -286,6 +286,14 @@ subcollection: openshift
 [Release notes](/docs/openshift?topic=openshift-openshift-relnotes#openshift-relnotes)
 
 * [May 2026](/docs/openshift?topic=openshift-openshift-relnotes#openshift-may26)
+
+    * [05 May 2026](/docs/openshift?topic=openshift-openshift-relnotes#openshift-may0526)
+
+        * IBM Cloud Image Key Synchronizer cluster add-on patch updates.
+
+    * [04 May 2026](/docs/openshift?topic=openshift-openshift-relnotes#openshift-may0426)
+
+        * {{site.data.keyword.openshiftlong_notm}} worker node fix packs are available.
 
     * [01 May 2026](/docs/openshift?topic=openshift-openshift-relnotes#openshift-may0126)
 
@@ -2845,6 +2853,26 @@ subcollection: openshift
 
     * [Creating VPC subnets for classic access from the CLI](/docs/openshift?topic=openshift-vpc-subnets&interface=cli#ca_subnet_cli)
 
+[Understanding Virtual Network Interfaces in VPC clusters](/docs/openshift?topic=openshift-vpc-vni#vpc-vni)
+
+* [What are Virtual Network Interfaces?](/docs/openshift?topic=openshift-vpc-vni#vpc-vni-about)
+
+* [VNI architecture in OpenShift clusters](/docs/openshift?topic=openshift-vpc-vni#vpc-vni-architecture)
+
+    * [Static VNIs](/docs/openshift?topic=openshift-vpc-vni#vpc-vni-static)
+
+    * [Dynamic VNIs](/docs/openshift?topic=openshift-vpc-vni#vpc-vni-dynamic)
+
+* [Key capabilities](/docs/openshift?topic=openshift-vpc-vni#vpc-vni-capabilities)
+
+* [Use cases](/docs/openshift?topic=openshift-vpc-vni#vpc-vni-use-cases)
+
+* [Limitations and considerations](/docs/openshift?topic=openshift-vpc-vni#vpc-vni-limitations)
+
+* [Prerequisites](/docs/openshift?topic=openshift-vpc-vni#vpc-vni-prereqs)
+
+* [Next steps](/docs/openshift?topic=openshift-vpc-vni#vpc-vni-next-steps)
+
 [Setting up VPC VPN connectivity](/docs/openshift?topic=openshift-vpc-vpnaas#vpc-vpnaas)
 
 * [Communication with resources in on-premises data centers](/docs/openshift?topic=openshift-vpc-vpnaas#onprem)
@@ -3757,7 +3785,7 @@ subcollection: openshift
 
 * [Before you begin](/docs/openshift?topic=openshift-virt-storage-setup#virt-storage-prereqs)
 
-* [Option 1: Setting up OpenShift Data Foundation](/docs/openshift?topic=openshift-virt-storage-setup#virt-storage-odf)
+* [Setting up OpenShift Data Foundation](/docs/openshift?topic=openshift-virt-storage-setup#virt-storage-odf)
 
     * [Prerequisites for ODF](/docs/openshift?topic=openshift-virt-storage-setup#virt-storage-odf-prereqs)
 
@@ -3767,29 +3795,11 @@ subcollection: openshift
 
     * [Verifying ODF installation](/docs/openshift?topic=openshift-virt-storage-setup#virt-storage-odf-verify)
 
-* [Option 2: Setting up VPC File Storage](/docs/openshift?topic=openshift-virt-storage-setup#virt-storage-vpc-file)
-
-    * [Prerequisites for VPC File Storage](/docs/openshift?topic=openshift-virt-storage-setup#virt-storage-vpc-file-prereqs)
-
-    * [Step 1: Disable VPC Block Storage as default](/docs/openshift?topic=openshift-virt-storage-setup#virt-storage-vpc-file-disable-block)
-
-    * [Step 2: Install the VPC File CSI driver](/docs/openshift?topic=openshift-virt-storage-setup#virt-storage-vpc-file-install)
-
-    * [Step 3: Set a default storage class](/docs/openshift?topic=openshift-virt-storage-setup#virt-storage-vpc-file-default)
-
-    * [Step 4: Configure storage profiles for VPC File Storage](/docs/openshift?topic=openshift-virt-storage-setup#virt-storage-vpc-file-profiles)
-
-    * [Verifying VPC File Storage installation](/docs/openshift?topic=openshift-virt-storage-setup#virt-storage-vpc-file-verify)
-
 * [Storage comparison](/docs/openshift?topic=openshift-virt-storage-setup#virt-storage-comparison)
 
 * [Troubleshooting storage setup](/docs/openshift?topic=openshift-virt-storage-setup#virt-storage-troubleshoot)
 
     * [ODF installation fails](/docs/openshift?topic=openshift-virt-storage-setup#virt-storage-ts-odf-fail)
-
-    * [VPC File Storage PVCs remain pending](/docs/openshift?topic=openshift-virt-storage-setup#virt-storage-ts-vpc-pending)
-
-    * [Storage profiles not updated](/docs/openshift?topic=openshift-virt-storage-setup#virt-storage-ts-profiles)
 
 * [Next steps](/docs/openshift?topic=openshift-virt-storage-setup#virt-storage-next-steps)
 
@@ -3818,11 +3828,6 @@ subcollection: openshift
     * [Operator installation fails](/docs/openshift?topic=openshift-oc-virtualization#virt-install-ts-operator-fail)
 
 * [Next steps](/docs/openshift?topic=openshift-oc-virtualization#virt-install-next-steps)
-
-
-### Configuring virtual machines
-{: #sitemap_configuring_virtual_machines}
-
 
 [Managing virtual network interfaces](/docs/openshift?topic=openshift-vni-virtualization#vni-virtualization)
 
@@ -5017,6 +5022,8 @@ subcollection: openshift
 
 * [Version 4.20](/docs/openshift?topic=openshift-openshift_changelog_420#420_components)
 
+    * [Worker node fix pack 4.20.19_1546_openshift, released 04 May 2026](/docs/openshift?topic=openshift-openshift_changelog_420#cl-boms-42019_1546_openshift_W)
+
     * [Master fix pack 4.20.18_1545_openshift, released 27 April 2026](/docs/openshift?topic=openshift-openshift_changelog_420#cl-boms_master-42018_1545_openshift_M)
 
     * [Worker node fix pack 4.20.18_1544_openshift, released 20 April 2026](/docs/openshift?topic=openshift-openshift_changelog_420#cl-boms-42018_1544_openshift_W)
@@ -5143,6 +5150,8 @@ subcollection: openshift
 * [Overview](/docs/openshift?topic=openshift-openshift_changelog_419#changelog_overview_419)
 
 * [Version 4.19](/docs/openshift?topic=openshift-openshift_changelog_419#419_components)
+
+    * [Worker node fix pack 4.19.29_1577_openshift, released 04 May 2026](/docs/openshift?topic=openshift-openshift_changelog_419#cl-boms-41929_1577_openshift_W)
 
     * [Master fix pack 4.19.25_1576_openshift, released 27 April 2026](/docs/openshift?topic=openshift-openshift_changelog_419#cl-boms_master-41925_1576_openshift_M)
 
@@ -5302,6 +5311,8 @@ subcollection: openshift
 * [Overview](/docs/openshift?topic=openshift-openshift_changelog_418#changelog_overview_418)
 
 * [Version 4.18](/docs/openshift?topic=openshift-openshift_changelog_418#418_components)
+
+    * [Worker node fix pack 4.18.38_1587_openshift, released 04 May 2026](/docs/openshift?topic=openshift-openshift_changelog_418#cl-boms-41838_1587_openshift_W)
 
     * [Master fix pack 4.18.37_1586_openshift, released 27 April 2026](/docs/openshift?topic=openshift-openshift_changelog_418#cl-boms_master-41837_1586_openshift_M)
 
@@ -5485,6 +5496,8 @@ subcollection: openshift
 * [Overview](/docs/openshift?topic=openshift-openshift_changelog_417#changelog_overview_417)
 
 * [Version 4.17](/docs/openshift?topic=openshift-openshift_changelog_417#417_components)
+
+    * [Worker node fix pack 4.17.52_1583_openshift, released 04 May 2026](/docs/openshift?topic=openshift-openshift_changelog_417#cl-boms-41752_1583_openshift_W)
 
     * [Master fix pack 4.17.52_1582_openshift, released 27 April 2026](/docs/openshift?topic=openshift-openshift_changelog_417#cl-boms_master-41752_1582_openshift_M)
 
@@ -5704,6 +5717,8 @@ subcollection: openshift
 * [Overview](/docs/openshift?topic=openshift-openshift_changelog_416#changelog_overview_416)
 
 * [Version 4.16](/docs/openshift?topic=openshift-openshift_changelog_416#416_components)
+
+    * [Worker node fix pack 4.16.60_1614_openshift, released 04 May 2026](/docs/openshift?topic=openshift-openshift_changelog_416#cl-boms-41660_1614_openshift_W)
 
     * [Master fix pack 4.16.59_1613_openshift, released 27 April 2026](/docs/openshift?topic=openshift-openshift_changelog_416#cl-boms_master-41659_1613_openshift_M)
 
@@ -7698,6 +7713,8 @@ subcollection: openshift
 
 * [Version 1.0.0](/docs/openshift?topic=openshift-cl-add-ons-ibm-cloud-image-key-synchronizer#cl-add-ons-ibm-cloud-image-key-synchronizer-1.0.0)
 
+    * [1.0.0_334950440, released 05 May 2026](/docs/openshift?topic=openshift-cl-add-ons-ibm-cloud-image-key-synchronizer#cl-add-ons-ibm-cloud-image-key-synchronizer-100_334950440)
+
     * [1.0.0_325458899, released 24 March 2026](/docs/openshift?topic=openshift-cl-add-ons-ibm-cloud-image-key-synchronizer#cl-add-ons-ibm-cloud-image-key-synchronizer-100_325458899)
 
     * [1.0.0_320394467, released 03 March 2026](/docs/openshift?topic=openshift-cl-add-ons-ibm-cloud-image-key-synchronizer#cl-add-ons-ibm-cloud-image-key-synchronizer-100_320394467)
@@ -8724,8 +8741,8 @@ subcollection: openshift
 [Why can't my VSIs access VPE gateway?](/docs/openshift?topic=openshift-ts-sbd-vsi-vpe#ts-sbd-vsi-vpe)
 
 
-### OpenShift Virtualization
-{: #sitemap_openshift_virtualization1}
+### OpenShift Virtualization troubleshooting
+{: #sitemap_openshift_virtualization_troubleshooting}
 
 
 [Why does the OpenShift Virtualization Operator installation fail?](/docs/openshift?topic=openshift-ts-virt-operator-install-fails#ts-virt-operator-install-fails)

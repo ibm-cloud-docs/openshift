@@ -1,8 +1,8 @@
 ---
 
 copyright: 
-  years: 2014, 2026
-lastupdated: "2026-04-30"
+  years: 2024, 2026
+lastupdated: "2026-05-04"
 
 
 keywords: openshift, {{site.data.keyword.openshiftlong_notm}}, kubernetes, help, network, connectivity
@@ -72,7 +72,7 @@ Follow the steps to gather logging information.
 
 1. Create the `debug-pvc` PVC in your cluster.
     ```sh
-    oc create -f debug-pvc.yaml>
+    oc create -f debug-pvc.yaml
     ```
     {: pre}
 
@@ -121,14 +121,14 @@ Follow the steps to gather logging information.
               hostNetwork: true
               containers:
                 - name: inspectnode
-                image: alpine:latest
-                command: ["/bin/sh"]
-                args: ["-c", "while true; do msg=$(date); echo $msg; sleep 30; done"]
-                securityContext:
-                    runAsUser: 0
-                volumeMounts:
-                  - mountPath: /host/var/log
-                    name: host-log
+                  image: alpine:latest
+                  command: ["/bin/sh"]
+                  args: ["-c", "while true; do msg=$(date); echo $msg; sleep 30; done"]
+                  securityContext:
+                      runAsUser: 0
+                  volumeMounts:
+                    - mountPath: /host/var/log
+                      name: host-log
               volumes:
                 - name: host-log
                   hostPath:
@@ -157,7 +157,7 @@ Follow the steps to gather logging information.
     ```
     {: pre}
 
-1. Review the `syslog` and the `s3fslog` for information about the `Transport endpoint` error. [Open a support ticket](/docs/openshift?topic=openshift-get-help) and share the log files that you gathered.
+1. Review the `syslog` and `s3fslog` files for information about the `Transport endpoint` error. [Open a support ticket](/docs/openshift?topic=openshift-get-help) and share the log files that you gathered.
 
 1. Delete the `ibm-inspectnode` DaemonSet that you deployed.
 

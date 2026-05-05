@@ -1,8 +1,8 @@
 ---
 
 copyright:
-  years: 2022, 2024
-lastupdated: "2024-04-19"
+  years: 2022, 2026
+lastupdated: "2026-05-04"
 
 
 keywords: openshift
@@ -28,7 +28,7 @@ In VPC clusters with worker nodes in a VPC subnet that doesn't have a public gat
 {: tsSymptoms}
 
 
-The images for these containers are hosted on a public image registry but the workers do not have access to the public internet, so the workers cannot to pull the image. The cluster still works, but these pods and the openshift marketplace does not work. If you run the `kubectl get pods` command, you get output such as:
+The images for these containers are hosted on a public image registry, but the workers do not have access to the public internet, so the workers cannot pull the image. The cluster still works, but these pods and the OpenShift marketplace do not work. If you run the `kubectl get pods` command, you get output such as the following:
 {: tsCauses}
 
 ```sh
