@@ -1,8 +1,8 @@
 ---
 
-copyright: 
-  years: 2014, 2024, 2026
-lastupdated: "2026-05-04"
+copyright:
+  years: 2014, 2026
+lastupdated: "2026-05-05"
 
 
 keywords: kubernetes, openshift
