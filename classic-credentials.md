@@ -73,8 +73,7 @@ To set infrastructure account credentials to access the IBM Cloud infrastructure
     {: screen}
 
 1. [Create a cluster](/docs/openshift?topic=openshift-clusters). To create the cluster, the infrastructure credentials that you set for the region and resource group are used.
-
 1. Verify that your cluster uses the infrastructure account credentials that you set.
-    1. Open the [{{site.data.keyword.cloud_notm}} clusters console](https://cloud.ibm.com/kubernetes/clusters){: external} and select your cluster. 
-    1. In the Overview tab, look for an **Infrastructure User** field. 
+    1. Open the [{{site.data.keyword.cloud_notm}} clusters console](https://cloud.ibm.com/kubernetes/clusters){: external} and select your cluster.
+    1. In the Overview tab, look for an **Infrastructure User** field.
     1. If you see that field, you don't use the default infrastructure credentials that come with your Pay-As-You-Go or Subscription account in this region. Instead, the region is set to use the different infrastructure account credentials that you set.

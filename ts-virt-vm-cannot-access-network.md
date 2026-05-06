@@ -3,7 +3,7 @@
 copyright:
   years: 2026, 2026
 
-lastupdated: "2026-04-21"
+lastupdated: "2026-05-06"
 
 keywords: openshift virtualization, vm network, user defined network, vni, ovn
 
@@ -50,7 +50,7 @@ To resolve the issue,
 
 3. If you use VNI-based networking, review the VNI attachments for the cluster.
    ```sh
-   ibmcloud ks experimental vni ls --cluster-id <cluster_id>
+   ibmcloud ks vni ls --cluster-id <cluster_id>
    ```
    {: pre}
 

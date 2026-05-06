@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2026
-lastupdated: "2026-04-30"
+lastupdated: "2026-05-06"
 
 
 keywords: openshift, {{site.data.keyword.openshiftlong_notm}}, oc, ks
@@ -32,6 +32,16 @@ Refer to the following change logs for a summary of changes for each version of 
 Review the following changes for 1.0 versions of the CLI plug-in.
 {: shortdesc}
 
+
+## Version v1.0.768
+{: #cli-01768}
+
+Version 1.0.768 of the CLI was released on 05 May 2026.
+- Promotes Virtual Network Interface (VNI) commands from experimental to generally available. The new commands include:
+  - `ibmcloud ks vni attach baremetal` - Attach a VNI to a bare metal worker node or cluster
+  - `ibmcloud ks vni detach` - Detach a VNI from a worker node or cluster
+  - `ibmcloud ks vni ls` - List VNIs attached to a cluster or worker node
+- Includes general refactoring and improvements.
 
 ## Version v1.0.765
 {: #cli-01765}

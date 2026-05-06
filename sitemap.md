@@ -287,6 +287,12 @@ subcollection: openshift
 
 * [May 2026](/docs/openshift?topic=openshift-openshift-relnotes#openshift-may26)
 
+    * [06 May 2026](/docs/openshift?topic=openshift-openshift-relnotes#openshift-may0626)
+
+        * Virtual Network Interface (VNI) management commands are now generally available
+
+        * CLI version 1.0.768 is available
+
     * [05 May 2026](/docs/openshift?topic=openshift-openshift-relnotes#openshift-may0526)
 
         * IBM Cloud Image Key Synchronizer cluster add-on patch updates.
@@ -2871,6 +2877,14 @@ subcollection: openshift
 
 * [Prerequisites](/docs/openshift?topic=openshift-vpc-vni#vpc-vni-prereqs)
 
+* [Managing VNIs with the CLI](/docs/openshift?topic=openshift-vpc-vni#vpc-vni-cli)
+
+    * [Attaching a VNI to a worker node](/docs/openshift?topic=openshift-vpc-vni#vpc-vni-cli-attach)
+
+    * [Listing VNI attachments](/docs/openshift?topic=openshift-vpc-vni#vpc-vni-cli-list)
+
+    * [Detaching a VNI](/docs/openshift?topic=openshift-vpc-vni#vpc-vni-cli-detach)
+
 * [Next steps](/docs/openshift?topic=openshift-vpc-vni#vpc-vni-next-steps)
 
 [Setting up VPC VPN connectivity](/docs/openshift?topic=openshift-vpc-vpnaas#vpc-vpnaas)
@@ -3880,6 +3894,8 @@ subcollection: openshift
     * [Why is live migration pending across worker pools?](/docs/openshift?topic=openshift-vni-virtualization#vni-ts-migration)
 
     * [Why are dynamic attached VNIs not working?](/docs/openshift?topic=openshift-vni-virtualization#vni-ts-not-working)
+
+    * [Why does my worker node enter a critical state after reload with VNIs attached?](/docs/openshift?topic=openshift-vni-virtualization#vni-ts-worker-reload)
 
 
 ## Storage
@@ -6337,14 +6353,6 @@ subcollection: openshift
 
     * [`ibmcloud oc vlan spanning get`](/docs/openshift?topic=openshift-kubernetes-service-cli#cs_vlan_spanning_get)
 
-    * [`ibmcloud oc experimental vni attach baremetal`](/docs/openshift?topic=openshift-kubernetes-service-cli#experimental-vni-attach-baremetal-cli)
-
-    * [`ibmcloud oc experimental vni attach virtual`](/docs/openshift?topic=openshift-kubernetes-service-cli#experimental-vni-attach-virtual-cli)
-
-    * [`ibmcloud oc experimental vni detach`](/docs/openshift?topic=openshift-kubernetes-service-cli#experimental-vni-detach-cli)
-
-    * [`ibmcloud oc experimental vni ls`](/docs/openshift?topic=openshift-kubernetes-service-cli#experimental-vni-ls-cli)
-
 * [`ibmcloud oc vpc ls`](/docs/openshift?topic=openshift-kubernetes-service-cli#vpc-ls-cli)
 
     * [Command options](/docs/openshift?topic=openshift-kubernetes-service-cli#vpc-ls-options)
@@ -6356,6 +6364,18 @@ subcollection: openshift
 * [`ibmcloud oc vpc outbound-traffic-protection enable`](/docs/openshift?topic=openshift-kubernetes-service-cli#vpc-outbound-traffic-protection-enable-cli)
 
     * [Command options](/docs/openshift?topic=openshift-kubernetes-service-cli#vpc-outbound-traffic-protection-enable-options)
+
+* [`ibmcloud oc vni attach baremetal`](/docs/openshift?topic=openshift-kubernetes-service-cli#vni-attach-baremetal-cli)
+
+    * [Command options](/docs/openshift?topic=openshift-kubernetes-service-cli#vni-attach-baremetal-options)
+
+* [`ibmcloud oc vni detach`](/docs/openshift?topic=openshift-kubernetes-service-cli#vni-detach-cli)
+
+    * [Command options](/docs/openshift?topic=openshift-kubernetes-service-cli#vni-detach-options)
+
+* [`ibmcloud oc vni ls`](/docs/openshift?topic=openshift-kubernetes-service-cli#vni-ls-cli)
+
+    * [Command options](/docs/openshift?topic=openshift-kubernetes-service-cli#vni-ls-options)
 
 * [`flavor` command](/docs/openshift?topic=openshift-kubernetes-service-cli#cs_machine_types)
 
@@ -6438,6 +6458,8 @@ subcollection: openshift
 [CLI change log](/docs/openshift?topic=openshift-cs_cli_changelog#cs_cli_changelog)
 
 * [Version 1.0](/docs/openshift?topic=openshift-cs_cli_changelog#10)
+
+* [Version v1.0.768](/docs/openshift?topic=openshift-cs_cli_changelog#cli-01768)
 
 * [Version v1.0.765](/docs/openshift?topic=openshift-cs_cli_changelog#cli-01765)
 
@@ -8762,6 +8784,10 @@ subcollection: openshift
 [Why can't a virtual machine access the network?](/docs/openshift?topic=openshift-ts-virt-vm-cannot-access-network#ts-virt-vm-cannot-access-network)
 
 [Why does a VNI attachment fail?](/docs/openshift?topic=openshift-ts-virt-vni-attachment-fails#ts-virt-vni-attachment-fails)
+
+[Why does my worker node enter a critical state after reload with VNIs attached?](/docs/openshift?topic=openshift-ts-virt-worker-reload-ovn#ts-virt-worker-reload-ovn)
+
+* [Related links](/docs/openshift?topic=openshift-ts-virt-worker-reload-ovn#ts-virt-worker-reload-ovn-related)
 
 [Why is the localnet user defined network not working?](/docs/openshift?topic=openshift-ts-virt-localnet-udn-not-working#ts-virt-localnet-udn-not-working)
 

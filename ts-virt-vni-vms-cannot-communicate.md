@@ -3,7 +3,7 @@
 copyright:
   years: 2026, 2026
 
-lastupdated: "2026-04-21"
+lastupdated: "2026-05-06"
 
 keywords: openshift virtualization, vni, vm communication, cudn, vlan, security group
 
@@ -37,7 +37,7 @@ Use the following checks to investigate the configuration.
 1. Verify that the VLAN ID matches between the ClusterUserDefinedNetwork (CUDN) and the VNI attachment.
    ```sh
    oc get clusteruserdefinednetwork <cudn_name> -o yaml
-   ibmcloud ks experimental vni ls --cluster-id <cluster_id>
+   ibmcloud ks vni ls --cluster-id <cluster_id>
    ```
    {: pre}
 

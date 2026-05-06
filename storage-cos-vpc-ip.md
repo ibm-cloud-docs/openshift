@@ -209,6 +209,3 @@ Minimum required permissions
         rm test.txt && exit
         ```
         {: pre}
-        
-        
-        

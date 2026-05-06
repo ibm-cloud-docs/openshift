@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2026
-lastupdated: "2026-05-05"
+lastupdated: "2026-05-06"
 
 
 keywords: kubernetes, release notes, openshift, {{site.data.keyword.openshiftlong_notm}}
@@ -31,6 +31,24 @@ Looking for {{site.data.keyword.cloud_notm}} status, platform announcements, sec
 
 
 
+
+### 06 May 2026
+{: #openshift-may0626}
+{: release-note}
+
+
+
+Virtual Network Interface (VNI) management commands are now generally available
+:   The VNI management commands have been promoted from experimental to GA in CLI version 1.0.768. Use the `ibmcloud ks vni` commands to manage Virtual Network Interfaces on VPC bare metal worker nodes. VNIs enable direct VPC network connectivity for workloads like OpenShift Virtualization VMs. For more information, see:
+    - [Understanding Virtual Network Interfaces in VPC clusters](/docs/openshift?topic=openshift-vpc-vni)
+    - [OpenShift Virtualization on IBM Cloud](/docs/openshift?topic=openshift-virt-overview)
+    - [Managing VNIs for OpenShift Virtualization](/docs/openshift?topic=openshift-vni-virtualization)
+    - [CLI reference](/docs/openshift?topic=openshift-kubernetes-service-cli#vni-attach-baremetal-cli)
+
+
+
+CLI version 1.0.768 is available
+:   For more information, see the [CLI change log](/docs/openshift?topic=openshift-cs_cli_changelog).
 
 
 ### 05 May 2026
