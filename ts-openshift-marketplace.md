@@ -2,7 +2,7 @@
 
 copyright:
   years: 2022, 2026
-lastupdated: "2026-05-04"
+lastupdated: "2026-05-06"
 
 
 keywords: openshift
@@ -17,7 +17,7 @@ content-type: troubleshoot
 
 
 
-# Pods in the `openshift-markeplace` namespace are in `ImagePullBackOff`
+# Pods in the `openshift-marketplace` namespace are in `ImagePullBackOff`
 {: #ts-openshift-marketplace}
 {: support}
 

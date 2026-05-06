@@ -1,8 +1,8 @@
 ---
 
 copyright: 
-  years: 2023, 2024
-lastupdated: "2024-05-29"
+  years: 2023, 2026
+lastupdated: "2026-05-06"
 
 
 keywords: kubernetes, openshift, pod security, reset, valid configuration, psa
@@ -26,7 +26,7 @@ When you use the `ibmcloud ks cluster master pod-security set` command with the 
 {: tsSymptoms}
 
 ```sh
-`The 'configuration' field is not a valid Kubernetes PodSecurityConfiguration setting. See 'http://ibm.biz/iks-psa-config' for more information.
+The 'configuration' field is not a valid Kubernetes PodSecurityConfiguration setting. See 'http://ibm.biz/iks-psa-config' for more information.
 ```
 {: screen}
 
@@ -42,5 +42,3 @@ Types of errors can include:
 
 Check the configuration file for these kinds of errors. Correct any errors you find and try the command again.
 {: tsResolve}
-
-
