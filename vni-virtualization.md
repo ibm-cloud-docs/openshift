@@ -2,7 +2,7 @@
 
 copyright:
   years: 2026, 2026
-lastupdated: "2026-04-29"
+lastupdated: "2026-05-06"
 
 keywords: openshift, vni, virtual network interface, virtualization, bare metal, localnet, udn
 
@@ -264,13 +264,13 @@ You can attach a VNI to a specific worker node (non-floating) or to the cluster 
 
 To attach a VNI to a specific worker node, run the following command.
 ```sh
-ibmcloud ks experimental vni attach baremetal --worker WORKER_ID --vni VNI_ID --vlan VLAN_ID [--auto-delete]
+ibmcloud ks vni attach baremetal --worker WORKER_ID --vni VNI_ID --vlan VLAN_ID [--auto-delete]
 ```
 {: pre}
 
 To attach a floating VNI to the cluster, run the following command.
 ```sh
-ibmcloud ks experimental vni attach baremetal --cluster-id CLUSTER_ID --vni VNI_ID --vlan VLAN_ID [--auto-delete]
+ibmcloud ks vni attach baremetal --cluster-id CLUSTER_ID --vni VNI_ID --vlan VLAN_ID [--auto-delete]
 ```
 {: pre}
 
@@ -296,7 +296,7 @@ VNIs, subnets, and worker nodes are zonal resources. The VNI compute zone must m
 {: #vni-attach-example}
 
 ```sh
-ibmcloud ks experimental vni attach baremetal --vni 0716-aac49630-f3b4-4ef6-9a3a-5145481697ba --worker kube-c9pqfcmw0tq431jdnrrg-mycluster-default-00000123 --vlan 251
+ibmcloud ks vni attach baremetal --vni 0716-aac49630-f3b4-4ef6-9a3a-5145481697ba --worker kube-c9pqfcmw0tq431jdnrrg-mycluster-default-00000123 --vlan 251
 ```
 {: pre}
 
@@ -314,13 +314,13 @@ kube-c9pqfcmw0tq431jdnrrg-mycluster-default-00000123   0716-aac49630-f3b4-4ef6-9
 
 To list all VNIs attached to a cluster, run the following command.
 ```sh
-ibmcloud ks experimental vni ls --cluster-id CLUSTER_ID
+ibmcloud ks vni ls --cluster-id CLUSTER_ID
 ```
 {: pre}
 
 To list VNIs attached to a specific worker, run the following command.
 ```sh
-ibmcloud ks experimental vni ls --worker WORKER_ID
+ibmcloud ks vni ls --worker WORKER_ID
 ```
 {: pre}
 
@@ -328,7 +328,7 @@ ibmcloud ks experimental vni ls --worker WORKER_ID
 {: #vni-list-example}
 
 ```sh
-ibmcloud ks experimental vni ls --cluster-id c9pqfcmw0tq431jdnrrg
+ibmcloud ks vni ls --cluster-id c9pqfcmw0tq431jdnrrg
 ```
 {: pre}
 
@@ -346,7 +346,7 @@ VNI ID                                      Worker Node                         
 To detach a VNI from a worker node, you must specify both the VNI ID and the worker ID.
 
 ```sh
-ibmcloud ks experimental vni detach --worker WORKER_ID --vni VNI_ID
+ibmcloud ks vni detach --worker WORKER_ID --vni VNI_ID
 ```
 {: pre}
 
@@ -357,7 +357,7 @@ For floating VNIs, first list the VNIs to find the current worker ID, then detac
 {: #vni-detach-example}
 
 ```sh
-ibmcloud ks experimental vni detach --vni 0716-aac49630-f3b4-4ef6-9a3a-5145481697ba --worker kube-c9pqfcmw0tq431jdnrrg-mycluster-default-00000123
+ibmcloud ks vni detach --vni 0716-aac49630-f3b4-4ef6-9a3a-5145481697ba --worker kube-c9pqfcmw0tq431jdnrrg-mycluster-default-00000123
 ```
 {: pre}
 
@@ -402,3 +402,10 @@ Check the following items:
 - Verify that the VLAN ID in the CUDN matches the VLAN ID in the VNI attachment. VPC DHCP might still work without further traffic if the VLAN is mismatched.
 - If floating is not enabled, make sure the workload is scheduled on the worker where the VNI is attached.
 - Verify that the dedicated OVS bridge and the mapping are present on the workers. Check the NodeNetworkConfigurationPolicy resource status.
+
+### Why does my worker node enter a critical state after reload with VNIs attached?
+{: #vni-ts-worker-reload}
+
+When you reload a bare metal worker node that has VNIs attached, the worker node might enter a `critical` state due to stale OVN annotations. Starting with OpenShift 4.20, OVN enforces immutability on certain node annotations. During a reload, the node's chassis ID changes, but old annotations remain, causing the `ovnkube-controller` to crash.
+
+To resolve this issue, you must manually remove the stale OVN annotations after the worker node is powered off during the reload operation. For detailed steps and the complete workaround, see [Why does my worker node enter a critical state after reload with VNIs attached?](/docs/openshift?topic=openshift-ts-virt-worker-reload-ovn).

@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2026
-lastupdated: "2026-03-05"
+lastupdated: "2026-05-06"
 
 
 keywords: openshift, {{site.data.keyword.openshiftlong_notm}}, upgrade, version, update cluster, update worker nodes, update cluster components, update cluster master
@@ -315,6 +315,13 @@ You notice that an update is available for your worker nodes in a VPC cluster. W
 
 If you have Portworx deployed in your cluster, follow the steps to [update VPC worker nodes with Portworx volumes](/docs/openshift?topic=openshift-storage_portworx_update#portworx_vpc_up).
 {: important}
+
+
+
+If you have Virtual Network Interfaces (VNIs) attached to bare metal worker nodes in OpenShift 4.20+ clusters, you must manually remove stale OVN annotations after reloading worker nodes to prevent the nodes from entering a critical state. For more information, see [Why does my worker node enter a critical state after reload with VNIs attached?](/docs/openshift?topic=openshift-ts-virt-worker-reload-ovn).
+{: important}
+
+
 
 It is good practice to [rotate your CA certificates](/docs/containers?topic=containers-cert-rotate) whenever you update your worker nodes, as the longest step of certificate rotation includes reloading or replacing your worker nodes.
 {: tip}

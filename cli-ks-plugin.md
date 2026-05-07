@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2026
-lastupdated: "2026-05-04"
+lastupdated: "2026-05-06"
 
 
 keywords: openshift, cli reference, kubernetes cli, openshift cli, {{site.data.keyword.openshiftlong_notm}}
@@ -7287,152 +7287,6 @@ ibmcloud oc vlan spanning get --region us-south
 
 
 
-### `ibmcloud oc experimental vni attach baremetal`
-{: #experimental-vni-attach-baremetal-cli}
-
-[Virtual Private Cloud]{: tag-vpc}
-
-[Expires on 2026-05-20] Attach a Virtual Network Interface to a bare metal worker node or cluster.
-{: shortdesc}
-
-```txt
-ibmcloud oc experimental vni attach baremetal --vlan VLAN --vni VNI [--auto-delete] [--output OUTPUT] [-q] (--cluster-id ID | --worker WORKER)
-```
-{: pre}
-
-**Minimum required permissions**: **Operator** platform access role for the cluster in {{site.data.keyword.containerlong_notm}}
-
-**Command options**:
-
-`--auto-delete`
-:    Automatically delete the VNI when it is removed from the cluster.
-
-`--cluster-id ID`, `-c ID`
-:    The ID of the cluster.
-
-`--output OUTPUT`
-:    Prints the command output in the provided format. Accepted values: `json`
-
-`-q`
-:    Do not show the message of the day or update reminders.
-
-`--vlan VLAN`
-:    The VLAN ID for the bare metal node attachment. Must be unique for each VPC subnet. Multiple VNIs from the same subnet can reuse the VLAN ID. Valid range: 1-500.
-
-`--vni VNI`
-:    The ID of the Virtual Network Interface to attach. You must specify VNIs without any current target resource. To list all the VNIs, run `ibmcloud is vnis`. To check if a specific VNI is already attached to a resource, check for the "Target" field in 'ibmcloud is vni <VNI_ID>.
-
-`--worker WORKER`, `-w WORKER`
-:    The ID of the worker node.
-
-
-### `ibmcloud oc experimental vni attach virtual`
-{: #experimental-vni-attach-virtual-cli}
-
-[Virtual Private Cloud]{: tag-vpc}
-
-[Expires on 2026-05-20] Attach a Virtual Network Interface to a virtual worker node.
-{: shortdesc}
-
-```txt
-ibmcloud oc experimental vni attach virtual --vni VNI --worker WORKER [--auto-delete] [--output OUTPUT] [-q]
-```
-{: pre}
-
-**Minimum required permissions**: **Operator** platform access role for the cluster in {{site.data.keyword.containerlong_notm}}
-
-**Command options**:
-
-`--auto-delete`
-:    Automatically delete the VNI when it is removed from the cluster.
-
-`--output OUTPUT`
-:    Prints the command output in the provided format. Accepted values: `json`
-
-`-q`
-:    Do not show the message of the day or update reminders.
-
-`--vni VNI`
-:    The ID of the Virtual Network Interface to attach. You must specify VNIs without any current target resource. To list all the VNIs, run `ibmcloud is vnis`. To check if a specific VNI is already attached to a resource, check for the "Target" field in 'ibmcloud is vni <VNI_ID>.
-
-`--worker WORKER`, `-w WORKER`
-:    The ID of the worker node.
-
-
-### `ibmcloud oc experimental vni detach`
-{: #experimental-vni-detach-cli}
-
-[Virtual Private Cloud]{: tag-vpc}
-
-[Expires on 2026-05-20] Detach a Virtual Network Interface from a worker node or cluster.
-{: shortdesc}
-
-```txt
-ibmcloud oc experimental vni detach --vni VNI [-f] [--output OUTPUT] [-q] (--cluster-id ID | --worker WORKER)
-```
-{: pre}
-
-**Minimum required permissions**: **Operator** platform access role for the cluster in {{site.data.keyword.containerlong_notm}}
-
-**Command options**:
-
-`--cluster-id ID`, `-c ID`
-:    The ID of the cluster.
-
-`-f`
-:    Force the command to run without user prompts.
-
-`--output OUTPUT`
-:    Prints the command output in the provided format. Accepted values: `json`
-
-`-q`
-:    Do not show the message of the day or update reminders.
-
-`--vni VNI`
-:    The ID of the Virtual Network Interface to detach.
-
-`--worker WORKER`, `-w WORKER`
-:    The ID of the worker node.
-
-
-### `ibmcloud oc experimental vni ls`
-{: #experimental-vni-ls-cli}
-
-[Virtual Private Cloud]{: tag-vpc}
-
-[Expires on 2026-05-20] List Virtual Network Interfaces attached to a cluster or worker node.
-{: shortdesc}
-
-```txt
-ibmcloud oc experimental vni ls [--after AFTER] [--first FIRST] [--output OUTPUT] [-q] (--cluster-id ID | --worker WORKER)
-```
-{: pre}
-
-**Minimum required permissions**: **Viewer** platform access role for the cluster in {{site.data.keyword.containerlong_notm}}
-
-**Command options**:
-
-`--after AFTER`
-:    Show Virtual Network Interfaces after the given cursor.
-
-`--cluster-id ID`, `-c ID`
-:    The ID of the cluster.
-
-`--first FIRST`
-:    View the next Virtual Network Interfaces, up to the first number of VNIs.
-
-`--output OUTPUT`
-:    Prints the command output in the provided format. Accepted values: `json`
-
-`-q`
-:    Do not show the message of the day or update reminders.
-
-`--worker WORKER`, `-w WORKER`
-:    The ID of the worker node.
-
-
-
-
 
 
 ## `ibmcloud oc vpc ls`
@@ -7508,6 +7362,119 @@ ibmcloud oc vpc outbound-traffic-protection enable --cluster CLUSTER [-f] [-q]
 :    Do not show the message of the day or update reminders.
 {: #vpc-outbound-traffic-protection-enable-options-dl}
 
+
+## `ibmcloud oc vni attach baremetal`
+{: #vni-attach-baremetal-cli}
+
+[Virtual Private Cloud]{: tag-vpc}
+
+Attach a Virtual Network Interface to a bare metal worker node or cluster.
+{: shortdesc}
+
+```txt
+ibmcloud oc vni attach baremetal --vlan VLAN --vni VNI [--auto-delete] [--output OUTPUT] [-q] (--cluster-id ID | --worker WORKER)
+```
+{: pre}
+{: #vni-attach-baremetal-usage}
+
+### Command options
+{: #vni-attach-baremetal-options}
+
+`--auto-delete`
+:    Automatically delete the VNI when it is removed from the cluster.
+
+`--cluster-id ID`, `-c ID`
+:    The ID of the cluster.
+
+`--output OUTPUT`
+:    Prints the command output in the provided format. Accepted values: `json`
+
+`-q`
+:    Do not show the message of the day or update reminders.
+
+`--vlan VLAN`
+:    The VLAN ID for the bare metal node attachment. Must be unique for each VPC subnet. Multiple VNIs from the same subnet can reuse the VLAN ID. Valid range: 1-500.
+
+`--vni VNI`
+:    The ID of the Virtual Network Interface to attach. You must specify VNIs without any current target resource. To list all the VNIs, run `ibmcloud is vnis`. To check if a specific VNI is already attached to a resource, check for the "Target" field in 'ibmcloud is vni <VNI_ID>.
+
+`--worker WORKER`, `-w WORKER`
+:    The ID of the worker node.
+{: #vni-attach-baremetal-options-dl}
+
+
+## `ibmcloud oc vni detach`
+{: #vni-detach-cli}
+
+[Virtual Private Cloud]{: tag-vpc}
+
+Detach a Virtual Network Interface from a worker node or cluster.
+{: shortdesc}
+
+```txt
+ibmcloud oc vni detach --vni VNI [-f] [--output OUTPUT] [-q] (--cluster-id ID | --worker WORKER)
+```
+{: pre}
+{: #vni-detach-usage}
+
+### Command options
+{: #vni-detach-options}
+
+`--cluster-id ID`, `-c ID`
+:    The ID of the cluster.
+
+`-f`
+:    Force the command to run without user prompts.
+
+`--output OUTPUT`
+:    Prints the command output in the provided format. Accepted values: `json`
+
+`-q`
+:    Do not show the message of the day or update reminders.
+
+`--vni VNI`
+:    The ID of the Virtual Network Interface to detach.
+
+`--worker WORKER`, `-w WORKER`
+:    The ID of the worker node.
+{: #vni-detach-options-dl}
+
+
+## `ibmcloud oc vni ls`
+{: #vni-ls-cli}
+
+[Virtual Private Cloud]{: tag-vpc}
+
+List Virtual Network Interfaces attached to a cluster or worker node.
+{: shortdesc}
+
+```txt
+ibmcloud oc vni ls [--after AFTER] [--first FIRST] [--output OUTPUT] [-q] (--cluster-id ID | --worker WORKER)
+```
+{: pre}
+{: #vni-ls-usage}
+
+### Command options
+{: #vni-ls-options}
+
+`--after AFTER`
+:    Show Virtual Network Interfaces after the given cursor.
+
+`--cluster-id ID`, `-c ID`
+:    The ID of the cluster.
+
+`--first FIRST`
+:    View the next Virtual Network Interfaces, up to the first number of VNIs.
+
+`--output OUTPUT`
+:    Prints the command output in the provided format. Accepted values: `json`
+
+`-q`
+:    Do not show the message of the day or update reminders.
+
+`--worker WORKER`, `-w WORKER`
+:    The ID of the worker node.
+{: #vni-ls-options-dl}
 
 
 ## `flavor` command

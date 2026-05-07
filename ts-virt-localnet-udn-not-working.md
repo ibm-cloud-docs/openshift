@@ -3,7 +3,7 @@
 copyright:
   years: 2026, 2026
 
-lastupdated: "2026-04-21"
+lastupdated: "2026-05-06"
 
 keywords: openshift virtualization, localnet, udn, nmstate, ovs bridge, vlan
 
@@ -59,7 +59,7 @@ To resolve the issue,
 4. Verify that the VLAN ID in the CUDN matches the VLAN that you plan to use.
    ```sh
    oc get clusteruserdefinednetwork <cudn_name> -o yaml | grep vlan
-   ibmcloud ks experimental vni ls --cluster-id <cluster_id>
+   ibmcloud ks vni ls --cluster-id <cluster_id>
    ```
    {: pre}
 

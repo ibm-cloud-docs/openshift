@@ -1,8 +1,8 @@
 ---
 
 copyright:
-  years: 2024, 2024
-lastupdated: "2024-05-10"
+  years: 2024, 2026
+lastupdated: "2026-05-06"
 
 
 keywords: openshift, {{site.data.keyword.openshiftlong_notm}}, clusters, access, endpoint, credentials, classic
@@ -48,37 +48,32 @@ To set infrastructure account credentials to access the IBM Cloud infrastructure
 
 1. Get the infrastructure account that you want to use to access the IBM Cloud infrastructure portfolio.
 
-
-1. Find and record your `infrastructure username`. You use this username when you set API credentials. 
+1. Find and record your `infrastructure username`. You use this username when you set API credentials.
     ```sh
-    ibmcloud oc ibmcloud sl user list
+    ibmcloud sl user list
     ```
-    {: pre}   
+    {: pre}
 
-    1. Set the infrastructure API credentials to use.
-        ```sh
-        ibmcloud oc credential set classic --infrastructure-username <infrastructure_API_username> --infrastructure-api-key <infrastructure_API_authentication_key> --region <region>
-        ```
-        {: pre}
+1. Set the infrastructure API credentials to use.
+    ```sh
+    ibmcloud oc credential set classic --infrastructure-username <infrastructure_API_username> --infrastructure-api-key <infrastructure_API_authentication_key> --region <region>
+    ```
+    {: pre}
 
-    1. Verify that the correct credentials are set.
-        ```sh
-        ibmcloud oc credential get --region <region>
-        ```
-        {: pre}
+1. Verify that the correct credentials are set.
+    ```sh
+    ibmcloud oc credential get --region <region>
+    ```
+    {: pre}
 
-        Example output
-        ```sh
-        Infrastructure credentials for user name user@email.com set for resource group default.
-        ```
-        {: screen}
+    Example output
+    ```sh
+    Infrastructure credentials for user name user@email.com set for resource group default.
+    ```
+    {: screen}
 
 1. [Create a cluster](/docs/openshift?topic=openshift-clusters). To create the cluster, the infrastructure credentials that you set for the region and resource group are used.
-
 1. Verify that your cluster uses the infrastructure account credentials that you set.
-    1. Open the [{{site.data.keyword.cloud_notm}} clusters console](https://cloud.ibm.com/kubernetes/clusters){: external} and select your cluster. 
-    1. In the Overview tab, look for an **Infrastructure User** field. 
+    1. Open the [{{site.data.keyword.cloud_notm}} clusters console](https://cloud.ibm.com/kubernetes/clusters){: external} and select your cluster.
+    1. In the Overview tab, look for an **Infrastructure User** field.
     1. If you see that field, you don't use the default infrastructure credentials that come with your Pay-As-You-Go or Subscription account in this region. Instead, the region is set to use the different infrastructure account credentials that you set.
-
-
-

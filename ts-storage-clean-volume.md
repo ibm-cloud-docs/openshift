@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2022, 2026
-lastupdated: "2026-05-04"
+lastupdated: "2026-05-06"
 
 
 keywords: openshift
@@ -73,7 +73,7 @@ Delete the storage volumes from your account.
 
     VPC clusters:
     ```sh
-    ibmcloud is vold VOLUME_ID
+    ibmcloud is volume-delete VOLUME_ID
     ```
     {: pre}
 

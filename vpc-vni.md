@@ -2,7 +2,7 @@
 
 copyright:
   years: 2026, 2026
-lastupdated: "2026-05-04"
+lastupdated: "2026-05-06"
 
 keywords: openshift, vni, virtual network interface, vpc, bare metal, networking
 
@@ -126,6 +126,63 @@ Before using VNIs in your cluster, ensure you have:
 - VPC infrastructure with appropriate subnets
 - The **Operator** platform access role for **Kubernetes Service** in {{site.data.keyword.cloud_notm}} IAM
 - The **Editor** or **Administrator** platform access role for VPC Infrastructure Services in {{site.data.keyword.cloud_notm}} IAM
+
+## Managing VNIs with the CLI
+{: #vpc-vni-cli}
+
+You can use the {{site.data.keyword.openshiftlong_notm}} CLI to attach, list, and detach VNIs from your cluster worker nodes.
+
+### Attaching a VNI to a worker node
+{: #vpc-vni-cli-attach}
+
+To attach a VNI to a specific bare metal worker node, use the `vni attach baremetal` command. You must specify a VLAN ID (range: 1-500) that matches your network configuration.
+
+```sh
+ibmcloud ks vni attach baremetal --worker WORKER_ID --vni VNI_ID --vlan VLAN_ID [--auto-delete]
+```
+{: pre}
+
+To attach a floating VNI that can follow workloads between workers in the same zone, specify the cluster ID instead of a worker ID:
+
+```sh
+ibmcloud ks vni attach baremetal --cluster-id CLUSTER_ID --vni VNI_ID --vlan VLAN_ID [--auto-delete]
+```
+{: pre}
+
+The `--auto-delete` flag automatically deletes the VNI when it is removed from the cluster.
+{: tip}
+
+### Listing VNI attachments
+{: #vpc-vni-cli-list}
+
+To list all VNIs attached to a cluster:
+
+```sh
+ibmcloud ks vni ls --cluster-id CLUSTER_ID
+```
+{: pre}
+
+To list VNIs attached to a specific worker node:
+
+```sh
+ibmcloud ks vni ls --worker WORKER_ID
+```
+{: pre}
+
+### Detaching a VNI
+{: #vpc-vni-cli-detach}
+
+To detach a VNI from a worker node, specify both the VNI ID and the worker ID:
+
+```sh
+ibmcloud ks vni detach --worker WORKER_ID --vni VNI_ID
+```
+{: pre}
+
+For floating VNIs, first list the VNIs to find the current worker ID, then detach using that worker ID.
+{: tip}
+
+For more detailed examples and use cases, see [Managing virtual network interfaces for OpenShift Virtualization](/docs/openshift?topic=openshift-vni-virtualization).
 
 ## Next steps
 {: #vpc-vni-next-steps}

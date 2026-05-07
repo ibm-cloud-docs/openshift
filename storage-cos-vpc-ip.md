@@ -1,8 +1,8 @@
 ---
 
 copyright:
-  years: 2014, 2024
-lastupdated: "2024-05-29"
+  years: 2014, 2026
+lastupdated: "2026-05-06"
 
 
 keywords: kubernetes, openshift
@@ -58,12 +58,12 @@ Minimum required permissions
     apiVersion: v1
     kind: Secret
     metadata:
-        name: <secret_name>
-      type: ibm/ibmc-s3fs
-      data:
-    access-key: # Enter your base64 encoded COS Writer access-key
-    secret-key: # Enter your base64 encoded COS Writer secret-key
-    res-conf-apikey: # Enter your base64 encoded COS Manager api-key
+      name: <secret_name>
+    type: ibm/ibmc-s3fs
+    data:
+      access-key: # Enter your base64 encoded COS Writer access-key
+      secret-key: # Enter your base64 encoded COS Writer secret-key
+      res-conf-apikey: # Enter your base64 encoded COS Manager api-key
     ```
     {: codeblock}
 
@@ -87,14 +87,14 @@ Minimum required permissions
     kind: PersistentVolumeClaim
     apiVersion: v1
     metadata:
-        name: <pvc_name>
-    annotations:
-      ibm.io/auto-create-bucket: "true"
-      ibm.io/auto-delete-bucket: "false"
-      ibm.io/auto_cache: "true"
-      ibm.io/bucket: "<bucket_name>"
-      ibm.io/secret-name: "<secret_name>"
-      ibm.io/secret-namespace: "<secret-namespace>" # By default, the COS plug-in searches for your secret in the same namespace where you create the PVC. If you created your secret in a namespace other than the namespace where you want to create your PVC, enter the namespace where you created your secret.
+      name: <pvc_name>
+      annotations:
+        ibm.io/auto-create-bucket: "true"
+        ibm.io/auto-delete-bucket: "false"
+        ibm.io/auto_cache: "true"
+        ibm.io/bucket: "<bucket_name>"
+        ibm.io/secret-name: "<secret_name>"
+        ibm.io/secret-namespace: "<secret-namespace>" # By default, the COS plug-in searches for your secret in the same namespace where you create the PVC. If you created your secret in a namespace other than the namespace where you want to create your PVC, enter the namespace where you created your secret.
     spec:
       accessModes:
         - ReadWriteMany
@@ -209,6 +209,3 @@ Minimum required permissions
         rm test.txt && exit
         ```
         {: pre}
-        
-        
-        

@@ -1,8 +1,8 @@
 ---
 
 copyright: 
-  years: 2023, 2024
-lastupdated: "2024-06-20"
+  years: 2023, 2026
+lastupdated: "2026-05-06"
 
 
 keywords: openshift, terraform, create, cluster, access
@@ -152,10 +152,4 @@ You can use Terraform to assign IAM user access for {{site.data.keyword.redhat_o
                 Service Name       containers-kubernetes   
                 Service Instance   my-cluster
     ```
-    {: screen} 
-    
-
-
-
-
-
+    {: screen}
