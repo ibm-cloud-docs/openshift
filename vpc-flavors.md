@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2026
-lastupdated: "2026-04-07"
+lastupdated: "2026-05-08"
 
 
 keywords: openshift, node scaling, ca, autoscaler
@@ -83,7 +83,9 @@ These conditions might impact cluster flavor availability:
 
 | Name | Data centers | Resources | OS | Primary storage | Secondary storage | Secondary storage options (GB / iops-tier)|
 | ---- | ---- |-------------------------------- | ---- | --------------- | ----------------- |  -------------- | 
-|No flavors available.| N/A | N/A | N/A | N/A | N/A | N/A |
+| mx3de.metal.48x512  \n(Memory) | in-che-1  \nin-che-2  \nin-che-3 | 24 cores  \n512GB memory  \n100Gbps network speed  \n No GPUs |  RHCOS  \n| 480GB SSD | N/A | N/A|
+| mx3de.metal.64x512  \n(Memory) | in-che-1  \nin-che-2  \nin-che-3 | 32 cores  \n512GB memory  \n100Gbps network speed  \n No GPUs |  RHCOS  \n| 480GB SSD | N/A | N/A|
+| ux3de.metal.16x512  \n() | in-che-1  \nin-che-2  \nin-che-3 | 8 cores  \n512GB memory  \n100Gbps network speed  \n No GPUs |  RHCOS  \n| 480GB SSD | N/A | N/A|
 {: class="simple-tab-table"}
 {: caption="Bare metal flavors in Chennai." caption-side="bottom"}
 {: #in-che-physical-table}
@@ -175,10 +177,27 @@ These conditions might impact cluster flavor availability:
 | ---- | ---- |-------------------------------- | ---- | --------------- | ----------------- |  -------------- | 
 | bx2.metal.96x384  \n(Balanced) | us-south-1  \nus-south-2  \nus-south-3 | 48 cores  \n384GB memory  \n100Gbps network speed  \n No GPUs |  RHCOS  \n| 960GB SSD | N/A | N/A|
 | bx2d.metal.96x384  \n(Balanced) | us-south-1  \nus-south-2  \nus-south-3 | 48 cores  \n384GB memory  \n100Gbps network speed  \n No GPUs |  RHCOS  \n| 960GB SSD | N/A | N/A|
+| bx3.metal.48x256  \n(Balanced) | us-south-1  \nus-south-2  \nus-south-3 | 24 cores  \n256GB memory  \n100Gbps network speed  \n No GPUs |  RHCOS  \n| 480GB SSD | N/A | N/A|
+| bx3.metal.64x256  \n(Balanced) | us-south-1  \nus-south-2  \nus-south-3 | 32 cores  \n256GB memory  \n100Gbps network speed  \n No GPUs |  RHCOS  \n| 480GB SSD | N/A | N/A|
+| bx3d.metal.192x1024  \n(Balanced) | us-south-1  \nus-south-2  \nus-south-3 | 96 cores  \n1024GB memory  \n100Gbps network speed  \n No GPUs |  RHCOS  \n| 480GB SSD | N/A | N/A|
+| bx3d.metal.48x256  \n(Balanced) | us-south-1  \nus-south-2  \nus-south-3 | 24 cores  \n256GB memory  \n100Gbps network speed  \n No GPUs |  RHCOS  \n| 480GB SSD | N/A | N/A|
+| bx3d.metal.64x256  \n(Balanced) | us-south-1  \nus-south-2  \nus-south-3 | 32 cores  \n256GB memory  \n100Gbps network speed  \n No GPUs |  RHCOS  \n| 480GB SSD | N/A | N/A|
 | cx2.metal.96x192  \n(Compute) | us-south-1 | 48 cores  \n192GB memory  \n100Gbps network speed  \n No GPUs |  RHCOS  \n| 960GB SSD | N/A | N/A|
 | cx2d.metal.96x192  \n(Compute) | us-south-1  \nus-south-3 | 48 cores  \n192GB memory  \n100Gbps network speed  \n No GPUs |  RHCOS  \n| 960GB SSD | N/A | N/A|
+| cx3d.metal.48x128  \n(Compute) | us-south-1  \nus-south-2  \nus-south-3 | 24 cores  \n128GB memory  \n100Gbps network speed  \n No GPUs |  RHCOS  \n| 480GB SSD | N/A | N/A|
+| cx3d.metal.64x128  \n(Compute) | us-south-1  \nus-south-2  \nus-south-3 | 32 cores  \n128GB memory  \n100Gbps network speed  \n No GPUs |  RHCOS  \n| 480GB SSD | N/A | N/A|
 | mx2.metal.96x768  \n(Memory) | us-south-1  \nus-south-3 | 48 cores  \n768GB memory  \n100Gbps network speed  \n No GPUs |  RHCOS  \n| 960GB SSD | N/A | N/A|
 | mx2d.metal.96x768  \n(Memory) | us-south-1  \nus-south-3 | 48 cores  \n768GB memory  \n100Gbps network speed  \n No GPUs |  RHCOS  \n| 960GB SSD | N/A | N/A|
+| mx3.metal.48x512  \n(Memory) | us-south-1  \nus-south-2  \nus-south-3 | 24 cores  \n512GB memory  \n100Gbps network speed  \n No GPUs |  RHCOS  \n| 480GB SSD | N/A | N/A|
+| mx3.metal.64x512  \n(Memory) | us-south-1  \nus-south-2  \nus-south-3 | 32 cores  \n512GB memory  \n100Gbps network speed  \n No GPUs |  RHCOS  \n| 480GB SSD | N/A | N/A|
+| mx3d.metal.128x1024  \n(Memory) | us-south-1  \nus-south-2  \nus-south-3 | 64 cores  \n1024GB memory  \n100Gbps network speed  \n No GPUs |  RHCOS  \n| 480GB SSD | N/A | N/A|
+| mx3d.metal.16x128  \n(Memory) | us-south-1  \nus-south-2  \nus-south-3 | 8 cores  \n128GB memory  \n100Gbps network speed  \n No GPUs |  RHCOS  \n| 480GB SSD | N/A | N/A|
+| mx3d.metal.48x512  \n(Memory) | us-south-1  \nus-south-2  \nus-south-3 | 24 cores  \n512GB memory  \n100Gbps network speed  \n No GPUs |  RHCOS  \n| 480GB SSD | N/A | N/A|
+| mx3d.metal.64x512  \n(Memory) | us-south-1  \nus-south-2  \nus-south-3 | 32 cores  \n512GB memory  \n100Gbps network speed  \n No GPUs |  RHCOS  \n| 480GB SSD | N/A | N/A|
+| mx3d.metal.96x1024  \n(Memory) | us-south-1  \nus-south-2  \nus-south-3 | 48 cores  \n1024GB memory  \n100Gbps network speed  \n No GPUs |  RHCOS  \n| 480GB SSD | N/A | N/A|
+| mx3de.metal.48x512  \n(Memory) | us-south-1  \nus-south-2  \nus-south-3 | 24 cores  \n512GB memory  \n100Gbps network speed  \n No GPUs |  RHCOS  \n| 480GB SSD | N/A | N/A|
+| mx3de.metal.64x512  \n(Memory) | us-south-1  \nus-south-2  \nus-south-3 | 32 cores  \n512GB memory  \n100Gbps network speed  \n No GPUs |  RHCOS  \n| 480GB SSD | N/A | N/A|
+| ux3de.metal.16x512  \n() | us-south-1  \nus-south-2  \nus-south-3 | 8 cores  \n512GB memory  \n100Gbps network speed  \n No GPUs |  RHCOS  \n| 480GB SSD | N/A | N/A|
 {: class="simple-tab-table"}
 {: caption="Bare metal flavors in Dallas." caption-side="bottom"}
 {: #us-south-physical-table}
@@ -274,10 +293,27 @@ These conditions might impact cluster flavor availability:
 | ---- | ---- |-------------------------------- | ---- | --------------- | ----------------- |  -------------- | 
 | bx2.metal.96x384  \n(Balanced) | eu-de-1  \neu-de-2 | 48 cores  \n384GB memory  \n100Gbps network speed  \n No GPUs |  RHCOS  \n| 960GB SSD | N/A | N/A|
 | bx2d.metal.96x384  \n(Balanced) | eu-de-1  \neu-de-2 | 48 cores  \n384GB memory  \n100Gbps network speed  \n No GPUs |  RHCOS  \n| 960GB SSD | N/A | N/A|
+| bx3.metal.48x256  \n(Balanced) | eu-de-1  \neu-de-2  \neu-de-3 | 24 cores  \n256GB memory  \n100Gbps network speed  \n No GPUs |  RHCOS  \n| 480GB SSD | N/A | N/A|
+| bx3.metal.64x256  \n(Balanced) | eu-de-1  \neu-de-2  \neu-de-3 | 32 cores  \n256GB memory  \n100Gbps network speed  \n No GPUs |  RHCOS  \n| 480GB SSD | N/A | N/A|
+| bx3d.metal.192x1024  \n(Balanced) | eu-de-1  \neu-de-2  \neu-de-3 | 96 cores  \n1024GB memory  \n100Gbps network speed  \n No GPUs |  RHCOS  \n| 480GB SSD | N/A | N/A|
+| bx3d.metal.48x256  \n(Balanced) | eu-de-1  \neu-de-2  \neu-de-3 | 24 cores  \n256GB memory  \n100Gbps network speed  \n No GPUs |  RHCOS  \n| 480GB SSD | N/A | N/A|
+| bx3d.metal.64x256  \n(Balanced) | eu-de-1  \neu-de-2  \neu-de-3 | 32 cores  \n256GB memory  \n100Gbps network speed  \n No GPUs |  RHCOS  \n| 480GB SSD | N/A | N/A|
 | cx2.metal.96x192  \n(Compute) | eu-de-1  \neu-de-2 | 48 cores  \n192GB memory  \n100Gbps network speed  \n No GPUs |  RHCOS  \n| 960GB SSD | N/A | N/A|
 | cx2d.metal.96x192  \n(Compute) | eu-de-1  \neu-de-2 | 48 cores  \n192GB memory  \n100Gbps network speed  \n No GPUs |  RHCOS  \n| 960GB SSD | N/A | N/A|
+| cx3d.metal.48x128  \n(Compute) | eu-de-1  \neu-de-2  \neu-de-3 | 24 cores  \n128GB memory  \n100Gbps network speed  \n No GPUs |  RHCOS  \n| 480GB SSD | N/A | N/A|
+| cx3d.metal.64x128  \n(Compute) | eu-de-1  \neu-de-2  \neu-de-3 | 32 cores  \n128GB memory  \n100Gbps network speed  \n No GPUs |  RHCOS  \n| 480GB SSD | N/A | N/A|
 | mx2.metal.96x768  \n(Memory) | eu-de-1  \neu-de-2 | 48 cores  \n768GB memory  \n100Gbps network speed  \n No GPUs |  RHCOS  \n| 960GB SSD | N/A | N/A|
 | mx2d.metal.96x768  \n(Memory) | eu-de-1  \neu-de-2 | 48 cores  \n768GB memory  \n100Gbps network speed  \n No GPUs |  RHCOS  \n| 960GB SSD | N/A | N/A|
+| mx3.metal.48x512  \n(Memory) | eu-de-1  \neu-de-2  \neu-de-3 | 24 cores  \n512GB memory  \n100Gbps network speed  \n No GPUs |  RHCOS  \n| 480GB SSD | N/A | N/A|
+| mx3.metal.64x512  \n(Memory) | eu-de-1  \neu-de-2  \neu-de-3 | 32 cores  \n512GB memory  \n100Gbps network speed  \n No GPUs |  RHCOS  \n| 480GB SSD | N/A | N/A|
+| mx3d.metal.128x1024  \n(Memory) | eu-de-1  \neu-de-2  \neu-de-3 | 64 cores  \n1024GB memory  \n100Gbps network speed  \n No GPUs |  RHCOS  \n| 480GB SSD | N/A | N/A|
+| mx3d.metal.16x128  \n(Memory) | eu-de-1  \neu-de-2  \neu-de-3 | 8 cores  \n128GB memory  \n100Gbps network speed  \n No GPUs |  RHCOS  \n| 480GB SSD | N/A | N/A|
+| mx3d.metal.48x512  \n(Memory) | eu-de-1  \neu-de-2  \neu-de-3 | 24 cores  \n512GB memory  \n100Gbps network speed  \n No GPUs |  RHCOS  \n| 480GB SSD | N/A | N/A|
+| mx3d.metal.64x512  \n(Memory) | eu-de-1  \neu-de-2  \neu-de-3 | 32 cores  \n512GB memory  \n100Gbps network speed  \n No GPUs |  RHCOS  \n| 480GB SSD | N/A | N/A|
+| mx3d.metal.96x1024  \n(Memory) | eu-de-1  \neu-de-2  \neu-de-3 | 48 cores  \n1024GB memory  \n100Gbps network speed  \n No GPUs |  RHCOS  \n| 480GB SSD | N/A | N/A|
+| mx3de.metal.48x512  \n(Memory) | eu-de-1  \neu-de-2  \neu-de-3 | 24 cores  \n512GB memory  \n100Gbps network speed  \n No GPUs |  RHCOS  \n| 480GB SSD | N/A | N/A|
+| mx3de.metal.64x512  \n(Memory) | eu-de-1  \neu-de-2  \neu-de-3 | 32 cores  \n512GB memory  \n100Gbps network speed  \n No GPUs |  RHCOS  \n| 480GB SSD | N/A | N/A|
+| ux3de.metal.16x512  \n() | eu-de-1  \neu-de-2  \neu-de-3 | 8 cores  \n512GB memory  \n100Gbps network speed  \n No GPUs |  RHCOS  \n| 480GB SSD | N/A | N/A|
 {: class="simple-tab-table"}
 {: caption="Bare metal flavors in Frankfurt." caption-side="bottom"}
 {: #eu-de-physical-table}
@@ -372,6 +408,9 @@ These conditions might impact cluster flavor availability:
 | bx2d.metal.96x384  \n(Balanced) | eu-gb-1 | 48 cores  \n384GB memory  \n100Gbps network speed  \n No GPUs |  RHCOS  \n| 960GB SSD | N/A | N/A|
 | cx2d.metal.96x192  \n(Compute) | eu-gb-1 | 48 cores  \n192GB memory  \n100Gbps network speed  \n No GPUs |  RHCOS  \n| 960GB SSD | N/A | N/A|
 | mx2d.metal.96x768  \n(Memory) | eu-gb-1 | 48 cores  \n768GB memory  \n100Gbps network speed  \n No GPUs |  RHCOS  \n| 960GB SSD | N/A | N/A|
+| mx3de.metal.48x512  \n(Memory) | eu-gb-1 | 24 cores  \n512GB memory  \n100Gbps network speed  \n No GPUs |  RHCOS  \n| 480GB SSD | N/A | N/A|
+| mx3de.metal.64x512  \n(Memory) | eu-gb-1 | 32 cores  \n512GB memory  \n100Gbps network speed  \n No GPUs |  RHCOS  \n| 480GB SSD | N/A | N/A|
+| ux3de.metal.16x512  \n() | eu-gb-1 | 8 cores  \n512GB memory  \n100Gbps network speed  \n No GPUs |  RHCOS  \n| 480GB SSD | N/A | N/A|
 {: class="simple-tab-table"}
 {: caption="Bare metal flavors in London." caption-side="bottom"}
 {: #eu-gb-physical-table}
@@ -463,6 +502,9 @@ These conditions might impact cluster flavor availability:
 | bx2d.metal.96x384  \n(Balanced) | eu-es-1  \neu-es-3 | 48 cores  \n384GB memory  \n100Gbps network speed  \n No GPUs |  RHCOS  \n| 960GB SSD | N/A | N/A|
 | cx2.metal.96x192  \n(Compute) | eu-es-1 | 48 cores  \n192GB memory  \n100Gbps network speed  \n No GPUs |  RHCOS  \n| 960GB SSD | N/A | N/A|
 | cx2d.metal.96x192  \n(Compute) | eu-es-1 | 48 cores  \n192GB memory  \n100Gbps network speed  \n No GPUs |  RHCOS  \n| 960GB SSD | N/A | N/A|
+| mx3de.metal.48x512  \n(Memory) | eu-es-1  \neu-es-3 | 24 cores  \n512GB memory  \n100Gbps network speed  \n No GPUs |  RHCOS  \n| 480GB SSD | N/A | N/A|
+| mx3de.metal.64x512  \n(Memory) | eu-es-1  \neu-es-3 | 32 cores  \n512GB memory  \n100Gbps network speed  \n No GPUs |  RHCOS  \n| 480GB SSD | N/A | N/A|
+| ux3de.metal.16x512  \n() | eu-es-1  \neu-es-3 | 8 cores  \n512GB memory  \n100Gbps network speed  \n No GPUs |  RHCOS  \n| 480GB SSD | N/A | N/A|
 {: class="simple-tab-table"}
 {: caption="Bare metal flavors in Madrid." caption-side="bottom"}
 {: #eu-es-physical-table}
@@ -514,7 +556,9 @@ These conditions might impact cluster flavor availability:
 
 | Name | Data centers | Resources | OS | Primary storage | Secondary storage | Secondary storage options (GB / iops-tier)|
 | ---- | ---- |-------------------------------- | ---- | --------------- | ----------------- |  -------------- | 
-|No flavors available.| N/A | N/A | N/A | N/A | N/A | N/A |
+| mx3de.metal.48x512  \n(Memory) | ca-mon-1  \nca-mon-2  \nca-mon-3 | 24 cores  \n512GB memory  \n100Gbps network speed  \n No GPUs |  RHCOS  \n| 480GB SSD | N/A | N/A|
+| mx3de.metal.64x512  \n(Memory) | ca-mon-1  \nca-mon-2  \nca-mon-3 | 32 cores  \n512GB memory  \n100Gbps network speed  \n No GPUs |  RHCOS  \n| 480GB SSD | N/A | N/A|
+| ux3de.metal.16x512  \n() | ca-mon-1  \nca-mon-2  \nca-mon-3 | 8 cores  \n512GB memory  \n100Gbps network speed  \n No GPUs |  RHCOS  \n| 480GB SSD | N/A | N/A|
 {: class="simple-tab-table"}
 {: caption="Bare metal flavors in Montreal." caption-side="bottom"}
 {: #ca-mon-physical-table}
@@ -566,7 +610,9 @@ These conditions might impact cluster flavor availability:
 
 | Name | Data centers | Resources | OS | Primary storage | Secondary storage | Secondary storage options (GB / iops-tier)|
 | ---- | ---- |-------------------------------- | ---- | --------------- | ----------------- |  -------------- | 
-|No flavors available.| N/A | N/A | N/A | N/A | N/A | N/A |
+| mx3de.metal.48x512  \n(Memory) | in-mum-1  \nin-mum-2  \nin-mum-3 | 24 cores  \n512GB memory  \n100Gbps network speed  \n No GPUs |  RHCOS  \n| 480GB SSD | N/A | N/A|
+| mx3de.metal.64x512  \n(Memory) | in-mum-1  \nin-mum-2  \nin-mum-3 | 32 cores  \n512GB memory  \n100Gbps network speed  \n No GPUs |  RHCOS  \n| 480GB SSD | N/A | N/A|
+| ux3de.metal.16x512  \n() | in-mum-1  \nin-mum-2  \nin-mum-3 | 8 cores  \n512GB memory  \n100Gbps network speed  \n No GPUs |  RHCOS  \n| 480GB SSD | N/A | N/A|
 {: class="simple-tab-table"}
 {: caption="Bare metal flavors in Mumbai." caption-side="bottom"}
 {: #in-mum-physical-table}
@@ -913,6 +959,9 @@ These conditions might impact cluster flavor availability:
 | bx2d.metal.96x384  \n(Balanced) | jp-tok-2  \njp-tok-3 | 48 cores  \n384GB memory  \n100Gbps network speed  \n No GPUs |  RHCOS  \n| 960GB SSD | N/A | N/A|
 | cx2d.metal.96x192  \n(Compute) | jp-tok-2  \njp-tok-3 | 48 cores  \n192GB memory  \n100Gbps network speed  \n No GPUs |  RHCOS  \n| 960GB SSD | N/A | N/A|
 | mx2d.metal.96x768  \n(Memory) | jp-tok-2  \njp-tok-3 | 48 cores  \n768GB memory  \n100Gbps network speed  \n No GPUs |  RHCOS  \n| 960GB SSD | N/A | N/A|
+| mx3de.metal.48x512  \n(Memory) | jp-tok-2  \njp-tok-3 | 24 cores  \n512GB memory  \n100Gbps network speed  \n No GPUs |  RHCOS  \n| 480GB SSD | N/A | N/A|
+| mx3de.metal.64x512  \n(Memory) | jp-tok-2  \njp-tok-3 | 32 cores  \n512GB memory  \n100Gbps network speed  \n No GPUs |  RHCOS  \n| 480GB SSD | N/A | N/A|
+| ux3de.metal.16x512  \n() | jp-tok-2  \njp-tok-3 | 8 cores  \n512GB memory  \n100Gbps network speed  \n No GPUs |  RHCOS  \n| 480GB SSD | N/A | N/A|
 {: class="simple-tab-table"}
 {: caption="Bare metal flavors in Tokyo." caption-side="bottom"}
 {: #jp-tok-physical-table}
@@ -1005,6 +1054,9 @@ These conditions might impact cluster flavor availability:
 | bx2d.metal.96x384  \n(Balanced) | ca-tor-2  \nca-tor-3 | 48 cores  \n384GB memory  \n100Gbps network speed  \n No GPUs |  RHCOS  \n| 960GB SSD | N/A | N/A|
 | cx2d.metal.96x192  \n(Compute) | ca-tor-2  \nca-tor-3 | 48 cores  \n192GB memory  \n100Gbps network speed  \n No GPUs |  RHCOS  \n| 960GB SSD | N/A | N/A|
 | mx2d.metal.96x768  \n(Memory) | ca-tor-2  \nca-tor-3 | 48 cores  \n768GB memory  \n100Gbps network speed  \n No GPUs |  RHCOS  \n| 960GB SSD | N/A | N/A|
+| mx3de.metal.48x512  \n(Memory) | ca-tor-2  \nca-tor-3 | 24 cores  \n512GB memory  \n100Gbps network speed  \n No GPUs |  RHCOS  \n| 480GB SSD | N/A | N/A|
+| mx3de.metal.64x512  \n(Memory) | ca-tor-2  \nca-tor-3 | 32 cores  \n512GB memory  \n100Gbps network speed  \n No GPUs |  RHCOS  \n| 480GB SSD | N/A | N/A|
+| ux3de.metal.16x512  \n() | ca-tor-2  \nca-tor-3 | 8 cores  \n512GB memory  \n100Gbps network speed  \n No GPUs |  RHCOS  \n| 480GB SSD | N/A | N/A|
 {: class="simple-tab-table"}
 {: caption="Bare metal flavors in Toronto." caption-side="bottom"}
 {: #ca-tor-physical-table}
@@ -1103,6 +1155,9 @@ These conditions might impact cluster flavor availability:
 | cx2d.metal.96x192  \n(Compute) | us-east-1  \nus-east-2 | 48 cores  \n192GB memory  \n100Gbps network speed  \n No GPUs |  RHCOS  \n| 960GB SSD | N/A | N/A|
 | mx2.metal.96x768  \n(Memory) | us-east-1  \nus-east-2 | 48 cores  \n768GB memory  \n100Gbps network speed  \n No GPUs |  RHCOS  \n| 960GB SSD | N/A | N/A|
 | mx2d.metal.96x768  \n(Memory) | us-east-1  \nus-east-2 | 48 cores  \n768GB memory  \n100Gbps network speed  \n No GPUs |  RHCOS  \n| 960GB SSD | N/A | N/A|
+| mx3de.metal.48x512  \n(Memory) | us-east-1  \nus-east-2  \nus-east-3 | 24 cores  \n512GB memory  \n100Gbps network speed  \n No GPUs |  RHCOS  \n| 480GB SSD | N/A | N/A|
+| mx3de.metal.64x512  \n(Memory) | us-east-1  \nus-east-2  \nus-east-3 | 32 cores  \n512GB memory  \n100Gbps network speed  \n No GPUs |  RHCOS  \n| 480GB SSD | N/A | N/A|
+| ux3de.metal.16x512  \n() | us-east-1  \nus-east-2  \nus-east-3 | 8 cores  \n512GB memory  \n100Gbps network speed  \n No GPUs |  RHCOS  \n| 480GB SSD | N/A | N/A|
 {: class="simple-tab-table"}
 {: caption="Bare metal flavors in Washington DC." caption-side="bottom"}
 {: #us-east-physical-table}
