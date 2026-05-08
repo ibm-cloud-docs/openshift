@@ -2,7 +2,7 @@
 
 copyright:
   years: 2026, 2026
-lastupdated: "2026-05-06"
+lastupdated: "2026-05-08"
 
 keywords: openshift, vni, virtual network interface, virtualization, bare metal, localnet, udn
 
@@ -23,9 +23,6 @@ subcollection: openshift
 
 You can use Virtual Network Interfaces (VNIs) to enable advanced network connectivity for virtual machines (VMs) running on {{site.data.keyword.openshiftlong_notm}} clusters with OpenShift Virtualization.
 {: shortdesc}
-
-VNI support for OpenShift Virtualization is available for allowlisted accounts only. To request access, see [Requesting access to allowlisted features](/docs/openshift?topic=openshift-allowlist-request).
-{: important}
 
 ## Understanding Virtual Network Interfaces
 {: #vni-about}
