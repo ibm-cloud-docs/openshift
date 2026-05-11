@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2026
-lastupdated: "2026-05-06"
+lastupdated: "2026-05-11"
 
 
 keywords: openshift
@@ -7406,6 +7406,8 @@ subcollection: openshift
 [OpenShift Data Foundation add-on version change log](/docs/openshift?topic=openshift-cl-add-ons-openshift-data-foundation#cl-add-ons-openshift-data-foundation)
 
 * [Version 4.21.0](/docs/openshift?topic=openshift-cl-add-ons-openshift-data-foundation#cl-add-ons-openshift-data-foundation-4.21.0)
+
+    * [4.21.1, released 11 May 2026](/docs/openshift?topic=openshift-cl-add-ons-openshift-data-foundation#cl-add-ons-openshift-data-foundation-4211)
 
 * [Version 4.20.0](/docs/openshift?topic=openshift-cl-add-ons-openshift-data-foundation#cl-add-ons-openshift-data-foundation-4.20.0)
 
