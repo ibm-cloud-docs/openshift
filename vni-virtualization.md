@@ -2,7 +2,7 @@
 
 copyright:
   years: 2026, 2026
-lastupdated: "2026-05-08"
+lastupdated: "2026-05-11"
 
 keywords: openshift, vni, virtual network interface, virtualization, bare metal, localnet, udn
 
@@ -27,7 +27,7 @@ You can use Virtual Network Interfaces (VNIs) to enable advanced network connect
 ## Understanding Virtual Network Interfaces
 {: #vni-about}
 
-A Virtual Network Interface (VNI) is an {{site.data.keyword.cloud_notm}} VPC abstraction that represents individual network connections. VNIs embed properties of a network connection, such as IP addresses, MAC addresses, and the VPC subnet they belong to. Floating IPs and secondary IPs can be attached directly to a VNI.
+A Virtual Network Interface (VNI) is an {{site.data.keyword.cloud_notm}} VPC abstraction that represents individual network connections. VNIs embed properties of a network connection, such as IP addresses, MAC addresses, and the VPC subnet they belong to. 
 
 VNIs are available only on clusters with bare metal worker nodes.
 {: note}
@@ -41,13 +41,16 @@ Static VNIs per worker node
 :   When you create a bare metal-based {{site.data.keyword.openshiftshort}} cluster or a new worker pool in IBM Cloud VPC, two VNIs are automatically created and attached statically to every bare metal worker node. One VNI handles regular worker traffic (pod network, overlay UDNs, and master communication). The second VNI acts as a carrier for dynamic VNI attachments that you manage.
 
 Dynamic VNI attachments
-:   You can create and manage VNIs on-demand after cluster creation. Dynamic VNIs can be attached to specific workers or configured to float between workers in the same zone, following VM workloads during live migration.
+:   You can create and manage VNIs on-demand after cluster creation. Dynamic VNIs can be attached to specific workers or configured to float between workers in the same zone, following VM workloads during live migration. 
 
 Live migration support
 :   With VNIs attached to bare metal worker nodes, live migrations of OpenShift Virtualization-based VMs can preserve network connections. The VNI implicitly floats and follows the workload between bare metal worker instances within the same zone.
 
 Zone constraints
 :   VNIs are attached to a specific VPC subnet and cannot float between zones. In multi-zone {{site.data.keyword.openshiftshort}} clusters, VNIs can handle traffic only for workloads running on cluster workers in the same zone where the VNI is provisioned. This also means you must avoid OpenShift Virtualization VM live migration between zones when the specific VM is using a VNI on a Localnet UDN.
+
+Floating IP addresses are not currently supported for dynamic VNI attachments.
+{: note}
 
 ### Cross-account attachment
 {: #vni-cross-account}

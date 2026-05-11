@@ -2,7 +2,7 @@
 
 copyright:
   years: 2026, 2026
-lastupdated: "2026-05-06"
+lastupdated: "2026-05-11"
 
 keywords: openshift, vni, virtual network interface, vpc, bare metal, networking
 
@@ -31,9 +31,12 @@ A Virtual Network Interface (VNI) is an {{site.data.keyword.cloud_notm}} VPC abs
 - MAC addresses
 - VPC subnet association
 - Security group membership
-- Floating IP attachment capability
+
 
 VNIs are available only on clusters with bare metal worker nodes running Red Hat CoreOS (RHCOS).
+{: note}
+
+Floating IP addresses are not currently supported for dynamic VNIs.
 {: note}
 
 ## VNI architecture in OpenShift clusters
@@ -58,7 +61,10 @@ Dynamic VNIs are created and managed on-demand after cluster creation. These VNI
 - Attached to specific worker nodes
 - Configured to float between workers in the same zone
 - Used for direct VPC network connectivity
-- Associated with floating IPs for external access
+
+
+Floating IP addresses are not currently supported for dynamic VNIs.
+{: note}
 
 ## Key capabilities
 {: #vpc-vni-capabilities}
@@ -66,8 +72,7 @@ Dynamic VNIs are created and managed on-demand after cluster creation. These VNI
 Direct VPC connectivity
 :   VNIs enable workloads to connect directly to VPC networks, bypassing the pod network overlay. This provides native VPC networking features like security groups, network ACLs, and routing.
 
-Floating IP support
-:   VNIs can have floating IPs attached, allowing workloads to be directly accessible from the internet or other VPC networks.
+
 
 Security group integration
 :   VNIs can be associated with VPC security groups, providing fine-grained network access control at the interface level.
@@ -82,7 +87,7 @@ Network preservation during migration
 {: #vpc-vni-use-cases}
 
 OpenShift Virtualization
-:   Enable direct VPC network connectivity for virtual machines, allowing VMs to have their own VPC IP addresses and floating IPs. See [Managing virtual network interfaces for OpenShift Virtualization](/docs/openshift?topic=openshift-vni-virtualization).
+:   Enable direct VPC network connectivity for virtual machines, allowing VMs to have their own VPC IP addresses. See [Managing virtual network interfaces for OpenShift Virtualization](/docs/openshift?topic=openshift-vni-virtualization).
 
 Multi-network workloads
 :   Connect workloads to multiple VPC subnets simultaneously, enabling complex network topologies and traffic segregation.

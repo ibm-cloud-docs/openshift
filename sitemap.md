@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2026
-lastupdated: "2026-05-06"
+lastupdated: "2026-05-11"
 
 
 keywords: openshift
@@ -286,6 +286,12 @@ subcollection: openshift
 [Release notes](/docs/openshift?topic=openshift-openshift-relnotes#openshift-relnotes)
 
 * [May 2026](/docs/openshift?topic=openshift-openshift-relnotes#openshift-may26)
+
+    * [11 May 2026](/docs/openshift?topic=openshift-openshift-relnotes#openshift-may1126)
+
+        * OpenShift Data Foundation cluster add-on patch updates.
+
+        * CLI version 1.0.770 is available
 
     * [06 May 2026](/docs/openshift?topic=openshift-openshift-relnotes#openshift-may0626)
 
@@ -6459,6 +6465,8 @@ subcollection: openshift
 
 * [Version 1.0](/docs/openshift?topic=openshift-cs_cli_changelog#10)
 
+* [Version v1.0.770](/docs/openshift?topic=openshift-cs_cli_changelog#cli-01770)
+
 * [Version v1.0.768](/docs/openshift?topic=openshift-cs_cli_changelog#cli-01768)
 
 * [Version v1.0.765](/docs/openshift?topic=openshift-cs_cli_changelog#cli-01765)
@@ -7406,6 +7414,8 @@ subcollection: openshift
 [OpenShift Data Foundation add-on version change log](/docs/openshift?topic=openshift-cl-add-ons-openshift-data-foundation#cl-add-ons-openshift-data-foundation)
 
 * [Version 4.21.0](/docs/openshift?topic=openshift-cl-add-ons-openshift-data-foundation#cl-add-ons-openshift-data-foundation-4.21.0)
+
+    * [4.21.1, released 11 May 2026](/docs/openshift?topic=openshift-cl-add-ons-openshift-data-foundation#cl-add-ons-openshift-data-foundation-4211)
 
 * [Version 4.20.0](/docs/openshift?topic=openshift-cl-add-ons-openshift-data-foundation#cl-add-ons-openshift-data-foundation-4.20.0)
 

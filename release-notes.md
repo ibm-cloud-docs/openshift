@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2026
-lastupdated: "2026-05-06"
+lastupdated: "2026-05-11"
 
 
 keywords: kubernetes, release notes, openshift, {{site.data.keyword.openshiftlong_notm}}
@@ -29,8 +29,16 @@ Looking for {{site.data.keyword.cloud_notm}} status, platform announcements, sec
 ## May 2026
 {: #openshift-may26}
 
+### 11 May 2026
+{: #openshift-may1126}
+{: release-note}
 
 
+OpenShift Data Foundation cluster add-on patch updates.
+:   For more information, see the [change log](/docs/openshift?topic=openshift-cl-add-ons-openshift-data-foundation).
+
+CLI version 1.0.770 is available
+:   For more information, see the [CLI change log](/docs/openshift?topic=openshift-cs_cli_changelog).
 
 ### 06 May 2026
 {: #openshift-may0626}
