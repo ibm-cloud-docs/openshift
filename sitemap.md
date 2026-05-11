@@ -287,6 +287,12 @@ subcollection: openshift
 
 * [May 2026](/docs/openshift?topic=openshift-openshift-relnotes#openshift-may26)
 
+    * [11 May 2026](/docs/openshift?topic=openshift-openshift-relnotes#openshift-may1126)
+
+        * OpenShift Data Foundation cluster add-on patch updates.
+
+        * CLI version 1.0.770 is available
+
     * [06 May 2026](/docs/openshift?topic=openshift-openshift-relnotes#openshift-may0626)
 
         * Virtual Network Interface (VNI) management commands are now generally available
@@ -6458,6 +6464,8 @@ subcollection: openshift
 [CLI change log](/docs/openshift?topic=openshift-cs_cli_changelog#cs_cli_changelog)
 
 * [Version 1.0](/docs/openshift?topic=openshift-cs_cli_changelog#10)
+
+* [Version v1.0.770](/docs/openshift?topic=openshift-cs_cli_changelog#cli-01770)
 
 * [Version v1.0.768](/docs/openshift?topic=openshift-cs_cli_changelog#cli-01768)
 
