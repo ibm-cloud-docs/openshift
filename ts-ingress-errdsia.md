@@ -1,8 +1,8 @@
 ---
 
-copyright: 
+copyright:
   years: 2022, 2026
-lastupdated: "2026-04-30"
+lastupdated: "2026-05-12"
 
 
 keywords: openshift, errdsia, nlb-dns, dns add, dns remove
@@ -17,7 +17,7 @@ content-type: troubleshoot
 
 
 
-# Why does the Ingress status show an `ERRDSIA` error?
+# Ingress error: ERRDSIA
 {: #ts-ingress-errdsia}
 {: troubleshoot}
 {: support}
@@ -51,16 +51,16 @@ Identify and update any NLB-DNS subdomains that have incorrect addresses registe
     oc get services -A | grep LoadBalancer
     ```
     {: pre}
-    
+
 1. Compare the outputs of the two previous commands and identify the subdomains that have incorrect addresses registered.
 
 1. If you no longer need a specific domain, you can use the **`ibmcloud oc ingress domain rm`** [command](/docs/openshift?topic=openshift-kubernetes-service-cli#ingress-domain-rm) to remove it.
 
 1. If you still need the domain, you can update the registered addresses for the domain by using the **`ibmcloud oc ingress domain update`** [command](/docs/openshift?topic=openshift-kubernetes-service-cli#ingress-domain-update) command.
-    
+
     Note that you must include all addresses you want to be registered as the update operation replaces the currently registered addresses. For example, if `52.137.182.166` is currently registered to your domain and you want to add `52.137.182.270`, you must specify `--ip 52.137.182.166 --ip 52.137.182.270` in the command.
     {: important}
-    
+
 1. Wait a 15-30 minutes, then check if the warning is resolved.
 
 1. If the issue persists, contact support. Open a [support case](/docs/support?topic=support-using-avatar). In the case details, be sure to include any relevant log files, error messages, or command outputs.

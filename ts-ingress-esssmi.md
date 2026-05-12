@@ -1,8 +1,8 @@
 ---
 
-copyright: 
+copyright:
   years: 2022, 2026
-lastupdated: "2026-04-30"
+lastupdated: "2026-05-12"
 
 
 keywords: openshift, esssmi
@@ -17,7 +17,7 @@ content-type: troubleshoot
 
 
 
-# Why does the Ingress status show an ESSSMI error?
+# Ingress error: ESSSMI
 {: #ts-ingress-esssmi}
 {: troubleshoot}
 {: support}

@@ -1,8 +1,8 @@
 ---
 
-copyright: 
+copyright:
   years: 2022, 2026
-lastupdated: "2026-04-30"
+lastupdated: "2026-05-12"
 
 
 keywords: openshift, errdsiss, nlb dns
@@ -17,7 +17,7 @@ content-type: troubleshoot
 
 
 
-# Why does the Ingress status show an `ERRDSISS` error?
+# Ingress error: ERRDSISS
 {: #ts-ingress-errdsiss}
 {: troubleshoot}
 {: support}
@@ -39,7 +39,7 @@ The subdomain has TLS secret issues (ERRDSISS).
 {{site.data.keyword.openshiftlong_notm}} generates a TLS certificate for managed domains and creates a TLS secret on the cluster containing the certificate. Normally, the certificate status should be `created` or `deleted`, but the status indicates problems with the certificate or secret generation.
 {: tsCauses}
 
-Check the `SSL Cert Status` of your managed domains and, if needed, regenerate them. 
+Check the `SSL Cert Status` of your managed domains and, if needed, regenerate them.
 {: tsResolve}
 
 1. Get the list of the managed domains using the **`ibmcloud oc nlb-dns ls`** [command](/docs/openshift?topic=openshift-kubernetes-service-cli#cs_nlb-dns-ls).
@@ -47,7 +47,7 @@ Check the `SSL Cert Status` of your managed domains and, if needed, regenerate t
 
     `creating` or `regenerating` status.
     :   Wait a few hours and check the status again. If the status does not change, ensure that the namespace appearing in the `Secret Namespace` exists.
-    
+
     `rate_limited` status.
     :   Let's Encrypt refused to generate a new certificate for this domain. This usually happens when the cluster is deleted and recreated with the same name, or the **`ibmcloud oc nlb-dns secret regenerate`** command was invoked multiple times. The rate limit will expire after 7 days (there is no way to manually remove it). Certificate generation will be automatically attempted again after 7 days.
 

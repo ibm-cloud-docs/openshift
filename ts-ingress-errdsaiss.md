@@ -1,8 +1,8 @@
 ---
 
-copyright: 
-  years: 2023, 2025
-lastupdated: "2025-01-03"
+copyright:
+  years: 2023, 2026
+lastupdated: "2026-05-12"
 
 
 keywords: openshift, {{site.data.keyword.openshiftlong_notm}}, errdsaiss, ingress, domain, third party, external domain
@@ -15,7 +15,7 @@ content-type: troubleshoot
 
 {{site.data.keyword.attribute-definition-list}}
 
-# Why does the Ingress status show an `ERRDSAISS` error?
+# Ingress error: ERRDSAISS
 {: #ts-ingress-errdsaiss}
 {: troubleshoot}
 {: support}

@@ -1,8 +1,8 @@
 ---
 
-copyright: 
+copyright:
   years: 2022, 2026
-lastupdated: "2026-04-30"
+lastupdated: "2026-05-12"
 
 
 keywords: openshift, errsam, load balancer service missing
@@ -17,7 +17,7 @@ content-type: troubleshoot
 
 
 
-# Why does the Ingress status show an `ERRSAM` error?
+# Ingress error: ERRSAM
 {: #ts-ingress-errsam}
 {: troubleshoot}
 {: support}
@@ -54,7 +54,7 @@ Complete the following steps to troubleshoot the issue.
     {: pre}
 
     
-    
+
 1. Identify services that do not have an address in the `EXTERNAL-IP` column.
 
 1. Look for an event that references the following services.
@@ -63,9 +63,9 @@ Complete the following steps to troubleshoot the issue.
     oc get events -n openshift-ingress| grep SERVICE
     ```
     {: pre}
+
     
-    
-    
+
 1. Review contents of the `MESSAGE` column and complete the following steps based on your cluster type and error message.
     - If you see errors regarding your API key, you can try resetting the API key with the **`ibmcloud oc api-key reset`** [command](/docs/openshift?topic=openshift-kubernetes-service-cli#cs_api_key_reset).
     - **Classic**: If you see errors regarding your load balancer deployment, ensure your cluster has at least two healthy workers. For more information, see [Adding worker nodes and zones to clusters](/docs/openshift?topic=openshift-add-workers-classic).
@@ -73,7 +73,7 @@ Complete the following steps to troubleshoot the issue.
     - **Classic**: If you see errors saying that no IPs are available, add new portable subnets to the cluster with the **`ibmcloud oc cluster subnet create`** [command](/docs/openshift?topic=openshift-kubernetes-service-cli#cs_cluster_subnet_create).
     - **VPC**: If you see permission issues, review your IAM permissions. For more information, see [Setting up an Application Load Balancer for VPC](/docs/openshift?topic=openshift-setup_vpc_alb).
     - **VPC**: Ensure that you did not reach your LBaaS instance quota. For more information, see [Quotas and service limits](/docs/vpc?topic=vpc-quotas#alb-quotas) and **`ibmcloud is load-balancers`** [command](/docs/vpc?topic=vpc-vpc-reference#lb-anchor).
-    
+
 1. Wait 10 to 15 minutes, then check if the load balancer got an address assigned. If not, check the events again.
 
 1. If you see a different error, repeat the troubleshooting steps. If the issue persists, contact support. Open a [support case](/docs/support?topic=support-using-avatar). In the case details, be sure to include any relevant log files, error messages, or command outputs.

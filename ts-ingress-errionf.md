@@ -2,7 +2,7 @@
 
 copyright:
   years: 2022, 2026
-lastupdated: "2026-04-30"
+lastupdated: "2026-05-12"
 
 
 keywords: openshift, ingress, troubleshoot ingress, ingress operator, ingress cluster operator, ingress operator missing
@@ -17,7 +17,7 @@ content-type: troubleshoot
 
 
 
-# Why does the Ingress status show an `ERRIONF` error?
+# Ingress error: ERRIONF
 {: #ts-ingress-errionf}
 {: troubleshoot}
 {: support}
@@ -52,17 +52,17 @@ Verify that the `ingress` ClusterOperator resource exists in your cluster.
     oc get clusteroperator ingress
     ```
     {: pre}
-    
+
     Example output:
-    
+
     ```sh
     NAME      VERSION   AVAILABLE   PROGRESSING   DEGRADED   SINCE   MESSAGE
     ingress   4.10.22   True        False         False      45d
     ```
     {: screen}
-    
+
 1. If the Operator exists and `Progressing` is `True`, wait 10 to 15 minutes to allow time for the Operator to finish deploying. If the operator doesn't exist, continue with the troubleshooting steps.
-    
+
 1. Follow the steps to review your cluster master and worker node states.
     - [Review master health](/docs/openshift?topic=openshift-debug_master#review-master-health).
     - [Review worker node states](/docs/openshift?topic=openshift-worker-node-state-reference).
@@ -72,6 +72,6 @@ Verify that the `ingress` ClusterOperator resource exists in your cluster.
     ibmcloud oc cluster master refresh
     ```
     {: pre}
-    
-    
+
+
 1. After you refresh your cluster master, wait 10 to 15 minutes and then check the Ingress Operator status again by running the **`oc get clusteroperator ingress`** command. If the resource is still not created or is in a degraded state, contact support. Open a [support case](/docs/support?topic=support-using-avatar). In the case details, be sure to include any relevant log files, error messages, or command outputs.

@@ -1,8 +1,8 @@
 ---
 
-copyright: 
+copyright:
   years: 2022, 2026
-lastupdated: "2026-04-30"
+lastupdated: "2026-05-12"
 
 
 keywords: openshift, errdriss, secret generation failed
@@ -17,7 +17,7 @@ content-type: troubleshoot
 
 
 
-# Why does the Ingress status show an `ERRDRISS` error?
+# Ingress error: ERRDRISS
 {: #ts-ingress-errdriss}
 {: troubleshoot}
 {: support}
@@ -50,12 +50,12 @@ Review and update your managed subdomains.
     dig <subdomain>
     ```
     {: pre}
-    
+
 1. If you get `NXDOMAIN` or you see missing addresses, verify that your domain has correct configuration.
 
     - Make sure that the domain does not have mixed IP address types. For example, make sure the domain contains only public or only private IP addresses.
     - Make sure that the domain does not have malformed IP addresses or load balancer hostnames registered.
-    
+
 1. Check if the domain has health monitoring.
     - Get the list of the subdomain that have health monitoring enabled using the **`ibmcloud oc nlb-dns monitor ls`** [command](/docs/openshift?topic=openshift-kubernetes-service-cli#cs_nlb-dns-monitor-ls).
     - If the domain is included in the list, get the health monitor details using the **`ibmcloud oc nlb-dns monitor get`** [command](/docs/openshift?topic=openshift-kubernetes-service-cli#cs_nlb-dns-monitor-get) command.

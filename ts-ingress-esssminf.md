@@ -2,7 +2,7 @@
 
 copyright:
   years: 2022, 2026
-lastupdated: "2026-04-29"
+lastupdated: "2026-05-12"
 
 keywords: openshift, {{site.data.keyword.openshiftlong_notm}}, ingress, troubleshoot ingress, secrets manager missing, esssminf
 
@@ -13,7 +13,7 @@ content-type: troubleshoot
 
 {{site.data.keyword.attribute-definition-list}}
 
-# Why does the Ingress status show an `ESSSMINF` error?
+# Ingress error: ESSSMINF
 {: #ts-ingress-esssminf}
 {: troubleshoot}
 {: support}
