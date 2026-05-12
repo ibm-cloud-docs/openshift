@@ -2,7 +2,7 @@
 
 copyright:
   years: 2022, 2026
-lastupdated: "2026-04-30"
+lastupdated: "2026-05-12"
 
 
 keywords: openshift, ingress, troubleshoot ingress, ingress operator, ingress cluster operator, missing ip addresses, errrna
@@ -16,7 +16,7 @@ content-type: troubleshoot
 
 
 
-# Why does the Ingress status show an `ERRRNA` error?
+# Ingress error: ERRRNA
 {: #ts-ingress-errrna}
 {: troubleshoot}
 {: support}
@@ -47,13 +47,13 @@ Review the configuration of Routes resources that have not been marked as `admit
 1. Ensure that your cluster masters and workers are healthy.
     - [Review master health](/docs/openshift?topic=openshift-debug_master#review-master-health).
     - [Review worker node states](/docs/openshift?topic=openshift-worker-node-state-reference).
-    
+
 1. Fetch your Route resources and review their `Status`.
     ```sh
     oc get routes -A -o yaml
     ```
     {: pre}
-    
+
 1. Identify `Routes` that do not look similar to the following contents in their `Status` field:
     ```yaml
       status:
@@ -63,7 +63,7 @@ Review the configuration of Routes resources that have not been marked as `admit
             type: Admitted
     ```
     {: codeblock}
-    
+
 1. Review the configuration of Route resources that are not admitted:
 
     - Ensure the Route configuration is correct. See [Route configuration](https://docs.redhat.com/en/documentation/openshift_container_platform/4.20/html/ingress_and_load_balancing/routes){: external}.

@@ -1,8 +1,8 @@
 ---
 
-copyright: 
+copyright:
   years: 2022, 2026
-lastupdated: "2026-04-30"
+lastupdated: "2026-05-12"
 
 
 keywords: openshift, essvc
@@ -17,7 +17,7 @@ content-type: troubleshoot
 
 
 
-# Why does the Ingress status show an ESSVC error?
+# Ingress error: ESSVC
 {: #ts-ingress-essvc}
 {: troubleshoot}
 {: support}
@@ -44,13 +44,13 @@ Ensure all secrets that share the same domain have the same CRN.
     ibmcloud oc ingress secret ls --show-crn
     ```
     {: pre}
-    
+
 1. In the output, ensure that secrets that have the same domain also have the same CRN. For secrets that have a different CRN, update them with the correct CRN by running the following command.
     ```sh
     ibmcloud oc ingress secret update -c <cluster> --name <secret_name> --namespace <secret_namespace> --cert-crn <new_crn>
     ```
     {: pre}
-    
+
     To find the correct CRN for the {{site.data.keyword.openshiftlong_notm}} managed domains look for the secret in the `openshift-ingress`, or `ibm-cert-store` namespaces.
     {: tip}
 

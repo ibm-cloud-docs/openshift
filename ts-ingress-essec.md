@@ -1,8 +1,8 @@
 ---
 
-copyright: 
+copyright:
   years: 2022, 2026
-lastupdated: "2026-04-30"
+lastupdated: "2026-05-12"
 
 
 keywords: openshift, essec
@@ -17,7 +17,7 @@ content-type: troubleshoot
 
 
 
-# Why does the Ingress status show an ESSEC error?
+# Ingress error: ESSEC
 {: #ts-ingress-essec}
 {: troubleshoot}
 {: support}
@@ -42,21 +42,21 @@ Review and update your secrets and domains.
 
     For secrets that are about to expire and are user managed
     :   Ensure the value of the corresponding secret in {{site.data.keyword.secrets-manager_full_notm}} has been updated and run the **`ibmcloud oc ingress secret update`** command for that secret.
-    
+
     For secrets that are managed by IBM
     :   Ensure the corresponding domain is still active.
-    
+
     To determine whether a secret is IBM managed or user managed, run the **`ibmcloud oc ingress secret get`** command and look for the `User Managed` section.
     {: tip}
-    
+
 
 1. View the domains for your cluster.
     ```sh
     ibmcloud oc nlb-dns ls
     ```
     {: pre}
-    
-    
+
+
     Example output
     ```sh
     OK

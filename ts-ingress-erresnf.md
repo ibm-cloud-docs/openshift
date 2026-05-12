@@ -2,7 +2,7 @@
 
 copyright:
   years: 2022, 2026
-lastupdated: "2026-04-30"
+lastupdated: "2026-05-12"
 
 
 keywords: openshift, ingress, troubleshoot ingress, ingress operator, ingress cluster operator, external service missing, erresnf
@@ -17,7 +17,7 @@ content-type: troubleshoot
 
 
 
-# Why does the Ingress status show an `ERRESNF` error?
+# Ingress error: ERRESNF
 {: #ts-ingress-erresnf}
 {: troubleshoot}
 {: support}
@@ -59,7 +59,7 @@ Check the external service and create it if it doesn't exist.
     kubectl get nodes -o wide
     ```
     {: pre}
-    
+
 1. Save the following Service configuration as a YAML file called `service.yaml`.
 
     ```yaml
@@ -86,7 +86,7 @@ Check the external service and create it if it doesn't exist.
       - x.x.x.x # Add your worker node external IP addresses.
     ```
     {: codeblock}
-    
+
 1. Add the external IP addresses of your worker nodes that you retrieved earlier in the `spec.externalIPs` list.
 
 1. Create the service.
@@ -95,6 +95,6 @@ Check the external service and create it if it doesn't exist.
     ```
     {: pre}
 
-1. Wait 10 to 15 minutes, then check if the warning is resolved. 
+1. Wait 10 to 15 minutes, then check if the warning is resolved.
 
 1. If the issue persists, contact support. Open a [support case](/docs/support?topic=support-using-avatar). In the case details, be sure to include any relevant log files, error messages, or command outputs.
