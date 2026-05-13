@@ -28,6 +28,8 @@ You can prevent workloads from running on edge worker nodes and consuming worker
 
 ## Before you begin
 {: #edge-workload-prereqs}
+
+
 * Ensure that you have the following IAM roles:
     * Any platform access role for the cluster
     * **Manager** service access role for all namespaces
