@@ -44,9 +44,9 @@ Version 1.0.770 of the CLI was released on 11 May 2026.
 
 Version 1.0.768 of the CLI was released on 05 May 2026.
 - Promotes Virtual Network Interface (VNI) commands from experimental to generally available. The new commands include:
- - `ibmcloud ks vni attach baremetal` - Attach a VNI to a bare metal worker node or cluster
- - `ibmcloud ks vni detach` - Detach a VNI from a worker node or cluster
- - `ibmcloud ks vni ls` - List VNIs attached to a cluster or worker node
+    - `ibmcloud ks vni attach baremetal` - Attach a VNI to a bare metal worker node or cluster
+    - `ibmcloud ks vni detach` - Detach a VNI from a worker node or cluster
+    - `ibmcloud ks vni ls` - List VNIs attached to a cluster or worker node
 - Includes general refactoring and improvements.
 
 ## Version v1.0.765
