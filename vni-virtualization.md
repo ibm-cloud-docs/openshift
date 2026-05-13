@@ -157,7 +157,7 @@ Secondary UDN configuration is similar to Primary UDN, but with the role set to 
 ## Exposing VMs with VPC load balancers
 {: #vni-alb-lbaas}
 
-You can expose VMs without using UDN or localnet VNI by using VPC Application Load Balancers. For more information about configuring load balancers, see [About VPC load balancers](/docs/openshift?topic=openshift-vpc_lbaas).
+You can expose VMs without using UDN or localnet VNI by using VPC Application Load Balancers. For more information about configuring load balancers, see [About VPC load balancers](/docs/openshift?topic=openshift-vpclb-about).
 
 ## Setting up localnet user defined networks
 {: #vni-setup-localnet}

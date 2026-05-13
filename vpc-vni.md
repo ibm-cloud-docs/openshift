@@ -195,5 +195,5 @@ For more detailed examples and use cases, see [Managing virtual network interfac
 
 - [Managing virtual network interfaces for OpenShift Virtualization](/docs/openshift?topic=openshift-vni-virtualization)
 - [About virtual network interfaces in VPC](/docs/vpc?topic=vpc-vni-about)
-- [VPC security groups](/docs/openshift?topic=openshift-vpc-security-group2)
+- [VPC security groups](/docs/openshift?topic=openshift-vpc-security-group-reference)
 - [VPC subnets](/docs/openshift?topic=openshift-vpc-subnets)

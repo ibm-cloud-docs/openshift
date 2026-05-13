@@ -2,7 +2,7 @@
 
 copyright:
   years: 2025, 2026
-lastupdated: "2026-05-04"
+lastupdated: "2026-05-13"
 
 keywords: openshift, virtualization, storage, odf, vpc file, openshift data foundation
 
@@ -203,5 +203,5 @@ If ODF installation fails, check the following:
 After setting up storage:
 
 1. [Install the OpenShift Virtualization Operator](/docs/openshift?topic=openshift-oc-virtualization)
-2. [Create and manage virtual machines](/docs/openshift?topic=openshift-virt-manage-vms)
+2. [Create and manage virtual machines](https://docs.redhat.com/en/documentation/openshift_container_platform/4.20/html/virtualization/index){: external}
 3. [Configure virtual network interfaces (optional)](/docs/openshift?topic=openshift-vni-virtualization)
