@@ -1,8 +1,8 @@
 ---
 
 copyright: 
-  years: 2014, 2024
-lastupdated: "2024-03-15"
+  years: 2014, 2026
+lastupdated: "2026-05-13"
 
 
 keywords: openshift
@@ -32,18 +32,17 @@ This troubleshooting topic applies only to {{site.data.keyword.redhat_openshift_
 
 
 
-
 When you create your PVC or deploy a pod that mounts the PVC, the creation or deployment fails.
 {: tsSymptoms}
 
-Example error message for a PVC creation failure.
+Example error message for a PVC creation failure:
 
 ```sh
 can't get credentials: can't get secret tsecret-key: secrets "secret-key" not found
 ```
 {: screen}
 
-Example error message for a pod creation failure.
+Example error message for a pod creation failure:
 
 ```sh
 persistentvolumeclaim "pvc-3" not found (repeated 3 times)
@@ -51,11 +50,13 @@ persistentvolumeclaim "pvc-3" not found (repeated 3 times)
 {: screen}
 
 
-The Kubernetes secret that you created is not referenced correctly in your deployment yaml or is not set to the `ibm/ibmc-s3fs` type.
+The Kubernetes secret that you created is not referenced correctly in your deployment YAML file or is not set to the `ibm/ibmc-s3fs` type.
 {: tsCauses}
 
+## Resolving the issue
+{: #cos-secret-resolve}
 
-This task requires [**Writer** or **Manager** {{site.data.keyword.cloud_notm}} IAM service access role](/docs/openshift?topic=openshift-iam-platform-access-roles) for all projects.
+This task requires the [**Writer** or **Manager** {{site.data.keyword.cloud_notm}} IAM service access role](/docs/openshift?topic=openshift-iam-platform-access-roles) for all projects.
 {: tsResolve}
 
 1. List the secrets in your cluster and review the secret type. The secret must show `ibm/ibmc-s3fs` as the **Type**.
@@ -67,9 +68,4 @@ This task requires [**Writer** or **Manager** {{site.data.keyword.cloud_notm}} I
 
 2. If your secret does not show `ibm/ibmc-s3fs` as the **Type**, [re-create your secret](/docs/openshift?topic=openshift-storage-cos-understand#create_cos_secret).
 
-3. Check your YAML configuration file for your PVC and pod to verify that you used the correct secret.
-
-
-
-
-
+3. Check your YAML configuration file for your PVC and pod to verify that you used the correct secret name.

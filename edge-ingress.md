@@ -1,8 +1,8 @@
 ---
 
-copyright: 
+copyright:
   years: 2024, 2026
-lastupdated: "2026-04-08"
+lastupdated: "2026-05-13"
 
 
 keywords: openshift, kubernetes, affinity, taint, edge node, edge
@@ -21,13 +21,22 @@ subcollection: openshift
 # Isolating routers to edge nodes
 {: #edge}
 
+To ensure that router pods are always scheduled to edge worker nodes, you must create or use an existing worker pool that has at least two edge worker nodes per zone.
+{: shortdesc}
 
 
+
+
+## Before you begin
+{: #edge-prereqs}
 
 * Ensure that you have the following IAM roles:
     * Any platform access role for the cluster
     * **Writer** or **Manager** service access role for all namespaces
 * [Access your {{site.data.keyword.redhat_openshift_notm}} cluster](/docs/openshift?topic=openshift-access_cluster).
+
+## Isolating workloads to edge worker nodes
+{: #edge-isolate}
 
 To isolate your workload to edge worker nodes:
 

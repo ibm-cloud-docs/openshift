@@ -1,8 +1,8 @@
 ---
 
 copyright: 
-  years: 2014, 2024
-lastupdated: "2024-01-03"
+  years: 2014, 2026
+lastupdated: "2026-05-13"
 
 
 keywords: openshift
@@ -25,10 +25,10 @@ content-type: troubleshoot
 
 [Classic infrastructure]{: tag-classic-inf}
 
-
-
-Your {{site.data.keyword.cloud_notm}} account was suspended, or all worker nodes in your cluster were deleted. After the account is reactivated, you can't add worker nodes when you try to resize or rebalance your worker pool. You see an error message similar to the following:
+Your {{site.data.keyword.cloud_notm}} account was suspended, or all worker nodes in your cluster were deleted. After the account is reactivated, you can't add worker nodes when you try to resize or rebalance your worker pool.
 {: tsSymptoms}
+
+You see an error message similar to the following example:
 
 ```sh
 SoftLayerAPIError(SoftLayer_Exception_Public): Could not obtain network VLAN with id #123456.
@@ -39,20 +39,25 @@ SoftLayerAPIError(SoftLayer_Exception_Public): Could not obtain network VLAN wit
 When an account is suspended, the worker nodes within the account are deleted. If a cluster has no worker nodes, IBM Cloud infrastructure reclaims the associated public and private VLANs. However, the cluster worker pool still has the previous VLAN IDs in its metadata and uses these unavailable IDs when you rebalance or resize the pool. The nodes fail to create because the VLANs are no longer associated with the cluster.
 {: tsCauses}
 
+## Resolving the issue
+{: #suspended-resolve}
 
-You can [delete your existing worker pool](/docs/openshift?topic=openshift-kubernetes-service-cli#cs_worker_pool_rm), then [create a new worker pool](/docs/openshift?topic=openshift-kubernetes-service-cli#cs_worker_pool_create).
+You can [delete your existing worker pool](/docs/openshift?topic=openshift-kubernetes-service-cli#cs_worker_pool_rm) and then [create a new worker pool](/docs/openshift?topic=openshift-kubernetes-service-cli#cs_worker_pool_create).
 {: tsResolve}
 
-Alternatively, you can keep your existing worker pool by ordering new VLANs and using these to create new worker nodes in the pool.
+Alternatively, you can keep your existing worker pool by ordering new VLANs and using them to create new worker nodes in the pool.
 
 Before you begin: [Log in to your account. If applicable, target the appropriate resource group. Set the context for your cluster.](/docs/containers?topic=containers-access_cluster)
 
-1. To get the zones that you need new VLAN IDs for, note the **Location** in the following command output. **Note**: If your cluster is a multizone, you need VLAN IDs for each zone.
+1. Get the zones that you need new VLAN IDs for by noting the **Location** in the following command output.
 
     ```sh
     ibmcloud oc cluster ls
     ```
     {: pre}
+
+    If your cluster is a multizone cluster, you need VLAN IDs for each zone.
+    {: note}
 
 2. Get a new private and public VLAN for each zone that your cluster is in by [contacting {{site.data.keyword.cloud_notm}} support](/docs/vlans?topic=vlans-ordering-premium-vlans#ordering-premium-vlans).
 
@@ -72,7 +77,7 @@ Before you begin: [Log in to your account. If applicable, target the appropriate
     ```
     {: pre}
 
-6. **Multizone cluster only**: Repeat **Step 5** for each zone in your cluster.
+6. If you have a multizone cluster, repeat step 5 for each zone in your cluster.
 
 7. Rebalance or resize your worker pool to add worker nodes that use the new VLAN IDs. For example:
 
@@ -87,9 +92,3 @@ Before you begin: [Log in to your account. If applicable, target the appropriate
     ibmcloud oc worker ls --cluster <cluster_name_or_ID> --worker-pool <worker_pool>
     ```
     {: pre}
-
-
-
-
-
-

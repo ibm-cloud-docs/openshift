@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2026
-lastupdated: "2026-05-12"
+lastupdated: "2026-05-13"
 
 
 keywords: openshift
@@ -286,6 +286,12 @@ subcollection: openshift
 [Release notes](/docs/openshift?topic=openshift-openshift-relnotes#openshift-relnotes)
 
 * [May 2026](/docs/openshift?topic=openshift-openshift-relnotes#openshift-may26)
+
+    * [13 May 2026](/docs/openshift?topic=openshift-openshift-relnotes#openshift-may1326)
+
+        * Red Hat OpenShift on IBM Cloud version 4.21 is now available
+
+        * New VPC bare metal worker node flavors available
 
     * [11 May 2026](/docs/openshift?topic=openshift-openshift-relnotes#openshift-may1126)
 
@@ -3501,6 +3507,10 @@ subcollection: openshift
 
 [Isolating routers to edge nodes](/docs/openshift?topic=openshift-edge#edge)
 
+* [Before you begin](/docs/openshift?topic=openshift-edge#edge-prereqs)
+
+* [Isolating workloads to edge worker nodes](/docs/openshift?topic=openshift-edge#edge-isolate)
+
 [Exposing apps in {{site.data.keyword.satelliteshort}} clusters](/docs/openshift?topic=openshift-sat-expose-apps#sat-expose-apps)
 
 * [Setting up MetalLB](/docs/openshift?topic=openshift-sat-expose-apps#sat-expose-metallb)
@@ -3514,6 +3524,8 @@ subcollection: openshift
 * [Exposing apps with routes and Link endpoints for traffic from {{site.data.keyword.cloud_notm}}](/docs/openshift?topic=openshift-sat-expose-apps#sat-expose-cloud)
 
 [Preventing app workloads from running on edge worker nodes](/docs/openshift?topic=openshift-edge-workload-prevent#edge-workload-prevent)
+
+* [Before you begin](/docs/openshift?topic=openshift-edge-workload-prevent#edge-workload-prereqs)
 
 [Deploying the Sysdig agent on edge worker nodes](/docs/openshift?topic=openshift-edge-sysdig#edge-sysdig)
 
@@ -3750,6 +3762,8 @@ subcollection: openshift
 
 * [Overview](/docs/openshift?topic=openshift-virt-overview#virt-what-is)
 
+* [Key capabilities](/docs/openshift?topic=openshift-virt-overview#virt-capabilities)
+
 * [Deployment options](/docs/openshift?topic=openshift-virt-overview#virt-deployment-options)
 
     * [Manual deployment (For custom configurations)](/docs/openshift?topic=openshift-virt-overview#virt-manual-deployment)
@@ -3763,8 +3777,6 @@ subcollection: openshift
     * [Storage options](/docs/openshift?topic=openshift-virt-overview#virt-storage-options)
 
     * [Networking capabilities](/docs/openshift?topic=openshift-virt-overview#virt-networking-options)
-
-* [Key capabilities](/docs/openshift?topic=openshift-virt-overview#virt-capabilities)
 
 * [Limitations](/docs/openshift?topic=openshift-virt-overview#virt-limitations)
 
@@ -3857,6 +3869,8 @@ subcollection: openshift
 
     * [Cross-account attachment](/docs/openshift?topic=openshift-vni-virtualization#vni-cross-account)
 
+* [Limitations and considerations](/docs/openshift?topic=openshift-vni-virtualization#vni-limitations)
+
 * [Prerequisites](/docs/openshift?topic=openshift-vni-virtualization#vni-prereqs)
 
 * [Creating overlay UDNs for Pods and VMs](/docs/openshift?topic=openshift-vni-virtualization#vni-overlay-udns)
@@ -3900,8 +3914,6 @@ subcollection: openshift
     * [Why is live migration pending across worker pools?](/docs/openshift?topic=openshift-vni-virtualization#vni-ts-migration)
 
     * [Why are dynamic attached VNIs not working?](/docs/openshift?topic=openshift-vni-virtualization#vni-ts-not-working)
-
-    * [Why does my worker node enter a critical state after reload with VNIs attached?](/docs/openshift?topic=openshift-vni-virtualization#vni-ts-worker-reload)
 
 
 ## Storage
@@ -5022,6 +5034,79 @@ subcollection: openshift
 * [Major differences](/docs/openshift?topic=openshift-benchmark-comparison#benchmark-comparison-major)
 
 * [Minor differences](/docs/openshift?topic=openshift-benchmark-comparison#benchmark-comparison-minor)
+
+
+### Version 4.21
+{: #sitemap_version_421}
+
+
+[4.21 version information and update actions](/docs/openshift?topic=openshift-cs_versions_421#cs_versions_421)
+
+* [Release timeline](/docs/openshift?topic=openshift-cs_versions_421#release_timeline_421)
+
+* [Preparing to update](/docs/openshift?topic=openshift-cs_versions_421#prep-up-421)
+
+    * [Update before master](/docs/openshift?topic=openshift-cs_versions_421#421_before)
+
+* [Checking the `Upgradeable` status of your cluster](/docs/openshift?topic=openshift-cs_versions_421#status-check-421)
+
+[4.21 version change log](/docs/openshift?topic=openshift-openshift_changelog_421#openshift_changelog_421)
+
+* [Overview](/docs/openshift?topic=openshift-openshift_changelog_421#changelog_overview_421)
+
+* [Version 4.21](/docs/openshift?topic=openshift-openshift_changelog_421#421_components)
+
+    * [Change log for master fix pack 4.21.13_1516_openshift, released 13 May 2026](/docs/openshift?topic=openshift-openshift_changelog_421#42113_1516_openshift_M)
+
+    * [Change log for worker node fix pack 4.21.10_1514_openshift, released 13 May 2026](/docs/openshift?topic=openshift-openshift_changelog_421#42110_1514_openshift_W)
+
+[4.21 CIS Kubernetes benchmark](/docs/openshift?topic=openshift-cis-benchmark-421#cis-benchmark-421)
+
+* [1 Master node security configuration](/docs/openshift?topic=openshift-cis-benchmark-421#1-master-node-security-configuration-421)
+
+    * [1.1 Master node configuration files](/docs/openshift?topic=openshift-cis-benchmark-421#11-master-node-configuration-files-421)
+
+    * [1.2 API server](/docs/openshift?topic=openshift-cis-benchmark-421#12-api-server-421)
+
+    * [1.3 Controller manager](/docs/openshift?topic=openshift-cis-benchmark-421#13-controller-manager-421)
+
+    * [1.4 Scheduler](/docs/openshift?topic=openshift-cis-benchmark-421#14-scheduler-421)
+
+* [2 Etcd node configuration](/docs/openshift?topic=openshift-cis-benchmark-421#2-etcd-node-configuration-421)
+
+* [3 Control plane configuration](/docs/openshift?topic=openshift-cis-benchmark-421#3-control-plane-configuration-421)
+
+    * [3.1 Authentication and authorization](/docs/openshift?topic=openshift-cis-benchmark-421#31-authentication-and-authorization-421)
+
+    * [3.2 Logging](/docs/openshift?topic=openshift-cis-benchmark-421#32-logging-421)
+
+* [4 Worker node security configuration (RHEL_9_64)](/docs/openshift?topic=openshift-cis-benchmark-421#4-worker-node-security-configuration-rhel_9_64-421)
+
+    * [4.1 Worker node configuration files](/docs/openshift?topic=openshift-cis-benchmark-421#41-worker-node-configuration-files-421)
+
+    * [4.2 Kubelet](/docs/openshift?topic=openshift-cis-benchmark-421#42-kubelet-421)
+
+* [4 Worker node security configuration (RHCOS)](/docs/openshift?topic=openshift-cis-benchmark-421#4-worker-node-security-configuration-rhcos-421)
+
+    * [4.1 Worker node configuration files](/docs/openshift?topic=openshift-cis-benchmark-421#41-worker-node-configuration-files-421)
+
+    * [4.2 Kubelet](/docs/openshift?topic=openshift-cis-benchmark-421#42-kubelet-421)
+
+* [5 Kubernetes policies](/docs/openshift?topic=openshift-cis-benchmark-421#5-kubernetes-policies-421)
+
+    * [5.1 RBAC and service accounts](/docs/openshift?topic=openshift-cis-benchmark-421#51-rbac-and-service-accounts-421)
+
+    * [5.2 Pod security policies](/docs/openshift?topic=openshift-cis-benchmark-421#52-pod-security-policies-421)
+
+    * [5.3 Network policies and CNI](/docs/openshift?topic=openshift-cis-benchmark-421#53-network-policies-and-cni-421)
+
+    * [5.4 Secrets management](/docs/openshift?topic=openshift-cis-benchmark-421#54-secrets-management-421)
+
+    * [5.5 Extensible admission control](/docs/openshift?topic=openshift-cis-benchmark-421#55-extensible-admission-control-421)
+
+    * [5.7 General policies](/docs/openshift?topic=openshift-cis-benchmark-421#57-general-policies-421)
+
+    * [{{site.data.keyword.IBM_notm}} remediations and explanations](/docs/openshift?topic=openshift-cis-benchmark-421#ibm-remediations-and-explanations-421)
 
 
 ### Version 4.20
@@ -8537,6 +8622,8 @@ subcollection: openshift
 
 [Classic: Why can't I add worker nodes with an invalid VLAN ID?](/docs/openshift?topic=openshift-suspended#suspended)
 
+* [Resolving the issue](/docs/openshift?topic=openshift-suspended#suspended-resolve)
+
 [Why do I see a timeout error when I try to log in to a pod?](/docs/openshift?topic=openshift-cs_nodes_duplicate_ip#cs_nodes_duplicate_ip)
 
 [Why can't I SSH into my worker node?](/docs/openshift?topic=openshift-cs_ssh_worker#cs_ssh_worker)
@@ -8795,10 +8882,6 @@ subcollection: openshift
 
 [Why does a VNI attachment fail?](/docs/openshift?topic=openshift-ts-virt-vni-attachment-fails#ts-virt-vni-attachment-fails)
 
-[Why does my worker node enter a critical state after reload with VNIs attached?](/docs/openshift?topic=openshift-ts-virt-worker-reload-ovn#ts-virt-worker-reload-ovn)
-
-* [Related links](/docs/openshift?topic=openshift-ts-virt-worker-reload-ovn#ts-virt-worker-reload-ovn-related)
-
 [Why is the localnet user defined network not working?](/docs/openshift?topic=openshift-ts-virt-localnet-udn-not-working#ts-virt-localnet-udn-not-working)
 
 [Why can't VMs with VNI attachments communicate?](/docs/openshift?topic=openshift-ts-virt-vni-vms-cannot-communicate#ts-virt-vni-vms-cannot-communicate)
@@ -8985,6 +9068,8 @@ subcollection: openshift
 
 [Why can't I add non-root user access to persistent storage?](/docs/openshift?topic=openshift-cs_storage_nonroot#cs_storage_nonroot)
 
+* [Resolving the issue](/docs/openshift?topic=openshift-cs_storage_nonroot#nonroot-resolve)
+
 * [Verifying the read and write permissions for the non-root user](/docs/openshift?topic=openshift-cs_storage_nonroot#verify-rw-permissions)
 
 [Why are the file systems for worker nodes changed to read-only?](/docs/openshift?topic=openshift-readonly_nodes#readonly_nodes)
@@ -8998,6 +9083,8 @@ subcollection: openshift
 [Why do I see a `MountingTargetFailed` error for {{site.data.keyword.filestorage_vpc_short}}?](/docs/openshift?topic=openshift-ts-storage-vpc-file-eit-mount-failed#ts-storage-vpc-file-eit-mount-failed)
 
 [Why do I see an `UnresponsiveMountHelperContainerUtility` error for {{site.data.keyword.filestorage_vpc_short}}?](/docs/openshift?topic=openshift-ts-storage-vpc-file-eit-unresponsive#ts-storage-vpc-file-eit-unresponsive)
+
+* [Resolving the issue](/docs/openshift?topic=openshift-ts-storage-vpc-file-eit-unresponsive#vpc-file-eit-resolve)
 
 [Why does PVC creation fail for {{site.data.keyword.filestorage_vpc_short}}?](/docs/openshift?topic=openshift-ts-storage-vpc-file-eit-pvc-fails#ts-storage-vpc-file-eit-pvc-fails)
 
@@ -9039,6 +9126,8 @@ subcollection: openshift
 [Why does my block storage PVC remain in a pending state?](/docs/openshift?topic=openshift-block_pvc_pending#block_pvc_pending)
 
 [{{site.data.keyword.block_storage_is_short}} PVC creation fails after API key reset](/docs/openshift?topic=openshift-vpc-block-api-key-reset-ts#vpc-block-api-key-reset-ts)
+
+* [Resolving the issue](/docs/openshift?topic=openshift-vpc-block-api-key-reset-ts#vpc-block-api-key-resolve)
 
 [Why do I get a `Volume not attached` error when trying to expand a {{site.data.keyword.block_storage_is_short}} volume?](/docs/openshift?topic=openshift-block_not_attached_vpc#block_not_attached_vpc)
 
@@ -9093,6 +9182,8 @@ subcollection: openshift
 
 [Why does installing the {{site.data.keyword.cos_full_notm}} plug-in fail?](/docs/openshift?topic=openshift-cos_plugin_fails#cos_plugin_fails)
 
+* [Resolving the issue](/docs/openshift?topic=openshift-cos_plugin_fails#cos-plugin-resolve)
+
 [Why do I see wrong credentials or access denied messages when I create a PVC?](/docs/openshift?topic=openshift-cred_failure#cred_failure)
 
 [Why do I see wrong s3fs or IAM API endpoints when I create a PVC?](/docs/openshift?topic=openshift-cos_api_endpoint_failure#cos_api_endpoint_failure)
@@ -9100,6 +9191,8 @@ subcollection: openshift
 [Why does my PVC remain in a pending state?](/docs/openshift?topic=openshift-cos_pvc_pending#cos_pvc_pending)
 
 [Why does PVC or pod creation fail due to not finding the Kubernetes secret?](/docs/openshift?topic=openshift-cos_secret_access_fails#cos_secret_access_fails)
+
+* [Resolving the issue](/docs/openshift?topic=openshift-cos_secret_access_fails#cos-secret-resolve)
 
 [Why is the transport endpoint not connected?](/docs/openshift?topic=openshift-cos_transport_ts_connect#cos_transport_ts_connect)
 
