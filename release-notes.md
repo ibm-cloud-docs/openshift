@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2026
-lastupdated: "2026-05-11"
+lastupdated: "2026-05-13"
 
 
 keywords: kubernetes, release notes, openshift, {{site.data.keyword.openshiftlong_notm}}
@@ -28,6 +28,24 @@ Looking for {{site.data.keyword.cloud_notm}} status, platform announcements, sec
 
 ## May 2026
 {: #openshift-may26}
+
+
+
+### 13 May 2026
+{: #openshift-may1326}
+{: release-note}
+
+Red Hat OpenShift on IBM Cloud version 4.21 is now available
+:   You can now create or update clusters to Red Hat OpenShift version 4.21. OpenShift 4.21 is based on Kubernetes 1.34 and includes new features, performance improvements, and security enhancements. For more information, see:
+    - [Version 4.21 overview](/docs/openshift?topic=openshift-openshift_versions#ocp421)
+    - [Version 4.21 change log](/docs/openshift?topic=openshift-openshift_changelog_421)
+    - [Preparing to update to version 4.21](/docs/openshift?topic=openshift-openshift_versions#ocp421_before)
+
+New VPC bare metal worker node flavors available
+:   New VPC bare metal worker node flavors are now available in select regions. The new `bx3d.metal` balanced flavors and `cx3d.metal` compute flavors provide high-performance bare metal infrastructure for demanding workloads. For more information, see [VPC flavors](/docs/openshift?topic=openshift-vpc-flavors).
+
+
+
 
 ### 11 May 2026
 {: #openshift-may1126}

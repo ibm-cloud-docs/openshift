@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2026
-lastupdated: "2026-05-12"
+lastupdated: "2026-05-13"
 
 
 keywords: openshift
@@ -286,6 +286,12 @@ subcollection: openshift
 [Release notes](/docs/openshift?topic=openshift-openshift-relnotes#openshift-relnotes)
 
 * [May 2026](/docs/openshift?topic=openshift-openshift-relnotes#openshift-may26)
+
+    * [13 May 2026](/docs/openshift?topic=openshift-openshift-relnotes#openshift-may1326)
+
+        * Red Hat OpenShift on IBM Cloud version 4.21 is now available
+
+        * New VPC bare metal worker node flavors available
 
     * [11 May 2026](/docs/openshift?topic=openshift-openshift-relnotes#openshift-may1126)
 
@@ -3750,6 +3756,8 @@ subcollection: openshift
 
 * [Overview](/docs/openshift?topic=openshift-virt-overview#virt-what-is)
 
+* [Key capabilities](/docs/openshift?topic=openshift-virt-overview#virt-capabilities)
+
 * [Deployment options](/docs/openshift?topic=openshift-virt-overview#virt-deployment-options)
 
     * [Manual deployment (For custom configurations)](/docs/openshift?topic=openshift-virt-overview#virt-manual-deployment)
@@ -3763,8 +3771,6 @@ subcollection: openshift
     * [Storage options](/docs/openshift?topic=openshift-virt-overview#virt-storage-options)
 
     * [Networking capabilities](/docs/openshift?topic=openshift-virt-overview#virt-networking-options)
-
-* [Key capabilities](/docs/openshift?topic=openshift-virt-overview#virt-capabilities)
 
 * [Limitations](/docs/openshift?topic=openshift-virt-overview#virt-limitations)
 
@@ -3856,6 +3862,8 @@ subcollection: openshift
     * [Key features](/docs/openshift?topic=openshift-vni-virtualization#vni-features)
 
     * [Cross-account attachment](/docs/openshift?topic=openshift-vni-virtualization#vni-cross-account)
+
+* [Limitations and considerations](/docs/openshift?topic=openshift-vni-virtualization#vni-limitations)
 
 * [Prerequisites](/docs/openshift?topic=openshift-vni-virtualization#vni-prereqs)
 
@@ -5022,6 +5030,79 @@ subcollection: openshift
 * [Major differences](/docs/openshift?topic=openshift-benchmark-comparison#benchmark-comparison-major)
 
 * [Minor differences](/docs/openshift?topic=openshift-benchmark-comparison#benchmark-comparison-minor)
+
+
+### Version 4.21
+{: #sitemap_version_421}
+
+
+[4.21 version information and update actions](/docs/openshift?topic=openshift-cs_versions_421#cs_versions_421)
+
+* [Release timeline](/docs/openshift?topic=openshift-cs_versions_421#release_timeline_421)
+
+* [Preparing to update](/docs/openshift?topic=openshift-cs_versions_421#prep-up-421)
+
+    * [Update before master](/docs/openshift?topic=openshift-cs_versions_421#421_before)
+
+* [Checking the `Upgradeable` status of your cluster](/docs/openshift?topic=openshift-cs_versions_421#status-check-421)
+
+[4.21 version change log](/docs/openshift?topic=openshift-openshift_changelog_421#openshift_changelog_421)
+
+* [Overview](/docs/openshift?topic=openshift-openshift_changelog_421#changelog_overview_421)
+
+* [Version 4.21](/docs/openshift?topic=openshift-openshift_changelog_421#421_components)
+
+    * [Change log for master fix pack 4.21.13_1516_openshift, released 13 May 2026](/docs/openshift?topic=openshift-openshift_changelog_421#42113_1516_openshift_M)
+
+    * [Change log for worker node fix pack 4.21.10_1514_openshift, released 13 May 2026](/docs/openshift?topic=openshift-openshift_changelog_421#42110_1514_openshift_W)
+
+[4.21 CIS Kubernetes benchmark](/docs/openshift?topic=openshift-cis-benchmark-421#cis-benchmark-421)
+
+* [1 Master node security configuration](/docs/openshift?topic=openshift-cis-benchmark-421#1-master-node-security-configuration-421)
+
+    * [1.1 Master node configuration files](/docs/openshift?topic=openshift-cis-benchmark-421#11-master-node-configuration-files-421)
+
+    * [1.2 API server](/docs/openshift?topic=openshift-cis-benchmark-421#12-api-server-421)
+
+    * [1.3 Controller manager](/docs/openshift?topic=openshift-cis-benchmark-421#13-controller-manager-421)
+
+    * [1.4 Scheduler](/docs/openshift?topic=openshift-cis-benchmark-421#14-scheduler-421)
+
+* [2 Etcd node configuration](/docs/openshift?topic=openshift-cis-benchmark-421#2-etcd-node-configuration-421)
+
+* [3 Control plane configuration](/docs/openshift?topic=openshift-cis-benchmark-421#3-control-plane-configuration-421)
+
+    * [3.1 Authentication and authorization](/docs/openshift?topic=openshift-cis-benchmark-421#31-authentication-and-authorization-421)
+
+    * [3.2 Logging](/docs/openshift?topic=openshift-cis-benchmark-421#32-logging-421)
+
+* [4 Worker node security configuration (RHEL_9_64)](/docs/openshift?topic=openshift-cis-benchmark-421#4-worker-node-security-configuration-rhel_9_64-421)
+
+    * [4.1 Worker node configuration files](/docs/openshift?topic=openshift-cis-benchmark-421#41-worker-node-configuration-files-421)
+
+    * [4.2 Kubelet](/docs/openshift?topic=openshift-cis-benchmark-421#42-kubelet-421)
+
+* [4 Worker node security configuration (RHCOS)](/docs/openshift?topic=openshift-cis-benchmark-421#4-worker-node-security-configuration-rhcos-421)
+
+    * [4.1 Worker node configuration files](/docs/openshift?topic=openshift-cis-benchmark-421#41-worker-node-configuration-files-421)
+
+    * [4.2 Kubelet](/docs/openshift?topic=openshift-cis-benchmark-421#42-kubelet-421)
+
+* [5 Kubernetes policies](/docs/openshift?topic=openshift-cis-benchmark-421#5-kubernetes-policies-421)
+
+    * [5.1 RBAC and service accounts](/docs/openshift?topic=openshift-cis-benchmark-421#51-rbac-and-service-accounts-421)
+
+    * [5.2 Pod security policies](/docs/openshift?topic=openshift-cis-benchmark-421#52-pod-security-policies-421)
+
+    * [5.3 Network policies and CNI](/docs/openshift?topic=openshift-cis-benchmark-421#53-network-policies-and-cni-421)
+
+    * [5.4 Secrets management](/docs/openshift?topic=openshift-cis-benchmark-421#54-secrets-management-421)
+
+    * [5.5 Extensible admission control](/docs/openshift?topic=openshift-cis-benchmark-421#55-extensible-admission-control-421)
+
+    * [5.7 General policies](/docs/openshift?topic=openshift-cis-benchmark-421#57-general-policies-421)
+
+    * [{{site.data.keyword.IBM_notm}} remediations and explanations](/docs/openshift?topic=openshift-cis-benchmark-421#ibm-remediations-and-explanations-421)
 
 
 ### Version 4.20

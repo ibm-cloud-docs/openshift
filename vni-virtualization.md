@@ -2,7 +2,7 @@
 
 copyright:
   years: 2026, 2026
-lastupdated: "2026-05-11"
+lastupdated: "2026-05-13"
 
 keywords: openshift, vni, virtual network interface, virtualization, bare metal, localnet, udn
 
@@ -41,16 +41,13 @@ Static VNIs per worker node
 :   When you create a bare metal-based {{site.data.keyword.openshiftshort}} cluster or a new worker pool in IBM Cloud VPC, two VNIs are automatically created and attached statically to every bare metal worker node. One VNI handles regular worker traffic (pod network, overlay UDNs, and master communication). The second VNI acts as a carrier for dynamic VNI attachments that you manage.
 
 Dynamic VNI attachments
-:   You can create and manage VNIs on-demand after cluster creation. Dynamic VNIs can be attached to specific workers or configured to float between workers in the same zone, following VM workloads during live migration. 
+:   You can create and manage VNIs on-demand after cluster creation. Dynamic VNIs can be attached to specific workers or configured to float between workers in the same zone, following VM workloads during live migration.
 
 Live migration support
 :   With VNIs attached to bare metal worker nodes, live migrations of OpenShift Virtualization-based VMs can preserve network connections. The VNI implicitly floats and follows the workload between bare metal worker instances within the same zone.
 
-Zone constraints
-:   VNIs are attached to a specific VPC subnet and cannot float between zones. In multi-zone {{site.data.keyword.openshiftshort}} clusters, VNIs can handle traffic only for workloads running on cluster workers in the same zone where the VNI is provisioned. This also means you must avoid OpenShift Virtualization VM live migration between zones when the specific VM is using a VNI on a Localnet UDN.
-
-Floating IP addresses are not currently supported for dynamic VNI attachments.
-{: note}
+For important limitations and considerations about VNIs, see [Limitations and considerations](#vni-limitations).
+{: tip}
 
 ### Cross-account attachment
 {: #vni-cross-account}
@@ -58,6 +55,33 @@ Floating IP addresses are not currently supported for dynamic VNI attachments.
 In {{site.data.keyword.openshiftlong_notm}}, worker nodes are not provisioned in your account, which means the lifecycle management of VNIs is slightly different from standalone VPC bare metal instances. The {{site.data.keyword.openshiftshort}} cluster administrator has different visibility to the attachments of the VNIs because they are attached to workloads that are not visible within the account. The differences in VNI management are covered in this documentation.
 
 For more information about VNIs on standalone VPC bare metal instances, see [About virtual network interfaces](/docs/vpc?topic=vpc-vni-about).
+
+## Limitations and considerations
+{: #vni-limitations}
+
+Static VNI modifications
+:   Do not modify the static VNIs that are automatically created for each worker node. While these VNIs are visible in your VPC account, any changes to their settings are not supported. This includes attaching floating IPs, changing security groups, or modifying any other VNI properties. Modifying static VNIs can cause cluster connectivity issues.
+
+VNI modification restrictions for floating attachments
+:   You cannot modify VNI properties for floating (cluster-scoped) dynamic attachments. This includes changes to the VNI name, Floating IP addresses, Infrastructure NAT settings, and security group assignments. To update these settings, you must first detach the VNI, make your changes, and then reattach it to the cluster. This limitation is temporary.
+
+Zone constraints
+:   VNIs are attached to a specific VPC subnet and cannot float between zones. In multi-zone {{site.data.keyword.openshiftshort}} clusters, VNIs can handle traffic only for workloads running on cluster workers in the same zone where the VNI is provisioned. This also means you must avoid OpenShift Virtualization VM live migration between zones when the specific VM is using a VNI on a Localnet UDN.
+
+Bare metal requirement
+:   VNIs are only supported on bare metal worker nodes. Virtual server instance (VSI) worker nodes do not support VNIs.
+
+RHCOS requirement
+:   Worker nodes must run Red Hat CoreOS (RHCOS) operating system.
+
+OVN-Kubernetes CNI
+:   Clusters must use the OVN-Kubernetes Container Network Interface (CNI) plugin.
+
+Version requirement
+:   VNI support requires OpenShift 4.20 or later.
+
+Localnet UDN restrictions
+:   Localnet UDNs have IP Address Management (IPAM) disabled on the OVN side, which means static IP address assignment to pods does not happen from OVN. This configuration is designed for VM workloads that use DHCP or set up static IPs inside the guest operating system. Regular pods cannot be attached to localnet UDNs.
 
 ## Prerequisites
 {: #vni-prereqs}

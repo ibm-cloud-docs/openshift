@@ -2,7 +2,7 @@
 
 copyright:
   years: 2026, 2026
-lastupdated: "2026-05-11"
+lastupdated: "2026-05-13"
 
 keywords: openshift, vni, virtual network interface, vpc, bare metal, networking
 
@@ -36,9 +36,6 @@ A Virtual Network Interface (VNI) is an {{site.data.keyword.cloud_notm}} VPC abs
 VNIs are available only on clusters with bare metal worker nodes running Red Hat CoreOS (RHCOS).
 {: note}
 
-Floating IP addresses are not currently supported for dynamic VNIs.
-{: note}
-
 ## VNI architecture in OpenShift clusters
 {: #vpc-vni-architecture}
 
@@ -53,6 +50,7 @@ Primary VNI
 Secondary VNI (carrier)
 :   Acts as a carrier for dynamic VNI attachments that you manage. This VNI enables you to attach additional network interfaces to workloads running on the worker node.
 
+
 ### Dynamic VNIs
 {: #vpc-vni-dynamic}
 
@@ -62,9 +60,6 @@ Dynamic VNIs are created and managed on-demand after cluster creation. These VNI
 - Configured to float between workers in the same zone
 - Used for direct VPC network connectivity
 
-
-Floating IP addresses are not currently supported for dynamic VNIs.
-{: note}
 
 ## Key capabilities
 {: #vpc-vni-capabilities}
@@ -100,6 +95,12 @@ Network function virtualization
 
 ## Limitations and considerations
 {: #vpc-vni-limitations}
+
+Static VNI modifications
+:   Do not modify the static VNIs that are automatically created for each worker node. While these VNIs are visible in your VPC account, any changes to their settings are not supported. This includes attaching floating IPs, changing security groups, or modifying any other VNI properties. Modifying static VNIs can cause cluster connectivity issues.
+
+VNI modification restrictions for floating attachments
+:   You cannot modify VNI properties for floating (cluster-scoped) dynamic attachments. This includes changes to the VNI name, Floating IP addresses, Infrastructure NAT settings, and security group assignments. To update these settings, you must first detach the VNI, make your changes, and then reattach it to the cluster. This limitation is temporary.
 
 Zone constraints
 :   VNIs cannot float between zones. In multi-zone clusters, VNIs can only handle traffic for workloads in the same zone where the VNI is provisioned.

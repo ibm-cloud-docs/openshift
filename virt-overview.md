@@ -2,7 +2,7 @@
 
 copyright:
   years: 2025, 2026
-lastupdated: "2026-05-08"
+lastupdated: "2026-05-13"
 
 keywords: openshift, virtualization, virtual machines, vms, bare metal
 
@@ -26,22 +26,16 @@ Run virtual machines (VMs) alongside containerized workloads on {{site.data.keyw
 ## Overview
 {: #virt-what-is}
 
-OpenShift Virtualization uses KubeVirt technology to enable virtual machine management within your Kubernetes environment. Key capabilities include:
+OpenShift Virtualization uses KubeVirt technology to enable virtual machine management within your Kubernetes environment. This unified platform allows you to run VMs and containers on the same infrastructure, manage VMs using familiar Kubernetes tools and APIs, and leverage enterprise storage solutions like OpenShift Data Foundation or IBM Cloud storage services.
 
-Unified platform
-:   Run VMs and containers on the same infrastructure
+## Key capabilities
+{: #virt-capabilities}
 
-Kubernetes-native management
-:   Manage VMs using familiar Kubernetes tools and APIs
+OpenShift Virtualization on IBM Cloud provides enterprise-grade virtualization features integrated with your Kubernetes environment.
 
-Live migration
-:   Move VMs between nodes without downtime
+**Live migration** moves running VMs between nodes without downtime, allowing you to perform maintenance or rebalance workloads within the same zone. **VM templates** provide pre-configured templates for common operating systems, accelerating deployment. With **snapshots and cloning** (available with ODF storage), you can create VM snapshots and clones for backup, testing, or rapid deployment. **Multi-zone deployment** enables you to deploy across multiple zones for high availability, and **IBM Cloud integration** ensures your VMs work seamlessly with IBM Cloud services for monitoring, logging, and security.
 
-Flexible networking
-:   Connect VMs to pod networks or directly to VPC networks
-
-Enterprise storage
-:   Use OpenShift Data Foundation or IBM Cloud storage services
+**Flexible networking** options let you connect VMs to pod networks for standard Kubernetes networking, or use Virtual Network Interfaces (VNIs) in OpenShift 4.20+ for direct VPC network connectivity with floating IP addresses and network preservation during live migration.
 
 ## Deployment options
 {: #virt-deployment-options}
@@ -68,11 +62,6 @@ Best for:
 - Custom storage configurations
 - Specific networking requirements
 - Full control over all components
-
-Requirements:
-- OpenShift 4.17 or later
-- VPC bare metal worker nodes
-- Manual storage setup
 
 [Plan your manual deployment](/docs/openshift?topic=openshift-virt-plan){: .btn .btn-primary}
 
@@ -153,31 +142,13 @@ Advanced networking with VNIs (4.20+)
     - Multiple network interfaces per VM
     - See [Managing virtual network interfaces](/docs/openshift?topic=openshift-vni-virtualization)
 
-## Key capabilities
-{: #virt-capabilities}
-
-Live migration
-:   Move running VMs between nodes without downtime (within same zone)
-
-VM templates
-:   Pre-configured templates for common operating systems
-
-Snapshots and cloning
-:   Create VM snapshots and clones (with ODF storage)
-
-Multi-zone deployment
-:   Deploy across multiple zones for high availability
-
-Integration
-:   Works with IBM Cloud services (monitoring, logging, security)
-
 ## Limitations
 {: #virt-limitations}
 
-- Supported only on VPC bare metal worker nodes
-- Requires Red Hat CoreOS (RHCOS) operating system
-- Remote block volume attachment not supported for bare metal nodes
-- Live migration supported only within the same zone
+- Bare metal worker nodes are required; virtual server instances are not supported
+- Red Hat CoreOS (RHCOS) operating system is required
+- Remote block volume attachment is not supported for bare metal nodes
+- Live migration is supported only within the same zone
 - VNI features require OpenShift 4.20 or later
 - Windows VMs require appropriate licensing
 
