@@ -45,6 +45,7 @@ Make sure that your app pod is running in the same worker pool as mentioned in t
     oc describe cm file-csi-driver-status -n kube-system
     ```
     {: pre}
+
 1. List your app pods and verify your app is running in the worker pool specified in the `EIT_ENABLED_WORKER_POOL` configmap section.
 
     ```sh

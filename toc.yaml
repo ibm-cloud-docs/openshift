@@ -625,7 +625,6 @@ toc:
               - ts-virt-live-migration-fails.md
               - ts-virt-vm-cannot-access-network.md
               - ts-virt-vni-attachment-fails.md
-              - ts-virt-worker-reload-ovn.md
               - ts-virt-localnet-udn-not-working.md
               - ts-virt-vni-vms-cannot-communicate.md
               - ts-virt-vm-performance-is-poor.md

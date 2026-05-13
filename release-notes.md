@@ -1600,7 +1600,7 @@ VPC Block CSI Driver cluster add-on patch updates.
 :   Version [4.18](/docs/openshift?topic=openshift-openshift_changelog_418) release is now certified.
 
 Versions 4.12 and 4.13 are unsupported.
-:   Update your cluster to at least [version 4.14](/docs/openshift?topic=openshift-openshift_versions_412) as soon as possible.
+:   Update your cluster to at least [version 4.14](/docs/openshift?topic=openshift-openshift_versions_414) as soon as possible.
 
 
 
@@ -2253,7 +2253,7 @@ Storage Operator cluster add-on patch update.
 {{site.data.keyword.openshiftlong_notm}} worker node fix packs are available.
 :   Worker node fix packs can be applied by updating or reloading the worker node in classic infrastructure, or replacing the worker node in VPC infrastructure. Review the following change logs for your cluster version.
 :   [Version 4.17 change log](/docs/openshift?topic=openshift-openshift_changelog_417)
-:   [Version 4.16 change log](/docs/openshift?topic=openshift-openshift_changelog_416)
+:   [Version 4.16 change log](/docs/openshift?topic=openshift-openshift_versions_changelog_416)
 
 
 :   Version 4.13 change log

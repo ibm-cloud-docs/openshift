@@ -3507,6 +3507,10 @@ subcollection: openshift
 
 [Isolating routers to edge nodes](/docs/openshift?topic=openshift-edge#edge)
 
+* [Before you begin](/docs/openshift?topic=openshift-edge#edge-prereqs)
+
+* [Isolating workloads to edge worker nodes](/docs/openshift?topic=openshift-edge#edge-isolate)
+
 [Exposing apps in {{site.data.keyword.satelliteshort}} clusters](/docs/openshift?topic=openshift-sat-expose-apps#sat-expose-apps)
 
 * [Setting up MetalLB](/docs/openshift?topic=openshift-sat-expose-apps#sat-expose-metallb)
@@ -3910,8 +3914,6 @@ subcollection: openshift
     * [Why is live migration pending across worker pools?](/docs/openshift?topic=openshift-vni-virtualization#vni-ts-migration)
 
     * [Why are dynamic attached VNIs not working?](/docs/openshift?topic=openshift-vni-virtualization#vni-ts-not-working)
-
-    * [Why does my worker node enter a critical state after reload with VNIs attached?](/docs/openshift?topic=openshift-vni-virtualization#vni-ts-worker-reload)
 
 
 ## Storage
@@ -8879,10 +8881,6 @@ subcollection: openshift
 [Why can't a virtual machine access the network?](/docs/openshift?topic=openshift-ts-virt-vm-cannot-access-network#ts-virt-vm-cannot-access-network)
 
 [Why does a VNI attachment fail?](/docs/openshift?topic=openshift-ts-virt-vni-attachment-fails#ts-virt-vni-attachment-fails)
-
-[Why does my worker node enter a critical state after reload with VNIs attached?](/docs/openshift?topic=openshift-ts-virt-worker-reload-ovn#ts-virt-worker-reload-ovn)
-
-* [Related links](/docs/openshift?topic=openshift-ts-virt-worker-reload-ovn#ts-virt-worker-reload-ovn-related)
 
 [Why is the localnet user defined network not working?](/docs/openshift?topic=openshift-ts-virt-localnet-udn-not-working#ts-virt-localnet-udn-not-working)
 

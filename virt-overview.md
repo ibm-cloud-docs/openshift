@@ -91,27 +91,34 @@ Networking
 
 OpenShift Virtualization requires VPC bare metal worker nodes. The following flavors are supported:
 
-| Flavor | vCPU | Memory | Network | Local Storage | Min Version | Best for |
-|--------|------|--------|---------|---------------|-------------|----------|
-| `bx2.metal.96x384` | 96 | 384 GB | 100 Gbps | - | All | Balanced workloads |
-| `bx2d.metal.96x384` | 96 | 384 GB | 100 Gbps | 480 GB NVME | All | Balanced + ODF |
-| `cx2.metal.96x192` | 96 | 192 GB | 100 Gbps | - | All | Compute-intensive |
-| `cx2d.metal.96x192` | 96 | 192 GB | 100 Gbps | 480 GB NVME | All | Compute + ODF |
-| `mx2.metal.96x768` | 96 | 768 GB | 100 Gbps | - | All | Memory-intensive |
-| `mx2d.metal.96x768` | 96 | 768 GB | 100 Gbps | 480 GB NVME | All | Memory + ODF |
-| `bx3d.metal.48x256` | 24 | 256 GB | 100 Gbps | 480 GB NVME | 4.17+ | Small balanced + ODF |
-| `bx3d.metal.64x256` | 32 | 256 GB | 100 Gbps | 480 GB NVME | 4.17+ | Medium balanced + ODF |
-| `bx3d.metal.192x1024` | 96 | 1024 GB | 100 Gbps | 480 GB NVME | 4.17+ | Large balanced + ODF |
-| `cx3d.metal.48x128` | 24 | 128 GB | 100 Gbps | 480 GB NVME | 4.17+ | Small compute + ODF |
-| `cx3d.metal.64x128` | 32 | 128 GB | 100 Gbps | 480 GB NVME | 4.17+ | Medium compute + ODF |
-| `mx3d.metal.16x128` | 8 | 128 GB | 100 Gbps | 480 GB NVME | 4.17+ | Small memory + ODF |
-| `mx3d.metal.48x512` | 24 | 512 GB | 100 Gbps | 480 GB NVME | 4.17+ | Medium memory + ODF |
-| `mx3d.metal.64x512` | 32 | 512 GB | 100 Gbps | 480 GB NVME | 4.17+ | Large memory + ODF |
-| `mx3d.metal.96x1024` | 48 | 1024 GB | 100 Gbps | 480 GB NVME | 4.17+ | XL memory + ODF |
-| `mx3d.metal.128x1024` | 64 | 1024 GB | 100 Gbps | 480 GB NVME | 4.17+ | XXL memory + ODF |
+| Flavor | Cores | Memory | Network | Local Storage | Min Version | Best for |
+|--------|----------------|--------|---------|---------------|-------------|----------|
+| `bx2.metal.96x384` | 48 | 384 GB | 100 Gbps | 960 GB SSD | All | Balanced workloads |
+| `bx2d.metal.96x384` | 48 | 384 GB | 100 Gbps | 960 GB SSD | All | Balanced + ODF |
+| `cx2.metal.96x192` | 48 | 192 GB | 100 Gbps | 960 GB SSD | All | Compute-intensive |
+| `cx2d.metal.96x192` | 48 | 192 GB | 100 Gbps | 960 GB SSD | All | Compute + ODF |
+| `mx2.metal.96x768` | 48 | 768 GB | 100 Gbps | 960 GB SSD | All | Memory-intensive |
+| `mx2d.metal.96x768` | 48 | 768 GB | 100 Gbps | 960 GB SSD | All | Memory + ODF |
+| `bx3.metal.48x256` | 24 | 256 GB | 100 Gbps | 480 GB SSD | 4.17+ | Small balanced |
+| `bx3.metal.64x256` | 32 | 256 GB | 100 Gbps | 480 GB SSD | 4.17+ | Medium balanced |
+| `bx3d.metal.48x256` | 24 | 256 GB | 100 Gbps | 480 GB SSD | 4.17+ | Small balanced + ODF |
+| `bx3d.metal.64x256` | 32 | 256 GB | 100 Gbps | 480 GB SSD | 4.17+ | Medium balanced + ODF |
+| `bx3d.metal.192x1024` | 96 | 1024 GB | 100 Gbps | 480 GB SSD | 4.17+ | Large balanced + ODF |
+| `cx3d.metal.48x128` | 24 | 128 GB | 100 Gbps | 480 GB SSD | 4.17+ | Small compute + ODF |
+| `cx3d.metal.64x128` | 32 | 128 GB | 100 Gbps | 480 GB SSD | 4.17+ | Medium compute + ODF |
+| `mx3.metal.48x512` | 24 | 512 GB | 100 Gbps | 480 GB SSD | 4.17+ | Medium memory |
+| `mx3.metal.64x512` | 32 | 512 GB | 100 Gbps | 480 GB SSD | 4.17+ | Large memory |
+| `mx3d.metal.16x128` | 8 | 128 GB | 100 Gbps | 480 GB SSD | 4.17+ | Small memory + ODF |
+| `mx3d.metal.48x512` | 24 | 512 GB | 100 Gbps | 480 GB SSD | 4.17+ | Medium memory + ODF |
+| `mx3d.metal.64x512` | 32 | 512 GB | 100 Gbps | 480 GB SSD | 4.17+ | Large memory + ODF |
+| `mx3d.metal.96x1024` | 48 | 1024 GB | 100 Gbps | 480 GB SSD | 4.17+ | XL memory + ODF |
+| `mx3d.metal.128x1024` | 64 | 1024 GB | 100 Gbps | 480 GB SSD | 4.17+ | XXL memory + ODF |
+| `mx3de.metal.48x512` | 24 | 512 GB | 100 Gbps | 480 GB SSD | 4.17+ | Medium memory + ODF + encryption |
+| `mx3de.metal.64x512` | 32 | 512 GB | 100 Gbps | 480 GB SSD | 4.17+ | Large memory + ODF + encryption |
+| `ux3de.metal.16x512` | 8 | 512 GB | 100 Gbps | 480 GB SSD | 4.17+ | Ultra-high memory + ODF + encryption |
 {: caption="Supported bare metal flavors for OpenShift Virtualization" caption-side="bottom"}
 
-Flavors with `d` suffix include NVME local storage, which is required for OpenShift Data Foundation. Flavors with `3d` in the name offer improved network performance (200 Gbps) and require OpenShift 4.17 or later.
+Flavors with `d` suffix include local SSD storage, which is required for OpenShift Data Foundation. The `mx3de` and `ux3de` flavors provide encrypted local storage for enhanced security.
 {: tip}
 
 ## Storage and networking
