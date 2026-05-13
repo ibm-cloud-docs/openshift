@@ -3521,6 +3521,8 @@ subcollection: openshift
 
 [Preventing app workloads from running on edge worker nodes](/docs/openshift?topic=openshift-edge-workload-prevent#edge-workload-prevent)
 
+* [Before you begin](/docs/openshift?topic=openshift-edge-workload-prevent#edge-workload-prereqs)
+
 [Deploying the Sysdig agent on edge worker nodes](/docs/openshift?topic=openshift-edge-sysdig#edge-sysdig)
 
 
@@ -8618,6 +8620,8 @@ subcollection: openshift
 
 [Classic: Why can't I add worker nodes with an invalid VLAN ID?](/docs/openshift?topic=openshift-suspended#suspended)
 
+* [Resolving the issue](/docs/openshift?topic=openshift-suspended#suspended-resolve)
+
 [Why do I see a timeout error when I try to log in to a pod?](/docs/openshift?topic=openshift-cs_nodes_duplicate_ip#cs_nodes_duplicate_ip)
 
 [Why can't I SSH into my worker node?](/docs/openshift?topic=openshift-cs_ssh_worker#cs_ssh_worker)
@@ -9066,6 +9070,8 @@ subcollection: openshift
 
 [Why can't I add non-root user access to persistent storage?](/docs/openshift?topic=openshift-cs_storage_nonroot#cs_storage_nonroot)
 
+* [Resolving the issue](/docs/openshift?topic=openshift-cs_storage_nonroot#nonroot-resolve)
+
 * [Verifying the read and write permissions for the non-root user](/docs/openshift?topic=openshift-cs_storage_nonroot#verify-rw-permissions)
 
 [Why are the file systems for worker nodes changed to read-only?](/docs/openshift?topic=openshift-readonly_nodes#readonly_nodes)
@@ -9079,6 +9085,8 @@ subcollection: openshift
 [Why do I see a `MountingTargetFailed` error for {{site.data.keyword.filestorage_vpc_short}}?](/docs/openshift?topic=openshift-ts-storage-vpc-file-eit-mount-failed#ts-storage-vpc-file-eit-mount-failed)
 
 [Why do I see an `UnresponsiveMountHelperContainerUtility` error for {{site.data.keyword.filestorage_vpc_short}}?](/docs/openshift?topic=openshift-ts-storage-vpc-file-eit-unresponsive#ts-storage-vpc-file-eit-unresponsive)
+
+* [Resolving the issue](/docs/openshift?topic=openshift-ts-storage-vpc-file-eit-unresponsive#vpc-file-eit-resolve)
 
 [Why does PVC creation fail for {{site.data.keyword.filestorage_vpc_short}}?](/docs/openshift?topic=openshift-ts-storage-vpc-file-eit-pvc-fails#ts-storage-vpc-file-eit-pvc-fails)
 
@@ -9120,6 +9128,8 @@ subcollection: openshift
 [Why does my block storage PVC remain in a pending state?](/docs/openshift?topic=openshift-block_pvc_pending#block_pvc_pending)
 
 [{{site.data.keyword.block_storage_is_short}} PVC creation fails after API key reset](/docs/openshift?topic=openshift-vpc-block-api-key-reset-ts#vpc-block-api-key-reset-ts)
+
+* [Resolving the issue](/docs/openshift?topic=openshift-vpc-block-api-key-reset-ts#vpc-block-api-key-resolve)
 
 [Why do I get a `Volume not attached` error when trying to expand a {{site.data.keyword.block_storage_is_short}} volume?](/docs/openshift?topic=openshift-block_not_attached_vpc#block_not_attached_vpc)
 
@@ -9174,6 +9184,8 @@ subcollection: openshift
 
 [Why does installing the {{site.data.keyword.cos_full_notm}} plug-in fail?](/docs/openshift?topic=openshift-cos_plugin_fails#cos_plugin_fails)
 
+* [Resolving the issue](/docs/openshift?topic=openshift-cos_plugin_fails#cos-plugin-resolve)
+
 [Why do I see wrong credentials or access denied messages when I create a PVC?](/docs/openshift?topic=openshift-cred_failure#cred_failure)
 
 [Why do I see wrong s3fs or IAM API endpoints when I create a PVC?](/docs/openshift?topic=openshift-cos_api_endpoint_failure#cos_api_endpoint_failure)
@@ -9181,6 +9193,8 @@ subcollection: openshift
 [Why does my PVC remain in a pending state?](/docs/openshift?topic=openshift-cos_pvc_pending#cos_pvc_pending)
 
 [Why does PVC or pod creation fail due to not finding the Kubernetes secret?](/docs/openshift?topic=openshift-cos_secret_access_fails#cos_secret_access_fails)
+
+* [Resolving the issue](/docs/openshift?topic=openshift-cos_secret_access_fails#cos-secret-resolve)
 
 [Why is the transport endpoint not connected?](/docs/openshift?topic=openshift-cos_transport_ts_connect#cos_transport_ts_connect)
 

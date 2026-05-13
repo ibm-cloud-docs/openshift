@@ -1,8 +1,8 @@
 ---
 
 copyright: 
-  years: 2014, 2024
-lastupdated: "2024-06-14"
+  years: 2014, 2026
+lastupdated: "2026-05-13"
 
 
 keywords: openshift
@@ -26,15 +26,14 @@ content-type: troubleshoot
 
 [Classic infrastructure]{: tag-classic-inf}
 
-
-
 After you [add non-root user access to persistent storage](/docs/openshift?topic=openshift-nonroot) or deploy a Helm chart with a non-root user ID specified, the user can't write to the mounted storage.
 {: tsSymptoms}
-
 
 Your app deployment or Helm chart configuration specifies the [security context](https://kubernetes.io/docs/tasks/configure-pod-container/security-context/){: external} for the pod's `fsGroup` (group ID) and `runAsUser` (user ID). Generally, a pod's default security context sets [`runAsNonRoot`](https://kubernetes.io/docs/concepts/security/pod-security-policy/){: external} so that the pod can't run as the root user. Because the `fsGroup` setting is not designed for shared storage such as NFS file storage, the `fsGroup` setting is not supported, and the `runAsUser` setting is automatically set to `2020`. These default settings don't allow other non-root users to write to the mounted storage.
 {: tsCauses}
 
+## Resolving the issue
+{: #nonroot-resolve}
 
 To allow a non-root user read and write access to a file storage device, you must allocate a [supplemental group ID](https://kubernetes.io/docs/concepts/security/pod-security-policy/){: external} in a storage class, refer to this storage class in the PVC, and set the pod's security context with a `runAsUser` value that is automatically added to the supplemental group ID. When you grant the supplemental group ID read and write access to the file storage, any non-root user that belongs to the group ID, including your pod, is granted access to the file storage.
 {: tsResolve}
@@ -46,12 +45,12 @@ Allocating a supplemental group ID for a non-root user of a file storage device 
 
 1. Select one of the [provided `gid` storage classes](/docs/openshift?topic=openshift-file_storage#file_storageclass_reference) to assign the default group ID `65531` to your non-root user that you want to read and write to your file storage. If you want to assign a custom group ID, create a YAML file for a customized storage class. In your customized storage class YAML file, include the `gidAllocate: "true"` parameter and define the group ID in the `gidFixed` parameter.
 
-    Example storage classes for assigning the default group ID `65531`.
+    Example storage classes for assigning the default group ID `65531`:
     - `ibmc-file-bronze-gid`
     - `ibmc-file-silver-gid`
     - `ibmc-file-gold-gid`
 
-    Example customized storage class to specify a different group ID.
+    Example customized storage class to specify a different group ID:
     ```yaml
     apiVersion: storage.k8s.io/v1beta1
     kind: StorageClass
@@ -101,15 +100,17 @@ Allocating a supplemental group ID for a non-root user of a file storage device 
     ```
     {: pre}
 
-1. Wait a few minutes for the file storage to be provisioned and the PVC to change to a `Bound` status. Note that if you created the PVC in a multizone cluster, the PVC remains in a `pending` state.
-{: note}
+1. Wait a few minutes for the file storage to be provisioned and the PVC to change to a `Bound` status.
+
+    If you created the PVC in a multizone cluster, the PVC remains in a `pending` state.
+    {: note}
 
     ```sh
     kubectl get pvc
     ```
     {: pre}
 
-    Example output
+    Example output:
 
     ```sh
     NAME      STATUS   VOLUME                                     CAPACITY   ACCESS MODES   STORAGECLASS           AGE
@@ -119,7 +120,7 @@ Allocating a supplemental group ID for a non-root user of a file storage device 
 
 1. Create a YAML file for your deployment that mounts the PVC that you created. In the `spec.template.spec.securityContext.runAsUser` field, specify the non-root user ID that you want to use. This user ID is automatically added to the supplemental group ID that is defined in the storage class to gain read and write access to the file storage.
 
-    Example for creating an `node-hello` deployment.
+    Example for creating a `node-hello` deployment:
     ```yaml
     apiVersion: apps/v1
     kind: Deployment
@@ -165,7 +166,7 @@ Allocating a supplemental group ID for a non-root user of a file storage device 
     ```
     {: pre}
 
-    Example output
+    Example output:
 
     ```sh
     NAME                              READY   STATUS    RESTARTS   AGE
@@ -190,7 +191,7 @@ Allocating a supplemental group ID for a non-root user of a file storage device 
     ```
     {: pre}
 
-    Example output
+    Example output:
 
     ```sh
     uid=2020 gid=0(root) groups=0(root), 65531
@@ -203,7 +204,7 @@ Allocating a supplemental group ID for a non-root user of a file storage device 
     ```
     {: pre}
 
-    Example output
+    Example output:
 
     ```sh
     drwxrwxr-x 2 nobody 65531 4096 Dec 11 07:40 .
@@ -225,7 +226,7 @@ Allocating a supplemental group ID for a non-root user of a file storage device 
     ```
     {: pre}
 
-    Example output
+    Example output:
 
     ```sh
     drwxrwxr-x 2 nobody      65531 4096 Dec 11 07:40 .
@@ -242,12 +243,5 @@ Allocating a supplemental group ID for a non-root user of a file storage device 
     ```
     {: pre}
 
-
 If you need to change the ownership of the mount path from `nobody`, see [App fails when a non-root user owns the NFS file storage mount path](/docs/openshift?topic=openshift-nonroot).
 {: tip}
-
-
-
-
-
-

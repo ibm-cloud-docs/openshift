@@ -1,8 +1,8 @@
 ---
 
 copyright: 
-  years: 2022, 2024
-lastupdated: "2024-06-28"
+  years: 2022, 2026
+lastupdated: "2026-05-13"
 
 
 keywords: openshift, block storage for vpc, remove
@@ -18,6 +18,8 @@ subcollection: openshift
 
 # Removing {{site.data.keyword.block_storage_is_short}} from your cluster
 {: #storage-block-vpc-remove}
+
+[Virtual Private Cloud]{: tag-vpc}
 
 When you set up persistent storage in your cluster, you have three main components: the Kubernetes persistent volume claim (PVC) that requests storage, the Kubernetes persistent volume (PV) that is mounted to a pod and described in the PVC, and the storage instance. Depending on how you created your storage, you might need to delete all three components separately.
 {: shortdesc}
@@ -151,6 +153,7 @@ To clean up persistent data:
     ```
     {: pre}
     
+
 1. List the physical storage instance that your PV pointed to and note the **`id`** of the physical storage instance.
     ```sh
     ibmcloud is volumes | grep <pv_name>
@@ -173,5 +176,3 @@ To clean up persistent data:
     ibmcloud is volumes
     ```
     {: pre}
-
-
