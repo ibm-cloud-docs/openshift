@@ -2,7 +2,7 @@
 
 copyright:
   years: 2023, 2026
-lastupdated: "2026-05-01"
+lastupdated: "2026-05-13"
 
 
 keywords: openshift, {{site.data.keyword.openshiftlong_notm}}, kubernetes cluster, red hat openshift, openshift container platform, red hat, create openshift cluster, vpc cluster, classic cluster, clusters
@@ -50,7 +50,7 @@ You must be logged in to IBM Cloud before you create a cluster. If you don't hav
 ### Pricing considerations
 {: #getting-started-pricing}
 
-Pricing varies based on worker node flavor, number of nodes, and infrastructure type. For more information, see [Red Hat OpenShift on IBM Cloud pricing](https://cloud.ibm.com/kubernetes/catalog/about?platformType=openshift#pricing){: external}.
+Pricing varies based on worker node flavor, number of nodes, and infrastructure type. For more information, see [Red Hat OpenShift on IBM Cloud pricing](https://cloud.ibm.com/containers/cluster-management/catalog/about?platformType=openshift#pricing){: external}.
 
 ## Create a cluster environment strategy
 {: #getting-started-strategy}

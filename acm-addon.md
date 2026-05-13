@@ -2,7 +2,7 @@
 
 copyright:
   years: 2025, 2026
-lastupdated: "2026-04-15"
+lastupdated: "2026-05-13"
 
 
 keywords: openshift, acm, advanced cluster management, manage cluster, management, addon, add-on, acm addon
@@ -38,10 +38,10 @@ Review the following prerequisite steps and information before you install the A
     - Your **hub cluster** must be a VPC cluster with at least **3** worker nodes that run **RHCOS** and a minimum of **6 VCPU and 64GB RAM**. For high availability, make sure that your cluster has at least one worker node per zone across 3 zones.
     - Each **managed cluster** must have at least **3** worker nodes that run **RHCOS** and a minimum of **6 VCPU and 64GB RAM**. 
     - In addition, if you want to use the **ACM for Virtualization** plan, it is recommended that you use **bare metal worker nodes**. For the **ACM for Kubernetes** plan, managed clusters can run either **bare metal nodes** or **VSIs**.
-1. Review the [operators that are automatically installed](#auto-op}) by the ACM add-on and the [optional operators](#optional-op) that you can install as enhancements.
+1. Review the [operators that are automatically installed](#auto-op) by the ACM add-on and the [optional operators](#optional-op) that you can install as enhancements.
 1. You must have the [Administrator platform access role and the Manager service access role](/docs/openshift?topic=openshift-iam-platform-access-roles) for the cluster in IBM Cloud Kubernetes Service. 
 1. You must have a VPC cluster with at least 3 worker nodes. Each worker node must have a minimum of 4 CPUs and 16GB RAM. For high availability, make sure that your cluster has at least one worker node per zone across 3 zones. 
-1. [Create a trusted profile on your cluster to use for ACM](#trusted-prof).
+1. [Create a trusted profile on your cluster to use for ACM](#trust-prof).
 1. For each cluster you want to manage with ACM, you must create a secret on the hub cluster with the managed cluster's access token and server URL. This step can be completed before or after installation.  See [Preparing secrets for ACM](#prep-secret). 
 1. [Install or update the CLI](/docs/openshift?topic=openshift-cli-install).
 
@@ -58,7 +58,7 @@ Follow the steps to create a trusted profile to use for ACM.
 
 1. After you create your trusted profile, copy the ID from the **Trusted profiles** page in the console.
 
-1. Create the following secret by using the ID for the trusted profile. Save the following text and enter your credentials. You can follow the steps to create the secret manually or you can use the shell script to [automatically create the secret in your cluster](#odf-secret-create-truted-profile).
+1. Create the following secret by using the ID for the trusted profile. Save the following text and enter your credentials. You can follow the steps to create the secret manually or you can use the shell script to [automatically create the secret in your cluster](/docs/openshift?topic=openshift-storage-odf-trusted-profiles&interface=ui#odf-secret-create-trusted-profile).
 
     ```txt
     IBMCLOUD_AUTHTYPE=pod-identity

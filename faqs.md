@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2026
-lastupdated: "2026-04-15"
+lastupdated: "2026-05-13"
 
 
 keywords: openshift, ocp, compliance, security standards, faq, openshift pricing, ocp pricing, openshift charges, ocp charges, openshift price, ocp price, openshift billing, ocp billing, openshift costs, ocp costs
@@ -584,7 +584,7 @@ To resolve this issue:
     ```
     {: pre}
 
-3. Increase the [`PEERPODS_LIMIT_PER_NODE`](/docs/openshift?topic=openshift-confidential-containers#peerpods-limit) value as described in [How many peer pods can I run per worker node?](#conf-cont-peerpods-limit).
+3. Increase the `PEERPODS_LIMIT_PER_NODE` value as described in [How many peer pods can I run per worker node?](#conf-cont-peerpods-limit).
 
 4. Alternatively, add more worker nodes to your cluster to increase total capacity.
 
