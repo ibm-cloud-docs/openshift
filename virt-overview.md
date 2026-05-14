@@ -2,7 +2,7 @@
 
 copyright:
   years: 2025, 2026
-lastupdated: "2026-05-13"
+lastupdated: "2026-05-14"
 
 keywords: openshift, virtualization, virtual machines, vms, bare metal
 
@@ -158,6 +158,10 @@ Advanced networking with VNIs (4.20+)
 - Live migration is supported only within the same zone
 - VNI features require OpenShift 4.20 or later
 - Windows VMs require appropriate licensing
+- If you mark more than one StorageClass with the annotation `storageclass.kubernetes.io/is-default-class: "true"`, the following occurs:
+    - **Selection Logic**: For a PersistentVolumeClaim (PVC) created without a `storageClassName`, Kubernetes typically selects the most recently created default StorageClass.
+    - **Potential Failure**: In some older versions or specific configurations, having multiple defaults may cause PVC creation to fail if no explicit class is specified, as the system cannot resolve which one to use.
+    - **Monitoring Alerts**: In managed environments like OpenShift, having multiple defaults triggers a `MultipleDefaultStorageClasses` alert to warn administrators of the conflict.
 
 ## Getting started
 {: #virt-next-steps}
