@@ -2,7 +2,7 @@
 
 copyright:
   years: 2026, 2026
-lastupdated: "2026-05-13"
+lastupdated: "2026-05-14"
 
 
 keywords: openshift, version, update, upgrade, 4.21, update openshift
@@ -24,9 +24,9 @@ Looking for general information about updating clusters, or information on a dif
 {: tip}
 
 
-![This badge indicates Kubernetes version 1.33 certification for {{site.data.keyword.openshiftlong_notm}}](images/certified-kubernetes-color.svg){: caption="Kubernetes version 1.33 certification badge" caption-side="bottom"}
+![This badge indicates Kubernetes version 1.34 certification for {{site.data.keyword.openshiftlong_notm}}](images/certified-kubernetes-color.svg){: caption="Kubernetes version 1.34 certification badge" caption-side="bottom"}
 
-{{site.data.keyword.openshiftlong_notm}} is a Certified Kubernetes product for version 1.33 under the CNCF Kubernetes Software Conformance Certification program. _Kubernetes® is a registered trademark of The Linux Foundation in the United States and other countries, and is used pursuant to a license from The Linux Foundation._
+{{site.data.keyword.openshiftlong_notm}} is a Certified Kubernetes product for version 1.34 under the CNCF Kubernetes Software Conformance Certification program. _Kubernetes® is a registered trademark of The Linux Foundation in the United States and other countries, and is used pursuant to a license from The Linux Foundation._
 
 
 

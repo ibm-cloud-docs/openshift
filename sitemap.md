@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2026
-lastupdated: "2026-05-13"
+lastupdated: "2026-05-14"
 
 
 keywords: openshift
@@ -5080,11 +5080,13 @@ subcollection: openshift
 
     * [3.2 Logging](/docs/openshift?topic=openshift-cis-benchmark-421#32-logging-421)
 
-* [4 Worker node security configuration (RHEL_9_64)](/docs/openshift?topic=openshift-cis-benchmark-421#4-worker-node-security-configuration-rhel_9_64-421)
+* [4 Worker nodes (RHEL_9_64)](/docs/openshift?topic=openshift-cis-benchmark-421#4-worker-nodes-rhel_9_64-421)
 
     * [4.1 Worker node configuration files](/docs/openshift?topic=openshift-cis-benchmark-421#41-worker-node-configuration-files-421)
 
     * [4.2 Kubelet](/docs/openshift?topic=openshift-cis-benchmark-421#42-kubelet-421)
+
+    * [4.3 Kube-proxy](/docs/openshift?topic=openshift-cis-benchmark-421#43-kube-proxy-421)
 
 * [4 Worker node security configuration (RHCOS)](/docs/openshift?topic=openshift-cis-benchmark-421#4-worker-node-security-configuration-rhcos-421)
 
@@ -5092,11 +5094,13 @@ subcollection: openshift
 
     * [4.2 Kubelet](/docs/openshift?topic=openshift-cis-benchmark-421#42-kubelet-421)
 
-* [5 Kubernetes policies](/docs/openshift?topic=openshift-cis-benchmark-421#5-kubernetes-policies-421)
+    * [4.3 Kube-proxy](/docs/openshift?topic=openshift-cis-benchmark-421#43-kube-proxy-421)
+
+* [5 Policies](/docs/openshift?topic=openshift-cis-benchmark-421#5-policies-421)
 
     * [5.1 RBAC and service accounts](/docs/openshift?topic=openshift-cis-benchmark-421#51-rbac-and-service-accounts-421)
 
-    * [5.2 Pod security policies](/docs/openshift?topic=openshift-cis-benchmark-421#52-pod-security-policies-421)
+    * [5.2 Pod security standards](/docs/openshift?topic=openshift-cis-benchmark-421#52-pod-security-standards-421)
 
     * [5.3 Network policies and CNI](/docs/openshift?topic=openshift-cis-benchmark-421#53-network-policies-and-cni-421)
 
@@ -5104,7 +5108,7 @@ subcollection: openshift
 
     * [5.5 Extensible admission control](/docs/openshift?topic=openshift-cis-benchmark-421#55-extensible-admission-control-421)
 
-    * [5.7 General policies](/docs/openshift?topic=openshift-cis-benchmark-421#57-general-policies-421)
+    * [5.6 General policies](/docs/openshift?topic=openshift-cis-benchmark-421#56-general-policies-421)
 
     * [{{site.data.keyword.IBM_notm}} remediations and explanations](/docs/openshift?topic=openshift-cis-benchmark-421#ibm-remediations-and-explanations-421)
 
