@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2022, 2026
-lastupdated: "2026-05-13"
+lastupdated: "2026-05-14"
 
 
 keywords: openshift, block storage for vpc, remove
@@ -58,6 +58,8 @@ I deleted my storage instance. Why can I still see my instance?
 ## Cleaning up {{site.data.keyword.block_storage_is_short}}
 {: #cleaning-up-block-vpc}
 
+Deleting your storage instance permanently removes all data. This action cannot be undone. Make sure you back up your data before you delete the storage instance.
+{: important}
 
 Remove the PVC, PV, and the storage instance from your {{site.data.keyword.cloud_notm}} account to avoid further charges for your persistent storage.
 {: shortdesc}
