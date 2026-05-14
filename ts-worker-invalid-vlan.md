@@ -90,6 +90,7 @@ Before you begin: [Log in to your account. If applicable, target the appropriate
     {: pre}
 
 8. Verify that your worker nodes are created.
+
 ```sh
 ibmcloud oc worker ls --cluster <cluster_name_or_ID> --worker-pool <worker_pool>
 ```
