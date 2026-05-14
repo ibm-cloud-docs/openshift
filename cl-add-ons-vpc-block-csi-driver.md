@@ -3,7 +3,7 @@
 copyright:
   years: 2024, 2026
 
-lastupdated: "2026-05-04"
+lastupdated: "2026-05-14"
 
 
 keywords: change log, version history, VPC Block CSI Driver
@@ -41,6 +41,14 @@ Review the version history for VPC Block CSI Driver.
 
 ## Version 5.2
 {: #cl-add-ons-vpc-block-csi-driver-5.2}
+
+
+### v5.2.50_338659383, released 13 May 2026
+{: #cl-add-ons-vpc-block-csi-driver-v5250_338659383}
+
+- Fixed udevadm trigger execution and added critical device existence validation to prevent data loss during volume formatting operations 
+- `armada-storage-secret v1.3.47`
+- `ibm-csi-init-container v1.0.15`
 
 
 ### v5.2.49_335380306, released 30 April 2026
@@ -166,6 +174,14 @@ Review the version history for VPC Block CSI Driver.
 
 ## Version 5.1
 {: #cl-add-ons-vpc-block-csi-driver-5.1}
+
+
+### v5.1.50_338876479, released 13 May 2026
+{: #cl-add-ons-vpc-block-csi-driver-v5150_338876479}
+
+- Fixed udevadm trigger execution and added critical device existence validation to prevent data loss during volume formatting operations 
+- `armada-storage-secret v1.2.82`
+- `ibm-csi-init-container v1.0.15`
 
 
 ### v5.1.49_335379980, released 30 April 2026

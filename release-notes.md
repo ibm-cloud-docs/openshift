@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2026
-lastupdated: "2026-05-13"
+lastupdated: "2026-05-14"
 
 
 keywords: kubernetes, release notes, openshift, {{site.data.keyword.openshiftlong_notm}}
@@ -44,6 +44,21 @@ Red Hat OpenShift on IBM Cloud version 4.21 is now available
 New VPC bare metal worker node flavors available
 :   New VPC bare metal worker node flavors are now available in select regions. The new `bx3d.metal` balanced flavors and `cx3d.metal` compute flavors provide high-performance bare metal infrastructure for demanding workloads. For more information, see [VPC flavors](/docs/openshift?topic=openshift-vpc-flavors).
 
+
+
+
+VPC Block CSI Driver cluster add-on patch updates.
+:   For more information, see the [change log](/docs/openshift?topic=openshift-cl-add-ons-vpc-block-csi-driver).
+For more information, see the [change log](/docs/openshift?topic=openshift-cl-add-ons-vpc-block-csi-driver).
+
+
+
+IBM Storage Operator cluster add-on patch updates.
+:   For more information, see the [change log](/docs/openshift?topic=openshift-cl-add-ons-ibm-storage-operator).
+
+
+VPC File CSI Driver cluster add-on patch updates.
+:   For more information, see the [change log](/docs/openshift?topic=openshift-cl-add-ons-vpc-file-csi-driver).
 
 
 
