@@ -5112,6 +5112,48 @@ subcollection: openshift
 
     * [{{site.data.keyword.IBM_notm}} remediations and explanations](/docs/openshift?topic=openshift-cis-benchmark-421#ibm-remediations-and-explanations-421)
 
+[4.21 compliance operator benchmark](/docs/openshift?topic=openshift-benchmarks-421-co#benchmarks-421-co)
+
+* [1 Control plane components](/docs/openshift?topic=openshift-benchmarks-421-co#control-plane-components-421-co)
+
+    * [1.1 Master node configuration files](/docs/openshift?topic=openshift-benchmarks-421-co#master-node-configuration-files-421-co)
+
+    * [1.2 API server](/docs/openshift?topic=openshift-benchmarks-421-co#api-server-421-co)
+
+    * [1.3 Controller manager](/docs/openshift?topic=openshift-benchmarks-421-co#controller-manager-421-co)
+
+    * [1.4 Scheduler](/docs/openshift?topic=openshift-benchmarks-421-co#scheduler-421-co)
+
+* [2 Etcd](/docs/openshift?topic=openshift-benchmarks-421-co#etcd-421-co)
+
+* [3 Control plane configuration](/docs/openshift?topic=openshift-benchmarks-421-co#control-plane-configuration-421-co)
+
+    * [3.1 Authentication and authorization](/docs/openshift?topic=openshift-benchmarks-421-co#authentication-and-authorization-421-co)
+
+    * [3.2 Logging](/docs/openshift?topic=openshift-benchmarks-421-co#logging-421-co)
+
+* [4 Worker nodes](/docs/openshift?topic=openshift-benchmarks-421-co#worker-nodes-421-co)
+
+    * [4.1 Worker node configuration files](/docs/openshift?topic=openshift-benchmarks-421-co#worker-node-configuration-files-421-co)
+
+    * [4.2 Kubelet](/docs/openshift?topic=openshift-benchmarks-421-co#kubelet-421-co)
+
+* [5 Policies](/docs/openshift?topic=openshift-benchmarks-421-co#policies-421-co)
+
+    * [5.1 RBAC and service accounts](/docs/openshift?topic=openshift-benchmarks-421-co#rbac-and-service-accounts-421-co)
+
+    * [5.2 Security context constraints](/docs/openshift?topic=openshift-benchmarks-421-co#security-context-constraints-421-co)
+
+    * [5.3 Network policies and CNI](/docs/openshift?topic=openshift-benchmarks-421-co#network-policies-and-cni-421-co)
+
+    * [5.4 Secrets management](/docs/openshift?topic=openshift-benchmarks-421-co#secrets-management-421-co)
+
+    * [5.5 Extensible admission control](/docs/openshift?topic=openshift-benchmarks-421-co#extensible-admission-control-421-co)
+
+    * [5.7 General policies](/docs/openshift?topic=openshift-benchmarks-421-co#general-policies-421-co)
+
+* [{{site.data.keyword.IBM_notm}} remediations and explanations](/docs/openshift?topic=openshift-benchmarks-421-co#ibm-remediations-and-explanations-421-co)
+
 
 ### Version 4.20
 {: #sitemap_version_420}
