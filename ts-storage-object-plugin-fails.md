@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2026
-lastupdated: "2026-05-13"
+lastupdated: "2026-05-14"
 
 
 keywords: openshift
@@ -25,6 +25,9 @@ content-type: troubleshoot
 {: support}
 
 [Virtual Private Cloud]{: tag-vpc} [Classic infrastructure]{: tag-classic-inf}
+
+Installing the {{site.data.keyword.cos_full_notm}} plug-in fails due to conflicting resources from previous installations.
+{: shortdesc}
 
 When you install the `ibm-object-storage-plugin`, the installation fails.
 {: tsSymptoms}
@@ -59,11 +62,11 @@ Delete the resource that is displayed in the error message and retry the install
     ```
     {: pre}
 
-1. [Retry the installation](/docs/openshift?topic=openshift-storage_cos_install).
+2. [Retry the installation](/docs/openshift?topic=openshift-storage_cos_install).
 
-1. If you continue to see the same error, get a list of the resources that are installed when the plug-in is installed.
+3. If you continue to see the same error, identify and remove all conflicting resources from previous installations.
 
-1. Get a list of storage classes that are created by the `ibmcloud-object-storage-plugin`.
+4. Get a list of storage classes that are created by the `ibmcloud-object-storage-plugin`.
     ```sh
     oc get sc --all-namespaces \
             -l app=ibmcloud-object-storage-plugin \
@@ -71,7 +74,7 @@ Delete the resource that is displayed in the error message and retry the install
     ```
     {: pre}
 
-1. Get a list of cluster role bindings that are created by the `ibmcloud-object-storage-plugin`.
+5. Get a list of cluster role bindings that are created by the `ibmcloud-object-storage-plugin`.
     ```sh
     oc get ClusterRoleBinding --all-namespaces \
             -l app=ibmcloud-object-storage-plugin \
@@ -79,7 +82,7 @@ Delete the resource that is displayed in the error message and retry the install
     ```
     {: pre}
 
-1. Get a list of role bindings that are created by the `ibmcloud-object-storage-driver`.
+6. Get a list of role bindings that are created by the `ibmcloud-object-storage-driver`.
     ```sh
     oc get RoleBinding --all-namespaces \
         -l app=ibmcloud-object-storage-driver \
@@ -87,7 +90,7 @@ Delete the resource that is displayed in the error message and retry the install
     ```
     {: pre}
 
-1. Get a list of role bindings that are created by the `ibmcloud-object-storage-plugin`.
+7. Get a list of role bindings that are created by the `ibmcloud-object-storage-plugin`.
     ```sh
     oc get RoleBinding --all-namespaces \
             -l app=ibmcloud-object-storage-plugin \
@@ -95,7 +98,7 @@ Delete the resource that is displayed in the error message and retry the install
     ```
     {: pre}
 
-1. Get a list of cluster roles that are created by the `ibmcloud-object-storage-plugin`.
+8. Get a list of cluster roles that are created by the `ibmcloud-object-storage-plugin`.
     ```sh
     oc get ClusterRole --all-namespaces \
         -l app=ibmcloud-object-storage-plugin \
@@ -103,7 +106,7 @@ Delete the resource that is displayed in the error message and retry the install
     ```
     {: pre}
 
-1. Get a list of deployments that are created by the `ibmcloud-object-storage-plugin`.
+9. Get a list of deployments that are created by the `ibmcloud-object-storage-plugin`.
     ```sh
     oc get deployments --all-namespaces \
         -l app=ibmcloud-object-storage-plugin \
@@ -111,7 +114,7 @@ Delete the resource that is displayed in the error message and retry the install
     ```
     {: pre}
 
-1. Get a list of the daemon sets that are created by the `ibmcloud-object-storage-driver`.
+10. Get a list of the daemon sets that are created by the `ibmcloud-object-storage-driver`.
     ```sh
     oc get DaemonSets --all-namespaces \
         -l app=ibmcloud-object-storage-driver \
@@ -119,7 +122,7 @@ Delete the resource that is displayed in the error message and retry the install
     ```
     {: pre}
 
-1. Get a list of the service accounts that are created by the `ibmcloud-object-storage-driver`.
+11. Get a list of the service accounts that are created by the `ibmcloud-object-storage-driver`.
     ```sh
     oc get ServiceAccount --all-namespaces \
         -l app=ibmcloud-object-storage-driver \
@@ -127,7 +130,7 @@ Delete the resource that is displayed in the error message and retry the install
     ```
     {: pre }
 
-1. Get a list of the service accounts that are created by the `ibmcloud-object-storage-plugin`.
+12. Get a list of the service accounts that are created by the `ibmcloud-object-storage-plugin`.
     ```sh
     oc get ServiceAccount --all-namespaces \
         -l app=ibmcloud-object-storage-plugin \
@@ -135,6 +138,18 @@ Delete the resource that is displayed in the error message and retry the install
     ```
     {: pre}
 
-1. Delete the conflicting resources.
+13. Delete the conflicting resources that were identified in the previous steps.
 
-1. After you delete the conflicting resources, [retry the installation](/docs/openshift?topic=openshift-storage_cos_install).
+    ```sh
+    oc delete <resource_kind> <resource_name>
+    ```
+    {: pre}
+
+14. After you delete the conflicting resources, [retry the installation](/docs/openshift?topic=openshift-storage_cos_install).
+
+15. Verify the plug-in is installed successfully.
+
+    ```sh
+    oc get pods -n kube-system | grep object-storage
+    ```
+    {: pre}

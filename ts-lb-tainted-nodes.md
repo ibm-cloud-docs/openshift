@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2026
-lastupdated: "2026-05-13"
+lastupdated: "2026-05-14"
 
 
 keywords: openshift
@@ -25,11 +25,11 @@ content-type: troubleshoot
 
 [Classic infrastructure]{: tag-classic-inf}
 
-
+Source IP preservation fails when using tainted nodes in classic clusters, preventing traffic from reaching your app.
+{: shortdesc}
 
 In a classic cluster, you enabled source IP preservation for a [version 1.0 load balancer](/docs/openshift?topic=openshift-loadbalancer#lb_source_ip) service by changing `externalTrafficPolicy` to `Local` in the service's configuration file. However, no traffic reaches the back-end service for your app.
 {: tsSymptoms}
-{: shortdesc}
 
 
 When you enable source IP preservation for load balancer services, the source IP address of the client request is preserved.
@@ -66,5 +66,12 @@ If you complete one of the previous options but the `keepalived` pods are still 
 3. Describe each `keepalived` pod and look for the **Events** section. Address any error or warning messages that are listed.
     ```sh
     oc describe pod ibm-cloud-provider-ip-169-61-XX-XX-55967b5b8c-7zv9t -n ibm-system
+    ```
+    {: pre}
+
+4. After resolving the issue, verify that traffic is reaching your app by checking the load balancer service endpoints.
+
+    ```sh
+    oc get svc -o wide
     ```
     {: pre}

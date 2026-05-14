@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2026
-lastupdated: "2026-05-13"
+lastupdated: "2026-05-14"
 
 
 keywords: openshift
@@ -24,6 +24,9 @@ content-type: troubleshoot
 {: support}
 
 [Classic infrastructure]{: tag-classic-inf}
+
+After your {{site.data.keyword.cloud_notm}} account is reactivated or worker nodes are restored, you can't add worker nodes due to invalid VLAN IDs.
+{: shortdesc}
 
 Your {{site.data.keyword.cloud_notm}} account was suspended, or all worker nodes in your cluster were deleted. After the account is reactivated, you can't add worker nodes when you try to resize or rebalance your worker pool.
 {: tsSymptoms}
@@ -73,7 +76,7 @@ Before you begin: [Log in to your account. If applicable, target the appropriate
 5. Use the `zone network-set` [command](/docs/openshift?topic=openshift-kubernetes-service-cli#cs_zone_network_set) to change the worker pool network metadata.
 
     ```sh
-    ibmcloud oc zone network-set --zone <zone> --cluster <cluster_name_or_ID> -- worker-pool ls <worker-pool> --private-vlan <private_vlan_ID> --public-vlan <public_vlan_ID>
+    ibmcloud oc zone network-set --zone <zone> --cluster <cluster_name_or_ID> --worker-pool <worker-pool> --private-vlan <private_vlan_ID> --public-vlan <public_vlan_ID>
     ```
     {: pre}
 
@@ -87,8 +90,7 @@ Before you begin: [Log in to your account. If applicable, target the appropriate
     {: pre}
 
 8. Verify that your worker nodes are created.
-
-    ```sh
-    ibmcloud oc worker ls --cluster <cluster_name_or_ID> --worker-pool <worker_pool>
-    ```
-    {: pre}
+```sh
+ibmcloud oc worker ls --cluster <cluster_name_or_ID> --worker-pool <worker_pool>
+```
+{: pre}

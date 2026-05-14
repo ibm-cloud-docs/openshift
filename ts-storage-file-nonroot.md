@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2026
-lastupdated: "2026-05-13"
+lastupdated: "2026-05-14"
 
 
 keywords: openshift
@@ -26,6 +26,9 @@ content-type: troubleshoot
 
 [Classic infrastructure]{: tag-classic-inf}
 
+Non-root users can't write to file storage even after configuring access permissions.
+{: shortdesc}
+
 After you [add non-root user access to persistent storage](/docs/openshift?topic=openshift-nonroot) or deploy a Helm chart with a non-root user ID specified, the user can't write to the mounted storage.
 {: tsSymptoms}
 
@@ -41,7 +44,7 @@ To allow a non-root user read and write access to a file storage device, you mus
 You can use one of the provided [`gid` storage classes](/docs/openshift?topic=openshift-file_storage#file_storageclass_reference) or create your own storage class to define your own supplemental group ID.
 
 Allocating a supplemental group ID for a non-root user of a file storage device is supported for single zone clusters only, and can't be used in multizone clusters.
-{: note}
+{: important}
 
 1. Select one of the [provided `gid` storage classes](/docs/openshift?topic=openshift-file_storage#file_storageclass_reference) to assign the default group ID `65531` to your non-root user that you want to read and write to your file storage. If you want to assign a custom group ID, create a YAML file for a customized storage class. In your customized storage class YAML file, include the `gidAllocate: "true"` parameter and define the group ID in the `gidFixed` parameter.
 
@@ -80,16 +83,16 @@ Allocating a supplemental group ID for a non-root user of a file storage device 
     kind: PersistentVolumeClaim
     apiVersion: v1
     metadata:
-    name: gid-pvc
-    labels:
-      billingType: "monthly"
+      name: gid-pvc
+      labels:
+        billingType: "monthly"
     spec:
-    accessModes:
-      - ReadWriteMany
-    resources:
-      requests:
-        storage: 20Gi
-    storageClassName: ibmc-file-bronze-gid
+      accessModes:
+        - ReadWriteMany
+      resources:
+        requests:
+          storage: 20Gi
+      storageClassName: ibmc-file-bronze-gid
     ```
     {: codeblock}
 
@@ -222,7 +225,7 @@ Allocating a supplemental group ID for a non-root user of a file storage device 
 4. List the permissions for the files in your volume mount directory.
 
     ```sh
-    ls -al /mnt/nfsvol/
+    ls -al /myvol/
     ```
     {: pre}
 
