@@ -396,6 +396,7 @@ toc:
               - openshift_versions_421.md
               - openshift_versions_changelog_421.md
               - benchmarks_421.md
+              - benchmarks_421_co.md
           - topicgroup:
               label: Version 4.20
               topics:
