@@ -48,7 +48,7 @@ Review the version history for IBM Object CSI Driver.
 
 [Default version]{: tag-green}
 
-- Resolves the following CVEs: [CVE-2026-27135](https://nvd.nist.gov/vuln/detail/CVE-2026-27135){: external}, [CVE-2026-32280](https://nvd.nist.gov/vuln/detail/CVE-2026-32280){: external}, [CVE-2026-32283](https://nvd.nist.gov/vuln/detail/CVE-2026-32283){: external}, [CVE-2026-32289](https://nvd.nist.gov/vuln/detail/CVE-2026-32289){: external}, [CVE-2026-32281](https://nvd.nist.gov/vuln/detail/CVE-2026-32281){: external}, [CVE-2026-32288](https://nvd.nist.gov/vuln/detail/CVE-2026-32288){: external}, [CVE-2026-33809](https://nvd.nist.gov/vuln/detail/CVE-2026-33809){: external}, [CVE-2026-41176](https://nvd.nist.gov/vuln/detail/CVE-2026-41176){: external}, [CVE-2026-41179](https://nvd.nist.gov/vuln/detail/CVE-2026-41179){: external}, and GHSA-xmrv-pmrh-hhx2.
+- Resolves the following CVEs: [CVE-2026-27135](https://nvd.nist.gov/vuln/detail/CVE-2026-27135){: external}, [CVE-2026-32280](https://nvd.nist.gov/vuln/detail/CVE-2026-32280){: external}, [CVE-2026-32283](https://nvd.nist.gov/vuln/detail/CVE-2026-32283){: external}, [CVE-2026-32289](https://nvd.nist.gov/vuln/detail/CVE-2026-32289){: external}, [CVE-2026-32281](https://nvd.nist.gov/vuln/detail/CVE-2026-32281){: external}, [CVE-2026-32288](https://nvd.nist.gov/vuln/detail/CVE-2026-32288){: external}, [CVE-2026-33809](https://nvd.nist.gov/vuln/detail/CVE-2026-33809){: external}, [CVE-2026-41176](https://nvd.nist.gov/vuln/detail/CVE-2026-41176){: external}, [CVE-2026-41179](https://nvd.nist.gov/vuln/detail/CVE-2026-41179){: external}, and [GHSA-xmrv-pmrh-hhx2](https://nvd.nist.gov/vuln/detail/GHSA-xmrv-pmrh-hhx2){: external}.
 - Updates Go to version `1.25.9`.
 - Updates rclone mounter version to 1.73.5 
 

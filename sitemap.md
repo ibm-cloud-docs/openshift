@@ -287,6 +287,12 @@ subcollection: openshift
 
 * [May 2026](/docs/openshift?topic=openshift-openshift-relnotes#openshift-may26)
 
+    * [18 May 2026](/docs/openshift?topic=openshift-openshift-relnotes#openshift-may1826)
+
+        * Openshift AI cluster add-on patch updates.
+
+        * For more information, see the [change log](/docs/openshift?topic=openshift-cl-add-ons-openshift-ai).
+
     * [13 May 2026](/docs/openshift?topic=openshift-openshift-relnotes#openshift-may1326)
 
         * Red Hat OpenShift on IBM Cloud version 4.21 is now available
@@ -6830,6 +6836,8 @@ subcollection: openshift
 
 * [Version 417](/docs/openshift?topic=openshift-cl-add-ons-openshift-ai#cl-add-ons-openshift-ai-417)
 
+    * [v417.1.1_339109167, released 18 May 2026](/docs/openshift?topic=openshift-cl-add-ons-openshift-ai#cl-add-ons-openshift-ai-v41711_339109167)
+
     * [v417.1.0_320919116, released 03 March 2026](/docs/openshift?topic=openshift-cl-add-ons-openshift-ai#cl-add-ons-openshift-ai-v41710_320919116)
 
     * [417.0.4_300761316, released 27 November 2025](/docs/openshift?topic=openshift-cl-add-ons-openshift-ai#cl-add-ons-openshift-ai-41704_300761316)
@@ -6839,6 +6847,8 @@ subcollection: openshift
     * [417.0.0_533, released 19 August 2025](/docs/openshift?topic=openshift-cl-add-ons-openshift-ai#cl-add-ons-openshift-ai-41700_533)
 
 * [Version 416](/docs/openshift?topic=openshift-cl-add-ons-openshift-ai#cl-add-ons-openshift-ai-416)
+
+    * [v416.4.1_339109233, released 18 May 2026](/docs/openshift?topic=openshift-cl-add-ons-openshift-ai#cl-add-ons-openshift-ai-v41641_339109233)
 
     * [416.3.1_300541549, released 27 November 2025](/docs/openshift?topic=openshift-cl-add-ons-openshift-ai#cl-add-ons-openshift-ai-41631_300541549)
 
