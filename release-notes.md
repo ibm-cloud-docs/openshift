@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2026
-lastupdated: "2026-05-14"
+lastupdated: "2026-05-18"
 
 
 keywords: kubernetes, release notes, openshift, {{site.data.keyword.openshiftlong_notm}}
@@ -31,9 +31,23 @@ Looking for {{site.data.keyword.cloud_notm}} status, platform announcements, sec
 
 
 
+### 18 May 2026
+{: #openshift-may1826}
+{: release-note}
+
+Openshift AI cluster add-on patch updates.
+:   For more information, see the [change log](/docs/openshift?topic=openshift-cl-add-ons-openshift-ai).
+For more information, see the [change log](/docs/openshift?topic=openshift-cl-add-ons-openshift-ai).
+
+
+
+
+
 ### 13 May 2026
 {: #openshift-may1326}
 {: release-note}
+
+
 
 Red Hat OpenShift on IBM Cloud version 4.21 is now available
 :   You can now create or update clusters to Red Hat OpenShift version 4.21. OpenShift 4.21 is based on Kubernetes 1.34 and includes new features, performance improvements, and security enhancements. For more information, see:
