@@ -2,7 +2,7 @@
 
 copyright:
   years: 2025, 2026
-lastupdated: "2026-05-13"
+lastupdated: "2026-05-18"
 
 
 keywords: openshift, acm, advanced cluster management, manage cluster, management, addon, add-on, acm addon
@@ -305,7 +305,7 @@ Use the CLI to install the ACM add-on on the hub cluster.
 
 
 ## ACM operators
-{: #operators}
+{: #acm-operators}
 
 Review the operators that are automatically installed by the ACM add-on and the optional operators that you can install as enhancements.
 

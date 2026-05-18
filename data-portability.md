@@ -2,7 +2,7 @@
 
 copyright:
   years: 2024, 2026
-lastupdated: "2026-04-23"
+lastupdated: "2026-05-18"
 
 keywords: data, portability
 
@@ -45,9 +45,9 @@ For more information, see [Your responsibilities with {{site.data.keyword.opensh
 
 
 
-You can use the `oc` CLI to export and save the resources from your cluster. For more information, see the [Kubernetes documentation](https://docs.openshift.com/container-platform/4.17/cli_reference/openshift_cli/developer-cli-commands.html){: external}.
+You can use the `oc` CLI to export and save the resources from your cluster. For more information, see the [Kubernetes documentation](https://docs.openshift.com/container-platform/4.19/cli_reference/openshift_cli/developer-cli-commands.html){: external}.
 
-Example `oc get` [commands](https://docs.openshift.com/container-platform/4.17/cli_reference/openshift_cli/developer-cli-commands.html#oc-get){: external}.
+Example `oc get` [commands](https://docs.openshift.com/container-platform/4.19/cli_reference/openshift_cli/developer-cli-commands.html){: external}.
 
 
 

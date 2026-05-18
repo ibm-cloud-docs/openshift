@@ -3739,7 +3739,7 @@ subcollection: openshift
 
 * [Installing ACM from the CLI](/docs/openshift?topic=openshift-acm&interface=cli#install-cli)
 
-* [ACM operators](/docs/openshift?topic=openshift-acm&interface=cli#operators)
+* [ACM operators](/docs/openshift?topic=openshift-acm&interface=cli#acm-operators)
 
     * [Automatically installed operators](/docs/openshift?topic=openshift-acm&interface=cli#auto-op)
 
