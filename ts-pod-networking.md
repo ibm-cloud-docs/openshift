@@ -292,21 +292,19 @@ Run `curl`, `ping`, and `nc` commands to test each pod's network connection and 
     Example output
 
     ```sh
-    {
-  "major": "1",
-  "minor": "34",
-  "emulationMajor": "1",
-  "emulationMinor": "34",
-  "minCompatibilityMajor": "1",
-  "minCompatibilityMinor": "33",
-  "gitVersion": "v1.34.7+IKS",
-  "gitCommit": "67bf12be5abc8e65743a243172693ad1a098a2c4",
-  "gitTreeState": "clean",
-  "buildDate": "2026-04-16T04:24:50Z",
-  "goVersion": "go1.25.9",
-  "compiler": "gc",
-  "platform": "linux/amd64"
-    }
+    "major": "1",
+    "minor": "34",
+    "emulationMajor": "1",
+    "emulationMinor": "34",
+    "minCompatibilityMajor": "1",
+    "minCompatibilityMinor": "33",
+    "gitVersion": "v1.34.7+IKS",
+    "gitCommit": "67bf12be5abc8e65743a243172693ad1a098a2c4",
+    "gitTreeState": "clean",
+    "buildDate": "2026-04-16T04:24:50Z",
+    "goVersion": "go1.25.9",
+    "compiler": "gc",
+    "platform": "linux/amd64"
     ```
     {: screen}
 
