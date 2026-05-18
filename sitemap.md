@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2026
-lastupdated: "2026-05-14"
+lastupdated: "2026-05-18"
 
 
 keywords: openshift
@@ -6752,6 +6752,8 @@ subcollection: openshift
 
 [Supported cluster add-on versions](/docs/openshift?topic=openshift-supported-cluster-addon-versions#supported-cluster-addon-versions)
 
+* [`acm` 2.16.0](/docs/openshift?topic=openshift-supported-cluster-addon-versions#acm-2.16.0)
+
 * [`alb-oauth-proxy` 2.0.0](/docs/openshift?topic=openshift-supported-cluster-addon-versions#alb-oauth-proxy-2.0.0)
 
 * [`cluster-autoscaler` 1.1.0](/docs/openshift?topic=openshift-supported-cluster-addon-versions#cluster-autoscaler-1.1.0)
@@ -6783,6 +6785,8 @@ subcollection: openshift
 * [`istio` 1.27](/docs/openshift?topic=openshift-supported-cluster-addon-versions#istio-1.27)
 
 * [`istio` 1.28](/docs/openshift?topic=openshift-supported-cluster-addon-versions#istio-1.28)
+
+* [`istio` 1.29](/docs/openshift?topic=openshift-supported-cluster-addon-versions#istio-1.29)
 
 * [`openshift-ai` 416](/docs/openshift?topic=openshift-supported-cluster-addon-versions#openshift-ai-416)
 
