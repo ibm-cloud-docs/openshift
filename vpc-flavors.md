@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2026
-lastupdated: "2026-05-08"
+lastupdated: "2026-05-18"
 
 
 keywords: openshift, node scaling, ca, autoscaler
@@ -1054,6 +1054,7 @@ These conditions might impact cluster flavor availability:
 | bx2d.metal.96x384  \n(Balanced) | ca-tor-2  \nca-tor-3 | 48 cores  \n384GB memory  \n100Gbps network speed  \n No GPUs |  RHCOS  \n| 960GB SSD | N/A | N/A|
 | cx2d.metal.96x192  \n(Compute) | ca-tor-2  \nca-tor-3 | 48 cores  \n192GB memory  \n100Gbps network speed  \n No GPUs |  RHCOS  \n| 960GB SSD | N/A | N/A|
 | mx2d.metal.96x768  \n(Memory) | ca-tor-2  \nca-tor-3 | 48 cores  \n768GB memory  \n100Gbps network speed  \n No GPUs |  RHCOS  \n| 960GB SSD | N/A | N/A|
+| mx2de.metal.96x768  \n(Memory) | ca-tor-2  \nca-tor-3 | 48 cores  \n768GB memory  \n100Gbps network speed  \n No GPUs |  RHCOS  \n| 960GB SSD | N/A | N/A|
 | mx3de.metal.48x512  \n(Memory) | ca-tor-2  \nca-tor-3 | 24 cores  \n512GB memory  \n100Gbps network speed  \n No GPUs |  RHCOS  \n| 480GB SSD | N/A | N/A|
 | mx3de.metal.64x512  \n(Memory) | ca-tor-2  \nca-tor-3 | 32 cores  \n512GB memory  \n100Gbps network speed  \n No GPUs |  RHCOS  \n| 480GB SSD | N/A | N/A|
 | ux3de.metal.16x512  \n() | ca-tor-2  \nca-tor-3 | 8 cores  \n512GB memory  \n100Gbps network speed  \n No GPUs |  RHCOS  \n| 480GB SSD | N/A | N/A|
@@ -1155,6 +1156,7 @@ These conditions might impact cluster flavor availability:
 | cx2d.metal.96x192  \n(Compute) | us-east-1  \nus-east-2 | 48 cores  \n192GB memory  \n100Gbps network speed  \n No GPUs |  RHCOS  \n| 960GB SSD | N/A | N/A|
 | mx2.metal.96x768  \n(Memory) | us-east-1  \nus-east-2 | 48 cores  \n768GB memory  \n100Gbps network speed  \n No GPUs |  RHCOS  \n| 960GB SSD | N/A | N/A|
 | mx2d.metal.96x768  \n(Memory) | us-east-1  \nus-east-2 | 48 cores  \n768GB memory  \n100Gbps network speed  \n No GPUs |  RHCOS  \n| 960GB SSD | N/A | N/A|
+| mx2de.metal.96x768  \n(Memory) | us-east-1  \nus-east-2 | 48 cores  \n768GB memory  \n100Gbps network speed  \n No GPUs |  RHCOS  \n| 960GB SSD | N/A | N/A|
 | mx3de.metal.48x512  \n(Memory) | us-east-1  \nus-east-2  \nus-east-3 | 24 cores  \n512GB memory  \n100Gbps network speed  \n No GPUs |  RHCOS  \n| 480GB SSD | N/A | N/A|
 | mx3de.metal.64x512  \n(Memory) | us-east-1  \nus-east-2  \nus-east-3 | 32 cores  \n512GB memory  \n100Gbps network speed  \n No GPUs |  RHCOS  \n| 480GB SSD | N/A | N/A|
 | ux3de.metal.16x512  \n() | us-east-1  \nus-east-2  \nus-east-3 | 8 cores  \n512GB memory  \n100Gbps network speed  \n No GPUs |  RHCOS  \n| 480GB SSD | N/A | N/A|
