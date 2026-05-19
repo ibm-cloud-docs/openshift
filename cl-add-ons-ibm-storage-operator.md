@@ -52,6 +52,15 @@ Review the version history for IBM Storage Operator.
 - `armada-storage-secret v1.2.84`
 
 
+### v1.0.41_341664770, released 19 May 2026
+{: #cl-add-ons-ibm-storage-operator-v1041_341664770}
+
+[Default version]{: tag-green}
+
+- Resolves the following CVEs: [CVE-2026-33811](https://nvd.nist.gov/vuln/detail/CVE-2026-33811){: external}, [CVE-2026-39979](https://nvd.nist.gov/vuln/detail/CVE-2026-39979){: external}, [CVE-2025-14512](https://nvd.nist.gov/vuln/detail/CVE-2025-14512){: external}, [CVE-2025-14087](https://nvd.nist.gov/vuln/detail/CVE-2025-14087){: external}, and [CVE-2026-40164](https://nvd.nist.gov/vuln/detail/CVE-2026-40164){: external}.
+- `armada-storage-secret v1.3.49`
+
+
 ### v1.0.39_338302625, released 13 May 2026
 {: #cl-add-ons-ibm-storage-operator-v1039_338302625}
 
