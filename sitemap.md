@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2026
-lastupdated: "2026-05-18"
+lastupdated: "2026-05-19"
 
 
 keywords: openshift
@@ -7133,6 +7133,10 @@ subcollection: openshift
 [IBM Storage Operator add-on version change log](/docs/openshift?topic=openshift-cl-add-ons-ibm-storage-operator#cl-add-ons-ibm-storage-operator)
 
 * [Version 1.0](/docs/openshift?topic=openshift-cl-add-ons-ibm-storage-operator#cl-add-ons-ibm-storage-operator-1.0)
+
+    * [v1.0.40_340278420, released 19 May 2026](/docs/openshift?topic=openshift-cl-add-ons-ibm-storage-operator#cl-add-ons-ibm-storage-operator-v1040_340278420)
+
+    * [v1.0.41_341664770, released 19 May 2026](/docs/openshift?topic=openshift-cl-add-ons-ibm-storage-operator#cl-add-ons-ibm-storage-operator-v1041_341664770)
 
     * [v1.0.39_338302625, released 13 May 2026](/docs/openshift?topic=openshift-cl-add-ons-ibm-storage-operator#cl-add-ons-ibm-storage-operator-v1039_338302625)
 
