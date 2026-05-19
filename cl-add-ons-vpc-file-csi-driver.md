@@ -3,7 +3,7 @@
 copyright:
   years: 2024, 2026
 
-lastupdated: "2026-05-14"
+lastupdated: "2026-05-18"
 
 
 keywords: change log, version history, VPC File CSI Driver
@@ -41,6 +41,8 @@ Review the version history for VPC File CSI Driver.
 
 ## Version 2.0
 {: #cl-add-ons-vpc-file-csi-driver-2.0}
+
+
 
 
 ### v2.0.30_338302575, released 13 May 2026

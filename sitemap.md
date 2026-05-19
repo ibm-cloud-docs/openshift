@@ -287,6 +287,12 @@ subcollection: openshift
 
 * [May 2026](/docs/openshift?topic=openshift-openshift-relnotes#openshift-may26)
 
+    * [19 May 2026](/docs/openshift?topic=openshift-openshift-relnotes#openshift-may1926)
+
+        * IBM Storage Operator cluster add-on patch updates.
+
+        * VPC File CSI Driver cluster add-on patch updates.
+
     * [18 May 2026](/docs/openshift?topic=openshift-openshift-relnotes#openshift-may1826)
 
         * Openshift AI cluster add-on patch updates.
