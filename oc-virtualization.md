@@ -2,7 +2,7 @@
 
 copyright:
   years: 2025, 2026
-lastupdated: "2026-04-29"
+lastupdated: "2026-05-20"
 
 keywords: openshift, virtualization, operator, hyperconverged, kubevirt
 
@@ -222,7 +222,7 @@ EOF
    ```
    {: pre}
 
-5. If using VPC File Storage, configure storage profiles as described in [Setting up storage for OpenShift Virtualization](/docs/openshift?topic=openshift-virt-storage-setup#virt-storage-vpc-file-profiles).
+5. If using VPC File Storage, configure storage profiles as described in [Setting up storage for OpenShift Virtualization](/docs/openshift?topic=openshift-virt-storage-setup).
 
 ## Troubleshooting installation issues
 {: #virt-install-troubleshoot}

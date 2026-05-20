@@ -14,10 +14,3 @@ https://stackoverflow.com/questions/tagged/ibm-cloud+containers
 https://manpages.ubuntu.com/manpages/questing/en/man1/s3fs.1.html
 https://ibm-cloud-success.slack.com/join/shared_invite/zt-2p5zqh275-FL8XUSEmn_vvAJZzrHqYcA
 https://workbench.cisecurity.org/benchmarks/11478/sections/1594542
-https://workbench.cisecurity.org
-https://ubuntu.com/security/notices
-https://ubuntu.com/security/notices/USN-7275-1
-https://nvd.nist.gov/vuln/detail/CVE-2023-52922
-https://stackoverflow.com/questions/tagged/ibm-cloud
-https://stackoverflow.com/questions/tagged/ibm-cloud+containers
-https://ibm-cloud-success.slack.com/join/shared_invite/zt-2p5zqh275-FL8XUSEmn_vvAJZzrHqYcA
