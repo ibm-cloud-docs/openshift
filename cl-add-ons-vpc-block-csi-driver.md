@@ -3,7 +3,7 @@
 copyright:
   years: 2024, 2026
 
-lastupdated: "2026-05-14"
+lastupdated: "2026-05-20"
 
 
 keywords: change log, version history, VPC Block CSI Driver
@@ -41,6 +41,14 @@ Review the version history for VPC Block CSI Driver.
 
 ## Version 5.2
 {: #cl-add-ons-vpc-block-csi-driver-5.2}
+
+
+### v5.2.51_340196278, released 20 May 2026
+{: #cl-add-ons-vpc-block-csi-driver-v5251_340196278}
+
+- Resolves the following CVEs: [CVE-2026-33186](https://nvd.nist.gov/vuln/detail/CVE-2026-33186){: external}, [CVE-2026-29181](https://nvd.nist.gov/vuln/detail/CVE-2026-29181){: external}, [CVE-2026-4878](https://nvd.nist.gov/vuln/detail/CVE-2026-4878){: external}, and [CVE-2026-29111](https://nvd.nist.gov/vuln/detail/CVE-2026-29111){: external}.
+- `armada-storage-secret v1.3.48`
+- `ibm-csi-init-container v1.0.18`
 
 
 ### v5.2.50_338659383, released 13 May 2026
@@ -176,6 +184,14 @@ Review the version history for VPC Block CSI Driver.
 {: #cl-add-ons-vpc-block-csi-driver-5.1}
 
 
+### v5.1.51_340196313, released 20 May 2026
+{: #cl-add-ons-vpc-block-csi-driver-v5151_340196313}
+
+- Resolves the following CVEs: [CVE-2026-33186](https://nvd.nist.gov/vuln/detail/CVE-2026-33186){: external}, [CVE-2026-29181](https://nvd.nist.gov/vuln/detail/CVE-2026-29181){: external}, [CVE-2026-4878](https://nvd.nist.gov/vuln/detail/CVE-2026-4878){: external}, and [CVE-2026-29111](https://nvd.nist.gov/vuln/detail/CVE-2026-29111){: external}.
+- `armada-storage-secret v1.2.83`
+- `ibm-csi-init-container v1.0.18`
+
+
 ### v5.1.50_338876479, released 13 May 2026
 {: #cl-add-ons-vpc-block-csi-driver-v5150_338876479}
 
@@ -263,8 +279,6 @@ Review the version history for VPC Block CSI Driver.
 ### 5.1.37_827, released 14 July 2025
 {: #cl-add-ons-vpc-block-csi-driver-5137_827}
 
-[Default version]{: tag-green}
-
 - Resolves the following CVEs: [CVE-2025-4563](https://nvd.nist.gov/vuln/detail/CVE-2025-4563){: external}, [CVE-2025-4673](https://nvd.nist.gov/vuln/detail/CVE-2025-4673){: external}, and [CVE-2020-8561](https://nvd.nist.gov/vuln/detail/CVE-2020-8561){: external}.
 - Updates Go to version `1.23.10`.
 - Updates k8s package to 1.32.6 in iks-vpc-block-driver container 
@@ -274,8 +288,6 @@ Review the version history for VPC Block CSI Driver.
 
 ### 5.1.35_763, released 30 May 2025
 {: #cl-add-ons-vpc-block-csi-driver-5135_763}
-
-[Default version]{: tag-green}
 
 - Resolves the following CVEs: [CVE-2024-9042](https://nvd.nist.gov/vuln/detail/CVE-2024-9042){: external}, [CVE-2025-0426](https://nvd.nist.gov/vuln/detail/CVE-2025-0426){: external}, [CVE-2025-22872](https://nvd.nist.gov/vuln/detail/CVE-2025-22872){: external}, and [CVE-2025-30204](https://nvd.nist.gov/vuln/detail/CVE-2025-30204){: external}.
 - Updates k8s package to 1.32.3 in iks-vpc-block-driver container 
