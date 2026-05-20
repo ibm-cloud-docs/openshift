@@ -54,10 +54,7 @@ VPC File CSI Driver cluster add-on patch updates.
 
 
 
-
-
-
-
+  
 ### 18 May 2026
 {: #openshift-may1826}
 {: release-note}
