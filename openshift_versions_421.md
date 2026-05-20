@@ -2,7 +2,7 @@
 
 copyright:
   years: 2026, 2026
-lastupdated: "2026-05-14"
+lastupdated: "2026-05-19"
 
 
 keywords: openshift, version, update, upgrade, 4.21, update openshift
@@ -51,7 +51,7 @@ Dates that are marked with a dagger (`†`) are tentative and subject to change.
 Review changes that you might need to make when you [update a cluster](/docs/openshift?topic=openshift-update) to version 4.21. This information summarizes updates that are likely to have an impact on deployed apps when you update.
 {: shortdesc}
 
-The [Satellite Location Sizing Requirements](/docs/satellite?topic=satellite-location-sizing) for hosting {{site.data.keyword.openshiftlong_notm}} version 4.21 clusters are now the same regardless of the location being RHEL non-CoreOS or RHEL CoreOS based. The requirements for the location nodes should now follow those for [CoreOS-enabled locations](/docs/satellite?topic=satellite-location-sizing#control-plane-how-many-clusters-rhcos).
+The [Satellite Location Sizing Requirements](/docs/satellite?topic=satellite-location-sizing) for hosting {{site.data.keyword.openshiftlong_notm}} version 4.21 clusters are now the same regardless of the location being RHEL non-CoreOS or RHEL CoreOS based. The requirements for the location nodes should now follow those for [CoreOS-enabled locations](/docs/satellite?topic=satellite-location-sizing).
 {: important}
 
 [Portworx](/docs/openshift?topic=openshift-storage_portworx_about) does not yet support Red Hat OpenShift on IBM Cloud version 4.21 clusters. Do not update your cluster to version 4.21 if Portworx is installed.

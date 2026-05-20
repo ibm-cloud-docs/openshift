@@ -2,7 +2,7 @@
 
 copyright:
   years: 2026, 2026
-lastupdated: "2026-05-13"
+lastupdated: "2026-05-19"
 
 keywords: openshift, vni, virtual network interface, virtualization, bare metal, localnet, udn
 
@@ -267,32 +267,62 @@ Replace the following values:
 This concludes the network plumbing of a specific VLAN. You can define multiple CUDNs by using different VLAN IDs while reusing the bridge mappings.
 {: tip}
 
-After completing the localnet UDN setup, use the IBM Cloud CLI `ks vni` command to attach VNIs to the cluster. See the command examples in the following sections.
+After completing the localnet UDN setup, you can attach VNIs to the cluster by using the {{site.data.keyword.cloud_notm}} console or the IBM Cloud CLI `ks vni` command. See the examples in the following sections.
 
 ## Attaching VNIs to your cluster
 {: #vni-attach}
 
-After you set up the localnet UDN, you can attach VNIs to your cluster by using the {{site.data.keyword.cloud_notm}} CLI.
+After you set up the localnet UDN, you can attach VNIs to your cluster by using the {{site.data.keyword.cloud_notm}} console or CLI.
 
 ### Before you begin
 {: #vni-attach-prereqs}
 
 1. [Create VNIs in your VPC](/docs/vpc?topic=vpc-vni-create&interface=cli) with the appropriate subnet and IP address configuration.
 
-2. Make sure that you are logged in to the {{site.data.keyword.cloud_notm}} CLI with an account that has permissions to manage both the cluster and VNIs.
+2. Make sure that you have the required permissions to manage both the cluster and VNIs.
 
-### Attaching a VNI
-{: #vni-attach-steps}
+### Attaching a VNI from the console
+{: #vni-attach-console}
+{: ui}
 
 You can attach a VNI to a specific worker node (non-floating) or to the cluster (floating). Floating VNIs can follow workloads between workers in the same zone.
 
+VNIs, subnets, and worker nodes are zonal resources. The VNI compute zone must match the selected worker zone. For floating attachments, the zone of the VNI is assumed, and the floating attachment also has the zone constraint. VNIs can be attached from arbitrary subnets, but only from within the same VPC as the cluster.
+{: note}
+
+1. From the [{{site.data.keyword.openshiftshort}} clusters console](https://cloud.ibm.com/kubernetes/clusters?platformType=openshift){: external}, select your cluster.
+
+2. In the navigation menu, click **Networking** > **VNI attachments**.
+
+3. Click **Attach VNIs**.
+
+4. In the **Attach VNIs** panel, configure the following settings:
+   - **Subnet**: Select the subnet where your VNI is located. Only subnets in the same zone as your worker nodes are available.
+   - **Worker node**: Select a specific worker node to attach the VNI to, or select **All worker nodes** to create a floating VNI attachment that can follow workloads between workers in the same zone.
+   - **VNI**: Select the VNI to attach from the available VNIs in the selected subnet.
+   - **VLAN ID**: Enter the VLAN ID (range: 1-500) that matches your localnet UDN configuration.
+   - **Auto-delete**: Optional. Select this option to automatically delete the VNI when it is removed from the cluster.
+
+5. Click **Attach**.
+
+### Attaching a VNI from the CLI
+{: #vni-attach-cli}
+{: cli}
+
+You can attach a VNI to a specific worker node (non-floating) or to the cluster (floating). Floating VNIs can follow workloads between workers in the same zone.
+
+VNIs, subnets, and worker nodes are zonal resources. The VNI compute zone must match the selected worker zone. For floating attachments, the zone of the VNI is assumed, and the floating attachment also has the zone constraint. VNIs can be attached from arbitrary subnets, but only from within the same VPC as the cluster.
+{: note}
+
 To attach a VNI to a specific worker node, run the following command.
+
 ```sh
 ibmcloud ks vni attach baremetal --worker WORKER_ID --vni VNI_ID --vlan VLAN_ID [--auto-delete]
 ```
 {: pre}
 
 To attach a floating VNI to the cluster, run the following command.
+
 ```sh
 ibmcloud ks vni attach baremetal --cluster-id CLUSTER_ID --vni VNI_ID --vlan VLAN_ID [--auto-delete]
 ```
@@ -313,9 +343,6 @@ ibmcloud ks vni attach baremetal --cluster-id CLUSTER_ID --vni VNI_ID --vlan VLA
 `--auto-delete`
 :   Optional: Automatically delete the VNI when it is removed from the cluster.
 
-VNIs, subnets, and worker nodes are zonal resources. The VNI compute zone must match the selected worker zone. For floating attachments, the zone of the VNI is assumed, and the floating attachment also has the zone constraint. VNIs can be attached from arbitrary subnets, but only from within the same VPC as the cluster.
-{: note}
-
 ### Example
 {: #vni-attach-example}
 
@@ -333,16 +360,41 @@ kube-c9pqfcmw0tq431jdnrrg-mycluster-default-00000123   0716-aac49630-f3b4-4ef6-9
 ```
 {: screen}
 
-## Listing VNI attachments
+## Viewing VNI attachments
 {: #vni-list}
 
+You can view VNI attachments from the {{site.data.keyword.cloud_notm}} console or by using the CLI.
+
+### Viewing VNI attachments from the console
+{: #vni-list-console}
+{: ui}
+
+1. From the [{{site.data.keyword.openshiftshort}} clusters console](https://cloud.ibm.com/kubernetes/clusters?platformType=openshift){: external}, select your cluster.
+
+2. In the navigation menu, click **Networking** > **VNI attachments**.
+
+3. The **Virtual network interface attachments** page displays a table with the following information for each attached VNI:
+   - **VNI name**: The name of the virtual network interface
+   - **Worker node name**: The worker node where the VNI is attached, or indicates if it's a floating attachment
+   - **Subnet**: The VPC subnet associated with the VNI
+   - **VLAN ID**: The VLAN ID used for the attachment
+   - **Primary IP**: The primary IP address of the VNI
+
+4. Optional: Use the filters at the top of the page to filter VNIs by subnet or worker node.
+
+### Viewing VNI attachments from the CLI
+{: #vni-list-cli}
+{: cli}
+
 To list all VNIs attached to a cluster, run the following command.
+
 ```sh
 ibmcloud ks vni ls --cluster-id CLUSTER_ID
 ```
 {: pre}
 
 To list VNIs attached to a specific worker, run the following command.
+
 ```sh
 ibmcloud ks vni ls --worker WORKER_ID
 ```
@@ -366,6 +418,26 @@ VNI ID                                      Worker Node                         
 
 ## Detaching VNIs
 {: #vni-detach}
+
+You can detach VNIs from the {{site.data.keyword.cloud_notm}} console or by using the CLI.
+
+### Detaching VNIs from the console
+{: #vni-detach-console}
+{: ui}
+
+1. From the [{{site.data.keyword.openshiftshort}} clusters console](https://cloud.ibm.com/kubernetes/clusters?platformType=openshift){: external}, select your cluster.
+
+2. In the navigation menu, click **Networking** > **VNI attachments**.
+
+3. In the **Virtual network interface attachments** table, find the VNI you want to detach.
+
+4. Click the actions menu icon (⋯) for the VNI and select **Detach**.
+
+5. In the confirmation dialog, click **Detach** to confirm the action.
+
+### Detaching VNIs from the CLI
+{: #vni-detach-cli}
+{: cli}
 
 To detach a VNI from a worker node, you must specify both the VNI ID and the worker ID.
 

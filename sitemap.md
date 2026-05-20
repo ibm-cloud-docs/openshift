@@ -2909,15 +2909,21 @@ subcollection: openshift
 
 * [Prerequisites](/docs/openshift?topic=openshift-vpc-vni#vpc-vni-prereqs)
 
-* [Managing VNIs with the CLI](/docs/openshift?topic=openshift-vpc-vni#vpc-vni-cli)
+* [Managing VNIs](/docs/openshift?topic=openshift-vpc-vni#vpc-vni-manage)
 
-    * [Attaching a VNI to a worker node](/docs/openshift?topic=openshift-vpc-vni#vpc-vni-cli-attach)
+    * [Attaching a VNI from the console](/docs/openshift?topic=openshift-vpc-vni&interface=ui#vpc-vni-attach-console)
 
-    * [Listing VNI attachments](/docs/openshift?topic=openshift-vpc-vni#vpc-vni-cli-list)
+    * [Attaching a VNI from the CLI](/docs/openshift?topic=openshift-vpc-vni&interface=cli#vpc-vni-attach-cli)
 
-    * [Detaching a VNI](/docs/openshift?topic=openshift-vpc-vni#vpc-vni-cli-detach)
+    * [Viewing VNI attachments from the console](/docs/openshift?topic=openshift-vpc-vni&interface=ui#vpc-vni-list-console)
 
-* [Next steps](/docs/openshift?topic=openshift-vpc-vni#vpc-vni-next-steps)
+    * [Viewing VNI attachments from the CLI](/docs/openshift?topic=openshift-vpc-vni&interface=cli#vpc-vni-list-cli)
+
+    * [Detaching a VNI from the console](/docs/openshift?topic=openshift-vpc-vni&interface=ui#vpc-vni-detach-console)
+
+    * [Detaching a VNI from the CLI](/docs/openshift?topic=openshift-vpc-vni&interface=cli#vpc-vni-detach-cli)
+
+* [Next steps](/docs/openshift?topic=openshift-vpc-vni&interface=cli#vpc-vni-next-steps)
 
 [Setting up VPC VPN connectivity](/docs/openshift?topic=openshift-vpc-vpnaas#vpc-vpnaas)
 
@@ -3913,27 +3919,37 @@ subcollection: openshift
 
     * [Before you begin](/docs/openshift?topic=openshift-vni-virtualization#vni-attach-prereqs)
 
-    * [Attaching a VNI](/docs/openshift?topic=openshift-vni-virtualization#vni-attach-steps)
+    * [Attaching a VNI from the console](/docs/openshift?topic=openshift-vni-virtualization&interface=ui#vni-attach-console)
 
-    * [Example](/docs/openshift?topic=openshift-vni-virtualization#vni-attach-example)
+    * [Attaching a VNI from the CLI](/docs/openshift?topic=openshift-vni-virtualization&interface=cli#vni-attach-cli)
 
-* [Listing VNI attachments](/docs/openshift?topic=openshift-vni-virtualization#vni-list)
+    * [Example](/docs/openshift?topic=openshift-vni-virtualization&interface=cli#vni-attach-example)
 
-    * [Example output](/docs/openshift?topic=openshift-vni-virtualization#vni-list-example)
+* [Viewing VNI attachments](/docs/openshift?topic=openshift-vni-virtualization&interface=cli#vni-list)
 
-* [Detaching VNIs](/docs/openshift?topic=openshift-vni-virtualization#vni-detach)
+    * [Viewing VNI attachments from the console](/docs/openshift?topic=openshift-vni-virtualization&interface=ui#vni-list-console)
 
-    * [Example](/docs/openshift?topic=openshift-vni-virtualization#vni-detach-example)
+    * [Viewing VNI attachments from the CLI](/docs/openshift?topic=openshift-vni-virtualization&interface=cli#vni-list-cli)
 
-* [Using VNIs with OpenShift Virtualization](/docs/openshift?topic=openshift-vni-virtualization#vni-use-virtualization)
+    * [Example output](/docs/openshift?topic=openshift-vni-virtualization&interface=cli#vni-list-example)
 
-* [Troubleshooting VNIs](/docs/openshift?topic=openshift-vni-virtualization#vni-troubleshooting)
+* [Detaching VNIs](/docs/openshift?topic=openshift-vni-virtualization&interface=cli#vni-detach)
 
-    * [Why can't I attach regular pods to localnet UDNs?](/docs/openshift?topic=openshift-vni-virtualization#vni-ts-pods)
+    * [Detaching VNIs from the console](/docs/openshift?topic=openshift-vni-virtualization&interface=ui#vni-detach-console)
 
-    * [Why is live migration pending across worker pools?](/docs/openshift?topic=openshift-vni-virtualization#vni-ts-migration)
+    * [Detaching VNIs from the CLI](/docs/openshift?topic=openshift-vni-virtualization&interface=cli#vni-detach-cli)
 
-    * [Why are dynamic attached VNIs not working?](/docs/openshift?topic=openshift-vni-virtualization#vni-ts-not-working)
+    * [Example](/docs/openshift?topic=openshift-vni-virtualization&interface=cli#vni-detach-example)
+
+* [Using VNIs with OpenShift Virtualization](/docs/openshift?topic=openshift-vni-virtualization&interface=cli#vni-use-virtualization)
+
+* [Troubleshooting VNIs](/docs/openshift?topic=openshift-vni-virtualization&interface=cli#vni-troubleshooting)
+
+    * [Why can't I attach regular pods to localnet UDNs?](/docs/openshift?topic=openshift-vni-virtualization&interface=cli#vni-ts-pods)
+
+    * [Why is live migration pending across worker pools?](/docs/openshift?topic=openshift-vni-virtualization&interface=cli#vni-ts-migration)
+
+    * [Why are dynamic attached VNIs not working?](/docs/openshift?topic=openshift-vni-virtualization&interface=cli#vni-ts-not-working)
 
 
 ## Storage

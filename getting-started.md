@@ -2,7 +2,7 @@
 
 copyright:
   years: 2023, 2026
-lastupdated: "2026-05-13"
+lastupdated: "2026-05-19"
 
 
 keywords: openshift, {{site.data.keyword.openshiftlong_notm}}, kubernetes cluster, red hat openshift, openshift container platform, red hat, create openshift cluster, vpc cluster, classic cluster, clusters
@@ -119,7 +119,7 @@ Install the CLI
 Deploy your first app
 :   Get hands-on with a sample application. For more information, see [Deploying apps](/docs/openshift?topic=openshift-app).
 
-Need to check pricing first? [View Red Hat OpenShift on IBM Cloud pricing](https://cloud.ibm.com/kubernetes/catalog/about?platformType=openshift#pricing){: external}.
+Need to check pricing first? [View Red Hat OpenShift on IBM Cloud pricing](https://cloud.ibm.com/containers/cluster-management/catalog/about?platformType=openshift#pricing){: external}.
 
 ## What's next?
 {: #getting-started-whats-next}
