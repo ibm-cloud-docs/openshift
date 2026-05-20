@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2026
-lastupdated: "2026-01-30"
+lastupdated: "2026-05-20"
 
 
 keywords: file, debug, help
@@ -55,7 +55,7 @@ Follow the steps to review any error messages related to pod deployment.
     {: pre}
     
 
-1. [Review the Portworx troubleshooting documentation for steps to resolve common errors](/docs/openshift?topic=openshift-sitemap#sitemap_portworx_storage).  
+1. [Review the Portworx troubleshooting documentation for steps to resolve common errors](/docs/openshift?topic=openshift-sitemap#sitemap_portworx).  
 
 ## Restarting your app pod
 {: #debug_storage_px_restart}
@@ -153,7 +153,7 @@ Follow the steps to check the status of your storage driver and plug-in pods and
         ```
         {: pre} 
 
-1. Check the latest logs for any error messages. [Review the Portworx troubleshooting documentation for steps to resolve common errors](/docs/openshift?topic=openshift-sitemap#sitemap_portworx_storage).
+1. Check the latest logs for any error messages. [Review the Portworx troubleshooting documentation for steps to resolve common errors](/docs/openshift?topic=openshift-sitemap#sitemap_portworx).
 
 ## Checking and updating the oc CLI version
 {: #debug_storage_px_cli}
