@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2026
-lastupdated: "2026-04-29"
+lastupdated: "2026-05-21"
 
 
 keywords: openshift, {{site.data.keyword.openshiftlong_notm}}, kubernetes, registry, pull secret, secrets
@@ -1641,6 +1641,7 @@ Do not replace the global pull secret with a pull secret that does not have cred
 
 1. Create a DaemonSet to apply the secret across all worker nodes.
     ```yaml
+    ocp_release_pull_secret_image=$(oc get ds -n openshift-dns node-resolver -o jsonpath='{.spec.template.spec.containers[0].image}')
     cat << EOF | oc create -f -
     apiVersion: apps/v1
     kind: DaemonSet
@@ -1672,7 +1673,7 @@ Do not replace the global pull secret with a pull secret that does not have cred
                   echo "Sending signal to reload crio config";
                   pidof crio;
                   kill -1 \$(pidof crio)
-              image: icr.io/ibm/alpine:latest
+              image: ${ocp_release_pull_secret_image}
               imagePullPolicy: IfNotPresent
               name: updater
               resources: {}
@@ -1691,7 +1692,7 @@ Do not replace the global pull secret with a pull secret that does not have cred
             - resources:
                 requests:
                   cpu: 0.01
-              image: icr.io/ibm/alpine:latest
+              image: ${ocp_release_pull_secret_image}
               name: sleepforever
               command: ["/bin/sh", "-c"]
               args:
