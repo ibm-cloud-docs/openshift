@@ -3616,6 +3616,8 @@ subcollection: openshift
 
 [Setting up autoscaling for your worker pools](/docs/openshift?topic=openshift-cluster-scaling-install-addon-enable#cluster-scaling-install-addon-enable)
 
+* [Before you begin](/docs/openshift?topic=openshift-cluster-scaling-install-addon-enable#before-you-begin)
+
 * [Customizing the cluster autoscaler configuration values](/docs/openshift?topic=openshift-cluster-scaling-install-addon-enable#ca_customize)
 
 * [Cluster autoscaler configmap reference](/docs/openshift?topic=openshift-cluster-scaling-install-addon-enable#ca-configmap)
