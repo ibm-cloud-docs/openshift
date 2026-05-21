@@ -15,15 +15,13 @@ subcollection: openshift
 {{site.data.keyword.attribute-definition-list}}
 
 
-# About the Advanced Cluster Management add-on (select regions only)
+# About the Advanced Cluster Management add-on
 {: #acm-about}
 
 
 The Advanced Cluster Management (ACM) add-on provides a simplified way to manage, observe, and operate virtual machines (VMs) and clusters from a single control plane.
 {: shortdesc}
 
-The Advanced Cluster Management add-on is available for select regions only.
-{: important}
 
 ACM provides the following key capabilities for cluster and VM management.
 - Full lifecycle management of Kubernetes clusters and VMs
@@ -42,6 +40,18 @@ ACM provides the following key capabilities for cluster and VM management.
 {: #how}
 
 The ACM add-on is [installed onto a Red Hat OpenShift cluster](/docs/openshift?topic=openshift-acm&interface=ui#install-ui) that acts as the **hub cluster**. During or after installation, you import one or more **managed clusters** that you want to manage with ACM. From the hub cluster, you can access your multi-cluster dashboard to manage, observe and operate the managed clusters that you imported.
+
+## ACM plan overviews
+{: #overviews}
+
+Review the description of each ACM plan.
+
+[Advanced Cluster Management for Kubernetes](#kube)
+:   - ACM for Kubernetes provides the capabilities to address common challenges that administrators and site reliability engineers face when managing multiple clusters. Clusters and applications, whether containerized or virtualized, are all visible and managed from a central console, with preconfigured governance policies that can be applied consistently across environments. Users can run their operations from anywhere on Red Hat OpenShift® and manage other supported Kubernetes clusters in their fleet.
+
+[Coming soon]{: tag-teal} [Advanced Cluster Management for Virtualization](#virt)
+:   - ACM for Virtualization is a centralized tool that simplifies the management of virtual machines (VMs) deployed to Red Hat OpenShift® Virtualization Engine clusters as well as the clusters themselves. This license type provides a centralized platform for provisioning, monitoring and decomissioning VMs across multiple clusters.
+:   - This solution is a version of Red Hat Advanced Cluster Management for Kubernetes and is designed for organizations that want to manage VMs exclusively.
 
 
 

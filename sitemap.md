@@ -3737,19 +3737,21 @@ subcollection: openshift
 * [Getting support for the OpenShift AI add-on](/docs/openshift?topic=openshift-ai-addon-manage#ai-addon-support)
 
 
-## Advanced Cluster Management (select regions only)
-{: #sitemap_advanced_cluster_management_select_regions_only}
+## Advanced Cluster Management
+{: #sitemap_advanced_cluster_management}
 
 
-[About the Advanced Cluster Management add-on (select regions only)](/docs/openshift?topic=openshift-acm-about#acm-about)
+[About the Advanced Cluster Management add-on](/docs/openshift?topic=openshift-acm-about#acm-about)
 
 * [How it works](/docs/openshift?topic=openshift-acm-about#how)
+
+* [ACM plan overviews](/docs/openshift?topic=openshift-acm-about#overviews)
 
 * [ACM for Kubernetes](/docs/openshift?topic=openshift-acm-about#kube)
 
 * [Next steps](/docs/openshift?topic=openshift-acm-about#next)
 
-[Setting up the Advanced Cluster Management add-on (select regions only)](/docs/openshift?topic=openshift-acm#acm)
+[Setting up the Advanced Cluster Management add-on](/docs/openshift?topic=openshift-acm#acm)
 
 * [Before you begin](/docs/openshift?topic=openshift-acm#before)
 

@@ -14,14 +14,11 @@ subcollection: openshift
 
 {{site.data.keyword.attribute-definition-list}}
 
-# Setting up the Advanced Cluster Management add-on (select regions only)
+# Setting up the Advanced Cluster Management add-on
 {: #acm}
 
 The Advanced Cluster Management (ACM) add-on provides a simplified way for customers to manage monitoring, workload placement, and security policies across multiple clusters.
 {: shortdesc}
-
-The Advanced Cluster Management add-on is available for select regions only.
-{: important}
 
 Installing ACM from OperatorHub is not supported for IBM Cloud clusters. To install ACM, follow the instructions on this page.
 {: important}
