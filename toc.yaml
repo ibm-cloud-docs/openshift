@@ -256,7 +256,7 @@ toc:
           - openshift-ai-addon-install.md
           - openshift-ai-addon-manage.md
       - topicgroup:
-          label: Advanced Cluster Management (select regions only)
+          label: Advanced Cluster Management
           topics:
           - acm-about.md
           - acm-addon.md

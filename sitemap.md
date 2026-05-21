@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2026
-lastupdated: "2026-05-20"
+lastupdated: "2026-05-21"
 
 
 keywords: openshift
@@ -286,6 +286,10 @@ subcollection: openshift
 [Release notes](/docs/openshift?topic=openshift-openshift-relnotes#openshift-relnotes)
 
 * [May 2026](/docs/openshift?topic=openshift-openshift-relnotes#openshift-may26)
+
+    * [21 May 2026](/docs/openshift?topic=openshift-openshift-relnotes#openshift-may2126)
+
+        * {{site.data.keyword.openshiftlong_notm}} worker node fix packs are available.
 
     * [20 May 2026](/docs/openshift?topic=openshift-openshift-relnotes#openshift-may2026)
 
@@ -3733,23 +3737,21 @@ subcollection: openshift
 * [Getting support for the OpenShift AI add-on](/docs/openshift?topic=openshift-ai-addon-manage#ai-addon-support)
 
 
-## Advanced Cluster Management (select regions only)
-{: #sitemap_advanced_cluster_management_select_regions_only}
+## Advanced Cluster Management
+{: #sitemap_advanced_cluster_management}
 
 
-[About the Advanced Cluster Management add-on (select regions only)](/docs/openshift?topic=openshift-acm-about#acm-about)
+[About the Advanced Cluster Management add-on](/docs/openshift?topic=openshift-acm-about#acm-about)
 
 * [How it works](/docs/openshift?topic=openshift-acm-about#how)
 
 * [ACM plan overviews](/docs/openshift?topic=openshift-acm-about#overviews)
 
-* [ACM for Virtualization](/docs/openshift?topic=openshift-acm-about#virt)
-
 * [ACM for Kubernetes](/docs/openshift?topic=openshift-acm-about#kube)
 
 * [Next steps](/docs/openshift?topic=openshift-acm-about#next)
 
-[Setting up the Advanced Cluster Management add-on (select regions only)](/docs/openshift?topic=openshift-acm#acm)
+[Setting up the Advanced Cluster Management add-on](/docs/openshift?topic=openshift-acm#acm)
 
 * [Before you begin](/docs/openshift?topic=openshift-acm#before)
 
@@ -5096,6 +5098,8 @@ subcollection: openshift
 
 * [Version 4.21](/docs/openshift?topic=openshift-openshift_changelog_421#421_components)
 
+    * [Worker node fix pack 4.21.15_1518_openshift, released 20 May 2026](/docs/openshift?topic=openshift-openshift_changelog_421#cl-boms-42115_1518_openshift_W)
+
     * [Change log for master fix pack 4.21.13_1516_openshift, released 13 May 2026](/docs/openshift?topic=openshift-openshift_changelog_421#42113_1516_openshift_M)
 
     * [Change log for worker node fix pack 4.21.10_1514_openshift, released 13 May 2026](/docs/openshift?topic=openshift-openshift_changelog_421#42110_1514_openshift_W)
@@ -5214,6 +5218,8 @@ subcollection: openshift
 * [Overview](/docs/openshift?topic=openshift-openshift_changelog_420#changelog_overview_420)
 
 * [Version 4.20](/docs/openshift?topic=openshift-openshift_changelog_420#420_components)
+
+    * [Worker node fix pack 4.20.22_1549_openshift, released 20 May 2026](/docs/openshift?topic=openshift-openshift_changelog_420#cl-boms-42022_1549_openshift_W)
 
     * [Worker node fix pack 4.20.19_1546_openshift, released 04 May 2026](/docs/openshift?topic=openshift-openshift_changelog_420#cl-boms-42019_1546_openshift_W)
 
@@ -5343,6 +5349,8 @@ subcollection: openshift
 * [Overview](/docs/openshift?topic=openshift-openshift_changelog_419#changelog_overview_419)
 
 * [Version 4.19](/docs/openshift?topic=openshift-openshift_changelog_419#419_components)
+
+    * [Worker node fix pack 4.19.31_1580_openshift, released 20 May 2026](/docs/openshift?topic=openshift-openshift_changelog_419#cl-boms-41931_1580_openshift_W)
 
     * [Worker node fix pack 4.19.29_1577_openshift, released 04 May 2026](/docs/openshift?topic=openshift-openshift_changelog_419#cl-boms-41929_1577_openshift_W)
 
@@ -5504,6 +5512,8 @@ subcollection: openshift
 * [Overview](/docs/openshift?topic=openshift-openshift_changelog_418#changelog_overview_418)
 
 * [Version 4.18](/docs/openshift?topic=openshift-openshift_changelog_418#418_components)
+
+    * [Worker node fix pack 4.18.41_1590_openshift, released 20 May 2026](/docs/openshift?topic=openshift-openshift_changelog_418#cl-boms-41841_1590_openshift_W)
 
     * [Worker node fix pack 4.18.38_1587_openshift, released 04 May 2026](/docs/openshift?topic=openshift-openshift_changelog_418#cl-boms-41838_1587_openshift_W)
 
@@ -5689,6 +5699,8 @@ subcollection: openshift
 * [Overview](/docs/openshift?topic=openshift-openshift_changelog_417#changelog_overview_417)
 
 * [Version 4.17](/docs/openshift?topic=openshift-openshift_changelog_417#417_components)
+
+    * [Worker node fix pack 4.17.53_1586_openshift, released 20 May 2026](/docs/openshift?topic=openshift-openshift_changelog_417#cl-boms-41753_1586_openshift_W)
 
     * [Worker node fix pack 4.17.52_1583_openshift, released 04 May 2026](/docs/openshift?topic=openshift-openshift_changelog_417#cl-boms-41752_1583_openshift_W)
 
@@ -5910,6 +5922,8 @@ subcollection: openshift
 * [Overview](/docs/openshift?topic=openshift-openshift_changelog_416#changelog_overview_416)
 
 * [Version 4.16](/docs/openshift?topic=openshift-openshift_changelog_416#416_components)
+
+    * [Worker node fix pack 4.16.62_1618_openshift, released 20 May 2026](/docs/openshift?topic=openshift-openshift_changelog_416#cl-boms-41662_1618_openshift_W)
 
     * [Worker node fix pack 4.16.60_1614_openshift, released 04 May 2026](/docs/openshift?topic=openshift-openshift_changelog_416#cl-boms-41660_1614_openshift_W)
 
@@ -6839,6 +6853,8 @@ subcollection: openshift
 * [`openshift-data-foundation` 4.19.0](/docs/openshift?topic=openshift-supported-cluster-addon-versions#openshift-data-foundation-4.19.0)
 
 * [`openshift-data-foundation` 4.20.0](/docs/openshift?topic=openshift-supported-cluster-addon-versions#openshift-data-foundation-4.20.0)
+
+* [`openshift-data-foundation` 4.21.0](/docs/openshift?topic=openshift-supported-cluster-addon-versions#openshift-data-foundation-4.21.0)
 
 * [`static-route` 1.0.0](/docs/openshift?topic=openshift-supported-cluster-addon-versions#static-route-1.0.0)
 
