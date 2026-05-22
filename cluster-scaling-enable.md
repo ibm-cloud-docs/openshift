@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2026
-lastupdated: "2026-05-21"
+lastupdated: "2026-05-22"
 
 
 keywords: openshift, {{site.data.keyword.openshiftlong_notm}}, kubernetes, node scaling, ca, autoscaler
@@ -34,7 +34,7 @@ Beginning in version 1.2.4 the `maxEmptyBulkDelete` option is no longer supporte
 
 
 ## Before you begin
-{: ca-before}
+{: #ca-before}
 
 *  Install the [cluster autoscaler add-on](/docs/openshift?topic=openshift-cluster-scaling-install-addon).
 *  [Access your {{site.data.keyword.redhat_openshift_notm}} cluster](/docs/openshift?topic=openshift-access_cluster).
