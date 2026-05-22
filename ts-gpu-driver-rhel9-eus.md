@@ -24,7 +24,7 @@ content-type: troubleshoot
 When you try to install NVIDIA GPU drivers on Red Hat Enterprise Linux 9 worker nodes, the installation fails with a repository error.
 {: tsSymptoms}
 
-You see an error message in the <nvidia-driver-daemonset-*> pod logs similar to the following:
+You see an error message in the `nvidia-driver-daemonset-*` pod logs similar to the following:
 
 ```sh
 Failed to download metadata for repo 'ibm-rhel-9-for-x86_64-appstream-eus-rpms'
