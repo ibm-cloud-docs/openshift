@@ -27,7 +27,14 @@ When you try to install NVIDIA GPU drivers on Red Hat Enterprise Linux 9 worker 
 You see an error message in the `nvidia-driver-daemonset-*` pod logs similar to the following:
 
 ```sh
-Failed to download metadata for repo 'ibm-rhel-9-for-x86_64-appstream-eus-rpms'
+Error: Unable to find a match: kernel-headers-VERSION kernel-devel-VERSION
+```
+{: screen}
+
+For example:
+
+```sh
+Error: Unable to find a match: kernel-headers-5.14.0-570.112.1.el9_6.x86_64 kernel-devel-5.14.0-570.112.1.el9_6.x86_64
 ```
 {: screen}
 
@@ -73,26 +80,26 @@ Apply a ConfigMap to enable the required EUS repositories for the NVIDIA GPU dri
     ```
     {: pre}
 
-6. Create a ConfigMap file named `nvidia-driver-repo-config.yaml` with the following content. Replace `<baseurl>` with the base URL you retrieved, and replace both instances of `<CERT_SERIAL>` with your certificate serial number.
+6. Create a ConfigMap file named `nvidia-driver-repo-config.yaml` with the following content. Replace `NAMESPACE-GPU` with the namespace where the GPU driver is installed, `BASEURL` with the base URL you retrieved, and replace both instances of `CERT-SERIAL` with your certificate serial number.
 
     ```yaml
     apiVersion: v1
     kind: ConfigMap
     metadata:
       name: nvidia-driver-repo-config
-      namespace: nvidia-gpu-operator
+      namespace: NAMESPACE-GPU
     data:
       rhel9.repo: |
-        [rhel-9-for-x86_64-appstream-eus-rpms]
+        [ibm-rhel-9-for-x86_64-appstream-eus-rpms]
         name = Red Hat Enterprise Linux 9 for x86_64 - AppStream - Extended Update Support (RPMs)
-        baseurl = <baseurl>/pulp/repos/customer/Library/content/eus/rhel9/9.6/x86_64/appstream/os
+        baseurl = BASEURL/pulp/repos/customer/Library/content/eus/rhel9/9.6/x86_64/appstream/os
         enabled = 1
         gpgcheck = 1
         gpgkey = file:///etc/pki/rpm-gpg/RPM-GPG-KEY-redhat-release
         sslverify = 1
         sslcacert = /etc/rhsm-host/ca/katello-server-ca.pem
-        sslclientkey = /etc/pki/entitlement-host/<CERT_SERIAL>-key.pem
-        sslclientcert = /etc/pki/entitlement-host/<CERT_SERIAL>.pem
+        sslclientkey = /etc/pki/entitlement-host/CERT-SERIAL-key.pem
+        sslclientcert = /etc/pki/entitlement-host/CERT-SERIAL.pem
         metadata_expire = 1
         enabled_metadata = 0
     ```
@@ -105,11 +112,29 @@ Apply a ConfigMap to enable the required EUS repositories for the NVIDIA GPU dri
     ```
     {: pre}
 
-8. Verify that the ConfigMap was created successfully.
+8. Edit the cluster policy to add the ConfigMap to the `repoConfig` section.
 
     ```sh
-    oc get configmap nvidia-driver-repo-config -n nvidia-gpu-operator
+    oc edit clusterpolicy
     ```
     {: pre}
 
-After applying the ConfigMap, the NVIDIA GPU Operator can access the required EUS repositories and successfully install the GPU drivers on your RHEL 9 worker nodes.
+9. Add the `configMapName` field to the `spec.repoConfig` section with the name of your ConfigMap.
+
+    ```yaml
+    spec:
+      ...
+      repoConfig:
+        configMapName: nvidia-driver-repo-config
+      ...
+    ```
+    {: codeblock}
+
+10. Delete the NVIDIA driver daemonset pods to cycle them and apply the new configuration.
+
+    ```sh
+    oc delete po nvidia-driver-daemonset-*
+    ```
+    {: pre}
+
+After the pods restart, the NVIDIA GPU Operator can access the required EUS repositories and successfully install the GPU drivers on your RHEL 9 worker nodes.
