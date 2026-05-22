@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2026
-lastupdated: "2026-05-20"
+lastupdated: "2026-05-22"
 
 
 keywords: kubernetes, openshift
@@ -230,6 +230,13 @@ Before you begin
 
 You must use NVIDIA GPU operator version 1.3.1 or later. When you install the Node Feature Discovery operator, select the update channel that matches your {{site.data.keyword.redhat_openshift_notm}} cluster version. Don't install the operators through another method, such as a Helm chart.
 {: important}
+
+
+
+**RHEL 9 worker nodes**: If you are installing NVIDIA GPU drivers on RHEL 9 worker nodes, you must apply a workaround to enable all required Extended Update Support (EUS) repositories. The NVIDIA GPU Operator does not enable all required EUS repositories by default, which causes driver installation to fail. For more information, see [Why does my NVIDIA GPU driver installation fail on RHEL 9 worker nodes?](/docs/openshift?topic=openshift-ts-gpu-driver-rhel9-eus).
+{: important}
+
+
 
 If you experience issues installing the Node Feature Discovery Operator or the NVIDIA GPU Operator, [contact NVIDIA support for help](https://www.nvidia.com/en-us/support/){: external} or open an issue in the [NVIDIA GPU Operator repo](https://github.com/NVIDIA/gpu-operator/issues){: external}
 {: note}

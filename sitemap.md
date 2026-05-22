@@ -295,6 +295,8 @@ subcollection: openshift
 
         * {{site.data.keyword.openshiftlong_notm}} worker node fix packs are available.
 
+        * Extended Update Support (EUS) repositories enabled for RHEL 9 worker nodes.
+
     * [20 May 2026](/docs/openshift?topic=openshift-openshift-relnotes#openshift-may2026)
 
         * VPC Block CSI Driver cluster add-on patch updates.
@@ -8797,6 +8799,8 @@ subcollection: openshift
 [Why do I see a license or entitlement error when creating a worker pool?](/docs/openshift?topic=openshift-ts-workerpool-license-entitlement#ts-workerpool-license-entitlement)
 
 [Why am I seeing duplicate metrics or logs being sent from my clusters?](/docs/openshift?topic=openshift-ts-dupe-logs#ts-dupe-logs)
+
+[Why does my NVIDIA GPU driver installation fail on RHEL 9 worker nodes?](/docs/openshift?topic=openshift-ts-gpu-driver-rhel9-eus#ts-gpu-driver-rhel9-eus)
 
 [How do I troubleshoot confidential containers?](/docs/openshift?topic=openshift-ts-confidential-containers#ts-confidential-containers)
 
