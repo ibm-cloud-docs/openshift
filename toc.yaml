@@ -556,6 +556,7 @@ toc:
               - ts-cloud-pak-ds.md
               - ts-workerpool-license-entitlement.md
               - ts-dupe-logs.md
+              - ts-gpu-driver-rhel9-eus.md
               - ts-confidential-containers.md
           - topicgroup:
               label: Permissions and credentials

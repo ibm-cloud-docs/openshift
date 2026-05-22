@@ -68,6 +68,9 @@ Looking for {{site.data.keyword.cloud_notm}} status, platform announcements, sec
 :   [Version 4.17 change log](/docs/openshift?topic=openshift-openshift_changelog_417)
 :   [Version 4.16 change log](/docs/openshift?topic=openshift-openshift_changelog_416)
 
+Extended Update Support (EUS) repositories enabled for RHEL 9 worker nodes.
+:   EUS repositories are now enabled for Red Hat Enterprise Linux 9 worker nodes in {{site.data.keyword.openshiftlong_notm}}. This enables access to extended support for specific RHEL minor versions. If you are installing NVIDIA GPU drivers on RHEL 9 worker nodes, you must apply a workaround to enable all required EUS repositories. For more information, see [Why does my NVIDIA GPU driver installation fail on RHEL 9 worker nodes?](/docs/openshift?topic=openshift-ts-gpu-driver-rhel9-eus).
+
 
 
 
