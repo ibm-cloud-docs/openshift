@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2026
-lastupdated: "2026-05-21"
+lastupdated: "2026-05-22"
 
 
 keywords: kubernetes, release notes, openshift, {{site.data.keyword.openshiftlong_notm}}
@@ -94,9 +94,6 @@ VPC File CSI Driver cluster add-on patch updates.
 
 Openshift AI cluster add-on patch updates.
 :   For more information, see the [change log](/docs/openshift?topic=openshift-cl-add-ons-openshift-ai).
-For more information, see the [change log](/docs/openshift?topic=openshift-cl-add-ons-openshift-ai).
-
-
 
 
 
