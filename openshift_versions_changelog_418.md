@@ -3,7 +3,7 @@
 copyright:
   years: 2024, 2026
 
-lastupdated: "2026-05-21"
+lastupdated: "2026-05-22"
 
 
 keywords: change log, version history, 4.18_openshift
@@ -37,6 +37,25 @@ Master patch updates are applied automatically. Worker node patch updates can be
 
 ## Version 4.18
 {: #418_components}
+
+
+### Master fix pack 4.18.40_1589_openshift, released 22 May 2026
+{: #cl-boms_master-41840_1589_openshift_M}
+
+The following table shows the components that are in the master fix pack 4.18.40_1589_openshift. Master patch updates are applied automatically.
+{: shortdesc}
+
+| Component | Version | Description |
+| ---- | ---- | ---- |
+|Calico|v3.30.7|See the [Calico release notes](https://docs.tigera.io/calico/3.30/release-notes/#calico-open-source-3307-bug-fix-release).|
+|etcd|v3.5.29|See the [etcd release notes](https://github.com/coreos/etcd/releases/v3.5.29).|
+|IBM Cloud Controller Manager|v1.31.14-23|New version contains updates and security fixes.|
+|Key Management Service provider|2.10.24|New version contains updates and security fixes.|
+|Portieris admission controller|v0.13.38|See the [Portieris admission controller release notes](https://github.com/IBM/portieris/releases/tag/v0.13.38)|
+|Red Hat OpenShift on IBM Cloud|4.18.40|See the [Red Hat OpenShift on IBM Cloud release notes](https://docs.redhat.com/en/documentation/openshift_container_platform/4.18/html/release_notes/ocp-4-18-release-notes#ocp-4-18-40_release-notes).|
+|Tigera Operator|v1.38.13|See the [Tigera Operator release notes](https://github.com/tigera/operator/releases/tag/v1.38.13).|
+{: caption="4.18.40_1589_openshift fix pack." caption-side="bottom"}
+{: #cl-boms_master-41840_1589_openshift_M-component-table}
 
 
 ### Worker node fix pack 4.18.41_1590_openshift, released 20 May 2026

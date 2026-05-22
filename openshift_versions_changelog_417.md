@@ -3,7 +3,7 @@
 copyright:
   years: 2024, 2026
 
-lastupdated: "2026-05-21"
+lastupdated: "2026-05-22"
 
 
 keywords: change log, version history, 4.17_openshift
@@ -37,6 +37,23 @@ Master patch updates are applied automatically. Worker node patch updates can be
 
 ## Version 4.17
 {: #417_components}
+
+
+### Master fix pack 4.17.52_1585_openshift, released 22 May 2026
+{: #cl-boms_master-41752_1585_openshift_M}
+
+The following table shows the components that are in the master fix pack 4.17.52_1585_openshift. Master patch updates are applied automatically.
+{: shortdesc}
+
+| Component | Version | Description |
+| ---- | ---- | ---- |
+|Calico|v3.30.7|See the [Calico release notes](https://docs.tigera.io/calico/3.30/release-notes/#calico-open-source-3307-bug-fix-release).|
+|IBM Cloud Controller Manager|v1.30.14-42|New version contains updates and security fixes.|
+|Key Management Service provider|2.10.24|New version contains updates and security fixes.|
+|Portieris admission controller|v0.13.38|See the [Portieris admission controller release notes](https://github.com/IBM/portieris/releases/tag/v0.13.38)|
+|Tigera Operator|v1.38.13|See the [Tigera Operator release notes](https://github.com/tigera/operator/releases/tag/v1.38.13).|
+{: caption="4.17.52_1585_openshift fix pack." caption-side="bottom"}
+{: #cl-boms_master-41752_1585_openshift_M-component-table}
 
 
 ### Worker node fix pack 4.17.53_1586_openshift, released 20 May 2026

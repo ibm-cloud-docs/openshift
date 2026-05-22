@@ -3,7 +3,7 @@
 copyright:
   years: 2026, 2026
 
-lastupdated: "2026-05-21"
+lastupdated: "2026-05-22"
 
 
 keywords: change log, version history, 4.21_openshift
@@ -37,6 +37,23 @@ Master patch updates are applied automatically. Worker node patch updates can be
 
 ## Version 4.21
 {: #421_components}
+
+
+### Master fix pack 4.21.15_1517_openshift, released 22 May 2026
+{: #cl-boms_master-42115_1517_openshift_M}
+
+The following table shows the components that are in the master fix pack 4.21.15_1517_openshift. Master patch updates are applied automatically.
+{: shortdesc}
+
+| Component | Version | Description |
+| ---- | ---- | ---- |
+|IBM Cloud Controller Manager|v1.34.7-4|New version contains updates and security fixes.|
+|Key Management Service provider|2.10.24|New version contains updates and security fixes.|
+|Kubernetes feature gates configuration|RotateKubeletServerCertificate=true,BuildCSIVolumes=true,NetworkLiveMigration=true,OpenShiftPodSecurityAdmission=false,AdminNetworkPolicy=true,KMSv1=false,ExternalOIDC=true,NetworkDiagnosticsConfig=true,ManagedBootImages=true,TranslateStreamCloseWebsocketRequests=false,NewOLM=false,DisableNodeKubeProxyVersion=false,ServiceAccountTokenNodeBinding=true,AdditionalRoutingCapabilities=true,CPMSMachineNamePrefix=true,ConsolePluginContentSecurityPolicy=true,GatewayAPI=true,GatewayAPIController=true,MetricsCollectionProfiles=true,NetworkSegmentation=true,RouteExternalCertificate=true,HighlyAvailableArbiter=true,ImageVolume=true,MachineConfigNodes=true,PinnedImages=true,ProcMountType=true,RouteAdvertisements=true,SigstoreImageVerification=true,StoragePerformantSecurityPolicy=true,UpgradeStatus=true,UserNamespacesPodSecurityStandards=true,UserNamespacesSupport=true,ExternalOIDCWithUIDAndExtraClaimMappings=true,HyperShiftOnlyDynamicResourceAllocation=true,ImageStreamImportMode=true,ManagedBootImagesvSphere=true,PreconfiguredUDNAddresses=true,SigstoreImageVerificationPKI=true,VolumeAttributesClass=true|https://kubernetes.io/docs/home/|
+|Portieris admission controller|v0.13.38|See the [Portieris admission controller release notes](https://github.com/IBM/portieris/releases/tag/v0.13.38)|
+|Red Hat OpenShift on IBM Cloud|4.21.15|See the [Red Hat OpenShift on IBM Cloud release notes](https://docs.redhat.com/en/documentation/openshift_container_platform/4.21/html/release_notes/ocp-4-21-release-notes#ocp-4-21-15_release-notes).|
+{: caption="4.21.15_1517_openshift fix pack." caption-side="bottom"}
+{: #cl-boms_master-42115_1517_openshift_M-component-table}
 
 
 ### Worker node fix pack 4.21.15_1518_openshift, released 20 May 2026
