@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2026
-lastupdated: "2026-05-22"
+lastupdated: "2026-05-26"
 
 
 keywords: kubernetes, release notes, openshift, {{site.data.keyword.openshiftlong_notm}}
@@ -28,6 +28,13 @@ Looking for {{site.data.keyword.cloud_notm}} status, platform announcements, sec
 
 ## May 2026
 {: #openshift-may26}
+
+### 23 May 2026
+{: #openshift-may2326}
+{: release-note}
+
+CLI version 1.0.770 is available
+:   For more information, see the [CLI change log](/docs/openshift?topic=openshift-cs_cli_changelog).
 
 ### 22 May 2026
 {: #openshift-may2226}

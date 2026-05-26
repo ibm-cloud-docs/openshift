@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2026
-lastupdated: "2026-05-22"
+lastupdated: "2026-05-26"
 
 
 keywords: kubernetes, openshift, red hat, red hat openshift
@@ -118,7 +118,7 @@ In this tutorial, you create the following resources by using the CLI. There are
 
     ```sh
     Client Version: v4.20.0
-    Kubernetes Version: v1.34.8.2
+    Kubernetes Version: v1.35.5.2
     ```
     {: screen}
 

@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2026
-lastupdated: "2026-05-20"
+lastupdated: "2026-05-26"
 
 
 keywords: openshift, cli reference, kubernetes cli, openshift cli, {{site.data.keyword.openshiftlong_notm}}
@@ -1446,152 +1446,40 @@ ibmcloud oc cluster master private-service-endpoint allowlist add --cluster mycl
 
 [Virtual Private Cloud]{: tag-vpc} [Classic infrastructure]{: tag-classic-inf}
 
-Disable the subnet allowlist feature for a cluster's private cloud service endpoint.
+This hidden command is deprecated and not supported for general use.
 {: shortdesc}
 
-After you disable this feature, authorized requests to your cluster master through the cluster's private cloud service endpoint can originate from any subnet.
-
-```sh
-ibmcloud oc cluster master private-service-endpoint allowlist disable --cluster CLUSTER [-f] [-q]
-```
-{: pre}
-
-
-Minimum required permissions
-:   **Editor** platform access role for the cluster in {{site.data.keyword.containerlong_notm}}
-
-**Command options**:
-
-`-c`, `--cluster CLUSTER`
-:    Required: The name or ID of the cluster.
-
-`-f`
-:    Optional: Force the command to run without user prompts.
-
-`-q`
-:    Optional: Do not show the message of the day or update reminders.
-
-
-##### Example `cluster master private-service-endpoint allowlist disable` command
-{: #cluster-master-private-service-endpoint-allowlist-disable-example}
-
-```sh
-ibmcloud oc cluster master private-service-endpoint allowlist disable --cluster mycluster
-```
-{: pre}
+Use context-based restrictions instead. For more information, see [Migrating from private service endpoints allowlisting to context-based restrictions](/docs/openshift?topic=openshift-pse-to-cbr-migration).
 
 #### `ibmcloud oc cluster master private-service-endpoint allowlist enable`
 {: #cs_master_pse_allowlist_enable}
 
 [Virtual Private Cloud]{: tag-vpc} [Classic infrastructure]{: tag-classic-inf}
 
-Enable the subnet allowlist feature for a cluster's private cloud service endpoint.
+This hidden command is deprecated and not supported for general use.
 {: shortdesc}
 
-After you run this command, use the [`ibmcloud oc cluster master private-service-endpoint allowlist` command](#cs_master_pse_allowlist_add) to add subnets to the allowlist. Only authorized requests to your cluster master that originate from subnets in the allowlist are permitted through the cluster's private cloud service endpoint. If the public cloud service endpoint is enabled for your cluster, authorized requests are still permitted through the public cloud service endpoint.
-
-```sh
-ibmcloud oc cluster master private-service-endpoint allowlist enable --cluster CLUSTER [-f] [-q]
-```
-{: pre}
-
-Minimum required permissions
-:   **Editor** platform access role for the cluster in {{site.data.keyword.containerlong_notm}}
-
-**Command options**:
-
-`-c`, `--cluster CLUSTER`
-:    Required: The name or ID of the cluster.
-
-`-f`
-:    Optional: Force the command to run without user prompts.
-
-`-q`
-:    Optional: Do not show the message of the day or update reminders.
-
-
-##### Example `cluster master private-service-endpoint allowlist enable` command
-{: #cluster-master-private-service-endpoint-allowlist-enable-example}
-
-```sh
-ibmcloud oc cluster master private-service-endpoint allowlist enable --cluster mycluster
-```
-{: pre}
+Use context-based restrictions instead. For more information, see [Migrating from private service endpoints allowlisting to context-based restrictions](/docs/openshift?topic=openshift-pse-to-cbr-migration).
 
 #### `ibmcloud oc cluster master private-service-endpoint allowlist get`
 {: #cs_master_pse_allowlist_get}
 
 [Virtual Private Cloud]{: tag-vpc} [Classic infrastructure]{: tag-classic-inf}
 
-List all subnets in the allowlist for a cluster's private cloud service endpoint.
+This hidden command is deprecated and not supported for general use.
 {: shortdesc}
 
-This list includes subnets that you manually added by using the `ibmcloud oc cluster master private-service-endpoint allowlist add` command and subnets that are automatically added and managed by IBM, such as worker node subnets.
-
-```sh
-ibmcloud oc cluster master private-service-endpoint allowlist get --cluster CLUSTER [-q]
-```
-{: pre}
-
-Minimum required permissions
-:   **Viewer** platform access role for the cluster in {{site.data.keyword.containerlong_notm}}
-
-**Command options**:
-
-`-c`, `--cluster CLUSTER`
-:    Required: The name or ID of the cluster.
-
-`-q`
-:    Optional: Do not show the message of the day or update reminders.
-
-
-##### Example `cluster master private-service-endpoint allowlist get` command
-{: #cluster-master-private-service-endpoint-allowlist-get-example}
-
-```sh
-ibmcloud oc cluster master private-service-endpoint allowlist get --cluster mycluster
-```
-{: pre}
+Use context-based restrictions instead. For more information, see [Migrating from private service endpoints allowlisting to context-based restrictions](/docs/openshift?topic=openshift-pse-to-cbr-migration).
 
 #### `ibmcloud oc cluster master private-service-endpoint allowlist rm`
 {: #cs_master_pse_allowlist_rm}
 
 [Virtual Private Cloud]{: tag-vpc} [Classic infrastructure]{: tag-classic-inf}
 
-Remove subnets that you previously added to the allowlist for a cluster's private cloud service endpoint.
+This hidden command is deprecated and not supported for general use.
 {: shortdesc}
 
-After a subnet is removed, any requests that originate from this subnet to the cluster master through the private cloud service endpoint are denied.
-
-```sh
-ibmcloud oc cluster master private-service-endpoint allowlist rm --cluster CLUSTER --subnet SUBNET [--subnet SUBNET ...] [-q]
-```
-{: pre}
-
-Minimum required permissions
-:   **Editor** platform access role for the cluster in {{site.data.keyword.containerlong_notm}}
-
-**Command options**:
-
-`-c`, `--cluster CLUSTER`
-:    Required: The name or ID of the cluster.
-
-`--subnet SUBNET`
-:    Required: The subnet CIDR. Specify more than one subnet by using multiple repeated options.
-
-`-f`
-:    Optional: Force the command to run without user prompts.
-
-`-q`
-:    Optional: Do not show the message of the day or update reminders.
-
-
-##### Example `cluster master private-service-endpoint allowlist rm` command
-{: #cluster-master-private-service-endpoint-allowlist-rm}
-
-```sh
-ibmcloud oc cluster master private-service-endpoint allowlist rm --cluster mycluster
- --subnet 1.1.1.1/16
+Use context-based restrictions instead. For more information, see [Migrating from private service endpoints allowlisting to context-based restrictions](/docs/openshift?topic=openshift-pse-to-cbr-migration).
 ```
 {: pre}
 

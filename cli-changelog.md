@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2026
-lastupdated: "2026-05-13"
+lastupdated: "2026-05-26"
 
 
 keywords: openshift, {{site.data.keyword.openshiftlong_notm}}, oc, ks
@@ -31,6 +31,12 @@ Refer to the following change logs for a summary of changes for each version of 
 
 Review the following changes for 1.0 versions of the CLI plug-in.
 {: shortdesc}
+
+## Version v1.0.773
+{: #cli-01773}
+
+Version 1.0.773 of the CLI was released on 23 May 2026.
+- Marks deprecated `cluster master private-service-endpoint allowlist` commands as hidden in the CLI.
 
 ## Version v1.0.770
 {: #cli-01770}
