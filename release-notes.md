@@ -33,7 +33,7 @@ Looking for {{site.data.keyword.cloud_notm}} status, platform announcements, sec
 {: #openshift-may2326}
 {: release-note}
 
-CLI version 1.0.770 is available
+CLI version 1.0.773 is available
 :   For more information, see the [CLI change log](/docs/openshift?topic=openshift-cs_cli_changelog).
 
 ### 22 May 2026

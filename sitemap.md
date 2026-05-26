@@ -289,7 +289,7 @@ subcollection: openshift
 
     * [23 May 2026](/docs/openshift?topic=openshift-openshift-relnotes#openshift-may2326)
 
-        * CLI version 1.0.770 is available
+        * CLI version 1.0.773 is available
 
     * [22 May 2026](/docs/openshift?topic=openshift-openshift-relnotes#openshift-may2226)
 
