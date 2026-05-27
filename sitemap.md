@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2026
-lastupdated: "2026-05-26"
+lastupdated: "2026-05-27"
 
 
 keywords: openshift
@@ -287,9 +287,23 @@ subcollection: openshift
 
 * [May 2026](/docs/openshift?topic=openshift-openshift-relnotes#openshift-may26)
 
+    * [27 May 2026](/docs/openshift?topic=openshift-openshift-relnotes#openshift-may2726)
+
+        * IBM Cloud Image Key Synchronizer cluster add-on patch updates.
+
+    * [25 May 2026](/docs/openshift?topic=openshift-openshift-relnotes#openshift-may2526)
+
+        * IBM Object CSI Driver cluster add-on patch updates.
+
+        * {{site.data.keyword.cos_full_notm}} plug-in version 2.2.53 is available.
+
+        * Openshift AI cluster add-on patch updates.
+
     * [23 May 2026](/docs/openshift?topic=openshift-openshift-relnotes#openshift-may2326)
 
-        * CLI version 1.0.770 is available
+        * CLI version 1.0.773 is available
+
+        * Static Route cluster add-on patch updates.
 
     * [22 May 2026](/docs/openshift?topic=openshift-openshift-relnotes#openshift-may2226)
 
@@ -6500,6 +6514,8 @@ subcollection: openshift
 
 * [Version 419](/docs/openshift?topic=openshift-cl-add-ons-openshift-ai#cl-add-ons-openshift-ai-419)
 
+    * [v419.0.2_340316372, released 25 May 2026](/docs/openshift?topic=openshift-cl-add-ons-openshift-ai#cl-add-ons-openshift-ai-v41902_340316372)
+
     * [v419.0.0_333601315, released 26 April 2026](/docs/openshift?topic=openshift-cl-add-ons-openshift-ai#cl-add-ons-openshift-ai-v41900_333601315)
 
 * [Version 418](/docs/openshift?topic=openshift-cl-add-ons-openshift-ai#cl-add-ons-openshift-ai-418)
@@ -7118,6 +7134,8 @@ subcollection: openshift
 
 * [Version 1.0](/docs/openshift?topic=openshift-cl-add-ons-ibm-object-csi-driver#cl-add-ons-ibm-object-csi-driver-1.0)
 
+    * [v1.0.20_333133599, released 25 May 2026](/docs/openshift?topic=openshift-cl-add-ons-ibm-object-csi-driver#cl-add-ons-ibm-object-csi-driver-v1020_333133599)
+
     * [v1.0.19_333133599, released 26 April 2026](/docs/openshift?topic=openshift-cl-add-ons-ibm-object-csi-driver#cl-add-ons-ibm-object-csi-driver-v1019_333133599)
 
     * [v1.0.18_320539369, released 02 April 2026](/docs/openshift?topic=openshift-cl-add-ons-ibm-object-csi-driver#cl-add-ons-ibm-object-csi-driver-v1018_320539369)
@@ -7127,6 +7145,10 @@ subcollection: openshift
     * [v1.0.13_297764008, released 14 November 2025](/docs/openshift?topic=openshift-cl-add-ons-ibm-object-csi-driver#cl-add-ons-ibm-object-csi-driver-v1013_297764008)
 
 [{{site.data.keyword.cos_full_notm}} plug-in](/docs/openshift?topic=openshift-cos_plugin_changelog#cos_plugin_changelog)
+
+* [Change log for version 2.2.53, released 25 May 2026](/docs/openshift?topic=openshift-cos_plugin_changelog#02253_object_plugin)
+
+* [Change log for version 2.2.52, released 10 May 2026](/docs/openshift?topic=openshift-cos_plugin_changelog#02252_object_plugin)
 
 * [Change log for version 2.2.51, released 17 April 2026](/docs/openshift?topic=openshift-cos_plugin_changelog#02251_object_plugin)
 
@@ -7245,6 +7267,8 @@ subcollection: openshift
 [Static Route add-on version change log](/docs/openshift?topic=openshift-cl-add-ons-static-route#cl-add-ons-static-route)
 
 * [Version 1.0.0](/docs/openshift?topic=openshift-cl-add-ons-static-route#cl-add-ons-static-route-1.0.0)
+
+    * [v1.0.0-342645253, released 23 May 2026](/docs/openshift?topic=openshift-cl-add-ons-static-route#cl-add-ons-static-route-v100-342645253)
 
     * [v1.0.0-1661, released 06 February 2025](/docs/openshift?topic=openshift-cl-add-ons-static-route#cl-add-ons-static-route-v100-1661)
 
@@ -7589,6 +7613,8 @@ subcollection: openshift
 [IBM Cloud Image Key Synchronizer add-on version change log](/docs/openshift?topic=openshift-cl-add-ons-ibm-cloud-image-key-synchronizer#cl-add-ons-ibm-cloud-image-key-synchronizer)
 
 * [Version 1.0.0](/docs/openshift?topic=openshift-cl-add-ons-ibm-cloud-image-key-synchronizer#cl-add-ons-ibm-cloud-image-key-synchronizer-1.0.0)
+
+    * [1.0.0_341829798, released 27 May 2026](/docs/openshift?topic=openshift-cl-add-ons-ibm-cloud-image-key-synchronizer#cl-add-ons-ibm-cloud-image-key-synchronizer-100_341829798)
 
     * [1.0.0_334950440, released 05 May 2026](/docs/openshift?topic=openshift-cl-add-ons-ibm-cloud-image-key-synchronizer#cl-add-ons-ibm-cloud-image-key-synchronizer-100_334950440)
 

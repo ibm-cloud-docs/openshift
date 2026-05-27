@@ -3,7 +3,7 @@
 copyright:
   years: 2024, 2026
 
-lastupdated: "2026-02-26"
+lastupdated: "2026-05-27"
 
 
 keywords: change log, version history, Static Route
@@ -41,6 +41,16 @@ Review the version history for Static Route.
 
 ## Version 1.0.0
 {: #cl-add-ons-static-route-1.0.0}
+
+
+### v1.0.0-342645253, released 23 May 2026
+{: #cl-add-ons-static-route-v100-342645253}
+
+- Resolves the following CVEs: [CVE-2026-33814](https://nvd.nist.gov/vuln/detail/CVE-2026-33814){: external}, and [CVE-2026-39836](https://nvd.nist.gov/vuln/detail/CVE-2026-39836){: external}.
+- CVE-2026-33814 
+- CVE-2026-39836 
+- Release the Static Route Operator with Go version 1.25.10
+- Fix CVEs CVE-2026-33814, CVE-2026-39836
 
 
 ### v1.0.0-1661, released 06 February 2025
