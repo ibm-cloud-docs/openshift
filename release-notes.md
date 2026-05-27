@@ -44,6 +44,8 @@ IBM Cloud Image Key Synchronizer cluster add-on patch updates.
 IBM Object CSI Driver cluster add-on patch updates.
 :   For more information, see the [change log](/docs/openshift?topic=openshift-cl-add-ons-ibm-object-csi-driver).
 
+Openshift AI cluster add-on patch updates.
+:   For more information, see the [change log](/docs/openshift?topic=openshift-cl-add-ons-openshift-ai).
 
 ### 23 May 2026
 {: #openshift-may2326}
@@ -51,6 +53,9 @@ IBM Object CSI Driver cluster add-on patch updates.
 
 CLI version 1.0.773 is available
 :   For more information, see the [CLI change log](/docs/openshift?topic=openshift-cs_cli_changelog).
+
+Static Route cluster add-on patch updates.
+:   For more information, see the [change log](/docs/openshift?topic=openshift-cl-add-ons-static-route).
 
 ### 22 May 2026
 {: #openshift-may2226}

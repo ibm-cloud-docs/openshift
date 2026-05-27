@@ -295,9 +295,13 @@ subcollection: openshift
 
         * IBM Object CSI Driver cluster add-on patch updates.
 
+        * Openshift AI cluster add-on patch updates.
+
     * [23 May 2026](/docs/openshift?topic=openshift-openshift-relnotes#openshift-may2326)
 
         * CLI version 1.0.773 is available
+
+        * Static Route cluster add-on patch updates.
 
     * [22 May 2026](/docs/openshift?topic=openshift-openshift-relnotes#openshift-may2226)
 
@@ -6508,6 +6512,8 @@ subcollection: openshift
 
 * [Version 419](/docs/openshift?topic=openshift-cl-add-ons-openshift-ai#cl-add-ons-openshift-ai-419)
 
+    * [v419.0.2_340316372, released 25 May 2026](/docs/openshift?topic=openshift-cl-add-ons-openshift-ai#cl-add-ons-openshift-ai-v41902_340316372)
+
     * [v419.0.0_333601315, released 26 April 2026](/docs/openshift?topic=openshift-cl-add-ons-openshift-ai#cl-add-ons-openshift-ai-v41900_333601315)
 
 * [Version 418](/docs/openshift?topic=openshift-cl-add-ons-openshift-ai#cl-add-ons-openshift-ai-418)
@@ -7255,6 +7261,8 @@ subcollection: openshift
 [Static Route add-on version change log](/docs/openshift?topic=openshift-cl-add-ons-static-route#cl-add-ons-static-route)
 
 * [Version 1.0.0](/docs/openshift?topic=openshift-cl-add-ons-static-route#cl-add-ons-static-route-1.0.0)
+
+    * [v1.0.0-342645253, released 23 May 2026](/docs/openshift?topic=openshift-cl-add-ons-static-route#cl-add-ons-static-route-v100-342645253)
 
     * [v1.0.0-1661, released 06 February 2025](/docs/openshift?topic=openshift-cl-add-ons-static-route#cl-add-ons-static-route-v100-1661)
 
