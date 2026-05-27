@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2026
-lastupdated: "2026-04-22"
+lastupdated: "2026-05-27"
 
 
 keywords: openshift, {{site.data.keyword.openshiftlong_notm}}, object storage, plug-in, change log
@@ -28,14 +28,26 @@ View information for updates to the {{site.data.keyword.cos_full_notm}} plug-in 
 
 | {{site.data.keyword.cos_full_notm}} plug-in version | Supported? |
 | --- | --- |
+| 2.2.53 | Yes |
+| 2.2.52 | Yes |
 | 2.2.51 | Yes |
-| 2.2.50 | Yes |
-| 2.2.49 | Yes |
 {: caption="{{site.data.keyword.cos_full_notm}} plug-in versions" caption-side="bottom"}
 
 Versions are deprecated at n-2 or roughly 3 months after their release date. Plan to keep your add-on updated. For update steps, see [Updating the {{site.data.keyword.cos_full_notm}} plug-in](/docs/openshift?topic=openshift-storage_cos_install#update_cos_plugin).
 {: important}
 
+
+## Change log for version 2.2.53, released 25 May 2026
+{: #02253_object_plugin}
+
+- Updates Go to version `1.23.6`.
+- Resolves the following CVEs: [CVE-2026-33811](https://exchange.xforce.ibmcloud.com/vulnerabilities/CVE-2026-33811){: external}, [CVE-2026-33814](https://exchange.xforce.ibmcloud.com/vulnerabilities/CVE-2026-33814){: external}, [CVE-2026-39820](https://exchange.xforce.ibmcloud.com/vulnerabilities/CVE-2026-39820){: external}, [CVE-2026-39836](https://exchange.xforce.ibmcloud.com/vulnerabilities/CVE-2026-39836){: external}, [CVE-2026-4878](https://exchange.xforce.ibmcloud.com/vulnerabilities/CVE-2026-4878){: external}, [CVE-2026-29111](https://exchange.xforce.ibmcloud.com/vulnerabilities/CVE-2026-29111){: external}, [CVE-2026-39823](https://exchange.xforce.ibmcloud.com/vulnerabilities/CVE-2026-39823){: external}, [CVE-2026-39826](https://exchange.xforce.ibmcloud.com/vulnerabilities/CVE-2026-39826){: external}, [CVE-2026-31790](https://exchange.xforce.ibmcloud.com/vulnerabilities/CVE-2026-31790){: external}, [CVE-2026-2100](https://exchange.xforce.ibmcloud.com/vulnerabilities/CVE-2026-2100){: external}, and [CVE-2026-42499](https://exchange.xforce.ibmcloud.com/vulnerabilities/CVE-2026-42499){: external}.
+
+## Change log for version 2.2.52, released 10 May 2026
+{: #02252_object_plugin}
+
+- Updates base image to address security vulnerabilities.
+- Resolves [CVE-2026-33456](https://exchange.xforce.ibmcloud.com/vulnerabilities/CVE-2026-33456){: external}.
 
 ## Change log for version 2.2.51, released 17 April 2026
 {: #02251_object_plugin}

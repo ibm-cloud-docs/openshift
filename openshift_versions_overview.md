@@ -3,7 +3,7 @@
 copyright:
   years: 2014, 2026
 
-lastupdated: "2026-05-20"
+lastupdated: "2026-05-27"
 
 keywords: openshift, version, update, upgrade
 
@@ -68,7 +68,7 @@ All VPC clusters created at version 4.18 or later can use RHCOS worker nodes. Cl
 |4.19 (Kubernetes 1.32)|3 September 2025|26 May 2027†|Red Hat CoreOS,  \nRHEL 9*| - [4.19 details and update actions](/docs/openshift?topic=openshift-cs_versions_419)  \n - [Change log](/docs/openshift?topic=openshift-openshift_changelog_419)  \n - [Release notes](https://docs.redhat.com/en/documentation/openshift_container_platform/4.19/html/release_notes/ocp-4-19-release-notes){: external}|
 |4.18 (Kubernetes 1.31)|23 May 2025|26 May 2027†|Red Hat CoreOS,  \nRHEL 9*| - [4.18 details and update actions](/docs/openshift?topic=openshift-cs_versions_418)  \n - [Change log](/docs/openshift?topic=openshift-openshift_changelog_418)  \n - [Release notes](https://docs.redhat.com/en/documentation/openshift_container_platform/4.18/html/release_notes/ocp-4-18-release-notes){: external}|
 |4.17 (Kubernetes 1.30)|20 November 2024|23 October 2026†|Red Hat CoreOS,  \nRHEL 9,  \nRHEL 8| - [4.17 details and update actions](/docs/openshift?topic=openshift-cs_versions_417)  \n - [Change log](/docs/openshift?topic=openshift-openshift_changelog_417)  \n - [Release notes](https://docs.redhat.com/en/documentation/openshift_container_platform/4.17/html/release_notes/ocp-4-17-release-notes){: external}|
-|4.16 (Kubernetes 1.29)|30 August 2024|26 August 2026†|Red Hat CoreOS,  \nRHEL 9,  \nRHEL 8| - [4.16 details and update actions](/docs/openshift?topic=openshift-cs_versions_416)  \n - [Change log](/docs/openshift?topic=openshift-openshift_changelog_416)  \n - [Release notes](https://docs.redhat.com/en/documentation/openshift_container_platform/4.16/html/release_notes/ocp-4-16-release-notes){: external}|
+|4.16 (Kubernetes 1.29)|30 August 2024|'26 August 2026'†|Red Hat CoreOS,  \nRHEL 9,  \nRHEL 8| - [4.16 details and update actions](/docs/openshift?topic=openshift-cs_versions_416)  \n - [Change log](/docs/openshift?topic=openshift-openshift_changelog_416)  \n - [Release notes](https://docs.redhat.com/en/documentation/openshift_container_platform/4.16/html/release_notes/ocp-4-16-release-notes){: external}|
 {: caption="Available versions for VPC clusters" caption-side="bottom"}
 
 
@@ -82,7 +82,7 @@ All VPC clusters created at version 4.18 or later can use RHCOS worker nodes. Cl
 |4.19 (Kubernetes 1.32)|3 September 2025|26 May 2027†|RHEL 9| - [4.19 details and update actions](/docs/openshift?topic=openshift-cs_versions_419)  \n - [Change log](/docs/openshift?topic=openshift-openshift_changelog_419)  \n - [Release notes](https://docs.redhat.com/en/documentation/openshift_container_platform/4.19/html/release_notes/ocp-4-19-release-notes){: external}|
 |4.18 (Kubernetes 1.31)|23 May 2025|26 May 2027†|RHEL 9| - [4.18 details and update actions](/docs/openshift?topic=openshift-cs_versions_418)  \n - [Change log](/docs/openshift?topic=openshift-openshift_changelog_418)  \n - [Release notes](https://docs.redhat.com/en/documentation/openshift_container_platform/4.18/html/release_notes/ocp-4-18-release-notes){: external}|
 |4.17 (Kubernetes 1.30)|20 November 2024|23 October 2026†|RHEL 9 (default),  \nRHEL 8| - [4.17 details and update actions](/docs/openshift?topic=openshift-cs_versions_417)  \n - [Change log](/docs/openshift?topic=openshift-openshift_changelog_417)  \n - [Release notes](https://docs.redhat.com/en/documentation/openshift_container_platform/4.17/html/release_notes/ocp-4-17-release-notes){: external}|
-|4.16 (Kubernetes 1.29)|30 August 2024|26 August 2026†|RHEL 9 (default),  \nRHEL 8| - [4.16 details and update actions](/docs/openshift?topic=openshift-cs_versions_416)  \n - [Change log](/docs/openshift?topic=openshift-openshift_changelog_416)  \n - [Release notes](https://docs.redhat.com/en/documentation/openshift_container_platform/4.16/html/release_notes/ocp-4-16-release-notes){: external}|
+|4.16 (Kubernetes 1.29)|30 August 2024|'26 August 2026'†|RHEL 9 (default),  \nRHEL 8| - [4.16 details and update actions](/docs/openshift?topic=openshift-cs_versions_416)  \n - [Change log](/docs/openshift?topic=openshift-openshift_changelog_416)  \n - [Release notes](https://docs.redhat.com/en/documentation/openshift_container_platform/4.16/html/release_notes/ocp-4-16-release-notes){: external}|
 {: caption="Available versions for Classic clusters" caption-side="bottom"}
 
 
@@ -96,7 +96,7 @@ All VPC clusters created at version 4.18 or later can use RHCOS worker nodes. Cl
 |4.19 (Kubernetes 1.32)|3 September 2025|26 May 2027†|Red Hat CoreOS,  \nRHEL 9| - [4.19 details and update actions](/docs/openshift?topic=openshift-cs_versions_419)  \n - [Change log](/docs/openshift?topic=openshift-openshift_changelog_419)  \n - [Release notes](https://docs.redhat.com/en/documentation/openshift_container_platform/4.19/html/release_notes/ocp-4-19-release-notes){: external}|
 |4.18 (Kubernetes 1.31)|23 May 2025|26 May 2027†|Red Hat CoreOS,  \nRHEL 9| - [4.18 details and update actions](/docs/openshift?topic=openshift-cs_versions_418)  \n - [Change log](/docs/openshift?topic=openshift-openshift_changelog_418)  \n - [Release notes](https://docs.redhat.com/en/documentation/openshift_container_platform/4.18/html/release_notes/ocp-4-18-release-notes){: external}|
 |4.17 (Kubernetes 1.30)|20 November 2024|23 October 2026†|Red Hat CoreOS,  \nRHEL 9,  \nRHEL 8| - [4.17 details and update actions](/docs/openshift?topic=openshift-cs_versions_417)  \n - [Change log](/docs/openshift?topic=openshift-openshift_changelog_417)  \n - [Release notes](https://docs.redhat.com/en/documentation/openshift_container_platform/4.17/html/release_notes/ocp-4-17-release-notes){: external}|
-|4.16 (Kubernetes 1.29)|30 August 2024|26 August 2026†|Red Hat CoreOS,  \nRHEL 9,  \nRHEL 8| - [4.16 details and update actions](/docs/openshift?topic=openshift-cs_versions_416)  \n - [Change log](/docs/openshift?topic=openshift-openshift_changelog_416)  \n - [Release notes](https://docs.redhat.com/en/documentation/openshift_container_platform/4.16/html/release_notes/ocp-4-16-release-notes){: external}|
+|4.16 (Kubernetes 1.29)|30 August 2024|'26 August 2026'†|Red Hat CoreOS,  \nRHEL 9,  \nRHEL 8| - [4.16 details and update actions](/docs/openshift?topic=openshift-cs_versions_416)  \n - [Change log](/docs/openshift?topic=openshift-openshift_changelog_416)  \n - [Release notes](https://docs.redhat.com/en/documentation/openshift_container_platform/4.16/html/release_notes/ocp-4-16-release-notes){: external}|
 {: caption="Available versions for clusters in Satellite locations" caption-side="bottom"}
 
 <!--</qna:latest-version>-->

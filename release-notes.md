@@ -29,10 +29,12 @@ Looking for {{site.data.keyword.cloud_notm}} status, platform announcements, sec
 ## May 2026
 {: #openshift-may26}
 
-
 ### 27 May 2026
 {: #openshift-may2726}
 {: release-note}
+
+
+
 
 IBM Cloud Image Key Synchronizer cluster add-on patch updates.
 :   For more information, see the [change log](/docs/openshift?topic=openshift-cl-add-ons-ibm-cloud-image-key-synchronizer).
@@ -43,6 +45,9 @@ IBM Cloud Image Key Synchronizer cluster add-on patch updates.
 
 IBM Object CSI Driver cluster add-on patch updates.
 :   For more information, see the [change log](/docs/openshift?topic=openshift-cl-add-ons-ibm-object-csi-driver).
+
+{{site.data.keyword.cos_full_notm}} plug-in version 2.2.53 is available.
+:   For more information, see the [change log](/docs/openshift?topic=openshift-cos_plugin_changelog).
 
 Openshift AI cluster add-on patch updates.
 :   For more information, see the [change log](/docs/openshift?topic=openshift-cl-add-ons-openshift-ai).

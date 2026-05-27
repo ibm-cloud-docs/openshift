@@ -295,6 +295,8 @@ subcollection: openshift
 
         * IBM Object CSI Driver cluster add-on patch updates.
 
+        * {{site.data.keyword.cos_full_notm}} plug-in version 2.2.53 is available.
+
         * Openshift AI cluster add-on patch updates.
 
     * [23 May 2026](/docs/openshift?topic=openshift-openshift-relnotes#openshift-may2326)
@@ -7143,6 +7145,10 @@ subcollection: openshift
     * [v1.0.13_297764008, released 14 November 2025](/docs/openshift?topic=openshift-cl-add-ons-ibm-object-csi-driver#cl-add-ons-ibm-object-csi-driver-v1013_297764008)
 
 [{{site.data.keyword.cos_full_notm}} plug-in](/docs/openshift?topic=openshift-cos_plugin_changelog#cos_plugin_changelog)
+
+* [Change log for version 2.2.53, released 25 May 2026](/docs/openshift?topic=openshift-cos_plugin_changelog#02253_object_plugin)
+
+* [Change log for version 2.2.52, released 10 May 2026](/docs/openshift?topic=openshift-cos_plugin_changelog#02252_object_plugin)
 
 * [Change log for version 2.2.51, released 17 April 2026](/docs/openshift?topic=openshift-cos_plugin_changelog#02251_object_plugin)
 
