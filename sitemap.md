@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2026
-lastupdated: "2026-05-26"
+lastupdated: "2026-05-27"
 
 
 keywords: openshift
@@ -286,6 +286,14 @@ subcollection: openshift
 [Release notes](/docs/openshift?topic=openshift-openshift-relnotes#openshift-relnotes)
 
 * [May 2026](/docs/openshift?topic=openshift-openshift-relnotes#openshift-may26)
+
+    * [27 May 2026](/docs/openshift?topic=openshift-openshift-relnotes#openshift-may2726)
+
+        * IBM Cloud Image Key Synchronizer cluster add-on patch updates.
+
+    * [25 May 2026](/docs/openshift?topic=openshift-openshift-relnotes#openshift-may2526)
+
+        * IBM Object CSI Driver cluster add-on patch updates.
 
     * [23 May 2026](/docs/openshift?topic=openshift-openshift-relnotes#openshift-may2326)
 
@@ -7118,6 +7126,8 @@ subcollection: openshift
 
 * [Version 1.0](/docs/openshift?topic=openshift-cl-add-ons-ibm-object-csi-driver#cl-add-ons-ibm-object-csi-driver-1.0)
 
+    * [v1.0.20_333133599, released 25 May 2026](/docs/openshift?topic=openshift-cl-add-ons-ibm-object-csi-driver#cl-add-ons-ibm-object-csi-driver-v1020_333133599)
+
     * [v1.0.19_333133599, released 26 April 2026](/docs/openshift?topic=openshift-cl-add-ons-ibm-object-csi-driver#cl-add-ons-ibm-object-csi-driver-v1019_333133599)
 
     * [v1.0.18_320539369, released 02 April 2026](/docs/openshift?topic=openshift-cl-add-ons-ibm-object-csi-driver#cl-add-ons-ibm-object-csi-driver-v1018_320539369)
@@ -7589,6 +7599,8 @@ subcollection: openshift
 [IBM Cloud Image Key Synchronizer add-on version change log](/docs/openshift?topic=openshift-cl-add-ons-ibm-cloud-image-key-synchronizer#cl-add-ons-ibm-cloud-image-key-synchronizer)
 
 * [Version 1.0.0](/docs/openshift?topic=openshift-cl-add-ons-ibm-cloud-image-key-synchronizer#cl-add-ons-ibm-cloud-image-key-synchronizer-1.0.0)
+
+    * [1.0.0_341829798, released 27 May 2026](/docs/openshift?topic=openshift-cl-add-ons-ibm-cloud-image-key-synchronizer#cl-add-ons-ibm-cloud-image-key-synchronizer-100_341829798)
 
     * [1.0.0_334950440, released 05 May 2026](/docs/openshift?topic=openshift-cl-add-ons-ibm-cloud-image-key-synchronizer#cl-add-ons-ibm-cloud-image-key-synchronizer-100_334950440)
 
