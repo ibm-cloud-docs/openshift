@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2026
-lastupdated: "2026-05-27"
+lastupdated: "2026-05-28"
 
 
 keywords: openshift
@@ -2145,9 +2145,9 @@ subcollection: openshift
 
 * [Optimizing network keepalive `sysctl` settings](/docs/openshift?topic=openshift-kernel#keepalive-iks)
 
-* [Changing the Calico maximum transmission unit (MTU)](/docs/openshift?topic=openshift-kernel#calico-mtu)
+* [Changing the maximum transmission unit (MTU) for clusters using Calico](/docs/openshift?topic=openshift-kernel#calico-mtu)
 
-* [Disabling the port map plug-in](/docs/openshift?topic=openshift-kernel#calico-portmap)
+* [Disabling the port map plug-in in Calico](/docs/openshift?topic=openshift-kernel#calico-portmap)
 
 [Tuning performance for Red Hat CoreOS worker nodes](/docs/openshift?topic=openshift-rhcos-performance#rhcos-performance)
 

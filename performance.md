@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2026
-lastupdated: "2026-04-08"
+lastupdated: "2026-05-28"
 
 
 keywords: openshift, {{site.data.keyword.openshiftlong_notm}}, kubernetes, kernel, performance
@@ -226,18 +226,14 @@ Deploy the following example `initContainer`. Remember to change the `containers
       
 
 
-## Changing the Calico maximum transmission unit (MTU)
+## Changing the maximum transmission unit (MTU) for clusters using Calico
 {: #calico-mtu}
 
-Increase or decrease the Calico plug-in maximum transmission unit (MTU) to meet the network throughput requirements of your environment. 
+You can increase or decrease the worker node and Calico plug-in maximum transmission unit (MTU) to meet the network throughput requirements of your environment.
 {: shortdesc}
 
-
-
-
-All VPC worker nodes support jumbo frames, but classic infrastructure only supports jumbo frames on bare metal workers. 
+All VPC worker nodes support up to a 9000 MTU, and classic bare metal worker nodes also support up to a 9000 MTU.  Classic virtual servers only support the standard 1500 MTU, so if your cluster has any classic virtual server worker nodes, do not increase either the worker node or the Calico MTU.
 {: note}
-
 
 Changing maximum transmission unit (MTU) values can have unexpected results, especially in complex networking environments. To avoid disruption to your workflow, it is highly recommended that you test these changes on a development cluster before you make any changes to your production clusters. 
 {: important}
@@ -386,7 +382,10 @@ If you are completing these steps on a production cluster, you should use the sa
 During the reboot process, some pods use the new larger MTU and some pods still have the original, smaller MTU. Typically, this scenario does not cause issues because both sides negotiate the correct max packet size. However, if you block ICMP packets, the negotiation might not work and your cluster might experience pod connection issues until all reboots have completed. It is critical that this process is first tested on a development cluster. 
 {: important}
 
-## Disabling the port map plug-in
+
+
+
+## Disabling the port map plug-in in Calico
 {: #calico-portmap}
 
 The `portmap` plug-in for the Calico container network interface (CNI) enables you to use a `hostPort` to expose your app pods on a specific port on the worker node. Prevent iptables performance issues by removing the port map plug-in from your cluster's Calico CNI configuration.
@@ -396,7 +395,6 @@ When you have many services in your cluster, such as more than 500 services, or 
 
 If you must use `hostPorts`, don't disable the port map plug-in.
 {: note}
-
 
 1. Edit the `default` Calico installation resource.
     ```sh
