@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2026
-lastupdated: "2026-05-26"
+lastupdated: "2026-05-28"
 
 
 keywords: openshift, cli reference, kubernetes cli, openshift cli, {{site.data.keyword.openshiftlong_notm}}
@@ -884,6 +884,8 @@ Minimum required permissions
 
 `--cni CNI`
 :    Set the network plug-in for the cluster. Calico is set by default. Accepted values: `Calico`, `OVNKubernetes`
+
+
 
 `--cluster-security-group GROUP_ID`
 :    Optional. Specify additional security group IDs to apply to all workers on the cluster. You must include a separate `--cluster-security-group` option for each individual security group you want to add. To apply the IBM-created `kube-clusterID`, use `--cluster-security-group cluster`. If no value is specified, only the `kube-clusterID` and the default VPC security group are applied. A maximum of five security groups can be applied to workers, including the default security groups. Note that the VPC security group is only applied if no other security groups are specified. For more information, see [Adding VPC security groups to clusters and worker pools during create time](/docs/openshift?topic=openshift-vpc-security-group-manage).
@@ -5176,7 +5178,7 @@ After you run this command, the existing load balancers are deleted and re-creat
 {: important}
 
 ```sh
-ibmcloud oc ingress lb proxy-protocol enable --cluster CLUSTER [--cidr CIDR ...] [--header-timeout TIMEOUT] [-f] [-q]
+ibmcloud oc ingress lb proxy-protocol enable --cluster CLUSTER [--cidr CIDR ...] [-f] [-q]
 ```
 {: pre}
 
@@ -5190,10 +5192,7 @@ Minimum required permissions
 :    Required: The name or ID of the cluster.
 
 `--cidr CIDR`
-:    Optional: Load balancer CIDRs from which ALBs process information in PROXY protocol headers. If requests that contain PROXY headers originate from load balancers in other IP ranges, the information in the headers is not process by the ALB. This option is supported only for ALBs that run the community Kubernetes Ingress image. Default: `0.0.0.0/0`
-
-`--header-timeout TIMEOUT`
-:    Optional: The timeout value, in seconds, for the load balancer to receive the PROXY protocol headers that contain the client connection information. This option is supported only for ALBs that run the community Kubernetes Ingress image. Default: `5`
+:    Optional: The IP address ranges of your load balancers in CIDR format. PROXY headers that are forwarded by load balancers in other IP ranges are not processed. This option is supported only for ALBs that run the community Kubernetes Ingress image. Default: `0.0.0.0/0`
 
 `-f`
 :    Optional: Force the command to run with no user prompts.
