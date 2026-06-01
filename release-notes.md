@@ -35,12 +35,15 @@ Looking for {{site.data.keyword.cloud_notm}} status, platform announcements, sec
 {: #openshift-jun0126}
 
 
+
+
 ### 01 June 2026
 {: #openshift-jun0126}
 {: release-note}
 
 Red Hat OpenShift Virtualization Service (ROVS) is now available as a beta
 :   Red Hat OpenShift Virtualization Service (ROVS) provides a managed virtualization platform on {{site.data.keyword.openshiftlong_notm}} clusters. ROVS enables you to run virtual machines alongside on bare metal infrastructure in VPC. This beta release supports OpenShift version 4.20 and later on bare metal worker nodes with Red Hat CoreOS (RHCOS). For more information, see [About Red Hat OpenShift Virtualization Service](/docs/openshift?topic=openshift-rovs-overview). To get started, see [Getting started with Red Hat OpenShift Virtualization Service](/docs/openshift?topic=openshift-rovs-getting-started).
+
 
 
 
