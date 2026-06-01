@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2026
-lastupdated: "2026-04-23"
+lastupdated: "2026-06-01"
 
 
 keywords: openshift, openshift data foundation, openshift container storage, ocs
@@ -22,6 +22,9 @@ subcollection: openshift
 
 OpenShift Data Foundation is a highly available storage solution that you can use to manage persistent storage for your containerized workloads in {{site.data.keyword.openshiftlong}} clusters.
 {: shortdesc}
+
+For virtualization workloads, [OpenShift Virtualization Service](/docs/openshift?topic=openshift-rovs-overview) includes ODF pre-configured with local NVME storage, eliminating the need for manual setup. See [Getting started with Virtualization Service](/docs/openshift?topic=openshift-rovs-getting-started).
+{: tip}
 
 Installing OpenShift Data Foundation from OperatorHub is not supported on {{site.data.keyword.Bluemix_notm}} clusters. To install ODF, complete the following steps to deploy the cluster add-on.
 {: important}

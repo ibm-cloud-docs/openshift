@@ -11,12 +11,12 @@
         "href": "/docs/openshift?topic=openshift-openshift-relnotes"
       },
       {
-        "title": "Understand Red Hat OpenShift on IBM Cloud",
-        "href": "/docs/openshift?topic=openshift-overview"
-      },
-      {
         "title": "Get started with Red Hat OpenShift on IBM Cloud",
         "href": "/docs/openshift?topic=openshift-getting-started"
+      },
+      {
+        "title": "Quickstart: OpenShift Virtualization Service",
+        "href": "/docs/openshift?topic=openshift-rovs-getting-started"
       },
       {
         "title": "Plan your environment",

@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2026
-lastupdated: "2026-05-29"
+lastupdated: "2026-06-01"
 
 
 keywords: openshift
@@ -284,6 +284,14 @@ subcollection: openshift
 
 
 [Release notes](/docs/openshift?topic=openshift-openshift-relnotes#openshift-relnotes)
+
+* [June 2026](/docs/openshift?topic=openshift-openshift-relnotes#openshift-jun26)
+
+* [01 June 2026](/docs/openshift?topic=openshift-openshift-relnotes#openshift-jun0126)
+
+    * [01 June 2026](/docs/openshift?topic=openshift-openshift-relnotes#openshift-jun0126)
+
+        * Red Hat OpenShift Virtualization Service (ROVS) is now available as a beta
 
 * [May 2026](/docs/openshift?topic=openshift-openshift-relnotes#openshift-may26)
 
