@@ -1,8 +1,8 @@
 ---
 
-copyright: 
-  years: 2023, 2025
-lastupdated: "2025-04-17"
+copyright:
+  years: 2023, 2026
+lastupdated: "2026-06-01"
 
 
 keywords: openshift, {{site.data.keyword.openshiftlong_notm}}, kubernetes, red hat, encrypt, security, kms, root key, crk
@@ -19,7 +19,7 @@ subcollection: openshift
 
 [Virtual Private Cloud]{: tag-vpc} [Classic infrastructure]{: tag-classic-inf} [{{site.data.keyword.satelliteshort}}]{: tag-satellite}
 
-After creating a cluster, you can protect Kubernetes secrets and any credentials stored in your secrets by enabling a key management service (KMS) provider, such as {{site.data.keyword.keymanagementservicefull}} or {{site.data.keyword.hscrypto}}.
+After creating a cluster, you can protect Kubernetes secrets and any credentials stored in your secrets by enabling a key management service (KMS) provider, such as {{site.data.keyword.keymanagementservicefull}}.
 {: shortdesc}
 
 ## Enabling secret encryption from the CLI
@@ -28,7 +28,7 @@ After creating a cluster, you can protect Kubernetes secrets and any credentials
 
 You can enable a KMS provider, update the KMS provider instance, or update the root key through the CLI.
 
-Setting up cross-account encryption by using a KMS in a different account is supported in the CLI or API. 
+Setting up cross-account encryption by using a KMS in a different account is supported in the CLI or API.
 {: note}
 
 1. [Create a KMS instance and root key](/docs/openshift?topic=openshift-encryption-setup). If you want to use cross account KMS encryption, make sure to create the KMS and root key in the account whose KMS instance you want to use.
@@ -49,7 +49,7 @@ Setting up cross-account encryption by using a KMS in a different account is sup
     ibmcloud oc kms enable -c <cluster_name_or_ID> --instance-id <kms_instance_ID> --crk <root_key_ID> [--public-endpoint]
     ```
     {: pre}
-    
+
     During the enablement, you might not be able to access the Kubernetes master such as to update YAML configurations for deployments.
     {: important}
 
@@ -61,21 +61,21 @@ Setting up cross-account encryption by using a KMS in a different account is sup
 
     Example output when the enablement is in progress
     ```sh
-    NAME:                   <cluster_name>   
-    ID:                     <cluster_ID>   
+    NAME:                   <cluster_name>
+    ID:                     <cluster_ID>
     ...
-    Master Status:          Key management service feature enablement in progress.  
+    Master Status:          Key management service feature enablement in progress.
     ```
     {: screen}
 
     Example output when the master is ready
     ```sh
-    NAME:                   <cluster_name>   
-    ID:                     <cluster_ID>   
+    NAME:                   <cluster_name>
+    ID:                     <cluster_ID>
     ...
     Master Status:          Ready (1 min ago)
     ...
-    Key Management Service: enabled   
+    Key Management Service: enabled
     ```
     {: screen}
 
@@ -101,12 +101,12 @@ You can enable a KMS provider, update the KMS provider instance, or update the r
 
     During the enablement, you might not be able to access the Kubernetes master such as to update YAML configurations for deployments.
     {: important}
-    
+
 1. Click **Enable** (or **Update**).
 1. Verify that the KMS enablement process is finished.
     Example output when the enablement is in progress.
     ```sh
-    Master status   KMS feature enablement in progress.  
+    Master status   KMS feature enablement in progress.
     ```
     {: screen}
 
@@ -129,10 +129,7 @@ Key enablement, which is initiated through {{site.data.keyword.redhat_openshift_
 
 To rotate the root key that is used to encrypt your cluster, repeat the steps to enable KMS encryption. When you rotate a root key, you can't reuse a previous root key for the same cluster.
 
-You can rotate the root key manually from your KMS instance. This action automatically re-enables KMS in your cluster with the new root key. To manually rotate your keys, see your KMS provider docs.
-
-* {{site.data.keyword.keymanagementservicefull}}: See [Rotating your keys](/docs/key-protect?topic=key-protect-getting-started-tutorial#get-started-next-steps-best-practices-key-rotate).
-* {{site.data.keyword.hscrypto}}: See [Rotating root keys manually](/docs/hs-crypto?topic=hs-crypto-rotate-keys).
+You can rotate the root key manually from your KMS instance. This action automatically re-enables KMS in your cluster with the new root key. To manually rotate your keys, see [Rotating your keys](/docs/key-protect?topic=key-protect-getting-started-tutorial#get-started-next-steps-best-practices-key-rotate).
 
 
 ## Verifying secret encryption

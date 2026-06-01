@@ -1,8 +1,8 @@
 ---
 
-copyright: 
+copyright:
   years: 2014, 2026
-lastupdated: "2026-05-05"
+lastupdated: "2026-06-01"
 
 
 keywords: openshift, {{site.data.keyword.openshiftlong_notm}}, kubernetes, red hat, encrypt, security, kms, root key, crk
@@ -30,9 +30,9 @@ The following table outlines the encryption options for {{site.data.keyword.open
 | Component | Encrypted by default? | Bring your own key support? | Enablement time | Supported KMS providers | Cross account support? |
 | --- | --- | --- | --- | --- | --- |
 | [Control plane](#control-plane-encryption) | Yes | No | During cluster creation. | IBM managed {{site.data.keyword.keymanagementserviceshort}} | N/A | N/A | No |
-| [Worker node disks](#worker-node-encryption) | Yes | Yes | During cluster creation or worker pool creation. | - {{site.data.keyword.hscrypto}}  \n - {{site.data.keyword.keymanagementserviceshort}} | Yes |
-| [Cluster secrets](#cluster-secret-encryption) | No | Yes | After cluster creation by using `kms enable`. | - {{site.data.keyword.hscrypto}}  \n - {{site.data.keyword.keymanagementserviceshort}} | Cross account supported for Classic and VPC clusters only. |
-| [Persistent storage](#persistent-encryption) | Depends on the storage provider. | Depends on provider | After cluster creation, when setting up storage. | - {{site.data.keyword.hscrypto}}  \n - {{site.data.keyword.keymanagementserviceshort}} | Depends on the storage provider. |
+| [Worker node disks](#worker-node-encryption) | Yes | Yes | During cluster creation or worker pool creation. | {{site.data.keyword.keymanagementserviceshort}} | Yes |
+| [Cluster secrets](#cluster-secret-encryption) | No | Yes | After cluster creation by using `kms enable`. | {{site.data.keyword.keymanagementserviceshort}} | Cross account supported for Classic and VPC clusters only. |
+| [Persistent storage](#persistent-encryption) | Depends on the storage provider. | Depends on provider | After cluster creation, when setting up storage. | {{site.data.keyword.keymanagementserviceshort}} | Depends on the storage provider. |
 {: caption="Default and optional data encryption" caption-side="bottom"}
 
 
@@ -45,7 +45,7 @@ Control plane encryption is managed by IBM.
 - Components in the {{site.data.keyword.redhat_openshift_notm}} master boot up on a LUKS-encrypted drive using an IBM-managed key.
 - The etcd component of the master stores the configuration files of your Kubernetes resources, such as deployments and secrets.
 - Data in etcd is stored on the local disk of the Kubernetes master and is backed up to {{site.data.keyword.cos_full_notm}}.
-- Data is encrypted during transit to {{site.data.keyword.cos_full_notm}} and at rest. 
+- Data is encrypted during transit to {{site.data.keyword.cos_full_notm}} and at rest.
 
 
 
@@ -54,7 +54,7 @@ Control plane encryption is managed by IBM.
 
 Attached disks are used to boot your worker node, host the container file system, and store locally pulled images. The encryption and number of disks varies by infrastructure provider.
 
-There is a temporary limitation when using a Key Protect single tenant instance for bring your own key (BYOK) encyrption for worker node boot disk and cluster secret encryption. To use a single tenant instance with your cluster, you must ensure that their service-to-service authorizaiton policy is scoped to the Key Protect service or instance level and not to a key or key ring. This limiation applies only to Key Protect single tenant instances.
+There is a temporary limitation when using a Key Protect single tenant instance for bring your own key (BYOK) encyrption for worker node boot disk and cluster secret encryption. To use a single tenant instance with your cluster, you must ensure that their service-to-service authorization policy is scoped to the Key Protect service or instance level and not to a key or key ring. This limiation applies only to Key Protect single tenant instances.
 {: important}
 
 VPC worker nodes
@@ -74,9 +74,9 @@ Classic worker nodes
 ## Cluster secrets
 {: #cluster-secret-encryption}
 
-Kubernetes secrets are base64 encoded by default. You can further protect Kubernetes secrets and any credentials stored in secrets by enabling a key management service (KMS) provider, such as {{site.data.keyword.keymanagementservicefull}} or {{site.data.keyword.hscrypto}}.
+Kubernetes secrets are base64 encoded by default. You can further protect Kubernetes secrets and any credentials stored in secrets by enabling a key management service (KMS) provider, such as {{site.data.keyword.keymanagementservicefull}}.
 
-There is a temporary limitation when using a Key Protect single tenant instance for bring your own key (BYOK) encyrption for worker node boot disk and cluster secret encryption. To use a single tenant instance with your cluster, you must ensure that their service-to-service authorizaiton policy is scoped to the Key Protect service or instance level and not to a key or key ring. This limiation applies only to Key Protect single tenant instances.
+There is a temporary limitation when using a Key Protect single tenant instance for bring your own key (BYOK) encyrption for worker node boot disk and cluster secret encryption. To use a single tenant instance with your cluster, you must ensure that their service-to-service authorization policy is scoped to the Key Protect service or instance level and not to a key or key ring. This limiation applies only to Key Protect single tenant instances.
 {: important}
 
 When you enable a key management service (KMS) provider for your cluster, you bring your own root key. The root key is used to encrypt the data encryption keys (DEKs) which are then used to encrypt the secrets in your cluster. The root key is stored in the KMS provider instance that you control. The encrypted DEKs are stored in etcd and can only be unencrypted using the root key from the KMS provider. For more information about how key encryption works, see [Envelope encryption](/docs/key-protect?topic=key-protect-envelope-encryption).
@@ -88,7 +88,7 @@ Review the following notes about cluster secret encryption.
 - Clusters automatically respond if you disable, enable, or restore root keys.
 - Disabling a root key restricts cluster functionality until you reenable the key.
 - Deleting a root key makes the cluster unusable and unrecoverable.
-- You can have only one KMS provider and key enabled in the cluster at a time. 
+- You can have only one KMS provider and key enabled in the cluster at a time.
 - You can switch the KMS provider and key.
 - You can't disable KMS provider encryption.
 
@@ -108,4 +108,4 @@ Depending on the type of persistent storage you use, you can encrypt the data wr
 ## Next steps
 {: #plan-storage-next}
 
-To continue the planning process, choose a [storage option](/docs/openshift?topic=openshift-storage-plan). If you're ready to get started with encryption, move on to [creating a KMS instance and root key](/docs/openshift?topic=openshift-encryption-setup). 
+To continue the planning process, choose a [storage option](/docs/openshift?topic=openshift-storage-plan). If you're ready to get started with encryption, move on to [creating a KMS instance and root key](/docs/openshift?topic=openshift-encryption-setup).
