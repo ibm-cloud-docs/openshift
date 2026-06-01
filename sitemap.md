@@ -1502,6 +1502,67 @@ subcollection: openshift
         * Worker node fix packs are available {{site.data.keyword.openshiftlong_notm}}.
 
 
+## Tutorial: Managing Virtualization Service clusters with Advanced Cluster Management
+{: #sitemap_tutorial_managing_virtualization_service_clusters_with_advanced_cluster_management}
+
+
+[Tutorial: Managing Virtualization Service clusters with Advanced Cluster Management](/docs/openshift?topic=openshift-rovs-acm-tutorial#rovs-acm-tutorial)
+
+* [Objectives](/docs/openshift?topic=openshift-rovs-acm-tutorial#rovs-acm-objectives)
+
+* [Before you begin](/docs/openshift?topic=openshift-rovs-acm-tutorial#rovs-acm-prereqs)
+
+    * [Required permissions](/docs/openshift?topic=openshift-rovs-acm-tutorial#rovs-acm-permissions)
+
+    * [Required tools](/docs/openshift?topic=openshift-rovs-acm-tutorial#rovs-acm-tools)
+
+    * [Prerequisites](/docs/openshift?topic=openshift-rovs-acm-tutorial#rovs-acm-requirements)
+
+* [Set up the ACM hub cluster](/docs/openshift?topic=openshift-rovs-acm-tutorial#rovs-acm-hub-setup)
+
+    * [Install the ACM operator](/docs/openshift?topic=openshift-rovs-acm-tutorial#rovs-acm-install-operator)
+
+    * [Create the MultiClusterHub instance](/docs/openshift?topic=openshift-rovs-acm-tutorial#rovs-acm-create-hub)
+
+* [Create a Virtualization Service cluster through ACM](/docs/openshift?topic=openshift-rovs-acm-tutorial#rovs-acm-create-cluster)
+
+    * [Prepare cluster credentials](/docs/openshift?topic=openshift-rovs-acm-tutorial#rovs-acm-credentials)
+
+    * [Create a cluster set](/docs/openshift?topic=openshift-rovs-acm-tutorial#rovs-acm-cluster-set)
+
+    * [Deploy the Virtualization Service cluster](/docs/openshift?topic=openshift-rovs-acm-tutorial#rovs-acm-deploy-cluster)
+
+* [Configure governance policies for virtual machines](/docs/openshift?topic=openshift-rovs-acm-tutorial#rovs-acm-policies)
+
+    * [Create a namespace policy](/docs/openshift?topic=openshift-rovs-acm-tutorial#rovs-acm-namespace-policy)
+
+    * [Create a resource quota policy](/docs/openshift?topic=openshift-rovs-acm-tutorial#rovs-acm-quota-policy)
+
+    * [Create a security policy](/docs/openshift?topic=openshift-rovs-acm-tutorial#rovs-acm-security-policy)
+
+* [Monitor virtual machines across clusters](/docs/openshift?topic=openshift-rovs-acm-tutorial#rovs-acm-monitoring)
+
+    * [Enable observability](/docs/openshift?topic=openshift-rovs-acm-tutorial#rovs-acm-enable-observability)
+
+    * [Create custom dashboards for VMs](/docs/openshift?topic=openshift-rovs-acm-tutorial#rovs-acm-dashboards)
+
+    * [Set up alerts](/docs/openshift?topic=openshift-rovs-acm-tutorial#rovs-acm-alerts)
+
+* [Deploy virtual machines through ACM](/docs/openshift?topic=openshift-rovs-acm-tutorial#rovs-acm-deploy-vms)
+
+    * [Create an application for VM deployment](/docs/openshift?topic=openshift-rovs-acm-tutorial#rovs-acm-vm-application)
+
+* [Implement disaster recovery for VMs](/docs/openshift?topic=openshift-rovs-acm-tutorial#rovs-acm-dr)
+
+    * [Configure VM backup policies](/docs/openshift?topic=openshift-rovs-acm-tutorial#rovs-acm-backup)
+
+    * [Set up VM migration between clusters](/docs/openshift?topic=openshift-rovs-acm-tutorial#rovs-acm-migration)
+
+* [Next steps](/docs/openshift?topic=openshift-rovs-acm-tutorial#rovs-acm-next-steps)
+
+* [Related information](/docs/openshift?topic=openshift-rovs-acm-tutorial#rovs-acm-related)
+
+
 ## Setting up your first classic cluster in the CLI
 {: #sitemap_setting_up_your_first_classic_cluster_in_the_cli}
 
@@ -1844,6 +1905,52 @@ subcollection: openshift
 * [Creating a VPC cluster with Terraform](/docs/openshift?topic=openshift-cluster-create-vpc-gen2&interface=terraform#cluster_vpcg2_tf)
 
 * [Next steps for VPC clusters](/docs/openshift?topic=openshift-cluster-create-vpc-gen2&interface=terraform#cluster-create-vpc-next-steps)
+
+[Creating an OpenShift Virtualization Service cluster](/docs/openshift?topic=openshift-rovs-cluster-create#rovs-cluster-create)
+
+* [Objectives](/docs/openshift?topic=openshift-rovs-cluster-create#rovs-create-objectives)
+
+* [Before you begin](/docs/openshift?topic=openshift-rovs-cluster-create#rovs-create-prereqs)
+
+    * [Required permissions](/docs/openshift?topic=openshift-rovs-cluster-create#rovs-create-permissions)
+
+    * [Required tools for console users](/docs/openshift?topic=openshift-rovs-cluster-create&interface=ui#rovs-create-tools-console)
+
+    * [Required tools for CLI users](/docs/openshift?topic=openshift-rovs-cluster-create&interface=cli#rovs-create-tools-cli)
+
+    * [Review supported flavors](/docs/openshift?topic=openshift-rovs-cluster-create&interface=cli#rovs-create-review-flavors)
+
+* [Prepare your VPC infrastructure](/docs/openshift?topic=openshift-rovs-cluster-create&interface=cli#rovs-create-vpc)
+
+    * [Create or identify a VPC](/docs/openshift?topic=openshift-rovs-cluster-create&interface=cli#rovs-create-vpc-setup)
+
+    * [Create subnets](/docs/openshift?topic=openshift-rovs-cluster-create&interface=cli#rovs-create-subnets)
+
+    * [Verify bare metal availability](/docs/openshift?topic=openshift-rovs-cluster-create&interface=cli#rovs-create-verify-capacity)
+
+* [Create a Virtualization Service cluster](/docs/openshift?topic=openshift-rovs-cluster-create&interface=cli#rovs-create-cluster)
+
+    * [Creating a cluster from the console](/docs/openshift?topic=openshift-rovs-cluster-create&interface=ui#rovs-create-console)
+
+* [Verify the cluster and pre-configured components](/docs/openshift?topic=openshift-rovs-cluster-create&interface=ui#rovs-create-verify)
+
+    * [Access the cluster from the console](/docs/openshift?topic=openshift-rovs-cluster-create&interface=ui#rovs-create-verify-access-console)
+
+    * [Access the cluster from the CLI](/docs/openshift?topic=openshift-rovs-cluster-create&interface=cli#rovs-create-verify-access-cli)
+
+    * [Verify OpenShift Virtualization from the console](/docs/openshift?topic=openshift-rovs-cluster-create&interface=ui#rovs-create-verify-virt-console)
+
+    * [Verify OpenShift Virtualization from the CLI](/docs/openshift?topic=openshift-rovs-cluster-create&interface=cli#rovs-create-verify-virt-cli)
+
+* [Access the OpenShift Virtualization interface](/docs/openshift?topic=openshift-rovs-cluster-create&interface=cli#rovs-create-access-ui)
+
+    * [Access from the console](/docs/openshift?topic=openshift-rovs-cluster-create&interface=ui#rovs-create-access-ui-console)
+
+    * [Access from the CLI](/docs/openshift?topic=openshift-rovs-cluster-create&interface=cli#rovs-create-access-ui-cli)
+
+* [Next steps](/docs/openshift?topic=openshift-rovs-cluster-create&interface=cli#rovs-create-next-steps)
+
+* [Troubleshooting](/docs/openshift?topic=openshift-rovs-cluster-create&interface=cli#rovs-create-troubleshoot)
 
 [Creating clusters on dedicated hosts for VPC](/docs/openshift?topic=openshift-cluster-create-dedicated-hosts#cluster-create-dedicated-hosts)
 
@@ -3830,7 +3937,11 @@ subcollection: openshift
 
 * [Deployment options](/docs/openshift?topic=openshift-virt-overview#virt-deployment-options)
 
+    * [OpenShift Virtualization Service (Recommended for new deployments)](/docs/openshift?topic=openshift-virt-overview#virt-vs-deployment)
+
     * [Manual deployment (For custom configurations)](/docs/openshift?topic=openshift-virt-overview#virt-manual-deployment)
+
+    * [Comparison](/docs/openshift?topic=openshift-virt-overview#virt-choose-deployment)
 
 * [Common requirements](/docs/openshift?topic=openshift-virt-overview#virt-requirements)
 
@@ -3845,6 +3956,203 @@ subcollection: openshift
 * [Limitations](/docs/openshift?topic=openshift-virt-overview#virt-limitations)
 
 * [Getting started](/docs/openshift?topic=openshift-virt-overview#virt-next-steps)
+
+
+### OpenShift Virtualization Service (pre-configured)
+{: #sitemap_openshift_virtualization_service_pre-configured}
+
+
+[About Virtualization Service](/docs/openshift?topic=openshift-rovs-overview#rovs-overview)
+
+* [What is OpenShift Virtualization Service?](/docs/openshift?topic=openshift-rovs-overview#rovs-what-is)
+
+* [Benefits](/docs/openshift?topic=openshift-rovs-overview#rovs-benefits)
+
+* [Virtualization Service vs. Manual Deployment](/docs/openshift?topic=openshift-rovs-overview#rovs-comparison)
+
+* [Cluster characteristics](/docs/openshift?topic=openshift-rovs-overview#rovs-characteristics)
+
+* [Supported bare metal flavors](/docs/openshift?topic=openshift-rovs-overview#rovs-flavors)
+
+* [Limitations](/docs/openshift?topic=openshift-rovs-overview#rovs-limitations)
+
+* [Pricing](/docs/openshift?topic=openshift-rovs-overview#rovs-pricing)
+
+* [Next steps](/docs/openshift?topic=openshift-rovs-overview#rovs-next-steps)
+
+[Quickstart](/docs/openshift?topic=openshift-rovs-getting-started#rovs-getting-started)
+
+* [Before you begin](/docs/openshift?topic=openshift-rovs-getting-started#rovs-gs-prereqs)
+
+* [Create a Virtualization Service cluster](/docs/openshift?topic=openshift-rovs-getting-started#rovs-gs-create)
+
+* [Access the OpenShift console](/docs/openshift?topic=openshift-rovs-getting-started#rovs-gs-access)
+
+* [Verify pre-configured components](/docs/openshift?topic=openshift-rovs-getting-started#rovs-gs-verify)
+
+* [Deploy your first virtual machine](/docs/openshift?topic=openshift-rovs-getting-started#rovs-gs-first-vm)
+
+* [Next steps](/docs/openshift?topic=openshift-rovs-getting-started#rovs-gs-next-steps)
+
+* [Troubleshooting](/docs/openshift?topic=openshift-rovs-getting-started#rovs-gs-troubleshoot)
+
+[Creating a cluster](/docs/openshift?topic=openshift-rovs-cluster-create#rovs-cluster-create)
+
+* [Objectives](/docs/openshift?topic=openshift-rovs-cluster-create#rovs-create-objectives)
+
+* [Before you begin](/docs/openshift?topic=openshift-rovs-cluster-create#rovs-create-prereqs)
+
+    * [Required permissions](/docs/openshift?topic=openshift-rovs-cluster-create#rovs-create-permissions)
+
+    * [Required tools for console users](/docs/openshift?topic=openshift-rovs-cluster-create&interface=ui#rovs-create-tools-console)
+
+    * [Required tools for CLI users](/docs/openshift?topic=openshift-rovs-cluster-create&interface=cli#rovs-create-tools-cli)
+
+    * [Review supported flavors](/docs/openshift?topic=openshift-rovs-cluster-create&interface=cli#rovs-create-review-flavors)
+
+* [Prepare your VPC infrastructure](/docs/openshift?topic=openshift-rovs-cluster-create&interface=cli#rovs-create-vpc)
+
+    * [Create or identify a VPC](/docs/openshift?topic=openshift-rovs-cluster-create&interface=cli#rovs-create-vpc-setup)
+
+    * [Create subnets](/docs/openshift?topic=openshift-rovs-cluster-create&interface=cli#rovs-create-subnets)
+
+    * [Verify bare metal availability](/docs/openshift?topic=openshift-rovs-cluster-create&interface=cli#rovs-create-verify-capacity)
+
+* [Create a Virtualization Service cluster](/docs/openshift?topic=openshift-rovs-cluster-create&interface=cli#rovs-create-cluster)
+
+    * [Creating a cluster from the console](/docs/openshift?topic=openshift-rovs-cluster-create&interface=ui#rovs-create-console)
+
+* [Verify the cluster and pre-configured components](/docs/openshift?topic=openshift-rovs-cluster-create&interface=ui#rovs-create-verify)
+
+    * [Access the cluster from the console](/docs/openshift?topic=openshift-rovs-cluster-create&interface=ui#rovs-create-verify-access-console)
+
+    * [Access the cluster from the CLI](/docs/openshift?topic=openshift-rovs-cluster-create&interface=cli#rovs-create-verify-access-cli)
+
+    * [Verify OpenShift Virtualization from the console](/docs/openshift?topic=openshift-rovs-cluster-create&interface=ui#rovs-create-verify-virt-console)
+
+    * [Verify OpenShift Virtualization from the CLI](/docs/openshift?topic=openshift-rovs-cluster-create&interface=cli#rovs-create-verify-virt-cli)
+
+* [Access the OpenShift Virtualization interface](/docs/openshift?topic=openshift-rovs-cluster-create&interface=cli#rovs-create-access-ui)
+
+    * [Access from the console](/docs/openshift?topic=openshift-rovs-cluster-create&interface=ui#rovs-create-access-ui-console)
+
+    * [Access from the CLI](/docs/openshift?topic=openshift-rovs-cluster-create&interface=cli#rovs-create-access-ui-cli)
+
+* [Next steps](/docs/openshift?topic=openshift-rovs-cluster-create&interface=cli#rovs-create-next-steps)
+
+* [Troubleshooting](/docs/openshift?topic=openshift-rovs-cluster-create&interface=cli#rovs-create-troubleshoot)
+
+[Managing clusters](/docs/openshift?topic=openshift-rovs-manage#rovs-manage)
+
+* [Understanding managed components](/docs/openshift?topic=openshift-rovs-manage#rovs-manage-components)
+
+    * [Core components (cannot be disabled)](/docs/openshift?topic=openshift-rovs-manage#rovs-manage-core)
+
+    * [Viewing managed add-ons](/docs/openshift?topic=openshift-rovs-manage#rovs-manage-view-addons)
+
+* [Managing worker nodes](/docs/openshift?topic=openshift-rovs-manage#rovs-manage-workers)
+
+    * [Viewing worker nodes](/docs/openshift?topic=openshift-rovs-manage#rovs-manage-view-workers)
+
+    * [Adding worker nodes](/docs/openshift?topic=openshift-rovs-manage#rovs-manage-add-workers)
+
+    * [Replacing worker nodes](/docs/openshift?topic=openshift-rovs-manage#rovs-manage-replace-workers)
+
+    * [Reloading worker nodes](/docs/openshift?topic=openshift-rovs-manage#rovs-manage-reload-workers)
+
+* [Managing worker pools](/docs/openshift?topic=openshift-rovs-manage#rovs-manage-pools)
+
+    * [Viewing worker pools](/docs/openshift?topic=openshift-rovs-manage#rovs-manage-view-pools)
+
+    * [Creating additional worker pools](/docs/openshift?topic=openshift-rovs-manage#rovs-manage-create-pools)
+
+    * [Adding zones to worker pools](/docs/openshift?topic=openshift-rovs-manage#rovs-manage-add-zones)
+
+* [Updating the cluster](/docs/openshift?topic=openshift-rovs-manage#rovs-manage-update)
+
+    * [Checking for updates](/docs/openshift?topic=openshift-rovs-manage#rovs-manage-check-updates)
+
+    * [Updating the cluster master](/docs/openshift?topic=openshift-rovs-manage#rovs-manage-update-master)
+
+    * [Updating worker nodes](/docs/openshift?topic=openshift-rovs-manage#rovs-manage-update-workers)
+
+* [Monitoring cluster health](/docs/openshift?topic=openshift-rovs-manage#rovs-manage-monitor)
+
+    * [Checking cluster status](/docs/openshift?topic=openshift-rovs-manage#rovs-manage-check-status)
+
+    * [Monitoring component health](/docs/openshift?topic=openshift-rovs-manage#rovs-manage-monitor-components)
+
+    * [Viewing cluster logs](/docs/openshift?topic=openshift-rovs-manage#rovs-manage-logs)
+
+* [Managing virtual machines](/docs/openshift?topic=openshift-rovs-manage#rovs-manage-vms)
+
+    * [Viewing virtual machines](/docs/openshift?topic=openshift-rovs-manage#rovs-manage-view-vms)
+
+    * [Live migrating VMs](/docs/openshift?topic=openshift-rovs-manage#rovs-manage-migrate-vms)
+
+    * [Stopping and starting VMs](/docs/openshift?topic=openshift-rovs-manage#rovs-manage-vm-lifecycle)
+
+* [Storage management](/docs/openshift?topic=openshift-rovs-manage#rovs-manage-storage)
+
+    * [Monitoring storage capacity](/docs/openshift?topic=openshift-rovs-manage#rovs-manage-storage-capacity)
+
+    * [Managing persistent volume claims](/docs/openshift?topic=openshift-rovs-manage#rovs-manage-pvcs)
+
+* [Troubleshooting](/docs/openshift?topic=openshift-rovs-manage#rovs-manage-troubleshoot)
+
+* [Next steps](/docs/openshift?topic=openshift-rovs-manage#rovs-manage-next-steps)
+
+[Managing the OpenShift Virtualization add-on](/docs/openshift?topic=openshift-rovs-addon-virtualization#rovs-addon-virtualization)
+
+* [Understanding the OpenShift Virtualization add-on](/docs/openshift?topic=openshift-rovs-addon-virtualization#rovs-addon-virt-about)
+
+* [Add-on characteristics](/docs/openshift?topic=openshift-rovs-addon-virtualization#rovs-addon-virt-characteristics)
+
+* [Installed resources](/docs/openshift?topic=openshift-rovs-addon-virtualization#rovs-addon-virt-resources)
+
+* [Viewing add-on information](/docs/openshift?topic=openshift-rovs-addon-virtualization#rovs-addon-virt-view)
+
+    * [Listing installed add-ons](/docs/openshift?topic=openshift-rovs-addon-virtualization#rovs-addon-virt-list)
+
+    * [Getting add-on details](/docs/openshift?topic=openshift-rovs-addon-virtualization#rovs-addon-virt-get)
+
+    * [Listing available add-on versions](/docs/openshift?topic=openshift-rovs-addon-virtualization#rovs-addon-virt-versions)
+
+    * [Checking for configuration options](/docs/openshift?topic=openshift-rovs-addon-virtualization#rovs-addon-virt-options)
+
+* [Updating the add-on](/docs/openshift?topic=openshift-rovs-addon-virtualization#rovs-addon-virt-update)
+
+    * [Automatic patch updates](/docs/openshift?topic=openshift-rovs-addon-virtualization#rovs-addon-virt-patch-updates)
+
+    * [Manual version upgrades](/docs/openshift?topic=openshift-rovs-addon-virtualization#rovs-addon-virt-version-upgrades)
+
+* [Disabling the add-on](/docs/openshift?topic=openshift-rovs-addon-virtualization#rovs-addon-virt-disable)
+
+* [Troubleshooting the add-on](/docs/openshift?topic=openshift-rovs-addon-virtualization#rovs-addon-virt-troubleshoot)
+
+    * [Gathering add-on information](/docs/openshift?topic=openshift-rovs-addon-virtualization#rovs-addon-virt-gather-info)
+
+    * [Opening a support case](/docs/openshift?topic=openshift-rovs-addon-virtualization#rovs-addon-virt-support)
+
+* [Next steps](/docs/openshift?topic=openshift-rovs-addon-virtualization#rovs-addon-virt-next)
+
+[Limitations](/docs/openshift?topic=openshift-rovs-limitations#rovs-limitations)
+
+* [Infrastructure requirements](/docs/openshift?topic=openshift-rovs-limitations#rovs-limit-infra)
+
+* [Configuration restrictions](/docs/openshift?topic=openshift-rovs-limitations#rovs-limit-config)
+
+* [Storage and networking](/docs/openshift?topic=openshift-rovs-limitations#rovs-limit-storage-network)
+
+* [Virtual machines](/docs/openshift?topic=openshift-rovs-limitations#rovs-limit-vms)
+
+* [Licensing and scaling](/docs/openshift?topic=openshift-rovs-limitations#rovs-limit-licensing-scaling)
+
+* [Operations](/docs/openshift?topic=openshift-rovs-limitations#rovs-limit-ops)
+
+* [When to use standard OpenShift](/docs/openshift?topic=openshift-rovs-limitations#rovs-limit-alternatives)
+
+* [Next steps](/docs/openshift?topic=openshift-rovs-limitations#rovs-limit-next-steps)
 
 
 ### Manual deployment

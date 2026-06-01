@@ -2,7 +2,7 @@
 
 copyright:
   years: 2025, 2026
-lastupdated: "2026-05-14"
+lastupdated: "2026-06-01"
 
 keywords: openshift, virtualization, virtual machines, vms, bare metal
 
@@ -43,6 +43,29 @@ OpenShift Virtualization on IBM Cloud provides enterprise-grade virtualization f
 Choose the deployment approach that best fits your needs:
 
 
+### OpenShift Virtualization Service (Recommended for new deployments)
+{: #virt-vs-deployment}
+
+Pre-configured, managed virtualization platform.
+
+OpenShift Virtualization Service delivers a ready-to-use virtualization environment with all components automatically installed and configured during cluster creation.
+
+What's included:
+- OpenShift Virtualization Operator (pre-installed)
+- OpenShift Data Foundation storage (pre-configured with local NVME)
+- Optimized networking (MTU 8900/9000)
+- Cost-effective OVE licensing
+
+Best for:
+- Virtualization-focused workloads
+- Quick deployment (minutes vs. hours)
+- Simplified management with managed add-ons
+- Cost-optimized licensing for VM workloads
+
+[Get started with Virtualization Service](/docs/openshift?topic=openshift-rovs-getting-started){: .btn .btn-primary}
+
+[Learn more about Virtualization Service](/docs/openshift?topic=openshift-rovs-overview)
+
 
 ### Manual deployment (For custom configurations)
 {: #virt-manual-deployment}
@@ -66,11 +89,26 @@ Best for:
 [Plan your manual deployment](/docs/openshift?topic=openshift-virt-plan){: .btn .btn-primary}
 
 
+### Comparison
+{: #virt-choose-deployment}
+
+| Feature | Virtualization Service | Manual Deployment |
+|---------|----------------------|-------------------|
+| Setup time | Minutes (automated) | Hours (manual) |
+| OpenShift version | 4.20+ | 4.17+ |
+| Storage | ODF pre-configured | Your choice (ODF, VPC File, etc.) |
+| Networking | Pre-optimized (MTU 8900/9000) | Manual configuration |
+| Licensing | OVE (cost-effective) | Full OCP |
+| Management | Managed add-ons | Self-managed |
+| Flexibility | Pre-configured | Full control |
+| Best for | VM-focused workloads | Custom configurations |
+{: caption="Deployment option comparison" caption-side="bottom"}
+
 
 ## Common requirements
 {: #virt-requirements}
 
-OpenShift Virtualization requires:
+Both deployment options require:OpenShift Virtualization requires:
 
 Infrastructure
 :   - VPC with bare metal worker nodes
@@ -168,6 +206,10 @@ Advanced networking with VNIs (4.20+)
 
 Choose your deployment path:
 
+
+For quick deployment:
+1. [Get started with Virtualization Service](/docs/openshift?topic=openshift-rovs-getting-started)
+2. [Create a Virtualization Service cluster](/docs/openshift?topic=openshift-rovs-cluster-create)
 
 
 For custom deployment:

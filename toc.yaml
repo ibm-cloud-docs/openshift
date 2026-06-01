@@ -42,6 +42,7 @@ toc:
   - navgroup:
       id: tutorial
       topics:
+      - topic: rovs-acm-tutorial.md
       - openshift_tutorial.md
       - openshift_tutorial_vpc.md
       - tutorial-two-node-vpc.md
@@ -76,6 +77,7 @@ toc:
           topics:
           - cluster-create-classic.md
           - cluster-create-vpc-gen2.md
+          - topic: rovs-cluster-create.md
           - cluster-create-dedicated-hosts.md
           - satellite_clusters.md
           - roks_da.md
@@ -265,6 +267,21 @@ toc:
           topics:
           - topic: virt-overview.md
             navtitle: Understanding OpenShift Virtualization
+          - topicgroup:
+              label: OpenShift Virtualization Service (pre-configured)
+              topics:
+              - topic: rovs-overview.md
+                navtitle: About Virtualization Service
+              - topic: rovs-getting-started.md
+                navtitle: Quickstart
+              - topic: rovs-cluster-create.md
+                navtitle: Creating a cluster
+              - topic: rovs-manage.md
+                navtitle: Managing clusters
+              - topic: rovs-addon-virtualization.md
+                navtitle: Managing the OpenShift Virtualization add-on
+              - topic: rovs-limitations.md
+                navtitle: Limitations
           - topicgroup:
               label: Manual deployment
               topics:
