@@ -287,7 +287,9 @@ subcollection: openshift
 
 * [June 2026](/docs/openshift?topic=openshift-openshift-relnotes#openshift-jun26)
 
-    * **New**: HPCS to Key Protect migration steps
+    * [01 June 2026](/docs/openshift?topic=openshift-openshift-relnotes#openshift-jun0126)
+
+        * **New**: HPCS to Key Protect migration steps
 
 * [May 2026](/docs/openshift?topic=openshift-openshift-relnotes#openshift-may26)
 
