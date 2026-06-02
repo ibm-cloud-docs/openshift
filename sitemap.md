@@ -289,10 +289,6 @@ subcollection: openshift
 
 * [01 June 2026](/docs/openshift?topic=openshift-openshift-relnotes#openshift-jun0126)
 
-    * [01 June 2026](/docs/openshift?topic=openshift-openshift-relnotes#openshift-jun0126)
-
-        * Red Hat OpenShift Virtualization Service (ROVS) is now available as a beta
-
 * [May 2026](/docs/openshift?topic=openshift-openshift-relnotes#openshift-may26)
 
     * [27 May 2026](/docs/openshift?topic=openshift-openshift-relnotes#openshift-may2726)
