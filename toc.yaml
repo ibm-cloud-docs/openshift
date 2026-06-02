@@ -352,7 +352,7 @@ toc:
                 navtitle: 'Classic: Updating ODF'
               - openshift_storage_odf_apps.md
               - openshift_storage_odf_trusted_profile.md
-              - topic: hpcs-kp-migration.md
+              - topic: hpcs-kp-migration-odf.md
                 navtitle: 'ODF: Migrating from HPCS to Key Protect'
               - openshift_odf_rdr_roks.md
               - openshift_storage_ocs_manage.md

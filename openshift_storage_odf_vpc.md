@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2026
-lastupdated: "2026-06-01"
+lastupdated: "2026-06-02"
 
 
 keywords: openshift, openshift data foundation, openshift container storage, ocs
@@ -47,6 +47,24 @@ ODF is supported on private-only VPC clusters beginning with cluster version `4.
     - Each worker node must have a minimum of 16 CPUs and 64 GB RAM. For cluster versions earlier than 4.16, make sure each of your subnets have a public gateway attached.
     - Note: You can deploy OpenShift Data Foundation on 3 worker nodes of 16 CPUs and 32 GB RAM, but you must taint your worker nodes to run only ODF pods. You can't run any additional app workloads or system pods on your ODF nodes when you use this setup.
 
+
+### Understanding `flexibleScaling` behavior
+{: #odf-flexible-scaling}
+
+Starting in OpenShift Data Foundation 4.21, `flexibleScaling` is automatically enabled for single-zone clusters and deployments with fewer than three availability zones.
+
+**Flexible Scaling** allows storage clusters to scale more granularly instead of requiring scaling operations in multiples of three.
+
+**Key features:**
+
+- **Granular expansion**: Scale storage by adding a single worker node or one or more OSDs, instead of scaling only in three-unit increments.
+- **Deployment behavior**: Flexible scaling is typically used for internal-attached storage deployments with fewer than three failure domains or availability zones. In single-zone clusters, the failure domain is set to host, and the specified numOfOsd value is provisioned directly. For example, setting `numOfOsd` to 1 creates 1 OSD.
+- **Static configuration**: Flexible scaling behavior is determined during the initial deployment and cannot be enabled or disabled afterward.
+
+For initial deployment in single-zone clusters, specifying at least 3 OSDs is recommended to ensure adequate resiliency and alignment with supported configuration guidelines.
+{: note}
+
+In multi-zone clusters, the failure domain is set to zone, and OSDs are provisioned in multiples of three to maintain data replication and high availability across zones. For example, setting `numOfOsd` to 1 results in the creation of 3 OSDs distributed across zones.
 
 
 ### Optional: Disable the default operators

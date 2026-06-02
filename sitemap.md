@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2026
-lastupdated: "2026-06-01"
+lastupdated: "2026-06-02"
 
 
 keywords: openshift
@@ -4843,6 +4843,8 @@ subcollection: openshift
 
 * [Prerequisites](/docs/openshift?topic=openshift-deploy-odf-vpc#ocs-storage-vpc)
 
+    * [Understanding `flexibleScaling` behavior](/docs/openshift?topic=openshift-deploy-odf-vpc#odf-flexible-scaling)
+
     * [Optional: Disable the default operators](/docs/openshift?topic=openshift-deploy-odf-vpc#odf-private)
 
     * [Optional: Setting up an {{site.data.keyword.cos_full_notm}} service instance](/docs/openshift?topic=openshift-deploy-odf-vpc#odf-create-cos)
@@ -4943,9 +4945,9 @@ subcollection: openshift
 
 [ODF: Migrating from HPCS to Key Protect](/docs/openshift?topic=openshift-migrate_hpcs_kp_odf#migrate_hpcs_kp_odf)
 
-* [Considerations for custom storage classes](/docs/openshift?topic=openshift-migrate_hpcs_kp_odf#custom-storageclass)
+* [Before you begin](/docs/openshift?topic=openshift-migrate_hpcs_kp_odf#hpcs-kp-migration-odf-before)
 
-* [Migration steps](/docs/openshift?topic=openshift-migrate_hpcs_kp_odf#migration-steps)
+* [Migration steps](/docs/openshift?topic=openshift-migrate_hpcs_kp_odf#hpcs-kp-migration-odf-steps)
 
 [OpenShift Data Foundation Regional Disaster Recovery on {{site.data.keyword.openshiftlong_notm}} clusters](/docs/openshift?topic=openshift-openshift_odf_rdr_roks#openshift_odf_rdr_roks)
 
