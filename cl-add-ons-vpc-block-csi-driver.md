@@ -3,7 +3,7 @@
 copyright:
   years: 2024, 2026
 
-lastupdated: "2026-05-20"
+lastupdated: "2026-06-02"
 
 
 keywords: change log, version history, VPC Block CSI Driver
@@ -41,6 +41,14 @@ Review the version history for VPC Block CSI Driver.
 
 ## Version 5.2
 {: #cl-add-ons-vpc-block-csi-driver-5.2}
+
+
+### v5.2.52_342345117, released 28 May 2026
+{: #cl-add-ons-vpc-block-csi-driver-v5252_342345117}
+
+- Resolves the following CVEs: [CVE-2026-33811](https://nvd.nist.gov/vuln/detail/CVE-2026-33811){: external}, [CVE-2026-39820](https://nvd.nist.gov/vuln/detail/CVE-2026-39820){: external}, [CVE-2026-33814](https://nvd.nist.gov/vuln/detail/CVE-2026-33814){: external}, [CVE-2026-39836](https://nvd.nist.gov/vuln/detail/CVE-2026-39836){: external}, [CVE-2026-42499](https://nvd.nist.gov/vuln/detail/CVE-2026-42499){: external}, [CVE-2026-39823](https://nvd.nist.gov/vuln/detail/CVE-2026-39823){: external}, and [CVE-2026-39826](https://nvd.nist.gov/vuln/detail/CVE-2026-39826){: external}.
+- `armada-storage-secret v1.3.49`
+- `ibm-csi-init-container v1.0.20`
 
 
 ### v5.2.51_340196278, released 20 May 2026
@@ -182,6 +190,14 @@ Review the version history for VPC Block CSI Driver.
 
 ## Version 5.1
 {: #cl-add-ons-vpc-block-csi-driver-5.1}
+
+
+### v5.1.52_342345162, released 28 May 2026
+{: #cl-add-ons-vpc-block-csi-driver-v5152_342345162}
+
+- Resolves the following CVEs: [CVE-2026-33811](https://nvd.nist.gov/vuln/detail/CVE-2026-33811){: external}, [CVE-2026-39820](https://nvd.nist.gov/vuln/detail/CVE-2026-39820){: external}, [CVE-2026-33814](https://nvd.nist.gov/vuln/detail/CVE-2026-33814){: external}, [CVE-2026-39836](https://nvd.nist.gov/vuln/detail/CVE-2026-39836){: external}, [CVE-2026-42499](https://nvd.nist.gov/vuln/detail/CVE-2026-42499){: external}, [CVE-2026-39823](https://nvd.nist.gov/vuln/detail/CVE-2026-39823){: external}, and [CVE-2026-39826](https://nvd.nist.gov/vuln/detail/CVE-2026-39826){: external}.
+- `armada-storage-secret v1.2.85`
+- `ibm-csi-init-container v1.0.20`
 
 
 ### v5.1.51_340196313, released 20 May 2026

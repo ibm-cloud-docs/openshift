@@ -287,6 +287,8 @@ subcollection: openshift
 
 * [May 2026](/docs/openshift?topic=openshift-openshift-relnotes#openshift-may26)
 
+    * VPC Block CSI Driver cluster add-on patch updates.
+
     * [27 May 2026](/docs/openshift?topic=openshift-openshift-relnotes#openshift-may2726)
 
         * IBM Cloud Image Key Synchronizer cluster add-on patch updates.
@@ -6872,6 +6874,8 @@ subcollection: openshift
 
 * [Version 5.2](/docs/openshift?topic=openshift-cl-add-ons-vpc-block-csi-driver#cl-add-ons-vpc-block-csi-driver-5.2)
 
+    * [v5.2.52_342345117, released 28 May 2026](/docs/openshift?topic=openshift-cl-add-ons-vpc-block-csi-driver#cl-add-ons-vpc-block-csi-driver-v5252_342345117)
+
     * [v5.2.51_340196278, released 20 May 2026](/docs/openshift?topic=openshift-cl-add-ons-vpc-block-csi-driver#cl-add-ons-vpc-block-csi-driver-v5251_340196278)
 
     * [v5.2.50_338659383, released 13 May 2026](/docs/openshift?topic=openshift-cl-add-ons-vpc-block-csi-driver#cl-add-ons-vpc-block-csi-driver-v5250_338659383)
@@ -6905,6 +6909,8 @@ subcollection: openshift
     * [5.2.31_687, released 17 February 2025](/docs/openshift?topic=openshift-cl-add-ons-vpc-block-csi-driver#cl-add-ons-vpc-block-csi-driver-5231_687)
 
 * [Version 5.1](/docs/openshift?topic=openshift-cl-add-ons-vpc-block-csi-driver#cl-add-ons-vpc-block-csi-driver-5.1)
+
+    * [v5.1.52_342345162, released 28 May 2026](/docs/openshift?topic=openshift-cl-add-ons-vpc-block-csi-driver#cl-add-ons-vpc-block-csi-driver-v5152_342345162)
 
     * [v5.1.51_340196313, released 20 May 2026](/docs/openshift?topic=openshift-cl-add-ons-vpc-block-csi-driver#cl-add-ons-vpc-block-csi-driver-v5151_340196313)
 
