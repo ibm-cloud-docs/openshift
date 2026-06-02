@@ -131,6 +131,7 @@ toc:
           - encryption-setup.md
           - encryption-secrets.md
           - encryption-vpc-worker-disks.md
+          - encryption-hpcs-to-kp-migration.md
       - topicgroup:
           label: Access management
           topics:
@@ -283,6 +284,7 @@ toc:
             navtitle: Storage overview
           - topic: storage-operator.md
             navtitle: Storage Operator add-on
+          - hpcs-kp-overview.md
           - topicgroup:
               label: Block Storage for VPC add-on
               topics:
@@ -294,10 +296,14 @@ toc:
               - storage-block-vpc-migration.md
               - storage-block-vpc-sc-ref.md
               - storage-block-vpc-unmanaged.md
+              - topic: hpcs-kp-migration-block.md
+                navtitle: Migrating from HPCS to Key Protect
           - topicgroup:
               label: Block Storage for Classic
               topics:
               - storage-block.md
+              - topic: hpcs-kp-migration-classic-block.md
+                navtitle: Migrating from HPCS to Key Protect
           - topicgroup:
               label: File Storage for VPC add-on
               topics:
