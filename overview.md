@@ -3,7 +3,7 @@
 copyright:
   years: 2014, 2026
 
-lastupdated: "2026-05-13"
+lastupdated: "2026-06-01"
 
 keywords: openshift, {{site.data.keyword.openshiftlong_notm}}, kubernetes, infrastructure, rbac, policy, providers, benefits
 
@@ -101,7 +101,11 @@ Registry
 With {{site.data.keyword.openshiftlong}}, you can create a cluster by using infrastructure from the following providers. All the worker nodes in a cluster must be from the same provider.
 
 
-| Component | Description | 
+For virtualization workloads, consider [OpenShift Virtualization Service](/docs/openshift?topic=openshift-rovs-overview), a pre-configured offering that delivers a ready-to-use virtualization platform with OpenShift Virtualization, storage, and optimized networking automatically configured.
+{: tip}
+
+
+| Component | Description |
 | --- | --- |
 | Overview | Create clusters on virtual servers in your own Virtual Private Cloud (VPC). |
 | Supported container platforms | [{{site.data.keyword.redhat_openshift_notm}}]{: tag-red} or [Kubernetes]{: tag-blue} |

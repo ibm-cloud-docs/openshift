@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2026
-lastupdated: "2026-05-28"
+lastupdated: "2026-06-02"
 
 
 keywords: openshift
@@ -285,7 +285,13 @@ subcollection: openshift
 
 [Release notes](/docs/openshift?topic=openshift-openshift-relnotes#openshift-relnotes)
 
+* [June 2026](/docs/openshift?topic=openshift-openshift-relnotes#openshift-jun26)
+
+    * **New**: HPCS to Key Protect migration steps
+
 * [May 2026](/docs/openshift?topic=openshift-openshift-relnotes#openshift-may26)
+
+    * VPC Block CSI Driver cluster add-on patch updates.
 
     * [27 May 2026](/docs/openshift?topic=openshift-openshift-relnotes#openshift-may2726)
 
@@ -2241,6 +2247,28 @@ subcollection: openshift
 
 [Setting up worker node disk encryption for VPC clusters](/docs/openshift?topic=openshift-encryption-vpc-worker-disks#encryption-vpc-worker-disks)
 
+[Migrating cluster secrets and worker nodes from HPCS to Key Protect](/docs/openshift?topic=openshift-encryption-hpcs-to-kp-migration#encryption-hpcs-to-kp-migration)
+
+* [Before you begin](/docs/openshift?topic=openshift-encryption-hpcs-to-kp-migration#encryption-hpcs-to-kp-migration-prereqs)
+
+* [Step 1. Setting up service-to-service authorization](/docs/openshift?topic=openshift-encryption-hpcs-to-kp-migration#encryption-hpcs-to-kp-migration-auth)
+
+    * [Authorization for cluster secret encryption](/docs/openshift?topic=openshift-encryption-hpcs-to-kp-migration#encryption-hpcs-to-kp-migration-auth-secrets)
+
+    * [Authorizations for worker node disk encryption](/docs/openshift?topic=openshift-encryption-hpcs-to-kp-migration#encryption-hpcs-to-kp-migration-auth-workers)
+
+* [Step 2. Identify key usage for migration](/docs/openshift?topic=openshift-encryption-hpcs-to-kp-migration#encryption-hpcs-to-kp-migration-detect)
+
+    * [Optional: Using the Key Usage Reporter tool](/docs/openshift?topic=openshift-encryption-hpcs-to-kp-migration#kur-tool)
+
+* [Step 3. Running the migration tool](/docs/openshift?topic=openshift-encryption-hpcs-to-kp-migration#encryption-hpcs-to-kp-migration-migrate)
+
+    * [What happens during migration](/docs/openshift?topic=openshift-encryption-hpcs-to-kp-migration#encryption-hpcs-to-kp-migration-process)
+
+    * [Step 4. Verifying the migration](/docs/openshift?topic=openshift-encryption-hpcs-to-kp-migration#encryption-hpcs-to-kp-migration-verify)
+
+* [Next steps](/docs/openshift?topic=openshift-encryption-hpcs-to-kp-migration#encryption-hpcs-to-kp-migration-next)
+
 
 ## Access management
 {: #sitemap_access_management}
@@ -4000,6 +4028,16 @@ subcollection: openshift
 
 * [Disabling the `ibm-storage-operator` add-on](/docs/openshift?topic=openshift-storage-operator#storage-operator-disable)
 
+[Migrating storage components from HPCS to Key Protect](/docs/openshift?topic=openshift-migrate_hpcs_kp#migrate_hpcs_kp)
+
+* [Before you begin](/docs/openshift?topic=openshift-migrate_hpcs_kp#before)
+
+* [Step 1. Get access to migration tools](/docs/openshift?topic=openshift-migrate_hpcs_kp#request)
+
+* [Step 2. Identify key usage for migration](/docs/openshift?topic=openshift-migrate_hpcs_kp#encryption-hpcs-to-kp-migration-detect)
+
+* [Step 3. Follow component migration steps](/docs/openshift?topic=openshift-migrate_hpcs_kp#migrate-script)
+
 
 ### Block Storage for VPC add-on
 {: #sitemap_block_storage_for_vpc_add-on}
@@ -4141,6 +4179,16 @@ subcollection: openshift
 
     * [Ubuntu ConfigMap](/docs/openshift?topic=openshift-vpc-block-storage-driver-unmanaged#vpc-block-ubuntu-cm)
 
+[Migrating from HPCS to Key Protect](/docs/openshift?topic=openshift-migrate_hpcs_kms_block#migrate_hpcs_kms_block)
+
+* [Before you begin](/docs/openshift?topic=openshift-migrate_hpcs_kms_block#hpcs-kms-block-before)
+
+* [Prerequisites for migration](/docs/openshift?topic=openshift-migrate_hpcs_kms_block#hpcs-kms-block-prereqs)
+
+* [Migration steps](/docs/openshift?topic=openshift-migrate_hpcs_kms_block#hpcs-kms-block-steps)
+
+* [Next steps](/docs/openshift?topic=openshift-migrate_hpcs_kms_block#hpcs-kms-block-next)
+
 
 ### Block Storage for Classic
 {: #sitemap_block_storage_for_classic}
@@ -4215,6 +4263,20 @@ subcollection: openshift
 * [Setting up monitoring for `limited` connectivity PVs](/docs/openshift?topic=openshift-block_storage#storage-block-vpc-limited-monitoring)
 
 * [Assigning trusted profiles to block storage](/docs/openshift?topic=openshift-block_storage#block-classic-trusted-profile)
+
+[Migrating from HPCS to Key Protect](/docs/openshift?topic=openshift-migrate_hpcs_kms_classic_block#migrate_hpcs_kms_classic_block)
+
+* [Before you begin](/docs/openshift?topic=openshift-migrate_hpcs_kms_classic_block#hpcs-kms-classic-block-before)
+
+* [Prerequisites for migration](/docs/openshift?topic=openshift-migrate_hpcs_kms_classic_block#hpcs-kms-classic-block-prereqs)
+
+* [Migration steps](/docs/openshift?topic=openshift-migrate_hpcs_kms_classic_block#hpcs-kms-classic-block-steps)
+
+    * [Step 1: Replace the HPCS secret with a Key Protect configuration](/docs/openshift?topic=openshift-migrate_hpcs_kms_classic_block#replace-secret)
+
+    * [Step 2: Update PVC encryption keys to use Key Protect](/docs/openshift?topic=openshift-migrate_hpcs_kms_classic_block#migrate-keys)
+
+* [Next steps](/docs/openshift?topic=openshift-migrate_hpcs_kms_classic_block#hpcs-kms-classic-block-next)
 
 
 ### File Storage for VPC add-on
@@ -4527,6 +4589,8 @@ subcollection: openshift
 
 * [Prerequisites](/docs/openshift?topic=openshift-deploy-odf-vpc#ocs-storage-vpc)
 
+    * [Understanding `flexibleScaling` behavior](/docs/openshift?topic=openshift-deploy-odf-vpc#odf-flexible-scaling)
+
     * [Optional: Disable the default operators](/docs/openshift?topic=openshift-deploy-odf-vpc#odf-private)
 
     * [Optional: Setting up an {{site.data.keyword.cos_full_notm}} service instance](/docs/openshift?topic=openshift-deploy-odf-vpc#odf-create-cos)
@@ -4627,9 +4691,9 @@ subcollection: openshift
 
 [ODF: Migrating from HPCS to Key Protect](/docs/openshift?topic=openshift-migrate_hpcs_kp_odf#migrate_hpcs_kp_odf)
 
-* [Considerations for custom storage classes](/docs/openshift?topic=openshift-migrate_hpcs_kp_odf#custom-storageclass)
+* [Before you begin](/docs/openshift?topic=openshift-migrate_hpcs_kp_odf#hpcs-kp-migration-odf-before)
 
-* [Migration steps](/docs/openshift?topic=openshift-migrate_hpcs_kp_odf#migration-steps)
+* [Migration steps](/docs/openshift?topic=openshift-migrate_hpcs_kp_odf#hpcs-kp-migration-odf-steps)
 
 [OpenShift Data Foundation Regional Disaster Recovery on {{site.data.keyword.openshiftlong_notm}} clusters](/docs/openshift?topic=openshift-openshift_odf_rdr_roks#openshift_odf_rdr_roks)
 
@@ -6294,6 +6358,8 @@ subcollection: openshift
 
 * [Version 1.0](/docs/openshift?topic=openshift-cs_cli_changelog#10)
 
+* [Version v1.0.775](/docs/openshift?topic=openshift-cs_cli_changelog#cli-01775)
+
 * [Version v1.0.773](/docs/openshift?topic=openshift-cs_cli_changelog#cli-01773)
 
 * [Version v1.0.770](/docs/openshift?topic=openshift-cs_cli_changelog#cli-01770)
@@ -6868,6 +6934,8 @@ subcollection: openshift
 
 * [Version 5.2](/docs/openshift?topic=openshift-cl-add-ons-vpc-block-csi-driver#cl-add-ons-vpc-block-csi-driver-5.2)
 
+    * [v5.2.52_342345117, released 28 May 2026](/docs/openshift?topic=openshift-cl-add-ons-vpc-block-csi-driver#cl-add-ons-vpc-block-csi-driver-v5252_342345117)
+
     * [v5.2.51_340196278, released 20 May 2026](/docs/openshift?topic=openshift-cl-add-ons-vpc-block-csi-driver#cl-add-ons-vpc-block-csi-driver-v5251_340196278)
 
     * [v5.2.50_338659383, released 13 May 2026](/docs/openshift?topic=openshift-cl-add-ons-vpc-block-csi-driver#cl-add-ons-vpc-block-csi-driver-v5250_338659383)
@@ -6901,6 +6969,8 @@ subcollection: openshift
     * [5.2.31_687, released 17 February 2025](/docs/openshift?topic=openshift-cl-add-ons-vpc-block-csi-driver#cl-add-ons-vpc-block-csi-driver-5231_687)
 
 * [Version 5.1](/docs/openshift?topic=openshift-cl-add-ons-vpc-block-csi-driver#cl-add-ons-vpc-block-csi-driver-5.1)
+
+    * [v5.1.52_342345162, released 28 May 2026](/docs/openshift?topic=openshift-cl-add-ons-vpc-block-csi-driver#cl-add-ons-vpc-block-csi-driver-v5152_342345162)
 
     * [v5.1.51_340196313, released 20 May 2026](/docs/openshift?topic=openshift-cl-add-ons-vpc-block-csi-driver#cl-add-ons-vpc-block-csi-driver-v5151_340196313)
 
@@ -7043,6 +7113,8 @@ subcollection: openshift
 [VPC File CSI Driver add-on version change log](/docs/openshift?topic=openshift-cl-add-ons-vpc-file-csi-driver#cl-add-ons-vpc-file-csi-driver)
 
 * [Version 2.0](/docs/openshift?topic=openshift-cl-add-ons-vpc-file-csi-driver#cl-add-ons-vpc-file-csi-driver-2.0)
+
+    * [v2.0.32_341664893, released 29 May 2026](/docs/openshift?topic=openshift-cl-add-ons-vpc-file-csi-driver#cl-add-ons-vpc-file-csi-driver-v2032_341664893)
 
     * [v2.0.30_338302575, released 13 May 2026](/docs/openshift?topic=openshift-cl-add-ons-vpc-file-csi-driver#cl-add-ons-vpc-file-csi-driver-v2030_338302575)
 

@@ -2,7 +2,7 @@
 
 copyright:
   years: 2023, 2026
-lastupdated: "2026-05-22"
+lastupdated: "2026-06-02"
 
 
 keywords: openshift, openshift data foundation, openshift container storage, ocs, worker update, worker replace
@@ -61,7 +61,7 @@ Before updating your worker nodes, make sure to back up your app data. Also, pla
 1. List the pods by running the following command. Verify that all the pods in `openshift-storage` namespace are in a good state. Address any pods that are not in “Running” or “Completed” state.
 
 	```sh
-	oc get pods -n openshift-storge
+	oc get pods -n openshift-storage
 	```
 	{: pre}
 

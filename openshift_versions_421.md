@@ -2,7 +2,7 @@
 
 copyright:
   years: 2026, 2026
-lastupdated: "2026-05-19"
+lastupdated: "2026-06-01"
 
 
 keywords: openshift, version, update, upgrade, 4.21, update openshift
@@ -17,8 +17,11 @@ subcollection: openshift
 # 4.21 version information and update actions
 {: #cs_versions_421}
 
-Review information about version 4.21 of {{site.data.keyword.openshiftlong_notm}}. This version is based on Kubernetes version {{site.data.keyword.openshift_421_kube_version}}. 
+Review information about version 4.21 of {{site.data.keyword.openshiftlong_notm}}. This version is based on Kubernetes version {{site.data.keyword.openshift_421_kube_version}}.
 {: shortdesc}
+
+Version 4.21 is the minimum required version for [OpenShift Virtualization Service](/docs/openshift?topic=openshift-rovs-overview), which provides pre-configured virtualization capabilities for running virtual machines alongside containerized workloads.
+{: note}
 
 Looking for general information about updating clusters, or information on a different version? See [Red Hat {{site.data.keyword.redhat_openshift_notm}} on IBM Cloud version information](/docs/openshift?topic=openshift-openshift_versions) and the version [4.21 release notes](https://docs.redhat.com/en/documentation/openshift_container_platform/4.21/html/release_notes/index){: external}.
 {: tip}

@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2026
-lastupdated: "2026-05-22"
+lastupdated: "2026-05-28"
 
 
 keywords: openshift, {{site.data.keyword.openshiftlong_notm}}, kubernetes, node scaling, ca, autoscaler
@@ -268,8 +268,15 @@ Customize the cluster autoscaler settings such as the amount of time it waits be
 :   The maximum time in seconds to retry after failing to connect to the service API. Use this parameter and the `retryAttempts` parameter to adjust the retry window for the cluster autoscaler. The default value is `60`.
 
 
+
+`parallelDrain`
+:   Set to `true` to allow parallel draining of nodes. The default value is `false`.
+:   [Deprecated]{: tag-red} The `parallelDrain` setting (maps to `--parallel-drain`) is only supported in Cluster Autoscaler versions 1.26–1.31. For versions 1.32 and later, use `--max-drain-parallelism` and `--max-scale-down-parallelism` instead.
+    {: note}
+
 `maxScaleDownParallelism`
-:   **1.2.4 and later**  Maximum number of nodes, both empty and needing to be drained, that can be deleted in parallel. The default value is `10`.
+:   Maximum number of nodes, both empty and needing to be drained, that can be deleted in parallel. The default value is `10`.
+
 
 
 `maxTotalUnreadyPercentage`

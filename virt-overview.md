@@ -2,7 +2,7 @@
 
 copyright:
   years: 2025, 2026
-lastupdated: "2026-05-14"
+lastupdated: "2026-06-02"
 
 keywords: openshift, virtualization, virtual machines, vms, bare metal
 

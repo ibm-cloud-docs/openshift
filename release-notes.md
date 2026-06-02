@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2026
-lastupdated: "2026-05-28"
+lastupdated: "2026-06-02"
 
 
 keywords: kubernetes, release notes, openshift, {{site.data.keyword.openshiftlong_notm}}
@@ -26,10 +26,28 @@ Use the release notes to learn about the latest changes to the documentation tha
 Looking for {{site.data.keyword.cloud_notm}} status, platform announcements, security bulletins, or maintenance notifications? See [{{site.data.keyword.cloud_notm}} status](https://cloud.ibm.com/status?selected=status).
 {: tip}
 
+
+
+## June 2026
+{: #openshift-jun26}
+
+
+
+
+
+
+**New**: HPCS to Key Protect migration steps
+:    Review the steps for migrating your encrypted resources from HPCS to Key Protect. See [Migrating storage components from HPCS to Key Protect](/docs/openshift?topic=openshift-migrate_hpcs_kp) and [Migrating cluster secrets and worker nodes from HPCS to Key Protect](/docs/openshift?topic=openshift-encryption-hpcs-to-kp-migration) for more information.
+
+
+
 ## May 2026
 {: #openshift-may26}
 
 
+
+VPC Block CSI Driver cluster add-on patch updates.
+:   For more information, see the [change log](/docs/openshift?topic=openshift-cl-add-ons-vpc-block-csi-driver).
 
 
 ### 27 May 2026
@@ -146,7 +164,7 @@ VPC File CSI Driver cluster add-on patch updates.
 
 
 
-  
+
 ### 18 May 2026
 {: #openshift-may1826}
 {: release-note}

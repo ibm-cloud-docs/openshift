@@ -1,8 +1,8 @@
 ---
 
 copyright:
-  years: 2014, 2024
-lastupdated: "2024-10-10"
+  years: 2014, 2026
+lastupdated: "2026-06-01"
 
 
 keywords: openshift
@@ -25,6 +25,7 @@ Various use cases show the strengths of {{site.data.keyword.openshiftlong}} and 
 - Data and storage
 - DevOps
 - Identity management
+- Virtualization (with [OpenShift Virtualization Service](/docs/openshift?topic=openshift-rovs-overview))
 {: shortdesc}
 
 | Industry | Use case |

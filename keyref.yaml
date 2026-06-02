@@ -70,7 +70,7 @@ keyword:
   kubernetes_latest_release_date: 05 March 2026
   kubernetes_latest_unsupported_certainty: tentative
   kubernetes_latest_unsupported_date: 28 April 2027
-  kubernetes_latest_version: '1.35'
+  kubernetes_latest_version: 1.35
   openshift_410_RHEL_7_unsupported_date: 6 December 2022
   openshift_410_RHEL_8_unsupported_date: ''
   openshift_410_deprecated: 'True'
