@@ -30,6 +30,9 @@ Looking for {{site.data.keyword.cloud_notm}} status, platform announcements, sec
 
 
 
+**New**: HPCS to Key Protect migration steps
+:    Review the steps for migrating your encrypted resources from HPCS to Key Protect. See [Migrating storage components from HPCS to Key Protect](/docs/openshift?topic=openshift-migrate_hpcs_kp) and [Migrating cluster secrets and worker nodes from HPCS to Key Protect](/docs/openshift?topic=openshift-encryption-hpcs-to-kp-migration) for more information.
+
 
 
 ## May 2026
@@ -155,7 +158,7 @@ VPC File CSI Driver cluster add-on patch updates.
 
 
 
-  
+
 ### 18 May 2026
 {: #openshift-may1826}
 {: release-note}
