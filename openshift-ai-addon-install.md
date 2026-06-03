@@ -41,7 +41,7 @@ Review the supported OpenShift AI add-on versions and the corresponding [OpenShi
 
 | OpenShift AI add-on version | Red Hat OpenShift AI version |	Supported cluster versions |
 | ---  | --- | -------------------------------------------------- |
-| 419 | 3.3.2 | 4.19, 4.20 |
+| [419](/docs/openshift?topic=openshift-ai-addon-about#ai-addon-version-419) | 3.3.2 | 4.19, 4.20 |
 | 418 | 2.25.6 | 4.18, 4.19 |
 | 417 | 2.25.6 | 4.17, 4.18 |
 | 416 | 2.25.6 | 4.16, 4.17 |
@@ -104,18 +104,18 @@ Complete these steps before you install the add-on.
 
     1. Enable OperatorHub on your cluster.
 
-    ```sh
-    oc patch operatorhub cluster --type json -p '[{"op": "add", "path": "/spec/disableAllDefaultSources", "value": false}]' 
-    ```
-    {: pre}
+		   ```sh
+		   oc patch operatorhub cluster --type json -p '[{"op": "add", "path": "/spec/disableAllDefaultSources", "value": false}]'
+		   ```
+		   {: pre}
 
-    2. Disable outbound protection. 
+    2. Disable outbound traffic protection.
 
-        Disabling outbound traffic protection permits all external network connections. See [Managing outbound traffic protection in VPC clusters](/docs/openshift?topic=openshift-sbd-allow-outbound) for more information.
-        {: note}
+    Disabling outbound traffic protection permits all external network connections. See [Managing outbound traffic protection in VPC clusters](/docs/openshift?topic=openshift-sbd-allow-outbound) for more information.
+    {: note}
 
-        1. In the console, navigate to your [Clusters page](https://cloud.ibm.com/containers/cluster-management/clusters){: external} and click the relevant cluster.
-        2. On the Overview page for the cluster, find the **Networking** section and select the **Outbound traffic protection disabled** option.
+    1. In the console, navigate to your [Clusters page](https://cloud.ibm.com/containers/cluster-management/clusters){: external} and click the relevant cluster.
+    2. On the Overview page for the cluster, find the **Networking** section and select the **Outbound traffic protection disabled** option.
 
 
 
