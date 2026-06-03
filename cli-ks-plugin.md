@@ -7339,7 +7339,7 @@ List Virtual Network Interfaces attached to a cluster or worker node.
 ibmcloud oc vni ls [--after AFTER] [--first FIRST] [--output OUTPUT] [-q] (--cluster-id ID | --worker WORKER)
 ```
 {: pre}
-{: #vni-ls-usage}
+
 
 ### Command options
 {: #vni-ls-options}
