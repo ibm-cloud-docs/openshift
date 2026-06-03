@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2026
-lastupdated: "2026-05-28"
+lastupdated: "2026-06-03"
 
 
 keywords: openshift, cli reference, kubernetes cli, openshift cli, {{site.data.keyword.openshiftlong_notm}}
@@ -1140,7 +1140,7 @@ ibmcloud oc cluster ls -l ams03 -l wdc -l ap
 
 Get the OpenShift web console and OAuth server access type.
 
-```txt
+```sh
 ibmcloud oc cluster master console-oauth-access get --cluster CLUSTER [--output OUTPUT] [-q]
 ```
 {: pre}
@@ -1165,7 +1165,7 @@ ibmcloud oc cluster master console-oauth-access get --cluster CLUSTER [--output 
 
 Set the OpenShift web console and OAuth server access type.
 
-```txt
+```sh
 ibmcloud oc cluster master console-oauth-access set --cluster CLUSTER [-f] [-q] [--type TYPE]
 ```
 {: pre}
@@ -3303,7 +3303,7 @@ ibmcloud oc worker-pool ls --cluster my_cluster
 
 Set the operating system. After you set the operating system, you must update your workers by running either `ibmcloud ks worker update` or `ibmcloud ks worker replace`.
 
-```txt
+```sh
 ibmcloud oc worker-pool operating-system set --cluster CLUSTER --operating-system SYSTEM --worker-pool POOL [-q]
 ```
 {: pre}
@@ -6049,7 +6049,7 @@ ibmcloud oc nlb-dns ls --cluster mycluster
 
 Configure a health check monitor for an existing NLB host name in a cluster. To enable the monitor, include the `--enable` flag. To update an existing monitor, include only the flags for the settings that you want to change.
 
-```txt
+```sh
 ibmcloud oc nlb-dns monitor configure --cluster CLUSTER --nlb-host HOST [--enable] [--header HEADER ...] [--interval INTERVAL] [--output OUTPUT] [--path PATH] [--port PORT] [-q] [--timeout TIMEOUT] [--type TYPE]
 ```
 {: pre}
@@ -6495,7 +6495,7 @@ ibmcloud oc nlb-dns secret rm --cluster mycluster --nlb-subdomain mycluster-a1b2
 
 Enable Secure By Default VPC Networking for a VPC cluster using legacy Security Groups.
 
-```txt
+```sh
 ibmcloud oc vpc secure-by-default enable --cluster CLUSTER [--disable-outbound-traffic-protection] [-f] [-q]
 ```
 {: pre}
@@ -7181,7 +7181,7 @@ ibmcloud oc vlan spanning get --region us-south
 
 List all VPCs in the targeted resource group. If no resource group is targeted, all VPCs in the account are listed.
 
-```txt
+```sh
 ibmcloud oc vpc ls [--output OUTPUT] [--provider PROVIDER] [-q]
 ```
 {: pre}
@@ -7205,7 +7205,7 @@ ibmcloud oc vpc ls [--output OUTPUT] [--provider PROVIDER] [-q]
 
 Disable outbound traffic protection for a Secure By Default VPC cluster.
 
-```txt
+```sh
 ibmcloud oc vpc outbound-traffic-protection disable --cluster CLUSTER [-f] [-q]
 ```
 {: pre}
@@ -7230,7 +7230,7 @@ ibmcloud oc vpc outbound-traffic-protection disable --cluster CLUSTER [-f] [-q]
 
 Enable outbound traffic protection for a Secure By Default VPC cluster.
 
-```txt
+```sh
 ibmcloud oc vpc outbound-traffic-protection enable --cluster CLUSTER [-f] [-q]
 ```
 {: pre}
@@ -7258,7 +7258,7 @@ ibmcloud oc vpc outbound-traffic-protection enable --cluster CLUSTER [-f] [-q]
 Attach a Virtual Network Interface to a bare metal worker node or cluster.
 {: shortdesc}
 
-```txt
+```sh
 ibmcloud oc vni attach baremetal --vlan VLAN --vni VNI [--auto-delete] [--output OUTPUT] [-q] (--cluster-id ID | --worker WORKER)
 ```
 {: pre}
@@ -7298,7 +7298,7 @@ ibmcloud oc vni attach baremetal --vlan VLAN --vni VNI [--auto-delete] [--output
 Detach a Virtual Network Interface from a worker node or cluster.
 {: shortdesc}
 
-```txt
+```sh
 ibmcloud oc vni detach --vni VNI [-f] [--output OUTPUT] [-q] (--cluster-id ID | --worker WORKER)
 ```
 {: pre}
@@ -7335,7 +7335,7 @@ ibmcloud oc vni detach --vni VNI [-f] [--output OUTPUT] [-q] (--cluster-id ID | 
 List Virtual Network Interfaces attached to a cluster or worker node.
 {: shortdesc}
 
-```txt
+```sh
 ibmcloud oc vni ls [--after AFTER] [--first FIRST] [--output OUTPUT] [-q] (--cluster-id ID | --worker WORKER)
 ```
 {: pre}
@@ -7772,7 +7772,7 @@ Reset or sync a security group to the [default traffic rules](/docs/openshift?to
 
 List all security groups associated with a cluster.
 
-```txt
+```sh
 ibmcloud oc security-group ls --cluster CLUSTER [--attached-to ATTACHED] [--managed-by MANAGER] [--output OUTPUT] [-q] [--scope SCOPE]
 ```
 {: pre}
@@ -8493,7 +8493,7 @@ ibmcloud oc zone add satellite --zone myzone2 --cluster my_cluster -p pool1 -p p
 
 [Expires on 2026-07-14] Get the default trusted profile for clusters created in a resource-group.
 
-```txt
+```sh
 ibmcloud oc experimental trusted-profile default get --region REGION --resource-group GROUP [--output OUTPUT] [-q]
 ```
 {: pre}
@@ -8521,7 +8521,7 @@ ibmcloud oc experimental trusted-profile default get --region REGION --resource-
 
 [Expires on 2026-07-14] Set the default trusted profile for clusters created in a resource-group.
 
-```txt
+```sh
 ibmcloud oc experimental trusted-profile default set --region REGION --resource-group GROUP --trusted-profile PROFILE [--output OUTPUT] [-q]
 ```
 {: pre}
@@ -8552,7 +8552,7 @@ ibmcloud oc experimental trusted-profile default set --region REGION --resource-
 
 [Expires on 2026-07-14] Get trusted profile for a cluster.
 
-```txt
+```sh
 ibmcloud oc experimental trusted-profile get --cluster CLUSTER [--output OUTPUT] [-q]
 ```
 {: pre}
@@ -8577,7 +8577,7 @@ ibmcloud oc experimental trusted-profile get --cluster CLUSTER [--output OUTPUT]
 
 [Expires on 2026-07-14] Set trusted profile on a cluster.
 
-```txt
+```sh
 ibmcloud oc experimental trusted-profile set --cluster CLUSTER --trusted-profile PROFILE [--output OUTPUT] [-q]
 ```
 {: pre}
