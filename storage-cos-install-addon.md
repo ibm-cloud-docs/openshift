@@ -2,7 +2,7 @@
 
 copyright:
   years: 2024, 2026
-lastupdated: "2026-04-22"
+lastupdated: "2026-06-03"
 
 
 keywords: kubernetes, openshift, object storage add-in, cos
@@ -123,25 +123,25 @@ Before you begin: [Access your {{site.data.keyword.redhat_openshift_notm}} clust
         kp-root-key-crn: <CRN> # Key Protect or HPCS root key crn in base64 encoded format
     stringData:
         bucketName: <bucket-name> # Optional. If you don't provide a bucket name, a bucket with the naming convention s3fs-timestamp-xxx or rclone-timestamp-xxx is created.
-        bucketVersioning: false # Bucket versioning is set to false by default. Set to true to enable bucket versioning. Set to false to disable versioning for a bucket where versioning is enabled.
-    # uid: "3000" # Optional: Provide a uid to run as non root user. This must match runAsUser in SecurityContext of pod spec.
-    mountOptions: |
-        # Review or update the following default s3fs mount options
-        #multipart_size=52
-        #multireq_max=20
-        #max_dirty_data=5120
-        #parallel_count=20
-        #max_stat_cache_size=100000
-        #retries=5
-        #kernel_cache
-        
-        # Review or update the following default rclone mount options
-        #acl=private
-        #bucket_acl=private
-        #upload_cutoff=100Mi
-        #chunk_size=16Mi
-        #max_upload_parts=1000
-        #upload_concurrency=8
+        bucketVersioning: "false" # Bucket versioning is set to false by default. Set to "true" to enable bucket versioning. Set to "false" to disable versioning for a bucket where versioning is enabled. Must be a string value.
+        # uid: "3000" # Optional: Provide a uid to run as non root user. This must match runAsUser in SecurityContext of pod spec.
+        mountOptions: |
+            # Review or update the following default s3fs mount options
+            #multipart_size=52
+            #multireq_max=20
+            #max_dirty_data=5120
+            #parallel_count=20
+            #max_stat_cache_size=100000
+            #retries=5
+            #kernel_cache
+            
+            # Review or update the following default rclone mount options
+            #acl=private
+            #bucket_acl=private
+            #upload_cutoff=100Mi
+            #chunk_size=16Mi
+            #max_upload_parts=1000
+            #upload_concurrency=8
 
     ```
     {: codeblock}
@@ -344,10 +344,10 @@ The existing secrets, PVCs, and deployments are not deleted by disabling the add
         secretKey: <base64-encoded-HMAC-secret-key>
     stringData:
         bucketName: <bucket-name>
-    # uid: "3000" # Optional: Provide a uid to run as non root user. This must match runAsUser in SecurityContext of pod spec.
-    mountOptions: |
-        key1=value1
-        key2=value2
+        # uid: "3000" # Optional: Provide a uid to run as non root user. This must match runAsUser in SecurityContext of pod spec.
+        mountOptions: |
+            key1=value1
+            key2=value2
     ```
     {: codeblock}
     
