@@ -1482,8 +1482,6 @@ This hidden command is deprecated and not supported for general use.
 {: shortdesc}
 
 Use context-based restrictions instead. For more information, see [Migrating from private service endpoints allowlisting to context-based restrictions](/docs/openshift?topic=openshift-pse-to-cbr-migration).
-```
-{: pre}
 
 ### `ibmcloud oc cluster master private-service-endpoint disable`
 {: #cs_cluster_master_pse_disable}
