@@ -2,7 +2,7 @@
 
 copyright:
   years: 2026
-lastupdated: "2026-05-22"
+lastupdated: "2026-06-03"
 
 keywords: openshift, gpu, nvidia, rhel9, eus, repository, driver
 
@@ -19,7 +19,7 @@ content-type: troubleshoot
 {: troubleshoot}
 {: support}
 
-[Virtual Private Cloud]{: tag-vpc} [Classic infrastructure]{: tag-classic-inf} [{{site.data.keyword.satelliteshort}}]{: tag-satellite}
+[Virtual Private Cloud]{: tag-vpc} [Classic infrastructure]{: tag-classic-inf}
 
 When you try to install NVIDIA GPU drivers on Red Hat Enterprise Linux 9 worker nodes, the installation fails with a repository error.
 {: tsSymptoms}
