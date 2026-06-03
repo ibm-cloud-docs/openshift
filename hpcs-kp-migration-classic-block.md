@@ -2,7 +2,7 @@
 
 copyright:
   years: 2026, 2026
-lastupdated: "2026-06-02"
+lastupdated: "2026-06-03"
 
 
 keywords: key protect, hpcs, kms, migrate, block storage, classic, encryption, crk, dek
@@ -24,7 +24,7 @@ Migrate your Hyper Protect Crypto Services (HPCS) encryption for Classic Block S
 ## Before you begin
 {: #hpcs-kms-classic-block-before}
 
-Before you begin, verify that you need to migrate your Classic Block Storage volumes to use Key Protect instead of HPCS. You can complete this process manually by following the steps in this section, or you can see the [migration overview]() for details on using an automated detection script.
+Before you begin, verify that you need to migrate your Classic Block Storage volumes to use Key Protect instead of HPCS. You can complete this process manually by following the steps in this section, or you can see the [migration overview](/docs/openshift?topic=openshift-migrate_hpcs_kp) for details on using an automated detection script.
 
 Follow these steps to manually determine if you need to migrate your Classic Block Storage volumes.
 

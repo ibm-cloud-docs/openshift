@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2026
-lastupdated: "2026-05-28"
+lastupdated: "2026-06-03"
 
 
 keywords: openshift, cli reference, kubernetes cli, openshift cli, {{site.data.keyword.openshiftlong_notm}}
@@ -900,6 +900,8 @@ Minimum required permissions
 `--cos-instance COS_CRN`
 :    Include the CRN ID of a standard {{site.data.keyword.cos_full_notm}} instance to back up the internal registry of your cluster. To list the CRN of existing instances, run `ibmcloud resource service-instances --long` and find the **ID** of your object storage instance. To create a standard object storage instance, run `ibmcloud resource service-instance-create <name> cloud-object-storage standard global` and note its **ID**.
 
+
+
 `--preview PREVIEW`
 :    Optional: Specify one or more cluster level preview features, such as `fips`.
 
@@ -943,10 +945,14 @@ Minimum required permissions
 
 :    Note that the pod and service subnets can't overlap.
 
+
+
 `--entitlement ocp_entitled`
 :    Include this option only if you use this cluster that has a {{site.data.keyword.redhat_openshift_notm}} entitlement. When you specify the number of workers (`--workers`) and flavor (`--flavor`), make sure to specify only the number and size of worker nodes that you are entitled to use in [IBM Passport Advantage](https://www.ibm.com/software/passportadvantage/index.html){: external}. After your cluster is created, you are not charged the {{site.data.keyword.redhat_openshift_notm}} license fee for the entitled worker nodes in the `default` worker pool.
      Do not exceed your entitlement. Keep in mind that your OpenShift Container Platform entitlements can be used with other cloud providers or in other environments. To avoid billing issues later, make sure that you use only what you are entitled to use. For example, you might have an entitlement for the OCP licenses for two worker nodes of 4 CPU and 16 GB memory, and you create this worker pool with two worker nodes of 4 CPU and 16 GB memory. You used your entire entitlement, and you can't use the same entitlement for other worker pools, cloud providers, or environments.
      {: note}
+
+
 
 `--skip-advance-permissions-check`
 :    Optional: Skip [the check for infrastructure permissions](/docs/openshift?topic=openshift-kubernetes-service-cli#infra_permissions_get) before creating the cluster. Note that if you don't have the correct infrastructure permissions, the cluster creation might only partially succeed, such as the master provisioning but the worker nodes unable to provision. You might skip the permissions check if you want to continue an otherwise blocked operation, such as when you use multiple infrastructure accounts and can handle the infrastructure resources separately from the master, if needed later.
@@ -1140,7 +1146,7 @@ ibmcloud oc cluster ls -l ams03 -l wdc -l ap
 
 Get the OpenShift web console and OAuth server access type.
 
-```txt
+```sh
 ibmcloud oc cluster master console-oauth-access get --cluster CLUSTER [--output OUTPUT] [-q]
 ```
 {: pre}
@@ -1165,7 +1171,7 @@ ibmcloud oc cluster master console-oauth-access get --cluster CLUSTER [--output 
 
 Set the OpenShift web console and OAuth server access type.
 
-```txt
+```sh
 ibmcloud oc cluster master console-oauth-access set --cluster CLUSTER [-f] [-q] [--type TYPE]
 ```
 {: pre}
@@ -1482,8 +1488,6 @@ This hidden command is deprecated and not supported for general use.
 {: shortdesc}
 
 Use context-based restrictions instead. For more information, see [Migrating from private service endpoints allowlisting to context-based restrictions](/docs/openshift?topic=openshift-pse-to-cbr-migration).
-```
-{: pre}
 
 ### `ibmcloud oc cluster master private-service-endpoint disable`
 {: #cs_cluster_master_pse_disable}
@@ -3098,10 +3102,15 @@ Minimum required permissions
 `-l, --label KEY1=VALUE1`
 :    Optional: Apply key-value labels to each worker node in the worker pool. To specify multiple labels, use multiple options, such as `-l key1=value1 -l key2=value2`.
 
+
+
 `--entitlement ocp_entitled`
 :    Include this option only for a cluster that has a {{site.data.keyword.redhat_openshift_notm}} entitlement. When you specify the number of workers (`--size-per-zone`) and flavor (`--flavor`), make sure to specify only the number and size of worker nodes that you are entitled to use in [IBM Passport Advantage](https://www.ibm.com/software/passportadvantage){: external}. After creation, your worker pool does not charge you the {{site.data.keyword.redhat_openshift_notm}} license fee for your entitled worker nodes.
-     Do not exceed your entitlement. Keep in mind that your OpenShift Container Platform entitlements can be used with other cloud providers or in other environments. To avoid billing issues later, make sure that you use only what you are entitled to use. For example, you might have an entitlement for the OCP licenses for two worker nodes of 4 CPU and 16 GB memory, and you create this worker pool with two worker nodes of 4 CPU and 16 GB memory. You used your entire entitlement, and you can't use the same entitlement for other worker pools, cloud providers, or environments.
-     {: note}
+
+Do not exceed your entitlement. Keep in mind that your OpenShift Container Platform entitlements can be used with other cloud providers or in other environments. To avoid billing issues later, make sure that you use only what you are entitled to use. For example, you might have an entitlement for the OCP licenses for two worker nodes of 4 CPU and 16 GB memory, and you create this worker pool with two worker nodes of 4 CPU and 16 GB memory. You used your entire entitlement, and you can't use the same entitlement for other worker pools, cloud providers, or environments.
+{: note}
+
+
 
 `--kms-account-id ID`
 :    Optional: The ID of the account that contains the KMS instance you want to use for local disk or secret encryption.
@@ -3303,7 +3312,7 @@ ibmcloud oc worker-pool ls --cluster my_cluster
 
 Set the operating system. After you set the operating system, you must update your workers by running either `ibmcloud ks worker update` or `ibmcloud ks worker replace`.
 
-```txt
+```sh
 ibmcloud oc worker-pool operating-system set --cluster CLUSTER --operating-system SYSTEM --worker-pool POOL [-q]
 ```
 {: pre}
@@ -6049,7 +6058,7 @@ ibmcloud oc nlb-dns ls --cluster mycluster
 
 Configure a health check monitor for an existing NLB host name in a cluster. To enable the monitor, include the `--enable` flag. To update an existing monitor, include only the flags for the settings that you want to change.
 
-```txt
+```sh
 ibmcloud oc nlb-dns monitor configure --cluster CLUSTER --nlb-host HOST [--enable] [--header HEADER ...] [--interval INTERVAL] [--output OUTPUT] [--path PATH] [--port PORT] [-q] [--timeout TIMEOUT] [--type TYPE]
 ```
 {: pre}
@@ -6495,7 +6504,7 @@ ibmcloud oc nlb-dns secret rm --cluster mycluster --nlb-subdomain mycluster-a1b2
 
 Enable Secure By Default VPC Networking for a VPC cluster using legacy Security Groups.
 
-```txt
+```sh
 ibmcloud oc vpc secure-by-default enable --cluster CLUSTER [--disable-outbound-traffic-protection] [-f] [-q]
 ```
 {: pre}
@@ -7181,7 +7190,7 @@ ibmcloud oc vlan spanning get --region us-south
 
 List all VPCs in the targeted resource group. If no resource group is targeted, all VPCs in the account are listed.
 
-```txt
+```sh
 ibmcloud oc vpc ls [--output OUTPUT] [--provider PROVIDER] [-q]
 ```
 {: pre}
@@ -7205,7 +7214,7 @@ ibmcloud oc vpc ls [--output OUTPUT] [--provider PROVIDER] [-q]
 
 Disable outbound traffic protection for a Secure By Default VPC cluster.
 
-```txt
+```sh
 ibmcloud oc vpc outbound-traffic-protection disable --cluster CLUSTER [-f] [-q]
 ```
 {: pre}
@@ -7230,7 +7239,7 @@ ibmcloud oc vpc outbound-traffic-protection disable --cluster CLUSTER [-f] [-q]
 
 Enable outbound traffic protection for a Secure By Default VPC cluster.
 
-```txt
+```sh
 ibmcloud oc vpc outbound-traffic-protection enable --cluster CLUSTER [-f] [-q]
 ```
 {: pre}
@@ -7258,7 +7267,7 @@ ibmcloud oc vpc outbound-traffic-protection enable --cluster CLUSTER [-f] [-q]
 Attach a Virtual Network Interface to a bare metal worker node or cluster.
 {: shortdesc}
 
-```txt
+```sh
 ibmcloud oc vni attach baremetal --vlan VLAN --vni VNI [--auto-delete] [--output OUTPUT] [-q] (--cluster-id ID | --worker WORKER)
 ```
 {: pre}
@@ -7298,7 +7307,7 @@ ibmcloud oc vni attach baremetal --vlan VLAN --vni VNI [--auto-delete] [--output
 Detach a Virtual Network Interface from a worker node or cluster.
 {: shortdesc}
 
-```txt
+```sh
 ibmcloud oc vni detach --vni VNI [-f] [--output OUTPUT] [-q] (--cluster-id ID | --worker WORKER)
 ```
 {: pre}
@@ -7335,11 +7344,11 @@ ibmcloud oc vni detach --vni VNI [-f] [--output OUTPUT] [-q] (--cluster-id ID | 
 List Virtual Network Interfaces attached to a cluster or worker node.
 {: shortdesc}
 
-```txt
+```sh
 ibmcloud oc vni ls [--after AFTER] [--first FIRST] [--output OUTPUT] [-q] (--cluster-id ID | --worker WORKER)
 ```
 {: pre}
-{: #vni-ls-usage}
+
 
 ### Command options
 {: #vni-ls-options}
@@ -7772,7 +7781,7 @@ Reset or sync a security group to the [default traffic rules](/docs/openshift?to
 
 List all security groups associated with a cluster.
 
-```txt
+```sh
 ibmcloud oc security-group ls --cluster CLUSTER [--attached-to ATTACHED] [--managed-by MANAGER] [--output OUTPUT] [-q] [--scope SCOPE]
 ```
 {: pre}
@@ -8493,7 +8502,7 @@ ibmcloud oc zone add satellite --zone myzone2 --cluster my_cluster -p pool1 -p p
 
 [Expires on 2026-07-14] Get the default trusted profile for clusters created in a resource-group.
 
-```txt
+```sh
 ibmcloud oc experimental trusted-profile default get --region REGION --resource-group GROUP [--output OUTPUT] [-q]
 ```
 {: pre}
@@ -8521,7 +8530,7 @@ ibmcloud oc experimental trusted-profile default get --region REGION --resource-
 
 [Expires on 2026-07-14] Set the default trusted profile for clusters created in a resource-group.
 
-```txt
+```sh
 ibmcloud oc experimental trusted-profile default set --region REGION --resource-group GROUP --trusted-profile PROFILE [--output OUTPUT] [-q]
 ```
 {: pre}
@@ -8552,7 +8561,7 @@ ibmcloud oc experimental trusted-profile default set --region REGION --resource-
 
 [Expires on 2026-07-14] Get trusted profile for a cluster.
 
-```txt
+```sh
 ibmcloud oc experimental trusted-profile get --cluster CLUSTER [--output OUTPUT] [-q]
 ```
 {: pre}
@@ -8577,7 +8586,7 @@ ibmcloud oc experimental trusted-profile get --cluster CLUSTER [--output OUTPUT]
 
 [Expires on 2026-07-14] Set trusted profile on a cluster.
 
-```txt
+```sh
 ibmcloud oc experimental trusted-profile set --cluster CLUSTER --trusted-profile PROFILE [--output OUTPUT] [-q]
 ```
 {: pre}
