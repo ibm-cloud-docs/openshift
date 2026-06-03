@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2024, 2026
-lastupdated: "2026-05-27"
+lastupdated: "2026-06-03"
 
 
 keywords: openshift, {{site.data.keyword.openshiftlong_notm}}, ai, add-on
@@ -87,6 +87,7 @@ Complete these steps before you install the add-on.
     ibmcloud oc vpc outbound-traffic-protection disable --cluster CLUSTER
     ```
     {: pre}
+
 
 
 ## Prerequisites
