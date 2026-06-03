@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2026
-lastupdated: "2026-05-26"
+lastupdated: "2026-06-03"
 
 
 keywords: openshift
@@ -363,7 +363,7 @@ This table is moving. For the latest IP lists and continued updates, see the pri
 #### Open ports
 {: #firewall_private_open_ports}
 
-Open the following ports in your allowlist for your worker nodes to function properly. The following ports need should be open all destination IPs.
+Open the following ports in your allowlist for your worker nodes to function properly. The following ports need to be open for all destination IPs.
 
 - Allow outbound TCP and UDP connections from the workers to ports 80 and 443 to allow worker node updates and reloads.
 - Allow outbound TCP and UDP to port 2049 to allow mounting file storage as volumes.
@@ -383,9 +383,6 @@ To permit worker nodes to communicate with {{site.data.keyword.registrylong_notm
 
 - `TCP port 443 FROM <each_worker_node_privateIP> TO <registry_ip>`
 - Replace `<registry_ip>` with the registry IP address to which you want to allow traffic. The global registry stores IBM-provided public images, and regional registries store your own private or public images.
-
-On 23 June 2022, only the `br-sao` and `ca-tor` regions changed. The remaining regions changed on 5 July 2022.
-{: note}
 
 | {{site.data.keyword.openshiftlong_notm}} region | Registry address  | Registry private IP addresses until 5 July 2022 | Registry private IP addresses after 5 July 2022 |
 | --- | --- | --- | --- |
@@ -506,6 +503,11 @@ If you want to access services that run inside or outside {{site.data.keyword.cl
 
 By default, all IP addresses can be used to log in to the {{site.data.keyword.cloud_notm}} console and perform actions to manage your cluster, such as creating, updating, deleting or viewing credentials. In the IBM Cloud Identity and Access Management (IAM) console, you can [create an allowlist by specifying which IP addresses have access](/docs/iam?topic=iam-ips), and all other IP addresses are restricted.
 {: shortdesc} 
+
+If you choose to set an IAM allowlist, you must include a network zone that includes the {{site.data.keyword.containershort}}.  Otherwise your existing clusters will not function properly.  This is because the {{site.data.keyword.containershort}} control plane needs to be able to contact IAM to deploy and manage IBM services necessary for your cluster.  Follow these instructions carefully before setting your IBM allowlist.
+{: important}
+
+TODO/QUESTION: Do we need a diagram showing the Kubernetes Service control plane contacting IAM from our Kubernetes Service IP ranges (that are in the network zone)?
 
 In your allowlist, you must also configure network zones in the {{site.data.keyword.openshiftlong_notm}} control plane for the region where your cluster is located so that {{site.data.keyword.openshiftlong_notm}} can create or access components such as Ingress ALBs  or the {{site.data.keyword.redhat_openshift_notm}} web console, which requires all control plane IP addresses.
 
