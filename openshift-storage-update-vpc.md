@@ -2,7 +2,7 @@
 
 copyright:
   years: 2023, 2026
-lastupdated: "2026-06-02"
+lastupdated: "2026-06-03"
 
 
 keywords: openshift, openshift data foundation, openshift container storage, ocs, worker update, worker replace
@@ -29,10 +29,10 @@ completion-time: 60m
 [Virtual Private Cloud]{: tag-vpc}
 
 
-For VPC clusters with a storage solution such as OpenShift Data Foundation you must cordon, drain, and replace each worker node sequentially. If you deployed OpenShift Data Foundation to a subset of worker nodes in your cluster, then after you replace the worker node, you must then edit the `ocscluster` resource to include the new worker node.
+For VPC clusters with a storage solution such as OpenShift Data Foundation you must cordon, drain, and update each worker node sequentially. For bare metal worker nodes, use the `worker reload` command instead of `worker replace`. If you deployed OpenShift Data Foundation to a subset of worker nodes in your cluster, then after you update the worker node, you must then edit the `ocscluster` resource to include the new worker node.
 {: shortdesc}
 
-The following tutorial covers both major and minor updates and worker replacement.
+The following tutorial covers both major and minor updates and worker node updates.
 
 [Major update]{: tag-red}
 :   Complete the steps with this label to apply a major update; for example, if you are updating your worker nodes to a new major version, such as from `4.11` to `4.12` as well as OpenShift Data Foundation from `4.11` to `4.12`.
@@ -257,9 +257,9 @@ Make sure the storage cluster is healthy before continuing.
 	```
 	{: screen}
 	
-1. Wait until draining finishes, then complete the following steps to replace the worker node. 
+1. Wait until draining finishes, then complete the following steps to update the worker node.
 
-## Replace the worker node
+## Update the worker node
 {: #upgrade-worker-node-vpc}
 {: step}
 
@@ -275,29 +275,35 @@ Make sure the storage cluster is healthy before continuing.
 	
 	Example output
 	```sh
-	ID                                                 Primary IP     Flavor     State    Status   Zone        Version   
-	kube-c85ra07w091uv4nid9ug-vpcoc-default-000001c1   10.241.128.4   bx2.4x16   normal   Ready    us-east-3   4.8.29_1544_openshift*   
-	kube-c85ra07w091uv4nid9ug-vpcoc-default-00000288   10.241.0.4     bx2.4x16   normal   Ready    us-east-1   4.8.29_1544_openshift*   
+	ID                                                 Primary IP     Flavor     State    Status   Zone        Version
+	kube-c85ra07w091uv4nid9ug-vpcoc-default-000001c1   10.241.128.4   bx2.4x16   normal   Ready    us-east-3   4.8.29_1544_openshift*
+	kube-c85ra07w091uv4nid9ug-vpcoc-default-00000288   10.241.0.4     bx2.4x16   normal   Ready    us-east-1   4.8.29_1544_openshift*
 	kube-c85ra07w091uv4nid9ug-vpcoc-default-00000352   10.241.64.4    bx2.4x16   normal   Ready    us-east-2   4.8.29_1544_openshift*
 	```
 	{: pre}
 
 
-1.  Replace the worker node. 
+1.  Update the worker node. For bare metal worker nodes, use the `worker reload` command. For virtual server instance (VSI) worker nodes, use the `worker replace` command.
 
-	[Minor update]{: tag-blue} Example command to replace the worker node and apply the latest patch update.
+	**Bare metal worker nodes**: Use the `worker reload` command to reload the worker node.
+	```sh
+	ibmcloud oc worker reload -c CLUSTER --worker kube-***
+	```
+	{: pre}
+
+	**VSI worker nodes**: [Minor update]{: tag-blue} Example command to replace the worker node and apply the latest patch update.
 	```sh
 	ibmcloud oc worker replace -c CLUSTER --worker kube-*** --update
 	```
 	{: pre}
 
-	[Worker replace]{: tag-green} Example command to replace the worker node without applying the latest patch update.
+	**VSI worker nodes**: [Worker replace]{: tag-green} Example command to replace the worker node without applying the latest patch update.
 	```sh
 	ibmcloud oc worker replace -c CLUSTER --worker kube-***
 	```
 	{: pre}
 		
-	Example output
+	Example output for VSI worker node replacement:
 	```sh
 	The replacement worker node is created in the same zone with the same flavor, but gets new public or private IP addresses. During the replacement, all pods might be rescheduled onto other worker nodes and data is deleted if not stored outside the pod. To avoid downtime, ensure that you have enough worker nodes to handle your workload while the selected worker nodes are being replaced.
 	Replace worker node kube-c85ra07w091uv4nid9ug-cluster-default-00000288? [y/N]> y
@@ -305,7 +311,7 @@ Make sure the storage cluster is healthy before continuing.
 	```
 	{: screen}
 	
-1. Wait for the replacement node to be provisioned and then list your worker nodes. Note that this process might take 20 minutes or more.
+1. Wait for the worker node to be reloaded or replaced and then list your worker nodes. Note that this process might take 20 minutes or more.
 
 	```sh
 	oc get nodes

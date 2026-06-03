@@ -4631,7 +4631,7 @@ subcollection: openshift
 
 * [Cordon and drain the worker node](/docs/openshift?topic=openshift-openshift-storage-update-vpc#cordon-drain-worker-node-vpc)
 
-* [Replace the worker node](/docs/openshift?topic=openshift-openshift-storage-update-vpc#upgrade-worker-node-vpc)
+* [Update the worker node](/docs/openshift?topic=openshift-openshift-storage-update-vpc#upgrade-worker-node-vpc)
 
 * [Clean up the resources from the old node](/docs/openshift?topic=openshift-openshift-storage-update-vpc#cleanup-os-storage-vpc)
 
@@ -7614,7 +7614,7 @@ subcollection: openshift
 
 * [Change log for version 2.2.53, released 25 May 2026](/docs/openshift?topic=openshift-cos_plugin_changelog#02253_object_plugin)
 
-* [Change log for version 2.2.52, released 10 May 2026](/docs/openshift?topic=openshift-cos_plugin_changelog#02252_object_plugin)
+* [Change log for version 2.2.52, released 19 May 2026](/docs/openshift?topic=openshift-cos_plugin_changelog#02252_object_plugin)
 
 * [Change log for version 2.2.51, released 17 April 2026](/docs/openshift?topic=openshift-cos_plugin_changelog#02251_object_plugin)
 
