@@ -2,7 +2,7 @@
 
 copyright:
   years: 2025, 2026
-lastupdated: "2026-06-02"
+lastupdated: "2026-06-03"
 
 keywords: openshift, virtualization, virtual machines, vms, bare metal
 
@@ -177,4 +177,4 @@ For custom deployment:
 
 Additional resources:
 - [Managing virtual network interfaces](/docs/openshift?topic=openshift-vni-virtualization)
-- [Red Hat OpenShift Virtualization documentation](https://docs.redhat.com/en/documentation/openshift_container_platform/4.20/html/virtualization/index){: external}
+- [Red Hat OpenShift Virtualization documentation](https://docs.redhat.com/en/documentation/openshift_container_platform/4.21/html/virtualization/index){: external}

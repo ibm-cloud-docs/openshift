@@ -4631,7 +4631,7 @@ subcollection: openshift
 
 * [Cordon and drain the worker node](/docs/openshift?topic=openshift-openshift-storage-update-vpc#cordon-drain-worker-node-vpc)
 
-* [Replace the worker node](/docs/openshift?topic=openshift-openshift-storage-update-vpc#upgrade-worker-node-vpc)
+* [Update the worker node](/docs/openshift?topic=openshift-openshift-storage-update-vpc#upgrade-worker-node-vpc)
 
 * [Clean up the resources from the old node](/docs/openshift?topic=openshift-openshift-storage-update-vpc#cleanup-os-storage-vpc)
 
@@ -7614,7 +7614,7 @@ subcollection: openshift
 
 * [Change log for version 2.2.53, released 25 May 2026](/docs/openshift?topic=openshift-cos_plugin_changelog#02253_object_plugin)
 
-* [Change log for version 2.2.52, released 10 May 2026](/docs/openshift?topic=openshift-cos_plugin_changelog#02252_object_plugin)
+* [Change log for version 2.2.52, released 19 May 2026](/docs/openshift?topic=openshift-cos_plugin_changelog#02252_object_plugin)
 
 * [Change log for version 2.2.51, released 17 April 2026](/docs/openshift?topic=openshift-cos_plugin_changelog#02251_object_plugin)
 
@@ -8893,6 +8893,18 @@ subcollection: openshift
     * [Cleaning up after debugging](/docs/openshift?topic=openshift-cs_ssh_worker#ssh-debug-cleanup)
 
 [Why do I see a `Registration failed` error when I try to provision or reload worker nodes?](/docs/openshift?topic=openshift-ts-worker-plan-not-avail#ts-worker-plan-not-avail)
+
+[Why do pods show "pull QPS exceeded" errors during image pulls?](/docs/openshift?topic=openshift-ts-vpc-image-pull-qps#ts-vpc-image-pull-qps)
+
+* [Check disk I/O bandwidth](/docs/openshift?topic=openshift-ts-vpc-image-pull-qps#check-bandwidth-openshift)
+
+    * [Check image pull times](/docs/openshift?topic=openshift-ts-vpc-image-pull-qps#check-pull-times)
+
+* [Resolve the issue](/docs/openshift?topic=openshift-ts-vpc-image-pull-qps#resolve-bandwidth)
+
+    * [Primary solution: Use worker pools with secondary storage](/docs/openshift?topic=openshift-ts-vpc-image-pull-qps#use-secondary-storage)
+
+    * [Additional considerations](/docs/openshift?topic=openshift-ts-vpc-image-pull-qps#additional-considerations)
 
 [Pods in the `openshift-marketplace` namespace are in `ImagePullBackOff`](/docs/openshift?topic=openshift-ts-openshift-marketplace#ts-openshift-marketplace)
 

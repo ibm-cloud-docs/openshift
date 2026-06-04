@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2026
-lastupdated: "2026-04-23"
+lastupdated: "2026-06-03"
 
 
 keywords: openshift, firewall, ips
@@ -361,6 +361,11 @@ For more information see the [IBM NS1 Connect Documentation about monitoring](ht
 
 By default, all IP addresses can be used to log in to the {{site.data.keyword.cloud_notm}} console and perform actions to manage your cluster, such as creating, updating, deleting or viewing credentials. In the IBM Cloud Identity and Access Management (IAM) console, you can [create an allowlist by specifying which IP addresses have access](/docs/iam?topic=iam-ips), and all other IP addresses are restricted.
 {: shortdesc} 
+
+If you choose to set an IAM allowlist, you must include a network zone that includes the {{site.data.keyword.containershort}}.  Otherwise your existing clusters will not function properly.  This is because the {{site.data.keyword.containershort}} control plane needs to be able to contact IAM to deploy and manage IBM services necessary for your cluster.  Follow these instructions carefully before setting your IBM allowlist.
+{: important}
+
+TODO/QUESTION: Do we need a diagram showing the Kubernetes Service control plane contacting IAM from our Kubernetes Service IP ranges (that are in the network zone)?
 
 In your allowlist, you must also configure network zones in the {{site.data.keyword.openshiftlong_notm}} control plane for the region where your cluster is located so that {{site.data.keyword.openshiftlong_notm}} can create or access components such as Ingress ALBs  or the {{site.data.keyword.redhat_openshift_notm}} web console, which requires all control plane IP addresses.
 
