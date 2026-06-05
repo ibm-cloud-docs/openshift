@@ -296,6 +296,7 @@ toc:
               - storage-block-vpc-unmanaged.md
               - storage-block-vpc-remove.md
               - storage-block-vpc-migration.md
+              - storage-block-vpc-profile-migration.md
               - storage-block-vpc-sc-ref.md
               - storage-block-vpc-unmanaged.md
               - topic: hpcs-kp-migration-block.md
