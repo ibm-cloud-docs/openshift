@@ -4183,6 +4183,42 @@ subcollection: openshift
 
 * [Continue migrating your snapshots and apps to Account 2](/docs/openshift?topic=openshift-storage-block-vpc-migration#vpc-block-mig-snapshot-next)
 
+[Migrating {{site.data.keyword.block_storage_is_short}} volumes from Gen-1 to Gen-2 profiles](/docs/openshift?topic=openshift-storage-block-vpc-profile-migration#storage-block-vpc-profile-migration)
+
+* [Understanding the profile generations](/docs/openshift?topic=openshift-storage-block-vpc-profile-migration#vpc-block-profile-generations)
+
+    * [Key differences between generations](/docs/openshift?topic=openshift-storage-block-vpc-profile-migration#vpc-block-profile-differences)
+
+* [Before you begin](/docs/openshift?topic=openshift-storage-block-vpc-profile-migration#vpc-block-profile-migration-prereqs)
+
+* [Identify volumes for migration](/docs/openshift?topic=openshift-storage-block-vpc-profile-migration#vpc-block-profile-identify)
+
+* [Check the current volume configuration](/docs/openshift?topic=openshift-storage-block-vpc-profile-migration#vpc-block-profile-check)
+
+* [Start the migration](/docs/openshift?topic=openshift-storage-block-vpc-profile-migration#vpc-block-profile-migrate)
+
+* [Monitor migration progress](/docs/openshift?topic=openshift-storage-block-vpc-profile-migration#vpc-block-profile-monitor)
+
+* [Verify migration completion](/docs/openshift?topic=openshift-storage-block-vpc-profile-migration#vpc-block-profile-verify)
+
+* [Updating the PersistentVolume metadata](/docs/openshift?topic=openshift-storage-block-vpc-profile-migration#vpc-block-profile-update-pv)
+
+* [Validate your application](/docs/openshift?topic=openshift-storage-block-vpc-profile-migration#vpc-block-profile-validate)
+
+* [Create a Gen-2 StorageClass](/docs/openshift?topic=openshift-storage-block-vpc-profile-migration#vpc-block-profile-storageclass)
+
+* [Adjust IOPS to optimize performance](/docs/openshift?topic=openshift-storage-block-vpc-profile-migration#vpc-block-profile-optimize)
+
+* [Troubleshooting](/docs/openshift?topic=openshift-storage-block-vpc-profile-migration#vpc-block-profile-troubleshooting)
+
+    * [Migration stuck in updating status](/docs/openshift?topic=openshift-storage-block-vpc-profile-migration#vpc-block-profile-ts-stuck)
+
+    * [PVC shows old StorageClass](/docs/openshift?topic=openshift-storage-block-vpc-profile-migration#vpc-block-profile-ts-pvc-class)
+
+    * [Performance not improved](/docs/openshift?topic=openshift-storage-block-vpc-profile-migration#vpc-block-profile-ts-performance)
+
+* [Next steps](/docs/openshift?topic=openshift-storage-block-vpc-profile-migration#vpc-block-profile-next-steps)
+
 [{{site.data.keyword.block_storage_is_short}} storage class reference](/docs/openshift?topic=openshift-storage-block-vpc-sc-ref#storage-block-vpc-sc-ref)
 
 [Setting up {{site.data.keyword.block_storage_is_short}} for unmanaged clusters](/docs/openshift?topic=openshift-vpc-block-storage-driver-unmanaged#vpc-block-storage-driver-unmanaged)
