@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2026
-lastupdated: "2026-05-28"
+lastupdated: "2026-06-05"
 
 
 keywords: openshift, node scaling, ca, autoscaler
@@ -955,7 +955,7 @@ These conditions might impact cluster flavor availability:
 
 | Name | Data centers | Resources | OS | Primary storage | Secondary storage | Secondary storage options (GB / iops-tier)|
 | ---- | ---- |-------------------------------- | ---- | --------------- | ----------------- |  -------------- | 
-|No flavors available.| N/A | N/A | N/A | N/A | N/A | N/A |
+| mx3d.metal.192x2048  \n(Memory) | br-sao-1  \nbr-sao-2  \nbr-sao-3 | 96 cores  \n2048GB memory  \n100Gbps network speed  \n No GPUs |  RHCOS  \n| 480GB SSD | N/A | N/A|
 {: class="simple-tab-table"}
 {: caption="Bare metal flavors in Sao Paulo." caption-side="bottom"}
 {: #br-sao-physical-table}
