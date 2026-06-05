@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2026
-lastupdated: "2026-04-30"
+lastupdated: "2026-06-05"
 
 
 keywords: openshift, http2, quota, app protocol, application protocol
@@ -157,6 +157,7 @@ Keep in mind that the [service](#tech_limits) limitations also apply.
 | Encryption | The secondary disks of your worker nodes are encrypted at rest by default by the [underlying VPC infrastructure provider](/docs/vpc?topic=vpc-block-storage-about#vpc-storage-encryption). However, you can't [bring your own encryption to the underlying virtual server instances](/docs/vpc?topic=vpc-file-storage-byok-encryption&interface=ui). |
 | Location | VPC clusters are available only in [select multizone regions](/docs/openshift?topic=openshift-regions-and-zones#zones-vpc). |
 | Virtual Private Cloud | See [Limitations](/docs/vpc?topic=vpc-limitations) and [Quotas](/docs/vpc?topic=vpc-quotas). |
+| VPC resource quotas | VPC manages quotas for vCPU, memory, GPU, instance storage, and optimized instance storage resources on a per-account basis. When you provision virtual server instance (VSI) worker nodes on public infrastructure, these resources count against your VPC account quotas. If you reach a quota limit, worker node provisioning fails. To view your current quotas and usage, see [Viewing VPC resource metrics](/docs/vpc?topic=vpc-vpc-quota-metrics){: external}. To request a quota increase, open a support case with VPC. For more information, see [VPC quotas](/docs/vpc?topic=vpc-quotas){: external}. \n \n **Note**: This quota management currently applies only to VSI worker nodes on public infrastructure. {{site.data.keyword.openshiftlong_notm}} continues to manage quotas for dedicated host and bare metal worker nodes. |
 | Worker node flavors | Only certain flavors are available for worker node virtual machines. Bare metal machines are not supported.|
 | Worker node host access | For security, you can't SSH into the worker node compute host. |
 | Worker node updates | You can't update or reload VPC worker nodes. Instead, you can delete the worker node and rebalance the worker pool with the `ibmcloud oc worker replace` command. If you replace multiple worker nodes at the same time, they are deleted and replaced concurrently, not one by one. Make sure that you have enough capacity in your cluster to reschedule your workloads before you replace worker nodes. |
