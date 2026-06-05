@@ -3,7 +3,7 @@
 copyright:
   years: 2026, 2026
 
-lastupdated: "2026-05-22"
+lastupdated: "2026-06-05"
 
 
 keywords: change log, version history, 4.20_openshift
@@ -37,6 +37,24 @@ Master patch updates are applied automatically. Worker node patch updates can be
 
 ## Version 4.20
 {: #420_components}
+
+
+### Worker node fix pack 4.20.23_1550_openshift, released 03 June 2026
+{: #cl-boms-42023_1550_openshift_W}
+
+The following table shows the components included in the worker node fix pack 4.20.23_1550_openshift. Worker node patch updates can be applied by updating, reloading (in classic infrastructure), or replacing (in VPC infrastructure) the worker node.
+{: shortdesc}
+
+| Component | Description |
+| ---- | ---- |
+|RHEL 9 (VPC) 5.14.0-570.116.1.el9_6|Resolves the following CVEs: [RHSA-2026:21392](https://access.redhat.com/errata/RHSA-2026:21392){: external}, [CVE-2026-4802](https://nvd.nist.gov/vuln/detail/CVE-2026-4802){: external}, [RHSA-2026:18042](https://access.redhat.com/errata/RHSA-2026:18042){: external}, [CVE-2026-39979](https://nvd.nist.gov/vuln/detail/CVE-2026-39979){: external}, [CVE-2026-40164](https://nvd.nist.gov/vuln/detail/CVE-2026-40164){: external}, [RHSA-2026:16312](https://access.redhat.com/errata/RHSA-2026:16312){: external}, [CVE-2026-43284](https://nvd.nist.gov/vuln/detail/CVE-2026-43284){: external}, [RHSA-2026:20129](https://access.redhat.com/errata/RHSA-2026:20129){: external}, [CVE-2026-46300](https://nvd.nist.gov/vuln/detail/CVE-2026-46300){: external}, [CVE-2026-46333](https://nvd.nist.gov/vuln/detail/CVE-2026-46333){: external}, [RHSA-2026:19458](https://access.redhat.com/errata/RHSA-2026:19458){: external}, [CVE-2026-4878](https://nvd.nist.gov/vuln/detail/CVE-2026-4878){: external}, [RHSA-2026:18031](https://access.redhat.com/errata/RHSA-2026:18031){: external}, [CVE-2026-41651](https://nvd.nist.gov/vuln/detail/CVE-2026-41651){: external}, [RHSA-2026:19576](https://access.redhat.com/errata/RHSA-2026:19576){: external}, [CVE-2026-4786](https://nvd.nist.gov/vuln/detail/CVE-2026-4786){: external}, [CVE-2026-6100](https://nvd.nist.gov/vuln/detail/CVE-2026-6100){: external}, [RHSA-2026:20603](https://access.redhat.com/errata/RHSA-2026:20603){: external}, [CVE-2024-12086](https://nvd.nist.gov/vuln/detail/CVE-2024-12086){: external}, [CVE-2025-10158](https://nvd.nist.gov/vuln/detail/CVE-2025-10158){: external}, [CVE-2026-41035](https://nvd.nist.gov/vuln/detail/CVE-2026-41035){: external}, [RHSA-2026:19457](https://access.redhat.com/errata/RHSA-2026:19457){: external}, [CVE-2025-14087](https://nvd.nist.gov/vuln/detail/CVE-2025-14087){: external}, [CVE-2025-14512](https://nvd.nist.gov/vuln/detail/CVE-2025-14512){: external}, [RHSA-2026:20548](https://access.redhat.com/errata/RHSA-2026:20548){: external}, and [CVE-2026-33416](https://nvd.nist.gov/vuln/detail/CVE-2026-33416){: external}.|
+|RHEL 9 (Satellite) 5.14.0-570.62.1.el9_6|N/A|
+|RHEL 9 (Classic) 5.14.0-570.116.1.el9_6|Resolves the following CVEs: [RHSA-2026:18042](https://access.redhat.com/errata/RHSA-2026:18042){: external}, [CVE-2026-39979](https://nvd.nist.gov/vuln/detail/CVE-2026-39979){: external}, [CVE-2026-40164](https://nvd.nist.gov/vuln/detail/CVE-2026-40164){: external}, [RHSA-2026:16312](https://access.redhat.com/errata/RHSA-2026:16312){: external}, [CVE-2026-43284](https://nvd.nist.gov/vuln/detail/CVE-2026-43284){: external}, [RHSA-2026:20129](https://access.redhat.com/errata/RHSA-2026:20129){: external}, [CVE-2026-46300](https://nvd.nist.gov/vuln/detail/CVE-2026-46300){: external}, [CVE-2026-46333](https://nvd.nist.gov/vuln/detail/CVE-2026-46333){: external}, [RHSA-2026:19458](https://access.redhat.com/errata/RHSA-2026:19458){: external}, [CVE-2026-4878](https://nvd.nist.gov/vuln/detail/CVE-2026-4878){: external}, [RHSA-2026:19576](https://access.redhat.com/errata/RHSA-2026:19576){: external}, [CVE-2026-4786](https://nvd.nist.gov/vuln/detail/CVE-2026-4786){: external}, [CVE-2026-6100](https://nvd.nist.gov/vuln/detail/CVE-2026-6100){: external}, [RHSA-2026:19457](https://access.redhat.com/errata/RHSA-2026:19457){: external}, [CVE-2025-14087](https://nvd.nist.gov/vuln/detail/CVE-2025-14087){: external}, [CVE-2025-14512](https://nvd.nist.gov/vuln/detail/CVE-2025-14512){: external}, [RHSA-2026:20548](https://access.redhat.com/errata/RHSA-2026:20548){: external}, and [CVE-2026-33416](https://nvd.nist.gov/vuln/detail/CVE-2026-33416){: external}.|
+|Red Hat OpenShift 4.20.23|For more information, see the [change logs](https://docs.redhat.com/en/documentation/openshift_container_platform/4.20/html/release_notes/ocp-4-20-release-notes.html#ocp-4-20-23_release-notes).|
+|Red Hat CoreOS 4.20.23|For more information, see the [change logs](https://docs.redhat.com/en/documentation/openshift_container_platform/4.20/html/release_notes/ocp-4-20-release-notes.html#ocp-4-20-23_release-notes).|
+|HAProxy 0e0730588ba21878845cdb0bee615a371a489a02|Resolves the following CVEs: [CVE-2026-4046](https://nvd.nist.gov/vuln/detail/CVE-2026-4046){: external}, [CVE-2026-33846](https://nvd.nist.gov/vuln/detail/CVE-2026-33846){: external}, [CVE-2026-42010](https://nvd.nist.gov/vuln/detail/CVE-2026-42010){: external}, [CVE-2026-5260](https://nvd.nist.gov/vuln/detail/CVE-2026-5260){: external}, [CVE-2026-42014](https://nvd.nist.gov/vuln/detail/CVE-2026-42014){: external}, [CVE-2026-3833](https://nvd.nist.gov/vuln/detail/CVE-2026-3833){: external}, [CVE-2026-42015](https://nvd.nist.gov/vuln/detail/CVE-2026-42015){: external}, [CVE-2026-33845](https://nvd.nist.gov/vuln/detail/CVE-2026-33845){: external}, [CVE-2026-42011](https://nvd.nist.gov/vuln/detail/CVE-2026-42011){: external}, [CVE-2026-42009](https://nvd.nist.gov/vuln/detail/CVE-2026-42009){: external}, [CVE-2026-42013](https://nvd.nist.gov/vuln/detail/CVE-2026-42013){: external}, and [CVE-2026-42012](https://nvd.nist.gov/vuln/detail/CVE-2026-42012){: external}.|
+{: caption="4.20.23_1550_openshift fix pack." caption-side="bottom"}
+{: #cl-boms-42023_1550_openshift_W-component-table}
 
 
 ### Master fix pack 4.20.21_1548_openshift, released 22 May 2026
