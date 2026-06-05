@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2026
-lastupdated: "2026-06-01"
+lastupdated: "2026-06-05"
 
 
 keywords: kubernetes, clusters, worker nodes, worker pools, vpc-gen2, openshift, {{site.data.keyword.openshiftlong_notm}}
@@ -29,6 +29,8 @@ Looking to run virtual machines? [OpenShift Virtualization Service](/docs/opensh
 
 ## Prerequisites and notes
 {: #cluster-create-vpc-prereq}
+
+* Ensure that your VPC account has sufficient quota for vCPU, memory, GPU, instance storage, and optimized instance storage resources. VPC manages these quotas on a per-account basis for virtual server instance (VSI) worker nodes. If you reach a quota limit, worker node provisioning fails. To check your current quota usage, see [Viewing VPC resource metrics](/docs/vpc?topic=vpc-vpc-quota-metrics){: external}. For more information, see [VPC quotas](/docs/vpc?topic=vpc-quotas){: external} and [Why do my VPC worker nodes fail to provision due to quota limits?](/docs/openshift?topic=openshift-ts-worker-vpc-quota).
 
 * If worker nodes must access public endpoints, or if you plan to enable both the public and private cloud service endpoints, you must attach a public gateway to each subnet in your VPC to access default {{site.data.keyword.redhat_openshift_notm}} components such as the web console or OperatorHub.
 

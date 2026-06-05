@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2026
-lastupdated: "2026-05-26"
+lastupdated: "2026-06-05"
 
 
 keywords: openshift, {{site.data.keyword.openshiftlong_notm}}, clusters, worker nodes, worker pools, add
@@ -22,6 +22,9 @@ subcollection: openshift
 
 Reviewing the following sections for information on how to add worker nodes to your VPC cluster.
 {: shortdesc}
+
+Before you add worker nodes, ensure that your VPC account has sufficient quota for vCPU, memory, GPU, instance storage, and optimized instance storage resources. VPC manages these quotas on a per-account basis for virtual server instance (VSI) worker nodes. If you reach a quota limit, worker node provisioning fails. To check your current quota usage, see [Viewing VPC resource metrics](/docs/vpc?topic=vpc-vpc-quota-metrics){: external}. For more information, see [VPC quotas](/docs/vpc?topic=vpc-quotas){: external} and [Why do my VPC worker nodes fail to provision due to quota limits?](/docs/openshift?topic=openshift-ts-worker-vpc-quota).
+{: important}
 
 To increase the availability of your apps, you can add worker nodes to an existing zone or multiple existing zones in your cluster. To help protect your apps from zone failures, you can add zones to your cluster.
 

@@ -275,6 +275,8 @@ toc:
                 navtitle: Setting up storage
               - topic: oc-virtualization.md
                 navtitle: Installing the operator
+              - topic: virt-vpc-file-vm-create.md
+                navtitle: Creating VMs with VPC File Storage
           - topic: vni-virtualization.md
             navtitle: Managing virtual network interfaces
       - topicgroup:

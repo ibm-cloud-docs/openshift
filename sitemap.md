@@ -3955,6 +3955,24 @@ subcollection: openshift
 
 * [Next steps](/docs/openshift?topic=openshift-oc-virtualization#virt-install-next-steps)
 
+[Creating VMs with VPC File Storage](/docs/openshift?topic=openshift-virt-vpc-file-vm-create#virt-vpc-file-vm-create)
+
+* [Before you begin](/docs/openshift?topic=openshift-virt-vpc-file-vm-create#virt-vpc-file-vm-create-prereqs)
+
+* [Verifying your environment](/docs/openshift?topic=openshift-virt-vpc-file-vm-create#virt-vpc-file-vm-create-verify)
+
+* [Creating a virtual machine from the web console](/docs/openshift?topic=openshift-virt-vpc-file-vm-create#virt-vpc-file-vm-create-console)
+
+* [Creating a virtual machine from the CLI](/docs/openshift?topic=openshift-virt-vpc-file-vm-create#virt-vpc-file-vm-create-cli)
+
+* [Validating the virtual machine](/docs/openshift?topic=openshift-virt-vpc-file-vm-create#virt-vpc-file-vm-create-validate)
+
+* [Understanding limitations and considerations](/docs/openshift?topic=openshift-virt-vpc-file-vm-create#virt-vpc-file-vm-create-limitations)
+
+* [Troubleshooting](/docs/openshift?topic=openshift-virt-vpc-file-vm-create#virt-vpc-file-vm-create-troubleshooting)
+
+* [Next steps](/docs/openshift?topic=openshift-virt-vpc-file-vm-create#virt-vpc-file-vm-create-next)
+
 [Managing virtual network interfaces](/docs/openshift?topic=openshift-vni-virtualization#vni-virtualization)
 
 * [Understanding Virtual Network Interfaces](/docs/openshift?topic=openshift-vni-virtualization#vni-about)
