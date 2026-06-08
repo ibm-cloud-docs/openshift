@@ -2,7 +2,7 @@
 
 copyright:
   years: 2025, 2026
-lastupdated: "2026-05-04"
+lastupdated: "2026-06-08"
 
 keywords: openshift, virtualization, planning, prerequisites, bare metal
 
@@ -26,20 +26,9 @@ Before you deploy OpenShift Virtualization on {{site.data.keyword.openshiftlong_
 ## Prerequisites
 {: #virt-prereqs}
 
-Account and permissions
-:   - {{site.data.keyword.cloud_notm}} account with IAM permissions for Kubernetes Service and VPC Infrastructure
-    - **Operator** role for Kubernetes Service
-    - **Editor** or **Administrator** role for VPC Infrastructure Services
+To deploy OpenShift Virtualization, you need an {{site.data.keyword.cloud_notm}} account with appropriate IAM permissions. Specifically, you need the **Operator** role for Kubernetes Service and either the **Editor** or **Administrator** role for VPC Infrastructure Services.
 
-Infrastructure
-:   - VPC with subnets in desired zones
-    - Sufficient quota for bare metal worker nodes
-
-Cluster
-:   - OpenShift 4.17 or later
-    - VPC bare metal workers with RHCOS
-    - OVN-Kubernetes CNI (required)
-    - Outbound traffic protection disabled
+Your VPC infrastructure must include a VPC with subnets in your desired zones and sufficient quota for bare metal worker nodes. Your OpenShift cluster must be version 4.17 or later, running on VPC bare metal workers with RHCOS. The cluster must use the OVN-Kubernetes CNI, and outbound traffic protection must be disabled.
 
 ## Planning your cluster configuration
 {: #virt-plan-cluster}
@@ -49,39 +38,16 @@ Cluster
 
 Select bare metal flavors based on your workload requirements. For a complete list of supported flavors, see [Bare metal flavors](/docs/openshift?topic=openshift-virt-overview#virt-bm-flavors).
 
-For OpenShift Data Foundation (ODF)
-:   Use bare metal flavors with the `d` suffix or `3d` in the name, which include NVME local storage. ODF requires local disks for optimal performance.
+If you plan to use OpenShift Data Foundation (ODF), choose bare metal flavors with the `d` suffix or `3d` in the name, which include NVME local storage. ODF requires local disks for optimal performance. 
 
-
-
-Workload considerations
-:   - **High-performance workloads**: Choose bare metal flavors with local storage and ODF
-:   - **Memory-intensive workloads**: Choose `mx` series bare metal flavors
-:   - **Compute-intensive workloads**: Choose `cx` series bare metal flavors
-:   - **Balanced workloads**: Choose `bx` series bare metal flavors
-:   - **Cost-optimized workloads**: Choose smaller bare metal flavors with VPC File Storage
+Match your bare metal flavor to your workload type. For high-performance workloads, choose bare metal flavors with local storage and ODF. Memory-intensive workloads perform best on `mx` series bare metal flavors, while compute-intensive workloads benefit from `cx` series flavors. For balanced workloads, select `bx` series bare metal flavors. 
 
 ### Worker pool architecture
 {: #virt-plan-worker-pools}
 
-Two-pool setup (recommended for cost optimization)
-:   - Bare metal pool for VM workloads
-    - VSI pool for infrastructure components
+For cost optimization, consider a two-pool setup with a bare metal pool for VM workloads and a VSI pool for infrastructure components. Alternatively, you can use a single-pool setup where all components run on bare metal nodes. This approach is simpler but has higher costs.
 
-Single-pool setup
-:   - All components on bare metal nodes
-    - Simpler but higher cost
-
-Single-zone deployments (recommended for virtualization)
-:   - Minimizes storage latency for VM workloads
-    - Simplifies VNI configuration (VNIs are zone-specific)
-    - Reduces cross-zone storage replication overhead
-
-Multi-zone deployments
-:   - Provides better high availability
-    - ODF requires 3+ zones for HA
-    - Cross-zone storage replication can impact VM performance
-    - Avoid cross-zone VM migration when using VNIs
+Single-zone deployments are recommended for virtualization workloads because they minimize storage latency for VM workloads, simplify VNI configuration (VNIs are zone-specific), and reduce cross-zone storage replication overhead. Multi-zone deployments provide better high availability, and ODF requires 3 or more zones for HA. However, cross-zone storage replication can impact VM performance, and you should avoid cross-zone VM migration when using VNIs.
 
 ## Planning your storage solution
 {: #virt-plan-storage}
@@ -105,9 +71,7 @@ OpenShift Virtualization requires storage that supports ReadWriteMany (RWX) acce
 {: #virt-storage-options}
 
 OpenShift Data Foundation (ODF)
-:   - Best for: Production, high I/O, snapshots/cloning needed
-    - Requires: Bare metal with local NVME storage, 3+ nodes, 3+ zones for HA
-    - See [Understanding ODF](/docs/openshift?topic=openshift-ocs-storage-prep)
+:   ODF is best suited for production environments with high I/O requirements and when you need snapshot or cloning support. ODF requires bare metal with local NVME storage, at least 3 nodes, and 3 or more zones for high availability. For more information, see [Understanding ODF](/docs/openshift?topic=openshift-ocs-storage-prep).
 
 
 
@@ -115,16 +79,9 @@ OpenShift Data Foundation (ODF)
 {: #virt-plan-networking}
 
 ### Networking options
-{: #virt-plan-networking}
+{: #virt-plan-networking-options}
 
-Basic networking (4.17+)
-:   Default pod network, Services, Routes, VPC load balancers
-
-Advanced with VNIs (4.20+)
-:   - Direct VPC connectivity, floating IPs, network preservation during migration
-    - Requires: NMState operator, OVS bridges, UDNs, OVN-Kubernetes CNI
-    - VNIs are zone-specific
-    - Generally available with OpenShift 4.20
+OpenShift 4.17 and later supports basic networking, which uses the default pod network, Services, Routes, and VPC load balancers. For more advanced networking capabilities, OpenShift 4.20 and later supports Virtual Network Interfaces (VNIs), which provide direct VPC connectivity, floating IPs, and network preservation during migration. VNIs require the NMState operator, OVS bridges, UDNs, and the OVN-Kubernetes CNI. Keep in mind that VNIs are zone-specific. The VNI feature is generally available with OpenShift 4.20.
 
 
 
@@ -137,48 +94,20 @@ For information about installing the NMState operator and configuring VNIs, see 
 ## Node placement
 {: #virt-plan-node-placement}
 
-Infrastructure components (KubeVirt operators, CDI, controllers)
-:   - Deploy on VSI nodes for cost optimization
-    - Use node selectors or taints/tolerations
+For cost optimization, deploy infrastructure components such as KubeVirt operators, CDI, and controllers on VSI nodes using node selectors or taints and tolerations. Deploy VM workloads on bare metal nodes for best performance, using node selectors to target bare metal nodes.
 
-VM workloads
-:   - Deploy on bare metal nodes for best performance
-    - Use node selectors to target bare metal nodes
-
-Example strategy
-:   1. Create `baremetal-pool` and `vsi-pool`
-    2. Label nodes: `node-role.kubernetes.io/worker-vm=true` (bare metal), `node-role.kubernetes.io/infra=true` (VSI)
-    3. Configure HyperConverged CR with node placement rules
+An effective placement strategy involves creating separate `baremetal-pool` and `vsi-pool` worker pools, then labeling nodes appropriately. Label bare metal nodes with `node-role.kubernetes.io/worker-vm=true` and VSI nodes with `node-role.kubernetes.io/infra=true`. Finally, configure the HyperConverged CR with node placement rules to enforce this separation.
 
 ## Sizing and optimization
 {: #virt-plan-sizing}
 
-Minimum cluster
-:   3 bare metal nodes in a single zone
+The minimum cluster configuration requires 3 bare metal nodes in a single zone. For production deployments, a single-zone configuration is recommended with 3 or more bare metal nodes plus additional VSI nodes for infrastructure. If you need high availability, deploy 3 or more bare metal nodes per zone across 3 zones, along with additional VSI nodes for infrastructure.
 
-Production cluster (single-zone recommended)
-:   3+ bare metal nodes in a single zone, additional VSI nodes for infrastructure
+When planning VM resources, reserve approximately 10 vCPU and 32 GB RAM per node for system overhead. For example, a 96 vCPU node provides approximately 86 vCPU for VMs.
 
-Production cluster (multi-zone for HA)
-:   3+ bare metal nodes per zone, 3 zones, additional VSI nodes for infrastructure
+To optimize costs, deploy infrastructure components on VSIs, right-size your VM resources, use appropriate storage IOPS classes, and consider reserved capacity for long-term use. For more information, see [Understanding cluster costs](/docs/openshift?topic=openshift-costs).
 
-VM resource planning
-:   - Reserve ~10 vCPU and ~32 GB RAM per node for system overhead
-    - Example: 96 vCPU node provides ~86 vCPU for VMs
-
-Cost optimization
-:   Deploy infrastructure on VSIs
-    3. Right-size VM resources
-    4. Use appropriate storage IOPS classes
-    5. Consider reserved capacity for long-term use
-
-    See [Understanding cluster costs](/docs/openshift?topic=openshift-costs).
-
-Security
-:   - Use security groups and network policies
-    - Enable storage encryption
-    - Configure RBAC for VM management
-    - Use {{site.data.keyword.secrets-manager_short}} for sensitive data
+For security, use security groups and network policies to control traffic, enable storage encryption to protect data at rest, configure RBAC for VM management to control access, and use {{site.data.keyword.secrets-manager_short}} for sensitive data such as credentials and certificates.
 
 ## Next steps
 {: #virt-plan-next-steps}

@@ -2,7 +2,7 @@
 
 copyright:
   years: 2025, 2026
-lastupdated: "2026-05-13"
+lastupdated: "2026-06-08"
 
 keywords: openshift, virtualization, storage, odf, vpc file, openshift data foundation
 
