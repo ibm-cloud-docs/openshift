@@ -130,7 +130,6 @@ Flavors with `d` suffix include local SSD storage, which is required for OpenShi
 | Storage | Performance | Snapshots | Cloning | Best for |
 |---------|-------------|-----------|---------|----------|
 | OpenShift Data Foundation | High | Yes | Yes | Production, high I/O workloads |
-| VPC File Storage | Moderate | No | No | Development, cost-sensitive |
 | IBM Storage Fusion | High | Yes | Yes | Enterprise with backup needs |
 {: caption="Storage options for OpenShift Virtualization" caption-side="bottom"}
 
