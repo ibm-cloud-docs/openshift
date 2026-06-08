@@ -3899,7 +3899,7 @@ subcollection: openshift
 
 * [Planning your networking setup](/docs/openshift?topic=openshift-virt-plan#virt-plan-networking)
 
-    * [Networking options](/docs/openshift?topic=openshift-virt-plan#virt-plan-networking)
+    * [Networking options](/docs/openshift?topic=openshift-virt-plan#virt-plan-networking-options)
 
 * [Node placement](/docs/openshift?topic=openshift-virt-plan#virt-plan-node-placement)
 
