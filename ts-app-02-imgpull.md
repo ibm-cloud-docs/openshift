@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2026
-lastupdated: "2026-04-15"
+lastupdated: "2026-06-08"
 
 
 keywords: kubernetes, openshift
@@ -50,12 +50,6 @@ oc describe pod <pod_name>
 ```sh
 Failed to pull image "<region>.icr.io/<namespace>/<image>:<tag>" ... unauthorized: authentication required
 Failed to pull image "<region>.icr.io/<namespace>/<image>:<tag>" ... 401 Unauthorized
-```
-{: screen}
-
-```sh
-Failed to pull image "registry.ng.bluemix.net/<namespace>/<image>:<tag>" ... unauthorized: authentication required
-Failed to pull image "registry.ng.bluemix.net/<namespace>/<image>:<tag>" ... 401 Unauthorized
 ```
 {: screen}
 
