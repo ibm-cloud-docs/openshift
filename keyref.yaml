@@ -170,7 +170,7 @@ keyword:
   openshift_default_docs: /docs/openshift?topic=openshift-openshift_changelog_420
   openshift_default_release_date: 04 February 2026
   openshift_default_unsupported_certainty: tentative
-  openshift_default_unsupported_date: 19 January 2028
+  openshift_default_unsupported_date: 10 November 2027
   openshift_default_version: '4.20'
   openshift_latest_deprecated: 'False'
   openshift_latest_docs: /docs/openshift?topic=openshift-openshift_changelog_421
@@ -277,11 +277,11 @@ keyword:
   satellite_default_docs: /docs/openshift?topic=openshift-openshift_changelog_420
   satellite_default_release_date: 04 February 2026
   satellite_default_unsupported_certainty: tentative
-  satellite_default_unsupported_date: 19 January 2028
+  satellite_default_unsupported_date: 10 November 2027
   satellite_default_version: '4.20'
   satellite_latest_deprecated: 'False'
   satellite_latest_docs: /docs/openshift?topic=openshift-openshift_changelog_421
   satellite_latest_release_date: 04 February 2026
   satellite_latest_unsupported_certainty: tentative
-  satellite_latest_unsupported_date: 10 November 2027
+  satellite_latest_unsupported_date: 19 January 2028
   satellite_latest_version: '4.21'
