@@ -2,7 +2,7 @@
 
 copyright:
   years: 2025, 2026
-lastupdated: "2026-06-08"
+lastupdated: "2026-06-09"
 
 keywords: openshift, virtualization, planning, prerequisites, bare metal
 
@@ -22,6 +22,9 @@ subcollection: openshift
 
 Before you deploy OpenShift Virtualization on {{site.data.keyword.openshiftlong_notm}}, review the prerequisites and plan your cluster configuration, storage solution, and networking setup.
 {: shortdesc}
+
+[OpenShift Virtualization Service](/docs/openshift?topic=openshift-rovs-overview) is the fastest option with automatic setup of storage, networking, and operators - ready in minutes instead of hours.
+{: tip}
 
 ## Prerequisites
 {: #virt-prereqs}

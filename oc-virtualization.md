@@ -2,7 +2,7 @@
 
 copyright:
   years: 2025, 2026
-lastupdated: "2026-06-05"
+lastupdated: "2026-06-09"
 
 keywords: openshift, virtualization, operator, hyperconverged, kubevirt
 
@@ -22,6 +22,9 @@ subcollection: openshift
 
 After setting up storage for your cluster, install the OpenShift Virtualization Operator to enable virtual machine management capabilities.
 {: shortdesc}
+
+[OpenShift Virtualization Service](/docs/openshift?topic=openshift-rovs-getting-started) includes pre-installed operators - no manual installation required.
+{: tip}
 
 ## Before you begin
 {: #virt-install-prereqs}
@@ -280,7 +283,7 @@ After installing OpenShift Virtualization:
 
 - [Create virtual machines with VPC File Storage](/docs/openshift?topic=openshift-virt-vpc-file-vm-create)
 - [Configure virtual network interfaces](/docs/openshift?topic=openshift-vni-virtualization) (4.20 and later)
-- [Create and manage virtual machines in Red Hat documentation](https://docs.redhat.com/en/documentation/openshift_container_platform/4.20/html/virtualization/index){: external}
+- [Create and manage virtual machines](https://docs.redhat.com/en/documentation/openshift_container_platform/4.20/html/virtualization/index){: external}
 - [Set up VM templates and images](https://docs.redhat.com/en/documentation/openshift_container_platform/4.20/html/virtualization/index#virt-creating-vms-from-rh-images-overview){: external}
 
 For complete installation instructions, see [Installing OpenShift Virtualization](https://docs.redhat.com/en/documentation/openshift_container_platform/4.21/html-single/virtualization/index#installing-virt){: external} in the Red Hat documentation.
