@@ -4926,6 +4926,12 @@ subcollection: openshift
 
 * [Gathering logs](/docs/openshift?topic=openshift-storage_portworx_support#portworx_logs)
 
+[Migrate Portworx volumes from HPCS to Key Protect](/docs/openshift?topic=openshift-migrate_hpcs_kp_px#migrate_hpcs_kp_px)
+
+* [Before you begin](/docs/openshift?topic=openshift-migrate_hpcs_kp_px#hpcs-kp-migration-px-prereqs)
+
+* [Migrating Portworx encrypted volumes](/docs/openshift?topic=openshift-migrate_hpcs_kp_px#hpcs-kp-migration-px-steps)
+
 [IBM Cloud storage utilities](/docs/openshift?topic=openshift-utilities#utilities)
 
 * [Classic: Installing the IBM Cloud Block Storage Attacher plug-in (beta)](/docs/openshift?topic=openshift-utilities#block_storage_attacher)
