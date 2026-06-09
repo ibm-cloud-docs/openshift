@@ -23,8 +23,7 @@ subcollection: openshift
 OpenShift Virtualization requires storage that supports ReadWriteMany (RWX) access mode for VM disks, live migration, and snapshots. You can use OpenShift Data Foundation (ODF) or {{site.data.keyword.filestorage_vpc_short}} as your storage solution.
 {: shortdesc}
 
-[OpenShift Virtualization Service](/docs/openshift?topic=openshift-rovs-getting-started) includes pre-configured storage - no manual setup required.
-{: tip}
+
 
 ## Before you begin
 {: #virt-storage-prereqs}
@@ -41,8 +40,7 @@ Your cluster must have exactly one properly configured storage solution before i
 
 OpenShift Data Foundation (ODF) is recommended for production workloads that require high performance, snapshots, and cloning capabilities.
 
-This section applies only to manual OpenShift Virtualization deployments. If you're using [OpenShift Virtualization Service](/docs/openshift?topic=openshift-rovs-getting-started), ODF is pre-configured and you don't need to follow these steps.
-{: note}
+
 
 ### Prerequisites for ODF
 {: #virt-storage-odf-prereqs}

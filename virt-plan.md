@@ -23,8 +23,7 @@ subcollection: openshift
 Before you deploy OpenShift Virtualization on {{site.data.keyword.openshiftlong_notm}}, review the prerequisites and plan your cluster configuration, storage solution, and networking setup.
 {: shortdesc}
 
-[OpenShift Virtualization Service](/docs/openshift?topic=openshift-rovs-overview) is the fastest option with automatic setup of storage, networking, and operators - ready in minutes instead of hours.
-{: tip}
+
 
 ## Prerequisites
 {: #virt-prereqs}

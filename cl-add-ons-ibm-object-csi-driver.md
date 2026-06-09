@@ -3,7 +3,7 @@
 copyright:
   years: 2024, 2026
 
-lastupdated: "2026-05-27"
+lastupdated: "2026-06-09"
 
 
 keywords: change log, version history, IBM Object CSI Driver
@@ -43,10 +43,18 @@ Review the version history for IBM Object CSI Driver.
 {: #cl-add-ons-ibm-object-csi-driver-1.0}
 
 
-### v1.0.20_333133599, released 25 May 2026
-{: #cl-add-ons-ibm-object-csi-driver-v1020_333133599}
+### v1.0.21_333133599, released 09 June 2026
+{: #cl-add-ons-ibm-object-csi-driver-v1021_333133599}
 
 [Default version]{: tag-green}
+
+- Resolves the following CVEs: [CVE-2026-33814](https://nvd.nist.gov/vuln/detail/CVE-2026-33814){: external}, [CVE-2026-39836](https://nvd.nist.gov/vuln/detail/CVE-2026-39836){: external}, [CVE-2026-31790](https://nvd.nist.gov/vuln/detail/CVE-2026-31790){: external}, [CVE-2026-4438](https://nvd.nist.gov/vuln/detail/CVE-2026-4438){: external}, [CVE-2026-28390](https://nvd.nist.gov/vuln/detail/CVE-2026-28390){: external}, [CVE-2026-33811](https://nvd.nist.gov/vuln/detail/CVE-2026-33811){: external}, [CVE-2026-39820](https://nvd.nist.gov/vuln/detail/CVE-2026-39820){: external}, [CVE-2026-42499](https://nvd.nist.gov/vuln/detail/CVE-2026-42499){: external}, [CVE-2026-44973](https://nvd.nist.gov/vuln/detail/CVE-2026-44973){: external}, [CVE-2026-4046](https://nvd.nist.gov/vuln/detail/CVE-2026-4046){: external}, [CVE-2026-4437](https://nvd.nist.gov/vuln/detail/CVE-2026-4437){: external}, [CVE-2026-40355](https://nvd.nist.gov/vuln/detail/CVE-2026-40355){: external}, [CVE-2026-40356](https://nvd.nist.gov/vuln/detail/CVE-2026-40356){: external}, [CVE-2026-4878](https://nvd.nist.gov/vuln/detail/CVE-2026-4878){: external}, [CVE-2026-29111](https://nvd.nist.gov/vuln/detail/CVE-2026-29111){: external}, [CVE-2026-39823](https://nvd.nist.gov/vuln/detail/CVE-2026-39823){: external}, [CVE-2026-39826](https://nvd.nist.gov/vuln/detail/CVE-2026-39826){: external}, [CVE-2026-39825](https://nvd.nist.gov/vuln/detail/CVE-2026-39825){: external}, and [CVE-2026-44740](https://nvd.nist.gov/vuln/detail/CVE-2026-44740){: external}.
+- Updates Go to version `1.26.4`.
+- Updates rclone mounter version to 1.74.2 
+
+
+### v1.0.20_333133599, released 25 May 2026
+{: #cl-add-ons-ibm-object-csi-driver-v1020_333133599}
 
 - Resolves the following CVEs: [CVE-2026-4878](https://nvd.nist.gov/vuln/detail/CVE-2026-4878){: external}, [CVE-2026-29111](https://nvd.nist.gov/vuln/detail/CVE-2026-29111){: external}, [CVE-2026-32952](https://nvd.nist.gov/vuln/detail/CVE-2026-32952){: external}, and [CVE-2026-29181](https://nvd.nist.gov/vuln/detail/CVE-2026-29181){: external}.
 - Updates Go to version `1.25.9`.

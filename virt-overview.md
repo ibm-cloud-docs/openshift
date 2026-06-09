@@ -40,7 +40,7 @@ OpenShift Virtualization on IBM Cloud provides enterprise-grade virtualization f
 ## Deployment options
 {: #virt-deployment-options}
 
-**Recommended:** OpenShift Virtualization Service provides the fastest path to running VMs with pre-configured storage, networking, and operators. Choose manual deployment only if you need custom configurations or mixed container/VM workloads.
+
 
 
 

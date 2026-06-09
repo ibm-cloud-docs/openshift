@@ -287,6 +287,20 @@ subcollection: openshift
 
 * [June 2026](/docs/openshift?topic=openshift-openshift-relnotes#openshift-jun26)
 
+    * [09 June 2025](/docs/openshift?topic=openshift-openshift-relnotes#openshift-jun0925)
+
+        * {{site.data.keyword.openshiftlong_notm}} version 4.16 is deprecated.
+
+        * Openshift AI cluster add-on patch updates.
+
+        * VPC File CSI Driver cluster add-on patch updates.
+
+        * IBM Cloud Image Key Synchronizer cluster add-on patch updates.
+
+        * IBM Storage Operator cluster add-on patch updates.
+
+        * IBM Object CSI Driver cluster add-on patch updates.
+
     * [03 June 2026](/docs/openshift?topic=openshift-openshift-relnotes#openshift-jun0326)
 
         * IBM Storage Operator cluster add-on patch updates.
@@ -7056,7 +7070,11 @@ subcollection: openshift
 
     * [v419.0.0_333601315, released 26 April 2026](/docs/openshift?topic=openshift-cl-add-ons-openshift-ai#cl-add-ons-openshift-ai-v41900_333601315)
 
+    * [v419.0.3_346505061, released 09 June 2025](/docs/openshift?topic=openshift-cl-add-ons-openshift-ai#cl-add-ons-openshift-ai-v41903_346505061)
+
 * [Version 418](/docs/openshift?topic=openshift-cl-add-ons-openshift-ai#cl-add-ons-openshift-ai-418)
+
+    * [418.1.2_346505318, released 09 June 2026](/docs/openshift?topic=openshift-cl-add-ons-openshift-ai#cl-add-ons-openshift-ai-41812_346505318)
 
     * [v418.1.1_339109080, released 18 May 2026](/docs/openshift?topic=openshift-cl-add-ons-openshift-ai#cl-add-ons-openshift-ai-v41811_339109080)
 
@@ -7065,6 +7083,8 @@ subcollection: openshift
     * [v418.0.0_295927267, released 11 November 2025](/docs/openshift?topic=openshift-cl-add-ons-openshift-ai#cl-add-ons-openshift-ai-v41800_295927267)
 
 * [Version 417](/docs/openshift?topic=openshift-cl-add-ons-openshift-ai#cl-add-ons-openshift-ai-417)
+
+    * [417.1.2_346505437, released 09 June 2026](/docs/openshift?topic=openshift-cl-add-ons-openshift-ai#cl-add-ons-openshift-ai-41712_346505437)
 
     * [v417.1.1_339109167, released 18 May 2026](/docs/openshift?topic=openshift-cl-add-ons-openshift-ai#cl-add-ons-openshift-ai-v41711_339109167)
 
@@ -7077,6 +7097,8 @@ subcollection: openshift
     * [417.0.0_533, released 19 August 2025](/docs/openshift?topic=openshift-cl-add-ons-openshift-ai#cl-add-ons-openshift-ai-41700_533)
 
 * [Version 416](/docs/openshift?topic=openshift-cl-add-ons-openshift-ai#cl-add-ons-openshift-ai-416)
+
+    * [v416.4.2_346505672, released 09 June 2026](/docs/openshift?topic=openshift-cl-add-ons-openshift-ai#cl-add-ons-openshift-ai-v41642_346505672)
 
     * [v416.4.1_339109233, released 18 May 2026](/docs/openshift?topic=openshift-cl-add-ons-openshift-ai#cl-add-ons-openshift-ai-v41641_339109233)
 
@@ -7358,6 +7380,8 @@ subcollection: openshift
 
 * [Version 1.0](/docs/openshift?topic=openshift-cl-add-ons-ibm-storage-operator#cl-add-ons-ibm-storage-operator-1.0)
 
+    * [v1.0.43_345196902, released 09 June 2026](/docs/openshift?topic=openshift-cl-add-ons-ibm-storage-operator#cl-add-ons-ibm-storage-operator-v1043_345196902)
+
     * [v1.0.42_343448801, released 03 June 2026](/docs/openshift?topic=openshift-cl-add-ons-ibm-storage-operator#cl-add-ons-ibm-storage-operator-v1042_343448801)
 
     * [v1.0.40_340278420, released 19 May 2026](/docs/openshift?topic=openshift-cl-add-ons-ibm-storage-operator#cl-add-ons-ibm-storage-operator-v1040_340278420)
@@ -7588,6 +7612,8 @@ subcollection: openshift
 
 * [Version 2.0](/docs/openshift?topic=openshift-cl-add-ons-vpc-file-csi-driver#cl-add-ons-vpc-file-csi-driver-2.0)
 
+    * [v2.0.34_345194711, released 09 June 2026](/docs/openshift?topic=openshift-cl-add-ons-vpc-file-csi-driver#cl-add-ons-vpc-file-csi-driver-v2034_345194711)
+
     * [v2.0.33_343448437, released 03 June 2026](/docs/openshift?topic=openshift-cl-add-ons-vpc-file-csi-driver#cl-add-ons-vpc-file-csi-driver-v2033_343448437)
 
     * [v2.0.32_341664893, released 29 May 2026](/docs/openshift?topic=openshift-cl-add-ons-vpc-file-csi-driver#cl-add-ons-vpc-file-csi-driver-v2032_341664893)
@@ -7681,6 +7707,8 @@ subcollection: openshift
 [IBM Object CSI Driver add-on version change log](/docs/openshift?topic=openshift-cl-add-ons-ibm-object-csi-driver#cl-add-ons-ibm-object-csi-driver)
 
 * [Version 1.0](/docs/openshift?topic=openshift-cl-add-ons-ibm-object-csi-driver#cl-add-ons-ibm-object-csi-driver-1.0)
+
+    * [v1.0.21_333133599, released 09 June 2026](/docs/openshift?topic=openshift-cl-add-ons-ibm-object-csi-driver#cl-add-ons-ibm-object-csi-driver-v1021_333133599)
 
     * [v1.0.20_333133599, released 25 May 2026](/docs/openshift?topic=openshift-cl-add-ons-ibm-object-csi-driver#cl-add-ons-ibm-object-csi-driver-v1020_333133599)
 
@@ -8162,6 +8190,8 @@ subcollection: openshift
 
 * [Version 1.0.0](/docs/openshift?topic=openshift-cl-add-ons-ibm-cloud-image-key-synchronizer#cl-add-ons-ibm-cloud-image-key-synchronizer-1.0.0)
 
+    * [1.0.0_345162128, released 09 June 2026](/docs/openshift?topic=openshift-cl-add-ons-ibm-cloud-image-key-synchronizer#cl-add-ons-ibm-cloud-image-key-synchronizer-100_345162128)
+
     * [1.0.0_341829798, released 27 May 2026](/docs/openshift?topic=openshift-cl-add-ons-ibm-cloud-image-key-synchronizer#cl-add-ons-ibm-cloud-image-key-synchronizer-100_341829798)
 
     * [1.0.0_334950440, released 05 May 2026](/docs/openshift?topic=openshift-cl-add-ons-ibm-cloud-image-key-synchronizer#cl-add-ons-ibm-cloud-image-key-synchronizer-100_334950440)
@@ -8266,13 +8296,13 @@ subcollection: openshift
 
 [Confidential containers](/docs/openshift?topic=openshift-cl-confidential-containers#cl-confidential-containers)
 
-* [Version 20260604-05-hardened](/docs/openshift?topic=openshift-cl-confidential-containers#cl-confidential-containers-20260604-05-hardened)
-
-    * [20260604-05-hardened, released 05 June 2026](/docs/openshift?topic=openshift-cl-confidential-containers#cl-confidential-containers-20260604-05-hardened)
-
 * [Version 20260604-05](/docs/openshift?topic=openshift-cl-confidential-containers#cl-confidential-containers-20260604-05)
 
     * [20260604-05, released 05 June 2026](/docs/openshift?topic=openshift-cl-confidential-containers#cl-confidential-containers-20260604-05)
+
+* [Version 20260604-05-hardened](/docs/openshift?topic=openshift-cl-confidential-containers#cl-confidential-containers-20260604-05-hardened)
+
+    * [20260604-05-hardened, released 05 June 2026](/docs/openshift?topic=openshift-cl-confidential-containers#cl-confidential-containers-20260604-05-hardened)
 
 * [Version 20260319-02](/docs/openshift?topic=openshift-cl-confidential-containers#cl-confidential-containers-20260319-02)
 
