@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2026
-lastupdated: "2026-06-05"
+lastupdated: "2026-06-09"
 
 
 keywords: kubernetes, release notes, openshift, {{site.data.keyword.openshiftlong_notm}}
@@ -30,6 +30,39 @@ Looking for {{site.data.keyword.cloud_notm}} status, platform announcements, sec
 
 ## June 2026
 {: #openshift-jun26}
+
+### 09 June 2025
+{: #openshift-jun0925}
+{: release-note}
+
+
+
+{{site.data.keyword.openshiftlong_notm}} version 4.16 is deprecated.
+:   Support for 4.16 ends on {{site.data.keyword.openshift_416_unsupported_date}}.
+:   Update your cluster to at least [version 4.17](/docs/openshift?topic=openshift-cs_versions_417) as soon as possible.
+
+
+Openshift AI cluster add-on patch updates.
+:   For more information, see the [change log](/docs/openshift?topic=openshift-cl-add-ons-openshift-ai).
+
+
+VPC File CSI Driver cluster add-on patch updates.
+:   For more information, see the [change log](/docs/openshift?topic=openshift-cl-add-ons-vpc-file-csi-driver).
+
+
+
+IBM Cloud Image Key Synchronizer cluster add-on patch updates.
+:   For more information, see the [change log](/docs/openshift?topic=openshift-cl-add-ons-ibm-cloud-image-key-synchronizer).
+
+
+IBM Storage Operator cluster add-on patch updates.
+:   For more information, see the [change log](/docs/openshift?topic=openshift-cl-add-ons-ibm-storage-operator).
+
+
+IBM Object CSI Driver cluster add-on patch updates.
+:   For more information, see the [change log](/docs/openshift?topic=openshift-cl-add-ons-ibm-object-csi-driver).
+
+
 
 ### 03 June 2026
 {: #openshift-jun0326}

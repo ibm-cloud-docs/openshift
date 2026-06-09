@@ -2,7 +2,7 @@
 
 copyright:
   years: 2025, 2026
-lastupdated: "2026-06-08"
+lastupdated: "2026-06-09"
 
 keywords: openshift, virtualization, virtual machines, vms, bare metal
 
@@ -40,7 +40,7 @@ OpenShift Virtualization on IBM Cloud provides enterprise-grade virtualization f
 ## Deployment options
 {: #virt-deployment-options}
 
-Choose the deployment approach that best fits your needs:
+
 
 
 
@@ -63,7 +63,10 @@ Best for:
 - Specific networking requirements
 - Full control over all components
 
-[Plan your manual deployment](/docs/openshift?topic=openshift-virt-plan){: .btn .btn-primary}
+**Ready to get started?**
+1. [Plan your deployment](/docs/openshift?topic=openshift-virt-plan) - Review prerequisites and architecture
+2. [Set up storage](/docs/openshift?topic=openshift-virt-storage-setup) - Configure ODF or VPC File Storage
+3. [Install the operator](/docs/openshift?topic=openshift-oc-virtualization) - Deploy OpenShift Virtualization
 
 
 

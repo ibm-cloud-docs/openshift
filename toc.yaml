@@ -366,6 +366,7 @@ toc:
               - storage-portworx-backup.md
               - storage-portworx-removing.md
               - storage-portworx-support.md
+              - hpcs-kp-migration-px.md
           - storage-utilities.md
           - storage-br.md
       - topicgroup:

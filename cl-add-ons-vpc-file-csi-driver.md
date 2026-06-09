@@ -3,7 +3,7 @@
 copyright:
   years: 2024, 2026
 
-lastupdated: "2026-06-04"
+lastupdated: "2026-06-09"
 
 
 keywords: change log, version history, VPC File CSI Driver
@@ -41,6 +41,15 @@ Review the version history for VPC File CSI Driver.
 
 ## Version 2.0
 {: #cl-add-ons-vpc-file-csi-driver-2.0}
+
+
+### v2.0.34_345194711, released 09 June 2026
+{: #cl-add-ons-vpc-file-csi-driver-v2034_345194711}
+
+[Default version]{: tag-green}
+
+- Resolves the following CVEs: [CVE-2026-4438](https://nvd.nist.gov/vuln/detail/CVE-2026-4438){: external}, [CVE-2026-4046](https://nvd.nist.gov/vuln/detail/CVE-2026-4046){: external}, and [CVE-2026-4437](https://nvd.nist.gov/vuln/detail/CVE-2026-4437){: external}.
+- `armada-storage-secret v1.3.51`
 
 
 ### v2.0.33_343448437, released 03 June 2026
