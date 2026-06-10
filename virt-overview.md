@@ -2,7 +2,7 @@
 
 copyright:
   years: 2025, 2026
-lastupdated: "2026-06-09"
+lastupdated: "2026-06-10"
 
 keywords: openshift, virtualization, virtual machines, vms, bare metal
 
@@ -41,7 +41,38 @@ OpenShift Virtualization on IBM Cloud provides enterprise-grade virtualization f
 {: #virt-deployment-options}
 
 
+**Recommended:** OpenShift Virtualization Service provides the fastest path to running VMs with pre-configured storage, networking, and operators. Choose manual deployment only if you need custom configurations or mixed container/VM workloads.
 
+
+
+### OpenShift Virtualization Service (Recommended)
+{: #virt-vs-deployment}
+
+**Fastest and easiest option** - Pre-configured virtualization platform ready in minutes.
+
+OpenShift Virtualization Service delivers a ready-to-use virtualization environment with all components automatically installed and configured during cluster creation.
+
+What's included:
+- OpenShift Virtualization Operator (pre-installed)
+- OpenShift Data Foundation storage (pre-configured with local NVME)
+- Optimized networking (MTU 8900/9000)
+- Cost-effective OVE licensing
+
+Storage:
+- Uses OpenShift Data Foundation with local NVME disks
+- VPC Block Storage is not deployed (not needed for ROVS)
+- No manual storage configuration required
+
+Best for:
+- Virtualization-focused workloads
+- Quick deployment (minutes vs. hours)
+- Simplified management with managed add-ons
+- Cost-optimized licensing for VM workloads
+
+**Ready to get started?**
+- [Quickstart: Create your first cluster](/docs/openshift?topic=openshift-rovs-getting-started) - Console-based walkthrough
+- [Detailed tutorial: Creating a cluster](/docs/openshift?topic=openshift-rovs-cluster-create) - Step-by-step with CLI and Terraform options
+- [Learn more about Virtualization Service](/docs/openshift?topic=openshift-rovs-overview) - Features, pricing, and architecture
 
 
 ### Manual deployment (For custom configurations)
@@ -69,11 +100,26 @@ Best for:
 3. [Install the operator](/docs/openshift?topic=openshift-oc-virtualization) - Deploy OpenShift Virtualization
 
 
+### Comparison
+{: #virt-choose-deployment}
+
+| Feature | Virtualization Service | Manual Deployment |
+|---------|----------------------|-------------------|
+| Setup time | Minutes (automated) | Hours (manual) |
+| OpenShift version | 4.20+ | 4.17+ |
+| Storage | ODF pre-configured | Your choice (ODF, VPC File, etc.) |
+| Networking | Pre-optimized (MTU 8900/9000) | Manual configuration |
+| Licensing | OVE (cost-effective) | Full OCP |
+| Management | Managed add-ons | Self-managed |
+| Flexibility | Pre-configured | Full control |
+| Best for | VM-focused workloads | Custom configurations |
+{: caption="Deployment option comparison" caption-side="bottom"}
+
 
 ## Common requirements
 {: #virt-requirements}
 
-OpenShift Virtualization requires:
+Both deployment options require:OpenShift Virtualization requires:
 
 Infrastructure
 :   - VPC with bare metal worker nodes
@@ -133,6 +179,7 @@ Flavors with `d` suffix include local SSD storage, which is required for OpenShi
 | Storage | Performance | Snapshots | Cloning | Best for |
 |---------|-------------|-----------|---------|----------|
 | OpenShift Data Foundation | High | Yes | Yes | Production, high I/O workloads |
+| VPC File Storage | Moderate | No | No | Development, cost-sensitive |
 | IBM Storage Fusion | High | Yes | Yes | Enterprise with backup needs |
 {: caption="Storage options for OpenShift Virtualization" caption-side="bottom"}
 
@@ -171,6 +218,10 @@ Advanced networking with VNIs (4.20+)
 
 Choose your deployment path:
 
+
+For quick deployment:
+1. [Get started with Virtualization Service](/docs/openshift?topic=openshift-rovs-getting-started)
+2. [Create a Virtualization Service cluster](/docs/openshift?topic=openshift-rovs-cluster-create)
 
 
 For custom deployment:

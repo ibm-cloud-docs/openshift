@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2026
-lastupdated: "2026-05-28"
+lastupdated: "2026-06-10"
 
 
 keywords: openshift, {{site.data.keyword.openshiftlong_notm}}, kubernetes, kernel, performance
@@ -83,9 +83,9 @@ Before you begin: [Access your {{site.data.keyword.redhat_openshift_notm}} clust
 
 1. Save the following daemon set in a file named `worker-node-kernel-settings.yaml`. In the `spec.template.spec.initContainers` section, add the fields and values for the `sysctl` parameters that you want to tune. This example daemon set changes the default maximum number of connections that are allowed in the environment via the `net.core.somaxconn` setting and the ephemeral port range via the `net.ipv4.ip_local_port_range` setting.
 
-    Depending on the `systctl` settings that you try to change, you might want to configure the security context. For more information, see the [{{site.data.keyword.redhat_openshift_notm}} documentation](https://docs.redhat.com/en/documentation/openshift_container_platform/4.20/html/nodes/working-with-containers#nodes-containers-sysctls{: external}.
+    
+    Depending on the `systctl` settings that you try to change, you might want to configure the security context. For more information, see the [{{site.data.keyword.redhat_openshift_notm}} documentation](https://docs.redhat.com/en/documentation/openshift_container_platform/4.20/html/nodes/working-with-containers#nodes-containers-sysctls){: external}.
     {: note}
-
     
     ```yaml
     apiVersion: apps/v1
@@ -170,7 +170,6 @@ If a pod has long running TCP connections that are occasionally disconnected whe
 {: shortdesc}
 
 
-
 There currently isn't a way to set these `sysctl` keepalive settings on all pods by default in a cluster. The best way to modify the settings on all pods is to use a privileged `initContainer`. Review the following example of how to set up an `initContainer` for a deployment in a `test-ns` namespace.
 
 
@@ -178,7 +177,7 @@ There currently isn't a way to set these `sysctl` keepalive settings on all pods
 Allow privileged `initContainers` in the `test-ns` namespace: 
 
     ```sh
-    oc adm policy add-scc-to-groupl privileged system:serviceaccounts:test-ns
+    oc adm policy add-scc-to-group privileged system:serviceaccounts:test-ns
     ```
     {: pre}
 

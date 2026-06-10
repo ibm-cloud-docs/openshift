@@ -2,7 +2,7 @@
 
 copyright:
   years: 2025, 2026
-lastupdated: "2026-06-09"
+lastupdated: "2026-06-10"
 
 keywords: openshift, virtualization, planning, prerequisites, bare metal
 
@@ -24,6 +24,9 @@ Before you deploy OpenShift Virtualization on {{site.data.keyword.openshiftlong_
 {: shortdesc}
 
 
+[OpenShift Virtualization Service](/docs/openshift?topic=openshift-rovs-overview) is the fastest option with automatic setup of storage, networking, and operators - ready in minutes instead of hours.
+{: tip}
+
 
 ## Prerequisites
 {: #virt-prereqs}
@@ -40,9 +43,9 @@ Your VPC infrastructure must include a VPC with subnets in your desired zones an
 
 Select bare metal flavors based on your workload requirements. For a complete list of supported flavors, see [Bare metal flavors](/docs/openshift?topic=openshift-virt-overview#virt-bm-flavors).
 
-If you plan to use OpenShift Data Foundation (ODF), choose bare metal flavors with the `d` suffix or `3d` in the name, which include NVME local storage. ODF requires local disks for optimal performance. 
+If you plan to use OpenShift Data Foundation (ODF), choose bare metal flavors with the `d` suffix or `3d` in the name, which include NVME local storage. ODF requires local disks for optimal performance. For VPC File Storage, any supported bare metal flavor can be used, though flavors with local storage are still recommended for better overall performance.
 
-Match your bare metal flavor to your workload type. For high-performance workloads, choose bare metal flavors with local storage and ODF. Memory-intensive workloads perform best on `mx` series bare metal flavors, while compute-intensive workloads benefit from `cx` series flavors. For balanced workloads, select `bx` series bare metal flavors. 
+Match your bare metal flavor to your workload type. For high-performance workloads, choose bare metal flavors with local storage and ODF. Memory-intensive workloads perform best on `mx` series bare metal flavors, while compute-intensive workloads benefit from `cx` series flavors. For balanced workloads, select `bx` series bare metal flavors. If cost optimization is your priority, consider smaller bare metal flavors with VPC File Storage.
 
 ### Worker pool architecture
 {: #virt-plan-worker-pools}
@@ -59,14 +62,14 @@ OpenShift Virtualization requires storage that supports ReadWriteMany (RWX) acce
 ### Storage decision matrix
 {: #virt-storage-matrix}
 
-| Use case | OpenShift Data Foundation |
-|----------|---------------------------|
-| High availability (multi-zone) | Recommended |
-| High read/write workloads | Recommended |
-| Low read/write or non-production | Costly |
-| Snapshot and cloning support | Supported |
-| Live migration | Supported |
-| Cost | Higher |
+| Use case | OpenShift Data Foundation | VPC File Storage |
+|----------|---------------------------|------------------|
+| High availability (multi-zone) | Recommended | Not recommended |
+| High read/write workloads | Recommended | Possible with high IOPS classes |
+| Low read/write or non-production | Costly | Recommended |
+| Snapshot and cloning support | Supported | Not supported |
+| Live migration | Supported | Supported |
+| Cost | Higher | Lower |
 {: caption="Storage solution comparison"}
 
 ### Storage options
@@ -75,6 +78,9 @@ OpenShift Virtualization requires storage that supports ReadWriteMany (RWX) acce
 OpenShift Data Foundation (ODF)
 :   ODF is best suited for production environments with high I/O requirements and when you need snapshot or cloning support. ODF requires bare metal with local NVME storage, at least 3 nodes, and 3 or more zones for high availability. For more information, see [Understanding ODF](/docs/openshift?topic=openshift-ocs-storage-prep).
 
+
+VPC File Storage
+:   VPC File storage is ideal for development environments, cost-sensitive deployments, and workloads with low to moderate I/O requirements. You can use any bare metal flavor with VPC File Storage, and you need the VPC File CSI driver. Note that VPC File Storage does not support snapshots or cloning. For best performance, use the `ibmc-vpc-file-1000-iops` or `ibmc-vpc-file-6000-iops` storage classes. For more information, see [VPC File Storage profiles](/docs/vpc?topic=vpc-file-storage-profiles).
 
 
 ## Planning your networking setup
@@ -107,7 +113,7 @@ The minimum cluster configuration requires 3 bare metal nodes in a single zone. 
 
 When planning VM resources, reserve approximately 10 vCPU and 32 GB RAM per node for system overhead. For example, a 96 vCPU node provides approximately 86 vCPU for VMs.
 
-To optimize costs, deploy infrastructure components on VSIs, right-size your VM resources, use appropriate storage IOPS classes, and consider reserved capacity for long-term use. For more information, see [Understanding cluster costs](/docs/openshift?topic=openshift-costs).
+To optimize costs, use VPC File Storage for non-production environments, deploy infrastructure components on VSIs, right-size your VM resources, use appropriate storage IOPS classes, and consider reserved capacity for long-term use. For more information, see [Understanding cluster costs](/docs/openshift?topic=openshift-costs).
 
 For security, use security groups and network policies to control traffic, enable storage encryption to protect data at rest, configure RBAC for VM management to control access, and use {{site.data.keyword.secrets-manager_short}} for sensitive data such as credentials and certificates.
 

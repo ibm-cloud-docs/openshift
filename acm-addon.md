@@ -2,7 +2,7 @@
 
 copyright:
   years: 2025, 2026
-lastupdated: "2026-05-21"
+lastupdated: "2026-06-10"
 
 
 keywords: openshift, acm, advanced cluster management, manage cluster, management, addon, add-on, acm addon
@@ -115,22 +115,22 @@ Complete the following steps for each cluster that you want to manage.
     ```
     {: screen}
 
-2. Get the token endpoint of the Red Hat OpenShift oauth server. Replace `<master_URL>` with the URL found in the previous step. Note that the value in the output is **not** the access token.
+2. Retrieve the base URL of the Red Hat OpenShift oauth server. Replace `<master_URL>` with the URL found in the previous step. The command extracts the base URL without the `/oauth/token` suffix.
 
     ```sh
-    curl <master_URL>/.well-known/oauth-authorization-server | jq -r .token_endpoint
+    curl -sS <master_URL>/.well-known/oauth-authorization-server | jq -r .token_endpoint | sed 's#/oauth/token##'
     ```
     {: pre}
 
     Example output.
 
     ```sh
-    <token_endpoint>/oauth/token
+    https://c111-e.us-east.containers.cloud.ibm.com:31282
     ```
     {: screen}
 
 
-3. Log in to the cluster with the endpoint that you previously retrieved. Replace `<URL>` with the `<token_endpoint>` of the oauth server that you found in the previous step. In the output, find the `<access_token>` contained in the **Location response**. This is the access token to include in the secret.
+3. Retrieve an access token using the endpoint retrieved in the previous step. Execute the following cURL command, replacing `<URL>` with the output from the previous step. In the output, find the `<access_token>` contained in the **Location response**. This is the access token to include in the secret.
 
     Example curl request:
 
@@ -192,7 +192,7 @@ Use the UI to install the ACM add-on and ACM operator to the hub cluster.
 
 1. Choose how you want to import managed clusters. To import clusters after the add-on is installed, select **Import from CLI**. If you created the required secrets on the hub cluster and you want to import managed clusters now, select **Import now**.
 
-    You can only use the UI to import managed clusters during the installation process. Once the ACM add-on is installed on the hub cluster, you must [use the CLI](#after) to import managed clusters.
+    You can only use the IBM Cloud UI to import managed clusters during the installation process. Once the ACM add-on is installed on the hub cluster, you can [use the CLI](#after) or the OpenShift Web Console to import managed clusters.
     {: important}
 
     1. If you selected the **Import now** option, click **Import cluster** in the pop-up menu.
