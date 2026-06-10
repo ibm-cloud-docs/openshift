@@ -1524,67 +1524,6 @@ subcollection: openshift
         * Worker node fix packs are available {{site.data.keyword.openshiftlong_notm}}.
 
 
-## Tutorial: Managing Virtualization Service clusters with Advanced Cluster Management
-{: #sitemap_tutorial_managing_virtualization_service_clusters_with_advanced_cluster_management}
-
-
-[Tutorial: Managing Virtualization Service clusters with Advanced Cluster Management](/docs/openshift?topic=openshift-rovs-acm-tutorial#rovs-acm-tutorial)
-
-* [Objectives](/docs/openshift?topic=openshift-rovs-acm-tutorial#rovs-acm-objectives)
-
-* [Before you begin](/docs/openshift?topic=openshift-rovs-acm-tutorial#rovs-acm-prereqs)
-
-    * [Required permissions](/docs/openshift?topic=openshift-rovs-acm-tutorial#rovs-acm-permissions)
-
-    * [Required tools](/docs/openshift?topic=openshift-rovs-acm-tutorial#rovs-acm-tools)
-
-    * [Prerequisites](/docs/openshift?topic=openshift-rovs-acm-tutorial#rovs-acm-requirements)
-
-* [Set up the ACM hub cluster](/docs/openshift?topic=openshift-rovs-acm-tutorial#rovs-acm-hub-setup)
-
-    * [Install the ACM operator](/docs/openshift?topic=openshift-rovs-acm-tutorial#rovs-acm-install-operator)
-
-    * [Create the MultiClusterHub instance](/docs/openshift?topic=openshift-rovs-acm-tutorial#rovs-acm-create-hub)
-
-* [Create a Virtualization Service cluster through ACM](/docs/openshift?topic=openshift-rovs-acm-tutorial#rovs-acm-create-cluster)
-
-    * [Prepare cluster credentials](/docs/openshift?topic=openshift-rovs-acm-tutorial#rovs-acm-credentials)
-
-    * [Create a cluster set](/docs/openshift?topic=openshift-rovs-acm-tutorial#rovs-acm-cluster-set)
-
-    * [Deploy the Virtualization Service cluster](/docs/openshift?topic=openshift-rovs-acm-tutorial#rovs-acm-deploy-cluster)
-
-* [Configure governance policies for virtual machines](/docs/openshift?topic=openshift-rovs-acm-tutorial#rovs-acm-policies)
-
-    * [Create a namespace policy](/docs/openshift?topic=openshift-rovs-acm-tutorial#rovs-acm-namespace-policy)
-
-    * [Create a resource quota policy](/docs/openshift?topic=openshift-rovs-acm-tutorial#rovs-acm-quota-policy)
-
-    * [Create a security policy](/docs/openshift?topic=openshift-rovs-acm-tutorial#rovs-acm-security-policy)
-
-* [Monitor virtual machines across clusters](/docs/openshift?topic=openshift-rovs-acm-tutorial#rovs-acm-monitoring)
-
-    * [Enable observability](/docs/openshift?topic=openshift-rovs-acm-tutorial#rovs-acm-enable-observability)
-
-    * [Create custom dashboards for VMs](/docs/openshift?topic=openshift-rovs-acm-tutorial#rovs-acm-dashboards)
-
-    * [Set up alerts](/docs/openshift?topic=openshift-rovs-acm-tutorial#rovs-acm-alerts)
-
-* [Deploy virtual machines through ACM](/docs/openshift?topic=openshift-rovs-acm-tutorial#rovs-acm-deploy-vms)
-
-    * [Create an application for VM deployment](/docs/openshift?topic=openshift-rovs-acm-tutorial#rovs-acm-vm-application)
-
-* [Implement disaster recovery for VMs](/docs/openshift?topic=openshift-rovs-acm-tutorial#rovs-acm-dr)
-
-    * [Configure VM backup policies](/docs/openshift?topic=openshift-rovs-acm-tutorial#rovs-acm-backup)
-
-    * [Set up VM migration between clusters](/docs/openshift?topic=openshift-rovs-acm-tutorial#rovs-acm-migration)
-
-* [Next steps](/docs/openshift?topic=openshift-rovs-acm-tutorial#rovs-acm-next-steps)
-
-* [Related information](/docs/openshift?topic=openshift-rovs-acm-tutorial#rovs-acm-related)
-
-
 ## Setting up your first classic cluster in the CLI
 {: #sitemap_setting_up_your_first_classic_cluster_in_the_cli}
 
