@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2026
-lastupdated: "2026-04-08"
+lastupdated: "2026-06-10"
 
 
 keywords: openshift, red hat, red hat openshift, dev
@@ -186,4 +186,4 @@ Enhance app capabilities by integrating various external services and catalog se
 3. **Access services from your app**: Ensure that your app can access the service. For example, to access an IBM Cloud service instance from your app, you must [make the service credentials that are stored in the Kubernetes secret available to your app](/docs/openshift?topic=openshift-service-binding#adding_app).
 
 Need help? Check out [Troubleshooting apps and integrations](/docs/openshift?topic=openshift-debug_worker_nodes).
-{: tip}f
+{: tip}
