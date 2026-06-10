@@ -95,13 +95,6 @@ VPC File CSI Driver cluster add-on patch updates.
 
 
 
-Red Hat OpenShift Virtualization Service (ROVS) is now available as a beta
-:   Red Hat OpenShift Virtualization Service (ROVS) provides a managed virtualization platform on {{site.data.keyword.openshiftlong_notm}} clusters. ROVS enables you to run virtual machines alongside on bare metal infrastructure in VPC. This beta release supports OpenShift version 4.20 and later on bare metal worker nodes with Red Hat CoreOS (RHCOS). For more information, see [About Red Hat OpenShift Virtualization Service](/docs/openshift?topic=openshift-rovs-overview). To get started, see [Getting started with Red Hat OpenShift Virtualization Service](/docs/openshift?topic=openshift-rovs-getting-started).
-
-
-
-
-
 **New**: HPCS to Key Protect migration steps
 :    Review the steps for migrating your encrypted resources from HPCS to Key Protect. See [Migrating storage components from HPCS to Key Protect](/docs/openshift?topic=openshift-migrate_hpcs_kp) and [Migrating cluster secrets and worker nodes from HPCS to Key Protect](/docs/openshift?topic=openshift-encryption-hpcs-to-kp-migration) for more information.
 
