@@ -5038,6 +5038,8 @@ subcollection: openshift
 
 * [Applications and workloads supported for Regional Disaster Recovery](/docs/openshift?topic=openshift-openshift_odf_rdr_roks#app_support)
 
+* [Before you begin](/docs/openshift?topic=openshift-openshift_odf_rdr_roks#prereq)
+
 * [Step 1. Creating the clusters](/docs/openshift?topic=openshift-openshift_odf_rdr_roks&interface=cli#clusters-cli)
 
 * [Step 2. Install ACM on the hub cluster](/docs/openshift?topic=openshift-openshift_odf_rdr_roks&interface=cli#hub-acm-install)
