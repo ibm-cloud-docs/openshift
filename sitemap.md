@@ -1879,15 +1879,13 @@ subcollection: openshift
 
     * [Required tools for CLI users](/docs/openshift?topic=openshift-rovs-cluster-create&interface=cli#rovs-create-tools-cli)
 
-    * [Review supported flavors](/docs/openshift?topic=openshift-rovs-cluster-create&interface=cli#rovs-create-review-flavors)
+* [Create or verify your VPC setup](/docs/openshift?topic=openshift-rovs-cluster-create&interface=cli#rovs-create-vpc)
 
-* [Prepare your VPC infrastructure](/docs/openshift?topic=openshift-rovs-cluster-create&interface=cli#rovs-create-vpc)
+    * [VPC infrastructure requirements](/docs/openshift?topic=openshift-rovs-cluster-create&interface=cli#rovs-vpc-requirements)
 
-    * [Create or identify a VPC](/docs/openshift?topic=openshift-rovs-cluster-create&interface=cli#rovs-create-vpc-setup)
+    * [Creating VPC resources from the console](/docs/openshift?topic=openshift-rovs-cluster-create&interface=ui#rovs-vpc-console)
 
-    * [Create subnets](/docs/openshift?topic=openshift-rovs-cluster-create&interface=cli#rovs-create-subnets)
-
-    * [Verify bare metal availability](/docs/openshift?topic=openshift-rovs-cluster-create&interface=cli#rovs-create-verify-capacity)
+    * [Creating VPC resources from the CLI](/docs/openshift?topic=openshift-rovs-cluster-create&interface=cli#rovs-vpc-cli)
 
 * [Create a Virtualization Service cluster](/docs/openshift?topic=openshift-rovs-cluster-create&interface=cli#rovs-create-cluster)
 
@@ -3991,15 +3989,13 @@ subcollection: openshift
 
     * [Required tools for CLI users](/docs/openshift?topic=openshift-rovs-cluster-create&interface=cli#rovs-create-tools-cli)
 
-    * [Review supported flavors](/docs/openshift?topic=openshift-rovs-cluster-create&interface=cli#rovs-create-review-flavors)
+* [Create or verify your VPC setup](/docs/openshift?topic=openshift-rovs-cluster-create&interface=cli#rovs-create-vpc)
 
-* [Prepare your VPC infrastructure](/docs/openshift?topic=openshift-rovs-cluster-create&interface=cli#rovs-create-vpc)
+    * [VPC infrastructure requirements](/docs/openshift?topic=openshift-rovs-cluster-create&interface=cli#rovs-vpc-requirements)
 
-    * [Create or identify a VPC](/docs/openshift?topic=openshift-rovs-cluster-create&interface=cli#rovs-create-vpc-setup)
+    * [Creating VPC resources from the console](/docs/openshift?topic=openshift-rovs-cluster-create&interface=ui#rovs-vpc-console)
 
-    * [Create subnets](/docs/openshift?topic=openshift-rovs-cluster-create&interface=cli#rovs-create-subnets)
-
-    * [Verify bare metal availability](/docs/openshift?topic=openshift-rovs-cluster-create&interface=cli#rovs-create-verify-capacity)
+    * [Creating VPC resources from the CLI](/docs/openshift?topic=openshift-rovs-cluster-create&interface=cli#rovs-vpc-cli)
 
 * [Create a Virtualization Service cluster](/docs/openshift?topic=openshift-rovs-cluster-create&interface=cli#rovs-create-cluster)
 
