@@ -2,7 +2,7 @@
 
 copyright:
   years: 2026, 2026
-lastupdated: "2026-06-10"
+lastupdated: "2026-06-11"
 
 keywords: openshift, virtualization service, rovs, quickstart, console, ui, virtual machines
 
@@ -32,48 +32,67 @@ This service is currently available as a beta release. Access is controlled by a
    - **Operator** role for {{site.data.keyword.containerlong_notm}}
    - **Editor** or **Administrator** role for VPC Infrastructure Services
 
-2. Verify that you have or can create:
+2. Verify that your VPC infrastructure meets the requirements, or be prepared to create the necessary resources:
    - A VPC in your target region
-   - Subnets in the zones where you want to deploy worker nodes
-   - Bare metal capacity available in your selected zones
+   - Subnets in at least 3 zones for high availability (256 IP addresses recommended per subnet)
+   - Bare metal capacity available in your selected zones (flavors ending in `d` for local NVME storage)
+
+For detailed VPC setup instructions, see [Create or verify your VPC setup](/docs/openshift?topic=openshift-rovs-cluster-create#rovs-create-vpc).
 
 ## Create a Virtualization Service cluster
 {: #rovs-gs-create}
 
 1. Log in to the [{{site.data.keyword.cloud_notm}} console](https://cloud.ibm.com/).
 
-2. Navigate to **Infrastructure** > **OpenShift Virtualization Service**.
+2. Navigate to **Infrastructure** > **OpenShift Virtualization**.
 
 3. Click **Create cluster**.
 
-4. Configure your cluster details:
-   - **Cluster name**: Enter a unique name (e.g., `my-vs-cluster`)
-   - **Resource group**: Select a resource group
-   - **OpenShift version**: The latest supported version (4.21 or later) is automatically selected
+4. Review the pre-configured cluster settings (automatically configured, cannot be changed):
+   - **Orchestrator**: Red Hat OpenShift on IBM Cloud
+   - **Infrastructure**: VPC
+   - **Machine type**: Bare metal
+   - **Operating system**: Red Hat CoreOS (RHCOS)
+   - **Networking plugin**: Open Virtual Network (OVN-Kubernetes)
 
-5. Configure the location:
-   - **Geography**: Select your region (e.g., `North America`)
-   - **Availability**: Choose **Multizone** for high availability
-   - **Worker zones**: Select at least 3 zones for production workloads
+5. Select the **OpenShift version** (4.21 or later is automatically selected).
 
-6. Configure the VPC:
-   - **VPC**: Select an existing VPC or create a new one
-   - **Subnets**: For each selected zone, choose the corresponding subnet
+6. Configure **Virtualization integrations**:
 
-7. Configure worker nodes:
-   - **Flavor**: Select a supported bare metal flavor (e.g., `bx2d.metal.96x384`)
+   **OpenShift Virtualization operator**
+   :   Automatically enabled and required for running virtual machines.
+
+   **OpenShift Data Foundation**
+   :   Recommended. Enable with default settings to provide persistent storage for VMs.
+
+   **Advanced Cluster Management**
+   :   Optional. Can be configured later for multi-cluster management.
+
+7. Select your **Virtual private cloud** (or create a new one if needed).
+
+8. Configure the **Location**:
+   - **Worker zones**: Select at least 3 zones for high availability
+   - **Subnets**: For each zone, choose the corresponding subnet
+
+9. Configure the **Worker pool**:
+   - **Flavor**: Select a bare metal flavor with local NVME storage (e.g., `bx2d.metal.96x384`)
    - **Worker nodes per zone**: Specify at least 3 for high availability
 
-8. Review the pre-configured settings (automatically configured, no action needed):
-   - **Operating system**: Red Hat CoreOS (RHCOS)
-   - **Container network interface**: OVN-Kubernetes
-   - **OpenShift Virtualization add-on**: Automatically enabled
-   - **OpenShift Data Foundation**: Pre-configured with local NVME storage
-   - **VPC Block Storage**: Not deployed (ROVS uses ODF)
+10. Configure **Networking** (optional):
+    - **Network settings**: Choose private & public endpoints (default) or private only
+    - **Internal registry**: Select a Cloud Object Storage instance
 
-9. Review the estimated cost.
+11. Configure **Security** settings (optional):
+    - **Cluster encryption**: Enable KMS for encrypting secrets
+    - **Ingress secrets management**: Register Secrets Manager instance
+    - **VPC security groups**: Apply custom security groups
 
-10. Click **Create** to provision your cluster.
+12. Configure **Cluster details**:
+    - **Cluster name**: Enter a unique name (e.g., `my-vs-cluster`)
+    - **Resource group**: Select a resource group
+    - **Tags**: Optional - add tags for organization
+
+13. Review the estimated cost and click **Create**.
 
 The cluster typically takes 30-45 minutes to provision. You can monitor the progress in the console.
 
@@ -109,6 +128,7 @@ The cluster typically takes 30-45 minutes to provision. You can monitor the prog
 
 9. Verify that multiple OCS storage classes are available, including:
    - `ocs-storagecluster-ceph-rbd`
+   - `ocs-storagecluster-ceph-rbd-virtualization` (recommended for VMs)
    - `ocs-storagecluster-cephfs`
 
 ## Deploy your first virtual machine
@@ -126,7 +146,7 @@ The cluster typically takes 30-45 minutes to provision. You can monitor the prog
 
 6. Configure the VM:
    - **Name**: Enter a name for your VM (e.g., `my-first-vm`)
-   - **Storage class**: Select `ocs-storagecluster-ceph-rbd`
+   - **Storage class**: Select `ocs-storagecluster-ceph-rbd-virtualization`
    - **CPU**: Adjust as needed (default is usually sufficient)
    - **Memory**: Adjust as needed (default is usually sufficient)
 

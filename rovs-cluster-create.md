@@ -2,7 +2,7 @@
 
 copyright:
   years: 2026, 2026
-lastupdated: "2026-06-10"
+lastupdated: "2026-06-11"
 
 keywords: openshift, virtualization service, rovs, create cluster, vpc, bare metal, tutorial
 
@@ -74,59 +74,69 @@ All users need the following permissions regardless of the interface used:
 
 
 
-### Review supported flavors
-{: #rovs-create-review-flavors}
-
-Review [supported bare metal flavors](/docs/openshift?topic=openshift-rovs-overview#rovs-flavors) for Virtualization Service.
-
-## Prepare your VPC infrastructure
+## Create or verify your VPC setup
 {: #rovs-create-vpc}
 {: step}
 
-Before creating a Virtualization Service cluster, set up your VPC infrastructure.
+Before creating a Virtualization Service cluster, verify that your VPC infrastructure meets the following requirements. If you don't have the required resources, create them.
 
-### Create or identify a VPC
-{: #rovs-create-vpc-setup}
+### VPC infrastructure requirements
+{: #rovs-vpc-requirements}
 
-1. Log in to the [{{site.data.keyword.cloud_notm}} console](https://cloud.ibm.com/).
+Your VPC setup must include:
 
-2. Navigate to **VPC Infrastructure** > **VPCs**.
+VPC
+:   A VPC in the region where you want to create the cluster.
 
-3. Either select an existing VPC or click **Create** to create a new one.
+Subnets
+:   At least one subnet in each zone where you want to deploy worker nodes.
+    - For high availability, create subnets in at least 3 zones for a multizone cluster
+    - Each subnet must have enough IP addresses (256 recommended)
+    - Do not use the following reserved ranges: `172.16.0.0/16`, `172.18.0.0/16`, `172.19.0.0/16`, and `172.20.0.0/16`
 
-4. If creating a new VPC:
-   - Enter a unique name
-   - Select a resource group
-   - Choose the region where you want to deploy your cluster
-   - Configure address prefixes for your zones
+Bare metal capacity
+:   Bare metal worker node flavors must be available in your selected zones.
+    - Look for flavors ending in `d`, which indicates local NVME storage required for OpenShift Data Foundation
+    - Verify that flavors support Virtualization Service by checking for the `openshift-vs` tag
 
-### Create subnets
-{: #rovs-create-subnets}
+Do not delete the subnets that you attach to your cluster during cluster creation or when you add worker nodes in a zone. If you delete a VPC subnet that your cluster used, any load balancers that use IP addresses from the subnet might experience issues, and you might be unable to create new load balancers.
+{: important}
 
-1. In your VPC, navigate to **Subnets**.
+If you don't have the required VPC infrastructure, complete the following steps to create it.
 
-2. Create at least one subnet in each zone where you plan to deploy worker nodes:
-   - Click **Create**
-   - Enter a subnet name
-   - Select the zone
-   - Configure the IP range (ensure sufficient IP addresses for your worker nodes)
-   - Click **Create subnet**
+### Creating VPC resources from the console
+{: #rovs-vpc-console}
+{: ui}
 
-3. Repeat for each zone (minimum 3 zones recommended for high availability).
+If you don't have the required VPC infrastructure, create it from the console.
 
-### Verify bare metal availability
-{: #rovs-create-verify-capacity}
+1. [Create a VPC](/docs/vpc?topic=vpc-creating-a-vpc-using-the-ibm-cloud-console) in the region where you want to create the cluster.
 
-You can verify bare metal availability in the console during cluster creation, or use the CLI to check in advance.
+2. [Create subnets](/docs/vpc?topic=vpc-creating-a-vpc-using-the-ibm-cloud-console#creating-a-subnet) in each zone where you want to deploy worker nodes.
+   - Create subnets in at least 3 zones for high availability
+   - [Create VPC subnets with enough IP addresses](/docs/openshift?topic=openshift-vpc-subnets#vpc_basics_subnets), such as 256
 
-Check that bare metal capacity is available in your selected zones:
+3. Verify bare metal capacity in your selected zones by checking the available flavors when you create your cluster in the next step.
 
-```sh
-ibmcloud ks flavors --zone <zone> --provider vpc-gen2 | grep metal
-```
-{: pre}
+### Creating VPC resources from the CLI
+{: #rovs-vpc-cli}
+{: cli}
 
-Look for flavors with the `openshift-vs` tag or flavors ending in `d` (indicating local NVME storage).
+If you don't have the required VPC infrastructure, create it from the CLI.
+
+1. [Create a VPC](/docs/vpc?topic=vpc-creating-vpc-resources-with-cli-and-api&interface=cli#create-a-vpc-cli) in the region where you want to create the cluster.
+
+2. [Create subnets](/docs/vpc?topic=vpc-creating-vpc-resources-with-cli-and-api&interface=cli#create-a-subnet-cli) in each zone where you want to deploy worker nodes.
+   - Create subnets in at least 3 zones for high availability
+   - [Create VPC subnets with enough IP addresses](/docs/openshift?topic=openshift-vpc-subnets#vpc_basics_subnets), such as 256
+
+3. Verify that bare metal capacity is available in your selected zones.
+   ```sh
+   ibmcloud ks flavors --zone <zone> --provider vpc-gen2 | grep metal
+   ```
+   {: pre}
+
+   Look for bare metal flavors ending in `d`, which indicates local NVME storage required for OpenShift Data Foundation. To verify that a specific flavor supports Virtualization Service, run `ibmcloud ks flavor get --flavor <flavor> --zone <zone> --provider vpc-gen2` and check for the `openshift-vs` tag in the output. For a complete list of supported flavors, see [Worker node flavors](/docs/openshift?topic=openshift-vpc-flavors).
 
 ## Create a Virtualization Service cluster
 {: #rovs-create-cluster}
@@ -138,64 +148,146 @@ You can create a Virtualization Service cluster by using the console.
 {: #rovs-create-console}
 {: ui}
 
-1. In the {{site.data.keyword.cloud_notm}} console, navigate to **Infrastructure** > **OpenShift Virtualization Service**.
+1. In the {{site.data.keyword.cloud_notm}} console, navigate to **Infrastructure** > **OpenShift virtualization**.
 
 2. Click **Create cluster**.
 
-3. Configure the cluster details:
+3. Review the pre-configured cluster settings:
 
-   **Cluster name**
-   :   Enter a unique name for your cluster (e.g., `my-vs-cluster`).
+   The following settings are automatically configured for OpenShift Virtualization Service clusters and cannot be changed:
+   
+   - **Orchestrator**: Red Hat OpenShift on IBM Cloud
+   - **Infrastructure**: VPC
+   - **Machine type**: Bare metal
+   - **Operating system**: Red Hat CoreOS (RHCOS)
+   - **Networking plugin**: Open Virtual Network (OVN-Kubernetes)
 
-   **Resource group**
-   :   Select the resource group where you want to create the cluster.
+4. Select the **OpenShift version**:
 
-   **OpenShift version**
-   :   The latest supported version (4.21 or later) is automatically selected.
+   OpenShift Virtualization requires version 4.21 or later. The latest supported version is automatically selected.
 
-4. Configure the location:
+5. Configure **Virtualization integrations**:
 
-   **Geography**
-   :   Select the region (e.g., `North America`).
+   Extend your cluster with key virtualization components. These integrations are connected once the cluster provisioning is complete.
 
-   **Availability**
-   :   Choose **Multizone** for high availability or **Single zone** for development.
+   OpenShift Virtualization operator
+   :   Automatically enabled with default settings. Creates and maintains the OpenShift Virtualization deployment. This integration is required and cannot be disabled.
+
+   Advanced Cluster Management (ACM)
+   :   Optional. Configure this cluster as the ACM hub cluster to control and monitor other Kubernetes clusters.
+   :   - **Plan**: ACM for Virtualization
+   :   - **Managed clusters**: Import later (default) or import existing clusters during setup
+   :   - **Disaster recovery**: For disaster recovery, install ODF on a separate managed cluster
+
+   OpenShift Data Foundation (ODF)
+   :   Recommended. Provides portable and scalable software-defined file, block, and object persistent storage for your container workloads.
+   :   - **Version**: Automatically selected based on OpenShift version
+   :   - **Plan**: Advanced
+   :   - **Storage type**: Local Storage (uses NVME storage from bare metal worker nodes)
+
+   A storage add-on (ODF or File Storage for VPC) is required to provision a Virtualization Service cluster.
+   {: important}
+
+   File Storage for VPC
+   :   Alternative to ODF. Provides file storage backed by VPC infrastructure. Only one storage option (ODF or File Storage for VPC) can be enabled.
+
+6. Select your **Virtual private cloud**:
+
+   Choose an existing VPC or create a new one. If no VPCs are available, you'll need to create one before proceeding.
+
+7. Configure the **Location**:
 
    **Worker zones**
-   :   Select the zones where you want to deploy worker nodes (minimum 3 zones recommended).
-
-5. Configure the VPC:
-
-   **VPC**
-   :   Select the VPC you prepared earlier.
+   :   Select the zones where you want to deploy worker nodes. Choose at least 3 zones for high availability.
 
    **Subnets**
-   :   For each selected zone, choose the corresponding subnet.
+   :   For each selected zone, choose the corresponding subnet from your VPC.
 
-6. Configure worker nodes:
+8. Configure the **Worker pool**:
 
    **Flavor**
-   :   Select a supported bare metal flavor (e.g., `bx2d.metal.96x384`).
+   :   Select a supported bare metal flavor with local NVME storage (e.g., `bx2d.metal.96x384`).
    
-   Only flavors with local NVME storage and the `openshift-vs` tag are available.
+   Only bare metal flavors with the `openshift-vs` tag are available. These flavors include local NVME storage required for OpenShift Data Foundation.
    {: note}
 
    **Worker nodes per zone**
    :   Specify the number of worker nodes per zone (minimum 3 recommended for high availability).
 
-7. Review the pre-configured settings:
-   - **Operating system**: Red Hat CoreOS (RHCOS)
-   - **Container network interface**: OVN-Kubernetes
-   - **OpenShift Virtualization add-on**: Automatically enabled (cannot be disabled)
-   - **OpenShift Data Foundation**: Pre-configured with local NVME storage
-   - **VPC Block Storage**: Not deployed (ROVS uses ODF for storage)
-   - **Outbound traffic protection**: Disabled
+   **Worker pool encryption**
+   :   Optional. Enable a key management service (KMS) provider to encrypt worker node disks.
+   
+   - Select a KMS instance (e.g., Key Protect or Hyper Protect Crypto Services)
+   - Choose a root key CRN for encryption
 
-8. Review the estimated cost.
+9. Configure **Networking**:
 
-9. Click **Create** to provision your cluster.
+   **Network plugin**
+   :   Open Virtual Network (OVN-Kubernetes) is automatically configured and cannot be changed.
+   
+   OVN-Kubernetes provides advanced, distributed virtual networking with native support for logical switches, routers, and security policies.
+   {: note}
 
-10. Monitor the cluster creation progress. The cluster typically takes 30-45 minutes to provision.
+   **Network settings**
+   :   Choose how to communicate with the cluster master:
+   
+   - **Both private & public endpoints**: Communication is accessible from the internet and your private network (default)
+   - **Private endpoint only**: Communication is established securely to authorized users in your private network, IBM Cloud services, or through a VPC VPN connection
+
+   **Internal registry**
+   :   Store images in the cluster internal registry with IBM Cloud Object Storage.
+   
+   - Select an existing Cloud Object Storage instance or create a new one
+   - A COS bucket will be automatically created for your cluster's internal registry
+
+10. Configure **Security** settings:
+
+    **Outbound traffic protection**
+    :   Optional. Protect network traffic by enabling only the connectivity necessary for the cluster to operate and preventing access to the public Internet.
+    
+    This setting is disabled by default for Virtualization Service clusters.
+    {: note}
+
+    **Cluster encryption**
+    :   Optional. Enable a key management service (KMS) provider to encrypt secrets in your cluster.
+    
+    - Select a KMS instance (e.g., Key Protect or Hyper Protect Crypto Services)
+    - Choose a root key CRN for encryption
+
+    **Ingress secrets management**
+    :   Optional. Register an IBM Cloud Secrets Manager instance to manage ingress subdomain certificates and secrets.
+    
+    Service authorization is required to allow OpenShift to communicate with Secrets Manager. Click **Authorize now** to create a policy, or go to IAM to create a custom policy.
+    {: note}
+
+    **VPC security groups**
+    :   Optional. Provide up to four custom security groups to apply to all worker nodes instead of the default VPC security group.
+
+11. Configure **Cluster details**:
+
+    **Cluster name**
+    :   Enter a unique name for your cluster (e.g., `my-vs-cluster`).
+
+    **Resource group**
+    :   Select the resource group where you want to create the cluster.
+
+    **Tags**
+    :   Optional. Add tags to organize and manage your cluster resources.
+
+12. Review the **Summary** and estimated cost:
+
+    The summary shows:
+    - Number of worker nodes and their configuration
+    - Operating system (RHCOS)
+    - ROVE license fee
+    - Total estimated monthly cost
+    
+    Additional charges for networking and bandwidth might apply. The estimate does not include usage-based charges.
+    {: note}
+
+13. Click **Create** to provision your cluster.
+
+14. Monitor the cluster creation progress in the {{site.data.keyword.cloud_notm}} console. The cluster typically takes 30-45 minutes to provision.
 
 
 
