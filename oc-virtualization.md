@@ -2,7 +2,7 @@
 
 copyright:
   years: 2025, 2026
-lastupdated: "2026-06-09"
+lastupdated: "2026-06-12"
 
 keywords: openshift, virtualization, operator, hyperconverged, kubevirt
 
@@ -23,7 +23,7 @@ subcollection: openshift
 After setting up storage for your cluster, install the OpenShift Virtualization Operator to enable virtual machine management capabilities.
 {: shortdesc}
 
-[OpenShift Virtualization Service](/docs/openshift?topic=openshift-rovs-getting-started) includes pre-installed operators - no manual installation required.
+[OpenShift Virtualization Service](/docs/openshift?topic=openshift-rovs-getting-started) clusters have the OpenShift Virtualization, NMState, and Node Maintenance operators pre-installed and managed by the `openshift-virtualization` add-on. This page applies only to standard OpenShift clusters with manual OpenShift Virtualization installation.
 {: tip}
 
 ## Before you begin
