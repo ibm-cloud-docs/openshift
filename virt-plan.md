@@ -27,6 +27,9 @@ Before you deploy OpenShift Virtualization on {{site.data.keyword.openshiftlong_
 [OpenShift Virtualization Service](/docs/openshift?topic=openshift-rovs-overview) is the fastest option with automatic setup of storage, networking, and operators - ready in minutes instead of hours.
 {: tip}
 
+This service is currently available as a beta release. Access is controlled by an allowlist. During the beta period, only console-based cluster creation is supported.
+{: beta}
+
 
 ## Prerequisites
 {: #virt-prereqs}

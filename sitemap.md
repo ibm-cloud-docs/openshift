@@ -3922,13 +3922,9 @@ subcollection: openshift
 
 * [Deployment options](/docs/openshift?topic=openshift-virt-overview#virt-deployment-options)
 
-    * [OpenShift Virtualization Service (Recommended)](/docs/openshift?topic=openshift-virt-overview#virt-vs-deployment)
+    * [Feature comparison](/docs/openshift?topic=openshift-virt-overview#virt-choose-deployment)
 
-    * [Manual deployment (For custom configurations)](/docs/openshift?topic=openshift-virt-overview#virt-manual-deployment)
-
-    * [Comparison](/docs/openshift?topic=openshift-virt-overview#virt-choose-deployment)
-
-* [Common requirements](/docs/openshift?topic=openshift-virt-overview#virt-requirements)
+* [Characteristics](/docs/openshift?topic=openshift-virt-overview#virt-requirements)
 
 * [Supported bare metal flavors](/docs/openshift?topic=openshift-virt-overview#virt-bm-flavors)
 
@@ -3943,11 +3939,11 @@ subcollection: openshift
 * [Getting started](/docs/openshift?topic=openshift-virt-overview#virt-next-steps)
 
 
-### OpenShift Virtualization Service (pre-configured)
-{: #sitemap_openshift_virtualization_service_pre-configured}
+### Red Hat OpenShift Virtualization Service (ROVS)
+{: #sitemap_red_hat_openshift_virtualization_service_rovs}
 
 
-[About Virtualization Service](/docs/openshift?topic=openshift-rovs-overview#rovs-overview)
+[About ROVS](/docs/openshift?topic=openshift-rovs-overview#rovs-overview)
 
 * [What is OpenShift Virtualization Service?](/docs/openshift?topic=openshift-rovs-overview#rovs-what-is)
 
@@ -3981,7 +3977,7 @@ subcollection: openshift
 
 * [Troubleshooting](/docs/openshift?topic=openshift-rovs-getting-started#rovs-gs-troubleshoot)
 
-[Creating a cluster](/docs/openshift?topic=openshift-rovs-cluster-create#rovs-cluster-create)
+[Creating a ROVS cluster](/docs/openshift?topic=openshift-rovs-cluster-create#rovs-cluster-create)
 
 * [Objectives](/docs/openshift?topic=openshift-rovs-cluster-create#rovs-create-objectives)
 
@@ -4025,7 +4021,7 @@ subcollection: openshift
 
 * [Troubleshooting](/docs/openshift?topic=openshift-rovs-cluster-create&interface=cli#rovs-create-troubleshoot)
 
-[Managing clusters](/docs/openshift?topic=openshift-rovs-manage#rovs-manage)
+[Managing ROVS clusters](/docs/openshift?topic=openshift-rovs-manage#rovs-manage)
 
 * [Understanding managed components](/docs/openshift?topic=openshift-rovs-manage#rovs-manage-components)
 
@@ -4119,7 +4115,7 @@ subcollection: openshift
 
 * [Next steps](/docs/openshift?topic=openshift-rovs-addon-virtualization#rovs-addon-virt-next)
 
-[Limitations](/docs/openshift?topic=openshift-rovs-limitations#rovs-limitations)
+[ROVS limitations](/docs/openshift?topic=openshift-rovs-limitations#rovs-limitations)
 
 * [Infrastructure requirements](/docs/openshift?topic=openshift-rovs-limitations#rovs-limit-infra)
 
