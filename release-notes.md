@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2026
-lastupdated: "2026-06-12"
+lastupdated: "2026-06-15"
 
 
 keywords: kubernetes, release notes, openshift, {{site.data.keyword.openshiftlong_notm}}
@@ -30,6 +30,18 @@ Looking for {{site.data.keyword.cloud_notm}} status, platform announcements, sec
 
 ## June 2026
 {: #openshift-jun26}
+
+### 15 June 2026
+{: #openshift-jun1526}
+{: release-note}
+
+
+
+OpenShift Virtualization cluster add-on patch updates.
+:   For more information, see the [change log](/docs/openshift?topic=openshift-cl-add-ons-openshift-virtualization).
+
+
+
 
 ### 10 June 2026
 {: #openshift-jun1026}

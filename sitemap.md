@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2026
-lastupdated: "2026-06-12"
+lastupdated: "2026-06-15"
 
 
 keywords: openshift
@@ -286,6 +286,10 @@ subcollection: openshift
 [Release notes](/docs/openshift?topic=openshift-openshift-relnotes#openshift-relnotes)
 
 * [June 2026](/docs/openshift?topic=openshift-openshift-relnotes#openshift-jun26)
+
+    * [15 June 2026](/docs/openshift?topic=openshift-openshift-relnotes#openshift-jun1526)
+
+        * OpenShift Virtualization cluster add-on patch updates.
 
     * [10 June 2026](/docs/openshift?topic=openshift-openshift-relnotes#openshift-jun1026)
 
