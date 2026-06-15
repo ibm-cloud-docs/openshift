@@ -2,7 +2,7 @@
 
 copyright:
   years: 2022, 2026
-lastupdated: "2026-04-28"
+lastupdated: "2026-06-12"
 
 
 keywords: rhel, os, operating system, rhcos, 418, migration, vpc
@@ -59,6 +59,9 @@ ibmcloud ks cluster master update --cluster <clusterNameOrID> --version 4.18_ope
 
 ## Step 2: Creating a new RHCOS worker pool
 {: #create-pool-rhcos}
+
+Before you create a new RHCOS worker pool, review the instance group quota limit. RHCOS clusters have a maximum of 12 instance groups per cluster. One instance group is created for each zone in each worker pool. For example, if you have 3 worker pools with 3 zones each, you use 9 of the 12 available instance groups. If you need more than 12 instance groups, [contact IBM Support](/docs/openshift?topic=openshift-get-help) to request an account-wide quota increase that applies to all clusters in your account.
+{: important}
 
 - Make sure to specify `RHCOS` as the `--operating-system` of the new pool.
 - Make sure that the number of nodes specified with the `--size-per-zone` option matches the number of workers per zone for the RHEL worker pool. To list a worker pool's zones and the number of workers per zone, run `ibmcloud oc worker-pool get --worker-pool WORKER_POOL --cluster CLUSTER`.

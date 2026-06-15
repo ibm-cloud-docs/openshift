@@ -2,7 +2,7 @@
 
 copyright:
   years: 2025, 2026
-lastupdated: "2026-06-10"
+lastupdated: "2026-06-11"
 
 
 keywords: openshift, acm, advanced cluster management, manage cluster, management, addon, add-on, acm addon
@@ -322,6 +322,7 @@ You are responsible for managing these operators, including but not limited to u
 |---|---|---|
 | GitOps Operator | - Use to run Argo-cd Applications from the ACM console. \n - Install on the **hub cluster** and any **managed clusters**. | [GitOps overview](https://docs.redhat.com/en/documentation/red_hat_advanced_cluster_management_for_kubernetes/2.15/html/gitops/gitops-overview){: external} |
 | Red Hat OpenShift Virtualization Operator | - Use to manage VM workloads alongside container workloads. \n - Install on **managed clusters**. \n - Available for bare metal clusters only (only applies to the managed cluster). | [Installing the OpenShift Virtualization Operator](https://cloud.ibm.com/docs/openshift?topic=openshift-oc-virtualization) |
+| Submariner | - Provides direct networking between two or more Kubernetes clusters in your environment. Required for [Regional Disaster Recovery with ODF](/docs/openshift?topic=openshift-openshift_odf_rdr_roks&interface=cli). \n - Install on **managed clusters**. | [Submariner](https://docs.redhat.com/en/documentation/red_hat_advanced_cluster_management_for_kubernetes/2.2/html/manage_cluster/submariner){: external} |
 {: caption="Optional operators for ACM." caption-side="bottom"}
 
 ## Importing managed clusters after ACM is installed

@@ -2,7 +2,7 @@
 
 copyright:
   years: 2025, 2026
-lastupdated: "2026-06-10"
+lastupdated: "2026-06-12"
 
 keywords: openshift, virtualization, planning, prerequisites, bare metal
 
@@ -26,6 +26,9 @@ Before you deploy OpenShift Virtualization on {{site.data.keyword.openshiftlong_
 
 [OpenShift Virtualization Service](/docs/openshift?topic=openshift-rovs-overview) is the fastest option with automatic setup of storage, networking, and operators - ready in minutes instead of hours.
 {: tip}
+
+This service is currently available as a beta release. Access is controlled by an allowlist. During the beta period, only console-based cluster creation is supported.
+{: beta}
 
 
 ## Prerequisites
@@ -123,5 +126,5 @@ For security, use security groups and network policies to control traffic, enabl
 After planning your deployment:
 
 1. [Set up storage for OpenShift Virtualization](/docs/openshift?topic=openshift-virt-storage-setup)
-2. [Install the OpenShift Virtualization Operator](/docs/openshift?topic=openshift-oc-virtualization)
-3. [Configure virtual network interfaces (optional)](/docs/openshift?topic=openshift-vni-virtualization)
+2. [Install the OpenShift Virtualization Operator](/docs/openshift?topic=openshift-oc-virtualization) (not required for [OpenShift Virtualization Service](/docs/openshift?topic=openshift-rovs-getting-started) - operators are pre-installed)
+3. [Configure virtual network interfaces (optional)](/docs/openshift?topic=openshift-vni-virtualization) (for ROVS, skip the NMState operator installation and NNCP resource creation steps)

@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2026
-lastupdated: "2026-06-11"
+lastupdated: "2026-06-15"
 
 
 keywords: openshift
@@ -286,6 +286,14 @@ subcollection: openshift
 [Release notes](/docs/openshift?topic=openshift-openshift-relnotes#openshift-relnotes)
 
 * [June 2026](/docs/openshift?topic=openshift-openshift-relnotes#openshift-jun26)
+
+    * [15 June 2026](/docs/openshift?topic=openshift-openshift-relnotes#openshift-jun1526)
+
+        * OpenShift Virtualization cluster add-on patch updates.
+
+    * [10 June 2026](/docs/openshift?topic=openshift-openshift-relnotes#openshift-jun1026)
+
+        * VPC Block CSI Driver cluster add-on patch updates.
 
     * [09 June 2025](/docs/openshift?topic=openshift-openshift-relnotes#openshift-jun0925)
 
@@ -3918,13 +3926,9 @@ subcollection: openshift
 
 * [Deployment options](/docs/openshift?topic=openshift-virt-overview#virt-deployment-options)
 
-    * [OpenShift Virtualization Service (Recommended)](/docs/openshift?topic=openshift-virt-overview#virt-vs-deployment)
+    * [Feature comparison](/docs/openshift?topic=openshift-virt-overview#virt-choose-deployment)
 
-    * [Manual deployment (For custom configurations)](/docs/openshift?topic=openshift-virt-overview#virt-manual-deployment)
-
-    * [Comparison](/docs/openshift?topic=openshift-virt-overview#virt-choose-deployment)
-
-* [Common requirements](/docs/openshift?topic=openshift-virt-overview#virt-requirements)
+* [Characteristics](/docs/openshift?topic=openshift-virt-overview#virt-requirements)
 
 * [Supported bare metal flavors](/docs/openshift?topic=openshift-virt-overview#virt-bm-flavors)
 
@@ -3939,11 +3943,11 @@ subcollection: openshift
 * [Getting started](/docs/openshift?topic=openshift-virt-overview#virt-next-steps)
 
 
-### OpenShift Virtualization Service (pre-configured)
-{: #sitemap_openshift_virtualization_service_pre-configured}
+### Red Hat OpenShift Virtualization Service (ROVS)
+{: #sitemap_red_hat_openshift_virtualization_service_rovs}
 
 
-[About Virtualization Service](/docs/openshift?topic=openshift-rovs-overview#rovs-overview)
+[About ROVS](/docs/openshift?topic=openshift-rovs-overview#rovs-overview)
 
 * [What is OpenShift Virtualization Service?](/docs/openshift?topic=openshift-rovs-overview#rovs-what-is)
 
@@ -3977,7 +3981,7 @@ subcollection: openshift
 
 * [Troubleshooting](/docs/openshift?topic=openshift-rovs-getting-started#rovs-gs-troubleshoot)
 
-[Creating a cluster](/docs/openshift?topic=openshift-rovs-cluster-create#rovs-cluster-create)
+[Creating a ROVS cluster](/docs/openshift?topic=openshift-rovs-cluster-create#rovs-cluster-create)
 
 * [Objectives](/docs/openshift?topic=openshift-rovs-cluster-create#rovs-create-objectives)
 
@@ -4021,7 +4025,7 @@ subcollection: openshift
 
 * [Troubleshooting](/docs/openshift?topic=openshift-rovs-cluster-create&interface=cli#rovs-create-troubleshoot)
 
-[Managing clusters](/docs/openshift?topic=openshift-rovs-manage#rovs-manage)
+[Managing ROVS clusters](/docs/openshift?topic=openshift-rovs-manage#rovs-manage)
 
 * [Understanding managed components](/docs/openshift?topic=openshift-rovs-manage#rovs-manage-components)
 
@@ -4115,7 +4119,7 @@ subcollection: openshift
 
 * [Next steps](/docs/openshift?topic=openshift-rovs-addon-virtualization#rovs-addon-virt-next)
 
-[Limitations](/docs/openshift?topic=openshift-rovs-limitations#rovs-limitations)
+[ROVS limitations](/docs/openshift?topic=openshift-rovs-limitations#rovs-limitations)
 
 * [Infrastructure requirements](/docs/openshift?topic=openshift-rovs-limitations#rovs-limit-infra)
 
@@ -5037,6 +5041,8 @@ subcollection: openshift
 [OpenShift Data Foundation Regional Disaster Recovery on {{site.data.keyword.openshiftlong_notm}} clusters](/docs/openshift?topic=openshift-openshift_odf_rdr_roks#openshift_odf_rdr_roks)
 
 * [Applications and workloads supported for Regional Disaster Recovery](/docs/openshift?topic=openshift-openshift_odf_rdr_roks#app_support)
+
+* [Before you begin](/docs/openshift?topic=openshift-openshift_odf_rdr_roks#prereq)
 
 * [Step 1. Creating the clusters](/docs/openshift?topic=openshift-openshift_odf_rdr_roks&interface=cli#clusters-cli)
 
@@ -7693,6 +7699,8 @@ subcollection: openshift
 
 * [Version 5.2](/docs/openshift?topic=openshift-cl-add-ons-vpc-block-csi-driver#cl-add-ons-vpc-block-csi-driver-5.2)
 
+    * [v5.2.54_345553805, released 10 June 2026](/docs/openshift?topic=openshift-cl-add-ons-vpc-block-csi-driver#cl-add-ons-vpc-block-csi-driver-v5254_345553805)
+
     * [v5.2.52_342345117, released 28 May 2026](/docs/openshift?topic=openshift-cl-add-ons-vpc-block-csi-driver#cl-add-ons-vpc-block-csi-driver-v5252_342345117)
 
     * [v5.2.51_340196278, released 20 May 2026](/docs/openshift?topic=openshift-cl-add-ons-vpc-block-csi-driver#cl-add-ons-vpc-block-csi-driver-v5251_340196278)
@@ -7728,6 +7736,8 @@ subcollection: openshift
     * [5.2.31_687, released 17 February 2025](/docs/openshift?topic=openshift-cl-add-ons-vpc-block-csi-driver#cl-add-ons-vpc-block-csi-driver-5231_687)
 
 * [Version 5.1](/docs/openshift?topic=openshift-cl-add-ons-vpc-block-csi-driver#cl-add-ons-vpc-block-csi-driver-5.1)
+
+    * [v5.1.54_345553861, released 10 June 2026](/docs/openshift?topic=openshift-cl-add-ons-vpc-block-csi-driver#cl-add-ons-vpc-block-csi-driver-v5154_345553861)
 
     * [v5.1.52_342345162, released 28 May 2026](/docs/openshift?topic=openshift-cl-add-ons-vpc-block-csi-driver#cl-add-ons-vpc-block-csi-driver-v5152_342345162)
 

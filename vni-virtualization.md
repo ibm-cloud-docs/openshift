@@ -2,7 +2,7 @@
 
 copyright:
   years: 2026, 2026
-lastupdated: "2026-05-19"
+lastupdated: "2026-06-12"
 
 keywords: openshift, vni, virtual network interface, virtualization, bare metal, localnet, udn
 
@@ -167,6 +167,9 @@ Localnet UDNs require preparation of the {{site.data.keyword.openshiftshort}} cl
 ### Installing the NMState operator
 {: #vni-install-nmstate}
 
+[OpenShift Virtualization Service](/docs/openshift?topic=openshift-rovs-getting-started) clusters have the NMState operator pre-installed and managed by the `openshift-virtualization` add-on. Skip this step if you're using ROVS.
+{: tip}
+
 1. Deploy the NMState Operator from the OperatorHub in the {{site.data.keyword.openshiftshort}} console or by using the CLI.
 
 2. Create an NMState instance with the default configuration.
@@ -184,6 +187,9 @@ Localnet UDNs require preparation of the {{site.data.keyword.openshiftshort}} cl
 
 ### Creating the OVS bridge
 {: #vni-create-bridge}
+
+[OpenShift Virtualization Service](/docs/openshift?topic=openshift-rovs-getting-started) clusters have the required NNCP resources pre-configured. You only need to create these resources manually for standard OpenShift clusters with manual OpenShift Virtualization installation.
+{: tip}
 
 1. Create a dedicated OVS bridge with `eth1` attached to it by deploying the following NMState custom resource.
     ```yaml

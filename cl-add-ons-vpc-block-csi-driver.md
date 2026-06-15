@@ -3,7 +3,7 @@
 copyright:
   years: 2024, 2026
 
-lastupdated: "2026-06-02"
+lastupdated: "2026-06-12"
 
 
 keywords: change log, version history, VPC Block CSI Driver
@@ -41,6 +41,14 @@ Review the version history for VPC Block CSI Driver.
 
 ## Version 5.2
 {: #cl-add-ons-vpc-block-csi-driver-5.2}
+
+
+### v5.2.54_345553805, released 10 June 2026
+{: #cl-add-ons-vpc-block-csi-driver-v5254_345553805}
+
+- Resolves the following CVEs: [CVE-2026-4438](https://nvd.nist.gov/vuln/detail/CVE-2026-4438){: external}, [CVE-2026-4046](https://nvd.nist.gov/vuln/detail/CVE-2026-4046){: external}, and [CVE-2026-4437](https://nvd.nist.gov/vuln/detail/CVE-2026-4437){: external}.
+- `armada-storage-secret v1.3.51`
+- `ibm-csi-init-container v1.0.22`
 
 
 ### v5.2.52_342345117, released 28 May 2026
@@ -190,6 +198,14 @@ Review the version history for VPC Block CSI Driver.
 
 ## Version 5.1
 {: #cl-add-ons-vpc-block-csi-driver-5.1}
+
+
+### v5.1.54_345553861, released 10 June 2026
+{: #cl-add-ons-vpc-block-csi-driver-v5154_345553861}
+
+- Resolves the following CVEs: [CVE-2026-4438](https://nvd.nist.gov/vuln/detail/CVE-2026-4438){: external}, [CVE-2026-4046](https://nvd.nist.gov/vuln/detail/CVE-2026-4046){: external}, and [CVE-2026-4437](https://nvd.nist.gov/vuln/detail/CVE-2026-4437){: external}.
+- `armada-storage-secret v1.2.87`
+- `ibm-csi-init-container v1.0.22`
 
 
 ### v5.1.52_342345162, released 28 May 2026

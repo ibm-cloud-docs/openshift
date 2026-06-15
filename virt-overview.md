@@ -2,7 +2,7 @@
 
 copyright:
   years: 2025, 2026
-lastupdated: "2026-06-10"
+lastupdated: "2026-06-12"
 
 keywords: openshift, virtualization, virtual machines, vms, bare metal
 
@@ -43,97 +43,42 @@ OpenShift Virtualization on IBM Cloud provides enterprise-grade virtualization f
 
 **Recommended:** OpenShift Virtualization Service provides the fastest path to running VMs with pre-configured storage, networking, and operators. Choose manual deployment only if you need custom configurations or mixed container/VM workloads.
 
+This service is currently available as a beta release. Access is controlled by an allowlist. During the beta period, only console-based cluster creation is supported.
+{: beta}
 
+| Deployment option | Description | Best for | Setup time | More information |
+| ----------------- | ----------- | -------- | ---------- | ---------------- |
+| OpenShift Virtualization Service (Recommended) | Ready-to-use virtualization environment with all components automatically installed and configured during cluster creation | VM-focused workloads, quick deployment, simplified management with managed add-ons, cost-optimized licensing | Minutes (automated) | [Get started](/docs/openshift?topic=openshift-rovs-getting-started), [Create cluster](/docs/openshift?topic=openshift-rovs-cluster-create), [Learn more](/docs/openshift?topic=openshift-rovs-overview) |
+| Manual deployment | Full control over component selection and configuration. Create a standard cluster and manually install OpenShift Virtualization components | Mixed container and VM workloads, custom storage configurations, specific networking requirements, full control over all components | Hours (manual) | [Plan deployment](/docs/openshift?topic=openshift-virt-plan), [Set up storage](/docs/openshift?topic=openshift-virt-storage-setup), [Install operator](/docs/openshift?topic=openshift-oc-virtualization) |
+{: caption="Deployment options for OpenShift Virtualization" caption-side="bottom"}
 
-### OpenShift Virtualization Service (Recommended)
-{: #virt-vs-deployment}
-
-**Fastest and easiest option** - Pre-configured virtualization platform ready in minutes.
-
-OpenShift Virtualization Service delivers a ready-to-use virtualization environment with all components automatically installed and configured during cluster creation.
-
-What's included:
-- OpenShift Virtualization Operator (pre-installed)
-- OpenShift Data Foundation storage (pre-configured with local NVME)
-- Optimized networking (MTU 8900/9000)
-- Cost-effective OVE licensing
-
-Storage:
-- Uses OpenShift Data Foundation with local NVME disks
-- VPC Block Storage is not deployed (not needed for ROVS)
-- No manual storage configuration required
-
-Best for:
-- Virtualization-focused workloads
-- Quick deployment (minutes vs. hours)
-- Simplified management with managed add-ons
-- Cost-optimized licensing for VM workloads
-
-**Ready to get started?**
-- [Quickstart: Create your first cluster](/docs/openshift?topic=openshift-rovs-getting-started) - Console-based walkthrough
-- [Detailed tutorial: Creating a cluster](/docs/openshift?topic=openshift-rovs-cluster-create) - Step-by-step with CLI and Terraform options
-- [Learn more about Virtualization Service](/docs/openshift?topic=openshift-rovs-overview) - Features, pricing, and architecture
-
-
-### Manual deployment (For custom configurations)
-{: #virt-manual-deployment}
-
-Full control over component selection and configuration.
-
-Create a standard {{site.data.keyword.openshiftlong_notm}} cluster and manually install and configure OpenShift Virtualization components.
-
-What you configure:
-- OpenShift Virtualization Operator installation
-- Storage solution (ODF, VPC File Storage, or other)
-- Networking optimization
-- Node placement and resource allocation
-
-Best for:
-- Mixed container and VM workloads
-- Custom storage configurations
-- Specific networking requirements
-- Full control over all components
-
-**Ready to get started?**
-1. [Plan your deployment](/docs/openshift?topic=openshift-virt-plan) - Review prerequisites and architecture
-2. [Set up storage](/docs/openshift?topic=openshift-virt-storage-setup) - Configure ODF or VPC File Storage
-3. [Install the operator](/docs/openshift?topic=openshift-oc-virtualization) - Deploy OpenShift Virtualization
-
-
-### Comparison
+### Feature comparison
 {: #virt-choose-deployment}
 
 | Feature | Virtualization Service | Manual Deployment |
 |---------|----------------------|-------------------|
 | Setup time | Minutes (automated) | Hours (manual) |
 | OpenShift version | 4.20+ | 4.17+ |
-| Storage | ODF pre-configured | Your choice (ODF, VPC File, etc.) |
+| Storage | ODF pre-configured with local NVME | Your choice (ODF, VPC File, etc.) |
 | Networking | Pre-optimized (MTU 8900/9000) | Manual configuration |
 | Licensing | OVE (cost-effective) | Full OCP |
 | Management | Managed add-ons | Self-managed |
 | Flexibility | Pre-configured | Full control |
 | Best for | VM-focused workloads | Custom configurations |
-{: caption="Deployment option comparison" caption-side="bottom"}
+{: caption="Deployment option feature comparison" caption-side="bottom"}
 
 
-## Common requirements
+## Characteristics
 {: #virt-requirements}
 
-Both deployment options require:OpenShift Virtualization requires:
+Both deployment options have the following characteristics:OpenShift Virtualization has the following characteristics:
 
-Infrastructure
-:   - VPC with bare metal worker nodes
-    - Red Hat CoreOS (RHCOS) operating system
-    - OVN-Kubernetes CNI
-    - Outbound traffic protection disabled
-
-Storage
-:   - ReadWriteMany (RWX) access mode support
-    - OpenShift Data Foundation (recommended) or VPC File Storage
-
-Networking
-:   - 100 Gbps (Gen 2) or 200 Gbps (Gen 3) network connectivity
-    - MTU optimization for VM workloads
+| Category | Requirements |
+| -------- | ------------ |
+| Infrastructure | VPC with bare metal worker nodes, Red Hat CoreOS (RHCOS) operating system, OVN-Kubernetes CNI, outbound traffic protection disabled |
+| Storage | ReadWriteMany (RWX) access mode support, OpenShift Data Foundation (recommended) or VPC File Storage |
+| Networking | 100 Gbps (Gen 2) or 200 Gbps (Gen 3) network connectivity, MTU optimization for VM workloads |
+{: caption="OpenShift Virtualization characteristics" caption-side="bottom"}
 
 ## Supported bare metal flavors
 {: #virt-bm-flavors}
@@ -186,18 +131,14 @@ Flavors with `d` suffix include local SSD storage, which is required for OpenShi
 ### Networking capabilities
 {: #virt-networking-options}
 
-Basic networking (4.17+)
-:   - Pod network connectivity
-    - Kubernetes Services and Routes
-    - VPC load balancers
-    - Standard VM networking
+| Networking option | Available in | Capabilities |
+| ----------------- | ------------ | ------------ |
+| Basic networking | OpenShift 4.17+ | Pod network connectivity, Kubernetes Services and Routes, VPC load balancers, standard VM networking |
+| Advanced networking with VNIs | OpenShift 4.20+ | Direct VPC network connectivity, floating IP addresses, network preservation during live migration, multiple network interfaces per VM. See [Managing virtual network interfaces](/docs/openshift?topic=openshift-vni-virtualization) |
+{: caption="Networking capabilities for OpenShift Virtualization" caption-side="bottom"}
 
-Advanced networking with VNIs (4.20+)
-:   - Direct VPC network connectivity
-    - Floating IP addresses
-    - Network preservation during live migration
-    - Multiple network interfaces per VM
-    - See [Managing virtual network interfaces](/docs/openshift?topic=openshift-vni-virtualization)
+ROVS clusters running version 4.21 and later have access to advanced networking options, including enhanced capabilities for virtual network interfaces and improved network performance.
+{: note}
 
 ## Limitations
 {: #virt-limitations}
