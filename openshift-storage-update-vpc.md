@@ -2,7 +2,7 @@
 
 copyright:
   years: 2023, 2026
-lastupdated: "2026-06-03"
+lastupdated: "2026-06-16"
 
 
 keywords: openshift, openshift data foundation, openshift container storage, ocs, worker update, worker replace
@@ -258,6 +258,137 @@ Make sure the storage cluster is healthy before continuing.
 	{: screen}
 	
 1. Wait until draining finishes, then complete the following steps to update the worker node.
+
+## Clean up persistent volumes for bare metal worker nodes
+{: #cleanup-pv-baremetal-vpc}
+{: step}
+
+[Major update]{: tag-red} [Minor update]{: tag-blue} [Worker replace]{: tag-green}
+
+**Bare metal worker nodes only**: If you are updating or replacing a bare metal worker node, complete the following steps to clean up persistent volumes and prepare the node for the new deployment. If you are working with virtual server instance (VSI) worker nodes, skip this section and continue to [Update the worker node](#upgrade-worker-node-vpc).
+{: important}
+
+Before you begin, make sure you have completed the previous steps to cordon and drain the worker node.
+
+1. Identify any persistent volumes (PVs) in `Released` state that are associated with the `localblock` storage class on the node you are updating.
+
+	```sh
+	oc get pv -L kubernetes.io/hostname | grep localblock | grep Released
+	```
+	{: pre}
+
+	Example output
+
+	```sh
+	local-pv-d6bf175b  1490Gi  RWO  Delete  Released  openshift-storage/ocs-deviceset-0-data-0-6c5pw  localblock  2d22h  compute-1
+	```
+	{: screen}
+
+1. If there are any PVs in `Released` state, delete them. Replace `<persistent_volume>` with the name of the PV from the previous step.
+
+	```sh
+	oc delete pv <persistent_volume>
+	```
+	{: pre}
+
+	Example command
+
+	```sh
+	oc delete pv local-pv-d6bf175b
+	```
+	{: pre}
+
+	Example output
+
+	```sh
+	persistentvolume "local-pv-d6bf175b" deleted
+	```
+	{: screen}
+
+1. Wipe the ODF disks on the bare metal node to prepare for new persistent volume creation. Start a debug pod on the node you are updating. Replace `<node-name>` with the name of your bare metal worker node.
+
+	```sh
+	kubectl debug node/<node-name> -it --image=registry.access.redhat.com/ubi8/ubi
+	```
+	{: pre}
+
+	Example command
+
+	```sh
+	kubectl debug node/kube-d8g2ek0l0bd8e4oss13g-bhargavibmu-default-000003b3 -it --image=registry.access.redhat.com/ubi8/ubi
+	```
+	{: pre}
+
+1. Inside the debug pod, change to the host root directory.
+
+	```sh
+	chroot /host
+	```
+	{: pre}
+
+1. Wipe each NVMe disk that was used by ODF. Adjust the disk range (`nvme{0..7}n1`) based on the number of disks in your configuration.
+
+	```sh
+	for disk in /dev/nvme{0..7}n1; do
+	  echo "Wiping $disk..."
+	  wipefs -af $disk
+	  dd if=/dev/zero of=$disk bs=1M count=100
+	  sgdisk --zap-all $disk 2>/dev/null || true
+	done
+	```
+	{: pre}
+
+1. Verify that the disks are clean and no longer have any filesystem signatures.
+
+	```sh
+	for disk in /dev/nvme{0..7}n1; do
+	  echo "=== $disk ==="
+	  blkid $disk 2>&1 || echo "Clean"
+	done
+	```
+	{: pre}
+
+	Each disk should show "Clean" in the output, indicating that all filesystem signatures have been removed.
+
+1. Exit the debug pod.
+
+	```sh
+	exit
+	exit
+	```
+	{: pre}
+
+1. List the `localvolumediscoveryresults` resources to find the entry for the node you are updating.
+
+	```sh
+	kubectl get localvolumediscoveryresults -n openshift-local-storage
+	```
+	{: pre}
+
+	Example output
+
+	```sh
+	NAME                                                                      AGE
+	discovery-result-kube-d8g2ek0l0bd8e4oss13g-bhargavibmu-default-000003b3   5d
+	discovery-result-kube-d8g2ek0l0bd8e4oss13g-bhargavibmu-default-000004a1   5d
+	```
+	{: screen}
+
+1. Delete the `localvolumediscoveryresults` resource for the node you are updating. Replace `<discovery-result-name>` with the name from the previous step.
+
+	```sh
+	kubectl delete localvolumediscoveryresults <discovery-result-name> -n openshift-local-storage
+	```
+	{: pre}
+
+	Example command
+
+	```sh
+	kubectl delete localvolumediscoveryresults discovery-result-kube-d8g2ek0l0bd8e4oss13g-bhargavibmu-default-000003b3 -n openshift-local-storage
+	```
+	{: pre}
+
+After completing these steps, new persistent volumes will be automatically created and scheduled on the bare metal node after it is reloaded. Continue to the next section to update the worker node.
 
 ## Update the worker node
 {: #upgrade-worker-node-vpc}

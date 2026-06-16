@@ -4466,8 +4466,6 @@ subcollection: openshift
 
 * [Understanding the profile generations](/docs/openshift?topic=openshift-storage-block-vpc-profile-migration#vpc-block-profile-generations)
 
-    * [Key differences between generations](/docs/openshift?topic=openshift-storage-block-vpc-profile-migration#vpc-block-profile-differences)
-
 * [Before you begin](/docs/openshift?topic=openshift-storage-block-vpc-profile-migration#vpc-block-profile-migration-prereqs)
 
 * [Identify volumes for migration](/docs/openshift?topic=openshift-storage-block-vpc-profile-migration#vpc-block-profile-identify)
@@ -4486,7 +4484,11 @@ subcollection: openshift
 
 * [Create a Gen-2 StorageClass](/docs/openshift?topic=openshift-storage-block-vpc-profile-migration#vpc-block-profile-storageclass)
 
-* [Adjust IOPS to optimize performance](/docs/openshift?topic=openshift-storage-block-vpc-profile-migration#vpc-block-profile-optimize)
+* [Adjust IOPS and throughput to optimize performance](/docs/openshift?topic=openshift-storage-block-vpc-profile-migration#vpc-block-profile-optimize)
+
+    * [Updating IOPS](/docs/openshift?topic=openshift-storage-block-vpc-profile-migration#vpc-block-profile-update-iops)
+
+    * [Updating throughput (bandwidth)](/docs/openshift?topic=openshift-storage-block-vpc-profile-migration#vpc-block-profile-update-bandwidth)
 
 * [Troubleshooting](/docs/openshift?topic=openshift-storage-block-vpc-profile-migration#vpc-block-profile-troubleshooting)
 
@@ -4971,6 +4973,8 @@ subcollection: openshift
 * [Scale down OpenShift Data Foundation](/docs/openshift?topic=openshift-openshift-storage-update-vpc#scale-down-odf-vpc)
 
 * [Cordon and drain the worker node](/docs/openshift?topic=openshift-openshift-storage-update-vpc#cordon-drain-worker-node-vpc)
+
+* [Clean up persistent volumes for bare metal worker nodes](/docs/openshift?topic=openshift-openshift-storage-update-vpc#cleanup-pv-baremetal-vpc)
 
 * [Update the worker node](/docs/openshift?topic=openshift-openshift-storage-update-vpc#upgrade-worker-node-vpc)
 

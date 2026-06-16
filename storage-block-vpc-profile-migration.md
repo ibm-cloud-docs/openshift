@@ -2,7 +2,7 @@
 
 copyright:
   years: 2026
-lastupdated: "2026-06-05"
+lastupdated: "2026-06-16"
 
 keywords: openshift, block storage, vpc, gen-1, gen-2, sdp, migration, profile, iops
 
@@ -39,16 +39,7 @@ Generation 1 (tier-based)
 Generation 2 (SDP)
 :   Custom IOPS independent of volume size. For more information, see [SDP Block Storage profile](/docs/vpc?topic=vpc-block-storage-profiles&interface=ui#sdp){: external}.
 
-### Key differences between generations
-{: #vpc-block-profile-differences}
-
-| Aspect | Gen-1 | Gen-2 (SDP) |
-|--------|-------|-------------|
-| IOPS | Tied to volume size | Custom (100-48,000) |
-| Throughput | Limited (approximately 48-768 MB/s) | Up to 8,192 MB/s |
-| Adjustability | Fixed | Dynamic |
-| Performance | Size-dependent | Size-independent |
-{: caption="Comparison of Gen-1 and Gen-2 block storage profiles" caption-side="bottom"}
+For the latest details on block storage profiles and their capabilities, see [Block Storage profiles](/docs/vpc?topic=vpc-block-storage-profiles&interface=ui){: external}.
 
 ## Before you begin
 {: #vpc-block-profile-migration-prereqs}
@@ -320,14 +311,17 @@ Create an SDP StorageClass for provisioning new volumes.
     ```
     {: pre}
 
-## Adjust IOPS to optimize performance
+## Adjust IOPS and throughput to optimize performance
 {: #vpc-block-profile-optimize}
 
-After migration, you can adjust IOPS dynamically based on your workload requirements.
+After migration, you can adjust IOPS and throughput (bandwidth) dynamically based on your workload requirements.
 
 - Start with 5,000 IOPS for general workloads.
 - Use 10,000 or more IOPS for databases.
 - Monitor usage and adjust based on actual requirements.
+
+### Updating IOPS
+{: #vpc-block-profile-update-iops}
 
 1. Increase IOPS for higher performance.
 
@@ -336,12 +330,41 @@ After migration, you can adjust IOPS dynamically based on your workload requirem
     ```
     {: pre}
 
-1. Verify the update.
+1. Verify the IOPS update.
 
     ```sh
     ibmcloud is vol $VOLUME_ID | grep IOPS
     ```
     {: pre}
+
+### Updating throughput (bandwidth)
+{: #vpc-block-profile-update-bandwidth}
+
+After migration to the SDP profile, volumes have a default bandwidth allocation. You can increase the bandwidth to improve throughput for I/O-intensive workloads.
+
+1. Check the current bandwidth allocation.
+
+    ```sh
+    ibmcloud is vol $VOLUME_ID | grep Bandwidth
+    ```
+    {: pre}
+
+1. Increase bandwidth for higher throughput. Use the `--bandwidth` option to specify the desired bandwidth in Mbps.
+
+    ```sh
+    ibmcloud is volume-update $VOLUME_ID --bandwidth 2000
+    ```
+    {: pre}
+
+1. Verify the bandwidth update.
+
+    ```sh
+    ibmcloud is vol $VOLUME_ID | grep Bandwidth
+    ```
+    {: pre}
+
+    The bandwidth value represents the maximum throughput in MB/s that the volume can achieve. Higher bandwidth values provide better performance for data-intensive operations.
+    {: tip}
 
 ## Troubleshooting
 {: #vpc-block-profile-troubleshooting}
@@ -432,5 +455,3 @@ After completing the migration, consider the following next steps.
 - Monitor volume performance and adjust IOPS as needed.
 - Update your deployment templates to use Gen-2 StorageClasses for new volumes.
 - Review [Block Storage capacity and performance](/docs/vpc?topic=vpc-capacity-performance&interface=ui){: external} for optimization guidance.
-
-
