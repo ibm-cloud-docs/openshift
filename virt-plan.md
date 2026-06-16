@@ -2,7 +2,7 @@
 
 copyright:
   years: 2025, 2026
-lastupdated: "2026-06-12"
+lastupdated: "2026-06-16"
 
 keywords: openshift, virtualization, planning, prerequisites, bare metal
 
@@ -96,7 +96,7 @@ OpenShift 4.17 and later supports basic networking, which uses the default pod n
 
 
 
-The VNI feature is generally available. A small number of accounts may still be blocked; contact IBM Cloud support if you need access.
+The VNI feature is generally available. A small number of accounts might still be blocked; contact IBM Cloud support if you need access.
 {: note}
 
 For information about installing the NMState operator and configuring VNIs, see [Managing virtual network interfaces for OpenShift Virtualization](/docs/openshift?topic=openshift-vni-virtualization).
@@ -127,4 +127,4 @@ After planning your deployment:
 
 1. [Set up storage for OpenShift Virtualization](/docs/openshift?topic=openshift-virt-storage-setup)
 2. [Install the OpenShift Virtualization Operator](/docs/openshift?topic=openshift-oc-virtualization) (not required for [OpenShift Virtualization Service](/docs/openshift?topic=openshift-rovs-getting-started) - operators are pre-installed)
-3. [Configure virtual network interfaces (optional)](/docs/openshift?topic=openshift-vni-virtualization) (for ROVS, skip the NMState operator installation and NNCP resource creation steps)
+3. [Configure virtual network interfaces (optional)](/docs/openshift?topic=openshift-vni-virtualization) (for Virtualization Service, skip the NMState operator installation and NNCP resource creation steps)

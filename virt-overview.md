@@ -2,7 +2,7 @@
 
 copyright:
   years: 2025, 2026
-lastupdated: "2026-06-12"
+lastupdated: "2026-06-16"
 
 keywords: openshift, virtualization, virtual machines, vms, bare metal
 
@@ -41,10 +41,10 @@ OpenShift Virtualization on IBM Cloud provides enterprise-grade virtualization f
 {: #virt-deployment-options}
 
 
-**Recommended:** OpenShift Virtualization Service provides the fastest path to running VMs with pre-configured storage, networking, and operators. Choose manual deployment only if you need custom configurations or mixed container/VM workloads.
 
-This service is currently available as a beta release. Access is controlled by an allowlist. During the beta period, only console-based cluster creation is supported.
+Virtualization Service is currently available as a beta release. Access is controlled by an allowlist. During the beta period, only console-based cluster creation is supported.
 {: beta}
+
 
 | Deployment option | Description | Best for | Setup time | More information |
 | ----------------- | ----------- | -------- | ---------- | ---------------- |
@@ -137,7 +137,7 @@ Flavors with `d` suffix include local SSD storage, which is required for OpenShi
 | Advanced networking with VNIs | OpenShift 4.20+ | Direct VPC network connectivity, floating IP addresses, network preservation during live migration, multiple network interfaces per VM. See [Managing virtual network interfaces](/docs/openshift?topic=openshift-vni-virtualization) |
 {: caption="Networking capabilities for OpenShift Virtualization" caption-side="bottom"}
 
-ROVS clusters running version 4.21 and later have access to advanced networking options, including enhanced capabilities for virtual network interfaces and improved network performance.
+Virtualization Service clusters running version 4.21 and later have access to advanced networking options, including enhanced capabilities for virtual network interfaces and improved network performance.
 {: note}
 
 ## Limitations
@@ -151,7 +151,7 @@ ROVS clusters running version 4.21 and later have access to advanced networking 
 - Windows VMs require appropriate licensing
 - If you mark more than one StorageClass with the annotation `storageclass.kubernetes.io/is-default-class: "true"`, the following occurs:
     - **Selection Logic**: For a PersistentVolumeClaim (PVC) created without a `storageClassName`, Kubernetes typically selects the most recently created default StorageClass.
-    - **Potential Failure**: In some older versions or specific configurations, having multiple defaults may cause PVC creation to fail if no explicit class is specified, as the system cannot resolve which one to use.
+    - **Potential Failure**: In some older versions or specific configurations, having multiple defaults might cause PVC creation to fail if no explicit class is specified, as the system cannot resolve which one to use.
     - **Monitoring Alerts**: In managed environments like OpenShift, having multiple defaults triggers a `MultipleDefaultStorageClasses` alert to warn administrators of the conflict.
 
 ## Getting started

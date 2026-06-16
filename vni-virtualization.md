@@ -2,7 +2,7 @@
 
 copyright:
   years: 2026, 2026
-lastupdated: "2026-06-12"
+lastupdated: "2026-06-16"
 
 keywords: openshift, vni, virtual network interface, virtualization, bare metal, localnet, udn
 
@@ -167,7 +167,7 @@ Localnet UDNs require preparation of the {{site.data.keyword.openshiftshort}} cl
 ### Installing the NMState operator
 {: #vni-install-nmstate}
 
-[OpenShift Virtualization Service](/docs/openshift?topic=openshift-rovs-getting-started) clusters have the NMState operator pre-installed and managed by the `openshift-virtualization` add-on. Skip this step if you're using ROVS.
+[OpenShift Virtualization Service](/docs/openshift?topic=openshift-rovs-getting-started) clusters have the NMState operator pre-installed and managed by the `openshift-virtualization` add-on. Skip this step if you're using Virtualization Service.
 {: tip}
 
 1. Deploy the NMState Operator from the OperatorHub in the {{site.data.keyword.openshiftshort}} console or by using the CLI.
