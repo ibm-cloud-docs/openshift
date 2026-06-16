@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2026
-lastupdated: "2026-06-05"
+lastupdated: "2026-06-16"
 
 
 keywords: kubernetes, clusters, worker nodes, worker pools, vpc-gen2, openshift, {{site.data.keyword.openshiftlong_notm}}
@@ -96,6 +96,11 @@ Worker pool encryption
 
 
 
+Network plug-in [4.20 or later]{: tag-red}
+:   Select the container network interface (CNI) that you want to use. Choose between Calico and Open Virtual Network. Note that Open Virtual Network is available for OpenShift cluster version 4.20 and later and RHCOS worker nodes only. For more information, see [Selecting a container network interface (CNI)](/docs/openshift?topic=openshift-cni).
+
+
+
 Network settings
 :    Service endpoints provide communication to the master. You can choose to configure your cluster with a public service endpoint or both a public and a private cloud service endpoint. For more information about what setup is required to run internet-facing apps, or to keep your cluster private, see [Planning your cluster network setup](/docs/openshift?topic=openshift-plan_vpc_basics). You cannot change the cloud service endpoints after you create the cluster.
 
@@ -164,7 +169,7 @@ Observability integrations
 
 4. Create the cluster in your VPC. You can use the `ibmcloud oc cluster create vpc-gen2` command to create a single zone cluster in your VPC with worker nodes that are connected to one VPC subnet only. If you want to create a multizone cluster, you can use the {{site.data.keyword.cloud_notm}} console, or [add more zones](/docs/openshift?topic=openshift-add-workers-vpc) to your cluster after the cluster is created. The cluster takes a few minutes to provision.
     ```sh
-    ibmcloud oc cluster create vpc-gen2 --name <cluster_name> --zone <vpc_zone> --vpc-id <vpc_ID> --subnet-id <vpc_subnet_ID> --flavor <worker_flavor> --version 4.20_openshift --cos-instance <COS_CRN> --workers <number_workers_per_zone> [--sm-group GROUP] [--sm-instance INSTANCE] [--trusted-profile-id ID] [--pod-subnet] [--service-subnet] [--disable-public-service-endpoint] [[--kms-account-id <kms_account_ID>] --kms-instance <KMS_instance_ID> --crk <root_key_ID>] [--secondary-storage STORAGE] [--disable-outbound-traffic-protection] [--operating-system SYSTEM] [--cni CNI]
+    ibmcloud oc cluster create vpc-gen2 --name <cluster_name> --zone <vpc_zone> --vpc-id <vpc_ID> --subnet-id <vpc_subnet_ID> --flavor <worker_flavor> --version 4.20_openshift --cos-instance <COS_CRN> --workers <number_workers_per_zone> [--offering OFFERING] [--sm-group GROUP] [--sm-instance INSTANCE] [--trusted-profile-id ID] [--pod-subnet] [--service-subnet] [--disable-public-service-endpoint] [[--kms-account-id <kms_account_ID>] --kms-instance <KMS_instance_ID> --crk <root_key_ID>] [--secondary-storage STORAGE] [--disable-outbound-traffic-protection] [--operating-system SYSTEM] [--cni CNI]
     ```
     {: pre}
 
@@ -195,6 +200,8 @@ Observability integrations
     `--operating-system RHEL_9_64|REDHAT_8_64|RHCOS`
 :   Optional. The operating system of the worker nodes in your cluster. For a list of available operating systems by cluster version, see the [{{site.data.keyword.openshiftshort}} version information](/docs/openshift?topic=openshift-openshift_versions). If no option is specified, the default operating system that corresponds to the cluster version is used.
 
+    `--offering <offering>`
+    :   Optional. Specify the cluster offering type. Accepted values are `kubernetes`, `openshift`, and `openshift-vs`. Use `openshift-vs` to create a Red Hat OpenShift Virtualization Service (ROVS) cluster with pre-configured virtualization capabilities. For more information about ROVS clusters, see [Red Hat OpenShift Virtualization Service overview](/docs/openshift?topic=openshift-rovs-overview).
 
    `--cluster-security-group <group_ID>`
     :   Optional. Specify one or more security group IDs to apply to all workers on the cluster. For OpenShift version 4.15 and Kubernetes version 1.30 and later, these security groups are applied in addition to the IBM-managed `kube-clusterID` security group. For earlier cluster versions, specify the `--cluster-security-group cluster` option to apply the `kube-clusterID` security group. If no value is specified, a default set of security groups including `kube-clusterID` are applied. For more information, see [Adding VPC security groups to clusters and worker pools during create time](/docs/openshift?topic=openshift-vpc-security-group-manage).
@@ -247,6 +254,9 @@ Observability integrations
 
     `--cni CNI`
     :    Set the network plugin for the cluster. Calico is set by default. Accepted values: `Calico`, `OVNKubernetes`.
+
+    `--offering OFFERING`
+    :    Optional. Specify the cluster offering type. Use `openshift-vs` to create a Red Hat OpenShift Virtualization Service (ROVS) cluster with pre-configured virtualization capabilities. If not specified, a standard OpenShift cluster is created. For more information about ROVS clusters, see [Red Hat OpenShift Virtualization Service overview](/docs/openshift?topic=openshift-rovs-overview).
 
     
 5. Verify that the creation of the cluster was requested. It can take a few minutes for the worker node machines to be ordered, and for the cluster to be set up and provisioned in your account.
