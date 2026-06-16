@@ -201,7 +201,7 @@ Observability integrations
 :   Optional. The operating system of the worker nodes in your cluster. For a list of available operating systems by cluster version, see the [{{site.data.keyword.openshiftshort}} version information](/docs/openshift?topic=openshift-openshift_versions). If no option is specified, the default operating system that corresponds to the cluster version is used.
 
     `--offering <offering>`
-    :   Optional. Specify the cluster offering type. Accepted values are `kubernetes`, `openshift`, and `openshift-vs`. Use `openshift-vs` to create a Red Hat OpenShift Virtualization Service (ROVS) cluster with pre-configured virtualization capabilities. For more information about ROVS clusters, see [Red Hat OpenShift Virtualization Service overview](/docs/openshift?topic=openshift-rovs-overview).
+    :   Optional. Specify the cluster offering type. Accepted values are `kubernetes`, `openshift`, and `openshift-vs`. Use `openshift-vs` to create a Red Hat OpenShift Virtualization Service cluster with pre-configured virtualization capabilities. For more information, see [Red Hat OpenShift Virtualization Service overview](/docs/openshift?topic=openshift-rovs-overview).
 
    `--cluster-security-group <group_ID>`
     :   Optional. Specify one or more security group IDs to apply to all workers on the cluster. For OpenShift version 4.15 and Kubernetes version 1.30 and later, these security groups are applied in addition to the IBM-managed `kube-clusterID` security group. For earlier cluster versions, specify the `--cluster-security-group cluster` option to apply the `kube-clusterID` security group. If no value is specified, a default set of security groups including `kube-clusterID` are applied. For more information, see [Adding VPC security groups to clusters and worker pools during create time](/docs/openshift?topic=openshift-vpc-security-group-manage).
@@ -256,7 +256,7 @@ Observability integrations
     :    Set the network plugin for the cluster. Calico is set by default. Accepted values: `Calico`, `OVNKubernetes`.
 
     `--offering OFFERING`
-    :    Optional. Specify the cluster offering type. Use `openshift-vs` to create a Red Hat OpenShift Virtualization Service (ROVS) cluster with pre-configured virtualization capabilities. If not specified, a standard OpenShift cluster is created. For more information about ROVS clusters, see [Red Hat OpenShift Virtualization Service overview](/docs/openshift?topic=openshift-rovs-overview).
+    :    Optional. Specify the cluster offering type. Use `openshift-vs` to create a Red Hat OpenShift Virtualization Service cluster with pre-configured virtualization capabilities. If not specified, a standard OpenShift cluster is created. For more information, see [Red Hat OpenShift Virtualization Service overview](/docs/openshift?topic=openshift-rovs-overview).
 
     
 5. Verify that the creation of the cluster was requested. It can take a few minutes for the worker node machines to be ordered, and for the cluster to be set up and provisioned in your account.
