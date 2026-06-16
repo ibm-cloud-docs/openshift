@@ -2,7 +2,7 @@
 
 copyright:
   years: 2025, 2026
-lastupdated: "2026-06-11"
+lastupdated: "2026-06-16"
 
 
 keywords: openshift, openshift data foundation, openshift container storage, disaster recovery
@@ -68,33 +68,33 @@ If you are using ODF version 4.21 or later, you must install the OpenShift GitOp
 {: #clusters-cli}
 {: cli}
 
-Create 3 [VPC clusters](/docs/openshift?topic=openshift-cluster-create-vpc-gen2) in different regions.
+Create 3 [VPC clusters](/docs/openshift?topic=openshift-cluster-create-vpc-gen2) in different regions. Make sure each cluster has at least `6 vCPU x 64 GB` compute capacity available.
 {: shortdesc}
 
 For each cluster, make sure to allow outbound traffic by including the `--disable-outbound-traffic-protection` parameter in the CLI or selecting the option to disable outbound traffic protection in the UI.
 {: important}
 
-1. [Create a VPC cluster](/docs/openshift?topic=openshift-cluster-create-vpc-gen2) in `us-east` to install ACM on. This is the hub cluster that you can use to manage your ODF clusters. Make sure your hub cluster has at least 3 worker nodes that run RHCOS and a minimum of 6 VCPU and 64 GB, and meets all of the [prequisites for ACM](/docs/openshift?topic=openshift-acm&interface=ui#before). The following example command creates a cluster for ACM in `us-east`.
+1. [Create a VPC cluster](/docs/openshift?topic=openshift-cluster-create-vpc-gen2) in `us-east` to install ACM on. This is the hub cluster that you can use to manage your ODF clusters. Make sure your hub cluster has at least 3 worker nodes that run RHCOS, available compute capacity of at least 6 VCPU and 64 GB, outbound traffic disabled, and meets all of the [prequisites for ACM](/docs/openshift?topic=openshift-acm&interface=ui#before). The following example command creates a cluster for ACM in `us-east`.
 
     ```sh
-    ibmcloud ks cluster create vpc-gen2 --flavor bx2.8x32 --name acm-hub-cluster-dr-odf --subnet-id 0101-0a10101-01a0-1a010-a10b-a101a0a101a0 --vpc-id r010-1aa01a0a-11a0-101a-01aa-1aaa0aaa1001 --zone us-east-2 --version 4.20.21_openshift --workers 3 --cos-instance crn:v1:bluemix:public :cloud-object-storage:global:a/a101a0101010aaaa1a0101aa0a101aa0:000aaaa-aaaa-10aa-a01a-aa1a01aa10a0:: --disable-outbound-traffic-protection --cni OVNKubernetes
+    ibmcloud ks cluster create vpc-gen2 --flavor mx2.8x64 --name acm-hub-cluster-dr-odf --subnet-id <subnet_id> --vpc-id <vpc_id> --zone us-east-2 --version 4.20.21_openshift --workers 3 --cos-instance <cos_crn> --disable-outbound-traffic-protection --cni OVNKubernetes
     ```
     {: pre}
 
 1. If you have not already done so, make sure your hub cluster has a [trusted profile](/docs/openshift?topic=openshift-acm&interface=ui#trust-prof) for ACM.
 
-1. [Create a VPC cluster](/docs/openshift?topic=openshift-cluster-create-vpc-gen2) in `us-east` with at least 3 worker nodes that run RHCOS and a minimum flavor of `6x64` and with outbound traffic protection disabled. This will be the primary managed ODF cluster. The following example command creates a cluster in `us-east.`
+1. [Create a VPC cluster](/docs/openshift?topic=openshift-cluster-create-vpc-gen2) in `us-east` with at least 3 worker nodes that run RHCOS, available compute capacity of at least 6 VCPU and 64 GB, and outbound traffic protection disabled. This will be the primary managed ODF cluster. The following example command creates a cluster in `us-east.`
 
     ```sh
-    ibmcloud ks cluster create vpc-gen2 --flavor bx2.8x32 --name managed-cluster-1-dr-odf --subnet-id 0101-0a10101-01a0-1a010-a10b-a101a0a101a0 --vpc-id r010-1aa01a0a-11a0-101a-01aa-1aaa0aaa1001 --zone us-east-2 --version 4.20.21_openshift --workers 3 --cos-instance crn:v1:bluemix:public :cloud-object-storage:global:a/a101a0101010aaaa1a0101aa0a101aa0:000aaaa-aaaa-10aa-a01a-aa1a01aa10a0:: --disable-outbound-traffic-protection --cni OVNKubernetes
+    ibmcloud ks cluster create vpc-gen2 --flavor mx2.8x64 --name managed-cluster-1-dr-odf --subnet-id <subnet_id> --vpc-id <vpc_id> --zone us-east-2 --version 4.20.21_openshift --workers 3 --cos-instance <cos_crn> --disable-outbound-traffic-protection --cni OVNKubernetes
     ```
     {: pre}
 
 
-1. [Create a VPC cluster](/docs/openshift?topic=openshift-cluster-create-vpc-gen2) in `jp-tok` with at least 3 worker nodes that run RHCOS and a minimum flavor of `6x64` and with outbound traffic protection disabled. This will be the secondary managed ODF cluster. For high availability, make sure that the secondary cluster's network does not overlap with the primary cluster's network. The following example command creates a cluster in `jp-tok`.
+1. [Create a VPC cluster](/docs/openshift?topic=openshift-cluster-create-vpc-gen2) in `jp-tok` with at least 3 worker nodes that run RHCOS, available compute capacity of at least 6 VCPU and 64 GB, and outbound traffic protection disabled. This will be the secondary managed ODF cluster. For high availability, make sure that the secondary cluster's network does not overlap with the primary cluster's network. The following example command creates a cluster in `jp-tok`.
 
     ```sh
-    ibmcloud ks cluster create vpc-gen2 --flavor bx2.8x32 --name managed-cluster-2-dr-odf --subnet-id 0101-0a10101-01a0-1a010-a10b-a101a0a101a0 --vpc-id r010-1aa01a0a-11a0-101a-01aa-1aaa0aaa1001 --zone jp-tok --version 4.20.21_openshift --workers 3 --cos-instance crn:v1:bluemix:public :cloud-object-storage:global:a/a101a0101010aaaa1a0101aa0a101aa0:000aaaa-aaaa-10aa-a01a-aa1a01aa10a0:: --disable-outbound-traffic-protection --cni OVNKubernetes
+    ibmcloud ks cluster create vpc-gen2 --flavor mx2.8x64 --name managed-cluster-2-dr-odf --subnet-id <subnet_id> --vpc-id <vpc_id> --zone jp-tok --version 4.20.21_openshift --workers 3 --cos-instance <cos_crn> --disable-outbound-traffic-protection --cni OVNKubernetes
     ```
     {: pre}
 
