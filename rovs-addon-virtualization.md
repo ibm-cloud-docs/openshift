@@ -2,7 +2,7 @@
 
 copyright:
   years: 2026, 2026
-lastupdated: "2026-06-10"
+lastupdated: "2026-06-16"
 
 keywords: openshift, virtualization service, rovs, addon, openshift virtualization, hyperconverged, nmstate, node maintenance
 
@@ -20,7 +20,7 @@ subcollection: openshift
 [Bare metal worker nodes only]{: tag-warm-gray}
 [RHCOS only]{: tag-magenta}
 
-The `openshift-virtualization` add-on provides a one-click experience to set up the virtualization platform on Red Hat OpenShift on IBM Cloud for VPC with Satellite-enabled services (ROVS) clusters. This add-on is automatically enabled by default on all ROVS clusters.
+The `openshift-virtualization` add-on provides a one-click experience to set up the virtualization platform on OpenShift Virtualization Service clusters. This add-on is automatically enabled by default on all Virtualization Service clusters.
 {: shortdesc}
 
 This service is currently available as a beta release. Access is controlled by an allowlist. During the beta period, only console-based cluster creation is supported.
@@ -30,7 +30,7 @@ This service is currently available as a beta release. Access is controlled by a
 ## Understanding the OpenShift Virtualization add-on
 {: #rovs-addon-virt-about}
 
-The OpenShift Virtualization add-on orchestrates the deployment and management of the following operators to enable virtual machine capabilities in your ROVS cluster:
+The OpenShift Virtualization add-on orchestrates the deployment and management of the following operators to enable virtual machine capabilities in your Virtualization Service cluster:
 
 OpenShift Virtualization Operator (Hyperconverged)
 :   Provides the core virtualization capabilities for running and managing virtual machines. For more information, see [Installing OpenShift Virtualization](https://docs.redhat.com/en/documentation/openshift_container_platform/4.21/html/virtualization/installing){: external}.
@@ -41,7 +41,7 @@ NMState Operator
 Node Maintenance Operator
 :   Handles node maintenance operations for virtual machine workloads. For more information, see [Node Maintenance Operator](https://docs.redhat.com/en/documentation/workload_availability_for_red_hat_openshift/23.2/html-single/remediation_fencing_and_maintenance/index#node-maintenance-operator){: external}.
 
-Installation of these operators from Red Hat OperatorHub is blocked on ROVS clusters. The add-on manages all operator installations and updates.
+Installation of these operators from Red Hat OperatorHub is blocked on Virtualization Service clusters. The add-on manages all operator installations and updates.
 {: important}
 
 ## Add-on characteristics
@@ -50,7 +50,7 @@ Installation of these operators from Red Hat OperatorHub is blocked on ROVS clus
 The OpenShift Virtualization add-on has the following characteristics:
 
 Automatic enablement
-:   The add-on is automatically enabled when you create a ROVS cluster. You cannot manually enable the add-on through the CLI or console.
+:   The add-on is automatically enabled when you create a Virtualization Service cluster. You cannot manually enable the add-on through the CLI or console.
 
 Cannot be disabled
 :   Disabling the add-on is not supported. The option is not available in the console, and attempting to disable it through the CLI results in an error.
@@ -59,19 +59,19 @@ No configuration options
 :   The add-on has no user-configurable parameters.
 
 Version binding
-:   The add-on version is bound to the ROVS cluster version (for example, 4.21). The add-on supports the current minor version and the next minor version (n+1). For example, add-on version 4.21 can be used with ROVS versions 4.21 and 4.22.
+:   The add-on version is bound to the Virtualization Service cluster version (for example, 4.21). The add-on supports the current minor version and the next minor version (n+1). For example, add-on version 4.21 can be used with Virtualization Service versions 4.21 and 4.22.
 
 Automatic patch updates
 :   Patch updates are applied automatically to your cluster using the **Automatic Approval** strategy. IBM notifies you at least one week before production rollout with change details. All dependent operators are updated automatically if new versions exist in the mirrored operator catalog. The add-on uses the `stable` channel for all operator updates.
 
 Manual version upgrades
-:   To upgrade the add-on to a newer version (for example, from 4.20 to 4.21), you must first upgrade your ROVS cluster to the target version, then manually update the add-on version using the CLI command `ibmcloud ks cluster addon update openshift-virtualization --cluster <cluster_name_or_id> --version <version>`.
+:   To upgrade the add-on to a newer version (for example, from 4.20 to 4.21), you must first upgrade your Virtualization Service cluster to the target version, then manually update the add-on version using the CLI command `ibmcloud ks cluster addon update openshift-virtualization --cluster <cluster_name_or_id> --version <version>`.
 
 Update channel
 :   The add-on uses the `stable` channel for updates, which provides Z-stream updates for bug fixes and security issues.
 
 Version compatibility
-:   Each add-on version supports the current ROVS version (n) and the next minor version (n+1). For example, add-on version 4.20 supports ROVS versions 4.20 and 4.21.
+:   Each add-on version supports the current Virtualization Service version (n) and the next minor version (n+1). For example, add-on version 4.20 supports Virtualization Service versions 4.20 and 4.21.
 
 Custom catalog
 :   A custom catalog with mirrored dependent operators is set up automatically during add-on enablement and is placed in the `openshift-marketplace` namespace.
@@ -101,7 +101,7 @@ If the feature flag is enabled for your account, you can view information about 
 ### Listing installed add-ons
 {: #rovs-addon-virt-list}
 
-List all add-ons that are installed in your ROVS cluster.
+List all add-ons that are installed in your Virtualization Service cluster.
 
 ```sh
 ibmcloud ks cluster addon ls --cluster <cluster_name_or_id>
@@ -156,7 +156,7 @@ openshift-virtualization   4.21      unsupported                  >=4.21.0 <4.23
 ```
 {: screen}
 
-This output shows which ROVS versions are supported by each add-on version.
+This output shows which Virtualization Service versions are supported by each add-on version.
 
 ### Checking for configuration options
 {: #rovs-addon-virt-options}
@@ -194,9 +194,9 @@ The automatic patch update process does the following:
 ### Manual version upgrades
 {: #rovs-addon-virt-version-upgrades}
 
-To upgrade the OpenShift Virtualization add-on to a newer minor version (such as from 4.20 to 4.21), you must first upgrade your ROVS cluster to the target version. If the feature flag is not enabled for your account, contact IBM Support before you attempt the CLI update.
+To upgrade the OpenShift Virtualization add-on to a newer minor version (such as from 4.20 to 4.21), you must first upgrade your Virtualization Service cluster to the target version. If the feature flag is not enabled for your account, contact IBM Support before you attempt the CLI update.
 
-1. Upgrade your ROVS cluster to the target version. For more information, see [Updating clusters](/docs/openshift?topic=openshift-update).
+1. Upgrade your Virtualization Service cluster to the target version. For more information, see [Updating clusters](/docs/openshift?topic=openshift-update).
 
 2. After the cluster upgrade is complete, update the add-on to the matching version.
 
@@ -218,7 +218,7 @@ It is highly recommended to update the add-on version to match your cluster vers
 ## Disabling the add-on
 {: #rovs-addon-virt-disable}
 
-Disabling the OpenShift Virtualization add-on is not supported on ROVS clusters (Phase 1). The add-on is a core component of the Virtualization Service and cannot be removed. If the feature flag is enabled for your account and you attempt the CLI command, the command results in an error.
+Disabling the OpenShift Virtualization add-on is not supported on Virtualization Service clusters (Phase 1). The add-on is a core component of the Virtualization Service and cannot be removed. If the feature flag is enabled for your account and you attempt the CLI command, the command results in an error.
 
 ```sh
 ibmcloud ks cluster addon disable openshift-virtualization --cluster <cluster_name_or_id>

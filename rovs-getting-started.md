@@ -1,8 +1,8 @@
----
+s---
 
 copyright:
   years: 2026, 2026
-lastupdated: "2026-06-11"
+lastupdated: "2026-06-16"
 
 keywords: openshift, virtualization service, rovs, quickstart, console, ui, virtual machines
 
@@ -60,19 +60,23 @@ For detailed VPC setup instructions, see [Create or verify your VPC setup](/docs
 6. Configure **Virtualization integrations**:
 
    **OpenShift Virtualization operator**
-   :   Automatically enabled and required for running virtual machines.
+   :   Required. Automatically configured with default settings. Creates and maintains OpenShift Virtualization Deployment.
 
-   **OpenShift Data Foundation**
-   :   Recommended. Enable with default settings to provide persistent storage for VMs.
+   **Advanced Cluster Management (ACM)**
+   :   Optional. Configure this cluster as the ACM hub cluster to control and monitor other Kubernetes clusters.
 
-   **Advanced Cluster Management**
-   :   Optional. Can be configured later for multi-cluster management.
+   **OpenShift Data Foundation (ODF)**
+   :   Recommended. Provides persistent storage for VMs. Configured with default settings.
+
+   **File Storage for VPC**
+   :   Alternative to ODF. Provides file storage backed by VPC infrastructure.
+
+   You must select at least one storage option (ODF or File Storage for VPC).
+   {: important}
 
 7. Select your **Virtual private cloud** (or create a new one if needed).
 
-8. Configure the **Location**:
-   - **Worker zones**: Select at least 3 zones for high availability
-   - **Subnets**: For each zone, choose the corresponding subnet
+8. Configure the **Location**. Choose your worker zones and configure your subnets. Select at least 3 zones for high availability. For each zone, you can edit the automatically selected subnet as needed.
 
 9. Configure the **Worker pool**:
    - **Flavor**: Select a bare metal flavor with local NVME storage (e.g., `bx2d.metal.96x384`)
@@ -92,7 +96,9 @@ For detailed VPC setup instructions, see [Create or verify your VPC setup](/docs
     - **Resource group**: Select a resource group
     - **Tags**: Optional - add tags for organization
 
-13. Review the estimated cost and click **Create**.
+13. Review the **Integrations** section and verify that the OpenShift Virtualization operator and any selected add-ons are listed.
+
+14. Review the estimated cost and click **Create**.
 
 The cluster typically takes 30-45 minutes to provision. You can monitor the progress in the console.
 
@@ -110,26 +116,21 @@ The cluster typically takes 30-45 minutes to provision. You can monitor the prog
 ## Verify pre-configured components
 {: #rovs-gs-verify}
 
-1. In the OpenShift web console, navigate to **Operators** > **Installed Operators**.
+1. In the OpenShift web console, navigate to **Ecosystem** > **Installed Operators**.
 
-2. Select the **openshift-cnv** project from the dropdown.
+2. Verify that the **OpenShift Virtualization** operator shows a status of **Succeeded**.
 
-3. Verify that the **OpenShift Virtualization** operator shows a status of **Succeeded**.
+3. Navigate to **Ecosystem** > **Installed Operators**.
 
-4. Click the operator name and navigate to the **HyperConverged** tab.
+4. Verify that the **OpenShift Data Foundation** operator has a status of **Succeeded**. This can take a few minutes to complete.
 
-5. Verify that the HyperConverged resource shows a **Phase** of **Deployed**.
+5. Navigate to **Storage** > **Data Foundation**.
 
-6. Navigate to **Storage** > **Data Foundation**.
+6. Verify that the storage system shows **Resiliency** of **Healthy**.
 
-7. Verify that the storage system shows a status of **Ready**.
+7. Navigate to **Storage** > **StorageClasses**.
 
-8. Navigate to **Storage** > **StorageClasses**.
-
-9. Verify that multiple OCS storage classes are available, including:
-   - `ocs-storagecluster-ceph-rbd`
-   - `ocs-storagecluster-ceph-rbd-virtualization` (recommended for VMs)
-   - `ocs-storagecluster-cephfs`
+8. Verify that multiple OCS storage classes are available, including **ocs-storagecluster-ceph-rbd-virtualization**, which should be indicated as the default for VirtualMachines.
 
 ## Deploy your first virtual machine
 {: #rovs-gs-first-vm}

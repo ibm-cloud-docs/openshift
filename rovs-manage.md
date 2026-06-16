@@ -2,7 +2,7 @@
 
 copyright:
   years: 2026, 2026
-lastupdated: "2026-06-10"
+lastupdated: "2026-06-16"
 
 keywords: openshift, virtualization service, rovs, manage, add-ons, worker nodes, maintenance
 
@@ -37,7 +37,7 @@ Virtualization Service clusters include several pre-configured components that a
 The following components are essential to Virtualization Service and cannot be disabled:
 
 OpenShift Virtualization add-on
-:   The `openshift-virtualization` add-on is automatically enabled on all ROVS clusters and cannot be disabled. This add-on manages the installation and updates of the OpenShift Virtualization, NMState, and Node Maintenance operators. For more information, see [Managing the OpenShift Virtualization add-on](/docs/openshift?topic=openshift-rovs-addon-virtualization).
+:   The `openshift-virtualization` add-on is automatically enabled on all Virtualization Service clusters and cannot be disabled. This add-on manages the installation and updates of the OpenShift Virtualization, NMState, and Node Maintenance operators. For more information, see [Managing the OpenShift Virtualization add-on](/docs/openshift?topic=openshift-rovs-addon-virtualization).
 
 OpenShift Virtualization Operator
 :   Provides virtual machine management capabilities. This operator is automatically installed by the add-on and updated as part of the cluster lifecycle. Installation from Red Hat OperatorHub is blocked.
@@ -69,7 +69,7 @@ openshift-virtualization     4.21      normal         Addon Ready. For more info
 ```
 {: screen}
 
-The `openshift-virtualization` add-on is automatically enabled and cannot be disabled on ROVS clusters.
+The `openshift-virtualization` add-on is automatically enabled and cannot be disabled on Virtualization Service clusters.
 {: important}
 
 For detailed information about managing the OpenShift Virtualization add-on, including viewing details, checking versions, and updating, see [Managing the OpenShift Virtualization add-on](/docs/openshift?topic=openshift-rovs-addon-virtualization).

@@ -2,7 +2,7 @@
 
 copyright:
   years: 2026, 2026
-lastupdated: "2026-06-10"
+lastupdated: "2026-06-16"
 
 keywords: openshift, virtualization service, rovs, limitations, restrictions, constraints
 
@@ -30,6 +30,7 @@ This service is currently available as a beta release. Access is controlled by a
 {: #rovs-limit-infra}
 
 - VPC infrastructure with bare metal worker nodes only (no Classic or VSI support)
+- Available only in the following regions: Dallas (us-south), Washington DC (us-east), Toronto (ca-tor), Montreal (ca-mon), and Frankfurt (eu-de)
 - Bare metal flavors with `openshift-vs` tag (with NVME storage if ODF is required)
 - OpenShift 4.21 or later
 - Red Hat CoreOS (RHCOS) only
@@ -53,21 +54,21 @@ Operators
 
 Storage
 :   - OpenShift Data Foundation (ODF) is pre-configured using bare metal flavors with local NVME storage
-    - VPC Block Storage is not deployed or used in ROVS clusters
+    - VPC Block Storage is not deployed or used in Virtualization Service clusters
     - All storage is provided through ODF with local disks
 
 Networking
 :   - MTU settings are fixed (OVN: 8900, Worker nodes: 9000)
     - Outbound traffic protection is disabled and cannot be enabled
 
-Installation of OpenShift Virtualization, NMState, and Node Maintenance operators from Red Hat OperatorHub is blocked on ROVS clusters. These operators are managed exclusively by the `openshift-virtualization` add-on.
+Installation of OpenShift Virtualization, NMState, and Node Maintenance operators from Red Hat OperatorHub is blocked on Virtualization Service clusters. These operators are managed exclusively by the `openshift-virtualization` add-on.
 {: important}
 
 ## Storage and networking
 {: #rovs-limit-storage-network}
 
 Storage
-:   - ODF uses local NVME storage; node failures may cause data unavailability
+:   - ODF uses local NVME storage; node failures might cause data unavailability
     - VM snapshots supported but limited by storage capacity
 
 Networking
@@ -78,22 +79,22 @@ Networking
 {: #rovs-limit-vms}
 
 - You must provide and manage the licenses for the operating systems and software you install in your VMs, including Windows
-- GPU passthrough and vGPU may have limited support
+- GPU passthrough and vGPU might have limited support
 - Nested virtualization not supported
-- Migration between different bare metal flavors may have limitations
+- Migration between different bare metal flavors might have limitations
 
 ## Licensing and scaling
 {: #rovs-limit-licensing-scaling}
 
 Licensing
-:   OVE licensing only (per instance-hour, for a worker node of up to 128 vCPUs; larger worker nodes require multiple license instances). BYOL and Cloud Pak entitlements are not supported. The `entitlement` parameter cannot be specified when creating ROVS clusters or worker pools.
+:   OVE licensing only (per instance-hour, for a worker node of up to 128 vCPUs; larger worker nodes require multiple license instances). BYOL and Cloud Pak entitlements are not supported. The `entitlement` parameter cannot be specified when creating Virtualization Service clusters or worker pools.
 
 Scaling
 :   - All worker pools must use supported bare metal flavors
     - Minimum 3 worker nodes recommended for production
 
 Availability
-:   Bare metal capacity may not be available in all zones. Check before creating:
+:   Bare metal capacity might not be available in all zones. Check before creating:
     ```sh
     ibmcloud ks flavors --zone <zone> --provider vpc-gen2 | grep metal
     ```
@@ -102,7 +103,7 @@ Availability
 ## Operations
 {: #rovs-limit-ops}
 
-- Worker node maintenance may require VM migration or downtime
+- Worker node maintenance might require VM migration or downtime
 - Backup and restore limited to ODF and OpenShift Virtualization features
 
 ## When to use standard OpenShift

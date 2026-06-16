@@ -486,6 +486,7 @@ toc:
           - versions-object.md
           - cl-add-ons-static-route.md
           - cl-add-ons-openshift-data-foundation.md
+          - cl-add-ons-openshift-virtualization.md
           - versions-backup-restore.md
           - openshift_versions_hpcs_router.md
           - cl-add-ons-ibm-cloud-image-key-synchronizer.md

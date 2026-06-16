@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2026
-lastupdated: "2026-06-15"
+lastupdated: "2026-06-16"
 
 
 keywords: openshift
@@ -3951,17 +3951,17 @@ subcollection: openshift
 
 * [What is OpenShift Virtualization Service?](/docs/openshift?topic=openshift-rovs-overview#rovs-what-is)
 
-* [Benefits](/docs/openshift?topic=openshift-rovs-overview#rovs-benefits)
+* [How does Virtualization Service compare to manual deployment?](/docs/openshift?topic=openshift-rovs-overview#rovs-comparison)
 
-* [Virtualization Service vs. Manual Deployment](/docs/openshift?topic=openshift-rovs-overview#rovs-comparison)
+* [What are the cluster requirements for Virtualization Service?](/docs/openshift?topic=openshift-rovs-overview#rovs-requirements)
 
-* [Cluster characteristics](/docs/openshift?topic=openshift-rovs-overview#rovs-characteristics)
+* [Which bare metal flavors are supported?](/docs/openshift?topic=openshift-rovs-overview#rovs-flavors)
 
-* [Supported bare metal flavors](/docs/openshift?topic=openshift-rovs-overview#rovs-flavors)
+* [Where is Virtualization Service available?](/docs/openshift?topic=openshift-rovs-overview#rovs-regions)
 
-* [Limitations](/docs/openshift?topic=openshift-rovs-overview#rovs-limitations-ov)
+* [What are the limitations of Virtualization Service?](/docs/openshift?topic=openshift-rovs-overview#rovs-limitations-ov)
 
-* [Pricing](/docs/openshift?topic=openshift-rovs-overview#rovs-pricing)
+* [How is Virtualization Service priced?](/docs/openshift?topic=openshift-rovs-overview#rovs-pricing)
 
 * [Next steps](/docs/openshift?topic=openshift-rovs-overview#rovs-next-steps)
 
@@ -8439,6 +8439,16 @@ subcollection: openshift
 
     * [4.9.5, released 20 May 2022](/docs/openshift?topic=openshift-cl-add-ons-openshift-data-foundation#cl-add-ons-openshift-data-foundation-4.9.5)
 
+[OpenShift Virtualization add-on version change log](/docs/openshift?topic=openshift-cl-add-ons-openshift-virtualization#cl-add-ons-openshift-virtualization)
+
+* [Version 4.21](/docs/openshift?topic=openshift-cl-add-ons-openshift-virtualization#cl-add-ons-openshift-virtualization-4.21)
+
+    * [v1.0.4_4.21_347026591, released 15 June 2026](/docs/openshift?topic=openshift-cl-add-ons-openshift-virtualization#cl-add-ons-openshift-virtualization-v104_421_347026591)
+
+* [Version 4.20](/docs/openshift?topic=openshift-cl-add-ons-openshift-virtualization#cl-add-ons-openshift-virtualization-4.20)
+
+    * [v1.0.4_4.20_347026591, released 15 June 2026](/docs/openshift?topic=openshift-cl-add-ons-openshift-virtualization#cl-add-ons-openshift-virtualization-v104_420_347026591)
+
 [Back up and restore Helm chart](/docs/openshift?topic=openshift-backup_restore_changelog#backup_restore_changelog)
 
 * [Change log for 1.0.12, released 21 July 2025](/docs/openshift?topic=openshift-backup_restore_changelog#01012_br_chart)
@@ -8567,13 +8577,13 @@ subcollection: openshift
 
 [Confidential containers](/docs/openshift?topic=openshift-cl-confidential-containers#cl-confidential-containers)
 
-* [Version 20260604-05](/docs/openshift?topic=openshift-cl-confidential-containers#cl-confidential-containers-20260604-05)
-
-    * [20260604-05, released 05 June 2026](/docs/openshift?topic=openshift-cl-confidential-containers#cl-confidential-containers-20260604-05)
-
 * [Version 20260604-05-hardened](/docs/openshift?topic=openshift-cl-confidential-containers#cl-confidential-containers-20260604-05-hardened)
 
     * [20260604-05-hardened, released 05 June 2026](/docs/openshift?topic=openshift-cl-confidential-containers#cl-confidential-containers-20260604-05-hardened)
+
+* [Version 20260604-05](/docs/openshift?topic=openshift-cl-confidential-containers#cl-confidential-containers-20260604-05)
+
+    * [20260604-05, released 05 June 2026](/docs/openshift?topic=openshift-cl-confidential-containers#cl-confidential-containers-20260604-05)
 
 * [Version 20260319-02](/docs/openshift?topic=openshift-cl-confidential-containers#cl-confidential-containers-20260319-02)
 
