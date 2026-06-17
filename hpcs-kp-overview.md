@@ -2,7 +2,7 @@
 
 copyright:
   years: 2025, 2026
-lastupdated: "2026-06-02"
+lastupdated: "2026-06-17"
 
 
 keywords: key protect, hpcs, kp, migrate, encryption
@@ -20,6 +20,7 @@ If your storage components use HPCS and you need to migrate them to use Key Prot
 ## Before you begin
 {: #before}
 
+
 Before you begin, make sure to backup all of your apps and data using a backup tool such as Velero or OpenShift API for Data Protection.
     - [Velero](/docs/containers?topic=containers-data-portability&q=velero&tags=containers#export-velero)
     - [OpenShift API for Data Protection](https://www.redhat.com/en/blog/how-to-backup-and-restore-stateful-applications-on-openshift-using-oadp-and-odf){: external}
@@ -32,55 +33,31 @@ Request access to migration tools to use during the process, which are used to d
 
 1. Create an [IBM Support ticket for IBM Cloud Kubernetes Service](/docs/containers?topic=containers-get-help#support-case) to request access to the tooling.
 2. Download the `hpcs-2-kp-k8s.zip` file provided in the suppor ticket.
-3. Verify the SHA-256 checksum of the downloaded binary matches the value that is provided in the support ticket. Compare the values directly; they must match exactly.
+3. Verify the SHA-256 checksum of the downloaded `hpcs-2-kp-k8s.zip` file with the value that is provided in the support ticket. Compare the values directly; they must match exactly.
 
    Run the appropriate command for your operating system to get the SHA-256 checksum and compare with the value that is provided in the support ticket:
 
    **macOS:**
    ```sh
-   shasum -a 256 <kur-binary>
+   shasum -a 256 hpcs-2-kp-k8s.zip
    ```
    {: pre}
-
-   Example:
-   ```sh
-   shasum -a 256 kur-darwin-arm64-1.0.0
-   ```
-   {: screen}
 
    **Linux:**
    ```sh
-   sha256sum <kur-binary>
+   sha256sum hpcs-2-kp-k8s.zip
    ```
    {: pre}
-
-   Example:
-   ```sh
-   sha256sum kur-linux-amd64-1.0.0
-   ```
-   {: screen}
 
    **Windows (Command Prompt):**
    ```cmd
-   certutil -hashfile <kur-binary> SHA256
+   certutil -hashfile hpcs-2-kp-k8s.zip SHA256
    ```
    {: pre}
-
-   Example:
-   ```cmd
-   certutil -hashfile kur-windows-amd64-1.0.0.exe SHA256
-   ```
-   {: screen}
 
    **Windows (PowerShell):**
    ```powershell
-   Get-FileHash <kur-binary> -Algorithm SHA256
-   ```
-   {: pre}
-
-   Example:
-   ```powershell
-   Get-FileHash kur-windows-amd64-1.0.0.exe -Algorithm SHA256
+   Get-FileHash hpcs-2-kp-k8s.zip -Algorithm SHA256
    ```
    {: screen}
 
