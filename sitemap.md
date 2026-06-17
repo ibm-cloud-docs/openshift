@@ -9317,6 +9317,8 @@ subcollection: openshift
 
 [Why do I see a `Registration failed` error when I try to provision or reload worker nodes?](/docs/openshift?topic=openshift-ts-worker-plan-not-avail#ts-worker-plan-not-avail)
 
+[VPC worker nodes fail to provision due to quota limits](/docs/openshift?topic=openshift-ts-worker-vpc-quota#ts-worker-vpc-quota)
+
 [Why do pods show "pull QPS exceeded" errors during image pulls?](/docs/openshift?topic=openshift-ts-vpc-image-pull-qps#ts-vpc-image-pull-qps)
 
 * [Check disk I/O bandwidth](/docs/openshift?topic=openshift-ts-vpc-image-pull-qps#check-bandwidth-openshift)
