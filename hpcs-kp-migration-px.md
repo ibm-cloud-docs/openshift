@@ -2,7 +2,7 @@
 
 copyright:
   years: 2026, 2026
-lastupdated: "2026-06-09"
+lastupdated: "2026-06-17"
 
 
 keywords: key protect, hpcs, kms, migrate, block storage, classic, encryption, crk, dek
@@ -64,7 +64,6 @@ Follow the steps to migrate your Portworx encrypted volumes from {{site.data.key
 
     | Flag | Description |
     | --- | --- |
-    | `--api-key` | {{site.data.keyword.cloud_notm}} API key. |
     | `--region` | {{site.data.keyword.cloud_notm}} region (for example, `us-south`). |
     | `--resource-group` | {{site.data.keyword.cloud_notm}} resource group. |
     | `--hpcs-endpoint` | {{site.data.keyword.hscrypto}} key management endpoint URL. |

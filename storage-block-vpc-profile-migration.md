@@ -2,7 +2,7 @@
 
 copyright:
   years: 2026
-lastupdated: "2026-06-16"
+lastupdated: "2026-06-17"
 
 keywords: openshift, block storage, vpc, gen-1, gen-2, sdp, migration, profile, iops
 
@@ -37,7 +37,7 @@ Generation 1 (tier-based)
 :   IOPS are calculated based on volume size. For more information, see [Block Storage profiles](/docs/vpc?topic=vpc-block-storage-profiles&interface=ui#tiers){: external}.
 
 Generation 2 (SDP)
-:   Custom IOPS independent of volume size. For more information, see [SDP Block Storage profile](/docs/vpc?topic=vpc-block-storage-profiles&interface=ui#sdp){: external}.
+:   Custom IOPS independent of volume size. For more information, see [SDP Block Storage profile](/docs/vpc?topic=vpc-block-storage-profiles){: external}.
 
 For the latest details on block storage profiles and their capabilities, see [Block Storage profiles](/docs/vpc?topic=vpc-block-storage-profiles&interface=ui){: external}.
 

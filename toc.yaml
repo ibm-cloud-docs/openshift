@@ -579,6 +579,7 @@ toc:
               - ts-worker-pod-timeout.md
               - ts-worker-ssh-fail.md
               - ts-worker-plan-not-avail.md
+              - topic: ts-worker-vpc-quota.md
               - ts-vpc-image-pull-qps.md
               - ts-openshift-marketplace.md
               - ts-cloud-pak-ds.md

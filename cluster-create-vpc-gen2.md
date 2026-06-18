@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2026
-lastupdated: "2026-06-16"
+lastupdated: "2026-06-17"
 
 
 keywords: kubernetes, clusters, worker nodes, worker pools, vpc-gen2, openshift, {{site.data.keyword.openshiftlong_notm}}
@@ -21,6 +21,9 @@ subcollection: openshift
 
 Use the {{site.data.keyword.cloud_notm}} CLI or the {{site.data.keyword.cloud_notm}} console to create a standard VPC cluster, and customize your cluster to meet the high availability and security requirements of your apps.
 {: shortdesc}
+
+
+
 
 
 Looking to run virtual machines? [OpenShift Virtualization Service](/docs/openshift?topic=openshift-rovs-overview) provides a pre-configured cluster with virtualization capabilities, storage, and networking automatically set up. See [Creating a Virtualization Service cluster](/docs/openshift?topic=openshift-rovs-getting-started) to get started.

@@ -2,7 +2,7 @@
 
 copyright:
   years: 2026, 2026
-lastupdated: "2026-06-02"
+lastupdated: "2026-06-17"
 
 
 keywords: key protect, hpcs, kms, migrate, block storage, vpc, csi driver, encryption, crk
@@ -80,6 +80,9 @@ Follow these steps to migrate your VPC Block Storage volumes from HPCS to Key Pr
 
 2. Set up the required environment variables for the migration tool.
 
+    If you have multiple KMS instances, make sure the endpoints used in this step correlate with the instance you want to migrate.
+    {: note}
+
     1. Export the required environment variables. Replace the placeholder values with your actual endpoints and API key.
 
         ```sh
@@ -97,7 +100,7 @@ Follow these steps to migrate your VPC Block Storage volumes from HPCS to Key Pr
         ```
         {: pre}
 
-3. Validate the CSV file and check the current migration state.
+3. Validate the CSV file and check the current migration state. Note that if multiple keys are in use, the CSV file might include multiple entries.
 
     1. Run the status command to validate your configuration.
 
@@ -119,7 +122,7 @@ Follow these steps to migrate your VPC Block Storage volumes from HPCS to Key Pr
 
     2. Verify that the intent was created successfully by checking the command output.
 
-5. Perform the actual CRK migration by syncing the intent.
+5. Perform the actual CRK migration by syncing the intent. Note that if the same key is used across multiple clusters, this will also migrate all volumes that use the key in those clusters as well.
 
     1. Run the sync command to execute the migration.
 
@@ -131,6 +134,9 @@ Follow these steps to migrate your VPC Block Storage volumes from HPCS to Key Pr
     2. Wait for the sync operation to complete. This process migrates the encryption keys for your volumes.
 
 6. Verify that your volumes now reference the Key Protect CRK.
+
+    You only need to check the volumes that you migrated. If you used the detection script to list which volumes use the HPCS key, check the volumes listed in the output.
+    {: note}
 
     1. List your Persistent Volumes and note the volume IDs.
 
@@ -156,6 +162,9 @@ Follow these steps to migrate your VPC Block Storage volumes from HPCS to Key Pr
     4. In the output, verify that the `Encryption Key` field now references the CRK CRN from your Key Protect instance instead of the HPCS instance.
 
 7. Update your storage classes to ensure that all future PVCs use the Key Protect CRK.
+
+    You only need to complete this step for the storage classes that you migrated. If you used the detection script to list which storage classes use the HPCS key, complete this step for the classes listed in the output.
+    {: note}
 
     1. List your existing storage classes.
 
