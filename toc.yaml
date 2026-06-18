@@ -266,22 +266,16 @@ toc:
           label: OpenShift Virtualization
           topics:
           - topic: virt-overview.md
-            navtitle: Understanding OpenShift Virtualization
           - topicgroup:
-              label: Red Hat OpenShift Virtualization Service (ROVS)
+              label: Red Hat OpenShift Virtualization Service
               topics:
               - topic: rovs-overview.md
-                navtitle: About ROVS
               - topic: rovs-getting-started.md
                 navtitle: Quickstart
               - topic: rovs-cluster-create.md
-                navtitle: Creating a ROVS cluster
               - topic: rovs-manage.md
-                navtitle: Managing ROVS clusters
               - topic: rovs-addon-virtualization.md
-                navtitle: Managing the OpenShift Virtualization add-on
               - topic: rovs-limitations.md
-                navtitle: ROVS limitations
           - topicgroup:
               label: Manual deployment
               topics:

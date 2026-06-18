@@ -1,8 +1,8 @@
-s---
+---
 
 copyright:
   years: 2026, 2026
-lastupdated: "2026-06-16"
+lastupdated: "2026-06-18"
 
 keywords: openshift, virtualization service, rovs, quickstart, console, ui, virtual machines
 
