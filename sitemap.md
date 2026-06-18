@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2026
-lastupdated: "2026-06-17"
+lastupdated: "2026-06-18"
 
 
 keywords: openshift
@@ -3922,7 +3922,7 @@ subcollection: openshift
 {: #sitemap_openshift_virtualization}
 
 
-[Understanding OpenShift Virtualization](/docs/openshift?topic=openshift-virt-overview#virt-overview)
+[OpenShift Virtualization on IBM Cloud](/docs/openshift?topic=openshift-virt-overview#virt-overview)
 
 * [Overview](/docs/openshift?topic=openshift-virt-overview#virt-what-is)
 
@@ -3947,11 +3947,11 @@ subcollection: openshift
 * [Getting started](/docs/openshift?topic=openshift-virt-overview#virt-next-steps)
 
 
-### Red Hat OpenShift Virtualization Service (ROVS)
-{: #sitemap_red_hat_openshift_virtualization_service_rovs}
+### Red Hat OpenShift Virtualization Service
+{: #sitemap_red_hat_openshift_virtualization_service}
 
 
-[About ROVS](/docs/openshift?topic=openshift-rovs-overview#rovs-overview)
+[OpenShift Virtualization Service overview](/docs/openshift?topic=openshift-rovs-overview#rovs-overview)
 
 * [What is OpenShift Virtualization Service?](/docs/openshift?topic=openshift-rovs-overview#rovs-what-is)
 
@@ -3985,7 +3985,7 @@ subcollection: openshift
 
 * [Troubleshooting](/docs/openshift?topic=openshift-rovs-getting-started#rovs-gs-troubleshoot)
 
-[Creating a ROVS cluster](/docs/openshift?topic=openshift-rovs-cluster-create#rovs-cluster-create)
+[Creating an OpenShift Virtualization Service cluster](/docs/openshift?topic=openshift-rovs-cluster-create#rovs-cluster-create)
 
 * [Objectives](/docs/openshift?topic=openshift-rovs-cluster-create#rovs-create-objectives)
 
@@ -4029,7 +4029,7 @@ subcollection: openshift
 
 * [Troubleshooting](/docs/openshift?topic=openshift-rovs-cluster-create&interface=cli#rovs-create-troubleshoot)
 
-[Managing ROVS clusters](/docs/openshift?topic=openshift-rovs-manage#rovs-manage)
+[Managing Virtualization Service clusters](/docs/openshift?topic=openshift-rovs-manage#rovs-manage)
 
 * [Understanding managed components](/docs/openshift?topic=openshift-rovs-manage#rovs-manage-components)
 
@@ -4123,7 +4123,7 @@ subcollection: openshift
 
 * [Next steps](/docs/openshift?topic=openshift-rovs-addon-virtualization#rovs-addon-virt-next)
 
-[ROVS limitations](/docs/openshift?topic=openshift-rovs-limitations#rovs-limitations)
+[OpenShift Virtualization Service limitations](/docs/openshift?topic=openshift-rovs-limitations#rovs-limitations)
 
 * [Infrastructure requirements](/docs/openshift?topic=openshift-rovs-limitations#rovs-limit-infra)
 
