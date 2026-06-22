@@ -1,7 +1,7 @@
 ---
-copyright: 
+copyright:
   years: 2024, 2026
-lastupdated: "2026-05-27"
+lastupdated: "2026-06-22"
 
 
 keywords: openshift, {{site.data.keyword.openshiftlong_notm}}, ai, add-on
@@ -108,7 +108,7 @@ Upgrading from version 418 to 419 is not supported. Attempting to upgrade to 419
 Do not attempt a manual update or migration until official guidelines are published.
 {: note}
 
-OpenShift AI add-on version 419 includes Red Hat OpenShift AI version 3.3.2 and introduces significant changes to the platform. Do not modify your existing add-on version in an attempt to obtain version 419.
+OpenShift AI add-on version 419 includes Red Hat OpenShift AI version 3.4.0 and introduces significant changes to the platform. Do not modify your existing add-on version in an attempt to obtain version 419.
 
 
 
