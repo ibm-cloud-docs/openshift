@@ -31,6 +31,15 @@ Looking for {{site.data.keyword.cloud_notm}} status, platform announcements, sec
 ## June 2026
 {: #openshift-jun26}
 
+
+
+### 23 June 2026
+{: #openshift-jun2326}
+{: release-note}
+
+Openshift AI cluster add-on patch updates.
+:   For more information, see the [change log](/docs/openshift?topic=openshift-cl-add-ons-openshift-ai).
+
 ### 22 June 2026
 {: #openshift-jun2226}
 {: release-note}
@@ -44,12 +53,26 @@ VPC File CSI Driver cluster add-on patch updates.
 IBM Object CSI Driver cluster add-on patch updates.
 :   For more information, see the [change log](/docs/openshift?topic=openshift-cl-add-ons-ibm-object-csi-driver).
 
-### 23 June 2026
-{: #openshift-jun2326}
+### 19 June 2026
+{: #openshift-jun1926}
 {: release-note}
 
-Openshift AI cluster add-on patch updates.
-:   For more information, see the [change log](/docs/openshift?topic=openshift-cl-add-ons-openshift-ai).
+
+
+
+
+{{site.data.keyword.openshiftlong_notm}} worker node fix packs are available.
+:   Worker node fix packs can be applied by updating or reloading the worker node in classic infrastructure, or replacing the worker node in VPC infrastructure. Review the following change logs for your cluster version.
+:   [Version 4.21 change log](/docs/openshift?topic=openshift-openshift_changelog_421)
+:   [Version 4.20 change log](/docs/openshift?topic=openshift-openshift_changelog_420)
+:   [Version 4.19 change log](/docs/openshift?topic=openshift-openshift_changelog_419)
+:   [Version 4.18 change log](/docs/openshift?topic=openshift-openshift_changelog_418)
+:   [Version 4.17 change log](/docs/openshift?topic=openshift-openshift_changelog_417)
+:   [Version 4.16 change log](/docs/openshift?topic=openshift-openshift_changelog_416)
+
+
+
+
 
 
 
