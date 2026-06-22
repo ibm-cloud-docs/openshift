@@ -25,6 +25,19 @@ Review the version history for Confidential containers.
 {: shortdesc}
 
 
+## Version 20260604-05
+{: #cl-confidential-containers-20260604-05}
+
+
+### 20260604-05, released 05 June 2026
+{: #cl-confidential-containers-20260604-05}
+
+- Resolved configuration issues affecting the attestation workflow
+- Enhanced compatibility with Intel Trust Authority attestation service
+- Improved reliability of confidential data hub (CDH) endpoint access
+- `rhel9-podvm-20260604-05.qcow2`
+
+
 ## Version 20260604-05-hardened
 {: #cl-confidential-containers-20260604-05-hardened}
 
@@ -37,19 +50,6 @@ Review the version history for Confidential containers.
 - Improved reliability of confidential data hub (CDH) endpoint access
 - Enhanced security with SSH disabled
 - `rhel9-podvm-hardened-20260604-05.qcow2`
-
-
-## Version 20260604-05
-{: #cl-confidential-containers-20260604-05}
-
-
-### 20260604-05, released 05 June 2026
-{: #cl-confidential-containers-20260604-05}
-
-- Resolved configuration issues affecting the attestation workflow
-- Enhanced compatibility with Intel Trust Authority attestation service
-- Improved reliability of confidential data hub (CDH) endpoint access
-- `rhel9-podvm-20260604-05.qcow2`
 
 
 ## Version 20260319-02
