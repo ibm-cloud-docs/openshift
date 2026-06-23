@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2026
-lastupdated: "2026-06-22"
+lastupdated: "2026-06-23"
 
 
 keywords: kubernetes, release notes, openshift, {{site.data.keyword.openshiftlong_notm}}
@@ -93,6 +93,10 @@ OpenShift Data Foundation cluster add-on patch updates.
 
 OpenShift Virtualization cluster add-on patch updates.
 :   For more information, see the [change log](/docs/openshift?topic=openshift-cl-add-ons-openshift-virtualization).
+
+
+
+
 
 
 
