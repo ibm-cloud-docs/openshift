@@ -39,6 +39,24 @@ Master patch updates are applied automatically. Worker node patch updates can be
 {: #421_components}
 
 
+### Worker node fix pack 4.21.19_1521_openshift, released 15 June 2026
+{: #cl-boms-42119_1521_openshift_W}
+
+The following table shows the components included in the worker node fix pack 4.21.19_1521_openshift. Worker node patch updates can be applied by updating, reloading (in classic infrastructure), or replacing (in VPC infrastructure) the worker node.
+{: shortdesc}
+
+| Component | Description |
+| ---- | ---- |
+|RHEL 9 (VPC) 5.14.0-570.116.1.el9_6|Resolves the following CVEs: [CVE-2026-5119](https://nvd.nist.gov/vuln/detail/CVE-2026-5119){: external}.|
+|RHEL 9 (Satellite) 5.14.0-570.62.1.el9_6|N/A|
+|RHEL 9 (Classic) 5.14.0-570.116.1.el9_6|N/A|
+|Red Hat OpenShift 4.21.17|For more information, see the [change logs](https://docs.redhat.com/en/documentation/openshift_container_platform/4.21/html/release_notes/ocp-4-21-release-notes.html#ocp-4-21-17_release-notes).|
+|Red Hat CoreOS 4.21.17|For more information, see the [change logs](https://docs.redhat.com/en/documentation/openshift_container_platform/4.21/html/release_notes/ocp-4-21-release-notes.html#ocp-4-21-17_release-notes).|
+|HAProxy d4656f400ca14059e1b5b8ef8078b4903290791a|Resolves the following CVEs: [CVE-2026-45186](https://nvd.nist.gov/vuln/detail/CVE-2026-45186){: external}.|
+{: caption="4.21.19_1521_openshift fix pack." caption-side="bottom"}
+{: #cl-boms-42119_1521_openshift_W-component-table}
+
+
 ### Worker node fix pack 4.21.17_1519_openshift, released 03 June 2026
 {: #cl-boms-42117_1519_openshift_W}
 
