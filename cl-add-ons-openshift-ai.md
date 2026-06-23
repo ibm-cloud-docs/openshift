@@ -3,7 +3,7 @@
 copyright:
   years: 2024, 2026
 
-lastupdated: "2026-06-19"
+lastupdated: "2026-06-23"
 
 
 keywords: change log, version history, OpenShift AI
@@ -43,6 +43,13 @@ Review the version history for OpenShift AI.
 {: #cl-add-ons-openshift-ai-419}
 
 
+### v419.1.0_348058306, released 23 June 2026
+{: #cl-add-ons-openshift-ai-v41910_348058306}
+
+[Default version]{: tag-green}
+
+- Updates Go to version `1.25.11`.
+- Installs Red Hat `openshift-ai` operator version `3.4.0`.
 
 
 ### v419.0.2_340316372, released 25 May 2026
