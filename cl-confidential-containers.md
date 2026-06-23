@@ -3,7 +3,7 @@
 copyright:
   years: 2024, 2026
 
-lastupdated: "2026-06-22"
+lastupdated: "2026-06-23"
 
 
 keywords: change log, version history, Confidential containers
