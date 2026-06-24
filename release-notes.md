@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2026
-lastupdated: "2026-06-23"
+lastupdated: "2026-06-24"
 
 
 keywords: kubernetes, release notes, openshift, {{site.data.keyword.openshiftlong_notm}}
@@ -69,6 +69,8 @@ IBM Object CSI Driver cluster add-on patch updates.
 :   [Version 4.18 change log](/docs/openshift?topic=openshift-openshift_changelog_418)
 :   [Version 4.17 change log](/docs/openshift?topic=openshift-openshift_changelog_417)
 :   [Version 4.16 change log](/docs/openshift?topic=openshift-openshift_changelog_416)
+
+
 
 
 
