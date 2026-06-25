@@ -67,7 +67,7 @@ Network
 :   OVN-Kubernetes CNI with MTU 8900 (OVN) and 9000 (worker nodes).
 
 Storage
-:   OpenShift Data Foundation (ODF) with local NVME storage or VPC File Storage (one option must be selected during cluster creation).
+:   OpenShift Data Foundation (ODF) with local NVME storage or VPC File Storage (one option must be selected during cluster creation). VPC File Storage support is available as a beta feature.
 
 Licensing
 :   OpenShift Virtualization Engine (OVE) license.

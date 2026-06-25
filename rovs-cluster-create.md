@@ -2,7 +2,7 @@
 
 copyright:
   years: 2026, 2026
-lastupdated: "2026-06-16"
+lastupdated: "2026-06-25"
 
 keywords: openshift, virtualization service, rovs, create cluster, vpc, bare metal, tutorial
 
@@ -187,8 +187,8 @@ You can create a Virtualization Service cluster by using the console.
    - **Plan**: Advanced
    - **Storage type**: Local Storage
 
-   **File Storage for VPC**
-   :   Alternative to ODF. Provides file storage backed by VPC infrastructure.
+   File Storage for VPC
+   :   **Beta**: Alternative to ODF. Provides file storage backed by VPC infrastructure. File Storage for VPC support is available as a beta feature.
 
    You must select at least one storage option (ODF or File Storage for VPC) to provision a Virtualization Service cluster.
    {: important}
