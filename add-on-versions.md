@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2022, 2026
-lastupdated: "2026-06-09"
+lastupdated: "2026-06-25"
 
 keywords: openshift, add-ons, cluster addon
 
@@ -87,7 +87,7 @@ Review the following list of supported cluster add-ons. Each add-on version can 
 ## `headlamp` 0.1.0 
 {: #headlamp-0.1.0}
 
-- Supported Kubernetes cluster versions: `>=1.31.0 <1.36.0`
+- Supported Kubernetes cluster versions: `>=1.31.0 <1.37.0`
 
 - Supported OpenShift cluster versions:  `N/A` 
 
@@ -206,7 +206,7 @@ Review the following list of supported cluster add-ons. Each add-on version can 
 
 - Supported Kubernetes cluster versions:  `N/A` 
 
-- Supported OpenShift cluster versions: `>=4.19.0 <4.21.0`
+- Supported OpenShift cluster versions: `>=4.19.0 <4.22.0`
 
 
 
@@ -276,7 +276,7 @@ Review the following list of supported cluster add-ons. Each add-on version can 
 ## `static-route` 1.0.0 
 {: #static-route-1.0.0}
 
-- Supported Kubernetes cluster versions: `>=1.26.0 <1.36.0`
+- Supported Kubernetes cluster versions: `>=1.26.0 <1.37.0`
 
 - Supported OpenShift cluster versions: `>=4.11.0 <4.22.0`
 
