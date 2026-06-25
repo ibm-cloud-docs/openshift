@@ -136,7 +136,7 @@ For detailed pricing information, see the [{{site.data.keyword.cloud_notm}} Pric
 
 The following table compares the features included in the OpenShift Virtualization Engine (OVE) license used by Virtualization Service versus the full OpenShift Container Platform (OCP) license used by standard OpenShift clusters.
 
-| Red Hat OpenShift Virtualization Service on IBM Cloud | Red Hat OpenShift on IBM Cloud |
+| Component | Red Hat OpenShift Virtualization Service on IBM Cloud | Red Hat OpenShift on IBM Cloud |
 | --- | --- | --- |
 | License | Red Hat OpenShift Virtualization Engine | Red Hat OpenShift Container Platform |
 | Enterprise Secured Kubernetes | ![Checkmark icon](../icons/checkmark-icon.svg) | ![Checkmark icon](../icons/checkmark-icon.svg) |
