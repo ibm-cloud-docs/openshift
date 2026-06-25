@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2026
-lastupdated: "2026-06-23"
+lastupdated: "2026-06-25"
 
 
 keywords: openshift
@@ -3982,6 +3982,8 @@ subcollection: openshift
 * [What are the limitations of Virtualization Service?](/docs/openshift?topic=openshift-rovs-overview#rovs-limitations-ov)
 
 * [How is Virtualization Service priced?](/docs/openshift?topic=openshift-rovs-overview#rovs-pricing)
+
+* [How does the Virtualization Service cluster license compare to a standard Red Hat OpenShift on IBM Cloud cluster license?](/docs/openshift?topic=openshift-rovs-overview#rovs-license-comparison)
 
 * [Next steps](/docs/openshift?topic=openshift-rovs-overview#rovs-next-steps)
 

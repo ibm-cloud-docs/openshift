@@ -2,7 +2,7 @@
 
 copyright:
   years: 2026, 2026
-lastupdated: "2026-06-16"
+lastupdated: "2026-06-25"
 
 keywords: openshift, virtualization service, rovs, virtual machines, vms, bare metal, pre-configured
 
@@ -130,6 +130,45 @@ Storage costs
 :   NVME storage cost is included in the bare metal infrastructure cost.
 
 For detailed pricing information, see the [{{site.data.keyword.cloud_notm}} Pricing Calculator](https://cloud.ibm.com/estimator){: external}.
+
+## How does the Virtualization Service cluster license compare to a standard Red Hat OpenShift on IBM Cloud cluster license?
+{: #rovs-license-comparison}
+
+The following table compares the features included in the OpenShift Virtualization Engine (OVE) license used by Virtualization Service versus the full OpenShift Container Platform (OCP) license used by standard OpenShift clusters.
+
+| Red Hat OpenShift Virtualization Service on IBM Cloud | Red Hat OpenShift on IBM Cloud |
+| --- | --- | --- |
+| License | Red Hat OpenShift Virtualization Engine | Red Hat OpenShift Container Platform |
+| Enterprise Secured Kubernetes | ![Checkmark icon](../icons/checkmark-icon.svg) | ![Checkmark icon](../icons/checkmark-icon.svg) |
+| Hosted control planes | ![Checkmark icon](../icons/checkmark-icon.svg) | ![Checkmark icon](../icons/checkmark-icon.svg) |
+| Operator Lifecycle Manager | ![Checkmark icon](../icons/checkmark-icon.svg) | ![Checkmark icon](../icons/checkmark-icon.svg) |
+| Compliance and File Integrity Operators | ![Checkmark icon](../icons/checkmark-icon.svg) | ![Checkmark icon](../icons/checkmark-icon.svg) |
+| Virtual machine-based workload hosting | ![Checkmark icon](../icons/checkmark-icon.svg) | ![Checkmark icon](../icons/checkmark-icon.svg) |
+| Container-based infra workload hosting | ![Checkmark icon](../icons/checkmark-icon.svg) | ![Checkmark icon](../icons/checkmark-icon.svg) |
+| User Workload Monitoring | ![Checkmark icon](../icons/checkmark-icon.svg)* | ![Checkmark icon](../icons/checkmark-icon.svg) |
+| Platform Logging | ![Checkmark icon](../icons/checkmark-icon.svg)* | ![Checkmark icon](../icons/checkmark-icon.svg) |
+| OpenShift GitOps | ![Checkmark icon](../icons/checkmark-icon.svg)* | ![Checkmark icon](../icons/checkmark-icon.svg) |
+| Metering and Cost Management SaaS Service | ![Checkmark icon](../icons/checkmark-icon.svg) | ![Checkmark icon](../icons/checkmark-icon.svg) |
+| Container-based user application hosting | | ![Checkmark icon](../icons/checkmark-icon.svg) |
+| RHEL guest and hosted virtual OpenShift subscriptions included | | ![Checkmark icon](../icons/checkmark-icon.svg) |
+| Runtimes, Build Tools, and IDE | | ![Checkmark icon](../icons/checkmark-icon.svg) |
+| CI/CD Pipelines | | ![Checkmark icon](../icons/checkmark-icon.svg) |
+| Serverless | | ![Checkmark icon](../icons/checkmark-icon.svg) |
+| Service Mesh | | ![Checkmark icon](../icons/checkmark-icon.svg) |
+| Tracing | | ![Checkmark icon](../icons/checkmark-icon.svg) |
+| Multi-cluster complete management with Red Hat Advanced Cluster Management | | |
+| Kubernetes-native security with Red Hat Advanced Cluster Security | | |
+| Scalable, central registry with Red Hat Quay | | |
+| Persistent software-defined storage and essential data services with OpenShift Data Foundation Essentials | | |
+{: row-headers}
+{: class="comparison-table"}
+{: caption="License entitlement comparison between OVE and OCP" caption-side="bottom"}
+{: summary="This table compares the features included in two Red Hat OpenShift license types. The row headers identify the feature. The column headers identify the license type: OVE (Red Hat OpenShift Virtualization Service entitlement) and OCP (Red Hat OpenShift on IBM Cloud license entitlement). To understand which features are included in a license, navigate to the row for the feature you are interested in and check for a checkmark icon in the column for the license type."}
+
+*VMs only.
+{: note}
+
+The OVE license used by Virtualization Service is optimized for running virtual machines and includes essential platform features. For workloads that require container-based applications, CI/CD pipelines, or advanced features like Service Mesh and Serverless, use a standard OpenShift cluster with the full OCP license.
 
 ## Next steps
 {: #rovs-next-steps}

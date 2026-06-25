@@ -2,7 +2,7 @@
 
 copyright:
   years: 2026
-lastupdated: "2026-06-05"
+lastupdated: "2026-06-25"
 
 keywords: openshift virtualization, vpc file storage, virtual machines, data volumes, storage profiles, virtctl
 
@@ -36,7 +36,7 @@ Before you create a virtual machine with VPC File Storage, complete the followin
 1. Review the planning guidance in [Planning your OpenShift Virtualization deployment](/docs/openshift?topic=openshift-virt-plan).
 1. Configure VPC File Storage as described in [Setting up storage for OpenShift Virtualization](/docs/openshift?topic=openshift-virt-storage-setup).
 1. Install the OpenShift Virtualization Operator as described in [Installing the OpenShift Virtualization Operator](/docs/openshift?topic=openshift-oc-virtualization).
-1. Install the `virtctl` CLI. For more information, see [Getting started with OpenShift Virtualization CLI tools](https://docs.redhat.com/en/documentation/openshift_container_platform/4.20/html/virtualization/getting-started#virt-installing-virtctl_virt-getting-started){: external}.
+1. Install the `virtctl` CLI. For more information, see [Getting started with OpenShift Virtualization CLI tools](https://docs.redhat.com/en/documentation/openshift_container_platform/4.21/html/virtualization/getting-started#virt-installing-virtctl_virt-getting-started){: external}.
 
 ## Verifying your environment
 {: #virt-vpc-file-vm-create-verify}
@@ -329,4 +329,4 @@ After you create a virtual machine with VPC File Storage:
 
 1. [Manage virtual machines in Virtualization Service clusters](/docs/openshift?topic=openshift-rovs-manage#rovs-manage-vms)
 1. [Configure virtual network interfaces](/docs/openshift?topic=openshift-vni-virtualization)
-1. [Review the Red Hat OpenShift Virtualization documentation](https://docs.redhat.com/en/documentation/openshift_container_platform/4.20/html/virtualization/index){: external}
+1. [Review the Red Hat OpenShift Virtualization documentation](https://docs.redhat.com/en/documentation/openshift_container_platform/4.21/html/virtualization/index){: external}
