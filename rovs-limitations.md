@@ -2,7 +2,7 @@
 
 copyright:
   years: 2026, 2026
-lastupdated: "2026-06-16"
+lastupdated: "2026-06-26"
 
 keywords: openshift, virtualization service, rovs, limitations, restrictions, constraints
 
@@ -22,9 +22,6 @@ subcollection: openshift
 
 Review the limitations and restrictions for OpenShift Virtualization Service clusters on {{site.data.keyword.openshiftlong_notm}}.
 {: shortdesc}
-
-This service is currently available as a beta release. Access is controlled by an allowlist. During the beta period, only console-based cluster creation is supported.
-{: beta}
 
 ## Infrastructure requirements
 {: #rovs-limit-infra}

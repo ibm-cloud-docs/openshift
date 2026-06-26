@@ -2,7 +2,7 @@
 
 copyright:
   years: 2026, 2026
-lastupdated: "2026-06-16"
+lastupdated: "2026-06-26"
 
 keywords: openshift, virtualization service, rovs, addon, openshift virtualization, hyperconverged, nmstate, node maintenance
 
@@ -22,9 +22,6 @@ subcollection: openshift
 
 The `openshift-virtualization` add-on provides a one-click experience to set up the virtualization platform on OpenShift Virtualization Service clusters. This add-on is automatically enabled by default on all Virtualization Service clusters.
 {: shortdesc}
-
-This service is currently available as a beta release. Access is controlled by an allowlist. During the beta period, only console-based cluster creation is supported.
-{: beta}
 
 
 ## Understanding the OpenShift Virtualization add-on

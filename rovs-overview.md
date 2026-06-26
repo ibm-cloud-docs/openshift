@@ -2,7 +2,7 @@
 
 copyright:
   years: 2026, 2026
-lastupdated: "2026-06-25"
+lastupdated: "2026-06-26"
 
 keywords: openshift, virtualization service, rovs, virtual machines, vms, bare metal, pre-configured
 
@@ -22,9 +22,6 @@ subcollection: openshift
 
 OpenShift Virtualization Service is a pre-configured offering that delivers a ready-to-use virtualization platform on {{site.data.keyword.openshiftlong_notm}}, enabling you to run virtual machines with minimal setup.
 {: shortdesc}
-
-This service is currently available as a beta release. Access is controlled by an allowlist. During the beta period, only console-based cluster creation is supported.
-{: beta}
 
 ## What is OpenShift Virtualization Service?
 {: #rovs-what-is}

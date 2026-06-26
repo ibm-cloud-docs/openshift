@@ -2,7 +2,7 @@
 
 copyright:
   years: 2026, 2026
-lastupdated: "2026-06-25"
+lastupdated: "2026-06-26"
 
 keywords: openshift, virtualization service, rovs, create cluster, vpc, bare metal, tutorial
 
@@ -29,9 +29,6 @@ completion-time: 30m
 
 Create an OpenShift Virtualization Service cluster with pre-configured components for running virtual machines on {{site.data.keyword.openshiftlong_notm}}.
 {: shortdesc}
-
-This service is currently available as a beta release. Access is controlled by an allowlist. During the beta period, only console-based cluster creation is supported.
-{: beta}
 
 ## Objectives
 {: #rovs-create-objectives}
