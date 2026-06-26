@@ -3,7 +3,7 @@
 copyright:
   years: 2024, 2026
 
-lastupdated: "2026-06-22"
+lastupdated: "2026-06-26"
 
 
 keywords: change log, version history, VPC File CSI Driver
@@ -43,7 +43,7 @@ Review the version history for VPC File CSI Driver.
 {: #cl-add-ons-vpc-file-csi-driver-2.0}
 
 
-### v2.0.36_347951752, released 22 June 2026
+### Version 2.0 - v2.0.36_347951752, released 22 June 2026
 {: #cl-add-ons-vpc-file-csi-driver-v2036_347951752}
 
 [Default version]{: tag-green}
@@ -52,7 +52,7 @@ Review the version history for VPC File CSI Driver.
 - `armada-storage-secret v1.3.55`
 
 
-### v2.0.34_345194711, released 09 June 2026
+### Version 2.0 - v2.0.34_345194711, released 09 June 2026
 {: #cl-add-ons-vpc-file-csi-driver-v2034_345194711}
 
 [Default version]{: tag-green}
@@ -61,7 +61,7 @@ Review the version history for VPC File CSI Driver.
 - `armada-storage-secret v1.3.51`
 
 
-### v2.0.33_343448437, released 03 June 2026
+### Version 2.0 - v2.0.33_343448437, released 03 June 2026
 {: #cl-add-ons-vpc-file-csi-driver-v2033_343448437}
 
 [Default version]{: tag-green}
@@ -70,7 +70,7 @@ Review the version history for VPC File CSI Driver.
 - `armada-storage-secret v1.3.50`
 
 
-### v2.0.32_341664893, released 29 May 2026
+### Version 2.0 - v2.0.32_341664893, released 29 May 2026
 {: #cl-add-ons-vpc-file-csi-driver-v2032_341664893}
 
 [Default version]{: tag-green}
@@ -79,7 +79,7 @@ Review the version history for VPC File CSI Driver.
 - `armada-storage-secret v1.3.49`
 
 
-### v2.0.30_338302575, released 13 May 2026
+### Version 2.0 - v2.0.30_338302575, released 13 May 2026
 {: #cl-add-ons-vpc-file-csi-driver-v2030_338302575}
 
 [Default version]{: tag-green}
@@ -88,7 +88,7 @@ Review the version history for VPC File CSI Driver.
 - `armada-storage-secret v1.2.82`
 
 
-### v2.0.28_333900419, released 27 April 2026
+### Version 2.0 - v2.0.28_333900419, released 27 April 2026
 {: #cl-add-ons-vpc-file-csi-driver-v2028_333900419}
 
 [Default version]{: tag-green}
@@ -98,7 +98,7 @@ Review the version history for VPC File CSI Driver.
 - `armada-storage-secret v1.2.80`
 
 
-### v2.0.27_329001706, released 07 April 2026
+### Version 2.0 - v2.0.27_329001706, released 07 April 2026
 {: #cl-add-ons-vpc-file-csi-driver-v2027_329001706}
 
 [Default version]{: tag-green}
@@ -108,7 +108,7 @@ Review the version history for VPC File CSI Driver.
 - `armada-storage-secret v1.2.79`
 
 
-### v2.0.26_325670948, released 24 March 2026
+### Version 2.0 - v2.0.26_325670948, released 24 March 2026
 {: #cl-add-ons-vpc-file-csi-driver-v2026_325670948}
 
 [Default version]{: tag-green}
@@ -117,7 +117,7 @@ Review the version history for VPC File CSI Driver.
 - `armada-storage-secret v1.2.78`
 
 
-### v2.0.25_321043855, released 02 March 2026
+### Version 2.0 - v2.0.25_321043855, released 02 March 2026
 {: #cl-add-ons-vpc-file-csi-driver-v2025_321043855}
 
 [Default version]{: tag-green}
@@ -127,7 +127,7 @@ Review the version history for VPC File CSI Driver.
 - `armada-storage-secret v1.2.77`
 
 
-### v2.0.24_319692587, released 26 February 2026
+### Version 2.0 - v2.0.24_319692587, released 26 February 2026
 {: #cl-add-ons-vpc-file-csi-driver-v2024_319692587}
 
 [Default version]{: tag-green}
@@ -136,7 +136,7 @@ Review the version history for VPC File CSI Driver.
 - `armada-storage-secret v1.2.76`
 
 
-### v2.0.23_316463584, released 10 February 2026
+### Version 2.0 - v2.0.23_316463584, released 10 February 2026
 {: #cl-add-ons-vpc-file-csi-driver-v2023_316463584}
 
 [Default version]{: tag-green}
@@ -145,7 +145,7 @@ Review the version history for VPC File CSI Driver.
 - `armada-storage-secret v1.2.75`
 
 
-### v2.0.22_310489003, released 21 January 2026
+### Version 2.0 - v2.0.22_310489003, released 21 January 2026
 {: #cl-add-ons-vpc-file-csi-driver-v2022_310489003}
 
 [Default version]{: tag-green}
@@ -156,7 +156,7 @@ Review the version history for VPC File CSI Driver.
 - `armada-storage-secret v1.2.74`
 
 
-### v2.0.21_301434433, released 05 December 2025
+### Version 2.0 - v2.0.21_301434433, released 05 December 2025
 {: #cl-add-ons-vpc-file-csi-driver-v2021_301434433}
 
 [Default version]{: tag-green}
@@ -169,7 +169,7 @@ Review the version history for VPC File CSI Driver.
 - `armada-storage-secret v1.2.71`
 
 
-### 2.0.20_296667134, released 12 November 2025
+### Version 2.0 - 2.0.20_296667134, released 12 November 2025
 {: #cl-add-ons-vpc-file-csi-driver-2020_296667134}
 
 [Default version]{: tag-green}
@@ -179,7 +179,7 @@ Review the version history for VPC File CSI Driver.
 - `armada-storage-secret v1.2.70`
 
 
-### 2.0.19_294159886, released 05 November 2025
+### Version 2.0 - 2.0.19_294159886, released 05 November 2025
 {: #cl-add-ons-vpc-file-csi-driver-2019_294159886}
 
 [Default version]{: tag-green}
@@ -189,7 +189,7 @@ Review the version history for VPC File CSI Driver.
 - `armada-storage-secret v1.2.69`
 
 
-### 2.0.16_443, released 22 September 2025
+### Version 2.0 - 2.0.16_443, released 22 September 2025
 {: #cl-add-ons-vpc-file-csi-driver-2016_443}
 
 [Default version]{: tag-green}
@@ -200,7 +200,7 @@ Review the version history for VPC File CSI Driver.
 - `armada-storage-secret v1.2.66`
 
 
-### 2.0.14_403, released 18 July 2025
+### Version 2.0 - 2.0.14_403, released 18 July 2025
 {: #cl-add-ons-vpc-file-csi-driver-2014_403}
 
 [Default version]{: tag-green}
@@ -212,7 +212,7 @@ Review the version history for VPC File CSI Driver.
 - `armada-storage-secret v1.2.64`
 
 
-### 2.0.15_431, released 18 July 2025
+### Version 2.0 - 2.0.15_431, released 18 July 2025
 {: #cl-add-ons-vpc-file-csi-driver-2015_431}
 
 [Default version]{: tag-green}
@@ -221,7 +221,7 @@ Review the version history for VPC File CSI Driver.
 - `armada-storage-secret v1.2.65`
 
 
-### 2.0.13_370, released 16 June 2025
+### Version 2.0 - 2.0.13_370, released 16 June 2025
 {: #cl-add-ons-vpc-file-csi-driver-2013_370}
 
 - Resolves the following CVEs: [CVE-2025-0395](https://nvd.nist.gov/vuln/detail/CVE-2025-0395){: external}, [CVE-2025-3576](https://nvd.nist.gov/vuln/detail/CVE-2025-3576){: external}, and [CVE-2025-24528](https://nvd.nist.gov/vuln/detail/CVE-2025-24528){: external}.
@@ -235,7 +235,7 @@ Review the version history for VPC File CSI Driver.
 - {'Note': 'Users might see unwanted messages in file-csi-driver-status configmap.'} 
 
 
-### 2.0.10_334, released 19 February 2025
+### Version 2.0 - 2.0.10_334, released 19 February 2025
 {: #cl-add-ons-vpc-file-csi-driver-2010_334}
 
 - Resolves the following CVEs: [CVE-2024-45339](https://nvd.nist.gov/vuln/detail/CVE-2024-45339){: external}, and [CVE-2024-45338](https://nvd.nist.gov/vuln/detail/CVE-2024-45338){: external}.
@@ -248,7 +248,7 @@ Review the version history for VPC File CSI Driver.
 {: #cl-add-ons-vpc-file-csi-driver-1.2}
 
 
-### 1.2.14_332, released 19 February 2025
+### Version 1.2 - 1.2.14_332, released 19 February 2025
 {: #cl-add-ons-vpc-file-csi-driver-1214_332}
 
 - Resolves the following CVEs: [CVE-2024-45339](https://nvd.nist.gov/vuln/detail/CVE-2024-45339){: external}, and [CVE-2024-45338](https://nvd.nist.gov/vuln/detail/CVE-2024-45338){: external}.
@@ -257,68 +257,14 @@ Review the version history for VPC File CSI Driver.
 - Updates the armada-storage-secret to v1.2.55. 
 
 
-### Change log for version 2.0.9_322, released 11 December 2024
-{: #2.0.9_322_is_file_relnote}
-
-
-- `region` support is now deprecated in the storage class settings. Continuing to provide a `region` in your storage classes does not cause any issues with either existing PVC or new PVC. The default behavior is now to get the region detail from worker node labels only.
-- Fixes a bug where setting default storage class was not working in version 4.15 clusters.
-- Fixes [CVE-2024-51744](https://nvd.nist.gov/vuln/detail/CVE-2024-51744){: external}.
-- Updates the `storage-secret-sidecar` image to `v1.2.52`.
-
-
-### Change log for version 2.0.8_311, released 3 October 2024
-{: #2.0.8_311_is_file_relnote}
-
-- Updates the golang base image to `1.22.7`.
-- Updates to Kubernetes 1.30 client libraries.
-- Updates the CSI specification to version `1.9.0`.
-- Fixes a security issue for the CSI sidecar liveness probe. The sidecar now runs as non-root in the Node Server pod.
-- Adds the ability to set a default storage class. For more information, see [Setting the default storage class](/docs/openshift?topic=openshift-storage-file-vpc-apps#vpc-file-set-default-sc).
-- Updates the following sidecar images: `csi-provisioner:v5.0.2`, `csi-resizer:v1.11.2`, `livenessprobe:v2.13.1`, and `csi-node-driver-registrar:v2.11.1`.
-- Resolves [CVE-2024-2398](https://nvd.nist.gov/vuln/detail/CVE-2024-2398){: external}, [CVE-2024-37370](https://nvd.nist.gov/vuln/detail/CVE-2024-37370){: external}, [CVE-2024-37371](https://nvd.nist.gov/vuln/detail/CVE-2024-37371){: external}.
-
-### Change log for version 2.0.6_259, released 26 August 2024
-{: #2.0.6_259_is_file_relnote}
-
-- Updates the golang image to `1.21.13-community`.
-
-### Change log for version 2.0.5_253, released 15 July 2024
-{: #2.0.5_253_is_file_relnote}
-
-- Updates the golang image to `1.21.12-community`.
-- Updates the `armada-storage-secret` to `v1.2.40`.
-- Resolves [CVE-2024-28182](https://nvd.nist.gov/vuln/detail/CVE-2024-28182){: external} and [CVE-2023-2953](https://nvd.nist.gov/vuln/detail/CVE-2023-2953){: external}.
-
-### Change log for version 2.0.4_232, released 3 July 2024
-{: #2.0.4_232_is_file_relnote}
-
-- Version 2.0 and later is managed via the `storage-operator` add-on which is installed by default on new 4.16 and later clusters. To update your add-on, see [Updating the {{site.data.keyword.filestorage_vpc_full_notm}} cluster add-on](/docs/openshift?topic=openshift-storage-file-vpc-managing).
-- Adds support for encryption in-transit (EIT). EIT is disabled by default. For more information, see [Setting up encryption in-transit](/docs/openshift?topic=openshift-storage-file-vpc-apps#storage-file-vpc-eit).
-- Adds support for tagging. File shares can now be cleaned up when deleting clusters by using the `--force-delete-storage` option on the `ibmcloud oc cluster rm` command.
-- Adds new pre-defined storage classes. The previous storage classes are deprecated. Update your apps to use the new storage classes. For more information, see the [Migrating to a new storage class](/docs/openshift?topic=openshift-storage-file-vpc-apps#storage-file-expansion-migration).
-- Adds functionality to track CSI driver major events. You can the add-on status by reviewing the `file-csi-driver-status` configmap in the `kube-system` namespace.
-- Adds more attributes to persistent volume objects (PV) `FileShareID`, `FileShareTargetID`, `ENISubnetID`, `ENISecurityGroupIDs`.
-- Adds retries for fileShare target creation in case of partial failure during PVC creation.
-- Updates RBAC policies to use minimal privileges required.
-- Updates golang to `1.21.11-community`.
-- Known issues: [StorageClassSecres](https://kubernetes-csi.github.io/docs/secrets-and-credentials-storage-class.html#storageclass-secrets){: external} are not supported.
-
-
-
-
-
-## Version 1.2 archive
-{: #012_is_file}
-
-### Change log for version 1.2.13_326, released 11 December 2024
+### Version 1.2.13_326, released 11 December 2024
 {: #1.2.13_326_is_file_relnote}
 
 - Fixes [CVE-2024-51744](https://nvd.nist.gov/vuln/detail/CVE-2024-51744){: external}.
 - Updates the `storage-secret-sidecar` image to `v1.2.52`.
 
 
-### Change log for version 1.2.12_312, released 3 October 2024
+### Version 1.2.12_312, released 3 October 2024
 {: #1.2.12_312_is_file_relnote}
 
 - Updates the golang base image to `1.22.7`.
@@ -329,14 +275,15 @@ Review the version history for VPC File CSI Driver.
 - Resolves [CVE-2024-2398](https://nvd.nist.gov/vuln/detail/CVE-2024-2398){: external}, [CVE-2024-37370](https://nvd.nist.gov/vuln/detail/CVE-2024-37370){: external}, [CVE-2024-37371](https://nvd.nist.gov/vuln/detail/CVE-2024-37371){: external}.
 
 
-### Change log for version 1.2.10_254, released 15 July 2024
+### Version 1.2.10_254, released 15 July 2024
 {: #1.2.10_254_is_file_relnote}
 
 - Updates the golang image to `1.21.12-community`.
 - Updates the `armada-storage-secret` to `v1.2.40`.
 - Resolves [CVE-2024-28182](https://nvd.nist.gov/vuln/detail/CVE-2024-28182){: external} and [CVE-2023-2953](https://nvd.nist.gov/vuln/detail/CVE-2023-2953){: external}.
 
-### Change log for version 1.2.9_245, released 21 June 2024
+
+### Version 1.2.9_245, released 21 June 2024
 {: #1.2.9_245_is_file_relnote}
 
 - Updates `golang` to `1.21.11-community`.
@@ -344,7 +291,7 @@ Review the version history for VPC File CSI Driver.
 - Resolves: [CVE-2024-26458](https://nvd.nist.gov/vuln/detail/CVE-2024-26458){: external}, [CVE-2024-26461](https://nvd.nist.gov/vuln/detail/CVE-2024-26461){: external}, [CVE-2024-33600](https://nvd.nist.gov/vuln/detail/CVE-2024-33600){: external}, [CVE-2024-33601](https://nvd.nist.gov/vuln/detail/CVE-2024-33601){: external}, [CVE-2024-33602](https://nvd.nist.gov/vuln/detail/CVE-2024-33602){: external}, [CVE-2024-2961](https://nvd.nist.gov/vuln/detail/CVE-2024-33602){: external}, and [CVE-2024-33599](https://nvd.nist.gov/vuln/detail/CVE-2024-33599){: external}.
 
 
-### Change log for 1.2.8_174, released 10 May 2024
+### Version 1.2.8_174, released 10 May 2024
 {: #1.2.8_174_is_file_relnote}
 
 - Updates `golang` to `1.21.9-community`.
@@ -353,12 +300,14 @@ Review the version history for VPC File CSI Driver.
 - Sets `handle-volume-inuse-error` flag to `false` in the `csi-resizer` to reduce costs associated with watching all pods in the cluster which can cause `OOM Killed` errors for the `csi-resizer`.
 - Resolves [CVE-2023-46218](https://nvd.nist.gov/vuln/detail/CVE-2023-46218){: external}, [CVE-2023-28322](https://nvd.nist.gov/vuln/detail/CVE-2023-28322){: external}, and [CVE-2023-38546](https://nvd.nist.gov/vuln/detail/CVE-2023-38546){: external}.
 
-### Change log for 1.2.7_154, released 08 March 2024
+
+### Version 1.2.7_154, released 08 March 2024
 {: #1.2.7_154_is_file_relnote}
 
 - Base image migrated from UBI to golang.
 
-### Change log for version 1.2.6_130, released 08 February 2024
+
+### Version 1.2.6_130, released 08 February 2024
 {: #1.2.6_130_is_file_relnote}
 
 
@@ -377,14 +326,14 @@ Review the version history for VPC File CSI Driver.
     - `livenessprobe` to `v2.11.0`.
 
 
-### Change log for version 1.2.5_107, released 10 January 2024
+### Version 1.2.5_107, released 10 January 2024
 {: #1.2.5_107_is_file_relnote}
 
 - Resolves [CVE-2023-3446](https://nvd.nist.gov/vuln/detail/CVE-2023-3446){: external}, [CVE-2023-3817](https://nvd.nist.gov/vuln/detail/CVE-2023-3817){: external}, and [CVE-2023-5678](https://nvd.nist.gov/vuln/detail/CVE-2023-5678){: external}.
 - Applies a security fix to use the correct socket path following SElinux policy module changes and CSI recommendations to use `/var/lib/kubelet/plugins/`.
 
 
-### Change log for version 1.2.3_97, released 27 November 2023
+### Version 1.2.3_97, released 27 November 2023
 {: #1.2.3_97_is_file_relnote}
 
 - Updates Golang to `1.20.11`.
@@ -392,7 +341,8 @@ Review the version history for VPC File CSI Driver.
 - Updates the `armada-storage-secret` to `v1.2.29`.
 - Resolves the following CVEs: [CVE-2023-22745](https://nvd.nist.gov/vuln/detail/CVE-2023-22745){: external}, [CVE-2007-4559](https://nvd.nist.gov/vuln/detail/CVE-2007-4559){: external}, [CVE-2023-40217](https://nvd.nist.gov/vuln/detail/CVE-2023-40217){: external}, and [CVE-2023-4641](https://nvd.nist.gov/vuln/detail/CVE-2023-4641){: external}.
 
-### Change log for version version 1.2.0, released 31 October 2023
+
+### Version version 1.2.0, released 31 October 2023
 {: #0120_is_file}
 
 
@@ -408,7 +358,8 @@ Review the version history for VPC File CSI Driver.
 ## Version 1.1
 {: #011_is_file}
 
-### Change log for version 1.1.10_93, released 27 November 2023
+
+### Version 1.1.10_93, released 27 November 2023
 {: #1.1.10_93_is_file_relnote}
 
 - Updates Golang to `1.20.11`.
@@ -417,7 +368,7 @@ Review the version history for VPC File CSI Driver.
 - Resolves the following CVEs: [CVE-2023-22745](https://nvd.nist.gov/vuln/detail/CVE-2023-22745){: external}, [CVE-2007-4559](https://nvd.nist.gov/vuln/detail/CVE-2007-4559){: external}, [CVE-2023-40217](https://nvd.nist.gov/vuln/detail/CVE-2023-40217){: external}, and [CVE-2023-4641](https://nvd.nist.gov/vuln/detail/CVE-2023-4641){: external}.
 
 
-### Change log for version 1.1.9_87, released 13 November 2023
+### Version 1.1.9_87, released 13 November 2023
 {: #1.1.9_87_is_file_relnote}
 
 - Updates the `storage-secret-sidecar` image to `1.2.27`.
@@ -425,7 +376,7 @@ Review the version history for VPC File CSI Driver.
 - Resolves [CVE-2023-44487](https://nvd.nist.gov/vuln/detail/CVE-2023-44487){: external}, [CVE-2023-4911](https://nvd.nist.gov/vuln/detail/CVE-2023-4911){: external}, [CVE-2023-4527](https://nvd.nist.gov/vuln/detail/CVE-2023-4527){: external}, [CVE-2023-4806](https://nvd.nist.gov/vuln/detail/CVE-2023-4806){: external}, [CVE-2023-4813](https://nvd.nist.gov/vuln/detail/CVE-2023-4813){: external}.
 
 
-### Change log for version 1.1.7_49, released 14 September 2023
+### Version 1.1.7_49, released 14 September 2023
 {: #1.1.7_is_file_relnote}
 
 - Updates UBI image to `8.8-1037`.
@@ -434,17 +385,7 @@ Review the version history for VPC File CSI Driver.
     - [CVE-2023-34969](https://nvd.nist.gov/vuln/detail/CVE-2023-34969){: external}, [CVE-2023-28321](https://nvd.nist.gov/vuln/detail/CVE-2023-28321){: external}, [CVE-2023-2602](https://nvd.nist.gov/vuln/detail/CVE-2023-2602){: external}, [CVE-2023-2603](https://nvd.nist.gov/vuln/detail/CVE-2023-2603){: external}, [CVE-2023-28484](https://nvd.nist.gov/vuln/detail/CVE-2023-28484){: external}, [CVE-2023-29469](https://nvd.nist.gov/vuln/detail/CVE-2023-29469){: external}, [CVE-2023-27536](https://nvd.nist.gov/vuln/detail/CVE-2023-27536){: external}, [CVE-2023-3899](https://nvd.nist.gov/vuln/detail/CVE-2023-3899){: external}, and [CVE-2023-32681](https://nvd.nist.gov/vuln/detail/CVE-2023-32681){: external}.
 
 
-
-### Change log for version 1.1.6_41, release 28 July 2023
-{: #1.1.6_is_file_relnote}
-
-- Tiered storage classes are deprecated and will be unsupported soon. To migrate, create new PVCs and that use a `dp2` storage class and redeploy your apps.
-- Updates for the VPC API compatibility changes. For more information, see the [VPC REST API change log](/docs/vpc?topic=vpc-api-change-log-beta#23-may-2023-beta)
-- Adds support for `dp2` profiles.
-- Updates the UBI to version `8.8-1014` to resolve the following CVEs: [CVE-2023-1667](https://nvd.nist.gov/vuln/detail/CVE-2023-1667){: external}, [CVE-2023-2283](https://nvd.nist.gov/vuln/detail/CVE-2023-2283){: external}, [CVE-2023-26604](https://nvd.nist.gov/vuln/detail/CVE-2023-26604){: external}, and [CVE-2020-24736](https://nvd.nist.gov/vuln/detail/CVE-2020-24736){: external}.
-- Updates Golang to version `1.19.11` to resolve [CVE-2023-29406](https://nvd.nist.gov/vuln/detail/CVE-2023-29406){: external}.
-
-### Change log for version 1.1, released 3 July 2023
+### Version 1.1, released 3 July 2023
 {: #1.1_is_file_relnote}
 
 - Updates the following sidecar images: 
@@ -469,24 +410,3 @@ Review the version history for VPC File CSI Driver.
     - [CVE-2023-27535](https://nvd.nist.gov/vuln/detail/CVE-2023-27535){: external}
     - [CVE-2022-36227](https://nvd.nist.gov/vuln/detail/CVE-2022-36227){: external}
     - [CVE-2022-35252](https://nvd.nist.gov/vuln/detail/CVE-2022-35252){: external}
-
-
-
-
-### Change log for version 1.1-beta, released 15 May 2023
-{: #1.1_beta_is_file_relnote}
-
-- Kubernetes dependencies upgraded to `1.26.4`.
-- Controller pods are now deployed as `Deployment`, in previous releases pods were deployed as `Satefulsets`.
-- Adds the `priorityClass` in the deployment file for controller and node pods.
-
-## Version 1.0
-{: #01_is_file}
-
-
-### Change log for version 1.0, released 16 May 2023
-{: #1.0_is_file_relnote}
-
-- Updates the UBI image to `8.7-1107`.
-- Updates Golang to `1.19.8`.
-- Resolves the following CVEs: [CVE-2023-2453](https://nvd.nist.gov/vuln/detail/CVE-2023-2453){: external}, [CVE-2023-24537](https://nvd.nist.gov/vuln/detail/CVE-2023-24537){: external}, [CVE-2023-24538](https://nvd.nist.gov/vuln/detail/CVE-2023-24538){: external}.

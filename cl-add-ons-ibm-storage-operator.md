@@ -3,7 +3,7 @@
 copyright:
   years: 2024, 2026
 
-lastupdated: "2026-06-22"
+lastupdated: "2026-06-26"
 
 
 keywords: change log, version history, IBM Storage Operator
@@ -43,7 +43,7 @@ Review the version history for IBM Storage Operator.
 {: #cl-add-ons-ibm-storage-operator-1.0}
 
 
-### v1.0.44_347952047, released 22 June 2026
+### Version 1.0 - v1.0.44_347952047, released 22 June 2026
 {: #cl-add-ons-ibm-storage-operator-v1044_347952047}
 
 [Default version]{: tag-green}
@@ -52,7 +52,7 @@ Review the version history for IBM Storage Operator.
 - `armada-storage-secret v1.3.55`
 
 
-### v1.0.43_345196902, released 09 June 2026
+### Version 1.0 - v1.0.43_345196902, released 09 June 2026
 {: #cl-add-ons-ibm-storage-operator-v1043_345196902}
 
 [Default version]{: tag-green}
@@ -61,7 +61,7 @@ Review the version history for IBM Storage Operator.
 - `armada-storage-secret v1.3.51`
 
 
-### v1.0.42_343448801, released 03 June 2026
+### Version 1.0 - v1.0.42_343448801, released 03 June 2026
 {: #cl-add-ons-ibm-storage-operator-v1042_343448801}
 
 [Default version]{: tag-green}
@@ -70,7 +70,7 @@ Review the version history for IBM Storage Operator.
 - `armada-storage-secret v1.3.50`
 
 
-### v1.0.40_340278420, released 19 May 2026
+### Version 1.0 - v1.0.40_340278420, released 19 May 2026
 {: #cl-add-ons-ibm-storage-operator-v1040_340278420}
 
 [Default version]{: tag-green}
@@ -79,7 +79,7 @@ Review the version history for IBM Storage Operator.
 - `armada-storage-secret v1.2.84`
 
 
-### v1.0.41_341664770, released 19 May 2026
+### Version 1.0 - v1.0.41_341664770, released 19 May 2026
 {: #cl-add-ons-ibm-storage-operator-v1041_341664770}
 
 [Default version]{: tag-green}
@@ -88,7 +88,7 @@ Review the version history for IBM Storage Operator.
 - `armada-storage-secret v1.3.49`
 
 
-### v1.0.39_338302625, released 13 May 2026
+### Version 1.0 - v1.0.39_338302625, released 13 May 2026
 {: #cl-add-ons-ibm-storage-operator-v1039_338302625}
 
 [Default version]{: tag-green}
@@ -97,7 +97,7 @@ Review the version history for IBM Storage Operator.
 - `armada-storage-secret v1.2.82`
 
 
-### v1.0.37_333899629, released 27 April 2026
+### Version 1.0 - v1.0.37_333899629, released 27 April 2026
 {: #cl-add-ons-ibm-storage-operator-v1037_333899629}
 
 [Default version]{: tag-green}
@@ -107,7 +107,7 @@ Review the version history for IBM Storage Operator.
 - `armada-storage-secret v1.2.80`
 
 
-### v1.0.36_328998949, released 07 April 2026
+### Version 1.0 - v1.0.36_328998949, released 07 April 2026
 {: #cl-add-ons-ibm-storage-operator-v1036_328998949}
 
 [Default version]{: tag-green}
@@ -117,7 +117,7 @@ Review the version history for IBM Storage Operator.
 - `armada-storage-secret v1.2.79`
 
 
-### v1.0.35_325672265, released 24 March 2026
+### Version 1.0 - v1.0.35_325672265, released 24 March 2026
 {: #cl-add-ons-ibm-storage-operator-v1035_325672265}
 
 [Default version]{: tag-green}
@@ -126,7 +126,7 @@ Review the version history for IBM Storage Operator.
 - `armada-storage-secret v1.2.78`
 
 
-### v1.0.34_321366482, released 02 March 2026
+### Version 1.0 - v1.0.34_321366482, released 02 March 2026
 {: #cl-add-ons-ibm-storage-operator-v1034_321366482}
 
 [Default version]{: tag-green}
@@ -136,7 +136,7 @@ Review the version history for IBM Storage Operator.
 - `armada-storage-secret v1.2.77`
 
 
-### v1.0.32_319681464, released 26 February 2026
+### Version 1.0 - v1.0.32_319681464, released 26 February 2026
 {: #cl-add-ons-ibm-storage-operator-v1032_319681464}
 
 [Default version]{: tag-green}
@@ -145,7 +145,7 @@ Review the version history for IBM Storage Operator.
 - `armada-storage-secret v1.2.76`
 
 
-### v1.0.31_316468084, released 10 February 2026
+### Version 1.0 - v1.0.31_316468084, released 10 February 2026
 {: #cl-add-ons-ibm-storage-operator-v1031_316468084}
 
 [Default version]{: tag-green}
@@ -154,7 +154,7 @@ Review the version history for IBM Storage Operator.
 - `armada-storage-secret v1.2.75`
 
 
-### v1.0.30_310464697, released 21 January 2026
+### Version 1.0 - v1.0.30_310464697, released 21 January 2026
 {: #cl-add-ons-ibm-storage-operator-v1030_310464697}
 
 [Default version]{: tag-green}
@@ -165,7 +165,7 @@ Review the version history for IBM Storage Operator.
 - `armada-storage-secret v1.2.74`
 
 
-### v1.0.29_301949998, released 05 December 2025
+### Version 1.0 - v1.0.29_301949998, released 05 December 2025
 {: #cl-add-ons-ibm-storage-operator-v1029_301949998}
 
 [Default version]{: tag-green}
@@ -175,7 +175,7 @@ Review the version history for IBM Storage Operator.
 - Adds support for enabling and disabling the snapshot functionality by using the IS_SNAPSHOT_ENABLED flag. Snapshots are enabled by default.
 
 
-### 1.0.27_264, released 22 September 2025
+### Version 1.0 - 1.0.27_264, released 22 September 2025
 {: #cl-add-ons-ibm-storage-operator-1027_264}
 
 [Default version]{: tag-green}
@@ -187,7 +187,7 @@ Review the version history for IBM Storage Operator.
 - `ibm-vpc-package-deployer v1.0.5`
 
 
-### 1.0.26_258, released 18 August 2025
+### Version 1.0 - 1.0.26_258, released 18 August 2025
 {: #cl-add-ons-ibm-storage-operator-1026_258}
 
 [Default version]{: tag-green}
@@ -198,7 +198,7 @@ Review the version history for IBM Storage Operator.
 - `ibm-vpc-package-deployer v1.0.4`
 
 
-### 1.0.25_248, released 18 July 2025
+### Version 1.0 - 1.0.25_248, released 18 July 2025
 {: #cl-add-ons-ibm-storage-operator-1025_248}
 
 [Default version]{: tag-green}
@@ -210,7 +210,7 @@ Review the version history for IBM Storage Operator.
 - `armada-storage-secret v1.2.64`
 
 
-### 1.0.23_230, released 16 June 2025
+### Version 1.0 - 1.0.23_230, released 16 June 2025
 {: #cl-add-ons-ibm-storage-operator-1023_230}
 
 - Resolves the following CVEs: [CVE-2025-0395](https://nvd.nist.gov/vuln/detail/CVE-2025-0395){: external}, and [CVE-2020-11023](https://nvd.nist.gov/vuln/detail/CVE-2020-11023){: external}.
@@ -224,26 +224,25 @@ Review the version history for IBM Storage Operator.
 - Adds the capability in the operator to persist the `addon-vpc-file-csi-driver-configmap` and `file-csi-driver-status` configmaps.
 
 
-### 1.0.17_173, released 19 February 2025
+### Version 1.0 - 1.0.17_173, released 19 February 2025
 {: #cl-add-ons-ibm-storage-operator-1017_173}
 
 - Resolves the following CVEs: [CVE-2024-5535](https://nvd.nist.gov/vuln/detail/CVE-2024-5535){: external}.
 - Updates the golang base image to 1.22.12. 
 
 
-
 ## Version 1.0.0
 {: #ibm-storage-operator-1.0.0}
 
-### Change log for version 1.0.16_169, released 11 December 2024
+
+### Version 1.0.16_169, released 11 December 2024
 {: #ibm-storage-operator-1.0.16_169}
 
 
 - Resolves [CVE-2024-51744](https://nvd.nist.gov/vuln/detail/CVE-2024-51744){: external}.
 
 
-
-### Change log for version 1.0.15_163, released 3 October 2024
+### Version 1.0.15_163, released 3 October 2024
 {: #ibm-storage-operator-1.0.15_163}
 
 - Fixes issue with reconciliation of the `file-csi-driver-status` and `addon-vpc-file-csi-driver-configmap` in case it is deleted.
@@ -251,21 +250,21 @@ Review the version history for IBM Storage Operator.
 - Resolves [CVE-2024-2398](https://nvd.nist.gov/vuln/detail/CVE-2024-2398){: external}, [CVE-2024-37370](https://nvd.nist.gov/vuln/detail/CVE-2024-37370){: external}, [CVE-2024-37371](https://nvd.nist.gov/vuln/detail/CVE-2024-37371){: external}.
 
 
-### Change log for version 1.0.13_151, released 26 August 2024
+### Version 1.0.13_151, released 26 August 2024
 {: #ibm-storage-operator-1.0.13_151}
 
 - Applies the `PACKAGE_DEPLOYER_VERSION` image automatically on the worker pools where EIT is enabled.
 - Updates the golang image to `1.21.13-community`.
 
 
-### Change log for version 1.0.12_147, released 15 July 2024
+### Version 1.0.12_147, released 15 July 2024
 {: #ibm-storage-operator-1.0.12_147}
 
 - Updates the golang image to `1.21.12-community`.
 - Resolves [CVE-2024-28182](https://nvd.nist.gov/vuln/detail/CVE-2024-28182){: external} and [CVE-2023-2953](https://nvd.nist.gov/vuln/detail/CVE-2023-2953){: external}.
 
 
-### 1.0.10_141, released 03 July 2024
+### Version 1.0.10_141, released 03 July 2024
 {: #ibm-storage-operator-1.0.0-initial}
 
 - Initial release.

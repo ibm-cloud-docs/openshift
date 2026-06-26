@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2026
-lastupdated: "2026-06-24"
+lastupdated: "2026-06-26"
 
 
 keywords: kubernetes, release notes, openshift, {{site.data.keyword.openshiftlong_notm}}
@@ -31,6 +31,31 @@ Looking for {{site.data.keyword.cloud_notm}} status, platform announcements, sec
 ## June 2026
 {: #openshift-jun26}
 
+### 25 June 2026
+{: #openshift-jun2526}
+{: release-note}
+
+OpenShift Virtualization cluster add-on patch updates.
+:   For more information, see the [change log](/docs/openshift?topic=openshift-cl-add-ons-openshift-virtualization).
+
+
+
+IBM Cloud Image Key Synchronizer cluster add-on patch updates.
+:   For more information, see the [change log](/docs/openshift?topic=openshift-cl-add-ons-ibm-cloud-image-key-synchronizer).
+
+
+### 09 June 2026
+{: #openshift-jun0926}
+{: release-note}
+
+IBM Cloud Image Key Synchronizer cluster add-on patch updates.
+:   For more information, see the [change log](/docs/openshift?topic=openshift-cl-add-ons-ibm-cloud-image-key-synchronizer).
+
+
+
+
+
+
 
 
 ### 23 June 2026
@@ -39,6 +64,10 @@ Looking for {{site.data.keyword.cloud_notm}} status, platform announcements, sec
 
 Openshift AI cluster add-on patch updates.
 :   For more information, see the [change log](/docs/openshift?topic=openshift-cl-add-ons-openshift-ai).
+
+Openshift AI cluster add-on patch updates.
+:   For more information, see the [change log](/docs/openshift?topic=openshift-cl-add-ons-openshift-ai).
+
 
 ### 22 June 2026
 {: #openshift-jun2226}
@@ -69,6 +98,10 @@ IBM Object CSI Driver cluster add-on patch updates.
 :   [Version 4.18 change log](/docs/openshift?topic=openshift-openshift_changelog_418)
 :   [Version 4.17 change log](/docs/openshift?topic=openshift-openshift_changelog_417)
 :   [Version 4.16 change log](/docs/openshift?topic=openshift-openshift_changelog_416)
+
+
+
+
 
 
 
@@ -356,6 +389,9 @@ OpenShift Data Foundation cluster add-on patch updates.
 
 CLI version 1.0.770 is available
 :   For more information, see the [CLI change log](/docs/openshift?topic=openshift-cs_cli_changelog).
+
+OpenShift Data Foundation cluster add-on patch updates.
+:   For more information, see the [change log](/docs/openshift?topic=openshift-cl-add-ons-openshift-data-foundation).
 
 ### 06 May 2026
 {: #openshift-may0626}
