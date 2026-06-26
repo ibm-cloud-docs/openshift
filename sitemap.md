@@ -7395,6 +7395,8 @@ subcollection: openshift
 
 * [`openshift-data-foundation` 4.21.0](/docs/openshift?topic=openshift-supported-cluster-addon-versions#openshift-data-foundation-4.21.0)
 
+* [`openshift-virtualization` 4.21](/docs/openshift?topic=openshift-supported-cluster-addon-versions#openshift-virtualization-4.21)
+
 * [`static-route` 1.0.0](/docs/openshift?topic=openshift-supported-cluster-addon-versions#static-route-1.0.0)
 
 * [`vpc-block-csi-driver` 5.1](/docs/openshift?topic=openshift-supported-cluster-addon-versions#vpc-block-csi-driver-5.1)
