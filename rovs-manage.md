@@ -2,7 +2,7 @@
 
 copyright:
   years: 2026, 2026
-lastupdated: "2026-06-16"
+lastupdated: "2026-06-26"
 
 keywords: openshift, virtualization service, rovs, manage, add-ons, worker nodes, maintenance
 
@@ -22,9 +22,6 @@ subcollection: openshift
 
 Learn how to manage your OpenShift Virtualization Service cluster, including working with pre-configured components, managing worker nodes, and performing maintenance tasks.
 {: shortdesc}
-
-This service is currently available as a beta release. Access is controlled by an allowlist. During the beta period, only console-based cluster creation is supported.
-{: beta}
 
 ## Understanding managed components
 {: #rovs-manage-components}

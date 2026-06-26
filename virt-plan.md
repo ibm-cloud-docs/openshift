@@ -2,7 +2,7 @@
 
 copyright:
   years: 2025, 2026
-lastupdated: "2026-06-16"
+lastupdated: "2026-06-26"
 
 keywords: openshift, virtualization, planning, prerequisites, bare metal
 
@@ -26,9 +26,6 @@ Before you deploy OpenShift Virtualization on {{site.data.keyword.openshiftlong_
 
 [OpenShift Virtualization Service](/docs/openshift?topic=openshift-rovs-overview) is the fastest option with automatic setup of storage, networking, and operators - ready in minutes instead of hours.
 {: tip}
-
-This service is currently available as a beta release. Access is controlled by an allowlist. During the beta period, only console-based cluster creation is supported.
-{: beta}
 
 
 ## Prerequisites

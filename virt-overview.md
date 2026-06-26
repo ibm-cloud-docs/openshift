@@ -2,7 +2,7 @@
 
 copyright:
   years: 2025, 2026
-lastupdated: "2026-06-25"
+lastupdated: "2026-06-26"
 
 keywords: openshift, virtualization, virtual machines, vms, bare metal
 
@@ -40,10 +40,6 @@ OpenShift Virtualization on IBM Cloud provides enterprise-grade virtualization f
 ## Deployment options
 {: #virt-deployment-options}
 
-
-
-Virtualization Service is currently available as a beta release. Access is controlled by an allowlist. During the beta period, only console-based cluster creation is supported.
-{: beta}
 
 
 | Deployment option | Description | Best for | Setup time | More information |
@@ -89,8 +85,8 @@ Both deployment options have the following characteristics:OpenShift Virtualizat
 
 OpenShift Virtualization requires VPC bare metal worker nodes. The following flavors are supported:
 
-| Flavor | Cores | Memory | Network | Local Storage | Min Version | Best for |
-|--------|----------------|--------|---------|---------------|-------------|----------|
+| Flavor | Cores | Memory | Network | Primary storage | Min Version | Best for |
+|--------|----------------|--------|---------|-----------------|-------------|----------|
 | `bx2.metal.96x384` | 48 | 384 GB | 100 Gbps | 960 GB SSD | All | Balanced workloads |
 | `bx2d.metal.96x384` | 48 | 384 GB | 100 Gbps | 960 GB SSD | All | Balanced + ODF |
 | `cx2.metal.96x192` | 48 | 192 GB | 100 Gbps | 960 GB SSD | All | Compute-intensive |
@@ -111,12 +107,12 @@ OpenShift Virtualization requires VPC bare metal worker nodes. The following fla
 | `mx3d.metal.64x512` | 32 | 512 GB | 100 Gbps | 480 GB SSD | 4.17+ | Large memory + ODF |
 | `mx3d.metal.96x1024` | 48 | 1024 GB | 100 Gbps | 480 GB SSD | 4.17+ | XL memory + ODF |
 | `mx3d.metal.128x1024` | 64 | 1024 GB | 100 Gbps | 480 GB SSD | 4.17+ | XXL memory + ODF |
-| `mx3de.metal.48x512` | 24 | 512 GB | 100 Gbps | 480 GB SSD | 4.17+ | Medium memory + ODF + encryption |
-| `mx3de.metal.64x512` | 32 | 512 GB | 100 Gbps | 480 GB SSD | 4.17+ | Large memory + ODF + encryption |
-| `ux3de.metal.16x512` | 8 | 512 GB | 100 Gbps | 480 GB SSD | 4.17+ | Ultra-high memory + ODF + encryption |
+| `mx3de.metal.48x512` | 24 | 512 GB | 100 Gbps | 480 GB SSD | 4.17+ | Medium memory + ODF |
+| `mx3de.metal.64x512` | 32 | 512 GB | 100 Gbps | 480 GB SSD | 4.17+ | Large memory + ODF |
+| `ux3de.metal.16x512` | 8 | 512 GB | 100 Gbps | 480 GB SSD | 4.17+ | Ultra-high memory + ODF |
 {: caption="Supported bare metal flavors for OpenShift Virtualization" caption-side="bottom"}
 
-Flavors with `d` suffix include local SSD storage, which is required for OpenShift Data Foundation. The `mx3de` and `ux3de` flavors provide encrypted local storage for enhanced security.
+Flavors with the `d` and `de` suffixes include additional local SSD storage, which you can use for workloads such as OpenShift Data Foundation. The `Primary storage` column shows the boot and container storage disk.
 {: tip}
 
 ## Storage and networking

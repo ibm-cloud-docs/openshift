@@ -289,6 +289,8 @@ subcollection: openshift
 
     * [25 June 2026](/docs/openshift?topic=openshift-openshift-relnotes#openshift-jun2526)
 
+        * OpenShift Virtualization Service is now generally available.
+
         * OpenShift Virtualization cluster add-on patch updates.
 
         * IBM Cloud Image Key Synchronizer cluster add-on patch updates.

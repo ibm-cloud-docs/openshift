@@ -35,8 +35,12 @@ Looking for {{site.data.keyword.cloud_notm}} status, platform announcements, sec
 {: #openshift-jun2526}
 {: release-note}
 
+OpenShift Virtualization Service is now generally available.
+:   OpenShift Virtualization Service is available for production workloads on supported Red Hat OpenShift on IBM Cloud clusters. For more information, see [Getting started with OpenShift Virtualization Service](/docs/openshift?topic=openshift-rovs-getting-started), [Overview](/docs/openshift?topic=openshift-rovs-overview), and [Understanding OpenShift Virtualization](/docs/openshift?topic=openshift-virt-overview).
+
 OpenShift Virtualization cluster add-on patch updates.
 :   For more information, see the [change log](/docs/openshift?topic=openshift-cl-add-ons-openshift-virtualization).
+
 
 
 
@@ -98,9 +102,6 @@ IBM Object CSI Driver cluster add-on patch updates.
 :   [Version 4.18 change log](/docs/openshift?topic=openshift-openshift_changelog_418)
 :   [Version 4.17 change log](/docs/openshift?topic=openshift-openshift_changelog_417)
 :   [Version 4.16 change log](/docs/openshift?topic=openshift-openshift_changelog_416)
-
-
-
 
 
 

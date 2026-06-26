@@ -2,7 +2,7 @@
 
 copyright:
   years: 2026, 2026
-lastupdated: "2026-06-25"
+lastupdated: "2026-06-26"
 
 keywords: openshift, virtualization service, rovs, quickstart, console, ui, virtual machines
 
@@ -21,9 +21,6 @@ subcollection: openshift
 
 Get started quickly with OpenShift Virtualization Service by creating a pre-configured cluster using the {{site.data.keyword.cloud_notm}} console. This quickstart focuses on the fastest path to deploying virtual machines using only the console interface.
 {: shortdesc}
-
-This service is currently available as a beta release. Access is controlled by an allowlist. During the beta period, only console-based cluster creation is supported.
-{: beta}
 
 ## Before you begin
 {: #rovs-gs-prereqs}
