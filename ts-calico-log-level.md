@@ -1,8 +1,8 @@
 ---
 
 copyright: 
-  years: 2021, 2024
-lastupdated: "2024-07-23"
+  years: 2021, 2026
+lastupdated: "2026-06-26"
 
 
 keywords: kubernetes, openshift
@@ -26,13 +26,18 @@ content-type: troubleshoot
 
 [Virtual Private Cloud]{: tag-vpc} [Classic infrastructure]{: tag-classic-inf}
 
+You experience issues with Calico components such as pods that don't deploy or intermittent networking issues.
+{: shortdesc}
 
-
-You experience issues with Calico components such as pods that don't deploy or intermittent networking issues. 
+You experience issues with Calico components such as pods that don't deploy or intermittent networking issues.
 {: tsSymptoms}
 
 
-Increase the logging level of Calico components to gather more information about the issue.
+
+Calico networking issues can be difficult to diagnose without detailed logging. The default log level for Calico components is set to `info`, which provides basic operational information but might not include enough detail to troubleshoot complex networking problems.
+{: tsCauses}
+
+Increase the logging level of Calico components to `debug` to gather more detailed information about the issue. Debug-level logging provides verbose output that can help identify the root cause of networking problems.
 {: tsResolve}
 
 ## Increasing the log level for the `calico-typha` components
@@ -129,10 +134,10 @@ Complete the following steps to increase the log level for the `calico-node` com
 
 Complete the following steps to increase the log level for the `calico-kube-controllers` component.
 
-1. Edit the daemonset by running the following command. 
+1. Edit the deployment by running the following command.
     
     ```sh
-    oc edit ds calico-node -n calico-system
+    oc edit deploy calico-kube-controllers -n calico-system
     ```
     {: pre}
     
@@ -151,7 +156,12 @@ Complete the following steps to increase the log level for the `calico-kube-cont
 ## Gathering Calico logs
 {: #calico-log-gather}
 
-1. List the pods and nodes in your cluster and make a node of the pod name, pod IP address, and worker node that has the issue.
+1. List the pods and nodes in your cluster and make a note of the pod name, pod IP address, and worker node that has the issue.
+    ```sh
+    oc get pods -o wide -n calico-system
+    ```
+    {: pre}
+
 2. Get the logs for the `calico-node` pod on the worker node where the problem occurred.
     
     ```sh
@@ -167,4 +177,3 @@ Complete the following steps to increase the log level for the `calico-kube-cont
     {: pre}
   
 4. Follow the instructions for [Debugging by using oc exec](/docs/openshift?topic=openshift-cs_ssh_worker#kubectl-exec) to get `/var/log/syslog`, `containerd.log`, `kubelet.log`, and `kern.log` from the worker node.
-
