@@ -287,9 +287,11 @@ subcollection: openshift
 
 * [June 2026](/docs/openshift?topic=openshift-openshift-relnotes#openshift-jun26)
 
-    * [25 June 2026](/docs/openshift?topic=openshift-openshift-relnotes#openshift-jun2526)
+    * [26 June 2026](/docs/openshift?topic=openshift-openshift-relnotes#openshift-jun2626)
 
         * OpenShift Virtualization Service is now generally available.
+
+    * [25 June 2026](/docs/openshift?topic=openshift-openshift-relnotes#openshift-jun2526)
 
         * OpenShift Virtualization cluster add-on patch updates.
 
