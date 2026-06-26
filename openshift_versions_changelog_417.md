@@ -3,7 +3,7 @@
 copyright:
   years: 2024, 2026
 
-lastupdated: "2026-06-23"
+lastupdated: "2026-06-26"
 
 
 keywords: change log, version history, 4.17_openshift
@@ -37,6 +37,28 @@ Master patch updates are applied automatically. Worker node patch updates can be
 
 ## Version 4.17
 {: #417_components}
+
+
+### Master fix pack 4.17.54_1589_openshift, released 26 June 2026
+{: #cl-boms_master-41754_1589_openshift_M}
+
+The following table shows the components that are in the master fix pack 4.17.54_1589_openshift. Master patch updates are applied automatically.
+{: shortdesc}
+
+| Component | Description |
+| ---- | ---- |
+|Cluster health image v1.6.16|New version contains updates and security fixes.|
+|etcd v3.5.30|See the [etcd release notes](https://github.com/coreos/etcd/releases/v3.5.30).|
+|IBM Cloud Block Storage driver and plug-in v2.5.26|New version contains updates and security fixes.|
+|IBM Cloud Controller Manager v1.30.14-44|New version contains updates and security fixes.|
+|IBM Cloud File Storage for Classic plug-in and monitor v455|New version contains updates and security fixes.|
+|Key Management Service provider 2.10.25|New version contains updates and security fixes.|
+|Portieris admission controller v0.14.0|See the [Portieris admission controller release notes](https://github.com/IBM/portieris/releases/tag/v0.14.0)|
+|Red Hat OpenShift on IBM Cloud 4.17.54|See the [Red Hat OpenShift on IBM Cloud release notes](https://docs.redhat.com/en/documentation/openshift_container_platform/4.17/html/release_notes/ocp-4-17-release-notes#ocp-4-17-54_release-notes).|
+|Red Hat OpenShift on IBM Cloud Control Plane Operator, Metrics Server, and toolkit v4.17.0+20260531|See the [Red Hat OpenShift on IBM Cloud toolkit release notes](https://github.com/openshift/ibm-roks-toolkit/releases/tag/v4.17.0+20260531).
+|
+{: caption="4.17.54_1589_openshift fix pack." caption-side="bottom"}
+{: #cl-boms_master-41754_1589_openshift_M-component-table}
 
 
 ### Worker node fix pack 4.17.54_1590_openshift, released 15 June 2026
