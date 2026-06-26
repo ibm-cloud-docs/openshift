@@ -2,7 +2,7 @@
 
 copyright:
   years: 2025, 2026
-lastupdated: "2026-06-10"
+lastupdated: "2026-06-25"
 
 keywords: openshift, virtualization, storage, odf, vpc file, openshift data foundation
 
@@ -339,7 +339,7 @@ done
    ```
    {: pre}
 
-For more information about storage profiles, see [Customizing the storage profile](https://docs.redhat.com/en/documentation/openshift_container_platform/4.17/html/virtualization/storage#virt-customizing-storage-profile_virt-configuring-storage-profile){: external}.
+For more information about storage profiles, see [Customizing the storage profile](https://docs.redhat.com/en/documentation/openshift_container_platform/4.21/html/virtualization/storage#virt-customizing-storage-profile_virt-configuring-storage-profile){: external}.
 
 ### Verifying VPC File Storage installation
 {: #virt-storage-vpc-file-verify}
@@ -439,5 +439,5 @@ If storage profiles are not showing the correct configuration:
 After setting up storage:
 
 1. [Install the OpenShift Virtualization Operator](/docs/openshift?topic=openshift-oc-virtualization)
-2. [Create and manage virtual machines](https://docs.redhat.com/en/documentation/openshift_container_platform/4.20/html/virtualization/index){: external}
+2. [Create and manage virtual machines](https://docs.redhat.com/en/documentation/openshift_container_platform/4.21/html/virtualization/index){: external}
 3. [Configure virtual network interfaces (optional)](/docs/openshift?topic=openshift-vni-virtualization)

@@ -2,7 +2,7 @@
 
 copyright:
   years: 2025, 2026
-lastupdated: "2026-06-16"
+lastupdated: "2026-06-25"
 
 keywords: openshift, virtualization, virtual machines, vms, bare metal
 
@@ -35,7 +35,7 @@ OpenShift Virtualization on IBM Cloud provides enterprise-grade virtualization f
 
 **Live migration** moves running VMs between nodes without downtime, allowing you to perform maintenance or rebalance workloads within the same zone. **VM templates** provide pre-configured templates for common operating systems, accelerating deployment. With **snapshots and cloning** (available with ODF storage), you can create VM snapshots and clones for backup, testing, or rapid deployment. **Multi-zone deployment** enables you to deploy across multiple zones for high availability, and **IBM Cloud integration** ensures your VMs work seamlessly with IBM Cloud services for monitoring, logging, and security.
 
-**Flexible networking** options let you connect VMs to pod networks for standard Kubernetes networking, or use Virtual Network Interfaces (VNIs) in OpenShift 4.20+ for direct VPC network connectivity with floating IP addresses and network preservation during live migration.
+**Flexible networking** options let you connect VMs to pod networks for standard Kubernetes networking, or use Virtual Network Interfaces (VNIs) in OpenShift 4.21+ for direct VPC network connectivity with floating IP addresses and network preservation during live migration.
 
 ## Deployment options
 {: #virt-deployment-options}
@@ -58,7 +58,7 @@ Virtualization Service is currently available as a beta release. Access is contr
 | Feature | Virtualization Service | Manual Deployment |
 |---------|----------------------|-------------------|
 | Setup time | Minutes (automated) | Hours (manual) |
-| OpenShift version | 4.20+ | 4.17+ |
+| OpenShift version | 4.21+ | 4.17+ |
 | Storage | ODF pre-configured with local NVME | Your choice (ODF, VPC File, etc.) |
 | Networking | Pre-optimized (MTU 8900/9000) | Manual configuration |
 | Licensing | OVE (cost-effective) | Full OCP |
@@ -66,6 +66,10 @@ Virtualization Service is currently available as a beta release. Access is contr
 | Flexibility | Pre-configured | Full control |
 | Best for | VM-focused workloads | Custom configurations |
 {: caption="Deployment option feature comparison" caption-side="bottom"}
+
+OpenShift Virtualization Edition (OVE) licensing provides a cost-effective option for VM-focused workloads. For more information about licensing options, see the [Red Hat OpenShift pricing documentation](https://www.redhat.com/en/technologies/cloud-computing/openshift/pricing){: external}.
+{: note}
+
 
 
 ## Characteristics
@@ -134,7 +138,7 @@ Flavors with `d` suffix include local SSD storage, which is required for OpenShi
 | Networking option | Available in | Capabilities |
 | ----------------- | ------------ | ------------ |
 | Basic networking | OpenShift 4.17+ | Pod network connectivity, Kubernetes Services and Routes, VPC load balancers, standard VM networking |
-| Advanced networking with VNIs | OpenShift 4.20+ | Direct VPC network connectivity, floating IP addresses, network preservation during live migration, multiple network interfaces per VM. See [Managing virtual network interfaces](/docs/openshift?topic=openshift-vni-virtualization) |
+| Advanced networking with VNIs | OpenShift 4.21+ | Direct VPC network connectivity, floating IP addresses, network preservation during live migration, multiple network interfaces per VM. See [Managing virtual network interfaces](/docs/openshift?topic=openshift-vni-virtualization) |
 {: caption="Networking capabilities for OpenShift Virtualization" caption-side="bottom"}
 
 Virtualization Service clusters running version 4.21 and later have access to advanced networking options, including enhanced capabilities for virtual network interfaces and improved network performance.
@@ -147,7 +151,7 @@ Virtualization Service clusters running version 4.21 and later have access to ad
 - Red Hat CoreOS (RHCOS) operating system is required
 - Remote block volume attachment is not supported for bare metal nodes
 - Live migration is supported only within the same zone
-- VNI features require OpenShift 4.20 or later
+- VNI features require OpenShift 4.21 or later
 - Windows VMs require appropriate licensing
 - If you mark more than one StorageClass with the annotation `storageclass.kubernetes.io/is-default-class: "true"`, the following occurs:
     - **Selection Logic**: For a PersistentVolumeClaim (PVC) created without a `storageClassName`, Kubernetes typically selects the most recently created default StorageClass.
