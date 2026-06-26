@@ -39,6 +39,30 @@ Master patch updates are applied automatically. Worker node patch updates can be
 {: #416_components}
 
 
+### Master fix pack 4.16.63_1620_openshift, released 26 June 2026
+{: #cl-boms_master-41663_1620_openshift_M}
+
+The following table shows the components that are in the master fix pack 4.16.63_1620_openshift. Master patch updates are applied automatically.
+{: shortdesc}
+
+| Component | Description |
+| ---- | ---- |
+|Calico v3.30.7|See the [Calico release notes](https://docs.tigera.io/calico/3.30/release-notes/#calico-open-source-3307-bug-fix-release).|
+|Cluster health image v1.6.16|New version contains updates and security fixes.|
+|etcd v3.5.30|See the [etcd release notes](https://github.com/coreos/etcd/releases/v3.5.30).|
+|IBM Cloud Block Storage driver and plug-in v2.5.26|New version contains updates and security fixes.|
+|IBM Cloud Controller Manager v1.29.15-56|New version contains updates and security fixes.|
+|IBM Cloud File Storage for Classic plug-in and monitor v455|New version contains updates and security fixes.|
+|Key Management Service provider 2.10.25|New version contains updates and security fixes.|
+|Portieris admission controller v0.14.0|See the [Portieris admission controller release notes](https://github.com/IBM/portieris/releases/tag/v0.14.0)|
+|Red Hat OpenShift on IBM Cloud 4.16.63|See the [Red Hat OpenShift on IBM Cloud release notes](https://docs.redhat.com/en/documentation/openshift_container_platform/4.16/html/release_notes/ocp-4-16-release-notes#ocp-4-16-63_release-notes).|
+|Red Hat OpenShift on IBM Cloud Control Plane Operator, Metrics Server, and toolkit v4.16.0+20260601|See the [Red Hat OpenShift on IBM Cloud toolkit release notes](https://github.com/openshift/ibm-roks-toolkit/releases/tag/v4.16.0+20260601).
+|
+|Tigera Operator v1.38.13|See the [Tigera Operator release notes](https://github.com/tigera/operator/releases/tag/v1.38.13).|
+{: caption="4.16.63_1620_openshift fix pack." caption-side="bottom"}
+{: #cl-boms_master-41663_1620_openshift_M-component-table}
+
+
 ### Worker node fix pack 4.16.63_1621_openshift, released 15 June 2026
 {: #cl-boms-41663_1621_openshift_W}
 

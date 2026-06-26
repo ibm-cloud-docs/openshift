@@ -39,6 +39,26 @@ Master patch updates are applied automatically. Worker node patch updates can be
 {: #420_components}
 
 
+### Master fix pack 4.20.23_1551_openshift, released 26 June 2026
+{: #cl-boms_master-42023_1551_openshift_M}
+
+The following table shows the components that are in the master fix pack 4.20.23_1551_openshift. Master patch updates are applied automatically.
+{: shortdesc}
+
+| Component | Description |
+| ---- | ---- |
+|Cluster health image v1.6.16|New version contains updates and security fixes.|
+|etcd v3.5.30|See the [etcd release notes](https://github.com/coreos/etcd/releases/v3.5.30).|
+|IBM Cloud Block Storage driver and plug-in v2.5.26|New version contains updates and security fixes.|
+|IBM Cloud Controller Manager v1.33.12-2|New version contains updates and security fixes.|
+|IBM Cloud File Storage for Classic plug-in and monitor v455|New version contains updates and security fixes.|
+|Key Management Service provider 2.10.25|New version contains updates and security fixes.|
+|Portieris admission controller v0.14.0|See the [Portieris admission controller release notes](https://github.com/IBM/portieris/releases/tag/v0.14.0)|
+|Red Hat OpenShift on IBM Cloud 4.20.23|See the [Red Hat OpenShift on IBM Cloud release notes](https://docs.redhat.com/en/documentation/openshift_container_platform/4.20/html/release_notes/ocp-4-20-release-notes#ocp-4-20-23_release-notes).|
+{: caption="4.20.23_1551_openshift fix pack." caption-side="bottom"}
+{: #cl-boms_master-42023_1551_openshift_M-component-table}
+
+
 ### Worker node fix pack 4.20.24_1552_openshift, released 15 June 2026
 {: #cl-boms-42024_1552_openshift_W}
 
