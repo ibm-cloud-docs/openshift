@@ -170,13 +170,13 @@ keyword:
   openshift_default_docs: /docs/openshift?topic=openshift-openshift_changelog_420
   openshift_default_release_date: 04 February 2026
   openshift_default_unsupported_certainty: tentative
-  openshift_default_unsupported_date: 10 November 2027
+  openshift_default_unsupported_date: 19 January 2028
   openshift_default_version: '4.20'
   openshift_latest_deprecated: 'False'
   openshift_latest_docs: /docs/openshift?topic=openshift-openshift_changelog_421
   openshift_latest_release_date: 13 May 2026
   openshift_latest_unsupported_certainty: tentative
-  openshift_latest_unsupported_date: 26 January 2028
+  openshift_latest_unsupported_date: 22 March 2028
   openshift_latest_version: '4.21'
   satellite_410_RHEL_7_unsupported_date: 6 December 2022
   satellite_410_RHEL_8_unsupported_date: ''

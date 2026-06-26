@@ -291,6 +291,8 @@ subcollection: openshift
 
         * OpenShift Virtualization Service is now generally available.
 
+        * {{site.data.keyword.openshiftlong_notm}} master fix packs.
+
     * [25 June 2026](/docs/openshift?topic=openshift-openshift-relnotes#openshift-jun2526)
 
         * OpenShift Virtualization cluster add-on patch updates.
@@ -7392,6 +7394,8 @@ subcollection: openshift
 * [`openshift-data-foundation` 4.20.0](/docs/openshift?topic=openshift-supported-cluster-addon-versions#openshift-data-foundation-4.20.0)
 
 * [`openshift-data-foundation` 4.21.0](/docs/openshift?topic=openshift-supported-cluster-addon-versions#openshift-data-foundation-4.21.0)
+
+* [`openshift-virtualization` 4.21](/docs/openshift?topic=openshift-supported-cluster-addon-versions#openshift-virtualization-4.21)
 
 * [`static-route` 1.0.0](/docs/openshift?topic=openshift-supported-cluster-addon-versions#static-route-1.0.0)
 
