@@ -291,6 +291,8 @@ subcollection: openshift
 
         * OpenShift Virtualization Service is now generally available.
 
+        * {{site.data.keyword.openshiftlong_notm}} master fix packs.
+
     * [25 June 2026](/docs/openshift?topic=openshift-openshift-relnotes#openshift-jun2526)
 
         * OpenShift Virtualization cluster add-on patch updates.
