@@ -3,7 +3,7 @@
 copyright:
   years: 2024, 2026
 
-lastupdated: "2026-06-26"
+lastupdated: "2026-06-29"
 
 
 keywords: change log, version history, OpenShift Virtualization
@@ -64,36 +64,12 @@ Review the version history for OpenShift Virtualization.
 - node-maintenance-operator.v5.6.1
 
 
-### Version v1.0.4_4.21_347026591, released 15 June 2026
-{: #cl-add-ons-openshift-virtualization-v104_421_347026591}
-
-[Default version]{: tag-green}
-
-- Resolves the following CVEs: [CVE-2026-4438](https://nvd.nist.gov/vuln/detail/CVE-2026-4438){: external}, [CVE-2026-4046](https://nvd.nist.gov/vuln/detail/CVE-2026-4046){: external}, and [CVE-2026-4437](https://nvd.nist.gov/vuln/detail/CVE-2026-4437){: external}.
-- Updates Go to version `1.26.4`.
-- kubevirt-hyperconverged-operator.v4.21.8
-- kubernetes-nmstate-operator.4.21.0-202605270323
-- node-maintenance-operator.v5.6.1
-
-
 ## Version 4.20
 {: #cl-add-ons-openshift-virtualization-4.20}
 
 
 ### Version 4.20 - v1.0.4_4.20_347026591, released 15 June 2026
 {: #cl-add-ons-openshift-virtualization-v104_420_347026591}
-
-- Resolves the following CVEs: [CVE-2026-4438](https://nvd.nist.gov/vuln/detail/CVE-2026-4438){: external}, [CVE-2026-4046](https://nvd.nist.gov/vuln/detail/CVE-2026-4046){: external}, and [CVE-2026-4437](https://nvd.nist.gov/vuln/detail/CVE-2026-4437){: external}.
-- Updates Go to version `1.26.4`.
-- kubevirt-hyperconverged-operator.v4.20.15
-- kubernetes-nmstate-operator.4.20.0-202605130318
-- node-maintenance-operator.v5.5.0
-
-
-### Version v1.0.4_4.20_347026591, released 15 June 2026
-{: #cl-add-ons-openshift-virtualization-v104_420_347026591}
-
-[Default version]{: tag-green}
 
 - Resolves the following CVEs: [CVE-2026-4438](https://nvd.nist.gov/vuln/detail/CVE-2026-4438){: external}, [CVE-2026-4046](https://nvd.nist.gov/vuln/detail/CVE-2026-4046){: external}, and [CVE-2026-4437](https://nvd.nist.gov/vuln/detail/CVE-2026-4437){: external}.
 - Updates Go to version `1.26.4`.
