@@ -8756,6 +8756,8 @@ subcollection: openshift
 
 * [Can confidential containers meet specific security standards, such as NIST 800-53 R5?](/docs/openshift?topic=openshift-faqs#conf-cont-sec)
 
+* [Why am I getting an IAM authentication error after upgrading to OpenShift Sandboxed Containers Operator 1.12.1?](/docs/openshift?topic=openshift-faqs#conf-cont-iam-auth-error)
+
 * [What is the default time zone for my VPC worker nodes?](/docs/openshift?topic=openshift-faqs#vpc)
 
 
