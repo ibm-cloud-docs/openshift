@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2026
-lastupdated: "2026-06-26"
+lastupdated: "2026-06-29"
 
 
 keywords: openshift
@@ -8219,8 +8219,6 @@ subcollection: openshift
 
     * [Version 4.12.8, released 31 July 2023](/docs/openshift?topic=openshift-cl-add-ons-openshift-data-foundation#cl-add-ons-openshift-data-foundation-4.12.8)
 
-    * [Version 4.12.6, released 28 June 2023](/docs/openshift?topic=openshift-cl-add-ons-openshift-data-foundation#cl-add-ons-openshift-data-foundation-4.12.6)
-
     * [Version 4.11.21, released 04 March 2024](/docs/openshift?topic=openshift-cl-add-ons-openshift-data-foundation#cl-add-ons-openshift-data-foundation-4.11.21)
 
     * [Version 4.11.20, released 14 February 2024](/docs/openshift?topic=openshift-cl-add-ons-openshift-data-foundation#cl-add-ons-openshift-data-foundation-4.11.20)
@@ -8248,10 +8246,6 @@ subcollection: openshift
     * [Version 4.10.29, released 12 September 2023](/docs/openshift?topic=openshift-cl-add-ons-openshift-data-foundation#cl-add-ons-openshift-data-foundation-4.10.29)
 
     * [Version 4.10.28, released 31 July 2023](/docs/openshift?topic=openshift-cl-add-ons-openshift-data-foundation#cl-add-ons-openshift-data-foundation-4.10.28)
-
-    * [Version 4.10.27, released 28 June 2023](/docs/openshift?topic=openshift-cl-add-ons-openshift-data-foundation#cl-add-ons-openshift-data-foundation-4.10.27)
-
-    * [Version 4.9.29, released 28 June 2023](/docs/openshift?topic=openshift-cl-add-ons-openshift-data-foundation#cl-add-ons-openshift-data-foundation-4.9.29)
 
 [OpenShift Virtualization add-on version change log](/docs/openshift?topic=openshift-cl-add-ons-openshift-virtualization#cl-add-ons-openshift-virtualization)
 
