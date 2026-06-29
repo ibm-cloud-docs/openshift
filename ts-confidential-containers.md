@@ -2,7 +2,7 @@
 
 copyright:
   years: 2025, 2026
-lastupdated: "2026-04-10"
+lastupdated: "2026-06-29"
 
 
 keywords: openshift
@@ -237,6 +237,59 @@ To resolve this issue:
     {: pre}
 
 For more information about peer pods limits and capacity planning, see [How many peer pods can I run per worker node?](/docs/openshift?topic=openshift-faqs#conf-cont-peerpods-limit).
+
+### IAM authentication error after upgrading to OSC Operator 1.12.1
+{: #ts-conf-cont-iam-auth-error}
+
+If you see an error similar to the following in the Cloud API Adapter (CAA) logs after upgrading to OpenShift Sandboxed Containers Operator version 1.12.1:
+{: tsSymptoms}
+
+```sh
+cloud-api-adaptor: cluster error with:
+ Unauthorized
+further details:
+ {
+    "StatusCode": 401,
+    "Result": {
+        "code": "A0007",
+        "description": "You do not have the correct permissions to perform this action..."
+    }
+}
+```
+{: screen}
+
+Version 1.12.1 introduced a new requirement to automatically fetch the cluster's security group from the IBM Cloud IKS cluster service API. When you use `IBMCLOUD_IAM_PROFILE_ID` for authentication (compute resource identity), the IAM profile might not have the necessary permissions to query the cluster service API.
+{: tsCauses}
+
+Choose one of the following options.
+{: tsResolve}
+
+Grant additional IAM permissions (recommended)
+:   Update the IAM profile to include permissions for the IKS cluster service API, specifically the ability to call `GetClusterTypeSecurityGroups()`. Contact your IBM Cloud administrator to add the required permissions.
+
+Explicitly set the security group ID
+:   Configure the `IBMCLOUD_VPC_SG_ID` environment variable in the `peer-pods-cm` ConfigMap to bypass the automatic cluster security group lookup. Then restart the Cloud API Adapter daemonset.
+
+    1. Patch the ConfigMap with your security group ID.
+
+        ```sh
+        oc -n openshift-sandboxed-containers-operator patch cm peer-pods-cm \
+          --type merge \
+          -p '{"data":{"IBMCLOUD_VPC_SG_ID":"<your-security-group-id>"}}'
+        ```
+        {: pre}
+
+    2. Restart the Cloud API Adapter daemonset.
+
+        ```sh
+        oc -n openshift-sandboxed-containers-operator rollout restart daemonset/osc-caa-ds
+        ```
+        {: pre}
+
+Switch to API key authentication
+:   Switch from `IBMCLOUD_IAM_PROFILE_ID` to `IBMCLOUD_API_KEY` authentication. API key authentication uses a service ID with explicit IAM policies, which you can scope to include the required cluster service permissions. Update the `peer-pods-secret` secret with your API key instead of the IAM profile ID.
+
+For more information about the underlying change, see the [upstream cloud-api-adaptor commit dde66055](https://github.com/openshift/cloud-api-adaptor/commit/dde66055d071decc7419e9d493c7e2b238542fca){: external}.
 
 ### Insufficient CPU error
 {: #ts-conf-cont-insufficient-cpu}

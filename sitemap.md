@@ -8758,6 +8758,8 @@ subcollection: openshift
 
 * [Why am I getting an IAM authentication error after upgrading to OpenShift Sandboxed Containers Operator 1.12.1?](/docs/openshift?topic=openshift-faqs#conf-cont-iam-auth-error)
 
+* [Why am I getting an IAM authentication error after upgrading to OpenShift Sandboxed Containers Operator 1.12.1?](/docs/openshift?topic=openshift-faqs#conf-cont-iam-auth-error)
+
 * [What is the default time zone for my VPC worker nodes?](/docs/openshift?topic=openshift-faqs#vpc)
 
 
@@ -9126,6 +9128,8 @@ subcollection: openshift
 * [Common issues and resolutions](/docs/openshift?topic=openshift-ts-confidential-containers#ts-confidential-containers-common)
 
     * [Insufficient kata.peerpods.io/vm error](/docs/openshift?topic=openshift-ts-confidential-containers#ts-conf-cont-insufficient-vm)
+
+    * [IAM authentication error after upgrading to OSC Operator 1.12.1](/docs/openshift?topic=openshift-ts-confidential-containers#ts-conf-cont-iam-auth-error)
 
     * [Insufficient CPU error](/docs/openshift?topic=openshift-ts-confidential-containers#ts-conf-cont-insufficient-cpu)
 

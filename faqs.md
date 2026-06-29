@@ -639,6 +639,11 @@ For more information about the changes in version 1.12.1, see the [upstream clou
 
 Contact your IBM team to discuss specific security interests.
 
+## Why am I getting an IAM authentication error after upgrading to OpenShift Sandboxed Containers Operator 1.12.1?
+{: #conf-cont-iam-auth-error}
+
+For the cause and resolution options, see [IAM authentication error after upgrading to OSC Operator 1.12.1](/docs/openshift?topic=openshift-ts-confidential-containers#ts-conf-cont-iam-auth-error).
+
 
 
 ## What is the default time zone for my VPC worker nodes?
