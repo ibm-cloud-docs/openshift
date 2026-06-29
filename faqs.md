@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2026
-lastupdated: "2026-05-13"
+lastupdated: "2026-06-29"
 
 
 keywords: openshift, ocp, compliance, security standards, faq, openshift pricing, ocp pricing, openshift charges, ocp charges, openshift price, ocp price, openshift billing, ocp billing, openshift costs, ocp costs
@@ -592,7 +592,57 @@ To resolve this issue:
 ## Can confidential containers meet specific security standards, such as NIST 800-53 R5?
 {: #conf-cont-sec}
 
+
+## Why am I getting an IAM authentication error after upgrading to OpenShift Sandboxed Containers Operator 1.12.1?
+{: #conf-cont-iam-auth-error}
+
+After upgrading to OpenShift Sandboxed Containers Operator version 1.12.1, you might see an error similar to the following in the Cloud API Adapter (CAA) logs:
+
+```sh
+cloud-api-adaptor: cluster error with:
+ Unauthorized
+further details:
+ {
+    "StatusCode": 401,
+    "Result": {
+        "code": "A0007",
+        "description": "You do not have the correct permissions to perform this action..."
+    }
+}
+```
+
+This error occurs because version 1.12.1 introduced a new requirement to automatically fetch the cluster's security group from the IBM Cloud IKS cluster service API. When using `IBMCLOUD_IAM_PROFILE_ID` for authentication (compute resource identity), the IAM profile might not have the necessary permissions to query the cluster service API.
+
+To resolve this issue, choose one of the following options:
+
+1. **Grant additional IAM permissions** (Recommended): Update the IAM profile to include permissions for the IKS cluster service API, specifically the ability to call `GetClusterTypeSecurityGroups()`. Contact your IBM Cloud administrator to add the required permissions.
+
+2. **Explicitly set the security group ID**: Configure the `IBMCLOUD_VPC_SG_ID` environment variable in the `peer-pods-cm` ConfigMap to bypass the automatic cluster security group lookup:
+
+    ```sh
+    oc -n openshift-sandboxed-containers-operator patch cm peer-pods-cm \
+      --type merge \
+      -p '{"data":{"IBMCLOUD_VPC_SG_ID":"<your-security-group-id>"}}'
+    ```
+    {: pre}
+
+    Then restart the Cloud API Adapter daemonset:
+
+    ```sh
+    oc -n openshift-sandboxed-containers-operator rollout restart daemonset/osc-caa-ds
+    ```
+    {: pre}
+
+3. **Use API key authentication**: Switch from `IBMCLOUD_IAM_PROFILE_ID` to `IBMCLOUD_API_KEY` authentication, which typically has broader permissions. Update the `peer-pods-secret` secret with your API key instead of using the IAM profile.
+
+For more information about the changes in version 1.12.1, see the [upstream cloud-api-adaptor commit dde66055](https://github.com/openshift/cloud-api-adaptor/commit/dde66055d071decc7419e9d493c7e2b238542fca).
+
 Contact your IBM team to discuss specific security interests.
+
+## Why am I getting an IAM authentication error after upgrading to OpenShift Sandboxed Containers Operator 1.12.1?
+{: #conf-cont-iam-auth-error}
+
+For the cause and resolution options, see [IAM authentication error after upgrading to OSC Operator 1.12.1](/docs/openshift?topic=openshift-ts-confidential-containers#ts-conf-cont-iam-auth-error).
 
 
 
