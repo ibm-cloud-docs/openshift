@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2026
-lastupdated: "2026-06-29"
+lastupdated: "2026-06-30"
 
 
 keywords: openshift
@@ -4907,6 +4907,8 @@ subcollection: openshift
 
 * [Enabling the {{site.data.keyword.cos_full_notm}} add-on from the CLI](/docs/openshift?topic=openshift-storage-cos-install-addon#enable-cos-addon)
 
+* [Restricting nodeserver pod scheduling](/docs/openshift?topic=openshift-storage-cos-install-addon#cos-addon-restrict-node-scheduling)
+
 * [Deploying an app that uses {{site.data.keyword.cos_full_notm}}](/docs/openshift?topic=openshift-storage-cos-install-addon#cos-addon-app)
 
     * [Create a Kubernetes secret that contains your COS credentials.](/docs/openshift?topic=openshift-storage-cos-install-addon#cos-addon-app-secret)
@@ -5603,9 +5605,9 @@ subcollection: openshift
 
 [4.21 CIS Kubernetes benchmark](/docs/openshift?topic=openshift-cis-benchmark-421#cis-benchmark-421)
 
-* [1 Master node security configuration](/docs/openshift?topic=openshift-cis-benchmark-421#1-master-node-security-configuration-421)
+* [1 Control Plane Security Configuration](/docs/openshift?topic=openshift-cis-benchmark-421#1-master-node-security-configuration-421)
 
-    * [1.1 Master node configuration files](/docs/openshift?topic=openshift-cis-benchmark-421#11-master-node-configuration-files-421)
+    * [1.1 Control Plane Node Configuration Files](/docs/openshift?topic=openshift-cis-benchmark-421#11-master-node-configuration-files-421)
 
     * [1.2 API server](/docs/openshift?topic=openshift-cis-benchmark-421#12-api-server-421)
 
@@ -5651,7 +5653,7 @@ subcollection: openshift
 
     * [5.6 General policies](/docs/openshift?topic=openshift-cis-benchmark-421#56-general-policies-421)
 
-    * [{{site.data.keyword.IBM_notm}} remediations and explanations](/docs/openshift?topic=openshift-cis-benchmark-421#ibm-remediations-and-explanations-421)
+* [{{site.data.keyword.IBM_notm}} remediations and explanations](/docs/openshift?topic=openshift-cis-benchmark-421#ibm-remediations-and-explanations-421)
 
 [4.21 compliance operator benchmark](/docs/openshift?topic=openshift-benchmarks-421-co#benchmarks-421-co)
 

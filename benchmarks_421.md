@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2026, 2026
-lastupdated: "2026-05-21"
+lastupdated: "2026-06-30"
 
 keywords: openshift, benchmarks, 4.21, openshift benchmarks, openshift 4.21
 
@@ -19,10 +19,10 @@ The Center for Internet Security (CIS) publishes the [CIS Kubernetes Benchmark](
 {: shortdesc}
 
 
-## 1 Master node security configuration
+## 1 Control Plane Security Configuration
 {: #1-master-node-security-configuration-421}
 
-### 1.1 Master node configuration files
+### 1.1 Control Plane Node Configuration Files
 {: #11-master-node-configuration-files-421}
 
 | Section | Recommendation. | Scored? | Level | Result | Responsibility |
@@ -48,7 +48,7 @@ The Center for Internet Security (CIS) publishes the [CIS Kubernetes Benchmark](
 | 1.1.19 | Ensure that the Kubernetes PKI directory and file ownership is set to `root:root`. | Scored            | 1     | Pass   | {{site.data.keyword.IBM_notm}}            |
 | 1.1.20 | Ensure that the Kubernetes PKI certificate file permissions are set to `644` or more restrictive. | Not Scored        | 1     | Pass   | {{site.data.keyword.IBM_notm}}            |
 | 1.1.21 | Ensure that the Kubernetes PKI key file permissions are set to `600`. | Not Scored        | 1     | Pass   | {{site.data.keyword.IBM_notm}}            |
-{: caption="Section 1.1 Master node configuration files benchmark results" caption-side="bottom"}
+{: caption="Section 1.1 Control Plane Node Configuration Files benchmark results" caption-side="bottom"}
 
 ### 1.2 API server
 {: #12-api-server-421}
@@ -323,7 +323,7 @@ The Center for Internet Security (CIS) publishes the [CIS Kubernetes Benchmark](
 | 5.6.4 | The default namespace should not be used. | Not Scored        | 2     | Pass                                       | Shared         |
 {: caption="Section 5.6 General policies benchmark results" caption-side="bottom"}
 
-### {{site.data.keyword.IBM_notm}} remediations and explanations
+## {{site.data.keyword.IBM_notm}} remediations and explanations
 {: #ibm-remediations-and-explanations-421}
 
 | Section | `Remediation and explanation`. |
@@ -342,8 +342,8 @@ The Center for Internet Security (CIS) publishes the [CIS Kubernetes Benchmark](
 | 4.2.10 | {{site.data.keyword.openshiftlong_notm}} rotates certificates on every worker node reload or update. |
 | 5.1.2  | {{site.data.keyword.openshiftlong_notm}} deploys some system components that could have their Kubernetes secret access further restricted. |
 | 5.1.3  | {{site.data.keyword.openshiftlong_notm}} deploys some system components that could have their Kubernetes resource access further restricted. |
-| 5.1.5  | {{site.data.keyword.openshiftlong_notm}} does not set `[_automountServiceAccountToken:` false_](https://kubernetes.io/docs/tasks/configure-pod-container/configure-service-account/#use-the-default-service-account-to-access-the-api-server){: external} for each default service account. |
-| 5.1.6  | {{site.data.keyword.openshiftlong_notm}} deploys some system components that could set `[_automountServiceAccountToken:` false_](https://kubernetes.io/docs/tasks/configure-pod-container/configure-service-account/#use-the-default-service-account-to-access-the-api-server){: external}. |
+| 5.1.5  | {{site.data.keyword.openshiftlong_notm}} does not set [_automountServiceAccountToken: false_](https://kubernetes.io/docs/tasks/configure-pod-container/configure-service-account/#use-the-default-service-account-to-access-the-api-server){: external} for each default service account. |
+| 5.1.6  | {{site.data.keyword.openshiftlong_notm}} deploys some system components that could set [_automountServiceAccountToken: false_](https://kubernetes.io/docs/tasks/configure-pod-container/configure-service-account/#use-the-default-service-account-to-access-the-api-server){: external}. |
 | 5.2.2  | {{site.data.keyword.openshiftlong_notm}} can optionally configure [OpenShift security context constraints](/docs/openshift?topic=openshift-openshift_scc) and [Kubernetes pod security admission](https://kubernetes.io/docs/concepts/security/pod-security-admission/){: external} which are similar to the deprecated [Kubernetes pod security policies](https://kubernetes.io/docs/concepts/security/pod-security-policy/){: external}. |
 | 5.2.3  | {{site.data.keyword.openshiftlong_notm}} can optionally configure [OpenShift security context constraints](/docs/openshift?topic=openshift-openshift_scc) and [Kubernetes pod security admission](https://kubernetes.io/docs/concepts/security/pod-security-admission/){: external} which are similar to the deprecated [Kubernetes pod security policies](https://kubernetes.io/docs/concepts/security/pod-security-policy/){: external}. |
 | 5.2.4  | {{site.data.keyword.openshiftlong_notm}} can optionally configure [OpenShift security context constraints](/docs/openshift?topic=openshift-openshift_scc) and [Kubernetes pod security admission](https://kubernetes.io/docs/concepts/security/pod-security-admission/){: external} which are similar to the deprecated [Kubernetes pod security policies](https://kubernetes.io/docs/concepts/security/pod-security-policy/){: external}. |
