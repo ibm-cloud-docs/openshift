@@ -2,7 +2,7 @@
 
 copyright:
   years: 2024, 2026
-lastupdated: "2026-06-03"
+lastupdated: "2026-06-30"
 
 
 keywords: kubernetes, openshift, object storage add-in, cos
@@ -69,7 +69,7 @@ Before you begin: [Access your {{site.data.keyword.redhat_openshift_notm}} clust
     ```
     {: pre}
 
-    ```sh                                             
+    ```sh
     OK
     Name                    Version   Health State   Health Status
     ibm-object-csi-driver   1.0       normal         Addon Ready. For more info: http://ibm.biz/addon-state (H1500)
@@ -93,6 +93,100 @@ Before you begin: [Access your {{site.data.keyword.redhat_openshift_notm}} clust
     ibm-object-storage-standard-s3fs-retain     cos.s3.csi.ibm.io   Retain          Immediate           false                  17h
     ```
     {: screen}
+
+## Restricting nodeserver pod scheduling
+{: #cos-addon-restrict-node-scheduling}
+
+By default, the COS CSI driver nodeserver pods are scheduled on all nodes in the cluster. You can use the `restrictNodeServerScheduling` parameter to restrict nodeserver pod scheduling to only the nodes that are labeled with `cos.csi.ibm.io/csi-node=true`.
+
+1. List the nodes in your cluster and determine where you want the COS driver pods to run.
+    ```sh
+    oc get nodes
+    ```
+    {: pre}
+
+    Example output
+    ```sh
+    NAME            STATUS   ROLES    AGE    VERSION
+    10.241.0.11     Ready    <none>   5d2h   v1.35.5+IKS
+    10.241.0.12     Ready    <none>   5d2h   v1.35.5+IKS
+    10.241.0.13     Ready    <none>   5d2h   v1.35.5+IKS
+    10.241.128.10   Ready    <none>   5d2h   v1.35.5+IKS
+    10.241.128.11   Ready    <none>   5d2h   v1.35.5+IKS
+    10.241.128.9    Ready    <none>   5d2h   v1.35.5+IKS
+    10.241.65.12    Ready    <none>   5d2h   v1.35.5+IKS
+    10.241.65.13    Ready    <none>   5d2h   v1.35.5+IKS
+    10.241.65.14    Ready    <none>   5d2h   v1.35.5+IKS
+    ```
+    {: screen}
+
+1. Check that nodeserver pods are currently running on all nodes.
+    ```sh
+    oc get pods -n ibm-object-csi-operator -l app.kubernetes.io/component=node -o wide
+    ```
+    {: pre}
+
+    Example output
+    ```sh
+    NAME                        READY   STATUS    RESTARTS   AGE    IP              NODE            NOMINATED NODE   READINESS GATES
+    ibm-object-csi-node-2pj2j   3/3     Running   0          145m   172.17.14.10    10.241.0.12     <none>           <none>
+    ibm-object-csi-node-7bhwh   3/3     Running   0          145m   172.17.1.72     10.241.65.12    <none>           <none>
+    ibm-object-csi-node-7l9hc   3/3     Running   0          145m   172.17.17.6     10.241.128.9    <none>           <none>
+    ibm-object-csi-node-cxzt7   3/3     Running   0          145m   172.17.39.72    10.241.0.11     <none>           <none>
+    ibm-object-csi-node-dw6qs   3/3     Running   0          145m   172.17.46.77    10.241.128.10   <none>           <none>
+    ibm-object-csi-node-rpcvr   3/3     Running   0          145m   172.17.32.198   10.241.65.13    <none>           <none>
+    ibm-object-csi-node-swqtg   3/3     Running   0          145m   172.17.16.69    10.241.0.13     <none>           <none>
+    ibm-object-csi-node-sxbbs   3/3     Running   0          145m   172.17.26.7     10.241.65.14    <none>           <none>
+    ibm-object-csi-node-xm8bt   3/3     Running   0          145m   172.17.20.200   10.241.128.11   <none>           <none>
+    ```
+    {: screen}
+
+1. Label the nodes where you want nodeserver pods to be scheduled.
+    ```sh
+    oc label nodes NODE-NAME-1 NODE-NAME-2 cos.csi.ibm.io/csi-node=true
+    ```
+    {: pre}
+
+    Example output
+    ```sh
+    node/10.241.0.11 labeled
+    node/10.241.0.12 labeled
+    ```
+    {: screen}
+
+1. Enable the restriction by updating the ConfigMap.
+    ```sh
+    oc patch cm managed-addon-ibm-object-csi-driver -n kube-system \
+      --type merge -p '{"data":{"restrictNodeServerScheduling":"true"}}'
+    ```
+    {: pre}
+
+    Example output
+    ```sh
+    configmap/managed-addon-ibm-object-csi-driver patched
+    ```
+    {: screen}
+
+1. Verify that nodeserver pods are only scheduled on labeled nodes.
+    ```sh
+    oc get pods -n ibm-object-csi-operator -l app.kubernetes.io/component=node -o wide
+    ```
+    {: pre}
+
+    Example output
+    ```sh
+    NAME                        READY   STATUS    RESTARTS   AGE    IP             NODE           NOMINATED NODE   READINESS GATES
+    ibm-object-csi-node-cxzt7   3/3     Running   0          145m   172.17.39.72   10.241.0.11    <none>           <none>
+    ibm-object-csi-node-7bhwh   3/3     Running   0          145m   172.17.1.72    10.241.65.12   <none>           <none>
+    ```
+    {: screen}
+
+| Setting | Behavior |
+| --- | --- |
+| `restrictNodeServerScheduling: "false"` (default) | Nodeserver pods are scheduled on all nodes. |
+| `restrictNodeServerScheduling: "true"` | Nodeserver pods are scheduled only on nodes labeled `cos.csi.ibm.io/csi-node=true`. |
+{: caption="restrictNodeServerScheduling options" caption-side="bottom"}
+{: #cos-addon-restrict-node-scheduling-table}
 
 ## Deploying an app that uses {{site.data.keyword.cos_full_notm}}
 {: #cos-addon-app}
@@ -134,7 +228,7 @@ Before you begin: [Access your {{site.data.keyword.redhat_openshift_notm}} clust
             #max_stat_cache_size=100000
             #retries=5
             #kernel_cache
-            
+
             # Review or update the following default rclone mount options
             #acl=private
             #bucket_acl=private
@@ -350,7 +444,7 @@ The existing secrets, PVCs, and deployments are not deleted by disabling the add
             key2=value2
     ```
     {: codeblock}
-    
+
 1. Find the storage class that was used in your PVC.
     ```sh
     oc describe pvc <pvc_name> | grep StorageClass:

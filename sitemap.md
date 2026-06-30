@@ -4907,6 +4907,8 @@ subcollection: openshift
 
 * [Enabling the {{site.data.keyword.cos_full_notm}} add-on from the CLI](/docs/openshift?topic=openshift-storage-cos-install-addon#enable-cos-addon)
 
+* [Restricting nodeserver pod scheduling](/docs/openshift?topic=openshift-storage-cos-install-addon#cos-addon-restrict-node-scheduling)
+
 * [Deploying an app that uses {{site.data.keyword.cos_full_notm}}](/docs/openshift?topic=openshift-storage-cos-install-addon#cos-addon-app)
 
     * [Create a Kubernetes secret that contains your COS credentials.](/docs/openshift?topic=openshift-storage-cos-install-addon#cos-addon-app-secret)
