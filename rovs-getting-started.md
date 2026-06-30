@@ -2,7 +2,7 @@
 
 copyright:
   years: 2026, 2026
-lastupdated: "2026-06-26"
+lastupdated: "2026-06-30"
 
 keywords: openshift, virtualization service, rovs, quickstart, console, ui, virtual machines
 
@@ -66,7 +66,7 @@ For detailed VPC setup instructions, see [Create or verify your VPC setup](/docs
    :   Recommended. Provides persistent storage for VMs. Configured with default settings.
 
    **File Storage for VPC**
-   :   **Beta**: Alternative to ODF. Provides file storage backed by VPC infrastructure. File Storage for VPC support is available as a beta feature.
+   :   **Beta**: Alternative to ODF. Provides file storage backed by VPC infrastructure.
 
    You must select at least one storage option (ODF or File Storage for VPC).
    {: important}
