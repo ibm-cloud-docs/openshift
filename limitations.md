@@ -1,8 +1,8 @@
 ---
 
-copyright: 
+copyright:
   years: 2014, 2026
-lastupdated: "2026-06-05"
+lastupdated: "2026-06-30"
 
 
 keywords: openshift, http2, quota, app protocol, application protocol
@@ -257,7 +257,10 @@ Instead of tuning worker node performance with `MachineConfig` files in {{site.d
 * OpenShift Cloud Manager (OCM) SaaS Service
 * OpenShift Cluster-Wide Proxy
 * OpenShift Data Foundation: Supported through the [cluster add-on](/docs/openshift?topic=openshift-ocs-storage-prep) for Classic and VPC clusters or through the {{site.data.keyword.satelliteshort}} [template](/docs/satellite?topic=satellite-storage-template-ov) for {{site.data.keyword.satelliteshort}} clusters.
-* OVS and OVN SDN
+* OpenShift SDN and most other network plugins are not supported
+   * Calico is supported on all cluster versions.
+   * OVN is supported for VPC {{site.data.keyword.redhat_openshift_notm}} clusters at version 4.20 and later with RHCOS worker nodes only.
+   * Do not update or remove these network plugins outside of the normal cluster master update process.
 * Performance Add-on Operator
 * PTP Operator
 * Quay Operator
