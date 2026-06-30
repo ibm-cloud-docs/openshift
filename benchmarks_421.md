@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2026, 2026
-lastupdated: "2026-05-21"
+lastupdated: "2026-06-30"
 
 keywords: openshift, benchmarks, 4.21, openshift benchmarks, openshift 4.21
 
@@ -19,10 +19,10 @@ The Center for Internet Security (CIS) publishes the [CIS Kubernetes Benchmark](
 {: shortdesc}
 
 
-## 1 Master node security configuration
+## 1 Control Plane Security Configuration
 {: #1-master-node-security-configuration-421}
 
-### 1.1 Master node configuration files
+### 1.1 Control Plane Node Configuration Files
 {: #11-master-node-configuration-files-421}
 
 | Section | Recommendation. | Scored? | Level | Result | Responsibility |
@@ -48,7 +48,7 @@ The Center for Internet Security (CIS) publishes the [CIS Kubernetes Benchmark](
 | 1.1.19 | Ensure that the Kubernetes PKI directory and file ownership is set to `root:root`. | Scored            | 1     | Pass   | {{site.data.keyword.IBM_notm}}            |
 | 1.1.20 | Ensure that the Kubernetes PKI certificate file permissions are set to `644` or more restrictive. | Not Scored        | 1     | Pass   | {{site.data.keyword.IBM_notm}}            |
 | 1.1.21 | Ensure that the Kubernetes PKI key file permissions are set to `600`. | Not Scored        | 1     | Pass   | {{site.data.keyword.IBM_notm}}            |
-{: caption="Section 1.1 Master node configuration files benchmark results" caption-side="bottom"}
+{: caption="Section 1.1 Control Plane Node Configuration Files benchmark results" caption-side="bottom"}
 
 ### 1.2 API server
 {: #12-api-server-421}
@@ -323,7 +323,7 @@ The Center for Internet Security (CIS) publishes the [CIS Kubernetes Benchmark](
 | 5.6.4 | The default namespace should not be used. | Not Scored        | 2     | Pass                                       | Shared         |
 {: caption="Section 5.6 General policies benchmark results" caption-side="bottom"}
 
-### {{site.data.keyword.IBM_notm}} remediations and explanations
+## {{site.data.keyword.IBM_notm}} remediations and explanations
 {: #ibm-remediations-and-explanations-421}
 
 | Section | `Remediation and explanation`. |
