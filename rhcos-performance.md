@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2022, 2026
-lastupdated: "2026-04-14"
+lastupdated: "2026-07-01"
 
 
 keywords: openshift, kernel, rhcos, cpu pinning, huge pages, numa, core os
@@ -190,7 +190,7 @@ Before you begin, make sure that you have deployed the [Node Feature Discovery O
                   name: etc-systctld-dir
           containers:
             - name: pause
-              image: registry.ng.bluemix.net/armada-master/pause:3.2
+              image: us.icr.io/armada-master/pause:3.2
           volumes:
             - name: etc-systemd-dir
               hostPath:
@@ -376,7 +376,7 @@ Before you begin, make sure that you have deployed the [Node Feature Discovery O
                   name: etc-systctld-dir
           containers:
             - name: pause
-              image: registry.ng.bluemix.net/armada-master/pause:3.2
+              image: us.icr.io/armada-master/pause:3.2
           volumes:
             - name: etc-systemd-dir
               hostPath:
@@ -632,7 +632,7 @@ If you want to remove customizations from your worker nodes and reset them to th
                   name: etc-systctld-dir
           containers:
             - name: pause
-              image: registry.ng.bluemix.net/armada-master/pause:3.2
+              image: us.icr.io/armada-master/pause:3.2
           volumes:
             - name: etc-systemd-dir
               hostPath:
