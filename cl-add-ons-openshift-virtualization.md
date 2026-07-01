@@ -3,7 +3,7 @@
 copyright:
   years: 2024, 2026
 
-lastupdated: "2026-06-29"
+lastupdated: "2026-07-01"
 
 
 keywords: change log, version history, OpenShift Virtualization
@@ -52,6 +52,7 @@ Review the version history for OpenShift Virtualization.
 - kubevirt-hyperconverged-operator.v4.21.10
 - kubernetes-nmstate-operator.4.21.0-202606171653
 - node-maintenance-operator.v5.6.1
+- Resolves the following Prisma CVEs: [CVE-2026-39821](https://nvd.nist.gov/vuln/detail/CVE-2026-39821){: external}, [CVE-2026-41178](https://nvd.nist.gov/vuln/detail/CVE-2026-41178){: external}, [CVE-2026-47262](https://nvd.nist.gov/vuln/detail/CVE-2026-47262){: external}, and [CVE-2026-53488](https://nvd.nist.gov/vuln/detail/CVE-2026-53488){: external}.
 
 
 ### Version 4.21 - v1.0.4_4.21_347026591, released 15 June 2026
@@ -62,6 +63,7 @@ Review the version history for OpenShift Virtualization.
 - kubevirt-hyperconverged-operator.v4.21.8
 - kubernetes-nmstate-operator.4.21.0-202605270323
 - node-maintenance-operator.v5.6.1
+- Resolves the following Prisma CVEs: [CVE-2026-33811](https://nvd.nist.gov/vuln/detail/CVE-2026-33811){: external}, [CVE-2026-33814](https://nvd.nist.gov/vuln/detail/CVE-2026-33814){: external}, [CVE-2026-39820](https://nvd.nist.gov/vuln/detail/CVE-2026-39820){: external}, [CVE-2026-39836](https://nvd.nist.gov/vuln/detail/CVE-2026-39836){: external}, [CVE-2026-42499](https://nvd.nist.gov/vuln/detail/CVE-2026-42499){: external}, [CVE-2026-39823](https://nvd.nist.gov/vuln/detail/CVE-2026-39823){: external}, and [CVE-2026-39826](https://nvd.nist.gov/vuln/detail/CVE-2026-39826){: external}.
 
 
 ## Version 4.20
@@ -76,3 +78,4 @@ Review the version history for OpenShift Virtualization.
 - kubevirt-hyperconverged-operator.v4.20.15
 - kubernetes-nmstate-operator.4.20.0-202605130318
 - node-maintenance-operator.v5.5.0
+- Resolves the following Prisma CVEs: [CVE-2026-33811](https://nvd.nist.gov/vuln/detail/CVE-2026-33811){: external}, [CVE-2026-33814](https://nvd.nist.gov/vuln/detail/CVE-2026-33814){: external}, [CVE-2026-39820](https://nvd.nist.gov/vuln/detail/CVE-2026-39820){: external}, [CVE-2026-39836](https://nvd.nist.gov/vuln/detail/CVE-2026-39836){: external}, [CVE-2026-42499](https://nvd.nist.gov/vuln/detail/CVE-2026-42499){: external}, [CVE-2026-39823](https://nvd.nist.gov/vuln/detail/CVE-2026-39823){: external}, and [CVE-2026-39826](https://nvd.nist.gov/vuln/detail/CVE-2026-39826){: external}.

@@ -3,7 +3,7 @@
 copyright:
   years: 2024, 2026
 
-lastupdated: "2026-06-26"
+lastupdated: "2026-07-01"
 
 
 keywords: change log, version history, OpenShift AI
@@ -254,6 +254,7 @@ Review the version history for OpenShift AI.
 - Resolves the following CVEs: [CVE-2025-22868](https://nvd.nist.gov/vuln/detail/CVE-2025-22868){: external}.
 - Updates Go to version `1.23.7`.
 - Installs Red Hat `openshift-ai` operator version `2.16.1`.
+- Resolves the following Prisma CVEs: [CVE-2024-45336](https://nvd.nist.gov/vuln/detail/CVE-2024-45336){: external}, [CVE-2024-45341](https://nvd.nist.gov/vuln/detail/CVE-2024-45341){: external}, and [CVE-2025-22866](https://nvd.nist.gov/vuln/detail/CVE-2025-22866){: external}.
 
 
 ### Version 416 - 416.0.1_474, released 05 March 2025
