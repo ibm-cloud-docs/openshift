@@ -368,7 +368,6 @@ After the Operator is installed, create ConfigMaps to allow Kata to handle workl
       IBMCLOUD_PODVM_INSTANCE_PROFILE_NAME: "bx3dc-2x10"
       IBMCLOUD_RESOURCE_GROUP_ID: "$(ibmcloud is vpc "$VPC_ID" -json | jq -r .resource_group.id)"
       IBMCLOUD_SSH_KEY_ID: "$SSH_KEY_ID"
-      IBMCLOUD_VPC_ENDPOINT: "https://us-east.iaas.cloud.ibm.com/v1"
       IBMCLOUD_VPC_ID: "$VPC_ID"
       IBMCLOUD_VPC_SG_ID: "$(ibmcloud ks security-group ls --cluster $CLUSTER_NAME -json | jq -r '.[] | select(.type == "cluster") | .id')"
       CLOUD_CONFIG_VERIFY: "false"
