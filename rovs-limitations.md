@@ -2,7 +2,7 @@
 
 copyright:
   years: 2026, 2026
-lastupdated: "2026-06-26"
+lastupdated: "2026-07-01"
 
 keywords: openshift, virtualization service, rovs, limitations, restrictions, constraints
 
@@ -84,7 +84,7 @@ Networking
 {: #rovs-limit-licensing-scaling}
 
 Licensing
-:   OVE licensing only (per instance-hour, for a worker node of up to 128 vCPUs; larger worker nodes require multiple license instances). BYOL and Cloud Pak entitlements are not supported. The `entitlement` parameter cannot be specified when creating Virtualization Service clusters or worker pools.
+:   OVE licensing only. Per instance-hour for a bare metal worker node. BYOL and Cloud Pak entitlements are not supported. The `entitlement` parameter cannot be specified when creating Virtualization Service clusters or worker pools.
 
 Scaling
 :   - All worker pools must use supported bare metal flavors

@@ -2,7 +2,7 @@
 
 copyright:
   years: 2026, 2026
-lastupdated: "2026-06-26"
+lastupdated: "2026-07-01"
 
 keywords: openshift, virtualization service, rovs, virtual machines, vms, bare metal, pre-configured
 
@@ -121,7 +121,7 @@ Infrastructure costs
 :   Bare metal worker nodes with local NVME storage.
 
 OVE license charges
-:   Per instance-hour, for a worker node of up to 128 vCPUs. Larger worker nodes require multiple license instances.
+:   Per instance-hour, for a bare metal worker node.
 
 Storage costs
 :   NVME storage cost is included in the bare metal infrastructure cost.
