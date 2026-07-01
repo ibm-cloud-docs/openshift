@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2026
-lastupdated: "2026-06-10"
+lastupdated: "2026-07-01"
 
 
 keywords: openshift, {{site.data.keyword.openshiftlong_notm}}, kubernetes, kernel, performance
@@ -419,7 +419,7 @@ If you must use `hostPorts`, don't disable the port map plug-in.
         nodeAddressAutodetectionV4:
           interface: (^bond0$|^eth0$|^ens6$|^ens3$)
       kubernetesProvider: OpenShift
-      registry: registry.ng.bluemix.net/armada-master/
+      registry: us.icr.io/armada-master/
       variant: Calico
     status:
       variant: Calico
