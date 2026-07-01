@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2026
-lastupdated: "2026-06-30"
+lastupdated: "2026-07-01"
 
 
 keywords: openshift
@@ -9418,7 +9418,7 @@ subcollection: openshift
 
 [Debugging Ingress](/docs/openshift?topic=openshift-ingress-debug-roks4#ingress-debug-roks4)
 
-* [Step 1: Check your app deployment and Ingress resource configuration](/docs/openshift?topic=openshift-ingress-debug-roks4#app-debug-ingress-43)
+* [Step 1: Check your app deployment, Ingress and Route resources configuration](/docs/openshift?topic=openshift-ingress-debug-roks4#app-debug-ingress-43)
 
 * [Step 2: Check the health of the Ingress controller](/docs/openshift?topic=openshift-ingress-debug-roks4#errors-43)
 

@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2026
-lastupdated: "2026-04-08"
+lastupdated: "2026-07-01"
 
 
 keywords: openshift
@@ -36,10 +36,10 @@ Before you begin, ensure you have the following [{{site.data.keyword.cloud_notm}
     - **Editor** or **Administrator** platform access role for the cluster
     - **Writer** or **Manager** service access role
 
-Seeing an **Application is not available** page when you try to access your app's subdomain? [Check your app deployment and Ingress resource configuration](#app-debug-ingress-43). Seeing a **Connection timeout** page? [Check the health of the Ingress controller pods](#errors-43).
+Seeing an **Application is not available** page when you try to access your app's subdomain? [Check your app deployment, Ingress and Route resources configuration](#app-debug-ingress-43). Seeing a **Connection timeout** page? [Check the health of the Ingress controller pods](#errors-43).
 {: tip}
 
-## Step 1: Check your app deployment and Ingress resource configuration
+## Step 1: Check your app deployment, Ingress and Route resources configuration
 {: #app-debug-ingress-43}
 
 Start by checking for errors in your app deployment and the Ingress resource deployment. Error messages in your deployments can help you find the root causes for failures and further debug your Ingress setup in the next sections.
@@ -53,7 +53,7 @@ Start by checking for errors in your app deployment and the Ingress resource dep
     ```
     {: pre}
 
-    In the **Events** section of the output, you might see warning messages about invalid values in your Ingress resource or in certain annotations that you used. For annotations, note that the {{site.data.keyword.containerlong_notm}} annotations (`ingress.bluemix.net/<annotation>`) and NGINX annotations (`nginx.ingress.kubernetes.io/<annotation>`) are not supported for the Ingress controller or the Ingress resource in {{site.data.keyword.redhat_openshift_notm}} version 4. If you want to customize routing rules for apps in a cluster that runs {{site.data.keyword.redhat_openshift_notm}} version 4, you can use [route-specific HAProxy annotations](https://docs.redhat.com/en/documentation/openshift_container_platform/4.20/html/ingress_and_load_balancing/routes){: external}, which are in the format `haproxy.router.openshift.io/<annotation>` or `router.openshift.io/<annotation>`.
+    In the **Events** section of the output, you might see warning messages about invalid values in your Ingress resource or in certain annotations that you used. For annotations, note that the {{site.data.keyword.containerlong_notm}} annotations (`ingress.bluemix.net/<annotation>`) and Ingress-NGINX annotations (`nginx.ingress.kubernetes.io/<annotation>`) are not supported for the Ingress controller or the Ingress resource in {{site.data.keyword.redhat_openshift_notm}} version 4. If you want to customize routing rules for apps in a cluster that runs {{site.data.keyword.redhat_openshift_notm}} version 4, you can use [route-specific HAProxy annotations](https://docs.redhat.com/en/documentation/openshift_container_platform/4.20/html/ingress_and_load_balancing/routes){: external}, which are in the format `haproxy.router.openshift.io/<annotation>` or `router.openshift.io/<annotation>`.
 
     ```sh
     NAME:             myingress
@@ -66,20 +66,80 @@ Start by checking for errors in your app deployment and the Ingress resource dep
         mycluster-<hash>-0000.us-south.containers.appdomain.cloud
         /tea      myservice1:80 (<none>)
         /coffee   myservice2:80 (<none>)
-    Annotations:
-        custom-port:        protocol=http port=7490; protocol=https port=4431
-        location-modifier:  modifier='~' serviceName=myservice1;modifier='^~' serviceName=myservice2
-    Events:
-        Type     Reason             Age   From                                Message
-        ----     ------             ----  ----                                -------
-        Warning  TLSSecretNotFound  1m    router-default-69d6f598f8-vn8tj     Failed to apply ingress resource.
-        Warning  AnnotationError    2s    router-default-69d6f598f8-vn8tj     Failed to apply ingress.bluemix.net/custom-port annotation.
-        Warning  TLSSecretNotFound  1m    router-dal10-y2d4359tf4-g4ar7       Failed to apply ingress resource.
-        Warning  AnnotationError    2s    router-dal10-y2d4359tf4-g4ar7       Failed to apply ingress.bluemix.net/custom-port annotation.
+    Annotations:  <none>
+    Events:       <none>
     ```
     {: screen}
 
-3. Check the Ingress resource configuration file.
+3. Check your Route resource deployment and look for warnings or error messages.
+    ```sh
+    oc describe route <myroute>
+    ```
+    {: pre}
+
+    In the **Status** and **Events** sections of the output, you might see warning messages about invalid values in your Route resource or in certain annotations that you used.
+
+    ```sh
+    Name:         myroute
+    Namespace:    default
+    Labels:       <none>
+    Annotations:  <none>
+    API Version:  route.openshift.io/v1
+    Kind:         Route
+    Metadata:
+      Creation Timestamp:  2026-07-01T10:18:43Z
+      Generation:          1
+      Owner References:
+        API Version:     networking.k8s.io/v1
+        Controller:      true
+        Kind:            Ingress
+        Name:            coffee-ingress
+        UID:             e7a18dd4-402d-461c-a41f-c4750b6d2032
+      Resource Version:  178601
+      UID:               17c623e6-e9ef-4179-a3ad-af8ea311f2e5
+    Spec:
+      Host:  mycluster-<hash>-0000.us-south.containers.appdomain.cloud
+      Path:  /
+      Port:
+        Target Port:  http
+      Tls:
+        Certificate:  ...
+        Insecure Edge Termination Policy:  Redirect
+        Key: ...
+        Termination:  edge
+      To:
+        Kind:           Service
+        Name:           myservice1
+        Weight:         100
+      Wildcard Policy:  None
+    Status:
+      Ingress:
+        Conditions:
+          Last Transition Time:     2026-07-01T10:18:43Z
+          Status:                   True
+          Type:                     Admitted
+        Host:                       mycluster-<hash>-0000.us-south.containers.appdomain.cloud
+        Router Canonical Hostname:  router-default.mycluster-<hash>-0000.us-south.containers.appdomain.cloud
+        Router Name:                default
+        Wildcard Policy:            None
+    Events:  <none>
+    ```
+    {: screen}
+
+4. Check the cluster level events for warnings or error messages.
+    ```sh
+    oc get events
+    ```
+    {: pre}
+
+    In some cases warning or error events related to Ingress resources are emitted on the cluster level. Keep in mind that Events are scoped to namespace.
+    ```sh
+    LAST SEEN   TYPE      REASON                          OBJECT             MESSAGE
+    2m40s       Warning   IncompleteIngressToRouteRules   ingress/myingress  Incomplete ingress to route rules detected: Invalid or missing TLS secret for rule host "mycluster-<hash>-0000.us-south.containers.appdomain.cloud" at index 0, path index 0
+    ```
+    {: screen}
+
+5. Check the Ingress or Route resource configuration file.
     ```sh
     oc get ingress -o yaml
     ```
@@ -97,7 +157,7 @@ Start by checking for errors in your app deployment and the Ingress resource dep
         ```
         {: pre}
         
-4. Check to see if you reached the maximum number of VPC load balancers permitted per account. Check the [VPC quotas documentation](/docs/vpc?topic=vpc-quotas) for VPC resource quotas across all your VPC clusters in your VPC.
+6. Check to see if you reached the maximum number of VPC load balancers permitted per account. Check the [VPC quotas documentation](/docs/vpc?topic=vpc-quotas) for VPC resource quotas across all your VPC clusters in your VPC.
 
 ## Step 2: Check the health of the Ingress controller
 {: #errors-43}
