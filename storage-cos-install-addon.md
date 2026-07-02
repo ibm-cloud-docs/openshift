@@ -2,7 +2,7 @@
 
 copyright:
   years: 2024, 2026
-lastupdated: "2026-06-30"
+lastupdated: "2026-07-02"
 
 
 keywords: kubernetes, openshift, object storage add-in, cos
@@ -187,6 +187,38 @@ By default, the COS CSI driver nodeserver pods are scheduled on all nodes in the
 | `restrictNodeServerScheduling: "true"` | Nodeserver pods are scheduled only on nodes labeled `cos.csi.ibm.io/csi-node=true`. |
 {: caption="restrictNodeServerScheduling options" caption-side="bottom"}
 {: #cos-addon-restrict-node-scheduling-table}
+
+## Setting the maximum volumes per node
+{: #cos-addon-max-volumes-per-node}
+
+By default, the COS CSI driver does not limit the number of volumes that can be mounted on a single node. You can use the `maxVolumesPerNode` parameter to set a maximum number of volumes per node.
+
+You can configure `maxVolumesPerNode` when you enable the add-on, or update it later by patching the ConfigMap.
+
+- To set `maxVolumesPerNode` when you enable the add-on, include the `--param` flag in the enable command.
+    ```sh
+    ibmcloud oc cluster addon enable ibm-object-csi-driver --cluster CLUSTER --param "maxVolumesPerNode=VALUE"
+    ```
+    {: pre}
+
+- To update `maxVolumesPerNode` after the add-on is already enabled, patch the managed add-on ConfigMap.
+    ```sh
+    oc patch cm managed-addon-ibm-object-csi-driver -n kube-system --type merge -p '{"data":{"maxVolumesPerNode":"VALUE"}}'
+    ```
+    {: pre}
+
+    Example output
+    ```sh
+    configmap/managed-addon-ibm-object-csi-driver patched
+    ```
+    {: screen}
+
+| Setting | Behavior |
+| --- | --- |
+| `maxVolumesPerNode: "0"` (default) | No limit on the number of volumes that can be mounted per node. |
+| `maxVolumesPerNode: "VALUE"` | Limits the number of volumes that can be mounted on a single node to the specified value. |
+{: caption="maxVolumesPerNode options" caption-side="bottom"}
+{: #cos-addon-max-volumes-per-node-table}
 
 ## Deploying an app that uses {{site.data.keyword.cos_full_notm}}
 {: #cos-addon-app}

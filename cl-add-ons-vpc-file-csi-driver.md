@@ -3,7 +3,7 @@
 copyright:
   years: 2024, 2026
 
-lastupdated: "2026-06-26"
+lastupdated: "2026-07-02"
 
 
 keywords: change log, version history, VPC File CSI Driver
@@ -383,30 +383,3 @@ Review the version history for VPC File CSI Driver.
 - Updates Golang to `1.19.12`.
 - Resolves the following CVEs: 
     - [CVE-2023-34969](https://nvd.nist.gov/vuln/detail/CVE-2023-34969){: external}, [CVE-2023-28321](https://nvd.nist.gov/vuln/detail/CVE-2023-28321){: external}, [CVE-2023-2602](https://nvd.nist.gov/vuln/detail/CVE-2023-2602){: external}, [CVE-2023-2603](https://nvd.nist.gov/vuln/detail/CVE-2023-2603){: external}, [CVE-2023-28484](https://nvd.nist.gov/vuln/detail/CVE-2023-28484){: external}, [CVE-2023-29469](https://nvd.nist.gov/vuln/detail/CVE-2023-29469){: external}, [CVE-2023-27536](https://nvd.nist.gov/vuln/detail/CVE-2023-27536){: external}, [CVE-2023-3899](https://nvd.nist.gov/vuln/detail/CVE-2023-3899){: external}, and [CVE-2023-32681](https://nvd.nist.gov/vuln/detail/CVE-2023-32681){: external}.
-
-
-### Version 1.1, released 3 July 2023
-{: #1.1_is_file_relnote}
-
-- Updates the following sidecar images: 
-    - `storage-secret-sidecar` to `v1.2.24`.
-    - `csi-node-driver-registrar` to `v2.7.0`.
-    - `livenessprobe` to `v2.9.0`.
-    - `csi-provisioner` to `v3.4.1`.
-    - `csi-resizer` to `v1.7.0`.
-
-- Updates the UBI image `8.8-860`.
-- Updates Golang to `1.19.10`.
-- Resolves the following CVEs: 
-    - [CVE-2023-29403](https://nvd.nist.gov/vuln/detail/CVE-2023-29403){: external},
-    - [CVE-2023-29404](https://nvd.nist.gov/vuln/detail/CVE-2023-29404){: external}
-    - [CVE-2023-29405](https://nvd.nist.gov/vuln/detail/CVE-2023-29405){: external}
-    - [CVE-2023-29402](https://nvd.nist.gov/vuln/detail/CVE-2023-29402){: external} 
-    - [CVE-2023-29400](https://nvd.nist.gov/vuln/detail/CVE-2023-29400){: external}
-    - [CVE-2023-24540](https://nvd.nist.gov/vuln/detail/CVE-2023-24540){: external}
-    - [CVE-2023-24539](https://nvd.nist.gov/vuln/detail/CVE-2023-24539){: external} 
-    - [CVE-2022-43552](https://nvd.nist.gov/vuln/detail/CVE-2022-43552){: external}
-    - [CVE-2022-3204](https://nvd.nist.gov/vuln/detail/CVE-2022-3204){: external}
-    - [CVE-2023-27535](https://nvd.nist.gov/vuln/detail/CVE-2023-27535){: external}
-    - [CVE-2022-36227](https://nvd.nist.gov/vuln/detail/CVE-2022-36227){: external}
-    - [CVE-2022-35252](https://nvd.nist.gov/vuln/detail/CVE-2022-35252){: external}
