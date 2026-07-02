@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2026
-lastupdated: "2026-07-01"
+lastupdated: "2026-07-02"
 
 
 keywords: openshift
@@ -4909,6 +4909,8 @@ subcollection: openshift
 
 * [Restricting nodeserver pod scheduling](/docs/openshift?topic=openshift-storage-cos-install-addon#cos-addon-restrict-node-scheduling)
 
+* [Setting the maximum volumes per node](/docs/openshift?topic=openshift-storage-cos-install-addon#cos-addon-max-volumes-per-node)
+
 * [Deploying an app that uses {{site.data.keyword.cos_full_notm}}](/docs/openshift?topic=openshift-storage-cos-install-addon#cos-addon-app)
 
     * [Create a Kubernetes secret that contains your COS credentials.](/docs/openshift?topic=openshift-storage-cos-install-addon#cos-addon-app-secret)
@@ -7363,8 +7365,6 @@ subcollection: openshift
 
 * [`image-key-synchronizer` 1.0.0](/docs/openshift?topic=openshift-supported-cluster-addon-versions#image-key-synchronizer-1.0.0)
 
-* [`istio` 1.24](/docs/openshift?topic=openshift-supported-cluster-addon-versions#istio-1.24)
-
 * [`istio` 1.25](/docs/openshift?topic=openshift-supported-cluster-addon-versions#istio-1.25)
 
 * [`istio` 1.26](/docs/openshift?topic=openshift-supported-cluster-addon-versions#istio-1.26)
@@ -7825,11 +7825,11 @@ subcollection: openshift
 
     * [Version 1.1.7_49, released 14 September 2023](/docs/openshift?topic=openshift-cl-add-ons-vpc-file-csi-driver#1.1.7_is_file_relnote)
 
-    * [Version 1.1, released 3 July 2023](/docs/openshift?topic=openshift-cl-add-ons-vpc-file-csi-driver#1.1_is_file_relnote)
-
 [IBM Object CSI Driver add-on version change log](/docs/openshift?topic=openshift-cl-add-ons-ibm-object-csi-driver#cl-add-ons-ibm-object-csi-driver)
 
 * [Version 1.0](/docs/openshift?topic=openshift-cl-add-ons-ibm-object-csi-driver#cl-add-ons-ibm-object-csi-driver-1.0)
+
+    * [Version 1.0 - v1.0.23_349336907, released 03 July 2026](/docs/openshift?topic=openshift-cl-add-ons-ibm-object-csi-driver#cl-add-ons-ibm-object-csi-driver-v1023_349336907)
 
     * [Version 1.0 - v1.0.22_348679631, released 22 June 2026](/docs/openshift?topic=openshift-cl-add-ons-ibm-object-csi-driver#cl-add-ons-ibm-object-csi-driver-v1022_348679631)
 

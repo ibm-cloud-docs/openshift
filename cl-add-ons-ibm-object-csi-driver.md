@@ -3,7 +3,7 @@
 copyright:
   years: 2024, 2026
 
-lastupdated: "2026-06-29"
+lastupdated: "2026-07-02"
 
 
 keywords: change log, version history, IBM Object CSI Driver
@@ -43,10 +43,18 @@ Review the version history for IBM Object CSI Driver.
 {: #cl-add-ons-ibm-object-csi-driver-1.0}
 
 
-### Version 1.0 - v1.0.22_348679631, released 22 June 2026
-{: #cl-add-ons-ibm-object-csi-driver-v1022_348679631}
+### Version 1.0 - v1.0.23_349336907, released 03 July 2026
+{: #cl-add-ons-ibm-object-csi-driver-v1023_349336907}
 
 [Default version]{: tag-green}
+
+- Resolves the following CVEs: [CVE-2026-2303](https://nvd.nist.gov/vuln/detail/CVE-2026-2303){: external}.
+- Updates Go to version `1.26.4`.
+- Added support for Cross-Regional StorageClass
+
+
+### Version 1.0 - v1.0.22_348679631, released 22 June 2026
+{: #cl-add-ons-ibm-object-csi-driver-v1022_348679631}
 
 - Resolves the following CVEs: [CVE-2026-34182](https://nvd.nist.gov/vuln/detail/CVE-2026-34182){: external}, [CVE-2026-34183](https://nvd.nist.gov/vuln/detail/CVE-2026-34183){: external}, [CVE-2026-45445](https://nvd.nist.gov/vuln/detail/CVE-2026-45445){: external}, [CVE-2026-45447](https://nvd.nist.gov/vuln/detail/CVE-2026-45447){: external}, [CVE-2026-34180](https://nvd.nist.gov/vuln/detail/CVE-2026-34180){: external}, [CVE-2026-34181](https://nvd.nist.gov/vuln/detail/CVE-2026-34181){: external}, [CVE-2026-42764](https://nvd.nist.gov/vuln/detail/CVE-2026-42764){: external}, [CVE-2026-42766](https://nvd.nist.gov/vuln/detail/CVE-2026-42766){: external}, [CVE-2026-42767](https://nvd.nist.gov/vuln/detail/CVE-2026-42767){: external}, [CVE-2026-42768](https://nvd.nist.gov/vuln/detail/CVE-2026-42768){: external}, [CVE-2026-42769](https://nvd.nist.gov/vuln/detail/CVE-2026-42769){: external}, [CVE-2026-42770](https://nvd.nist.gov/vuln/detail/CVE-2026-42770){: external}, [CVE-2026-7383](https://nvd.nist.gov/vuln/detail/CVE-2026-7383){: external}, [CVE-2026-9076](https://nvd.nist.gov/vuln/detail/CVE-2026-9076){: external}, [CVE-2026-45446](https://nvd.nist.gov/vuln/detail/CVE-2026-45446){: external}, [CVE-2026-49980](https://nvd.nist.gov/vuln/detail/CVE-2026-49980){: external}, and [CVE-2026-39821](https://nvd.nist.gov/vuln/detail/CVE-2026-39821){: external}.
 - Updates Go to version `1.26.4`.
