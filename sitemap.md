@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2026
-lastupdated: "2026-07-05"
+lastupdated: "2026-07-06"
 
 
 keywords: openshift
@@ -5591,6 +5591,8 @@ subcollection: openshift
 
 * [Version 4.21](/docs/openshift?topic=openshift-openshift_changelog_421#421_components)
 
+    * [Worker node fix pack 4.21.21_1522_openshift, released 01 July 2026](/docs/openshift?topic=openshift-openshift_changelog_421#cl-boms-42121_1522_openshift_W)
+
     * [Master fix pack 4.21.18_1520_openshift, released 26 June 2026](/docs/openshift?topic=openshift-openshift_changelog_421#cl-boms_master-42118_1520_openshift_M)
 
     * [Worker node fix pack 4.21.19_1521_openshift, released 15 June 2026](/docs/openshift?topic=openshift-openshift_changelog_421#cl-boms-42119_1521_openshift_W)
@@ -5719,6 +5721,8 @@ subcollection: openshift
 * [Overview](/docs/openshift?topic=openshift-openshift_changelog_420#changelog_overview_420)
 
 * [Version 4.20](/docs/openshift?topic=openshift-openshift_changelog_420#420_components)
+
+    * [Worker node fix pack 4.20.26_1553_openshift, released 01 July 2026](/docs/openshift?topic=openshift-openshift_changelog_420#cl-boms-42026_1553_openshift_W)
 
     * [Master fix pack 4.20.23_1551_openshift, released 26 June 2026](/docs/openshift?topic=openshift-openshift_changelog_420#cl-boms_master-42023_1551_openshift_M)
 
@@ -5858,6 +5862,8 @@ subcollection: openshift
 * [Overview](/docs/openshift?topic=openshift-openshift_changelog_419#changelog_overview_419)
 
 * [Version 4.19](/docs/openshift?topic=openshift-openshift_changelog_419#419_components)
+
+    * [Worker node fix pack 4.19.35_1584_openshift, released 01 July 2026](/docs/openshift?topic=openshift-openshift_changelog_419#cl-boms-41935_1584_openshift_W)
 
     * [Master fix pack 4.19.32_1582_openshift, released 26 June 2026](/docs/openshift?topic=openshift-openshift_changelog_419#cl-boms_master-41932_1582_openshift_M)
 
@@ -6029,6 +6035,8 @@ subcollection: openshift
 * [Overview](/docs/openshift?topic=openshift-openshift_changelog_418#changelog_overview_418)
 
 * [Version 4.18](/docs/openshift?topic=openshift-openshift_changelog_418#418_components)
+
+    * [Worker node fix pack 4.18.45_1595_openshift, released 01 July 2026](/docs/openshift?topic=openshift-openshift_changelog_418#cl-boms-41845_1595_openshift_W)
 
     * [Master fix pack 4.18.43_1593_openshift, released 26 June 2026](/docs/openshift?topic=openshift-openshift_changelog_418#cl-boms_master-41843_1593_openshift_M)
 
@@ -6224,6 +6232,8 @@ subcollection: openshift
 * [Overview](/docs/openshift?topic=openshift-openshift_changelog_417#changelog_overview_417)
 
 * [Version 4.17](/docs/openshift?topic=openshift-openshift_changelog_417#417_components)
+
+    * [Worker node fix pack 4.17.54_1591_openshift, released 01 July 2026](/docs/openshift?topic=openshift-openshift_changelog_417#cl-boms-41754_1591_openshift_W)
 
     * [Master fix pack 4.17.54_1589_openshift, released 26 June 2026](/docs/openshift?topic=openshift-openshift_changelog_417#cl-boms_master-41754_1589_openshift_M)
 
@@ -6455,6 +6465,8 @@ subcollection: openshift
 * [Overview](/docs/openshift?topic=openshift-openshift_changelog_416#changelog_overview_416)
 
 * [Version 4.16](/docs/openshift?topic=openshift-openshift_changelog_416#416_components)
+
+    * [Worker node fix pack 4.16.64_1622_openshift, released 01 July 2026](/docs/openshift?topic=openshift-openshift_changelog_416#cl-boms-41664_1622_openshift_W)
 
     * [Master fix pack 4.16.63_1620_openshift, released 26 June 2026](/docs/openshift?topic=openshift-openshift_changelog_416#cl-boms_master-41663_1620_openshift_M)
 
@@ -7569,8 +7581,6 @@ subcollection: openshift
 
     * [Version patch update 1.0.8_82, released 7 August 2023](/docs/openshift?topic=openshift-cl-add-ons-cluster-autoscaler#10882_ca)
 
-    * [Version patch update 1.0.8_56, released 6 July 2023](/docs/openshift?topic=openshift-cl-add-ons-cluster-autoscaler#10856_ca)
-
     * [Version patch update 1.0.7_291, released 27 November 2023](/docs/openshift?topic=openshift-cl-add-ons-cluster-autoscaler#107291_ca)
 
     * [Version patch update 1.0.7_185, released 13 November 2023](/docs/openshift?topic=openshift-cl-add-ons-cluster-autoscaler#107_185_ca)
@@ -7578,8 +7588,6 @@ subcollection: openshift
     * [Version patch update 1.0.7_102, released 15 September 2023](/docs/openshift?topic=openshift-cl-add-ons-cluster-autoscaler#107102_ca)
 
     * [Version patch update 1.0.7_83, released 7 August 2023](/docs/openshift?topic=openshift-cl-add-ons-cluster-autoscaler#10783_ca)
-
-    * [Version patch update 1.0.7_57, released 6 July 2023](/docs/openshift?topic=openshift-cl-add-ons-cluster-autoscaler#10757_ca)
 
 [IBM Storage Operator add-on version change log](/docs/openshift?topic=openshift-cl-add-ons-ibm-storage-operator#cl-add-ons-ibm-storage-operator)
 
