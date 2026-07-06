@@ -3,7 +3,7 @@
 copyright:
   years: 2024, 2026
 
-lastupdated: "2026-06-26"
+lastupdated: "2026-07-06"
 
 
 keywords: change log, version history, Cluster autoscaler
@@ -438,14 +438,6 @@ Beginning in version 1.2.4 the `maxEmptyBulkDelete` option is no longer supporte
 - Resolves the followings CVEs:[CVE-2023-2283](https://nvd.nist.gov/vuln/detail/CVE-2023-2283){: external},[CVE-2023-26604](https://nvd.nist.gov/vuln/detail/CVE-2023-26604){: external},[CVE-2020-24736](https://nvd.nist.gov/vuln/detail/CVE-2020-24736){: external}, and [CVE-2023-1667](https://nvd.nist.gov/vuln/detail/CVE-2023-1667){: external}.
 
 
-### Version patch update 1.0.8_56, released 6 July 2023
-{: #10856_ca}
-
-- Image tags: `1.20.0 108-3`, `1.21.0 108-3`, `1.22.0 108-3`, `1.23.0 108-3`, `1.24.0 108-3`, `1.25.0 108-3`, `1.26.0 108-3`.
-- Updates the `storage-secret-sidecar` image to `v1.2.21`.
-- Updates the `golang` version to `1.19.8`.
-
-
 
 
 ### Version patch update 1.0.7_291, released 27 November 2023
@@ -478,12 +470,3 @@ Beginning in version 1.2.4 the `maxEmptyBulkDelete` option is no longer supporte
 - Image tags: `1.20.0 107-6`, `1.21.0 107-6`, `1.22.0 107-6`, `1.23.0 107-6`, `1.24.0 107-6`,`1.25.0 107-6`.
 - Updates the `storage-secret-sidecar` image to `v1.2.25`.
 - Resolves the followings CVEs:[CVE-2023-2283](https://nvd.nist.gov/vuln/detail/CVE-2023-2283){: external},[CVE-2023-26604](https://nvd.nist.gov/vuln/detail/CVE-2023-26604){: external},[CVE-2020-24736](https://nvd.nist.gov/vuln/detail/CVE-2020-24736){: external}, and [CVE-2023-1667](https://nvd.nist.gov/vuln/detail/CVE-2023-1667){: external}.
-
-
-### Version patch update 1.0.7_57, released 6 July 2023
-{: #10757_ca}
-
-- Image tags: `1.20.0 107-6`, `1.21.0 107-6`, `1.22.0 107-6`, `1.23.0 107-6`, `1.24.0 107-6`,`1.25.0 107-6`.
-- Updates the `storage-secret-sidecar` image to `v1.2.21`.
-- Updates the `golang` version to `1.19.8`.
-- Fixes an issue where `cluster-autoscaler` stops retrying requests that return `HTTP401` code.
