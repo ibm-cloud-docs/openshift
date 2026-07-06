@@ -285,6 +285,12 @@ subcollection: openshift
 
 [Release notes](/docs/openshift?topic=openshift-openshift-relnotes#openshift-relnotes)
 
+* [July 2026](/docs/openshift?topic=openshift-openshift-relnotes#openshift-jul26)
+
+    * [01 July 2026](/docs/openshift?topic=openshift-openshift-relnotes#openshift-jul0126)
+
+        * {{site.data.keyword.openshiftlong_notm}} worker node fix packs are available.
+
 * [June 2026](/docs/openshift?topic=openshift-openshift-relnotes#openshift-jun26)
 
     * [26 June 2026](/docs/openshift?topic=openshift-openshift-relnotes#openshift-jun2626)
