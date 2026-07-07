@@ -7061,8 +7061,6 @@ subcollection: openshift
 
     * [`ibmcloud oc nlb-dns monitor configure`](/docs/openshift?topic=openshift-kubernetes-service-cli#nlb-dns-monitor-configure-cli)
 
-    * [Command options](/docs/openshift?topic=openshift-kubernetes-service-cli#nlb-dns-monitor-configure-options)
-
     * [`ibmcloud oc nlb-dns monitor disable`](/docs/openshift?topic=openshift-kubernetes-service-cli#cs_nlb-dns-monitor-disable)
 
     * [`ibmcloud oc nlb-dns monitor enable`](/docs/openshift?topic=openshift-kubernetes-service-cli#cs_nlb-dns-monitor-enable)
@@ -7081,11 +7079,9 @@ subcollection: openshift
 
     * [Experimental: `ibmcloud oc nlb-dns secret rm`](/docs/openshift?topic=openshift-kubernetes-service-cli#cs_nlb-dns-secret-rm)
 
-* [`ibmcloud oc vpc secure-by-default enable`](/docs/openshift?topic=openshift-kubernetes-service-cli#vpc-secure-by-default-enable-cli)
+    * [`ibmcloud oc vpc secure-by-default enable`](/docs/openshift?topic=openshift-kubernetes-service-cli#vpc-secure-by-default-enable-cli)
 
-    * [Command options](/docs/openshift?topic=openshift-kubernetes-service-cli#vpc-secure-by-default-enable-options)
-
-* [`webhook-create` command](/docs/openshift?topic=openshift-kubernetes-service-cli#cs_webhook_create)
+    * [`webhook-create` command](/docs/openshift?topic=openshift-kubernetes-service-cli#cs_webhook_create)
 
     * [Example `webhook-create` command](/docs/openshift?topic=openshift-kubernetes-service-cli#webhook-create-example)
 
@@ -7119,7 +7115,7 @@ subcollection: openshift
 
     * [`ibmcloud oc quota ls`](/docs/openshift?topic=openshift-kubernetes-service-cli#cs_quota_ls)
 
-* [`subnets` command](/docs/openshift?topic=openshift-kubernetes-service-cli#cs_subnets)
+    * [`subnets` command](/docs/openshift?topic=openshift-kubernetes-service-cli#cs_subnets)
 
 * [`vlan` commands](/docs/openshift?topic=openshift-kubernetes-service-cli#vlan)
 
@@ -7127,45 +7123,33 @@ subcollection: openshift
 
     * [`ibmcloud oc vlan spanning get`](/docs/openshift?topic=openshift-kubernetes-service-cli#cs_vlan_spanning_get)
 
-* [`ibmcloud oc vpc ls`](/docs/openshift?topic=openshift-kubernetes-service-cli#vpc-ls-cli)
+    * [`ibmcloud oc vpc ls`](/docs/openshift?topic=openshift-kubernetes-service-cli#vpc-ls-cli)
 
-    * [Command options](/docs/openshift?topic=openshift-kubernetes-service-cli#vpc-ls-options)
+    * [`ibmcloud oc vpc outbound-traffic-protection disable`](/docs/openshift?topic=openshift-kubernetes-service-cli#vpc-outbound-traffic-protection-disable-cli)
 
-* [`ibmcloud oc vpc outbound-traffic-protection disable`](/docs/openshift?topic=openshift-kubernetes-service-cli#vpc-outbound-traffic-protection-disable-cli)
+    * [`ibmcloud oc vpc outbound-traffic-protection enable`](/docs/openshift?topic=openshift-kubernetes-service-cli#vpc-outbound-traffic-protection-enable-cli)
 
-    * [Command options](/docs/openshift?topic=openshift-kubernetes-service-cli#vpc-outbound-traffic-protection-disable-options)
+    * [`ibmcloud oc vni attach baremetal`](/docs/openshift?topic=openshift-kubernetes-service-cli#vni-attach-baremetal-cli)
 
-* [`ibmcloud oc vpc outbound-traffic-protection enable`](/docs/openshift?topic=openshift-kubernetes-service-cli#vpc-outbound-traffic-protection-enable-cli)
+    * [`ibmcloud oc vni detach`](/docs/openshift?topic=openshift-kubernetes-service-cli#vni-detach-cli)
 
-    * [Command options](/docs/openshift?topic=openshift-kubernetes-service-cli#vpc-outbound-traffic-protection-enable-options)
+    * [`ibmcloud oc vni ls`](/docs/openshift?topic=openshift-kubernetes-service-cli#vni-ls-cli)
 
-* [`ibmcloud oc vni attach baremetal`](/docs/openshift?topic=openshift-kubernetes-service-cli#vni-attach-baremetal-cli)
-
-    * [Command options](/docs/openshift?topic=openshift-kubernetes-service-cli#vni-attach-baremetal-options)
-
-* [`ibmcloud oc vni detach`](/docs/openshift?topic=openshift-kubernetes-service-cli#vni-detach-cli)
-
-    * [Command options](/docs/openshift?topic=openshift-kubernetes-service-cli#vni-detach-options)
-
-* [`ibmcloud oc vni ls`](/docs/openshift?topic=openshift-kubernetes-service-cli#vni-ls-cli)
-
-    * [Command options](/docs/openshift?topic=openshift-kubernetes-service-cli#vni-ls-options)
-
-* [`flavor` command](/docs/openshift?topic=openshift-kubernetes-service-cli#cs_machine_types)
+    * [`flavor` command](/docs/openshift?topic=openshift-kubernetes-service-cli#cs_machine_types)
 
     * [`flavor get` command](/docs/openshift?topic=openshift-kubernetes-service-cli#cs_flavor_get)
 
     * [`flavor ls` command](/docs/openshift?topic=openshift-kubernetes-service-cli#cs_flavor_ls)
 
-* [`messages` command](/docs/openshift?topic=openshift-kubernetes-service-cli#cs_messages)
+    * [`messages` command](/docs/openshift?topic=openshift-kubernetes-service-cli#cs_messages)
 
-* [locations command](/docs/openshift?topic=openshift-kubernetes-service-cli#cs_supported-locations)
+    * [`locations` command](/docs/openshift?topic=openshift-kubernetes-service-cli#cs_supported-locations)
 
-* [`versions` command](/docs/openshift?topic=openshift-kubernetes-service-cli#cs_versions_command)
+    * [`versions` command](/docs/openshift?topic=openshift-kubernetes-service-cli#cs_versions_command)
 
-* [`api` command](/docs/openshift?topic=openshift-kubernetes-service-cli#cs_cli_api)
+    * [`api` command](/docs/openshift?topic=openshift-kubernetes-service-cli#cs_cli_api)
 
-* [`init` command](/docs/openshift?topic=openshift-kubernetes-service-cli#cs_init)
+    * [`init` command](/docs/openshift?topic=openshift-kubernetes-service-cli#cs_init)
 
 * [`script` commands](/docs/openshift?topic=openshift-kubernetes-service-cli#script)
 
@@ -7173,9 +7157,7 @@ subcollection: openshift
 
 * [`security-group` commands](/docs/openshift?topic=openshift-kubernetes-service-cli#security_group)
 
-* [`ibmcloud oc security-group ls`](/docs/openshift?topic=openshift-kubernetes-service-cli#security-group-ls-cli)
-
-    * [Command options](/docs/openshift?topic=openshift-kubernetes-service-cli#security-group-ls-options)
+    * [`ibmcloud oc security-group ls`](/docs/openshift?topic=openshift-kubernetes-service-cli#security-group-ls-cli)
 
     * [`ibmcloud oc security-group reset`](/docs/openshift?topic=openshift-kubernetes-service-cli#security_group_reset)
 
@@ -7213,21 +7195,13 @@ subcollection: openshift
 
     * [`ibmcloud oc zone add satellite`](/docs/openshift?topic=openshift-kubernetes-service-cli#cs_zone_add_sat)
 
-* [`ibmcloud oc experimental trusted-profile default get`](/docs/openshift?topic=openshift-kubernetes-service-cli#experimental-trusted-profile-default-get-cli)
+    * [`ibmcloud oc experimental trusted-profile default get`](/docs/openshift?topic=openshift-kubernetes-service-cli#experimental-trusted-profile-default-get-cli)
 
-    * [Command options](/docs/openshift?topic=openshift-kubernetes-service-cli#experimental-trusted-profile-default-get-options)
+    * [`ibmcloud oc experimental trusted-profile default set`](/docs/openshift?topic=openshift-kubernetes-service-cli#experimental-trusted-profile-default-set-cli)
 
-* [`ibmcloud oc experimental trusted-profile default set`](/docs/openshift?topic=openshift-kubernetes-service-cli#experimental-trusted-profile-default-set-cli)
+    * [`ibmcloud oc experimental trusted-profile get`](/docs/openshift?topic=openshift-kubernetes-service-cli#experimental-trusted-profile-get-cli)
 
-    * [Command options](/docs/openshift?topic=openshift-kubernetes-service-cli#experimental-trusted-profile-default-set-options)
-
-* [`ibmcloud oc experimental trusted-profile get`](/docs/openshift?topic=openshift-kubernetes-service-cli#experimental-trusted-profile-get-cli)
-
-    * [Command options](/docs/openshift?topic=openshift-kubernetes-service-cli#experimental-trusted-profile-get-options)
-
-* [`ibmcloud oc experimental trusted-profile set`](/docs/openshift?topic=openshift-kubernetes-service-cli#experimental-trusted-profile-set-cli)
-
-    * [Command options](/docs/openshift?topic=openshift-kubernetes-service-cli#experimental-trusted-profile-set-options)
+    * [`ibmcloud oc experimental trusted-profile set`](/docs/openshift?topic=openshift-kubernetes-service-cli#experimental-trusted-profile-set-cli)
 
 [CLI change log](/docs/openshift?topic=openshift-cs_cli_changelog#cs_cli_changelog)
 
