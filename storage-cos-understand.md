@@ -1,11 +1,11 @@
 ---
 
 copyright:
-  years: 2014, 2025
-lastupdated: "2025-12-03"
+  years: 2014, 2026
+lastupdated: "2026-07-07"
 
 
-keywords: kubernetes, openshift
+keywords: kubernetes, openshift, object storage, COS, persistent volume, secret, HMAC authentication, s3fs, bucket
 
 subcollection: openshift
 

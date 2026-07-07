@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2026
-lastupdated: "2026-04-29"
+lastupdated: "2026-07-07"
 
 
 keywords: openshift, reservations, worker node
@@ -196,7 +196,7 @@ Before you begin, make sure that you have the following roles in {{site.data.key
 If you are a member of an account that has contract reservation set to expire within 30 days, you must renew to prevent loss of service.
 {: shortdesc}
  
-If you have more worker nodes than reservation capacity at the time of contract expiration, worker nodes will be deleted until they no longer exceed the reservation's current total capacity.
+If you have more worker nodes than reservation capacity at the time of contract expiration, worker nodes are deleted until they no longer exceed the reservation's current total capacity.
 {: note}
  
 To prevent loss of service, you must create new contracts for your existing reservations to replace the expiring ones. Alternatively, if you choose to not continue with reservations, you must create a new worker pool not using a reservation, and migrate workloads over before the contract expiration date.

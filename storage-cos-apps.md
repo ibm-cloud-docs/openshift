@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2026
-lastupdated: "2026-05-18"
+lastupdated: "2026-07-07"
 
 
 keywords: openshift, adding object storage, adding storage to cluster, adding pvc, persistent volume claim, object storage pvc
@@ -12,9 +12,6 @@ subcollection: openshift
 ---
 
 {{site.data.keyword.attribute-definition-list}}
-
-
-
 
 # Deploying an app that uses COS
 {: #storage_cos_apps}
@@ -85,17 +82,17 @@ To add {{site.data.keyword.cos_full_notm}} to your cluster:
 
     `ibm.io/quota-limit`
     :   To use this annotation, you must specify the `--set quotaLimit=true` option during installation. If you want to use this annotation, but didn't specify `--set quotaLimit=true` during installation, [re-install the helm chart](/docs/openshift?topic=openshift-storage_cos_install). 
-    :   If `ibm.io/quota-limit` is set to `true`, your PVC will set a maximum amount of storage (in bytes) available for the bucket based on the size `storage: <size>` that you specify.
+    :   If `ibm.io/quota-limit` is set to `true`, your PVC sets a maximum amount of storage (in bytes) available for the bucket based on the size `storage: <size>` that you specify.
     :   If `ibm.io/quota-limit` is set to `false`, the quota is not enforced on your PVC meaning that actual amount of storage in bytes might exceed the `storage: <size>` that you specified depending on your app. 
     
     `ibm.io/endpoint`
-    :   If you created your {{site.data.keyword.cos_full_notm}} service instance in a location that is different from your cluster, enter the private or public cloud service endpoint of your {{site.data.keyword.cos_full_notm}} service instance that you want to use. For more information and an overview of available service endpoints, see [Additional endpoint information](/docs/cloud-object-storage?topic=cloud-object-storage-advanced-endpoints). By default, the `ibmc` Helm plug-in automatically retrieves your cluster location and creates the storage classes by using the {{site.data.keyword.cos_full_notm}} private cloud service endpoint that matches your cluster location. If your classic cluster is in a multizone metro, such as `dal10`, the {{site.data.keyword.cos_full_notm}} private cloud service endpoint for the multizone metro, for example Dallas. To verify that the service endpoint in your storage classes matches the service endpoint of your service instance, run `oc describe storageclass < storageclassname>`. Make sure that you enter your service endpoint in the format `https://< s3fs_private_service_endpoint>` for private cloud service endpoints, or `http://< s3fs_public_service_endpoint>` for public cloud service endpoints. If the service endpoint in your storage class matches the service endpoint of your {{site.data.keyword.cos_full_notm}} service instance, don't include the `ibm.io/endpoint` option in your PVC YAML file.
+    :   If you created your {{site.data.keyword.cos_full_notm}} service instance in a location that is different from your cluster, enter the private or public cloud service endpoint of your {{site.data.keyword.cos_full_notm}} service instance that you want to use. For more information and an overview of available service endpoints, see [Additional endpoint information](/docs/cloud-object-storage?topic=cloud-object-storage-advanced-endpoints). By default, the `ibmc` Helm plug-in automatically retrieves your cluster location and creates the storage classes by using the {{site.data.keyword.cos_full_notm}} private cloud service endpoint that matches your cluster location. If your classic cluster is in a multizone metro, such as `dal10`, the {{site.data.keyword.cos_full_notm}} private cloud service endpoint for the multizone metro, such as Dallas, is used. To verify that the service endpoint in your storage classes matches the service endpoint of your service instance, run `oc describe storageclass <storageclassname>`. Make sure that you enter your service endpoint in the format `https://<s3fs_private_service_endpoint>` for private cloud service endpoints, or `http://<s3fs_public_service_endpoint>` for public cloud service endpoints. If the service endpoint in your storage class matches the service endpoint of your {{site.data.keyword.cos_full_notm}} service instance, don't include the `ibm.io/endpoint` option in your PVC YAML file.
     
     `ibm.io/add-mount-param`
     :   Enter mount options for your s3fs Fuse volumes. For example `ibm.io/add-mount-param: "del_cache,retries=6"`. For a list of option, see the [s3fs man pages](https://manpages.ubuntu.com/manpages/questing/man1/s3fs.1.html){: external}
     
     `ibm.io/access-policy-allowed-ips`
-    :   Enter a comma-separated list of IPs that can access your volumes. For example, `ibm.io/access-policy-allowed-ips: "XX.XXX.XX.XXX, XX.XX.XX.XXX, XX.XX.XX.XX`.
+    :   Enter a comma-separated list of IPs that can access your volumes. For example, `ibm.io/access-policy-allowed-ips: "XX.XXX.XX.XXX, XX.XX.XX.XXX, XX.XX.XX.XX"`.
     
     `storage`
     :   In the spec resources requests section, enter a size for your {{site.data.keyword.cos_full_notm}} bucket in gigabytes. The actual space that you use in {{site.data.keyword.cos_full_notm}} might be different and is billed based on the [pricing table](https://cloud.ibm.com/objectstorage/create){: external}. If you enabled quotas when you installed the plug-in , the quota for your bucket is equal to this size.
@@ -174,39 +171,38 @@ To add {{site.data.keyword.cos_full_notm}} to your cluster:
     ```
     {: codeblock}
 
-`app`
-:   In the metadata section, enter label for the deployment.
+    `app`
+    :   In the metadata section, enter label for the deployment.
 
-`matchLabels.app` and `labels.app`
-:   In the spec selector and in the spec template metadata sections, enter a label for your app.
+    `matchLabels.app` and `labels.app`
+    :   In the spec selector and in the spec template metadata sections, enter a label for your app.
 
-`image`
-:   The name of the container image that you want to use. To list available images in your {{site.data.keyword.registrylong_notm}} account, run `ibmcloud cr image-list`.
+    `image`
+    :   The name of the container image that you want to use. To list available images in your {{site.data.keyword.registrylong_notm}} account, run `ibmcloud cr image-list`.
 
-`name`
-:   The name of the container that you want to deploy to your cluster.
+    `name`
+    :   The name of the container that you want to deploy to your cluster.
 
-`runAsUser`
-:   In the spec containers security context section, you can optionally set the run as user value.
+    `runAsUser`
+    :   In the spec containers security context section, you can optionally set the run as user value.
 
-`mountPath`
-:   In the spec containers volume mounts section, enter the absolute path of the directory to where the volume is mounted inside the container. If you want to share a volume between different apps, you can specify [volume sub paths](https://kubernetes.io/docs/concepts/storage/volumes/#using-subpath){: external} for each of your apps.
+    `mountPath`
+    :   In the spec containers volume mounts section, enter the absolute path of the directory to where the volume is mounted inside the container. If you want to share a volume between different apps, you can specify [volume sub paths](https://kubernetes.io/docs/concepts/storage/volumes/#using-subpath){: external} for each of your apps.
 
-`volumeMounts.name`
-:   In the spec containers volume mounts section, enter the name of the volume to mount to your pod.
+    `volumeMounts.name`
+    :   In the spec containers volume mounts section, enter the name of the volume to mount to your pod.
 
-`volumes.name`
-:   In the volumes section, enter the name of the volume to mount to your pod. Typically this name is the same as `volumeMounts/name`.
+    `volumes.name`
+    :   In the volumes section, enter the name of the volume to mount to your pod. Typically this name is the same as `volumeMounts/name`.
 
-`claimName`
-:   In the volumes persistent volume claim section, enter the name of the PVC that binds the PV that you want to use.
+    `claimName`
+    :   In the volumes persistent volume claim section, enter the name of the PVC that binds the PV that you want to use.
 
 
 ## Creating a deployment 
 {: #create-cos-deployment-steps}
 
 After you create PVC and deployment configuration files, create the deployment in your cluster.
-{: shortdesc}
 
 1. Create the deployment.
 
@@ -252,7 +248,7 @@ After you create PVC and deployment configuration files, create the deployment i
     ```
     {: pre}
 
-1. From the {{site.data.keyword.Bluemix}} dashboard, navigate to your {{site.data.keyword.cos_full_notm}} service instance.
+1. From the {{site.data.keyword.cloud_notm}} console, navigate to your {{site.data.keyword.cos_full_notm}} service instance.
 1. From the menu, select **Buckets**.
 1. Open your bucket, and verify that you can see the `test.txt` that you created.
 
@@ -264,10 +260,7 @@ After you create PVC and deployment configuration files, create the deployment i
 If you have a stateful app such as a database, you can create stateful sets that use {{site.data.keyword.cos_full_notm}} to store your app's data. Alternatively, you can use an {{site.data.keyword.cloud_notm}} database-as-a-service, such as {{site.data.keyword.cloudant_short_notm}} and store your data in the cloud.
 {: shortdesc}
 
-Before you begin:
-- [Create and prepare your {{site.data.keyword.cos_full_notm}} service instance](/docs/openshift?topic=openshift-storage-cos-understand#create_cos_service).
-- [Create a secret to store your {{site.data.keyword.cos_full_notm}} service credentials](/docs/openshift?topic=openshift-storage-cos-understand#create_cos_secret).
-- [Decide on the configuration for your {{site.data.keyword.cos_full_notm}}](/docs/openshift?topic=openshift-storage_cos_install#configure_cos).
+Before you begin, complete the [prerequisite steps](/docs/openshift?topic=openshift-storage_cos_apps#before-you-begin) at the start of this topic.
 
 To deploy a stateful set that uses object storage:
 
@@ -309,7 +302,7 @@ To deploy a stateful set that uses object storage:
           terminationGracePeriodSeconds: 10
           containers:
           - name: nginx
-            image: k8s.gcr.io/nginx-slim:0.8
+            image: registry.k8s.io/nginx-slim:0.8
             ports:
             - containerPort: 80
               name: web
@@ -371,7 +364,7 @@ To deploy a stateful set that uses object storage:
           terminationGracePeriodSeconds: 10
           containers:
           - name: nginx
-            image: k8s.gcr.io/nginx-slim:0.8
+            image: registry.k8s.io/nginx-slim:0.8
             ports:
             - containerPort: 80
               name: web

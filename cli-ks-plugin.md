@@ -98,7 +98,7 @@ ibmcloud oc cluster addon disable image-key-synchronizer --cluster CLUSTER [--ve
 Minimum required permissions
 :   **Administrator** platform access role for the cluster in {{site.data.keyword.containerlong_notm}}
 
-#### Command options
+#### `cluster addon disable image-key-synchronizer` command options
 {: #cluster-addon-disable-image-key-synchronizer-options}
 
 `-c`, `--cluster CLUSTER`
@@ -137,7 +137,7 @@ ibmcloud oc cluster addon disable kube-terminal --cluster CLUSTER [-f]
 Minimum required permissions
 :   **Administrator** platform access role for the cluster in {{site.data.keyword.containerlong_notm}}
 
-#### Command options
+#### `cluster addon disable kube-terminal` command options
 {: #cluster-addon-disable-kube-terminal-options}
 
 `-c`, `--cluster CLUSTER`
@@ -164,7 +164,7 @@ ibmcloud oc cluster addon disable openshift-data-foundation --cluster CLUSTER [-
 Minimum required permissions
 :   **Administrator** platform access role for the cluster in {{site.data.keyword.containerlong_notm}}
 
-#### Command options
+#### `cluster addon disable openshift-data-foundation` command options
 {: #cluster-addon-disable-openshift-data-foundation-options}
 
 `-c`, `--cluster CLUSTER`
@@ -213,7 +213,7 @@ ibmcloud oc cluster addon disable vpc-block-csi-driver --cluster CLUSTER [-f]
 Minimum required permissions
 :   **Administrator** platform access role for the cluster in {{site.data.keyword.containerlong_notm}}
 
-#### Command options
+#### `cluster addon disable vpc-block-csi-driver` command options
 {: #cluster-addon-disable-vpc-block-csi-driver-options}
 
 `--cluster CLUSTER`
@@ -248,7 +248,7 @@ ibmcloud oc cluster addon enable image-key-synchronizer --cluster CLUSTER [--ver
 Minimum required permissions
 :   **Administrator** platform access role for the cluster in {{site.data.keyword.containerlong_notm}}
 
-#### Command options
+#### `cluster addon enable image-key-synchronizer` command options
 {: #cluster-addon-enable-image-key-synchronizer-options}
 
 `-c`, `--cluster CLUSTER`
@@ -284,7 +284,7 @@ ibmcloud oc cluster addon enable openshift-data-foundation --cluster CLUSTER [-f
 Minimum required permissions
 :   **Administrator** platform access role for the cluster in {{site.data.keyword.containerlong_notm}}
 
-#### Command options
+#### `cluster addon enable openshift-data-foundation` command options
 {: #cluster-addon-enable-openshift-data-foundation-options}
 
 `-c`, `--cluster CLUSTER`
@@ -319,7 +319,7 @@ ibmcloud oc cluster addon enable static-route --cluster CLUSTER [--version VERSI
 Minimum required permissions
 :   **Administrator** platform access role for the cluster in {{site.data.keyword.containerlong_notm}}
 
-#### Command options
+#### `cluster addon enable static-route` command options
 {: #cluster-addon-enable-static-route-options}
 
 `--cluster CLUSTER`
@@ -348,7 +348,7 @@ ibmcloud oc cluster addon get --addon ADDON --cluster CLUSTER [--output OUTPUT] 
 Minimum required permissions
 :   **Viewer** platform access role for the cluster in {{site.data.keyword.containerlong_notm}}
 
-#### Command options
+#### `cluster addon get` command options
 {: #cluster-addon-get-options}
 
 `--addon ADDON`
@@ -380,7 +380,7 @@ ibmcloud oc cluster addon ls --cluster CLUSTER
 Minimum required permissions
 :   **Viewer** platform access role for the cluster in {{site.data.keyword.containerlong_notm}}
 
-#### Command options
+#### `cluster addon ls` command options
 {: #cluster-addon-ls-options}
 
 `-c`, `--cluster CLUSTER`
@@ -406,7 +406,7 @@ ibmcloud oc cluster addon options --addon ADDON [--output OUTPUT] [-q] [--versio
 Minimum required permissions
 :   **Viewer** platform access role for the cluster in {{site.data.keyword.containerlong_notm}}
 
-#### Command options
+#### `cluster addon options` command options
 {: #cluster-addon-options-options}
 
 `--addon ADDON`
@@ -438,7 +438,7 @@ ibmcloud oc cluster addon update ADD-ON_NAME --cluster CLUSTER [-f] [-q] [--vers
 Minimum required permissions
 :   None
 
-#### Command options
+#### `cluster addon update` command options
 {: #cluster-addon-update-options}
 
 `-c`, `--cluster CLUSTER`
@@ -470,7 +470,7 @@ ibmcloud oc cluster addon versions [--addon ADD-ON_NAME] [--output json] [-q]
 Minimum required permissions
 :   None
 
-#### Command options
+#### `cluster addon versions` command options
 {: #cluster-addon-versions-options}
 
 `--addon ADD-ON_NAME`
@@ -512,7 +512,7 @@ ibmcloud oc cluster ca create --cluster CLUSTER [-f] [-q]
 Minimum required permissions
 :   **Administrator** platform access role for the cluster in {{site.data.keyword.containerlong_notm}}
 
-#### Command options
+#### `cluster ca create` command options
 {: #cluster-ca-create-options}
 
 `-c`, `--cluster CLUSTER`
@@ -549,7 +549,7 @@ ibmcloud oc cluster ca get --cluster CLUSTER [ --output OUTPUT] [-q]
 Minimum required permissions
 :   **Administrator** platform access role for the cluster in {{site.data.keyword.containerlong_notm}}
 
-#### Command options
+#### `cluster ca get` command options
 {: #cluster-ca-get-options}
 
 `-c`, `--cluster CLUSTER`
@@ -590,7 +590,7 @@ ibmcloud oc cluster ca rotate --cluster CLUSTER [-f] [-q]
 Minimum required permissions
 :   **Administrator** platform access role for the cluster in {{site.data.keyword.containerlong_notm}}
 
-#### Command options
+#### `cluster ca rotate` command options
 {: #cluster-ca-rotate-options}
 
 `-c`, `--cluster CLUSTER`
@@ -628,7 +628,7 @@ ibmcloud oc cluster ca status --cluster CLUSTER [-q]
 Minimum required permissions
 :   **Viewer** platform access role for the cluster in {{site.data.keyword.containerlong_notm}}
 
-#### Command options
+#### `cluster ca status` command options
 {: #cluster-ca-status-options}
 
 `-c`, `--cluster CLUSTER`
@@ -667,7 +667,7 @@ Minimum required permissions
 * **Platform**: If you have only a platform access role, you can perform this command, but you need a [service access role](/docs/openshift?topic=openshift-iam-platform-access-roles) to perform Kubernetes actions in the cluster.
 * **Service**: If you have the `service` access role, you can perform this command. However, your cluster admin must gather the cluster details for you by either running the `ibmcloud oc cluster ls` command or using the {{site.data.keyword.containerlong_notm}} console. After you receive the cluster name and ID, you can open the {{site.data.keyword.redhat_openshift_notm}} web console by opening your browser to `<master_URL>/console`.
 
-#### Command options
+#### `cluster config` command options
 {: #cluster-config-options}
 
 `-c`, `--cluster CLUSTER`
@@ -733,7 +733,7 @@ Minimum required permissions
 :   **Administrator** platform access role for {{site.data.keyword.registrylong_notm}} at the account level
 :   **Super User** role for IBM Cloud infrastructure
 
-#### Command options
+#### `cluster create classic` command options
 {: #cluster-create-classic-options}
 
 `--hardware HARDWARE`
@@ -881,7 +881,7 @@ Minimum required permissions
 :   [**Writer** or **Manager** service access role](/docs/openshift?topic=openshift-iam-platform-access-roles) for {{site.data.keyword.containerlong_notm}}.
 :   [**Administrator** platform access role](/docs/openshift?topic=openshift-iam-platform-access-roles) for {{site.data.keyword.registrylong_notm}} at the account level.
 
-#### Command options
+#### `cluster create vpc-gen2` command options
 {: #cluster-create-vpc-gen2-options}
 
 
@@ -1030,7 +1030,7 @@ ibmcloud oc cluster get --cluster CLUSTER [--show-resources] [--output json] [-q
 Minimum required permissions
 :   **Viewer** platform access role for the cluster in {{site.data.keyword.containerlong_notm}}
 
-#### Command options
+#### `cluster get` command options
 {: #cluster-get-options}
 
 `-c`, `--cluster CLUSTER`
@@ -1070,7 +1070,7 @@ ibmcloud oc cluster image-security disable --cluster CLUSTER [-q]
 Minimum required permissions
 :   **Administrator** platform access role for the cluster in {{site.data.keyword.containerlong_notm}}
 
-#### Command options
+#### `cluster image-security disable` command options
 {: #cluster-image-security-disable-options}
 
 `-c`, `--cluster CLUSTER`
@@ -1104,7 +1104,7 @@ ibmcloud oc cluster image-security enable --cluster CLUSTER [-f] [-q]
 Minimum required permissions
 :   **Administrator** platform access role for the cluster in {{site.data.keyword.containerlong_notm}}
 
-#### Command options
+#### `cluster image-security enable` command options
 {: #cluster-image-security-enable-options}
 
 `-c`, `--cluster CLUSTER`
@@ -1143,7 +1143,7 @@ ibmcloud oc cluster ls [--provider (classic | vpc-gen2)] [--location LOCATION] [
 Minimum required permissions
 :   **Viewer** platform access role for the cluster in {{site.data.keyword.containerlong_notm}}
 
-#### Command options
+#### `cluster ls` command options
 {: #cluster-ls-options}
 
 `--provider (classic | vpc-gen2)`
@@ -1182,7 +1182,7 @@ ibmcloud oc cluster master console-oauth-access get --cluster CLUSTER [--output 
 {: pre}
 {: #cluster-master-console-oauth-access-get-usage}
 
-#### Command options
+#### `cluster master console-oauth-access get` command options
 {: #cluster-master-console-oauth-access-get-options}
 
 `--cluster CLUSTER`, `-c CLUSTER`
@@ -1207,7 +1207,7 @@ ibmcloud oc cluster master console-oauth-access set --cluster CLUSTER [-f] [-q] 
 {: pre}
 {: #cluster-master-console-oauth-access-set-usage}
 
-#### Command options
+#### `cluster master console-oauth-access set` command options
 {: #cluster-master-console-oauth-access-set-options}
 
 `--cluster CLUSTER`, `-c CLUSTER`
@@ -1239,7 +1239,7 @@ ibmcloud oc cluster master pod-security get --cluster CLUSTER [--output OUTPUT] 
 Minimum required permissions
 :   **Viewer** platform access role for the cluster in {{site.data.keyword.containerlong_notm}}
 
-#### Command options
+#### `cluster master pod-security get` command options
 {: #cluster-master-pod-security-get-options}
 
 `-c`, `--cluster CLUSTER`
@@ -1275,7 +1275,7 @@ ibmcloud oc cluster master pod-security policy disable --cluster CLUSTER [-q]
 Minimum required permissions
 :   **Administrator** platform access role for the cluster in {{site.data.keyword.containerlong_notm}}
 
-#### Command options
+#### `cluster master pod-security policy disable` command options
 {: #cluster-master-pod-security-policy-disable-options}
 
 `-c`, `--cluster CLUSTER`
@@ -1308,7 +1308,7 @@ ibmcloud oc cluster master pod-security policy enable --cluster CLUSTER [--outpu
 Minimum required permissions
 :   **Administrator** platform access role for the cluster in {{site.data.keyword.containerlong_notm}}
 
-#### Command options
+#### `cluster master pod-security policy enable` command options
 {: #cluster-master-pod-security-policy-enable-options}
 
 `-c`, `--cluster CLUSTER`
@@ -1344,7 +1344,7 @@ ibmcloud oc cluster master pod-security policy get --cluster CLUSTER [--output O
 Minimum required permissions
 :   **Viewer** platform access role for the cluster in {{site.data.keyword.containerlong_notm}}
 
-#### Command options
+#### `cluster master pod-security policy get` command options
 {: #cluster-master-pod-security-policy-get-options}
 
 `-c`, `--cluster CLUSTER`
@@ -1380,7 +1380,7 @@ ibmcloud oc cluster master pod-security set --cluster CLUSTER [-q]
 Minimum required permissions
 :   **Editor** platform access role for the cluster in {{site.data.keyword.containerlong_notm}}
 
-#### Command options
+#### `cluster master pod-security set` command options
 {: #cluster-master-pod-security-set-options}
 
 `-c`, `--cluster CLUSTER`
@@ -1416,7 +1416,7 @@ ibmcloud oc cluster master pod-security unset --cluster CLUSTER [-q]
 Minimum required permissions
 :   **Editor** platform access role for the cluster in {{site.data.keyword.containerlong_notm}}
 
-#### Command options
+#### `cluster master pod-security unset` command options
 {: #cluster-master-pod-security-unset-options}
 
 `-c`, `--cluster CLUSTER`
@@ -1465,7 +1465,7 @@ ibmcloud oc cluster master private-service-endpoint allowlist add --cluster CLUS
 Minimum required permissions
 :   **Editor** platform access role for the cluster in {{site.data.keyword.containerlong_notm}}
 
-#### Command options
+#### `cluster master private-service-endpoint allowlist add` command options
 {: #cluster-master-private-service-endpoint-allowlist-options}
 
 `-c`, `--cluster CLUSTER`
@@ -1549,7 +1549,7 @@ ibmcloud oc cluster master private-service-endpoint disable --cluster CLUSTER [-
 Minimum required permissions
 :   **Administrator** platform access role for the cluster in {{site.data.keyword.containerlong_notm}}
 
-#### Command options
+#### `cluster master private-service-endpoint disable` command options
 {: #cluster-master-private-service-endpoint-disable-options}
 
 `-f`
@@ -1593,7 +1593,7 @@ ibmcloud oc cluster master private-service-endpoint enable --cluster CLUSTER [-q
 Minimum required permissions
 :   **Administrator** platform access role for the cluster in {{site.data.keyword.containerlong_notm}}
 
-#### Command options
+#### `cluster master private-service-endpoint enable` command options
 {: #cluster-master-private-service-endpoint-enable-options}
 
 `-c`, `--cluster CLUSTER`
@@ -1638,7 +1638,7 @@ ibmcloud oc cluster master public-service-endpoint enable --cluster CLUSTER [-q]
 Minimum required permissions
 :   **Administrator** platform access role for the cluster in {{site.data.keyword.containerlong_notm}}
 
-#### Command options
+#### `cluster master public-service-endpoint enable` command options
 {: #cluster-master-public-service-endpoint-enable-options}
 
 `-c`, `--cluster CLUSTER`
@@ -1679,7 +1679,7 @@ ibmcloud oc cluster master refresh --cluster CLUSTER [-q]
 Minimum required permissions
 :   **Operator** platform access role for the cluster in {{site.data.keyword.containerlong_notm}}
 
-#### Command options
+#### `cluster master refresh` command options
 {: #cluster-master-refresh-options}
 
 `-c`, `--cluster CLUSTER`
@@ -1709,7 +1709,7 @@ ibmcloud oc cluster master update --cluster CLUSTER [--version MAJOR.MINOR.PATCH
 Minimum required permissions
 :   **Operator** platform access role for the cluster in {{site.data.keyword.containerlong_notm}}
 
-#### Command options
+#### `cluster master update` command options
 {: #cluster-master-update-options}
 
 `-c`, `--cluster CLUSTER`
@@ -1760,7 +1760,7 @@ Minimum required permissions
 :   **Operator or Administrator** platform access role for the cluster in {{site.data.keyword.containerlong_notm}}
 :   **Administrator** platform access role in {{site.data.keyword.registrylong_notm}} across all regions and resource groups. The policy can't be scoped to a particular region or resource group.
 
-#### Command options
+#### `cluster pull-secret apply` command options
 {: #cluster-pull-secret-apply-options}
 
 
@@ -1784,7 +1784,7 @@ ibmcloud oc cluster rm --cluster CLUSTER [--force-delete-storage] [--skip-advanc
 Minimum required permissions
 :   **Administrator** platform access role for the cluster in {{site.data.keyword.containerlong_notm}}
 
-#### Command options
+#### `cluster rm` command options
 {: #cluster-rm-options}
 
 `-c`, `--cluster CLUSTER`
@@ -1832,7 +1832,7 @@ ibmcloud oc cluster service bind --cluster CLUSTER --namespace KUBERNETES_NAMESP
 Minimum required permissions
 :   **Editor** platform access role for the cluster in {{site.data.keyword.containerlong_notm}}
 
-#### Command options
+#### `cluster service bind` command options
 {: #cluster-service-bind-options}
 
 `-c`, `--cluster CLUSTER`
@@ -1880,7 +1880,7 @@ ibmcloud oc cluster service ls --cluster CLUSTER [--namespace KUBERNETES_NAMESPA
 Minimum required permissions
 :   **Viewer** platform access role for the cluster in {{site.data.keyword.containerlong_notm}}
 
-#### Command options
+#### `cluster service ls` command options
 {: #cluster-service-ls-options}
 
 `-c`, `--cluster CLUSTER`
@@ -1927,7 +1927,7 @@ ibmcloud oc cluster service unbind --cluster CLUSTER --namespace KUBERNETES_NAME
 Minimum required permissions
 :   **Editor** platform access role for the cluster in {{site.data.keyword.containerlong_notm}}
 
-#### Command options
+#### `cluster service unbind` command options
 {: #cluster-service-unbind-options}
 
 `-c`, `--cluster CLUSTER`
@@ -1972,7 +1972,7 @@ ibmcloud oc cluster subnet add --cluster CLUSTER --subnet-id SUBNET [-q]
 Minimum required permissions
 :   **Operator** platform access role for the cluster in {{site.data.keyword.containerlong_notm}}
 
-#### Command options
+#### `cluster subnet add` command options
 {: #cluster-subnet-add-options}
 
 `-c`, `--cluster CLUSTER`
@@ -2014,7 +2014,7 @@ ibmcloud oc cluster subnet create --cluster CLUSTER --size SIZE --vlan VLAN_ID [
 Minimum required permissions
 :   **Operator** platform access role for the cluster in {{site.data.keyword.containerlong_notm}}
 
-#### Command options
+#### `cluster subnet create` command options
 {: #cluster-subnet-create-options}
 
 `-c`, `--cluster CLUSTER`
@@ -2058,7 +2058,7 @@ ibmcloud oc cluster subnet detach --cluster CLUSTER --subnet-id SUBNET_ID [-f] [
 Minimum required permissions
 :   **Operator** platform access role for the cluster in {{site.data.keyword.containerlong_notm}}
 
-#### Command options
+#### `cluster subnet detach` command options
 {: #cluster-subnet-detach-options}
 
 `-c`, `--cluster CLUSTER`
@@ -2107,7 +2107,7 @@ ibmcloud oc cluster user-subnet add --cluster CLUSTER --subnet-cidr SUBNET_CIDR 
 Minimum required permissions
 :   **Operator** platform access role for the cluster in {{site.data.keyword.containerlong_notm}}
 
-#### Command options
+#### `cluster subnet detach` command options
 {: #cluster-user-subnet-add-options}
 
 `-c`, `--cluster CLUSTER`
@@ -2149,7 +2149,7 @@ ibmcloud oc cluster user-subnet rm --cluster CLUSTER --subnet-cidr SUBNET_CIDR -
 Minimum required permissions
 :   **Operator** platform access role for the cluster in {{site.data.keyword.containerlong_notm}}
 
-#### Command options
+#### `cluster subnet detach` command options
 {: #cluster-user-subnet-rm-options}
 
 `-c`, `--cluster CLUSTER`
@@ -2195,7 +2195,7 @@ ibmcloud oc dedicated flavors --zone ZONE --provider PROVIDER
 Minimum required permissions
 :   **Operator** platform access role for the cluster in {{site.data.keyword.containerlong_notm}}.
 
-#### Command options
+#### `cluster subnet detach` command options
 {: #dedicated-flavors-options}
 
 `--zone ZONE`
@@ -2232,7 +2232,7 @@ ibmcloud oc dedicated host create --flavor FLAVOR --pool POOL --zone ZONE [--out
 Minimum required permissions
 :   **Operator** platform access role for the cluster in {{site.data.keyword.containerlong_notm}}.
 
-#### Command options
+#### `cluster subnet detach` command options
 {: #dedicated-host-create-options}
 
 `-- flavor FLAVOR`
@@ -2272,7 +2272,7 @@ ibmcloud oc dedicated host get --host HOST --pool POOL [--output OUTPUT] [-q]
 Minimum required permissions
 :   **Viewer** platform access role for the cluster in {{site.data.keyword.containerlong_notm}}.
 
-#### Command options
+#### `cluster subnet detach` command options
 {: #dedicated-host-get-options}
 
 `--host HOST`
@@ -2312,7 +2312,7 @@ ibmcloud oc dedicated host ls --pool POOL [--output OUTPUT] [-q]
 Minimum required permissions
 :   **Viewer** platform access role for the cluster in {{site.data.keyword.containerlong_notm}}.
 
-#### Command options
+#### `cluster subnet detach` command options
 {: #dedicated-host-ls-options}
 
 `--pool POOL`
@@ -2346,7 +2346,7 @@ ibmcloud oc dedicated host placement disable --host HOST --pool POOL
 Minimum required permissions
 :   **Administrator** platform access role for the cluster in {{site.data.keyword.containerlong_notm}}.
 
-#### Command options
+#### `cluster subnet detach` command options
 {: #dedicated-host-placement-disable-options}
 
 `--host HOST`
@@ -2382,7 +2382,7 @@ ibmcloud oc dedicated host placement enable --host HOST --pool POOL
 Minimum required permissions
 :   **Administrator** platform access role for the cluster in {{site.data.keyword.containerlong_notm}}.
 
-#### Command options
+#### `cluster subnet detach` command options
 {: #dedicated-host-placement-enable-options}
 
 `--host HOST`
@@ -2418,7 +2418,7 @@ ibmcloud oc dedicated host rm --host HOST --pool POOL [-q]
 Minimum required permissions
 :   **Administrator** platform access role for the cluster in {{site.data.keyword.containerlong_notm}}.
 
-#### Command options
+#### `cluster subnet detach` command options
 {: #dedicated-host-rm-options}
 
 `--pool POOL`
@@ -2454,7 +2454,7 @@ ibmcloud oc dedicated pool create --flavor-class CLASS --metro METRO --name NAME
 Minimum required permissions
 :   **Administrator** platform access role for the cluster in {{site.data.keyword.containerlong_notm}}.
 
-#### Command options
+#### `cluster subnet detach` command options
 {: #dedicated-pool-create-options}
 
 `--flavor-class CLASS`
@@ -2496,7 +2496,7 @@ ibmcloud oc dedicated pool get --pool POOL [--output OUTPUT] [-q]
 Minimum required permissions
 :   **Viewer** platform access role for the cluster in {{site.data.keyword.containerlong_notm}}.
 
-#### Command options
+#### `cluster subnet detach` command options
 {: #dedicated-pool-get-options}
 
 `--pool POOL`
@@ -2531,7 +2531,7 @@ ibmcloud oc dedicated pool ls [--output OUTPUT] [-q]
 Minimum required permissions
 :   **Viewer** platform access role for the cluster in {{site.data.keyword.containerlong_notm}}.
 
-#### Command options
+#### `cluster subnet detach` command options
 {: #dedicated-pool-ls-options}
 
 `--output json`
@@ -2564,7 +2564,7 @@ ibmcloud oc dedicated pool rm --pool POOL [-q]
 Minimum required permissions
 :   **Administrator** platform access role for the cluster in {{site.data.keyword.containerlong_notm}}.
 
-#### Command options
+#### `cluster subnet detach` command options
 {: #dedicated-pool-rm-options}
 
 `--pool POOL`
@@ -2606,7 +2606,7 @@ ibmcloud oc worker add --cluster CLUSTER [--hardware HARDWARE] --flavor FLAVOR -
 Minimum required permissions
 :   **Operator** platform access role for the cluster in {{site.data.keyword.containerlong_notm}}
 
-#### Command options
+#### `cluster subnet detach` command options
 {: #worker-add-options}
 
 `-c`, `--cluster CLUSTER`
@@ -2666,7 +2666,7 @@ ibmcloud oc worker get --cluster CLUSTER_NAME_OR_ID --worker WORKER_NODE_ID [--o
 Minimum required permissions
 :   **Viewer** platform access role for the cluster in {{site.data.keyword.containerlong_notm}}
 
-#### Command options
+#### `worker get` command options
 {: #worker-get-options}
 
 `-c, --cluster CLUSTER_NAME_OR_ID`
@@ -2707,7 +2707,7 @@ ibmcloud oc worker ls --cluster CLUSTER [--worker-pool POOL] [--show-pools] [--s
 Minimum required permissions
 :   **Viewer** platform access role for the cluster in {{site.data.keyword.containerlong_notm}}
 
-#### Command options
+#### `worker ls` command options
 {: #worker-ls-options}
 
 `-c`, `--cluster CLUSTER`
@@ -2790,7 +2790,7 @@ ibmcloud oc worker reboot [--hard] --cluster CLUSTER --worker WORKER_ID [--skip-
 Minimum required permissions
 :   **Operator** platform access role for the cluster in {{site.data.keyword.containerlong_notm}}
 
-#### Command options
+#### `worker reboot` command options
 {: #worker-reboot-options}
 
 `-c`, `--cluster CLUSTER`
@@ -2863,7 +2863,7 @@ ibmcloud oc worker reload --worker WORKER_ID [--worker WORKER_ID ...] [--cluster
 Minimum required permissions
 :   **Operator** platform access role for the cluster in {{site.data.keyword.containerlong_notm}}
 
-#### Command options
+#### `worker reload` command options
 {: #worker-reload-options}
 
 `-w, --worker WORKER`
@@ -2943,7 +2943,7 @@ ibmcloud oc worker replace --cluster CLUSTER_NAME_OR_ID --worker WORKER_ID [--up
 Minimum required permissions
 :   **Operator** platform access role for the cluster in {{site.data.keyword.containerlong_notm}}.
 
-#### Command options
+#### `worker replace` command options
 {: #worker-replace-options}
 
 `-c`, `--cluster CLUSTER`
@@ -2987,7 +2987,7 @@ ibmcloud oc worker rm --cluster CLUSTER --worker WORKER [-f] [-q]
 Minimum required permissions
 :   **Operator** platform access role for the cluster in {{site.data.keyword.containerlong_notm}}
 
-#### Command options
+#### `worker rm` command options
 {: #worker-rm-options}
 
 `-c`, `--cluster CLUSTER`
@@ -3040,7 +3040,7 @@ ibmcloud oc worker update --cluster CLUSTER --worker WORKER_ID [-f] [-q]
 Minimum required permissions
 :   **Operator** platform access role for the cluster in {{site.data.keyword.containerlong_notm}}
 
-#### Command options
+#### `worker update` command options
 {: #worker-update-options}
 
 `-c`, `--cluster CLUSTER`
@@ -3092,7 +3092,7 @@ ibmcloud oc worker-pool create classic --name POOL_NAME --cluster CLUSTER --flav
 Minimum required permissions
 :   **Operator** platform access role for the cluster in {{site.data.keyword.containerlong_notm}}
 
-#### Command options
+#### `worker-pool create classic` command options
 {: #worker-pool-create-classic-options}
 
 `--name POOL_NAME`
@@ -3162,7 +3162,7 @@ ibmcloud oc worker-pool create vpc-gen2 --name <worker_pool_name> --cluster <clu
 Minimum required permissions
 :   **Operator** platform access role for the cluster in {{site.data.keyword.containerlong_notm}}.
 
-#### Command options
+#### `worker-pool create vpc-gen2` command options
 {: #worker-pool-create-vpc-gen2-options}
 
 
@@ -3249,7 +3249,7 @@ ibmcloud oc worker-pool get --worker-pool WORKER_POOL --cluster CLUSTER [--outpu
 Minimum required permissions
 :   **Viewer** platform access role for the cluster in {{site.data.keyword.containerlong_notm}}
 
-#### Command options
+#### `worker-pool get` command options
 {: #worker-pool-get-options}
 
 `-p, --worker-pool WORKER_POOL`
@@ -3293,7 +3293,7 @@ ibmcloud oc worker-pool label rm --cluster CLUSTER --worker-pool POOL [-f] [-q]
 Minimum required permissions
 :   **Operator** platform access role for the cluster in {{site.data.keyword.containerlong_notm}}
 
-#### Command options
+#### `worker-pool label rm` command options
 {: #worker-pool-label-rm-options}
 
 `-c`, `--cluster CLUSTER`
@@ -3334,7 +3334,7 @@ ibmcloud oc worker-pool label set --cluster CLUSTER --label LABEL [--label LABEL
 Minimum required permissions
 :   **Operator** platform access role for the cluster in {{site.data.keyword.containerlong_notm}}
 
-#### Command options
+#### `worker-pool label set` command options
 {: #worker-pool-label-set-options}
 
 `-c`, `--cluster CLUSTER`
@@ -3378,7 +3378,7 @@ ibmcloud oc worker-pool ls --cluster CLUSTER [--output json] [-q]
 Minimum required permissions
 :   **Viewer** platform access role for the cluster in {{site.data.keyword.containerlong_notm}}
 
-#### Command options
+#### `worker-pool ls` command options
 {: #worker-pool-ls-options}
 
 `-c, --cluster CLUSTER_NAME_OR_ID`
@@ -3410,7 +3410,7 @@ ibmcloud oc worker-pool operating-system set --cluster CLUSTER --operating-syste
 {: pre}
 {: #worker-pool-operating-system-set-usage}
 
-#### Command options
+#### `worker-pool operating-system set` command options
 {: #worker-pool-operating-system-set-options}
 
 `--cluster CLUSTER`, `-c CLUSTER`
@@ -3448,7 +3448,7 @@ ibmcloud oc worker-pool rebalance --cluster CLUSTER --worker-pool WORKER_POOL [-
 Minimum required permissions
 :   **Operator** platform access role for the cluster in {{site.data.keyword.containerlong_notm}}
 
-#### Command options
+#### `worker-pool rebalance` command options
 {: #worker-pool-rebalance-options}
 
 `-c`, `--cluster CLUSTER`
@@ -3486,7 +3486,7 @@ ibmcloud oc worker-pool resize --cluster CLUSTER --worker-pool WORKER_POOL --siz
 Minimum required permissions
 :   **Operator** platform access role for the cluster in {{site.data.keyword.containerlong_notm}}
 
-#### Command options
+#### `worker-pool resize` command options
 {: #worker-pool-resize-options}
 
 
@@ -3529,7 +3529,7 @@ ibmcloud oc worker-pool rm --worker-pool WORKER_POOL --cluster CLUSTER [-q] [-f]
 Minimum required permissions
 :   **Operator** platform access role for the cluster in {{site.data.keyword.containerlong_notm}}
 
-#### Command options
+#### `worker-pool rm` command options
 {: #worker-pool-rm-options}
 
 `-p, --worker-pool WORKER_POOL`
@@ -3579,7 +3579,7 @@ ibmcloud oc worker-pool taint set --worker-pool WORKER_POOL --cluster CLUSTER --
 Minimum required permissions
 :   **Operator** platform access role for the cluster in {{site.data.keyword.containerlong_notm}}
 
-#### Command options
+#### `worker-pool taint set` command options
 {: #worker-pool-taint-options}
 
 `-p, --worker-pool WORKER_POOL`
@@ -3623,7 +3623,7 @@ ibmcloud oc worker-pool taint rm --worker-pool WORKER_POOL --cluster CLUSTER [-f
 Minimum required permissions
 :   **Operator** platform access role for the cluster in {{site.data.keyword.containerlong_notm}}
 
-#### Command options
+#### `worker-pool taint rm` command options
 {: #worker-pool-taint-rm-options}
 
 `-p, --worker-pool WORKER_POOL`
@@ -3661,7 +3661,7 @@ ibmcloud oc worker-pool zones --worker-pool WORKER_POOL --cluster CLUSTER [-q] [
 Minimum required permissions
 :   **Viewer** platform access role for the cluster in {{site.data.keyword.containerlong_notm}}
 
-#### Command options
+#### `worker-pool zones` command options
 {: #worker-pool-zones-options}
 
 `-c`, `--cluster CLUSTER`
@@ -3710,7 +3710,7 @@ ibmcloud oc zone add classic --zone ZONE --cluster CLUSTER --worker-pool WORKER_
 Minimum required permissions
 :   **Operator** platform access role for the cluster in {{site.data.keyword.containerlong_notm}}
 
-#### Command options
+#### `zone add classic` command options
 {: #zone-add-classic-options}
 
 `--zone ZONE`
@@ -3766,7 +3766,7 @@ ibmcloud oc zone add vpc-gen2 --zone ZONE --subnet-id VPC_SUBNET_ID --cluster CL
 Minimum required permissions
 :   **Operator** platform access role for the cluster in {{site.data.keyword.containerlong_notm}}
 
-#### Command options
+#### `zone add vpc-gen2` command options
 {: #zone-add-vpc-gen2-options}
 
 `--zone ZONE`
@@ -3815,7 +3815,7 @@ ibmcloud oc zone ls --provider classic | satellite | vpc-gen2 [--location LOCATI
 
 **Minimum permissions**: None
 
-#### Command options
+#### `zone ls` command options
 {: #zone-ls-options}
 
 `--provider (classic | satellite | vpc-gen2)`
@@ -3836,6 +3836,7 @@ ibmcloud oc zone ls --provider classic | satellite | vpc-gen2 [--location LOCATI
 
 #### Example ``ibmcloud oc zone ls`` command
 {: #icks-zone-ls-example}
+
 ```sh
 ibmcloud oc zone ls -l ap
 ```
@@ -3859,7 +3860,7 @@ ibmcloud oc zone network-set --zone ZONE --cluster CLUSTER  --private-vlan PRIVA
 Minimum required permissions
 :   **Operator** platform access role for the cluster in {{site.data.keyword.containerlong_notm}}
 
-#### Command options
+#### `zone network-set` command options
 {: #zone-network-set-options}
 
 `--zone ZONE`
@@ -3949,7 +3950,7 @@ ibmcloud oc zone rm --cluster CLUSTER --zone ZONE --worker-pool WORKER_POOL [-f]
 Minimum required permissions
 :   **Operator** platform access role for the cluster in {{site.data.keyword.containerlong_notm}}
 
-#### Command options
+#### `zone rm` command options
 {: #zone-rm-options}
 
 `-c`, `--cluster CLUSTER`
@@ -4003,7 +4004,7 @@ ibmcloud oc ingress alb autoscale get --alb ALB --cluster CLUSTER [--output OUTP
 Minimum required permissions
 :   **Editor** platform access role for the cluster in {{site.data.keyword.containerlong_notm}}
 
-#### Command options
+#### `ingress alb autoscale get` command options
 {: #ingress-alb-autoscale-get-options}
 
 `--alb ALB`
@@ -4043,7 +4044,7 @@ ibmcloud oc ingress alb autoscale set --alb ALB --cluster CLUSTER --max-replicas
 Minimum required permissions
 :   **Editor** platform access role for the cluster in {{site.data.keyword.containerlong_notm}}
 
-#### Command options
+#### `ingress alb autoscale set` command options
 {: #ingress-alb-autoscale-set-options}
 
 `--alb ALB`
@@ -4096,7 +4097,7 @@ ibmcloud oc ingress alb autoscale unset --alb ALB --cluster CLUSTER [--output OU
 Minimum required permissions
 :   **Editor** platform access role for the cluster in {{site.data.keyword.containerlong_notm}}
 
-#### Command options
+#### `ingress alb autoscale unset` command options
 {: #ingress-alb-autoscale-unset-options}
 
 `--alb ALB`
@@ -4139,7 +4140,7 @@ ibmcloud oc ingress alb autoupdate disable --cluster CLUSTER [-q]
 Minimum required permissions
 :   **Editor** platform access role for the cluster in {{site.data.keyword.containerlong_notm}}
 
-#### Command options
+#### `ingress alb autoupdate disable` command options
 {: #ingress-alb-autoupdate-disable-options}
 
 `-c`, `--cluster CLUSTER`
@@ -4176,7 +4177,7 @@ ibmcloud oc ingress alb autoupdate enable --cluster CLUSTER [-q]
 Minimum required permissions
 :   **Editor** platform access role for the cluster in {{site.data.keyword.containerlong_notm}}
 
-#### Command options
+#### `ingress alb autoupdate enable` command options
 {: #ingress-alb-autoupdate-enable-options}
 
 `-c`, `--cluster CLUSTER`
@@ -4202,7 +4203,7 @@ ibmcloud oc ingress alb autoupdate get --cluster CLUSTER [--output json] [-q]
 Minimum required permissions
 :   **Editor** platform access role for the cluster in {{site.data.keyword.containerlong_notm}}
 
-#### Command options
+#### `ingress alb autoupdate get` command options
 {: #ingress-alb-autoupdate-get-options}
 
 `-c`, `--cluster CLUSTER`
@@ -4232,7 +4233,7 @@ ibmcloud oc ingress alb create classic --cluster CLUSTER --type (PUBLIC|PRIVATE)
 Minimum required permissions
 :   **Editor** platform access role for the cluster in {{site.data.keyword.containerlong_notm}}
 
-#### Command options
+#### `ingress alb create classic` command options
 {: #ingress-alb-create-classic-options}
 
 `-c`, `--cluster CLUSTER`
@@ -4286,7 +4287,7 @@ ibmcloud oc ingress alb disable --alb ALB_ID --cluster CLUSTER [-q]
 Minimum required permissions
 :   **Editor** platform access role for the cluster in {{site.data.keyword.containerlong_notm}}
 
-#### Command options
+#### `ingress alb disable` command options
 {: #ingress-alb-disable-options}
 
 `--alb ALB_ID`
@@ -4332,7 +4333,7 @@ ibmcloud oc ingress alb enable classic --alb ALB_ID --cluster CLUSTER [--ip IP_A
 Minimum required permissions
 :   **Editor** platform access role for the cluster in {{site.data.keyword.containerlong_notm}}
 
-#### Command options
+#### `ingress alb enable classic` command options
 {: #ingress-alb-enable-classic-options}
 
 `--alb ALB_ID`
@@ -4379,7 +4380,7 @@ ibmcloud oc ingress alb get --alb ALB_ID --cluster CLUSTER [--output json] [-q]
 Minimum required permissions
 :   **Viewer** platform access role for the cluster in {{site.data.keyword.containerlong_notm}}
 
-#### Command options
+#### `ingress alb get` command options
 {: #ingress-alb-get-options}
 
 `--alb ALB_ID`
@@ -4419,7 +4420,7 @@ ibmcloud oc ingress alb health-checker disable --cluster CLUSTER [-q]
 Minimum required permissions
 :   **Editor** platform access role for the cluster in {{site.data.keyword.containerlong_notm}}
 
-#### Command options
+#### `ingress alb health-checker disable` command options
 {: #ingress-alb-health-checker-disable-options}
 
 `-c`, `--cluster CLUSTER`
@@ -4453,7 +4454,7 @@ ibmcloud oc ingress alb health-checker enable --cluster CLUSTER [-q]
 Minimum required permissions
 :   **Editor** platform access role for the cluster in {{site.data.keyword.containerlong_notm}}
 
-#### Command options
+#### `ingress alb health-checker enable` command options
 {: #ingress-alb-health-checker-enable-options}
 
 `-c`, `--cluster CLUSTER`
@@ -4487,7 +4488,7 @@ ibmcloud oc ingress alb health-checker get --cluster CLUSTER [--output OUTPUT] [
 Minimum required permissions
 :   **Viewer** platform access role for the cluster in {{site.data.keyword.containerlong_notm}}
 
-#### Command options
+#### `ingress alb health-checker get` command options
 {: #ingress-alb-health-checker-get-options}
 
 `-c`, `--cluster CLUSTER`
@@ -4527,7 +4528,7 @@ ibmcloud oc ingress alb ls --cluster CLUSTER [--output json] [-q]
 Minimum required permissions
 :   **Viewer** platform access role for the cluster in {{site.data.keyword.containerlong_notm}}
 
-#### Command options
+#### `ingress alb ls` command options
 {: #ingress-alb-ls-options}
 
 `*-c, --cluster *CLUSTER`
@@ -4569,7 +4570,7 @@ ibmcloud oc ingress alb update --cluster CLUSTER [--alb ALB1_ID --alb ALB2_ID ..
 Minimum required permissions
 :   **Editor** platform access role for the cluster in {{site.data.keyword.containerlong_notm}}
 
-#### Command options
+#### `ingress alb update` command options
 {: #ingress-alb-update-options}
 
 `-c`, `--cluster CLUSTER`
@@ -4616,7 +4617,7 @@ ibmcloud oc ingress alb versions [--output json] [-q]
 Minimum required permissions
 :   **Viewer** platform access role for {{site.data.keyword.containerlong_notm}}
 
-#### Command options
+#### `ingress alb versions` command options
 {: #ingress-alb-versions-options}
 
 `--output json`
@@ -4640,7 +4641,7 @@ ibmcloud oc ingress domain create --cluster CLUSTER [--crn CRN] [--default] [--d
 Minimum required permissions
 :   **Administrator** platform access role for the cluster in {{site.data.keyword.containerlong_notm}}
 
-#### Command options
+#### `ingress domain create` command options
 {: #ingress-domain-create-options}
 
 `-c`, `--cluster CLUSTER`
@@ -4698,7 +4699,7 @@ ibmcloud oc ingress domain default replace --cluster CLUSTER --domain DOMAIN [-q
 Minimum required permissions
 :   **Operator** platform access role for the cluster in {{site.data.keyword.containerlong_notm}}.
 
-#### Command options
+#### `ingress domain default replace` command options
 {: #ingress-domain-default-replace-options}
 
 `-c`, `--cluster CLUSTER`
@@ -4732,7 +4733,7 @@ ibmcloud oc ingress domain get --cluster CLUSTER --domain DOMAIN [--output OUTPU
 Minimum required permissions
 :   **Viewer** platform access role for {{site.data.keyword.containerlong_notm}}
 
-#### Command options
+#### `ingress domain get` command options
 {: #ingress-domain-get-options}
 
 `-c`, `--cluster CLUSTER`
@@ -4770,7 +4771,7 @@ ibmcloud oc ingress domain ls --cluster CLUSTER [--output OUTPUT] [-q]
 Minimum required permissions
 :   **Viewer** platform access role for {{site.data.keyword.containerlong_notm}}
 
-#### Command options
+#### `ingress domain ls` command options
 {: #ingress-domain-ls-options}
 
 `-c`, `--cluster CLUSTER`
@@ -4804,7 +4805,7 @@ ibmcloud oc ingress domain rm --cluster CLUSTER --domain DOMAIN [-f] [-q]
 Minimum required permissions
 :   **Operator** platform access role for the cluster in {{site.data.keyword.containerlong_notm}}
 
-#### Command options
+#### `ingress domain rm` command options
 {: #ingress-domain-rm-options}
 
 `-c`, `--cluster CLUSTER`
@@ -4840,7 +4841,7 @@ ibmcloud oc ingress domain secret regenerate --cluster CLUSTER --domain DOMAIN [
 Minimum required permissions
 :   **Editor** platform access role for the cluster in {{site.data.keyword.containerlong_notm}}
 
-#### Command options
+#### `ingress domain secret regenerate` command options
 {: #ingress-domain-secret-regenerate-options}
 
 `-c`, `--cluster CLUSTER`
@@ -4877,7 +4878,7 @@ ibmcloud oc ingress domain secret rm --cluster CLUSTER --domain DOMAIN [-f] [--o
 Minimum required permissions
 :   **Operator** platform access role for the cluster in {{site.data.keyword.containerlong_notm}}
 
-#### Command options
+#### `ingress domain secret rm` command options
 {: #ingress-domain-secret-rm-options}
 
 `-c`, `--cluster CLUSTER`
@@ -4919,7 +4920,7 @@ Note that when you add IP addresses or hostnames, you must include any IPs or ho
 Minimum required permissions
 :   **Editor** platform access role for the cluster in {{site.data.keyword.containerlong_notm}}
 
-#### Command options
+#### `ingress domain update` command options
 {: #ingress-domain-update-options}
 
 `-c`, `--cluster CLUSTER`
@@ -4966,7 +4967,7 @@ ibmcloud oc ingress instance default set --cluster CLUSTER --crn CRN --name NAME
 Minimum required permissions
 :   **Administrator** platform access role for the cluster in {{site.data.keyword.containerlong_notm}}
 
-#### Command options
+#### `ingress instance default set` command options
 {: #ingress-instance-default-set-options}
 
 `--c, --cluster CLUSTER`
@@ -5011,7 +5012,7 @@ ibmcloud oc ingress instance default unset --cluster CLUSTER --crn CRN --name NA
 Minimum required permissions
 :   **Administrator** platform access role for the cluster in {{site.data.keyword.containerlong_notm}}
 
-#### Command options
+#### `ingress instance default unset` command options
 {: #ingress-instance-default-unset-options}
 
 `--c, --cluster CLUSTER`
@@ -5050,7 +5051,7 @@ ibmcloud oc ingress instance get --cluster CLUSTER --name NAME [--output OUTPUT]
 Minimum required permissions
 :   **Viewer** platform access role for the cluster in {{site.data.keyword.containerlong_notm}}
 
-#### Command options
+#### `ingress instance get` command options
 {: #ingress-instance-get-options}
 
 `--c, --cluster CLUSTER`
@@ -5089,7 +5090,7 @@ ibmcloud oc ingress instance ls --cluster CLUSTER [--output OUTPUT] [-q] [--show
 Minimum required permissions
 :   **Viewer** platform access role for the cluster in {{site.data.keyword.containerlong_notm}}
 
-#### Command options
+#### `ingress instance ls` command options
 {: #ingress-instance-ls-options}
 
 `--c, --cluster CLUSTER`
@@ -5128,7 +5129,7 @@ ibmcloud oc ingress instance register --cluster CLUSTER --crn CRN [--is-default]
 Minimum required permissions
 :   **Administrator** platform access role for the cluster in {{site.data.keyword.containerlong_notm}}
 
-#### Command options
+#### `ingress instance register` command options
 {: #ingress-instance-register-options}
 
 `--c, --cluster CLUSTER`
@@ -5170,7 +5171,7 @@ ibmcloud oc ingress instance unregister --cluster CLUSTER --name NAME [-q]
 Minimum required permissions
 :   **Administrator** platform access role for the cluster in {{site.data.keyword.containerlong_notm}}
 
-#### Command options
+#### `ingress instance unregister` command options
 {: #ingress-instance-unregister-options}
 
 `--c, --cluster CLUSTER`
@@ -5208,7 +5209,7 @@ ibmcloud oc ingress lb get --cluster CLUSTER [--output OUTPUT] [-q]
 Minimum required permissions
 :   **Viewer** platform access role for the cluster in {{site.data.keyword.containerlong_notm}}
 
-#### Command options
+#### `ingress lb get` command options
 {: #ingress-lb-get-options}
 
 
@@ -5248,7 +5249,7 @@ ibmcloud oc ingress lb backend set --cluster CLUSTER [--private-backend BACKEND]
 Minimum required permissions
 :   **Operator** platform access role for the cluster in {{site.data.keyword.containerlong_notm}}
 
-#### Command options
+#### `ingress lb backend set` command options
 {: #ingress-lb-backend-set-options}
 
 `-c`, `--cluster CLUSTER`
@@ -5292,7 +5293,7 @@ ibmcloud oc ingress lb proxy-protocol disable --cluster CLUSTER [-f] [-q]
 Minimum required permissions
 :   **Operator** platform access role for the cluster in {{site.data.keyword.containerlong_notm}}
 
-#### Command options
+#### `ingress lb proxy-protocol disable` command options
 {: #ingress-lb-proxy-protocol-disable-options}
 
 
@@ -5337,7 +5338,7 @@ ibmcloud oc ingress lb proxy-protocol enable --cluster CLUSTER [--cidr CIDR ...]
 Minimum required permissions
 :   **Operator** platform access role for the cluster in {{site.data.keyword.containerlong_notm}}
 
-#### Command options
+#### `ingress lb proxy-protocol enable` command options
 {: #ingress-lb-proxy-protocol-enable-options}
 
 
@@ -5385,7 +5386,7 @@ ibmcloud oc ingress secret create --cert-crn CERTIFICATE_CRN --cluster CLUSTER -
 Minimum required permissions
 :   **Administrator** platform access role for the cluster in {{site.data.keyword.containerlong_notm}}
 
-#### Command options
+#### `ingress secret create` command options
 {: #ingress-secret-create-options}
 
 
@@ -5441,7 +5442,7 @@ ibmcloud oc ingress secret field add --cluster CLUSTER --name SECRET_NAME --fiel
 Minimum required permissions
 :   **Administrator** platform access role for the cluster in {{site.data.keyword.containerlong_notm}}
 
-#### Command options
+#### `ingress secret field add` command options
 {: #ingress-secret-field-add-options}
 
 `--c, --cluster CLUSTER`
@@ -5484,7 +5485,7 @@ ibmcloud oc ingress secret field ls --cluster CLUSTER --name SECRET_NAME --names
 Minimum required permissions
 :   **Administrator** platform access role for the cluster in {{site.data.keyword.containerlong_notm}}
 
-#### Command options
+#### `ingress secret field ls` command options
 {: #ingress-secret-field-ls-options}
 
 `--c, --cluster CLUSTER`
@@ -5524,7 +5525,7 @@ ibmcloud oc ingress secret field rm --cluster CLUSTER --name NAME --namespace NA
 Minimum required permissions
 :   **Administrator** platform access role for the cluster in {{site.data.keyword.containerlong_notm}}
 
-#### Command options
+#### `ingress secret field rm` command options
 {: #ingress-secret-field-rm-options}
 
 `--c, --cluster CLUSTER`
@@ -5566,7 +5567,7 @@ ibmcloud oc ingress secret get --cluster CLUSTER --name SECRET_NAME --namespace 
 Minimum required permissions
 :   **Administrator** platform access role for the cluster in {{site.data.keyword.containerlong_notm}}
 
-#### Command options
+#### `ingress secret get` command options
 {: #ingress-secret-get-options}
 
 `-c`, `--cluster CLUSTER`
@@ -5613,7 +5614,7 @@ ibmcloud oc ingress secret ls --cluster CLUSTER [--show-deleted] [--output json]
 Minimum required permissions
 :   **Administrator** platform access role for the cluster in {{site.data.keyword.containerlong_notm}}
 
-#### Command options
+#### `ingress secret ls` command options
 {: #ingress-secret-ls-options}
 
 
@@ -5658,7 +5659,7 @@ ibmcloud oc ingress secret rm --cluster CLUSTER --name SECRET_NAME --namespace N
 Minimum required permissions
 :   **Administrator** platform access role for the cluster in {{site.data.keyword.containerlong_notm}}
 
-#### Command options
+#### `ingress secret rm` command options
 {: #ingress-secret-rm-options}
 
 
@@ -5703,7 +5704,7 @@ ibmcloud oc ingress secret update --cluster CLUSTER --name SECRET_NAME --namespa
 Minimum required permissions
 :   **Administrator** platform access role for the cluster in {{site.data.keyword.containerlong_notm}}
 
-#### Command options
+#### `ingress secret update` command options
 {: #ingress-secret-update-options}
 
 `-c`, `--cluster CLUSTER`
@@ -5747,7 +5748,7 @@ ibmcloud oc ingress status --cluster CLUSTER [--output json] [-q]
 Minimum required permissions
 :   **Editor** platform access role for the cluster in {{site.data.keyword.containerlong_notm}}
 
-#### Command options
+#### `ingress status` command options
 {: #ingress-status-options}
 
 `-c`, `--cluster CLUSTER`
@@ -5784,7 +5785,7 @@ ibmcloud oc ingress status-report disable --cluster CLUSTER [--output json] [-q]
 Minimum required permissions
 :   **Editor** platform access role for the cluster in {{site.data.keyword.containerlong_notm}}
 
-#### Command options
+#### `ingress status-report disable` command options
 {: #ingress-status-report-disable-options}
 
 `-c`, `--cluster CLUSTER`
@@ -5819,7 +5820,7 @@ ibmcloud oc ingress status-report enable --cluster CLUSTER [--output json] [-q]
 Minimum required permissions
 :   **Editor** platform access role for the cluster in {{site.data.keyword.containerlong_notm}}
 
-#### Command options
+#### `ingress status-report enable` command options
 {: #ingress-status-report-enable-options}
 
 `-c`, `--cluster CLUSTER`
@@ -5854,7 +5855,7 @@ ibmcloud oc ingress status-report get --cluster CLUSTER [--output json] [-q]
 Minimum required permissions
 :   **Editor** platform access role for the cluster in {{site.data.keyword.containerlong_notm}}
 
-#### Command options
+#### `ingress status-report get` command options
 {: #ingress-status-report-get-options}
 
 `-c`, `--cluster CLUSTER`
@@ -5889,7 +5890,7 @@ ibmcloud oc ingress status-report ignored-errors add --cluster CLUSTER --code CO
 Minimum required permissions
 :   **Editor** platform access role for the cluster in {{site.data.keyword.containerlong_notm}}
 
-#### Command options
+#### `ingress status-report ignored-errors add` command options
 {: #ingress-status-report-ignored-errors-add-options}
 
 `-c`, `--cluster CLUSTER`
@@ -5928,7 +5929,7 @@ ibmcloud oc ingress status-report ignored-errors ls --cluster CLUSTER [--output 
 Minimum required permissions
 :   **Editor** platform access role for the cluster in {{site.data.keyword.containerlong_notm}}
 
-#### Command options
+#### `ingress status-report ignored-errors ls` command options
 {: #ingress-status-report-ignored-errors-ls-options}
 
 `-c`, `--cluster CLUSTER`
@@ -5963,7 +5964,7 @@ ibmcloud oc ingress status-report ignored-errors rm --cluster CLUSTER --code COD
 Minimum required permissions
 :   **Editor** platform access role for the cluster in {{site.data.keyword.containerlong_notm}}
 
-#### Command options
+#### `ingress status-report ignored-errors rm` command options
 {: #ingress-status-report-ignored-errors-rm-options}
 
 `-c`, `--cluster CLUSTER`
@@ -6018,7 +6019,7 @@ ibmcloud oc nlb-dns add --cluster CLUSTER --ip NLB_IP [--ip NLB2_IP2 --ip NLB3_I
 Minimum required permissions
 :   **Editor** platform access role for the cluster in {{site.data.keyword.containerlong_notm}}
 
-#### Command options
+#### `nlb-dns add` command options
 {: #nlb-dns-add-options}
 
 `-c`, `--cluster CLUSTER`
@@ -6063,7 +6064,7 @@ ibmcloud oc nlb-dns create classic --cluster CLUSTER --ip NLB_IP [--ip NLB2_IP -
 Minimum required permissions
 :   **Editor** platform access role for the cluster in {{site.data.keyword.containerlong_notm}}
 
-#### Command options
+#### `nlb-dns create classic` command options
 {: #nlb-dns-create-classic-options}
 
 `-c`, `--cluster CLUSTER`
@@ -6112,7 +6113,7 @@ ibmcloud oc nlb-dns create vpc-gen2 --cluster CLUSTER (--lb-host VPC_ALB_HOSTNAM
 Minimum required permissions
 :   **Editor** platform access role for the cluster in {{site.data.keyword.containerlong_notm}}
 
-#### Command options
+#### `nlb-dns create vpc-gen2` command options
 {: #nlb-dns-create-vpc-gen2-options}
 
 `-c`, `--cluster CLUSTER`
@@ -6194,7 +6195,7 @@ ibmcloud oc nlb-dns ls --cluster CLUSTER [--output json] [-q]
 Minimum required permissions
 :   **Editor** platform access role for the cluster in {{site.data.keyword.containerlong_notm}}
 
-#### Command options
+#### `nlb-dns ls` command options
 {: #nlb-dns-ls-options}
 
 `-c`, `--cluster CLUSTER`
@@ -6230,7 +6231,7 @@ ibmcloud oc nlb-dns monitor configure --cluster CLUSTER --nlb-host HOST [--enabl
 Minimum required permissions
 :   **Editor** platform access role for the cluster in {{site.data.keyword.containerlong_notm}}
 
-#### Command options
+#### `nlb-dns monitor configure` command options
 {: #nlb-dns-monitor-configure-options}
 
 `--cluster CLUSTER`, `-c CLUSTER`
@@ -6297,7 +6298,7 @@ ibmcloud oc nlb-dns monitor disable --cluster CLUSTER --nlb-host SUBDOMAIN [--ou
 Minimum required permissions
 :   **Editor** platform access role for the cluster in {{site.data.keyword.containerlong_notm}}
 
-#### Command options
+#### `nlb-dns monitor disable` command options
 {: #nlb-dns-monitor-disable-options}
 
 `-c`, `--cluster CLUSTER`
@@ -6342,7 +6343,7 @@ ibmcloud oc nlb-dns monitor enable --cluster CLUSTER --nlb-host SUBDOMAIN [--out
 Minimum required permissions
 :   **Editor** platform access role for the cluster in {{site.data.keyword.containerlong_notm}}
 
-#### Command options
+#### `nlb-dns monitor enable` command options
 {: #nlb-dns-monitor-enable-options}
 
 `-c`, `--cluster CLUSTER`
@@ -6384,7 +6385,7 @@ ibmcloud oc nlb-dns monitor get --cluster CLUSTER --nlb-host SUBDOMAIN [--output
 Minimum required permissions
 :   **Editor** platform access role for the cluster in {{site.data.keyword.containerlong_notm}}
 
-#### Command options
+#### `nlb-dns monitor get` command options
 {: #nlb-dns-monitor-get-options}
 
 `-c`, `--cluster CLUSTER`
@@ -6426,7 +6427,7 @@ ibmcloud oc nlb-dns monitor ls --cluster CLUSTER [--output json] [-q]
 Minimum required permissions
 :   **Editor** platform access role for the cluster in {{site.data.keyword.containerlong_notm}}
 
-#### Command options
+#### `nlb-dns monitor ls` command options
 {: #nlb-dns-monitor-ls-options}
 
 `-c`, `--cluster CLUSTER`
@@ -6464,7 +6465,7 @@ ibmcloud oc nlb-dns replace --cluster CLUSTER --lb-host NEW_LB_HOSTNAME --nlb-su
 Minimum required permissions
 :   **Editor** platform access role for the cluster in {{site.data.keyword.containerlong_notm}}
 
-#### Command options
+#### `nlb-dns replace` command options
 {: #nlb-dns-replace-options}
 
 `-c`, `--cluster CLUSTER`
@@ -6512,7 +6513,7 @@ ibmcloud oc nlb-dns rm classic --cluster CLUSTER --ip IP --nlb-host SUBDOMAIN [-
 Minimum required permissions
 :   **Editor** platform access role for the cluster in {{site.data.keyword.containerlong_notm}}
 
-#### Command options
+#### `nlb-dns rm classic` command options
 {: #nlb-dns-rm-classic-options}
 
 `-c`, `--cluster CLUSTER`
@@ -6558,7 +6559,7 @@ ibmcloud oc nlb-dns rm vpc-gen2 --cluster CLUSTER --nlb-subdomain SUBDOMAIN [ --
 Minimum required permissions
 :   **Editor** platform access role for the cluster in {{site.data.keyword.containerlong_notm}}
 
-#### Command options
+#### `nlb-dns rm vpc-gen2` command options
 {: #nlb-dns-rm-vpc-gen2-options}
 
 `-c`, `--cluster CLUSTER`
@@ -6606,7 +6607,7 @@ ibmcloud oc nlb-dns secret regenerate --cluster CLUSTER --nlb-subdomain SUBDOMAI
 Minimum required permissions
 :   **Editor** platform access role for the cluster in {{site.data.keyword.containerlong_notm}}
 
-#### Command options
+#### `nlb-dns rm vpc-gen2` command options
 {: #nlb-dns-secret-regenerate-options}
 
 `-c`, `--cluster CLUSTER`
@@ -6649,7 +6650,7 @@ ibmcloud oc nlb-dns secret rm --cluster CLUSTER --nlb-subdomain SUBDOMAIN [-f] [
 Minimum required permissions
 :   **Editor** platform access role for the cluster in {{site.data.keyword.containerlong_notm}}
 
-#### Command options
+#### `nlb-dns rm vpc-gen2` command options
 {: #nlb-dns-secret-rm-options}
 
 `-c`, `--cluster CLUSTER`
@@ -6688,7 +6689,7 @@ ibmcloud oc vpc secure-by-default enable --cluster CLUSTER [--disable-outbound-t
 {: pre}
 {: #vpc-secure-by-default-enable-usage}
 
-#### Command options
+#### `vpc secure-by-default enable` command options
 {: #vpc-secure-by-default-enable-options}
 
 `--cluster CLUSTER`, `-c CLUSTER`
@@ -6721,7 +6722,7 @@ ibmcloud oc webhook-create --cluster CLUSTER --level LEVEL --type slack --url UR
 Minimum required permissions
 :   **Editor** platform access role for the cluster in {{site.data.keyword.containerlong_notm}}
 
-#### Command options
+#### `vpc secure-by-default enable` command options
 {: #webhook-create-options}
 
 `-c`, `--cluster CLUSTER`
@@ -6777,7 +6778,7 @@ ibmcloud oc api-key info --cluster CLUSTER [--output json] [-q]
 Minimum required permissions
 :   **Viewer** platform access role for the cluster in {{site.data.keyword.containerlong_notm}}
 
-#### Command options
+#### `api-key info` command options
 {: #api-key-info-options}
 
 `-c`, `--cluster CLUSTER`
@@ -6822,7 +6823,7 @@ ibmcloud oc api-key reset --region REGION [-q]
 Minimum required permissions
 :   **Administrator** platform access role for the cluster in {{site.data.keyword.containerlong_notm}}
 
-#### Command options
+#### `api-key reset` command options
 {: #api-key-reset-options}
 
 `--region REGION`
@@ -6867,7 +6868,7 @@ ibmcloud oc credential get --region REGION [-q] [--output json]
 Minimum required permissions
 :   **Viewer** platform access role for the cluster in {{site.data.keyword.containerlong_notm}}
 
-#### Command options
+#### `credential get` command options
 {: #credential-get-options}
 
 `--region REGION`
@@ -6914,7 +6915,7 @@ ibmcloud oc credential set classic --infrastructure-api-key API_KEY --infrastruc
 Minimum required permissions
 :   **Administrator** platform access role for the cluster in {{site.data.keyword.containerlong_notm}}
 
-#### Command options
+#### `credential set classic` command options
 {: #credential-set-classic-options}
 
 `--infrastructure-username USERNAME`
@@ -6958,7 +6959,7 @@ ibmcloud oc credential unset --region REGION [-q]
 Minimum required permissions
 :   **Administrator** platform access role for the cluster in {{site.data.keyword.containerlong_notm}}
 
-#### Command options
+#### `credential unset` command options
 {: #credential-unset-options}
 
 `--region REGION`
@@ -7021,7 +7022,7 @@ ibmcloud oc infra-permissions get --region REGION [--output json] [-q]
 Minimum required permissions
 :   **Viewer** platform access role for the cluster in {{site.data.keyword.containerlong_notm}}
 
-#### Command options
+#### `infra-permissions get` command options
 {: #infra-permissions-get-options}
 
 `--region REGION`
@@ -7092,7 +7093,7 @@ ibmcloud oc kms crk ls --instance-id KMS_INSTANCE_ID [--output json] [-q]
 Minimum required permissions
 :   **Viewer** platform access role in {{site.data.keyword.containerlong_notm}}
 
-#### Command options
+#### `kms crk ls` command options
 {: #kms-crk-ls-options}
 
 `--instance-id KMS_INSTANCE_ID`
@@ -7132,7 +7133,7 @@ ibmcloud oc kms enable --cluster CLUSTER_NAME_OR_ID --instance-id KMS_INSTANCE_I
 Minimum required permissions
 :   **Administrator** platform access role for the cluster in {{site.data.keyword.containerlong_notm}}
 
-#### Command options
+#### `kms enable` command options
 {: #kms-enable-options}
 
 `--container, -c CLUSTER_NAME_OR_ID`
@@ -7178,7 +7179,7 @@ ibmcloud oc kms instance ls [--output json] [-q]
 Minimum required permissions
 :   **Viewer** platform access role in {{site.data.keyword.containerlong_notm}}
 
-#### Command options
+#### `kms instance ls` command options
 {: #kms-instance-ls-options}
 
 
@@ -7191,6 +7192,7 @@ Minimum required permissions
 
 #### Example ``ibmcloud oc kms instance ls`` command
 {: #icks-kms-instance-ls-example}
+
 ```sh
 ibmcloud oc kms instance ls
 ```
@@ -7217,7 +7219,7 @@ ibmcloud oc quota ls [--provider PROVIDER] [--output json]
 Minimum required permissions
 :   **Viewer** platform access role for {{site.data.keyword.containerlong_notm}}
 
-#### Command options
+#### `quota ls` command options
 {: #quota-ls-options}
 
 `--provider (classic | vpc-gen2)`
@@ -7229,6 +7231,7 @@ Minimum required permissions
 
 #### Example ``ibmcloud oc quota ls`` command
 {: #icks-quota-ls-example}
+
 ```sh
 ibmcloud oc quota ls
 ```
@@ -7253,7 +7256,7 @@ ibmcloud oc subnets [--provider (classic | vpc-gen2)] [--vpc-id <VPC_ID> --zone 
 Minimum required permissions
 :   **Viewer** platform access role for {{site.data.keyword.containerlong_notm}}
 
-#### Command options
+#### `quota ls` command options
 {: #subnets-options}
 
 `--provider (classic | vpc-gen2)`
@@ -7277,6 +7280,7 @@ Minimum required permissions
 
 #### Example ``subnets`` command
 {: #subnets-command-example}
+
 ```sh
 ibmcloud oc subnets -l ams03 -l wdc -l ap
 ```
@@ -7310,7 +7314,7 @@ Minimum required permissions
 :   To view the VLANs that the cluster is connected to in a zone: **Viewer** platform access role for the cluster in {{site.data.keyword.containerlong_notm}}
 :   To list all available VLANs in a zone: **Viewer** platform access role for the region in {{site.data.keyword.containerlong_notm}}
 
-#### Command options
+#### `vlan ls` command options
 {: #vlan-ls-options}
 
 `--zone ZONE`
@@ -7355,7 +7359,7 @@ ibmcloud oc vlan spanning get --region REGION [--output json] [-q]
 Minimum required permissions
 :   **Viewer** platform access role for {{site.data.keyword.containerlong_notm}}
 
-#### Command options
+#### `vlan spanning get` command options
 {: #vlan-spanning-get-options}
 
 `--region REGION`
@@ -7391,7 +7395,7 @@ ibmcloud oc vpc ls [--output OUTPUT] [--provider PROVIDER] [-q]
 {: pre}
 {: #vpc-ls-usage}
 
-#### Command options
+#### `vpc ls` command options
 {: #vpc-ls-options}
 
 `--output OUTPUT`
@@ -7415,7 +7419,7 @@ ibmcloud oc vpc outbound-traffic-protection disable --cluster CLUSTER [-f] [-q]
 {: pre}
 {: #vpc-outbound-traffic-protection-disable-usage}
 
-#### Command options
+#### `vpc outbound-traffic-protection disable` command options
 {: #vpc-outbound-traffic-protection-disable-options}
 
 `--cluster CLUSTER`, `-c CLUSTER`
@@ -7440,7 +7444,7 @@ ibmcloud oc vpc outbound-traffic-protection enable --cluster CLUSTER [-f] [-q]
 {: pre}
 {: #vpc-outbound-traffic-protection-enable-usage}
 
-#### Command options
+#### `vpc outbound-traffic-protection enable` command options
 {: #vpc-outbound-traffic-protection-enable-options}
 
 `--cluster CLUSTER`, `-c CLUSTER`
@@ -7468,7 +7472,7 @@ ibmcloud oc vni attach baremetal --vlan VLAN --vni VNI [--auto-delete] [--output
 {: pre}
 {: #vni-attach-baremetal-usage}
 
-#### Command options
+#### `vni attach baremetal` command options
 {: #vni-attach-baremetal-options}
 
 `--auto-delete`
@@ -7508,7 +7512,7 @@ ibmcloud oc vni detach --vni VNI [-f] [--output OUTPUT] [-q] (--cluster-id ID | 
 {: pre}
 {: #vni-detach-usage}
 
-#### Command options
+#### `vni detach` command options
 {: #vni-detach-options}
 
 `--cluster-id ID`, `-c ID`
@@ -7545,7 +7549,7 @@ ibmcloud oc vni ls [--after AFTER] [--first FIRST] [--output OUTPUT] [-q] (--clu
 {: pre}
 
 
-#### Command options
+#### `vni ls` command options
 {: #vni-ls-options}
 
 `--after AFTER`
@@ -7594,7 +7598,7 @@ ibmcloud oc flavor get --flavor FLAVOR --provider PROVIDER --zone ZONE [--output
 Minimum required permissions
 :   None
 
-#### Command options
+#### `vni ls` command options
 {: #flavor-get-options}
 
 `--flavor FLAVOR`
@@ -7638,7 +7642,7 @@ ibmcloud oc flavor ls --zone ZONE [--output OUTPUT] [--provider PROVIDER] [-q] [
 Minimum required permissions
 :   None
 
-#### Command options
+#### `vni ls` command options
 {: #flavor-ls-options}
 
 `--zone ZONE`
@@ -7683,7 +7687,7 @@ ibmcloud oc messages
 Minimum required permissions
 :   None
 
-#### Command options
+#### `vni ls` command options
 {: #messages-options}
 
 
@@ -7704,7 +7708,7 @@ ibmcloud oc locations [--output json]
 Minimum required permissions
 :   None
 
-#### Command options
+#### `vni ls` command options
 {: #locations-options}
 
 `--output json`
@@ -7732,7 +7736,7 @@ ibmcloud oc versions [--show-version (KUBERNETES|OPENSHIFT)] [--output json] [-q
 Minimum required permissions
 :   None
 
-#### Command options
+#### `vni ls` command options
 {: #versions-options}
 
 `--show-version (KUBERNETES|OPENSHIFT)`
@@ -7747,6 +7751,7 @@ Minimum required permissions
 
 #### Example ``versions`` command
 {: #versions-command-example}
+
 ```sh
 ibmcloud oc versions
 ```
@@ -7786,7 +7791,7 @@ ibmcloud oc api --endpoint ENDPOINT [--insecure] [--skip-ssl-validation] [--api-
 Minimum required permissions
 :   None
 
-#### Command options
+#### `vni ls` command options
 {: #api-options}
 
 `--endpoint ENDPOINT`
@@ -7810,6 +7815,7 @@ Minimum required permissions
 
 #### Example ``api`` command
 {: #api-command-example}
+
 ```sh
 ibmcloud oc api
 ```
@@ -7858,7 +7864,7 @@ ibmcloud oc init [--host HOST] [--insecure] [-p] [-u] [-q]
 Minimum required permissions
 :   None
 
-#### Command options
+#### `vni ls` command options
 {: #init-options}
 
 `--host HOST`
@@ -7915,7 +7921,7 @@ ibmcloud oc script update [--in-place] FILE [FILE ...]
 Minimum required permissions
 :   None
 
-#### Command options
+#### `script update` command options
 {: #script-update-options}
 
 
@@ -7993,7 +7999,7 @@ ibmcloud oc security-group ls --cluster CLUSTER [--attached-to ATTACHED] [--mana
 {: pre}
 {: #security-group-ls-usage}
 
-#### Command options
+#### `security-group ls` command options
 {: #security-group-ls-options}
 
 `--attached-to ATTACHED`
@@ -8031,7 +8037,7 @@ ibmcloud oc security-group reset --cluster CLUSTER --security-group GROUP [-f] [
 Minimum required permissions
 :   None
 
-#### Command options
+#### `security-group reset` command options
 {: #security-group-reset-options}
 
 `--cluster CLUSTER`
@@ -8064,7 +8070,7 @@ ibmcloud oc security-group sync --cluster CLUSTER --security-group GROUP [-q]
 Minimum required permissions
 :   None
 
-#### Command options
+#### `security-group sync` command options
 {: #security-group-sync-options}
 
 `--cluster CLUSTER`
@@ -8111,7 +8117,7 @@ ibmcloud oc storage attachment create --cluster CLUSTER_ID --volume VOLUME --wor
 ```
 {: pre}
 
-#### Command options
+#### `storage attachment create` command options
 {: #storage-attachment-create-options}
 
 
@@ -8226,7 +8232,7 @@ ibmcloud oc storage attachment rm --cluster CLUSTER_ID --attachment ATTACHMENT -
 ```
 {: pre}
 
-#### Command options
+#### `storage attachment rm` command options
 {: #storage-attachment-rm-options}
 
 
@@ -8267,7 +8273,7 @@ ibmcloud oc storage volume get --volume VOLUME
 ```
 {: pre}
 
-#### Command options
+#### `storage volume get` command options
 {: #storage-volume-get-options}
 
 
@@ -8303,7 +8309,7 @@ ibmcloud oc storage volume ls [--cluster CLUSTER_ID] [--provider PROVIDER] [--zo
 ```
 {: pre}
 
-#### Command options
+#### `storage volume ls` command options
 {: #storage-volume-ls-options}
 
 
@@ -8354,7 +8360,7 @@ ibmcloud oc cluster create satellite --location LOCATION --name NAME --version V
 Minimum required permissions
 :   {{site.data.keyword.cloud_notm}} IAM **Administrator** platform access role for {{site.data.keyword.satelliteshort}}.
 
-#### Command options
+#### `cluster create satellite` command options
 {: #cluster-create-satellite-options}
 
 `--location LOCATION`
@@ -8464,7 +8470,7 @@ ibmcloud oc cluster master satellite-service-endpoint allowlist add --cluster CL
 Minimum required permissions
 :   {{site.data.keyword.cloud_notm}} IAM **Editor** platform access role for {{site.data.keyword.satelliteshort}}.
 
-#### Command options
+#### `cluster master satellite-service-endpoint allowlist add` command options
 {: #cluster-master-satellite-service-endpoint-allowlist-add-options}
 
 `-c`, `--cluster CLUSTER`
@@ -8500,7 +8506,7 @@ ibmcloud oc cluster master satellite-service-endpoint allowlist disable --cluste
 Minimum required permissions
 :   {{site.data.keyword.cloud_notm}} IAM **Administrator** platform access role for {{site.data.keyword.satelliteshort}}.
 
-#### Command options
+#### `cluster master satellite-service-endpoint allowlist disable` command options
 {: #cluster-master-satellite-service-endpoint-allowlist-disable-options}
 
 `-c`, `--cluster CLUSTER`
@@ -8539,7 +8545,7 @@ ibmcloud oc cluster master satellite-service-endpoint allowlist enable --cluster
 Minimum required permissions
 :   {{site.data.keyword.cloud_notm}} IAM **Administrator** platform access role for {{site.data.keyword.satelliteshort}}.
 
-#### Command options
+#### `cluster master satellite-service-endpoint allowlist enable` command options
 {: #cluster-master-satellite-service-endpoint-allowlist-enable-options}
 
 `-c`, `--cluster CLUSTER`
@@ -8575,7 +8581,7 @@ ibmcloud oc cluster master satellite-service-endpoint allowlist get --cluster CL
 Minimum required permissions
 :   {{site.data.keyword.cloud_notm}} IAM **Viewer** platform access role for {{site.data.keyword.satelliteshort}}.
 
-#### Command options
+#### `cluster master satellite-service-endpoint allowlist get` command options
 {: #cluster-master-satellite-service-endpoint-allowlist-get-options}
 
 `-c`, `--cluster CLUSTER`
@@ -8608,7 +8614,7 @@ ibmcloud oc cluster master satellite-service-endpoint allowlist remove --cluster
 Minimum required permissions
 :   {{site.data.keyword.cloud_notm}} IAM **Editor** platform access role for {{site.data.keyword.satelliteshort}}.
 
-#### Command options
+#### `cluster master satellite-service-endpoint allowlist remove` command options
 {: #cluster-master-satellite-service-endpoint-allowlist-remove-options}
 
 `-c`, `--cluster CLUSTER`
@@ -8644,7 +8650,7 @@ ibmcloud oc worker-pool create satellite --cluster CLUSTER --host-label LABEL [-
 Minimum required permissions
 :   {{site.data.keyword.cloud_notm}} IAM **Administrator** platform access role for {{site.data.keyword.satelliteshort}}.
 
-#### Command options
+#### `worker-pool create satellite` command options
 {: #worker-pool-create-satellite-options}
 
 `-c`, `--cluster CLUSTER`
@@ -8704,7 +8710,7 @@ ibmcloud oc zone add satellite --zone ZONE --cluster CLUSTER --worker-pool WORKE
 Minimum required permissions
 :   {{site.data.keyword.cloud_notm}} IAM **Administrator** platform access role for {{site.data.keyword.satelliteshort}}.
 
-#### Command options
+#### `zone add satellite` command options
 {: #zone-add-satellite-options}
 
 `--zone ZONE`
@@ -8749,7 +8755,7 @@ ibmcloud oc experimental trusted-profile default get --region REGION --resource-
 {: pre}
 {: #experimental-trusted-profile-default-get-usage}
 
-#### Command options
+#### `experimental trusted-profile default get` command options
 {: #experimental-trusted-profile-default-get-options}
 
 `--output OUTPUT`
@@ -8777,7 +8783,7 @@ ibmcloud oc experimental trusted-profile default set --region REGION --resource-
 {: pre}
 {: #experimental-trusted-profile-default-set-usage}
 
-#### Command options
+#### `experimental trusted-profile default set` command options
 {: #experimental-trusted-profile-default-set-options}
 
 `--output OUTPUT`
@@ -8808,7 +8814,7 @@ ibmcloud oc experimental trusted-profile get --cluster CLUSTER [--output OUTPUT]
 {: pre}
 {: #experimental-trusted-profile-get-usage}
 
-#### Command options
+#### `experimental trusted-profile get` command options
 {: #experimental-trusted-profile-get-options}
 
 `--cluster CLUSTER`
@@ -8833,7 +8839,7 @@ ibmcloud oc experimental trusted-profile set --cluster CLUSTER --trusted-profile
 {: pre}
 {: #experimental-trusted-profile-set-usage}
 
-#### Command options
+#### `experimental trusted-profile set` command options
 {: #experimental-trusted-profile-set-options}
 
 `--cluster CLUSTER`

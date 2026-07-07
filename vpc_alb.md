@@ -1,7 +1,7 @@
 ---
 copyright: 
-  years: 2024, 2025
-lastupdated: "2025-10-01"
+  years: 2024, 2026
+lastupdated: "2026-07-07"
 
 keywords: alb, application load balancer, vpc alb, dns, public lb, private lb
 
@@ -147,7 +147,7 @@ To enable your app to receive public or private request:
 Do not delete the subnets that you attached to your cluster during cluster creation or when you add worker nodes in a zone. If you delete a VPC subnet that your cluster used, any load balancers that use IP addresses from the subnet might experience issues, and you might be unable to create new load balancers.
 {: important}
 
-VPC ALBs and NLBs that are not tied to Kubernetes or OpenShift clusters can be updated directly by using 'ibmcloud is' commands or the **VPC Infrastructure** section in the console. For example, change a front-end listener's port or health check timeout value. But for VPC load balancers that are tied to Kubernetes or OpenShift clusters, any updates to them must be performed via annotations in the Ingress configuration. The IBM Cloud Provider periodically re-syncs with any associated VPC ALBs and NLBs to ensure the running load balancer conforms to the Ingress's expected configuration. So if you make any changes to such a load balancer directly via VPC instead of using Ingress annotations, those changes will be reverted back.
+VPC ALBs and NLBs that are not tied to Kubernetes or OpenShift clusters can be updated directly by using 'ibmcloud is' commands or the **VPC Infrastructure** section in the console. For example, change a front-end listener's port or health check timeout value. But for VPC load balancers that are tied to Kubernetes or OpenShift clusters, any updates to them must be performed via annotations in the Ingress configuration. The IBM Cloud Provider periodically re-syncs with any associated VPC ALBs and NLBs to ensure the running load balancer conforms to the Ingress's expected configuration. So if you make any changes to such a load balancer directly via VPC instead of using Ingress annotations, those changes are reverted.
 {: important}
 
 ## Registering a DNS record and TLS certificate
@@ -227,7 +227,7 @@ To use the TLS certificate to access your app via HTTPS, ensure that you defined
 {: #vpc_alb_private_dns}
 
  In version 4.15 or later you can use the following optional annotations to associate an own DNS `instance` which serves a custom DNS `zone` with a private VPC ALB. For this both optional annotations must be set.
-If they are unspecified then DNS `A` records for this load balancer's `hostname` property will be added to the public DNS zone `lb.appdomain.cloud`.
+If they are unspecified, DNS `A` records for this load balancer's `hostname` property are added to the public DNS zone `lb.appdomain.cloud`.
 
 `service.kubernetes.io/ibm-load-balancer-cloud-provider-vpc-private-dns-instance-crn: "private-dns-crn"`
     :   The DNS `instance` to associate with this load balancer. The specified instance may be in a different region or account, subject to IAM policies.
