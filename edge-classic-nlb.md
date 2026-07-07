@@ -1,8 +1,8 @@
 ---
 
 copyright: 
-  years: 2024, 2024
-lastupdated: "2024-11-13"
+  years: 2024, 2026
+lastupdated: "2026-07-07"
 
 
 keywords: openshift, kubernetes, affinity, taint, edge node, edge
@@ -21,12 +21,14 @@ subcollection: openshift
 
 [Classic]{: tag-classic-inf}
 
-In the following steps, you add the `dedicated=edge` label to worker nodes on each public or private VLAN in your cluster. This label is used to deploy your network load balancers (NLBs) to those worker nodes only. You can deploy both public and private NLBs can deploy to edge worker nodes.
+In the following steps, you add the `dedicated=edge` label to worker nodes on each public or private VLAN in your cluster. This label is used to deploy your network load balancers (NLBs) to those worker nodes only. Both public and private NLBs can be deployed to edge worker nodes.
+{: shortdesc}
 
 If you plan to use an existing worker pool, the pool must span all zones in your cluster and have at least two worker nodes per zone. You can label the worker pool with `dedicated=edge` by using the [`ibmcloud oc worker-pool label set` command](/docs/openshift?topic=openshift-kubernetes-service-cli#cs_worker_pool_label_set).
 {: note}
 
-Before you begin
+### Before you begin
+{: #edge-nlb-classic-prereqs}
 
 * Ensure that you have the following [{{site.data.keyword.cloud_notm}} IAM roles](/docs/openshift?topic=openshift-iam-platform-access-roles):
     * Any platform access role for the cluster
@@ -68,7 +70,7 @@ Before you begin
     ```
     {: pre}
     
-    Example output
+    Example output:
 
     ```sh
     PORT(S)                      AGE
@@ -85,24 +87,23 @@ Before you begin
     ```
     {: pre}
 
-    Example output
+    Example output:
 
     ```sh
     service "router-default" configured
     ```
     {: screen}
 
-
 1. To verify that networking workloads are restricted to edge nodes, confirm that the load balancers are scheduled onto the edge nodes and are not scheduled onto non-edge nodes.
 
     * NLB pods
-        1. Confirm that the NLB pods are deployed to edge nodes. Search for the external IP address of the load balancer service that is listed in the output of step 3. Replace the periods (`.`) with hyphens (`-`). In the following example for the `crc81nk5l10gfhdql4i3qg`, the NLB has an external IP address of `169.46.17.2`. 
+        1. Confirm that the NLB pods are deployed to edge nodes. Search for the external IP address of the load balancer service that is listed in the output of the previous step. Replace the periods (`.`) with hyphens (`-`). In the following example for the `crc81nk5l10gfhdql4i3qg`, the NLB has an external IP address of `169.46.17.2`.
             ```sh
             oc describe nodes -l dedicated=edge | grep "169-46-17-2"
             ```
             {: pre}
 
-            Example output
+            Example output:
             ```sh
             ibm-system                 ibm-cloud-provider-ip-169-46-17-2-76fcb4965d-wz6dg                 5m (0%)       0 (0%)      10Mi (0%)        0 (0%)
             ibm-system                 ibm-cloud-provider-ip-169-46-17-2-76fcb4965d-2z64r                 5m (0%)       0 (0%)      10Mi (0%)        0 (0%)
@@ -120,10 +121,11 @@ Before you begin
 
 
 1. If NLB pods are still deployed to non-edge nodes, you can delete the pods so that they redeploy to edge nodes.
+
     Delete only one pod at a time, and verify that the pod is rescheduled onto an edge node before you delete other pods.
     {: important}
 
-    1. Delete a pod. Example for if one of the `public-crc81nk5l10gfhdql4i3qg-alb1` NLB pods did not schedule to an edge node:
+    1. Delete a pod. For example, if one of the `public-crc81nk5l10gfhdql4i3qg-alb1` NLB pods did not schedule to an edge node:
         ```sh
         oc delete pod ibm-cloud-provider-ip-169-46-17-2-76fcb4965d-wz6dg -n ibm-system
         ```
@@ -135,7 +137,7 @@ Before you begin
         ```
         {: pre}
 
-        Example output
+        Example output:
 
         ```sh
         ibm-system                 ibm-cloud-provider-ip-169-46-17-2-76fcb4965d-wz6dg                 5m (0%)       0 (0%)      10Mi (0%)        0 (0%)

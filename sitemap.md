@@ -210,6 +210,12 @@ subcollection: openshift
 
     * [Solution](/docs/openshift?topic=openshift-cs_uc_gov#uc_data_mashup_solution)
 
+    * [Step 1: Store data in the cloud](/docs/openshift?topic=openshift-cs_uc_gov#uc_data_mashup_step1)
+
+    * [Step 2: Provide access to data with APIs](/docs/openshift?topic=openshift-cs_uc_gov#uc_data_mashup_step2)
+
+    * [Step 3: Innovate with IBM Garage and cloud services](/docs/openshift?topic=openshift-cs_uc_gov#uc_data_mashup_step3)
+
     * [Results](/docs/openshift?topic=openshift-cs_uc_gov#uc_data_mashup_results)
 
 * [Large public port secures exchange of port data and shipping manifests that connect public and private organizations](/docs/openshift?topic=openshift-cs_uc_gov#uc_port)
@@ -217,6 +223,12 @@ subcollection: openshift
     * [Context](/docs/openshift?topic=openshift-cs_uc_gov#uc_port_context)
 
     * [Solution](/docs/openshift?topic=openshift-cs_uc_gov#uc_port_solution)
+
+    * [Step 1: Containerize apps by using microservices](/docs/openshift?topic=openshift-cs_uc_gov#uc_port_step1)
+
+    * [Step 2: Ensure global availability](/docs/openshift?topic=openshift-cs_uc_gov#uc_port_step2)
+
+    * [Step 3: Data sharing](/docs/openshift?topic=openshift-cs_uc_gov#uc_port_step3)
 
     * [Results](/docs/openshift?topic=openshift-cs_uc_gov#uc_port_results)
 
@@ -3397,7 +3409,11 @@ subcollection: openshift
 
 * [Setting up an NLB 1.0 in a multizone cluster](/docs/openshift?topic=openshift-loadbalancer#multi_zone_config)
 
+    * [Before you begin](/docs/openshift?topic=openshift-loadbalancer#multi_zone_config_prereqs)
+
 * [Setting up an NLB 1.0 in a single-zone cluster](/docs/openshift?topic=openshift-loadbalancer#lb_config)
+
+    * [Before you begin](/docs/openshift?topic=openshift-loadbalancer#lb_config_prereqs)
 
 * [Enabling source IP preservation](/docs/openshift?topic=openshift-loadbalancer#lb_source_ip)
 
@@ -3411,7 +3427,11 @@ subcollection: openshift
 
 * [Setting up an NLB 2.0 in a multizone cluster](/docs/openshift?topic=openshift-loadbalancer-v2#ipvs_multi_zone_config)
 
+    * [Before you begin](/docs/openshift?topic=openshift-loadbalancer-v2#ipvs_multi_zone_config_prereqs)
+
 * [Setting up an NLB 2.0 in a single-zone cluster](/docs/openshift?topic=openshift-loadbalancer-v2#ipvs_single_zone_config)
+
+    * [Before you begin](/docs/openshift?topic=openshift-loadbalancer-v2#ipvs_single_zone_config_prereqs)
 
 * [Scheduling algorithms](/docs/openshift?topic=openshift-loadbalancer-v2#scheduling)
 
@@ -3420,6 +3440,8 @@ subcollection: openshift
     * [Unsupported scheduling algorithms](/docs/openshift?topic=openshift-loadbalancer-v2#scheduling_unsupported)
 
 [Isolating Classic NLBs to edge worker nodes](/docs/openshift?topic=openshift-edge-nlb-classic#edge-nlb-classic)
+
+    * [Before you begin](/docs/openshift?topic=openshift-edge-nlb-classic#edge-nlb-classic-prereqs)
 
 [Isolating network workloads to edge nodes in VPC clusters](/docs/openshift?topic=openshift-edge-vpc-workloads#edge-vpc-workloads)
 
@@ -6754,6 +6776,8 @@ subcollection: openshift
 * [ibmcloud oc storage](/docs/openshift?topic=openshift-icks_map#icks_map_storage)
 
 [{{site.data.keyword.openshiftlong_notm}} CLI reference](/docs/openshift?topic=openshift-kubernetes-service-cli#kubernetes-service-cli)
+
+* [Before you begin](/docs/openshift?topic=openshift-kubernetes-service-cli#cli-ks-plugin-prereqs)
 
 * [{{site.data.keyword.openshiftlong_notm}} commands](/docs/openshift?topic=openshift-kubernetes-service-cli#cli_commands)
 

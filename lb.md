@@ -1,8 +1,8 @@
 ---
 
 copyright: 
-  years: 2014, 2024
-lastupdated: "2024-08-19"
+  years: 2014, 2026
+lastupdated: "2026-07-07"
 
 
 keywords: openshift, lb2.0, nlb
@@ -30,11 +30,14 @@ Expose a port and use a portable IP address for a Layer 4 network load balancer 
 ## Setting up an NLB 1.0 in a multizone cluster
 {: #multi_zone_config}
 
-**Before you begin**:
+### Before you begin
+{: #multi_zone_config_prereqs}
+
 * To create public network load balancers (NLBs) in multiple zones, at least one public VLAN must have portable subnets available in each zone. To create private NLBs in multiple zones, at least one private VLAN must have portable subnets available in each zone. You can add subnets by following the steps in [Configuring subnets for clusters](/docs/openshift?topic=openshift-subnets).
 * Enable a [Virtual Router Function (VRF)](/docs/account?topic=account-vrf-service-endpoint&interface=ui) for your IBM Cloud infrastructure account. To enable VRF, see [Enabling VRF](/docs/account?topic=account-vrf-service-endpoint&interface=ui). To check whether a VRF is already enabled, use the `ibmcloud account show` command. If you can't or don't want to enable VRF, enable [VLAN spanning](/docs/vlans?topic=vlans-vlan-spanning#vlan-spanning). When a VRF or VLAN spanning is enabled, the NLB 1.0 can route packets to various subnets in the account.
 * Ensure you have the [**Writer** or **Manager** {{site.data.keyword.cloud_notm}} IAM service access role](/docs/openshift?topic=openshift-iam-platform-access-roles) for the `default` namespace.
 * Ensure you have the required number of worker nodes: If you restrict network traffic to edge worker nodes, ensure that at least two [edge worker nodes](/docs/openshift?topic=openshift-edge#edge) are enabled in each zone so that NLBs deploy uniformly.
+
 * When cluster nodes are reloaded or when a cluster master update includes a new `keepalived` image,  the load balancer virtual IP is moved to the network interface of a new node. When this occurs, any long-lasting connections to your load balancer must be re-established. Consider including retry logic in your application so that attempts to re-establish the connection are made quickly.
 
 To set up an NLB 1.0 service in a multizone cluster:
@@ -109,7 +112,7 @@ To set up an NLB 1.0 service in a multizone cluster:
         ```
         {: codeblock}
 
-    3. Optional: Make your NLB service available to only a limited range of IP addresses by specifying the IPs in the `spec.loadBalancerSourceRanges` field. `loadBalancerSourceRanges` is implemented by `kube-proxy` in your cluster via Iptables rules on worker nodes. For more information, see the [Kubernetes documentation](https://kubernetes.io/docs/concepts/services-networking/){: external}.
+    3. Optional: Make your NLB service available to only a limited range of IP addresses by specifying the IPs in the `spec.loadBalancerSourceRanges` field. `loadBalancerSourceRanges` is implemented by `kube-proxy` in your cluster by using iptables rules on worker nodes. For more information, see the [Kubernetes documentation](https://kubernetes.io/docs/concepts/services-networking/){: external}.
 
     4. Create the service in your cluster.
 
@@ -125,7 +128,7 @@ To set up an NLB 1.0 service in a multizone cluster:
     ```
     {: pre}
 
-    In the output, the **LoadBalancer Ingress** IP address is the portable IP address that was assigned to your NLB service:
+    Example output:
 
     ```sh
     NAME:                   myloadbalancer
@@ -155,9 +158,9 @@ To set up an NLB 1.0 service in a multizone cluster:
         ```sh
         http://169.xx.xxx.xxx:8080
         ```
-        {: codeblock}
+        {: pre}
 
-5. Repeat the steps 2 - 4 to add a version 1.0 NLB in each zone.
+5. Repeat steps 2–4 to add a version 1.0 NLB in each zone.
 
 6. If you choose to [enable source IP preservation for an NLB 1.0](#lb_source_ip), ensure that app pods are scheduled onto the edge worker nodes by [adding edge node affinity to app pods](#lb_edge_nodes). App pods must be scheduled onto edge nodes to receive incoming requests.
 
@@ -170,14 +173,17 @@ Next, you can [register an NLB subdomain](/docs/openshift?topic=openshift-loadba
 ## Setting up an NLB 1.0 in a single-zone cluster
 {: #lb_config}
 
-**Before you begin**:
+### Before you begin
+{: #lb_config_prereqs}
+
 * You must have an available portable public or private IP address to assign to the network load balancer (NLB) service. For more information, see [Configuring subnets for clusters](/docs/openshift?topic=openshift-subnets).
 * Ensure you have the [**Writer** or **Manager** {{site.data.keyword.cloud_notm}} IAM service access role](/docs/openshift?topic=openshift-iam-platform-access-roles) for the `default` namespace.
+
 * When cluster nodes are reloaded or when a cluster master update includes a new `keepalived` image,  the load balancer virtual IP is moved to the network interface of a new node. When this occurs, any long-lasting connections to your load balancer must be re-established. Consider including retry logic in your application so that attempts to re-establish the connection are made quickly.
 
 To create an NLB 1.0 service in a single-zone cluster:
 
-1. [Deploy your app to the cluster](/docs/openshift?topic=openshift-app). Ensure that you add a label to your deployment in the metadata section of your configuration file. This label is needed to identify all pods where your app runs so that they are in the load balancing.
+1. [Deploy your app to the cluster](/docs/openshift?topic=openshift-app). Ensure that you add a label in the metadata section of your deployment configuration file. This custom label identifies all pods where your app runs to include them in the load balancing.
 2. Create a load balancer service for the app that you want to expose to the public internet or a private network.
     1. Create a service configuration file that is named, for example, `myloadbalancer.yaml`.
 
@@ -202,10 +208,12 @@ To create an NLB 1.0 service in a single-zone cluster:
         ```
         {: codeblock}
 
-        `service.kubernetes.io/ibm-load-balancer-cloud-provider-ip-type:`
+        `service.kubernetes.io/ibm-load-balancer-cloud-provider-ip-type`
         :   Annotation to specify a `private` or `public` load balancer.
-        `service.kubernetes.io/ibm-load-balancer-cloud-provider-vlan:`
+
+        `service.kubernetes.io/ibm-load-balancer-cloud-provider-vlan`
         :   Annotation to specify a VLAN that the load balancer service deploys to. To see VLANs, run `ibmcloud oc vlan ls --zone <zone>`.
+
         `selector`
         :   The label key (`<selector_key>`) and value (`<selector_value>`) that you used in the `spec.template.metadata.labels` section of your app deployment YAML.
         
@@ -239,7 +247,7 @@ To create an NLB 1.0 service in a single-zone cluster:
         ```
         {: codeblock}
 
-    3. Optional: Make your NLB service available to only a limited range of IP addresses by specifying the IPs in the `spec.loadBalancerSourceRanges` field. `loadBalancerSourceRanges` is implemented by `kube-proxy` in your cluster via Iptables rules on worker nodes. For more information, see the [Kubernetes documentation](https://kubernetes.io/docs/concepts/services-networking/){: external}.
+    3. Optional: Make your NLB service available to only a limited range of IP addresses by specifying the IPs in the `spec.loadBalancerSourceRanges` field. `loadBalancerSourceRanges` is implemented by `kube-proxy` in your cluster by using iptables rules on worker nodes. For more information, see the [Kubernetes documentation](https://kubernetes.io/docs/concepts/services-networking/){: external}.
 
     4. Create the service in your cluster.
 
@@ -255,7 +263,7 @@ To create an NLB 1.0 service in a single-zone cluster:
     ```
     {: pre}
 
-    Example CLI output:
+    Example output:
 
     ```sh
     NAME:                   myloadbalancer
@@ -287,7 +295,7 @@ To create an NLB 1.0 service in a single-zone cluster:
         ```sh
         http://169.xx.xxx.xxx:8080
         ```
-        {: codeblock}
+        {: pre}
 
 5. If you choose to [enable source IP preservation for an NLB 1.0](#lb_source_ip), ensure that app pods are scheduled onto the edge worker nodes by [adding edge node affinity to app pods](#lb_edge_nodes). App pods must be scheduled onto edge nodes to receive incoming requests.
 
@@ -303,7 +311,7 @@ Next, you can [register an NLB subdomain](/docs/openshift?topic=openshift-loadba
 This feature is for version 1.0 network load balancers (NLBs) only. The source IP address of client requests is preserved by default in version 2.0 NLBs.
 {: note}
 
-When a client request to your app is sent to your cluster, a load balancer service pod receives the request. If no app pod exists on the same worker node as the load balancer service pod, the NLB forwards the request to a different worker node. The source IP address of the package is changed to the public IP address of the worker node where the load balancer service pod runs.
+When a client request to your app is sent to your cluster, a load balancer service pod receives the request. If no app pod exists on the same worker node as the load balancer service pod, the NLB forwards the request to a different worker node. The source IP address of the request is changed to the public IP address of the worker node where the load balancer service pod runs.
 {: shortdesc}
 
 To preserve the original source IP address of the client request, you can [enable source IP](https://kubernetes.io/docs/tasks/access-application-cluster/create-external-load-balancer/#preserving-the-client-source-ip){: external} for load balancer services. The TCP connection continues all the way to the app pods so that the app can see the actual source IP address of the initiator. Preserving the client’s IP is useful, for example, when app servers have to apply security and access-control policies.
@@ -352,7 +360,7 @@ spec:
 ```
 {: codeblock}
 
-Both the **affinity** and **tolerations** sections have `dedicated` as the `key` and `edge` as the `value`.
+The `affinity` and `tolerations` sections both have `dedicated` as the `key` and `edge` as the `value`.
 
 ### Adding affinity rules for multiple public or private VLANs
 {: #edge_nodes_multiple_vlans}
@@ -362,7 +370,9 @@ When your cluster is connected to multiple public or private VLANs, your app pod
 
 When source IP is enabled, schedule app pods on worker nodes that are the same VLAN as the NLB's IP address by adding an affinity rule to the app deployment.
 
-Before you begin: [Access your {{site.data.keyword.redhat_openshift_notm}} cluster](/docs/openshift?topic=openshift-access_cluster).
+Before you begin:
+
+[Access your {{site.data.keyword.redhat_openshift_notm}} cluster](/docs/openshift?topic=openshift-access_cluster).
 
 1. Get the IP address of the NLB service. Look for the IP address in the **LoadBalancer Ingress** field.
     ```sh
@@ -474,7 +484,3 @@ Before you begin: [Access your {{site.data.keyword.redhat_openshift_notm}} clust
         {: screen}
 
     4. In the **Labels** section of the output, verify that the public or private VLAN is the VLAN that you designated in previous steps.
-
-
-
-

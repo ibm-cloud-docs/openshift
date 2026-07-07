@@ -1,8 +1,8 @@
 ---
 
 copyright:
-  years: 2014, 2024
-lastupdated: "2024-09-16"
+  years: 2014, 2026
+lastupdated: "2026-07-07"
 
 
 keywords: kubernetes, openshift
@@ -25,7 +25,7 @@ Review the storage class for {{site.data.keyword.cos_full_notm}}.
 The resiliency endpoint is automatically set based on the location that your cluster is in. For more information, see [Endpoints and storage locations](/docs/cloud-object-storage?topic=cloud-object-storage-endpoints). For pricing information, see the [pricing documentation](https://cloud.ibm.com/objectstorage/create){: external}.
 {: note}
 
-To view more information about these classes, you can run the `get sc` command in your cluster.
+To view more information about these classes, run the following command in your cluster.
 
 ```sh
 oc get sc STORAGE-CLASS -o yaml
@@ -44,7 +44,7 @@ oc get sc STORAGE-CLASS -o yaml
 | Chunk size | Storage classes without `perf`: 16 MB. Storage classes with `perf`: 52 MB |
 | Kernel cache | Enabled |
 | Billing type | Monthly |
-{: caption="Standard classes." caption-side="bottom"}
+{: caption="Standard classes" caption-side="bottom"}
 {: #cos_sc1}
 {: tab-title="Standard"}
 {: tab-group="sc_ref"}
@@ -56,12 +56,12 @@ oc get sc STORAGE-CLASS -o yaml
 | Feature | Description |
 |-----|-----|
 | Classes | `ibmc-s3fs-vault-cross-region`, `ibmc-s3fs-vault-regional` |
-| Volume binding mode | Immediate |
-| Reclaim policy | Delete |
+| `volumeBindingMode` | Immediate |
+| `reclaimPolicy` | Delete |
 | Chunk size | 16 MB |
-| Kernel cache |  Disabled |
+| Kernel cache | Disabled |
 | Billing type | Monthly |
-{: caption="Vault classes." caption-side="bottom"}
+{: caption="Vault classes" caption-side="bottom"}
 {: #cos_sc2}
 {: tab-title="Vault"}
 {: tab-group="sc_ref"}
@@ -71,13 +71,13 @@ oc get sc STORAGE-CLASS -o yaml
 
 | Feature | Description |
 |-----|-----|
-| Classes | `ibmc-s3fs-cold-cross-region`, `ibmc-s3fs-cold-perf-cross-region`, `ibmc-s3fs-cold-regional`,  `ibmc-s3fs-cold-perf-regional` |
+| Classes | `ibmc-s3fs-cold-cross-region`, `ibmc-s3fs-cold-perf-cross-region`, `ibmc-s3fs-cold-regional`, `ibmc-s3fs-cold-perf-regional` |
 | `volumeBindingMode` | Immediate |
 | `reclaimPolicy` | Delete |
 | Chunk size | 16 MB |
 | Kernel cache | Disabled |
 | Billing type | Monthly |
-{: caption="Cold classes." caption-side="bottom"}
+{: caption="Cold classes" caption-side="bottom"}
 {: #cos_sc3}
 {: tab-title="Cold"}
 {: tab-group="sc_ref"}
@@ -93,7 +93,7 @@ oc get sc STORAGE-CLASS -o yaml
 | Chunk size | Storage classes without `perf`: 16 MB. Storage classes with `perf`: 52 MB |
 | Kernel cache | Disabled |
 | Billing type | Monthly |
-{: caption="Smart classes." caption-side="bottom"}
+{: caption="Smart classes" caption-side="bottom"}
 {: #cos_sc4}
 {: tab-title="Smart"}
 {: tab-group="sc_ref"}

@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2026
-lastupdated: "2026-06-03"
+lastupdated: "2026-07-07"
 
 
 keywords: openshift, cli reference, kubernetes cli, openshift cli, {{site.data.keyword.openshiftlong_notm}}
@@ -28,6 +28,16 @@ Refer to these commands to create and manage **both community Kubernetes or {{si
 * **OpenShift**: [Install the {{site.data.keyword.redhat_openshift_notm}} CLI plug-in](/docs/openshift?topic=openshift-cli-install).
 
 In the command line, you are notified when updates to the `ibmcloud` CLI and plug-ins are available. Be sure to keep your CLI up-to-date so that you can use all available commands and options.
+
+## Before you begin
+{: #cli-ks-plugin-prereqs}
+
+Install the `container-service` or `ks` plug-in.
+
+```sh
+ibmcloud plugin install ks
+```
+{: pre}
 
 Looking for `ibmcloud cr` commands? See the [{{site.data.keyword.registrylong_notm}} CLI reference](/docs/Registry?topic=Registry-containerregcli). Looking for `kubectl` commands? See the [Kubernetes documentation](https://kubectl.docs.kubernetes.io/){: external}.
 {: tip}
