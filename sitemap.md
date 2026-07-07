@@ -7227,6 +7227,8 @@ subcollection: openshift
 
 * [Version v1.0.756](/docs/openshift?topic=openshift-cs_cli_changelog#cli-01756)
 
+* [Version v1.0.753](/docs/openshift?topic=openshift-cs_cli_changelog#cli-01753)
+
 * [Version v1.0.745](/docs/openshift?topic=openshift-cs_cli_changelog#cli-01745)
 
 * [Version v1.0.732](/docs/openshift?topic=openshift-cs_cli_changelog#cli-01732)

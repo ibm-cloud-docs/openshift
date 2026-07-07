@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2026
-lastupdated: "2026-05-28"
+lastupdated: "2026-07-07"
 
 
 keywords: openshift, {{site.data.keyword.openshiftlong_notm}}, oc, ks
@@ -120,10 +120,14 @@ Version 1.0.756 of the CLI was released on 06 April 2026.
 - Adds the `ibmcloud ks ingress lb backend set` command to configure which Ingress controller (Kubernetes or Traefik) is exposed by VPC load balancers.
 - Updates the help text for `ibmcloud ks worker replace --update` command to indicate that the command updates the worker node operating system when the worker pool OS has been updated.
 - Extends ALB version information to include Traefik Ingress controller versions and status.
-- Adds Satellite host update severity indicators to help identify control plane hosts that need updates.
 - Includes general refactoring and improvements.
 
 
+## Version v1.0.753
+{: #cli-01753}
+
+Version 1.0.753 of the CLI was released on 27 March 2026.
+- Adds upgrade indicator symbols to the `Status` or `State` column in the output of the `ibmcloud sat location ls`, `ibmcloud sat location get`, `ibmcloud sat hosts`, and `ibmcloud sat host get` commands. A `*` symbol indicates that one or more control plane hosts are at least one patch version behind. A `‡` symbol indicates that one or more control plane hosts are at least one major or minor version behind. For more information, see [Identifying control plane hosts that need updating](/docs/satellite?topic=satellite-host-update-location#host-update-identify-cli).
 
 
 ## Version v1.0.745
