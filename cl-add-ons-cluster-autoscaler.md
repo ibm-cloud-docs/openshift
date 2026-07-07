@@ -3,7 +3,7 @@
 copyright:
   years: 2024, 2026
 
-lastupdated: "2026-07-06"
+lastupdated: "2026-07-07"
 
 
 keywords: change log, version history, Cluster autoscaler
@@ -41,6 +41,20 @@ Review the version history for Cluster autoscaler.
 
 ## Version 2.0.0
 {: #cl-add-ons-cluster-autoscaler-2.0.0}
+
+
+### Version 2.0.0 - v200-12-0_351296784, released 07 July 2026
+{: #cl-add-ons-cluster-autoscaler-v200-12-0_351296784}
+
+- Resolves the following CVEs: [CVE-2026-42507](https://nvd.nist.gov/vuln/detail/CVE-2026-42507){: external}.
+- Updates Go to version `1.25.11`.
+- Update storage secret sidecar 1.3.56 
+- `1.30.7 200-12`
+- `1.31.5 200-12`
+- `1.32.7 200-12`
+- `1.33.4 200-12`
+- `1.34.4 200-12`
+- `1.35.0 200-12`
 
 
 ### Version 2.0.0 - v200-7-0_332133224, released 30 April 2026
@@ -91,6 +105,21 @@ Review the version history for Cluster autoscaler.
 
 ## Version 1.2.4
 {: #cl-add-ons-cluster-autoscaler-1.2.4}
+
+
+### Version 1.2.4 - v124-13-0_351834855, released 07 July 2026
+{: #cl-add-ons-cluster-autoscaler-v124-13-0_351834855}
+
+- Resolves the following CVEs: [CVE-2026-27145](https://nvd.nist.gov/vuln/detail/CVE-2026-27145){: external}, and [CVE-2026-42507](https://nvd.nist.gov/vuln/detail/CVE-2026-42507){: external}.
+- Updates Go to version `1.25.11`.
+- Update storage secret sidecar 1.3.56 
+- `1.28.7 124-13`
+- `1.29.5 124-13`
+- `1.30.7 124-13`
+- `1.31.5 124-13`
+- `1.32.7 124-13`
+- `1.33.4 124-13`
+- `1.34.3 124-13.`
 
 
 ### Version 1.2.4 - v124-8-0_326847250, released 24 March 2026

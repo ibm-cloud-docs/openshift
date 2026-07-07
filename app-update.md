@@ -1,8 +1,8 @@
 ---
 
-copyright: 
+copyright:
   years: 2014, 2026
-lastupdated: "2026-04-07"
+lastupdated: "2026-07-06"
 
 
 keywords: kubernetes, openshift, red hat, red hat openshift, update, upgrade, openshift
@@ -13,9 +13,6 @@ subcollection: openshift
 ---
 
 {{site.data.keyword.attribute-definition-list}}
-
-
-
 
 
 # Managing the app lifecycle
@@ -29,7 +26,7 @@ Use Kubernetes-native and third-party tools to perform rolling updates and rollb
 
 To update your app, you can choose from various strategies such as the following. You might start with a rolling deployment or instantaneous switch before you progress to a more complicated canary deployment.
 
-Rolling deployment</dt>
+Rolling deployment
 :   You can use Kubernetes-native functionality to create a `v2` deployment and to gradually replace your previous `v1` deployment. This approach requires that apps are backwards-compatible so that users who are served the `v2` app version don't experience any breaking changes. For more information, see [Managing rolling deployments to update your apps](/docs/openshift?topic=openshift-update_app#app_rolling).
 
 Instantaneous switch
@@ -43,12 +40,11 @@ Canary or A/B deployment
 {: #app_scaling}
 
 With Kubernetes, you can enable [horizontal pod autoscaling](https://kubernetes.io/docs/concepts/workloads/autoscaling/horizontal-pod-autoscale/){: external} to automatically increase or decrease the number of instances of your apps based on CPU.
-{: shortdesc}
 
 Want to scale your worker nodes instead of your pods? Check out the [cluster autoscaler](/docs/openshift?topic=openshift-cluster-scaling-install-addon).
 {: tip}
 
-Before you begin
+Before you begin:
 - [Access your {{site.data.keyword.redhat_openshift_notm}} cluster](/docs/openshift?topic=openshift-access_cluster).
 - Make sure that you are assigned a [service access role](/docs/openshift?topic=openshift-iam-platform-access-roles) that grants the appropriate Kubernetes RBAC role so that you can work with Kubernetes resources in the project.
 
@@ -84,15 +80,14 @@ To scale your apps:
 {: #app_rolling}
 
 You can manage the rollout of your app changes in an automated and controlled fashion for workloads with a pod template such as deployments. If your rollout isn't going according to plan, you can roll back your deployment to the previous revision.
-{: shortdesc}
 
 Want to prevent downtime during your rolling update? Be sure to specify a [readiness probe in your deployment](/docs/openshift?topic=openshift-app#probe) so that the rollout proceeds to the next app pod after the most recently updated pod is ready.
 {: tip}
 
-Before you begin
-* [Access your {{site.data.keyword.redhat_openshift_notm}} cluster](/docs/openshift?topic=openshift-access_cluster).
-* Create a [deployment](/docs/containers?topic=containers-deploy_app#app_cli).
-* Make sure that you have a [service access role](/docs/openshift?topic=openshift-iam-platform-access-roles) that grants the appropriate Kubernetes RBAC role so that you can work with Kubernetes resources in the project.
+Before you begin:
+- [Access your {{site.data.keyword.redhat_openshift_notm}} cluster](/docs/openshift?topic=openshift-access_cluster).
+- Create a [deployment](/docs/containers?topic=containers-deploy_app#app_cli).
+- Make sure that you have a [service access role](/docs/openshift?topic=openshift-iam-platform-access-roles) that grants the appropriate Kubernetes RBAC role so that you can work with Kubernetes resources in the project.
 
 To manage rolling updates to your apps:
 
@@ -123,10 +118,10 @@ To manage rolling updates to your apps:
     
 
     `spec.minReadySeconds`
-    :   By default, deployments wait until the pod is marked as `ready` to continue with the rollout. If you notice that the deployment continues to create pods even though your app in the most recent pod is not yet ready, use this field to slow down the deployment rollout. For example, if you specify `5`, the deployment waits for 5 seconds after the pod is `ready` before it creates the next pod.</td>
+    :   By default, deployments wait until the pod is marked as `ready` to continue with the rollout. If you notice that the deployment continues to create pods even though your app in the most recent pod is not yet ready, use this field to slow down the deployment rollout. For example, if you specify `5`, the deployment waits for 5 seconds after the pod is `ready` before it creates the next pod.
 
     `spec.progressDeadlineSeconds`
-    :   Set a timeout in seconds before a deployment is considered failed. For example, without a timeout, if your new app version has a bug and hangs immediately, the rollout can't continue because the pod never reaches a `ready` state. If you set this timeout to `600` seconds, then if any phase of the rollout fails to progress for 10 minutes, the deployment is marked as failed and the rollout stops.</td>
+    :   Set a timeout in seconds before a deployment is considered failed. For example, without a timeout, if your new app version has a bug and hangs immediately, the rollout can't continue because the pod never reaches a `ready` state. If you set this timeout to `600` seconds, then if any phase of the rollout fails to progress for 10 minutes, the deployment is marked as failed and the rollout stops.
 
     `spec.strategy.type`
     :   Specify the `RollingUpdate` strategy type.
@@ -166,7 +161,7 @@ To manage rolling updates to your apps:
     4. Set the new image for the deployment to use.
 
         ```sh
-        oc set image deployment/<deployment_name><container_name>=<image_name>
+        oc set image deployment/<deployment_name> <container_name>=<image_name>
         ```
         {: pre}
 
@@ -199,7 +194,8 @@ To manage rolling updates to your apps:
         ```
         {: pre}
 
-        **Tip:** To see the details for a specific revision, include the revision number.
+        To see the details for a specific revision, include the revision number.
+        {: tip}
 
         ```sh
         oc rollout history deployment/<deployment_name> --revision=<number>
@@ -209,7 +205,7 @@ To manage rolling updates to your apps:
     2. Roll back to the previous version, or specify a revision. To roll back to the previous version, use the following command.
 
         ```sh
-        oc rollout undo deployment/<depoyment_name> --to-revision=<number>
+        oc rollout undo deployment/<deployment_name> --to-revision=<number>
         ```
         {: pre}
 
@@ -255,9 +251,9 @@ Before you begin, you need two clusters and the **Manager** [service access role
     ```
     {: screen}
 
-3. Copy the configuration files in your cluster to a local directory. The `--export` option removes cluster-specific information from the configuration files.
+3. Copy the configuration files in your cluster to a local directory. Then, manually remove cluster-specific fields such as `resourceVersion`, `uid`, `creationTimestamp`, and `status` from the exported YAML before applying the files to another cluster.
     ```sh
-    oc get all -o yaml --export > myconfigs.yaml
+    oc get all -o yaml > myconfigs.yaml
     ```
     {: pre}
 

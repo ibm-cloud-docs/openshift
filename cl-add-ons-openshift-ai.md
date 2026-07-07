@@ -3,7 +3,7 @@
 copyright:
   years: 2024, 2026
 
-lastupdated: "2026-07-01"
+lastupdated: "2026-07-06"
 
 
 keywords: change log, version history, OpenShift AI
@@ -37,6 +37,20 @@ ibmcloud oc cluster addon versions
 
 Review the version history for OpenShift AI.
 {: shortdesc}
+
+
+## Version 420
+{: #cl-add-ons-openshift-ai-420}
+
+
+### Version 420 - 420.0.0_349689605, released 08 July 2026
+{: #cl-add-ons-openshift-ai-42000_349689605}
+
+- Updates Go to version `1.25.11`.
+- Installs Red Hat `openshift-ai` operator version `3.4.2`.
+- Optionally installs NFD operator based on latest version available for channel `stable`.
+- Optionally installs NVIDIA GPU operator based on latest version available for channel `stable`.
+- Optionally installs Pipeline operator based on latest version available for channel `latest`.
 
 
 ## Version 419

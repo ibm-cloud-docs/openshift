@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2026
-lastupdated: "2026-07-06"
+lastupdated: "2026-07-07"
 
 
 keywords: openshift
@@ -210,6 +210,12 @@ subcollection: openshift
 
     * [Solution](/docs/openshift?topic=openshift-cs_uc_gov#uc_data_mashup_solution)
 
+    * [Step 1: Store data in the cloud](/docs/openshift?topic=openshift-cs_uc_gov#uc_data_mashup_step1)
+
+    * [Step 2: Provide access to data with APIs](/docs/openshift?topic=openshift-cs_uc_gov#uc_data_mashup_step2)
+
+    * [Step 3: Innovate with IBM Garage and cloud services](/docs/openshift?topic=openshift-cs_uc_gov#uc_data_mashup_step3)
+
     * [Results](/docs/openshift?topic=openshift-cs_uc_gov#uc_data_mashup_results)
 
 * [Large public port secures exchange of port data and shipping manifests that connect public and private organizations](/docs/openshift?topic=openshift-cs_uc_gov#uc_port)
@@ -217,6 +223,12 @@ subcollection: openshift
     * [Context](/docs/openshift?topic=openshift-cs_uc_gov#uc_port_context)
 
     * [Solution](/docs/openshift?topic=openshift-cs_uc_gov#uc_port_solution)
+
+    * [Step 1: Containerize apps by using microservices](/docs/openshift?topic=openshift-cs_uc_gov#uc_port_step1)
+
+    * [Step 2: Ensure global availability](/docs/openshift?topic=openshift-cs_uc_gov#uc_port_step2)
+
+    * [Step 3: Data sharing](/docs/openshift?topic=openshift-cs_uc_gov#uc_port_step3)
 
     * [Results](/docs/openshift?topic=openshift-cs_uc_gov#uc_port_results)
 
@@ -3397,7 +3409,11 @@ subcollection: openshift
 
 * [Setting up an NLB 1.0 in a multizone cluster](/docs/openshift?topic=openshift-loadbalancer#multi_zone_config)
 
+    * [Before you begin](/docs/openshift?topic=openshift-loadbalancer#multi_zone_config_prereqs)
+
 * [Setting up an NLB 1.0 in a single-zone cluster](/docs/openshift?topic=openshift-loadbalancer#lb_config)
+
+    * [Before you begin](/docs/openshift?topic=openshift-loadbalancer#lb_config_prereqs)
 
 * [Enabling source IP preservation](/docs/openshift?topic=openshift-loadbalancer#lb_source_ip)
 
@@ -3411,7 +3427,11 @@ subcollection: openshift
 
 * [Setting up an NLB 2.0 in a multizone cluster](/docs/openshift?topic=openshift-loadbalancer-v2#ipvs_multi_zone_config)
 
+    * [Before you begin](/docs/openshift?topic=openshift-loadbalancer-v2#ipvs_multi_zone_config_prereqs)
+
 * [Setting up an NLB 2.0 in a single-zone cluster](/docs/openshift?topic=openshift-loadbalancer-v2#ipvs_single_zone_config)
+
+    * [Before you begin](/docs/openshift?topic=openshift-loadbalancer-v2#ipvs_single_zone_config_prereqs)
 
 * [Scheduling algorithms](/docs/openshift?topic=openshift-loadbalancer-v2#scheduling)
 
@@ -3420,6 +3440,8 @@ subcollection: openshift
     * [Unsupported scheduling algorithms](/docs/openshift?topic=openshift-loadbalancer-v2#scheduling_unsupported)
 
 [Isolating Classic NLBs to edge worker nodes](/docs/openshift?topic=openshift-edge-nlb-classic#edge-nlb-classic)
+
+    * [Before you begin](/docs/openshift?topic=openshift-edge-nlb-classic#edge-nlb-classic-prereqs)
 
 [Isolating network workloads to edge nodes in VPC clusters](/docs/openshift?topic=openshift-edge-vpc-workloads#edge-vpc-workloads)
 
@@ -6755,6 +6777,8 @@ subcollection: openshift
 
 [{{site.data.keyword.openshiftlong_notm}} CLI reference](/docs/openshift?topic=openshift-kubernetes-service-cli#kubernetes-service-cli)
 
+* [Before you begin](/docs/openshift?topic=openshift-kubernetes-service-cli#cli-ks-plugin-prereqs)
+
 * [{{site.data.keyword.openshiftlong_notm}} commands](/docs/openshift?topic=openshift-kubernetes-service-cli#cli_commands)
 
 * [`cluster` commands](/docs/openshift?topic=openshift-kubernetes-service-cli#cluster)
@@ -7037,8 +7061,6 @@ subcollection: openshift
 
     * [`ibmcloud oc nlb-dns monitor configure`](/docs/openshift?topic=openshift-kubernetes-service-cli#nlb-dns-monitor-configure-cli)
 
-    * [Command options](/docs/openshift?topic=openshift-kubernetes-service-cli#nlb-dns-monitor-configure-options)
-
     * [`ibmcloud oc nlb-dns monitor disable`](/docs/openshift?topic=openshift-kubernetes-service-cli#cs_nlb-dns-monitor-disable)
 
     * [`ibmcloud oc nlb-dns monitor enable`](/docs/openshift?topic=openshift-kubernetes-service-cli#cs_nlb-dns-monitor-enable)
@@ -7057,11 +7079,9 @@ subcollection: openshift
 
     * [Experimental: `ibmcloud oc nlb-dns secret rm`](/docs/openshift?topic=openshift-kubernetes-service-cli#cs_nlb-dns-secret-rm)
 
-* [`ibmcloud oc vpc secure-by-default enable`](/docs/openshift?topic=openshift-kubernetes-service-cli#vpc-secure-by-default-enable-cli)
+    * [`ibmcloud oc vpc secure-by-default enable`](/docs/openshift?topic=openshift-kubernetes-service-cli#vpc-secure-by-default-enable-cli)
 
-    * [Command options](/docs/openshift?topic=openshift-kubernetes-service-cli#vpc-secure-by-default-enable-options)
-
-* [`webhook-create` command](/docs/openshift?topic=openshift-kubernetes-service-cli#cs_webhook_create)
+    * [`webhook-create` command](/docs/openshift?topic=openshift-kubernetes-service-cli#cs_webhook_create)
 
     * [Example `webhook-create` command](/docs/openshift?topic=openshift-kubernetes-service-cli#webhook-create-example)
 
@@ -7095,7 +7115,7 @@ subcollection: openshift
 
     * [`ibmcloud oc quota ls`](/docs/openshift?topic=openshift-kubernetes-service-cli#cs_quota_ls)
 
-* [`subnets` command](/docs/openshift?topic=openshift-kubernetes-service-cli#cs_subnets)
+    * [`subnets` command](/docs/openshift?topic=openshift-kubernetes-service-cli#cs_subnets)
 
 * [`vlan` commands](/docs/openshift?topic=openshift-kubernetes-service-cli#vlan)
 
@@ -7103,45 +7123,33 @@ subcollection: openshift
 
     * [`ibmcloud oc vlan spanning get`](/docs/openshift?topic=openshift-kubernetes-service-cli#cs_vlan_spanning_get)
 
-* [`ibmcloud oc vpc ls`](/docs/openshift?topic=openshift-kubernetes-service-cli#vpc-ls-cli)
+    * [`ibmcloud oc vpc ls`](/docs/openshift?topic=openshift-kubernetes-service-cli#vpc-ls-cli)
 
-    * [Command options](/docs/openshift?topic=openshift-kubernetes-service-cli#vpc-ls-options)
+    * [`ibmcloud oc vpc outbound-traffic-protection disable`](/docs/openshift?topic=openshift-kubernetes-service-cli#vpc-outbound-traffic-protection-disable-cli)
 
-* [`ibmcloud oc vpc outbound-traffic-protection disable`](/docs/openshift?topic=openshift-kubernetes-service-cli#vpc-outbound-traffic-protection-disable-cli)
+    * [`ibmcloud oc vpc outbound-traffic-protection enable`](/docs/openshift?topic=openshift-kubernetes-service-cli#vpc-outbound-traffic-protection-enable-cli)
 
-    * [Command options](/docs/openshift?topic=openshift-kubernetes-service-cli#vpc-outbound-traffic-protection-disable-options)
+    * [`ibmcloud oc vni attach baremetal`](/docs/openshift?topic=openshift-kubernetes-service-cli#vni-attach-baremetal-cli)
 
-* [`ibmcloud oc vpc outbound-traffic-protection enable`](/docs/openshift?topic=openshift-kubernetes-service-cli#vpc-outbound-traffic-protection-enable-cli)
+    * [`ibmcloud oc vni detach`](/docs/openshift?topic=openshift-kubernetes-service-cli#vni-detach-cli)
 
-    * [Command options](/docs/openshift?topic=openshift-kubernetes-service-cli#vpc-outbound-traffic-protection-enable-options)
+    * [`ibmcloud oc vni ls`](/docs/openshift?topic=openshift-kubernetes-service-cli#vni-ls-cli)
 
-* [`ibmcloud oc vni attach baremetal`](/docs/openshift?topic=openshift-kubernetes-service-cli#vni-attach-baremetal-cli)
-
-    * [Command options](/docs/openshift?topic=openshift-kubernetes-service-cli#vni-attach-baremetal-options)
-
-* [`ibmcloud oc vni detach`](/docs/openshift?topic=openshift-kubernetes-service-cli#vni-detach-cli)
-
-    * [Command options](/docs/openshift?topic=openshift-kubernetes-service-cli#vni-detach-options)
-
-* [`ibmcloud oc vni ls`](/docs/openshift?topic=openshift-kubernetes-service-cli#vni-ls-cli)
-
-    * [Command options](/docs/openshift?topic=openshift-kubernetes-service-cli#vni-ls-options)
-
-* [`flavor` command](/docs/openshift?topic=openshift-kubernetes-service-cli#cs_machine_types)
+    * [`flavor` command](/docs/openshift?topic=openshift-kubernetes-service-cli#cs_machine_types)
 
     * [`flavor get` command](/docs/openshift?topic=openshift-kubernetes-service-cli#cs_flavor_get)
 
     * [`flavor ls` command](/docs/openshift?topic=openshift-kubernetes-service-cli#cs_flavor_ls)
 
-* [`messages` command](/docs/openshift?topic=openshift-kubernetes-service-cli#cs_messages)
+    * [`messages` command](/docs/openshift?topic=openshift-kubernetes-service-cli#cs_messages)
 
-* [locations command](/docs/openshift?topic=openshift-kubernetes-service-cli#cs_supported-locations)
+    * [`locations` command](/docs/openshift?topic=openshift-kubernetes-service-cli#cs_supported-locations)
 
-* [`versions` command](/docs/openshift?topic=openshift-kubernetes-service-cli#cs_versions_command)
+    * [`versions` command](/docs/openshift?topic=openshift-kubernetes-service-cli#cs_versions_command)
 
-* [`api` command](/docs/openshift?topic=openshift-kubernetes-service-cli#cs_cli_api)
+    * [`api` command](/docs/openshift?topic=openshift-kubernetes-service-cli#cs_cli_api)
 
-* [`init` command](/docs/openshift?topic=openshift-kubernetes-service-cli#cs_init)
+    * [`init` command](/docs/openshift?topic=openshift-kubernetes-service-cli#cs_init)
 
 * [`script` commands](/docs/openshift?topic=openshift-kubernetes-service-cli#script)
 
@@ -7149,9 +7157,7 @@ subcollection: openshift
 
 * [`security-group` commands](/docs/openshift?topic=openshift-kubernetes-service-cli#security_group)
 
-* [`ibmcloud oc security-group ls`](/docs/openshift?topic=openshift-kubernetes-service-cli#security-group-ls-cli)
-
-    * [Command options](/docs/openshift?topic=openshift-kubernetes-service-cli#security-group-ls-options)
+    * [`ibmcloud oc security-group ls`](/docs/openshift?topic=openshift-kubernetes-service-cli#security-group-ls-cli)
 
     * [`ibmcloud oc security-group reset`](/docs/openshift?topic=openshift-kubernetes-service-cli#security_group_reset)
 
@@ -7189,21 +7195,13 @@ subcollection: openshift
 
     * [`ibmcloud oc zone add satellite`](/docs/openshift?topic=openshift-kubernetes-service-cli#cs_zone_add_sat)
 
-* [`ibmcloud oc experimental trusted-profile default get`](/docs/openshift?topic=openshift-kubernetes-service-cli#experimental-trusted-profile-default-get-cli)
+    * [`ibmcloud oc experimental trusted-profile default get`](/docs/openshift?topic=openshift-kubernetes-service-cli#experimental-trusted-profile-default-get-cli)
 
-    * [Command options](/docs/openshift?topic=openshift-kubernetes-service-cli#experimental-trusted-profile-default-get-options)
+    * [`ibmcloud oc experimental trusted-profile default set`](/docs/openshift?topic=openshift-kubernetes-service-cli#experimental-trusted-profile-default-set-cli)
 
-* [`ibmcloud oc experimental trusted-profile default set`](/docs/openshift?topic=openshift-kubernetes-service-cli#experimental-trusted-profile-default-set-cli)
+    * [`ibmcloud oc experimental trusted-profile get`](/docs/openshift?topic=openshift-kubernetes-service-cli#experimental-trusted-profile-get-cli)
 
-    * [Command options](/docs/openshift?topic=openshift-kubernetes-service-cli#experimental-trusted-profile-default-set-options)
-
-* [`ibmcloud oc experimental trusted-profile get`](/docs/openshift?topic=openshift-kubernetes-service-cli#experimental-trusted-profile-get-cli)
-
-    * [Command options](/docs/openshift?topic=openshift-kubernetes-service-cli#experimental-trusted-profile-get-options)
-
-* [`ibmcloud oc experimental trusted-profile set`](/docs/openshift?topic=openshift-kubernetes-service-cli#experimental-trusted-profile-set-cli)
-
-    * [Command options](/docs/openshift?topic=openshift-kubernetes-service-cli#experimental-trusted-profile-set-options)
+    * [`ibmcloud oc experimental trusted-profile set`](/docs/openshift?topic=openshift-kubernetes-service-cli#experimental-trusted-profile-set-cli)
 
 [CLI change log](/docs/openshift?topic=openshift-cs_cli_changelog#cs_cli_changelog)
 
@@ -7425,6 +7423,10 @@ subcollection: openshift
 
 [OpenShift AI add-on version change log](/docs/openshift?topic=openshift-cl-add-ons-openshift-ai#cl-add-ons-openshift-ai)
 
+* [Version 420](/docs/openshift?topic=openshift-cl-add-ons-openshift-ai#cl-add-ons-openshift-ai-420)
+
+    * [Version 420 - 420.0.0_349689605, released 08 July 2026](/docs/openshift?topic=openshift-cl-add-ons-openshift-ai#cl-add-ons-openshift-ai-42000_349689605)
+
 * [Version 419](/docs/openshift?topic=openshift-cl-add-ons-openshift-ai#cl-add-ons-openshift-ai-419)
 
     * [Version 419 - v419.1.0_348058306, released 23 June 2026](/docs/openshift?topic=openshift-cl-add-ons-openshift-ai#cl-add-ons-openshift-ai-v41910_348058306)
@@ -7491,6 +7493,8 @@ subcollection: openshift
 
 * [Version 2.0.0](/docs/openshift?topic=openshift-cl-add-ons-cluster-autoscaler#cl-add-ons-cluster-autoscaler-2.0.0)
 
+    * [Version 2.0.0 - v200-12-0_351296784, released 07 July 2026](/docs/openshift?topic=openshift-cl-add-ons-cluster-autoscaler#cl-add-ons-cluster-autoscaler-v200-12-0_351296784)
+
     * [Version 2.0.0 - v200-7-0_332133224, released 30 April 2026](/docs/openshift?topic=openshift-cl-add-ons-cluster-autoscaler#cl-add-ons-cluster-autoscaler-v200-7-0_332133224)
 
     * [Version 2.0.0 - v200-6-0_326846817, released 24 March 2026](/docs/openshift?topic=openshift-cl-add-ons-cluster-autoscaler#cl-add-ons-cluster-autoscaler-v200-6-0_326846817)
@@ -7500,6 +7504,8 @@ subcollection: openshift
     * [Version patch update 2.0.0-2_302959219, released 2 December 2025](/docs/openshift?topic=openshift-cl-add-ons-cluster-autoscaler#2.0.0-2_302959219_ca)
 
 * [Version 1.2.4](/docs/openshift?topic=openshift-cl-add-ons-cluster-autoscaler#cl-add-ons-cluster-autoscaler-1.2.4)
+
+    * [Version 1.2.4 - v124-13-0_351834855, released 07 July 2026](/docs/openshift?topic=openshift-cl-add-ons-cluster-autoscaler#cl-add-ons-cluster-autoscaler-v124-13-0_351834855)
 
     * [Version 1.2.4 - v124-8-0_326847250, released 24 March 2026](/docs/openshift?topic=openshift-cl-add-ons-cluster-autoscaler#cl-add-ons-cluster-autoscaler-v124-8-0_326847250)
 

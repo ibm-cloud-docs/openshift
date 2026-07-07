@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2026
-lastupdated: "2026-06-10"
+lastupdated: "2026-07-07"
 
 
 keywords: openshift, node scaling, ca, autoscaler
@@ -75,6 +75,9 @@ These conditions might impact cluster flavor availability:
 | cxf.48x96  \n(Compute) | in-che-1  \nin-che-2  \nin-che-3 | 48 cores  \n96GB memory  \n25Gbps network speed  \n No GPUs |  REDHAT_8_64  \n RHEL_9_64  \n RHCOS  \n| 100GB BLOCK | N/A | 300 / 5  \n 300 / 10  \n 600 / 5  \n 600 / 10  \n 900 / 5  \n 900 / 10  \n 1200 / 5  \n 1200 / 10  \n 1600 / 5  \n 1600 / 10  \n 2400 / 10  \n 3000 / 10  \n 4000 / 10  \n|
 | cxf.64x128  \n(Compute) | in-che-1  \nin-che-2  \nin-che-3 | 64 cores  \n128GB memory  \n25Gbps network speed  \n No GPUs |  REDHAT_8_64  \n RHEL_9_64  \n RHCOS  \n| 100GB BLOCK | N/A | 300 / 5  \n 300 / 10  \n 600 / 5  \n 600 / 10  \n 900 / 5  \n 900 / 10  \n 1200 / 5  \n 1200 / 10  \n 1600 / 5  \n 1600 / 10  \n 2400 / 10  \n 3000 / 10  \n 4000 / 10  \n|
 | cxf.8x16  \n(Compute) | in-che-1  \nin-che-2  \nin-che-3 | 8 cores  \n16GB memory  \n12Gbps network speed  \n No GPUs |  REDHAT_8_64  \n RHEL_9_64  \n RHCOS  \n| 100GB BLOCK | N/A | 300 / 5  \n 300 / 10  \n 600 / 5  \n 600 / 10  \n 900 / 5  \n 900 / 10  \n 1200 / 5  \n 1200 / 10  \n 1600 / 5  \n 1600 / 10  \n 2400 / 10  \n 3000 / 10  \n 4000 / 10  \n|
+| gx3.16x80.l4  \n(GPU) | in-che-1  \nin-che-2  \nin-che-3 | 16 cores  \n80GB memory  \n24Gbps network speed  \n1 L4 GPU |  REDHAT_8_64  \n RHEL_9_64  \n RHCOS  \n| 100GB BLOCK | N/A | 300 / 5  \n 300 / 10  \n 600 / 5  \n 600 / 10  \n 900 / 5  \n 900 / 10  \n 1200 / 5  \n 1200 / 10  \n 1600 / 5  \n 1600 / 10  \n 2400 / 10  \n 3000 / 10  \n 4000 / 10  \n|
+| gx3.32x160.2l4  \n(GPU) | in-che-1  \nin-che-2  \nin-che-3 | 32 cores  \n160GB memory  \n32Gbps network speed  \n2 L4 GPUs |  REDHAT_8_64  \n RHEL_9_64  \n RHCOS  \n| 100GB BLOCK | N/A | 300 / 5  \n 300 / 10  \n 600 / 5  \n 600 / 10  \n 900 / 5  \n 900 / 10  \n 1200 / 5  \n 1200 / 10  \n 1600 / 5  \n 1600 / 10  \n 2400 / 10  \n 3000 / 10  \n 4000 / 10  \n|
+| gx3.64x320.4l4  \n(GPU) | in-che-1  \nin-che-2  \nin-che-3 | 64 cores  \n320GB memory  \n32Gbps network speed  \n4 L4 GPUs |  REDHAT_8_64  \n RHEL_9_64  \n RHCOS  \n| 100GB BLOCK | N/A | 300 / 5  \n 300 / 10  \n 600 / 5  \n 600 / 10  \n 900 / 5  \n 900 / 10  \n 1200 / 5  \n 1200 / 10  \n 1600 / 5  \n 1600 / 10  \n 2400 / 10  \n 3000 / 10  \n 4000 / 10  \n|
 | gx3d.160x1792.8h200  \n(GPU) | in-che-1  \nin-che-2  \nin-che-3 | 160 cores  \n1792GB memory  \n32Gbps network speed  \n8 H200 GPUs |  REDHAT_8_64  \n RHCOS  \n| 100GB BLOCK | N/A | 300 / 5  \n 300 / 10  \n 600 / 5  \n 600 / 10  \n 900 / 5  \n 900 / 10  \n 1200 / 5  \n 1200 / 10  \n 1600 / 5  \n 1600 / 10  \n 2400 / 10  \n 3000 / 10  \n 4000 / 10  \n|
 | mx3d.128x1280  \n(Memory) | in-che-1  \nin-che-2  \nin-che-3 | 128 cores  \n1280GB memory  \n32Gbps network speed  \n No GPUs |  REDHAT_8_64  \n RHEL_9_64  \n RHCOS  \n| 100GB BLOCK | N/A | 300 / 5  \n 300 / 10  \n 600 / 5  \n 600 / 10  \n 900 / 5  \n 900 / 10  \n 1200 / 5  \n 1200 / 10  \n 1600 / 5  \n 1600 / 10  \n 2400 / 10  \n 3000 / 10  \n 4000 / 10  \n|
 | mx3d.16x160  \n(Memory) | in-che-1  \nin-che-2  \nin-che-3 | 16 cores  \n160GB memory  \n24Gbps network speed  \n No GPUs |  REDHAT_8_64  \n RHEL_9_64  \n RHCOS  \n| 100GB BLOCK | N/A | 300 / 5  \n 300 / 10  \n 600 / 5  \n 600 / 10  \n 900 / 5  \n 900 / 10  \n 1200 / 5  \n 1200 / 10  \n 1600 / 5  \n 1600 / 10  \n 2400 / 10  \n 3000 / 10  \n 4000 / 10  \n|

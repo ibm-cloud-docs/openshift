@@ -1,8 +1,8 @@
 ---
 
 copyright: 
-  years: 2014, 2024
-lastupdated: "2024-08-06"
+  years: 2014, 2026
+lastupdated: "2026-07-07"
 
 
 keywords: kubernetes, openshift
@@ -18,14 +18,13 @@ subcollection: openshift
 # Government use cases for {{site.data.keyword.cloud_notm}}
 {: #cs_uc_gov}
 
-These use cases highlight how workloads on {{site.data.keyword.openshiftlong}} benefit from the public cloud. These workloads are isolated in global regions for data sovereignty, use {{site.data.keyword.watson}} machine learning instead of net-new code, and connect to on-premises databases.
+These use cases highlight how workloads on {{site.data.keyword.openshiftlong_notm}} benefit from the public cloud. These workloads are isolated in global regions for data sovereignty, use {{site.data.keyword.watson}} machine learning instead of net-new code, and connect to on-premises databases.
 {: shortdesc}
 
 ## Regional government improves collaboration and velocity with community Developers who combine public-private data
 {: #uc_data_mashup}
 
-An Open-Government Data Program Executive needs to share public data with the community and private sector, but the data is locked in an on-premises monolithic system.  
-{: shortdesc}
+An Open-Government Data Program Executive needs to share public data with the community and private sector, but the data is locked in an on-premises monolithic system.
 
 With {{site.data.keyword.openshiftlong_notm}}, the Exec delivers the value of combined public-private data. Likewise, the service provides the public cloud platform to refactor and expose microservices from monolithic on-premises apps. Also, the public cloud allows government and the public partnerships to use external cloud services and collaboration-friendly open-source tools.
 
@@ -50,7 +49,7 @@ To bust bureaucracy and transform government’s relationship with its constitue
 
 To start, the government uses {{site.data.keyword.cos_full_notm}} to store its public data in the cloud. This storage is free to use and reuse, shareable by anyone, and subject only to attribution and share alike. Sensitive data can be sanitized before it’s pushed to the cloud. Besides that, access controls are set up so that the cloud caps new data storage, where the community can demonstrate POCs of enhanced existing free data.
 
-The government’s next step for the public-private partnerships was to establish an API economy that is hosted in {{site.data.keyword.apiconnect_long}}. There, community and enterprise Developers make data easily accessible in API form. Their goals are to have publicly available REST APIs, to enable interoperability, and to accelerate app integration. They use IBM {{site.data.keyword.SecureGateway}} to connect back to private data sources on-premises.
+The government's next step for the public-private partnerships was to establish an API economy that is hosted in {{site.data.keyword.apiconnect_long}}. There, community and enterprise Developers make data easily accessible in API form. Their goals are to have publicly available REST APIs, to enable interoperability, and to accelerate app integration. They use {{site.data.keyword.SecureGateway}} to connect back to private data sources on-premises.
 
 Finally, apps based on those shared APIs are hosted in {{site.data.keyword.openshiftlong_notm}}, where it’s easy to spin up clusters. Then, Developers across the community, private sector, and the government can co-create apps easily. In short, Developers need to focus on coding instead of managing the infrastructure. Thus, they chose {{site.data.keyword.openshiftlong_notm}} because IBM simplifies infrastructure management.
 
@@ -58,7 +57,7 @@ Finally, apps based on those shared APIs are hosted in {{site.data.keyword.opens
 * Monitoring health and recovery for worker nodes
 * Providing global compute, so Developers don’t have to stand up infrastructure in worldwide regions where they need workloads and data to be located
 
-Moving compute workloads into the {{site.data.keyword.cloud_notm}} isn't enough though. The government needs to go through a method transformation as well. By adopting the practices of the IBM Garage Method, the provider can implement an agile and iterative delivery process that supports modern DevOps practices like Continuous Integration and Delivery (CI/CD).
+Moving compute workloads into the {{site.data.keyword.cloud_notm}} isn't enough though. The government needs to go through a method transformation as well. By adopting the practices of the [IBM Garage Method](https://www.ibm.com/garage/method){: external}, the provider can implement an agile and iterative delivery process that supports modern DevOps practices like Continuous Integration and Delivery (CI/CD).
 
 Much of the CI/CD process itself is automated with {{site.data.keyword.contdelivery_full}} in the cloud. The provider can define workflow toolchains to prepare container images, check for vulnerabilities, and deploy them to the Kubernetes cluster.
 
@@ -68,17 +67,17 @@ Technical solution:
 * {{site.data.keyword.openshiftlong_notm}}
 * {{site.data.keyword.cos_full_notm}} and {{site.data.keyword.cloudant}}
 * {{site.data.keyword.apiconnect_long}}
-* IBM {{site.data.keyword.SecureGateway}}
+* {{site.data.keyword.SecureGateway}}
 * {{site.data.keyword.contdelivery_full}}
 
-#### Step 1: Store data in the cloud
+### Step 1: Store data in the cloud
 {: #uc_data_mashup_step1}
 
 * {{site.data.keyword.cos_full_notm}} provides historical data storage, accessible to all on the public cloud.
 * Use {{site.data.keyword.cloudant}} with developer-provided keys to cache data in the cloud.
-* Use IBM {{site.data.keyword.SecureGateway}} to maintain secure connections to existing on-premises databases.
+* Use {{site.data.keyword.SecureGateway}} to maintain secure connections to existing on-premises databases.
 
-#### Step 2: Provide access to data with APIs
+### Step 2: Provide access to data with APIs
 {: #uc_data_mashup_step2}
 
 * Use {{site.data.keyword.apiconnect_long}} for the API economy platform. APIs allow the public and private sectors to combine data into their apps.
@@ -87,10 +86,10 @@ Technical solution:
 * Deploy the apps to containers that run in {{site.data.keyword.openshiftlong_notm}}. Built-in HA tools in {{site.data.keyword.openshiftlong_notm}} balance the workloads, including self-healing and load balancing.
 * Provide standardized DevOps dashboards through Kubernetes, open-source tools familiar to all types of Developers.
 
-#### Step 3: Innovate with IBM Garage and cloud services
+### Step 3: Innovate with IBM Garage and cloud services
 {: #uc_data_mashup_step3}
 
-* Adopt the agile and iterative development practices from the IBM Garage Method to enable frequent releases of features, patches, and fixes without downtime.
+* Adopt the agile and iterative development practices from the [IBM Garage Method](https://www.ibm.com/garage/method){: external} to enable frequent releases of features, patches, and fixes without downtime.
 * Whether developers are in the public or private sector, {{site.data.keyword.contdelivery_full}} helps them to quickly provision an integrated toolchain, by using customizable, shareable templates.
 * After Developers build and test the apps in their Dev and Test clusters, they use the {{site.data.keyword.contdelivery_full}} toolchains to deploy apps into production clusters.
 * With {{site.data.keyword.watson}} AI, machine learning, and deep learning tools available from the {{site.data.keyword.cloud_notm}} catalog, Developers focus on domain problems. Instead of custom unique ML code, ML logic is snapped into apps with service bindings.
@@ -107,7 +106,6 @@ Technical solution:
 {: #uc_port}
 
 IT Execs for a private shipping company and the government-operated port need to connect, provide visibility, and securely exchange port information. But no unified system existed to connect public port information and private shipping manifests.
-{: shortdesc}
 
 {{site.data.keyword.openshiftlong_notm}} allows government and the public partnerships to use external cloud services and collaboration-friendly open-source tools. The containers provided a shareable platform where both the port and shipping company felt assured that the shared information was hosted on a secure platform. And that platform scales as they went from small Dev-Test systems to production-sized systems. Open toolchains further accelerated development by automating build, test, and deployments.
 
@@ -122,14 +120,14 @@ Key technologies:
 Port secures exchange of port data and shipping manifests that connects public and private organizations.
 
 * Disparate groups of Developers from the government and shipping company don’t have a unified platform where they can collaborate, which slows down deployments of updates and features.
-* Developers are spread across the globe and across organizational boundaries, which means open-source and PaaS the best option.
+* Developers are spread across the globe and across organizational boundaries, which means open-source and PaaS is the best option.
 * Security is a primary concern, and this concern increases the collaboration burden that impacts features and updates to the software, especially after the apps are in production.
 * Just-in-time data meant that the worldwide systems must be highly available to reduce lags in transit operations. Time tables for shipping terminals are highly controlled and sometimes inflexible. Web usage is growing, so instability might cause poor user experience.
 
 ### Solution
 {: #uc_port_solution}
 
-The port and the shipping company co-develop a unified trading system to electronically submit compliance-related information  for the clearance of goods and ships once, rather than to multiple agencies. Manifest and customs apps can quickly share contents of a particular shipment and ensure that all paperwork is electronically transferred and processed by agencies for the port.
+The port and the shipping company co-develop a unified trading system to electronically submit compliance-related information for the clearance of goods and ships once, rather than to multiple agencies. Manifest and customs apps can quickly share contents of a particular shipment and ensure that all paperwork is electronically transferred and processed by agencies for the port.
 
 So they create a partnership that is dedicated to solutions for the trade system.
 * DECLARATIONS - App to take in shipping manifests and digitally process typical customs paperwork and to option out-of-policy items for investigation and enforcement
@@ -154,30 +152,30 @@ Technical solution:
 * {{site.data.keyword.openshiftlong_notm}}
 * {{site.data.keyword.openwhisk}}
 * {{site.data.keyword.cloudant}}
-* IBM {{site.data.keyword.SecureGateway}}
+* {{site.data.keyword.SecureGateway}}
 
-#### Step 1: Containerize apps, by using microservices
+### Step 1: Containerize apps by using microservices
 {: #uc_port_step1}
 
 * Create a Node.js app or deploy an example.
 * Structure apps into a set of cooperative microservices that run within {{site.data.keyword.openshiftlong_notm}} based on functional areas of the app and its dependencies.
-* Deploy the manifest and shipment apps to container that run in {{site.data.keyword.openshiftlong_notm}}.
+* Deploy the manifest and shipment apps to containers that run in {{site.data.keyword.openshiftlong_notm}}.
 * Provide standardized DevOps dashboards through Kubernetes.
-* Use IBM {{site.data.keyword.SecureGateway}} to maintain secure connections to existing on-premises databases.
+* Use {{site.data.keyword.SecureGateway}} to maintain secure connections to existing on-premises databases.
 
-#### Step 2: Ensure global availability
+### Step 2: Ensure global availability
 {: #uc_port_step2}
 
 * After Developers deploy the apps in their Dev and Test clusters, they use the {{site.data.keyword.contdelivery_full}} toolchains and Helm to deploy country-specific apps into clusters across the globe.
 * Workloads and data can then meet regional regulations.
 * Built-in HA tools in {{site.data.keyword.openshiftlong_notm}} balance the workload within each geographic region, including self-healing and load balancing.
 
-#### Step 3: Data sharing
+### Step 3: Data sharing
 {: #uc_port_step3}
 
-* {{site.data.keyword.cloudant}} is a modern NoSQL database suitable a range of data-driven use cases from key-value to complex document-oriented data storage and query.
+* {{site.data.keyword.cloudant}} is a modern NoSQL database suitable for a range of data-driven use cases from key-value to complex document-oriented data storage and query.
 * To minimize queries to the regional databases, {{site.data.keyword.cloudant}} is used to cache the user's session data across apps.
-* This configuration improves the front-end app usability and performance across apps on {{site.data.keyword.containershort}}.
+* This configuration improves the front-end app usability and performance across apps on {{site.data.keyword.openshiftlong_notm}}.
 * While worker apps in {{site.data.keyword.openshiftlong_notm}} analyze on-premises data and store results in {{site.data.keyword.cloudant}}, {{site.data.keyword.openwhisk}} reacts to changes and automatically sanitizes data on the incoming feeds of data.
 * Similarly, notifications of shipments in one region can be triggered through data uploads so that all down-stream consumers can access new data.
 
@@ -188,7 +186,3 @@ Technical solution:
 * Shipping customers and government officials have access to manifest data and can share customs data, while they comply with local regulations.
 * The shipping company benefits from improved logistics management in the supply chain: reduced costs and faster clearance times.
 * 99% are digital declarations, and 90% of imports processed without human intervention.
-
-
-
-

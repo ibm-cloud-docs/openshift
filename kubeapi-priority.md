@@ -1,8 +1,8 @@
 ---
 
 copyright: 
-  years: 2014, 2024
-lastupdated: "2024-09-18"
+  years: 2014, 2026
+lastupdated: "2026-07-07"
 
 
 keywords: kubernetes, openshift
@@ -20,7 +20,7 @@ subcollection: openshift
 # Setting Kubernetes API priority and fairness
 {: #kubeapi-priority}
 
-Your {{site.data.keyword.openshiftlong}} clusters have default settings in place to process simultaneous requests to the API server and prevent traffic overload. You can configure your own flow schema and priority levels for requests that are made to the API server of your clusters. For more information, see [API priority and fairness](https://kubernetes.io/docs/concepts/cluster-administration/flow-control/){: external} in the Kubernetes documentation.
+Your {{site.data.keyword.openshiftlong_notm}} clusters have default settings in place to process simultaneous requests to the API server and prevent traffic overload. You can configure your own flow schema and priority levels for requests that are made to the API server of your clusters. For more information, see [API priority and fairness](https://kubernetes.io/docs/concepts/cluster-administration/flow-control/){: external} in the Kubernetes documentation.
 {: shortdesc}
 
 For example, you might have a user or namespace that runs your critical apps in prod. You can create a flow schema and priority so that your critical apps have a higher priority for the API server to fulfill their requests than other apps in the cluster.
@@ -34,7 +34,7 @@ For example, you might have a user or namespace that runs your critical apps in 
 | Flow schema | Resources that requests come from | Priority level |
 | ----------- | --------- | -------------- |
 | `apiserver-health` | Kubernetes API server health resources | [Custom priority level](#kube-api-prioritylevelconfig) for these resources. |
-| `calico-apiserver-service-accounts` | Resources in the `calico-apiserver` namespace that use a service account in the namespace | Same priority as `kube-system` namespace service accounts. This schema is available for {{site.data.keyword.openshiftlong}} version 4.16 and later.|
+| `calico-apiserver-service-accounts` | Resources in the `calico-apiserver` namespace that use a service account in the namespace | Same priority as `kube-system` namespace service accounts. This schema is available for {{site.data.keyword.openshiftlong_notm}} version 4.16 and later.|
 | `calico-system-service-accounts` | Resources in the `calico-system` namespace that use a service account in the namespace | Same priority as `kube-system` namespace service accounts. |
 | `ibm-admin` | Resources from IBM cluster administrators | Exempts requests by cluster administrators from priority restrictions. |
 | `ibm-system-service-accounts` | Resources in the `ibm-system` namespace that use a service account in the namespace | Same priority as `kube-system` namespace service accounts |
@@ -46,12 +46,11 @@ You can create your own flow schema and priorities, but don't modify the default
 
 Follow the steps to review the flow schemas and priority levels set by {{site.data.keyword.openshiftlong_notm}}.
 
-1. List all flow schemas in your cluster, including those set by {{site.data.keyword.openshiftlong_notm}}, and their corresponding priority levels .
+1. List all flow schemas in your cluster, including those set by {{site.data.keyword.openshiftlong_notm}}, and their corresponding priority levels.
     ```sh
     oc get flowschemas
     ```
-    {: pre} 
-
+    {: pre}
 
 2. Review the details of a particular flow schema including which resources can make prioritized API requests, what type of API requests can be made, and what objects the requests can modify.
     ```sh
@@ -62,16 +61,16 @@ Follow the steps to review the flow schemas and priority levels set by {{site.da
 ### Viewing {{site.data.keyword.openshiftlong_notm}} created priority level configurations
 {: #kube-api-prioritylevelconfig}
 
-{{site.data.keyword.openshiftlong_notm}} sets a custom priority level configuration for the `apiserver-health` resource. 
+{{site.data.keyword.openshiftlong_notm}} sets a custom priority level configuration for the `apiserver-health` resource.
 {: shortdesc}
 
-Use the following commands to view details about the configuration. 
+Use the following commands to view details about the configuration.
 
 ```sh
 oc get prioritylevelconfiguration apiserver-health
 ```
 {: pre}
- 
+
 ```sh
 oc describe prioritylevelconfiguration apiserver-health
 ```
