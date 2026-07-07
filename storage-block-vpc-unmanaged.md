@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2026
-lastupdated: "2026-04-15"
+lastupdated: "2026-07-07"
 
 
 keywords: openshift, block storage
@@ -271,7 +271,7 @@ After you deploy the {{site.data.keyword.block_storage_is_short}} driver, you ca
           - name: nginx
             securityContext:
               privileged: false
-            image: k8s.gcr.io/nginx-slim:0.8
+            image: registry.k8s.io/nginx-slim:0.8
             ports:
             - containerPort: 80
             name: web

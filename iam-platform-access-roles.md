@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2026
-lastupdated: "2026-04-23"
+lastupdated: "2026-07-07"
 
 keywords: openshift, {{site.data.keyword.openshiftlong_notm}}, kubernetes, infrastructure, policy, users, permissions, access, roles
 
@@ -65,7 +65,7 @@ Consider saving the permissions outlined in the earlier table as a custom IAM ro
 ## Example custom IAM roles
 {: #example-iam}
 
-The following table provides some example use cases and the corresponding IAM roles for those cases. You can use these examples or create your own custom roles. For more information, see [Creating custom roles](/docs/iam?topic=iam-custom-roles&interface=ui).
+The following table shows example use cases and the corresponding IAM roles. You can use these examples or create your own custom roles. For more information, see [Creating custom roles](/docs/iam?topic=iam-custom-roles&interface=ui).
 
 
 | Example custom role | Permissions |

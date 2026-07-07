@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2026
-lastupdated: "2026-06-29"
+lastupdated: "2026-07-07"
 
 
 keywords: openshift, ocp, compliance, security standards, faq, openshift pricing, ocp pricing, openshift charges, ocp charges, openshift price, ocp price, openshift billing, ocp billing, openshift costs, ocp costs
@@ -65,7 +65,7 @@ For more information about how your cluster resources are set up, see the [Servi
 {: #faq_benefits}
 {: faq}
 
-{{site.data.keyword.openshiftlong_notm}} is a managed {{site.data.keyword.redhat_openshift_notm}} offering that delivers powerful tools, an intuitive user experience, and built-in security for rapid delivery of apps that you can bind to cloud services that are related to {{site.data.keyword.ibmwatson}}, AI, IoT, DevOps, security, and data analytics. As a certified Kubernetes provider, {{site.data.keyword.openshiftlong_notm}} provides intelligent scheduling, self-healing, horizontal scaling, service discovery and load balancing, automated rollouts and rollbacks, and secret and configuration management. The service also has advanced capabilities around simplified cluster management, container security and isolation policies, the ability to design your own cluster, and integrated operational tools for consistency in deployment.
+{{site.data.keyword.openshiftlong_notm}} is a managed {{site.data.keyword.redhat_openshift_notm}} offering that delivers powerful tools, an intuitive user experience, and built-in security for rapid delivery of apps that you can bind to cloud services that are related to {{site.data.keyword.ibmwatson}}, AI, IoT, DevOps, security, and data analytics. As a certified Kubernetes provider, {{site.data.keyword.openshiftlong_notm}} supports intelligent scheduling, self-healing, horizontal scaling, service discovery and load balancing, automated rollouts and rollbacks, and secret and configuration management. The service also has advanced capabilities around simplified cluster management, container security and isolation policies, the ability to design your own cluster, and integrated operational tools for consistency in deployment.
 
 For a detailed overview of capabilities and benefits, see [Benefits of using the service](/docs/openshift?topic=openshift-overview#benefits).
 
@@ -108,29 +108,8 @@ When you run `oc get nodes` or `oc describe node <worker_node>`, you might see t
 ## What kinds of workloads can I move to {{site.data.keyword.openshiftlong_notm}}?
 {: #move_to_cloud}
 
-The following table provides some examples of what types of workloads that users typically move to the various types of clouds. You might also choose a hybrid approach where you have clusters that run in both environments.
+For examples of the types of workloads that users typically move to the various types of clouds, see [Moving your workloads to {{site.data.keyword.cloud_notm}}](/docs/openshift?topic=openshift-overview#cloud_workloads). You might also choose a hybrid approach where you have clusters that run in both environments.
 {: shortdesc}
-
-| Workload | {{site.data.keyword.containershort_notm}} off-prem | on-prem |
-| --- | --- | --- |
-| DevOps enablement tools | Yes | |
-| Developing and testing apps | Yes | |
-| Apps have major shifts in demand and need to scale rapidly | Yes | |
-| Business apps such as CRM, HCM, ERP, and E-commerce | Yes | |
-| Collaboration and social tools such as email | Yes | |
-| RHEL workloads | Yes | |
-| Bare metal | Yes | Yes |
-| GPU compute resources | Yes | Yes |
-| PCI and HIPAA-compliant workloads | Yes | Yes |
-| Legacy apps with platform and infrastructure constraints and dependencies | | Yes |
-| Proprietary apps with strict designs, licensing, or heavy regulations | | Yes |
-{: caption="{{site.data.keyword.cloud_notm}} implementations support your workloads" caption-side="bottom"}
-
-Ready to run workloads off-premises in {{site.data.keyword.openshiftlong_notm}}?
-:   Great! You're already in the public cloud documentation. Keep reading for more strategy ideas, or hit the ground running by [creating a cluster now](/docs/openshift?topic=openshift-getting-started).
-
-Want to run workloads in both on-premises and off-premises clouds?
-:   Explore [{{site.data.keyword.satellitelong_notm}}](/docs/satellite?topic=satellite-faqs) to extend the flexibility and scalability of {{site.data.keyword.cloud_notm}} into your on-premises, edge, or other cloud provider environments.
 
 ## Can I automate my infrastructure deployments?
 {: #infra_packaging}

@@ -3,7 +3,7 @@
 copyright:
   years: 2014, 2026
 
-lastupdated: "2026-06-01"
+lastupdated: "2026-07-07"
 
 keywords: openshift, {{site.data.keyword.openshiftlong_notm}}, kubernetes, infrastructure, rbac, policy, providers, benefits
 
@@ -13,15 +13,13 @@ subcollection: openshift
 
 {{site.data.keyword.attribute-definition-list}}
 
-
 # Understanding {{site.data.keyword.openshiftlong_notm}}
 {: #overview}
 
 Learn more about [{{site.data.keyword.openshiftlong}}](https://www.ibm.com/products/openshift){: external}, its capabilities, and the options that are available to you to customize the cluster to your needs.
 {: shortdesc}
 
-{{site.data.keyword.openshiftlong_notm}} is a managed offering to create your own {{site.data.keyword.redhat_openshift_notm}} cluster of compute hosts to deploy and manage containerized apps on {{site.data.keyword.cloud_notm}}. {{site.data.keyword.openshiftlong_notm}} provides intelligent scheduling, self-healing, horizontal scaling, service discovery and load balancing, automated rollouts and rollbacks, and secret and configuration management for your apps. Combined with an intuitive user experience, built-in security and isolation, and advanced tools to secure, manage, and monitor your cluster workloads, you can rapidly deliver highly available and secure containerized apps in the public cloud.
-{: #overview-iks}
+{{site.data.keyword.openshiftlong_notm}} is a managed offering to create your own {{site.data.keyword.redhat_openshift_notm}} cluster of compute hosts to deploy and manage containerized apps on {{site.data.keyword.cloud_notm}}. {{site.data.keyword.openshiftlong_notm}} is designed to provide intelligent scheduling, self-healing, horizontal scaling, service discovery and load balancing, automated rollouts and rollbacks, and secret and configuration management for your apps. Combined with an intuitive user experience, built-in security and isolation, and advanced tools to secure, manage, and monitor your cluster workloads, you can rapidly deliver highly available and secure containerized apps in the public cloud.
 
 
 Review frequently asked questions and key technologies that {{site.data.keyword.openshiftlong_notm}} uses.
@@ -221,7 +219,7 @@ Both {{site.data.keyword.openshiftlong_notm}} and {{site.data.keyword.containerl
 |Classic infrastructure cluster on only the private network|Yes| |
 | GPU bare metal worker nodes | Yes | Yes |
 |Integrated IBM Cloud Paks and middleware| |Yes|
-|Built-in container image streams, builds, and tooling ([read more](https://blog.cloudowski.com/articles/why-managing-container-images-on-openshift-is-better-than-on-kubernetes/){: external})| |Yes|
+|Built-in container image streams, builds, and tooling ([Learn why managing container images on OpenShift differs from Kubernetes](https://blog.cloudowski.com/articles/why-managing-container-images-on-openshift-is-better-than-on-kubernetes/){: external})| |Yes|
 |Integrated CI/CD with Jenkins| |Yes|
 |Stricter app security context set up by default| |Yes|
 |Simplified Kubernetes developer experience, with an app console that is suited for beginners| |Yes|
@@ -274,10 +272,10 @@ But how do you get to the cloud? What are your options along the way? And how do
 
 Use this page to learn some strategies for your Kubernetes deployments on {{site.data.keyword.openshiftlong_notm}}. And engage with the team on [Slack](https://ibm-cloud-success.slack.com){: external}.
 
-Not on slack yet? [Request an invite!](https://ibm-cloud-success.slack.com/join/shared_invite/zt-2p5zqh275-FL8XUSEmn_vvAJZzrHqYcA){: external}
+Not on slack yet? [Request an invite to the IBM Cloud Success Slack workspace](https://ibm-cloud-success.slack.com/join/shared_invite/zt-2p5zqh275-FL8XUSEmn_vvAJZzrHqYcA){: external}
 {: tip}
 
-The following table provides some examples of what types of workloads that users typically move to the various types of clouds. You might also choose a hybrid approach where you have clusters that run in both environments.
+The following table shows the types of workloads that users typically move to the various types of clouds. You might also choose a hybrid approach where you have clusters that run in both environments.
 
 
 | Workload | {{site.data.keyword.openshiftlong_notm}} off-prem | on-prem |

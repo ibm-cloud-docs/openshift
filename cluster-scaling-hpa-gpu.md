@@ -1,8 +1,8 @@
 ---
 
 copyright: 
-  years: 2014, 2025
-lastupdated: "2025-11-07"
+  years: 2014, 2026
+lastupdated: "2026-07-07"
 
 
 keywords: openshift, {{site.data.keyword.openshiftlong_notm}}, kubernetes, node scaling, ca, autoscaler, gpu, hpa
@@ -104,7 +104,7 @@ Complete the following steps to create a deployment that uses HPA.
             spec:
                 containers:
                 - name: cuda-test-main
-                    image: "k8s.gcr.io/cuda-vector-add:v0.1"
+                    image: "registry.k8s.io/cuda-vector-add:v0.1"
                     command: ["bash", "-c", "for (( c=1; c<=5000; c++ )); do ./vectorAdd; done"]
                     resources:
                         limits:
