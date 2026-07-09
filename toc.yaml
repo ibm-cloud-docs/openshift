@@ -19,6 +19,17 @@ toc:
       - topic: overview.md
         navtitle: Understanding the service
       - topicgroup:
+          label: Learning paths
+          topics:
+          - path-admin.md
+          - path-dev.md
+      - topicgroup:
+          label: Plan your cluster
+          topics:
+          - strategy.md
+          - cluster-plan-network-vpc.md
+          - cluster-plan-network-classic.md
+      - topicgroup:
           label: Your responsibilities
           topics:
           - responsibilities.md
@@ -32,19 +43,17 @@ toc:
           - uc-retail.md
           - uc-transport.md
           - uc-gov.md
-      - topicgroup:
-          label: Learning paths
-          topics:
-          - path-admin.md
-          - path-dev.md
       - rhel-deprecation.md
       - release-notes.md
   - navgroup:
       id: tutorial
       topics:
-      - openshift_tutorial.md
-      - openshift_tutorial_vpc.md
-      - tutorial-two-node-vpc.md
+      - topic: tutorial-two-node-vpc.md
+        navtitle: 2-node VPC cluster with Schematics
+      - topic: openshift_tutorial_vpc.md
+        navtitle: VPC cluster with the CLI
+      - topic: openshift_tutorial.md
+        navtitle: Classic cluster with the CLI
       - link:
           label: OpenShift tutorials
           href: https://cloud.ibm.com/docs?tab=tutorials&tags=openshift&page=1&pageSize=20

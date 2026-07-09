@@ -2,7 +2,7 @@
 
 copyright:
   years: 2024, 2026
-lastupdated: "2026-07-02"
+lastupdated: "2026-07-09"
 
 
 keywords: kubernetes, openshift, object storage add-in, cos
@@ -76,21 +76,29 @@ Before you begin: [Access your {{site.data.keyword.redhat_openshift_notm}} clust
     ```
     {: screen}
 
-1. List the available storage classes.
+1. List the available storage classes. The driver supports both regional and cross-regional storage classes for the `s3fs` and `rclone` mounters.
     ```sh
     oc get sc | grep object
     ```
     {: pre}
 
     ```sh
-    ibm-object-storage-smart-rclone             cos.s3.csi.ibm.io   Delete          Immediate           false                  17h
-    ibm-object-storage-smart-rclone-retain      cos.s3.csi.ibm.io   Retain          Immediate           false                  17h
-    ibm-object-storage-smart-s3fs               cos.s3.csi.ibm.io   Delete          Immediate           false                  17h
-    ibm-object-storage-smart-s3fs-retain        cos.s3.csi.ibm.io   Retain          Immediate           false                  17h
-    ibm-object-storage-standard-rclone          cos.s3.csi.ibm.io   Delete          Immediate           false                  17h
-    ibm-object-storage-standard-rclone-retain   cos.s3.csi.ibm.io   Retain          Immediate           false                  17h
-    ibm-object-storage-standard-s3fs            cos.s3.csi.ibm.io   Delete          Immediate           false                  17h
-    ibm-object-storage-standard-s3fs-retain     cos.s3.csi.ibm.io   Retain          Immediate           false                  17h
+    ibm-object-storage-smart-cross-region-rclone             cos.s3.csi.ibm.io   Delete          Immediate           false                  17h
+    ibm-object-storage-smart-cross-region-rclone-retain      cos.s3.csi.ibm.io   Retain          Immediate           false                  17h
+    ibm-object-storage-smart-cross-region-s3fs               cos.s3.csi.ibm.io   Delete          Immediate           false                  17h
+    ibm-object-storage-smart-cross-region-s3fs-retain        cos.s3.csi.ibm.io   Retain          Immediate           false                  17h
+    ibm-object-storage-smart-rclone                          cos.s3.csi.ibm.io   Delete          Immediate           false                  17h
+    ibm-object-storage-smart-rclone-retain                   cos.s3.csi.ibm.io   Retain          Immediate           false                  17h
+    ibm-object-storage-smart-s3fs                            cos.s3.csi.ibm.io   Delete          Immediate           false                  17h
+    ibm-object-storage-smart-s3fs-retain                     cos.s3.csi.ibm.io   Retain          Immediate           false                  17h
+    ibm-object-storage-standard-cross-region-rclone          cos.s3.csi.ibm.io   Delete          Immediate           false                  17h
+    ibm-object-storage-standard-cross-region-rclone-retain   cos.s3.csi.ibm.io   Retain          Immediate           false                  17h
+    ibm-object-storage-standard-cross-region-s3fs            cos.s3.csi.ibm.io   Delete          Immediate           false                  17h
+    ibm-object-storage-standard-cross-region-s3fs-retain     cos.s3.csi.ibm.io   Retain          Immediate           false                  17h
+    ibm-object-storage-standard-rclone                       cos.s3.csi.ibm.io   Delete          Immediate           false                  17h
+    ibm-object-storage-standard-rclone-retain                cos.s3.csi.ibm.io   Retain          Immediate           false                  17h
+    ibm-object-storage-standard-s3fs                         cos.s3.csi.ibm.io   Delete          Immediate           false                  17h
+    ibm-object-storage-standard-s3fs-retain                  cos.s3.csi.ibm.io   Retain          Immediate           false                  17h
     ```
     {: screen}
 
@@ -588,16 +596,24 @@ Standard
 Smart
 :   Use for workloads and data that do not follow a specific usage pattern, or when the usage pattern is difficult to predict.
 
-| Name | Bucket class | Mounter | Reclaim policy | Binding mode |
-| --- | --- | --- | --- | --- |
-| ibm-object-storage-smart-rclone | Smart | `rclone` | Delete | Immediate |
-| ibm-object-storage-smart-rclone-retain | Smart | `rclone` | Retain | Immediate |
-| ibm-object-storage-smart-s3fs | Smart | `s3fs` | Delete | Immediate |
-| ibm-object-storage-smart-s3fs-retain | Smart | `s3fs` | Retain | Immediate |
-| ibm-object-storage-standard-rclone | Standard | `rclone` | Delete | Immediate |
-| ibm-object-storage-standard-rclone-retain | Standard | `rclone` | Retain | Immediate |
-| ibm-object-storage-standard-s3fs | Standard | `s3fs` | Delete | Immediate |
-| ibm-object-storage-standard-s3fs-retain | Standard | `s3fs` | Retain | Immediate |
+| Name | Bucket class | Resiliency | Mounter | Reclaim policy | Binding mode |
+| --- | --- | --- | --- | --- | --- |
+| ibm-object-storage-smart-cross-region-rclone | Smart | Cross-regional | `rclone` | Delete | Immediate |
+| ibm-object-storage-smart-cross-region-rclone-retain | Smart | Cross-regional | `rclone` | Retain | Immediate |
+| ibm-object-storage-smart-cross-region-s3fs | Smart | Cross-regional | `s3fs` | Delete | Immediate |
+| ibm-object-storage-smart-cross-region-s3fs-retain | Smart | Cross-regional | `s3fs` | Retain | Immediate |
+| ibm-object-storage-smart-rclone | Smart | Regional | `rclone` | Delete | Immediate |
+| ibm-object-storage-smart-rclone-retain | Smart | Regional | `rclone` | Retain | Immediate |
+| ibm-object-storage-smart-s3fs | Smart | Regional | `s3fs` | Delete | Immediate |
+| ibm-object-storage-smart-s3fs-retain | Smart | Regional | `s3fs` | Retain | Immediate |
+| ibm-object-storage-standard-cross-region-rclone | Standard | Cross-regional | `rclone` | Delete | Immediate |
+| ibm-object-storage-standard-cross-region-rclone-retain | Standard | Cross-regional | `rclone` | Retain | Immediate |
+| ibm-object-storage-standard-cross-region-s3fs | Standard | Cross-regional | `s3fs` | Delete | Immediate |
+| ibm-object-storage-standard-cross-region-s3fs-retain | Standard | Cross-regional | `s3fs` | Retain | Immediate |
+| ibm-object-storage-standard-rclone | Standard | Regional | `rclone` | Delete | Immediate |
+| ibm-object-storage-standard-rclone-retain | Standard | Regional | `rclone` | Retain | Immediate |
+| ibm-object-storage-standard-s3fs | Standard | Regional | `s3fs` | Delete | Immediate |
+| ibm-object-storage-standard-s3fs-retain | Standard | Regional | `s3fs` | Retain | Immediate |
 {: caption="COS cluster add-on storage classes" caption-side="bottom"}
 
 To review the detailed bucket configuration for a storage class, run `oc describe storageclass <storageclass_name>` or `oc describe storageclass <storageclass_name>`.
@@ -631,7 +647,7 @@ The `s3fs` storage classes use the following default mount options.
 | `max_stat_cache_size=100000` | Sets the maximum number of entries in the stat cache and symbolic link cache. |
 | `retries=5` | Sets the number of times to retry a failed S3 transaction. |
 | `kernel_cache` | Enables the kernel buffer cache for the volume mount point. Data that is read from {{site.data.keyword.cos_full_notm}} is stored in the kernel cache to help provide faster read access. Kernel cache is enabled for the standard and smart `s3fs` storage classes. |
-{: caption="Default mount options for COS add-on `s3fs` storage classes" caption-side="bottom"}
+{: caption="Default mount options for COS add-on s3fs storage classes" caption-side="bottom"}
 
 ### Default `rclone` storage class mount options
 {: #cos-sc-ref-addon-rclone}
@@ -646,4 +662,4 @@ The `rclone` storage classes use the following default mount options.
 | `chunk_size=16Mi` | Sets the size of each part in a multipart upload. |
 | `max_upload_parts=1000` | Sets the maximum number of parts per multipart upload and indirectly caps the maximum supported file size with the configured `chunk_size`. With `chunk_size=16Mi`, the maximum file size is `16 GiB`. |
 | `upload_concurrency=8` | Sets the number of parts that are uploaded in parallel during a multipart upload. |
-{: caption="Default mount options for COS add-on `rclone` storage classes" caption-side="bottom"}
+{: caption="Default mount options for COS add-on rclone storage classes" caption-side="bottom"}

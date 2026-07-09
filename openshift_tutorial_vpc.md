@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2026
-lastupdated: "2026-05-26"
+lastupdated: "2026-07-09"
 
 
 keywords: kubernetes, openshift, red hat, red hat openshift
@@ -64,22 +64,24 @@ In this tutorial, you will create the following resources. There are optional st
 Complete the following prerequisite steps to set up permissions and the command-line environment.
 {: shortdesc}
 
-**Permissions**: If you are the account owner, you already have the required permissions to create a cluster and can continue to the next step. Otherwise, ask the account owner to [set up the API key and assign you the minimum user permissions in {{site.data.keyword.cloud_notm}} IAM](/docs/openshift?topic=openshift-iam-platform-access-roles).
+Permissions
+:   If you are the account owner, you already have the required permissions to create a cluster and can continue to the next step. Otherwise, ask the account owner to [set up the API key and assign you the minimum user permissions in {{site.data.keyword.cloud_notm}} IAM](/docs/openshift?topic=openshift-iam-platform-access-roles).
 
-**Command-line tools**: For quick access to your resources from the command line, try the [{{site.data.keyword.cloud-shell_notm}}](https://cloud.ibm.com/shell){: external}. Otherwise, set up your local command-line environment by completing the following steps.
-1. [Install the {{site.data.keyword.cloud_notm}} CLI (`ibmcloud`), {{site.data.keyword.containershort_notm}} plug-in (`ibmcloud oc`), and {{site.data.keyword.registrylong_notm}} plug-in (`ibmcloud cr`)](/docs/openshift?topic=openshift-cli-install).
-2. [Install the {{site.data.keyword.redhat_openshift_notm}} (`oc`) and Kubernetes (`kubectl`) CLIs](/docs/openshift?topic=openshift-cli-install).
-3. To work with VPC, install the `infrastructure-service` plug-in. The prefix for running commands is `ibmcloud is`.
-    ```sh
-    ibmcloud plugin install infrastructure-service
-    ```
-    {: pre}
+Command-line tools
+:   For quick access to your resources from the command line, try the [{{site.data.keyword.cloud-shell_notm}}](https://cloud.ibm.com/shell){: external}. Otherwise, set up your local command-line environment by completing the following steps.
+    1. [Install the {{site.data.keyword.cloud_notm}} CLI (`ibmcloud`), {{site.data.keyword.containershort_notm}} plug-in (`ibmcloud oc`), and {{site.data.keyword.registrylong_notm}} plug-in (`ibmcloud cr`)](/docs/openshift?topic=openshift-cli-install).
+    2. [Install the {{site.data.keyword.redhat_openshift_notm}} (`oc`) and Kubernetes (`kubectl`) CLIs](/docs/openshift?topic=openshift-cli-install).
+    3. To work with VPC, install the `infrastructure-service` plug-in. The prefix for running commands is `ibmcloud is`.
+        ```sh
+        ibmcloud plugin install infrastructure-service
+        ```
+        {: pre}
 
-4. Update your {{site.data.keyword.containershort_notm}} plug-in to the latest version.
-    ```sh
-    ibmcloud plugin update kubernetes-service
-    ```
-    {: pre}
+    4. Update your {{site.data.keyword.containershort_notm}} plug-in to the latest version.
+        ```sh
+        ibmcloud plugin update kubernetes-service
+        ```
+        {: pre}
 
 
 
@@ -152,7 +154,7 @@ Create an {{site.data.keyword.cloud_notm}} Virtual Private Cloud (VPC) environme
 
 7. In your browser, navigate to the address of your **Master URL** and append `/console`. For example, `https://c0.containers.cloud.ibm.com:23652/console`. If time permits, you can explore the different areas of the {{site.data.keyword.redhat_openshift_notm}} web console.
     
-8. From the {{site.data.keyword.redhat_openshift_notm}} web console menu bar, click your profile **IAM#user.name@email.com > Copy Login Command**. Display and copy the `oc login` token command into your command line to authenticate via the CLI.
+8. From the {{site.data.keyword.redhat_openshift_notm}} web console menu bar, click your profile **IAM#user.name@email.com > Copy Login Command**. Display and copy the `oc login` token command into your command line to authenticate by using the CLI.
     
     Save your cluster master URL to access the {{site.data.keyword.redhat_openshift_notm}} console later. In future sessions, you can skip the `cluster config` step and copy the login command from the console instead.
     {: tip}
