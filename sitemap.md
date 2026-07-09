@@ -8951,8 +8951,6 @@ subcollection: openshift
 
 * [Why am I getting an IAM authentication error after upgrading to OpenShift Sandboxed Containers Operator 1.12.1?](/docs/openshift?topic=openshift-faqs#conf-cont-iam-auth-error)
 
-* [Why am I getting an IAM authentication error after upgrading to OpenShift Sandboxed Containers Operator 1.12.1?](/docs/openshift?topic=openshift-faqs#conf-cont-iam-auth-error)
-
 * [What is the default time zone for my VPC worker nodes?](/docs/openshift?topic=openshift-faqs#vpc)
 
 

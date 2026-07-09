@@ -248,8 +248,8 @@ You can create a Virtualization Service cluster by using the console.
     **Cluster encryption**
     :   Optional. Enable a key management service (KMS) provider to encrypt the secrets in your cluster.
     
-    - Select the root key by Instance
-    - Choose a root key CRN for encryption
+   - Select the root key by Instance
+   - Choose a root key CRN for encryption
 
     **Ingress secrets management**
     :   Optional. Register an IBM Cloud Secrets Manager instance to the cluster for managing ingress subdomain certificates and secrets.
