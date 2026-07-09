@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2026
-lastupdated: "2026-07-07"
+lastupdated: "2026-07-09"
 
 
 keywords: openshift, {{site.data.keyword.openshiftlong_notm}}, oc, ks
@@ -31,6 +31,12 @@ Refer to the following change logs for a summary of changes for each version of 
 
 Review the following changes for 1.0 versions of the CLI plug-in.
 {: shortdesc}
+
+## Version v1.0.791
+{: #cli-01791}
+
+Version 1.0.791 of the CLI was released on 09 July 2026.
+- Fixes an issue where the `_openshift` suffix was not trimmed from version strings in the `Version` column of the table output when a cluster was in an updating state. For example, `4.19.32_1582_openshift --> 4.20.23_1551_openshift` now displays as `4.19.32_1582 --> 4.20.23_1551`. This fix applies to table output only; JSON output is not affected.
 
 ## Version v1.0.775
 {: #cli-01775}
