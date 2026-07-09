@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2026
-lastupdated: "2026-07-07"
+lastupdated: "2026-07-09"
 
 
 keywords: openshift
@@ -4390,6 +4390,36 @@ subcollection: openshift
 
     * [Why are dynamic attached VNIs not working?](/docs/openshift?topic=openshift-vni-virtualization&interface=cli#vni-ts-not-working)
 
+[Tuning ODF performance for virtualization](/docs/openshift?topic=openshift-odf-virt-performance#odf-virt-performance)
+
+* [Before you begin](/docs/openshift?topic=openshift-odf-virt-performance#odf-virt-performance-prereqs)
+
+* [Selecting an ODF performance profile](/docs/openshift?topic=openshift-odf-virt-performance#odf-virt-profile)
+
+    * [From the console](/docs/openshift?topic=openshift-odf-virt-performance#odf-virt-profile-console)
+
+    * [From the CLI](/docs/openshift?topic=openshift-odf-virt-performance#odf-virt-profile-cli)
+
+* [Configuring OSD pod resource limits](/docs/openshift?topic=openshift-odf-virt-performance#odf-virt-osd-resources)
+
+    * [Check current OSD resource limits](/docs/openshift?topic=openshift-odf-virt-performance#odf-virt-osd-check)
+
+    * [Increase OSD resource limits](/docs/openshift?topic=openshift-odf-virt-performance#odf-virt-osd-modify)
+
+    * [Verify the updated resource limits](/docs/openshift?topic=openshift-odf-virt-performance#odf-virt-osd-verify)
+
+* [Configuring the bulk flag for large data operations](/docs/openshift?topic=openshift-odf-virt-performance#odf-virt-bulk)
+
+* [Checking Ceph cluster health](/docs/openshift?topic=openshift-odf-virt-performance#odf-virt-health)
+
+    * [Run a basic health check](/docs/openshift?topic=openshift-odf-virt-performance#odf-virt-health-basic)
+
+    * [Understand cluster states](/docs/openshift?topic=openshift-odf-virt-performance#odf-virt-health-states)
+
+    * [Check placement group and OSD status](/docs/openshift?topic=openshift-odf-virt-performance#odf-virt-health-pg-osd)
+
+* [Next steps](/docs/openshift?topic=openshift-odf-virt-performance#odf-virt-next-steps)
+
 
 ## Storage
 {: #sitemap_storage}
@@ -8201,10 +8231,6 @@ subcollection: openshift
 
     * [Version 4.13.3, released 31 July 2023](/docs/openshift?topic=openshift-cl-add-ons-openshift-data-foundation#cl-add-ons-openshift-data-foundation-4.13.3)
 
-    * [Version 4.13.0, released 10 July 2023](/docs/openshift?topic=openshift-cl-add-ons-openshift-data-foundation#cl-add-ons-openshift-data-foundation-4.13.0-archive)
-
-* [Version 4.12.0 archive](/docs/openshift?topic=openshift-cl-add-ons-openshift-data-foundation#cl-add-ons-openshift-data-foundation-4.12-archive)
-
     * [Version 4.12.21, released 03 August 2024](/docs/openshift?topic=openshift-cl-add-ons-openshift-data-foundation#cl-add-ons-openshift-data-foundation-4.12.21)
 
     * [Version 4.12.20, released 15 July 2024](/docs/openshift?topic=openshift-cl-add-ons-openshift-data-foundation#cl-add-ons-openshift-data-foundation-4.12.20)
@@ -8290,6 +8316,8 @@ subcollection: openshift
 [IBM Cloud Image Key Synchronizer add-on version change log](/docs/openshift?topic=openshift-cl-add-ons-ibm-cloud-image-key-synchronizer#cl-add-ons-ibm-cloud-image-key-synchronizer)
 
 * [Version 1.0.0](/docs/openshift?topic=openshift-cl-add-ons-ibm-cloud-image-key-synchronizer#cl-add-ons-ibm-cloud-image-key-synchronizer-1.0.0)
+
+    * [Version 1.0.0 - 1.0.0_351682779, released 09 July 2026](/docs/openshift?topic=openshift-cl-add-ons-ibm-cloud-image-key-synchronizer#cl-add-ons-ibm-cloud-image-key-synchronizer-100_351682779)
 
     * [Version 1.0.0 - 1.0.0_348708490, released 25 June 2026](/docs/openshift?topic=openshift-cl-add-ons-ibm-cloud-image-key-synchronizer#cl-add-ons-ibm-cloud-image-key-synchronizer-100_348708490)
 
