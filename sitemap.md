@@ -4390,6 +4390,36 @@ subcollection: openshift
 
     * [Why are dynamic attached VNIs not working?](/docs/openshift?topic=openshift-vni-virtualization&interface=cli#vni-ts-not-working)
 
+[Tuning ODF performance for virtualization](/docs/openshift?topic=openshift-odf-virt-performance#odf-virt-performance)
+
+* [Before you begin](/docs/openshift?topic=openshift-odf-virt-performance#odf-virt-performance-prereqs)
+
+* [Selecting an ODF performance profile](/docs/openshift?topic=openshift-odf-virt-performance#odf-virt-profile)
+
+    * [From the console](/docs/openshift?topic=openshift-odf-virt-performance#odf-virt-profile-console)
+
+    * [From the CLI](/docs/openshift?topic=openshift-odf-virt-performance#odf-virt-profile-cli)
+
+* [Configuring OSD pod resource limits](/docs/openshift?topic=openshift-odf-virt-performance#odf-virt-osd-resources)
+
+    * [Check current OSD resource limits](/docs/openshift?topic=openshift-odf-virt-performance#odf-virt-osd-check)
+
+    * [Increase OSD resource limits](/docs/openshift?topic=openshift-odf-virt-performance#odf-virt-osd-modify)
+
+    * [Verify the updated resource limits](/docs/openshift?topic=openshift-odf-virt-performance#odf-virt-osd-verify)
+
+* [Configuring the bulk flag for large data operations](/docs/openshift?topic=openshift-odf-virt-performance#odf-virt-bulk)
+
+* [Checking Ceph cluster health](/docs/openshift?topic=openshift-odf-virt-performance#odf-virt-health)
+
+    * [Run a basic health check](/docs/openshift?topic=openshift-odf-virt-performance#odf-virt-health-basic)
+
+    * [Understand cluster states](/docs/openshift?topic=openshift-odf-virt-performance#odf-virt-health-states)
+
+    * [Check placement group and OSD status](/docs/openshift?topic=openshift-odf-virt-performance#odf-virt-health-pg-osd)
+
+* [Next steps](/docs/openshift?topic=openshift-odf-virt-performance#odf-virt-next-steps)
+
 
 ## Storage
 {: #sitemap_storage}
