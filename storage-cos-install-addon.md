@@ -107,6 +107,16 @@ Before you begin: [Access your {{site.data.keyword.redhat_openshift_notm}} clust
 
 By default, the COS CSI driver nodeserver pods are scheduled on all nodes in the cluster. You can use the `restrictNodeServerScheduling` parameter to restrict nodeserver pod scheduling to only the nodes that are labeled with `cos.csi.ibm.io/csi-node=true`.
 
+You can configure `restrictNodeServerScheduling` when you enable the add-on, or update it later by patching the ConfigMap.
+
+- To set `restrictNodeServerScheduling` when you enable the add-on, include the `--param` flag in the enable command.
+    ```sh
+    ibmcloud oc cluster addon enable ibm-object-csi-driver --cluster CLUSTER --param "restrictNodeServerScheduling=true"
+    ```
+    {: pre}
+
+- To update `restrictNodeServerScheduling` after the add-on is already enabled, follow these steps.
+
 1. List the nodes in your cluster and determine where you want the COS driver pods to run.
     ```sh
     oc get nodes
