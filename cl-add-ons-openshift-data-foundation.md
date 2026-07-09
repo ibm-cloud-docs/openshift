@@ -3,7 +3,7 @@
 copyright:
   years: 2024, 2026
 
-lastupdated: "2026-06-29"
+lastupdated: "2026-07-09"
 
 
 keywords: change log, version history, OpenShift Data Foundation
@@ -711,15 +711,6 @@ Review the version history for OpenShift Data Foundation.
 - Updates the UBI image to `8.8-1014`.
 
 
-### Version 4.13.0, released 10 July 2023
-{: #cl-add-ons-openshift-data-foundation-4.13.0-archive}
-
-- Initial 4.13 release. 
-- Adds support for encryption in transit by specifying the `encryptionInTransit` parameter when installing the add-on.
-
-
-## Version 4.12.0 archive
-{: #cl-add-ons-openshift-data-foundation-4.12-archive}
 
 
 ### Version 4.12.21, released 03 August 2024
