@@ -3,7 +3,7 @@
 copyright:
   years: 2026, 2026
 
-lastupdated: "2026-05-06"
+lastupdated: "2026-07-09"
 
 keywords: openshift virtualization, vm network, user defined network, vni, ovn
 
@@ -31,10 +31,8 @@ You start a virtual machine (VM), but the VM cannot access the expected network.
 The VM network configuration might not match the configured User Defined Network (UDN) or VNI setup. This issue can occur if the VM is missing the expected network interface, if the UDN configuration is incorrect, or if OVN networking components report errors.
 {: tsCauses}
 
-To resolve the issue,
+To resolve the issue, review the VM network configuration, verify the attached interfaces, and confirm the UDN and OVN configuration.
 {: tsResolve}
-
- review the VM network configuration, verify the attached interfaces, and confirm the UDN and OVN configuration.
 
 1. Check the VM network configuration.
    ```sh

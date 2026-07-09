@@ -16,7 +16,7 @@ Single-tenant Kubernetes clusters with compute, network, and storage infrastruct
 Multizone clusters to increase high availability
 - Easily manage worker nodes of the same flavor (CPU, memory, virtual or physical) with worker pools.
 - Guard against zone failure by spreading nodes evenly across select multizones and by using anti-affinity pod deployments for your apps.
-- Decrease your costs by using multizone clusters instead of duplicating the resources in a separate cluster.
+- You can reduce costs by using multizone clusters instead of maintaining duplicate resources in a separate cluster.
 - Benefit from automatic load balancing across apps with the multizone load balancer (MZLB) that is set up automatically for you in each zone of the cluster.
 
 Highly available masters
@@ -30,7 +30,7 @@ Image security compliance with Vulnerability Advisor
 
 Continuous monitoring of the cluster health
 - Use the cluster dashboard to quickly see and manage the health of your cluster, worker nodes, and container deployments.
-- Find detailed consumption metrics by using {{site.data.keyword.mon_full}} and quickly expand your cluster to meet work loads.
+- Find detailed consumption metrics by using {{site.data.keyword.mon_full}} and quickly expand your cluster to meet workload demands.
 - Review logging information by using {{site.data.keyword.logs_full_notm}} to see detailed cluster activities.
 
 Secure exposure of apps to the public

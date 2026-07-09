@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2026
-lastupdated: "2026-06-02"
+lastupdated: "2026-07-09"
 
 
 keywords: openshift, openshift data foundation, openshift container storage, ocs
@@ -51,15 +51,16 @@ ODF is supported on private-only VPC clusters beginning with cluster version `4.
 ### Understanding `flexibleScaling` behavior
 {: #odf-flexible-scaling}
 
-Starting in OpenShift Data Foundation 4.21, `flexibleScaling` is automatically enabled for single-zone clusters and deployments with fewer than three availability zones.
+Starting in OpenShift Data Foundation 4.21, `flexibleScaling` is automatically enabled for single-zone clusters and deployments with fewer than three availability zones. Flexible scaling allows storage clusters to scale more granularly instead of requiring scaling operations in multiples of three.
 
-**Flexible Scaling** allows storage clusters to scale more granularly instead of requiring scaling operations in multiples of three.
+Granular expansion
+:   Scale storage by adding a single worker node or one or more OSDs, instead of scaling only in three-unit increments.
 
-**Key features:**
+Deployment behavior
+:   Flexible scaling is typically used for internal-attached storage deployments with fewer than three failure domains or availability zones. In single-zone clusters, the failure domain is set to host, and the specified numOfOsd value is provisioned directly. For example, setting `numOfOsd` to 1 creates 1 OSD.
 
-- **Granular expansion**: Scale storage by adding a single worker node or one or more OSDs, instead of scaling only in three-unit increments.
-- **Deployment behavior**: Flexible scaling is typically used for internal-attached storage deployments with fewer than three failure domains or availability zones. In single-zone clusters, the failure domain is set to host, and the specified numOfOsd value is provisioned directly. For example, setting `numOfOsd` to 1 creates 1 OSD.
-- **Static configuration**: Flexible scaling behavior is determined during the initial deployment and cannot be enabled or disabled afterward.
+Static configuration
+:   Flexible scaling behavior is determined during the initial deployment and cannot be enabled or disabled afterward.
 
 For initial deployment in single-zone clusters, specifying at least 3 OSDs is recommended to ensure adequate resiliency and alignment with supported configuration guidelines.
 {: note}

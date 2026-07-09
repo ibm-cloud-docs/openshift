@@ -2,7 +2,7 @@
 
 copyright:
   years: 2026, 2026
-lastupdated: "2026-07-01"
+lastupdated: "2026-07-09"
 
 keywords: openshift, virtualization service, rovs, virtual machines, vms, bare metal, pre-configured
 
@@ -34,16 +34,16 @@ OpenShift Virtualization Service provides a streamlined path to deploying virtua
 Virtualization Service provides a streamlined, pre-configured virtualization platform compared to manual OpenShift Virtualization deployment:
 
 | Feature | Virtualization Service | Manual Deployment |
-|---------|----------------------|-------------------|
-| **Setup time** | Minutes | Hours |
-| **OpenShift Virtualization** | Pre-installed via add-on | Manual installation required |
-| **Storage options** | ODF (local NVME) or VPC File Storage | Manual setup required |
-| **Networking** | Automatic OVN with MTU 8900/9000 | Manual configuration |
-| **Operators** | Auto-installed (Virtualization, NMState, Node Maintenance) | Install from OperatorHub |
-| **Licensing** | OVE license (cost-effective) | Full OCP license |
-| **Updates** | Managed add-on updates | Self-managed |
-| **Best for** | Virtualization-focused workloads | Custom configurations |
-| **Minimum version** | OpenShift 4.21 | OpenShift 4.17 |
+| -------- | -------- | -------- |
+| Setup time | Minutes | Hours |
+| OpenShift Virtualization | Pre-installed via add-on | Manual installation required |
+| Storage options | ODF (local NVME) or VPC File Storage | Manual setup required |
+| Networking | Automatic OVN with MTU 8900/9000 | Manual configuration |
+| Operators | Auto-installed (Virtualization, NMState, Node Maintenance) | Install from OperatorHub |
+| Licensing | OVE license (cost-effective) | Full OCP license |
+| Updates | Managed add-on updates | Self-managed |
+| Best for | Virtualization-focused workloads | Custom configurations |
+| Minimum version | OpenShift 4.21 | OpenShift 4.17 |
 {: caption="Comparison of Virtualization Service and manual deployment" caption-side="bottom"}
 
 ## What are the cluster requirements for Virtualization Service?
@@ -101,14 +101,7 @@ Virtualization Service is available in the following regions:
 ## What are the limitations of Virtualization Service?
 {: #rovs-limitations-ov}
 
-Virtualization Service has the following limitations:
-
-- Supported only on VPC bare metal worker nodes
-- Available only in specific regions (see [Where is Virtualization Service available?](#rovs-regions))
-- Licensed for virtualization workloads only. Installing container-based workloads is not supported. For container workloads, use standard {{site.data.keyword.openshiftlong_notm}}.
-- Windows VMs require appropriate licensing
-
-For complete limitations, see [OpenShift Virtualization Service limitations](/docs/openshift?topic=openshift-rovs-limitations).
+For a full list of limitations, see [OpenShift Virtualization Service limitations](/docs/openshift?topic=openshift-rovs-limitations).
 
 ## How is Virtualization Service priced?
 {: #rovs-pricing}
