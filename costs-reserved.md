@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2026
-lastupdated: "2026-07-07"
+lastupdated: "2026-07-09"
 
 
 keywords: openshift, reservations, worker node
@@ -42,17 +42,23 @@ Review the following diagram for an example scenario of how you might set up you
 
 ![Overview of reservations for {{site.data.keyword.openshiftlong_notm}}.](images/reservations-ov.svg "Overview of reservations for {{site.data.keyword.openshiftlong_notm}}"){: caption="An example scenario of using a reservation for worker nodes in your clusters." caption-side="bottom"}
 
-**Reservation**: The reservation contains details such as the container platform, worker node flavor, location, and infrastructure provider.
+Reservation
+:   The reservation contains details such as the container platform, worker node flavor, location, and infrastructure provider.
 
-**Contract**: The example reservation has two contracts for different terms. One contract is for 10 worker nodes across 3 years. The other contract is for 5 worker nodes across 1 year. Therefore, the total capacity of the reservation is 15 worker nodes.
+Contract
+:   The example reservation has two contracts for different terms. One contract is for 10 worker nodes across 3 years. The other contract is for 5 worker nodes across 1 year. Therefore, the total capacity of the reservation is 15 worker nodes.
 
-**Clusters**: Each cluster is in the same multizone region as the reservation, but can be in a different resource group. Reserved worker nodes from different reservations can be used in different clusters. A cluster can have a mix of reserved and regular, as-needed worker pools.
+Clusters
+:   Each cluster is in the same multizone region as the reservation, but can be in a different resource group. Reserved worker nodes from different reservations can be used in different clusters. A cluster can have a mix of reserved and regular, as-needed worker pools.
 
-**Worker pools**: You can create multiple worker pools in multiple clusters with your reserved worker nodes. Reserved worker nodes are used for the entire worker pool; you can't mix and match between regular and reserved worker nodes in the same worker pool. Reserved worker nodes are used on a first-available basis, which means if you provision a worker pool that uses all your reserved worker nodes, you have no more reserved worker nodes remaining for other worker pools. Therefore, you might create separate reservations for each team that owns a worker pool or cluster.
+Worker pools
+:   You can create multiple worker pools in multiple clusters with your reserved worker nodes. Reserved worker nodes are used for the entire worker pool; you can't mix and match between regular and reserved worker nodes in the same worker pool. Reserved worker nodes are used on a first-available basis, which means if you provision a worker pool that uses all your reserved worker nodes, you have no more reserved worker nodes remaining for other worker pools. Therefore, you might create separate reservations for each team that owns a worker pool or cluster.
 
-**Zones**: Because the reservation is created in an {{site.data.keyword.cloud_notm}} multizone region, the reserved worker nodes can be used for clusters in any of the zones. For example, reservations in Washington, DC (US East region) can be used to create classic worker nodes in `wdc04`, `wdc06`, or `wdc07`.
+Zones
+:   Because the reservation is created in an {{site.data.keyword.cloud_notm}} multizone region, the reserved worker nodes can be used for clusters in any of the zones. For example, reservations in Washington, DC (US East region) can be used to create classic worker nodes in `wdc04`, `wdc06`, or `wdc07`.
 
-**Reserved worker nodes that are used in the worker pools**: In this scenario, the development and production environments share a reservation that has a mix of contracts that are used for a mix of worker pools and teams. The reservation still has one unused, 3-year term reserved worker node that can be used for other worker pools or to scale up the existing worker pools. If the production environment needs more than one more worker node, you might resize down some worker pools in development, create a worker pool that uses on-demand worker nodes, or add more contracts to the reservation. If you are concerned about a development environment using up your production environment resources, consider creating separate reservations for the different environments.
+Reserved worker nodes that are used in the worker pools
+:   In this scenario, the development and production environments share a reservation that has a mix of contracts that are used for a mix of worker pools and teams. The reservation still has one unused, 3-year term reserved worker node that can be used for other worker pools or to scale up the existing worker pools. If the production environment needs more than one more worker node, you might resize down some worker pools in development, create a worker pool that uses on-demand worker nodes, or add more contracts to the reservation. If you are concerned about a development environment using up your production environment resources, consider creating separate reservations for the different environments.
 
 ### Reservation usage and lifecycle
 {: #ri-usage-lifecycle}
