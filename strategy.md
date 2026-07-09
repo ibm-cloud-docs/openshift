@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2026
-lastupdated: "2026-04-28"
+lastupdated: "2026-07-09"
 
 keywords: kubernetes, kubernetes environment, moving to kubernetes, moving to containers, clusters, cluster sizing, openshift, {{site.data.keyword.openshiftlong_notm}}
 
@@ -99,20 +99,18 @@ If one worker node goes down, app instances on available worker nodes continue t
 ## Select a cluster type
 {: #env_flavors}
 
-The worker node flavors and isolation levels that are available to you depend on your container platform, cluster type, the infrastructure provider that you want to use, and the {{site.data.keyword.openshiftlong_notm}} location where you want to create your cluster. You can choose between Classic, VPC, or {{site.data.keyword.satelliteshort}} clusters. The type of cluster you need is determined by the decisions you made for the number of clusters, locations.
+The worker node flavors and isolation levels that are available to you depend on your container platform, cluster type, the infrastructure provider that you want to use, and the {{site.data.keyword.openshiftlong_notm}} location where you want to create your cluster. You can choose between Classic, VPC, or {{site.data.keyword.satelliteshort}} clusters. The type of cluster you need is determined by the decisions you made for the number of clusters and locations.
 
 ![Hardware options for worker nodes in a standard cluster](images/cs_clusters_hardware.svg){: caption="Hardware options for worker nodes in a standard cluster" caption-side="bottom"}
 
-
-
 VPC clusters
-:   Worker nodes can be provisioned using virtual worker nodes on standard infrastructure or dedicated hosts. If speed is a big consideration for you, VPC clusters might be the best choice.
+:   Worker nodes are provisioned as virtual server instances on VPC infrastructure. VPC is the recommended infrastructure type for new clusters. It provides network isolation by default and supports the latest {{site.data.keyword.openshiftlong_notm}} features, including dedicated hosts and secure by default.
 
 {{site.data.keyword.satelliteshort}} clusters
-:   Worker nodes can be provisioned on virtual machines in cloud providers such as AWS, Azure, GCP and more. Worker nodes can also be provisioned using your own, on-premises, infrastructure.
+:   Worker nodes are provisioned on your own infrastructure, including on-premises hardware or virtual machines in other cloud providers such as AWS, Azure, and GCP. Use {{site.data.keyword.satelliteshort}} when you need to run {{site.data.keyword.cloud_notm}}-managed clusters outside of IBM Cloud data centers.
 
 Classic clusters
-:   Worker nodes can be created on virtual and bare metal worker nodes. If you require additional local disks, you can also choose one of the bare metal flavors that are designed for software-defined storage solutions, such as Portworx. 
+:   Worker nodes are provisioned on virtual or bare metal machines on IBM Cloud classic infrastructure. Use Classic if you require bare metal worker nodes, software-defined storage (SDS) flavors, or connections to existing classic infrastructure resources.
 
 
 

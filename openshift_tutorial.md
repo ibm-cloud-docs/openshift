@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2026
-lastupdated: "2026-05-26"
+lastupdated: "2026-07-09"
 
 
 keywords: kubernetes, openshift, red hat, red hat openshift
@@ -106,8 +106,6 @@ In this tutorial, you create the following resources by using the CLI. There are
 
 1. In your browser, navigate to the address of your **Master URL** and append `/console`. For example, `https://c0.containers.cloud.ibm.com:23652/console`.
 
-1. Click your profile **IAM#user.name@email.com > Copy Login Command**. Display and copy the `oc login` token command into your command line to authenticate via the CLI.
-    
 1. Verify that the `oc` commands run properly with your cluster by checking the version.
     ```sh
     oc version

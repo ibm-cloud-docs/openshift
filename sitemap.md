@@ -45,7 +45,7 @@ subcollection: openshift
 
     * [Pricing considerations](/docs/openshift?topic=openshift-getting-started#getting-started-pricing)
 
-* [Create a cluster environment strategy](/docs/openshift?topic=openshift-getting-started#getting-started-strategy)
+* [Choose your infrastructure type](/docs/openshift?topic=openshift-getting-started#getting-started-infra)
 
 * [Create a cluster](/docs/openshift?topic=openshift-getting-started#getting-started-create)
 
@@ -83,6 +83,188 @@ subcollection: openshift
 * [What skills should I have before I move my apps to a cluster?](/docs/openshift?topic=openshift-overview#knowledge)
 
 * [Related resources](/docs/openshift?topic=openshift-overview#kubernetes-resources)
+
+
+## Learning paths
+{: #sitemap_learning_paths}
+
+
+[Learning path for administrators](/docs/openshift?topic=openshift-learning-path-admin#learning-path-admin)
+
+* [Plan your environment](/docs/openshift?topic=openshift-learning-path-admin#admin_plan)
+
+* [Create a cluster](/docs/openshift?topic=openshift-learning-path-admin#admin_cluster)
+
+* [Manage the network](/docs/openshift?topic=openshift-learning-path-admin#admin_network)
+
+* [Secure your cluster](/docs/openshift?topic=openshift-learning-path-admin#admin_secure)
+
+* [Logging and monitoring](/docs/openshift?topic=openshift-learning-path-admin#admin_health)
+
+* [Add a registry and CI/CD](/docs/openshift?topic=openshift-learning-path-admin#admin_registry)
+
+* [Add storage](/docs/openshift?topic=openshift-learning-path-admin#admin_storage)
+
+* [Add integrations](/docs/openshift?topic=openshift-learning-path-admin#admin_integrate)
+
+* [Manage the lifecycle](/docs/openshift?topic=openshift-learning-path-admin#admin_lifecycle)
+
+[Learning path for developers](/docs/openshift?topic=openshift-learning-path-dev#learning-path-dev)
+
+* [Access the cluster](/docs/openshift?topic=openshift-learning-path-dev#dev_cluster)
+
+* [Plan your deployment](/docs/openshift?topic=openshift-learning-path-dev#dev_plan)
+
+* [Develop your app](/docs/openshift?topic=openshift-learning-path-dev#dev_develop)
+
+* [Deploy your app](/docs/openshift?topic=openshift-learning-path-dev#dev_deploy)
+
+* [Test, log, and monitor](/docs/openshift?topic=openshift-learning-path-dev#dev_test)
+
+* [Update your app](/docs/openshift?topic=openshift-learning-path-dev#dev_update)
+
+* [Secure your app](/docs/openshift?topic=openshift-learning-path-dev#dev_secure)
+
+* [Expose your app](/docs/openshift?topic=openshift-learning-path-dev#dev_expose)
+
+* [Add app storage](/docs/openshift?topic=openshift-learning-path-dev#dev_storage)
+
+* [Add integrations](/docs/openshift?topic=openshift-learning-path-dev#dev_integrate)
+
+
+## Plan your cluster
+{: #sitemap_plan_your_cluster}
+
+
+[Creating a highly available cluster strategy](/docs/openshift?topic=openshift-strategy#strategy)
+
+* [Decide how many clusters to create](/docs/openshift?topic=openshift-strategy#env_multicluster)
+
+* [Determine how many locations are needed](/docs/openshift?topic=openshift-strategy#plan_locations)
+
+    * [Multizone clusters](/docs/openshift?topic=openshift-strategy#mz-strategy)
+
+    * [Multiple clusters linked with load balancers](/docs/openshift?topic=openshift-strategy#mz-cluster-strategy)
+
+    * [Single zone clusters](/docs/openshift?topic=openshift-strategy#sz-single-zone-strategy)
+
+* [Select a cluster type](/docs/openshift?topic=openshift-strategy#env_flavors)
+
+* [Select an operating system for the cluster](/docs/openshift?topic=openshift-strategy#os)
+
+* [Define a cluster naming strategy](/docs/openshift?topic=openshift-strategy#naming)
+
+* [Decide how many worker nodes for each cluster](/docs/openshift?topic=openshift-strategy#sizing_workers)
+
+* [Select worker node flavors](/docs/openshift?topic=openshift-strategy#env_flavors_node)
+
+* [Determine worker node capacity for the resources](/docs/openshift?topic=openshift-strategy#env_resources_worker_capacity)
+
+* [Choose how many namespaces to create within the cluster](/docs/openshift?topic=openshift-strategy#env_resources_multiple_namespaces)
+
+* [Establish resource requests and limits for the namespaces](/docs/openshift?topic=openshift-strategy#env_resources_resource_quotas)
+
+* [Make your apps highly available too](/docs/openshift?topic=openshift-strategy#apps-ha)
+
+* [Next steps](/docs/openshift?topic=openshift-strategy#plan-network-next)
+
+[Understanding VPC cluster networking](/docs/openshift?topic=openshift-plan_vpc_basics#plan_vpc_basics)
+
+* [Worker-to-worker communication using VPC subnets](/docs/openshift?topic=openshift-plan_vpc_basics#vpc-worker-worker)
+
+* [Worker-to-master and user-to-master communication using Virtual private endpoints or cloud service endpoints](/docs/openshift?topic=openshift-plan_vpc_basics#vpc-workeruser-master)
+
+* [Worker-to-master communication in VPC clusters](/docs/openshift?topic=openshift-plan_vpc_basics#worker-to-master-comms)
+
+* [User-to-master communication in VPC clusters](/docs/openshift?topic=openshift-plan_vpc_basics#user-to-master-comms)
+
+* [Worker communication to other services or networks](/docs/openshift?topic=openshift-plan_vpc_basics#vpc-worker-services-onprem)
+
+* [Communication with other {{site.data.keyword.cloud_notm}} services over the private or public network](/docs/openshift?topic=openshift-plan_vpc_basics#vpc-worker-services-onprem-cloud-service)
+
+* [Communication with resources in on-premises data centers](/docs/openshift?topic=openshift-plan_vpc_basics#vpc-worker-services-onprem-resources)
+
+    * [Communication with resources in other VPCs](/docs/openshift?topic=openshift-plan_vpc_basics#vpc-worker-services-onprem-other-vpcs)
+
+    * [Communication with {{site.data.keyword.cloud_notm}} classic resources](/docs/openshift?topic=openshift-plan_vpc_basics#vpc-worker-services-onprem-classic)
+
+* [External communication to apps that run on worker nodes](/docs/openshift?topic=openshift-plan_vpc_basics#vpc-external-workers)
+
+* [Private traffic to cluster apps](/docs/openshift?topic=openshift-plan_vpc_basics#vpc-worker-services-onprem-apps-private)
+
+* [Public traffic to cluster apps](/docs/openshift?topic=openshift-plan_vpc_basics#vpc-worker-services-onprem-apps-public)
+
+* [Example scenarios for VPC cluster network setups](/docs/openshift?topic=openshift-plan_vpc_basics#vpc-scenarios)
+
+    * [Scenario: Run internet-facing app workloads in a VPC cluster](/docs/openshift?topic=openshift-plan_vpc_basics#vpc-no-pgw)
+
+    * [Worker-to-worker communication](/docs/openshift?topic=openshift-plan_vpc_basics#vpc-no-pgw-worker)
+
+    * [Worker-to-master and user-to-master communication](/docs/openshift?topic=openshift-plan_vpc_basics#vpc-no-pgw-master)
+
+    * [Worker communication to other services or networks](/docs/openshift?topic=openshift-plan_vpc_basics#vpc-no-pgw-services)
+
+    * [External communication to apps that run on worker nodes](/docs/openshift?topic=openshift-plan_vpc_basics#vpc-no-pgw-external)
+
+* [Extend your on-premises data center to a VPC cluster](/docs/openshift?topic=openshift-plan_vpc_basics#vpc-vpn)
+
+    * [Worker-to-worker communication](/docs/openshift?topic=openshift-plan_vpc_basics#vpc-vpn-worker)
+
+    * [Worker-to-master and user-to-master communication](/docs/openshift?topic=openshift-plan_vpc_basics#vpc-vpn-master)
+
+    * [Worker communication to other services or networks](/docs/openshift?topic=openshift-plan_vpc_basics#vpc-vpn-services)
+
+    * [External communication to apps that run on worker nodes](/docs/openshift?topic=openshift-plan_vpc_basics#vpc-vpn-external)
+
+* [Next steps](/docs/openshift?topic=openshift-plan_vpc_basics#plan-encryption-next-vpc)
+
+[Understanding Classic cluster networking](/docs/openshift?topic=openshift-plan_basics#plan_basics)
+
+* [Worker-to-worker communication: classic VLANs and subnets](/docs/openshift?topic=openshift-plan_basics#worker-worker)
+
+    * [VLAN connections for worker nodes](/docs/openshift?topic=openshift-plan_basics#worker-worker-nodes)
+
+    * [Worker node communication across subnets and VLANs](/docs/openshift?topic=openshift-plan_basics#worker-worker-subnets)
+
+* [Worker-to-master and user-to-master communication: Service endpoints](/docs/openshift?topic=openshift-plan_basics#workeruser-master)
+
+    * [Public service endpoint only](/docs/openshift?topic=openshift-plan_basics#workeruser-master-endpoint)
+
+    * [Public and private cloud service endpoints](/docs/openshift?topic=openshift-plan_basics#workeruser-master-pub-priv)
+
+* [Worker communication to other {{site.data.keyword.cloud_notm}} services or on-premises networks](/docs/openshift?topic=openshift-plan_basics#worker-services-onprem)
+
+    * [Communication with other {{site.data.keyword.cloud_notm}} services over the private or public network](/docs/openshift?topic=openshift-plan_basics#worker-services-onprem-pub-priv)
+
+    * [{{site.data.keyword.BluDirectLink}} for communication over the private network with resources in on-premises data centers](/docs/openshift?topic=openshift-plan_basics#worker-services-onprem-direct-link)
+
+    * [VPN connection for communication over the public network with resources in on-premises data centers](/docs/openshift?topic=openshift-plan_basics#worker-services-onprem-vpn)
+
+* [External communication to apps that run on worker nodes](/docs/openshift?topic=openshift-plan_basics#external-workers)
+
+    * [Private traffic to cluster apps](/docs/openshift?topic=openshift-plan_basics#external-workers-private)
+
+    * [Public traffic to cluster apps](/docs/openshift?topic=openshift-plan_basics#external-workers-public)
+
+* [Scenario: Running internet-facing app workloads in a classic cluster](/docs/openshift?topic=openshift-plan_basics#internet-facing)
+
+    * [Worker-to-worker communication in classic clusters with internet-facing workloads](/docs/openshift?topic=openshift-plan_basics#internet-facing-worker)
+
+    * [Worker-to-master and user-to-master communication in classic clusters with internet-facing workloads](/docs/openshift?topic=openshift-plan_basics#internet-facing-master)
+
+    * [Worker communication to other services or networks with internet-facing workloads](/docs/openshift?topic=openshift-plan_basics#internet-facing-services)
+
+    * [External communication to apps that run on worker nodes with internet-facing workloads](/docs/openshift?topic=openshift-plan_basics#internet-facing-external)
+
+* [Scenario: Allow limited public connectivity with a gateway appliance](/docs/openshift?topic=openshift-plan_basics#vyatta-gateway)
+
+    * [Worker-to-worker communication, worker-to-master and user-to-master communication with a gateway appliance](/docs/openshift?topic=openshift-plan_basics#limited-public-gw-worker)
+
+    * [Worker communication to other services or networks with a gateway appliance](/docs/openshift?topic=openshift-plan_basics#limited-public-gw-services)
+
+    * [External communication to apps that run on worker nodes with a gateway appliance](/docs/openshift?topic=openshift-plan_basics#limited-public-gw-external)
+
+* [Next steps](/docs/openshift?topic=openshift-plan_basics#plan-encryption-next-cl)
 
 
 ## Your responsibilities
@@ -231,53 +413,6 @@ subcollection: openshift
     * [Step 3: Data sharing](/docs/openshift?topic=openshift-cs_uc_gov#uc_port_step3)
 
     * [Results](/docs/openshift?topic=openshift-cs_uc_gov#uc_port_results)
-
-
-## Learning paths
-{: #sitemap_learning_paths}
-
-
-[Learning path for administrators](/docs/openshift?topic=openshift-learning-path-admin#learning-path-admin)
-
-* [Plan your environment](/docs/openshift?topic=openshift-learning-path-admin#admin_plan)
-
-* [Create a cluster](/docs/openshift?topic=openshift-learning-path-admin#admin_cluster)
-
-* [Manage the network](/docs/openshift?topic=openshift-learning-path-admin#admin_network)
-
-* [Secure your cluster](/docs/openshift?topic=openshift-learning-path-admin#admin_secure)
-
-* [Logging and monitoring](/docs/openshift?topic=openshift-learning-path-admin#admin_health)
-
-* [Add a registry and CI/CD](/docs/openshift?topic=openshift-learning-path-admin#admin_registry)
-
-* [Add storage](/docs/openshift?topic=openshift-learning-path-admin#admin_storage)
-
-* [Add integrations](/docs/openshift?topic=openshift-learning-path-admin#admin_integrate)
-
-* [Manage the lifecycle](/docs/openshift?topic=openshift-learning-path-admin#admin_lifecycle)
-
-[Learning path for developers](/docs/openshift?topic=openshift-learning-path-dev#learning-path-dev)
-
-* [Access the cluster](/docs/openshift?topic=openshift-learning-path-dev#dev_cluster)
-
-* [Plan your deployment](/docs/openshift?topic=openshift-learning-path-dev#dev_plan)
-
-* [Develop your app](/docs/openshift?topic=openshift-learning-path-dev#dev_develop)
-
-* [Deploy your app](/docs/openshift?topic=openshift-learning-path-dev#dev_deploy)
-
-* [Test, log, and monitor](/docs/openshift?topic=openshift-learning-path-dev#dev_test)
-
-* [Update your app](/docs/openshift?topic=openshift-learning-path-dev#dev_update)
-
-* [Secure your app](/docs/openshift?topic=openshift-learning-path-dev#dev_secure)
-
-* [Expose your app](/docs/openshift?topic=openshift-learning-path-dev#dev_expose)
-
-* [Add app storage](/docs/openshift?topic=openshift-learning-path-dev#dev_storage)
-
-* [Add integrations](/docs/openshift?topic=openshift-learning-path-dev#dev_integrate)
 
 
 ## RHEL deprecation for VPC clusters
@@ -1590,36 +1725,30 @@ subcollection: openshift
         * Worker node fix packs are available {{site.data.keyword.openshiftlong_notm}}.
 
 
-## Setting up your first classic cluster in the CLI
-{: #sitemap_setting_up_your_first_classic_cluster_in_the_cli}
+## 2-node VPC cluster with Schematics
+{: #sitemap_2-node_vpc_cluster_with_schematics}
 
 
-[Setting up your first classic cluster in the CLI](/docs/openshift?topic=openshift-openshift_tutorial#openshift_tutorial)
+[2-node VPC cluster with Schematics](/docs/openshift?topic=openshift-tutorial-two-node#tutorial-two-node)
 
-* [Audience](/docs/openshift?topic=openshift-openshift_tutorial#openshift_audience)
+* [Audience](/docs/openshift?topic=openshift-tutorial-two-node#basic-audience)
 
-* [Objectives](/docs/openshift?topic=openshift-openshift_tutorial#openshift_objectives)
+* [What you'll get](/docs/openshift?topic=openshift-tutorial-two-node#basic-what-you-get)
 
-* [What you'll get](/docs/openshift?topic=openshift-openshift_tutorial#openshift_get)
+* [Create a Schematics workspaces](/docs/openshift?topic=openshift-tutorial-two-node#basic-create-workspace)
 
-* [Prerequisites](/docs/openshift?topic=openshift-openshift_tutorial#openshift_prereqs)
+* [Generate, review, and apply the Schematics plan](/docs/openshift?topic=openshift-tutorial-two-node#basic-generate-plan)
 
-* [Create a {{site.data.keyword.openshiftlong_notm}} cluster](/docs/openshift?topic=openshift-openshift_tutorial#openshift_create_cluster)
+* [Access your OpenShift cluster](/docs/openshift?topic=openshift-tutorial-two-node#basic-access-cluster)
 
-* [Navigate the {{site.data.keyword.redhat_openshift_notm}} console](/docs/openshift?topic=openshift-openshift_tutorial#openshift_oc_console)
-
-* [Deploy an app to your cluster](/docs/openshift?topic=openshift-openshift_tutorial#openshift_deploy_app)
-
-* [Clean up the tutorial resources](/docs/openshift?topic=openshift-openshift_tutorial#openshift-tutorial-cleanup)
-
-* [What's next?](/docs/openshift?topic=openshift-openshift_tutorial#openshift_next)
+* [Optional: Clean up the resources](/docs/openshift?topic=openshift-tutorial-two-node#basic-cleanup)
 
 
-## Setting up your first cluster in your Virtual Private Cloud (VPC)
-{: #sitemap_setting_up_your_first_cluster_in_your_virtual_private_cloud_vpc}
+## VPC cluster with the CLI
+{: #sitemap_vpc_cluster_with_the_cli}
 
 
-[Setting up your first cluster in your Virtual Private Cloud (VPC)](/docs/openshift?topic=openshift-vpc_rh_tutorial#vpc_rh_tutorial)
+[VPC cluster with the CLI](/docs/openshift?topic=openshift-vpc_rh_tutorial#vpc_rh_tutorial)
 
 * [Audience](/docs/openshift?topic=openshift-vpc_rh_tutorial#vpc_rh_audience)
 
@@ -1638,23 +1767,29 @@ subcollection: openshift
 * [What's next?](/docs/openshift?topic=openshift-vpc_rh_tutorial#vpc_rh_next)
 
 
-## Creating a 2 node OpenShift cluster on VPC infrastructure by using Schematics
-{: #sitemap_creating_a_2_node_openshift_cluster_on_vpc_infrastructure_by_using_schematics}
+## Classic cluster with the CLI
+{: #sitemap_classic_cluster_with_the_cli}
 
 
-[Creating a 2 node OpenShift cluster on VPC infrastructure by using Schematics](/docs/openshift?topic=openshift-tutorial-two-node#tutorial-two-node)
+[Classic cluster with the CLI](/docs/openshift?topic=openshift-openshift_tutorial#openshift_tutorial)
 
-* [Audience](/docs/openshift?topic=openshift-tutorial-two-node#basic-audience)
+* [Audience](/docs/openshift?topic=openshift-openshift_tutorial#openshift_audience)
 
-* [What you'll get](/docs/openshift?topic=openshift-tutorial-two-node#basic-what-you-get)
+* [Objectives](/docs/openshift?topic=openshift-openshift_tutorial#openshift_objectives)
 
-* [Create a Schematics workspaces](/docs/openshift?topic=openshift-tutorial-two-node#basic-create-workspace)
+* [What you'll get](/docs/openshift?topic=openshift-openshift_tutorial#openshift_get)
 
-* [Generate, review, and apply the Schematics plan](/docs/openshift?topic=openshift-tutorial-two-node#basic-generate-plan)
+* [Prerequisites](/docs/openshift?topic=openshift-openshift_tutorial#openshift_prereqs)
 
-* [Access your OpenShift cluster](/docs/openshift?topic=openshift-tutorial-two-node#basic-access-cluster)
+* [Create a {{site.data.keyword.openshiftlong_notm}} cluster](/docs/openshift?topic=openshift-openshift_tutorial#openshift_create_cluster)
 
-* [Optional: Clean up the resources](/docs/openshift?topic=openshift-tutorial-two-node#basic-cleanup)
+* [Navigate the {{site.data.keyword.redhat_openshift_notm}} console](/docs/openshift?topic=openshift-openshift_tutorial#openshift_oc_console)
+
+* [Deploy an app to your cluster](/docs/openshift?topic=openshift-openshift_tutorial#openshift_deploy_app)
+
+* [Clean up the tutorial resources](/docs/openshift?topic=openshift-openshift_tutorial#openshift-tutorial-cleanup)
+
+* [What's next?](/docs/openshift?topic=openshift-openshift_tutorial#openshift_next)
 
 
 ## OpenShift tutorials
@@ -7425,6 +7560,8 @@ subcollection: openshift
 
 * [`openshift-ai` 419](/docs/openshift?topic=openshift-supported-cluster-addon-versions#openshift-ai-419)
 
+* [`openshift-ai` 420](/docs/openshift?topic=openshift-supported-cluster-addon-versions#openshift-ai-420)
+
 * [`openshift-data-foundation` 4.15.0](/docs/openshift?topic=openshift-supported-cluster-addon-versions#openshift-data-foundation-4.15.0)
 
 * [`openshift-data-foundation` 4.16.0](/docs/openshift?topic=openshift-supported-cluster-addon-versions#openshift-data-foundation-4.16.0)
@@ -7876,6 +8013,8 @@ subcollection: openshift
 [IBM Object CSI Driver add-on version change log](/docs/openshift?topic=openshift-cl-add-ons-ibm-object-csi-driver#cl-add-ons-ibm-object-csi-driver)
 
 * [Version 1.0](/docs/openshift?topic=openshift-cl-add-ons-ibm-object-csi-driver#cl-add-ons-ibm-object-csi-driver-1.0)
+
+    * [Version 1.0 - v1.0.23, released 08 July 2026](/docs/openshift?topic=openshift-cl-add-ons-ibm-object-csi-driver#cl-add-ons-ibm-object-csi-driver-v1023)
 
     * [Version 1.0 - v1.0.23_349336907, released 03 July 2026](/docs/openshift?topic=openshift-cl-add-ons-ibm-object-csi-driver#cl-add-ons-ibm-object-csi-driver-v1023_349336907)
 
