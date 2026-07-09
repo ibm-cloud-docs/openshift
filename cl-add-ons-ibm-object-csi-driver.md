@@ -3,7 +3,7 @@
 copyright:
   years: 2024, 2026
 
-lastupdated: "2026-07-02"
+lastupdated: "2026-07-09"
 
 
 keywords: change log, version history, IBM Object CSI Driver
@@ -43,10 +43,20 @@ Review the version history for IBM Object CSI Driver.
 {: #cl-add-ons-ibm-object-csi-driver-1.0}
 
 
-### Version 1.0 - v1.0.23_349336907, released 03 July 2026
-{: #cl-add-ons-ibm-object-csi-driver-v1023_349336907}
+### Version 1.0 - v1.0.23, released 08 July 2026
+{: #cl-add-ons-ibm-object-csi-driver-v1023}
 
 [Default version]{: tag-green}
+
+- Resolves the following CVEs: [CVE-2026-33813](https://nvd.nist.gov/vuln/detail/CVE-2026-33813){: external}, [CVE-2026-41176](https://nvd.nist.gov/vuln/detail/CVE-2026-41176){: external}, [CVE-2026-41178](https://nvd.nist.gov/vuln/detail/CVE-2026-41178){: external}, [CVE-2026-46601](https://nvd.nist.gov/vuln/detail/CVE-2026-46601){: external}, and [CVE-2026-5450](https://nvd.nist.gov/vuln/detail/CVE-2026-5450){: external}.
+- Updates Go to version `1.25`.
+- Updated Golang to version 1.25 
+- Updated rclone to version 1.74.3 
+- Updated Dreadnought base image to version 9.8.64 
+
+
+### Version 1.0 - v1.0.23_349336907, released 03 July 2026
+{: #cl-add-ons-ibm-object-csi-driver-v1023_349336907}
 
 - Resolves the following CVEs: [CVE-2026-2303](https://nvd.nist.gov/vuln/detail/CVE-2026-2303){: external}.
 - Updates Go to version `1.26.4`.
