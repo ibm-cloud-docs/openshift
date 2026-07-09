@@ -20,7 +20,7 @@ subcollection: openshift
 [4.20 and later]{: tag-red}
 [Bare metal worker nodes only]{: tag-warm-gray}
 
-You can improve OpenShift Data Foundation (ODF) storage performance for virtualization workloads by selecting the appropriate performance profile, adjusting OSD pod resource limits, and configuring bulk data operations. These configurations apply to both {{site.data.keyword.openshiftlong_notm}} clusters with manually deployed OpenShift Virtualization and Red Hat OpenShift Virtualization Service clusters.
+You can improve OpenShift Data Foundation (ODF) storage performance for virtualization workloads by selecting the appropriate performance profile, adjusting OSD pod resource limits, and configuring bulk data operations. These options apply to {{site.data.keyword.openshiftlong_notm}} clusters with manually deployed OpenShift Virtualization and to Red Hat OpenShift Virtualization Service clusters.
 {: shortdesc}
 
 ## Before you begin
@@ -43,16 +43,16 @@ Balanced
 
 When you deploy ODF, select the **Performance** profile in the **Resource profile** field under **Backing storage**. On Virtualization Service clusters, **Performance** is selected by default.
 
-### From the console
-{: #odf-virt-profile-console}
+You can set the profile from the console or the CLI.
 
-- **Standard {{site.data.keyword.openshiftlong_notm}} clusters**: When you install the ODF add-on, select **Performance** as the resource profile in the **Backing storage** section of the install panel.
-- **Virtualization Service clusters**: **Performance** is selected by default. To change it, click **Edit** on the **OpenShift Data Foundation** card in the **Virtualization integrations** section when creating your cluster.
+**From the console**
 
-### From the CLI
-{: #odf-virt-profile-cli}
+- **Standard {{site.data.keyword.openshiftlong_notm}} clusters**: When you install the ODF add-on, select **Performance** as the resource profile in the **Backing storage** section of the installation panel.
+- **Virtualization Service clusters**: **Performance** is selected by default. To change it, select **Edit** on the **OpenShift Data Foundation** card in the **Virtualization integrations** section during cluster creation.
 
-This option applies to standard {{site.data.keyword.openshiftlong_notm}} clusters only. For Virtualization Service clusters, the profile is set during cluster creation
+**From the CLI**
+
+This option applies only to standard {{site.data.keyword.openshiftlong_notm}} clusters. For Virtualization Service clusters, you set the profile during cluster creation.
 {: note}
 
 Include the `--param "resourceProfile=performance"` option when you enable the add-on. For example:
@@ -74,12 +74,12 @@ For a full list of ODF add-on parameters, see [OpenShift Data Foundation paramet
 ## Configuring OSD pod resource limits
 {: #odf-virt-osd-resources}
 
-Object Storage Daemon (OSD) pods are responsible for data placement and replication. For high I/O virtualization workloads, you can increase the CPU and memory limits on OSD pods to prevent resource bottlenecks.
+Object Storage Daemon (OSD) pods store data and participate in data placement and replication. For high I/O virtualization workloads, you can increase the CPU and memory limits on OSD pods to help reduce resource bottlenecks.
 
 ### Check current OSD resource limits
 {: #odf-virt-osd-check}
 
-Before modifying resource limits, check the current CPU and memory settings assigned to your OSD pods.
+Before you modify resource limits, check the current CPU and memory settings that are assigned to your OSD pods. Note the current requests and limits so that you can compare them with actual usage and with the updated values later in the process.
 
 ```sh
 oc get pods -n openshift-storage -l app=rook-ceph-osd \
@@ -87,9 +87,9 @@ oc get pods -n openshift-storage -l app=rook-ceph-osd \
 ```
 {: pre}
 
-Review the output to identify the current CPU and memory requests and limits for each OSD container. If the actual usage approaches or exceeds these values, increasing the limits can improve performance.
+Review the output to identify the current CPU and memory requests and limits for each OSD container. Note these values so that you can compare them with actual usage in the next command. If CPU or memory usage consistently approaches the configured limits, increasing the limits might help reduce resource bottlenecks.
 
-To check actual resource consumption, run the following command and compare the output to the limits you noted:
+To check actual resource consumption, run the following command and compare the CPU and memory usage with the limits that you noted:
 
 ```sh
 oc adm top pods -n openshift-storage -l app=rook-ceph-osd
@@ -111,17 +111,18 @@ Resource limits for other Rook-Ceph pods, such as `mon`, `mgr`, and `rgw`, can a
    ```
    {: pre}
 
-2. Locate the `storageDeviceSets` section and add or update the `resources` field with values appropriate for your workload. The following example sets 4 CPUs and 24 Gi of memory:
+2. Locate the relevant entry in the `storageDeviceSets` section, and add or update the `resources` field with values that are appropriate for your workload. The following partial example shows the `resources` section for one `storageDeviceSets` entry. This example sets a limit of 4 CPUs and 24 Gi of memory, and a request of 2 CPUs and 24 Gi of memory:
 
    ```yaml
    storageDeviceSets:
-     resources:
-       limits:
-         cpu: "4"
-         memory: "24Gi"
-       requests:
-         cpu: "2"
-         memory: "24Gi"
+     - name: ocs-deviceset
+       resources:
+         limits:
+           cpu: "4"
+           memory: "24Gi"
+         requests:
+           cpu: "2"
+           memory: "24Gi"
    ```
    {: codeblock}
 
@@ -130,14 +131,14 @@ Resource limits for other Rook-Ceph pods, such as `mon`, `mgr`, and `rgw`, can a
 
 3. Save and exit the editor.
 
-   After you save the changes, all OSD pods restart automatically to apply the new resource configuration. Wait for the rolling restart to complete before performing any other storage operations.
+   After you save the changes, all OSD pods restart automatically to apply the new resource configuration. Wait for the rolling restart to complete before you perform other storage operations.
 
 ### Verify the updated resource limits
 {: #odf-virt-osd-verify}
 
 After the rolling restart completes, confirm that the updated limits are applied to all OSD pods.
 
-1. Monitor the rolling restart to verify all OSD pods return to a `Running` state. The restart is complete when all OSD pods show `Running` and none are in a `Pending` or `Terminating` state.
+1. Monitor the rolling restart to verify that all OSD pods return to a `Running` state. The restart is complete when all OSD pods show `Running` and none are in a `Pending` or `Terminating` state.
 
    ```sh
    oc get pods -n openshift-storage | grep osd | grep -v prepare | grep -v rotation
@@ -157,43 +158,46 @@ After the rolling restart completes, confirm that the updated limits are applied
 ## Configuring the bulk flag for large data operations
 {: #odf-virt-bulk}
 
-When you perform large data operations — such as VM migrations, bulk imports, or data archival — enabling the bulk flag on a Ceph block pool improves initial data distribution across OSDs. This reduces rebalancing overhead and minimizes performance impact during large data transfers.
+When you perform large data operations, such as VM migrations, bulk imports, or data archival, enabling the bulk flag on a Ceph block pool can improve initial data distribution across OSDs. This setting can reduce rebalancing overhead during large data transfers.
 
-The bulk flag is recommended for:
-- VM disk migrations and imports involving multiple TBs of data
-- Backup and restore operations
-- Initial data loads for new applications
-- Data archival pools
+The bulk flag is commonly used for the following workloads:
 
-To configure a `CephBlockPool` resource with the bulk flag enabled, create or update the resource with the following configuration:
+- VM disk migrations and imports involving multiple TBs of data.
+- Backup and restore operations.
+- Initial data loads for new applications.
+- Data archival pools.
 
-```yaml
-apiVersion: ceph.rook.io/v1
-kind: CephBlockPool
-metadata:
-  name: <pool-name>
-  namespace: openshift-storage
-spec:
-  replicated:
-    size: 3
-  parameters:
-    bulk: "true"
-```
-{: codeblock}
+To configure a `CephBlockPool` resource with the bulk flag enabled, complete the following steps.
 
-Apply the configuration:
+1. Create or update the `CephBlockPool` resource definition so that the `parameters` section includes `bulk: "true"`.
 
-```sh
-oc apply -f <pool-config-file>.yaml
-```
-{: pre}
+   ```yaml
+   apiVersion: ceph.rook.io/v1
+   kind: CephBlockPool
+   metadata:
+     name: <pool-name>
+     namespace: openshift-storage
+   spec:
+     replicated:
+       size: 3
+     parameters:
+       bulk: "true"
+   ```
+   {: codeblock}
 
-After applying the configuration, Ceph distributes new data across the pool more evenly from the start, which reduces the cluster rebalancing that typically occurs as a pool fills up.
+2. Apply the configuration file.
+
+   ```sh
+   oc apply -f <pool-config-file>.yaml
+   ```
+   {: pre}
+
+   After you apply the configuration, Ceph can distribute new data more evenly across the pool from the start. This behavior can reduce the rebalancing that typically occurs as the pool fills.
 
 ## Checking Ceph cluster health
 {: #odf-virt-health}
 
-Regularly monitoring your Ceph cluster helps you identify performance issues and ensure data integrity. Run health checks before and after making configuration changes.
+Regularly monitoring your Ceph cluster helps you identify performance issues and ensure data integrity. Run health checks before and after you make configuration changes.
 
 ### Run a basic health check
 {: #odf-virt-health-basic}
@@ -205,7 +209,7 @@ oc rsh -n openshift-storage $(oc get pods -n openshift-storage -l app=rook-ceph-
 ```
 {: pre}
 
-For detailed information about any active warnings or errors, run:
+For detailed information about any active warnings or errors, run the following command:
 
 ```sh
 oc rsh -n openshift-storage $(oc get pods -n openshift-storage -l app=rook-ceph-tools -o name) ceph health detail
@@ -242,21 +246,21 @@ HEALTH_WARN
 ### Check placement group and OSD status
 {: #odf-virt-health-pg-osd}
 
-For a more detailed view of data distribution and individual OSD health, run the following commands.
+For a more detailed view of data distribution and individual OSD health, complete the following checks.
 
-To check placement group status:
+1. Check placement group status to identify placement groups that are not in the `active+clean` state.
 
-```sh
-oc rsh -n openshift-storage $(oc get pods -n openshift-storage -l app=rook-ceph-tools -o name) ceph pg stat
-```
-{: pre}
+   ```sh
+   oc rsh -n openshift-storage $(oc get pods -n openshift-storage -l app=rook-ceph-tools -o name) ceph pg stat
+   ```
+   {: pre}
 
-To check individual OSD status:
+2. Check individual OSD status to verify that the OSDs are `up` and `in`.
 
-```sh
-oc rsh -n openshift-storage $(oc get pods -n openshift-storage -l app=rook-ceph-tools -o name) ceph osd status
-```
-{: pre}
+   ```sh
+   oc rsh -n openshift-storage $(oc get pods -n openshift-storage -l app=rook-ceph-tools -o name) ceph osd status
+   ```
+   {: pre}
 
 ## Next steps
 {: #odf-virt-next-steps}

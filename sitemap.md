@@ -4396,10 +4396,6 @@ subcollection: openshift
 
 * [Selecting an ODF performance profile](/docs/openshift?topic=openshift-odf-virt-performance#odf-virt-profile)
 
-    * [From the console](/docs/openshift?topic=openshift-odf-virt-performance#odf-virt-profile-console)
-
-    * [From the CLI](/docs/openshift?topic=openshift-odf-virt-performance#odf-virt-profile-cli)
-
 * [Configuring OSD pod resource limits](/docs/openshift?topic=openshift-odf-virt-performance#odf-virt-osd-resources)
 
     * [Check current OSD resource limits](/docs/openshift?topic=openshift-odf-virt-performance#odf-virt-osd-check)
