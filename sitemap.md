@@ -434,6 +434,10 @@ subcollection: openshift
 
 * [July 2026](/docs/openshift?topic=openshift-openshift-relnotes#openshift-jul26)
 
+    * [10 July 2026](/docs/openshift?topic=openshift-openshift-relnotes#openshift-jul1026)
+
+        * Version 4.21 is now the default version for {{site.data.keyword.openshiftlong_notm}}.
+
     * [09 July 2026](/docs/openshift?topic=openshift-openshift-relnotes#openshift-jul0926)
 
         * CLI version 1.0.791 is available.

@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2026
-lastupdated: "2026-07-09"
+lastupdated: "2026-07-10"
 
 
 keywords: kubernetes, release notes, openshift, {{site.data.keyword.openshiftlong_notm}}
@@ -28,6 +28,19 @@ Looking for {{site.data.keyword.cloud_notm}} status, platform announcements, sec
 
 ## July 2026
 {: #openshift-jul26}
+
+### 10 July 2026
+{: #openshift-jul1026}
+{: release-note}
+
+
+
+
+
+Version 4.21 is now the default version for {{site.data.keyword.openshiftlong_notm}}.
+:   For a complete list of available versions, see the [version information](/docs/openshift?topic=openshift-openshift_versions).
+
+
 
 ### 09 July 2026
 {: #openshift-jul0926}
@@ -1040,7 +1053,7 @@ VPC Block CSI Driver cluster add-on patch updates.
 
 {{site.data.keyword.openshiftlong_notm}} worker node fix packs are available.
 :   Worker node fix packs can be applied by updating or reloading the worker node in classic infrastructure, or replacing the worker node in VPC infrastructure. Review the following change logs for your cluster version.
-:   [VPC worker nodes]{: tag-teal} Note that beginning at this patch version, all future patches set the local time for VPC worker nodes to UTC.
+:   Note that beginning at this patch version, VPC worker nodes include the following changes: the local time is set to UTC, the root filesystem has changed from ext4 to XFS, and the boot mode has changed from BIOS to UEFI.
 :   [Version 4.19 change log](/docs/openshift?topic=openshift-openshift_changelog_419)
 :   [Version 4.18 change log](/docs/openshift?topic=openshift-openshift_changelog_418)
 :   [Version 4.17 change log](/docs/openshift?topic=openshift-openshift_changelog_417)

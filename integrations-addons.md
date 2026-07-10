@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2026
-lastupdated: "2026-04-29"
+lastupdated: "2026-07-10"
 
 
 keywords: kubernetes, openshift
@@ -38,13 +38,14 @@ Billing
 ## Adding managed add-ons
 {: #adding-managed-add-ons}
 
-To enable a managed add-on in your cluster from the CLI, use the [`ibmcloud oc cluster addon enable` command](/docs/openshift?topic=openshift-kubernetes-service-cli#cs_cluster_addon_enable). To enable a managed add-on in your cluster in the [console](https://cloud.ibm.com/containers/cluster-management/clusters){: external}, use the **Add-ons** pane of the cluster details page. When you enable the managed add-on, a supported version of the tool, including all Kubernetes resources are automatically installed in your cluster. Refer to the documentation of each managed add-on to find the prerequisites that your cluster must meet before you install the managed add-on.
+To enable a managed add-on in your cluster from the CLI, use the [`ibmcloud oc cluster addon enable` command](/docs/openshift?topic=openshift-kubernetes-service-cli#cs_cluster_addon_enable). To enable a managed add-on in your cluster in the [console](https://cloud.ibm.com/containers/cluster-management/clusters){: external}, use the **Add-ons** pane of the cluster details page. When you enable the managed add-on, a supported version of the tool, including all Kubernetes resources, is automatically installed in your cluster.
 
 For more information about the prerequisites for each add-on, see:
 - [{{site.data.keyword.block_storage_is_short}}](/docs/openshift?topic=openshift-vpc-block)
 - [{{site.data.keyword.cos_full_notm}}](/docs/openshift?topic=openshift-storage-cos-install-addon)
 - [Cluster Autoscaler](/docs/openshift?topic=openshift-cluster-scaling-install-addon)
 - [{{site.data.keyword.filestorage_vpc_full_notm}}](/docs/openshift?topic=openshift-storage-file-vpc-install)
+- [Advanced Cluster Management (ACM)](/docs/openshift?topic=openshift-acm&interface=ui)
 - [HPCS Router](/docs/openshift?topic=openshift-hpcs-router-changelog)
 - [Image Key Synchronizer](/docs/openshift?topic=openshift-images#encrypted-images)
 - [OpenShift Data Foundation](/docs/openshift?topic=openshift-deploy-odf-vpc)
@@ -54,17 +55,16 @@ For more information about the prerequisites for each add-on, see:
 ## Updating managed add-ons
 {: #updating-managed-add-ons}
 
-The versions of each managed add-on are tested by {{site.data.keyword.cloud_notm}} and approved for use in {{site.data.keyword.openshiftlong_notm}}. To update the components of an add-on to the most recent version supported by {{site.data.keyword.openshiftlong_notm}}, use the following steps.
-{: shortdesc}
-    
+The versions of each managed add-on are tested by {{site.data.keyword.cloud_notm}} and approved for use in {{site.data.keyword.openshiftlong_notm}}. To update the components of an add-on to the most recent version supported by {{site.data.keyword.openshiftlong_notm}}, use the following links.
+
 Review the following links for specific update steps for each add-on.
 - [{{site.data.keyword.block_storage_is_short}}](/docs/openshift?topic=openshift-vpc-block#vpc-addon-update)
 - [Cluster Autoscaler](/docs/openshift?topic=openshift-cluster-scaling-install-addon#cluster-scaling-install-addon-update-addon)
 - [{{site.data.keyword.filestorage_vpc_full_notm}}](/docs/openshift?topic=openshift-storage-file-vpc-managing)
+- [Advanced Cluster Management (ACM)](/docs/openshift?topic=openshift-acm&interface=ui#upgrade)
 - [HPCS Router](/docs/openshift?topic=openshift-hpcs-router-changelog)
 - [OpenShift Data Foundation](/docs/openshift?topic=openshift-ocs-manage-deployment)
 - [OpenShift AI add-on](/docs/openshift?topic=openshift-ai-addon-manage)
-   
 
 
 ## Reviewing add-on states and statuses
@@ -120,7 +120,7 @@ The **Health Status** provides details of what add-on operation is in progress. 
 Review which managed add-ons are available for {{site.data.keyword.redhat_openshift_notm}} clusters that are created in an {{site.data.keyword.satellitelong_notm}} location.
 {: shortdesc}
 
-The following list of add-ons for clusters are supported in {{site.data.keyword.satelliteshort}} locations.
+The following add-ons are supported in {{site.data.keyword.satelliteshort}} locations.
 
 - [HPCS Router](/docs/openshift?topic=openshift-hpcs-router-changelog)
 - [Image Key Synchronizer](/docs/openshift?topic=openshift-images#encrypted-images)
@@ -128,7 +128,7 @@ The following list of add-ons for clusters are supported in {{site.data.keyword.
 - [OpenShift Data Foundation](/docs/openshift?topic=openshift-deploy-odf-vpc) (However, you can also use [{{site.data.keyword.satelliteshort}} storage templates](/docs/satellite?topic=satellite-storage-odf-local) to consistently deploy ODF across clusters in your location.)
 - [Static routes](/docs/openshift?topic=openshift-static-routes)
 
-The following list of add-ons for clusters are unsupported in {{site.data.keyword.satelliteshort}} locations.
+The following add-ons are not supported in {{site.data.keyword.satelliteshort}} locations.
 
 - [ALB OAuth Proxy](/docs/containers?topic=containers-comm-ingress-annotations#app-id-auth)
 - [Cluster Autoscaler](/docs/openshift?topic=openshift-cluster-scaling-install-addon)
