@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2026
-lastupdated: "2026-07-09"
+lastupdated: "2026-07-10"
 
 
 keywords: openshift
@@ -433,6 +433,14 @@ subcollection: openshift
 [Release notes](/docs/openshift?topic=openshift-openshift-relnotes#openshift-relnotes)
 
 * [July 2026](/docs/openshift?topic=openshift-openshift-relnotes#openshift-jul26)
+
+    * [10 July 2026](/docs/openshift?topic=openshift-openshift-relnotes#openshift-jul1026)
+
+        * Version 4.21 is now the default version for {{site.data.keyword.openshiftlong_notm}}.
+
+    * [09 July 2026](/docs/openshift?topic=openshift-openshift-relnotes#openshift-jul0926)
+
+        * CLI version 1.0.791 is available.
 
     * [01 July 2026](/docs/openshift?topic=openshift-openshift-relnotes#openshift-jul0126)
 
@@ -7368,6 +7376,8 @@ subcollection: openshift
 
 * [Version 1.0](/docs/openshift?topic=openshift-cs_cli_changelog#10)
 
+* [Version v1.0.791](/docs/openshift?topic=openshift-cs_cli_changelog#cli-01791)
+
 * [Version v1.0.775](/docs/openshift?topic=openshift-cs_cli_changelog#cli-01775)
 
 * [Version v1.0.773](/docs/openshift?topic=openshift-cs_cli_changelog#cli-01773)
@@ -7513,7 +7523,7 @@ subcollection: openshift
 
 [Red Hat OpenShift on IBM Cloud API](https://cloud.ibm.com/apidocs/kubernetes/containers-v1-v2){: external}
 
-[OpenShift Container Platform REST API](https://docs.redhat.com/en/documentation/openshift_container_platform/4.20/html/api_overview/index){: external}
+[OpenShift Container Platform REST API](https://docs.redhat.com/en/documentation/openshift_container_platform/4.21/html/api_overview/index){: external}
 
 
 ## Add-on version history
@@ -8942,8 +8952,6 @@ subcollection: openshift
 * [What does the Insufficient kata.peerpods.io/vm error mean?](/docs/openshift?topic=openshift-faqs#conf-cont-insufficient-vm)
 
 * [Can confidential containers meet specific security standards, such as NIST 800-53 R5?](/docs/openshift?topic=openshift-faqs#conf-cont-sec)
-
-* [Why am I getting an IAM authentication error after upgrading to OpenShift Sandboxed Containers Operator 1.12.1?](/docs/openshift?topic=openshift-faqs#conf-cont-iam-auth-error)
 
 * [Why am I getting an IAM authentication error after upgrading to OpenShift Sandboxed Containers Operator 1.12.1?](/docs/openshift?topic=openshift-faqs#conf-cont-iam-auth-error)
 

@@ -2,7 +2,7 @@
 
 copyright:
   years: 2022, 2026
-lastupdated: "2026-05-12"
+lastupdated: "2026-07-10"
 
 
 keywords: openshift, ingress, troubleshoot ingress, ingress operator, ingress cluster operator, missing ip addresses, errrna
@@ -66,9 +66,9 @@ Review the configuration of Routes resources that have not been marked as `admit
 
 1. Review the configuration of Route resources that are not admitted:
 
-    - Ensure the Route configuration is correct. See [Route configuration](https://docs.redhat.com/en/documentation/openshift_container_platform/4.20/html/ingress_and_load_balancing/routes){: external}.
+    - Ensure the Route configuration is correct. See [Route configuration](https://docs.redhat.com/en/documentation/openshift_container_platform/4.21/html/ingress_and_load_balancing/routes){: external}.
     - Ensure you do not have two Route resources with the same host, in this case only one of them is admitted.
-    - If you configured [Ingress Controller sharding](https://docs.redhat.com/en/documentation/openshift_container_platform/4.20/html/networking_overview/index#nw-ingress-sharding_configuring-ingress){: external}, ensure that the labels on the Route resource or on the namespace containing the Route resource are correct.
+    - If you configured [Ingress Controller sharding](https://docs.redhat.com/en/documentation/openshift_container_platform/4.21/html/networking_overview/index#nw-ingress-sharding_configuring-ingress){: external}, ensure that the labels on the Route resource or on the namespace containing the Route resource are correct.
 
     If you no longer need the Route which is not admitted, delete it using the `oc delete route` command.
     {: tip}

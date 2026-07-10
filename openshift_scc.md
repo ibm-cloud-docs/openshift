@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2026
-lastupdated: "2026-04-08"
+lastupdated: "2026-07-10"
 
 
 keywords: openshift, scc, security context constraint, psp
@@ -20,7 +20,7 @@ subcollection: openshift
 # Configuring security context constraints
 {: #openshift_scc}
 
-With security context constraints (SCCs), you can control the actions and access that pods within your {{site.data.keyword.openshiftlong}} cluster can perform. For more information about SCCs, see the [{{site.data.keyword.redhat_openshift_notm}} docs](https://docs.redhat.com/en/documentation/openshift_container_platform/4.20/html/authentication_and_authorization/managing-pod-security-policies){: external}.
+With security context constraints (SCCs), you can control the actions and access that pods within your {{site.data.keyword.openshiftlong}} cluster can perform. For more information about SCCs, see the [{{site.data.keyword.redhat_openshift_notm}} docs](https://docs.redhat.com/en/documentation/openshift_container_platform/4.21/html/authentication_and_authorization/managing-pod-security-policies){: external}.
 {: shortdesc}
 
 Why do I set security context constraints?
@@ -60,7 +60,7 @@ The default {{site.data.keyword.redhat_openshift_notm}} SCCs are stricter than t
 ## Customizing security context constraints
 {: #customize_sccs}
 
-To create, edit, list, delete, and otherwise manage security context constraints, see the [{{site.data.keyword.redhat_openshift_notm}} docs](https://docs.redhat.com/en/documentation/openshift_container_platform/4.20/html/authentication_and_authorization/managing-pod-security-policies){: external}. You can also authorize users or groups to the default security context constraints by using role-based access control such as `clusterroles`, `clusterrolebindings`, `roles`, and `rolebindings`. You can also use the `oc adm policy` subcommands, such as `oc adm policy add-scc-to-user`, to manage these settings. The oc version is the same as that of the cluster being managed.
+To create, edit, list, delete, and otherwise manage security context constraints, see the [{{site.data.keyword.redhat_openshift_notm}} docs](https://docs.redhat.com/en/documentation/openshift_container_platform/4.21/html/authentication_and_authorization/managing-pod-security-policies){: external}. You can also authorize users or groups to the default security context constraints by using role-based access control such as `clusterroles`, `clusterrolebindings`, `roles`, and `rolebindings`. You can also use the `oc adm policy` subcommands, such as `oc adm policy add-scc-to-user`, to manage these settings. The oc version is the same as that of the cluster being managed.
 {: shortdesc}
 
 ## Guidelines for assigning access to SCCs

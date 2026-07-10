@@ -225,14 +225,14 @@ Active+remapped, active+backfilling, active+recovering
 
 Example healthy output:
 
-```
+```sh
 HEALTH_OK
 ```
 {: screen}
 
 Example output during rebalancing:
 
-```
+```sh
 HEALTH_WARN
   Degraded data redundancy: 123/456 objects degraded (26.974%)
   Recovery 50/456 objects degraded (10.965%)

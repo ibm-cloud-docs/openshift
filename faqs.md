@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2026
-lastupdated: "2026-07-07"
+lastupdated: "2026-07-09"
 
 
 keywords: openshift, ocp, compliance, security standards, faq, openshift pricing, ocp pricing, openshift charges, ocp charges, openshift price, ocp price, openshift billing, ocp billing, openshift costs, ocp costs
@@ -617,11 +617,6 @@ To resolve this issue, choose one of the following options:
 For more information about the changes in version 1.12.1, see the [upstream cloud-api-adaptor commit dde66055](https://github.com/openshift/cloud-api-adaptor/commit/dde66055d071decc7419e9d493c7e2b238542fca).
 
 Contact your IBM team to discuss specific security interests.
-
-## Why am I getting an IAM authentication error after upgrading to OpenShift Sandboxed Containers Operator 1.12.1?
-{: #conf-cont-iam-auth-error}
-
-For the cause and resolution options, see [IAM authentication error after upgrading to OSC Operator 1.12.1](/docs/openshift?topic=openshift-ts-confidential-containers#ts-conf-cont-iam-auth-error).
 
 
 

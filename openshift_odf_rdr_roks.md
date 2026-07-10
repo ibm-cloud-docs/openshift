@@ -2,7 +2,7 @@
 
 copyright:
   years: 2025, 2026
-lastupdated: "2026-06-26"
+lastupdated: "2026-07-10"
 
 
 keywords: openshift, openshift data foundation, openshift container storage, disaster recovery
@@ -41,18 +41,18 @@ Review the types of applications and workloads that you can apply Regional Diast
 
 Subscription-based
 :   An application is deployed from an external source, such as GitHub, a Helm repo, or Object Storage.
-:   For more information, see [Creating a sample Subscription-based application](https://docs.redhat.com/en/documentation/red_hat_openshift_data_foundation/4.20/html-single/configuring_openshift_data_foundation_disaster_recovery_for_openshift_workloads/index#subscription-based-apps_manage-mdr){: external} in the Red Hat documentation.
+:   For more information, see [Creating a sample Subscription-based application](https://docs.redhat.com/en/documentation/red_hat_openshift_data_foundation/4.21/html-single/configuring_openshift_data_foundation_disaster_recovery_for_openshift_workloads/index#subscription-based-apps_manage-mdr){: external} in the Red Hat documentation.
 
 ApplicationSet-based
 :   An application is depoyed from a GitHub repo using the GitOps operator, which manages continuous delivery. This includes two subtypes:
 :   - **GitOps Pull Model (ArgoCD pull)**: A managed cluster pulls the application from GitHub using the GitOps operator.
 :   - **GitOps Push Model (ArgoCD push)**: The GitOps operator pushes the application to the managed cluster during deployments and updates.
-:   For more information, see [Creating Application-set based applications](https://docs.redhat.com/en/documentation/red_hat_openshift_data_foundation/4.20/html-single/configuring_openshift_data_foundation_disaster_recovery_for_openshift_workloads/index#creating-applicationset-application_manage-mdr){: external} in the Red Hat documentation.
+:   For more information, see [Creating Application-set based applications](https://docs.redhat.com/en/documentation/red_hat_openshift_data_foundation/4.21/html-single/configuring_openshift_data_foundation_disaster_recovery_for_openshift_workloads/index#creating-applicationset-application_manage-mdr){: external} in the Red Hat documentation.
 :   For more information on the GitOps subtypes, see [Deploying Argo CD with Push and Pull model](https://docs.redhat.com/en/documentation/red_hat_advanced_cluster_management_for_kubernetes/2.15/html/gitops/gitops-overview#gitops-push-pull){: external} in the Red Hat documentation.
 
 Discovered applications
 :   An application was pre-deployed in a managed cluster without using ACM. In this case, you can use ACM discovery for the pre-installed app and still configure the DR policy.
-:  For more information, see [Disaster recovery protection for discovered applications](https://docs.redhat.com/en/documentation/red_hat_openshift_data_foundation/4.20/html-single/configuring_openshift_data_foundation_disaster_recovery_for_openshift_workloads/index#protect-discovered-apps-regionaldr_manage-rdr){: external} in the Red Hat documentation.
+:  For more information, see [Disaster recovery protection for discovered applications](https://docs.redhat.com/en/documentation/red_hat_openshift_data_foundation/4.21/html-single/configuring_openshift_data_foundation_disaster_recovery_for_openshift_workloads/index#protect-discovered-apps-regionaldr_manage-rdr){: external} in the Red Hat documentation.
 
 Applications that include VM deployments
 :   A VM-based application is deployed onto the managed cluster from the ACM console. These VM applications can be subscription based, applicationSet based, or discovered, as described previously. Options to start, stop, pause and delete VM operations are available from the ACM console for these types of applications.
@@ -77,7 +77,7 @@ For each cluster, make sure to allow outbound traffic by including the `--disabl
 1. [Create a VPC cluster](/docs/openshift?topic=openshift-cluster-create-vpc-gen2) in `us-east` to install ACM on. This is the hub cluster that you can use to manage your ODF clusters. Make sure your hub cluster has at least 3 worker nodes that run RHCOS, available compute capacity of at least 6 VCPU and 64 GB, outbound traffic disabled, and meets all of the [prequisites for ACM](/docs/openshift?topic=openshift-acm&interface=ui#before). The following example command creates a cluster for ACM in `us-east`.
 
     ```sh
-    ibmcloud ks cluster create vpc-gen2 --flavor mx2.8x64 --name acm-hub-cluster-dr-odf --subnet-id <subnet_id> --vpc-id <vpc_id> --zone us-east-2 --version 4.20.23_openshift --workers 3 --cos-instance <cos_crn> --disable-outbound-traffic-protection --cni OVNKubernetes
+    ibmcloud ks cluster create vpc-gen2 --flavor mx2.8x64 --name acm-hub-cluster-dr-odf --subnet-id <subnet_id> --vpc-id <vpc_id> --zone us-east-2 --version 4.21.18_openshift --workers 3 --cos-instance <cos_crn> --disable-outbound-traffic-protection --cni OVNKubernetes
     ```
     {: pre}
 
@@ -86,7 +86,7 @@ For each cluster, make sure to allow outbound traffic by including the `--disabl
 1. [Create a VPC cluster](/docs/openshift?topic=openshift-cluster-create-vpc-gen2) in `us-east` with at least 3 worker nodes that run RHCOS, available compute capacity of at least 6 VCPU and 64 GB, and outbound traffic protection disabled. This will be the primary managed ODF cluster. The following example command creates a cluster in `us-east.`
 
     ```sh
-    ibmcloud ks cluster create vpc-gen2 --flavor mx2.8x64 --name managed-cluster-1-dr-odf --subnet-id <subnet_id> --vpc-id <vpc_id> --zone us-east-2 --version 4.20.23_openshift --workers 3 --cos-instance <cos_crn> --disable-outbound-traffic-protection --cni OVNKubernetes
+    ibmcloud ks cluster create vpc-gen2 --flavor mx2.8x64 --name managed-cluster-1-dr-odf --subnet-id <subnet_id> --vpc-id <vpc_id> --zone us-east-2 --version 4.21.18_openshift --workers 3 --cos-instance <cos_crn> --disable-outbound-traffic-protection --cni OVNKubernetes
     ```
     {: pre}
 
@@ -94,7 +94,7 @@ For each cluster, make sure to allow outbound traffic by including the `--disabl
 1. [Create a VPC cluster](/docs/openshift?topic=openshift-cluster-create-vpc-gen2) in `jp-tok` with at least 3 worker nodes that run RHCOS, available compute capacity of at least 6 VCPU and 64 GB, and outbound traffic protection disabled. This will be the secondary managed ODF cluster. For high availability, make sure that the secondary cluster's network does not overlap with the primary cluster's network. The following example command creates a cluster in `jp-tok`.
 
     ```sh
-    ibmcloud ks cluster create vpc-gen2 --flavor mx2.8x64 --name managed-cluster-2-dr-odf --subnet-id <subnet_id> --vpc-id <vpc_id> --zone jp-tok --version 4.20.23_openshift --workers 3 --cos-instance <cos_crn> --disable-outbound-traffic-protection --cni OVNKubernetes
+    ibmcloud ks cluster create vpc-gen2 --flavor mx2.8x64 --name managed-cluster-2-dr-odf --subnet-id <subnet_id> --vpc-id <vpc_id> --zone jp-tok --version 4.21.18_openshift --workers 3 --cos-instance <cos_crn> --disable-outbound-traffic-protection --cni OVNKubernetes
     ```
     {: pre}
 
@@ -148,7 +148,7 @@ Install and configure ODF on your 2 managed clusters. Make sure to complete thes
     ```
     {: pre}
 
-1. Run the command to update the `ACM Managed Cluster Name` in the `storageCluster` resource’s `multiClusterService` section. This allows ODF to use GlobalNet. For more information, see [Creating an OpenShift Data Foundation cluster on managed clusters](https://docs.redhat.com/documentation/red_hat_openshift_data_foundation/4.20/html/configuring_openshift_data_foundation_disaster_recovery_for_openshift_workloads/rdr-solution#creating-odf-cluster-on-managed-clusters_rdr){: external}.
+1. Run the command to update the `ACM Managed Cluster Name` in the `storageCluster` resource’s `multiClusterService` section. This allows ODF to use GlobalNet. For more information, see [Creating an OpenShift Data Foundation cluster on managed clusters](https://docs.redhat.com/documentation/red_hat_openshift_data_foundation/4.21/html/configuring_openshift_data_foundation_disaster_recovery_for_openshift_workloads/rdr-solution#creating-odf-cluster-on-managed-clusters_rdr){: external}.
 
     Make sure to replace `<managed_cluster_name>` in the command with the name of your managed cluster.
     {: important}
@@ -215,7 +215,7 @@ Install and configure ODF on your 2 managed clusters. Make sure to complete thes
 
 Configure the ODF RDR policy.
 
-1. Follow the steps to [install the ODF Multicluster Orchestrator](https://docs.redhat.com/en/documentation/red_hat_openshift_data_foundation/4.20/html-single/configuring_openshift_data_foundation_disaster_recovery_for_openshift_workloads/index#installing-odf-multicluster-orchestrator_mdr){: external} onto the **ACM hub cluster**. To ensure compatibility, make sure you install the **same version number** as the ODF version you installed onto the managed clusters in the previous section.
+1. Follow the steps to [install the ODF Multicluster Orchestrator](https://docs.redhat.com/en/documentation/red_hat_openshift_data_foundation/4.21/html-single/configuring_openshift_data_foundation_disaster_recovery_for_openshift_workloads/index#installing-odf-multicluster-orchestrator_mdr){: external} onto the **ACM hub cluster**. To ensure compatibility, make sure you install the **same version number** as the ODF version you installed onto the managed clusters in the previous section.
 1. Verify the installation by checking that the operator pods are running.
 
     ```sh
@@ -306,14 +306,14 @@ You are responsible for managing these operators, including but not limited to u
 
 | Operator | Description | Additional information |
 | --- | --- | --- |
-| OpenShift API for Data Protection (OADP) Operator | - Use to create backup and restore APIs for OpenShift clusters. \n - Install on **managed clusters**.  | [Introduction to OpenShift API for data protection](https://docs.redhat.com/en/documentation/openshift_container_platform/4.20/html/backup_and_restore/oadp-application-backup-and-restore#oadp-introduction){: external} |
+| OpenShift API for Data Protection (OADP) Operator | - Use to create backup and restore APIs for OpenShift clusters. \n - Install on **managed clusters**.  | [Introduction to OpenShift API for data protection](https://docs.redhat.com/en/documentation/openshift_container_platform/4.21/html/backup_and_restore/oadp-application-backup-and-restore#oadp-introduction){: external} |
 {: caption="Optional operators for ODF Regional Disaster Recovery" caption-side="bottom"}
 
 
 ## Testing your disaster recovery configuration
 {: #odf-rdr-test}
 
-Create a sample application to test your disaster recovery solution. For more information, see [Create sample application for testing disaster recovery application](https://docs.redhat.com/documentation/red_hat_openshift_data_foundation/4.20/html-single/configuring_openshift_data_foundation_disaster_recovery_for_openshift_workloads/index#create-sample-application-for-testing-mdrsolution_manage-rdr){: external}.
+Create a sample application to test your disaster recovery solution. For more information, see [Create sample application for testing disaster recovery application](https://docs.redhat.com/documentation/red_hat_openshift_data_foundation/4.21/html-single/configuring_openshift_data_foundation_disaster_recovery_for_openshift_workloads/index#create-sample-application-for-testing-mdrsolution_manage-rdr){: external}.
 
 
 1. Deploy a subscription-based application from the ACM Console. The application's topology tab shows green when all application resources are deployed successfully.
