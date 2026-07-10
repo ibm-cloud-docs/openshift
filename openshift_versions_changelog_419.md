@@ -3,7 +3,7 @@
 copyright:
   years: 2024, 2026
 
-lastupdated: "2026-07-06"
+lastupdated: "2026-07-10"
 
 
 keywords: change log, version history, 4.19_openshift
@@ -339,7 +339,7 @@ The following table shows the components included in the worker node fix pack 4.
 
 | Component | Description |
 | ---- | ---- |
-|RHEL 9 (VPC) 5.14.0-570.60.1.el9_6|N/A|
+|RHEL 9 (VPC) 5.14.0-570.60.1.el9_6|Beginning at this patch version, VPC worker nodes include the following changes: the local time is set to UTC, the root filesystem has changed from ext4 to XFS, and the boot mode has changed from BIOS to UEFI.|
 |RHEL 9 (Classic) 5.14.0-570.60.1.el9_6|N/A|
 |Red Hat OpenShift 4.19.22|For more information, see the [change logs](https://docs.redhat.com/en/documentation/openshift_container_platform/4.19/html/release_notes/ocp-4-19-release-notes.html#ocp-4-19-22_release-notes).|
 |Red Hat CoreOS 4.19.22|For more information, see the [change logs](https://docs.redhat.com/en/documentation/openshift_container_platform/4.19/html/release_notes/ocp-4-19-release-notes.html#ocp-4-19-22_release-notes).|
