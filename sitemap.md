@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2026
-lastupdated: "2026-07-09"
+lastupdated: "2026-07-10"
 
 
 keywords: openshift
@@ -7519,7 +7519,7 @@ subcollection: openshift
 
 [Red Hat OpenShift on IBM Cloud API](https://cloud.ibm.com/apidocs/kubernetes/containers-v1-v2){: external}
 
-[OpenShift Container Platform REST API](https://docs.redhat.com/en/documentation/openshift_container_platform/4.20/html/api_overview/index){: external}
+[OpenShift Container Platform REST API](https://docs.redhat.com/en/documentation/openshift_container_platform/4.21/html/api_overview/index){: external}
 
 
 ## Add-on version history
