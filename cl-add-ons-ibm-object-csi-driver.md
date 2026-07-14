@@ -3,7 +3,7 @@
 copyright:
   years: 2024, 2026
 
-lastupdated: "2026-07-10"
+lastupdated: "2026-07-14"
 
 
 keywords: change log, version history, IBM Object CSI Driver
@@ -57,8 +57,6 @@ Review the version history for IBM Object CSI Driver.
 
 ### Version 1.0 - v1.0.23_349336907, released 03 July 2026
 {: #cl-add-ons-ibm-object-csi-driver-v1023_349336907}
-
-[Default version]{: tag-green}
 
 - Resolves the following CVEs: [CVE-2026-2303](https://nvd.nist.gov/vuln/detail/CVE-2026-2303){: external}.
 - Updates Go to version `1.26.4`.
