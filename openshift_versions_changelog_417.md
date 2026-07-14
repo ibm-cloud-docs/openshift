@@ -3,7 +3,7 @@
 copyright:
   years: 2024, 2026
 
-lastupdated: "2026-07-10"
+lastupdated: "2026-07-14"
 
 
 keywords: change log, version history, 4.17_openshift
@@ -75,8 +75,7 @@ The following table shows the components that are in the master fix pack 4.17.54
 |Key Management Service provider 2.10.25|New version contains updates and security fixes.|
 |Portieris admission controller v0.14.0|See the [Portieris admission controller release notes](https://github.com/IBM/portieris/releases/tag/v0.14.0)|
 |Red Hat OpenShift on IBM Cloud 4.17.54|See the [Red Hat OpenShift on IBM Cloud release notes](https://docs.redhat.com/en/documentation/openshift_container_platform/4.17/html/release_notes/ocp-4-17-release-notes#ocp-4-17-54_release-notes).|
-|Red Hat OpenShift on IBM Cloud Control Plane Operator, Metrics Server, and toolkit v4.17.0+20260531|See the [Red Hat OpenShift on IBM Cloud toolkit release notes](https://github.com/openshift/ibm-roks-toolkit/releases/tag/v4.17.0+20260531).
-|
+|Red Hat OpenShift on IBM Cloud Control Plane Operator, Metrics Server, and toolkit v4.17.0+20260531|See the [Red Hat OpenShift on IBM Cloud toolkit release notes](https://github.com/openshift/ibm-roks-toolkit/releases/tag/v4.17.0+20260531).|
 {: caption="4.17.54_1589_openshift fix pack." caption-side="bottom"}
 {: #cl-boms_master-41754_1589_openshift_M-component-table}
 
