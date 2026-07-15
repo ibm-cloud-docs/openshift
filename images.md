@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2026
-lastupdated: "2026-07-10"
+lastupdated: "2026-07-15"
 
 
 keywords: kubernetes, registry, pull secret, secrets, openshift
@@ -184,6 +184,13 @@ Before you begin
         {: codeblock}
 
 To deploy containers that use encrypted images:
+
+1. Update the `container-service` plug-in to the most recent version.
+
+    ```sh
+    ibmcloud update && ibmcloud plugin update container-service
+    ```
+    {: pre}
 
 1. Enable the Image Key Synchronizer add-on.
 

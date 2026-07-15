@@ -3,7 +3,7 @@
 copyright:
   years: 2014, 2026
 
-lastupdated: "2026-07-07"
+lastupdated: "2026-07-15"
 
 keywords: openshift, {{site.data.keyword.openshiftlong_notm}}, kubernetes, infrastructure, rbac, policy, providers, benefits
 
@@ -111,7 +111,7 @@ For virtualization workloads, consider [OpenShift Virtualization Service](/docs/
 | Security | Clusters on shared hardware run in an isolated environment in the public cloud. Clusters on dedicated hosts do not run in a shared environment, instead only your clusters are present on your hosts. Network access control lists protect the subnets that provide the floating IPs for your worker nodes. |
 | High availability | The master includes three replicas for high availability. Further, if you create your cluster in a multizone metro, the master replicas are spread across zones and you can also spread your worker pools across zones. |
 | Reservations | Reservations aren't available for VPC. |
-| Cluster administration | VPC clusters can't be reloaded or updated. Instead, use the [`worker replace --update` CLI](/docs/openshift?topic=openshift-kubernetes-service-cli#cli_worker_replace) or [API operation](https://cloud.ibm.com/apidocs/kubernetes/containers-v1-v2){: external} to replace worker nodes that are outdated or in a troubled state. |
+| Cluster administration | For VPC clusters, update or recovery actions depend on the worker type. For VPC bare metal workers, you can use the [`worker reload` CLI](/docs/openshift?topic=openshift-kubernetes-service-cli#cs_worker_reload). For VPC virtual server instance workers, use the [`worker replace --update` CLI](/docs/openshift?topic=openshift-kubernetes-service-cli#cli_worker_replace) or [API operation](https://cloud.ibm.com/apidocs/kubernetes/containers-v1-v2){: external} to replace worker nodes that are outdated or in a troubled state. |
 | Cluster networking | Unlike classic infrastructure, the worker nodes of your VPC cluster are attached to VPC subnets and assigned private IP addresses. The worker nodes are not connected to the public network, which instead is accessed through a public gateway, floating IP, or VPN gateway. For more information, see [Overview of VPC networking in {{site.data.keyword.openshiftlong_notm}}](/docs/openshift?topic=openshift-vpc-subnets#vpc_basics).|
 | Apps and container platform | You can choose to create community Kubernetes or {{site.data.keyword.redhat_openshift_notm}} clusters to manage your containerized apps. Your app build processes don't differ because of the infrastructure provider, but how you expose the app does. |
 | App networking | All pods that are deployed to a worker node are assigned a private IP address in the 172.30.0.0/16 range and are routed between worker nodes on the worker node private IP address of the private VPC subnet. To expose the app on the public network, you can create a Kubernetes `LoadBalancer` service, which provisions a VPC load balancer and public hostname address for your worker nodes. For more information, see [Exposing apps with VPC load balancers](/docs/openshift?topic=openshift-vpclb-about). |

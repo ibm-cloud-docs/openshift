@@ -2,7 +2,7 @@
 
 copyright:
   years: 2023, 2026
-lastupdated: "2026-07-10"
+lastupdated: "2026-07-15"
 
 
 keywords: openshift, openshift data foundation, openshift container storage, ocs, worker update, worker replace
@@ -29,7 +29,7 @@ completion-time: 60m
 [Virtual Private Cloud]{: tag-vpc}
 
 
-For VPC clusters with a storage solution such as OpenShift Data Foundation you must cordon, drain, and update each worker node sequentially. For bare metal worker nodes, use the `worker reload` command instead of `worker replace`. If you deployed OpenShift Data Foundation to a subset of worker nodes in your cluster, then after you update the worker node, you must then edit the `ocscluster` resource to include the new worker node.
+For VPC clusters with a storage solution such as OpenShift Data Foundation you must cordon, drain, and update each worker node sequentially. For bare metal worker nodes, you can now use the `worker reload` command instead of `worker replace`. If you deployed OpenShift Data Foundation to a subset of worker nodes in your cluster, then after you update the worker node, you must then edit the `ocscluster` resource to include the new worker node.
 {: shortdesc}
 
 The following tutorial covers both major and minor updates and worker node updates.
@@ -416,9 +416,9 @@ After completing these steps, new persistent volumes will be automatically creat
 
 1.  Update the worker node. For bare metal worker nodes, use the `worker reload` command. For virtual server instance (VSI) worker nodes, use the `worker replace` command.
 
-	**Bare metal worker nodes**: Use the `worker reload` command to reload the worker node.
+	**Bare metal worker nodes**: Use the `worker reload` command to reload the worker node. This command is supported for VPC bare metal workers.
 	```sh
-	ibmcloud oc worker reload -c CLUSTER --worker kube-***
+	ibmcloud oc worker reload --worker kube-***
 	```
 	{: pre}
 

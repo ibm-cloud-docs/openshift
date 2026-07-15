@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2026
-lastupdated: "2026-07-10"
+lastupdated: "2026-07-15"
 
 
 keywords: kubernetes, release notes, openshift, {{site.data.keyword.openshiftlong_notm}}
@@ -28,6 +28,28 @@ Looking for {{site.data.keyword.cloud_notm}} status, platform announcements, sec
 
 ## July 2026
 {: #openshift-jul26}
+
+### 13 July 2026
+{: #openshift-jul1326}
+{: release-note}
+
+
+
+
+
+Worker node fix packs are available for {{site.data.keyword.openshiftlong_notm}} and OpenShift Virtualization Service.
+:   Fix packs can be applied in the following ways. Review the change logs for your cluster version.
+:   - **Classic infrastructure**: Update or reload the worker node.
+:   - **VPC infrastructure**: Replace the worker node.
+:   - **VPC Bare Metal**: Reload the worker node.
+:   [Version 4.21 change log](/docs/openshift?topic=openshift-openshift_changelog_421)
+:   [Version 4.20 change log](/docs/openshift?topic=openshift-openshift_changelog_420)
+:   [Version 4.19 change log](/docs/openshift?topic=openshift-openshift_changelog_419)
+:   [Version 4.18 change log](/docs/openshift?topic=openshift-openshift_changelog_418)
+:   [Version 4.17 change log](/docs/openshift?topic=openshift-openshift_changelog_417)
+:   [Version 4.16 change log](/docs/openshift?topic=openshift-openshift_changelog_416)
+
+
 
 ### 10 July 2026
 {: #openshift-jul1026}
