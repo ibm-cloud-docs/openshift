@@ -1,8 +1,8 @@
 ---
 
 copyright: 
-  years: 2014, 2025
-lastupdated: "2025-12-19"
+  years: 2014, 2026
+lastupdated: "2026-07-15"
 
 
 keywords: openshift, kubernetes, help, network, connectivity, {{site.data.keyword.openshiftlong_notm}}
@@ -172,17 +172,22 @@ Attach the compressed file to your support case.
 
 In some support interactions, support might ask you to collect a `sosreport` archive for a specific OpenShift Container Platform node. For example, it might be necessary to review system logs or other node-specific data that is not included within the output of `oc adm must-gather`.
 
+The method for collecting a `sosreport` differs depending on the operating system of the worker node. RHCOS nodes use the `toolbox` command. RHEL 8 and RHEL 9 nodes do not support `toolbox`; use the Red Hat sosreport script instead.
+{: important}
+
 The recommended way to generate a `sosreport` for an OpenShift Container Platform cluster node is through a debug pod.
 
 [Access your {{site.data.keyword.redhat_openshift_notm}} cluster](/docs/openshift?topic=openshift-access_cluster).
 
-1. List your worker nodes.
+1. List your worker nodes to identify the target node and its operating system.
     ```sh
-    oc get nodes
+    oc get nodes -o wide
     ```
     {: pre}
 
-1.  Start a a debug session on the target node.
+    Note the name of the worker node you want to collect the `sosreport` from. The **OS-IMAGE** column indicates whether the node runs RHCOS or RHEL.
+
+1. Start a debug session on the target node.
     ```sh
     oc debug node/node_name
     ```
@@ -201,7 +206,7 @@ The recommended way to generate a `sosreport` for an OpenShift Container Platfor
     ```
     {: pre}
 
-1. Set `/host` as the root directory within the debug shell. The debug pod mounts the host’s root file system in `/host` within the pod. By changing the root directory to `/host`, you can run binaries contained in the host’s executable paths.
+1. Set `/host` as the root directory within the debug shell. The debug pod mounts the host's root file system in `/host` within the pod. By changing the root directory to `/host`, you can run binaries contained in the host's executable paths.
     ```sh
     chroot /host
     ```
@@ -210,39 +215,50 @@ The recommended way to generate a `sosreport` for an OpenShift Container Platfor
     OpenShift Container Platform cluster nodes running Red Hat Enterprise Linux CoreOS (RHCOS) are immutable and rely on Operators to apply cluster changes. Accessing cluster nodes by using SSH is not recommended. However, if the OpenShift Container Platform API is not available, or the kubelet is not properly functioning on the target node, oc operations might be impacted. In such situations, it is possible to access nodes using `ssh core@<node>.<cluster_name>.<base_domain>` instead.
     {: note}
 
-1. Start a toolbox container, which includes the required binaries and plug-ins to run the `sosreport`.
-    ```sh
-    toolbox
-    ```
-    {: pre}
+1. Collect the `sosreport` by using the method that matches the operating system of the worker node.
 
+    - **RHCOS nodes**: Use the `toolbox` command.
 
-    If an existing toolbox pod is already running, the toolbox command outputs `'toolbox-' already exists. Trying to start….` Remove the running toolbox container with `podman rm toolbox-` and start a new toolbox container.
-    {: note}
+        1. Start a toolbox container, which includes the required binaries and plug-ins to run the `sosreport`. The `toolbox` command is supported only on RHCOS nodes.
 
-1. Run the `sos report` command and follow the prompts to collect troubleshooting data.
-    ```sh
-    sos report -k crio.all=on -k crio.logs=on -k podman.all=on -k podman.logs=on
-    ```
-    {: pre}
-    
-    Example command to include information on OVN-Kubernetes networking configurations from a node in your report.
-    ```sh
-    sos report --all-logs
-    ```
-    {: pre}
+            ```sh
+            toolbox
+            ```
+            {: pre}
 
-    The `sosreport` output provides the archive’s location and checksum. The following sample output references support case ID 01234567. The file path is outside of the `chroot` environment because the toolbox container mounts the host’s root directory at `/host`.
-    ```sh
-    Your sosreport has been generated and saved in:
-    /host/var/tmp/sosreport-my-cluster-node-01234567-2020-05-28-eyjknxt.tar.xz
-    The checksum is: 382ffc167510fd71b4f12a4f40b97a4e
-    ```
-    {: screen}
+            If an existing toolbox pod is already running, the toolbox command outputs `'toolbox-' already exists. Trying to start….` Remove the running toolbox container with `podman rm toolbox-` and start a new toolbox container.
+            {: note}
+
+        1. Run the `sos report` command and follow the prompts to collect troubleshooting data.
+
+            ```sh
+            sos report -k crio.all=on -k crio.logs=on -k podman.all=on -k podman.logs=on
+            ```
+            {: pre}
+
+            Example command to include information on OVN-Kubernetes networking configurations from a node in your report.
+            ```sh
+            sos report --all-logs
+            ```
+            {: pre}
+
+            The `sosreport` output provides the archive's location and checksum. The following sample output references support case ID 01234567. The file path is outside of the `chroot` environment because the toolbox container mounts the host's root directory at `/host`.
+            ```sh
+            Your sosreport has been generated and saved in:
+            /host/var/tmp/sosreport-my-cluster-node-01234567-2020-05-28-eyjknxt.tar.xz
+            The checksum is: 382ffc167510fd71b4f12a4f40b97a4e
+            ```
+            {: screen}
+
+    - **RHEL 8 and RHEL 9 nodes**: The `toolbox` command is not supported on RHEL nodes. Use the Red Hat sosreport collection script instead.
+
+        1. Download and run the Red Hat sosreport script by following the instructions in the [Red Hat knowledge base article](https://access.redhat.com/solutions/68996){: external}.
+
+        1. Follow the prompts in the script to collect the troubleshooting data. Note the location of the generated archive file from the script output.
 
 1. Output the `sosreport` to a file.
 
-    The debug container mounts the host’s root directory at `/host`. Reference the absolute path from the debug container’s root directory, including `/host`, when specifying target files for concatenation.
+    The debug container mounts the host's root directory at `/host`. Reference the absolute path from the debug container's root directory, including `/host`, when specifying target files for concatenation.
     {: tip}
 
     ```sh

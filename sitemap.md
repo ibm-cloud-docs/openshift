@@ -5106,31 +5106,33 @@ subcollection: openshift
 
 * [Understanding bucket creation and removal](/docs/openshift?topic=openshift-storage-cos-install-addon#cos-addon-bucket-cd)
 
-* [Enabling the {{site.data.keyword.cos_full_notm}} add-on from the CLI](/docs/openshift?topic=openshift-storage-cos-install-addon#enable-cos-addon)
+* [Enabling the {{site.data.keyword.cos_full_notm}} add-on from the console](/docs/openshift?topic=openshift-storage-cos-install-addon&interface=ui#enable-cos-addon-console)
 
-* [Restricting nodeserver pod scheduling](/docs/openshift?topic=openshift-storage-cos-install-addon#cos-addon-restrict-node-scheduling)
+* [Enabling the {{site.data.keyword.cos_full_notm}} add-on from the CLI](/docs/openshift?topic=openshift-storage-cos-install-addon&interface=cli#enable-cos-addon)
 
-* [Setting the maximum volumes per node](/docs/openshift?topic=openshift-storage-cos-install-addon#cos-addon-max-volumes-per-node)
+* [Restricting nodeserver pod scheduling](/docs/openshift?topic=openshift-storage-cos-install-addon&interface=cli#cos-addon-restrict-node-scheduling)
 
-* [Deploying an app that uses {{site.data.keyword.cos_full_notm}}](/docs/openshift?topic=openshift-storage-cos-install-addon#cos-addon-app)
+* [Setting the maximum volumes per node](/docs/openshift?topic=openshift-storage-cos-install-addon&interface=cli#cos-addon-max-volumes-per-node)
 
-    * [Create a Kubernetes secret that contains your COS credentials.](/docs/openshift?topic=openshift-storage-cos-install-addon#cos-addon-app-secret)
+* [Deploying an app that uses {{site.data.keyword.cos_full_notm}}](/docs/openshift?topic=openshift-storage-cos-install-addon&interface=cli#cos-addon-app)
 
-    * [Create a PVC](/docs/openshift?topic=openshift-storage-cos-install-addon#cos-addon-app-pvc)
+    * [Create a Kubernetes secret that contains your COS credentials.](/docs/openshift?topic=openshift-storage-cos-install-addon&interface=cli#cos-addon-app-secret)
 
-    * [Create a deployment](/docs/openshift?topic=openshift-storage-cos-install-addon#cos-addon-app-dep)
+    * [Create a PVC](/docs/openshift?topic=openshift-storage-cos-install-addon&interface=cli#cos-addon-app-pvc)
 
-* [Disabling the {{site.data.keyword.cos_full_notm}} add-on](/docs/openshift?topic=openshift-storage-cos-install-addon#disable-cos-addon)
+    * [Create a deployment](/docs/openshift?topic=openshift-storage-cos-install-addon&interface=cli#cos-addon-app-dep)
 
-* [Migrating from the Helm plug-in to the cluster add-on](/docs/openshift?topic=openshift-storage-cos-install-addon#cos-addon-migrate-helm)
+* [Disabling the {{site.data.keyword.cos_full_notm}} add-on](/docs/openshift?topic=openshift-storage-cos-install-addon&interface=cli#disable-cos-addon)
 
-* [{{site.data.keyword.cos_full_notm}} cluster add-on storage classes](/docs/openshift?topic=openshift-storage-cos-install-addon#cos-sc-ref-addon)
+* [Migrating from the Helm plug-in to the cluster add-on](/docs/openshift?topic=openshift-storage-cos-install-addon&interface=cli#cos-addon-migrate-helm)
 
-    * [Storage class parameters](/docs/openshift?topic=openshift-storage-cos-install-addon#cos-sc-ref-addon-params)
+* [{{site.data.keyword.cos_full_notm}} cluster add-on storage classes](/docs/openshift?topic=openshift-storage-cos-install-addon&interface=cli#cos-sc-ref-addon)
 
-    * [Default `s3fs` storage class mount options](/docs/openshift?topic=openshift-storage-cos-install-addon#cos-sc-ref-addon-s3fs)
+    * [Storage class parameters](/docs/openshift?topic=openshift-storage-cos-install-addon&interface=cli#cos-sc-ref-addon-params)
 
-    * [Default `rclone` storage class mount options](/docs/openshift?topic=openshift-storage-cos-install-addon#cos-sc-ref-addon-rclone)
+    * [Default `s3fs` storage class mount options](/docs/openshift?topic=openshift-storage-cos-install-addon&interface=cli#cos-sc-ref-addon-s3fs)
+
+    * [Default `rclone` storage class mount options](/docs/openshift?topic=openshift-storage-cos-install-addon&interface=cli#cos-sc-ref-addon-rclone)
 
 [COS: Migrating from HPCS to Key Protect](/docs/openshift?topic=openshift-migrate_hpcs_kp_cos#migrate_hpcs_kp_cos)
 
