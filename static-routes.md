@@ -1,8 +1,8 @@
 ---
 
 copyright: 
-  years: 2014, 2025
-lastupdated: "2025-12-19"
+  years: 2014, 2026
+lastupdated: "2026-07-15"
 
 
 keywords: openshift, kubernetes, vyatta, ipsec, on-premises, vpn, gateway, static route, routing table
@@ -69,6 +69,13 @@ To use the {{site.data.keyword.cloud_notm}} console, follow these steps.
 {: #enable-add-on-cli}
 
 To use the CLI, follow these steps.
+
+1. Update the `container-service` plug-in to the most recent version.
+
+    ```sh
+    ibmcloud update && ibmcloud plugin update container-service
+    ```
+    {: pre}
 
 1. Enable the `static-route` add-on.
 
