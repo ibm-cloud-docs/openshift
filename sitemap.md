@@ -434,6 +434,10 @@ subcollection: openshift
 
 * [July 2026](/docs/openshift?topic=openshift-openshift-relnotes#openshift-jul26)
 
+    * [13 July 2026](/docs/openshift?topic=openshift-openshift-relnotes#openshift-jul1326)
+
+        * Worker node fix packs are available for {{site.data.keyword.openshiftlong_notm}} and OpenShift Virtualization Service.
+
     * [10 July 2026](/docs/openshift?topic=openshift-openshift-relnotes#openshift-jul1026)
 
         * Version 4.21 is now the default version for {{site.data.keyword.openshiftlong_notm}}.
