@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2026
-lastupdated: "2026-04-23"
+lastupdated: "2026-07-16"
 
 
 keywords: openshift, kubernetes, logmet, logs, metrics, audit, events
@@ -262,6 +262,9 @@ The Kubernetes audit system in your cluster consists of an audit webhook, a log 
     ibmcloud oc cluster config --cluster <cluster> --admin --output json > kubeconfig.json
     ```
     {: pre}
+
+    If the owner of the kubeconfig is removed or its permissions are revoked, the kubernetes API server won't be able to send audit logs anymore. To prevent this scenario, we recommend using a service ID for this operation as that's directly coupled to the account and not to a specific user. 
+    {: important}
 
 12. Extract the kubeconfig's client certificate to file `kubeconfig-cert.pem`.
     ```sh
