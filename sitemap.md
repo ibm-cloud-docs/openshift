@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2026
-lastupdated: "2026-07-15"
+lastupdated: "2026-07-16"
 
 
 keywords: openshift
@@ -8042,6 +8042,8 @@ subcollection: openshift
 
 * [Version 1.0](/docs/openshift?topic=openshift-cl-add-ons-ibm-object-csi-driver#cl-add-ons-ibm-object-csi-driver-1.0)
 
+    * [Version 1.0 - v1.0.24_354254613, released 16 July 2026](/docs/openshift?topic=openshift-cl-add-ons-ibm-object-csi-driver#cl-add-ons-ibm-object-csi-driver-v1024_354254613)
+
     * [Version 1.0 - v1.0.23, released 08 July 2026](/docs/openshift?topic=openshift-cl-add-ons-ibm-object-csi-driver#cl-add-ons-ibm-object-csi-driver-v1023)
 
     * [Version 1.0 - v1.0.23_349336907, released 03 July 2026](/docs/openshift?topic=openshift-cl-add-ons-ibm-object-csi-driver#cl-add-ons-ibm-object-csi-driver-v1023_349336907)
@@ -8189,8 +8191,6 @@ subcollection: openshift
     * [Version 1.0.0 - v1.0.0-1661, released 06 February 2025](/docs/openshift?topic=openshift-cl-add-ons-static-route#cl-add-ons-static-route-v100-1661)
 
     * [Version 1.0.0 - 1.0.0_1581, released 14 November 2024](/docs/openshift?topic=openshift-cl-add-ons-static-route#cl-add-ons-static-route-100_1581)
-
-    * [Version 1.0.0_1122, released 17 July 2023](/docs/openshift?topic=openshift-cl-add-ons-static-route#cl-add-ons-static-route-100_1122)
 
 [OpenShift Data Foundation add-on version change log](/docs/openshift?topic=openshift-cl-add-ons-openshift-data-foundation#cl-add-ons-openshift-data-foundation)
 
