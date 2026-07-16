@@ -18,6 +18,8 @@ subcollection: openshift
 # Installing the {{site.data.keyword.cos_full_notm}} cluster add-on
 {: #storage-cos-install-addon}
 
+You can enable the {{site.data.keyword.cos_full_notm}} add-on from the {{site.data.keyword.cloud_notm}} console or the CLI.
+{: shortdesc}
 
 Prerequisites:
 - The {{site.data.keyword.cos_full_notm}} add-on requires at least 0.3 vCPU and 360 MB of memory.
@@ -39,8 +41,27 @@ Prerequisites:
     - If `reclaimPolicy: Retain` is set, the bucket is retained even after the PVC is deleted.
 
 
+## Enabling the {{site.data.keyword.cos_full_notm}} add-on from the console
+{: #enable-cos-addon-console}
+{: ui}
+
+1. From the [{{site.data.keyword.openshiftlong_notm}} cluster dashboard](https://cloud.ibm.com/containers/cluster-management/clusters){: external}, select the cluster where you want to enable the add-on.
+1. In the **Add-ons** section, locate the **Cloud Object Storage** add-on and click **Install**.
+1. In the **Install add-on: Cloud Object Storage** panel, select a version from the **Version** drop-down.
+1. Optional: Configure the following parameters.
+
+   `maxVolumesPerNode`
+   :   Set the maximum number of {{site.data.keyword.cos_full_notm}} volumes that can be mounted on a single node. The default value is `0`, which means no limit is applied.
+
+   `restrictNodeServerScheduling`
+   :   Set to `true` to restrict the nodeserver pods to run only on nodes that are labeled `cos.csi.ibm.io/csi-node=true`. The default value is `false`, which means nodeserver pods are scheduled on all nodes.
+
+1. Click **Install**. The add-on might take several minutes to deploy and become ready for use.
+1. Verify the installation. In the **Add-ons** section, confirm that the **Cloud Object Storage** add-on shows a **Normal** health state.
+
 ## Enabling the {{site.data.keyword.cos_full_notm}} add-on from the CLI
 {: #enable-cos-addon}
+{: cli}
 
 
 Before you begin: [Access your {{site.data.keyword.redhat_openshift_notm}} cluster](/docs/openshift?topic=openshift-access_cluster).

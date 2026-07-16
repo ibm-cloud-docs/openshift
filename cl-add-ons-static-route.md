@@ -3,7 +3,7 @@
 copyright:
   years: 2024, 2026
 
-lastupdated: "2026-06-26"
+lastupdated: "2026-07-16"
 
 
 keywords: change log, version history, Static Route
@@ -67,9 +67,3 @@ Review the version history for Static Route.
 
 - Updates to the latest `ubi-minimal` base image for the operator build. 
 - `addon-static-route v1.0.0_1581`
-
-
-### Version 1.0.0_1122, released 17 July 2023
-{: #cl-add-ons-static-route-100_1122}
-
-Adds support for different worker node architectures.
