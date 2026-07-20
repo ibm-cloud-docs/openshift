@@ -368,6 +368,7 @@ toc:
               - topic: hpcs-kp-migration-odf.md
                 navtitle: 'ODF: Migrating from HPCS to Key Protect'
               - openshift_odf_rdr_roks.md
+              - openshift_odf_rdr_verify.md
               - openshift_storage_ocs_manage.md
               - openshift_storage_noobaa.md
               - openshift_storage_parameters.md
