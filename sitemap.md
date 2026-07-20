@@ -2489,21 +2489,17 @@ subcollection: openshift
 
 * [Pricing for clusters in {{site.data.keyword.satelliteshort}}](/docs/openshift?topic=openshift-costs#satcluster-pricing)
 
-[Using reservations to reduce classic worker node costs](/docs/openshift?topic=openshift-reservations#reservations)
+[Reservations for classic worker node costs](/docs/openshift?topic=openshift-reservations#reservations)
 
-* [Understanding reservations](/docs/openshift?topic=openshift-reservations#ri-about)
+* [Deprecation timeline](/docs/openshift?topic=openshift-reservations#reservations-deprecation-timeline)
 
-    * [Reservation usage and lifecycle](/docs/openshift?topic=openshift-reservations#ri-usage-lifecycle)
+* [Migrating workloads from reservations](/docs/openshift?topic=openshift-reservations#reservations-deprecation-migrate)
 
-    * [Billing and discounts](/docs/openshift?topic=openshift-reservations#ri-about-billing)
-
-* [Creating a reservation](/docs/openshift?topic=openshift-reservations#ri-create)
-
-* [Using a reservation in a cluster](/docs/openshift?topic=openshift-reservations#ri-use)
+* [About reservations](/docs/openshift?topic=openshift-reservations#ri-about)
 
 * [Reviewing reservation usage](/docs/openshift?topic=openshift-reservations#ri-review)
 
-* [Renewing expiring reservation](/docs/openshift?topic=openshift-reservations#renew-reservation)
+* [Next steps](/docs/openshift?topic=openshift-reservations#reservations-next)
 
 [Removing clusters](/docs/openshift?topic=openshift-remove#remove)
 
@@ -5316,6 +5312,38 @@ subcollection: openshift
 * [Optional operators for ODF Regional Disaster Recovery](/docs/openshift?topic=openshift-openshift_odf_rdr_roks&interface=cli#odf-rdr-operators)
 
 * [Testing your disaster recovery configuration](/docs/openshift?topic=openshift-openshift_odf_rdr_roks&interface=cli#odf-rdr-test)
+
+* [Troubleshooting](/docs/openshift?topic=openshift-openshift_odf_rdr_roks&interface=cli#odf-rdr-troubleshoot)
+
+[Verifying your OpenShift Data Foundation Regional Disaster Recovery configuration](/docs/openshift?topic=openshift-openshift_odf_rdr_verify#openshift_odf_rdr_verify)
+
+* [Verifying the ACM add-on on the hub cluster](/docs/openshift?topic=openshift-openshift_odf_rdr_verify#odf-rdr-verify-acm)
+
+* [Verifying that managed clusters are imported and available](/docs/openshift?topic=openshift-openshift_odf_rdr_verify#odf-rdr-verify-managed-clusters)
+
+* [Verifying Submariner connectivity](/docs/openshift?topic=openshift-openshift_odf_rdr_verify#odf-rdr-verify-submariner)
+
+    * [Verify the Submariner operator on the hub cluster](/docs/openshift?topic=openshift-openshift_odf_rdr_verify#odf-rdr-verify-submariner-hub)
+
+    * [Verify Submariner on the managed clusters](/docs/openshift?topic=openshift-openshift_odf_rdr_verify#odf-rdr-verify-submariner-managed)
+
+* [Verifying ODF on the managed clusters](/docs/openshift?topic=openshift-openshift_odf_rdr_verify#odf-rdr-verify-odf)
+
+* [Verifying the ODF Multicluster Orchestrator on the hub cluster](/docs/openshift?topic=openshift-openshift_odf_rdr_verify#odf-rdr-verify-multicluster-orchestrator)
+
+* [Verifying the DR policy and MirrorPeer on the hub cluster](/docs/openshift?topic=openshift-openshift_odf_rdr_verify#odf-rdr-verify-drpolicy)
+
+* [Verifying optional operators on the managed clusters](/docs/openshift?topic=openshift-openshift_odf_rdr_verify#odf-rdr-verify-optional-operators)
+
+* [Collecting must-gather logs](/docs/openshift?topic=openshift-openshift_odf_rdr_verify#odf-rdr-must-gather)
+
+    * [Collect hub cluster logs](/docs/openshift?topic=openshift-openshift_odf_rdr_verify#odf-rdr-must-gather-hub)
+
+    * [Collect managed cluster logs](/docs/openshift?topic=openshift-openshift_odf_rdr_verify#odf-rdr-must-gather-managed)
+
+* [Next steps](/docs/openshift?topic=openshift-openshift_odf_rdr_verify#odf-rdr-verify-next-steps)
+
+* [Related links](/docs/openshift?topic=openshift-openshift_odf_rdr_verify#odf-rdr-verify-related-links)
 
 [Removing OpenShift Data Foundation](/docs/openshift?topic=openshift-ocs-manage-deployment#ocs-manage-deployment)
 
