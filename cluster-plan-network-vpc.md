@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2022, 2026
-lastupdated: "2026-05-01"
+lastupdated: "2026-07-21"
 
 
 keywords: kubernetes, openshift network
@@ -81,9 +81,9 @@ Your VPC cluster is created with both a public and a private cloud service endpo
 ## Worker-to-master communication in VPC clusters
 {: #worker-to-master-comms}
 
-Worker node communication to the Kubernetes master is established differently based on your cluster version.
+Worker node communication to the Kubernetes master uses the [VPC virtual private endpoint (VPE)](/docs/openshift?topic=openshift-vpc-subnets#vpc_basics_vpe) by default. The VPE gateway for your cluster uses one of these two hostname formats depending on the region, `CLUSTERID.vpe.private.REGION.containers.cloud.ibm.com` or `CLUSTERID.private.REGION.containers.cloud.ibm.com`. All worker-to-master traffic is routed through this private VPE gateway.
 
-* Worker node communication to the Kubernetes master is established over the [VPC virtual private endpoint (VPE)](/docs/openshift?topic=openshift-vpc-subnets#vpc_basics_vpe). If the public cloud service endpoint is also enabled, worker-to-master traffic is established half over the public endpoint and half over the VPE for protection from potential outages of the public or private network.
+If the VPE gateway connection fails and your cluster has outbound traffic protection disabled, worker nodes fall back to the public cloud service endpoint. This fallback only occurs when the VPE gateway is unreachable, not during normal operation. If outbound traffic protection is enabled, no fallback to the public endpoint occurs.
 
 To secure communication over public and private cloud service endpoints or VPEs, {{site.data.keyword.openshiftlong_notm}} automatically sets up a Konnectivity connection between the Kubernetes master and worker nodes when the cluster is created. Worker nodes securely talk to the master through TLS certificates, and the master talks to workers through the Konnectivity connection.
 

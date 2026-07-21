@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2026
-lastupdated: "2026-07-20"
+lastupdated: "2026-07-21"
 
 
 keywords: openshift
@@ -433,6 +433,10 @@ subcollection: openshift
 [Release notes](/docs/openshift?topic=openshift-openshift-relnotes#openshift-relnotes)
 
 * [July 2026](/docs/openshift?topic=openshift-openshift-relnotes#openshift-jul26)
+
+    * [14 July 2026](/docs/openshift?topic=openshift-openshift-relnotes#openshift-jul1426)
+
+        * Action required: Migrate from origin endpoints before 31 July 2026.
 
     * [13 July 2026](/docs/openshift?topic=openshift-openshift-relnotes#openshift-jul1326)
 
@@ -2958,6 +2962,24 @@ subcollection: openshift
 [Adding a trusted CA to {{site.data.keyword.openshiftlong_notm}}](/docs/openshift?topic=openshift-trusted-ca#trusted-ca)
 
 * [Adding a trusted CA to your cluster](/docs/openshift?topic=openshift-trusted-ca#trusted-ca-install)
+
+[VPC cluster without a COS-backed registry](/docs/openshift?topic=openshift-tutorial-no-registry-cos#tutorial-no-registry-cos)
+
+* [Audience](/docs/openshift?topic=openshift-tutorial-no-registry-cos#tutorial-no-registry-cos-audience)
+
+* [Objectives](/docs/openshift?topic=openshift-tutorial-no-registry-cos#tutorial-no-registry-cos-objectives)
+
+* [What you'll get](/docs/openshift?topic=openshift-tutorial-no-registry-cos#tutorial-no-registry-cos-get)
+
+* [Before you begin](/docs/openshift?topic=openshift-tutorial-no-registry-cos#tutorial-no-registry-cos-prereqs)
+
+* [Create the cluster](/docs/openshift?topic=openshift-tutorial-no-registry-cos#tutorial-no-registry-cos-create)
+
+* [Configure cluster access](/docs/openshift?topic=openshift-tutorial-no-registry-cos#tutorial-no-registry-cos-access)
+
+* [Verify the image registry configuration](/docs/openshift?topic=openshift-tutorial-no-registry-cos#tutorial-no-registry-cos-verify)
+
+* [What's next?](/docs/openshift?topic=openshift-tutorial-no-registry-cos#tutorial-no-registry-cos-next)
 
 
 ## Networking

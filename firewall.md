@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2026
-lastupdated: "2026-06-08"
+lastupdated: "2026-07-21"
 
 
 keywords: openshift
@@ -230,6 +230,43 @@ If you have allowlists set up on the [public network](#firewall_outbound) or [pr
 
 If you have an allowlist on the public network in your IBM Cloud infrastructure account, such as a Virtual Router Appliance (Vyatta), you must open IP ranges, ports, and protocols in your allowlist to allow worker nodes to communicate with the master, with infrastructure resources, and with other {{site.data.keyword.cloud_notm}} services.
 {: shortdesc}
+
+**Action required by 31 July 2026**: The `origin.<region>.containers.cloud.ibm.com` endpoints are being retired. If you have classic clusters with the public service endpoint enabled and restrict outbound access with allowlists or firewalls, or if you have custom scripts that call these origin endpoints directly, you must update your configurations before 31 July 2026 to avoid service disruption. For more information, see [Migrating from origin endpoints to supported endpoints](#migrate-origin-endpoints).
+{: important}
+
+#### Migrating from origin endpoints to supported endpoints
+{: #migrate-origin-endpoints}
+
+[Classic clusters]{: tag-classic-inf}
+
+You must take action if either of the following conditions apply to you:
+
+- You have one or more classic clusters with the public service endpoint enabled and you restrict outbound access with allowlists or firewalls.
+- You have custom scripts or tools that call `origin.<region>.containers.cloud.ibm.com` endpoints directly.
+
+If neither condition applies, no action is needed.
+
+To maintain connectivity for your worker nodes to {{site.data.keyword.openshiftlong_notm}}, complete the following steps before 31 July 2026.
+
+- **If you use IP-based firewall rules**: Ensure that the IP addresses documented in the [Allow worker nodes to communicate with cluster master](#master_ips) section are present in your firewall rules.
+
+- **If you use domain-based firewall rules**: Add the following bootstrap domains to your allowlist.
+
+    | Region | Bootstrap domain |
+    | ------ | ---------------- |
+    | EU Central (`fra02`, `fra04`, `fra05`) | `bootstrap.eu-de.containers.cloud.ibm.com` |
+    | UK South (`lon02`, `lon04`, `lon05`, `lon06`) | `bootstrap.eu-gb.containers.cloud.ibm.com` |
+    | Madrid (`mad02`, `mad04`, `mad05`) | `bootstrap.eu-es.containers.cloud.ibm.com` |
+    | Osaka (`osa21`, `osa22`, `osa23`) | `bootstrap.jp-osa.containers.cloud.ibm.com` |
+    | São Paulo (`sao01`, `sao04`, `sao05`) | `bootstrap.br-sao.containers.cloud.ibm.com` |
+    | AP South (`syd01`, `syd04`, `syd05`) | `bootstrap.au-syd.containers.cloud.ibm.com` |
+    | AP North (`tok02`, `tok04`, `tok05`) | `bootstrap.jp-tok.containers.cloud.ibm.com` |
+    | Toronto (`tor01`, `tor04`, `tor05`) | `bootstrap.ca-tor.containers.cloud.ibm.com` |
+    | US South (`dal10`, `dal12`, `dal13`) | `bootstrap.us-south.containers.cloud.ibm.com` |
+    | US East (`wdc04`, `wdc06`, `wdc07`) | `bootstrap.us-east.containers.cloud.ibm.com` |
+    {: caption="Bootstrap domains by region" caption-side="bottom"}
+
+- **If you have custom scripts that call origin endpoints directly**: Switch to the supported API endpoints. For more information, see [About the API](/docs/openshift?topic=openshift-cs_api_install#api_about).
 
 Before you begin, note the public IP address for each worker node in the cluster.
 

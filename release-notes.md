@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2026
-lastupdated: "2026-07-15"
+lastupdated: "2026-07-21"
 
 
 keywords: kubernetes, release notes, openshift, {{site.data.keyword.openshiftlong_notm}}
@@ -28,6 +28,13 @@ Looking for {{site.data.keyword.cloud_notm}} status, platform announcements, sec
 
 ## July 2026
 {: #openshift-jul26}
+
+### 14 July 2026
+{: #openshift-jul1426}
+{: release-note}
+
+Action required: Migrate from origin endpoints before 31 July 2026.
+:   The `origin.<region>.containers.cloud.ibm.com` endpoints are being retired. If you have classic clusters with the public service endpoint enabled and restrict outbound access with allowlists or firewalls, or if you have custom scripts that call origin endpoints directly, you must update your configurations before 31 July 2026 to avoid service disruption. For more information, see [Migrating from origin endpoints to supported endpoints](/docs/openshift?topic=openshift-firewall#migrate-origin-endpoints).
 
 ### 13 July 2026
 {: #openshift-jul1326}
