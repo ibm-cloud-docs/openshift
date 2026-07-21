@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2026
-lastupdated: "2026-07-20"
+lastupdated: "2026-07-21"
 
 
 keywords: openshift
@@ -433,6 +433,10 @@ subcollection: openshift
 [Release notes](/docs/openshift?topic=openshift-openshift-relnotes#openshift-relnotes)
 
 * [July 2026](/docs/openshift?topic=openshift-openshift-relnotes#openshift-jul26)
+
+    * [14 July 2026](/docs/openshift?topic=openshift-openshift-relnotes#openshift-jul1426)
+
+        * Action required: Migrate from origin endpoints before 31 July 2026.
 
     * [13 July 2026](/docs/openshift?topic=openshift-openshift-relnotes#openshift-jul1326)
 
