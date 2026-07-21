@@ -171,6 +171,8 @@ toc:
           - satellite-clusters-registry.md
           - satellite-registry-pull-secret.md
           - trusted-ca.md
+          - topic: tutorial-no-registry-cos.md
+            navtitle: VPC cluster without a COS-backed registry
       - topicgroup:
           label: Networking
           topics:
