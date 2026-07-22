@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2026
-lastupdated: "2026-07-15"
+lastupdated: "2026-07-22"
 
 
 keywords: openshift, cli reference, kubernetes cli, openshift cli, {{site.data.keyword.openshiftlong_notm}}
@@ -463,7 +463,7 @@ View a list of supported versions for managed add-ons in {{site.data.keyword.con
 {: shortdesc}
 
 ```sh
-ibmcloud oc cluster addon versions [--addon ADD-ON_NAME] [--output json] [-q]
+ibmcloud oc cluster addon versions [--addon ADD-ON_NAME] [--offering OFFERING] [--show-defaults] [--output json] [-q]
 ```
 {: pre}
 
@@ -475,6 +475,12 @@ Minimum required permissions
 
 `--addon ADD-ON_NAME`
 :    Optional: Specify an add-on name such as `istio` to filter versions for.
+
+`--offering OFFERING`
+:    Optional: Filter the add-on versions by the specified offering.
+
+`--show-defaults`
+:    Optional: Show only the default versions for each add-on.
 
 `--output json`
 :    Optional: Prints the command output in JSON format.

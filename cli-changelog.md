@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2026
-lastupdated: "2026-07-09"
+lastupdated: "2026-07-22"
 
 
 keywords: openshift, {{site.data.keyword.openshiftlong_notm}}, oc, ks
@@ -31,6 +31,12 @@ Refer to the following change logs for a summary of changes for each version of 
 
 Review the following changes for 1.0 versions of the CLI plug-in.
 {: shortdesc}
+
+## Version v1.0.796
+{: #cli-01796}
+
+Version 1.0.796 of the CLI was released on 22 July 2026.
+- Adds the `--offering` and `--show-defaults` flags to the [`ibmcloud ks cluster addon versions`](/docs/openshift?topic=openshift-kubernetes-service-cli#cs_addon_versions) command.
 
 ## Version v1.0.791
 {: #cli-01791}
