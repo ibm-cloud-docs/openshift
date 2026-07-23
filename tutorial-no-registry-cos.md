@@ -2,7 +2,7 @@
 
 copyright:
   years: 2026
-lastupdated: "2026-07-21"
+lastupdated: "2026-07-23"
 
 keywords: openshift, roks, no cos, no registry, emptydir, image registry, internal registry, icr, fs cloud, financial services
 
@@ -27,7 +27,7 @@ completion-time: 30m
 
 
 
-Create an {{site.data.keyword.openshiftlong_notm}} cluster on VPC without a {{site.data.keyword.cos_full_notm}} bucket backing the internal image registry. For environments that must meet [IBM Financial Services Cloud](https://cloud.ibm.com/docs/financial-services-validated-partners?topic=financial-services-validated-partners-about){: external} requirements, you can create the cluster without a {{site.data.keyword.cos_full_notm}} instance and pull container images directly from {{site.data.keyword.registrylong_notm}}. When no {{site.data.keyword.cos_full_notm}} instance is provided at cluster creation, the internal registry uses ephemeral `emptyDir` storage, which ensures the cluster operates consistently with FS Cloud standards that rely on centralized image management rather than the internal registry.
+Create an {{site.data.keyword.openshiftlong_notm}} cluster on VPC without an {{site.data.keyword.cos_full_notm}} bucket backing the internal image registry. For environments that must meet [IBM Financial Services Cloud](https://cloud.ibm.com/docs/financial-services-validated-partners?topic=financial-services-validated-partners-about){: external} requirements, you can create the cluster without an {{site.data.keyword.cos_full_notm}} instance and pull container images directly from {{site.data.keyword.registrylong_notm}}. When no {{site.data.keyword.cos_full_notm}} instance is provided at cluster creation, the internal registry uses ephemeral `emptyDir` storage, which ensures the cluster operates consistently with FS Cloud standards that rely on centralized image management rather than the internal registry.
 {: shortdesc}
 
 ## Audience
@@ -39,7 +39,7 @@ This tutorial is for cluster administrators who are creating an {{site.data.keyw
 ## Objectives
 {: #tutorial-no-registry-cos-objectives}
 
-In this tutorial, you create an {{site.data.keyword.openshiftlong_notm}} VPC cluster without configuring a {{site.data.keyword.cos_full_notm}} instance, consistent with IBM Financial Services Cloud standards. The cluster's internal image registry uses ephemeral `emptyDir` storage, and images are managed centrally through {{site.data.keyword.registrylong_notm}}.
+In this tutorial, you create an {{site.data.keyword.openshiftlong_notm}} VPC cluster without configuring an {{site.data.keyword.cos_full_notm}} instance, consistent with IBM Financial Services Cloud standards. The cluster's internal image registry uses ephemeral `emptyDir` storage, and images are managed centrally through {{site.data.keyword.registrylong_notm}}.
 
 ## What you'll get
 {: #tutorial-no-registry-cos-get}
@@ -76,10 +76,10 @@ VPC infrastructure
 {: #tutorial-no-registry-cos-create}
 {: step}
 
-Create an {{site.data.keyword.openshiftlong_notm}} cluster on VPC without providing a {{site.data.keyword.cos_full_notm}} instance. When no COS instance is specified, the internal image registry is backed by `emptyDir` storage.
+Create an {{site.data.keyword.openshiftlong_notm}} cluster on VPC without providing an {{site.data.keyword.cos_full_notm}} instance. When no COS instance is specified, the internal image registry is backed by `emptyDir` storage.
 {: shortdesc}
 
-When you omit the `--cos-instance` option from the cluster creation command, the internal registry uses `emptyDir` storage instead of {{site.data.keyword.cos_full_notm}}. `emptyDir` storage is ephemeral — data stored in the registry is lost when the image-registry pod restarts or is rescheduled. This setup is not suitable for production use cases that rely on the internal registry. If you need a persistent internal registry in the future, you can configure a {{site.data.keyword.cos_full_notm}} bucket after cluster creation. For more information, see [Backing up your internal image registry to {{site.data.keyword.cos_full_notm}}](/docs/openshift?topic=openshift-registry#cos_image_registry).
+When you omit the `--cos-instance` option from the cluster creation command, the internal registry uses `emptyDir` storage instead of {{site.data.keyword.cos_full_notm}}. `emptyDir` storage is ephemeral — data stored in the registry is lost when the image-registry pod restarts or is rescheduled. This setup is not suitable for production use cases that rely on the internal registry. If you need a persistent internal registry in the future, you can configure an {{site.data.keyword.cos_full_notm}} bucket after cluster creation. For more information, see [Backing up your internal image registry to {{site.data.keyword.cos_full_notm}}](/docs/openshift?topic=openshift-registry#cos_image_registry).
 {: important}
 
 1. Log in to the {{site.data.keyword.cloud_notm}} account, resource group, and region where you want to create your cluster. If you have a federated ID, include the `--sso` option.

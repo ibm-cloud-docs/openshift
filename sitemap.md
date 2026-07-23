@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2026
-lastupdated: "2026-07-22"
+lastupdated: "2026-07-23"
 
 
 keywords: openshift
@@ -5339,7 +5339,25 @@ subcollection: openshift
 
 * [Testing your disaster recovery configuration](/docs/openshift?topic=openshift-openshift_odf_rdr_roks&interface=cli#odf-rdr-test)
 
+* [Upgrading your ODF Regional Disaster Recovery environment](/docs/openshift?topic=openshift-openshift_odf_rdr_roks&interface=cli#odf-rdr-upgrade)
+
 * [Troubleshooting](/docs/openshift?topic=openshift-openshift_odf_rdr_roks&interface=cli#odf-rdr-troubleshoot)
+
+[ODF: Upgrading Your ODF-RDR Environment](/docs/openshift?topic=openshift-openshift_odf_rdr_upgrade#openshift_odf_rdr_upgrade)
+
+* [Before you begin](/docs/openshift?topic=openshift-openshift_odf_rdr_upgrade#odf-rdr-upgrade-before)
+
+* [Upgrading the hub cluster](/docs/openshift?topic=openshift-openshift_odf_rdr_upgrade#odf-rdr-upgrade-roks-hub)
+
+* [Upgrading the managed clusters](/docs/openshift?topic=openshift-openshift_odf_rdr_upgrade#odf-rdr-upgrade-roks-spoke)
+
+* [Upgrading ACM on the hub cluster](/docs/openshift?topic=openshift-openshift_odf_rdr_upgrade#odf-rdr-upgrade-acm)
+
+* [Upgrading the ODF-DR operator on the hub cluster](/docs/openshift?topic=openshift-openshift_odf_rdr_upgrade#odf-rdr-upgrade-odf-dr)
+
+* [Upgrading optional operators](/docs/openshift?topic=openshift-openshift_odf_rdr_upgrade#odf-rdr-upgrade-optional-operators)
+
+* [Next steps](/docs/openshift?topic=openshift-openshift_odf_rdr_upgrade#odf-rdr-upgrade-next)
 
 [Verifying your OpenShift Data Foundation Regional Disaster Recovery configuration](/docs/openshift?topic=openshift-openshift_odf_rdr_verify#openshift_odf_rdr_verify)
 
@@ -10013,6 +10031,8 @@ subcollection: openshift
 [Why are no pods listed in the `openshift-storage` namespace?](/docs/openshift?topic=openshift-ts-ocs-no-pods#ts-ocs-no-pods)
 
 [What if my OpenShift Data Foundation issue is still unresolved?](/docs/openshift?topic=openshift-ocs-error-unresolved#ocs-error-unresolved)
+
+[Why is Submariner connectivity lost or gateway labels missing after an upgrade?](/docs/openshift?topic=openshift-ts-odf-rdr-submariner#ts-odf-rdr-submariner)
 
 
 ## Contacting support

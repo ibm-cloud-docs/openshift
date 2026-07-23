@@ -6862,6 +6862,8 @@ You can manually set infrastructure credentials to a different account only for 
 
 [Classic infrastructure]{: tag-classic-inf}
 
+The `credentials-get` alias for this command is also supported.
+{: note}
 
 If you set up your {{site.data.keyword.cloud_notm}} account to use different credentials to access the IBM Cloud infrastructure portfolio, get the infrastructure username for the region and resource group that you are currently targeted to.
 {: shortdesc}
@@ -6951,6 +6953,8 @@ ibmcloud oc credential set classic --infrastructure-api-key <api_key> --infrastr
 
 [Classic infrastructure]{: tag-classic-inf}
 
+The `credentials-unset` alias for this command is also supported.
+{: note}
 
 Remove the credentials for a resource group and region to remove access to the IBM Cloud infrastructure portfolio through your {{site.data.keyword.cloud_notm}} account.
 {: shortdesc}

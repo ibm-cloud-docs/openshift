@@ -2,7 +2,7 @@
 
 copyright:
   years: 2025, 2026
-lastupdated: "2026-07-20"
+lastupdated: "2026-07-23"
 
 
 keywords: openshift, openshift data foundation, openshift container storage, disaster recovery
@@ -331,6 +331,11 @@ Create a sample application to test your disaster recovery solution. For more in
 1. On the application page, go to **Actions** > **Relocate application**. Select your primary ODF cluster as the target cluster. Click **Initiate**.
 
 1. Verify that the application pods are moved back to the primary cluster.
+
+## Upgrading your ODF Regional Disaster Recovery environment
+{: #odf-rdr-upgrade}
+
+For information about when and how to upgrade the components of your ODF-RDR environment, see [Upgrading your ODF Regional Disaster Recovery environment](/docs/openshift?topic=openshift-openshift_odf_rdr_upgrade).
 
 ## Troubleshooting
 {: #odf-rdr-troubleshoot}
