@@ -1,8 +1,8 @@
 ---
 
 copyright: 
-  years: 2014, 2025
-lastupdated: "2025-12-19"
+  years: 2014, 2026
+lastupdated: "2026-07-23"
 
 
 keywords: planning, storage, cluster, container storage, cloud storage, kubernetes service, openshift
@@ -29,7 +29,8 @@ Review the following sections for an overview of the available storage options f
 Before you can decide what type of storage is the correct solution for your {{site.data.keyword.openshiftlong}} clusters, you must understand the {{site.data.keyword.cloud_notm}} infrastructure provider, your app requirements, the type of data that you want to store, and how often you want to access this data.
 
 Decide whether your data must be permanently stored.
-:   **Persistent storage:** Data stored on persistent storage persists even when the container, the worker node, or the cluster is removed. Use persistent storage in the for stateful apps, core business data or data that must be available due to legal requirements, such as a defined retention period. Persistent storage is also a good option for auditing.
+:   **Persistent storage:** Data stored on persistent storage persists even when the container, the worker node, or the cluster is removed. Use persistent storage in stateful apps, core business data or data that must be available due to legal requirements, such as a defined retention period. Persistent storage is also a good option for auditing.
+
 :   **Non-persistent storage:** Your data can be removed when the container, the worker node, or the cluster is removed. Non-persistent storage is typically used for logging information, such as system logs or container logs, development testing, or when you want to access data from the host's file system.
 
 If you must persist your data, analyze if your app requires a specific type of storage. When you use an existing app, the app might be designed to store data in one of the following ways.

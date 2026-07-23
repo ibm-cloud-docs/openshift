@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2024, 2026
-lastupdated: "2026-04-27"
+lastupdated: "2026-07-23"
 
 keywords: openshift, {{site.data.keyword.openshiftlong_notm}}, secure by default, outbound traffic protection, 4.15
 
@@ -124,7 +124,7 @@ To access images from registries like DockerHub or `quay.io` or `registry.redhat
 ### Allowing outbound traffic to Red Hat Marketplace and OperatorHub
 {: #sbd-example-oh}
 
-The following steps enable all outbound traffic. If you don't want to enable this, you can [mirror the Red Hat Marketplace and OperatorHub images that your app needs](#sbd-example-quay) to to your own `icr.io`.
+The following steps enable all outbound traffic. If you don't want to enable this, you can [mirror the Red Hat Marketplace and OperatorHub images that your app needs](#sbd-example-quay) to your own `icr.io`.
 
 1. Disable outbound traffic protection.
     ```sh

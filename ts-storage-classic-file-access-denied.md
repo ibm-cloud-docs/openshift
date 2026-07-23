@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2025, 2026
-lastupdated: "2026-01-06"
+lastupdated: "2026-07-23"
 
 
 keywords: openshift, storage, file storage vpc, access, volume, access denied, mount
@@ -31,7 +31,7 @@ MountVolume.SetUp failed for volume "pvc-XXXX" : mount failed: exit status 32 Mo
 ```
 {: screen}
 
-Your worker nodes might not have access to the your file storage.
+Your worker nodes might not have access to your file storage.
 {: tsCauses}
 
 Follow the steps to ensure that your worker nodes have access. Note that these steps require classic infrastructure permissions. 
@@ -88,4 +88,3 @@ Follow the steps to ensure that your worker nodes have access. Note that these s
 6. In the dropdown, select the subnet that applies to your worker node. 
 
 7. Click **Save**.
-

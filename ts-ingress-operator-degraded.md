@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2026
-lastupdated: "2026-04-09"
+lastupdated: "2026-07-23"
 
 
 keywords: openshift
@@ -97,7 +97,7 @@ Update your cluster master and worker nodes.
     ```
     {: pre}
 
-1. Wait for the DNS pod to restart. Run `get pods` with the `--watch` option to to verify that the pod is deployed.
+1. Wait for the DNS pod to restart. Run `get pods` with the `--watch` option to verify that the pod is deployed.
     ```sh
     oc get pods -n openshift-dns --watch
     ```

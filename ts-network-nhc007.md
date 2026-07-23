@@ -1,7 +1,7 @@
 ---
 copyright: 
   years: 2025, 2026
-lastupdated: "2026-04-30"
+lastupdated: "2026-07-23"
 
 keywords: nhc007, dns traffic blocked
 
@@ -49,7 +49,7 @@ Check your Calico HostEndpoint (HEP) and GlobalNetworkPolicy (GNP) resources, as
     ```
     {: pre}
 
-    Example command to to describe a specific HEP.
+    Example command to describe a specific HEP.
 
     ```sh
     kubectl describe hostendpoints.crd.projectcalico.org <hep-name>

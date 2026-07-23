@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2023, 2026
-lastupdated: "2026-04-10"
+lastupdated: "2026-07-23"
 
 
 keywords: openshift, {{site.data.keyword.openshiftlong_notm}}, subnet, detach
@@ -139,7 +139,7 @@ Complete the following steps.
         ```
         {: pre}
 
-1. Re-create any LoadBalancers not in the `openshift-ingress` namespace that you deleted in step 3 by by using the YAML file that you saved earlier.
+1. Re-create any LoadBalancers not in the `openshift-ingress` namespace that you deleted in step 3 by using the YAML file that you saved earlier.
     ```sh
     kubectl apply -f LB-NAMESPACE.LB-NAME.yaml
     ```

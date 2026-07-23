@@ -2,7 +2,7 @@
 
 copyright:
   years: 2025, 2026
-lastupdated: "2026-06-29"
+lastupdated: "2026-07-23"
 
 
 keywords: openshift
@@ -95,7 +95,7 @@ To start troubleshooting issues, run the following commands to gather as much da
     ```
     {: pre}
 
-    b. Gather logs for a a random string.
+    b. Gather logs for a random string.
 
     ```bash
     oc logs pod/<random string>

@@ -1,8 +1,8 @@
 ---
 
 copyright: 
-  years: 2014, 2025
-lastupdated: "2025-12-08"
+  years: 2014, 2026
+lastupdated: "2026-07-23"
 
 
 keywords: kubernetes, openshift, containers not starting
@@ -240,7 +240,7 @@ Ensuring that IP blocks are free is especially important for all classic cluster
         ```
         {: pre}
 
-    7. Repeat these steps for any other blocks that that have 0 `IPS IN USE`.
+    7. Repeat these steps for any other blocks that have 0 `IPS IN USE`.
 
 5. If you locked the data store in step 2: Unlock the data store.
     ```sh
