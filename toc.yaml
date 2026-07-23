@@ -370,6 +370,8 @@ toc:
               - topic: hpcs-kp-migration-odf.md
                 navtitle: 'ODF: Migrating from HPCS to Key Protect'
               - openshift_odf_rdr_roks.md
+              - topic: openshift_odf_rdr_upgrade.md
+                navtitle: 'ODF: Upgrading Your ODF-RDR Environment'
               - openshift_odf_rdr_verify.md
               - openshift_storage_ocs_manage.md
               - openshift_storage_noobaa.md
@@ -797,6 +799,7 @@ toc:
               - ts-storage-ocs-progressing.md
               - ts-storage-ocs-missing-pods.md
               - ts-storage-ocs-unresolved.md
+              - ts-odf-rdr-submariner.md
       - get-help.md
       - allowlist-request.md
       - sitemap.md
