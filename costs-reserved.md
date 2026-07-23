@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2026
-lastupdated: "2026-07-20"
+lastupdated: "2026-07-23"
 
 keywords: openshift, reservations, worker node, deprecated, end of support
 
@@ -53,7 +53,7 @@ To prevent loss of service, you must create non-reserved worker pools and migrat
 ## About reservations
 {: #ri-about}
 
-A reservation is a {{site.data.keyword.cloud_notm}} resource that describes the flavor, location, and other details of worker nodes that you purchased. Contracts associated with a reservation are agreements to pay a fixed monthly amount for a set number of worker nodes for a 1 or 3 year term.
+A reservation is an {{site.data.keyword.cloud_notm}} resource that describes the flavor, location, and other details of worker nodes that you purchased. Contracts associated with a reservation are agreements to pay a fixed monthly amount for a set number of worker nodes for a 1 or 3 year term.
 
 Reservations are available only for classic infrastructure worker nodes in multizone regions (MZRs). Worker pools that use reservations cannot use the cluster autoscaler add-on.
 {: note}
