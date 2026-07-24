@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2026
-lastupdated: "2026-07-15"
+lastupdated: "2026-07-24"
 
 
 keywords: openshift, node scaling, ca, autoscaler
@@ -20,7 +20,7 @@ subcollection: openshift
 # Enabling the cluster autoscaler add-on in your cluster
 {: #cluster-scaling-install-addon}
 
-You can enable the add-on from the console or the command the line.
+You can enable the add-on from the console or the command line.
 
 
 Because the cluster autoscaler doesn't recognize GPU labels, it can't scale up or down based on GPU consumption.

@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2024, 2026
-lastupdated: "2026-02-11"
+lastupdated: "2026-07-24"
 
 keywords: openshift, {{site.data.keyword.openshiftlong_notm}}, secure by default, {{site.data.keyword.openshiftlong_notm}}, outbound traffic protection, cluster create, quota, limitations
 
@@ -30,7 +30,7 @@ The following steps apply only in scenarios where you have opted out of using ma
 With the introduction of Secure by Default Cluster VPC Networking in version 4.15, new VPE gateways and managed security groups are being used to manage network traffic.
 {: tsCauses}
 
-These new resources and rules might cause networking errors in the existing clusters in your VPC. Depending on how you created your previous clusters.
+These new resources and rules might cause networking errors in the existing clusters in your VPC, depending on how you created your previous clusters.
 
 Before making a version 4.15 cluster, you created a cluster that does not use the managed cluster security group.
 

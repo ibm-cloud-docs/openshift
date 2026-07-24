@@ -2,7 +2,7 @@
 
 copyright:
   years: 2023, 2026
-lastupdated: "2026-05-12"
+lastupdated: "2026-07-24"
 
 
 keywords: kubernetes, help, network, connectivity, openshift, esssmg
@@ -28,7 +28,7 @@ When you check the status of your cluster's Ingress components by running the `i
 {: tsSymptoms}
 
 ```sh
-Could not the secret group (ESSSMG).
+Could not find the secret group (ESSSMG).
 ```
 {: screen}
 

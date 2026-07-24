@@ -1,8 +1,8 @@
 ---
 
 copyright: 
-  years: 2014, 2025
-lastupdated: "2025-08-29"
+  years: 2014, 2026
+lastupdated: "2026-07-24"
 
 
 keywords: kubernetes, openshift
@@ -106,7 +106,7 @@ Technical solution:
 #### Step 3: Share data
 {: #uc_shipping_step3}
 
-* {{site.data.keyword.cos_full}} plus {{site.data.keyword.messagehub_full}} provides real-time and historically data storage.
+* {{site.data.keyword.cos_full}} plus {{site.data.keyword.messagehub_full}} provides real-time and historical data storage.
 * APIs allow the customers of the shipping company to share data into their apps.
 
 #### Step 4: Deliver continuously

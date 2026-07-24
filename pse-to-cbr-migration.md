@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2024, 2026
-lastupdated: "2026-04-15"
+lastupdated: "2026-07-24"
 
 
 keywords: kubernetes, private service endpoint, openshift, context based restrictions
@@ -47,7 +47,7 @@ Before you start creating CBR zones and rules, verify that your private service 
     {: pre}
 
 
-1 [Access your {{site.data.keyword.redhat_openshift_notm}} cluster](/docs/openshift?topic=openshift-access_cluster).. Target the private service endpoint from an IP addressed that is all to verify you can connect.
+1 [Access your {{site.data.keyword.redhat_openshift_notm}} cluster](/docs/openshift?topic=openshift-access_cluster).. Target the private service endpoint from an IP address that is allowed to verify you can connect.
 
 1 [Access your {{site.data.keyword.redhat_openshift_notm}} cluster](/docs/openshift?topic=openshift-access_cluster).. Target the private service endpoint from a client system that uses a private IP that is **not** allowed in your allowlist.
 

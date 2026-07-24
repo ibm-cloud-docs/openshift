@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2026
-lastupdated: "2026-04-29"
+lastupdated: "2026-07-24"
 
 keywords: kubernetes, openshift
 
@@ -89,7 +89,7 @@ They can replicate and scale the apps by using defined rules and the automated K
 
 {{site.data.keyword.SecureGatewayfull}} is used to create a secure pipeline to on-premises databases and documents for apps that are re-hosted to run in {{site.data.keyword.openshiftlong_notm}}.
 
-{{site.data.keyword.cloudant}} is a modern NoSQL database suitable a range of data-driven use cases from key-value to complex document-oriented data storage and query. To minimize queries to the back-office RDBMS, {{site.data.keyword.cloudant}} is used to cache the user's session data across apps. These choices improve the front-end app usability and performance across the apps on {{site.data.keyword.openshiftlong_notm}}.
+{{site.data.keyword.cloudant}} is a modern NoSQL database suitable for a range of data-driven use cases from key-value to complex document-oriented data storage and query. To minimize queries to the back-office RDBMS, {{site.data.keyword.cloudant}} is used to cache the user's session data across apps. These choices improve the front-end app usability and performance across the apps on {{site.data.keyword.openshiftlong_notm}}.
 
 Moving compute workloads into the {{site.data.keyword.cloud_notm}} isn't enough though. The provider needs to go through a methods transformation as well. By adopting the practices of the IBM Garage Method, the provider can implement an agile and iterative delivery process that supports modern DevOps practices like CI/CD.
 
@@ -199,7 +199,7 @@ Technical solution:
 #### Step 4: Data sharing
 {: #uc_research_step4}
 
-* {{site.data.keyword.cloudant}} is a modern NoSQL database suitable a range of data-driven use cases from key-value to complex document-oriented data storage and query.
+* {{site.data.keyword.cloudant}} is a modern NoSQL database suitable for a range of data-driven use cases from key-value to complex document-oriented data storage and query.
 * To minimize queries to the regional databases, {{site.data.keyword.cloudant}} is used to cache the user's session data across apps.
 * This choice improves the front-end app usability and performance across apps on {{site.data.keyword.openshiftlong_notm}}.
 * While worker apps in {{site.data.keyword.openshiftlong_notm}} analyze on-premises data and store results in {{site.data.keyword.cloudant}}, {{site.data.keyword.openwhisk}} reacts to changes and automatically sanitizes data on the incoming feeds of data.

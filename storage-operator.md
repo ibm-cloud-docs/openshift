@@ -1,8 +1,8 @@
 ---
 
 copyright: 
-  years: 2024, 2025
-lastupdated: "2025-07-17"
+  years: 2024, 2026
+lastupdated: "2026-07-24"
 
 
 keywords: openshift, {{site.data.keyword.openshiftlong_notm}}, add-on, storage operator
@@ -52,7 +52,7 @@ The `ibm-storage-operator` is installed by default in VPC clusters beginning wit
 ## Disabling the `ibm-storage-operator` add-on
 {: #storage-operator-disable}
 
-Note that you can't disable the add-on if there are other add-ons are using the `ibm-storage-operator`.
+Note that you can't disable the add-on if there are other add-ons using the `ibm-storage-operator`.
 {: note}
 
 1. Run the following command to disable the add-on.

@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2025, 2026
-lastupdated: "2026-04-30"
+lastupdated: "2026-07-24"
 
 
 keywords: openshift
@@ -30,7 +30,7 @@ content-type: troubleshoot
 The `ibm-object-csi-driver` add-on does not run properly.
 
 
-Follow these steps to gather gather details about the issue.
+Follow these steps to gather details about the issue.
 
 1. Pull the cluster configuration. 
     ```sh

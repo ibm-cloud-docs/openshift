@@ -1,8 +1,8 @@
 ---
 
 copyright: 
-  years: 2014, 2025
-lastupdated: "2025-12-03"
+  years: 2014, 2026
+lastupdated: "2026-07-24"
 
 
 keywords: kubernetes, openshift, user permissions, infrastructure credentials
@@ -76,7 +76,7 @@ There are multiple reasons why this can occur.
 - You do not have the required infrastructure permissions. 
 
 - The resource group and region are mismatched. 
-    - Credentials and the IAM API key are set to a region and a resource group. The region is specified when you run the `ibmcloud oc credential set` command. The resource group applied is whichever resource group is targeted when you run this command. If you do not explicitly target a resource group with the [`ibmcloud target`](/docs/cli?topic=cli-ibmcloud_cli#ibmcloud_target) command before you run `ibmcloud oc credential set`, it is possible that the API key's resource group is not the one you expected, resulting is mismatched credentials that are not recognized. 
+    - Credentials and the IAM API key are set to a region and a resource group. The region is specified when you run the `ibmcloud oc credential set` command. The resource group applied is whichever resource group is targeted when you run this command. If you do not explicitly target a resource group with the [`ibmcloud target`](/docs/cli?topic=cli-ibmcloud_cli#ibmcloud_target) command before you run `ibmcloud oc credential set`, it is possible that the API key's resource group is not the one you expected, resulting in mismatched credentials that are not recognized. 
 
 - Credentials were added to or removed from the cluster.
     - If you created a cluster with a linked [IBM Cloud infrastructure account](/docs/openshift?topic=openshift-classic-credentials) and then later added or removed  credentials with the `ibmcloud oc credential set` or `ibmcloud oc credential unset`, the credentials might not match the specifications for the linked account. This can result in the credentials being unrecognized. 
