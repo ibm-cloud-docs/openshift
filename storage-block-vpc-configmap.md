@@ -1,8 +1,8 @@
 ---
 
 copyright: 
-  years: 2022, 2025
-lastupdated: "2025-12-03"
+  years: 2022, 2026
+lastupdated: "2026-07-23"
 
 
 keywords: openshift, block storage, snapshot, add-on, configmap
@@ -52,7 +52,7 @@ data:
   IsStorageClassDefault: "true"
   AttachDetachMinRetryGAP: "3" # Initial retry interval for checking Attach/Detach Status. Default 3 seconds
   AttachDetachMinRetryAttempt: "3" # Number of attempts for AttachDetachMinRetryGAP. Default is 3 retries for 3 seconds retry gap.
-  AttachDetachMaxRetryAttempt: "46" # Total number of retries for for checking Attach/Detach Status. Default is 46 times i.e ~7 mins (3 secs * 3 times + 6 secs * 6 times + 10 secs * 10 times)
+  AttachDetachMaxRetryAttempt: "46" # Total number of retries for checking Attach/Detach Status. Default is 46 times i.e ~7 mins (3 secs * 3 times + 6 secs * 6 times + 10 secs * 10 times)
   AttacherWorkerThreads: "15" # The number of goroutines for processing VolumeAttachments
   AttacherKubeAPIBurst: "10" # The number of requests to the Kubernetes API server, exceeding the QPS, that can be sent at any given time
   AttacherKubeAPIQPS: "5.0" # The number of requests per second sent by a Kubernetes client to the Kubernetes API server.

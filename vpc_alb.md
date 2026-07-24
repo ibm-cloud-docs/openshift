@@ -1,7 +1,7 @@
 ---
 copyright: 
   years: 2024, 2026
-lastupdated: "2026-07-07"
+lastupdated: "2026-07-23"
 
 keywords: alb, application load balancer, vpc alb, dns, public lb, private lb
 
@@ -344,7 +344,7 @@ Review the required and optional VPC ALB annotations and specifications.
 :   The DNS `zone` to associate with this load balancer. For more information, see [Registering a private DNS record](#vpc_alb_private_dns).
 
 `service.kubernetes.io/ibm-load-balancer-cloud-provider-vpc-member-quota`
-:  The number of worker nodes per zone that the load balancer routes to. The default value is 8. For a cluster with worker nodes in three zones, this results in the the load balancer routing to 24 total worker nodes. The total number of worker nodes across all zones that the load balancer routes to cannot exceed 50. If the cluster has fewer than 50 worker nodes across all zones, specify 0 to route to all worker nodes in a zone. 
+:  The number of worker nodes per zone that the load balancer routes to. The default value is 8. For a cluster with worker nodes in three zones, this results in the load balancer routing to 24 total worker nodes. The total number of worker nodes across all zones that the load balancer routes to cannot exceed 50. If the cluster has fewer than 50 worker nodes across all zones, specify 0 to route to all worker nodes in a zone. 
 
 
 `service.kubernetes.io/ibm-load-balancer-cloud-provider-vpc-security-group`

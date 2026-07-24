@@ -1,8 +1,8 @@
 ---
 
 copyright: 
-  years: 2025, 2025
-lastupdated: "2025-06-24"
+  years: 2025, 2026
+lastupdated: "2026-07-23"
 
 
 keywords: kubernetes, openshift, user permissions, infrastructure credentials
@@ -19,7 +19,7 @@ content-type: troubleshoot
 {: #ts-worker-plan-not-avail}
 
 
-When you try to to provision or reload worker nodes, the action fails and you see an error similar to the following.
+When you try to provision or reload worker nodes, the action fails and you see an error similar to the following.
 {: tsSymptoms}
 
 ```sh

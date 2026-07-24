@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2026
-lastupdated: "2026-04-15"
+lastupdated: "2026-07-23"
 
 
 keywords: portworx, kubernetes, openshift
@@ -110,7 +110,7 @@ For VPC clusters
 1. Open the {{site.data.keyword.redhat_openshift_notm}} web console .
 1. Click **Networking > Routes**.
 1. Find the **px-backup-ui** route and click the URL that is listed in the **Location** column to open the Portworx Backup console.
-1. Log in to the Portworx Backup console. If you are the first user to access the console, you must log in in with the username `admin` and the password `admin`. You are redirected to a registration page to set a unique username and password. Subsequent users must register a new account to access the console.
+1. Log in to the Portworx Backup console. If you are the first user to access the console, you must log in with the username `admin` and the password `admin`. You are redirected to a registration page to set a unique username and password. Subsequent users must register a new account to access the console.
 
 
 For public classic clusters
@@ -120,7 +120,7 @@ For public classic clusters
 1. Click **Networking > Routes**.
 1. Find the **px-backup-ui** route and note the IP address and node port listed in the **Locations** column.
 1. Copy and paste the IP address and node port into your web browser to open the Portworx Backup console.
-1. Log in to the Portworx Backup console. If you are the first user to access the console, you must log in in with the username `admin` and the password `admin`. You are redirected to a registration page to set a unique username and password. Subsequent users must register a new account to access the console.
+1. Log in to the Portworx Backup console. If you are the first user to access the console, you must log in with the username `admin` and the password `admin`. You are redirected to a registration page to set a unique username and password. Subsequent users must register a new account to access the console.
 
 
 For private classic clusters, [expose the **px-backup-ui** service on your private cluster to access the Portworx Backup console](/docs/containers?topic=containers-managed-ingress-setup).
@@ -132,7 +132,7 @@ For private classic clusters, [expose the **px-backup-ui** service on your priva
 Create an {{site.data.keyword.cos_full_notm}} instance and bucket, and add them as a backup location to your Portworx Backup service.
 {: shortdesc}
 
-Before you begin, [log in to the Portworx Backup console](#px-backup-ui). Note that if you are the first user to access the console, you must login in with the username `admin` and the password `admin`. You are redirected to a registration page to set a unique username and password. Subsequent users must register a new account to access the console.
+Before you begin, [log in to the Portworx Backup console](#px-backup-ui). Note that if you are the first user to access the console, you must log in with the username `admin` and the password `admin`. You are redirected to a registration page to set a unique username and password. Subsequent users must register a new account to access the console.
 
 1. [Create your {{site.data.keyword.cos_full_notm}} service instance](/docs/openshift?topic=openshift-storage-cos-understand#create_cos_service).
 2. [Create service credentials for your {{site.data.keyword.cos_full_notm}} service instance](/docs/openshift?topic=openshift-storage-cos-understand#create_cos_secret). Be sure to enable HMAC authentication by clicking **Advanced Options** in the **Create credential** dialog box and switching the **Include HMAC Credential** parameter to **On**.
