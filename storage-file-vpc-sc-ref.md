@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2022, 2026
-lastupdated: "2026-03-13"
+lastupdated: "2026-07-24"
 
 
 keywords: openshift, file storage, storage class reference, eni
@@ -40,7 +40,7 @@ Regional file share classes can be a better choice for workloads that prioritize
 | ibmc-vpc-file-1000-iops | 1000 IOPs and `Immediate` binding. | First generation | 
 | ibmc-vpc-file-3000-iops | 3000 IOPs and `Immediate` binding. | First generation | 
 | ibmc-vpc-file-500-iops | 500 IOPs `Immediate` binding | First generation | 
-| ibmc-vpc-file-eit | 1000 IOPs, `Immediate` binding., as well as and ElasticNetworkInterface(ENI) and EncryptionInTransit(EIT) enabled. | First generation | 
+| ibmc-vpc-file-eit | 1000 IOPs, `Immediate` binding, as well as an ElasticNetworkInterface(ENI) and EncryptionInTransit(EIT) enabled. | First generation | 
 | ibmc-vpc-file-metro-1000-iops | 1000 IOPs and `WaitForFirstConsumer` binding. | First generation | 
 | ibmc-vpc-file-metro-3000-iops | 3000 IOPs and `WaitForFirstConsumer` binding. | First generation | 
 | ibmc-vpc-file-metro-500-iops | 500 IOPs `WaitForFirstConsumer` binding. | First generation | 

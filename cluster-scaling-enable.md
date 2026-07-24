@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2026
-lastupdated: "2026-05-28"
+lastupdated: "2026-07-24"
 
 
 keywords: openshift, {{site.data.keyword.openshiftlong_notm}}, kubernetes, node scaling, ca, autoscaler
@@ -300,7 +300,7 @@ Customize the cluster autoscaler settings such as the amount of time it waits be
 
 
 `nodeDeletionBatcherInterval`
-:   How long in minutes that the autoscaler can gather nodes to delete them in batch. The deafault value is `0m`.
+:   How long in minutes that the autoscaler can gather nodes to delete them in batch. The default value is `0m`.
 
 
 `nodeRemovalLatencyTrackingEnabled`

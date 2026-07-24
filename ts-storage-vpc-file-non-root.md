@@ -1,8 +1,8 @@
 ---
 
 copyright: 
-  years: 2022, 2025
-lastupdated: "2025-09-17"
+  years: 2022, 2026
+lastupdated: "2026-07-24"
 
 
 keywords: kubernetes, openshift
@@ -33,7 +33,7 @@ You can resolve the issue in one of the following ways.
 
 - If you need your app to run as non-root, create your own storage class with the correct `uid` and `gid` that your app needs. 
 
-- If you want to run your app as as root user, edit your deployment to use `fsGroup: 0`.
+- If you want to run your app as root user, edit your deployment to use `fsGroup: 0`.
 
 
 

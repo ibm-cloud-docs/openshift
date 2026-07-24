@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2024, 2026
-lastupdated: "2026-04-30"
+lastupdated: "2026-07-24"
 
 keywords: openshift, {{site.data.keyword.openshiftlong_notm}}, secure by default, {{site.data.keyword.openshiftlong_notm}}, outbound traffic protection, cluster create, quota, limitations
 
@@ -23,7 +23,7 @@ content-type: troubleshoot
 You see DNS failures after creating a custom DNS resolver in your VPC where a 4.15 cluster already exists.
 {: tsSymptoms}
 
-In each of the following cases, syncing the `kube-<clusterID>` security group and replace the worker nodes as described in the following steps. Note that issue might not be seen immediately after the resolver is created and enabled in the VPC. DNS includes a cache which might resolve name lookup until a worker is replaced or restarted, or pods are restarted.  
+In each of the following cases, syncing the `kube-<clusterID>` security group and replace the worker nodes as described in the following steps. Note that the issue might not be seen immediately after the resolver is created and enabled in the VPC. DNS includes a cache which might resolve name lookup until a worker is replaced or restarted, or pods are restarted.  
 
 - Adding or replacing a worker node to the cluster fails and `ibmcloud ks workers` shows a worker status similar to the following
     ```sh
@@ -37,7 +37,7 @@ In each of the following cases, syncing the `kube-<clusterID>` security group an
     ```
     {: screen}
 
-- Restarting a worker results in and pods on that worker are in `Terminating` state, the OpenShift web console no longer opens, or Ingress is in `Critical` state.
+- Restarting a worker results in pods on that worker being in `Terminating` state, the OpenShift web console no longer opens, or Ingress is in `Critical` state.
 
 
 If you have a custom DNS resolver enabled in your VPC before creating a 4.15 cluster, then {{site.data.keyword.openshiftlong_notm}} automatically adds rules to allow traffic through the DNS resolver IP addresses to your IBM Cloud managed security group (`kube-<clusterID>`).

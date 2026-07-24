@@ -1,8 +1,8 @@
 ---
 
 copyright:
-  years: 2022, 2025
-lastupdated: "2025-03-13"
+  years: 2022, 2026
+lastupdated: "2026-07-24"
 
 
 keywords: secrets manager, secrets, certificates, secret group, CRN
@@ -89,7 +89,7 @@ Integrating {{site.data.keyword.secrets-manager_short}} with your {{site.data.ke
 {: #secrets-mgr_setup_create}
 {: step}
 
-To create a {{site.data.keyword.secrets-manager_short}} instance in the CLI or the UI, refer to the {{site.data.keyword.secrets-manager_short}} documentation. It might take several minutes for you {{site.data.keyword.secrets-manager_short}} instance to fully provision.
+To create a {{site.data.keyword.secrets-manager_short}} instance in the CLI or the UI, refer to the {{site.data.keyword.secrets-manager_short}} documentation. It might take several minutes for your {{site.data.keyword.secrets-manager_short}} instance to fully provision.
 {: shortdesc}
 
 - [Create a {{site.data.keyword.secrets-manager_short}} instance in CLI](/docs/secrets-manager?topic=secrets-manager-create-instance&interface=cli).

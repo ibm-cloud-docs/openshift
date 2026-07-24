@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2025, 2026
-lastupdated: "2026-04-30"
+lastupdated: "2026-07-24"
 
 keywords: openshift, {{site.data.keyword.openshiftlong_notm}}, secure by default, {{site.data.keyword.openshiftlong_notm}}, outbound traffic protection, limitations, vpe, vsi
 
@@ -40,7 +40,7 @@ Choose from one of the following options to resolve the issue.
 
 - **Attach your `kube-CLUSTERID` security group to your VSI**.
     - Each cluster in your VPC has a security group attached to its worker nodes. The name of this security group is `kube-CLUSTERID`.
-    - This security group has already been configured to talk to your VPE gateway. - You can attach any `kube-CLUSTERID` security group to your VSI allows the VSI to communicate through the VPE gateway.
+    - This security group has already been configured to talk to your VPE gateway. - You can attach any `kube-CLUSTERID` security group to your VSI, which allows the VSI to communicate through the VPE gateway.
     - You can attach security groups to your VSIs from the VPC console.
 
 - **Add an inbound security group rule from your VSI security group to your VPE gateway security group**.

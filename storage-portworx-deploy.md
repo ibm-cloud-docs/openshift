@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2026
-lastupdated: "2026-04-15"
+lastupdated: "2026-07-24"
 
 
 keywords: portworx, kubernetes, openshift
@@ -80,7 +80,7 @@ To install Portworx:
         
         - Enter `j;auto` to allow Portworx to automatically create a 3 GB partition on one of your block storage devices to use for the journal.
         - Enter `j;</device/path>` to use a specific device for the journal. For example, enter `j;/dev/vde` to use the disk located at `/dev/vde`. To find the path of the device that you want to use for the journal, log in to a worker node and run `lsblk`.
-        - Enter `kvdb_dev;<device path>` to specify the device where you want to store internal KVDB data. For example, `kvdb_dev;/dev/vdd`. To find the path of the device that you want to use, log in to a worker node and run `lsblk`. To use a specific device for KVDB data, you must have an available storage device of 3GB or on at least 3 worker nodes. The devices must also and on the same path on each worker node. For example: `/dev/vdd`.
+        - Enter `kvdb_dev;<device path>` to specify the device where you want to store internal KVDB data. For example, `kvdb_dev;/dev/vdd`. To find the path of the device that you want to use, log in to a worker node and run `lsblk`. To use a specific device for KVDB data, you must have an available storage device of 3GB or on at least 3 worker nodes. The devices must also be on the same path on each worker node. For example: `/dev/vdd`.
 
 1. Click **Create** to start the Portworx installation in your cluster. This process might take a few minutes to complete. The service details page opens with instructions for how to verify your Portworx installation, create a persistent volume claim (PVC), and mount the PVC to an app.
 1. From the [{{site.data.keyword.cloud_notm}} resource list](https://cloud.ibm.com/resources){: external}, find the Portworx service that you created.

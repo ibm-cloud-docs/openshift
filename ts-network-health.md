@@ -1,8 +1,8 @@
 ---
 
 copyright: 
-  years: 2025, 2025
-lastupdated: "2025-08-12"
+  years: 2025, 2026
+lastupdated: "2026-07-24"
 
 
 keywords: kubernetes, help, network
@@ -29,7 +29,7 @@ To check the overall health and health state of your cluster's components:
 {: shortdesc}
 
 ```sh
-ibmcloud oc ks cluster health issues --cluster <CLUSTER_ID>
+ibmcloud oc cluster health issues --cluster <CLUSTER_ID>
 ```
 {: pre}
 

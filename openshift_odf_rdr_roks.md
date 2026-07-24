@@ -2,7 +2,7 @@
 
 copyright:
   years: 2025, 2026
-lastupdated: "2026-07-23"
+lastupdated: "2026-07-24"
 
 
 keywords: openshift, openshift data foundation, openshift container storage, disaster recovery
@@ -37,7 +37,7 @@ With this set up, the hub cluster that you installed ACM on manages the ODF clus
 ## Applications and workloads supported for Regional Disaster Recovery
 {: #app_support}
 
-Review the types of applications and workloads that you can apply Regional Diaster Recovery for.
+Review the types of applications and workloads that you can apply Regional Disaster Recovery for.
 
 Subscription-based
 :   An application is deployed from an external source, such as GitHub, a Helm repo, or Object Storage.
@@ -210,7 +210,7 @@ Install and configure ODF on your 2 managed clusters. Make sure to complete thes
     {: screen}
 
 
-## Step 6. Configure the Regional Diaster Recovery policy
+## Step 6. Configure the Regional Disaster Recovery policy
 {: #rdr-configure}
 
 Configure the ODF RDR policy.

@@ -1,7 +1,7 @@
 ---
 copyright: 
   years: 2025, 2026
-lastupdated: "2026-07-23"
+lastupdated: "2026-07-24"
 
 keywords: nhc007, dns traffic blocked
 
@@ -70,7 +70,7 @@ Check your Calico HostEndpoint (HEP) and GlobalNetworkPolicy (GNP) resources, as
     ```
     {: pre}
 
-1. Test DNS access from a debug pod, run a temporary debug pod, where use the affected worker nodes name for `nodeName`. If DNS fails here, it may be due to infrastructure-level blocks.
+1. Test DNS access from a debug pod, run a temporary debug pod, where you use the affected worker nodes name for `nodeName`. If DNS fails here, it may be due to infrastructure-level blocks.
 
     ```sh
     kubectl run  -i --tty debug \

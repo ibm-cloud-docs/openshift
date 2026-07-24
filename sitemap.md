@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2026
-lastupdated: "2026-07-23"
+lastupdated: "2026-07-24"
 
 
 keywords: openshift
@@ -5333,7 +5333,7 @@ subcollection: openshift
 
 * [Step 5. Install and configure OpenShift Data Foundation](/docs/openshift?topic=openshift-openshift_odf_rdr_roks&interface=cli#odf_install)
 
-* [Step 6. Configure the Regional Diaster Recovery policy](/docs/openshift?topic=openshift-openshift_odf_rdr_roks&interface=cli#rdr-configure)
+* [Step 6. Configure the Regional Disaster Recovery policy](/docs/openshift?topic=openshift-openshift_odf_rdr_roks&interface=cli#rdr-configure)
 
 * [Optional operators for ODF Regional Disaster Recovery](/docs/openshift?topic=openshift-openshift_odf_rdr_roks&interface=cli#odf-rdr-operators)
 
@@ -9534,7 +9534,7 @@ subcollection: openshift
 
 * [Workarounds for `calico-node`](/docs/openshift?topic=openshift-ts-network-calico-node#ts-network-calico-node-work)
 
-[I deleted a portable subnet and now my Classic cluster my Load Balancers are failing. How do I recover?](/docs/openshift?topic=openshift-ts-network-subnet-recover#ts-network-subnet-recover)
+[I deleted a portable subnet and now my Classic cluster's Load Balancers are failing. How do I recover?](/docs/openshift?topic=openshift-ts-network-subnet-recover#ts-network-subnet-recover)
 
 [Debugging Calico components](/docs/openshift?topic=openshift-calico_log_level#calico_log_level)
 

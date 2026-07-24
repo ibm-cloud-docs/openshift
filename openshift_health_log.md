@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2026
-lastupdated: "2026-07-10"
+lastupdated: "2026-07-24"
 
 
 keywords: oks, iro, openshift, red hat, red hat openshift
@@ -103,7 +103,7 @@ The observability plug-in installs Sysdig and LogDNA agents in the `ibm-observe`
     ```
     {: pre}
 
-After removing the plug-in has been removed, reinstall Logging and Monitoring agents in your cluster using the Cluster dashboard, Terraform, or manually. 
+After the plug-in has been removed, reinstall Logging and Monitoring agents in your cluster using the Cluster dashboard, Terraform, or manually. 
 
 For more information, see the following links:
 - [Deploying the Logging agent for OpenShift clusters](/docs/cloud-logs?topic=cloud-logs-agent-helm-os-deploy)
