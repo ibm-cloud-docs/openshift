@@ -3,7 +3,7 @@
 copyright:
   years: 2014, 2026
 
-lastupdated: "2026-07-15"
+lastupdated: "2026-07-27"
 
 keywords: openshift, {{site.data.keyword.openshiftlong_notm}}, kubernetes, infrastructure, rbac, policy, providers, benefits
 
@@ -82,7 +82,7 @@ Image
 :  A container image is a package that includes the files, configuration settings, and libraries to run a container. An image is built from a text file called a Dockerfile. Dockerfiles define how to build the image and which artifacts to include in it. The artifacts that are included in a container consist of the app code, configuration settings, and any dependencies.
 
 Registry
-:   An image registry is a place to store, retrieve, and share container images. Registries can either be publicly available to anyone or privately available to a small group of users. When it comes to enterprise applications, use a private registry like {{site.data.keyword.cloud_notm}} to protect your images from being used by unauthorized users.
+:   An image registry is a place to store, retrieve, and share container images. Registries can either be publicly available to anyone or privately available to a limited group of users. When it comes to enterprise applications, use a private registry like {{site.data.keyword.cloud_notm}} to protect your images from being used by unauthorized users.
 
 
 
