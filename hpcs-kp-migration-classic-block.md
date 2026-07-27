@@ -2,7 +2,7 @@
 
 copyright:
   years: 2026, 2026
-lastupdated: "2026-06-03"
+lastupdated: "2026-07-27"
 
 
 keywords: key protect, hpcs, kms, migrate, block storage, classic, encryption, crk, dek
@@ -189,7 +189,7 @@ For each encrypted PVC that needs to be migrated, follow these steps to unwrap t
 5. Rewrap the DEK using the Key Protect root key. Save the wrapped DEK from the output.
 
     ```sh
-    ibmcloud kp key wrap $ROOT_KEY_ID -p <unwrapped-dek-base64>
+    ibmcloud kp key wrap $ROOT_KEY_ID -p UNWRAPPED-DEK-BASE64
     ```
     {: pre}
 

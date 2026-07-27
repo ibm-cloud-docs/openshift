@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2026
-lastupdated: "2026-06-09"
+lastupdated: "2026-07-27"
 
 
 keywords: openshift, firewall, ips
@@ -85,7 +85,7 @@ To allow access for a specific cluster:
 
 1. If the cluster is in a resource group other than `default`, target that resource group. To see the resource group that each cluster belongs to, run `ibmcloud oc cluster ls`. **Note**: You must have at least the [**Viewer** role](/docs/openshift?topic=openshift-iam-platform-access-roles) for the resource group.
     ```sh
-    ibmcloud target -g <resource_group_name>
+    ibmcloud target -g RESOURCE_GROUP_NAME
     ```
     {: pre}
 
@@ -101,7 +101,7 @@ To allow access for a specific cluster:
     * If both the **Public Service Endpoint URL** and **Private Service Endpoint URL** are populated, get both URLs. Your authorized cluster users can access the master through the public endpoint on the public network or the private endpoint on the private network.
 
     ```sh
-    ibmcloud oc cluster get --cluster <cluster_name_or_ID>
+    ibmcloud oc cluster get --cluster CLUSTER_NAME_OR_ID
     ```
     {: pre}
 

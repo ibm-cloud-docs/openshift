@@ -2,7 +2,7 @@
 
 copyright:
   years: 2023, 2026
-lastupdated: "2026-04-10"
+lastupdated: "2026-07-27"
 
 
 keywords: secret, certificate, field, tls, non-tls, rotate, ingress
@@ -32,7 +32,7 @@ Your Ingress TLS certificate is stored as a Kubernetes secret. To manage the TLS
 For example, you can import a certificate from {{site.data.keyword.secrets-manager_short}} to a Kubernetes secret in your cluster by running the following command.
 
 ```sh
-ibmcloud oc ingress secret create --cluster <cluster_name_or_ID> --cert-crn <crn> --name <secret_name> --namespace openshift-ingress
+ibmcloud oc ingress secret create --cluster CLUSTER_NAME_OR_ID --cert-crn CRN --name SECRET_NAME --namespace openshift-ingress
 ```
 {: pre}
 
@@ -42,7 +42,7 @@ To import the certificate with the `ibmcloud oc ingress secret create` command, 
 To view all Ingress secrets for TLS certificates in your cluster, run the following command.
 
 ```sh
-ibmcloud oc ingress secret ls -c <cluster>
+ibmcloud oc ingress secret ls -c CLUSTER
 ```
 {: pre}
 
@@ -60,7 +60,7 @@ Follow the steps to use the default TLS certificate for the IBM-provided Ingress
 1. Get the name of the secret where your default TLS certificate is stored. Note that this is the secret name you specify in the `spec.tls` section of your Ingress resource.
 
     ```sh
-    ibmcloud oc cluster get -c <cluster> | grep Ingress
+    ibmcloud oc cluster get -c CLUSTER | grep Ingress
     ```
     {: pre}
 

@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2026
-lastupdated: "2026-04-10"
+lastupdated: "2026-07-27"
 
 
 keywords: openshift
@@ -38,7 +38,7 @@ Check that your cluster is fully deployed and has at least 2 worker nodes availa
 {: tsResolve}
 
 ```sh
-ibmcloud ks worker ls --cluster <cluster_name_or_ID>
+ibmcloud ks worker ls --cluster CLUSTER_NAME_OR_ID
 ```
 {: pre}
 

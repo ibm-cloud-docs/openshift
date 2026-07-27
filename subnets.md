@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2026
-lastupdated: "2026-05-26"
+lastupdated: "2026-07-27"
 
 
 keywords: openshift
@@ -164,7 +164,7 @@ Before you begin
 - [Access your {{site.data.keyword.redhat_openshift_notm}} cluster](/docs/openshift?topic=openshift-access_cluster).
 - To reuse user-managed private subnets from a cluster that you no longer need, delete the unneeded cluster.
     ```sh
-    ibmcloud oc cluster rm --cluster <cluster_name_or_ID>
+    ibmcloud oc cluster rm --cluster CLUSTER_NAME_OR_ID
     ```
     {: pre}
 

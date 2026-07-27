@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2026
-lastupdated: "2026-05-01"
+lastupdated: "2026-07-27"
 
 
 keywords: openshift, {{site.data.keyword.openshiftlong_notm}} kubernetes, ips, vlans, networking, public gateway
@@ -206,7 +206,7 @@ Before you begin
 
 1. In your command line, log in to your {{site.data.keyword.cloud_notm}} account and target the {{site.data.keyword.cloud_notm}} region and resource group where you want to create your VPC cluster. For supported regions, see [Creating a VPC in a different region](/docs/vpc?topic=vpc-creating-a-vpc-in-a-different-region). The cluster's resource group can differ from the VPC resource group. Enter your {{site.data.keyword.cloud_notm}} credentials when prompted. If you have a federated ID, use the `--sso` option to log in.
     ```sh
-    ibmcloud login -r <region> [-g <resource_group>] [--sso]
+    ibmcloud login -r REGION [-g <resource_group>] [--sso]
     ```
     {: pre}
 
@@ -222,7 +222,7 @@ To create a VPC subnet, follow these steps.
 
 2. Create the subnet. For more information about the options in this command, see the [CLI reference](/docs/vpc?topic=vpc-creating-vpc-resources-with-cli-and-api&interface=cli#create-a-subnet-cli).
     ```sh
-    ibmcloud is subnet-create <subnet_name> <vpc_id> --zone <vpc_zone> --ipv4-address-count <number_of_ip_address>
+    ibmcloud is subnet-create SUBNET_NAME VPC_ID --zone VPC_ZONE --ipv4-address-count NUMBER_OF_IP_ADDRESS
     ```
     {: pre}
 

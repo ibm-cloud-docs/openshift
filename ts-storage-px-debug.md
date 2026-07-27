@@ -1,8 +1,8 @@
 ---
 
 copyright: 
-  years: 2014, 2025
-lastupdated: "2025-04-17"
+  years: 2014, 2026
+lastupdated: "2026-07-27"
 
 
 keywords: openshift
@@ -56,7 +56,7 @@ Start by verifying that the information that you entered in the {{site.data.keyw
 
 1. Verify that the cluster where you want to install Portworx is located in the {{site.data.keyword.cloud_notm}} region and resource group that you selected.
     ```sh
-    ibmcloud oc cluster get --cluster <cluster_name_or_ID>
+    ibmcloud oc cluster get --cluster CLUSTER_NAME_OR_ID
     ```
     {: pre}
 

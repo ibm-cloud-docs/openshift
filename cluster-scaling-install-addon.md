@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2026
-lastupdated: "2026-07-24"
+lastupdated: "2026-07-27"
 
 
 keywords: openshift, node scaling, ca, autoscaler
@@ -45,7 +45,7 @@ Because the cluster autoscaler doesn't recognize GPU labels, it can't scale up o
 
 1. Enable the `cluster-autoscaler` add-on by running the following command.
     ```sh
-    ibmcloud oc cluster addon enable cluster-autoscaler --cluster <cluster_name>
+    ibmcloud oc cluster addon enable cluster-autoscaler --cluster CLUSTER_NAME
     ```
     {: pre}
 

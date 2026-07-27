@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2023, 2026
-lastupdated: "2026-04-15"
+lastupdated: "2026-07-27"
 
 
 keywords: openshift, {{site.data.keyword.openshiftlong_notm}}, kubernetes, red hat, encrypt, security, kms, root key, crk
@@ -67,7 +67,7 @@ You can manage the encryption of the worker nodes by enabling a KMS provider at 
     - **UI**: After selecting your cluster from the [console](https://cloud.ibm.com/containers/cluster-management/clusters){: external}, click **Worker pools**. Then, click your worker pool.
     - **CLI**: Review the **KMS** and **CRK** fields in the output of the following command. Note that the **KMS** and **CRK** fields are displayed only if BYOK encryption is enabled.
         ```sh
-        ibmcloud oc worker-pool get --worker-pool <worker_pool_name_or_ID> --cluster <cluster_name_or_ID>
+        ibmcloud oc worker-pool get --worker-pool WORKER_POOL_NAME_OR_ID --cluster CLUSTER_NAME_OR_ID
         ```
         {: codeblock}
 

@@ -1,8 +1,8 @@
 ---
 
 copyright: 
-  years: 2024, 2025
-lastupdated: "2025-04-17"
+  years: 2024, 2026
+lastupdated: "2026-07-27"
 
 
 keywords: openshift, kubernetes, affinity, taint, edge node, edge
@@ -47,7 +47,7 @@ Add the `dedicated=edge` label to worker nodes in your cluster. The labels ensur
 1. Verify that the worker pool and worker nodes have the `dedicated=edge` label.
     * To check the worker pool, run the `get` command.
         ```sh
-        ibmcloud oc worker-pool get --cluster <cluster_name_or_ID> --worker-pool <worker_pool_name_or_ID>
+        ibmcloud oc worker-pool get --cluster CLUSTER_NAME_OR_ID --worker-pool WORKER_POOL_NAME_OR_ID
         ```
         {: pre}
 
@@ -59,7 +59,7 @@ Add the `dedicated=edge` label to worker nodes in your cluster. The labels ensur
 
 1. Refresh your cluster master to trigger an update to your VPC load balancer member pool.
     ```sh
-    ibmcloud oc cluster master refresh --cluster <cluster_name_or_ID>
+    ibmcloud oc cluster master refresh --cluster CLUSTER_NAME_OR_ID
     ```
     {: pre}
 

@@ -1,8 +1,8 @@
 ---
 
 copyright: 
-  years: 2014, 2025
-lastupdated: "2025-11-21"
+  years: 2014, 2026
+lastupdated: "2026-07-27"
 
 
 keywords: openshift, {{site.data.keyword.openshiftlong_notm}}, clusters, worker nodes, worker pools, tag, label
@@ -84,7 +84,7 @@ Do not include personal information in your tags. Learn more about [securing you
 1. [Tag your cluster](/docs/cli?topic=cli-ibmcloud_commands_resource#ibmcloud_resource_tag_attach). Replace the `--resource-name` with the name of your cluster. To list available clusters, run `ibmcloud oc cluster ls`. If you want to check your existing tags so as not to duplicate any, run `ibmcloud resource tags`.
 
     ```sh
-    ibmcloud resource tag-attach --resource-name <cluster_name> --tag-names <tag1,tag2>
+    ibmcloud resource tag-attach --resource-name CLUSTER_NAME --tag-names TAG1,TAG2
     ```
     {: pre}
     
@@ -107,13 +107,13 @@ Before you begin: [Access your {{site.data.keyword.redhat_openshift_notm}} clust
 
 1. List the worker pools in your cluster.
     ```sh
-    ibmcloud oc worker-pool ls --cluster <cluster_name_or_ID>
+    ibmcloud oc worker-pool ls --cluster CLUSTER_NAME_OR_ID
     ```
     {: pre}
 
 1. List the existing custom labels on worker nodes in the worker pool that you want to label.
     ```sh
-    ibmcloud oc worker-pool get --cluster <cluster_name_or_ID> --worker-pool <pool>
+    ibmcloud oc worker-pool get --cluster CLUSTER_NAME_OR_ID --worker-pool POOL
     ```
     {: pre}
 
@@ -123,27 +123,27 @@ Before you begin: [Access your {{site.data.keyword.redhat_openshift_notm}} clust
     {: important}
 
     ```sh
-    ibmcloud oc worker-pool label set --cluster <cluster_name_or_ID> --worker-pool <worker_pool_name_or_ID> --label <key=value>
+    ibmcloud oc worker-pool label set --cluster CLUSTER_NAME_OR_ID --worker-pool WORKER_POOL_NAME_OR_ID --label KEY=VALUE
     ```
     {: pre}
 
     Example to set `<key>: <value>` as a new custom label in a worker pool with existing labels `team: DevOps` and `app: test`:
     ```sh
-    ibmcloud oc worker-pool label set --cluster <cluster_name_or_ID> --worker-pool <worker_pool_name_or_ID> --label <key=value> --label team=DevOps --label app=test
+    ibmcloud oc worker-pool label set --cluster CLUSTER_NAME_OR_ID --worker-pool WORKER_POOL_NAME_OR_ID --label KEY=VALUE --label team=DevOps --label app=test
     ```
     {: pre}
 
 1. Verify that the worker pool and worker node have the `key=value` label that you assigned.
     *   To check worker pools:
         ```sh
-        ibmcloud oc worker-pool get --cluster <cluster_name_or_ID> --worker-pool <worker_pool_name_or_ID>
+        ibmcloud oc worker-pool get --cluster CLUSTER_NAME_OR_ID --worker-pool WORKER_POOL_NAME_OR_ID
         ```
         {: pre}
 
     *   To check worker nodes:
         1. List the worker nodes in the worker pool and note the **Private IP**.
             ```sh
-            ibmcloud oc worker ls --cluster <cluster_name_or_ID> --worker-pool <worker_pool_name_or_ID>
+            ibmcloud oc worker ls --cluster CLUSTER_NAME_OR_ID --worker-pool WORKER_POOL_NAME_OR_ID
             ```
             {: pre}
 

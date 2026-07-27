@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2026
-lastupdated: "2026-03-10"
+lastupdated: "2026-07-27"
 
 
 keywords: openshift, autoscaler
@@ -33,7 +33,7 @@ Before you begin: [Access your {{site.data.keyword.redhat_openshift_notm}} clust
 
 1. Verify that the cluster autoscaler add-on is installed and ready.
     ```sh
-    ibmcloud oc cluster addon ls --cluster <CLUSTER_NAME>
+    ibmcloud oc cluster addon ls --cluster CLUSTER_NAME
     ```
     {: pre}
 

@@ -1,8 +1,8 @@
 ---
 
 copyright: 
-  years: 2014, 2025
-lastupdated: "2025-11-18"
+  years: 2014, 2026
+lastupdated: "2026-07-27"
 
 
 keywords: openshift, app access
@@ -110,7 +110,7 @@ To use a NodePort,
     1. Get the public IP address for a worker node in the cluster. If you want to access the worker node on a private network or have a VPC cluster, get the private IP address instead.
 
         ```sh
-        ibmcloud oc worker ls --cluster <cluster_name>
+        ibmcloud oc worker ls --cluster CLUSTER_NAME
         ```
         {: pre}
 

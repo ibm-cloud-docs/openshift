@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2026
-lastupdated: "2026-05-26"
+lastupdated: "2026-07-27"
 
 
 keywords: kubernetes, openshift
@@ -50,7 +50,7 @@ Install the `ibmc` Helm plug-in and the `ibm-object-storage-plugin`:
 
     1. List the current patch version of your worker nodes.
         ```sh
-        ibmcloud oc worker ls --cluster <cluster_name_or_ID>
+        ibmcloud oc worker ls --cluster CLUSTER_NAME_OR_ID
         ```
         {: pre}
 

@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2026
-lastupdated: "2026-07-22"
+lastupdated: "2026-07-27"
 
 
 keywords: openshift, cli reference, kubernetes cli, openshift cli, {{site.data.keyword.openshiftlong_notm}}
@@ -2776,7 +2776,7 @@ Before you reboot your worker node, make sure that you have enough capacity in o
     This process can take a few minutes.
 3. Reboot the worker node. Use the worker ID that is returned from the `ibmcloud oc worker ls --cluster <cluster_name_or_ID>` command.
     ```sh
-    ibmcloud oc worker reboot --cluster <cluster_name_or_ID> --worker <worker_name_or_ID>
+    ibmcloud oc worker reboot --cluster CLUSTER_NAME_OR_ID --worker WORKER_NAME_OR_ID
     ```
     {: pre}
 
@@ -2854,7 +2854,7 @@ Before you reload your worker node, make sure that you have enough capacity in o
 
 2. Reload the worker node. As part of the reload process, the pods that run on the worker node are drained and rescheduled onto remaining worker nodes in the cluster. The worker node is also cordoned, or marked as unavailable for future pod scheduling. Use the worker node ID that is returned from the `ibmcloud oc worker ls --cluster <cluster_name_or_ID>` command. This command supports classic workers and VPC bare metal workers. Note that the `--cluster` flag is now optional as the cluster is automatically determined from the worker ID.
     ```sh
-    ibmcloud oc worker reload --worker <worker_name_or_ID>
+    ibmcloud oc worker reload --worker WORKER_NAME_OR_ID
     ```
     {: pre}
 
@@ -2931,13 +2931,13 @@ Before you begin, make sure that your cluster has enough other worker nodes so t
 
 2. Replace the worker node. As part of the replace process, the pods that run on the worker node are drained and rescheduled onto remaining worker nodes in the cluster. The worker node is also cordoned, or marked as unavailable for future pod scheduling. Use the worker node ID that is returned from the `ibmcloud oc worker ls --cluster <cluster_name_or_ID>` command.
     ```sh
-    ibmcloud oc worker replace --cluster <cluster_name_or_ID> --worker <worker_node_ID>
+    ibmcloud oc worker replace --cluster CLUSTER_NAME_OR_ID --worker WORKER_NODE_ID
     ```
     {: pre}
 
 3. Verify that the worker node is replaced.
     ```sh
-    ibmcloud oc worker ls --cluster <cluster_name_or_ID>
+    ibmcloud oc worker ls --cluster CLUSTER_NAME_OR_ID
     ```
     {: pre}
 
@@ -3160,7 +3160,7 @@ Add a worker pool to a VPC cluster. No worker nodes are created until you [add z
 {: shortdesc}
 
 ```sh
-ibmcloud oc worker-pool create vpc-gen2 --name <worker_pool_name> --cluster <cluster_name_or_ID> --flavor <flavor> --size-per-zone <number_of_workers_per_zone> [--operating-system SYSTEM][--dedicated-host-pool POOL][--vpc-id <VPC ID>] [--label KEY1=VALUE1] [--entitlement ENTITLEMENT] [--kms-account-id ID] [--kms-instance KMS_INSTANCE_ID] [--crk ROOT_KEY_ID] [--operating-system SYSTEM] [-q] [--secondary-storage STORAGE] [--security-group GROUP ...] [--output json]
+ibmcloud oc worker-pool create vpc-gen2 --name WORKER_POOL_NAME --cluster CLUSTER_NAME_OR_ID --flavor FLAVOR --size-per-zone NUMBER_OF_WORKERS_PER_ZONE [--operating-system SYSTEM][--dedicated-host-pool POOL][--vpc-id VPC_ID] [--label KEY1=VALUE1] [--entitlement ENTITLEMENT] [--kms-account-id ID] [--kms-instance KMS_INSTANCE_ID] [--crk ROOT_KEY_ID] [--operating-system SYSTEM] [-q] [--secondary-storage STORAGE] [--security-group GROUP ...] [--output json]
 ```
 {: pre}
 
@@ -3898,7 +3898,7 @@ Minimum required permissions
 **Usage**:
 1. Check the VLANs that are available in your cluster.
     ```sh
-    ibmcloud oc cluster get --cluster <cluster_name_or_ID> --show-resources
+    ibmcloud oc cluster get --cluster CLUSTER_NAME_OR_ID --show-resources
     ```
     {: pre}
 

@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2026
-lastupdated: "2026-04-29"
+lastupdated: "2026-07-27"
 
 keywords: kubernetes, openshift
 
@@ -62,7 +62,7 @@ If this cluster is an existing one, check your cluster capacity.
     2. Resize your worker pools to add more nodes to each zone that the pool spans.
 
         ```sh
-        ibmcloud oc worker-pool resize --worker-pool <worker_pool> --cluster <cluster_name_or_ID> --size-per-zone <workers_per_zone>
+        ibmcloud oc worker-pool resize --worker-pool WORKER_POOL --cluster CLUSTER_NAME_OR_ID --size-per-zone WORKERS_PER_ZONE
         ```
         {: pre}
 

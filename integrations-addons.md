@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2026
-lastupdated: "2026-07-10"
+lastupdated: "2026-07-27"
 
 
 keywords: kubernetes, openshift
@@ -73,7 +73,7 @@ Review the following links for specific update steps for each add-on.
 You can check the health state and status of a cluster add-on by running the following command.
 
 ```sh
-ibmcloud oc cluster addon ls -c <cluster_name_or_ID>
+ibmcloud oc cluster addon ls -c CLUSTER_NAME_OR_ID
 ```
 {: pre}
 

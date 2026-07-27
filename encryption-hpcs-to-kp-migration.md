@@ -2,7 +2,7 @@
 
 copyright:
   years: 2024, 2026
-lastupdated: "2026-06-02"
+lastupdated: "2026-07-27"
 
 
 keywords: openshift, {{site.data.keyword.openshiftlong_notm}}, kubernetes, red hat, encrypt, security, kms, root key, crk, hpcs, key protect, migration
@@ -147,7 +147,7 @@ After the migration completes, verify that your cluster is using the Key Protect
 
 1. Check the cluster status to ensure the master is ready.
     ```sh
-    ibmcloud oc cluster get -c <cluster_name_or_ID>
+    ibmcloud oc cluster get -c CLUSTER_NAME_OR_ID
     ```
     {: pre}
 
@@ -155,7 +155,7 @@ After the migration completes, verify that your cluster is using the Key Protect
 
 1. For worker node encryption, verify that the worker pool references the Key Protect key.
     ```sh
-    ibmcloud oc worker-pool get --worker-pool <worker_pool_name_or_ID> --cluster <cluster_name_or_ID>
+    ibmcloud oc worker-pool get --worker-pool WORKER_POOL_NAME_OR_ID --cluster CLUSTER_NAME_OR_ID
     ```
     {: pre}
 

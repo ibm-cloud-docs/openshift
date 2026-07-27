@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2026
-lastupdated: "2026-04-10"
+lastupdated: "2026-07-27"
 
 
 keywords: openshift
@@ -92,7 +92,7 @@ Complete the following steps.
 1. If the UID is owned by `nobody`, exit the pod and reboot your cluster's worker nodes. Wait for the nodes to reboot.
 
     ```sh
-    ibmcloud oc worker reboot --cluster <my_cluster> --worker <my_worker1>,<my_worker2>
+    ibmcloud oc worker reboot --cluster MY_CLUSTER --worker MY_WORKER1,MY_WORKER2
     ```
     {: pre}
 

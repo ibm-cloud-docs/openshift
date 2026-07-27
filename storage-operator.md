@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2024, 2026
-lastupdated: "2026-07-24"
+lastupdated: "2026-07-27"
 
 
 keywords: openshift, {{site.data.keyword.openshiftlong_notm}}, add-on, storage operator
@@ -32,7 +32,7 @@ The `ibm-storage-operator` is installed by default in VPC clusters beginning wit
 
 1. Check if the add-on is enabled.
     ```sh
-    ibmcloud oc cluster addon ls --cluster <cluster_name_or_ID>
+    ibmcloud oc cluster addon ls --cluster CLUSTER_NAME_OR_ID
     ```
     {: pre}
 

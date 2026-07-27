@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2026
-lastupdated: "2026-04-29"
+lastupdated: "2026-07-27"
 
 
 keywords: kubernetes, lb2.0, nlb, health check, dns, hostname, subdomain, openshift
@@ -44,7 +44,7 @@ Health check monitor
 
 You can see all subdomains that are registered for NLB IPs in your cluster by running the following command.
 ```sh
-ibmcloud oc nlb-dns ls --cluster <cluster_name_or_id>
+ibmcloud oc nlb-dns ls --cluster CLUSTER_NAME_OR_ID
 ```
 {: pre}
 
