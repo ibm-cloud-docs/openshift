@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2026
-lastupdated: "2026-07-24"
+lastupdated: "2026-07-27"
 
 
 keywords: openshift
@@ -434,9 +434,17 @@ subcollection: openshift
 
 * [July 2026](/docs/openshift?topic=openshift-openshift-relnotes#openshift-jul26)
 
+    * [25 July 2026](/docs/openshift?topic=openshift-openshift-relnotes#openshift-jul2526)
+
+        * CLI version 1.0.804 is available.
+
     * [22 July 2026](/docs/openshift?topic=openshift-openshift-relnotes#openshift-jul2226)
 
         * CLI version 1.0.796 is available.
+
+    * [20 July 2026](/docs/openshift?topic=openshift-openshift-relnotes#openshift-jul2026)
+
+        * New! NVIDIA B300 GPU worker node flavor is available for RHCOS worker nodes on {{site.data.keyword.openshiftlong_notm}} version 4.22.
 
     * [14 July 2026](/docs/openshift?topic=openshift-openshift-relnotes#openshift-jul1426)
 
@@ -7465,6 +7473,8 @@ subcollection: openshift
 [CLI change log](/docs/openshift?topic=openshift-cs_cli_changelog#cs_cli_changelog)
 
 * [Version 1.0](/docs/openshift?topic=openshift-cs_cli_changelog#10)
+
+* [Version v1.0.804](/docs/openshift?topic=openshift-cs_cli_changelog#cli-01804)
 
 * [Version v1.0.796](/docs/openshift?topic=openshift-cs_cli_changelog#cli-01796)
 
