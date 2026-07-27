@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2026
-lastupdated: "2026-07-22"
+lastupdated: "2026-07-27"
 
 
 keywords: kubernetes, release notes, openshift, {{site.data.keyword.openshiftlong_notm}}
@@ -29,12 +29,31 @@ Looking for {{site.data.keyword.cloud_notm}} status, platform announcements, sec
 ## July 2026
 {: #openshift-jul26}
 
+### 25 July 2026
+{: #openshift-jul2526}
+{: release-note}
+
+CLI version 1.0.804 is available.
+:   For more information, see [Updating the CLI](/docs/openshift?topic=openshift-cli-update) and the [CLI change log](/docs/openshift?topic=openshift-cs_cli_changelog).
+
 ### 22 July 2026
 {: #openshift-jul2226}
 {: release-note}
 
 CLI version 1.0.796 is available.
 :   For more information, see [Updating the CLI](/docs/openshift?topic=openshift-cli-update) and the [CLI change log](/docs/openshift?topic=openshift-cs_cli_changelog).
+
+
+
+### 20 July 2026
+{: #openshift-jul2026}
+{: release-note}
+
+New! NVIDIA B300 GPU worker node flavor is available for RHCOS worker nodes on {{site.data.keyword.openshiftlong_notm}} version 4.22.
+:   The `gx4d.232x3840.8b300` flavor is now available for VPC clusters. For a list of available worker node flavors, see [VPC flavors](/docs/openshift?topic=openshift-vpc-flavors).
+:   To deploy an app on a GPU machine, see [Deploying apps on {{site.data.keyword.openshiftlong_notm}} clusters](/docs/openshift?topic=openshift-deploy_app).
+
+
 
 ### 14 July 2026
 {: #openshift-jul1426}
