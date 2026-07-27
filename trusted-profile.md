@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2025, 2026
-lastupdated: "2026-05-04"
+lastupdated: "2026-07-27"
 
 
 keywords: trusted profiles, containers, block storage, openshift
@@ -204,7 +204,7 @@ Once you add a trusted profile to a cluster, it cannot be removed and you cannot
 
 1. Log in to the IBM Cloud CLI. 
     ```sh
-    ibmcloud login --apikey <API_KEY> -g <RESOURCE_GROUP>
+    ibmcloud login --apikey API_KEY -g RESOURCE_GROUP
     ```
     {: pre}
 

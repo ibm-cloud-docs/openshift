@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2024, 2026
-lastupdated: "2026-07-07"
+lastupdated: "2026-07-27"
 
 
 keywords: openshift, kubernetes, affinity, taint, edge node, edge
@@ -51,7 +51,7 @@ If you plan to use an existing worker pool, the pool must span all zones in your
 2. Verify that the worker pool and worker nodes have the `dedicated=edge` label.
     * To check the worker pool, run the `get` command.
         ```sh
-        ibmcloud oc worker-pool get --cluster <cluster_name_or_ID> --worker-pool <worker_pool_name_or_ID>
+        ibmcloud oc worker-pool get --cluster CLUSTER_NAME_OR_ID --worker-pool WORKER_POOL_NAME_OR_ID
         ```
         {: pre}
 

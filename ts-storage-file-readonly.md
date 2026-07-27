@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2026
-lastupdated: "2026-04-10"
+lastupdated: "2026-07-27"
 
 
 keywords: openshift
@@ -46,7 +46,7 @@ Back up your data and reload your worker node.
 1. For a short-term fix to the existing worker node, reload the worker node.
 
     ```sh
-    ibmcloud oc worker reload --cluster <cluster_name> --worker <worker_ID>
+    ibmcloud oc worker reload --cluster CLUSTER_NAME --worker WORKER_ID
     ```
     {: pre}
 

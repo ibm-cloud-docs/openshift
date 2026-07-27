@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2026
-lastupdated: "2026-07-15"
+lastupdated: "2026-07-27"
 
 
 keywords: openshift, kubernetes, help, network, connectivity, {{site.data.keyword.openshiftlong_notm}}
@@ -59,7 +59,7 @@ If your worker node is not functioning as expected, you can follow these steps t
 If your cluster is in a **Critical**, **Delete failed**, or **Warning** state, or is stuck in the **Pending** state for a long time, review the state of your worker nodes.
 
 ```sh
-ibmcloud oc worker ls --cluster <cluster_name_or_id>
+ibmcloud oc worker ls --cluster CLUSTER_NAME_OR_ID
 ```
 {: pre}
 
@@ -76,7 +76,7 @@ For more information, see [Worker node states](/docs/openshift?topic=openshift-w
 Get the details for the worker node. If the details include an error message, review the list of [common error messages for worker nodes](/docs/openshift?topic=openshift-common_worker_nodes_issues) to learn how to resolve the problem.
 
 ```sh
-ibmcloud oc worker get --cluster <cluster_name_or_id> --worker <worker_node_id>
+ibmcloud oc worker get --cluster CLUSTER_NAME_OR_ID --worker WORKER_NODE_ID
 ```
 {: pre}
 

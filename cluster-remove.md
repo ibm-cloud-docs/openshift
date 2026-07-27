@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2026
-lastupdated: "2026-01-13"
+lastupdated: "2026-07-27"
 
 
 keywords: openshift, {{site.data.keyword.openshiftlong_notm}}, kubernetes, clusters, worker nodes, worker pools, delete
@@ -72,7 +72,7 @@ No backups are created of your cluster or your data in your persistent storage. 
         2. Delete the cluster.
 
             ```sh
-            ibmcloud oc cluster rm --cluster <cluster_name_or_ID>
+            ibmcloud oc cluster rm --cluster CLUSTER_NAME_OR_ID
             ```
             {: pre}
 
@@ -97,7 +97,7 @@ When you remove {{site.data.keyword.redhat_openshift_notm}} clusters or worker n
 
 2. Get the **Worker ID** of each host in your cluster.
     ```sh
-    ibmcloud sat host ls --location <satellite_location_name_or_ID>
+    ibmcloud sat host ls --location SATELLITE_LOCATION_NAME_OR_ID
     ```
     {: pre}
 

@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2026
-lastupdated: "2026-04-10"
+lastupdated: "2026-07-27"
 
 
 keywords: openshift
@@ -46,7 +46,7 @@ Check that you set up a standard cluster that is fully deployed and has at least
 1. List your worker nodes. In your CLI output, make sure that the **Status** of your worker nodes displays **Ready** and that the **Machine Type** shows a flavor other than **free**.
 
     ```sh
-    ibmcloud oc worker ls --cluster <cluster_name_or_ID>
+    ibmcloud oc worker ls --cluster CLUSTER_NAME_OR_ID
     ```
     {: pre}
 

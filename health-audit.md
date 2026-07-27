@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2026
-lastupdated: "2026-07-16"
+lastupdated: "2026-07-27"
 
 
 keywords: openshift, kubernetes, logmet, logs, metrics, audit, events
@@ -88,7 +88,7 @@ The Kubernetes audit system in your cluster consists of an audit webhook, a log 
     
 3. Set up your kubeconfig to access your cluster with
     ```sh
-    ibmcloud ks cluster config -c <cluster>
+    ibmcloud ks cluster config -c CLUSTER
     ```
     {: pre}
 
@@ -322,7 +322,7 @@ The Kubernetes audit system in your cluster consists of an audit webhook, a log 
 
 18. View the cluster's state and wait for the `Master State` to indicate `updating`, then wait for state `deployed`. It might take several minutes to complete.
     ```sh
-    ibmcloud ks cluster get -c <cluster>
+    ibmcloud ks cluster get -c CLUSTER
     ```
     {: pre}
 

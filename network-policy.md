@@ -1,8 +1,8 @@
 ---
 
 copyright: 
-  years: 2014, 2025
-lastupdated: "2025-11-18"
+  years: 2014, 2026
+lastupdated: "2026-07-27"
 
 
 keywords: openshift
@@ -90,7 +90,7 @@ To view, manage, and add Calico policies, install and configure the Calico CLI.
     
         1. Download the `kubeconfig` configuration file for your cluster.
             ```sh
-            ibmcloud oc cluster config --cluster <cluster_name_or_ID>
+            ibmcloud oc cluster config --cluster CLUSTER_NAME_OR_ID
             ```
             {: pre}
 

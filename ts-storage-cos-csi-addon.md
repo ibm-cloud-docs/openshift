@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2025, 2026
-lastupdated: "2026-07-24"
+lastupdated: "2026-07-27"
 
 
 keywords: openshift
@@ -34,19 +34,19 @@ Follow these steps to gather details about the issue.
 
 1. Pull the cluster configuration. 
     ```sh
-    ibmcloud ks cluster config -c <cluster_name/cluster_id>
+    ibmcloud ks cluster config -c CLUSTER_NAME_OR_ID
     ```
     {: pre}
    
 1. Check the health of the add-on to ensure it is deployed properly.
     ```sh
-    ibmcloud ks cluster addon ls --cluster <cluster_name/cluster_id>
+    ibmcloud ks cluster addon ls --cluster CLUSTER_NAME_OR_ID
     ```
     {: pre}
 
 1. Check the version of the installed add-on. It is recommended to use the latest version for better support.
     ```sh
-    ibmcloud ks cluster addon ls --cluster <cluster_name/cluster_id> | grep ibm-object-csi-driver
+    ibmcloud ks cluster addon ls --cluster CLUSTER_NAME_OR_ID | grep ibm-object-csi-driver
     ```
     {: pre}
 

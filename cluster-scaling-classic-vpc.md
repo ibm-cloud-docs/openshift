@@ -1,8 +1,8 @@
 ---
 
 copyright: 
-  years: 2014, 2025
-lastupdated: "2025-12-10"
+  years: 2014, 2026
+lastupdated: "2026-07-27"
 
 
 keywords: kubernetes, node scaling, ca, autoscaler, openshift
@@ -179,7 +179,7 @@ The cluster autoscaler add-on is not supported for baremetal worker nodes.
 1. Confirm that your worker pool has the necessary labels for autoscaling. In the output, you see the required `ibm-cloud.kubernetes.io/worker-pool-id` label and the label that you previously created for node affinity. If you don't see these labels, add a worker pool, then [add your label for node affinity](/docs/openshift?topic=openshift-worker-tag-label).
 
     ```sh
-    ibmcloud oc worker-pool get --cluster <cluster_name_or_ID> --worker-pool <worker_pool_name_or_ID> | grep Labels
+    ibmcloud oc worker-pool get --cluster CLUSTER_NAME_OR_ID --worker-pool WORKER_POOL_NAME_OR_ID | grep Labels
     ```
     {: pre}
 

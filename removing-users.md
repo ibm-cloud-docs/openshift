@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2022, 2026
-lastupdated: "2026-04-15"
+lastupdated: "2026-07-27"
 
 
 keywords: openshift, {{site.data.keyword.openshiftlong_notm}}, kubernetes, infrastructure, rbac, policy
@@ -32,18 +32,18 @@ To avoid this issue for future users, consider using a functional ID user for th
 
 1. Target your CLI context to a region and resource group where you have clusters.
     ```sh
-    ibmcloud target -g <resource_group_name> -r <region>
+    ibmcloud target -g RESOURCE_GROUP_NAME -r REGION
     ```
     {: pre}
 
 2. Check the owner of the API key or infrastructure credentials set for that region and resource group.
     ```sh
-    ibmcloud oc api-key info --cluster <cluster_name_or_id>
+    ibmcloud oc api-key info --cluster CLUSTER_NAME_OR_ID
     ```
     {: pre}
 
     ```sh
-    ibmcloud oc credential get --region <region>
+    ibmcloud oc credential get --region REGION
     ```
     {: pre}
 
@@ -58,13 +58,13 @@ To avoid this issue for future users, consider using a functional ID user for th
 
     4. Change the infrastructure credentials to the functional ID user.
         ```sh
-        ibmcloud oc api-key reset --region <region>
+        ibmcloud oc api-key reset --region REGION
         ```
         {: pre}
 
     5. Refresh the clusters in the region to pick up on the new API key configuration.
         ```sh
-        ibmcloud oc cluster master refresh -c <cluster_name_or_ID>
+        ibmcloud oc cluster master refresh -c CLUSTER_NAME_OR_ID
         ```
         {: pre}
 

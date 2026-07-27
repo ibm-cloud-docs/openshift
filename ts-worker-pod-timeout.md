@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2026
-lastupdated: "2026-05-26"
+lastupdated: "2026-07-27"
 
 
 keywords: kubernetes, help, network, connectivity, openshift
@@ -39,7 +39,7 @@ Manually update the reference of the private IP address to point to the correct 
 1. Confirm that you have two worker nodes with the same **Private IP** address. Note the **Private IP** and **ID** of the deleted worker.
 
     ```sh
-    ibmcloud oc worker ls --cluster <cluster_name_or_id>
+    ibmcloud oc worker ls --cluster CLUSTER_NAME_OR_ID
     ```
     {: pre}
 

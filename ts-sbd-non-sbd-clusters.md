@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2024, 2026
-lastupdated: "2026-07-24"
+lastupdated: "2026-07-27"
 
 keywords: openshift, {{site.data.keyword.openshiftlong_notm}}, secure by default, {{site.data.keyword.openshiftlong_notm}}, outbound traffic protection, cluster create, quota, limitations
 
@@ -59,7 +59,7 @@ To correct this problem add an inbound security group rule on the shared VPE gat
 
 1. Add a remote rule to `kube-vpegw-<vpcID>` from your custom security group.
     ```sh
-    ibmcloud is sg-rulec <kube-vpegw-vpcID> inbound icmp_tcp_udp --remote <your SG ID>
+    ibmcloud is sg-rulec KUBE-VPEGW-VPCID inbound icmp_tcp_udp --remote YOUR_SG_ID
     ```
     {: pre}
 

@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2026
-lastupdated: "2026-04-15"
+lastupdated: "2026-07-27"
 
 
 keywords: openshift
@@ -47,7 +47,7 @@ Delete the existing `calico-node` worker node entries so that new pods can be cr
 
 1. Run the `ibmcloud oc cluster config` command and copy and paste the output to set the `KUBECONFIG` environment variable. Include the `--admin` and `--network` options with the `ibmcloud oc cluster config` command. The `--admin` option downloads the keys to access your infrastructure portfolio and run Calico commands on your worker nodes. The `--network` option downloads the Calico configuration file to run all Calico commands.
     ```sh
-    ibmcloud oc cluster config --cluster <cluster_name_or_ID> --admin --network
+    ibmcloud oc cluster config --cluster CLUSTER_NAME_OR_ID --admin --network
     ```
     {: pre}
 

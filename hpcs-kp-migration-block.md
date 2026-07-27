@@ -2,7 +2,7 @@
 
 copyright:
   years: 2026, 2026
-lastupdated: "2026-06-17"
+lastupdated: "2026-07-27"
 
 
 keywords: key protect, hpcs, kms, migrate, block storage, vpc, csi driver, encryption, crk
@@ -36,7 +36,7 @@ Complete these steps before you begin the migration.
 2. From the Key Protect instance, note the destination Customer Root Key (CRK) CRN.
 
     ```sh
-    ibmcloud kp keys -i <kp-instance-id>
+    ibmcloud kp keys -i KP-INSTANCE-ID
     ```
     {: pre}
 

@@ -1,8 +1,8 @@
 ---
 
 copyright: 
-  years: 2024, 2024
-lastupdated: "2024-12-17"
+  years: 2024, 2026
+lastupdated: "2026-07-27"
 
 
 keywords: openshift, {{site.data.keyword.openshiftlong_notm}}, secure by default, node port not working, {{site.data.keyword.openshiftlong_notm}}, outbound traffic protection
@@ -39,7 +39,7 @@ Update the security group rules for your node port service.
 1. Identify the node ports that are opened by your node port service.
 1. For each node port opened, create a security group rule.
     ```sh
-    ibmcloud is sg-rulec kube-<cluster ID> inbound <tcp/udp> --port-min <nodeport> --port-max <nodeport> --remote 0.0.0.0/0
+    ibmcloud is sg-rulec kube-CLUSTER_ID inbound TCP/UDP --port-min NODEPORT --port-max NODEPORT --remote 0.0.0.0/0
     ```
     {: pre}
 

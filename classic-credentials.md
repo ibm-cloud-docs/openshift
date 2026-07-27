@@ -2,7 +2,7 @@
 
 copyright:
   years: 2024, 2026
-lastupdated: "2026-05-06"
+lastupdated: "2026-07-27"
 
 
 keywords: openshift, {{site.data.keyword.openshiftlong_notm}}, clusters, access, endpoint, credentials, classic
@@ -56,13 +56,13 @@ To set infrastructure account credentials to access the IBM Cloud infrastructure
 
 1. Set the infrastructure API credentials to use.
     ```sh
-    ibmcloud oc credential set classic --infrastructure-username <infrastructure_API_username> --infrastructure-api-key <infrastructure_API_authentication_key> --region <region>
+    ibmcloud oc credential set classic --infrastructure-username INFRASTRUCTURE_API_USERNAME --infrastructure-api-key INFRASTRUCTURE_API_AUTHENTICATION_KEY --region REGION
     ```
     {: pre}
 
 1. Verify that the correct credentials are set.
     ```sh
-    ibmcloud oc credential get --region <region>
+    ibmcloud oc credential get --region REGION
     ```
     {: pre}
 

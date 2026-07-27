@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2026
-lastupdated: "2026-04-15"
+lastupdated: "2026-07-27"
 
 
 keywords: openshift, {{site.data.keyword.openshiftlong_notm}}, kubernetes, infrastructure, rbac, policy
@@ -64,19 +64,19 @@ To reset the cluster API key:
     {: note }
 
     ```sh
-    ibmcloud target -g <resource_group_name>
+    ibmcloud target -g RESOURCE_GROUP_NAME
     ```
     {: pre}
 
 1. Reset the API key.
     ```sh
-    ibmcloud oc api-key reset --region <region>
+    ibmcloud oc api-key reset --region REGION
     ```
     {: pre}    
 
 1. Verify that the API key is set up.
     ```sh
-    ibmcloud oc api-key info --cluster <cluster_name_or_ID>
+    ibmcloud oc api-key info --cluster CLUSTER_NAME_OR_ID
     ```
     {: pre}
 

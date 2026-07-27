@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2022, 2026
-lastupdated: "2026-04-09"
+lastupdated: "2026-07-27"
 
 keywords: kubernetes, openshift
 
@@ -55,7 +55,7 @@ New security group rules were introduced in versions 4.11 and later. These rule 
 
 1. Sync the `kube-<clusterID>` security group by using the ID that you retrieved in the previous step.
     ```sh
-    ibmcloud ks security-group sync -c <cluster ID> --security-group <ID>
+    ibmcloud ks security-group sync -c CLUSTER_ID --security-group ID
     ```
     {: pre}
 

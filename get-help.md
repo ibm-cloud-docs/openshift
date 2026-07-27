@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2026
-lastupdated: "2026-07-15"
+lastupdated: "2026-07-27"
 
 
 keywords: openshift, {{site.data.keyword.openshiftlong_notm}}, support, get help
@@ -34,7 +34,7 @@ Looking for the Diagnostics and Debug tool? That add-on is no longer supported. 
 1. Get your cluster details.
 
     ```sh
-    ibmcloud oc cluster get -c <cluster_name_or_ID>
+    ibmcloud oc cluster get -c CLUSTER_NAME_OR_ID
     ```
     {: pre}
 
@@ -43,14 +43,14 @@ Looking for the Diagnostics and Debug tool? That add-on is no longer supported. 
     1. List all worker nodes in the cluster, and note the **ID** of any worker nodes with an unhealthy **State** or **Status**.
     
         ```sh
-        ibmcloud oc worker ls -c <cluster_name_or_ID>
+        ibmcloud oc worker ls -c CLUSTER_NAME_OR_ID
         ```
         {: pre}
 
     2. Get the details of the unhealthy worker node.
     
         ```sh
-        ibmcloud oc worker get -w <worker_ID> -c <cluster_name_or_ID>
+        ibmcloud oc worker get -w WORKER_ID -c CLUSTER_NAME_OR_ID
         ```
         {: pre}
 

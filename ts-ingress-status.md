@@ -1,8 +1,8 @@
 ---
 
 copyright: 
-  years: 2014, 2025
-lastupdated: "2025-04-29"
+  years: 2014, 2026
+lastupdated: "2026-07-27"
 
 
 keywords: openshift
@@ -32,7 +32,7 @@ To check the overall health and status of your cluster's Ingress components:
 {: shortdesc}
 
 ```sh
-ibmcloud oc ingress status-report get -c <cluster_name_or_ID>
+ibmcloud oc ingress status-report get -c CLUSTER_NAME_OR_ID
 ```
 {: pre}
 

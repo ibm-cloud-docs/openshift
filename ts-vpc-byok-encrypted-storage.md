@@ -1,7 +1,7 @@
 ---
 copyright:
   years: 2023, 2026
-lastupdated: "2026-04-30"
+lastupdated: "2026-07-27"
 
 
 keywords: openshift, {{site.data.keyword.openshiftlong_notm}}, byok, debug, help, vpc, storage, encryption
@@ -37,7 +37,7 @@ Verify that the KMS instance or root key still exist. If either one has been del
 
 1. To check that KMS encryption is enabled, verify that the **Key Management Service** status is set to `enabled`.
     ```sh
-    ibmcloud oc cluster get -c <cluster_name_or_ID>
+    ibmcloud oc cluster get -c CLUSTER_NAME_OR_ID
     ```
     {: pre}
 
