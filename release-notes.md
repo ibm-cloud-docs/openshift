@@ -49,7 +49,7 @@ CLI version 1.0.796 is available.
 {: #openshift-jul2026}
 {: release-note}
 
-New! NVIDIA B300 GPU worker node flavor is available for RHCOS worker nodes on {{site.data.keyword.openshiftlong_notm}} version 4.22.
+New! NVIDIA B300 GPU worker node flavor is available for RHCOS worker nodes on {{site.data.keyword.openshiftlong_notm}} version 4.21.
 :   The `gx4d.232x3840.8b300` flavor is now available for VPC clusters. For a list of available worker node flavors, see [VPC flavors](/docs/openshift?topic=openshift-vpc-flavors).
 :   To deploy an app on a GPU machine, see [Deploying apps on {{site.data.keyword.openshiftlong_notm}} clusters](/docs/openshift?topic=openshift-deploy_app).
 
