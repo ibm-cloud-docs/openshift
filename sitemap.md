@@ -444,7 +444,7 @@ subcollection: openshift
 
     * [20 July 2026](/docs/openshift?topic=openshift-openshift-relnotes#openshift-jul2026)
 
-        * New! NVIDIA B300 GPU worker node flavor is available for RHCOS worker nodes on {{site.data.keyword.openshiftlong_notm}} version 4.22.
+        * New! NVIDIA B300 GPU worker node flavor is available for RHCOS worker nodes on {{site.data.keyword.openshiftlong_notm}} version 4.21.
 
     * [14 July 2026](/docs/openshift?topic=openshift-openshift-relnotes#openshift-jul1426)
 
