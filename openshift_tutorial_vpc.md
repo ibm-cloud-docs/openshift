@@ -131,14 +131,14 @@ Create an {{site.data.keyword.cloud_notm}} Virtual Private Cloud (VPC) environme
     {: pre}
 
 4. Create a cluster in your VPC in the same zone as the subnet.
-    The following command creates a version 4.21 cluster in Dallas with the minimum configuration of 2 worker nodes that have at least 4 cores and 16 GB memory so that default {{site.data.keyword.redhat_openshift_notm}} components can deploy. For more information about the command options, see the [`cluster create vpc-gen2` CLI reference docs](/docs/openshift?topic=openshift-kubernetes-service-cli#cli_cluster-create-vpc-gen2).
+    The following command creates a version 4.21 cluster in Dallas with the minimum configuration of 2 worker nodes that have at least 4 cores and 16 GB memory so that default {{site.data.keyword.redhat_openshift_notm}} components can deploy. For more information about the command options, see the [`cluster create vpc-gen2` CLI reference docs](/docs/openshift?topic=openshift-kubernetes-service-cli#cluster-create-vpc-gen2-cli).
     ```sh
     ibmcloud oc cluster create vpc-gen2 --name myvpc-cluster --zone us-south-1 --version 4.21_openshift --flavor bx2.4x16 --workers 2 [--operating-system REDHAT_8_64] --vpc-id VPC_ID --subnet-id VPC_SUBNET_ID --cos-instance COS_CRN --disable-outbound-traffic-protection
     ```
     {: pre}
 
 5. List your cluster details. Review the cluster **State**, check the **Ingress Subdomain**, and note the **Master URL**.
-    Your cluster creation might take some time to complete. After the cluster state shows **Normal**, the cluster network and Ingress components take about 10 more minutes to deploy and update the cluster domain that you use for the {{site.data.keyword.redhat_openshift_notm}} web console and other routes. Before you continue, wait until the cluster is ready by checking that the **Ingress Subdomain** follows a pattern of `<cluster_name>.<globally_unique_account_HASH>-0001.<region>.containers.appdomain.cloud`.
+    Your cluster creation might take some time to complete. After the cluster state shows **Normal**, the cluster network and Ingress components take about 10 more minutes to deploy and update the cluster domain that you use for the {{site.data.keyword.redhat_openshift_notm}} web console and other routes. Before you continue, wait until the cluster is ready by checking that the **Ingress Subdomain** follows a pattern of `<cluster_name>-<globally_unique_account_HASH>-0001.<region>.containers.appdomain.cloud`.
     {: note}
     
     ```sh

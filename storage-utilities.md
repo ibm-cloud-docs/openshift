@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2026
-lastupdated: "2026-04-29"
+lastupdated: "2026-07-30"
 
 
 keywords: kubernetes, openshift
@@ -473,7 +473,7 @@ You can use the {{site.data.keyword.containershort_notm}} API to attach and deta
 You can attach a volume to one worker node only. Ensure that the volume is in the same zone as the worker node for the attachment to succeed.
 {: note}
 
-You can also attach, detach, and list the volume attachments of your worker nodes by using the CLI. For more information, see the [storage CLI reference](/docs/openshift?topic=openshift-kubernetes-service-cli#cs_storage).
+You can also attach, detach, and list the volume attachments of your worker nodes by using the CLI. For more information, see the [storage CLI reference](/docs/openshift?topic=openshift-kubernetes-service-cli#storage-attachment-create-cli).
 {: tip}
 
 
@@ -1205,7 +1205,7 @@ When an alert is triggered, review the alert details in {{site.data.keyword.mon_
 
 
 * [Troubleshooting persistent storage volumes](/docs/openshift?topic=openshift-debug_storage_file).
-* [Troubleshooting worker nodes](/docs/openshift?topic=openshift-kubernetes-service-cli#cs_worker_reload).
+* [Troubleshooting worker nodes](/docs/openshift?topic=openshift-kubernetes-service-cli#worker-reload-cli).
 * [Troubleshooting apps](/docs/openshift?topic=openshift-debug_apps).
 * [Troubleshooting clusters](/docs/openshift?topic=openshift-debug_clusters).
 * [Open a support case](/docs/openshift?topic=openshift-get-help).

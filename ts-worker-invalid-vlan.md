@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2026
-lastupdated: "2026-05-14"
+lastupdated: "2026-07-30"
 
 
 keywords: openshift
@@ -45,7 +45,7 @@ When an account is suspended, the worker nodes within the account are deleted. I
 ## Resolving the issue
 {: #suspended-resolve}
 
-You can [delete your existing worker pool](/docs/openshift?topic=openshift-kubernetes-service-cli#cs_worker_pool_rm) and then [create a new worker pool](/docs/openshift?topic=openshift-kubernetes-service-cli#cs_worker_pool_create).
+You can [delete your existing worker pool](/docs/openshift?topic=openshift-kubernetes-service-cli#worker-pool-rm-cli) and then [create a new worker pool](/docs/openshift?topic=openshift-kubernetes-service-cli#worker-pool-create-classic-cli).
 {: tsResolve}
 
 Alternatively, you can keep your existing worker pool by ordering new VLANs and using them to create new worker nodes in the pool.
@@ -73,7 +73,7 @@ Before you begin: [Log in to your account. If applicable, target the appropriate
     ```
     {: pre}
 
-5. Use the `zone network-set` [command](/docs/openshift?topic=openshift-kubernetes-service-cli#cs_zone_network_set) to change the worker pool network metadata.
+5. Use the `zone network-set` [command](/docs/openshift?topic=openshift-kubernetes-service-cli#zone-network-set-cli) to change the worker pool network metadata.
 
     ```sh
     ibmcloud oc zone network-set --zone <zone> --cluster <cluster_name_or_ID> --worker-pool <worker-pool> --private-vlan <private_vlan_ID> --public-vlan <public_vlan_ID>

@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2023, 2026
-lastupdated: "2026-04-15"
+lastupdated: "2026-07-30"
 
 
 keywords: openshift, {{site.data.keyword.openshiftlong_notm}}, kubernetes, oauth, console, access, vpe, pse, network
@@ -96,7 +96,7 @@ You can use the `POST /network/v2/oauth-access-type/{idOrName}/set` API to set t
 
 1. Review the output and verify the OAuth access type is set.
 
-1. After setting the access type, you must perform a [cluster master refresh](/docs/openshift?topic=openshift-kubernetes-service-cli#cs_apiserver_refresh).
+1. After setting the access type, you must perform a [cluster master refresh](/docs/openshift?topic=openshift-kubernetes-service-cli#cluster-master-refresh-cli).
     ```sh
     ibmcloud oc cluster master refresh --cluster CLUSTER
     ```

@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2026
-lastupdated: "2026-03-16"
+lastupdated: "2026-07-30"
 
 
 keywords: openshift dedicated hosts
@@ -78,7 +78,7 @@ Minimum required permissions
     `--zone ZONE`
     :    The zone to create the dedicated host in. For a list of available
 
-1. [Create a cluster with your dedicated host](/docs/openshift?topic=openshift-cluster-create-vpc-gen2&interface=ui). Or, [add a worker pool in an existing cluster](/docs/openshift?topic=openshift-kubernetes-service-cli#cli_worker_pool_create_vpc_gen2).
+1. [Create a cluster with your dedicated host](/docs/openshift?topic=openshift-cluster-create-vpc-gen2&interface=ui). Or, [add a worker pool in an existing cluster](/docs/openshift?topic=openshift-kubernetes-service-cli#worker-pool-create-vpc-gen2-cli).
 
 
 ## Removing worker nodes from a dedicated host in the CLI
@@ -108,7 +108,7 @@ To remove worker nodes from a dedicated host, you must disable dedicated host pl
     `--pool POOL`
     :    The ID of the dedicated host pool that the dedicated host is located in. To list dedicated host pools run `ibmcloud oc dedicated pool ls`.
 
-1. [Replace](/docs/openshift?topic=openshift-kubernetes-service-cli#cli_worker_replace) or [remove](/docs/openshift?topic=openshift-kubernetes-service-cli#cs_worker_rm){: external} each worker node on the dedicated host. 
+1. [Replace](/docs/openshift?topic=openshift-kubernetes-service-cli#worker-replace-cli) or [remove](/docs/openshift?topic=openshift-kubernetes-service-cli#worker-rm-cli){: external} each worker node on the dedicated host. 
     * Replace the worker nodes if you want to keep the same cluster capacity, but move the worker nodes off the dedicated host. During replacement, when new worker nodes are created, they are only created on hosts with placement enabled.
     * Remove the worker nodes if you are deleting your cluster or reducing capacity.
 

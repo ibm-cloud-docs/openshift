@@ -115,7 +115,7 @@ For Satellite clusters, do not use the `ibmcloud oc worker-pool rebalance` comma
 {: important}
 
 
-In {{site.data.keyword.satelliteshort}} worker pool, rebalancing also re-enables [host autoassignment](/docs/satellite?topic=satellite-host-autoassign-ov). You can rebalance the worker pool from the {{site.data.keyword.cloud_notm}} console or the `ibmcloud oc worker-pool rebalance` [command](/docs/openshift?topic=openshift-kubernetes-service-cli#cs_rebalance).
+In {{site.data.keyword.satelliteshort}} worker pool, rebalancing also re-enables [host autoassignment](/docs/satellite?topic=satellite-host-autoassign-ov). You can rebalance the worker pool from the {{site.data.keyword.cloud_notm}} console or the `ibmcloud oc worker-pool rebalance` [command](/docs/openshift?topic=openshift-kubernetes-service-cli#worker-pool-rebalance-cli).
 
 ## Updating worker nodes in a {{site.data.keyword.satelliteshort}} worker pool
 {: #sat-pool-maintenance-update}
@@ -130,7 +130,7 @@ You can add zones to a worker pool. Available {{site.data.keyword.satelliteshort
 
 
 * For more information about zones in {{site.data.keyword.satelliteshort}}, see [Planning your infrastructure environment for {{site.data.keyword.satelliteshort}}](/docs/satellite?topic=satellite-infrastructure-plan).
-* To add a zone, see the [`ibmcloud oc zone add satellite` command](/docs/openshift?topic=openshift-kubernetes-service-cli#cs_zone_add_sat).
+* To add a zone, see the [`ibmcloud oc zone add satellite` command](/docs/openshift?topic=openshift-kubernetes-service-cli#zone-add-satellite-cli).
 
 ## Removing a {{site.data.keyword.satelliteshort}} worker pool
 {: #sat-pool-maintenance-remove}

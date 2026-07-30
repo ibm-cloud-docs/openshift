@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2026
-lastupdated: "2026-04-15"
+lastupdated: "2026-07-30"
 
 
 keywords: kubernetes, openshift
@@ -103,8 +103,8 @@ Follow the steps to review your infrastructure credentials and determine why you
     4. Search for the worker node ID that you previously noted.
     5. If you don't find the worker node ID, the worker node is not provisioned into this infrastructure account. Switch to a different infrastructure account and try again.
 1. Compare the infrastructure accounts.
-    *   **If the worker nodes are in the linked infrastructure account**: Use the `ibmcloud oc credential unset` [command](/docs/openshift?topic=openshift-kubernetes-service-cli#cs_credentials_unset) to resume using the default infrastructure credentials that are linked with your Pay-As-You-Go account.
-    *   **If the worker nodes are in a different infrastructure account**: Use the `ibmcloud oc credential set` [command](/docs/openshift?topic=openshift-kubernetes-service-cli#cs_credentials_set) to change your infrastructure credentials to the account that the cluster worker nodes are provisioned in, which you found in the previous step.
+    *   **If the worker nodes are in the linked infrastructure account**: Use the `ibmcloud oc credential unset` [command](/docs/openshift?topic=openshift-kubernetes-service-cli#credential-unset-cli) to resume using the default infrastructure credentials that are linked with your Pay-As-You-Go account.
+    *   **If the worker nodes are in a different infrastructure account**: Use the `ibmcloud oc credential set` [command](/docs/openshift?topic=openshift-kubernetes-service-cli#credential-set-classic-cli) to change your infrastructure credentials to the account that the cluster worker nodes are provisioned in, which you found in the previous step.
 
         If you no longer have access to the infrastructure credentials, you can open an {{site.data.keyword.cloud_notm}} support case to determine an email address for the administrator of the other infrastructure account. However, {{site.data.keyword.cloud_notm}} Support can't remove the orphaned cluster for you, and you must contact the administrator of the other account to get the infrastructure credentials.
         {: note}

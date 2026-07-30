@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2026
-lastupdated: "2026-07-27"
+lastupdated: "2026-07-30"
 
 
 keywords: openshift, {{site.data.keyword.openshiftlong_notm}}, oc, ks
@@ -42,7 +42,7 @@ Version 1.0.804 of the CLI was released on 25 July 2026.
 {: #cli-01796}
 
 Version 1.0.796 of the CLI was released on 22 July 2026.
-- Adds the `--offering` and `--show-defaults` flags to the [`ibmcloud ks cluster addon versions`](/docs/openshift?topic=openshift-kubernetes-service-cli#cs_addon_versions) command.
+- Adds the `--offering` and `--show-defaults` flags to the [`ibmcloud ks cluster addon versions`](/docs/openshift?topic=openshift-kubernetes-service-cli#cluster-addon-versions-cli) command.
 
 ## Version v1.0.791
 {: #cli-01791}
@@ -54,7 +54,7 @@ Version 1.0.791 of the CLI was released on 09 July 2026.
 {: #cli-01775}
 
 Version 1.0.775 of the CLI was released on 28 May 2026.
-- Removes the `--header-timeout` parameter from the [`ibmcloud ks ingress lb proxy-protocol enable`](/docs/openshift?topic=openshift-kubernetes-service-cli#cs_ingress_lb_proxy-protocol_enable) command.
+- Removes the `--header-timeout` parameter from the [`ibmcloud ks ingress lb proxy-protocol enable`](/docs/openshift?topic=openshift-kubernetes-service-cli#ingress-load-balancer-proxy-protocol-enable-cli) command.
 
 ## Version v1.0.773
 {: #cli-01773}
@@ -399,7 +399,7 @@ Version 1.0.566 of the CLI was released on 18 September 2023.
 {: #cli-10549}
 
 Version 1.0.540 of the CLI was released on 19 July 2023.
-- Adds new [`ibmcloud oc ingress alb autoscale`](/docs/openshift?topic=openshift-kubernetes-service-cli#cs_alb_autoscale_get) commands.
+- Adds new [`ibmcloud oc ingress alb autoscale`](/docs/openshift?topic=openshift-kubernetes-service-cli#ingress-alb-autoscale-get-cli) commands.
 - Replaces the deprecated `ibmcloud oc alb ls` command in certain command help texts.
 - Updates the help text in various languages. 
 

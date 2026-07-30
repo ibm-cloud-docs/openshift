@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2026
-lastupdated: "2026-04-14"
+lastupdated: "2026-07-30"
 
 
 keywords: openshift, nginx, ingress controller, openshift ingress, ingress, exposing apps
@@ -51,7 +51,7 @@ If the apps in your cluster are in different projects, create one Ingress resour
 You can either define the same domain in multiple resources, or use a wildcard domain to specify different subdomains within the Ingress resource for each project.
 
 
-When a wildcard domain is registered, multiple subdomains can all resolve to the same host. The IBM-provided Ingress subdomain wildcard, `*.<cluster_name>.<globally_unique_account_HASH>-0000.<region>.containers.appdomain.cloud`, is registered by default for your cluster.{: #wildcard_tls}
+When a wildcard domain is registered, multiple subdomains can all resolve to the same host. The IBM-provided Ingress subdomain wildcard, `*.<cluster_name>-<globally_unique_account_HASH>-0000.<region>.containers.appdomain.cloud`, is registered by default for your cluster.{: #wildcard_tls}
 
 The IBM-provided TLS certificate is a wildcard certificate and can be used for the wildcard subdomain. If you want to use a wildcard custom domain, you must register the custom domain as a wildcard domain such as `*.custom_domain.net`, and to use TLS, you must get a wildcard certificate.
 {: note}
@@ -78,5 +78,5 @@ Within an individual project, you can use one domain to access all the apps in t
 
 ![One resource is required per project](images/cs_ingress_single_ns_multi_subs.svg){: caption="One resource is required per project" caption-side="bottom"}
 
-The IBM-provided Ingress subdomain wildcard, `*.<cluster_name>.<globally_unique_account_HASH>-0000.<region>.containers.appdomain.cloud`, is registered by default for your cluster. The IBM-provided TLS certificate is a wildcard certificate and can be used for the wildcard subdomain. If you want to use a wildcard custom domain, you must register the custom domain as a wildcard domain such as `*.custom_domain.net`, and to use TLS, you must get a wildcard certificate.
+The IBM-provided Ingress subdomain wildcard, `*.<cluster_name>-<globally_unique_account_HASH>-0000.<region>.containers.appdomain.cloud`, is registered by default for your cluster. The IBM-provided TLS certificate is a wildcard certificate and can be used for the wildcard subdomain. If you want to use a wildcard custom domain, you must register the custom domain as a wildcard domain such as `*.custom_domain.net`, and to use TLS, you must get a wildcard certificate.
 {: note}

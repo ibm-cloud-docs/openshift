@@ -438,7 +438,7 @@ After the Operator is installed, create ConfigMaps to allow Kata to handle workl
         - `uninstalling`: The Kata uninstallation is in progress.
         - `uninstalled`: Kata is uninstalled successfully from the node.
 
-1. When the labels are updated and in the `waiting_for_reboot` state, [reboot](/docs/openshift?topic=openshift-kubernetes-service-cli#cs_worker_reboot) each worker node one at a time.
+1. When the labels are updated and in the `waiting_for_reboot` state, [reboot](/docs/openshift?topic=openshift-kubernetes-service-cli#worker-reboot-cli) each worker node one at a time.
 
 When you run `oc get nodes` and each worker node is in the `installed` state, the installation is complete.
 
@@ -723,7 +723,7 @@ Completing these steps in the wrong order could leave resources behind that you 
 
     a. Monitor the node labels until they are in the `waiting_for_reboot` state.
 
-    b. [Reboot](/docs/openshift?topic=openshift-kubernetes-service-cli#cs_worker_reboot) the workers one at a time to finish uninstalling the Kata on the worker node.
+    b. [Reboot](/docs/openshift?topic=openshift-kubernetes-service-cli#worker-reboot-cli) the workers one at a time to finish uninstalling the Kata on the worker node.
 
     c. If other workloads are running on this cluster, cordon the worker, drain it, and then restart it.
         

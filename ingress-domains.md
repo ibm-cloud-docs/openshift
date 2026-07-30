@@ -2,7 +2,7 @@
 
 copyright:
   years: 2023, 2026
-lastupdated: "2026-07-23"
+lastupdated: "2026-07-30"
 
 
 keywords: kubernetes, openshift
@@ -17,7 +17,7 @@ subcollection: openshift
 # Setting up a domain for your cluster
 {: #ingress-domains}
 
-When you create a cluster, an Ingress subdomain is registered by default for your cluster in the format `<cluster_name>.<globally_unique_account_HASH>-0000.<region>.containers.appdomain.cloud`. Additionally, you can make your apps reachable at a custom domain by creating your own domain registered with IBM Cloud's internal domain provider, or a domain registered with an external provider. You can also add an existing domain to your cluster.
+When you create a cluster, an Ingress subdomain is registered by default for your cluster in the format `<cluster_name>-<globally_unique_account_HASH>-0000.<region>.containers.appdomain.cloud`. Additionally, you can make your apps reachable at a custom domain by creating your own domain registered with IBM Cloud's internal domain provider, or a domain registered with an external provider. You can also add an existing domain to your cluster.
 {: shortdesc}
 
 This functionality is available in beta and is subject to change.

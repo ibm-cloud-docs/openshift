@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2026
-lastupdated: "2026-07-07"
+lastupdated: "2026-07-30"
 
 
 keywords: openshift, node scaling, ca, autoscaler
@@ -23,7 +23,7 @@ subcollection: openshift
 
 Review the VPC worker node flavors by metro.
 
-The flavors listed here might differ from what is actually available for your cluster. You can find a list of available flavors specific to your clusters by running **`ibmcloud oc flavor ls`** [command](/docs/openshift?topic=openshift-kubernetes-service-cli#cs_flavor_ls) or review the list of flavors when creating a cluster in the console.
+The flavors listed here might differ from what is actually available for your cluster. You can find a list of available flavors specific to your clusters by running **`ibmcloud oc flavor ls`** [command](/docs/openshift?topic=openshift-kubernetes-service-cli#flavor-ls-cli) or review the list of flavors when creating a cluster in the console.
 
 These conditions might impact cluster flavor availability:
 - **Allowlisted accounts**: GPU flavors are available for allowlisted accounts only. To request access to allowlisted flavors, first get your full [account ID](https://cloud.ibm.com/account/settings){: external} from the console, then follow the steps to [request access to the allowlist](/docs/openshift?topic=openshift-allowlist-request).

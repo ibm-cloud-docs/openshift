@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2026
-lastupdated: "2026-04-09"
+lastupdated: "2026-07-30"
 
 
 keywords: openshift
@@ -64,16 +64,16 @@ Resolve VLAN issues for Ingress controller services that have no IP address, or 
 To resolve VLAN issues for Ingress controller services that have no IP address:
 {: shortdesc}
 
-**Option 1**: If you need a new VLAN, order one by [contacting {{site.data.keyword.cloud_notm}} support](/docs/vlans?topic=vlans-ordering-premium-vlans#ordering-premium-vlans). Then, [create a cluster](/docs/openshift?topic=openshift-kubernetes-service-cli#cs_cluster_create) that uses this new VLAN.
+**Option 1**: If you need a new VLAN, order one by [contacting {{site.data.keyword.cloud_notm}} support](/docs/vlans?topic=vlans-ordering-premium-vlans#ordering-premium-vlans). Then, [create a cluster](/docs/openshift?topic=openshift-kubernetes-service-cli#cluster-create-classic-cli) that uses this new VLAN.
 
-**Option 2**: If you have another VLAN that is available, you can [set up VLAN spanning](/docs/vlans?topic=vlans-vlan-spanning#vlan-spanning) in your existing cluster. To check if VLAN spanning is already enabled, use the `ibmcloud ks vlan spanning get --region <region>` [command](/docs/openshift?topic=openshift-kubernetes-service-cli#cs_vlan_spanning_get). Then, you can add new worker nodes to the cluster that use the other VLAN with available subnets. Create at least two worker nodes per zone. Now, IP addresses are available so that the Ingress controllers can automatically deploy.
+**Option 2**: If you have another VLAN that is available, you can [set up VLAN spanning](/docs/vlans?topic=vlans-vlan-spanning#vlan-spanning) in your existing cluster. To check if VLAN spanning is already enabled, use the `ibmcloud ks vlan spanning get --region <region>` [command](/docs/openshift?topic=openshift-kubernetes-service-cli#vlan-spanning-get-cli). Then, you can add new worker nodes to the cluster that use the other VLAN with available subnets. Create at least two worker nodes per zone. Now, IP addresses are available so that the Ingress controllers can automatically deploy.
 
 **Option 3**: If you are not using all the subnets in the VLAN, you can reuse subnets on the VLAN by adding them to your cluster.
 1. Check that the subnet that you want to use is available.
     The infrastructure account that you use might be shared across multiple {{site.data.keyword.cloud_notm}} accounts. In this case, even if you run the `ibmcloud oc subnets` command to see subnets with **Bound Clusters**, you can see information only for your clusters. Check with the infrastructure account owner to make sure that the subnets are available and not in use by any other account or team.
     {: note}
 
-2. Use the [`ibmcloud ks cluster subnet add` command](/docs/openshift?topic=openshift-kubernetes-service-cli#cs_cluster_subnet_add) to make an existing subnet available to your cluster.
+2. Use the [`ibmcloud ks cluster subnet add` command](/docs/openshift?topic=openshift-kubernetes-service-cli#cluster-subnet-add-cli) to make an existing subnet available to your cluster.
 
 3. Verify that the subnet was successfully created and added to your cluster. The subnet CIDR is listed in the **Subnet VLANs** section.
     ```sh

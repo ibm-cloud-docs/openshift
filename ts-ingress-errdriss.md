@@ -2,7 +2,7 @@
 
 copyright:
   years: 2022, 2026
-lastupdated: "2026-05-12"
+lastupdated: "2026-07-30"
 
 
 keywords: openshift, errdriss, secret generation failed
@@ -43,7 +43,7 @@ One or more managed subdomains that belong to your cluster are not resolving cor
 Review and update your managed subdomains.
 {: tsResolve}
 
-1. Get the list of the managed domains using the **`ibmcloud oc nlb-dns ls`** [command](/docs/openshift?topic=openshift-kubernetes-service-cli#cs_nlb-dns-ls).
+1. Get the list of the managed domains using the **`ibmcloud oc nlb-dns ls`** [command](/docs/openshift?topic=openshift-kubernetes-service-cli#nlb-dns-ls-cli).
 
 1. Use `dig` to resolve your domains and verify that they resolve to the configured addresses.
     ```sh
@@ -57,8 +57,8 @@ Review and update your managed subdomains.
     - Make sure that the domain does not have malformed IP addresses or load balancer hostnames registered.
 
 1. Check if the domain has health monitoring.
-    - Get the list of the subdomain that have health monitoring enabled using the **`ibmcloud oc nlb-dns monitor ls`** [command](/docs/openshift?topic=openshift-kubernetes-service-cli#cs_nlb-dns-monitor-ls).
-    - If the domain is included in the list, get the health monitor details using the **`ibmcloud oc nlb-dns monitor get`** [command](/docs/openshift?topic=openshift-kubernetes-service-cli#cs_nlb-dns-monitor-get) command.
+    - Get the list of the subdomain that have health monitoring enabled using the **`ibmcloud oc nlb-dns monitor ls`** [command](/docs/openshift?topic=openshift-kubernetes-service-cli#nlb-dns-monitor-ls-cli).
+    - If the domain is included in the list, get the health monitor details using the **`ibmcloud oc nlb-dns monitor get`** [command](/docs/openshift?topic=openshift-kubernetes-service-cli#nlb-dns-monitor-get-cli) command.
     - Verify that the health monitor configuration is correct, and that your backend applications are healthy.
     - Ensure that you allow incoming network traffic from [IBM NS1's source IP addresses](/docs/openshift?topic=openshift-firewall#firewall-ingress-domain-monitor).
 

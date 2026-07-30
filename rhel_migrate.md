@@ -69,7 +69,7 @@ Before you create a new RHCOS worker pool, review the instance group quota limit
 
 1. Run the `ibmcloud oc worker-pool create` command to create a new worker pool.
 
-    Example command to create a RHCOS worker pool. For more information about the `worker pool create vpc-gen2` command, see the [CLI reference](/docs/openshift?topic=openshift-kubernetes-service-cli#cli_worker_pool_create_vpc_gen2) for command details. [Adding worker nodes in VPC clusters](/docs/openshift?topic=openshift-add-workers-vpc).
+    Example command to create a RHCOS worker pool. For more information about the `worker pool create vpc-gen2` command, see the [CLI reference](/docs/openshift?topic=openshift-kubernetes-service-cli#worker-pool-create-vpc-gen2-cli) for command details. [Adding worker nodes in VPC clusters](/docs/openshift?topic=openshift-add-workers-vpc).
 
     ```sh
     ibmcloud oc worker-pool create vpc-gen2 --name WORKER_POOL_NAME --cluster CLUSTER_NAME_OR_ID --flavor FLAVOR --size-per-zone NUMBER_OF_WORKERS_PER_ZONE --operating-system RHCOS [--entitlement ocp_entitled]

@@ -425,8 +425,8 @@ You can enable or disable image security enforcement for your cluster from the C
 {: #portieris-enable-cli}
 
 See the following commands.
-- [`ibmcloud oc cluster image-security enable`](/docs/openshift?topic=openshift-kubernetes-service-cli#cs-image-security-enable)
-- [`ibmcloud oc cluster image-security disable`](/docs/openshift?topic=openshift-kubernetes-service-cli#cs-image-security-disable)
+- [`ibmcloud oc cluster image-security enable`](/docs/openshift?topic=openshift-kubernetes-service-cli#cluster-image-security-enable-cli)
+- [`ibmcloud oc cluster image-security disable`](/docs/openshift?topic=openshift-kubernetes-service-cli#cluster-image-security-disable-cli)
 
 #### Enabling or disabling image security enforcement from the console
 {: #portieris-enable-ui}

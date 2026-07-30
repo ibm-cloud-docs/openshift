@@ -2,7 +2,7 @@
 
 copyright:
   years: 2024, 2026
-lastupdated: "2026-04-29"
+lastupdated: "2026-07-30"
 
 
 keywords: openshift, {{site.data.keyword.openshiftlong_notm}}, kubernetes, certificate, rotate, ca rotate
@@ -70,7 +70,7 @@ By default, certificate authority (CA) certificates are administered to secure a
     - If you forward audit logs to {{site.data.keyword.logs_full_notm}}, update the certificates for your [master audit webhook](/docs/openshift?topic=openshift-health-audit).
     - If you forward audit logs over the private network, update the certificates for your [master audit webhook](/docs/openshift?topic=openshift-health-audit#audit-api-server-priv).
 
-7. [Reload your classic worker nodes](/docs/openshift?topic=openshift-kubernetes-service-cli#cs_worker_reload) or [replace your VPC worker nodes](/docs/openshift?topic=openshift-kubernetes-service-cli#cli_worker_replace) to pick up the certificates that are signed by the new CA.
+7. [Reload your classic worker nodes](/docs/openshift?topic=openshift-kubernetes-service-cli#worker-reload-cli) or [replace your VPC worker nodes](/docs/openshift?topic=openshift-kubernetes-service-cli#worker-replace-cli) to pick up the certificates that are signed by the new CA.
 
 8. Rotate the old certificates with the new certificates. The old CA certificates in your cluster are removed.
     ```sh

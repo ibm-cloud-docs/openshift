@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2026
-lastupdated: "2026-07-27"
+lastupdated: "2026-07-30"
 
 
 keywords: kubernetes, node scaling, ca, autoscaler, openshift
@@ -90,7 +90,7 @@ No, setting a `minSize` does not automatically trigger a scale-up. The `minSize`
 ### How is this behavior different from worker pools that are not managed by the cluster autoscaler?
 {: #scaling-pools-differences}
 
-When you [create a worker pool](/docs/openshift?topic=openshift-add-workers-vpc), you specify how many worker nodes per zone it has. The worker pool maintains that number of worker nodes until you [resize](/docs/openshift?topic=openshift-kubernetes-service-cli#cs_worker_pool_resize) or [rebalance](/docs/openshift?topic=openshift-kubernetes-service-cli#cs_rebalance) it. The worker pool does not add or remove worker nodes for you. If you have more pods than can be scheduled, the pods remain in pending state until you resize the worker pool. When you enable the cluster autoscaler for a worker pool, worker nodes are scaled up or down in response to your pod spec settings and resource requests. You don't need to resize or rebalance the worker pool manually.
+When you [create a worker pool](/docs/openshift?topic=openshift-add-workers-vpc), you specify how many worker nodes per zone it has. The worker pool maintains that number of worker nodes until you [resize](/docs/openshift?topic=openshift-kubernetes-service-cli#worker-pool-resize-cli) or [rebalance](/docs/openshift?topic=openshift-kubernetes-service-cli#worker-pool-rebalance-cli) it. The worker pool does not add or remove worker nodes for you. If you have more pods than can be scheduled, the pods remain in pending state until you resize the worker pool. When you enable the cluster autoscaler for a worker pool, worker nodes are scaled up or down in response to your pod spec settings and resource requests. You don't need to resize or rebalance the worker pool manually.
 
 ### How does GPU autoscaling work?
 {: #scaling-gpus}

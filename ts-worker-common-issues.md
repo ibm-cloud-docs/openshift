@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2026
-lastupdated: "2026-04-15"
+lastupdated: "2026-07-30"
 
 
 keywords: openshift
@@ -79,7 +79,7 @@ Could not obtain network VLAN with ID: <vlan-id>
 
 Your worker node could not be provisioned because the selected VLAN ID could not be found for one of the following reasons:
 * You might have specified the VLAN number instead of the VLAN ID. The VLAN number is 3 or 4 digits long, whereas the VLAN ID is 7 digits long. To retrieve the VLAN ID, run `ibmcloud oc vlan ls --zone <zone>`.
-* The VLAN ID might not be associated with the IBM Cloud infrastructure account that you use. To list available VLAN IDs for your account, run `ibmcloud oc vlan ls --zone <zone>` . To change the IBM Cloud infrastructure account, see [`ibmcloud oc credential set`](/docs/openshift?topic=openshift-kubernetes-service-cli#cs_credentials_set).
+* The VLAN ID might not be associated with the IBM Cloud infrastructure account that you use. To list available VLAN IDs for your account, run `ibmcloud oc vlan ls --zone <zone>` . To change the IBM Cloud infrastructure account, see [`ibmcloud oc credential set`](/docs/openshift?topic=openshift-kubernetes-service-cli#credential-set-classic-cli).
 
 ## Location invalid
 {: #location-invalid}
@@ -143,7 +143,7 @@ The worker did not respond to the soft reboot request. A hard reboot might be ne
 
 **Description and resolution**:
 
-Although you issued a reboot on your worker node, the worker node is unresponsive. You can rerun the [reboot command](/docs/openshift?topic=openshift-kubernetes-service-cli#cs_worker_reboot) with the `--hard` option to power off the worker node, or run the `worker reload` [command](/docs/openshift?topic=openshift-kubernetes-service-cli#cs_worker_reload).
+Although you issued a reboot on your worker node, the worker node is unresponsive. You can rerun the [reboot command](/docs/openshift?topic=openshift-kubernetes-service-cli#worker-reboot-cli) with the `--hard` option to power off the worker node, or run the `worker reload` [command](/docs/openshift?topic=openshift-kubernetes-service-cli#worker-reload-cli).
 
 ## Instance can't be found
 {: #instance-not-found}
@@ -177,5 +177,5 @@ As the **user**, follow these steps:
 
 As the **account owner**, follow these steps:
 1. Review the [required classic permissions in IBM Cloud infrastructure](/docs/openshift?topic=openshift-iam-platform-access-roles) to perform the action that previously failed. For the VPC infrastructure provider, the API key owner must have the **Administrator** platform access role.
-2. Fix the permissions of the API key owner or create a new API key by using the [`ibmcloud oc api-key reset --region <region>`](/docs/openshift?topic=openshift-kubernetes-service-cli#cs_api_key_reset) command.
-3. If you or another account admin manually set IBM Cloud infrastructure credentials in your account, run [`ibmcloud oc credential unset --region <region>`](/docs/openshift?topic=openshift-kubernetes-service-cli#cs_credentials_unset) to remove the credentials from your account.
+2. Fix the permissions of the API key owner or create a new API key by using the [`ibmcloud oc api-key reset --region <region>`](/docs/openshift?topic=openshift-kubernetes-service-cli#api-key-reset-cli) command.
+3. If you or another account admin manually set IBM Cloud infrastructure credentials in your account, run [`ibmcloud oc credential unset --region <region>`](/docs/openshift?topic=openshift-kubernetes-service-cli#credential-unset-cli) to remove the credentials from your account.

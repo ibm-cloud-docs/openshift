@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2026
-lastupdated: "2026-04-15"
+lastupdated: "2026-07-30"
 
 
 keywords: kubernetes, openshift, infrastructure, rbac, policy
@@ -22,7 +22,7 @@ subcollection: openshift
 Learn how to setup access to or for your resources by using trusted profiles. 
 {: shortdesc}
 
-You can enable IAM trusted profiles by running the [`ibmcloud oc cluster master refresh`](/docs/openshift?topic=openshift-kubernetes-service-cli#cs_apiserver_refresh) command.
+You can enable IAM trusted profiles by running the [`ibmcloud oc cluster master refresh`](/docs/openshift?topic=openshift-kubernetes-service-cli#cluster-master-refresh-cli) command.
 {: tip}
 
 

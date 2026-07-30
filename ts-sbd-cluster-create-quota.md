@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2024, 2026
-lastupdated: "2026-04-30"
+lastupdated: "2026-07-30"
 
 
 keywords: openshift, {{site.data.keyword.openshiftlong_notm}}, secure by default, {{site.data.keyword.openshiftlong_notm}}, outbound traffic protection, cluster create, quotas, limitations, rules, security groups
@@ -55,7 +55,7 @@ After reviewing the logging messages, complete the steps in the following sectio
 
 If you have already reached the 15 cluster maximum for your VPC, the worker nodes on any additional cluster you provision remain in the `pending` state. There are no exceptions to this quota. You can either [delete a cluster](/docs/openshift?topic=openshift-remove) from your VPC, or [create a new VPC](/docs/vpc?topic=vpc-creating-vpc-resources-with-cli-and-api&interface=cli#create-a-vpc-cli) where you can provision additional clusters. 
 
-If you choose to delete a cluster from your existing VPC, [refresh the cluster master](/docs/openshift?topic=openshift-kubernetes-service-cli#cs_apiserver_refresh) to continue provisioning your worker nodes. 
+If you choose to delete a cluster from your existing VPC, [refresh the cluster master](/docs/openshift?topic=openshift-kubernetes-service-cli#cluster-master-refresh-cli) to continue provisioning your worker nodes. 
 
     ```sh
     ibmcloud oc cluster master refresh -c <cluster_name_or_ID>

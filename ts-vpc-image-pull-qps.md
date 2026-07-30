@@ -2,7 +2,7 @@
 
 copyright:
   years: 2026
-lastupdated: "2026-06-03"
+lastupdated: "2026-07-30"
 
 keywords: vpc, image pull, qps exceeded, bandwidth, worker nodes, secondary storage
 
@@ -98,7 +98,7 @@ The recommended solution is to use worker pools with secondary storage attached.
 
 2. [Migrate your workloads](/docs/containers?topic=containers-update_app#app_rolling) to the new pool.
 
-3. [Drain and remove the old worker pool](/docs/containers?topic=containers-kubernetes-service-cli#cs_worker_pool_rm) after migration is complete.
+3. [Drain and remove the old worker pool](/docs/containers?topic=containers-kubernetes-service-cli#worker-pool-rm-cli) after migration is complete.
 
 
 
@@ -123,5 +123,3 @@ Set up monitoring and alerts
 :   Set up alerts for sustained high disk I/O rates that approach 49 MB/sec.
     - Monitor image pull times as part of your deployment metrics.
     - Track pod startup times to identify performance degradation.
-
-

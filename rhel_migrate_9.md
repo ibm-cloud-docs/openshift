@@ -2,7 +2,7 @@
 
 copyright:
   years: 2022, 2026
-lastupdated: "2026-03-31"
+lastupdated: "2026-07-30"
 
 
 keywords: rhel, os, operating system, rhel 9, 418, migration, classic
@@ -38,7 +38,7 @@ The default `cgroup` implementation is `cgroup` v2. In RHEL 9, `cgroup` v1 isn't
     ```
     {: pre}
 
-1. Update each worker node in the worker pool by running the [`ibmcloud oc worker update`](/docs/openshift?topic=openshift-kubernetes-service-cli#cs_worker_update) for Classic clusters or [`ibmcloud oc worker replace`](/docs/openshift?topic=openshift-kubernetes-service-cli#cli_worker_replace) for VPC clusters. 
+1. Update each worker node in the worker pool by running the [`ibmcloud oc worker update`](/docs/openshift?topic=openshift-kubernetes-service-cli#worker-update-cli) for Classic clusters or [`ibmcloud oc worker replace`](/docs/openshift?topic=openshift-kubernetes-service-cli#worker-replace-cli) for VPC clusters. 
 
     Make sure that you have enough worker nodes to support your workload while you update or replace the relevant worker nodes. For more information, see [Updating VPC worker nodes](/docs/containers?topic=containers-update&interface=ui#vpc_worker_node) or [Updating classic worker nodes](/docs/containers?topic=containers-update&interface=ui#worker_node).
     {: tip}

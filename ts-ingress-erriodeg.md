@@ -2,7 +2,7 @@
 
 copyright:
   years: 2022, 2026
-lastupdated: "2026-07-24"
+lastupdated: "2026-07-30"
 
 
 keywords: openshift, ingress, troubleshoot ingress, ingress operator, ingress cluster operator, ingress operator degraded, erriodeg
@@ -65,7 +65,7 @@ oc get clusteroperator ingress
 
 1. **VPC only**: Ensure that you did not reach your LBaaS instance quota. For more information, see [Quotas and service limits](/docs/vpc?topic=vpc-quotas#alb-quotas) and the `ibmcloud is load-balancers` [command](/docs/vpc?topic=vpc-vpc-reference#lb-anchor).
 1. Ensure that your cluster masters are healthy. For more information, see [Reviewing master health](/docs/openshift?topic=openshift-debug_master#review-master-health).
-1. Refresh your cluster masters by running the `ibmcloud oc cluster master refresh` [command](/docs/openshift?topic=openshift-kubernetes-service-cli#cs_apiserver_refresh).
+1. Refresh your cluster masters by running the `ibmcloud oc cluster master refresh` [command](/docs/openshift?topic=openshift-kubernetes-service-cli#cluster-master-refresh-cli).
 
 ## One or more other status conditions indicate a degraded state: `CanaryChecksSucceeding=False`
 {: #ts-ingress-erriodeg-ccs-false}
@@ -73,13 +73,13 @@ oc get clusteroperator ingress
 1. [Access your {{site.data.keyword.redhat_openshift_notm}} cluster](/docs/openshift?topic=openshift-access_cluster).
 
 1. Ensure that the correct LoadBalancer service address is registered for your Ingress subdomain.
-    1. Run the `ibmcloud oc cluster get` [command](/docs/openshift?topic=openshift-kubernetes-service-cli#cs_cluster_get) to see your Ingress subdomain.
-    1. Run the `ibmcloud oc nlb-dns get` [command](/docs/openshift?topic=openshift-kubernetes-service-cli#cs_nlb-dns-get) to see the registered addresses.
+    1. Run the `ibmcloud oc cluster get` [command](/docs/openshift?topic=openshift-kubernetes-service-cli#cluster-get-cli) to see your Ingress subdomain.
+    1. Run the `ibmcloud oc nlb-dns get` [command](/docs/openshift?topic=openshift-kubernetes-service-cli#nlb-dns-get-cli) to see the registered addresses.
     1. Run the `oc get services -n openshift-ingress` command to get the actual load balancer addresses.
     1. Compare the registered and actual addresses and update the subdomain if it differs.
-        **VPC**: Run the `ibmcloud oc nlb-dns replace` [command](/docs/openshift?topic=openshift-kubernetes-service-cli#cs_nlb-dns-replace) to replace the current address.
-        **Classic**: Remove the currently registered addresses by running the `ibmcloud oc nlb-dns rm classic` [command](/docs/openshift?topic=openshift-kubernetes-service-cli#cs_nlb-dns-rm), then add the new addresses with the `ibmcloud oc nlb-dns add` [command](/docs/openshift?topic=openshift-kubernetes-service-cli#cs_nlb-dns-add).
-        **Satellite**: The actual addresses depend on your configuration: if you expose your worker nodes with an external load balancer, register the load balancer addresses, otherwise register the IP addresses assigned to the `router-external-default` service in the `openshift-ingress` namespace (use the `oc get services -n openshift-ingress router-external-default -o yaml` command to retrieve the addresses). Remove the currently registered addresses by running the `ibmcloud oc nlb-dns rm classic` [command](/docs/openshift?topic=openshift-kubernetes-service-cli#cs_nlb-dns-rm), then add the new addresses with the `ibmcloud oc nlb-dns add` [command](/docs/openshift?topic=openshift-kubernetes-service-cli#cs_nlb-dns-add).
+        **VPC**: Run the `ibmcloud oc nlb-dns replace` [command](/docs/openshift?topic=openshift-kubernetes-service-cli#nlb-dns-replace-cli) to replace the current address.
+        **Classic**: Remove the currently registered addresses by running the `ibmcloud oc nlb-dns rm classic` [command](/docs/openshift?topic=openshift-kubernetes-service-cli#nlb-dns-rm-classic-cli), then add the new addresses with the `ibmcloud oc nlb-dns add` [command](/docs/openshift?topic=openshift-kubernetes-service-cli#nlb-dns-add-cli).
+        **Satellite**: The actual addresses depend on your configuration: if you expose your worker nodes with an external load balancer, register the load balancer addresses, otherwise register the IP addresses assigned to the `router-external-default` service in the `openshift-ingress` namespace (use the `oc get services -n openshift-ingress router-external-default -o yaml` command to retrieve the addresses). Remove the currently registered addresses by running the `ibmcloud oc nlb-dns rm classic` [command](/docs/openshift?topic=openshift-kubernetes-service-cli#nlb-dns-rm-classic-cli), then add the new addresses with the `ibmcloud oc nlb-dns add` [command](/docs/openshift?topic=openshift-kubernetes-service-cli#nlb-dns-add-cli).
 
 1. **VPC only**: canary health check traffic originates from one of the worker nodes of your cluster.
     - Health check traffic originates from one of the worker nodes of your cluster. In the case of clusters with public service endpoint, the traffic is directed to the public floating IP address of the VPC Load Balancer instance, therefore it is required to have a Public Gateway attached to all the worker subnets. In the case of clusters with only private service endpoints, the traffic is directed to the VPC subnet IP address of the VPC Load Balancer, therefore a Public Gateway is not required. For clusters with public service endpoint:

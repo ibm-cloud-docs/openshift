@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2026
-lastupdated: "2026-07-24"
+lastupdated: "2026-07-30"
 
 
 keywords: kubernetes, openshift, user permissions, infrastructure credentials
@@ -133,7 +133,7 @@ Before you begin, [Log in to your account. If applicable, target the appropriate
         {: tip}
 
     2. Make sure that the [infrastructure credentials owner for the API key or the manually set account has the correct permissions](/docs/openshift?topic=openshift-iam-platform-access-roles).
-        You can change the [API key](/docs/openshift?topic=openshift-kubernetes-service-cli#cs_api_key_reset) or [manually set](/docs/openshift?topic=openshift-kubernetes-service-cli#cs_credentials_set) infrastructure credentials owner for the region and resource group.
+        You can change the [API key](/docs/openshift?topic=openshift-kubernetes-service-cli#api-key-reset-cli) or [manually set](/docs/openshift?topic=openshift-kubernetes-service-cli#credential-set-classic-cli) infrastructure credentials owner for the region and resource group.
         {: note}
         
 3. Try again to perform the infrastructure operation, such as deleting the cluster or worker node. If you still run into the permissions or credentials error, review these additional troubleshooting pages.
@@ -197,14 +197,14 @@ There are multiple reasons why this error can occur.
 If you know the classic infrastructure API key, specify it. If you do not know the infrastructure API key or you think it might have been deleted, follow these steps.
 {: tsResolve}
 
-1. [Reset the classic infrastructure API key](/docs/openshift?topic=openshift-kubernetes-service-cli#cs_credentials_set).
+1. [Reset the classic infrastructure API key](/docs/openshift?topic=openshift-kubernetes-service-cli#credential-set-classic-cli).
 
     ```sh
     ibmcloud oc credential set classic --infrastructure-api-key API_KEY --infrastructure-username USERNAME --region REGION [-q]
     ```
     {: pre}
 
-2. Run the command to [update the credential on the cluster](/docs/openshift?topic=openshift-kubernetes-service-cli#cs_api_key_reset). 
+2. Run the command to [update the credential on the cluster](/docs/openshift?topic=openshift-kubernetes-service-cli#api-key-reset-cli). 
 
     ```sh
     ibmcloud oc api-key reset --region REGION [-q]

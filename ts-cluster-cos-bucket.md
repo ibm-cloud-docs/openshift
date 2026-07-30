@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2026
-lastupdated: "2026-07-21"
+lastupdated: "2026-07-30"
 
 
 keywords: openshift
@@ -74,7 +74,7 @@ Manually set up your cluster to back up the internal registry to an {{site.data.
 3. Identify the {{site.data.keyword.cos_full_notm}} instance to use. You can create an instance or use an existing one.
     * [Create a standard {{site.data.keyword.cos_full_notm}} service, at least one bucket, and HMAC service credentials](/docs/openshift?topic=openshift-storage-cos-understand#create_cos_service).
     * To use an existing instance, make sure that you and the API key that is set for the region have permissions to the instance.
-4. Create a cluster with your {{site.data.keyword.cos_full_notm}} instance ID. For more information, see the [CLI reference](/docs/openshift?topic=openshift-kubernetes-service-cli#cli_cluster-create-vpc-gen2).
+4. Create a cluster with your {{site.data.keyword.cos_full_notm}} instance ID. For more information, see the [CLI reference](/docs/openshift?topic=openshift-kubernetes-service-cli#cluster-create-vpc-gen2-cli).
     ```sh
     ibmcloud oc cluster create vpc-gen2 --name NAME --zone ZONE --vpc-id VPC_ID --subnet-id VPC_SUBNET_ID --flavor WORKER_FLAVOR --cos-instance COS_CRN --workers 3
     ```
