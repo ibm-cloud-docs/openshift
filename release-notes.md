@@ -60,12 +60,12 @@ Worker node fix packs are available for {{site.data.keyword.openshiftlong_notm}}
 :   :   Replace the worker node.
 :   VPC Bare Metal
 :   :   Reload the worker node.
-:   [Version 4.16 change log](/docs/openshift?topic=openshift-changelog_416)
 :   [Version 4.21 change log](/docs/openshift?topic=openshift-changelog_421)
-:   [Version 4.18 change log](/docs/openshift?topic=openshift-changelog_418)
 :   [Version 4.20 change log](/docs/openshift?topic=openshift-changelog_420)
 :   [Version 4.19 change log](/docs/openshift?topic=openshift-changelog_419)
+:   [Version 4.18 change log](/docs/openshift?topic=openshift-changelog_418)
 :   [Version 4.17 change log](/docs/openshift?topic=openshift-changelog_417)
+:   [Version 4.16 change log](/docs/openshift?topic=openshift-changelog_416)
 
 
 IBM Object CSI Driver cluster add-on patch updates.
