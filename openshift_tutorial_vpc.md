@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2026
-lastupdated: "2026-07-10"
+lastupdated: "2026-07-30"
 
 
 keywords: kubernetes, openshift, red hat, red hat openshift
@@ -117,7 +117,7 @@ Create an {{site.data.keyword.cloud_notm}} Virtual Private Cloud (VPC) environme
         *  **Public gateways**: Include the public gateway that you previously created. You must have one public gateway for each zone in your cluster.
 
             ```sh
-            ibmcloud is subnet-create mysubnet1 <vpc_ID> --zone us-south-1 --ipv4-address-count 256 --pgw <gateway_ID>
+            ibmcloud is subnet-create mysubnet1 VPC_ID --zone us-south-1 --ipv4-address-count 256 --pgw GATEWAY_ID
             ```
             {: pre}
     
@@ -133,7 +133,7 @@ Create an {{site.data.keyword.cloud_notm}} Virtual Private Cloud (VPC) environme
 4. Create a cluster in your VPC in the same zone as the subnet.
     The following command creates a version 4.21 cluster in Dallas with the minimum configuration of 2 worker nodes that have at least 4 cores and 16 GB memory so that default {{site.data.keyword.redhat_openshift_notm}} components can deploy. For more information about the command options, see the [`cluster create vpc-gen2` CLI reference docs](/docs/openshift?topic=openshift-kubernetes-service-cli#cli_cluster-create-vpc-gen2).
     ```sh
-    ibmcloud oc cluster create vpc-gen2 --name myvpc-cluster --zone us-south-1 --version 4.21_openshift --flavor bx2.4x16 --workers 2 [--operating-system REDHAT_8_64] --vpc-id <vpc_ID> --subnet-id <vpc_subnet_ID> --cos-instance <cos_crn> --disable-outbound-traffic-protection
+    ibmcloud oc cluster create vpc-gen2 --name myvpc-cluster --zone us-south-1 --version 4.21_openshift --flavor bx2.4x16 --workers 2 [--operating-system REDHAT_8_64] --vpc-id VPC_ID --subnet-id VPC_SUBNET_ID --cos-instance COS_CRN --disable-outbound-traffic-protection
     ```
     {: pre}
 

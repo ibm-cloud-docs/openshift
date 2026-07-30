@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2026
-lastupdated: "2026-07-10"
+lastupdated: "2026-07-30"
 
 
 keywords: openshift, clusters, access, endpoint
@@ -32,7 +32,7 @@ After your {{site.data.keyword.openshiftlong}} cluster is created, you can begin
 1. [Install the required CLI tools](/docs/openshift?topic=openshift-cli-install). For quick access to test features in your cluster, you can also use the [{{site.data.keyword.cloud-shell_notm}}](/docs/cloud-shell?topic=cloud-shell-shell-ui).
 2. [Create your {{site.data.keyword.redhat_openshift_notm}} cluster](/docs/openshift?topic=openshift-clusters).
 3. If your network is protected by a company firewall, [allow access](/docs/openshift?topic=openshift-firewall#corporate) to the {{site.data.keyword.cloud_notm}} and {{site.data.keyword.openshiftlong_notm}} API endpoints and ports. For VPC clusters with only the private cloud service endpoint enabled, you can't test the connection to your cluster until you [configure a VPC VPN with the cloud service endpoint subnet](#vpc_private_se).
-4. Check that your cluster is in a healthy state by running `ibmcloud oc cluster get -c <cluster_name_or_ID>`. If your cluster is not in a healthy state, review the [Debugging clusters](/docs/openshift?topic=openshift-debug_clusters) guide for help. For example, if your cluster is provisioned in an account that is protected by a firewall gateway appliance, you must [configure your firewall settings to allow outgoing traffic to the appropriate ports and IP addresses](/docs/openshift?topic=openshift-firewall).
+4. Check that your cluster is in a healthy state by running `ibmcloud oc cluster get -c CLUSTER_NAME_OR_ID`. If your cluster is not in a healthy state, review the [Debugging clusters](/docs/openshift?topic=openshift-debug_clusters) guide for help. For example, if your cluster is provisioned in an account that is protected by a firewall gateway appliance, you must [configure your firewall settings to allow outgoing traffic to the appropriate ports and IP addresses](/docs/openshift?topic=openshift-firewall).
 5. Find your cluster's service endpoint.
     * **Classic or VPC clusters**: In the output of the cluster details from the previous step, check the **Public** or **Private Service Endpoint** URL of the cluster.
         *  Public Service Endpoint URL only: Continue with [Accessing clusters through the public cloud service endpoint](#access_public_se).
@@ -77,7 +77,7 @@ Choose from the following options.
     1. Make sure that you have the [**Administrator** platform access role for the cluster](/docs/openshift?topic=openshift-iam-platform-access-roles).
     2. Set your command line context for the cluster and download the TLS certificates and permission files for the administrator.
         ```sh
-        ibmcloud oc cluster config -c <cluster_name_or_ID> --admin
+        ibmcloud oc cluster config -c CLUSTER_NAME_OR_ID --admin
         ```
         {: pre}
 
@@ -85,7 +85,7 @@ Choose from the following options.
 *   **Log in with {{site.data.keyword.cloud_notm}} passcode**:
     1. Get the **Master URL** of your cluster in the output of the following command.
         ```sh
-        ibmcloud oc cluster get -c <cluster_name_or_ID>
+        ibmcloud oc cluster get -c CLUSTER_NAME_OR_ID
         ```
         {: pre}
 
@@ -184,7 +184,7 @@ The {{site.data.keyword.redhat_openshift_notm}} master is accessible through the
 
 2. Get the private cloud service endpoint URL and port for your cluster.
     ```sh
-    ibmcloud oc cluster get -c <cluster_name_or_ID>
+    ibmcloud oc cluster get -c CLUSTER_NAME_OR_ID
     ```
     {: pre}
 
@@ -287,7 +287,7 @@ The {{site.data.keyword.redhat_openshift_notm}} master is accessible through the
         1. Make sure that you have the [**Administrator** platform access role for the cluster](/docs/openshift?topic=openshift-iam-platform-access-roles).
         2. Set your command line context for the cluster and download the TLS certificates and permission files for the administrator.
             ```sh
-            ibmcloud oc cluster config -c <cluster_name_or_ID> --admin --endpoint private
+            ibmcloud oc cluster config -c CLUSTER_NAME_OR_ID --admin --endpoint private
             ```
             {: pre}
 
@@ -295,7 +295,7 @@ The {{site.data.keyword.redhat_openshift_notm}} master is accessible through the
     * **Log in with {{site.data.keyword.cloud_notm}} passcode**:
         1. Get the **Private Service Endpoint URL** of your cluster in the output of the following command.
             ```sh
-            ibmcloud oc cluster get -c <cluster_name_or_ID>
+            ibmcloud oc cluster get -c CLUSTER_NAME_OR_ID
             ```
             {: pre}
 
@@ -363,7 +363,7 @@ If you can't or don't want to open the {{site.data.keyword.redhat_openshift_notm
     1. Make sure that you have the [**Administrator** IAM platform access role for the cluster](/docs/openshift?topic=openshift-iam-platform-access-roles).
     2. Set your command line context for the cluster and download the TLS certificates and permission files for the administrator. For more information, see the [CLI documentation](/docs/openshift?topic=openshift-kubernetes-service-cli#cs_cluster_config).
         ```sh
-        ibmcloud oc cluster config -c <cluster_name_or_ID> --admin
+        ibmcloud oc cluster config -c CLUSTER_NAME_OR_ID --admin
         ```
         {: pre}
 
@@ -381,7 +381,7 @@ To connect to your {{site.data.keyword.satelliteshort}} cluster by using the Lin
 1. Make sure that you have the [**Administrator** IAM platform access role for the cluster](/docs/openshift?topic=openshift-iam-platform-access-roles).
 2. Set your command line context for the cluster by using the Link endpoint and download the TLS certificates and permission files for the administrator. For more information, see the [CLI documentation](/docs/openshift?topic=openshift-kubernetes-service-cli#cs_cluster_config).
     ```sh
-    ibmcloud oc cluster config -c <cluster_name_or_ID> --endpoint link --admin
+    ibmcloud oc cluster config -c CLUSTER_NAME_OR_ID --endpoint link --admin
     ```
     {: pre}
 
@@ -426,25 +426,25 @@ Making your location and cluster subdomains available outside of your hosts' pri
 
 1. Get the **Hostname** for your cluster in the format `<service_name>-<project>.<cluster_name>-<random_hash>-0000.upi.containers.appdomain.cloud` and note the private **IP(s)** that were automatically registered.
     ```sh
-    ibmcloud oc nlb-dns ls --cluster <cluster_name_or_ID>
+    ibmcloud oc nlb-dns ls --cluster CLUSTER_NAME_OR_ID
     ```
     {: pre}
 
 1. Add the public IP addresses of the hosts that are assigned as worker nodes to this cluster to your cluster's subdomain. Repeat this command for each host's public IP address.
     ```sh
-    ibmcloud oc nlb-dns add --ip <public_IP> --cluster <cluster_name_or_ID> --nlb-host <hostname>
+    ibmcloud oc nlb-dns add --ip <public_IP> --cluster CLUSTER_NAME_OR_ID --nlb-host <hostname>
     ```
     {: pre}
 
 1. Remove the private IP addresses from your cluster's subdomain. Repeat this command for all private IP addresses that you retrieved earlier.
     ```sh
-    ibmcloud oc nlb-dns rm classic --ip <private_IP> --cluster <cluster_name_or_ID> --nlb-host <hostname>
+    ibmcloud oc nlb-dns rm classic --ip <private_IP> --cluster CLUSTER_NAME_OR_ID --nlb-host <hostname>
     ```
     {: pre}
 
 1. Verify that the public IP addresses are registered with your cluster subdomain.
     ```sh
-    ibmcloud oc nlb-dns ls --cluster <cluster_name_or_ID>
+    ibmcloud oc nlb-dns ls --cluster CLUSTER_NAME_OR_ID
     ```
     {: pre}
     
@@ -472,7 +472,7 @@ For clusters that run version [4.13]{: tag-red}: If you enabled only the private
         1. Make sure that you have the [**Administrator** platform access role for the cluster](/docs/openshift?topic=openshift-iam-platform-access-roles).
         2. Set your command line context for the cluster and download the TLS certificates and permission files for the administrator.
             ```sh
-            ibmcloud oc cluster config -c <cluster_name_or_ID> --admin --endpoint vpe
+            ibmcloud oc cluster config -c CLUSTER_NAME_OR_ID --admin --endpoint vpe
             ```
             {: pre}
 
@@ -480,7 +480,7 @@ For clusters that run version [4.13]{: tag-red}: If you enabled only the private
     * **Log in with {{site.data.keyword.cloud_notm}} passcode**:
         1. Get the **VPE** address and the master **URL** in the output of the following command.
             ```sh
-            ibmcloud oc cluster get -c <cluster_name_or_ID>
+            ibmcloud oc cluster get -c CLUSTER_NAME_OR_ID
             ```
             {: pre}
 
@@ -1057,7 +1057,7 @@ You can create an {{site.data.keyword.cloud_notm}} IAM API key and then use the 
 
     2. Download and add the `kubeconfig` configuration file for your cluster to your existing `kubeconfig` in `~/.kube/config` or the last file in the `KUBECONFIG` environment variable. **Note**: If you enabled the private cloud service endpoint and want to use it for the cluster context, include the `--endpoint private` option. To use the private cloud service endpoint to connect to your cluster, you must be in your {{site.data.keyword.cloud_notm}} private network or connected to the private network through a [VPC VPN connection](/docs/vpc?topic=vpc-vpn-onprem-example), or for classic infrastructure, a [classic VPN connection](/docs/iaas-vpn?topic=iaas-vpn-getting-started) or [{{site.data.keyword.dl_full_notm}}](/docs/dl?topic=dl-get-started-with-ibm-cloud-dl).
         ```sh
-        ibmcloud oc cluster config -c <cluster_name_or_ID> [--endpoint private]
+        ibmcloud oc cluster config -c CLUSTER_NAME_OR_ID [--endpoint private]
         ```
         {: pre}
 
@@ -1075,7 +1075,7 @@ You can create an {{site.data.keyword.cloud_notm}} IAM API key and then use the 
 
     1. Get the **Master URL** of your cluster.
         ```sh
-        ibmcloud oc cluster get -c <cluster_name_or_ID>
+        ibmcloud oc cluster get -c CLUSTER_NAME_OR_ID
         ```
         {: pre}
 
@@ -1205,7 +1205,7 @@ You can create an {{site.data.keyword.cloud_notm}} IAM service ID, make an API k
     2. Download and add the `kubeconfig` configuration file for your cluster to your existing `kubeconfig` in `~/.kube/config` or the last file in the `KUBECONFIG` environment variable. **Note**: If you enabled the private cloud service endpoint and want to use it for the cluster context, include the `--endpoint private` option. To use the private cloud service endpoint to connect to your cluster, you must be in your {{site.data.keyword.cloud_notm}} private network or connected to the private network through a [VPC VPN connection](/docs/vpc?topic=vpc-vpn-onprem-example), or for classic infrastructure, a [classic VPN connection](/docs/iaas-vpn?topic=iaas-vpn-getting-started) or [{{site.data.keyword.dl_full_notm}}](/docs/dl?topic=dl-get-started-with-ibm-cloud-dl).
     
         ```sh
-        ibmcloud oc cluster config -c <cluster_name_or_ID> [--endpoint private]
+        ibmcloud oc cluster config -c CLUSTER_NAME_OR_ID [--endpoint private]
         ```
         {: pre}
 

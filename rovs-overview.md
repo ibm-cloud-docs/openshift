@@ -2,7 +2,7 @@
 
 copyright:
   years: 2026, 2026
-lastupdated: "2026-07-09"
+lastupdated: "2026-07-30"
 
 keywords: openshift, virtualization service, rovs, virtual machines, vms, bare metal, pre-configured
 
@@ -78,13 +78,13 @@ Virtualization Service supports specific VPC bare metal flavors optimized for vi
 
 To check bare metal flavor availability in the CLI:
 ```sh
-ibmcloud ks flavors --zone <zone> --provider vpc-gen2 | grep metal
+ibmcloud ks flavors --zone ZONE --provider vpc-gen2 | grep metal
 ```
 {: pre}
 
 To verify that a specific flavor supports Virtualization Service, use the following command and check for the `openshift-vs` tag in the output:
 ```sh
-ibmcloud ks flavor get --flavor <flavor> --zone <zone> --provider vpc-gen2
+ibmcloud ks flavor get --flavor FLAVOR --zone ZONE --provider vpc-gen2
 ```
 {: pre}
 

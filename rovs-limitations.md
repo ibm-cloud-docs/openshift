@@ -2,7 +2,7 @@
 
 copyright:
   years: 2026, 2026
-lastupdated: "2026-07-01"
+lastupdated: "2026-07-30"
 
 keywords: openshift, virtualization service, rovs, limitations, restrictions, constraints
 
@@ -93,7 +93,7 @@ Scaling
 Availability
 :   Bare metal capacity might not be available in all zones. Check before creating:
     ```sh
-    ibmcloud ks flavors --zone <zone> --provider vpc-gen2 | grep metal
+    ibmcloud ks flavors --zone ZONE --provider vpc-gen2 | grep metal
     ```
     {: pre}
 

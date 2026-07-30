@@ -2,7 +2,7 @@
 
 copyright:
   years: 2025, 2026
-lastupdated: "2026-04-30"
+lastupdated: "2026-07-30"
 
 
 keywords: openshift, console, web, connect, private
@@ -62,9 +62,9 @@ Verify that your VPC and cluster are properly configured. An incorrect configura
 Follow these steps to gather the cluster information needed for troubleshooting. The outputs you gather with these commands are used in later steps. 
 
 1. Find the cluster API server URL. In later commands, this URL is referred to as `${CLUSTER_APISERVER_URL}`.
-    1. Run the `ibmcloud ks cluster get -c <cluster-id>` command. 
+    1. Run the `ibmcloud ks cluster get -c CLUSTER_ID` command.
         ```sh
-        ibmcloud oc cluster get -c <cluster-id>
+        ibmcloud oc cluster get -c CLUSTER_ID
         ```
         {: pre}
         
@@ -72,7 +72,7 @@ Follow these steps to gather the cluster information needed for troubleshooting.
 
 
 2. Find the cluster OAuth URL. In later commands, this URL is referred to as `${CLUSTER_OAUTH_URL}`.
-    1. Run the `kubectl get --raw /.well-known/oauth-authorization-server | grep issuer` command. Do not use the `ibmcloud oc cluster get -c <CLUSTER-ID>`, as this command might return a different URL. 
+    1. Run the `kubectl get --raw /.well-known/oauth-authorization-server | grep issuer` command. Do not use the `ibmcloud oc cluster get -c CLUSTER_ID`, as this command might return a different URL.
         ```sh
         kubectl get --raw /.well-known/oauth-authorization-server | grep issuer
         ```
@@ -83,9 +83,9 @@ Follow these steps to gather the cluster information needed for troubleshooting.
         - If the VPE gateway is used for OAuth: `https://<CLUSTERID>.vpe.private.<REGION>.containers.cloud.ibm.com:<ZZZZZ>`.
 
 3. Find the Ingress subdomain. In later commands, this subdomain is referred to as `${CONSOLE_LOAD_BALANCER}`.
-    1. Run the `ibmcloud oc cluster get -c <CLUSTER-ID>` command. 
+    1. Run the `ibmcloud oc cluster get -c CLUSTER_ID` command.
         ```sh
-        ibmcloud oc cluster get -c <CLUSTER-ID>
+        ibmcloud oc cluster get -c CLUSTER_ID
         ```
         {: pre}
 
@@ -99,8 +99,8 @@ Follow these steps to check the connections described in the [connection flow](#
 1. Verify that Ingress is healthy and that the router and console pods are healthy. 
     1. Run the commands.
         ```sh
-        ibmcloud oc cluster get -c <CLUSTERID>
-        ibmcloud oc ingress status-report get -c <CLUSTERID>
+        ibmcloud oc cluster get -c CLUSTERID
+        ibmcloud oc ingress status-report get -c CLUSTERID
         ```
         {: pre}
 

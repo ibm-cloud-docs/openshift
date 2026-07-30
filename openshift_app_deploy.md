@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2026
-lastupdated: "2026-07-10"
+lastupdated: "2026-07-30"
 
 
 keywords: kubernetes, openshift
@@ -76,13 +76,13 @@ To deploy apps to specific worker nodes,
 
 1. Get the ID of the worker pool that you want to deploy app pods to.
     ```sh
-    ibmcloud oc worker-pool ls --cluster <cluster_name_or_ID>
+    ibmcloud oc worker-pool ls --cluster CLUSTER_NAME_OR_ID
     ```
     {: pre}
 
 2. List the worker nodes that are in the worker pool, and note one of the **Private IP** addresses.
     ```sh
-    ibmcloud oc worker ls --cluster <cluster_name_or_ID> --worker-pool <worker_pool_name_or_ID>
+    ibmcloud oc worker ls --cluster CLUSTER_NAME_OR_ID --worker-pool WORKER_POOL_NAME_OR_ID
     ```
     {: pre}
 
@@ -177,7 +177,7 @@ To deploy apps to specific worker nodes,
     3. List the worker nodes in the worker pool that you designated in your app deployment.
 
         ```sh
-        ibmcloud oc worker ls --cluster <cluster_name_or_ID> --worker-pool <worker_pool_name_or_ID>
+        ibmcloud oc worker ls --cluster CLUSTER_NAME_OR_ID --worker-pool WORKER_POOL_NAME_OR_ID
         ```
         {: pre}
 

@@ -2,7 +2,7 @@
 
 copyright:
   years: 2026, 2026
-lastupdated: "2026-06-26"
+lastupdated: "2026-07-30"
 
 keywords: openshift, virtualization service, rovs, addon, openshift virtualization, hyperconverged, nmstate, node maintenance
 
@@ -101,7 +101,7 @@ If the feature flag is enabled for your account, you can view information about 
 List all add-ons that are installed in your Virtualization Service cluster.
 
 ```sh
-ibmcloud ks cluster addon ls --cluster <cluster_name_or_id>
+ibmcloud ks cluster addon ls --cluster CLUSTER_NAME_OR_ID
 ```
 {: pre}
 

@@ -2,7 +2,7 @@
 
 copyright:
   years: 2026, 2026
-lastupdated: "2026-06-26"
+lastupdated: "2026-07-30"
 
 keywords: openshift, virtualization service, rovs, manage, add-ons, worker nodes, maintenance
 
@@ -54,7 +54,7 @@ OpenShift Data Foundation (ODF)
 List all add-ons in your cluster:
 
 ```sh
-ibmcloud ks cluster addon ls --cluster <cluster-name>
+ibmcloud ks cluster addon ls --cluster CLUSTER_NAME
 ```
 {: pre}
 

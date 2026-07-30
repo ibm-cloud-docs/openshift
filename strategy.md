@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2026
-lastupdated: "2026-07-23"
+lastupdated: "2026-07-30"
 
 keywords: kubernetes, kubernetes environment, moving to kubernetes, moving to containers, clusters, cluster sizing, openshift, {{site.data.keyword.openshiftlong_notm}}
 
@@ -192,7 +192,7 @@ As you were choosing a cluster type, you already thought about how worker node f
 
     - **Bare metal (physical) machines**: If you need high-performance computing for data- or RAM-intensive workloads, consider creating clusters with bare metal worker nodes. Because you have full control over the isolation and resource consumption for your workloads, you can use bare metal machines to achieve HIPAA and PCI compliance for your environment. Bare metal gives you direct access to the physical resources on the machine, such as the memory or CPU. This setup eliminates the virtual machine hypervisor that allocates physical resources to virtual machines that run on the host. Instead, all a bare metal machine's resources are dedicated exclusively to the worker, so you don't need to worry about "noisy neighbors" sharing resources or slowing down performance. Physical flavors have more local storage than virtual, and some have RAID to increase data availability. Local storage on the worker node is for short-term processing only, and the primary and auxiliary disks are wiped when you update or reload the worker node. Bare metal workers are available for classic clusters and for VPC bare metal configurations.
 
-      Bare metal servers are billed monthly. If you cancel a bare metal server before the end of the month, you are charged through the end of that month. After you order or cancel a bare metal server, the process is completed manually in your IBM Cloud infrastructure account. Therefore, it can take more than one business day to complete.
+      Billing for bare metal worker nodes differs by infrastructure type. Classic bare metal servers are billed monthly. If you cancel a classic bare metal server before the end of the month, you are charged through the end of that month. After you order or cancel a classic bare metal server, the process is completed manually in your IBM Cloud infrastructure account, so it can take more than one business day to complete. VPC bare metal servers are billed hourly with no minimum commitment period.
       {: important}
 
     - **SDS machines**: Software-defined storage (SDS) flavors have additional raw disks for physical local storage. Unlike the primary and auxiliary local disk, these raw disks are not wiped during a worker node update or reload. Because data is co-located with the compute node, SDS machines are suited for high-performance workloads. Software-defined storage flavor are available for classic clusters only and are not supported in VPC clusters. 

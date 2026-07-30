@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2026
-lastupdated: "2026-05-26"
+lastupdated: "2026-07-30"
 
 
 keywords: openshift
@@ -57,13 +57,13 @@ Typically, after the cluster is ready, the Ingress subdomain and secret are crea
 
 1. [Log in to your cluster](/docs/openshift?topic=openshift-access_cluster). Because the subdomain is not available, the {{site.data.keyword.redhat_openshift_notm}} console can't open. Instead, you can set the cluster context with the `--admin` option through the CLI.
     ```sh
-    ibmcloud oc cluster config -c <cluster_name_or_ID> --admin
+    ibmcloud oc cluster config -c CLUSTER_NAME_OR_ID --admin
     ```
     {: pre}
 
 2. Verify that the worker nodes have a **State** of `normal` and a **Status** of `Ready`. After you create the cluster, it can take up to 20 minutes for the worker nodes to be ready.
     ```sh
-    ibmcloud oc worker ls -c <cluster_name_or_ID>
+    ibmcloud oc worker ls -c CLUSTER_NAME_OR_ID
     ```
     {: pre}
 

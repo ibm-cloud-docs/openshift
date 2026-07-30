@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2026
-lastupdated: "2026-07-15"
+lastupdated: "2026-07-30"
 
 
 keywords: kubernetes, registry, pull secret, secrets, openshift
@@ -195,7 +195,7 @@ To deploy containers that use encrypted images:
 1. Enable the Image Key Synchronizer add-on.
 
     ```sh
-    ibmcloud oc cluster addon enable image-key-synchronizer -c <cluster_name_or_ID>
+    ibmcloud oc cluster addon enable image-key-synchronizer -c CLUSTER_NAME_OR_ID
     ```
     {: pre}
 
@@ -232,7 +232,7 @@ To deploy containers that use encrypted images:
         2. Use the {{site.data.keyword.keymanagementserviceshort}} CLI plug-in to wrap the base64-encoded private key with your root key. In the output, copy the ciphertext of the wrapped private key.
 
             ```sh
-            ibmcloud kp key wrap <root_key_ID> -p <base64_encoded_private_key>
+            ibmcloud kp key wrap ROOT_KEY_ID -p BASE64_ENCODED_PRIVATE_KEY
             ```
             {: pre}
 

@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2026
-lastupdated: "2026-07-27"
+lastupdated: "2026-07-30"
 
 
 keywords: openshift, cli reference, kubernetes cli, openshift cli, {{site.data.keyword.openshiftlong_notm}}
@@ -46,7 +46,7 @@ The following tables list the `ibmcloud oc` command groups. For a complete list 
 | Command group | Description |
 | --- | --- |
 | [Cluster commands](#cluster) | Create, view, and modify clusters and cluster settings, such as add-on, subnet, and master settings. |
-| [Worker commands](#worker_node_commands) | View and modify worker nodes for a cluster.  |
+| [Worker commands](#worker_node_commands) | View and modify worker nodes for a cluster. |
 | [Worker-pool commands](#worker-pool) | View and modify worker pools for a cluster. |
 | [Zone commands](#zone) | List availability zones and modify the zones attached to a worker pool. |
 | [Ingress commands](#alb-commands) | View and modify Ingress services and settings. | 
@@ -58,8 +58,8 @@ The following tables list the `ibmcloud oc` command groups. For a complete list 
 | [KMS commands](#ks_kms) | Enable a key management service (KMS) provider in your cluster to encrypt the etcd component and Kubernetes secrets with a root key that you control. |
 | [Quota commands](#cs_quota) | View the quota and limits for cluster-related resources in your IBM Cloud account. |
 | [Subnets commands](#cs_subnets) | List available subnets in your IBM Cloud infrastructure account. |
-| [VLAN commands](#vlan) | List public and private VLANs for a zone and view the VLAN spanning status.|
-| [VPCS commands](#vpc-ls-cli) | List all VPCs in the targeted resource group. If no resource group is targeted, then all VPCs in the account are listed.|
+| [VLAN commands](#vlan) | List public and private VLANs for a zone and view the VLAN spanning status. |
+| [VPCS commands](#vpc-ls-cli) | List all VPCs in the targeted resource group. If no resource group is targeted, then all VPCs in the account are listed. |
 | [Flavor commands](#cs_machine_types) | Get the information of a flavor or list available flavors for a zone. |
 | [Locations commands](#cs_supported-locations) | List the locations that are supported by IBM Cloud Kubernetes Service. |
 | [Messages commands](#cs_messages) | View the current user messages. |
@@ -81,6 +81,7 @@ Create, view, and modify clusters and cluster settings, such as add-on, subnet, 
 
 Disable a managed add-on in an existing cluster. This command must be combined with one of the following subcommands for the managed add-on that you want to disable.
 {: shortdesc}
+
 
 #### `ibmcloud oc cluster addon disable image-key-synchronizer`
 {: #cs_cluster_addon_disable_image-key-synchronizer}
@@ -232,6 +233,7 @@ Enable a managed add-on in an existing cluster. This command must be combined wi
 {: shortdesc}
 
 
+
 #### `ibmcloud oc cluster addon enable image-key-synchronizer`
 {: #cs_cluster_addon_enable_image-key-synchronizer}
 
@@ -364,6 +366,15 @@ Minimum required permissions
 :    Optional: Do not show the message of the day or update reminders.
 
 
+#### Example `cluster addon get` command
+{: #cluster-addon-get-example}
+
+```sh
+ibmcloud oc cluster addon get --addon istio --cluster my_cluster
+```
+{: pre}
+
+
 ### `ibmcloud oc cluster addon ls`
 {: #cs_cluster_addons}
 
@@ -373,7 +384,7 @@ List any managed add-ons that are enabled in a cluster.
 {: shortdesc}
 
 ```sh
-ibmcloud oc cluster addon ls --cluster CLUSTER
+ibmcloud oc cluster addon ls --cluster CLUSTER [--output OUTPUT] [-q]
 ```
 {: pre}
 
@@ -388,6 +399,15 @@ Minimum required permissions
 
 `--output json`
 :    Optional: Prints the command output in JSON format.
+
+
+#### Example `cluster addon ls` command
+{: #cluster-addon-ls-example}
+
+```sh
+ibmcloud oc cluster addon ls --cluster my_cluster
+```
+{: pre}
 
 
 ### `ibmcloud oc cluster addon options`
@@ -420,6 +440,15 @@ Minimum required permissions
 
 `--version VERSION`
 :    Optional: Specify an add-on version to display options for. If no version is specified, the default version's options are displayed. To list available add-on versions, run `ibmcloud oc cluster addon versions`.
+
+
+#### Example `cluster addon options` command
+{: #cluster-addon-options-example}
+
+```sh
+ibmcloud oc cluster addon options --addon istio
+```
+{: pre}
 
 
 ### `ibmcloud oc cluster addon update`
@@ -463,7 +492,7 @@ View a list of supported versions for managed add-ons in {{site.data.keyword.con
 {: shortdesc}
 
 ```sh
-ibmcloud oc cluster addon versions [--addon ADD-ON_NAME] [--offering OFFERING] [--show-defaults] [--output json] [-q]
+ibmcloud oc cluster addon versions [--addon ADDON] [--offering OFFERING] [--output OUTPUT] [-q] [--show-defaults]
 ```
 {: pre}
 
@@ -548,7 +577,7 @@ View the details of a cluster's CA certificate.
 {: shortdesc}
 
 ```sh
-ibmcloud oc cluster ca get --cluster CLUSTER [ --output OUTPUT] [-q]
+ibmcloud oc cluster ca get --cluster CLUSTER [--output OUTPUT] [-q]
 ```
 {: pre}
 
@@ -664,7 +693,7 @@ After logging in to {{site.data.keyword.cloud_notm}}, download the Kubernetes co
 The `kubeconfig` file is merged to your existing `kubeconfig` file in `~/.kube/config` (`<user_profile>/.kube/config` in Windows), or to the last file that is set by the `KUBECONFIG` environment variable in your command line session. After you run `ibmcloud oc cluster config`, you can interact with your cluster immediately, and quickly change the context to other clusters in the Kubernetes context.
 
 ```sh
-ibmcloud oc cluster config --cluster CLUSTER [--admin] [--endpoint ENDPOINT_TYPE] [--network] [--skip-rbac] [-q] [-o]
+ibmcloud oc cluster config --cluster CLUSTER [--admin] [--endpoint ENDPOINT] [--network] [--output OUTPUT] [-q] [--skip-rbac]
 ```
 {: pre}
 
@@ -700,7 +729,7 @@ Minimum required permissions
 `-q`
 :    Optional: Do not show the message of the day or update reminders.
 
-`-o`
+`-o`, `--output OUTPUT`
 :    Optional: Prints the command output in YAML, JSON, or `.zip` format.
 
 
@@ -722,11 +751,12 @@ ibmcloud oc cluster config --cluster my_cluster
 Create a cluster with worker nodes on classic infrastructure.
 {: shortdesc}
 
+
 {{site.data.keyword.openshiftlong_notm}} clusters are created with a public only or both a public and private service endpoint. Public service endpoints can't be disabled, and therefore, you can't convert a public {{site.data.keyword.redhat_openshift_notm}} cluster to a private one. If you want your cluster to remain private, see [Planning your cluster network setup](/docs/openshift?topic=openshift-plan_vpc_basics).
 {: important}
 
 ```sh
-ibmcloud oc cluster create classic [--hardware HARDWARE] --zone ZONE --flavor FLAVOR --name NAME  [--operating-system SYSTEM] [--version MAJOR.MINOR.PATCH] [--no-subnet] [--sm-group GROUP] [--sm-instance INSTANCE] [--private-vlan PRIVATE_VLAN] [--public-vlan PUBLIC_VLAN]  [--private-service-endpoint] [--public-service-endpoint] --workers WORKER [--disable-disk-encrypt] [--pod-subnet SUBNET] [--service-subnet SUBNET] [--skip-advance-permissions-check] [--entitlement ENTITLEMENT][-q]
+ibmcloud oc cluster create classic --flavor FLAVOR --name NAME --zone ZONE [--disable-disk-encrypt] [--entitlement ENTITLEMENT] [--hardware HARDWARE] [--location LOCATION] [--no-subnet] [--operating-system SYSTEM] [--pod-subnet SUBNET] [--private-service-endpoint] [--private-vlan VLAN] [--public-service-endpoint] [-q] [--service-subnet SUBNET] [--skip-advance-permissions-check] [--sm-group GROUP] [--sm-instance INSTANCE] [--version VERSION] [--workers COUNT] (--private-only | --public-vlan VLAN)
 ```
 {: pre}
 
@@ -811,7 +841,7 @@ Minimum required permissions
 
 :    Note that the pod and service subnets can't overlap. The service subnet is in the 172.21.0.0/16 range by default.
 
-`--service-subnet *SUBNET`{: #service-subnet}
+`--service-subnet SUBNET`{: #service-subnet}
 :    All services that are deployed to the cluster are assigned a private IP address in the 172.21.0.0/16 range by default. If you plan to connect your cluster to on-premises networks through {{site.data.keyword.dl_full_notm}} or a VPN service, you can avoid subnet conflicts by specifying a custom subnet CIDR that provides the private IP addresses for your services.
 :    The subnet must be specified in CIDR format with a size of at least `/24`, which allows a maximum of 255 services in the cluster, or larger. The subnet that you choose must be within one of the following ranges:
      - `172.17.0.0 - 172.17.255.255`
@@ -877,7 +907,7 @@ Your VPC cluster is created with both a public and a private cloud service endpo
 {: important}
 
 ```sh
-ibmcloud oc cluster create vpc-gen2 --name NAME --zone ZONE --vpc-id VPC_ID --subnet-id VPC_SUBNET_ID --flavor WORKER_FLAVOR [--cluster-security-group GROUP_ID] [--cni CNI] [--operating-system SYSTEM] [--version VERSION] --cos-instance COS_CRN --workers NUMBER_WORKERS_PER_ZONE [--dedicated-host-pool POOL] [--disable-outbound-traffic-protection] [--disable-public-service-endpoint] [--pod-subnet SUBNET] [--service-subnet SUBNET] [--entitlement ENTITLEMENT] [--kms-account-id ID] [--kms-instance KMS_INSTANCE_ID] [--crk ROOT_KEY_ID][--skip-advance-permissions-check] [--sm-group GROUP] [--sm-instance INSTANCE] [-q] [--secondary-storage STORAGE]
+ibmcloud oc cluster create vpc-gen2 --flavor FLAVOR --name NAME --subnet-id ID --vpc-id ID --zone ZONE [--cluster-security-group GROUP ...] [--cni CNI] [--cos-instance INSTANCE] [--crk CRK] [--disable-outbound-traffic-protection] [--disable-public-service-endpoint] [--entitlement ENTITLEMENT] [--kms-account-id ID] [--kms-instance INSTANCE] [--offering OFFERING] [--operating-system SYSTEM] [--pod-subnet SUBNET] [-q] [--secondary-storage STORAGE] [--service-subnet SUBNET] [--sm-group GROUP] [--sm-instance INSTANCE] [--version VERSION] [--workers COUNT]
 ```
 {: pre}
 
@@ -895,7 +925,7 @@ Minimum required permissions
 :    Required: The name for the cluster. The name must start with a letter, can contain letters, numbers, periods (.), and hyphen (-), and must be 35 characters or fewer. Use a name that is unique across regions. The cluster name and the region in which the cluster is deployed form the fully qualified domain name for the Ingress subdomain. To ensure that the Ingress subdomain is unique within a region, the cluster name might be truncated and appended with a random value within the Ingress domain name.
 
 `--zone ZONE`
-:    Required: Select a zone to deploy the initial cluster worker pool in. If you create the cluster in a multizone metro, you can add a zone to the worker pool later. To list available VPC zones, run `ibmcloud oc zone ls --provider vpc-gen2`.</p>
+:    Required: Select a zone to deploy the initial cluster worker pool in. If you create the cluster in a multizone metro, you can add a zone to the worker pool later. To list available VPC zones, run `ibmcloud oc zone ls --provider vpc-gen2`.
      When you select a zone that is located outside your country, keep in mind that you might require legal authorization before data can be physically stored in a foreign country.
     {: note}
 
@@ -930,9 +960,6 @@ Minimum required permissions
 :    Include the CRN ID of a standard {{site.data.keyword.cos_full_notm}} instance to back up the internal registry of your cluster. To list the CRN of existing instances, run `ibmcloud resource service-instances --long` and find the **ID** of your object storage instance. To create a standard object storage instance, run `ibmcloud resource service-instance-create <name> cloud-object-storage standard global` and note its **ID**.
 
 
-
-`--preview PREVIEW`
-:    Optional: Specify one or more cluster level preview features, such as `fips`.
 
 `--dedicated-host-pool POOL`
 :    Optional: The ID of the dedicated host pool where you want to run your workers.
@@ -1029,7 +1056,7 @@ View the details of a cluster.
 {: shortdesc}
 
 ```sh
-ibmcloud oc cluster get --cluster CLUSTER [--show-resources] [--output json] [-q]
+ibmcloud oc cluster get --cluster CLUSTER [--output OUTPUT] [-q] [--show-resources]
 ```
 {: pre}
 
@@ -1202,6 +1229,15 @@ ibmcloud oc cluster master console-oauth-access get --cluster CLUSTER [--output 
 {: #cluster-master-console-oauth-access-get-options-dl}
 
 
+#### Example `cluster master console-oauth-access get` command
+{: #cluster-master-console-oauth-access-get-example}
+
+```sh
+ibmcloud oc cluster master console-oauth-access get --cluster my_cluster
+```
+{: pre}
+
+
 ### `ibmcloud oc cluster master console-oauth-access set`
 {: #cluster-master-console-oauth-access-set-cli}
 
@@ -1228,6 +1264,15 @@ ibmcloud oc cluster master console-oauth-access set --cluster CLUSTER [-f] [-q] 
 `--type TYPE`
 :    Specify the OpenShift web console and OAuth server access type. Accepted values: `vpe-gateway`, `legacy`
 {: #cluster-master-console-oauth-access-set-options-dl}
+
+#### Example `cluster master console-oauth-access set` command
+{: #cluster-master-console-oauth-access-set-example}
+
+```sh
+ibmcloud oc cluster master console-oauth-access set --cluster my_cluster --type legacy
+```
+{: pre}
+
 
 ### `ibmcloud oc cluster master pod-security get`
 {: #cluster-master-pod-security-get}
@@ -1379,7 +1424,7 @@ Set and enable the [pod security admission](/docs/openshift?topic=openshift-pod-
 {: shortdesc}
 
 ```sh
-ibmcloud oc cluster master pod-security set --cluster CLUSTER [-q]
+ibmcloud oc cluster master pod-security set --cluster CLUSTER [--config-file FILE] [-q]
 ```
 {: pre}
 
@@ -1592,7 +1637,7 @@ To run this command:
 5. [Reload all the worker nodes](#cs_worker_reload) in your cluster to pick up the private endpoint configuration.
 
 ```sh
-ibmcloud oc cluster master private-service-endpoint enable --cluster CLUSTER [-q]
+ibmcloud oc cluster master private-service-endpoint enable --cluster CLUSTER [-f] [-q] [-y]
 ```
 {: pre}
 
@@ -1629,6 +1674,7 @@ ibmcloud oc cluster master private-service-endpoint enable --cluster my_cluster
 
 Enable the [public cloud service endpoint](/docs/openshift?topic=openshift-plan_basics#workeruser-master) to make your cluster master publicly accessible.
 {: shortdesc}
+
 
 For {{site.data.keyword.openshiftlong_notm}} clusters, public service endpoints can't be disabled. If you enable a public service endpoint in a {{site.data.keyword.redhat_openshift_notm}} cluster, you can't later convert the cluster from public to private.
 {: important}
@@ -1694,6 +1740,15 @@ Minimum required permissions
 `-q`
 :    Optional: Do not show the message of the day or update reminders.
 
+#### Example `cluster master refresh` command
+{: #cluster-master-refresh-example}
+
+```sh
+ibmcloud oc cluster master refresh --cluster my_cluster
+```
+{: pre}
+
+
 ### `ibmcloud oc cluster master update`
 {: #cs_cluster_update}
 
@@ -1708,7 +1763,7 @@ The `cluster-update` alias for this command is deprecated.
 {: note}
 
 ```sh
-ibmcloud oc cluster master update --cluster CLUSTER [--version MAJOR.MINOR.PATCH] [--force-update] [-f] [-q]
+ibmcloud oc cluster master update --cluster CLUSTER [-f] [--force-update] [-q] [--version VERSION]
 ```
 {: pre}
 
@@ -1758,7 +1813,7 @@ When you run this command, the creation of IAM credentials and image pull secret
 {: important}
 
 ```sh
-ibmcloud oc cluster pull-secret apply --cluster CLUSTER
+ibmcloud oc cluster pull-secret apply --cluster CLUSTER [-q]
 ```
 {: pre}
 
@@ -1772,6 +1827,15 @@ Minimum required permissions
 
 `-c`, `--cluster CLUSTER`
 :    Required: The name or ID of the cluster.
+
+
+#### Example `cluster pull-secret apply` command
+{: #cluster-pull-secret-apply-example}
+
+```sh
+ibmcloud oc cluster pull-secret apply --cluster my_cluster
+```
+{: pre}
 
 
 ### `ibmcloud oc cluster rm`
@@ -1831,7 +1895,7 @@ To view available {{site.data.keyword.cloud_notm}} services from the {{site.data
 {: note}
 
 ```sh
-ibmcloud oc cluster service bind --cluster CLUSTER --namespace KUBERNETES_NAMESPACE [--key SERVICE_INSTANCE_KEY] [--role IAM_SERVICE_ROLE] --service SERVICE_INSTANCE [-q]
+ibmcloud oc cluster service bind --cluster CLUSTER --namespace NAMESPACE --service SERVICE [-q] (--key KEY | --role ROLE)
 ```
 {: pre}
 
@@ -1879,7 +1943,7 @@ List the services that are bound to one or all the {{site.data.keyword.redhat_op
 {: shortdesc}
 
 ```sh
-ibmcloud oc cluster service ls --cluster CLUSTER [--namespace KUBERNETES_NAMESPACE] [--all-namespaces] [--output json] [-q]
+ibmcloud oc cluster service ls --cluster CLUSTER [--output OUTPUT] [-q] (--all-namespaces | --namespace NAMESPACE)
 ```
 {: pre}
 
@@ -1926,7 +1990,7 @@ When you remove an {{site.data.keyword.cloud_notm}} service, the service credent
 {: tip}
 
 ```sh
-ibmcloud oc cluster service unbind --cluster CLUSTER --namespace KUBERNETES_NAMESPACE --service SERVICE_INSTANCE [-q]
+ibmcloud oc cluster service unbind --cluster CLUSTER --namespace NAMESPACE --service SERVICE [-q]
 ```
 {: pre}
 
@@ -1971,7 +2035,7 @@ When you make a subnet available to a cluster, IP addresses of this subnet are u
 {: important}
 
 ```sh
-ibmcloud oc cluster subnet add --cluster CLUSTER --subnet-id SUBNET [-q]
+ibmcloud oc cluster subnet add --cluster CLUSTER --subnet-id ID [-q]
 ```
 {: pre}
 
@@ -2013,7 +2077,7 @@ Portable public IP addresses are charged monthly. If you remove portable public 
 {: important}
 
 ```sh
-ibmcloud oc cluster subnet create --cluster CLUSTER --size SIZE --vlan VLAN_ID [-q]
+ibmcloud oc cluster subnet create --cluster CLUSTER --size SIZE --vlan VLAN [-q]
 ```
 {: pre}
 
@@ -2057,7 +2121,7 @@ Detach a public or private portable classic subnet in an IBM Cloud infrastructur
 {: shortdesc}
 
 ```sh
-ibmcloud oc cluster subnet detach --cluster CLUSTER --subnet-id SUBNET_ID [-f] [-q]
+ibmcloud oc cluster subnet detach --cluster CLUSTER --subnet-id ID [-f] [-q]
 ```
 {: pre}
 
@@ -2665,7 +2729,7 @@ View the details of a worker node.
 {: shortdesc}
 
 ```sh
-ibmcloud oc worker get --cluster CLUSTER_NAME_OR_ID --worker WORKER_NODE_ID [--output json] [-q]
+ibmcloud oc worker get --cluster CLUSTER --worker WORKER [--output OUTPUT] [-q]
 ```
 {: pre}
 
@@ -2706,7 +2770,7 @@ List all worker nodes in a cluster.
 {: shortdesc}
 
 ```sh
-ibmcloud oc worker ls --cluster CLUSTER [--worker-pool POOL] [--show-pools] [--show-deleted] [--output json] [-q]
+ibmcloud oc worker ls --cluster CLUSTER [--output OUTPUT] [-q] [--show-delete-reason] [--show-deleted] [--show-pools] [--worker-pool POOL]
 ```
 {: pre}
 
@@ -2789,7 +2853,7 @@ Before you reboot your worker node, make sure that you have enough capacity in o
 
 
 ```sh
-ibmcloud oc worker reboot [--hard] --cluster CLUSTER --worker WORKER_ID [--skip-master-healthcheck] [-f] [-q]
+ibmcloud oc worker reboot --cluster CLUSTER --worker WORKER [--worker WORKER ...] [-f] [--hard] [-q] [--skip-master-health]
 ```
 {: pre}
 
@@ -2942,7 +3006,7 @@ Before you begin, make sure that your cluster has enough other worker nodes so t
     {: pre}
 
 ```sh
-ibmcloud oc worker replace --cluster CLUSTER_NAME_OR_ID --worker WORKER_ID [--update] [-f] [-q]
+ibmcloud oc worker replace --cluster CLUSTER --worker WORKER [-f] [-q] [--update]
 ```
 {: pre}
 
@@ -2986,7 +3050,7 @@ Remove one or more worker nodes from a cluster. If you remove a worker node, you
 {: shortdesc}
 
 ```sh
-ibmcloud oc worker rm --cluster CLUSTER --worker WORKER [-f] [-q]
+ibmcloud oc worker rm --cluster CLUSTER --worker WORKER [--worker WORKER ...] [-f] [-q]
 ```
 {: pre}
 
@@ -3039,7 +3103,7 @@ To update {{site.data.keyword.satelliteshort}} worker nodes, see [Updating hosts
 You might need to change your YAML files for deployments before you update. Review this [release note](/docs/containers?topic=containers-cs_versions) for details.
 
 ```sh
-ibmcloud oc worker update --cluster CLUSTER --worker WORKER_ID [-f] [-q]
+ibmcloud oc worker update --cluster CLUSTER --worker WORKER [--worker WORKER ...] [-f] [-q]
 ```
 {: pre}
 
@@ -3091,7 +3155,7 @@ To create a worker pool in a VPC cluster, use the [**`ibmcloud oc worker-pool cr
 {: note}
 
 ```sh
-ibmcloud oc worker-pool create classic --name POOL_NAME --cluster CLUSTER --flavor FLAVOR --size-per-zone WORKERS_PER_ZONE --hardware ISOLATION [--disable-disk-encrypt] [--label KEY1=VALUE1] [--operating-system SYSTEM] [--entitlement ENTITLEMENT] [-q] [--output json]
+ibmcloud oc worker-pool create classic --cluster CLUSTER --flavor FLAVOR --name NAME --size-per-zone SIZE [--disable-disk-encrypt] [--entitlement ENTITLEMENT] [--hardware HARDWARE] [--label LABEL ...] [--operating-system SYSTEM] [--output OUTPUT] [-q]
 ```
 {: pre}
 
@@ -3160,7 +3224,7 @@ Add a worker pool to a VPC cluster. No worker nodes are created until you [add z
 {: shortdesc}
 
 ```sh
-ibmcloud oc worker-pool create vpc-gen2 --name WORKER_POOL_NAME --cluster CLUSTER_NAME_OR_ID --flavor FLAVOR --size-per-zone NUMBER_OF_WORKERS_PER_ZONE [--operating-system SYSTEM][--dedicated-host-pool POOL][--vpc-id VPC_ID] [--label KEY1=VALUE1] [--entitlement ENTITLEMENT] [--kms-account-id ID] [--kms-instance KMS_INSTANCE_ID] [--crk ROOT_KEY_ID] [--operating-system SYSTEM] [-q] [--secondary-storage STORAGE] [--security-group GROUP ...] [--output json]
+ibmcloud oc worker-pool create vpc-gen2 --cluster CLUSTER --flavor FLAVOR --name NAME --size-per-zone SIZE [--crk CRK] [--disable-disk-encrypt] [--entitlement ENTITLEMENT] [--kms-account-id ID] [--kms-instance INSTANCE] [--label LABEL ...] [--operating-system SYSTEM] [--output OUTPUT] [-q] [--secondary-storage STORAGE] [--security-group GROUP ...] [--vpc-id ID]
 ```
 {: pre}
 
@@ -3248,7 +3312,7 @@ View the details of a worker pool.
 {: shortdesc}
 
 ```sh
-ibmcloud oc worker-pool get --worker-pool WORKER_POOL --cluster CLUSTER [--output json] [-q]
+ibmcloud oc worker-pool get --cluster CLUSTER --worker-pool POOL [--output OUTPUT] [-q]
 ```
 {: pre}
 
@@ -3377,7 +3441,7 @@ List all worker pools in a cluster.
 {: shortdesc}
 
 ```sh
-ibmcloud oc worker-pool ls --cluster CLUSTER [--output json] [-q]
+ibmcloud oc worker-pool ls --cluster CLUSTER [--output OUTPUT] [-q]
 ```
 {: pre}
 
@@ -3433,6 +3497,15 @@ ibmcloud oc worker-pool operating-system set --cluster CLUSTER --operating-syste
 {: #worker-pool-operating-system-set-options-dl}
 
 
+#### Example `worker-pool operating-system set` command
+{: #worker-pool-operating-system-set-example}
+
+```sh
+ibmcloud oc worker-pool operating-system set --cluster my_cluster --operating-system UBUNTU_24_64 --worker-pool my_pool
+```
+{: pre}
+
+
 ### `ibmcloud oc worker-pool rebalance`
 {: #cs_rebalance}
 
@@ -3447,7 +3520,7 @@ For Satellite clusters, do not use the `ibmcloud oc worker-pool rebalance` comma
 
 
 ```sh
-ibmcloud oc worker-pool rebalance --cluster CLUSTER --worker-pool WORKER_POOL [-q]
+ibmcloud oc worker-pool rebalance --cluster CLUSTER --worker-pool POOL [-f] [-q]
 ```
 {: pre}
 
@@ -3485,7 +3558,7 @@ Resize your worker pool to increase or decrease the number of worker nodes that 
 {: shortdesc}
 
 ```sh
-ibmcloud oc worker-pool resize --cluster CLUSTER --worker-pool WORKER_POOL --size-per-zone WORKERS_PER_ZONE [-q]
+ibmcloud oc worker-pool resize --cluster CLUSTER --size-per-zone SIZE --worker-pool POOL [-q]
 ```
 {: pre}
 
@@ -3528,7 +3601,7 @@ Remove a worker pool from your cluster. All worker nodes in the pool are deleted
 {: shortdesc}
 
 ```sh
-ibmcloud oc worker-pool rm --worker-pool WORKER_POOL --cluster CLUSTER [-q] [-f]
+ibmcloud oc worker-pool rm --cluster CLUSTER --worker-pool POOL [-f] [-q]
 ```
 {: pre}
 
@@ -3660,7 +3733,7 @@ View the zones that are attached to a worker pool.
 {: shortdesc}
 
 ```sh
-ibmcloud oc worker-pool zones --worker-pool WORKER_POOL --cluster CLUSTER [-q] [-f]
+ibmcloud oc worker-pool zones --cluster CLUSTER --worker-pool POOL [--output OUTPUT] [-q]
 ```
 {: pre}
 
@@ -3709,7 +3782,7 @@ To add a zone to worker pools in a VPC cluster, use the [**`ibmcloud oc zone add
 {: note}
 
 ```sh
-ibmcloud oc zone add classic --zone ZONE --cluster CLUSTER --worker-pool WORKER_POOL [--private-vlan PRIVATE_VLAN] [--public-vlan PUBLIC_VLAN] [--output json] [-q]
+ibmcloud oc zone add classic --cluster CLUSTER --worker-pool POOL [--worker-pool POOL ...] --zone ZONE [--output OUTPUT] [--private-vlan VLAN] [-q] (--private-only | --public-vlan VLAN)
 ```
 {: pre}
 
@@ -3765,7 +3838,7 @@ After you create a Generation 2 VPC cluster or worker pool, you can add a zone. 
 {: shortdesc}
 
 ```sh
-ibmcloud oc zone add vpc-gen2 --zone ZONE --subnet-id VPC_SUBNET_ID --cluster CLUSTER --worker-pool WORKER_POOL [--output json] [-q]
+ibmcloud oc zone add vpc-gen2 --cluster CLUSTER --subnet-id ID --worker-pool POOL --zone ZONE [--output OUTPUT] [-q]
 ```
 {: pre}
 
@@ -3815,7 +3888,7 @@ The `locations` alias for this command is deprecated.
 {: note}
 
 ```sh
-ibmcloud oc zone ls --provider classic | satellite | vpc-gen2 [--location LOCATION] [--region-only] [--output json] [-q]
+ibmcloud oc zone ls --provider PROVIDER [-l LOCATION ...] [--output OUTPUT] [-q] [--region-only] [--show-flavors]
 ```
 {: pre}
 
@@ -3859,7 +3932,7 @@ ibmcloud oc zone ls -l ap
 {: shortdesc}
 
 ```sh
-ibmcloud oc zone network-set --zone ZONE --cluster CLUSTER  --private-vlan PRIVATE_VLAN --worker-pool WORKER_POOL [--public-vlan PUBLIC_VLAN] [-f] [-q]
+ibmcloud oc zone network-set --cluster CLUSTER --private-vlan VLAN --worker-pool POOL [--worker-pool POOL ...] --zone ZONE [-f] [-q] (--private-only | --public-vlan VLAN)
 ```
 {: pre}
 
@@ -3949,7 +4022,7 @@ Before you remove a zone, make sure that you have enough worker nodes in other z
 {: tip}
 
 ```sh
-ibmcloud oc zone rm --cluster CLUSTER --zone ZONE --worker-pool WORKER_POOL [-f] [-q]
+ibmcloud oc zone rm --cluster CLUSTER --worker-pool POOL [--worker-pool POOL ...] --zone ZONE [-f] [-q]
 ```
 {: pre}
 
@@ -4096,7 +4169,7 @@ Remove autoscaling from your Ingress ALBs by deleting the autoscaling configurat
 {: shortdesc}
 
 ```sh
-ibmcloud oc ingress alb autoscale unset --alb ALB --cluster CLUSTER [--output OUTPUT] [-q]
+ibmcloud oc ingress alb autoscale unset --alb ALB --cluster CLUSTER [-q]
 ```
 {: pre}
 
@@ -4196,13 +4269,23 @@ Minimum required permissions
 ### `ibmcloud oc ingress alb autoupdate get`
 {: #cs_alb_autoupdate_get}
 
+#### Example `ingress alb autoupdate enable` command
+{: #ingress-alb-autoupdate-enable-example}
+
+```sh
+ibmcloud oc ingress alb autoupdate enable --cluster my_cluster
+```
+{: pre}
+
+
+
 [Virtual Private Cloud]{: tag-vpc} [Classic infrastructure]{: tag-classic-inf}
 
 Check whether automatic updates for the Ingress ALB add-on are enabled and whether your ALBs are updated to the latest image version.
 {: shortdesc}
 
 ```sh
-ibmcloud oc ingress alb autoupdate get --cluster CLUSTER [--output json] [-q]
+ibmcloud oc ingress alb autoupdate get --cluster CLUSTER [--output OUTPUT] [-q]
 ```
 {: pre}
 
@@ -4222,6 +4305,15 @@ Minimum required permissions
 :    Optional: Do not show the message of the day or update reminders.
 
 
+#### Example `ingress alb autoupdate get` command
+{: #ingress-alb-autoupdate-get-example}
+
+```sh
+ibmcloud oc ingress alb autoupdate get --cluster my_cluster
+```
+{: pre}
+
+
 ### `ibmcloud oc ingress alb create classic`
 {: #cs_alb_create}
 
@@ -4232,7 +4324,7 @@ Create a public or private ALB in a classic cluster. The ALB that you create is 
 {: shortdesc}
 
 ```sh
-ibmcloud oc ingress alb create classic --cluster CLUSTER --type (PUBLIC|PRIVATE) --vlan VLAN_ID --zone ZONE [--ip IP] [--version IMAGE_VERSION] [-q]
+ibmcloud oc ingress alb create classic --cluster CLUSTER --type TYPE --vlan VLAN --zone ZONE [--ip IP] [-q] [--version VERSION]
 ```
 {: pre}
 
@@ -4286,7 +4378,7 @@ The previous alias for this command, `ibmcloud oc ingress alb configure`, is dep
 {: note}
 
 ```sh
-ibmcloud oc ingress alb disable --alb ALB_ID --cluster CLUSTER [-q]
+ibmcloud oc ingress alb disable --alb ALB --cluster CLUSTER [-q]
 ```
 {: pre}
 
@@ -4332,7 +4424,7 @@ You can use this command to:
 * Enable an ALB that you previously disabled.
 
 ```sh
-ibmcloud oc ingress alb enable classic --alb ALB_ID --cluster CLUSTER [--ip IP_ADDRESS] [--version IMAGE_VERSION] [-q]
+ibmcloud oc ingress alb enable classic --alb ALB --cluster CLUSTER [--ip IP] [-q] [--version VERSION]
 ```
 {: pre}
 
@@ -4379,7 +4471,7 @@ View the details of an Ingress ALB in a cluster.
 {: shortdesc}
 
 ```sh
-ibmcloud oc ingress alb get --alb ALB_ID --cluster CLUSTER [--output json] [-q]
+ibmcloud oc ingress alb get --alb ALB --cluster CLUSTER [--output OUTPUT] [-q]
 ```
 {: pre}
 
@@ -4527,7 +4619,7 @@ If no ALB IDs are returned, then the cluster does not have a portable subnet. Yo
 {: tip}
 
 ```sh
-ibmcloud oc ingress alb ls --cluster CLUSTER [--output json] [-q]
+ibmcloud oc ingress alb ls --cluster CLUSTER [--output OUTPUT] [-q]
 ```
 {: pre}
 
@@ -4569,7 +4661,7 @@ Force an update of the pods for individual or all Ingress ALBs in the cluster to
 If automatic updates for the Ingress ALB add-on are disabled and you want to update the add-on, you can force a one-time update of your ALB pods. If your ALB pods were recently updated, but a custom configuration for your ALBs is affected by the latest build, you can also use this command to roll back ALB pods to an earlier, supported version. Note that you can use this command to update your ALB image to a different version, but you can't use this command to change your ALB from one type of image to another. After you force a one-time update, automatic updates remain disabled, but can be re-enabled with the `ibmcloud oc ingress alb autoupdate enable` command.
 
 ```sh
-ibmcloud oc ingress alb update --cluster CLUSTER [--alb ALB1_ID --alb ALB2_ID ...] [--version IMAGE_VERSION] [--output json] [-q]
+ibmcloud oc ingress alb update --cluster CLUSTER [--alb ALB ...] [--output OUTPUT] [-q] [--version VERSION]
 ```
 {: pre}
 
@@ -4616,7 +4708,7 @@ View the available Ingress ALB versions.
 {: shortdesc}
 
 ```sh
-ibmcloud oc ingress alb versions [--output json] [-q]
+ibmcloud oc ingress alb versions [--output OUTPUT] [-q] [--region REGION]
 ```
 {: pre}
 
@@ -4633,6 +4725,15 @@ Minimum required permissions
 :    Optional: Do not show the message of the day or update reminders.
 
 
+#### Example `ingress alb versions` command
+{: #ingress-alb-versions-example}
+
+```sh
+ibmcloud oc ingress alb versions
+```
+{: pre}
+
+
 ### `ibmcloud oc ingress domain create`
 {: #ingress-domain-create}
 
@@ -4640,7 +4741,7 @@ Create an Ingress domain for a cluster.
 {: shortdesc}
 
 ```sh
-ibmcloud oc ingress domain create --cluster CLUSTER [--crn CRN] [--default] [--domain DOMAIN] [--hostname HOSTNAME] [--ip IP] [--output OUTPUT] [--domain-provider PROVIDER] [-q] [--secret-namespace NAMESPACE] [--domain-zone ZONE]
+ibmcloud oc ingress domain create --cluster CLUSTER [--crn CRN] [--domain DOMAIN] [--domain-provider PROVIDER] [--domain-zone ZONE] [--hostname HOSTNAME] [--ip IP] [--is-default] [--output OUTPUT] [-q] [--secret-namespace NAMESPACE]
 ```
 {: pre}
 
@@ -4916,7 +5017,7 @@ Update an Ingress domain for a cluster to change the hostnames or IP addresses a
 {: shortdesc}
 
 ```sh
-ibmcloud oc ingress domain update --cluster CLUSTER --domain DOMAIN [--hostname HOSTNAME] [--ip IP] [--ip IP] [-q]
+ibmcloud oc ingress domain update --cluster CLUSTER --domain DOMAIN [--hostname HOSTNAME] [--ip IP] [-q]
 ```
 {: pre}
 
@@ -4966,7 +5067,7 @@ When you set a new default {{site.data.keyword.secrets-manager_short}} instance,
 {: important}
 
 ```sh
-ibmcloud oc ingress instance default set --cluster CLUSTER --crn CRN --name NAME [-q] [--secret-group GROUP]
+ibmcloud oc ingress instance default set --cluster CLUSTER --name NAME [-q] [--secret-group GROUP]
 ```
 {: pre}
 
@@ -5011,7 +5112,7 @@ If no default instance is set, your secrets are only written directly to the clu
 {: important}
 
 ```sh
-ibmcloud oc ingress instance default unset --cluster CLUSTER --crn CRN --name NAME [-q]
+ibmcloud oc ingress instance default unset --cluster CLUSTER --name NAME [-q]
 ```
 {: pre}
 
@@ -5128,7 +5229,7 @@ Register a {{site.data.keyword.secrets-manager_short}} instance to a cluster.
 {: shortdesc}
 
 ```sh
-ibmcloud oc ingress instance register --cluster CLUSTER --crn CRN [--is-default] [--secret-group GROUP] [-q]
+ibmcloud oc ingress instance register --cluster CLUSTER --crn CRN [--is-default] [-q] [--secret-group GROUP]
 ```
 {: pre}
 
@@ -5385,7 +5486,7 @@ To use the `ibmcloud oc ingress secret create` command, you must have a default 
 {: important}
 
 ```sh
-ibmcloud oc ingress secret create --cert-crn CERTIFICATE_CRN --cluster CLUSTER --name SECRET_NAME  [--namespace NAMESPACE] [--field CRN] [--persist] [--type] [-q]
+ibmcloud oc ingress secret create --cluster CLUSTER --name NAME [--cert-crn CRN] [--field FIELD] [--namespace NAMESPACE] [--persist] [-q] [--type TYPE]
 ```
 {: pre}
 
@@ -5441,7 +5542,7 @@ Add a non-TLS CRN field to an Opaque secret. There are three ways to specify the
 {: shortdesc}
 
 ```sh
-ibmcloud oc ingress secret field add --cluster CLUSTER --name SECRET_NAME --field CRN --namespace NAMESPACE [-q]
+ibmcloud oc ingress secret field add --cluster CLUSTER --name NAME --namespace NAMESPACE [--field FIELD] [-q]
 ```
 {: pre}
 
@@ -5484,7 +5585,7 @@ View the CRN fields of an Ingress secret. This command applies only to Opaque se
 {: shortdesc}
 
 ```sh
-ibmcloud oc ingress secret field ls --cluster CLUSTER --name SECRET_NAME --namespace NAMESPACE [--output OUTPUT] [-q]
+ibmcloud oc ingress secret field ls --cluster CLUSTER --name NAME --namespace NAMESPACE [--output OUTPUT] [-q] [--show-crn]
 ```
 {: pre}
 
@@ -5509,6 +5610,9 @@ Minimum required permissions
 `-q`
 :    Optional: Do not show the message of the day or update reminders.
 
+`--show-crn`
+:    Optional: View the CRN of the secret fields.
+
 #### Example `ingress secret field ls` command
 {: #ingress-secret-field-ls-example}
 
@@ -5524,7 +5628,7 @@ ibmcloud oc ingress secret field ls --cluster a11a11a11a111a1a111a --name my-sec
 
 
 ```sh
-ibmcloud oc ingress secret field rm --cluster CLUSTER --name NAME --namespace NAMESPACE [--field-name NAME]
+ibmcloud oc ingress secret field rm --cluster CLUSTER --name NAME --namespace NAMESPACE [--field-name NAME] [-q]
 ```
 {: pre}
 
@@ -5566,7 +5670,7 @@ The previous alias for this command, `ibmcloud oc ingress alb cert get`, is depr
 {: note}
 
 ```sh
-ibmcloud oc ingress secret get --cluster CLUSTER --name SECRET_NAME --namespace NAMESPACE [--output json] [-q]
+ibmcloud oc ingress secret get --cluster CLUSTER --name NAME --namespace NAMESPACE [--output OUTPUT] [-q]
 ```
 {: pre}
 
@@ -5613,7 +5717,7 @@ The previous alias for this command, `ibmcloud oc ingress alb cert ls`, is depre
 {: note}
 
 ```sh
-ibmcloud oc ingress secret ls --cluster CLUSTER [--show-deleted] [--output json] [-q]
+ibmcloud oc ingress secret ls --cluster CLUSTER [--output OUTPUT] [-q] [--show-crn] [--show-deleted]
 ```
 {: pre}
 
@@ -5626,6 +5730,9 @@ Minimum required permissions
 
 `-c`, `--cluster CLUSTER`
 :    Required: The name or ID of the cluster.
+
+`--show-crn`
+:    Optional: View the CRN of the secrets.
 
 `--show-deleted`
 :    Optional: View secrets that were deleted from the cluster.
@@ -5658,7 +5765,7 @@ The previous alias for this command, `ibmcloud oc ingress alb cert rm`, is depre
 {: note}
 
 ```sh
-ibmcloud oc ingress secret rm --cluster CLUSTER --name SECRET_NAME --namespace NAMESPACE [-q]
+ibmcloud oc ingress secret rm --cluster CLUSTER --name NAME --namespace NAMESPACE [-q]
 ```
 {: pre}
 
@@ -5703,7 +5810,7 @@ Update an Ingress secret for a certificate that is not hosted in the default {{s
 Any changes that you make to a certificate in the default {{site.data.keyword.secrets-manager_short}} instance in your cluster are automatically reflected in the secret in your cluster. If you make changes to a certificate that is not hosted in your cluster {{site.data.keyword.secrets-manager_short}} instance, you must use this command to update the secret in your cluster the pick up the certificate changes.
 
 ```sh
-ibmcloud oc ingress secret update --cluster CLUSTER --name SECRET_NAME --namespace NAMESPACE [--cert-crn CRN] [-q]
+ibmcloud oc ingress secret update --cluster CLUSTER --name NAME --namespace NAMESPACE [--cert-crn CRN] [-q]
 ```
 {: pre}
 
@@ -5747,7 +5854,7 @@ Get the status of the health of Ingress resources for a cluster.
 {: shortdesc}
 
 ```sh
-ibmcloud oc ingress status --cluster CLUSTER [--output json] [-q]
+ibmcloud oc ingress status --cluster CLUSTER [--output OUTPUT] [-q]
 ```
 {: pre}
 
@@ -5784,7 +5891,7 @@ ibmcloud oc ingress status --cluster mycluster
 Disable status reporting for Ingress components in a cluster.
 
 ```sh
-ibmcloud oc ingress status-report disable --cluster CLUSTER [--output json] [-q]
+ibmcloud oc ingress status-report disable --cluster CLUSTER [--output OUTPUT] [-q]
 ```
 {: pre}
 
@@ -5819,7 +5926,7 @@ ibmcloud oc ingress status-report disable --cluster mycluster
 Enable the status reporting of the Ingress components in a cluster.
 
 ```sh
-ibmcloud oc ingress status-report enable --cluster CLUSTER [--output json] [-q]
+ibmcloud oc ingress status-report enable --cluster CLUSTER [--output OUTPUT] [-q]
 ```
 {: pre}
 
@@ -5854,7 +5961,7 @@ ibmcloud oc ingress status-report enable --cluster mycluster
 Get the status report for Ingress components in a cluster.
 
 ```sh
-ibmcloud oc ingress status-report get --cluster CLUSTER [--output json] [-q]
+ibmcloud oc ingress status-report get --cluster CLUSTER [--output OUTPUT] [-q]
 ```
 {: pre}
 
@@ -6018,7 +6125,7 @@ Add one or more network load balancer (NLB) IP addresses to an existing subdomai
 For example, in a multizone classic cluster, you might create an NLB in each zone to expose an app. You register the NLB IPs with a subdomain by running `ibmcloud oc nlb-dns create classic`. Later, you add another zone to your cluster and another NLB for that zone. You can use this command to add the new NLB IP to this existing subdomain. When a user accesses your app subdomain, the client accesses one of these IPs at random, and the request is sent to that NLB.
 
 ```sh
-ibmcloud oc nlb-dns add --cluster CLUSTER --ip NLB_IP [--ip NLB2_IP2 --ip NLB3_IP ...] --nlb-host SUBDOMAIN [--output json] [-q]
+ibmcloud oc nlb-dns add --cluster CLUSTER --ip IP [--ip IP ...] --nlb-host HOST [--output OUTPUT] [-q]
 ```
 {: pre}
 
@@ -6063,7 +6170,7 @@ Publicly expose your app by creating a DNS subdomain to register a network load 
 {: shortdesc}
 
 ```sh
-ibmcloud oc nlb-dns create classic --cluster CLUSTER --ip NLB_IP [--ip NLB2_IP --ip NLB3_IP ...] [--secret-namespace NAMESPACE] [--output json] [-q]
+ibmcloud oc nlb-dns create classic --cluster CLUSTER --ip IP [--ip IP ...] [--output OUTPUT] [-q] [--secret-namespace NAMESPACE]
 ```
 {: pre}
 
@@ -6112,7 +6219,7 @@ Create a DNS record for a Network Load Balancer for VPC or Application Load Bala
 When you create a Network Load Balancer for VPC, the load balancer is assigned external IP addresses for each zone in your cluster. When you create an Application Load Balancer for VPC, the load balancer is assigned a hostname. If you want an app subdomain with TLS termination, you can use the `ibmcloud oc nlb-dns create vpc-gen2` command to create a DNS record for the IP addresses or hostname. {{site.data.keyword.cloud_notm}} takes care of generating and maintaining the wildcard SSL certificate for the subdomain for you. You can create subdomains for both public and private VPC load balancers.
 
 ```sh
-ibmcloud oc nlb-dns create vpc-gen2 --cluster CLUSTER (--lb-host VPC_ALB_HOSTNAME | --ip VPC_NLB_IP) [--secret-namespace NAMESPACE] [--type (public|private)] [--output json] [-q]
+ibmcloud oc nlb-dns create vpc-gen2 --cluster CLUSTER [--output OUTPUT] [-q] [--secret-namespace NAMESPACE] (--ip IP | --lb-host HOST)
 ```
 {: pre}
 
@@ -6194,7 +6301,7 @@ In a classic cluster, list the network load balancer (NLB) IP addresses that are
 {: shortdesc}
 
 ```sh
-ibmcloud oc nlb-dns ls --cluster CLUSTER [--output json] [-q]
+ibmcloud oc nlb-dns ls --cluster CLUSTER [--output OUTPUT] [-q]
 ```
 {: pre}
 
@@ -6297,7 +6404,7 @@ Disable an existing health check monitor for a subdomain in a cluster.
 {: shortdesc}
 
 ```sh
-ibmcloud oc nlb-dns monitor disable --cluster CLUSTER --nlb-host SUBDOMAIN [--output json] [-q]
+ibmcloud oc nlb-dns monitor disable --cluster CLUSTER --nlb-host HOST [--output OUTPUT] [-q]
 ```
 {: pre}
 
@@ -6342,7 +6449,7 @@ Enable a health check monitor that you configured.
 The first time that you create a health check monitor, you must configure and enable it with the `ibmcloud oc nlb-dns monitor configure` command. Use the `ibmcloud oc nlb-dns monitor enable` command only to enable a monitor that you configured but did not yet enable, or to re-enable a monitor that you previously disabled.
 
 ```sh
-ibmcloud oc nlb-dns monitor enable --cluster CLUSTER --nlb-host SUBDOMAIN [--output json] [-q]
+ibmcloud oc nlb-dns monitor enable --cluster CLUSTER --nlb-host HOST [--output OUTPUT] [-q]
 ```
 {: pre}
 
@@ -6384,7 +6491,7 @@ View the settings for an existing health check monitor.
 {: shortdesc}
 
 ```sh
-ibmcloud oc nlb-dns monitor get --cluster CLUSTER --nlb-host SUBDOMAIN [--output json] [-q]
+ibmcloud oc nlb-dns monitor get --cluster CLUSTER --nlb-host HOST [--output OUTPUT] [-q]
 ```
 {: pre}
 
@@ -6426,7 +6533,7 @@ List the health check monitor settings for each NLB subdomain in a cluster.
 {: shortdesc}
 
 ```sh
-ibmcloud oc nlb-dns monitor ls --cluster CLUSTER [--output json] [-q]
+ibmcloud oc nlb-dns monitor ls --cluster CLUSTER [--output OUTPUT] [-q]
 ```
 {: pre}
 
@@ -6464,7 +6571,7 @@ Replace the load balancer hostname that is registered with a DNS subdomain. For 
 {: shortdesc}
 
 ```sh
-ibmcloud oc nlb-dns replace --cluster CLUSTER --lb-host NEW_LB_HOSTNAME --nlb-subdomain SUBDOMAIN [--output json] [-q]
+ibmcloud oc nlb-dns replace --cluster CLUSTER --lb-host HOST --nlb-subdomain SUBDOMAIN [--output OUTPUT] [-q]
 ```
 {: pre}
 
@@ -6512,7 +6619,7 @@ Run this command for each IP address that you want to remove.
 {: note}
 
 ```sh
-ibmcloud oc nlb-dns rm classic --cluster CLUSTER --ip IP --nlb-host SUBDOMAIN [--output json] [-q]
+ibmcloud oc nlb-dns rm classic --cluster CLUSTER --ip IP --nlb-host HOST [--output OUTPUT] [-q]
 ```
 {: pre}
 
@@ -6558,7 +6665,7 @@ Remove the load balancer hostname (VPC application load balancers) or IP address
 After you remove the hostname or IP addresses, the DNS subdomain still exists, but no load balancer is registered with it.
 
 ```sh
-ibmcloud oc nlb-dns rm vpc-gen2 --cluster CLUSTER --nlb-subdomain SUBDOMAIN [ --ip IP] [--output json] [-q]
+ibmcloud oc nlb-dns rm vpc-gen2 --cluster CLUSTER --nlb-subdomain SUBDOMAIN [--ip IP] [--output OUTPUT] [-q]
 ```
 {: pre}
 
@@ -6591,52 +6698,6 @@ Minimum required permissions
 ibmcloud oc nlb-dns rm vpc-gen2 --cluster mycluster --nlb-subdomain mycluster-a1b2cdef345678g9hi012j3kl4567890-0001.us-south.containers.appdomain.cloud
 ```
 {: pre}
-
-### Experimental: `ibmcloud oc nlb-dns secret regenerate`
-{: #cs_nlb-dns-secret-regenerate}
-
-[Virtual Private Cloud]{: tag-vpc} [Classic infrastructure]{: tag-classic-inf}
-
-Regenerate the certificate and secret for an NLB subdomain. Secret regeneration is not disruptive, and traffic continues to flow while the secret regenerates.
-{: shortdesc}
-
-If the Let’s Encrypt certificate creation fails during secret regeneration, a 10 minute wait period must pass before the regeneration is automatically attempted again. The regeneration of the secret takes another 5 minutes to complete, making it a total of 15 minutes before the process is completed.
-
-To avoid the Let’s Encrypt rate limit, don't regenerate a secret more than 5 times per day.
-{: note}
-
-```sh
-ibmcloud oc nlb-dns secret regenerate --cluster CLUSTER --nlb-subdomain SUBDOMAIN [--output json] [-q]
-```
-{: pre}
-
-Minimum required permissions
-:   **Editor** platform access role for the cluster in {{site.data.keyword.containerlong_notm}}
-
-#### `nlb-dns rm vpc-gen2` command options
-{: #nlb-dns-secret-regenerate-options}
-
-`-c`, `--cluster CLUSTER`
-:    Required: The name or ID of the cluster.
-
-`--nlb-subdomain SUBDOMAIN`
-:    The subdomain to regenerate the secret for. To list subdomains, run `ibmcloud oc nlb-dns ls --cluster CLUSTER`.
-
-`--output json`
-:    Optional: Prints the command output in JSON format.
-
-`-q`
-:    Optional: Do not show the message of the day or update reminders.
-
-
-#### Example `nlb-dns secret regenerate` command
-{: #nlb-dns-secret-regenerate-example}
-
-```sh
-ibmcloud oc nlb-dns secret regenerate --cluster mycluster --nlb-subdomain mycluster-a1b2cdef345678g9hi012j3kl4567890-0001.us-south.containers.appdomain.cloud
-```
-{: pre}
-
 
 ### Experimental: `ibmcloud oc nlb-dns secret rm`
 {: #cs_nlb-dns-secret-rm}
@@ -6711,6 +6772,16 @@ ibmcloud oc vpc secure-by-default enable --cluster CLUSTER [--disable-outbound-t
 :    Do not show the message of the day or update reminders.
 {: #vpc-secure-by-default-enable-options-dl}
 
+
+#### Example `vpc secure-by-default enable` command
+{: #vpc-secure-by-default-enable-example}
+
+```sh
+ibmcloud oc vpc secure-by-default enable --cluster my_cluster
+```
+{: pre}
+
+
 ### `webhook-create` command
 {: #cs_webhook_create}
 
@@ -6777,7 +6848,7 @@ If you manually set IBM Cloud infrastructure credentials by using the [`ibmcloud
 {: note}
 
 ```sh
-ibmcloud oc api-key info --cluster CLUSTER [--output json] [-q]
+ibmcloud oc api-key info --cluster CLUSTER [--output OUTPUT] [-q]
 ```
 {: pre}
 
@@ -6822,7 +6893,7 @@ Before you use this command, make sure that identity used to run this command ha
 {: important}
 
 ```sh
-ibmcloud oc api-key reset --region REGION [-q]
+ibmcloud oc api-key reset --region REGION [-f] [--output OUTPUT] [-q]
 ```
 {: pre}
 
@@ -6831,6 +6902,12 @@ Minimum required permissions
 
 #### `api-key reset` command options
 {: #api-key-reset-options}
+
+`-f`
+:    Optional: Force the command to run with no user prompts.
+
+`--output OUTPUT`
+:    {[output_option]}
 
 `--region REGION`
 :    Specify a region in {{site.data.keyword.openshiftlong_notm}}: `jp-osa`, `jp-tok`, `au-syd`, `eu-de`, `eu-gb`, `us-east`, or `us-south`.
@@ -6869,7 +6946,7 @@ If you set up your {{site.data.keyword.cloud_notm}} account to use different cre
 {: shortdesc}
 
 ```sh
-ibmcloud oc credential get --region REGION [-q] [--output json]
+ibmcloud oc credential get --region REGION [--output OUTPUT] [-q]
 ```
 {: pre}
 
@@ -6916,7 +6993,7 @@ Before you use this command, make sure that the user whose credentials are used 
 {: important}
 
 ```sh
-ibmcloud oc credential set classic --infrastructure-api-key API_KEY --infrastructure-username USERNAME --region REGION [-q]
+ibmcloud oc credential set classic --infrastructure-api-key KEY --infrastructure-username USERNAME --region REGION [-q]
 ```
 {: pre}
 
@@ -7096,7 +7173,7 @@ Do not delete root keys in your KMS instance, even if you rotate to use a new ke
 {: important}
 
 ```sh
-ibmcloud oc kms crk ls --instance-id KMS_INSTANCE_ID [--output json] [-q]
+ibmcloud oc kms crk ls --instance-id ID [--output OUTPUT] [-q]
 ```
 {: pre}
 
@@ -7136,7 +7213,7 @@ Do not delete root keys in your KMS instance, even if you rotate to use a new ke
 {: important}
 
 ```sh
-ibmcloud oc kms enable --cluster CLUSTER_NAME_OR_ID --instance-id KMS_INSTANCE_ID --crk ROOT_KEY_ID [--kms-account-id ID] [--public-endpoint] [-q]
+ibmcloud oc kms enable --cluster CLUSTER --crk CRK --instance-id ID [--kms-account-id ID] [--public-endpoint] [-q]
 ```
 {: pre}
 
@@ -7182,7 +7259,7 @@ List available [key management service (KMS) instances](/docs/openshift?topic=op
 {: shortdesc}
 
 ```sh
-ibmcloud oc kms instance ls [--output json] [-q]
+ibmcloud oc kms instance ls [--output OUTPUT] [-q]
 ```
 {: pre}
 
@@ -7222,7 +7299,7 @@ List all quota and limits for cluster-related resources in your {{site.data.keyw
 {: shortdesc}
 
 ```sh
-ibmcloud oc quota ls [--provider PROVIDER] [--output json]
+ibmcloud oc quota ls [--output OUTPUT] [--provider PROVIDER] [-q]
 ```
 {: pre}
 
@@ -7232,11 +7309,14 @@ Minimum required permissions
 #### `quota ls` command options
 {: #quota-ls-options}
 
+`--output json`
+:    Optional: Prints the command output in JSON format.
+
 `--provider (classic | vpc-gen2)`
 :    The infrastructure provider type to list quota and limits for.
 
-`--output json`
-:    Optional: Prints the command output in JSON format.
+`-q`
+:    Optional: Do not show the message of the day or update reminders.
 
 
 #### Example ``ibmcloud oc quota ls`` command
@@ -7316,7 +7396,7 @@ List the public and private VLANs that are available for a zone in your classic 
 {: shortdesc}
 
 ```sh
-ibmcloud oc vlan ls --zone ZONE [--all] [--output json] [-q]
+ibmcloud oc vlan ls --zone ZONE [--output OUTPUT] [-q]
 ```
 {: pre}
 
@@ -7362,7 +7442,7 @@ The VLAN spanning option is disabled for clusters that are created in a VRF-enab
 {: note}
 
 ```sh
-ibmcloud oc vlan spanning get --region REGION [--output json] [-q]
+ibmcloud oc vlan spanning get [--output OUTPUT] [-q] [--region REGION]
 ```
 {: pre}
 
@@ -7418,6 +7498,15 @@ ibmcloud oc vpc ls [--output OUTPUT] [--provider PROVIDER] [-q]
 {: #vpc-ls-options-dl}
 
 
+#### Example `vpc ls` command
+{: #vpc-ls-example}
+
+```sh
+ibmcloud oc vpc ls
+```
+{: pre}
+
+
 ### `ibmcloud oc vpc outbound-traffic-protection disable`
 {: #vpc-outbound-traffic-protection-disable-cli}
 
@@ -7443,6 +7532,15 @@ ibmcloud oc vpc outbound-traffic-protection disable --cluster CLUSTER [-f] [-q]
 {: #vpc-outbound-traffic-protection-disable-options-dl}
 
 
+#### Example `vpc outbound-traffic-protection disable` command
+{: #vpc-outbound-traffic-protection-disable-example}
+
+```sh
+ibmcloud oc vpc outbound-traffic-protection disable --cluster my_cluster
+```
+{: pre}
+
+
 ### `ibmcloud oc vpc outbound-traffic-protection enable`
 {: #vpc-outbound-traffic-protection-enable-cli}
 
@@ -7466,6 +7564,15 @@ ibmcloud oc vpc outbound-traffic-protection enable --cluster CLUSTER [-f] [-q]
 `-q`
 :    Do not show the message of the day or update reminders.
 {: #vpc-outbound-traffic-protection-enable-options-dl}
+
+
+#### Example `vpc outbound-traffic-protection enable` command
+{: #vpc-outbound-traffic-protection-enable-example}
+
+```sh
+ibmcloud oc vpc outbound-traffic-protection enable --cluster my_cluster
+```
+{: pre}
 
 
 ### `ibmcloud oc vni attach baremetal`
@@ -7508,6 +7615,15 @@ ibmcloud oc vni attach baremetal --vlan VLAN --vni VNI [--auto-delete] [--output
 {: #vni-attach-baremetal-options-dl}
 
 
+#### Example `vni attach baremetal` command
+{: #vni-attach-baremetal-example}
+
+```sh
+ibmcloud oc vni attach baremetal --vlan 100 --vni my_vni --cluster-id my_cluster_id
+```
+{: pre}
+
+
 ### `ibmcloud oc vni detach`
 {: #vni-detach-cli}
 
@@ -7543,6 +7659,15 @@ ibmcloud oc vni detach --vni VNI [-f] [--output OUTPUT] [-q] (--cluster-id ID | 
 `--worker WORKER`, `-w WORKER`
 :    The ID of the worker node.
 {: #vni-detach-options-dl}
+
+
+#### Example `vni detach` command
+{: #vni-detach-example}
+
+```sh
+ibmcloud oc vni detach --vni my_vni --cluster-id my_cluster_id
+```
+{: pre}
 
 
 ### `ibmcloud oc vni ls`
@@ -7583,6 +7708,16 @@ ibmcloud oc vni ls [--after AFTER] [--first FIRST] [--output OUTPUT] [-q] (--clu
 
 
 ### `flavor` command
+
+#### Example `vni ls` command
+{: #vni-ls-example}
+
+```sh
+ibmcloud oc vni ls --cluster-id my_cluster_id
+```
+{: pre}
+
+
 {: #cs_machine_types}
 
 Each flavor includes the amount of virtual CPU, memory, and disk space for each worker node in the cluster.
@@ -7942,6 +8077,11 @@ Minimum required permissions
 :    The file that contains the scripts that you want to update.
 
 
+To use this command
+
+#### Example `script update` command
+{: #script-update-example}
+
 To use this command to prepare your automation scripts for the release of version 1.0 of the {{site.data.keyword.openshiftlong_notm}} plug-in:
 1. Run the command on a test script without the `--in-place` option.
     ```sh
@@ -8030,6 +8170,15 @@ ibmcloud oc security-group ls --cluster CLUSTER [--attached-to ATTACHED] [--mana
 `--scope SCOPE`
 :    Specify `cluster` to return security groups scoped to the cluster. Specify `vpc` to return security groups scoped to the entire VPC. Accepted values: `cluster`, `vpc`
 {: #security-group-ls-options-dl}
+
+#### Example `security-group ls` command
+{: #security-group-ls-example}
+
+```sh
+ibmcloud oc security-group ls --cluster my_cluster
+```
+{: pre}
+
 
 ### `ibmcloud oc security-group reset`
 {: #security_group_reset}
@@ -8123,7 +8272,7 @@ Minimum required permissions
 :   **Editor** platform access role for the cluster in {{site.data.keyword.containerlong_notm}}
 
 ```sh
-ibmcloud oc storage attachment create --cluster CLUSTER_ID --volume VOLUME --worker WORKER [--output json]
+ibmcloud oc storage attachment create --cluster CLUSTER --volume VOLUME --worker WORKER [--output OUTPUT] [-q]
 ```
 {: pre}
 
@@ -8164,7 +8313,7 @@ Minimum required permissions
 :   **Viewer** platform access role for the cluster in {{site.data.keyword.containerlong_notm}}
 
 ```sh
-ibmcloud oc storage attachment get --cluster CLUSTER_ID --attachment ATTACHMENT --worker WORKER [--output json]
+ibmcloud oc storage attachment get --attachment ATTACHMENT --cluster CLUSTER --worker WORKER [--output OUTPUT] [-q]
 ```
 {: pre}
 
@@ -8202,7 +8351,7 @@ Minimum required permissions
 :   **Viewer** platform access role for the cluster in {{site.data.keyword.containerlong_notm}}
 
 ```sh
-ibmcloud oc storage attachment ls --cluster CLUSTER_ID --worker WORKER [--output json]
+ibmcloud oc storage attachment ls --cluster CLUSTER --worker WORKER [--output OUTPUT] [-q]
 ```
 {: pre}
 
@@ -8238,7 +8387,7 @@ Minimum required permissions
 :   **Editor** platform access role for the cluster in {{site.data.keyword.containerlong_notm}}
 
 ```sh
-ibmcloud oc storage attachment rm --cluster CLUSTER_ID --attachment ATTACHMENT --worker WORKER [--output json]
+ibmcloud oc storage attachment rm --attachment ATTACHMENT --cluster CLUSTER --worker WORKER [-q]
 ```
 {: pre}
 
@@ -8279,7 +8428,7 @@ Minimum required permissions
 :   **Viewer** platform access role for the cluster in {{site.data.keyword.containerlong_notm}}
 
 ```sh
-ibmcloud oc storage volume get --volume VOLUME
+ibmcloud oc storage volume get --volume VOLUME [--output OUTPUT] [-q]
 ```
 {: pre}
 
@@ -8315,7 +8464,7 @@ Minimum required permissions
 :   **Editor** platform access role for the cluster in {{site.data.keyword.containerlong_notm}}
 
 ```sh
-ibmcloud oc storage volume ls [--cluster CLUSTER_ID] [--provider PROVIDER] [--zone ZONE] [--output json]
+ibmcloud oc storage volume ls [--cluster CLUSTER] [--output OUTPUT] [--provider PROVIDER] [-q] [--zone ZONE]
 ```
 {: pre}
 
@@ -8782,6 +8931,15 @@ ibmcloud oc experimental trusted-profile default get --region REGION --resource-
 {: #experimental-trusted-profile-default-get-options-dl}
 
 
+#### Example `experimental trusted-profile default get` command
+{: #experimental-trusted-profile-default-get-example}
+
+```sh
+ibmcloud oc experimental trusted-profile default get --region us-south --resource-group my_group
+```
+{: pre}
+
+
 ### `ibmcloud oc experimental trusted-profile default set`
 {: #experimental-trusted-profile-default-set-cli}
 
@@ -8813,6 +8971,15 @@ ibmcloud oc experimental trusted-profile default set --region REGION --resource-
 {: #experimental-trusted-profile-default-set-options-dl}
 
 
+#### Example `experimental trusted-profile default set` command
+{: #experimental-trusted-profile-default-set-example}
+
+```sh
+ibmcloud oc experimental trusted-profile default set --region us-south --resource-group my_group --trusted-profile my_profile_id
+```
+{: pre}
+
+
 ### `ibmcloud oc experimental trusted-profile get`
 {: #experimental-trusted-profile-get-cli}
 
@@ -8838,6 +9005,15 @@ ibmcloud oc experimental trusted-profile get --cluster CLUSTER [--output OUTPUT]
 {: #experimental-trusted-profile-get-options-dl}
 
 
+#### Example `experimental trusted-profile get` command
+{: #experimental-trusted-profile-get-example}
+
+```sh
+ibmcloud oc experimental trusted-profile get --cluster my_cluster
+```
+{: pre}
+
+
 ### `ibmcloud oc experimental trusted-profile set`
 {: #experimental-trusted-profile-set-cli}
 
@@ -8853,7 +9029,7 @@ ibmcloud oc experimental trusted-profile set --cluster CLUSTER --trusted-profile
 {: #experimental-trusted-profile-set-options}
 
 `--cluster CLUSTER`
-:    The cluster ID to set the the trusted profile on.
+:    The cluster ID to set the trusted profile on.
 
 `--output OUTPUT`
 :    Prints the command output in the provided format. Accepted values: `json`
@@ -8864,3 +9040,12 @@ ibmcloud oc experimental trusted-profile set --cluster CLUSTER --trusted-profile
 `--trusted-profile PROFILE`
 :    The trusted profile ID.
 {: #experimental-trusted-profile-set-options-dl}
+
+
+#### Example `experimental trusted-profile set` command
+{: #experimental-trusted-profile-set-example}
+
+```sh
+ibmcloud oc experimental trusted-profile set --cluster my_cluster --trusted-profile my_profile_id
+```
+{: pre}

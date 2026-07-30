@@ -2,7 +2,7 @@
 
 copyright:
   years: 2023, 2026
-lastupdated: "2026-04-14"
+lastupdated: "2026-07-30"
 
 
 keywords: openshift, openshift data foundation, openshift container storage, trusted profile
@@ -38,7 +38,7 @@ You can use trusted profiles for ODF to limit the access that running pods in yo
     Example command:
 
     ```sh
-    ibmcloud oc cluster addon enable openshift-data-foundation -c <cluster-name> --version 4.X.X
+    ibmcloud oc cluster addon enable openshift-data-foundation -c CLUSTER_NAME --version 4.X.X
     ```
     {: pre}
 

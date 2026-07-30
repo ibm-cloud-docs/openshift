@@ -2,7 +2,7 @@
 
 copyright:
   years: 2026
-lastupdated: "2026-06-25"
+lastupdated: "2026-07-30"
 
 keywords: openshift virtualization, vpc file storage, virtual machines, data volumes, storage profiles, virtctl
 
@@ -54,7 +54,7 @@ Verify that your cluster is ready before you create a virtual machine.
 
 1. Confirm that the VPC File CSI driver add-on is installed.
    ```sh
-   ibmcloud ks cluster addon ls -c <cluster-name> | grep vpc-file-csi-driver
+   ibmcloud ks cluster addon ls -c CLUSTER_NAME | grep vpc-file-csi-driver
    ```
    {: pre}
 

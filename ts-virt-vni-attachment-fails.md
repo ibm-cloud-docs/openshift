@@ -3,7 +3,7 @@
 copyright:
   years: 2026, 2026
 
-lastupdated: "2026-05-06"
+lastupdated: "2026-07-30"
 
 keywords: openshift virtualization, vni attachment, vpc, iam, zone, worker
 
@@ -57,7 +57,7 @@ To resolve the issue,
 
 4. Check the VNI attachment status for the cluster.
    ```sh
-   ibmcloud ks vni ls --cluster-id <cluster_id>
+   ibmcloud ks vni ls --cluster-id CLUSTER_ID
    ```
    {: pre}
 

@@ -2,7 +2,7 @@
 
 copyright:
   years: 2022, 2026
-lastupdated: "2026-06-12"
+lastupdated: "2026-07-30"
 
 
 keywords: rhel, os, operating system, rhcos, 418, migration, vpc
@@ -53,7 +53,7 @@ To migrate to RHCOS, you must provision a new worker pool, then delete the previ
 Run the following command to update the master.
 
 ```sh
-ibmcloud ks cluster master update --cluster <clusterNameOrID> --version 4.18_openshift
+ibmcloud ks cluster master update --cluster CLUSTERNAMEORID --version 4.18_openshift
 ```
 {: pre}
 
@@ -72,7 +72,7 @@ Before you create a new RHCOS worker pool, review the instance group quota limit
     Example command to create a RHCOS worker pool. For more information about the `worker pool create vpc-gen2` command, see the [CLI reference](/docs/openshift?topic=openshift-kubernetes-service-cli#cli_worker_pool_create_vpc_gen2) for command details. [Adding worker nodes in VPC clusters](/docs/openshift?topic=openshift-add-workers-vpc).
 
     ```sh
-    ibmcloud oc worker-pool create vpc-gen2 --name <worker_pool_name> --cluster <cluster_name_or_ID> --flavor <flavor> --size-per-zone <number_of_workers_per_zone> --operating-system RHCOS [--entitlement ocp_entitled]
+    ibmcloud oc worker-pool create vpc-gen2 --name WORKER_POOL_NAME --cluster CLUSTER_NAME_OR_ID --flavor FLAVOR --size-per-zone NUMBER_OF_WORKERS_PER_ZONE --operating-system RHCOS [--entitlement ocp_entitled]
     ```
     {: pre}
     
@@ -81,7 +81,7 @@ Before you create a new RHCOS worker pool, review the instance group quota limit
 1. Verify that the worker pool is created and note the worker pool ID.
 
     ```sh
-    ibmcloud oc worker-pool ls --cluster <cluster_name_or_ID>
+    ibmcloud oc worker-pool ls --cluster CLUSTER_NAME_OR_ID
     ```
     {: pre}
 

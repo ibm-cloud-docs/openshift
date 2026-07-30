@@ -2,7 +2,7 @@
 
 copyright:
   years: 2025, 2026
-lastupdated: "2026-06-26"
+lastupdated: "2026-07-30"
 
 keywords: openshift, virtualization, operator, hyperconverged, kubevirt
 
@@ -46,7 +46,7 @@ Before you install the OpenShift Virtualization Operator, complete the following
 
 3. If you didn't disable outbound traffic protection during cluster creation, disable it now.
    ```sh
-   ibmcloud oc vpc outbound-traffic-protection disable -c <cluster-name>
+   ibmcloud oc vpc outbound-traffic-protection disable -c CLUSTER_NAME
    ```
    {: pre}
    
@@ -55,7 +55,7 @@ Before you install the OpenShift Virtualization Operator, complete the following
 
 4. Enable the default catalog sources.
    ```sh
-   ibmcloud ks cluster config --admin -c <cluster-name>
+   ibmcloud ks cluster config --admin -c CLUSTER_NAME
    oc patch operatorhub cluster --type json -p '[{"op": "add", "path": "/spec/disableAllDefaultSources", "value": false}]'
    ```
    {: pre}
