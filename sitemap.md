@@ -7070,11 +7070,17 @@ subcollection: openshift
 
 * [ibmcloud oc commands](/docs/openshift?topic=openshift-kubernetes-service-cli#cli_commands)
 
-* [`ibmcloud oc api`](/docs/openshift?topic=openshift-kubernetes-service-cli#api-cli)
+* [`ibmcloud oc api` commands](/docs/openshift?topic=openshift-kubernetes-service-cli#api-cli)
+
+    * [`ibmcloud oc api`](/docs/openshift?topic=openshift-kubernetes-service-cli#api-cli)
+
+* [`ibmcloud oc api-key` commands](/docs/openshift?topic=openshift-kubernetes-service-cli#api-key-cli)
 
     * [`ibmcloud oc api-key info`](/docs/openshift?topic=openshift-kubernetes-service-cli#api-key-info-cli)
 
     * [`ibmcloud oc api-key reset`](/docs/openshift?topic=openshift-kubernetes-service-cli#api-key-reset-cli)
+
+* [`ibmcloud oc cluster` commands](/docs/openshift?topic=openshift-kubernetes-service-cli#cluster-cli)
 
     * [`ibmcloud oc cluster addon disable acm`](/docs/openshift?topic=openshift-kubernetes-service-cli#cluster-addon-disable-acm-cli)
 
@@ -7246,11 +7252,15 @@ subcollection: openshift
 
     * [`ibmcloud oc cluster subnet detach`](/docs/openshift?topic=openshift-kubernetes-service-cli#cluster-subnet-detach-cli)
 
+* [`ibmcloud oc credential` commands](/docs/openshift?topic=openshift-kubernetes-service-cli#credential-cli)
+
     * [`ibmcloud oc credential get`](/docs/openshift?topic=openshift-kubernetes-service-cli#credential-get-cli)
 
     * [`ibmcloud oc credential set classic`](/docs/openshift?topic=openshift-kubernetes-service-cli#credential-set-classic-cli)
 
     * [`ibmcloud oc credential unset`](/docs/openshift?topic=openshift-kubernetes-service-cli#credential-unset-cli)
+
+* [`ibmcloud oc experimental` commands](/docs/openshift?topic=openshift-kubernetes-service-cli#experimental-cli)
 
     * [`ibmcloud oc experimental trusted-profile default get`](/docs/openshift?topic=openshift-kubernetes-service-cli#experimental-trusted-profile-default-get-cli)
 
@@ -7268,11 +7278,17 @@ subcollection: openshift
 
     * [`ibmcloud oc experimental vni ls`](/docs/openshift?topic=openshift-kubernetes-service-cli#experimental-vni-ls-cli)
 
+* [`ibmcloud oc flavor` commands](/docs/openshift?topic=openshift-kubernetes-service-cli#flavor-cli)
+
     * [`ibmcloud oc flavor get`](/docs/openshift?topic=openshift-kubernetes-service-cli#flavor-get-cli)
 
     * [`ibmcloud oc flavor ls`](/docs/openshift?topic=openshift-kubernetes-service-cli#flavor-ls-cli)
 
+* [`ibmcloud oc infra-permissions` commands](/docs/openshift?topic=openshift-kubernetes-service-cli#infra-permissions-cli)
+
     * [`ibmcloud oc infra-permissions get`](/docs/openshift?topic=openshift-kubernetes-service-cli#infra-permissions-get-cli)
+
+* [`ibmcloud oc ingress` commands](/docs/openshift?topic=openshift-kubernetes-service-cli#ingress-cli)
 
     * [`ibmcloud oc ingress alb autoscale get`](/docs/openshift?topic=openshift-kubernetes-service-cli#ingress-alb-autoscale-get-cli)
 
@@ -7380,7 +7396,11 @@ subcollection: openshift
 
     * [`ibmcloud oc ingress status-report ignored-errors rm`](/docs/openshift?topic=openshift-kubernetes-service-cli#ingress-status-report-ignored-errors-rm-cli)
 
-* [`ibmcloud oc init`](/docs/openshift?topic=openshift-kubernetes-service-cli#init-cli)
+* [`ibmcloud oc init` commands](/docs/openshift?topic=openshift-kubernetes-service-cli#init-cli)
+
+    * [`ibmcloud oc init`](/docs/openshift?topic=openshift-kubernetes-service-cli#init-cli)
+
+* [`ibmcloud oc kms` commands](/docs/openshift?topic=openshift-kubernetes-service-cli#kms-cli)
 
     * [`ibmcloud oc kms crk ls`](/docs/openshift?topic=openshift-kubernetes-service-cli#kms-crk-ls-cli)
 
@@ -7388,7 +7408,11 @@ subcollection: openshift
 
     * [`ibmcloud oc kms instance ls`](/docs/openshift?topic=openshift-kubernetes-service-cli#kms-instance-ls-cli)
 
-* [`ibmcloud oc locations`](/docs/openshift?topic=openshift-kubernetes-service-cli#locations-cli)
+* [`ibmcloud oc locations` commands](/docs/openshift?topic=openshift-kubernetes-service-cli#locations-cli)
+
+    * [`ibmcloud oc locations`](/docs/openshift?topic=openshift-kubernetes-service-cli#locations-cli)
+
+* [`ibmcloud oc logging` commands](/docs/openshift?topic=openshift-kubernetes-service-cli#logging-cli)
 
     * [`ibmcloud oc logging autoupdate disable`](/docs/openshift?topic=openshift-kubernetes-service-cli#logging-autoupdate-disable-cli)
 
@@ -7414,7 +7438,11 @@ subcollection: openshift
 
     * [`ibmcloud oc logging refresh`](/docs/openshift?topic=openshift-kubernetes-service-cli#logging-refresh-cli)
 
-* [`ibmcloud oc messages`](/docs/openshift?topic=openshift-kubernetes-service-cli#messages-cli)
+* [`ibmcloud oc messages` commands](/docs/openshift?topic=openshift-kubernetes-service-cli#messages-cli)
+
+    * [`ibmcloud oc messages`](/docs/openshift?topic=openshift-kubernetes-service-cli#messages-cli)
+
+* [`ibmcloud oc nlb-dns` commands](/docs/openshift?topic=openshift-kubernetes-service-cli#nlb-dns-cli)
 
     * [`ibmcloud oc nlb-dns add`](/docs/openshift?topic=openshift-kubernetes-service-cli#nlb-dns-add-cli)
 
@@ -7446,15 +7474,23 @@ subcollection: openshift
 
     * [`ibmcloud oc nlb-dns secret rm`](/docs/openshift?topic=openshift-kubernetes-service-cli#nlb-dns-secret-rm-cli)
 
+* [`ibmcloud oc quota` commands](/docs/openshift?topic=openshift-kubernetes-service-cli#quota-cli)
+
     * [`ibmcloud oc quota ls`](/docs/openshift?topic=openshift-kubernetes-service-cli#quota-ls-cli)
 
+* [`ibmcloud oc script` commands](/docs/openshift?topic=openshift-kubernetes-service-cli#script-cli)
+
     * [`ibmcloud oc script update`](/docs/openshift?topic=openshift-kubernetes-service-cli#script-update-cli)
+
+* [`ibmcloud oc security-group` commands](/docs/openshift?topic=openshift-kubernetes-service-cli#security-group-cli)
 
     * [`ibmcloud oc security-group ls`](/docs/openshift?topic=openshift-kubernetes-service-cli#security-group-ls-cli)
 
     * [`ibmcloud oc security-group reset`](/docs/openshift?topic=openshift-kubernetes-service-cli#security-group-reset-cli)
 
     * [`ibmcloud oc security-group sync`](/docs/openshift?topic=openshift-kubernetes-service-cli#security-group-sync-cli)
+
+* [`ibmcloud oc storage` commands](/docs/openshift?topic=openshift-kubernetes-service-cli#storage-cli)
 
     * [`ibmcloud oc storage attachment create`](/docs/openshift?topic=openshift-kubernetes-service-cli#storage-attachment-create-cli)
 
@@ -7468,19 +7504,29 @@ subcollection: openshift
 
     * [`ibmcloud oc storage volume ls`](/docs/openshift?topic=openshift-kubernetes-service-cli#storage-volume-ls-cli)
 
-* [`ibmcloud oc subnets`](/docs/openshift?topic=openshift-kubernetes-service-cli#subnets-cli)
+* [`ibmcloud oc subnets` commands](/docs/openshift?topic=openshift-kubernetes-service-cli#subnets-cli)
 
-* [`ibmcloud oc versions`](/docs/openshift?topic=openshift-kubernetes-service-cli#versions-cli)
+    * [`ibmcloud oc subnets`](/docs/openshift?topic=openshift-kubernetes-service-cli#subnets-cli)
+
+* [`ibmcloud oc versions` commands](/docs/openshift?topic=openshift-kubernetes-service-cli#versions-cli)
+
+    * [`ibmcloud oc versions`](/docs/openshift?topic=openshift-kubernetes-service-cli#versions-cli)
+
+* [`ibmcloud oc vlan` commands](/docs/openshift?topic=openshift-kubernetes-service-cli#vlan-cli)
 
     * [`ibmcloud oc vlan ls`](/docs/openshift?topic=openshift-kubernetes-service-cli#vlan-ls-cli)
 
     * [`ibmcloud oc vlan spanning get`](/docs/openshift?topic=openshift-kubernetes-service-cli#vlan-spanning-get-cli)
+
+* [`ibmcloud oc vni` commands](/docs/openshift?topic=openshift-kubernetes-service-cli#vni-cli)
 
     * [`ibmcloud oc vni attach baremetal`](/docs/openshift?topic=openshift-kubernetes-service-cli#vni-attach-baremetal-cli)
 
     * [`ibmcloud oc vni detach`](/docs/openshift?topic=openshift-kubernetes-service-cli#vni-detach-cli)
 
     * [`ibmcloud oc vni ls`](/docs/openshift?topic=openshift-kubernetes-service-cli#vni-ls-cli)
+
+* [`ibmcloud oc vpc` commands](/docs/openshift?topic=openshift-kubernetes-service-cli#vpc-cli)
 
     * [`ibmcloud oc vpc ls`](/docs/openshift?topic=openshift-kubernetes-service-cli#vpc-ls-cli)
 
@@ -7490,7 +7536,11 @@ subcollection: openshift
 
     * [`ibmcloud oc vpc secure-by-default enable`](/docs/openshift?topic=openshift-kubernetes-service-cli#vpc-secure-by-default-enable-cli)
 
-* [`ibmcloud oc webhook-create`](/docs/openshift?topic=openshift-kubernetes-service-cli#webhook-create-cli)
+* [`ibmcloud oc webhook-create` commands](/docs/openshift?topic=openshift-kubernetes-service-cli#webhook-create-cli)
+
+    * [`ibmcloud oc webhook-create`](/docs/openshift?topic=openshift-kubernetes-service-cli#webhook-create-cli)
+
+* [`ibmcloud oc worker` commands](/docs/openshift?topic=openshift-kubernetes-service-cli#worker-cli)
 
     * [`ibmcloud oc worker get`](/docs/openshift?topic=openshift-kubernetes-service-cli#worker-get-cli)
 
@@ -7505,6 +7555,8 @@ subcollection: openshift
     * [`ibmcloud oc worker rm`](/docs/openshift?topic=openshift-kubernetes-service-cli#worker-rm-cli)
 
     * [`ibmcloud oc worker update`](/docs/openshift?topic=openshift-kubernetes-service-cli#worker-update-cli)
+
+* [`ibmcloud oc worker-pool` commands](/docs/openshift?topic=openshift-kubernetes-service-cli#worker-pool-cli)
 
     * [`ibmcloud oc worker-pool create classic`](/docs/openshift?topic=openshift-kubernetes-service-cli#worker-pool-create-classic-cli)
 
@@ -7535,6 +7587,8 @@ subcollection: openshift
     * [`ibmcloud oc worker-pool taint set`](/docs/openshift?topic=openshift-kubernetes-service-cli#worker-pool-taint-set-cli)
 
     * [`ibmcloud oc worker-pool zones`](/docs/openshift?topic=openshift-kubernetes-service-cli#worker-pool-zones-cli)
+
+* [`ibmcloud oc zone` commands](/docs/openshift?topic=openshift-kubernetes-service-cli#zone-cli)
 
     * [`ibmcloud oc zone add classic`](/docs/openshift?topic=openshift-kubernetes-service-cli#zone-add-classic-cli)
 
