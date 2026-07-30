@@ -8545,8 +8545,6 @@ subcollection: openshift
 
 * [Does the service come with a managed {{site.data.keyword.redhat_openshift_notm}} master and worker nodes?](/docs/openshift?topic=openshift-faqs#managed_master_worker)
 
-    * [Why do my worker nodes have the `master` role?](/docs/openshift?topic=openshift-faqs#flavor-master-role)
-
 * [What kinds of workloads can I move to {{site.data.keyword.openshiftlong_notm}}?](/docs/openshift?topic=openshift-faqs#move_to_cloud)
 
 * [Can I automate my infrastructure deployments?](/docs/openshift?topic=openshift-faqs#infra_packaging)

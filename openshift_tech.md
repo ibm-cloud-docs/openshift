@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2026
-lastupdated: "2026-07-10"
+lastupdated: "2026-07-30"
 
 
 keywords: openshift, compliance, security standards, red hat openshift, openshift container platform, red hat, openshift architecture, red hat architecture, openshift dependencies,
@@ -27,7 +27,7 @@ In {{site.data.keyword.openshiftlong_notm}}, your clusters comprise an IBM-manag
 
 Review the architecture diagram and then scroll through the following tables for a description of master and worker node components in {{site.data.keyword.openshiftlong_notm}} clusters that run on classic infrastructure. For more information about the OpenShift Container Platform architecture, see the [{{site.data.keyword.redhat_openshift_notm}} docs](https://docs.redhat.com/en/documentation/openshift_container_platform/4.21/html/architecture/architecture){: external}.
 
-When you run `oc get nodes`, you might notice that the **ROLES** of your worker nodes are marked as both `master,worker`. These nodes are worker nodes in {{site.data.keyword.cloud_notm}}, and don't include the master components that are managed by IBM. Instead, these nodes are marked as `master` because they run OpenShift Container Platform components that are required to set up and manage default resources within the cluster, such as the OperatorHub and internal registry.
+In clusters that run version 4.17 and earlier, when you run `oc get nodes`, you might notice that the **ROLES** of your worker nodes are marked as both `master,worker`. These nodes are worker nodes in {{site.data.keyword.cloud_notm}}, and don't include the master components that are managed by IBM. Instead, these nodes are marked as `master` because they run OpenShift Container Platform components that are required to set up and manage default resources within the cluster, such as the OperatorHub and internal registry. In clusters that run version 4.18 and later, the `node-role.kubernetes.io/master` node label is no longer set on worker nodes.
 {: note}
 
 ![{{site.data.keyword.openshiftlong_notm}} cluster architecture](/images/cs_org_ov_both_ses_roks4.svg){: caption="Red Hat OpenShift master components" caption-side="bottom"}
