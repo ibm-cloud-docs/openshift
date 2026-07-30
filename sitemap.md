@@ -1680,7 +1680,7 @@ subcollection: openshift
 
     * [27 March 2024](/docs/openshift?topic=openshift-openshift-relnotes#openshift-mar2724)
 
-        * Master patch updates for {{site.data.keyword.openshiftlong_notm}} clusters. Master patches are applied automatically over the course of several days. You can choose to use the [`ibmcloud ks cluster master update`](/docs/openshift?topic=openshift-kubernetes-service-cli#cs_cluster_update) command yourself without waiting for the update automation to apply the patch. Review the change logs for your cluster version.
+        * Master patch updates for {{site.data.keyword.openshiftlong_notm}} clusters. Master patches are applied automatically over the course of several days. You can choose to use the [`ibmcloud ks cluster master update`](/docs/openshift?topic=openshift-kubernetes-service-cli#cluster-master-update-cli) command yourself without waiting for the update automation to apply the patch. Review the change logs for your cluster version.
 
     * [25 March 2024](/docs/openshift?topic=openshift-openshift-relnotes#openshift-mar2524)
 
@@ -1720,7 +1720,7 @@ subcollection: openshift
 
         * Enable remote health monitoring with Telemetry
 
-        * Master patch updates for {{site.data.keyword.openshiftlong_notm}} clusters. Master patches are applied automatically over the course of several days. You can choose to use the [`ibmcloud ks cluster master update`](/docs/openshift?topic=openshift-kubernetes-service-cli#cs_cluster_update) command yourself without waiting for the update automation to apply the patch. Review the change logs for your cluster version.
+        * Master patch updates for {{site.data.keyword.openshiftlong_notm}} clusters. Master patches are applied automatically over the course of several days. You can choose to use the [`ibmcloud ks cluster master update`](/docs/openshift?topic=openshift-kubernetes-service-cli#cluster-master-update-cli) command yourself without waiting for the update automation to apply the patch. Review the change logs for your cluster version.
 
     * [27 February 2024](/docs/openshift?topic=openshift-openshift-relnotes#openshift-feb2724)
 
@@ -7467,6 +7467,8 @@ subcollection: openshift
     * [`ibmcloud oc experimental trusted-profile get`](/docs/openshift?topic=openshift-kubernetes-service-cli#experimental-trusted-profile-get-cli)
 
     * [`ibmcloud oc experimental trusted-profile set`](/docs/openshift?topic=openshift-kubernetes-service-cli#experimental-trusted-profile-set-cli)
+
+[{{site.data.keyword.openshiftlong_notm}} CLI reference](/docs/openshift?topic=openshift-kubernetes-service-cli#kubernetes-service-cli)
 
 [CLI change log](/docs/openshift?topic=openshift-cs_cli_changelog#cs_cli_changelog)
 

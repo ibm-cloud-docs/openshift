@@ -1,8 +1,8 @@
 ---
 
 copyright: 
-  years: 2025, 2025
-lastupdated: "2025-11-24"
+  years: 2025, 2026
+lastupdated: "2026-07-30"
 
 
 keywords: kubernetes, rebalance, resize, node scaling, ca, autoscaler, openshift
@@ -44,7 +44,7 @@ Before you can rebalance or resize your worker pool, you must remove the worker 
 
 2. Save the `iks-ca-configmap`.
 
-3. [Resize](/docs/openshift?topic=openshift-kubernetes-service-cli#cs_worker_pool_resize) or [rebalance](/docs/openshift?topic=openshift-kubernetes-service-cli#cs_rebalance) your worker pool.
+3. [Resize](/docs/openshift?topic=openshift-kubernetes-service-cli#worker-pool-resize-cli) or [rebalance](/docs/openshift?topic=openshift-kubernetes-service-cli#worker-pool-rebalance-cli) your worker pool.
 
 4. **Optional** [Update your VPC worker nodes](/docs/openshift?topic=openshift-update#vpc_worker_node).
 
@@ -65,5 +65,3 @@ Before you can rebalance or resize your worker pool, you must remove the worker 
     kind: ConfigMap
     ```
     {: screen}
-
-

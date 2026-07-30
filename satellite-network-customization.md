@@ -2,7 +2,7 @@
 
 copyright:
   years: 2023, 2026
-lastupdated: "2026-04-16"
+lastupdated: "2026-07-30"
 
 
 keywords: openshift, route, network, satellite
@@ -72,7 +72,7 @@ When you create your cluster in the CLI, you can define the `--pod-network-inter
 - To choose an interface with a Regex string, specify `interface=<regex_string>`; for example, `interface=eth.*`.
 
 
-For more information, see the [**`ibmcloud oc cluster create satellite`**](/docs/openshift?topic=openshift-kubernetes-service-cli#cli_cluster-create-satellite) command reference.
+For more information, see the [**`ibmcloud oc cluster create satellite`**](/docs/openshift?topic=openshift-kubernetes-service-cli#cluster-create-satellite-cli) command reference.
 
 ## Limiting access to your {{site.data.keyword.satelliteshort}} cluster
 {: #sat-network-custom-pod-network-limit}

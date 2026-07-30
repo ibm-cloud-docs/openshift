@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2026, 2026
-lastupdated: "2026-04-30"
+lastupdated: "2026-07-30"
 
 
 keywords: kubernetes, openshift, ca cert, certificate authority, rotate
@@ -49,8 +49,8 @@ To complete the rotation process, you must reload or replace your worker nodes.
 1. Reload or replace your worker nodes by following the steps for your cluster type.
     
 
-    * [Reload your classic worker nodes](/docs/openshift?topic=openshift-kubernetes-service-cli#cs_worker_reload).
-    * [Replace your VPC worker nodes](/docs/openshift?topic=openshift-kubernetes-service-cli#cli_worker_replace).
+    * [Reload your classic worker nodes](/docs/openshift?topic=openshift-kubernetes-service-cli#worker-reload-cli).
+    * [Replace your VPC worker nodes](/docs/openshift?topic=openshift-kubernetes-service-cli#worker-replace-cli).
 
 1. Update any tooling or webhooks that rely on the previous certificates. For example, you might need to update one or more of the following.
     - If you use the certificate from your cluster's `kubeconfig` file in your own service, such as Jenkins.

@@ -1,7 +1,7 @@
 ---
 copyright:
   years: 2014, 2026
-lastupdated: "2026-05-26"
+lastupdated: "2026-07-30"
 
 
 keywords: openshift, file, debug, help
@@ -86,7 +86,7 @@ Some issues can be resolved by restarting and redeploying your pods. Follow the 
         ```
         {: pre}
 
-1. If restarting your pod does not resolve the issue, [reload your worker nodes](/docs/openshift?topic=openshift-kubernetes-service-cli#cs_worker_reload).
+1. If restarting your pod does not resolve the issue, [reload your worker nodes](/docs/openshift?topic=openshift-kubernetes-service-cli#worker-reload-cli).
 
 1. Verify that you use the latest {{site.data.keyword.cloud_notm}} and {{site.data.keyword.containerlong_notm}} plug-in version.
 

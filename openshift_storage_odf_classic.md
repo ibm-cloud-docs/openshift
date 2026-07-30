@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2026
-lastupdated: "2026-04-23"
+lastupdated: "2026-07-30"
 
 
 keywords: openshift, openshift data foundation, openshift container storage, ocs, classic
@@ -321,7 +321,7 @@ Before you install ODF, get the details of the local disks on your worker nodes.
 {: #install-odf-cli-classic}
 {: cli}
 
-You can install the add-on by using the [`ibmcloud oc cluster addon enable` command](/docs/openshift?topic=openshift-kubernetes-service-cli#cs_cluster_addon_enable).
+You can install the add-on by using the [`ibmcloud oc cluster addon enable` command](/docs/openshift?topic=openshift-kubernetes-service-cli#cluster-addon-enable-cli).
 {: shortdesc}
 
 If you want to use an {{site.data.keyword.cos_full_notm}} service instance as your default backing store, make sure that you [created the service instance](#odf-create-cos-classic), and created the Kubernetes secret in your cluster. When you create the ODF CRD in your cluster, ODF looks for a secret named `ibm-cloud-cos-creds` to set up the default backing store that uses your {{site.data.keyword.cos_short}} HMAC credentials.

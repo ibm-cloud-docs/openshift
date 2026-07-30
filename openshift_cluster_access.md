@@ -361,7 +361,7 @@ For security reasons, first log out of the {{site.data.keyword.cloud_notm}} cons
 If you can't or don't want to open the {{site.data.keyword.redhat_openshift_notm}} console, choose among the following options to log in to your {{site.data.keyword.openshiftlong_notm}} cluster by using the CLI.
 *   **Log in as admin**:
     1. Make sure that you have the [**Administrator** IAM platform access role for the cluster](/docs/openshift?topic=openshift-iam-platform-access-roles).
-    2. Set your command line context for the cluster and download the TLS certificates and permission files for the administrator. For more information, see the [CLI documentation](/docs/openshift?topic=openshift-kubernetes-service-cli#cs_cluster_config).
+    2. Set your command line context for the cluster and download the TLS certificates and permission files for the administrator. For more information, see the [CLI documentation](/docs/openshift?topic=openshift-kubernetes-service-cli#cluster-config-cli).
         ```sh
         ibmcloud oc cluster config -c CLUSTER_NAME_OR_ID --admin
         ```
@@ -379,7 +379,7 @@ To connect to your {{site.data.keyword.satelliteshort}} cluster by using the Lin
 {: note}
 
 1. Make sure that you have the [**Administrator** IAM platform access role for the cluster](/docs/openshift?topic=openshift-iam-platform-access-roles).
-2. Set your command line context for the cluster by using the Link endpoint and download the TLS certificates and permission files for the administrator. For more information, see the [CLI documentation](/docs/openshift?topic=openshift-kubernetes-service-cli#cs_cluster_config).
+2. Set your command line context for the cluster by using the Link endpoint and download the TLS certificates and permission files for the administrator. For more information, see the [CLI documentation](/docs/openshift?topic=openshift-kubernetes-service-cli#cluster-config-cli).
     ```sh
     ibmcloud oc cluster config -c CLUSTER_NAME_OR_ID --endpoint link --admin
     ```

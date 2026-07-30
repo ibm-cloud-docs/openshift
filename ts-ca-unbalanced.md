@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2026
-lastupdated: "2026-07-07"
+lastupdated: "2026-07-30"
 
 
 keywords: openshift, autoscaler
@@ -24,7 +24,7 @@ During a scale-up, the cluster autoscaler balances nodes across zones, with a pe
 Your pending workloads might not request enough capacity to make each zone balanced.
 {: tsCauses}
 
-To balance the worker pools manually, [update your cluster autoscaler ConfigMap](/docs/openshift?topic=openshift-cluster-scaling-install-addon-enable) to remove the unbalanced worker pool. Then, run the `ibmcloud oc worker-pool rebalance` [command](/docs/openshift?topic=openshift-kubernetes-service-cli#cs_rebalance), and add the worker pool back to the cluster autoscaler ConfigMap.
+To balance the worker pools manually, [update your cluster autoscaler ConfigMap](/docs/openshift?topic=openshift-cluster-scaling-install-addon-enable) to remove the unbalanced worker pool. Then, run the `ibmcloud oc worker-pool rebalance` [command](/docs/openshift?topic=openshift-kubernetes-service-cli#worker-pool-rebalance-cli), and add the worker pool back to the cluster autoscaler ConfigMap.
 {: tsResolve}
 
 

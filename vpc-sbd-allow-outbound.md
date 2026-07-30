@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2024, 2026
-lastupdated: "2026-07-27"
+lastupdated: "2026-07-30"
 
 keywords: openshift, {{site.data.keyword.openshiftlong_notm}}, secure by default, outbound traffic protection, 4.15
 
@@ -43,7 +43,7 @@ This option allows all outbound network connections.
 {: note}
 
 - In the console, select the **Allow outbound traffic** option.
-- In the CLI, when you create a cluster by using the `cluster create vpc-gen2` [command](/docs/openshift?topic=openshift-kubernetes-service-cli#cli_cluster-create-vpc-gen2), specify the `--disable-outbound-traffic-protection` option.
+- In the CLI, when you create a cluster by using the `cluster create vpc-gen2` [command](/docs/openshift?topic=openshift-kubernetes-service-cli#cluster-create-vpc-gen2-cli), specify the `--disable-outbound-traffic-protection` option.
 - In Terraform, specify the `disable_outbound_traffic_protection = true` option.
 - In the API, specify the `disableOutboundTrafficProtection=true` option.
 
@@ -54,7 +54,7 @@ This option allows all outbound network connections.
 Before creating your cluster, create a [custom security group](/docs/vpc?topic=vpc-using-security-groups) in your VPC that allows access to the external site or service that your cluster needs to access. Then, attach this security group to your cluster during cluster creation.
 
 - In the console, specify your custom security group.
-- In the CLI, when you create a cluster by using the `cluster create vpc-gen2` [command](/docs/openshift?topic=openshift-kubernetes-service-cli#cli_cluster-create-vpc-gen2), specify the `--cluster-security-group <security-group-ID>` option and include your custom security group ID.
+- In the CLI, when you create a cluster by using the `cluster create vpc-gen2` [command](/docs/openshift?topic=openshift-kubernetes-service-cli#cluster-create-vpc-gen2-cli), specify the `--cluster-security-group <security-group-ID>` option and include your custom security group ID.
 - In Terraform, specify the `security_groups` [option](https://registry.terraform.io/providers/IBM-Cloud/ibm/latest/docs/resources/container_vpc_cluster#security_groups){: external} and include your custom group.
 
 ## Disabling outbound traffic protection for existing clusters

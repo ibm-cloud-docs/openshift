@@ -2,7 +2,7 @@
 
 copyright:
   years: 2024, 2026
-lastupdated: "2026-07-27"
+lastupdated: "2026-07-30"
 
 
 keywords: openshift, {{site.data.keyword.openshiftlong_notm}}, clusters, access, endpoint, credentials, classic
@@ -31,13 +31,13 @@ You have two separate IBM Cloud infrastructure accounts and billing. By default,
 ## Accessing a different classic infrastructure account
 {: #credentials}
 
-Instead of using the default linked IBM Cloud infrastructure account to order infrastructure for clusters within a region, you might want to use a different IBM Cloud infrastructure account that you already have. You can link this infrastructure account to your {{site.data.keyword.cloud_notm}} account by using the [`ibmcloud oc credential set`](/docs/openshift?topic=openshift-kubernetes-service-cli#cs_credentials_set) command. The IBM Cloud infrastructure credentials are used instead of the default Pay-As-You-Go or Subscription account's credentials that are stored for the region.
+Instead of using the default linked IBM Cloud infrastructure account to order infrastructure for clusters within a region, you might want to use a different IBM Cloud infrastructure account that you already have. You can link this infrastructure account to your {{site.data.keyword.cloud_notm}} account by using the [`ibmcloud oc credential set`](/docs/openshift?topic=openshift-kubernetes-service-cli#credential-set-classic-cli) command. The IBM Cloud infrastructure credentials are used instead of the default Pay-As-You-Go or Subscription account's credentials that are stored for the region.
 {: shortdesc}
 
 You can manually set infrastructure credentials to a different account only for classic clusters, not for VPC clusters.
 {: note}
 
-The IBM Cloud infrastructure credentials that are set by the `ibmcloud oc credential set` command persist after your session ends. If you remove IBM Cloud infrastructure credentials that were manually set with the [`ibmcloud oc credential unset --region <region>`](/docs/openshift?topic=openshift-kubernetes-service-cli#cs_credentials_unset) command, the credentials of the Pay-As-You-Go or Subscription account are used instead. Note that this change can cause [orphaned clusters](/docs/openshift?topic=openshift-cluster_infra_errors).
+The IBM Cloud infrastructure credentials that are set by the `ibmcloud oc credential set` command persist after your session ends. If you remove IBM Cloud infrastructure credentials that were manually set with the [`ibmcloud oc credential unset --region <region>`](/docs/openshift?topic=openshift-kubernetes-service-cli#credential-unset-cli) command, the credentials of the Pay-As-You-Go or Subscription account are used instead. Note that this change can cause [orphaned clusters](/docs/openshift?topic=openshift-cluster_infra_errors).
 {: important}
 
 **Before you begin**:

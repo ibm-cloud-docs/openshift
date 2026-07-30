@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2026
-lastupdated: "2026-07-27"
+lastupdated: "2026-07-30"
 
 
 keywords: openshift, {{site.data.keyword.openshiftlong_notm}}, clusters, worker nodes, worker pools, add
@@ -129,7 +129,7 @@ Before you begin, make sure that you have the [**Operator** or **Administrator**
         ```
         {: pre}
 
-1. Create a worker pool. For more options, see the [CLI documentation](/docs/openshift?topic=openshift-kubernetes-service-cli#cli_worker_pool_create_vpc_gen2).
+1. Create a worker pool. For more options, see the [CLI documentation](/docs/openshift?topic=openshift-kubernetes-service-cli#worker-pool-create-vpc-gen2-cli).
 
     ```sh
     ibmcloud oc worker-pool create vpc-gen2 --name <name> --cluster CLUSTER-NAME --flavor <flavor> --size-per-zone <number_of_worker_nodes> [--label <key>=<value>] [--vpc-id] [[--kms-account-id <KMS_account_ID>] --kms-instance <KMS_instance_ID> --crk <root_key_ID>] [--dedicated-host-pool <dedicated-host-pool>] [--security-group <group-id>] [--operating-system SYSTEM]

@@ -1,8 +1,8 @@
 ---
 
 copyright: 
-  years: 2014, 2025
-lastupdated: "2025-12-10"
+  years: 2014, 2026
+lastupdated: "2026-07-30"
 
 
 keywords: openshift
@@ -71,4 +71,4 @@ Verify the plug-in version, re-create your app, and safely reload your worker no
         ```
         {: pre}
 
-    3. Safely [reload the worker node](/docs/openshift?topic=openshift-kubernetes-service-cli#cs_worker_reload).
+    3. Safely [reload the worker node](/docs/openshift?topic=openshift-kubernetes-service-cli#worker-reload-cli).

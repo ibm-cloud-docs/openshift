@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2026
-lastupdated: "2026-07-23"
+lastupdated: "2026-07-30"
 
 
 keywords: openshift, openshift data foundation, openshift container storage, ocs
@@ -314,7 +314,7 @@ Next steps
 {: cli}
 
 
-You can install the add-on by using the [`ibmcloud oc cluster addon enable` command](/docs/openshift?topic=openshift-kubernetes-service-cli#cs_cluster_addon_enable).
+You can install the add-on by using the [`ibmcloud oc cluster addon enable` command](/docs/openshift?topic=openshift-kubernetes-service-cli#cluster-addon-enable-cli).
 {: shortdesc}
 
 1. Review the [VPC parameter reference](/docs/openshift?topic=openshift-openshift_storage_parameters). When you enable the add-on, you can override the default values by specifying the `--param "key=value"` option for each parameter that you want to override.

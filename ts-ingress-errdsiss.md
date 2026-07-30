@@ -2,7 +2,7 @@
 
 copyright:
   years: 2022, 2026
-lastupdated: "2026-05-12"
+lastupdated: "2026-07-30"
 
 
 keywords: openshift, errdsiss, nlb dns
@@ -42,7 +42,7 @@ The subdomain has TLS secret issues (ERRDSISS).
 Check the `SSL Cert Status` of your managed domains and, if needed, regenerate them.
 {: tsResolve}
 
-1. Get the list of the managed domains using the **`ibmcloud oc nlb-dns ls`** [command](/docs/openshift?topic=openshift-kubernetes-service-cli#cs_nlb-dns-ls).
+1. Get the list of the managed domains using the **`ibmcloud oc nlb-dns ls`** [command](/docs/openshift?topic=openshift-kubernetes-service-cli#nlb-dns-ls-cli).
 1. Check the `SSL Cert Status` column.
 
     `creating` or `regenerating` status.

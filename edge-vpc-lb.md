@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2024, 2026
-lastupdated: "2026-07-27"
+lastupdated: "2026-07-30"
 
 
 keywords: openshift, kubernetes, affinity, taint, edge node, edge
@@ -32,13 +32,13 @@ Add the `dedicated=edge` label to worker nodes in your cluster. The labels ensur
 {: #edge-vpc-workloads-steps}
 
 1. Create a worker pool with the label `dedicated=edge` or add the label to one of your existing worker pools.
-    * To create a VPC worker pool, you can use the `worker-pool create vpc-gen2` [command](/docs/openshift?topic=openshift-kubernetes-service-cli#cli_worker_pool_create_vpc_gen2).
+    * To create a VPC worker pool, you can use the `worker-pool create vpc-gen2` [command](/docs/openshift?topic=openshift-kubernetes-service-cli#worker-pool-create-vpc-gen2-cli).
         ```sh
         ibmcloud oc worker-pool create vpc-gen2 --name POOL_NAME --cluster CLUSTER --flavor FLAVOR --size-per-zone WORKERS_PER_ZONE --hardware ISOLATION --label dedicated=edge
         ```
         {: pre}
 
-    * To label an existing worker pool, you can use the `worker-pool label set` [command](/docs/openshift?topic=openshift-kubernetes-service-cli#cs_worker_pool_label_set).
+    * To label an existing worker pool, you can use the `worker-pool label set` [command](/docs/openshift?topic=openshift-kubernetes-service-cli#worker-pool-label-set-cli).
         ```sh
         ibmcloud oc worker-pool label set --cluster CLUSTER --worker-pool POOL --label dedicated=edge
         ```

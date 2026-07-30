@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2026
-lastupdated: "2026-04-29"
+lastupdated: "2026-07-30"
 
 keywords: kubernetes, worker nodes, state
 
@@ -102,7 +102,7 @@ You requested to reload or to update the Kubernetes version of your worker node.
 
 An `Unknown` state means that the Kubernetes master is not reachable for one of the following reasons:
 
-- You requested an update of your Kubernetes master. The state of the worker node can't be retrieved during the update. If the worker node remains in this state for an extended period of time even after the Kubernetes master is successfully updated, try to [reload the worker node](/docs/openshift?topic=openshift-kubernetes-service-cli#cs_worker_reload).
+- You requested an update of your Kubernetes master. The state of the worker node can't be retrieved during the update. If the worker node remains in this state for an extended period of time even after the Kubernetes master is successfully updated, try to [reload the worker node](/docs/openshift?topic=openshift-kubernetes-service-cli#worker-reload-cli).
 - You might have another firewall that is protecting your worker nodes, or changed firewall settings recently. {{site.data.keyword.openshiftlong_notm}} requires certain IP addresses and ports to be opened to allow communication from the worker node to the Kubernetes master and vice versa. For more information, see [Firewall prevents worker nodes from connecting](/docs/openshift?topic=openshift-firewall#vyatta_firewall).
 - The Kubernetes master is down. Contact {{site.data.keyword.cloud_notm}} support by opening an [{{site.data.keyword.cloud_notm}} support case](/docs/openshift?topic=openshift-get-help).
 
