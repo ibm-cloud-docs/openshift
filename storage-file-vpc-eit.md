@@ -29,8 +29,12 @@ Use encryption in transit (EIT) to protect data as it moves between your worker 
 
 If you choose to use encryption in transit, balance your security requirements with performance needs. Encrypting data in transit can affect performance because data must be encrypted and decrypted at the endpoints. For more information, see [VPC Encryption in Transit](/docs/vpc?topic=vpc-file-storage-vpc-about&interface=ui#fs-eit).
 
+
+
 On RHCOS (CoreOS) worker nodes, EIT is not active until the node is rebooted after the operator installs the required packages. Plan for a rolling reboot when you enable EIT.
 {: important}
+
+
 
 
 - EIT is available for cluster versions 4.16 and later.
