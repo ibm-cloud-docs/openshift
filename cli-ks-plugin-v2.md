@@ -24,7 +24,7 @@ In the command line, you are notified when updates to the `ibmcloud` CLI and plu
 ## Prerequisites
 {: #ks-cli-prereq}
 
-* Install the [ CLI](/docs/openshift?topic=openshift-cli-install).
+* Install the [{{site.data.keyword.cloud_notm}} CLI](/docs/openshift?topic=openshift-cli-install).
 * Install the `ks` plug-in by running the following command:
 
    ```sh
