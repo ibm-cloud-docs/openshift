@@ -436,6 +436,10 @@ subcollection: openshift
 
     * [28 July 2026](/docs/openshift?topic=openshift-openshift-relnotes#openshift-jul2826)
 
+        * {{site.data.keyword.openshiftlong_notm}} master fix packs.
+
+        * Worker node fix packs are available for {{site.data.keyword.openshiftlong_notm}} and OpenShift Virtualization Service.
+
         * IBM Object CSI Driver cluster add-on patch updates.
 
     * [25 July 2026](/docs/openshift?topic=openshift-openshift-relnotes#openshift-jul2526)
@@ -473,6 +477,8 @@ subcollection: openshift
     * [01 July 2026](/docs/openshift?topic=openshift-openshift-relnotes#openshift-jul0126)
 
         * {{site.data.keyword.openshiftlong_notm}} worker node fix packs are available.
+
+* [June 2026](/docs/openshift?topic=openshift-openshift-relnotes#openshift-jun26)
 
     * [26 June 2026](/docs/openshift?topic=openshift-openshift-relnotes#openshift-jun2626)
 
@@ -524,6 +530,8 @@ subcollection: openshift
 
         * VPC Block CSI Driver cluster add-on patch updates.
 
+* [June 2025](/docs/openshift?topic=openshift-openshift-relnotes#openshift-jun25)
+
     * [09 June 2025](/docs/openshift?topic=openshift-openshift-relnotes#openshift-jun0925)
 
         * {{site.data.keyword.openshiftlong_notm}} version 4.16 is deprecated.
@@ -537,6 +545,8 @@ subcollection: openshift
         * IBM Storage Operator cluster add-on patch updates.
 
         * IBM Object CSI Driver cluster add-on patch updates.
+
+* [June 2026](/docs/openshift?topic=openshift-openshift-relnotes#openshift-jun26)
 
     * [03 June 2026](/docs/openshift?topic=openshift-openshift-relnotes#openshift-jun0326)
 
@@ -634,6 +644,8 @@ subcollection: openshift
 
         * OpenShift Data Foundation cluster add-on patch updates.
 
+* [April 2026](/docs/openshift?topic=openshift-openshift-relnotes#openshift-apr26)
+
     * [30 April 2026](/docs/openshift?topic=openshift-openshift-relnotes#openshift-apr3026)
 
         * CLI version 1.0.765 is available
@@ -706,6 +718,8 @@ subcollection: openshift
 
         * IBM Object CSI Driver cluster add-on patch updates.
 
+* [March 2026](/docs/openshift?topic=openshift-openshift-relnotes#openshift-mar26)
+
     * [31 March 2026](/docs/openshift?topic=openshift-openshift-relnotes#openshift-mar3126)
 
         * VPC File CSI Driver cluster add-on patch updates.
@@ -765,6 +779,8 @@ subcollection: openshift
         * IBM Storage Operator cluster add-on patch updates.
 
         * VPC Block CSI Driver cluster add-on patch updates.
+
+* [February 2026](/docs/openshift?topic=openshift-openshift-relnotes#openshift-feb26)
 
     * [27 February 2026](/docs/openshift?topic=openshift-openshift-relnotes#openshift-feb2726)
 
@@ -854,6 +870,8 @@ subcollection: openshift
 
         * {{site.data.keyword.openshiftlong_notm}} version 4.14 and 4.15 are no longer supported.
 
+* [December 2025](/docs/openshift?topic=openshift-openshift-relnotes#openshift-dec25)
+
     * [29 December 2025](/docs/openshift?topic=openshift-openshift-relnotes#openshift-dec2925)
 
         * {{site.data.keyword.openshiftlong_notm}} worker node fix packs are available.
@@ -884,6 +902,8 @@ subcollection: openshift
 
         * {{site.data.keyword.cos_full_notm}} add-on patch updates.
 
+* [November 2025](/docs/openshift?topic=openshift-openshift-relnotes#openshift-nov25)
+
     * [27 November 2025](/docs/openshift?topic=openshift-openshift-relnotes#openshift-nov2725)
 
         * OpenShift AI cluster add-on patch updates.
@@ -913,6 +933,8 @@ subcollection: openshift
         * VPC File CSI Driver cluster add-on patch updates.
 
         * OpenShift AI cluster add-on patch updates.
+
+* [October 2025](/docs/openshift?topic=openshift-openshift-relnotes#openshift-oct25)
 
     * [07 October 2025](/docs/openshift?topic=openshift-openshift-relnotes#openshift-nov0725)
 
@@ -1002,6 +1024,8 @@ subcollection: openshift
 
         * OpenShift Data Foundation cluster add-on patch updates.
 
+* [August 2025](/docs/openshift?topic=openshift-openshift-relnotes#openshift-aug25)
+
     * [26 August 2025](/docs/openshift?topic=openshift-openshift-relnotes#openshift-aug2625)
 
         * {{site.data.keyword.openshiftlong_notm}} worker node fix packs are available.
@@ -1041,6 +1065,8 @@ subcollection: openshift
         * CLI version `1.0.714` is available.
 
         * {{site.data.keyword.cos_full_notm}} plug-in updates.
+
+* [July 2025](/docs/openshift?topic=openshift-openshift-relnotes#openshift-jul25)
 
     * [31 July 2025](/docs/openshift?topic=openshift-openshift-relnotes#openshift-31july25)
 
@@ -1084,6 +1110,8 @@ subcollection: openshift
 
         * {{site.data.keyword.openshiftlong_notm}} worker node fix packs are available.
 
+* [June 2025](/docs/openshift?topic=openshift-openshift-relnotes#openshift-jun25)
+
     * [30 June 2025](/docs/openshift?topic=openshift-openshift-relnotes#openshift-30june25)
 
         * New! Worker node flavors with AMD MI300x GPU support are available on an allowlist basis for VPC clusters at version 4.18 and later.
@@ -1123,6 +1151,8 @@ subcollection: openshift
     * [02 June 2025](/docs/openshift?topic=openshift-openshift-relnotes#openshift-02jun25)
 
         * VPC Block CSI Driver cluster add-on patch updates.
+
+* [May 2025](/docs/openshift?topic=openshift-openshift-relnotes#openshift-may25)
 
     * [30 May 2025](/docs/openshift?topic=openshift-openshift-relnotes#openshift-30may25)
 
@@ -1166,6 +1196,8 @@ subcollection: openshift
 
         * {{site.data.keyword.openshiftlong_notm}} worker node fix packs are available.
 
+* [April 2025](/docs/openshift?topic=openshift-openshift-relnotes#openshift-apr25)
+
     * [30 April 2025](/docs/openshift?topic=openshift-openshift-relnotes#openshift-30april25)
 
         * {{site.data.keyword.openshiftlong_notm}} master fix packs.
@@ -1200,6 +1232,8 @@ subcollection: openshift
 
         * {{site.data.keyword.cos_full_notm}} plug-in updates.
 
+* [March 2025](/docs/openshift?topic=openshift-openshift-relnotes#openshift-mar25)
+
     * [27 March 2025](/docs/openshift?topic=openshift-openshift-relnotes#openshift-27march25)
 
         * {{site.data.keyword.openshiftlong_notm}} master fix packs.
@@ -1231,6 +1265,8 @@ subcollection: openshift
         * Migrating from the Observability plug-in to {{site.data.keyword.logs_full_notm}}
 
         * OpenShift AI cluster add-on patch updates.
+
+* [February 2025](/docs/openshift?topic=openshift-openshift-relnotes#openshift-feb25)
 
     * [28 February 2025](/docs/openshift?topic=openshift-openshift-relnotes#openshift-28february25)
 
@@ -1280,6 +1316,8 @@ subcollection: openshift
 
         * Version 4.17 is now the default version for {{site.data.keyword.openshiftlong_notm}}.
 
+* [January 2025](/docs/openshift?topic=openshift-openshift-relnotes#openshift-jan25)
+
     * [30 January 2025](/docs/openshift?topic=openshift-openshift-relnotes#openshift-jan3025)
 
         * {{site.data.keyword.openshiftlong_notm}} worker node fix packs are available.
@@ -1308,6 +1346,8 @@ subcollection: openshift
 
         * {{site.data.keyword.openshiftlong_notm}} worker node fix packs are available.
 
+* [December 2024](/docs/openshift?topic=openshift-openshift-relnotes#openshift-dec24)
+
     * [16 December 2024](/docs/openshift?topic=openshift-openshift-relnotes#openshift-dec1624)
 
         * {{site.data.keyword.openshiftlong_notm}} worker node fix packs are available.
@@ -1327,6 +1367,8 @@ subcollection: openshift
     * [04 December 2024](/docs/openshift?topic=openshift-openshift-relnotes#openshift-dec0424)
 
         * {{site.data.keyword.openshiftlong_notm}} master fix packs.
+
+* [November 2024](/docs/openshift?topic=openshift-openshift-relnotes#openshift-nov24)
 
     * [22 November 2024](/docs/openshift?topic=openshift-openshift-relnotes#openshift-nov2224)
 
@@ -1406,6 +1448,8 @@ subcollection: openshift
 
         * Static route add-on version patch update.
 
+* [September 2024](/docs/openshift?topic=openshift-openshift-relnotes#openshift-sep24)
+
     * [26 September 2024](/docs/openshift?topic=openshift-openshift-relnotes#openshift-sep2624)
 
         * {{site.data.keyword.cos_full_notm}} plug-in updates.
@@ -1442,6 +1486,8 @@ subcollection: openshift
 
         * {{site.data.keyword.openshiftlong_notm}} worker node fix packs.
 
+* [August 2024](/docs/openshift?topic=openshift-openshift-relnotes#openshift-aug24)
+
     * [30 August 2024](/docs/openshift?topic=openshift-openshift-relnotes#openshift-aug3024)
 
         * {{site.data.keyword.openshiftlong_notm}} 4.16 is available.
@@ -1473,6 +1519,8 @@ subcollection: openshift
     * [22 August 2024](/docs/openshift?topic=openshift-openshift-relnotes#openshift-aug2224)
 
         * New audit events for cluster operations
+
+* [July 2024](/docs/openshift?topic=openshift-openshift-relnotes#openshift-jul24)
 
     * [31 July 2024](/docs/openshift?topic=openshift-openshift-relnotes#openshift-july3124)
 
@@ -1523,6 +1571,8 @@ subcollection: openshift
     * [3 July 2024](/docs/openshift?topic=openshift-openshift-relnotes#openshift-july324)
 
         * {{site.data.keyword.filestorage_vpc_full_notm}} add-on version 2.0 is available in Beta.
+
+* [June 2024](/docs/openshift?topic=openshift-openshift-relnotes#openshift-jun24)
 
     * [24 June 2024](/docs/openshift?topic=openshift-openshift-relnotes#openshift-june2424)
 
@@ -1636,6 +1686,8 @@ subcollection: openshift
 
         * Image Key Synchronizer add-on patch update.
 
+* [March 2024](/docs/openshift?topic=openshift-openshift-relnotes#openshift-mar24)
+
     * [27 March 2024](/docs/openshift?topic=openshift-openshift-relnotes#openshift-mar2724)
 
         * Master patch updates for {{site.data.keyword.openshiftlong_notm}} clusters. Master patches are applied automatically over the course of several days. You can choose to use the [`ibmcloud ks cluster master update`](/docs/openshift?topic=openshift-kubernetes-service-cli#cluster-master-update-cli) command yourself without waiting for the update automation to apply the patch. Review the change logs for your cluster version.
@@ -1667,6 +1719,8 @@ subcollection: openshift
         * {{site.data.keyword.openshiftlong_notm}} version 4.10 is no longer supported.
 
         * CLI version `1.0.601` is available.
+
+* [February 2024](/docs/openshift?topic=openshift-openshift-relnotes#openshift-feb24)
 
     * [28 February 2024](/docs/openshift?topic=openshift-openshift-relnotes#openshift-feb2824)
 
@@ -5852,6 +5906,8 @@ subcollection: openshift
 
 * [Version 4.21](/docs/openshift?topic=openshift-openshift_changelog_421#421_components)
 
+    * [Worker node fix pack 4.21.25_1526_openshift, released 28 July 2026](/docs/openshift?topic=openshift-openshift_changelog_421#cl-boms-42125_1526_openshift_W)
+
     * [Master fix pack 4.21.19_1525_openshift, released 28 July 2026](/docs/openshift?topic=openshift-openshift_changelog_421#cl-boms_master-42119_1525_openshift_M)
 
     * [Worker node fix pack 4.21.22_1524_openshift, released 13 July 2026](/docs/openshift?topic=openshift-openshift_changelog_421#cl-boms-42122_1524_openshift_W)
@@ -5986,6 +6042,8 @@ subcollection: openshift
 * [Overview](/docs/openshift?topic=openshift-openshift_changelog_420#changelog_overview_420)
 
 * [Version 4.20](/docs/openshift?topic=openshift-openshift_changelog_420#420_components)
+
+    * [Worker node fix pack 4.20.30_1557_openshift, released 28 July 2026](/docs/openshift?topic=openshift-openshift_changelog_420#cl-boms-42030_1557_openshift_W)
 
     * [Master fix pack 4.20.25_1556_openshift, released 28 July 2026](/docs/openshift?topic=openshift-openshift_changelog_420#cl-boms_master-42025_1556_openshift_M)
 
@@ -6131,6 +6189,8 @@ subcollection: openshift
 * [Overview](/docs/openshift?topic=openshift-openshift_changelog_419#changelog_overview_419)
 
 * [Version 4.19](/docs/openshift?topic=openshift-openshift_changelog_419#419_components)
+
+    * [Worker node fix pack 4.19.39_1587_openshift, released 28 July 2026](/docs/openshift?topic=openshift-openshift_changelog_419#cl-boms-41939_1587_openshift_W)
 
     * [Master fix pack 4.19.34_1585_openshift, released 28 July 2026](/docs/openshift?topic=openshift-openshift_changelog_419#cl-boms_master-41934_1585_openshift_M)
 
@@ -6308,6 +6368,8 @@ subcollection: openshift
 * [Overview](/docs/openshift?topic=openshift-openshift_changelog_418#changelog_overview_418)
 
 * [Version 4.18](/docs/openshift?topic=openshift-openshift_changelog_418#418_components)
+
+    * [Worker node fix pack 4.18.49_1598_openshift, released 28 July 2026](/docs/openshift?topic=openshift-openshift_changelog_418#cl-boms-41849_1598_openshift_W)
 
     * [Master fix pack 4.18.45_1596_openshift, released 28 July 2026](/docs/openshift?topic=openshift-openshift_changelog_418#cl-boms_master-41845_1596_openshift_M)
 
@@ -6509,6 +6571,8 @@ subcollection: openshift
 * [Overview](/docs/openshift?topic=openshift-openshift_changelog_417#changelog_overview_417)
 
 * [Version 4.17](/docs/openshift?topic=openshift-openshift_changelog_417#417_components)
+
+    * [Worker node fix pack 4.17.55_1594_openshift, released 28 July 2026](/docs/openshift?topic=openshift-openshift_changelog_417#cl-boms-41755_1594_openshift_W)
 
     * [Master fix pack 4.17.54_1592_openshift, released 28 July 2026](/docs/openshift?topic=openshift-openshift_changelog_417#cl-boms_master-41754_1592_openshift_M)
 
@@ -6746,6 +6810,8 @@ subcollection: openshift
 * [Overview](/docs/openshift?topic=openshift-openshift_changelog_416#changelog_overview_416)
 
 * [Version 4.16](/docs/openshift?topic=openshift-openshift_changelog_416#416_components)
+
+    * [Worker node fix pack 4.16.66_1626_openshift, released 28 July 2026](/docs/openshift?topic=openshift-openshift_changelog_416#cl-boms-41666_1626_openshift_W)
 
     * [Master fix pack 4.16.64_1624_openshift, released 28 July 2026](/docs/openshift?topic=openshift-openshift_changelog_416#cl-boms_master-41664_1624_openshift_M)
 
