@@ -2,7 +2,7 @@
 
 copyright:
   years: 2023, 2026
-lastupdated: "2026-07-27"
+lastupdated: "2026-07-30"
 
 
 keywords: secret, certificate, field, tls, non-tls, rotate, ingress
@@ -52,7 +52,7 @@ ibmcloud oc ingress secret ls -c CLUSTER
 IBM provides an Ingress subdomain and a default TLS certificate, stored as a Kubernetes secret in your cluster, that you can specify in your Ingress resource. IBM-provided TLS certificates are signed by LetsEncrypt and are fully managed by IBM. 
 {: shortdesc}
 
-The IBM-provided Ingress subdomain wildcard, `*.<cluster_name>.<globally_unique_account_HASH>-0000.<region>.containers.appdomain.cloud`, is registered by default for your cluster. The IBM-provided TLS certificate is a wildcard certificate and can be used for the wildcard subdomain.
+The IBM-provided Ingress subdomain wildcard, `*.<cluster_name>-<globally_unique_account_HASH>-0000.<region>.containers.appdomain.cloud`, is registered by default for your cluster. The IBM-provided TLS certificate is a wildcard certificate and can be used for the wildcard subdomain.
 {: tip}
 
 Follow the steps to use the default TLS certificate for the IBM-provided Ingress subdomain.
