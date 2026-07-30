@@ -32,6 +32,7 @@ If you choose to use encryption in transit, balance your security requirements w
 On RHCOS (CoreOS) worker nodes, EIT is not active until the node is rebooted after the operator installs the required packages. Plan for a rolling reboot when you enable EIT.
 {: important}
 
+
 - EIT is available for cluster versions 4.16 and later.
 - By default, file shares are [encrypted at rest](/docs/vpc?topic=vpc-file-storage-vpc-about&interface=ui#FS-encryption) with IBM-managed encryption.
 - To use EIT with Secure by Default clusters, you must add the following outbound rule to the `kube-<clusterID>` security group. This rule is added automatically for ROKS clusters at version 4.18 and later. For older cluster versions, add the rule manually.
