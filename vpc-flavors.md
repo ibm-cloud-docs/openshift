@@ -685,6 +685,7 @@ These conditions might impact cluster flavor availability:
 
 | Name | Data centers | Resources | OS | Primary storage | Secondary storage | Secondary storage options (GB / iops-tier)|
 | ---- | ---- |-------------------------------- | ---- | --------------- | ----------------- |  -------------- | 
+| mx3.metal.128x1024  \n(Memory) | ca-mon-1 | 64 cores  \n1024GB memory  \n100Gbps network speed  \n No GPUs |  RHCOS  \n| 480GB SSD | N/A | N/A|
 | mx3de.metal.48x512  \n(Memory) | ca-mon-1  \nca-mon-2  \nca-mon-3 | 24 cores  \n512GB memory  \n100Gbps network speed  \n No GPUs |  RHCOS  \n| 480GB SSD | N/A | N/A|
 | mx3de.metal.64x512  \n(Memory) | ca-mon-1  \nca-mon-2  \nca-mon-3 | 32 cores  \n512GB memory  \n100Gbps network speed  \n No GPUs |  RHCOS  \n| 480GB SSD | N/A | N/A|
 | ux3de.metal.16x512  \n() | ca-mon-1  \nca-mon-2  \nca-mon-3 | 8 cores  \n512GB memory  \n100Gbps network speed  \n No GPUs |  RHCOS  \n| 480GB SSD | N/A | N/A|
@@ -1307,6 +1308,8 @@ These conditions might impact cluster flavor availability:
 | cx2d.metal.96x192  \n(Compute) | ca-tor-2  \nca-tor-3 | 48 cores  \n192GB memory  \n100Gbps network speed  \n No GPUs |  RHCOS  \n| 960GB SSD | N/A | N/A|
 | mx2d.metal.96x768  \n(Memory) | ca-tor-2  \nca-tor-3 | 48 cores  \n768GB memory  \n100Gbps network speed  \n No GPUs |  RHCOS  \n| 960GB SSD | N/A | N/A|
 | mx2de.metal.96x768  \n(Memory) | ca-tor-2  \nca-tor-3 | 48 cores  \n768GB memory  \n100Gbps network speed  \n No GPUs |  RHCOS  \n| 960GB SSD | N/A | N/A|
+| mx3.metal.48x512  \n(Memory) | ca-tor-2  \nca-tor-3 | 24 cores  \n512GB memory  \n100Gbps network speed  \n No GPUs |  RHCOS  \n| 480GB SSD | N/A | N/A|
+| mx3.metal.96x1024  \n(Memory) | ca-tor-2 | 48 cores  \n1024GB memory  \n100Gbps network speed  \n No GPUs |  RHCOS  \n| 480GB SSD | N/A | N/A|
 | mx3de.metal.48x512  \n(Memory) | ca-tor-2  \nca-tor-3 | 24 cores  \n512GB memory  \n100Gbps network speed  \n No GPUs |  RHCOS  \n| 480GB SSD | N/A | N/A|
 | mx3de.metal.64x512  \n(Memory) | ca-tor-2  \nca-tor-3 | 32 cores  \n512GB memory  \n100Gbps network speed  \n No GPUs |  RHCOS  \n| 480GB SSD | N/A | N/A|
 | ux3de.metal.16x512  \n() | ca-tor-2  \nca-tor-3 | 8 cores  \n512GB memory  \n100Gbps network speed  \n No GPUs |  RHCOS  \n| 480GB SSD | N/A | N/A|

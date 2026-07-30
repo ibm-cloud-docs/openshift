@@ -20,7 +20,6 @@ Refer to these commands to create and manage **both community Kubernetes or {{si
 
 In the command line, you are notified when updates to the `ibmcloud` CLI and plug-ins are available. Be sure to keep your CLI up-to-date so that you can use all available commands and options.
 
-
 ## Prerequisites
 {: #ks-cli-prereq}
 
@@ -4556,10 +4555,7 @@ ibmcloud oc experimental vni ls [--after AFTER] [--first FIRST] [--output OUTPUT
 List Virtual Network Interfaces attached to a cluster or worker node.
 
 ```sh
-ibmcloud ks experimental vni ls \
-  --cluster-id CLUSTER_NAME_OR_ID \
-  --worker WORKER_ID \
-  --after AFTER
+ibmcloud ks experimental vni ls --cluster-id CLUSTER_ID
 ```
 {: pre}
 
@@ -7510,7 +7506,7 @@ ibmcloud oc logging config rm --cluster CLUSTER [--force-update] [-q] (--all | -
 Delete a log forwarding configuration from a cluster.
 
 ```sh
-ibmcloud ks logging config rm --cluster CLUSTER_NAME_OR_ID --namespace NAME --id <_id>
+ibmcloud ks logging config rm --cluster CLUSTER_NAME_OR_ID --namespace NAME
 ```
 {: pre}
 
@@ -7759,7 +7755,7 @@ ibmcloud oc logging filter rm --cluster CLUSTER [--force-update] [-q] (--all | -
 Delete a logging filter.
 
 ```sh
-ibmcloud ks logging filter rm --cluster CLUSTER_NAME_OR_ID --id <_id> --all
+ibmcloud ks logging filter rm --cluster CLUSTER_NAME_OR_ID --id FILTER_ID
 ```
 {: pre}
 
@@ -7824,7 +7820,7 @@ ibmcloud oc logging filter update --cluster CLUSTER --id ID [--container CONTAIN
 Update a logging filter.
 
 ```sh
-ibmcloud ks logging filter update --cluster CLUSTER_NAME_OR_ID --id <_id> --type TYPE
+ibmcloud ks logging filter update --cluster CLUSTER_NAME_OR_ID --id FILTER_ID --type TYPE
 ```
 {: pre}
 
@@ -9451,7 +9447,7 @@ ibmcloud oc vni ls [--after AFTER] [--first FIRST] [--output OUTPUT] [-q] (--clu
 List Virtual Network Interfaces attached to a cluster or worker node.
 
 ```sh
-ibmcloud ks vni ls --cluster-id CLUSTER_NAME_OR_ID --worker WORKER_ID --after AFTER
+ibmcloud ks vni ls --cluster-id CLUSTER_ID
 ```
 {: pre}
 

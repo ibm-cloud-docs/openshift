@@ -116,7 +116,7 @@ In this tutorial, you create the following resources by using the CLI. There are
 
     ```sh
     Client Version: v4.21.0
-    Kubernetes Version: v1.35.5.2
+    Kubernetes Version: v1.35.6.2
     ```
     {: screen}
 

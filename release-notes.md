@@ -29,12 +29,61 @@ Looking for {{site.data.keyword.cloud_notm}} status, platform announcements, sec
 ## July 2026
 {: #openshift-jul26}
 
+### 28 July 2026
+{: #openshift-jul2826}
+{: release-note}
+
+
+
+{{site.data.keyword.openshiftlong_notm}} master fix packs.
+:   Master fix packs are applied automatically over the course of several days. You can choose to use the [`ibmcloud ks cluster master update`](/docs/openshift?topic=openshift-kubernetes-service-cli#cluster-master-update-cli) command yourself without waiting for the update automation to apply the patch. Review the following change logs for your cluster version.
+:   [Version 4.21 change log](/docs/openshift?topic=openshift-openshift_changelog_421)
+:   [Version 4.20 change log](/docs/openshift?topic=openshift-openshift_changelog_420)
+:   [Version 4.19 change log](/docs/openshift?topic=openshift-openshift_changelog_419)
+:   [Version 4.18 change log](/docs/openshift?topic=openshift-openshift_changelog_418)
+:   [Version 4.17 change log](/docs/openshift?topic=openshift-openshift_changelog_417)
+:   [Version 4.16 change log](/docs/openshift?topic=openshift-openshift_changelog_416)
+
+
+
+
+
+
+
+
+
+Worker node fix packs are available for {{site.data.keyword.openshiftlong_notm}} and OpenShift Virtualization Service.
+:   Fix packs can be applied in the following ways. Review the change logs for your cluster version.
+:   Classic infrastructure
+:   :   Update or reload the worker node.
+:   VPC infrastructure
+:   :   Replace the worker node.
+:   VPC Bare Metal
+:   :   Reload the worker node.
+:   [Version 4.21 change log](/docs/openshift?topic=openshift-changelog_421)
+:   [Version 4.20 change log](/docs/openshift?topic=openshift-changelog_420)
+:   [Version 4.19 change log](/docs/openshift?topic=openshift-changelog_419)
+:   [Version 4.18 change log](/docs/openshift?topic=openshift-changelog_418)
+:   [Version 4.17 change log](/docs/openshift?topic=openshift-changelog_417)
+:   [Version 4.16 change log](/docs/openshift?topic=openshift-changelog_416)
+
+
+IBM Object CSI Driver cluster add-on patch updates.
+:   For more information, see the [change log](/docs/openshift?topic=openshift-cl-add-ons-ibm-object-csi-driver).
+
 ### 25 July 2026
 {: #openshift-jul2526}
 {: release-note}
 
 CLI version 1.0.804 is available.
 :   For more information, see [Updating the CLI](/docs/openshift?topic=openshift-cli-update) and the [CLI change log](/docs/openshift?topic=openshift-cs_cli_changelog).
+
+### 23 July 2026
+{: #openshift-jul2326}
+{: release-note}
+
+Headlamp cluster add-on patch updates.
+:   For more information, see the [change log](/docs/openshift?topic=openshift-cl-add-ons-headlamp).
 
 ### 22 July 2026
 {: #openshift-jul2226}
@@ -149,7 +198,6 @@ OpenShift Virtualization Service is now generally available.
 
 
 
-
 ### 25 June 2026
 {: #openshift-jun2526}
 {: release-note}
@@ -165,6 +213,10 @@ OpenShift Virtualization cluster add-on patch updates.
 IBM Cloud Image Key Synchronizer cluster add-on patch updates.
 :   For more information, see the [change log](/docs/openshift?topic=openshift-cl-add-ons-ibm-cloud-image-key-synchronizer).
 
+IBM Storage Operator cluster add-on patch updates.
+:   For more information, see the [change log](/docs/openshift?topic=openshift-cl-add-ons-ibm-storage-operator).
+VPC File CSI Driver cluster add-on patch updates.
+:   For more information, see the [change log](/docs/openshift?topic=openshift-cl-add-ons-vpc-file-csi-driver).
 
 ### 09 June 2026
 {: #openshift-jun0926}
@@ -172,6 +224,7 @@ IBM Cloud Image Key Synchronizer cluster add-on patch updates.
 
 IBM Cloud Image Key Synchronizer cluster add-on patch updates.
 :   For more information, see the [change log](/docs/openshift?topic=openshift-cl-add-ons-ibm-cloud-image-key-synchronizer).
+
 
 
 
@@ -189,7 +242,6 @@ Openshift AI cluster add-on patch updates.
 
 Openshift AI cluster add-on patch updates.
 :   For more information, see the [change log](/docs/openshift?topic=openshift-cl-add-ons-openshift-ai).
-
 
 ### 22 June 2026
 {: #openshift-jun2226}
@@ -230,13 +282,13 @@ IBM Object CSI Driver cluster add-on patch updates.
 
 
 
+
 ### 16 June 2026
 {: #openshift-jun1626}
 {: release-note}
 
 OpenShift Data Foundation cluster add-on patch updates.
 :   For more information, see the [change log](/docs/openshift?topic=openshift-cl-add-ons-openshift-data-foundation).
-
 
 
 ### 15 June 2026
@@ -251,10 +303,6 @@ OpenShift Virtualization cluster add-on patch updates.
 
 
 
-
-
-
-
 ### 10 June 2026
 {: #openshift-jun1026}
 {: release-note}
@@ -262,6 +310,8 @@ OpenShift Virtualization cluster add-on patch updates.
 VPC Block CSI Driver cluster add-on patch updates.
 :   For more information, see the [change log](/docs/openshift?topic=openshift-cl-add-ons-vpc-block-csi-driver).
 
+## June 2025
+{: #openshift-jun25}
 
 ### 09 June 2025
 {: #openshift-jun0925}
@@ -293,8 +343,6 @@ IBM Storage Operator cluster add-on patch updates.
 
 IBM Object CSI Driver cluster add-on patch updates.
 :   For more information, see the [change log](/docs/openshift?topic=openshift-cl-add-ons-ibm-object-csi-driver).
-
-
 
 ### 03 June 2026
 {: #openshift-jun0326}
@@ -332,14 +380,10 @@ VPC File CSI Driver cluster add-on patch updates.
 
 
 
-## May 2026
-{: #openshift-may26}
-
 
 
 VPC Block CSI Driver cluster add-on patch updates.
 :   For more information, see the [change log](/docs/openshift?topic=openshift-cl-add-ons-vpc-block-csi-driver).
-
 
 ### 27 May 2026
 {: #openshift-may2726}
@@ -394,8 +438,6 @@ Static Route cluster add-on patch updates.
 
 
 
-
-
 ### 21 May 2026
 {: #openshift-may2126}
 {: release-note}
@@ -433,14 +475,6 @@ Extended Update Support (EUS) repositories enabled for RHEL 9 worker nodes.
 
 VPC Block CSI Driver cluster add-on patch updates.
 :   For more information, see the [change log](/docs/openshift?topic=openshift-cl-add-ons-vpc-block-csi-driver).
-
-
-
-
-
-
-
-
 
 ### 19 May 2026
 {: #openshift-may1926}
@@ -496,8 +530,6 @@ IBM Storage Operator cluster add-on patch updates.
 VPC File CSI Driver cluster add-on patch updates.
 :   For more information, see the [change log](/docs/openshift?topic=openshift-cl-add-ons-vpc-file-csi-driver).
 
-
-
 ### 11 May 2026
 {: #openshift-may1126}
 {: release-note}
@@ -530,14 +562,12 @@ Virtual Network Interface (VNI) management commands are now generally available
 CLI version 1.0.768 is available
 :   For more information, see the [CLI change log](/docs/openshift?topic=openshift-cs_cli_changelog).
 
-
 ### 05 May 2026
 {: #openshift-may0526}
 {: release-note}
 
 IBM Cloud Image Key Synchronizer cluster add-on patch updates.
 :   For more information, see the [change log](/docs/openshift?topic=openshift-cl-add-ons-ibm-cloud-image-key-synchronizer).
-
 
 
 
@@ -558,9 +588,6 @@ IBM Cloud Image Key Synchronizer cluster add-on patch updates.
 :   [Version 4.18 change log](/docs/openshift?topic=openshift-openshift_changelog_418)
 :   [Version 4.17 change log](/docs/openshift?topic=openshift-openshift_changelog_417)
 :   [Version 4.16 change log](/docs/openshift?topic=openshift-openshift_changelog_416)
-
-
-
 
 
 
@@ -645,8 +672,6 @@ Openshift AI cluster add-on patch updates.
 IBM Object CSI Driver cluster add-on patch updates.
 :   For more information, see the [change log](/docs/openshift?topic=openshift-cl-add-ons-ibm-object-csi-driver).
 
-
-
 ### 23 April 2026
 {: #openshift-apr2326}
 {: release-note}
@@ -664,7 +689,6 @@ CLI version 1.0.762 is available
 
 CLI version 1.0.760 is available
 :   For more information, see the [CLI change log](/docs/openshift?topic=openshift-cs_cli_changelog).
-
 
 ### 20 April 2026
 {: #openshift-apr2026}
@@ -694,13 +718,13 @@ CLI version 1.0.759 is available
 {{site.data.keyword.cos_full_notm}} plug-in version 2.2.51 is available.
 :   For more information, see the [change log](/docs/openshift?topic=openshift-cos_plugin_changelog).
 
-
 ### 14 April 2026
 {: #openshift-apr1426}
 {: release-note}
 
 VPC Block CSI Driver cluster add-on patch updates.
 :   For more information, see the [change log](/docs/openshift?topic=openshift-cl-add-ons-vpc-block-csi-driver).
+
 
 
 
@@ -720,8 +744,6 @@ Version 4.20 is now the default version for {{site.data.keyword.openshiftlong_no
 
 IBM Storage Operator cluster add-on patch updates.
 :   For more information, see the [change log](/docs/openshift?topic=openshift-cl-add-ons-ibm-storage-operator).
-
-
 
 ### 06 April 2026
 {: #openshift-apr0626}
@@ -765,13 +787,8 @@ CLI version 1.0.756 is available
 IBM Object CSI Driver cluster add-on patch updates.
 :   For more information, see the [change log](/docs/openshift?topic=openshift-cl-add-ons-ibm-object-csi-driver).
 
-
-
-
-
 ## March 2026
 {: #openshift-mar26}
-
 
 ### 31 March 2026
 {: #openshift-mar3126}
@@ -804,8 +821,6 @@ VPC File CSI Driver cluster add-on patch updates.
 
 
 
-
-
 ### 25 March 2026
 {: #openshift-mar2526}
 {: release-note}
@@ -813,8 +828,6 @@ VPC File CSI Driver cluster add-on patch updates.
 
 VPC Block CSI Driver cluster add-on patch updates.
 :   For more information, see the [change log](/docs/openshift?topic=openshift-cl-add-ons-vpc-block-csi-driver).
-
-
 
 ### 24 March 2026
 {: #openshift-mar2426}
@@ -841,8 +854,6 @@ IBM Cloud Image Key Synchronizer cluster add-on patch updates.
 
 Cluster autoscaler cluster add-on patch updates.
 :   For more information, see the [change log](/docs/openshift?topic=openshift-cl-add-ons-cluster-autoscaler).
-
-
 
 ### 17 March 2026
 {: #openshift-mar1726}
@@ -919,8 +930,6 @@ IBM Cloud Image Key Synchronizer cluster add-on patch updates.
 OpenShift Data Foundation cluster add-on patch updates.
 :   For more information, see the [change log](/docs/openshift?topic=openshift-cl-add-ons-openshift-data-foundation).
 
-
-
 ### 02 March 2026
 {: #openshift-mar0226}
 {: release-note}
@@ -936,8 +945,6 @@ IBM Storage Operator cluster add-on patch updates.
 
 VPC Block CSI Driver cluster add-on patch updates.
 :   For more information, see the [change log](/docs/openshift?topic=openshift-cl-add-ons-vpc-block-csi-driver).
-
-
 
 ## February 2026
 {: #openshift-feb26}
@@ -960,7 +967,6 @@ VPC Block CSI Driver cluster add-on patch updates.
 
 
 
-
 ### 26 February 2026
 {: #openshift-feb2626}
 {: release-note}
@@ -974,7 +980,6 @@ IBM Storage Operator cluster add-on patch updates.
 VPC Block CSI Driver cluster add-on patch updates.
 :   For more information, see the [change log](/docs/openshift?topic=openshift-cl-add-ons-vpc-block-csi-driver).
 
-
 ### 24 February 2026
 {: #openshift-feb2426}
 {: release-note}
@@ -982,14 +987,12 @@ VPC Block CSI Driver cluster add-on patch updates.
 {{site.data.keyword.cos_full_notm}} plug-in updates.
 :   For more information, see the [change log](/docs/openshift?topic=openshift-cos_plugin_changelog).
 
-
 ### 23 February 2026
 {: #openshift-feb2326}
 {: release-note}
 
 IBM Cloud Image Key Synchronizer cluster add-on patch updates.
 :   For more information, see the [change log](/docs/openshift?topic=openshift-cl-add-ons-ibm-cloud-image-key-synchronizer).
-
 
 
 
@@ -1014,8 +1017,6 @@ IBM Cloud Image Key Synchronizer cluster add-on patch updates.
 Cluster autoscaler cluster add-on patch updates.
 :   For more information, see the [change log](/docs/openshift?topic=openshift-cl-add-ons-cluster-autoscaler).
 
-
-
 ### 16 February 2026
 {: #openshift-feb1626}
 {: release-note}
@@ -1024,7 +1025,6 @@ Cluster autoscaler cluster add-on patch updates.
 
 Cluster autoscaler cluster add-on patch updates.
 :   For more information, see the [change log](/docs/openshift?topic=openshift-cl-add-ons-cluster-autoscaler).
-
 
 ### 10 February 2026
 {: #openshift-feb1026}
@@ -1093,9 +1093,6 @@ New! Container network interface (CNI) selection in version 4.20 and later.
 VPC Block CSI Driver cluster add-on patch updates.
 :   For more information, see the [change log](/docs/openshift?topic=openshift-cl-add-ons-vpc-block-csi-driver).
 
-## January 2026
-{: #openshift-jan26}
-
 
 
 ### 27 January 2026
@@ -1113,7 +1110,6 @@ VPC Block CSI Driver cluster add-on patch updates.
 :   [Version 4.18 change log](/docs/openshift?topic=openshift-openshift_changelog_418)
 :   [Version 4.17 change log](/docs/openshift?topic=openshift-openshift_changelog_417)
 :   [Version 4.16 change log](/docs/openshift?topic=openshift-openshift_changelog_416)
-
 
 
 
@@ -1146,8 +1142,6 @@ IBM Storage Operator cluster add-on patch updates.
 
 VPC Block CSI Driver cluster add-on patch updates.
 :   For more information, see the [change log](/docs/openshift?topic=openshift-cl-add-ons-vpc-block-csi-driver).
-
-
 
 ### 14 January 2026
 {: #openshift-jan1426}
@@ -1217,7 +1211,6 @@ CLI version `1.0.745` is available.
 
 
 
-
 ### 16 December 2025
 {: #openshift-dec1625}
 {: release-note}
@@ -1232,7 +1225,6 @@ CLI version `1.0.745` is available.
 :   [Version 4.18 change log](/docs/openshift?topic=openshift-openshift_changelog_418)
 :   [Version 4.17 change log](/docs/openshift?topic=openshift-openshift_changelog_417)
 :   [Version 4.16 change log](/docs/openshift?topic=openshift-openshift_changelog_416)
-
 
 
 
@@ -1259,14 +1251,12 @@ CLI version `1.0.745` is available.
 
 
 
-
 ### 08 December 2025
 {: #openshift-dec0825}
 {: release-note}
 
 New! Chennai multizone region for VPC
 :   You can now create clusters on VPC infrastructure in the Chennai, India (`in-che`) [location](/docs/openshift?topic=openshift-regions-and-zones).
-
 
 ### 04 December 2025
 {: #openshift-dec0425}
@@ -1296,7 +1286,6 @@ IBM Cloud Image Key Synchronizer cluster add-on patch updates.
 
 
 
-
 ### 02 December 2025
 {: #openshift-dec0225}
 {: release-note}
@@ -1311,10 +1300,10 @@ Cluster autoscaler add-on patch updates for {{site.data.keyword.openshiftlong_no
 
 
 
+
+
 ## November 2025
 {: #openshift-nov25}
-
-
 
 ### 27 November 2025
 {: #openshift-nov2725}
@@ -1382,7 +1371,6 @@ OpenShift AI cluster add-on patch updates.
 {{site.data.keyword.cos_full_notm}} plug-in updates.
 :   For more information, see the [change log](/docs/openshift?topic=openshift-cos_plugin_changelog).
 
-
 ### 11 November 2025
 {: #openshift-nov1125}
 {: release-note}
@@ -1399,6 +1387,8 @@ VPC File CSI Driver cluster add-on patch updates.
 OpenShift AI cluster add-on patch updates.
 :   For more information, see the [change log](/docs/openshift?topic=openshift-cl-add-ons-openshift-ai).
 
+## October 2025
+{: #openshift-oct25}
 
 ### 07 October 2025
 {: #openshift-nov0725}
@@ -1419,9 +1409,6 @@ OpenShift AI cluster add-on patch updates.
 
 
 
-
-## October 2025
-{: #openshift-oct25}
 
 
 
@@ -1455,7 +1442,6 @@ The strongSwan IPSec VPN Service is deprecated
 The Diagnostics and Debug Tool is deprecated and support ends on 20 December 2025.
 :   Uninstall the Diagnostics and Debug Tool from your clusters before support ends.
 
-
 ### 22 October 2025
 {: #openshift-oct2225}
 {: release-note}
@@ -1477,7 +1463,6 @@ CLI version `1.0.727` is available.
 :   [Version 4.18 change log](/docs/openshift?topic=openshift-openshift_changelog_418)
 :   [Version 4.17 change log](/docs/openshift?topic=openshift-openshift_changelog_417)
 :   [Version 4.16 change log](/docs/openshift?topic=openshift-openshift_changelog_416)
-
 
 
 
@@ -1514,10 +1499,6 @@ New! General availability of the {{site.data.keyword.cos_full_notm}} cluster add
 
 
 
-### 07 October 2025
-{: #openshift-oct0725}
-{: release-note}
-
 OpenShift AI cluster add-on patch updates.
 :   For more information, see the [change log](/docs/openshift?topic=openshift-cl-add-ons-openshift-ai).
 
@@ -1535,16 +1516,12 @@ OpenShift AI cluster add-on patch updates.
 
 
 
-
 ### 02 October 2025
 {: #openshift-oct0225}
 {: release-note}
 
 CLI version `1.0.724` is available.
 :   For more information, see [Updating the CLI](/docs/openshift?topic=openshift-cli-update) and the [CLI change log](/docs/openshift?topic=openshift-cs_cli_changelog).
-
-## September 2025
-{: #openshift-sep25}
 
 
 
@@ -1609,7 +1586,6 @@ IBM Storage Operator cluster add-on patch updates.
 OpenShift AI cluster add-on patch updates.
 :   For more information, see the [change log](/docs/openshift?topic=openshift-cl-add-ons-openshift-ai).
 
-
 ### 09 September 2025
 {: #openshift-sep0925}
 {: release-note}
@@ -1646,7 +1622,6 @@ New! {{site.data.keyword.openshiftlong_notm}} 4.19 is available.
 
 New! Version support timelines
 :   Version support timeline images are now available to help you plan your cluster update schedule. To view the timelines and end of support dates for cluster versions, see [{{site.data.keyword.openshiftlong_notm}} version information](/docs/openshift?topic=openshift-openshift_versions).
-
 
 ### 04 September 2025
 {: #openshift-sep0425}
@@ -1687,7 +1662,6 @@ OpenShift Data Foundation cluster add-on patch updates.
 
 
 
-
 ### 22 August 2025
 {: #openshift-aug2225}
 {: release-note}
@@ -1712,14 +1686,12 @@ VPC File CSI Driver cluster add-on patch updates.
 
 
 
-
 ### 20 August 2025
 {: #openshift-aug2025}
 {: release-note}
 
 {{site.data.keyword.cos_full_notm}} plug-in updates.
 :   For more information, see the [change log](/docs/openshift?topic=openshift-cos_plugin_changelog).
-
 
 ### 19 August 2025
 {: #openshift-aug1925}
@@ -1781,10 +1753,8 @@ CLI version `1.0.714` is available.
 {{site.data.keyword.cos_full_notm}} plug-in updates.
 :   For more information, see the [change log](/docs/openshift?topic=openshift-cos_plugin_changelog).
 
-
-
 ## July 2025
-{: #openshift-july25}
+{: #openshift-jul25}
 
 ### 31 July 2025
 {: #openshift-31july25}
@@ -1797,7 +1767,6 @@ CLI version `1.0.714` is available.
 :   [Version 4.18 change log](/docs/openshift?topic=openshift-openshift_changelog_418)
 :   [Version 4.17 change log](/docs/openshift?topic=openshift-openshift_changelog_417)
 :   [Version 4.16 change log](/docs/openshift?topic=openshift-openshift_changelog_416)
-
 
 
 
@@ -1828,9 +1797,6 @@ CLI version `1.0.714` is available.
 
 Cluster autoscaler add-on patch updates for {{site.data.keyword.openshiftlong_notm}}.
 :   For more information, see [Cluster autoscaler add-on change log](/docs/openshift?topic=openshift-cl-add-ons-cluster-autoscaler).
-
-
-
 
 ### 22 July 2025
 {: #openshift-22july25}
@@ -1917,9 +1883,6 @@ VPC Block CSI Driver cluster add-on patch updates.
 
 
 
-
-## June 2025
-{: #openshift-june25}
 
 
 
@@ -2030,14 +1993,12 @@ VPC File CSI Driver cluster add-on patch updates.
 
 
 
-
 ### 02 June 2025
 {: #openshift-02jun25}
 {: release-note}
 
 VPC Block CSI Driver cluster add-on patch updates.
 :   For more information, see the [change log](/docs/openshift?topic=openshift-cl-add-ons-vpc-block-csi-driver).
-
 
 
 
@@ -2115,7 +2076,6 @@ RHEL operating system deprecation for VPC clusters version 4.18 and later.
 
 
 
-
 ### 20 May 2025
 {: #openshift-may2025}
 {: release-note}
@@ -2132,7 +2092,6 @@ RHEL operating system deprecation for VPC clusters version 4.18 and later.
 
 :   Version 4.13 change log
 :   Version 4.12 change log
-
 
 
 
@@ -2153,8 +2112,6 @@ New! Montreal multizone region
 VPC Block CSI Driver cluster add-on patch updates.
 :   For more information, see the [change log](/docs/openshift?topic=openshift-cl-add-ons-vpc-block-csi-driver).
 
-
-
 ### 07 May 2025
 {: #openshift-07may25}
 {: release-note}
@@ -2174,9 +2131,8 @@ VPC Block CSI Driver cluster add-on patch updates.
 
 
 
-
 ## April 2025
-{: #openshift-april25}
+{: #openshift-apr25}
 
 ### 30 April 2025
 {: #openshift-30april25}
@@ -2286,7 +2242,6 @@ OpenShift Data Foundation cluster add-on patch updates.
 
 
 
-
 ## March 2025
 {: #openshift-mar25}
 
@@ -2371,7 +2326,6 @@ IBM Cloud Image Key Synchronizer cluster add-on patch updates.
 
 
 
-
 ### 10 March 2025
 {: #openshift-10mar25}
 {: release-note}
@@ -2402,13 +2356,11 @@ OpenShift AI cluster add-on patch updates.
 
 
 
+
+
+
 ## February 2025
 {: #openshift-feb25}
-
-
-
-
-
 
 ### 28 February 2025
 {: #openshift-28february25}
@@ -2417,15 +2369,12 @@ OpenShift AI cluster add-on patch updates.
 New! OpenShift Data Foundation Regional Disaster Recovery on {{site.data.keyword.openshiftlong_notm}} clusters
 :   This feature is now available as a Technical Preview. For more information, see [OpenShift Data Foundation Regional Disaster Recovery on {{site.data.keyword.openshiftlong_notm}} clusters](/docs/openshift?topic=openshift-openshift_odf_rdr_roks).
 
-
-
 ### 27 February 2025
 {: #openshift-feb2725}
 {: release-note}
 
 OpenShift AI deployment during cluster creation
 :   You can deploy the OpenShift AI operator on a new cluster by using the [OpenShift AI on IBM Cloud](https://cloud.ibm.com/catalog/7a4d68b4-cf8b-40cd-a3d1-f49aff526eb3/architecture/roks-rhoai-c24ae512-8b25-43d7-8fb3-4173c7e94472-global){: external} deployable architecture.
-
 
 
 
@@ -2445,7 +2394,6 @@ OpenShift AI deployment during cluster creation
 
 :   Version 4.13 change log
 :   Version 4.12 change log
-
 
 
 
@@ -2507,7 +2455,6 @@ CLI version `1.0.679` is available.
 CLI version `1.0.677` is available.
 :   For more information, see [Updating the CLI](/docs/openshift?topic=openshift-cli-update) and the [CLI change log](/docs/openshift?topic=openshift-cs_cli_changelog).
 
-
 ### 10 February 2025
 {: #openshift-feb1025}
 {: release-note}
@@ -2516,14 +2463,12 @@ New! Worker node flavors with H200 GPU support are available on an allowlist bas
 :   To request access to the allowlist, see see [Requesting access to allowlisted features](/docs/openshift?topic=openshift-allowlist-request).
 :   For a list of available worker node flavors for VPC clusters, see [VPC flavors](/docs/openshift?topic=openshift-vpc-flavors).
 
-
 ### 06 February 2025
 {: #openshift-06february25}
 {: release-note}
 
 Static Route cluster add-on patch updates.
 :   For more information, see the [change log](/docs/openshift?topic=openshift-cl-add-ons-static-route).
-
 
 
 
@@ -2540,8 +2485,6 @@ OpenShift Data Foundation cluster add-on patch updates.
 
 Version 4.17 is now the default version for {{site.data.keyword.openshiftlong_notm}}.
 :   For a complete list of available versions, see the [version information](/docs/openshift?topic=openshift-openshift_versions).
-
-
 
 
 
@@ -2659,7 +2602,6 @@ Portworx now supports {{site.data.keyword.openshiftlong_notm}} version 4.16 and 
 
 
 
-
 ## December 2024
 {: #openshift-dec24}
 
@@ -2694,7 +2636,6 @@ Portworx now supports {{site.data.keyword.openshiftlong_notm}} version 4.16 and 
 
 Storage Operator cluster add-on patch update.
 :  For more information, see the [change log](/docs/openshift?topic=openshift-cl-add-ons-ibm-storage-operator).
-
 
 ### 05 December 2024
 {: #openshift-dec0524}
@@ -2736,10 +2677,10 @@ Storage Operator cluster add-on patch update.
 
 
 
+
+
 ## November 2024
 {: #openshift-nov24}
-
-
 
 ### 22 November 2024
 {: #openshift-nov2224}
@@ -2780,7 +2721,6 @@ Storage Operator cluster add-on patch update.
 CLI version `1.0.674` is available.
 :   For more information, see [Updating the CLI](/docs/openshift?topic=openshift-cli-update) and the [CLI change log](/docs/openshift?topic=openshift-cs_cli_changelog).
 
-
 ### 18 November 2024
 {: #openshift-nov1824}
 {: release-note}
@@ -2796,7 +2736,6 @@ CLI version `1.0.674` is available.
 
 :   Version 4.13 change log
 :   Version 4.12 change log
-
 
 
 
@@ -2828,7 +2767,6 @@ CLI version `1.0.673` is available.
 
 
 
-
 ### 07 November 2024
 {: #openshift-nov0724}
 {: release-note}
@@ -2854,9 +2792,6 @@ New! A new tutorial is available for {{site.data.keyword.openshiftlong_notm}} th
 
 
 
-
-## October 2024
-{: #openshift-oct24}
 
 
 
@@ -2910,7 +2845,6 @@ OpenShift Data Foundation cluster add-on patch updates.
 
 :   Version 4.13 change log
 :   Version 4.12 change log
-
 
 
 
@@ -2983,8 +2917,6 @@ Static route add-on version patch update.
 
 
 
-
-
 ## September 2024
 {: #openshift-sep24}
 
@@ -3022,8 +2954,6 @@ Static route add-on version patch update.
 {{site.data.keyword.cos_full_notm}} plug-in updates.
 :   For more information, see the [change log](/docs/openshift?topic=openshift-cos_plugin_changelog).
 
-
-
 ### 23 September 2024
 {: #openshift-23september24}
 {: release-note}
@@ -3044,7 +2974,6 @@ Static route add-on version patch update.
 
 
 
-
 ### 18 September 2024
 {: #openshift-sep1824}
 {: release-note}
@@ -3052,7 +2981,6 @@ Static route add-on version patch update.
 
 {{site.data.keyword.openshiftlong_notm}} CLI plug-in version `1.0.665` is available.
 :   For more information, see [Updating the CLI](/docs/openshift?topic=openshift-cli-update) and the [CLI change log](/docs/openshift?topic=openshift-cs_cli_changelog).
-
 
 
 
@@ -3104,10 +3032,10 @@ CLI version `1.0.657` is available.
 
 
 
+
+
 ## August 2024
 {: #openshift-aug24}
-
-
 
 ### 30 August 2024
 {: #openshift-aug3024}
@@ -3145,7 +3073,6 @@ New! Upgrade status command.
 
 :   Version 4.13 change log
 :   Version 4.12 change log
-
 
 
 
@@ -3190,9 +3117,8 @@ New audit events for cluster operations
 
 
 
-
 ## July 2024
-{: #openshift-july24}
+{: #openshift-jul24}
 
 ### 31 July 2024
 {: #openshift-july3124}
@@ -3213,7 +3139,6 @@ New audit events for cluster operations
 
 {{site.data.keyword.cos_full_notm}} plug-in updates.
 :   For more information, see the [change log](/docs/openshift?topic=openshift-cos_plugin_changelog).
-
 
 ### 29 July 2024
 {: #openshift-july2924}
@@ -3283,8 +3208,6 @@ OpenShift Data Foundation cluster add-on patch updates.
 
 
 
-
-
 ### 12 July 2024
 {: #openshift-july1224}
 {: release-note}
@@ -3301,7 +3224,6 @@ OpenShift Data Foundation cluster add-on patch updates.
 
 {{site.data.keyword.openshiftlong_notm}} CLI version `1.0.635` is available.
 :   For more information, see [Updating the CLI](/docs/openshift?topic=openshift-cli-update) and the [CLI change log](/docs/openshift?topic=openshift-cs_cli_changelog).
-
 
 ### 9 July 2024
 {: #openshift-july924}
@@ -3329,7 +3251,7 @@ OpenShift Data Foundation cluster add-on patch updates.
 :   For more information, see the [change log](/docs/openshift?topic=openshift-cl-add-ons-vpc-file-csi-driver).
 
 ## June 2024
-{: #openshift-june24}
+{: #openshift-jun24}
 
 ### 24 June 2024
 {: #openshift-june2424}
@@ -3342,7 +3264,6 @@ Storage optimized flavors for {{site.data.keyword.openshiftlong_notm}} VPC clust
 
 {{site.data.keyword.openshiftlong_notm}} CLI version `1.0.630` is available.
 :   For more information, see [Updating the CLI](/docs/openshift?topic=openshift-cli-update) and the [CLI change log](/docs/openshift?topic=openshift-cs_cli_changelog).
-
 
 ### 21 June 2024
 {: #openshift-june2124}
@@ -3383,7 +3304,6 @@ Cluster autoscaler add-on patch update for {{site.data.keyword.openshiftlong_not
 
 
 
-
 ### 17 June 2024
 {: #openshift-june1724}
 {: release-note}
@@ -3403,17 +3323,12 @@ Version 4.15 is the default version for {{site.data.keyword.openshiftlong_notm}}
 
 
 
-
-
-
-
 ### 5 June 2024
 {: #openshift-june0524}
 {: release-note}
 
 {{site.data.keyword.cos_full_notm}} plug-in version `2.2.26`.
 :   For more information, see the [change log](/docs/openshift?topic=openshift-cos_plugin_changelog).
-
 
 ### 4 June 2024
 {: #openshift-june0424}
@@ -3462,8 +3377,6 @@ GPU worker node flavors with Red Hat Enterprise Linux CoreOS (RHCOS).
 
 
 
-
-
 ### 23 May 2024
 {: #openshift-may2324}
 {: release-note}
@@ -3478,7 +3391,6 @@ GPU worker node flavors with Red Hat Enterprise Linux CoreOS (RHCOS).
 :   4.14
 :   4.13
 :   4.12
-
 
 
 
@@ -3515,8 +3427,6 @@ OpenShift Data Foundation add-on version `4.15.0` is available.
 
 
 
-
-
 ### 08 May 2024
 {: #openshift-may0824}
 {: release-note}
@@ -3529,8 +3439,6 @@ OpenShift Data Foundation add-on version `4.15.0` is available.
 
 Image Key Synchronizer add-on patch update.
 :   For more information, see the [change log](/docs/openshift?topic=openshift-cl-add-ons-ibm-cloud-image-key-synchronizer).
-
-
 
 
 
@@ -3567,9 +3475,6 @@ Image Key Synchronizer add-on patch update.
 :   For more information, see [Updating the CLI](/docs/openshift?topic=openshift-cli-update) and the [CLI change log](/docs/openshift?topic=openshift-cs_cli_changelog).
 
 
-
-## April 2024
-{: #openshift-apr24}
 
 
 
@@ -3621,7 +3526,6 @@ Red Hat CoreOS worker nodes are available for new VPC clusters beginning with ve
 {{site.data.keyword.openshiftlong_notm}} CLI version `1.0.617` is available.
 :   For more information, see [Updating the CLI](/docs/openshift?topic=openshift-cli-update) and the [CLI change log](/docs/openshift?topic=openshift-cs_cli_changelog).
 
-
 ### 18 April 2024
 {: #openshift-apr1824}
 {: release-note}
@@ -3645,8 +3549,6 @@ Worker node fix packs are available {{site.data.keyword.openshiftlong_notm}}.
 
 
 
-
-
 ### 03 April 2024
 {: #openshift-apr0324}
 {: release-note}
@@ -3664,9 +3566,6 @@ Version 1.0.9 of the cluster autoscaler add-on is deprecated with an end of supp
 
 Image Key Synchronizer add-on patch update.
 :   For more information, see the [change log](/docs/openshift?topic=openshift-cl-add-ons-ibm-cloud-image-key-synchronizer).
-
-
-
 
 
 
@@ -3706,7 +3605,6 @@ Worker node fix packs are available {{site.data.keyword.openshiftlong_notm}}.
 
 New! NVIDIA L40 GPU support. You can now create VPC clusters with worker nodes which have NVIDIA L40 GPUs.
 :   In {{site.data.keyword.openshiftlong_notm}} clusters, you can get started by provisioning a new cluster or worker pool with `gx3` worker nodes. Then, install the GPU drivers through the NVIDIA operator in OperatorHub. For more information, see [Deploying an app on a GPU machine](/docs/openshift?topic=openshift-deploy_app#gpu_app)
-
 
 
 
@@ -3794,9 +3692,6 @@ Master patch updates for {{site.data.keyword.openshiftlong_notm}} clusters. Mast
 
 
 
-
-
-
 ### 27 February 2024
 {: #openshift-feb2724}
 {: release-note}
@@ -3819,7 +3714,6 @@ Worker node fix packs are available {{site.data.keyword.openshiftlong_notm}}.
 CLI version `1.0.597` is available.
 :   For more information, see [Updating the CLI](/docs/openshift?topic=openshift-cli-update) and the [CLI change log](/docs/openshift?topic=openshift-cs_cli_changelog).
 
-
 ### 26 February 2024
 {: #openshift-feb2624}
 {: release-note}
@@ -3834,9 +3728,6 @@ New worker node flavors are available with L4 GPUs.
     - `gx3.16x80x1L4`: 1 GPU, 16 cores, 80 GB memory, 100GB storage, 32 Gbps network speed.
     - `gx3.32x160x2L4`: 2 GPU, 32 cores, 160 GB, memory, 100GB storage, 32 Gbps network speed
     - `gx3.64x320x4L4`: 4 GPU, 64 cores, 320 GB memory, 100GB storage, 32 Gbps network speed
-
-
-
 
 ### 22 February 2024
 {: #openshift-feb2224}
@@ -3858,8 +3749,6 @@ New worker node flavors are available with L4 GPUs.
 
 
 
-
-
 ### 16 February 2024
 {: #openshift-feb1624}
 {: release-note}
@@ -3873,8 +3762,6 @@ A new tutorial is available for creating a small {{site.data.keyword.redhat_open
 
 {{site.data.keyword.openshiftlong_notm}} cluster autoscaler add-on patch update `1.1.0_362`.
 :   For more information, see [the change log](/docs/openshift?topic=openshift-cl-add-ons-cluster-autoscaler).
-
-
 
 
 
