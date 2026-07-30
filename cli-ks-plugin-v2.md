@@ -20,6 +20,7 @@ Refer to these commands to create and manage **both community Kubernetes or {{si
 
 In the command line, you are notified when updates to the `ibmcloud` CLI and plug-ins are available. Be sure to keep your CLI up-to-date so that you can use all available commands and options.
 
+
 ## Prerequisites
 {: #ks-cli-prereq}
 
@@ -31,7 +32,7 @@ In the command line, you are notified when updates to the `ibmcloud` CLI and plu
    ```
    {: pre}
 
-You're notified on the command line when updates to the  CLI and plug-ins are available. Be sure to keep your CLI up to date so that you can use the latest commands. You can view the current version of all installed plug-ins by running **`ibmcloud plugin list`**.
+You're notified on the command line when updates to the {{site.data.keyword.cloud_notm}} CLI and plug-ins are available. Be sure to keep your CLI up to date so that you can use the latest commands. You can view the current version of all installed plug-ins by running **`ibmcloud plugin list`**.
 {: tip}
 
 ## ibmcloud oc commands
