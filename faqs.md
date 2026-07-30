@@ -95,16 +95,6 @@ Periodically, {{site.data.keyword.redhat_openshift_notm}} releases [major, minor
 
 Worker nodes in standard clusters are provisioned in to your {{site.data.keyword.cloud_notm}} infrastructure account. The worker nodes are dedicated to your account and you are responsible to request timely updates to the worker nodes to ensure that the worker node OS and {{site.data.keyword.openshiftlong_notm}} components apply the latest security updates and patches. Security updates and patches are made available by IBM Site Reliability Engineers (SREs) who continuously monitor the Linux image that is installed on your worker nodes to detect vulnerabilities and security compliance issues. For more information, see [Updating worker nodes](/docs/openshift?topic=openshift-update#worker_node).
 
-
-
-### Why do my worker nodes have the `master` role?
-{: #flavor-master-role}
-
-When you run `oc get nodes` or `oc describe node <worker_node>`, you might see that the worker nodes have `master,worker` roles. In OpenShift Container Platform clusters, operators use the master role as a `nodeSelector` so that OCP can deploy default components that are controlled by operators, such as the internal registry, in your cluster. No master node processes, such as the API server or Kubernetes scheduler, run on your worker nodes. For more information about master and worker node components, see [{{site.data.keyword.redhat_openshift_notm}} architecture](/docs/openshift?topic=openshift-service-architecture#service-architecture-4).
-
-
-
-
 ## What kinds of workloads can I move to {{site.data.keyword.openshiftlong_notm}}?
 {: #move_to_cloud}
 
