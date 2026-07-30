@@ -2,7 +2,7 @@
 
 copyright:
   years: 2026, 2026
-lastupdated: "2026-07-09"
+lastupdated: "2026-07-30"
 
 keywords: openshift, virtualization service, rovs, create cluster, vpc, bare metal, tutorial
 
@@ -129,7 +129,7 @@ If you don't have the required VPC infrastructure, create it from the CLI.
 
 3. Verify that bare metal capacity is available in your selected zones.
    ```sh
-   ibmcloud ks flavors --zone <zone> --provider vpc-gen2 | grep metal
+   ibmcloud ks flavors --zone ZONE --provider vpc-gen2 | grep metal
    ```
    {: pre}
 
@@ -319,7 +319,7 @@ After your cluster is created, verify that it's working correctly and that pre-c
 1. Configure your CLI to use the cluster:
 
    ```sh
-   ibmcloud ks cluster config --cluster <cluster-name> --admin
+   ibmcloud ks cluster config --cluster CLUSTER_NAME --admin
    ```
    {: pre}
 

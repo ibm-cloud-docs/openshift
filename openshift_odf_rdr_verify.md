@@ -2,7 +2,7 @@
 
 copyright:
   years: 2026
-lastupdated: "2026-07-20"
+lastupdated: "2026-07-30"
 
 keywords: openshift, openshift data foundation, openshift container storage, disaster recovery, odf rdr, verify, regional disaster recovery
 
@@ -31,7 +31,7 @@ Complete the following steps on the **hub cluster**.
 1. Verify that the ACM add-on is installed and in a `normal` state. Look for the `acm` add-on in the output and confirm the status shows `Addon Ready`.
 
     ```sh
-    ibmcloud oc cluster addon ls --cluster <hub_cluster_name> | grep -i acm
+    ibmcloud oc cluster addon ls --cluster HUB_CLUSTER_NAME | grep -i acm
     ```
     {: pre}
 

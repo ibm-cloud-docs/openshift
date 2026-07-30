@@ -2,7 +2,7 @@
 
 copyright:
   years: 2025, 2026
-lastupdated: "2026-04-09"
+lastupdated: "2026-07-30"
 
 
 keywords: oauth access, oauth, api server, vpe gateway, vpc
@@ -67,8 +67,8 @@ If your cluster uses Secure by Default (SBD) networking and you modified or rena
 5. Add a security group rule that allows the client system subnet to access the API server port and the OAuth server port when connecting to the VPC. Add a separate rule for each port. If you found a subnet for multiple client systems in the previous steps, repeat this step for each subnet.
 
     ```sh
-    ibmcloud is security-group-rule-add kube-vpegw-${CLUSTERID} inbound tcp --port-min <API-SERVER-PORT>   --port-max <API-SERVER-PORT>   --remote <CLIENT-SYSTEM-SUBNET>
-    ibmcloud is security-group-rule-add kube-vpegw-${CLUSTERID} inbound tcp --port-min <OAUTH-SERVER-PORT> --port-max <OAUTH-SERVER-PORT> --remote <CLIENT-SYSTEM-SUBNET>
+    ibmcloud is security-group-rule-add kube-vpegw-${CLUSTERID} inbound tcp --port-min API_SERVER_PORT   --port-max API_SERVER_PORT   --remote CLIENT_SYSTEM_SUBNET
+    ibmcloud is security-group-rule-add kube-vpegw-${CLUSTERID} inbound tcp --port-min OAUTH_SERVER_PORT --port-max OAUTH_SERVER_PORT --remote CLIENT_SYSTEM_SUBNET
     ```
     {: pre}
 

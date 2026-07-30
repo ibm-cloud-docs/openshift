@@ -2,7 +2,7 @@
 
 copyright:
   years: 2026
-lastupdated: "2026-07-23"
+lastupdated: "2026-07-30"
 
 keywords: openshift data foundation, ODF, disaster recovery, upgrade, ODF-DR, regional disaster recovery, RDR
 
@@ -49,7 +49,7 @@ Upgrade both the control plane and worker nodes on the hub cluster before upgrad
 
 1. Update the cluster master to the target version.
    ```sh
-   ibmcloud oc cluster master update --cluster <cluster_name> --version <version>
+   ibmcloud oc cluster master update --cluster CLUSTER_NAME --version VERSION
    ```
    {: pre}
 
@@ -61,19 +61,19 @@ Upgrade both the control plane and worker nodes on the hub cluster before upgrad
 
 3. List the worker nodes and note the ID of each node to update.
    ```sh
-   ibmcloud oc worker ls --cluster <cluster_name>
+   ibmcloud oc worker ls --cluster CLUSTER_NAME
    ```
    {: pre}
 
 4. Replace each worker node to update it to the same version as the master. Repeat for each worker node.
    ```sh
-   ibmcloud oc worker replace --cluster <cluster_name> --worker <worker_node_id> --update
+   ibmcloud oc worker replace --cluster CLUSTER_NAME --worker WORKER_NODE_ID --update
    ```
    {: pre}
 
 5. Confirm that all worker nodes are running the target version and show a **Ready** status.
    ```sh
-   ibmcloud oc worker ls --cluster <cluster_name>
+   ibmcloud oc worker ls --cluster CLUSTER_NAME
    ```
    {: pre}
 
@@ -95,13 +95,13 @@ After all clusters are running the target {{site.data.keyword.openshiftlong_notm
 
 1. Upgrade the ACM add-on to the target version. Replace `<cluster_id>` with your hub cluster ID and `<version>` with the target ACM version (for example, `2.16`).
    ```sh
-   ibmcloud oc cluster addon update acm --cluster <cluster_id> --version <version>
+   ibmcloud oc cluster addon update acm --cluster CLUSTER_ID --version VERSION
    ```
    {: pre}
 
 2. Confirm that the add-on updated successfully. In the output, verify the ACM add-on shows the target version.
    ```sh
-   ibmcloud oc cluster addon ls --cluster <cluster_id>
+   ibmcloud oc cluster addon ls --cluster CLUSTER_ID
    ```
    {: pre}
 

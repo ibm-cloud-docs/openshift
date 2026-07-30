@@ -2,7 +2,7 @@
 
 copyright:
   years: 2025, 2026
-lastupdated: "2026-07-06"
+lastupdated: "2026-07-30"
 
 keywords: confidential containers
 
@@ -80,7 +80,7 @@ Before you begin, you can either complete these steps to set up the CLI or you c
 1. Log in to the IBM Cloud CLI.
 
     ```sh
-    ibmcloud login --apikey <API_KEY> -g <RESOURCE_GROUP>
+    ibmcloud login --apikey API_KEY -g RESOURCE_GROUP
     ```
     {: pre}
 
@@ -220,7 +220,7 @@ If you are testing out confidential containers, you can use an API key. If you a
         b. Allow the resources in `openshift-sandboxed-containers-operator` to use the trusted profile.
         
         ```sh
-        ibmcloud iam trusted-profile-rule-create <NAME or ID of the trusted profile> --name <RULE_NAME> --type Profile-CR --conditions claim:namespace,operator:EQUALS,value:openshift-sandboxed-containers-operator --cr-type ROKS_SA
+        ibmcloud iam trusted-profile-rule-create PROFILE_NAME_OR_ID --name RULE_NAME --type Profile-CR --conditions claim:namespace,operator:EQUALS,value:openshift-sandboxed-containers-operator --cr-type ROKS_SA
         ```
         {: pre}
 

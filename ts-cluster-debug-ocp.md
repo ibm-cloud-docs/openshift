@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2026
-lastupdated: "2026-06-22"
+lastupdated: "2026-07-30"
 
 
 keywords: openshift
@@ -69,7 +69,7 @@ Enabling MFA at the user level is not supported. If MFA is enabled for some user
     1. Check the **Master Status**. If the **Master Status** is not **Ready**, [review its status](/docs/openshift?topic=openshift-debug_master) and follow any troubleshooting information to resolve the issue.   
 
         ```sh
-        ibmcloud oc cluster get -c <cluster_name_or_ID>
+        ibmcloud oc cluster get -c CLUSTER_NAME_OR_ID
         ```
         {: pre}
 
@@ -77,7 +77,7 @@ Enabling MFA at the user level is not supported. If MFA is enabled for some user
     1. Check that at least some worker nodes in your cluster have a **Public IP** address. If no worker node does, you must set up public VLANs for at least one worker pool.
 
         ```sh
-        ibmcloud oc workers -c <cluster_name_or_ID>
+        ibmcloud oc workers -c CLUSTER_NAME_OR_ID
         ```
         {: pre}
 
@@ -97,7 +97,7 @@ Check any firewalls or network policies to verify that you don't block any ingre
 Check that your cluster is set up properly. If you just created your cluster, wait awhile for your cluster components to fully provision.
 1. Get the details of your cluster.
     ```sh
-    ibmcloud oc cluster get -c <cluster_name_or_ID>
+    ibmcloud oc cluster get -c CLUSTER_NAME_OR_ID
     ```
     {: pre}
 
@@ -107,19 +107,19 @@ Check that your cluster is set up properly. If you just created your cluster, wa
 3. Verify that your cluster runs the latest patch **Version**. If your cluster does not run the latest patch version, update the cluster and worker nodes.
     1. [Update the cluster master](/docs/openshift?topic=openshift-update#master) to the latest patch version for your cluster major and minor version.
         ```sh
-        ibmcloud oc cluster master update -c <cluster_name_or_ID> --version <major.minor>_openshift-f
+        ibmcloud oc cluster master update -c CLUSTER_NAME_OR_ID --version MAJOR.MINOR_openshift-f
         ```
         {: pre}
 
     2. List your worker nodes.
         ```sh
-        ibmcloud oc worker ls -c <cluster_name_or_ID>
+        ibmcloud oc worker ls -c CLUSTER_NAME_OR_ID
         ```
         {: pre}
 
     3. [Update the worker nodes](/docs/openshift?topic=openshift-update#worker_node) to match the cluster master version.
         ```sh
-        ibmcloud oc worker update -c <cluster_name_or_ID> -w <worker1_ID> -w <worker2_ID> -w <worker3_ID>
+        ibmcloud oc worker update -c CLUSTER_NAME_OR_ID -w WORKER1_ID -w WORKER2_ID -w WORKER3_ID
         ```
         {: pre}
 
@@ -127,7 +127,7 @@ Check that your cluster is set up properly. If you just created your cluster, wa
 5. Check the **Master health**. If the state is not **normal**, review the master health status and resolve any issues.
 6. Check the worker nodes that the {{site.data.keyword.redhat_openshift_notm}} components might run on. If the state is not **normal**, see [Debugging worker nodes](/docs/openshift?topic=openshift-debug_worker_nodes).
     ```sh
-    ibmcloud oc worker ls -c <cluster_name_or_ID>
+    ibmcloud oc worker ls -c CLUSTER_NAME_OR_ID
     ```
     {: pre}
 
@@ -194,7 +194,7 @@ For example, the OperatorHub has a set of images that are stored in external reg
     * A `Pull image still failed due to error: unauthorized: authentication required` error message because the internal registry can't pull images from an external registry. Check that [the image pull secrets](/docs/openshift?topic=openshift-registry#cluster_registry_auth) are set for the project and restart the pod.
 3. Check the **Node** that the failing pods run on. If all the pods run on the same worker node, the worker node might have a network connectivity issue. Reload the worker node.
     ```sh
-    ibmcloud oc worker reload -c <cluster_name_or_ID> -w <worker_node_ID>
+    ibmcloud oc worker reload -c CLUSTER_NAME_OR_ID -w WORKER_NODE_ID
     ```
     {: pre}
 
@@ -242,7 +242,7 @@ Check that the VPN in the cluster is set up properly.
 
 8. Check the VPN pod logs again. If the pod no longer has an error, the worker node might have a network connectivity issue. Reload the worker node.
     ```sh
-    ibmcloud oc worker reload -c <cluster_name_or_ID> -w <worker_node_ID>
+    ibmcloud oc worker reload -c CLUSTER_NAME_OR_ID -w WORKER_NODE_ID
     ```
     {: pre}
 
@@ -251,7 +251,7 @@ Check that the VPN in the cluster is set up properly.
 
 Refresh the cluster master to set up the default {{site.data.keyword.redhat_openshift_notm}} components. After you refresh the cluster, wait a few minutes to allow the operation to complete.
 ```sh
-ibmcloud oc cluster master refresh -c <cluster_name_or_ID>
+ibmcloud oc cluster master refresh -c CLUSTER_NAME_OR_ID
 ```
 {: pre}
 

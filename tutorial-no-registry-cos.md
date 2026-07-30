@@ -2,7 +2,7 @@
 
 copyright:
   years: 2026
-lastupdated: "2026-07-23"
+lastupdated: "2026-07-30"
 
 keywords: openshift, roks, no cos, no registry, emptydir, image registry, internal registry, icr, fs cloud, financial services
 
@@ -55,6 +55,10 @@ In this tutorial, you create the following resources. There are optional steps t
 Complete the following prerequisite steps before you create your cluster.
 {: shortdesc}
 
+The decision to omit an {{site.data.keyword.cos_full_notm}} instance is permanent. After you create a cluster, you cannot add or remove a COS-backed internal registry. If your requirements change and you need persistent internal registry storage, you must create a new cluster and provide a COS instance at creation time.
+{: important}
+
+
 Permissions
 :   If you are the account owner, you already have the required permissions to create a cluster and can continue to the next step. Otherwise, ask the account owner to [set up the API key and assign you the minimum user permissions in {{site.data.keyword.cloud_notm}} IAM](/docs/openshift?topic=openshift-iam-platform-access-roles).
 
@@ -84,7 +88,7 @@ When you omit the `--cos-instance` option from the cluster creation command, the
 
 1. Log in to the {{site.data.keyword.cloud_notm}} account, resource group, and region where you want to create your cluster. If you have a federated ID, include the `--sso` option.
     ```sh
-    ibmcloud login -r <region> [-g <resource_group>] [--sso]
+    ibmcloud login -r REGION [-g RESOURCE_GROUP] [--sso]
     ```
     {: pre}
 
@@ -106,7 +110,7 @@ When you omit the `--cos-instance` option from the cluster creation command, the
 
 3. Wait for the cluster to finish provisioning. This process might take 20 - 30 minutes. Monitor the cluster state by running the following command until the **State** field shows `normal`.
     ```sh
-    ibmcloud oc cluster get --cluster <cluster-name>
+    ibmcloud oc cluster get --cluster CLUSTER_NAME
     ```
     {: pre}
 
@@ -119,7 +123,7 @@ After your cluster is running, download the cluster configuration to set up `oc`
 
 1. Download the cluster configuration file and set the `KUBECONFIG` environment variable.
     ```sh
-    ibmcloud oc cluster config --cluster <cluster-name> --admin
+    ibmcloud oc cluster config --cluster CLUSTER_NAME --admin
     ```
     {: pre}
 

@@ -1,8 +1,8 @@
 ---
 
 copyright:
-  years: 2023, 2025
-lastupdated: "2025-12-19"
+  years: 2023, 2026
+lastupdated: "2026-07-30"
 
 
 keywords: critical, not ready, notready, troubleshooting, worker node status, status
@@ -102,15 +102,15 @@ Some steps are specific to a specialized area, such as networking or automation.
 1. Review the output for webhooks that have `rejected="true"` status.
 
 
-1. Remove and regenerate any custom Docker pull secrets, which, if misconfigured, can prevent worker nodes from pulling images from Docker registries. 
-    1. Run the `ibmcloud oc delete secret -n openshift pull-secret` and `ibmcloud oc delete secret -n openshift-config pull-secret` commands to delete the custom Docker pull secrets.
+1. Remove and regenerate any custom Docker pull secrets, which, if misconfigured, can prevent worker nodes from pulling images from Docker registries.
+    1. Run the `oc delete secret -n openshift pull-secret` and `oc delete secret -n openshift-config pull-secret` commands to delete the custom Docker pull secrets.
         ```sh
-        ibmcloud oc delete secret -n openshift pull-secret
+        oc delete secret -n openshift pull-secret
         ```
         {: pre}
 
         ```sh
-        ibmcloud oc delete secret -n openshift-config pull-secret
+        oc delete secret -n openshift-config pull-secret
         ```
         {: pre}
 

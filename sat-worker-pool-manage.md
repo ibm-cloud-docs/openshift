@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2026
-lastupdated: "2026-04-09"
+lastupdated: "2026-07-30"
 
 
 keywords: openshift, satellite, clusters, worker nodes, worker pools, delete
@@ -76,14 +76,14 @@ Do not exceed your entitlement. Keep in mind that your OpenShift Container Platf
 Example `worker-pool create` command
 
 ```sh
-ibmcloud oc worker-pool create satellite --cluster <cluster_name_or_ID> --name <pool_name> --size-per-zone <number> --zone <satellite_zone> --entitlement <entitlement> --host-label <cpu=number> --host-label <memory=number> [--host-label <key=value>] [--operating-system SYSTEM]
+ibmcloud oc worker-pool create satellite --cluster CLUSTER_NAME_OR_ID --name POOL_NAME --size-per-zone NUMBER --zone SATELLITE_ZONE --entitlement ENTITLEMENT --host-label cpu=NUMBER --host-label memory=NUMBER [--host-label KEY=VALUE] [--operating-system SYSTEM]
 ```
 {: pre}
 
 Example `worker-pool create` command for creating a worker pool that uses Red Hat CoreOS hosts.
 
 ```sh
-ibmcloud oc worker-pool create satellite --cluster <cluster_name_or_ID> --name <pool_name> --size-per-zone <number> --zone <satellite_zone> --host-label <cpu=number> --host-label <memory=number> --operating-system RHCOS
+ibmcloud oc worker-pool create satellite --cluster CLUSTER_NAME_OR_ID --name POOL_NAME --size-per-zone NUMBER --zone SATELLITE_ZONE --host-label cpu=NUMBER --host-label memory=NUMBER --operating-system RHCOS
 ```
 {: pre}
     

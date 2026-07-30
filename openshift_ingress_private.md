@@ -1,8 +1,8 @@
 ---
 
 copyright:
-  years: 2023, 2025
-lastupdated: "2025-11-18"
+  years: 2023, 2026
+lastupdated: "2026-07-30"
 
 
 keywords: ingress, expose apps, privately expose, private ingress, ingress vpc
@@ -80,7 +80,7 @@ To set up TLS secrets for a domain that you created yourself, such as a domain r
 
 1. List the existing subdomains in your cluster. In the **Subdomain** column of the output, copy the subdomain that has the highest `000<n>` value.
     ```sh
-    ibmcloud oc nlb-dns ls --cluster <cluster_name_or_id>
+    ibmcloud oc nlb-dns ls --cluster CLUSTER_NAME_OR_ID
     ```
     {: pre}
 

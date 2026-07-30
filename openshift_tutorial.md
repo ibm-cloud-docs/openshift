@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2026
-lastupdated: "2026-07-10"
+lastupdated: "2026-07-30"
 
 
 keywords: kubernetes, openshift, red hat, red hat openshift
@@ -94,13 +94,13 @@ In this tutorial, you create the following resources by using the CLI. There are
 1. List your cluster details. Review the cluster **State**, check the **Ingress Subdomain**, and note the **Master URL**.
     
     ```sh
-    ibmcloud oc cluster get --cluster <cluster_name_or_ID>
+    ibmcloud oc cluster get --cluster CLUSTER_NAME_OR_ID
     ```
     {: pre}
 
 1. Download and add the `kubeconfig` configuration file for your cluster.
     ```sh
-    ibmcloud oc cluster config --cluster <cluster_name_or_ID>
+    ibmcloud oc cluster config --cluster CLUSTER_NAME_OR_ID
     ```
     {: pre}
 

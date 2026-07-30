@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2026
-lastupdated: "2026-07-10"
+lastupdated: "2026-07-30"
 
 
 keywords: openshift, route, router
@@ -240,7 +240,7 @@ Note that even though you create an IngressController resource in the following 
     * **IBM-provided domain**:
         1. List the existing subdomains in your cluster. In the **Subdomain** column of the output, copy the subdomain that has the highest `000<n>` value.
             ```sh
-            ibmcloud oc nlb-dns ls --cluster <cluster_name_or_id>
+            ibmcloud oc nlb-dns ls --cluster CLUSTER_NAME_OR_ID
             ```
             {: pre}
 

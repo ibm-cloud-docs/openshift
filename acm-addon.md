@@ -2,7 +2,7 @@
 
 copyright:
   years: 2025, 2026
-lastupdated: "2026-06-11"
+lastupdated: "2026-07-30"
 
 
 keywords: openshift, acm, advanced cluster management, manage cluster, management, addon, add-on, acm addon
@@ -98,7 +98,7 @@ Complete the following steps for each cluster that you want to manage.
 1. On the cluster that you want to manage with ACM, run the command to find the server URL. In the output, find and note the **Master URL** value. This is the server URL to reference in the secret. You also use this URL in the following steps.
 
     ```sh
-    ibmcloud oc cluster get -c <cluster_name_or_ID>
+    ibmcloud oc cluster get -c CLUSTER_NAME_OR_ID
     ```
     {: pre}
 

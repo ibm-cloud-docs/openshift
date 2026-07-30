@@ -3,7 +3,7 @@
 copyright:
   years: 2026, 2026
 
-lastupdated: "2026-04-16"
+lastupdated: "2026-07-30"
 
 keywords: openshift virtualization, operator install, openshift-cnv, catalogsource, subscription
 
@@ -50,13 +50,15 @@ To resolve the issue,
 
 3. Check whether outbound traffic protection is enabled.
    ```sh
-   ibmcloud oc vpc outbound-traffic-protection get -c <cluster_name>
+   ibmcloud oc cluster get -c CLUSTER_NAME
    ```
    {: pre}
 
+   Review the output for the outbound traffic protection status.
+
 4. If outbound traffic protection is enabled, disable it.
    ```sh
-   ibmcloud oc vpc outbound-traffic-protection disable -c <cluster_name>
+   ibmcloud oc vpc outbound-traffic-protection disable -c CLUSTER_NAME
    ```
    {: pre}
 

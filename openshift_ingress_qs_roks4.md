@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2026
-lastupdated: "2026-04-09"
+lastupdated: "2026-07-30"
 
 
 keywords: openshift, nginx, ingress controller
@@ -42,7 +42,7 @@ Not sure whether to use Ingress or Routes? See [Choosing among load balancing so
 
 2. Get the Ingress subdomain for your cluster.
     ```sh
-    ibmcloud oc cluster get -c <cluster_name_or_ID> | grep 'Ingress Subdomain'
+    ibmcloud oc cluster get -c CLUSTER_NAME_OR_ID | grep 'Ingress Subdomain'
     ```
     {: pre}
 

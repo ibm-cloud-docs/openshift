@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2026
-lastupdated: "2026-07-27"
+lastupdated: "2026-07-30"
 
 
 keywords: openshift
@@ -7342,8 +7342,6 @@ subcollection: openshift
 
     * [`ibmcloud oc nlb-dns rm vpc-gen2`](/docs/openshift?topic=openshift-kubernetes-service-cli#cs_nlb-dns-rm-vpc-gen2)
 
-    * [Experimental: `ibmcloud oc nlb-dns secret regenerate`](/docs/openshift?topic=openshift-kubernetes-service-cli#cs_nlb-dns-secret-regenerate)
-
     * [Experimental: `ibmcloud oc nlb-dns secret rm`](/docs/openshift?topic=openshift-kubernetes-service-cli#cs_nlb-dns-secret-rm)
 
     * [`ibmcloud oc vpc secure-by-default enable`](/docs/openshift?topic=openshift-kubernetes-service-cli#vpc-secure-by-default-enable-cli)
@@ -7402,7 +7400,7 @@ subcollection: openshift
 
     * [`ibmcloud oc vni ls`](/docs/openshift?topic=openshift-kubernetes-service-cli#vni-ls-cli)
 
-    * [`flavor` command](/docs/openshift?topic=openshift-kubernetes-service-cli#cs_machine_types)
+    * [`flavor` command](/docs/openshift?topic=openshift-kubernetes-service-cli#flavor-command)
 
     * [`flavor get` command](/docs/openshift?topic=openshift-kubernetes-service-cli#cs_flavor_get)
 
