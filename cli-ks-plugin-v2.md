@@ -84,7 +84,7 @@ ibmcloud oc api [--api-version VERSION] [--endpoint ENDPOINT] [--insecure] [-q] 
 ```
 {: pre}
 
-### Command options
+#### Command options
 {: #api-options}
 
 
@@ -104,7 +104,7 @@ ibmcloud oc api [--api-version VERSION] [--endpoint ENDPOINT] [--insecure] [-q] 
 :    Allow insecure SSL certificates.
 
 
-### Examples
+#### Examples
 {: #api-examples}
 
 View or set the API endpoint and API version for the service.
@@ -131,7 +131,7 @@ ibmcloud oc api-key info --cluster CLUSTER [--output OUTPUT] [-q]
 ```
 {: pre}
 
-### Command options
+#### Command options
 {: #api-key-info-options}
 
 
@@ -145,7 +145,7 @@ ibmcloud oc api-key info --cluster CLUSTER [--output OUTPUT] [-q]
 :    Do not show the message of the day or update reminders.
 
 
-### Examples
+#### Examples
 {: #api-key-info-examples}
 
 View information about the API key owner for a cluster.
@@ -169,7 +169,7 @@ ibmcloud oc api-key reset --region REGION [-f] [--output OUTPUT] [-q]
 ```
 {: pre}
 
-### Command options
+#### Command options
 {: #api-key-reset-options}
 
 
@@ -186,7 +186,7 @@ ibmcloud oc api-key reset --region REGION [-f] [--output OUTPUT] [-q]
 :    Specify the region to target.
 
 
-### Examples
+#### Examples
 {: #api-key-reset-examples}
 
 Replace the API key for all clusters in the specified region and targeted resource group.
@@ -210,7 +210,7 @@ ibmcloud oc cluster addon disable acm --cluster CLUSTER [-f] [-q]
 ```
 {: pre}
 
-### Command options
+#### Command options
 {: #cluster-addon-disable-acm-options}
 
 
@@ -224,7 +224,7 @@ ibmcloud oc cluster addon disable acm --cluster CLUSTER [-f] [-q]
 :    Do not show the message of the day or update reminders.
 
 
-### Examples
+#### Examples
 {: #cluster-addon-disable-acm-examples}
 
 The Red Hat Advanced Cluster Management add-on.
@@ -248,7 +248,7 @@ ibmcloud oc cluster addon disable cluster-autoscaler --cluster CLUSTER [-f] [-q]
 ```
 {: pre}
 
-### Command options
+#### Command options
 {: #cluster-addon-disable-cluster-autoscaler-options}
 
 
@@ -262,7 +262,7 @@ ibmcloud oc cluster addon disable cluster-autoscaler --cluster CLUSTER [-f] [-q]
 :    Do not show the message of the day or update reminders.
 
 
-### Examples
+#### Examples
 {: #cluster-addon-disable-cluster-autoscaler-examples}
 
 The IBM Cloud Kubernetes Service Cluster Autoscaler.
@@ -286,7 +286,7 @@ ibmcloud oc cluster addon disable debug-tool --cluster CLUSTER [-f] [-q]
 ```
 {: pre}
 
-### Command options
+#### Command options
 {: #cluster-addon-disable-debug-tool-options}
 
 
@@ -300,7 +300,7 @@ ibmcloud oc cluster addon disable debug-tool --cluster CLUSTER [-f] [-q]
 :    Do not show the message of the day or update reminders.
 
 
-### Examples
+#### Examples
 {: #cluster-addon-disable-debug-tool-examples}
 
 The IBM Cloud Kubernetes Service Diagnostics and Debug Tool.
@@ -324,7 +324,7 @@ ibmcloud oc cluster addon disable hpcs-router --cluster CLUSTER [-f] [-q]
 ```
 {: pre}
 
-### Command options
+#### Command options
 {: #cluster-addon-disable-hpcs-router-options}
 
 
@@ -338,7 +338,7 @@ ibmcloud oc cluster addon disable hpcs-router --cluster CLUSTER [-f] [-q]
 :    Do not show the message of the day or update reminders.
 
 
-### Examples
+#### Examples
 {: #cluster-addon-disable-hpcs-router-examples}
 
 The IBM Cloud HPCS Router Operator add-on for Red Hat OpenShift on IBM Cloud.
@@ -365,7 +365,7 @@ ibmcloud oc cluster addon disable ibm-storage-operator --cluster CLUSTER [-f] [-
 ```
 {: pre}
 
-### Command options
+#### Command options
 {: #cluster-addon-disable-ibm-storage-operator-options}
 
 
@@ -379,7 +379,7 @@ ibmcloud oc cluster addon disable ibm-storage-operator --cluster CLUSTER [-f] [-
 :    Do not show the message of the day or update reminders.
 
 
-### Examples
+#### Examples
 {: #cluster-addon-disable-ibm-storage-operator-examples}
 
 The IBM Cloud Storage operator add-on.
@@ -406,7 +406,7 @@ ibmcloud oc cluster addon disable image-key-synchronizer --cluster CLUSTER [-f] 
 ```
 {: pre}
 
-### Command options
+#### Command options
 {: #cluster-addon-disable-image-key-synchronizer-options}
 
 
@@ -420,7 +420,7 @@ ibmcloud oc cluster addon disable image-key-synchronizer --cluster CLUSTER [-f] 
 :    Do not show the message of the day or update reminders.
 
 
-### Examples
+#### Examples
 {: #cluster-addon-disable-image-key-synchronizer-examples}
 
 The IBM Cloud Image Key Synchronizer add-on.
@@ -447,7 +447,7 @@ ibmcloud oc cluster addon disable knative --cluster CLUSTER [-f] [-q]
 ```
 {: pre}
 
-### Command options
+#### Command options
 {: #cluster-addon-disable-knative-options}
 
 
@@ -461,7 +461,7 @@ ibmcloud oc cluster addon disable knative --cluster CLUSTER [-f] [-q]
 :    Do not show the message of the day or update reminders.
 
 
-### Examples
+#### Examples
 {: #cluster-addon-disable-knative-examples}
 
 The Knative serverless framework.
@@ -485,7 +485,7 @@ ibmcloud oc cluster addon disable kube-terminal --cluster CLUSTER [-f] [-q]
 ```
 {: pre}
 
-### Command options
+#### Command options
 {: #cluster-addon-disable-kube-terminal-options}
 
 
@@ -499,7 +499,7 @@ ibmcloud oc cluster addon disable kube-terminal --cluster CLUSTER [-f] [-q]
 :    Do not show the message of the day or update reminders.
 
 
-### Examples
+#### Examples
 {: #cluster-addon-disable-kube-terminal-examples}
 
 The IBM Cloud Kubernetes Service web terminal.
@@ -523,7 +523,7 @@ ibmcloud oc cluster addon disable openshift-data-foundation --cluster CLUSTER [-
 ```
 {: pre}
 
-### Command options
+#### Command options
 {: #cluster-addon-disable-openshift-data-foundation-options}
 
 
@@ -537,7 +537,7 @@ ibmcloud oc cluster addon disable openshift-data-foundation --cluster CLUSTER [-
 :    Do not show the message of the day or update reminders.
 
 
-### Examples
+#### Examples
 {: #cluster-addon-disable-openshift-data-foundation-examples}
 
 The Red Hat OpenShift Data Foundation on IBM Cloud add-on.
@@ -564,7 +564,7 @@ ibmcloud oc cluster addon disable static-route --cluster CLUSTER [-f] [-q]
 ```
 {: pre}
 
-### Command options
+#### Command options
 {: #cluster-addon-disable-static-route-options}
 
 
@@ -578,7 +578,7 @@ ibmcloud oc cluster addon disable static-route --cluster CLUSTER [-f] [-q]
 :    Do not show the message of the day or update reminders.
 
 
-### Examples
+#### Examples
 {: #cluster-addon-disable-static-route-examples}
 
 The IBM Cloud Kubernetes Service static route add-on.
@@ -602,7 +602,7 @@ ibmcloud oc cluster addon disable vpc-block-csi-driver --cluster CLUSTER [-f] [-
 ```
 {: pre}
 
-### Command options
+#### Command options
 {: #cluster-addon-disable-vpc-block-csi-driver-options}
 
 
@@ -616,7 +616,7 @@ ibmcloud oc cluster addon disable vpc-block-csi-driver --cluster CLUSTER [-f] [-
 :    Do not show the message of the day or update reminders.
 
 
-### Examples
+#### Examples
 {: #cluster-addon-disable-vpc-block-csi-driver-examples}
 
 The IBM Cloud VPC Block Storage CSI Driver.
@@ -643,7 +643,7 @@ ibmcloud oc cluster addon enable acm --cluster CLUSTER [-f] [--param PARAM] [-q]
 ```
 {: pre}
 
-### Command options
+#### Command options
 {: #cluster-addon-enable-acm-options}
 
 
@@ -666,7 +666,7 @@ ibmcloud oc cluster addon enable acm --cluster CLUSTER [-f] [--param PARAM] [-q]
 :    Enable all add-on dependencies.
 
 
-### Examples
+#### Examples
 {: #cluster-addon-enable-acm-examples}
 
 The Red Hat Advanced Cluster Management add-on.
@@ -693,7 +693,7 @@ ibmcloud oc cluster addon enable cluster-autoscaler --cluster CLUSTER [-q] [--ve
 ```
 {: pre}
 
-### Command options
+#### Command options
 {: #cluster-addon-enable-cluster-autoscaler-options}
 
 
@@ -710,7 +710,7 @@ ibmcloud oc cluster addon enable cluster-autoscaler --cluster CLUSTER [-q] [--ve
 :    Enable all add-on dependencies.
 
 
-### Examples
+#### Examples
 {: #cluster-addon-enable-cluster-autoscaler-examples}
 
 The IBM Cloud Kubernetes Service Cluster Autoscaler.
@@ -737,7 +737,7 @@ ibmcloud oc cluster addon enable debug-tool --cluster CLUSTER [-q] [--version VE
 ```
 {: pre}
 
-### Command options
+#### Command options
 {: #cluster-addon-enable-debug-tool-options}
 
 
@@ -754,7 +754,7 @@ ibmcloud oc cluster addon enable debug-tool --cluster CLUSTER [-q] [--version VE
 :    Enable all add-on dependencies.
 
 
-### Examples
+#### Examples
 {: #cluster-addon-enable-debug-tool-examples}
 
 The IBM Cloud Kubernetes Service Diagnostics and Debug Tool.
@@ -781,7 +781,7 @@ ibmcloud oc cluster addon enable hpcs-router --cluster CLUSTER [-q] [--version V
 ```
 {: pre}
 
-### Command options
+#### Command options
 {: #cluster-addon-enable-hpcs-router-options}
 
 
@@ -798,7 +798,7 @@ ibmcloud oc cluster addon enable hpcs-router --cluster CLUSTER [-q] [--version V
 :    Enable all add-on dependencies.
 
 
-### Examples
+#### Examples
 {: #cluster-addon-enable-hpcs-router-examples}
 
 The IBM Cloud HPCS Router Operator add-on for Red Hat OpenShift on IBM Cloud.
@@ -828,7 +828,7 @@ ibmcloud oc cluster addon enable ibm-storage-operator --cluster CLUSTER [-q] [--
 ```
 {: pre}
 
-### Command options
+#### Command options
 {: #cluster-addon-enable-ibm-storage-operator-options}
 
 
@@ -845,7 +845,7 @@ ibmcloud oc cluster addon enable ibm-storage-operator --cluster CLUSTER [-q] [--
 :    Enable all add-on dependencies.
 
 
-### Examples
+#### Examples
 {: #cluster-addon-enable-ibm-storage-operator-examples}
 
 The IBM Cloud Storage operator add-on.
@@ -872,7 +872,7 @@ ibmcloud oc cluster addon enable image-key-synchronizer --cluster CLUSTER [-q] [
 ```
 {: pre}
 
-### Command options
+#### Command options
 {: #cluster-addon-enable-image-key-synchronizer-options}
 
 
@@ -889,7 +889,7 @@ ibmcloud oc cluster addon enable image-key-synchronizer --cluster CLUSTER [-q] [
 :    Enable all add-on dependencies.
 
 
-### Examples
+#### Examples
 {: #cluster-addon-enable-image-key-synchronizer-examples}
 
 The IBM Cloud Image Key Synchronizer add-on.
@@ -919,7 +919,7 @@ ibmcloud oc cluster addon enable istio-extras --cluster CLUSTER [-q] [--version 
 ```
 {: pre}
 
-### Command options
+#### Command options
 {: #cluster-addon-enable-istio-extras-options}
 
 
@@ -936,7 +936,7 @@ ibmcloud oc cluster addon enable istio-extras --cluster CLUSTER [-q] [--version 
 :    Enable all add-on dependencies.
 
 
-### Examples
+#### Examples
 {: #cluster-addon-enable-istio-extras-examples}
 
 Extra components for Istio, including Grafana, Jaeger, and Kiali.
@@ -966,7 +966,7 @@ ibmcloud oc cluster addon enable istio-sample-bookinfo --cluster CLUSTER [-q] [-
 ```
 {: pre}
 
-### Command options
+#### Command options
 {: #cluster-addon-enable-istio-sample-bookinfo-options}
 
 
@@ -983,7 +983,7 @@ ibmcloud oc cluster addon enable istio-sample-bookinfo --cluster CLUSTER [-q] [-
 :    Enable all add-on dependencies.
 
 
-### Examples
+#### Examples
 {: #cluster-addon-enable-istio-sample-bookinfo-examples}
 
 The BookInfo sample application for Istio.
@@ -1010,7 +1010,7 @@ ibmcloud oc cluster addon enable openshift-data-foundation --cluster CLUSTER [-f
 ```
 {: pre}
 
-### Command options
+#### Command options
 {: #cluster-addon-enable-openshift-data-foundation-options}
 
 
@@ -1033,7 +1033,7 @@ ibmcloud oc cluster addon enable openshift-data-foundation --cluster CLUSTER [-f
 :    Enable all add-on dependencies.
 
 
-### Examples
+#### Examples
 {: #cluster-addon-enable-openshift-data-foundation-examples}
 
 The Red Hat OpenShift Data Foundation on IBM Cloud add-on.
@@ -1060,7 +1060,7 @@ ibmcloud oc cluster addon enable static-route --cluster CLUSTER [-q] [--version 
 ```
 {: pre}
 
-### Command options
+#### Command options
 {: #cluster-addon-enable-static-route-options}
 
 
@@ -1077,7 +1077,7 @@ ibmcloud oc cluster addon enable static-route --cluster CLUSTER [-q] [--version 
 :    Enable all add-on dependencies.
 
 
-### Examples
+#### Examples
 {: #cluster-addon-enable-static-route-examples}
 
 The IBM Cloud Kubernetes Service static route add-on.
@@ -1104,7 +1104,7 @@ ibmcloud oc cluster addon get --addon ADDON --cluster CLUSTER [--output OUTPUT] 
 ```
 {: pre}
 
-### Command options
+#### Command options
 {: #cluster-addon-get-options}
 
 
@@ -1121,7 +1121,7 @@ ibmcloud oc cluster addon get --addon ADDON --cluster CLUSTER [--output OUTPUT] 
 :    Do not show the message of the day or update reminders.
 
 
-### Examples
+#### Examples
 {: #cluster-addon-get-examples}
 
 View details of an installed add-on.
@@ -1145,7 +1145,7 @@ ibmcloud oc cluster addon ls --cluster CLUSTER [--output OUTPUT] [-q]
 ```
 {: pre}
 
-### Command options
+#### Command options
 {: #cluster-addon-ls-options}
 
 
@@ -1159,7 +1159,7 @@ ibmcloud oc cluster addon ls --cluster CLUSTER [--output OUTPUT] [-q]
 :    Do not show the message of the day or update reminders.
 
 
-### Examples
+#### Examples
 {: #cluster-addon-ls-examples}
 
 List enabled add-ons.
@@ -1183,7 +1183,7 @@ ibmcloud oc cluster addon options --addon ADDON [--output OUTPUT] [-q] [--versio
 ```
 {: pre}
 
-### Command options
+#### Command options
 {: #cluster-addon-options-options}
 
 
@@ -1200,7 +1200,7 @@ ibmcloud oc cluster addon options --addon ADDON [--output OUTPUT] [-q] [--versio
 :    Specify an add-on version to display options for. If no version is specified, the default version's options are displayed.
 
 
-### Examples
+#### Examples
 {: #cluster-addon-options-examples}
 
 View installation options for an add-on.
@@ -1224,7 +1224,7 @@ ibmcloud oc cluster addon update acm --cluster CLUSTER [-f] [-q] [--version VERS
 ```
 {: pre}
 
-### Command options
+#### Command options
 {: #cluster-addon-update-acm-options}
 
 
@@ -1244,7 +1244,7 @@ ibmcloud oc cluster addon update acm --cluster CLUSTER [-f] [-q] [--version VERS
 :    Update all add-on dependencies.
 
 
-### Examples
+#### Examples
 {: #cluster-addon-update-acm-examples}
 
 The Red Hat Advanced Cluster Management add-on.
@@ -1271,7 +1271,7 @@ ibmcloud oc cluster addon update alb-oauth-proxy --cluster CLUSTER [-f] [-q] [--
 ```
 {: pre}
 
-### Command options
+#### Command options
 {: #cluster-addon-update-alb-oauth-proxy-options}
 
 
@@ -1291,7 +1291,7 @@ ibmcloud oc cluster addon update alb-oauth-proxy --cluster CLUSTER [-f] [-q] [--
 :    Update all add-on dependencies.
 
 
-### Examples
+#### Examples
 {: #cluster-addon-update-alb-oauth-proxy-examples}
 
 The IBM Cloud Kubernetes Service ALB OAuth Proxy add-on.
@@ -1318,7 +1318,7 @@ ibmcloud oc cluster addon update cluster-autoscaler --cluster CLUSTER [-f] [-q] 
 ```
 {: pre}
 
-### Command options
+#### Command options
 {: #cluster-addon-update-cluster-autoscaler-options}
 
 
@@ -1338,7 +1338,7 @@ ibmcloud oc cluster addon update cluster-autoscaler --cluster CLUSTER [-f] [-q] 
 :    Update all add-on dependencies.
 
 
-### Examples
+#### Examples
 {: #cluster-addon-update-cluster-autoscaler-examples}
 
 The IBM Cloud Kubernetes Service Cluster Autoscaler.
@@ -1365,7 +1365,7 @@ ibmcloud oc cluster addon update debug-tool --cluster CLUSTER [-f] [-q] [--versi
 ```
 {: pre}
 
-### Command options
+#### Command options
 {: #cluster-addon-update-debug-tool-options}
 
 
@@ -1385,7 +1385,7 @@ ibmcloud oc cluster addon update debug-tool --cluster CLUSTER [-f] [-q] [--versi
 :    Update all add-on dependencies.
 
 
-### Examples
+#### Examples
 {: #cluster-addon-update-debug-tool-examples}
 
 The IBM Cloud Kubernetes Service Diagnostics and Debug Tool.
@@ -1415,7 +1415,7 @@ ibmcloud oc cluster addon update headlamp --cluster CLUSTER [-f] [-q] [--version
 ```
 {: pre}
 
-### Command options
+#### Command options
 {: #cluster-addon-update-headlamp-options}
 
 
@@ -1435,7 +1435,7 @@ ibmcloud oc cluster addon update headlamp --cluster CLUSTER [-f] [-q] [--version
 :    Update all add-on dependencies.
 
 
-### Examples
+#### Examples
 {: #cluster-addon-update-headlamp-examples}
 
 The IBM Cloud Kubernetes Service Headlamp add-on.
@@ -1462,7 +1462,7 @@ ibmcloud oc cluster addon update hpcs-router --cluster CLUSTER [-f] [-q] [--vers
 ```
 {: pre}
 
-### Command options
+#### Command options
 {: #cluster-addon-update-hpcs-router-options}
 
 
@@ -1482,7 +1482,7 @@ ibmcloud oc cluster addon update hpcs-router --cluster CLUSTER [-f] [-q] [--vers
 :    Update all add-on dependencies.
 
 
-### Examples
+#### Examples
 {: #cluster-addon-update-hpcs-router-examples}
 
 The IBM Cloud HPCS Router Operator add-on for Red Hat OpenShift on IBM Cloud.
@@ -1512,7 +1512,7 @@ ibmcloud oc cluster addon update ibm-storage-operator --cluster CLUSTER [-f] [-q
 ```
 {: pre}
 
-### Command options
+#### Command options
 {: #cluster-addon-update-ibm-storage-operator-options}
 
 
@@ -1532,7 +1532,7 @@ ibmcloud oc cluster addon update ibm-storage-operator --cluster CLUSTER [-f] [-q
 :    Update all add-on dependencies.
 
 
-### Examples
+#### Examples
 {: #cluster-addon-update-ibm-storage-operator-examples}
 
 The IBM Cloud Storage operator add-on.
@@ -1559,7 +1559,7 @@ ibmcloud oc cluster addon update image-key-synchronizer --cluster CLUSTER [-f] [
 ```
 {: pre}
 
-### Command options
+#### Command options
 {: #cluster-addon-update-image-key-synchronizer-options}
 
 
@@ -1579,7 +1579,7 @@ ibmcloud oc cluster addon update image-key-synchronizer --cluster CLUSTER [-f] [
 :    Update all add-on dependencies.
 
 
-### Examples
+#### Examples
 {: #cluster-addon-update-image-key-synchronizer-examples}
 
 The IBM Cloud Image Key Synchronizer add-on.
@@ -1606,7 +1606,7 @@ ibmcloud oc cluster addon update istio --cluster CLUSTER [-f] [-q] [--version VE
 ```
 {: pre}
 
-### Command options
+#### Command options
 {: #cluster-addon-update-istio-options}
 
 
@@ -1626,7 +1626,7 @@ ibmcloud oc cluster addon update istio --cluster CLUSTER [-f] [-q] [--version VE
 :    Update all add-on dependencies.
 
 
-### Examples
+#### Examples
 {: #cluster-addon-update-istio-examples}
 
 The managed Istio service mesh.
@@ -1656,7 +1656,7 @@ ibmcloud oc cluster addon update istio-extras --cluster CLUSTER [-f] [-q] [--ver
 ```
 {: pre}
 
-### Command options
+#### Command options
 {: #cluster-addon-update-istio-extras-options}
 
 
@@ -1676,7 +1676,7 @@ ibmcloud oc cluster addon update istio-extras --cluster CLUSTER [-f] [-q] [--ver
 :    Update all add-on dependencies.
 
 
-### Examples
+#### Examples
 {: #cluster-addon-update-istio-extras-examples}
 
 Extra components for Istio, including Grafana, Jaeger, and Kiali.
@@ -1706,7 +1706,7 @@ ibmcloud oc cluster addon update istio-sample-bookinfo --cluster CLUSTER [-f] [-
 ```
 {: pre}
 
-### Command options
+#### Command options
 {: #cluster-addon-update-istio-sample-bookinfo-options}
 
 
@@ -1726,7 +1726,7 @@ ibmcloud oc cluster addon update istio-sample-bookinfo --cluster CLUSTER [-f] [-
 :    Update all add-on dependencies.
 
 
-### Examples
+#### Examples
 {: #cluster-addon-update-istio-sample-bookinfo-examples}
 
 The BookInfo sample application for Istio.
@@ -1753,7 +1753,7 @@ ibmcloud oc cluster addon update knative --cluster CLUSTER [-f] [-q] [--version 
 ```
 {: pre}
 
-### Command options
+#### Command options
 {: #cluster-addon-update-knative-options}
 
 
@@ -1773,7 +1773,7 @@ ibmcloud oc cluster addon update knative --cluster CLUSTER [-f] [-q] [--version 
 :    Update all add-on dependencies.
 
 
-### Examples
+#### Examples
 {: #cluster-addon-update-knative-examples}
 
 The Knative serverless framework.
@@ -1800,7 +1800,7 @@ ibmcloud oc cluster addon update kube-terminal --cluster CLUSTER [-f] [-q] [--ve
 ```
 {: pre}
 
-### Command options
+#### Command options
 {: #cluster-addon-update-kube-terminal-options}
 
 
@@ -1820,7 +1820,7 @@ ibmcloud oc cluster addon update kube-terminal --cluster CLUSTER [-f] [-q] [--ve
 :    Update all add-on dependencies.
 
 
-### Examples
+#### Examples
 {: #cluster-addon-update-kube-terminal-examples}
 
 The IBM Cloud Kubernetes Service web terminal.
@@ -1847,7 +1847,7 @@ ibmcloud oc cluster addon update openshift-data-foundation --cluster CLUSTER [-f
 ```
 {: pre}
 
-### Command options
+#### Command options
 {: #cluster-addon-update-openshift-data-foundation-options}
 
 
@@ -1867,7 +1867,7 @@ ibmcloud oc cluster addon update openshift-data-foundation --cluster CLUSTER [-f
 :    Update all add-on dependencies.
 
 
-### Examples
+#### Examples
 {: #cluster-addon-update-openshift-data-foundation-examples}
 
 The Red Hat OpenShift Data Foundation on IBM Cloud add-on.
@@ -1894,7 +1894,7 @@ ibmcloud oc cluster addon update static-route --cluster CLUSTER [-f] [-q] [--ver
 ```
 {: pre}
 
-### Command options
+#### Command options
 {: #cluster-addon-update-static-route-options}
 
 
@@ -1914,7 +1914,7 @@ ibmcloud oc cluster addon update static-route --cluster CLUSTER [-f] [-q] [--ver
 :    Update all add-on dependencies.
 
 
-### Examples
+#### Examples
 {: #cluster-addon-update-static-route-examples}
 
 The IBM Cloud Kubernetes Service static route add-on.
@@ -1941,7 +1941,7 @@ ibmcloud oc cluster addon update vpc-block-csi-driver --cluster CLUSTER [-f] [-q
 ```
 {: pre}
 
-### Command options
+#### Command options
 {: #cluster-addon-update-vpc-block-csi-driver-options}
 
 
@@ -1961,7 +1961,7 @@ ibmcloud oc cluster addon update vpc-block-csi-driver --cluster CLUSTER [-f] [-q
 :    Update all add-on dependencies.
 
 
-### Examples
+#### Examples
 {: #cluster-addon-update-vpc-block-csi-driver-examples}
 
 The IBM Cloud VPC Block Storage CSI Driver.
@@ -1988,7 +1988,7 @@ ibmcloud oc cluster addon versions [--addon ADDON] [--offering OFFERING] [--outp
 ```
 {: pre}
 
-### Command options
+#### Command options
 {: #cluster-addon-versions-options}
 
 
@@ -2008,7 +2008,7 @@ ibmcloud oc cluster addon versions [--addon ADDON] [--offering OFFERING] [--outp
 :    Show the default version columns in the output.
 
 
-### Examples
+#### Examples
 {: #cluster-addon-versions-examples}
 
 List supported versions for managed add-ons.
@@ -2035,7 +2035,7 @@ ibmcloud oc cluster ca create --cluster CLUSTER [-f] [-q]
 ```
 {: pre}
 
-### Command options
+#### Command options
 {: #cluster-ca-create-options}
 
 
@@ -2049,7 +2049,7 @@ ibmcloud oc cluster ca create --cluster CLUSTER [-f] [-q]
 :    Do not show the message of the day or update reminders.
 
 
-### Examples
+#### Examples
 {: #cluster-ca-create-examples}
 
 Create a CA certificate for your cluster.
@@ -2073,7 +2073,7 @@ ibmcloud oc cluster ca get --cluster CLUSTER [--output OUTPUT] [-q]
 ```
 {: pre}
 
-### Command options
+#### Command options
 {: #cluster-ca-get-options}
 
 
@@ -2087,7 +2087,7 @@ ibmcloud oc cluster ca get --cluster CLUSTER [--output OUTPUT] [-q]
 :    Do not show the message of the day or update reminders.
 
 
-### Examples
+#### Examples
 {: #cluster-ca-get-examples}
 
 View the details of a cluster's CA certificate.
@@ -2111,7 +2111,7 @@ ibmcloud oc cluster ca rotate --cluster CLUSTER [-f] [-q]
 ```
 {: pre}
 
-### Command options
+#### Command options
 {: #cluster-ca-rotate-options}
 
 
@@ -2125,7 +2125,7 @@ ibmcloud oc cluster ca rotate --cluster CLUSTER [-f] [-q]
 :    Do not show the message of the day or update reminders.
 
 
-### Examples
+#### Examples
 {: #cluster-ca-rotate-examples}
 
 Rotate the CA certificates of a cluster, which requires that you previously created CA certificates.
@@ -2149,7 +2149,7 @@ ibmcloud oc cluster ca status --cluster CLUSTER [-q]
 ```
 {: pre}
 
-### Command options
+#### Command options
 {: #cluster-ca-status-options}
 
 
@@ -2160,7 +2160,7 @@ ibmcloud oc cluster ca status --cluster CLUSTER [-q]
 :    Do not show the message of the day or update reminders.
 
 
-### Examples
+#### Examples
 {: #cluster-ca-status-examples}
 
 View the rotation status of CA certificates for a cluster.
@@ -2184,7 +2184,7 @@ ibmcloud oc cluster config --cluster CLUSTER [--admin] [--endpoint ENDPOINT] [--
 ```
 {: pre}
 
-### Command options
+#### Command options
 {: #cluster-config-options}
 
 
@@ -2210,7 +2210,7 @@ ibmcloud oc cluster config --cluster CLUSTER [--admin] [--endpoint ENDPOINT] [--
 :    Skip adding RBAC roles. Include this option only if you manage your own Kubernetes RBAC roles. If you use IAM service access roles to manage all your RBAC users, do not include this option.
 
 
-### Examples
+#### Examples
 {: #cluster-config-examples}
 
 Download the Kubernetes configuration files and certificates to connect to your cluster by using kubectl commands.
@@ -2234,7 +2234,7 @@ ibmcloud oc cluster create classic --flavor FLAVOR --name NAME --zone ZONE [--di
 ```
 {: pre}
 
-### Command options
+#### Command options
 {: #cluster-create-classic-options}
 
 
@@ -2305,7 +2305,7 @@ ibmcloud oc cluster create classic --flavor FLAVOR --name NAME --zone ZONE [--di
 :    Specify the zone for the worker pool in a multizone cluster. To list available zones, run `ibmcloud ks zone ls`.
 
 
-### Examples
+#### Examples
 {: #cluster-create-classic-examples}
 
 Create a cluster with worker nodes on classic infrastructure.
@@ -2333,7 +2333,7 @@ ibmcloud oc cluster create satellite --location LOCATION --name NAME --version V
 ```
 {: pre}
 
-### Command options
+#### Command options
 {: #cluster-create-satellite-options}
 
 
@@ -2389,7 +2389,7 @@ ibmcloud oc cluster create satellite --location LOCATION --name NAME --version V
 :    The zone for the default worker pool in a multizone cluster. To list zones for your location, run `ibmcloud sat location get`.
 
 
-### Examples
+#### Examples
 {: #cluster-create-satellite-examples}
 
 Create an IBM Cloud Satellite cluster on your own infrastructure.
@@ -2417,7 +2417,7 @@ ibmcloud oc cluster create vpc-classic --flavor FLAVOR --name NAME --subnet-id I
 ```
 {: pre}
 
-### Command options
+#### Command options
 {: #cluster-create-vpc-classic-options}
 
 
@@ -2467,7 +2467,7 @@ ibmcloud oc cluster create vpc-classic --flavor FLAVOR --name NAME --subnet-id I
 :    Specify the zone for the worker pool in a multizone cluster. To list available zones, run `ibmcloud ks zone ls`.
 
 
-### Examples
+#### Examples
 {: #cluster-create-vpc-classic-examples}
 
 Create a cluster with worker nodes on Virtual Private Cloud (VPC) Gen 1 infrastructure.
@@ -2491,7 +2491,7 @@ ibmcloud oc cluster create vpc-gen2 --flavor FLAVOR --name NAME --subnet-id ID -
 ```
 {: pre}
 
-### Command options
+#### Command options
 {: #cluster-create-vpc-gen2-options}
 
 
@@ -2568,7 +2568,7 @@ ibmcloud oc cluster create vpc-gen2 --flavor FLAVOR --name NAME --subnet-id ID -
 :    Specify the zone for the worker pool in a multizone cluster. To list available zones, run `ibmcloud ks zone ls`.
 
 
-### Examples
+#### Examples
 {: #cluster-create-vpc-gen2-examples}
 
 Create a cluster with worker nodes on Virtual Private Cloud (VPC) Gen 2 infrastructure.
@@ -2596,7 +2596,7 @@ ibmcloud oc cluster get --cluster CLUSTER [--output OUTPUT] [-q] [--show-resourc
 ```
 {: pre}
 
-### Command options
+#### Command options
 {: #cluster-get-options}
 
 
@@ -2613,7 +2613,7 @@ ibmcloud oc cluster get --cluster CLUSTER [--output OUTPUT] [-q] [--show-resourc
 :    Show additional cluster resources such as add-ons, VLANs, and subnets.
 
 
-### Examples
+#### Examples
 {: #cluster-get-examples}
 
 Get the details of a registered cluster.
@@ -2637,7 +2637,7 @@ ibmcloud oc cluster image-security disable --cluster CLUSTER [-q]
 ```
 {: pre}
 
-### Command options
+#### Command options
 {: #cluster-image-security-disable-options}
 
 
@@ -2648,7 +2648,7 @@ ibmcloud oc cluster image-security disable --cluster CLUSTER [-q]
 :    Do not show the message of the day or update reminders.
 
 
-### Examples
+#### Examples
 {: #cluster-image-security-disable-examples}
 
 Disable image security enforcement in your cluster.
@@ -2672,7 +2672,7 @@ ibmcloud oc cluster image-security enable --cluster CLUSTER [-f] [-q]
 ```
 {: pre}
 
-### Command options
+#### Command options
 {: #cluster-image-security-enable-options}
 
 
@@ -2686,7 +2686,7 @@ ibmcloud oc cluster image-security enable --cluster CLUSTER [-f] [-q]
 :    Do not show the message of the day or update reminders.
 
 
-### Examples
+#### Examples
 {: #cluster-image-security-enable-examples}
 
 Enable image security enforcement in your cluster.
@@ -2710,7 +2710,7 @@ ibmcloud oc cluster ls [-l LOCATION ...] [--output OUTPUT] [--provider PROVIDER]
 ```
 {: pre}
 
-### Command options
+#### Command options
 {: #cluster-ls-options}
 
 
@@ -2727,7 +2727,7 @@ ibmcloud oc cluster ls [-l LOCATION ...] [--output OUTPUT] [--provider PROVIDER]
 :    Do not show the message of the day or update reminders.
 
 
-### Examples
+#### Examples
 {: #cluster-ls-examples}
 
 List all registered clusters in your IBM Cloud account.
@@ -2751,7 +2751,7 @@ ibmcloud oc cluster master console-oauth-access get --cluster CLUSTER [--output 
 ```
 {: pre}
 
-### Command options
+#### Command options
 {: #cluster-master-console-oauth-access-get-options}
 
 
@@ -2765,7 +2765,7 @@ ibmcloud oc cluster master console-oauth-access get --cluster CLUSTER [--output 
 :    Do not show the message of the day or update reminders.
 
 
-### Examples
+#### Examples
 {: #cluster-master-console-oauth-access-get-examples}
 
 Get the OpenShift web console and OAuth server access type.
@@ -2792,7 +2792,7 @@ ibmcloud oc cluster master console-oauth-access set --cluster CLUSTER [-f] [-q] 
 ```
 {: pre}
 
-### Command options
+#### Command options
 {: #cluster-master-console-oauth-access-set-options}
 
 
@@ -2809,7 +2809,7 @@ ibmcloud oc cluster master console-oauth-access set --cluster CLUSTER [-f] [-q] 
 :    Specify the OpenShift web console and OAuth server access type. Accepted values: `vpe-gateway`, `legacy`
 
 
-### Examples
+#### Examples
 {: #cluster-master-console-oauth-access-set-examples}
 
 Set the OpenShift web console and OAuth server access type.
@@ -2836,7 +2836,7 @@ ibmcloud oc cluster master pod-security get --cluster CLUSTER [--output OUTPUT] 
 ```
 {: pre}
 
-### Command options
+#### Command options
 {: #cluster-master-pod-security-get-options}
 
 
@@ -2850,7 +2850,7 @@ ibmcloud oc cluster master pod-security get --cluster CLUSTER [--output OUTPUT] 
 :    Do not show the message of the day or update reminders.
 
 
-### Examples
+#### Examples
 {: #cluster-master-pod-security-get-examples}
 
 View the PodSecurity admission configuration for a cluster's Kubernetes API server.
@@ -2877,7 +2877,7 @@ ibmcloud oc cluster master pod-security policy disable --cluster CLUSTER [-q]
 ```
 {: pre}
 
-### Command options
+#### Command options
 {: #cluster-master-pod-security-policy-disable-options}
 
 
@@ -2888,7 +2888,7 @@ ibmcloud oc cluster master pod-security policy disable --cluster CLUSTER [-q]
 :    Do not show the message of the day or update reminders.
 
 
-### Examples
+#### Examples
 {: #cluster-master-pod-security-policy-disable-examples}
 
 Disable PodSecurityPolicy for a cluster's Kubernetes API server.
@@ -2912,7 +2912,7 @@ ibmcloud oc cluster master pod-security policy enable --cluster CLUSTER [-q]
 ```
 {: pre}
 
-### Command options
+#### Command options
 {: #cluster-master-pod-security-policy-enable-options}
 
 
@@ -2923,7 +2923,7 @@ ibmcloud oc cluster master pod-security policy enable --cluster CLUSTER [-q]
 :    Do not show the message of the day or update reminders.
 
 
-### Examples
+#### Examples
 {: #cluster-master-pod-security-policy-enable-examples}
 
 Enable PodSecurityPolicy for a cluster's Kubernetes API server.
@@ -2947,7 +2947,7 @@ ibmcloud oc cluster master pod-security policy get --cluster CLUSTER [--output O
 ```
 {: pre}
 
-### Command options
+#### Command options
 {: #cluster-master-pod-security-policy-get-options}
 
 
@@ -2961,7 +2961,7 @@ ibmcloud oc cluster master pod-security policy get --cluster CLUSTER [--output O
 :    Do not show the message of the day or update reminders.
 
 
-### Examples
+#### Examples
 {: #cluster-master-pod-security-policy-get-examples}
 
 View the PodSecurityPolicy configuration for a cluster's Kubernetes API server.
@@ -2988,7 +2988,7 @@ ibmcloud oc cluster master pod-security set --cluster CLUSTER [--config-file FIL
 ```
 {: pre}
 
-### Command options
+#### Command options
 {: #cluster-master-pod-security-set-options}
 
 
@@ -3002,7 +3002,7 @@ ibmcloud oc cluster master pod-security set --cluster CLUSTER [--config-file FIL
 :    Do not show the message of the day or update reminders.
 
 
-### Examples
+#### Examples
 {: #cluster-master-pod-security-set-examples}
 
 Set and enable the PodSecurity admission configuration for a cluster's Kubernetes API server.
@@ -3029,7 +3029,7 @@ ibmcloud oc cluster master pod-security unset --cluster CLUSTER [-q]
 ```
 {: pre}
 
-### Command options
+#### Command options
 {: #cluster-master-pod-security-unset-options}
 
 
@@ -3040,7 +3040,7 @@ ibmcloud oc cluster master pod-security unset --cluster CLUSTER [-q]
 :    Do not show the message of the day or update reminders.
 
 
-### Examples
+#### Examples
 {: #cluster-master-pod-security-unset-examples}
 
 Remove the PodSecurity admission configuration for a cluster's Kubernetes API server.
@@ -3067,7 +3067,7 @@ ibmcloud oc cluster master private-service-endpoint allowlist add --cluster CLUS
 ```
 {: pre}
 
-### Command options
+#### Command options
 {: #cluster-master-private-service-endpoint-allowlist-add-options}
 
 
@@ -3081,7 +3081,7 @@ ibmcloud oc cluster master private-service-endpoint allowlist add --cluster CLUS
 :    Specify the subnet CIDR.
 
 
-### Examples
+#### Examples
 {: #cluster-master-private-service-endpoint-allowlist-add-examples}
 
 Add subnets to a cluster's private service endpoint allowlist.
@@ -3111,7 +3111,7 @@ ibmcloud oc cluster master private-service-endpoint allowlist disable --cluster 
 ```
 {: pre}
 
-### Command options
+#### Command options
 {: #cluster-master-private-service-endpoint-allowlist-disable-options}
 
 
@@ -3125,7 +3125,7 @@ ibmcloud oc cluster master private-service-endpoint allowlist disable --cluster 
 :    Do not show the message of the day or update reminders.
 
 
-### Examples
+#### Examples
 {: #cluster-master-private-service-endpoint-allowlist-disable-examples}
 
 Disable the allowlist.
@@ -3155,7 +3155,7 @@ ibmcloud oc cluster master private-service-endpoint allowlist enable --cluster C
 ```
 {: pre}
 
-### Command options
+#### Command options
 {: #cluster-master-private-service-endpoint-allowlist-enable-options}
 
 
@@ -3169,7 +3169,7 @@ ibmcloud oc cluster master private-service-endpoint allowlist enable --cluster C
 :    Do not show the message of the day or update reminders.
 
 
-### Examples
+#### Examples
 {: #cluster-master-private-service-endpoint-allowlist-enable-examples}
 
 Enable the allowlist.
@@ -3199,7 +3199,7 @@ ibmcloud oc cluster master private-service-endpoint allowlist get --cluster CLUS
 ```
 {: pre}
 
-### Command options
+#### Command options
 {: #cluster-master-private-service-endpoint-allowlist-get-options}
 
 
@@ -3210,7 +3210,7 @@ ibmcloud oc cluster master private-service-endpoint allowlist get --cluster CLUS
 :    Do not show the message of the day or update reminders.
 
 
-### Examples
+#### Examples
 {: #cluster-master-private-service-endpoint-allowlist-get-examples}
 
 Get a cluster's private service endpoint allowlist.
@@ -3239,7 +3239,7 @@ ibmcloud oc cluster master private-service-endpoint allowlist rm --cluster CLUST
 ```
 {: pre}
 
-### Command options
+#### Command options
 {: #cluster-master-private-service-endpoint-allowlist-rm-options}
 
 
@@ -3256,7 +3256,7 @@ ibmcloud oc cluster master private-service-endpoint allowlist rm --cluster CLUST
 :    Specify the subnet CIDR.
 
 
-### Examples
+#### Examples
 {: #cluster-master-private-service-endpoint-allowlist-rm-examples}
 
 Remove subnets from a cluster's private service endpoint allowlist.
@@ -3283,7 +3283,7 @@ ibmcloud oc cluster master private-service-endpoint enable --cluster CLUSTER [-f
 ```
 {: pre}
 
-### Command options
+#### Command options
 {: #cluster-master-private-service-endpoint-enable-options}
 
 
@@ -3300,7 +3300,7 @@ ibmcloud oc cluster master private-service-endpoint enable --cluster CLUSTER [-f
 :    If the feature requires further action, such as reloading workers or refreshing the cluster master, then perform those actions with no user prompts.
 
 
-### Examples
+#### Examples
 {: #cluster-master-private-service-endpoint-enable-examples}
 
 Enable the private service endpoint to make the master privately accessible.
@@ -3327,7 +3327,7 @@ ibmcloud oc cluster master public-service-endpoint disable --cluster CLUSTER [-f
 ```
 {: pre}
 
-### Command options
+#### Command options
 {: #cluster-master-public-service-endpoint-disable-options}
 
 
@@ -3344,7 +3344,7 @@ ibmcloud oc cluster master public-service-endpoint disable --cluster CLUSTER [-f
 :    If the feature requires further action, such as reloading workers or refreshing the cluster master, then perform those actions with no user prompts.
 
 
-### Examples
+#### Examples
 {: #cluster-master-public-service-endpoint-disable-examples}
 
 Disable the public service endpoint to make the master only privately accessible.
@@ -3371,7 +3371,7 @@ ibmcloud oc cluster master public-service-endpoint enable --cluster CLUSTER [-f]
 ```
 {: pre}
 
-### Command options
+#### Command options
 {: #cluster-master-public-service-endpoint-enable-options}
 
 
@@ -3388,7 +3388,7 @@ ibmcloud oc cluster master public-service-endpoint enable --cluster CLUSTER [-f]
 :    If the feature requires further action, such as reloading workers or refreshing the cluster master, then perform those actions with no user prompts.
 
 
-### Examples
+#### Examples
 {: #cluster-master-public-service-endpoint-enable-examples}
 
 Enable the public service endpoint to make the master publicly accessible.
@@ -3415,7 +3415,7 @@ ibmcloud oc cluster master refresh --cluster CLUSTER [-q]
 ```
 {: pre}
 
-### Command options
+#### Command options
 {: #cluster-master-refresh-options}
 
 
@@ -3426,7 +3426,7 @@ ibmcloud oc cluster master refresh --cluster CLUSTER [-q]
 :    Do not show the message of the day or update reminders.
 
 
-### Examples
+#### Examples
 {: #cluster-master-refresh-examples}
 
 Restart the cluster master nodes to apply new Kubernetes API configuration changes.
@@ -3450,7 +3450,7 @@ ibmcloud oc cluster master satellite-service-endpoint allowlist add --cluster CL
 ```
 {: pre}
 
-### Command options
+#### Command options
 {: #cluster-master-satellite-service-endpoint-allowlist-add-options}
 
 
@@ -3464,7 +3464,7 @@ ibmcloud oc cluster master satellite-service-endpoint allowlist add --cluster CL
 :    Specify the subnet CIDR.
 
 
-### Examples
+#### Examples
 {: #cluster-master-satellite-service-endpoint-allowlist-add-examples}
 
 Add subnets to a Satellite cluster's service endpoint allowlist.
@@ -3491,7 +3491,7 @@ ibmcloud oc cluster master satellite-service-endpoint allowlist disable --cluste
 ```
 {: pre}
 
-### Command options
+#### Command options
 {: #cluster-master-satellite-service-endpoint-allowlist-disable-options}
 
 
@@ -3505,7 +3505,7 @@ ibmcloud oc cluster master satellite-service-endpoint allowlist disable --cluste
 :    Do not show the message of the day or update reminders.
 
 
-### Examples
+#### Examples
 {: #cluster-master-satellite-service-endpoint-allowlist-disable-examples}
 
 Disable the allowlist for a Satellite cluster.
@@ -3532,7 +3532,7 @@ ibmcloud oc cluster master satellite-service-endpoint allowlist enable --cluster
 ```
 {: pre}
 
-### Command options
+#### Command options
 {: #cluster-master-satellite-service-endpoint-allowlist-enable-options}
 
 
@@ -3546,7 +3546,7 @@ ibmcloud oc cluster master satellite-service-endpoint allowlist enable --cluster
 :    Do not show the message of the day or update reminders.
 
 
-### Examples
+#### Examples
 {: #cluster-master-satellite-service-endpoint-allowlist-enable-examples}
 
 Enable the allowlist for a Satellite cluster.
@@ -3573,7 +3573,7 @@ ibmcloud oc cluster master satellite-service-endpoint allowlist get --cluster CL
 ```
 {: pre}
 
-### Command options
+#### Command options
 {: #cluster-master-satellite-service-endpoint-allowlist-get-options}
 
 
@@ -3584,7 +3584,7 @@ ibmcloud oc cluster master satellite-service-endpoint allowlist get --cluster CL
 :    Do not show the message of the day or update reminders.
 
 
-### Examples
+#### Examples
 {: #cluster-master-satellite-service-endpoint-allowlist-get-examples}
 
 Get a Satellite cluster's service endpoint allowlist.
@@ -3610,7 +3610,7 @@ ibmcloud oc cluster master satellite-service-endpoint allowlist rm --cluster CLU
 ```
 {: pre}
 
-### Command options
+#### Command options
 {: #cluster-master-satellite-service-endpoint-allowlist-rm-options}
 
 
@@ -3627,7 +3627,7 @@ ibmcloud oc cluster master satellite-service-endpoint allowlist rm --cluster CLU
 :    Specify the subnet CIDR.
 
 
-### Examples
+#### Examples
 {: #cluster-master-satellite-service-endpoint-allowlist-rm-examples}
 
 Remove subnets from a Satellite cluster's service endpoint allowlist.
@@ -3654,7 +3654,7 @@ ibmcloud oc cluster master update --cluster CLUSTER [-f] [--force-update] [-q] [
 ```
 {: pre}
 
-### Command options
+#### Command options
 {: #cluster-master-update-options}
 
 
@@ -3674,7 +3674,7 @@ ibmcloud oc cluster master update --cluster CLUSTER [-f] [--force-update] [-q] [
 :    Specify the Kubernetes or OpenShift version, including at least the major.minor version. If you do not include this flag, the default version is used. To see available versions, run `ibmcloud ks versions`.
 
 
-### Examples
+#### Examples
 {: #cluster-master-update-examples}
 
 Update the cluster master to the latest version.
@@ -3701,7 +3701,7 @@ ibmcloud oc cluster pull-secret apply --cluster CLUSTER [-q]
 ```
 {: pre}
 
-### Command options
+#### Command options
 {: #cluster-pull-secret-apply-options}
 
 
@@ -3712,7 +3712,7 @@ ibmcloud oc cluster pull-secret apply --cluster CLUSTER [-q]
 :    Do not show the message of the day or update reminders.
 
 
-### Examples
+#### Examples
 {: #cluster-pull-secret-apply-examples}
 
 Generate a new image pull secret that stores IAM credentials for the cluster to access images in IBM Cloud Container Reg.
@@ -3736,7 +3736,7 @@ ibmcloud oc cluster rm --cluster CLUSTER [--delete-openshift-registry-cos-bucket
 ```
 {: pre}
 
-### Command options
+#### Command options
 {: #cluster-rm-options}
 
 
@@ -3759,7 +3759,7 @@ ibmcloud oc cluster rm --cluster CLUSTER [--delete-openshift-registry-cos-bucket
 :    Skip checking for infrastructure permissions before completing this action. Note that if you do not have the correct infrastructure permissions, this action might only partially succeed.
 
 
-### Examples
+#### Examples
 {: #cluster-rm-examples}
 
 Delete a cluster.
@@ -3783,7 +3783,7 @@ ibmcloud oc cluster service bind --cluster CLUSTER --namespace NAMESPACE --servi
 ```
 {: pre}
 
-### Command options
+#### Command options
 {: #cluster-service-bind-options}
 
 
@@ -3806,7 +3806,7 @@ ibmcloud oc cluster service bind --cluster CLUSTER --namespace NAMESPACE --servi
 :    Specify the name of the service instance. To see a list of available service instances, run `ibmcloud service list` for Cloud Foundry services, or `ibmcloud resource service-instances` for IAM-enabled services.
 
 
-### Examples
+#### Examples
 {: #cluster-service-bind-examples}
 
 Add an IBM Cloud service to a cluster by binding the service instance to a Kubernetes namespace.
@@ -3833,7 +3833,7 @@ ibmcloud oc cluster service ls --cluster CLUSTER [--output OUTPUT] [-q] (--all-n
 ```
 {: pre}
 
-### Command options
+#### Command options
 {: #cluster-service-ls-options}
 
 
@@ -3853,7 +3853,7 @@ ibmcloud oc cluster service ls --cluster CLUSTER [--output OUTPUT] [-q] (--all-n
 :    Do not show the message of the day or update reminders.
 
 
-### Examples
+#### Examples
 {: #cluster-service-ls-examples}
 
 List services bound to a Kubernetes namespace.
@@ -3880,7 +3880,7 @@ ibmcloud oc cluster service unbind --cluster CLUSTER --namespace NAMESPACE --ser
 ```
 {: pre}
 
-### Command options
+#### Command options
 {: #cluster-service-unbind-options}
 
 
@@ -3897,7 +3897,7 @@ ibmcloud oc cluster service unbind --cluster CLUSTER --namespace NAMESPACE --ser
 :    Specify the name of the service instance. To see a list of available service instances, run `ibmcloud service list` for Cloud Foundry services, or `ibmcloud resource service-instances` for IAM-enabled services.
 
 
-### Examples
+#### Examples
 {: #cluster-service-unbind-examples}
 
 Remove an IBM Cloud service from a cluster by unbinding it from a Kubernetes namespace.
@@ -3924,7 +3924,7 @@ ibmcloud oc cluster subnet add --cluster CLUSTER --subnet-id ID [-q]
 ```
 {: pre}
 
-### Command options
+#### Command options
 {: #cluster-subnet-add-options}
 
 
@@ -3938,7 +3938,7 @@ ibmcloud oc cluster subnet add --cluster CLUSTER --subnet-id ID [-q]
 :    Specify the subnet ID.
 
 
-### Examples
+#### Examples
 {: #cluster-subnet-add-examples}
 
 Make an existing public or private portable subnet in your IBM Cloud infrastructure account available to a classic clust.
@@ -3962,7 +3962,7 @@ ibmcloud oc cluster subnet create --cluster CLUSTER --size SIZE --vlan VLAN [-q]
 ```
 {: pre}
 
-### Command options
+#### Command options
 {: #cluster-subnet-create-options}
 
 
@@ -3979,7 +3979,7 @@ ibmcloud oc cluster subnet create --cluster CLUSTER --size SIZE --vlan VLAN [-q]
 :    Specify the public or private VLAN ID.
 
 
-### Examples
+#### Examples
 {: #cluster-subnet-create-examples}
 
 Create a portable subnet on your public or private VLAN and make it available to a classic cluster.
@@ -4006,7 +4006,7 @@ ibmcloud oc cluster subnet detach --cluster CLUSTER --subnet-id ID [-f] [-q]
 ```
 {: pre}
 
-### Command options
+#### Command options
 {: #cluster-subnet-detach-options}
 
 
@@ -4023,7 +4023,7 @@ ibmcloud oc cluster subnet detach --cluster CLUSTER --subnet-id ID [-f] [-q]
 :    Specify the subnet ID.
 
 
-### Examples
+#### Examples
 {: #cluster-subnet-detach-examples}
 
 Detach an existing public or private portable subnet from a classic cluster.
@@ -4052,7 +4052,7 @@ ibmcloud oc credential get --region REGION [--output OUTPUT] [-q]
 
 Aliases: `ibmcloud oc credential credentials-get`, `ibmcloud oc credentials-get`
 
-### Command options
+#### Command options
 {: #credential-get-options}
 
 
@@ -4066,7 +4066,7 @@ Aliases: `ibmcloud oc credential credentials-get`, `ibmcloud oc credentials-get`
 :    Specify the region to target.
 
 
-### Examples
+#### Examples
 {: #credential-get-examples}
 
 If you set up your IBM Cloud account to use different credentials to access the IBM Cloud classic infrastructure portfol.
@@ -4090,7 +4090,7 @@ ibmcloud oc credential set classic --infrastructure-api-key KEY --infrastructure
 ```
 {: pre}
 
-### Command options
+#### Command options
 {: #credential-set-classic-options}
 
 
@@ -4107,7 +4107,7 @@ ibmcloud oc credential set classic --infrastructure-api-key KEY --infrastructure
 :    Specify the region to target.
 
 
-### Examples
+#### Examples
 {: #credential-set-classic-examples}
 
 Set credentials that allow you to access the IBM Cloud classic infrastructure portfolio through your IBM Cloud account.
@@ -4136,7 +4136,7 @@ ibmcloud oc credential unset --region REGION [-q]
 
 Aliases: `ibmcloud oc credential credentials-unset`, `ibmcloud oc credentials-unset`
 
-### Command options
+#### Command options
 {: #credential-unset-options}
 
 
@@ -4147,7 +4147,7 @@ Aliases: `ibmcloud oc credential credentials-unset`, `ibmcloud oc credentials-un
 :    Specify the region to target.
 
 
-### Examples
+#### Examples
 {: #credential-unset-examples}
 
 Remove the credentials that allow you to access the IBM Cloud classic infrastructure portfolio through your IBM Cloud ac.
@@ -4171,7 +4171,7 @@ ibmcloud oc experimental trusted-profile default get --region REGION --resource-
 ```
 {: pre}
 
-### Command options
+#### Command options
 {: #experimental-trusted-profile-default-get-options}
 
 
@@ -4188,7 +4188,7 @@ ibmcloud oc experimental trusted-profile default get --region REGION --resource-
 :    The resource-group whose default trusted profile is to be retrieved.
 
 
-### Examples
+#### Examples
 {: #experimental-trusted-profile-default-get-examples}
 
 Get the default trusted profile for clusters created in a resource-group.
@@ -4215,7 +4215,7 @@ ibmcloud oc experimental trusted-profile default set --region REGION --resource-
 ```
 {: pre}
 
-### Command options
+#### Command options
 {: #experimental-trusted-profile-default-set-options}
 
 
@@ -4235,7 +4235,7 @@ ibmcloud oc experimental trusted-profile default set --region REGION --resource-
 :    The trusted profile ID.
 
 
-### Examples
+#### Examples
 {: #experimental-trusted-profile-default-set-examples}
 
 Set the default trusted profile for clusters created in a resource-group.
@@ -4262,7 +4262,7 @@ ibmcloud oc experimental trusted-profile get --cluster CLUSTER [--output OUTPUT]
 ```
 {: pre}
 
-### Command options
+#### Command options
 {: #experimental-trusted-profile-get-options}
 
 
@@ -4276,7 +4276,7 @@ ibmcloud oc experimental trusted-profile get --cluster CLUSTER [--output OUTPUT]
 :    Do not show the message of the day or update reminders.
 
 
-### Examples
+#### Examples
 {: #experimental-trusted-profile-get-examples}
 
 Get trusted profile for a cluster.
@@ -4303,7 +4303,7 @@ ibmcloud oc experimental trusted-profile set --cluster CLUSTER --trusted-profile
 ```
 {: pre}
 
-### Command options
+#### Command options
 {: #experimental-trusted-profile-set-options}
 
 
@@ -4320,7 +4320,7 @@ ibmcloud oc experimental trusted-profile set --cluster CLUSTER --trusted-profile
 :    The trusted profile ID.
 
 
-### Examples
+#### Examples
 {: #experimental-trusted-profile-set-examples}
 
 Set trusted profile on a cluster.
@@ -4347,7 +4347,7 @@ ibmcloud oc experimental vni attach baremetal --vlan VLAN --vni VNI [--auto-dele
 ```
 {: pre}
 
-### Command options
+#### Command options
 {: #experimental-vni-attach-baremetal-options}
 
 
@@ -4373,7 +4373,7 @@ ibmcloud oc experimental vni attach baremetal --vlan VLAN --vni VNI [--auto-dele
 :    The ID of the worker node.
 
 
-### Examples
+#### Examples
 {: #experimental-vni-attach-baremetal-examples}
 
 Attach a Virtual Network Interface to a bare metal worker node or cluster.
@@ -4400,7 +4400,7 @@ ibmcloud oc experimental vni attach virtual --vni VNI --worker WORKER [--auto-de
 ```
 {: pre}
 
-### Command options
+#### Command options
 {: #experimental-vni-attach-virtual-options}
 
 
@@ -4420,7 +4420,7 @@ ibmcloud oc experimental vni attach virtual --vni VNI --worker WORKER [--auto-de
 :    The ID of the worker node.
 
 
-### Examples
+#### Examples
 {: #experimental-vni-attach-virtual-examples}
 
 Attach a Virtual Network Interface to a virtual worker node.
@@ -4447,7 +4447,7 @@ ibmcloud oc experimental vni detach --vni VNI [-f] [--output OUTPUT] [-q] (--clu
 ```
 {: pre}
 
-### Command options
+#### Command options
 {: #experimental-vni-detach-options}
 
 
@@ -4470,7 +4470,7 @@ ibmcloud oc experimental vni detach --vni VNI [-f] [--output OUTPUT] [-q] (--clu
 :    The ID of the worker node.
 
 
-### Examples
+#### Examples
 {: #experimental-vni-detach-examples}
 
 Detach a Virtual Network Interface from a worker node or cluster.
@@ -4497,7 +4497,7 @@ ibmcloud oc experimental vni ls [--after AFTER] [--first FIRST] [--output OUTPUT
 ```
 {: pre}
 
-### Command options
+#### Command options
 {: #experimental-vni-ls-options}
 
 
@@ -4520,7 +4520,7 @@ ibmcloud oc experimental vni ls [--after AFTER] [--first FIRST] [--output OUTPUT
 :    The ID of the worker node.
 
 
-### Examples
+#### Examples
 {: #experimental-vni-ls-examples}
 
 List Virtual Network Interfaces attached to a cluster or worker node.
@@ -4547,7 +4547,7 @@ ibmcloud oc flavor get --flavor FLAVOR --provider PROVIDER --zone ZONE [--output
 ```
 {: pre}
 
-### Command options
+#### Command options
 {: #flavor-get-options}
 
 
@@ -4567,7 +4567,7 @@ ibmcloud oc flavor get --flavor FLAVOR --provider PROVIDER --zone ZONE [--output
 :    Specify the zone to list available flavors for. To list available zones, run `ibmcloud ks zone ls`.
 
 
-### Examples
+#### Examples
 {: #flavor-get-examples}
 
 Get the information of a flavor for a zone and provider.
@@ -4591,7 +4591,7 @@ ibmcloud oc flavor ls --zone ZONE [--output OUTPUT] [--provider PROVIDER] [-q] [
 ```
 {: pre}
 
-### Command options
+#### Command options
 {: #flavor-ls-options}
 
 
@@ -4614,7 +4614,7 @@ ibmcloud oc flavor ls --zone ZONE [--output OUTPUT] [--provider PROVIDER] [-q] [
 :    Specify the zone to list available flavors for. To list available zones, run `ibmcloud ks zone ls`.
 
 
-### Examples
+#### Examples
 {: #flavor-ls-examples}
 
 List available flavors for a zone.
@@ -4638,7 +4638,7 @@ ibmcloud oc infra-permissions get [--output OUTPUT] [-q] [--region REGION]
 ```
 {: pre}
 
-### Command options
+#### Command options
 {: #infra-permissions-get-options}
 
 
@@ -4652,7 +4652,7 @@ ibmcloud oc infra-permissions get [--output OUTPUT] [-q] [--region REGION]
 :    Specify the region to target. If a region is not already targeted, this argument must be specified. To check if a region is targeted, run `ibmcloud target`.
 
 
-### Examples
+#### Examples
 {: #infra-permissions-get-examples}
 
 Check whether the credentials that allow access to the IBM Cloud classic infrastructure portfolio for the targeted resou.
@@ -4676,7 +4676,7 @@ ibmcloud oc ingress alb autoscale get --alb ALB --cluster CLUSTER [--output OUTP
 ```
 {: pre}
 
-### Command options
+#### Command options
 {: #ingress-alb-autoscale-get-options}
 
 
@@ -4693,7 +4693,7 @@ ibmcloud oc ingress alb autoscale get --alb ALB --cluster CLUSTER [--output OUTP
 :    Do not show the message of the day or update reminders.
 
 
-### Examples
+#### Examples
 {: #ingress-alb-autoscale-get-examples}
 
 See autoscaling status and configuration for Ingress ALBs.
@@ -4720,7 +4720,7 @@ ibmcloud oc ingress alb autoscale set --alb ALB --cluster CLUSTER --max-replicas
 ```
 {: pre}
 
-### Command options
+#### Command options
 {: #ingress-alb-autoscale-set-options}
 
 
@@ -4749,7 +4749,7 @@ ibmcloud oc ingress alb autoscale set --alb ALB --cluster CLUSTER --max-replicas
 :    Do not show the message of the day or update reminders.
 
 
-### Examples
+#### Examples
 {: #ingress-alb-autoscale-set-examples}
 
 Configure autoscaling for Ingress ALBs.
@@ -4776,7 +4776,7 @@ ibmcloud oc ingress alb autoscale unset --alb ALB --cluster CLUSTER [-q]
 ```
 {: pre}
 
-### Command options
+#### Command options
 {: #ingress-alb-autoscale-unset-options}
 
 
@@ -4790,7 +4790,7 @@ ibmcloud oc ingress alb autoscale unset --alb ALB --cluster CLUSTER [-q]
 :    Do not show the message of the day or update reminders.
 
 
-### Examples
+#### Examples
 {: #ingress-alb-autoscale-unset-examples}
 
 Delete the autoscaling configuration for Ingress ALBs.
@@ -4814,7 +4814,7 @@ ibmcloud oc ingress alb autoupdate disable --cluster CLUSTER [-q]
 ```
 {: pre}
 
-### Command options
+#### Command options
 {: #ingress-alb-autoupdate-disable-options}
 
 
@@ -4825,7 +4825,7 @@ ibmcloud oc ingress alb autoupdate disable --cluster CLUSTER [-q]
 :    Do not show the message of the day or update reminders.
 
 
-### Examples
+#### Examples
 {: #ingress-alb-autoupdate-disable-examples}
 
 Disable automatic updates of all Ingress ALB pods in a cluster.
@@ -4849,7 +4849,7 @@ ibmcloud oc ingress alb autoupdate enable --cluster CLUSTER [-q]
 ```
 {: pre}
 
-### Command options
+#### Command options
 {: #ingress-alb-autoupdate-enable-options}
 
 
@@ -4860,7 +4860,7 @@ ibmcloud oc ingress alb autoupdate enable --cluster CLUSTER [-q]
 :    Do not show the message of the day or update reminders.
 
 
-### Examples
+#### Examples
 {: #ingress-alb-autoupdate-enable-examples}
 
 Enable automatic updates of all Ingress ALB pods in a cluster.
@@ -4884,7 +4884,7 @@ ibmcloud oc ingress alb autoupdate get --cluster CLUSTER [--output OUTPUT] [-q]
 ```
 {: pre}
 
-### Command options
+#### Command options
 {: #ingress-alb-autoupdate-get-options}
 
 
@@ -4898,7 +4898,7 @@ ibmcloud oc ingress alb autoupdate get --cluster CLUSTER [--output OUTPUT] [-q]
 :    Do not show the message of the day or update reminders.
 
 
-### Examples
+#### Examples
 {: #ingress-alb-autoupdate-get-examples}
 
 View whether the Ingress ALB pods in a cluster are set to automatically update and whether ALB pods are at the latest ve.
@@ -4922,7 +4922,7 @@ ibmcloud oc ingress alb create classic --cluster CLUSTER --type TYPE --vlan VLAN
 ```
 {: pre}
 
-### Command options
+#### Command options
 {: #ingress-alb-create-classic-options}
 
 
@@ -4948,7 +4948,7 @@ ibmcloud oc ingress alb create classic --cluster CLUSTER --type TYPE --vlan VLAN
 :    Specify the zone for the worker pool in a multizone cluster. To list available zones, run `ibmcloud ks zone ls`.
 
 
-### Examples
+#### Examples
 {: #ingress-alb-create-classic-examples}
 
 Create and enable an Ingress ALB in a classic cluster.
@@ -4975,7 +4975,7 @@ ibmcloud oc ingress alb create vpc-gen2 --cluster CLUSTER --type TYPE --zone ZON
 ```
 {: pre}
 
-### Command options
+#### Command options
 {: #ingress-alb-create-vpc-gen2-options}
 
 
@@ -4995,7 +4995,7 @@ ibmcloud oc ingress alb create vpc-gen2 --cluster CLUSTER --type TYPE --zone ZON
 :    Specify the zone for the worker pool in a multizone cluster. To list available zones, run `ibmcloud ks zone ls`.
 
 
-### Examples
+#### Examples
 {: #ingress-alb-create-vpc-gen2-examples}
 
 Create and enable an Ingress ALB in a VPC Gen 2 cluster.
@@ -5022,7 +5022,7 @@ ibmcloud oc ingress alb disable --alb ALB --cluster CLUSTER [-q]
 ```
 {: pre}
 
-### Command options
+#### Command options
 {: #ingress-alb-disable-options}
 
 
@@ -5036,7 +5036,7 @@ ibmcloud oc ingress alb disable --alb ALB --cluster CLUSTER [-q]
 :    Do not show the message of the day or update reminders.
 
 
-### Examples
+#### Examples
 {: #ingress-alb-disable-examples}
 
 Disable an Ingress ALB in a cluster.
@@ -5060,7 +5060,7 @@ ibmcloud oc ingress alb enable classic --alb ALB --cluster CLUSTER [--ip IP] [-q
 ```
 {: pre}
 
-### Command options
+#### Command options
 {: #ingress-alb-enable-classic-options}
 
 
@@ -5080,7 +5080,7 @@ ibmcloud oc ingress alb enable classic --alb ALB --cluster CLUSTER [--ip IP] [-q
 :    Specify the ALB image version. To see supported image versions, run `ibmcloud ks ingress alb versions`.
 
 
-### Examples
+#### Examples
 {: #ingress-alb-enable-classic-examples}
 
 Enable an Ingress ALB in a classic cluster.
@@ -5107,7 +5107,7 @@ ibmcloud oc ingress alb enable vpc-gen2 --alb ALB --cluster CLUSTER [-q] [--vers
 ```
 {: pre}
 
-### Command options
+#### Command options
 {: #ingress-alb-enable-vpc-gen2-options}
 
 
@@ -5124,7 +5124,7 @@ ibmcloud oc ingress alb enable vpc-gen2 --alb ALB --cluster CLUSTER [-q] [--vers
 :    Specify the ALB image version. To see supported image versions, run `ibmcloud ks ingress alb versions`.
 
 
-### Examples
+#### Examples
 {: #ingress-alb-enable-vpc-gen2-examples}
 
 Enable an Ingress ALB in a VPC Gen 2 cluster.
@@ -5151,7 +5151,7 @@ ibmcloud oc ingress alb get --alb ALB --cluster CLUSTER [--output OUTPUT] [-q]
 ```
 {: pre}
 
-### Command options
+#### Command options
 {: #ingress-alb-get-options}
 
 
@@ -5168,7 +5168,7 @@ ibmcloud oc ingress alb get --alb ALB --cluster CLUSTER [--output OUTPUT] [-q]
 :    Do not show the message of the day or update reminders.
 
 
-### Examples
+#### Examples
 {: #ingress-alb-get-examples}
 
 View the details of an Ingress ALB in a cluster.
@@ -5192,7 +5192,7 @@ ibmcloud oc ingress alb health-checker disable --cluster CLUSTER [-q]
 ```
 {: pre}
 
-### Command options
+#### Command options
 {: #ingress-alb-health-checker-disable-options}
 
 
@@ -5203,7 +5203,7 @@ ibmcloud oc ingress alb health-checker disable --cluster CLUSTER [-q]
 :    Do not show the message of the day or update reminders.
 
 
-### Examples
+#### Examples
 {: #ingress-alb-health-checker-disable-examples}
 
 Disable the Ingress health checker.
@@ -5227,7 +5227,7 @@ ibmcloud oc ingress alb health-checker enable --cluster CLUSTER [-q]
 ```
 {: pre}
 
-### Command options
+#### Command options
 {: #ingress-alb-health-checker-enable-options}
 
 
@@ -5238,7 +5238,7 @@ ibmcloud oc ingress alb health-checker enable --cluster CLUSTER [-q]
 :    Do not show the message of the day or update reminders.
 
 
-### Examples
+#### Examples
 {: #ingress-alb-health-checker-enable-examples}
 
 Enable the Ingress health checker.
@@ -5262,7 +5262,7 @@ ibmcloud oc ingress alb health-checker get --cluster CLUSTER [--output OUTPUT] [
 ```
 {: pre}
 
-### Command options
+#### Command options
 {: #ingress-alb-health-checker-get-options}
 
 
@@ -5276,7 +5276,7 @@ ibmcloud oc ingress alb health-checker get --cluster CLUSTER [--output OUTPUT] [
 :    Do not show the message of the day or update reminders.
 
 
-### Examples
+#### Examples
 {: #ingress-alb-health-checker-get-examples}
 
 View status of the Ingress health checker.
@@ -5300,7 +5300,7 @@ ibmcloud oc ingress alb ls --cluster CLUSTER [--output OUTPUT] [-q]
 ```
 {: pre}
 
-### Command options
+#### Command options
 {: #ingress-alb-ls-options}
 
 
@@ -5314,7 +5314,7 @@ ibmcloud oc ingress alb ls --cluster CLUSTER [--output OUTPUT] [-q]
 :    Do not show the message of the day or update reminders.
 
 
-### Examples
+#### Examples
 {: #ingress-alb-ls-examples}
 
 List all Ingress ALB IDs in a cluster and whether ALB pods are at the latest version.
@@ -5338,7 +5338,7 @@ ibmcloud oc ingress alb update --cluster CLUSTER [--alb ALB ...] [--output OUTPU
 ```
 {: pre}
 
-### Command options
+#### Command options
 {: #ingress-alb-update-options}
 
 
@@ -5358,7 +5358,7 @@ ibmcloud oc ingress alb update --cluster CLUSTER [--alb ALB ...] [--output OUTPU
 :    Specify the ALB image version. To see supported image versions, run `ibmcloud ks ingress alb versions`.
 
 
-### Examples
+#### Examples
 {: #ingress-alb-update-examples}
 
 Force a one-time update of the pods for individual or all ALBs in the cluster.
@@ -5385,7 +5385,7 @@ ibmcloud oc ingress alb versions [--output OUTPUT] [-q] [--region REGION]
 ```
 {: pre}
 
-### Command options
+#### Command options
 {: #ingress-alb-versions-options}
 
 
@@ -5399,7 +5399,7 @@ ibmcloud oc ingress alb versions [--output OUTPUT] [-q] [--region REGION]
 :    Specify the region to target.
 
 
-### Examples
+#### Examples
 {: #ingress-alb-versions-examples}
 
 List Ingress ALB image versions that are available.
@@ -5423,7 +5423,7 @@ ibmcloud oc ingress domain create --cluster CLUSTER [--crn CRN] [--domain DOMAIN
 ```
 {: pre}
 
-### Command options
+#### Command options
 {: #ingress-domain-create-options}
 
 
@@ -5461,7 +5461,7 @@ ibmcloud oc ingress domain create --cluster CLUSTER [--crn CRN] [--domain DOMAIN
 :    The namespace that the TLS secret is created in.
 
 
-### Examples
+#### Examples
 {: #ingress-domain-create-examples}
 
 Create an Ingress domain for a cluster.
@@ -5488,7 +5488,7 @@ ibmcloud oc ingress domain default replace --cluster CLUSTER --domain DOMAIN [-q
 ```
 {: pre}
 
-### Command options
+#### Command options
 {: #ingress-domain-default-replace-options}
 
 
@@ -5502,7 +5502,7 @@ ibmcloud oc ingress domain default replace --cluster CLUSTER --domain DOMAIN [-q
 :    Do not show the message of the day or update reminders.
 
 
-### Examples
+#### Examples
 {: #ingress-domain-default-replace-examples}
 
 Change a cluster's default Ingress domain.
@@ -5529,7 +5529,7 @@ ibmcloud oc ingress domain get --cluster CLUSTER --domain DOMAIN [--output OUTPU
 ```
 {: pre}
 
-### Command options
+#### Command options
 {: #ingress-domain-get-options}
 
 
@@ -5546,7 +5546,7 @@ ibmcloud oc ingress domain get --cluster CLUSTER --domain DOMAIN [--output OUTPU
 :    Do not show the message of the day or update reminders.
 
 
-### Examples
+#### Examples
 {: #ingress-domain-get-examples}
 
 View the details of an Ingress domain.
@@ -5573,7 +5573,7 @@ ibmcloud oc ingress domain ls --cluster CLUSTER [--output OUTPUT] [-q]
 ```
 {: pre}
 
-### Command options
+#### Command options
 {: #ingress-domain-ls-options}
 
 
@@ -5587,7 +5587,7 @@ ibmcloud oc ingress domain ls --cluster CLUSTER [--output OUTPUT] [-q]
 :    Do not show the message of the day or update reminders.
 
 
-### Examples
+#### Examples
 {: #ingress-domain-ls-examples}
 
 List all Ingress domains for a cluster.
@@ -5611,7 +5611,7 @@ ibmcloud oc ingress domain rm --cluster CLUSTER --domain DOMAIN [-f] [-q]
 ```
 {: pre}
 
-### Command options
+#### Command options
 {: #ingress-domain-rm-options}
 
 
@@ -5628,7 +5628,7 @@ ibmcloud oc ingress domain rm --cluster CLUSTER --domain DOMAIN [-f] [-q]
 :    Do not show the message of the day or update reminders.
 
 
-### Examples
+#### Examples
 {: #ingress-domain-rm-examples}
 
 Remove an Ingress domain from a cluster.
@@ -5652,7 +5652,7 @@ ibmcloud oc ingress domain secret regenerate --cluster CLUSTER --domain DOMAIN [
 ```
 {: pre}
 
-### Command options
+#### Command options
 {: #ingress-domain-secret-regenerate-options}
 
 
@@ -5669,7 +5669,7 @@ ibmcloud oc ingress domain secret regenerate --cluster CLUSTER --domain DOMAIN [
 :    Do not show the message of the day or update reminders.
 
 
-### Examples
+#### Examples
 {: #ingress-domain-secret-regenerate-examples}
 
 Regenerate the certificate for an Ingress domain.
@@ -5696,7 +5696,7 @@ ibmcloud oc ingress domain secret rm --cluster CLUSTER --domain DOMAIN [-f] [--o
 ```
 {: pre}
 
-### Command options
+#### Command options
 {: #ingress-domain-secret-rm-options}
 
 
@@ -5716,7 +5716,7 @@ ibmcloud oc ingress domain secret rm --cluster CLUSTER --domain DOMAIN [-f] [--o
 :    Do not show the message of the day or update reminders.
 
 
-### Examples
+#### Examples
 {: #ingress-domain-secret-rm-examples}
 
 Delete a secret for an Ingress domain and prevent future renewal of the certificate.
@@ -5740,7 +5740,7 @@ ibmcloud oc ingress domain update --cluster CLUSTER --domain DOMAIN [--hostname 
 ```
 {: pre}
 
-### Command options
+#### Command options
 {: #ingress-domain-update-options}
 
 
@@ -5760,7 +5760,7 @@ ibmcloud oc ingress domain update --cluster CLUSTER --domain DOMAIN [--hostname 
 :    Do not show the message of the day or update reminders.
 
 
-### Examples
+#### Examples
 {: #ingress-domain-update-examples}
 
 Update an Ingress domain for a cluster.
@@ -5787,7 +5787,7 @@ ibmcloud oc ingress instance default set --cluster CLUSTER --name NAME [-q] [--s
 ```
 {: pre}
 
-### Command options
+#### Command options
 {: #ingress-instance-default-set-options}
 
 
@@ -5804,7 +5804,7 @@ ibmcloud oc ingress instance default set --cluster CLUSTER --name NAME [-q] [--s
 :    Secret Group ID of the IBM Cloud Secret Manager instance where the secrets are persisted.
 
 
-### Examples
+#### Examples
 {: #ingress-instance-default-set-examples}
 
 Set a registered IBM Cloud Secrets Manager instance as the default.
@@ -5831,7 +5831,7 @@ ibmcloud oc ingress instance default unset --cluster CLUSTER --name NAME [-q]
 ```
 {: pre}
 
-### Command options
+#### Command options
 {: #ingress-instance-default-unset-options}
 
 
@@ -5845,7 +5845,7 @@ ibmcloud oc ingress instance default unset --cluster CLUSTER --name NAME [-q]
 :    Do not show the message of the day or update reminders.
 
 
-### Examples
+#### Examples
 {: #ingress-instance-default-unset-examples}
 
 Unset a registered IBM Cloud Secrets Manager instance from default.
@@ -5869,7 +5869,7 @@ ibmcloud oc ingress instance get --cluster CLUSTER --name NAME [--output OUTPUT]
 ```
 {: pre}
 
-### Command options
+#### Command options
 {: #ingress-instance-get-options}
 
 
@@ -5886,7 +5886,7 @@ ibmcloud oc ingress instance get --cluster CLUSTER --name NAME [--output OUTPUT]
 :    Do not show the message of the day or update reminders.
 
 
-### Examples
+#### Examples
 {: #ingress-instance-get-examples}
 
 View the details of an IBM Cloud Secrets Manager instance.
@@ -5913,7 +5913,7 @@ ibmcloud oc ingress instance ls --cluster CLUSTER [--output OUTPUT] [-q] [--show
 ```
 {: pre}
 
-### Command options
+#### Command options
 {: #ingress-instance-ls-options}
 
 
@@ -5930,7 +5930,7 @@ ibmcloud oc ingress instance ls --cluster CLUSTER [--output OUTPUT] [-q] [--show
 :    Show IBM Cloud Secret Manager instances that were unregistered from the cluster.
 
 
-### Examples
+#### Examples
 {: #ingress-instance-ls-examples}
 
 List all instances of the IBM Cloud Secrets Manager.
@@ -5957,7 +5957,7 @@ ibmcloud oc ingress instance register --cluster CLUSTER --crn CRN [--is-default]
 ```
 {: pre}
 
-### Command options
+#### Command options
 {: #ingress-instance-register-options}
 
 
@@ -5977,7 +5977,7 @@ ibmcloud oc ingress instance register --cluster CLUSTER --crn CRN [--is-default]
 :    Secret Group ID of the IBM Cloud Secret Manager instance where the secrets are persisted.
 
 
-### Examples
+#### Examples
 {: #ingress-instance-register-examples}
 
 Register an IBM Cloud Secrets Manager instance to a cluster.
@@ -6004,7 +6004,7 @@ ibmcloud oc ingress instance unregister --cluster CLUSTER --name NAME [-q]
 ```
 {: pre}
 
-### Command options
+#### Command options
 {: #ingress-instance-unregister-options}
 
 
@@ -6018,7 +6018,7 @@ ibmcloud oc ingress instance unregister --cluster CLUSTER --name NAME [-q]
 :    Do not show the message of the day or update reminders.
 
 
-### Examples
+#### Examples
 {: #ingress-instance-unregister-examples}
 
 Unregister an IBM Cloud Secrets Manager instance from a cluster.
@@ -6044,7 +6044,7 @@ ibmcloud oc ingress load-balancer backend set --cluster CLUSTER [--private-backe
 
 Aliases: `ibmcloud oc ingress lb backend set`
 
-### Command options
+#### Command options
 {: #ingress-load-balancer-backend-set-options}
 
 
@@ -6061,7 +6061,7 @@ Aliases: `ibmcloud oc ingress lb backend set`
 :    Do not show the message of the day or update reminders.
 
 
-### Examples
+#### Examples
 {: #ingress-load-balancer-backend-set-examples}
 
 Set the Ingress controller currently exposed by the VPC ALB load balancer.
@@ -6090,7 +6090,7 @@ ibmcloud oc ingress load-balancer get --cluster CLUSTER [--output OUTPUT] [-q]
 
 Aliases: `ibmcloud oc ingress lb get`
 
-### Command options
+#### Command options
 {: #ingress-load-balancer-get-options}
 
 
@@ -6104,7 +6104,7 @@ Aliases: `ibmcloud oc ingress lb get`
 :    Do not show the message of the day or update reminders.
 
 
-### Examples
+#### Examples
 {: #ingress-load-balancer-get-examples}
 
 Get the configuration of load balancers that expose Ingress ALBs in your cluster.
@@ -6130,7 +6130,7 @@ ibmcloud oc ingress load-balancer proxy-protocol disable --cluster CLUSTER [-f] 
 
 Aliases: `ibmcloud oc ingress lb proxy-protocol disable`
 
-### Command options
+#### Command options
 {: #ingress-load-balancer-proxy-protocol-disable-options}
 
 
@@ -6144,7 +6144,7 @@ Aliases: `ibmcloud oc ingress lb proxy-protocol disable`
 :    Do not show the message of the day or update reminders.
 
 
-### Examples
+#### Examples
 {: #ingress-load-balancer-proxy-protocol-disable-examples}
 
 Disable the PROXY protocol so that client connection information is no longer passed in request headers to ALBs.
@@ -6173,7 +6173,7 @@ ibmcloud oc ingress load-balancer proxy-protocol enable --cluster CLUSTER [--cid
 
 Aliases: `ibmcloud oc ingress lb proxy-protocol enable`
 
-### Command options
+#### Command options
 {: #ingress-load-balancer-proxy-protocol-enable-options}
 
 
@@ -6190,7 +6190,7 @@ Aliases: `ibmcloud oc ingress lb proxy-protocol enable`
 :    Do not show the message of the day or update reminders.
 
 
-### Examples
+#### Examples
 {: #ingress-load-balancer-proxy-protocol-enable-examples}
 
 Enable the PROXY protocol so that client connection information is passed in request headers to ALBs.
@@ -6217,7 +6217,7 @@ ibmcloud oc ingress secret create --cluster CLUSTER --name NAME [--cert-crn CRN]
 ```
 {: pre}
 
-### Command options
+#### Command options
 {: #ingress-secret-create-options}
 
 
@@ -6246,7 +6246,7 @@ ibmcloud oc ingress secret create --cluster CLUSTER --name NAME [--cert-crn CRN]
 :    The Ingress secret type. Can be TLS or Opaque. If no option is specified, TLS is applied by default.
 
 
-### Examples
+#### Examples
 {: #ingress-secret-create-examples}
 
 Create an Ingress secret in a cluster for a secret stored in IBM Cloud Secret Manager.
@@ -6273,7 +6273,7 @@ ibmcloud oc ingress secret field add --cluster CLUSTER --name NAME --namespace N
 ```
 {: pre}
 
-### Command options
+#### Command options
 {: #ingress-secret-field-add-options}
 
 
@@ -6293,7 +6293,7 @@ ibmcloud oc ingress secret field add --cluster CLUSTER --name NAME --namespace N
 :    Do not show the message of the day or update reminders.
 
 
-### Examples
+#### Examples
 {: #ingress-secret-field-add-examples}
 
 Add fields to an existing Ingress secret.
@@ -6320,7 +6320,7 @@ ibmcloud oc ingress secret field ls --cluster CLUSTER --name NAME --namespace NA
 ```
 {: pre}
 
-### Command options
+#### Command options
 {: #ingress-secret-field-ls-options}
 
 
@@ -6343,7 +6343,7 @@ ibmcloud oc ingress secret field ls --cluster CLUSTER --name NAME --namespace NA
 :    Show CRN value of secret.
 
 
-### Examples
+#### Examples
 {: #ingress-secret-field-ls-examples}
 
 View the fields of an Ingress secret.
@@ -6370,7 +6370,7 @@ ibmcloud oc ingress secret field rm --cluster CLUSTER --name NAME --namespace NA
 ```
 {: pre}
 
-### Command options
+#### Command options
 {: #ingress-secret-field-rm-options}
 
 
@@ -6390,7 +6390,7 @@ ibmcloud oc ingress secret field rm --cluster CLUSTER --name NAME --namespace NA
 :    Do not show the message of the day or update reminders.
 
 
-### Examples
+#### Examples
 {: #ingress-secret-field-rm-examples}
 
 Remove fields from an existing Ingress secret.
@@ -6417,7 +6417,7 @@ ibmcloud oc ingress secret get --cluster CLUSTER --name NAME --namespace NAMESPA
 ```
 {: pre}
 
-### Command options
+#### Command options
 {: #ingress-secret-get-options}
 
 
@@ -6437,7 +6437,7 @@ ibmcloud oc ingress secret get --cluster CLUSTER --name NAME --namespace NAMESPA
 :    Do not show the message of the day or update reminders.
 
 
-### Examples
+#### Examples
 {: #ingress-secret-get-examples}
 
 View the details of an Ingress secret.
@@ -6464,7 +6464,7 @@ ibmcloud oc ingress secret ls --cluster CLUSTER [--output OUTPUT] [-q] [--show-c
 ```
 {: pre}
 
-### Command options
+#### Command options
 {: #ingress-secret-ls-options}
 
 
@@ -6484,7 +6484,7 @@ ibmcloud oc ingress secret ls --cluster CLUSTER [--output OUTPUT] [-q] [--show-c
 :    Show secrets that were deleted from the cluster.
 
 
-### Examples
+#### Examples
 {: #ingress-secret-ls-examples}
 
 List all Ingress secrets in a cluster.
@@ -6508,7 +6508,7 @@ ibmcloud oc ingress secret rm --cluster CLUSTER --name NAME --namespace NAMESPAC
 ```
 {: pre}
 
-### Command options
+#### Command options
 {: #ingress-secret-rm-options}
 
 
@@ -6525,7 +6525,7 @@ ibmcloud oc ingress secret rm --cluster CLUSTER --name NAME --namespace NAMESPAC
 :    Do not show the message of the day or update reminders.
 
 
-### Examples
+#### Examples
 {: #ingress-secret-rm-examples}
 
 Remove an Ingress secret from a cluster.
@@ -6552,7 +6552,7 @@ ibmcloud oc ingress secret update --cluster CLUSTER --name NAME --namespace NAME
 ```
 {: pre}
 
-### Command options
+#### Command options
 {: #ingress-secret-update-options}
 
 
@@ -6572,7 +6572,7 @@ ibmcloud oc ingress secret update --cluster CLUSTER --name NAME --namespace NAME
 :    Do not show the message of the day or update reminders.
 
 
-### Examples
+#### Examples
 {: #ingress-secret-update-examples}
 
 Update an existing Ingress secret.
@@ -6601,7 +6601,7 @@ ibmcloud oc ingress security port80 disable --cluster CLUSTER [-f] [-q]
 
 Aliases: `ibmcloud oc ingress sec port80 disable`
 
-### Command options
+#### Command options
 {: #ingress-security-port80-disable-options}
 
 
@@ -6615,7 +6615,7 @@ Aliases: `ibmcloud oc ingress sec port80 disable`
 :    Do not show the message of the day or update reminders.
 
 
-### Examples
+#### Examples
 {: #ingress-security-port80-disable-examples}
 
 Disable the usage of port 80 in your cluster.
@@ -6641,7 +6641,7 @@ ibmcloud oc ingress security port80 enable --cluster CLUSTER [-f] [-q]
 
 Aliases: `ibmcloud oc ingress sec port80 enable`
 
-### Command options
+#### Command options
 {: #ingress-security-port80-enable-options}
 
 
@@ -6655,7 +6655,7 @@ Aliases: `ibmcloud oc ingress sec port80 enable`
 :    Do not show the message of the day or update reminders.
 
 
-### Examples
+#### Examples
 {: #ingress-security-port80-enable-examples}
 
 Enable the usage of port 80 in your cluster.
@@ -6681,7 +6681,7 @@ ibmcloud oc ingress security port80 get --cluster CLUSTER [--output OUTPUT] [-q]
 
 Aliases: `ibmcloud oc ingress sec port80 get`
 
-### Command options
+#### Command options
 {: #ingress-security-port80-get-options}
 
 
@@ -6695,7 +6695,7 @@ Aliases: `ibmcloud oc ingress sec port80 get`
 :    Do not show the message of the day or update reminders.
 
 
-### Examples
+#### Examples
 {: #ingress-security-port80-get-examples}
 
 Get the security configuration of port 80 in your cluster.
@@ -6719,7 +6719,7 @@ ibmcloud oc ingress status-report disable --cluster CLUSTER [--output OUTPUT] [-
 ```
 {: pre}
 
-### Command options
+#### Command options
 {: #ingress-status-report-disable-options}
 
 
@@ -6733,7 +6733,7 @@ ibmcloud oc ingress status-report disable --cluster CLUSTER [--output OUTPUT] [-
 :    Do not show the message of the day or update reminders.
 
 
-### Examples
+#### Examples
 {: #ingress-status-report-disable-examples}
 
 Disable status reporting for Ingress components in a cluster.
@@ -6757,7 +6757,7 @@ ibmcloud oc ingress status-report enable --cluster CLUSTER [--output OUTPUT] [-q
 ```
 {: pre}
 
-### Command options
+#### Command options
 {: #ingress-status-report-enable-options}
 
 
@@ -6771,7 +6771,7 @@ ibmcloud oc ingress status-report enable --cluster CLUSTER [--output OUTPUT] [-q
 :    Do not show the message of the day or update reminders.
 
 
-### Examples
+#### Examples
 {: #ingress-status-report-enable-examples}
 
 Enable status reporting for Ingress components in a cluster.
@@ -6795,7 +6795,7 @@ ibmcloud oc ingress status-report get --cluster CLUSTER [--output OUTPUT] [-q]
 ```
 {: pre}
 
-### Command options
+#### Command options
 {: #ingress-status-report-get-options}
 
 
@@ -6809,7 +6809,7 @@ ibmcloud oc ingress status-report get --cluster CLUSTER [--output OUTPUT] [-q]
 :    Do not show the message of the day or update reminders.
 
 
-### Examples
+#### Examples
 {: #ingress-status-report-get-examples}
 
 Get the status report for Ingress components in a cluster.
@@ -6833,7 +6833,7 @@ ibmcloud oc ingress status-report ignored-errors add --cluster CLUSTER --code CO
 ```
 {: pre}
 
-### Command options
+#### Command options
 {: #ingress-status-report-ignored-errors-add-options}
 
 
@@ -6850,7 +6850,7 @@ ibmcloud oc ingress status-report ignored-errors add --cluster CLUSTER --code CO
 :    Do not show the message of the day or update reminders.
 
 
-### Examples
+#### Examples
 {: #ingress-status-report-ignored-errors-add-examples}
 
 Add warnings to be ignored by Ingress status for a cluster.
@@ -6877,7 +6877,7 @@ ibmcloud oc ingress status-report ignored-errors ls --cluster CLUSTER [--output 
 ```
 {: pre}
 
-### Command options
+#### Command options
 {: #ingress-status-report-ignored-errors-ls-options}
 
 
@@ -6891,7 +6891,7 @@ ibmcloud oc ingress status-report ignored-errors ls --cluster CLUSTER [--output 
 :    Do not show the message of the day or update reminders.
 
 
-### Examples
+#### Examples
 {: #ingress-status-report-ignored-errors-ls-examples}
 
 List warnings that are currently ignored by Ingress status for a cluster.
@@ -6918,7 +6918,7 @@ ibmcloud oc ingress status-report ignored-errors rm --cluster CLUSTER --code COD
 ```
 {: pre}
 
-### Command options
+#### Command options
 {: #ingress-status-report-ignored-errors-rm-options}
 
 
@@ -6935,7 +6935,7 @@ ibmcloud oc ingress status-report ignored-errors rm --cluster CLUSTER --code COD
 :    Do not show the message of the day or update reminders.
 
 
-### Examples
+#### Examples
 {: #ingress-status-report-ignored-errors-rm-examples}
 
 Remove warnings that are currently ignored by Ingress status for a cluster.
@@ -6962,7 +6962,7 @@ ibmcloud oc init [--host HOST] [--insecure] [-p P] [-q] [-u U]
 ```
 {: pre}
 
-### Command options
+#### Command options
 {: #init-options}
 
 
@@ -6982,7 +6982,7 @@ ibmcloud oc init [--host HOST] [--insecure] [-p P] [-q] [-u U]
 :    The IBM Cloud user ID.
 
 
-### Examples
+#### Examples
 {: #init-examples}
 
 Initialize the Kubernetes Service plug-in and get authentication tokens.
@@ -7006,7 +7006,7 @@ ibmcloud oc kms crk ls --instance-id ID [--output OUTPUT] [-q]
 ```
 {: pre}
 
-### Command options
+#### Command options
 {: #kms-crk-ls-options}
 
 
@@ -7020,7 +7020,7 @@ ibmcloud oc kms crk ls --instance-id ID [--output OUTPUT] [-q]
 :    Do not show the message of the day or update reminders.
 
 
-### Examples
+#### Examples
 {: #kms-crk-ls-examples}
 
 List available root keys for a Key Management Service instance.
@@ -7044,7 +7044,7 @@ ibmcloud oc kms enable --cluster CLUSTER --crk CRK --instance-id ID [--kms-accou
 ```
 {: pre}
 
-### Command options
+#### Command options
 {: #kms-enable-options}
 
 
@@ -7067,7 +7067,7 @@ ibmcloud oc kms enable --cluster CLUSTER --crk CRK --instance-id ID [--kms-accou
 :    Do not show the message of the day or update reminders.
 
 
-### Examples
+#### Examples
 {: #kms-enable-examples}
 
 Enable a key management service (KMS) in your cluster to encrypt your secrets.
@@ -7094,7 +7094,7 @@ ibmcloud oc kms instance ls [--output OUTPUT] [-q]
 ```
 {: pre}
 
-### Command options
+#### Command options
 {: #kms-instance-ls-options}
 
 
@@ -7105,7 +7105,7 @@ ibmcloud oc kms instance ls [--output OUTPUT] [-q]
 :    Do not show the message of the day or update reminders.
 
 
-### Examples
+#### Examples
 {: #kms-instance-ls-examples}
 
 List available Key Management Service instances.
@@ -7129,7 +7129,7 @@ ibmcloud oc locations
 ```
 {: pre}
 
-### Command options
+#### Command options
 {: #locations-options}
 
 
@@ -7146,7 +7146,7 @@ ibmcloud oc locations
 :    Show the available worker node flavors in the zone for VPC.
 
 
-### Examples
+#### Examples
 {: #locations-examples}
 
 List supported IBM Cloud Kubernetes Service locations.
@@ -7170,7 +7170,7 @@ ibmcloud oc logging autoupdate disable --cluster CLUSTER [-q]
 ```
 {: pre}
 
-### Command options
+#### Command options
 {: #logging-autoupdate-disable-options}
 
 
@@ -7181,7 +7181,7 @@ ibmcloud oc logging autoupdate disable --cluster CLUSTER [-q]
 :    Do not show the message of the day or update reminders.
 
 
-### Examples
+#### Examples
 {: #logging-autoupdate-disable-examples}
 
 Disable automatic updates of all Fluentd pods in a cluster.
@@ -7205,7 +7205,7 @@ ibmcloud oc logging autoupdate enable --cluster CLUSTER [-q]
 ```
 {: pre}
 
-### Command options
+#### Command options
 {: #logging-autoupdate-enable-options}
 
 
@@ -7216,7 +7216,7 @@ ibmcloud oc logging autoupdate enable --cluster CLUSTER [-q]
 :    Do not show the message of the day or update reminders.
 
 
-### Examples
+#### Examples
 {: #logging-autoupdate-enable-examples}
 
 Enable automatic updates of all Fluentd pods in a cluster.
@@ -7240,7 +7240,7 @@ ibmcloud oc logging autoupdate get --cluster CLUSTER [--output OUTPUT] [-q]
 ```
 {: pre}
 
-### Command options
+#### Command options
 {: #logging-autoupdate-get-options}
 
 
@@ -7254,7 +7254,7 @@ ibmcloud oc logging autoupdate get --cluster CLUSTER [--output OUTPUT] [-q]
 :    Do not show the message of the day or update reminders.
 
 
-### Examples
+#### Examples
 {: #logging-autoupdate-get-examples}
 
 View whether your Fluentd pods are set to automatically update in a cluster.
@@ -7278,7 +7278,7 @@ ibmcloud oc logging config create --cluster CLUSTER --logsource LOGSOURCE --type
 ```
 {: pre}
 
-### Command options
+#### Command options
 {: #logging-config-create-options}
 
 
@@ -7334,7 +7334,7 @@ ibmcloud oc logging config create --cluster CLUSTER --logsource LOGSOURCE --type
 :    When the logging type is `syslog` and the protocol is tls, the verification mode. Supported values are `verify-peer` and the default `verify-none`.
 
 
-### Examples
+#### Examples
 {: #logging-config-create-examples}
 
 Create a logging configuration.
@@ -7365,7 +7365,7 @@ ibmcloud oc logging config get --cluster CLUSTER [--logsource LOGSOURCE] [--outp
 ```
 {: pre}
 
-### Command options
+#### Command options
 {: #logging-config-get-options}
 
 
@@ -7382,7 +7382,7 @@ ibmcloud oc logging config get --cluster CLUSTER [--logsource LOGSOURCE] [--outp
 :    Do not show the message of the day or update reminders.
 
 
-### Examples
+#### Examples
 {: #logging-config-get-examples}
 
 View log forwarding configurations for a cluster.
@@ -7409,7 +7409,7 @@ ibmcloud oc logging config rm --cluster CLUSTER [--force-update] [-q] (--all | -
 ```
 {: pre}
 
-### Command options
+#### Command options
 {: #logging-config-rm-options}
 
 
@@ -7432,7 +7432,7 @@ ibmcloud oc logging config rm --cluster CLUSTER [--force-update] [-q] (--all | -
 :    Do not show the message of the day or update reminders.
 
 
-### Examples
+#### Examples
 {: #logging-config-rm-examples}
 
 Delete a log forwarding configuration from a cluster.
@@ -7456,7 +7456,7 @@ ibmcloud oc logging config update --cluster CLUSTER --id ID --logsource LOGSOURC
 ```
 {: pre}
 
-### Command options
+#### Command options
 {: #logging-config-update-options}
 
 
@@ -7515,7 +7515,7 @@ ibmcloud oc logging config update --cluster CLUSTER --id ID --logsource LOGSOURC
 :    When the logging type is `syslog` and the protocol is tls, the verification mode. Supported values are `verify-peer` and the default `verify-none`.
 
 
-### Examples
+#### Examples
 {: #logging-config-update-examples}
 
 Update a log forwarding configuration for a cluster.
@@ -7546,7 +7546,7 @@ ibmcloud oc logging filter create --cluster CLUSTER [--container CONTAINER] [--f
 ```
 {: pre}
 
-### Command options
+#### Command options
 {: #logging-filter-create-options}
 
 
@@ -7584,7 +7584,7 @@ ibmcloud oc logging filter create --cluster CLUSTER [--container CONTAINER] [--f
 :    The type of logs that you want to apply the filter to. Currently all, container, and host are supported.
 
 
-### Examples
+#### Examples
 {: #logging-filter-create-examples}
 
 Filter out logs that are forwarded by your logging configuration.
@@ -7611,7 +7611,7 @@ ibmcloud oc logging filter get --cluster CLUSTER [--id ID] [--output OUTPUT] [-q
 ```
 {: pre}
 
-### Command options
+#### Command options
 {: #logging-filter-get-options}
 
 
@@ -7634,7 +7634,7 @@ ibmcloud oc logging filter get --cluster CLUSTER [--id ID] [--output OUTPUT] [-q
 :    Show the logging configurations that match the configuration that you're viewing.
 
 
-### Examples
+#### Examples
 {: #logging-filter-get-examples}
 
 View a logging filter configuration.
@@ -7661,7 +7661,7 @@ ibmcloud oc logging filter rm --cluster CLUSTER [--force-update] [-q] (--all | -
 ```
 {: pre}
 
-### Command options
+#### Command options
 {: #logging-filter-rm-options}
 
 
@@ -7681,7 +7681,7 @@ ibmcloud oc logging filter rm --cluster CLUSTER [--force-update] [-q] (--all | -
 :    Do not show the message of the day or update reminders.
 
 
-### Examples
+#### Examples
 {: #logging-filter-rm-examples}
 
 Delete a logging filter.
@@ -7705,7 +7705,7 @@ ibmcloud oc logging filter update --cluster CLUSTER --id ID [--container CONTAIN
 ```
 {: pre}
 
-### Command options
+#### Command options
 {: #logging-filter-update-options}
 
 
@@ -7746,7 +7746,7 @@ ibmcloud oc logging filter update --cluster CLUSTER --id ID [--container CONTAIN
 :    The type of logs that you want to apply the filter to. Currently all, container, and host are supported.
 
 
-### Examples
+#### Examples
 {: #logging-filter-update-examples}
 
 Update a logging filter.
@@ -7770,7 +7770,7 @@ ibmcloud oc logging refresh --cluster CLUSTER [--force-update] [-q]
 ```
 {: pre}
 
-### Command options
+#### Command options
 {: #logging-refresh-options}
 
 
@@ -7784,7 +7784,7 @@ ibmcloud oc logging refresh --cluster CLUSTER [--force-update] [-q]
 :    Do not show the message of the day or update reminders.
 
 
-### Examples
+#### Examples
 {: #logging-refresh-examples}
 
 Refresh the logging configuration for a cluster.
@@ -7811,7 +7811,7 @@ ibmcloud oc messages [-q]
 ```
 {: pre}
 
-### Command options
+#### Command options
 {: #messages-options}
 
 
@@ -7819,7 +7819,7 @@ ibmcloud oc messages [-q]
 :    Do not show the message of the day or update reminders.
 
 
-### Examples
+#### Examples
 {: #messages-examples}
 
 View the current user messages.
@@ -7843,7 +7843,7 @@ ibmcloud oc nlb-dns add --cluster CLUSTER --ip IP [--ip IP ...] --nlb-host HOST 
 ```
 {: pre}
 
-### Command options
+#### Command options
 {: #nlb-dns-add-options}
 
 
@@ -7863,7 +7863,7 @@ ibmcloud oc nlb-dns add --cluster CLUSTER --ip IP [--ip IP ...] --nlb-host HOST 
 :    Do not show the message of the day or update reminders.
 
 
-### Examples
+#### Examples
 {: #nlb-dns-add-examples}
 
 Add an NLB IP to an existing host name that you created with `ibmcloud ks nlb-dns create`.
@@ -7890,7 +7890,7 @@ ibmcloud oc nlb-dns create classic --cluster CLUSTER --ip IP [--ip IP ...] [--ou
 ```
 {: pre}
 
-### Command options
+#### Command options
 {: #nlb-dns-create-classic-options}
 
 
@@ -7910,7 +7910,7 @@ ibmcloud oc nlb-dns create classic --cluster CLUSTER --ip IP [--ip IP ...] [--ou
 :    The namespace that the SSL secret is created in. If this flag is not specified, the secret is created in `default.`
 
 
-### Examples
+#### Examples
 {: #nlb-dns-create-classic-examples}
 
 Create a DNS host name to register one or more NLB IPs in a classic cluster.
@@ -7937,7 +7937,7 @@ ibmcloud oc nlb-dns create vpc-gen2 --cluster CLUSTER [--output OUTPUT] [-q] [--
 ```
 {: pre}
 
-### Command options
+#### Command options
 {: #nlb-dns-create-vpc-gen2-options}
 
 
@@ -7960,7 +7960,7 @@ ibmcloud oc nlb-dns create vpc-gen2 --cluster CLUSTER [--output OUTPUT] [-q] [--
 :    The namespace that the SSL secret is created in. If this flag is not specified, the secret is created in `default.`
 
 
-### Examples
+#### Examples
 {: #nlb-dns-create-vpc-gen2-examples}
 
 Create a DNS record to register a load balancer host name or load balancer IP addresses in a VPC cluster.
@@ -7987,7 +7987,7 @@ ibmcloud oc nlb-dns get --cluster CLUSTER --nlb-subdomain SUBDOMAIN [--output OU
 ```
 {: pre}
 
-### Command options
+#### Command options
 {: #nlb-dns-get-options}
 
 
@@ -8004,7 +8004,7 @@ ibmcloud oc nlb-dns get --cluster CLUSTER --nlb-subdomain SUBDOMAIN [--output OU
 :    Do not show the message of the day or update reminders.
 
 
-### Examples
+#### Examples
 {: #nlb-dns-get-examples}
 
 View the details of a registered NLB host name in a cluster.
@@ -8031,7 +8031,7 @@ ibmcloud oc nlb-dns ls --cluster CLUSTER [--output OUTPUT] [-q]
 ```
 {: pre}
 
-### Command options
+#### Command options
 {: #nlb-dns-ls-options}
 
 
@@ -8045,7 +8045,7 @@ ibmcloud oc nlb-dns ls --cluster CLUSTER [--output OUTPUT] [-q]
 :    Do not show the message of the day or update reminders.
 
 
-### Examples
+#### Examples
 {: #nlb-dns-ls-examples}
 
 List the registered NLB host names and IP addresses in a cluster.
@@ -8069,7 +8069,7 @@ ibmcloud oc nlb-dns monitor configure --cluster CLUSTER --nlb-host HOST [--enabl
 ```
 {: pre}
 
-### Command options
+#### Command options
 {: #nlb-dns-monitor-configure-options}
 
 
@@ -8107,7 +8107,7 @@ ibmcloud oc nlb-dns monitor configure --cluster CLUSTER --nlb-host HOST [--enabl
 :    The protocol to use for the health check. Accepted values: `http`, `https`, `tcp`
 
 
-### Examples
+#### Examples
 {: #nlb-dns-monitor-configure-examples}
 
 Configure a health check monitor for an existing NLB host name in a cluster.
@@ -8135,7 +8135,7 @@ ibmcloud oc nlb-dns monitor disable --cluster CLUSTER --nlb-host HOST [--output 
 ```
 {: pre}
 
-### Command options
+#### Command options
 {: #nlb-dns-monitor-disable-options}
 
 
@@ -8152,7 +8152,7 @@ ibmcloud oc nlb-dns monitor disable --cluster CLUSTER --nlb-host HOST [--output 
 :    Do not show the message of the day or update reminders.
 
 
-### Examples
+#### Examples
 {: #nlb-dns-monitor-disable-examples}
 
 Disable an existing health check monitor for a NLB host name in a cluster.
@@ -8179,7 +8179,7 @@ ibmcloud oc nlb-dns monitor enable --cluster CLUSTER --nlb-host HOST [--output O
 ```
 {: pre}
 
-### Command options
+#### Command options
 {: #nlb-dns-monitor-enable-options}
 
 
@@ -8196,7 +8196,7 @@ ibmcloud oc nlb-dns monitor enable --cluster CLUSTER --nlb-host HOST [--output O
 :    Do not show the message of the day or update reminders.
 
 
-### Examples
+#### Examples
 {: #nlb-dns-monitor-enable-examples}
 
 Enable a health check monitor for an NLB host name in a cluster.
@@ -8223,7 +8223,7 @@ ibmcloud oc nlb-dns monitor get --cluster CLUSTER --nlb-host HOST [--output OUTP
 ```
 {: pre}
 
-### Command options
+#### Command options
 {: #nlb-dns-monitor-get-options}
 
 
@@ -8240,7 +8240,7 @@ ibmcloud oc nlb-dns monitor get --cluster CLUSTER --nlb-host HOST [--output OUTP
 :    Do not show the message of the day or update reminders.
 
 
-### Examples
+#### Examples
 {: #nlb-dns-monitor-get-examples}
 
 View the settings for an existing health check monitor.
@@ -8267,7 +8267,7 @@ ibmcloud oc nlb-dns monitor ls --cluster CLUSTER [--output OUTPUT] [-q]
 ```
 {: pre}
 
-### Command options
+#### Command options
 {: #nlb-dns-monitor-ls-options}
 
 
@@ -8281,7 +8281,7 @@ ibmcloud oc nlb-dns monitor ls --cluster CLUSTER [--output OUTPUT] [-q]
 :    Do not show the message of the day or update reminders.
 
 
-### Examples
+#### Examples
 {: #nlb-dns-monitor-ls-examples}
 
 List the health check monitor settings for each NLB host name in a cluster.
@@ -8305,7 +8305,7 @@ ibmcloud oc nlb-dns replace --cluster CLUSTER --lb-host HOST --nlb-subdomain SUB
 ```
 {: pre}
 
-### Command options
+#### Command options
 {: #nlb-dns-replace-options}
 
 
@@ -8325,7 +8325,7 @@ ibmcloud oc nlb-dns replace --cluster CLUSTER --lb-host HOST --nlb-subdomain SUB
 :    Do not show the message of the day or update reminders.
 
 
-### Examples
+#### Examples
 {: #nlb-dns-replace-examples}
 
 Update an existing DNS host name by replacing the load balancer hostname associated with it in a VPC cluster.
@@ -8352,7 +8352,7 @@ ibmcloud oc nlb-dns rm classic --cluster CLUSTER --ip IP --nlb-host HOST [--outp
 ```
 {: pre}
 
-### Command options
+#### Command options
 {: #nlb-dns-rm-classic-options}
 
 
@@ -8372,7 +8372,7 @@ ibmcloud oc nlb-dns rm classic --cluster CLUSTER --ip IP --nlb-host HOST [--outp
 :    Do not show the message of the day or update reminders.
 
 
-### Examples
+#### Examples
 {: #nlb-dns-rm-classic-examples}
 
 Remove an NLB IP address from an NLB host name.
@@ -8399,7 +8399,7 @@ ibmcloud oc nlb-dns rm vpc-gen2 --cluster CLUSTER --nlb-subdomain SUBDOMAIN [--i
 ```
 {: pre}
 
-### Command options
+#### Command options
 {: #nlb-dns-rm-vpc-gen2-options}
 
 
@@ -8419,7 +8419,7 @@ ibmcloud oc nlb-dns rm vpc-gen2 --cluster CLUSTER --nlb-subdomain SUBDOMAIN [--i
 :    Do not show the message of the day or update reminders.
 
 
-### Examples
+#### Examples
 {: #nlb-dns-rm-vpc-gen2-examples}
 
 Remove a load balancer host name or IP address from a DNS record in a VPC cluster.
@@ -8446,7 +8446,7 @@ ibmcloud oc nlb-dns secret regenerate --cluster CLUSTER --nlb-subdomain SUBDOMAI
 ```
 {: pre}
 
-### Command options
+#### Command options
 {: #nlb-dns-secret-regenerate-options}
 
 
@@ -8463,7 +8463,7 @@ ibmcloud oc nlb-dns secret regenerate --cluster CLUSTER --nlb-subdomain SUBDOMAI
 :    Do not show the message of the day or update reminders.
 
 
-### Examples
+#### Examples
 {: #nlb-dns-secret-regenerate-examples}
 
 Regenerate the certificate and secret for an NLB subdomain.
@@ -8490,7 +8490,7 @@ ibmcloud oc nlb-dns secret rm --cluster CLUSTER --nlb-subdomain SUBDOMAIN [-f] [
 ```
 {: pre}
 
-### Command options
+#### Command options
 {: #nlb-dns-secret-rm-options}
 
 
@@ -8510,7 +8510,7 @@ ibmcloud oc nlb-dns secret rm --cluster CLUSTER --nlb-subdomain SUBDOMAIN [-f] [
 :    Do not show the message of the day or update reminders.
 
 
-### Examples
+#### Examples
 {: #nlb-dns-secret-rm-examples}
 
 Delete a secret from an NLB subdomain and prevent future renewal of the certificate.
@@ -8534,7 +8534,7 @@ ibmcloud oc quota ls [--output OUTPUT] [--provider PROVIDER] [-q]
 ```
 {: pre}
 
-### Command options
+#### Command options
 {: #quota-ls-options}
 
 
@@ -8548,7 +8548,7 @@ ibmcloud oc quota ls [--output OUTPUT] [--provider PROVIDER] [-q]
 :    Do not show the message of the day or update reminders.
 
 
-### Examples
+#### Examples
 {: #quota-ls-examples}
 
 List all quota and limits for cluster-related resources in your IBM Cloud account.
@@ -8572,7 +8572,7 @@ ibmcloud oc script update [--in-place] FILE [FILE ...]
 ```
 {: pre}
 
-### Command options
+#### Command options
 {: #script-update-options}
 
 
@@ -8583,7 +8583,7 @@ ibmcloud oc script update [--in-place] FILE [FILE ...]
 :    Do not show the message of the day or update reminders.
 
 
-### Examples
+#### Examples
 {: #script-update-examples}
 
 Rewrite scripts that call IBM Cloud Kubernetes Service plug-in commands.
@@ -8607,7 +8607,7 @@ ibmcloud oc security-group ls --cluster CLUSTER [--attached-to ATTACHED] [--mana
 ```
 {: pre}
 
-### Command options
+#### Command options
 {: #security-group-ls-options}
 
 
@@ -8630,7 +8630,7 @@ ibmcloud oc security-group ls --cluster CLUSTER [--attached-to ATTACHED] [--mana
 :    Specify `cluster` to return security groups scoped to the cluster.  Specify `vpc` to return security groups scoped to the entire VPC. Accepted values: `cluster`, `vpc`
 
 
-### Examples
+#### Examples
 {: #security-group-ls-examples}
 
 List all security groups associated with a cluster.
@@ -8657,7 +8657,7 @@ ibmcloud oc security-group reset --cluster CLUSTER --security-group GROUP [-f] [
 ```
 {: pre}
 
-### Command options
+#### Command options
 {: #security-group-reset-options}
 
 
@@ -8674,7 +8674,7 @@ ibmcloud oc security-group reset --cluster CLUSTER --security-group GROUP [-f] [
 :    Specify security group ID.
 
 
-### Examples
+#### Examples
 {: #security-group-reset-examples}
 
 Deletes all existing security group rules, and reapplies default rules.
@@ -8701,7 +8701,7 @@ ibmcloud oc security-group sync --cluster CLUSTER --security-group GROUP [-q]
 ```
 {: pre}
 
-### Command options
+#### Command options
 {: #security-group-sync-options}
 
 
@@ -8715,7 +8715,7 @@ ibmcloud oc security-group sync --cluster CLUSTER --security-group GROUP [-q]
 :    Specify security group ID.
 
 
-### Examples
+#### Examples
 {: #security-group-sync-examples}
 
 Reapplies default security group rules that do not exist.
@@ -8742,7 +8742,7 @@ ibmcloud oc storage attachment create --cluster CLUSTER --volume VOLUME --worker
 ```
 {: pre}
 
-### Command options
+#### Command options
 {: #storage-attachment-create-options}
 
 
@@ -8762,7 +8762,7 @@ ibmcloud oc storage attachment create --cluster CLUSTER --volume VOLUME --worker
 :    Specify the worker ID. To list available workers, run `ibmcloud ks workers`.
 
 
-### Examples
+#### Examples
 {: #storage-attachment-create-examples}
 
 Attach a storage volume to a worker node.
@@ -8792,7 +8792,7 @@ ibmcloud oc storage attachment get --attachment ATTACHMENT --cluster CLUSTER --w
 ```
 {: pre}
 
-### Command options
+#### Command options
 {: #storage-attachment-get-options}
 
 
@@ -8812,7 +8812,7 @@ ibmcloud oc storage attachment get --attachment ATTACHMENT --cluster CLUSTER --w
 :    Specify the worker ID. To list available workers, run `ibmcloud ks workers`.
 
 
-### Examples
+#### Examples
 {: #storage-attachment-get-examples}
 
 Get the details of a volume attachment in a cluster.
@@ -8842,7 +8842,7 @@ ibmcloud oc storage attachment ls --cluster CLUSTER --worker WORKER [--output OU
 ```
 {: pre}
 
-### Command options
+#### Command options
 {: #storage-attachment-ls-options}
 
 
@@ -8859,7 +8859,7 @@ ibmcloud oc storage attachment ls --cluster CLUSTER --worker WORKER [--output OU
 :    Specify the worker ID. To list available workers, run `ibmcloud ks workers`.
 
 
-### Examples
+#### Examples
 {: #storage-attachment-ls-examples}
 
 List all storage volume attachments of a worker in a cluster.
@@ -8889,7 +8889,7 @@ ibmcloud oc storage attachment rm --attachment ATTACHMENT --cluster CLUSTER --wo
 ```
 {: pre}
 
-### Command options
+#### Command options
 {: #storage-attachment-rm-options}
 
 
@@ -8906,7 +8906,7 @@ ibmcloud oc storage attachment rm --attachment ATTACHMENT --cluster CLUSTER --wo
 :    Specify the worker ID. To list available workers, run `ibmcloud ks workers`.
 
 
-### Examples
+#### Examples
 {: #storage-attachment-rm-examples}
 
 Delete a volume attachment from a worker node.
@@ -8936,7 +8936,7 @@ ibmcloud oc storage volume get --volume VOLUME [--output OUTPUT] [-q]
 ```
 {: pre}
 
-### Command options
+#### Command options
 {: #storage-volume-get-options}
 
 
@@ -8950,7 +8950,7 @@ ibmcloud oc storage volume get --volume VOLUME [--output OUTPUT] [-q]
 :    Specify the volume ID. To list available volumes, run `ibmcloud ks storage volume ls`.
 
 
-### Examples
+#### Examples
 {: #storage-volume-get-examples}
 
 Get the details of a volume.
@@ -8977,7 +8977,7 @@ ibmcloud oc storage volume ls [--cluster CLUSTER] [--output OUTPUT] [--provider 
 ```
 {: pre}
 
-### Command options
+#### Command options
 {: #storage-volume-ls-options}
 
 
@@ -8997,7 +8997,7 @@ ibmcloud oc storage volume ls [--cluster CLUSTER] [--output OUTPUT] [--provider 
 :    A zone to filter for. To list available zones, run `ibmcloud ks locations`.
 
 
-### Examples
+#### Examples
 {: #storage-volume-ls-examples}
 
 List the details of volumes.
@@ -9024,7 +9024,7 @@ ibmcloud oc subnets --provider PROVIDER [-l LOCATION ...] [--output OUTPUT] [-q]
 ```
 {: pre}
 
-### Command options
+#### Command options
 {: #subnets-options}
 
 
@@ -9047,7 +9047,7 @@ ibmcloud oc subnets --provider PROVIDER [-l LOCATION ...] [--output OUTPUT] [-q]
 :    Required for provider types `vpc-classic` and `vpc-gen2`: The zone to list VPC subnets for. To list available zones, run `ibmcloud ks zone ls --provider vpc-classic|vpc-gen2`.
 
 
-### Examples
+#### Examples
 {: #subnets-examples}
 
 List available portable subnets in your IBM Cloud infrastructure account.
@@ -9076,7 +9076,7 @@ ibmcloud oc versions [--output OUTPUT] [-q] [--show-version VERSION]
 ```
 {: pre}
 
-### Command options
+#### Command options
 {: #versions-options}
 
 
@@ -9090,7 +9090,7 @@ ibmcloud oc versions [--output OUTPUT] [-q] [--show-version VERSION]
 :    Show only the versions for the specified container platform. Accepted values: `OpenShift`, `Kubernetes`
 
 
-### Examples
+#### Examples
 {: #versions-examples}
 
 List all the container platform versions that are available for IBM Cloud Kubernetes Service clusters.
@@ -9114,7 +9114,7 @@ ibmcloud oc vlan ls --zone ZONE [--output OUTPUT] [-q]
 ```
 {: pre}
 
-### Command options
+#### Command options
 {: #vlan-ls-options}
 
 
@@ -9128,7 +9128,7 @@ ibmcloud oc vlan ls --zone ZONE [--output OUTPUT] [-q]
 :    Specify the zone for the worker pool in a multizone cluster. To list available zones, run `ibmcloud ks zone ls`.
 
 
-### Examples
+#### Examples
 {: #vlan-ls-examples}
 
 List available public and private VLANs for a zone.
@@ -9152,7 +9152,7 @@ ibmcloud oc vlan spanning get [--output OUTPUT] [-q] [--region REGION]
 ```
 {: pre}
 
-### Command options
+#### Command options
 {: #vlan-spanning-get-options}
 
 
@@ -9166,7 +9166,7 @@ ibmcloud oc vlan spanning get [--output OUTPUT] [-q] [--region REGION]
 :    Specify the region to target. If a region is not already targeted, this argument must be specified. To check if a region is targeted, run `ibmcloud target`.
 
 
-### Examples
+#### Examples
 {: #vlan-spanning-get-examples}
 
 View the VLAN spanning status for your IBM Cloud classic infrastructure account.
@@ -9190,7 +9190,7 @@ ibmcloud oc vni attach baremetal --vlan VLAN --vni VNI [--auto-delete] [--output
 ```
 {: pre}
 
-### Command options
+#### Command options
 {: #vni-attach-baremetal-options}
 
 
@@ -9216,7 +9216,7 @@ ibmcloud oc vni attach baremetal --vlan VLAN --vni VNI [--auto-delete] [--output
 :    The ID of the worker node.
 
 
-### Examples
+#### Examples
 {: #vni-attach-baremetal-examples}
 
 Attach a Virtual Network Interface to a bare metal worker node or cluster.
@@ -9243,7 +9243,7 @@ ibmcloud oc vni detach --vni VNI [-f] [--output OUTPUT] [-q] (--cluster-id ID | 
 ```
 {: pre}
 
-### Command options
+#### Command options
 {: #vni-detach-options}
 
 
@@ -9266,7 +9266,7 @@ ibmcloud oc vni detach --vni VNI [-f] [--output OUTPUT] [-q] (--cluster-id ID | 
 :    The ID of the worker node.
 
 
-### Examples
+#### Examples
 {: #vni-detach-examples}
 
 Detach a Virtual Network Interface from a worker node or cluster.
@@ -9290,7 +9290,7 @@ ibmcloud oc vni ls [--after AFTER] [--first FIRST] [--output OUTPUT] [-q] (--clu
 ```
 {: pre}
 
-### Command options
+#### Command options
 {: #vni-ls-options}
 
 
@@ -9313,7 +9313,7 @@ ibmcloud oc vni ls [--after AFTER] [--first FIRST] [--output OUTPUT] [-q] (--clu
 :    The ID of the worker node.
 
 
-### Examples
+#### Examples
 {: #vni-ls-examples}
 
 List Virtual Network Interfaces attached to a cluster or worker node.
@@ -9337,7 +9337,7 @@ ibmcloud oc vpc ls [--output OUTPUT] [--provider PROVIDER] [-q]
 ```
 {: pre}
 
-### Command options
+#### Command options
 {: #vpc-ls-options}
 
 
@@ -9351,7 +9351,7 @@ ibmcloud oc vpc ls [--output OUTPUT] [--provider PROVIDER] [-q]
 :    Do not show the message of the day or update reminders.
 
 
-### Examples
+#### Examples
 {: #vpc-ls-examples}
 
 List all VPCs in the targeted resource group.
@@ -9375,7 +9375,7 @@ ibmcloud oc vpc outbound-traffic-protection disable --cluster CLUSTER [-f] [-q]
 ```
 {: pre}
 
-### Command options
+#### Command options
 {: #vpc-outbound-traffic-protection-disable-options}
 
 
@@ -9389,7 +9389,7 @@ ibmcloud oc vpc outbound-traffic-protection disable --cluster CLUSTER [-f] [-q]
 :    Do not show the message of the day or update reminders.
 
 
-### Examples
+#### Examples
 {: #vpc-outbound-traffic-protection-disable-examples}
 
 Disable outbound traffic protection for a Secure By Default VPC cluster.
@@ -9413,7 +9413,7 @@ ibmcloud oc vpc outbound-traffic-protection enable --cluster CLUSTER [-f] [-q]
 ```
 {: pre}
 
-### Command options
+#### Command options
 {: #vpc-outbound-traffic-protection-enable-options}
 
 
@@ -9427,7 +9427,7 @@ ibmcloud oc vpc outbound-traffic-protection enable --cluster CLUSTER [-f] [-q]
 :    Do not show the message of the day or update reminders.
 
 
-### Examples
+#### Examples
 {: #vpc-outbound-traffic-protection-enable-examples}
 
 Enable outbound traffic protection for a Secure By Default VPC cluster.
@@ -9451,7 +9451,7 @@ ibmcloud oc vpc secure-by-default enable --cluster CLUSTER [--disable-outbound-t
 ```
 {: pre}
 
-### Command options
+#### Command options
 {: #vpc-secure-by-default-enable-options}
 
 
@@ -9468,7 +9468,7 @@ ibmcloud oc vpc secure-by-default enable --cluster CLUSTER [--disable-outbound-t
 :    Do not show the message of the day or update reminders.
 
 
-### Examples
+#### Examples
 {: #vpc-secure-by-default-enable-examples}
 
 Enable Secure By Default VPC Networking for a VPC cluster using legacy Security Groups.
@@ -9495,7 +9495,7 @@ ibmcloud oc webhook-create --cluster CLUSTER --type TYPE --url URL [--level LEVE
 ```
 {: pre}
 
-### Command options
+#### Command options
 {: #webhook-create-options}
 
 
@@ -9515,7 +9515,7 @@ ibmcloud oc webhook-create --cluster CLUSTER --type TYPE --url URL [--level LEVE
 :    The webhook URL.
 
 
-### Examples
+#### Examples
 {: #webhook-create-examples}
 
 Register a webhook in a cluster.
@@ -9539,7 +9539,7 @@ ibmcloud oc worker get --cluster CLUSTER --worker WORKER [--output OUTPUT] [-q]
 ```
 {: pre}
 
-### Command options
+#### Command options
 {: #worker-get-options}
 
 
@@ -9556,7 +9556,7 @@ ibmcloud oc worker get --cluster CLUSTER --worker WORKER [--output OUTPUT] [-q]
 :    Specify the worker ID. To list available workers, run `ibmcloud ks workers`.
 
 
-### Examples
+#### Examples
 {: #worker-get-examples}
 
 View the details of a worker node.
@@ -9580,7 +9580,7 @@ ibmcloud oc worker ls --cluster CLUSTER [--output OUTPUT] [-q] [--show-delete-re
 ```
 {: pre}
 
-### Command options
+#### Command options
 {: #worker-ls-options}
 
 
@@ -9606,7 +9606,7 @@ ibmcloud oc worker ls --cluster CLUSTER [--output OUTPUT] [-q] [--show-delete-re
 :    Show only worker nodes that belong to the worker pool you specify.
 
 
-### Examples
+#### Examples
 {: #worker-ls-examples}
 
 List all worker nodes in a cluster.
@@ -9633,7 +9633,7 @@ ibmcloud oc worker reboot --cluster CLUSTER --worker WORKER [--worker WORKER ...
 ```
 {: pre}
 
-### Command options
+#### Command options
 {: #worker-reboot-options}
 
 
@@ -9656,7 +9656,7 @@ ibmcloud oc worker reboot --cluster CLUSTER --worker WORKER [--worker WORKER ...
 :    Specify one or more worker IDs.
 
 
-### Examples
+#### Examples
 {: #worker-reboot-examples}
 
 Restart a worker node.
@@ -9683,7 +9683,7 @@ ibmcloud oc worker reload --worker WORKER [--worker WORKER ...] [-f] [-q] [--ski
 ```
 {: pre}
 
-### Command options
+#### Command options
 {: #worker-reload-options}
 
 
@@ -9700,7 +9700,7 @@ ibmcloud oc worker reload --worker WORKER [--worker WORKER ...] [-f] [-q] [--ski
 :    Specify one or more worker IDs.
 
 
-### Examples
+#### Examples
 {: #worker-reload-examples}
 
 Delete the data, reimage, and reinstall Kubernetes with the latest patch version on one or more worker nodes.
@@ -9724,7 +9724,7 @@ ibmcloud oc worker replace --cluster CLUSTER --worker WORKER [-f] [-q] [--update
 ```
 {: pre}
 
-### Command options
+#### Command options
 {: #worker-replace-options}
 
 
@@ -9744,7 +9744,7 @@ ibmcloud oc worker replace --cluster CLUSTER --worker WORKER [-f] [-q] [--update
 :    Specify the worker ID. To list available workers, run `ibmcloud ks workers`.
 
 
-### Examples
+#### Examples
 {: #worker-replace-examples}
 
 Delete a worker node and replace it with a new worker node in the same worker pool.
@@ -9771,7 +9771,7 @@ ibmcloud oc worker rm --cluster CLUSTER --worker WORKER [--worker WORKER ...] [-
 ```
 {: pre}
 
-### Command options
+#### Command options
 {: #worker-rm-options}
 
 
@@ -9788,7 +9788,7 @@ ibmcloud oc worker rm --cluster CLUSTER --worker WORKER [--worker WORKER ...] [-
 :    Specify one or more worker IDs.
 
 
-### Examples
+#### Examples
 {: #worker-rm-examples}
 
 Remove a worker node from a cluster.
@@ -9812,7 +9812,7 @@ ibmcloud oc worker update --cluster CLUSTER --worker WORKER [--worker WORKER ...
 ```
 {: pre}
 
-### Command options
+#### Command options
 {: #worker-update-options}
 
 
@@ -9829,7 +9829,7 @@ ibmcloud oc worker update --cluster CLUSTER --worker WORKER [--worker WORKER ...
 :    Specify one or more worker IDs.
 
 
-### Examples
+#### Examples
 {: #worker-update-examples}
 
 Update one or more worker nodes in a classic cluster to a new Kubernetes version.
@@ -9853,7 +9853,7 @@ ibmcloud oc worker-pool create classic --cluster CLUSTER --flavor FLAVOR --name 
 ```
 {: pre}
 
-### Command options
+#### Command options
 {: #worker-pool-create-classic-options}
 
 
@@ -9891,7 +9891,7 @@ ibmcloud oc worker-pool create classic --cluster CLUSTER --flavor FLAVOR --name 
 :    Specify the desired number of workers per zone in this worker pool.
 
 
-### Examples
+#### Examples
 {: #worker-pool-create-classic-examples}
 
 Add a worker pool to a classic cluster.
@@ -9918,7 +9918,7 @@ ibmcloud oc worker-pool create satellite --cluster CLUSTER --host-label LABEL [-
 ```
 {: pre}
 
-### Command options
+#### Command options
 {: #worker-pool-create-satellite-options}
 
 
@@ -9953,7 +9953,7 @@ ibmcloud oc worker-pool create satellite --cluster CLUSTER --host-label LABEL [-
 :    Specify the zone for the worker pool in a multizone cluster. To list available zones, run `ibmcloud ks zone ls`.
 
 
-### Examples
+#### Examples
 {: #worker-pool-create-satellite-examples}
 
 Add a worker pool to an IBM Cloud Satellite cluster.
@@ -9980,7 +9980,7 @@ ibmcloud oc worker-pool create vpc-classic --cluster CLUSTER --flavor FLAVOR --n
 ```
 {: pre}
 
-### Command options
+#### Command options
 {: #worker-pool-create-vpc-classic-options}
 
 
@@ -10015,7 +10015,7 @@ ibmcloud oc worker-pool create vpc-classic --cluster CLUSTER --flavor FLAVOR --n
 :    The ID of the VPC in which to create the worker nodes, which must match the VPC that the cluster is in. To list the cluster's VPC ID, run `ibmcloud ks cluster get -c <cluster_name_or_ID>`. If this flag is not provided, then the worker pool defaults to the VPC ID of existing worker pools in the cluster.
 
 
-### Examples
+#### Examples
 {: #worker-pool-create-vpc-classic-examples}
 
 Add a worker pool to a VPC Gen 1 cluster.
@@ -10042,7 +10042,7 @@ ibmcloud oc worker-pool create vpc-gen2 --cluster CLUSTER --flavor FLAVOR --name
 ```
 {: pre}
 
-### Command options
+#### Command options
 {: #worker-pool-create-vpc-gen2-options}
 
 
@@ -10095,7 +10095,7 @@ ibmcloud oc worker-pool create vpc-gen2 --cluster CLUSTER --flavor FLAVOR --name
 :    The ID of the VPC in which to create the worker nodes, which must match the VPC that the cluster is in. To list the cluster's VPC ID, run `ibmcloud ks cluster get -c <cluster_name_or_ID>`. If this flag is not provided, then the worker pool defaults to the VPC ID of existing worker pools in the cluster.
 
 
-### Examples
+#### Examples
 {: #worker-pool-create-vpc-gen2-examples}
 
 Add a worker pool to a VPC Gen 2 cluster.
@@ -10122,7 +10122,7 @@ ibmcloud oc worker-pool get --cluster CLUSTER --worker-pool POOL [--output OUTPU
 ```
 {: pre}
 
-### Command options
+#### Command options
 {: #worker-pool-get-options}
 
 
@@ -10139,7 +10139,7 @@ ibmcloud oc worker-pool get --cluster CLUSTER --worker-pool POOL [--output OUTPU
 :    Specify a worker pool.
 
 
-### Examples
+#### Examples
 {: #worker-pool-get-examples}
 
 List the details of a worker pool.
@@ -10166,7 +10166,7 @@ ibmcloud oc worker-pool label rm --cluster CLUSTER --worker-pool POOL [-f] [-q]
 ```
 {: pre}
 
-### Command options
+#### Command options
 {: #worker-pool-label-rm-options}
 
 
@@ -10183,7 +10183,7 @@ ibmcloud oc worker-pool label rm --cluster CLUSTER --worker-pool POOL [-f] [-q]
 :    Specify a worker pool.
 
 
-### Examples
+#### Examples
 {: #worker-pool-label-rm-examples}
 
 Remove all custom Kubernetes labels from all worker nodes in a worker pool.
@@ -10210,7 +10210,7 @@ ibmcloud oc worker-pool label set --cluster CLUSTER --label LABEL [--label LABEL
 ```
 {: pre}
 
-### Command options
+#### Command options
 {: #worker-pool-label-set-options}
 
 
@@ -10230,7 +10230,7 @@ ibmcloud oc worker-pool label set --cluster CLUSTER --label LABEL [--label LABEL
 :    Specify a worker pool.
 
 
-### Examples
+#### Examples
 {: #worker-pool-label-set-examples}
 
 Set custom Kubernetes labels for all worker nodes in a worker pool.
@@ -10257,7 +10257,7 @@ ibmcloud oc worker-pool ls --cluster CLUSTER [--output OUTPUT] [-q]
 ```
 {: pre}
 
-### Command options
+#### Command options
 {: #worker-pool-ls-options}
 
 
@@ -10271,7 +10271,7 @@ ibmcloud oc worker-pool ls --cluster CLUSTER [--output OUTPUT] [-q]
 :    Do not show the message of the day or update reminders.
 
 
-### Examples
+#### Examples
 {: #worker-pool-ls-examples}
 
 List all worker pools in a cluster.
@@ -10295,7 +10295,7 @@ ibmcloud oc worker-pool operating-system set --cluster CLUSTER --operating-syste
 ```
 {: pre}
 
-### Command options
+#### Command options
 {: #worker-pool-operating-system-set-options}
 
 
@@ -10312,7 +10312,7 @@ ibmcloud oc worker-pool operating-system set --cluster CLUSTER --operating-syste
 :    Specify a worker pool.
 
 
-### Examples
+#### Examples
 {: #worker-pool-operating-system-set-examples}
 
 Set the operating system.
@@ -10339,7 +10339,7 @@ ibmcloud oc worker-pool rebalance --cluster CLUSTER --worker-pool POOL [-f] [-q]
 ```
 {: pre}
 
-### Command options
+#### Command options
 {: #worker-pool-rebalance-options}
 
 
@@ -10356,7 +10356,7 @@ ibmcloud oc worker-pool rebalance --cluster CLUSTER --worker-pool POOL [-f] [-q]
 :    Specify a worker pool.
 
 
-### Examples
+#### Examples
 {: #worker-pool-rebalance-examples}
 
 Rebalance a worker pool in a cluster.
@@ -10383,7 +10383,7 @@ ibmcloud oc worker-pool resize --cluster CLUSTER --size-per-zone SIZE --worker-p
 ```
 {: pre}
 
-### Command options
+#### Command options
 {: #worker-pool-resize-options}
 
 
@@ -10400,7 +10400,7 @@ ibmcloud oc worker-pool resize --cluster CLUSTER --size-per-zone SIZE --worker-p
 :    Specify a worker pool.
 
 
-### Examples
+#### Examples
 {: #worker-pool-resize-examples}
 
 Resize the worker pool to the number of workers per zone that you specify.
@@ -10427,7 +10427,7 @@ ibmcloud oc worker-pool rm --cluster CLUSTER --worker-pool POOL [-f] [-q]
 ```
 {: pre}
 
-### Command options
+#### Command options
 {: #worker-pool-rm-options}
 
 
@@ -10444,7 +10444,7 @@ ibmcloud oc worker-pool rm --cluster CLUSTER --worker-pool POOL [-f] [-q]
 :    Specify a worker pool.
 
 
-### Examples
+#### Examples
 {: #worker-pool-rm-examples}
 
 Remove a worker pool from a cluster.
@@ -10468,7 +10468,7 @@ ibmcloud oc worker-pool taint rm --cluster CLUSTER --worker-pool POOL [-f] [-q]
 ```
 {: pre}
 
-### Command options
+#### Command options
 {: #worker-pool-taint-rm-options}
 
 
@@ -10485,7 +10485,7 @@ ibmcloud oc worker-pool taint rm --cluster CLUSTER --worker-pool POOL [-f] [-q]
 :    Specify a worker pool.
 
 
-### Examples
+#### Examples
 {: #worker-pool-taint-rm-examples}
 
 Remove all Kubernetes taints from all worker nodes in a worker pool.
@@ -10512,7 +10512,7 @@ ibmcloud oc worker-pool taint set --cluster CLUSTER --taint TAINT [--taint TAINT
 ```
 {: pre}
 
-### Command options
+#### Command options
 {: #worker-pool-taint-set-options}
 
 
@@ -10532,7 +10532,7 @@ ibmcloud oc worker-pool taint set --cluster CLUSTER --taint TAINT [--taint TAINT
 :    Specify a worker pool.
 
 
-### Examples
+#### Examples
 {: #worker-pool-taint-set-examples}
 
 Set Kubernetes taints for all worker nodes in a worker pool.
@@ -10559,7 +10559,7 @@ ibmcloud oc worker-pool zones --cluster CLUSTER --worker-pool POOL [--output OUT
 ```
 {: pre}
 
-### Command options
+#### Command options
 {: #worker-pool-zones-options}
 
 
@@ -10576,7 +10576,7 @@ ibmcloud oc worker-pool zones --cluster CLUSTER --worker-pool POOL [--output OUT
 :    Specify a worker pool.
 
 
-### Examples
+#### Examples
 {: #worker-pool-zones-examples}
 
 View the zones attached to a worker pool.
@@ -10603,7 +10603,7 @@ ibmcloud oc zone add classic --cluster CLUSTER --worker-pool POOL [--worker-pool
 ```
 {: pre}
 
-### Command options
+#### Command options
 {: #zone-add-classic-options}
 
 
@@ -10632,7 +10632,7 @@ ibmcloud oc zone add classic --cluster CLUSTER --worker-pool POOL [--worker-pool
 :    Specify the zone for the worker pool in a multizone cluster. To list available zones, run `ibmcloud ks zone ls`.
 
 
-### Examples
+#### Examples
 {: #zone-add-classic-examples}
 
 Add a zone to one or more worker pools in a classic cluster.
@@ -10660,7 +10660,7 @@ ibmcloud oc zone add satellite --cluster CLUSTER --worker-pool POOL [--worker-po
 ```
 {: pre}
 
-### Command options
+#### Command options
 {: #zone-add-satellite-options}
 
 
@@ -10680,7 +10680,7 @@ ibmcloud oc zone add satellite --cluster CLUSTER --worker-pool POOL [--worker-po
 :    Specify the zone for the worker pool in a multizone cluster. To list available zones, run `ibmcloud ks zone ls`.
 
 
-### Examples
+#### Examples
 {: #zone-add-satellite-examples}
 
 Add a zone to one or more worker pools in a Satellite cluster.
@@ -10704,7 +10704,7 @@ ibmcloud oc zone add vpc-classic --cluster CLUSTER --subnet-id ID --worker-pool 
 ```
 {: pre}
 
-### Command options
+#### Command options
 {: #zone-add-vpc-classic-options}
 
 
@@ -10727,7 +10727,7 @@ ibmcloud oc zone add vpc-classic --cluster CLUSTER --subnet-id ID --worker-pool 
 :    Specify the zone for the worker pool in a multizone cluster. To list available zones, run `ibmcloud ks zone ls`.
 
 
-### Examples
+#### Examples
 {: #zone-add-vpc-classic-examples}
 
 Add a zone to one or more worker pools in a VPC Gen 1 cluster.
@@ -10754,7 +10754,7 @@ ibmcloud oc zone add vpc-gen2 --cluster CLUSTER --subnet-id ID --worker-pool POO
 ```
 {: pre}
 
-### Command options
+#### Command options
 {: #zone-add-vpc-gen2-options}
 
 
@@ -10777,7 +10777,7 @@ ibmcloud oc zone add vpc-gen2 --cluster CLUSTER --subnet-id ID --worker-pool POO
 :    Specify the zone for the worker pool in a multizone cluster. To list available zones, run `ibmcloud ks zone ls`.
 
 
-### Examples
+#### Examples
 {: #zone-add-vpc-gen2-examples}
 
 Add a zone to one or more worker pools in a VPC Gen 2 cluster.
@@ -10804,7 +10804,7 @@ ibmcloud oc zone ls --provider PROVIDER [-l LOCATION ...] [--output OUTPUT] [-q]
 ```
 {: pre}
 
-### Command options
+#### Command options
 {: #zone-ls-options}
 
 
@@ -10827,7 +10827,7 @@ ibmcloud oc zone ls --provider PROVIDER [-l LOCATION ...] [--output OUTPUT] [-q]
 :    Show the available worker node flavors in the zone for VPC.
 
 
-### Examples
+#### Examples
 {: #zone-ls-examples}
 
 List all availability zones in a region.
@@ -10854,7 +10854,7 @@ ibmcloud oc zone network-set --cluster CLUSTER --private-vlan VLAN --worker-pool
 ```
 {: pre}
 
-### Command options
+#### Command options
 {: #zone-network-set-options}
 
 
@@ -10883,7 +10883,7 @@ ibmcloud oc zone network-set --cluster CLUSTER --private-vlan VLAN --worker-pool
 :    Specify the zone for the worker pool in a multizone cluster. To list available zones, run `ibmcloud ks zone ls`.
 
 
-### Examples
+#### Examples
 {: #zone-network-set-examples}
 
 Set the network metadata in a specific zone for the given worker pools in a classic cluster.
@@ -10910,7 +10910,7 @@ ibmcloud oc zone rm --cluster CLUSTER --worker-pool POOL [--worker-pool POOL ...
 ```
 {: pre}
 
-### Command options
+#### Command options
 {: #zone-rm-options}
 
 
@@ -10930,7 +10930,7 @@ ibmcloud oc zone rm --cluster CLUSTER --worker-pool POOL [--worker-pool POOL ...
 :    Specify the zone for the worker pool in a multizone cluster. To list available zones, run `ibmcloud ks zone ls`.
 
 
-### Examples
+#### Examples
 {: #zone-rm-examples}
 
 Remove a zone from one or more worker pools in a cluster.
