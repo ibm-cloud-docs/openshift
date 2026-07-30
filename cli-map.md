@@ -4,7 +4,6 @@ copyright:
   years: 2022, 2026
 lastupdated: "2026-07-30"
 
-
 keywords: kubernetes, openshift
 
 subcollection: openshift
@@ -12,9 +11,6 @@ subcollection: openshift
 ---
 
 {{site.data.keyword.attribute-definition-list}}
-
-
-
 
 # {{site.data.keyword.openshiftlong_notm}} CLI Map
 {: #icks_map}
@@ -182,7 +178,6 @@ Set and unset credentials that allow you to access the IBM Cloud classic infrast
     * [`ibmcloud oc experimental vni detach`](/docs/openshift?topic=openshift-kubernetes-service-cli#experimental-vni-detach-cli)
     * [`ibmcloud oc experimental vni ls`](/docs/openshift?topic=openshift-kubernetes-service-cli#experimental-vni-ls-cli)
 
-
 ## `flavor` commands
 {: #icks_map_flavor}
 
@@ -191,7 +186,6 @@ Getting flavor related information. Flavors determine how much virtual CPU, memo
 
     * [`ibmcloud oc flavor get`](/docs/openshift?topic=openshift-kubernetes-service-cli#flavor-get-cli)
     * [`ibmcloud oc flavor ls`](/docs/openshift?topic=openshift-kubernetes-service-cli#flavor-ls-cli)
-
 
 ## `infra-permissions` commands
 {: #icks_map_infra-permissions}
@@ -368,7 +362,6 @@ View the quota and limits for cluster-related resources in your IBM Cloud accoun
 
     * [`ibmcloud oc quota ls`](/docs/openshift?topic=openshift-kubernetes-service-cli#quota-ls-cli)
 
-
 ## `script` commands
 {: #icks_map_script}
 
@@ -482,7 +475,6 @@ View and modify worker nodes for a cluster.
     * [`ibmcloud oc worker replace`](/docs/openshift?topic=openshift-kubernetes-service-cli#worker-replace-cli)
     * [`ibmcloud oc worker rm`](/docs/openshift?topic=openshift-kubernetes-service-cli#worker-rm-cli)
     * [`ibmcloud oc worker update`](/docs/openshift?topic=openshift-kubernetes-service-cli#worker-update-cli)
-
 
 ## `worker-pool` commands
 {: #icks_map_worker-pool}

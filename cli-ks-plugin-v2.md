@@ -20,7 +20,6 @@ Refer to these commands to create and manage **both community Kubernetes or {{si
 
 In the command line, you are notified when updates to the `ibmcloud` CLI and plug-ins are available. Be sure to keep your CLI up-to-date so that you can use all available commands and options.
 
-
 ## Prerequisites
 {: #ks-cli-prereq}
 
