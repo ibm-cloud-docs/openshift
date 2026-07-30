@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2022, 2026
-lastupdated: "2026-01-14"
+lastupdated: "2026-07-30"
 
 
 keywords: openshift, {{site.data.keyword.openshiftlong_notm}}, add-on, file
@@ -41,8 +41,8 @@ File Storage for VPC is considered to be a Financial Services Validated service 
 - New storage classes were added with version 2.0 of the add-on. You can no longer provision new file shares that use the older storage classes. Existing volumes that use the older storage classes continue to function, however you cannot expand the volumes that were created using the older classes. For more information, see the [Migrating to a new storage class](/docs/openshift?topic=openshift-storage-file-vpc-apps#storage-file-expansion-migration).
 - The add-on is managed by the `addon-vpc-file-csi-driver-configmap` configmap in the `kube-system` namespace. File storage events are published in the `file-csi-driver-status` configmap in the `kube-system` namespace. For {{site.data.keyword.openshiftlong_notm}} 4.17, these two configmaps are retained even when the add-on is disabled. Which means, whenever the add-on is enabled again, the values set by the user in add-on configmap are reapplied.
 - Encryption in-transit is disabled by default. You can optionally enable encryption in-transit when you enable the add-on.
-- Regional file share storage classes are available in Beta for allowlisted account only. For more information, see [Regional file shares overview](/docs/vpc?topic=vpc-file-storage-vpc-about#regional-file-storage-overview).
-- Encryption in transit for regional file share is not supported by the VPC FILE CSI Driver add-on.
+- Regional file shares (`rfs` profile) and encryption in transit for regional file shares are both available as **Beta** features for allowlisted accounts only. Beta features are intended for experimental use and are **not recommended for production workloads**. If you see `'rfs' profile is not accessible` in your PVC events, [open a VPC support ticket](https://cloud.ibm.com/unifiedsupport/cases/add){: external} to request access. For more information, see [Regional file shares overview](/docs/vpc?topic=vpc-file-storage-vpc-about#regional-file-storage-overview) and [Encryption in transit for {{site.data.keyword.filestorage_vpc_full_notm}}](/docs/openshift?topic=openshift-storage-file-vpc-eit).
+{: important}
 
 
 
