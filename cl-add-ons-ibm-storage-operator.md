@@ -3,7 +3,7 @@
 copyright:
   years: 2024, 2026
 
-lastupdated: "2026-06-26"
+lastupdated: "2026-07-30"
 
 
 keywords: change log, version history, IBM Storage Operator
@@ -41,6 +41,27 @@ Review the version history for IBM Storage Operator.
 
 ## Version 1.0
 {: #cl-add-ons-ibm-storage-operator-1.0}
+
+
+### Version 1.0 - v1.0.52_358395144, released 29 July 2026
+{: #cl-add-ons-ibm-storage-operator-v1052_358395144}
+
+[Default version]{: tag-green}
+
+- Resolves the following CVEs: [CVE-2025-5278](https://nvd.nist.gov/vuln/detail/CVE-2025-5278){: external}, [CVE-2026-5450](https://nvd.nist.gov/vuln/detail/CVE-2026-5450){: external}, and [CVE-2026-42505](https://nvd.nist.gov/vuln/detail/CVE-2026-42505){: external}.
+- Updates Go to version `1.25.12`.
+- Encryption in Transit (EIT) is now supported for DP2 profile-based storage classes on ROKS clusters (RHCOS-based worker nodes).
+- Automatic log collection for failed EIT mount jobs to aid in troubleshooting.
+- `ibm-vpc-package-deployer v1.0.8`
+
+
+### Version 1.0 - v1.0.45_349678516, released 25 June 2026
+{: #cl-add-ons-ibm-storage-operator-v1045_349678516}
+
+[Default version]{: tag-green}
+
+- Resolves the following CVEs: [CVE-2026-34180](https://nvd.nist.gov/vuln/detail/CVE-2026-34180){: external}, [CVE-2026-42766](https://nvd.nist.gov/vuln/detail/CVE-2026-42766){: external}, [CVE-2026-34183](https://nvd.nist.gov/vuln/detail/CVE-2026-34183){: external}, [CVE-2026-42767](https://nvd.nist.gov/vuln/detail/CVE-2026-42767){: external}, [CVE-2026-7383](https://nvd.nist.gov/vuln/detail/CVE-2026-7383){: external}, [CVE-2026-45446](https://nvd.nist.gov/vuln/detail/CVE-2026-45446){: external}, [CVE-2026-42764](https://nvd.nist.gov/vuln/detail/CVE-2026-42764){: external}, [CVE-2026-45445](https://nvd.nist.gov/vuln/detail/CVE-2026-45445){: external}, [CVE-2026-34181](https://nvd.nist.gov/vuln/detail/CVE-2026-34181){: external}, [CVE-2026-42769](https://nvd.nist.gov/vuln/detail/CVE-2026-42769){: external}, [CVE-2026-42768](https://nvd.nist.gov/vuln/detail/CVE-2026-42768){: external}, [CVE-2026-45447](https://nvd.nist.gov/vuln/detail/CVE-2026-45447){: external}, [CVE-2026-34182](https://nvd.nist.gov/vuln/detail/CVE-2026-34182){: external}, [CVE-2026-9076](https://nvd.nist.gov/vuln/detail/CVE-2026-9076){: external}, and [CVE-2026-42770](https://nvd.nist.gov/vuln/detail/CVE-2026-42770){: external}.
+- `armada-storage-secret v1.3.56`
 
 
 ### Version 1.0 - v1.0.44_347952047, released 22 June 2026

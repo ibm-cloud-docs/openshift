@@ -3,7 +3,7 @@
 copyright:
   years: 2024, 2026
 
-lastupdated: "2026-07-02"
+lastupdated: "2026-07-30"
 
 
 keywords: change log, version history, VPC File CSI Driver
@@ -41,6 +41,35 @@ Review the version history for VPC File CSI Driver.
 
 ## Version 2.0
 {: #cl-add-ons-vpc-file-csi-driver-2.0}
+
+
+### Version 2.0 - v2.0.44_358039267, released 29 July 2026
+{: #cl-add-ons-vpc-file-csi-driver-v2044_358039267}
+
+[Default version]{: tag-green}
+
+- Resolves the following CVEs: [CVE-2026-15308](https://nvd.nist.gov/vuln/detail/CVE-2026-15308){: external}, [CVE-2025-5278](https://nvd.nist.gov/vuln/detail/CVE-2025-5278){: external}, [CVE-2026-5450](https://nvd.nist.gov/vuln/detail/CVE-2026-5450){: external}, [CVE-2026-42505](https://nvd.nist.gov/vuln/detail/CVE-2026-42505){: external}, [CVE-2026-2303](https://nvd.nist.gov/vuln/detail/CVE-2026-2303){: external}, [CVE-2025-58185](https://nvd.nist.gov/vuln/detail/CVE-2025-58185){: external}, [CVE-2025-61727](https://nvd.nist.gov/vuln/detail/CVE-2025-61727){: external}, [CVE-2025-61729](https://nvd.nist.gov/vuln/detail/CVE-2025-61729){: external}, [CVE-2025-47912](https://nvd.nist.gov/vuln/detail/CVE-2025-47912){: external}, [CVE-2025-58187](https://nvd.nist.gov/vuln/detail/CVE-2025-58187){: external}, [CVE-2025-58188](https://nvd.nist.gov/vuln/detail/CVE-2025-58188){: external}, [CVE-2025-58189](https://nvd.nist.gov/vuln/detail/CVE-2025-58189){: external}, [CVE-2025-61723](https://nvd.nist.gov/vuln/detail/CVE-2025-61723){: external}, [CVE-2025-61724](https://nvd.nist.gov/vuln/detail/CVE-2025-61724){: external}, [CVE-2025-61726](https://nvd.nist.gov/vuln/detail/CVE-2025-61726){: external}, [CVE-2025-61730](https://nvd.nist.gov/vuln/detail/CVE-2025-61730){: external}, [CVE-2025-68121](https://nvd.nist.gov/vuln/detail/CVE-2025-68121){: external}, [CVE-2025-47906](https://nvd.nist.gov/vuln/detail/CVE-2025-47906){: external}, and [CVE-2025-22870](https://nvd.nist.gov/vuln/detail/CVE-2025-22870){: external}.
+- Updates Go to version `1.25.12`.
+- Fixed incorrect UID/GID assignment for PVCs restored from a snapshot; ownership is now inherited from the source snapshot. 
+- Fixed silent PVC mount failures (e.g., NFS exit status 32) that caused Kubelet to mount the local disk instead of failing the mount. 
+- [Beta] Encryption in Transit (EIT) support for RFS profile-based storage classes for IKS/ROKS clusters. For experimental use only.
+- EIT (Encryption in Transit) support for DP2 profile-based storage classes for ROKS clusters with RHCOS-based worker nodes.
+- `armada-storage-secret v1.3.59`
+- `csi-provisioner v6.2.0`
+- `csi-resizer v2.1.0`
+- `csi-livenessProbe v2.18.0`
+- `csi-node-driver-registrar v2.16.0`
+- `csi-snapshotter v8.5.0`
+- `stunnel 0.1.0.build-25`
+
+
+### Version 2.0 - v2.0.37_349678441, released 25 June 2026
+{: #cl-add-ons-vpc-file-csi-driver-v2037_349678441}
+
+[Default version]{: tag-green}
+
+- Resolves the following CVEs: [CVE-2026-34180](https://nvd.nist.gov/vuln/detail/CVE-2026-34180){: external}, [CVE-2026-42766](https://nvd.nist.gov/vuln/detail/CVE-2026-42766){: external}, [CVE-2026-34183](https://nvd.nist.gov/vuln/detail/CVE-2026-34183){: external}, [CVE-2026-42767](https://nvd.nist.gov/vuln/detail/CVE-2026-42767){: external}, [CVE-2026-7383](https://nvd.nist.gov/vuln/detail/CVE-2026-7383){: external}, [CVE-2026-45446](https://nvd.nist.gov/vuln/detail/CVE-2026-45446){: external}, [CVE-2026-42764](https://nvd.nist.gov/vuln/detail/CVE-2026-42764){: external}, [CVE-2026-45445](https://nvd.nist.gov/vuln/detail/CVE-2026-45445){: external}, [CVE-2026-34181](https://nvd.nist.gov/vuln/detail/CVE-2026-34181){: external}, [CVE-2026-42769](https://nvd.nist.gov/vuln/detail/CVE-2026-42769){: external}, [CVE-2026-42768](https://nvd.nist.gov/vuln/detail/CVE-2026-42768){: external}, [CVE-2026-45447](https://nvd.nist.gov/vuln/detail/CVE-2026-45447){: external}, [CVE-2026-34182](https://nvd.nist.gov/vuln/detail/CVE-2026-34182){: external}, [CVE-2026-9076](https://nvd.nist.gov/vuln/detail/CVE-2026-9076){: external}, and [CVE-2026-42770](https://nvd.nist.gov/vuln/detail/CVE-2026-42770){: external}.
+- `armada-storage-secret v1.3.56`
 
 
 ### Version 2.0 - v2.0.36_347951752, released 22 June 2026

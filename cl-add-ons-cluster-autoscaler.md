@@ -3,7 +3,7 @@
 copyright:
   years: 2024, 2026
 
-lastupdated: "2026-07-07"
+lastupdated: "2026-07-30"
 
 
 keywords: change log, version history, Cluster autoscaler
@@ -413,13 +413,6 @@ Beginning in version 1.2.4 the `maxEmptyBulkDelete` option is no longer supporte
 - Image tags: `1.22.0-109-0`, `1.23.0-109-0`, `1.24.0-109-0`, `1.25.0-109-0`,`1.26.1-109-0`,`1.27.2-109-0`.
 - Updates the `storage-secret-sidecar` image to `v1.2.25`.
 - Resolves the followings CVEs:[CVE-2023-2283](https://nvd.nist.gov/vuln/detail/CVE-2023-2283){: external},[CVE-2023-26604](https://nvd.nist.gov/vuln/detail/CVE-2023-26604){: external},[CVE-2020-24736](https://nvd.nist.gov/vuln/detail/CVE-2020-24736){: external}, and [CVE-2023-1667](https://nvd.nist.gov/vuln/detail/CVE-2023-1667){: external}.
-
-
-### Version patch update 1.0.9_70, released 24 July 2023
-{: #10970_ca}
-
-- Adds support for the `prometheusScrape` annotation.
-- Image tags: `1.22.0-109-0`, `1.23.0-109-0`, `1.24.0-109-0`, `1.25.0-109-0`, `1.26.1-109-0`, `1.27.2-109-0`.
 
 
 

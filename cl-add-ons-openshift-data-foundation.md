@@ -3,7 +3,7 @@
 copyright:
   years: 2024, 2026
 
-lastupdated: "2026-07-13"
+lastupdated: "2026-07-30"
 
 
 keywords: change log, version history, OpenShift Data Foundation
@@ -760,13 +760,6 @@ Review the version history for OpenShift Data Foundation.
 - Updates the UBI image to `8.8-1037`.
 
 
-### Version 4.13.3, released 31 July 2023
-{: #cl-add-ons-openshift-data-foundation-4.13.3}
-
-- Golang updated to `1.20.06`.
-- Updates the UBI image to `8.8-1014`.
-
-
 
 
 ### Version 4.12.21, released 03 August 2024
@@ -840,13 +833,6 @@ Review the version history for OpenShift Data Foundation.
 - Updates the UBI to`8.8-1037`.
 
 
-### Version 4.12.8, released 31 July 2023
-{: #cl-add-ons-openshift-data-foundation-4.12.8}
-
-- Golang updated to `1.20.6`.
-- Updates the UBI to`8.8-1014`.
-
-
 
 
 ### Version 4.11.21, released 04 March 2024
@@ -894,13 +880,6 @@ Review the version history for OpenShift Data Foundation.
 - Updates the UBI image to `8.9-1037`.
 
 
-### Version 4.11.13, released 31 July 2023
-{: #cl-add-ons-openshift-data-foundation-4.11.13}
-
-- Golang updated to `1.20.6`.
-- Updates the UBI image to `8.9-1014`.
-
-
 
 
 ### Version 4.10.32, released 29 November 2023 
@@ -934,10 +913,3 @@ Updates the UBI.
 
 - Updates the UBI image to `8.8-1037`.
 - Golang updated to `1.20.7`.
-
-
-### Version 4.10.28, released 31 July 2023
-{: #cl-add-ons-openshift-data-foundation-4.10.28}
-
-- Updates the UBI image to `8.8-1014`.
-- Golang updated to `1.20.6`.

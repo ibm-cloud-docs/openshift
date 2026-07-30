@@ -169,7 +169,7 @@ Create an {{site.data.keyword.cloud_notm}} Virtual Private Cloud (VPC) environme
 
     ```sh
     Client Version: v4.21.0
-    Kubernetes Version: v1.35.5.2
+    Kubernetes Version: v1.35.6.2
     ```
     {: screen}
 

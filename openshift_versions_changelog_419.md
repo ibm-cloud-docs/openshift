@@ -3,7 +3,7 @@
 copyright:
   years: 2024, 2026
 
-lastupdated: "2026-07-15"
+lastupdated: "2026-07-30"
 
 
 keywords: change log, version history, 4.19_openshift
@@ -37,6 +37,27 @@ Master patch updates are applied automatically. Worker node patch updates can be
 
 ## Version 4.19
 {: #419_components}
+
+
+### Master fix pack 4.19.34_1585_openshift, released 28 July 2026
+{: #cl-boms_master-41934_1585_openshift_M}
+
+The following table shows the components that are in the master fix pack 4.19.34_1585_openshift. Master patch updates are applied automatically.
+{: shortdesc}
+
+| Component | Description |
+| ---- | ---- |
+|Cluster health image v1.6.17|New version contains updates and security fixes.|
+|etcd v3.5.30|See the [etcd release notes](https://github.com/coreos/etcd/releases/v3.5.30).|
+|IBM Cloud Block Storage driver and plug-in v2.5.26|New version contains updates and security fixes.|
+|IBM Cloud Controller Manager v1.32.13-18|New version contains updates and security fixes.|
+|IBM Cloud File Storage for Classic plug-in and monitor v455|New version contains updates and security fixes.|
+|IBM Cloud RBAC Operator 92ba7dd|New version contains updates and security fixes.|
+|Key Management Service provider 2.10.27|New version contains updates and security fixes.|
+|Portieris admission controller v0.14.2|See the [Portieris admission controller release notes](https://github.com/IBM/portieris/releases/tag/v0.14.2)|
+|Red Hat OpenShift on IBM Cloud 4.19.34|See the [Red Hat OpenShift on IBM Cloud release notes](https://docs.redhat.com/en/documentation/openshift_container_platform/4.19/html/release_notes/ocp-4-19-release-notes#ocp-4-19-34_release-notes).|
+{: caption="4.19.34_1585_openshift fix pack." caption-side="bottom"}
+{: #cl-boms_master-41934_1585_openshift_M-component-table}
 
 
 ### Worker node fix pack 4.19.37_1586_openshift, released 13 July 2026
