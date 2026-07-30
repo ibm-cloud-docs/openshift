@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2022, 2026
-lastupdated: "2026-07-27"
+lastupdated: "2026-07-30"
 
 keywords: kubernetes, openshift
 
@@ -713,7 +713,7 @@ If your cluster and VPC are not in the same resource group, you must specify the
 
 - Changing the default storage class is only available for add-on version 2.0 or later.
 - You can set the default storage class to one of the pre-installed {{site.data.keyword.filestorage_vpc_short}} classes or your own custom storage class. If you are using a custom storage class, make sure the provisioner is set to `vpc.file.csi.ibm.io`.
-- If multiple storage classes are set as the default in a cluster, any of the default storage classes might be used. As a best practice, and to ensure the correct storage class is used, remove any existing default storage classes in the cluster before setting a new default class.
+- If multiple storage classes are set as the default in a cluster, any of the default storage classes might be used. As a best practice, and to ensure the correct storage class is used, remove any existing default storage classes in the cluster before setting a new default class. If the {{site.data.keyword.blockstorage_vpc_short}} add-on is also installed, a VPC block storage class might already be set as the default. To remove it before you set a new default, see [Changing the default storage class for {{site.data.keyword.blockstorage_vpc_short}}](/docs/openshift?topic=openshift-vpc-block#vpc-block-default-edit).
 
 
 1. Edit the `addon-vpc-file-csi-driver-configmap` configmap and specify the storage class name in `SET_DEFAULT_STORAGE_CLASS` parameter.
@@ -752,6 +752,7 @@ If your cluster and VPC are not in the same resource group, you must specify the
 ## Deploying an app that runs as non-root
 {: #vpc-file-non-root-app}
 
+The `uid` and `gid` parameters in the storage class set the initial user and group identifiers for the file share at the infrastructure level. For background on how supplemental IDs work in VPC file storage, see [Supplemental IDs for VPC file shares](/docs/vpc?topic=vpc-file-storage-vpc-about#FS-supplemental-ids).
 
 1. Create your own storage class and specify the group ID or user ID that you want to use for your app.
 
@@ -975,106 +976,54 @@ Use a key management service (KMS) provider, such as {{site.data.keyword.keymana
 ## Setting up encryption in-transit (EIT)
 {: #storage-file-vpc-eit}
 
-Review the following information about EIT. If you choose to use encryption in-transit, you need to balance your requirements between performance and enhanced security. Encrypting data in-transit can have performance impacts due to the processing that is needed to encrypt and decrypt the data at the endpoints. For more information about encryption in-transit, see [VPC Encryption in Transit](/docs/vpc?topic=vpc-file-storage-vpc-about&interface=ui#fs-eit).
-
-- EIT is available for cluster versions 4.16 and later.
-- EIT is not available for RHCOS worker nodes.
-- By default, file shares are [encrypted at rest](/docs/vpc?topic=vpc-file-storage-vpc-about&interface=ui#FS-encryption) with IBM-managed encryption. 
-- To use EIT with Secure by Default clusters, you must add the following outbound rule to the `kube-<clusterID>` security group.
-    - **Protocol**: Any
-    - **Source type**: Any
-    - **Source**: 0.0.0.0/0
-    - **Destination** 169.254.169.254.
-- EIT is not available for statically provisioned volumes. To set up EIT, you must use dynamic provisioning.
-- EIT packages are automatically updated in your cluster when EIT is enabled.
-- If you choose to use Encryption-in-transit, you need to balance your requirements between performance and enhanced security. Encrypting data in transit can have some performance impact due to the processing that is needed to encrypt and decrypt the data at the endpoints. The impact depends on the workload characteristics. Workloads that perform synchronous writes or bypass VSI caching, such as databases, might have a substantial performance impact when EIT is enabled. To determine EIT’s performance impact, benchmark your workload with and without EIT.
-- Even without EIT, the data moves through a secure data center network. For more information about network security, see [Security in your VPC](/docs/vpc?topic=vpc-security-in-your-vpc) and [Protecting Virtual Private Cloud (VPC) Infrastructure Services with context-based restrictions](/docs/vpc?topic=vpc-cbr).
-
-File Storage for VPC is considered to be a Financial Services Validated service only when encryption-in-transit is enabled. For more information, see [what is a Financial Services Validated service](/docs/framework-financial-services?topic=framework-financial-services-faqs-framework#financial-services-validated).
-{: important}
+To set up encryption in-transit for {{site.data.keyword.filestorage_vpc_short}}, see [Encryption in transit for {{site.data.keyword.filestorage_vpc_full_notm}}](/docs/openshift?topic=openshift-storage-file-vpc-eit). That topic covers both zonal file shares (`dp2` profile) and regional file shares (`rfs` profile, Beta).
 
 
-Complete the following steps to set up encryption-in-transit (EIT) for file shares in your {{site.data.keyword.openshiftlong_notm}} cluster. Enabling EIT installs the required packages on your worker nodes.
 
-1. Make a note of the worker pools in your cluster where you want to enable EIT.
-1. Edit the `addon-vpc-file-csi-driver-configmap`.
 
-    ```shell
+## Updating container resource requests and limits
+{: #storage-file-vpc-container-resources}
+
+You can customize the CPU and memory resource requests and limits for the containers that run in the {{site.data.keyword.filestorage_vpc_short}} add-on. Adjusting these values can help you optimize performance for large clusters or resource-constrained environments.
+
+The parameters follow the naming pattern `<ContainerName>CPULimit`, `<ContainerName>CPURequest`, `<ContainerName>MemoryLimit`, and `<ContainerName>MemoryRequest`. Apply them to the controller and node server containers.
+
+1. Edit the `addon-vpc-file-csi-driver-configmap` configmap and add the resource parameters for the containers that you want to adjust. The following example sets CPU and memory values for the controller and node server containers.
+
+    ```sh
     oc edit cm addon-vpc-file-csi-driver-configmap -n kube-system
     ```
     {: pre}
 
-
-1. In the configmap, set `ENABLE_EIT:true` and add worker pools where you want to enable EIT to the `WORKER_POOLS_WITH_EIT`. For example: `"wp1, wp2"`.
-
+    Example values:
     ```yaml
-    apiVersion: v1
-    data:
-      EIT_ENABLED_WORKER_POOLS: "wp1,wp2" # Specify the worker pools where you want to enable EIT. If this field is blank, EIT is not enabled on any worker pools.
-      ENABLE_EIT: "true"
-    kind: ConfigMap
-    metadata:
-      creationTimestamp: "2024-06-18T09:45:48Z"
-      labels:
-        app.kubernetes.io/name: ibm-vpc-file-csi-driver
-      name: addon-vpc-file-csi-driver-configmap
-      namespace: kube-system
-      ownerReferences:
-      - apiVersion: csi.drivers.ibmcloud.io/v1
-        blockOwnerDeletion: true
-        controller: true
-        kind: VPCFileCSIDriver
-        name: ibm-vpc-file-csi-driver
-        uid: d3c8bbcd-24fa-4203-9352-4ab7aa72a055
-      resourceVersion: "1251777"
-      uid: 5c9d6679-4135-458b-800d-217b34d27c75
+    controllerCPULimit: "200m"
+    controllerCPURequest: "100m"
+    controllerMemoryLimit: "256Mi"
+    controllerMemoryRequest: "128Mi"
+    nodeServerCPULimit: "200m"
+    nodeServerCPURequest: "100m"
+    nodeServerMemoryLimit: "256Mi"
+    nodeServerMemoryRequest: "128Mi"
     ```
     {: codeblock}
 
-1. After enabling EIT, save and close the config map.
-
-1. To verify EIT is enabled, review the events of the `file-csi-driver-status` config map.
+1. Verify that the resource changes were applied successfully by describing the `file-csi-driver-status` configmap. Look for a `Successfully set container resources` event in the `events` section.
 
     ```sh
     oc describe cm file-csi-driver-status -n kube-system
     ```
     {: pre}
 
-    Example output
-
-    ```yaml
-    apiVersion: v1
-    data:
-      EIT_ENABLED_WORKER_NODES: |
-        default:
-        - 10.240.0.10
-        - 10.240.0.8
-      PACKAGE_DEPLOYER_VERSION: v1.0.0
-      events: |
-        - event: EnableVPCFileCSIDriver
-          description: 'VPC File CSI Driver enable successful, DriverVersion: v2.0.3'
-          timestamp: "2024-06-13 09:17:07"
-        - event: EnableEITRequest
-          description: 'Request received to enableEIT, workerPools: , check the file-csi-driver-status
-            configmap for eit installation status on each node of each workerpool.'
-          timestamp: "2024-06-13 09:17:31"
-        - event: 'Enabling EIT on host: 10.240.0.10'
-          description: 'Package installation successful on host: 10.240.0.10, workerpool: wp1'
-          timestamp: "2024-06-13 09:17:48"
-        - event: 'Enabling EIT on host: 10.240.0.8'
-          description: 'Package installation successful on host: 10.240.0.8, workerpool: wp2'
-          timestamp: "2024-06-13 09:17:48"
+    Example output:
+    ```sh
+    events:
+    ----
+    - description: Successfully set container resources
+      event: Change container resources
+      timestamp: "2026-06-26 08:32:05"
     ```
-    {: codeblock}
-
-1. Select a pre-installed storage class that supports EIT or create your own storage class.
-
-    * Create a PVC by using either the `ibmc-vpc-file-eit` storage class.
-    * Create your own storage class and set the `isEITenabled` parameter to `true`.
-
-1. Create a PVC that references the storage class you selected, then deploy an app that uses your PVC.
-
-
+    {: screen}
 
 
 ## Limiting file share access by worker pool, zone, or worker node

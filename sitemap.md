@@ -4939,6 +4939,8 @@ subcollection: openshift
 
 * [Setting up encryption in-transit (EIT)](/docs/openshift?topic=openshift-storage-file-vpc-apps#storage-file-vpc-eit)
 
+* [Updating container resource requests and limits](/docs/openshift?topic=openshift-storage-file-vpc-apps#storage-file-vpc-container-resources)
+
 * [Limiting file share access by worker pool, zone, or worker node](/docs/openshift?topic=openshift-storage-file-vpc-apps#storage-file-vpc-vni-setup)
 
     * [Before you begin](/docs/openshift?topic=openshift-storage-file-vpc-apps#storage-file-vpc-vni-prereqs)
@@ -4950,6 +4952,26 @@ subcollection: openshift
     * [Limiting file share access to pods on worker nodes in a single worker pool](/docs/openshift?topic=openshift-storage-file-vpc-apps#storage-file-vpc-vni-one-pool)
 
     * [Limiting file share access to pods on worker nodes in multiple worker pools](/docs/openshift?topic=openshift-storage-file-vpc-apps#storage-file-vpc-vni-multiple-pools)
+
+[Encryption in transit for {{site.data.keyword.filestorage_vpc_full_notm}}](/docs/openshift?topic=openshift-storage-file-vpc-eit#storage-file-vpc-eit)
+
+* [Zonal file shares — Setting up encryption in transit](/docs/openshift?topic=openshift-storage-file-vpc-eit#vpc-file-dp2-eit)
+
+* [Regional file shares — Setting up encryption in transit (Beta)](/docs/openshift?topic=openshift-storage-file-vpc-eit#vpc-file-rfs-eit)
+
+    * [How it works](/docs/openshift?topic=openshift-storage-file-vpc-eit#vpc-file-rfs-eit-how)
+
+    * [Before you begin](/docs/openshift?topic=openshift-storage-file-vpc-eit#vpc-file-rfs-eit-prereqs)
+
+    * [Limitations](/docs/openshift?topic=openshift-storage-file-vpc-eit#vpc-file-rfs-eit-limits)
+
+    * [Setting up encryption in transit for Regional File Storage](/docs/openshift?topic=openshift-storage-file-vpc-eit#vpc-file-rfs-eit-setup)
+
+    * [Verifying encryption in transit is active](/docs/openshift?topic=openshift-storage-file-vpc-eit#vpc-file-rfs-eit-verify)
+
+    * [Troubleshooting RFS EIT](/docs/openshift?topic=openshift-storage-file-vpc-eit#vpc-file-rfs-eit-ts)
+
+* [Next steps](/docs/openshift?topic=openshift-storage-file-vpc-eit#storage-file-vpc-eit-next)
 
 [Managing {{site.data.keyword.filestorage_vpc_full_notm}}](/docs/openshift?topic=openshift-storage-file-vpc-managing#storage-file-vpc-managing)
 
@@ -10884,7 +10906,39 @@ subcollection: openshift
 
 * [Resolving the issue](/docs/openshift?topic=openshift-ts-storage-vpc-file-eit-unresponsive#vpc-file-eit-resolve)
 
+    * [Check which nodes have EIT enabled](/docs/openshift?topic=openshift-ts-storage-vpc-file-eit-unresponsive#ts-storage-vpc-file-eit-unresponsive-check-nodes)
+
+    * [Confirm that your app pod is running on an EIT-enabled node](/docs/openshift?topic=openshift-ts-storage-vpc-file-eit-unresponsive#ts-storage-vpc-file-eit-unresponsive-confirm-node)
+
+* [OS-specific considerations](/docs/openshift?topic=openshift-ts-storage-vpc-file-eit-unresponsive#ts-storage-vpc-file-eit-unresponsive-os)
+
+    * [Ubuntu and RHEL](/docs/openshift?topic=openshift-ts-storage-vpc-file-eit-unresponsive#ts-storage-vpc-file-eit-unresponsive-ubuntu-rhel)
+
+    * [RHCOS / CoreOS](/docs/openshift?topic=openshift-ts-storage-vpc-file-eit-unresponsive#ts-storage-vpc-file-eit-unresponsive-rhcos)
+
+* [New nodes added to an EIT-enabled worker pool](/docs/openshift?topic=openshift-ts-storage-vpc-file-eit-unresponsive#ts-storage-vpc-file-eit-unresponsive-new-nodes)
+
 [Why does PVC creation fail for {{site.data.keyword.filestorage_vpc_short}}?](/docs/openshift?topic=openshift-ts-storage-vpc-file-eit-pvc-fails#ts-storage-vpc-file-eit-pvc-fails)
+
+[Why do I see a `MetadataServiceNotEnabled` error for {{site.data.keyword.filestorage_vpc_short}}?](/docs/openshift?topic=openshift-ts-storage-vpc-file-eit-metadata#ts-storage-vpc-file-eit-metadata)
+
+* [Resolving the issue](/docs/openshift?topic=openshift-ts-storage-vpc-file-eit-metadata#ts-storage-vpc-file-eit-metadata-resolve)
+
+    * [Root cause A — Cluster version is too old](/docs/openshift?topic=openshift-ts-storage-vpc-file-eit-metadata#ts-storage-vpc-file-eit-metadata-root-cause-a)
+
+    * [Root cause B — Secure by Default cluster is missing the metadata outbound rule](/docs/openshift?topic=openshift-ts-storage-vpc-file-eit-metadata#ts-storage-vpc-file-eit-metadata-root-cause-b)
+
+* [Related topics](/docs/openshift?topic=openshift-ts-storage-vpc-file-eit-metadata#ts-storage-vpc-file-eit-metadata-related)
+
+[Troubleshooting Regional File Storage encryption in transit](/docs/openshift?topic=openshift-ts-storage-vpc-file-rfs-eit#ts-storage-vpc-file-rfs-eit)
+
+* [Why is my PVC stuck in Pending with `'rfs' profile is not accessible`?](/docs/openshift?topic=openshift-ts-storage-vpc-file-rfs-eit#ts-rfs-eit-pvc-pending)
+
+* [Why does my pod fail to mount with `stunnel manager is not initialized`?](/docs/openshift?topic=openshift-ts-storage-vpc-file-rfs-eit#ts-rfs-eit-stunnel-init)
+
+* [Why does my application with `hostNetwork: true` fail to bind a port?](/docs/openshift?topic=openshift-ts-storage-vpc-file-rfs-eit#ts-rfs-eit-hostnetwork-port)
+
+* [Related topics](/docs/openshift?topic=openshift-ts-storage-vpc-file-rfs-eit#ts-rfs-eit-related)
 
 [Classic: Why am I denied server access when mounting a volume to a worker node?](/docs/openshift?topic=openshift-ts-storage-file-access-denied#ts-storage-file-access-denied)
 
