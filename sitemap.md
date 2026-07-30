@@ -6984,53 +6984,59 @@ subcollection: openshift
 
 [{{site.data.keyword.openshiftlong_notm}} CLI Map](/docs/openshift?topic=openshift-icks_map#icks_map)
 
-* [ibmcloud oc cluster](/docs/openshift?topic=openshift-icks_map#icks_map_cluster)
+* [`api` commands](/docs/openshift?topic=openshift-icks_map#icks_map_api)
 
-* [ibmcloud oc worker](/docs/openshift?topic=openshift-icks_map#icks_map_worker)
+* [`api-key` commands](/docs/openshift?topic=openshift-icks_map#icks_map_api-key)
 
-* [ibmcloud oc worker-pool](/docs/openshift?topic=openshift-icks_map#icks_map_worker-pool)
+* [`cluster` commands](/docs/openshift?topic=openshift-icks_map#icks_map_cluster)
 
-* [ibmcloud oc zone](/docs/openshift?topic=openshift-icks_map#icks_map_zone)
+* [`credential` commands](/docs/openshift?topic=openshift-icks_map#icks_map_credential)
 
-* [ibmcloud oc ingress](/docs/openshift?topic=openshift-icks_map#icks_map_ingress)
+* [`experimental` commands](/docs/openshift?topic=openshift-icks_map#icks_map_experimental)
 
-* [ibmcloud oc nlb-dns](/docs/openshift?topic=openshift-icks_map#icks_map_nlb-dns)
+* [`flavor` commands](/docs/openshift?topic=openshift-icks_map#icks_map_flavor)
 
-* [ibmcloud oc webhook-create](/docs/openshift?topic=openshift-icks_map#icks_map_webhook-create)
+* [`infra-permissions` commands](/docs/openshift?topic=openshift-icks_map#icks_map_infra-permissions)
 
-* [ibmcloud oc api-key](/docs/openshift?topic=openshift-icks_map#icks_map_api-key)
+* [`ingress` commands](/docs/openshift?topic=openshift-icks_map#icks_map_ingress)
 
-* [ibmcloud oc credential](/docs/openshift?topic=openshift-icks_map#icks_map_credential)
+* [`init` commands](/docs/openshift?topic=openshift-icks_map#icks_map_init)
 
-* [ibmcloud oc infra-permissions](/docs/openshift?topic=openshift-icks_map#icks_map_infra-permissions)
+* [`kms` commands](/docs/openshift?topic=openshift-icks_map#icks_map_kms)
 
-* [ibmcloud oc kms](/docs/openshift?topic=openshift-icks_map#icks_map_kms)
+* [`locations` commands](/docs/openshift?topic=openshift-icks_map#icks_map_locations)
 
-* [ibmcloud oc quota](/docs/openshift?topic=openshift-icks_map#icks_map_quota)
+* [`logging` commands](/docs/openshift?topic=openshift-icks_map#icks_map_logging)
 
-* [ibmcloud oc subnets](/docs/openshift?topic=openshift-icks_map#icks_map_subnets)
+* [`messages` commands](/docs/openshift?topic=openshift-icks_map#icks_map_messages)
 
-* [ibmcloud oc vlan](/docs/openshift?topic=openshift-icks_map#icks_map_vlan)
+* [`nlb-dns` commands](/docs/openshift?topic=openshift-icks_map#icks_map_nlb-dns)
 
-* [ibmcloud oc vpcs](/docs/openshift?topic=openshift-icks_map#icks_map_vpcs)
+* [`quota` commands](/docs/openshift?topic=openshift-icks_map#icks_map_quota)
 
-* [ibmcloud oc flavors](/docs/openshift?topic=openshift-icks_map#icks_map_flavors)
+* [`script` commands](/docs/openshift?topic=openshift-icks_map#icks_map_script)
 
-* [ibmcloud oc locations](/docs/openshift?topic=openshift-icks_map#icks_map_locations)
+* [`security-group` commands](/docs/openshift?topic=openshift-icks_map#icks_map_security-group)
 
-* [ibmcloud oc messages](/docs/openshift?topic=openshift-icks_map#icks_map_messages)
+* [`storage` commands](/docs/openshift?topic=openshift-icks_map#icks_map_storage)
 
-* [ibmcloud oc versions](/docs/openshift?topic=openshift-icks_map#icks_map_versions)
+* [`subnets` commands](/docs/openshift?topic=openshift-icks_map#icks_map_subnets)
 
-* [ibmcloud oc api](/docs/openshift?topic=openshift-icks_map#icks_map_api)
+* [`versions` commands](/docs/openshift?topic=openshift-icks_map#icks_map_versions)
 
-* [ibmcloud oc `init`](/docs/openshift?topic=openshift-icks_map#icks_map_init)
+* [`vlan` commands](/docs/openshift?topic=openshift-icks_map#icks_map_vlan)
 
-* [ibmcloud oc script](/docs/openshift?topic=openshift-icks_map#icks_map_script)
+* [`vni` commands](/docs/openshift?topic=openshift-icks_map#icks_map_vni)
 
-* [ibmcloud oc security-group](/docs/openshift?topic=openshift-icks_map#icks_map_security_group)
+* [`vpc` commands](/docs/openshift?topic=openshift-icks_map#icks_map_vpc)
 
-* [ibmcloud oc storage](/docs/openshift?topic=openshift-icks_map#icks_map_storage)
+* [`webhook-create` commands](/docs/openshift?topic=openshift-icks_map#icks_map_webhook-create)
+
+* [`worker` commands](/docs/openshift?topic=openshift-icks_map#icks_map_worker)
+
+* [`worker-pool` commands](/docs/openshift?topic=openshift-icks_map#icks_map_worker-pool)
+
+* [`zone` commands](/docs/openshift?topic=openshift-icks_map#icks_map_zone)
 
 [{{site.data.keyword.openshiftlong_notm}} CLI reference](/docs/openshift?topic=openshift-kubernetes-service-cli#kubernetes-service-cli)
 
