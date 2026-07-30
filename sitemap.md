@@ -546,8 +546,6 @@ subcollection: openshift
 
         * IBM Object CSI Driver cluster add-on patch updates.
 
-* [June 2026](/docs/openshift?topic=openshift-openshift-relnotes#openshift-jun26)
-
     * [03 June 2026](/docs/openshift?topic=openshift-openshift-relnotes#openshift-jun0326)
 
         * IBM Storage Operator cluster add-on patch updates.
@@ -970,8 +968,6 @@ subcollection: openshift
 
         * {{site.data.keyword.openshiftlong_notm}} worker node fix packs are available.
 
-    * [07 October 2025](/docs/openshift?topic=openshift-openshift-relnotes#openshift-oct0725)
-
         * OpenShift AI cluster add-on patch updates.
 
         * {{site.data.keyword.openshiftlong_notm}} master fix packs.
@@ -1109,8 +1105,6 @@ subcollection: openshift
     * [01 July 2025](/docs/openshift?topic=openshift-openshift-relnotes#openshift-01july25)
 
         * {{site.data.keyword.openshiftlong_notm}} worker node fix packs are available.
-
-* [June 2025](/docs/openshift?topic=openshift-openshift-relnotes#openshift-jun25)
 
     * [30 June 2025](/docs/openshift?topic=openshift-openshift-relnotes#openshift-30june25)
 

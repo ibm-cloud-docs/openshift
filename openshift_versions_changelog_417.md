@@ -72,8 +72,7 @@ The following table shows the components that are in the master fix pack 4.17.54
 |IBM Cloud RBAC Operator 92ba7dd|New version contains updates and security fixes.|
 |Key Management Service provider 2.10.27|New version contains updates and security fixes.|
 |Portieris admission controller v0.14.2|See the [Portieris admission controller release notes](https://github.com/IBM/portieris/releases/tag/v0.14.2)|
-|Red Hat OpenShift on IBM Cloud Control Plane Operator, Metrics Server, and toolkit v4.17.0+20260707|See the [Red Hat OpenShift on IBM Cloud toolkit release notes](https://github.com/openshift/ibm-roks-toolkit/releases/tag/v4.17.0+20260707).
-|
+|Red Hat OpenShift on IBM Cloud Control Plane Operator, Metrics Server, and toolkit v4.17.0+20260707|See the [Red Hat OpenShift on IBM Cloud toolkit release notes](https://github.com/openshift/ibm-roks-toolkit/releases/tag/v4.17.0+20260707).|
 {: caption="4.17.54_1592_openshift fix pack." caption-side="bottom"}
 {: #cl-boms_master-41754_1592_openshift_M-component-table}
 

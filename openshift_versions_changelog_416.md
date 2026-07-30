@@ -77,8 +77,7 @@ The following table shows the components that are in the master fix pack 4.16.64
 |Key Management Service provider 2.10.27|New version contains updates and security fixes.|
 |Portieris admission controller v0.14.2|See the [Portieris admission controller release notes](https://github.com/IBM/portieris/releases/tag/v0.14.2)|
 |Red Hat OpenShift on IBM Cloud 4.16.64|See the [Red Hat OpenShift on IBM Cloud release notes](https://docs.redhat.com/en/documentation/openshift_container_platform/4.16/html/release_notes/ocp-4-16-release-notes#ocp-4-16-64_release-notes).|
-|Red Hat OpenShift on IBM Cloud Control Plane Operator, Metrics Server, and toolkit v4.16.0+20260707|See the [Red Hat OpenShift on IBM Cloud toolkit release notes](https://github.com/openshift/ibm-roks-toolkit/releases/tag/v4.16.0+20260707).
-|
+|Red Hat OpenShift on IBM Cloud Control Plane Operator, Metrics Server, and toolkit v4.16.0+20260707|See the [Red Hat OpenShift on IBM Cloud toolkit release notes](https://github.com/openshift/ibm-roks-toolkit/releases/tag/v4.16.0+20260707).|
 |Tigera Operator v1.38.13|See the [Tigera Operator release notes](https://github.com/tigera/operator/releases/tag/v1.38.13).|
 {: caption="4.16.64_1624_openshift fix pack." caption-side="bottom"}
 {: #cl-boms_master-41664_1624_openshift_M-component-table}
