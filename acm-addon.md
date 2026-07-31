@@ -2,7 +2,7 @@
 
 copyright:
   years: 2025, 2026
-lastupdated: "2026-07-30"
+lastupdated: "2026-07-31"
 
 
 keywords: openshift, acm, advanced cluster management, manage cluster, management, addon, add-on, acm addon
@@ -44,44 +44,65 @@ Review the following prerequisite steps and information before you install the A
 ## Create a trusted profile for ACM
 {: #trust-prof}
 
-Follow the steps to create a trusted profile to use for ACM.
+Follow the steps to create a trusted profile to use for ACM and assign it to the hub cluster.
+
+Once you add a trusted profile to a cluster, it cannot be removed and you cannot resume using an API key for your resources. Make sure that you follow these steps carefully to ensure that your trusted profile is set up correctly.
+{: important}
+
+### Create a trusted profile using the UI
+{: #trust-prof-ui}
+{: ui}
 
 1. Follow the steps to [create a trusted profile](/docs/iam?topic=iam-create-trusted-profile&interface=ui). In the **Conditions** for the profile, be sure to specify the following access.
+    * Compute resources: **Red Hat OpenShift**
+    * All service resources
     * Allow access when **Namespace** equals `kube-system`
-    * Satellite Service Roles - Satellite Link Administrator, Reader
     * Kubernetes Service Roles - Manager, Editor
-    * Billing Service Roles - Reader, Operator
 
 1. After you create your trusted profile, copy the ID from the **Trusted profiles** page in the console.
 
-1. Create the following secret by using the ID for the trusted profile. Save the following text and enter your credentials. You can follow the steps to create the secret manually or you can use the shell script to [automatically create the secret in your cluster](/docs/openshift?topic=openshift-storage-odf-trusted-profiles&interface=ui#odf-secret-create-trusted-profile).
+### Create a trusted profile using the CLI
+{: #trust-prof-cli}
+{: cli}
 
-    ```txt
-    IBMCLOUD_AUTHTYPE=pod-identity
-    IBMCLOUD_PROFILEID=<TRUSTED-PROFILE-ID>
-    ```
-    {: codeblock}
-
-1. Create a secret in your cluster that contains the credentials for the trusted profile. Save the following YAML to a file called `ibm-cloud-credentials.yaml`. In the `ibm-credentials.env:` field, enter the ID of trusted profile.
-
-    ```yaml
-    apiVersion: v1
-    data:
-      ibm-credentials.env: # Trusted profile ID
-    kind: Secret
-    metadata:
-      name: ibm-cloud-credentials
-      namespace: kube-system
-    type: Opaque
-    ```
-    {: codeblock}
-
-1. [Log in to your account. If applicable, target the appropriate resource group. Set the context for your cluster.](/docs/containers?topic=containers-access_cluster)
-
-1. Create the secret in your cluster.
-
+1. Create the trusted profile.
     ```sh
-    kubectl apply -f ibm-cloud-credentials.yaml
+    ibmcloud iam trusted-profile-create acm-operator-profile
+    ```
+    {: pre}
+
+1. Create the compute resource trust rule, scoped to the `kube-system` namespace on Red Hat OpenShift compute resources.
+    ```sh
+    ibmcloud iam trusted-profile-rule-create acm-operator-profile \
+      --name kube-system-rule \
+      --type Profile-CR \
+      --conditions claim:namespace,operator:EQUALS,value:kube-system \
+      --cr-type ROKS_SA
+    ```
+    {: pre}
+
+1. Assign the IAM access policy to the profile. Replace `CLUSTER_ID` with your hub cluster ID.
+    ```sh
+    ibmcloud iam trusted-profile-policy-create acm-operator-profile \
+      --roles Reader,Viewer,Operator,Editor \
+      --service-name containers-kubernetes \
+      --resource-type cluster \
+      --resource CLUSTER_ID
+    ```
+    {: pre}
+
+### Set the trusted profile for the cluster
+{: #trust-prof-set}
+
+1. Retrieve the trusted profile ID.
+    ```sh
+    ibmcloud iam trusted-profiles
+    ```
+    {: pre}
+
+1. Assign the trusted profile to the cluster.
+    ```sh
+    ibmcloud oc experimental trusted-profile set --cluster CLUSTER_NAME_OR_ID --trusted-profile TRUSTED_PROFILE_ID
     ```
     {: pre}
 

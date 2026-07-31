@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2025, 2026
-lastupdated: "2026-07-27"
+lastupdated: "2026-07-31"
 
 
 keywords: trusted profiles, containers, block storage, openshift
@@ -62,28 +62,26 @@ Create access policies with the permissions in the following table.
 Additionally, if you plan to use **Classic infrastructure**, you must enable the **Add/Upgrade Storage (Storage Layer)** and **Storage Manage** permissions. To enable these permissions, navigate to the [Trusted profile dashboard](https://cloud.ibm.com/iam/trusted-profiles){: external} in the UI and select the relevant trusted profile. Click **Classic infrastructure**, then expand the options under **Sales** and **Devices** to find the permissions.
 
 
-## Minimum access requirements for individual storage components
+## Minimum access requirements for individual components
 {: #tp-minreqs-component}
 
-A minimum set of access policies are required for a trusted profile to be used for your storage components. 
+A minimum set of access policies are required for a trusted profile to be used for the following components.
 
-### VPC block storage
-{: #tp-minreqs-vpc-block}
+### Advanced Cluster Management (ACM)
+{: #tp-minreqs-acm}
 
 Create a trust relationship with the following configuration.
 - Compute service type (found under the **Compute resource** tab in the UI):
-    - `Kubernetes`
     - `Red Hat OpenShift`
+- Select **All service resources**.
 - Trusted namespace: `kube-system`.
 
 Create access policies with the permissions in the following table.
 
 | Service name | Required permission | Description |
 | ------------ | ------------------- | ----------- |
-| Kubernetes service  |  **Operator** | Enables Kubernetes clusters to interact with block storage resources. |
-| VPC Infrastructure service  | **Writer, Editor, Snapshot Remote Account Restorer** | Enables provisioning, management, and cross snapshot operations for block storage resources. | 
-| Resource group | **Viewer** | Specify the resource group where the trusted profile is applied. For operations across multiple resource groups, you must specify all relevant resource groups. Note that if you are creating a custom storage class with the resource group, you must also assign **Viewer** access to the trusted profile for the resource group.  |
-{: caption="Minimum permissions for VPC block storage" caption-side="bottom"}
+| Kubernetes service | **Reader, Viewer, Operator, Editor** | Enables the hub cluster to interact with managed clusters. |
+{: caption="Minimum permissions for ACM" caption-side="bottom"}
 
 ### Classic block storage
 {: #tp-minreqs-classic-block}
@@ -94,32 +92,13 @@ Create a trust relationship with the following configuration.
     - `Red Hat OpenShift`
 - Trusted namespace: `kube-system`.
 
-Add the permissions in the following table. To enable these permissions, you must use the UI. Navigate to the [Trusted profile dashboard](https://cloud.ibm.com/iam/trusted-profiles){: external} in the UI and select the relevant trusted profile. Click **Classic infrastructure**, then expand the options to find the permissions. 
+Add the permissions in the following table. To enable these permissions, you must use the UI. Navigate to the [Trusted profile dashboard](https://cloud.ibm.com/iam/trusted-profiles){: external} in the UI and select the relevant trusted profile. Click **Classic infrastructure**, then expand the options to find the permissions.
 
 | Service name | Required permission | Description |
 | ------------ | ------------------- | ----------- |
-| `Devices` | **Storage Manage**  |  Enables attachment, detachment, and configuration of Classic block storage on devices.  |
+| `Devices` | **Storage Manage** | Enables attachment, detachment, and configuration of Classic block storage on devices. |
 | `Sales` | **Add/Upgrade Storage(Storage Layer)** | Grants permission to order, upgrade, or modify Classic storage offerings via the Sales APIs. |
 {: caption="Minimum permissions for Classic Block storage" caption-side="bottom"}
-
-
-### VPC file storage
-{: #tp-minreqs-vpc-file}
-
-Create a trust relationship with the following configuration.
-- Compute service type (found under the **Compute resource** tab in the UI):
-    - `Kubernetes`
-    - `Red Hat OpenShift`
-- Trusted namespace: `kube-system`.
-
-Create access policies with the permissions in the following table.
-
-| Service name | Required permission | Description |
-| ------------ | ------------------- | ----------- |
-| Kubernetes service  |  **Operator** | Enables Kubernetes clusters to interact with file storage resources. |
-| VPC Infrastructure service  | **Writer, Editor** | Enables provisioning and management of file storage resources. |
-| Resource group | **Viewer** | Specify the resource group where the trusted profile is applied. For operations across multiple resource groups, you must specify all relevant resource groups. Note that if you are creating a custom storage class with the resource group, you must also assign **Viewer** access to the trusted profile for the resource group.  |
-{: caption="Minimum permissions for VPC File storage" caption-side="bottom"}
 
 ### Classic file storage
 {: #tp-minreqs-classic-file}
@@ -130,14 +109,13 @@ Create a trust relationship with the following configuration.
     - `Red Hat OpenShift`
 - Trusted namespace: `kube-system`.
 
-Add the permissions in the following table. To enable these permissions, you must use the UI. Navigate to the [Trusted profile dashboard](https://cloud.ibm.com/iam/trusted-profiles){: external} in the UI and select the relevant trusted profile. Click **Classic infrastructure**, then expand the options to find the permissions. 
+Add the permissions in the following table. To enable these permissions, you must use the UI. Navigate to the [Trusted profile dashboard](https://cloud.ibm.com/iam/trusted-profiles){: external} in the UI and select the relevant trusted profile. Click **Classic infrastructure**, then expand the options to find the permissions.
 
 | Service name | Required permission | Description |
 | ------------ | ------------------- | ----------- |
-| `Devices` | **Storage Manage**  |  Enables attachment, detachment, and configuration of Classic block storage on devices.  |
+| `Devices` | **Storage Manage** | Enables attachment, detachment, and configuration of Classic block storage on devices. |
 | `Sales` | **Add/Upgrade Storage(Storage Layer)** | Grants permission to order, upgrade, or modify Classic storage offerings via the Sales APIs. |
 {: caption="Minimum permissions for Classic File storage" caption-side="bottom"}
-
 
 ### Cluster autoscaler
 {: #tp-minreqs-autoscaler}
@@ -152,7 +130,7 @@ Create access policies with the permissions in the following table.
 
 | Service name | Required permission | Description |
 | ------------ | ------------------- | ----------- |
-| Kubernetes service   | **Administrator**  | Enables Kubernetes clusters to interact with auto-scaler components. |
+| Kubernetes service | **Administrator** | Enables Kubernetes clusters to interact with auto-scaler components. |
 {: caption="Minimum permissions for cluster autoscaler" caption-side="bottom"}
 
 ### Object Storage
@@ -168,8 +146,8 @@ Create access policies with the permissions in the following table.
 
 | Service name | Required permission | Description |
 | ------------ | ------------------- | ----------- |
-| Kubernetes service  |  **Reader, Viewer** | Enables Kubernetes clusters to interact with the COS plug-in. |
-| VPC Infrastructure service  | **Reader, Viewer** | Enables the communication with VPC to get API calls.  |
+| Kubernetes service | **Reader, Viewer** | Enables Kubernetes clusters to interact with the COS plug-in. |
+| VPC Infrastructure service | **Reader, Viewer** | Enables the communication with VPC to get API calls. |
 | Resource group | **Viewer** | Specify the resource group where the trusted profile is applied. For operations across multiple resource groups, you must specify all relevant resource groups. |
 {: caption="Minimum permissions for Object storage" caption-side="bottom"}
 
@@ -186,11 +164,47 @@ Create access policies with the permissions in the following table.
 
 | Service name | Required permission | Description |
 | ------------ | ------------------- | ----------- |
-| Billing | **Editor**  | Billing service. Allows viewing and managing billing data such as usage, cost, and reports. Useful for automated cost tracking or budget-aware operations. |
-| Kubernetes service  | **Editor** | Enables Kubernetes clusters to interact with block storage. |
-| VPC Infrastructure service  | **Editor, Writer** | Allows provisioning and management of storage resources. |
+| Billing | **Editor** | Allows viewing and managing billing data such as usage, cost, and reports. Useful for automated cost tracking or budget-aware operations. |
+| Kubernetes service | **Editor** | Enables Kubernetes clusters to interact with block storage. |
+| VPC Infrastructure service | **Editor, Writer** | Allows provisioning and management of storage resources. |
 | Resource group | **Viewer** | Specify the resource group where the trusted profile is applied. For operations across multiple resource groups, you must specify all relevant resource groups. |
 {: caption="Minimum permissions for ODF billing agent" caption-side="bottom"}
+
+### VPC block storage
+{: #tp-minreqs-vpc-block}
+
+Create a trust relationship with the following configuration.
+- Compute service type (found under the **Compute resource** tab in the UI):
+    - `Kubernetes`
+    - `Red Hat OpenShift`
+- Trusted namespace: `kube-system`.
+
+Create access policies with the permissions in the following table.
+
+| Service name | Required permission | Description |
+| ------------ | ------------------- | ----------- |
+| Kubernetes service | **Operator** | Enables Kubernetes clusters to interact with block storage resources. |
+| VPC Infrastructure service | **Writer, Editor, Snapshot Remote Account Restorer** | Enables provisioning, management, and cross snapshot operations for block storage resources. |
+| Resource group | **Viewer** | Specify the resource group where the trusted profile is applied. For operations across multiple resource groups, you must specify all relevant resource groups. Note that if you are creating a custom storage class with the resource group, you must also assign **Viewer** access to the trusted profile for the resource group. |
+{: caption="Minimum permissions for VPC block storage" caption-side="bottom"}
+
+### VPC file storage
+{: #tp-minreqs-vpc-file}
+
+Create a trust relationship with the following configuration.
+- Compute service type (found under the **Compute resource** tab in the UI):
+    - `Kubernetes`
+    - `Red Hat OpenShift`
+- Trusted namespace: `kube-system`.
+
+Create access policies with the permissions in the following table.
+
+| Service name | Required permission | Description |
+| ------------ | ------------------- | ----------- |
+| Kubernetes service | **Operator** | Enables Kubernetes clusters to interact with file storage resources. |
+| VPC Infrastructure service | **Writer, Editor** | Enables provisioning and management of file storage resources. |
+| Resource group | **Viewer** | Specify the resource group where the trusted profile is applied. For operations across multiple resource groups, you must specify all relevant resource groups. Note that if you are creating a custom storage class with the resource group, you must also assign **Viewer** access to the trusted profile for the resource group. |
+{: caption="Minimum permissions for VPC File storage" caption-side="bottom"}
 
 
 ## Set up a trusted profile in the CLI
