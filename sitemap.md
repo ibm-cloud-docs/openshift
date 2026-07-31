@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2026
-lastupdated: "2026-07-30"
+lastupdated: "2026-07-31"
 
 
 keywords: openshift
@@ -8208,15 +8208,11 @@ subcollection: openshift
 
     * [Version 5.1.13_345, released 14 September 2023](/docs/openshift?topic=openshift-cl-add-ons-vpc-block-csi-driver#5.1.13_345_is_block_relnote)
 
-    * [Version 5.1.12_285, released 01 August 2023](/docs/openshift?topic=openshift-cl-add-ons-vpc-block-csi-driver#5.1.12_285_is_block_relnote)
-
     * [Version 5.0.23_437, released 27 November 2023](/docs/openshift?topic=openshift-cl-add-ons-vpc-block-csi-driver#5.0.23_437_is_block_relnote)
 
     * [Version 5.0.21_401, released 13 November 2023](/docs/openshift?topic=openshift-cl-add-ons-vpc-block-csi-driver#5.0.21_401_is_block_relnote)
 
     * [Version 5.0.19_358, released 14 September 2023](/docs/openshift?topic=openshift-cl-add-ons-vpc-block-csi-driver#5.0.19_358_is_block_relnote)
-
-    * [Version 5.0.17_266, released 01 August 2023](/docs/openshift?topic=openshift-cl-add-ons-vpc-block-csi-driver#5.0.17_266_is_block_relnote)
 
 [VPC File CSI Driver add-on version change log](/docs/openshift?topic=openshift-cl-add-ons-vpc-file-csi-driver#cl-add-ons-vpc-file-csi-driver)
 
