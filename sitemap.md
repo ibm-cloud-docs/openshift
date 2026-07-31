@@ -2581,13 +2581,11 @@ subcollection: openshift
 
 * [Minimum access requirements for all storage components](/docs/openshift?topic=openshift-configure-trusted-profile#tp-minreqs-all)
 
-* [Minimum access requirements for individual storage components](/docs/openshift?topic=openshift-configure-trusted-profile#tp-minreqs-component)
+* [Minimum access requirements for individual components](/docs/openshift?topic=openshift-configure-trusted-profile#tp-minreqs-component)
 
-    * [VPC block storage](/docs/openshift?topic=openshift-configure-trusted-profile#tp-minreqs-vpc-block)
+    * [Advanced Cluster Management (ACM)](/docs/openshift?topic=openshift-configure-trusted-profile#tp-minreqs-acm)
 
     * [Classic block storage](/docs/openshift?topic=openshift-configure-trusted-profile#tp-minreqs-classic-block)
-
-    * [VPC file storage](/docs/openshift?topic=openshift-configure-trusted-profile#tp-minreqs-vpc-file)
 
     * [Classic file storage](/docs/openshift?topic=openshift-configure-trusted-profile#tp-minreqs-classic-file)
 
@@ -2596,6 +2594,10 @@ subcollection: openshift
     * [Object Storage](/docs/openshift?topic=openshift-configure-trusted-profile#tp-minreqs-cos)
 
     * [ODF billing agent](/docs/openshift?topic=openshift-configure-trusted-profile#tp-minreqs-odf-billing)
+
+    * [VPC block storage](/docs/openshift?topic=openshift-configure-trusted-profile#tp-minreqs-vpc-block)
+
+    * [VPC file storage](/docs/openshift?topic=openshift-configure-trusted-profile#tp-minreqs-vpc-file)
 
 * [Set up a trusted profile in the CLI](/docs/openshift?topic=openshift-configure-trusted-profile&interface=cli#tp-setup-cli)
 
@@ -4138,7 +4140,13 @@ subcollection: openshift
 
 * [Create a trusted profile for ACM](/docs/openshift?topic=openshift-acm#trust-prof)
 
-* [Preparing secrets for ACM](/docs/openshift?topic=openshift-acm#prep-secret)
+    * [Create a trusted profile using the UI](/docs/openshift?topic=openshift-acm&interface=ui#trust-prof-ui)
+
+    * [Create a trusted profile using the CLI](/docs/openshift?topic=openshift-acm&interface=cli#trust-prof-cli)
+
+    * [Set the trusted profile for the cluster](/docs/openshift?topic=openshift-acm&interface=cli#trust-prof-set)
+
+* [Preparing secrets for ACM](/docs/openshift?topic=openshift-acm&interface=cli#prep-secret)
 
 * [Installing ACM from the UI](/docs/openshift?topic=openshift-acm&interface=ui#install-ui)
 
@@ -5353,29 +5361,33 @@ subcollection: openshift
 
 [OpenShift Data Foundation Regional Disaster Recovery on {{site.data.keyword.openshiftlong_notm}} clusters](/docs/openshift?topic=openshift-openshift_odf_rdr_roks#openshift_odf_rdr_roks)
 
-* [Applications and workloads supported for Regional Disaster Recovery](/docs/openshift?topic=openshift-openshift_odf_rdr_roks#app_support)
-
 * [Before you begin](/docs/openshift?topic=openshift-openshift_odf_rdr_roks#prereq)
 
-* [Step 1. Creating the clusters](/docs/openshift?topic=openshift-openshift_odf_rdr_roks&interface=cli#clusters-cli)
+* [Step 1. Create the hub cluster](/docs/openshift?topic=openshift-openshift_odf_rdr_roks#hub-cluster-create)
 
-* [Step 2. Install ACM on the hub cluster](/docs/openshift?topic=openshift-openshift_odf_rdr_roks&interface=cli#hub-acm-install)
+* [Step 2. Create a trusted profile for the hub cluster](/docs/openshift?topic=openshift-openshift_odf_rdr_roks#hub-cluster-trusted-profile)
 
-* [Step 3. Import the clusters to be managed by the hub cluster](/docs/openshift?topic=openshift-openshift_odf_rdr_roks&interface=cli#import)
+* [Step 3. Create the managed clusters](/docs/openshift?topic=openshift-openshift_odf_rdr_roks#managed-cluster-create)
 
-* [Step 4. Configure the Submariner add-on](/docs/openshift?topic=openshift-openshift_odf_rdr_roks&interface=cli#submariner)
+* [Step 4. Install the ACM add-on on the hub](/docs/openshift?topic=openshift-openshift_odf_rdr_roks#hub-acm-install)
 
-* [Step 5. Install and configure OpenShift Data Foundation](/docs/openshift?topic=openshift-openshift_odf_rdr_roks&interface=cli#odf_install)
+* [Step 5. Import the clusters to be managed by the hub cluster](/docs/openshift?topic=openshift-openshift_odf_rdr_roks#import)
 
-* [Step 6. Configure the Regional Disaster Recovery policy](/docs/openshift?topic=openshift-openshift_odf_rdr_roks&interface=cli#rdr-configure)
+* [Step 6. Configure the Submariner add-on](/docs/openshift?topic=openshift-openshift_odf_rdr_roks#submariner)
 
-* [Optional operators for ODF Regional Disaster Recovery](/docs/openshift?topic=openshift-openshift_odf_rdr_roks&interface=cli#odf-rdr-operators)
+* [Step 7. Install and configure OpenShift Data Foundation](/docs/openshift?topic=openshift-openshift_odf_rdr_roks#odf_install)
 
-* [Testing your disaster recovery configuration](/docs/openshift?topic=openshift-openshift_odf_rdr_roks&interface=cli#odf-rdr-test)
+* [Step 8. Configure the Regional Disaster Recovery policy](/docs/openshift?topic=openshift-openshift_odf_rdr_roks#rdr-configure)
 
-* [Upgrading your ODF Regional Disaster Recovery environment](/docs/openshift?topic=openshift-openshift_odf_rdr_roks&interface=cli#odf-rdr-upgrade)
+* [Optional operators for ODF Regional Disaster Recovery](/docs/openshift?topic=openshift-openshift_odf_rdr_roks#odf-rdr-operators)
 
-* [Troubleshooting](/docs/openshift?topic=openshift-openshift_odf_rdr_roks&interface=cli#odf-rdr-troubleshoot)
+* [Testing your disaster recovery configuration](/docs/openshift?topic=openshift-openshift_odf_rdr_roks#odf-rdr-test)
+
+* [Upgrading your ODF Regional Disaster Recovery environment](/docs/openshift?topic=openshift-openshift_odf_rdr_roks#odf-rdr-upgrade)
+
+* [Troubleshooting](/docs/openshift?topic=openshift-openshift_odf_rdr_roks#odf-rdr-troubleshoot)
+
+* [Supported applications and workloads](/docs/openshift?topic=openshift-openshift_odf_rdr_roks#app_support_detail)
 
 [ODF: Upgrading Your ODF-RDR Environment](/docs/openshift?topic=openshift-openshift_odf_rdr_upgrade#openshift_odf_rdr_upgrade)
 
