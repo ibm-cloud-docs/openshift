@@ -41,6 +41,7 @@ Openshift AI cluster add-on patch updates.
 :   For more information, see the [change log](/docs/openshift?topic=openshift-cl-add-ons-openshift-ai).
 
 
+
 ## July 2026
 {: #openshift-jul26}
 
@@ -81,6 +82,7 @@ Worker node fix packs are available for {{site.data.keyword.openshiftlong_notm}}
 :   [Version 4.18 change log](/docs/openshift?topic=openshift-changelog_418)
 :   [Version 4.17 change log](/docs/openshift?topic=openshift-changelog_417)
 :   [Version 4.16 change log](/docs/openshift?topic=openshift-changelog_416)
+
 
 
 IBM Object CSI Driver cluster add-on patch updates.
@@ -225,6 +227,7 @@ OpenShift Virtualization cluster add-on patch updates.
 
 
 
+
 IBM Cloud Image Key Synchronizer cluster add-on patch updates.
 :   For more information, see the [change log](/docs/openshift?topic=openshift-cl-add-ons-ibm-cloud-image-key-synchronizer).
 
@@ -285,6 +288,7 @@ OpenShift Data Foundation cluster add-on patch updates.
 :   For more information, see the [change log](/docs/openshift?topic=openshift-cl-add-ons-openshift-data-foundation).
 
 
+
 ### 15 June 2026
 {: #openshift-jun1526}
 {: release-note}
@@ -319,6 +323,7 @@ Openshift AI cluster add-on patch updates.
 
 IBM Cloud Image Key Synchronizer cluster add-on patch updates.
 :   For more information, see the [change log](/docs/openshift?topic=openshift-cl-add-ons-ibm-cloud-image-key-synchronizer).
+
 
 
 VPC File CSI Driver cluster add-on patch updates.
@@ -895,6 +900,7 @@ OpenShift Data Foundation cluster add-on patch updates.
 :   For more information, see the [change log](/docs/openshift?topic=openshift-cl-add-ons-openshift-data-foundation).
 
 
+
 ### 03 March 2026
 {: #openshift-mar0326}
 {: release-note}
@@ -1305,6 +1311,7 @@ OpenShift AI cluster add-on patch updates.
 :   For more information, see the [change log](/docs/openshift?topic=openshift-cl-add-ons-openshift-ai).
 
 
+
 ### 18 November 2025
 {: #openshift-nov1825}
 {: release-note}
@@ -1626,6 +1633,7 @@ CLI version `1.0.717` is available.
 
 OpenShift Data Foundation cluster add-on patch updates.
 :   For more information, see the [change log](/docs/openshift?topic=openshift-cl-add-ons-openshift-data-foundation).
+
 
 
 ## August 2025
@@ -3341,6 +3349,7 @@ Image Key Synchronizer add-on patch update.
 
 
 
+
 ### 29 May 2024
 {: #openshift-may2924}
 {: release-note}
@@ -3668,6 +3677,7 @@ Operators FAQ
 
 Enable remote health monitoring with Telemetry
 :   See the steps to [enable remote health monitoring with Telemetry](/docs/openshift?topic=openshift-telemetry) for certain {{site.data.keyword.openshiftlong_notm}} clusters.
+
 
 
 
