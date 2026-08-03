@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2026
-lastupdated: "2026-07-30"
+lastupdated: "2026-08-03"
 
 
 keywords: openshift
@@ -25,6 +25,9 @@ content-type: troubleshoot
 
 [Virtual Private Cloud]{: tag-vpc} [Classic infrastructure]{: tag-classic-inf} [{{site.data.keyword.satelliteshort}}]{: tag-satellite}
 
+
+Troubleshoot a missing Ingress subdomain after repeatedly creating and deleting clusters with the same or similar names.
+{: shortdesc}
 
 You create and delete a cluster multiple times, such as for automation purposes.
 {: tsSymptoms}

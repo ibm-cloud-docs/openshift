@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2026
-lastupdated: "2026-04-15"
+lastupdated: "2026-08-03"
 
 
 keywords: openshift
@@ -26,6 +26,9 @@ content-type: troubleshoot
 
 [Virtual Private Cloud]{: tag-vpc} [Classic infrastructure]{: tag-classic-inf}
 
+
+Troubleshoot Portworx encryption failures caused by an invalid KMS endpoint in the Kubernetes secret configuration.
+{: shortdesc}
 
 When you provision Portworx and set up encryption, you receive an error similar to the following:
 {: tsSymptoms}

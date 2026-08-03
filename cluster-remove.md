@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2026
-lastupdated: "2026-07-30"
+lastupdated: "2026-08-03"
 
 
 keywords: openshift, {{site.data.keyword.openshiftlong_notm}}, kubernetes, clusters, worker nodes, worker pools, delete
@@ -23,7 +23,7 @@ subcollection: openshift
 
 [Virtual Private Cloud]{: tag-vpc} [Classic infrastructure]{: tag-classic-inf} [{{site.data.keyword.satelliteshort}}]{: tag-satellite}
 
-Clusters that are created with a billable account must be removed manually when they are not needed anymore so that those clusters are no longer consuming resources.
+Remove a cluster that you no longer need to stop charges and clean up worker nodes, apps, containers, and related resources.
 {: shortdesc}
 
 When you delete the cluster, all worker nodes, apps, and containers are permanently deleted. This action can't be undone. Before you proceed, make sure to back up all required data and configuration files.
