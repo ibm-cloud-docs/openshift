@@ -536,9 +536,7 @@ subcollection: openshift
 
         * VPC Block CSI Driver cluster add-on patch updates.
 
-* [June 2025](/docs/openshift?topic=openshift-openshift-relnotes#openshift-jun25)
-
-    * [09 June 2025](/docs/openshift?topic=openshift-openshift-relnotes#openshift-jun0925)
+    * [09 June 2026](/docs/openshift?topic=openshift-openshift-relnotes#openshift-jun0926)
 
         * {{site.data.keyword.openshiftlong_notm}} version 4.16 is deprecated.
 
@@ -9598,7 +9596,7 @@ subcollection: openshift
 
 [VPC worker nodes fail to provision due to quota limits](/docs/openshift?topic=openshift-ts-worker-vpc-quota#ts-worker-vpc-quota)
 
-[Why do pods show "pull QPS exceeded" errors during image pulls?](/docs/openshift?topic=openshift-ts-vpc-image-pull-qps#ts-vpc-image-pull-qps)
+[Why do pods show `pull QPS exceeded` errors during image pulls?](/docs/openshift?topic=openshift-ts-vpc-image-pull-qps#ts-vpc-image-pull-qps)
 
 * [Check disk I/O bandwidth](/docs/openshift?topic=openshift-ts-vpc-image-pull-qps#check-bandwidth-openshift)
 

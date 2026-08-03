@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2026
-lastupdated: "2026-07-27"
+lastupdated: "2026-08-03"
 
 
 keywords: openshift, kubernetes, logmet, logs, metrics, audit, events
@@ -354,7 +354,7 @@ A few important things to note before preparing to forward logs:
 
 1. The image tag `icr.io/ibm/ibmcloud-kube-audit-to-ibm-cloud-logs:latest` does receive vulnerability and bug fix updates. However, the deployment must be restarted manually to pick up those changes. Use `kubectl rollout restart -n ibm-kube-audit deploy/ibmcloud-kube-audit` to pull the latest image and gracefully restart.
 2. This deployment is manually installed and managed. Switching from this deployment to another may result in audit log downtime.
-3. The certificate generated below can be rotated. Rotation requires manual steps to replace the secret and restart the deployment.
+3. The certificate generated in the following steps can be rotated. Rotation requires manual steps to replace the secret and restart the deployment.
 
 To secure the deployment with encryption in transit, a private key and TLS certificate signed by the kube-apiserver are required.
 
@@ -464,7 +464,7 @@ To secure the deployment with encryption in transit, a private key and TLS certi
     ```
     {: pre}
     
-11. The audit webhook is now ready to receive events over an encrypted connection. When configuring the audit webhook in the full guide above, you must use the `https` version of the `--remote-server` URL instead:
+11. The audit webhook is now ready to receive events over an encrypted connection. When configuring the audit webhook in the [Forwarding Kubernetes API audit logs to Cloud Logs](#audit-api-server-la) section, you must use the `https` version of the `--remote-server` URL instead:
     ```txt
     https://127.0.0.1:2040/api/v1/namespaces/ibm-kube-audit/services/https:ibmcloud-kube-audit-service:https/proxy/post`
     ```

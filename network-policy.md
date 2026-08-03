@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2026
-lastupdated: "2026-07-27"
+lastupdated: "2026-08-03"
 
 
 keywords: openshift
@@ -253,7 +253,7 @@ These policies are not meant to block everything, nor do they necessarily meet a
 Whenever new locations for {{site.data.keyword.openshiftlong_notm}} and other {{site.data.keyword.cloud_notm}} are enabled, the subnets for these locations are added to the Calico policies. Be sure to [watch the GitHub repository](https://github.com/IBM-Cloud/kube-samples/tree/master/calico-policies/public-network-isolation){: external} for any updates to these policies.
 {: note}
 
-Note that we no longer recommend using the allow-egress-pods-public, allow-public-services-pods, allow-openshift-console, allow-kube-system-to-olm, allow-openshift-metrics, allow-egress-pods-private, or allow-private-services-pods sample policies in the public and private network policies sections below.  These policies controlled egress from all pods in the cluster.  If you want to control traffic to/from pods you should use Kubernetes NetworkPolicy and target specific namespaces and pods instead of using these blanket policies that treat each pod the same.
+Note that we no longer recommend using the allow-egress-pods-public, allow-public-services-pods, allow-openshift-console, allow-kube-system-to-olm, allow-openshift-metrics, allow-egress-pods-private, or allow-private-services-pods sample policies in the [Applying public network policies](#calico-public) and [Applying private network policies](#isolate_workers) sections.  These policies controlled egress from all pods in the cluster.  If you want to control traffic to/from pods you should use Kubernetes NetworkPolicy and target specific namespaces and pods instead of using these blanket policies that treat each pod the same.
 {: important}
 
 ### Applying public network policies
