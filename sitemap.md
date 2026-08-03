@@ -510,8 +510,6 @@ subcollection: openshift
 
         * Openshift AI cluster add-on patch updates.
 
-        * Openshift AI cluster add-on patch updates.
-
     * [22 June 2026](/docs/openshift?topic=openshift-openshift-relnotes#openshift-jun2226)
 
         * IBM Storage Operator cluster add-on patch updates.

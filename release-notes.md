@@ -243,9 +243,6 @@ IBM Cloud Image Key Synchronizer cluster add-on patch updates.
 
 
 
-
-
-
 ### 23 June 2026
 {: #openshift-jun2326}
 {: release-note}
@@ -253,8 +250,6 @@ IBM Cloud Image Key Synchronizer cluster add-on patch updates.
 Openshift AI cluster add-on patch updates.
 :   For more information, see the [change log](/docs/openshift?topic=openshift-cl-add-ons-openshift-ai).
 
-Openshift AI cluster add-on patch updates.
-:   For more information, see the [change log](/docs/openshift?topic=openshift-cl-add-ons-openshift-ai).
 
 ### 22 June 2026
 {: #openshift-jun2226}
