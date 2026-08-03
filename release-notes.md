@@ -1389,6 +1389,8 @@ OpenShift AI cluster add-on patch updates.
 ## October 2025
 {: #openshift-oct25}
 
+
+
 ### 31 October 2025
 {: #openshift-oct3125}
 {: release-note}
