@@ -233,16 +233,6 @@ IBM Storage Operator cluster add-on patch updates.
 VPC File CSI Driver cluster add-on patch updates.
 :   For more information, see the [change log](/docs/openshift?topic=openshift-cl-add-ons-vpc-file-csi-driver).
 
-### 09 June 2026
-{: #openshift-jun0926}
-{: release-note}
-
-IBM Cloud Image Key Synchronizer cluster add-on patch updates.
-:   For more information, see the [change log](/docs/openshift?topic=openshift-cl-add-ons-ibm-cloud-image-key-synchronizer).
-
-
-
-
 ### 23 June 2026
 {: #openshift-jun2326}
 {: release-note}
@@ -324,26 +314,23 @@ VPC Block CSI Driver cluster add-on patch updates.
 :   Support for 4.16 ends on {{site.data.keyword.openshift_416_unsupported_date}}.
 :   Update your cluster to at least [version 4.17](/docs/openshift?topic=openshift-cs_versions_417) as soon as possible.
 
-
 Openshift AI cluster add-on patch updates.
 :   For more information, see the [change log](/docs/openshift?topic=openshift-cl-add-ons-openshift-ai).
-
-
-VPC File CSI Driver cluster add-on patch updates.
-:   For more information, see the [change log](/docs/openshift?topic=openshift-cl-add-ons-vpc-file-csi-driver).
-
-
 
 IBM Cloud Image Key Synchronizer cluster add-on patch updates.
 :   For more information, see the [change log](/docs/openshift?topic=openshift-cl-add-ons-ibm-cloud-image-key-synchronizer).
 
 
+VPC File CSI Driver cluster add-on patch updates.
+:   For more information, see the [change log](/docs/openshift?topic=openshift-cl-add-ons-vpc-file-csi-driver).
+
 IBM Storage Operator cluster add-on patch updates.
 :   For more information, see the [change log](/docs/openshift?topic=openshift-cl-add-ons-ibm-storage-operator).
 
-
 IBM Object CSI Driver cluster add-on patch updates.
 :   For more information, see the [change log](/docs/openshift?topic=openshift-cl-add-ons-ibm-object-csi-driver).
+
+
 
 ### 03 June 2026
 {: #openshift-jun0326}
@@ -385,6 +372,8 @@ VPC File CSI Driver cluster add-on patch updates.
 
 VPC Block CSI Driver cluster add-on patch updates.
 :   For more information, see the [change log](/docs/openshift?topic=openshift-cl-add-ons-vpc-block-csi-driver).
+
+
 
 ### 27 May 2026
 {: #openshift-may2726}
@@ -458,8 +447,6 @@ Static Route cluster add-on patch updates.
 
 Extended Update Support (EUS) repositories enabled for RHEL 9 worker nodes.
 :   EUS repositories are now enabled for Red Hat Enterprise Linux 9 worker nodes in {{site.data.keyword.openshiftlong_notm}}. This enables access to extended support for specific RHEL minor versions. If you are installing NVIDIA GPU drivers on RHEL 9 worker nodes, you must apply a workaround to enable all required EUS repositories. For more information, see [Why does my NVIDIA GPU driver installation fail on RHEL 9 worker nodes?](/docs/openshift?topic=openshift-ts-gpu-driver-rhel9-eus).
-
-
 
 
 
@@ -1144,14 +1131,18 @@ IBM Storage Operator cluster add-on patch updates.
 VPC Block CSI Driver cluster add-on patch updates.
 :   For more information, see the [change log](/docs/openshift?topic=openshift-cl-add-ons-vpc-block-csi-driver).
 
+### 17 January 2026
+{: #openshift-jan1726}
+{: release-note}
+
+
+
 ### 14 January 2026
 {: #openshift-jan1426}
 {: release-note}
 
 CLI version `1.0.745` is available.
 :   For more information, see [Updating the CLI](/docs/openshift?topic=openshift-cli-update) and the [CLI change log](/docs/openshift?topic=openshift-cs_cli_changelog).
-
-
 
 ### 13 January 2026
 {: #openshift-jan1326}
@@ -1391,28 +1382,6 @@ OpenShift AI cluster add-on patch updates.
 ## October 2025
 {: #openshift-oct25}
 
-### 07 October 2025
-{: #openshift-oct0725}
-{: release-note}
-
-
-
-
-
-{{site.data.keyword.openshiftlong_notm}} worker node fix packs are available.
-:   Worker node fix packs can be applied by updating or reloading the worker node in classic infrastructure, or replacing the worker node in VPC infrastructure. Review the following change logs for your cluster version.
-:   [Version 4.19 change log](/docs/openshift?topic=openshift-openshift_changelog_419)
-:   [Version 4.18 change log](/docs/openshift?topic=openshift-openshift_changelog_418)
-:   [Version 4.17 change log](/docs/openshift?topic=openshift-openshift_changelog_417)
-:   [Version 4.16 change log](/docs/openshift?topic=openshift-openshift_changelog_416)
-
-
-
-
-
-
-
-
 ### 31 October 2025
 {: #openshift-oct3125}
 {: release-note}
@@ -1512,6 +1481,23 @@ OpenShift AI cluster add-on patch updates.
 
 
 
+
+
+
+### 07 October 2025
+{: #openshift-oct0725}
+{: release-note}
+
+
+
+
+
+{{site.data.keyword.openshiftlong_notm}} worker node fix packs are available.
+:   Worker node fix packs can be applied by updating or reloading the worker node in classic infrastructure, or replacing the worker node in VPC infrastructure. Review the following change logs for your cluster version.
+:   [Version 4.19 change log](/docs/openshift?topic=openshift-openshift_changelog_419)
+:   [Version 4.18 change log](/docs/openshift?topic=openshift-openshift_changelog_418)
+:   [Version 4.17 change log](/docs/openshift?topic=openshift-openshift_changelog_417)
+:   [Version 4.16 change log](/docs/openshift?topic=openshift-openshift_changelog_416)
 
 
 

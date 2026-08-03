@@ -502,10 +502,6 @@ subcollection: openshift
 
         * VPC File CSI Driver cluster add-on patch updates.
 
-    * [09 June 2026](/docs/openshift?topic=openshift-openshift-relnotes#openshift-jun0926)
-
-        * IBM Cloud Image Key Synchronizer cluster add-on patch updates.
-
     * [23 June 2026](/docs/openshift?topic=openshift-openshift-relnotes#openshift-jun2326)
 
         * Openshift AI cluster add-on patch updates.
@@ -540,9 +536,9 @@ subcollection: openshift
 
         * Openshift AI cluster add-on patch updates.
 
-        * VPC File CSI Driver cluster add-on patch updates.
-
         * IBM Cloud Image Key Synchronizer cluster add-on patch updates.
+
+        * VPC File CSI Driver cluster add-on patch updates.
 
         * IBM Storage Operator cluster add-on patch updates.
 
@@ -854,6 +850,8 @@ subcollection: openshift
 
         * VPC Block CSI Driver cluster add-on patch updates.
 
+    * [17 January 2026](/docs/openshift?topic=openshift-openshift-relnotes#openshift-jan1726)
+
     * [14 January 2026](/docs/openshift?topic=openshift-openshift-relnotes#openshift-jan1426)
 
         * CLI version `1.0.745` is available.
@@ -936,10 +934,6 @@ subcollection: openshift
 
 * [October 2025](/docs/openshift?topic=openshift-openshift-relnotes#openshift-oct25)
 
-    * [07 October 2025](/docs/openshift?topic=openshift-openshift-relnotes#openshift-oct0725)
-
-        * {{site.data.keyword.openshiftlong_notm}} worker node fix packs are available.
-
     * [31 October 2025](/docs/openshift?topic=openshift-openshift-relnotes#openshift-oct3125)
 
         * {{site.data.keyword.openshiftlong_notm}} version 4.14 and 4.15 are deprecated.
@@ -973,6 +967,10 @@ subcollection: openshift
         * OpenShift AI cluster add-on patch updates.
 
         * {{site.data.keyword.openshiftlong_notm}} master fix packs.
+
+    * [07 October 2025](/docs/openshift?topic=openshift-openshift-relnotes#openshift-oct0725)
+
+        * {{site.data.keyword.openshiftlong_notm}} worker node fix packs are available.
 
     * [02 October 2025](/docs/openshift?topic=openshift-openshift-relnotes#openshift-oct0225)
 
