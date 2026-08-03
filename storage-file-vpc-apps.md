@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2022, 2026
-lastupdated: "2026-07-30"
+lastupdated: "2026-08-03"
 
 keywords: kubernetes, openshift
 
@@ -974,7 +974,7 @@ Use a key management service (KMS) provider, such as {{site.data.keyword.keymana
 
 
 ## Setting up encryption in-transit (EIT)
-{: #storage-file-vpc-eit}
+{: #storage-file-vpc-apps-eit}
 
 To set up encryption in-transit for {{site.data.keyword.filestorage_vpc_short}}, see [Encryption in transit for {{site.data.keyword.filestorage_vpc_full_notm}}](/docs/openshift?topic=openshift-storage-file-vpc-eit). That topic covers both zonal file shares (`dp2` profile) and regional file shares (`rfs` profile, Beta).
 

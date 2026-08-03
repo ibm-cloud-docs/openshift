@@ -432,8 +432,6 @@ subcollection: openshift
 
 [Release notes](/docs/openshift?topic=openshift-openshift-relnotes#openshift-relnotes)
 
-* [July 2026](/docs/openshift?topic=openshift-openshift-relnotes#openshift-jul26)
-
 * [August 2026](/docs/openshift?topic=openshift-openshift-relnotes#openshift-aug26)
 
     * [3 August 2026](/docs/openshift?topic=openshift-openshift-relnotes#openshift-aug0326)
@@ -553,8 +551,6 @@ subcollection: openshift
         * IBM Storage Operator cluster add-on patch updates.
 
         * IBM Object CSI Driver cluster add-on patch updates.
-
-* [June 2026](/docs/openshift?topic=openshift-openshift-relnotes#openshift-jun26)
 
     * [03 June 2026](/docs/openshift?topic=openshift-openshift-relnotes#openshift-jun0326)
 
@@ -944,7 +940,7 @@ subcollection: openshift
 
 * [October 2025](/docs/openshift?topic=openshift-openshift-relnotes#openshift-oct25)
 
-    * [07 October 2025](/docs/openshift?topic=openshift-openshift-relnotes#openshift-nov0725)
+    * [07 October 2025](/docs/openshift?topic=openshift-openshift-relnotes#openshift-oct0725)
 
         * {{site.data.keyword.openshiftlong_notm}} worker node fix packs are available.
 
@@ -4961,7 +4957,7 @@ subcollection: openshift
 
 * [Setting up KMS encryption for {{site.data.keyword.filestorage_vpc_short}}](/docs/openshift?topic=openshift-storage-file-vpc-apps#storage-file-kms)
 
-* [Setting up encryption in-transit (EIT)](/docs/openshift?topic=openshift-storage-file-vpc-apps#storage-file-vpc-eit)
+* [Setting up encryption in-transit (EIT)](/docs/openshift?topic=openshift-storage-file-vpc-apps#storage-file-vpc-apps-eit)
 
 * [Updating container resource requests and limits](/docs/openshift?topic=openshift-storage-file-vpc-apps#storage-file-vpc-container-resources)
 
