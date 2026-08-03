@@ -246,8 +246,6 @@ IBM Cloud Image Key Synchronizer cluster add-on patch updates.
 
 
 
-
-
 ### 23 June 2026
 {: #openshift-jun2326}
 {: release-note}
@@ -294,10 +292,6 @@ IBM Object CSI Driver cluster add-on patch updates.
 
 
 
-
-
-
-
 ### 16 June 2026
 {: #openshift-jun1626}
 {: release-note}
@@ -325,11 +319,8 @@ OpenShift Virtualization cluster add-on patch updates.
 VPC Block CSI Driver cluster add-on patch updates.
 :   For more information, see the [change log](/docs/openshift?topic=openshift-cl-add-ons-vpc-block-csi-driver).
 
-## June 2025
-{: #openshift-jun25}
-
-### 09 June 2025
-{: #openshift-jun0925}
+### 09 June 2026
+{: #openshift-jun0926}
 {: release-note}
 
 

@@ -536,9 +536,7 @@ subcollection: openshift
 
         * VPC Block CSI Driver cluster add-on patch updates.
 
-* [June 2025](/docs/openshift?topic=openshift-openshift-relnotes#openshift-jun25)
-
-    * [09 June 2025](/docs/openshift?topic=openshift-openshift-relnotes#openshift-jun0925)
+    * [09 June 2026](/docs/openshift?topic=openshift-openshift-relnotes#openshift-jun0926)
 
         * {{site.data.keyword.openshiftlong_notm}} version 4.16 is deprecated.
 
