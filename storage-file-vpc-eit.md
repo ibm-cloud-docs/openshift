@@ -2,7 +2,7 @@
 
 copyright:
   years: 2026
-lastupdated: "2026-07-30"
+lastupdated: "2026-08-03"
 
 
 keywords: openshift, {{site.data.keyword.openshiftlong_notm}}, file, encryption, transit, EIT, stunnel, regional, RFS
@@ -141,7 +141,7 @@ This step can take up to 5 minutes to complete as the operator installs EIT pack
     Reboot the drained node.
 
     ```sh
-    ibmcloud ks worker reboot --cluster <cluster-id> --worker <worker-id>
+    ibmcloud ks worker reboot --cluster CLUSTER_ID --worker WORKER_ID
     ```
     {: pre}
 

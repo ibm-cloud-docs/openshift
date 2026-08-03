@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2026
-lastupdated: "2026-07-30"
+lastupdated: "2026-08-03"
 
 
 keywords: openshift, node scaling, ca, autoscaler
@@ -760,9 +760,7 @@ These conditions might impact cluster flavor availability:
 
 | Name | Data centers | Resources | OS | Primary storage | Secondary storage | Secondary storage options (GB / iops-tier)|
 | ---- | ---- |-------------------------------- | ---- | --------------- | ----------------- |  -------------- | 
-| mx3de.metal.48x512  \n(Memory) | in-mum-1  \nin-mum-2  \nin-mum-3 | 24 cores  \n512GB memory  \n100Gbps network speed  \n No GPUs |  RHCOS  \n| 480GB SSD | N/A | N/A|
-| mx3de.metal.64x512  \n(Memory) | in-mum-1  \nin-mum-2  \nin-mum-3 | 32 cores  \n512GB memory  \n100Gbps network speed  \n No GPUs |  RHCOS  \n| 480GB SSD | N/A | N/A|
-| ux3de.metal.16x512  \n() | in-mum-1  \nin-mum-2  \nin-mum-3 | 8 cores  \n512GB memory  \n100Gbps network speed  \n No GPUs |  RHCOS  \n| 480GB SSD | N/A | N/A|
+|No flavors available.| N/A | N/A | N/A | N/A | N/A | N/A |
 {: class="simple-tab-table"}
 {: caption="Bare metal flavors in Mumbai." caption-side="bottom"}
 {: #in-mum-physical-table}

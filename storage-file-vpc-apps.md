@@ -16,7 +16,7 @@ subcollection: openshift
 # Adding {{site.data.keyword.filestorage_vpc_short}} to apps
 {: #storage-file-vpc-apps}
 
-{{site.data.keyword.openshiftlong_notm}} provides pre-defined storage classes that you can use to provision {{site.data.keyword.filestorage_vpc_short}}. Each storage class specifies the type of {{site.data.keyword.filestorage_vpc_short}} that you provision, including available size, IOPS, file system, and the retention policy. You can also create your own storage classes depending on your use case.
+{{site.data.keyword.openshiftlong_notm}} provides pre-defined storage classes that you can use to provision {{site.data.keyword.filestorage_vpc_short}} for apps in your cluster. Each storage class specifies the available size, IOPS, file system, and retention policy for the file share that you provision. You can also create your own storage classes for your use case.
 {: shortdesc}
 
 Review the following notes and considerations before continuing.
@@ -713,7 +713,7 @@ If your cluster and VPC are not in the same resource group, you must specify the
 
 - Changing the default storage class is only available for add-on version 2.0 or later.
 - You can set the default storage class to one of the pre-installed {{site.data.keyword.filestorage_vpc_short}} classes or your own custom storage class. If you are using a custom storage class, make sure the provisioner is set to `vpc.file.csi.ibm.io`.
-- If multiple storage classes are set as the default in a cluster, any of the default storage classes might be used. As a best practice, and to ensure the correct storage class is used, remove any existing default storage classes in the cluster before setting a new default class. If the {{site.data.keyword.blockstorage_vpc_short}} add-on is also installed, a VPC block storage class might already be set as the default. To remove it before you set a new default, see [Changing the default storage class for {{site.data.keyword.blockstorage_vpc_short}}](/docs/openshift?topic=openshift-vpc-block#vpc-block-default-edit).
+- If multiple storage classes are set as the default in a cluster, any of the default storage classes might be used. As a best practice, and to ensure the correct storage class is used, remove any existing default storage classes in the cluster before setting a new default class. If the VPC block storage add-on is also installed, a VPC block storage class might already be set as the default. To remove it before you set a new default, see [Changing the default storage class for VPC block storage](/docs/openshift?topic=openshift-vpc-block#vpc-block-default-edit).
 
 
 1. Edit the `addon-vpc-file-csi-driver-configmap` configmap and specify the storage class name in `SET_DEFAULT_STORAGE_CLASS` parameter.
