@@ -2,7 +2,7 @@
 
 copyright:
   years: 2025, 2026
-lastupdated: "2026-07-31"
+lastupdated: "2026-08-03"
 
 
 keywords: openshift, openshift data foundation, openshift container storage, disaster recovery
@@ -44,9 +44,8 @@ Here are the high-level steps of this solution:
 
 With this set up, the hub cluster that you installed ACM on manages the ODF clusters. If your primary ODF cluster becomes unavailable, the hub cluster rolls over the apps and data from the primary ODF cluster to the secondary ODF cluster.
 
-{: #app_support}
-
 ODF Regional Disaster Recovery supports subscription-based, ApplicationSet-based, discovered, and VM-based applications. For full details, see [Supported applications and workloads](#app_support_detail) at the bottom of this page.
+{: #app_support}
 
 ## Before you begin
 {: #prereq}

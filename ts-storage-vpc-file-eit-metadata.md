@@ -2,7 +2,7 @@
 
 copyright:
   years: 2026
-lastupdated: "2026-07-30"
+lastupdated: "2026-08-03"
 
 
 keywords: kubernetes, openshift
@@ -100,5 +100,5 @@ If the issue persists after both checks, [open a support ticket](/docs/get-suppo
 ## Related topics
 {: #ts-storage-vpc-file-eit-metadata-related}
 
-- [Setting up encryption in-transit (EIT)](/docs/openshift?topic=openshift-storage-file-vpc-apps#storage-file-vpc-eit)
+- [Setting up encryption in-transit (EIT)](/docs/openshift?topic=openshift-storage-file-vpc-apps#storage-file-vpc-apps-eit)
 - [Why do I see an `UnresponsiveMountHelperContainerUtility` error?](/docs/openshift?topic=openshift-ts-storage-vpc-file-eit-unresponsive)
