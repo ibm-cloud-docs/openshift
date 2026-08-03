@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2026
-lastupdated: "2026-07-27"
+lastupdated: "2026-08-03"
 
 
 keywords: openshift, {{site.data.keyword.openshiftlong_notm}}, support, get help
@@ -16,10 +16,10 @@ subcollection: openshift
 
 
 
-# Contacting support
+# Getting help and support for your cluster
 {: #get-help}
 
-Still having issues with your cluster? Review different ways to get help and support for your {{site.data.keyword.openshiftlong_notm}} clusters. For any questions or feedback, post in Slack.
+Find support options, troubleshooting resources, and ways to get help with your cluster.
 {: shortdesc}
 
 Before you open a support case, gather relevant information about your cluster environment.

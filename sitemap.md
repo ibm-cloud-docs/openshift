@@ -2481,7 +2481,7 @@ subcollection: openshift
 {: #sitemap_managing_cluster_costs}
 
 
-[Understanding costs for your clusters](/docs/openshift?topic=openshift-costs#costs)
+[Managing costs for your clusters](/docs/openshift?topic=openshift-costs#costs)
 
 * [Understanding costs by component](/docs/openshift?topic=openshift-costs#costs-for-clusters)
 
@@ -8342,126 +8342,6 @@ subcollection: openshift
 
     * [Version 1.0 - v1.0.13_297764008, released 14 November 2025](/docs/openshift?topic=openshift-cl-add-ons-ibm-object-csi-driver#cl-add-ons-ibm-object-csi-driver-v1013_297764008)
 
-[{{site.data.keyword.cos_full_notm}} plug-in](/docs/openshift?topic=openshift-cos_plugin_changelog#cos_plugin_changelog)
-
-* [Change log for version 2.2.53, released 25 May 2026](/docs/openshift?topic=openshift-cos_plugin_changelog#02253_object_plugin)
-
-* [Change log for version 2.2.52, released 19 May 2026](/docs/openshift?topic=openshift-cos_plugin_changelog#02252_object_plugin)
-
-* [Change log for version 2.2.51, released 17 April 2026](/docs/openshift?topic=openshift-cos_plugin_changelog#02251_object_plugin)
-
-* [Change log for version 2.2.50, released 27 March 2026](/docs/openshift?topic=openshift-cos_plugin_changelog#02250_object_plugin)
-
-* [Change log for version 2.2.49, released 17 March 2026](/docs/openshift?topic=openshift-cos_plugin_changelog#02249_object_plugin)
-
-* [Change log for version 2.2.48, released 24 February 2026](/docs/openshift?topic=openshift-cos_plugin_changelog#02248_object_plugin)
-
-* [Change log for version 2.2.47, released 06 February 2026](/docs/openshift?topic=openshift-cos_plugin_changelog#02247_object_plugin)
-
-* [Change log for version 2.2.46, released 13 January 2026](/docs/openshift?topic=openshift-cos_plugin_changelog#02246_object_plugin)
-
-* [Change log for version 2.2.45, released 28 November 2025](/docs/openshift?topic=openshift-cos_plugin_changelog#02245_object_plugin)
-
-* [Change log for version 2.2.44, released 13 November 2025](/docs/openshift?topic=openshift-cos_plugin_changelog#02244_object_plugin)
-
-* [Change log for version 2.2.42, released 12 November 2025](/docs/openshift?topic=openshift-cos_plugin_changelog#02242_object_plugin)
-
-* [Change log for version 2.2.41, released 18 August 2025](/docs/openshift?topic=openshift-cos_plugin_changelog#02241_object_plugin)
-
-* [Change log for version 2.2.40, released 05 August 2025](/docs/openshift?topic=openshift-cos_plugin_changelog#02240_object_plugin)
-
-* [Change log for version 2.2.39, released 20 June 2025](/docs/openshift?topic=openshift-cos_plugin_changelog#02239_object_plugin)
-
-* [Change log for version 2.2.38, released 24 April 2025](/docs/openshift?topic=openshift-cos_plugin_changelog#02238_object_plugin)
-
-* [Change log for version 2.2.37, released 07 April 2025](/docs/openshift?topic=openshift-cos_plugin_changelog#02237_object_plugin)
-
-* [Change log for version 2.2.36, released 10 March 2025](/docs/openshift?topic=openshift-cos_plugin_changelog#02236_object_plugin)
-
-* [Change log for version 2.2.35, released 27 January 2025](/docs/openshift?topic=openshift-cos_plugin_changelog#02235_object_plugin)
-
-* [Change log for version 2.2.33, released 21 November 2024](/docs/openshift?topic=openshift-cos_plugin_changelog#02233_object_plugin)
-
-* [Change log for version 2.2.32, released 26 September 2024](/docs/openshift?topic=openshift-cos_plugin_changelog#02232_object_plugin)
-
-* [Change log for version 2.2.31, released 24 September 2024](/docs/openshift?topic=openshift-cos_plugin_changelog#02231_object_plugin)
-
-* [Change log for version 2.2.30, released 29 August 2024](/docs/openshift?topic=openshift-cos_plugin_changelog#02230_object_plugin)
-
-* [Change log for version 2.2.29, released 31 July 2024](/docs/openshift?topic=openshift-cos_plugin_changelog#02229_object_plugin)
-
-* [Change log for version 2.2.28, released 17 July 2024](/docs/openshift?topic=openshift-cos_plugin_changelog#02228_object_plugin)
-
-* [Change log for version 2.2.27, released 17 July 2024](/docs/openshift?topic=openshift-cos_plugin_changelog#02227_object_plugin)
-
-* [Change log for version 2.2.26, released 5 June 2024](/docs/openshift?topic=openshift-cos_plugin_changelog#02226_object_plugin)
-
-* [Change log for version 2.2.25, released 24 April 2024](/docs/openshift?topic=openshift-cos_plugin_changelog#02225_object_plugin)
-
-* [Change log for version 2.2.24, released 22 February 2024](/docs/openshift?topic=openshift-cos_plugin_changelog#02224_object_plugin)
-
-* [Change log for version 2.2.23, released 29 January 2024](/docs/openshift?topic=openshift-cos_plugin_changelog#02223_object_plugin)
-
-* [Change log for version 2.2.22, released 20 November 2023](/docs/openshift?topic=openshift-cos_plugin_changelog#02222_object_plugin)
-
-* [Change log for version 2.2.21, released 13 November 2023](/docs/openshift?topic=openshift-cos_plugin_changelog#02221_object_plugin)
-
-* [Change log for version 2.2.20, released 30 October 2023](/docs/openshift?topic=openshift-cos_plugin_changelog#02220_object_plugin)
-
-* [Change log for version 2.2.19, released 12 October 2023](/docs/openshift?topic=openshift-cos_plugin_changelog#02219_object_plugin)
-
-* [Change log for version 2.2.18, released 7 September 2023](/docs/openshift?topic=openshift-cos_plugin_changelog#02218_object_plugin)
-
-* [Change log for version 2.2.17, released 3 July 2023](/docs/openshift?topic=openshift-cos_plugin_changelog#02217_object_plugin)
-
-* [Change log for version 2.2.16, released 3 July 2023](/docs/openshift?topic=openshift-cos_plugin_changelog#02216_object_plugin)
-
-* [Change log for version 2.2.15, released 19 June 2023](/docs/openshift?topic=openshift-cos_plugin_changelog#02215_object_plugin)
-
-* [Change log for version 2.2.14, released 02 May 2023](/docs/openshift?topic=openshift-cos_plugin_changelog#02214_object_plugin)
-
-* [Change log for version 2.2.13, released 03 April 2023](/docs/openshift?topic=openshift-cos_plugin_changelog#02213_object_plugin)
-
-* [Change log for version 2.2.12, released 20 March 2023](/docs/openshift?topic=openshift-cos_plugin_changelog#02212_object_plugin)
-
-* [Change log for version 2.2.11, released 03 March 2023](/docs/openshift?topic=openshift-cos_plugin_changelog#02211_object_plugin)
-
-* [Change log for version 2.2.10, released 21 February 2023](/docs/openshift?topic=openshift-cos_plugin_changelog#02210_object_plugin)
-
-* [Change log for version 2.2.9, released 13 February 2023](/docs/openshift?topic=openshift-cos_plugin_changelog#0229_object_plugin)
-
-* [Change log for version 2.2.8, released 23 January 2023](/docs/openshift?topic=openshift-cos_plugin_changelog#0228_object_plugin)
-
-* [Change log for version 2.2.7, released 5 January 2023](/docs/openshift?topic=openshift-cos_plugin_changelog#0227_object_plugin)
-
-* [Change log for version 2.2.6, released 15 December 2022](/docs/openshift?topic=openshift-cos_plugin_changelog#0226_object_plugin)
-
-* [Change log for version 2.2.5, released 9 December 2022](/docs/openshift?topic=openshift-cos_plugin_changelog#0225_object_plugin)
-
-* [Change log for version 2.2.4, released 5 December 2022](/docs/openshift?topic=openshift-cos_plugin_changelog#0224_object_plugin)
-
-* [Change log for version 2.2.3, released 15 November 2022](/docs/openshift?topic=openshift-cos_plugin_changelog#0223_object_plugin)
-
-* [Change log for version 2.2.2, released 8 November 2022](/docs/openshift?topic=openshift-cos_plugin_changelog#0222_object_plugin)
-
-* [Change log for version 2.2.1, released 20 September 2022](/docs/openshift?topic=openshift-cos_plugin_changelog#0221_object_plugin)
-
-* [Change log for version 2.2.0, released 12 September 2022](/docs/openshift?topic=openshift-cos_plugin_changelog#0220_object_plugin)
-
-* [Change log for version 2.1.21, released 24 August 2022](/docs/openshift?topic=openshift-cos_plugin_changelog#02121_object_plugin)
-
-* [Change log for version 2.1.20, released 17 August 2022](/docs/openshift?topic=openshift-cos_plugin_changelog#02120_object_plugin)
-
-* [Change log for version 2.1.19, released 27 July 2022](/docs/openshift?topic=openshift-cos_plugin_changelog#02119_object_plugin)
-
-* [Change log for version 2.1.18, released 14 July 2022](/docs/openshift?topic=openshift-cos_plugin_changelog#02118_object_plugin)
-
-* [Change log for version 2.1.17, released 28 June 2022](/docs/openshift?topic=openshift-cos_plugin_changelog#02117_object_plugin)
-
-* [Change log for version 2.1.16, released 25 May 2022](/docs/openshift?topic=openshift-cos_plugin_changelog#02116_object_plugin)
-
-* [Change log for version 2.1.15, released 6 May 2022](/docs/openshift?topic=openshift-cos_plugin_changelog#02115_object_plugin)
-
 [Static Route add-on version change log](/docs/openshift?topic=openshift-cl-add-ons-static-route#cl-add-ons-static-route)
 
 * [Version 1.0.0](/docs/openshift?topic=openshift-cl-add-ons-static-route#cl-add-ons-static-route-1.0.0)
@@ -8903,7 +8783,7 @@ subcollection: openshift
 {: #sitemap_service_settings}
 
 
-[Locations](/docs/openshift?topic=openshift-regions-and-zones#regions-and-zones)
+[Understanding {{site.data.keyword.cloud_notm}} locations and regions](/docs/openshift?topic=openshift-regions-and-zones#regions-and-zones)
 
 * [VPC multizone regions](/docs/openshift?topic=openshift-regions-and-zones#zones-vpc)
 
@@ -10263,11 +10143,11 @@ subcollection: openshift
 [Why is Submariner connectivity lost or gateway labels missing after an upgrade?](/docs/openshift?topic=openshift-ts-odf-rdr-submariner#ts-odf-rdr-submariner)
 
 
-## Contacting support
-{: #sitemap_contacting_support}
+## Getting help and support for your cluster
+{: #sitemap_getting_help_and_support_for_your_cluster}
 
 
-[Contacting support](/docs/openshift?topic=openshift-get-help#get-help)
+[Getting help and support for your cluster](/docs/openshift?topic=openshift-get-help#get-help)
 
 * [Get your cluster details](/docs/openshift?topic=openshift-get-help#cluster-details)
 

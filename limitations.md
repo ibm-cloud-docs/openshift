@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2026
-lastupdated: "2026-07-15"
+lastupdated: "2026-08-03"
 
 
 keywords: openshift, http2, quota, app protocol, application protocol
@@ -17,10 +17,10 @@ subcollection: openshift
 
 
 
-# Service limitations
+# Service limitations and quotas
 {: #limitations}
 
-{{site.data.keyword.openshiftlong}} and the {{site.data.keyword.redhat_openshift_notm}} open source project come with default service settings and limitations to ensure security, convenience, and basic functionality. Some limitations you might be able to change where noted.
+Review the service limitations and quotas that apply to clusters, and learn which limits can be adjusted when needed.
 {: shortdesc}
 
 
