@@ -556,7 +556,17 @@ subcollection: openshift
 
         * **New**: HPCS to Key Protect migration steps
 
+* [May 2026](/docs/openshift?topic=openshift-openshift-relnotes#openshift-may26)
+
+    * [28 May 2026](/docs/openshift?topic=openshift-openshift-relnotes#openshift-may2826)
+
+        * CLI version 1.0.775 is available
+
         * VPC Block CSI Driver cluster add-on patch updates.
+
+    * [29 May 2026](/docs/openshift?topic=openshift-openshift-relnotes#openshift-may2926)
+
+        * VPC File CSI Driver cluster add-on patch updates.
 
     * [27 May 2026](/docs/openshift?topic=openshift-openshift-relnotes#openshift-may2726)
 
@@ -608,8 +618,6 @@ subcollection: openshift
 
         * VPC Block CSI Driver cluster add-on patch updates.
 
-        * For more information, see the [change log](/docs/openshift?topic=openshift-cl-add-ons-vpc-block-csi-driver).
-
         * IBM Storage Operator cluster add-on patch updates.
 
         * VPC File CSI Driver cluster add-on patch updates.
@@ -619,8 +627,6 @@ subcollection: openshift
         * OpenShift Data Foundation cluster add-on patch updates.
 
         * CLI version 1.0.770 is available
-
-        * OpenShift Data Foundation cluster add-on patch updates.
 
     * [06 May 2026](/docs/openshift?topic=openshift-openshift-relnotes#openshift-may0626)
 
@@ -649,8 +655,6 @@ subcollection: openshift
         * Cluster autoscaler cluster add-on patch updates.
 
         * VPC Block CSI Driver cluster add-on patch updates.
-
-        * For more information, see the [change log](/docs/openshift?topic=openshift-cl-add-ons-vpc-block-csi-driver).
 
     * [28 April 2026](/docs/openshift?topic=openshift-openshift-relnotes#openshift-apr2826)
 

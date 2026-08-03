@@ -228,11 +228,16 @@ OpenShift Virtualization cluster add-on patch updates.
 
 
 
+
+
 IBM Cloud Image Key Synchronizer cluster add-on patch updates.
 :   For more information, see the [change log](/docs/openshift?topic=openshift-cl-add-ons-ibm-cloud-image-key-synchronizer).
 
+
+
 IBM Storage Operator cluster add-on patch updates.
 :   For more information, see the [change log](/docs/openshift?topic=openshift-cl-add-ons-ibm-storage-operator).
+
 VPC File CSI Driver cluster add-on patch updates.
 :   For more information, see the [change log](/docs/openshift?topic=openshift-cl-add-ons-vpc-file-csi-driver).
 
@@ -240,8 +245,12 @@ VPC File CSI Driver cluster add-on patch updates.
 {: #openshift-jun2326}
 {: release-note}
 
+
+
 Openshift AI cluster add-on patch updates.
 :   For more information, see the [change log](/docs/openshift?topic=openshift-cl-add-ons-openshift-ai).
+
+
 
 
 ### 22 June 2026
@@ -372,11 +381,29 @@ VPC File CSI Driver cluster add-on patch updates.
 :    Review the steps for migrating your encrypted resources from HPCS to Key Protect. See [Migrating storage components from HPCS to Key Protect](/docs/openshift?topic=openshift-migrate_hpcs_kp) and [Migrating cluster secrets and worker nodes from HPCS to Key Protect](/docs/openshift?topic=openshift-encryption-hpcs-to-kp-migration) for more information.
 
 
+## May 2026
+{: #openshift-may26}
+
+### 28 May 2026
+{: #openshift-may2826}
+{: release-note}
+
+CLI version 1.0.775 is available
+:   For more information, see the [CLI change log](/docs/openshift?topic=openshift-cs_cli_changelog).
 
 
 
 VPC Block CSI Driver cluster add-on patch updates.
 :   For more information, see the [change log](/docs/openshift?topic=openshift-cl-add-ons-vpc-block-csi-driver).
+
+
+
+### 29 May 2026
+{: #openshift-may2926}
+{: release-note}
+
+VPC File CSI Driver cluster add-on patch updates.
+:   For more information, see the [change log](/docs/openshift?topic=openshift-cl-add-ons-vpc-file-csi-driver).
 
 
 
@@ -387,8 +414,12 @@ VPC Block CSI Driver cluster add-on patch updates.
 
 
 
+
+
 IBM Cloud Image Key Synchronizer cluster add-on patch updates.
 :   For more information, see the [change log](/docs/openshift?topic=openshift-cl-add-ons-ibm-cloud-image-key-synchronizer).
+
+
 
 ### 25 May 2026
 {: #openshift-may2526}
@@ -400,8 +431,12 @@ IBM Object CSI Driver cluster add-on patch updates.
 {{site.data.keyword.cos_full_notm}} plug-in version 2.2.53 is available.
 :   For more information, see the [change log](/docs/openshift?topic=openshift-cos_plugin_changelog).
 
+
+
 Openshift AI cluster add-on patch updates.
 :   For more information, see the [change log](/docs/openshift?topic=openshift-cl-add-ons-openshift-ai).
+
+
 
 ### 23 May 2026
 {: #openshift-may2326}
@@ -512,7 +547,6 @@ New VPC bare metal worker node flavors available
 
 VPC Block CSI Driver cluster add-on patch updates.
 :   For more information, see the [change log](/docs/openshift?topic=openshift-cl-add-ons-vpc-block-csi-driver).
-For more information, see the [change log](/docs/openshift?topic=openshift-cl-add-ons-vpc-block-csi-driver).
 
 
 
@@ -528,14 +562,14 @@ VPC File CSI Driver cluster add-on patch updates.
 {: release-note}
 
 
+
 OpenShift Data Foundation cluster add-on patch updates.
 :   For more information, see the [change log](/docs/openshift?topic=openshift-cl-add-ons-openshift-data-foundation).
+
+
 
 CLI version 1.0.770 is available
 :   For more information, see the [CLI change log](/docs/openshift?topic=openshift-cs_cli_changelog).
-
-OpenShift Data Foundation cluster add-on patch updates.
-:   For more information, see the [change log](/docs/openshift?topic=openshift-cl-add-ons-openshift-data-foundation).
 
 ### 06 May 2026
 {: #openshift-may0626}
@@ -559,9 +593,10 @@ CLI version 1.0.768 is available
 {: #openshift-may0526}
 {: release-note}
 
+
+
 IBM Cloud Image Key Synchronizer cluster add-on patch updates.
 :   For more information, see the [change log](/docs/openshift?topic=openshift-cl-add-ons-ibm-cloud-image-key-synchronizer).
-
 
 
 
@@ -570,6 +605,7 @@ IBM Cloud Image Key Synchronizer cluster add-on patch updates.
 ### 04 May 2026
 {: #openshift-may0426}
 {: release-note}
+
 
 
 
@@ -613,7 +649,6 @@ Cluster autoscaler cluster add-on patch updates.
 
 VPC Block CSI Driver cluster add-on patch updates.
 :   For more information, see the [change log](/docs/openshift?topic=openshift-cl-add-ons-vpc-block-csi-driver).
-For more information, see the [change log](/docs/openshift?topic=openshift-cl-add-ons-vpc-block-csi-driver).
 
 ### 28 April 2026
 {: #openshift-apr2826}
@@ -659,8 +694,12 @@ VPC File CSI Driver cluster add-on patch updates.
 {: #openshift-apr2626}
 {: release-note}
 
+
+
 Openshift AI cluster add-on patch updates.
 :   For more information, see the [change log](/docs/openshift?topic=openshift-cl-add-ons-openshift-ai).
+
+
 
 IBM Object CSI Driver cluster add-on patch updates.
 :   For more information, see the [change log](/docs/openshift?topic=openshift-cl-add-ons-ibm-object-csi-driver).
@@ -1140,6 +1179,7 @@ VPC Block CSI Driver cluster add-on patch updates.
 ### 17 January 2026
 {: #openshift-jan1726}
 {: release-note}
+
 
 
 
