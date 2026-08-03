@@ -2,7 +2,7 @@
 
 copyright:
   years: 2026, 2026
-lastupdated: "2026-06-17"
+lastupdated: "2026-08-03"
 
 keywords: openshift, vpc quota, worker node, vcpu, memory, gpu, instance storage, optimized instance storage
 
@@ -52,7 +52,7 @@ To resolve this issue, you need to increase your VPC quota for the affected reso
       - The resource type for which you need a quota increase (vCPU, memory, GPU, instance storage, or optimized instance storage)
       - Your current quota limit
       - The new quota limit you're requesting
-      - The reason for the increase (for example, "Need to provision additional worker nodes for my {{site.data.keyword.openshiftlong_notm}} cluster")
+      - The reason for the increase (for example, `Need to provision additional worker nodes for my {{site.data.keyword.openshiftlong_notm}} cluster`)
 
 3. After your quota increase is approved and applied, retry provisioning your worker nodes.
    - For failed worker nodes, you can delete them and create new ones, or use the `ibmcloud oc worker replace` command to replace them.

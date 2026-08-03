@@ -2,7 +2,7 @@
 
 copyright:
   years: 2026
-lastupdated: "2026-07-30"
+lastupdated: "2026-08-03"
 
 keywords: vpc, image pull, qps exceeded, bandwidth, worker nodes, secondary storage
 
@@ -14,23 +14,23 @@ content-type: troubleshoot
 
 {{site.data.keyword.attribute-definition-list}}
 
-# Why do pods show "pull QPS exceeded" errors during image pulls?
+# Why do pods show `pull QPS exceeded` errors during image pulls?
 {: #ts-vpc-image-pull-qps}
 {: troubleshoot}
 {: support}
 
-When pods are starting up, you might see errors indicating that image pull operations are being throttled with messages like "pull QPS exceeded".
+When pods are starting up, you might see errors indicating that image pull operations are being throttled with messages like `pull QPS exceeded`.
 {: shortdesc}
 
 When you deploy pods that need to pull container images, you might observe the following symptoms:
 {: tsSymptoms}
 
-- Error messages containing "pull QPS exceeded" during pod startup
+- Error messages containing `pull QPS exceeded` during pod startup
 - Slow image pull times, especially when pulling multiple large images
 - Pods taking longer than expected to reach the `Running` state
 - Image pull operations appearing to be throttled or rate-limited
 
-The most likely cause of slow image pulling with "pull QPS exceeded" errors is that your VPC worker nodes are hitting their disk I/O bandwidth limit.
+The most likely cause of slow image pulling with `pull QPS exceeded` errors is that your VPC worker nodes are hitting their disk I/O bandwidth limit.
 {: tsCauses}
 
 VPC worker nodes have different bandwidth limits depending on their configuration:
@@ -43,7 +43,7 @@ When multiple pods attempt to pull large container images simultaneously:
 1. Each image pull operation consumes disk I/O bandwidth
 2. The combined bandwidth demand can quickly saturate the 49 MB/sec limit
 3. Once the limit is reached, image pull operations slow down significantly
-4. Kubernetes might report "pull QPS exceeded" errors as it throttles operations
+4. Kubernetes might report `pull QPS exceeded` errors as it throttles operations
 
 To determine if you are hitting the VPC worker node bandwidth limit, use the IBM Cloud monitoring capabilities.
 {: tsResolve}

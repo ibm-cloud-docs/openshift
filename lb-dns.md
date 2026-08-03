@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2026
-lastupdated: "2026-07-27"
+lastupdated: "2026-08-03"
 
 
 keywords: kubernetes, lb2.0, nlb, health check, dns, hostname, subdomain, openshift
@@ -192,7 +192,7 @@ Before you begin, [register NLB IPs with a DNS subdomain](#loadbalancer_hostname
     :   The port number to connect to for the health check. When `type` is `TCP`, this parameter is required. When `type` is `HTTP` or `HTTPS`, define the port only if you use a port other than 80 for HTTP or 443 for HTTPS. Default for TCP: `0`. Default for HTTP: `80`. Default for HTTPS: `443`.
 
     `--header <header>`
-    :   Required when `type` is `HTTP` or `HTTPS`: HTTP request headers for the health check are limited to the Host header. This flag is valid only for type 'HTTP' or 'HTTPS'. This flag accepts values in the following format: '--header Header-Name=value'. When updating a monitor, the existing headers are replaced by the ones you specify. To delete all existing headers specify the flag with an empty value '--header ""'.
+    :   Required when `type` is `HTTP` or `HTTPS`: HTTP request headers for the health check are limited to the Host header. This flag is valid only for type `HTTP` or `HTTPS`. This flag accepts values in the following format: `--header Header-Name=value`. When updating a monitor, the existing headers are replaced by the ones you specify. To delete all existing headers specify the flag with an empty value `--header ""`.
 
 
     Example command
