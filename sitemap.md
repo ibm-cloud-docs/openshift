@@ -852,6 +852,8 @@ subcollection: openshift
 
     * [17 January 2026](/docs/openshift?topic=openshift-openshift-relnotes#openshift-jan1726)
 
+        * {{site.data.keyword.openshiftlong_notm}} worker node fix packs are available.
+
     * [14 January 2026](/docs/openshift?topic=openshift-openshift-relnotes#openshift-jan1426)
 
         * CLI version `1.0.745` is available.
