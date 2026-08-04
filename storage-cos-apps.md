@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2026
-lastupdated: "2026-07-07"
+lastupdated: "2026-08-04"
 
 
 keywords: openshift, adding object storage, adding storage to cluster, adding pvc, persistent volume claim, object storage pvc
@@ -260,7 +260,7 @@ After you create PVC and deployment configuration files, create the deployment i
 If you have a stateful app such as a database, you can create stateful sets that use {{site.data.keyword.cos_full_notm}} to store your app's data. Alternatively, you can use an {{site.data.keyword.cloud_notm}} database-as-a-service, such as {{site.data.keyword.cloudant_short_notm}} and store your data in the cloud.
 {: shortdesc}
 
-Before you begin, complete the [prerequisite steps](/docs/openshift?topic=openshift-storage_cos_apps#before-you-begin) at the start of this topic.
+Before you begin, complete the prerequisite steps at the start of this topic.
 
 To deploy a stateful set that uses object storage:
 

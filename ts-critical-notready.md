@@ -2,7 +2,7 @@
 
 copyright:
   years: 2023, 2026
-lastupdated: "2026-07-30"
+lastupdated: "2026-08-04"
 
 
 keywords: critical, not ready, notready, troubleshooting, worker node status, status
@@ -29,10 +29,10 @@ Check the {{site.data.keyword.cloud_notm}} health and status dashboard for any n
 There are several reasons why communication stops between worker nodes and the cluster master. Check whether the following common issues are causing the disruption.
 
 The worker was deleted, reloaded, updated, replaced, or rebooted
-:   Worker nodes might temporarily show a `Critical` or `NotReady` state when they are deleted, reloaded, updated, or replaced. If any of these actions have been initiated on your worker node, whether manually or as part of an automation setup such as cluster autoscaler, wait until the actions are complete. Then, check the status of your worker nodes again. If any workers remain in the `Critical` or `NotReady` state, [reload](/docs/openshift?topic=openshift-kubernetes-service-cli&interface=ui#cs_worker_reload) or [replace](/docs/openshift?topic=openshift-kubernetes-service-cli&interface=ui#cli_worker_replace) the affected workers. 
+:   Worker nodes might temporarily show a `Critical` or `NotReady` state when they are deleted, reloaded, updated, or replaced. If any of these actions have been initiated on your worker node, whether manually or as part of an automation setup such as cluster autoscaler, wait until the actions are complete. Then, check the status of your worker nodes again. If any workers remain in the `Critical` or `NotReady` state, [reload](/docs/openshift?topic=openshift-kubernetes-service-cli#worker-reload-cli) or [replace](/docs/openshift?topic=openshift-kubernetes-service-cli#worker-replace-cli) the affected workers. 
 :   If a worker node was reloaded or replaced and initially works correctly, but then after some time goes back into a `Critical` or `NotReady` state, then it is likely that some workload or component on the worker is causing the issue. See [Debugging worker nodes](/docs/openshift?topic=openshift-debug-kube-nodes) to isolate the problem workload.
 
-A worker node might end up in a `Critical` or `NotReady` state if it was rebooted without first being cordoned and drained. If this is the case, waiting for the reboot to complete does not resolve the issue. [Reload](/docs/openshift?topic=openshift-kubernetes-service-cli&interface=ui#cs_worker_reload) or [replace](/docs/openshift?topic=openshift-kubernetes-service-cli&interface=ui#cli_worker_replace) the affected worker. If the issue persists, continue with the troubleshooting steps. 
+A worker node might end up in a `Critical` or `NotReady` state if it was rebooted without first being cordoned and drained. If this is the case, waiting for the reboot to complete does not resolve the issue. [Reload](/docs/openshift?topic=openshift-kubernetes-service-cli#worker-reload-cli) or [replace](/docs/openshift?topic=openshift-kubernetes-service-cli#worker-replace-cli) the affected worker. If the issue persists, continue with the troubleshooting steps. 
 {: note}
 
 The worker node was unintentionally powered down
@@ -67,7 +67,7 @@ If only some, but not all, of the worker nodes in your cluster are in a `Critica
 
 3. If you are able to determine the cause of the issue from the information in the **Conditions** section, follow the steps in [Debugging worker nodes](/docs/openshift?topic=openshift-debug-kube-nodes) to isolate the problem workload.
 
-4. If the previous steps do not solve the issue, [reload](/docs/openshift?topic=openshift-kubernetes-service-cli&interface=ui#cs_worker_reload) or [replace](/docs/openshift?topic=openshift-kubernetes-service-cli&interface=ui#cli_worker_replace) the affected workers one at a time. 
+4. If the previous steps do not solve the issue, [reload](/docs/openshift?topic=openshift-kubernetes-service-cli#worker-reload-cli) or [replace](/docs/openshift?topic=openshift-kubernetes-service-cli#worker-replace-cli) the affected workers one at a time. 
 
 ### If all worker nodes in a single zone, subnet, or VLAN are affected
 {: #ts-critical-notready-steps-zone}

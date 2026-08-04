@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2026
-lastupdated: "2026-07-07"
+lastupdated: "2026-08-04"
 
 
 keywords: openshift, lb2.0, nlb
@@ -367,7 +367,7 @@ Next, you can [register an NLB subdomain](/docs/openshift?topic=openshift-loadba
 ## Scheduling algorithms
 {: #scheduling}
 
-Scheduling algorithms determine how an NLB 2.0 assigns network connections to your app pods. As client requests arrive to your cluster, the NLB routes the request packets to worker nodes based on the scheduling algorithm. To use a scheduling algorithm, specify its `Keepalived` short name in the scheduler annotation of your NLB service configuration file: `service.kubernetes.io/ibm-load-balancer-cloud-provider-ipvs-scheduler: "rr"`. Check the following lists to see which scheduling algorithms are supported in {{site.data.keyword.openshiftlong_notm}}. If you don't specify a scheduling algorithm, the round-robin algorithm is used by default. For more information, see the [`Keepalived` documentation](https://www.keepalived.org/doc/scheduling_algorithms.html){: external}.
+Scheduling algorithms determine how an NLB 2.0 assigns network connections to your app pods. As client requests arrive to your cluster, the NLB routes the request packets to worker nodes based on the scheduling algorithm. To use a scheduling algorithm, specify its `Keepalived` short name in the scheduler annotation of your NLB service configuration file: `service.kubernetes.io/ibm-load-balancer-cloud-provider-ipvs-scheduler: "rr"`. Check the following lists to see which scheduling algorithms are supported in {{site.data.keyword.openshiftlong_notm}}. If you don't specify a scheduling algorithm, the round-robin algorithm is used by default. For more information, see the [Keepalived documentation](https://keepalived.readthedocs.io/en/latest/scheduling_algorithms.html){: external}.
 
 
 ### Supported scheduling algorithms

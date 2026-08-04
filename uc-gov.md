@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2026
-lastupdated: "2026-07-07"
+lastupdated: "2026-08-04"
 
 
 keywords: kubernetes, openshift
@@ -57,7 +57,7 @@ Finally, apps based on those shared APIs are hosted in {{site.data.keyword.opens
 * Monitoring health and recovery for worker nodes
 * Providing global compute, so Developers don’t have to stand up infrastructure in worldwide regions where they need workloads and data to be located
 
-Moving compute workloads into the {{site.data.keyword.cloud_notm}} isn't enough though. The government needs to go through a method transformation as well. By adopting the practices of the [IBM Garage Method](https://www.ibm.com/garage/method){: external}, the provider can implement an agile and iterative delivery process that supports modern DevOps practices like Continuous Integration and Delivery (CI/CD).
+Moving compute workloads into the {{site.data.keyword.cloud_notm}} isn't enough though. The government needs to go through a method transformation as well. By adopting the practices of the [IBM Garage Method](https://www.ibm.com/garage){: external}, the provider can implement an agile and iterative delivery process that supports modern DevOps practices like Continuous Integration and Delivery (CI/CD).
 
 Much of the CI/CD process itself is automated with {{site.data.keyword.contdelivery_full}} in the cloud. The provider can define workflow toolchains to prepare container images, check for vulnerabilities, and deploy them to the Kubernetes cluster.
 
@@ -89,7 +89,7 @@ Technical solution:
 ### Step 3: Innovate with IBM Garage and cloud services
 {: #uc_data_mashup_step3}
 
-* Adopt the agile and iterative development practices from the [IBM Garage Method](https://www.ibm.com/garage/method){: external} to enable frequent releases of features, patches, and fixes without downtime.
+* Adopt the agile and iterative development practices from the [IBM Garage Method](https://www.ibm.com/garage){: external} to enable frequent releases of features, patches, and fixes without downtime.
 * Whether developers are in the public or private sector, {{site.data.keyword.contdelivery_full}} helps them to quickly provision an integrated toolchain, by using customizable, shareable templates.
 * After Developers build and test the apps in their Dev and Test clusters, they use the {{site.data.keyword.contdelivery_full}} toolchains to deploy apps into production clusters.
 * With {{site.data.keyword.watson}} AI, machine learning, and deep learning tools available from the {{site.data.keyword.cloud_notm}} catalog, Developers focus on domain problems. Instead of custom unique ML code, ML logic is snapped into apps with service bindings.

@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2026
-lastupdated: "2026-07-30"
+lastupdated: "2026-08-04"
 
 
 keywords: openshift
@@ -538,7 +538,7 @@ You are responsible for ensuring the security of your personal information in Ku
 Use a Kubernetes secret to store personal information
 :   Store personal information only in Kubernetes resources that are designed to hold personal information. For example, don't use your name in the name of a {{site.data.keyword.redhat_openshift_notm}} project, deployment, service, or config map. For proper protection and encryption, store personal information in [secrets](https://kubernetes.io/docs/concepts/configuration/secret/){: external} instead.
 
-:   For centralized management of all your secrets across clusters and injection at application runtime, try [{{site.data.keyword.secrets-manager_full_notm}}](/docs/secrets-manager?topic=secrets-manager-tutorial-kubernetes-secrets).
+:   For centralized management of all your secrets across clusters and injection at application runtime, try [{{site.data.keyword.secrets-manager_full_notm}}](/docs/secrets-manager?topic=secrets-manager-getting-started).
     {: tip}
 
 Use a Kubernetes `imagePullSecret` to store image registry credentials
