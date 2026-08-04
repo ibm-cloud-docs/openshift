@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2024, 2026
-lastupdated: "2026-07-30"
+lastupdated: "2026-08-04"
 
 
 keywords: openshift, kubernetes, affinity, taint, edge node, edge
@@ -57,7 +57,7 @@ You can prevent workloads from running on edge worker nodes and consuming worker
 1. Verify that the worker pool and worker nodes have the `dedicated=edge` label.
     * To check the worker pool, use the `get` command.
         ```sh
-        ibmcloud oc worker-pool get --cluster <cluster_name_or_ID> --worker-pool <worker_pool_name_or_ID>
+        ibmcloud oc worker-pool get --cluster CLUSTER_NAME_OR_ID --worker-pool WORKER_POOL_NAME_OR_ID
         ```
         {: pre}
 
@@ -71,7 +71,7 @@ You can prevent workloads from running on edge worker nodes and consuming worker
 
     To apply a taint to all existing and future worker nodes in a worker pool:
     ```sh
-    ibmcloud oc worker-pool taint set -c <cluster_name_or_ID> --worker-pool <worker_pool_name_or_ID> --taint dedicated=edge:NoExecute
+    ibmcloud oc worker-pool taint set -c CLUSTER_NAME_OR_ID --worker-pool WORKER_POOL_NAME_OR_ID --taint dedicated=edge:NoExecute
     ```
     {: pre}
 
