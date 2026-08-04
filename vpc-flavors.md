@@ -239,9 +239,6 @@ These conditions might impact cluster flavor availability:
 | mx3d.metal.48x512  \n(Memory) | us-south-1  \nus-south-2  \nus-south-3 | 24 cores  \n512GB memory  \n100Gbps network speed  \n No GPUs |  RHCOS  \n| 480GB SSD | N/A | N/A|
 | mx3d.metal.64x512  \n(Memory) | us-south-1  \nus-south-2  \nus-south-3 | 32 cores  \n512GB memory  \n100Gbps network speed  \n No GPUs |  RHCOS  \n| 480GB SSD | N/A | N/A|
 | mx3d.metal.96x1024  \n(Memory) | us-south-1  \nus-south-2  \nus-south-3 | 48 cores  \n1024GB memory  \n100Gbps network speed  \n No GPUs |  RHCOS  \n| 480GB SSD | N/A | N/A|
-| mx3de.metal.48x512  \n(Memory) | us-south-1  \nus-south-2  \nus-south-3 | 24 cores  \n512GB memory  \n100Gbps network speed  \n No GPUs |  RHCOS  \n| 480GB SSD | N/A | N/A|
-| mx3de.metal.64x512  \n(Memory) | us-south-1  \nus-south-2  \nus-south-3 | 32 cores  \n512GB memory  \n100Gbps network speed  \n No GPUs |  RHCOS  \n| 480GB SSD | N/A | N/A|
-| ux3de.metal.16x512  \n() | us-south-1  \nus-south-2  \nus-south-3 | 8 cores  \n512GB memory  \n100Gbps network speed  \n No GPUs |  RHCOS  \n| 480GB SSD | N/A | N/A|
 {: class="simple-tab-table"}
 {: caption="Bare metal flavors in Dallas." caption-side="bottom"}
 {: #us-south-physical-table}
@@ -1177,9 +1174,6 @@ These conditions might impact cluster flavor availability:
 | bx2d.metal.96x384  \n(Balanced) | jp-tok-2  \njp-tok-3 | 48 cores  \n384GB memory  \n100Gbps network speed  \n No GPUs |  RHCOS  \n| 960GB SSD | N/A | N/A|
 | cx2d.metal.96x192  \n(Compute) | jp-tok-2  \njp-tok-3 | 48 cores  \n192GB memory  \n100Gbps network speed  \n No GPUs |  RHCOS  \n| 960GB SSD | N/A | N/A|
 | mx2d.metal.96x768  \n(Memory) | jp-tok-2  \njp-tok-3 | 48 cores  \n768GB memory  \n100Gbps network speed  \n No GPUs |  RHCOS  \n| 960GB SSD | N/A | N/A|
-| mx3de.metal.48x512  \n(Memory) | jp-tok-2  \njp-tok-3 | 24 cores  \n512GB memory  \n100Gbps network speed  \n No GPUs |  RHCOS  \n| 480GB SSD | N/A | N/A|
-| mx3de.metal.64x512  \n(Memory) | jp-tok-2  \njp-tok-3 | 32 cores  \n512GB memory  \n100Gbps network speed  \n No GPUs |  RHCOS  \n| 480GB SSD | N/A | N/A|
-| ux3de.metal.16x512  \n() | jp-tok-2  \njp-tok-3 | 8 cores  \n512GB memory  \n100Gbps network speed  \n No GPUs |  RHCOS  \n| 480GB SSD | N/A | N/A|
 {: class="simple-tab-table"}
 {: caption="Bare metal flavors in Tokyo." caption-side="bottom"}
 {: #jp-tok-physical-table}
