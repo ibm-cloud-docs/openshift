@@ -3,7 +3,7 @@
 copyright:
   years: 2024, 2026
 
-lastupdated: "2026-07-30"
+lastupdated: "2026-08-04"
 
 
 keywords: change log, version history, 4.18_openshift
@@ -120,7 +120,7 @@ The following table shows the components that are in the master fix pack 4.18.43
 | Component | Description |
 | ---- | ---- |
 |Cluster health image v1.6.16|New version contains updates and security fixes.|
-|etcd v3.5.30|See the [etcd release notes](https://github.com/coreos/etcd/releases/v3.5.30).|
+|etcd v3.5.30|See the [etcd release notes](https://github.com/etcd-io/etcd/releases/v3.5.30).|
 |IBM Cloud Block Storage driver and plug-in v2.5.26|New version contains updates and security fixes.|
 |IBM Cloud Controller Manager v1.31.14-27|New version contains updates and security fixes.|
 |IBM Cloud File Storage for Classic plug-in and monitor v455|New version contains updates and security fixes.|
@@ -176,7 +176,7 @@ The following table shows the components that are in the master fix pack 4.18.40
 | Component | Description |
 | ---- | ---- |
 |Calico v3.30.7|See the [Calico release notes](https://docs.tigera.io/calico/3.30/release-notes/#calico-open-source-3307-bug-fix-release).|
-|etcd v3.5.29|See the [etcd release notes](https://github.com/coreos/etcd/releases/v3.5.29).|
+|etcd v3.5.29|See the [etcd release notes](https://github.com/etcd-io/etcd/releases/v3.5.29).|
 |IBM Cloud Controller Manager v1.31.14-23|New version contains updates and security fixes.|
 |Key Management Service provider 2.10.24|New version contains updates and security fixes.|
 |Portieris admission controller v0.13.38|See the [Portieris admission controller release notes](https://github.com/IBM/portieris/releases/tag/v0.13.38)|

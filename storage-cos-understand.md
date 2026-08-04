@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2026
-lastupdated: "2026-07-15"
+lastupdated: "2026-08-04"
 
 
 keywords: kubernetes, openshift, object storage, COS, persistent volume, secret, HMAC authentication, s3fs, bucket
@@ -50,7 +50,7 @@ Before you begin, [Create your object storage service instance](#create_cos_serv
 1. In the navigation on the service details page for your {{site.data.keyword.cos_short}} instance, click **Service Credentials**.
 2. Click **New credential**. A dialog box opens.
 3. Enter a name for your credentials.
-4. From the **Role** drop-down list, select the [{{site.data.keyword.cos_short}} access role](/docs/cloud-object-storage?topic=cloud-object-storage-getting-started-with-iam) for the actions that you want storage users in your cluster to have access to. You must select at least **Writer** service access role to use the `auto-create-bucket` dynamic provisioning feature. If you select `Reader`, then you can't use the credentials to create buckets in {{site.data.keyword.cos_full_notm}} and write data to it.
+4. From the **Role** drop-down list, select the [{{site.data.keyword.cos_short}} access role](/docs/cloud-object-storage?topic=cloud-object-storage-iam) for the actions that you want storage users in your cluster to have access to. You must select at least **Writer** service access role to use the `auto-create-bucket` dynamic provisioning feature. If you select `Reader`, then you can't use the credentials to create buckets in {{site.data.keyword.cos_full_notm}} and write data to it.
 5. Optional: Click **Advanced Options** and switch the **Include HMAC Credential** toggle to **On** to create HMAC credentials for the {{site.data.keyword.cos_full_notm}} service. HMAC authentication adds an extra layer of security to the OAuth2 authentication by preventing the misuse of expired or randomly created OAuth2 tokens.
 6. Click **Add**. Your new credentials are in the **Service Credentials** table.
 7. Click **View credentials**.

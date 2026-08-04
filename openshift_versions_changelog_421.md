@@ -3,7 +3,7 @@
 copyright:
   years: 2026, 2026
 
-lastupdated: "2026-07-30"
+lastupdated: "2026-08-04"
 
 
 keywords: change log, version history, 4.21_openshift
@@ -66,7 +66,7 @@ The following table shows the components that are in the master fix pack 4.21.19
 | Component | Description |
 | ---- | ---- |
 |Cluster health image v1.6.17|New version contains updates and security fixes.|
-|etcd v3.5.30|See the [etcd release notes](https://github.com/coreos/etcd/releases/v3.5.30).|
+|etcd v3.5.30|See the [etcd release notes](https://github.com/etcd-io/etcd/releases/v3.5.30).|
 |IBM Cloud Block Storage driver and plug-in v2.5.26|New version contains updates and security fixes.|
 |IBM Cloud Controller Manager v1.34.9-4|New version contains updates and security fixes.|
 |IBM Cloud File Storage for Classic plug-in and monitor v455|New version contains updates and security fixes.|
@@ -123,7 +123,7 @@ The following table shows the components that are in the master fix pack 4.21.18
 | Component | Description |
 | ---- | ---- |
 |Cluster health image v1.6.16|New version contains updates and security fixes.|
-|etcd v3.5.30|See the [etcd release notes](https://github.com/coreos/etcd/releases/v3.5.30).|
+|etcd v3.5.30|See the [etcd release notes](https://github.com/etcd-io/etcd/releases/v3.5.30).|
 |IBM Cloud Block Storage driver and plug-in v2.5.26|New version contains updates and security fixes.|
 |IBM Cloud Controller Manager v1.34.8-2|New version contains updates and security fixes.|
 |IBM Cloud File Storage for Classic plug-in and monitor v455|New version contains updates and security fixes.|

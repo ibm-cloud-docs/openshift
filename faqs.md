@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2026
-lastupdated: "2026-07-30"
+lastupdated: "2026-08-04"
 
 
 keywords: openshift, ocp, compliance, security standards, faq, openshift pricing, ocp pricing, openshift charges, ocp charges, openshift price, ocp price, openshift billing, ocp billing, openshift costs, ocp costs
@@ -49,7 +49,7 @@ I want to follow a tutorial
 :   Begin by reviewing the [Getting started](/docs/openshift?topic=openshift-getting-started) doc, then [choose one of the available tutorials](/docs/openshift?topic=openshift-getting-started#getting-started-create).
 
 I want to design my own cluster environment
-:   Begin by reviewing the [Getting started](/docs/openshift?topic=openshift-getting-started)  doc, then [create your cluster environment strategy](/docs/openshift?topic=openshift-getting-started#getting-started-strategy).
+:   Begin by reviewing the [Getting started](/docs/openshift?topic=openshift-getting-started)  doc, then [create your cluster environment strategy](/docs/openshift?topic=openshift-strategy).
 
 
 ## How does {{site.data.keyword.openshiftlong_notm}} work?

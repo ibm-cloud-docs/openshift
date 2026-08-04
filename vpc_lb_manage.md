@@ -1,7 +1,7 @@
 ---
 copyright: 
-  years: 2024, 2025
-lastupdated: "2025-05-29"
+  years: 2024, 2026
+lastupdated: "2026-08-04"
 
 
 keywords: load balancer, vpc, vpc load balancer, lb, persistent
@@ -84,7 +84,7 @@ For more control over your VPC load balancer health checks, you can use optional
 
 `service.kubernetes.io/ibm-load-balancer-cloud-provider-vpc-health-check-path`
 :   **Optional**. The health check URL path for HTTP and HTTPs health checks. This annotation applies only if `ibm-load-balancer-cloud-provider-vpc-health-check-protocol` is set to `http` or `https`.
-   - The URL path must be in the format of an [origin-form request target](https://www.rfc-editor.org/rfc/rfc7230#section-5.3.1){: external}.
+   - The URL path must be in the format of an [origin-form request target](https://www.rfc-editor.org/info/rfc7230/#section-5.3.1){: external}.
    - If this annotation is not specified and the `ibm-load-balancer-cloud-provider-vpc-health-check-protocol` annotation is set to `http` or `https`, the  default value `/` is applied.
 
 `service.kubernetes.io/ibm-load-balancer-cloud-provider-vpc-health-check-delay`

@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2026
-lastupdated: "2026-07-23"
+lastupdated: "2026-08-04"
 
 keywords: openshift, reservations, worker node, deprecated, end of support
 
@@ -90,4 +90,4 @@ Before you begin, make sure that you have the following roles in {{site.data.key
 
 - [Add worker nodes to classic clusters in {{site.data.keyword.containerlong_notm}}](/docs/containers?topic=containers-add-workers-classic)
 - [Add worker nodes to classic clusters in {{site.data.keyword.openshiftlong_notm}}](/docs/openshift?topic=openshift-add-workers-classic)
-- [Plan your cluster for high availability](/docs/openshift?topic=openshift-ha_clusters)
+- [Plan your cluster for high availability](/docs/openshift?topic=openshift-iks-ha-dr)

@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2026
-lastupdated: "2026-08-03"
+lastupdated: "2026-08-04"
 
 
 keywords: openshift
@@ -7080,8 +7080,6 @@ subcollection: openshift
 
 * [`ingress` commands](/docs/openshift?topic=openshift-icks_map#icks_map_ingress)
 
-* [`init` commands](/docs/openshift?topic=openshift-icks_map#icks_map_init)
-
 * [`kms` commands](/docs/openshift?topic=openshift-icks_map#icks_map_kms)
 
 * [`locations` commands](/docs/openshift?topic=openshift-icks_map#icks_map_locations)
@@ -7449,10 +7447,6 @@ subcollection: openshift
     * [`ibmcloud oc ingress status-report ignored-errors ls`](/docs/openshift?topic=openshift-kubernetes-service-cli#ingress-status-report-ignored-errors-ls-cli)
 
     * [`ibmcloud oc ingress status-report ignored-errors rm`](/docs/openshift?topic=openshift-kubernetes-service-cli#ingress-status-report-ignored-errors-rm-cli)
-
-* [`ibmcloud oc init` commands](/docs/openshift?topic=openshift-kubernetes-service-cli#init-cli)
-
-    * [`ibmcloud oc init`](/docs/openshift?topic=openshift-kubernetes-service-cli#init-cli)
 
 * [`ibmcloud oc kms` commands](/docs/openshift?topic=openshift-kubernetes-service-cli#kms-cli)
 

@@ -3,7 +3,7 @@
 copyright:
   years: 2024, 2026
 
-lastupdated: "2026-07-31"
+lastupdated: "2026-08-04"
 
 
 keywords: change log, version history, VPC Block CSI Driver

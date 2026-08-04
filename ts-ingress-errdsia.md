@@ -2,7 +2,7 @@
 
 copyright:
   years: 2022, 2026
-lastupdated: "2026-05-12"
+lastupdated: "2026-08-04"
 
 
 keywords: openshift, errdsia, nlb-dns, dns add, dns remove
@@ -54,9 +54,9 @@ Identify and update any NLB-DNS subdomains that have incorrect addresses registe
 
 1. Compare the outputs of the two previous commands and identify the subdomains that have incorrect addresses registered.
 
-1. If you no longer need a specific domain, you can use the **`ibmcloud oc ingress domain rm`** [command](/docs/openshift?topic=openshift-kubernetes-service-cli#ingress-domain-rm) to remove it.
+1. If you no longer need a specific domain, you can use the **`ibmcloud oc ingress domain rm`** [command](/docs/openshift?topic=openshift-kubernetes-service-cli#ingress-domain-rm-cli) to remove it.
 
-1. If you still need the domain, you can update the registered addresses for the domain by using the **`ibmcloud oc ingress domain update`** [command](/docs/openshift?topic=openshift-kubernetes-service-cli#ingress-domain-update) command.
+1. If you still need the domain, you can update the registered addresses for the domain by using the **`ibmcloud oc ingress domain update`** [command](/docs/openshift?topic=openshift-kubernetes-service-cli#ingress-domain-update-cli) command.
 
     Note that you must include all addresses you want to be registered as the update operation replaces the currently registered addresses. For example, if `52.137.182.166` is currently registered to your domain and you want to add `52.137.182.270`, you must specify `--ip 52.137.182.166 --ip 52.137.182.270` in the command.
     {: important}

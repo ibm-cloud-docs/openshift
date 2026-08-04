@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2024, 2026
-lastupdated: "2026-07-23"
+lastupdated: "2026-08-04"
 
 keywords: private path nlb, private path network load balancer, vpc nlb, private lb
 subcollection: openshift
@@ -126,7 +126,7 @@ Review the required and optional VPC NLB annotations and specifications.
 :   Annotation to specify a worker node label selector. You can configure specific worker nodes in your cluster to receive traffic by specifying label selector keys. You can include only one label selector in the annotation, and that the selector must be specified in the `"key=value"` format. If this annotation is not specified, all worker nodes in your cluster are configured to receive traffic from the VPC NLB. This annotation takes precedence over the `service.kubernetes.io/ibm-load-balancer-cloud-provider-zone` annotation, and any `dedicated: edge` labels on worker nodes are ignored. To limit traffic to a specific zone, you can use this annotation to specify worker nodes in that zone. Note that setting a new label on a cluster worker node does not automatically configure the worker node to receive traffic; you must recreate or update the VPC NLB for the newly labeled worker node to receive traffic.
 
 `service.kubernetes.io/ibm-load-balancer-cloud-provider-vpc-health-check-path`
-:   The health check URL path for HTTP and HTTPs health checks. This annotation applies only if `ibm-load-balancer-cloud-provider-vpc-health-check-protocol` is set to `http` or `https`. The URL path must be in the format of an [origin-form request target](https://www.rfc-editor.org/rfc/rfc7230#section-5.3.1){: external}. If this annotation is not specified and the `ibm-load-balancer-cloud-provider-vpc-health-check-protocol` annotation is set to `http` or `https`, the  default value `/` is applied.
+:   The health check URL path for HTTP and HTTPs health checks. This annotation applies only if `ibm-load-balancer-cloud-provider-vpc-health-check-protocol` is set to `http` or `https`. The URL path must be in the format of an [origin-form request target](https://www.rfc-editor.org/info/rfc7230/#section-5.3.1){: external}. If this annotation is not specified and the `ibm-load-balancer-cloud-provider-vpc-health-check-protocol` annotation is set to `http` or `https`, the  default value `/` is applied.
 
 `service.kubernetes.io/ibm-load-balancer-cloud-provider-vpc-health-check-delay`
 :   **Optional**. The number of seconds to wait between health check attempts. By default, this value is set to `5`, and has a minimum of `2` and a maximum of `60`. This value must be greater than the `ibm-load-balancer-cloud-provider-vpc-health-check-timeout` value, which is set to `2` by default. 

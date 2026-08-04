@@ -2,7 +2,7 @@
 
 copyright:
   years: 2024, 2026
-lastupdated: "2026-08-03"
+lastupdated: "2026-08-04"
 
 keywords: openshift, cli reference, kubernetes cli, openshift cli, {{site.data.keyword.openshiftlong_notm}}
 
@@ -45,11 +45,10 @@ The following tables list the `ibmcloud oc` command groups. For a complete list 
 
 | Command group | Description |
 | --- | --- |
-| [`ibmcloud oc api`](#api-cli) | View or set the API endpoint and API version for the service. |
+| [`ibmcloud oc api`](#api-cli) | View the current API endpoint. |
 | [`ibmcloud oc api-key`](#api-key-cli) | View information about the API key for a cluster or reset it to a new key. |
 | [`ibmcloud oc credential`](#credential-cli) | Set and unset credentials that allow you to access the IBM Cloud classic infrastructure portfolio through your IBM Cloud account. |
 | [`ibmcloud oc infra-permissions`](#infra-permissions-cli) | View information about infrastructure permissions that allow you to access the IBM Cloud classic infrastructure portfolio through your IBM Cloud account. |
-| [`ibmcloud oc init`](#init-cli) | Initialize the Kubernetes Service plug-in and get authentication tokens. |
 | [`ibmcloud oc logging`](#logging-cli) | Forward logs from your cluster. |
 | [`ibmcloud oc messages`](#messages-cli) | View the current user messages. |
 | [`ibmcloud oc quota`](#quota-cli) | View the quota and limits for cluster-related resources in your IBM Cloud account. |
@@ -77,18 +76,18 @@ The following tables list the `ibmcloud oc` command groups. For a complete list 
 ## `ibmcloud oc api` commands
 {: #api-cli}
 
-View or set the API endpoint and API version for the service.
+View the current API endpoint.
 
 ### `ibmcloud oc api`
 {: #api-cli}
 
 
 
-View or set the API endpoint and API version for the service.
+View the current API endpoint.
 {: shortdesc}
 
 ```sh
-ibmcloud ks api [--api-version VERSION] [--endpoint ENDPOINT] [--insecure] [-q] [--skip-ssl-validation]
+ibmcloud ks api [-q]
 ```
 {: pre}
 
@@ -96,20 +95,8 @@ ibmcloud ks api [--api-version VERSION] [--endpoint ENDPOINT] [--insecure] [-q] 
 {: #api-options}
 
 
-`--api-version VERSION`
-:    Specify the API version of the service that you want to use.
-
-`--endpoint ENDPOINT`
-:    Set the API endpoint for the service.
-
-`--insecure`
-:    Allow an insecure HTTP connection.
-
 `-q`
 :    Do not show the message of the day or update reminders.
-
-`--skip-ssl-validation`
-:    Allow insecure SSL certificates.
 
 
 #### Examples
@@ -3484,19 +3471,6 @@ ibmcloud ks cluster master satellite-service-endpoint allowlist add --cluster CL
 :    Specify the subnet CIDR.
 
 
-#### Examples
-{: #cluster-master-satellite-service-endpoint-allowlist-add-examples}
-
-Add subnets to a Satellite cluster's service endpoint allowlist.
-
-```sh
-ibmcloud ks cluster master satellite-service-endpoint allowlist add \
-  --cluster CLUSTER_NAME_OR_ID \
-  --subnet SUBNET_CIDR \
-  -q
-```
-{: pre}
-
 
 ### `ibmcloud oc cluster master satellite-service-endpoint allowlist disable`
 {: #cluster-master-satellite-service-endpoint-allowlist-disable-cli}
@@ -3524,19 +3498,6 @@ ibmcloud ks cluster master satellite-service-endpoint allowlist disable --cluste
 `-q`
 :    Do not show the message of the day or update reminders.
 
-
-#### Examples
-{: #cluster-master-satellite-service-endpoint-allowlist-disable-examples}
-
-Disable the allowlist for a Satellite cluster.
-
-```sh
-ibmcloud ks cluster master satellite-service-endpoint allowlist disable \
-  --cluster CLUSTER_NAME_OR_ID \
-  -f \
-  -q
-```
-{: pre}
 
 
 ### `ibmcloud oc cluster master satellite-service-endpoint allowlist enable`
@@ -3566,19 +3527,6 @@ ibmcloud ks cluster master satellite-service-endpoint allowlist enable --cluster
 :    Do not show the message of the day or update reminders.
 
 
-#### Examples
-{: #cluster-master-satellite-service-endpoint-allowlist-enable-examples}
-
-Enable the allowlist for a Satellite cluster.
-
-```sh
-ibmcloud ks cluster master satellite-service-endpoint allowlist enable \
-  --cluster CLUSTER_NAME_OR_ID \
-  -f \
-  -q
-```
-{: pre}
-
 
 ### `ibmcloud oc cluster master satellite-service-endpoint allowlist get`
 {: #cluster-master-satellite-service-endpoint-allowlist-get-cli}
@@ -3603,18 +3551,6 @@ ibmcloud ks cluster master satellite-service-endpoint allowlist get --cluster CL
 `-q`
 :    Do not show the message of the day or update reminders.
 
-
-#### Examples
-{: #cluster-master-satellite-service-endpoint-allowlist-get-examples}
-
-Get a Satellite cluster's service endpoint allowlist.
-
-```sh
-ibmcloud ks cluster master satellite-service-endpoint allowlist get \
-  --cluster CLUSTER_NAME_OR_ID \
-  -q
-```
-{: pre}
 
 
 ### `ibmcloud oc cluster master satellite-service-endpoint allowlist rm`
@@ -3646,19 +3582,6 @@ ibmcloud ks cluster master satellite-service-endpoint allowlist rm --cluster CLU
 `--subnet SUBNET`
 :    Specify the subnet CIDR.
 
-
-#### Examples
-{: #cluster-master-satellite-service-endpoint-allowlist-rm-examples}
-
-Remove subnets from a Satellite cluster's service endpoint allowlist.
-
-```sh
-ibmcloud ks cluster master satellite-service-endpoint allowlist rm \
-  --cluster CLUSTER_NAME_OR_ID \
-  -f \
-  --subnet SUBNET_CIDR
-```
-{: pre}
 
 
 ### `ibmcloud oc cluster master update`
@@ -6992,56 +6915,6 @@ ibmcloud ks ingress status-report ignored-errors rm \
   --code CODE \
   --cluster CLUSTER_NAME_OR_ID \
   --output json
-```
-{: pre}
-
-
-
-## `ibmcloud oc init` commands
-{: #init-cli}
-
-Initialize the Kubernetes Service plug-in and get authentication tokens.
-
-### `ibmcloud oc init`
-{: #init-cli}
-
-
-
-Initialize the Kubernetes Service plug-in and get authentication tokens.
-{: shortdesc}
-
-```sh
-ibmcloud ks init [--host HOST] [--insecure] [-p P] [-q] [-u U]
-```
-{: pre}
-
-#### Command options
-{: #init-options}
-
-
-`--host HOST`
-:    The API endpoint for the service.
-
-`--insecure`
-:    Allow an insecure HTTP connection.
-
-`-p P`
-:    The IBM Cloud password.
-
-`-q`
-:    Do not show the message of the day or update reminders.
-
-`-u U`
-:    The IBM Cloud user ID.
-
-
-#### Examples
-{: #init-examples}
-
-Initialize the Kubernetes Service plug-in and get authentication tokens.
-
-```sh
-ibmcloud ks init --host HOSTNAME -u U -p POOL_NAME
 ```
 {: pre}
 

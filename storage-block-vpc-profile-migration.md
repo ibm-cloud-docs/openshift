@@ -2,7 +2,7 @@
 
 copyright:
   years: 2026
-lastupdated: "2026-06-17"
+lastupdated: "2026-08-04"
 
 keywords: openshift, block storage, vpc, gen-1, gen-2, sdp, migration, profile, iops
 
@@ -54,10 +54,10 @@ Before you migrate your volumes, complete the following steps.
 	```
 	{: pre}
 
-- Ensure that the VPC Block CSI Driver add-on is installed. For more information, see [Installing the VPC Block CSI Driver add-on](/docs/openshift?topic=openshift-vpc-block-csi-driver-add-on).
-- Ensure that the VPC Block CSI Driver add-on is configured. For more information, see [Configuring the VPC Block CSI Driver add-on](/docs/openshift?topic=openshift-vpc-block-csi-driver-add-on).
-- Ensure that the VPC Block CSI Driver add-on is running. For more information, see [Verifying the VPC Block CSI Driver add-on](/docs/openshift?topic=openshift-vpc-block-csi-driver-add-on).
-- Ensure that the VPC Block CSI Driver add-on is up-to-date. For more information, see [Upgrading the VPC Block CSI Driver add-on](/docs/openshift?topic=openshift-vpc-block-csi-driver-add-on).
+- Ensure that the VPC Block CSI Driver add-on is installed. For more information, see [Installing the VPC Block CSI Driver add-on](/docs/openshift?topic=openshift-cl-add-ons-vpc-block-csi-driver).
+- Ensure that the VPC Block CSI Driver add-on is configured. For more information, see [Configuring the VPC Block CSI Driver add-on](/docs/openshift?topic=openshift-cl-add-ons-vpc-block-csi-driver).
+- Ensure that the VPC Block CSI Driver add-on is running. For more information, see [Verifying the VPC Block CSI Driver add-on](/docs/openshift?topic=openshift-cl-add-ons-vpc-block-csi-driver).
+- Ensure that the VPC Block CSI Driver add-on is up-to-date. For more information, see [Upgrading the VPC Block CSI Driver add-on](/docs/openshift?topic=openshift-cl-add-ons-vpc-block-csi-driver).
 - Document your current performance requirements.
 - Create a backup or snapshot of your data. For more information, see [Setting up snapshots with the {{site.data.keyword.block_storage_is_short}} cluster add-on](/docs/openshift?topic=openshift-vpc-volume-snapshot).
 
