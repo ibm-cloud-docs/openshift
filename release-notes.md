@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2026
-lastupdated: "2026-08-03"
+lastupdated: "2026-08-05"
 
 
 keywords: kubernetes, release notes, openshift, {{site.data.keyword.openshiftlong_notm}}
@@ -28,6 +28,16 @@ Looking for {{site.data.keyword.cloud_notm}} status, platform announcements, sec
 
 ## August 2026
 {: #openshift-aug26}
+
+### 5 August 2026
+{: #openshift-aug0526}
+{: release-note}
+
+IBM Storage Operator cluster add-on patch updates.
+:   For more information, see the [change log](/docs/openshift?topic=openshift-cl-add-ons-ibm-storage-operator).
+
+VPC File CSI Driver cluster add-on patch updates.
+:   For more information, see the [change log](/docs/openshift?topic=openshift-cl-add-ons-vpc-file-csi-driver).
 
 ### 3 August 2026
 {: #openshift-aug0326}
@@ -252,7 +262,6 @@ Openshift AI cluster add-on patch updates.
 
 
 
-
 ### 22 June 2026
 {: #openshift-jun2226}
 {: release-note}
@@ -380,7 +389,6 @@ VPC File CSI Driver cluster add-on patch updates.
 **New**: HPCS to Key Protect migration steps
 :    Review the steps for migrating your encrypted resources from HPCS to Key Protect. See [Migrating storage components from HPCS to Key Protect](/docs/openshift?topic=openshift-migrate_hpcs_kp) and [Migrating cluster secrets and worker nodes from HPCS to Key Protect](/docs/openshift?topic=openshift-encryption-hpcs-to-kp-migration) for more information.
 
-
 ## May 2026
 {: #openshift-may26}
 
@@ -396,16 +404,12 @@ CLI version 1.0.775 is available
 VPC Block CSI Driver cluster add-on patch updates.
 :   For more information, see the [change log](/docs/openshift?topic=openshift-cl-add-ons-vpc-block-csi-driver).
 
-
-
 ### 29 May 2026
 {: #openshift-may2926}
 {: release-note}
 
 VPC File CSI Driver cluster add-on patch updates.
 :   For more information, see the [change log](/docs/openshift?topic=openshift-cl-add-ons-vpc-file-csi-driver).
-
-
 
 ### 27 May 2026
 {: #openshift-may2726}
@@ -487,7 +491,6 @@ Static Route cluster add-on patch updates.
 
 Extended Update Support (EUS) repositories enabled for RHEL 9 worker nodes.
 :   EUS repositories are now enabled for Red Hat Enterprise Linux 9 worker nodes in {{site.data.keyword.openshiftlong_notm}}. This enables access to extended support for specific RHEL minor versions. If you are installing NVIDIA GPU drivers on RHEL 9 worker nodes, you must apply a workaround to enable all required EUS repositories. For more information, see [Why does my NVIDIA GPU driver installation fail on RHEL 9 worker nodes?](/docs/openshift?topic=openshift-ts-gpu-driver-rhel9-eus).
-
 
 
 
@@ -1436,6 +1439,7 @@ VPC File CSI Driver cluster add-on patch updates.
 
 OpenShift AI cluster add-on patch updates.
 :   For more information, see the [change log](/docs/openshift?topic=openshift-cl-add-ons-openshift-ai).
+
 
 ## October 2025
 {: #openshift-oct25}
