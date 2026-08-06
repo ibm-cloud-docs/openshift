@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2024, 2026
-lastupdated: "2026-07-30"
+lastupdated: "2026-08-06"
 
 
 keywords: kubernetes, openshift
@@ -160,7 +160,7 @@ To resolve this, drain and reboot the affected RHCOS node to avoid impact to run
 1. Find the worker IDs for the nodes listed in `EIT_ENABLED_WORKER_NODES` by matching their IP addresses.
 
     ```sh
-    ibmcloud ks workers --cluster <cluster-id>
+    ibmcloud ks workers --cluster CLUSTER_ID
     ```
     {: pre}
 
@@ -174,7 +174,7 @@ To resolve this, drain and reboot the affected RHCOS node to avoid impact to run
 1. Reboot the drained node.
 
     ```sh
-    ibmcloud ks worker reboot --cluster <cluster-id> --worker <worker-id>
+    ibmcloud ks worker reboot --cluster CLUSTER_ID --worker WORKER_ID
     ```
     {: pre}
 
@@ -209,7 +209,7 @@ To resolve this:
 1. Reboot the RHCOS node to apply the pending uninstall.
 
     ```sh
-    ibmcloud ks worker reboot --cluster <cluster-id> --worker <worker-id>
+    ibmcloud ks worker reboot --cluster CLUSTER_ID --worker WORKER_ID
     ```
     {: pre}
 

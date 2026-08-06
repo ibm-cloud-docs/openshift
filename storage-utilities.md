@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2026
-lastupdated: "2026-07-30"
+lastupdated: "2026-08-06"
 
 
 keywords: kubernetes, openshift
@@ -222,7 +222,7 @@ Use this option to add different block storage configurations, add block storage
 1. List the worker nodes in your cluster and note the private IP address and the zone of the non-SDS worker nodes where you add a block storage device.
 
     ```sh
-    ibmcloud oc worker ls --cluster <cluster_name_or_ID>
+    ibmcloud oc worker ls --cluster CLUSTER_NAME_OR_ID
     ```
     {: pre}
 
@@ -484,7 +484,7 @@ Before you begin:
 
 1. Check which region and zone your VPC worker node is in.
     ```sh
-    ibmcloud oc worker ls -c <cluster_name>
+    ibmcloud oc worker ls -c CLUSTER_NAME
     ```
     {: pre}
 
@@ -502,7 +502,7 @@ Before you begin:
 5. Retrieve the ID of the worker node to attach to the {{site.data.keyword.blockstorageshort}} instance. Ensure that you select a worker node that is located in the same zone as your {{site.data.keyword.blockstorageshort}} volume.
 
     ```sh
-    ibmcloud oc worker ls --cluster <cluster_name_or_ID>
+    ibmcloud oc worker ls --cluster CLUSTER_NAME_OR_ID
     ```
     {: pre}
 
@@ -522,7 +522,7 @@ Before you begin:
     :   The unique ID or the name that is assigned to your cluster. You can retrieve this ID by running `ibmcloud oc cluster ls`.
     
     `worker_ID`
-    :   The unique ID that is assigned to the worker node where you attach your volume. You can retrieve this value by running `ibmcloud oc worker ls -c <cluster_name>`.
+    :   The unique ID that is assigned to the worker node where you attach your volume. You can retrieve this value by running `ibmcloud oc worker ls -c CLUSTER_NAME`.
     
     `volume_ID`
     :   The unique ID that is assigned to your {{site.data.keyword.blockstorageshort}} volume. You can retrieve a list of your {{site.data.keyword.blockstorageshort}} volumes by running `ibmcloud is volumes`.
@@ -639,7 +639,7 @@ Detaching storage from your VPC cluster does not remove your {{site.data.keyword
     :   The unique ID or name that is assigned to your cluster. You can retrieve this ID by running `ibmcloud oc cluster ls`.
     
     `worker_ID`
-    :   The unique ID that is assigned to the worker node where you want to attach your volume. You can retrieve this value by running `ibmcloud oc worker ls -c <cluster_name>`.
+    :   The unique ID that is assigned to the worker node where you want to attach your volume. You can retrieve this value by running `ibmcloud oc worker ls -c CLUSTER_NAME`.
     
     `volume_ID`
     :   The unique ID that is assigned to your {{site.data.keyword.blockstorageshort}} volume. You can retrieve a list of your {{site.data.keyword.blockstorageshort}} volumes by running `ibmcloud is volumes`.
@@ -664,14 +664,14 @@ You can use a `GET` request to retrieve volume attachment details for a VPC work
 2. Retrieve the ID of the resource group where your cluster is deployed.
 
     ```sh
-    ibmcloud oc cluster get <cluster_name_or_ID> | grep "Resource Group ID"
+    ibmcloud oc cluster get CLUSTER_NAME_OR_ID | grep "Resource Group ID"
     ```
     {: pre}
 
 3. Retrieve the ID of the worker node for which you want to see volume attachment details. Ensure that you select a worker node that is located in the same zone as your {{site.data.keyword.blockstorageshort}} instance.
 
     ```sh
-    ibmcloud oc worker ls --cluster <cluster_name_or_ID>
+    ibmcloud oc worker ls --cluster CLUSTER_NAME_OR_ID
     ```
     {: pre}
 
@@ -696,7 +696,7 @@ You can use a `GET` request to retrieve volume attachment details for a VPC work
     :   The unique ID that is assigned to your cluster. You can retrieve this ID by running `ibmcloud oc cluster ls`.
     
     `worker_ID`
-    :   The unique ID that is assigned to the worker node where you want to attach your volume. You can retrieve this value by running `ibmcloud oc worker ls -c <cluster_name>`.
+    :   The unique ID that is assigned to the worker node where you want to attach your volume. You can retrieve this value by running `ibmcloud oc worker ls -c CLUSTER_NAME`.
     
     `volume_ID`
     :   The unique ID that is assigned to your {{site.data.keyword.blockstorageshort}} volume. You can retrieve a list of your {{site.data.keyword.blockstorageshort}} volumes by running `ibmcloud is volumes`.
@@ -730,14 +730,14 @@ Before you begin:
 1. List the worker nodes in your cluster and note the ID of the worker node where you attach your volume.
 
     ```sh
-    ibmcloud oc worker ls -c <cluster_name_or_ID>
+    ibmcloud oc worker ls -c CLUSTER_NAME_OR_ID
     ```
     {: pre}
 
 1. Attach your {{site.data.keyword.blockstorageshort}} to your VPC worker node.
 
     ```sh
-    ibmcloud oc storage attachment create --cluster <cluster_name_or_ID> --volume <volume> --worker <worker_ID>
+    ibmcloud oc storage attachment create --cluster CLUSTER_NAME_OR_ID --volume VOLUME --worker WORKER_ID
     ```
     {: pre}
 
@@ -774,7 +774,7 @@ You can remove storage from your worker node by using the `ibmcloud oc storage a
 1. List the storage attachments on a worker node in your cluster and make a note of the attachment ID that your want to remove.
 
     ```sh
-    ibmcloud oc storage attachment ls -c <cluster> --worker <worker-id>
+    ibmcloud oc storage attachment ls -c CLUSTER --worker WORKER_ID
     ```
     {: pre}
 
@@ -790,14 +790,14 @@ You can remove storage from your worker node by using the `ibmcloud oc storage a
 1. Remove the storage attachment.
 
     ```sh
-    ibmcloud oc storage attachment rm --attachment <attachment-ID> -c <cluster> --worker <worker-ID>
+    ibmcloud oc storage attachment rm --attachment ATTACHMENT_ID -c CLUSTER --worker WORKER_ID
     ```
     {: pre}
 
 1. Verify that your storage was removed from the worker node.
 
     ```sh
-    ibmcloud oc storage attachment ls -c <cluster-ID> --worker <worker-id>
+    ibmcloud oc storage attachment ls -c CLUSTER_ID --worker WORKER_ID
     ```
     {: pre}
 

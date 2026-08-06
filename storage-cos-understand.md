@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2026
-lastupdated: "2026-08-04"
+lastupdated: "2026-08-06"
 
 
 keywords: kubernetes, openshift, object storage, COS, persistent volume, secret, HMAC authentication, s3fs, bucket
@@ -37,7 +37,7 @@ The {{site.data.keyword.cos_full_notm}} plug-in works with any s3 API endpoint. 
 Follow these steps to create an {{site.data.keyword.cos_full_notm}} service instance. If you plan to use a local Cloud Object Storage server or a different s3 API endpoint, see the provider documentation to set up your Cloud Object Storage instance.
 
 1. Open the [{{site.data.keyword.cos_full_notm}} catalog page](https://cloud.ibm.com/objectstorage/create).
-2. Enter a name for your service instance, such as `cos-backup`, and select the same resource group that your cluster is in. To view the resource group of your cluster, run `ibmcloud oc cluster get --cluster <cluster_name_or_ID>`.   
+2. Enter a name for your service instance, such as `cos-backup`, and select the same resource group that your cluster is in. To view the resource group of your cluster, run `ibmcloud oc cluster get --cluster CLUSTER_NAME_OR_ID`.
 3. Review the [plan options](https://cloud.ibm.com/objectstorage/create){: external} for pricing information and select a plan.
 4. Click **Create**. The service details page opens.
 5. To continue to set up {{site.data.keyword.cos_short}} to use with your cluster, see [Creating service credentials](#service_credentials).

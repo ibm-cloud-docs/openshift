@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2024, 2026
-lastupdated: "2026-08-04"
+lastupdated: "2026-08-06"
 
 keywords: private path nlb, private path network load balancer, vpc nlb, private lb
 subcollection: openshift
@@ -119,7 +119,7 @@ Review the required and optional VPC NLB annotations and specifications.
 :  The TCP port that is used for the health checks. This annotation applies only if `ibm-load-balancer-cloud-provider-vpc-health-check-protocol` is also specified. If the specified TCP port is outside of the Kubernetes node port range (30,000-32,767), the VPC security group applied to the cluster worker nodes must be modified to allow inbound traffic on the port. If this annotation is applied to a Kubernetes load balancer service associated with a VPC ALB, the outbound rules of the security group assigned to the VPC ALB must be modified to allow outbound traffic to the specified TCP port. For more information, see [Understanding secure by default cluster VPC networking](/docs/openshift?topic=openshift-vpc-security-group-reference) and [Creating and managing VPC security groups](/docs/openshift?topic=openshift-vpc-security-group-manage).
 
 `service.kubernetes.io/ibm-load-balancer-cloud-provider-vpc-subnets`
-:   Annotation to specify which subnet to use to assigned the IP addresses for the ppNLB. These IP addresses are only used internally. The value can be a VPC subnet ID, VPC subnet name, or VPC subnet CIDR. You must specify only one subnet. All incoming traffic appears to be coming from these IP addresses. While all the addresses are in a single zone, the ppNLB still handles incoming traffic from all zones. If this specific zone goes done, incoming traffic from the other zones still works. If you don not specify this annotation, the subnet is automatically selected and the cluster worker node subnet that has the most free IP addresses available is used. To see subnets in all resource groups, run `ibmcloud oc subnets --provider vpc-gen2 --vpc-id <vpc> --zone <zone>`.
+:   Annotation to specify which subnet to use to assigned the IP addresses for the ppNLB. These IP addresses are only used internally. The value can be a VPC subnet ID, VPC subnet name, or VPC subnet CIDR. You must specify only one subnet. All incoming traffic appears to be coming from these IP addresses. While all the addresses are in a single zone, the ppNLB still handles incoming traffic from all zones. If this specific zone goes done, incoming traffic from the other zones still works. If you don not specify this annotation, the subnet is automatically selected and the cluster worker node subnet that has the most free IP addresses available is used. To see subnets in all resource groups, run `ibmcloud oc subnets --provider vpc-gen2 --vpc-id VPC_ID --zone ZONE`.
 
 
 `service.kubernetes.io/ibm-load-balancer-cloud-provider-vpc-node-selector`

@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2024, 2026
-lastupdated: "2026-07-30"
+lastupdated: "2026-08-06"
 
 
 keywords: telemetry, remote health, remote monitoring, cluster data, health data
@@ -98,7 +98,7 @@ You might want to disable this remote health reporting to comply with privacy la
 
     1. Note the **ID** of the worker nodes in your cluster.
         ```sh
-        ibmcloud oc worker ls -c <cluster_name_or_ID>
+        ibmcloud oc worker ls -c CLUSTER_NAME_OR_ID
         ```
         {: pre}
 

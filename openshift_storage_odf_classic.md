@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2026
-lastupdated: "2026-07-30"
+lastupdated: "2026-08-06"
 
 
 keywords: openshift, openshift data foundation, openshift container storage, ocs, classic
@@ -381,14 +381,14 @@ If you want to use an {{site.data.keyword.cos_full_notm}} service instance as yo
 
     Example command for enabling the add-on and automatically discovering local volumes, enabling the `performance` resource profile option, and enabling encryption with {{site.data.keyword.hscrypto}} or {{site.data.keyword.keymanagementserviceshort}}.
     ```sh
-    ibmcloud oc cluster addon enable openshift-data-foundation -c <cluster-name> --version VERSION --param "odfDeploy=true"  --param "resourceProfile=performance" --param "osdSize=250" --param "autoDiscoverDevices=true" --param "hpcsTokenUrl=https://iam.cloud.ibm.com/identity/token" --param "hpcsEncryption=true" --param "hpcsBaseUrl=<hpcs-instance-public-endpoint>" --param "hpcsInstanceId=<hpcs-instance-id>" --param "hpcsServiceName=<hpcs-instance-name>" --param "hpcsSecretName=<hpcs-secret-name>"
+    ibmcloud oc cluster addon enable openshift-data-foundation -c CLUSTER_NAME --version VERSION --param "odfDeploy=true"  --param "resourceProfile=performance" --param "osdSize=250" --param "autoDiscoverDevices=true" --param "hpcsTokenUrl=https://iam.cloud.ibm.com/identity/token" --param "hpcsEncryption=true" --param "hpcsBaseUrl=HPCS_INSTANCE_PUBLIC_ENDPOINT" --param "hpcsInstanceId=HPCS_INSTANCE_ID" --param "hpcsServiceName=HPCS_INSTANCE_NAME" --param "hpcsSecretName=HPCS_SECRET_NAME"
     ```
     {: pre}
 
 
 1. Verify the add-on is in a `Ready` state.
     ```sh
-    ibmcloud oc cluster addon ls -c <cluster_name>
+    ibmcloud oc cluster addon ls -c CLUSTER_NAME
     ```
     {: pre}
 

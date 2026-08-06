@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2026
-lastupdated: "2026-07-30"
+lastupdated: "2026-08-06"
 
 
 keywords: openshift, {{site.data.keyword.openshiftlong_notm}}, clusters, worker nodes, worker pools, add, classic
@@ -61,14 +61,14 @@ Before you begin, make sure that you have the [**Operator** or **Administrator**
 
 1. For each zone, list available private and public VLANs. Note the private and the public VLAN that you want to use. If you don't have a private or a public VLAN, the VLAN is automatically created for you when you add a zone to your worker pool.
     ```sh
-    ibmcloud oc vlan ls --zone <zone>
+    ibmcloud oc vlan ls --zone ZONE
     ```
     {: pre}
 
 1. For each zone, review the available flavors for worker nodes.
 
     ```sh
-    ibmcloud oc flavors --zone <zone>
+    ibmcloud oc flavors --zone ZONE
     ```
     {: pre}
 
@@ -79,25 +79,25 @@ Before you begin, make sure that you have the [**Operator** or **Administrator**
 
 
     ```sh
-    ibmcloud oc worker-pool create classic --name <pool_name> --cluster <cluster_name_or_ID> --flavor <flavor> --size-per-zone <number_of_workers_per_zone> [--operating-system (REDHAT_8_64)] [--label key=value]
+    ibmcloud oc worker-pool create classic --name POOL_NAME --cluster CLUSTER_NAME_OR_ID --flavor FLAVOR --size-per-zone NUMBER_OF_WORKERS_PER_ZONE [--operating-system (REDHAT_8_64)] [--label key=value]
     ```
     {: pre}
 
 1. Verify that the worker pool is created.
     ```sh
-    ibmcloud oc worker-pool ls --cluster <cluster_name_or_ID>
+    ibmcloud oc worker-pool ls --cluster CLUSTER_NAME_OR_ID
     ```
     {: pre}
 
 1. By default, adding a worker pool creates a pool with no zones. To deploy worker nodes in a zone, you must add the zones that you previously retrieved to the worker pool. If you want to spread your worker nodes across multiple zones, repeat this command for each zone.
     ```sh
-    ibmcloud oc zone add classic --zone <zone> --cluster <cluster_name_or_ID> --worker-pool <pool_name> --private-vlan <private_VLAN_ID> --public-vlan <public_VLAN_ID>
+    ibmcloud oc zone add classic --zone ZONE --cluster CLUSTER_NAME_OR_ID --worker-pool POOL_NAME --private-vlan PRIVATE_VLAN_ID --public-vlan PUBLIC_VLAN_ID
     ```
     {: pre}
 
 1. Verify that worker nodes provision in the zone that you added. Your worker nodes are ready when the status changes from `provision_pending` to `normal`.
     ```sh
-    ibmcloud oc worker ls --cluster <cluster_name_or_ID> --worker-pool <pool_name>
+    ibmcloud oc worker ls --cluster CLUSTER_NAME_OR_ID --worker-pool POOL_NAME
     ```
     {: pre}
 
@@ -129,19 +129,19 @@ To resize the worker pool, change the number of worker nodes that the worker poo
 
 1. Get the name of the worker pool that you want to resize.
     ```sh
-    ibmcloud oc worker-pool ls --cluster <cluster_name_or_ID>
+    ibmcloud oc worker-pool ls --cluster CLUSTER_NAME_OR_ID
     ```
     {: pre}
 
 1. Resize the worker pool by designating the number of worker nodes that you want to deploy in each zone.
     ```sh
-    ibmcloud oc worker-pool resize --cluster <cluster_name_or_ID> --worker-pool <pool_name>  --size-per-zone <number_of_workers_per_zone>
+    ibmcloud oc worker-pool resize --cluster CLUSTER_NAME_OR_ID --worker-pool POOL_NAME --size-per-zone NUMBER_OF_WORKERS_PER_ZONE
     ```
     {: pre}
 
 1. Verify that the worker pool is resized.
     ```sh
-    ibmcloud oc worker ls --cluster <cluster_name_or_ID> --worker-pool <pool_name>
+    ibmcloud oc worker ls --cluster CLUSTER_NAME_OR_ID --worker-pool POOL_NAME
     ```
     {: pre}
 
@@ -182,13 +182,13 @@ To add a zone with worker nodes to your worker pool:
 
 1. List available VLANs in that zone. If you don't have a private or a public VLAN, the VLAN is automatically created for you when you add a zone to your worker pool.
     ```sh
-    ibmcloud oc vlan ls --zone <zone>
+    ibmcloud oc vlan ls --zone ZONE
     ```
     {: pre}
 
 1. List the worker pools in your cluster and note their names.
     ```sh
-    ibmcloud oc worker-pool ls --cluster <cluster_name_or_ID>
+    ibmcloud oc worker-pool ls --cluster CLUSTER_NAME_OR_ID
     ```
     {: pre}
 
@@ -201,13 +201,13 @@ To add a zone with worker nodes to your worker pool:
     {: tip}
 
     ```sh
-    ibmcloud oc zone add classic --zone <zone> --cluster <cluster_name_or_ID> -p <pool_name> [-p <pool2_name>] --private-vlan <private_VLAN_ID> --public-vlan <public_VLAN_ID>
+    ibmcloud oc zone add classic --zone ZONE --cluster CLUSTER_NAME_OR_ID -p POOL_NAME [-p POOL2_NAME] --private-vlan PRIVATE_VLAN_ID --public-vlan PUBLIC_VLAN_ID
     ```
     {: pre}
 
 1. Verify that the zone is added to your cluster. Look for the added zone in the **Worker zones** field of the output. Note that the total number of workers in the **Workers** field has increased as new worker nodes are provisioned in the added zone.
     ```sh
-    ibmcloud oc cluster get --cluster <cluster_name_or_ID>
+    ibmcloud oc cluster get --cluster CLUSTER_NAME_OR_ID
     ```
     {: pre}
 

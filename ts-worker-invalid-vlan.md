@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2026
-lastupdated: "2026-07-30"
+lastupdated: "2026-08-06"
 
 
 keywords: openshift
@@ -69,14 +69,14 @@ Before you begin: [Log in to your account. If applicable, target the appropriate
 4. Note the name of your worker pools.
 
     ```sh
-    ibmcloud oc worker-pool ls --cluster <cluster_name_or_ID>
+    ibmcloud oc worker-pool ls --cluster CLUSTER_NAME_OR_ID
     ```
     {: pre}
 
 5. Use the `zone network-set` [command](/docs/openshift?topic=openshift-kubernetes-service-cli#zone-network-set-cli) to change the worker pool network metadata.
 
     ```sh
-    ibmcloud oc zone network-set --zone <zone> --cluster <cluster_name_or_ID> --worker-pool <worker-pool> --private-vlan <private_vlan_ID> --public-vlan <public_vlan_ID>
+    ibmcloud oc zone network-set --zone ZONE --cluster CLUSTER_NAME_OR_ID --worker-pool WORKER_POOL --private-vlan PRIVATE_VLAN_ID --public-vlan PUBLIC_VLAN_ID
     ```
     {: pre}
 
@@ -85,13 +85,13 @@ Before you begin: [Log in to your account. If applicable, target the appropriate
 7. Rebalance or resize your worker pool to add worker nodes that use the new VLAN IDs. For example:
 
     ```sh
-    ibmcloud oc worker-pool resize --cluster <cluster_name_or_ID> --worker-pool <worker_pool> --size-per-zone <number_of_workers_per_zone>
+    ibmcloud oc worker-pool resize --cluster CLUSTER_NAME_OR_ID --worker-pool WORKER_POOL --size-per-zone NUMBER_OF_WORKERS_PER_ZONE
     ```
     {: pre}
 
 8. Verify that your worker nodes are created.
 
 ```sh
-ibmcloud oc worker ls --cluster <cluster_name_or_ID> --worker-pool <worker_pool>
+ibmcloud oc worker ls --cluster CLUSTER_NAME_OR_ID --worker-pool WORKER_POOL
 ```
 {: pre}

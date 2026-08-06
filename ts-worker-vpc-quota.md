@@ -2,7 +2,7 @@
 
 copyright:
   years: 2026, 2026
-lastupdated: "2026-08-03"
+lastupdated: "2026-08-06"
 
 keywords: openshift, vpc quota, worker node, vcpu, memory, gpu, instance storage, optimized instance storage
 
@@ -24,7 +24,7 @@ content-type: troubleshoot
 When you try to create or add worker nodes to your VPC cluster, the worker nodes fail to provision and show an error related to quota limits.
 {: shortdesc}
 
-Your worker nodes are in a `provision_failed` state. When you run `ibmcloud oc worker get --cluster <cluster_name_or_id> --worker <worker_id>` or view the worker details in the console, you see an error message similar to the following example.
+Your worker nodes are in a `provision_failed` state. When you run `ibmcloud oc worker get --cluster CLUSTER_NAME_OR_ID --worker WORKER_ID` or view the worker details in the console, you see an error message similar to the following example.
 {: tsSymptoms}
 
 ```sh

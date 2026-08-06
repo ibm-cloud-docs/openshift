@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2026
-lastupdated: "2026-07-30"
+lastupdated: "2026-08-06"
 
 
 keywords: openshift
@@ -53,7 +53,7 @@ If you need a new VLAN, order one by [contacting {{site.data.keyword.cloud_notm}
 
 Then, [create a cluster](/docs/openshift?topic=openshift-kubernetes-service-cli#cluster-create-classic-cli) that uses this new VLAN.
 
-If you have another VLAN that is available, you can [set up VLAN spanning](/docs/vlans?topic=vlans-vlan-spanning#vlan-spanning) in your existing cluster. After, you can add new worker nodes to the cluster that use the other VLAN with available subnets. To check if VLAN spanning is already enabled, use the `ibmcloud oc vlan spanning get --region <region>` [command](/docs/openshift?topic=openshift-kubernetes-service-cli#vlan-spanning-get-cli).
+If you have another VLAN that is available, you can [set up VLAN spanning](/docs/vlans?topic=vlans-vlan-spanning#vlan-spanning) in your existing cluster. After, you can add new worker nodes to the cluster that use the other VLAN with available subnets. To check if VLAN spanning is already enabled, use the `ibmcloud oc vlan spanning get --region REGION` [command](/docs/openshift?topic=openshift-kubernetes-service-cli#vlan-spanning-get-cli).
 
 If you are not using all the subnets in the VLAN, you can reuse subnets on the VLAN by adding them to your cluster.
 
@@ -66,7 +66,7 @@ If you are not using all the subnets in the VLAN, you can reuse subnets on the V
 
 3. Verify that the subnet was successfully created and added to your cluster. The subnet CIDR is listed in the **Subnet VLANs** section.
     ```sh
-    ibmcloud oc cluster get --cluster <cluster_name> --show-resources
+    ibmcloud oc cluster get --cluster CLUSTER_NAME --show-resources
     ```
     {: pre}
 

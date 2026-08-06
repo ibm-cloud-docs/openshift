@@ -2,7 +2,7 @@
 
 copyright:
   years: 2026, 2026
-lastupdated: "2026-07-30"
+lastupdated: "2026-08-06"
 
 keywords: openshift, virtualization service, rovs, manage, add-ons, worker nodes, maintenance
 
@@ -80,7 +80,7 @@ For detailed information about managing the OpenShift Virtualization add-on, inc
 List all worker nodes in your cluster:
 
 ```sh
-ibmcloud ks workers --cluster <cluster-name>
+ibmcloud ks workers --cluster CLUSTER_NAME
 ```
 {: pre}
 
@@ -97,9 +97,9 @@ oc get nodes
 Add worker nodes to an existing worker pool:
 
 ```sh
-ibmcloud ks worker-pool resize --cluster <cluster-name> \
+ibmcloud ks worker-pool resize --cluster CLUSTER_NAME \
   --worker-pool default \
-  --size-per-zone <number-of-workers>
+  --size-per-zone NUMBER_OF_WORKERS
 ```
 {: pre}
 
@@ -112,7 +112,7 @@ All worker nodes in a Virtualization Service cluster must use supported bare met
 Replace a worker node:
 
 ```sh
-ibmcloud ks worker replace --cluster <cluster-name> --worker <worker-id>
+ibmcloud ks worker replace --cluster CLUSTER_NAME --worker WORKER_ID
 ```
 {: pre}
 
@@ -124,7 +124,7 @@ The replacement worker is provisioned with the same configuration as the origina
 Reload a worker node to apply updates or fix issues:
 
 ```sh
-ibmcloud ks worker reload --cluster <cluster-name> --worker <worker-id>
+ibmcloud ks worker reload --cluster CLUSTER_NAME --worker WORKER_ID
 ```
 {: pre}
 
@@ -138,7 +138,7 @@ Before reloading a worker node, ensure that any running VMs are migrated to othe
 {: #rovs-manage-view-pools}
 
 ```sh
-ibmcloud ks worker-pool ls --cluster <cluster-name>
+ibmcloud ks worker-pool ls --cluster CLUSTER_NAME
 ```
 {: pre}
 
@@ -182,7 +182,7 @@ ibmcloud ks zone add vpc-gen2 \
 Check if updates are available for your cluster:
 
 ```sh
-ibmcloud ks cluster get --cluster <cluster-name> | grep "Master Version"
+ibmcloud ks cluster get --cluster CLUSTER_NAME | grep "Master Version"
 ```
 {: pre}
 
@@ -199,7 +199,7 @@ ibmcloud ks versions --show-version openshift
 Update the cluster master to a new version:
 
 ```sh
-ibmcloud ks cluster master update --cluster <cluster-name> --version <version>
+ibmcloud ks cluster master update --cluster CLUSTER_NAME --version VERSION
 ```
 {: pre}
 
@@ -212,14 +212,14 @@ The master update typically takes 30-60 minutes. During this time, you cannot ac
 After updating the master, update worker nodes:
 
 ```sh
-ibmcloud ks worker update --cluster <cluster-name> --worker <worker-id>
+ibmcloud ks worker update --cluster CLUSTER_NAME --worker WORKER_ID
 ```
 {: pre}
 
 Or update all workers in a worker pool:
 
 ```sh
-ibmcloud ks worker-pool update --cluster <cluster-name> --worker-pool <pool-name>
+ibmcloud ks worker-pool update --cluster CLUSTER_NAME --worker-pool POOL_NAME
 ```
 {: pre}
 
@@ -233,7 +233,7 @@ Before updating worker nodes, migrate VMs to other nodes or ensure they can tole
 {: #rovs-manage-check-status}
 
 ```sh
-ibmcloud ks cluster get --cluster <cluster-name>
+ibmcloud ks cluster get --cluster CLUSTER_NAME
 ```
 {: pre}
 
@@ -265,7 +265,7 @@ oc get storagecluster -n openshift-storage
 View cluster activity:
 
 ```sh
-ibmcloud ks cluster get --cluster <cluster-name> --show-resources
+ibmcloud ks cluster get --cluster CLUSTER_NAME --show-resources
 ```
 {: pre}
 

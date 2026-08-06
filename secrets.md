@@ -2,7 +2,7 @@
 
 copyright:
   years: 2023, 2026
-lastupdated: "2026-07-30"
+lastupdated: "2026-08-06"
 
 
 keywords: secret, certificate, field, tls, non-tls, rotate, ingress
@@ -76,14 +76,14 @@ Follow the steps to use the default TLS certificate for the IBM-provided Ingress
 
 
     ```sh
-    ibmcloud oc ingress secret get -c <cluster> --name <secret_name> --namespace openshift-ingress
+    ibmcloud oc ingress secret get -c CLUSTER --name SECRET_NAME --namespace openshift-ingress
     ```
     {: pre}
 
 3. Create a secret for the default TLS certificate in each namespace where your Ingress resources or apps exist. Specify the TLS certificate CRN with the `--cert-crn` command option. 
 
     ```sh
-    ibmcloud oc ingress secret create --cluster <cluster_name_or_ID> --cert-crn <CRN> --name <secret_name> --namespace openshift-ingress
+    ibmcloud oc ingress secret create --cluster CLUSTER_NAME_OR_ID --cert-crn CRN --name SECRET_NAME --namespace openshift-ingress
     ```
     {: pre}
 
@@ -108,7 +108,7 @@ By storing custom TLS certificates in [{{site.data.keyword.secrets-manager_short
 
 
     ```sh
-    ibmcloud oc ingress secret create --name <secret_name> --cluster <cluster_name_or_ID> --cert-crn <certificate_crn> --namespace openshift-ingress
+    ibmcloud oc ingress secret create --name SECRET_NAME --cluster CLUSTER_NAME_OR_ID --cert-crn CERTIFICATE_CRN --namespace openshift-ingress
     ```
     {: pre}
 

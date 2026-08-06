@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2026
-lastupdated: "2026-08-03"
+lastupdated: "2026-08-06"
 
 
 keywords: openshift, kubernetes, logmet, logs, metrics, audit, events
@@ -247,19 +247,19 @@ The Kubernetes audit system in your cluster consists of an audit webhook, a log 
 
 9. Check the certificate authority status. If your certificates are nearing expiration, follow the steps to [rotate your certificates](/docs/openshift?topic=openshift-cert-rotate).
     ```sh
-    ibmcloud oc cluster ca status -c <cluster>
+    ibmcloud oc cluster ca status -c CLUSTER
     ```
     {: pre}
     
 10. Save the `certificate-authority` of the cluster to file `cluster-ca.pem`. {: #query-cert}
     ```sh
-    ibmcloud oc cluster ca get -c <cluster> --output json | jq -r .caCert | base64 -D > cluster-ca.pem
+    ibmcloud oc cluster ca get -c CLUSTER --output json | jq -r .caCert | base64 -D > cluster-ca.pem
     ```
     {: pre}
 
 11. [Log in to your account. If applicable, target the appropriate resource group. Set the context for your cluster.](/docs/containers?topic=containers-access_cluster) Prepare a certificate-based kubeconfig and save it to `kubeconfig.json`. Make sure to specify the `--admin` option to download the `client-certificate` and the `client-key` data to your local machine. This data is used later to configure the audit webhook.
     ```sh
-    ibmcloud oc cluster config --cluster <cluster> --admin --output json > kubeconfig.json
+    ibmcloud oc cluster config --cluster CLUSTER --admin --output json > kubeconfig.json
     ```
     {: pre}
 
@@ -300,7 +300,7 @@ The Kubernetes audit system in your cluster consists of an audit webhook, a log 
 
 15. Verify that the audit webhook is created in your cluster.
     ```sh
-    ibmcloud oc cluster master audit-webhook get --cluster <cluster>
+    ibmcloud oc cluster master audit-webhook get --cluster CLUSTER
     ```
     {: pre}
 
@@ -314,7 +314,7 @@ The Kubernetes audit system in your cluster consists of an audit webhook, a log 
 
 16. Apply the webhook to your Kubernetes API server by refreshing the cluster master. It might take several minutes for the master to refresh.
     ```sh
-    ibmcloud oc cluster master refresh --cluster <cluster>
+    ibmcloud oc cluster master refresh --cluster CLUSTER
     ```
     {: pre}
 
@@ -637,7 +637,7 @@ Before you begin, ensure that you reviewed the [considerations and prerequisites
 
 6. [Log in to your account. If applicable, target the appropriate resource group. Set the context for your cluster.](/docs/containers?topic=containers-access_cluster) Make sure to specify the `--admin` option to download the `client-certificate` and the `client-key` files to your local machine. These files are used later to configure the audit webhook.
     ```sh
-    ibmcloud oc cluster config --cluster <cluster> --admin
+    ibmcloud oc cluster config --cluster CLUSTER --admin
     ```
     {: pre}
 
@@ -649,7 +649,7 @@ Before you begin, ensure that you reviewed the [considerations and prerequisites
     
 8. Query the `certificate-authority` of the cluster and save it into a file.
    ```sh
-    ibmcloud oc cluster ca get -c <cluster> --output json | jq -r .caCert | base64 -D > <certificate-authority>
+    ibmcloud oc cluster ca get -c CLUSTER --output json | jq -r .caCert | base64 -D > CERTIFICATE_AUTHORITY
     ```
     {: pre}
 
@@ -673,13 +673,13 @@ Before you begin, ensure that you reviewed the [considerations and prerequisites
 
 10. Configure the audit webhook and specify the `certificate-authority`, `client-certificate`, and `client-key` that you retrieved in the steps 5-7.
     ```sh
-    ibmcloud oc cluster master audit-webhook set --cluster <cluster> --remote-server https://127.0.0.1:2040/api/v1/namespaces/ibm-kube-audit/services/kube-audit-forwarder/proxy/post --ca-cert <certificate-authority> --client-cert <client-certificate> --client-key <client-key> [--policy default|verbose]
+    ibmcloud oc cluster master audit-webhook set --cluster CLUSTER --remote-server https://127.0.0.1:2040/api/v1/namespaces/ibm-kube-audit/services/kube-audit-forwarder/proxy/post --ca-cert CERTIFICATE_AUTHORITY --client-cert CLIENT_CERTIFICATE --client-key CLIENT_KEY [--policy default|verbose]
     ```
     {: pre}
 
 11. Verify that the audit webhook is created in your cluster.
     ```sh
-    ibmcloud oc cluster master audit-webhook get --cluster <cluster_name_or_ID>
+    ibmcloud oc cluster master audit-webhook get --cluster CLUSTER_NAME_OR_ID
     ```
     {: pre}
 
@@ -694,7 +694,7 @@ Before you begin, ensure that you reviewed the [considerations and prerequisites
 
 12. Apply the webhook to your Kubernetes API server by refreshing the cluster master. The master might take several minutes to refresh.
     ```sh
-    ibmcloud oc cluster master refresh --cluster <cluster_name_or_ID>
+    ibmcloud oc cluster master refresh --cluster CLUSTER_NAME_OR_ID
     ```
     {: pre}
 

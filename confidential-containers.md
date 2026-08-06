@@ -2,7 +2,7 @@
 
 copyright:
   years: 2025, 2026
-lastupdated: "2026-07-30"
+lastupdated: "2026-08-06"
 
 keywords: confidential containers
 
@@ -200,7 +200,7 @@ If you are testing out confidential containers, you can use an API key. If you a
     Run the following command, and save the output.
 
     ```sh
-    ibmcloud iam api-key-create <key_name>
+    ibmcloud iam api-key-create KEY_NAME
     ```
     {: pre}
 

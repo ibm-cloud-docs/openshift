@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2024, 2026
-lastupdated: "2026-07-30"
+lastupdated: "2026-08-06"
 
 
 keywords: openshift, {{site.data.keyword.openshiftlong_notm}}, secure by default, {{site.data.keyword.openshiftlong_notm}}, outbound traffic protection, cluster create, quotas, limitations, rules, security groups
@@ -58,7 +58,7 @@ If you have already reached the 15 cluster maximum for your VPC, the worker node
 If you choose to delete a cluster from your existing VPC, [refresh the cluster master](/docs/openshift?topic=openshift-kubernetes-service-cli#cluster-master-refresh-cli) to continue provisioning your worker nodes. 
 
     ```sh
-    ibmcloud oc cluster master refresh -c <cluster_name_or_ID>
+    ibmcloud oc cluster master refresh -c CLUSTER_NAME_OR_ID
     ```
     {: pre}
 
@@ -94,7 +94,7 @@ If you choose to delete a cluster from your existing VPC, [refresh the cluster m
 1. Refresh the cluster master so that security group creation gets reprocessed.
 
     ```sh
-    ibmcloud ks cluster master refresh -c <clusterID>
+    ibmcloud ks cluster master refresh -c CLUSTER_ID
     ```
     {: pre}
 

@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2026
-lastupdated: "2026-08-03"
+lastupdated: "2026-08-06"
 
 
 keywords: kubernetes, openshift, red hat, red hat openshift
@@ -120,7 +120,7 @@ In this tutorial, you create the following resources by using the CLI. There are
     ```
     {: screen}
 
-    If you can't perform operations that require Administrator permissions, such as listing all the worker nodes or pods in a cluster, download the TLS certificates and permission files for the cluster administrator by running the `ibmcloud oc cluster config --cluster <cluster_name_or_ID> --admin` command.
+    If you can't perform operations that require Administrator permissions, such as listing all the worker nodes or pods in a cluster, download the TLS certificates and permission files for the cluster administrator by running the `ibmcloud oc cluster config --cluster CLUSTER_NAME_OR_ID --admin` command.
     {: tip}
 
 ## Navigate the {{site.data.keyword.redhat_openshift_notm}} console

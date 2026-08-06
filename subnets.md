@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2026
-lastupdated: "2026-07-30"
+lastupdated: "2026-08-06"
 
 
 keywords: openshift
@@ -44,7 +44,7 @@ VLANs for standard clusters
 :   In standard clusters, the first time that you create a cluster in a zone, a public VLAN and a private VLAN in that zone are automatically provisioned for you in your IBM Cloud infrastructure account. For every subsequent cluster that you create in that zone, you must specify the VLAN pair that you want to use in that zone. You can reuse the same public and private VLANs that were created for you because multiple clusters can share VLANs.
     You can either connect your worker nodes to both a public VLAN and the private VLAN, or to the private VLAN only. If you want to connect your worker nodes to a private VLAN only, you can use the ID of an existing private VLAN or [create a private VLAN](/docs/cli?topic=cli-manage-classic-vlans#sl_vlan_create) and use the ID during cluster creation.
 
-To see the VLANs that are provisioned in each zone for your account, run `ibmcloud oc vlan ls --zone <zone>.` To see the VLANs that one cluster is provisioned on, run `ibmcloud oc cluster get --cluster <cluster_name_or_ID> --show-resources` and look for the **Subnet VLANs** section.
+To see the VLANs that are provisioned in each zone for your account, run `ibmcloud oc vlan ls --zone ZONE.` To see the VLANs that one cluster is provisioned on, run `ibmcloud oc cluster get --cluster CLUSTER_NAME_OR_ID --show-resources` and look for the **Subnet VLANs** section.
 
 IBM Cloud infrastructure manages the VLANs that are automatically provisioned when you create your first cluster in a zone. If you let a VLAN become unused, such as by removing all worker nodes from a VLAN, IBM Cloud infrastructure reclaims the VLAN. After, if you need a new VLAN, [contact {{site.data.keyword.cloud_notm}} support](/docs/vlans?topic=vlans-ordering-premium-vlans#ordering-premium-vlans).
 
@@ -75,7 +75,7 @@ The following subnets are automatically provisioned on the default public and pr
 ### Finding subnets provisioned in your account
 {: #finding_subnets_account}
 
-To see all the subnets provisioned in all resource groups of your account, run `ibmcloud oc subnets --provider classic`. To see the portable public and portable private subnets that are bound to one cluster, you can run `ibmcloud oc cluster get --cluster <cluster_name_or_ID> --show-resources` and look for the **Subnet VLANs** section.
+To see all the subnets provisioned in all resource groups of your account, run `ibmcloud oc subnets --provider classic`. To see the portable public and portable private subnets that are bound to one cluster, you can run `ibmcloud oc cluster get --cluster CLUSTER_NAME_OR_ID --show-resources` and look for the **Subnet VLANs** section.
 
 In {{site.data.keyword.openshiftlong_notm}}, VLANs have a limit of 40 subnets. If you reach this limit, first check to see whether you can [reuse subnets in the VLAN to create new clusters](/docs/openshift?topic=openshift-subnets#subnets_custom). If you need a new VLAN, order one by [contacting {{site.data.keyword.cloud_notm}} support](/docs/vlans?topic=vlans-ordering-premium-vlans#ordering-premium-vlans). Then, [create a cluster](/docs/openshift?topic=openshift-kubernetes-service-cli#cluster-create-classic-cli) that uses this new VLAN.
 {: note}
@@ -142,7 +142,7 @@ Virtual Routing and Forwarding (VRF)
 :   VRF enables all the VLANs and subnets in your infrastructure account to communicate with each other. Additionally, a VRF is required to allow your workers and master to communicate over the private cloud service endpoint. To enable VRF, see [Enabling VRF](/docs/account?topic=account-vrf-service-endpoint&interface=ui). To check whether a VRF is already enabled, use the `ibmcloud account show` command. Note that VRF eliminates the VLAN spanning option for your account, because all VLANs are able to communicate unless you configure a gateway appliance to manage traffic.
 
 VLAN spanning
-:   If you can't or don't want to enable VRF, [enable VLAN spanning](/docs/vlans?topic=vlans-vlan-spanning#vlan-spanning). To perform this action, you need the **Network > Manage Network VLAN Spanning** [infrastructure permission](/docs/openshift?topic=openshift-iam-platform-access-roles), or you can request the account owner to enable it. To check if VLAN spanning is already enabled, use the `ibmcloud oc vlan spanning get --region <region>` [command](/docs/openshift?topic=openshift-kubernetes-service-cli#vlan-spanning-get-cli). Note that you can't enable the private cloud service endpoint if you choose to enable VLAN spanning instead of a VRF.
+:   If you can't or don't want to enable VRF, [enable VLAN spanning](/docs/vlans?topic=vlans-vlan-spanning#vlan-spanning). To perform this action, you need the **Network > Manage Network VLAN Spanning** [infrastructure permission](/docs/openshift?topic=openshift-iam-platform-access-roles), or you can request the account owner to enable it. To check if VLAN spanning is already enabled, use the `ibmcloud oc vlan spanning get --region REGION` [command](/docs/openshift?topic=openshift-kubernetes-service-cli#vlan-spanning-get-cli). Note that you can't enable the private cloud service endpoint if you choose to enable VLAN spanning instead of a VRF.
 
 How does VRF or VLAN spanning affect network segmentation?
 :   When VRF or VLAN spanning is enabled, any system that is connected to any of the private VLANs in the same {{site.data.keyword.cloud_notm}} account can communicate with workers. You can isolate your cluster from other systems on the private network by applying [Calico private network policies](/docs/openshift?topic=openshift-network_policies#isolate_workers). {{site.data.keyword.openshiftlong_notm}} is also compatible with all [IBM Cloud infrastructure firewall offerings](https://www.ibm.com/products/network-security){: external}. You can set up a firewall, such as a [Virtual Router Appliance](/docs/virtual-router-appliance?topic=virtual-router-appliance-about-the-vra), with custom network policies to provide dedicated network security for your standard cluster and to detect and remediate network intrusion.
@@ -196,7 +196,7 @@ To create a cluster by using existing subnets:
     ```
     {: pre}
 
-    If you can't remember which zone the VLAN is in for the `--zone` option, you can check whether the VLAN is in a certain zone by running `ibmcloud oc vlan ls --zone <zone>`.
+    If you can't remember which zone the VLAN is in for the `--zone` option, you can check whether the VLAN is in a certain zone by running `ibmcloud oc vlan ls --zone ZONE`.
     {: tip}
 
 3. Verify that the cluster was created. It can take up to 15 minutes for the worker node machines to be ordered and for the cluster to be set up and provisioned in your account.
@@ -217,7 +217,7 @@ To create a cluster by using existing subnets:
 4. Check the status of the worker nodes.
 
     ```sh
-    ibmcloud oc worker ls --cluster <cluster_name_or_ID>
+    ibmcloud oc worker ls --cluster CLUSTER_NAME_OR_ID
     ```
     {: pre}
 
@@ -231,14 +231,14 @@ To create a cluster by using existing subnets:
 
 5. Add the subnet to your cluster by specifying the subnet ID. When you make a subnet available to a cluster, a Kubernetes ConfigMap is created for you that includes all available portable public IP addresses that you can use. If no Ingress ALBs exist in the zone where the subnet's VLAN is located, one portable public and one portable private IP address is automatically used to create the public and private ALBs for that zone. You can use all other portable public and private IP addresses from the subnet to create NLB services for your apps.
     ```sh
-    ibmcloud oc cluster subnet add --cluster <cluster_name_or_id> --subnet-id <subnet_ID>
+    ibmcloud oc cluster subnet add --cluster CLUSTER_NAME_OR_ID --subnet-id SUBNET_ID
     ```
     {: pre}
 
 6. Verify that the subnet is added to your cluster.
 
     ```sh
-    ibmcloud oc cluster get --cluster <cluster_name> --show-resources
+    ibmcloud oc cluster get --cluster CLUSTER_NAME --show-resources
     ```
     {: pre}
 
@@ -345,7 +345,7 @@ To delete an NLB or disable an ALB,
 
     - Disable an ALB:
         ```sh
-        ibmcloud oc ingress alb disable --alb <ALB_ID> -c <cluster_name_or_ID>
+        ibmcloud oc ingress alb disable --alb ALB_ID -c CLUSTER_NAME_OR_ID
         ```
         {: pre}
 
@@ -377,7 +377,7 @@ To order a subnet,
 1. Provision a new subnet.
 
     ```sh
-    ibmcloud oc cluster subnet create --cluster <cluster_name_or_id> --size <subnet_size> --vlan <VLAN_ID>
+    ibmcloud oc cluster subnet create --cluster CLUSTER_NAME_OR_ID --size SUBNET_SIZE --vlan VLAN_ID
     ```
     {: pre}
     
@@ -385,13 +385,13 @@ To order a subnet,
     | ----- | ------|
     | *`<cluster_name_or_id>`* | Replace `<cluster_name_or_id>` with the name or ID of the cluster. |
     | *`<subnet_size>`* | Replace `<subnet_size>` with the number of IP addresses that you want to create in the portable subnet. Accepted values are 8, 16, 32, or 64. Note that when you add portable IP addresses for your subnet, three IP addresses are used to establish cluster-internal networking. You can't use these three IP addresses for your Ingress application load balancers (ALBs) or to create network load balancer (NLB) services. For example, if you request eight portable public IP addresses, you can use five of them to expose your apps to the public. |
-    | *`<VLAN_ID>`* | Replace `<VLAN_ID>` with the ID of the public or private VLAN on which you want to allocate the portable public or private IP addresses. You must select a public or private VLAN that an existing worker node is connected to. To review the public or private VLANs that your worker nodes are connected to, run `ibmcloud oc cluster get --cluster <cluster> --show-resources` and look for the **Subnet VLANs** section in the output. The subnet is provisioned in the same zone that the VLAN is in. |
+    | *`<VLAN_ID>`* | Replace `<VLAN_ID>` with the ID of the public or private VLAN on which you want to allocate the portable public or private IP addresses. You must select a public or private VLAN that an existing worker node is connected to. To review the public or private VLANs that your worker nodes are connected to, run `ibmcloud oc cluster get --cluster CLUSTER --show-resources` and look for the **Subnet VLANs** section in the output. The subnet is provisioned in the same zone that the VLAN is in. |
     {: caption="Parameters for a subnet" caption-side="bottom"}
 
 2. Verify that the subnet was successfully created and added to your cluster. The subnet CIDR is listed in the **Subnet VLANs** section.
 
     ```sh
-    ibmcloud oc cluster get --cluster <cluster_name_or_ID> --show-resources
+    ibmcloud oc cluster get --cluster CLUSTER_NAME_OR_ID --show-resources
     ```
     {: pre}
 
@@ -421,7 +421,7 @@ To make a subnet available to your cluster,
 
 1. Review the IDs of the public or private VLANs on which you want to allocate the portable public or private IP addresses. You must select a public or private VLAN that an existing worker node is connected to.
     ```sh
-    ibmcloud oc cluster get --cluster <cluster_name_or_id> --show-resources
+    ibmcloud oc cluster get --cluster CLUSTER_NAME_OR_ID --show-resources
     ```
     {: pre}
 
@@ -452,13 +452,13 @@ To make a subnet available to your cluster,
 
 3. Make the subnet available to your cluster.
     ```sh
-    ibmcloud oc cluster subnet add --cluster <cluster_name_or_id> --subnet-id <subnet_ID>
+    ibmcloud oc cluster subnet add --cluster CLUSTER_NAME_OR_ID --subnet-id SUBNET_ID
     ```
     {: pre}
 
 4. Verify that the subnet was successfully created and added to your cluster. The subnet CIDR is listed in the **Subnet VLANs** section.
     ```sh
-    ibmcloud oc cluster get --cluster <cluster_name> --show-resources
+    ibmcloud oc cluster get --cluster CLUSTER_NAME --show-resources
     ```
     {: pre}
 

@@ -2,7 +2,7 @@
 
 copyright:
   years: 2026, 2026
-lastupdated: "2026-07-30"
+lastupdated: "2026-08-06"
 
 keywords: openshift, virtualization service, rovs, create cluster, vpc, bare metal, tutorial
 
@@ -133,7 +133,7 @@ If you don't have the required VPC infrastructure, create it from the CLI.
    ```
    {: pre}
 
-   Look for bare metal flavors ending in `d`, which indicates local NVME storage required for OpenShift Data Foundation. To verify that a specific flavor supports Virtualization Service, run `ibmcloud ks flavor get --flavor <flavor> --zone <zone> --provider vpc-gen2` and check for the `openshift-vs` tag in the output. For a complete list of supported flavors, see [Worker node flavors](/docs/openshift?topic=openshift-vpc-flavors).
+   Look for bare metal flavors ending in `d`, which indicates local NVME storage required for OpenShift Data Foundation. To verify that a specific flavor supports Virtualization Service, run `ibmcloud ks flavor get --flavor FLAVOR --zone ZONE --provider vpc-gen2` and check for the `openshift-vs` tag in the output. For a complete list of supported flavors, see [Worker node flavors](/docs/openshift?topic=openshift-vpc-flavors).
 
 ## Create a Virtualization Service cluster
 {: #rovs-create-cluster}
@@ -457,8 +457,8 @@ If you encounter issues during cluster creation:
     - Ensure your IAM permissions are correct
 
 **Pre-configured components not installing**
-:   - Check cluster logs: `ibmcloud ks cluster get --cluster <cluster-name> --show-resources`
-    - Verify add-on status: `ibmcloud ks cluster addon ls --cluster <cluster-name>`
+:   - Check cluster logs: `ibmcloud ks cluster get --cluster CLUSTER_NAME --show-resources`
+    - Verify add-on status: `ibmcloud ks cluster addon ls --cluster CLUSTER_NAME`
     - Review operator logs in the OpenShift console
 
 For more troubleshooting guidance, see [Troubleshooting OpenShift Virtualization](/docs/openshift?topic=openshift-ts-virt-operator-install-fails).

@@ -2,7 +2,7 @@
 
 copyright:
   years: 2020, 2026
-lastupdated: "2026-07-30"
+lastupdated: "2026-08-06"
 
 
 keywords: openshift, satellite, distributed cloud, on-prem, hybrid
@@ -151,7 +151,7 @@ Before you begin, [install the {{site.data.keyword.satelliteshort}} CLI plug-in]
     
     Example `cluster create` command using `RHCOS` hosts and applying a `--pull-secret` license.
     ```sh
-    ibmcloud oc cluster create satellite --location LOCATION --name <cluster_name> --pull-secret SECRET --version VERSION --enable-admin-agent --operating-system RHCOS 
+    ibmcloud oc cluster create satellite --location LOCATION --name CLUSTER_NAME --pull-secret SECRET --version VERSION --enable-admin-agent --operating-system RHCOS
     ```
     {: pre}
 

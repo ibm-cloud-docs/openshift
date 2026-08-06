@@ -1,7 +1,7 @@
 ---
 copyright: 
   years: 2024, 2026
-lastupdated: "2026-08-04"
+lastupdated: "2026-08-06"
 
 
 keywords: load balancer, vpc, vpc load balancer, lb, persistent
@@ -134,7 +134,7 @@ After you have created a VPC NLB, you cannot reconfigure the listening subnet it
 
 1. Find the VPC load balancer that corresponds with the Kubernetes `LoadBalancer` service.
 
-    VPC load balancer names are in the format `kube-<cluster_ID>-<kubernetes_lb_service_UID>`. To see your cluster ID, run `ibmcloud ks cluster get --cluster <cluster_name>`. To see the Kubernetes LoadBalancer service UID, run `oc get svc <load-balancer-name> -o yaml` and look for the metadata.uid field in the output. The hyphens (-) are removed from the Kubernetes `LoadBalancer` service UID in the VPC load balancer name.
+    VPC load balancer names are in the format `kube-<cluster_ID>-<kubernetes_lb_service_UID>`. To see your cluster ID, run `ibmcloud ks cluster get --cluster CLUSTER_NAME`. To see the Kubernetes LoadBalancer service UID, run `oc get svc LOAD_BALANCER_NAME -o yaml` and look for the metadata.uid field in the output. The hyphens (-) are removed from the Kubernetes `LoadBalancer` service UID in the VPC load balancer name.
     {: tip}
 
     ```sh

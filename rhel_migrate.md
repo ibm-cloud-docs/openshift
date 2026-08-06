@@ -2,7 +2,7 @@
 
 copyright:
   years: 2022, 2026
-lastupdated: "2026-07-30"
+lastupdated: "2026-08-06"
 
 
 keywords: rhel, os, operating system, rhcos, 418, migration, vpc
@@ -123,7 +123,7 @@ For more information about rescheduling workloads, see [Safely Drain a Node](htt
 
 * Migrate per worker pool by deleting your entire RHEL worker pool.
     ```sh
-    ibmcloud ks worker-pool rm --cluster <clusterNameOrID> --worker-pool <workerPoolNameOrID>
+    ibmcloud ks worker-pool rm --cluster CLUSTER_NAME_OR_ID --worker-pool WORKER_POOL_NAME_OR_ID
     ```
     {: pre}
 

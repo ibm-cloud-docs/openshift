@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2026
-lastupdated: "2026-08-03"
+lastupdated: "2026-08-06"
 
 
 keywords: openshift, clusters, access, endpoint
@@ -137,7 +137,7 @@ All VPC clusters have a private service endpoint which authorized users can acce
         1. Make sure that you have the [**Administrator** platform access role for the cluster](/docs/openshift?topic=openshift-iam-platform-access-roles).
         2. Download the kubeconfig for the administrator.
             ```sh
-            ibmcloud oc cluster config -c <cluster_name_or_ID> --admin --endpoint private
+            ibmcloud oc cluster config -c CLUSTER_NAME_OR_ID --admin --endpoint private
             ```
             {: pre}
 
@@ -148,7 +148,7 @@ All VPC clusters have a private service endpoint which authorized users can acce
     * **Log in with {{site.data.keyword.cloud_notm}} passcode**:
         1. Get the **Private Service Endpoint URL** of your cluster in the output of the following command.
             ```sh
-            ibmcloud oc cluster get -c <cluster_name_or_ID>
+            ibmcloud oc cluster get -c CLUSTER_NAME_OR_ID
             ```
             {: pre}
 
@@ -161,7 +161,7 @@ All VPC clusters have a private service endpoint which authorized users can acce
         3. Log in with your IBMid and copy the passcode.
         4. Log in to your cluster with the passcode.
             ```sh
-            oc login -u passcode -p <iam_passcode> --server=<private_service_endpoint_URL>
+            oc login -u passcode -p IAM_PASSCODE --server=PRIVATE_SERVICE_ENDPOINT_URL
             ```
             {: pre}
 
@@ -432,13 +432,13 @@ Making your location and cluster subdomains available outside of your hosts' pri
 
 1. Add the public IP addresses of the hosts that are assigned as worker nodes to this cluster to your cluster's subdomain. Repeat this command for each host's public IP address.
     ```sh
-    ibmcloud oc nlb-dns add --ip <public_IP> --cluster CLUSTER_NAME_OR_ID --nlb-host <hostname>
+    ibmcloud oc nlb-dns add --ip PUBLIC_IP --cluster CLUSTER_NAME_OR_ID --nlb-host HOSTNAME
     ```
     {: pre}
 
 1. Remove the private IP addresses from your cluster's subdomain. Repeat this command for all private IP addresses that you retrieved earlier.
     ```sh
-    ibmcloud oc nlb-dns rm classic --ip <private_IP> --cluster CLUSTER_NAME_OR_ID --nlb-host <hostname>
+    ibmcloud oc nlb-dns rm classic --ip PRIVATE_IP --cluster CLUSTER_NAME_OR_ID --nlb-host HOSTNAME
     ```
     {: pre}
 

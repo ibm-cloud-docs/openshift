@@ -2300,7 +2300,7 @@ ibmcloud ks cluster create satellite --location LOCATION --name NAME --version V
 :    Set this flag to `ocp_entitled` only if you use this cluster with a license such as a Cloud Pak that has an OpenShift entitlement.
 
 `--host-label LABEL`, `--hl LABEL`
-:    Enter any labels as key-value pairs to identify the host to assign to your Satellite control plane or Red Hat OpenShift cluster. The first host that has this label and is unassigned is automatically assigned to the control plane or cluster. To find available host labels, run `ibmcloud sat host get --host <host_name_or_ID> --location <location_name_or_ID>`.
+:    Enter any labels as key-value pairs to identify the host to assign to your Satellite control plane or Red Hat OpenShift cluster. The first host that has this label and is unassigned is automatically assigned to the control plane or cluster. To find available host labels, run `ibmcloud sat host get --host HOST_NAME_OR_ID --location LOCATION_NAME_OR_ID`.
 
 `--infrastructure-topology TOPOLOGY`
 :    Specify whether the cluster should run a single worker node or the default number of worker nodes. To create a single-node cluster, specify `single-replica`. To create a default cluster with multiple worker nodes, specify `highly-available`. The `highly-available` option is applied by default. Accepted values: `single-replica`, `highly-available`
@@ -2407,7 +2407,7 @@ ibmcloud ks cluster create vpc-classic --flavor FLAVOR --name NAME --subnet-id I
 :    The CRN of the IBM Cloud Secrets Manager instance.
 
 `--subnet-id ID`
-:    The VPC subnet to assign the cluster. To list available subnets, run `ibmcloud ks subnets --provider vpc-classic --vpc-id <vpc-id> --zone <vpc-zone>`.
+:    The VPC subnet to assign the cluster. To list available subnets, run `ibmcloud ks subnets --provider vpc-classic --vpc-id VPC_ID --zone VPC_ZONE`.
 
 `--version VERSION`
 :    Specify the Kubernetes or OpenShift version, including at least the major.minor version. If you do not include this flag, the default version is used. To see available versions, run `ibmcloud ks versions`.
@@ -2459,7 +2459,7 @@ ibmcloud ks cluster create vpc-gen2 --flavor FLAVOR --name NAME --subnet-id ID -
 :    Required for OpenShift clusters only. The CRN for the standard cloud object storage instance to back up the internal registry in your OpenShift cluster. To list the CRNs of your cloud object storage instances, run `ibmcloud resource service-instances --long --service-name cloud-object-storage`.
 
 `--crk CRK`
-:    The ID of the root key in your KMS instance to use for local disk encryption. To list available root keys, run `ibmcloud ks kms crk ls --instance-id <kms_instance>`.
+:    The ID of the root key in your KMS instance to use for local disk encryption. To list available root keys, run `ibmcloud ks kms crk ls --instance-id KMS_INSTANCE`.
 
 `--disable-outbound-traffic-protection`
 :    Include this option to allow public outbound access from the cluster workers. By default, public outbound access is blocked in OpenShift versions 4.15 and later and Kubernetes versions 1.30 and later.
@@ -2507,7 +2507,7 @@ ibmcloud ks cluster create vpc-gen2 --flavor FLAVOR --name NAME --subnet-id ID -
 :    The CRN of the IBM Cloud Secrets Manager instance.
 
 `--subnet-id ID`
-:    The VPC subnet to assign the cluster. To list available subnets, run `ibmcloud ks subnets --provider vpc-gen2 --vpc-id <vpc-id> --zone <vpc-zone>`.
+:    The VPC subnet to assign the cluster. To list available subnets, run `ibmcloud ks subnets --provider vpc-gen2 --vpc-id VPC_ID --zone VPC_ZONE`.
 
 `--version VERSION`
 :    Specify the Kubernetes or OpenShift version, including at least the major.minor version. If you do not include this flag, the default version is used. To see available versions, run `ibmcloud ks versions`.
@@ -6899,7 +6899,7 @@ ibmcloud ks kms enable --cluster CLUSTER --crk CRK --instance-id ID [--kms-accou
 :    Specify the cluster name or ID.
 
 `--crk CRK`
-:    A root key ID in your KMS instance. To list available root keys, run `ibmcloud ks kms crk ls --instance-id <kms_instance>`.
+:    A root key ID in your KMS instance. To list available root keys, run `ibmcloud ks kms crk ls --instance-id KMS_INSTANCE`.
 
 `--instance-id ID`
 :    KMS instance ID. To see available KMS instances, run `ibmcloud ks kms instance ls`.
@@ -9817,7 +9817,7 @@ ibmcloud ks worker-pool create satellite --cluster CLUSTER --host-label LABEL [-
 :    Set this flag to `ocp_entitled` only if you use this cluster with a license such as a Cloud Pak that has an OpenShift entitlement.
 
 `--host-label LABEL`, `--hl LABEL`
-:    Enter any labels as key-value pairs to identify the host to assign to your Satellite control plane or Red Hat OpenShift cluster. The first host that has this label and is unassigned is automatically assigned to the control plane or cluster. To find available host labels, run `ibmcloud sat host get --host <host_name_or_ID> --location <location_name_or_ID>`.
+:    Enter any labels as key-value pairs to identify the host to assign to your Satellite control plane or Red Hat OpenShift cluster. The first host that has this label and is unassigned is automatically assigned to the control plane or cluster. To find available host labels, run `ibmcloud sat host get --host HOST_NAME_OR_ID --location LOCATION_NAME_OR_ID`.
 
 `--label LABEL`, `-l LABEL`
 :    Sets labels on all the workers in the worker pool.
@@ -9899,7 +9899,7 @@ ibmcloud ks worker-pool create vpc-classic --cluster CLUSTER --flavor FLAVOR --n
 :    Specify the desired number of workers per zone in this worker pool.
 
 `--vpc-id ID`
-:    The ID of the VPC in which to create the worker nodes, which must match the VPC that the cluster is in. To list the cluster's VPC ID, run `ibmcloud ks cluster get -c <cluster_name_or_ID>`. If this flag is not provided, then the worker pool defaults to the VPC ID of existing worker pools in the cluster.
+:    The ID of the VPC in which to create the worker nodes, which must match the VPC that the cluster is in. To list the cluster's VPC ID, run `ibmcloud ks cluster get -c CLUSTER_NAME_OR_ID`. If this flag is not provided, then the worker pool defaults to the VPC ID of existing worker pools in the cluster.
 
 
 #### Examples
@@ -9936,7 +9936,7 @@ ibmcloud ks worker-pool create vpc-gen2 --cluster CLUSTER --flavor FLAVOR --name
 :    Specify the cluster name or ID.
 
 `--crk CRK`
-:    The ID of the root key in your KMS instance to use for local disk encryption. To list available root keys, run `ibmcloud ks kms crk ls --instance-id <kms_instance>`.
+:    The ID of the root key in your KMS instance to use for local disk encryption. To list available root keys, run `ibmcloud ks kms crk ls --instance-id KMS_INSTANCE`.
 
 `--disable-disk-encrypt`
 :    Disable encryption on a worker node.
@@ -9978,7 +9978,7 @@ ibmcloud ks worker-pool create vpc-gen2 --cluster CLUSTER --flavor FLAVOR --name
 :    Specify the desired number of workers per zone in this worker pool.
 
 `--vpc-id ID`
-:    The ID of the VPC in which to create the worker nodes, which must match the VPC that the cluster is in. To list the cluster's VPC ID, run `ibmcloud ks cluster get -c <cluster_name_or_ID>`. If this flag is not provided, then the worker pool defaults to the VPC ID of existing worker pools in the cluster.
+:    The ID of the VPC in which to create the worker nodes, which must match the VPC that the cluster is in. To list the cluster's VPC ID, run `ibmcloud ks cluster get -c CLUSTER_NAME_OR_ID`. If this flag is not provided, then the worker pool defaults to the VPC ID of existing worker pools in the cluster.
 
 
 #### Examples
@@ -10596,7 +10596,7 @@ ibmcloud ks zone add vpc-classic --cluster CLUSTER --subnet-id ID --worker-pool 
 :    Do not show the message of the day or update reminders.
 
 `--subnet-id ID`
-:    The VPC subnet to assign the cluster. To list available subnets, run `ibmcloud ks subnets --provider vpc-classic --vpc-id <vpc-id> --zone <vpc-zone>`.
+:    The VPC subnet to assign the cluster. To list available subnets, run `ibmcloud ks subnets --provider vpc-classic --vpc-id VPC_ID --zone VPC_ZONE`.
 
 `--worker-pool POOL`
 :    Specify a worker pool.
@@ -10645,7 +10645,7 @@ ibmcloud ks zone add vpc-gen2 --cluster CLUSTER --subnet-id ID --worker-pool POO
 :    Do not show the message of the day or update reminders.
 
 `--subnet-id ID`
-:    The VPC subnet to assign the cluster. To list available subnets, run `ibmcloud ks subnets --provider vpc-gen2 --vpc-id <vpc-id> --zone <vpc-zone>`.
+:    The VPC subnet to assign the cluster. To list available subnets, run `ibmcloud ks subnets --provider vpc-gen2 --vpc-id VPC_ID --zone VPC_ZONE`.
 
 `--worker-pool POOL`
 :    Specify a worker pool.
