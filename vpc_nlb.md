@@ -1,7 +1,7 @@
 ---
 copyright: 
   years: 2024, 2026
-lastupdated: "2026-08-04"
+lastupdated: "2026-08-06"
 
 keywords: nlb, network load balancer, vpc nlb, dns, public lb, private lb
 subcollection: openshift
@@ -268,13 +268,13 @@ Follow the steps to register VPC NLB IP addresses with a DNS subdomain.
 
         1. Create a DNS subdomain and SSL certificate.
             ```sh
-            ibmcloud oc nlb-dns create vpc-gen2 --type public --cluster <cluster_name_or_id> --ip <vpc_nlb1_ip> --ip <vpc_nlb2_ip> --ip <vpc_nlb3_ip>
+            ibmcloud oc nlb-dns create vpc-gen2 --type public --cluster CLUSTER_NAME_OR_ID --ip VPC_NLB1_IP --ip VPC_NLB2_IP --ip VPC_NLB3_IP
             ```
             {: pre}
             
         2. Verify that the subdomain is created. For more information, see [Understanding the subdomain format](/docs/openshift?topic=openshift-loadbalancer_hostname#loadbalancer_hostname_format).
             ```sh
-            ibmcloud oc nlb-dns ls --cluster <cluster_name_or_id>
+            ibmcloud oc nlb-dns ls --cluster CLUSTER_NAME_OR_ID
             ```
             {: pre}
 
@@ -306,7 +306,7 @@ Review the required and optional VPC NLB annotations and specifications.
 :   (Required for private NLBs) Annotation to specify a service that accepts private requests. If this annotation is not included, a public VPC NLB is created.
   
 `service.kubernetes.io/ibm-load-balancer-cloud-provider-vpc-subnets`
-:   (Required for private NLBs, optional for public NLBs) Annotation to specify the dedicated subnet that the VPC NLB deploys to. The value can be specified as a VPC subnet ID, VPC subnet name, or VPC subnet CIDR. You must specify only one subnet. The subnet must exist in the same VPC as your cluster and in a zone where your cluster has worker nodes, but no worker nodes can be attached to this subnet. The worker nodes that exist in the same zone as this subnet are configured to receive traffic from the VPC NLB. To see subnets in all resource groups, run `ibmcloud oc subnets --provider vpc-gen2 --vpc-id <vpc> --zone <zone>`.
+:   (Required for private NLBs, optional for public NLBs) Annotation to specify the dedicated subnet that the VPC NLB deploys to. The value can be specified as a VPC subnet ID, VPC subnet name, or VPC subnet CIDR. You must specify only one subnet. The subnet must exist in the same VPC as your cluster and in a zone where your cluster has worker nodes, but no worker nodes can be attached to this subnet. The worker nodes that exist in the same zone as this subnet are configured to receive traffic from the VPC NLB. To see subnets in all resource groups, run `ibmcloud oc subnets --provider vpc-gen2 --vpc-id VPC_ID --zone ZONE`.
 
 `externalTrafficPolicy`
 :   Specify `Local` or `Cluster`.

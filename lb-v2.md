@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2026
-lastupdated: "2026-08-04"
+lastupdated: "2026-08-06"
 
 
 keywords: openshift, lb2.0, nlb
@@ -131,7 +131,7 @@ To set up an NLB 2.0 in a multizone cluster:
         :   Annotation to specify the zone that the load balancer service deploys to. To see zones, run `ibmcloud oc zone ls`.
 
         `service.kubernetes.io/ibm-load-balancer-cloud-provider-vlan`
-        :   Annotation to specify a VLAN that the load balancer service deploys to. To see VLANs, run `ibmcloud oc vlan ls --zone <zone>`.
+        :   Annotation to specify a VLAN that the load balancer service deploys to. To see VLANs, run `ibmcloud oc vlan ls --zone ZONE`.
 
         `service.kubernetes.io/ibm-load-balancer-cloud-provider-enable-features: "ipvs"`
         :   Annotation to specify a version 2.0 load balancer.
@@ -282,7 +282,7 @@ To create an NLB 2.0 service in a single-zone cluster:
         :   Annotation to specify a `private` or `public` load balancer.
 
         `service.kubernetes.io/ibm-load-balancer-cloud-provider-vlan`
-        :   Optional: Annotation to specify a VLAN that the load balancer service deploys to. To see VLANs, run `ibmcloud oc vlan ls --zone <zone>`.
+        :   Optional: Annotation to specify a VLAN that the load balancer service deploys to. To see VLANs, run `ibmcloud oc vlan ls --zone ZONE`.
 
         `service.kubernetes.io/ibm-load-balancer-cloud-provider-enable-features: "ipvs"`
         :   Annotation to specify a load balancer 2.0.

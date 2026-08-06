@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2026
-lastupdated: "2026-07-30"
+lastupdated: "2026-08-06"
 
 
 keywords: openshift, route, router
@@ -44,7 +44,7 @@ The type of Ingress controller that is created by default varies depending on yo
 
 If you have a multizone cluster, one high-availability Ingress controller is deployed to your cluster, and one Ingress controller service is created in each zone. Two worker nodes are required per zone so that the two replicas of the Ingress controller can be deployed and updated correctly. Note that the Ingress controller service in the first zone where you have workers nodes is always named `router-default`, and Ingress controller services in zones that you subsequently add to your cluster have names such as `router-dal12`.
 * To see the Ingress controller services in each zone of your cluster, run `oc get svc -n openshift-ingress`.
-* To see the Ingress controller subdomain for your cluster and the IP addresses for the Ingress controller service in each zone, run `ibmcloud oc nlb-dns ls -c <cluster_name_or_ID>` and look for the subdomain formatted like `<cluster_name>-<random_hash>-0000.<region>.containers.appdomain.cloud`.
+* To see the Ingress controller subdomain for your cluster and the IP addresses for the Ingress controller service in each zone, run `ibmcloud oc nlb-dns ls -c CLUSTER_NAME_OR_ID` and look for the subdomain formatted like `<cluster_name>-<random_hash>-0000.<region>.containers.appdomain.cloud`.
 
 In your VPC infrastructure dashboard, the VPC load balancer reports as healthy only the two worker nodes that run the Ingress controller replica pods, because these worker nodes are configured as the listeners for the VPC load balancer. Even though only the listener worker nodes are reported as healthy, the listeners' backend pool of worker nodes is kept up-to-date by {{site.data.keyword.openshiftlong_notm}} so that all worker nodes in your cluster can still receive requests from the VPC load balancer.
 {: note}
@@ -299,7 +299,7 @@ Note that even though you create an IngressController resource in the following 
     * **IBM-provided domain**: Create a DNS entry for the service's VPC hostname. When you run the following command, the subdomain that you specified in step 2 is automatically generated, and is registered with the Ingress controller service.
     
         ```sh
-        ibmcloud oc nlb-dns create vpc-gen2 --cluster <cluster_name_or_ID> --lb-host <router_VPC_hostname>
+        ibmcloud oc nlb-dns create vpc-gen2 --cluster CLUSTER_NAME_OR_ID --lb-host ROUTER_VPC_HOSTNAME
         ```
         {: pre}
 
@@ -402,7 +402,7 @@ Note that even though you create an IngressController resource in the following 
     * **IBM-provided domain, VPC clusters only**:
         1. List the existing subdomains in your cluster. In the **Subdomain** column of the output, copy the subdomain that has the highest `000<n>` value.
             ```sh
-            ibmcloud oc nlb-dns ls --cluster <cluster_name_or_id>
+            ibmcloud oc nlb-dns ls --cluster CLUSTER_NAME_OR_ID
             ```
             {: pre}
 
@@ -464,7 +464,7 @@ Note that even though you create an IngressController resource in the following 
     * **Custom domain, classic or VPC clusters**: Work with your DNS provider to add the service's external IP address as an A record (classic clusters) or VPC hostname as a CNAME (VPC clusters) that maps to your custom domain.
     * **IBM-provided domain, VPC clusters only**: Create a DNS entry for the service's VPC hostname. When you run the following command, the subdomain that you specified in step 2 is automatically generated, and is registered with the Ingress controller service.
         ```sh
-        ibmcloud oc nlb-dns create vpc-gen2 --cluster <cluster_name_or_ID> --lb-host <router_VPC_hostname>
+        ibmcloud oc nlb-dns create vpc-gen2 --cluster CLUSTER_NAME_OR_ID --lb-host ROUTER_VPC_HOSTNAME
         ```
         {: pre}
 
@@ -702,7 +702,7 @@ When you change your worker node VLAN connections, the worker nodes are connecte
 
 1. Note the **Hostname** of the Ingress controller. In the output, look for the hostname formatted like `<cluster_name>-<random_hash>-0001.<region>.containers.appdomain.cloud`.
     ```sh
-    ibmcloud oc nlb-dns ls -c <cluster_name_or_ID>
+    ibmcloud oc nlb-dns ls -c CLUSTER_NAME_OR_ID
     ```
     {: pre}
 
@@ -717,7 +717,7 @@ When you change your worker node VLAN connections, the worker nodes are connecte
 
 1. Add the IP address of the new Ingress controller service that you found in step 1 to the Ingress controller's hostname. If you created services for multiple zones in step 1, include each IP address separately in repeated `--ip` options.
     ```sh
-    ibmcloud oc nlb-dns add -c <cluster_name_or_ID> --ip <new_IP> --nlb-host <subdomain>
+    ibmcloud oc nlb-dns add -c CLUSTER_NAME_OR_ID --ip NEW_IP --nlb-host SUBDOMAIN
     ```
     {: pre}
 
@@ -740,13 +740,13 @@ When you change your worker node VLAN connections, the worker nodes are connecte
 
 1. Remove the IP address of the old Ingress controller service that you found in step 2 from the Ingress controller's hostname. **Multizone clusters**: Include each IP address separately in repeated `--ip` options.
     ```sh
-    ibmcloud oc nlb-dns rm classic -c <cluster_name_or_ID> --ip <old_IP> --nlb-host <hostname>
+    ibmcloud oc nlb-dns rm classic -c CLUSTER_NAME_OR_ID --ip OLD_IP --nlb-host HOSTNAME
     ```
     {: pre}
 
 1. Verify that the hostname for your Ingress controller is now registered with the new IP address. After your Ingress controller hostname is updated with the IP address of the new service, no further changes to your Ingress controller or routes are required.
     ```sh
-    ibmcloud oc nlb-dns ls -c <cluster_name_or_ID>
+    ibmcloud oc nlb-dns ls -c CLUSTER_NAME_OR_ID
     ```
     {: pre}
 
@@ -769,20 +769,20 @@ You can manage port 80 on your OpenShift default router. Note that any changes y
 * To get the status of port 80 on your OpenShift default router, run the following command.
 
     ```sh
-    ibmcloud oc ingress security port80 get --cluster <cluster_name_or_ID>
+    ibmcloud oc ingress security port80 get --cluster CLUSTER_NAME_OR_ID
     ```
     {: pre}
 
 * To enable port 80 on your OpenShift default router, run the following command.
 
     ```sh
-    ibmcloud oc ingress security port80 enable --cluster <cluster_name_or_ID>
+    ibmcloud oc ingress security port80 enable --cluster CLUSTER_NAME_OR_ID
     ```
     {: pre}
 
 * To disable port 80 on your OpenShift default router, run the following command.
 
     ```sh
-    ibmcloud oc ingress security port80 disable --cluster <cluster_name_or_ID>
+    ibmcloud oc ingress security port80 disable --cluster CLUSTER_NAME_OR_ID
     ```
     {: pre}

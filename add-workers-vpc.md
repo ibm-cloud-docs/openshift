@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2026
-lastupdated: "2026-07-30"
+lastupdated: "2026-08-06"
 
 
 keywords: openshift, {{site.data.keyword.openshiftlong_notm}}, clusters, worker nodes, worker pools, add
@@ -132,7 +132,7 @@ Before you begin, make sure that you have the [**Operator** or **Administrator**
 1. Create a worker pool. For more options, see the [CLI documentation](/docs/openshift?topic=openshift-kubernetes-service-cli#worker-pool-create-vpc-gen2-cli).
 
     ```sh
-    ibmcloud oc worker-pool create vpc-gen2 --name <name> --cluster CLUSTER-NAME --flavor <flavor> --size-per-zone <number_of_worker_nodes> [--label <key>=<value>] [--vpc-id] [[--kms-account-id <KMS_account_ID>] --kms-instance <KMS_instance_ID> --crk <root_key_ID>] [--dedicated-host-pool <dedicated-host-pool>] [--security-group <group-id>] [--operating-system SYSTEM]
+    ibmcloud oc worker-pool create vpc-gen2 --name NAME --cluster CLUSTER-NAME --flavor FLAVOR --size-per-zone NUMBER_OF_WORKER_NODES [--label KEY=VALUE] [--vpc-id] [[--kms-account-id <KMS_account_ID>] --kms-instance <KMS_instance_ID> --crk <root_key_ID>] [--dedicated-host-pool <dedicated-host-pool>] [--security-group <group-id>] [--operating-system SYSTEM]
     ```
     {: pre}
 
@@ -170,13 +170,13 @@ Before you begin, make sure that you have the [**Operator** or **Administrator**
 
 1. By default, adding a worker pool creates a pool with no zones. To deploy worker nodes in a zone, you must add the zones that you previously retrieved to the worker pool. If you want to spread your worker nodes across multiple zones, repeat this command for each zone.
     ```sh
-    ibmcloud oc zone add vpc-gen2 --zone <zone> --subnet-id <subnet_id> --cluster CLUSTER-NAME --worker-pool <worker_pool_name>
+    ibmcloud oc zone add vpc-gen2 --zone ZONE --subnet-id SUBNET_ID --cluster CLUSTER-NAME --worker-pool WORKER_POOL_NAME
     ```
     {: pre}
 
 1. Verify that worker nodes provision in the zone that you added. Your worker nodes are ready when the **State** changes from `provisioning` to `normal`.
     ```sh
-    ibmcloud oc worker ls --cluster CLUSTER-NAME --worker-pool <pool_name>
+    ibmcloud oc worker ls --cluster CLUSTER-NAME --worker-pool POOL_NAME
     ```
     {: pre}
 
@@ -222,13 +222,13 @@ If you have multiple worker pools in your cluster, add the zone to all them so t
 
 1. List available zones for your cluster's location to see what other zones you can add.
     ```sh
-    ibmcloud oc zone ls --provider vpc-gen2 | grep <location>
+    ibmcloud oc zone ls --provider vpc-gen2 | grep LOCATION
     ```
     {: pre}
 
 1. List available VPC subnets for each zone that you want to add. If you don't have a VPC subnet in the zone, [create a VPC subnet](/docs/vpc?topic=vpc-creating-vpc-resources-with-cli-and-api&interface=cli#create-a-subnet-cli). VPC subnets provide IP addresses for your worker nodes and load balancer services in the cluster, so [create a VPC subnet with enough IP addresses](/docs/openshift?topic=openshift-vpc-subnets#vpc_basics_subnets), such as 256. You can't change the number of IP addresses that a VPC subnet has later.
     ```sh
-    ibmcloud oc subnets --zone <zone> --provider vpc-gen2 --vpc-id <VPC_ID>
+    ibmcloud oc subnets --zone ZONE --provider vpc-gen2 --vpc-id VPC_ID
     ```
     {: pre}
 
@@ -244,7 +244,7 @@ If you have multiple worker pools in your cluster, add the zone to all them so t
     {: tip}
 
     ```sh
-    ibmcloud oc zone add vpc-gen2 --zone <zone> --subnet-id <subnet_id> --cluster CLUSTER-NAME --worker-pool <worker_pool_name>
+    ibmcloud oc zone add vpc-gen2 --zone ZONE --subnet-id SUBNET_ID --cluster CLUSTER-NAME --worker-pool WORKER_POOL_NAME
     ```
     {: pre}
 

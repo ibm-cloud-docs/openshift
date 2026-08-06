@@ -2,7 +2,7 @@
 
 copyright:
   years: 2026
-lastupdated: "2026-08-04"
+lastupdated: "2026-08-06"
 
 
 keywords: kubernetes, openshift
@@ -53,7 +53,7 @@ EIT requires ROKS version 4.16 or later. On older clusters, the metadata service
 Check the current cluster version to confirm whether your cluster meets the minimum requirement. The output shows `Pending` or `normal` status and the Kubernetes version.
 
 ```sh
-ibmcloud ks cluster get --cluster <cluster-id> | grep "Version"
+ibmcloud ks cluster get --cluster CLUSTER_ID | grep "Version"
 ```
 {: pre}
 
@@ -70,14 +70,14 @@ This rule is added automatically for ROKS clusters at version 4.18 and later. Fo
 1. Check whether the outbound rule already exists. If the command returns a line containing `169.254.169.254`, the rule is present and this is not the cause.
 
     ```sh
-    ibmcloud is sg kube-<cluster-id> | grep 169.254.169.254
+    ibmcloud is sg kube-CLUSTER_ID | grep 169.254.169.254
     ```
     {: pre}
 
 1. If the rule is absent, add it.
 
     ```sh
-    ibmcloud is sg-rulec kube-<cluster-id> outbound \
+    ibmcloud is sg-rulec kube-CLUSTER_ID outbound \
       --protocol all \
       --remote 169.254.169.254
     ```

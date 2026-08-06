@@ -438,6 +438,8 @@ subcollection: openshift
 
         * OpenShift Data Foundation cluster add-on patch updates.
 
+        * OpenShift Virtualization cluster add-on patch updates.
+
     * [5 August 2026](/docs/openshift?topic=openshift-openshift-relnotes#openshift-aug0526)
 
         * IBM Storage Operator cluster add-on patch updates.
@@ -7132,535 +7134,1439 @@ subcollection: openshift
 
 * [ibmcloud oc commands](/docs/openshift?topic=openshift-kubernetes-service-cli#cli_commands)
 
-* [`ibmcloud oc api` commands](/docs/openshift?topic=openshift-kubernetes-service-cli#api-cli)
+* [`ibmcloud oc api`](/docs/openshift?topic=openshift-kubernetes-service-cli#api-cli)
 
-    * [`ibmcloud oc api`](/docs/openshift?topic=openshift-kubernetes-service-cli#api-cli)
+    * [Command options](/docs/openshift?topic=openshift-kubernetes-service-cli#api-options)
 
-* [`ibmcloud oc api-key` commands](/docs/openshift?topic=openshift-kubernetes-service-cli#api-key-cli)
+    * [Examples](/docs/openshift?topic=openshift-kubernetes-service-cli#api-examples)
 
-    * [`ibmcloud oc api-key info`](/docs/openshift?topic=openshift-kubernetes-service-cli#api-key-info-cli)
+* [`ibmcloud oc api-key info`](/docs/openshift?topic=openshift-kubernetes-service-cli#api-key-info-cli)
 
-    * [`ibmcloud oc api-key reset`](/docs/openshift?topic=openshift-kubernetes-service-cli#api-key-reset-cli)
+    * [Command options](/docs/openshift?topic=openshift-kubernetes-service-cli#api-key-info-options)
 
-* [`ibmcloud oc cluster` commands](/docs/openshift?topic=openshift-kubernetes-service-cli#cluster-cli)
+    * [Examples](/docs/openshift?topic=openshift-kubernetes-service-cli#api-key-info-examples)
 
-    * [`ibmcloud oc cluster addon disable acm`](/docs/openshift?topic=openshift-kubernetes-service-cli#cluster-addon-disable-acm-cli)
+* [`ibmcloud oc api-key reset`](/docs/openshift?topic=openshift-kubernetes-service-cli#api-key-reset-cli)
 
-    * [`ibmcloud oc cluster addon disable cluster-autoscaler`](/docs/openshift?topic=openshift-kubernetes-service-cli#cluster-addon-disable-cluster-autoscaler-cli)
+    * [Command options](/docs/openshift?topic=openshift-kubernetes-service-cli#api-key-reset-options)
 
-    * [`ibmcloud oc cluster addon disable debug-tool`](/docs/openshift?topic=openshift-kubernetes-service-cli#cluster-addon-disable-debug-tool-cli)
+    * [Examples](/docs/openshift?topic=openshift-kubernetes-service-cli#api-key-reset-examples)
 
-    * [`ibmcloud oc cluster addon disable hpcs-router`](/docs/openshift?topic=openshift-kubernetes-service-cli#cluster-addon-disable-hpcs-router-cli)
+* [`ibmcloud oc cluster addon disable acm`](/docs/openshift?topic=openshift-kubernetes-service-cli#cluster-addon-disable-acm-cli)
 
-    * [`ibmcloud oc cluster addon disable ibm-storage-operator`](/docs/openshift?topic=openshift-kubernetes-service-cli#cluster-addon-disable-ibm-storage-operator-cli)
+    * [Command options](/docs/openshift?topic=openshift-kubernetes-service-cli#cluster-addon-disable-acm-options)
 
-    * [`ibmcloud oc cluster addon disable image-key-synchronizer`](/docs/openshift?topic=openshift-kubernetes-service-cli#cluster-addon-disable-image-key-synchronizer-cli)
+    * [Examples](/docs/openshift?topic=openshift-kubernetes-service-cli#cluster-addon-disable-acm-examples)
 
-    * [`ibmcloud oc cluster addon disable knative`](/docs/openshift?topic=openshift-kubernetes-service-cli#cluster-addon-disable-knative-cli)
+* [`ibmcloud oc cluster addon disable cluster-autoscaler`](/docs/openshift?topic=openshift-kubernetes-service-cli#cluster-addon-disable-cluster-autoscaler-cli)
 
-    * [`ibmcloud oc cluster addon disable kube-terminal`](/docs/openshift?topic=openshift-kubernetes-service-cli#cluster-addon-disable-kube-terminal-cli)
+    * [Command options](/docs/openshift?topic=openshift-kubernetes-service-cli#cluster-addon-disable-cluster-autoscaler-options)
 
-    * [`ibmcloud oc cluster addon disable openshift-data-foundation`](/docs/openshift?topic=openshift-kubernetes-service-cli#cluster-addon-disable-openshift-data-foundation-cli)
+    * [Examples](/docs/openshift?topic=openshift-kubernetes-service-cli#cluster-addon-disable-cluster-autoscaler-examples)
 
-    * [`ibmcloud oc cluster addon disable static-route`](/docs/openshift?topic=openshift-kubernetes-service-cli#cluster-addon-disable-static-route-cli)
+* [`ibmcloud oc cluster addon disable debug-tool`](/docs/openshift?topic=openshift-kubernetes-service-cli#cluster-addon-disable-debug-tool-cli)
 
-    * [`ibmcloud oc cluster addon disable vpc-block-csi-driver`](/docs/openshift?topic=openshift-kubernetes-service-cli#cluster-addon-disable-vpc-block-csi-driver-cli)
+    * [Command options](/docs/openshift?topic=openshift-kubernetes-service-cli#cluster-addon-disable-debug-tool-options)
 
-    * [`ibmcloud oc cluster addon enable acm`](/docs/openshift?topic=openshift-kubernetes-service-cli#cluster-addon-enable-acm-cli)
+    * [Examples](/docs/openshift?topic=openshift-kubernetes-service-cli#cluster-addon-disable-debug-tool-examples)
 
-    * [`ibmcloud oc cluster addon enable cluster-autoscaler`](/docs/openshift?topic=openshift-kubernetes-service-cli#cluster-addon-enable-cluster-autoscaler-cli)
+* [`ibmcloud oc cluster addon disable hpcs-router`](/docs/openshift?topic=openshift-kubernetes-service-cli#cluster-addon-disable-hpcs-router-cli)
 
-    * [`ibmcloud oc cluster addon enable debug-tool`](/docs/openshift?topic=openshift-kubernetes-service-cli#cluster-addon-enable-debug-tool-cli)
+    * [Command options](/docs/openshift?topic=openshift-kubernetes-service-cli#cluster-addon-disable-hpcs-router-options)
 
-    * [`ibmcloud oc cluster addon enable hpcs-router`](/docs/openshift?topic=openshift-kubernetes-service-cli#cluster-addon-enable-hpcs-router-cli)
+    * [Examples](/docs/openshift?topic=openshift-kubernetes-service-cli#cluster-addon-disable-hpcs-router-examples)
 
-    * [`ibmcloud oc cluster addon enable ibm-storage-operator`](/docs/openshift?topic=openshift-kubernetes-service-cli#cluster-addon-enable-ibm-storage-operator-cli)
+* [`ibmcloud oc cluster addon disable ibm-storage-operator`](/docs/openshift?topic=openshift-kubernetes-service-cli#cluster-addon-disable-ibm-storage-operator-cli)
 
-    * [`ibmcloud oc cluster addon enable image-key-synchronizer`](/docs/openshift?topic=openshift-kubernetes-service-cli#cluster-addon-enable-image-key-synchronizer-cli)
+    * [Command options](/docs/openshift?topic=openshift-kubernetes-service-cli#cluster-addon-disable-ibm-storage-operator-options)
 
-    * [`ibmcloud oc cluster addon enable istio-extras`](/docs/openshift?topic=openshift-kubernetes-service-cli#cluster-addon-enable-istio-extras-cli)
+    * [Examples](/docs/openshift?topic=openshift-kubernetes-service-cli#cluster-addon-disable-ibm-storage-operator-examples)
 
-    * [`ibmcloud oc cluster addon enable istio-sample-bookinfo`](/docs/openshift?topic=openshift-kubernetes-service-cli#cluster-addon-enable-istio-sample-bookinfo-cli)
+* [`ibmcloud oc cluster addon disable image-key-synchronizer`](/docs/openshift?topic=openshift-kubernetes-service-cli#cluster-addon-disable-image-key-synchronizer-cli)
 
-    * [`ibmcloud oc cluster addon enable openshift-data-foundation`](/docs/openshift?topic=openshift-kubernetes-service-cli#cluster-addon-enable-openshift-data-foundation-cli)
+    * [Command options](/docs/openshift?topic=openshift-kubernetes-service-cli#cluster-addon-disable-image-key-synchronizer-options)
 
-    * [`ibmcloud oc cluster addon enable static-route`](/docs/openshift?topic=openshift-kubernetes-service-cli#cluster-addon-enable-static-route-cli)
+    * [Examples](/docs/openshift?topic=openshift-kubernetes-service-cli#cluster-addon-disable-image-key-synchronizer-examples)
 
-    * [`ibmcloud oc cluster addon get`](/docs/openshift?topic=openshift-kubernetes-service-cli#cluster-addon-get-cli)
+* [`ibmcloud oc cluster addon disable knative`](/docs/openshift?topic=openshift-kubernetes-service-cli#cluster-addon-disable-knative-cli)
 
-    * [`ibmcloud oc cluster addon ls`](/docs/openshift?topic=openshift-kubernetes-service-cli#cluster-addon-ls-cli)
+    * [Command options](/docs/openshift?topic=openshift-kubernetes-service-cli#cluster-addon-disable-knative-options)
 
-    * [`ibmcloud oc cluster addon options`](/docs/openshift?topic=openshift-kubernetes-service-cli#cluster-addon-options-cli)
+    * [Examples](/docs/openshift?topic=openshift-kubernetes-service-cli#cluster-addon-disable-knative-examples)
 
-    * [`ibmcloud oc cluster addon update acm`](/docs/openshift?topic=openshift-kubernetes-service-cli#cluster-addon-update-acm-cli)
+* [`ibmcloud oc cluster addon disable kube-terminal`](/docs/openshift?topic=openshift-kubernetes-service-cli#cluster-addon-disable-kube-terminal-cli)
 
-    * [`ibmcloud oc cluster addon update alb-oauth-proxy`](/docs/openshift?topic=openshift-kubernetes-service-cli#cluster-addon-update-alb-oauth-proxy-cli)
+    * [Command options](/docs/openshift?topic=openshift-kubernetes-service-cli#cluster-addon-disable-kube-terminal-options)
 
-    * [`ibmcloud oc cluster addon update cluster-autoscaler`](/docs/openshift?topic=openshift-kubernetes-service-cli#cluster-addon-update-cluster-autoscaler-cli)
+    * [Examples](/docs/openshift?topic=openshift-kubernetes-service-cli#cluster-addon-disable-kube-terminal-examples)
 
-    * [`ibmcloud oc cluster addon update debug-tool`](/docs/openshift?topic=openshift-kubernetes-service-cli#cluster-addon-update-debug-tool-cli)
+* [`ibmcloud oc cluster addon disable openshift-data-foundation`](/docs/openshift?topic=openshift-kubernetes-service-cli#cluster-addon-disable-openshift-data-foundation-cli)
 
-    * [`ibmcloud oc cluster addon update headlamp`](/docs/openshift?topic=openshift-kubernetes-service-cli#cluster-addon-update-headlamp-cli)
+    * [Command options](/docs/openshift?topic=openshift-kubernetes-service-cli#cluster-addon-disable-openshift-data-foundation-options)
 
-    * [`ibmcloud oc cluster addon update hpcs-router`](/docs/openshift?topic=openshift-kubernetes-service-cli#cluster-addon-update-hpcs-router-cli)
+    * [Examples](/docs/openshift?topic=openshift-kubernetes-service-cli#cluster-addon-disable-openshift-data-foundation-examples)
 
-    * [`ibmcloud oc cluster addon update ibm-storage-operator`](/docs/openshift?topic=openshift-kubernetes-service-cli#cluster-addon-update-ibm-storage-operator-cli)
+* [`ibmcloud oc cluster addon disable static-route`](/docs/openshift?topic=openshift-kubernetes-service-cli#cluster-addon-disable-static-route-cli)
 
-    * [`ibmcloud oc cluster addon update image-key-synchronizer`](/docs/openshift?topic=openshift-kubernetes-service-cli#cluster-addon-update-image-key-synchronizer-cli)
+    * [Command options](/docs/openshift?topic=openshift-kubernetes-service-cli#cluster-addon-disable-static-route-options)
 
-    * [`ibmcloud oc cluster addon update istio`](/docs/openshift?topic=openshift-kubernetes-service-cli#cluster-addon-update-istio-cli)
+    * [Examples](/docs/openshift?topic=openshift-kubernetes-service-cli#cluster-addon-disable-static-route-examples)
 
-    * [`ibmcloud oc cluster addon update istio-extras`](/docs/openshift?topic=openshift-kubernetes-service-cli#cluster-addon-update-istio-extras-cli)
+* [`ibmcloud oc cluster addon disable vpc-block-csi-driver`](/docs/openshift?topic=openshift-kubernetes-service-cli#cluster-addon-disable-vpc-block-csi-driver-cli)
 
-    * [`ibmcloud oc cluster addon update istio-sample-bookinfo`](/docs/openshift?topic=openshift-kubernetes-service-cli#cluster-addon-update-istio-sample-bookinfo-cli)
+    * [Command options](/docs/openshift?topic=openshift-kubernetes-service-cli#cluster-addon-disable-vpc-block-csi-driver-options)
 
-    * [`ibmcloud oc cluster addon update knative`](/docs/openshift?topic=openshift-kubernetes-service-cli#cluster-addon-update-knative-cli)
+    * [Examples](/docs/openshift?topic=openshift-kubernetes-service-cli#cluster-addon-disable-vpc-block-csi-driver-examples)
 
-    * [`ibmcloud oc cluster addon update kube-terminal`](/docs/openshift?topic=openshift-kubernetes-service-cli#cluster-addon-update-kube-terminal-cli)
+* [`ibmcloud oc cluster addon enable acm`](/docs/openshift?topic=openshift-kubernetes-service-cli#cluster-addon-enable-acm-cli)
 
-    * [`ibmcloud oc cluster addon update openshift-data-foundation`](/docs/openshift?topic=openshift-kubernetes-service-cli#cluster-addon-update-openshift-data-foundation-cli)
+    * [Command options](/docs/openshift?topic=openshift-kubernetes-service-cli#cluster-addon-enable-acm-options)
 
-    * [`ibmcloud oc cluster addon update static-route`](/docs/openshift?topic=openshift-kubernetes-service-cli#cluster-addon-update-static-route-cli)
+    * [Examples](/docs/openshift?topic=openshift-kubernetes-service-cli#cluster-addon-enable-acm-examples)
 
-    * [`ibmcloud oc cluster addon update vpc-block-csi-driver`](/docs/openshift?topic=openshift-kubernetes-service-cli#cluster-addon-update-vpc-block-csi-driver-cli)
+* [`ibmcloud oc cluster addon enable cluster-autoscaler`](/docs/openshift?topic=openshift-kubernetes-service-cli#cluster-addon-enable-cluster-autoscaler-cli)
 
-    * [`ibmcloud oc cluster addon versions`](/docs/openshift?topic=openshift-kubernetes-service-cli#cluster-addon-versions-cli)
+    * [Command options](/docs/openshift?topic=openshift-kubernetes-service-cli#cluster-addon-enable-cluster-autoscaler-options)
 
-    * [`ibmcloud oc cluster ca create`](/docs/openshift?topic=openshift-kubernetes-service-cli#cluster-ca-create-cli)
+    * [Examples](/docs/openshift?topic=openshift-kubernetes-service-cli#cluster-addon-enable-cluster-autoscaler-examples)
 
-    * [`ibmcloud oc cluster ca get`](/docs/openshift?topic=openshift-kubernetes-service-cli#cluster-ca-get-cli)
+* [`ibmcloud oc cluster addon enable debug-tool`](/docs/openshift?topic=openshift-kubernetes-service-cli#cluster-addon-enable-debug-tool-cli)
 
-    * [`ibmcloud oc cluster ca rotate`](/docs/openshift?topic=openshift-kubernetes-service-cli#cluster-ca-rotate-cli)
+    * [Command options](/docs/openshift?topic=openshift-kubernetes-service-cli#cluster-addon-enable-debug-tool-options)
 
-    * [`ibmcloud oc cluster ca status`](/docs/openshift?topic=openshift-kubernetes-service-cli#cluster-ca-status-cli)
+    * [Examples](/docs/openshift?topic=openshift-kubernetes-service-cli#cluster-addon-enable-debug-tool-examples)
 
-    * [`ibmcloud oc cluster config`](/docs/openshift?topic=openshift-kubernetes-service-cli#cluster-config-cli)
+* [`ibmcloud oc cluster addon enable hpcs-router`](/docs/openshift?topic=openshift-kubernetes-service-cli#cluster-addon-enable-hpcs-router-cli)
 
-    * [`ibmcloud oc cluster create classic`](/docs/openshift?topic=openshift-kubernetes-service-cli#cluster-create-classic-cli)
+    * [Command options](/docs/openshift?topic=openshift-kubernetes-service-cli#cluster-addon-enable-hpcs-router-options)
 
-    * [`ibmcloud oc cluster create satellite`](/docs/openshift?topic=openshift-kubernetes-service-cli#cluster-create-satellite-cli)
+    * [Examples](/docs/openshift?topic=openshift-kubernetes-service-cli#cluster-addon-enable-hpcs-router-examples)
 
-    * [`ibmcloud oc cluster create vpc-classic`](/docs/openshift?topic=openshift-kubernetes-service-cli#cluster-create-vpc-classic-cli)
+* [`ibmcloud oc cluster addon enable ibm-storage-operator`](/docs/openshift?topic=openshift-kubernetes-service-cli#cluster-addon-enable-ibm-storage-operator-cli)
 
-    * [`ibmcloud oc cluster create vpc-gen2`](/docs/openshift?topic=openshift-kubernetes-service-cli#cluster-create-vpc-gen2-cli)
+    * [Command options](/docs/openshift?topic=openshift-kubernetes-service-cli#cluster-addon-enable-ibm-storage-operator-options)
 
-    * [`ibmcloud oc cluster get`](/docs/openshift?topic=openshift-kubernetes-service-cli#cluster-get-cli)
+    * [Examples](/docs/openshift?topic=openshift-kubernetes-service-cli#cluster-addon-enable-ibm-storage-operator-examples)
 
-    * [`ibmcloud oc cluster image-security disable`](/docs/openshift?topic=openshift-kubernetes-service-cli#cluster-image-security-disable-cli)
+* [`ibmcloud oc cluster addon enable image-key-synchronizer`](/docs/openshift?topic=openshift-kubernetes-service-cli#cluster-addon-enable-image-key-synchronizer-cli)
 
-    * [`ibmcloud oc cluster image-security enable`](/docs/openshift?topic=openshift-kubernetes-service-cli#cluster-image-security-enable-cli)
+    * [Command options](/docs/openshift?topic=openshift-kubernetes-service-cli#cluster-addon-enable-image-key-synchronizer-options)
 
-    * [`ibmcloud oc cluster ls`](/docs/openshift?topic=openshift-kubernetes-service-cli#cluster-ls-cli)
+    * [Examples](/docs/openshift?topic=openshift-kubernetes-service-cli#cluster-addon-enable-image-key-synchronizer-examples)
 
-    * [`ibmcloud oc cluster master console-oauth-access get`](/docs/openshift?topic=openshift-kubernetes-service-cli#cluster-master-console-oauth-access-get-cli)
+* [`ibmcloud oc cluster addon enable istio-extras`](/docs/openshift?topic=openshift-kubernetes-service-cli#cluster-addon-enable-istio-extras-cli)
 
-    * [`ibmcloud oc cluster master console-oauth-access set`](/docs/openshift?topic=openshift-kubernetes-service-cli#cluster-master-console-oauth-access-set-cli)
+    * [Command options](/docs/openshift?topic=openshift-kubernetes-service-cli#cluster-addon-enable-istio-extras-options)
 
-    * [`ibmcloud oc cluster master pod-security get`](/docs/openshift?topic=openshift-kubernetes-service-cli#cluster-master-pod-security-get-cli)
+    * [Examples](/docs/openshift?topic=openshift-kubernetes-service-cli#cluster-addon-enable-istio-extras-examples)
 
-    * [`ibmcloud oc cluster master pod-security policy disable`](/docs/openshift?topic=openshift-kubernetes-service-cli#cluster-master-pod-security-policy-disable-cli)
+* [`ibmcloud oc cluster addon enable istio-sample-bookinfo`](/docs/openshift?topic=openshift-kubernetes-service-cli#cluster-addon-enable-istio-sample-bookinfo-cli)
 
-    * [`ibmcloud oc cluster master pod-security policy enable`](/docs/openshift?topic=openshift-kubernetes-service-cli#cluster-master-pod-security-policy-enable-cli)
+    * [Command options](/docs/openshift?topic=openshift-kubernetes-service-cli#cluster-addon-enable-istio-sample-bookinfo-options)
 
-    * [`ibmcloud oc cluster master pod-security policy get`](/docs/openshift?topic=openshift-kubernetes-service-cli#cluster-master-pod-security-policy-get-cli)
+    * [Examples](/docs/openshift?topic=openshift-kubernetes-service-cli#cluster-addon-enable-istio-sample-bookinfo-examples)
 
-    * [`ibmcloud oc cluster master pod-security set`](/docs/openshift?topic=openshift-kubernetes-service-cli#cluster-master-pod-security-set-cli)
+* [`ibmcloud oc cluster addon enable openshift-data-foundation`](/docs/openshift?topic=openshift-kubernetes-service-cli#cluster-addon-enable-openshift-data-foundation-cli)
 
-    * [`ibmcloud oc cluster master pod-security unset`](/docs/openshift?topic=openshift-kubernetes-service-cli#cluster-master-pod-security-unset-cli)
+    * [Command options](/docs/openshift?topic=openshift-kubernetes-service-cli#cluster-addon-enable-openshift-data-foundation-options)
 
-    * [`ibmcloud oc cluster master private-service-endpoint allowlist add`](/docs/openshift?topic=openshift-kubernetes-service-cli#cluster-master-private-service-endpoint-allowlist-add-cli)
+    * [Examples](/docs/openshift?topic=openshift-kubernetes-service-cli#cluster-addon-enable-openshift-data-foundation-examples)
 
-    * [`ibmcloud oc cluster master private-service-endpoint allowlist disable`](/docs/openshift?topic=openshift-kubernetes-service-cli#cluster-master-private-service-endpoint-allowlist-disable-cli)
+* [`ibmcloud oc cluster addon enable static-route`](/docs/openshift?topic=openshift-kubernetes-service-cli#cluster-addon-enable-static-route-cli)
 
-    * [`ibmcloud oc cluster master private-service-endpoint allowlist enable`](/docs/openshift?topic=openshift-kubernetes-service-cli#cluster-master-private-service-endpoint-allowlist-enable-cli)
+    * [Command options](/docs/openshift?topic=openshift-kubernetes-service-cli#cluster-addon-enable-static-route-options)
 
-    * [`ibmcloud oc cluster master private-service-endpoint allowlist get`](/docs/openshift?topic=openshift-kubernetes-service-cli#cluster-master-private-service-endpoint-allowlist-get-cli)
+    * [Examples](/docs/openshift?topic=openshift-kubernetes-service-cli#cluster-addon-enable-static-route-examples)
 
-    * [`ibmcloud oc cluster master private-service-endpoint allowlist rm`](/docs/openshift?topic=openshift-kubernetes-service-cli#cluster-master-private-service-endpoint-allowlist-rm-cli)
+* [`ibmcloud oc cluster addon get`](/docs/openshift?topic=openshift-kubernetes-service-cli#cluster-addon-get-cli)
 
-    * [`ibmcloud oc cluster master private-service-endpoint enable`](/docs/openshift?topic=openshift-kubernetes-service-cli#cluster-master-private-service-endpoint-enable-cli)
+    * [Command options](/docs/openshift?topic=openshift-kubernetes-service-cli#cluster-addon-get-options)
 
-    * [`ibmcloud oc cluster master public-service-endpoint disable`](/docs/openshift?topic=openshift-kubernetes-service-cli#cluster-master-public-service-endpoint-disable-cli)
+    * [Examples](/docs/openshift?topic=openshift-kubernetes-service-cli#cluster-addon-get-examples)
 
-    * [`ibmcloud oc cluster master public-service-endpoint enable`](/docs/openshift?topic=openshift-kubernetes-service-cli#cluster-master-public-service-endpoint-enable-cli)
+* [`ibmcloud oc cluster addon ls`](/docs/openshift?topic=openshift-kubernetes-service-cli#cluster-addon-ls-cli)
 
-    * [`ibmcloud oc cluster master refresh`](/docs/openshift?topic=openshift-kubernetes-service-cli#cluster-master-refresh-cli)
+    * [Command options](/docs/openshift?topic=openshift-kubernetes-service-cli#cluster-addon-ls-options)
 
-    * [`ibmcloud oc cluster master satellite-service-endpoint allowlist add`](/docs/openshift?topic=openshift-kubernetes-service-cli#cluster-master-satellite-service-endpoint-allowlist-add-cli)
+    * [Examples](/docs/openshift?topic=openshift-kubernetes-service-cli#cluster-addon-ls-examples)
 
-    * [`ibmcloud oc cluster master satellite-service-endpoint allowlist disable`](/docs/openshift?topic=openshift-kubernetes-service-cli#cluster-master-satellite-service-endpoint-allowlist-disable-cli)
+* [`ibmcloud oc cluster addon options`](/docs/openshift?topic=openshift-kubernetes-service-cli#cluster-addon-options-cli)
 
-    * [`ibmcloud oc cluster master satellite-service-endpoint allowlist enable`](/docs/openshift?topic=openshift-kubernetes-service-cli#cluster-master-satellite-service-endpoint-allowlist-enable-cli)
+    * [Command options](/docs/openshift?topic=openshift-kubernetes-service-cli#cluster-addon-options-options)
 
-    * [`ibmcloud oc cluster master satellite-service-endpoint allowlist get`](/docs/openshift?topic=openshift-kubernetes-service-cli#cluster-master-satellite-service-endpoint-allowlist-get-cli)
+    * [Examples](/docs/openshift?topic=openshift-kubernetes-service-cli#cluster-addon-options-examples)
 
-    * [`ibmcloud oc cluster master satellite-service-endpoint allowlist rm`](/docs/openshift?topic=openshift-kubernetes-service-cli#cluster-master-satellite-service-endpoint-allowlist-rm-cli)
+* [`ibmcloud oc cluster addon update acm`](/docs/openshift?topic=openshift-kubernetes-service-cli#cluster-addon-update-acm-cli)
 
-    * [`ibmcloud oc cluster master update`](/docs/openshift?topic=openshift-kubernetes-service-cli#cluster-master-update-cli)
+    * [Command options](/docs/openshift?topic=openshift-kubernetes-service-cli#cluster-addon-update-acm-options)
 
-    * [`ibmcloud oc cluster pull-secret apply`](/docs/openshift?topic=openshift-kubernetes-service-cli#cluster-pull-secret-apply-cli)
+    * [Examples](/docs/openshift?topic=openshift-kubernetes-service-cli#cluster-addon-update-acm-examples)
 
-    * [`ibmcloud oc cluster rm`](/docs/openshift?topic=openshift-kubernetes-service-cli#cluster-rm-cli)
+* [`ibmcloud oc cluster addon update alb-oauth-proxy`](/docs/openshift?topic=openshift-kubernetes-service-cli#cluster-addon-update-alb-oauth-proxy-cli)
 
-    * [`ibmcloud oc cluster service bind`](/docs/openshift?topic=openshift-kubernetes-service-cli#cluster-service-bind-cli)
+    * [Command options](/docs/openshift?topic=openshift-kubernetes-service-cli#cluster-addon-update-alb-oauth-proxy-options)
 
-    * [`ibmcloud oc cluster service ls`](/docs/openshift?topic=openshift-kubernetes-service-cli#cluster-service-ls-cli)
+    * [Examples](/docs/openshift?topic=openshift-kubernetes-service-cli#cluster-addon-update-alb-oauth-proxy-examples)
 
-    * [`ibmcloud oc cluster service unbind`](/docs/openshift?topic=openshift-kubernetes-service-cli#cluster-service-unbind-cli)
+* [`ibmcloud oc cluster addon update cluster-autoscaler`](/docs/openshift?topic=openshift-kubernetes-service-cli#cluster-addon-update-cluster-autoscaler-cli)
 
-    * [`ibmcloud oc cluster subnet add`](/docs/openshift?topic=openshift-kubernetes-service-cli#cluster-subnet-add-cli)
+    * [Command options](/docs/openshift?topic=openshift-kubernetes-service-cli#cluster-addon-update-cluster-autoscaler-options)
 
-    * [`ibmcloud oc cluster subnet create`](/docs/openshift?topic=openshift-kubernetes-service-cli#cluster-subnet-create-cli)
+    * [Examples](/docs/openshift?topic=openshift-kubernetes-service-cli#cluster-addon-update-cluster-autoscaler-examples)
 
-    * [`ibmcloud oc cluster subnet detach`](/docs/openshift?topic=openshift-kubernetes-service-cli#cluster-subnet-detach-cli)
+* [`ibmcloud oc cluster addon update debug-tool`](/docs/openshift?topic=openshift-kubernetes-service-cli#cluster-addon-update-debug-tool-cli)
 
-* [`ibmcloud oc credential` commands](/docs/openshift?topic=openshift-kubernetes-service-cli#credential-cli)
+    * [Command options](/docs/openshift?topic=openshift-kubernetes-service-cli#cluster-addon-update-debug-tool-options)
 
-    * [`ibmcloud oc credential get`](/docs/openshift?topic=openshift-kubernetes-service-cli#credential-get-cli)
+    * [Examples](/docs/openshift?topic=openshift-kubernetes-service-cli#cluster-addon-update-debug-tool-examples)
 
-    * [`ibmcloud oc credential set classic`](/docs/openshift?topic=openshift-kubernetes-service-cli#credential-set-classic-cli)
+* [`ibmcloud oc cluster addon update headlamp`](/docs/openshift?topic=openshift-kubernetes-service-cli#cluster-addon-update-headlamp-cli)
 
-    * [`ibmcloud oc credential unset`](/docs/openshift?topic=openshift-kubernetes-service-cli#credential-unset-cli)
+    * [Command options](/docs/openshift?topic=openshift-kubernetes-service-cli#cluster-addon-update-headlamp-options)
 
-* [`ibmcloud oc experimental` commands](/docs/openshift?topic=openshift-kubernetes-service-cli#experimental-cli)
+    * [Examples](/docs/openshift?topic=openshift-kubernetes-service-cli#cluster-addon-update-headlamp-examples)
 
-    * [`ibmcloud oc experimental trusted-profile default get`](/docs/openshift?topic=openshift-kubernetes-service-cli#experimental-trusted-profile-default-get-cli)
+* [`ibmcloud oc cluster addon update hpcs-router`](/docs/openshift?topic=openshift-kubernetes-service-cli#cluster-addon-update-hpcs-router-cli)
 
-    * [`ibmcloud oc experimental trusted-profile default set`](/docs/openshift?topic=openshift-kubernetes-service-cli#experimental-trusted-profile-default-set-cli)
+    * [Command options](/docs/openshift?topic=openshift-kubernetes-service-cli#cluster-addon-update-hpcs-router-options)
 
-    * [`ibmcloud oc experimental trusted-profile get`](/docs/openshift?topic=openshift-kubernetes-service-cli#experimental-trusted-profile-get-cli)
+    * [Examples](/docs/openshift?topic=openshift-kubernetes-service-cli#cluster-addon-update-hpcs-router-examples)
 
-    * [`ibmcloud oc experimental trusted-profile set`](/docs/openshift?topic=openshift-kubernetes-service-cli#experimental-trusted-profile-set-cli)
+* [`ibmcloud oc cluster addon update ibm-storage-operator`](/docs/openshift?topic=openshift-kubernetes-service-cli#cluster-addon-update-ibm-storage-operator-cli)
 
-    * [`ibmcloud oc experimental vni attach baremetal`](/docs/openshift?topic=openshift-kubernetes-service-cli#experimental-vni-attach-baremetal-cli)
+    * [Command options](/docs/openshift?topic=openshift-kubernetes-service-cli#cluster-addon-update-ibm-storage-operator-options)
 
-    * [`ibmcloud oc experimental vni attach virtual`](/docs/openshift?topic=openshift-kubernetes-service-cli#experimental-vni-attach-virtual-cli)
+    * [Examples](/docs/openshift?topic=openshift-kubernetes-service-cli#cluster-addon-update-ibm-storage-operator-examples)
 
-    * [`ibmcloud oc experimental vni detach`](/docs/openshift?topic=openshift-kubernetes-service-cli#experimental-vni-detach-cli)
+* [`ibmcloud oc cluster addon update image-key-synchronizer`](/docs/openshift?topic=openshift-kubernetes-service-cli#cluster-addon-update-image-key-synchronizer-cli)
 
-    * [`ibmcloud oc experimental vni ls`](/docs/openshift?topic=openshift-kubernetes-service-cli#experimental-vni-ls-cli)
+    * [Command options](/docs/openshift?topic=openshift-kubernetes-service-cli#cluster-addon-update-image-key-synchronizer-options)
 
-* [`ibmcloud oc flavor` commands](/docs/openshift?topic=openshift-kubernetes-service-cli#flavor-cli)
+    * [Examples](/docs/openshift?topic=openshift-kubernetes-service-cli#cluster-addon-update-image-key-synchronizer-examples)
 
-    * [`ibmcloud oc flavor get`](/docs/openshift?topic=openshift-kubernetes-service-cli#flavor-get-cli)
+* [`ibmcloud oc cluster addon update istio`](/docs/openshift?topic=openshift-kubernetes-service-cli#cluster-addon-update-istio-cli)
 
-    * [`ibmcloud oc flavor ls`](/docs/openshift?topic=openshift-kubernetes-service-cli#flavor-ls-cli)
+    * [Command options](/docs/openshift?topic=openshift-kubernetes-service-cli#cluster-addon-update-istio-options)
 
-* [`ibmcloud oc infra-permissions` commands](/docs/openshift?topic=openshift-kubernetes-service-cli#infra-permissions-cli)
+    * [Examples](/docs/openshift?topic=openshift-kubernetes-service-cli#cluster-addon-update-istio-examples)
 
-    * [`ibmcloud oc infra-permissions get`](/docs/openshift?topic=openshift-kubernetes-service-cli#infra-permissions-get-cli)
+* [`ibmcloud oc cluster addon update istio-extras`](/docs/openshift?topic=openshift-kubernetes-service-cli#cluster-addon-update-istio-extras-cli)
 
-* [`ibmcloud oc ingress` commands](/docs/openshift?topic=openshift-kubernetes-service-cli#ingress-cli)
+    * [Command options](/docs/openshift?topic=openshift-kubernetes-service-cli#cluster-addon-update-istio-extras-options)
 
-    * [`ibmcloud oc ingress alb autoscale get`](/docs/openshift?topic=openshift-kubernetes-service-cli#ingress-alb-autoscale-get-cli)
+    * [Examples](/docs/openshift?topic=openshift-kubernetes-service-cli#cluster-addon-update-istio-extras-examples)
 
-    * [`ibmcloud oc ingress alb autoscale set`](/docs/openshift?topic=openshift-kubernetes-service-cli#ingress-alb-autoscale-set-cli)
+* [`ibmcloud oc cluster addon update istio-sample-bookinfo`](/docs/openshift?topic=openshift-kubernetes-service-cli#cluster-addon-update-istio-sample-bookinfo-cli)
 
-    * [`ibmcloud oc ingress alb autoscale unset`](/docs/openshift?topic=openshift-kubernetes-service-cli#ingress-alb-autoscale-unset-cli)
+    * [Command options](/docs/openshift?topic=openshift-kubernetes-service-cli#cluster-addon-update-istio-sample-bookinfo-options)
 
-    * [`ibmcloud oc ingress alb autoupdate disable`](/docs/openshift?topic=openshift-kubernetes-service-cli#ingress-alb-autoupdate-disable-cli)
+    * [Examples](/docs/openshift?topic=openshift-kubernetes-service-cli#cluster-addon-update-istio-sample-bookinfo-examples)
 
-    * [`ibmcloud oc ingress alb autoupdate enable`](/docs/openshift?topic=openshift-kubernetes-service-cli#ingress-alb-autoupdate-enable-cli)
+* [`ibmcloud oc cluster addon update knative`](/docs/openshift?topic=openshift-kubernetes-service-cli#cluster-addon-update-knative-cli)
 
-    * [`ibmcloud oc ingress alb autoupdate get`](/docs/openshift?topic=openshift-kubernetes-service-cli#ingress-alb-autoupdate-get-cli)
+    * [Command options](/docs/openshift?topic=openshift-kubernetes-service-cli#cluster-addon-update-knative-options)
 
-    * [`ibmcloud oc ingress alb create classic`](/docs/openshift?topic=openshift-kubernetes-service-cli#ingress-alb-create-classic-cli)
+    * [Examples](/docs/openshift?topic=openshift-kubernetes-service-cli#cluster-addon-update-knative-examples)
 
-    * [`ibmcloud oc ingress alb create vpc-gen2`](/docs/openshift?topic=openshift-kubernetes-service-cli#ingress-alb-create-vpc-gen2-cli)
+* [`ibmcloud oc cluster addon update kube-terminal`](/docs/openshift?topic=openshift-kubernetes-service-cli#cluster-addon-update-kube-terminal-cli)
 
-    * [`ibmcloud oc ingress alb disable`](/docs/openshift?topic=openshift-kubernetes-service-cli#ingress-alb-disable-cli)
+    * [Command options](/docs/openshift?topic=openshift-kubernetes-service-cli#cluster-addon-update-kube-terminal-options)
 
-    * [`ibmcloud oc ingress alb enable classic`](/docs/openshift?topic=openshift-kubernetes-service-cli#ingress-alb-enable-classic-cli)
+    * [Examples](/docs/openshift?topic=openshift-kubernetes-service-cli#cluster-addon-update-kube-terminal-examples)
 
-    * [`ibmcloud oc ingress alb enable vpc-gen2`](/docs/openshift?topic=openshift-kubernetes-service-cli#ingress-alb-enable-vpc-gen2-cli)
+* [`ibmcloud oc cluster addon update openshift-data-foundation`](/docs/openshift?topic=openshift-kubernetes-service-cli#cluster-addon-update-openshift-data-foundation-cli)
 
-    * [`ibmcloud oc ingress alb get`](/docs/openshift?topic=openshift-kubernetes-service-cli#ingress-alb-get-cli)
+    * [Command options](/docs/openshift?topic=openshift-kubernetes-service-cli#cluster-addon-update-openshift-data-foundation-options)
 
-    * [`ibmcloud oc ingress alb health-checker disable`](/docs/openshift?topic=openshift-kubernetes-service-cli#ingress-alb-health-checker-disable-cli)
+    * [Examples](/docs/openshift?topic=openshift-kubernetes-service-cli#cluster-addon-update-openshift-data-foundation-examples)
 
-    * [`ibmcloud oc ingress alb health-checker enable`](/docs/openshift?topic=openshift-kubernetes-service-cli#ingress-alb-health-checker-enable-cli)
+* [`ibmcloud oc cluster addon update static-route`](/docs/openshift?topic=openshift-kubernetes-service-cli#cluster-addon-update-static-route-cli)
 
-    * [`ibmcloud oc ingress alb health-checker get`](/docs/openshift?topic=openshift-kubernetes-service-cli#ingress-alb-health-checker-get-cli)
+    * [Command options](/docs/openshift?topic=openshift-kubernetes-service-cli#cluster-addon-update-static-route-options)
 
-    * [`ibmcloud oc ingress alb ls`](/docs/openshift?topic=openshift-kubernetes-service-cli#ingress-alb-ls-cli)
+    * [Examples](/docs/openshift?topic=openshift-kubernetes-service-cli#cluster-addon-update-static-route-examples)
 
-    * [`ibmcloud oc ingress alb update`](/docs/openshift?topic=openshift-kubernetes-service-cli#ingress-alb-update-cli)
+* [`ibmcloud oc cluster addon update vpc-block-csi-driver`](/docs/openshift?topic=openshift-kubernetes-service-cli#cluster-addon-update-vpc-block-csi-driver-cli)
 
-    * [`ibmcloud oc ingress alb versions`](/docs/openshift?topic=openshift-kubernetes-service-cli#ingress-alb-versions-cli)
+    * [Command options](/docs/openshift?topic=openshift-kubernetes-service-cli#cluster-addon-update-vpc-block-csi-driver-options)
 
-    * [`ibmcloud oc ingress domain create`](/docs/openshift?topic=openshift-kubernetes-service-cli#ingress-domain-create-cli)
+    * [Examples](/docs/openshift?topic=openshift-kubernetes-service-cli#cluster-addon-update-vpc-block-csi-driver-examples)
 
-    * [`ibmcloud oc ingress domain default replace`](/docs/openshift?topic=openshift-kubernetes-service-cli#ingress-domain-default-replace-cli)
+* [`ibmcloud oc cluster addon versions`](/docs/openshift?topic=openshift-kubernetes-service-cli#cluster-addon-versions-cli)
 
-    * [`ibmcloud oc ingress domain get`](/docs/openshift?topic=openshift-kubernetes-service-cli#ingress-domain-get-cli)
+    * [Command options](/docs/openshift?topic=openshift-kubernetes-service-cli#cluster-addon-versions-options)
 
-    * [`ibmcloud oc ingress domain ls`](/docs/openshift?topic=openshift-kubernetes-service-cli#ingress-domain-ls-cli)
+    * [Examples](/docs/openshift?topic=openshift-kubernetes-service-cli#cluster-addon-versions-examples)
 
-    * [`ibmcloud oc ingress domain rm`](/docs/openshift?topic=openshift-kubernetes-service-cli#ingress-domain-rm-cli)
+* [`ibmcloud oc cluster ca create`](/docs/openshift?topic=openshift-kubernetes-service-cli#cluster-ca-create-cli)
 
-    * [`ibmcloud oc ingress domain secret regenerate`](/docs/openshift?topic=openshift-kubernetes-service-cli#ingress-domain-secret-regenerate-cli)
+    * [Command options](/docs/openshift?topic=openshift-kubernetes-service-cli#cluster-ca-create-options)
 
-    * [`ibmcloud oc ingress domain secret rm`](/docs/openshift?topic=openshift-kubernetes-service-cli#ingress-domain-secret-rm-cli)
+    * [Examples](/docs/openshift?topic=openshift-kubernetes-service-cli#cluster-ca-create-examples)
 
-    * [`ibmcloud oc ingress domain update`](/docs/openshift?topic=openshift-kubernetes-service-cli#ingress-domain-update-cli)
+* [`ibmcloud oc cluster ca get`](/docs/openshift?topic=openshift-kubernetes-service-cli#cluster-ca-get-cli)
 
-    * [`ibmcloud oc ingress instance default set`](/docs/openshift?topic=openshift-kubernetes-service-cli#ingress-instance-default-set-cli)
+    * [Command options](/docs/openshift?topic=openshift-kubernetes-service-cli#cluster-ca-get-options)
 
-    * [`ibmcloud oc ingress instance default unset`](/docs/openshift?topic=openshift-kubernetes-service-cli#ingress-instance-default-unset-cli)
+    * [Examples](/docs/openshift?topic=openshift-kubernetes-service-cli#cluster-ca-get-examples)
 
-    * [`ibmcloud oc ingress instance get`](/docs/openshift?topic=openshift-kubernetes-service-cli#ingress-instance-get-cli)
+* [`ibmcloud oc cluster ca rotate`](/docs/openshift?topic=openshift-kubernetes-service-cli#cluster-ca-rotate-cli)
 
-    * [`ibmcloud oc ingress instance ls`](/docs/openshift?topic=openshift-kubernetes-service-cli#ingress-instance-ls-cli)
+    * [Command options](/docs/openshift?topic=openshift-kubernetes-service-cli#cluster-ca-rotate-options)
 
-    * [`ibmcloud oc ingress instance register`](/docs/openshift?topic=openshift-kubernetes-service-cli#ingress-instance-register-cli)
+    * [Examples](/docs/openshift?topic=openshift-kubernetes-service-cli#cluster-ca-rotate-examples)
 
-    * [`ibmcloud oc ingress instance unregister`](/docs/openshift?topic=openshift-kubernetes-service-cli#ingress-instance-unregister-cli)
+* [`ibmcloud oc cluster ca status`](/docs/openshift?topic=openshift-kubernetes-service-cli#cluster-ca-status-cli)
 
-    * [`ibmcloud oc ingress load-balancer backend set`](/docs/openshift?topic=openshift-kubernetes-service-cli#ingress-load-balancer-backend-set-cli)
+    * [Command options](/docs/openshift?topic=openshift-kubernetes-service-cli#cluster-ca-status-options)
 
-    * [`ibmcloud oc ingress load-balancer get`](/docs/openshift?topic=openshift-kubernetes-service-cli#ingress-load-balancer-get-cli)
+    * [Examples](/docs/openshift?topic=openshift-kubernetes-service-cli#cluster-ca-status-examples)
 
-    * [`ibmcloud oc ingress load-balancer proxy-protocol disable`](/docs/openshift?topic=openshift-kubernetes-service-cli#ingress-load-balancer-proxy-protocol-disable-cli)
+* [`ibmcloud oc cluster config`](/docs/openshift?topic=openshift-kubernetes-service-cli#cluster-config-cli)
 
-    * [`ibmcloud oc ingress load-balancer proxy-protocol enable`](/docs/openshift?topic=openshift-kubernetes-service-cli#ingress-load-balancer-proxy-protocol-enable-cli)
+    * [Command options](/docs/openshift?topic=openshift-kubernetes-service-cli#cluster-config-options)
 
-    * [`ibmcloud oc ingress secret create`](/docs/openshift?topic=openshift-kubernetes-service-cli#ingress-secret-create-cli)
+    * [Examples](/docs/openshift?topic=openshift-kubernetes-service-cli#cluster-config-examples)
 
-    * [`ibmcloud oc ingress secret field add`](/docs/openshift?topic=openshift-kubernetes-service-cli#ingress-secret-field-add-cli)
+* [`ibmcloud oc cluster create classic`](/docs/openshift?topic=openshift-kubernetes-service-cli#cluster-create-classic-cli)
 
-    * [`ibmcloud oc ingress secret field ls`](/docs/openshift?topic=openshift-kubernetes-service-cli#ingress-secret-field-ls-cli)
+    * [Command options](/docs/openshift?topic=openshift-kubernetes-service-cli#cluster-create-classic-options)
 
-    * [`ibmcloud oc ingress secret field rm`](/docs/openshift?topic=openshift-kubernetes-service-cli#ingress-secret-field-rm-cli)
+    * [Examples](/docs/openshift?topic=openshift-kubernetes-service-cli#cluster-create-classic-examples)
 
-    * [`ibmcloud oc ingress secret get`](/docs/openshift?topic=openshift-kubernetes-service-cli#ingress-secret-get-cli)
+* [`ibmcloud oc cluster create satellite`](/docs/openshift?topic=openshift-kubernetes-service-cli#cluster-create-satellite-cli)
 
-    * [`ibmcloud oc ingress secret ls`](/docs/openshift?topic=openshift-kubernetes-service-cli#ingress-secret-ls-cli)
+    * [Command options](/docs/openshift?topic=openshift-kubernetes-service-cli#cluster-create-satellite-options)
 
-    * [`ibmcloud oc ingress secret rm`](/docs/openshift?topic=openshift-kubernetes-service-cli#ingress-secret-rm-cli)
+    * [Examples](/docs/openshift?topic=openshift-kubernetes-service-cli#cluster-create-satellite-examples)
 
-    * [`ibmcloud oc ingress secret update`](/docs/openshift?topic=openshift-kubernetes-service-cli#ingress-secret-update-cli)
+* [`ibmcloud oc cluster create vpc-classic`](/docs/openshift?topic=openshift-kubernetes-service-cli#cluster-create-vpc-classic-cli)
 
-    * [`ibmcloud oc ingress security port80 disable`](/docs/openshift?topic=openshift-kubernetes-service-cli#ingress-security-port80-disable-cli)
+    * [Command options](/docs/openshift?topic=openshift-kubernetes-service-cli#cluster-create-vpc-classic-options)
 
-    * [`ibmcloud oc ingress security port80 enable`](/docs/openshift?topic=openshift-kubernetes-service-cli#ingress-security-port80-enable-cli)
+    * [Examples](/docs/openshift?topic=openshift-kubernetes-service-cli#cluster-create-vpc-classic-examples)
 
-    * [`ibmcloud oc ingress security port80 get`](/docs/openshift?topic=openshift-kubernetes-service-cli#ingress-security-port80-get-cli)
+* [`ibmcloud oc cluster create vpc-gen2`](/docs/openshift?topic=openshift-kubernetes-service-cli#cluster-create-vpc-gen2-cli)
 
-    * [`ibmcloud oc ingress status-report disable`](/docs/openshift?topic=openshift-kubernetes-service-cli#ingress-status-report-disable-cli)
+    * [Command options](/docs/openshift?topic=openshift-kubernetes-service-cli#cluster-create-vpc-gen2-options)
 
-    * [`ibmcloud oc ingress status-report enable`](/docs/openshift?topic=openshift-kubernetes-service-cli#ingress-status-report-enable-cli)
+    * [Examples](/docs/openshift?topic=openshift-kubernetes-service-cli#cluster-create-vpc-gen2-examples)
 
-    * [`ibmcloud oc ingress status-report get`](/docs/openshift?topic=openshift-kubernetes-service-cli#ingress-status-report-get-cli)
+* [`ibmcloud oc cluster get`](/docs/openshift?topic=openshift-kubernetes-service-cli#cluster-get-cli)
 
-    * [`ibmcloud oc ingress status-report ignored-errors add`](/docs/openshift?topic=openshift-kubernetes-service-cli#ingress-status-report-ignored-errors-add-cli)
+    * [Command options](/docs/openshift?topic=openshift-kubernetes-service-cli#cluster-get-options)
 
-    * [`ibmcloud oc ingress status-report ignored-errors ls`](/docs/openshift?topic=openshift-kubernetes-service-cli#ingress-status-report-ignored-errors-ls-cli)
+    * [Examples](/docs/openshift?topic=openshift-kubernetes-service-cli#cluster-get-examples)
 
-    * [`ibmcloud oc ingress status-report ignored-errors rm`](/docs/openshift?topic=openshift-kubernetes-service-cli#ingress-status-report-ignored-errors-rm-cli)
+* [`ibmcloud oc cluster image-security disable`](/docs/openshift?topic=openshift-kubernetes-service-cli#cluster-image-security-disable-cli)
 
-* [`ibmcloud oc kms` commands](/docs/openshift?topic=openshift-kubernetes-service-cli#kms-cli)
+    * [Command options](/docs/openshift?topic=openshift-kubernetes-service-cli#cluster-image-security-disable-options)
 
-    * [`ibmcloud oc kms crk ls`](/docs/openshift?topic=openshift-kubernetes-service-cli#kms-crk-ls-cli)
+    * [Examples](/docs/openshift?topic=openshift-kubernetes-service-cli#cluster-image-security-disable-examples)
 
-    * [`ibmcloud oc kms enable`](/docs/openshift?topic=openshift-kubernetes-service-cli#kms-enable-cli)
+* [`ibmcloud oc cluster image-security enable`](/docs/openshift?topic=openshift-kubernetes-service-cli#cluster-image-security-enable-cli)
 
-    * [`ibmcloud oc kms instance ls`](/docs/openshift?topic=openshift-kubernetes-service-cli#kms-instance-ls-cli)
+    * [Command options](/docs/openshift?topic=openshift-kubernetes-service-cli#cluster-image-security-enable-options)
 
-* [`ibmcloud oc locations` commands](/docs/openshift?topic=openshift-kubernetes-service-cli#locations-cli)
+    * [Examples](/docs/openshift?topic=openshift-kubernetes-service-cli#cluster-image-security-enable-examples)
 
-    * [`ibmcloud oc locations`](/docs/openshift?topic=openshift-kubernetes-service-cli#locations-cli)
+* [`ibmcloud oc cluster ls`](/docs/openshift?topic=openshift-kubernetes-service-cli#cluster-ls-cli)
 
-* [`ibmcloud oc logging` commands](/docs/openshift?topic=openshift-kubernetes-service-cli#logging-cli)
+    * [Command options](/docs/openshift?topic=openshift-kubernetes-service-cli#cluster-ls-options)
 
-    * [`ibmcloud oc logging autoupdate disable`](/docs/openshift?topic=openshift-kubernetes-service-cli#logging-autoupdate-disable-cli)
+    * [Examples](/docs/openshift?topic=openshift-kubernetes-service-cli#cluster-ls-examples)
 
-    * [`ibmcloud oc logging autoupdate enable`](/docs/openshift?topic=openshift-kubernetes-service-cli#logging-autoupdate-enable-cli)
+* [`ibmcloud oc cluster master console-oauth-access get`](/docs/openshift?topic=openshift-kubernetes-service-cli#cluster-master-console-oauth-access-get-cli)
 
-    * [`ibmcloud oc logging autoupdate get`](/docs/openshift?topic=openshift-kubernetes-service-cli#logging-autoupdate-get-cli)
+    * [Command options](/docs/openshift?topic=openshift-kubernetes-service-cli#cluster-master-console-oauth-access-get-options)
 
-    * [`ibmcloud oc logging config create`](/docs/openshift?topic=openshift-kubernetes-service-cli#logging-config-create-cli)
+    * [Examples](/docs/openshift?topic=openshift-kubernetes-service-cli#cluster-master-console-oauth-access-get-examples)
 
-    * [`ibmcloud oc logging config get`](/docs/openshift?topic=openshift-kubernetes-service-cli#logging-config-get-cli)
+* [`ibmcloud oc cluster master console-oauth-access set`](/docs/openshift?topic=openshift-kubernetes-service-cli#cluster-master-console-oauth-access-set-cli)
 
-    * [`ibmcloud oc logging config rm`](/docs/openshift?topic=openshift-kubernetes-service-cli#logging-config-rm-cli)
+    * [Command options](/docs/openshift?topic=openshift-kubernetes-service-cli#cluster-master-console-oauth-access-set-options)
 
-    * [`ibmcloud oc logging config update`](/docs/openshift?topic=openshift-kubernetes-service-cli#logging-config-update-cli)
+    * [Examples](/docs/openshift?topic=openshift-kubernetes-service-cli#cluster-master-console-oauth-access-set-examples)
 
-    * [`ibmcloud oc logging filter create`](/docs/openshift?topic=openshift-kubernetes-service-cli#logging-filter-create-cli)
+* [`ibmcloud oc cluster master pod-security get`](/docs/openshift?topic=openshift-kubernetes-service-cli#cluster-master-pod-security-get-cli)
 
-    * [`ibmcloud oc logging filter get`](/docs/openshift?topic=openshift-kubernetes-service-cli#logging-filter-get-cli)
+    * [Command options](/docs/openshift?topic=openshift-kubernetes-service-cli#cluster-master-pod-security-get-options)
 
-    * [`ibmcloud oc logging filter rm`](/docs/openshift?topic=openshift-kubernetes-service-cli#logging-filter-rm-cli)
+    * [Examples](/docs/openshift?topic=openshift-kubernetes-service-cli#cluster-master-pod-security-get-examples)
 
-    * [`ibmcloud oc logging filter update`](/docs/openshift?topic=openshift-kubernetes-service-cli#logging-filter-update-cli)
+* [`ibmcloud oc cluster master pod-security policy disable`](/docs/openshift?topic=openshift-kubernetes-service-cli#cluster-master-pod-security-policy-disable-cli)
 
-    * [`ibmcloud oc logging refresh`](/docs/openshift?topic=openshift-kubernetes-service-cli#logging-refresh-cli)
+    * [Command options](/docs/openshift?topic=openshift-kubernetes-service-cli#cluster-master-pod-security-policy-disable-options)
 
-* [`ibmcloud oc messages` commands](/docs/openshift?topic=openshift-kubernetes-service-cli#messages-cli)
+    * [Examples](/docs/openshift?topic=openshift-kubernetes-service-cli#cluster-master-pod-security-policy-disable-examples)
 
-    * [`ibmcloud oc messages`](/docs/openshift?topic=openshift-kubernetes-service-cli#messages-cli)
+* [`ibmcloud oc cluster master pod-security policy enable`](/docs/openshift?topic=openshift-kubernetes-service-cli#cluster-master-pod-security-policy-enable-cli)
 
-* [`ibmcloud oc nlb-dns` commands](/docs/openshift?topic=openshift-kubernetes-service-cli#nlb-dns-cli)
+    * [Command options](/docs/openshift?topic=openshift-kubernetes-service-cli#cluster-master-pod-security-policy-enable-options)
 
-    * [`ibmcloud oc nlb-dns add`](/docs/openshift?topic=openshift-kubernetes-service-cli#nlb-dns-add-cli)
+    * [Examples](/docs/openshift?topic=openshift-kubernetes-service-cli#cluster-master-pod-security-policy-enable-examples)
 
-    * [`ibmcloud oc nlb-dns create classic`](/docs/openshift?topic=openshift-kubernetes-service-cli#nlb-dns-create-classic-cli)
+* [`ibmcloud oc cluster master pod-security policy get`](/docs/openshift?topic=openshift-kubernetes-service-cli#cluster-master-pod-security-policy-get-cli)
 
-    * [`ibmcloud oc nlb-dns create vpc-gen2`](/docs/openshift?topic=openshift-kubernetes-service-cli#nlb-dns-create-vpc-gen2-cli)
+    * [Command options](/docs/openshift?topic=openshift-kubernetes-service-cli#cluster-master-pod-security-policy-get-options)
 
-    * [`ibmcloud oc nlb-dns get`](/docs/openshift?topic=openshift-kubernetes-service-cli#nlb-dns-get-cli)
+    * [Examples](/docs/openshift?topic=openshift-kubernetes-service-cli#cluster-master-pod-security-policy-get-examples)
 
-    * [`ibmcloud oc nlb-dns ls`](/docs/openshift?topic=openshift-kubernetes-service-cli#nlb-dns-ls-cli)
+* [`ibmcloud oc cluster master pod-security set`](/docs/openshift?topic=openshift-kubernetes-service-cli#cluster-master-pod-security-set-cli)
 
-    * [`ibmcloud oc nlb-dns monitor configure`](/docs/openshift?topic=openshift-kubernetes-service-cli#nlb-dns-monitor-configure-cli)
+    * [Command options](/docs/openshift?topic=openshift-kubernetes-service-cli#cluster-master-pod-security-set-options)
 
-    * [`ibmcloud oc nlb-dns monitor disable`](/docs/openshift?topic=openshift-kubernetes-service-cli#nlb-dns-monitor-disable-cli)
+    * [Examples](/docs/openshift?topic=openshift-kubernetes-service-cli#cluster-master-pod-security-set-examples)
 
-    * [`ibmcloud oc nlb-dns monitor enable`](/docs/openshift?topic=openshift-kubernetes-service-cli#nlb-dns-monitor-enable-cli)
+* [`ibmcloud oc cluster master pod-security unset`](/docs/openshift?topic=openshift-kubernetes-service-cli#cluster-master-pod-security-unset-cli)
 
-    * [`ibmcloud oc nlb-dns monitor get`](/docs/openshift?topic=openshift-kubernetes-service-cli#nlb-dns-monitor-get-cli)
+    * [Command options](/docs/openshift?topic=openshift-kubernetes-service-cli#cluster-master-pod-security-unset-options)
 
-    * [`ibmcloud oc nlb-dns monitor ls`](/docs/openshift?topic=openshift-kubernetes-service-cli#nlb-dns-monitor-ls-cli)
+    * [Examples](/docs/openshift?topic=openshift-kubernetes-service-cli#cluster-master-pod-security-unset-examples)
 
-    * [`ibmcloud oc nlb-dns replace`](/docs/openshift?topic=openshift-kubernetes-service-cli#nlb-dns-replace-cli)
+* [`ibmcloud oc cluster master private-service-endpoint allowlist add`](/docs/openshift?topic=openshift-kubernetes-service-cli#cluster-master-private-service-endpoint-allowlist-add-cli)
 
-    * [`ibmcloud oc nlb-dns rm classic`](/docs/openshift?topic=openshift-kubernetes-service-cli#nlb-dns-rm-classic-cli)
+    * [Command options](/docs/openshift?topic=openshift-kubernetes-service-cli#cluster-master-private-service-endpoint-allowlist-add-options)
 
-    * [`ibmcloud oc nlb-dns rm vpc-gen2`](/docs/openshift?topic=openshift-kubernetes-service-cli#nlb-dns-rm-vpc-gen2-cli)
+    * [Examples](/docs/openshift?topic=openshift-kubernetes-service-cli#cluster-master-private-service-endpoint-allowlist-add-examples)
 
-    * [`ibmcloud oc nlb-dns secret regenerate`](/docs/openshift?topic=openshift-kubernetes-service-cli#nlb-dns-secret-regenerate-cli)
+* [`ibmcloud oc cluster master private-service-endpoint allowlist disable`](/docs/openshift?topic=openshift-kubernetes-service-cli#cluster-master-private-service-endpoint-allowlist-disable-cli)
 
-    * [`ibmcloud oc nlb-dns secret rm`](/docs/openshift?topic=openshift-kubernetes-service-cli#nlb-dns-secret-rm-cli)
+    * [Command options](/docs/openshift?topic=openshift-kubernetes-service-cli#cluster-master-private-service-endpoint-allowlist-disable-options)
 
-* [`ibmcloud oc quota` commands](/docs/openshift?topic=openshift-kubernetes-service-cli#quota-cli)
+    * [Examples](/docs/openshift?topic=openshift-kubernetes-service-cli#cluster-master-private-service-endpoint-allowlist-disable-examples)
 
-    * [`ibmcloud oc quota ls`](/docs/openshift?topic=openshift-kubernetes-service-cli#quota-ls-cli)
+* [`ibmcloud oc cluster master private-service-endpoint allowlist enable`](/docs/openshift?topic=openshift-kubernetes-service-cli#cluster-master-private-service-endpoint-allowlist-enable-cli)
 
-* [`ibmcloud oc script` commands](/docs/openshift?topic=openshift-kubernetes-service-cli#script-cli)
+    * [Command options](/docs/openshift?topic=openshift-kubernetes-service-cli#cluster-master-private-service-endpoint-allowlist-enable-options)
 
-    * [`ibmcloud oc script update`](/docs/openshift?topic=openshift-kubernetes-service-cli#script-update-cli)
+    * [Examples](/docs/openshift?topic=openshift-kubernetes-service-cli#cluster-master-private-service-endpoint-allowlist-enable-examples)
 
-* [`ibmcloud oc security-group` commands](/docs/openshift?topic=openshift-kubernetes-service-cli#security-group-cli)
+* [`ibmcloud oc cluster master private-service-endpoint allowlist get`](/docs/openshift?topic=openshift-kubernetes-service-cli#cluster-master-private-service-endpoint-allowlist-get-cli)
 
-    * [`ibmcloud oc security-group ls`](/docs/openshift?topic=openshift-kubernetes-service-cli#security-group-ls-cli)
+    * [Command options](/docs/openshift?topic=openshift-kubernetes-service-cli#cluster-master-private-service-endpoint-allowlist-get-options)
 
-    * [`ibmcloud oc security-group reset`](/docs/openshift?topic=openshift-kubernetes-service-cli#security-group-reset-cli)
+    * [Examples](/docs/openshift?topic=openshift-kubernetes-service-cli#cluster-master-private-service-endpoint-allowlist-get-examples)
 
-    * [`ibmcloud oc security-group sync`](/docs/openshift?topic=openshift-kubernetes-service-cli#security-group-sync-cli)
+* [`ibmcloud oc cluster master private-service-endpoint allowlist rm`](/docs/openshift?topic=openshift-kubernetes-service-cli#cluster-master-private-service-endpoint-allowlist-rm-cli)
 
-* [`ibmcloud oc storage` commands](/docs/openshift?topic=openshift-kubernetes-service-cli#storage-cli)
+    * [Command options](/docs/openshift?topic=openshift-kubernetes-service-cli#cluster-master-private-service-endpoint-allowlist-rm-options)
 
-    * [`ibmcloud oc storage attachment create`](/docs/openshift?topic=openshift-kubernetes-service-cli#storage-attachment-create-cli)
+    * [Examples](/docs/openshift?topic=openshift-kubernetes-service-cli#cluster-master-private-service-endpoint-allowlist-rm-examples)
 
-    * [`ibmcloud oc storage attachment get`](/docs/openshift?topic=openshift-kubernetes-service-cli#storage-attachment-get-cli)
+* [`ibmcloud oc cluster master private-service-endpoint enable`](/docs/openshift?topic=openshift-kubernetes-service-cli#cluster-master-private-service-endpoint-enable-cli)
 
-    * [`ibmcloud oc storage attachment ls`](/docs/openshift?topic=openshift-kubernetes-service-cli#storage-attachment-ls-cli)
+    * [Command options](/docs/openshift?topic=openshift-kubernetes-service-cli#cluster-master-private-service-endpoint-enable-options)
 
-    * [`ibmcloud oc storage attachment rm`](/docs/openshift?topic=openshift-kubernetes-service-cli#storage-attachment-rm-cli)
+    * [Examples](/docs/openshift?topic=openshift-kubernetes-service-cli#cluster-master-private-service-endpoint-enable-examples)
 
-    * [`ibmcloud oc storage volume get`](/docs/openshift?topic=openshift-kubernetes-service-cli#storage-volume-get-cli)
+* [`ibmcloud oc cluster master public-service-endpoint disable`](/docs/openshift?topic=openshift-kubernetes-service-cli#cluster-master-public-service-endpoint-disable-cli)
 
-    * [`ibmcloud oc storage volume ls`](/docs/openshift?topic=openshift-kubernetes-service-cli#storage-volume-ls-cli)
+    * [Command options](/docs/openshift?topic=openshift-kubernetes-service-cli#cluster-master-public-service-endpoint-disable-options)
 
-* [`ibmcloud oc subnets` commands](/docs/openshift?topic=openshift-kubernetes-service-cli#subnets-cli)
+    * [Examples](/docs/openshift?topic=openshift-kubernetes-service-cli#cluster-master-public-service-endpoint-disable-examples)
 
-    * [`ibmcloud oc subnets`](/docs/openshift?topic=openshift-kubernetes-service-cli#subnets-cli)
+* [`ibmcloud oc cluster master public-service-endpoint enable`](/docs/openshift?topic=openshift-kubernetes-service-cli#cluster-master-public-service-endpoint-enable-cli)
 
-* [`ibmcloud oc versions` commands](/docs/openshift?topic=openshift-kubernetes-service-cli#versions-cli)
+    * [Command options](/docs/openshift?topic=openshift-kubernetes-service-cli#cluster-master-public-service-endpoint-enable-options)
 
-    * [`ibmcloud oc versions`](/docs/openshift?topic=openshift-kubernetes-service-cli#versions-cli)
+    * [Examples](/docs/openshift?topic=openshift-kubernetes-service-cli#cluster-master-public-service-endpoint-enable-examples)
 
-* [`ibmcloud oc vlan` commands](/docs/openshift?topic=openshift-kubernetes-service-cli#vlan-cli)
+* [`ibmcloud oc cluster master refresh`](/docs/openshift?topic=openshift-kubernetes-service-cli#cluster-master-refresh-cli)
 
-    * [`ibmcloud oc vlan ls`](/docs/openshift?topic=openshift-kubernetes-service-cli#vlan-ls-cli)
+    * [Command options](/docs/openshift?topic=openshift-kubernetes-service-cli#cluster-master-refresh-options)
 
-    * [`ibmcloud oc vlan spanning get`](/docs/openshift?topic=openshift-kubernetes-service-cli#vlan-spanning-get-cli)
+    * [Examples](/docs/openshift?topic=openshift-kubernetes-service-cli#cluster-master-refresh-examples)
 
-* [`ibmcloud oc vni` commands](/docs/openshift?topic=openshift-kubernetes-service-cli#vni-cli)
+* [`ibmcloud oc cluster master satellite-service-endpoint allowlist add`](/docs/openshift?topic=openshift-kubernetes-service-cli#cluster-master-satellite-service-endpoint-allowlist-add-cli)
 
-    * [`ibmcloud oc vni attach baremetal`](/docs/openshift?topic=openshift-kubernetes-service-cli#vni-attach-baremetal-cli)
+    * [Command options](/docs/openshift?topic=openshift-kubernetes-service-cli#cluster-master-satellite-service-endpoint-allowlist-add-options)
 
-    * [`ibmcloud oc vni detach`](/docs/openshift?topic=openshift-kubernetes-service-cli#vni-detach-cli)
+    * [Examples](/docs/openshift?topic=openshift-kubernetes-service-cli#cluster-master-satellite-service-endpoint-allowlist-add-examples)
 
-    * [`ibmcloud oc vni ls`](/docs/openshift?topic=openshift-kubernetes-service-cli#vni-ls-cli)
+* [`ibmcloud oc cluster master satellite-service-endpoint allowlist disable`](/docs/openshift?topic=openshift-kubernetes-service-cli#cluster-master-satellite-service-endpoint-allowlist-disable-cli)
 
-* [`ibmcloud oc vpc` commands](/docs/openshift?topic=openshift-kubernetes-service-cli#vpc-cli)
+    * [Command options](/docs/openshift?topic=openshift-kubernetes-service-cli#cluster-master-satellite-service-endpoint-allowlist-disable-options)
 
-    * [`ibmcloud oc vpc ls`](/docs/openshift?topic=openshift-kubernetes-service-cli#vpc-ls-cli)
+    * [Examples](/docs/openshift?topic=openshift-kubernetes-service-cli#cluster-master-satellite-service-endpoint-allowlist-disable-examples)
 
-    * [`ibmcloud oc vpc outbound-traffic-protection disable`](/docs/openshift?topic=openshift-kubernetes-service-cli#vpc-outbound-traffic-protection-disable-cli)
+* [`ibmcloud oc cluster master satellite-service-endpoint allowlist enable`](/docs/openshift?topic=openshift-kubernetes-service-cli#cluster-master-satellite-service-endpoint-allowlist-enable-cli)
 
-    * [`ibmcloud oc vpc outbound-traffic-protection enable`](/docs/openshift?topic=openshift-kubernetes-service-cli#vpc-outbound-traffic-protection-enable-cli)
+    * [Command options](/docs/openshift?topic=openshift-kubernetes-service-cli#cluster-master-satellite-service-endpoint-allowlist-enable-options)
 
-    * [`ibmcloud oc vpc secure-by-default enable`](/docs/openshift?topic=openshift-kubernetes-service-cli#vpc-secure-by-default-enable-cli)
+    * [Examples](/docs/openshift?topic=openshift-kubernetes-service-cli#cluster-master-satellite-service-endpoint-allowlist-enable-examples)
 
-* [`ibmcloud oc webhook-create` commands](/docs/openshift?topic=openshift-kubernetes-service-cli#webhook-create-cli)
+* [`ibmcloud oc cluster master satellite-service-endpoint allowlist get`](/docs/openshift?topic=openshift-kubernetes-service-cli#cluster-master-satellite-service-endpoint-allowlist-get-cli)
 
-    * [`ibmcloud oc webhook-create`](/docs/openshift?topic=openshift-kubernetes-service-cli#webhook-create-cli)
+    * [Command options](/docs/openshift?topic=openshift-kubernetes-service-cli#cluster-master-satellite-service-endpoint-allowlist-get-options)
 
-* [`ibmcloud oc worker` commands](/docs/openshift?topic=openshift-kubernetes-service-cli#worker-cli)
+    * [Examples](/docs/openshift?topic=openshift-kubernetes-service-cli#cluster-master-satellite-service-endpoint-allowlist-get-examples)
 
-    * [`ibmcloud oc worker get`](/docs/openshift?topic=openshift-kubernetes-service-cli#worker-get-cli)
+* [`ibmcloud oc cluster master satellite-service-endpoint allowlist rm`](/docs/openshift?topic=openshift-kubernetes-service-cli#cluster-master-satellite-service-endpoint-allowlist-rm-cli)
 
-    * [`ibmcloud oc worker ls`](/docs/openshift?topic=openshift-kubernetes-service-cli#worker-ls-cli)
+    * [Command options](/docs/openshift?topic=openshift-kubernetes-service-cli#cluster-master-satellite-service-endpoint-allowlist-rm-options)
 
-    * [`ibmcloud oc worker reboot`](/docs/openshift?topic=openshift-kubernetes-service-cli#worker-reboot-cli)
+    * [Examples](/docs/openshift?topic=openshift-kubernetes-service-cli#cluster-master-satellite-service-endpoint-allowlist-rm-examples)
 
-    * [`ibmcloud oc worker reload`](/docs/openshift?topic=openshift-kubernetes-service-cli#worker-reload-cli)
+* [`ibmcloud oc cluster master update`](/docs/openshift?topic=openshift-kubernetes-service-cli#cluster-master-update-cli)
 
-    * [`ibmcloud oc worker replace`](/docs/openshift?topic=openshift-kubernetes-service-cli#worker-replace-cli)
+    * [Command options](/docs/openshift?topic=openshift-kubernetes-service-cli#cluster-master-update-options)
 
-    * [`ibmcloud oc worker rm`](/docs/openshift?topic=openshift-kubernetes-service-cli#worker-rm-cli)
+    * [Examples](/docs/openshift?topic=openshift-kubernetes-service-cli#cluster-master-update-examples)
 
-    * [`ibmcloud oc worker update`](/docs/openshift?topic=openshift-kubernetes-service-cli#worker-update-cli)
+* [`ibmcloud oc cluster pull-secret apply`](/docs/openshift?topic=openshift-kubernetes-service-cli#cluster-pull-secret-apply-cli)
 
-* [`ibmcloud oc worker-pool` commands](/docs/openshift?topic=openshift-kubernetes-service-cli#worker-pool-cli)
+    * [Command options](/docs/openshift?topic=openshift-kubernetes-service-cli#cluster-pull-secret-apply-options)
 
-    * [`ibmcloud oc worker-pool create classic`](/docs/openshift?topic=openshift-kubernetes-service-cli#worker-pool-create-classic-cli)
+    * [Examples](/docs/openshift?topic=openshift-kubernetes-service-cli#cluster-pull-secret-apply-examples)
 
-    * [`ibmcloud oc worker-pool create satellite`](/docs/openshift?topic=openshift-kubernetes-service-cli#worker-pool-create-satellite-cli)
+* [`ibmcloud oc cluster rm`](/docs/openshift?topic=openshift-kubernetes-service-cli#cluster-rm-cli)
 
-    * [`ibmcloud oc worker-pool create vpc-classic`](/docs/openshift?topic=openshift-kubernetes-service-cli#worker-pool-create-vpc-classic-cli)
+    * [Command options](/docs/openshift?topic=openshift-kubernetes-service-cli#cluster-rm-options)
 
-    * [`ibmcloud oc worker-pool create vpc-gen2`](/docs/openshift?topic=openshift-kubernetes-service-cli#worker-pool-create-vpc-gen2-cli)
+    * [Examples](/docs/openshift?topic=openshift-kubernetes-service-cli#cluster-rm-examples)
 
-    * [`ibmcloud oc worker-pool get`](/docs/openshift?topic=openshift-kubernetes-service-cli#worker-pool-get-cli)
+* [`ibmcloud oc cluster service bind`](/docs/openshift?topic=openshift-kubernetes-service-cli#cluster-service-bind-cli)
 
-    * [`ibmcloud oc worker-pool label rm`](/docs/openshift?topic=openshift-kubernetes-service-cli#worker-pool-label-rm-cli)
+    * [Command options](/docs/openshift?topic=openshift-kubernetes-service-cli#cluster-service-bind-options)
 
-    * [`ibmcloud oc worker-pool label set`](/docs/openshift?topic=openshift-kubernetes-service-cli#worker-pool-label-set-cli)
+    * [Examples](/docs/openshift?topic=openshift-kubernetes-service-cli#cluster-service-bind-examples)
 
-    * [`ibmcloud oc worker-pool ls`](/docs/openshift?topic=openshift-kubernetes-service-cli#worker-pool-ls-cli)
+* [`ibmcloud oc cluster service ls`](/docs/openshift?topic=openshift-kubernetes-service-cli#cluster-service-ls-cli)
 
-    * [`ibmcloud oc worker-pool operating-system set`](/docs/openshift?topic=openshift-kubernetes-service-cli#worker-pool-operating-system-set-cli)
+    * [Command options](/docs/openshift?topic=openshift-kubernetes-service-cli#cluster-service-ls-options)
 
-    * [`ibmcloud oc worker-pool rebalance`](/docs/openshift?topic=openshift-kubernetes-service-cli#worker-pool-rebalance-cli)
+    * [Examples](/docs/openshift?topic=openshift-kubernetes-service-cli#cluster-service-ls-examples)
 
-    * [`ibmcloud oc worker-pool resize`](/docs/openshift?topic=openshift-kubernetes-service-cli#worker-pool-resize-cli)
+* [`ibmcloud oc cluster service unbind`](/docs/openshift?topic=openshift-kubernetes-service-cli#cluster-service-unbind-cli)
 
-    * [`ibmcloud oc worker-pool rm`](/docs/openshift?topic=openshift-kubernetes-service-cli#worker-pool-rm-cli)
+    * [Command options](/docs/openshift?topic=openshift-kubernetes-service-cli#cluster-service-unbind-options)
 
-    * [`ibmcloud oc worker-pool taint rm`](/docs/openshift?topic=openshift-kubernetes-service-cli#worker-pool-taint-rm-cli)
+    * [Examples](/docs/openshift?topic=openshift-kubernetes-service-cli#cluster-service-unbind-examples)
 
-    * [`ibmcloud oc worker-pool taint set`](/docs/openshift?topic=openshift-kubernetes-service-cli#worker-pool-taint-set-cli)
+* [`ibmcloud oc cluster subnet add`](/docs/openshift?topic=openshift-kubernetes-service-cli#cluster-subnet-add-cli)
 
-    * [`ibmcloud oc worker-pool zones`](/docs/openshift?topic=openshift-kubernetes-service-cli#worker-pool-zones-cli)
+    * [Command options](/docs/openshift?topic=openshift-kubernetes-service-cli#cluster-subnet-add-options)
 
-* [`ibmcloud oc zone` commands](/docs/openshift?topic=openshift-kubernetes-service-cli#zone-cli)
+    * [Examples](/docs/openshift?topic=openshift-kubernetes-service-cli#cluster-subnet-add-examples)
 
-    * [`ibmcloud oc zone add classic`](/docs/openshift?topic=openshift-kubernetes-service-cli#zone-add-classic-cli)
+* [`ibmcloud oc cluster subnet create`](/docs/openshift?topic=openshift-kubernetes-service-cli#cluster-subnet-create-cli)
 
-    * [`ibmcloud oc zone add satellite`](/docs/openshift?topic=openshift-kubernetes-service-cli#zone-add-satellite-cli)
+    * [Command options](/docs/openshift?topic=openshift-kubernetes-service-cli#cluster-subnet-create-options)
 
-    * [`ibmcloud oc zone add vpc-classic`](/docs/openshift?topic=openshift-kubernetes-service-cli#zone-add-vpc-classic-cli)
+    * [Examples](/docs/openshift?topic=openshift-kubernetes-service-cli#cluster-subnet-create-examples)
 
-    * [`ibmcloud oc zone add vpc-gen2`](/docs/openshift?topic=openshift-kubernetes-service-cli#zone-add-vpc-gen2-cli)
+* [`ibmcloud oc cluster subnet detach`](/docs/openshift?topic=openshift-kubernetes-service-cli#cluster-subnet-detach-cli)
 
-    * [`ibmcloud oc zone ls`](/docs/openshift?topic=openshift-kubernetes-service-cli#zone-ls-cli)
+    * [Command options](/docs/openshift?topic=openshift-kubernetes-service-cli#cluster-subnet-detach-options)
 
-    * [`ibmcloud oc zone network-set`](/docs/openshift?topic=openshift-kubernetes-service-cli#zone-network-set-cli)
+    * [Examples](/docs/openshift?topic=openshift-kubernetes-service-cli#cluster-subnet-detach-examples)
 
-    * [`ibmcloud oc zone rm`](/docs/openshift?topic=openshift-kubernetes-service-cli#zone-rm-cli)
+* [`ibmcloud oc credential get`](/docs/openshift?topic=openshift-kubernetes-service-cli#credential-get-cli)
+
+    * [Command options](/docs/openshift?topic=openshift-kubernetes-service-cli#credential-get-options)
+
+    * [Examples](/docs/openshift?topic=openshift-kubernetes-service-cli#credential-get-examples)
+
+* [`ibmcloud oc credential set classic`](/docs/openshift?topic=openshift-kubernetes-service-cli#credential-set-classic-cli)
+
+    * [Command options](/docs/openshift?topic=openshift-kubernetes-service-cli#credential-set-classic-options)
+
+    * [Examples](/docs/openshift?topic=openshift-kubernetes-service-cli#credential-set-classic-examples)
+
+* [`ibmcloud oc credential unset`](/docs/openshift?topic=openshift-kubernetes-service-cli#credential-unset-cli)
+
+    * [Command options](/docs/openshift?topic=openshift-kubernetes-service-cli#credential-unset-options)
+
+    * [Examples](/docs/openshift?topic=openshift-kubernetes-service-cli#credential-unset-examples)
+
+* [`ibmcloud oc experimental trusted-profile default get`](/docs/openshift?topic=openshift-kubernetes-service-cli#experimental-trusted-profile-default-get-cli)
+
+    * [Command options](/docs/openshift?topic=openshift-kubernetes-service-cli#experimental-trusted-profile-default-get-options)
+
+    * [Examples](/docs/openshift?topic=openshift-kubernetes-service-cli#experimental-trusted-profile-default-get-examples)
+
+* [`ibmcloud oc experimental trusted-profile default set`](/docs/openshift?topic=openshift-kubernetes-service-cli#experimental-trusted-profile-default-set-cli)
+
+    * [Command options](/docs/openshift?topic=openshift-kubernetes-service-cli#experimental-trusted-profile-default-set-options)
+
+    * [Examples](/docs/openshift?topic=openshift-kubernetes-service-cli#experimental-trusted-profile-default-set-examples)
+
+* [`ibmcloud oc experimental trusted-profile get`](/docs/openshift?topic=openshift-kubernetes-service-cli#experimental-trusted-profile-get-cli)
+
+    * [Command options](/docs/openshift?topic=openshift-kubernetes-service-cli#experimental-trusted-profile-get-options)
+
+    * [Examples](/docs/openshift?topic=openshift-kubernetes-service-cli#experimental-trusted-profile-get-examples)
+
+* [`ibmcloud oc experimental trusted-profile set`](/docs/openshift?topic=openshift-kubernetes-service-cli#experimental-trusted-profile-set-cli)
+
+    * [Command options](/docs/openshift?topic=openshift-kubernetes-service-cli#experimental-trusted-profile-set-options)
+
+    * [Examples](/docs/openshift?topic=openshift-kubernetes-service-cli#experimental-trusted-profile-set-examples)
+
+* [`ibmcloud oc experimental vni attach baremetal`](/docs/openshift?topic=openshift-kubernetes-service-cli#experimental-vni-attach-baremetal-cli)
+
+    * [Command options](/docs/openshift?topic=openshift-kubernetes-service-cli#experimental-vni-attach-baremetal-options)
+
+    * [Examples](/docs/openshift?topic=openshift-kubernetes-service-cli#experimental-vni-attach-baremetal-examples)
+
+* [`ibmcloud oc experimental vni attach virtual`](/docs/openshift?topic=openshift-kubernetes-service-cli#experimental-vni-attach-virtual-cli)
+
+    * [Command options](/docs/openshift?topic=openshift-kubernetes-service-cli#experimental-vni-attach-virtual-options)
+
+    * [Examples](/docs/openshift?topic=openshift-kubernetes-service-cli#experimental-vni-attach-virtual-examples)
+
+* [`ibmcloud oc experimental vni detach`](/docs/openshift?topic=openshift-kubernetes-service-cli#experimental-vni-detach-cli)
+
+    * [Command options](/docs/openshift?topic=openshift-kubernetes-service-cli#experimental-vni-detach-options)
+
+    * [Examples](/docs/openshift?topic=openshift-kubernetes-service-cli#experimental-vni-detach-examples)
+
+* [`ibmcloud oc experimental vni ls`](/docs/openshift?topic=openshift-kubernetes-service-cli#experimental-vni-ls-cli)
+
+    * [Command options](/docs/openshift?topic=openshift-kubernetes-service-cli#experimental-vni-ls-options)
+
+    * [Examples](/docs/openshift?topic=openshift-kubernetes-service-cli#experimental-vni-ls-examples)
+
+* [`ibmcloud oc flavor get`](/docs/openshift?topic=openshift-kubernetes-service-cli#flavor-get-cli)
+
+    * [Command options](/docs/openshift?topic=openshift-kubernetes-service-cli#flavor-get-options)
+
+    * [Examples](/docs/openshift?topic=openshift-kubernetes-service-cli#flavor-get-examples)
+
+* [`ibmcloud oc flavor ls`](/docs/openshift?topic=openshift-kubernetes-service-cli#flavor-ls-cli)
+
+    * [Command options](/docs/openshift?topic=openshift-kubernetes-service-cli#flavor-ls-options)
+
+    * [Examples](/docs/openshift?topic=openshift-kubernetes-service-cli#flavor-ls-examples)
+
+* [`ibmcloud oc infra-permissions get`](/docs/openshift?topic=openshift-kubernetes-service-cli#infra-permissions-get-cli)
+
+    * [Command options](/docs/openshift?topic=openshift-kubernetes-service-cli#infra-permissions-get-options)
+
+    * [Examples](/docs/openshift?topic=openshift-kubernetes-service-cli#infra-permissions-get-examples)
+
+* [`ibmcloud oc ingress alb autoscale get`](/docs/openshift?topic=openshift-kubernetes-service-cli#ingress-alb-autoscale-get-cli)
+
+    * [Command options](/docs/openshift?topic=openshift-kubernetes-service-cli#ingress-alb-autoscale-get-options)
+
+    * [Examples](/docs/openshift?topic=openshift-kubernetes-service-cli#ingress-alb-autoscale-get-examples)
+
+* [`ibmcloud oc ingress alb autoscale set`](/docs/openshift?topic=openshift-kubernetes-service-cli#ingress-alb-autoscale-set-cli)
+
+    * [Command options](/docs/openshift?topic=openshift-kubernetes-service-cli#ingress-alb-autoscale-set-options)
+
+    * [Examples](/docs/openshift?topic=openshift-kubernetes-service-cli#ingress-alb-autoscale-set-examples)
+
+* [`ibmcloud oc ingress alb autoscale unset`](/docs/openshift?topic=openshift-kubernetes-service-cli#ingress-alb-autoscale-unset-cli)
+
+    * [Command options](/docs/openshift?topic=openshift-kubernetes-service-cli#ingress-alb-autoscale-unset-options)
+
+    * [Examples](/docs/openshift?topic=openshift-kubernetes-service-cli#ingress-alb-autoscale-unset-examples)
+
+* [`ibmcloud oc ingress alb autoupdate disable`](/docs/openshift?topic=openshift-kubernetes-service-cli#ingress-alb-autoupdate-disable-cli)
+
+    * [Command options](/docs/openshift?topic=openshift-kubernetes-service-cli#ingress-alb-autoupdate-disable-options)
+
+    * [Examples](/docs/openshift?topic=openshift-kubernetes-service-cli#ingress-alb-autoupdate-disable-examples)
+
+* [`ibmcloud oc ingress alb autoupdate enable`](/docs/openshift?topic=openshift-kubernetes-service-cli#ingress-alb-autoupdate-enable-cli)
+
+    * [Command options](/docs/openshift?topic=openshift-kubernetes-service-cli#ingress-alb-autoupdate-enable-options)
+
+    * [Examples](/docs/openshift?topic=openshift-kubernetes-service-cli#ingress-alb-autoupdate-enable-examples)
+
+* [`ibmcloud oc ingress alb autoupdate get`](/docs/openshift?topic=openshift-kubernetes-service-cli#ingress-alb-autoupdate-get-cli)
+
+    * [Command options](/docs/openshift?topic=openshift-kubernetes-service-cli#ingress-alb-autoupdate-get-options)
+
+    * [Examples](/docs/openshift?topic=openshift-kubernetes-service-cli#ingress-alb-autoupdate-get-examples)
+
+* [`ibmcloud oc ingress alb create classic`](/docs/openshift?topic=openshift-kubernetes-service-cli#ingress-alb-create-classic-cli)
+
+    * [Command options](/docs/openshift?topic=openshift-kubernetes-service-cli#ingress-alb-create-classic-options)
+
+    * [Examples](/docs/openshift?topic=openshift-kubernetes-service-cli#ingress-alb-create-classic-examples)
+
+* [`ibmcloud oc ingress alb create vpc-gen2`](/docs/openshift?topic=openshift-kubernetes-service-cli#ingress-alb-create-vpc-gen2-cli)
+
+    * [Command options](/docs/openshift?topic=openshift-kubernetes-service-cli#ingress-alb-create-vpc-gen2-options)
+
+    * [Examples](/docs/openshift?topic=openshift-kubernetes-service-cli#ingress-alb-create-vpc-gen2-examples)
+
+* [`ibmcloud oc ingress alb disable`](/docs/openshift?topic=openshift-kubernetes-service-cli#ingress-alb-disable-cli)
+
+    * [Command options](/docs/openshift?topic=openshift-kubernetes-service-cli#ingress-alb-disable-options)
+
+    * [Examples](/docs/openshift?topic=openshift-kubernetes-service-cli#ingress-alb-disable-examples)
+
+* [`ibmcloud oc ingress alb enable classic`](/docs/openshift?topic=openshift-kubernetes-service-cli#ingress-alb-enable-classic-cli)
+
+    * [Command options](/docs/openshift?topic=openshift-kubernetes-service-cli#ingress-alb-enable-classic-options)
+
+    * [Examples](/docs/openshift?topic=openshift-kubernetes-service-cli#ingress-alb-enable-classic-examples)
+
+* [`ibmcloud oc ingress alb enable vpc-gen2`](/docs/openshift?topic=openshift-kubernetes-service-cli#ingress-alb-enable-vpc-gen2-cli)
+
+    * [Command options](/docs/openshift?topic=openshift-kubernetes-service-cli#ingress-alb-enable-vpc-gen2-options)
+
+    * [Examples](/docs/openshift?topic=openshift-kubernetes-service-cli#ingress-alb-enable-vpc-gen2-examples)
+
+* [`ibmcloud oc ingress alb get`](/docs/openshift?topic=openshift-kubernetes-service-cli#ingress-alb-get-cli)
+
+    * [Command options](/docs/openshift?topic=openshift-kubernetes-service-cli#ingress-alb-get-options)
+
+    * [Examples](/docs/openshift?topic=openshift-kubernetes-service-cli#ingress-alb-get-examples)
+
+* [`ibmcloud oc ingress alb health-checker disable`](/docs/openshift?topic=openshift-kubernetes-service-cli#ingress-alb-health-checker-disable-cli)
+
+    * [Command options](/docs/openshift?topic=openshift-kubernetes-service-cli#ingress-alb-health-checker-disable-options)
+
+    * [Examples](/docs/openshift?topic=openshift-kubernetes-service-cli#ingress-alb-health-checker-disable-examples)
+
+* [`ibmcloud oc ingress alb health-checker enable`](/docs/openshift?topic=openshift-kubernetes-service-cli#ingress-alb-health-checker-enable-cli)
+
+    * [Command options](/docs/openshift?topic=openshift-kubernetes-service-cli#ingress-alb-health-checker-enable-options)
+
+    * [Examples](/docs/openshift?topic=openshift-kubernetes-service-cli#ingress-alb-health-checker-enable-examples)
+
+* [`ibmcloud oc ingress alb health-checker get`](/docs/openshift?topic=openshift-kubernetes-service-cli#ingress-alb-health-checker-get-cli)
+
+    * [Command options](/docs/openshift?topic=openshift-kubernetes-service-cli#ingress-alb-health-checker-get-options)
+
+    * [Examples](/docs/openshift?topic=openshift-kubernetes-service-cli#ingress-alb-health-checker-get-examples)
+
+* [`ibmcloud oc ingress alb ls`](/docs/openshift?topic=openshift-kubernetes-service-cli#ingress-alb-ls-cli)
+
+    * [Command options](/docs/openshift?topic=openshift-kubernetes-service-cli#ingress-alb-ls-options)
+
+    * [Examples](/docs/openshift?topic=openshift-kubernetes-service-cli#ingress-alb-ls-examples)
+
+* [`ibmcloud oc ingress alb update`](/docs/openshift?topic=openshift-kubernetes-service-cli#ingress-alb-update-cli)
+
+    * [Command options](/docs/openshift?topic=openshift-kubernetes-service-cli#ingress-alb-update-options)
+
+    * [Examples](/docs/openshift?topic=openshift-kubernetes-service-cli#ingress-alb-update-examples)
+
+* [`ibmcloud oc ingress alb versions`](/docs/openshift?topic=openshift-kubernetes-service-cli#ingress-alb-versions-cli)
+
+    * [Command options](/docs/openshift?topic=openshift-kubernetes-service-cli#ingress-alb-versions-options)
+
+    * [Examples](/docs/openshift?topic=openshift-kubernetes-service-cli#ingress-alb-versions-examples)
+
+* [`ibmcloud oc ingress domain create`](/docs/openshift?topic=openshift-kubernetes-service-cli#ingress-domain-create-cli)
+
+    * [Command options](/docs/openshift?topic=openshift-kubernetes-service-cli#ingress-domain-create-options)
+
+    * [Examples](/docs/openshift?topic=openshift-kubernetes-service-cli#ingress-domain-create-examples)
+
+* [`ibmcloud oc ingress domain default replace`](/docs/openshift?topic=openshift-kubernetes-service-cli#ingress-domain-default-replace-cli)
+
+    * [Command options](/docs/openshift?topic=openshift-kubernetes-service-cli#ingress-domain-default-replace-options)
+
+    * [Examples](/docs/openshift?topic=openshift-kubernetes-service-cli#ingress-domain-default-replace-examples)
+
+* [`ibmcloud oc ingress domain get`](/docs/openshift?topic=openshift-kubernetes-service-cli#ingress-domain-get-cli)
+
+    * [Command options](/docs/openshift?topic=openshift-kubernetes-service-cli#ingress-domain-get-options)
+
+    * [Examples](/docs/openshift?topic=openshift-kubernetes-service-cli#ingress-domain-get-examples)
+
+* [`ibmcloud oc ingress domain ls`](/docs/openshift?topic=openshift-kubernetes-service-cli#ingress-domain-ls-cli)
+
+    * [Command options](/docs/openshift?topic=openshift-kubernetes-service-cli#ingress-domain-ls-options)
+
+    * [Examples](/docs/openshift?topic=openshift-kubernetes-service-cli#ingress-domain-ls-examples)
+
+* [`ibmcloud oc ingress domain rm`](/docs/openshift?topic=openshift-kubernetes-service-cli#ingress-domain-rm-cli)
+
+    * [Command options](/docs/openshift?topic=openshift-kubernetes-service-cli#ingress-domain-rm-options)
+
+    * [Examples](/docs/openshift?topic=openshift-kubernetes-service-cli#ingress-domain-rm-examples)
+
+* [`ibmcloud oc ingress domain secret regenerate`](/docs/openshift?topic=openshift-kubernetes-service-cli#ingress-domain-secret-regenerate-cli)
+
+    * [Command options](/docs/openshift?topic=openshift-kubernetes-service-cli#ingress-domain-secret-regenerate-options)
+
+    * [Examples](/docs/openshift?topic=openshift-kubernetes-service-cli#ingress-domain-secret-regenerate-examples)
+
+* [`ibmcloud oc ingress domain secret rm`](/docs/openshift?topic=openshift-kubernetes-service-cli#ingress-domain-secret-rm-cli)
+
+    * [Command options](/docs/openshift?topic=openshift-kubernetes-service-cli#ingress-domain-secret-rm-options)
+
+    * [Examples](/docs/openshift?topic=openshift-kubernetes-service-cli#ingress-domain-secret-rm-examples)
+
+* [`ibmcloud oc ingress domain update`](/docs/openshift?topic=openshift-kubernetes-service-cli#ingress-domain-update-cli)
+
+    * [Command options](/docs/openshift?topic=openshift-kubernetes-service-cli#ingress-domain-update-options)
+
+    * [Examples](/docs/openshift?topic=openshift-kubernetes-service-cli#ingress-domain-update-examples)
+
+* [`ibmcloud oc ingress instance default set`](/docs/openshift?topic=openshift-kubernetes-service-cli#ingress-instance-default-set-cli)
+
+    * [Command options](/docs/openshift?topic=openshift-kubernetes-service-cli#ingress-instance-default-set-options)
+
+    * [Examples](/docs/openshift?topic=openshift-kubernetes-service-cli#ingress-instance-default-set-examples)
+
+* [`ibmcloud oc ingress instance default unset`](/docs/openshift?topic=openshift-kubernetes-service-cli#ingress-instance-default-unset-cli)
+
+    * [Command options](/docs/openshift?topic=openshift-kubernetes-service-cli#ingress-instance-default-unset-options)
+
+    * [Examples](/docs/openshift?topic=openshift-kubernetes-service-cli#ingress-instance-default-unset-examples)
+
+* [`ibmcloud oc ingress instance get`](/docs/openshift?topic=openshift-kubernetes-service-cli#ingress-instance-get-cli)
+
+    * [Command options](/docs/openshift?topic=openshift-kubernetes-service-cli#ingress-instance-get-options)
+
+    * [Examples](/docs/openshift?topic=openshift-kubernetes-service-cli#ingress-instance-get-examples)
+
+* [`ibmcloud oc ingress instance ls`](/docs/openshift?topic=openshift-kubernetes-service-cli#ingress-instance-ls-cli)
+
+    * [Command options](/docs/openshift?topic=openshift-kubernetes-service-cli#ingress-instance-ls-options)
+
+    * [Examples](/docs/openshift?topic=openshift-kubernetes-service-cli#ingress-instance-ls-examples)
+
+* [`ibmcloud oc ingress instance register`](/docs/openshift?topic=openshift-kubernetes-service-cli#ingress-instance-register-cli)
+
+    * [Command options](/docs/openshift?topic=openshift-kubernetes-service-cli#ingress-instance-register-options)
+
+    * [Examples](/docs/openshift?topic=openshift-kubernetes-service-cli#ingress-instance-register-examples)
+
+* [`ibmcloud oc ingress instance unregister`](/docs/openshift?topic=openshift-kubernetes-service-cli#ingress-instance-unregister-cli)
+
+    * [Command options](/docs/openshift?topic=openshift-kubernetes-service-cli#ingress-instance-unregister-options)
+
+    * [Examples](/docs/openshift?topic=openshift-kubernetes-service-cli#ingress-instance-unregister-examples)
+
+* [`ibmcloud oc ingress load-balancer backend set`](/docs/openshift?topic=openshift-kubernetes-service-cli#ingress-load-balancer-backend-set-cli)
+
+    * [Command options](/docs/openshift?topic=openshift-kubernetes-service-cli#ingress-load-balancer-backend-set-options)
+
+    * [Examples](/docs/openshift?topic=openshift-kubernetes-service-cli#ingress-load-balancer-backend-set-examples)
+
+* [`ibmcloud oc ingress load-balancer get`](/docs/openshift?topic=openshift-kubernetes-service-cli#ingress-load-balancer-get-cli)
+
+    * [Command options](/docs/openshift?topic=openshift-kubernetes-service-cli#ingress-load-balancer-get-options)
+
+    * [Examples](/docs/openshift?topic=openshift-kubernetes-service-cli#ingress-load-balancer-get-examples)
+
+* [`ibmcloud oc ingress load-balancer proxy-protocol disable`](/docs/openshift?topic=openshift-kubernetes-service-cli#ingress-load-balancer-proxy-protocol-disable-cli)
+
+    * [Command options](/docs/openshift?topic=openshift-kubernetes-service-cli#ingress-load-balancer-proxy-protocol-disable-options)
+
+    * [Examples](/docs/openshift?topic=openshift-kubernetes-service-cli#ingress-load-balancer-proxy-protocol-disable-examples)
+
+* [`ibmcloud oc ingress load-balancer proxy-protocol enable`](/docs/openshift?topic=openshift-kubernetes-service-cli#ingress-load-balancer-proxy-protocol-enable-cli)
+
+    * [Command options](/docs/openshift?topic=openshift-kubernetes-service-cli#ingress-load-balancer-proxy-protocol-enable-options)
+
+    * [Examples](/docs/openshift?topic=openshift-kubernetes-service-cli#ingress-load-balancer-proxy-protocol-enable-examples)
+
+* [`ibmcloud oc ingress secret create`](/docs/openshift?topic=openshift-kubernetes-service-cli#ingress-secret-create-cli)
+
+    * [Command options](/docs/openshift?topic=openshift-kubernetes-service-cli#ingress-secret-create-options)
+
+    * [Examples](/docs/openshift?topic=openshift-kubernetes-service-cli#ingress-secret-create-examples)
+
+* [`ibmcloud oc ingress secret field add`](/docs/openshift?topic=openshift-kubernetes-service-cli#ingress-secret-field-add-cli)
+
+    * [Command options](/docs/openshift?topic=openshift-kubernetes-service-cli#ingress-secret-field-add-options)
+
+    * [Examples](/docs/openshift?topic=openshift-kubernetes-service-cli#ingress-secret-field-add-examples)
+
+* [`ibmcloud oc ingress secret field ls`](/docs/openshift?topic=openshift-kubernetes-service-cli#ingress-secret-field-ls-cli)
+
+    * [Command options](/docs/openshift?topic=openshift-kubernetes-service-cli#ingress-secret-field-ls-options)
+
+    * [Examples](/docs/openshift?topic=openshift-kubernetes-service-cli#ingress-secret-field-ls-examples)
+
+* [`ibmcloud oc ingress secret field rm`](/docs/openshift?topic=openshift-kubernetes-service-cli#ingress-secret-field-rm-cli)
+
+    * [Command options](/docs/openshift?topic=openshift-kubernetes-service-cli#ingress-secret-field-rm-options)
+
+    * [Examples](/docs/openshift?topic=openshift-kubernetes-service-cli#ingress-secret-field-rm-examples)
+
+* [`ibmcloud oc ingress secret get`](/docs/openshift?topic=openshift-kubernetes-service-cli#ingress-secret-get-cli)
+
+    * [Command options](/docs/openshift?topic=openshift-kubernetes-service-cli#ingress-secret-get-options)
+
+    * [Examples](/docs/openshift?topic=openshift-kubernetes-service-cli#ingress-secret-get-examples)
+
+* [`ibmcloud oc ingress secret ls`](/docs/openshift?topic=openshift-kubernetes-service-cli#ingress-secret-ls-cli)
+
+    * [Command options](/docs/openshift?topic=openshift-kubernetes-service-cli#ingress-secret-ls-options)
+
+    * [Examples](/docs/openshift?topic=openshift-kubernetes-service-cli#ingress-secret-ls-examples)
+
+* [`ibmcloud oc ingress secret rm`](/docs/openshift?topic=openshift-kubernetes-service-cli#ingress-secret-rm-cli)
+
+    * [Command options](/docs/openshift?topic=openshift-kubernetes-service-cli#ingress-secret-rm-options)
+
+    * [Examples](/docs/openshift?topic=openshift-kubernetes-service-cli#ingress-secret-rm-examples)
+
+* [`ibmcloud oc ingress secret update`](/docs/openshift?topic=openshift-kubernetes-service-cli#ingress-secret-update-cli)
+
+    * [Command options](/docs/openshift?topic=openshift-kubernetes-service-cli#ingress-secret-update-options)
+
+    * [Examples](/docs/openshift?topic=openshift-kubernetes-service-cli#ingress-secret-update-examples)
+
+* [`ibmcloud oc ingress security port80 disable`](/docs/openshift?topic=openshift-kubernetes-service-cli#ingress-security-port80-disable-cli)
+
+    * [Command options](/docs/openshift?topic=openshift-kubernetes-service-cli#ingress-security-port80-disable-options)
+
+    * [Examples](/docs/openshift?topic=openshift-kubernetes-service-cli#ingress-security-port80-disable-examples)
+
+* [`ibmcloud oc ingress security port80 enable`](/docs/openshift?topic=openshift-kubernetes-service-cli#ingress-security-port80-enable-cli)
+
+    * [Command options](/docs/openshift?topic=openshift-kubernetes-service-cli#ingress-security-port80-enable-options)
+
+    * [Examples](/docs/openshift?topic=openshift-kubernetes-service-cli#ingress-security-port80-enable-examples)
+
+* [`ibmcloud oc ingress security port80 get`](/docs/openshift?topic=openshift-kubernetes-service-cli#ingress-security-port80-get-cli)
+
+    * [Command options](/docs/openshift?topic=openshift-kubernetes-service-cli#ingress-security-port80-get-options)
+
+    * [Examples](/docs/openshift?topic=openshift-kubernetes-service-cli#ingress-security-port80-get-examples)
+
+* [`ibmcloud oc ingress status-report disable`](/docs/openshift?topic=openshift-kubernetes-service-cli#ingress-status-report-disable-cli)
+
+    * [Command options](/docs/openshift?topic=openshift-kubernetes-service-cli#ingress-status-report-disable-options)
+
+    * [Examples](/docs/openshift?topic=openshift-kubernetes-service-cli#ingress-status-report-disable-examples)
+
+* [`ibmcloud oc ingress status-report enable`](/docs/openshift?topic=openshift-kubernetes-service-cli#ingress-status-report-enable-cli)
+
+    * [Command options](/docs/openshift?topic=openshift-kubernetes-service-cli#ingress-status-report-enable-options)
+
+    * [Examples](/docs/openshift?topic=openshift-kubernetes-service-cli#ingress-status-report-enable-examples)
+
+* [`ibmcloud oc ingress status-report get`](/docs/openshift?topic=openshift-kubernetes-service-cli#ingress-status-report-get-cli)
+
+    * [Command options](/docs/openshift?topic=openshift-kubernetes-service-cli#ingress-status-report-get-options)
+
+    * [Examples](/docs/openshift?topic=openshift-kubernetes-service-cli#ingress-status-report-get-examples)
+
+* [`ibmcloud oc ingress status-report ignored-errors add`](/docs/openshift?topic=openshift-kubernetes-service-cli#ingress-status-report-ignored-errors-add-cli)
+
+    * [Command options](/docs/openshift?topic=openshift-kubernetes-service-cli#ingress-status-report-ignored-errors-add-options)
+
+    * [Examples](/docs/openshift?topic=openshift-kubernetes-service-cli#ingress-status-report-ignored-errors-add-examples)
+
+* [`ibmcloud oc ingress status-report ignored-errors ls`](/docs/openshift?topic=openshift-kubernetes-service-cli#ingress-status-report-ignored-errors-ls-cli)
+
+    * [Command options](/docs/openshift?topic=openshift-kubernetes-service-cli#ingress-status-report-ignored-errors-ls-options)
+
+    * [Examples](/docs/openshift?topic=openshift-kubernetes-service-cli#ingress-status-report-ignored-errors-ls-examples)
+
+* [`ibmcloud oc ingress status-report ignored-errors rm`](/docs/openshift?topic=openshift-kubernetes-service-cli#ingress-status-report-ignored-errors-rm-cli)
+
+    * [Command options](/docs/openshift?topic=openshift-kubernetes-service-cli#ingress-status-report-ignored-errors-rm-options)
+
+    * [Examples](/docs/openshift?topic=openshift-kubernetes-service-cli#ingress-status-report-ignored-errors-rm-examples)
+
+* [`ibmcloud oc kms crk ls`](/docs/openshift?topic=openshift-kubernetes-service-cli#kms-crk-ls-cli)
+
+    * [Command options](/docs/openshift?topic=openshift-kubernetes-service-cli#kms-crk-ls-options)
+
+    * [Examples](/docs/openshift?topic=openshift-kubernetes-service-cli#kms-crk-ls-examples)
+
+* [`ibmcloud oc kms enable`](/docs/openshift?topic=openshift-kubernetes-service-cli#kms-enable-cli)
+
+    * [Command options](/docs/openshift?topic=openshift-kubernetes-service-cli#kms-enable-options)
+
+    * [Examples](/docs/openshift?topic=openshift-kubernetes-service-cli#kms-enable-examples)
+
+* [`ibmcloud oc kms instance ls`](/docs/openshift?topic=openshift-kubernetes-service-cli#kms-instance-ls-cli)
+
+    * [Command options](/docs/openshift?topic=openshift-kubernetes-service-cli#kms-instance-ls-options)
+
+    * [Examples](/docs/openshift?topic=openshift-kubernetes-service-cli#kms-instance-ls-examples)
+
+* [`ibmcloud oc locations`](/docs/openshift?topic=openshift-kubernetes-service-cli#locations-cli)
+
+    * [Command options](/docs/openshift?topic=openshift-kubernetes-service-cli#locations-options)
+
+    * [Examples](/docs/openshift?topic=openshift-kubernetes-service-cli#locations-examples)
+
+* [`ibmcloud oc logging autoupdate disable`](/docs/openshift?topic=openshift-kubernetes-service-cli#logging-autoupdate-disable-cli)
+
+    * [Command options](/docs/openshift?topic=openshift-kubernetes-service-cli#logging-autoupdate-disable-options)
+
+    * [Examples](/docs/openshift?topic=openshift-kubernetes-service-cli#logging-autoupdate-disable-examples)
+
+* [`ibmcloud oc logging autoupdate enable`](/docs/openshift?topic=openshift-kubernetes-service-cli#logging-autoupdate-enable-cli)
+
+    * [Command options](/docs/openshift?topic=openshift-kubernetes-service-cli#logging-autoupdate-enable-options)
+
+    * [Examples](/docs/openshift?topic=openshift-kubernetes-service-cli#logging-autoupdate-enable-examples)
+
+* [`ibmcloud oc logging autoupdate get`](/docs/openshift?topic=openshift-kubernetes-service-cli#logging-autoupdate-get-cli)
+
+    * [Command options](/docs/openshift?topic=openshift-kubernetes-service-cli#logging-autoupdate-get-options)
+
+    * [Examples](/docs/openshift?topic=openshift-kubernetes-service-cli#logging-autoupdate-get-examples)
+
+* [`ibmcloud oc logging config create`](/docs/openshift?topic=openshift-kubernetes-service-cli#logging-config-create-cli)
+
+    * [Command options](/docs/openshift?topic=openshift-kubernetes-service-cli#logging-config-create-options)
+
+    * [Examples](/docs/openshift?topic=openshift-kubernetes-service-cli#logging-config-create-examples)
+
+* [`ibmcloud oc logging config get`](/docs/openshift?topic=openshift-kubernetes-service-cli#logging-config-get-cli)
+
+    * [Command options](/docs/openshift?topic=openshift-kubernetes-service-cli#logging-config-get-options)
+
+    * [Examples](/docs/openshift?topic=openshift-kubernetes-service-cli#logging-config-get-examples)
+
+* [`ibmcloud oc logging config rm`](/docs/openshift?topic=openshift-kubernetes-service-cli#logging-config-rm-cli)
+
+    * [Command options](/docs/openshift?topic=openshift-kubernetes-service-cli#logging-config-rm-options)
+
+    * [Examples](/docs/openshift?topic=openshift-kubernetes-service-cli#logging-config-rm-examples)
+
+* [`ibmcloud oc logging config update`](/docs/openshift?topic=openshift-kubernetes-service-cli#logging-config-update-cli)
+
+    * [Command options](/docs/openshift?topic=openshift-kubernetes-service-cli#logging-config-update-options)
+
+    * [Examples](/docs/openshift?topic=openshift-kubernetes-service-cli#logging-config-update-examples)
+
+* [`ibmcloud oc logging filter create`](/docs/openshift?topic=openshift-kubernetes-service-cli#logging-filter-create-cli)
+
+    * [Command options](/docs/openshift?topic=openshift-kubernetes-service-cli#logging-filter-create-options)
+
+    * [Examples](/docs/openshift?topic=openshift-kubernetes-service-cli#logging-filter-create-examples)
+
+* [`ibmcloud oc logging filter get`](/docs/openshift?topic=openshift-kubernetes-service-cli#logging-filter-get-cli)
+
+    * [Command options](/docs/openshift?topic=openshift-kubernetes-service-cli#logging-filter-get-options)
+
+    * [Examples](/docs/openshift?topic=openshift-kubernetes-service-cli#logging-filter-get-examples)
+
+* [`ibmcloud oc logging filter rm`](/docs/openshift?topic=openshift-kubernetes-service-cli#logging-filter-rm-cli)
+
+    * [Command options](/docs/openshift?topic=openshift-kubernetes-service-cli#logging-filter-rm-options)
+
+    * [Examples](/docs/openshift?topic=openshift-kubernetes-service-cli#logging-filter-rm-examples)
+
+* [`ibmcloud oc logging filter update`](/docs/openshift?topic=openshift-kubernetes-service-cli#logging-filter-update-cli)
+
+    * [Command options](/docs/openshift?topic=openshift-kubernetes-service-cli#logging-filter-update-options)
+
+    * [Examples](/docs/openshift?topic=openshift-kubernetes-service-cli#logging-filter-update-examples)
+
+* [`ibmcloud oc logging refresh`](/docs/openshift?topic=openshift-kubernetes-service-cli#logging-refresh-cli)
+
+    * [Command options](/docs/openshift?topic=openshift-kubernetes-service-cli#logging-refresh-options)
+
+    * [Examples](/docs/openshift?topic=openshift-kubernetes-service-cli#logging-refresh-examples)
+
+* [`ibmcloud oc messages`](/docs/openshift?topic=openshift-kubernetes-service-cli#messages-cli)
+
+    * [Command options](/docs/openshift?topic=openshift-kubernetes-service-cli#messages-options)
+
+    * [Examples](/docs/openshift?topic=openshift-kubernetes-service-cli#messages-examples)
+
+* [`ibmcloud oc nlb-dns add`](/docs/openshift?topic=openshift-kubernetes-service-cli#nlb-dns-add-cli)
+
+    * [Command options](/docs/openshift?topic=openshift-kubernetes-service-cli#nlb-dns-add-options)
+
+    * [Examples](/docs/openshift?topic=openshift-kubernetes-service-cli#nlb-dns-add-examples)
+
+* [`ibmcloud oc nlb-dns create classic`](/docs/openshift?topic=openshift-kubernetes-service-cli#nlb-dns-create-classic-cli)
+
+    * [Command options](/docs/openshift?topic=openshift-kubernetes-service-cli#nlb-dns-create-classic-options)
+
+    * [Examples](/docs/openshift?topic=openshift-kubernetes-service-cli#nlb-dns-create-classic-examples)
+
+* [`ibmcloud oc nlb-dns create vpc-gen2`](/docs/openshift?topic=openshift-kubernetes-service-cli#nlb-dns-create-vpc-gen2-cli)
+
+    * [Command options](/docs/openshift?topic=openshift-kubernetes-service-cli#nlb-dns-create-vpc-gen2-options)
+
+    * [Examples](/docs/openshift?topic=openshift-kubernetes-service-cli#nlb-dns-create-vpc-gen2-examples)
+
+* [`ibmcloud oc nlb-dns get`](/docs/openshift?topic=openshift-kubernetes-service-cli#nlb-dns-get-cli)
+
+    * [Command options](/docs/openshift?topic=openshift-kubernetes-service-cli#nlb-dns-get-options)
+
+    * [Examples](/docs/openshift?topic=openshift-kubernetes-service-cli#nlb-dns-get-examples)
+
+* [`ibmcloud oc nlb-dns ls`](/docs/openshift?topic=openshift-kubernetes-service-cli#nlb-dns-ls-cli)
+
+    * [Command options](/docs/openshift?topic=openshift-kubernetes-service-cli#nlb-dns-ls-options)
+
+    * [Examples](/docs/openshift?topic=openshift-kubernetes-service-cli#nlb-dns-ls-examples)
+
+* [`ibmcloud oc nlb-dns monitor configure`](/docs/openshift?topic=openshift-kubernetes-service-cli#nlb-dns-monitor-configure-cli)
+
+    * [Command options](/docs/openshift?topic=openshift-kubernetes-service-cli#nlb-dns-monitor-configure-options)
+
+    * [Examples](/docs/openshift?topic=openshift-kubernetes-service-cli#nlb-dns-monitor-configure-examples)
+
+* [`ibmcloud oc nlb-dns monitor disable`](/docs/openshift?topic=openshift-kubernetes-service-cli#nlb-dns-monitor-disable-cli)
+
+    * [Command options](/docs/openshift?topic=openshift-kubernetes-service-cli#nlb-dns-monitor-disable-options)
+
+    * [Examples](/docs/openshift?topic=openshift-kubernetes-service-cli#nlb-dns-monitor-disable-examples)
+
+* [`ibmcloud oc nlb-dns monitor enable`](/docs/openshift?topic=openshift-kubernetes-service-cli#nlb-dns-monitor-enable-cli)
+
+    * [Command options](/docs/openshift?topic=openshift-kubernetes-service-cli#nlb-dns-monitor-enable-options)
+
+    * [Examples](/docs/openshift?topic=openshift-kubernetes-service-cli#nlb-dns-monitor-enable-examples)
+
+* [`ibmcloud oc nlb-dns monitor get`](/docs/openshift?topic=openshift-kubernetes-service-cli#nlb-dns-monitor-get-cli)
+
+    * [Command options](/docs/openshift?topic=openshift-kubernetes-service-cli#nlb-dns-monitor-get-options)
+
+    * [Examples](/docs/openshift?topic=openshift-kubernetes-service-cli#nlb-dns-monitor-get-examples)
+
+* [`ibmcloud oc nlb-dns monitor ls`](/docs/openshift?topic=openshift-kubernetes-service-cli#nlb-dns-monitor-ls-cli)
+
+    * [Command options](/docs/openshift?topic=openshift-kubernetes-service-cli#nlb-dns-monitor-ls-options)
+
+    * [Examples](/docs/openshift?topic=openshift-kubernetes-service-cli#nlb-dns-monitor-ls-examples)
+
+* [`ibmcloud oc nlb-dns replace`](/docs/openshift?topic=openshift-kubernetes-service-cli#nlb-dns-replace-cli)
+
+    * [Command options](/docs/openshift?topic=openshift-kubernetes-service-cli#nlb-dns-replace-options)
+
+    * [Examples](/docs/openshift?topic=openshift-kubernetes-service-cli#nlb-dns-replace-examples)
+
+* [`ibmcloud oc nlb-dns rm classic`](/docs/openshift?topic=openshift-kubernetes-service-cli#nlb-dns-rm-classic-cli)
+
+    * [Command options](/docs/openshift?topic=openshift-kubernetes-service-cli#nlb-dns-rm-classic-options)
+
+    * [Examples](/docs/openshift?topic=openshift-kubernetes-service-cli#nlb-dns-rm-classic-examples)
+
+* [`ibmcloud oc nlb-dns rm vpc-gen2`](/docs/openshift?topic=openshift-kubernetes-service-cli#nlb-dns-rm-vpc-gen2-cli)
+
+    * [Command options](/docs/openshift?topic=openshift-kubernetes-service-cli#nlb-dns-rm-vpc-gen2-options)
+
+    * [Examples](/docs/openshift?topic=openshift-kubernetes-service-cli#nlb-dns-rm-vpc-gen2-examples)
+
+* [`ibmcloud oc nlb-dns secret regenerate`](/docs/openshift?topic=openshift-kubernetes-service-cli#nlb-dns-secret-regenerate-cli)
+
+    * [Command options](/docs/openshift?topic=openshift-kubernetes-service-cli#nlb-dns-secret-regenerate-options)
+
+    * [Examples](/docs/openshift?topic=openshift-kubernetes-service-cli#nlb-dns-secret-regenerate-examples)
+
+* [`ibmcloud oc nlb-dns secret rm`](/docs/openshift?topic=openshift-kubernetes-service-cli#nlb-dns-secret-rm-cli)
+
+    * [Command options](/docs/openshift?topic=openshift-kubernetes-service-cli#nlb-dns-secret-rm-options)
+
+    * [Examples](/docs/openshift?topic=openshift-kubernetes-service-cli#nlb-dns-secret-rm-examples)
+
+* [`ibmcloud oc quota ls`](/docs/openshift?topic=openshift-kubernetes-service-cli#quota-ls-cli)
+
+    * [Command options](/docs/openshift?topic=openshift-kubernetes-service-cli#quota-ls-options)
+
+    * [Examples](/docs/openshift?topic=openshift-kubernetes-service-cli#quota-ls-examples)
+
+* [`ibmcloud oc script update`](/docs/openshift?topic=openshift-kubernetes-service-cli#script-update-cli)
+
+    * [Command options](/docs/openshift?topic=openshift-kubernetes-service-cli#script-update-options)
+
+    * [Examples](/docs/openshift?topic=openshift-kubernetes-service-cli#script-update-examples)
+
+* [`ibmcloud oc security-group ls`](/docs/openshift?topic=openshift-kubernetes-service-cli#security-group-ls-cli)
+
+    * [Command options](/docs/openshift?topic=openshift-kubernetes-service-cli#security-group-ls-options)
+
+    * [Examples](/docs/openshift?topic=openshift-kubernetes-service-cli#security-group-ls-examples)
+
+* [`ibmcloud oc security-group reset`](/docs/openshift?topic=openshift-kubernetes-service-cli#security-group-reset-cli)
+
+    * [Command options](/docs/openshift?topic=openshift-kubernetes-service-cli#security-group-reset-options)
+
+    * [Examples](/docs/openshift?topic=openshift-kubernetes-service-cli#security-group-reset-examples)
+
+* [`ibmcloud oc security-group sync`](/docs/openshift?topic=openshift-kubernetes-service-cli#security-group-sync-cli)
+
+    * [Command options](/docs/openshift?topic=openshift-kubernetes-service-cli#security-group-sync-options)
+
+    * [Examples](/docs/openshift?topic=openshift-kubernetes-service-cli#security-group-sync-examples)
+
+* [`ibmcloud oc storage attachment create`](/docs/openshift?topic=openshift-kubernetes-service-cli#storage-attachment-create-cli)
+
+    * [Command options](/docs/openshift?topic=openshift-kubernetes-service-cli#storage-attachment-create-options)
+
+    * [Examples](/docs/openshift?topic=openshift-kubernetes-service-cli#storage-attachment-create-examples)
+
+* [`ibmcloud oc storage attachment get`](/docs/openshift?topic=openshift-kubernetes-service-cli#storage-attachment-get-cli)
+
+    * [Command options](/docs/openshift?topic=openshift-kubernetes-service-cli#storage-attachment-get-options)
+
+    * [Examples](/docs/openshift?topic=openshift-kubernetes-service-cli#storage-attachment-get-examples)
+
+* [`ibmcloud oc storage attachment ls`](/docs/openshift?topic=openshift-kubernetes-service-cli#storage-attachment-ls-cli)
+
+    * [Command options](/docs/openshift?topic=openshift-kubernetes-service-cli#storage-attachment-ls-options)
+
+    * [Examples](/docs/openshift?topic=openshift-kubernetes-service-cli#storage-attachment-ls-examples)
+
+* [`ibmcloud oc storage attachment rm`](/docs/openshift?topic=openshift-kubernetes-service-cli#storage-attachment-rm-cli)
+
+    * [Command options](/docs/openshift?topic=openshift-kubernetes-service-cli#storage-attachment-rm-options)
+
+    * [Examples](/docs/openshift?topic=openshift-kubernetes-service-cli#storage-attachment-rm-examples)
+
+* [`ibmcloud oc storage volume get`](/docs/openshift?topic=openshift-kubernetes-service-cli#storage-volume-get-cli)
+
+    * [Command options](/docs/openshift?topic=openshift-kubernetes-service-cli#storage-volume-get-options)
+
+    * [Examples](/docs/openshift?topic=openshift-kubernetes-service-cli#storage-volume-get-examples)
+
+* [`ibmcloud oc storage volume ls`](/docs/openshift?topic=openshift-kubernetes-service-cli#storage-volume-ls-cli)
+
+    * [Command options](/docs/openshift?topic=openshift-kubernetes-service-cli#storage-volume-ls-options)
+
+    * [Examples](/docs/openshift?topic=openshift-kubernetes-service-cli#storage-volume-ls-examples)
+
+* [`ibmcloud oc subnets`](/docs/openshift?topic=openshift-kubernetes-service-cli#subnets-cli)
+
+    * [Command options](/docs/openshift?topic=openshift-kubernetes-service-cli#subnets-options)
+
+    * [Examples](/docs/openshift?topic=openshift-kubernetes-service-cli#subnets-examples)
+
+* [`ibmcloud oc versions`](/docs/openshift?topic=openshift-kubernetes-service-cli#versions-cli)
+
+    * [Command options](/docs/openshift?topic=openshift-kubernetes-service-cli#versions-options)
+
+    * [Examples](/docs/openshift?topic=openshift-kubernetes-service-cli#versions-examples)
+
+* [`ibmcloud oc vlan ls`](/docs/openshift?topic=openshift-kubernetes-service-cli#vlan-ls-cli)
+
+    * [Command options](/docs/openshift?topic=openshift-kubernetes-service-cli#vlan-ls-options)
+
+    * [Examples](/docs/openshift?topic=openshift-kubernetes-service-cli#vlan-ls-examples)
+
+* [`ibmcloud oc vlan spanning get`](/docs/openshift?topic=openshift-kubernetes-service-cli#vlan-spanning-get-cli)
+
+    * [Command options](/docs/openshift?topic=openshift-kubernetes-service-cli#vlan-spanning-get-options)
+
+    * [Examples](/docs/openshift?topic=openshift-kubernetes-service-cli#vlan-spanning-get-examples)
+
+* [`ibmcloud oc vni attach baremetal`](/docs/openshift?topic=openshift-kubernetes-service-cli#vni-attach-baremetal-cli)
+
+    * [Command options](/docs/openshift?topic=openshift-kubernetes-service-cli#vni-attach-baremetal-options)
+
+    * [Examples](/docs/openshift?topic=openshift-kubernetes-service-cli#vni-attach-baremetal-examples)
+
+* [`ibmcloud oc vni detach`](/docs/openshift?topic=openshift-kubernetes-service-cli#vni-detach-cli)
+
+    * [Command options](/docs/openshift?topic=openshift-kubernetes-service-cli#vni-detach-options)
+
+    * [Examples](/docs/openshift?topic=openshift-kubernetes-service-cli#vni-detach-examples)
+
+* [`ibmcloud oc vni ls`](/docs/openshift?topic=openshift-kubernetes-service-cli#vni-ls-cli)
+
+    * [Command options](/docs/openshift?topic=openshift-kubernetes-service-cli#vni-ls-options)
+
+    * [Examples](/docs/openshift?topic=openshift-kubernetes-service-cli#vni-ls-examples)
+
+* [`ibmcloud oc vpc ls`](/docs/openshift?topic=openshift-kubernetes-service-cli#vpc-ls-cli)
+
+    * [Command options](/docs/openshift?topic=openshift-kubernetes-service-cli#vpc-ls-options)
+
+    * [Examples](/docs/openshift?topic=openshift-kubernetes-service-cli#vpc-ls-examples)
+
+* [`ibmcloud oc vpc outbound-traffic-protection disable`](/docs/openshift?topic=openshift-kubernetes-service-cli#vpc-outbound-traffic-protection-disable-cli)
+
+    * [Command options](/docs/openshift?topic=openshift-kubernetes-service-cli#vpc-outbound-traffic-protection-disable-options)
+
+    * [Examples](/docs/openshift?topic=openshift-kubernetes-service-cli#vpc-outbound-traffic-protection-disable-examples)
+
+* [`ibmcloud oc vpc outbound-traffic-protection enable`](/docs/openshift?topic=openshift-kubernetes-service-cli#vpc-outbound-traffic-protection-enable-cli)
+
+    * [Command options](/docs/openshift?topic=openshift-kubernetes-service-cli#vpc-outbound-traffic-protection-enable-options)
+
+    * [Examples](/docs/openshift?topic=openshift-kubernetes-service-cli#vpc-outbound-traffic-protection-enable-examples)
+
+* [`ibmcloud oc vpc secure-by-default enable`](/docs/openshift?topic=openshift-kubernetes-service-cli#vpc-secure-by-default-enable-cli)
+
+    * [Command options](/docs/openshift?topic=openshift-kubernetes-service-cli#vpc-secure-by-default-enable-options)
+
+    * [Examples](/docs/openshift?topic=openshift-kubernetes-service-cli#vpc-secure-by-default-enable-examples)
+
+* [`ibmcloud oc webhook-create`](/docs/openshift?topic=openshift-kubernetes-service-cli#webhook-create-cli)
+
+    * [Command options](/docs/openshift?topic=openshift-kubernetes-service-cli#webhook-create-options)
+
+    * [Examples](/docs/openshift?topic=openshift-kubernetes-service-cli#webhook-create-examples)
+
+* [`ibmcloud oc worker get`](/docs/openshift?topic=openshift-kubernetes-service-cli#worker-get-cli)
+
+    * [Command options](/docs/openshift?topic=openshift-kubernetes-service-cli#worker-get-options)
+
+    * [Examples](/docs/openshift?topic=openshift-kubernetes-service-cli#worker-get-examples)
+
+* [`ibmcloud oc worker ls`](/docs/openshift?topic=openshift-kubernetes-service-cli#worker-ls-cli)
+
+    * [Command options](/docs/openshift?topic=openshift-kubernetes-service-cli#worker-ls-options)
+
+    * [Examples](/docs/openshift?topic=openshift-kubernetes-service-cli#worker-ls-examples)
+
+* [`ibmcloud oc worker reboot`](/docs/openshift?topic=openshift-kubernetes-service-cli#worker-reboot-cli)
+
+    * [Command options](/docs/openshift?topic=openshift-kubernetes-service-cli#worker-reboot-options)
+
+    * [Examples](/docs/openshift?topic=openshift-kubernetes-service-cli#worker-reboot-examples)
+
+* [`ibmcloud oc worker reload`](/docs/openshift?topic=openshift-kubernetes-service-cli#worker-reload-cli)
+
+    * [Command options](/docs/openshift?topic=openshift-kubernetes-service-cli#worker-reload-options)
+
+    * [Examples](/docs/openshift?topic=openshift-kubernetes-service-cli#worker-reload-examples)
+
+* [`ibmcloud oc worker replace`](/docs/openshift?topic=openshift-kubernetes-service-cli#worker-replace-cli)
+
+    * [Command options](/docs/openshift?topic=openshift-kubernetes-service-cli#worker-replace-options)
+
+    * [Examples](/docs/openshift?topic=openshift-kubernetes-service-cli#worker-replace-examples)
+
+* [`ibmcloud oc worker rm`](/docs/openshift?topic=openshift-kubernetes-service-cli#worker-rm-cli)
+
+    * [Command options](/docs/openshift?topic=openshift-kubernetes-service-cli#worker-rm-options)
+
+    * [Examples](/docs/openshift?topic=openshift-kubernetes-service-cli#worker-rm-examples)
+
+* [`ibmcloud oc worker update`](/docs/openshift?topic=openshift-kubernetes-service-cli#worker-update-cli)
+
+    * [Command options](/docs/openshift?topic=openshift-kubernetes-service-cli#worker-update-options)
+
+    * [Examples](/docs/openshift?topic=openshift-kubernetes-service-cli#worker-update-examples)
+
+* [`ibmcloud oc worker-pool create classic`](/docs/openshift?topic=openshift-kubernetes-service-cli#worker-pool-create-classic-cli)
+
+    * [Command options](/docs/openshift?topic=openshift-kubernetes-service-cli#worker-pool-create-classic-options)
+
+    * [Examples](/docs/openshift?topic=openshift-kubernetes-service-cli#worker-pool-create-classic-examples)
+
+* [`ibmcloud oc worker-pool create satellite`](/docs/openshift?topic=openshift-kubernetes-service-cli#worker-pool-create-satellite-cli)
+
+    * [Command options](/docs/openshift?topic=openshift-kubernetes-service-cli#worker-pool-create-satellite-options)
+
+    * [Examples](/docs/openshift?topic=openshift-kubernetes-service-cli#worker-pool-create-satellite-examples)
+
+* [`ibmcloud oc worker-pool create vpc-classic`](/docs/openshift?topic=openshift-kubernetes-service-cli#worker-pool-create-vpc-classic-cli)
+
+    * [Command options](/docs/openshift?topic=openshift-kubernetes-service-cli#worker-pool-create-vpc-classic-options)
+
+    * [Examples](/docs/openshift?topic=openshift-kubernetes-service-cli#worker-pool-create-vpc-classic-examples)
+
+* [`ibmcloud oc worker-pool create vpc-gen2`](/docs/openshift?topic=openshift-kubernetes-service-cli#worker-pool-create-vpc-gen2-cli)
+
+    * [Command options](/docs/openshift?topic=openshift-kubernetes-service-cli#worker-pool-create-vpc-gen2-options)
+
+    * [Examples](/docs/openshift?topic=openshift-kubernetes-service-cli#worker-pool-create-vpc-gen2-examples)
+
+* [`ibmcloud oc worker-pool get`](/docs/openshift?topic=openshift-kubernetes-service-cli#worker-pool-get-cli)
+
+    * [Command options](/docs/openshift?topic=openshift-kubernetes-service-cli#worker-pool-get-options)
+
+    * [Examples](/docs/openshift?topic=openshift-kubernetes-service-cli#worker-pool-get-examples)
+
+* [`ibmcloud oc worker-pool label rm`](/docs/openshift?topic=openshift-kubernetes-service-cli#worker-pool-label-rm-cli)
+
+    * [Command options](/docs/openshift?topic=openshift-kubernetes-service-cli#worker-pool-label-rm-options)
+
+    * [Examples](/docs/openshift?topic=openshift-kubernetes-service-cli#worker-pool-label-rm-examples)
+
+* [`ibmcloud oc worker-pool label set`](/docs/openshift?topic=openshift-kubernetes-service-cli#worker-pool-label-set-cli)
+
+    * [Command options](/docs/openshift?topic=openshift-kubernetes-service-cli#worker-pool-label-set-options)
+
+    * [Examples](/docs/openshift?topic=openshift-kubernetes-service-cli#worker-pool-label-set-examples)
+
+* [`ibmcloud oc worker-pool ls`](/docs/openshift?topic=openshift-kubernetes-service-cli#worker-pool-ls-cli)
+
+    * [Command options](/docs/openshift?topic=openshift-kubernetes-service-cli#worker-pool-ls-options)
+
+    * [Examples](/docs/openshift?topic=openshift-kubernetes-service-cli#worker-pool-ls-examples)
+
+* [`ibmcloud oc worker-pool operating-system set`](/docs/openshift?topic=openshift-kubernetes-service-cli#worker-pool-operating-system-set-cli)
+
+    * [Command options](/docs/openshift?topic=openshift-kubernetes-service-cli#worker-pool-operating-system-set-options)
+
+    * [Examples](/docs/openshift?topic=openshift-kubernetes-service-cli#worker-pool-operating-system-set-examples)
+
+* [`ibmcloud oc worker-pool rebalance`](/docs/openshift?topic=openshift-kubernetes-service-cli#worker-pool-rebalance-cli)
+
+    * [Command options](/docs/openshift?topic=openshift-kubernetes-service-cli#worker-pool-rebalance-options)
+
+    * [Examples](/docs/openshift?topic=openshift-kubernetes-service-cli#worker-pool-rebalance-examples)
+
+* [`ibmcloud oc worker-pool resize`](/docs/openshift?topic=openshift-kubernetes-service-cli#worker-pool-resize-cli)
+
+    * [Command options](/docs/openshift?topic=openshift-kubernetes-service-cli#worker-pool-resize-options)
+
+    * [Examples](/docs/openshift?topic=openshift-kubernetes-service-cli#worker-pool-resize-examples)
+
+* [`ibmcloud oc worker-pool rm`](/docs/openshift?topic=openshift-kubernetes-service-cli#worker-pool-rm-cli)
+
+    * [Command options](/docs/openshift?topic=openshift-kubernetes-service-cli#worker-pool-rm-options)
+
+    * [Examples](/docs/openshift?topic=openshift-kubernetes-service-cli#worker-pool-rm-examples)
+
+* [`ibmcloud oc worker-pool taint rm`](/docs/openshift?topic=openshift-kubernetes-service-cli#worker-pool-taint-rm-cli)
+
+    * [Command options](/docs/openshift?topic=openshift-kubernetes-service-cli#worker-pool-taint-rm-options)
+
+    * [Examples](/docs/openshift?topic=openshift-kubernetes-service-cli#worker-pool-taint-rm-examples)
+
+* [`ibmcloud oc worker-pool taint set`](/docs/openshift?topic=openshift-kubernetes-service-cli#worker-pool-taint-set-cli)
+
+    * [Command options](/docs/openshift?topic=openshift-kubernetes-service-cli#worker-pool-taint-set-options)
+
+    * [Examples](/docs/openshift?topic=openshift-kubernetes-service-cli#worker-pool-taint-set-examples)
+
+* [`ibmcloud oc worker-pool zones`](/docs/openshift?topic=openshift-kubernetes-service-cli#worker-pool-zones-cli)
+
+    * [Command options](/docs/openshift?topic=openshift-kubernetes-service-cli#worker-pool-zones-options)
+
+    * [Examples](/docs/openshift?topic=openshift-kubernetes-service-cli#worker-pool-zones-examples)
+
+* [`ibmcloud oc zone add classic`](/docs/openshift?topic=openshift-kubernetes-service-cli#zone-add-classic-cli)
+
+    * [Command options](/docs/openshift?topic=openshift-kubernetes-service-cli#zone-add-classic-options)
+
+    * [Examples](/docs/openshift?topic=openshift-kubernetes-service-cli#zone-add-classic-examples)
+
+* [`ibmcloud oc zone add satellite`](/docs/openshift?topic=openshift-kubernetes-service-cli#zone-add-satellite-cli)
+
+    * [Command options](/docs/openshift?topic=openshift-kubernetes-service-cli#zone-add-satellite-options)
+
+    * [Examples](/docs/openshift?topic=openshift-kubernetes-service-cli#zone-add-satellite-examples)
+
+* [`ibmcloud oc zone add vpc-classic`](/docs/openshift?topic=openshift-kubernetes-service-cli#zone-add-vpc-classic-cli)
+
+    * [Command options](/docs/openshift?topic=openshift-kubernetes-service-cli#zone-add-vpc-classic-options)
+
+    * [Examples](/docs/openshift?topic=openshift-kubernetes-service-cli#zone-add-vpc-classic-examples)
+
+* [`ibmcloud oc zone add vpc-gen2`](/docs/openshift?topic=openshift-kubernetes-service-cli#zone-add-vpc-gen2-cli)
+
+    * [Command options](/docs/openshift?topic=openshift-kubernetes-service-cli#zone-add-vpc-gen2-options)
+
+    * [Examples](/docs/openshift?topic=openshift-kubernetes-service-cli#zone-add-vpc-gen2-examples)
+
+* [`ibmcloud oc zone ls`](/docs/openshift?topic=openshift-kubernetes-service-cli#zone-ls-cli)
+
+    * [Command options](/docs/openshift?topic=openshift-kubernetes-service-cli#zone-ls-options)
+
+    * [Examples](/docs/openshift?topic=openshift-kubernetes-service-cli#zone-ls-examples)
+
+* [`ibmcloud oc zone network-set`](/docs/openshift?topic=openshift-kubernetes-service-cli#zone-network-set-cli)
+
+    * [Command options](/docs/openshift?topic=openshift-kubernetes-service-cli#zone-network-set-options)
+
+    * [Examples](/docs/openshift?topic=openshift-kubernetes-service-cli#zone-network-set-examples)
+
+* [`ibmcloud oc zone rm`](/docs/openshift?topic=openshift-kubernetes-service-cli#zone-rm-cli)
+
+    * [Command options](/docs/openshift?topic=openshift-kubernetes-service-cli#zone-rm-options)
+
+    * [Examples](/docs/openshift?topic=openshift-kubernetes-service-cli#zone-rm-examples)
 
 [CLI change log](/docs/openshift?topic=openshift-cs_cli_changelog#cs_cli_changelog)
 
@@ -8633,6 +9539,8 @@ subcollection: openshift
 [OpenShift Virtualization add-on version change log](/docs/openshift?topic=openshift-cl-add-ons-openshift-virtualization#cl-add-ons-openshift-virtualization)
 
 * [Version 4.21](/docs/openshift?topic=openshift-cl-add-ons-openshift-virtualization#cl-add-ons-openshift-virtualization-4.21)
+
+    * [Version 4.21 - v1.0.7_4.21_360518333, released 06 August 2026](/docs/openshift?topic=openshift-cl-add-ons-openshift-virtualization#cl-add-ons-openshift-virtualization-v107_421_360518333)
 
     * [Version 4.21 - v1.0.5_4.21_351283493, released 25 June 2026](/docs/openshift?topic=openshift-cl-add-ons-openshift-virtualization#cl-add-ons-openshift-virtualization-v105_421_351283493)
 

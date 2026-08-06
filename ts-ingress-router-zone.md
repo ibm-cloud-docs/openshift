@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2026
-lastupdated: "2026-07-30"
+lastupdated: "2026-08-06"
 
 
 keywords: openshift
@@ -66,7 +66,7 @@ To resolve VLAN issues for Ingress controller services that have no IP address:
 
 **Option 1**: If you need a new VLAN, order one by [contacting {{site.data.keyword.cloud_notm}} support](/docs/vlans?topic=vlans-ordering-premium-vlans#ordering-premium-vlans). Then, [create a cluster](/docs/openshift?topic=openshift-kubernetes-service-cli#cluster-create-classic-cli) that uses this new VLAN.
 
-**Option 2**: If you have another VLAN that is available, you can [set up VLAN spanning](/docs/vlans?topic=vlans-vlan-spanning#vlan-spanning) in your existing cluster. To check if VLAN spanning is already enabled, use the `ibmcloud ks vlan spanning get --region <region>` [command](/docs/openshift?topic=openshift-kubernetes-service-cli#vlan-spanning-get-cli). Then, you can add new worker nodes to the cluster that use the other VLAN with available subnets. Create at least two worker nodes per zone. Now, IP addresses are available so that the Ingress controllers can automatically deploy.
+**Option 2**: If you have another VLAN that is available, you can [set up VLAN spanning](/docs/vlans?topic=vlans-vlan-spanning#vlan-spanning) in your existing cluster. To check if VLAN spanning is already enabled, use the `ibmcloud ks vlan spanning get --region REGION` [command](/docs/openshift?topic=openshift-kubernetes-service-cli#vlan-spanning-get-cli). Then, you can add new worker nodes to the cluster that use the other VLAN with available subnets. Create at least two worker nodes per zone. Now, IP addresses are available so that the Ingress controllers can automatically deploy.
 
 **Option 3**: If you are not using all the subnets in the VLAN, you can reuse subnets on the VLAN by adding them to your cluster.
 1. Check that the subnet that you want to use is available.
@@ -77,7 +77,7 @@ To resolve VLAN issues for Ingress controller services that have no IP address:
 
 3. Verify that the subnet was successfully created and added to your cluster. The subnet CIDR is listed in the **Subnet VLANs** section.
     ```sh
-    ibmcloud ks cluster get --cluster <cluster_name> --show-resources
+    ibmcloud ks cluster get --cluster CLUSTER_NAME --show-resources
     ```
     {: pre}
 
@@ -92,7 +92,7 @@ To resolve VLAN issues for Ingress controller services that have no IP address:
     {: screen}
 
 4. Verify that the portable IP addresses from the subnet that you added are used for the Ingress controller in your cluster. It might take several minutes for the services to use the portable IP addresses from the new subnet.
-    * **No Ingress subdomain**: Run `ibmcloud ks cluster get --cluster <cluster>` to verify that the **Ingress Subdomain** is populated.
+    * **No Ingress subdomain**: Run `ibmcloud ks cluster get --cluster CLUSTER` to verify that the **Ingress Subdomain** is populated.
     * **A Ingress controller does not deploy in a zone**: Run `oc get svc -n openshift-ingress` to verify that the missing Ingress controller is deployed with an external IP address.
 
 
@@ -148,12 +148,12 @@ Create an Ingress controller service in the zone where an Ingress controller ser
 
 4. Get the subdomain for your default Ingress controller. In the output, look for the subdomain formatted like `<cluster_name>-<random_hash>-0000.<region>.containers.appdomain.cloud`.
     ```sh
-    ibmcloud ks nlb-dns ls -c <cluster_name_or_ID>
+    ibmcloud ks nlb-dns ls -c CLUSTER_NAME_OR_ID
     ```
     {: pre}
 
 5. Register the Ingress controller service's IP address with your Ingress controller's subdomain.
     ```sh
-    ibmcloud ks nlb-dns add -c <cluster_name_or_ID> --ip <router_svc_ip> --nlb-host <router_subdomain>
+    ibmcloud ks nlb-dns add -c CLUSTER_NAME_OR_ID --ip ROUTER_SVC_IP --nlb-host ROUTER_SUBDOMAIN
     ```
     {: pre}

@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2026
-lastupdated: "2026-07-30"
+lastupdated: "2026-08-06"
 
 
 keywords: openshift
@@ -24,7 +24,7 @@ content-type: troubleshoot
 [Virtual Private Cloud]{: tag-vpc} [Classic infrastructure]{: tag-classic-inf}
 
 
-You create a cluster and run `ibmcloud oc cluster get --cluster <cluster>` to check its status. The cluster **State** is `normal`, but the **Ingress Subdomain** and **Ingress Secret** are not available.
+You create a cluster and run `ibmcloud oc cluster get --cluster CLUSTER` to check its status. The cluster **State** is `normal`, but the **Ingress Subdomain** and **Ingress Secret** are not available.
 {: tsSymptoms}
 
 
@@ -208,6 +208,6 @@ Typically, after the cluster is ready, the Ingress subdomain and secret are crea
 
 5. Check again whether the Ingress subdomain and secret are created. If they are not available, but you verified that all the components in steps 1 - 3 exist, [review ways to get help](/docs/openshift?topic=openshift-get-help).
     ```sh
-    ibmcloud oc cluster get -c <cluster_name_or_ID>
+    ibmcloud oc cluster get -c CLUSTER_NAME_OR_ID
     ```
     {: pre}

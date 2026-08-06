@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2022, 2026
-lastupdated: "2026-07-30"
+lastupdated: "2026-08-06"
 
 
 keywords: openshift, {{site.data.keyword.openshiftlong_notm}}, add-on, file
@@ -96,7 +96,7 @@ Need to update the add-on to a newer version? See [Updating the {{site.data.keyw
 
 1. Verify that the add-on is enabled.
     ```sh
-    ibmcloud oc cluster addon ls --cluster <cluster_name_or_ID>
+    ibmcloud oc cluster addon ls --cluster CLUSTER_NAME_OR_ID
     ```
     {: pre}
 

@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2024, 2026
-lastupdated: "2026-08-04"
+lastupdated: "2026-08-06"
 
 
 keywords: kubernetes, openshift, MountingTargetFailed, encryption in-transit, eit
@@ -39,7 +39,7 @@ If your cluster was initially created at a version earlier than 4.11, make sure 
 1. Get the ID of the `kube-<clusterID>` security group.
 
     ```sh
-    ibmcloud is sg kube-<cluster-id>  | grep ID
+    ibmcloud is sg kube-CLUSTER_ID  | grep ID
     ```
     {: pre}
 

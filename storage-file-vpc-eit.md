@@ -2,7 +2,7 @@
 
 copyright:
   years: 2026
-lastupdated: "2026-08-03"
+lastupdated: "2026-08-06"
 
 
 keywords: openshift, {{site.data.keyword.openshiftlong_notm}}, file, encryption, transit, EIT, stunnel, regional, RFS
@@ -327,7 +327,7 @@ After the pod starts, verify that the encryption in transit is working by checki
 1. Verify that the file share mount target shows `stunnel` as the transit encryption method.
 
     ```sh
-    ibmcloud is share-mount-target <file-share-id> <file-share-target-id> | grep "Transit Encryption"
+    ibmcloud is share-mount-target FILE_SHARE_ID FILE_SHARE_TARGET_ID | grep "Transit Encryption"
     ```
     {: pre}
 

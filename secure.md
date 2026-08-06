@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2026
-lastupdated: "2026-08-04"
+lastupdated: "2026-08-06"
 
 
 keywords: openshift
@@ -160,7 +160,7 @@ The ownership of a worker node depends on the type of cluster that you create an
 
 For more information, see [Your responsibilities by using {{site.data.keyword.openshiftlong_notm}}](/docs/openshift?topic=openshift-responsibilities_iks).
 
-Use the `ibmcloud oc worker update` [command](/docs/openshift?topic=openshift-kubernetes-service-cli#worker-update-cli) regularly (such as monthly) to deploy updates and security patches to the operating system and to update the {{site.data.keyword.redhat_openshift_notm}} version that your worker nodes run. When updates are available, you are notified when you view information about the master and worker nodes in the {{site.data.keyword.cloud_notm}} console or CLI, such as with the `ibmcloud oc clusters ls` or `ibmcloud oc workers ls --cluster <cluster_name>` commands. Worker node updates are provided by IBM as a full worker node image that includes the latest security patches. To apply the updates, the worker node must be reimaged and reloaded with the new image. Keys for the root user are automatically rotated when the worker node is reloaded.
+Use the `ibmcloud oc worker update` [command](/docs/openshift?topic=openshift-kubernetes-service-cli#worker-update-cli) regularly (such as monthly) to deploy updates and security patches to the operating system and to update the {{site.data.keyword.redhat_openshift_notm}} version that your worker nodes run. When updates are available, you are notified when you view information about the master and worker nodes in the {{site.data.keyword.cloud_notm}} console or CLI, such as with the `ibmcloud oc clusters ls` or `ibmcloud oc workers ls --cluster CLUSTER_NAME` commands. Worker node updates are provided by IBM as a full worker node image that includes the latest security patches. To apply the updates, the worker node must be reimaged and reloaded with the new image. Keys for the root user are automatically rotated when the worker node is reloaded.
 {: important}
 
 ### How does my worker node setup look?

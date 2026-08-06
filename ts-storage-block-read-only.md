@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2026
-lastupdated: "2026-07-30"
+lastupdated: "2026-08-06"
 
 
 keywords: openshift
@@ -67,7 +67,7 @@ Verify the plug-in version, re-create your app, and safely reload your worker no
 
     2. Retrieve the **ID** of your worker node by using the private IP address from the previous step.
         ```sh
-        ibmcloud oc worker ls --cluster <cluster_name_or_ID>
+        ibmcloud oc worker ls --cluster CLUSTER_NAME_OR_ID
         ```
         {: pre}
 

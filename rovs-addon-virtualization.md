@@ -2,7 +2,7 @@
 
 copyright:
   years: 2026, 2026
-lastupdated: "2026-07-30"
+lastupdated: "2026-08-06"
 
 keywords: openshift, virtualization service, rovs, addon, openshift virtualization, hyperconverged, nmstate, node maintenance
 
@@ -62,7 +62,7 @@ Automatic patch updates
 :   Patch updates are applied automatically to your cluster using the **Automatic Approval** strategy. IBM notifies you at least one week before production rollout with change details. All dependent operators are updated automatically if new versions exist in the mirrored operator catalog. The add-on uses the `stable` channel for all operator updates.
 
 Manual version upgrades
-:   To upgrade the add-on to a newer version (for example, from 4.20 to 4.21), you must first upgrade your Virtualization Service cluster to the target version, then manually update the add-on version using the CLI command `ibmcloud ks cluster addon update openshift-virtualization --cluster <cluster_name_or_id> --version <version>`.
+:   To upgrade the add-on to a newer version (for example, from 4.20 to 4.21), you must first upgrade your Virtualization Service cluster to the target version, then manually update the add-on version using the CLI command `ibmcloud ks cluster addon update openshift-virtualization --cluster CLUSTER_NAME_OR_ID --version VERSION`.
 
 Update channel
 :   The add-on uses the `stable` channel for updates, which provides Z-stream updates for bug fixes and security issues.
@@ -120,7 +120,7 @@ openshift-virtualization   4.21      normal         Addon Ready. For more info: 
 If the feature flag is enabled for your account, get detailed information about the OpenShift Virtualization add-on.
 
 ```sh
-ibmcloud ks cluster addon get --addon openshift-virtualization --cluster <cluster_name_or_id>
+ibmcloud ks cluster addon get --addon openshift-virtualization --cluster CLUSTER_NAME_OR_ID
 ```
 {: pre}
 
@@ -198,7 +198,7 @@ To upgrade the OpenShift Virtualization add-on to a newer minor version (such as
 2. After the cluster upgrade is complete, update the add-on to the matching version.
 
    ```sh
-   ibmcloud ks cluster addon update openshift-virtualization --cluster <cluster_name_or_id> --version <version>
+   ibmcloud ks cluster addon update openshift-virtualization --cluster CLUSTER_NAME_OR_ID --version VERSION
    ```
    {: pre}
 
@@ -218,7 +218,7 @@ It is highly recommended to update the add-on version to match your cluster vers
 Disabling the OpenShift Virtualization add-on is not supported on Virtualization Service clusters (Phase 1). The add-on is a core component of the Virtualization Service and cannot be removed. If the feature flag is enabled for your account and you attempt the CLI command, the command results in an error.
 
 ```sh
-ibmcloud ks cluster addon disable openshift-virtualization --cluster <cluster_name_or_id>
+ibmcloud ks cluster addon disable openshift-virtualization --cluster CLUSTER_NAME_OR_ID
 ```
 {: pre}
 

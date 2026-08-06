@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2026
-lastupdated: "2026-07-30"
+lastupdated: "2026-08-06"
 
 
 keywords: kubernetes, openshift
@@ -191,7 +191,7 @@ To deploy apps to specific worker nodes,
         ```
         {: screen}
 
-        If you created an app affinity rule based on another factor, get that value instead. For example, to verify that the app pod deployed to a worker node on a specific VLAN, view the VLAN that the worker node is on by running `ibmcloud oc worker get --cluster <cluster_name_or_ID> --worker <worker_ID>`.
+        If you created an app affinity rule based on another factor, get that value instead. For example, to verify that the app pod deployed to a worker node on a specific VLAN, view the VLAN that the worker node is on by running `ibmcloud oc worker get --cluster CLUSTER_NAME_OR_ID --worker WORKER_ID`.
         {: tip}
 
     4. In the output, verify that the worker node with the private IP address that you identified in the previous step is deployed in this worker pool.

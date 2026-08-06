@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2026
-lastupdated: "2026-07-30"
+lastupdated: "2026-08-06"
 
 
 keywords: file, debug, help
@@ -126,7 +126,7 @@ Follow the steps to check the status of your storage driver and plug-in pods and
     1. Get the names of the containers that run in the driver pod.
 
         ```sh
-        kubectl describe pod <pod_name> -n kube-system 
+        kubectl describe pod POD_NAME -n kube-system
         ```
         {: pre}
 

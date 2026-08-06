@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2026
-lastupdated: "2026-07-30"
+lastupdated: "2026-08-06"
 
 
 keywords: openshift, openshift data foundation, openshift container storage, ocs
@@ -376,28 +376,28 @@ You can install the add-on by using the [`ibmcloud oc cluster addon enable` comm
 
     Example command to deploy add-on version 4.10 with the default storage cluster settings, the `performance` resource profile, and encryption with {{site.data.keyword.hscrypto}} enabled.
     ```sh
-    ibmcloud oc cluster addon enable openshift-data-foundation -c <cluster-name> --version 4.15.0 --param "odfDeploy=true" --param "resourceProfile=performance" --param "hpcsTokenUrl=https://iam.cloud.ibm.com/identity/token" --param "hpcsEncryption=true" --param "hpcsBaseUrl=<hpcs-instance-public-endpoint>" --param "hpcsInstanceId=<hpcs-instance-id>" --param "hpcsServiceName=<hpcs-instance-name>" --param "hpcsSecretName=<hpcs-secret-name>"
+    ibmcloud oc cluster addon enable openshift-data-foundation -c CLUSTER_NAME --version 4.15.0 --param "odfDeploy=true" --param "resourceProfile=performance" --param "hpcsTokenUrl=https://iam.cloud.ibm.com/identity/token" --param "hpcsEncryption=true" --param "hpcsBaseUrl=HPCS_INSTANCE_PUBLIC_ENDPOINT" --param "hpcsInstanceId=HPCS_INSTANCE_ID" --param "hpcsServiceName=HPCS_INSTANCE_NAME" --param "hpcsSecretName=HPCS_SECRET_NAME"
     ```
     {: pre}
 
     Example command for deploying the ODF add-on only.
     
     ```sh
-    ibmcloud oc cluster addon enable openshift-data-foundation -c <cluster_name> --version <version> --param "odfDeploy=false"
+    ibmcloud oc cluster addon enable openshift-data-foundation -c CLUSTER_NAME --version VERSION --param "odfDeploy=false"
     ```
     {: pre}
 
     Example command for deploying the ODF and creating a storage cluster with the default configuration parameters.
     
     ```sh
-    ibmcloud oc cluster addon enable openshift-data-foundation -c <cluster_name> --version <version> 
+    ibmcloud oc cluster addon enable openshift-data-foundation -c CLUSTER_NAME --version VERSION
     ```
     {: pre}
 
     Example command for deploying the ODF and creating a storage cluster while overriding the `osdSize` parameter.
     
     ```sh
-    ibmcloud oc cluster addon enable openshift-data-foundation -c <cluster_name> --version <version> --param "osdSize=500Gi"
+    ibmcloud oc cluster addon enable openshift-data-foundation -c CLUSTER_NAME --version VERSION --param "osdSize=500Gi"
     ```
     {: pre}
 

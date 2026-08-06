@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2022, 2026
-lastupdated: "2026-08-03"
+lastupdated: "2026-08-06"
 
 keywords: kubernetes, openshift
 
@@ -49,7 +49,7 @@ New security group rules were introduced in versions 4.11 and later. These rule 
 
 1. Get the ID of the `kube-<clusterID>` security group.
     ```sh
-    ibmcloud is sg kube-<cluster-id>  | grep ID
+    ibmcloud is sg kube-CLUSTER_ID  | grep ID
     ```
     {: pre}
 
@@ -378,7 +378,7 @@ Create a persistent volume claim (PVC) to statically provision {{site.data.keywo
 
 1. Get the ID of your `kube-<clusterID>` security group.
     ```sh
-    ibmcloud is sg kube-<cluster-id>  | grep ID
+    ibmcloud is sg kube-CLUSTER_ID  | grep ID
     ```
     {: pre}
 
@@ -392,7 +392,7 @@ Create a persistent volume claim (PVC) to statically provision {{site.data.keywo
 1. Create a share mount target and specify the `kube-<clusterID>` security group ID that you retrieved earlier in the `--vni-sgs` option.
 
     ```sh
-    ibmcloud is share-mount-target-create my-file-share --subnet my-subnet --name NAME --vni-name my-share-vni-1  --vni-sgs kube-<cluster-id> --resource-group-name Default --vpc ID
+    ibmcloud is share-mount-target-create my-file-share --subnet my-subnet --name NAME --vni-name my-share-vni-1  --vni-sgs kube-CLUSTER_ID --resource-group-name Default --vpc ID
     ```
     {: pre}
 
@@ -595,7 +595,7 @@ If you need the following features, you must [create your own storage class](/do
 - You need to manually specify the subnet or IP address of the [Virtual Network Interface (VNI)](/docs/vpc?topic=vpc-file-storage-vpc-about&interface=ui#fs-mount-granular-auth).
 - You need more control over capacity and bandwidth. In this case, you can use the `rfs` profile. For more information, see [Regional file shares overview](/docs/vpc?topic=vpc-file-storage-profiles&interface=ui#rfs-profile).
 
-If your cluster and VPC are not in the same resource group, you must specify the VPC resource group ID in the `resourceGroup` section and the `kube-<clusterID>` security group ID in the `securityGroupIDs` section. You can find the ID of the `kube-<clusterID>` security group by running `ibmcloud is sg kube-<cluster-id>  | grep ID`.
+If your cluster and VPC are not in the same resource group, you must specify the VPC resource group ID in the `resourceGroup` section and the `kube-<clusterID>` security group ID in the `securityGroupIDs` section. You can find the ID of the `kube-<clusterID>` security group by running `ibmcloud is sg kube-CLUSTER_ID  | grep ID`.
 {: important}
 
 
@@ -1049,19 +1049,19 @@ To limit file share access by node, zone, or resource group, you must first crea
 
 1. Get your worker pool details.
     ```sh
-    ibmcloud ks worker-pool ls --cluster <cluster>
+    ibmcloud ks worker-pool ls --cluster CLUSTER
     ```
     {: pre}
     
 2. Get your subnet details.
     ```sh
-    ibmcloud ks worker-pool get <worker-pool> --cluster <cluster> | grep -A 3 Subnets
+    ibmcloud ks worker-pool get WORKER_POOL --cluster CLUSTER | grep -A 3 Subnets
     ```
     {: pre}
 
 1. Get your subnet CIDRs. Repeat this step for each subnet. You use this CIDR range later.
     ```sh
-    ibmcloud is subnet <subnet-id> | grep "IPv4 CIDR"
+    ibmcloud is subnet SUBNET_ID | grep "IPv4 CIDR"
     ```
     {: pre}
 
