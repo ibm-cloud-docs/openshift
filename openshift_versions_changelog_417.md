@@ -18,7 +18,7 @@ subcollection: openshift
 
 
 # 4.17 version change log
-{: #openshift_changelog_417}
+{: #changelog_417}
 
 View information of version changes for major, minor, and patch updates that are available for your {{site.data.keyword.openshiftlong}} clusters that run this version. Changes include updates to {{site.data.keyword.redhat_openshift_notm}}, Kubernetes, and {{site.data.keyword.cloud_notm}} Provider components.
 {: shortdesc}

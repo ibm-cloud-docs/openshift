@@ -2,7 +2,7 @@
 
 copyright:
   years: 2023, 2026
-lastupdated: "2026-07-30"
+lastupdated: "2026-08-06"
 
 
 keywords: openshift, route, network, satellite
@@ -80,7 +80,7 @@ For more information, see the [**`ibmcloud oc cluster create satellite`**](/docs
 [After location and cluster creation]{: tag-green}
 
 
-After you create your location and cluster, you can use the [**`ibmcloud ks cluster master satellite-service-endpoint allowlist add`**](/docs/openshift?topic=openshift-kubernetes-service-cli#cluster-master-sat-allowlist-add) command to add a subnet to a {{site.data.keyword.satelliteshort}} cluster's service endpoint allowlist. Authorized requests to the cluster master that originate from the subnet are permitted through the {{site.data.keyword.satelliteshort}} service endpoint. The allowlist must be [enabled](/docs/openshift?topic=openshift-kubernetes-service-cli#cluster-master-sat-allowlist-enable) for the restrictions to apply.
+After you create your location and cluster, you can use the [**`ibmcloud ks cluster master satellite-service-endpoint allowlist add`**](/docs/openshift?topic=openshift-kubernetes-service-cli#cluster-master-satellite-service-endpoint-allowlist-add-cli) command to add a subnet to a {{site.data.keyword.satelliteshort}} cluster's service endpoint allowlist. Authorized requests to the cluster master that originate from the subnet are permitted through the {{site.data.keyword.satelliteshort}} service endpoint. The allowlist must be [enabled](/docs/openshift?topic=openshift-kubernetes-service-cli#cluster-master-satellite-service-endpoint-allowlist-enable-cli) for the restrictions to apply.
 
 
 ## Creating network policies by using Calico host endpoints

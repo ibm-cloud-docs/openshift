@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2026
-lastupdated: "2026-08-04"
+lastupdated: "2026-08-06"
 
 
 keywords: kubernetes, openshift
@@ -38,7 +38,7 @@ Billing
 ## Adding managed add-ons
 {: #adding-managed-add-ons}
 
-To enable a managed add-on in your cluster from the CLI, use the [`ibmcloud oc cluster addon enable` command](/docs/openshift?topic=openshift-kubernetes-service-cli#cluster-addon-enable-addon-cli). To enable a managed add-on in your cluster in the [console](https://cloud.ibm.com/containers/cluster-management/clusters){: external}, use the **Add-ons** pane of the cluster details page. When you enable the managed add-on, a supported version of the tool, including all Kubernetes resources, is automatically installed in your cluster.
+To enable a managed add-on in your cluster from the CLI, use the [`ibmcloud oc cluster addon enable` command](/docs/openshift?topic=openshift-kubernetes-service-cli#cluster-addon-ls-cli). To enable a managed add-on in your cluster in the [console](https://cloud.ibm.com/containers/cluster-management/clusters){: external}, use the **Add-ons** pane of the cluster details page. When you enable the managed add-on, a supported version of the tool, including all Kubernetes resources, is automatically installed in your cluster.
 
 For more information about the prerequisites for each add-on, see:
 - [{{site.data.keyword.block_storage_is_short}}](/docs/openshift?topic=openshift-vpc-block)

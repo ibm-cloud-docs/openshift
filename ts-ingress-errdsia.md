@@ -2,7 +2,7 @@
 
 copyright:
   years: 2022, 2026
-lastupdated: "2026-08-04"
+lastupdated: "2026-08-06"
 
 
 keywords: openshift, errdsia, nlb-dns, dns add, dns remove
@@ -44,7 +44,7 @@ Normally, the NLB-DNS subdomains should hold IP addresses or load balancer hostn
 Identify and update any NLB-DNS subdomains that have incorrect addresses registered.
 {: tsResolve}
 
-1. Get the list of the managed domains using the **`ibmcloud oc ingress domain ls`** [command](/docs/openshift?topic=openshift-kubernetes-service-cli#ingress-domain-ls).
+1. Get the list of the managed domains using the **`ibmcloud oc ingress domain ls`** [command](/docs/openshift?topic=openshift-kubernetes-service-cli#ingress-domain-ls-cli).
 
 1. Get the list of LoadBalancer services from your cluster.
     ```sh

@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2026
-lastupdated: "2026-07-24"
+lastupdated: "2026-08-06"
 
 
 keywords: oks, iro, openshift, red hat, red hat openshift
@@ -119,7 +119,7 @@ To deploy the OpenShift Container Platform cluster logging operator and stack on
 1. Prepare your worker pool to run the operator.
     1. Create a [VPC](/docs/openshift?topic=openshift-add-workers-vpc) or [classic](/docs/openshift?topic=openshift-add-workers-classic) worker pool with a flavor of **at least 4 cores and 32 GB memory** and 3 worker nodes.
     2. [Label the worker pool](/docs/openshift?topic=openshift-worker-tag-label).
-    3. [Taint the worker pool](/docs/openshift?topic=openshift-kubernetes-service-cli#worker_pool_taint) so that other workloads can't run on the worker pool.
+    3. [Taint the worker pool](/docs/openshift?topic=openshift-kubernetes-service-cli#worker-pool-taint-set-cli) so that other workloads can't run on the worker pool.
 2. [Access your {{site.data.keyword.redhat_openshift_notm}} cluster](/docs/openshift?topic=openshift-access_cluster).
 3. From the {{site.data.keyword.redhat_openshift_notm}} web console **Administrator** perspective, click **Operators > Installed Operators**.
 4. Click **Cluster Logging**.
