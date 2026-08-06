@@ -438,6 +438,8 @@ subcollection: openshift
 
         * OpenShift Data Foundation cluster add-on patch updates.
 
+        * OpenShift Virtualization cluster add-on patch updates.
+
     * [5 August 2026](/docs/openshift?topic=openshift-openshift-relnotes#openshift-aug0526)
 
         * IBM Storage Operator cluster add-on patch updates.
@@ -8633,6 +8635,8 @@ subcollection: openshift
 [OpenShift Virtualization add-on version change log](/docs/openshift?topic=openshift-cl-add-ons-openshift-virtualization#cl-add-ons-openshift-virtualization)
 
 * [Version 4.21](/docs/openshift?topic=openshift-cl-add-ons-openshift-virtualization#cl-add-ons-openshift-virtualization-4.21)
+
+    * [Version 4.21 - v1.0.7_4.21_360518333, released 06 August 2026](/docs/openshift?topic=openshift-cl-add-ons-openshift-virtualization#cl-add-ons-openshift-virtualization-v107_421_360518333)
 
     * [Version 4.21 - v1.0.5_4.21_351283493, released 25 June 2026](/docs/openshift?topic=openshift-cl-add-ons-openshift-virtualization#cl-add-ons-openshift-virtualization-v105_421_351283493)
 
