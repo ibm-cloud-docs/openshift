@@ -3,7 +3,7 @@
 copyright:
   years: 2024, 2026
 
-lastupdated: "2026-08-04"
+lastupdated: "2026-08-06"
 
 
 keywords: change log, version history, 4.17_openshift
@@ -37,6 +37,28 @@ Master patch updates are applied automatically. Worker node patch updates can be
 
 ## Version 4.17
 {: #417_components}
+
+
+### Master fix pack 4.17.56_1595_openshift, released 05 August 2026
+{: #cl-boms_master-41756_1595_openshift_M}
+
+The following table shows the components that are in the master fix pack 4.17.56_1595_openshift. Master patch updates are applied automatically.
+{: shortdesc}
+
+| Component | Description |
+| ---- | ---- |
+|Cluster health image v1.6.17|New version contains updates and security fixes.|
+|etcd v3.5.32|See the [etcd release notes](https://github.com/coreos/etcd/releases/v3.5.32).|
+|IBM Cloud Block Storage driver and plug-in v2.5.27|New version contains updates and security fixes.|
+|IBM Cloud Controller Manager v1.30.14-51|New version contains updates and security fixes.|
+|IBM Cloud File Storage for Classic plug-in and monitor v456|New version contains updates and security fixes.|
+|IBM Cloud RBAC Operator 92ba7dd|New version contains updates and security fixes.|
+|Key Management Service provider 2.10.28|New version contains updates and security fixes.|
+|Portieris admission controller v0.14.2|See the [Portieris admission controller release notes](https://github.com/IBM/portieris/releases/tag/v0.14.2)|
+|Red Hat OpenShift on IBM Cloud 4.17.56|See the [Red Hat OpenShift on IBM Cloud release notes](https://docs.redhat.com/en/documentation/openshift_container_platform/4.17/html/release_notes/ocp-4-17-release-notes#ocp-4-17-56_release-notes).Resolves the following CVEs: [CVE-2026-16242](https://nvd.nist.gov/vuln/detail/CVE-2026-16242){: external}.|
+|Red Hat OpenShift on IBM Cloud Control Plane Operator, Metrics Server, and toolkit v4.17.0+20260707|See the [Red Hat OpenShift on IBM Cloud toolkit release notes](https://github.com/openshift/ibm-roks-toolkit/releases/tag/v4.17.0+20260707).|
+{: caption="4.17.56_1595_openshift fix pack." caption-side="bottom"}
+{: #cl-boms_master-41756_1595_openshift_M-component-table}
 
 
 ### Worker node fix pack 4.17.55_1594_openshift, released 28 July 2026
