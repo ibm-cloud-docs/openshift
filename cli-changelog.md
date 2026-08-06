@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2026
-lastupdated: "2026-08-04"
+lastupdated: "2026-08-06"
 
 
 keywords: openshift, {{site.data.keyword.openshiftlong_notm}}, oc, ks
@@ -499,7 +499,7 @@ Version 1.0.459 of the CLI was released on 21 October 2022.
 {: #cli-10454}
 
 Version 1.0.454 of the CLI was released on 3 October 2022.
-- Adds new [Ingress status](/docs/openshift?topic=openshift-kubernetes-service-cli#alb-cli) commands.
+- Adds new [Ingress status](/docs/openshift?topic=openshift-kubernetes-service-cli#ingress-alb-ls-cli) commands.
 - Adds the `--operating-system` option for the cluster create commands. 
 
 ## Version 1.0.452

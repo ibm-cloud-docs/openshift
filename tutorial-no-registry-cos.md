@@ -2,7 +2,7 @@
 
 copyright:
   years: 2026
-lastupdated: "2026-07-30"
+lastupdated: "2026-08-06"
 
 keywords: openshift, roks, no cos, no registry, emptydir, image registry, internal registry, icr, fs cloud, financial services
 
@@ -160,7 +160,7 @@ Confirm that the internal image registry is using `emptyDir` storage as expected
 Your cluster is now running with an `emptyDir`-backed internal registry. You can push and pull images by using {{site.data.keyword.registrylong_notm}}.
 {: shortdesc}
 
-- [Push images to {{site.data.keyword.registrylong_notm}}](/docs/openshift?topic=openshift-registry#push-images) and pull them directly into your cluster workloads.
+- [Push images to {{site.data.keyword.registrylong_notm}}](/docs/openshift?topic=openshift-registry#builds_registry) and pull them directly into your cluster workloads.
 - [Configure an image pull secret](/docs/openshift?topic=openshift-registry#other_registry_accounts) so that your pods can pull images from {{site.data.keyword.registrylong_notm}}.
 - [Set up IBM Cloud monitoring](/docs/openshift?topic=openshift-health-monitor) to observe your cluster.
 - If you want to add persistent internal registry storage later, see [Backing up your internal image registry to {{site.data.keyword.cos_full_notm}}](/docs/openshift?topic=openshift-registry#cos_image_registry).

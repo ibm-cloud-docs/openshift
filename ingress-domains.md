@@ -2,7 +2,7 @@
 
 copyright:
   years: 2023, 2026
-lastupdated: "2026-08-04"
+lastupdated: "2026-08-06"
 
 
 keywords: kubernetes, openshift
@@ -204,7 +204,7 @@ If you delete a domain from a cluster, the domain cannot be recovered. If you la
 If you delete a domain that is registered with the IBM internal provider, you cannot reuse the domain name.
 {: note}
 
-For more details and command options, see the [CLI reference](/docs/openshift?topic=openshift-kubernetes-service-cli&interface=ui#ingress-domain-rm).
+For more details and command options, see the [CLI reference](/docs/openshift?topic=openshift-kubernetes-service-cli#ingress-domain-rm-cli).
 
 ```sh
 ibmcloud oc ingress domain rm --cluster CLUSTER --domain DOMAIN
