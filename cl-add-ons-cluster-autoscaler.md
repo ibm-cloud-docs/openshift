@@ -3,7 +3,7 @@
 copyright:
   years: 2024, 2026
 
-lastupdated: "2026-07-30"
+lastupdated: "2026-08-06"
 
 
 keywords: change log, version history, Cluster autoscaler
@@ -407,14 +407,6 @@ Beginning in version 1.2.4 the `maxEmptyBulkDelete` option is no longer supporte
 - Golang update to resolve [CVE-2023-29409](https://nvd.nist.gov/vuln/detail/CVE-2023-29409){: external}.
 
 
-### Version patch update 1.0.9_81, released 07 August 2023
-{: #10981_ca}
-
-- Image tags: `1.22.0-109-0`, `1.23.0-109-0`, `1.24.0-109-0`, `1.25.0-109-0`,`1.26.1-109-0`,`1.27.2-109-0`.
-- Updates the `storage-secret-sidecar` image to `v1.2.25`.
-- Resolves the followings CVEs:[CVE-2023-2283](https://nvd.nist.gov/vuln/detail/CVE-2023-2283){: external},[CVE-2023-26604](https://nvd.nist.gov/vuln/detail/CVE-2023-26604){: external},[CVE-2020-24736](https://nvd.nist.gov/vuln/detail/CVE-2020-24736){: external}, and [CVE-2023-1667](https://nvd.nist.gov/vuln/detail/CVE-2023-1667){: external}.
-
-
 
 
 ### Version patch update 1.1.0_362, released 16 February 2024
@@ -451,14 +443,6 @@ Beginning in version 1.2.4 the `maxEmptyBulkDelete` option is no longer supporte
 - Golang update to resolve [CVE-2023-29409](https://nvd.nist.gov/vuln/detail/CVE-2023-29409){: external}.
 
 
-### Version patch update 1.0.8_82, released 7 August 2023
-{: #10882_ca}
-
-- Image tags: `1.20.0 108-3`, `1.21.0 108-3`, `1.22.0 108-3`, `1.23.0 108-3`, `1.24.0 108-3`, `1.25.0 108-3`, `1.26.0 108-3`.
-- Updates the `storage-secret-sidecar` image to `v1.2.25`.
-- Resolves the followings CVEs:[CVE-2023-2283](https://nvd.nist.gov/vuln/detail/CVE-2023-2283){: external},[CVE-2023-26604](https://nvd.nist.gov/vuln/detail/CVE-2023-26604){: external},[CVE-2020-24736](https://nvd.nist.gov/vuln/detail/CVE-2020-24736){: external}, and [CVE-2023-1667](https://nvd.nist.gov/vuln/detail/CVE-2023-1667){: external}.
-
-
 
 
 ### Version patch update 1.0.7_291, released 27 November 2023
@@ -483,11 +467,3 @@ Beginning in version 1.2.4 the `maxEmptyBulkDelete` option is no longer supporte
 - Image tags: `1.22.0-107-7`, `1.23.0-107-7`, `1.24.0-107-7`, `1.25.0-107-7`, `1.26.1-107-7`, `1.27.2-107-7`.
 - Updated the storage-secret-sidecar image to `v1.2.26`.
 - Golang update to resolve [CVE-2023-29409](https://nvd.nist.gov/vuln/detail/CVE-2023-29409){: external}.
-
-
-### Version patch update 1.0.7_83, released 7 August 2023
-{: #10783_ca}
-
-- Image tags: `1.20.0 107-6`, `1.21.0 107-6`, `1.22.0 107-6`, `1.23.0 107-6`, `1.24.0 107-6`,`1.25.0 107-6`.
-- Updates the `storage-secret-sidecar` image to `v1.2.25`.
-- Resolves the followings CVEs:[CVE-2023-2283](https://nvd.nist.gov/vuln/detail/CVE-2023-2283){: external},[CVE-2023-26604](https://nvd.nist.gov/vuln/detail/CVE-2023-26604){: external},[CVE-2020-24736](https://nvd.nist.gov/vuln/detail/CVE-2020-24736){: external}, and [CVE-2023-1667](https://nvd.nist.gov/vuln/detail/CVE-2023-1667){: external}.
