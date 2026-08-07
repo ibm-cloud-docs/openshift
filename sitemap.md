@@ -434,6 +434,12 @@ subcollection: openshift
 
 * [August 2026](/docs/openshift?topic=openshift-openshift-relnotes#openshift-aug26)
 
+* [August 2026](/docs/openshift?topic=openshift-openshift-relnotes#openshift-aug26)
+
+    * [7 August 2026](/docs/openshift?topic=openshift-openshift-relnotes#openshift-aug0726)
+
+        * {{site.data.keyword.openshiftlong_notm}} master fix packs are available.
+
     * [6 August 2026](/docs/openshift?topic=openshift-openshift-relnotes#openshift-aug0626)
 
         * OpenShift Data Foundation cluster add-on patch updates.
@@ -6850,6 +6856,8 @@ subcollection: openshift
 * [Overview](/docs/openshift?topic=openshift-changelog_416#changelog_overview_416)
 
 * [Version 4.16](/docs/openshift?topic=openshift-changelog_416#416_components)
+
+    * [Master fix pack 4.16.68_1627_openshift, released 07 August 2026](/docs/openshift?topic=openshift-changelog_416#cl-boms_master-41668_1627_openshift_M)
 
     * [Worker node fix pack 4.16.66_1626_openshift, released 28 July 2026](/docs/openshift?topic=openshift-changelog_416#cl-boms-41666_1626_openshift_W)
 
