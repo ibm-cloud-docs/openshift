@@ -434,8 +434,6 @@ subcollection: openshift
 
 * [August 2026](/docs/openshift?topic=openshift-openshift-relnotes#openshift-aug26)
 
-* [August 2026](/docs/openshift?topic=openshift-openshift-relnotes#openshift-aug26)
-
     * [7 August 2026](/docs/openshift?topic=openshift-openshift-relnotes#openshift-aug0726)
 
         * {{site.data.keyword.openshiftlong_notm}} master fix packs are available.
