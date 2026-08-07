@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2025, 2026
-lastupdated: "2026-07-31"
+lastupdated: "2026-08-07"
 
 
 keywords: trusted profiles, containers, block storage, openshift
@@ -251,7 +251,7 @@ Once you add a trusted profile to a cluster, it cannot be removed and you cannot
 
     Add policies for the Kubernetes service. 
     ```sh
-    ibmcloud iam trusted-profile-policy-create NAME|ID --roles Administrator --service-name "containers-kubernetes"
+    ibmcloud iam trusted-profile-policy-create NAME|ID --roles Administrator --service-name containers-kubernetes
     ```
     {: pre}
 

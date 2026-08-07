@@ -2,7 +2,7 @@
 
 copyright:
   years: 2025, 2026
-lastupdated: "2026-07-31"
+lastupdated: "2026-08-07"
 
 
 keywords: openshift, acm, advanced cluster management, manage cluster, management, addon, add-on, acm addon
@@ -86,8 +86,7 @@ Once you add a trusted profile to a cluster, it cannot be removed and you cannot
     ibmcloud iam trusted-profile-policy-create acm-operator-profile \
       --roles Reader,Viewer,Operator,Editor \
       --service-name containers-kubernetes \
-      --resource-type cluster \
-      --resource CLUSTER_ID
+      --service-instance CLUSTER_ID
     ```
     {: pre}
 
@@ -136,10 +135,10 @@ Complete the following steps for each cluster that you want to manage.
     ```
     {: screen}
 
-2. Retrieve the base URL of the Red Hat OpenShift oauth server. Replace `<master_URL>` with the URL found in the previous step. The command extracts the base URL without the `/oauth/token` suffix.
+2. Retrieve the base URL of the Red Hat OpenShift oauth server. Replace `MASTER_URL` with the URL found in the previous step. The command extracts the base URL without the `/oauth/token` suffix.
 
     ```sh
-    curl -sS <master_URL>/.well-known/oauth-authorization-server | jq -r .token_endpoint | sed 's#/oauth/token##'
+    curl -sS MASTER_URL/.well-known/oauth-authorization-server | jq -r .token_endpoint | sed 's#/oauth/token##'
     ```
     {: pre}
 
@@ -151,16 +150,16 @@ Complete the following steps for each cluster that you want to manage.
     {: screen}
 
 
-3. Retrieve an access token using the endpoint retrieved in the previous step. Execute the following cURL command, replacing `<URL>` with the output from the previous step. In the output, find the `<access_token>` contained in the **Location response**. This is the access token to include in the secret.
+3. Retrieve an access token using the endpoint retrieved in the previous step. Execute the following cURL command, replacing `URL` with the output from the previous step and `API_KEY` with your [IBM Cloud API key](https://cloud.ibm.com/iam/apikeys){: external}. In the output, find the `ACCESS_TOKEN` contained in the **Location response**. This is the access token to include in the secret.
 
     Example curl request:
 
     ```sh
-    curl -u 'apikey:<API_key>' -H "X-CSRF-Token: a" '<URL>/oauth/authorize?client_id=openshift-challenging-client&response_type=token' -vvv
+    curl -u 'apikey:API_KEY' -H "X-CSRF-Token: a" 'URL/oauth/authorize?client_id=openshift-challenging-client&response_type=token' -vvv
     ```
     {: pre}
 
-    Example output. The <access_token> is included in the Location response string.
+    Example output. The ACCESS_TOKEN is included in the Location response string.
 
     ```sh
     < HTTP/1.1 302 Found
@@ -168,7 +167,7 @@ Complete the following steps for each cluster that you want to manage.
     < Cache-Control: no-cache, no-store, max-age=0, must-revalidate
     < Expires: 0
     < Expires: Fri, 01 Jan 2030 00:00:00 GMT
-    < Location: <token_endpoint>/oauth/token/implicit#access_token=<access_token>&expires_in=86400&scope=user%3Afull&token_type=Bearer
+    < Location: TOKEN_ENDPOINT/oauth/token/implicit#access_token=ACCESS_TOKEN&expires_in=86400&scope=user%3Afull&token_type=Bearer
     ...
     ```
     {: screen}
@@ -182,12 +181,12 @@ Complete the following steps for each cluster that you want to manage.
     apiVersion: v1
     kind: Secret
     metadata:
-      name: <secret_name>
-      namespace: <secret_namespace>  # The namespace that the secret is to be created in
+      name: SECRET_NAME
+      namespace: SECRET_NAMESPACE  # The namespace that the secret is to be created in
     type: Opaque
     stringData:
-      token: <access_token>
-      server: <server_url>
+      token: ACCESS_TOKEN
+      server: SERVER_URL
     ```
     {: pre}
 
@@ -246,7 +245,7 @@ Use the CLI to install the ACM add-on on the hub cluster.
 2. Review the ACM add-on options. In the command, specify the default version found in the previous step. Note any options you want to include when you install the add-on. 
 
     ```sh
-    ibmcloud oc cluster addon options --addon acm --version <default_version>
+    ibmcloud oc cluster addon options --addon acm --version DEFAULT_VERSION
     ```
     {: pre}
 
@@ -255,7 +254,7 @@ Use the CLI to install the ACM add-on on the hub cluster.
 4. Run the command to enable the add-on. Be sure to specify the `billingPlan` and `isLicenseAccepted` parameters, as well as the optional `--managedClusters` parameter if you want to import clusters during the installation process.
 
     ```sh
-    ibmcloud oc ibmcloud oc cluster addon enable acm --cluster HUB_CLUSTER_ID 'managedClusters=["clusterid:CLUSTER_ID;secretname:SECRET_NAME;secretnamespace:SECRET_NAMESPACE;action:IMPORT"]' --param 'billingPlan=PLAN' --param 'isLicenseAccepted=BOOLEAN' --param
+    ibmcloud oc cluster addon enable acm --cluster HUB_CLUSTER_ID --param 'managedClusters=["clusterid:CLUSTER_ID;secretname:SECRET_NAME;secretnamespace:SECRET_NAMESPACE;action:IMPORT"]' --param 'billingPlan=PLAN' --param 'isLicenseAccepted=BOOLEAN'
     ```
     {: pre}
 
@@ -363,7 +362,7 @@ To import a managed cluster using the CLI, edit the ACM resource to include the 
 1. Run the command to edit the ACM resource.
 
     ```sh
-    oc edit acmhub <resource_name>
+    oc edit acmhub RESOURCE_NAME
     ```
     {: pre}
 
@@ -404,7 +403,7 @@ Gather your kubeconfig details, then use the ACM console to import cluster.
 
 1. From the IBM Cloud CLI, run the following command to get the kubeconfig for the cluster you want to import. Save the kubeconfig file contents displayed in the output.
     ```sh
-    ibmcloud ks cluster config --cluster <cluster_name> --admin --output yaml
+    ibmcloud ks cluster config --cluster CLUSTER_NAME --admin --output yaml
     ```
     {: pre}
 
@@ -431,7 +430,7 @@ To remove or update managed cluster from an ACM instance, you must edit the `man
 1. Run the command to edit the ACM resource.
 
     ```sh
-    oc edit acmhub <resource_name>
+    oc edit acmhub RESOURCE_NAME
     ```
     {: pre}
 
@@ -458,14 +457,14 @@ To remove or update managed cluster from an ACM instance, you must edit the `man
 Run the command to upgrade the add-on to a new version.
 
 ```sh
-ibmcloud oc cluster addon update acm --cluster <cluster_id> --version <add-on_version>
+ibmcloud oc cluster addon update acm --cluster CLUSTER_ID --version ADD-ON_VERSION
 ```
 {: pre}
 
 To check that the add-on updated, list your cluster add-ons. In the output, look for the ACM add-on details.
 
 ```sh
-ibmcloud oc cluster addon ls --cluster <cluster_id>
+ibmcloud oc cluster addon ls --cluster CLUSTER_ID
 ```
 {: pre}
 
@@ -478,13 +477,13 @@ Follow the steps to delete the ACM add-on.
 1. Delete the ACM resource from the hub cluster.
 
     ```sh
-    oc delete acmhub <resource_name>
+    oc delete acmhub RESOURCE_NAME
     ```
     {: pre}
 
 2. After the resource is deleted, remove the ACM add-on. Specify the same cluster ID.
 
     ```sh
-    ibmcloud oc cluster addon disable acm -f --cluster <cluster_id>
+    ibmcloud oc cluster addon disable acm -f --cluster CLUSTER_ID
     ```
     {: pre}

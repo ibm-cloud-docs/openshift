@@ -5397,9 +5397,9 @@ subcollection: openshift
 
 * [Step 3. Create the managed clusters](/docs/openshift?topic=openshift-openshift_odf_rdr_roks#managed-cluster-create)
 
-* [Step 4. Install the ACM add-on on the hub](/docs/openshift?topic=openshift-openshift_odf_rdr_roks#hub-acm-install)
+* [Step 4. Prepare secrets for ACM](/docs/openshift?topic=openshift-openshift_odf_rdr_roks#prep-secret-rdr)
 
-* [Step 5. Import the clusters to be managed by the hub cluster](/docs/openshift?topic=openshift-openshift_odf_rdr_roks#import)
+* [Step 5. Install the ACM add-on on the hub cluster](/docs/openshift?topic=openshift-openshift_odf_rdr_roks#hub-acm-install)
 
 * [Step 6. Configure the Submariner add-on](/docs/openshift?topic=openshift-openshift_odf_rdr_roks#submariner)
 
