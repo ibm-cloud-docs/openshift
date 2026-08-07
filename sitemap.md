@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2026
-lastupdated: "2026-08-06"
+lastupdated: "2026-08-07"
 
 
 keywords: openshift
@@ -439,6 +439,8 @@ subcollection: openshift
         * OpenShift Data Foundation cluster add-on patch updates.
 
         * OpenShift Virtualization cluster add-on patch updates.
+
+        * RHEL worker node support extended to version 4.22.
 
     * [5 August 2026](/docs/openshift?topic=openshift-openshift-relnotes#openshift-aug0526)
 

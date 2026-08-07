@@ -2,7 +2,7 @@
 
 copyright:
   years: 2025, 2026
-lastupdated: "2026-07-24"
+lastupdated: "2026-08-07"
 
 
 keywords: rhel, os, operating system, rhcos, 418, migration, deprecation
@@ -24,10 +24,10 @@ Review the following information about the deprecation of Red Hat Enterprise Lin
 The information on this page applies to VPC clusters only. It does not apply to Satellite or Classic clusters.
 {: important}
 
-Beginning with version 4.18 clusters on VPC infrastructure, Red Hat Enterprise Linux (RHEL) worker nodes are deprecated. Support for RHEL worker nodes ends with the release of version 4.22. Migrate your clusters to use RHCOS worker nodes as soon as possible.
+Beginning with version 4.18 clusters on VPC infrastructure, Red Hat Enterprise Linux (RHEL) worker nodes are deprecated. Version 4.22 is the last version to support RHEL worker nodes. Migrate your clusters to use RHCOS worker nodes as soon as possible.
 {: deprecated}
 
-Red Hat Enterprise Linux CoreOS (RHCOS) is the default operating system and beginning with version 4.22, RHCOS is the only supported operated system for {{site.data.keyword.openshiftlong_notm}}.
+Red Hat Enterprise Linux CoreOS (RHCOS) is the default operating system for {{site.data.keyword.openshiftlong_notm}}. Version 4.22 is the last version to support RHEL worker nodes. Future versions will require RHCOS worker nodes.
 
 RHCOS represents the next generation of single-purpose container operating system technology by providing the quality standards of RHEL with automated, remote upgrade features.
 
@@ -37,8 +37,8 @@ RHCOS represents the next generation of single-purpose container operating syste
 | Stage | Date | Description |
 | --- | --- | --- |
 | Announcement | 4.18 release date: {{site.data.keyword.openshift_418_release_date}} | Beginning with cluster version 4.18, Red Hat Enterprise Linux CoreOS (RHCOS) is the default operating system and RHEL worker nodes are deprecated in this version. RHEL workers are still available in version 4.18 only to complete the migration to RHCOS workers. |
-| Reminders | Ongoing | Periodic reminders will be sent to all users with deployments of RHEL worker nodes in their clusters informing them that the end of support date is coming with increasing frequency as the EOS date approaches. |
-| End of support | 4.22 release date | Cluster version 4.22 supports only RHCOS worker nodes. Migrate your RHEL 9 worker nodes to RHCOS before updating to version 4.22. |
+| Reminders | Ongoing | Periodic reminders will be sent to all users with deployments of RHEL worker nodes in their clusters informing them that end of support is coming with increasing frequency as the date approaches. |
+| Last supported version | 4.22 | Version 4.22 is the last version to support RHEL worker nodes on VPC. Migrate your RHEL 9 worker nodes to RHCOS before upgrading to future versions. |
 {: caption="RHEL deprecation timeline" caption-side="bottom"}
 
 ## Migration steps
