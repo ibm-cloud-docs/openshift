@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2026
-lastupdated: "2026-08-06"
+lastupdated: "2026-08-07"
 
 
 keywords: kubernetes, release notes, openshift, {{site.data.keyword.openshiftlong_notm}}
@@ -33,6 +33,15 @@ Looking for {{site.data.keyword.cloud_notm}} status, platform announcements, sec
 
 
 
+### 7 August 2026
+{: #openshift-aug0726}
+{: release-note}
+
+{{site.data.keyword.openshiftlong_notm}} master fix packs are available.
+:   Master fix packs are applied automatically over the course of several days. You can choose to use the [`ibmcloud ks cluster master update`](/docs/openshift?topic=openshift-kubernetes-service-cli#cs_cluster_update) command yourself without waiting for the update automation to apply the patch. Review the following change logs for your cluster version.
+:   [Version 4.16 change log](/docs/openshift?topic=openshift-changelog_416)
+
+
 ### 6 August 2026
 {: #openshift-aug0626}
 {: release-note}
@@ -44,6 +53,9 @@ OpenShift Data Foundation cluster add-on patch updates.
 
 OpenShift Virtualization cluster add-on patch updates.
 :   For more information, see the [change log](/docs/openshift?topic=openshift-cl-add-ons-openshift-virtualization).
+
+RHEL worker node support extended to version 4.22.
+:   Version 4.22 is the last version to support Red Hat Enterprise Linux (RHEL) worker nodes on VPC clusters. Future versions will require Red Hat Enterprise Linux CoreOS (RHCOS) worker nodes. Migrate your RHEL 9 worker nodes to RHCOS as soon as possible. For more information, see [RHEL deprecation for VPC clusters](/docs/openshift?topic=openshift-rhel-deprecation) and [Migrating VPC worker nodes to RHCOS](/docs/openshift?topic=openshift-rhel_migrate).
 
 
 
@@ -690,7 +702,7 @@ VPC Block CSI Driver cluster add-on patch updates.
 
 
 RHEL 9 worker node support extended to version 4.21
-:   Support for Red Hat Enterprise Linux (RHEL) 9 worker nodes on VPC clusters has been extended. RHEL worker nodes will now be supported through version 4.21, with end of support occurring at the release of version 4.22. For more information, see [RHEL deprecation for VPC clusters](/docs/openshift?topic=openshift-rhel-deprecation).
+:   Support for Red Hat Enterprise Linux (RHEL) 9 worker nodes on VPC clusters has been extended through version 4.21. Version 4.22 is the last version to support RHEL worker nodes on VPC. Future versions will require RHCOS worker nodes. For more information, see [RHEL deprecation for VPC clusters](/docs/openshift?topic=openshift-rhel-deprecation).
 
 
 

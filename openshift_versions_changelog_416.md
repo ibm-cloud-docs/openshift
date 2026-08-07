@@ -3,7 +3,7 @@
 copyright:
   years: 2024, 2026
 
-lastupdated: "2026-08-06"
+lastupdated: "2026-08-07"
 
 
 keywords: change log, version history, 4.16_openshift
@@ -37,6 +37,24 @@ Master patch updates are applied automatically. Worker node patch updates can be
 
 ## Version 4.16
 {: #416_components}
+
+
+### Master fix pack 4.16.68_1627_openshift, released 07 August 2026
+{: #cl-boms_master-41668_1627_openshift_M}
+
+The following table shows the components that are in the master fix pack 4.16.68_1627_openshift. Master patch updates are applied automatically.
+{: shortdesc}
+
+| Component | Description |
+| ---- | ---- |
+|etcd v3.5.32|See the [etcd release notes](https://github.com/coreos/etcd/releases/v3.5.32).|
+|IBM Cloud Block Storage driver and plug-in v2.5.27|New version contains updates and security fixes.|
+|IBM Cloud Controller Manager v1.29.15-63|New version contains updates and security fixes.|
+|IBM Cloud File Storage for Classic plug-in and monitor v456|New version contains updates and security fixes.|
+|Key Management Service provider 2.10.28|New version contains updates and security fixes.|
+|Red Hat OpenShift on IBM Cloud 4.16.68|See the [Red Hat OpenShift on IBM Cloud release notes](https://docs.redhat.com/en/documentation/openshift_container_platform/4.16/html/release_notes/ocp-4-16-release-notes#ocp-4-16-68_release-notes).Resolves the following CVEs: [CVE-2026-16242](https://nvd.nist.gov/vuln/detail/CVE-2026-16242){: external}.|
+{: caption="4.16.68_1627_openshift fix pack." caption-side="bottom"}
+{: #cl-boms_master-41668_1627_openshift_M-component-table}
 
 
 ### Worker node fix pack 4.16.66_1626_openshift, released 28 July 2026
