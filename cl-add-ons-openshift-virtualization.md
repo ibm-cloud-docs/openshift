@@ -3,7 +3,7 @@
 copyright:
   years: 2024, 2026
 
-lastupdated: "2026-08-06"
+lastupdated: "2026-08-10"
 
 
 keywords: change log, version history, OpenShift Virtualization
@@ -43,10 +43,20 @@ Review the version history for OpenShift Virtualization.
 {: #cl-add-ons-openshift-virtualization-4.21}
 
 
-### Version 4.21 - v1.0.7_4.21_360518333, released 06 August 2026
-{: #cl-add-ons-openshift-virtualization-v107_421_360518333}
+### Version 4.21 - v1.0.8_4.21, released 10 August 2026
+{: #cl-add-ons-openshift-virtualization-v108_421}
 
 [Default version]{: tag-green}
+
+- Updates Go to version `1.26.5`.
+- Update cpu and memory requests/limits for ibm-openshift-virt-operator pods 
+- kubevirt-hyperconverged-operator.v4.21.13
+- kubernetes-nmstate-operator.4.21.0-202607221131
+- node-maintenance-operator.v5.6.1
+
+
+### Version 4.21 - v1.0.7_4.21_360518333, released 06 August 2026
+{: #cl-add-ons-openshift-virtualization-v107_421_360518333}
 
 - Updates Go to version `1.26.5`.
 - Populate RedHat operators version in IBMOpenShiftVirtualization CR 
