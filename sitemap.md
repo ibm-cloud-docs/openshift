@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2026
-lastupdated: "2026-08-07"
+lastupdated: "2026-08-10"
 
 
 keywords: openshift
@@ -433,6 +433,10 @@ subcollection: openshift
 [Release notes](/docs/openshift?topic=openshift-openshift-relnotes#openshift-relnotes)
 
 * [August 2026](/docs/openshift?topic=openshift-openshift-relnotes#openshift-aug26)
+
+    * [10 August 2026](/docs/openshift?topic=openshift-openshift-relnotes#openshift-aug1026)
+
+        * OpenShift Virtualization cluster add-on patch updates.
 
     * [7 August 2026](/docs/openshift?topic=openshift-openshift-relnotes#openshift-aug0726)
 
@@ -9559,6 +9563,8 @@ subcollection: openshift
 [OpenShift Virtualization add-on version change log](/docs/openshift?topic=openshift-cl-add-ons-openshift-virtualization#cl-add-ons-openshift-virtualization)
 
 * [Version 4.21](/docs/openshift?topic=openshift-cl-add-ons-openshift-virtualization#cl-add-ons-openshift-virtualization-4.21)
+
+    * [Version 4.21 - v1.0.8_4.21, released 10 August 2026](/docs/openshift?topic=openshift-cl-add-ons-openshift-virtualization#cl-add-ons-openshift-virtualization-v108_421)
 
     * [Version 4.21 - v1.0.7_4.21_360518333, released 06 August 2026](/docs/openshift?topic=openshift-cl-add-ons-openshift-virtualization#cl-add-ons-openshift-virtualization-v107_421_360518333)
 
