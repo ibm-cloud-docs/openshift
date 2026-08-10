@@ -3,7 +3,7 @@
 copyright:
   years: 2024, 2026
 
-lastupdated: "2026-07-30"
+lastupdated: "2026-08-10"
 
 
 keywords: change log, version history, IBM Object CSI Driver
@@ -43,12 +43,21 @@ Review the version history for IBM Object CSI Driver.
 {: #cl-add-ons-ibm-object-csi-driver-1.0}
 
 
-### Version 1.0 - v1.0.25_357184891, released 28 July 2026
-{: #cl-add-ons-ibm-object-csi-driver-v1025_357184891}
+### Version 1.0 - v1.0.26_360474192, released 10 August 2026
+{: #cl-add-ons-ibm-object-csi-driver-v1026_360474192}
 
 [Default version]{: tag-green}
 
-- Resolves the following CVEs: [CVE-2026-41176](https://nvd.nist.gov/vuln/detail/CVE-2026-41176){: external}, [CVE-2026-41178](https://nvd.nist.gov/vuln/detail/CVE-2026-41178){: external}, [CVE-2026-54369](https://nvd.nist.gov/vuln/detail/CVE-2026-54369){: external}, [CVE-2026-54370](https://nvd.nist.gov/vuln/detail/CVE-2026-54370){: external}, [CVE-2026-5435](https://nvd.nist.gov/vuln/detail/CVE-2026-5435){: external}, [CVE-2026-5928](https://nvd.nist.gov/vuln/detail/CVE-2026-5928){: external}, [CVE-2026-6238](https://nvd.nist.gov/vuln/detail/CVE-2026-6238){: external}, [CVE-2026-33813](https://nvd.nist.gov/vuln/detail/CVE-2026-33813){: external}, [CVE-2026-46601](https://nvd.nist.gov/vuln/detail/CVE-2026-46601){: external}, [CVE-2026-42505](https://nvd.nist.gov/vuln/detail/CVE-2026-42505){: external}, [GHSA-3fxj-6jh8-hvhx](https://nvd.nist.gov/vuln/detail/GHSA-3fxj-6jh8-hvhx){: external}, [GHSA-9g5q-2w5x-hmxf](https://nvd.nist.gov/vuln/detail/GHSA-9g5q-2w5x-hmxf){: external}, [GHSA-rjr7-jggh-pgcp](https://nvd.nist.gov/vuln/detail/GHSA-rjr7-jggh-pgcp){: external}, and [GHSA-hrxh-6v49-42gf](https://nvd.nist.gov/vuln/detail/GHSA-hrxh-6v49-42gf){: external}.
+- Updates Go to version `1.26.5`.
+- Added max_background=1000 as a new mount option in S3FS storage classes. 
+- Removed the sigv2 S3FS option in favor of the default sigv4 signature version. 
+- Added the instance_name option to S3FS mount configurations. 
+
+
+### Version 1.0 - v1.0.25_357184891, released 28 July 2026
+{: #cl-add-ons-ibm-object-csi-driver-v1025_357184891}
+
+- Resolves the following CVEs: [CVE-2026-41178](https://nvd.nist.gov/vuln/detail/CVE-2026-41178){: external}, [CVE-2026-54369](https://nvd.nist.gov/vuln/detail/CVE-2026-54369){: external}, [CVE-2026-54370](https://nvd.nist.gov/vuln/detail/CVE-2026-54370){: external}, [CVE-2026-5435](https://nvd.nist.gov/vuln/detail/CVE-2026-5435){: external}, [CVE-2026-5928](https://nvd.nist.gov/vuln/detail/CVE-2026-5928){: external}, [CVE-2026-6238](https://nvd.nist.gov/vuln/detail/CVE-2026-6238){: external}, [CVE-2026-33813](https://nvd.nist.gov/vuln/detail/CVE-2026-33813){: external}, [CVE-2026-46601](https://nvd.nist.gov/vuln/detail/CVE-2026-46601){: external}, [CVE-2026-42505](https://nvd.nist.gov/vuln/detail/CVE-2026-42505){: external}, [GHSA-3fxj-6jh8-hvhx](https://nvd.nist.gov/vuln/detail/GHSA-3fxj-6jh8-hvhx){: external}, [GHSA-9g5q-2w5x-hmxf](https://nvd.nist.gov/vuln/detail/GHSA-9g5q-2w5x-hmxf){: external}, [GHSA-rjr7-jggh-pgcp](https://nvd.nist.gov/vuln/detail/GHSA-rjr7-jggh-pgcp){: external}, and [GHSA-hrxh-6v49-42gf](https://nvd.nist.gov/vuln/detail/GHSA-hrxh-6v49-42gf){: external}.
 - Updates Go to version `1.26.5`.
 - Updates rclone mounter version to 1.74.4 
 - Skip cipher_suites=default when passed as mountOptions in CSI secret 

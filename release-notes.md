@@ -33,12 +33,16 @@ Looking for {{site.data.keyword.cloud_notm}} status, platform announcements, sec
 
 
 
+
 ### 10 August 2026
 {: #openshift-aug1026}
 {: release-note}
 
 OpenShift Virtualization cluster add-on patch updates.
 :   For more information, see the [change log](/docs/openshift?topic=openshift-cl-add-ons-openshift-virtualization).
+
+IBM Object CSI Driver cluster add-on patch updates.
+:   For more information, see the [change log](/docs/openshift?topic=openshift-cl-add-ons-ibm-object-csi-driver).
 
 ### 7 August 2026
 {: #openshift-aug0726}
