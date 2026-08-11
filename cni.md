@@ -2,7 +2,7 @@
 
 copyright:
   years: 2026, 2026
-lastupdated: "2026-05-28"
+lastupdated: "2026-08-11"
 
 keywords: openshift, networking, cni
 
@@ -37,7 +37,7 @@ Review the following table to compare the features and functionality of Calico a
 When using OVN, you must ensure that your VPC subnets don't overlap with the additional subnets specified in the following table. If there is a subnet overlap, pod to pod networking will fail.
 {: important}
 
-Layer2 and layer3 user defined networks (UDN) are not supported with workloads that use DHCP, such as Openshift Virtualisation VMs.
+Layer2 and layer3 user defined networks (UDN) are not supported with workloads that use DHCP, such as OpenShift Virtualization VMs.
 {: important}
 
 | Component | Calico | OVN-Kubernetes |

@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2026
-lastupdated: "2026-08-04"
+lastupdated: "2026-08-11"
 
 
 keywords: openshift, {{site.data.keyword.openshiftlong_notm}}, node.js, js, java, .net, go, flask, react, python, swift, rails, ruby, spring boot, angular
@@ -22,7 +22,7 @@ subcollection: openshift
 # Developing apps
 {: #app}
 
-Develop a configuration to deploy your app workload to {{site.data.keyword.openshiftlong}}. Because Kubernetes is an extensible container orchestration platform that does not mandate a specific language or app, you can run various workloads such as stateless, stateful, and data-processing apps that are written in the language of your choice.
+Build and deploy your app workload to a {{site.data.keyword.openshiftlong}} cluster by creating Kubernetes resource configurations. You can run stateless, stateful, and data-processing apps in any language.
 {: shortdesc}
 
 ## Specifying your app requirements in your YAML file

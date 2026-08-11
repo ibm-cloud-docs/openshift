@@ -2,24 +2,21 @@
 
 copyright: 
   years: 2024, 2026
-lastupdated: "2026-07-24"
+lastupdated: "2026-08-11"
 
 
 keywords: kubernetes, help, connectivity, debugging, openshift, apps, support, network
 
 subcollection: openshift
 
-content-type: troubleshoot
+content-type: howto
 
 ---
 
 {{site.data.keyword.attribute-definition-list}}
 
-
-
 # Documenting your environment architecture
 {: #document-environment}
-{: support}
 
 As a best practice, create architecture diagrams for your apps. These diagrams can be used as part of the initial design work, training new team members, or educating new and existing team members. Keeping diagrams like this up to date saves time when problems need to be investigated quickly.
 {: shortdesc}

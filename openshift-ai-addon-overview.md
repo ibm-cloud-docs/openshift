@@ -1,7 +1,7 @@
 ---
 copyright:
   years: 2024, 2026
-lastupdated: "2026-06-22"
+lastupdated: "2026-08-11"
 
 
 keywords: openshift, {{site.data.keyword.openshiftlong_notm}}, ai, add-on
@@ -99,73 +99,8 @@ Version rollbacks are not supported. You cannot undo an update to the OpenShift 
 You are responsible for updating all operators that are not managed by IBM. IBM does not notify you of available updates or provide support related to updates for these operators. Refer to the provider documentation for information on keeping these operators up to date.
 
 
-## OpenShift AI add-on version 419 changes
-{: #ai-addon-version-419}
-
-Upgrading from version 418 to 419 is not supported. Attempting to upgrade to 419 results in a breaking change. Disabling the older version of the add-on while enabling version 419 on the same setup may result in an unrecoverable state. Only fresh installations of version 419 are allowed.
+Version 419 of the OpenShift AI add-on introduces breaking changes that prevent upgrading from version 418. For full details on changed, removed, and new components, see the [OpenShift AI add-on changelog](/docs/openshift?topic=openshift-cl-add-ons-openshift-ai).
 {: important}
-
-Do not attempt a manual update or migration until official guidelines are published.
-{: note}
-
-OpenShift AI add-on version 419 includes Red Hat OpenShift AI version 3.4.0 and introduces significant changes to the platform. Do not modify your existing add-on version in an attempt to obtain version 419.
-
-
-
-### Components removed in version 419
-{: #ai-419-removed}
-
-The following components have been removed in OpenShift AI add-on version 419:
-
-CodeFlare
-:   The CodeFlare component is no longer available in version 419.
-
-ModelMeshServing
-:   The ModelMeshServing component is no longer available in version 419.
-
-### Components renamed in version 419
-{: #ai-419-renamed}
-
-The following components have been renamed in OpenShift AI add-on version 419:
-
-DataSciencePipeline
-:   This component has been renamed to **AIPipelines**.
-
-### New components in version 419
-{: #ai-419-new}
-
-The following new components are available in OpenShift AI add-on version 419. You can enable or disable these components during installation by using the CLI parameters or UI options.
-
-| Customization | CLI Parameter | Description | Values | Default value |
-| ------------- | ------------- | ----------- | ------ | ------------- |
-| FeastOperator | `oaiFeastOperator` | Enable or disable the component. If enabled, it is managed by OpenShift AI platform. | `Managed` or `Removed` | `Managed` |
-| Trainer | `oaiTrainer` | Enable or disable the component. If enabled, you must install the JobSet Operator and cert-manager operator from OperatorHub. | `Managed` or `Removed` | `Removed` |
-| AIPipelines | `oaiAIPipelines` | Enable or disable the component. If enabled, it is managed by OpenShift AI platform. | `Managed` or `Removed` | `Managed` |
-{: caption="New components in OpenShift AI add-on version 419" caption-side="bottom"}
-
-### Setting up the Trainer component
-{: #ai-419-trainer-setup}
-
-If you enable the Trainer component, you must install additional operators to get the Trainer component into a ready state.
-
-1. Install the JobSet Operator from OperatorHub.
-2. Install the cert-manager operator from OperatorHub.
-3. Complete the additional configuration steps as described in the [Red Hat OpenShift documentation](https://docs.redhat.com/en/documentation/openshift_container_platform/4.18/html/ai_workloads/jobset-operator#js-install_js-install){: external}.
-
-### Upgrade restrictions for version 419
-{: #ai-419-upgrade-restrictions}
-
-Upgrading from OpenShift AI add-on version 418 to version 419 is not supported due to significant architectural changes in version 419.
-{: important}
-
-To use 419, you can't have previously installed any version of the add-on. You must perform a fresh installation of OpenShift AI add-on version 419.
-
-- Do not run the `ibmcloud oc cluster addon update openshift-ai` command to upgrade from version 418 to 419.
-- Do not attempt to upgrade from version 418 to 419.
-
-Do not attempt a manual update or migration until official guidelines are published.
-{: note}
-
 
 ## What's next?
 {: #ai-addon-ov-next}
