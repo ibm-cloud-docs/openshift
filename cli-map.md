@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2022, 2026
-lastupdated: "2026-08-04"
+lastupdated: "2026-08-12"
 
 keywords: kubernetes, openshift
 
@@ -12,10 +12,13 @@ subcollection: openshift
 
 {{site.data.keyword.attribute-definition-list}}
 
-# {{site.data.keyword.openshiftlong_notm}} CLI Map
+# {{site.data.keyword.openshiftlong_notm}} CLI command reference
 {: #icks_map}
 
-This page lists all `ibmcloud oc` commands as they are structured in the CLI. For more details on a specific command, click the command or see the [{{site.data.keyword.openshiftlong_notm}} CLI reference](/docs/openshift?topic=openshift-kubernetes-service-cli).
+Explore the {{site.data.keyword.openshiftlong_notm}} CLI map, listing all `ibmcloud oc` commands and their structures for managing clusters and services.
+{: shortdesc}
+
+For more details on a specific command, click the command or see the [{{site.data.keyword.openshiftlong_notm}} CLI reference](/docs/openshift?topic=openshift-kubernetes-service-cli).
 
 
 

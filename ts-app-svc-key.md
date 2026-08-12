@@ -1,8 +1,8 @@
 ---
 
 copyright: 
-  years: 2014, 2025
-lastupdated: "2025-02-03"
+  years: 2014, 2026
+lastupdated: "2026-08-12"
 
 
 keywords: kubernetes, openshift
@@ -19,9 +19,12 @@ content-type: troubleshoot
 
 
 
-# Why does binding a service to a cluster results in service does not support service keys error?
+# Resolving service binding errors in IBM Cloud clusters
 {: #ts-app-svc-key}
 {: support}
+
+Learn how to troubleshoot service binding issues in IBM Cloud clusters when services don't support service keys, and find alternative integration methods.
+{: shortdesc}
 
 [Virtual Private Cloud]{: tag-vpc} [Classic infrastructure]{: tag-classic-inf}
 

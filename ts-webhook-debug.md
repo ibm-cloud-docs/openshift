@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2022, 2026
-lastupdated: "2026-04-30"
+lastupdated: "2026-08-12"
 
 
 keywords: kubernetes, help, network, connectivity, webhooks
@@ -19,9 +19,12 @@ content-type: troubleshoot
 
 
 
-# Debugging webhooks
+# Troubleshooting webhook errors in IBM Cloud Kubernetes clusters
 {: #ts-webhook-debug}
 {: support}
+
+Resolve webhook-related issues in your IBM Cloud Kubernetes cluster by identifying and debugging the problematic webhook.
+{: shortdesc}
 
 When running oc commands, you see error messages similar to the following examples.
 

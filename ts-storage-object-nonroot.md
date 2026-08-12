@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2026
-lastupdated: "2026-04-10"
+lastupdated: "2026-08-12"
 
 
 keywords: openshift
@@ -20,9 +20,12 @@ content-type: troubleshoot
 
 
 
-# Why can't non-root users access files?
+# Resolving non-root user access issues to files in IBM Cloud
 {: #cos_nonroot_access}
 {: support}
+
+Resolve non-root user access issues to files uploaded to IBM Cloud when using `runAsUser` in your app deployment, including permissions.
+{: shortdesc}
 
 [Virtual Private Cloud]{: tag-vpc} [Classic infrastructure]{: tag-classic-inf}
 

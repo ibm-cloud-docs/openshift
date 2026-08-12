@@ -2,7 +2,7 @@
 
 copyright:
   years: 2022, 2026
-lastupdated: "2026-03-31"
+lastupdated: "2026-08-12"
 
 
 keywords: maintenance, host maintenance, notification, workers, offline
@@ -15,11 +15,13 @@ subcollection: openshift
 
 
 
-# Preparing for host maintenance updates
+# Preparing IBM Cloud host maintenance updates security enhancements
 {: #host-maintenance}
 
-{{site.data.keyword.IBM_notm}} engineers perform host maintenance to improve stability, provide security enhancements, and support upcoming new features. {{site.data.keyword.cloud_notm}} infrastructure providers perform maintenance on the hosts that house the Virtual Servers that are used as workers in your cluster, which might cause some of your workers to briefly go offline. However, there are actions you can take before the maintenance period that can minimize disruptions to your worker nodes. A notification with maintenance details and a list of affected workers is sent to customers before the maintenance window. Follow these steps to prepare your workers for an upcoming maintenance period.
+Learn how to prepare your IBM Cloud workers for host maintenance updates, minimize disruptions, and ensure security enhancements are applied smoothly.
 {: shortdesc}
+
+{{site.data.keyword.IBM_notm}} engineers perform host maintenance to improve stability, provide security enhancements, and support upcoming new features. {{site.data.keyword.cloud_notm}} infrastructure providers perform maintenance on the hosts that house the Virtual Servers that are used as workers in your cluster, which might cause some of your workers to briefly go offline. However, there are actions you can take before the maintenance period that can minimize disruptions to your worker nodes. A notification with maintenance details and a list of affected workers is sent to customers before the maintenance window. Follow these steps to prepare your workers for an upcoming maintenance period.
 
 ## Identifying your affected workers
 {: #worker-maintenance-list}

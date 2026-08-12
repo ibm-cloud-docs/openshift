@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2026
-lastupdated: "2026-08-11"
+lastupdated: "2026-08-12"
 
 
 keywords: openshift
@@ -2365,7 +2365,7 @@ subcollection: openshift
 
 * [Removing a {{site.data.keyword.satelliteshort}} worker pool](/docs/openshift?topic=openshift-satcluster-worker-pools#sat-pool-maintenance-remove)
 
-[Preparing for host maintenance updates](/docs/openshift?topic=openshift-host-maintenance#host-maintenance)
+[Preparing IBM Cloud host maintenance updates security enhancements](/docs/openshift?topic=openshift-host-maintenance#host-maintenance)
 
 * [Identifying your affected workers](/docs/openshift?topic=openshift-host-maintenance#worker-maintenance-list)
 
@@ -6944,7 +6944,7 @@ subcollection: openshift
 {: #sitemap_cli_reference}
 
 
-[{{site.data.keyword.openshiftlong_notm}} CLI Map](/docs/openshift?topic=openshift-icks_map#icks_map)
+[{{site.data.keyword.openshiftlong_notm}} CLI command reference](/docs/openshift?topic=openshift-icks_map#icks_map)
 
 * [`api` commands](/docs/openshift?topic=openshift-icks_map#icks_map_api)
 
@@ -9695,7 +9695,7 @@ subcollection: openshift
 {: #sitemap_worker_node_flavors}
 
 
-[VPC flavors](/docs/openshift?topic=openshift-vpc-flavors#vpc-flavors)
+[VPC worker node flavors](/docs/openshift?topic=openshift-vpc-flavors#vpc-flavors)
 
 * [Chennai (`in-che`)](/docs/openshift?topic=openshift-vpc-flavors#chennai-in-che)
 
@@ -9723,7 +9723,7 @@ subcollection: openshift
 
 * [Washington DC (`us-east`)](/docs/openshift?topic=openshift-vpc-flavors#washington-dc-us-east)
 
-[Classic flavors](/docs/openshift?topic=openshift-classic-flavors#classic-flavors)
+[Classic worker node flavors](/docs/openshift?topic=openshift-classic-flavors#classic-flavors)
 
 * [Amsterdam (`ams`)](/docs/openshift?topic=openshift-classic-flavors#amsterdam-ams)
 
@@ -10038,7 +10038,7 @@ subcollection: openshift
 
 * [Step 10: Retry](/docs/openshift?topic=openshift-ocp-debug#oc-debug-retry)
 
-[Debugging webhooks](/docs/openshift?topic=openshift-ts-webhook-debug#ts-webhook-debug)
+[Troubleshooting webhook errors in IBM Cloud Kubernetes clusters](/docs/openshift?topic=openshift-ts-webhook-debug#ts-webhook-debug)
 
 * [Reviewing the service that the webhook is calling](/docs/openshift?topic=openshift-ts-webhook-debug#review-webhook-service)
 
@@ -10124,9 +10124,9 @@ subcollection: openshift
 
 [Why is my Portieris cluster image security enforcement installation canceled?](/docs/openshift?topic=openshift-portieris_enable#portieris_enable)
 
-[Why does my cluster stay in a pending state?](/docs/openshift?topic=openshift-cs_cluster_pending#cs_cluster_pending)
+[Troubleshooting Kubernetes cluster stuck pending state IBM Cloud](/docs/openshift?topic=openshift-cs_cluster_pending#cs_cluster_pending)
 
-[Why can't I view or work with my cluster?](/docs/openshift?topic=openshift-cs_cluster_access#cs_cluster_access)
+[Troubleshooting cluster access issues in IBM Cloud Kubernetes](/docs/openshift?topic=openshift-cs_cluster_access#cs_cluster_access)
 
 [Why does my cluster master status say it is approaching its resource limit?](/docs/openshift?topic=openshift-master_resource_limit#master_resource_limit)
 
@@ -10508,9 +10508,9 @@ subcollection: openshift
 
 * [Fixing pod replacement by higher priority pods](/docs/openshift?topic=openshift-ts-app-pod-fail#pod-fail-higher-priority)
 
-[Why does binding a service to a cluster results in service does not support service keys error?](/docs/openshift?topic=openshift-ts-app-svc-key#ts-app-svc-key)
+[Resolving service binding errors in IBM Cloud clusters](/docs/openshift?topic=openshift-ts-app-svc-key#ts-app-svc-key)
 
-[Why can't I install a Helm chart with updated configuration values?](/docs/openshift?topic=openshift-ts-app-helm-install#ts-app-helm-install)
+[Troubleshooting helm chart installation updated configuration values](/docs/openshift?topic=openshift-ts-app-helm-install#ts-app-helm-install)
 
 [Why does the `oc debug` command fail with a `container is unable to start error`?](/docs/openshift?topic=openshift-ts-app-oc-debug#ts-app-oc-debug)
 
@@ -10518,7 +10518,7 @@ subcollection: openshift
 
 * [Allowing outbound access](/docs/openshift?topic=openshift-ts-sbd-app-not-working#allow-outbound-ts)
 
-[When I update my cluster to 4.15 or later, my nodeport app no longer works](/docs/openshift?topic=openshift-ts-sbd-nodeport-not-working#ts-sbd-nodeport-not-working)
+[Fixing nodeport apps after updating cluster version 4.15 or later](/docs/openshift?topic=openshift-ts-sbd-nodeport-not-working#ts-sbd-nodeport-not-working)
 
 [Why can't my VSIs access VPE gateway?](/docs/openshift?topic=openshift-ts-sbd-vsi-vpe#ts-sbd-vsi-vpe)
 
@@ -10867,7 +10867,7 @@ subcollection: openshift
 
 [Why does installing the Object storage Helm plug-in fail?](/docs/openshift?topic=openshift-cos_helm_fails#cos_helm_fails)
 
-[Why can't non-root users access files?](/docs/openshift?topic=openshift-cos_nonroot_access#cos_nonroot_access)
+[Resolving non-root user access issues to files in IBM Cloud](/docs/openshift?topic=openshift-cos_nonroot_access#cos_nonroot_access)
 
 * [Verifying that the permissions for your files are updated](/docs/openshift?topic=openshift-cos_nonroot_access#verifying_file_permission_update)
 

@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2024, 2026
-lastupdated: "2026-07-27"
+lastupdated: "2026-08-12"
 
 
 keywords: openshift, {{site.data.keyword.openshiftlong_notm}}, secure by default, node port not working, {{site.data.keyword.openshiftlong_notm}}, outbound traffic protection
@@ -15,9 +15,12 @@ content-type: troubleshoot
 
 {{site.data.keyword.attribute-definition-list}}
 
-# When I update my cluster to 4.15 or later, my nodeport app no longer works
+# Fixing nodeport apps after updating cluster version 4.15 or later
 {: #ts-sbd-nodeport-not-working}
 {: support}
+
+Resolve nodeport service issues after updating your {{site.data.keyword.openshiftlong_notm}} cluster to version 4.15 or later by updating security group rules including cluster update.
+{: shortdesc}
 
 [Virtual Private Cloud]{: tag-vpc}
 [4.15 and later]{: tag-red}

@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2026
-lastupdated: "2026-05-05"
+lastupdated: "2026-08-12"
 
 
 keywords: kubernetes, openshift
@@ -19,9 +19,12 @@ content-type: troubleshoot
 
 
 
-# Why can't I view or work with my cluster?
+# Troubleshooting cluster access issues in IBM Cloud Kubernetes
 {: #cs_cluster_access}
 {: support}
+
+Resolve issues with viewing or working with your IBM Cloud Kubernetes cluster by checking your user access permissions and resource group configuration.
+{: shortdesc}
 
 [Virtual Private Cloud]{: tag-vpc} [Classic infrastructure]{: tag-classic-inf}
 

@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2026
-lastupdated: "2026-04-29"
+lastupdated: "2026-08-12"
 
 keywords: kubernetes, openshift
 
@@ -14,9 +14,12 @@ content-type: troubleshoot
 
 {{site.data.keyword.attribute-definition-list}}
 
-# Why can't I install a Helm chart with updated configuration values?
+# Troubleshooting helm chart installation updated configuration values
 {: #ts-app-helm-install}
 {: support}
+
+Resolve issues installing Helm charts with updated configuration values in IBM Cloud by checking Helm repository URLs and versions.
+{: shortdesc}
 
 [Virtual Private Cloud]{: tag-vpc} [Classic infrastructure]{: tag-classic-inf}
 
