@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2026
-lastupdated: "2026-07-10"
+lastupdated: "2026-08-12"
 
 
 keywords: openshift
@@ -165,24 +165,16 @@ Start by checking for errors in your app deployment and the Ingress resource dep
 Verify that the Ingress operator and the Ingress controller are healthy. Ingress controllers are managed by the Ingress operator. The Ingress controller forwards requests to the pods for that app only according to the rules defined in the Ingress resource and implemented by the Ingress controller.
 {: shortdesc}
 
-1. Check the status of your Ingress operator pods.
-    1. Get the Ingress operator pods that are running in your cluster.
+1. Check the status of your Ingress operator by inspecting the `IngressController` custom resource. In {{site.data.keyword.redhat_openshift_notm}} on {{site.data.keyword.cloud_notm}}, the Ingress operator is managed by the platform and its pods are not directly accessible. Instead, check the health of the operator through the `IngressController` resource status.
+    1. Describe the default `IngressController` and review the **Conditions** section for any `False` or `Unknown` status entries and their messages.
         ```sh
-        oc get pods -n openshift-ingress-operator
+        oc describe ingresscontroller/default -n openshift-ingress-operator
         ```
         {: pre}
 
-    2. Make sure that all pods are running by checking the **STATUS** column.
-
-    3. If a pod does not have a `Running` status, you can delete the pod to restart it.
+    2. List all `IngressController` resources to verify that none are in a degraded state.
         ```sh
-        oc delete pod <pod> -n openshift-ingress-operator
-        ```
-        {: pre}
-
-    4. Get the logs for the Ingress operator and look for error messages in the logs.
-        ```sh
-        oc logs deployments/ingress-operator -n openshift-ingress-operator -c ingress-operator
+        oc get ingresscontrollers -n openshift-ingress-operator
         ```
         {: pre}
 
