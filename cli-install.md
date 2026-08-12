@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2026
-lastupdated: "2026-07-10"
+lastupdated: "2026-08-11"
 
 
 keywords: openshift, oc, installing oc, openshift cli, installing oc cli
@@ -37,7 +37,7 @@ You can use the following tools to manage your {{site.data.keyword.openshiftlong
 | `ibmcloud` | You can use the `ibmcloud` CLI to login to your account, add users, manage your catalogs and more. |
 | `ks` plug-in | After installing the `ibmcloud` CLI, you can use the `ks` plug-in to create and manage {{site.data.keyword.openshiftlong_notm}} clusters as well as {{site.data.keyword.satelliteshort}} hosts and Locations. |
 | `oc` | You can use the `oc` CLI to manage resources within your clusters like pods, deployments, and more. |
-{: caption="Table 1: CLI tools" caption-side="bottom"}
+{: caption="CLI tools" caption-side="bottom"}
 
 
 {{../cli/index.md#step1-install-idt}}

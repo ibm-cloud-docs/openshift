@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2026
-lastupdated: "2026-08-04"
+lastupdated: "2026-08-11"
 
 keywords: openshift, reservations, worker node, deprecated, end of support
 
@@ -46,7 +46,7 @@ To prevent loss of service, you must create non-reserved worker pools and migrat
    - [Adding worker nodes to classic clusters in {{site.data.keyword.containerlong_notm}}](/docs/containers?topic=containers-add-workers-classic#add_pool)
    - [Adding worker nodes to classic clusters in {{site.data.keyword.openshiftlong_notm}}](/docs/openshift?topic=openshift-add-workers-classic#add_pool)
 
-3. Migrate your workloads from the reserved worker pool to the new worker pool. Use labels or node selectors to reschedule your existing workloads to the new worker pool. [VERIFY: Confirm whether additional migration steps are recommended for this specific context.]
+3. Migrate your workloads from the reserved worker pool to the new worker pool. Use labels or node selectors to reschedule your existing workloads to the new worker pool.
 
 4. Delete the worker pools that use reservations after workload migration is complete.
 

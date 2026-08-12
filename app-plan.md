@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2026
-lastupdated: "2026-07-10"
+lastupdated: "2026-08-11"
 
 
 keywords: kubernetes, deploy, app, openshift
@@ -21,7 +21,7 @@ subcollection: openshift
 # Planning app deployments
 {: #plan_deploy}
 
-Before you deploy an app to your {{site.data.keyword.openshiftlong_notm}} cluster, decide how you want to set up your app so that your app can be accessed properly and be integrated with other services in {{site.data.keyword.cloud_notm}}.
+Understand the key decisions you need to make — such as workload type, access method, and resource requirements — before you deploy an app to a {{site.data.keyword.openshiftlong_notm}} cluster.
 {: shortdesc}
 
 ## Moving workloads to {{site.data.keyword.openshiftlong_notm}}

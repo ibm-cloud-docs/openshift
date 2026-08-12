@@ -2,10 +2,10 @@
 
 copyright: 
   years: 2014, 2026
-lastupdated: "2026-04-29"
+lastupdated: "2026-08-11"
 
 
-keywords: openshift dedicated hosts
+keywords: openshift, dedicated hosts
 
 subcollection: openshift
 

@@ -16,6 +16,8 @@ toc:
       topics:
       - topic: getting-started.md
         navtitle: Getting started
+      - topic: use-cases.md
+        navtitle: Use cases
       - topic: overview.md
         navtitle: Understanding the service
       - topicgroup:
@@ -23,6 +25,7 @@ toc:
           topics:
           - path-admin.md
           - path-dev.md
+          - path-virt.md
       - topicgroup:
           label: Plan your cluster
           topics:
@@ -34,52 +37,58 @@ toc:
           topics:
           - responsibilities.md
           - satellite-resp.md
+      - secure.md
       - topicgroup:
-          label: Use cases
+          label: Important notices
           topics:
-          - openshift_uc_intro.md
-          - uc-finance.md
-          - uc-health.md
-          - uc-retail.md
-          - uc-transport.md
-          - uc-gov.md
-      - rhel-deprecation.md
+          - rhel-deprecation.md
       - release-notes.md
   - navgroup:
       id: tutorial
       topics:
-      - topic: tutorial-two-node-vpc.md
-        navtitle: 2-node VPC cluster with Schematics
-      - topic: openshift_tutorial_vpc.md
-        navtitle: VPC cluster with the CLI
-      - topic: openshift_tutorial.md
-        navtitle: Classic cluster with the CLI
-      - link:
-          label: OpenShift tutorials
-          href: https://cloud.ibm.com/docs?tab=tutorials&tags=openshift&page=1&pageSize=20
+      - topicgroup:
+          label: Containers
+          topics:
+          - topic: openshift_tutorial_vpc.md
+            navtitle: VPC cluster with the CLI
+          - topic: openshift_tutorial.md
+            navtitle: Classic cluster with the CLI
+          - topic: cs_tutorials_policies.md
+            navtitle: Isolating apps with network policies (Classic)
+          - link:
+              label: OpenShift tutorials
+              href: https://cloud.ibm.com/docs?tab=tutorials&tags=openshift&page=1&pageSize=20
+      - topicgroup:
+          label: Virtual machines
+          topics:
+          - topic: rovs-getting-started.md
+            navtitle: Creating a Virtualization Service cluster (quickstart)
+          - link:
+              label: Migrate a VM using the Migration Toolkit for Virtualization
+              href: https://docs.redhat.com/en/documentation/migration_toolkit_for_virtualization
   - navgroup:
       id: howto
       topics:
       - topicgroup:
-          label: Account setup
+          label: Before you begin
           topics:
           - cluster-create.md
-          - iam-platform-access-roles.md
+          - topicgroup:
+              label: IAM roles and access
+              topics:
+              - iam-platform-access-roles.md
       - topicgroup:
-          label: Cluster planning
-          topics:
-          - strategy.md
-          - cluster-plan-network-vpc.md
-          - cluster-plan-network-classic.md
-          - encryption.md
-          - document-environment.md
-      - topicgroup:
-          label: Installing the CLI
+          label: Setting up your tools
           topics:
           - cli-install.md
           - cli-update.md
           - include: ../cli/reference/ibmcloud/uninstall_cli.md
-      - api-install.md
+          - api-install.md
+      - topicgroup:
+          label: Cluster planning
+          topics:
+          - encryption.md
+          - document-environment.md
       - topicgroup:
           label: Cluster creation
           topics:
@@ -90,16 +99,23 @@ toc:
           - satellite_clusters.md
           - roks_da.md
       - topicgroup:
-          label: Clusters access
+          label: Cluster access
           topics:
           - openshift_cluster_access.md
+          - cluster-access-public.md
+          - cluster-access-private-vpc.md
+          - cluster-access-private-classic.md
+          - cluster-access-vpe.md
+          - cluster-access-satellite.md
+          - cluster-access-automation.md
           - cluster-access-admission-control.md
           - topicgroup:
-              label: Accessing the OpenShift Console
+              label: OpenShift console access
               topics:
               - access-type-set.md
               - access_api_oauth_server.md
               - cluster-access-wireguard.md
+          - terraform-cluster-access.md
       - topicgroup:
           label: Cluster management
           topics:
@@ -108,82 +124,85 @@ toc:
               topics:
               - add-workers-classic.md
               - add-workers-vpc.md
-          - worker-os-check.md
-          - update.md
-          - dedicated-hosts.md
           - topicgroup:
-              label: Migrating to a new OS
+              label: Updating and maintaining worker nodes
               topics:
+              - worker-os-check.md
+              - update.md
+              - dedicated-hosts.md
               - rhel_migrate.md
               - rhel_migrate_sat.md
               - rhel_migrate_gpu.md
               - rhel_migrate_9.md
-          - sat-worker-pool-manage.md
-          - host-maintenance.md
-          - access-apikey.md
-          - ca-rotate.md
-          - worker-tag-label.md
-          - resource-limit-node.md
+              - sat-worker-pool-manage.md
+              - host-maintenance.md
+              - worker-tag-label.md
+              - resource-limit-node.md
           - topicgroup:
               label: Tuning performance
               topics:
               - performance.md
               - rhcos-performance.md
+              - pod-priority.md
+              - kubeapi-priority.md
           - topicgroup:
               label: Managing cluster costs
               topics:
               - costs.md
               - costs-reserved.md
-          - cluster-remove.md
+          - access-apikey.md
+          - ca-rotate.md
+          - topicgroup:
+              label: Removing clusters
+              topics:
+              - cluster-remove.md
       - topicgroup:
-          label: Encryption
+          label: Security and access
           topics:
-          - encryption-setup.md
-          - encryption-secrets.md
-          - encryption-vpc-worker-disks.md
-          - encryption-hpcs-to-kp-migration.md
-      - topicgroup:
-          label: Access management
-          topics:
-          - trusted-profile.md
-          - classic-credentials.md
-          - access-iam-rbac.md
-          - access-pod-identity.md
-          - terraform-cluster-access.md
-          - removing-users.md
-      - topicgroup:
-          label: Security
-          topics:
-          - secure.md
-          - data-security.md
-          - cbr.md
-          - cbr-tutorial.md
-          - pse-to-cbr-migration.md
-          - confidential-containers.md
-          - openshift_scc.md
-          - pod-priority.md
-          - kubeapi-priority.md
-          - pod-security-admission.md
+          - topicgroup:
+              label: Access management
+              topics:
+              - trusted-profile.md
+              - classic-credentials.md
+              - access-iam-rbac.md
+              - access-pod-identity.md
+              - removing-users.md
+          - topicgroup:
+              label: Encryption
+              topics:
+              - encryption-setup.md
+              - encryption-secrets.md
+              - encryption-vpc-worker-disks.md
+              - encryption-hpcs-to-kp-migration.md
+          - topicgroup:
+              label: Security policies
+              topics:
+              - data-security.md
+              - cbr.md
+              - cbr-tutorial.md
+              - pse-to-cbr-migration.md
+              - confidential-containers.md
+              - openshift_scc.md
+              - pod-security-admission.md
       - topicgroup:
           label: Images and registries
           topics:
-          - registry.md
-          - satellite-clusters-registry.md
-          - satellite-registry-pull-secret.md
-          - trusted-ca.md
-          - topic: tutorial-no-registry-cos.md
-            navtitle: VPC cluster without a COS-backed registry
+          - topicgroup:
+              label: General
+              topics:
+              - registry.md
+              - images.md
+              - trusted-ca.md
+              - topic: tutorial-no-registry-cos.md
+                navtitle: VPC cluster without a COS-backed registry
+          - topicgroup:
+              label: Satellite clusters
+              topics:
+              - satellite-clusters-registry.md
+              - satellite-registry-pull-secret.md
       - topicgroup:
           label: Networking
           topics:
-          - topicgroup:
-              label: Classic clusters
-              topics:
-              - cs_tutorials_policies.md
-              - network-policy.md
-              - firewall.md
-              - subnets.md
-              - vpn.md
           - topicgroup:
               label: VPC clusters
               topics:
@@ -191,13 +210,22 @@ toc:
               - vpc-sbd-allow-outbound.md
               - vpc-sbd-enable-existing.md
               - vpc-security-group-manage.md
-              - cni.md
               - vpc-acls.md
               - vpc-kube-policies.md
+              - cni.md
               - vpc-firewall.md
               - vpc-subnets.md
               - vpc-vni.md
               - vpc-vpn.md
+              - static-routes.md
+          - topicgroup:
+              label: Classic clusters
+              topics:
+              - topic: network-policy.md
+                navtitle: Network policies (Classic)
+              - firewall.md
+              - subnets.md
+              - vpn.md
           - topicgroup:
               label: Satellite clusters
               topics:
@@ -207,16 +235,12 @@ toc:
           label: App deployment
           topics:
           - app-plan.md
-          - images.md
           - app.md
           - openshift_app_deploy.md
           - nodeport.md
           - app-update.md
           - openshift_app_networking.md
-          - topicgroup:
-              label: Routes
-              topics:
-              - openshift_routes.md
+          - openshift_routes.md
           - topicgroup:
               label: Classic load balancers
               topics:
@@ -226,6 +250,7 @@ toc:
               - edge-classic-nlb.md
               - edge-vpc-lb.md
               - lb-dns.md
+              - edge-workload-prevent.md
           - topicgroup:
               label: VPC load balancers
               topics:
@@ -248,8 +273,6 @@ toc:
               - secrets-mgr.md
               - edge-ingress.md
           - satellite_expose_apps.md
-          - edge-workload-prevent.md
-          - edge-sysdig.md
       - topicgroup:
           label: Autoscaling
           topics:
@@ -260,48 +283,6 @@ toc:
           - cluster-scaling-deploy-apps.md
           - cluster-scaling-hpa-gpu.md
           - cluster-scaling-resize.md
-      - topic: static-routes.md
-        navtitle: Static routes
-      - topicgroup:
-          label: OpenShift AI
-          topics:
-          - openshift-ai-addon-overview.md
-          - openshift-ai-addon-install.md
-          - openshift-ai-addon-manage.md
-      - topicgroup:
-          label: Advanced Cluster Management
-          topics:
-          - acm-about.md
-          - acm-addon.md
-      - topicgroup:
-          label: OpenShift Virtualization
-          topics:
-          - topic: virt-overview.md
-          - topicgroup:
-              label: Red Hat OpenShift Virtualization Service
-              topics:
-              - topic: rovs-overview.md
-              - topic: rovs-getting-started.md
-                navtitle: Quickstart
-              - topic: rovs-cluster-create.md
-              - topic: rovs-manage.md
-              - topic: rovs-addon-virtualization.md
-              - topic: rovs-limitations.md
-          - topicgroup:
-              label: Manual deployment
-              topics:
-              - topic: virt-plan.md
-                navtitle: Planning your deployment
-              - topic: virt-storage-setup.md
-                navtitle: Setting up storage
-              - topic: oc-virtualization.md
-                navtitle: Installing the operator
-              - topic: virt-vpc-file-vm-create.md
-                navtitle: Creating VMs with VPC File Storage
-          - topic: vni-virtualization.md
-            navtitle: Managing virtual network interfaces
-          - topic: odf-virt-performance.md
-            navtitle: Tuning ODF performance for virtualization
       - topicgroup:
           label: Storage
           topics:
@@ -397,7 +378,7 @@ toc:
           - storage-utilities.md
           - storage-br.md
       - topicgroup:
-          label: Add-ons, Cloud Paks, Operators, and integrations
+          label: Add-ons and operators
           topics:
           - addon_landing.md
           - integrations-ibm-third-party.md
@@ -407,6 +388,46 @@ toc:
           - integrations-addons.md
           - integrations-helm.md
           - integrations-svcbind.md
+      - topicgroup:
+          label: OpenShift AI
+          topics:
+          - openshift-ai-addon-overview.md
+          - openshift-ai-addon-install.md
+          - openshift-ai-addon-manage.md
+      - topicgroup:
+          label: Advanced Cluster Management
+          topics:
+          - acm-about.md
+          - acm-addon.md
+      - topicgroup:
+          label: OpenShift Virtualization
+          topics:
+          - topic: virt-overview.md
+          - topicgroup:
+              label: Red Hat OpenShift Virtualization Service
+              topics:
+              - topic: rovs-overview.md
+              - topic: rovs-getting-started.md
+                navtitle: Quickstart
+              - topic: rovs-cluster-create.md
+              - topic: rovs-manage.md
+              - topic: rovs-addon-virtualization.md
+              - topic: rovs-limitations.md
+          - topicgroup:
+              label: Manual deployment
+              topics:
+              - topic: virt-plan.md
+                navtitle: Planning your deployment
+              - topic: virt-storage-setup.md
+                navtitle: Setting up storage
+              - topic: oc-virtualization.md
+                navtitle: Installing the operator
+              - topic: virt-vpc-file-vm-create.md
+                navtitle: Creating VMs with VPC File Storage
+          - topic: vni-virtualization.md
+            navtitle: Managing virtual network interfaces
+          - topic: odf-virt-performance.md
+            navtitle: Tuning ODF performance for virtualization
       - topicgroup:
           label: Observability
           topics:
@@ -418,6 +439,7 @@ toc:
           - vpc-flow-logs.md
           - telemetry.md
           - at-events-ref.md
+          - edge-sysdig.md
   - navgroup:
       id: reference
       topics:
@@ -501,6 +523,10 @@ toc:
           - openshift_versions_hpcs_router.md
           - cl-add-ons-ibm-cloud-image-key-synchronizer.md
           - cl-confidential-containers.md
+      - topicgroup:
+          label: Security reference
+          topics:
+          - data-security.md
       - topicgroup:
           label: Service settings
           topics:

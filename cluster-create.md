@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2026
-lastupdated: "2026-02-11"
+lastupdated: "2026-08-11"
 
 
 keywords: openshift, {{site.data.keyword.openshiftlong_notm}}, clusters, worker nodes, worker pools
@@ -50,10 +50,9 @@ You can use trusted profiles to grant different IBM Cloud identities access to r
 {: #prepare-resource-groups}
 {: step}
 
-If your account uses multiple resource groups, figure out your account's strategy for [managing resource groups](/docs/openshift?topic=openshift-iam-platform-access-roles). You might want one resource group and create all clusters within that one. You might want to set up different resource groups to group different environments or resource types.
+If your account uses multiple resource groups, figure out your account's strategy for [managing resource groups](/docs/openshift?topic=openshift-iam-platform-access-roles). You might want one resource group for all clusters, or separate resource groups to organize different environments or resource types.
 
-
-Keep in mind, to create a cluster in a different resource group than the default, you need at least the **Viewer** role for the resource group. If you don't have any role for the resource group, your cluster is created in the default resource group.
+To create a cluster in a resource group other than the default, you need at least the **Viewer** role for that resource group. If you don't have a role for the resource group, your cluster is created in the default resource group.
 
 
 ## Cluster-specific account setup

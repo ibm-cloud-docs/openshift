@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2026
-lastupdated: "2026-08-10"
+lastupdated: "2026-08-11"
 
 
 keywords: openshift
@@ -54,6 +54,43 @@ subcollection: openshift
 * [Quick actions](/docs/openshift?topic=openshift-getting-started#getting-started-quick-actions)
 
 * [What's next?](/docs/openshift?topic=openshift-getting-started#getting-started-whats-next)
+
+
+## Use cases
+{: #sitemap_use_cases}
+
+
+[Use cases](/docs/openshift?topic=openshift-openshift-use-cases#openshift-use-cases)
+
+* [Financial services](/docs/openshift?topic=openshift-openshift-use-cases#uc-finance)
+
+    * [Trim IT costs and accelerate regulatory compliance](/docs/openshift?topic=openshift-openshift-use-cases#uc-finance-mortgage)
+
+    * [Deploy AI-enabled tools 4x faster](/docs/openshift?topic=openshift-openshift-use-cases#uc-finance-payments)
+
+* [Healthcare](/docs/openshift?topic=openshift-openshift-use-cases#uc-health)
+
+    * [Migrate patient systems from VMs to containers](/docs/openshift?topic=openshift-openshift-use-cases#uc-health-migrate)
+
+    * [Securely host sensitive research data](/docs/openshift?topic=openshift-openshift-use-cases#uc-health-research)
+
+* [Retail](/docs/openshift?topic=openshift-openshift-use-cases#uc-retail)
+
+    * [Share data via APIs to drive omnichannel sales](/docs/openshift?topic=openshift-openshift-use-cases#uc-retail-data)
+
+    * [Optimize inventory with digital insights](/docs/openshift?topic=openshift-openshift-use-cases#uc-retail-grocer)
+
+* [Transportation](/docs/openshift?topic=openshift-openshift-use-cases#uc-transport)
+
+    * [Build and deploy HR sites with AI in under 3 weeks](/docs/openshift?topic=openshift-openshift-use-cases#uc-transport-airline)
+
+    * [Increase availability of worldwide partner systems](/docs/openshift?topic=openshift-openshift-use-cases#uc-transport-shipping)
+
+* [Government](/docs/openshift?topic=openshift-openshift-use-cases#uc-gov)
+
+    * [Secure data exchange between public and private organizations](/docs/openshift?topic=openshift-openshift-use-cases#uc-gov-port)
+
+    * [Improve collaboration velocity with open data](/docs/openshift?topic=openshift-openshift-use-cases#uc-gov-data)
 
 
 ## Understanding the service
@@ -130,6 +167,22 @@ subcollection: openshift
 * [Add app storage](/docs/openshift?topic=openshift-learning-path-dev#dev_storage)
 
 * [Add integrations](/docs/openshift?topic=openshift-learning-path-dev#dev_integrate)
+
+[Learning path for VM administrators](/docs/openshift?topic=openshift-learning-path-virt#learning-path-virt)
+
+* [Understand the service](/docs/openshift?topic=openshift-learning-path-virt#virt-path-understand)
+
+* [Plan your environment](/docs/openshift?topic=openshift-learning-path-virt#virt-path-plan)
+
+* [Create a cluster](/docs/openshift?topic=openshift-learning-path-virt#virt-path-create)
+
+* [Manage and maintain](/docs/openshift?topic=openshift-learning-path-virt#virt-path-manage)
+
+* [Secure your cluster](/docs/openshift?topic=openshift-learning-path-virt#virt-path-secure)
+
+* [Monitor and log](/docs/openshift?topic=openshift-learning-path-virt#virt-path-observe)
+
+* [Troubleshoot](/docs/openshift?topic=openshift-learning-path-virt#virt-path-troubleshoot)
 
 
 ## Plan your cluster
@@ -308,115 +361,75 @@ subcollection: openshift
     * [Applications and data](/docs/openshift?topic=openshift-satellite-responsibilities#applications-and-data-sat)
 
 
-## Use cases
-{: #sitemap_use_cases}
+## Security for {{site.data.keyword.openshiftlong_notm}}
+{: #sitemap_security_for_}
 
 
-[Overview of use cases](/docs/openshift?topic=openshift-cs_uc_intro#cs_uc_intro)
+[Security for {{site.data.keyword.openshiftlong_notm}}](/docs/openshift?topic=openshift-security#security)
 
-[Financial services use cases for {{site.data.keyword.cloud_notm}}](/docs/openshift?topic=openshift-cs_uc_finance#cs_uc_finance)
+* [Overview of security threats for your cluster](/docs/openshift?topic=openshift-security#threats)
 
-* [Mortgage company trims costs and accelerates regulatory compliance](/docs/openshift?topic=openshift-cs_uc_finance#uc_mortgage)
+* [{{site.data.keyword.redhat_openshift_notm}} API server and etcd](/docs/openshift?topic=openshift-security#apiserver)
 
-    * [Context](/docs/openshift?topic=openshift-cs_uc_finance#uc_mortgage_context)
+    * [How is access to my API server granted?](/docs/openshift?topic=openshift-security#api-server-access)
 
-    * [Solution](/docs/openshift?topic=openshift-cs_uc_finance#uc_mortgage_solution)
+    * [What does {{site.data.keyword.openshiftlong_notm}} do to secure my API server and etcd data store?](/docs/openshift?topic=openshift-security#secure-api-server)
 
-    * [Results](/docs/openshift?topic=openshift-cs_uc_finance#uc_mortgage_results)
+    * [What else can I do to secure my API server?](/docs/openshift?topic=openshift-security#api-server-what-else)
 
-* [Payment tech company streamlines developer productivity, deploying AI-enabled tools to their partners 4 times faster](/docs/openshift?topic=openshift-cs_uc_finance#uc_payment_tech)
+* [Worker node](/docs/openshift?topic=openshift-security#workernodes)
 
-    * [Context](/docs/openshift?topic=openshift-cs_uc_finance#uc_payment_tech_context)
+    * [Who owns the worker node and am I responsible to secure it?](/docs/openshift?topic=openshift-security#worker-node-owner)
 
-    * [Solution](/docs/openshift?topic=openshift-cs_uc_finance#uc_payment_tech_solution)
+    * [How does my worker node setup look?](/docs/openshift?topic=openshift-security#worker-node-setup)
 
-    * [Results](/docs/openshift?topic=openshift-cs_uc_finance#uc_payment_tech_results)
+* [Network](/docs/openshift?topic=openshift-security#network)
 
-[Healthcare use cases for {{site.data.keyword.cloud_notm}}](/docs/openshift?topic=openshift-cs_uc_health#cs_uc_health)
+    * [Network segmentation and privacy for classic clusters](/docs/openshift?topic=openshift-security#network_segmentation)
 
-* [Healthcare provider migrates workloads from inefficient VMs to Ops-friendly containers for reporting and patient systems](/docs/openshift?topic=openshift-cs_uc_health#uc_migrate)
+    * [What network traffic is allowed for my Classic cluster by default?](/docs/openshift?topic=openshift-security#default-network-traffic-allowed)
 
-    * [Context](/docs/openshift?topic=openshift-cs_uc_health#uc_migrate_context)
+    * [What is network segmentation and how can I set it up for a Classic cluster?](/docs/openshift?topic=openshift-security#network-segmentation-setup)
 
-    * [Solution](/docs/openshift?topic=openshift-cs_uc_health#uc_migrate_solution_model)
+    * [What else can I do to reduce the surface for external attacks for Classic clusters?](/docs/openshift?topic=openshift-security#external-what-else)
 
-    * [Results](/docs/openshift?topic=openshift-cs_uc_health#uc_migrate_results)
+    * [What if I want to connect my cluster to an on-prem data center?](/docs/openshift?topic=openshift-security#onprem-network-setup)
 
-* [Research nonprofit securely hosts sensitive data while it grows research with partners](/docs/openshift?topic=openshift-cs_uc_health#uc_research)
+    * [Network segmentation and privacy for VPC clusters](/docs/openshift?topic=openshift-security#network_segmentation_vpc)
 
-    * [Context](/docs/openshift?topic=openshift-cs_uc_health#uc_research_context)
+    * [What network traffic is allowed for my VPC cluster by default?](/docs/openshift?topic=openshift-security#vpc-network-traffic-default)
 
-    * [Solution](/docs/openshift?topic=openshift-cs_uc_health#uc_research_solution)
+    * [What is network segmentation and how can I set it up for a VPC cluster?](/docs/openshift?topic=openshift-security#network-segment-what-is)
 
-    * [Results](/docs/openshift?topic=openshift-cs_uc_health#uc_research_results)
+    * [What else can I do to reduce the surface for external attacks for VPC clusters?](/docs/openshift?topic=openshift-security#vpc-external-what-else)
 
-[Retail use cases for {{site.data.keyword.cloud_notm}}](/docs/openshift?topic=openshift-cs_uc_retail#cs_uc_retail)
+    * [Securely expose apps with routes](/docs/openshift?topic=openshift-security#expose-apps-with-routes)
 
-* [Brick-and-mortar retailer shares data, by using APIs with global business partners to drive omnichannel sales](/docs/openshift?topic=openshift-cs_uc_retail#uc_data-share)
+    * [Securely expose apps with LoadBalancer and Ingress services](/docs/openshift?topic=openshift-security#network_lb_ingress)
 
-    * [Context](/docs/openshift?topic=openshift-cs_uc_retail#uc_data-share_context)
+    * [Can I use security groups to manage my cluster's network traffic?](/docs/openshift?topic=openshift-security#can-i-use-security-groups)
 
-    * [Solution](/docs/openshift?topic=openshift-cs_uc_retail#uc_data-share_solution)
+    * [How can I do TLS termination with LoadBalancer and Ingress services?](/docs/openshift?topic=openshift-security#tls-termination-lb)
 
-    * [Results](/docs/openshift?topic=openshift-cs_uc_retail#uc_data-share_results)
+* [Persistent storage](/docs/openshift?topic=openshift-security#storage)
 
-* [Traditional grocer increases customer traffic and sales with digital insights](/docs/openshift?topic=openshift-cs_uc_retail#uc_grocer)
+* [Monitoring and logging](/docs/openshift?topic=openshift-security#monitoring_logging)
 
-    * [Context](/docs/openshift?topic=openshift-cs_uc_retail#uc_grocer_context)
+* [Container runtime](/docs/openshift?topic=openshift-security#container-runtime)
 
-    * [Results](/docs/openshift?topic=openshift-cs_uc_retail#uc_grocer_results)
+* [Image and registry](/docs/openshift?topic=openshift-security#images_registry)
 
-[Transportation use cases for {{site.data.keyword.cloud_notm}}](/docs/openshift?topic=openshift-cs_uc_transport#cs_uc_transport)
+* [Container isolation and security](/docs/openshift?topic=openshift-security#container)
 
-* [Shipping company increases availability of worldwide systems for business partner ecosystem](/docs/openshift?topic=openshift-cs_uc_transport#uc_shipping)
+    * [Should I set up a single-tenant or a multi-tenant cluster?](/docs/openshift?topic=openshift-security#single-tenant-or-multi)
 
-    * [Context](/docs/openshift?topic=openshift-cs_uc_transport#uc_shipping_context)
+* [Storing personal information](/docs/openshift?topic=openshift-security#pi)
 
-    * [Solution](/docs/openshift?topic=openshift-cs_uc_transport#uc_shipping_solution)
-
-    * [Results](/docs/openshift?topic=openshift-cs_uc_transport#uc_shipping_results)
-
-* [Airline delivers innovative Human Resources (HR) benefits site in under 3 weeks](/docs/openshift?topic=openshift-cs_uc_transport#uc_airline)
-
-    * [Context](/docs/openshift?topic=openshift-cs_uc_transport#uc_airline_context)
-
-    * [Solution](/docs/openshift?topic=openshift-cs_uc_transport#uc_airline_solution)
-
-    * [Results](/docs/openshift?topic=openshift-cs_uc_transport#uc_airline_results)
-
-[Government use cases for {{site.data.keyword.cloud_notm}}](/docs/openshift?topic=openshift-cs_uc_gov#cs_uc_gov)
-
-* [Regional government improves collaboration and velocity with community Developers who combine public-private data](/docs/openshift?topic=openshift-cs_uc_gov#uc_data_mashup)
-
-    * [Context](/docs/openshift?topic=openshift-cs_uc_gov#uc_data_mashup_context)
-
-    * [Solution](/docs/openshift?topic=openshift-cs_uc_gov#uc_data_mashup_solution)
-
-    * [Step 1: Store data in the cloud](/docs/openshift?topic=openshift-cs_uc_gov#uc_data_mashup_step1)
-
-    * [Step 2: Provide access to data with APIs](/docs/openshift?topic=openshift-cs_uc_gov#uc_data_mashup_step2)
-
-    * [Step 3: Innovate with IBM Garage and cloud services](/docs/openshift?topic=openshift-cs_uc_gov#uc_data_mashup_step3)
-
-    * [Results](/docs/openshift?topic=openshift-cs_uc_gov#uc_data_mashup_results)
-
-* [Large public port secures exchange of port data and shipping manifests that connect public and private organizations](/docs/openshift?topic=openshift-cs_uc_gov#uc_port)
-
-    * [Context](/docs/openshift?topic=openshift-cs_uc_gov#uc_port_context)
-
-    * [Solution](/docs/openshift?topic=openshift-cs_uc_gov#uc_port_solution)
-
-    * [Step 1: Containerize apps by using microservices](/docs/openshift?topic=openshift-cs_uc_gov#uc_port_step1)
-
-    * [Step 2: Ensure global availability](/docs/openshift?topic=openshift-cs_uc_gov#uc_port_step2)
-
-    * [Step 3: Data sharing](/docs/openshift?topic=openshift-cs_uc_gov#uc_port_step3)
-
-    * [Results](/docs/openshift?topic=openshift-cs_uc_gov#uc_port_results)
+* [Kubernetes security bulletins](/docs/openshift?topic=openshift-security#security_bulletins)
 
 
-## RHEL deprecation for VPC clusters
-{: #sitemap_rhel_deprecation_for_vpc_clusters}
+## Important notices
+{: #sitemap_important_notices}
 
 
 [RHEL deprecation for VPC clusters](/docs/openshift?topic=openshift-rhel-deprecation#rhel-deprecation)
@@ -1791,27 +1804,8 @@ subcollection: openshift
         * Worker node fix packs are available {{site.data.keyword.openshiftlong_notm}}.
 
 
-## 2-node VPC cluster with Schematics
-{: #sitemap_2-node_vpc_cluster_with_schematics}
-
-
-[2-node VPC cluster with Schematics](/docs/openshift?topic=openshift-tutorial-two-node#tutorial-two-node)
-
-* [Audience](/docs/openshift?topic=openshift-tutorial-two-node#basic-audience)
-
-* [What you'll get](/docs/openshift?topic=openshift-tutorial-two-node#basic-what-you-get)
-
-* [Create a Schematics workspaces](/docs/openshift?topic=openshift-tutorial-two-node#basic-create-workspace)
-
-* [Generate, review, and apply the Schematics plan](/docs/openshift?topic=openshift-tutorial-two-node#basic-generate-plan)
-
-* [Access your OpenShift cluster](/docs/openshift?topic=openshift-tutorial-two-node#basic-access-cluster)
-
-* [Optional: Clean up the resources](/docs/openshift?topic=openshift-tutorial-two-node#basic-cleanup)
-
-
-## VPC cluster with the CLI
-{: #sitemap_vpc_cluster_with_the_cli}
+## Containers
+{: #sitemap_containers}
 
 
 [VPC cluster with the CLI](/docs/openshift?topic=openshift-vpc_rh_tutorial#vpc_rh_tutorial)
@@ -1831,11 +1825,6 @@ subcollection: openshift
 * [Set up a VPC load balancer to expose your app publicly](/docs/openshift?topic=openshift-vpc_rh_tutorial#vpc_rh_vpc_lb)
 
 * [What's next?](/docs/openshift?topic=openshift-vpc_rh_tutorial#vpc_rh_next)
-
-
-## Classic cluster with the CLI
-{: #sitemap_classic_cluster_with_the_cli}
-
 
 [Classic cluster with the CLI](/docs/openshift?topic=openshift-openshift_tutorial#openshift_tutorial)
 
@@ -1857,15 +1846,54 @@ subcollection: openshift
 
 * [What's next?](/docs/openshift?topic=openshift-openshift_tutorial#openshift_next)
 
+[Isolating apps with network policies (Classic)](/docs/openshift?topic=openshift-policy_tutorial#policy_tutorial)
 
-## OpenShift tutorials
-{: #sitemap_openshift-tutorials}
+* [Objectives](/docs/openshift?topic=openshift-policy_tutorial#policies_objectives)
+
+* [Audience](/docs/openshift?topic=openshift-policy_tutorial#policies_audience)
+
+* [Prerequisites](/docs/openshift?topic=openshift-policy_tutorial#policies_prereqs)
+
+* [Deploy an app and expose it by using an NLB](/docs/openshift?topic=openshift-policy_tutorial#lesson1)
+
+* [Block all incoming traffic to all node ports](/docs/openshift?topic=openshift-policy_tutorial#lesson2)
+
+* [Allow incoming traffic from a specific IP to the NLB](/docs/openshift?topic=openshift-policy_tutorial#lesson3)
+
+* [Deny incoming traffic from specific IPs to the NLB](/docs/openshift?topic=openshift-policy_tutorial#lesson4)
+
+* [Logging blocked traffic from specific IPs to the NLB](/docs/openshift?topic=openshift-policy_tutorial#lesson5)
+
+* [What's next?](/docs/openshift?topic=openshift-policy_tutorial#whats_next)
 
 [OpenShift tutorials](https://cloud.ibm.com/docs?tab=tutorials&tags=openshift&page=1&pageSize=20){: external}
 
 
-## Account setup
-{: #sitemap_account_setup}
+## Virtual machines
+{: #sitemap_virtual_machines}
+
+
+[Creating a Virtualization Service cluster (quickstart)](/docs/openshift?topic=openshift-rovs-getting-started#rovs-getting-started)
+
+* [Before you begin](/docs/openshift?topic=openshift-rovs-getting-started#rovs-gs-prereqs)
+
+* [Create a Virtualization Service cluster](/docs/openshift?topic=openshift-rovs-getting-started#rovs-gs-create)
+
+* [Access the OpenShift console](/docs/openshift?topic=openshift-rovs-getting-started#rovs-gs-access)
+
+* [Verify pre-configured components](/docs/openshift?topic=openshift-rovs-getting-started#rovs-gs-verify)
+
+* [Deploy your first virtual machine](/docs/openshift?topic=openshift-rovs-getting-started#rovs-gs-first-vm)
+
+* [Next steps](/docs/openshift?topic=openshift-rovs-getting-started#rovs-gs-next-steps)
+
+* [Troubleshooting](/docs/openshift?topic=openshift-rovs-getting-started#rovs-gs-troubleshoot)
+
+[Migrate a VM using the Migration Toolkit for Virtualization](https://docs.redhat.com/en/documentation/migration_toolkit_for_virtualization){: external}
+
+
+## Before you begin
+{: #sitemap_before_you_begin}
 
 
 [Preparing your account to create clusters](/docs/openshift?topic=openshift-clusters#clusters)
@@ -1882,6 +1910,11 @@ subcollection: openshift
 
 * [Next steps](/docs/openshift?topic=openshift-clusters#next-steps)
 
+
+### IAM roles and access
+{: #sitemap_iam_roles_and_access}
+
+
 [IAM roles and actions](/docs/openshift?topic=openshift-iam-platform-access-roles#iam-platform-access-roles)
 
 * [Kubernetes Service](/docs/openshift?topic=openshift-iam-platform-access-roles#iam-platform-access-roles-include-containers-kubernetes-roles)
@@ -1897,139 +1930,46 @@ subcollection: openshift
     * [Suggested classic infrastructure permissions](/docs/openshift?topic=openshift-iam-platform-access-roles#classic-rbac-suggested)
 
 
+## Setting up your tools
+{: #sitemap_setting_up_your_tools}
+
+
+[Installing the CLI](/docs/openshift?topic=openshift-cli-install#cli-install)
+
+* [Understanding the CLI tools](/docs/openshift?topic=openshift-cli-install#cli-understand)
+
+* [Running the installation command](/docs/openshift?topic=openshift-cli-install#cli-install-include-step1-install-idt)
+
+* [Verifying the installation](/docs/openshift?topic=openshift-cli-install#cli-install-include-step2-verify-idt)
+
+* [Installing CLI plug-ins and tools](/docs/openshift?topic=openshift-cli-install#cli-install-include-step3-install-idt-manually)
+
+* [Install the {{site.data.keyword.redhat_openshift_notm}} CLI](/docs/openshift?topic=openshift-cli-install#install-kubectl-cli)
+
+[Updating the CLI](/docs/openshift?topic=openshift-cli-update#cli-update)
+
+* [Updating the {{site.data.keyword.cloud_notm}} CLI](/docs/openshift?topic=openshift-cli-update#cli-update-include-update-ibmcloud-cli)
+
+* [Updating installed plug-ins](/docs/openshift?topic=openshift-cli-update#cli-update-include-cli-update-plugin)
+
+[Uninstalling the stand-alone {{site.data.keyword.cloud_notm}} CLI](/docs/openshift?topic=openshift-uninstall-ibmcloud-cli#uninstall-ibmcloud-cli)
+
+* [Uninstalling on Windows](/docs/openshift?topic=openshift-uninstall-ibmcloud-cli#uninstall-cli-windows)
+
+* [Uninstalling on Linux and macOS](/docs/openshift?topic=openshift-uninstall-ibmcloud-cli#uninstall-cli-linux-macos)
+
+[Setting up the API](/docs/openshift?topic=openshift-cs_api_install#cs_api_install)
+
+* [About the API](/docs/openshift?topic=openshift-cs_api_install#api_about)
+
+* [Automating cluster deployments with the API](/docs/openshift?topic=openshift-cs_api_install#cs_api)
+
+* [Refreshing IAM access tokens with the API](/docs/openshift?topic=openshift-cs_api_install#cs_api_refresh)
+
+
 ## Cluster planning
 {: #sitemap_cluster_planning}
 
-
-[Creating a highly available cluster strategy](/docs/openshift?topic=openshift-strategy#strategy)
-
-* [Decide how many clusters to create](/docs/openshift?topic=openshift-strategy#env_multicluster)
-
-* [Determine how many locations are needed](/docs/openshift?topic=openshift-strategy#plan_locations)
-
-    * [Multizone clusters](/docs/openshift?topic=openshift-strategy#mz-strategy)
-
-    * [Multiple clusters linked with load balancers](/docs/openshift?topic=openshift-strategy#mz-cluster-strategy)
-
-    * [Single zone clusters](/docs/openshift?topic=openshift-strategy#sz-single-zone-strategy)
-
-* [Select a cluster type](/docs/openshift?topic=openshift-strategy#env_flavors)
-
-* [Select an operating system for the cluster](/docs/openshift?topic=openshift-strategy#os)
-
-* [Define a cluster naming strategy](/docs/openshift?topic=openshift-strategy#naming)
-
-* [Decide how many worker nodes for each cluster](/docs/openshift?topic=openshift-strategy#sizing_workers)
-
-* [Select worker node flavors](/docs/openshift?topic=openshift-strategy#env_flavors_node)
-
-* [Determine worker node capacity for the resources](/docs/openshift?topic=openshift-strategy#env_resources_worker_capacity)
-
-* [Choose how many namespaces to create within the cluster](/docs/openshift?topic=openshift-strategy#env_resources_multiple_namespaces)
-
-* [Establish resource requests and limits for the namespaces](/docs/openshift?topic=openshift-strategy#env_resources_resource_quotas)
-
-* [Make your apps highly available too](/docs/openshift?topic=openshift-strategy#apps-ha)
-
-* [Next steps](/docs/openshift?topic=openshift-strategy#plan-network-next)
-
-[Understanding VPC cluster networking](/docs/openshift?topic=openshift-plan_vpc_basics#plan_vpc_basics)
-
-* [Worker-to-worker communication using VPC subnets](/docs/openshift?topic=openshift-plan_vpc_basics#vpc-worker-worker)
-
-* [Worker-to-master and user-to-master communication using Virtual private endpoints or cloud service endpoints](/docs/openshift?topic=openshift-plan_vpc_basics#vpc-workeruser-master)
-
-* [Worker-to-master communication in VPC clusters](/docs/openshift?topic=openshift-plan_vpc_basics#worker-to-master-comms)
-
-* [User-to-master communication in VPC clusters](/docs/openshift?topic=openshift-plan_vpc_basics#user-to-master-comms)
-
-* [Worker communication to other services or networks](/docs/openshift?topic=openshift-plan_vpc_basics#vpc-worker-services-onprem)
-
-* [Communication with other {{site.data.keyword.cloud_notm}} services over the private or public network](/docs/openshift?topic=openshift-plan_vpc_basics#vpc-worker-services-onprem-cloud-service)
-
-* [Communication with resources in on-premises data centers](/docs/openshift?topic=openshift-plan_vpc_basics#vpc-worker-services-onprem-resources)
-
-    * [Communication with resources in other VPCs](/docs/openshift?topic=openshift-plan_vpc_basics#vpc-worker-services-onprem-other-vpcs)
-
-    * [Communication with {{site.data.keyword.cloud_notm}} classic resources](/docs/openshift?topic=openshift-plan_vpc_basics#vpc-worker-services-onprem-classic)
-
-* [External communication to apps that run on worker nodes](/docs/openshift?topic=openshift-plan_vpc_basics#vpc-external-workers)
-
-* [Private traffic to cluster apps](/docs/openshift?topic=openshift-plan_vpc_basics#vpc-worker-services-onprem-apps-private)
-
-* [Public traffic to cluster apps](/docs/openshift?topic=openshift-plan_vpc_basics#vpc-worker-services-onprem-apps-public)
-
-* [Example scenarios for VPC cluster network setups](/docs/openshift?topic=openshift-plan_vpc_basics#vpc-scenarios)
-
-    * [Scenario: Run internet-facing app workloads in a VPC cluster](/docs/openshift?topic=openshift-plan_vpc_basics#vpc-no-pgw)
-
-    * [Worker-to-worker communication](/docs/openshift?topic=openshift-plan_vpc_basics#vpc-no-pgw-worker)
-
-    * [Worker-to-master and user-to-master communication](/docs/openshift?topic=openshift-plan_vpc_basics#vpc-no-pgw-master)
-
-    * [Worker communication to other services or networks](/docs/openshift?topic=openshift-plan_vpc_basics#vpc-no-pgw-services)
-
-    * [External communication to apps that run on worker nodes](/docs/openshift?topic=openshift-plan_vpc_basics#vpc-no-pgw-external)
-
-* [Extend your on-premises data center to a VPC cluster](/docs/openshift?topic=openshift-plan_vpc_basics#vpc-vpn)
-
-    * [Worker-to-worker communication](/docs/openshift?topic=openshift-plan_vpc_basics#vpc-vpn-worker)
-
-    * [Worker-to-master and user-to-master communication](/docs/openshift?topic=openshift-plan_vpc_basics#vpc-vpn-master)
-
-    * [Worker communication to other services or networks](/docs/openshift?topic=openshift-plan_vpc_basics#vpc-vpn-services)
-
-    * [External communication to apps that run on worker nodes](/docs/openshift?topic=openshift-plan_vpc_basics#vpc-vpn-external)
-
-* [Next steps](/docs/openshift?topic=openshift-plan_vpc_basics#plan-encryption-next-vpc)
-
-[Understanding Classic cluster networking](/docs/openshift?topic=openshift-plan_basics#plan_basics)
-
-* [Worker-to-worker communication: classic VLANs and subnets](/docs/openshift?topic=openshift-plan_basics#worker-worker)
-
-    * [VLAN connections for worker nodes](/docs/openshift?topic=openshift-plan_basics#worker-worker-nodes)
-
-    * [Worker node communication across subnets and VLANs](/docs/openshift?topic=openshift-plan_basics#worker-worker-subnets)
-
-* [Worker-to-master and user-to-master communication: Service endpoints](/docs/openshift?topic=openshift-plan_basics#workeruser-master)
-
-    * [Public service endpoint only](/docs/openshift?topic=openshift-plan_basics#workeruser-master-endpoint)
-
-    * [Public and private cloud service endpoints](/docs/openshift?topic=openshift-plan_basics#workeruser-master-pub-priv)
-
-* [Worker communication to other {{site.data.keyword.cloud_notm}} services or on-premises networks](/docs/openshift?topic=openshift-plan_basics#worker-services-onprem)
-
-    * [Communication with other {{site.data.keyword.cloud_notm}} services over the private or public network](/docs/openshift?topic=openshift-plan_basics#worker-services-onprem-pub-priv)
-
-    * [{{site.data.keyword.BluDirectLink}} for communication over the private network with resources in on-premises data centers](/docs/openshift?topic=openshift-plan_basics#worker-services-onprem-direct-link)
-
-    * [VPN connection for communication over the public network with resources in on-premises data centers](/docs/openshift?topic=openshift-plan_basics#worker-services-onprem-vpn)
-
-* [External communication to apps that run on worker nodes](/docs/openshift?topic=openshift-plan_basics#external-workers)
-
-    * [Private traffic to cluster apps](/docs/openshift?topic=openshift-plan_basics#external-workers-private)
-
-    * [Public traffic to cluster apps](/docs/openshift?topic=openshift-plan_basics#external-workers-public)
-
-* [Scenario: Running internet-facing app workloads in a classic cluster](/docs/openshift?topic=openshift-plan_basics#internet-facing)
-
-    * [Worker-to-worker communication in classic clusters with internet-facing workloads](/docs/openshift?topic=openshift-plan_basics#internet-facing-worker)
-
-    * [Worker-to-master and user-to-master communication in classic clusters with internet-facing workloads](/docs/openshift?topic=openshift-plan_basics#internet-facing-master)
-
-    * [Worker communication to other services or networks with internet-facing workloads](/docs/openshift?topic=openshift-plan_basics#internet-facing-services)
-
-    * [External communication to apps that run on worker nodes with internet-facing workloads](/docs/openshift?topic=openshift-plan_basics#internet-facing-external)
-
-* [Scenario: Allow limited public connectivity with a gateway appliance](/docs/openshift?topic=openshift-plan_basics#vyatta-gateway)
-
-    * [Worker-to-worker communication, worker-to-master and user-to-master communication with a gateway appliance](/docs/openshift?topic=openshift-plan_basics#limited-public-gw-worker)
-
-    * [Worker communication to other services or networks with a gateway appliance](/docs/openshift?topic=openshift-plan_basics#limited-public-gw-services)
-
-    * [External communication to apps that run on worker nodes with a gateway appliance](/docs/openshift?topic=openshift-plan_basics#limited-public-gw-external)
-
-* [Next steps](/docs/openshift?topic=openshift-plan_basics#plan-encryption-next-cl)
 
 [Encryption overview](/docs/openshift?topic=openshift-encryption#encryption)
 
@@ -2058,48 +1998,6 @@ subcollection: openshift
 * [Step 3: Create the diagram](/docs/openshift?topic=openshift-document-environment#create-arch-diagram)
 
 * [Next steps](/docs/openshift?topic=openshift-document-environment#plan-prepare)
-
-
-## Installing the CLI
-{: #sitemap_installing_the_cli}
-
-
-[Installing the CLI](/docs/openshift?topic=openshift-cli-install#cli-install)
-
-* [Understanding the CLI tools](/docs/openshift?topic=openshift-cli-install#cli-understand)
-
-* [Running the installation command](/docs/openshift?topic=openshift-cli-install#cli-install-include-step1-install-idt)
-
-* [Verifying the installation](/docs/openshift?topic=openshift-cli-install#cli-install-include-step2-verify-idt)
-
-* [Installing CLI plug-ins and tools](/docs/openshift?topic=openshift-cli-install#cli-install-include-step3-install-idt-manually)
-
-* [Install the {{site.data.keyword.redhat_openshift_notm}} CLI](/docs/openshift?topic=openshift-cli-install#install-kubectl-cli)
-
-[Updating the CLI](/docs/openshift?topic=openshift-cli-update#cli-update)
-
-* [Updating the {{site.data.keyword.cloud_notm}} CLI](/docs/openshift?topic=openshift-cli-update#cli-update-include-update-ibmcloud-cli)
-
-* [Updating installed plug-ins](/docs/openshift?topic=openshift-cli-update#cli-update-include-cli-update-plugin)
-
-[Uninstalling the stand-alone {{site.data.keyword.cloud_notm}} CLI](/docs/openshift?topic=openshift-uninstall-ibmcloud-cli#uninstall-ibmcloud-cli)
-
-* [Uninstalling on Windows](/docs/openshift?topic=openshift-uninstall-ibmcloud-cli#uninstall-cli-windows)
-
-* [Uninstalling on Linux and macOS](/docs/openshift?topic=openshift-uninstall-ibmcloud-cli#uninstall-cli-linux-macos)
-
-
-## Setting up the API
-{: #sitemap_setting_up_the_api}
-
-
-[Setting up the API](/docs/openshift?topic=openshift-cs_api_install#cs_api_install)
-
-* [About the API](/docs/openshift?topic=openshift-cs_api_install#api_about)
-
-* [Automating cluster deployments with the API](/docs/openshift?topic=openshift-cs_api_install#cs_api)
-
-* [Refreshing IAM access tokens with the API](/docs/openshift?topic=openshift-cs_api_install#cs_api_refresh)
 
 
 ## Cluster creation
@@ -2196,52 +2094,78 @@ subcollection: openshift
 
 * [Creating an API key](/docs/openshift?topic=openshift-roks_da#roks_da_api_key)
 
-* [Creating the DA](/docs/openshift?topic=openshift-roks_da#roks_da_creation)
+* [Creating the deployable architecture](/docs/openshift?topic=openshift-roks_da#roks_da_creation)
 
 
-## Clusters access
-{: #sitemap_clusters_access}
+## Cluster access
+{: #sitemap_cluster_access}
 
 
 [Accessing {{site.data.keyword.redhat_openshift_notm}} clusters](/docs/openshift?topic=openshift-access_cluster#access_cluster)
 
-* [Prerequisites](/docs/openshift?topic=openshift-access_cluster#prereqs)
+* [Before you begin](/docs/openshift?topic=openshift-access_cluster#access-prereqs)
 
-* [Accessing clusters through the public cloud service endpoint](/docs/openshift?topic=openshift-access_cluster#access_public_se)
+* [Choosing an access method](/docs/openshift?topic=openshift-access_cluster#access-method-choose)
 
-    * [Connecting to the cluster from the console](/docs/openshift?topic=openshift-access_cluster#access_oc_console)
+* [Advanced configuration](/docs/openshift?topic=openshift-access_cluster#access-advanced-config)
 
-    * [Connecting to the cluster from the CLI](/docs/openshift?topic=openshift-access_cluster#access_oc_cli)
+[Accessing clusters through the public cloud service endpoint](/docs/openshift?topic=openshift-access-public#access-public)
 
-* [Accessing clusters through the private cloud service endpoint](/docs/openshift?topic=openshift-access_cluster#access_private_se)
+* [Before you begin](/docs/openshift?topic=openshift-access-public#access-public-prereqs)
 
-    * [Accessing VPC clusters through the private cloud service endpoint](/docs/openshift?topic=openshift-access_cluster#vpc_private_se)
+* [Connecting from the {{site.data.keyword.cloud_notm}} console](/docs/openshift?topic=openshift-access-public#access-public-console)
 
-    * [Accessing classic clusters through the private cloud service endpoint](/docs/openshift?topic=openshift-access_cluster#classic_private_se)
+* [Connecting from the CLI](/docs/openshift?topic=openshift-access-public#access-public-cli)
 
-* [Accessing {{site.data.keyword.redhat_openshift_notm}} clusters on {{site.data.keyword.satelliteshort}}](/docs/openshift?topic=openshift-access_cluster#access_cluster_sat)
+    * [Log in as admin](/docs/openshift?topic=openshift-access-public#access-public-cli-admin)
 
-    * [Accessing clusters through the cluster service URL](/docs/openshift?topic=openshift-access_cluster#access_cluster_sat_se)
+    * [Log in with a passcode](/docs/openshift?topic=openshift-access-public#access-public-cli-passcode)
 
-    * [Accessing clusters from within the {{site.data.keyword.cloud_notm}} private network](/docs/openshift?topic=openshift-access_cluster#access_cluster_sat_link)
+    * [Log in with an API key](/docs/openshift?topic=openshift-access-public#access-public-cli-apikey)
 
-    * [Accessing clusters from the public network](/docs/openshift?topic=openshift-access_cluster#sat_public_access)
+[Accessing VPC clusters through the private cloud service endpoint](/docs/openshift?topic=openshift-access-private-vpc#access-private-vpc)
 
-* [Accessing VPC clusters through the Virtual Private Endpoint Gateway](/docs/openshift?topic=openshift-access_cluster#vpc_vpe)
+* [Before you begin](/docs/openshift?topic=openshift-access-private-vpc#access-private-vpc-prereqs)
 
-* [Creating additional Virtual Private Endpoint gateways in other VPCs and accounts](/docs/openshift?topic=openshift-access_cluster#vpc_cluster_new_vpe_access)
+* [Accessing a private VPC cluster from the CLI](/docs/openshift?topic=openshift-access-private-vpc#access-private-vpc-cli)
 
-    * [Example: Target account commands](/docs/openshift?topic=openshift-access_cluster#vpc_cluster_new_vpe_target_example)
+* [Accessing through the Virtual Private Endpoint (VPE) gateway](/docs/openshift?topic=openshift-access-private-vpc#access-private-vpc-vpe)
 
-    * [Example: Source account commands](/docs/openshift?topic=openshift-access_cluster#vpc_cluster_new_vpe_source_example)
+[Accessing Classic clusters through the private cloud service endpoint](/docs/openshift?topic=openshift-access-private-classic#access-private-classic)
 
-* [Accessing clusters from automation tools by using an API key](/docs/openshift?topic=openshift-access_cluster#access_automation)
+* [Before you begin](/docs/openshift?topic=openshift-access-private-classic#access-private-classic-prereqs)
 
-    * [Using an API key to log in to clusters](/docs/openshift?topic=openshift-access_cluster#access_api_key)
+* [Accessing a private Classic cluster from the CLI](/docs/openshift?topic=openshift-access-private-classic#access-private-classic-cli)
 
-    * [Using a service ID to log in to clusters](/docs/openshift?topic=openshift-access_cluster#access_service_id)
+[Accessing VPC clusters through the Virtual Private Endpoint gateway](/docs/openshift?topic=openshift-cluster-access-vpe#cluster-access-vpe)
 
-    * [Protecting clusters using context based restrictions](/docs/openshift?topic=openshift-access_cluster#protect-service-endpoints-with-cbr)
+* [Before you begin](/docs/openshift?topic=openshift-cluster-access-vpe#cluster-access-vpe-prereqs)
+
+* [Accessing a VPC cluster through the VPE gateway](/docs/openshift?topic=openshift-cluster-access-vpe#cluster-access-vpe-steps)
+
+* [Creating additional VPE gateways in other VPCs and accounts](/docs/openshift?topic=openshift-cluster-access-vpe#vpc_cluster_new_vpe_access)
+
+    * [Target account example](/docs/openshift?topic=openshift-cluster-access-vpe#vpc_cluster_new_vpe_target_example)
+
+    * [Source account example](/docs/openshift?topic=openshift-cluster-access-vpe#vpc_cluster_new_vpe_source_example)
+
+[Accessing clusters on {{site.data.keyword.satelliteshort}}](/docs/openshift?topic=openshift-cluster-access-satellite#cluster-access-satellite)
+
+* [Before you begin](/docs/openshift?topic=openshift-cluster-access-satellite#cluster-access-satellite-prereqs)
+
+* [Accessing clusters through the cluster service URL](/docs/openshift?topic=openshift-cluster-access-satellite#access-cluster-sat-se)
+
+* [Accessing clusters from within the {{site.data.keyword.cloud_notm}} private network](/docs/openshift?topic=openshift-cluster-access-satellite#access-cluster-sat-link)
+
+* [Accessing clusters from the public network](/docs/openshift?topic=openshift-cluster-access-satellite#sat-public-access)
+
+[Accessing clusters from automation tools](/docs/openshift?topic=openshift-cluster-access-automation#cluster-access-automation)
+
+* [Using an API key to log in](/docs/openshift?topic=openshift-cluster-access-automation#access-api-key)
+
+* [Using a service ID to log in](/docs/openshift?topic=openshift-cluster-access-automation#access-service-id)
+
+    * [Protecting clusters using context based restrictions](/docs/openshift?topic=openshift-cluster-access-automation#protect-service-endpoints-with-cbr)
 
 [Accessing the cluster master with admission controllers and webhooks](/docs/openshift?topic=openshift-access_webhooks#access_webhooks)
 
@@ -2256,25 +2180,35 @@ subcollection: openshift
 * [I need help with a broken webhook. What can I do?](/docs/openshift?topic=openshift-access_webhooks#access_webhooks-help)
 
 
-### Accessing the OpenShift Console
-{: #sitemap_accessing_the_openshift_console}
+### OpenShift console access
+{: #sitemap_openshift_console_access}
 
 
 [Setting the OAuth access type for VPC clusters](/docs/openshift?topic=openshift-setting-oauth-access-type#setting-oauth-access-type)
 
-* [Setting the OAuth access type for a cluster from the CLI](/docs/openshift?topic=openshift-setting-oauth-access-type&interface=cli#oauth-access-set-cli)
+* [Setting the OAuth access type](/docs/openshift?topic=openshift-setting-oauth-access-type#oauth-access-set)
 
-* [Getting the OAuth access type for a cluster from the CLI](/docs/openshift?topic=openshift-setting-oauth-access-type&interface=cli#oauth-access-get-cli)
+    * [From the CLI](/docs/openshift?topic=openshift-setting-oauth-access-type&interface=cli#oauth-access-set-cli)
 
-* [Setting the OAuth access type for a cluster from the API](/docs/openshift?topic=openshift-setting-oauth-access-type&interface=api#oauth-access-set-api)
+    * [From the API](/docs/openshift?topic=openshift-setting-oauth-access-type&interface=api#oauth-access-set-api)
 
-* [Getting the OAuth access type for a cluster from the API](/docs/openshift?topic=openshift-setting-oauth-access-type&interface=api#oauth-access-get-api)
+* [Getting the OAuth access type](/docs/openshift?topic=openshift-setting-oauth-access-type&interface=api#oauth-access-get)
 
-[Accessing the OpenShift console when OAuth access is set to VPE gateway](/docs/openshift?topic=openshift-console-apiserver-oauthvpe#console-apiserver-oauthvpe)
+    * [From the CLI](/docs/openshift?topic=openshift-setting-oauth-access-type&interface=cli#oauth-access-get-cli)
+
+    * [From the API](/docs/openshift?topic=openshift-setting-oauth-access-type&interface=api#oauth-access-get-api)
+
+[Configuring security group rules for VPE gateway console access](/docs/openshift?topic=openshift-console-apiserver-oauthvpe#console-apiserver-oauthvpe)
 
 * [Allowing connections from VPN clients to the API server and OAuth server](/docs/openshift?topic=openshift-console-apiserver-oauthvpe#apiserver-oauth-allow)
 
 [Accessing private clusters](/docs/openshift?topic=openshift-cluster-access-wireguard#cluster-access-wireguard)
+
+[Assigning cluster access by using Terraform for {{site.data.keyword.openshiftlong_notm}}](/docs/openshift?topic=openshift-terraform-setup#terraform-setup)
+
+* [Creating a {{site.data.keyword.redhat_openshift_notm}} cluster by using Terraform](/docs/openshift?topic=openshift-terraform-setup#terraform-cluster-create)
+
+* [Assigning IAM user access to {{site.data.keyword.redhat_openshift_notm}} clusters](/docs/openshift?topic=openshift-terraform-setup#terraform-cluster-IAM)
 
 
 ## Cluster management
@@ -2301,6 +2235,11 @@ subcollection: openshift
 * [Creating a new worker pool](/docs/openshift?topic=openshift-add-workers-vpc#vpc_add_pool)
 
 * [Adding a zone to a worker pool](/docs/openshift?topic=openshift-add-workers-vpc#vpc_add_zone)
+
+
+### Updating and maintaining worker nodes
+{: #sitemap_updating_and_maintaining_worker_nodes}
+
 
 [Checking your cluster version, operating system, and Kubernetes server version](/docs/openshift?topic=openshift-flavor-os-check#flavor-os-check)
 
@@ -2357,11 +2296,6 @@ subcollection: openshift
 * [Removing dedicated hosts in the CLI](/docs/openshift?topic=openshift-dedicated-hosts#remove-dedicated-hosts-cli)
 
 * [Removing dedicated hosts pools in the CLI](/docs/openshift?topic=openshift-dedicated-hosts#remove-dedicated-host-pool-cli)
-
-
-### Migrating to a new OS
-{: #sitemap_migrating_to_a_new_os}
-
 
 [Migrating VPC worker nodes to RHCOS](/docs/openshift?topic=openshift-rhel_migrate#rhel_migrate)
 
@@ -2441,22 +2375,6 @@ subcollection: openshift
 
     * [Workers in VPC clusters](/docs/openshift?topic=openshift-host-maintenance#worker-maintenance-vpc)
 
-[Setting the cluster credentials](/docs/openshift?topic=openshift-access-creds#access-creds)
-
-* [Considerations](/docs/openshift?topic=openshift-access-creds#creds-considerations)
-
-* [Resetting the cluster API key](/docs/openshift?topic=openshift-access-creds#admin-set-credentials)
-
-* [Removing user credentials and permissions](/docs/openshift?topic=openshift-access-creds#apikey-remove-user)
-
-[Rotating CA certificates in your cluster](/docs/openshift?topic=openshift-cert-rotate#cert-rotate)
-
-* [Rotation impacts on cluster upgrades](/docs/openshift?topic=openshift-cert-rotate#cert-upgrade-impact)
-
-* [Certificate states and timestamps](/docs/openshift?topic=openshift-cert-rotate#cert-rotate-states)
-
-* [FAQ about certificate rotation](/docs/openshift?topic=openshift-cert-rotate#cert-rotate-faq)
-
 [Tagging and labeling clusters and services](/docs/openshift?topic=openshift-worker-tag-label#worker-tag-label)
 
 * [Finding {{site.data.keyword.BluSoftlayer_notm}} resources with service tags from a specific cluster](/docs/openshift?topic=openshift-worker-tag-label#finding-services-tags)
@@ -2505,6 +2423,22 @@ subcollection: openshift
 * [Enabling `kernel-devel` packages](/docs/openshift?topic=openshift-rhcos-performance#enable-kernel-devel)
 
 * [Removing performance customizations](/docs/openshift?topic=openshift-rhcos-performance#rhcos-performance-remove)
+
+[Setting pod priority](/docs/openshift?topic=openshift-pod_priority#pod_priority)
+
+* [How does priority scheduling and preemption work?](/docs/openshift?topic=openshift-pod_priority#priority_scheduling)
+
+* [Understanding default priority classes](/docs/openshift?topic=openshift-pod_priority#default_priority_class)
+
+* [Creating a priority class](/docs/openshift?topic=openshift-pod_priority#create_priority_class)
+
+* [Assigning priority to your pods](/docs/openshift?topic=openshift-pod_priority#prioritize)
+
+[Setting Kubernetes API priority and fairness](/docs/openshift?topic=openshift-kubeapi-priority#kubeapi-priority)
+
+* [Reviewing default flow schema and priority levels](/docs/openshift?topic=openshift-kubeapi-priority#kubeapi-default-priority)
+
+    * [Viewing {{site.data.keyword.openshiftlong_notm}} created priority level configurations](/docs/openshift?topic=openshift-kubeapi-priority#kube-api-prioritylevelconfig)
 
 
 ### Managing cluster costs
@@ -2555,6 +2489,27 @@ subcollection: openshift
 
 * [Next steps](/docs/openshift?topic=openshift-reservations#reservations-next)
 
+[Setting the cluster credentials](/docs/openshift?topic=openshift-access-creds#access-creds)
+
+* [Considerations](/docs/openshift?topic=openshift-access-creds#creds-considerations)
+
+* [Resetting the cluster API key](/docs/openshift?topic=openshift-access-creds#admin-set-credentials)
+
+* [Removing user credentials and permissions](/docs/openshift?topic=openshift-access-creds#apikey-remove-user)
+
+[Rotating CA certificates in your cluster](/docs/openshift?topic=openshift-cert-rotate#cert-rotate)
+
+* [Rotation impacts on cluster upgrades](/docs/openshift?topic=openshift-cert-rotate#cert-upgrade-impact)
+
+* [Certificate states and timestamps](/docs/openshift?topic=openshift-cert-rotate#cert-rotate-states)
+
+* [FAQ about certificate rotation](/docs/openshift?topic=openshift-cert-rotate#cert-rotate-faq)
+
+
+### Removing clusters
+{: #sitemap_removing_clusters}
+
+
 [Removing clusters](/docs/openshift?topic=openshift-remove#remove)
 
 * [Removing {{site.data.keyword.satelliteshort}} worker nodes or clusters](/docs/openshift?topic=openshift-remove#satcluster-rm)
@@ -2562,50 +2517,12 @@ subcollection: openshift
 * [Next steps](/docs/openshift?topic=openshift-remove#cluster-remove-next-steps)
 
 
-## Encryption
-{: #sitemap_encryption}
+## Security and access
+{: #sitemap_security_and_access}
 
 
-[Setting up a key management service (KMS) provider](/docs/openshift?topic=openshift-encryption-setup#encryption-setup)
 
-* [Rotating your KMS root key](/docs/openshift?topic=openshift-encryption-setup#encryption-rotate)
-
-[Setting up cluster secret encryption](/docs/openshift?topic=openshift-encryption-secrets#encryption-secrets)
-
-* [Enabling secret encryption from the CLI](/docs/openshift?topic=openshift-encryption-secrets&interface=cli#encryption-secrets-cli)
-
-* [Enabling secret encryption from the console](/docs/openshift?topic=openshift-encryption-secrets&interface=ui#encryption-secrets-console)
-
-* [Rotating the root key for your cluster](/docs/openshift?topic=openshift-encryption-secrets&interface=ui#encryption-secrets-rotate)
-
-* [Verifying secret encryption](/docs/openshift?topic=openshift-encryption-secrets&interface=ui#encryption-secrets-verify)
-
-[Setting up worker node disk encryption for VPC clusters](/docs/openshift?topic=openshift-encryption-vpc-worker-disks#encryption-vpc-worker-disks)
-
-[Migrating cluster secrets and worker nodes from HPCS to Key Protect](/docs/openshift?topic=openshift-encryption-hpcs-to-kp-migration#encryption-hpcs-to-kp-migration)
-
-* [Before you begin](/docs/openshift?topic=openshift-encryption-hpcs-to-kp-migration#encryption-hpcs-to-kp-migration-prereqs)
-
-* [Step 1. Setting up service-to-service authorization](/docs/openshift?topic=openshift-encryption-hpcs-to-kp-migration#encryption-hpcs-to-kp-migration-auth)
-
-    * [Authorization for cluster secret encryption](/docs/openshift?topic=openshift-encryption-hpcs-to-kp-migration#encryption-hpcs-to-kp-migration-auth-secrets)
-
-    * [Authorizations for worker node disk encryption](/docs/openshift?topic=openshift-encryption-hpcs-to-kp-migration#encryption-hpcs-to-kp-migration-auth-workers)
-
-* [Step 2. Identify key usage for migration](/docs/openshift?topic=openshift-encryption-hpcs-to-kp-migration#encryption-hpcs-to-kp-migration-detect)
-
-    * [Optional: Using the Key Usage Reporter tool](/docs/openshift?topic=openshift-encryption-hpcs-to-kp-migration#kur-tool)
-
-* [Step 3. Running the migration tool](/docs/openshift?topic=openshift-encryption-hpcs-to-kp-migration#encryption-hpcs-to-kp-migration-migrate)
-
-    * [What happens during migration](/docs/openshift?topic=openshift-encryption-hpcs-to-kp-migration#encryption-hpcs-to-kp-migration-process)
-
-    * [Step 4. Verifying the migration](/docs/openshift?topic=openshift-encryption-hpcs-to-kp-migration#encryption-hpcs-to-kp-migration-verify)
-
-* [Next steps](/docs/openshift?topic=openshift-encryption-hpcs-to-kp-migration#encryption-hpcs-to-kp-migration-next)
-
-
-## Access management
+### Access management
 {: #sitemap_access_management}
 
 
@@ -2687,12 +2604,6 @@ subcollection: openshift
 
 * [Configure your application pods to authenticate with {{site.data.keyword.cloud_notm}} services](/docs/openshift?topic=openshift-pod-iam-identity#iam-identity-pod)
 
-[Assigning cluster access by using Terraform for {{site.data.keyword.openshiftlong_notm}}](/docs/openshift?topic=openshift-terraform-setup#terraform-setup)
-
-* [Creating a {{site.data.keyword.redhat_openshift_notm}} cluster by using Terraform](/docs/openshift?topic=openshift-terraform-setup#terraform-cluster-create)
-
-* [Assigning IAM user access to {{site.data.keyword.redhat_openshift_notm}} clusters](/docs/openshift?topic=openshift-terraform-setup#terraform-cluster-IAM)
-
 [Removing users](/docs/openshift?topic=openshift-removing-user-permissions#removing-user-permissions)
 
 * [Checking whether the user's credentials are used for infrastructure permissions](/docs/openshift?topic=openshift-removing-user-permissions#removing_check_infra)
@@ -2702,71 +2613,52 @@ subcollection: openshift
     * [Removing custom RBAC permissions](/docs/openshift?topic=openshift-removing-user-permissions#remove_custom_rbac)
 
 
-## Security
-{: #sitemap_security}
+### Encryption
+{: #sitemap_encryption}
 
 
-[Security for {{site.data.keyword.openshiftlong_notm}}](/docs/openshift?topic=openshift-security#security)
+[Setting up a key management service (KMS) provider](/docs/openshift?topic=openshift-encryption-setup#encryption-setup)
 
-* [Overview of security threats for your cluster](/docs/openshift?topic=openshift-security#threats)
+* [Rotating your KMS root key](/docs/openshift?topic=openshift-encryption-setup#encryption-rotate)
 
-* [{{site.data.keyword.redhat_openshift_notm}} API server and etcd](/docs/openshift?topic=openshift-security#apiserver)
+[Setting up cluster secret encryption](/docs/openshift?topic=openshift-encryption-secrets#encryption-secrets)
 
-    * [How is access to my API server granted?](/docs/openshift?topic=openshift-security#api-server-access)
+* [Enabling secret encryption from the CLI](/docs/openshift?topic=openshift-encryption-secrets&interface=cli#encryption-secrets-cli)
 
-    * [What does {{site.data.keyword.openshiftlong_notm}} do to secure my API server and etcd data store?](/docs/openshift?topic=openshift-security#secure-api-server)
+* [Enabling secret encryption from the console](/docs/openshift?topic=openshift-encryption-secrets&interface=ui#encryption-secrets-console)
 
-    * [What else can I do to secure my API server?](/docs/openshift?topic=openshift-security#api-server-what-else)
+* [Rotating the root key for your cluster](/docs/openshift?topic=openshift-encryption-secrets&interface=ui#encryption-secrets-rotate)
 
-* [Worker node](/docs/openshift?topic=openshift-security#workernodes)
+* [Verifying secret encryption](/docs/openshift?topic=openshift-encryption-secrets&interface=ui#encryption-secrets-verify)
 
-    * [Who owns the worker node and am I responsible to secure it?](/docs/openshift?topic=openshift-security#worker-node-owner)
+[Setting up worker node disk encryption for VPC clusters](/docs/openshift?topic=openshift-encryption-vpc-worker-disks#encryption-vpc-worker-disks)
 
-    * [How does my worker node setup look?](/docs/openshift?topic=openshift-security#worker-node-setup)
+[Migrating cluster secrets and worker nodes from HPCS to Key Protect](/docs/openshift?topic=openshift-encryption-hpcs-to-kp-migration#encryption-hpcs-to-kp-migration)
 
-* [Network](/docs/openshift?topic=openshift-security#network)
+* [Before you begin](/docs/openshift?topic=openshift-encryption-hpcs-to-kp-migration#encryption-hpcs-to-kp-migration-prereqs)
 
-    * [Network segmentation and privacy for classic clusters](/docs/openshift?topic=openshift-security#network_segmentation)
+* [Step 1. Setting up service-to-service authorization](/docs/openshift?topic=openshift-encryption-hpcs-to-kp-migration#encryption-hpcs-to-kp-migration-auth)
 
-    * [What network traffic is allowed for my Classic cluster by default?](/docs/openshift?topic=openshift-security#default-network-traffic-allowed)
+    * [Authorization for cluster secret encryption](/docs/openshift?topic=openshift-encryption-hpcs-to-kp-migration#encryption-hpcs-to-kp-migration-auth-secrets)
 
-    * [What is network segmentation and how can I set it up for a Classic cluster?](/docs/openshift?topic=openshift-security#network-segmentation-setup)
+    * [Authorizations for worker node disk encryption](/docs/openshift?topic=openshift-encryption-hpcs-to-kp-migration#encryption-hpcs-to-kp-migration-auth-workers)
 
-    * [What else can I do to reduce the surface for external attacks for Classic clusters?](/docs/openshift?topic=openshift-security#external-what-else)
+* [Step 2. Identify key usage for migration](/docs/openshift?topic=openshift-encryption-hpcs-to-kp-migration#encryption-hpcs-to-kp-migration-detect)
 
-    * [What if I want to connect my cluster to an on-prem data center?](/docs/openshift?topic=openshift-security#onprem-network-setup)
+    * [Optional: Using the Key Usage Reporter tool](/docs/openshift?topic=openshift-encryption-hpcs-to-kp-migration#kur-tool)
 
-    * [Network segmentation and privacy for VPC clusters](/docs/openshift?topic=openshift-security#network_segmentation_vpc)
+* [Step 3. Running the migration tool](/docs/openshift?topic=openshift-encryption-hpcs-to-kp-migration#encryption-hpcs-to-kp-migration-migrate)
 
-    * [What network traffic is allowed for my VPC cluster by default?](/docs/openshift?topic=openshift-security#vpc-network-traffic-default)
+    * [What happens during migration](/docs/openshift?topic=openshift-encryption-hpcs-to-kp-migration#encryption-hpcs-to-kp-migration-process)
 
-    * [What is network segmentation and how can I set it up for a VPC cluster?](/docs/openshift?topic=openshift-security#network-segment-what-is)
+    * [Step 4. Verifying the migration](/docs/openshift?topic=openshift-encryption-hpcs-to-kp-migration#encryption-hpcs-to-kp-migration-verify)
 
-    * [What else can I do to reduce the surface for external attacks for VPC clusters?](/docs/openshift?topic=openshift-security#vpc-external-what-else)
+* [Next steps](/docs/openshift?topic=openshift-encryption-hpcs-to-kp-migration#encryption-hpcs-to-kp-migration-next)
 
-    * [Securely expose apps with routes](/docs/openshift?topic=openshift-security#expose-apps-with-routes)
 
-    * [Securely expose apps with LoadBalancer and Ingress services](/docs/openshift?topic=openshift-security#network_lb_ingress)
+### Security policies
+{: #sitemap_security_policies}
 
-    * [Can I use security groups to manage my cluster's network traffic?](/docs/openshift?topic=openshift-security#can-i-use-security-groups)
-
-    * [How can I do TLS termination with LoadBalancer and Ingress services?](/docs/openshift?topic=openshift-security#tls-termination-lb)
-
-* [Persistent storage](/docs/openshift?topic=openshift-security#storage)
-
-* [Monitoring and logging](/docs/openshift?topic=openshift-security#monitoring_logging)
-
-* [Container runtime](/docs/openshift?topic=openshift-security#container-runtime)
-
-* [Image and registry](/docs/openshift?topic=openshift-security#images_registry)
-
-* [Container isolation and security](/docs/openshift?topic=openshift-security#container)
-
-    * [Should I set up a single-tenant or a multi-tenant cluster?](/docs/openshift?topic=openshift-security#single-tenant-or-multi)
-
-* [Storing personal information](/docs/openshift?topic=openshift-security#pi)
-
-* [Kubernetes security bulletins](/docs/openshift?topic=openshift-security#security_bulletins)
 
 [Overview of personal and sensitive data storage and removal options](/docs/openshift?topic=openshift-ibm-data#ibm-data)
 
@@ -2900,22 +2792,6 @@ subcollection: openshift
 
 * [Default IBM security context constraints](/docs/openshift?topic=openshift-openshift_scc#ibm_sccs)
 
-[Setting pod priority](/docs/openshift?topic=openshift-pod_priority#pod_priority)
-
-* [How does priority scheduling and preemption work?](/docs/openshift?topic=openshift-pod_priority#priority_scheduling)
-
-* [Understanding default priority classes](/docs/openshift?topic=openshift-pod_priority#default_priority_class)
-
-* [Creating a priority class](/docs/openshift?topic=openshift-pod_priority#create_priority_class)
-
-* [Assigning priority to your pods](/docs/openshift?topic=openshift-pod_priority#prioritize)
-
-[Setting Kubernetes API priority and fairness](/docs/openshift?topic=openshift-kubeapi-priority#kubeapi-priority)
-
-* [Reviewing default flow schema and priority levels](/docs/openshift?topic=openshift-kubeapi-priority#kubeapi-default-priority)
-
-    * [Viewing {{site.data.keyword.openshiftlong_notm}} created priority level configurations](/docs/openshift?topic=openshift-kubeapi-priority#kube-api-prioritylevelconfig)
-
 [Pod security admission](/docs/openshift?topic=openshift-pod-security-admission#pod-security-admission)
 
 * [Understanding security profiles](/docs/openshift?topic=openshift-pod-security-admission#pod_security_profiles)
@@ -2933,6 +2809,11 @@ subcollection: openshift
 
 ## Images and registries
 {: #sitemap_images_and_registries}
+
+
+
+### General
+{: #sitemap_general}
 
 
 [Setting up an image registry](/docs/openshift?topic=openshift-registry#registry)
@@ -2993,23 +2874,33 @@ subcollection: openshift
 
     * [Example daemonset to update a containerd custom registry configuration](/docs/openshift?topic=openshift-registry#ds-example-registry)
 
-[Setting up the internal image registry for {{site.data.keyword.satelliteshort}} clusters](/docs/openshift?topic=openshift-satellite-clusters-registry#satellite-clusters-registry)
+[Building images for your apps](/docs/openshift?topic=openshift-images#images)
 
-* [Create an {{site.data.keyword.cos_full_notm}} instance that meets the requirements](/docs/openshift?topic=openshift-satellite-clusters-registry#sat-registry-cos-instance)
+* [Building images](/docs/openshift?topic=openshift-images#build_images)
 
-* [Create a bucket to use for your image registry](/docs/openshift?topic=openshift-satellite-clusters-registry#sat-registry-bucket)
+* [Deploying containers from an existing image stream in the internal registry](/docs/openshift?topic=openshift-images#oc_imagestream_deploy)
 
-* [Create a secret that contains your COS service credentials](/docs/openshift?topic=openshift-satellite-clusters-registry#sat-registry-secret)
+    * [Using an image stream with the CLI](/docs/openshift?topic=openshift-images#oc_imagestream_deploy_cli)
 
-* [Update the {{site.data.keyword.redhat_openshift_notm}} Registry operator CRDs](/docs/openshift?topic=openshift-satellite-clusters-registry#sat-registry-crds)
+    * [Using an image stream from the {{site.data.keyword.redhat_openshift_notm}} web console](/docs/openshift?topic=openshift-images#oc_imagestream_deploy-ui)
 
-* [Verify your changes](/docs/openshift?topic=openshift-satellite-clusters-registry#sat-registry-verify)
+* [Deploying containers from an {{site.data.keyword.registrylong_notm}} image to the `default` {{site.data.keyword.redhat_openshift_notm}} project](/docs/openshift?topic=openshift-images#namespace)
 
-[Updating the global pull secret in {{site.data.keyword.satelliteshort}} clusters](/docs/openshift?topic=openshift-satellite-registry-pull-secret#satellite-registry-pull-secret)
+* [Deploying containers from an encrypted image](/docs/openshift?topic=openshift-images#encrypted-images)
 
-* [Updating the global pull secret](/docs/openshift?topic=openshift-satellite-registry-pull-secret#satellite-pull-secret-cli)
+* [Referring to the image pull secret in your pod deployment](/docs/openshift?topic=openshift-images#pod_imagePullSecret)
 
-* [Updating the global pull secret by using {{site.data.keyword.satelliteshort}} config](/docs/openshift?topic=openshift-satellite-registry-pull-secret#satellite-pull-secret-config)
+* [Pushing images to {{site.data.keyword.registrylong_notm}}](/docs/openshift?topic=openshift-images#push-images)
+
+* [Managing security of images in {{site.data.keyword.registrylong_notm}} with Vulnerability Advisor](/docs/openshift?topic=openshift-images#va-images)
+
+* [Setting up trusted content for container images](/docs/openshift?topic=openshift-images#trusted_images)
+
+* [Enabling image security enforcement in your cluster](/docs/openshift?topic=openshift-images#portieris-image-sec)
+
+    * [Enabling or disabling image security enforcement](/docs/openshift?topic=openshift-images#portieris-enable)
+
+    * [Default image policies](/docs/openshift?topic=openshift-images#portieris-default-policies)
 
 [Adding a trusted CA to {{site.data.keyword.openshiftlong_notm}}](/docs/openshift?topic=openshift-trusted-ca#trusted-ca)
 
@@ -3034,120 +2925,32 @@ subcollection: openshift
 * [What's next?](/docs/openshift?topic=openshift-tutorial-no-registry-cos#tutorial-no-registry-cos-next)
 
 
+### Satellite clusters
+{: #sitemap_satellite_clusters}
+
+
+[Setting up the internal image registry for {{site.data.keyword.satelliteshort}} clusters](/docs/openshift?topic=openshift-satellite-clusters-registry#satellite-clusters-registry)
+
+* [Create an {{site.data.keyword.cos_full_notm}} instance that meets the requirements](/docs/openshift?topic=openshift-satellite-clusters-registry#sat-registry-cos-instance)
+
+* [Create a bucket to use for your image registry](/docs/openshift?topic=openshift-satellite-clusters-registry#sat-registry-bucket)
+
+* [Create a secret that contains your COS service credentials](/docs/openshift?topic=openshift-satellite-clusters-registry#sat-registry-secret)
+
+* [Update the {{site.data.keyword.redhat_openshift_notm}} Registry operator CRDs](/docs/openshift?topic=openshift-satellite-clusters-registry#sat-registry-crds)
+
+* [Verify your changes](/docs/openshift?topic=openshift-satellite-clusters-registry#sat-registry-verify)
+
+[Updating the global pull secret in {{site.data.keyword.satelliteshort}} clusters](/docs/openshift?topic=openshift-satellite-registry-pull-secret#satellite-registry-pull-secret)
+
+* [Updating the global pull secret](/docs/openshift?topic=openshift-satellite-registry-pull-secret#satellite-pull-secret-cli)
+
+* [Updating the global pull secret by using {{site.data.keyword.satelliteshort}} config](/docs/openshift?topic=openshift-satellite-registry-pull-secret#satellite-pull-secret-config)
+
+
 ## Networking
 {: #sitemap_networking}
 
-
-
-### Classic clusters
-{: #sitemap_classic_clusters}
-
-
-[Using Calico network policies to control traffic on Classic clusters](/docs/openshift?topic=openshift-policy_tutorial#policy_tutorial)
-
-* [Objectives](/docs/openshift?topic=openshift-policy_tutorial#policies_objectives)
-
-* [Audience](/docs/openshift?topic=openshift-policy_tutorial#policies_audience)
-
-* [Prerequisites](/docs/openshift?topic=openshift-policy_tutorial#policies_prereqs)
-
-* [Deploy an app and expose it by using an NLB](/docs/openshift?topic=openshift-policy_tutorial#lesson1)
-
-* [Block all incoming traffic to all node ports](/docs/openshift?topic=openshift-policy_tutorial#lesson2)
-
-* [Allow incoming traffic from a specific IP to the NLB](/docs/openshift?topic=openshift-policy_tutorial#lesson3)
-
-* [Deny incoming traffic from specific IPs to the NLB](/docs/openshift?topic=openshift-policy_tutorial#lesson4)
-
-* [Logging blocked traffic from specific IPs to the NLB](/docs/openshift?topic=openshift-policy_tutorial#lesson5)
-
-* [What's next?](/docs/openshift?topic=openshift-policy_tutorial#whats_next)
-
-[Controlling traffic with network policies](/docs/openshift?topic=openshift-network_policies#network_policies)
-
-* [Default Calico network policies](/docs/openshift?topic=openshift-network_policies#default_policy)
-
-* [Installing and configuring the Calico CLI](/docs/openshift?topic=openshift-network_policies#cli_install)
-
-* [Viewing network policies](/docs/openshift?topic=openshift-network_policies#view_policies)
-
-* [Adding network policies](/docs/openshift?topic=openshift-network_policies#adding_network_policies)
-
-* [Controlling inbound traffic to NLB or NodePort services](/docs/openshift?topic=openshift-network_policies#block_ingress)
-
-* [Example Calico policies to restrict public or private network traffic](/docs/openshift?topic=openshift-network_policies#isolate_workers_public)
-
-    * [Applying public network policies](/docs/openshift?topic=openshift-network_policies#calico-public)
-
-    * [Applying private network policies](/docs/openshift?topic=openshift-network_policies#isolate_workers)
-
-* [Controlling traffic between pods](/docs/openshift?topic=openshift-network_policies#isolate_services)
-
-* [Logging denied traffic](/docs/openshift?topic=openshift-network_policies#log_denied)
-
-[Opening required ports and IP addresses in your allowlist](/docs/openshift?topic=openshift-firewall#firewall)
-
-* [Opening ports in a corporate allowlist](/docs/openshift?topic=openshift-firewall#corporate)
-
-    * [Running `ibmcloud`, `ibmcloud oc`, and `ibmcloud cr` commands from behind an allowlist](/docs/openshift?topic=openshift-firewall#firewall_bx)
-
-    * [Running `oc` commands from behind an allowlist](/docs/openshift?topic=openshift-firewall#firewall_kubectl)
-
-    * [Running `calicoctl` commands from behind an allowlist](/docs/openshift?topic=openshift-firewall#firewall_calicoctl)
-
-* [Opening ports in gateway appliance allowlists](/docs/openshift?topic=openshift-firewall#vyatta_firewall)
-
-    * [Opening required ports in a public allowlist](/docs/openshift?topic=openshift-firewall#firewall_outbound)
-
-    * [Opening required ports in a private allowlist](/docs/openshift?topic=openshift-firewall#firewall_private)
-
-    * [Opening ports in a public or private allowlist for inbound traffic](/docs/openshift?topic=openshift-firewall#firewall_inbound)
-
-* [Allowing the cluster to access resources through Calico network policies](/docs/openshift?topic=openshift-firewall#firewall_calico_egress)
-
-* [Allowing traffic from your cluster in other services' allowlists or in on-premises allowlists](/docs/openshift?topic=openshift-firewall#firewall_workers)
-
-* [Updating IAM allowlists for {{site.data.keyword.containershort}} network zones](/docs/openshift?topic=openshift-firewall#iam_firewall)
-
-    * [Getting your {{site.data.keyword.containershort}} subnet IP addresses](/docs/openshift?topic=openshift-firewall#iam_cidr_ip)
-
-[Configuring classic subnets and IP addresses](/docs/openshift?topic=openshift-subnets#subnets)
-
-* [Overview of classic networking in {{site.data.keyword.openshiftlong_notm}}](/docs/openshift?topic=openshift-subnets#basics)
-
-    * [VLANs](/docs/openshift?topic=openshift-subnets#basics_vlans)
-
-    * [Subnets and IP addresses](/docs/openshift?topic=openshift-subnets#basics_subnets)
-
-    * [Finding subnets provisioned in your account](/docs/openshift?topic=openshift-subnets#finding_subnets_account)
-
-    * [Network segmentation](/docs/openshift?topic=openshift-subnets#basics_segmentation)
-
-* [Using existing subnets to create a cluster](/docs/openshift?topic=openshift-subnets#subnets_custom)
-
-* [Managing existing portable IP addresses](/docs/openshift?topic=openshift-subnets#managing_ips)
-
-    * [Viewing available portable public IP addresses](/docs/openshift?topic=openshift-subnets#review_ip)
-
-    * [Freeing up used IP addresses](/docs/openshift?topic=openshift-subnets#free)
-
-* [Adding portable IP addresses](/docs/openshift?topic=openshift-subnets#adding_ips)
-
-    * [Adding portable IPs by ordering more subnets](/docs/openshift?topic=openshift-subnets#request)
-
-    * [Adding portable IPs by adding existing subnets to your cluster](/docs/openshift?topic=openshift-subnets#add-existing)
-
-* [Managing subnet routing](/docs/openshift?topic=openshift-subnets#subnet-routing)
-
-    * [Enabling routing between primary subnets on the same VLAN](/docs/openshift?topic=openshift-subnets#vlan-spanning)
-
-    * [Managing subnet routing for gateway appliances](/docs/openshift?topic=openshift-subnets#vra-routing)
-
-* [Removing subnets from a cluster](/docs/openshift?topic=openshift-subnets#remove-subnets)
-
-[Setting up classic VPN connectivity](/docs/openshift?topic=openshift-vpn#vpn)
-
-* [Using a Virtual Router Appliance](/docs/openshift?topic=openshift-vpn#vyatta)
 
 
 ### VPC clusters
@@ -3240,10 +3043,6 @@ subcollection: openshift
 
 * [Creating security group rules in the command line](/docs/openshift?topic=openshift-vpc-security-group-manage&interface=cli#security_groups_cli)
 
-[Selecting a container network interface](/docs/openshift?topic=openshift-cni#cni)
-
-* [Comparing Calico and OVN](/docs/openshift?topic=openshift-cni#cni-compare)
-
 [Controlling traffic with ACLs](/docs/openshift?topic=openshift-vpc-acls#vpc-acls)
 
 * [Overview of ACLs](/docs/openshift?topic=openshift-vpc-acls#acls-overview)
@@ -3253,6 +3052,10 @@ subcollection: openshift
 * [Isolate app services within a namespace](/docs/openshift?topic=openshift-vpc-kube-policies#services_one_ns)
 
 * [Isolate app services between namespaces](/docs/openshift?topic=openshift-vpc-kube-policies#services_across_ns)
+
+[Selecting a container network interface](/docs/openshift?topic=openshift-cni#cni)
+
+* [Comparing Calico and OVN](/docs/openshift?topic=openshift-cni#cni-compare)
 
 [Opening required ports and IP addresses in allowlists](/docs/openshift?topic=openshift-vpc-firewall#vpc-firewall)
 
@@ -3358,9 +3161,112 @@ subcollection: openshift
 
     * [Use {{site.data.keyword.tg_full_notm}}](/docs/openshift?topic=openshift-vpc-vpnaas#vpc-use-transit-gw)
 
+[Adding static routes to worker nodes](/docs/openshift?topic=openshift-static-routes#static-routes)
+
+* [About static routes](/docs/openshift?topic=openshift-static-routes#about-static-routes)
+
+* [Enabling the static route add-on](/docs/openshift?topic=openshift-static-routes#enable-add-on)
+
+    * [Enabling the static route add-on from the console](/docs/openshift?topic=openshift-static-routes#enable-add-on-console)
+
+    * [Enabling the static route add-on with the CLI](/docs/openshift?topic=openshift-static-routes#enable-add-on-cli)
+
+* [Creating static routes](/docs/openshift?topic=openshift-static-routes#create-route-resources)
+
+
+### Classic clusters
+{: #sitemap_classic_clusters}
+
+
+[Network policies (Classic)](/docs/openshift?topic=openshift-network_policies#network_policies)
+
+* [Default Calico network policies](/docs/openshift?topic=openshift-network_policies#default_policy)
+
+* [Installing and configuring the Calico CLI](/docs/openshift?topic=openshift-network_policies#cli_install)
+
+* [Viewing network policies](/docs/openshift?topic=openshift-network_policies#view_policies)
+
+* [Adding network policies](/docs/openshift?topic=openshift-network_policies#adding_network_policies)
+
+* [Controlling inbound traffic to NLB or NodePort services](/docs/openshift?topic=openshift-network_policies#block_ingress)
+
+* [Example Calico policies to restrict public or private network traffic](/docs/openshift?topic=openshift-network_policies#isolate_workers_public)
+
+    * [Applying public network policies](/docs/openshift?topic=openshift-network_policies#calico-public)
+
+    * [Applying private network policies](/docs/openshift?topic=openshift-network_policies#isolate_workers)
+
+* [Controlling traffic between pods](/docs/openshift?topic=openshift-network_policies#isolate_services)
+
+* [Logging denied traffic](/docs/openshift?topic=openshift-network_policies#log_denied)
+
+[Opening required ports and IP addresses in your allowlist](/docs/openshift?topic=openshift-firewall#firewall)
+
+* [Opening ports in a corporate allowlist](/docs/openshift?topic=openshift-firewall#corporate)
+
+    * [Running `ibmcloud`, `ibmcloud oc`, and `ibmcloud cr` commands from behind an allowlist](/docs/openshift?topic=openshift-firewall#firewall_bx)
+
+    * [Running `oc` commands from behind an allowlist](/docs/openshift?topic=openshift-firewall#firewall_kubectl)
+
+    * [Running `calicoctl` commands from behind an allowlist](/docs/openshift?topic=openshift-firewall#firewall_calicoctl)
+
+* [Opening ports in gateway appliance allowlists](/docs/openshift?topic=openshift-firewall#vyatta_firewall)
+
+    * [Opening required ports in a public allowlist](/docs/openshift?topic=openshift-firewall#firewall_outbound)
+
+    * [Opening required ports in a private allowlist](/docs/openshift?topic=openshift-firewall#firewall_private)
+
+    * [Opening ports in a public or private allowlist for inbound traffic](/docs/openshift?topic=openshift-firewall#firewall_inbound)
+
+* [Allowing the cluster to access resources through Calico network policies](/docs/openshift?topic=openshift-firewall#firewall_calico_egress)
+
+* [Allowing traffic from your cluster in other services' allowlists or in on-premises allowlists](/docs/openshift?topic=openshift-firewall#firewall_workers)
+
+* [Updating IAM allowlists for {{site.data.keyword.containershort}} network zones](/docs/openshift?topic=openshift-firewall#iam_firewall)
+
+    * [Getting your {{site.data.keyword.containershort}} subnet IP addresses](/docs/openshift?topic=openshift-firewall#iam_cidr_ip)
+
+[Configuring classic subnets and IP addresses](/docs/openshift?topic=openshift-subnets#subnets)
+
+* [Overview of classic networking in {{site.data.keyword.openshiftlong_notm}}](/docs/openshift?topic=openshift-subnets#basics)
+
+    * [VLANs](/docs/openshift?topic=openshift-subnets#basics_vlans)
+
+    * [Subnets and IP addresses](/docs/openshift?topic=openshift-subnets#basics_subnets)
+
+    * [Finding subnets provisioned in your account](/docs/openshift?topic=openshift-subnets#finding_subnets_account)
+
+    * [Network segmentation](/docs/openshift?topic=openshift-subnets#basics_segmentation)
+
+* [Using existing subnets to create a cluster](/docs/openshift?topic=openshift-subnets#subnets_custom)
+
+* [Managing existing portable IP addresses](/docs/openshift?topic=openshift-subnets#managing_ips)
+
+    * [Viewing available portable public IP addresses](/docs/openshift?topic=openshift-subnets#review_ip)
+
+    * [Freeing up used IP addresses](/docs/openshift?topic=openshift-subnets#free)
+
+* [Adding portable IP addresses](/docs/openshift?topic=openshift-subnets#adding_ips)
+
+    * [Adding portable IPs by ordering more subnets](/docs/openshift?topic=openshift-subnets#request)
+
+    * [Adding portable IPs by adding existing subnets to your cluster](/docs/openshift?topic=openshift-subnets#add-existing)
+
+* [Managing subnet routing](/docs/openshift?topic=openshift-subnets#subnet-routing)
+
+    * [Enabling routing between primary subnets on the same VLAN](/docs/openshift?topic=openshift-subnets#vlan-spanning)
+
+    * [Managing subnet routing for gateway appliances](/docs/openshift?topic=openshift-subnets#vra-routing)
+
+* [Removing subnets from a cluster](/docs/openshift?topic=openshift-subnets#remove-subnets)
+
+[Setting up classic VPN connectivity](/docs/openshift?topic=openshift-vpn#vpn)
+
+* [Using a Virtual Router Appliance](/docs/openshift?topic=openshift-vpn#vyatta)
+
 
 ### Satellite clusters
-{: #sitemap_satellite_clusters}
+{: #sitemap_satellite_clusters1}
 
 
 [Customizing your network setup in {{site.data.keyword.satelliteshort}} locations and clusters](/docs/openshift?topic=openshift-satellite-network-customization#satellite-network-customization)
@@ -3447,34 +3353,6 @@ subcollection: openshift
     * [How can I control who has access to my app deployments?](/docs/openshift?topic=openshift-plan_deploy#app_plan_logmet_access)
 
     * [After I deploy my app, how can I monitor its health?](/docs/openshift?topic=openshift-plan_deploy#app_plan_logmet_monitor)
-
-[Building images for your apps](/docs/openshift?topic=openshift-images#images)
-
-* [Building images](/docs/openshift?topic=openshift-images#build_images)
-
-* [Deploying containers from an existing image stream in the internal registry](/docs/openshift?topic=openshift-images#oc_imagestream_deploy)
-
-    * [Using an image stream with the CLI](/docs/openshift?topic=openshift-images#oc_imagestream_deploy_cli)
-
-    * [Using an image stream from the {{site.data.keyword.redhat_openshift_notm}} web console](/docs/openshift?topic=openshift-images#oc_imagestream_deploy-ui)
-
-* [Deploying containers from an {{site.data.keyword.registrylong_notm}} image to the `default` {{site.data.keyword.redhat_openshift_notm}} project](/docs/openshift?topic=openshift-images#namespace)
-
-* [Deploying containers from an encrypted image](/docs/openshift?topic=openshift-images#encrypted-images)
-
-* [Referring to the image pull secret in your pod deployment](/docs/openshift?topic=openshift-images#pod_imagePullSecret)
-
-* [Pushing images to {{site.data.keyword.registrylong_notm}}](/docs/openshift?topic=openshift-images#push-images)
-
-* [Managing security of images in {{site.data.keyword.registrylong_notm}} with Vulnerability Advisor](/docs/openshift?topic=openshift-images#va-images)
-
-* [Setting up trusted content for container images](/docs/openshift?topic=openshift-images#trusted_images)
-
-* [Enabling image security enforcement in your cluster](/docs/openshift?topic=openshift-images#portieris-image-sec)
-
-    * [Enabling or disabling image security enforcement](/docs/openshift?topic=openshift-images#portieris-enable)
-
-    * [Default image policies](/docs/openshift?topic=openshift-images#portieris-default-policies)
 
 [Developing apps](/docs/openshift?topic=openshift-app#app)
 
@@ -3563,11 +3441,6 @@ subcollection: openshift
     * [Private app networking for classic clusters](/docs/openshift?topic=openshift-cs_network_planning#private_both_vlans)
 
     * [Private app networking for VPC clusters](/docs/openshift?topic=openshift-cs_network_planning#private_vpc)
-
-
-### Routes
-{: #sitemap_routes}
-
 
 [Exposing apps with routes in {{site.data.keyword.redhat_openshift_notm}} 4](/docs/openshift?topic=openshift-openshift_routes#openshift_routes)
 
@@ -3677,6 +3550,10 @@ subcollection: openshift
 * [Enable health checks on a subdomain by creating a health monitor](/docs/openshift?topic=openshift-loadbalancer_hostname#loadbalancer_hostname_monitor)
 
     * [Updating and removing IPs and monitors from subdomains](/docs/openshift?topic=openshift-loadbalancer_hostname#loadbalancer_hostname_delete)
+
+[Preventing app workloads from running on edge worker nodes](/docs/openshift?topic=openshift-edge-workload-prevent#edge-workload-prevent)
+
+* [Before you begin](/docs/openshift?topic=openshift-edge-workload-prevent#edge-workload-prereqs)
 
 
 ### VPC load balancers
@@ -3972,12 +3849,6 @@ subcollection: openshift
 
 * [Exposing apps with routes and Link endpoints for traffic from {{site.data.keyword.cloud_notm}}](/docs/openshift?topic=openshift-sat-expose-apps#sat-expose-cloud)
 
-[Preventing app workloads from running on edge worker nodes](/docs/openshift?topic=openshift-edge-workload-prevent#edge-workload-prevent)
-
-* [Before you begin](/docs/openshift?topic=openshift-edge-workload-prevent#edge-workload-prereqs)
-
-[Deploying the Sysdig agent on edge worker nodes](/docs/openshift?topic=openshift-edge-sysdig#edge-sysdig)
-
 
 ## Autoscaling
 {: #sitemap_autoscaling}
@@ -4052,592 +3923,6 @@ subcollection: openshift
 * [Setting up HPA](/docs/openshift?topic=openshift-cluster-scaling-hpa-gpu#hpa-gpu-setup)
 
 [Rebalancing or resizing autoscaled worker pools](/docs/openshift?topic=openshift-ca_update_worker_node_pool#ca_update_worker_node_pool)
-
-
-## Static routes
-{: #sitemap_static_routes}
-
-
-[Static routes](/docs/openshift?topic=openshift-static-routes#static-routes)
-
-* [About static routes](/docs/openshift?topic=openshift-static-routes#about-static-routes)
-
-* [Enabling the static route add-on](/docs/openshift?topic=openshift-static-routes#enable-add-on)
-
-    * [Enabling the static route add-on from the console](/docs/openshift?topic=openshift-static-routes#enable-add-on-console)
-
-    * [Enabling the static route add-on with the CLI](/docs/openshift?topic=openshift-static-routes#enable-add-on-cli)
-
-* [Creating static routes](/docs/openshift?topic=openshift-static-routes#create-route-resources)
-
-
-## OpenShift AI
-{: #sitemap_openshift_ai}
-
-
-[About the Red Hat OpenShift AI add-on](/docs/openshift?topic=openshift-ai-addon-about#ai-addon-about)
-
-* [What gets deployed when I install the OpenShift AI add-on?](/docs/openshift?topic=openshift-ai-addon-about#ai-addon-deployed)
-
-* [Who is responsible for managing the OpenShift AI add-on components and required operators?](/docs/openshift?topic=openshift-ai-addon-about#ai-addon-responsibility)
-
-    * [OpenShift AI operator](/docs/openshift?topic=openshift-ai-addon-about#responsible-IBM)
-
-    * [Additional operators](/docs/openshift?topic=openshift-ai-addon-about#responsible-customer)
-
-* [How are OpenShift AI add-on components updated?](/docs/openshift?topic=openshift-ai-addon-about#ai-addon-updatehow)
-
-    * [Updating the OpenShift AI operator](/docs/openshift?topic=openshift-ai-addon-about#ai-addon-updatehow-managed)
-
-    * [Updating operators not managed by IBM](/docs/openshift?topic=openshift-ai-addon-about#ai-addon-updatehow-notmanaged)
-
-* [OpenShift AI add-on version 419 changes](/docs/openshift?topic=openshift-ai-addon-about#ai-addon-version-419)
-
-    * [Components removed in version 419](/docs/openshift?topic=openshift-ai-addon-about#ai-419-removed)
-
-    * [Components renamed in version 419](/docs/openshift?topic=openshift-ai-addon-about#ai-419-renamed)
-
-    * [New components in version 419](/docs/openshift?topic=openshift-ai-addon-about#ai-419-new)
-
-    * [Setting up the Trainer component](/docs/openshift?topic=openshift-ai-addon-about#ai-419-trainer-setup)
-
-    * [Upgrade restrictions for version 419](/docs/openshift?topic=openshift-ai-addon-about#ai-419-upgrade-restrictions)
-
-* [What's next?](/docs/openshift?topic=openshift-ai-addon-about#ai-addon-ov-next)
-
-[Installing the Red Hat OpenShift AI add-on](/docs/openshift?topic=openshift-ai-addon-install#ai-addon-install)
-
-* [Minimum requirements](/docs/openshift?topic=openshift-ai-addon-install#ai-min)
-
-* [Supported versions](/docs/openshift?topic=openshift-ai-addon-install#versions)
-
-* [Considerations](/docs/openshift?topic=openshift-ai-addon-install#ai-consideration)
-
-* [Before you begin](/docs/openshift?topic=openshift-ai-addon-install&interface=cli#ai-before)
-
-* [Prerequisites](/docs/openshift?topic=openshift-ai-addon-install&interface=ui#ai-before-ui)
-
-* [Step 1: Choose customization options](/docs/openshift?topic=openshift-ai-addon-install&interface=ui#ai-custom-step)
-
-* [Step 2: Review additional recommended operators](/docs/openshift?topic=openshift-ai-addon-install&interface=cli#ai-ops-rec-cli)
-
-* [Step 3: Install the add-on in the CLI](/docs/openshift?topic=openshift-ai-addon-install&interface=cli#ai-install-cli)
-
-* [Step 2: Review the additional recommended operators](/docs/openshift?topic=openshift-ai-addon-install&interface=ui#ai-ops-rec)
-
-* [Step 3: Install the add-on in the UI](/docs/openshift?topic=openshift-ai-addon-install&interface=ui#ai-install-ui)
-
-* [Step 4: Access the OpenShift AI dashboard](/docs/openshift?topic=openshift-ai-addon-install&interface=ui#ai-dashboard)
-
-* [Optional: Setting up KServe in Advanced mode](/docs/openshift?topic=openshift-ai-addon-install&interface=ui#ai-install-kserve)
-
-* [OpenShift AI customization options](/docs/openshift?topic=openshift-ai-addon-install&interface=ui#custom-options)
-
-* [Additional recommended operators](/docs/openshift?topic=openshift-ai-addon-install&interface=ui#rec-ops-custom)
-
-* [What's next?](/docs/openshift?topic=openshift-ai-addon-install&interface=ui#ai-addon-install-next)
-
-[Managing the Red Hat OpenShift AI add-on](/docs/openshift?topic=openshift-ai-addon-manage#ai-addon-manage)
-
-* [Updating the IBM-managed OpenShift AI operator](/docs/openshift?topic=openshift-ai-addon-manage#ai-addon-update)
-
-    * [Major updates](/docs/openshift?topic=openshift-ai-addon-manage#ai-addon-update-major)
-
-    * [Minor and patch updates](/docs/openshift?topic=openshift-ai-addon-manage#ai-addon-update-minorpatch)
-
-    * [Applying the update](/docs/openshift?topic=openshift-ai-addon-manage#ai-addon-update-apply)
-
-    * [Approving the install plan and applying the update](/docs/openshift?topic=openshift-ai-addon-manage#ai-addon-update-approve)
-
-* [Disabling the add-on](/docs/openshift?topic=openshift-ai-addon-manage#ai-addon-disable)
-
-* [Getting support for the OpenShift AI add-on](/docs/openshift?topic=openshift-ai-addon-manage#ai-addon-support)
-
-
-## Advanced Cluster Management
-{: #sitemap_advanced_cluster_management}
-
-
-[About the Advanced Cluster Management add-on](/docs/openshift?topic=openshift-acm-about#acm-about)
-
-* [How it works](/docs/openshift?topic=openshift-acm-about#how)
-
-* [ACM plan overviews](/docs/openshift?topic=openshift-acm-about#overviews)
-
-* [ACM for Kubernetes](/docs/openshift?topic=openshift-acm-about#kube)
-
-* [Next steps](/docs/openshift?topic=openshift-acm-about#next)
-
-[Setting up the Advanced Cluster Management add-on](/docs/openshift?topic=openshift-acm#acm)
-
-* [Before you begin](/docs/openshift?topic=openshift-acm#before)
-
-* [Create a trusted profile for ACM](/docs/openshift?topic=openshift-acm#trust-prof)
-
-    * [Create a trusted profile using the UI](/docs/openshift?topic=openshift-acm&interface=ui#trust-prof-ui)
-
-    * [Create a trusted profile using the CLI](/docs/openshift?topic=openshift-acm&interface=cli#trust-prof-cli)
-
-    * [Set the trusted profile for the cluster](/docs/openshift?topic=openshift-acm&interface=cli#trust-prof-set)
-
-* [Preparing secrets for ACM](/docs/openshift?topic=openshift-acm&interface=cli#prep-secret)
-
-* [Installing ACM from the UI](/docs/openshift?topic=openshift-acm&interface=ui#install-ui)
-
-* [Installing ACM from the CLI](/docs/openshift?topic=openshift-acm&interface=cli#install-cli)
-
-* [ACM operators](/docs/openshift?topic=openshift-acm&interface=cli#acm-operators)
-
-    * [Automatically installed operators](/docs/openshift?topic=openshift-acm&interface=cli#auto-op)
-
-    * [Optional operators](/docs/openshift?topic=openshift-acm&interface=cli#optional-op)
-
-* [Importing managed clusters after ACM is installed](/docs/openshift?topic=openshift-acm&interface=cli#import)
-
-    * [Importing a managed cluster using the CLI](/docs/openshift?topic=openshift-acm&interface=cli#import_cli)
-
-    * [Importing a managed cluster by using the OpenShift token and API server URL](/docs/openshift?topic=openshift-acm&interface=cli#import-token-url)
-
-    * [Importing a managed cluster by using the kubeconfig](/docs/openshift?topic=openshift-acm&interface=cli#import-kubeconfig)
-
-    * [Importing a managed cluster by using a generated command](/docs/openshift?topic=openshift-acm&interface=cli#import-generate)
-
-* [Updating or removing a managed cluster](/docs/openshift?topic=openshift-acm&interface=cli#after)
-
-* [Upgrading the ACM version](/docs/openshift?topic=openshift-acm&interface=cli#upgrade)
-
-* [Deleting the ACM add-on](/docs/openshift?topic=openshift-acm&interface=cli#delete)
-
-
-## OpenShift Virtualization
-{: #sitemap_openshift_virtualization}
-
-
-[OpenShift Virtualization on IBM Cloud](/docs/openshift?topic=openshift-virt-overview#virt-overview)
-
-* [Overview](/docs/openshift?topic=openshift-virt-overview#virt-what-is)
-
-* [Key capabilities](/docs/openshift?topic=openshift-virt-overview#virt-capabilities)
-
-* [Deployment options](/docs/openshift?topic=openshift-virt-overview#virt-deployment-options)
-
-    * [Feature comparison](/docs/openshift?topic=openshift-virt-overview#virt-choose-deployment)
-
-* [Characteristics](/docs/openshift?topic=openshift-virt-overview#virt-requirements)
-
-* [Supported bare metal flavors](/docs/openshift?topic=openshift-virt-overview#virt-bm-flavors)
-
-* [Storage and networking](/docs/openshift?topic=openshift-virt-overview#virt-storage-networking)
-
-    * [Storage options](/docs/openshift?topic=openshift-virt-overview#virt-storage-options)
-
-    * [Networking capabilities](/docs/openshift?topic=openshift-virt-overview#virt-networking-options)
-
-* [Limitations](/docs/openshift?topic=openshift-virt-overview#virt-limitations)
-
-* [Getting started](/docs/openshift?topic=openshift-virt-overview#virt-next-steps)
-
-
-### Red Hat OpenShift Virtualization Service
-{: #sitemap_red_hat_openshift_virtualization_service}
-
-
-[OpenShift Virtualization Service overview](/docs/openshift?topic=openshift-rovs-overview#rovs-overview)
-
-* [What is OpenShift Virtualization Service?](/docs/openshift?topic=openshift-rovs-overview#rovs-what-is)
-
-* [How does Virtualization Service compare to manual deployment?](/docs/openshift?topic=openshift-rovs-overview#rovs-comparison)
-
-* [What are the cluster requirements for Virtualization Service?](/docs/openshift?topic=openshift-rovs-overview#rovs-requirements)
-
-* [Which bare metal flavors are supported?](/docs/openshift?topic=openshift-rovs-overview#rovs-flavors)
-
-* [Where is Virtualization Service available?](/docs/openshift?topic=openshift-rovs-overview#rovs-regions)
-
-* [What are the limitations of Virtualization Service?](/docs/openshift?topic=openshift-rovs-overview#rovs-limitations-ov)
-
-* [How is Virtualization Service priced?](/docs/openshift?topic=openshift-rovs-overview#rovs-pricing)
-
-* [How does the Virtualization Service cluster license compare to a standard Red Hat OpenShift on IBM Cloud cluster license?](/docs/openshift?topic=openshift-rovs-overview#rovs-license-comparison)
-
-* [Next steps](/docs/openshift?topic=openshift-rovs-overview#rovs-next-steps)
-
-[Quickstart](/docs/openshift?topic=openshift-rovs-getting-started#rovs-getting-started)
-
-* [Before you begin](/docs/openshift?topic=openshift-rovs-getting-started#rovs-gs-prereqs)
-
-* [Create a Virtualization Service cluster](/docs/openshift?topic=openshift-rovs-getting-started#rovs-gs-create)
-
-* [Access the OpenShift console](/docs/openshift?topic=openshift-rovs-getting-started#rovs-gs-access)
-
-* [Verify pre-configured components](/docs/openshift?topic=openshift-rovs-getting-started#rovs-gs-verify)
-
-* [Deploy your first virtual machine](/docs/openshift?topic=openshift-rovs-getting-started#rovs-gs-first-vm)
-
-* [Next steps](/docs/openshift?topic=openshift-rovs-getting-started#rovs-gs-next-steps)
-
-* [Troubleshooting](/docs/openshift?topic=openshift-rovs-getting-started#rovs-gs-troubleshoot)
-
-[Creating an OpenShift Virtualization Service cluster](/docs/openshift?topic=openshift-rovs-cluster-create#rovs-cluster-create)
-
-* [Objectives](/docs/openshift?topic=openshift-rovs-cluster-create#rovs-create-objectives)
-
-* [Before you begin](/docs/openshift?topic=openshift-rovs-cluster-create#rovs-create-prereqs)
-
-    * [Required permissions](/docs/openshift?topic=openshift-rovs-cluster-create#rovs-create-permissions)
-
-    * [Required tools for console users](/docs/openshift?topic=openshift-rovs-cluster-create&interface=ui#rovs-create-tools-console)
-
-    * [Required tools for CLI users](/docs/openshift?topic=openshift-rovs-cluster-create&interface=cli#rovs-create-tools-cli)
-
-* [Create or verify your VPC setup](/docs/openshift?topic=openshift-rovs-cluster-create&interface=cli#rovs-create-vpc)
-
-    * [VPC infrastructure requirements](/docs/openshift?topic=openshift-rovs-cluster-create&interface=cli#rovs-vpc-requirements)
-
-    * [Creating VPC resources from the console](/docs/openshift?topic=openshift-rovs-cluster-create&interface=ui#rovs-vpc-console)
-
-    * [Creating VPC resources from the CLI](/docs/openshift?topic=openshift-rovs-cluster-create&interface=cli#rovs-vpc-cli)
-
-* [Create a Virtualization Service cluster](/docs/openshift?topic=openshift-rovs-cluster-create&interface=cli#rovs-create-cluster)
-
-    * [Creating a cluster from the console](/docs/openshift?topic=openshift-rovs-cluster-create&interface=ui#rovs-create-console)
-
-* [Verify the cluster and pre-configured components](/docs/openshift?topic=openshift-rovs-cluster-create&interface=ui#rovs-create-verify)
-
-    * [Access the cluster from the console](/docs/openshift?topic=openshift-rovs-cluster-create&interface=ui#rovs-create-verify-access-console)
-
-    * [Access the cluster from the CLI](/docs/openshift?topic=openshift-rovs-cluster-create&interface=cli#rovs-create-verify-access-cli)
-
-    * [Verify OpenShift Virtualization from the console](/docs/openshift?topic=openshift-rovs-cluster-create&interface=ui#rovs-create-verify-virt-console)
-
-    * [Verify OpenShift Virtualization from the CLI](/docs/openshift?topic=openshift-rovs-cluster-create&interface=cli#rovs-create-verify-virt-cli)
-
-* [Access the OpenShift Virtualization interface](/docs/openshift?topic=openshift-rovs-cluster-create&interface=cli#rovs-create-access-ui)
-
-    * [Access from the console](/docs/openshift?topic=openshift-rovs-cluster-create&interface=ui#rovs-create-access-ui-console)
-
-    * [Access from the CLI](/docs/openshift?topic=openshift-rovs-cluster-create&interface=cli#rovs-create-access-ui-cli)
-
-* [Next steps](/docs/openshift?topic=openshift-rovs-cluster-create&interface=cli#rovs-create-next-steps)
-
-* [Troubleshooting](/docs/openshift?topic=openshift-rovs-cluster-create&interface=cli#rovs-create-troubleshoot)
-
-[Managing Virtualization Service clusters](/docs/openshift?topic=openshift-rovs-manage#rovs-manage)
-
-* [Understanding managed components](/docs/openshift?topic=openshift-rovs-manage#rovs-manage-components)
-
-    * [Core components (cannot be disabled)](/docs/openshift?topic=openshift-rovs-manage#rovs-manage-core)
-
-    * [Viewing managed add-ons](/docs/openshift?topic=openshift-rovs-manage#rovs-manage-view-addons)
-
-* [Managing worker nodes](/docs/openshift?topic=openshift-rovs-manage#rovs-manage-workers)
-
-    * [Viewing worker nodes](/docs/openshift?topic=openshift-rovs-manage#rovs-manage-view-workers)
-
-    * [Adding worker nodes](/docs/openshift?topic=openshift-rovs-manage#rovs-manage-add-workers)
-
-    * [Replacing worker nodes](/docs/openshift?topic=openshift-rovs-manage#rovs-manage-replace-workers)
-
-    * [Reloading worker nodes](/docs/openshift?topic=openshift-rovs-manage#rovs-manage-reload-workers)
-
-* [Managing worker pools](/docs/openshift?topic=openshift-rovs-manage#rovs-manage-pools)
-
-    * [Viewing worker pools](/docs/openshift?topic=openshift-rovs-manage#rovs-manage-view-pools)
-
-    * [Creating additional worker pools](/docs/openshift?topic=openshift-rovs-manage#rovs-manage-create-pools)
-
-    * [Adding zones to worker pools](/docs/openshift?topic=openshift-rovs-manage#rovs-manage-add-zones)
-
-* [Updating the cluster](/docs/openshift?topic=openshift-rovs-manage#rovs-manage-update)
-
-    * [Checking for updates](/docs/openshift?topic=openshift-rovs-manage#rovs-manage-check-updates)
-
-    * [Updating the cluster master](/docs/openshift?topic=openshift-rovs-manage#rovs-manage-update-master)
-
-    * [Updating worker nodes](/docs/openshift?topic=openshift-rovs-manage#rovs-manage-update-workers)
-
-* [Monitoring cluster health](/docs/openshift?topic=openshift-rovs-manage#rovs-manage-monitor)
-
-    * [Checking cluster status](/docs/openshift?topic=openshift-rovs-manage#rovs-manage-check-status)
-
-    * [Monitoring component health](/docs/openshift?topic=openshift-rovs-manage#rovs-manage-monitor-components)
-
-    * [Viewing cluster logs](/docs/openshift?topic=openshift-rovs-manage#rovs-manage-logs)
-
-* [Managing virtual machines](/docs/openshift?topic=openshift-rovs-manage#rovs-manage-vms)
-
-    * [Viewing virtual machines](/docs/openshift?topic=openshift-rovs-manage#rovs-manage-view-vms)
-
-    * [Live migrating VMs](/docs/openshift?topic=openshift-rovs-manage#rovs-manage-migrate-vms)
-
-    * [Stopping and starting VMs](/docs/openshift?topic=openshift-rovs-manage#rovs-manage-vm-lifecycle)
-
-* [Storage management](/docs/openshift?topic=openshift-rovs-manage#rovs-manage-storage)
-
-    * [Monitoring storage capacity](/docs/openshift?topic=openshift-rovs-manage#rovs-manage-storage-capacity)
-
-    * [Managing persistent volume claims](/docs/openshift?topic=openshift-rovs-manage#rovs-manage-pvcs)
-
-* [Troubleshooting](/docs/openshift?topic=openshift-rovs-manage#rovs-manage-troubleshoot)
-
-* [Next steps](/docs/openshift?topic=openshift-rovs-manage#rovs-manage-next-steps)
-
-[Managing the OpenShift Virtualization add-on](/docs/openshift?topic=openshift-rovs-addon-virtualization#rovs-addon-virtualization)
-
-* [Understanding the OpenShift Virtualization add-on](/docs/openshift?topic=openshift-rovs-addon-virtualization#rovs-addon-virt-about)
-
-* [Add-on characteristics](/docs/openshift?topic=openshift-rovs-addon-virtualization#rovs-addon-virt-characteristics)
-
-* [Installed resources](/docs/openshift?topic=openshift-rovs-addon-virtualization#rovs-addon-virt-resources)
-
-* [Viewing add-on information](/docs/openshift?topic=openshift-rovs-addon-virtualization#rovs-addon-virt-view)
-
-    * [Listing installed add-ons](/docs/openshift?topic=openshift-rovs-addon-virtualization#rovs-addon-virt-list)
-
-    * [Getting add-on details](/docs/openshift?topic=openshift-rovs-addon-virtualization#rovs-addon-virt-get)
-
-    * [Listing available add-on versions](/docs/openshift?topic=openshift-rovs-addon-virtualization#rovs-addon-virt-versions)
-
-    * [Checking for configuration options](/docs/openshift?topic=openshift-rovs-addon-virtualization#rovs-addon-virt-options)
-
-* [Updating the add-on](/docs/openshift?topic=openshift-rovs-addon-virtualization#rovs-addon-virt-update)
-
-    * [Automatic patch updates](/docs/openshift?topic=openshift-rovs-addon-virtualization#rovs-addon-virt-patch-updates)
-
-    * [Manual version upgrades](/docs/openshift?topic=openshift-rovs-addon-virtualization#rovs-addon-virt-version-upgrades)
-
-* [Disabling the add-on](/docs/openshift?topic=openshift-rovs-addon-virtualization#rovs-addon-virt-disable)
-
-* [Troubleshooting the add-on](/docs/openshift?topic=openshift-rovs-addon-virtualization#rovs-addon-virt-troubleshoot)
-
-    * [Gathering add-on information](/docs/openshift?topic=openshift-rovs-addon-virtualization#rovs-addon-virt-gather-info)
-
-    * [Opening a support case](/docs/openshift?topic=openshift-rovs-addon-virtualization#rovs-addon-virt-support)
-
-* [Next steps](/docs/openshift?topic=openshift-rovs-addon-virtualization#rovs-addon-virt-next)
-
-[OpenShift Virtualization Service limitations](/docs/openshift?topic=openshift-rovs-limitations#rovs-limitations)
-
-* [Infrastructure requirements](/docs/openshift?topic=openshift-rovs-limitations#rovs-limit-infra)
-
-* [Configuration restrictions](/docs/openshift?topic=openshift-rovs-limitations#rovs-limit-config)
-
-* [Storage and networking](/docs/openshift?topic=openshift-rovs-limitations#rovs-limit-storage-network)
-
-* [Virtual machines](/docs/openshift?topic=openshift-rovs-limitations#rovs-limit-vms)
-
-* [Licensing and scaling](/docs/openshift?topic=openshift-rovs-limitations#rovs-limit-licensing-scaling)
-
-* [Operations](/docs/openshift?topic=openshift-rovs-limitations#rovs-limit-ops)
-
-* [When to use standard OpenShift](/docs/openshift?topic=openshift-rovs-limitations#rovs-limit-alternatives)
-
-* [Next steps](/docs/openshift?topic=openshift-rovs-limitations#rovs-limit-next-steps)
-
-
-### Manual deployment
-{: #sitemap_manual_deployment}
-
-
-[Planning your deployment](/docs/openshift?topic=openshift-virt-plan#virt-plan)
-
-* [Prerequisites](/docs/openshift?topic=openshift-virt-plan#virt-prereqs)
-
-* [Planning your cluster configuration](/docs/openshift?topic=openshift-virt-plan#virt-plan-cluster)
-
-    * [Choosing bare metal flavors](/docs/openshift?topic=openshift-virt-plan#virt-plan-flavors)
-
-    * [Worker pool architecture](/docs/openshift?topic=openshift-virt-plan#virt-plan-worker-pools)
-
-* [Planning your storage solution](/docs/openshift?topic=openshift-virt-plan#virt-plan-storage)
-
-    * [Storage decision matrix](/docs/openshift?topic=openshift-virt-plan#virt-storage-matrix)
-
-    * [Storage options](/docs/openshift?topic=openshift-virt-plan#virt-storage-options)
-
-* [Planning your networking setup](/docs/openshift?topic=openshift-virt-plan#virt-plan-networking)
-
-    * [Networking options](/docs/openshift?topic=openshift-virt-plan#virt-plan-networking-options)
-
-* [Node placement](/docs/openshift?topic=openshift-virt-plan#virt-plan-node-placement)
-
-* [Sizing and optimization](/docs/openshift?topic=openshift-virt-plan#virt-plan-sizing)
-
-* [Next steps](/docs/openshift?topic=openshift-virt-plan#virt-plan-next-steps)
-
-[Setting up storage](/docs/openshift?topic=openshift-virt-storage-setup#virt-storage-setup)
-
-* [Before you begin](/docs/openshift?topic=openshift-virt-storage-setup#virt-storage-prereqs)
-
-* [Setting up OpenShift Data Foundation](/docs/openshift?topic=openshift-virt-storage-setup#virt-storage-odf)
-
-    * [Prerequisites for ODF](/docs/openshift?topic=openshift-virt-storage-setup#virt-storage-odf-prereqs)
-
-    * [Installing ODF from the console](/docs/openshift?topic=openshift-virt-storage-setup#virt-storage-odf-ui)
-
-    * [Installing ODF from the CLI](/docs/openshift?topic=openshift-virt-storage-setup#virt-storage-odf-cli)
-
-    * [Verifying ODF installation](/docs/openshift?topic=openshift-virt-storage-setup#virt-storage-odf-verify)
-
-* [Option 2: Setting up VPC File Storage](/docs/openshift?topic=openshift-virt-storage-setup#virt-storage-vpc-file)
-
-    * [Prerequisites for VPC File Storage](/docs/openshift?topic=openshift-virt-storage-setup#virt-storage-vpc-file-prereqs)
-
-    * [Step 1: Disable VPC Block Storage as default](/docs/openshift?topic=openshift-virt-storage-setup#virt-storage-vpc-file-disable-block)
-
-    * [Step 2: Install the VPC File CSI driver](/docs/openshift?topic=openshift-virt-storage-setup#virt-storage-vpc-file-install)
-
-    * [Step 3: Set a default storage class](/docs/openshift?topic=openshift-virt-storage-setup#virt-storage-vpc-file-default)
-
-    * [Step 4: Configure storage profiles for VPC File Storage](/docs/openshift?topic=openshift-virt-storage-setup#virt-storage-vpc-file-profiles)
-
-    * [Verifying VPC File Storage installation](/docs/openshift?topic=openshift-virt-storage-setup#virt-storage-vpc-file-verify)
-
-* [Storage comparison](/docs/openshift?topic=openshift-virt-storage-setup#virt-storage-comparison)
-
-* [Troubleshooting storage setup](/docs/openshift?topic=openshift-virt-storage-setup#virt-storage-troubleshoot)
-
-    * [ODF installation fails](/docs/openshift?topic=openshift-virt-storage-setup#virt-storage-ts-odf-fail)
-
-    * [VPC File Storage PVCs remain pending](/docs/openshift?topic=openshift-virt-storage-setup#virt-storage-ts-vpc-pending)
-
-    * [Storage profiles not updated](/docs/openshift?topic=openshift-virt-storage-setup#virt-storage-ts-profiles)
-
-* [Next steps](/docs/openshift?topic=openshift-virt-storage-setup#virt-storage-next-steps)
-
-[Installing the operator](/docs/openshift?topic=openshift-oc-virtualization#oc-virtualization)
-
-* [Before you begin](/docs/openshift?topic=openshift-oc-virtualization#virt-install-prereqs)
-
-* [Installing the OpenShift Virtualization Operator from the console](/docs/openshift?topic=openshift-oc-virtualization#virt-install-console)
-
-* [Installing the OpenShift Virtualization Operator from the CLI](/docs/openshift?topic=openshift-oc-virtualization#virt-install-cli)
-
-* [Creating the HyperConverged custom resource](/docs/openshift?topic=openshift-oc-virtualization#virt-install-hyperconverged)
-
-    * [Understanding node placement](/docs/openshift?topic=openshift-oc-virtualization#virt-install-node-placement)
-
-    * [Creating the HyperConverged CR from the console](/docs/openshift?topic=openshift-oc-virtualization#virt-install-hc-console)
-
-    * [Creating the HyperConverged CR from the CLI](/docs/openshift?topic=openshift-oc-virtualization#virt-install-hc-cli)
-
-* [Verifying the installation](/docs/openshift?topic=openshift-oc-virtualization#virt-install-verify)
-
-* [Troubleshooting installation issues](/docs/openshift?topic=openshift-oc-virtualization#virt-install-troubleshoot)
-
-    * [HyperConverged resource fails to deploy](/docs/openshift?topic=openshift-oc-virtualization#virt-install-ts-hc-fail)
-
-    * [Operator installation fails](/docs/openshift?topic=openshift-oc-virtualization#virt-install-ts-operator-fail)
-
-* [Next steps](/docs/openshift?topic=openshift-oc-virtualization#virt-install-next-steps)
-
-[Creating VMs with VPC File Storage](/docs/openshift?topic=openshift-virt-vpc-file-vm-create#virt-vpc-file-vm-create)
-
-* [Before you begin](/docs/openshift?topic=openshift-virt-vpc-file-vm-create#virt-vpc-file-vm-create-prereqs)
-
-* [Verifying your environment](/docs/openshift?topic=openshift-virt-vpc-file-vm-create#virt-vpc-file-vm-create-verify)
-
-* [Creating a virtual machine from the web console](/docs/openshift?topic=openshift-virt-vpc-file-vm-create#virt-vpc-file-vm-create-console)
-
-* [Creating a virtual machine from the CLI](/docs/openshift?topic=openshift-virt-vpc-file-vm-create#virt-vpc-file-vm-create-cli)
-
-* [Validating the virtual machine](/docs/openshift?topic=openshift-virt-vpc-file-vm-create#virt-vpc-file-vm-create-validate)
-
-* [Understanding limitations and considerations](/docs/openshift?topic=openshift-virt-vpc-file-vm-create#virt-vpc-file-vm-create-limitations)
-
-* [Troubleshooting](/docs/openshift?topic=openshift-virt-vpc-file-vm-create#virt-vpc-file-vm-create-troubleshooting)
-
-* [Next steps](/docs/openshift?topic=openshift-virt-vpc-file-vm-create#virt-vpc-file-vm-create-next)
-
-[Managing virtual network interfaces](/docs/openshift?topic=openshift-vni-virtualization#vni-virtualization)
-
-* [Understanding Virtual Network Interfaces](/docs/openshift?topic=openshift-vni-virtualization#vni-about)
-
-    * [Key features](/docs/openshift?topic=openshift-vni-virtualization#vni-features)
-
-    * [Cross-account attachment](/docs/openshift?topic=openshift-vni-virtualization#vni-cross-account)
-
-* [Limitations and considerations](/docs/openshift?topic=openshift-vni-virtualization#vni-limitations)
-
-* [Prerequisites](/docs/openshift?topic=openshift-vni-virtualization#vni-prereqs)
-
-* [Creating overlay UDNs for Pods and VMs](/docs/openshift?topic=openshift-vni-virtualization#vni-overlay-udns)
-
-    * [Creating a Primary UDN](/docs/openshift?topic=openshift-vni-virtualization#vni-primary-udn)
-
-    * [Creating a Secondary UDN](/docs/openshift?topic=openshift-vni-virtualization#vni-secondary-udn)
-
-* [Exposing VMs with VPC load balancers](/docs/openshift?topic=openshift-vni-virtualization#vni-alb-lbaas)
-
-* [Setting up localnet user defined networks](/docs/openshift?topic=openshift-vni-virtualization#vni-setup-localnet)
-
-    * [Installing the NMState operator](/docs/openshift?topic=openshift-vni-virtualization#vni-install-nmstate)
-
-    * [Creating the OVS bridge](/docs/openshift?topic=openshift-vni-virtualization#vni-create-bridge)
-
-    * [Creating a localnet user defined network](/docs/openshift?topic=openshift-vni-virtualization#vni-create-udn)
-
-* [Attaching VNIs to your cluster](/docs/openshift?topic=openshift-vni-virtualization#vni-attach)
-
-    * [Before you begin](/docs/openshift?topic=openshift-vni-virtualization#vni-attach-prereqs)
-
-    * [Attaching a VNI from the console](/docs/openshift?topic=openshift-vni-virtualization&interface=ui#vni-attach-console)
-
-    * [Attaching a VNI from the CLI](/docs/openshift?topic=openshift-vni-virtualization&interface=cli#vni-attach-cli)
-
-    * [Example](/docs/openshift?topic=openshift-vni-virtualization&interface=cli#vni-attach-example)
-
-* [Viewing VNI attachments](/docs/openshift?topic=openshift-vni-virtualization&interface=cli#vni-list)
-
-    * [Viewing VNI attachments from the console](/docs/openshift?topic=openshift-vni-virtualization&interface=ui#vni-list-console)
-
-    * [Viewing VNI attachments from the CLI](/docs/openshift?topic=openshift-vni-virtualization&interface=cli#vni-list-cli)
-
-    * [Example output](/docs/openshift?topic=openshift-vni-virtualization&interface=cli#vni-list-example)
-
-* [Detaching VNIs](/docs/openshift?topic=openshift-vni-virtualization&interface=cli#vni-detach)
-
-    * [Detaching VNIs from the console](/docs/openshift?topic=openshift-vni-virtualization&interface=ui#vni-detach-console)
-
-    * [Detaching VNIs from the CLI](/docs/openshift?topic=openshift-vni-virtualization&interface=cli#vni-detach-cli)
-
-    * [Example](/docs/openshift?topic=openshift-vni-virtualization&interface=cli#vni-detach-example)
-
-* [Using VNIs with OpenShift Virtualization](/docs/openshift?topic=openshift-vni-virtualization&interface=cli#vni-use-virtualization)
-
-* [Troubleshooting VNIs](/docs/openshift?topic=openshift-vni-virtualization&interface=cli#vni-troubleshooting)
-
-    * [Why can't I attach regular pods to localnet UDNs?](/docs/openshift?topic=openshift-vni-virtualization&interface=cli#vni-ts-pods)
-
-    * [Why is live migration pending across worker pools?](/docs/openshift?topic=openshift-vni-virtualization&interface=cli#vni-ts-migration)
-
-    * [Why are dynamic attached VNIs not working?](/docs/openshift?topic=openshift-vni-virtualization&interface=cli#vni-ts-not-working)
-
-[Tuning ODF performance for virtualization](/docs/openshift?topic=openshift-odf-virt-performance#odf-virt-performance)
-
-* [Before you begin](/docs/openshift?topic=openshift-odf-virt-performance#odf-virt-performance-prereqs)
-
-* [Selecting an ODF performance profile](/docs/openshift?topic=openshift-odf-virt-performance#odf-virt-profile)
-
-* [Configuring OSD pod resource limits](/docs/openshift?topic=openshift-odf-virt-performance#odf-virt-osd-resources)
-
-    * [Check current OSD resource limits](/docs/openshift?topic=openshift-odf-virt-performance#odf-virt-osd-check)
-
-    * [Increase OSD resource limits](/docs/openshift?topic=openshift-odf-virt-performance#odf-virt-osd-modify)
-
-    * [Verify the updated resource limits](/docs/openshift?topic=openshift-odf-virt-performance#odf-virt-osd-verify)
-
-* [Configuring the bulk flag for large data operations](/docs/openshift?topic=openshift-odf-virt-performance#odf-virt-bulk)
-
-* [Checking Ceph cluster health](/docs/openshift?topic=openshift-odf-virt-performance#odf-virt-health)
-
-    * [Run a basic health check](/docs/openshift?topic=openshift-odf-virt-performance#odf-virt-health-basic)
-
-    * [Understand cluster states](/docs/openshift?topic=openshift-odf-virt-performance#odf-virt-health-states)
-
-    * [Check placement group and OSD status](/docs/openshift?topic=openshift-odf-virt-performance#odf-virt-health-pg-osd)
-
-* [Next steps](/docs/openshift?topic=openshift-odf-virt-performance#odf-virt-next-steps)
 
 
 ## Storage
@@ -5657,8 +4942,8 @@ subcollection: openshift
 [Backing up and restoring storage data](/docs/openshift?topic=openshift-storage_br#storage_br)
 
 
-## Add-ons, Cloud Paks, Operators, and integrations
-{: #sitemap_add-ons_cloud_paks_operators_and_integrations}
+## Add-ons and operators
+{: #sitemap_add-ons_and_operators}
 
 
 [Add-ons for {{site.data.keyword.openshiftlong_notm}}](/docs/openshift?topic=openshift-addons#addons)
@@ -5738,6 +5023,563 @@ subcollection: openshift
     * [Referencing the secret in environment variables](/docs/openshift?topic=openshift-service-binding#reference_secret)
 
 * [Removing a service from a cluster](/docs/openshift?topic=openshift-service-binding#unbind-service)
+
+
+## OpenShift AI
+{: #sitemap_openshift_ai}
+
+
+[About the Red Hat OpenShift AI add-on](/docs/openshift?topic=openshift-ai-addon-about#ai-addon-about)
+
+* [What gets deployed when I install the OpenShift AI add-on?](/docs/openshift?topic=openshift-ai-addon-about#ai-addon-deployed)
+
+* [Who is responsible for managing the OpenShift AI add-on components and required operators?](/docs/openshift?topic=openshift-ai-addon-about#ai-addon-responsibility)
+
+    * [OpenShift AI operator](/docs/openshift?topic=openshift-ai-addon-about#responsible-IBM)
+
+    * [Additional operators](/docs/openshift?topic=openshift-ai-addon-about#responsible-customer)
+
+* [How are OpenShift AI add-on components updated?](/docs/openshift?topic=openshift-ai-addon-about#ai-addon-updatehow)
+
+    * [Updating the OpenShift AI operator](/docs/openshift?topic=openshift-ai-addon-about#ai-addon-updatehow-managed)
+
+    * [Updating operators not managed by IBM](/docs/openshift?topic=openshift-ai-addon-about#ai-addon-updatehow-notmanaged)
+
+* [What's next?](/docs/openshift?topic=openshift-ai-addon-about#ai-addon-ov-next)
+
+[Installing the Red Hat OpenShift AI add-on](/docs/openshift?topic=openshift-ai-addon-install#ai-addon-install)
+
+* [Minimum requirements](/docs/openshift?topic=openshift-ai-addon-install#ai-min)
+
+* [Supported versions](/docs/openshift?topic=openshift-ai-addon-install#versions)
+
+* [Considerations](/docs/openshift?topic=openshift-ai-addon-install#ai-consideration)
+
+* [Before you begin](/docs/openshift?topic=openshift-ai-addon-install&interface=cli#ai-before)
+
+* [Prerequisites](/docs/openshift?topic=openshift-ai-addon-install&interface=ui#ai-before-ui)
+
+* [Step 1: Choose customization options](/docs/openshift?topic=openshift-ai-addon-install&interface=ui#ai-custom-step)
+
+* [Step 2: Review additional recommended operators](/docs/openshift?topic=openshift-ai-addon-install&interface=cli#ai-ops-rec-cli)
+
+* [Step 3: Install the add-on in the CLI](/docs/openshift?topic=openshift-ai-addon-install&interface=cli#ai-install-cli)
+
+* [Step 2: Review the additional recommended operators](/docs/openshift?topic=openshift-ai-addon-install&interface=ui#ai-ops-rec)
+
+* [Step 3: Install the add-on in the UI](/docs/openshift?topic=openshift-ai-addon-install&interface=ui#ai-install-ui)
+
+* [Step 4: Access the OpenShift AI dashboard](/docs/openshift?topic=openshift-ai-addon-install&interface=ui#ai-dashboard)
+
+* [Optional: Setting up KServe in Advanced mode](/docs/openshift?topic=openshift-ai-addon-install&interface=ui#ai-install-kserve)
+
+* [OpenShift AI customization options](/docs/openshift?topic=openshift-ai-addon-install&interface=ui#custom-options)
+
+* [Additional recommended operators](/docs/openshift?topic=openshift-ai-addon-install&interface=ui#rec-ops-custom)
+
+* [What's next?](/docs/openshift?topic=openshift-ai-addon-install&interface=ui#ai-addon-install-next)
+
+[Managing the Red Hat OpenShift AI add-on](/docs/openshift?topic=openshift-ai-addon-manage#ai-addon-manage)
+
+* [Updating the IBM-managed OpenShift AI operator](/docs/openshift?topic=openshift-ai-addon-manage#ai-addon-update)
+
+    * [Major updates](/docs/openshift?topic=openshift-ai-addon-manage#ai-addon-update-major)
+
+    * [Minor and patch updates](/docs/openshift?topic=openshift-ai-addon-manage#ai-addon-update-minorpatch)
+
+    * [Applying the update](/docs/openshift?topic=openshift-ai-addon-manage#ai-addon-update-apply)
+
+    * [Approving the install plan and applying the update](/docs/openshift?topic=openshift-ai-addon-manage#ai-addon-update-approve)
+
+* [Disabling the add-on](/docs/openshift?topic=openshift-ai-addon-manage#ai-addon-disable)
+
+* [Getting support for the OpenShift AI add-on](/docs/openshift?topic=openshift-ai-addon-manage#ai-addon-support)
+
+
+## Advanced Cluster Management
+{: #sitemap_advanced_cluster_management}
+
+
+[About the Advanced Cluster Management add-on](/docs/openshift?topic=openshift-acm-about#acm-about)
+
+* [How it works](/docs/openshift?topic=openshift-acm-about#how)
+
+* [ACM plan overviews](/docs/openshift?topic=openshift-acm-about#overviews)
+
+* [ACM for Kubernetes](/docs/openshift?topic=openshift-acm-about#kube)
+
+* [Next steps](/docs/openshift?topic=openshift-acm-about#next)
+
+[Setting up the Advanced Cluster Management add-on](/docs/openshift?topic=openshift-acm#acm)
+
+* [Before you begin](/docs/openshift?topic=openshift-acm#before)
+
+* [Create a trusted profile for ACM](/docs/openshift?topic=openshift-acm#trust-prof)
+
+    * [Create a trusted profile using the UI](/docs/openshift?topic=openshift-acm&interface=ui#trust-prof-ui)
+
+    * [Create a trusted profile using the CLI](/docs/openshift?topic=openshift-acm&interface=cli#trust-prof-cli)
+
+    * [Set the trusted profile for the cluster](/docs/openshift?topic=openshift-acm&interface=cli#trust-prof-set)
+
+* [Preparing secrets for ACM](/docs/openshift?topic=openshift-acm&interface=cli#prep-secret)
+
+* [Installing ACM from the UI](/docs/openshift?topic=openshift-acm&interface=ui#install-ui)
+
+* [Installing ACM from the CLI](/docs/openshift?topic=openshift-acm&interface=cli#install-cli)
+
+* [ACM operators](/docs/openshift?topic=openshift-acm&interface=cli#acm-operators)
+
+    * [Automatically installed operators](/docs/openshift?topic=openshift-acm&interface=cli#auto-op)
+
+    * [Optional operators](/docs/openshift?topic=openshift-acm&interface=cli#optional-op)
+
+* [Importing managed clusters after ACM is installed](/docs/openshift?topic=openshift-acm&interface=cli#import)
+
+    * [Importing a managed cluster using the CLI](/docs/openshift?topic=openshift-acm&interface=cli#import_cli)
+
+    * [Importing a managed cluster by using the OpenShift token and API server URL](/docs/openshift?topic=openshift-acm&interface=cli#import-token-url)
+
+    * [Importing a managed cluster by using the kubeconfig](/docs/openshift?topic=openshift-acm&interface=cli#import-kubeconfig)
+
+    * [Importing a managed cluster by using a generated command](/docs/openshift?topic=openshift-acm&interface=cli#import-generate)
+
+* [Updating or removing a managed cluster](/docs/openshift?topic=openshift-acm&interface=cli#after)
+
+* [Upgrading the ACM version](/docs/openshift?topic=openshift-acm&interface=cli#upgrade)
+
+* [Deleting the ACM add-on](/docs/openshift?topic=openshift-acm&interface=cli#delete)
+
+
+## OpenShift Virtualization
+{: #sitemap_openshift_virtualization}
+
+
+[OpenShift Virtualization on IBM Cloud](/docs/openshift?topic=openshift-virt-overview#virt-overview)
+
+* [Overview](/docs/openshift?topic=openshift-virt-overview#virt-what-is)
+
+* [Key capabilities](/docs/openshift?topic=openshift-virt-overview#virt-capabilities)
+
+* [Deployment options](/docs/openshift?topic=openshift-virt-overview#virt-deployment-options)
+
+    * [Feature comparison](/docs/openshift?topic=openshift-virt-overview#virt-choose-deployment)
+
+* [Characteristics](/docs/openshift?topic=openshift-virt-overview#virt-requirements)
+
+* [Supported bare metal flavors](/docs/openshift?topic=openshift-virt-overview#virt-bm-flavors)
+
+* [Storage and networking](/docs/openshift?topic=openshift-virt-overview#virt-storage-networking)
+
+    * [Storage options](/docs/openshift?topic=openshift-virt-overview#virt-storage-options)
+
+    * [Networking capabilities](/docs/openshift?topic=openshift-virt-overview#virt-networking-options)
+
+* [Limitations](/docs/openshift?topic=openshift-virt-overview#virt-limitations)
+
+* [Getting started](/docs/openshift?topic=openshift-virt-overview#virt-next-steps)
+
+
+### Red Hat OpenShift Virtualization Service
+{: #sitemap_red_hat_openshift_virtualization_service}
+
+
+[OpenShift Virtualization Service overview](/docs/openshift?topic=openshift-rovs-overview#rovs-overview)
+
+* [What is OpenShift Virtualization Service?](/docs/openshift?topic=openshift-rovs-overview#rovs-what-is)
+
+* [How does Virtualization Service compare to manual deployment?](/docs/openshift?topic=openshift-rovs-overview#rovs-comparison)
+
+* [What are the cluster requirements for Virtualization Service?](/docs/openshift?topic=openshift-rovs-overview#rovs-requirements)
+
+* [Which bare metal flavors are supported?](/docs/openshift?topic=openshift-rovs-overview#rovs-flavors)
+
+* [Where is Virtualization Service available?](/docs/openshift?topic=openshift-rovs-overview#rovs-regions)
+
+* [What are the limitations of Virtualization Service?](/docs/openshift?topic=openshift-rovs-overview#rovs-limitations-ov)
+
+* [How is Virtualization Service priced?](/docs/openshift?topic=openshift-rovs-overview#rovs-pricing)
+
+* [How does the Virtualization Service cluster license compare to a standard Red Hat OpenShift on IBM Cloud cluster license?](/docs/openshift?topic=openshift-rovs-overview#rovs-license-comparison)
+
+* [Next steps](/docs/openshift?topic=openshift-rovs-overview#rovs-next-steps)
+
+[Quickstart](/docs/openshift?topic=openshift-rovs-getting-started#rovs-getting-started)
+
+* [Before you begin](/docs/openshift?topic=openshift-rovs-getting-started#rovs-gs-prereqs)
+
+* [Create a Virtualization Service cluster](/docs/openshift?topic=openshift-rovs-getting-started#rovs-gs-create)
+
+* [Access the OpenShift console](/docs/openshift?topic=openshift-rovs-getting-started#rovs-gs-access)
+
+* [Verify pre-configured components](/docs/openshift?topic=openshift-rovs-getting-started#rovs-gs-verify)
+
+* [Deploy your first virtual machine](/docs/openshift?topic=openshift-rovs-getting-started#rovs-gs-first-vm)
+
+* [Next steps](/docs/openshift?topic=openshift-rovs-getting-started#rovs-gs-next-steps)
+
+* [Troubleshooting](/docs/openshift?topic=openshift-rovs-getting-started#rovs-gs-troubleshoot)
+
+[Creating an OpenShift Virtualization Service cluster](/docs/openshift?topic=openshift-rovs-cluster-create#rovs-cluster-create)
+
+* [Objectives](/docs/openshift?topic=openshift-rovs-cluster-create#rovs-create-objectives)
+
+* [Before you begin](/docs/openshift?topic=openshift-rovs-cluster-create#rovs-create-prereqs)
+
+    * [Required permissions](/docs/openshift?topic=openshift-rovs-cluster-create#rovs-create-permissions)
+
+    * [Required tools for console users](/docs/openshift?topic=openshift-rovs-cluster-create&interface=ui#rovs-create-tools-console)
+
+    * [Required tools for CLI users](/docs/openshift?topic=openshift-rovs-cluster-create&interface=cli#rovs-create-tools-cli)
+
+* [Create or verify your VPC setup](/docs/openshift?topic=openshift-rovs-cluster-create&interface=cli#rovs-create-vpc)
+
+    * [VPC infrastructure requirements](/docs/openshift?topic=openshift-rovs-cluster-create&interface=cli#rovs-vpc-requirements)
+
+    * [Creating VPC resources from the console](/docs/openshift?topic=openshift-rovs-cluster-create&interface=ui#rovs-vpc-console)
+
+    * [Creating VPC resources from the CLI](/docs/openshift?topic=openshift-rovs-cluster-create&interface=cli#rovs-vpc-cli)
+
+* [Create a Virtualization Service cluster](/docs/openshift?topic=openshift-rovs-cluster-create&interface=cli#rovs-create-cluster)
+
+    * [Creating a cluster from the console](/docs/openshift?topic=openshift-rovs-cluster-create&interface=ui#rovs-create-console)
+
+* [Verify the cluster and pre-configured components](/docs/openshift?topic=openshift-rovs-cluster-create&interface=ui#rovs-create-verify)
+
+    * [Access the cluster from the console](/docs/openshift?topic=openshift-rovs-cluster-create&interface=ui#rovs-create-verify-access-console)
+
+    * [Access the cluster from the CLI](/docs/openshift?topic=openshift-rovs-cluster-create&interface=cli#rovs-create-verify-access-cli)
+
+    * [Verify OpenShift Virtualization from the console](/docs/openshift?topic=openshift-rovs-cluster-create&interface=ui#rovs-create-verify-virt-console)
+
+    * [Verify OpenShift Virtualization from the CLI](/docs/openshift?topic=openshift-rovs-cluster-create&interface=cli#rovs-create-verify-virt-cli)
+
+* [Access the OpenShift Virtualization interface](/docs/openshift?topic=openshift-rovs-cluster-create&interface=cli#rovs-create-access-ui)
+
+    * [Access from the console](/docs/openshift?topic=openshift-rovs-cluster-create&interface=ui#rovs-create-access-ui-console)
+
+    * [Access from the CLI](/docs/openshift?topic=openshift-rovs-cluster-create&interface=cli#rovs-create-access-ui-cli)
+
+* [Next steps](/docs/openshift?topic=openshift-rovs-cluster-create&interface=cli#rovs-create-next-steps)
+
+* [Troubleshooting](/docs/openshift?topic=openshift-rovs-cluster-create&interface=cli#rovs-create-troubleshoot)
+
+[Managing Virtualization Service clusters](/docs/openshift?topic=openshift-rovs-manage#rovs-manage)
+
+* [Understanding managed components](/docs/openshift?topic=openshift-rovs-manage#rovs-manage-components)
+
+    * [Core components (cannot be disabled)](/docs/openshift?topic=openshift-rovs-manage#rovs-manage-core)
+
+    * [Viewing managed add-ons](/docs/openshift?topic=openshift-rovs-manage#rovs-manage-view-addons)
+
+* [Managing worker nodes](/docs/openshift?topic=openshift-rovs-manage#rovs-manage-workers)
+
+    * [Viewing worker nodes](/docs/openshift?topic=openshift-rovs-manage#rovs-manage-view-workers)
+
+    * [Adding worker nodes](/docs/openshift?topic=openshift-rovs-manage#rovs-manage-add-workers)
+
+    * [Replacing worker nodes](/docs/openshift?topic=openshift-rovs-manage#rovs-manage-replace-workers)
+
+    * [Reloading worker nodes](/docs/openshift?topic=openshift-rovs-manage#rovs-manage-reload-workers)
+
+* [Managing worker pools](/docs/openshift?topic=openshift-rovs-manage#rovs-manage-pools)
+
+    * [Viewing worker pools](/docs/openshift?topic=openshift-rovs-manage#rovs-manage-view-pools)
+
+    * [Creating additional worker pools](/docs/openshift?topic=openshift-rovs-manage#rovs-manage-create-pools)
+
+    * [Adding zones to worker pools](/docs/openshift?topic=openshift-rovs-manage#rovs-manage-add-zones)
+
+* [Updating the cluster](/docs/openshift?topic=openshift-rovs-manage#rovs-manage-update)
+
+    * [Checking for updates](/docs/openshift?topic=openshift-rovs-manage#rovs-manage-check-updates)
+
+    * [Updating the cluster master](/docs/openshift?topic=openshift-rovs-manage#rovs-manage-update-master)
+
+    * [Updating worker nodes](/docs/openshift?topic=openshift-rovs-manage#rovs-manage-update-workers)
+
+* [Monitoring cluster health](/docs/openshift?topic=openshift-rovs-manage#rovs-manage-monitor)
+
+    * [Checking cluster status](/docs/openshift?topic=openshift-rovs-manage#rovs-manage-check-status)
+
+    * [Monitoring component health](/docs/openshift?topic=openshift-rovs-manage#rovs-manage-monitor-components)
+
+    * [Viewing cluster logs](/docs/openshift?topic=openshift-rovs-manage#rovs-manage-logs)
+
+* [Managing virtual machines](/docs/openshift?topic=openshift-rovs-manage#rovs-manage-vms)
+
+    * [Viewing virtual machines](/docs/openshift?topic=openshift-rovs-manage#rovs-manage-view-vms)
+
+    * [Live migrating VMs](/docs/openshift?topic=openshift-rovs-manage#rovs-manage-migrate-vms)
+
+    * [Stopping and starting VMs](/docs/openshift?topic=openshift-rovs-manage#rovs-manage-vm-lifecycle)
+
+* [Storage management](/docs/openshift?topic=openshift-rovs-manage#rovs-manage-storage)
+
+    * [Monitoring storage capacity](/docs/openshift?topic=openshift-rovs-manage#rovs-manage-storage-capacity)
+
+    * [Managing persistent volume claims](/docs/openshift?topic=openshift-rovs-manage#rovs-manage-pvcs)
+
+* [Troubleshooting](/docs/openshift?topic=openshift-rovs-manage#rovs-manage-troubleshoot)
+
+* [Next steps](/docs/openshift?topic=openshift-rovs-manage#rovs-manage-next-steps)
+
+[Managing the OpenShift Virtualization add-on](/docs/openshift?topic=openshift-rovs-addon-virtualization#rovs-addon-virtualization)
+
+* [Understanding the OpenShift Virtualization add-on](/docs/openshift?topic=openshift-rovs-addon-virtualization#rovs-addon-virt-about)
+
+* [Add-on characteristics](/docs/openshift?topic=openshift-rovs-addon-virtualization#rovs-addon-virt-characteristics)
+
+* [Installed resources](/docs/openshift?topic=openshift-rovs-addon-virtualization#rovs-addon-virt-resources)
+
+* [Viewing add-on information](/docs/openshift?topic=openshift-rovs-addon-virtualization#rovs-addon-virt-view)
+
+    * [Listing installed add-ons](/docs/openshift?topic=openshift-rovs-addon-virtualization#rovs-addon-virt-list)
+
+    * [Getting add-on details](/docs/openshift?topic=openshift-rovs-addon-virtualization#rovs-addon-virt-get)
+
+    * [Listing available add-on versions](/docs/openshift?topic=openshift-rovs-addon-virtualization#rovs-addon-virt-versions)
+
+    * [Checking for configuration options](/docs/openshift?topic=openshift-rovs-addon-virtualization#rovs-addon-virt-options)
+
+* [Updating the add-on](/docs/openshift?topic=openshift-rovs-addon-virtualization#rovs-addon-virt-update)
+
+    * [Automatic patch updates](/docs/openshift?topic=openshift-rovs-addon-virtualization#rovs-addon-virt-patch-updates)
+
+    * [Manual version upgrades](/docs/openshift?topic=openshift-rovs-addon-virtualization#rovs-addon-virt-version-upgrades)
+
+* [Disabling the add-on](/docs/openshift?topic=openshift-rovs-addon-virtualization#rovs-addon-virt-disable)
+
+* [Troubleshooting the add-on](/docs/openshift?topic=openshift-rovs-addon-virtualization#rovs-addon-virt-troubleshoot)
+
+    * [Gathering add-on information](/docs/openshift?topic=openshift-rovs-addon-virtualization#rovs-addon-virt-gather-info)
+
+    * [Opening a support case](/docs/openshift?topic=openshift-rovs-addon-virtualization#rovs-addon-virt-support)
+
+* [Next steps](/docs/openshift?topic=openshift-rovs-addon-virtualization#rovs-addon-virt-next)
+
+[OpenShift Virtualization Service limitations](/docs/openshift?topic=openshift-rovs-limitations#rovs-limitations)
+
+* [Infrastructure requirements](/docs/openshift?topic=openshift-rovs-limitations#rovs-limit-infra)
+
+* [Configuration restrictions](/docs/openshift?topic=openshift-rovs-limitations#rovs-limit-config)
+
+* [Storage and networking](/docs/openshift?topic=openshift-rovs-limitations#rovs-limit-storage-network)
+
+* [Virtual machines](/docs/openshift?topic=openshift-rovs-limitations#rovs-limit-vms)
+
+* [Licensing and scaling](/docs/openshift?topic=openshift-rovs-limitations#rovs-limit-licensing-scaling)
+
+* [Operations](/docs/openshift?topic=openshift-rovs-limitations#rovs-limit-ops)
+
+* [When to use standard OpenShift](/docs/openshift?topic=openshift-rovs-limitations#rovs-limit-alternatives)
+
+* [Next steps](/docs/openshift?topic=openshift-rovs-limitations#rovs-limit-next-steps)
+
+
+### Manual deployment
+{: #sitemap_manual_deployment}
+
+
+[Planning your deployment](/docs/openshift?topic=openshift-virt-plan#virt-plan)
+
+* [Prerequisites](/docs/openshift?topic=openshift-virt-plan#virt-prereqs)
+
+* [Planning your cluster configuration](/docs/openshift?topic=openshift-virt-plan#virt-plan-cluster)
+
+    * [Choosing bare metal flavors](/docs/openshift?topic=openshift-virt-plan#virt-plan-flavors)
+
+    * [Worker pool architecture](/docs/openshift?topic=openshift-virt-plan#virt-plan-worker-pools)
+
+* [Planning your storage solution](/docs/openshift?topic=openshift-virt-plan#virt-plan-storage)
+
+    * [Storage decision matrix](/docs/openshift?topic=openshift-virt-plan#virt-storage-matrix)
+
+    * [Storage options](/docs/openshift?topic=openshift-virt-plan#virt-storage-options)
+
+* [Planning your networking setup](/docs/openshift?topic=openshift-virt-plan#virt-plan-networking)
+
+    * [Networking options](/docs/openshift?topic=openshift-virt-plan#virt-plan-networking-options)
+
+* [Node placement](/docs/openshift?topic=openshift-virt-plan#virt-plan-node-placement)
+
+* [Sizing and optimization](/docs/openshift?topic=openshift-virt-plan#virt-plan-sizing)
+
+* [Next steps](/docs/openshift?topic=openshift-virt-plan#virt-plan-next-steps)
+
+[Setting up storage](/docs/openshift?topic=openshift-virt-storage-setup#virt-storage-setup)
+
+* [Before you begin](/docs/openshift?topic=openshift-virt-storage-setup#virt-storage-prereqs)
+
+* [Setting up OpenShift Data Foundation](/docs/openshift?topic=openshift-virt-storage-setup#virt-storage-odf)
+
+    * [Prerequisites for ODF](/docs/openshift?topic=openshift-virt-storage-setup#virt-storage-odf-prereqs)
+
+    * [Installing ODF from the console](/docs/openshift?topic=openshift-virt-storage-setup#virt-storage-odf-ui)
+
+    * [Installing ODF from the CLI](/docs/openshift?topic=openshift-virt-storage-setup#virt-storage-odf-cli)
+
+    * [Verifying ODF installation](/docs/openshift?topic=openshift-virt-storage-setup#virt-storage-odf-verify)
+
+* [Option 2: Setting up VPC File Storage](/docs/openshift?topic=openshift-virt-storage-setup#virt-storage-vpc-file)
+
+    * [Prerequisites for VPC File Storage](/docs/openshift?topic=openshift-virt-storage-setup#virt-storage-vpc-file-prereqs)
+
+    * [Step 1: Disable VPC Block Storage as default](/docs/openshift?topic=openshift-virt-storage-setup#virt-storage-vpc-file-disable-block)
+
+    * [Step 2: Install the VPC File CSI driver](/docs/openshift?topic=openshift-virt-storage-setup#virt-storage-vpc-file-install)
+
+    * [Step 3: Set a default storage class](/docs/openshift?topic=openshift-virt-storage-setup#virt-storage-vpc-file-default)
+
+    * [Step 4: Configure storage profiles for VPC File Storage](/docs/openshift?topic=openshift-virt-storage-setup#virt-storage-vpc-file-profiles)
+
+    * [Verifying VPC File Storage installation](/docs/openshift?topic=openshift-virt-storage-setup#virt-storage-vpc-file-verify)
+
+* [Storage comparison](/docs/openshift?topic=openshift-virt-storage-setup#virt-storage-comparison)
+
+* [Troubleshooting storage setup](/docs/openshift?topic=openshift-virt-storage-setup#virt-storage-troubleshoot)
+
+    * [ODF installation fails](/docs/openshift?topic=openshift-virt-storage-setup#virt-storage-ts-odf-fail)
+
+    * [VPC File Storage PVCs remain pending](/docs/openshift?topic=openshift-virt-storage-setup#virt-storage-ts-vpc-pending)
+
+    * [Storage profiles not updated](/docs/openshift?topic=openshift-virt-storage-setup#virt-storage-ts-profiles)
+
+* [Next steps](/docs/openshift?topic=openshift-virt-storage-setup#virt-storage-next-steps)
+
+[Installing the operator](/docs/openshift?topic=openshift-oc-virtualization#oc-virtualization)
+
+* [Before you begin](/docs/openshift?topic=openshift-oc-virtualization#virt-install-prereqs)
+
+* [Installing the OpenShift Virtualization Operator from the console](/docs/openshift?topic=openshift-oc-virtualization#virt-install-console)
+
+* [Installing the OpenShift Virtualization Operator from the CLI](/docs/openshift?topic=openshift-oc-virtualization#virt-install-cli)
+
+* [Creating the HyperConverged custom resource](/docs/openshift?topic=openshift-oc-virtualization#virt-install-hyperconverged)
+
+    * [Understanding node placement](/docs/openshift?topic=openshift-oc-virtualization#virt-install-node-placement)
+
+    * [Creating the HyperConverged CR from the console](/docs/openshift?topic=openshift-oc-virtualization#virt-install-hc-console)
+
+    * [Creating the HyperConverged CR from the CLI](/docs/openshift?topic=openshift-oc-virtualization#virt-install-hc-cli)
+
+* [Verifying the installation](/docs/openshift?topic=openshift-oc-virtualization#virt-install-verify)
+
+* [Troubleshooting installation issues](/docs/openshift?topic=openshift-oc-virtualization#virt-install-troubleshoot)
+
+    * [HyperConverged resource fails to deploy](/docs/openshift?topic=openshift-oc-virtualization#virt-install-ts-hc-fail)
+
+    * [Operator installation fails](/docs/openshift?topic=openshift-oc-virtualization#virt-install-ts-operator-fail)
+
+* [Next steps](/docs/openshift?topic=openshift-oc-virtualization#virt-install-next-steps)
+
+[Creating VMs with VPC File Storage](/docs/openshift?topic=openshift-virt-vpc-file-vm-create#virt-vpc-file-vm-create)
+
+* [Before you begin](/docs/openshift?topic=openshift-virt-vpc-file-vm-create#virt-vpc-file-vm-create-prereqs)
+
+* [Verifying your environment](/docs/openshift?topic=openshift-virt-vpc-file-vm-create#virt-vpc-file-vm-create-verify)
+
+* [Creating a virtual machine from the web console](/docs/openshift?topic=openshift-virt-vpc-file-vm-create#virt-vpc-file-vm-create-console)
+
+* [Creating a virtual machine from the CLI](/docs/openshift?topic=openshift-virt-vpc-file-vm-create#virt-vpc-file-vm-create-cli)
+
+* [Validating the virtual machine](/docs/openshift?topic=openshift-virt-vpc-file-vm-create#virt-vpc-file-vm-create-validate)
+
+* [Understanding limitations and considerations](/docs/openshift?topic=openshift-virt-vpc-file-vm-create#virt-vpc-file-vm-create-limitations)
+
+* [Troubleshooting](/docs/openshift?topic=openshift-virt-vpc-file-vm-create#virt-vpc-file-vm-create-troubleshooting)
+
+* [Next steps](/docs/openshift?topic=openshift-virt-vpc-file-vm-create#virt-vpc-file-vm-create-next)
+
+[Managing virtual network interfaces](/docs/openshift?topic=openshift-vni-virtualization#vni-virtualization)
+
+* [Understanding Virtual Network Interfaces](/docs/openshift?topic=openshift-vni-virtualization#vni-about)
+
+    * [Key features](/docs/openshift?topic=openshift-vni-virtualization#vni-features)
+
+    * [Cross-account attachment](/docs/openshift?topic=openshift-vni-virtualization#vni-cross-account)
+
+* [Limitations and considerations](/docs/openshift?topic=openshift-vni-virtualization#vni-limitations)
+
+* [Prerequisites](/docs/openshift?topic=openshift-vni-virtualization#vni-prereqs)
+
+* [Creating overlay UDNs for Pods and VMs](/docs/openshift?topic=openshift-vni-virtualization#vni-overlay-udns)
+
+    * [Creating a Primary UDN](/docs/openshift?topic=openshift-vni-virtualization#vni-primary-udn)
+
+    * [Creating a Secondary UDN](/docs/openshift?topic=openshift-vni-virtualization#vni-secondary-udn)
+
+* [Exposing VMs with VPC load balancers](/docs/openshift?topic=openshift-vni-virtualization#vni-alb-lbaas)
+
+* [Setting up localnet user defined networks](/docs/openshift?topic=openshift-vni-virtualization#vni-setup-localnet)
+
+    * [Installing the NMState operator](/docs/openshift?topic=openshift-vni-virtualization#vni-install-nmstate)
+
+    * [Creating the OVS bridge](/docs/openshift?topic=openshift-vni-virtualization#vni-create-bridge)
+
+    * [Creating a localnet user defined network](/docs/openshift?topic=openshift-vni-virtualization#vni-create-udn)
+
+* [Attaching VNIs to your cluster](/docs/openshift?topic=openshift-vni-virtualization#vni-attach)
+
+    * [Before you begin](/docs/openshift?topic=openshift-vni-virtualization#vni-attach-prereqs)
+
+    * [Attaching a VNI from the console](/docs/openshift?topic=openshift-vni-virtualization&interface=ui#vni-attach-console)
+
+    * [Attaching a VNI from the CLI](/docs/openshift?topic=openshift-vni-virtualization&interface=cli#vni-attach-cli)
+
+    * [Example](/docs/openshift?topic=openshift-vni-virtualization&interface=cli#vni-attach-example)
+
+* [Viewing VNI attachments](/docs/openshift?topic=openshift-vni-virtualization&interface=cli#vni-list)
+
+    * [Viewing VNI attachments from the console](/docs/openshift?topic=openshift-vni-virtualization&interface=ui#vni-list-console)
+
+    * [Viewing VNI attachments from the CLI](/docs/openshift?topic=openshift-vni-virtualization&interface=cli#vni-list-cli)
+
+    * [Example output](/docs/openshift?topic=openshift-vni-virtualization&interface=cli#vni-list-example)
+
+* [Detaching VNIs](/docs/openshift?topic=openshift-vni-virtualization&interface=cli#vni-detach)
+
+    * [Detaching VNIs from the console](/docs/openshift?topic=openshift-vni-virtualization&interface=ui#vni-detach-console)
+
+    * [Detaching VNIs from the CLI](/docs/openshift?topic=openshift-vni-virtualization&interface=cli#vni-detach-cli)
+
+    * [Example](/docs/openshift?topic=openshift-vni-virtualization&interface=cli#vni-detach-example)
+
+* [Using VNIs with OpenShift Virtualization](/docs/openshift?topic=openshift-vni-virtualization&interface=cli#vni-use-virtualization)
+
+* [Troubleshooting VNIs](/docs/openshift?topic=openshift-vni-virtualization&interface=cli#vni-troubleshooting)
+
+    * [Why can't I attach regular pods to localnet UDNs?](/docs/openshift?topic=openshift-vni-virtualization&interface=cli#vni-ts-pods)
+
+    * [Why is live migration pending across worker pools?](/docs/openshift?topic=openshift-vni-virtualization&interface=cli#vni-ts-migration)
+
+    * [Why are dynamic attached VNIs not working?](/docs/openshift?topic=openshift-vni-virtualization&interface=cli#vni-ts-not-working)
+
+[Tuning ODF performance for virtualization](/docs/openshift?topic=openshift-odf-virt-performance#odf-virt-performance)
+
+* [Before you begin](/docs/openshift?topic=openshift-odf-virt-performance#odf-virt-performance-prereqs)
+
+* [Selecting an ODF performance profile](/docs/openshift?topic=openshift-odf-virt-performance#odf-virt-profile)
+
+* [Configuring OSD pod resource limits](/docs/openshift?topic=openshift-odf-virt-performance#odf-virt-osd-resources)
+
+    * [Check current OSD resource limits](/docs/openshift?topic=openshift-odf-virt-performance#odf-virt-osd-check)
+
+    * [Increase OSD resource limits](/docs/openshift?topic=openshift-odf-virt-performance#odf-virt-osd-modify)
+
+    * [Verify the updated resource limits](/docs/openshift?topic=openshift-odf-virt-performance#odf-virt-osd-verify)
+
+* [Configuring the bulk flag for large data operations](/docs/openshift?topic=openshift-odf-virt-performance#odf-virt-bulk)
+
+* [Checking Ceph cluster health](/docs/openshift?topic=openshift-odf-virt-performance#odf-virt-health)
+
+    * [Run a basic health check](/docs/openshift?topic=openshift-odf-virt-performance#odf-virt-health-basic)
+
+    * [Understand cluster states](/docs/openshift?topic=openshift-odf-virt-performance#odf-virt-health-states)
+
+    * [Check placement group and OSD status](/docs/openshift?topic=openshift-odf-virt-performance#odf-virt-health-pg-osd)
+
+* [Next steps](/docs/openshift?topic=openshift-odf-virt-performance#odf-virt-next-steps)
 
 
 ## Observability
@@ -5881,6 +5723,8 @@ subcollection: openshift
 * [Worker node and worker pool events](/docs/openshift?topic=openshift-at_events_ref#worker-events)
 
 * [Viewing your cluster events](/docs/openshift?topic=openshift-at_events_ref#at-ui)
+
+[Deploying the Sysdig agent on edge worker nodes](/docs/openshift?topic=openshift-edge-sysdig#edge-sysdig)
 
 
 ## Version history
@@ -9733,6 +9577,21 @@ subcollection: openshift
 * [Version 20260303-01](/docs/openshift?topic=openshift-cl-confidential-containers#cl-confidential-containers-20260303-01)
 
     * [Version 20260303-01, released 03 March 2026](/docs/openshift?topic=openshift-cl-confidential-containers#cl-confidential-containers-20260303-01)
+
+
+## Security reference
+{: #sitemap_security_reference}
+
+
+[Overview of personal and sensitive data storage and removal options](/docs/openshift?topic=openshift-ibm-data#ibm-data)
+
+* [What information is stored with IBM when using {{site.data.keyword.openshiftlong_notm}}?](/docs/openshift?topic=openshift-ibm-data#pi-info)
+
+* [How is my information stored and encrypted?](/docs/openshift?topic=openshift-ibm-data#pi-storage)
+
+* [Where is my information stored?](/docs/openshift?topic=openshift-ibm-data#pi-location)
+
+* [How can I remove my information?](/docs/openshift?topic=openshift-ibm-data#pi-removal)
 
 
 ## Service settings
