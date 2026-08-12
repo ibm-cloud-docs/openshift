@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2025, 2026
-lastupdated: "2026-04-30"
+lastupdated: "2026-08-12"
 
 
 keywords: kubernetes, openshift, {{site.data.keyword.filestorage_vpc_short}}, snapshot, restore
@@ -22,6 +22,10 @@ subcollection: openshift
 
 [Virtual Private Cloud]{: tag-vpc}
 
+
+
+Troubleshoot VPC file storage snapshot creation failures.
+{: shortdesc}
 
 You are unable to create snapshots and you see error messages similar to the following.
 {: tsSymptoms}

@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2026
-lastupdated: "2026-04-10"
+lastupdated: "2026-08-12"
 
 
 keywords: openshift
@@ -21,6 +21,10 @@ content-type: troubleshoot
 
 
 # Why can't my PVC access an existing bucket?
+
+Troubleshoot bucket access issues with Cloud Object Storage.
+{: shortdesc}
+
 {: #cos_access_bucket_fails}
 {: support}
 

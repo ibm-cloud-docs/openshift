@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2024, 2026
-lastupdated: "2026-02-18"
+lastupdated: "2026-08-12"
 
 
 keywords: openshift, {{site.data.keyword.openshiftlong_notm}}, secure by default, app not working, {{site.data.keyword.openshiftlong_notm}}, outbound traffic protection, 4.15, 1.30
@@ -22,6 +22,10 @@ content-type: troubleshoot
 
 [Virtual Private Cloud]{: tag-vpc}
 [4.15 and later]{: tag-red}
+
+Troubleshoot issues when your app is not working with Satellite storage.
+{: shortdesc}
+
 
 After creating a version 4.15 cluster, your app no longer works and you see an error message similar to the following example.
 {: tsSymptoms}

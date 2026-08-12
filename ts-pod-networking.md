@@ -2,7 +2,7 @@
 
 copyright:
   years: 2024, 2026
-lastupdated: "2026-07-30"
+lastupdated: "2026-08-12"
 
 
 keywords: pods, pod connectvity, networking, pod networking, pod trouble shooting, pod debug
@@ -21,6 +21,10 @@ Review the options and strategies for debugging connection issues between pods.
 
 ## Check the health of your cluster components and networking pods
 {: #debug_pods_health}
+
+Troubleshoot pod networking issues and connectivity problems.
+{: shortdesc}
+
 
 Follow these steps to check the health of your components. Networking issues might occur if your cluster components are not up to date or are not in a healthy state.
 

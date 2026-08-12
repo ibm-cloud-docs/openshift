@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2026
-lastupdated: "2026-04-10"
+lastupdated: "2026-08-12"
 
 
 keywords: block, debug, help
@@ -21,6 +21,10 @@ content-type: troubleshoot
 
 # Why do I get a `Volume not attached` error when trying to expand a {{site.data.keyword.block_storage_is_short}} volume?
 {: #block_not_attached_vpc}
+
+Troubleshoot block storage volumes that fail to attach to your pods.
+{: shortdesc}
+
 {: support}
 
 [Virtual Private Cloud]{: tag-vpc} 

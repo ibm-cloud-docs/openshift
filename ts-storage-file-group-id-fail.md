@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2026
-lastupdated: "2026-07-27"
+lastupdated: "2026-08-12"
 
 
 keywords: openshift
@@ -21,6 +21,10 @@ content-type: troubleshoot
 
 
 # Why does my app fail with a group ID error for NFS file storage permissions?
+
+Troubleshoot file storage group ID permission failures.
+{: shortdesc}
+
 {: #root}
 {: support}
 

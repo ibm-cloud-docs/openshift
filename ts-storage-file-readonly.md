@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2026
-lastupdated: "2026-07-27"
+lastupdated: "2026-08-12"
 
 
 keywords: openshift
@@ -21,6 +21,10 @@ content-type: troubleshoot
 
 
 # Why are the file systems for worker nodes changed to read-only?
+
+Troubleshoot file storage volumes that become read-only.
+{: shortdesc}
+
 {: #readonly_nodes}
 {: support}
 

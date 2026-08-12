@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2022, 2026
-lastupdated: "2026-07-24"
+lastupdated: "2026-08-12"
 
 
 keywords: kubernetes, openshift
@@ -23,6 +23,10 @@ subcollection: openshift
 
 Your app that uses {{site.data.keyword.filestorage_vpc_short}} fails with a permissions error.
 {: tsSymptoms}
+
+Troubleshoot non-root user access issues with VPC file storage.
+{: shortdesc}
+
 
 You created your own storage class to use with an existing file share, but did not specify the correct `uid` and `gid`. When processes run on UNIX and Linux, the operating system identifies a user with a user ID (UID) and group with a group ID (GID). These IDs determine which system resources a user or group can access. For example, if the file storage user ID is 12345 and its group ID is 6789, then the mount on the host node and in the container must have those same IDs. The container’s main process must match one or both of those IDs to access the file share.
 {: tsCauses}

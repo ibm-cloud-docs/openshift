@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2026
-lastupdated: "2026-04-29"
+lastupdated: "2026-08-12"
 
 keywords: kubernetes, openshift, help, network, connectivity
 
@@ -20,6 +20,10 @@ content-type: troubleshoot
 
 [Virtual Private Cloud]{: tag-vpc} [Classic infrastructure]{: tag-classic-inf}
 
+
+
+Troubleshoot ownership and mount path issues with Cloud Object Storage.
+{: shortdesc}
 
 This troubleshooting topic applies only to {{site.data.keyword.redhat_openshift_notm}} clusters that run version 3.11.
 {: note}

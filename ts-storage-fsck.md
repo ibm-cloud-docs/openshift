@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2022, 2026
-lastupdated: "2026-04-30"
+lastupdated: "2026-08-12"
 
 
 keywords: kubernetes, openshift, fsck, file system check
@@ -21,6 +21,10 @@ content-type: troubleshoot
 # Why does mounting {{site.data.keyword.blockstorageshort}} fail with a file system check error?
 {: #ts-storage-fsck}
 {: troubleshoot}
+
+Troubleshoot file system check issues for storage volumes.
+{: shortdesc}
+
 {: support}
 
 [Classic infrastructure]{: tag-classic-inf}

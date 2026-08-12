@@ -1,8 +1,8 @@
 ---
 
 copyright:
-  years: 2025, 2025
-lastupdated: "2025-06-13"
+  years: 2025, 2026
+lastupdated: "2026-08-12"
 
 
 keywords: logging, monitoring, duplicate lobs, observability
@@ -21,6 +21,10 @@ content-type: troubleshoot
 {: #ts-dupe-logs}
 {: troubleshoot}
 {: support}
+
+Troubleshoot duplicate log entries appearing in your cluster logs.
+{: shortdesc}
+
 
 
 You are seeing duplicate log entries for your clusters.
@@ -69,4 +73,3 @@ Remove the unsupported observability plug-in resources from your cluster.
     oc get pods -l app=sysdig-agent -n ibm-observe
     ```
     {: pre}
-

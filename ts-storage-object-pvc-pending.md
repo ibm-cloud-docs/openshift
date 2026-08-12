@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2026
-lastupdated: "2026-04-15"
+lastupdated: "2026-08-12"
 
 
 keywords: kubernetes, help, network, connectivity, openshift
@@ -21,6 +21,10 @@ content-type: troubleshoot
 
 # Why does my PVC remain in a pending state?
 {: #cos_pvc_pending}
+
+Troubleshoot persistent volume claims that remain in pending state for Cloud Object Storage.
+{: shortdesc}
+
 {: support}
 
 

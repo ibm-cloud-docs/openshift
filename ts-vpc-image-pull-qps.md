@@ -2,7 +2,7 @@
 
 copyright:
   years: 2026
-lastupdated: "2026-08-03"
+lastupdated: "2026-08-12"
 
 keywords: vpc, image pull, qps exceeded, bandwidth, worker nodes, secondary storage
 
@@ -21,6 +21,10 @@ content-type: troubleshoot
 
 When pods are starting up, you might see errors indicating that image pull operations are being throttled with messages like `pull QPS exceeded`.
 {: shortdesc}
+
+Troubleshoot image pull QPS rate limiting issues in VPC clusters.
+{: shortdesc}
+
 
 When you deploy pods that need to pull container images, you might observe the following symptoms:
 {: tsSymptoms}

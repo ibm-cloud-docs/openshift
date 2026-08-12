@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2024, 2026
-lastupdated: "2026-08-06"
+lastupdated: "2026-08-12"
 
 
 keywords: openshift, {{site.data.keyword.openshiftlong_notm}}, secure by default, {{site.data.keyword.openshiftlong_notm}}, outbound traffic protection, cluster create, quotas, limitations, rules, security groups
@@ -21,6 +21,10 @@ content-type: troubleshoot
 
 [Virtual Private Cloud]{: tag-vpc}
 [4.15 and later]{: tag-red}
+
+
+Troubleshoot cluster creation quota errors when using Satellite storage.
+{: shortdesc}
 
 
 After you create a VPC cluster, your worker nodes are stuck in the `Provision_pending` state with the message `Pending security group creation` .

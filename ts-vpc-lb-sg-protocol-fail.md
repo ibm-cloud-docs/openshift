@@ -2,7 +2,7 @@
 
 copyright:
   years: 2025, 2026
-lastupdated: "2026-03-17"
+lastupdated: "2026-08-12"
 
 
 keywords: loadbalancer, load, balancer, protocol, unmarshalling, discriminator, kubernetes, openshift
@@ -20,6 +20,10 @@ content-type: troubleshoot
 # VPC clusters: Security group protocol error creating or updating a LoadBalancer
 {: #vpc_ts_lb_security_group_error}
 {: support}
+
+
+Troubleshoot VPC load balancer security group protocol failures.
+{: shortdesc}
 
 [Virtual Private Cloud]{: tag-vpc}
 

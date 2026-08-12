@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2026
-lastupdated: "2026-07-30"
+lastupdated: "2026-08-12"
 
 
 keywords: openshift
@@ -21,6 +21,10 @@ content-type: troubleshoot
 
 # Why doesn't replacing a worker node create a worker node?
 {: #auto-rebalance-off}
+
+Troubleshoot worker node autorebalancing issues.
+{: shortdesc}
+
 {: support}
 
 

@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2023, 2026
-lastupdated: "2026-07-24"
+lastupdated: "2026-08-12"
 
 
 keywords: openshift, {{site.data.keyword.openshiftlong_notm}}, subnet, detach
@@ -21,6 +21,10 @@ content-type: troubleshoot
 {: support}
 
 [Classic]{: tag-classic}
+
+Troubleshoot issues when recovering subnets in your cluster network.
+{: shortdesc}
+
 
 Your cluster is experiencing network errors.
 {: tsSymptoms}

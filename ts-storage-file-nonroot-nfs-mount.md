@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2026
-lastupdated: "2026-04-15"
+lastupdated: "2026-08-12"
 
 
 keywords: openshift
@@ -21,6 +21,10 @@ content-type: troubleshoot
 
 # Why does my app fail when a non-root user owns the NFS file storage mount path?
 {: #nonroot}
+
+Troubleshoot non-root NFS mount issues for file storage.
+{: shortdesc}
+
 {: support}
 
 [Classic infrastructure]{: tag-classic-inf}

@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2024, 2026
-lastupdated: "2026-04-30"
+lastupdated: "2026-08-12"
 
 
 keywords: openshift, {{site.data.keyword.openshiftlong_notm}}, kubernetes, help, network, connectivity
@@ -21,6 +21,10 @@ content-type: troubleshoot
 {: support}
 
 The following steps apply to the {{site.data.keyword.cos_full_notm}} cluster add-on only. If you are using the Helm plug-in, see [Why do I see transport endpoint not connected errors?](/docs/openshift?topic=openshift-cos_transport_ts_connect) instead.
+
+Troubleshoot Cloud Object Storage transport layer issues with add-ons.
+{: shortdesc}
+
 {: important}
 
 

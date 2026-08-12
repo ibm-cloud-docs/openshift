@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2025, 2026
-lastupdated: "2026-07-23"
+lastupdated: "2026-08-12"
 
 
 keywords: kubernetes, openshift, user permissions, infrastructure credentials
@@ -21,6 +21,10 @@ content-type: troubleshoot
 
 When you try to provision or reload worker nodes, the action fails and you see an error similar to the following.
 {: tsSymptoms}
+
+Troubleshoot worker node plan availability issues when creating pools.
+{: shortdesc}
+
 
 ```sh
 Registration failed – The plan containers.kubernetes.vpc.gen2.roks is not available in <region>. Please review the private catalog management configuration for the account.

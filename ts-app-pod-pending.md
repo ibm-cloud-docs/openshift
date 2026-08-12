@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2026
-lastupdated: "2026-07-27"
+lastupdated: "2026-08-12"
 
 keywords: kubernetes, openshift
 
@@ -17,6 +17,10 @@ content-type: troubleshoot
 # Why do pods remain in pending state?
 {: #ts-app-pod-pending}
 {: support}
+
+
+Troubleshoot pods that remain in **Pending** state and are unable to be scheduled on available worker nodes.
+{: shortdesc}
 
 [Virtual Private Cloud]{: tag-vpc} [Classic infrastructure]{: tag-classic-inf}
 

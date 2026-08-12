@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2022, 2026
-lastupdated: "2026-02-18"
+lastupdated: "2026-08-12"
 
 
 keywords: openshift, calico, node
@@ -21,6 +21,10 @@ content-type: troubleshoot
 
 # Why does my worker node show a `NetworkUnavailable` error?
 {: #ts-network-calico-node}
+
+Troubleshoot Calico node health issues and networking problems.
+{: shortdesc}
+
 {: support}
 
 [Virtual Private Cloud]{: tag-vpc} [Classic infrastructure]{: tag-classic-inf} [{{site.data.keyword.satelliteshort}}]{: tag-satellite}

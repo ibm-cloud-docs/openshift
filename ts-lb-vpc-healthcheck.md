@@ -1,8 +1,8 @@
 ---
 
 copyright:
-  years: 2023, 2025
-lastupdated: "2025-04-17"
+  years: 2023, 2026
+lastupdated: "2026-08-12"
 
 
 keywords: load balancer, health checks, vpc load balancer, health status, network
@@ -22,6 +22,10 @@ content-type: troubleshoot
  
 When you check the Health Status section of your VPC load balancer details, the health checks for your load balancer worker nodes are failing. 
 {: tsSymptoms}
+
+
+Troubleshoot VPC load balancer health check failures.
+{: shortdesc}
 
 To check the VPC load balancer health status, navigate to the [Load balancers for VPC page](https://cloud.ibm.com/infrastructure/network/loadBalancers){: external} in the console. Click the relevant load balancer and review the details in the Health Status section.  
 {: tip}

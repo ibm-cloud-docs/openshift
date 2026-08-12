@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2026
-lastupdated: "2026-04-10"
+lastupdated: "2026-08-12"
 
 
 keywords: openshift, storage
@@ -21,6 +21,10 @@ content-type: troubleshoot
 
 
 # Autoscaling fails after API key reset
+
+Troubleshoot storage API key reset issues for block storage.
+{: shortdesc}
+
 {: #ts-storage-ca-apikey-reset}
 {: support}
 

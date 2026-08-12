@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2025, 2026
-lastupdated: "2026-07-27"
+lastupdated: "2026-08-12"
 
 keywords: openshift, {{site.data.keyword.openshiftlong_notm}}, secure by default, {{site.data.keyword.openshiftlong_notm}}, outbound traffic protection, limitations, vpe, vsi
 
@@ -22,6 +22,10 @@ content-type: troubleshoot
 
 [Virtual Private Cloud]{: tag-vpc}
 [4.15 and later]{: tag-red}
+
+Troubleshoot virtual server instance and virtual private endpoint issues with Satellite storage.
+{: shortdesc}
+
 
 
 Review the following scenarios for why your VSI can't access your VPE gateway.

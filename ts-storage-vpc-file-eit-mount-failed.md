@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2024, 2026
-lastupdated: "2026-08-06"
+lastupdated: "2026-08-12"
 
 
 keywords: kubernetes, openshift, MountingTargetFailed, encryption in-transit, eit
@@ -22,6 +22,10 @@ subcollection: openshift
 
 Volume mounting fails with an error message similar to the following example.
 {: tsSymptoms}
+
+
+Troubleshoot VPC file storage mount failures with EIT (Encrypted In Transit).
+{: shortdesc}
 
 ```sh
 Warning FailedMount 68s kubelet MountVolume.SetUp failed for volume "pvc-c37fe511-ec6d-44c1-8c55-1b5e2c21ec5b" : rpc error: code = DeadlineExceeded desc = context deadline exceeded

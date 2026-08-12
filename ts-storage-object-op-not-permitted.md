@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2026
-lastupdated: "2026-04-10"
+lastupdated: "2026-08-12"
 
 
 keywords: openshift
@@ -21,6 +21,10 @@ content-type: troubleshoot
 
 
 # Why does my app pod fail with an `Operation not permitted` error?
+
+Troubleshoot permission errors with Cloud Object Storage.
+{: shortdesc}
+
 {: #cos_operation_not_permitted}
 {: support}
 

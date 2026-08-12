@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2023, 2026
-lastupdated: "2026-05-06"
+lastupdated: "2026-08-12"
 
 
 keywords: kubernetes, openshift, pod security, reset, valid configuration, psa
@@ -20,6 +20,10 @@ content-type: troubleshoot
 # Why do I get an error that my PodSecurityConfiguration is not valid?
 {: #ts-pod-security-reset}
 {: support}
+
+
+Troubleshoot issues when resetting pod security policies in your cluster.
+{: shortdesc}
 
 
 When you use the `ibmcloud ks cluster master pod-security set` command with the `--config-file` option, you see an error similar to the following example.

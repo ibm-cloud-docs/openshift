@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2026
-lastupdated: "2026-07-30"
+lastupdated: "2026-08-12"
 
 
 keywords: kubernetes, help, network, connectivity, openshift
@@ -20,6 +20,10 @@ content-type: troubleshoot
 # What permissions do I need to manage storage and create PVCs?
 {: #missing_permissions}
 {: support}
+
+
+Troubleshoot permission errors for persistent volume claims.
+{: shortdesc}
 
 
 [Virtual Private Cloud]{: tag-vpc} [Classic infrastructure]{: tag-classic-inf}

@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2024, 2026
-lastupdated: "2026-07-24"
+lastupdated: "2026-08-12"
 
 keywords: openshift, {{site.data.keyword.openshiftlong_notm}}, secure by default, {{site.data.keyword.openshiftlong_notm}}, outbound traffic protection, cluster create, quota, limitations
 
@@ -22,6 +22,10 @@ content-type: troubleshoot
 
 You see DNS failures after creating a custom DNS resolver in your VPC where a 4.15 cluster already exists.
 {: tsSymptoms}
+
+Troubleshoot custom DNS configuration issues with Satellite storage.
+{: shortdesc}
+
 
 In each of the following cases, syncing the `kube-<clusterID>` security group and replace the worker nodes as described in the following steps. Note that the issue might not be seen immediately after the resolver is created and enabled in the VPC. DNS includes a cache which might resolve name lookup until a worker is replaced or restarted, or pods are restarted.  
 

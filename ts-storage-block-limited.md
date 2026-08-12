@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2023, 2026
-lastupdated: "2026-04-30"
+lastupdated: "2026-08-12"
 
 
 keywords: openshift, {{site.data.keyword.openshiftlong_notm}}, kubernetes, help, network, connectivity, target port, limited, alerts
@@ -21,6 +21,10 @@ content-type: troubleshoot
 
 # Why does my Block Storage persistent volume show a `limited` connectivity status?
 {: #block-pv-limited-connectivity}
+
+Troubleshoot issues with block storage volume limits in your cluster.
+{: shortdesc}
+
 {: support}
 
 [Classic infrastructure]{: tag-classic-inf}

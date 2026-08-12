@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2026
-lastupdated: "2026-07-30"
+lastupdated: "2026-08-12"
 
 
 keywords: kubernetes, openshift
@@ -21,6 +21,10 @@ content-type: troubleshoot
 
 # Why can't I create or delete clusters or worker nodes?
 {: #cluster_infra_errors}
+
+Troubleshoot issues when creating or deleting clusters.
+{: shortdesc}
+
 {: troubleshoot}
 {: support}
 

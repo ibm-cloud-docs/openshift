@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2026
-lastupdated: "2026-04-29"
+lastupdated: "2026-08-12"
 
 
 keywords: pvc, pending, file, storage, error
@@ -54,3 +54,6 @@ Find the root cause by describing your PVC and reviewing the common error messag
 | Storage type not provided, expected storage type is `Endurance` or `Performance`. | You created your own storage class and specified a storage type that is not supported. | Update your own storage class to specify `Endurance` or `Performance` as your storage type. To find examples for your own storage classes, see the sample storage classes for [file storage](/docs/openshift?topic=openshift-file_storage#file_custom_storageclass) and [block storage](/docs/openshift?topic=openshift-block_storage#block_custom_storageclass). | 
 | `SoftLayer_Exception_User_Customer_Unauthorized: Invalid API key`  | You specified an IAM API key when a classic infrastructure API key is required. Or, the classic infrastructure API key you specified does not exist.   |  Follow the instructions in [Invalid API key](/docs/openshift?topic=openshift-ts-perms-creds#invalid_apikey)|
 {: caption="Storage error messages" caption-side="bottom"}
+
+Troubleshoot persistent volume claims that remain in pending state for file storage.
+{: shortdesc}

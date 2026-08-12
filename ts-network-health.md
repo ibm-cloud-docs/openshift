@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2025, 2026
-lastupdated: "2026-07-27"
+lastupdated: "2026-08-12"
 
 
 keywords: kubernetes, help, network
@@ -21,6 +21,10 @@ content-type: troubleshoot
 {: support}
 
 [Virtual Private Cloud]{: tag-vpc}
+
+Troubleshoot network health check issues in your cluster.
+{: shortdesc}
+
 
 ## Getting the status and message
 {: #check_status}

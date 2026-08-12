@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2022, 2026
-lastupdated: "2026-05-06"
+lastupdated: "2026-08-12"
 
 
 keywords: openshift
@@ -21,6 +21,10 @@ content-type: troubleshoot
 
 # Why am I still seeing charges for block storage devices after deleting my cluster?
 {: #ts_storage_clean_volume}
+
+Troubleshoot issues when cleaning up storage volumes.
+{: shortdesc}
+
 {: support}
 
 [Virtual Private Cloud]{: tag-vpc} [Classic infrastructure]{: tag-classic-inf}

@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2025, 2026
-lastupdated: "2026-07-23"
+lastupdated: "2026-08-12"
 
 
 keywords: openshift, storage, file storage vpc, access, volume, access denied, mount
@@ -20,6 +20,10 @@ content-type: troubleshoot
 
 [Classic infrastructure]{: tag-classic-inf}
 
+
+
+Troubleshoot file storage access denied errors in classic clusters.
+{: shortdesc}
 
 When you try to mount a file storage volume, you get an error stating that access is denied by the server. 
 {: tsSymptoms}

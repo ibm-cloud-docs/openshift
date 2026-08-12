@@ -23,6 +23,10 @@ Resolve nodeport service issues after updating your {{site.data.keyword.openshif
 {: shortdesc}
 
 [Virtual Private Cloud]{: tag-vpc}
+
+Troubleshoot issues when your app is not working with Satellite storage nodeport.
+{: shortdesc}
+
 [4.15 and later]{: tag-red}
 
 Requests sent to your nodeport service fail with a timeout error.

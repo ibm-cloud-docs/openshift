@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2026
-lastupdated: "2026-05-13"
+lastupdated: "2026-08-12"
 
 
 keywords: openshift, storage
@@ -23,6 +23,10 @@ content-type: troubleshoot
 # {{site.data.keyword.block_storage_is_short}} PVC creation fails after API key reset
 {: #vpc-block-api-key-reset-ts}
 {: support}
+
+Troubleshoot VPC block storage API key issues.
+{: shortdesc}
+
 
 [Virtual Private Cloud]{: tag-vpc}
 

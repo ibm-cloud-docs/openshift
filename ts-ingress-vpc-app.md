@@ -1,8 +1,8 @@
 ---
 
 copyright: 
-  years: 2014, 2025
-lastupdated: "2025-11-18"
+  years: 2014, 2026
+lastupdated: "2026-08-12"
 
 
 keywords: openshift
@@ -22,6 +22,10 @@ content-type: troubleshoot
 # VPC clusters: Why can't my app connect via Ingress?
 {: #vpc_ts_alb}
 {: support}
+
+
+Troubleshoot Ingress connectivity issues in VPC clusters when your app cannot be reached through Ingress.
+{: shortdesc}
 
 [Virtual Private Cloud]{: tag-vpc} 
 

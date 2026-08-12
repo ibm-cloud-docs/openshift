@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2025, 2026
-lastupdated: "2026-04-30"
+lastupdated: "2026-08-12"
 
 
 keywords: kubernetes, openshift, {{site.data.keyword.filestorage_vpc_short}}, snapshot, restore
@@ -23,6 +23,10 @@ subcollection: openshift
 
 
 You are unable to restore your {{site.data.keyword.filestorage_vpc_short}} snapshot to a PVC.
+
+Troubleshoot VPC file storage snapshot restoration failures.
+{: shortdesc}
+
 {: tsSymptoms}
 
 You see provisioning failed errors similar to the following when trying to restore your snapshot.

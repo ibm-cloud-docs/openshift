@@ -1,8 +1,8 @@
 ---
 
 copyright: 
-  years: 2014, 2025
-lastupdated: "2025-12-08"
+  years: 2014, 2026
+lastupdated: "2026-08-12"
 
 
 keywords: openshift, kubernetes, help, network, connectivity, log lines
@@ -21,6 +21,10 @@ content-type: troubleshoot
 {: support}
 
 [Virtual Private Cloud]{: tag-vpc} [Classic infrastructure]{: tag-classic-inf}
+
+Troubleshoot issues with health checks and log line limits in your cluster.
+{: shortdesc}
+
 
 
 You set up a logging configuration in your cluster to forward logs to an external syslog server. When you view logs, you see a long log message. Additionally, in Kibana, you might be able to see only the last 600 - 700 characters of the log message.
