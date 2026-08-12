@@ -21,12 +21,11 @@ content-type: troubleshoot
 
 
 # Why does my app pod fail with an `Operation not permitted` error?
+{: #cos_operation_not_permitted}
+{: support}
 
 Troubleshoot permission errors with Cloud Object Storage.
 {: shortdesc}
-
-{: #cos_operation_not_permitted}
-{: support}
 
 [Virtual Private Cloud]{: tag-vpc} [Classic infrastructure]{: tag-classic-inf}
 

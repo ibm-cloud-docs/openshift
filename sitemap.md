@@ -447,11 +447,23 @@ subcollection: openshift
 
 * [August 2026](/docs/openshift?topic=openshift-openshift-relnotes#openshift-aug26)
 
+    * [12 August 2026](/docs/openshift?topic=openshift-openshift-relnotes#openshift-aug1226)
+
+        * IBM Storage Operator cluster add-on patch updates.
+
+        * VPC File CSI Driver cluster add-on patch updates.
+
+        * RHEL worker node kernel updates to RHEL 9.8.
+
+        * Worker node fix packs are available for {{site.data.keyword.openshiftlong_notm}} and OpenShift Virtualization Service.
+
     * [10 August 2026](/docs/openshift?topic=openshift-openshift-relnotes#openshift-aug1026)
 
         * OpenShift Virtualization cluster add-on patch updates.
 
         * IBM Object CSI Driver cluster add-on patch updates.
+
+        * Openshift AI cluster add-on patch updates.
 
     * [7 August 2026](/docs/openshift?topic=openshift-openshift-relnotes#openshift-aug0726)
 
@@ -5790,6 +5802,8 @@ subcollection: openshift
 
 * [Version 4.21](/docs/openshift?topic=openshift-openshift_changelog_421#421_components)
 
+    * [Worker node fix pack 4.21.27_1528_openshift, released 12 August 2026](/docs/openshift?topic=openshift-openshift_changelog_421#cl-boms-42127_1528_openshift_W)
+
     * [Master fix pack 4.21.27_1527_openshift, released 05 August 2026](/docs/openshift?topic=openshift-openshift_changelog_421#cl-boms_master-42127_1527_openshift_M)
 
     * [Worker node fix pack 4.21.25_1526_openshift, released 28 July 2026](/docs/openshift?topic=openshift-openshift_changelog_421#cl-boms-42125_1526_openshift_W)
@@ -5928,6 +5942,8 @@ subcollection: openshift
 * [Overview](/docs/openshift?topic=openshift-openshift_changelog_420#changelog_overview_420)
 
 * [Version 4.20](/docs/openshift?topic=openshift-openshift_changelog_420#420_components)
+
+    * [Worker node fix pack 4.20.32_1559_openshift, released 12 August 2026](/docs/openshift?topic=openshift-openshift_changelog_420#cl-boms-42032_1559_openshift_W)
 
     * [Master fix pack 4.20.32_1558_openshift, released 05 August 2026](/docs/openshift?topic=openshift-openshift_changelog_420#cl-boms_master-42032_1558_openshift_M)
 
@@ -6077,6 +6093,8 @@ subcollection: openshift
 * [Overview](/docs/openshift?topic=openshift-openshift_changelog_419#changelog_overview_419)
 
 * [Version 4.19](/docs/openshift?topic=openshift-openshift_changelog_419#419_components)
+
+    * [Worker node fix pack 4.19.41_1589_openshift, released 12 August 2026](/docs/openshift?topic=openshift-openshift_changelog_419#cl-boms-41941_1589_openshift_W)
 
     * [Master fix pack 4.19.41_1588_openshift, released 05 August 2026](/docs/openshift?topic=openshift-openshift_changelog_419#cl-boms_master-41941_1588_openshift_M)
 
@@ -6258,6 +6276,8 @@ subcollection: openshift
 * [Overview](/docs/openshift?topic=openshift-openshift_changelog_418#changelog_overview_418)
 
 * [Version 4.18](/docs/openshift?topic=openshift-openshift_changelog_418#418_components)
+
+    * [Worker node fix pack 4.18.51_1601_openshift, released 12 August 2026](/docs/openshift?topic=openshift-openshift_changelog_418#cl-boms-41851_1601_openshift_W)
 
     * [Master fix pack 4.18.51_1600_openshift, released 05 August 2026](/docs/openshift?topic=openshift-openshift_changelog_418#cl-boms_master-41851_1600_openshift_M)
 
@@ -6463,6 +6483,8 @@ subcollection: openshift
 * [Overview](/docs/openshift?topic=openshift-changelog_417#changelog_overview_417)
 
 * [Version 4.17](/docs/openshift?topic=openshift-changelog_417#417_components)
+
+    * [Worker node fix pack 4.17.56_1596_openshift, released 12 August 2026](/docs/openshift?topic=openshift-changelog_417#cl-boms-41756_1596_openshift_W)
 
     * [Master fix pack 4.17.56_1595_openshift, released 05 August 2026](/docs/openshift?topic=openshift-changelog_417#cl-boms_master-41756_1595_openshift_M)
 
@@ -6704,6 +6726,8 @@ subcollection: openshift
 * [Overview](/docs/openshift?topic=openshift-changelog_416#changelog_overview_416)
 
 * [Version 4.16](/docs/openshift?topic=openshift-changelog_416#416_components)
+
+    * [Worker node fix pack 4.16.67_1628_openshift, released 12 August 2026](/docs/openshift?topic=openshift-changelog_416#cl-boms-41667_1628_openshift_W)
 
     * [Master fix pack 4.16.68_1627_openshift, released 07 August 2026](/docs/openshift?topic=openshift-changelog_416#cl-boms_master-41668_1627_openshift_M)
 
@@ -8670,7 +8694,17 @@ subcollection: openshift
 
 [OpenShift AI add-on version change log](/docs/openshift?topic=openshift-cl-add-ons-openshift-ai#cl-add-ons-openshift-ai)
 
+* [Version 420](/docs/openshift?topic=openshift-cl-add-ons-openshift-ai#cl-add-ons-openshift-ai-420)
+
+    * [Version 420 - v420.0.3_361259361, released 10 August 2026](/docs/openshift?topic=openshift-cl-add-ons-openshift-ai#cl-add-ons-openshift-ai-v42003_361259361)
+
+    * [Version 420 - v420.0.2_360056330, released 04 August 2026](/docs/openshift?topic=openshift-cl-add-ons-openshift-ai#cl-add-ons-openshift-ai-v42002_360056330)
+
+    * [Version 420 - 420.0.0_349689605, released 08 July 2026](/docs/openshift?topic=openshift-cl-add-ons-openshift-ai#cl-add-ons-openshift-ai-42000_349689605)
+
 * [Version 419](/docs/openshift?topic=openshift-cl-add-ons-openshift-ai#cl-add-ons-openshift-ai-419)
+
+    * [Version 419 - v419.1.2_361259372, released 10 August 2026](/docs/openshift?topic=openshift-cl-add-ons-openshift-ai#cl-add-ons-openshift-ai-v41912_361259372)
 
     * [Version 419 - v419.1.1_359492648, released 03 August 2026](/docs/openshift?topic=openshift-cl-add-ons-openshift-ai#cl-add-ons-openshift-ai-v41911_359492648)
 
@@ -8684,6 +8718,8 @@ subcollection: openshift
 
 * [Version 418](/docs/openshift?topic=openshift-cl-add-ons-openshift-ai#cl-add-ons-openshift-ai-418)
 
+    * [Version 418 - v418.1.4_361259339, released 10 August 2026](/docs/openshift?topic=openshift-cl-add-ons-openshift-ai#cl-add-ons-openshift-ai-v41814_361259339)
+
     * [Version 418 - 418.1.3_359492573, released 03 August 2026](/docs/openshift?topic=openshift-cl-add-ons-openshift-ai#cl-add-ons-openshift-ai-41813_359492573)
 
     * [Version 418 - 418.1.2_346505318, released 09 June 2026](/docs/openshift?topic=openshift-cl-add-ons-openshift-ai#cl-add-ons-openshift-ai-41812_346505318)
@@ -8695,6 +8731,8 @@ subcollection: openshift
     * [Version 418 - v418.0.0_295927267, released 11 November 2025](/docs/openshift?topic=openshift-cl-add-ons-openshift-ai#cl-add-ons-openshift-ai-v41800_295927267)
 
 * [Version 417](/docs/openshift?topic=openshift-cl-add-ons-openshift-ai#cl-add-ons-openshift-ai-417)
+
+    * [Version 417 - v417.1.4_361259329, released 10 August 2026](/docs/openshift?topic=openshift-cl-add-ons-openshift-ai#cl-add-ons-openshift-ai-v41714_361259329)
 
     * [Version 417 - 417.1.3_359492531, released 03 August 2026](/docs/openshift?topic=openshift-cl-add-ons-openshift-ai#cl-add-ons-openshift-ai-41713_359492531)
 
@@ -8711,6 +8749,8 @@ subcollection: openshift
     * [Version 417 - 417.0.0_533, released 19 August 2025](/docs/openshift?topic=openshift-cl-add-ons-openshift-ai#cl-add-ons-openshift-ai-41700_533)
 
 * [Version 416](/docs/openshift?topic=openshift-cl-add-ons-openshift-ai#cl-add-ons-openshift-ai-416)
+
+    * [Version 416 - v416.4.4_361259301, released 10 August 2026](/docs/openshift?topic=openshift-cl-add-ons-openshift-ai#cl-add-ons-openshift-ai-v41644_361259301)
 
     * [Version 416 - v416.4.3_359492487, released 03 August 2026](/docs/openshift?topic=openshift-cl-add-ons-openshift-ai#cl-add-ons-openshift-ai-v41643_359492487)
 
@@ -8739,10 +8779,6 @@ subcollection: openshift
     * [Version 416 - v416.4.0_320919164, released 03 March 2025](/docs/openshift?topic=openshift-cl-add-ons-openshift-ai#cl-add-ons-openshift-ai-v41640_320919164)
 
     * [Version 416 - 416.0.0_424, released 21 January 2025](/docs/openshift?topic=openshift-cl-add-ons-openshift-ai#cl-add-ons-openshift-ai-41600_424)
-
-* [Version 420](/docs/openshift?topic=openshift-cl-add-ons-openshift-ai#cl-add-ons-openshift-ai-420)
-
-    * [Version 420 - 420.0.0_349689605, released 08 July 2026](/docs/openshift?topic=openshift-cl-add-ons-openshift-ai#cl-add-ons-openshift-ai-42000_349689605)
 
 [Cluster autoscaler add-on version change log](/docs/openshift?topic=openshift-cl-add-ons-cluster-autoscaler#cl-add-ons-cluster-autoscaler)
 
@@ -8849,6 +8885,8 @@ subcollection: openshift
 [IBM Storage Operator add-on version change log](/docs/openshift?topic=openshift-cl-add-ons-ibm-storage-operator#cl-add-ons-ibm-storage-operator)
 
 * [Version 1.0](/docs/openshift?topic=openshift-cl-add-ons-ibm-storage-operator#cl-add-ons-ibm-storage-operator-1.0)
+
+    * [Version 1.0 - v1.0.55_360965725, released 12 August 2026](/docs/openshift?topic=openshift-cl-add-ons-ibm-storage-operator#cl-add-ons-ibm-storage-operator-v1055_360965725)
 
     * [Version 1.0 - v1.0.53_359554333, released 05 August 2026](/docs/openshift?topic=openshift-cl-add-ons-ibm-storage-operator#cl-add-ons-ibm-storage-operator-v1053_359554333)
 
@@ -9021,6 +9059,8 @@ subcollection: openshift
 [VPC File CSI Driver add-on version change log](/docs/openshift?topic=openshift-cl-add-ons-vpc-file-csi-driver#cl-add-ons-vpc-file-csi-driver)
 
 * [Version 2.0](/docs/openshift?topic=openshift-cl-add-ons-vpc-file-csi-driver#cl-add-ons-vpc-file-csi-driver-2.0)
+
+    * [Version 2.0 - v2.0.47_360961675, released 12 August 2026](/docs/openshift?topic=openshift-cl-add-ons-vpc-file-csi-driver#cl-add-ons-vpc-file-csi-driver-v2047_360961675)
 
     * [Version 2.0 - v2.0.45_359566968, released 05 August 2026](/docs/openshift?topic=openshift-cl-add-ons-vpc-file-csi-driver#cl-add-ons-vpc-file-csi-driver-v2045_359566968)
 
@@ -10112,7 +10152,7 @@ subcollection: openshift
 
 [Why does the cluster master return a VPN server error?](/docs/openshift?topic=openshift-rhoks_ts_openvpn_login#rhoks_ts_openvpn_login)
 
-[VPC: Why is no VPC available when I create a cluster in the console?](/docs/openshift?topic=openshift-ts_no_vpc#vpc-why-is-no-vpc-available-when-i-create-a-cluster-in-the-console)
+[VPC: Why is no VPC available when I create a cluster in the console?](/docs/openshift?topic=openshift-ts_no_vpc#ts_no_vpc)
 
 [Why do I get an `infrastructure operation failed` error when creating a VPC cluster?](/docs/openshift?topic=openshift-ts-resource-group-permissions#ts-resource-group-permissions)
 
@@ -10357,7 +10397,7 @@ subcollection: openshift
 
 * [Step 7: Check if the issue is resolved](/docs/openshift?topic=openshift-debug_cluster_autoscaler#ca-debug-more)
 
-[Autoscaling fails after API key reset](/docs/openshift?topic=openshift-ts-storage-ca-apikey-reset#autoscaling-fails-after-api-key-reset)
+[Autoscaling fails after API key reset](/docs/openshift?topic=openshift-ts-storage-ca-apikey-reset#ts-storage-ca-apikey-reset)
 
 [Why can't I resize or rebalance my worker pool?](/docs/openshift?topic=openshift-ts-ca-resize#ts-ca-resize)
 
@@ -10719,7 +10759,7 @@ subcollection: openshift
 
 [Why can't my app access or write to PVCs?](/docs/openshift?topic=openshift-file_app_failures#file_app_failures)
 
-[Why does my app fail with a group ID error for NFS file storage permissions?](/docs/openshift?topic=openshift-root#why-does-my-app-fail-with-a-group-id-error-for-nfs-file-storage-permissions)
+[Why does my app fail with a group ID error for NFS file storage permissions?](/docs/openshift?topic=openshift-root#root)
 
 [Why does my app fail when a non-root user owns the NFS file storage mount path?](/docs/openshift?topic=openshift-nonroot#nonroot)
 
@@ -10735,7 +10775,7 @@ subcollection: openshift
 
 * [Verifying the read and write permissions for the non-root user](/docs/openshift?topic=openshift-cs_storage_nonroot#verify-rw-permissions)
 
-[Why are the file systems for worker nodes changed to read-only?](/docs/openshift?topic=openshift-readonly_nodes#why-are-the-file-systems-for-worker-nodes-changed-to-read-only)
+[Why are the file systems for worker nodes changed to read-only?](/docs/openshift?topic=openshift-readonly_nodes#readonly_nodes)
 
 [Why can't I create {{site.data.keyword.filestorage_vpc_short}} snapshots?](/docs/openshift?topic=openshift-ts-storage-vpc-file-snapshot-create#ts-storage-vpc-file-snapshot-create)
 
@@ -10836,9 +10876,9 @@ subcollection: openshift
 
 [Why does my Block Storage persistent volume show a `limited` connectivity status?](/docs/openshift?topic=openshift-block-pv-limited-connectivity#block-pv-limited-connectivity)
 
-[Why can't I delete my {{site.data.keyword.block_storage_is_short}} volume snapshot resources?](/docs/openshift?topic=openshift-ts-storage-volumesnapshotdelete#why-cant-i-delete-my--volume-snapshot-resources)
+[Why can't I delete my {{site.data.keyword.block_storage_is_short}} volume snapshot resources?](/docs/openshift?topic=openshift-ts-storage-volumesnapshotdelete#ts-storage-volumesnapshotdelete)
 
-[Why can't I create {{site.data.keyword.block_storage_is_short}} snapshots?](/docs/openshift?topic=openshift-ts-storage-snapshotfails#why-cant-i-create--snapshots)
+[Why can't I create {{site.data.keyword.block_storage_is_short}} snapshots?](/docs/openshift?topic=openshift-ts-storage-snapshotfails#ts-storage-snapshotfails)
 
 
 ### Object Storage
@@ -10863,7 +10903,7 @@ subcollection: openshift
 
 * [Updating the Helm chart](/docs/openshift?topic=openshift-debug_storage_cos#debug-helm-update)
 
-[Why can't my PVC access an existing bucket?](/docs/openshift?topic=openshift-cos_access_bucket_fails#why-cant-my-pvc-access-an-existing-bucket)
+[Why can't my PVC access an existing bucket?](/docs/openshift?topic=openshift-cos_access_bucket_fails#cos_access_bucket_fails)
 
 [Why does installing the Object storage Helm plug-in fail?](/docs/openshift?topic=openshift-cos_helm_fails#cos_helm_fails)
 
@@ -10871,7 +10911,7 @@ subcollection: openshift
 
 * [Verifying that the permissions for your files are updated](/docs/openshift?topic=openshift-cos_nonroot_access#verifying_file_permission_update)
 
-[Why does my app pod fail with an `Operation not permitted` error?](/docs/openshift?topic=openshift-cos_operation_not_permitted#why-does-my-app-pod-fail-with-an-operation-not-permitted-error)
+[Why does my app pod fail with an `Operation not permitted` error?](/docs/openshift?topic=openshift-cos_operation_not_permitted#cos_operation_not_permitted)
 
 [Why can't the ownership of the mount path be changed?](/docs/openshift?topic=openshift-cos_mountpath_error#cos_mountpath_error)
 
@@ -10879,7 +10919,7 @@ subcollection: openshift
 
 * [Resolving the issue](/docs/openshift?topic=openshift-cos_plugin_fails#cos-plugin-resolve)
 
-[Why do I see wrong credentials or access denied messages when I create a PVC?](/docs/openshift?topic=openshift-cred_failure#why-do-i-see-wrong-credentials-or-access-denied-messages-when-i-create-a-pvc)
+[Why do I see wrong credentials or access denied messages when I create a PVC?](/docs/openshift?topic=openshift-cred_failure#cred_failure)
 
 [Why do I see wrong s3fs or IAM API endpoints when I create a PVC?](/docs/openshift?topic=openshift-cos_api_endpoint_failure#cos_api_endpoint_failure)
 
@@ -10889,7 +10929,7 @@ subcollection: openshift
 
 * [Resolving the issue](/docs/openshift?topic=openshift-cos_secret_access_fails#cos-secret-resolve)
 
-[Why is the transport endpoint not connected?](/docs/openshift?topic=openshift-cos_transport_ts_connect#why-is-the-transport-endpoint-not-connected)
+[Why is the transport endpoint not connected?](/docs/openshift?topic=openshift-cos_transport_ts_connect#cos_transport_ts_connect)
 
 [Why do I see transport endpoint not connected errors when using the {{site.data.keyword.cos_full_notm}} cluster add-on?](/docs/openshift?topic=openshift-cos_transport_ts_connect_addon#cos_transport_ts_connect_addon)
 
@@ -10897,7 +10937,7 @@ subcollection: openshift
 
 [Why do I see a volume mounting error when using the {{site.data.keyword.cos_full_notm}} plug-in?](/docs/openshift?topic=openshift-ts-cos-storage-dep#ts-cos-storage-dep)
 
-[Debugging the Cloud Object Storage add-on](/docs/openshift?topic=openshift-ts-storage-cos-csi-addon#debugging-the-cloud-object-storage-add-on)
+[Debugging the Cloud Object Storage add-on](/docs/openshift?topic=openshift-ts-storage-cos-csi-addon#ts-storage-cos-csi-addon)
 
 
 ### Portworx

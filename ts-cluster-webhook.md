@@ -30,8 +30,6 @@ This troubleshooting topic is not for general webhook troubleshooting. See [Debu
 Troubleshoot issues with broken webhooks that interfere with cluster master operations.
 {: shortdesc}
 
-{: note}
-
 During a master operation such as updating your cluster version, the cluster had a broken webhook application.
 {: tsSymptoms}
 

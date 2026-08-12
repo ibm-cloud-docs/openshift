@@ -21,11 +21,10 @@ content-type: troubleshoot
 
 # Classic clusters: Why can't my app connect via Ingress?
 {: #cs_ingress_fails}
+{: support}
 
 Troubleshoot Ingress connectivity issues when your app cannot be reached through Ingress.
 {: shortdesc}
-
-{: support}
 
 [Classic infrastructure]{: tag-classic-inf}
 

@@ -21,12 +21,11 @@ content-type: troubleshoot
 
 # Why can't I create or delete clusters or worker nodes?
 {: #cluster_infra_errors}
+{: troubleshoot}
+{: support}
 
 Troubleshoot issues when creating or deleting clusters.
 {: shortdesc}
-
-{: troubleshoot}
-{: support}
 
 You can't perform infrastructure-related commands on your cluster, such as:
 * Adding worker nodes in an existing cluster or when creating a new cluster.

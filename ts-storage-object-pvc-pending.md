@@ -21,11 +21,10 @@ content-type: troubleshoot
 
 # Why does my PVC remain in a pending state?
 {: #cos_pvc_pending}
+{: support}
 
 Troubleshoot persistent volume claims that remain in pending state for Cloud Object Storage.
 {: shortdesc}
-
-{: support}
 
 
 

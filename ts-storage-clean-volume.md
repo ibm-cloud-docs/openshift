@@ -21,11 +21,10 @@ content-type: troubleshoot
 
 # Why am I still seeing charges for block storage devices after deleting my cluster?
 {: #ts_storage_clean_volume}
+{: support}
 
 Troubleshoot issues when cleaning up storage volumes.
 {: shortdesc}
-
-{: support}
 
 [Virtual Private Cloud]{: tag-vpc} [Classic infrastructure]{: tag-classic-inf}
 

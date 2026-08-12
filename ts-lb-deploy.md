@@ -21,11 +21,10 @@ content-type: troubleshoot
 
 # Classic clusters: Why can't I deploy a load balancer?
 {: #cs_subnet_limit_lb}
+{: support}
 
 Troubleshoot issues when deploying or updating network load balancer (NLB) services in your cluster.
 {: shortdesc}
-
-{: support}
 
 [Classic infrastructure]{: tag-classic-inf}
 

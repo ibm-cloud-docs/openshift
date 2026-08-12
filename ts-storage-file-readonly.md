@@ -21,12 +21,11 @@ content-type: troubleshoot
 
 
 # Why are the file systems for worker nodes changed to read-only?
+{: #readonly_nodes}
+{: support}
 
 Troubleshoot file storage volumes that become read-only.
 {: shortdesc}
-
-{: #readonly_nodes}
-{: support}
 
 [Classic infrastructure]{: tag-classic-inf}
 

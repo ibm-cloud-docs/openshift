@@ -20,12 +20,11 @@ content-type: troubleshoot
 
 
 # VPC: Why is no VPC available when I create a cluster in the console?
+{: #ts_no_vpc}
+{: support}
 
 Troubleshoot issues when your cluster does not have a VPC network configured.
 {: shortdesc}
-
-{: #ts_no_vpc}
-{: support}
 
 **Infrastructure provider**: VPC
 

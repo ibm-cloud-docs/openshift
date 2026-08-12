@@ -21,11 +21,10 @@ content-type: troubleshoot
 
 # Why does installing the Object storage Helm plug-in fail?
 {: #cos_helm_fails}
+{: support}
 
 Troubleshoot Helm installation failures for Cloud Object Storage.
 {: shortdesc}
-
-{: support}
 
 [Virtual Private Cloud]{: tag-vpc} [Classic infrastructure]{: tag-classic-inf}
 

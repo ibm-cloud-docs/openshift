@@ -20,11 +20,10 @@ content-type: troubleshoot
 
 [Classic infrastructure]{: tag-classic-inf}
 
-When you check the status of your cluster's health by running the `ibmcloud oc cluster health issues --cluster <CLUSTER_ID>`, you see an error similar to the following example.
-
 Troubleshoot network health check error NHC006.
 {: shortdesc}
 
+When you check the status of your cluster's health by running the `ibmcloud oc cluster health issues --cluster <CLUSTER_ID>`, you see an error similar to the following example.
 {: tsSymptoms}
 
 ```sh

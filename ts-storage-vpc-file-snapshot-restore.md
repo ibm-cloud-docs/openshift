@@ -19,14 +19,12 @@ subcollection: openshift
 {: #ts-storage-vpc-file-snapshot-restore}
 {: support}
 
-[Virtual Private Cloud]{: tag-vpc}
-
-
-You are unable to restore your {{site.data.keyword.filestorage_vpc_short}} snapshot to a PVC.
-
 Troubleshoot VPC file storage snapshot restoration failures.
 {: shortdesc}
 
+[Virtual Private Cloud]{: tag-vpc}
+
+You are unable to restore your {{site.data.keyword.filestorage_vpc_short}} snapshot to a PVC.
 {: tsSymptoms}
 
 You see provisioning failed errors similar to the following when trying to restore your snapshot.

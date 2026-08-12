@@ -21,11 +21,10 @@ content-type: troubleshoot
 
 # Classic: Why is the bare metal instance ID inconsistent with worker records?
 {: #bm_machine_id}
+{: support}
 
 Troubleshoot bare metal worker node instance ID issues.
 {: shortdesc}
-
-{: support}
 
 
 

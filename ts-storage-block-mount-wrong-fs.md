@@ -21,11 +21,10 @@ content-type: troubleshoot
 
 # Why does mounting existing block storage to a pod fail with the wrong file system?
 {: #block_filesystem}
+{: support}
 
 Troubleshoot issues when block storage volumes are mounted with the wrong file system.
 {: shortdesc}
-
-{: support}
 
 [Virtual Private Cloud]{: tag-vpc} [Classic infrastructure]{: tag-classic-inf}
 

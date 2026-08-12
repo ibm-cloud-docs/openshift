@@ -21,11 +21,10 @@ content-type: troubleshoot
 # Why does mounting {{site.data.keyword.blockstorageshort}} fail with a file system check error?
 {: #ts-storage-fsck}
 {: troubleshoot}
+{: support}
 
 Troubleshoot file system check issues for storage volumes.
 {: shortdesc}
-
-{: support}
 
 [Classic infrastructure]{: tag-classic-inf}
 

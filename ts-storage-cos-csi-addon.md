@@ -21,12 +21,11 @@ content-type: troubleshoot
 
 
 # Debugging the Cloud Object Storage add-on
+{: #ts-storage-cos-csi-addon}
+{: support}
 
 Troubleshoot issues with the Cloud Object Storage CSI add-on.
 {: shortdesc}
-
-{: #ts-storage-cos-csi-addon}
-{: support}
 
 [Virtual Private Cloud]{: tag-vpc} [Classic infrastructure]{: tag-classic-inf}
 

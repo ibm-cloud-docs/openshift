@@ -21,11 +21,10 @@ content-type: troubleshoot
 
 # Why can't my app access or write to PVCs?
 {: #block_app_failures}
+{: support}
 
 Troubleshoot block storage application issues.
 {: shortdesc}
-
-{: support}
 
 [Virtual Private Cloud]{: tag-vpc} [Classic infrastructure]{: tag-classic-inf}
 

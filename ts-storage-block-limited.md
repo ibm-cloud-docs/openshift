@@ -21,11 +21,10 @@ content-type: troubleshoot
 
 # Why does my Block Storage persistent volume show a `limited` connectivity status?
 {: #block-pv-limited-connectivity}
+{: support}
 
 Troubleshoot issues with block storage volume limits in your cluster.
 {: shortdesc}
-
-{: support}
 
 [Classic infrastructure]{: tag-classic-inf}
 

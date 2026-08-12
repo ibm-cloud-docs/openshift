@@ -21,11 +21,10 @@ content-type: troubleshoot
 
 # Why do I see wrong s3fs or IAM API endpoints when I create a PVC?
 {: #cos_api_endpoint_failure}
+{: support}
 
 Troubleshoot persistent volume claims that fail with S3FS and IAM endpoint errors.
 {: shortdesc}
-
-{: support}
 
 [Virtual Private Cloud]{: tag-vpc} [Classic infrastructure]{: tag-classic-inf}
 

@@ -21,12 +21,11 @@ content-type: troubleshoot
 
 
 # Why can't I delete my {{site.data.keyword.block_storage_is_short}} volume snapshot resources?
+{: #ts-storage-volumesnapshotdelete}
+{: support}
 
 Troubleshoot volume snapshot deletion issues.
 {: shortdesc}
-
-{: #ts-storage-volumesnapshotdelete}
-{: support}
 
 **Infrastructure provider**:
 VPC

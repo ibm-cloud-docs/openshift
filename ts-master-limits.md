@@ -21,11 +21,10 @@ content-type: troubleshoot
 
 # Why does my cluster master status say it is approaching its resource limit?
 {: #master_resource_limit}
+{: support}
 
 Troubleshoot issues when cluster master resource limits are reached.
 {: shortdesc}
-
-{: support}
 
 [Virtual Private Cloud]{: tag-vpc} [Classic infrastructure]{: tag-classic-inf}
 

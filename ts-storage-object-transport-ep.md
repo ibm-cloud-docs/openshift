@@ -21,12 +21,11 @@ content-type: troubleshoot
 
 
 # Why is the transport endpoint not connected?
+{: #cos_transport_ts_connect}
+{: support}
 
 Troubleshoot Cloud Object Storage transport layer and endpoint issues.
 {: shortdesc}
-
-{: #cos_transport_ts_connect}
-{: support}
 
 [Virtual Private Cloud]{: tag-vpc} [Classic infrastructure]{: tag-classic-inf}
 

@@ -21,12 +21,11 @@ content-type: troubleshoot
 
 
 # Why does my app fail with a group ID error for NFS file storage permissions?
+{: #root}
+{: support}
 
 Troubleshoot file storage group ID permission failures.
 {: shortdesc}
-
-{: #root}
-{: support}
 
 [Classic infrastructure]{: tag-classic-inf}
 

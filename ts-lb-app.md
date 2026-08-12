@@ -21,11 +21,10 @@ content-type: troubleshoot
 
 # Why can't my app connect via a network load balancer (NLB) service?
 {: #cs_loadbalancer_fails}
+{: support}
 
 Troubleshoot network load balancer (NLB) connectivity issues when your app cannot be reached through an NLB service.
 {: shortdesc}
-
-{: support}
 
 [Classic infrastructure]{: tag-classic-inf}
 

@@ -21,11 +21,10 @@ content-type: troubleshoot
 
 # Why does my app fail when a non-root user owns the NFS file storage mount path?
 {: #nonroot}
+{: support}
 
 Troubleshoot non-root NFS mount issues for file storage.
 {: shortdesc}
-
-{: support}
 
 [Classic infrastructure]{: tag-classic-inf}
 

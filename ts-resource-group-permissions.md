@@ -20,11 +20,10 @@ content-type: troubleshoot
 {: #ts-resource-group-permissions}
 {: support}
 
-When you try to create a VPC cluster, you see an error message similar to the following example.
-
 Troubleshoot resource group permission errors when working with your cluster.
 {: shortdesc}
 
+When you try to create a VPC cluster, you see an error message similar to the following example.
 {: tsSymptoms}
 
 ```sh

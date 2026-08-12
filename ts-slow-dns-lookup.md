@@ -21,11 +21,10 @@ content-type: troubleshoot
 
 # Why are DNS lookups from certain pods so slow?
 {: #ts-slow-dns-lookup}
+{: support}
 
 Troubleshoot slow DNS lookups that cause connection delays in your cluster.
 {: shortdesc}
-
-{: support}
 
 Certain containers that are based on Alpine Linux, such as NGINX, have issues with DNS query handling that can cause them to not process valid DNS responses. A small percentage of DNS lookups from these pods can take over 5 seconds instead of the typical less than 80 ms. If the timeout that is set for your application is less than 5 seconds, the DNS lookups can time out.
 {: tsSymptoms}

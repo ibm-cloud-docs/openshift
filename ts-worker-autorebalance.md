@@ -21,11 +21,10 @@ content-type: troubleshoot
 
 # Why doesn't replacing a worker node create a worker node?
 {: #auto-rebalance-off}
+{: support}
 
 Troubleshoot worker node autorebalancing issues.
 {: shortdesc}
-
-{: support}
 
 
 [Virtual Private Cloud]{: tag-vpc} [Classic infrastructure]{: tag-classic-inf} [{{site.data.keyword.satelliteshort}}]{: tag-satellite}

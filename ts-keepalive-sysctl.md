@@ -21,11 +21,10 @@ content-type: troubleshoot
 
 # Why does my pod with long running TCP connections get disconnected?
 {: #ts-keepalive-sysctl}
+{: support}
 
 Learn how to configure TCP keepalive settings in your cluster to prevent connection timeouts.
 {: shortdesc}
-
-{: support}
 
 [Virtual Private Cloud]{: tag-vpc} [Classic infrastructure]{: tag-classic-inf}
 

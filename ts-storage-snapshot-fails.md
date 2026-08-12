@@ -21,12 +21,11 @@ content-type: troubleshoot
 
 
 # Why can't I create {{site.data.keyword.block_storage_is_short}} snapshots?
+{: #ts-storage-snapshotfails}
+{: support}
 
 Troubleshoot storage snapshot failures.
 {: shortdesc}
-
-{: #ts-storage-snapshotfails}
-{: support}
 
 **Infrastructure provider**:
 VPC

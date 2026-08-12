@@ -21,12 +21,11 @@ content-type: troubleshoot
 
 
 # Why do I see wrong credentials or access denied messages when I create a PVC?
+{: #cred_failure}
+{: support}
 
 Troubleshoot persistent volume claims that fail for Cloud Object Storage.
 {: shortdesc}
-
-{: #cred_failure}
-{: support}
 
 [Virtual Private Cloud]{: tag-vpc} [Classic infrastructure]{: tag-classic-inf}
 

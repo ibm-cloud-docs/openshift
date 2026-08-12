@@ -21,12 +21,11 @@ content-type: troubleshoot
 
 
 # Autoscaling fails after API key reset
+{: #ts-storage-ca-apikey-reset}
+{: support}
 
 Troubleshoot storage API key reset issues for block storage.
 {: shortdesc}
-
-{: #ts-storage-ca-apikey-reset}
-{: support}
 
 **Infrastructure provider**: VPC
 

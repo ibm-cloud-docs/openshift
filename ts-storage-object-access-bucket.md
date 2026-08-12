@@ -21,12 +21,11 @@ content-type: troubleshoot
 
 
 # Why can't my PVC access an existing bucket?
+{: #cos_access_bucket_fails}
+{: support}
 
 Troubleshoot bucket access issues with Cloud Object Storage.
 {: shortdesc}
-
-{: #cos_access_bucket_fails}
-{: support}
 
 [Virtual Private Cloud]{: tag-vpc} [Classic infrastructure]{: tag-classic-inf}
 
