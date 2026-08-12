@@ -6944,7 +6944,7 @@ subcollection: openshift
 {: #sitemap_cli_reference}
 
 
-[{{site.data.keyword.openshiftlong_notm}} CLI command reference](/docs/openshift?topic=openshift-icks_map#icks_map)
+[{{site.data.keyword.openshiftlong_notm}} CLI Map](/docs/openshift?topic=openshift-icks_map#icks_map)
 
 * [`api` commands](/docs/openshift?topic=openshift-icks_map#icks_map_api)
 

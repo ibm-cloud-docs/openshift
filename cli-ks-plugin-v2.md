@@ -2,7 +2,7 @@
 
 copyright:
   years: 2024, 2026
-lastupdated: "2026-08-07"
+lastupdated: "2026-08-12"
 
 keywords: openshift, cli reference, kubernetes cli, openshift cli, {{site.data.keyword.openshiftlong_notm}}
 
@@ -3949,7 +3949,7 @@ If you set up your IBM Cloud account to use different credentials to access the 
 ibmcloud ks credential get --region REGION [--output OUTPUT] [-q]
 ```
 
-Aliases: `ibmcloud oc credential credentials-get`, `ibmcloud oc credentials-get`
+Aliases: `ibmcloud oc credentials-get`
 
 ### Command options
 {: #credential-get-options}
@@ -4031,7 +4031,7 @@ Remove the credentials that allow you to access the IBM Cloud classic infrastruc
 ibmcloud ks credential unset --region REGION [-q]
 ```
 
-Aliases: `ibmcloud oc credential credentials-unset`, `ibmcloud oc credentials-unset`
+Aliases: `ibmcloud oc credentials-unset`
 
 ### Command options
 {: #credential-unset-options}
@@ -5899,8 +5899,6 @@ Set the Ingress controller currently exposed by the VPC ALB load balancer.
 ibmcloud ks ingress load-balancer backend set --cluster CLUSTER [--private-backend BACKEND] [--public-backend BACKEND] [-q]
 ```
 
-Aliases: `ibmcloud oc ingress lb backend set`
-
 ### Command options
 {: #ingress-load-balancer-backend-set-options}
 
@@ -5944,8 +5942,6 @@ Get the configuration of load balancers that expose Ingress ALBs in your cluster
 ibmcloud ks ingress load-balancer get --cluster CLUSTER [--output OUTPUT] [-q]
 ```
 
-Aliases: `ibmcloud oc ingress lb get`
-
 ### Command options
 {: #ingress-load-balancer-get-options}
 
@@ -5982,8 +5978,6 @@ Disable the PROXY protocol so that client connection information is no longer pa
 ```sh
 ibmcloud ks ingress load-balancer proxy-protocol disable --cluster CLUSTER [-f] [-q]
 ```
-
-Aliases: `ibmcloud oc ingress lb proxy-protocol disable`
 
 ### Command options
 {: #ingress-load-balancer-proxy-protocol-disable-options}
@@ -6024,8 +6018,6 @@ Enable the PROXY protocol so that client connection information is passed in req
 ```sh
 ibmcloud ks ingress load-balancer proxy-protocol enable --cluster CLUSTER [--cidr CIDR ...] [-f] [-q]
 ```
-
-Aliases: `ibmcloud oc ingress lb proxy-protocol enable`
 
 ### Command options
 {: #ingress-load-balancer-proxy-protocol-enable-options}
@@ -6444,8 +6436,6 @@ Disable the usage of port 80 in your cluster.
 ibmcloud ks ingress security port80 disable --cluster CLUSTER [-f] [-q]
 ```
 
-Aliases: `ibmcloud oc ingress sec port80 disable`
-
 ### Command options
 {: #ingress-security-port80-disable-options}
 
@@ -6483,8 +6473,6 @@ Enable the usage of port 80 in your cluster.
 ibmcloud ks ingress security port80 enable --cluster CLUSTER [-f] [-q]
 ```
 
-Aliases: `ibmcloud oc ingress sec port80 enable`
-
 ### Command options
 {: #ingress-security-port80-enable-options}
 
@@ -6521,8 +6509,6 @@ Get the security configuration of port 80 in your cluster.
 ```sh
 ibmcloud ks ingress security port80 get --cluster CLUSTER [--output OUTPUT] [-q]
 ```
-
-Aliases: `ibmcloud oc ingress sec port80 get`
 
 ### Command options
 {: #ingress-security-port80-get-options}
