@@ -1,8 +1,8 @@
 ---
 
 copyright: 
-  years: 2014, 2025
-lastupdated: "2025-03-13"
+  years: 2014, 2026
+lastupdated: "2026-08-12"
 
 
 keywords: kubernetes, openshift
@@ -25,6 +25,10 @@ content-type: troubleshoot
 
 [Virtual Private Cloud]{: tag-vpc} [Classic infrastructure]{: tag-classic-inf}
 
+
+
+Troubleshoot issues with broken webhook applications that prevent cluster master operations from completing.
+{: shortdesc}
 
 Portieris image security enforcement add-on does not install.  You see a master status similar to the following:
 {: tsSymptoms}

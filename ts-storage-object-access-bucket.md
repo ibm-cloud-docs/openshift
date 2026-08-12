@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2026
-lastupdated: "2026-04-10"
+lastupdated: "2026-08-12"
 
 
 keywords: openshift
@@ -23,6 +23,9 @@ content-type: troubleshoot
 # Why can't my PVC access an existing bucket?
 {: #cos_access_bucket_fails}
 {: support}
+
+Troubleshoot bucket access issues with Cloud Object Storage.
+{: shortdesc}
 
 [Virtual Private Cloud]{: tag-vpc} [Classic infrastructure]{: tag-classic-inf}
 

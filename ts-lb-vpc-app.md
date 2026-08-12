@@ -1,8 +1,8 @@
 ---
 
 copyright: 
-  years: 2014, 2025
-lastupdated: "2025-11-18"
+  years: 2014, 2026
+lastupdated: "2026-08-12"
 
 
 keywords: openshift
@@ -22,6 +22,10 @@ content-type: troubleshoot
 # VPC clusters: Why can't my app connect via load balancer?
 {: #vpc_ts_lb}
 {: support}
+
+
+Troubleshoot VPC load balancer connectivity issues when your app cannot be reached through a VPC load balancer service.
+{: shortdesc}
 
 **Infrastructure provider**: VPC
 

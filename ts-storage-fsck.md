@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2022, 2026
-lastupdated: "2026-04-30"
+lastupdated: "2026-08-12"
 
 
 keywords: kubernetes, openshift, fsck, file system check
@@ -22,6 +22,9 @@ content-type: troubleshoot
 {: #ts-storage-fsck}
 {: troubleshoot}
 {: support}
+
+Troubleshoot file system check issues for storage volumes.
+{: shortdesc}
 
 [Classic infrastructure]{: tag-classic-inf}
 

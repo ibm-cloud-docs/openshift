@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2026
-lastupdated: "2026-07-27"
+lastupdated: "2026-08-12"
 
 
 keywords: openshift
@@ -22,6 +22,9 @@ content-type: troubleshoot
 # Why can't my app connect via a network load balancer (NLB) service?
 {: #cs_loadbalancer_fails}
 {: support}
+
+Troubleshoot network load balancer (NLB) connectivity issues when your app cannot be reached through an NLB service.
+{: shortdesc}
 
 [Classic infrastructure]{: tag-classic-inf}
 

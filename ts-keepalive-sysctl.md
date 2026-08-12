@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2022, 2026
-lastupdated: "2026-05-04"
+lastupdated: "2026-08-12"
 
 
 keywords: kubernetes, openshift, keepalive, TCP
@@ -22,6 +22,9 @@ content-type: troubleshoot
 # Why does my pod with long running TCP connections get disconnected?
 {: #ts-keepalive-sysctl}
 {: support}
+
+Learn how to configure TCP keepalive settings in your cluster to prevent connection timeouts.
+{: shortdesc}
 
 [Virtual Private Cloud]{: tag-vpc} [Classic infrastructure]{: tag-classic-inf}
 

@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2026
-lastupdated: "2026-07-30"
+lastupdated: "2026-08-12"
 
 
 keywords: openshift, autoscaler
@@ -16,6 +16,10 @@ content-type: troubleshoot
 
 # Why can't I resize or rebalance my worker pool?
 {: #ts-ca-resize}
+
+Learn how to resize or rebalance worker pools when the cluster autoscaler is enabled.
+{: shortdesc}
+
 
 When the cluster autoscaler is enabled for a worker pool, you can't [resize](/docs/openshift?topic=openshift-kubernetes-service-cli#worker-pool-resize-cli) or [rebalance](/docs/openshift?topic=openshift-kubernetes-service-cli#worker-pool-rebalance-cli) your worker pools. 
 {: tsSymptoms}

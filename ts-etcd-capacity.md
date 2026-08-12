@@ -2,7 +2,7 @@
 
 copyright:
   years: 2024, 2026
-lastupdated: "2026-04-30"
+lastupdated: "2026-08-12"
 
 keywords: openshift, {{site.data.keyword.openshiftlong_notm}}, etcd, capacity, database, limits
 
@@ -20,6 +20,10 @@ content-type: troubleshoot
 # Why do I see an `etcd database size is approaching the maximum` error?
 {: #ts-etcd-capacity}
 {: support}
+
+
+Troubleshoot etcd database capacity issues in your cluster.
+{: shortdesc}
 
 [Virtual Private Cloud]{: tag-vpc} [Classic infrastructure]{: tag-classic-inf} [{{site.data.keyword.satelliteshort}}]{: tag-satellite}
 

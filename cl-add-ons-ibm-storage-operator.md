@@ -3,7 +3,7 @@
 copyright:
   years: 2024, 2026
 
-lastupdated: "2026-08-05"
+lastupdated: "2026-08-12"
 
 
 keywords: change log, version history, IBM Storage Operator
@@ -41,6 +41,17 @@ Review the version history for IBM Storage Operator.
 
 ## Version 1.0
 {: #cl-add-ons-ibm-storage-operator-1.0}
+
+
+### Version 1.0 - v1.0.55_360965725, released 12 August 2026
+{: #cl-add-ons-ibm-storage-operator-v1055_360965725}
+
+[Default version]{: tag-green}
+
+- Resolves the following CVEs: [GO-2026-6061](https://nvd.nist.gov/vuln/detail/GO-2026-6061){: external}.
+- Runs tunnel container as non-root 
+- `armada-storage-secret v1.3.61`
+- `stunnel:0.1.0.build-32`
 
 
 ### Version 1.0 - v1.0.53_359554333, released 05 August 2026

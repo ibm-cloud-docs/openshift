@@ -1,8 +1,8 @@
 ---
 
 copyright: 
-  years: 2023, 2025
-lastupdated: "2025-05-29"
+  years: 2023, 2026
+lastupdated: "2026-08-12"
 
 
 keywords: openshift, {{site.data.keyword.openshiftlong_notm}}, kubernetes, help, cluster, upgrades,
@@ -21,6 +21,10 @@ content-type: troubleshoot
 {: #ts-cluster-master-upgrade}
 {: troubleshoot}
 {: support}
+
+Troubleshoot errors that occur when updating or upgrading your cluster master.
+{: shortdesc}
+
 
 [Virtual Private Cloud]{: tag-vpc} [Classic infrastructure]{: tag-classic-inf} [{{site.data.keyword.satelliteshort}}]{: tag-satellite}
 

@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2025, 2026
-lastupdated: "2026-04-30"
+lastupdated: "2026-08-12"
 
 
 keywords: openshift, cos, mount error, libfuse
@@ -21,6 +21,10 @@ content-type: troubleshoot
 
 When deploying an app that uses the COS plug-in, you see an error message similar to the following example.
 {: tsSymptoms}
+
+Troubleshoot issues with the Cloud Object Storage plug-in dependency.
+{: shortdesc}
+
 
 ```sh
 Error mounting volume: s3fs mount failed: s3fs: error while loading shared libraries: libfuse.so.2: cannot open shared object file: No such file or directory

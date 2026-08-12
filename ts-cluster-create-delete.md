@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2026
-lastupdated: "2026-07-30"
+lastupdated: "2026-08-12"
 
 
 keywords: kubernetes, openshift
@@ -23,6 +23,9 @@ content-type: troubleshoot
 {: #cluster_infra_errors}
 {: troubleshoot}
 {: support}
+
+Troubleshoot issues when creating or deleting clusters.
+{: shortdesc}
 
 You can't perform infrastructure-related commands on your cluster, such as:
 * Adding worker nodes in an existing cluster or when creating a new cluster.

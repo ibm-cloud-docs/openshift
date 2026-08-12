@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2025, 2026
-lastupdated: "2026-04-30"
+lastupdated: "2026-08-12"
 
 
 keywords: kubernetes, openshift, {{site.data.keyword.filestorage_vpc_short}}, snapshot, restore
@@ -19,8 +19,10 @@ subcollection: openshift
 {: #ts-storage-vpc-file-snapshot-restore}
 {: support}
 
-[Virtual Private Cloud]{: tag-vpc}
+Troubleshoot VPC file storage snapshot restoration failures.
+{: shortdesc}
 
+[Virtual Private Cloud]{: tag-vpc}
 
 You are unable to restore your {{site.data.keyword.filestorage_vpc_short}} snapshot to a PVC.
 {: tsSymptoms}

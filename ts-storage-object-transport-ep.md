@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2024, 2026
-lastupdated: "2026-05-04"
+lastupdated: "2026-08-12"
 
 
 keywords: openshift, {{site.data.keyword.openshiftlong_notm}}, kubernetes, help, network, connectivity
@@ -23,6 +23,9 @@ content-type: troubleshoot
 # Why is the transport endpoint not connected?
 {: #cos_transport_ts_connect}
 {: support}
+
+Troubleshoot Cloud Object Storage transport layer and endpoint issues.
+{: shortdesc}
 
 [Virtual Private Cloud]{: tag-vpc} [Classic infrastructure]{: tag-classic-inf}
 

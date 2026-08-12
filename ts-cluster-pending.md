@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2026
-lastupdated: "2026-08-06"
+lastupdated: "2026-08-12"
 
 
 keywords: kubernetes, openshift
@@ -19,9 +19,12 @@ content-type: troubleshoot
 
 
 
-# Why does my cluster stay in a pending state?
+# Troubleshooting Kubernetes cluster stuck pending state IBM Cloud
 {: #cs_cluster_pending}
 {: support}
+
+Resolve issues with a Kubernetes cluster remaining in a pending state on IBM Cloud by checking worker node status and VLAN validity.
+{: shortdesc}
 
 [Virtual Private Cloud]{: tag-vpc} [Classic infrastructure]{: tag-classic-inf}
 

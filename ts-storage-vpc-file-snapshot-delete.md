@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2025, 2026
-lastupdated: "2026-04-30"
+lastupdated: "2026-08-12"
 
 
 keywords: kubernetes, openshift, {{site.data.keyword.filestorage_vpc_short}}, snapshot, restore
@@ -23,6 +23,10 @@ subcollection: openshift
 
 When you try to remove your volume snapshot and volumesnapshotcontents objects, the removal fails, but your volume snapshot object shows a ReadyToUse status as false.
 {: tsSymptoms}
+
+Troubleshoot VPC file storage snapshot deletion failures.
+{: shortdesc}
+
 
 
 There are finalizers preventing the resources from being removed.

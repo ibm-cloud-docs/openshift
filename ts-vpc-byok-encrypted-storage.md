@@ -1,7 +1,7 @@
 ---
 copyright:
   years: 2023, 2026
-lastupdated: "2026-07-27"
+lastupdated: "2026-08-12"
 
 
 keywords: openshift, {{site.data.keyword.openshiftlong_notm}}, byok, debug, help, vpc, storage, encryption
@@ -21,6 +21,10 @@ content-type: troubleshoot
 
 The VPC worker nodes cannot be provisioned due to a key error with the KMS provider.
 {: tsSymptoms}
+
+Troubleshoot BYOK encryption issues with VPC storage.
+{: shortdesc}
+
 
 ```sh
 Encrypted storage cannot be configured. Review the customer root key configuration for the worker pool.

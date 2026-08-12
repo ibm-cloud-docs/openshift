@@ -2,7 +2,7 @@
 
 copyright:
   years: 2022, 2026
-lastupdated: "2026-08-06"
+lastupdated: "2026-08-12"
 
 
 keywords: openshift, errdsia, nlb-dns, dns add, dns remove
@@ -22,6 +22,10 @@ content-type: troubleshoot
 {: troubleshoot}
 {: support}
 
+
+
+Troubleshoot Ingress DSIA (Destination Service Invalid App) errors.
+{: shortdesc}
 
 
 [Virtual Private Cloud]{: tag-vpc} [Classic infrastructure]{: tag-classic-inf} [{{site.data.keyword.satelliteshort}}]{: tag-satellite}

@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2026
-lastupdated: "2026-07-27"
+lastupdated: "2026-08-12"
 
 
 keywords: openshift
@@ -22,6 +22,9 @@ content-type: troubleshoot
 # After deleting all worker nodes, why don't my pods start on new worker nodes?
 {: #zero_nodes_calico_failure}
 {: support}
+
+Troubleshoot worker node deletion failures and stuck pods.
+{: shortdesc}
 
 [Virtual Private Cloud]{: tag-vpc} [Classic infrastructure]{: tag-classic-inf}
 

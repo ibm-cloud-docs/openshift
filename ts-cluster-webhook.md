@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2026
-lastupdated: "2026-04-30"
+lastupdated: "2026-08-12"
 
 
 keywords: kubernetes, openshift
@@ -26,7 +26,9 @@ content-type: troubleshoot
 [Virtual Private Cloud]{: tag-vpc} [Classic infrastructure]{: tag-classic-inf}
 
 This troubleshooting topic is not for general webhook troubleshooting. See [Debugging webhooks](/docs/openshift?topic=openshift-ts-webhook-debug) for webhook problems not related to updating the cluster master.
-{: note}
+
+Troubleshoot issues with broken webhooks that interfere with cluster master operations.
+{: shortdesc}
 
 During a master operation such as updating your cluster version, the cluster had a broken webhook application.
 {: tsSymptoms}

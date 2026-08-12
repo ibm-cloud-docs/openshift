@@ -2,7 +2,7 @@
 
 copyright:
   years: 2023, 2026
-lastupdated: "2026-05-12"
+lastupdated: "2026-08-12"
 
 
 keywords: openshift, {{site.data.keyword.openshiftlong_notm}}, errdsaiss, ingress, domain, third party, external domain
@@ -22,6 +22,10 @@ content-type: troubleshoot
 
 [Virtual Private Cloud]{: tag-vpc} [Classic infrastructure]{: tag-classic-inf} [{{site.data.keyword.satelliteshort}}]{: tag-satellite}
 
+
+
+Troubleshoot Ingress DSAISS (Destination Service And Ingress Service Selector mismatch) errors.
+{: shortdesc}
 
 You can use the `ibmcloud oc ingress status-report ignored-errors add` command to add an error to the ignored-errors list. Ignored errors still appear in the output of the `ibmcloud oc ingress status-report get` command, but are ignored when calculating the overall Ingress status.
 {: tip}

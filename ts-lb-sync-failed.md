@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2026
-lastupdated: "2026-02-18"
+lastupdated: "2026-08-12"
 
 
 keywords: openshift
@@ -20,6 +20,10 @@ content-type: troubleshoot
 # Why do I see `SyncLoadBalancerFailed` errors when creating a VPC cluster?
 {: #ts-loadbalancer-sync-failed}
 {: support}
+
+
+Troubleshoot issues when network load balancer (NLB) synchronization fails in your cluster.
+{: shortdesc}
 
 When setting up load balancing on my VPC cluster, I see an error message similar to the following example.
 {: tsSymptoms}

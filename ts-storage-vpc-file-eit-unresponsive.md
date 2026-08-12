@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2024, 2026
-lastupdated: "2026-08-06"
+lastupdated: "2026-08-12"
 
 
 keywords: kubernetes, openshift
@@ -22,6 +22,10 @@ subcollection: openshift
 
 Your app that uses encryption in-transit (EIT) with a zonal `dp2` profile {{site.data.keyword.filestorage_vpc_short}} fails with an `UnresponsiveMountHelperContainerUtility` error.
 {: tsSymptoms}
+
+
+Troubleshoot unresponsive VPC file storage systems with EIT (Encrypted In Transit).
+{: shortdesc}
 
 You see an error message similar to the following example:
 

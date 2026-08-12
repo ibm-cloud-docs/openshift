@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2026
-lastupdated: "2026-07-27"
+lastupdated: "2026-08-12"
 
 
 keywords: openshift
@@ -22,6 +22,9 @@ content-type: troubleshoot
 # Classic clusters: Why can't my app connect via Ingress?
 {: #cs_ingress_fails}
 {: support}
+
+Troubleshoot Ingress connectivity issues when your app cannot be reached through Ingress.
+{: shortdesc}
 
 [Classic infrastructure]{: tag-classic-inf}
 

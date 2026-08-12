@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2026
-lastupdated: "2026-04-10"
+lastupdated: "2026-08-12"
 
 
 keywords: openshift
@@ -22,6 +22,9 @@ content-type: troubleshoot
 # Why can't my app access or write to PVCs?
 {: #block_app_failures}
 {: support}
+
+Troubleshoot block storage application issues.
+{: shortdesc}
 
 [Virtual Private Cloud]{: tag-vpc} [Classic infrastructure]{: tag-classic-inf}
 

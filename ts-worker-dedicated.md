@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2026
-lastupdated: "2026-07-30"
+lastupdated: "2026-08-12"
 
 keywords: kubernetes, openshift, dedicated hosts, host pool, dedicated pool
 
@@ -17,6 +17,10 @@ content-type: troubleshoot
 # VPC: Why can't I create worker nodes on dedicated hosts?
 {: #ts-worker-dedicated}
 {: support}
+
+
+Troubleshoot issues when creating worker nodes on VPC dedicated hosts.
+{: shortdesc}
 
 [Virtual Private Cloud]{: tag-vpc}
 

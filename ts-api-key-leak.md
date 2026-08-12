@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2023, 2026
-lastupdated: "2026-07-30"
+lastupdated: "2026-08-12"
 
 
 keywords: kubernetes, help, api key, security
@@ -19,6 +19,10 @@ content-type: troubleshoot
 # How do I rotate the cluster API key if there is a leak?
 {: #ts-troubleshoot-api-key-leak}
 {: support}
+
+Learn how to rotate your cluster API key if it has been exposed or compromised.
+{: shortdesc}
+
 
 Your cluster security has been compromised due to an exposed API key.
 {: tsSymptoms}

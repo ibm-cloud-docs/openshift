@@ -1,8 +1,8 @@
 ---
 
 copyright: 
-  years: 2014, 2025
-lastupdated: "2025-09-23"
+  years: 2014, 2026
+lastupdated: "2026-08-12"
 
 
 keywords: openshift
@@ -23,6 +23,9 @@ content-type: troubleshoot
 # Why do I see wrong credentials or access denied messages when I create a PVC?
 {: #cred_failure}
 {: support}
+
+Troubleshoot persistent volume claims that fail for Cloud Object Storage.
+{: shortdesc}
 
 [Virtual Private Cloud]{: tag-vpc} [Classic infrastructure]{: tag-classic-inf}
 

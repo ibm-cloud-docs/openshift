@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2025, 2026
-lastupdated: "2026-04-30"
+lastupdated: "2026-08-12"
 
 
 keywords: openshift
@@ -21,6 +21,10 @@ content-type: troubleshoot
 
 You can't connect your Cloud Logs instance to your cluster or you can't view the logs for your Cluster in the Cloud Logs instance.
 {: tsSymptoms}
+
+Learn how to add tags to your cluster for cloud logging integration and troubleshoot tag-related issues.
+{: shortdesc}
+
 
 When you connect Cloud Logs to your cluster, a Schematics workspace is created to manage your instance. Don't delete this workspace. Deleting this workspace can cause you to not be able to view Cloud Logs or not be able to connect your instance.
 {: tsCauses}

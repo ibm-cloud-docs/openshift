@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2026, 2026
-lastupdated: "2026-07-30"
+lastupdated: "2026-08-12"
 
 
 keywords: kubernetes, openshift, ca cert, certificate authority, rotate
@@ -21,6 +21,10 @@ content-type: troubleshoot
 {: #ts-cert-failed}
 {: troubleshoot}
 {: support}
+
+Troubleshoot certificate errors that occur when connecting to the Kubernetes API server.
+{: shortdesc}
+
 
 [Virtual Private Cloud]{: tag-vpc} [Classic infrastructure]{: tag-classic-inf}
 

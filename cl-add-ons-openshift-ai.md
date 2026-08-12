@@ -3,7 +3,7 @@
 copyright:
   years: 2024, 2026
 
-lastupdated: "2026-08-03"
+lastupdated: "2026-08-12"
 
 
 keywords: change log, version history, OpenShift AI
@@ -39,14 +39,51 @@ Review the version history for OpenShift AI.
 {: shortdesc}
 
 
+## Version 420
+{: #cl-add-ons-openshift-ai-420}
+
+
+### Version 420 - v420.0.3_361259361, released 10 August 2026
+{: #cl-add-ons-openshift-ai-v42003_361259361}
+
+[Default version]{: tag-green}
+
+- Resolves the following CVEs: [GHSA-gcjh-h69q-9w9g](https://nvd.nist.gov/vuln/detail/GHSA-gcjh-h69q-9w9g){: external}.
+- Updates Go to version `1.26.5`.
+
+
+### Version 420 - v420.0.2_360056330, released 04 August 2026
+{: #cl-add-ons-openshift-ai-v42002_360056330}
+
+- Resolves the following CVEs: [GO-2026-6061](https://nvd.nist.gov/vuln/detail/GO-2026-6061){: external}, [CVE-2026-5450](https://nvd.nist.gov/vuln/detail/CVE-2026-5450){: external}, [CVE-2026-42505](https://nvd.nist.gov/vuln/detail/CVE-2026-42505){: external}, [CVE-2026-5435](https://nvd.nist.gov/vuln/detail/CVE-2026-5435){: external}, [CVE-2026-5928](https://nvd.nist.gov/vuln/detail/CVE-2026-5928){: external}, and [CVE-2026-6238](https://nvd.nist.gov/vuln/detail/CVE-2026-6238){: external}.
+- Updates Go to version `1.26.5`.
+
+
+### Version 420 - 420.0.0_349689605, released 08 July 2026
+{: #cl-add-ons-openshift-ai-42000_349689605}
+
+- Updates Go to version `1.25.11`.
+- Installs Red Hat `openshift-ai` operator version `3.4.2`.
+- Optionally installs NFD operator based on latest version available for channel `stable`.
+- Optionally installs NVIDIA GPU operator based on latest version available for channel `stable`.
+- Optionally installs Pipeline operator based on latest version available for channel `latest`.
+
+
 ## Version 419
 {: #cl-add-ons-openshift-ai-419}
 
 
-### Version 419 - v419.1.1_359492648, released 03 August 2026
-{: #cl-add-ons-openshift-ai-v41911_359492648}
+### Version 419 - v419.1.2_361259372, released 10 August 2026
+{: #cl-add-ons-openshift-ai-v41912_361259372}
 
 [Default version]{: tag-green}
+
+- Resolves the following CVEs: [GHSA-gcjh-h69q-9w9g](https://nvd.nist.gov/vuln/detail/GHSA-gcjh-h69q-9w9g){: external}.
+- Updates Go to version `1.26.5`.
+
+
+### Version 419 - v419.1.1_359492648, released 03 August 2026
+{: #cl-add-ons-openshift-ai-v41911_359492648}
 
 - Resolves the following CVEs: [GO-2026-6061](https://nvd.nist.gov/vuln/detail/GO-2026-6061){: external}, [CVE-2026-5450](https://nvd.nist.gov/vuln/detail/CVE-2026-5450){: external}, [CVE-2026-42505](https://nvd.nist.gov/vuln/detail/CVE-2026-42505){: external}, [CVE-2026-5435](https://nvd.nist.gov/vuln/detail/CVE-2026-5435){: external}, [CVE-2026-5928](https://nvd.nist.gov/vuln/detail/CVE-2026-5928){: external}, and [CVE-2026-6238](https://nvd.nist.gov/vuln/detail/CVE-2026-6238){: external}.
 - Updates Go to version `1.26.5`.
@@ -89,10 +126,17 @@ Review the version history for OpenShift AI.
 {: #cl-add-ons-openshift-ai-418}
 
 
-### Version 418 - 418.1.3_359492573, released 03 August 2026
-{: #cl-add-ons-openshift-ai-41813_359492573}
+### Version 418 - v418.1.4_361259339, released 10 August 2026
+{: #cl-add-ons-openshift-ai-v41814_361259339}
 
 [Default version]{: tag-green}
+
+- Resolves the following CVEs: [GHSA-gcjh-h69q-9w9g](https://nvd.nist.gov/vuln/detail/GHSA-gcjh-h69q-9w9g){: external}.
+- Updates Go to version `1.26.5`.
+
+
+### Version 418 - 418.1.3_359492573, released 03 August 2026
+{: #cl-add-ons-openshift-ai-41813_359492573}
 
 - Resolves the following CVEs: [GO-2026-6061](https://nvd.nist.gov/vuln/detail/GO-2026-6061){: external}, [CVE-2026-5450](https://nvd.nist.gov/vuln/detail/CVE-2026-5450){: external}, [CVE-2026-42504](https://nvd.nist.gov/vuln/detail/CVE-2026-42504){: external}, [CVE-2026-42507](https://nvd.nist.gov/vuln/detail/CVE-2026-42507){: external}, [CVE-2026-42505](https://nvd.nist.gov/vuln/detail/CVE-2026-42505){: external}, [CVE-2026-5435](https://nvd.nist.gov/vuln/detail/CVE-2026-5435){: external}, [CVE-2026-5928](https://nvd.nist.gov/vuln/detail/CVE-2026-5928){: external}, [CVE-2026-6238](https://nvd.nist.gov/vuln/detail/CVE-2026-6238){: external}, and [CVE-2026-27145](https://nvd.nist.gov/vuln/detail/CVE-2026-27145){: external}.
 - Updates Go to version `1.26.4`.
@@ -136,10 +180,17 @@ Review the version history for OpenShift AI.
 {: #cl-add-ons-openshift-ai-417}
 
 
-### Version 417 - 417.1.3_359492531, released 03 August 2026
-{: #cl-add-ons-openshift-ai-41713_359492531}
+### Version 417 - v417.1.4_361259329, released 10 August 2026
+{: #cl-add-ons-openshift-ai-v41714_361259329}
 
 [Default version]{: tag-green}
+
+- Resolves the following CVEs: [GHSA-gcjh-h69q-9w9g](https://nvd.nist.gov/vuln/detail/GHSA-gcjh-h69q-9w9g){: external}.
+- Updates Go to version `1.26.5`.
+
+
+### Version 417 - 417.1.3_359492531, released 03 August 2026
+{: #cl-add-ons-openshift-ai-41713_359492531}
 
 - Resolves the following CVEs: [GO-2026-6061](https://nvd.nist.gov/vuln/detail/GO-2026-6061){: external}, [CVE-2026-5450](https://nvd.nist.gov/vuln/detail/CVE-2026-5450){: external}, [CVE-2026-42504](https://nvd.nist.gov/vuln/detail/CVE-2026-42504){: external}, [CVE-2026-42507](https://nvd.nist.gov/vuln/detail/CVE-2026-42507){: external}, [CVE-2026-42505](https://nvd.nist.gov/vuln/detail/CVE-2026-42505){: external}, [CVE-2026-5435](https://nvd.nist.gov/vuln/detail/CVE-2026-5435){: external}, [CVE-2026-5928](https://nvd.nist.gov/vuln/detail/CVE-2026-5928){: external}, [CVE-2026-6238](https://nvd.nist.gov/vuln/detail/CVE-2026-6238){: external}, and [CVE-2026-27145](https://nvd.nist.gov/vuln/detail/CVE-2026-27145){: external}.
 - Updates Go to version `1.26.4`.
@@ -198,10 +249,17 @@ Review the version history for OpenShift AI.
 {: #cl-add-ons-openshift-ai-416}
 
 
-### Version 416 - v416.4.3_359492487, released 03 August 2026
-{: #cl-add-ons-openshift-ai-v41643_359492487}
+### Version 416 - v416.4.4_361259301, released 10 August 2026
+{: #cl-add-ons-openshift-ai-v41644_361259301}
 
 [Default version]{: tag-green}
+
+- Resolves the following CVEs: [GHSA-gcjh-h69q-9w9g](https://nvd.nist.gov/vuln/detail/GHSA-gcjh-h69q-9w9g){: external}.
+- Updates Go to version `1.26.5`.
+
+
+### Version 416 - v416.4.3_359492487, released 03 August 2026
+{: #cl-add-ons-openshift-ai-v41643_359492487}
 
 - Resolves the following CVEs: [GO-2026-6061](https://nvd.nist.gov/vuln/detail/GO-2026-6061){: external}, [CVE-2026-5450](https://nvd.nist.gov/vuln/detail/CVE-2026-5450){: external}, [CVE-2026-42504](https://nvd.nist.gov/vuln/detail/CVE-2026-42504){: external}, [CVE-2026-42507](https://nvd.nist.gov/vuln/detail/CVE-2026-42507){: external}, [CVE-2026-42505](https://nvd.nist.gov/vuln/detail/CVE-2026-42505){: external}, [CVE-2026-5435](https://nvd.nist.gov/vuln/detail/CVE-2026-5435){: external}, [CVE-2026-5928](https://nvd.nist.gov/vuln/detail/CVE-2026-5928){: external}, [CVE-2026-6238](https://nvd.nist.gov/vuln/detail/CVE-2026-6238){: external}, and [CVE-2026-27145](https://nvd.nist.gov/vuln/detail/CVE-2026-27145){: external}.
 - Updates Go to version `1.26.4`.
@@ -305,20 +363,6 @@ Review the version history for OpenShift AI.
 
 - Updates Go to version `1.22.10`.
 - Installs Red Hat `openshift-ai` operator version `2.13.1`.
-- Optionally installs NFD operator based on latest version available for channel `stable`.
-- Optionally installs NVIDIA GPU operator based on latest version available for channel `stable`.
-- Optionally installs Pipeline operator based on latest version available for channel `latest`.
-
-
-## Version 420
-{: #cl-add-ons-openshift-ai-420}
-
-
-### Version 420 - 420.0.0_349689605, released 08 July 2026
-{: #cl-add-ons-openshift-ai-42000_349689605}
-
-- Updates Go to version `1.25.11`.
-- Installs Red Hat `openshift-ai` operator version `3.4.2`.
 - Optionally installs NFD operator based on latest version available for channel `stable`.
 - Optionally installs NVIDIA GPU operator based on latest version available for channel `stable`.
 - Optionally installs Pipeline operator based on latest version available for channel `latest`.

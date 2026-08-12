@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2026
-lastupdated: "2026-08-04"
+lastupdated: "2026-08-12"
 
 
 keywords: openshift
@@ -22,6 +22,9 @@ content-type: troubleshoot
 # Storage: Feedback, questions, and support
 {: #getting_help_storage}
 {: support}
+
+Troubleshoot feedback and issues related to storage in your cluster.
+{: shortdesc}
 
 If you still experience issues with persistent storage in your cluster, review the following options to receive further support or ask questions.
 

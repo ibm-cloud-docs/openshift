@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2022, 2026
-lastupdated: "2026-04-30"
+lastupdated: "2026-08-12"
 
 
 keywords: openshift, {{site.data.keyword.openshiftlong_notm}}, snapshot, storage
@@ -23,6 +23,9 @@ content-type: troubleshoot
 # Why can't I delete my {{site.data.keyword.block_storage_is_short}} volume snapshot resources?
 {: #ts-storage-volumesnapshotdelete}
 {: support}
+
+Troubleshoot volume snapshot deletion issues.
+{: shortdesc}
 
 **Infrastructure provider**:
 VPC

@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2026
-lastupdated: "2026-07-30"
+lastupdated: "2026-08-12"
 
 
 keywords: openshift, autoscaler
@@ -17,6 +17,10 @@ content-type: troubleshoot
 
 # Why are my autoscaled worker pools unbalanced?
 {: #ts-ca-unbalanced}
+
+Learn why your worker pool becomes unbalanced across zones when you enable the cluster autoscaler.
+{: shortdesc}
+
 
 During a scale-up, the cluster autoscaler balances nodes across zones, with a permitted difference of plus or minus one worker node.
 {: tsSymptoms}

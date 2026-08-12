@@ -1,8 +1,8 @@
 ---
 
 copyright: 
-  years: 2014, 2025
-lastupdated: "2025-09-27"
+  years: 2014, 2026
+lastupdated: "2026-08-12"
 
 
 keywords: openshift, {{site.data.keyword.openshiftlong_notm}}, CrashLoopBackOff, pods fail, status, pod, crashing
@@ -22,6 +22,10 @@ content-type: troubleshoot
 # Why do pods repeatedly fail to restart or are unexpectedly removed?
 {: #ts-app-pod-fail}
 {: support}
+
+
+Troubleshoot pods that repeatedly fail to restart, get stuck in a `CrashLoopBackOff` loop, or are unexpectedly removed from your cluster.
+{: shortdesc}
 
 [Virtual Private Cloud]{: tag-vpc} [Classic infrastructure]{: tag-classic-inf}
 

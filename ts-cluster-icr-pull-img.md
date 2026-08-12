@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2026
-lastupdated: "2026-07-30"
+lastupdated: "2026-08-12"
 
 
 keywords: kubernetes, openshift
@@ -22,6 +22,10 @@ content-type: troubleshoot
 # Why can't the cluster pull images from {{site.data.keyword.registrylong_notm}} during creation?
 {: #ts_image_pull_create}
 {: support}
+
+
+Troubleshoot image pull errors when pulling images from {{site.data.keyword.registrylong_notm}} in your cluster.
+{: shortdesc}
 
 [Virtual Private Cloud]{: tag-vpc} [Classic infrastructure]{: tag-classic-inf}
 

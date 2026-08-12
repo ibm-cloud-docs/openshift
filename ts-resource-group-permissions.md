@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2024, 2026
-lastupdated: "2026-04-30"
+lastupdated: "2026-08-12"
 
 
 keywords: openshift, {{site.data.keyword.openshiftlong_notm}}, subnet, detach, specified subnet, infrastructure operation failed
@@ -19,6 +19,9 @@ content-type: troubleshoot
 # Why do I get an `infrastructure operation failed` error when creating a VPC cluster?
 {: #ts-resource-group-permissions}
 {: support}
+
+Troubleshoot resource group permission errors when working with your cluster.
+{: shortdesc}
 
 When you try to create a VPC cluster, you see an error message similar to the following example.
 {: tsSymptoms}

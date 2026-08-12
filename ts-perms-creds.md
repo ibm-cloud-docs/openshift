@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2026
-lastupdated: "2026-07-30"
+lastupdated: "2026-08-12"
 
 
 keywords: kubernetes, openshift, user permissions, infrastructure credentials
@@ -21,6 +21,10 @@ content-type: troubleshoot
 
 When you try to make changes to your cluster, such as creating or deleting worker nodes or other components, you receive an error message similar to one of the following examples. 
 {: tsSymptoms}
+
+Troubleshoot permission and credential errors when accessing your cluster.
+{: shortdesc}
+
 
 ```txt
 The infrastructure authentication credentials are not authorized for the request.

@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2022, 2026
-lastupdated: "2026-04-30"
+lastupdated: "2026-08-12"
 
 
 keywords: openshift, storage, snapshot, volumesnapshot
@@ -23,6 +23,9 @@ content-type: troubleshoot
 # Why can't I create {{site.data.keyword.block_storage_is_short}} snapshots?
 {: #ts-storage-snapshotfails}
 {: support}
+
+Troubleshoot storage snapshot failures.
+{: shortdesc}
 
 **Infrastructure provider**:
 VPC

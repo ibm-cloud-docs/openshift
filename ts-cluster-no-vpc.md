@@ -1,8 +1,8 @@
 ---
 
 copyright: 
-  years: 2014, 2025
-lastupdated: "2025-09-26"
+  years: 2014, 2026
+lastupdated: "2026-08-12"
 
 
 keywords: kubernetes, openshift
@@ -22,6 +22,9 @@ content-type: troubleshoot
 # VPC: Why is no VPC available when I create a cluster in the console?
 {: #ts_no_vpc}
 {: support}
+
+Troubleshoot issues when your cluster does not have a VPC network configured.
+{: shortdesc}
 
 **Infrastructure provider**: VPC
 

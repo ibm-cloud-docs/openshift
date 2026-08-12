@@ -1,8 +1,8 @@
 ---
 
 copyright: 
-  years: 2024, 2025
-lastupdated: "2025-03-13"
+  years: 2024, 2026
+lastupdated: "2026-08-12"
 
 
 keywords: openshift, kubernetes, help, network, connectivity, vpc nlb
@@ -21,6 +21,10 @@ content-type: troubleshoot
 
 Your VPC NLB does not update when worker nodes are added or removed from your cluster. Additionally, you see an error similar to the following:
 {: tsSymptoms}
+
+Troubleshoot NLB for VPC zone issues.
+{: shortdesc}
+
 
 ```sh
 The load balancer was created in zone <zone>. This setting cannot be changed.

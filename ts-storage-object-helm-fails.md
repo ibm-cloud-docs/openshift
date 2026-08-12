@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2026
-lastupdated: "2026-05-01"
+lastupdated: "2026-08-12"
 
 
 keywords: openshift, ibmc, helm
@@ -22,6 +22,9 @@ content-type: troubleshoot
 # Why does installing the Object storage Helm plug-in fail?
 {: #cos_helm_fails}
 {: support}
+
+Troubleshoot Helm installation failures for Cloud Object Storage.
+{: shortdesc}
 
 [Virtual Private Cloud]{: tag-vpc} [Classic infrastructure]{: tag-classic-inf}
 

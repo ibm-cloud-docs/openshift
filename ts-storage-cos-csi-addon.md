@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2025, 2026
-lastupdated: "2026-07-27"
+lastupdated: "2026-08-12"
 
 
 keywords: openshift
@@ -23,6 +23,9 @@ content-type: troubleshoot
 # Debugging the Cloud Object Storage add-on
 {: #ts-storage-cos-csi-addon}
 {: support}
+
+Troubleshoot issues with the Cloud Object Storage CSI add-on.
+{: shortdesc}
 
 [Virtual Private Cloud]{: tag-vpc} [Classic infrastructure]{: tag-classic-inf}
 

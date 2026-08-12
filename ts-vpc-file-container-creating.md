@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2024, 2026
-lastupdated: "2026-04-30"
+lastupdated: "2026-08-12"
 
 
 keywords: openshift, {{site.data.keyword.openshiftlong_notm}}, storage, container creating, file
@@ -21,6 +21,10 @@ content-type: troubleshoot
 # Why is my app pod stuck in `Container creating` when trying to mount {{site.data.keyword.filestorage_vpc_short}}?
 {: #ts-vpc-file-container-creating}
 {: support}
+
+Troubleshoot file container creation issues in VPC clusters.
+{: shortdesc}
+
 
 
 When you try to deploy an app that uses {{site.data.keyword.filestorage_vpc_short}} you see one or more of the following error messages.
