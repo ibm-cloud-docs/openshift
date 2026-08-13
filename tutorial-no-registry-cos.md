@@ -2,7 +2,7 @@
 
 copyright:
   years: 2026
-lastupdated: "2026-08-06"
+lastupdated: "2026-08-13"
 
 keywords: openshift, roks, no cos, no registry, emptydir, image registry, internal registry, icr, fs cloud, financial services
 
@@ -164,4 +164,4 @@ Your cluster is now running with an `emptyDir`-backed internal registry. You can
 - [Configure an image pull secret](/docs/openshift?topic=openshift-registry#other_registry_accounts) so that your pods can pull images from {{site.data.keyword.registrylong_notm}}.
 - [Set up IBM Cloud monitoring](/docs/openshift?topic=openshift-health-monitor) to observe your cluster.
 - If you want to add persistent internal registry storage later, see [Backing up your internal image registry to {{site.data.keyword.cos_full_notm}}](/docs/openshift?topic=openshift-registry#cos_image_registry).
-- If you see an `E7278` error during cluster creation, see [Why do I get an error about a cloud object storage bucket when I create a cluster?](/docs/openshift?topic=openshift-ts_cos_bucket_cluster_create). If the steps there do not resolve the issue, [contact {{site.data.keyword.cloud_notm}} support](/docs/get-support?topic=get-support-using-avatar).
+- If you see an `E7278` error during cluster creation, see [Why do I get an error about a cloud object storage bucket when I create a cluster?](/docs/openshift?topic=openshift-ts_cos_bucket_cluster_create). If the steps there do not resolve the issue, [contact {{site.data.keyword.cloud_notm}} support](/docs/get-support).

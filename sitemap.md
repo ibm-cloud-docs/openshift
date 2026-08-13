@@ -509,8 +509,6 @@ subcollection: openshift
 
     * [23 July 2026](/docs/openshift?topic=openshift-openshift-relnotes#openshift-jul2326)
 
-        * Headlamp cluster add-on patch updates.
-
     * [22 July 2026](/docs/openshift?topic=openshift-openshift-relnotes#openshift-jul2226)
 
         * CLI version 1.0.796 is available.

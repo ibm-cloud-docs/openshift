@@ -2,7 +2,7 @@
 
 copyright:
   years: 2026, 2026
-lastupdated: "2026-08-11"
+lastupdated: "2026-08-13"
 
 
 keywords: openshift, virtualization, virtual machines, learning path, vm administrator, rovs, migration, vmware
@@ -39,7 +39,7 @@ Start by learning what OpenShift Virtualization Service is and how it differs fr
 Design your virtualization environment before creating a cluster.
 
 1. Review the [cluster planning guidance](/docs/openshift?topic=openshift-strategy) for sizing and availability decisions specific to your workload.
-2. If you are migrating from VMware, read [Migrating from VMware to Red Hat OpenShift Virtualization](/docs/openshift?topic=openshift-rovs-vmware-migration) to understand the migration path and the Migration Toolkit for Virtualization (MTV).
+2. If you are migrating from VMware, review the [Migration Toolkit for Virtualization](https://docs.redhat.com/en/documentation/migration_toolkit_for_virtualization){: external} to understand the migration path.
 
 ## Create a cluster
 {: #virt-path-create}

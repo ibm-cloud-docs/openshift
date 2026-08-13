@@ -208,8 +208,7 @@ CLI version 1.0.804 is available.
 {: #openshift-jul2326}
 {: release-note}
 
-Headlamp cluster add-on patch updates.
-:   For more information, see the [change log](/docs/openshift?topic=openshift-cl-add-ons-headlamp).
+
 
 ### 22 July 2026
 {: #openshift-jul2226}
@@ -532,7 +531,7 @@ IBM Object CSI Driver cluster add-on patch updates.
 :   For more information, see the [change log](/docs/openshift?topic=openshift-cl-add-ons-ibm-object-csi-driver).
 
 {{site.data.keyword.cos_full_notm}} plug-in version 2.2.53 is available.
-:   For more information, see the [change log](/docs/openshift?topic=openshift-cos_plugin_changelog).
+:   For more information, see the [change log](/docs/openshift?topic=openshift-cl-object-storage-plug-in).
 
 
 
@@ -850,7 +849,7 @@ CLI version 1.0.759 is available
 {: release-note}
 
 {{site.data.keyword.cos_full_notm}} plug-in version 2.2.51 is available.
-:   For more information, see the [change log](/docs/openshift?topic=openshift-cos_plugin_changelog).
+:   For more information, see the [change log](/docs/openshift?topic=openshift-cl-object-storage-plug-in).
 
 ### 14 April 2026
 {: #openshift-apr1426}
@@ -936,7 +935,7 @@ VPC File CSI Driver cluster add-on patch updates.
 {: release-note}
 
 {{site.data.keyword.cos_full_notm}} plug-in updates.
-:   For more information, see the [change log](/docs/openshift?topic=openshift-cos_plugin_changelog).
+:   For more information, see the [change log](/docs/openshift?topic=openshift-cl-object-storage-plug-in).
 
 
 
@@ -996,7 +995,7 @@ Cluster autoscaler cluster add-on patch updates.
 
 
 {{site.data.keyword.cos_full_notm}} plug-in updates.
-:   For more information, see the [change log](/docs/openshift?topic=openshift-cos_plugin_changelog).
+:   For more information, see the [change log](/docs/openshift?topic=openshift-cl-object-storage-plug-in).
 
 
 
@@ -1120,7 +1119,7 @@ VPC Block CSI Driver cluster add-on patch updates.
 {: release-note}
 
 {{site.data.keyword.cos_full_notm}} plug-in updates.
-:   For more information, see the [change log](/docs/openshift?topic=openshift-cos_plugin_changelog).
+:   For more information, see the [change log](/docs/openshift?topic=openshift-cl-object-storage-plug-in).
 
 ### 23 February 2026
 {: #openshift-feb2326}
@@ -1202,7 +1201,7 @@ VPC Block CSI Driver cluster add-on patch updates.
 {: release-note}
 
 {{site.data.keyword.cos_full_notm}} plug-in updates.
-:   For more information, see the [change log](/docs/openshift?topic=openshift-cos_plugin_changelog).
+:   For more information, see the [change log](/docs/openshift?topic=openshift-cl-object-storage-plug-in).
 
 
 
@@ -1308,7 +1307,7 @@ CLI version `1.0.745` is available.
 {: release-note}
 
 {{site.data.keyword.cos_full_notm}} plug-in updates.
-:   For more information, see the [change log](/docs/openshift?topic=openshift-cos_plugin_changelog).
+:   For more information, see the [change log](/docs/openshift?topic=openshift-cl-object-storage-plug-in).
 
 ### 12 January 2026
 {: #openshift-jan1226}
@@ -1521,7 +1520,7 @@ OpenShift AI cluster add-on patch updates.
 {: release-note}
 
 {{site.data.keyword.cos_full_notm}} plug-in updates.
-:   For more information, see the [change log](/docs/openshift?topic=openshift-cos_plugin_changelog).
+:   For more information, see the [change log](/docs/openshift?topic=openshift-cl-object-storage-plug-in).
 
 ### 11 November 2025
 {: #openshift-nov1125}
@@ -1843,7 +1842,7 @@ VPC File CSI Driver cluster add-on patch updates.
 {: release-note}
 
 {{site.data.keyword.cos_full_notm}} plug-in updates.
-:   For more information, see the [change log](/docs/openshift?topic=openshift-cos_plugin_changelog).
+:   For more information, see the [change log](/docs/openshift?topic=openshift-cl-object-storage-plug-in).
 
 ### 19 August 2025
 {: #openshift-aug1925}
@@ -1903,7 +1902,7 @@ CLI version `1.0.714` is available.
 :   For more information, see [Updating the CLI](/docs/openshift?topic=openshift-cli-update) and the [CLI change log](/docs/openshift?topic=openshift-cs_cli_changelog).
 
 {{site.data.keyword.cos_full_notm}} plug-in updates.
-:   For more information, see the [change log](/docs/openshift?topic=openshift-cos_plugin_changelog).
+:   For more information, see the [change log](/docs/openshift?topic=openshift-cl-object-storage-plug-in).
 
 ## July 2025
 {: #openshift-jul25}
@@ -2337,7 +2336,7 @@ OpenShift AI cluster add-on patch updates.
 {: release-note}
 
 {{site.data.keyword.cos_full_notm}} plug-in updates.
-:   For more information, see the [change log](/docs/openshift?topic=openshift-cos_plugin_changelog).
+:   For more information, see the [change log](/docs/openshift?topic=openshift-cl-object-storage-plug-in).
 
 ### 22 April 2025
 {: #openshift-22april25}
@@ -2392,7 +2391,7 @@ OpenShift Data Foundation cluster add-on patch updates.
 
 
 {{site.data.keyword.cos_full_notm}} plug-in updates.
-:   For more information, see the [change log](/docs/openshift?topic=openshift-cos_plugin_changelog).
+:   For more information, see the [change log](/docs/openshift?topic=openshift-cl-object-storage-plug-in).
 
 
 
@@ -2489,7 +2488,7 @@ Cluster autoscaler add-on patch updates for {{site.data.keyword.openshiftlong_no
 :   For more information, see [Cluster autoscaler add-on change log](/docs/openshift?topic=openshift-cl-add-ons-cluster-autoscaler).
 
 {{site.data.keyword.cos_full_notm}} plug-in updates.
-:   For more information, see the [change log](/docs/openshift?topic=openshift-cos_plugin_changelog).
+:   For more information, see the [change log](/docs/openshift?topic=openshift-cl-object-storage-plug-in).
 
 ### 05 March 2025
 {: #openshift-05march25}
@@ -2672,7 +2671,7 @@ Version 4.17 is now the default version for {{site.data.keyword.openshiftlong_no
 {: release-note}
 
 {{site.data.keyword.cos_full_notm}} plug-in updates.
-:   For more information, see the [change log](/docs/openshift?topic=openshift-cos_plugin_changelog).
+:   For more information, see the [change log](/docs/openshift?topic=openshift-cl-object-storage-plug-in).
 
 ### 23 January 2025
 {: #openshift-jan2325}
@@ -2851,7 +2850,7 @@ Storage Operator cluster add-on patch update.
 {: release-note}
 
 {{site.data.keyword.cos_full_notm}} plug-in updates.
-:   For more information, see the [change log](/docs/openshift?topic=openshift-cos_plugin_changelog).
+:   For more information, see the [change log](/docs/openshift?topic=openshift-cl-object-storage-plug-in).
 
 ### 20 November 2024
 {: #openshift-nov2024}
@@ -3080,7 +3079,7 @@ Static route add-on version patch update.
 {: release-note}
 
 {{site.data.keyword.cos_full_notm}} plug-in updates.
-:   For more information, see the [change log](/docs/openshift?topic=openshift-cos_plugin_changelog).
+:   For more information, see the [change log](/docs/openshift?topic=openshift-cl-object-storage-plug-in).
 
 ### 25 September 2024
 {: #openshift-sep2524}
@@ -3107,7 +3106,7 @@ Static route add-on version patch update.
 
 
 {{site.data.keyword.cos_full_notm}} plug-in updates.
-:   For more information, see the [change log](/docs/openshift?topic=openshift-cos_plugin_changelog).
+:   For more information, see the [change log](/docs/openshift?topic=openshift-cl-object-storage-plug-in).
 
 ### 23 September 2024
 {: #openshift-23september24}
@@ -3212,7 +3211,7 @@ New! Upgrade status command.
 {: release-note}
 
 {{site.data.keyword.cos_full_notm}} plug-in updates.
-:   For more information, see the [change log](/docs/openshift?topic=openshift-cos_plugin_changelog).
+:   For more information, see the [change log](/docs/openshift?topic=openshift-cl-object-storage-plug-in).
 
 ### 28 August 2024
 {: #openshift-aug2824}
@@ -3293,7 +3292,7 @@ New audit events for cluster operations
 
 
 {{site.data.keyword.cos_full_notm}} plug-in updates.
-:   For more information, see the [change log](/docs/openshift?topic=openshift-cos_plugin_changelog).
+:   For more information, see the [change log](/docs/openshift?topic=openshift-cl-object-storage-plug-in).
 
 ### 29 July 2024
 {: #openshift-july2924}
@@ -3315,7 +3314,7 @@ New audit events for cluster operations
 {: release-note}
 
 {{site.data.keyword.cos_full_notm}} plug-in updates.
-:   For more information, see the [change log](/docs/openshift?topic=openshift-cos_plugin_changelog).
+:   For more information, see the [change log](/docs/openshift?topic=openshift-cl-object-storage-plug-in).
 
 {{site.data.keyword.openshiftlong_notm}} CLI version `1.0.640` is available.
 :   For more information, see [Updating the CLI](/docs/openshift?topic=openshift-cli-update) and the [CLI change log](/docs/openshift?topic=openshift-cs_cli_changelog).
@@ -3483,7 +3482,7 @@ Version 4.15 is the default version for {{site.data.keyword.openshiftlong_notm}}
 {: release-note}
 
 {{site.data.keyword.cos_full_notm}} plug-in version `2.2.26`.
-:   For more information, see the [change log](/docs/openshift?topic=openshift-cos_plugin_changelog).
+:   For more information, see the [change log](/docs/openshift?topic=openshift-cl-object-storage-plug-in).
 
 ### 4 June 2024
 {: #openshift-june0424}
@@ -3677,7 +3676,7 @@ Red Hat CoreOS worker nodes are available for new VPC clusters beginning with ve
 
 
 {{site.data.keyword.cos_full_notm}} plug-in version `2.2.25`.
-:   For more information, see the [change log](/docs/openshift?topic=openshift-cos_plugin_changelog).
+:   For more information, see the [change log](/docs/openshift?topic=openshift-cl-object-storage-plug-in).
 
 {{site.data.keyword.openshiftlong_notm}} CLI version `1.0.617` is available.
 :   For more information, see [Updating the CLI](/docs/openshift?topic=openshift-cli-update) and the [CLI change log](/docs/openshift?topic=openshift-cs_cli_changelog).
@@ -3891,7 +3890,7 @@ New worker node flavors are available with L4 GPUs.
 {: release-note}
 
 {{site.data.keyword.cos_full_notm}} plug-in version `2.2.24`.
-:   For more information, see the [change log](/docs/openshift?topic=openshift-cos_plugin_changelog).
+:   For more information, see the [change log](/docs/openshift?topic=openshift-cl-object-storage-plug-in).
 
 ### 21 February 2024
 {: #openshift-feb2124}

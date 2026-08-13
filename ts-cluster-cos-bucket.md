@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2026
-lastupdated: "2026-07-30"
+lastupdated: "2026-08-13"
 
 
 keywords: openshift
@@ -88,4 +88,4 @@ Manually set up your cluster to back up the internal registry to an {{site.data.
     5. From the menu, click **Buckets**, then click the bucket that you used for your {{site.data.keyword.openshiftlong_notm}} cluster.
     6. Review the recent **Objects** to see your backed up images from the internal registry of your {{site.data.keyword.openshiftlong_notm}} cluster.
 
-If the issue persists after following these steps, [contact {{site.data.keyword.cloud_notm}} support](/docs/get-support?topic=get-support-using-avatar). Include your cluster ID and the full error message in your support case.
+If the issue persists after following these steps, [contact {{site.data.keyword.cloud_notm}} support](/docs/get-support). Include your cluster ID and the full error message in your support case.

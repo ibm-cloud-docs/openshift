@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2026
-lastupdated: "2026-08-06"
+lastupdated: "2026-08-13"
 
 
 keywords: openshift, {{site.data.keyword.openshiftlong_notm}}, clusters, worker nodes, worker pools, add, classic
@@ -34,7 +34,7 @@ When you create a cluster, the worker nodes are provisioned in a worker pool. Af
 If you have a multizone cluster, keep its worker node resources balanced. Make sure that all the worker pools are spread across the same zones, and add or remove workers by resizing the pools instead of adding individual nodes. After you set up your worker pool, you can [set up the cluster autoscaler](/docs/openshift?topic=openshift-cluster-scaling-install-addon) to automatically add or remove worker nodes from your worker pools based on your workload resource requests.
 
 
-Reservations for classic worker nodes are deprecated. After 15 October 2026, no new reservation contracts can be created. If you have an existing reservation contract that is due to expire, you must create a new worker pool that does not use a reservation and migrate your workloads before the contract expiration date. For more information, see [Reservations deprecation](/docs/openshift?topic=openshift-reservations-deprecation).
+Reservations for classic worker nodes are deprecated. After 15 October 2026, no new reservation contracts can be created. If you have an existing reservation contract that is due to expire, you must create a new worker pool that does not use a reservation and migrate your workloads before the contract expiration date.
 {: deprecated}
 
 ## Creating a new worker pool

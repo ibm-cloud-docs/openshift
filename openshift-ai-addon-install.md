@@ -2,7 +2,7 @@
 
 copyright:
   years: 2025, 2026
-lastupdated: "2026-07-09"
+lastupdated: "2026-08-13"
 
 
 keywords: openshift, {{site.data.keyword.openshiftlong_notm}}, ai, add-on
@@ -42,13 +42,13 @@ Review the supported OpenShift AI add-on versions and the corresponding [OpenShi
 | OpenShift AI add-on version | Red Hat OpenShift AI version |	Supported cluster versions |
 | ---  | --- | --- |
 | 420 |	3.4.2 |	420,421 |
-| [419](/docs/openshift?topic=openshift-ai-addon-about#ai-addon-version-419) | 3.4.0 | 4.19, 4.20, 4.21 |
+| [419](/docs/openshift?topic=openshift-ai-addon-about) | 3.4.0 | 4.19, 4.20, 4.21 |
 | 418 | 2.25.6 | 4.18, 4.19 |
 | 417 | 2.25.6 | 4.17, 4.18 |
 | 416 | 2.25.6 | 4.16, 4.17 |
 {: caption="Supported AI add-on versions and corresponding versions for Red Hat OpenShift AI and Red Hat OpenShift on IBM Cloud". caption-side="bottom"}
 
-Upgrading from version 418 to 419 is not supported. Only new installations of version 419 are allowed. For more information, see [OpenShift AI add-on version 419 changes](/docs/openshift?topic=openshift-ai-addon-about#ai-addon-version-419).
+Upgrading from version 418 to 419 is not supported. Only new installations of version 419 are allowed. For more information, see [About the OpenShift AI add-on](/docs/openshift?topic=openshift-ai-addon-about).
 {: important}
 
 ## Considerations
@@ -324,6 +324,6 @@ The following NVIDIA GPU operators apply with the default settings. You can only
 {: #ai-addon-install-next}
 
 - Try out a [tutorial for using OpenShift AI for fraud detection](https://docs.redhat.com/en/documentation/red_hat_openshift_ai_self-managed/3.4){: external}.
-- Learn how you can [use OpenShift AI to deploy a model you trained with InstructLab](/docs/instructlab?topic=instructlab-deploy#deploy-rhoai).
+- Learn how you can [use OpenShift AI to deploy a model you trained with InstructLab](/docs/instructlab?topic=instructlab-deploy).
 - See information on [managing the OpenShift AI add-on](/docs/openshift?topic=openshift-ai-addon-manage).
 - Make sure that you understand the [update process](/docs/openshift?topic=openshift-ai-addon-manage#ai-addon-update) for the OpenShift AI add-on.

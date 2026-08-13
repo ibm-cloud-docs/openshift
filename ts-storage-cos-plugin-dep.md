@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2025, 2026
-lastupdated: "2026-08-12"
+lastupdated: "2026-08-13"
 
 
 keywords: openshift, cos, mount error, libfuse
@@ -44,7 +44,7 @@ Follow the steps to update the COS plug-in.
     ```
     {: pre}
 
-1. Review the [change log](/docs/openshift?topic=openshift-cos_plugin_changelog) for the latest version information.
+1. Review the [change log](/docs/openshift?topic=openshift-cl-object-storage-plug-in) for the latest version information.
 
 1. Update the COS plug-in. For more information, see [Updating the {{site.data.keyword.cos_full_notm}} plug-in](/docs/openshift?topic=openshift-storage_cos_install#update_cos_plugin).
 
