@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2026
-lastupdated: "2026-08-11"
+lastupdated: "2026-08-13"
 
 keywords: openshift, clusters, access, api key, service id, automation, ci/cd, pipeline
 
@@ -31,7 +31,7 @@ An IAM API key is the recommended approach for automation and CI/CD pipelines.
 
 1. Log in with the API key.
    ```sh
-   ibmcloud login --apikey <API_key>
+   ibmcloud login --apikey API_KEY
    ```
    {: pre}
 
@@ -43,7 +43,7 @@ An IAM API key is the recommended approach for automation and CI/CD pipelines.
 
 1. Log in to the cluster.
    ```sh
-   oc login -u apikey -p <API_key> [--server=<private_service_endpoint>]
+   oc login -u apikey -p API_KEY [--server=PRIVATE_SERVICE_ENDPOINT]
    ```
    {: pre}
 
@@ -54,19 +54,19 @@ Use a service ID when apps in other clusters or clouds need to access your clust
 
 1. Create a service ID.
    ```sh
-   ibmcloud iam service-id-create <cluster_name>-id --description "Service ID for cluster <cluster_name>"
+   ibmcloud iam service-id-create CLUSTER_NAME-id --description "Service ID for cluster CLUSTER_NAME"
    ```
    {: pre}
 
 1. Assign an IAM policy to the service ID.
    ```sh
-   ibmcloud iam service-policy-create <service_ID> --service-name containers-kubernetes --roles <role> --service-instance <cluster_ID>
+   ibmcloud iam service-policy-create SERVICE_ID --service-name containers-kubernetes --roles ROLE --service-instance CLUSTER_ID
    ```
    {: pre}
 
 1. Create an API key for the service ID.
    ```sh
-   ibmcloud iam service-api-key-create <cluster_name>-key <service_ID>
+   ibmcloud iam service-api-key-create CLUSTER_NAME-key SERVICE_ID
    ```
    {: pre}
 
