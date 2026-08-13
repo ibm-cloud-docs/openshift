@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2022, 2026
-lastupdated: "2026-08-12"
+lastupdated: "2026-08-13"
 
 keywords: kubernetes, openshift
 
@@ -137,7 +137,7 @@ View and modify cluster and cluster service settings.
     * [`ibmcloud oc cluster master public-service-endpoint enable`](/docs/openshift?topic=openshift-kubernetes-service-cli#cluster-master-public-service-endpoint-enable-cli)
     * [`ibmcloud oc cluster master refresh`](/docs/openshift?topic=openshift-kubernetes-service-cli#cluster-master-refresh-cli)
     * [`ibmcloud oc cluster master satellite-service-endpoint allowlist add`](/docs/openshift?topic=openshift-kubernetes-service-cli#cluster-master-satellite-service-endpoint-allowlist-add-cli)
-    * [`ibmcloud oc cluster master satellite-service-endpoint allowlist disable`](/docs/openshift?topic=openshift-kubernetes-service-cli#cluster-master-satellite-service-endpoint-allowlist-disable-cli)
+    * [`ibmcloud ks cluster master satellite-service-endpoint allowlist disable`](/docs/openshift?topic=openshift-kubernetes-service-cli#cluster-master-satellite-service-endpoint-allowlist-disable-cli)
     * [`ibmcloud oc cluster master satellite-service-endpoint allowlist enable`](/docs/openshift?topic=openshift-kubernetes-service-cli#cluster-master-satellite-service-endpoint-allowlist-enable-cli)
     * [`ibmcloud oc cluster master satellite-service-endpoint allowlist get`](/docs/openshift?topic=openshift-kubernetes-service-cli#cluster-master-satellite-service-endpoint-allowlist-get-cli)
     * [`ibmcloud oc cluster master satellite-service-endpoint allowlist rm`](/docs/openshift?topic=openshift-kubernetes-service-cli#cluster-master-satellite-service-endpoint-allowlist-rm-cli)
