@@ -2,7 +2,7 @@
 
 copyright:
   years: 2024, 2026
-lastupdated: "2026-08-12"
+lastupdated: "2026-08-13"
 
 keywords: openshift, cli reference, kubernetes cli, openshift cli, {{site.data.keyword.openshiftlong_notm}}
 
@@ -3390,7 +3390,7 @@ ibmcloud ks cluster master satellite-service-endpoint allowlist add \
 {: pre}
 
 
-## `ibmcloud oc cluster master satellite-service-endpoint allowlist disable`
+## `ibmcloud ks cluster master satellite-service-endpoint allowlist disable`
 {: #cluster-master-satellite-service-endpoint-allowlist-disable-cli}
 
 
