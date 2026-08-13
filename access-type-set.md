@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2023, 2026
-lastupdated: "2026-08-11"
+lastupdated: "2026-08-13"
 
 
 keywords: openshift, {{site.data.keyword.openshiftlong_notm}}, kubernetes, oauth, console, access, vpe, pse, network
@@ -25,10 +25,10 @@ Choose between the following options when setting the OpenShift console and OAut
 
 
 Virtual Private Endpoint Gateway (`vpe-gateway`,`vpegw`)
-:   This is default access type for version 4.13. For more information, see [Accessing VPC clusters through the VPE gateway](/docs/openshift?topic=openshift-access_cluster#vpc_vpe).
+:   This is default access type for version 4.13. For more information, see [Accessing VPC clusters through the VPE gateway](/docs/openshift?topic=openshift-cluster-access-vpe).
 
 Private Service Endpoint URL (`legacy`)
-:   This is default access type for cluster versions 4.12 and earlier and 4.14 and later. For more information, see [Accessing clusters through the private cloud service endpoint](/docs/openshift?topic=openshift-access_cluster#access_private_se).
+:   This is default access type for cluster versions 4.12 and earlier and 4.14 and later. For more information, see [Accessing clusters through the private cloud service endpoint](/docs/openshift?topic=openshift-cluster-access-private-vpc).
 
 Making the Virtual Private Endpoint Gateway for OAuth and console access the default behavior for all clusters is available on an allowlist basis. To request that your account be allowlisted, see [Requesting access to allowlisted features](/docs/openshift?topic=openshift-allowlist-request).
 {: tip}

@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2026
-lastupdated: "2026-07-30"
+lastupdated: "2026-08-13"
 
 
 keywords: kubernetes, openshift
@@ -67,7 +67,7 @@ Install the `ibmc` Helm plug-in and the `ibm-object-storage-plugin`:
     2. Review the [{{site.data.keyword.openshiftshort}} version information](/docs/openshift?topic=openshift-openshift_versions) to find the latest changes.
 
     3. Apply the latest patch version by reloading your worker node. Follow the instructions in the [ibmcloud oc worker reload command](/docs/containers?topic=containers-kubernetes-service-cli#worker-reload-cli) to safely reschedule any running pods on your worker node before you reload your worker node. Note that during the reload, your worker node machine is updated with the latest image and data is deleted if not [stored outside the worker node](/docs/containers?topic=containers-storage-plan).
-1. Review the change log and verify support for your [cluster version and architecture](/docs/openshift?topic=openshift-cos_plugin_changelog).
+1. Review the change log and verify support for your [cluster version and architecture](/docs/openshift?topic=openshift-cl-object-storage-plug-in).
 1. [Follow the instructions](/docs/openshift?topic=openshift-helm#install_v3) to install the version 3 Helm client on your local machine.
 
     If you enabled [VRF](/docs/account?topic=account-vrf-service-endpoint&interface=ui) and [service endpoints](/docs/account?topic=account-vrf-service-endpoint#service-endpoint) in your {{site.data.keyword.cloud_notm}} account, you can use the private {{site.data.keyword.cloud_notm}} Helm repository to keep your image pull traffic on the private network. If you can't enable VRF or service endpoints in your account, use the public Helm repository.

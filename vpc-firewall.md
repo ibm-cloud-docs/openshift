@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2026
-lastupdated: "2026-07-27"
+lastupdated: "2026-08-13"
 
 
 keywords: openshift, firewall, ips
@@ -146,7 +146,7 @@ To allow access for a specific cluster:
         ```
         {: screen}
 
-    * If only the private cloud service endpoint is enabled, you must be in your {{site.data.keyword.cloud_notm}} private network or connect to the private network through a VPN connection to verify your connection to the master. **Note**: You must [expose the master endpoint through a private load balancer](/docs/openshift?topic=openshift-access_cluster#access_private_se) so that users can access the master through a VPN or {{site.data.keyword.BluDirectLink}} connection.
+    * If only the private cloud service endpoint is enabled, you must be in your {{site.data.keyword.cloud_notm}} private network or connect to the private network through a VPN connection to verify your connection to the master. **Note**: You must [expose the master endpoint through a private load balancer](/docs/openshift?topic=openshift-cluster-access-private-vpc) so that users can access the master through a VPN or {{site.data.keyword.BluDirectLink}} connection.
         ```sh
         curl --insecure <private_service_endpoint_URL>/version
         ```

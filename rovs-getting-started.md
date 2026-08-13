@@ -2,7 +2,7 @@
 
 copyright:
   years: 2026, 2026
-lastupdated: "2026-06-30"
+lastupdated: "2026-08-13"
 
 keywords: openshift, virtualization service, rovs, quickstart, console, ui, virtual machines
 
@@ -164,8 +164,8 @@ You now have a running virtual machine on your Virtualization Service cluster!
 - [Managing Virtualization Service clusters](/docs/openshift?topic=openshift-rovs-manage)
 - [Understanding limitations](/docs/openshift?topic=openshift-rovs-limitations)
 - [Detailed cluster creation tutorial](/docs/openshift?topic=openshift-rovs-cluster-create)
-- [Configure virtual machine networking](https://docs.redhat.com/en/documentation/openshift_container_platform/4.21/html/virtualization/virtual-machines#virt-networking){: external}
-- [Set up VM snapshots and cloning](https://docs.redhat.com/en/documentation/openshift_container_platform/4.21/html/virtualization/virtual-machines#virt-managing-vms){: external}
+- [Configure virtual machine networking](https://docs.redhat.com/en/documentation/openshift_container_platform/4.18/html/virtualization/virtual-machines#virt-networking){: external}
+- [Set up VM snapshots and cloning](https://docs.redhat.com/en/documentation/openshift_container_platform/4.18/html/virtualization/virtual-machines#virt-managing-vms){: external}
 
 ## Troubleshooting
 {: #rovs-gs-troubleshoot}

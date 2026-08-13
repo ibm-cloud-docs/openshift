@@ -2,7 +2,7 @@
 
 copyright:
   years: 2026, 2026
-lastupdated: "2026-08-06"
+lastupdated: "2026-08-13"
 
 keywords: openshift, virtualization service, rovs, manage, add-ons, worker nodes, maintenance
 
@@ -378,6 +378,6 @@ For troubleshooting common issues with Virtualization Service clusters, see the 
 {: #rovs-manage-next-steps}
 
 - [Learn about OpenShift Virtualization limitations](/docs/openshift?topic=openshift-rovs-limitations)
-- [Explore VM management in Red Hat documentation](https://docs.redhat.com/en/documentation/openshift_container_platform/4.21/html/virtualization/virtual-machines){: external}
+- [Explore VM management in Red Hat documentation](https://docs.redhat.com/en/documentation/openshift_container_platform/4.18/html/virtualization/virtual-machines){: external}
 - [Configure monitoring and alerts](/docs/openshift?topic=openshift-health-monitor)
 - [Set up backup and disaster recovery](/docs/openshift?topic=openshift-storage-br)

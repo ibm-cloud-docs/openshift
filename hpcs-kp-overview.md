@@ -2,7 +2,7 @@
 
 copyright:
   years: 2025, 2026
-lastupdated: "2026-06-17"
+lastupdated: "2026-08-13"
 
 
 keywords: key protect, hpcs, kp, migrate, encryption
@@ -22,7 +22,7 @@ If your storage components use HPCS and you need to migrate them to use Key Prot
 
 
 Before you begin, make sure to backup all of your apps and data using a backup tool such as Velero or OpenShift API for Data Protection.
-    - [Velero](/docs/containers?topic=containers-data-portability&q=velero&tags=containers#export-velero)
+    - [Velero](/docs/containers?topic=containers-data-portability#export-velero)
     - [OpenShift API for Data Protection](https://www.redhat.com/en/blog/how-to-backup-and-restore-stateful-applications-on-openshift-using-oadp-and-odf){: external}
 
 
