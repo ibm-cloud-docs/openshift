@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2026
-lastupdated: "2026-08-12"
+lastupdated: "2026-08-13"
 
 
 keywords: kubernetes, release notes, openshift, {{site.data.keyword.openshiftlong_notm}}
@@ -25,8 +25,6 @@ Use the release notes to learn about the latest changes to the documentation tha
 
 Looking for {{site.data.keyword.cloud_notm}} status, platform announcements, security bulletins, or maintenance notifications? See [{{site.data.keyword.cloud_notm}} status](https://cloud.ibm.com/status?selected=status).
 {: tip}
-
-
 
 ## August 2026
 {: #openshift-aug26}
@@ -148,6 +146,13 @@ Openshift AI cluster add-on patch updates.
 
 ## July 2026
 {: #openshift-jul26}
+
+### 29 July 2026
+{: #openshift-jul2926}
+{: release-note}
+
+VPC Block CSI Driver cluster add-on patch updates.
+:   For more information, see the [change log](/docs/openshift?topic=openshift-cl-add-ons-vpc-block-csi-driver).
 
 ### 28 July 2026
 {: #openshift-jul2826}

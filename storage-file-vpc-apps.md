@@ -1,8 +1,8 @@
 ---
 
-copyright: 
+copyright:
   years: 2022, 2026
-lastupdated: "2026-08-06"
+lastupdated: "2026-08-13"
 
 keywords: kubernetes, openshift
 
@@ -594,6 +594,7 @@ If you need the following features, you must [create your own storage class](/do
 - You need to bring your own (BYOK) encryption using a KMS provider such as HPCS or Key Protect.
 - You need to manually specify the subnet or IP address of the [Virtual Network Interface (VNI)](/docs/vpc?topic=vpc-file-storage-vpc-about&interface=ui#fs-mount-granular-auth).
 - You need more control over capacity and bandwidth. In this case, you can use the `rfs` profile. For more information, see [Regional file shares overview](/docs/vpc?topic=vpc-file-storage-profiles&interface=ui#rfs-profile).
+- You want to automatically round up the requested PVC capacity to the minimum supported capacity for a fixed IOPS `dp2` profile. For more information, see [Enabling automatic capacity roundoff for fixed IOPS profiles](/docs/openshift?topic=openshift-storage-file-vpc-capacity-roundoff).
 
 If your cluster and VPC are not in the same resource group, you must specify the VPC resource group ID in the `resourceGroup` section and the `kube-<clusterID>` security group ID in the `securityGroupIDs` section. You can find the ID of the `kube-<clusterID>` security group by running `ibmcloud is sg kube-CLUSTER_ID  | grep ID`.
 {: important}
@@ -629,6 +630,7 @@ If your cluster and VPC are not in the same resource group, you must specify the
         primaryIPID: "" # Existing ID of reserved IP from the same subnet as the file share zone. Zone and region are mandatory for this. SubnetID is not mandatory for this.
         primaryIPAddress: "" # IPAddress for VNI to be created in the subnet of the zone. Zone, region and subnetID are mandatory for this.
         iops: "" # Example: 100, this option is valid only for the dp2 profile.
+        allowCapacityRoundoffForIops: "true" # Optional. Enables automatic capacity roundoff for fixed IOPS dp2 profiles. When set to "true", if the requested PVC size is lower than the minimum supported capacity for the requested IOPS, the driver automatically provisions the volume at the minimum supported capacity. Disabled by default. Requires a Virtual Private Endpoint Gateway (VPEG) to IBM Global Catalog.
         throughput: "" # Example: 2000, this option is valid only for the rfs profile
         tags: "" # User can add a list of tags "a, b, c" that will be used at the time of provisioning file share, by default CSI driver has its own tags.
         uid: "0" # The initial user identifier for the file share, by default its root.
