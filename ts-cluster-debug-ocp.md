@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2026
-lastupdated: "2026-07-30"
+lastupdated: "2026-08-13"
 
 
 keywords: openshift
@@ -134,9 +134,9 @@ Check that your cluster is set up properly. If you just created your cluster, wa
 ## Step 5: Log in to your cluster
 {: #oc-debug-cluster-login}
 
-[Log in to your cluster](/docs/openshift?topic=openshift-access_cluster). Note that if the {{site.data.keyword.redhat_openshift_notm}} web console does not work for you to get the login token, you can [access the cluster from the CLI](/docs/openshift?topic=openshift-access_cluster#access_oc_cli).
+[Log in to your cluster](/docs/openshift?topic=openshift-access_cluster). Note that if the {{site.data.keyword.redhat_openshift_notm}} web console does not work for you to get the login token, you can [access the cluster from the CLI](/docs/openshift?topic=openshift-cluster-access-public).
 
-VPC only: If you enabled the private cloud service endpoint, you must be [connected to the private network through your VPC VPN connection](/docs/openshift?topic=openshift-access_cluster#vpc_private_se) to access the web console.
+VPC only: If you enabled the private cloud service endpoint, you must be [connected to the private network through your VPC VPN connection](/docs/openshift?topic=openshift-cluster-access-private-vpc) to access the web console.
 {: note}
 
 ## Step 6: Check the component pods

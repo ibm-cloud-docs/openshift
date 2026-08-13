@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2026
-lastupdated: "2026-07-30"
+lastupdated: "2026-08-13"
 
 
 keywords: kubernetes, registry, pull secret, secrets, openshift
@@ -152,7 +152,7 @@ Before you begin
 1. Download and install the CLI clients for the following open source tools:
     - [OpenSSL](https://openssl-library.org/source/){: external}, to generate an RSA key pair.
     - [Docker Engine CLI](https://www.docker.com/products/container-runtime/#/download){: external}, to locally pull images from an image registry.
-    - [Skopeo](https://github.com/containers/skopeo/blob/main/install.md){: external}, to encrypt OCI container images.
+    - [Skopeo](https://github.com/containers/skopeo){: external}, to encrypt OCI container images.
 
 2. [Access your {{site.data.keyword.redhat_openshift_notm}} cluster](/docs/openshift?topic=openshift-access_cluster).
 

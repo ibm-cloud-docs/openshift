@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2024, 2026
-lastupdated: "2026-07-10"
+lastupdated: "2026-08-13"
 
 
 keywords: openshift, {{site.data.keyword.openshiftlong_notm}}, kubernetes, infrastructure, rbac, policy, role-based access control
@@ -289,7 +289,7 @@ Verify your custom RBAC or synchronized IAM service access to RBAC roles in your
 1. Click the cluster with the RBAC roles that you want to check.
 1. Click the **{{site.data.keyword.redhat_openshift_notm}} web console**.
 
-    If you have a private network only cluster, you might not be able to open the dashboard unless you are on a VPN. See [Accessing clusters through the private cloud service endpoint](/docs/openshift?topic=openshift-access_cluster#access_private_se) or for {{site.data.keyword.satelliteshort}}, [Accessing {{site.data.keyword.redhat_openshift_notm}} clusters on {{site.data.keyword.satelliteshort}}](/docs/openshift?topic=openshift-access_cluster#access_cluster_sat).
+    If you have a private network only cluster, you might not be able to open the dashboard unless you are on a VPN. See [Accessing clusters through the private cloud service endpoint](/docs/openshift?topic=openshift-cluster-access-private-vpc) or for {{site.data.keyword.satelliteshort}}, [Accessing {{site.data.keyword.redhat_openshift_notm}} clusters on {{site.data.keyword.satelliteshort}}](/docs/openshift?topic=openshift-cluster-access-satellite).
     {: note}
 
 1. From the **Administrator** perspective, click **User Management > Users**.

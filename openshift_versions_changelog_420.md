@@ -3,7 +3,7 @@
 copyright:
   years: 2026, 2026
 
-lastupdated: "2026-08-12"
+lastupdated: "2026-08-13"
 
 
 keywords: change log, version history, 4.20_openshift
@@ -65,7 +65,7 @@ The following table shows the components that are in the master fix pack 4.20.32
 
 | Component | Description |
 | ---- | ---- |
-|etcd v3.5.32|See the [etcd release notes](https://github.com/coreos/etcd/releases/v3.5.32).|
+|etcd v3.5.32|See the [etcd release notes](https://github.com/etcd-io/etcd/releases/v3.5.32).|
 |IBM Cloud Block Storage driver and plug-in v2.5.27|New version contains updates and security fixes.|
 |IBM Cloud Controller Manager v1.33.13-6|New version contains updates and security fixes.|
 |IBM Cloud File Storage for Classic plug-in and monitor v456|New version contains updates and security fixes.|

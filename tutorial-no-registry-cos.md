@@ -27,7 +27,7 @@ completion-time: 30m
 
 
 
-Create an {{site.data.keyword.openshiftlong_notm}} cluster on VPC without an {{site.data.keyword.cos_full_notm}} bucket backing the internal image registry. For environments that must meet [IBM Financial Services Cloud](https://cloud.ibm.com/docs/financial-services-validated-partners?topic=financial-services-validated-partners-about){: external} requirements, you can create the cluster without an {{site.data.keyword.cos_full_notm}} instance and pull container images directly from {{site.data.keyword.registrylong_notm}}. When no {{site.data.keyword.cos_full_notm}} instance is provided at cluster creation, the internal registry uses ephemeral `emptyDir` storage, which ensures the cluster operates consistently with FS Cloud standards that rely on centralized image management rather than the internal registry.
+Create an {{site.data.keyword.openshiftlong_notm}} cluster on VPC without an {{site.data.keyword.cos_full_notm}} bucket backing the internal image registry. For environments that must meet [IBM Financial Services Cloud](https://cloud.ibm.com/docs/framework-financial-services){: external} requirements, you can create the cluster without an {{site.data.keyword.cos_full_notm}} instance and pull container images directly from {{site.data.keyword.registrylong_notm}}. When no {{site.data.keyword.cos_full_notm}} instance is provided at cluster creation, the internal registry uses ephemeral `emptyDir` storage, which ensures the cluster operates consistently with FS Cloud standards that rely on centralized image management rather than the internal registry.
 {: shortdesc}
 
 ## Audience

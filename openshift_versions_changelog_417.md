@@ -68,7 +68,7 @@ The following table shows the components that are in the master fix pack 4.17.56
 | Component | Description |
 | ---- | ---- |
 |Cluster health image v1.6.17|New version contains updates and security fixes.|
-|etcd v3.5.32|See the [etcd release notes](https://github.com/coreos/etcd/releases/v3.5.32).|
+|etcd v3.5.32|See the [etcd release notes](https://github.com/etcd-io/etcd/releases/v3.5.32).|
 |IBM Cloud Block Storage driver and plug-in v2.5.27|New version contains updates and security fixes.|
 |IBM Cloud Controller Manager v1.30.14-51|New version contains updates and security fixes.|
 |IBM Cloud File Storage for Classic plug-in and monitor v456|New version contains updates and security fixes.|

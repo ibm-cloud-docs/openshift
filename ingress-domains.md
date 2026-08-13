@@ -2,7 +2,7 @@
 
 copyright:
   years: 2023, 2026
-lastupdated: "2026-08-06"
+lastupdated: "2026-08-13"
 
 
 keywords: kubernetes, openshift
@@ -179,7 +179,7 @@ Learn how to manage the domains that exist in your cluster.
 ### Listing all domains in a cluster
 {: #ingress-domains-manage-view-ls}
 
-For more details and command options, see the [CLI reference](/docs/openshift?topic=openshift-kubernetes-service-cli&interface=ui#ingress-domain-ls).
+For more details and command options, see the [CLI reference](/docs/openshift?topic=openshift-kubernetes-service-cli#ingress-domain-ls-cli).
 
 ```sh
 ibmcloud oc ingress domain ls --cluster CLUSTER
@@ -189,7 +189,7 @@ ibmcloud oc ingress domain ls --cluster CLUSTER
 ### Getting the details of a single domain
 {: #ingress-domains-manage-view-get}
 
-For more details and command options, see the [CLI reference](/docs/openshift?topic=openshift-kubernetes-service-cli&interface=ui#ingress-domain-get).
+For more details and command options, see the [CLI reference](/docs/openshift?topic=openshift-kubernetes-service-cli#ingress-domain-get-cli).
 
 ```sh
 ibmcloud oc ingress domain get --cluster CLUSTER --domain DOMAIN
@@ -231,7 +231,7 @@ ibmcloud oc ingress domain update --cluster CLUSTER --domain DOMAIN [--hostname 
 
 The default Ingress domain is used to form a unique URL for each of your apps and is the domain that is referenced by the IP addresses of any public ALBs in your cluster. When you provision a cluster, the default Ingress domain is automatically created for you, but you can change the default domain to any domain that exists in your cluster. To check your cluster's default domain, run `ibmcloud oc cluster get` and find the **Ingress subdomain** in the output. 
 
-For more details and command options, see the [CLI reference](/docs/openshift?topic=openshift-kubernetes-service-cli&interface=ui#ingress-domain-default-replace).
+For more details and command options, see the [CLI reference](/docs/openshift?topic=openshift-kubernetes-service-cli#ingress-domain-default-replace-cli).
 
 It can take up to five minutes for the default domain to update. During that time, your domain might experience downtime.
 {: important}

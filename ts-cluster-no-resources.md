@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2026
-lastupdated: "2026-07-24"
+lastupdated: "2026-08-13"
 
 
 keywords: openshift
@@ -38,5 +38,5 @@ Your {{site.data.keyword.redhat_openshift_notm}} token is expired. {{site.data.k
 {: tsCauses}
 
 
-Re-authenticate with the {{site.data.keyword.redhat_openshift_notm}} token by [copying the `oc login` command from the web console](/docs/openshift?topic=openshift-access_cluster#access_public_se) or [creating an API key](/docs/openshift?topic=openshift-access_cluster#access_api_key).
+Re-authenticate with the {{site.data.keyword.redhat_openshift_notm}} token by [copying the `oc login` command from the web console](/docs/openshift?topic=openshift-cluster-access-public) or [creating an API key](/docs/openshift?topic=openshift-cluster-access-automation).
 {: tsResolve}
