@@ -3,7 +3,7 @@
 copyright:
   years: 2024, 2026
 
-lastupdated: "2026-08-04"
+lastupdated: "2026-08-13"
 
 
 keywords: change log, version history, VPC Block CSI Driver
@@ -41,6 +41,27 @@ Review the version history for VPC Block CSI Driver.
 
 ## Version 5.2
 {: #cl-add-ons-vpc-block-csi-driver-5.2}
+
+
+### Version 5.2 - v5.2.58_359719682, released 06 August 2026
+{: #cl-add-ons-vpc-block-csi-driver-v5258_359719682}
+
+- Resolves the following CVEs: [CVE-2026-54369](https://nvd.nist.gov/vuln/detail/CVE-2026-54369){: external}, [CVE-2026-54370](https://nvd.nist.gov/vuln/detail/CVE-2026-54370){: external}, [CVE-2026-6238](https://nvd.nist.gov/vuln/detail/CVE-2026-6238){: external}, [CVE-2026-5928](https://nvd.nist.gov/vuln/detail/CVE-2026-5928){: external}, [GHSA-hrxh-6v49-42gf](https://nvd.nist.gov/vuln/detail/GHSA-hrxh-6v49-42gf){: external}, and [CVE-2026-42505](https://nvd.nist.gov/vuln/detail/CVE-2026-42505){: external}.
+- `armada-storage-secret v1.3.60`
+
+
+### Version 5.2 - v5.2.57_356951284, released 29 July 2026
+{: #cl-add-ons-vpc-block-csi-driver-v5257_356951284}
+
+- Resolves the following CVEs: [CVE-2025-5278](https://nvd.nist.gov/vuln/detail/CVE-2025-5278){: external}, [CVE-2026-2303](https://nvd.nist.gov/vuln/detail/CVE-2026-2303){: external}, [CVE-2026-5450](https://nvd.nist.gov/vuln/detail/CVE-2026-5450){: external}, [CVE-2025-58185](https://nvd.nist.gov/vuln/detail/CVE-2025-58185){: external}, [CVE-2025-61727](https://nvd.nist.gov/vuln/detail/CVE-2025-61727){: external}, [CVE-2025-61729](https://nvd.nist.gov/vuln/detail/CVE-2025-61729){: external}, [CVE-2025-47912](https://nvd.nist.gov/vuln/detail/CVE-2025-47912){: external}, [CVE-2025-58187](https://nvd.nist.gov/vuln/detail/CVE-2025-58187){: external}, [CVE-2025-58188](https://nvd.nist.gov/vuln/detail/CVE-2025-58188){: external}, [CVE-2025-58189](https://nvd.nist.gov/vuln/detail/CVE-2025-58189){: external}, [CVE-2025-61723](https://nvd.nist.gov/vuln/detail/CVE-2025-61723){: external}, [CVE-2025-61724](https://nvd.nist.gov/vuln/detail/CVE-2025-61724){: external}, [CVE-2025-61726](https://nvd.nist.gov/vuln/detail/CVE-2025-61726){: external}, [CVE-2025-61730](https://nvd.nist.gov/vuln/detail/CVE-2025-61730){: external}, [CVE-2025-68121](https://nvd.nist.gov/vuln/detail/CVE-2025-68121){: external}, [CVE-2025-47906](https://nvd.nist.gov/vuln/detail/CVE-2025-47906){: external}, and [CVE-2025-22870](https://nvd.nist.gov/vuln/detail/CVE-2025-22870){: external}.
+- `armada-storage-secret v1.3.59`
+- `ibm-csi-init-container v1.0.29`
+- `csi-snapshotter v8.5.0`
+- `csi-attacher v4.11.0`
+- `csi-resizer v2.1.0`
+- `csi-provisioner v6.2.0`
+- `livenessprobe v2.18.0`
+- `csi-node-driver-registrar v2.16.0`
 
 
 ### Version 5.2 - v5.2.55_349394850, released 25 June 2026
@@ -206,6 +227,28 @@ Review the version history for VPC Block CSI Driver.
 
 ## Version 5.1
 {: #cl-add-ons-vpc-block-csi-driver-5.1}
+
+
+### Version 5.1 - v5.1.58_359720275, released 06 August 2026
+{: #cl-add-ons-vpc-block-csi-driver-v5158_359720275}
+
+- Resolves the following CVEs: [CVE-2026-54369](https://nvd.nist.gov/vuln/detail/CVE-2026-54369){: external}, [CVE-2026-54370](https://nvd.nist.gov/vuln/detail/CVE-2026-54370){: external}, [CVE-2026-6238](https://nvd.nist.gov/vuln/detail/CVE-2026-6238){: external}, [CVE-2026-5928](https://nvd.nist.gov/vuln/detail/CVE-2026-5928){: external}, [GHSA-hrxh-6v49-42gf](https://nvd.nist.gov/vuln/detail/GHSA-hrxh-6v49-42gf){: external}, and [CVE-2026-42505](https://nvd.nist.gov/vuln/detail/CVE-2026-42505){: external}.
+- `armada-storage-secret v1.3.60`
+- `ibm-csi-init-container v1.0.29`
+
+
+### Version 5.1 - v5.1.57_356951142, released 29 July 2026
+{: #cl-add-ons-vpc-block-csi-driver-v5157_356951142}
+
+- Resolves the following CVEs: [CVE-2025-5278](https://nvd.nist.gov/vuln/detail/CVE-2025-5278){: external}, [CVE-2026-2303](https://nvd.nist.gov/vuln/detail/CVE-2026-2303){: external}, [CVE-2026-5450](https://nvd.nist.gov/vuln/detail/CVE-2026-5450){: external}, [CVE-2025-58185](https://nvd.nist.gov/vuln/detail/CVE-2025-58185){: external}, [CVE-2025-61727](https://nvd.nist.gov/vuln/detail/CVE-2025-61727){: external}, [CVE-2025-61729](https://nvd.nist.gov/vuln/detail/CVE-2025-61729){: external}, [CVE-2025-47912](https://nvd.nist.gov/vuln/detail/CVE-2025-47912){: external}, [CVE-2025-58187](https://nvd.nist.gov/vuln/detail/CVE-2025-58187){: external}, [CVE-2025-58188](https://nvd.nist.gov/vuln/detail/CVE-2025-58188){: external}, [CVE-2025-58189](https://nvd.nist.gov/vuln/detail/CVE-2025-58189){: external}, [CVE-2025-61723](https://nvd.nist.gov/vuln/detail/CVE-2025-61723){: external}, [CVE-2025-61724](https://nvd.nist.gov/vuln/detail/CVE-2025-61724){: external}, [CVE-2025-61726](https://nvd.nist.gov/vuln/detail/CVE-2025-61726){: external}, [CVE-2025-61730](https://nvd.nist.gov/vuln/detail/CVE-2025-61730){: external}, [CVE-2025-68121](https://nvd.nist.gov/vuln/detail/CVE-2025-68121){: external}, [CVE-2025-47906](https://nvd.nist.gov/vuln/detail/CVE-2025-47906){: external}, and [CVE-2025-22870](https://nvd.nist.gov/vuln/detail/CVE-2025-22870){: external}.
+- `armada-storage-secret v1.3.59`
+- `ibm-csi-init-container v1.0.28`
+- `csi-snapshotter v8.5.0`
+- `csi-attacher v4.11.0`
+- `csi-resizer v2.1.0`
+- `csi-provisioner v6.2.0`
+- `livenessprobe v2.18.0`
+- `csi-node-driver-registrar v2.16.0`
 
 
 ### Version 5.1 - v5.1.55_349394898, released 25 June 2026

@@ -491,6 +491,10 @@ subcollection: openshift
 
 * [July 2026](/docs/openshift?topic=openshift-openshift-relnotes#openshift-jul26)
 
+    * [29 July 2026](/docs/openshift?topic=openshift-openshift-relnotes#openshift-jul2926)
+
+        * VPC Block CSI Driver cluster add-on patch updates.
+
     * [28 July 2026](/docs/openshift?topic=openshift-openshift-relnotes#openshift-jul2826)
 
         * {{site.data.keyword.openshiftlong_notm}} master fix packs.
@@ -8966,6 +8970,10 @@ subcollection: openshift
 
 * [Version 5.2](/docs/openshift?topic=openshift-cl-add-ons-vpc-block-csi-driver#cl-add-ons-vpc-block-csi-driver-5.2)
 
+    * [Version 5.2 - v5.2.58_359719682, released 06 August 2026](/docs/openshift?topic=openshift-cl-add-ons-vpc-block-csi-driver#cl-add-ons-vpc-block-csi-driver-v5258_359719682)
+
+    * [Version 5.2 - v5.2.57_356951284, released 29 July 2026](/docs/openshift?topic=openshift-cl-add-ons-vpc-block-csi-driver#cl-add-ons-vpc-block-csi-driver-v5257_356951284)
+
     * [Version 5.2 - v5.2.55_349394850, released 25 June 2026](/docs/openshift?topic=openshift-cl-add-ons-vpc-block-csi-driver#cl-add-ons-vpc-block-csi-driver-v5255_349394850)
 
     * [Version 5.2 - v5.2.54_345553805, released 10 June 2026](/docs/openshift?topic=openshift-cl-add-ons-vpc-block-csi-driver#cl-add-ons-vpc-block-csi-driver-v5254_345553805)
@@ -9005,6 +9013,10 @@ subcollection: openshift
     * [Version 5.2 - 5.2.31_687, released 17 February 2025](/docs/openshift?topic=openshift-cl-add-ons-vpc-block-csi-driver#cl-add-ons-vpc-block-csi-driver-5231_687)
 
 * [Version 5.1](/docs/openshift?topic=openshift-cl-add-ons-vpc-block-csi-driver#cl-add-ons-vpc-block-csi-driver-5.1)
+
+    * [Version 5.1 - v5.1.58_359720275, released 06 August 2026](/docs/openshift?topic=openshift-cl-add-ons-vpc-block-csi-driver#cl-add-ons-vpc-block-csi-driver-v5158_359720275)
+
+    * [Version 5.1 - v5.1.57_356951142, released 29 July 2026](/docs/openshift?topic=openshift-cl-add-ons-vpc-block-csi-driver#cl-add-ons-vpc-block-csi-driver-v5157_356951142)
 
     * [Version 5.1 - v5.1.55_349394898, released 25 June 2026](/docs/openshift?topic=openshift-cl-add-ons-vpc-block-csi-driver#cl-add-ons-vpc-block-csi-driver-v5155_349394898)
 
