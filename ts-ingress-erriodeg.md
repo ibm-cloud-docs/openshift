@@ -2,7 +2,7 @@
 
 copyright:
   years: 2022, 2026
-lastupdated: "2026-07-30"
+lastupdated: "2026-08-14"
 
 
 keywords: openshift, ingress, troubleshoot ingress, ingress operator, ingress cluster operator, ingress operator degraded, erriodeg
@@ -43,9 +43,17 @@ The Ingress Operator checks the health of the Ingress Controllers and enters a d
 {: tsCauses}
 
 
-Get the details of the `ingress` ClusterOperator and complete the steps based on the error message.
+Verify that your nodes are not overloaded. Overloaded nodes can cause Ingress Operator health checks to fail.
 {: tsResolve}
 
+To check whether you have adequate CPU and memory headroom, run the following command.
+```sh
+kubectl top nodes
+```
+{: pre}
+
+
+Get the details of the `ingress` ClusterOperator and complete the steps based on the error message.
 
 Check the status of the `ingress` ClusterOperator. If you see `False` in the `DEGRADED` column, wait 10 to 15 minutes to see if the Ingress Status warning disappears. If not, proceed with the troubleshooting steps based on the message in the `MESSAGE` column.
 ```sh
@@ -90,7 +98,7 @@ oc get clusteroperator ingress
     - If your VPC Load Balancers are located on a subnet other than the worker nodes of your cluster, you must update the Security Group attached to the VPC Load Balancer subnet to allow incoming traffic from the worker subnets.
     - For more information, see [Creating a Red Hat OpenShift cluster in your Virtual Private Cloud](/docs/openshift?topic=openshift-vpc_rh_tutorial), [Configuring VPC subnets](/docs/openshift?topic=openshift-vpc-subnets#vpc_basics_pgw) and [Creating and managing VPC security groups](/docs/openshift?topic=openshift-vpc-security-group-manage).
 
-1. Ensure that no firewall rules block the canary traffic.
+1. Ensure that no firewall rules block canary traffic or DNS traffic over UDP and TCP.
     **VPC**: canary traffic originates from one of the worker nodes, flows through a VPC Public Gateway and arrives to the public side of the VPC Load Balancer instance. Configure your VPC Security Groups to allow this communication. For more information, see [Understanding secure by default cluster VPC networking](/docs/openshift?topic=openshift-vpc-security-group-reference) and [Creating and managing VPC security groups](/docs/openshift?topic=openshift-vpc-security-group-manage).
     **Classic**: canary traffic originates from the public IP address of one of the worker nodes and arrives to the public IP address of your classic load balancers. Configure your network policies to allow this communication. For more information, see [Controlling traffic with network policies on classic clusters](/docs/openshift?topic=openshift-network_policies).
 
