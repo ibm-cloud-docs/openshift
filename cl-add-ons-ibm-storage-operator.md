@@ -162,7 +162,7 @@ Review the version history for IBM Storage Operator.
 
 [Default version]{: tag-green}
 
-- Resolves the following CVEs: [CVE-2025-14831](https://nvd.nist.gov/vuln/detail/CVE-2025-14831){: external}, [CVE-2025-15366](https://nvd.nist.gov/vuln/detail/CVE-2025-15366){: external}, [CVE-2025-15367](https://nvd.nist.gov/vuln/detail/CVE-2025-15367){: external}, [CVE-2026-1299](https://nvd.nist.gov/vuln/detail/CVE-2026-1299){: external}, [CVE-2024-6923](https://nvd.nist.gov/vuln/detail/CVE-2024-6923){: external}, [CVE-2026-0865](https://nvd.nist.gov/vuln/detail/CVE-2026-0865){: external}, [CVE-2026-25679](https://access.redhat.com/security/cve/CVE-2026-25679){: external}, [CVE-2025-12801](https://nvd.nist.gov/vuln/detail/CVE-2025-12801){: external}, [CVE-2026-27139](https://nvd.nist.gov/vuln/detail/CVE-2026-27139){: external}, and [CVE-2026-27142](https://nvd.nist.gov/vuln/detail/CVE-2026-27142){: external}.
+- Resolves the following CVEs: [CVE-2025-14831](https://nvd.nist.gov/vuln/detail/CVE-2025-14831){: external}, [CVE-2025-15366](https://nvd.nist.gov/vuln/detail/CVE-2025-15366){: external}, [CVE-2025-15367](https://nvd.nist.gov/vuln/detail/CVE-2025-15367){: external}, [CVE-2026-1299](https://nvd.nist.gov/vuln/detail/CVE-2026-1299){: external}, [CVE-2024-6923](https://nvd.nist.gov/vuln/detail/CVE-2024-6923){: external}, [CVE-2026-0865](https://nvd.nist.gov/vuln/detail/CVE-2026-0865){: external}, [CVE-2026-25679](https://nvd.nist.gov/vuln/detail/CVE-2026-25679){: external}, [CVE-2025-12801](https://nvd.nist.gov/vuln/detail/CVE-2025-12801){: external}, [CVE-2026-27139](https://nvd.nist.gov/vuln/detail/CVE-2026-27139){: external}, and [CVE-2026-27142](https://nvd.nist.gov/vuln/detail/CVE-2026-27142){: external}.
 - `armada-storage-secret v1.2.78`
 
 
