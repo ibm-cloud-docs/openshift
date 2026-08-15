@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2022, 2026
-lastupdated: "2026-08-14"
+lastupdated: "2026-08-15"
 
 keywords: kubernetes, openshift
 
@@ -54,35 +54,26 @@ View and modify cluster and cluster service settings.
 * **`cluster service`**: View, bind, and unbind IBM Cloud services on a cluster.
 * **`cluster subnet`**: Add and create portable subnets for a classic cluster.
     * [`ibmcloud oc cluster addon disable acm`](/docs/openshift?topic=openshift-kubernetes-service-cli#cluster-addon-disable-acm-cli)
-    * [`ibmcloud oc cluster addon disable alb-oauth-proxy`](/docs/openshift?topic=openshift-kubernetes-service-cli#cluster-addon-disable-alb-oauth-proxy-cli)
     * [`ibmcloud oc cluster addon disable cluster-autoscaler`](/docs/openshift?topic=openshift-kubernetes-service-cli#cluster-addon-disable-cluster-autoscaler-cli)
     * [`ibmcloud oc cluster addon disable debug-tool`](/docs/openshift?topic=openshift-kubernetes-service-cli#cluster-addon-disable-debug-tool-cli)
-    * **Beta** [`ibmcloud oc cluster addon disable headlamp`](/docs/openshift?topic=openshift-kubernetes-service-cli#cluster-addon-disable-headlamp-cli)
     * [`ibmcloud oc cluster addon disable hpcs-router`](/docs/openshift?topic=openshift-kubernetes-service-cli#cluster-addon-disable-hpcs-router-cli)
     * **Beta** [`ibmcloud oc cluster addon disable ibm-storage-operator`](/docs/openshift?topic=openshift-kubernetes-service-cli#cluster-addon-disable-ibm-storage-operator-cli)
     * [`ibmcloud oc cluster addon disable image-key-synchronizer`](/docs/openshift?topic=openshift-kubernetes-service-cli#cluster-addon-disable-image-key-synchronizer-cli)
-    * [`ibmcloud oc cluster addon disable istio`](/docs/openshift?topic=openshift-kubernetes-service-cli#cluster-addon-disable-istio-cli)
-    * **Deprecated** [`ibmcloud oc cluster addon disable istio-extras`](/docs/openshift?topic=openshift-kubernetes-service-cli#cluster-addon-disable-istio-extras-cli)
-    * **Deprecated** [`ibmcloud oc cluster addon disable istio-sample-bookinfo`](/docs/openshift?topic=openshift-kubernetes-service-cli#cluster-addon-disable-istio-sample-bookinfo-cli)
     * [`ibmcloud oc cluster addon disable knative`](/docs/openshift?topic=openshift-kubernetes-service-cli#cluster-addon-disable-knative-cli)
     * [`ibmcloud oc cluster addon disable kube-terminal`](/docs/openshift?topic=openshift-kubernetes-service-cli#cluster-addon-disable-kube-terminal-cli)
     * [`ibmcloud oc cluster addon disable openshift-data-foundation`](/docs/openshift?topic=openshift-kubernetes-service-cli#cluster-addon-disable-openshift-data-foundation-cli)
     * [`ibmcloud oc cluster addon disable static-route`](/docs/openshift?topic=openshift-kubernetes-service-cli#cluster-addon-disable-static-route-cli)
     * [`ibmcloud oc cluster addon disable vpc-block-csi-driver`](/docs/openshift?topic=openshift-kubernetes-service-cli#cluster-addon-disable-vpc-block-csi-driver-cli)
     * [`ibmcloud oc cluster addon enable acm`](/docs/openshift?topic=openshift-kubernetes-service-cli#cluster-addon-enable-acm-cli)
-    * [`ibmcloud oc cluster addon enable alb-oauth-proxy`](/docs/openshift?topic=openshift-kubernetes-service-cli#cluster-addon-enable-alb-oauth-proxy-cli)
     * [`ibmcloud oc cluster addon enable cluster-autoscaler`](/docs/openshift?topic=openshift-kubernetes-service-cli#cluster-addon-enable-cluster-autoscaler-cli)
     * [`ibmcloud oc cluster addon enable debug-tool`](/docs/openshift?topic=openshift-kubernetes-service-cli#cluster-addon-enable-debug-tool-cli)
-    * **Beta** [`ibmcloud oc cluster addon enable headlamp`](/docs/openshift?topic=openshift-kubernetes-service-cli#cluster-addon-enable-headlamp-cli)
     * [`ibmcloud oc cluster addon enable hpcs-router`](/docs/openshift?topic=openshift-kubernetes-service-cli#cluster-addon-enable-hpcs-router-cli)
     * **Beta** [`ibmcloud oc cluster addon enable ibm-storage-operator`](/docs/openshift?topic=openshift-kubernetes-service-cli#cluster-addon-enable-ibm-storage-operator-cli)
     * [`ibmcloud oc cluster addon enable image-key-synchronizer`](/docs/openshift?topic=openshift-kubernetes-service-cli#cluster-addon-enable-image-key-synchronizer-cli)
-    * [`ibmcloud oc cluster addon enable istio`](/docs/openshift?topic=openshift-kubernetes-service-cli#cluster-addon-enable-istio-cli)
     * **Deprecated** [`ibmcloud oc cluster addon enable istio-extras`](/docs/openshift?topic=openshift-kubernetes-service-cli#cluster-addon-enable-istio-extras-cli)
     * **Deprecated** [`ibmcloud oc cluster addon enable istio-sample-bookinfo`](/docs/openshift?topic=openshift-kubernetes-service-cli#cluster-addon-enable-istio-sample-bookinfo-cli)
     * [`ibmcloud oc cluster addon enable openshift-data-foundation`](/docs/openshift?topic=openshift-kubernetes-service-cli#cluster-addon-enable-openshift-data-foundation-cli)
     * [`ibmcloud oc cluster addon enable static-route`](/docs/openshift?topic=openshift-kubernetes-service-cli#cluster-addon-enable-static-route-cli)
-    * [`ibmcloud oc cluster addon enable vpc-block-csi-driver`](/docs/openshift?topic=openshift-kubernetes-service-cli#cluster-addon-enable-vpc-block-csi-driver-cli)
     * [`ibmcloud oc cluster addon get`](/docs/openshift?topic=openshift-kubernetes-service-cli#cluster-addon-get-cli)
     * [`ibmcloud oc cluster addon ls`](/docs/openshift?topic=openshift-kubernetes-service-cli#cluster-addon-ls-cli)
     * [`ibmcloud oc cluster addon options`](/docs/openshift?topic=openshift-kubernetes-service-cli#cluster-addon-options-cli)
@@ -116,9 +107,6 @@ View and modify cluster and cluster service settings.
     * [`ibmcloud oc cluster image-security disable`](/docs/openshift?topic=openshift-kubernetes-service-cli#cluster-image-security-disable-cli)
     * [`ibmcloud oc cluster image-security enable`](/docs/openshift?topic=openshift-kubernetes-service-cli#cluster-image-security-enable-cli)
     * [`ibmcloud oc cluster ls`](/docs/openshift?topic=openshift-kubernetes-service-cli#cluster-ls-cli)
-    * [`ibmcloud oc cluster master audit-webhook get`](/docs/openshift?topic=openshift-kubernetes-service-cli#cluster-master-audit-webhook-get-cli)
-    * [`ibmcloud oc cluster master audit-webhook set`](/docs/openshift?topic=openshift-kubernetes-service-cli#cluster-master-audit-webhook-set-cli)
-    * [`ibmcloud oc cluster master audit-webhook unset`](/docs/openshift?topic=openshift-kubernetes-service-cli#cluster-master-audit-webhook-unset-cli)
     * [`ibmcloud oc cluster master console-oauth-access get`](/docs/openshift?topic=openshift-kubernetes-service-cli#cluster-master-console-oauth-access-get-cli)
     * [`ibmcloud oc cluster master console-oauth-access set`](/docs/openshift?topic=openshift-kubernetes-service-cli#cluster-master-console-oauth-access-set-cli)
     * [`ibmcloud oc cluster master pod-security get`](/docs/openshift?topic=openshift-kubernetes-service-cli#cluster-master-pod-security-get-cli)
@@ -137,8 +125,8 @@ View and modify cluster and cluster service settings.
     * [`ibmcloud oc cluster master public-service-endpoint enable`](/docs/openshift?topic=openshift-kubernetes-service-cli#cluster-master-public-service-endpoint-enable-cli)
     * [`ibmcloud oc cluster master refresh`](/docs/openshift?topic=openshift-kubernetes-service-cli#cluster-master-refresh-cli)
     * [`ibmcloud oc cluster master satellite-service-endpoint allowlist add`](/docs/openshift?topic=openshift-kubernetes-service-cli#cluster-master-satellite-service-endpoint-allowlist-add-cli)
-    * [`ibmcloud ks cluster master satellite-service-endpoint allowlist disable`](/docs/openshift?topic=openshift-kubernetes-service-cli#cluster-master-satellite-service-endpoint-allowlist-disable-cli)
-    * [`ibmcloud ks cluster master satellite-service-endpoint allowlist enable`](/docs/openshift?topic=openshift-kubernetes-service-cli#cluster-master-satellite-service-endpoint-allowlist-enable-cli)
+    * [`ibmcloud oc cluster master satellite-service-endpoint allowlist disable`](/docs/openshift?topic=openshift-kubernetes-service-cli#cluster-master-satellite-service-endpoint-allowlist-disable-cli)
+    * [`ibmcloud oc cluster master satellite-service-endpoint allowlist enable`](/docs/openshift?topic=openshift-kubernetes-service-cli#cluster-master-satellite-service-endpoint-allowlist-enable-cli)
     * [`ibmcloud oc cluster master satellite-service-endpoint allowlist get`](/docs/openshift?topic=openshift-kubernetes-service-cli#cluster-master-satellite-service-endpoint-allowlist-get-cli)
     * [`ibmcloud oc cluster master satellite-service-endpoint allowlist rm`](/docs/openshift?topic=openshift-kubernetes-service-cli#cluster-master-satellite-service-endpoint-allowlist-rm-cli)
     * [`ibmcloud oc cluster master update`](/docs/openshift?topic=openshift-kubernetes-service-cli#cluster-master-update-cli)
