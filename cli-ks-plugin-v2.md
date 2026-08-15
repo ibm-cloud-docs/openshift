@@ -70,7 +70,7 @@ The following tables list the `ibmcloud oc` command groups. For a complete list 
 | [`ibmcloud oc security-group`](#security-group-cli) | Run operations against a security group. |
 {: caption="ibmcloud oc CLI command groups" caption-side="bottom"}
 
-## ibmcloud oc api commands
+## Api commands
 {: #api-cli}
 
 View the current API endpoint.
@@ -111,7 +111,7 @@ ibmcloud ks api \
 {: pre}
 
 
-## ibmcloud oc api-key commands
+## Api-key commands
 {: #api-key-cli}
 
 View information about the API key for a cluster or reset it to a new key.
@@ -195,7 +195,7 @@ ibmcloud ks api-key reset --output json --region REGION -f
 {: pre}
 
 
-## ibmcloud oc cluster commands
+## Cluster commands
 {: #cluster-cli}
 
 View and modify cluster and cluster service settings.
@@ -3958,7 +3958,7 @@ ibmcloud ks cluster subnet detach \
 {: pre}
 
 
-## ibmcloud oc credential commands
+## Credential commands
 {: #credential-cli}
 
 Set and unset credentials that allow you to access the IBM Cloud classic infrastructure portfolio through your IBM Cloud account.
@@ -4083,7 +4083,7 @@ ibmcloud ks credential unset --region REGION -q
 {: pre}
 
 
-## ibmcloud oc experimental commands
+## Experimental commands
 {: #experimental-cli}
 
 [Expires on 2026-10-21] Experiment with new commands. IMPORTANT: Commands here will retire after the [date] in their description.
@@ -4462,7 +4462,7 @@ ibmcloud ks experimental vni ls --worker WORKER
 {: pre}
 
 
-## ibmcloud oc flavor commands
+## Flavor commands
 {: #flavor-cli}
 
 Getting flavor related information. Flavors determine how much virtual CPU, memory, and disk space is available to each worker node.
@@ -4558,7 +4558,7 @@ ibmcloud ks flavor ls --zone ZONE --show-storage SHOW-STORAGE --show-os SHOW-OS
 {: pre}
 
 
-## ibmcloud oc infra-permissions commands
+## Infra-permissions commands
 {: #infra-permissions-cli}
 
 View information about infrastructure permissions that allow you to access the IBM Cloud classic infrastructure portfolio through your IBM Cloud account.
@@ -4602,7 +4602,7 @@ ibmcloud ks infra-permissions get --output json --region REGION -q
 {: pre}
 
 
-## ibmcloud oc ingress commands
+## Ingress commands
 {: #ingress-cli}
 
 View and modify Ingress services and settings
@@ -6828,7 +6828,7 @@ ibmcloud ks ingress status-report ignored-errors rm \
 {: pre}
 
 
-## ibmcloud oc kms commands
+## Kms commands
 {: #kms-cli}
 
 View and configure Key Management Service integrations.
@@ -6955,7 +6955,7 @@ ibmcloud ks kms instance ls --output json -q
 {: pre}
 
 
-## ibmcloud oc locations commands
+## Locations commands
 {: #locations-cli}
 
 List supported IBM Cloud Kubernetes Service locations.
@@ -7002,7 +7002,7 @@ ibmcloud ks locations --provider PROVIDER_ID --show-flavors FLAVOR --output json
 {: pre}
 
 
-## ibmcloud oc logging commands
+## Logging commands
 {: #logging-cli}
 
 Forward logs from your cluster.
@@ -7638,7 +7638,7 @@ ibmcloud ks logging refresh \
 {: pre}
 
 
-## ibmcloud oc messages commands
+## Messages commands
 {: #messages-cli}
 
 View the current user messages.
@@ -7676,7 +7676,7 @@ ibmcloud sat messages -q
 {: pre}
 
 
-## ibmcloud oc nlb-dns commands
+## Nlb-dns commands
 {: #nlb-dns-cli}
 
 Create and manage host names for network load balancer (NLB) IP addresses in a cluster and health check monitors for host names.
@@ -8359,7 +8359,7 @@ ibmcloud ks nlb-dns secret rm --cluster CLUSTER_NAME_OR_ID --nlb-subdomain DOMAI
 {: pre}
 
 
-## ibmcloud oc quota commands
+## Quota commands
 {: #quota-cli}
 
 View the quota and limits for cluster-related resources in your IBM Cloud account.
@@ -8403,7 +8403,7 @@ ibmcloud ks quota ls --output json --provider PROVIDER_ID -q
 {: pre}
 
 
-## ibmcloud oc script commands
+## Script commands
 {: #script-cli}
 
 Rewrite scripts that call IBM Cloud Kubernetes Service plug-in commands. Legacy-structured commands are replaced with beta-structured commands.
@@ -8444,7 +8444,7 @@ ibmcloud ks script update --in-place IN-PLACE -q
 {: pre}
 
 
-## ibmcloud oc security-group commands
+## Security-group commands
 {: #security-group-cli}
 
 Run operations against a security group.
@@ -8580,7 +8580,7 @@ ibmcloud ks security-group sync --cluster CLUSTER_NAME_OR_ID --security-group GR
 {: pre}
 
 
-## ibmcloud oc storage commands
+## Storage commands
 {: #storage-cli}
 
 View and modify storage resources.
@@ -8866,7 +8866,7 @@ ibmcloud ks storage volume ls \
 {: pre}
 
 
-## ibmcloud oc subnets commands
+## Subnets commands
 {: #subnets-cli}
 
 List available portable subnets in your IBM Cloud infrastructure account.
@@ -8924,7 +8924,7 @@ ibmcloud ks subnets \
 {: pre}
 
 
-## ibmcloud oc versions commands
+## Versions commands
 {: #versions-cli}
 
 List all the container platform versions that are available for IBM Cloud Kubernetes Service clusters.
@@ -8968,7 +8968,7 @@ ibmcloud ks versions --output json --show-version VERSION -q
 {: pre}
 
 
-## ibmcloud oc vlan commands
+## Vlan commands
 {: #vlan-cli}
 
 List public and private VLANs for a zone and view the VLAN spanning status.
@@ -9049,7 +9049,7 @@ ibmcloud ks vlan spanning get --output json --region REGION -q
 {: pre}
 
 
-## ibmcloud oc vni commands
+## Vni commands
 {: #vni-cli}
 
 Attach, detach, and list Virtual Network Interfaces on worker nodes.
@@ -9207,7 +9207,7 @@ ibmcloud ks vni ls --worker WORKER
 {: pre}
 
 
-## ibmcloud oc vpc commands
+## Vpc commands
 {: #vpc-cli}
 
 Get information about VPCs and manage VPC clusters.
@@ -9368,7 +9368,7 @@ ibmcloud ks vpc secure-by-default enable \
 {: pre}
 
 
-## ibmcloud oc webhook-create commands
+## Webhook-create commands
 {: #webhook-create-cli}
 
 Register a webhook in a cluster.
@@ -9418,7 +9418,7 @@ ibmcloud ks webhook-create --cluster CLUSTER_NAME_OR_ID --type TYPE --url URL
 {: pre}
 
 
-## ibmcloud oc worker commands
+## Worker commands
 {: #worker-cli}
 
 View and modify worker nodes for a cluster.
@@ -9732,7 +9732,7 @@ ibmcloud ks worker update --cluster CLUSTER_NAME_OR_ID -f --worker WORKER_ID
 {: pre}
 
 
-## ibmcloud oc worker-pool commands
+## Worker-pool commands
 {: #worker-pool-cli}
 
 View and modify worker pools for a cluster.
@@ -10474,7 +10474,7 @@ ibmcloud ks worker-pool zones \
 {: pre}
 
 
-## ibmcloud oc zone commands
+## Zone commands
 {: #zone-cli}
 
 List availability zones and modify the zones attached to a worker pool.
