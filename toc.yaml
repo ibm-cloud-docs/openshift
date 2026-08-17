@@ -32,12 +32,15 @@ toc:
           - strategy.md
           - cluster-plan-network-vpc.md
           - cluster-plan-network-classic.md
+          - encryption.md
+          - document-environment.md
       - topicgroup:
           label: Your responsibilities
           topics:
           - responsibilities.md
           - satellite-resp.md
-      - secure.md
+      - topic: secure.md
+        navtitle: Security overview
       - topicgroup:
           label: Important notices
           topics:
@@ -84,11 +87,6 @@ toc:
           - cli-update.md
           - include: ../cli/reference/ibmcloud/uninstall_cli.md
           - api-install.md
-      - topicgroup:
-          label: Cluster planning
-          topics:
-          - encryption.md
-          - document-environment.md
       - topicgroup:
           label: Cluster creation
           topics:
@@ -150,8 +148,11 @@ toc:
               topics:
               - costs.md
               - costs-reserved.md
-          - access-apikey.md
-          - ca-rotate.md
+          - topicgroup:
+              label: Credentials and certificates
+              topics:
+              - access-apikey.md
+              - ca-rotate.md
           - topicgroup:
               label: Removing clusters
               topics:
@@ -187,14 +188,11 @@ toc:
       - topicgroup:
           label: Images and registries
           topics:
-          - topicgroup:
-              label: General
-              topics:
-              - registry.md
-              - images.md
-              - trusted-ca.md
-              - topic: tutorial-no-registry-cos.md
-                navtitle: VPC cluster without a COS-backed registry
+          - registry.md
+          - images.md
+          - trusted-ca.md
+          - topic: tutorial-no-registry-cos.md
+            navtitle: VPC cluster without a COS-backed registry
           - topicgroup:
               label: Satellite clusters
               topics:
@@ -290,7 +288,8 @@ toc:
             navtitle: Storage overview
           - topic: storage-operator.md
             navtitle: Storage Operator add-on
-          - hpcs-kp-overview.md
+          - topic: hpcs-kp-overview.md
+            navtitle: Key management overview
           - topicgroup:
               label: Block Storage for VPC add-on
               topics:
@@ -302,7 +301,6 @@ toc:
               - storage-block-vpc-migration.md
               - storage-block-vpc-profile-migration.md
               - storage-block-vpc-sc-ref.md
-              - storage-block-vpc-unmanaged.md
               - topic: hpcs-kp-migration-block.md
                 navtitle: Migrating from HPCS to Key Protect
           - topicgroup:
@@ -525,10 +523,6 @@ toc:
           - cl-add-ons-ibm-cloud-image-key-synchronizer.md
           - cl-confidential-containers.md
       - topicgroup:
-          label: Security reference
-          topics:
-          - data-security.md
-      - topicgroup:
           label: Service settings
           topics:
           - locations.md
@@ -540,22 +534,20 @@ toc:
             navtitle: Dependencies
           - topic: limitations.md
             navtitle: Limitations
+          - topic: ha-dr.md
+            navtitle: High availability and disaster recovery
+          - topic: data-portability.md
+            navtitle: Data portability
       - topicgroup:
           label: Worker node flavors
           topics:
           - vpc-flavors.md
           - classic-flavors.md
-      - topic: data-portability.md
-        navtitle: Data portability
-      - topic: ha-dr.md
-        navtitle: High-availability and disaster recovery
   - navgroup:
       id: help
       topics:
       - include: ../account/status-bps.md
         navtitle: Monitoring account status
-      - topic: best-practices.md
-        navtitle: Best practices
       - topic: faqs.md
         navtitle: FAQ
       - topicgroup:
@@ -599,6 +591,7 @@ toc:
               - ts-cluster-sbd-image-stream.md
               - ts-cloud-logs-tags.md
               - ts-cluster-sysdig-ebpf.md
+              - ts-perms-creds.md
           - topicgroup:
               label: Worker nodes
               topics:
@@ -624,10 +617,6 @@ toc:
               - ts-dupe-logs.md
               - ts-gpu-driver-rhel9-eus.md
               - ts-confidential-containers.md
-          - topicgroup:
-              label: Permissions and credentials
-              topics:
-              - ts-perms-creds.md
           - topicgroup:
               label: Cluster autoscaler
               topics:
