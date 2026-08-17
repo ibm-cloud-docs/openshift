@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2026
-lastupdated: "2026-07-30"
+lastupdated: "2026-08-17"
 
 
 keywords: openshift, {{site.data.keyword.openshiftlong_notm}}, upgrade, version, update cluster, update worker nodes, update cluster components, update cluster master
@@ -37,7 +37,7 @@ How many versions behind the latest can the master be?
 
 
 Can my worker nodes run a later version than the master?
-:   Your worker nodes can't run a later `major.minor` Kubernetes version than the master. Additionally, your worker nodes can only be one version behind the master version (`n-1`). First, [update your master](#update_master) to the latest Kubernetes version. Then, [update the worker nodes](#worker_node) in your cluster.
+:   Your worker nodes can't run a later `major.minor` Kubernetes version than the master. Additionally, your worker nodes can only be one minor version behind the master version (`n-1`). First, [update your master](#update_master) to the latest Kubernetes version. Then, [update the worker nodes](#worker_node) in your cluster.
 
 Worker nodes can run later patch versions than the master, such as patch versions that are specific to worker nodes for security updates.
 
@@ -112,7 +112,7 @@ You notice that an update is available for your worker nodes in a [classic infra
 {: shortdesc}
 
 * **Patch**: A worker node patch update includes security fixes. You can update the classic worker node to the latest patch by using the `ibmcloud oc worker reload` or `update` commands. Keep in mind that the `update` command also updates the worker node to the same `major.minor` version as the master and latest patch version, if a `major.minor` version update is also available.
-* **Major.minor**: A `major.minor` update moves up the Kubernetes version of the worker node to the same version as the master. This type of update often includes changes to the Kubernetes API or other behaviors that you must prepare your cluster for. Remember that your worker nodes can only be one version behind the master version (`n-1`). You can update the classic worker node to the same patch by using the `ibmcloud oc worker update` command.
+* **Major.minor**: A `major.minor` update moves up the Kubernetes version of the worker node to the same version as the master. This type of update often includes changes to the Kubernetes API or other behaviors that you must prepare your cluster for. Remember that your worker nodes can only be one minor version behind the master version (`n-1`). You can update the classic worker node to the same patch by using the `ibmcloud oc worker update` command.
 
 For more information, see [Update types](/docs/containers?topic=containers-cs_versions#update_types).
 {: shortdesc}
@@ -328,7 +328,7 @@ If you have OpenShift Data Foundation deployed in your cluster, follow the steps
 
 
 * **Patch**: A worker node patch update includes security fixes. For VPC bare metal workers, you can apply the latest patch by using the `ibmcloud oc worker reload` command. For VPC virtual server instance workers, use the `ibmcloud oc worker replace` command.
-* **Major.minor**: A `major.minor` update moves up the Kubernetes version of the worker node to the same version as the master. This type of update often includes changes to the Kubernetes API or other behaviors that you must prepare your cluster for. Remember that your worker nodes can only be one version behind the master version (`n-1`). You can update the VPC worker node to the same patch by using the `ibmcloud oc worker replace` command with the `--update` option.
+* **Major.minor**: A `major.minor` update moves up the Kubernetes version of the worker node to the same version as the master. This type of update often includes changes to the Kubernetes API or other behaviors that you must prepare your cluster for. Remember that your worker nodes can only be one minor version behind the master version (`n-1`). You can update the VPC worker node to the same patch by using the `ibmcloud oc worker replace` command with the `--update` option.
 
 What happens to my apps during an update?
 :   If you run apps as part of a deployment on worker nodes that you update, the apps are rescheduled onto other worker nodes in the cluster. These worker nodes might be in a different worker pool. To avoid downtime for your app, you must ensure that you have enough capacity in the cluster to carry the workload, such as by resizing your worker pools. For more information, see [Adding worker nodes to Classic clusters](/docs/openshift?topic=openshift-add-workers-classic) or [Adding worker nodes to VPC clusters](/docs/openshift?topic=openshift-add-workers-vpc).
