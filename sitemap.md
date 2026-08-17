@@ -511,8 +511,6 @@ subcollection: openshift
 
         * CLI version 1.0.804 is available.
 
-    * [23 July 2026](/docs/openshift?topic=openshift-openshift-relnotes#openshift-jul2326)
-
     * [22 July 2026](/docs/openshift?topic=openshift-openshift-relnotes#openshift-jul2226)
 
         * CLI version 1.0.796 is available.
