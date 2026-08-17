@@ -216,10 +216,6 @@ IBM Object CSI Driver cluster add-on patch updates.
 CLI version 1.0.804 is available.
 :   For more information, see [Updating the CLI](/docs/openshift?topic=openshift-cli-update) and the [CLI change log](/docs/openshift?topic=openshift-cs_cli_changelog).
 
-### 23 July 2026
-{: #openshift-jul2326}
-{: release-note}
-
 
 
 ### 22 July 2026
