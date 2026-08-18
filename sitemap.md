@@ -219,6 +219,18 @@ subcollection: openshift
 
 * [Make your apps highly available too](/docs/openshift?topic=openshift-strategy#apps-ha)
 
+* [Ongoing best practices](/docs/openshift?topic=openshift-strategy#best-practices-ongoing)
+
+    * [Keep your cluster environment up to date](/docs/openshift?topic=openshift-strategy#bp-1)
+
+    * [Keep your command line tools up to date](/docs/openshift?topic=openshift-strategy#bp-2)
+
+    * [Regularly rotate your CA certificates](/docs/openshift?topic=openshift-strategy#bp-ca)
+
+    * [Document your environment architecture](/docs/openshift?topic=openshift-strategy#bp-3)
+
+    * [Subscribe to release note updates](/docs/openshift?topic=openshift-strategy#bp-4)
+
 * [Next steps](/docs/openshift?topic=openshift-strategy#plan-network-next)
 
 [Understanding VPC cluster networking](/docs/openshift?topic=openshift-plan_vpc_basics#plan_vpc_basics)
@@ -319,6 +331,34 @@ subcollection: openshift
 
 * [Next steps](/docs/openshift?topic=openshift-plan_basics#plan-encryption-next-cl)
 
+[Encryption overview](/docs/openshift?topic=openshift-encryption#encryption)
+
+* [Control plane](/docs/openshift?topic=openshift-encryption#control-plane-encryption)
+
+* [Worker node disks](/docs/openshift?topic=openshift-encryption#worker-node-encryption)
+
+* [Cluster secrets](/docs/openshift?topic=openshift-encryption#cluster-secret-encryption)
+
+* [Persistent storage](/docs/openshift?topic=openshift-encryption#persistent-encryption)
+
+* [Next steps](/docs/openshift?topic=openshift-encryption#plan-storage-next)
+
+[Documenting your environment architecture](/docs/openshift?topic=openshift-document-environment#document-environment)
+
+* [Step 1: Understanding your app and architecture](/docs/openshift?topic=openshift-document-environment#understand-arch)
+
+    * [Example 1: A basic app running in a single OpenShift cluster](/docs/openshift?topic=openshift-document-environment#example-arch-1)
+
+    * [Example 2: A multi-cluster architecture with a global load balancer and Cloudant service](/docs/openshift?topic=openshift-document-environment#example-arch-2)
+
+    * [Example 3: A VSI client contacting a VPC network load balancer with an external service backend](/docs/openshift?topic=openshift-document-environment#example-arch-3)
+
+* [Step 2: Choose a tool](/docs/openshift?topic=openshift-document-environment#choose-arch-tool)
+
+* [Step 3: Create the diagram](/docs/openshift?topic=openshift-document-environment#create-arch-diagram)
+
+* [Next steps](/docs/openshift?topic=openshift-document-environment#plan-prepare)
+
 
 ## Your responsibilities
 {: #sitemap_your_responsibilities}
@@ -361,11 +401,11 @@ subcollection: openshift
     * [Applications and data](/docs/openshift?topic=openshift-satellite-responsibilities#applications-and-data-sat)
 
 
-## Security for {{site.data.keyword.openshiftlong_notm}}
-{: #sitemap_security_for_}
+## Security overview
+{: #sitemap_security_overview}
 
 
-[Security for {{site.data.keyword.openshiftlong_notm}}](/docs/openshift?topic=openshift-security#security)
+[Security overview](/docs/openshift?topic=openshift-security#security)
 
 * [Overview of security threats for your cluster](/docs/openshift?topic=openshift-security#threats)
 
@@ -1981,39 +2021,6 @@ subcollection: openshift
 * [Refreshing IAM access tokens with the API](/docs/openshift?topic=openshift-cs_api_install#cs_api_refresh)
 
 
-## Cluster planning
-{: #sitemap_cluster_planning}
-
-
-[Encryption overview](/docs/openshift?topic=openshift-encryption#encryption)
-
-* [Control plane](/docs/openshift?topic=openshift-encryption#control-plane-encryption)
-
-* [Worker node disks](/docs/openshift?topic=openshift-encryption#worker-node-encryption)
-
-* [Cluster secrets](/docs/openshift?topic=openshift-encryption#cluster-secret-encryption)
-
-* [Persistent storage](/docs/openshift?topic=openshift-encryption#persistent-encryption)
-
-* [Next steps](/docs/openshift?topic=openshift-encryption#plan-storage-next)
-
-[Documenting your environment architecture](/docs/openshift?topic=openshift-document-environment#document-environment)
-
-* [Step 1: Understanding your app and architecture](/docs/openshift?topic=openshift-document-environment#understand-arch)
-
-    * [Example 1: A basic app running in a single OpenShift cluster](/docs/openshift?topic=openshift-document-environment#example-arch-1)
-
-    * [Example 2: A multi-cluster architecture with a global load balancer and Cloudant service](/docs/openshift?topic=openshift-document-environment#example-arch-2)
-
-    * [Example 3: A VSI client contacting a VPC network load balancer with an external service backend](/docs/openshift?topic=openshift-document-environment#example-arch-3)
-
-* [Step 2: Choose a tool](/docs/openshift?topic=openshift-document-environment#choose-arch-tool)
-
-* [Step 3: Create the diagram](/docs/openshift?topic=openshift-document-environment#create-arch-diagram)
-
-* [Next steps](/docs/openshift?topic=openshift-document-environment#plan-prepare)
-
-
 ## Cluster creation
 {: #sitemap_cluster_creation}
 
@@ -2503,6 +2510,11 @@ subcollection: openshift
 
 * [Next steps](/docs/openshift?topic=openshift-reservations#reservations-next)
 
+
+### Credentials and certificates
+{: #sitemap_credentials_and_certificates}
+
+
 [Setting the cluster credentials](/docs/openshift?topic=openshift-access-creds#access-creds)
 
 * [Considerations](/docs/openshift?topic=openshift-access-creds#creds-considerations)
@@ -2823,11 +2835,6 @@ subcollection: openshift
 
 ## Images and registries
 {: #sitemap_images_and_registries}
-
-
-
-### General
-{: #sitemap_general}
 
 
 [Setting up an image registry](/docs/openshift?topic=openshift-registry#registry)
@@ -3957,7 +3964,7 @@ subcollection: openshift
 
 * [Disabling the `ibm-storage-operator` add-on](/docs/openshift?topic=openshift-storage-operator#storage-operator-disable)
 
-[Migrating storage components from HPCS to Key Protect](/docs/openshift?topic=openshift-migrate_hpcs_kp#migrate_hpcs_kp)
+[Key management overview](/docs/openshift?topic=openshift-migrate_hpcs_kp#migrate_hpcs_kp)
 
 * [Before you begin](/docs/openshift?topic=openshift-migrate_hpcs_kp#before)
 
@@ -4123,28 +4130,6 @@ subcollection: openshift
 * [Next steps](/docs/openshift?topic=openshift-storage-block-vpc-profile-migration#vpc-block-profile-next-steps)
 
 [{{site.data.keyword.block_storage_is_short}} storage class reference](/docs/openshift?topic=openshift-storage-block-vpc-sc-ref#storage-block-vpc-sc-ref)
-
-[Setting up {{site.data.keyword.block_storage_is_short}} for unmanaged clusters](/docs/openshift?topic=openshift-vpc-block-storage-driver-unmanaged#vpc-block-storage-driver-unmanaged)
-
-* [Prerequisites](/docs/openshift?topic=openshift-vpc-block-storage-driver-unmanaged#vpc-block-um-prereq)
-
-    * [Labeling your worker nodes](/docs/openshift?topic=openshift-vpc-block-storage-driver-unmanaged#vpc-block-label-um)
-
-    * [Retrieving IAM and VPC details](/docs/openshift?topic=openshift-vpc-block-storage-driver-unmanaged#vpc-block-driver-get-details)
-
-* [Creating the image pull secret in your cluster](/docs/openshift?topic=openshift-vpc-block-storage-driver-unmanaged#vpc-block-create-storage-secret)
-
-* [Creating the {{site.data.keyword.block_storage_is_short}} driver deployment](/docs/openshift?topic=openshift-vpc-block-storage-driver-unmanaged#vpc-block-um-deploy-cm)
-
-* [Deploying a stateful set that uses {{site.data.keyword.block_storage_is_short}}](/docs/openshift?topic=openshift-vpc-block-storage-driver-unmanaged#vpc-block-stateful-set-deploy)
-
-* [Removing the {{site.data.keyword.block_storage_is_short}} driver](/docs/openshift?topic=openshift-vpc-block-storage-driver-unmanaged#removing-the-block-storage-for-vpc-driver)
-
-* [Config map reference](/docs/openshift?topic=openshift-vpc-block-storage-driver-unmanaged#vpc-block-um-cm-ref)
-
-    * [RHEL or CentOS ConfigMap](/docs/openshift?topic=openshift-vpc-block-storage-driver-unmanaged#vpc-block-rhel-cm)
-
-    * [Ubuntu ConfigMap](/docs/openshift?topic=openshift-vpc-block-storage-driver-unmanaged#vpc-block-ubuntu-cm)
 
 [Migrating from HPCS to Key Protect](/docs/openshift?topic=openshift-migrate_hpcs_kms_block#migrate_hpcs_kms_block)
 
@@ -8745,21 +8730,6 @@ subcollection: openshift
     * [Version 20260303-01, released 03 March 2026](/docs/openshift?topic=openshift-cl-confidential-containers#cl-confidential-containers-20260303-01)
 
 
-## Security reference
-{: #sitemap_security_reference}
-
-
-[Overview of personal and sensitive data storage and removal options](/docs/openshift?topic=openshift-ibm-data#ibm-data)
-
-* [What information is stored with IBM when using {{site.data.keyword.openshiftlong_notm}}?](/docs/openshift?topic=openshift-ibm-data#pi-info)
-
-* [How is my information stored and encrypted?](/docs/openshift?topic=openshift-ibm-data#pi-storage)
-
-* [Where is my information stored?](/docs/openshift?topic=openshift-ibm-data#pi-location)
-
-* [How can I remove my information?](/docs/openshift?topic=openshift-ibm-data#pi-removal)
-
-
 ## Service settings
 {: #sitemap_service_settings}
 
@@ -8856,6 +8826,46 @@ subcollection: openshift
 
 * [Unsupported features and operators in {{site.data.keyword.openshiftlong_notm}}](/docs/openshift?topic=openshift-limitations#not-supported-features-table)
 
+[High availability and disaster recovery](/docs/openshift?topic=openshift-iks-ha-dr#iks-ha-dr)
+
+* [High availability architecture](/docs/openshift?topic=openshift-iks-ha-dr#ha-architecture)
+
+    * [Resource distribution for high availability.](/docs/openshift?topic=openshift-iks-ha-dr#ha-architecture-dist)
+
+* [High availability features](/docs/openshift?topic=openshift-iks-ha-dr#ha-features)
+
+* [Disaster recovery features](/docs/openshift?topic=openshift-iks-ha-dr#dr-features)
+
+* [Recovery time objective (RTO) and recovery point objective (RPO)](/docs/openshift?topic=openshift-iks-ha-dr#rto-rpo-features)
+
+* [How {{site.data.keyword.IBM}} helps ensure disaster recovery](/docs/openshift?topic=openshift-iks-ha-dr#ibm-disaster-recovery)
+
+    * [How {{site.data.keyword.IBM_notm}} recovers from failures](/docs/openshift?topic=openshift-iks-ha-dr#ibm-zone-failure)
+
+* [How {{site.data.keyword.IBM_notm}} maintains services](/docs/openshift?topic=openshift-iks-ha-dr#ibm-service-maintenance)
+
+* [Your responsibilities for high availability and disaster recovery](/docs/openshift?topic=openshift-iks-ha-dr#feature-responsibilities)
+
+* [Change management](/docs/openshift?topic=openshift-iks-ha-dr#change-management-hadr)
+
+* [Considerations for app and service deployment](/docs/openshift?topic=openshift-iks-ha-dr#app-considerations)
+
+[Data portability](/docs/openshift?topic=openshift-data-portability#data-portability)
+
+* [Responsibilities](/docs/openshift?topic=openshift-data-portability#data-portability-responsibilities)
+
+* [Data export procedures](/docs/openshift?topic=openshift-data-portability#data-portability-procedures)
+
+    * [Exporting data by using the `oc` CLI](/docs/openshift?topic=openshift-data-portability#export-procedure-kubectl)
+
+    * [Exporting data by using Velero](/docs/openshift?topic=openshift-data-portability#export-velero)
+
+    * [Other options for exporting data](/docs/openshift?topic=openshift-data-portability#data-other)
+
+* [Exported data formats](/docs/openshift?topic=openshift-data-portability#data-portability-data-formats)
+
+* [Data ownership](/docs/openshift?topic=openshift-data-portability#data-ownership)
+
 
 ## Worker node flavors
 {: #sitemap_worker_node_flavors}
@@ -8920,56 +8930,6 @@ subcollection: openshift
 * [Washington DC (`wdc`)](/docs/openshift?topic=openshift-classic-flavors#washington-dc-wdc)
 
 
-## Data portability
-{: #sitemap_data_portability}
-
-
-[Data portability](/docs/openshift?topic=openshift-data-portability#data-portability)
-
-* [Responsibilities](/docs/openshift?topic=openshift-data-portability#data-portability-responsibilities)
-
-* [Data export procedures](/docs/openshift?topic=openshift-data-portability#data-portability-procedures)
-
-    * [Exporting data by using the `oc` CLI](/docs/openshift?topic=openshift-data-portability#export-procedure-kubectl)
-
-    * [Exporting data by using Velero](/docs/openshift?topic=openshift-data-portability#export-velero)
-
-    * [Other options for exporting data](/docs/openshift?topic=openshift-data-portability#data-other)
-
-* [Exported data formats](/docs/openshift?topic=openshift-data-portability#data-portability-data-formats)
-
-* [Data ownership](/docs/openshift?topic=openshift-data-portability#data-ownership)
-
-
-## High-availability and disaster recovery
-{: #sitemap_high-availability_and_disaster_recovery}
-
-
-[High-availability and disaster recovery](/docs/openshift?topic=openshift-iks-ha-dr#iks-ha-dr)
-
-* [High availability architecture](/docs/openshift?topic=openshift-iks-ha-dr#ha-architecture)
-
-    * [Resource distribution for high availability.](/docs/openshift?topic=openshift-iks-ha-dr#ha-architecture-dist)
-
-* [High availability features](/docs/openshift?topic=openshift-iks-ha-dr#ha-features)
-
-* [Disaster recovery features](/docs/openshift?topic=openshift-iks-ha-dr#dr-features)
-
-* [Recovery time objective (RTO) and recovery point objective (RPO)](/docs/openshift?topic=openshift-iks-ha-dr#rto-rpo-features)
-
-* [How {{site.data.keyword.IBM}} helps ensure disaster recovery](/docs/openshift?topic=openshift-iks-ha-dr#ibm-disaster-recovery)
-
-    * [How {{site.data.keyword.IBM_notm}} recovers from failures](/docs/openshift?topic=openshift-iks-ha-dr#ibm-zone-failure)
-
-* [How {{site.data.keyword.IBM_notm}} maintains services](/docs/openshift?topic=openshift-iks-ha-dr#ibm-service-maintenance)
-
-* [Your responsibilities for high availability and disaster recovery](/docs/openshift?topic=openshift-iks-ha-dr#feature-responsibilities)
-
-* [Change management](/docs/openshift?topic=openshift-iks-ha-dr#change-management-hadr)
-
-* [Considerations for app and service deployment](/docs/openshift?topic=openshift-iks-ha-dr#app-considerations)
-
-
 ## Monitoring status best practices
 {: #sitemap_monitoring_status_best_practices}
 
@@ -8983,23 +8943,6 @@ subcollection: openshift
 * [Take advantage of multiple {{site.data.keyword.cloud_notm}} locations](/docs/openshift?topic=openshift-best-practices#monbp-multpreg)
 
 * [Subscribing to email notifications](/docs/openshift?topic=openshift-best-practices#monbp-subscribing)
-
-
-## Best practices
-{: #sitemap_best_practices}
-
-
-[Best practices](/docs/openshift?topic=openshift-best-practices-service#best-practices-service)
-
-* [Keep your cluster environment up to date](/docs/openshift?topic=openshift-best-practices-service#bp-1)
-
-* [Keep your command line tools up to date](/docs/openshift?topic=openshift-best-practices-service#bp-2)
-
-* [Regularly rotate your CA certificates](/docs/openshift?topic=openshift-best-practices-service#bp-ca)
-
-* [Document your environment architecture](/docs/openshift?topic=openshift-best-practices-service#bp-3)
-
-* [Subscribe to RSS](/docs/openshift?topic=openshift-best-practices-service#bp-4)
 
 
 ## FAQ
@@ -9316,6 +9259,10 @@ subcollection: openshift
 
 [Why are `sysdig-agent` pods in `CrashLoopBackOff` on a private-only RHCOS cluster?](/docs/openshift?topic=openshift-ts-cluster-sysdig-ebpf#ts-cluster-sysdig-ebpf)
 
+[Resolving permission and credential errors](/docs/openshift?topic=openshift-ts-perms-creds#ts-perms-creds)
+
+* [Invalid API key](/docs/openshift?topic=openshift-ts-perms-creds#invalid_apikey)
+
 
 ### Worker nodes
 {: #sitemap_worker_nodes}
@@ -9490,15 +9437,6 @@ subcollection: openshift
     * [IAM authentication error after upgrading to OSC Operator 1.12.1](/docs/openshift?topic=openshift-ts-confidential-containers#ts-conf-cont-iam-auth-error)
 
     * [Insufficient CPU error](/docs/openshift?topic=openshift-ts-confidential-containers#ts-conf-cont-insufficient-cpu)
-
-
-### Permissions and credentials
-{: #sitemap_permissions_and_credentials}
-
-
-[Resolving permission and credential errors](/docs/openshift?topic=openshift-ts-perms-creds#ts-perms-creds)
-
-* [Invalid API key](/docs/openshift?topic=openshift-ts-perms-creds#invalid_apikey)
 
 
 ### Cluster autoscaler
