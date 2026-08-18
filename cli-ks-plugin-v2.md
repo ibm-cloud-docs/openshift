@@ -2,7 +2,7 @@
 
 copyright:
   years: 2024, 2026
-lastupdated: "2026-08-17"
+lastupdated: "2026-08-18"
 
 keywords: openshift, cli reference, openshift cli, {{site.data.keyword.openshiftlong_notm}}
 
@@ -4447,10 +4447,17 @@ ibmcloud ks experimental vni ls [--after AFTER] [--first FIRST] [--output OUTPUT
 #### Examples
 {: #experimental-vni-ls-examples}
 
-List Virtual Network Interfaces attached to a cluster or worker node.
+List Virtual Network Interfaces attached to a cluster.
 
 ```sh
-ibmcloud ks experimental vni ls [--after AFTER] [--first FIRST] [--output OUTPUT] [-q] (--cluster-id ID | --worker WORKER)
+ibmcloud ks experimental vni ls --cluster-id ID
+```
+{: pre}
+
+List Virtual Network Interfaces attached to a worker node.
+
+```sh
+ibmcloud ks experimental vni ls --worker WORKER
 ```
 {: pre}
 
@@ -9185,10 +9192,17 @@ ibmcloud ks vni ls [--after AFTER] [--first FIRST] [--output OUTPUT] [-q] (--clu
 #### Examples
 {: #vni-ls-examples}
 
-List Virtual Network Interfaces attached to a cluster or worker node.
+List Virtual Network Interfaces attached to a cluster.
 
 ```sh
-ibmcloud ks vni ls [--after AFTER] [--first FIRST] [--output OUTPUT] [-q] (--cluster-id ID | --worker WORKER)
+ibmcloud ks vni ls --cluster-id ID
+```
+{: pre}
+
+List Virtual Network Interfaces attached to a worker node.
+
+```sh
+ibmcloud ks vni ls --worker WORKER
 ```
 {: pre}
 
