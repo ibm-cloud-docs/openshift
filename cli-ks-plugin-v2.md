@@ -4447,17 +4447,10 @@ ibmcloud ks experimental vni ls [--after AFTER] [--first FIRST] [--output OUTPUT
 #### Examples
 {: #experimental-vni-ls-examples}
 
-List Virtual Network Interfaces attached to a cluster.
+List Virtual Network Interfaces attached to a cluster or worker node.
 
 ```sh
-ibmcloud ks experimental vni ls --cluster-id ID
-```
-{: pre}
-
-List Virtual Network Interfaces attached to a worker node.
-
-```sh
-ibmcloud ks experimental vni ls --worker WORKER
+ibmcloud ks experimental vni ls [--after AFTER] [--first FIRST] [--output OUTPUT] [-q] (--cluster-id ID | --worker WORKER)
 ```
 {: pre}
 
@@ -9192,17 +9185,10 @@ ibmcloud ks vni ls [--after AFTER] [--first FIRST] [--output OUTPUT] [-q] (--clu
 #### Examples
 {: #vni-ls-examples}
 
-List Virtual Network Interfaces attached to a cluster.
+List Virtual Network Interfaces attached to a cluster or worker node.
 
 ```sh
-ibmcloud ks vni ls --cluster-id ID
-```
-{: pre}
-
-List Virtual Network Interfaces attached to a worker node.
-
-```sh
-ibmcloud ks vni ls --worker WORKER
+ibmcloud ks vni ls [--after AFTER] [--first FIRST] [--output OUTPUT] [-q] (--cluster-id ID | --worker WORKER)
 ```
 {: pre}
 
