@@ -515,6 +515,8 @@ toc:
           - cl-add-ons-vpc-block-csi-driver.md
           - cl-add-ons-vpc-file-csi-driver.md
           - cl-add-ons-ibm-object-csi-driver.md
+          - cl-object-storage-plug-in.md
+          - cl-satellite-storage-operator.md
           - cl-add-ons-static-route.md
           - cl-add-ons-openshift-data-foundation.md
           - cl-add-ons-openshift-virtualization.md

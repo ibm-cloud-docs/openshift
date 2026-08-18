@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2026
-lastupdated: "2026-08-17"
+lastupdated: "2026-08-18"
 
 
 keywords: openshift
@@ -8274,6 +8274,26 @@ subcollection: openshift
     * [Version 1.0 - v1.0.17_320539369, released 24 March 2026](/docs/openshift?topic=openshift-cl-add-ons-ibm-object-csi-driver#cl-add-ons-ibm-object-csi-driver-v1017_320539369)
 
     * [Version 1.0 - v1.0.13_297764008, released 14 November 2025](/docs/openshift?topic=openshift-cl-add-ons-ibm-object-csi-driver#cl-add-ons-ibm-object-csi-driver-v1013_297764008)
+
+[Object Storage plug in](/docs/openshift?topic=openshift-cl-object-storage-plug-in#cl-object-storage-plug-in)
+
+* [Version 2.2](/docs/openshift?topic=openshift-cl-object-storage-plug-in#cl-object-storage-plug-in-2.2)
+
+    * [Version 2.2 - 2.2.58, released 15 August 2026](/docs/openshift?topic=openshift-cl-object-storage-plug-in#cl-object-storage-plug-in-2258)
+
+    * [Version 2.2 - 2.2.57, released 28 July 2026](/docs/openshift?topic=openshift-cl-object-storage-plug-in#cl-object-storage-plug-in-2257)
+
+    * [Version 2.2 - 2.2.56, released 03 July 2026](/docs/openshift?topic=openshift-cl-object-storage-plug-in#cl-object-storage-plug-in-2256)
+
+    * [Version 2.2 - 2.2.55, released 22 June 2026](/docs/openshift?topic=openshift-cl-object-storage-plug-in#cl-object-storage-plug-in-2255)
+
+    * [Version 2.2 - 2.2.54, released 05 June 2026](/docs/openshift?topic=openshift-cl-object-storage-plug-in#cl-object-storage-plug-in-2254)
+
+[Satellite Storage Operator](/docs/openshift?topic=openshift-cl-satellite-storage-operator#cl-satellite-storage-operator)
+
+* [Version 1.0](/docs/openshift?topic=openshift-cl-satellite-storage-operator#cl-satellite-storage-operator-1.0)
+
+    * [Version 1.0 - 1.0.87, released 31 July 2026](/docs/openshift?topic=openshift-cl-satellite-storage-operator#cl-satellite-storage-operator-1087)
 
 [Static Route add-on version change log](/docs/openshift?topic=openshift-cl-add-ons-static-route#cl-add-ons-static-route)
 
