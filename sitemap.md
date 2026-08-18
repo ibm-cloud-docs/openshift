@@ -487,6 +487,12 @@ subcollection: openshift
 
 * [August 2026](/docs/openshift?topic=openshift-openshift-relnotes#openshift-aug26)
 
+    * [18 August 2026](/docs/openshift?topic=openshift-openshift-relnotes#openshift-aug1826)
+
+        * VPC File CSI Driver cluster add-on patch updates.
+
+        * IBM Storage Operator cluster add-on patch updates.
+
     * [17 August 2026](/docs/openshift?topic=openshift-openshift-relnotes#openshift-aug1726)
 
         * IBM Cloud Image Key Synchronizer cluster add-on patch updates.
@@ -7987,6 +7993,8 @@ subcollection: openshift
 
 * [Version 1.0](/docs/openshift?topic=openshift-cl-add-ons-ibm-storage-operator#cl-add-ons-ibm-storage-operator-1.0)
 
+    * [Version 1.0 - v1.0.56_362323509, released 18 August 2026](/docs/openshift?topic=openshift-cl-add-ons-ibm-storage-operator#cl-add-ons-ibm-storage-operator-v1056_362323509)
+
     * [Version 1.0 - v1.0.55_360965725, released 12 August 2026](/docs/openshift?topic=openshift-cl-add-ons-ibm-storage-operator#cl-add-ons-ibm-storage-operator-v1055_360965725)
 
     * [Version 1.0 - v1.0.53_359554333, released 05 August 2026](/docs/openshift?topic=openshift-cl-add-ons-ibm-storage-operator#cl-add-ons-ibm-storage-operator-v1053_359554333)
@@ -8168,6 +8176,8 @@ subcollection: openshift
 [VPC File CSI Driver add-on version change log](/docs/openshift?topic=openshift-cl-add-ons-vpc-file-csi-driver#cl-add-ons-vpc-file-csi-driver)
 
 * [Version 2.0](/docs/openshift?topic=openshift-cl-add-ons-vpc-file-csi-driver#cl-add-ons-vpc-file-csi-driver-2.0)
+
+    * [Version 2.0 - v2.0.49_362519752, released 18 August 2026](/docs/openshift?topic=openshift-cl-add-ons-vpc-file-csi-driver#cl-add-ons-vpc-file-csi-driver-v2049_362519752)
 
     * [Version 2.0 - v2.0.47_360961675, released 12 August 2026](/docs/openshift?topic=openshift-cl-add-ons-vpc-file-csi-driver#cl-add-ons-vpc-file-csi-driver-v2047_360961675)
 
