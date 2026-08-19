@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2026
-lastupdated: "2026-08-13"
+lastupdated: "2026-08-19"
 
 
 keywords: openshift, {{site.data.keyword.openshiftlong_notm}}, kubernetes, registry, pull secret, secrets
@@ -82,7 +82,7 @@ Classic clusters
 :   Your {{site.data.keyword.redhat_openshift_notm}} cluster is set up by default with an internal registry that uses {{site.data.keyword.filestorage_short}} as the backing storage. When you delete the cluster, the internal registry and its images are also deleted. If you want to persist your images, consider using a private registry such as {{site.data.keyword.registrylong_notm}}, backing up your images to persistent storage such as {{site.data.keyword.objectstorageshort}}, or creating a separate, stand-alone {{site.data.keyword.redhat_openshift_notm}} container registry (OCR) cluster. For more information, see the [{{site.data.keyword.redhat_openshift_notm}} docs](https://docs.redhat.com/en/documentation/openshift_container_platform/4.21/html/registry/registry-overview){: external}.
 
 VPC clusters
-:   The internal registry of your {{site.data.keyword.redhat_openshift_notm}} cluster backs up your images to a bucket that is automatically created in an {{site.data.keyword.cos_full_notm}} instance in your account. Any data that is stored in the object storage bucket remains even if you delete the cluster. After the cluster is created, you cannot remove or detach the {{site.data.keyword.cos_full_notm}} bucket from the cluster. If you are planning to create a cluster without a COS-backed internal registry, such as for [IBM Financial Services Cloud](https://cloud.ibm.com/docs/framework-financial-services){: external} environments, you must omit the COS instance at cluster creation time. For more information, see [Creating a VPC cluster without an {{site.data.keyword.cos_short}} bucket](/docs/openshift?topic=openshift-tutorial-no-registry-cos).
+:   The internal registry of your {{site.data.keyword.redhat_openshift_notm}} cluster backs up your images to a bucket that is automatically created in an {{site.data.keyword.cos_full_notm}} instance in your account. Any data that is stored in the object storage bucket remains even if you delete the cluster. After the cluster is created, you cannot remove or detach the {{site.data.keyword.cos_full_notm}} bucket from the cluster. If you are planning to create a cluster without a COS-backed internal registry, such as for [IBM Financial Services Cloud](/docs/framework-financial-services) environments, you must omit the COS instance at cluster creation time. For more information, see [Creating a VPC cluster without an {{site.data.keyword.cos_short}} bucket](/docs/openshift?topic=openshift-tutorial-no-registry-cos).
 
 Classic, VPC, or {{site.data.keyword.satelliteshort}} clusters
 :   You can optionally choose to set up the internal registry to store data in the `emptyDir` of the worker node where the internal registry pod runs. Keep in mind that this data is not persistent, and if the pod or worker node is restarted, the stored data is deleted and unrecoverable. You might store the images locally in the `emptyDir` to increase performance if you build containers from large images regularly.

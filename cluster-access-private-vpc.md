@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2026
-lastupdated: "2026-08-11"
+lastupdated: "2026-08-19"
 
 keywords: openshift, clusters, access, private, endpoint, vpc, vpn, direct link
 
@@ -13,7 +13,7 @@ subcollection: openshift
 {{site.data.keyword.attribute-definition-list}}
 
 # Accessing VPC clusters through the private cloud service endpoint
-{: #access-private-vpc}
+{: #cluster-access-private-vpc}
 
 For {{site.data.keyword.redhat_openshift_notm}} VPC clusters that have only the private cloud service endpoint enabled, you must be connected to the VPC private network through a VPN or {{site.data.keyword.dl_full_notm}} connection to access the cluster.
 {: shortdesc}

@@ -2,7 +2,7 @@
 
 copyright:
   years: 2026, 2026
-lastupdated: "2026-08-13"
+lastupdated: "2026-08-19"
 
 keywords: openshift, virtualization service, rovs, create cluster, vpc, bare metal, tutorial
 
@@ -440,8 +440,8 @@ Now that your Virtualization Service cluster is ready:
 
 - [Deploy your first virtual machine](/docs/openshift?topic=openshift-rovs-getting-started#rovs-gs-first-vm)
 - [Learn about managing Virtualization Service clusters](/docs/openshift?topic=openshift-rovs-manage)
-- [Explore VM templates and images](https://docs.redhat.com/en/documentation/openshift_container_platform/4.18/html/virtualization/virtual-machines#virt-creating-vms-from-rh-images-overview){: external}
-- [Configure virtual machine networking](https://docs.redhat.com/en/documentation/openshift_container_platform/4.18/html/virtualization/virtual-machines#virt-networking){: external}
+- [Explore VM templates and images](https://docs.redhat.com/en/documentation/openshift_container_platform/4.21/html/virtualization/virtual-machines#virt-creating-vms-from-rh-images-overview){: external}
+- [Configure virtual machine networking](https://docs.redhat.com/en/documentation/openshift_container_platform/4.21/html/virtualization/virtual-machines#virt-networking){: external}
 
 ## Troubleshooting
 {: #rovs-create-troubleshoot}

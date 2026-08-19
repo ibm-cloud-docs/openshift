@@ -121,6 +121,7 @@ The following error codes appear in the output of the `ibmcloud oc ingress statu
 | `CAE003: Unable to determine the ingress IP address for the network load balancer.` | [Classic clusters: Why does the master status have an ingress IP address for NLB error?](/docs/openshift?topic=openshift-rhoks_ts_openvpn_subnet) |
 | VPC load balancer health status shows only 2 of N instances as passing | [VPC clusters: Why do I see VPC load balancer health status failures?](/docs/openshift?topic=openshift-vpc_lb_healthcheck) |
 | `Error on cloud load balancer ... Service and associated VPC load balancer do not match ... hostname.invalid` | [Why does my Private Path NLB contain a `hostname.invalid` error?](/docs/openshift?topic=openshift-ts-ppnlb-hostname) |
+| Ingress subdomain DNS issue | [Why does my Ingress subdomain have a DNS issue?](/docs/openshift?topic=openshift-ingress_subdomain_dns_marshal) |
 {: caption="Load balancer error messages" caption-side="bottom"}
 
 ## Apps and services
@@ -179,7 +180,7 @@ The following error codes appear in the output of the `ibmcloud oc ingress statu
 | `write-permission` or non-root user ownership errors on NFS mount path | [Why does my app fail when a non-root user owns the NFS file storage mount path?](/docs/openshift?topic=openshift-nonroot) |
 | Group ID error applying NFS file storage permissions | [Why does my app fail with a group ID error for NFS file storage permissions?](/docs/openshift?topic=openshift-root) |
 | Non-root user cannot add access to persistent storage | [Why can't I add non-root user access to persistent storage?](/docs/openshift?topic=openshift-cs_storage_nonroot) |
-| File systems for worker nodes changed to read-only | [Why are the file systems for worker nodes changed to read-only?](/docs/openshift?topic=openshift-ts_storage_file_readonly) |
+| File systems for worker nodes changed to read-only | [Why are the file systems for worker nodes changed to read-only?](/docs/openshift?topic=openshift-readonly_nodes) |
 | PVC remains in pending state (file storage) | [Why does my file storage PVC stay in a pending state?](/docs/openshift?topic=openshift-file_pvc_pending) |
 | `MetadataServiceNotEnabled` | [Why do I see a `MetadataServiceNotEnabled` error for {{site.data.keyword.filestorage_vpc_short}}?](/docs/openshift?topic=openshift-ts-storage-vpc-file-eit-metadata) |
 | `MountingTargetFailed` or `rpc error: code = DeadlineExceeded desc = context deadline exceeded` | [Why do I see a `MountingTargetFailed` error for {{site.data.keyword.filestorage_vpc_short}}?](/docs/openshift?topic=openshift-ts-storage-vpc-file-eit-mount-failed) |
@@ -279,7 +280,7 @@ The following error codes appear in the output of the `ibmcloud oc ingress statu
 {: #ts-errors-related}
 
 - [Checking the Ingress status report](/docs/openshift?topic=openshift-ingress-status)
-- [Checking the status of Network components](/docs/openshift?topic=openshift-ts-network-health)
+- [Checking the status of Network components](/docs/openshift?topic=openshift-network-status)
 - [Cluster states and statuses](/docs/openshift?topic=openshift-cluster-states-reference)
 - [Worker node states](/docs/openshift?topic=openshift-worker-node-state-reference)
 - [Getting help and support](/docs/openshift?topic=openshift-get-help)

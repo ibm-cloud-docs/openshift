@@ -2,7 +2,7 @@
 
 copyright:
   years: 2026, 2026
-lastupdated: "2026-08-13"
+lastupdated: "2026-08-19"
 
 
 keywords: openshift, virtualization, virtual machines, learning path, vm administrator, rovs, migration, vmware
@@ -63,7 +63,7 @@ Keep your cluster and virtual machines healthy.
 
 Apply security controls appropriate for virtualized workloads.
 
-1. Review the [Security and access](/docs/openshift?topic=openshift-vpc-security-group2) options for VPC clusters, including security groups and ACLs.
+1. Review the [Security and access](/docs/openshift?topic=openshift-vpc-security-group-reference) options for VPC clusters, including security groups and ACLs.
 2. [Encrypt secrets](/docs/openshift?topic=openshift-encryption-secrets) and [worker node disks](/docs/openshift?topic=openshift-encryption-vpc-worker-disks).
 3. Configure [IAM roles and access](/docs/openshift?topic=openshift-iam-platform-access-roles) for your team.
 
