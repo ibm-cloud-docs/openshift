@@ -2,7 +2,8 @@
 
 copyright:
   years: 2025, 2026
-lastupdated: "2026-08-18"
+
+lastupdated: "2026-08-19"
 
 keywords: openshift, error messages, error codes, troubleshooting reference
 
@@ -22,7 +23,7 @@ This reference lists all documented error messages and error codes across troubl
 {: #ts-errors-cluster}
 
 | Error message | Troubleshooting topic |
-|---|---|
+| --- | --- |
 | `Cannot complete cluster master operations because the cluster has a broken webhook application.` | [Why do cluster master operations fail due to a broken webhook?](/docs/openshift?topic=openshift-webhooks_update) |
 | `Cannot complete cluster master upgrade because the Upgradeable status condition is set to False.` | [Why do I see a `Cannot complete cluster master upgrade` message?](/docs/openshift?topic=openshift-ts-cluster-master-upgrade) |
 | `The master is approaching its allotted memory resource limit (93%).` | [Why does my cluster master status say it is approaching its resource limit?](/docs/openshift?topic=openshift-master_resource_limit) |
@@ -37,10 +38,6 @@ This reference lists all documented error messages and error codes across troubl
 | `Encrypted storage cannot be configured. Review the customer root key configuration for the worker pool.` | [Why can't I create a VPC cluster with encrypted worker nodes?](/docs/openshift?topic=openshift-ts-vpc-byok-encrypted-storage) |
 | `Pending security group creation` | [When I create a VPC cluster, my worker nodes are stuck in `Pending security group creation`](/docs/openshift?topic=openshift-ts-sbd-cluster-create-quota) |
 | `Infrastructure instance status is 'failed': Can't start instance because provisioning failed.` | [Why do I see DNS failures after adding a custom DNS resolver?](/docs/openshift?topic=openshift-ts-sbd-custom-dns) |
-{: caption="Cluster and master error messages" caption-side="bottom"}
-
-
-
 
 | `Could not store the cloud object storage bucket and IAM service key.` | [Why do I get an error about a cloud object storage bucket when I create a cluster?](/docs/openshift?topic=openshift-ts_cos_bucket_cluster_create) |
 | `Could not find user.` | [Why do I see a `Could not find user` error when I try to access the web console?](/docs/openshift?topic=openshift-ts-cluster-ocp-console) |
@@ -49,14 +46,13 @@ This reference lists all documented error messages and error codes across troubl
 | Version shows as not up to date in `oc get clusterversion` output | [Why does OpenShift show the cluster version is not up to date?](/docs/openshift?topic=openshift-ts-cluster-version-downlevel) |
 | Image streams not populated on a secure by default cluster | [Why don't image streams populate on a secure by default cluster?](/docs/openshift?topic=openshift-ts_cluster_sbd_image_stream) |
 | `sysdig-agent` pods in `CrashLoopBackOff` on private-only RHCOS cluster | [Why are `sysdig-agent` pods in `CrashLoopBackOff` on a private-only RHCOS cluster?](/docs/openshift?topic=openshift-ts-cluster-sysdig-ebpf) |
-{: caption="Cluster and master error messages (Red Hat OpenShift on IBM Cloud only)" caption-side="bottom"}
-
+{: caption="Cluster and master error messages" caption-side="bottom"}
 
 ## Worker nodes
 {: #ts-errors-workers}
 
 | Error message | Troubleshooting topic |
-|---|---|
+| --- | --- |
 | `The worker node instance ID changed. Reload the worker node if bare metal hardware was serviced.` | [Classic: Why is the bare metal instance ID inconsistent with worker records?](/docs/openshift?topic=openshift-bm_machine_id) |
 | `The dedicated hosts for the zone 'eu-de-2' are not ready.` | [VPC: Why can't I create worker nodes on dedicated hosts?](/docs/openshift?topic=openshift-ts-worker-dedicated) |
 | `SoftLayerAPIError(SoftLayer_Exception_Public): Could not obtain network VLAN with id #123456.` | [Classic: Why can't I add worker nodes with an invalid VLAN ID?](/docs/openshift?topic=openshift-suspended) |
@@ -71,7 +67,7 @@ This reference lists all documented error messages and error codes across troubl
 The following error codes appear in the output of the `ibmcloud oc cluster health issues` command.
 
 | Error code | Severity | Description | Troubleshooting topic |
-|---|---|---|---|
+| --- | --- | --- | --- |
 | `NHC001` | Warning | Tigera operator has been reporting that Calico is in 'progressing' state for over an hour. | [Why does the Network status show an `NHC001` error?](/docs/openshift?topic=openshift-ts-network-nhc001) |
 | `NHC003` | Warning | Some worker nodes in the cluster can not reach container image registries to pull images. | [Why does the Network status show an `NHC003` error?](/docs/openshift?topic=openshift-ts-network-nhc003) |
 | `NHC004` | Warning | Some worker nodes in the cluster can not resolve VPE gateway hostnames. | [Why does the Network status show an `NHC004` error?](/docs/openshift?topic=openshift-ts-network-nhc004) |
@@ -86,15 +82,10 @@ The following error codes appear in the output of the `ibmcloud oc cluster healt
 ## Ingress status errors (ERR and ESS codes)
 {: #ts-errors-ingress-codes}
 
-The following error codes appear in the output of the `ibmcloud oc ingress status-report get` command.
-
-### Shared Ingress errors
-{: #ts-errors-ingress-shared}
-
-These error codes appear in both {{site.data.keyword.containerlong_notm}} and {{site.data.keyword.openshiftlong_notm}}.
+The following error codes appear in the output of the `ibmcloud oc ingress status-report get` command. Shared codes appear in both {{site.data.keyword.containerlong_notm}} and {{site.data.keyword.openshiftlong_notm}}.
 
 | Error code | Error message | Troubleshooting topic |
-|---|---|---|
+| --- | --- | --- |
 | `ERRDSIA` | The subdomain has incorrect addresses registered. | [Ingress error: ERRDSIA](/docs/openshift?topic=openshift-ts-ingress-errdsia) |
 | `ERRDRISS` | The subdomain has DNS resolution issues. | [Ingress error: ERRDRISS](/docs/openshift?topic=openshift-ts-ingress-errdriss) |
 | `ERRDSAISS` | The external provider for the given subdomain has authorization issues. | [Ingress error: ERRDSAISS](/docs/openshift?topic=openshift-ts-ingress-errdsaiss) |
@@ -108,59 +99,35 @@ These error codes appear in both {{site.data.keyword.containerlong_notm}} and {{
 | `ESSSMINF` | The Secrets Manager instance is not found. | [Ingress error: ESSSMINF](/docs/openshift?topic=openshift-ts-ingress-esssminf) |
 | `ESSVC` | The CRN does not match the default secret with the same domain. | [Ingress error: ESSVC](/docs/openshift?topic=openshift-ts-ingress-essvc) |
 | `ESSWS` | The secret status shows a warning. | [Ingress error: ESSWS](/docs/openshift?topic=openshift-ts-ingress-essws) |
-{: caption="Shared Ingress error codes (ERR and ESS)" caption-side="bottom"}
-
-
-
-
-### Red Hat OpenShift on IBM Cloud Ingress and router errors
-{: #ts-errors-ingress-roks}
-
-These error codes appear only in {{site.data.keyword.openshiftlong_notm}}.
-
-| Error code | Error message | Troubleshooting topic |
-|---|---|---|
 | `ERRESNF` | The external service is missing. | [Ingress error: ERRESNF](/docs/openshift?topic=openshift-ts-ingress-erresnf) |
 | `ERRIODEG` | The Ingress Operator is in a degraded state. | [Ingress error: ERRIODEG](/docs/openshift?topic=openshift-ts-ingress-erriodeg) |
 | `ERRIONF` | The Ingress Operator is missing from the cluster. | [Ingress error: ERRIONF](/docs/openshift?topic=openshift-ts-ingress-errionf) |
 | `ERRRNA` | One or more routes not admitted. | [Ingress error: ERRRNA](/docs/openshift?topic=openshift-ts-ingress-errrna) |
 | `ERRSAMO` | The load balancer service address is missing. | [Ingress error: ERRSAMO](/docs/openshift?topic=openshift-ts-ingress-errsamo) |
 | `ERRSEIPM` | The service is missing one or more worker IPs. | [Ingress error: ERRSEIPM](/docs/openshift?topic=openshift-ts-ingress-errseipm) |
-{: caption="Red Hat OpenShift on IBM Cloud Ingress error codes" caption-side="bottom"}
-
-### Red Hat OpenShift on IBM Cloud general Ingress and router errors
-{: #ts-errors-ingress-roks-general}
-
-| Error message | Troubleshooting topic |
-|---|---|
-| `XXX.us-south.containers.appdomain.cloud: dial tcp: ... can't marshal DNS message` | [Why does the DNS Operator show a `RouteHealthDegraded` or `can't marshal DNS message` error?](/docs/openshift?topic=openshift-ts-ingress-operator-degraded) |
-{: caption="Red Hat OpenShift on IBM Cloud general Ingress and router error messages" caption-side="bottom"}
-
+| | `XXX.us-south.containers.appdomain.cloud: dial tcp: ... can't marshal DNS message` | [Why does the DNS Operator show a `RouteHealthDegraded` or `can't marshal DNS message` error?](/docs/openshift?topic=openshift-ts-ingress-operator-degraded) |
+{: caption="Ingress status error codes (ERR and ESS)" caption-side="bottom"}
 
 ## Load balancers
 {: #ts-errors-lb}
 
 | Error message | Troubleshooting topic |
-|---|---|
+| --- | --- |
 | `The VPC load balancer that routes requests to this Kubernetes LoadBalancer service is offline.` | [VPC clusters: Why can't my app connect via load balancer?](/docs/openshift?topic=openshift-vpc_ts_lb) |
 | `The subnet with ID(s) '<subnet_id>' has insufficient available ipv4 addresses.` | [VPC clusters: Why does a Kubernetes `LoadBalancer` service fail with no IPs?](/docs/openshift?topic=openshift-vpc_no_lb) |
 | `The load balancer was created in zone <zone>. This setting cannot be changed.` | [VPC Clusters: My VPC NLB has a zone error and does not update](/docs/openshift?topic=openshift-ts-nlb-vpc-zone) |
 | `Warning CreatingCloudLoadBalancerFailed ... Failed ensuring LoadBalancer: FindLoadBalancer failed ... 401 Unauthorized ... BXNIM0430E` | [Why do I see `SyncLoadBalancerFailed` errors when creating a VPC cluster?](/docs/openshift?topic=openshift-ts-loadbalancer-sync-failed) |
 | Security group protocol mismatch events on load balancer creation or update | [VPC clusters: Security group protocol error creating or updating a LoadBalancer](/docs/openshift?topic=openshift-vpc_ts_lb_security_group_error) |
-{: caption="Load balancer error messages" caption-side="bottom"}
-
-
 | `CAE003: Unable to determine the ingress IP address for the network load balancer.` | [Classic clusters: Why does the master status have an ingress IP address for NLB error?](/docs/openshift?topic=openshift-rhoks_ts_openvpn_subnet) |
 | VPC load balancer health status shows only 2 of N instances as passing | [VPC clusters: Why do I see VPC load balancer health status failures?](/docs/openshift?topic=openshift-vpc_lb_healthcheck) |
 | `Error on cloud load balancer ... Service and associated VPC load balancer do not match ... hostname.invalid` | [Why does my Private Path NLB contain a `hostname.invalid` error?](/docs/openshift?topic=openshift-ts-ppnlb-hostname) |
-{: caption="Load balancer error messages (Red Hat OpenShift on IBM Cloud only)" caption-side="bottom"}
-
+{: caption="Load balancer error messages" caption-side="bottom"}
 
 ## Apps and services
 {: #ts-errors-apps}
 
 | Error message | Troubleshooting topic |
-|---|---|
+| --- | --- |
 | `Failed to create pod sandbox: rpc error: ... failed to request 1 IPv4 addresses. IPAM allocated only 0` | [Why don't my containers start?](/docs/openshift?topic=openshift-ts-app-container-start) |
 | `ImagePullBackOff` or image pull authorization errors | [Why do images fail to pull from registry with `ImagePullBackOff` or authorization errors?](/docs/openshift?topic=openshift-ts-app-image-pull) |
 | `pull QPS exceeded` errors during image pulls | [Why do pods show `pull QPS exceeded` errors during image pulls?](/docs/openshift?topic=openshift-ts-vpc-image-pull-qps) |
@@ -168,11 +135,6 @@ These error codes appear only in {{site.data.keyword.openshiftlong_notm}}.
 | `This service doesn't support creation of keys` | [Resolving service binding errors in IBM Cloud clusters](/docs/openshift?topic=openshift-ts-app-svc-key) |
 | Pod remains in `Pending` state | [Why do pods remain in pending state?](/docs/openshift?topic=openshift-ts-app-pod-pending) |
 | Pod repeatedly fails to restart or is unexpectedly removed | [Why do pods repeatedly fail to restart or are unexpectedly removed?](/docs/openshift?topic=openshift-ts-app-pod-fail) |
-{: caption="App and service error messages" caption-side="bottom"}
-
-
-
-
 | `error: build error: After retrying 2 times, Pull image still failed due to error: unauthorized: authentication required` | [Why does my build error due to image pull authentication?](/docs/openshift?topic=openshift-ts-app-build-img-pull) |
 | `received unexpected HTTP status: 504 Gateway Time-out` | [Why does pushing to the internal registry time out?](/docs/openshift?topic=openshift-ts-app-timeout) |
 | `error: build error: Failed to push image: error copying layers and metadata` | [Why does my pod not build with a permission denied error because of security context constraint (SCC)?](/docs/openshift?topic=openshift-ts-app-scc) |
@@ -185,14 +147,13 @@ These error codes appear only in {{site.data.keyword.openshiftlong_notm}}.
 | Pods in `openshift-marketplace` namespace in `ImagePullBackOff` | [Pods in the `openshift-marketplace` namespace are in `ImagePullBackOff`](/docs/openshift?topic=openshift-ts-openshift-marketplace) |
 | `failed to set feature gates` error on worker node upgrade | [Why do I see a `failed to set feature gates` error when upgrading a worker node?](/docs/openshift?topic=openshift-ts-cloud-pak-ds) |
 | Confidential container scheduling failure: `Insufficient kata.peerpods.io/vm` | [How do I troubleshoot confidential containers?](/docs/openshift?topic=openshift-ts-confidential-containers) |
-{: caption="App and service error messages (Red Hat OpenShift on IBM Cloud only)" caption-side="bottom"}
-
+{: caption="App and service error messages" caption-side="bottom"}
 
 ## Permissions and credentials
 {: #ts-errors-perms}
 
 | Error message | Troubleshooting topic |
-|---|---|
+| --- | --- |
 | `User doesn't have permissions to create or manage Storage` | [What permissions do I need to manage storage and create PVCs?](/docs/openshift?topic=openshift-missing_permissions) |
 {: caption="Permission and credential error messages" caption-side="bottom"}
 
@@ -200,7 +161,7 @@ These error codes appear only in {{site.data.keyword.openshiftlong_notm}}.
 {: #ts-errors-sbd}
 
 | Error message | Troubleshooting topic |
-|---|---|
+| --- | --- |
 | `warning: Container container-00 is unable to start due to an error: Back-off pulling image "registry.redhat.io/rhel8/support-tools"` | [After creating a version 4.15 cluster, my app no longer works](/docs/openshift?topic=openshift-ts-sbd-app-not-working) |
 | `Pending security group creation` | [When I create a VPC cluster, my worker nodes are stuck in `Pending security group creation`](/docs/openshift?topic=openshift-ts-sbd-cluster-create-quota) |
 | `Infrastructure instance status is 'failed': Can't start instance because provisioning failed.` | [Why do I see DNS failures after adding a custom DNS resolver?](/docs/openshift?topic=openshift-ts-sbd-custom-dns) |
@@ -213,7 +174,7 @@ These error codes appear only in {{site.data.keyword.openshiftlong_notm}}.
 {: #ts-errors-file}
 
 | Error message | Troubleshooting topic |
-|---|---|
+| --- | --- |
 | `MountVolume.SetUp failed for volume ... mount.nfs: access denied by server while mounting` | [Classic: Why am I denied server access when mounting a volume to a worker node?](/docs/openshift?topic=openshift-ts-storage-file-access-denied) |
 | `write-permission` or non-root user ownership errors on NFS mount path | [Why does my app fail when a non-root user owns the NFS file storage mount path?](/docs/openshift?topic=openshift-nonroot) |
 | Group ID error applying NFS file storage permissions | [Why does my app fail with a group ID error for NFS file storage permissions?](/docs/openshift?topic=openshift-root) |
@@ -238,7 +199,7 @@ These error codes appear only in {{site.data.keyword.openshiftlong_notm}}.
 {: #ts-errors-block}
 
 | Error message | Troubleshooting topic |
-|---|---|
+| --- | --- |
 | `failed to mount the volume as "ext4", it already contains xfs. Mount error: mount failed: exit status 32` | [Why does mounting existing block storage to a pod fail with the wrong file system?](/docs/openshift?topic=openshift-block_filesystem) |
 | `Volume not attached` | [Why do I get a `Volume not attached` error when trying to expand a {{site.data.keyword.block_storage_is_short}} volume?](/docs/openshift?topic=openshift-block_not_attached_vpc) |
 | Block storage changes to read-only | [Why does block storage change to read-only?](/docs/openshift?topic=openshift-readonly_block) |
@@ -257,7 +218,7 @@ These error codes appear only in {{site.data.keyword.openshiftlong_notm}}.
 {: #ts-errors-cos}
 
 | Error message | Troubleshooting topic |
-|---|---|
+| --- | --- |
 | `pvc:...:can't access bucket <bucket_name>: NotFound: Not Found` | [Why can't my PVC access an existing bucket?](/docs/openshift?topic=openshift-cos_access_bucket_fails) |
 | `Error: symlink ... helm-ibmc: file exists` | [Why does installing the Object storage Helm plug-in fail?](/docs/openshift?topic=openshift-cos_helm_fails) |
 | `d--------- 1 root root 0 Jan 1 1970 <file_name>` (non-root user cannot access files) | [Resolving non-root user access issues to files in IBM Cloud](/docs/openshift?topic=openshift-cos_nonroot_access) |
@@ -277,7 +238,7 @@ These error codes appear only in {{site.data.keyword.openshiftlong_notm}}.
 {: #ts-errors-portworx}
 
 | Error message | Troubleshooting topic |
-|---|---|
+| --- | --- |
 | `kp.Error: ... msg='Unauthorized: The user does not have access to the specified resource'` | [Why does encryption fail with an invalid KMS endpoint?](/docs/openshift?topic=openshift-px-kms-endpoint) |
 {: caption="Portworx Storage error messages" caption-side="bottom"}
 
@@ -286,7 +247,7 @@ These error codes appear only in {{site.data.keyword.openshiftlong_notm}}.
 {: #ts-errors-odf}
 
 | Error message | Troubleshooting topic |
-|---|---|
+| --- | --- |
 | `Failed to get StorageCluster","error":"no matches for kind \"StorageCluster\" in version \"ocs.openshift.io/v1\"` | [Why are no pods listed in the `openshift-storage` namespace?](/docs/openshift?topic=openshift-ts-ocs-no-pods) |
 | ODF pods stuck at `Pending` | [Why are the OpenShift Data Foundation pods stuck at `Pending`?](/docs/openshift?topic=openshift-ts-ocs-pods-pending-status) |
 | ODF storage cluster stuck at `Progressing` | [Why is the status of my OpenShift Data Foundation storage cluster stuck at `Progressing`?](/docs/openshift?topic=openshift-ocs-ts-error-progressing) |
@@ -296,8 +257,8 @@ These error codes appear only in {{site.data.keyword.openshiftlong_notm}}.
 ## OpenShift Virtualization
 {: #ts-errors-virt}
 
-| Symptom | Troubleshooting topic |
-|---|---|
+| Error message | Troubleshooting topic |
+| --- | --- |
 | OpenShift Virtualization Operator installation fails | [Why does the OpenShift Virtualization Operator installation fail?](/docs/openshift?topic=openshift-ts-virt-operator-install-fails) |
 | HyperConverged resource deployment fails | [Why does the HyperConverged resource deployment fail?](/docs/openshift?topic=openshift-ts-virt-hyperconverged-deployment-fails) |
 | VM disks fail to provision | [Why do VM disks fail to provision?](/docs/openshift?topic=openshift-ts-virt-vm-disks-fail-to-provision) |
