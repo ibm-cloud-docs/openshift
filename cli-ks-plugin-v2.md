@@ -4418,7 +4418,7 @@ ibmcloud ks experimental vni detach \
 {: shortdesc}
 
 ```sh
-ibmcloud ks experimental vni ls --cluster-id CLUSTER_ID
+ibmcloud ks experimental vni ls [--after AFTER] [--first FIRST] [--output OUTPUT] [-q] (--cluster-id ID | --worker WORKER)
 ```
 
 #### Command options
@@ -9163,7 +9163,7 @@ List Virtual Network Interfaces attached to a cluster or worker node.
 {: shortdesc}
 
 ```sh
-ibmcloud ks vni ls --cluster-id CLUSTER_ID
+ibmcloud ks vni ls [--after AFTER] [--first FIRST] [--output OUTPUT] [-q] (--cluster-id ID | --worker WORKER)
 ```
 
 #### Command options
