@@ -2,7 +2,7 @@
 
 copyright:
   years: 2024, 2026
-lastupdated: "2026-08-18"
+lastupdated: "2026-08-19"
 
 keywords: openshift, cli reference, openshift cli, {{site.data.keyword.openshiftlong_notm}}
 
@@ -4418,7 +4418,7 @@ ibmcloud ks experimental vni detach \
 {: shortdesc}
 
 ```sh
-ibmcloud ks experimental vni ls [--after AFTER] [--first FIRST] [--output OUTPUT] [-q] (--cluster-id ID | --worker WORKER)
+ibmcloud ks experimental vni ls --cluster-id CLUSTER_ID
 ```
 
 #### Command options
@@ -4450,7 +4450,7 @@ ibmcloud ks experimental vni ls [--after AFTER] [--first FIRST] [--output OUTPUT
 List Virtual Network Interfaces attached to a cluster or worker node.
 
 ```sh
-ibmcloud ks experimental vni ls [--after AFTER] [--first FIRST] [--output OUTPUT] [-q] (--cluster-id ID | --worker WORKER)
+ibmcloud ks experimental vni ls --cluster-id CLUSTER_ID
 ```
 {: pre}
 
@@ -9156,7 +9156,7 @@ List Virtual Network Interfaces attached to a cluster or worker node.
 {: shortdesc}
 
 ```sh
-ibmcloud ks vni ls [--after AFTER] [--first FIRST] [--output OUTPUT] [-q] (--cluster-id ID | --worker WORKER)
+ibmcloud ks vni ls --cluster-id CLUSTER_ID
 ```
 
 #### Command options
@@ -9188,7 +9188,7 @@ ibmcloud ks vni ls [--after AFTER] [--first FIRST] [--output OUTPUT] [-q] (--clu
 List Virtual Network Interfaces attached to a cluster or worker node.
 
 ```sh
-ibmcloud ks vni ls [--after AFTER] [--first FIRST] [--output OUTPUT] [-q] (--cluster-id ID | --worker WORKER)
+ibmcloud ks vni ls --cluster-id CLUSTER_ID
 ```
 {: pre}
 
