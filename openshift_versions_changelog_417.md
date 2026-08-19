@@ -671,7 +671,7 @@ The following table shows the changes that are in the master fix pack 4.17.40_15
 | {{site.data.keyword.filestorage_full_notm}} for Classic plug-in and monitor | 451 | 452 | New version contains updates and security fixes. |
 | Key Management Service provider | v2.10.16 | v2.10.17 | New version contains updates and security fixes. |
 | Portieris admission controller | v0.13.29 | v0.13.30 | See the [Portieris admission controller release notes](https://github.com/{{site.data.keyword.IBM_notm}}/portieris/releases/tag/v0.13.30){: external}. |
-| {{site.data.keyword.openshiftlong_notm}}. | 4.17.36 | 4.17.40 | See the [{{site.data.keyword.openshiftlong_notm}} release notes](https://docs.redhat.com/en/documentation/openshift_container_platform/4.17/html/release_notes/ocp-4-17-release-notes#ocp-4-17-40){: external}. |
+| {{site.data.keyword.openshiftlong_notm}}. | 4.17.36 | 4.17.40 | See the [{{site.data.keyword.openshiftlong_notm}} release notes](https://docs.redhat.com/en/documentation/openshift_container_platform/4.17/html/release_notes/ocp-4-17-release-notes#ocp-4-17-40_release-notes){: external}. |
 | {{site.data.keyword.openshiftlong_notm}} Control Plane Operator, Metrics Server, and toolkit | 4.17.0+20250808 | 4.17.0+20250821 | See the [{{site.data.keyword.openshiftlong_notm}} toolkit release notes](https://github.com/openshift/ibm-roks-toolkit/releases/tag/v4.17.0+20250821){: external}. |
 | Tigera Operator | v1.36.11 | v1.36.13 | See the [Tigera Operator release notes](https://github.com/tigera/operator/releases/tag/v1.36.13){: external}. |
 {: caption="Changes since version 4.17.36_1550_openshift" caption-side="bottom"}
@@ -775,7 +775,7 @@ The following table shows the changes that are in the master fix pack 4.17.35_15
 | Key Management Service provider | v2.10.14 | v2.10.15 | New version contains updates and security fixes. |
 | Load balancer and load balancer monitor for {{site.data.keyword.cloud_notm}} Provider | 3293 | 3347 | New version contains updates and security fixes. |
 | Portieris admission controller | v0.13.28 | v0.13.29 | See the [Portieris admission controller release notes](https://github.com/{{site.data.keyword.IBM_notm}}/portieris/releases/tag/v0.13.29){: external}. |
-| {{site.data.keyword.openshiftlong_notm}}. | 4.17.28 | 4.17.35 | See the [{{site.data.keyword.openshiftlong_notm}} release notes](https://docs.redhat.com/en/documentation/openshift_container_platform/4.17/html/release_notes/ocp-4-17-release-notes#ocp-4-17-35){: external}. |
+| {{site.data.keyword.openshiftlong_notm}}. | 4.17.28 | 4.17.35 | See the [{{site.data.keyword.openshiftlong_notm}} release notes](https://docs.redhat.com/en/documentation/openshift_container_platform/4.17/html/release_notes/ocp-4-17-release-notes#ocp-4-17-35_release-notes){: external}. |
 | {{site.data.keyword.openshiftlong_notm}} Control Plane Operator, Metrics Server, and toolkit | 4.17.0+20250610 | 4.17.0+20250627 | See the [{{site.data.keyword.openshiftlong_notm}} toolkit release notes](https://github.com/openshift/ibm-roks-toolkit/releases/tag/v4.17.0+20250627){: external}. |
 | Tigera Operator | v1.34.11 | v1.36.11 | See the [Tigera Operator release notes](https://github.com/tigera/operator/releases/tag/v1.36.11){: external}. |
 {: caption="Changes since version 4.17.28_1543_openshift" caption-side="bottom"}
@@ -997,7 +997,7 @@ The following table shows the changes that are in the master fix pack 4.17.18_15
 | Key Management Service provider | v2.10.10 | v2.10.11 | New version contains updates and security fixes. |
 | Load balancer and load balancer monitor for {{site.data.keyword.cloud_notm}} Provider | 3178 | 3232 | New version contains updates and security fixes. |
 | Portieris admission controller | v0.13.23 | v0.13.25 | See the [Portieris admission controller release notes](https://github.com/{{site.data.keyword.IBM_notm}}/portieris/releases/tag/v0.13.25){: external}. |
-| {{site.data.keyword.openshiftlong_notm}}. | 4.17.14 | 4.17.18 | See the [{{site.data.keyword.openshiftlong_notm}} release notes](https://docs.redhat.com/en/documentation/openshift_container_platform/4.17/html/release_notes/ocp-4-17-release-notes#ocp-4-17-18){: external}. |
+| {{site.data.keyword.openshiftlong_notm}}. | 4.17.14 | 4.17.18 | See the [{{site.data.keyword.openshiftlong_notm}} release notes](https://docs.redhat.com/en/documentation/openshift_container_platform/4.17/html/release_notes/ocp-4-17-release-notes#ocp-4-17-18_release-notes){: external}. |
 | {{site.data.keyword.openshiftlong_notm}} Control Plane Operator, Metrics Server, and toolkit | 4.17.0+20250207 | 4.17.0+20250313 | See the [{{site.data.keyword.openshiftlong_notm}} toolkit release notes](https://github.com/openshift/ibm-roks-toolkit/releases/tag/v4.17.0+20250313){: external}. |
 {: caption="Changes since version 4.17.14_1530_openshift" caption-side="bottom"}
 
@@ -1028,7 +1028,7 @@ The following table shows the components included in the worker node fix pack 4.
 | ---- | ---- |
 |RHEL_9 5.14.0-503.29.1.el9_5|N/A|
 |RHEL_8 4.18.0-553.42.1.el8_10|Resolves the following CVEs: [RHSA-2024:3043](https://access.redhat.com/errata/RHSA-2024:3043){: external}, and [CVE-2024-0690](https://nvd.nist.gov/vuln/detail/CVE-2024-0690){: external}.|
-|Red Hat OpenShift and Red Hat CoreOS 4.17.19|For more information, see the [change logs](https://docs.redhat.com/en/documentation/openshift_container_platform/4.17/html/release_notes/ocp-4-17-release-notes#ocp-4-17-19_release-notes).|
+|Red Hat OpenShift and Red Hat CoreOS 4.17.19|For more information, see the [change logs](https://docs.redhat.com/en/documentation/openshift_container_platform/4.17/html/release_notes/ocp-4-17-release-notes#ocp-4-17-19_release-notes){: external}.|
 |HAProxy 1d72cc8c7d02da6ba0340191fa8d9a86550e5090|N/A|
 {: caption="4.17.19_1532_openshift fix pack." caption-side="bottom"}
 {: #cl-boms-41719_1532_openshift_W-component-table}
@@ -1190,7 +1190,7 @@ The following table shows the changes that are in the master fix pack 4.17.5_151
 | Key Management Service provider | v2.10.7 | v2.10.8 | New version contains updates and security fixes. |
 | Load balancer and load balancer monitor for {{site.data.keyword.cloud_notm}} Provider | 3051 | 3079 | New version contains updates and security fixes. |
 | Portieris admission controller | v0.13.20 | v0.13.21 | See the [Portieris admission controller release notes](https://github.com/{{site.data.keyword.IBM_notm}}/portieris/releases/tag/v0.13.21){: external}. |
-| {{site.data.keyword.openshiftlong_notm}}. | 4.17.4 | 4.17.5 | See the [{{site.data.keyword.openshiftlong_notm}} release notes](https://docs.redhat.com/en/documentation/openshift_container_platform/4.17/html/release_notes/ocp-4-17-release-notes#ocp-4-17-5){: external}. |
+| {{site.data.keyword.openshiftlong_notm}}. | 4.17.4 | 4.17.5 | See the [{{site.data.keyword.openshiftlong_notm}} release notes](https://docs.redhat.com/en/documentation/openshift_container_platform/4.17/html/release_notes/ocp-4-17-release-notes#ocp-4-17-5_release-notes){: external}. |
 {: caption="Changes since version 4.17.4_1515_openshift" caption-side="bottom"}
 
 
@@ -1201,7 +1201,7 @@ The following table shows the changes that are in the master fix pack 4.17.5_151
 | --- | --- | --- | --- |
 | IBM Cloud Controller Manager | v1.29.10-2 | v1.30.6-3 | New version contains updates and security fixes. |
 | IBM Cloud RBAC Operator | c4a05b0 | 743ed58 | New version contains updates and security fixes. |
-| Red Hat OpenShift (master) | 4.16.19 | 4.17.4 | See the [Red Hat OpenShift on IBM Cloud release notes](https://docs.redhat.com/en/documentation/openshift_container_platform/4.17/html/release_notes/ocp-4-17-release-notes#ocp-4-17-4_release-notes) |
-| Red Hat OpenShift (worker node) | 4.16.21 | 4.17.4 | See the [Red Hat OpenShift on IBM Cloud release notes](https://docs.redhat.com/en/documentation/openshift_container_platform/4.17/html/release_notes/ocp-4-17-release-notes#ocp-4-17-4_release-notes) |
-| Red Hat OpenShift on IBM Cloud Control Plane Operator, Metrics Server, and toolkit | 4.16.0+20240913 | 4.17.0+20241112 | See the [Red Hat OpenShift on IBM Cloud toolkit release notes](https://github.com/openshift/ibm-roks-toolkit/releases/tag/v4.17.0%2B20241112). |
+| Red Hat OpenShift (master) | 4.16.19 | 4.17.4 | See the [Red Hat OpenShift on IBM Cloud release notes](https://docs.redhat.com/en/documentation/openshift_container_platform/4.17/html/release_notes/ocp-4-17-release-notes#ocp-4-17-4_release-notes){: external} |
+| Red Hat OpenShift (worker node) | 4.16.21 | 4.17.4 | See the [Red Hat OpenShift on IBM Cloud release notes](https://docs.redhat.com/en/documentation/openshift_container_platform/4.17/html/release_notes/ocp-4-17-release-notes#ocp-4-17-4_release-notes){: external} |
+| Red Hat OpenShift on IBM Cloud Control Plane Operator, Metrics Server, and toolkit | 4.16.0+20240913 | 4.17.0+20241112 | See the [Red Hat OpenShift on IBM Cloud toolkit release notes](https://github.com/openshift/ibm-roks-toolkit/releases/tag/v4.17.0%2B20241112){: external}. |
 {: caption="Changes since master fix pack 4.16.19_1543_openshift and worker fix pack 4.16.21_1544_openshift." caption-side="bottom"}
