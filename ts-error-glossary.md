@@ -38,7 +38,6 @@ This reference lists all documented error messages and error codes across troubl
 | `Encrypted storage cannot be configured. Review the customer root key configuration for the worker pool.` | [Why can't I create a VPC cluster with encrypted worker nodes?](/docs/openshift?topic=openshift-ts-vpc-byok-encrypted-storage) |
 | `Pending security group creation` | [When I create a VPC cluster, my worker nodes are stuck in `Pending security group creation`](/docs/openshift?topic=openshift-ts-sbd-cluster-create-quota) |
 | `Infrastructure instance status is 'failed': Can't start instance because provisioning failed.` | [Why do I see DNS failures after adding a custom DNS resolver?](/docs/openshift?topic=openshift-ts-sbd-custom-dns) |
-
 | `Could not store the cloud object storage bucket and IAM service key.` | [Why do I get an error about a cloud object storage bucket when I create a cluster?](/docs/openshift?topic=openshift-ts_cos_bucket_cluster_create) |
 | `Could not find user.` | [Why do I see a `Could not find user` error when I try to access the web console?](/docs/openshift?topic=openshift-ts-cluster-ocp-console) |
 | `No resources found.` | [After logging in to my cluster, why do I see a no resources found message?](/docs/openshift?topic=openshift-rhoks_ts_not_found) |
