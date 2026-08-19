@@ -29,6 +29,13 @@ Looking for {{site.data.keyword.cloud_notm}} status, platform announcements, sec
 ## August 2026
 {: #openshift-aug26}
 
+### 19 August 2026
+{: #openshift-aug1926}
+{: release-note}
+
+CLI version 1.0.829 is available.
+:   For more information, see the [CLI change log](/docs/openshift?topic=openshift-cs_cli_changelog).
+
 ### 18 August 2026
 {: #openshift-aug1826}
 {: release-note}
@@ -171,6 +178,9 @@ Openshift AI cluster add-on patch updates.
 :   For more information, see the [change log](/docs/openshift?topic=openshift-cl-add-ons-openshift-ai).
 
 
+
+CLI version 1.0.815 is available.
+:   For more information, see the [CLI change log](/docs/openshift?topic=openshift-cs_cli_changelog).
 
 ## July 2026
 {: #openshift-jul26}

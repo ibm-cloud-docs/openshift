@@ -487,6 +487,10 @@ subcollection: openshift
 
 * [August 2026](/docs/openshift?topic=openshift-openshift-relnotes#openshift-aug26)
 
+    * [19 August 2026](/docs/openshift?topic=openshift-openshift-relnotes#openshift-aug1926)
+
+        * CLI version 1.0.829 is available.
+
     * [18 August 2026](/docs/openshift?topic=openshift-openshift-relnotes#openshift-aug1826)
 
         * VPC File CSI Driver cluster add-on patch updates.
@@ -538,6 +542,8 @@ subcollection: openshift
     * [3 August 2026](/docs/openshift?topic=openshift-openshift-relnotes#openshift-aug0326)
 
         * Openshift AI cluster add-on patch updates.
+
+        * CLI version 1.0.815 is available.
 
 * [July 2026](/docs/openshift?topic=openshift-openshift-relnotes#openshift-jul26)
 
@@ -7572,6 +7578,10 @@ subcollection: openshift
 [CLI change log](/docs/openshift?topic=openshift-cs_cli_changelog#cs_cli_changelog)
 
 * [Version 1.0](/docs/openshift?topic=openshift-cs_cli_changelog#10)
+
+* [Version v1.0.829](/docs/openshift?topic=openshift-cs_cli_changelog#cli-01829)
+
+* [Version v1.0.815](/docs/openshift?topic=openshift-cs_cli_changelog#cli-01815)
 
 * [Version v1.0.804](/docs/openshift?topic=openshift-cs_cli_changelog#cli-01804)
 
