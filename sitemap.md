@@ -2136,27 +2136,27 @@ subcollection: openshift
 
 * [Advanced configuration](/docs/openshift?topic=openshift-access_cluster#access-advanced-config)
 
-[Accessing clusters through the public cloud service endpoint](/docs/openshift?topic=openshift-access-public#access-public)
+[Accessing clusters through the public cloud service endpoint](/docs/openshift?topic=openshift-cluster-access-public#cluster-access-public)
 
-* [Before you begin](/docs/openshift?topic=openshift-access-public#access-public-prereqs)
+* [Before you begin](/docs/openshift?topic=openshift-cluster-access-public#access-public-prereqs)
 
-* [Connecting from the {{site.data.keyword.cloud_notm}} console](/docs/openshift?topic=openshift-access-public#access-public-console)
+* [Connecting from the {{site.data.keyword.cloud_notm}} console](/docs/openshift?topic=openshift-cluster-access-public#access-public-console)
 
-* [Connecting from the CLI](/docs/openshift?topic=openshift-access-public#access-public-cli)
+* [Connecting from the CLI](/docs/openshift?topic=openshift-cluster-access-public#access-public-cli)
 
-    * [Log in as admin](/docs/openshift?topic=openshift-access-public#access-public-cli-admin)
+    * [Log in as admin](/docs/openshift?topic=openshift-cluster-access-public#access-public-cli-admin)
 
-    * [Log in with a passcode](/docs/openshift?topic=openshift-access-public#access-public-cli-passcode)
+    * [Log in with a passcode](/docs/openshift?topic=openshift-cluster-access-public#access-public-cli-passcode)
 
-    * [Log in with an API key](/docs/openshift?topic=openshift-access-public#access-public-cli-apikey)
+    * [Log in with an API key](/docs/openshift?topic=openshift-cluster-access-public#access-public-cli-apikey)
 
-[Accessing VPC clusters through the private cloud service endpoint](/docs/openshift?topic=openshift-access-private-vpc#access-private-vpc)
+[Accessing VPC clusters through the private cloud service endpoint](/docs/openshift?topic=openshift-cluster-access-private-vpc#cluster-access-private-vpc)
 
-* [Before you begin](/docs/openshift?topic=openshift-access-private-vpc#access-private-vpc-prereqs)
+* [Before you begin](/docs/openshift?topic=openshift-cluster-access-private-vpc#access-private-vpc-prereqs)
 
-* [Accessing a private VPC cluster from the CLI](/docs/openshift?topic=openshift-access-private-vpc#access-private-vpc-cli)
+* [Accessing a private VPC cluster from the CLI](/docs/openshift?topic=openshift-cluster-access-private-vpc#access-private-vpc-cli)
 
-* [Accessing through the Virtual Private Endpoint (VPE) gateway](/docs/openshift?topic=openshift-access-private-vpc#access-private-vpc-vpe)
+* [Accessing through the Virtual Private Endpoint (VPE) gateway](/docs/openshift?topic=openshift-cluster-access-private-vpc#access-private-vpc-vpe)
 
 [Accessing Classic clusters through the private cloud service endpoint](/docs/openshift?topic=openshift-access-private-classic#access-private-classic)
 
@@ -6489,143 +6489,143 @@ subcollection: openshift
 
 * [RHEL 9](/docs/openshift?topic=openshift-cs_versions_417#417_rhel9)
 
-[4.17 version change log](/docs/openshift?topic=openshift-changelog_417#changelog_417)
+[4.17 version change log](/docs/openshift?topic=openshift-openshift_changelog_417#openshift_changelog_417)
 
-* [Overview](/docs/openshift?topic=openshift-changelog_417#changelog_overview_417)
+* [Overview](/docs/openshift?topic=openshift-openshift_changelog_417#changelog_overview_417)
 
-* [Version 4.17](/docs/openshift?topic=openshift-changelog_417#417_components)
+* [Version 4.17](/docs/openshift?topic=openshift-openshift_changelog_417#417_components)
 
-    * [Worker node fix pack 4.17.56_1596_openshift, released 12 August 2026](/docs/openshift?topic=openshift-changelog_417#cl-boms-41756_1596_openshift_W)
+    * [Worker node fix pack 4.17.56_1596_openshift, released 12 August 2026](/docs/openshift?topic=openshift-openshift_changelog_417#cl-boms-41756_1596_openshift_W)
 
-    * [Master fix pack 4.17.56_1595_openshift, released 05 August 2026](/docs/openshift?topic=openshift-changelog_417#cl-boms_master-41756_1595_openshift_M)
+    * [Master fix pack 4.17.56_1595_openshift, released 05 August 2026](/docs/openshift?topic=openshift-openshift_changelog_417#cl-boms_master-41756_1595_openshift_M)
 
-    * [Worker node fix pack 4.17.55_1594_openshift, released 28 July 2026](/docs/openshift?topic=openshift-changelog_417#cl-boms-41755_1594_openshift_W)
+    * [Worker node fix pack 4.17.55_1594_openshift, released 28 July 2026](/docs/openshift?topic=openshift-openshift_changelog_417#cl-boms-41755_1594_openshift_W)
 
-    * [Master fix pack 4.17.54_1592_openshift, released 28 July 2026](/docs/openshift?topic=openshift-changelog_417#cl-boms_master-41754_1592_openshift_M)
+    * [Master fix pack 4.17.54_1592_openshift, released 28 July 2026](/docs/openshift?topic=openshift-openshift_changelog_417#cl-boms_master-41754_1592_openshift_M)
 
-    * [Worker node fix pack 4.17.55_1593_openshift, released 13 July 2026](/docs/openshift?topic=openshift-changelog_417#cl-boms-41755_1593_openshift_W)
+    * [Worker node fix pack 4.17.55_1593_openshift, released 13 July 2026](/docs/openshift?topic=openshift-openshift_changelog_417#cl-boms-41755_1593_openshift_W)
 
-    * [Worker node fix pack 4.17.54_1591_openshift, released 01 July 2026](/docs/openshift?topic=openshift-changelog_417#cl-boms-41754_1591_openshift_W)
+    * [Worker node fix pack 4.17.54_1591_openshift, released 01 July 2026](/docs/openshift?topic=openshift-openshift_changelog_417#cl-boms-41754_1591_openshift_W)
 
-    * [Master fix pack 4.17.54_1589_openshift, released 26 June 2026](/docs/openshift?topic=openshift-changelog_417#cl-boms_master-41754_1589_openshift_M)
+    * [Master fix pack 4.17.54_1589_openshift, released 26 June 2026](/docs/openshift?topic=openshift-openshift_changelog_417#cl-boms_master-41754_1589_openshift_M)
 
-    * [Worker node fix pack 4.17.54_1590_openshift, released 15 June 2026](/docs/openshift?topic=openshift-changelog_417#cl-boms-41754_1590_openshift_W)
+    * [Worker node fix pack 4.17.54_1590_openshift, released 15 June 2026](/docs/openshift?topic=openshift-openshift_changelog_417#cl-boms-41754_1590_openshift_W)
 
-    * [Worker node fix pack 4.17.54_1587_openshift, released 03 June 2026](/docs/openshift?topic=openshift-changelog_417#cl-boms-41754_1587_openshift_W)
+    * [Worker node fix pack 4.17.54_1587_openshift, released 03 June 2026](/docs/openshift?topic=openshift-openshift_changelog_417#cl-boms-41754_1587_openshift_W)
 
-    * [Master fix pack 4.17.52_1585_openshift, released 22 May 2026](/docs/openshift?topic=openshift-changelog_417#cl-boms_master-41752_1585_openshift_M)
+    * [Master fix pack 4.17.52_1585_openshift, released 22 May 2026](/docs/openshift?topic=openshift-openshift_changelog_417#cl-boms_master-41752_1585_openshift_M)
 
-    * [Worker node fix pack 4.17.53_1586_openshift, released 20 May 2026](/docs/openshift?topic=openshift-changelog_417#cl-boms-41753_1586_openshift_W)
+    * [Worker node fix pack 4.17.53_1586_openshift, released 20 May 2026](/docs/openshift?topic=openshift-openshift_changelog_417#cl-boms-41753_1586_openshift_W)
 
-    * [Worker node fix pack 4.17.52_1583_openshift, released 04 May 2026](/docs/openshift?topic=openshift-changelog_417#cl-boms-41752_1583_openshift_W)
+    * [Worker node fix pack 4.17.52_1583_openshift, released 04 May 2026](/docs/openshift?topic=openshift-openshift_changelog_417#cl-boms-41752_1583_openshift_W)
 
-    * [Master fix pack 4.17.52_1582_openshift, released 27 April 2026](/docs/openshift?topic=openshift-changelog_417#cl-boms_master-41752_1582_openshift_M)
+    * [Master fix pack 4.17.52_1582_openshift, released 27 April 2026](/docs/openshift?topic=openshift-openshift_changelog_417#cl-boms_master-41752_1582_openshift_M)
 
-    * [Worker node fix pack 4.17.52_1580_openshift, released 20 April 2026](/docs/openshift?topic=openshift-changelog_417#cl-boms-41752_1580_openshift_W)
+    * [Worker node fix pack 4.17.52_1580_openshift, released 20 April 2026](/docs/openshift?topic=openshift-openshift_changelog_417#cl-boms-41752_1580_openshift_W)
 
-    * [Worker node fix pack 4.17.52_1579_openshift, released 06 April 2026](/docs/openshift?topic=openshift-changelog_417#cl-boms-41752_1579_openshift_W)
+    * [Worker node fix pack 4.17.52_1579_openshift, released 06 April 2026](/docs/openshift?topic=openshift-openshift_changelog_417#cl-boms-41752_1579_openshift_W)
 
-    * [Change log for Master fix pack 4.17.50_1578_openshift, released 02 April 2026](/docs/openshift?topic=openshift-changelog_417#41750_1578_openshift_M)
+    * [Change log for Master fix pack 4.17.50_1578_openshift, released 02 April 2026](/docs/openshift?topic=openshift-openshift_changelog_417#41750_1578_openshift_M)
 
-    * [Worker node fix pack 4.17.51_1578_openshift, released 24 March 2026](/docs/openshift?topic=openshift-changelog_417#cl-boms-41751_1578_openshift_W)
+    * [Worker node fix pack 4.17.51_1578_openshift, released 24 March 2026](/docs/openshift?topic=openshift-openshift_changelog_417#cl-boms-41751_1578_openshift_W)
 
-    * [Worker node fix pack 4.17.50_1575_openshift, released 11 March 2026](/docs/openshift?topic=openshift-changelog_417#cl-boms-41750_1575_openshift_W)
+    * [Worker node fix pack 4.17.50_1575_openshift, released 11 March 2026](/docs/openshift?topic=openshift-openshift_changelog_417#cl-boms-41750_1575_openshift_W)
 
-    * [Worker node fix pack 4.17.49_1574_openshift, released 24 February 2026](/docs/openshift?topic=openshift-changelog_417#cl-boms-41749_1574_openshift_W)
+    * [Worker node fix pack 4.17.49_1574_openshift, released 24 February 2026](/docs/openshift?topic=openshift-openshift_changelog_417#cl-boms-41749_1574_openshift_W)
 
-    * [Change log for Master fix pack 4.17.48_1573_openshift, released 18 February 2026](/docs/openshift?topic=openshift-changelog_417#41748_1573_openshift_M)
+    * [Change log for Master fix pack 4.17.48_1573_openshift, released 18 February 2026](/docs/openshift?topic=openshift-openshift_changelog_417#41748_1573_openshift_M)
 
-    * [Worker node fix pack 4.17.48_1572_openshift, released 09 February 2026](/docs/openshift?topic=openshift-changelog_417#cl-boms-41748_1572_openshift_W)
+    * [Worker node fix pack 4.17.48_1572_openshift, released 09 February 2026](/docs/openshift?topic=openshift-openshift_changelog_417#cl-boms-41748_1572_openshift_W)
 
-    * [Worker node fix pack 4.17.47_1571_openshift, released 27 January 2026](/docs/openshift?topic=openshift-changelog_417#cl-boms-41747_1571_openshift_W)
+    * [Worker node fix pack 4.17.47_1571_openshift, released 27 January 2026](/docs/openshift?topic=openshift-openshift_changelog_417#cl-boms-41747_1571_openshift_W)
 
-    * [Master fix pack 4.17.45_1570_openshift, released 21 January 2026](/docs/openshift?topic=openshift-changelog_417#41745_1570_openshift_M)
+    * [Master fix pack 4.17.45_1570_openshift, released 21 January 2026](/docs/openshift?topic=openshift-openshift_changelog_417#41745_1570_openshift_M)
 
-    * [Worker node fix pack 4.17.46_1568_openshift, released 12 January 2026](/docs/openshift?topic=openshift-changelog_417#cl-boms-41746_1568_openshift_W)
+    * [Worker node fix pack 4.17.46_1568_openshift, released 12 January 2026](/docs/openshift?topic=openshift-openshift_changelog_417#cl-boms-41746_1568_openshift_W)
 
-    * [Worker node fix pack 4.17.45_1567_openshift, released 29 December 2025](/docs/openshift?topic=openshift-changelog_417#cl-boms-41745_1567_openshift_W)
+    * [Worker node fix pack 4.17.45_1567_openshift, released 29 December 2025](/docs/openshift?topic=openshift-openshift_changelog_417#cl-boms-41745_1567_openshift_W)
 
-    * [Worker node fix pack 4.17.45_1566_openshift, released 16 December 2025](/docs/openshift?topic=openshift-changelog_417#cl-boms-41745_1566_openshift_W)
+    * [Worker node fix pack 4.17.45_1566_openshift, released 16 December 2025](/docs/openshift?topic=openshift-openshift_changelog_417#cl-boms-41745_1566_openshift_W)
 
-    * [Master fix pack 4.17.44_1565_openshift, released 10 December 2025](/docs/openshift?topic=openshift-changelog_417#41744_1565_openshift_M)
+    * [Master fix pack 4.17.44_1565_openshift, released 10 December 2025](/docs/openshift?topic=openshift-openshift_changelog_417#41744_1565_openshift_M)
 
-    * [Worker node fix pack 4.17.43_1564_openshift, released 03 December 2025](/docs/openshift?topic=openshift-changelog_417#cl-boms-41743_1564_openshift_W)
+    * [Worker node fix pack 4.17.43_1564_openshift, released 03 December 2025](/docs/openshift?topic=openshift-openshift_changelog_417#cl-boms-41743_1564_openshift_W)
 
-    * [Worker node fix pack 4.17.43_1563_openshift, released 17 November 2025](/docs/openshift?topic=openshift-changelog_417#cl-boms-41743_1563_openshift_W)
+    * [Worker node fix pack 4.17.43_1563_openshift, released 17 November 2025](/docs/openshift?topic=openshift-openshift_changelog_417#cl-boms-41743_1563_openshift_W)
 
-    * [Master fix pack 4.17.42_1562_openshift, released 15 November 2025](/docs/openshift?topic=openshift-changelog_417#41742_1562_openshift_M)
+    * [Master fix pack 4.17.42_1562_openshift, released 15 November 2025](/docs/openshift?topic=openshift-openshift_changelog_417#41742_1562_openshift_M)
 
-    * [Worker node fix pack 4.17.42_1560_openshift, released 06 November 2025](/docs/openshift?topic=openshift-changelog_417#cl-boms-41742_1560_openshift_W)
+    * [Worker node fix pack 4.17.42_1560_openshift, released 06 November 2025](/docs/openshift?topic=openshift-openshift_changelog_417#cl-boms-41742_1560_openshift_W)
 
-    * [Worker node fix pack 4.17.41_1559_openshift, released 21 October 2025](/docs/openshift?topic=openshift-changelog_417#cl-boms-41741_1559_openshift_W)
+    * [Worker node fix pack 4.17.41_1559_openshift, released 21 October 2025](/docs/openshift?topic=openshift-openshift_changelog_417#cl-boms-41741_1559_openshift_W)
 
-    * [Worker node fix pack 4.17.40_1558_openshift, released 08 October 2025](/docs/openshift?topic=openshift-changelog_417#cl-boms-41740_1558_openshift_W)
+    * [Worker node fix pack 4.17.40_1558_openshift, released 08 October 2025](/docs/openshift?topic=openshift-openshift_changelog_417#cl-boms-41740_1558_openshift_W)
 
-    * [Master fix pack 4.17.40_1557_openshift, released 07 October 2025](/docs/openshift?topic=openshift-changelog_417#41740_1557_openshift_M)
+    * [Master fix pack 4.17.40_1557_openshift, released 07 October 2025](/docs/openshift?topic=openshift-openshift_changelog_417#41740_1557_openshift_M)
 
-    * [Worker node fix pack 4.17.39_1554_openshift, released 23 September 2025](/docs/openshift?topic=openshift-changelog_417#cl-boms-41739_1554_openshift_W)
+    * [Worker node fix pack 4.17.39_1554_openshift, released 23 September 2025](/docs/openshift?topic=openshift-openshift_changelog_417#cl-boms-41739_1554_openshift_W)
 
-    * [Worker node fix pack 4.17.38_1552_openshift, released 09 September 2025](/docs/openshift?topic=openshift-changelog_417#cl-boms-41738_1552_openshift_W)
+    * [Worker node fix pack 4.17.38_1552_openshift, released 09 September 2025](/docs/openshift?topic=openshift-openshift_changelog_417#cl-boms-41738_1552_openshift_W)
 
-    * [Worker node fix pack 4.17.37_1551_openshift, released 26 August 2025](/docs/openshift?topic=openshift-changelog_417#cl-boms-41737_1551_openshift_W)
+    * [Worker node fix pack 4.17.37_1551_openshift, released 26 August 2025](/docs/openshift?topic=openshift-openshift_changelog_417#cl-boms-41737_1551_openshift_W)
 
-    * [Master fix pack 4.17.36_1550_openshift, released 20 August 2025](/docs/openshift?topic=openshift-changelog_417#41736_1550_openshift_M)
+    * [Master fix pack 4.17.36_1550_openshift, released 20 August 2025](/docs/openshift?topic=openshift-openshift_changelog_417#41736_1550_openshift_M)
 
-    * [Worker node fix pack 4.17.37_1549_openshift, released 12 August 2025](/docs/openshift?topic=openshift-changelog_417#cl-boms-41737_1549_openshift_W)
+    * [Worker node fix pack 4.17.37_1549_openshift, released 12 August 2025](/docs/openshift?topic=openshift-openshift_changelog_417#cl-boms-41737_1549_openshift_W)
 
-    * [Master fix pack 4.17.35_1547_openshift, released 30 July 2025](/docs/openshift?topic=openshift-changelog_417#41735_1547_openshift_M)
+    * [Master fix pack 4.17.35_1547_openshift, released 30 July 2025](/docs/openshift?topic=openshift-openshift_changelog_417#41735_1547_openshift_M)
 
-    * [Worker node fix pack 4.17.36_1548_openshift, released 28 July 2025](/docs/openshift?topic=openshift-changelog_417#cl-boms-41736_1548_openshift_W)
+    * [Worker node fix pack 4.17.36_1548_openshift, released 28 July 2025](/docs/openshift?topic=openshift-openshift_changelog_417#cl-boms-41736_1548_openshift_W)
 
-    * [Worker node fix pack 4.17.35_1546_openshift, released 14 July 2025](/docs/openshift?topic=openshift-changelog_417#cl-boms-41735_1546_openshift_W)
+    * [Worker node fix pack 4.17.35_1546_openshift, released 14 July 2025](/docs/openshift?topic=openshift-openshift_changelog_417#cl-boms-41735_1546_openshift_W)
 
-    * [Worker node fix pack 4.17.34_1545_openshift, released 01 July 2025](/docs/openshift?topic=openshift-changelog_417#cl-boms-41734_1545_openshift_W)
+    * [Worker node fix pack 4.17.34_1545_openshift, released 01 July 2025](/docs/openshift?topic=openshift-openshift_changelog_417#cl-boms-41734_1545_openshift_W)
 
-    * [Master fix pack 4.17.28_1543_openshift, released 18 June 2025](/docs/openshift?topic=openshift-changelog_417#41728_1543_openshift_M)
+    * [Master fix pack 4.17.28_1543_openshift, released 18 June 2025](/docs/openshift?topic=openshift-openshift_changelog_417#41728_1543_openshift_M)
 
-    * [Worker node fix pack 4.17.33_1544_openshift, released 16 June 2025](/docs/openshift?topic=openshift-changelog_417#cl-boms-41733_1544_openshift_W)
+    * [Worker node fix pack 4.17.33_1544_openshift, released 16 June 2025](/docs/openshift?topic=openshift-openshift_changelog_417#cl-boms-41733_1544_openshift_W)
 
-    * [Worker node fix pack 4.17.31_1541_openshift, released 04 June 2025](/docs/openshift?topic=openshift-changelog_417#cl-boms-41731_1541_openshift_W)
+    * [Worker node fix pack 4.17.31_1541_openshift, released 04 June 2025](/docs/openshift?topic=openshift-openshift_changelog_417#cl-boms-41731_1541_openshift_W)
 
-    * [Master fix pack 4.17.28_1540_openshift, released 28 May 2025](/docs/openshift?topic=openshift-changelog_417#41728_1540_openshift_M)
+    * [Master fix pack 4.17.28_1540_openshift, released 28 May 2025](/docs/openshift?topic=openshift-openshift_changelog_417#41728_1540_openshift_M)
 
-    * [Worker node fix pack 4.17.29_1539_openshift, released 19 May 2025](/docs/openshift?topic=openshift-changelog_417#cl-boms-41729_1539_openshift_W)
+    * [Worker node fix pack 4.17.29_1539_openshift, released 19 May 2025](/docs/openshift?topic=openshift-openshift_changelog_417#cl-boms-41729_1539_openshift_W)
 
-    * [Worker node fix pack 4.17.27_1538_openshift, released 07 May 2025](/docs/openshift?topic=openshift-changelog_417#cl-boms-41727_1538_openshift_W)
+    * [Worker node fix pack 4.17.27_1538_openshift, released 07 May 2025](/docs/openshift?topic=openshift-openshift_changelog_417#cl-boms-41727_1538_openshift_W)
 
-    * [Master fix pack 4.17.24_1537_openshift, released 30 April 2025](/docs/openshift?topic=openshift-changelog_417#41724_1537_openshift_M)
+    * [Master fix pack 4.17.24_1537_openshift, released 30 April 2025](/docs/openshift?topic=openshift-openshift_changelog_417#41724_1537_openshift_M)
 
-    * [Worker node fix pack 4.17.25_1536_openshift, released 21 April 2025](/docs/openshift?topic=openshift-changelog_417#cl-boms-41725_1536_openshift_W)
+    * [Worker node fix pack 4.17.25_1536_openshift, released 21 April 2025](/docs/openshift?topic=openshift-openshift_changelog_417#cl-boms-41725_1536_openshift_W)
 
-    * [Worker node fix pack 4.17.23_1535_openshift, released 08 April 2025](/docs/openshift?topic=openshift-changelog_417#cl-boms-41723_1535_openshift_W)
+    * [Worker node fix pack 4.17.23_1535_openshift, released 08 April 2025](/docs/openshift?topic=openshift-openshift_changelog_417#cl-boms-41723_1535_openshift_W)
 
-    * [Master fix pack 4.17.18_1533_openshift, released 26 March 2025](/docs/openshift?topic=openshift-changelog_417#41718_1533_openshift_M)
+    * [Master fix pack 4.17.18_1533_openshift, released 26 March 2025](/docs/openshift?topic=openshift-openshift_changelog_417#41718_1533_openshift_M)
 
-    * [Worker node fix pack 4.17.21_1534_openshift, released 24 March 2025](/docs/openshift?topic=openshift-changelog_417#cl-boms-41721_1534_openshift_W)
+    * [Worker node fix pack 4.17.21_1534_openshift, released 24 March 2025](/docs/openshift?topic=openshift-openshift_changelog_417#cl-boms-41721_1534_openshift_W)
 
-    * [Worker node fix pack 4.17.19_1532_openshift, released 11 March 2025](/docs/openshift?topic=openshift-changelog_417#cl-boms-41719_1532_openshift_W)
+    * [Worker node fix pack 4.17.19_1532_openshift, released 11 March 2025](/docs/openshift?topic=openshift-openshift_changelog_417#cl-boms-41719_1532_openshift_W)
 
-    * [Worker node fix pack 4.17.17_1531_openshift, released 24 February 2025](/docs/openshift?topic=openshift-changelog_417#cl-boms-41717_1531_openshift_W)
+    * [Worker node fix pack 4.17.17_1531_openshift, released 24 February 2025](/docs/openshift?topic=openshift-openshift_changelog_417#cl-boms-41717_1531_openshift_W)
 
-    * [Master fix pack 4.17.14_1530_openshift, released 19 February 2025](/docs/openshift?topic=openshift-changelog_417#41714_1530_openshift_M)
+    * [Master fix pack 4.17.14_1530_openshift, released 19 February 2025](/docs/openshift?topic=openshift-openshift_changelog_417#41714_1530_openshift_M)
 
-    * [Worker node fix pack 4.17.15_1527_openshift, released 11 February 2025](/docs/openshift?topic=openshift-changelog_417#cl-boms-41715_1527_openshift_W)
+    * [Worker node fix pack 4.17.15_1527_openshift, released 11 February 2025](/docs/openshift?topic=openshift-openshift_changelog_417#cl-boms-41715_1527_openshift_W)
 
-    * [Worker node fix pack 4.17.12_1526_openshift, released 29 January 2025](/docs/openshift?topic=openshift-changelog_417#cl-boms-41712_1526_openshift_W)
+    * [Worker node fix pack 4.17.12_1526_openshift, released 29 January 2025](/docs/openshift?topic=openshift-openshift_changelog_417#cl-boms-41712_1526_openshift_W)
 
-    * [Master fix pack 4.17.10_1522_openshift, released 22 January 2025](/docs/openshift?topic=openshift-changelog_417#41710_1522_openshift_M)
+    * [Master fix pack 4.17.10_1522_openshift, released 22 January 2025](/docs/openshift?topic=openshift-openshift_changelog_417#41710_1522_openshift_M)
 
-    * [Worker node fix pack 4.17.11_1521_openshift, released 13 January 2025](/docs/openshift?topic=openshift-changelog_417#cl-boms-41711_1521_openshift_W)
+    * [Worker node fix pack 4.17.11_1521_openshift, released 13 January 2025](/docs/openshift?topic=openshift-openshift_changelog_417#cl-boms-41711_1521_openshift_W)
 
-    * [Worker node fix pack 4.17.9_1520_openshift, released 30 December 2024](/docs/openshift?topic=openshift-changelog_417#4179_1520_openshift_W)
+    * [Worker node fix pack 4.17.9_1520_openshift, released 30 December 2024](/docs/openshift?topic=openshift-openshift_changelog_417#4179_1520_openshift_W)
 
-    * [Worker node fix pack 4.17.8_1519_openshift, released 16 December 2024](/docs/openshift?topic=openshift-changelog_417#4178_1519_openshift_W)
+    * [Worker node fix pack 4.17.8_1519_openshift, released 16 December 2024](/docs/openshift?topic=openshift-openshift_changelog_417#4178_1519_openshift_W)
 
-    * [Worker node fix pack 4.17.5_1518_openshift, released 05 December 2024](/docs/openshift?topic=openshift-changelog_417#4175_1518_openshift_W)
+    * [Worker node fix pack 4.17.5_1518_openshift, released 05 December 2024](/docs/openshift?topic=openshift-openshift_changelog_417#4175_1518_openshift_W)
 
-    * [Master fix pack 4.17.5_1517_openshift, released 04 December 2024](/docs/openshift?topic=openshift-changelog_417#4175_1517_openshift_M)
+    * [Master fix pack 4.17.5_1517_openshift, released 04 December 2024](/docs/openshift?topic=openshift-openshift_changelog_417#4175_1517_openshift_M)
 
-    * [Master fix pack 4.17.4_1515_openshift and worker node fix pack 4.17.4_1516_openshift, released 20 November 2024](/docs/openshift?topic=openshift-changelog_417#openshift_changelog_4174_1515)
+    * [Master fix pack 4.17.4_1515_openshift and worker node fix pack 4.17.4_1516_openshift, released 20 November 2024](/docs/openshift?topic=openshift-openshift_changelog_417#openshift_changelog_4174_1515)
 
 [4.17 CIS Kubernetes benchmark](/docs/openshift?topic=openshift-cis-benchmark-417#cis-benchmark-417)
 
@@ -6732,161 +6732,161 @@ subcollection: openshift
 
 * [RHEL 9](/docs/openshift?topic=openshift-cs_versions_416#416_rhel9)
 
-[4.16 version change log](/docs/openshift?topic=openshift-changelog_416#changelog_416)
+[4.16 version change log](/docs/openshift?topic=openshift-openshift_changelog_416#openshift_changelog_416)
 
-* [Overview](/docs/openshift?topic=openshift-changelog_416#changelog_overview_416)
+* [Overview](/docs/openshift?topic=openshift-openshift_changelog_416#changelog_overview_416)
 
-* [Version 4.16](/docs/openshift?topic=openshift-changelog_416#416_components)
+* [Version 4.16](/docs/openshift?topic=openshift-openshift_changelog_416#416_components)
 
-    * [Worker node fix pack 4.16.67_1628_openshift, released 12 August 2026](/docs/openshift?topic=openshift-changelog_416#cl-boms-41667_1628_openshift_W)
+    * [Worker node fix pack 4.16.67_1628_openshift, released 12 August 2026](/docs/openshift?topic=openshift-openshift_changelog_416#cl-boms-41667_1628_openshift_W)
 
-    * [Master fix pack 4.16.68_1627_openshift, released 07 August 2026](/docs/openshift?topic=openshift-changelog_416#cl-boms_master-41668_1627_openshift_M)
+    * [Master fix pack 4.16.68_1627_openshift, released 07 August 2026](/docs/openshift?topic=openshift-openshift_changelog_416#cl-boms_master-41668_1627_openshift_M)
 
-    * [Worker node fix pack 4.16.66_1626_openshift, released 28 July 2026](/docs/openshift?topic=openshift-changelog_416#cl-boms-41666_1626_openshift_W)
+    * [Worker node fix pack 4.16.66_1626_openshift, released 28 July 2026](/docs/openshift?topic=openshift-openshift_changelog_416#cl-boms-41666_1626_openshift_W)
 
-    * [Master fix pack 4.16.64_1624_openshift, released 28 July 2026](/docs/openshift?topic=openshift-changelog_416#cl-boms_master-41664_1624_openshift_M)
+    * [Master fix pack 4.16.64_1624_openshift, released 28 July 2026](/docs/openshift?topic=openshift-openshift_changelog_416#cl-boms_master-41664_1624_openshift_M)
 
-    * [Worker node fix pack 4.16.65_1625_openshift, released 13 July 2026](/docs/openshift?topic=openshift-changelog_416#cl-boms-41665_1625_openshift_W)
+    * [Worker node fix pack 4.16.65_1625_openshift, released 13 July 2026](/docs/openshift?topic=openshift-openshift_changelog_416#cl-boms-41665_1625_openshift_W)
 
-    * [Worker node fix pack 4.16.64_1622_openshift, released 01 July 2026](/docs/openshift?topic=openshift-changelog_416#cl-boms-41664_1622_openshift_W)
+    * [Worker node fix pack 4.16.64_1622_openshift, released 01 July 2026](/docs/openshift?topic=openshift-openshift_changelog_416#cl-boms-41664_1622_openshift_W)
 
-    * [Master fix pack 4.16.63_1620_openshift, released 26 June 2026](/docs/openshift?topic=openshift-changelog_416#cl-boms_master-41663_1620_openshift_M)
+    * [Master fix pack 4.16.63_1620_openshift, released 26 June 2026](/docs/openshift?topic=openshift-openshift_changelog_416#cl-boms_master-41663_1620_openshift_M)
 
-    * [Worker node fix pack 4.16.63_1621_openshift, released 15 June 2026](/docs/openshift?topic=openshift-changelog_416#cl-boms-41663_1621_openshift_W)
+    * [Worker node fix pack 4.16.63_1621_openshift, released 15 June 2026](/docs/openshift?topic=openshift-openshift_changelog_416#cl-boms-41663_1621_openshift_W)
 
-    * [Worker node fix pack 4.16.62_1619_openshift, released 03 June 2026](/docs/openshift?topic=openshift-changelog_416#cl-boms-41662_1619_openshift_W)
+    * [Worker node fix pack 4.16.62_1619_openshift, released 03 June 2026](/docs/openshift?topic=openshift-openshift_changelog_416#cl-boms-41662_1619_openshift_W)
 
-    * [Master fix pack 4.16.61_1617_openshift, released 22 May 2026](/docs/openshift?topic=openshift-changelog_416#cl-boms_master-41661_1617_openshift_M)
+    * [Master fix pack 4.16.61_1617_openshift, released 22 May 2026](/docs/openshift?topic=openshift-openshift_changelog_416#cl-boms_master-41661_1617_openshift_M)
 
-    * [Worker node fix pack 4.16.62_1618_openshift, released 20 May 2026](/docs/openshift?topic=openshift-changelog_416#cl-boms-41662_1618_openshift_W)
+    * [Worker node fix pack 4.16.62_1618_openshift, released 20 May 2026](/docs/openshift?topic=openshift-openshift_changelog_416#cl-boms-41662_1618_openshift_W)
 
-    * [Worker node fix pack 4.16.60_1614_openshift, released 04 May 2026](/docs/openshift?topic=openshift-changelog_416#cl-boms-41660_1614_openshift_W)
+    * [Worker node fix pack 4.16.60_1614_openshift, released 04 May 2026](/docs/openshift?topic=openshift-openshift_changelog_416#cl-boms-41660_1614_openshift_W)
 
-    * [Master fix pack 4.16.59_1613_openshift, released 27 April 2026](/docs/openshift?topic=openshift-changelog_416#cl-boms_master-41659_1613_openshift_M)
+    * [Master fix pack 4.16.59_1613_openshift, released 27 April 2026](/docs/openshift?topic=openshift-openshift_changelog_416#cl-boms_master-41659_1613_openshift_M)
 
-    * [Worker node fix pack 4.16.59_1610_openshift, released 20 April 2026](/docs/openshift?topic=openshift-changelog_416#cl-boms-41659_1610_openshift_W)
+    * [Worker node fix pack 4.16.59_1610_openshift, released 20 April 2026](/docs/openshift?topic=openshift-openshift_changelog_416#cl-boms-41659_1610_openshift_W)
 
-    * [Worker node fix pack 4.16.58_1609_openshift, released 06 April 2026](/docs/openshift?topic=openshift-changelog_416#cl-boms-41658_1609_openshift_W)
+    * [Worker node fix pack 4.16.58_1609_openshift, released 06 April 2026](/docs/openshift?topic=openshift-openshift_changelog_416#cl-boms-41658_1609_openshift_W)
 
-    * [Change log for Master fix pack 4.16.57_1608_openshift, released 02 April 2026](/docs/openshift?topic=openshift-changelog_416#41657_1608_openshift_M)
+    * [Change log for Master fix pack 4.16.57_1608_openshift, released 02 April 2026](/docs/openshift?topic=openshift-openshift_changelog_416#41657_1608_openshift_M)
 
-    * [Worker node fix pack 4.16.58_1608_openshift, released 24 March 2026](/docs/openshift?topic=openshift-changelog_416#cl-boms-41658_1608_openshift_W)
+    * [Worker node fix pack 4.16.58_1608_openshift, released 24 March 2026](/docs/openshift?topic=openshift-openshift_changelog_416#cl-boms-41658_1608_openshift_W)
 
-    * [Worker node fix pack 4.16.57_1605_openshift, released 11 March 2026](/docs/openshift?topic=openshift-changelog_416#cl-boms-41657_1605_openshift_W)
+    * [Worker node fix pack 4.16.57_1605_openshift, released 11 March 2026](/docs/openshift?topic=openshift-openshift_changelog_416#cl-boms-41657_1605_openshift_W)
 
-    * [Worker node fix pack 4.16.57_1604_openshift, released 24 February 2026](/docs/openshift?topic=openshift-changelog_416#cl-boms-41657_1604_openshift_W)
+    * [Worker node fix pack 4.16.57_1604_openshift, released 24 February 2026](/docs/openshift?topic=openshift-openshift_changelog_416#cl-boms-41657_1604_openshift_W)
 
-    * [Change log for Master fix pack 4.16.56_1603_openshift, released 18 February 2026](/docs/openshift?topic=openshift-changelog_416#41656_1603_openshift_M)
+    * [Change log for Master fix pack 4.16.56_1603_openshift, released 18 February 2026](/docs/openshift?topic=openshift-openshift_changelog_416#41656_1603_openshift_M)
 
-    * [Worker node fix pack 4.16.56_1602_openshift, released 09 February 2026](/docs/openshift?topic=openshift-changelog_416#cl-boms-41656_1602_openshift_W)
+    * [Worker node fix pack 4.16.56_1602_openshift, released 09 February 2026](/docs/openshift?topic=openshift-openshift_changelog_416#cl-boms-41656_1602_openshift_W)
 
-    * [Worker node fix pack 4.16.55_1601_openshift, released 27 January 2026](/docs/openshift?topic=openshift-changelog_416#cl-boms-41655_1601_openshift_W)
+    * [Worker node fix pack 4.16.55_1601_openshift, released 27 January 2026](/docs/openshift?topic=openshift-openshift_changelog_416#cl-boms-41655_1601_openshift_W)
 
-    * [Master fix pack 4.16.54_1600_openshift, released 21 January 2026](/docs/openshift?topic=openshift-changelog_416#41654_1600_openshift_M)
+    * [Master fix pack 4.16.54_1600_openshift, released 21 January 2026](/docs/openshift?topic=openshift-openshift_changelog_416#41654_1600_openshift_M)
 
-    * [Worker node fix pack 4.16.54_1598_openshift, released 12 January 2026](/docs/openshift?topic=openshift-changelog_416#cl-boms-41654_1598_openshift_W)
+    * [Worker node fix pack 4.16.54_1598_openshift, released 12 January 2026](/docs/openshift?topic=openshift-openshift_changelog_416#cl-boms-41654_1598_openshift_W)
 
-    * [Worker node fix pack 4.16.54_1597_openshift, released 29 December 2025](/docs/openshift?topic=openshift-changelog_416#cl-boms-41654_1597_openshift_W)
+    * [Worker node fix pack 4.16.54_1597_openshift, released 29 December 2025](/docs/openshift?topic=openshift-openshift_changelog_416#cl-boms-41654_1597_openshift_W)
 
-    * [Worker node fix pack 4.16.54_1596_openshift, released 16 December 2025](/docs/openshift?topic=openshift-changelog_416#cl-boms-41654_1596_openshift_W)
+    * [Worker node fix pack 4.16.54_1596_openshift, released 16 December 2025](/docs/openshift?topic=openshift-openshift_changelog_416#cl-boms-41654_1596_openshift_W)
 
-    * [Master fix pack 4.16.52_1595_openshift, released 10 December 2025](/docs/openshift?topic=openshift-changelog_416#41652_1595_openshift_M)
+    * [Master fix pack 4.16.52_1595_openshift, released 10 December 2025](/docs/openshift?topic=openshift-openshift_changelog_416#41652_1595_openshift_M)
 
-    * [Worker node fix pack 4.16.52_1594_openshift, released 03 December 2025](/docs/openshift?topic=openshift-changelog_416#cl-boms-41652_1594_openshift_W)
+    * [Worker node fix pack 4.16.52_1594_openshift, released 03 December 2025](/docs/openshift?topic=openshift-openshift_changelog_416#cl-boms-41652_1594_openshift_W)
 
-    * [Worker node fix pack 4.16.52_1593_openshift, released 17 November 2025](/docs/openshift?topic=openshift-changelog_416#cl-boms-41652_1593_openshift_W)
+    * [Worker node fix pack 4.16.52_1593_openshift, released 17 November 2025](/docs/openshift?topic=openshift-openshift_changelog_416#cl-boms-41652_1593_openshift_W)
 
-    * [Master fix pack 4.16.51_1592_openshift, released 15 November 2025](/docs/openshift?topic=openshift-changelog_416#41651_1592_openshift_M)
+    * [Master fix pack 4.16.51_1592_openshift, released 15 November 2025](/docs/openshift?topic=openshift-openshift_changelog_416#41651_1592_openshift_M)
 
-    * [Worker node fix pack 4.16.51_1588_openshift, released 06 November 2025](/docs/openshift?topic=openshift-changelog_416#cl-boms-41651_1588_openshift_W)
+    * [Worker node fix pack 4.16.51_1588_openshift, released 06 November 2025](/docs/openshift?topic=openshift-openshift_changelog_416#cl-boms-41651_1588_openshift_W)
 
-    * [Worker node fix pack 4.16.50_1587_openshift, released 21 October 2025](/docs/openshift?topic=openshift-changelog_416#cl-boms-41650_1587_openshift_W)
+    * [Worker node fix pack 4.16.50_1587_openshift, released 21 October 2025](/docs/openshift?topic=openshift-openshift_changelog_416#cl-boms-41650_1587_openshift_W)
 
-    * [Worker node fix pack 4.16.49_1586_openshift, released 08 October 2025](/docs/openshift?topic=openshift-changelog_416#cl-boms-41649_1586_openshift_W)
+    * [Worker node fix pack 4.16.49_1586_openshift, released 08 October 2025](/docs/openshift?topic=openshift-openshift_changelog_416#cl-boms-41649_1586_openshift_W)
 
-    * [Master fix pack 4.16.48_1585_openshift, released 07 October 2025](/docs/openshift?topic=openshift-changelog_416#41648_1585_openshift_M)
+    * [Master fix pack 4.16.48_1585_openshift, released 07 October 2025](/docs/openshift?topic=openshift-openshift_changelog_416#41648_1585_openshift_M)
 
-    * [Worker node fix pack 4.16.48_1582_openshift, released 23 September 2025](/docs/openshift?topic=openshift-changelog_416#cl-boms-41648_1582_openshift_W)
+    * [Worker node fix pack 4.16.48_1582_openshift, released 23 September 2025](/docs/openshift?topic=openshift-openshift_changelog_416#cl-boms-41648_1582_openshift_W)
 
-    * [Worker node fix pack 4.16.47_1580_openshift, released 09 September 2025](/docs/openshift?topic=openshift-changelog_416#cl-boms-41647_1580_openshift_W)
+    * [Worker node fix pack 4.16.47_1580_openshift, released 09 September 2025](/docs/openshift?topic=openshift-openshift_changelog_416#cl-boms-41647_1580_openshift_W)
 
-    * [Worker node fix pack 4.16.46_1579_openshift, released 26 August 2025](/docs/openshift?topic=openshift-changelog_416#cl-boms-41646_1579_openshift_W)
+    * [Worker node fix pack 4.16.46_1579_openshift, released 26 August 2025](/docs/openshift?topic=openshift-openshift_changelog_416#cl-boms-41646_1579_openshift_W)
 
-    * [Master fix pack 4.16.45_1578_openshift, released 20 August 2025](/docs/openshift?topic=openshift-changelog_416#41645_1578_openshift_M)
+    * [Master fix pack 4.16.45_1578_openshift, released 20 August 2025](/docs/openshift?topic=openshift-openshift_changelog_416#41645_1578_openshift_M)
 
-    * [Worker node fix pack 4.16.45_1576_openshift, released 12 August 2025](/docs/openshift?topic=openshift-changelog_416#cl-boms-41645_1576_openshift_W)
+    * [Worker node fix pack 4.16.45_1576_openshift, released 12 August 2025](/docs/openshift?topic=openshift-openshift_changelog_416#cl-boms-41645_1576_openshift_W)
 
-    * [Master fix pack 4.16.43_1574_openshift, released 30 July 2025](/docs/openshift?topic=openshift-changelog_416#41643_1574_openshift_M)
+    * [Master fix pack 4.16.43_1574_openshift, released 30 July 2025](/docs/openshift?topic=openshift-openshift_changelog_416#41643_1574_openshift_M)
 
-    * [Worker node fix pack 4.16.44_1575_openshift, released 28 July 2025](/docs/openshift?topic=openshift-changelog_416#cl-boms-41644_1575_openshift_W)
+    * [Worker node fix pack 4.16.44_1575_openshift, released 28 July 2025](/docs/openshift?topic=openshift-openshift_changelog_416#cl-boms-41644_1575_openshift_W)
 
-    * [Worker node fix pack 4.16.43_1573_openshift, released 14 July 2025](/docs/openshift?topic=openshift-changelog_416#cl-boms-41643_1573_openshift_W)
+    * [Worker node fix pack 4.16.43_1573_openshift, released 14 July 2025](/docs/openshift?topic=openshift-openshift_changelog_416#cl-boms-41643_1573_openshift_W)
 
-    * [Worker node fix pack 4.16.42_1572_openshift, released 01 July 2025](/docs/openshift?topic=openshift-changelog_416#cl-boms-41642_1572_openshift_W)
+    * [Worker node fix pack 4.16.42_1572_openshift, released 01 July 2025](/docs/openshift?topic=openshift-openshift_changelog_416#cl-boms-41642_1572_openshift_W)
 
-    * [Master fix pack 4.16.41_1570_openshift, released 18 June 2025](/docs/openshift?topic=openshift-changelog_416#41641_1570_openshift_M)
+    * [Master fix pack 4.16.41_1570_openshift, released 18 June 2025](/docs/openshift?topic=openshift-openshift_changelog_416#41641_1570_openshift_M)
 
-    * [Worker node fix pack 4.16.41_1571_openshift, released 16 June 2025](/docs/openshift?topic=openshift-changelog_416#cl-boms-41641_1571_openshift_W)
+    * [Worker node fix pack 4.16.41_1571_openshift, released 16 June 2025](/docs/openshift?topic=openshift-openshift_changelog_416#cl-boms-41641_1571_openshift_W)
 
-    * [Worker node fix pack 4.16.41_1568_openshift, released 04 June 2025](/docs/openshift?topic=openshift-changelog_416#cl-boms-41641_1568_openshift_W)
+    * [Worker node fix pack 4.16.41_1568_openshift, released 04 June 2025](/docs/openshift?topic=openshift-openshift_changelog_416#cl-boms-41641_1568_openshift_W)
 
-    * [Master fix pack 4.16.40_1567_openshift, released 28 May 2025](/docs/openshift?topic=openshift-changelog_416#41640_1567_openshift_M)
+    * [Master fix pack 4.16.40_1567_openshift, released 28 May 2025](/docs/openshift?topic=openshift-openshift_changelog_416#41640_1567_openshift_M)
 
-    * [Worker node fix pack 4.16.40_1566_openshift, released 19 May 2025](/docs/openshift?topic=openshift-changelog_416#cl-boms-41640_1566_openshift_W)
+    * [Worker node fix pack 4.16.40_1566_openshift, released 19 May 2025](/docs/openshift?topic=openshift-openshift_changelog_416#cl-boms-41640_1566_openshift_W)
 
-    * [Worker node fix pack 4.16.39_1565_openshift, released 07 May 2025](/docs/openshift?topic=openshift-changelog_416#cl-boms-41639_1565_openshift_W)
+    * [Worker node fix pack 4.16.39_1565_openshift, released 07 May 2025](/docs/openshift?topic=openshift-openshift_changelog_416#cl-boms-41639_1565_openshift_W)
 
-    * [Master fix pack 4.16.38_1564_openshift, released 30 April 2025](/docs/openshift?topic=openshift-changelog_416#41638_1564_openshift_M)
+    * [Master fix pack 4.16.38_1564_openshift, released 30 April 2025](/docs/openshift?topic=openshift-openshift_changelog_416#41638_1564_openshift_M)
 
-    * [Worker node fix pack 4.16.38_1563_openshift, released 21 April 2025](/docs/openshift?topic=openshift-changelog_416#cl-boms-41638_1563_openshift_W)
+    * [Worker node fix pack 4.16.38_1563_openshift, released 21 April 2025](/docs/openshift?topic=openshift-openshift_changelog_416#cl-boms-41638_1563_openshift_W)
 
-    * [Worker node fix pack 4.16.38_1562_openshift, released 08 April 2025](/docs/openshift?topic=openshift-changelog_416#cl-boms-41638_1562_openshift_W)
+    * [Worker node fix pack 4.16.38_1562_openshift, released 08 April 2025](/docs/openshift?topic=openshift-openshift_changelog_416#cl-boms-41638_1562_openshift_W)
 
-    * [Master fix pack 4.16.36_1560_openshift, released 26 March 2025](/docs/openshift?topic=openshift-changelog_416#41636_1560_openshift_M)
+    * [Master fix pack 4.16.36_1560_openshift, released 26 March 2025](/docs/openshift?topic=openshift-openshift_changelog_416#41636_1560_openshift_M)
 
-    * [Worker node fix pack 4.16.37_1561_openshift, released 24 March 2025](/docs/openshift?topic=openshift-changelog_416#cl-boms-41637_1561_openshift_W)
+    * [Worker node fix pack 4.16.37_1561_openshift, released 24 March 2025](/docs/openshift?topic=openshift-openshift_changelog_416#cl-boms-41637_1561_openshift_W)
 
-    * [Worker node fix pack 4.16.37_1559_openshift, released 11 March 2025](/docs/openshift?topic=openshift-changelog_416#cl-boms-41637_1559_openshift_W)
+    * [Worker node fix pack 4.16.37_1559_openshift, released 11 March 2025](/docs/openshift?topic=openshift-openshift_changelog_416#cl-boms-41637_1559_openshift_W)
 
-    * [Worker node fix pack 4.16.35_1558_openshift, released 24 February 2025](/docs/openshift?topic=openshift-changelog_416#cl-boms-41635_1558_openshift_W)
+    * [Worker node fix pack 4.16.35_1558_openshift, released 24 February 2025](/docs/openshift?topic=openshift-openshift_changelog_416#cl-boms-41635_1558_openshift_W)
 
-    * [Master fix pack 4.16.32_1557_openshift, released 19 February 2025](/docs/openshift?topic=openshift-changelog_416#41632_1557_openshift_M)
+    * [Master fix pack 4.16.32_1557_openshift, released 19 February 2025](/docs/openshift?topic=openshift-openshift_changelog_416#41632_1557_openshift_M)
 
-    * [Worker node fix pack 4.16.32_1556_openshift, released 11 February 2025](/docs/openshift?topic=openshift-changelog_416#cl-boms-41632_1556_openshift_W)
+    * [Worker node fix pack 4.16.32_1556_openshift, released 11 February 2025](/docs/openshift?topic=openshift-openshift_changelog_416#cl-boms-41632_1556_openshift_W)
 
-    * [Worker node fix pack 4.16.30_1554_openshift, released 29 January 2025](/docs/openshift?topic=openshift-changelog_416#cl-boms-41630_1554_openshift_W)
+    * [Worker node fix pack 4.16.30_1554_openshift, released 29 January 2025](/docs/openshift?topic=openshift-openshift_changelog_416#cl-boms-41630_1554_openshift_W)
 
-    * [Master fix pack 4.16.28_1550_openshift, released 22 January 2025](/docs/openshift?topic=openshift-changelog_416#41628_1550_openshift_M)
+    * [Master fix pack 4.16.28_1550_openshift, released 22 January 2025](/docs/openshift?topic=openshift-openshift_changelog_416#41628_1550_openshift_M)
 
-    * [Worker node fix pack 4.16.29_1549_openshift, released 13 January 2025](/docs/openshift?topic=openshift-changelog_416#cl-boms-41629_1549_openshift_W)
+    * [Worker node fix pack 4.16.29_1549_openshift, released 13 January 2025](/docs/openshift?topic=openshift-openshift_changelog_416#cl-boms-41629_1549_openshift_W)
 
-    * [Worker node fix pack 4.16.27_1548_openshift, released 30 December 2024](/docs/openshift?topic=openshift-changelog_416#41627_1548_openshift_W)
+    * [Worker node fix pack 4.16.27_1548_openshift, released 30 December 2024](/docs/openshift?topic=openshift-openshift_changelog_416#41627_1548_openshift_W)
 
-    * [Worker node fix pack 4.16.26_1547_openshift, released 16 December 2024](/docs/openshift?topic=openshift-changelog_416#41626_1547_openshift_W)
+    * [Worker node fix pack 4.16.26_1547_openshift, released 16 December 2024](/docs/openshift?topic=openshift-openshift_changelog_416#41626_1547_openshift_W)
 
-    * [Worker node fix pack 4.16.23_1546_openshift, released 05 December 2024](/docs/openshift?topic=openshift-changelog_416#41623_1546_openshift_W)
+    * [Worker node fix pack 4.16.23_1546_openshift, released 05 December 2024](/docs/openshift?topic=openshift-openshift_changelog_416#41623_1546_openshift_W)
 
-    * [Master fix pack 4.16.23_1545_openshift, released 04 December 2024](/docs/openshift?topic=openshift-changelog_416#41623_1545_openshift_M)
+    * [Master fix pack 4.16.23_1545_openshift, released 04 December 2024](/docs/openshift?topic=openshift-openshift_changelog_416#41623_1545_openshift_M)
 
-    * [Worker node fix pack 4.16.21_1544_openshift, released 18 November 2024](/docs/openshift?topic=openshift-changelog_416#41621_1544_openshift_W)
+    * [Worker node fix pack 4.16.21_1544_openshift, released 18 November 2024](/docs/openshift?topic=openshift-openshift_changelog_416#41621_1544_openshift_W)
 
-    * [Master fix pack 4.16.19_1543_openshift, released 13 November 2024](/docs/openshift?topic=openshift-changelog_416#41619_1543_openshift_M)
+    * [Master fix pack 4.16.19_1543_openshift, released 13 November 2024](/docs/openshift?topic=openshift-openshift_changelog_416#41619_1543_openshift_M)
 
-    * [Worker node fix pack 4.16.19_1542_openshift, released 04 November 2024](/docs/openshift?topic=openshift-changelog_416#41619_1542_openshift_W)
+    * [Worker node fix pack 4.16.19_1542_openshift, released 04 November 2024](/docs/openshift?topic=openshift-openshift_changelog_416#41619_1542_openshift_W)
 
-    * [Master fix pack 4.16.16_1541_openshift, released 30 October 2024](/docs/openshift?topic=openshift-changelog_416#41616_1541_openshift_M)
+    * [Master fix pack 4.16.16_1541_openshift, released 30 October 2024](/docs/openshift?topic=openshift-openshift_changelog_416#41616_1541_openshift_M)
 
-    * [Worker node fix pack 4.16.17_1540_openshift, released 21 October 2024](/docs/openshift?topic=openshift-changelog_416#41617_1540_openshift_W)
+    * [Worker node fix pack 4.16.17_1540_openshift, released 21 October 2024](/docs/openshift?topic=openshift-openshift_changelog_416#41617_1540_openshift_W)
 
-    * [Worker node fix pack 4.16.15_1539_openshift, released 09 October 2024](/docs/openshift?topic=openshift-changelog_416#41615_1539_openshift_W)
+    * [Worker node fix pack 4.16.15_1539_openshift, released 09 October 2024](/docs/openshift?topic=openshift-openshift_changelog_416#41615_1539_openshift_W)
 
-    * [Master fix pack 4.16.10_1537_openshift, released 25 September 2024](/docs/openshift?topic=openshift-changelog_416#41610_1537_openshift_M)
+    * [Master fix pack 4.16.10_1537_openshift, released 25 September 2024](/docs/openshift?topic=openshift-openshift_changelog_416#41610_1537_openshift_M)
 
-    * [Worker node fix pack 4.16.13_1538_openshift, released 23 September 2024](/docs/openshift?topic=openshift-changelog_416#41613_1538_openshift_W)
+    * [Worker node fix pack 4.16.13_1538_openshift, released 23 September 2024](/docs/openshift?topic=openshift-openshift_changelog_416#41613_1538_openshift_W)
 
-    * [Worker node fix pack 4.16.10_1535_openshift, released 10 September 2024](/docs/openshift?topic=openshift-changelog_416#41610_1535_openshift_W)
+    * [Worker node fix pack 4.16.10_1535_openshift, released 10 September 2024](/docs/openshift?topic=openshift-openshift_changelog_416#41610_1535_openshift_W)
 
-    * [Master fix pack 4.16.7_1532_openshift and worker node fix pack 4.16.6_1531_openshift, released 30 August 2024](/docs/openshift?topic=openshift-changelog_416#openshift_changelog_4167_1532)
+    * [Master fix pack 4.16.7_1532_openshift and worker node fix pack 4.16.6_1531_openshift, released 30 August 2024](/docs/openshift?topic=openshift-openshift_changelog_416#openshift_changelog_4167_1532)
 
 [4.16 CIS Kubernetes benchmark](/docs/openshift?topic=openshift-cis-benchmark-416#cis-benchmark-416)
 

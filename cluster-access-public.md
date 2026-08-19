@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2026
-lastupdated: "2026-08-11"
+lastupdated: "2026-08-19"
 
 keywords: openshift, clusters, access, public, endpoint, console, cli, login
 
@@ -13,7 +13,7 @@ subcollection: openshift
 {{site.data.keyword.attribute-definition-list}}
 
 # Accessing clusters through the public cloud service endpoint
-{: #access-public}
+{: #cluster-access-public}
 
 For {{site.data.keyword.redhat_openshift_notm}} Classic and VPC clusters that have a public cloud service endpoint enabled, you can log in from the {{site.data.keyword.cloud_notm}} console or the CLI.
 {: shortdesc}
