@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2026
-lastupdated: "2026-08-18"
+lastupdated: "2026-08-19"
 
 
 keywords: kubernetes, release notes, openshift, {{site.data.keyword.openshiftlong_notm}}
@@ -94,8 +94,12 @@ Worker node fix packs are available for {{site.data.keyword.openshiftlong_notm}}
 {: #openshift-aug1026}
 {: release-note}
 
+
+
 OpenShift Virtualization cluster add-on patch updates.
 :   For more information, see the [change log](/docs/openshift?topic=openshift-cl-add-ons-openshift-virtualization).
+
+
 
 IBM Object CSI Driver cluster add-on patch updates.
 :   For more information, see the [change log](/docs/openshift?topic=openshift-cl-add-ons-ibm-object-csi-driver).
