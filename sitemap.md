@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2026
-lastupdated: "2026-08-18"
+lastupdated: "2026-08-19"
 
 
 keywords: openshift
@@ -9107,12 +9107,6 @@ subcollection: openshift
 * [Network health check (NHC) errors](/docs/openshift?topic=openshift-ts-error-glossary#ts-errors-nhc)
 
 * [Ingress status errors (ERR and ESS codes)](/docs/openshift?topic=openshift-ts-error-glossary#ts-errors-ingress-codes)
-
-    * [Shared Ingress errors](/docs/openshift?topic=openshift-ts-error-glossary#ts-errors-ingress-shared)
-
-    * [Red Hat OpenShift on IBM Cloud Ingress and router errors](/docs/openshift?topic=openshift-ts-error-glossary#ts-errors-ingress-roks)
-
-    * [Red Hat OpenShift on IBM Cloud general Ingress and router errors](/docs/openshift?topic=openshift-ts-error-glossary#ts-errors-ingress-roks-general)
 
 * [Load balancers](/docs/openshift?topic=openshift-ts-error-glossary#ts-errors-lb)
 
