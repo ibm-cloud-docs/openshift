@@ -2,7 +2,7 @@
 
 copyright:
   years: 2024, 2026
-lastupdated: "2026-08-12"
+lastupdated: "2026-08-19"
 
 keywords: openshift, {{site.data.keyword.openshiftlong_notm}}, etcd, capacity, database, limits
 
@@ -35,8 +35,18 @@ etcd database size is approaching the maximum
 ```
 {: pre}
 
-{{site.data.keyword.openshiftlong_notm}} uses an `etcd` database as its backing store for all cluster data. This database is where resources like configmaps, secrets, deployments, and all other Kubernetes resources are stored. {{site.data.keyword.openshiftlong_notm}} limits the size of the backing etcd database to a maximum of 4 GiB, which provides sufficient capacity under normal operating conditions. However, if a user or process creates an extremely large number of objects, the in-use database size can reach the maximum.
+{{site.data.keyword.openshiftlong_notm}} uses an `etcd` database as its backing store for all cluster data. This database is where resources like configmaps, secrets, deployments, and all other Kubernetes resources are stored.
 {: tsCauses}
+
+The maximum etcd database size depends on your cluster version. These limits provide sufficient capacity under normal operating conditions. However, if a user or process creates an extremely large number of objects, the in-use database size can reach the maximum.
+
+
+4 GiB
+:   Clusters running {{site.data.keyword.redhat_openshift_notm}} version 4.19 and earlier.
+
+6 GiB
+:   Clusters running version 4.21 and later, or version 4.20.25_1556_openshift and later.
+
 
 Identify the resources which are occupying space in the etcd database.
 {: tsResolve}
