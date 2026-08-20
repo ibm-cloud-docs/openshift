@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2026
-lastupdated: "2026-08-19"
+lastupdated: "2026-08-20"
 
 
 keywords: openshift
@@ -487,6 +487,14 @@ subcollection: openshift
 
 * [August 2026](/docs/openshift?topic=openshift-openshift-relnotes#openshift-aug26)
 
+    * [20 August 2026](/docs/openshift?topic=openshift-openshift-relnotes#openshift-aug2026)
+
+        * IBM Object CSI Driver cluster add-on patch updates.
+
+    * [19 August 2026](/docs/openshift?topic=openshift-openshift-relnotes#openshift-aug1926)
+
+        * CLI version 1.0.829 is available.
+
     * [18 August 2026](/docs/openshift?topic=openshift-openshift-relnotes#openshift-aug1826)
 
         * VPC File CSI Driver cluster add-on patch updates.
@@ -538,6 +546,8 @@ subcollection: openshift
     * [3 August 2026](/docs/openshift?topic=openshift-openshift-relnotes#openshift-aug0326)
 
         * Openshift AI cluster add-on patch updates.
+
+        * CLI version 1.0.815 is available.
 
 * [July 2026](/docs/openshift?topic=openshift-openshift-relnotes#openshift-jul26)
 
@@ -7239,13 +7249,7 @@ subcollection: openshift
 
     * [`ibmcloud oc experimental trusted-profile set`](/docs/openshift?topic=openshift-kubernetes-service-cli#experimental-trusted-profile-set-cli)
 
-    * [`ibmcloud oc experimental vni attach baremetal`](/docs/openshift?topic=openshift-kubernetes-service-cli#experimental-vni-attach-baremetal-cli)
-
     * [`ibmcloud oc experimental vni attach virtual`](/docs/openshift?topic=openshift-kubernetes-service-cli#experimental-vni-attach-virtual-cli)
-
-    * [`ibmcloud oc experimental vni detach`](/docs/openshift?topic=openshift-kubernetes-service-cli#experimental-vni-detach-cli)
-
-    * [`ibmcloud oc experimental vni ls`](/docs/openshift?topic=openshift-kubernetes-service-cli#experimental-vni-ls-cli)
 
 * [Flavor commands](/docs/openshift?topic=openshift-kubernetes-service-cli#flavor-cli)
 
@@ -7572,6 +7576,10 @@ subcollection: openshift
 [CLI change log](/docs/openshift?topic=openshift-cs_cli_changelog#cs_cli_changelog)
 
 * [Version 1.0](/docs/openshift?topic=openshift-cs_cli_changelog#10)
+
+* [Version v1.0.829](/docs/openshift?topic=openshift-cs_cli_changelog#cli-01829)
+
+* [Version v1.0.815](/docs/openshift?topic=openshift-cs_cli_changelog#cli-01815)
 
 * [Version v1.0.804](/docs/openshift?topic=openshift-cs_cli_changelog#cli-01804)
 
@@ -8262,6 +8270,8 @@ subcollection: openshift
 [IBM Object CSI Driver add-on version change log](/docs/openshift?topic=openshift-cl-add-ons-ibm-object-csi-driver#cl-add-ons-ibm-object-csi-driver)
 
 * [Version 1.0](/docs/openshift?topic=openshift-cl-add-ons-ibm-object-csi-driver#cl-add-ons-ibm-object-csi-driver-1.0)
+
+    * [Version 1.0 - v1.0.27_360474192, released 20 August 2026](/docs/openshift?topic=openshift-cl-add-ons-ibm-object-csi-driver#cl-add-ons-ibm-object-csi-driver-v1027_360474192)
 
     * [Version 1.0 - v1.0.26_360474192, released 10 August 2026](/docs/openshift?topic=openshift-cl-add-ons-ibm-object-csi-driver#cl-add-ons-ibm-object-csi-driver-v1026_360474192)
 

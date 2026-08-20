@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2026
-lastupdated: "2026-08-06"
+lastupdated: "2026-08-19"
 
 
 keywords: openshift, {{site.data.keyword.openshiftlong_notm}}, oc, ks
@@ -31,6 +31,19 @@ Refer to the following change logs for a summary of changes for each version of 
 
 Review the following changes for 1.0 versions of the CLI plug-in.
 {: shortdesc}
+
+## Version v1.0.829
+{: #cli-01829}
+
+Version 1.0.829 of the CLI was released on 19 August 2026.
+- Updates dependencies to address CVEs. No new functionality.
+
+## Version v1.0.815
+{: #cli-01815}
+
+Version 1.0.815 of the CLI was released on 03 August 2026.
+- Adds Cloud Service Endpoint (CSE) support.
+- Updates dependencies. No other new functionality.
 
 ## Version v1.0.804
 {: #cli-01804}
