@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2026
-lastupdated: "2026-08-13"
+lastupdated: "2026-08-20"
 
 keywords: openshift, clusters, access, api key, service id, automation, ci/cd, pipeline
 
@@ -44,6 +44,12 @@ An IAM API key is the recommended approach for automation and CI/CD pipelines.
 1. Log in to the cluster.
    ```sh
    oc login -u apikey -p API_KEY [--server=PRIVATE_SERVICE_ENDPOINT]
+   ```
+   {: pre}
+
+1. Run `oc` commands against your cluster.
+   ```sh
+   oc get nodes
    ```
    {: pre}
 

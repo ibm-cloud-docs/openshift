@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2026
-lastupdated: "2026-08-13"
+lastupdated: "2026-08-20"
 
 
 keywords: openshift
@@ -336,7 +336,7 @@ If you want to use the [Ingress domain health monitoring](/docs/openshift?topic=
 
 By default, monitoring health requests are sent through HTTPS to port 443, therefore you must allowlist traffic from the below IP ranges targeted to port 443. If your health monitor is configured to use HTTP instead, allowlist traffic must be targeted to port 80. Additionally, if you use a custom TCP port, make sure to allow incoming traffic to that port.
 
-For more information see the [IBM NS1 Connect Documentation about monitoring](https://www.ibm.com/docs/en/ns1-connect?topic=monitoring).
+For more information see the [IBM NS1 Connect Documentation about monitoring](https://www.ibm.com/docs/en/ns1-connect).
 
 ##### IBM NS1 Connect Monitoring IP Ranges
 {: #firewall-ingress-domain-monitor-ns1}

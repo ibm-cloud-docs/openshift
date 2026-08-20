@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2026
-lastupdated: "2026-08-11"
+lastupdated: "2026-08-20"
 
 keywords: openshift, clusters, access, vpe, virtual private endpoint, vpc, cross-account
 
@@ -18,8 +18,10 @@ subcollection: openshift
 A [Virtual Private Endpoint (VPE) gateway](/docs/vpc?topic=vpc-about-vpe) is created automatically for each VPC cluster. The cluster master is accessible through this endpoint if authorized users are connected to the same VPC network, such as through a [VPC VPN](/docs/vpc?topic=vpc-vpn-overview).
 {: shortdesc}
 
+
 For clusters that run version [4.13]{: tag-red}: If you enabled only the private cloud service endpoint during cluster creation, the VPE of your VPC is used by default to access {{site.data.keyword.redhat_openshift_notm}} components such as the web console or OperatorHub. You must be connected to the private VPC network to access these components.
 {: note}
+
 
 ## Before you begin
 {: #cluster-access-vpe-prereqs}
@@ -29,6 +31,9 @@ For clusters that run version [4.13]{: tag-red}: If you enabled only the private
 
 ## Accessing a VPC cluster through the VPE gateway
 {: #cluster-access-vpe-steps}
+
+
+
 
 1. Set the cluster context using the VPE endpoint.
    ```sh
@@ -46,6 +51,29 @@ For clusters that run version [4.13]{: tag-red}: If you enabled only the private
    oc version
    ```
    {: pre}
+
+
+### Protecting clusters using context based restrictions
+{: #protect-service-endpoints-with-cbr}
+
+Private service endpoint allowlists are no longer supported.  Migrate from private service endpoint allowlists to context based restrictions as soon as possible. For specific migration steps, see [Migrating from a private service endpoint allowlist to context based restrictions (CBR)](/docs/openshift?topic=openshift-pse-to-cbr-migration).
+{: unsupported}
+
+Control access to your public and private service endpoints using context based restriction (CBR) rules.
+{: shortdesc}
+
+After you [grant users access to your cluster through {{site.data.keyword.cloud_notm}} IAM](/docs/openshift?topic=openshift-iam-platform-access-roles), you can add a secondary layer of security by creating CBR rules for your cluster's public and private service endpoint. Only authorized requests to your cluster master that originate from subnets in the CBR rules will be allowed.
+
+If you want to allow requests from a different VPC than the one your cluster is in, you must include the cloud service endpoint IP address for that VPC in the CBR rules.
+{: note}
+
+For example, to access your cluster's private cloud service endpoint, you must connect to your {{site.data.keyword.cloud_notm}} classic network or your VPC network through a VPN or {{site.data.keyword.dl_full_notm}}. You can specify just the subnet for the VPN or {{site.data.keyword.dl_short}} tunnel to your CBR rules so that only authorized users in your organization can access the private cloud service endpoint from that subnet.
+
+Public CBR rules (if your cluster has a public service endpoint) can also help prevent users from accessing your cluster after their authorization is revoked. When a user leaves your organization, you remove their {{site.data.keyword.cloud_notm}} IAM permissions that grant them access to the cluster. However, the user might have copied the admin `kubeconfig` file for a cluster, giving them access to that cluster. If you have a public CBR rule that only allows access to your cluster masters from known public subnets that your organization owns, then the user's attempted access from another public IP address will be blocked.
+
+Worker node subnets are automatically added to and removed from the backend CBR implementation (but not the CBR rules/zones), so that worker nodes can always access the cluster master and users do not need to specifically add these to their own CBR rules.
+
+To learn more about protecting your cluster with CBR rules, see [Protecting cluster resources with context-based restrictions](/docs/openshift?topic=openshift-cbr) and [Example context-based restrictions scenarios](/docs/openshift?topic=openshift-cbr-tutorial)
 
 ## Creating additional VPE gateways in other VPCs and accounts
 {: #vpc_cluster_new_vpe_access}
@@ -137,7 +165,7 @@ The following steps show you how to create a cross-account VPE gateway.
         * VPC ACL allows the traffic
         * Context Based Restriction (CBR) rules on the target cluster allow private traffic from the source VPC (add the three `Cloud Service Endpoint source addresses` from your source VPC to the private CBR rule)
 
-### Target account example
+### Example: Target account commands
 {: #vpc_cluster_new_vpe_target_example}
 
 The following example shows commands run in the target account to gather information about the cluster and its VPE gateway.
@@ -265,7 +293,7 @@ The following example shows commands run in the target account to gather informa
     ```
     {: screen}
 
-### Source account example
+### Example: Source account commands
 {: #vpc_cluster_new_vpe_source_example}
 
 The following example shows commands run in the source account to create a VPE gateway that connects to the cluster in the target account.

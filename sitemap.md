@@ -2180,11 +2180,13 @@ subcollection: openshift
 
 * [Accessing a VPC cluster through the VPE gateway](/docs/openshift?topic=openshift-cluster-access-vpe#cluster-access-vpe-steps)
 
+    * [Protecting clusters using context based restrictions](/docs/openshift?topic=openshift-cluster-access-vpe#protect-service-endpoints-with-cbr)
+
 * [Creating additional VPE gateways in other VPCs and accounts](/docs/openshift?topic=openshift-cluster-access-vpe#vpc_cluster_new_vpe_access)
 
-    * [Target account example](/docs/openshift?topic=openshift-cluster-access-vpe#vpc_cluster_new_vpe_target_example)
+    * [Example: Target account commands](/docs/openshift?topic=openshift-cluster-access-vpe#vpc_cluster_new_vpe_target_example)
 
-    * [Source account example](/docs/openshift?topic=openshift-cluster-access-vpe#vpc_cluster_new_vpe_source_example)
+    * [Example: Source account commands](/docs/openshift?topic=openshift-cluster-access-vpe#vpc_cluster_new_vpe_source_example)
 
 [Accessing clusters on {{site.data.keyword.satelliteshort}}](/docs/openshift?topic=openshift-cluster-access-satellite#cluster-access-satellite)
 
