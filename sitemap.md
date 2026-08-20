@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2026
-lastupdated: "2026-08-19"
+lastupdated: "2026-08-20"
 
 
 keywords: openshift
@@ -7245,13 +7245,7 @@ subcollection: openshift
 
     * [`ibmcloud oc experimental trusted-profile set`](/docs/openshift?topic=openshift-kubernetes-service-cli#experimental-trusted-profile-set-cli)
 
-    * [`ibmcloud oc experimental vni attach baremetal`](/docs/openshift?topic=openshift-kubernetes-service-cli#experimental-vni-attach-baremetal-cli)
-
     * [`ibmcloud oc experimental vni attach virtual`](/docs/openshift?topic=openshift-kubernetes-service-cli#experimental-vni-attach-virtual-cli)
-
-    * [`ibmcloud oc experimental vni detach`](/docs/openshift?topic=openshift-kubernetes-service-cli#experimental-vni-detach-cli)
-
-    * [`ibmcloud oc experimental vni ls`](/docs/openshift?topic=openshift-kubernetes-service-cli#experimental-vni-ls-cli)
 
 * [Flavor commands](/docs/openshift?topic=openshift-kubernetes-service-cli#flavor-cli)
 
