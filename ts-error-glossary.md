@@ -47,6 +47,8 @@ This reference lists all documented error messages and error codes across troubl
 | `sysdig-agent` pods in `CrashLoopBackOff` on private-only RHCOS cluster | [Why are `sysdig-agent` pods in `CrashLoopBackOff` on a private-only RHCOS cluster?](/docs/openshift?topic=openshift-ts-cluster-sysdig-ebpf) |
 {: caption="Cluster and master error messages" caption-side="bottom"}
 
+
+
 ## Worker nodes
 {: #ts-errors-workers}
 
