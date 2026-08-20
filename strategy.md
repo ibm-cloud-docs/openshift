@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2026
-lastupdated: "2026-08-19"
+lastupdated: "2026-08-20"
 
 keywords: kubernetes, kubernetes environment, moving to kubernetes, moving to containers, clusters, cluster sizing, openshift, {{site.data.keyword.openshiftlong_notm}}
 
@@ -307,7 +307,7 @@ Maintaining up-to-date documentation and diagrams can help when debugging issues
 ### Subscribe to release note updates
 {: #bp-4}
 
-You can receive documentation release notes for {{site.data.keyword.openshiftlong_notm}} via RSS. For more information, see [Release notes](/docs/openshift?topic=openshift-relnotes).
+You can receive documentation release notes for {{site.data.keyword.openshiftlong_notm}} via RSS. For more information, see [Release notes](/docs/openshift?topic=openshift-openshift-relnotes).
 
 ## Next steps
 {: #plan-network-next}
