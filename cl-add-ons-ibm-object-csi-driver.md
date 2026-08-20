@@ -3,7 +3,7 @@
 copyright:
   years: 2024, 2026
 
-lastupdated: "2026-08-13"
+lastupdated: "2026-08-20"
 
 
 keywords: change log, version history, IBM Object CSI Driver
@@ -43,10 +43,18 @@ Review the version history for IBM Object CSI Driver.
 {: #cl-add-ons-ibm-object-csi-driver-1.0}
 
 
-### Version 1.0 - v1.0.26_360474192, released 10 August 2026
-{: #cl-add-ons-ibm-object-csi-driver-v1026_360474192}
+### Version 1.0 - v1.0.27_360474192, released 20 August 2026
+{: #cl-add-ons-ibm-object-csi-driver-v1027_360474192}
 
 [Default version]{: tag-green}
+
+- Resolves the following CVEs: [CVE-2026-41176](https://nvd.nist.gov/vuln/detail/CVE-2026-41176){: external}, [GO-2026-6061](https://nvd.nist.gov/vuln/detail/GO-2026-6061){: external}, [CVE-2026-71309](https://nvd.nist.gov/vuln/detail/CVE-2026-71309){: external}, [CVE-2026-71312](https://nvd.nist.gov/vuln/detail/CVE-2026-71312){: external}, [CVE-2026-71310](https://nvd.nist.gov/vuln/detail/CVE-2026-71310){: external}, [CVE-2026-71311](https://nvd.nist.gov/vuln/detail/CVE-2026-71311){: external}, [CVE-2026-71313](https://nvd.nist.gov/vuln/detail/CVE-2026-71313){: external}, [GHSA-3x6r-wxxg-53vv](https://nvd.nist.gov/vuln/detail/GHSA-3x6r-wxxg-53vv){: external}, [GHSA-8mxv-9xhp-86h4](https://nvd.nist.gov/vuln/detail/GHSA-8mxv-9xhp-86h4){: external}, [GHSA-h4mf-4v27-hggj](https://nvd.nist.gov/vuln/detail/GHSA-h4mf-4v27-hggj){: external}, and [GHSA-gwfq-86j8-7qhv](https://nvd.nist.gov/vuln/detail/GHSA-gwfq-86j8-7qhv){: external}.
+- Updates Go to version `1.26.5`.
+- Updates rclone mounter version to 1.75.0 
+
+
+### Version 1.0 - v1.0.26_360474192, released 10 August 2026
+{: #cl-add-ons-ibm-object-csi-driver-v1026_360474192}
 
 - Updates Go to version `1.26.5`.
 - Added max_background=1000 as a new mount option in S3FS storage classes. 

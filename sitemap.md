@@ -487,6 +487,10 @@ subcollection: openshift
 
 * [August 2026](/docs/openshift?topic=openshift-openshift-relnotes#openshift-aug26)
 
+    * [20 August 2026](/docs/openshift?topic=openshift-openshift-relnotes#openshift-aug2026)
+
+        * IBM Object CSI Driver cluster add-on patch updates.
+
     * [19 August 2026](/docs/openshift?topic=openshift-openshift-relnotes#openshift-aug1926)
 
         * CLI version 1.0.829 is available.
@@ -8266,6 +8270,8 @@ subcollection: openshift
 [IBM Object CSI Driver add-on version change log](/docs/openshift?topic=openshift-cl-add-ons-ibm-object-csi-driver#cl-add-ons-ibm-object-csi-driver)
 
 * [Version 1.0](/docs/openshift?topic=openshift-cl-add-ons-ibm-object-csi-driver#cl-add-ons-ibm-object-csi-driver-1.0)
+
+    * [Version 1.0 - v1.0.27_360474192, released 20 August 2026](/docs/openshift?topic=openshift-cl-add-ons-ibm-object-csi-driver#cl-add-ons-ibm-object-csi-driver-v1027_360474192)
 
     * [Version 1.0 - v1.0.26_360474192, released 10 August 2026](/docs/openshift?topic=openshift-cl-add-ons-ibm-object-csi-driver#cl-add-ons-ibm-object-csi-driver-v1026_360474192)
 
