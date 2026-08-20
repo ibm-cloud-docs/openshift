@@ -208,7 +208,7 @@ View and modify cluster and cluster service settings.
 
 
 
-The Red Hat Advanced Cluster Management add-on
+Manage multiple clusters with Red Hat Advanced Cluster Management.
 {: shortdesc}
 
 ```sh
@@ -232,7 +232,7 @@ ibmcloud ks cluster addon disable acm --cluster CLUSTER [-f] [-q]
 #### Examples
 {: #cluster-addon-disable-acm-examples}
 
-The Red Hat Advanced Cluster Management add-on
+Manage multiple clusters with Red Hat Advanced Cluster Management
 
 ```sh
 ibmcloud ks cluster addon disable acm --cluster CLUSTER
@@ -245,7 +245,7 @@ ibmcloud ks cluster addon disable acm --cluster CLUSTER
 
 
 
-The IBM Cloud Kubernetes Service Cluster Autoscaler.
+Automatically resize worker pools based on workload demand.
 {: shortdesc}
 
 ```sh
@@ -269,7 +269,7 @@ ibmcloud ks cluster addon disable cluster-autoscaler --cluster CLUSTER [-f] [-q]
 #### Examples
 {: #cluster-addon-disable-cluster-autoscaler-examples}
 
-The IBM Cloud Kubernetes Service Cluster Autoscaler
+Automatically resize worker pools based on workload demand
 
 ```sh
 ibmcloud ks cluster addon disable cluster-autoscaler --cluster CLUSTER
@@ -282,7 +282,7 @@ ibmcloud ks cluster addon disable cluster-autoscaler --cluster CLUSTER
 
 
 
-The IBM Cloud Kubernetes Service Diagnostics and Debug Tool.
+Run diagnostic checks on a cluster.
 {: shortdesc}
 
 ```sh
@@ -306,7 +306,7 @@ ibmcloud ks cluster addon disable debug-tool --cluster CLUSTER [-f] [-q]
 #### Examples
 {: #cluster-addon-disable-debug-tool-examples}
 
-The IBM Cloud Kubernetes Service Diagnostics and Debug Tool
+Run diagnostic checks on a cluster
 
 ```sh
 ibmcloud ks cluster addon disable debug-tool --cluster CLUSTER
@@ -333,7 +333,7 @@ ibmcloud ks cluster addon disable help
 
 
 
-The IBM Cloud HPCS Router Operator add-on for Red Hat OpenShift on IBM Cloud.
+Route OpenShift cluster traffic through Hyper Protect Crypto Services.
 {: shortdesc}
 
 ```sh
@@ -357,7 +357,7 @@ ibmcloud ks cluster addon disable hpcs-router --cluster CLUSTER [-f] [-q]
 #### Examples
 {: #cluster-addon-disable-hpcs-router-examples}
 
-The IBM Cloud HPCS Router Operator add-on for Red Hat OpenShift on IBM Cloud
+Route OpenShift cluster traffic through Hyper Protect Crypto Services
 
 ```sh
 ibmcloud ks cluster addon disable hpcs-router --cluster CLUSTER
@@ -373,7 +373,7 @@ The `cluster addon disable ibm-storage-operator` command is a beta feature.
 
 
 
-The IBM Cloud Storage operator add-on.
+Manage storage drivers and storage classes on a cluster.
 {: shortdesc}
 
 ```sh
@@ -397,7 +397,7 @@ ibmcloud ks cluster addon disable ibm-storage-operator --cluster CLUSTER [-f] [-
 #### Examples
 {: #cluster-addon-disable-ibm-storage-operator-examples}
 
-The IBM Cloud Storage operator add-on
+Manage storage drivers and storage classes on a cluster
 
 ```sh
 ibmcloud ks cluster addon disable ibm-storage-operator --cluster CLUSTER
@@ -447,7 +447,7 @@ ibmcloud ks cluster addon disable image-key-synchronizer --cluster CLUSTER
 
 
 
-The Knative serverless framework.
+Run serverless workloads using the Knative framework.
 {: shortdesc}
 
 ```sh
@@ -471,7 +471,7 @@ ibmcloud ks cluster addon disable knative --cluster CLUSTER [-f] [-q]
 #### Examples
 {: #cluster-addon-disable-knative-examples}
 
-The Knative serverless framework
+Run serverless workloads using the Knative framework
 
 ```sh
 ibmcloud ks cluster addon disable knative --cluster CLUSTER
@@ -484,7 +484,7 @@ ibmcloud ks cluster addon disable knative --cluster CLUSTER
 
 [Virtual Private Cloud]{: tag-vpc} [Classic infrastructure]{: tag-classic-inf} [Satellite]{: tag-satellite} 
 
-The IBM Cloud Kubernetes Service web terminal.
+Access a Kubernetes web terminal in your cluster.
 {: shortdesc}
 
 ```sh
@@ -508,7 +508,7 @@ ibmcloud ks cluster addon disable kube-terminal --cluster CLUSTER [-f] [-q]
 #### Examples
 {: #cluster-addon-disable-kube-terminal-examples}
 
-The IBM Cloud Kubernetes Service web terminal
+Access a Kubernetes web terminal in your cluster
 
 ```sh
 ibmcloud ks cluster addon disable kube-terminal --cluster CLUSTER
@@ -558,7 +558,7 @@ ibmcloud ks cluster addon disable openshift-data-foundation --cluster CLUSTER
 
 [Virtual Private Cloud]{: tag-vpc} [Classic infrastructure]{: tag-classic-inf} [Satellite]{: tag-satellite} 
 
-The IBM Cloud Kubernetes Service static route add-on.
+Create static routes on worker nodes for specific subnets.
 {: shortdesc}
 
 ```sh
@@ -582,7 +582,7 @@ ibmcloud ks cluster addon disable static-route --cluster CLUSTER [-f] [-q]
 #### Examples
 {: #cluster-addon-disable-static-route-examples}
 
-The IBM Cloud Kubernetes Service static route add-on
+Create static routes on worker nodes for specific subnets
 
 ```sh
 ibmcloud ks cluster addon disable static-route --cluster CLUSTER
@@ -595,7 +595,7 @@ ibmcloud ks cluster addon disable static-route --cluster CLUSTER
 
 [Classic infrastructure]{: tag-classic-inf} 
 
-The IBM Cloud VPC Block Storage CSI Driver.
+Provision and manage VPC block storage volumes.
 {: shortdesc}
 
 ```sh
@@ -619,7 +619,7 @@ ibmcloud ks cluster addon disable vpc-block-csi-driver --cluster CLUSTER [-f] [-
 #### Examples
 {: #cluster-addon-disable-vpc-block-csi-driver-examples}
 
-The IBM Cloud VPC Block Storage CSI Driver
+Provision and manage VPC block storage volumes
 
 ```sh
 ibmcloud ks cluster addon disable vpc-block-csi-driver --cluster CLUSTER
@@ -632,7 +632,7 @@ ibmcloud ks cluster addon disable vpc-block-csi-driver --cluster CLUSTER
 
 
 
-The Red Hat Advanced Cluster Management add-on
+Manage multiple clusters with Red Hat Advanced Cluster Management.
 {: shortdesc}
 
 ```sh
@@ -665,7 +665,7 @@ ibmcloud ks cluster addon enable acm --cluster CLUSTER [-f] [--param PARAM] [-q]
 #### Examples
 {: #cluster-addon-enable-acm-examples}
 
-The Red Hat Advanced Cluster Management add-on
+Manage multiple clusters with Red Hat Advanced Cluster Management
 
 ```sh
 ibmcloud ks cluster addon enable acm --cluster CLUSTER
@@ -678,7 +678,7 @@ ibmcloud ks cluster addon enable acm --cluster CLUSTER
 
 
 
-The IBM Cloud Kubernetes Service Cluster Autoscaler.
+Automatically resize worker pools based on workload demand.
 {: shortdesc}
 
 ```sh
@@ -705,7 +705,7 @@ ibmcloud ks cluster addon enable cluster-autoscaler --cluster CLUSTER [-q] [--ve
 #### Examples
 {: #cluster-addon-enable-cluster-autoscaler-examples}
 
-The IBM Cloud Kubernetes Service Cluster Autoscaler
+Automatically resize worker pools based on workload demand
 
 ```sh
 ibmcloud ks cluster addon enable cluster-autoscaler --cluster CLUSTER
@@ -718,7 +718,7 @@ ibmcloud ks cluster addon enable cluster-autoscaler --cluster CLUSTER
 
 
 
-The IBM Cloud Kubernetes Service Diagnostics and Debug Tool.
+Run diagnostic checks on a cluster.
 {: shortdesc}
 
 ```sh
@@ -745,7 +745,7 @@ ibmcloud ks cluster addon enable debug-tool --cluster CLUSTER [-q] [--version VE
 #### Examples
 {: #cluster-addon-enable-debug-tool-examples}
 
-The IBM Cloud Kubernetes Service Diagnostics and Debug Tool
+Run diagnostic checks on a cluster
 
 ```sh
 ibmcloud ks cluster addon enable debug-tool --cluster CLUSTER
@@ -772,7 +772,7 @@ ibmcloud ks cluster addon enable help
 
 
 
-The IBM Cloud HPCS Router Operator add-on for Red Hat OpenShift on IBM Cloud.
+Route OpenShift cluster traffic through Hyper Protect Crypto Services.
 {: shortdesc}
 
 ```sh
@@ -799,7 +799,7 @@ ibmcloud ks cluster addon enable hpcs-router --cluster CLUSTER [-q] [--version V
 #### Examples
 {: #cluster-addon-enable-hpcs-router-examples}
 
-The IBM Cloud HPCS Router Operator add-on for Red Hat OpenShift on IBM Cloud
+Route OpenShift cluster traffic through Hyper Protect Crypto Services
 
 ```sh
 ibmcloud ks cluster addon enable hpcs-router --cluster CLUSTER
@@ -815,7 +815,7 @@ The `cluster addon enable ibm-storage-operator` command is a beta feature.
 
 
 
-The IBM Cloud Storage operator add-on.
+Manage storage drivers and storage classes on a cluster.
 {: shortdesc}
 
 ```sh
@@ -842,7 +842,7 @@ ibmcloud ks cluster addon enable ibm-storage-operator --cluster CLUSTER [-q] [--
 #### Examples
 {: #cluster-addon-enable-ibm-storage-operator-examples}
 
-The IBM Cloud Storage operator add-on
+Manage storage drivers and storage classes on a cluster
 
 ```sh
 ibmcloud ks cluster addon enable ibm-storage-operator --cluster CLUSTER
@@ -898,7 +898,7 @@ The `cluster addon enable istio-extras` command is deprecated.
 
 
 
-Extra components for Istio, including Grafana, Jaeger, and Kiali.
+Install extra Istio components: Grafana, Jaeger, and Kiali.
 {: shortdesc}
 
 ```sh
@@ -925,7 +925,7 @@ ibmcloud ks cluster addon enable istio-extras --cluster CLUSTER [-q] [--version 
 #### Examples
 {: #cluster-addon-enable-istio-extras-examples}
 
-Extra components for Istio, including Grafana, Jaeger, and Kiali
+Install extra Istio components: Grafana, Jaeger, and Kiali
 
 ```sh
 ibmcloud ks cluster addon enable istio-extras --cluster CLUSTER
@@ -1027,7 +1027,7 @@ ibmcloud ks cluster addon enable openshift-data-foundation --cluster CLUSTER
 
 [Virtual Private Cloud]{: tag-vpc} [Classic infrastructure]{: tag-classic-inf} [Satellite]{: tag-satellite} 
 
-The IBM Cloud Kubernetes Service static route add-on.
+Create static routes on worker nodes for specific subnets.
 {: shortdesc}
 
 ```sh
@@ -1054,7 +1054,7 @@ ibmcloud ks cluster addon enable static-route --cluster CLUSTER [-q] [--version 
 #### Examples
 {: #cluster-addon-enable-static-route-examples}
 
-The IBM Cloud Kubernetes Service static route add-on
+Create static routes on worker nodes for specific subnets
 
 ```sh
 ibmcloud ks cluster addon enable static-route --cluster CLUSTER
@@ -1198,7 +1198,7 @@ ibmcloud ks cluster addon options --addon ADDON
 
 
 
-The Red Hat Advanced Cluster Management add-on
+Manage multiple clusters with Red Hat Advanced Cluster Management.
 {: shortdesc}
 
 ```sh
@@ -1228,7 +1228,7 @@ ibmcloud ks cluster addon update acm --cluster CLUSTER [-f] [-q] [--version VERS
 #### Examples
 {: #cluster-addon-update-acm-examples}
 
-The Red Hat Advanced Cluster Management add-on
+Manage multiple clusters with Red Hat Advanced Cluster Management
 
 ```sh
 ibmcloud ks cluster addon update acm --cluster CLUSTER
@@ -1241,7 +1241,7 @@ ibmcloud ks cluster addon update acm --cluster CLUSTER
 
 
 
-The IBM Cloud Kubernetes Service ALB OAuth Proxy add-on.
+Secure app access using App ID or an OIDC provider.
 {: shortdesc}
 
 ```sh
@@ -1271,7 +1271,7 @@ ibmcloud ks cluster addon update alb-oauth-proxy --cluster CLUSTER [-f] [-q] [--
 #### Examples
 {: #cluster-addon-update-alb-oauth-proxy-examples}
 
-The IBM Cloud Kubernetes Service ALB OAuth Proxy add-on
+Secure app access using App ID or an OIDC provider
 
 ```sh
 ibmcloud ks cluster addon update alb-oauth-proxy --cluster CLUSTER
@@ -1284,7 +1284,7 @@ ibmcloud ks cluster addon update alb-oauth-proxy --cluster CLUSTER
 
 
 
-The IBM Cloud Kubernetes Service Cluster Autoscaler.
+Automatically resize worker pools based on workload demand.
 {: shortdesc}
 
 ```sh
@@ -1314,7 +1314,7 @@ ibmcloud ks cluster addon update cluster-autoscaler --cluster CLUSTER [-f] [-q] 
 #### Examples
 {: #cluster-addon-update-cluster-autoscaler-examples}
 
-The IBM Cloud Kubernetes Service Cluster Autoscaler
+Automatically resize worker pools based on workload demand
 
 ```sh
 ibmcloud ks cluster addon update cluster-autoscaler --cluster CLUSTER
@@ -1327,7 +1327,7 @@ ibmcloud ks cluster addon update cluster-autoscaler --cluster CLUSTER
 
 
 
-The IBM Cloud Kubernetes Service Diagnostics and Debug Tool.
+Run diagnostic checks on a cluster.
 {: shortdesc}
 
 ```sh
@@ -1357,7 +1357,7 @@ ibmcloud ks cluster addon update debug-tool --cluster CLUSTER [-f] [-q] [--versi
 #### Examples
 {: #cluster-addon-update-debug-tool-examples}
 
-The IBM Cloud Kubernetes Service Diagnostics and Debug Tool
+Run diagnostic checks on a cluster
 
 ```sh
 ibmcloud ks cluster addon update debug-tool --cluster CLUSTER
@@ -1373,7 +1373,7 @@ The `cluster addon update headlamp` command is a beta feature.
 
 
 
-The IBM Cloud Kubernetes Service Headlamp add-on.
+Access a web-based Kubernetes dashboard for your cluster.
 {: shortdesc}
 
 ```sh
@@ -1403,7 +1403,7 @@ ibmcloud ks cluster addon update headlamp --cluster CLUSTER [-f] [-q] [--version
 #### Examples
 {: #cluster-addon-update-headlamp-examples}
 
-The IBM Cloud Kubernetes Service Headlamp add-on
+Access a web-based Kubernetes dashboard for your cluster
 
 ```sh
 ibmcloud ks cluster addon update headlamp --cluster CLUSTER
@@ -1430,7 +1430,7 @@ ibmcloud ks cluster addon update help
 
 
 
-The IBM Cloud HPCS Router Operator add-on for Red Hat OpenShift on IBM Cloud.
+Route OpenShift cluster traffic through Hyper Protect Crypto Services.
 {: shortdesc}
 
 ```sh
@@ -1460,7 +1460,7 @@ ibmcloud ks cluster addon update hpcs-router --cluster CLUSTER [-f] [-q] [--vers
 #### Examples
 {: #cluster-addon-update-hpcs-router-examples}
 
-The IBM Cloud HPCS Router Operator add-on for Red Hat OpenShift on IBM Cloud
+Route OpenShift cluster traffic through Hyper Protect Crypto Services
 
 ```sh
 ibmcloud ks cluster addon update hpcs-router --cluster CLUSTER
@@ -1476,7 +1476,7 @@ The `cluster addon update ibm-storage-operator` command is a beta feature.
 
 
 
-The IBM Cloud Storage operator add-on.
+Manage storage drivers and storage classes on a cluster.
 {: shortdesc}
 
 ```sh
@@ -1506,7 +1506,7 @@ ibmcloud ks cluster addon update ibm-storage-operator --cluster CLUSTER [-f] [-q
 #### Examples
 {: #cluster-addon-update-ibm-storage-operator-examples}
 
-The IBM Cloud Storage operator add-on
+Manage storage drivers and storage classes on a cluster
 
 ```sh
 ibmcloud ks cluster addon update ibm-storage-operator --cluster CLUSTER
@@ -1562,7 +1562,7 @@ ibmcloud ks cluster addon update image-key-synchronizer --cluster CLUSTER
 
 
 
-The managed Istio service mesh.
+Install and manage an Istio service mesh on your cluster.
 {: shortdesc}
 
 ```sh
@@ -1592,7 +1592,7 @@ ibmcloud ks cluster addon update istio --cluster CLUSTER [-f] [-q] [--version VE
 #### Examples
 {: #cluster-addon-update-istio-examples}
 
-The managed Istio service mesh
+Install and manage an Istio service mesh on your cluster
 
 ```sh
 ibmcloud ks cluster addon update istio --cluster CLUSTER
@@ -1608,7 +1608,7 @@ The `cluster addon update istio-extras` command is deprecated.
 
 
 
-Extra components for Istio, including Grafana, Jaeger, and Kiali.
+Install extra Istio components: Grafana, Jaeger, and Kiali.
 {: shortdesc}
 
 ```sh
@@ -1638,7 +1638,7 @@ ibmcloud ks cluster addon update istio-extras --cluster CLUSTER [-f] [-q] [--ver
 #### Examples
 {: #cluster-addon-update-istio-extras-examples}
 
-Extra components for Istio, including Grafana, Jaeger, and Kiali
+Install extra Istio components: Grafana, Jaeger, and Kiali
 
 ```sh
 ibmcloud ks cluster addon update istio-extras --cluster CLUSTER
@@ -1697,7 +1697,7 @@ ibmcloud ks cluster addon update istio-sample-bookinfo --cluster CLUSTER
 
 
 
-The Knative serverless framework.
+Run serverless workloads using the Knative framework.
 {: shortdesc}
 
 ```sh
@@ -1727,7 +1727,7 @@ ibmcloud ks cluster addon update knative --cluster CLUSTER [-f] [-q] [--version 
 #### Examples
 {: #cluster-addon-update-knative-examples}
 
-The Knative serverless framework
+Run serverless workloads using the Knative framework
 
 ```sh
 ibmcloud ks cluster addon update knative --cluster CLUSTER
@@ -1740,7 +1740,7 @@ ibmcloud ks cluster addon update knative --cluster CLUSTER
 
 
 
-The IBM Cloud Kubernetes Service web terminal.
+Access a Kubernetes web terminal in your cluster.
 {: shortdesc}
 
 ```sh
@@ -1770,7 +1770,7 @@ ibmcloud ks cluster addon update kube-terminal --cluster CLUSTER [-f] [-q] [--ve
 #### Examples
 {: #cluster-addon-update-kube-terminal-examples}
 
-The IBM Cloud Kubernetes Service web terminal
+Access a Kubernetes web terminal in your cluster
 
 ```sh
 ibmcloud ks cluster addon update kube-terminal --cluster CLUSTER
@@ -1826,7 +1826,7 @@ ibmcloud ks cluster addon update openshift-data-foundation --cluster CLUSTER
 
 
 
-The IBM Cloud Kubernetes Service static route add-on.
+Create static routes on worker nodes for specific subnets.
 {: shortdesc}
 
 ```sh
@@ -1856,7 +1856,7 @@ ibmcloud ks cluster addon update static-route --cluster CLUSTER [-f] [-q] [--ver
 #### Examples
 {: #cluster-addon-update-static-route-examples}
 
-The IBM Cloud Kubernetes Service static route add-on
+Create static routes on worker nodes for specific subnets
 
 ```sh
 ibmcloud ks cluster addon update static-route --cluster CLUSTER
@@ -1869,7 +1869,7 @@ ibmcloud ks cluster addon update static-route --cluster CLUSTER
 
 
 
-The IBM Cloud VPC Block Storage CSI Driver.
+Provision and manage VPC block storage volumes.
 {: shortdesc}
 
 ```sh
@@ -1899,7 +1899,7 @@ ibmcloud ks cluster addon update vpc-block-csi-driver --cluster CLUSTER [-f] [-q
 #### Examples
 {: #cluster-addon-update-vpc-block-csi-driver-examples}
 
-The IBM Cloud VPC Block Storage CSI Driver
+Provision and manage VPC block storage volumes
 
 ```sh
 ibmcloud ks cluster addon update vpc-block-csi-driver --cluster CLUSTER
@@ -5879,7 +5879,7 @@ ibmcloud ks ingress instance default unset --cluster CLUSTER --name NAME
 
 [Virtual Private Cloud]{: tag-vpc} [Classic infrastructure]{: tag-classic-inf} [Satellite]{: tag-satellite} 
 
-View the details of an IBM Cloud Secrets Manager instance.
+View details of a registered Secrets Manager instance.
 {: shortdesc}
 
 ```sh
@@ -5906,7 +5906,7 @@ ibmcloud ks ingress instance get --cluster CLUSTER --name NAME [--output OUTPUT]
 #### Examples
 {: #ingress-instance-get-examples}
 
-View the details of an IBM Cloud Secrets Manager instance
+View details of a registered Secrets Manager instance
 
 ```sh
 ibmcloud ks ingress instance get --cluster CLUSTER --name NAME
@@ -5933,7 +5933,7 @@ ibmcloud ks ingress instance help
 
 [Virtual Private Cloud]{: tag-vpc} [Classic infrastructure]{: tag-classic-inf} [Satellite]{: tag-satellite} 
 
-List all instances of the IBM Cloud Secrets Manager.
+List registered Secrets Manager instances in your account.
 {: shortdesc}
 
 ```sh
@@ -5960,7 +5960,7 @@ ibmcloud ks ingress instance ls --cluster CLUSTER [--output OUTPUT] [-q] [--show
 #### Examples
 {: #ingress-instance-ls-examples}
 
-List all instances of the IBM Cloud Secrets Manager
+List registered Secrets Manager instances in your account
 
 ```sh
 ibmcloud ks ingress instance ls --cluster CLUSTER
@@ -6158,7 +6158,7 @@ ibmcloud ks ingress load-balancer help
 
 [Virtual Private Cloud]{: tag-vpc} 
 
-Disable the PROXY protocol so that client connection information is no longer passed in request headers to ALBs.
+Disable the PROXY protocol on Ingress ALBs.
 {: shortdesc}
 
 ```sh
@@ -6182,7 +6182,7 @@ ibmcloud ks ingress load-balancer proxy-protocol disable --cluster CLUSTER [-f] 
 #### Examples
 {: #ingress-load-balancer-proxy-protocol-disable-examples}
 
-Disable the PROXY protocol so that client connection information is no longer passed in request headers to ALBs
+Disable the PROXY protocol on Ingress ALBs
 
 ```sh
 ibmcloud ks ingress load-balancer proxy-protocol disable --cluster CLUSTER
@@ -6894,7 +6894,7 @@ ibmcloud ks ingress status-report help
 
 [Virtual Private Cloud]{: tag-vpc} [Classic infrastructure]{: tag-classic-inf} [Satellite]{: tag-satellite} 
 
-Add warnings to be ignored by Ingress status for a cluster.
+Suppress warnings from Ingress status reports for a cluster.
 {: shortdesc}
 
 ```sh
@@ -6921,7 +6921,7 @@ ibmcloud ks ingress status-report ignored-errors add --cluster CLUSTER --code CO
 #### Examples
 {: #ingress-status-report-ignored-errors-add-examples}
 
-Add warnings to be ignored by Ingress status for a cluster
+Suppress warnings from Ingress status reports for a cluster
 
 ```sh
 ibmcloud ks ingress status-report ignored-errors add --cluster CLUSTER --code CODE
@@ -7620,7 +7620,7 @@ ibmcloud ks logging config update \
 
 [Virtual Private Cloud]{: tag-vpc} [Classic infrastructure]{: tag-classic-inf} 
 
-Filter out logs that are forwarded by your logging configuration.
+Create a filter to exclude log lines from forwarding.
 {: shortdesc}
 
 ```sh
@@ -7668,7 +7668,7 @@ ibmcloud ks logging filter create --cluster CLUSTER [--container CONTAINER] [--f
 #### Examples
 {: #logging-filter-create-examples}
 
-Filter out logs that are forwarded by your logging configuration
+Create a filter to exclude log lines from forwarding
 
 ```sh
 ibmcloud ks logging filter create --cluster CLUSTER --message MESSAGE
