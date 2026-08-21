@@ -3,7 +3,7 @@
 copyright:
   years: 2025, 2026
 
-lastupdated: "2026-08-20"
+lastupdated: "2026-08-21"
 
 keywords: openshift, error messages, error codes, troubleshooting reference
 
@@ -194,7 +194,7 @@ The following error codes appear in the output of the `ibmcloud oc ingress statu
 | VPC File Storage PVC stays in `Pending` with capacity roundoff | [Why does my PVC stay in Pending status when using capacity roundoff?](/docs/openshift?topic=openshift-ts-storage-vpc-file-capacity-roundoff) |
 | VPC File Storage deployment permissions error | [Why does my {{site.data.keyword.filestorage_vpc_short}} deployment fail due to a permissions error?](/docs/openshift?topic=openshift-ts-storage-vpc-file-non-root) |
 | App pod stuck in `Container creating` when mounting VPC File Storage | [Why is my app pod stuck in `Container creating` when trying to mount {{site.data.keyword.filestorage_vpc_short}}?](/docs/openshift?topic=openshift-ts-vpc-file-container-creating) |
-| File Storage add-on in `Critical` state | [Why is the {{site.data.keyword.filestorage_vpc_short}} add-on in `Critical` state?](/docs/containers?topic=containers-ts-storage-file-addon-cm) |
+| File Storage add-on in `Critical` state | [Why is the {{site.data.keyword.filestorage_vpc_short}} add-on in `Critical` state?](/docs/openshift?topic=openshift-ts-storage-file-addon-cm) |
 {: caption="File Storage error messages" caption-side="bottom"}
 
 ## Block Storage
