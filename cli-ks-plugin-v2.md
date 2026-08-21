@@ -3588,7 +3588,7 @@ ibmcloud ks cluster master satellite-service-endpoint allowlist add \
 {: pre}
 
 
-### `ibmcloud oc cluster master satellite-service-endpoint allowlist disable`
+### `ibmcloud ks cluster master satellite-service-endpoint allowlist disable`
 {: #cluster-master-satellite-service-endpoint-allowlist-disable-cli}
 
 
