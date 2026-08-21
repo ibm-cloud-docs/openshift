@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2026
-lastupdated: "2026-08-20"
+lastupdated: "2026-08-21"
 
 
 keywords: openshift
@@ -7046,8 +7046,6 @@ subcollection: openshift
 * [`zone` commands](/docs/openshift?topic=openshift-icks_map#icks_map_zone)
 
 [{{site.data.keyword.openshiftlong_notm}} CLI reference](/docs/openshift?topic=openshift-kubernetes-service-cli#kubernetes-service-cli)
-
-* [Prerequisites](/docs/openshift?topic=openshift-kubernetes-service-cli#ks-cli-prereq)
 
 * [ibmcloud oc commands](/docs/openshift?topic=openshift-kubernetes-service-cli#cli_commands)
 
