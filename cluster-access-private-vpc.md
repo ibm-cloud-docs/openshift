@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2026
-lastupdated: "2026-08-20"
+lastupdated: "2026-08-21"
 
 keywords: openshift, clusters, access, private, endpoint, vpc, vpn, direct link
 
@@ -60,7 +60,7 @@ The private service endpoint URL for a cluster looks like `c<XXX>.private.<REGIO
 
 1. Verify the connection.
    ```sh
-   ibmcloud oc get nodes
+   oc get nodes
    ```
    {: pre}
 
