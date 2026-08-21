@@ -3718,7 +3718,7 @@ ibmcloud oc cluster master satellite-service-endpoint allowlist disable --cluste
 Disable the allowlist for a Satellite cluster
 
 ```sh
-ibmcloud ks cluster master satellite-service-endpoint allowlist disable --cluster CLUSTER
+ibmcloud oc cluster master satellite-service-endpoint allowlist disable --cluster CLUSTER
 ```
 {: pre}
 
