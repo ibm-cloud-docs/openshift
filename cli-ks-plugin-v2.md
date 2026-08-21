@@ -3695,7 +3695,7 @@ Disable the allowlist for a Satellite cluster. When disabled, authorized request
 {: shortdesc}
 
 ```sh
-ibmcloud oc cluster master satellite-service-endpoint allowlist disable --cluster CLUSTER [-f] [-q]
+ibmcloud ks cluster master satellite-service-endpoint allowlist disable --cluster CLUSTER [-f] [-q]
 ```
 
 #### Command options
@@ -3718,7 +3718,7 @@ ibmcloud oc cluster master satellite-service-endpoint allowlist disable --cluste
 Disable the allowlist for a Satellite cluster
 
 ```sh
-ibmcloud oc cluster master satellite-service-endpoint allowlist disable --cluster CLUSTER
+ibmcloud ks cluster master satellite-service-endpoint allowlist disable --cluster CLUSTER
 ```
 {: pre}
 
