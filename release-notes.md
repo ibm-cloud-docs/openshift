@@ -29,12 +29,7 @@ Looking for {{site.data.keyword.cloud_notm}} status, platform announcements, sec
 ## August 2026
 {: #openshift-aug26}
 
-### 24 August 2026
-{: #openshift-aug2426}
-{: release-note}
 
-Headlamp cluster add-on patch updates.
-:   For more information, see the [change log](/docs/openshift?topic=openshift-cl-add-ons-headlamp).
 
 ### 20 August 2026
 {: #openshift-aug2026}

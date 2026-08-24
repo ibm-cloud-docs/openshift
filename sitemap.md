@@ -487,10 +487,6 @@ subcollection: openshift
 
 * [August 2026](/docs/openshift?topic=openshift-openshift-relnotes#openshift-aug26)
 
-    * [24 August 2026](/docs/openshift?topic=openshift-openshift-relnotes#openshift-aug2426)
-
-        * Headlamp cluster add-on patch updates.
-
     * [20 August 2026](/docs/openshift?topic=openshift-openshift-relnotes#openshift-aug2026)
 
         * IBM Object CSI Driver cluster add-on patch updates.
