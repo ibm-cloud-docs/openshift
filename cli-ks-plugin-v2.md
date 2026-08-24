@@ -115,10 +115,10 @@ ibmcloud oc api-key info --cluster CLUSTER [--output OUTPUT] [-q]
 {: #api-key-info-options}
 
 
-`-c`, `--cluster CLUSTER`
+`-c`, `--cluster`
 :    Specify the cluster name or ID.
 
-`--output OUTPUT`
+`--output`
 :    Prints the command output in the provided format. Accepted values: `json`
 
 `-q`
@@ -154,13 +154,13 @@ ibmcloud oc api-key reset --region REGION [-f] [--output OUTPUT] [-q]
 `-f`
 :    Force the command to run without user prompts.
 
-`--output OUTPUT`
+`--output`
 :    Prints the command output in the provided format. Accepted values: `json`
 
 `-q`
 :    Do not show the message of the day or update reminders.
 
-`--region REGION`
+`--region`
 :    Specify the region to target.
 
 
@@ -196,7 +196,7 @@ ibmcloud oc cluster addon disable acm --cluster CLUSTER [-f] [-q]
 {: #cluster-addon-disable-acm-options}
 
 
-`-c`, `--cluster CLUSTER`
+`-c`, `--cluster`
 :    Specify the cluster name or ID.
 
 `-f`
@@ -232,7 +232,7 @@ ibmcloud oc cluster addon disable cluster-autoscaler --cluster CLUSTER [-f] [-q]
 {: #cluster-addon-disable-cluster-autoscaler-options}
 
 
-`-c`, `--cluster CLUSTER`
+`-c`, `--cluster`
 :    Specify the cluster name or ID.
 
 `-f`
@@ -268,7 +268,7 @@ ibmcloud oc cluster addon disable debug-tool --cluster CLUSTER [-f] [-q]
 {: #cluster-addon-disable-debug-tool-options}
 
 
-`-c`, `--cluster CLUSTER`
+`-c`, `--cluster`
 :    Specify the cluster name or ID.
 
 `-f`
@@ -327,7 +327,7 @@ ibmcloud oc cluster addon disable hpcs-router --cluster CLUSTER [-f] [-q]
 {: #cluster-addon-disable-hpcs-router-options}
 
 
-`-c`, `--cluster CLUSTER`
+`-c`, `--cluster`
 :    Specify the cluster name or ID.
 
 `-f`
@@ -366,7 +366,7 @@ ibmcloud oc cluster addon disable ibm-storage-operator --cluster CLUSTER [-f] [-
 {: #cluster-addon-disable-ibm-storage-operator-options}
 
 
-`-c`, `--cluster CLUSTER`
+`-c`, `--cluster`
 :    Specify the cluster name or ID.
 
 `-f`
@@ -402,7 +402,7 @@ ibmcloud oc cluster addon disable image-key-synchronizer --cluster CLUSTER [-f] 
 {: #cluster-addon-disable-image-key-synchronizer-options}
 
 
-`-c`, `--cluster CLUSTER`
+`-c`, `--cluster`
 :    Specify the cluster name or ID.
 
 `-f`
@@ -438,7 +438,7 @@ ibmcloud oc cluster addon disable knative --cluster CLUSTER [-f] [-q]
 {: #cluster-addon-disable-knative-options}
 
 
-`-c`, `--cluster CLUSTER`
+`-c`, `--cluster`
 :    Specify the cluster name or ID.
 
 `-f`
@@ -474,7 +474,7 @@ ibmcloud oc cluster addon disable kube-terminal --cluster CLUSTER [-f] [-q]
 {: #cluster-addon-disable-kube-terminal-options}
 
 
-`-c`, `--cluster CLUSTER`
+`-c`, `--cluster`
 :    Specify the cluster name or ID.
 
 `-f`
@@ -510,7 +510,7 @@ ibmcloud oc cluster addon disable openshift-data-foundation --cluster CLUSTER [-
 {: #cluster-addon-disable-openshift-data-foundation-options}
 
 
-`-c`, `--cluster CLUSTER`
+`-c`, `--cluster`
 :    Specify the cluster name or ID.
 
 `-f`
@@ -546,7 +546,7 @@ ibmcloud oc cluster addon disable static-route --cluster CLUSTER [-f] [-q]
 {: #cluster-addon-disable-static-route-options}
 
 
-`-c`, `--cluster CLUSTER`
+`-c`, `--cluster`
 :    Specify the cluster name or ID.
 
 `-f`
@@ -582,7 +582,7 @@ ibmcloud oc cluster addon disable vpc-block-csi-driver --cluster CLUSTER [-f] [-
 {: #cluster-addon-disable-vpc-block-csi-driver-options}
 
 
-`-c`, `--cluster CLUSTER`
+`-c`, `--cluster`
 :    Specify the cluster name or ID.
 
 `-f`
@@ -618,19 +618,19 @@ ibmcloud oc cluster addon enable acm --cluster CLUSTER [-f] [--param PARAM] [-q]
 {: #cluster-addon-enable-acm-options}
 
 
-`-c`, `--cluster CLUSTER`
+`-c`, `--cluster`
 :    Specify the cluster name or ID.
 
 `-f`
 :    Force the command to run without user prompts.
 
-`--param PARAM`
+`--param`
 :    Specify installation options for the add-on. If no parameters are specified, the default values are used. Review the available options with the `ibmcloud ks cluster addon options` command.
 
 `-q`
 :    Do not show the message of the day or update reminders.
 
-`--version VERSION`
+`--version`
 :    Specify the version of the add-on to install. If no version is specified, the default version is installed.
 
 `-y`
@@ -663,13 +663,13 @@ ibmcloud oc cluster addon enable cluster-autoscaler --cluster CLUSTER [-q] [--ve
 {: #cluster-addon-enable-cluster-autoscaler-options}
 
 
-`-c`, `--cluster CLUSTER`
+`-c`, `--cluster`
 :    Specify the cluster name or ID.
 
 `-q`
 :    Do not show the message of the day or update reminders.
 
-`--version VERSION`
+`--version`
 :    Specify the version of the add-on to install. If no version is specified, the default version is installed.
 
 `-y`
@@ -702,13 +702,13 @@ ibmcloud oc cluster addon enable debug-tool --cluster CLUSTER [-q] [--version VE
 {: #cluster-addon-enable-debug-tool-options}
 
 
-`-c`, `--cluster CLUSTER`
+`-c`, `--cluster`
 :    Specify the cluster name or ID.
 
 `-q`
 :    Do not show the message of the day or update reminders.
 
-`--version VERSION`
+`--version`
 :    Specify the version of the add-on to install. If no version is specified, the default version is installed.
 
 `-y`
@@ -764,13 +764,13 @@ ibmcloud oc cluster addon enable hpcs-router --cluster CLUSTER [-q] [--version V
 {: #cluster-addon-enable-hpcs-router-options}
 
 
-`-c`, `--cluster CLUSTER`
+`-c`, `--cluster`
 :    Specify the cluster name or ID.
 
 `-q`
 :    Do not show the message of the day or update reminders.
 
-`--version VERSION`
+`--version`
 :    Specify the version of the add-on to install. If no version is specified, the default version is installed.
 
 `-y`
@@ -806,13 +806,13 @@ ibmcloud oc cluster addon enable ibm-storage-operator --cluster CLUSTER [-q] [--
 {: #cluster-addon-enable-ibm-storage-operator-options}
 
 
-`-c`, `--cluster CLUSTER`
+`-c`, `--cluster`
 :    Specify the cluster name or ID.
 
 `-q`
 :    Do not show the message of the day or update reminders.
 
-`--version VERSION`
+`--version`
 :    Specify the version of the add-on to install. If no version is specified, the default version is installed.
 
 `-y`
@@ -845,13 +845,13 @@ ibmcloud oc cluster addon enable image-key-synchronizer --cluster CLUSTER [-q] [
 {: #cluster-addon-enable-image-key-synchronizer-options}
 
 
-`-c`, `--cluster CLUSTER`
+`-c`, `--cluster`
 :    Specify the cluster name or ID.
 
 `-q`
 :    Do not show the message of the day or update reminders.
 
-`--version VERSION`
+`--version`
 :    Specify the version of the add-on to install. If no version is specified, the default version is installed.
 
 `-y`
@@ -887,13 +887,13 @@ ibmcloud oc cluster addon enable istio-extras --cluster CLUSTER [-q] [--version 
 {: #cluster-addon-enable-istio-extras-options}
 
 
-`-c`, `--cluster CLUSTER`
+`-c`, `--cluster`
 :    Specify the cluster name or ID.
 
 `-q`
 :    Do not show the message of the day or update reminders.
 
-`--version VERSION`
+`--version`
 :    Specify the version of the add-on to install. If no version is specified, the default version is installed.
 
 `-y`
@@ -919,7 +919,7 @@ The `cluster addon enable istio-sample-bookinfo` command is deprecated.
 
 
 
-The BookInfo sample application for Istio.
+Enable the Istio BookInfo sample application add-on on a cluster (deprecated).
 
 ```sh
 ibmcloud oc cluster addon enable istio-sample-bookinfo --cluster CLUSTER [-q] [--version VERSION] [-y]
@@ -929,13 +929,13 @@ ibmcloud oc cluster addon enable istio-sample-bookinfo --cluster CLUSTER [-q] [-
 {: #cluster-addon-enable-istio-sample-bookinfo-options}
 
 
-`-c`, `--cluster CLUSTER`
+`-c`, `--cluster`
 :    Specify the cluster name or ID.
 
 `-q`
 :    Do not show the message of the day or update reminders.
 
-`--version VERSION`
+`--version`
 :    Specify the version of the add-on to install. If no version is specified, the default version is installed.
 
 `-y`
@@ -945,7 +945,7 @@ ibmcloud oc cluster addon enable istio-sample-bookinfo --cluster CLUSTER [-q] [-
 #### Examples
 {: #cluster-addon-enable-istio-sample-bookinfo-examples}
 
-The BookInfo sample application for Istio
+Enable the Istio BookInfo sample application add-on on a cluster (deprecated)
 
 ```sh
 ibmcloud oc cluster addon enable istio-sample-bookinfo --cluster CLUSTER
@@ -968,19 +968,19 @@ ibmcloud oc cluster addon enable openshift-data-foundation --cluster CLUSTER [-f
 {: #cluster-addon-enable-openshift-data-foundation-options}
 
 
-`-c`, `--cluster CLUSTER`
+`-c`, `--cluster`
 :    Specify the cluster name or ID.
 
 `-f`
 :    Force the command to run without user prompts.
 
-`--param PARAM`
+`--param`
 :    Specify installation options for the add-on. If no parameters are specified, the default values are used. Review the available options with the `ibmcloud ks cluster addon options` command.
 
 `-q`
 :    Do not show the message of the day or update reminders.
 
-`--version VERSION`
+`--version`
 :    Specify the version of the add-on to install. If no version is specified, the default version is installed.
 
 `-y`
@@ -1013,13 +1013,13 @@ ibmcloud oc cluster addon enable static-route --cluster CLUSTER [-q] [--version 
 {: #cluster-addon-enable-static-route-options}
 
 
-`-c`, `--cluster CLUSTER`
+`-c`, `--cluster`
 :    Specify the cluster name or ID.
 
 `-q`
 :    Do not show the message of the day or update reminders.
 
-`--version VERSION`
+`--version`
 :    Specify the version of the add-on to install. If no version is specified, the default version is installed.
 
 `-y`
@@ -1052,13 +1052,13 @@ ibmcloud oc cluster addon get --addon ADDON --cluster CLUSTER [--output OUTPUT] 
 {: #cluster-addon-get-options}
 
 
-`--addon ADDON`
+`--addon`
 :    The add-on name or ID.
 
-`-c`, `--cluster CLUSTER`
+`-c`, `--cluster`
 :    Specify the cluster name or ID.
 
-`--output OUTPUT`
+`--output`
 :    Prints the command output in the provided format. Accepted values: `json`
 
 `-q`
@@ -1114,10 +1114,10 @@ ibmcloud oc cluster addon ls --cluster CLUSTER [--output OUTPUT] [-q]
 {: #cluster-addon-ls-options}
 
 
-`-c`, `--cluster CLUSTER`
+`-c`, `--cluster`
 :    Specify the cluster name or ID.
 
-`--output OUTPUT`
+`--output`
 :    Prints the command output in the provided format. Accepted values: `json`
 
 `-q`
@@ -1150,16 +1150,16 @@ ibmcloud oc cluster addon options --addon ADDON [--output OUTPUT] [-q] [--versio
 {: #cluster-addon-options-options}
 
 
-`--addon ADDON`
+`--addon`
 :    The add-on name or ID.
 
-`--output OUTPUT`
+`--output`
 :    Prints the command output in the provided format. Accepted values: `json`
 
 `-q`
 :    Do not show the message of the day or update reminders.
 
-`--version VERSION`
+`--version`
 :    Specify an add-on version to display options for. If no version is specified, the default version's options are displayed.
 
 
@@ -1189,7 +1189,7 @@ ibmcloud oc cluster addon update acm --cluster CLUSTER [-f] [-q] [--version VERS
 {: #cluster-addon-update-acm-options}
 
 
-`-c`, `--cluster CLUSTER`
+`-c`, `--cluster`
 :    Specify the cluster name or ID.
 
 `-f`
@@ -1198,7 +1198,7 @@ ibmcloud oc cluster addon update acm --cluster CLUSTER [-f] [-q] [--version VERS
 `-q`
 :    Do not show the message of the day or update reminders.
 
-`--version VERSION`
+`--version`
 :    Specify the version of the add-on to install. If no version is specified, the default version is installed.
 
 `-y`
@@ -1231,7 +1231,7 @@ ibmcloud oc cluster addon update alb-oauth-proxy --cluster CLUSTER [-f] [-q] [--
 {: #cluster-addon-update-alb-oauth-proxy-options}
 
 
-`-c`, `--cluster CLUSTER`
+`-c`, `--cluster`
 :    Specify the cluster name or ID.
 
 `-f`
@@ -1240,7 +1240,7 @@ ibmcloud oc cluster addon update alb-oauth-proxy --cluster CLUSTER [-f] [-q] [--
 `-q`
 :    Do not show the message of the day or update reminders.
 
-`--version VERSION`
+`--version`
 :    Specify the version of the add-on to install. If no version is specified, the default version is installed.
 
 `-y`
@@ -1273,7 +1273,7 @@ ibmcloud oc cluster addon update cluster-autoscaler --cluster CLUSTER [-f] [-q] 
 {: #cluster-addon-update-cluster-autoscaler-options}
 
 
-`-c`, `--cluster CLUSTER`
+`-c`, `--cluster`
 :    Specify the cluster name or ID.
 
 `-f`
@@ -1282,7 +1282,7 @@ ibmcloud oc cluster addon update cluster-autoscaler --cluster CLUSTER [-f] [-q] 
 `-q`
 :    Do not show the message of the day or update reminders.
 
-`--version VERSION`
+`--version`
 :    Specify the version of the add-on to install. If no version is specified, the default version is installed.
 
 `-y`
@@ -1315,7 +1315,7 @@ ibmcloud oc cluster addon update debug-tool --cluster CLUSTER [-f] [-q] [--versi
 {: #cluster-addon-update-debug-tool-options}
 
 
-`-c`, `--cluster CLUSTER`
+`-c`, `--cluster`
 :    Specify the cluster name or ID.
 
 `-f`
@@ -1324,7 +1324,7 @@ ibmcloud oc cluster addon update debug-tool --cluster CLUSTER [-f] [-q] [--versi
 `-q`
 :    Do not show the message of the day or update reminders.
 
-`--version VERSION`
+`--version`
 :    Specify the version of the add-on to install. If no version is specified, the default version is installed.
 
 `-y`
@@ -1360,7 +1360,7 @@ ibmcloud oc cluster addon update headlamp --cluster CLUSTER [-f] [-q] [--version
 {: #cluster-addon-update-headlamp-options}
 
 
-`-c`, `--cluster CLUSTER`
+`-c`, `--cluster`
 :    Specify the cluster name or ID.
 
 `-f`
@@ -1369,7 +1369,7 @@ ibmcloud oc cluster addon update headlamp --cluster CLUSTER [-f] [-q] [--version
 `-q`
 :    Do not show the message of the day or update reminders.
 
-`--version VERSION`
+`--version`
 :    Specify the version of the add-on to install. If no version is specified, the default version is installed.
 
 `-y`
@@ -1425,7 +1425,7 @@ ibmcloud oc cluster addon update hpcs-router --cluster CLUSTER [-f] [-q] [--vers
 {: #cluster-addon-update-hpcs-router-options}
 
 
-`-c`, `--cluster CLUSTER`
+`-c`, `--cluster`
 :    Specify the cluster name or ID.
 
 `-f`
@@ -1434,7 +1434,7 @@ ibmcloud oc cluster addon update hpcs-router --cluster CLUSTER [-f] [-q] [--vers
 `-q`
 :    Do not show the message of the day or update reminders.
 
-`--version VERSION`
+`--version`
 :    Specify the version of the add-on to install. If no version is specified, the default version is installed.
 
 `-y`
@@ -1470,7 +1470,7 @@ ibmcloud oc cluster addon update ibm-storage-operator --cluster CLUSTER [-f] [-q
 {: #cluster-addon-update-ibm-storage-operator-options}
 
 
-`-c`, `--cluster CLUSTER`
+`-c`, `--cluster`
 :    Specify the cluster name or ID.
 
 `-f`
@@ -1479,7 +1479,7 @@ ibmcloud oc cluster addon update ibm-storage-operator --cluster CLUSTER [-f] [-q
 `-q`
 :    Do not show the message of the day or update reminders.
 
-`--version VERSION`
+`--version`
 :    Specify the version of the add-on to install. If no version is specified, the default version is installed.
 
 `-y`
@@ -1512,7 +1512,7 @@ ibmcloud oc cluster addon update image-key-synchronizer --cluster CLUSTER [-f] [
 {: #cluster-addon-update-image-key-synchronizer-options}
 
 
-`-c`, `--cluster CLUSTER`
+`-c`, `--cluster`
 :    Specify the cluster name or ID.
 
 `-f`
@@ -1521,7 +1521,7 @@ ibmcloud oc cluster addon update image-key-synchronizer --cluster CLUSTER [-f] [
 `-q`
 :    Do not show the message of the day or update reminders.
 
-`--version VERSION`
+`--version`
 :    Specify the version of the add-on to install. If no version is specified, the default version is installed.
 
 `-y`
@@ -1554,7 +1554,7 @@ ibmcloud oc cluster addon update istio --cluster CLUSTER [-f] [-q] [--version VE
 {: #cluster-addon-update-istio-options}
 
 
-`-c`, `--cluster CLUSTER`
+`-c`, `--cluster`
 :    Specify the cluster name or ID.
 
 `-f`
@@ -1563,7 +1563,7 @@ ibmcloud oc cluster addon update istio --cluster CLUSTER [-f] [-q] [--version VE
 `-q`
 :    Do not show the message of the day or update reminders.
 
-`--version VERSION`
+`--version`
 :    Specify the version of the add-on to install. If no version is specified, the default version is installed.
 
 `-y`
@@ -1599,7 +1599,7 @@ ibmcloud oc cluster addon update istio-extras --cluster CLUSTER [-f] [-q] [--ver
 {: #cluster-addon-update-istio-extras-options}
 
 
-`-c`, `--cluster CLUSTER`
+`-c`, `--cluster`
 :    Specify the cluster name or ID.
 
 `-f`
@@ -1608,7 +1608,7 @@ ibmcloud oc cluster addon update istio-extras --cluster CLUSTER [-f] [-q] [--ver
 `-q`
 :    Do not show the message of the day or update reminders.
 
-`--version VERSION`
+`--version`
 :    Specify the version of the add-on to install. If no version is specified, the default version is installed.
 
 `-y`
@@ -1634,7 +1634,7 @@ The `cluster addon update istio-sample-bookinfo` command is deprecated.
 
 
 
-Update the BookInfo sample application for Istio.
+Update the Istio BookInfo sample application add-on (deprecated).
 
 ```sh
 ibmcloud oc cluster addon update istio-sample-bookinfo --cluster CLUSTER [-f] [-q] [--version VERSION] [-y]
@@ -1644,7 +1644,7 @@ ibmcloud oc cluster addon update istio-sample-bookinfo --cluster CLUSTER [-f] [-
 {: #cluster-addon-update-istio-sample-bookinfo-options}
 
 
-`-c`, `--cluster CLUSTER`
+`-c`, `--cluster`
 :    Specify the cluster name or ID.
 
 `-f`
@@ -1653,7 +1653,7 @@ ibmcloud oc cluster addon update istio-sample-bookinfo --cluster CLUSTER [-f] [-
 `-q`
 :    Do not show the message of the day or update reminders.
 
-`--version VERSION`
+`--version`
 :    Specify the version of the add-on to install. If no version is specified, the default version is installed.
 
 `-y`
@@ -1663,7 +1663,7 @@ ibmcloud oc cluster addon update istio-sample-bookinfo --cluster CLUSTER [-f] [-
 #### Examples
 {: #cluster-addon-update-istio-sample-bookinfo-examples}
 
-Update the BookInfo sample application for Istio
+Update the Istio BookInfo sample application add-on (deprecated)
 
 ```sh
 ibmcloud oc cluster addon update istio-sample-bookinfo --cluster CLUSTER
@@ -1686,7 +1686,7 @@ ibmcloud oc cluster addon update knative --cluster CLUSTER [-f] [-q] [--version 
 {: #cluster-addon-update-knative-options}
 
 
-`-c`, `--cluster CLUSTER`
+`-c`, `--cluster`
 :    Specify the cluster name or ID.
 
 `-f`
@@ -1695,7 +1695,7 @@ ibmcloud oc cluster addon update knative --cluster CLUSTER [-f] [-q] [--version 
 `-q`
 :    Do not show the message of the day or update reminders.
 
-`--version VERSION`
+`--version`
 :    Specify the version of the add-on to install. If no version is specified, the default version is installed.
 
 `-y`
@@ -1728,7 +1728,7 @@ ibmcloud oc cluster addon update kube-terminal --cluster CLUSTER [-f] [-q] [--ve
 {: #cluster-addon-update-kube-terminal-options}
 
 
-`-c`, `--cluster CLUSTER`
+`-c`, `--cluster`
 :    Specify the cluster name or ID.
 
 `-f`
@@ -1737,7 +1737,7 @@ ibmcloud oc cluster addon update kube-terminal --cluster CLUSTER [-f] [-q] [--ve
 `-q`
 :    Do not show the message of the day or update reminders.
 
-`--version VERSION`
+`--version`
 :    Specify the version of the add-on to install. If no version is specified, the default version is installed.
 
 `-y`
@@ -1770,7 +1770,7 @@ ibmcloud oc cluster addon update openshift-data-foundation --cluster CLUSTER [-f
 {: #cluster-addon-update-openshift-data-foundation-options}
 
 
-`-c`, `--cluster CLUSTER`
+`-c`, `--cluster`
 :    Specify the cluster name or ID.
 
 `-f`
@@ -1779,7 +1779,7 @@ ibmcloud oc cluster addon update openshift-data-foundation --cluster CLUSTER [-f
 `-q`
 :    Do not show the message of the day or update reminders.
 
-`--version VERSION`
+`--version`
 :    Specify the version of the add-on to install. If no version is specified, the default version is installed.
 
 `-y`
@@ -1812,7 +1812,7 @@ ibmcloud oc cluster addon update static-route --cluster CLUSTER [-f] [-q] [--ver
 {: #cluster-addon-update-static-route-options}
 
 
-`-c`, `--cluster CLUSTER`
+`-c`, `--cluster`
 :    Specify the cluster name or ID.
 
 `-f`
@@ -1821,7 +1821,7 @@ ibmcloud oc cluster addon update static-route --cluster CLUSTER [-f] [-q] [--ver
 `-q`
 :    Do not show the message of the day or update reminders.
 
-`--version VERSION`
+`--version`
 :    Specify the version of the add-on to install. If no version is specified, the default version is installed.
 
 `-y`
@@ -1854,7 +1854,7 @@ ibmcloud oc cluster addon update vpc-block-csi-driver --cluster CLUSTER [-f] [-q
 {: #cluster-addon-update-vpc-block-csi-driver-options}
 
 
-`-c`, `--cluster CLUSTER`
+`-c`, `--cluster`
 :    Specify the cluster name or ID.
 
 `-f`
@@ -1863,7 +1863,7 @@ ibmcloud oc cluster addon update vpc-block-csi-driver --cluster CLUSTER [-f] [-q
 `-q`
 :    Do not show the message of the day or update reminders.
 
-`--version VERSION`
+`--version`
 :    Specify the version of the add-on to install. If no version is specified, the default version is installed.
 
 `-y`
@@ -1896,13 +1896,13 @@ ibmcloud oc cluster addon versions [--addon ADDON] [--offering OFFERING] [--outp
 {: #cluster-addon-versions-options}
 
 
-`--addon ADDON`
+`--addon`
 :    Specify an add-on name to filter versions for.
 
-`--offering OFFERING`
+`--offering`
 :    Specify an offering to filter versions for. Accepted values: `kubernetes`, `openshift`, `openshift-vs`
 
-`--output OUTPUT`
+`--output`
 :    Prints the command output in the provided format. Accepted values: `json`
 
 `-q`
@@ -1938,7 +1938,7 @@ ibmcloud oc cluster ca create --cluster CLUSTER [-f] [-q]
 {: #cluster-ca-create-options}
 
 
-`-c`, `--cluster CLUSTER`
+`-c`, `--cluster`
 :    Specify the cluster name or ID.
 
 `-f`
@@ -1974,10 +1974,10 @@ ibmcloud oc cluster ca get --cluster CLUSTER [--output OUTPUT] [-q]
 {: #cluster-ca-get-options}
 
 
-`-c`, `--cluster CLUSTER`
+`-c`, `--cluster`
 :    Specify the cluster name or ID.
 
-`--output OUTPUT`
+`--output`
 :    Prints the command output in the provided format. Accepted values: `json`
 
 `-q`
@@ -2033,7 +2033,7 @@ ibmcloud oc cluster ca rotate --cluster CLUSTER [-f] [-q]
 {: #cluster-ca-rotate-options}
 
 
-`-c`, `--cluster CLUSTER`
+`-c`, `--cluster`
 :    Specify the cluster name or ID.
 
 `-f`
@@ -2069,7 +2069,7 @@ ibmcloud oc cluster ca status --cluster CLUSTER [-q]
 {: #cluster-ca-status-options}
 
 
-`-c`, `--cluster CLUSTER`
+`-c`, `--cluster`
 :    Specify the cluster name or ID.
 
 `-q`
@@ -2105,16 +2105,16 @@ ibmcloud oc cluster config --cluster CLUSTER [--admin] [--endpoint ENDPOINT] [--
 `--admin`
 :    Retrieve administrator certificates and PEM keys.
 
-`-c`, `--cluster CLUSTER`
+`-c`, `--cluster`
 :    Specify the cluster name or ID.
 
-`--endpoint ENDPOINT`
+`--endpoint`
 :    The server URL to use for the cluster context. If you do not include this flag, the default cluster service endpoint is used. For more info, see [https://ibm.biz/context-kube](https://ibm.biz/context-kube) for Kubernetes or [https://ibm.biz/context-ocp](https://ibm.biz/context-ocp) for OpenShift clusters. Accepted values: `private`, `link`, `vpe`
 
 `--network`
 :    Retrieve the Calico network config with the Admin config.
 
-`--output OUTPUT`
+`--output`
 :    Prints the command output in the provided format and skips `kubeconfig` merges. A zip output does not contain a refresh token. Accepted values: `json`, `yaml`, `zip`
 
 `-q`
@@ -2153,28 +2153,28 @@ ibmcloud oc cluster create classic --flavor FLAVOR --name NAME --zone ZONE [--di
 `--disable-disk-encrypt`
 :    Disable encryption on a worker node.
 
-`--entitlement ENTITLEMENT`
+`--entitlement`
 :    Set this flag to `ocp_entitled` only if you use this cluster with a license such as a Cloud Pak that has an OpenShift entitlement.
 
-`--flavor FLAVOR`
+`--flavor`
 :    The flavor of a worker node. To see available flavors, run `ibmcloud ks flavor ls --zone <zone name>` (for public IBM Cloud accounts) or `ibmcloud ks flavor ls` (for IBM Cloud Dedicated accounts).
 
-`--hardware HARDWARE`
+`--hardware`
 :    The level of hardware isolation for your worker node. Use `dedicated` to have available physical resources dedicated to you only, or `shared` to allow physical resources to be shared with other IBM customers. For IBM Cloud Public accounts, the default value is shared. For IBM Cloud Dedicated accounts, dedicated is the only available option.
 
-`--location LOCATION`
+`--location`
 :    [Deprecated]{: tag-deprecated} Flag maintained for compatibility with an earlier version. Use the `--zone` flag instead.
 
-`--name NAME`
+`--name`
 :    Enter a name for the cluster.
 
 `--no-subnet`
 :    Prevent the creation of a portable subnet when creating the cluster. By default, both a public and a private portable subnet are created on the associated VLAN, and this flag prevents that behavior. To add a subnet to the cluster later, run `ibmcloud ks cluster subnet add`.
 
-`--operating-system SYSTEM`
+`--operating-system`
 :    Specify the name of the operating system.
 
-`--pod-subnet SUBNET`
+`--pod-subnet`
 :    Specify a custom subnet CIDR to provide private IP addresses for pods. The subnet must be at least `/23` or larger. For more info, see [https://ibm.biz/cluster-create-classic](https://ibm.biz/cluster-create-classic)
 
 `--private-only`
@@ -2183,37 +2183,37 @@ ibmcloud oc cluster create classic --flavor FLAVOR --name NAME --zone ZONE [--di
 `--private-service-endpoint`
 :    Enable the private service endpoint to make the master privately accessible.
 
-`--private-vlan VLAN`
+`--private-vlan`
 :    Conditional: Specify the ID of the private VLAN. To see available VLANs, run `ibmcloud ks vlan ls --zone <zone name>`. If you do not have a private VLAN yet, do not specify this option because one will be automatically created for you. When you specify a private VLAN, you must also specify either the `--public-vlan` flag or the `--private-only` flag.
 
 `--public-service-endpoint`
 :    Enable the public service endpoint to make the master publicly accessible.
 
-`--public-vlan VLAN`
+`--public-vlan`
 :    Conditional: Specify the ID of the public VLAN. To see available VLANs, run `ibmcloud ks vlan ls --zone <zone name>`. If you do not have a public VLAN yet, do not specify this option because one will be automatically created for you.
 
 `-q`
 :    Do not show the message of the day or update reminders.
 
-`--service-subnet SUBNET`
+`--service-subnet`
 :    Specify a custom subnet CIDR to provide private IP addresses for services. The subnet must be at least `/24` or larger. For more info, see [https://ibm.biz/cluster-create-classic](https://ibm.biz/cluster-create-classic). Default value: `172.21.0.0/16`
 
 `--skip-advance-permissions-check`
 :    Skip checking for infrastructure permissions before completing this action. Note that if you do not have the correct infrastructure permissions, this action might only partially succeed.
 
-`--sm-group GROUP`
+`--sm-group`
 :    The Secret Group ID of the IBM Cloud Secrets Manager instance where your secrets are persisted.
 
-`--sm-instance INSTANCE`
+`--sm-instance`
 :    The CRN of the IBM Cloud Secrets Manager instance.
 
-`--version VERSION`
+`--version`
 :    Specify the Kubernetes or OpenShift version, including at least the major.minor version. If you do not include this flag, the default version is used. To see available versions, run `ibmcloud ks versions`.
 
-`--workers COUNT`
+`--workers`
 :    The number of cluster worker nodes. Defaults to 1.
 
-`--zone ZONE`
+`--zone`
 :    Specify the zone for the worker pool in a multizone cluster. To list available zones, run `ibmcloud ks zone ls`.
 
 
@@ -2269,52 +2269,52 @@ ibmcloud oc cluster create satellite --location LOCATION --name NAME --version V
 `--enable-config-admin`
 :    Grant cluster `admin` access to Satellite Config to manage Kubernetes resources.
 
-`--entitlement ENTITLEMENT`
+`--entitlement`
 :    Set this flag to `ocp_entitled` only if you use this cluster with a license such as a Cloud Pak that has an OpenShift entitlement.
 
-`--host-label LABEL`, `--hl LABEL`
+`--host-label`, `--hl`
 :    Enter any labels as key-value pairs to identify the host to assign to your Satellite control plane or Red Hat OpenShift cluster. The first host that has this label and is unassigned is automatically assigned to the control plane or cluster. To find available host labels, run `ibmcloud sat host get --host <host_name_or_ID> --location <location_name_or_ID>`.
 
-`--infrastructure-topology TOPOLOGY`
+`--infrastructure-topology`
 :    Specify whether the cluster should run a single worker node or the default number of worker nodes. To create a single-node cluster, specify `single-replica`. To create a default cluster with multiple worker nodes, specify `highly-available`. The `highly-available` option is applied by default. Accepted values: `single-replica`, `highly-available`
 
-`--location LOCATION`
+`--location`
 :    The name or ID of the Satellite location. To find the location ID or name, run `ibmcloud sat location ls`.
 
-`--name NAME`
+`--name`
 :    Enter a name for the cluster.
 
-`--operating-system SYSTEM`
+`--operating-system`
 :    Specify the name of the operating system.
 
-`--pod-network-interface-selection SELECTION`
+`--pod-network-interface-selection`
 :    The method for selecting the node network interface for the internal pod network. This option can be used only if the Satellite location that you specify has Red Hat CoreOS enabled. To provide a direct URL or IP address, specify `can-reach=<url>` or `can-reach=<ip_address>`. To choose a network interface, specify `interface=<network_interface>`.
 
-`--pod-subnet SUBNET`
+`--pod-subnet`
 :    Specify a custom subnet CIDR to provide private IP addresses for pods. The subnet must be at least `/23` or larger. For more info, see [https://ibm.biz/cluster-create-satellite](https://ibm.biz/cluster-create-satellite). Default value: `172.30.0.0/16`
 
-`--pull-secret SECRET`
+`--pull-secret`
 :    Specify an existing OpenShift entitlement for this cluster's worker nodes by providing your Red Hat account pull secret.
 
 `-q`
 :    Do not show the message of the day or update reminders.
 
-`--service-subnet SUBNET`
+`--service-subnet`
 :    Specify a custom subnet CIDR to provide private IP addresses for services. The subnet must be at least `/24` or larger. For more info, see [https://ibm.biz/cluster-create-satellite](https://ibm.biz/cluster-create-satellite). Default value: `172.21.0.0/16`
 
-`--sm-group GROUP`
+`--sm-group`
 :    The Secret Group ID of the IBM Cloud Secrets Manager instance where your secrets are persisted.
 
-`--sm-instance INSTANCE`
+`--sm-instance`
 :    The CRN of the IBM Cloud Secrets Manager instance.
 
-`--version VERSION`
+`--version`
 :    The Red Hat OpenShift on IBM Cloud version, including at least the major.minor version. To see available versions, run `ibmcloud ks versions`.
 
-`--workers COUNT`
+`--workers`
 :    The number of worker nodes per zone in the default worker pool. Required when `--host-label` is specified.
 
-`--zone ZONE`
+`--zone`
 :    The zone for the default worker pool in a multizone cluster. To list zones for your location, run `ibmcloud sat location get`.
 
 
@@ -2347,46 +2347,46 @@ ibmcloud oc cluster create vpc-classic --flavor FLAVOR --name NAME --subnet-id I
 `--disable-public-service-endpoint`
 :    Disable the public service endpoint to prevent public access to the master.
 
-`--entitlement ENTITLEMENT`
+`--entitlement`
 :    Set this flag to `ocp_entitled` only if you use this cluster with a license such as a Cloud Pak that has an OpenShift entitlement.
 
-`--flavor FLAVOR`
+`--flavor`
 :    The flavor of a worker node. To see available flavors, run `ibmcloud ks flavor ls --zone <zone name>` (for public IBM Cloud accounts) or `ibmcloud ks flavor ls` (for IBM Cloud Dedicated accounts).
 
-`--name NAME`
+`--name`
 :    Enter a name for the cluster.
 
-`--operating-system SYSTEM`
+`--operating-system`
 :    Specify the name of the operating system.
 
-`--pod-subnet SUBNET`
+`--pod-subnet`
 :    Specify a custom subnet CIDR to provide private IP addresses for pods. The subnet must be at least `/23` or larger. For more info, see [https://ibm.biz/cluster-create-vpc](https://ibm.biz/cluster-create-vpc)
 
 `-q`
 :    Do not show the message of the day or update reminders.
 
-`--service-subnet SUBNET`
+`--service-subnet`
 :    Specify a custom subnet CIDR to provide private IP addresses for services. The subnet must be at least `/24` or larger. For more info, see [https://ibm.biz/cluster-create-vpc](https://ibm.biz/cluster-create-vpc). Default value: `172.21.0.0/16`
 
-`--sm-group GROUP`
+`--sm-group`
 :    The Secret Group ID of the IBM Cloud Secrets Manager instance where your secrets are persisted.
 
-`--sm-instance INSTANCE`
+`--sm-instance`
 :    The CRN of the IBM Cloud Secrets Manager instance.
 
-`--subnet-id ID`
+`--subnet-id`
 :    The VPC subnet to assign the cluster. To list available subnets, run `ibmcloud ks subnets --provider vpc-classic --vpc-id <vpc-id> --zone <vpc-zone>`.
 
-`--version VERSION`
+`--version`
 :    Specify the Kubernetes or OpenShift version, including at least the major.minor version. If you do not include this flag, the default version is used. To see available versions, run `ibmcloud ks versions`.
 
-`--vpc-id ID`
+`--vpc-id`
 :    The ID of the VPC in which to create the worker nodes. To list available IDs, run `ibmcloud ks vpcs`.
 
-`--workers COUNT`
+`--workers`
 :    The number of worker nodes per zone in the default worker pool.  For OpenShift clusters, you must set this value to at least 2. For Kubernetes clusters, this value is optional.
 
-`--zone ZONE`
+`--zone`
 :    Specify the zone for the worker pool in a multizone cluster. To list available zones, run `ibmcloud ks zone ls`.
 
 
@@ -2421,16 +2421,16 @@ ibmcloud oc cluster create vpc-gen2 --flavor FLAVOR --name NAME --subnet-id ID -
 {: #cluster-create-vpc-gen2-options}
 
 
-`--cluster-security-group GROUP`
+`--cluster-security-group`
 :    Optional. Specify one or more security group IDs to apply to all workers on the cluster. For OpenShift version 4.15 and Kubernetes version 1.30 and later, these security groups are applied in addition to the IBM-managed `kube-clusterID` security group. For earlier cluster versions, specify the `--cluster-security-group cluster` option to apply the `kube-clusterID` security group. If no value is specified, a default set of security groups including `kube-clusterID` are applied.
 
-`--cni CNI`
+`--cni`
 :    Set the network plugin for the cluster. Calico is set by default. Accepted values: `Calico`, `OVNKubernetes`
 
-`--cos-instance INSTANCE`
+`--cos-instance`
 :    Required for OpenShift clusters only. The CRN for the standard cloud object storage instance to back up the internal registry in your OpenShift cluster. To list the CRNs of your cloud object storage instances, run `ibmcloud resource service-instances --long --service-name cloud-object-storage`.
 
-`--crk CRK`
+`--crk`
 :    The ID of the root key in your KMS instance to use for local disk encryption. To list available root keys, run `ibmcloud ks kms crk ls --instance-id <kms_instance>`.
 
 `--disable-outbound-traffic-protection`
@@ -2439,58 +2439,58 @@ ibmcloud oc cluster create vpc-gen2 --flavor FLAVOR --name NAME --subnet-id ID -
 `--disable-public-service-endpoint`
 :    Disable the public service endpoint to prevent public access to the master.
 
-`--entitlement ENTITLEMENT`
+`--entitlement`
 :    Set this flag to `ocp_entitled` only if you use this cluster with a license such as a Cloud Pak that has an OpenShift entitlement.
 
-`--flavor FLAVOR`
+`--flavor`
 :    The flavor of a worker node. To see available flavors, run `ibmcloud ks flavor ls --zone <zone name>` (for public IBM Cloud accounts) or `ibmcloud ks flavor ls` (for IBM Cloud Dedicated accounts).
 
-`--kms-account-id ID`
+`--kms-account-id`
 :    The ID of the account that contains the KMS instance you want to use for local disk or secret encryption.
 
-`--kms-instance INSTANCE`
+`--kms-instance`
 :    The ID of the KMS instance to use for local disk encryption. To list available KMS instances, run `ibmcloud ks kms instance ls`.
 
-`--name NAME`
+`--name`
 :    Enter a name for the cluster.
 
-`--offering OFFERING`
+`--offering`
 :    Specify the cluster offering. Accepted values: `kubernetes`, `openshift`, `openshift-vs`
 
-`--operating-system SYSTEM`
+`--operating-system`
 :    Specify the name of the operating system.
 
-`--pod-subnet SUBNET`
+`--pod-subnet`
 :    Specify a custom subnet CIDR to provide private IP addresses for pods. The subnet must be at least `/23` or larger. For more info, see [https://ibm.biz/cluster-create-vpc](https://ibm.biz/cluster-create-vpc)
 
 `-q`
 :    Do not show the message of the day or update reminders.
 
-`--secondary-storage STORAGE`
+`--secondary-storage`
 :    The secondary storage option for the flavor. To view the secondary storage options that are available for a flavor, run `ibmcloud ks flavor get --provider vpc-gen2 --zone <zone name>`.
 
-`--service-subnet SUBNET`
+`--service-subnet`
 :    Specify a custom subnet CIDR to provide private IP addresses for services. The subnet must be at least `/24` or larger. For more info, see [https://ibm.biz/cluster-create-vpc](https://ibm.biz/cluster-create-vpc). Default value: `172.21.0.0/16`
 
-`--sm-group GROUP`
+`--sm-group`
 :    The Secret Group ID of the IBM Cloud Secrets Manager instance where your secrets are persisted.
 
-`--sm-instance INSTANCE`
+`--sm-instance`
 :    The CRN of the IBM Cloud Secrets Manager instance.
 
-`--subnet-id ID`
+`--subnet-id`
 :    The VPC subnet to assign the cluster. To list available subnets, run `ibmcloud ks subnets --provider vpc-gen2 --vpc-id <vpc-id> --zone <vpc-zone>`.
 
-`--version VERSION`
+`--version`
 :    Specify the Kubernetes or OpenShift version, including at least the major.minor version. If you do not include this flag, the default version is used. To see available versions, run `ibmcloud ks versions`.
 
-`--vpc-id ID`
+`--vpc-id`
 :    The ID of the VPC in which to create the worker nodes. To list available IDs, run `ibmcloud ks vpcs`.
 
-`--workers COUNT`
+`--workers`
 :    The number of worker nodes per zone in the default worker pool.  For OpenShift clusters, you must set this value to at least 2. For Kubernetes clusters, this value is optional.
 
-`--zone ZONE`
+`--zone`
 :    Specify the zone for the worker pool in a multizone cluster. To list available zones, run `ibmcloud ks zone ls`.
 
 
@@ -2525,10 +2525,10 @@ ibmcloud oc cluster get --cluster CLUSTER [--output OUTPUT] [-q] [--show-resourc
 {: #cluster-get-options}
 
 
-`-c`, `--cluster CLUSTER`
+`-c`, `--cluster`
 :    Specify the cluster name or ID.
 
-`--output OUTPUT`
+`--output`
 :    Prints the command output in the provided format. Accepted values: `json`
 
 `-q`
@@ -2587,7 +2587,7 @@ ibmcloud oc cluster image-security disable --cluster CLUSTER [-q]
 {: #cluster-image-security-disable-options}
 
 
-`-c`, `--cluster CLUSTER`
+`-c`, `--cluster`
 :    Specify the cluster name or ID.
 
 `-q`
@@ -2620,7 +2620,7 @@ ibmcloud oc cluster image-security enable --cluster CLUSTER [-f] [-q]
 {: #cluster-image-security-enable-options}
 
 
-`-c`, `--cluster CLUSTER`
+`-c`, `--cluster`
 :    Specify the cluster name or ID.
 
 `-f`
@@ -2679,13 +2679,13 @@ ibmcloud oc cluster ls [-l LOCATION ...] [--output OUTPUT] [--provider PROVIDER]
 {: #cluster-ls-options}
 
 
-`-l LOCATION`, `--location LOCATION`
+`-l`, `--location`
 :    A location to filter for. To list available locations, run `ibmcloud ks locations`.
 
-`--output OUTPUT`
+`--output`
 :    Prints the command output in the provided format. If you do not include the provider flag, only classic clusters are returned. Accepted values: `json`
 
-`--provider PROVIDER`
+`--provider`
 :    Filter the list for a specific infrastructure provider. Accepted values: `classic`, `vpc-classic`, `vpc-gen2`, `satellite`
 
 `-q`
@@ -2741,10 +2741,10 @@ ibmcloud oc cluster master console-oauth-access get --cluster CLUSTER [--output 
 {: #cluster-master-console-oauth-access-get-options}
 
 
-`-c`, `--cluster CLUSTER`
+`-c`, `--cluster`
 :    Specify the cluster name or ID.
 
-`--output OUTPUT`
+`--output`
 :    Prints the command output in the provided format. Accepted values: `json`
 
 `-q`
@@ -2800,7 +2800,7 @@ ibmcloud oc cluster master console-oauth-access set --cluster CLUSTER [-f] [-q] 
 {: #cluster-master-console-oauth-access-set-options}
 
 
-`-c`, `--cluster CLUSTER`
+`-c`, `--cluster`
 :    Specify the cluster name or ID.
 
 `-f`
@@ -2809,7 +2809,7 @@ ibmcloud oc cluster master console-oauth-access set --cluster CLUSTER [-f] [-q] 
 `-q`
 :    Do not show the message of the day or update reminders.
 
-`--type TYPE`
+`--type`
 :    Specify the OpenShift web console and OAuth server access type. Accepted values: `vpe-gateway`, `legacy`
 
 
@@ -2862,10 +2862,10 @@ ibmcloud oc cluster master pod-security get --cluster CLUSTER [--output OUTPUT] 
 {: #cluster-master-pod-security-get-options}
 
 
-`-c`, `--cluster CLUSTER`
+`-c`, `--cluster`
 :    Specify the cluster name or ID.
 
-`--output OUTPUT`
+`--output`
 :    Prints the command output in the provided format. Accepted values: `json`
 
 `-q`
@@ -2921,7 +2921,7 @@ ibmcloud oc cluster master pod-security policy disable --cluster CLUSTER [-q]
 {: #cluster-master-pod-security-policy-disable-options}
 
 
-`-c`, `--cluster CLUSTER`
+`-c`, `--cluster`
 :    Specify the cluster name or ID.
 
 `-q`
@@ -2954,7 +2954,7 @@ ibmcloud oc cluster master pod-security policy enable --cluster CLUSTER [-q]
 {: #cluster-master-pod-security-policy-enable-options}
 
 
-`-c`, `--cluster CLUSTER`
+`-c`, `--cluster`
 :    Specify the cluster name or ID.
 
 `-q`
@@ -2987,10 +2987,10 @@ ibmcloud oc cluster master pod-security policy get --cluster CLUSTER [--output O
 {: #cluster-master-pod-security-policy-get-options}
 
 
-`-c`, `--cluster CLUSTER`
+`-c`, `--cluster`
 :    Specify the cluster name or ID.
 
-`--output OUTPUT`
+`--output`
 :    Prints the command output in the provided format. Accepted values: `json`
 
 `-q`
@@ -3046,10 +3046,10 @@ ibmcloud oc cluster master pod-security set --cluster CLUSTER [--config-file FIL
 {: #cluster-master-pod-security-set-options}
 
 
-`-c`, `--cluster CLUSTER`
+`-c`, `--cluster`
 :    Specify the cluster name or ID.
 
-`--config-file FILE`
+`--config-file`
 :    The filepath of a custom PodSecurity configuration. If not specified, the Kubernetes defaults are applied. For more information, see https://ibm.biz/BdPtUB
 
 `-q`
@@ -3082,7 +3082,7 @@ ibmcloud oc cluster master pod-security unset --cluster CLUSTER [-q]
 {: #cluster-master-pod-security-unset-options}
 
 
-`-c`, `--cluster CLUSTER`
+`-c`, `--cluster`
 :    Specify the cluster name or ID.
 
 `-q`
@@ -3118,13 +3118,13 @@ ibmcloud oc cluster master private-service-endpoint allowlist add --cluster CLUS
 {: #cluster-master-private-service-endpoint-allowlist-add-options}
 
 
-`-c`, `--cluster CLUSTER`
+`-c`, `--cluster`
 :    Specify the cluster name or ID.
 
 `-q`
 :    Do not show the message of the day or update reminders.
 
-`--subnet SUBNET`
+`--subnet`
 :    Specify the subnet CIDR.
 
 
@@ -3157,7 +3157,7 @@ ibmcloud oc cluster master private-service-endpoint allowlist disable --cluster 
 {: #cluster-master-private-service-endpoint-allowlist-disable-options}
 
 
-`-c`, `--cluster CLUSTER`
+`-c`, `--cluster`
 :    Specify the cluster name or ID.
 
 `-f`
@@ -3196,7 +3196,7 @@ ibmcloud oc cluster master private-service-endpoint allowlist enable --cluster C
 {: #cluster-master-private-service-endpoint-allowlist-enable-options}
 
 
-`-c`, `--cluster CLUSTER`
+`-c`, `--cluster`
 :    Specify the cluster name or ID.
 
 `-f`
@@ -3235,7 +3235,7 @@ ibmcloud oc cluster master private-service-endpoint allowlist get --cluster CLUS
 {: #cluster-master-private-service-endpoint-allowlist-get-options}
 
 
-`-c`, `--cluster CLUSTER`
+`-c`, `--cluster`
 :    Specify the cluster name or ID.
 
 `-q`
@@ -3294,7 +3294,7 @@ ibmcloud oc cluster master private-service-endpoint allowlist rm --cluster CLUST
 {: #cluster-master-private-service-endpoint-allowlist-rm-options}
 
 
-`-c`, `--cluster CLUSTER`
+`-c`, `--cluster`
 :    Specify the cluster name or ID.
 
 `-f`
@@ -3303,7 +3303,7 @@ ibmcloud oc cluster master private-service-endpoint allowlist rm --cluster CLUST
 `-q`
 :    Do not show the message of the day or update reminders.
 
-`--subnet SUBNET`
+`--subnet`
 :    Specify the subnet CIDR.
 
 
@@ -3333,7 +3333,7 @@ ibmcloud oc cluster master private-service-endpoint enable --cluster CLUSTER [-f
 {: #cluster-master-private-service-endpoint-enable-options}
 
 
-`-c`, `--cluster CLUSTER`
+`-c`, `--cluster`
 :    Specify the cluster name or ID.
 
 `-f`
@@ -3395,7 +3395,7 @@ ibmcloud oc cluster master public-service-endpoint disable --cluster CLUSTER [-f
 {: #cluster-master-public-service-endpoint-disable-options}
 
 
-`-c`, `--cluster CLUSTER`
+`-c`, `--cluster`
 :    Specify the cluster name or ID.
 
 `-f`
@@ -3434,7 +3434,7 @@ ibmcloud oc cluster master public-service-endpoint enable --cluster CLUSTER [-f]
 {: #cluster-master-public-service-endpoint-enable-options}
 
 
-`-c`, `--cluster CLUSTER`
+`-c`, `--cluster`
 :    Specify the cluster name or ID.
 
 `-f`
@@ -3496,7 +3496,7 @@ ibmcloud oc cluster master refresh --cluster CLUSTER [-q]
 {: #cluster-master-refresh-options}
 
 
-`-c`, `--cluster CLUSTER`
+`-c`, `--cluster`
 :    Specify the cluster name or ID.
 
 `-q`
@@ -3529,13 +3529,13 @@ ibmcloud oc cluster master satellite-service-endpoint allowlist add --cluster CL
 {: #cluster-master-satellite-service-endpoint-allowlist-add-options}
 
 
-`-c`, `--cluster CLUSTER`
+`-c`, `--cluster`
 :    Specify the cluster name or ID.
 
 `-q`
 :    Do not show the message of the day or update reminders.
 
-`--subnet SUBNET`
+`--subnet`
 :    Specify the subnet CIDR.
 
 
@@ -3567,7 +3567,7 @@ ibmcloud ks cluster master satellite-service-endpoint allowlist disable --cluste
 {: #cluster-master-satellite-service-endpoint-allowlist-disable-options}
 
 
-`-c`, `--cluster CLUSTER`
+`-c`, `--cluster`
 :    Specify the cluster name or ID.
 
 `-f`
@@ -3603,7 +3603,7 @@ ibmcloud ks cluster master satellite-service-endpoint allowlist enable --cluster
 {: #cluster-master-satellite-service-endpoint-allowlist-enable-options}
 
 
-`-c`, `--cluster CLUSTER`
+`-c`, `--cluster`
 :    Specify the cluster name or ID.
 
 `-f`
@@ -3639,7 +3639,7 @@ ibmcloud oc cluster master satellite-service-endpoint allowlist get --cluster CL
 {: #cluster-master-satellite-service-endpoint-allowlist-get-options}
 
 
-`-c`, `--cluster CLUSTER`
+`-c`, `--cluster`
 :    Specify the cluster name or ID.
 
 `-q`
@@ -3695,7 +3695,7 @@ ibmcloud oc cluster master satellite-service-endpoint allowlist rm --cluster CLU
 {: #cluster-master-satellite-service-endpoint-allowlist-rm-options}
 
 
-`-c`, `--cluster CLUSTER`
+`-c`, `--cluster`
 :    Specify the cluster name or ID.
 
 `-f`
@@ -3704,7 +3704,7 @@ ibmcloud oc cluster master satellite-service-endpoint allowlist rm --cluster CLU
 `-q`
 :    Do not show the message of the day or update reminders.
 
-`--subnet SUBNET`
+`--subnet`
 :    Specify the subnet CIDR.
 
 
@@ -3747,7 +3747,7 @@ ibmcloud oc cluster master satellite-service-endpoint help
 
 [Virtual Private Cloud]{: tag-vpc} [Classic infrastructure]{: tag-classic-inf} [Satellite]{: tag-satellite} 
 
-Update the cluster master to the latest version.
+Update the cluster master to the latest or a specified Kubernetes version.
 
 ```sh
 ibmcloud oc cluster master update --cluster CLUSTER [-f] [--force-update] [-q] [--version VERSION]
@@ -3757,7 +3757,7 @@ ibmcloud oc cluster master update --cluster CLUSTER [-f] [--force-update] [-q] [
 {: #cluster-master-update-options}
 
 
-`-c`, `--cluster CLUSTER`
+`-c`, `--cluster`
 :    Specify the cluster name or ID.
 
 `-f`
@@ -3769,14 +3769,14 @@ ibmcloud oc cluster master update --cluster CLUSTER [-f] [--force-update] [-q] [
 `-q`
 :    Do not show the message of the day or update reminders.
 
-`--version VERSION`
+`--version`
 :    Specify the Kubernetes or OpenShift version, including at least the major.minor version. If you do not include this flag, the default version is used. To see available versions, run `ibmcloud ks versions`.
 
 
 #### Examples
 {: #cluster-master-update-examples}
 
-Update the cluster master to the latest version
+Update the cluster master to the latest or a specified Kubernetes version
 
 ```sh
 ibmcloud oc cluster master update --cluster CLUSTER
@@ -3789,7 +3789,7 @@ ibmcloud oc cluster master update --cluster CLUSTER
 
 [Virtual Private Cloud]{: tag-vpc} [Classic infrastructure]{: tag-classic-inf} [Satellite]{: tag-satellite} 
 
-Generate a new image pull secret that stores IAM credentials for the cluster to access images in IBM Cloud Container Registry.
+Generate and apply a new image pull secret that stores IAM credentials for the cluster to access images in IBM Cloud Container Registry.
 
 ```sh
 ibmcloud oc cluster pull-secret apply --cluster CLUSTER [-q]
@@ -3799,7 +3799,7 @@ ibmcloud oc cluster pull-secret apply --cluster CLUSTER [-q]
 {: #cluster-pull-secret-apply-options}
 
 
-`-c`, `--cluster CLUSTER`
+`-c`, `--cluster`
 :    Specify the cluster name or ID.
 
 `-q`
@@ -3809,7 +3809,7 @@ ibmcloud oc cluster pull-secret apply --cluster CLUSTER [-q]
 #### Examples
 {: #cluster-pull-secret-apply-examples}
 
-Generate a new image pull secret that stores IAM credentials for the cluster to access images in IBM Cloud Container Registry
+Generate and apply a new image pull secret that stores IAM credentials for the cluster to access images in IBM Cloud Container Registry
 
 ```sh
 ibmcloud oc cluster pull-secret apply --cluster CLUSTER
@@ -3855,7 +3855,7 @@ ibmcloud oc cluster rm --cluster CLUSTER [--delete-openshift-registry-cos-bucket
 {: #cluster-rm-options}
 
 
-`-c`, `--cluster CLUSTER`
+`-c`, `--cluster`
 :    Specify the cluster name or ID.
 
 `--delete-openshift-registry-cos-bucket`
@@ -3900,22 +3900,22 @@ ibmcloud oc cluster service bind --cluster CLUSTER --namespace NAMESPACE --servi
 {: #cluster-service-bind-options}
 
 
-`-c`, `--cluster CLUSTER`
+`-c`, `--cluster`
 :    Specify the cluster name or ID.
 
-`--key KEY`
+`--key`
 :    Specify the name or GUID of an existing service key. If you define a service key, you cannot set the `--role` option at the same time.
 
-`-n CLUSTER`, `--namespace NAMESPACE`
+`-n`, `--namespace`
 :    Specify the Kubernetes namespace.
 
 `-q`
 :    Do not show the message of the day or update reminders.
 
-`--role ROLE`
+`--role`
 :    Specify the IAM role for the service key. This flag does not work if you specify an existing key to use or for services that are not IAM-enabled, such as Cloud Foundry services.
 
-`--service SERVICE`
+`--service`
 :    Specify the name of the service instance. To see a list of available service instances, run `ibmcloud service list` for Cloud Foundry services, or `ibmcloud resource service-instances` for IAM-enabled services.
 
 
@@ -3971,13 +3971,13 @@ ibmcloud oc cluster service ls --cluster CLUSTER [--output OUTPUT] [-q] (--all-n
 `--all-namespaces`
 :    Include all Kubernetes namespaces.
 
-`-c`, `--cluster CLUSTER`
+`-c`, `--cluster`
 :    Specify the cluster name or ID.
 
-`-n CLUSTER`, `--namespace NAMESPACE`
+`-n`, `--namespace`
 :    The Kubernetes namespace. Will use the `default` namespace if not specified.
 
-`--output OUTPUT`
+`--output`
 :    Prints the command output in the provided format. Accepted values: `json`
 
 `-q`
@@ -4010,16 +4010,16 @@ ibmcloud oc cluster service unbind --cluster CLUSTER --namespace NAMESPACE --ser
 {: #cluster-service-unbind-options}
 
 
-`-c`, `--cluster CLUSTER`
+`-c`, `--cluster`
 :    Specify the cluster name or ID.
 
-`-n CLUSTER`, `--namespace NAMESPACE`
+`-n`, `--namespace`
 :    Specify the Kubernetes namespace.
 
 `-q`
 :    Do not show the message of the day or update reminders.
 
-`--service SERVICE`
+`--service`
 :    Specify the name of the service instance. To see a list of available service instances, run `ibmcloud service list` for Cloud Foundry services, or `ibmcloud resource service-instances` for IAM-enabled services.
 
 
@@ -4049,13 +4049,13 @@ ibmcloud oc cluster subnet add --cluster CLUSTER --subnet-id ID [-q]
 {: #cluster-subnet-add-options}
 
 
-`-c`, `--cluster CLUSTER`
+`-c`, `--cluster`
 :    Specify the cluster name or ID.
 
 `-q`
 :    Do not show the message of the day or update reminders.
 
-`--subnet-id ID`
+`--subnet-id`
 :    Specify the subnet ID.
 
 
@@ -4085,16 +4085,16 @@ ibmcloud oc cluster subnet create --cluster CLUSTER --size SIZE --vlan VLAN [-q]
 {: #cluster-subnet-create-options}
 
 
-`-c`, `--cluster CLUSTER`
+`-c`, `--cluster`
 :    Specify the cluster name or ID.
 
 `-q`
 :    Do not show the message of the day or update reminders.
 
-`--size SIZE`
+`--size`
 :    Specify the size of the portable subnet. The size must be one of 8, 16, 32, 64.
 
-`--vlan VLAN`
+`--vlan`
 :    Specify the public or private VLAN ID.
 
 
@@ -4124,7 +4124,7 @@ ibmcloud oc cluster subnet detach --cluster CLUSTER --subnet-id ID [-f] [-q]
 {: #cluster-subnet-detach-options}
 
 
-`-c`, `--cluster CLUSTER`
+`-c`, `--cluster`
 :    Specify the cluster name or ID.
 
 `-f`
@@ -4133,7 +4133,7 @@ ibmcloud oc cluster subnet detach --cluster CLUSTER --subnet-id ID [-f] [-q]
 `-q`
 :    Do not show the message of the day or update reminders.
 
-`--subnet-id ID`
+`--subnet-id`
 :    Specify the subnet ID.
 
 
@@ -4194,13 +4194,13 @@ Aliases: `ibmcloud oc credentials-get`
 {: #credential-get-options}
 
 
-`--output OUTPUT`
+`--output`
 :    Prints the command output in the provided format. Accepted values: `json`
 
 `-q`
 :    Do not show the message of the day or update reminders.
 
-`--region REGION`
+`--region`
 :    Specify the region to target.
 
 
@@ -4253,16 +4253,16 @@ ibmcloud oc credential set classic --infrastructure-api-key KEY --infrastructure
 {: #credential-set-classic-options}
 
 
-`--infrastructure-api-key KEY`
+`--infrastructure-api-key`
 :    The API key of your IBM Cloud classic infrastructure account.
 
-`--infrastructure-username USERNAME`
+`--infrastructure-username`
 :    The user name of your IBM Cloud classic infrastructure account.
 
 `-q`
 :    Do not show the message of the day or update reminders.
 
-`--region REGION`
+`--region`
 :    Specify the region to target.
 
 
@@ -4323,7 +4323,7 @@ Aliases: `ibmcloud oc credentials-unset`
 `-q`
 :    Do not show the message of the day or update reminders.
 
-`--region REGION`
+`--region`
 :    Specify the region to target.
 
 
@@ -4382,16 +4382,16 @@ ibmcloud oc experimental trusted-profile default get --region REGION --resource-
 {: #experimental-trusted-profile-default-get-options}
 
 
-`--output OUTPUT`
+`--output`
 :    Prints the command output in the provided format. Accepted values: `json`
 
 `-q`
 :    Do not show the message of the day or update reminders.
 
-`--region REGION`
+`--region`
 :    The region where the resource-group is located.
 
-`--resource-group GROUP`
+`--resource-group`
 :    The resource-group whose default trusted profile is to be retrieved.
 
 
@@ -4444,19 +4444,19 @@ ibmcloud oc experimental trusted-profile default set --region REGION --resource-
 {: #experimental-trusted-profile-default-set-options}
 
 
-`--output OUTPUT`
+`--output`
 :    Prints the command output in the provided format. Accepted values: `json`
 
 `-q`
 :    Do not show the message of the day or update reminders.
 
-`--region REGION`
+`--region`
 :    The region where the resource group is located.
 
-`--resource-group GROUP`
+`--resource-group`
 :    The resource group ID to set the trusted profile on.
 
-`--trusted-profile PROFILE`
+`--trusted-profile`
 :    The trusted profile ID.
 
 
@@ -4489,10 +4489,10 @@ ibmcloud oc experimental trusted-profile get --cluster CLUSTER [--output OUTPUT]
 {: #experimental-trusted-profile-get-options}
 
 
-`--cluster CLUSTER`
+`--cluster`
 :    The cluster ID to retrieve the trusted profile for.
 
-`--output OUTPUT`
+`--output`
 :    Prints the command output in the provided format. Accepted values: `json`
 
 `-q`
@@ -4548,16 +4548,16 @@ ibmcloud oc experimental trusted-profile set --cluster CLUSTER --trusted-profile
 {: #experimental-trusted-profile-set-options}
 
 
-`--cluster CLUSTER`
+`--cluster`
 :    The cluster ID to set the the trusted profile on.
 
-`--output OUTPUT`
+`--output`
 :    Prints the command output in the provided format. Accepted values: `json`
 
 `-q`
 :    Do not show the message of the day or update reminders.
 
-`--trusted-profile PROFILE`
+`--trusted-profile`
 :    The trusted profile ID.
 
 
@@ -4593,19 +4593,19 @@ ibmcloud oc flavor get --flavor FLAVOR --provider PROVIDER --zone ZONE [--output
 {: #flavor-get-options}
 
 
-`--flavor FLAVOR`
+`--flavor`
 :    The flavor of a worker node. To see available flavors, run `ibmcloud ks flavor ls --zone <zone name>` (for public IBM Cloud accounts) or `ibmcloud ks flavor ls` (for IBM Cloud Dedicated accounts).
 
-`--output OUTPUT`
+`--output`
 :    Prints the command output in the provided format. Accepted values: `json`
 
-`--provider PROVIDER`
+`--provider`
 :    Specify a provider. Available options are `classic`, `vpc-classic` and `vpc-gen2`.
 
 `-q`
 :    Do not show the message of the day or update reminders.
 
-`--zone ZONE`
+`--zone`
 :    Specify the zone to list available flavors for. To list available zones, run `ibmcloud ks zone ls`.
 
 
@@ -4658,10 +4658,10 @@ ibmcloud oc flavor ls --zone ZONE [--output OUTPUT] [--provider PROVIDER] [-q] [
 {: #flavor-ls-options}
 
 
-`--output OUTPUT`
+`--output`
 :    Prints the command output in the provided format. Accepted values: `json`
 
-`--provider PROVIDER`
+`--provider`
 :    The provider type to get the flavors for. Accepted values: `classic`, `vpc-classic`, `vpc-gen2`, `satellite`
 
 `-q`
@@ -4673,7 +4673,7 @@ ibmcloud oc flavor ls --zone ZONE [--output OUTPUT] [--provider PROVIDER] [-q] [
 `--show-storage`
 :    Show additional storage drives.
 
-`--zone ZONE`
+`--zone`
 :    Specify the zone to list available flavors for. To list available zones, run `ibmcloud ks zone ls`.
 
 
@@ -4709,13 +4709,13 @@ ibmcloud oc infra-permissions get [--output OUTPUT] [-q] [--region REGION]
 {: #infra-permissions-get-options}
 
 
-`--output OUTPUT`
+`--output`
 :    Prints the command output in the provided format. Accepted values: `json`
 
 `-q`
 :    Do not show the message of the day or update reminders.
 
-`--region REGION`
+`--region`
 :    Specify the region to target. If a region is not already targeted, this argument must be specified. To check if a region is targeted, run `ibmcloud target`.
 
 
@@ -4774,13 +4774,13 @@ ibmcloud oc ingress alb autoscale get --alb ALB --cluster CLUSTER [--output OUTP
 {: #ingress-alb-autoscale-get-options}
 
 
-`--alb ALB`
+`--alb`
 :    The ALB ID. To see available ALB IDs, run `ibmcloud ks ingress alb ls`.
 
-`-c`, `--cluster CLUSTER`
+`-c`, `--cluster`
 :    Specify the cluster name or ID.
 
-`--output OUTPUT`
+`--output`
 :    Prints the command output in the provided format. Accepted values: `json`
 
 `-q`
@@ -4836,25 +4836,25 @@ ibmcloud oc ingress alb autoscale set --alb ALB --cluster CLUSTER --max-replicas
 {: #ingress-alb-autoscale-set-options}
 
 
-`--alb ALB`
+`--alb`
 :    The ALB ID. To see available ALB IDs, run `ibmcloud ks ingress alb ls`.
 
-`-c`, `--cluster CLUSTER`
+`-c`, `--cluster`
 :    Specify the cluster name or ID.
 
-`--cpu-average-utilization PERCENT`
+`--cpu-average-utilization`
 :    Average CPU utilization threshold. Used to dynamically calculate the number of replicas.
 
-`--custom-metrics-file FILE`
+`--custom-metrics-file`
 :    Path for the custom metric file. See https://ibm.biz/iks-ingress-custom-metrics for more details.
 
-`--max-replicas REPLICAS`
+`--max-replicas`
 :    The maximum replicas for the given ALB. Ensure you have enough workers.
 
-`--min-replicas REPLICAS`
+`--min-replicas`
 :    The minimum replicas for the given ALB. Must be greater or equal to 1. (Recommended minimum is 2 for high availability purposes.)
 
-`--output OUTPUT`
+`--output`
 :    Prints the command output in the provided format. Accepted values: `json`
 
 `-q`
@@ -4892,10 +4892,10 @@ ibmcloud oc ingress alb autoscale unset --alb ALB --cluster CLUSTER [-q]
 {: #ingress-alb-autoscale-unset-options}
 
 
-`--alb ALB`
+`--alb`
 :    The ALB ID. To see available ALB IDs, run `ibmcloud ks ingress alb ls`.
 
-`-c`, `--cluster CLUSTER`
+`-c`, `--cluster`
 :    Specify the cluster name or ID.
 
 `-q`
@@ -4928,7 +4928,7 @@ ibmcloud oc ingress alb autoupdate disable --cluster CLUSTER [-q]
 {: #ingress-alb-autoupdate-disable-options}
 
 
-`-c`, `--cluster CLUSTER`
+`-c`, `--cluster`
 :    Specify the cluster name or ID.
 
 `-q`
@@ -4961,7 +4961,7 @@ ibmcloud oc ingress alb autoupdate enable --cluster CLUSTER [-q]
 {: #ingress-alb-autoupdate-enable-options}
 
 
-`-c`, `--cluster CLUSTER`
+`-c`, `--cluster`
 :    Specify the cluster name or ID.
 
 `-q`
@@ -4994,10 +4994,10 @@ ibmcloud oc ingress alb autoupdate get --cluster CLUSTER [--output OUTPUT] [-q]
 {: #ingress-alb-autoupdate-get-options}
 
 
-`-c`, `--cluster CLUSTER`
+`-c`, `--cluster`
 :    Specify the cluster name or ID.
 
-`--output OUTPUT`
+`--output`
 :    Prints the command output in the provided format. Accepted values: `json`
 
 `-q`
@@ -5053,25 +5053,25 @@ ibmcloud oc ingress alb create classic --cluster CLUSTER --type TYPE --vlan VLAN
 {: #ingress-alb-create-classic-options}
 
 
-`-c`, `--cluster CLUSTER`
+`-c`, `--cluster`
 :    Specify the cluster name or ID.
 
-`--ip IP`
+`--ip`
 :    Specify a portable public or private IP address that is available on the `vlan` and in the `zone` of the ALB to be created or enabled.
 
 `-q`
 :    Do not show the message of the day or update reminders.
 
-`--type TYPE`
+`--type`
 :    Specify the type of ALB. Available options: public, private
 
-`--version VERSION`
+`--version`
 :    Specify the ALB image version. To see supported image versions, run `ibmcloud ks ingress alb versions`.
 
-`--vlan VLAN`
+`--vlan`
 :    The VLAN ID. This VLAN must match the ALB `type` and must be in the same `zone` as the ALB that you want to create.
 
-`--zone ZONE`
+`--zone`
 :    Specify the zone for the worker pool in a multizone cluster. To list available zones, run `ibmcloud ks zone ls`.
 
 
@@ -5124,19 +5124,19 @@ ibmcloud oc ingress alb create vpc-gen2 --cluster CLUSTER --type TYPE --zone ZON
 {: #ingress-alb-create-vpc-gen2-options}
 
 
-`-c`, `--cluster CLUSTER`
+`-c`, `--cluster`
 :    Specify the cluster name or ID.
 
 `-q`
 :    Do not show the message of the day or update reminders.
 
-`--type TYPE`
+`--type`
 :    Specify the type of ALB. Available options: public, private
 
-`--version VERSION`
+`--version`
 :    Specify the ALB image version. To see supported image versions, run `ibmcloud ks ingress alb versions`.
 
-`--zone ZONE`
+`--zone`
 :    Specify the zone for the worker pool in a multizone cluster. To list available zones, run `ibmcloud ks zone ls`.
 
 
@@ -5166,10 +5166,10 @@ ibmcloud oc ingress alb disable --alb ALB --cluster CLUSTER [-q]
 {: #ingress-alb-disable-options}
 
 
-`--alb ALB`
+`--alb`
 :    The ALB ID. To see available ALB IDs, run `ibmcloud ks ingress alb ls`.
 
-`-c`, `--cluster CLUSTER`
+`-c`, `--cluster`
 :    Specify the cluster name or ID.
 
 `-q`
@@ -5202,19 +5202,19 @@ ibmcloud oc ingress alb enable classic --alb ALB --cluster CLUSTER [--ip IP] [-q
 {: #ingress-alb-enable-classic-options}
 
 
-`--alb ALB`
+`--alb`
 :    The ALB ID. To see available ALB IDs, run `ibmcloud ks ingress alb ls`.
 
-`-c`, `--cluster CLUSTER`
+`-c`, `--cluster`
 :    Specify the cluster name or ID.
 
-`--ip IP`
+`--ip`
 :    Specify a portable public or private IP address that is available on the `vlan` and in the `zone` of the ALB to be created or enabled.
 
 `-q`
 :    Do not show the message of the day or update reminders.
 
-`--version VERSION`
+`--version`
 :    Specify the ALB image version. To see supported image versions, run `ibmcloud ks ingress alb versions`.
 
 
@@ -5267,16 +5267,16 @@ ibmcloud oc ingress alb enable vpc-gen2 --alb ALB --cluster CLUSTER [-q] [--vers
 {: #ingress-alb-enable-vpc-gen2-options}
 
 
-`--alb ALB`
+`--alb`
 :    The ALB ID. To see available ALB IDs, run `ibmcloud ks ingress alb ls`.
 
-`-c`, `--cluster CLUSTER`
+`-c`, `--cluster`
 :    Specify the cluster name or ID.
 
 `-q`
 :    Do not show the message of the day or update reminders.
 
-`--version VERSION`
+`--version`
 :    Specify the ALB image version. To see supported image versions, run `ibmcloud ks ingress alb versions`.
 
 
@@ -5306,13 +5306,13 @@ ibmcloud oc ingress alb get --alb ALB --cluster CLUSTER [--output OUTPUT] [-q]
 {: #ingress-alb-get-options}
 
 
-`--alb ALB`
+`--alb`
 :    The ALB ID. To see available ALB IDs, run `ibmcloud ks ingress alb ls`.
 
-`-c`, `--cluster CLUSTER`
+`-c`, `--cluster`
 :    Specify the cluster name or ID.
 
-`--output OUTPUT`
+`--output`
 :    Prints the command output in the provided format. Accepted values: `json`
 
 `-q`
@@ -5345,7 +5345,7 @@ ibmcloud oc ingress alb health-checker disable --cluster CLUSTER [-q]
 {: #ingress-alb-health-checker-disable-options}
 
 
-`-c`, `--cluster CLUSTER`
+`-c`, `--cluster`
 :    Specify the cluster name or ID.
 
 `-q`
@@ -5378,7 +5378,7 @@ ibmcloud oc ingress alb health-checker enable --cluster CLUSTER [-q]
 {: #ingress-alb-health-checker-enable-options}
 
 
-`-c`, `--cluster CLUSTER`
+`-c`, `--cluster`
 :    Specify the cluster name or ID.
 
 `-q`
@@ -5411,10 +5411,10 @@ ibmcloud oc ingress alb health-checker get --cluster CLUSTER [--output OUTPUT] [
 {: #ingress-alb-health-checker-get-options}
 
 
-`-c`, `--cluster CLUSTER`
+`-c`, `--cluster`
 :    Specify the cluster name or ID.
 
-`--output OUTPUT`
+`--output`
 :    Prints the command output in the provided format. Accepted values: `json`
 
 `-q`
@@ -5493,10 +5493,10 @@ ibmcloud oc ingress alb ls --cluster CLUSTER [--output OUTPUT] [-q]
 {: #ingress-alb-ls-options}
 
 
-`-c`, `--cluster CLUSTER`
+`-c`, `--cluster`
 :    Specify the cluster name or ID.
 
-`--output OUTPUT`
+`--output`
 :    Prints the command output in the provided format. Accepted values: `json`
 
 `-q`
@@ -5529,19 +5529,19 @@ ibmcloud oc ingress alb update --cluster CLUSTER [--alb ALB ...] [--output OUTPU
 {: #ingress-alb-update-options}
 
 
-`--alb ALB`
+`--alb`
 :    To update a specific ALB, specify the ALB ID. To see available ALB IDs, run `ibmcloud ks ingress alb ls`. To update more than one ALB, specify one ALB ID in each flag, such as `--alb ID_1 --alb ID_2`. To update all ALBs, do not include this flag.
 
-`-c`, `--cluster CLUSTER`
+`-c`, `--cluster`
 :    Specify the cluster name or ID.
 
-`--output OUTPUT`
+`--output`
 :    Prints the command output in the provided format. Accepted values: `json`
 
 `-q`
 :    Do not show the message of the day or update reminders.
 
-`--version VERSION`
+`--version`
 :    Specify the ALB image version. To see supported image versions, run `ibmcloud ks ingress alb versions`.
 
 
@@ -5571,13 +5571,13 @@ ibmcloud oc ingress alb versions [--output OUTPUT] [-q] [--region REGION]
 {: #ingress-alb-versions-options}
 
 
-`--output OUTPUT`
+`--output`
 :    Prints the command output in the provided format. Accepted values: `json`
 
 `-q`
 :    Do not show the message of the day or update reminders.
 
-`--region REGION`
+`--region`
 :    Specify the region to target.
 
 
@@ -5607,37 +5607,37 @@ ibmcloud oc ingress domain create --cluster CLUSTER [--crn CRN] [--domain DOMAIN
 {: #ingress-domain-create-options}
 
 
-`-c`, `--cluster CLUSTER`
+`-c`, `--cluster`
 :    Specify the cluster name or ID.
 
-`--crn CRN`
+`--crn`
 :    The CRN for the IBM CIS instance.
 
-`--domain DOMAIN`
+`--domain`
 :    The Ingress domain. To see existing domains, run `ibmcloud ks ingress domain ls`.
 
-`--domain-provider PROVIDER`
+`--domain-provider`
 :    The DNS provider. The default DNS provider is our internal one. For supported providers see our documentation: https://ibm.biz/containers-ingress-domains
 
-`--domain-zone ZONE`
+`--domain-zone`
 :    The ZoneID for CIS.
 
-`--hostname HOSTNAME`
+`--hostname`
 :    For VPC clusters. The hostname to register for the domain.
 
-`--ip IP`
+`--ip`
 :    The IP addresses to register for the domain.
 
 `--is-default`
 :    Include this option to set the relevant domain as the default domain for cluster.
 
-`--output OUTPUT`
+`--output`
 :    Prints the command output in the provided format. Accepted values: `json`
 
 `-q`
 :    Do not show the message of the day or update reminders.
 
-`--secret-namespace NAMESPACE`
+`--secret-namespace`
 :    The namespace that the TLS secret is created in.
 
 
@@ -5690,10 +5690,10 @@ ibmcloud oc ingress domain default replace --cluster CLUSTER --domain DOMAIN [-q
 {: #ingress-domain-default-replace-options}
 
 
-`-c`, `--cluster CLUSTER`
+`-c`, `--cluster`
 :    Specify the cluster name or ID.
 
-`--domain DOMAIN`
+`--domain`
 :    The Ingress domain. To see existing domains, run `ibmcloud ks ingress domain ls`.
 
 `-q`
@@ -5726,13 +5726,13 @@ ibmcloud oc ingress domain get --cluster CLUSTER --domain DOMAIN [--output OUTPU
 {: #ingress-domain-get-options}
 
 
-`-c`, `--cluster CLUSTER`
+`-c`, `--cluster`
 :    Specify the cluster name or ID.
 
-`--domain DOMAIN`
+`--domain`
 :    The Ingress domain. To see existing domains, run `ibmcloud ks ingress domain ls`.
 
-`--output OUTPUT`
+`--output`
 :    Prints the command output in the provided format. Accepted values: `json`
 
 `-q`
@@ -5788,10 +5788,10 @@ ibmcloud oc ingress domain ls --cluster CLUSTER [--output OUTPUT] [-q]
 {: #ingress-domain-ls-options}
 
 
-`-c`, `--cluster CLUSTER`
+`-c`, `--cluster`
 :    Specify the cluster name or ID.
 
-`--output OUTPUT`
+`--output`
 :    Prints the command output in the provided format. Accepted values: `json`
 
 `-q`
@@ -5824,10 +5824,10 @@ ibmcloud oc ingress domain rm --cluster CLUSTER --domain DOMAIN [-f] [-q]
 {: #ingress-domain-rm-options}
 
 
-`-c`, `--cluster CLUSTER`
+`-c`, `--cluster`
 :    Specify the cluster name or ID.
 
-`--domain DOMAIN`
+`--domain`
 :    The Ingress domain. To see existing domains, run `ibmcloud ks ingress domain ls`.
 
 `-f`
@@ -5886,13 +5886,13 @@ ibmcloud oc ingress domain secret regenerate --cluster CLUSTER --domain DOMAIN [
 {: #ingress-domain-secret-regenerate-options}
 
 
-`-c`, `--cluster CLUSTER`
+`-c`, `--cluster`
 :    Specify the cluster name or ID.
 
-`--domain DOMAIN`
+`--domain`
 :    The Ingress domain. To see existing domains, run `ibmcloud ks ingress domain ls`.
 
-`--output OUTPUT`
+`--output`
 :    Prints the command output in the provided format. Accepted values: `json`
 
 `-q`
@@ -5925,16 +5925,16 @@ ibmcloud oc ingress domain secret rm --cluster CLUSTER --domain DOMAIN [-f] [--o
 {: #ingress-domain-secret-rm-options}
 
 
-`-c`, `--cluster CLUSTER`
+`-c`, `--cluster`
 :    Specify the cluster name or ID.
 
-`--domain DOMAIN`
+`--domain`
 :    The Ingress domain. To see existing domains, run `ibmcloud ks ingress domain ls`.
 
 `-f`
 :    Force the command to run without user prompts.
 
-`--output OUTPUT`
+`--output`
 :    Prints the command output in the provided format. Accepted values: `json`
 
 `-q`
@@ -5967,16 +5967,16 @@ ibmcloud oc ingress domain update --cluster CLUSTER --domain DOMAIN [--hostname 
 {: #ingress-domain-update-options}
 
 
-`-c`, `--cluster CLUSTER`
+`-c`, `--cluster`
 :    Specify the cluster name or ID.
 
-`--domain DOMAIN`
+`--domain`
 :    The Ingress domain. To see existing domains, run `ibmcloud ks ingress domain ls`.
 
-`--hostname HOSTNAME`
+`--hostname`
 :    For VPC clusters. The hostname to register for the domain.
 
-`--ip IP`
+`--ip`
 :    The IP addresses to register for the domain.
 
 `-q`
@@ -6055,16 +6055,16 @@ ibmcloud oc ingress instance default set --cluster CLUSTER --name NAME [-q] [--s
 {: #ingress-instance-default-set-options}
 
 
-`-c`, `--cluster CLUSTER`
+`-c`, `--cluster`
 :    Specify the cluster name or ID.
 
-`--name NAME`
+`--name`
 :    The name of the registered IBM Cloud Secret Manager instance.
 
 `-q`
 :    Do not show the message of the day or update reminders.
 
-`--secret-group GROUP`
+`--secret-group`
 :    Secret Group ID of the IBM Cloud Secret Manager instance where the secrets are persisted.
 
 
@@ -6094,10 +6094,10 @@ ibmcloud oc ingress instance default unset --cluster CLUSTER --name NAME [-q]
 {: #ingress-instance-default-unset-options}
 
 
-`-c`, `--cluster CLUSTER`
+`-c`, `--cluster`
 :    Specify the cluster name or ID.
 
-`--name NAME`
+`--name`
 :    The name of the registered IBM Cloud Secret Manager instance.
 
 `-q`
@@ -6120,7 +6120,7 @@ ibmcloud oc ingress instance default unset --cluster CLUSTER --name NAME
 
 [Virtual Private Cloud]{: tag-vpc} [Classic infrastructure]{: tag-classic-inf} [Satellite]{: tag-satellite} 
 
-View details of a registered Secrets Manager instance.
+View details of an IBM Cloud Secrets Manager instance registered to a cluster.
 
 ```sh
 ibmcloud oc ingress instance get --cluster CLUSTER --name NAME [--output OUTPUT] [-q]
@@ -6130,13 +6130,13 @@ ibmcloud oc ingress instance get --cluster CLUSTER --name NAME [--output OUTPUT]
 {: #ingress-instance-get-options}
 
 
-`-c`, `--cluster CLUSTER`
+`-c`, `--cluster`
 :    Specify the cluster name or ID.
 
-`--name NAME`
+`--name`
 :    The name of the registered IBM Cloud Secret Manager instance.
 
-`--output OUTPUT`
+`--output`
 :    Prints the command output in the provided format. Accepted values: `json`
 
 `-q`
@@ -6146,7 +6146,7 @@ ibmcloud oc ingress instance get --cluster CLUSTER --name NAME [--output OUTPUT]
 #### Examples
 {: #ingress-instance-get-examples}
 
-View details of a registered Secrets Manager instance
+View details of an IBM Cloud Secrets Manager instance registered to a cluster
 
 ```sh
 ibmcloud oc ingress instance get --cluster CLUSTER --name NAME
@@ -6182,7 +6182,7 @@ ibmcloud oc ingress instance help
 
 [Virtual Private Cloud]{: tag-vpc} [Classic infrastructure]{: tag-classic-inf} [Satellite]{: tag-satellite} 
 
-List registered Secrets Manager instances in your account.
+List IBM Cloud Secrets Manager instances registered to a cluster.
 
 ```sh
 ibmcloud oc ingress instance ls --cluster CLUSTER [--output OUTPUT] [-q] [--show-deleted]
@@ -6192,10 +6192,10 @@ ibmcloud oc ingress instance ls --cluster CLUSTER [--output OUTPUT] [-q] [--show
 {: #ingress-instance-ls-options}
 
 
-`-c`, `--cluster CLUSTER`
+`-c`, `--cluster`
 :    Specify the cluster name or ID.
 
-`--output OUTPUT`
+`--output`
 :    Prints the command output in the provided format. Accepted values: `json`
 
 `-q`
@@ -6208,7 +6208,7 @@ ibmcloud oc ingress instance ls --cluster CLUSTER [--output OUTPUT] [-q] [--show
 #### Examples
 {: #ingress-instance-ls-examples}
 
-List registered Secrets Manager instances in your account
+List IBM Cloud Secrets Manager instances registered to a cluster
 
 ```sh
 ibmcloud oc ingress instance ls --cluster CLUSTER
@@ -6231,10 +6231,10 @@ ibmcloud oc ingress instance register --cluster CLUSTER --crn CRN [--is-default]
 {: #ingress-instance-register-options}
 
 
-`-c`, `--cluster CLUSTER`
+`-c`, `--cluster`
 :    Specify the cluster name or ID.
 
-`--crn CRN`
+`--crn`
 :    CRN of the IBM Cloud Secret Manager instance.
 
 `--is-default`
@@ -6243,7 +6243,7 @@ ibmcloud oc ingress instance register --cluster CLUSTER --crn CRN [--is-default]
 `-q`
 :    Do not show the message of the day or update reminders.
 
-`--secret-group GROUP`
+`--secret-group`
 :    Secret Group ID of the IBM Cloud Secret Manager instance where the secrets are persisted.
 
 
@@ -6273,10 +6273,10 @@ ibmcloud oc ingress instance unregister --cluster CLUSTER --name NAME [-q]
 {: #ingress-instance-unregister-options}
 
 
-`-c`, `--cluster CLUSTER`
+`-c`, `--cluster`
 :    Specify the cluster name or ID.
 
-`--name NAME`
+`--name`
 :    The name of the registered IBM Cloud Secret Manager instance.
 
 `-q`
@@ -6322,7 +6322,7 @@ ibmcloud oc ingress load-balancer backend help
 
 [Virtual Private Cloud]{: tag-vpc} 
 
-Set the Ingress controller currently exposed by the VPC ALB load balancer.
+Set the private and/or public backend for the VPC ALB load balancer that exposes the Ingress controller for a cluster.
 
 ```sh
 ibmcloud oc ingress load-balancer backend set --cluster CLUSTER [--private-backend BACKEND] [--public-backend BACKEND] [-q]
@@ -6332,13 +6332,13 @@ ibmcloud oc ingress load-balancer backend set --cluster CLUSTER [--private-backe
 {: #ingress-load-balancer-backend-set-options}
 
 
-`-c`, `--cluster CLUSTER`
+`-c`, `--cluster`
 :    Specify the cluster name or ID.
 
-`--private-backend BACKEND`
+`--private-backend`
 :    Backend for private load balancer
 
-`--public-backend BACKEND`
+`--public-backend`
 :    Backend for public load balancer
 
 `-q`
@@ -6348,7 +6348,7 @@ ibmcloud oc ingress load-balancer backend set --cluster CLUSTER [--private-backe
 #### Examples
 {: #ingress-load-balancer-backend-set-examples}
 
-Set the Ingress controller currently exposed by the VPC ALB load balancer
+Set the private and/or public backend for the VPC ALB load balancer that exposes the Ingress controller for a cluster
 
 ```sh
 ibmcloud oc ingress load-balancer backend set --cluster CLUSTER
@@ -6371,10 +6371,10 @@ ibmcloud oc ingress load-balancer get --cluster CLUSTER [--output OUTPUT] [-q]
 {: #ingress-load-balancer-get-options}
 
 
-`-c`, `--cluster CLUSTER`
+`-c`, `--cluster`
 :    Specify the cluster name or ID.
 
-`--output OUTPUT`
+`--output`
 :    Prints the command output in the provided format. Accepted values: `json`
 
 `-q`
@@ -6430,7 +6430,7 @@ ibmcloud oc ingress load-balancer proxy-protocol disable --cluster CLUSTER [-f] 
 {: #ingress-load-balancer-proxy-protocol-disable-options}
 
 
-`-c`, `--cluster CLUSTER`
+`-c`, `--cluster`
 :    Specify the cluster name or ID.
 
 `-f`
@@ -6466,10 +6466,10 @@ ibmcloud oc ingress load-balancer proxy-protocol enable --cluster CLUSTER [--cid
 {: #ingress-load-balancer-proxy-protocol-enable-options}
 
 
-`-c`, `--cluster CLUSTER`
+`-c`, `--cluster`
 :    Specify the cluster name or ID.
 
-`--cidr CIDR`
+`--cidr`
 :    The IP address ranges of your load balancers in CIDR format. PROXY headers that are forwarded by load balancers in other IP ranges are not processed.
 
 `-f`
@@ -6528,19 +6528,19 @@ ibmcloud oc ingress secret create --cluster CLUSTER --name NAME [--cert-crn CRN]
 {: #ingress-secret-create-options}
 
 
-`-c`, `--cluster CLUSTER`
+`-c`, `--cluster`
 :    Specify the cluster name or ID.
 
-`--cert-crn CRN`
+`--cert-crn`
 :    The certificate CRN.
 
-`--field FIELD`
+`--field`
 :    The secret CRN to include as a field. To pull in the secret without specifying the name, use `--field <crn>`. To specify the field name, use `--field name=<crn>`. To use the IBM Cloud Secrets Manager secret as the prefix, use `--field prefix=<crn>`.
 
-`-n CLUSTER`, `--namespace NAMESPACE`
+`-n`, `--namespace`
 :    Specify the Kubernetes namespace.
 
-`--name NAME`
+`--name`
 :    A name for the Ingress secret that is created in the cluster.
 
 `--persist`
@@ -6549,7 +6549,7 @@ ibmcloud oc ingress secret create --cluster CLUSTER --name NAME [--cert-crn CRN]
 `-q`
 :    Do not show the message of the day or update reminders.
 
-`--type TYPE`
+`--type`
 :    The Ingress secret type. Can be TLS or Opaque. If no option is specified, TLS is applied by default.
 
 
@@ -6579,16 +6579,16 @@ ibmcloud oc ingress secret field add --cluster CLUSTER --name NAME --namespace N
 {: #ingress-secret-field-add-options}
 
 
-`-c`, `--cluster CLUSTER`
+`-c`, `--cluster`
 :    Specify the cluster name or ID.
 
-`--field FIELD`
+`--field`
 :    The secret CRN to include as a field. To pull in the secret without specifying the name, use `--field <crn>`. To specify the field name, use `--field name=<crn>`. To use the IBM Cloud Secrets Manager secret as the prefix, use `--field prefix=<crn>`.
 
-`-n CLUSTER`, `--namespace NAMESPACE`
+`-n`, `--namespace`
 :    Specify the Kubernetes namespace.
 
-`--name NAME`
+`--name`
 :    A name for the Ingress secret that is created in the cluster.
 
 `-q`
@@ -6644,16 +6644,16 @@ ibmcloud oc ingress secret field ls --cluster CLUSTER --name NAME --namespace NA
 {: #ingress-secret-field-ls-options}
 
 
-`-c`, `--cluster CLUSTER`
+`-c`, `--cluster`
 :    Specify the cluster name or ID.
 
-`-n CLUSTER`, `--namespace NAMESPACE`
+`-n`, `--namespace`
 :    Specify the Kubernetes namespace.
 
-`--name NAME`
+`--name`
 :    A name for the Ingress secret that is created in the cluster.
 
-`--output OUTPUT`
+`--output`
 :    Prints the command output in the provided format. Accepted values: `json`
 
 `-q`
@@ -6689,16 +6689,16 @@ ibmcloud oc ingress secret field rm --cluster CLUSTER --name NAME --namespace NA
 {: #ingress-secret-field-rm-options}
 
 
-`-c`, `--cluster CLUSTER`
+`-c`, `--cluster`
 :    Specify the cluster name or ID.
 
-`--field-name NAME`
+`--field-name`
 :    The name of the field to remove from the secret.
 
-`-n CLUSTER`, `--namespace NAMESPACE`
+`-n`, `--namespace`
 :    Specify the Kubernetes namespace.
 
-`--name NAME`
+`--name`
 :    A name for the Ingress secret that is created in the cluster.
 
 `-q`
@@ -6731,16 +6731,16 @@ ibmcloud oc ingress secret get --cluster CLUSTER --name NAME --namespace NAMESPA
 {: #ingress-secret-get-options}
 
 
-`-c`, `--cluster CLUSTER`
+`-c`, `--cluster`
 :    Specify the cluster name or ID.
 
-`-n CLUSTER`, `--namespace NAMESPACE`
+`-n`, `--namespace`
 :    Specify the Kubernetes namespace.
 
-`--name NAME`
+`--name`
 :    A name for the Ingress secret that is created in the cluster.
 
-`--output OUTPUT`
+`--output`
 :    Prints the command output in the provided format. Accepted values: `json`
 
 `-q`
@@ -6796,10 +6796,10 @@ ibmcloud oc ingress secret ls --cluster CLUSTER [--output OUTPUT] [-q] [--show-c
 {: #ingress-secret-ls-options}
 
 
-`-c`, `--cluster CLUSTER`
+`-c`, `--cluster`
 :    Specify the cluster name or ID.
 
-`--output OUTPUT`
+`--output`
 :    Prints the command output in the provided format. Accepted values: `json`
 
 `-q`
@@ -6838,13 +6838,13 @@ ibmcloud oc ingress secret rm --cluster CLUSTER --name NAME --namespace NAMESPAC
 {: #ingress-secret-rm-options}
 
 
-`-c`, `--cluster CLUSTER`
+`-c`, `--cluster`
 :    Specify the cluster name or ID.
 
-`-n CLUSTER`, `--namespace NAMESPACE`
+`-n`, `--namespace`
 :    Specify the Kubernetes namespace.
 
-`--name NAME`
+`--name`
 :    A name for the Ingress secret that is created in the cluster.
 
 `-q`
@@ -6877,16 +6877,16 @@ ibmcloud oc ingress secret update --cluster CLUSTER --name NAME --namespace NAME
 {: #ingress-secret-update-options}
 
 
-`-c`, `--cluster CLUSTER`
+`-c`, `--cluster`
 :    Specify the cluster name or ID.
 
-`--cert-crn CRN`
+`--cert-crn`
 :    The certificate CRN.
 
-`-n CLUSTER`, `--namespace NAMESPACE`
+`-n`, `--namespace`
 :    Specify the Kubernetes namespace.
 
-`--name NAME`
+`--name`
 :    A name for the Ingress secret that is created in the cluster.
 
 `-q`
@@ -6942,7 +6942,7 @@ ibmcloud oc ingress security port80 disable --cluster CLUSTER [-f] [-q]
 {: #ingress-security-port80-disable-options}
 
 
-`-c`, `--cluster CLUSTER`
+`-c`, `--cluster`
 :    Specify the cluster name or ID.
 
 `-f`
@@ -6978,7 +6978,7 @@ ibmcloud oc ingress security port80 enable --cluster CLUSTER [-f] [-q]
 {: #ingress-security-port80-enable-options}
 
 
-`-c`, `--cluster CLUSTER`
+`-c`, `--cluster`
 :    Specify the cluster name or ID.
 
 `-f`
@@ -7014,10 +7014,10 @@ ibmcloud oc ingress security port80 get --cluster CLUSTER [--output OUTPUT] [-q]
 {: #ingress-security-port80-get-options}
 
 
-`-c`, `--cluster CLUSTER`
+`-c`, `--cluster`
 :    Specify the cluster name or ID.
 
-`--output OUTPUT`
+`--output`
 :    Prints the command output in the provided format. Accepted values: `json`
 
 `-q`
@@ -7073,10 +7073,10 @@ ibmcloud oc ingress status-report disable --cluster CLUSTER [--output OUTPUT] [-
 {: #ingress-status-report-disable-options}
 
 
-`-c`, `--cluster CLUSTER`
+`-c`, `--cluster`
 :    Specify the cluster name or ID.
 
-`--output OUTPUT`
+`--output`
 :    Prints the command output in the provided format. Accepted values: `json`
 
 `-q`
@@ -7109,10 +7109,10 @@ ibmcloud oc ingress status-report enable --cluster CLUSTER [--output OUTPUT] [-q
 {: #ingress-status-report-enable-options}
 
 
-`-c`, `--cluster CLUSTER`
+`-c`, `--cluster`
 :    Specify the cluster name or ID.
 
-`--output OUTPUT`
+`--output`
 :    Prints the command output in the provided format. Accepted values: `json`
 
 `-q`
@@ -7145,10 +7145,10 @@ ibmcloud oc ingress status-report get --cluster CLUSTER [--output OUTPUT] [-q]
 {: #ingress-status-report-get-options}
 
 
-`-c`, `--cluster CLUSTER`
+`-c`, `--cluster`
 :    Specify the cluster name or ID.
 
-`--output OUTPUT`
+`--output`
 :    Prints the command output in the provided format. Accepted values: `json`
 
 `-q`
@@ -7204,13 +7204,13 @@ ibmcloud oc ingress status-report ignored-errors add --cluster CLUSTER --code CO
 {: #ingress-status-report-ignored-errors-add-options}
 
 
-`-c`, `--cluster CLUSTER`
+`-c`, `--cluster`
 :    Specify the cluster name or ID.
 
-`--code CODE`
+`--code`
 :    Code of the warning to be ignored.
 
-`--output OUTPUT`
+`--output`
 :    Prints the command output in the provided format. Accepted values: `json`
 
 `-q`
@@ -7266,10 +7266,10 @@ ibmcloud oc ingress status-report ignored-errors ls --cluster CLUSTER [--output 
 {: #ingress-status-report-ignored-errors-ls-options}
 
 
-`-c`, `--cluster CLUSTER`
+`-c`, `--cluster`
 :    Specify the cluster name or ID.
 
-`--output OUTPUT`
+`--output`
 :    Prints the command output in the provided format. Accepted values: `json`
 
 `-q`
@@ -7302,13 +7302,13 @@ ibmcloud oc ingress status-report ignored-errors rm --cluster CLUSTER --code COD
 {: #ingress-status-report-ignored-errors-rm-options}
 
 
-`-c`, `--cluster CLUSTER`
+`-c`, `--cluster`
 :    Specify the cluster name or ID.
 
-`--code CODE`
+`--code`
 :    Code of the warning to be removed.
 
-`--output OUTPUT`
+`--output`
 :    Prints the command output in the provided format. Accepted values: `json`
 
 `-q`
@@ -7370,10 +7370,10 @@ ibmcloud oc kms crk ls --instance-id ID [--output OUTPUT] [-q]
 {: #kms-crk-ls-options}
 
 
-`--instance-id ID`
+`--instance-id`
 :    KMS instance ID. To see available KMS instances, run `ibmcloud ks kms instance ls`.
 
-`--output OUTPUT`
+`--output`
 :    Prints the command output in the provided format. Accepted values: `json`
 
 `-q`
@@ -7406,16 +7406,16 @@ ibmcloud oc kms enable --cluster CLUSTER --crk CRK --instance-id ID [--kms-accou
 {: #kms-enable-options}
 
 
-`-c`, `--cluster CLUSTER`
+`-c`, `--cluster`
 :    Specify the cluster name or ID.
 
-`--crk CRK`
+`--crk`
 :    A root key ID in your KMS instance. To list available root keys, run `ibmcloud ks kms crk ls --instance-id <kms_instance>`.
 
-`--instance-id ID`
+`--instance-id`
 :    KMS instance ID. To see available KMS instances, run `ibmcloud ks kms instance ls`.
 
-`--kms-account-id ID`
+`--kms-account-id`
 :    The ID of the account that contains the KMS instance you want to use for local disk or secret encryption.
 
 `--public-endpoint`
@@ -7497,7 +7497,7 @@ ibmcloud oc kms instance ls [--output OUTPUT] [-q]
 {: #kms-instance-ls-options}
 
 
-`--output OUTPUT`
+`--output`
 :    Prints the command output in the provided format. Accepted values: `json`
 
 `-q`
@@ -7581,7 +7581,7 @@ ibmcloud oc logging autoupdate disable --cluster CLUSTER [-q]
 {: #logging-autoupdate-disable-options}
 
 
-`-c`, `--cluster CLUSTER`
+`-c`, `--cluster`
 :    Specify the cluster name or ID.
 
 `-q`
@@ -7614,7 +7614,7 @@ ibmcloud oc logging autoupdate enable --cluster CLUSTER [-q]
 {: #logging-autoupdate-enable-options}
 
 
-`-c`, `--cluster CLUSTER`
+`-c`, `--cluster`
 :    Specify the cluster name or ID.
 
 `-q`
@@ -7647,10 +7647,10 @@ ibmcloud oc logging autoupdate get --cluster CLUSTER [--output OUTPUT] [-q]
 {: #logging-autoupdate-get-options}
 
 
-`-c`, `--cluster CLUSTER`
+`-c`, `--cluster`
 :    Specify the cluster name or ID.
 
-`--output OUTPUT`
+`--output`
 :    Prints the command output in the provided format. Accepted values: `json`
 
 `-q`
@@ -7706,37 +7706,37 @@ ibmcloud oc logging config create --cluster CLUSTER --logsource LOGSOURCE --type
 {: #logging-config-create-options}
 
 
-`-C CONTAINER`, `--app-container CONTAINER`
+`-C`, `--app-container`
 :    Specify the containers that you want to collect logs for. To specify more than one path, use multiple flags, such as `-C container1 -C container2`. This option is required for the `application` log source. If not provided, logs are collected from all containers from the application log paths passed in.
 
-`-c CONTAINER`, `--cluster CLUSTER`
+`-c`, `--cluster`
 :    Specify the cluster name or ID.
 
-`--ca-cert CERT`
+`--ca-cert`
 :    When the logging type is `syslog` and the protocol is tls, the Kubernetes secret name that contains the Certificate Authority certificate.
 
 `--force-update`
 :    Force an update of the Fluentd pods in the cluster to the latest version.
 
-`--hostname HOSTNAME`
+`--hostname`
 :    When logging type is `syslog`, the hostname or IP address of the log collector. When logging type is `ibm` (deprecated), the logging ingest endpoint. If you do not provide the logging ingest endpoint, then the current region's endpoint is used.
 
-`--logsource LOGSOURCE`
+`--logsource`
 :    The source of the logs to forward. Supported values are `container`, `application`, `ingress`, `worker`, `storage`, and `kubernetes`. This argument supports a comma separated list of log sources. If you do not provide a log source, logs for `container` and `ingress` are forwarded.
 
-`-n CLUSTER`, `--namespace NAMESPACE`
+`-n`, `--namespace`
 :    The namespace you want to apply the log forwarding configuration to. Only use this flag with the `container` log source or if you do not specify a log source. If you do not specify a namespace, then all namespaces use this configuration.
 
-`--org ORG`
+`--org`
 :    [Deprecated]{: tag-deprecated} The org name to send logs to. This flag is only valid when the logging type is `ibm`. The org name is required when you specify a space name. If you do not specify a space name, then logs are forwarded at the account level.
 
-`--output OUTPUT`
+`--output`
 :    Prints the command output in the provided format. Accepted values: `json`
 
-`-p PATH`, `--app-path PATH`
+`-p`, `--app-path`
 :    Specify the absolute file path to collect logs from inside the container. To specify more than one path, use multiple flags, such as `-p path1 -p path2`. Required parameter when specifying `application` for the log source. Wildcards such as `/var/log/*.log` are accepted but recursive globs such are `/var/log/**/test.log` are not.
 
-`--port PORT`
+`--port`
 :    The port of the log collector. If you do not specify a port, the default port for the ingestion endpoint is used for `ibm` (deprecated) and `514` is used for `syslog`.
 
 `-q`
@@ -7745,16 +7745,16 @@ ibmcloud oc logging config create --cluster CLUSTER --logsource LOGSOURCE --type
 `--skip-validation`
 :    Skips validation of the org and space names when they are specified. This can result in a broken logging config if the values are invalid but will take less time to process.
 
-`--space SPACE`
+`--space`
 :    [Deprecated]{: tag-deprecated} The space name to send logs to. This flag is only valid when the logging type is `ibm`. The space name is required when you specify an org name. If you do not specify a space name, then logs are forwarded at the account level.
 
-`--syslog-protocol PROTOCOL`
+`--syslog-protocol`
 :    When the logging type is `syslog`, the transport layer protocol. Supported values are `tls`, `tcp` and the default `udp`. When forwarding to an rsyslog server with the UDP protocol, logs that are over 1KB are truncated.
 
-`--type TYPE`
+`--type`
 :    The log forwarding protocol that you want to use. The only supported value is `syslog`.
 
-`--verify-mode MODE`
+`--verify-mode`
 :    When the logging type is `syslog` and the protocol is tls, the verification mode. Supported values are `verify-peer` and the default `verify-none`.
 
 
@@ -7791,13 +7791,13 @@ ibmcloud oc logging config get --cluster CLUSTER [--logsource LOGSOURCE] [--outp
 {: #logging-config-get-options}
 
 
-`-c`, `--cluster CLUSTER`
+`-c`, `--cluster`
 :    Specify the cluster name or ID.
 
-`--logsource LOGSOURCE`
+`--logsource`
 :    The kind of log source you want to filter for. Accepted values are `container`, `application`, `ingress`, `worker`, `storage` and `kubernetes`. If you do not pass a log source, all logging configurations for the cluster are returned.
 
-`--output OUTPUT`
+`--output`
 :    Prints the command output in the provided format. Accepted values: `json`
 
 `-q`
@@ -7856,16 +7856,16 @@ ibmcloud oc logging config rm --cluster CLUSTER [--force-update] [-q] (--all | -
 `--all`
 :    Remove all log forwarding configurations.
 
-`-c`, `--cluster CLUSTER`
+`-c`, `--cluster`
 :    Specify the cluster name or ID.
 
 `--force-update`
 :    Force an update of the Fluentd pods in the cluster to the latest version.
 
-`--id ID`
+`--id`
 :    Specify the ID of the logging configuration.
 
-`-n CLUSTER`, `--namespace NAMESPACE`
+`-n`, `--namespace`
 :    The namespace you want to remove the log forwarding configuration from. If there is more than one config for the same namespace, use the `--id <logging configuration ID>` flag instead.
 
 `-q`
@@ -7898,40 +7898,40 @@ ibmcloud oc logging config update --cluster CLUSTER --id ID --logsource LOGSOURC
 {: #logging-config-update-options}
 
 
-`-C CONTAINER`, `--app-container CONTAINER`
+`-C`, `--app-container`
 :    Specify the containers that you want to collect logs for. To specify more than one path, use multiple flags, such as `-C container1 -C container2`. This option is required for the `application` log source. If not provided, logs are collected from all containers from the application log paths passed in.
 
-`-c CONTAINER`, `--cluster CLUSTER`
+`-c`, `--cluster`
 :    Specify the cluster name or ID.
 
-`--ca-cert CERT`
+`--ca-cert`
 :    When the logging type is `syslog` and the protocol is tls, the Kubernetes secret name that contains the Certificate Authority certificate.
 
 `--force-update`
 :    Force an update of the Fluentd pods in the cluster to the latest version.
 
-`--hostname HOSTNAME`
+`--hostname`
 :    When logging type is `syslog`, the hostname or IP address of the log collector. When logging type is `ibm` (deprecated), the logging ingest endpoint. If you do not provide the logging ingest endpoint, then the current region's endpoint is used.
 
-`--id ID`
+`--id`
 :    Specify the ID of the logging configuration.
 
-`--logsource LOGSOURCE`
+`--logsource`
 :    The source of the logs to forward. Supported values are `container`, `application`, `ingress`, `worker`, `storage`, and `kubernetes`. This argument supports a comma separated list of log sources. If you do not provide a log source, logs for `container` and `ingress` are forwarded.
 
-`-n CLUSTER`, `--namespace NAMESPACE`
+`-n`, `--namespace`
 :    The namespace you want to apply the log forwarding configuration to. Only use this flag with the `container` log source or if you do not specify a log source. If you do not specify a namespace, then all namespaces use this configuration.
 
-`--org ORG`
+`--org`
 :    [Deprecated]{: tag-deprecated} The org name to send logs to. This flag is only valid when the logging type is `ibm`. The org name is required when you specify a space name. If you do not specify a space name, then logs are forwarded at the account level.
 
-`--output OUTPUT`
+`--output`
 :    Prints the command output in the provided format. Accepted values: `json`
 
-`-p PATH`, `--app-path PATH`
+`-p`, `--app-path`
 :    Specify the absolute file path to collect logs from inside the container. To specify more than one path, use multiple flags, such as `-p path1 -p path2`. Required parameter when specifying `application` for the log source. Wildcards such as `/var/log/*.log` are accepted but recursive globs such are `/var/log/**/test.log` are not.
 
-`--port PORT`
+`--port`
 :    The port of the log collector. If you do not specify a port, the default port for the ingestion endpoint is used for `ibm` (deprecated) and `514` is used for `syslog`.
 
 `-q`
@@ -7940,16 +7940,16 @@ ibmcloud oc logging config update --cluster CLUSTER --id ID --logsource LOGSOURC
 `--skip-validation`
 :    Skips validation of the org and space names when they are specified. This can result in a broken logging config if the values are invalid but will take less time to process.
 
-`--space SPACE`
+`--space`
 :    [Deprecated]{: tag-deprecated} The space name to send logs to. This flag is only valid when the logging type is `ibm`. The space name is required when you specify an org name. If you do not specify a space name, then logs are forwarded at the account level.
 
-`--syslog-protocol PROTOCOL`
+`--syslog-protocol`
 :    When the logging type is `syslog`, the transport layer protocol. Supported values are `tls`, `tcp` and the default `udp`. When forwarding to an rsyslog server with the UDP protocol, logs that are over 1KB are truncated.
 
-`--type TYPE`
+`--type`
 :    The log forwarding protocol that you want to use. The only supported value is `syslog`.
 
-`--verify-mode MODE`
+`--verify-mode`
 :    When the logging type is `syslog` and the protocol is tls, the verification mode. Supported values are `verify-peer` and the default `verify-none`.
 
 
@@ -7987,37 +7987,37 @@ ibmcloud oc logging filter create --cluster CLUSTER [--container CONTAINER] [--f
 {: #logging-filter-create-options}
 
 
-`-c`, `--cluster CLUSTER`
+`-c`, `--cluster`
 :    Specify the cluster name or ID.
 
-`--container CONTAINER`
+`--container`
 :    The name of the container from which you want to filter out logs. This flag applies only when you are using log type container.
 
 `--force-update`
 :    Force an update of the Fluentd pods in the cluster to the latest version.
 
-`--lc LOGGING-CONFIG`, `--logging-config LOGGING-CONFIG`
+`--lc`, `--logging-config`
 :    A logging configuration ID. If not provided, the filter is applied to all the cluster logging configurations that are passed to the filter. You can view log configurations that match the filter by using the --show-matching-configs flag with the command.
 
-`--level LEVEL`
+`--level`
 :    Filters out logs that are at the specified level and less. Acceptable values in their canonical order are fatal, error, warn/warning, info, debug, and trace. As an example, if you filtered logs at the info level, debug, and trace are also filtered. **Note**: You can use this flag only when log messages are in JSON format and contain a level field. Example output: {"log": "hello", "level": "info"}
 
-`--message MESSAGE`
+`--message`
 :    Filters out any logs that contain a specified message anywhere in the log. The message is matched literally and not as an expression. Example: The messages "Hello", "!", and "Hello, World!", would apply to the log "Hello, World!".
 
-`-n LOGGING-CONFIG`, `--namespace NAMESPACE`
+`-n`, `--namespace`
 :    The Kubernetes namespace from which you want to filter logs.
 
-`--output OUTPUT`
+`--output`
 :    Prints the command output in the provided format. Accepted values: `json`
 
 `-q`
 :    Do not show the message of the day or update reminders.
 
-`--regex-message MESSAGE`
+`--regex-message`
 :    Filters out any logs that contain a specified message regex pattern in the log. The message is matched as a regular expression. Example: The pattern "hello [0-9]" would apply to "hello 1", "hello 2", "hello 9"
 
-`--type TYPE`
+`--type`
 :    The type of logs that you want to apply the filter to. Currently all, container, and host are supported.
 
 
@@ -8047,13 +8047,13 @@ ibmcloud oc logging filter get --cluster CLUSTER [--id ID] [--output OUTPUT] [-q
 {: #logging-filter-get-options}
 
 
-`-c`, `--cluster CLUSTER`
+`-c`, `--cluster`
 :    Specify the cluster name or ID.
 
-`--id ID`
+`--id`
 :    Specify the ID of the logging filter.
 
-`--output OUTPUT`
+`--output`
 :    Prints the command output in the provided format. Accepted values: `json`
 
 `-q`
@@ -8118,13 +8118,13 @@ ibmcloud oc logging filter rm --cluster CLUSTER [--force-update] [-q] (--all | -
 `--all`
 :    Delete all log forwarding filters.
 
-`-c`, `--cluster CLUSTER`
+`-c`, `--cluster`
 :    Specify the cluster name or ID.
 
 `--force-update`
 :    Force an update of the Fluentd pods in the cluster to the latest version.
 
-`--id ID`
+`--id`
 :    Specify the ID of the logging filter.
 
 `-q`
@@ -8157,40 +8157,40 @@ ibmcloud oc logging filter update --cluster CLUSTER --id ID [--container CONTAIN
 {: #logging-filter-update-options}
 
 
-`-c`, `--cluster CLUSTER`
+`-c`, `--cluster`
 :    Specify the cluster name or ID.
 
-`--container CONTAINER`
+`--container`
 :    The name of the container from which you want to filter out logs. This flag applies only when you are using log type container.
 
 `--force-update`
 :    Force an update of the Fluentd pods in the cluster to the latest version.
 
-`--id ID`
+`--id`
 :    Specify the ID of the logging filter.
 
-`--lc LOGGING-CONFIG`, `--logging-config LOGGING-CONFIG`
+`--lc`, `--logging-config`
 :    A logging configuration ID. If not provided, the filter is applied to all the cluster logging configurations that are passed to the filter. You can view log configurations that match the filter by using the --show-matching-configs flag with the command.
 
-`--level LEVEL`
+`--level`
 :    Filters out logs that are at the specified level and less. Acceptable values in their canonical order are fatal, error, warn/warning, info, debug, and trace. As an example, if you filtered logs at the info level, debug, and trace are also filtered. **Note**: You can use this flag only when log messages are in JSON format and contain a level field. Example output: {"log": "hello", "level": "info"}
 
-`--message MESSAGE`
+`--message`
 :    Filters out any logs that contain a specified message anywhere in the log. The message is matched literally and not as an expression. Example: The messages "Hello", "!", and "Hello, World!", would apply to the log "Hello, World!".
 
-`-n LOGGING-CONFIG`, `--namespace NAMESPACE`
+`-n`, `--namespace`
 :    The Kubernetes namespace from which you want to filter logs.
 
-`--output OUTPUT`
+`--output`
 :    Prints the command output in the provided format. Accepted values: `json`
 
 `-q`
 :    Do not show the message of the day or update reminders.
 
-`--regex-message MESSAGE`
+`--regex-message`
 :    Filters out any logs that contain a specified message regex pattern in the log. The message is matched as a regular expression. Example: The pattern "hello [0-9]" would apply to "hello 1", "hello 2", "hello 9"
 
-`--type TYPE`
+`--type`
 :    The type of logs that you want to apply the filter to. Currently all, container, and host are supported.
 
 
@@ -8243,7 +8243,7 @@ ibmcloud oc logging refresh --cluster CLUSTER [--force-update] [-q]
 {: #logging-refresh-options}
 
 
-`-c`, `--cluster CLUSTER`
+`-c`, `--cluster`
 :    Specify the cluster name or ID.
 
 `--force-update`
@@ -8321,16 +8321,16 @@ ibmcloud oc nlb-dns add --cluster CLUSTER --ip IP [--ip IP ...] --nlb-host HOST 
 {: #nlb-dns-add-options}
 
 
-`-c`, `--cluster CLUSTER`
+`-c`, `--cluster`
 :    Specify the cluster name or ID.
 
-`--ip IP`
+`--ip`
 :    One or more NLB IP addresses. To see load balancer IPs, run `kubectl get svc -n <namespace>`.
 
-`--nlb-host HOST`
+`--nlb-host`
 :    The host name. To see existing host names, run `ibmcloud ks nlb-dns ls`.
 
-`--output OUTPUT`
+`--output`
 :    Prints the command output in the provided format. Accepted values: `json`
 
 `-q`
@@ -8363,19 +8363,19 @@ ibmcloud oc nlb-dns create classic --cluster CLUSTER --ip IP [--ip IP ...] [--ou
 {: #nlb-dns-create-classic-options}
 
 
-`-c`, `--cluster CLUSTER`
+`-c`, `--cluster`
 :    Specify the cluster name or ID.
 
-`--ip IP`
+`--ip`
 :    One or more NLB IP addresses. To see load balancer IPs, run `kubectl get svc -n <namespace>`.
 
-`--output OUTPUT`
+`--output`
 :    Prints the command output in the provided format. Accepted values: `json`
 
 `-q`
 :    Do not show the message of the day or update reminders.
 
-`--secret-namespace NAMESPACE`
+`--secret-namespace`
 :    The namespace that the SSL secret is created in. If this flag is not specified, the secret is created in `default.`
 
 
@@ -8428,22 +8428,22 @@ ibmcloud oc nlb-dns create vpc-gen2 --cluster CLUSTER [--output OUTPUT] [-q] [--
 {: #nlb-dns-create-vpc-gen2-options}
 
 
-`-c`, `--cluster CLUSTER`
+`-c`, `--cluster`
 :    Specify the cluster name or ID.
 
-`--ip IP`
+`--ip`
 :    One or more NLB IP addresses. To see load balancer IPs, run `kubectl get svc -n <namespace>`.
 
-`--lb-host HOST`
+`--lb-host`
 :    The VPC load balancer host name. To see load balancer host names, run `kubectl get svc -n <namespace>`.
 
-`--output OUTPUT`
+`--output`
 :    Prints the command output in the provided format. Accepted values: `json`
 
 `-q`
 :    Do not show the message of the day or update reminders.
 
-`--secret-namespace NAMESPACE`
+`--secret-namespace`
 :    The namespace that the SSL secret is created in. If this flag is not specified, the secret is created in `default.`
 
 
@@ -8473,13 +8473,13 @@ ibmcloud oc nlb-dns get --cluster CLUSTER --nlb-subdomain SUBDOMAIN [--output OU
 {: #nlb-dns-get-options}
 
 
-`-c`, `--cluster CLUSTER`
+`-c`, `--cluster`
 :    Specify the cluster name or ID.
 
-`--nlb-subdomain SUBDOMAIN`
+`--nlb-subdomain`
 :    The subdomain. To see existing subdomains, run `ibmcloud ks nlb-dns ls`.
 
-`--output OUTPUT`
+`--output`
 :    Prints the command output in the provided format. Accepted values: `json`
 
 `-q`
@@ -8535,10 +8535,10 @@ ibmcloud oc nlb-dns ls --cluster CLUSTER [--output OUTPUT] [-q]
 {: #nlb-dns-ls-options}
 
 
-`-c`, `--cluster CLUSTER`
+`-c`, `--cluster`
 :    Specify the cluster name or ID.
 
-`--output OUTPUT`
+`--output`
 :    Prints the command output in the provided format. Accepted values: `json`
 
 `-q`
@@ -8571,37 +8571,37 @@ ibmcloud oc nlb-dns monitor configure --cluster CLUSTER --nlb-host HOST [--enabl
 {: #nlb-dns-monitor-configure-options}
 
 
-`-c`, `--cluster CLUSTER`
+`-c`, `--cluster`
 :    Specify the cluster name or ID.
 
 `--enable`
 :    Enable the health check monitor for the host name.
 
-`--header HEADER`
+`--header`
 :    HTTP request headers for the health check are limited to the Host header. This flag is valid only for type `HTTP` or `HTTPS`. This flag accepts values in the following format: `--header Header-Name=value`. When updating a monitor, the existing headers are replaced by the ones you specify. To delete all existing headers specify the flag with an empty value `--header ""`.
 
-`--interval INTERVAL`
+`--interval`
 :    The interval, in seconds, between each health check. Short intervals might improve failover time but increase load on the IPs. Must be in the range [60, 300]. Default: `60`
 
-`--nlb-host HOST`
+`--nlb-host`
 :    The host name. To see existing host names, run `ibmcloud ks nlb-dns ls`.
 
-`--output OUTPUT`
+`--output`
 :    Prints the command output in the provided format. Accepted values: `json`
 
-`--path PATH`
+`--path`
 :    The endpoint path to health check against. This flag is valid only for type `HTTP` or `HTTPS`. Default: `/` 
 
-`--port PORT`
+`--port`
 :    The port number to connect to for the health check. When type is TCP, this flag is required. When type is HTTP or HTTPS, use this flag only for ports other than 80 for HTTP or 443 for HTTPS. HTTP default: `80`. HTTPS default: `443`.
 
 `-q`
 :    Do not show the message of the day or update reminders.
 
-`--timeout TIMEOUT`
+`--timeout`
 :    The timeout, in seconds, before the IP is considered unhealthy. Must be in the range [1, 60]. Default: `5`
 
-`--type TYPE`
+`--type`
 :    The protocol to use for the health check. Accepted values: `http`, `https`, `tcp`
 
 
@@ -8631,13 +8631,13 @@ ibmcloud oc nlb-dns monitor disable --cluster CLUSTER --nlb-host HOST [--output 
 {: #nlb-dns-monitor-disable-options}
 
 
-`-c`, `--cluster CLUSTER`
+`-c`, `--cluster`
 :    Specify the cluster name or ID.
 
-`--nlb-host HOST`
+`--nlb-host`
 :    The host name. To see existing host names, run `ibmcloud ks nlb-dns ls`.
 
-`--output OUTPUT`
+`--output`
 :    Prints the command output in the provided format. Accepted values: `json`
 
 `-q`
@@ -8670,13 +8670,13 @@ ibmcloud oc nlb-dns monitor enable --cluster CLUSTER --nlb-host HOST [--output O
 {: #nlb-dns-monitor-enable-options}
 
 
-`-c`, `--cluster CLUSTER`
+`-c`, `--cluster`
 :    Specify the cluster name or ID.
 
-`--nlb-host HOST`
+`--nlb-host`
 :    The host name. To see existing host names, run `ibmcloud ks nlb-dns ls`.
 
-`--output OUTPUT`
+`--output`
 :    Prints the command output in the provided format. Accepted values: `json`
 
 `-q`
@@ -8709,13 +8709,13 @@ ibmcloud oc nlb-dns monitor get --cluster CLUSTER --nlb-host HOST [--output OUTP
 {: #nlb-dns-monitor-get-options}
 
 
-`-c`, `--cluster CLUSTER`
+`-c`, `--cluster`
 :    Specify the cluster name or ID.
 
-`--nlb-host HOST`
+`--nlb-host`
 :    The host name. To see existing host names, run `ibmcloud ks nlb-dns ls`.
 
-`--output OUTPUT`
+`--output`
 :    Prints the command output in the provided format. Accepted values: `json`
 
 `-q`
@@ -8771,10 +8771,10 @@ ibmcloud oc nlb-dns monitor ls --cluster CLUSTER [--output OUTPUT] [-q]
 {: #nlb-dns-monitor-ls-options}
 
 
-`-c`, `--cluster CLUSTER`
+`-c`, `--cluster`
 :    Specify the cluster name or ID.
 
-`--output OUTPUT`
+`--output`
 :    Prints the command output in the provided format. Accepted values: `json`
 
 `-q`
@@ -8807,16 +8807,16 @@ ibmcloud oc nlb-dns replace --cluster CLUSTER --lb-host HOST --nlb-subdomain SUB
 {: #nlb-dns-replace-options}
 
 
-`-c`, `--cluster CLUSTER`
+`-c`, `--cluster`
 :    Specify the cluster name or ID.
 
-`--lb-host HOST`
+`--lb-host`
 :    The VPC load balancer host name. To see load balancer host names, run `kubectl get svc -n <namespace>`.
 
-`--nlb-subdomain SUBDOMAIN`
+`--nlb-subdomain`
 :    The subdomain. To see existing subdomains, run `ibmcloud ks nlb-dns ls`.
 
-`--output OUTPUT`
+`--output`
 :    Prints the command output in the provided format. Accepted values: `json`
 
 `-q`
@@ -8849,16 +8849,16 @@ ibmcloud oc nlb-dns rm classic --cluster CLUSTER --ip IP --nlb-host HOST [--outp
 {: #nlb-dns-rm-classic-options}
 
 
-`-c`, `--cluster CLUSTER`
+`-c`, `--cluster`
 :    Specify the cluster name or ID.
 
-`--ip IP`
+`--ip`
 :    One NLB IP address. To see NLB IPs associated with the host name, run `ibmcloud ks nlb-dns ls`.
 
-`--nlb-host HOST`
+`--nlb-host`
 :    The host name. To see existing host names, run `ibmcloud ks nlb-dns ls`.
 
-`--output OUTPUT`
+`--output`
 :    Prints the command output in the provided format. Accepted values: `json`
 
 `-q`
@@ -8914,16 +8914,16 @@ ibmcloud oc nlb-dns rm vpc-gen2 --cluster CLUSTER --nlb-subdomain SUBDOMAIN [--i
 {: #nlb-dns-rm-vpc-gen2-options}
 
 
-`-c`, `--cluster CLUSTER`
+`-c`, `--cluster`
 :    Specify the cluster name or ID.
 
-`--ip IP`
+`--ip`
 :    One NLB IP address. To see NLB IPs associated with the host name, run `ibmcloud ks nlb-dns ls`.
 
-`--nlb-subdomain SUBDOMAIN`
+`--nlb-subdomain`
 :    The subdomain. To see existing subdomains, run `ibmcloud ks nlb-dns ls`.
 
-`--output OUTPUT`
+`--output`
 :    Prints the command output in the provided format. Accepted values: `json`
 
 `-q`
@@ -8979,13 +8979,13 @@ ibmcloud oc nlb-dns secret regenerate --cluster CLUSTER --nlb-subdomain SUBDOMAI
 {: #nlb-dns-secret-regenerate-options}
 
 
-`-c`, `--cluster CLUSTER`
+`-c`, `--cluster`
 :    Specify the cluster name or ID.
 
-`--nlb-subdomain SUBDOMAIN`
+`--nlb-subdomain`
 :    The subdomain. To see existing subdomains, run `ibmcloud ks nlb-dns ls`.
 
-`--output OUTPUT`
+`--output`
 :    Prints the command output in the provided format. Accepted values: `json`
 
 `-q`
@@ -9018,16 +9018,16 @@ ibmcloud oc nlb-dns secret rm --cluster CLUSTER --nlb-subdomain SUBDOMAIN [-f] [
 {: #nlb-dns-secret-rm-options}
 
 
-`-c`, `--cluster CLUSTER`
+`-c`, `--cluster`
 :    Specify the cluster name or ID.
 
 `-f`
 :    Force the command to run without user prompts.
 
-`--nlb-subdomain SUBDOMAIN`
+`--nlb-subdomain`
 :    The subdomain. To see existing subdomains, run `ibmcloud ks nlb-dns ls`.
 
-`--output OUTPUT`
+`--output`
 :    Prints the command output in the provided format. Accepted values: `json`
 
 `-q`
@@ -9089,10 +9089,10 @@ ibmcloud oc quota ls [--output OUTPUT] [--provider PROVIDER] [-q]
 {: #quota-ls-options}
 
 
-`--output OUTPUT`
+`--output`
 :    Prints the command output in the provided format. Accepted values: `json`
 
-`--provider PROVIDER`
+`--provider`
 :    Filter the list for a specific infrastructure provider. Accepted values: `classic`, `vpc-classic`, `vpc-gen2`, `satellite`
 
 `-q`
@@ -9154,7 +9154,7 @@ ibmcloud oc script update [--in-place] FILE [FILE ...]
 {: #script-update-options}
 
 
-`--in-place FILE FILE`
+`--in-place`
 :    Rewrite the source file with the updated command structure.
 
 `-q`
@@ -9216,22 +9216,22 @@ ibmcloud oc security-group ls --cluster CLUSTER [--attached-to ATTACHED] [--mana
 {: #security-group-ls-options}
 
 
-`--attached-to ATTACHED`
+`--attached-to`
 :    Filter the security groups by the components they are attached to. Accepted values: `cluster`, `load-balancer`, `vpc`, `vpe-gateway`, `worker-pool`
 
-`-c`, `--cluster CLUSTER`
+`-c`, `--cluster`
 :    Specify the cluster name or ID.
 
-`--managed-by MANAGER`
+`--managed-by`
 :    Specify `user` to return the security groups created by user. Specify `ibm` to return only the security groups managed by IBM. Accepted values: `ibm`, `user`
 
-`--output OUTPUT`
+`--output`
 :    Prints the command output in the provided format. Accepted values: `json`
 
 `-q`
 :    Do not show the message of the day or update reminders.
 
-`--scope SCOPE`
+`--scope`
 :    Specify `cluster` to return security groups scoped to the cluster.  Specify `vpc` to return security groups scoped to the entire VPC. Accepted values: `cluster`, `vpc`
 
 
@@ -9261,7 +9261,7 @@ ibmcloud oc security-group reset --cluster CLUSTER --security-group GROUP [-f] [
 {: #security-group-reset-options}
 
 
-`-c`, `--cluster CLUSTER`
+`-c`, `--cluster`
 :    Specify the cluster name or ID.
 
 `-f`
@@ -9270,7 +9270,7 @@ ibmcloud oc security-group reset --cluster CLUSTER --security-group GROUP [-f] [
 `-q`
 :    Do not show the message of the day or update reminders.
 
-`--security-group GROUP`, `--sg GROUP`
+`--security-group`, `--sg`
 :    Specify security group ID.
 
 
@@ -9300,13 +9300,13 @@ ibmcloud oc security-group sync --cluster CLUSTER --security-group GROUP [-q]
 {: #security-group-sync-options}
 
 
-`-c`, `--cluster CLUSTER`
+`-c`, `--cluster`
 :    Specify the cluster name or ID.
 
 `-q`
 :    Do not show the message of the day or update reminders.
 
-`--security-group GROUP`, `--sg GROUP`
+`--security-group`, `--sg`
 :    Specify security group ID.
 
 
@@ -9345,19 +9345,19 @@ ibmcloud oc storage attachment create --cluster CLUSTER --volume VOLUME --worker
 {: #storage-attachment-create-options}
 
 
-`-c`, `--cluster CLUSTER`
+`-c`, `--cluster`
 :    Specify the cluster name or ID.
 
-`--output OUTPUT`
+`--output`
 :    Prints the command output in the provided format. Accepted values: `json`
 
 `-q`
 :    Do not show the message of the day or update reminders.
 
-`--volume VOLUME`
+`--volume`
 :    Specify the volume ID. To list available volumes, run `ibmcloud ks storage volume ls`.
 
-`-w CLUSTER`, `--worker WORKER`
+`-w`, `--worker`
 :    Specify the worker ID. To list available workers, run `ibmcloud ks workers`.
 
 
@@ -9390,19 +9390,19 @@ ibmcloud oc storage attachment get --attachment ATTACHMENT --cluster CLUSTER --w
 {: #storage-attachment-get-options}
 
 
-`--attachment ATTACHMENT`
+`--attachment`
 :    Specify the volume attachment ID. To list available attachments, run `ibmcloud ks storage attachment ls`.
 
-`-c`, `--cluster CLUSTER`
+`-c`, `--cluster`
 :    Specify the cluster name or ID.
 
-`--output OUTPUT`
+`--output`
 :    Prints the command output in the provided format. Accepted values: `json`
 
 `-q`
 :    Do not show the message of the day or update reminders.
 
-`-w CLUSTER`, `--worker WORKER`
+`-w`, `--worker`
 :    Specify the worker ID. To list available workers, run `ibmcloud ks workers`.
 
 
@@ -9458,16 +9458,16 @@ ibmcloud oc storage attachment ls --cluster CLUSTER --worker WORKER [--output OU
 {: #storage-attachment-ls-options}
 
 
-`-c`, `--cluster CLUSTER`
+`-c`, `--cluster`
 :    Specify the cluster name or ID.
 
-`--output OUTPUT`
+`--output`
 :    Prints the command output in the provided format. Accepted values: `json`
 
 `-q`
 :    Do not show the message of the day or update reminders.
 
-`-w CLUSTER`, `--worker WORKER`
+`-w`, `--worker`
 :    Specify the worker ID. To list available workers, run `ibmcloud ks workers`.
 
 
@@ -9500,16 +9500,16 @@ ibmcloud oc storage attachment rm --attachment ATTACHMENT --cluster CLUSTER --wo
 {: #storage-attachment-rm-options}
 
 
-`--attachment ATTACHMENT`
+`--attachment`
 :    Specify the volume attachment ID. To list available attachments, run `ibmcloud ks storage attachment ls`.
 
-`-c`, `--cluster CLUSTER`
+`-c`, `--cluster`
 :    Specify the cluster name or ID.
 
 `-q`
 :    Do not show the message of the day or update reminders.
 
-`-w CLUSTER`, `--worker WORKER`
+`-w`, `--worker`
 :    Specify the worker ID. To list available workers, run `ibmcloud ks workers`.
 
 
@@ -9565,13 +9565,13 @@ ibmcloud oc storage volume get --volume VOLUME [--output OUTPUT] [-q]
 {: #storage-volume-get-options}
 
 
-`--output OUTPUT`
+`--output`
 :    Prints the command output in the provided format. Accepted values: `json`
 
 `-q`
 :    Do not show the message of the day or update reminders.
 
-`--volume VOLUME`
+`--volume`
 :    Specify the volume ID. To list available volumes, run `ibmcloud ks storage volume ls`.
 
 
@@ -9627,19 +9627,19 @@ ibmcloud oc storage volume ls [--cluster CLUSTER] [--output OUTPUT] [--provider 
 {: #storage-volume-ls-options}
 
 
-`-c`, `--cluster CLUSTER`
+`-c`, `--cluster`
 :    Specify the cluster name or ID.
 
-`--output OUTPUT`
+`--output`
 :    Prints the command output in the provided format. Accepted values: `json`
 
-`--provider PROVIDER`
+`--provider`
 :    Filter the list for a specific infrastructure provider. Accepted values: `classic`, `vpc-classic`, `vpc-gen2`, `satellite`
 
 `-q`
 :    Do not show the message of the day or update reminders.
 
-`--zone ZONE`
+`--zone`
 :    A zone to filter for. To list available zones, run `ibmcloud ks locations`.
 
 
@@ -9675,22 +9675,22 @@ ibmcloud oc subnets --provider PROVIDER [-l LOCATION ...] [--output OUTPUT] [-q]
 {: #subnets-options}
 
 
-`-l LOCATION`, `--location LOCATION`
+`-l`, `--location`
 :    A location to filter for. To list available locations, run `ibmcloud ks locations`.
 
-`--output OUTPUT`
+`--output`
 :    Prints the command output in the provided format. Accepted values: `json`
 
-`--provider PROVIDER`
+`--provider`
 :    Filter the list for a specific infrastructure provider. Available options: classic, vpc-classic, vpc-gen2
 
 `-q`
 :    Do not show the message of the day or update reminders.
 
-`--vpc-id ID`
+`--vpc-id`
 :    Required for provider types `vpc-classic` and `vpc-gen2`: The ID of the VPC to list subnets for. To list VPC IDs, run `ibmcloud ks vpcs`.
 
-`--zone ZONE`
+`--zone`
 :    Required for provider types `vpc-classic` and `vpc-gen2`: The zone to list VPC subnets for. To list available zones, run `ibmcloud ks zone ls --provider vpc-classic|vpc-gen2`.
 
 
@@ -9726,13 +9726,13 @@ ibmcloud oc versions [--output OUTPUT] [-q] [--show-version VERSION]
 {: #versions-options}
 
 
-`--output OUTPUT`
+`--output`
 :    Prints the command output in the provided format. Accepted values: `json`
 
 `-q`
 :    Do not show the message of the day or update reminders.
 
-`--show-version VERSION`
+`--show-version`
 :    Show only the versions for the specified container platform. Accepted values: `OpenShift`, `Kubernetes`
 
 
@@ -9791,13 +9791,13 @@ ibmcloud oc vlan ls --zone ZONE [--output OUTPUT] [-q]
 {: #vlan-ls-options}
 
 
-`--output OUTPUT`
+`--output`
 :    Prints the command output in the provided format. Accepted values: `json`
 
 `-q`
 :    Do not show the message of the day or update reminders.
 
-`--zone ZONE`
+`--zone`
 :    Specify the zone for the worker pool in a multizone cluster. To list available zones, run `ibmcloud ks zone ls`.
 
 
@@ -9827,13 +9827,13 @@ ibmcloud oc vlan spanning get [--output OUTPUT] [-q] [--region REGION]
 {: #vlan-spanning-get-options}
 
 
-`--output OUTPUT`
+`--output`
 :    Prints the command output in the provided format. Accepted values: `json`
 
 `-q`
 :    Do not show the message of the day or update reminders.
 
-`--region REGION`
+`--region`
 :    Specify the region to target. If a region is not already targeted, this argument must be specified. To check if a region is targeted, run `ibmcloud target`.
 
 
@@ -9895,22 +9895,22 @@ ibmcloud oc vni attach baremetal --vlan VLAN --vni VNI [--auto-delete] [--output
 `--auto-delete`
 :    Automatically delete the VNI when it is removed from the cluster.
 
-`-c`, `--cluster-id ID`
+`-c`, `--cluster-id`
 :    The ID of the cluster.
 
-`--output OUTPUT`
+`--output`
 :    Prints the command output in the provided format. Accepted values: `json`
 
 `-q`
 :    Do not show the message of the day or update reminders.
 
-`--vlan VLAN`
+`--vlan`
 :    The VLAN ID for the bare metal node attachment. Must be unique for each VPC subnet. Multiple VNIs from the same subnet can reuse the VLAN ID. Valid range: 1-500.
 
-`--vni VNI`
+`--vni`
 :    The ID of the Virtual Network Interface to attach. You must specify VNIs without any current target resource. To list all the VNIs, run `ibmcloud is vnis`. To check if a specific VNI is already attached to a resource, check for the "Target" field in 'ibmcloud is vni <VNI_ID>.
 
-`-w ID`, `--worker WORKER`
+`-w`, `--worker`
 :    The ID of the worker node.
 
 
@@ -9963,22 +9963,22 @@ ibmcloud oc vni detach --vni VNI [-f] [--output OUTPUT] [-q] (--cluster-id ID | 
 {: #vni-detach-options}
 
 
-`-c`, `--cluster-id ID`
+`-c`, `--cluster-id`
 :    The ID of the cluster.
 
 `-f`
 :    Force the command to run without user prompts.
 
-`--output OUTPUT`
+`--output`
 :    Prints the command output in the provided format. Accepted values: `json`
 
 `-q`
 :    Do not show the message of the day or update reminders.
 
-`--vni VNI`
+`--vni`
 :    The ID of the Virtual Network Interface to detach.
 
-`-w ID`, `--worker WORKER`
+`-w`, `--worker`
 :    The ID of the worker node.
 
 
@@ -10031,22 +10031,22 @@ ibmcloud oc vni ls [--after AFTER] [--first FIRST] [--output OUTPUT] [-q] (--clu
 {: #vni-ls-options}
 
 
-`--after AFTER`
+`--after`
 :    Show Virtual Network Interfaces after the given cursor.
 
-`-c`, `--cluster-id ID`
+`-c`, `--cluster-id`
 :    The ID of the cluster.
 
-`--first FIRST`
+`--first`
 :    View the next Virtual Network Interfaces, up to the first number of VNIs.
 
-`--output OUTPUT`
+`--output`
 :    Prints the command output in the provided format. Accepted values: `json`
 
 `-q`
 :    Do not show the message of the day or update reminders.
 
-`-w ID`, `--worker WORKER`
+`-w`, `--worker`
 :    The ID of the worker node.
 
 
@@ -10105,10 +10105,10 @@ ibmcloud oc vpc ls [--output OUTPUT] [--provider PROVIDER] [-q]
 {: #vpc-ls-options}
 
 
-`--output OUTPUT`
+`--output`
 :    Prints the command output in the provided format. Accepted values: `json`
 
-`--provider PROVIDER`
+`--provider`
 :    The VPC infrastructure provider type. Supported values are `vpc-classic` and `vpc-gen2`. By default, VPCs of all provider types are returned.
 
 `-q`
@@ -10141,7 +10141,7 @@ ibmcloud oc vpc outbound-traffic-protection disable --cluster CLUSTER [-f] [-q]
 {: #vpc-outbound-traffic-protection-disable-options}
 
 
-`-c`, `--cluster CLUSTER`
+`-c`, `--cluster`
 :    Specify the cluster name or ID.
 
 `-f`
@@ -10177,7 +10177,7 @@ ibmcloud oc vpc outbound-traffic-protection enable --cluster CLUSTER [-f] [-q]
 {: #vpc-outbound-traffic-protection-enable-options}
 
 
-`-c`, `--cluster CLUSTER`
+`-c`, `--cluster`
 :    Specify the cluster name or ID.
 
 `-f`
@@ -10236,7 +10236,7 @@ ibmcloud oc vpc secure-by-default enable --cluster CLUSTER [--disable-outbound-t
 {: #vpc-secure-by-default-enable-options}
 
 
-`-c`, `--cluster CLUSTER`
+`-c`, `--cluster`
 :    Specify the cluster name or ID.
 
 `--disable-outbound-traffic-protection`
@@ -10304,19 +10304,19 @@ ibmcloud oc webhook-create --cluster CLUSTER --type TYPE --url URL [--level LEVE
 {: #webhook-create-options}
 
 
-`-c`, `--cluster CLUSTER`
+`-c`, `--cluster`
 :    Specify the cluster name or ID.
 
-`--level LEVEL`
+`--level`
 :    Set the notification level. Accepted values are `Normal` or `Warning`. The default is `Warning`.
 
 `-q`
 :    Do not show the message of the day or update reminders.
 
-`--type TYPE`
+`--type`
 :    The type of webhook that you want to use. Currently `slack` is supported.
 
-`--url URL`
+`--url`
 :    The webhook URL.
 
 
@@ -10352,16 +10352,16 @@ ibmcloud oc worker get --cluster CLUSTER --worker WORKER [--output OUTPUT] [-q]
 {: #worker-get-options}
 
 
-`-c`, `--cluster CLUSTER`
+`-c`, `--cluster`
 :    Specify the cluster name or ID.
 
-`--output OUTPUT`
+`--output`
 :    Prints the command output in the provided format. Accepted values: `json`
 
 `-q`
 :    Do not show the message of the day or update reminders.
 
-`-w CLUSTER`, `--worker WORKER`
+`-w`, `--worker`
 :    Specify the worker ID. To list available workers, run `ibmcloud ks workers`.
 
 
@@ -10414,13 +10414,13 @@ ibmcloud oc worker ls --cluster CLUSTER [--output OUTPUT] [-q] [--show-delete-re
 {: #worker-ls-options}
 
 
-`-c`, `--cluster CLUSTER`
+`-c`, `--cluster`
 :    Specify the cluster name or ID.
 
-`--output OUTPUT`
+`--output`
 :    Prints the command output in the provided format. Accepted values: `json`
 
-`-p CLUSTER`, `--worker-pool POOL`
+`-p`, `--worker-pool`
 :    Show only worker nodes that belong to the worker pool you specify.
 
 `-q`
@@ -10462,7 +10462,7 @@ ibmcloud oc worker reboot --cluster CLUSTER --worker WORKER [--worker WORKER ...
 {: #worker-reboot-options}
 
 
-`-c`, `--cluster CLUSTER`
+`-c`, `--cluster`
 :    Specify the cluster name or ID.
 
 `-f`
@@ -10477,7 +10477,7 @@ ibmcloud oc worker reboot --cluster CLUSTER --worker WORKER [--worker WORKER ...
 `--skip-master-health`
 :    Skips checking of master health before initiating action.
 
-`-w CLUSTER`, `--worker WORKER`
+`-w`, `--worker`
 :    Specify one or more worker IDs.
 
 
@@ -10516,7 +10516,7 @@ ibmcloud oc worker reload --worker WORKER [--worker WORKER ...] [-f] [-q] [--ski
 `--skip-master-health`
 :    Skips checking of master health before initiating action.
 
-`-w`, `--worker WORKER`
+`-w`, `--worker`
 :    Specify one or more worker IDs.
 
 
@@ -10546,7 +10546,7 @@ ibmcloud oc worker replace --cluster CLUSTER --worker WORKER [-f] [-q] [--update
 {: #worker-replace-options}
 
 
-`-c`, `--cluster CLUSTER`
+`-c`, `--cluster`
 :    Specify the cluster name or ID.
 
 `-f`
@@ -10558,7 +10558,7 @@ ibmcloud oc worker replace --cluster CLUSTER --worker WORKER [-f] [-q] [--update
 `--update`
 :    Update the worker node to the same major and minor version of the master and the latest patch. Also updates the operating system if the worker pool operating system has been updated.
 
-`-w CLUSTER`, `--worker WORKER`
+`-w`, `--worker`
 :    Specify the worker ID. To list available workers, run `ibmcloud ks workers`.
 
 
@@ -10588,7 +10588,7 @@ ibmcloud oc worker rm --cluster CLUSTER --worker WORKER [--worker WORKER ...] [-
 {: #worker-rm-options}
 
 
-`-c`, `--cluster CLUSTER`
+`-c`, `--cluster`
 :    Specify the cluster name or ID.
 
 `-f`
@@ -10597,7 +10597,7 @@ ibmcloud oc worker rm --cluster CLUSTER --worker WORKER [--worker WORKER ...] [-
 `-q`
 :    Do not show the message of the day or update reminders.
 
-`-w CLUSTER`, `--worker WORKER`
+`-w`, `--worker`
 :    Specify one or more worker IDs.
 
 
@@ -10627,7 +10627,7 @@ ibmcloud oc worker update --cluster CLUSTER --worker WORKER [--worker WORKER ...
 {: #worker-update-options}
 
 
-`-c`, `--cluster CLUSTER`
+`-c`, `--cluster`
 :    Specify the cluster name or ID.
 
 `-f`
@@ -10636,7 +10636,7 @@ ibmcloud oc worker update --cluster CLUSTER --worker WORKER [--worker WORKER ...
 `-q`
 :    Do not show the message of the day or update reminders.
 
-`-w CLUSTER`, `--worker WORKER`
+`-w`, `--worker`
 :    Specify one or more worker IDs.
 
 
@@ -10672,37 +10672,37 @@ ibmcloud oc worker-pool create classic --cluster CLUSTER --flavor FLAVOR --name 
 {: #worker-pool-create-classic-options}
 
 
-`-c`, `--cluster CLUSTER`
+`-c`, `--cluster`
 :    Specify the cluster name or ID.
 
 `--disable-disk-encrypt`
 :    Disable encryption on a worker node.
 
-`--entitlement ENTITLEMENT`
+`--entitlement`
 :    Set this flag to `ocp_entitled` only if you use this cluster with a license such as a Cloud Pak that has an OpenShift entitlement.
 
-`--flavor FLAVOR`
+`--flavor`
 :    The flavor of a worker node. To see available flavors, run `ibmcloud ks flavor ls --zone <zone name>` (for public IBM Cloud accounts) or `ibmcloud ks flavor ls` (for IBM Cloud Dedicated accounts).
 
-`--hardware HARDWARE`
+`--hardware`
 :    The level of hardware isolation for your worker node. Use `dedicated` to have available physical resources dedicated to you only, or `shared` to allow physical resources to be shared with other IBM customers. For IBM Cloud Public accounts, the default value is shared. For IBM Cloud Dedicated accounts, dedicated is the only available option.
 
-`-l CLUSTER`, `--label LABEL`
+`-l`, `--label`
 :    Sets labels on all the workers in the worker pool.
 
-`--name NAME`
+`--name`
 :    Enter a name for the worker pool.
 
-`--operating-system SYSTEM`
+`--operating-system`
 :    Specify the name of the operating system.
 
-`--output OUTPUT`
+`--output`
 :    Prints the command output in the provided format. Accepted values: `json`
 
 `-q`
 :    Do not show the message of the day or update reminders.
 
-`--size-per-zone SIZE`
+`--size-per-zone`
 :    Specify the desired number of workers per zone in this worker pool.
 
 
@@ -10759,34 +10759,34 @@ ibmcloud oc worker-pool create satellite --cluster CLUSTER --host-label LABEL [-
 {: #worker-pool-create-satellite-options}
 
 
-`-c`, `--cluster CLUSTER`
+`-c`, `--cluster`
 :    Specify the cluster name or ID.
 
-`--entitlement ENTITLEMENT`
+`--entitlement`
 :    Set this flag to `ocp_entitled` only if you use this cluster with a license such as a Cloud Pak that has an OpenShift entitlement.
 
-`--host-label LABEL`, `--hl LABEL`
+`--host-label`, `--hl`
 :    Enter any labels as key-value pairs to identify the host to assign to your Satellite control plane or Red Hat OpenShift cluster. The first host that has this label and is unassigned is automatically assigned to the control plane or cluster. To find available host labels, run `ibmcloud sat host get --host <host_name_or_ID> --location <location_name_or_ID>`.
 
-`-l LABEL`, `--label LABEL`
+`-l`, `--label`
 :    Sets labels on all the workers in the worker pool.
 
-`--name NAME`
+`--name`
 :    Enter a name for the worker pool.
 
-`--operating-system SYSTEM`
+`--operating-system`
 :    Specify the name of the operating system.
 
-`--output OUTPUT`
+`--output`
 :    Prints the command output in the provided format. Accepted values: `json`
 
 `-q`
 :    Do not show the message of the day or update reminders.
 
-`--size-per-zone SIZE`
+`--size-per-zone`
 :    Specify the desired number of workers per zone in this worker pool.
 
-`--zone ZONE`
+`--zone`
 :    Specify the zone for the worker pool in a multizone cluster. To list available zones, run `ibmcloud ks zone ls`.
 
 
@@ -10821,34 +10821,34 @@ ibmcloud oc worker-pool create vpc-classic --cluster CLUSTER --flavor FLAVOR --n
 {: #worker-pool-create-vpc-classic-options}
 
 
-`-c`, `--cluster CLUSTER`
+`-c`, `--cluster`
 :    Specify the cluster name or ID.
 
-`--entitlement ENTITLEMENT`
+`--entitlement`
 :    Set this flag to `ocp_entitled` only if you use this cluster with a license such as a Cloud Pak that has an OpenShift entitlement.
 
-`--flavor FLAVOR`
+`--flavor`
 :    The flavor of a worker node. To see available flavors, run `ibmcloud ks flavor ls --zone <zone name>` (for public IBM Cloud accounts) or `ibmcloud ks flavor ls` (for IBM Cloud Dedicated accounts).
 
-`-l CLUSTER`, `--label LABEL`
+`-l`, `--label`
 :    Sets labels on all the workers in the worker pool.
 
-`--name NAME`
+`--name`
 :    Enter a name for the worker pool.
 
-`--operating-system SYSTEM`
+`--operating-system`
 :    Specify the name of the operating system.
 
-`--output OUTPUT`
+`--output`
 :    Prints the command output in the provided format. Accepted values: `json`
 
 `-q`
 :    Do not show the message of the day or update reminders.
 
-`--size-per-zone SIZE`
+`--size-per-zone`
 :    Specify the desired number of workers per zone in this worker pool.
 
-`--vpc-id ID`
+`--vpc-id`
 :    The ID of the VPC in which to create the worker nodes, which must match the VPC that the cluster is in. To list the cluster's VPC ID, run `ibmcloud ks cluster get -c <cluster_name_or_ID>`. If this flag is not provided, then the worker pool defaults to the VPC ID of existing worker pools in the cluster.
 
 
@@ -10882,52 +10882,52 @@ ibmcloud oc worker-pool create vpc-gen2 --cluster CLUSTER --flavor FLAVOR --name
 {: #worker-pool-create-vpc-gen2-options}
 
 
-`-c`, `--cluster CLUSTER`
+`-c`, `--cluster`
 :    Specify the cluster name or ID.
 
-`--crk CRK`
+`--crk`
 :    The ID of the root key in your KMS instance to use for local disk encryption. To list available root keys, run `ibmcloud ks kms crk ls --instance-id <kms_instance>`.
 
 `--disable-disk-encrypt`
 :    Disable encryption on a worker node.
 
-`--entitlement ENTITLEMENT`
+`--entitlement`
 :    Set this flag to `ocp_entitled` only if you use this cluster with a license such as a Cloud Pak that has an OpenShift entitlement.
 
-`--flavor FLAVOR`
+`--flavor`
 :    The flavor of a worker node. To see available flavors, run `ibmcloud ks flavor ls --zone <zone name>` (for public IBM Cloud accounts) or `ibmcloud ks flavor ls` (for IBM Cloud Dedicated accounts).
 
-`--kms-account-id ID`
+`--kms-account-id`
 :    The ID of the account that contains the KMS instance you want to use for local disk or secret encryption.
 
-`--kms-instance INSTANCE`
+`--kms-instance`
 :    The ID of the KMS instance to use for local disk encryption. To list available KMS instances, run `ibmcloud ks kms instance ls`.
 
-`-l CLUSTER`, `--label LABEL`
+`-l`, `--label`
 :    Sets labels on all the workers in the worker pool.
 
-`--name NAME`
+`--name`
 :    Enter a name for the worker pool.
 
-`--operating-system SYSTEM`
+`--operating-system`
 :    Specify the name of the operating system.
 
-`--output OUTPUT`
+`--output`
 :    Prints the command output in the provided format. Accepted values: `json`
 
 `-q`
 :    Do not show the message of the day or update reminders.
 
-`--secondary-storage STORAGE`
+`--secondary-storage`
 :    The secondary storage option for the flavor. To view the secondary storage options that are available for a flavor, run `ibmcloud ks flavor get --provider vpc-gen2 --zone <zone name>`.
 
-`--security-group GROUP`
+`--security-group`
 :    Optional. Specify up to five security group IDs to apply to all workers in the worker pool.
 
-`--size-per-zone SIZE`
+`--size-per-zone`
 :    Specify the desired number of workers per zone in this worker pool.
 
-`--vpc-id ID`
+`--vpc-id`
 :    The ID of the VPC in which to create the worker nodes, which must match the VPC that the cluster is in. To list the cluster's VPC ID, run `ibmcloud ks cluster get -c <cluster_name_or_ID>`. If this flag is not provided, then the worker pool defaults to the VPC ID of existing worker pools in the cluster.
 
 
@@ -10961,13 +10961,13 @@ ibmcloud oc worker-pool get --cluster CLUSTER --worker-pool POOL [--output OUTPU
 {: #worker-pool-get-options}
 
 
-`-c`, `--cluster CLUSTER`
+`-c`, `--cluster`
 :    Specify the cluster name or ID.
 
-`--output OUTPUT`
+`--output`
 :    Prints the command output in the provided format. Accepted values: `json`
 
-`-p CLUSTER`, `--worker-pool POOL`
+`-p`, `--worker-pool`
 :    Specify a worker pool.
 
 `-q`
@@ -11046,13 +11046,13 @@ ibmcloud oc worker-pool label rm --cluster CLUSTER --worker-pool POOL [-f] [-q]
 {: #worker-pool-label-rm-options}
 
 
-`-c`, `--cluster CLUSTER`
+`-c`, `--cluster`
 :    Specify the cluster name or ID.
 
 `-f`
 :    Force the command to run without user prompts.
 
-`-p CLUSTER`, `--worker-pool POOL`
+`-p`, `--worker-pool`
 :    Specify a worker pool.
 
 `-q`
@@ -11085,16 +11085,16 @@ ibmcloud oc worker-pool label set --cluster CLUSTER --label LABEL [--label LABEL
 {: #worker-pool-label-set-options}
 
 
-`-c`, `--cluster CLUSTER`
+`-c`, `--cluster`
 :    Specify the cluster name or ID.
 
 `-f`
 :    Force the command to run without user prompts.
 
-`-l CLUSTER`, `--label LABEL`
+`-l`, `--label`
 :    Set custom Kubernetes labels in the format `key=value` for all the worker nodes in the worker pool. For multiple labels, repeat this flag. To keep any existing custom labels on the worker pool, include those labels with this flag.
 
-`-p LABEL`, `--worker-pool POOL`
+`-p`, `--worker-pool`
 :    Specify a worker pool.
 
 `-q`
@@ -11127,10 +11127,10 @@ ibmcloud oc worker-pool ls --cluster CLUSTER [--output OUTPUT] [-q]
 {: #worker-pool-ls-options}
 
 
-`-c`, `--cluster CLUSTER`
+`-c`, `--cluster`
 :    Specify the cluster name or ID.
 
-`--output OUTPUT`
+`--output`
 :    Prints the command output in the provided format. Accepted values: `json`
 
 `-q`
@@ -11186,13 +11186,13 @@ ibmcloud oc worker-pool operating-system set --cluster CLUSTER --operating-syste
 {: #worker-pool-operating-system-set-options}
 
 
-`-c`, `--cluster CLUSTER`
+`-c`, `--cluster`
 :    Specify the cluster name or ID.
 
-`--operating-system SYSTEM`
+`--operating-system`
 :    Specify the name of the operating system.
 
-`-p CLUSTER`, `--worker-pool POOL`
+`-p`, `--worker-pool`
 :    Specify a worker pool.
 
 `-q`
@@ -11228,13 +11228,13 @@ ibmcloud oc worker-pool rebalance --cluster CLUSTER --worker-pool POOL [-f] [-q]
 {: #worker-pool-rebalance-options}
 
 
-`-c`, `--cluster CLUSTER`
+`-c`, `--cluster`
 :    Specify the cluster name or ID.
 
 `-f`
 :    Force the command to run without user prompts.
 
-`-p CLUSTER`, `--worker-pool POOL`
+`-p`, `--worker-pool`
 :    Specify a worker pool.
 
 `-q`
@@ -11267,16 +11267,16 @@ ibmcloud oc worker-pool resize --cluster CLUSTER --size-per-zone SIZE --worker-p
 {: #worker-pool-resize-options}
 
 
-`-c`, `--cluster CLUSTER`
+`-c`, `--cluster`
 :    Specify the cluster name or ID.
 
-`-p CLUSTER`, `--worker-pool POOL`
+`-p`, `--worker-pool`
 :    Specify a worker pool.
 
 `-q`
 :    Do not show the message of the day or update reminders.
 
-`--size-per-zone SIZE`
+`--size-per-zone`
 :    Specify the desired number of workers per zone in this worker pool.
 
 
@@ -11306,13 +11306,13 @@ ibmcloud oc worker-pool rm --cluster CLUSTER --worker-pool POOL [-f] [-q]
 {: #worker-pool-rm-options}
 
 
-`-c`, `--cluster CLUSTER`
+`-c`, `--cluster`
 :    Specify the cluster name or ID.
 
 `-f`
 :    Force the command to run without user prompts.
 
-`-p CLUSTER`, `--worker-pool POOL`
+`-p`, `--worker-pool`
 :    Specify a worker pool.
 
 `-q`
@@ -11368,13 +11368,13 @@ ibmcloud oc worker-pool taint rm --cluster CLUSTER --worker-pool POOL [-f] [-q]
 {: #worker-pool-taint-rm-options}
 
 
-`-c`, `--cluster CLUSTER`
+`-c`, `--cluster`
 :    Specify the cluster name or ID.
 
 `-f`
 :    Force the command to run without user prompts.
 
-`-p CLUSTER`, `--worker-pool POOL`
+`-p`, `--worker-pool`
 :    Specify a worker pool.
 
 `-q`
@@ -11407,19 +11407,19 @@ ibmcloud oc worker-pool taint set --cluster CLUSTER --taint TAINT [--taint TAINT
 {: #worker-pool-taint-set-options}
 
 
-`-c`, `--cluster CLUSTER`
+`-c`, `--cluster`
 :    Specify the cluster name or ID.
 
 `-f`
 :    Force the command to run without user prompts.
 
-`-p CLUSTER`, `--worker-pool POOL`
+`-p`, `--worker-pool`
 :    Specify a worker pool.
 
 `-q`
 :    Do not show the message of the day or update reminders.
 
-`--taint TAINT`
+`--taint`
 :    Sets taints on all the workers in the worker pool. Specify the Kubernetes taint in the format `key=value:effect`. The `key=value` is a pair such as `env=prod` that you use to manage the worker node taint and matching pod tolerations. The `effect` is a Kubernetes taint effect such as `NoSchedule` that describes how the taint works.
 
 
@@ -11449,13 +11449,13 @@ ibmcloud oc worker-pool zones --cluster CLUSTER --worker-pool POOL [--output OUT
 {: #worker-pool-zones-options}
 
 
-`-c`, `--cluster CLUSTER`
+`-c`, `--cluster`
 :    Specify the cluster name or ID.
 
-`--output OUTPUT`
+`--output`
 :    Prints the command output in the provided format. Accepted values: `json`
 
-`-p CLUSTER`, `--worker-pool POOL`
+`-p`, `--worker-pool`
 :    Specify a worker pool.
 
 `-q`
@@ -11494,28 +11494,28 @@ ibmcloud oc zone add classic --cluster CLUSTER --worker-pool POOL [--worker-pool
 {: #zone-add-classic-options}
 
 
-`-c`, `--cluster CLUSTER`
+`-c`, `--cluster`
 :    Specify the cluster name or ID.
 
-`--output OUTPUT`
+`--output`
 :    Prints the command output in the provided format. Accepted values: `json`
 
-`-p CLUSTER`, `--worker-pool POOL`
+`-p`, `--worker-pool`
 :    The name of the worker pool to modify. To specify multiple worker pools, use multiple flags, such as `-p pool1 -p pool2`.
 
 `--private-only`
 :    Use this flag to prevent a public VLAN from being created. Required only when you specify the `--private-vlan` flag without specifying the `--public-vlan` flag.
 
-`--private-vlan VLAN`
+`--private-vlan`
 :    Specify the ID of the private VLAN. To see available VLANs, run '. When you specify a private VLAN, you must also specify either the `--public-vlan` flag or the '--private-only' flag.
 
-`--public-vlan VLAN`
+`--public-vlan`
 :    Specify the ID of the public VLAN. To see available VLANs, run '.
 
 `-q`
 :    Do not show the message of the day or update reminders.
 
-`--zone ZONE`
+`--zone`
 :    Specify the zone for the worker pool in a multizone cluster. To list available zones, run `ibmcloud ks zone ls`.
 
 
@@ -11568,19 +11568,19 @@ ibmcloud oc zone add satellite --cluster CLUSTER --worker-pool POOL [--worker-po
 {: #zone-add-satellite-options}
 
 
-`-c`, `--cluster CLUSTER`
+`-c`, `--cluster`
 :    Specify the cluster name or ID.
 
-`--output OUTPUT`
+`--output`
 :    Prints the command output in the provided format. Accepted values: `json`
 
-`-p CLUSTER`, `--worker-pool POOL`
+`-p`, `--worker-pool`
 :    The name of the worker pool to modify. To specify multiple worker pools, use multiple flags, such as `-p pool1 -p pool2`.
 
 `-q`
 :    Do not show the message of the day or update reminders.
 
-`--zone ZONE`
+`--zone`
 :    Specify the zone for the worker pool in a multizone cluster. To list available zones, run `ibmcloud ks zone ls`.
 
 
@@ -11610,22 +11610,22 @@ ibmcloud oc zone add vpc-classic --cluster CLUSTER --subnet-id ID --worker-pool 
 {: #zone-add-vpc-classic-options}
 
 
-`-c`, `--cluster CLUSTER`
+`-c`, `--cluster`
 :    Specify the cluster name or ID.
 
-`--output OUTPUT`
+`--output`
 :    Prints the command output in the provided format. Accepted values: `json`
 
 `-q`
 :    Do not show the message of the day or update reminders.
 
-`--subnet-id ID`
+`--subnet-id`
 :    The VPC subnet to assign the cluster. To list available subnets, run `ibmcloud ks subnets --provider vpc-classic --vpc-id <vpc-id> --zone <vpc-zone>`.
 
-`--worker-pool POOL`
+`--worker-pool`
 :    Specify a worker pool.
 
-`--zone ZONE`
+`--zone`
 :    Specify the zone for the worker pool in a multizone cluster. To list available zones, run `ibmcloud ks zone ls`.
 
 
@@ -11655,22 +11655,22 @@ ibmcloud oc zone add vpc-gen2 --cluster CLUSTER --subnet-id ID --worker-pool POO
 {: #zone-add-vpc-gen2-options}
 
 
-`-c`, `--cluster CLUSTER`
+`-c`, `--cluster`
 :    Specify the cluster name or ID.
 
-`--output OUTPUT`
+`--output`
 :    Prints the command output in the provided format. Accepted values: `json`
 
 `-q`
 :    Do not show the message of the day or update reminders.
 
-`--subnet-id ID`
+`--subnet-id`
 :    The VPC subnet to assign the cluster. To list available subnets, run `ibmcloud ks subnets --provider vpc-gen2 --vpc-id <vpc-id> --zone <vpc-zone>`.
 
-`--worker-pool POOL`
+`--worker-pool`
 :    Specify a worker pool.
 
-`--zone ZONE`
+`--zone`
 :    Specify the zone for the worker pool in a multizone cluster. To list available zones, run `ibmcloud ks zone ls`.
 
 
@@ -11723,13 +11723,13 @@ ibmcloud oc zone ls --provider PROVIDER [-l LOCATION ...] [--output OUTPUT] [-q]
 {: #zone-ls-options}
 
 
-`-l LOCATION`, `--location LOCATION`
+`-l`, `--location`
 :    A location to filter for. To list available locations, run `ibmcloud ks locations`.
 
-`--output OUTPUT`
+`--output`
 :    Prints the command output in the provided format. Accepted values: `json`
 
-`--provider PROVIDER`
+`--provider`
 :    Filter the list for a specific infrastructure provider. Available options: classic, vpc-classic, vpc-gen2, satellite
 
 `-q`
@@ -11768,28 +11768,28 @@ ibmcloud oc zone network-set --cluster CLUSTER --private-vlan VLAN --worker-pool
 {: #zone-network-set-options}
 
 
-`-c`, `--cluster CLUSTER`
+`-c`, `--cluster`
 :    Specify the cluster name or ID.
 
 `-f`
 :    Force the command to run without user prompts.
 
-`-p CLUSTER`, `--worker-pool POOL`
+`-p`, `--worker-pool`
 :    The name of the worker pool to modify. To specify multiple worker pools, use multiple flags, such as `-p pool1 -p pool2`.
 
 `--private-only`
 :    Unset the public VLAN so that the workers in this zone are connected to a private VLAN only.
 
-`--private-vlan VLAN`
+`--private-vlan`
 :    Specify the ID of the private VLAN. To see available VLANs, run '.
 
-`--public-vlan VLAN`
+`--public-vlan`
 :    Specify the ID of the public VLAN. To see available VLANs, run '.
 
 `-q`
 :    Do not show the message of the day or update reminders.
 
-`--zone ZONE`
+`--zone`
 :    Specify the zone for the worker pool in a multizone cluster. To list available zones, run `ibmcloud ks zone ls`.
 
 
@@ -11824,19 +11824,19 @@ ibmcloud oc zone rm --cluster CLUSTER --worker-pool POOL [--worker-pool POOL ...
 {: #zone-rm-options}
 
 
-`-c`, `--cluster CLUSTER`
+`-c`, `--cluster`
 :    Specify the cluster name or ID.
 
 `-f`
 :    Force the command to run without user prompts.
 
-`-p CLUSTER`, `--worker-pool POOL`
+`-p`, `--worker-pool`
 :    The name of the worker pool to modify. To specify multiple worker pools, use multiple flags, such as `-p pool1 -p pool2`.
 
 `-q`
 :    Do not show the message of the day or update reminders.
 
-`--zone ZONE`
+`--zone`
 :    Specify the zone for the worker pool in a multizone cluster. To list available zones, run `ibmcloud ks zone ls`.
 
 
