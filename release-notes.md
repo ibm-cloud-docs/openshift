@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2026
-lastupdated: "2026-08-20"
+lastupdated: "2026-08-24"
 
 
 keywords: kubernetes, release notes, openshift, {{site.data.keyword.openshiftlong_notm}}
@@ -28,6 +28,13 @@ Looking for {{site.data.keyword.cloud_notm}} status, platform announcements, sec
 
 ## August 2026
 {: #openshift-aug26}
+
+### 24 August 2026
+{: #openshift-aug2426}
+{: release-note}
+
+Headlamp cluster add-on patch updates.
+:   For more information, see the [change log](/docs/openshift?topic=openshift-cl-add-ons-headlamp).
 
 ### 20 August 2026
 {: #openshift-aug2026}

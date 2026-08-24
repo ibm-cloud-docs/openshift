@@ -3,7 +3,7 @@
 copyright:
   years: 2024, 2026
 
-lastupdated: "2026-08-13"
+lastupdated: "2026-08-24"
 
 
 keywords: change log, version history, OpenShift Data Foundation
@@ -46,7 +46,7 @@ Review the version history for OpenShift Data Foundation.
 ### Version 4.21.0 - 4.21.8, released 06 August 2026
 {: #cl-add-ons-openshift-data-foundation-4218}
 
-- Resolves the following CVEs: [CVE-2026-54369](https://nvd.nist.gov/vuln/detail/CVE-2026-54369){: external}, [CVE-2026-54370](https://nvd.nist.gov/vuln/detail/CVE-2026-54370){: external}, [GO-2026-6061](https://nvd.nist.gov/vuln/detail/GO-2026-6061){: external}, [CVE-2026-42505](https://nvd.nist.gov/vuln/detail/CVE-2026-42505){: external}, [CVE-2026-5435](https://nvd.nist.gov/vuln/detail/CVE-2026-5435){: external}, [CVE-2026-5928](https://nvd.nist.gov/vuln/detail/CVE-2026-5928){: external}, and [CVE-2026-6238](https://nvd.nist.gov/vuln/detail/CVE-2026-6238){: external}.
+- Resolves the following CVEs: [CVE-2026-54369](https://nvd.nist.gov/vuln/detail/CVE-2026-54369){: external}, [CVE-2026-54370](https://nvd.nist.gov/vuln/detail/CVE-2026-54370){: external}, [GO-2026-6061](https://pkg.go.dev/vuln/GO-2026-6061){: external}, [CVE-2026-42505](https://nvd.nist.gov/vuln/detail/CVE-2026-42505){: external}, [CVE-2026-5435](https://nvd.nist.gov/vuln/detail/CVE-2026-5435){: external}, [CVE-2026-5928](https://nvd.nist.gov/vuln/detail/CVE-2026-5928){: external}, and [CVE-2026-6238](https://nvd.nist.gov/vuln/detail/CVE-2026-6238){: external}.
 - Updates Go to version `1.26.5`.
 - VA fixes 
 
@@ -81,7 +81,7 @@ Review the version history for OpenShift Data Foundation.
 ### Version 4.20.0 - 4.20.11, released 06 August 2026
 {: #cl-add-ons-openshift-data-foundation-42011}
 
-- Resolves the following CVEs: [CVE-2026-54369](https://nvd.nist.gov/vuln/detail/CVE-2026-54369){: external}, [CVE-2026-54370](https://nvd.nist.gov/vuln/detail/CVE-2026-54370){: external}, [GO-2026-6061](https://nvd.nist.gov/vuln/detail/GO-2026-6061){: external}, [CVE-2026-42505](https://nvd.nist.gov/vuln/detail/CVE-2026-42505){: external}, [CVE-2026-5435](https://nvd.nist.gov/vuln/detail/CVE-2026-5435){: external}, [CVE-2026-5928](https://nvd.nist.gov/vuln/detail/CVE-2026-5928){: external}, and [CVE-2026-6238](https://nvd.nist.gov/vuln/detail/CVE-2026-6238){: external}.
+- Resolves the following CVEs: [CVE-2026-54369](https://nvd.nist.gov/vuln/detail/CVE-2026-54369){: external}, [CVE-2026-54370](https://nvd.nist.gov/vuln/detail/CVE-2026-54370){: external}, [GO-2026-6061](https://pkg.go.dev/vuln/GO-2026-6061){: external}, [CVE-2026-42505](https://nvd.nist.gov/vuln/detail/CVE-2026-42505){: external}, [CVE-2026-5435](https://nvd.nist.gov/vuln/detail/CVE-2026-5435){: external}, [CVE-2026-5928](https://nvd.nist.gov/vuln/detail/CVE-2026-5928){: external}, and [CVE-2026-6238](https://nvd.nist.gov/vuln/detail/CVE-2026-6238){: external}.
 - Updates Go to version `1.26.5`.
 - VA fixes 
 
@@ -132,7 +132,7 @@ Review the version history for OpenShift Data Foundation.
 ### Version 4.19.0 - 4.19.17, released 06 August 2026
 {: #cl-add-ons-openshift-data-foundation-41917}
 
-- Resolves the following CVEs: [CVE-2026-54369](https://nvd.nist.gov/vuln/detail/CVE-2026-54369){: external}, [CVE-2026-54370](https://nvd.nist.gov/vuln/detail/CVE-2026-54370){: external}, [GO-2026-6061](https://nvd.nist.gov/vuln/detail/GO-2026-6061){: external}, [CVE-2026-42505](https://nvd.nist.gov/vuln/detail/CVE-2026-42505){: external}, [CVE-2026-5435](https://nvd.nist.gov/vuln/detail/CVE-2026-5435){: external}, [CVE-2026-5928](https://nvd.nist.gov/vuln/detail/CVE-2026-5928){: external}, and [CVE-2026-6238](https://nvd.nist.gov/vuln/detail/CVE-2026-6238){: external}.
+- Resolves the following CVEs: [CVE-2026-54369](https://nvd.nist.gov/vuln/detail/CVE-2026-54369){: external}, [CVE-2026-54370](https://nvd.nist.gov/vuln/detail/CVE-2026-54370){: external}, [GO-2026-6061](https://pkg.go.dev/vuln/GO-2026-6061){: external}, [CVE-2026-42505](https://nvd.nist.gov/vuln/detail/CVE-2026-42505){: external}, [CVE-2026-5435](https://nvd.nist.gov/vuln/detail/CVE-2026-5435){: external}, [CVE-2026-5928](https://nvd.nist.gov/vuln/detail/CVE-2026-5928){: external}, and [CVE-2026-6238](https://nvd.nist.gov/vuln/detail/CVE-2026-6238){: external}.
 - Updates Go to version `1.26.5`.
 - VA fixes 
 
@@ -198,7 +198,7 @@ Review the version history for OpenShift Data Foundation.
 ### Version 4.18.0 - 4.18.20, released 06 August 2026
 {: #cl-add-ons-openshift-data-foundation-41820}
 
-- Resolves the following CVEs: [CVE-2026-54369](https://nvd.nist.gov/vuln/detail/CVE-2026-54369){: external}, [CVE-2026-54370](https://nvd.nist.gov/vuln/detail/CVE-2026-54370){: external}, [GO-2026-6061](https://nvd.nist.gov/vuln/detail/GO-2026-6061){: external}, [CVE-2026-42505](https://nvd.nist.gov/vuln/detail/CVE-2026-42505){: external}, [CVE-2026-5435](https://nvd.nist.gov/vuln/detail/CVE-2026-5435){: external}, [CVE-2026-5928](https://nvd.nist.gov/vuln/detail/CVE-2026-5928){: external}, and [CVE-2026-6238](https://nvd.nist.gov/vuln/detail/CVE-2026-6238){: external}.
+- Resolves the following CVEs: [CVE-2026-54369](https://nvd.nist.gov/vuln/detail/CVE-2026-54369){: external}, [CVE-2026-54370](https://nvd.nist.gov/vuln/detail/CVE-2026-54370){: external}, [GO-2026-6061](https://pkg.go.dev/vuln/GO-2026-6061){: external}, [CVE-2026-42505](https://nvd.nist.gov/vuln/detail/CVE-2026-42505){: external}, [CVE-2026-5435](https://nvd.nist.gov/vuln/detail/CVE-2026-5435){: external}, [CVE-2026-5928](https://nvd.nist.gov/vuln/detail/CVE-2026-5928){: external}, and [CVE-2026-6238](https://nvd.nist.gov/vuln/detail/CVE-2026-6238){: external}.
 - Updates Go to version `1.26.5`.
 - VA fixes 
 
@@ -279,7 +279,7 @@ Review the version history for OpenShift Data Foundation.
 ### Version 4.17.0 - 4.17.25, released 06 August 2026
 {: #cl-add-ons-openshift-data-foundation-41725}
 
-- Resolves the following CVEs: [CVE-2026-54369](https://nvd.nist.gov/vuln/detail/CVE-2026-54369){: external}, [CVE-2026-54370](https://nvd.nist.gov/vuln/detail/CVE-2026-54370){: external}, [GO-2026-6061](https://nvd.nist.gov/vuln/detail/GO-2026-6061){: external}, [CVE-2026-42505](https://nvd.nist.gov/vuln/detail/CVE-2026-42505){: external}, [CVE-2026-5435](https://nvd.nist.gov/vuln/detail/CVE-2026-5435){: external}, [CVE-2026-5928](https://nvd.nist.gov/vuln/detail/CVE-2026-5928){: external}, and [CVE-2026-6238](https://nvd.nist.gov/vuln/detail/CVE-2026-6238){: external}.
+- Resolves the following CVEs: [CVE-2026-54369](https://nvd.nist.gov/vuln/detail/CVE-2026-54369){: external}, [CVE-2026-54370](https://nvd.nist.gov/vuln/detail/CVE-2026-54370){: external}, [GO-2026-6061](https://pkg.go.dev/vuln/GO-2026-6061){: external}, [CVE-2026-42505](https://nvd.nist.gov/vuln/detail/CVE-2026-42505){: external}, [CVE-2026-5435](https://nvd.nist.gov/vuln/detail/CVE-2026-5435){: external}, [CVE-2026-5928](https://nvd.nist.gov/vuln/detail/CVE-2026-5928){: external}, and [CVE-2026-6238](https://nvd.nist.gov/vuln/detail/CVE-2026-6238){: external}.
 - Updates Go to version `1.26.5`.
 - VA fixes 
 
@@ -366,7 +366,7 @@ Review the version history for OpenShift Data Foundation.
 ### Version 4.16.0 - 4.16.32, released 06 August 2026
 {: #cl-add-ons-openshift-data-foundation-41632}
 
-- Resolves the following CVEs: [CVE-2026-54369](https://nvd.nist.gov/vuln/detail/CVE-2026-54369){: external}, [CVE-2026-54370](https://nvd.nist.gov/vuln/detail/CVE-2026-54370){: external}, [GO-2026-6061](https://nvd.nist.gov/vuln/detail/GO-2026-6061){: external}, [CVE-2026-42505](https://nvd.nist.gov/vuln/detail/CVE-2026-42505){: external}, [CVE-2026-5435](https://nvd.nist.gov/vuln/detail/CVE-2026-5435){: external}, [CVE-2026-5928](https://nvd.nist.gov/vuln/detail/CVE-2026-5928){: external}, and [CVE-2026-6238](https://nvd.nist.gov/vuln/detail/CVE-2026-6238){: external}.
+- Resolves the following CVEs: [CVE-2026-54369](https://nvd.nist.gov/vuln/detail/CVE-2026-54369){: external}, [CVE-2026-54370](https://nvd.nist.gov/vuln/detail/CVE-2026-54370){: external}, [GO-2026-6061](https://pkg.go.dev/vuln/GO-2026-6061){: external}, [CVE-2026-42505](https://nvd.nist.gov/vuln/detail/CVE-2026-42505){: external}, [CVE-2026-5435](https://nvd.nist.gov/vuln/detail/CVE-2026-5435){: external}, [CVE-2026-5928](https://nvd.nist.gov/vuln/detail/CVE-2026-5928){: external}, and [CVE-2026-6238](https://nvd.nist.gov/vuln/detail/CVE-2026-6238){: external}.
 - Updates Go to version `1.26.5`.
 - VA fixes 
 
