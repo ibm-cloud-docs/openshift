@@ -7051,8 +7051,6 @@ subcollection: openshift
 
 [{{site.data.keyword.openshiftlong_notm}} CLI reference](/docs/openshift?topic=openshift-kubernetes-service-cli#kubernetes-service-cli)
 
-* [ibmcloud oc commands](/docs/openshift?topic=openshift-kubernetes-service-cli#cli_commands)
-
 * [Api commands](/docs/openshift?topic=openshift-kubernetes-service-cli#api-cli)
 
     * [`ibmcloud oc api`](/docs/openshift?topic=openshift-kubernetes-service-cli#api-cli)
@@ -7908,72 +7906,6 @@ subcollection: openshift
 
 
 [Supported cluster add-on versions](/docs/openshift?topic=openshift-supported-cluster-addon-versions#supported-cluster-addon-versions)
-
-* [`acm` 2.16.0](/docs/openshift?topic=openshift-supported-cluster-addon-versions#acm-2.16.0)
-
-* [`alb-oauth-proxy` 2.0.0](/docs/openshift?topic=openshift-supported-cluster-addon-versions#alb-oauth-proxy-2.0.0)
-
-* [`cluster-autoscaler` 1.1.0](/docs/openshift?topic=openshift-supported-cluster-addon-versions#cluster-autoscaler-1.1.0)
-
-* [`cluster-autoscaler` 1.2.4](/docs/openshift?topic=openshift-supported-cluster-addon-versions#cluster-autoscaler-1.2.4)
-
-* [`cluster-autoscaler` 2.0.0](/docs/openshift?topic=openshift-supported-cluster-addon-versions#cluster-autoscaler-2.0.0)
-
-* [`csutil` 1.0.0](/docs/openshift?topic=openshift-supported-cluster-addon-versions#csutil-1.0.0)
-
-* [`csutil-experimental` 1.0.0](/docs/openshift?topic=openshift-supported-cluster-addon-versions#csutil-experimental-1.0.0)
-
-* [`headlamp` 0.1.0](/docs/openshift?topic=openshift-supported-cluster-addon-versions#headlamp-0.1.0)
-
-* [`ibm-object-csi-driver` 1.0](/docs/openshift?topic=openshift-supported-cluster-addon-versions#ibm-object-csi-driver-1.0)
-
-* [`ibm-storage-operator` 1.0](/docs/openshift?topic=openshift-supported-cluster-addon-versions#ibm-storage-operator-1.0)
-
-* [`image-key-synchronizer` 1.0.0](/docs/openshift?topic=openshift-supported-cluster-addon-versions#image-key-synchronizer-1.0.0)
-
-* [`istio` 1.26](/docs/openshift?topic=openshift-supported-cluster-addon-versions#istio-1.26)
-
-* [`istio` 1.27](/docs/openshift?topic=openshift-supported-cluster-addon-versions#istio-1.27)
-
-* [`istio` 1.28](/docs/openshift?topic=openshift-supported-cluster-addon-versions#istio-1.28)
-
-* [`istio` 1.29](/docs/openshift?topic=openshift-supported-cluster-addon-versions#istio-1.29)
-
-* [`istio` 1.30](/docs/openshift?topic=openshift-supported-cluster-addon-versions#istio-1.30)
-
-* [`openshift-ai` 416](/docs/openshift?topic=openshift-supported-cluster-addon-versions#openshift-ai-416)
-
-* [`openshift-ai` 417](/docs/openshift?topic=openshift-supported-cluster-addon-versions#openshift-ai-417)
-
-* [`openshift-ai` 418](/docs/openshift?topic=openshift-supported-cluster-addon-versions#openshift-ai-418)
-
-* [`openshift-ai` 419](/docs/openshift?topic=openshift-supported-cluster-addon-versions#openshift-ai-419)
-
-* [`openshift-ai` 420](/docs/openshift?topic=openshift-supported-cluster-addon-versions#openshift-ai-420)
-
-* [`openshift-data-foundation` 4.15.0](/docs/openshift?topic=openshift-supported-cluster-addon-versions#openshift-data-foundation-4.15.0)
-
-* [`openshift-data-foundation` 4.16.0](/docs/openshift?topic=openshift-supported-cluster-addon-versions#openshift-data-foundation-4.16.0)
-
-* [`openshift-data-foundation` 4.17.0](/docs/openshift?topic=openshift-supported-cluster-addon-versions#openshift-data-foundation-4.17.0)
-
-* [`openshift-data-foundation` 4.18.0](/docs/openshift?topic=openshift-supported-cluster-addon-versions#openshift-data-foundation-4.18.0)
-
-* [`openshift-data-foundation` 4.19.0](/docs/openshift?topic=openshift-supported-cluster-addon-versions#openshift-data-foundation-4.19.0)
-
-* [`openshift-data-foundation` 4.20.0](/docs/openshift?topic=openshift-supported-cluster-addon-versions#openshift-data-foundation-4.20.0)
-
-* [`openshift-data-foundation` 4.21.0](/docs/openshift?topic=openshift-supported-cluster-addon-versions#openshift-data-foundation-4.21.0)
-
-* [`openshift-virtualization` 4.21](/docs/openshift?topic=openshift-supported-cluster-addon-versions#openshift-virtualization-4.21)
-
-* [`static-route` 1.0.0](/docs/openshift?topic=openshift-supported-cluster-addon-versions#static-route-1.0.0)
-
-* [`vpc-block-csi-driver` 5.1](/docs/openshift?topic=openshift-supported-cluster-addon-versions#vpc-block-csi-driver-5.1)
-
-* [`vpc-block-csi-driver` 5.2](/docs/openshift?topic=openshift-supported-cluster-addon-versions#vpc-block-csi-driver-5.2)
-
-* [`vpc-file-csi-driver` 2.0](/docs/openshift?topic=openshift-supported-cluster-addon-versions#vpc-file-csi-driver-2.0)
 
 [OpenShift AI add-on version change log](/docs/openshift?topic=openshift-cl-add-ons-openshift-ai#cl-add-ons-openshift-ai)
 
