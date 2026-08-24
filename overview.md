@@ -3,7 +3,7 @@
 copyright:
   years: 2014, 2026
 
-lastupdated: "2026-08-12"
+lastupdated: "2026-08-24"
 
 keywords: openshift, {{site.data.keyword.openshiftlong_notm}}, kubernetes, infrastructure, rbac, policy, providers, benefits
 
@@ -192,7 +192,7 @@ For virtualization workloads, consider [OpenShift Virtualization Service](/docs/
 
 With {{site.data.keyword.openshiftlong_notm}}, your developers have a fast and secure way to containerize and deploy enterprise workloads in Kubernetes clusters. {{site.data.keyword.redhat_openshift_notm}} clusters build on Kubernetes container orchestration that offers consistency and flexibility for your development lifecycle operations.
 
-Your {{site.data.keyword.redhat_openshift_notm}} workloads can scale across IBM’s global footprint of data centers and multizone regions. At the same time, you’re able to uniformly monitor, log, and secure apps. Because IBM manages the service, you can focus on innovating with high-value {{site.data.keyword.cloud_notm}} services and middleware, such as AI and analytics. You also have access to Red Hat packaged open-source tools, including your favorite app runtimes, frameworks, databases, and more.
+Your {{site.data.keyword.redhat_openshift_notm}} workloads can scale across IBM's global footprint of data centers and multizone regions. At the same time, you're able to uniformly monitor, log, and secure apps. Because IBM manages the service, you can focus on innovating with high-value {{site.data.keyword.cloud_notm}} services and middleware, such as Artificial Intelligence (AI) and analytics. You also have access to Red Hat packaged open-source tools, including your favorite app runtimes, frameworks, databases, and more.
 
 Ready to get started? Try out the [creating a {{site.data.keyword.openshiftlong_notm}} cluster tutorial](/docs/openshift?topic=openshift-openshift_tutorial).
 
@@ -250,7 +250,7 @@ Both {{site.data.keyword.openshiftlong_notm}} and {{site.data.keyword.containerl
 |Complete cluster management experience through the {{site.data.keyword.containerlong_notm}} automation tools (API, CLI, console)|Yes|Yes|
 |Worldwide availability in single and multizones|Yes|Yes|
 |Consistent container orchestration across hybrid cloud providers|Yes|Yes|
-|Access to {{site.data.keyword.cloud_notm}} services such as AI|Yes|Yes|
+|Access to {{site.data.keyword.cloud_notm}} services such as Artificial Intelligence (AI)|Yes|Yes|
 |Software-defined storage Portworx solution available for multizone data use cases|Yes|Yes|
 |Create a cluster in an IBM Virtual Private Cloud (VPC)|Yes|Yes|
 |Latest Kubernetes distribution|Yes| |
