@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2026
-lastupdated: "2026-07-10"
+lastupdated: "2026-08-25"
 
 
 keywords: kubernetes, openshift
@@ -13,9 +13,6 @@ subcollection: openshift
 ---
 
 {{site.data.keyword.attribute-definition-list}}
-
-
-
 
 
 # Setting pod priority

@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2022, 2026
-lastupdated: "2026-02-20"
+lastupdated: "2026-08-25"
 
 
 keywords: kubernetes, deploy, openshift, pod security admission, pod security, security profiles
@@ -13,8 +13,6 @@ subcollection: openshift
 ---
 
 {{site.data.keyword.attribute-definition-list}}
-
-
 
 # Pod security admission
 {: #pod-security-admission}
