@@ -2,7 +2,7 @@
 
 copyright:
   years: 2026, 2026
-lastupdated: "2026-08-06"
+lastupdated: "2026-08-25"
 
 keywords: openshift, virtualization service, rovs, addon, openshift virtualization, hyperconverged, nmstate, node maintenance
 
@@ -329,7 +329,7 @@ Run the following commands to gather details about the OpenShift Virtualization 
 ### Opening a support case
 {: #rovs-addon-virt-support}
 
-If your issue is not resolved, open a support case and include the output from the troubleshooting commands. For more information, see [Getting support](/docs/get-support).
+If your issue is not resolved, open a support case and include the output from the troubleshooting commands. For more information, see [Getting support](/docs/account).
 
 ## Next steps
 {: #rovs-addon-virt-next}

@@ -2,7 +2,7 @@
 
 copyright:
   years: 2026, 2026
-lastupdated: "2026-08-19"
+lastupdated: "2026-08-25"
 
 keywords: openshift, virtualization service, rovs, create cluster, vpc, bare metal, tutorial
 
@@ -109,7 +109,7 @@ If you don't have the required VPC infrastructure, create it from the console.
 
 1. [Create a VPC](/docs/vpc?topic=vpc-creating-a-vpc-using-the-ibm-cloud-console) in the region where you want to create the cluster.
 
-2. [Create subnets](/docs/vpc?topic=vpc-creating-a-vpc-using-the-ibm-cloud-console#creating-a-subnet) in each zone where you want to deploy worker nodes.
+2. [Create subnets](/docs/vpc?topic=vpc-creating-a-vpc-using-the-ibm-cloud-console) in each zone where you want to deploy worker nodes.
    - Create subnets in at least 3 zones for high availability
    - [Create VPC subnets with enough IP addresses](/docs/openshift?topic=openshift-vpc-subnets#vpc_basics_subnets), such as 256
 

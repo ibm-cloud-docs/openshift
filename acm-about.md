@@ -2,7 +2,7 @@
 
 copyright:
   years: 2025, 2026
-lastupdated: "2026-05-21"
+lastupdated: "2026-08-25"
 
 
 keywords: openshift, acm, advanced cluster management, manage cluster, management, addon, add-on, acm addon
@@ -50,6 +50,7 @@ Review the description of each ACM plan.
 :   - ACM for Kubernetes provides the capabilities to address common challenges that administrators and site reliability engineers face when managing multiple clusters. Clusters and applications, whether containerized or virtualized, are all visible and managed from a central console, with preconfigured governance policies that can be applied consistently across environments. Users can run their operations from anywhere on Red Hat OpenShift® and manage other supported Kubernetes clusters in their fleet.
 
 [Coming soon]{: tag-teal} [Advanced Cluster Management for Virtualization](#virt)
+{: #virt}
 :   - ACM for Virtualization is a centralized tool that simplifies the management of virtual machines (VMs) deployed to Red Hat OpenShift® Virtualization Engine clusters as well as the clusters themselves. This license type provides a centralized platform for provisioning, monitoring and decomissioning VMs across multiple clusters.
 :   - This solution is a version of Red Hat Advanced Cluster Management for Kubernetes and is designed for organizations that want to manage VMs exclusively.
 
