@@ -720,7 +720,6 @@ toc:
               - ts-ingress-subdomain-dupe-name.md
               - ts-ingress-vpc-router-zone.md
               - ts-ingress-router-zone.md
-              - ts-ingress-operator-degraded.md
               - ts-ingress-errdriss.md
               - ts-ingress-errdsia.md
               - ts-ingress-errdsaiss.md
@@ -762,6 +761,7 @@ toc:
               - ts-storage-vpc-file-eit-pvc-fails.md
               - ts-storage-vpc-file-eit-metadata.md
               - ts-storage-vpc-file-rfs-eit.md
+              - ts-storage-file-addon-cm.md
               - ts-storage-vpc-file-capacity-roundoff.md
               - ts-storage-classic-file-access-denied.md
               - ts-storage-feedback.md

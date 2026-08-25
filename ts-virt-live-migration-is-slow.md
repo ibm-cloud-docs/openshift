@@ -3,7 +3,7 @@
 copyright:
   years: 2026, 2026
 
-lastupdated: "2026-04-16"
+lastupdated: "2026-08-25"
 
 keywords: openshift virtualization, live migration, migration performance, storage, node bandwidth
 
@@ -55,5 +55,5 @@ Use the following checks to investigate the environment.
 4. Review the planning guidance in [Planning your OpenShift Virtualization deployment](/docs/openshift?topic=openshift-virt-plan#virt-plan-storage).
    Compare the current storage configuration to the guidance for your selected storage backend and confirm that it is appropriate for live migration workloads.
 
-5. If migration remains slow, collect the migration details, node placement, and storage information before you contact [{{site.data.keyword.cloud_notm}} support](/docs/get-support).
+5. If migration remains slow, collect the migration details, node placement, and storage information before you contact [{{site.data.keyword.cloud_notm}} support](/docs/account).
    Include the migration status, node details, and storage information when you open a support case so that the environment can be reviewed.

@@ -3,7 +3,7 @@
 copyright:
   years: 2026, 2026
 
-lastupdated: "2026-07-30"
+lastupdated: "2026-08-25"
 
 keywords: openshift virtualization, operator install, openshift-cnv, catalogsource, subscription
 
@@ -75,4 +75,4 @@ To resolve the issue,
    ```
    {: pre}
 
-7. If the operator still does not install, review [Installing the OpenShift Virtualization Operator](/docs/openshift?topic=openshift-oc-virtualization) and collect the command output before you contact [{{site.data.keyword.cloud_notm}} support](/docs/get-support).
+7. If the operator still does not install, review [Installing the OpenShift Virtualization Operator](/docs/openshift?topic=openshift-oc-virtualization) and collect the command output before you contact [{{site.data.keyword.cloud_notm}} support](/docs/account).

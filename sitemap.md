@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2026
-lastupdated: "2026-08-24"
+lastupdated: "2026-08-25"
 
 
 keywords: openshift
@@ -9904,8 +9904,6 @@ subcollection: openshift
 
 * [Resolving multizone Ingress controller service deployment issues](/docs/openshift?topic=openshift-cs_subnet_limit_43#resolve_mzr_router)
 
-[Why does the DNS Operator show a `RouteHealthDegraded` or `can't marshal DNS message` error?](/docs/openshift?topic=openshift-ingress_subdomain_dns_marshal#ingress_subdomain_dns_marshal)
-
 [Ingress error: ERRDRISS](/docs/openshift?topic=openshift-ts-ingress-errdriss#ts-ingress-errdriss)
 
 [Ingress error: ERRDSIA](/docs/openshift?topic=openshift-ts-ingress-errdsia#ts-ingress-errdsia)
@@ -10054,6 +10052,8 @@ subcollection: openshift
 * [Why does my application with `hostNetwork: true` fail to bind a port?](/docs/openshift?topic=openshift-ts-storage-vpc-file-rfs-eit#ts-rfs-eit-hostnetwork-port)
 
 * [Related topics](/docs/openshift?topic=openshift-ts-storage-vpc-file-rfs-eit#ts-rfs-eit-related)
+
+[Why is the {{site.data.keyword.filestorage_vpc_short}} add-on in `Critical` state](/docs/openshift?topic=openshift-ts-storage-file-addon-cm#ts-storage-file-addon-cm)
 
 [Why does my PVC stay in Pending status when using capacity roundoff?](/docs/openshift?topic=openshift-ts-storage-vpc-file-capacity-roundoff#ts-storage-vpc-file-capacity-roundoff)
 

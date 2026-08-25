@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2026
-lastupdated: "2026-08-11"
+lastupdated: "2026-08-25"
 
 keywords: openshift, clusters, access, endpoint, private, public, vpe, satellite
 
@@ -39,8 +39,8 @@ Not sure which type you have? In the IBM Cloud console, go to **OpenShift → Cl
 
 | Access method | Cluster type | Use when |
 | --- | --- | --- |
-| [Public cloud service endpoint](/docs/openshift?topic=openshift-access-public) | Classic, VPC | Your cluster has a public endpoint and you are connecting from outside the IBM Cloud network |
-| [Private cloud service endpoint — VPC](/docs/openshift?topic=openshift-access-private-vpc) | VPC | Your cluster is private-only and you are connected to the VPC network through a VPN or Direct Link connection |
+| [Public cloud service endpoint](/docs/openshift?topic=openshift-cluster-access-public) | Classic, VPC | Your cluster has a public endpoint and you are connecting from outside the IBM Cloud network |
+| [Private cloud service endpoint — VPC](/docs/openshift?topic=openshift-cluster-access-private-vpc) | VPC | Your cluster is private-only and you are connected to the VPC network through a VPN or Direct Link connection |
 | [Private cloud service endpoint — Classic](/docs/openshift?topic=openshift-access-private-classic) | Classic | Your cluster is private-only and you are connected to the classic private network |
 | [Virtual Private Endpoint (VPE) gateway](/docs/openshift?topic=openshift-cluster-access-vpe) | VPC | Your VPC cluster uses VPE for private master connectivity |
 | [Satellite cluster service URL](/docs/openshift?topic=openshift-cluster-access-satellite) | Satellite | Your cluster runs on Satellite infrastructure |

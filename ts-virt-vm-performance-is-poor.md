@@ -3,7 +3,7 @@
 copyright:
   years: 2026, 2026
 
-lastupdated: "2026-04-16"
+lastupdated: "2026-08-25"
 
 keywords: openshift virtualization, vm performance, node resources, storage performance, bare metal
 
@@ -68,5 +68,5 @@ Use the following checks to investigate the environment.
    ```
    {: pre}
 
-7. If performance remains poor, collect node, VM, and storage details before you contact [{{site.data.keyword.cloud_notm}} support](/docs/get-support).
+7. If performance remains poor, collect node, VM, and storage details before you contact [{{site.data.keyword.cloud_notm}} support](/docs/account).
    Include the command output when you open a support case so that the cluster, node, and storage conditions can be reviewed.

@@ -3,7 +3,7 @@
 copyright:
   years: 2025, 2026
 
-lastupdated: "2026-08-21"
+lastupdated: "2026-08-25"
 
 keywords: openshift, error messages, error codes, troubleshooting reference
 
@@ -106,7 +106,7 @@ The following error codes appear in the output of the `ibmcloud oc ingress statu
 | `ERRRNA` | One or more routes not admitted. | [Ingress error: ERRRNA](/docs/openshift?topic=openshift-ts-ingress-errrna) |
 | `ERRSAMO` | The load balancer service address is missing. | [Ingress error: ERRSAMO](/docs/openshift?topic=openshift-ts-ingress-errsamo) |
 | `ERRSEIPM` | The service is missing one or more worker IPs. | [Ingress error: ERRSEIPM](/docs/openshift?topic=openshift-ts-ingress-errseipm) |
-| | `XXX.us-south.containers.appdomain.cloud: dial tcp: ... can't marshal DNS message` | [Why does the DNS Operator show a `RouteHealthDegraded` or `can't marshal DNS message` error?](/docs/openshift?topic=openshift-ts-ingress-operator-degraded) |
+| | `XXX.us-south.containers.appdomain.cloud: dial tcp: ... can't marshal DNS message` | [Why does the DNS Operator show a `RouteHealthDegraded` or `can't marshal DNS message` error?](/docs/openshift?topic=openshift-ts-ingress-erriodeg) |
 {: caption="Ingress status error codes (ERR and ESS)" caption-side="bottom"}
 
 ## Load balancers

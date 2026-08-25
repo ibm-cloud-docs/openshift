@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2026
-lastupdated: "2026-04-15"
+lastupdated: "2026-08-25"
 
 
 keywords: portworx, kubernetes, openshift
@@ -75,7 +75,7 @@ IBM Cloud is changing dedicated key management services from Hyper Protect Crypt
 1. **Private clusters**: [Create a virtual private endpoint gateway](/docs/vpc?topic=vpc-ordering-endpoint-gateway&interface=ui#vpe-creating-ui) that allows access to your KMS instance. Make sure to bind at least 1 IP address from each subnet in your VPC to the VPE.
 
 
-1. [Retrieve the Key Management public endpoint URL](/docs/hs-crypto?topic=hs-crypto-regions#service-endpoints). Make sure that you note your endpoint in the correct format; for example, `https://api.us-south.hs-crypto.cloud.ibm.com:<port>`. For more information, see the [{{site.data.keyword.hscrypto}} API documentation](https://cloud.ibm.com/apidocs/hs-crypto#getinstance){: external}.
+1. [Retrieve the Key Management public endpoint URL](/docs/hs-crypto?topic=hs-crypto-regions#service-endpoints). Make sure that you note your endpoint in the correct format; for example, `https://api.us-south.hs-crypto.cloud.ibm.com:<port>`. For more information, see the [{{site.data.keyword.hscrypto}} API documentation](https://cloud.ibm.com/apidocs/hs-crypto){: external}.
 
 #### Setting up volume encryption with {{site.data.keyword.keymanagementservicelong_notm}}
 {: #storage-portowrx-encryption-kms}

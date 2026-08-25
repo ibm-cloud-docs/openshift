@@ -1,8 +1,8 @@
 ---
 
 copyright: 
-  years: 2014, 2025
-lastupdated: "2025-11-18"
+  years: 2014, 2026
+lastupdated: "2026-08-25"
 
 
 keywords: openshift, kubernetes, firewall, acl, acls, access control list, rules, security group
@@ -50,7 +50,7 @@ Required traffic for clusters
 :   If you use custom ACLs, you must allow outbound traffic from all subnets to the following endpoints.
 :   - [VPC service endpoints](/docs/vpc?topic=vpc-service-endpoints-for-vpc)
 :   - [VPC IaaS endpoints](/docs/vpc?topic=vpc-service-endpoints-for-vpc#infrastructure-as-a-service-iaas-endpoints)
-:   - [VPC metadata service IPs](https://cloud.ibm.com/apidocs/vpc-metadata#endpoint-url-metadata)
+:   - [VPC metadata service IPs](https://cloud.ibm.com/apidocs/vpc-metadata)
 :   - All subnets in the VPC
 
 Limitations

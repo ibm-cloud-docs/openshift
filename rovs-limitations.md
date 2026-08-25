@@ -2,7 +2,7 @@
 
 copyright:
   years: 2026, 2026
-lastupdated: "2026-07-30"
+lastupdated: "2026-08-25"
 
 keywords: openshift, virtualization service, rovs, limitations, restrictions, constraints
 
@@ -114,4 +114,4 @@ Use a standard OpenShift cluster if you need VSI worker nodes, custom storage, f
 - [Manage Virtualization Service clusters](/docs/openshift?topic=openshift-rovs-manage)
 - [Troubleshooting guidance](/docs/openshift?topic=openshift-ts-virt-operator-install-fails)
 - [OpenShift Virtualization documentation](https://docs.redhat.com/en/documentation/openshift_container_platform/4.21/html/virtualization){: external}
-- [Get support](/docs/get-support)
+- [Get support](/docs/account)
