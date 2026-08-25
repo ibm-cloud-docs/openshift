@@ -2,7 +2,7 @@
 
 copyright:
   years: 2026
-lastupdated: "2026-08-13"
+lastupdated: "2026-08-25"
 
 
 keywords: kubernetes, openshift
@@ -95,7 +95,7 @@ This rule is added automatically for ROKS clusters at version 4.18 and later. Fo
 
 1. After adding the rule, retry the failing pod. No node reboot is required.
 
-If the issue persists after both checks, [open a support ticket](/docs/get-support) with the IBM Cloud Container Storage team.
+If the issue persists after both checks, [open a support ticket](/docs/account) with the IBM Cloud Container Storage team.
 
 ## Related topics
 {: #ts-storage-vpc-file-eit-metadata-related}
