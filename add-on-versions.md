@@ -1,9 +1,5 @@
-
-
-
 ---
-
-copyright: 
+copyright:
   years: 2022, 2026
 lastupdated: "2026-08-25"
 
@@ -20,6 +16,10 @@ subcollection: openshift
 
 Review the supported cluster add-ons. Each add-on version can be used on any cluster version included in the range of supported cluster versions.
 {: shortdesc}
+
+
+
+
 
 
 
