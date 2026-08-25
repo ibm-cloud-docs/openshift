@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2026
-lastupdated: "2026-08-04"
+lastupdated: "2026-08-25"
 
 
 keywords: openshift, ocp, compliance, security standards, faq, openshift pricing, ocp pricing, openshift charges, ocp charges, openshift price, ocp price, openshift billing, ocp billing, openshift costs, ocp costs
@@ -98,7 +98,7 @@ Worker nodes in standard clusters are provisioned in to your {{site.data.keyword
 ## What kinds of workloads can I move to {{site.data.keyword.openshiftlong_notm}}?
 {: #move_to_cloud}
 
-For examples of the types of workloads that users typically move to the various types of clouds, see [Moving your workloads to {{site.data.keyword.cloud_notm}}](/docs/openshift?topic=openshift-overview#cloud_workloads). You might also choose a hybrid approach where you have clusters that run in both environments.
+For examples of the types of workloads that users typically move to the various types of clouds, see [Moving your workloads to {{site.data.keyword.cloud_notm}}](/docs/openshift?topic=openshift-overview). You might also choose a hybrid approach where you have clusters that run in both environments.
 {: shortdesc}
 
 ## Can I automate my infrastructure deployments?

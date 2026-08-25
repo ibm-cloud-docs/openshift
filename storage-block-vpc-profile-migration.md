@@ -2,7 +2,7 @@
 
 copyright:
   years: 2026
-lastupdated: "2026-08-04"
+lastupdated: "2026-08-25"
 
 keywords: openshift, block storage, vpc, gen-1, gen-2, sdp, migration, profile, iops
 
@@ -392,7 +392,7 @@ If the migration status remains `updating` for more than 30 minutes, complete th
 
 1. Check the [IBM Cloud status page](https://cloud.ibm.com/status){: external} for VPC service issues.
 
-1. If the migration is stuck for more than 1 hour, contact [IBM Support](/docs/get-support){: external} with the job ID.
+1. If the migration is stuck for more than 1 hour, contact [IBM Support](/docs/account){: external} with the job ID.
 
 ### PVC shows old StorageClass
 {: #vpc-block-profile-ts-pvc-class}

@@ -2,7 +2,7 @@
 
 copyright:
   years: 2026
-lastupdated: "2026-08-13"
+lastupdated: "2026-08-25"
 
 
 keywords: kubernetes, openshift, rfs, regional file storage, eit, encryption in transit, stunnel, troubleshooting
@@ -109,7 +109,7 @@ To resolve the issue:
     ```
     {: pre}
 
-    If the issue persists after the pod restarts, [open a support ticket](/docs/get-support) with the IBM Cloud Container Storage team.
+    If the issue persists after the pod restarts, [open a support ticket](/docs/account) with the IBM Cloud Container Storage team.
 
 ## Why does my application with `hostNetwork: true` fail to bind a port?
 {: #ts-rfs-eit-hostnetwork-port}
