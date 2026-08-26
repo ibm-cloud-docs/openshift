@@ -2,7 +2,7 @@
 
 copyright:
   years: 2024, 2026
-lastupdated: "2026-08-24"
+lastupdated: "2026-08-26"
 
 keywords: openshift, cli reference, openshift cli, {{site.data.keyword.openshiftlong_notm}}
 
@@ -3139,7 +3139,7 @@ ibmcloud oc cluster master private-service-endpoint allowlist add --cluster CLUS
 {: pre}
 
 
-### `ibmcloud oc cluster master private-service-endpoint allowlist disable`
+### `ibmcloud ks cluster master private-service-endpoint allowlist disable`
 {: #cluster-master-private-service-endpoint-allowlist-disable-cli}
 
 The `cluster master private-service-endpoint allowlist disable` command is deprecated.
@@ -3150,7 +3150,7 @@ The `cluster master private-service-endpoint allowlist disable` command is depre
 Disable the allowlist. When disabled, authorized requests to the cluster master from any subnet are permitted through the private service endpoint.
 
 ```sh
-ibmcloud oc cluster master private-service-endpoint allowlist disable --cluster CLUSTER [-f] [-q]
+ibmcloud ks cluster master private-service-endpoint allowlist disable --cluster CLUSTER [-f] [-q]
 ```
 
 #### Command options
@@ -3173,12 +3173,12 @@ ibmcloud oc cluster master private-service-endpoint allowlist disable --cluster 
 Disable the allowlist
 
 ```sh
-ibmcloud oc cluster master private-service-endpoint allowlist disable --cluster CLUSTER
+ibmcloud ks cluster master private-service-endpoint allowlist disable --cluster CLUSTER
 ```
 {: pre}
 
 
-### `ibmcloud oc cluster master private-service-endpoint allowlist enable`
+### `ibmcloud ks cluster master private-service-endpoint allowlist enable`
 {: #cluster-master-private-service-endpoint-allowlist-enable-cli}
 
 The `cluster master private-service-endpoint allowlist enable` command is deprecated.
@@ -3189,7 +3189,7 @@ The `cluster master private-service-endpoint allowlist enable` command is deprec
 Enable the allowlist. When enabled, only authorized requests to the cluster master from subnets in the allowlist are permitted through the private service endpoint.
 
 ```sh
-ibmcloud oc cluster master private-service-endpoint allowlist enable --cluster CLUSTER [-f] [-q]
+ibmcloud ks cluster master private-service-endpoint allowlist enable --cluster CLUSTER [-f] [-q]
 ```
 
 #### Command options
@@ -3212,7 +3212,7 @@ ibmcloud oc cluster master private-service-endpoint allowlist enable --cluster C
 Enable the allowlist
 
 ```sh
-ibmcloud oc cluster master private-service-endpoint allowlist enable --cluster CLUSTER
+ibmcloud ks cluster master private-service-endpoint allowlist enable --cluster CLUSTER
 ```
 {: pre}
 
