@@ -2,7 +2,7 @@
 
 copyright:
   years: 2024, 2026
-lastupdated: "2026-07-15"
+lastupdated: "2026-08-26"
 
 
 keywords: kubernetes, openshift, object storage add-in, cos
@@ -35,7 +35,7 @@ Prerequisites:
 
 - You can use an existing bucket by specifying the bucket name in your PVC.
 - If you provide a bucket name and that bucket doesn't exist, then a bucket with that name is created.
-- If you don't provide a bucket name, then a bucket with the naming convention `temp-xxx` is created.
+- If you don't provide a bucket name, then a bucket with the naming convention `s3fs-<timestamp>-xxx` or `rclone-<timestamp>-xxx` is created, based on the mounter type.
 - Buckets are deleted based on reclaim policy defined in your storage class.
     - If `reclaimPolicy: Delete` is set, the bucket is deleted when the PVC is deleted.
     - If `reclaimPolicy: Retain` is set, the bucket is retained even after the PVC is deleted.
@@ -274,10 +274,10 @@ You can configure `maxVolumesPerNode` when you enable the add-on, or update it l
 
 1. [Access your {{site.data.keyword.redhat_openshift_notm}} cluster](/docs/openshift?topic=openshift-access_cluster).
 
-1. Save the following configuration as a file called `secret.yaml`. Provide either IAM credentials or HMAC, but not both.
+1. Save the following configuration as a file called `secret.yaml`. Provide either IAM credentials or HMAC credentials, but not both.
 
-    - For **IAM credentials**, use a combination of `apiKey` and `serviceId` from Object Storage.
-    - For **HMAC credentials**, use `accessKey` and `secretKey` from Object Storage.
+    - For **IAM credentials**, use `apiKey` and `serviceId` from your {{site.data.keyword.cos_full_notm}} service instance.
+    - For **HMAC credentials**, use `accessKey` and `secretKey` from your {{site.data.keyword.cos_full_notm}} service instance.
 
     ```yaml
     apiVersion: v1
@@ -287,16 +287,26 @@ You can configure `maxVolumesPerNode` when you enable the add-on, or update it l
         name: cos-secret-1 # Name your secret. This same name is used for the PVC in the following steps.
         namespace: <namespace> # Specify the namespace where you want to create the secret.
     data:
+        # --- IAM credentials (provide apiKey + serviceId) ---
         apiKey: <base64-encoded-COS-Service-Instance-apikey>
-        serviceID: <base64-encoded-COS-resource_instance_id>
+        serviceId: <base64-encoded-COS-resource_instance_id>
+        # --- HMAC credentials ---
         accessKey: <base64-encoded-HMAC-access_key_id>
         secretKey: <base64-encoded-HMAC-secret_access_key>
-        kp-root-key-crn: <CRN> # Key Protect or HPCS root key crn in base64 encoded format
+        # --- Optional credential fields (base64-encoded) ---
+        kpRootKeyCRN: <base64-encoded-Key-Protect-root-key-CRN>
+        resourceConfigApiKey: <base64-encoded-apikey> # Required only when quotaLimit is "true".
     stringData:
-        bucketName: <bucket-name> # Optional. If you don't provide a bucket name, a bucket with the naming convention s3fs-timestamp-xxx or rclone-timestamp-xxx is created.
-        bucketVersioning: "false" # Bucket versioning is set to false by default. Set to "true" to enable bucket versioning. Set to "false" to disable versioning for a bucket where versioning is enabled. Must be a string value.
-        # uid: "3000" # Optional: Provide a uid to run as non root user. This must match runAsUser in SecurityContext of pod spec.
+        # --- Optional config fields (plain text) ---
+        cosEndpoint: "https://<cos_s3_service_endpoint>" # Overrides the cosEndpoint from the storage class.
+        locationConstraint: "<region>-standard" # Overrides the locationConstraint from the storage class.
+        iamEndpoint: "<iam-endpoint-url>" # Overrides the default iam endpoint set in COS CSI Driver
+        objectPath: "<subdirectory>" # Optional. Subdirectory within the bucket to mount, for example "data".
+        bucketName: <bucket-name> # Optional. If you don't provide a bucket name, a bucket with the naming convention s3fs-<timestamp>-xxx or rclone-<timestamp>-xxx is created.
+        bucketVersioning: "false" # Set to "true" to enable bucket versioning. Set to "false" to disable versioning. Must be a string value.
+        quotaLimit: "false" # Set to "true" to enforce a hard quota on the bucket equal to the PVC storage size. Requires resourceConfigApiKey.
         mountOptions: |
+            # uid=3000  # Optional: Run as non-root user. Must match runAsUser in SecurityContext of pod spec.
             # Review or update the following default s3fs mount options
             #multipart_size=52
             #multireq_max=20
@@ -305,6 +315,7 @@ You can configure `maxVolumesPerNode` when you enable the add-on, or update it l
             #max_stat_cache_size=100000
             #retries=5
             #kernel_cache
+            #max_background=1000
 
             # Review or update the following default rclone mount options
             #acl=private
@@ -313,12 +324,53 @@ You can configure `maxVolumesPerNode` when you enable the add-on, or update it l
             #chunk_size=16Mi
             #max_upload_parts=1000
             #upload_concurrency=8
+            #multi_thread_streams=8
+            #disable_checksum=true
 
     ```
     {: codeblock}
 
+    `apiKey`
+    :   Required for IAM authentication. Enter the base64-encoded IBM Cloud IAM API key for your {{site.data.keyword.cos_full_notm}} service instance. You can find the API key in your service credentials under `apikey`. Provide either `apiKey` + `serviceId` **or** `accessKey` + `secretKey`, but not both.
+
+    `serviceId`
+    :   Required for IAM authentication. Enter the base64-encoded resource instance ID for your {{site.data.keyword.cos_full_notm}} service instance. You can find this value in your service credentials under `resource_instance_id`.
+
+    `accessKey`
+    :   Required for HMAC authentication. Enter the base64-encoded HMAC access key ID. You can find this value in your service credentials under `cos_hmac_keys.access_key_id`. Provide either `accessKey` + `secretKey` **or** `apiKey` + `serviceId`, but not both.
+
+    `secretKey`
+    :   Required for HMAC authentication. Enter the base64-encoded HMAC secret access key. You can find this value in your service credentials under `cos_hmac_keys.secret_access_key`.
+
+    `kpRootKeyCRN`
+    :   Optional. Enter the base64-encoded root key CRN from your {{site.data.keyword.keymanagementserviceshort}} instance. To retrieve the CRN, go to your KMS instance in the [{{site.data.keyword.cloud_notm}} console](https://cloud.ibm.com){: external}, open **Keys**, click the root key, and copy the **CRN** from the key details. Applies to new buckets only; you cannot add encryption to an existing bucket.
+
+    `iamEndpoint`
+    :   Optional. Enter the IBM Cloud IAM token endpoint URL as plain text. By default, the driver uses `https://private.iam.cloud.ibm.com` for VPC clusters and `https://iam.cloud.ibm.com` for Classic clusters. Override this value only if you need to use a different IAM endpoint.
+
+    `cosEndpoint`
+    :   Optional. Enter the {{site.data.keyword.cos_full_notm}} endpoint URL as plain text, for example `https://s3.us.cloud-object-storage.appdomain.cloud`. When provided, this value overrides the `cosEndpoint` set in the storage class. Use this field if your bucket is in a different region or uses a direct or private endpoint. For a list of available endpoints, see [{{site.data.keyword.cos_full_notm}} endpoints](/docs/cloud-object-storage?topic=cloud-object-storage-endpoints).
+
+    `locationConstraint`
+    :   Optional. Enter the location constraint string as plain text, for example `us-standard` or `us-geo-smart`. When provided, this value overrides the `locationConstraint` set in the storage class. The location constraint determines the bucket class and the region where the bucket is stored.
+
+    `objectPath`
+    :   Optional. Enter the path to a subdirectory within the bucket to mount as plain text, for example `data`. Use this option to give an app access to only a specific folder within a shared bucket rather than the entire bucket root.
+
+    `resourceConfigApiKey`
+    :   Required when `quotaLimit` is set to `"true"`. Enter the same base64-encoded `apikey` value from your {{site.data.keyword.cos_full_notm}} service credentials that you used for the `apiKey` field above.
+
+    `bucketName`
+    :   Optional. Enter the name of an existing bucket to use, or a name for a new bucket to create. If the bucket name you provide doesn't exist, the driver creates it. If you leave this field empty, a bucket is automatically created with the naming convention `s3fs-<timestamp>-xxx` or `rclone-<timestamp>-xxx` based on the mounter type. The bucket name must be globally unique in {{site.data.keyword.cos_full_notm}}.
+
+    `bucketVersioning`
+    :   Optional. Controls bucket versioning. Set to `"true"` to enable versioning, or `"false"` to disable versioning on a bucket where versioning is already enabled. Must be a string value. When versioning is enabled, {{site.data.keyword.cos_full_notm}} retains multiple versions of every object in the bucket, protecting against accidental deletion and overwrites. Note that the service credentials must have **Manager** or **Writer** permissions to enable or disable bucket versioning. For more information, see [Getting started with versioning](/docs/cloud-object-storage?topic=cloud-object-storage-versioning#versioning-getting-started).
+
+    `quotaLimit`
+    :   Optional. Set to `"true"` to enforce a hard storage quota on the bucket. When enabled, the bucket quota is set equal to the `storage` size requested in the PVC. If the quota is reached, write operations to the bucket fail until data is deleted. Requires `resourceConfigApiKey` to be set. Defaults to `"false"`. Must be a string value.
+
     `mountOptions`
-    :   You can customize the mount options for either `s3fs` or `rclone` by editing the `mountOptions` in your secret. Align the options that you specify with the storage class that your PVC uses. To review the default values for a storage class, run `oc describe storageclass <storageclass_name>` or `oc describe storageclass <storageclass_name>`. For more information, see the [s3fs mount options](https://github.com/IBM/ibm-object-csi-driver/blob/main/cos-csi-mounter/server/s3fs.go){: external} and the [`rclone` mount options](https://github.com/IBM/ibm-object-csi-driver/blob/main/cos-csi-mounter/server/rclone.go){: external}.
+    :   You can customize the mount options for either `s3fs` or `rclone` by editing the `mountOptions` in your secret. To run as a non-root user, uncomment and set `uid=<value>` to match the `runAsUser` field in the `securityContext` of your pod spec. Align the options that you specify with the storage class that your PVC uses. To review the default values for a storage class, run `oc describe storageclass <storageclass_name>` or `oc describe storageclass <storageclass_name>`. For more information, see the [s3fs mount options](https://github.com/IBM/ibm-object-csi-driver/blob/main/cos-csi-mounter/server/s3fs.go){: external} and the [`rclone` mount options](https://github.com/IBM/ibm-object-csi-driver/blob/main/cos-csi-mounter/server/rclone.go){: external}.
 
     Currently, the add-on is enabled to support a fixed set of mount options with proper validation for each mount option. If you want to use any other mount options that are not in the validation list, contact support to enable those options.
     {: note}
@@ -515,8 +567,8 @@ The existing secrets, PVCs, and deployments are not deleted by disabling the add
         secretKey: <base64-encoded-HMAC-secret-key>
     stringData:
         bucketName: <bucket-name>
-        # uid: "3000" # Optional: Provide a uid to run as non root user. This must match runAsUser in SecurityContext of pod spec.
         mountOptions: |
+            # uid=3000  # Optional: Run as non-root user. Must match runAsUser in SecurityContext of pod spec.
             key1=value1
             key2=value2
     ```
@@ -628,10 +680,24 @@ The existing secrets, PVCs, and deployments are not deleted by disabling the add
 The {{site.data.keyword.cos_full_notm}} cluster add-on provides storage classes for the `s3fs` and `rclone` mounters. Choose a storage class that fits your data access requirements. The storage class determines the bucket class, reclaim policy, and default mount behavior for the bucket that is created for your workload.
 
 Standard
-:   Use for hot data that you access frequently, such as data for web or mobile apps.
+:   Use for hot data that is accessed frequently. Common use cases are web or mobile apps.
+
+Vault
+:   Use for workloads or cool data that are accessed infrequently, such as once a month or less. Common use cases are archives, short-term data retention, digital asset preservation, tape replacement, and disaster recovery.
+
+Cold
+:   Use for cold data that is rarely accessed (every 90 days or less), or inactive data. Common use cases are archives, long-term backups, historical data that you keep for compliance, or workloads and apps that are rarely accessed.
 
 Smart
 :   Use for workloads and data that do not follow a specific usage pattern, or when the usage pattern is difficult to predict.
+
+Decide on the level of resiliency for the data that is stored in your bucket. For more information, see [Regions and endpoints](/docs/cloud-object-storage?topic=cloud-object-storage-endpoints).
+
+Cross-region
+:   Your data is stored across three regions within a geolocation for highest availability. If you have workloads that are distributed across regions, requests are routed to the nearest regional endpoint. The {{site.data.keyword.cos_full_notm}} endpoint for the geolocation is automatically set based on the location that your cluster is in. For example, if your cluster is in `US South`, then your storage classes are configured to use the `US GEO` endpoint for your buckets. Choose a storage class with `cross-region` in its name.
+
+Regional
+:   Your data is replicated across multiple zones within one region. If you have workloads that are located in the same region, you see lower latency and better performance than in a cross-regional setup. The regional endpoint is automatically set based on the location that your cluster is in. For example, if your cluster is in `US South`, then your storage classes are configured to use `US South` as the regional endpoint for your buckets. Choose a storage class without `cross-region` in its name.
 
 | Name | Bucket class | Resiliency | Mounter | Reclaim policy | Binding mode |
 | --- | --- | --- | --- | --- | --- |
@@ -684,6 +750,7 @@ The `s3fs` storage classes use the following default mount options.
 | `max_stat_cache_size=100000` | Sets the maximum number of entries in the stat cache and symbolic link cache. |
 | `retries=5` | Sets the number of times to retry a failed S3 transaction. |
 | `kernel_cache` | Enables the kernel buffer cache for the volume mount point. Data that is read from {{site.data.keyword.cos_full_notm}} is stored in the kernel cache to help provide faster read access. Kernel cache is enabled for the standard and smart `s3fs` storage classes. |
+| `max_background=1000` | Sets the maximum number of background FUSE requests that can be queued before the kernel blocks new requests. Increasing this value improves throughput for workloads with high concurrency. |
 {: caption="Default mount options for COS add-on s3fs storage classes" caption-side="bottom"}
 
 ### Default `rclone` storage class mount options
@@ -699,4 +766,6 @@ The `rclone` storage classes use the following default mount options.
 | `chunk_size=16Mi` | Sets the size of each part in a multipart upload. |
 | `max_upload_parts=1000` | Sets the maximum number of parts per multipart upload and indirectly caps the maximum supported file size with the configured `chunk_size`. With `chunk_size=16Mi`, the maximum file size is `16 GiB`. |
 | `upload_concurrency=8` | Sets the number of parts that are uploaded in parallel during a multipart upload. |
+| `multi_thread_streams=8` | Sets the number of threads used to download a single object when using multi-thread downloading. |
+| `disable_checksum=true` | Disables MD5 checksum calculation on upload. Improves performance for large files where checksum computation adds significant overhead. |
 {: caption="Default mount options for COS add-on rclone storage classes" caption-side="bottom"}
