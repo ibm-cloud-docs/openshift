@@ -3657,7 +3657,7 @@ ibmcloud oc cluster master satellite-service-endpoint allowlist get --cluster CL
 {: pre}
 
 
-### `ibmcloud oc cluster master satellite-service-endpoint allowlist help`
+### `ibmcloud ks cluster master satellite-service-endpoint allowlist help`
 {: #cluster-master-satellite-service-endpoint-allowlist-help-cli}
 
 
@@ -3665,7 +3665,7 @@ ibmcloud oc cluster master satellite-service-endpoint allowlist get --cluster CL
 Show help
 
 ```sh
-ibmcloud oc cluster master satellite-service-endpoint allowlist help
+ibmcloud ks cluster master satellite-service-endpoint allowlist help
 ```
 
 
@@ -3675,7 +3675,7 @@ ibmcloud oc cluster master satellite-service-endpoint allowlist help
 Show help
 
 ```sh
-ibmcloud oc cluster master satellite-service-endpoint allowlist help
+ibmcloud ks cluster master satellite-service-endpoint allowlist help
 ```
 {: pre}
 
