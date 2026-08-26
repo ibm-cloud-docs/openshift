@@ -58,8 +58,6 @@ Red Hat CoreOS 4.21.29
 HAProxy a70e8a8452c4d476687ad749df47b6f27a61851a
 :   Resolves the following CVEs: [CVE-2026-54411](https://nvd.nist.gov/vuln/detail/CVE-2026-54411){: external}, [CVE-2026-54371](https://nvd.nist.gov/vuln/detail/CVE-2026-54371){: external}, [CVE-2026-55204](https://nvd.nist.gov/vuln/detail/CVE-2026-55204){: external}, and [CVE-2026-58055](https://nvd.nist.gov/vuln/detail/CVE-2026-58055){: external}.
 
-{: #cl-boms-42129_1529_openshift_W-component-table}
-
 
 ### Worker node fix pack 4.21.27_1528_openshift, released 12 August 2026
 {: #cl-boms-42127_1528_openshift_W}
@@ -79,8 +77,6 @@ Red Hat CoreOS 4.21.27
 :   For more information, see the [change logs](https://docs.redhat.com/en/documentation/openshift_container_platform/4.21/html/release_notes/ocp-4-21-release-notes.html#ocp-4-21-27_release-notes){: external}.
 HAProxy bd7e64ef86b90455535107263466d1825f3e7f9f
 :   Resolves the following CVEs: [CVE-2026-56391](https://nvd.nist.gov/vuln/detail/CVE-2026-56391){: external}, and [CVE-2026-56392](https://nvd.nist.gov/vuln/detail/CVE-2026-56392){: external}.
-
-{: #cl-boms-42127_1528_openshift_W-component-table}
 
 
 ### Master fix pack 4.21.27_1527_openshift, released 05 August 2026
@@ -102,8 +98,6 @@ Key Management Service provider 2.10.28
 Red Hat OpenShift on IBM Cloud 4.21.27
 :   See the [Red Hat OpenShift on IBM Cloud release notes](https://docs.redhat.com/en/documentation/openshift_container_platform/4.21/html/release_notes/ocp-4-21-release-notes#ocp-4-21-27_release-notes){: external}.Resolves the following CVEs: [CVE-2026-16242](https://nvd.nist.gov/vuln/detail/CVE-2026-16242){: external}.
 
-{: #cl-boms_master-42127_1527_openshift_M-component-table}
-
 
 ### Worker node fix pack 4.21.25_1526_openshift, released 28 July 2026
 {: #cl-boms-42125_1526_openshift_W}
@@ -123,8 +117,6 @@ Red Hat CoreOS 4.21.25
 :   For more information, see the [change logs](https://docs.redhat.com/en/documentation/openshift_container_platform/4.21/html/release_notes/ocp-4-21-release-notes.html#ocp-4-21-25_release-notes){: external}.
 HAProxy 346c7130717ef7cc25d1dfbca7d57ca32396b692
 :   Resolves the following CVEs: [CVE-2026-6238](https://nvd.nist.gov/vuln/detail/CVE-2026-6238){: external}, [CVE-2026-5928](https://nvd.nist.gov/vuln/detail/CVE-2026-5928){: external}, [CVE-2026-48864](https://nvd.nist.gov/vuln/detail/CVE-2026-48864){: external}, [CVE-2026-54370](https://nvd.nist.gov/vuln/detail/CVE-2026-54370){: external}, [CVE-2026-28390](https://nvd.nist.gov/vuln/detail/CVE-2026-28390){: external}, [CVE-2026-5435](https://nvd.nist.gov/vuln/detail/CVE-2026-5435){: external}, [CVE-2025-13151](https://nvd.nist.gov/vuln/detail/CVE-2025-13151){: external}, [CVE-2026-54369](https://nvd.nist.gov/vuln/detail/CVE-2026-54369){: external}, [CVE-2026-58016](https://nvd.nist.gov/vuln/detail/CVE-2026-58016){: external}, and [CVE-2025-6170](https://nvd.nist.gov/vuln/detail/CVE-2025-6170){: external}.
-
-{: #cl-boms-42125_1526_openshift_W-component-table}
 
 
 ### Master fix pack 4.21.19_1525_openshift, released 28 July 2026
@@ -152,8 +144,6 @@ Portieris admission controller v0.14.2
 Red Hat OpenShift on IBM Cloud 4.21.19
 :   See the [Red Hat OpenShift on IBM Cloud release notes](https://docs.redhat.com/en/documentation/openshift_container_platform/4.21/html/release_notes/ocp-4-21-release-notes#ocp-4-21-19_release-notes){: external}.
 
-{: #cl-boms_master-42119_1525_openshift_M-component-table}
-
 
 ### Worker node fix pack 4.21.22_1524_openshift, released 13 July 2026
 {: #cl-boms-42122_1524_openshift_W}
@@ -174,8 +164,6 @@ Red Hat CoreOS 4.21.22
 HAProxy 27f76d0c7626993cde6e1ff90fa42253718cc5fa
 :   Resolves the following CVEs: [CVE-2026-5450](https://nvd.nist.gov/vuln/detail/CVE-2026-5450){: external}.
 
-{: #cl-boms-42122_1524_openshift_W-component-table}
-
 
 ### Worker node fix pack 4.21.21_1522_openshift, released 01 July 2026
 {: #cl-boms-42121_1522_openshift_W}
@@ -195,8 +183,6 @@ Red Hat CoreOS 4.21.21
 :   For more information, see the [change logs](https://docs.redhat.com/en/documentation/openshift_container_platform/4.21/html/release_notes/ocp-4-21-release-notes.html#ocp-4-21-21_release-notes){: external}.
 HAProxy 119de539a7da3c92449b38e1531722802988e50c
 :   Resolves the following CVEs: [CVE-2026-45447](https://nvd.nist.gov/vuln/detail/CVE-2026-45447){: external}, [CVE-2024-4741](https://nvd.nist.gov/vuln/detail/CVE-2024-4741){: external}, and [CVE-2024-34459](https://nvd.nist.gov/vuln/detail/CVE-2024-34459){: external}.
-
-{: #cl-boms-42121_1522_openshift_W-component-table}
 
 
 ### Master fix pack 4.21.18_1520_openshift, released 26 June 2026
@@ -222,8 +208,6 @@ Portieris admission controller v0.14.0
 Red Hat OpenShift on IBM Cloud 4.21.18
 :   See the [Red Hat OpenShift on IBM Cloud release notes](https://docs.redhat.com/en/documentation/openshift_container_platform/4.21/html/release_notes/ocp-4-21-release-notes#ocp-4-21-18_release-notes){: external}.
 
-{: #cl-boms_master-42118_1520_openshift_M-component-table}
-
 
 ### Worker node fix pack 4.21.19_1521_openshift, released 15 June 2026
 {: #cl-boms-42119_1521_openshift_W}
@@ -243,8 +227,6 @@ Red Hat CoreOS 4.21.19
 :   For more information, see the [change logs](https://docs.redhat.com/en/documentation/openshift_container_platform/4.21/html/release_notes/ocp-4-21-release-notes.html#ocp-4-21-17_release-notes){: external}.
 HAProxy d4656f400ca14059e1b5b8ef8078b4903290791a
 :   Resolves the following CVEs: [CVE-2026-45186](https://nvd.nist.gov/vuln/detail/CVE-2026-45186){: external}.
-
-{: #cl-boms-42119_1521_openshift_W-component-table}
 
 
 ### Worker node fix pack 4.21.17_1519_openshift, released 03 June 2026
@@ -266,8 +248,6 @@ Red Hat CoreOS 4.21.17
 HAProxy 0e0730588ba21878845cdb0bee615a371a489a02
 :   Resolves the following CVEs: [CVE-2026-4046](https://nvd.nist.gov/vuln/detail/CVE-2026-4046){: external}, [CVE-2026-33846](https://nvd.nist.gov/vuln/detail/CVE-2026-33846){: external}, [CVE-2026-42010](https://nvd.nist.gov/vuln/detail/CVE-2026-42010){: external}, [CVE-2026-5260](https://nvd.nist.gov/vuln/detail/CVE-2026-5260){: external}, [CVE-2026-42014](https://nvd.nist.gov/vuln/detail/CVE-2026-42014){: external}, [CVE-2026-3833](https://nvd.nist.gov/vuln/detail/CVE-2026-3833){: external}, [CVE-2026-42015](https://nvd.nist.gov/vuln/detail/CVE-2026-42015){: external}, [CVE-2026-33845](https://nvd.nist.gov/vuln/detail/CVE-2026-33845){: external}, [CVE-2026-42011](https://nvd.nist.gov/vuln/detail/CVE-2026-42011){: external}, [CVE-2026-42009](https://nvd.nist.gov/vuln/detail/CVE-2026-42009){: external}, [CVE-2026-42013](https://nvd.nist.gov/vuln/detail/CVE-2026-42013){: external}, and [CVE-2026-42012](https://nvd.nist.gov/vuln/detail/CVE-2026-42012){: external}.
 
-{: #cl-boms-42117_1519_openshift_W-component-table}
-
 
 ### Master fix pack 4.21.15_1517_openshift, released 22 May 2026
 {: #cl-boms_master-42115_1517_openshift_M}
@@ -285,8 +265,6 @@ Portieris admission controller v0.13.38
 :   See the [Portieris admission controller release notes](https://github.com/IBM/portieris/releases/tag/v0.13.38){: external}
 Red Hat OpenShift on IBM Cloud 4.21.15
 :   See the [Red Hat OpenShift on IBM Cloud release notes](https://docs.redhat.com/en/documentation/openshift_container_platform/4.21/html/release_notes/ocp-4-21-release-notes#ocp-4-21-15_release-notes){: external}.
-
-{: #cl-boms_master-42115_1517_openshift_M-component-table}
 
 
 ### Worker node fix pack 4.21.15_1518_openshift, released 20 May 2026
@@ -308,30 +286,26 @@ Red Hat CoreOS 4.21.15
 HAProxy 6ba93946d8bd08ba581321189c719ab548cadf01
 :   Resolves the following CVEs: [CVE-2025-9714](https://nvd.nist.gov/vuln/detail/CVE-2025-9714){: external}, [CVE-2026-4424](https://nvd.nist.gov/vuln/detail/CVE-2026-4424){: external}, [CVE-2026-40356](https://nvd.nist.gov/vuln/detail/CVE-2026-40356){: external}, [CVE-2025-14512](https://nvd.nist.gov/vuln/detail/CVE-2025-14512){: external}, [CVE-2026-4878](https://nvd.nist.gov/vuln/detail/CVE-2026-4878){: external}, [CVE-2026-40355](https://nvd.nist.gov/vuln/detail/CVE-2026-40355){: external}, [CVE-2026-5121](https://nvd.nist.gov/vuln/detail/CVE-2026-5121){: external}, and [CVE-2025-14087](https://nvd.nist.gov/vuln/detail/CVE-2025-14087){: external}.
 
-{: #cl-boms-42115_1518_openshift_W-component-table}
-
 
 ### Change log for master fix pack 4.21.13_1516_openshift, released 13 May 2026
 {: #42113_1516_openshift_M}
 
-The following table shows the changes that are in the master fix pack 4.21.13_1516_openshift. Master patch updates are applied automatically.
+The following list shows the changes that are in the master fix pack 4.21.13_1516_openshift. Master patch updates are applied automatically.
 {: shortdesc}
 
-| Component | Previous | Current | Description |
-| --- | --- | --- | --- |
-| IBM Cloud Controller Manager | v1.33.10-2 | v1.34.7-1 | New version contains updates and security fixes. |
-| Kubernetes pause container | 3.10.1 | 3.10.2 | New version contains updates and security fixes. |
-| Red Hat OpenShift | 4.20.18 | 4.21.13 | See the [Red Hat OpenShift on IBM Cloud release notes](https://docs.redhat.com/en/documentation/openshift_container_platform/4.21/html/release_notes/ocp-4-21-release-notes#ocp-4-21-13_release-notes){: external}. |
-{: caption="Changes since master version 4.20.18_1545_openshift" caption-side="bottom"}
+IBM Cloud Controller Manager v1.34.7-1
+:   New version contains updates and security fixes.
+Kubernetes pause container 3.10.2
+:   New version contains updates and security fixes.
+Red Hat OpenShift 4.21.13
+:   See the [Red Hat OpenShift on IBM Cloud release notes](https://docs.redhat.com/en/documentation/openshift_container_platform/4.21/html/release_notes/ocp-4-21-release-notes#ocp-4-21-13_release-notes){: external}.
 
 
 ### Change log for worker node fix pack 4.21.10_1514_openshift, released 13 May 2026
 {: #42110_1514_openshift_W}
 
-The following table shows the changes that are in the worker node fix pack 4.21.10_1514_openshift. Worker node patch updates can be applied by updating, reloading (in classic infrastructure), or replacing (in VPC infrastructure) the worker node.
+The following list shows the changes that are in the worker node fix pack 4.21.10_1514_openshift. Worker node patch updates can be applied by updating, reloading (in classic infrastructure), or replacing (in VPC infrastructure) the worker node.
 {: shortdesc}
 
-| Component | Previous | Current | Description |
-| --- | --- | --- | --- |
-| Red Hat OpenShift | 4.20.15 | 4.21.10 | See the [Red Hat OpenShift on IBM Cloud release notes](https://docs.redhat.com/en/documentation/openshift_container_platform/4.21/html/release_notes/ocp-4-21-release-notes#ocp-4-21-10_release-notes){: external}. |
-{: caption="Changes since worker node version 4.20.15_1544_openshift" caption-side="bottom"}
+Red Hat OpenShift 4.21.10
+:   See the [Red Hat OpenShift on IBM Cloud release notes](https://docs.redhat.com/en/documentation/openshift_container_platform/4.21/html/release_notes/ocp-4-21-release-notes#ocp-4-21-10_release-notes){: external}.

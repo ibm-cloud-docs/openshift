@@ -62,8 +62,6 @@ Red Hat CoreOS 4.16.68
 HAProxy a70e8a8452c4d476687ad749df47b6f27a61851a
 :   Resolves the following CVEs: [CVE-2026-54411](https://nvd.nist.gov/vuln/detail/CVE-2026-54411){: external}, [CVE-2026-54371](https://nvd.nist.gov/vuln/detail/CVE-2026-54371){: external}, [CVE-2026-55204](https://nvd.nist.gov/vuln/detail/CVE-2026-55204){: external}, and [CVE-2026-58055](https://nvd.nist.gov/vuln/detail/CVE-2026-58055){: external}.
 
-{: #cl-boms-41668_1629_openshift_W-component-table}
-
 
 ### Worker node fix pack 4.16.67_1628_openshift, released 12 August 2026
 {: #cl-boms-41667_1628_openshift_W}
@@ -88,8 +86,6 @@ Red Hat CoreOS 4.16.67
 HAProxy bd7e64ef86b90455535107263466d1825f3e7f9f
 :   Resolves the following CVEs: [CVE-2026-56391](https://nvd.nist.gov/vuln/detail/CVE-2026-56391){: external}, and [CVE-2026-56392](https://nvd.nist.gov/vuln/detail/CVE-2026-56392){: external}.
 
-{: #cl-boms-41667_1628_openshift_W-component-table}
-
 
 ### Master fix pack 4.16.68_1627_openshift, released 07 August 2026
 {: #cl-boms_master-41668_1627_openshift_M}
@@ -109,8 +105,6 @@ Key Management Service provider 2.10.28
 :   New version contains updates and security fixes.
 Red Hat OpenShift on IBM Cloud 4.16.68
 :   See the [Red Hat OpenShift on IBM Cloud release notes](https://docs.redhat.com/en/documentation/openshift_container_platform/4.16/html/release_notes/ocp-4-16-release-notes#ocp-4-16-68_release-notes){: external}.Resolves the following CVEs: [CVE-2026-16242](https://nvd.nist.gov/vuln/detail/CVE-2026-16242){: external}.
-
-{: #cl-boms_master-41668_1627_openshift_M-component-table}
 
 
 ### Worker node fix pack 4.16.66_1626_openshift, released 28 July 2026
@@ -135,8 +129,6 @@ Red Hat CoreOS 4.16.66
 :   For more information, see the [change logs](https://docs.redhat.com/en/documentation/openshift_container_platform/4.16/html/release_notes/ocp-4-16-release-notes.html#ocp-4-16-66_release-notes){: external}.
 HAProxy 346c7130717ef7cc25d1dfbca7d57ca32396b692
 :   Resolves the following CVEs: [CVE-2026-6238](https://nvd.nist.gov/vuln/detail/CVE-2026-6238){: external}, [CVE-2026-5928](https://nvd.nist.gov/vuln/detail/CVE-2026-5928){: external}, [CVE-2026-48864](https://nvd.nist.gov/vuln/detail/CVE-2026-48864){: external}, [CVE-2026-54370](https://nvd.nist.gov/vuln/detail/CVE-2026-54370){: external}, [CVE-2026-28390](https://nvd.nist.gov/vuln/detail/CVE-2026-28390){: external}, [CVE-2026-5435](https://nvd.nist.gov/vuln/detail/CVE-2026-5435){: external}, [CVE-2025-13151](https://nvd.nist.gov/vuln/detail/CVE-2025-13151){: external}, [CVE-2026-54369](https://nvd.nist.gov/vuln/detail/CVE-2026-54369){: external}, [CVE-2026-58016](https://nvd.nist.gov/vuln/detail/CVE-2026-58016){: external}, and [CVE-2025-6170](https://nvd.nist.gov/vuln/detail/CVE-2025-6170){: external}.
-
-{: #cl-boms-41666_1626_openshift_W-component-table}
 
 
 ### Master fix pack 4.16.64_1624_openshift, released 28 July 2026
@@ -170,8 +162,6 @@ Red Hat OpenShift on IBM Cloud Control Plane Operator, Metrics Server, and toolk
 Tigera Operator v1.38.13
 :   See the [Tigera Operator release notes](https://github.com/tigera/operator/releases/tag/v1.38.13){: external}.
 
-{: #cl-boms_master-41664_1624_openshift_M-component-table}
-
 
 ### Worker node fix pack 4.16.65_1625_openshift, released 13 July 2026
 {: #cl-boms-41665_1625_openshift_W}
@@ -196,8 +186,6 @@ Red Hat CoreOS 4.16.65
 HAProxy 27f76d0c7626993cde6e1ff90fa42253718cc5fa
 :   Resolves the following CVEs: [CVE-2026-5450](https://nvd.nist.gov/vuln/detail/CVE-2026-5450){: external}.
 
-{: #cl-boms-41665_1625_openshift_W-component-table}
-
 
 ### Worker node fix pack 4.16.64_1622_openshift, released 01 July 2026
 {: #cl-boms-41664_1622_openshift_W}
@@ -221,8 +209,6 @@ Red Hat CoreOS 4.16.64
 :   For more information, see the [change logs](https://docs.redhat.com/en/documentation/openshift_container_platform/4.16/html/release_notes/ocp-4-16-release-notes.html#ocp-4-16-64_release-notes){: external}.
 HAProxy 119de539a7da3c92449b38e1531722802988e50c
 :   Resolves the following CVEs: [CVE-2026-45447](https://nvd.nist.gov/vuln/detail/CVE-2026-45447){: external}, [CVE-2024-4741](https://nvd.nist.gov/vuln/detail/CVE-2024-4741){: external}, and [CVE-2024-34459](https://nvd.nist.gov/vuln/detail/CVE-2024-34459){: external}.
-
-{: #cl-boms-41664_1622_openshift_W-component-table}
 
 
 ### Master fix pack 4.16.63_1620_openshift, released 26 June 2026
@@ -254,8 +240,6 @@ Red Hat OpenShift on IBM Cloud Control Plane Operator, Metrics Server, and toolk
 Tigera Operator v1.38.13
 :   See the [Tigera Operator release notes](https://github.com/tigera/operator/releases/tag/v1.38.13){: external}.
 
-{: #cl-boms_master-41663_1620_openshift_M-component-table}
-
 
 ### Worker node fix pack 4.16.63_1621_openshift, released 15 June 2026
 {: #cl-boms-41663_1621_openshift_W}
@@ -279,8 +263,6 @@ Red Hat CoreOS 4.16.63
 :   For more information, see the [change logs](https://docs.redhat.com/en/documentation/openshift_container_platform/4.16/html/release_notes/ocp-4-16-release-notes.html#ocp-4-16-62_release-notes){: external}.
 HAProxy d4656f400ca14059e1b5b8ef8078b4903290791a
 :   Resolves the following CVEs: [CVE-2026-45186](https://nvd.nist.gov/vuln/detail/CVE-2026-45186){: external}.
-
-{: #cl-boms-41663_1621_openshift_W-component-table}
 
 
 ### Worker node fix pack 4.16.62_1619_openshift, released 03 June 2026
@@ -306,8 +288,6 @@ Red Hat CoreOS 4.16.62
 HAProxy 0e0730588ba21878845cdb0bee615a371a489a02
 :   Resolves the following CVEs: [CVE-2026-4046](https://nvd.nist.gov/vuln/detail/CVE-2026-4046){: external}, [CVE-2026-33846](https://nvd.nist.gov/vuln/detail/CVE-2026-33846){: external}, [CVE-2026-42010](https://nvd.nist.gov/vuln/detail/CVE-2026-42010){: external}, [CVE-2026-5260](https://nvd.nist.gov/vuln/detail/CVE-2026-5260){: external}, [CVE-2026-42014](https://nvd.nist.gov/vuln/detail/CVE-2026-42014){: external}, [CVE-2026-3833](https://nvd.nist.gov/vuln/detail/CVE-2026-3833){: external}, [CVE-2026-42015](https://nvd.nist.gov/vuln/detail/CVE-2026-42015){: external}, [CVE-2026-33845](https://nvd.nist.gov/vuln/detail/CVE-2026-33845){: external}, [CVE-2026-42011](https://nvd.nist.gov/vuln/detail/CVE-2026-42011){: external}, [CVE-2026-42009](https://nvd.nist.gov/vuln/detail/CVE-2026-42009){: external}, [CVE-2026-42013](https://nvd.nist.gov/vuln/detail/CVE-2026-42013){: external}, and [CVE-2026-42012](https://nvd.nist.gov/vuln/detail/CVE-2026-42012){: external}.
 
-{: #cl-boms-41662_1619_openshift_W-component-table}
-
 
 ### Master fix pack 4.16.61_1617_openshift, released 22 May 2026
 {: #cl-boms_master-41661_1617_openshift_M}
@@ -323,8 +303,6 @@ Portieris admission controller v0.13.38
 :   See the [Portieris admission controller release notes](https://github.com/IBM/portieris/releases/tag/v0.13.38){: external}
 Red Hat OpenShift on IBM Cloud 4.16.61
 :   See the [Red Hat OpenShift on IBM Cloud release notes](https://docs.redhat.com/en/documentation/openshift_container_platform/4.16/html/release_notes/ocp-4-16-release-notes#ocp-4-16-61_release-notes){: external}.
-
-{: #cl-boms_master-41661_1617_openshift_M-component-table}
 
 
 ### Worker node fix pack 4.16.62_1618_openshift, released 20 May 2026
@@ -350,8 +328,6 @@ Red Hat CoreOS 4.16.62
 HAProxy 6ba93946d8bd08ba581321189c719ab548cadf01
 :   Resolves the following CVEs: [CVE-2025-9714](https://nvd.nist.gov/vuln/detail/CVE-2025-9714){: external}, [CVE-2026-4424](https://nvd.nist.gov/vuln/detail/CVE-2026-4424){: external}, [CVE-2026-40356](https://nvd.nist.gov/vuln/detail/CVE-2026-40356){: external}, [CVE-2025-14512](https://nvd.nist.gov/vuln/detail/CVE-2025-14512){: external}, [CVE-2026-4878](https://nvd.nist.gov/vuln/detail/CVE-2026-4878){: external}, [CVE-2026-40355](https://nvd.nist.gov/vuln/detail/CVE-2026-40355){: external}, [CVE-2026-5121](https://nvd.nist.gov/vuln/detail/CVE-2026-5121){: external}, and [CVE-2025-14087](https://nvd.nist.gov/vuln/detail/CVE-2025-14087){: external}.
 
-{: #cl-boms-41662_1618_openshift_W-component-table}
-
 
 ### Worker node fix pack 4.16.60_1614_openshift, released 04 May 2026
 {: #cl-boms-41660_1614_openshift_W}
@@ -374,8 +350,6 @@ Red Hat CoreOS 4.16.60
 HAProxy c7e825675cbd75e8433801c99f8aca3b207a5a46
 :   Resolves the following CVEs: [CVE-2026-5121](https://nvd.nist.gov/vuln/detail/CVE-2026-5121){: external}, [CVE-2025-9714](https://nvd.nist.gov/vuln/detail/CVE-2025-9714){: external}, and [CVE-2026-4424](https://nvd.nist.gov/vuln/detail/CVE-2026-4424){: external}.
 
-{: #cl-boms-41660_1614_openshift_W-component-table}
-
 
 ### Master fix pack 4.16.59_1613_openshift, released 27 April 2026
 {: #cl-boms_master-41659_1613_openshift_M}
@@ -393,8 +367,6 @@ Portieris admission controller v0.13.37
 :   See the [Portieris admission controller release notes](https://github.com/IBM/portieris/releases/tag/v0.13.37){: external}
 Red Hat OpenShift on IBM Cloud 4.16.59
 :   See the [Red Hat OpenShift on IBM Cloud release notes](https://docs.redhat.com/en/documentation/openshift_container_platform/4.16/html/release_notes/ocp-4-16-release-notes#ocp-4-16-59_release-notes){: external}.
-
-{: #cl-boms_master-41659_1613_openshift_M-component-table}
 
 
 ### Worker node fix pack 4.16.59_1610_openshift, released 20 April 2026
@@ -418,8 +390,6 @@ Red Hat CoreOS 4.16.59
 HAProxy c7e825675cbd75e8433801c99f8aca3b207a5a46
 :   Resolves the following CVEs: [CVE-2026-27135](https://nvd.nist.gov/vuln/detail/CVE-2026-27135){: external}.
 
-{: #cl-boms-41659_1610_openshift_W-component-table}
-
 
 ### Worker node fix pack 4.16.58_1609_openshift, released 06 April 2026
 {: #cl-boms-41658_1609_openshift_W}
@@ -442,29 +412,35 @@ Red Hat CoreOS 4.16.58
 HAProxy 91cc06f4e0a123d06f5ee7c226df6fb83e1ca223
 :   Resolves the following CVEs: [CVE-2025-14831](https://nvd.nist.gov/vuln/detail/CVE-2025-14831){: external}, and [CVE-2025-9820](https://nvd.nist.gov/vuln/detail/CVE-2025-9820){: external}.
 
-{: #cl-boms-41658_1609_openshift_W-component-table}
-
 
 ### Change log for Master fix pack 4.16.57_1608_openshift, released 02 April 2026
 {: #41657_1608_openshift_M}
 
-The following table shows the changes that are in the master fix pack 4.16.57_1608_openshift. Master patch updates are applied automatically. 
+The following list shows the changes that are in the master fix pack 4.16.57_1608_openshift. Master patch updates are applied automatically. 
 
 
-| Component | Previous | Current | Description |
-| --- | --- | --- | --- |
-| Cluster health image | v1.6.13 | v1.6.15 | New version contains updates and security fixes. |
-| etcd | v3.5.26 | v3.5.27 | See the [etcd release notes](https://github.com/etcd-io/etcd/releases/v3.5.27){: external}. |
-| {{site.data.keyword.cloud_notm}} Block Storage driver and plug-in | v2.5.22 | v2.5.25 | New version contains updates and security fixes. |
-| {{site.data.keyword.cloud_notm}} Controller Manager | v1.29.15-38 | v1.29.15-46 | New version contains updates and security fixes. |
-| {{site.data.keyword.filestorage_full_notm}} for Classic plug-in and monitor | 452 | v454 | New version contains updates and security fixes. |
-| {{site.data.keyword.cloud_notm}} RBAC Operator | 8a12251 | 6212368 | New version contains updates and security fixes. |
-| Key Management Service provider | v2.10.20 | 2.10.22 | New version contains updates and security fixes. |
-| Load balancer and load balancer monitor for {{site.data.keyword.cloud_notm}} Provider | 3347 | 3563 | New version contains updates and security fixes. |
-| Portieris admission controller | v0.13.33 | v0.13.36 | See the [Portieris admission controller release notes](https://github.com/{{site.data.keyword.IBM_notm}}/portieris/releases/tag/v0.13.36){: external}. |
-| {{site.data.keyword.openshiftlong_notm}}. | 4.16.54 | 4.16.57 | See the [{{site.data.keyword.openshiftlong_notm}} release notes](https://docs.redhat.com/en/documentation/openshift_container_platform/4.16/html/release_notes/ocp-4-16-release-notes#ocp-4-16-57_release-notes){: external}. |
-| {{site.data.keyword.openshiftlong_notm}} Control Plane Operator, Metrics Server, and toolkit | v4.16.0+20251015 | v4.16.0+20260312 | See the [{{site.data.keyword.openshiftlong_notm}} toolkit release notes](https://github.com/openshift/ibm-roks-toolkit/releases/tag/v4.16.0+20260312){: external}. |
-{: caption="Changes since version 4.16.56-1603-openshift" caption-side="bottom"}
+Cluster health image v1.6.15
+:   New version contains updates and security fixes.
+etcd v3.5.27
+:   See the [etcd release notes](https://github.com/etcd-io/etcd/releases/v3.5.27){: external}.
+{{site.data.keyword.cloud_notm}} Block Storage driver and plug-in v2.5.25
+:   New version contains updates and security fixes.
+{{site.data.keyword.cloud_notm}} Controller Manager v1.29.15-46
+:   New version contains updates and security fixes.
+{{site.data.keyword.filestorage_full_notm}} for Classic plug-in and monitor v454
+:   New version contains updates and security fixes.
+{{site.data.keyword.cloud_notm}} RBAC Operator 6212368
+:   New version contains updates and security fixes.
+Key Management Service provider 2.10.22
+:   New version contains updates and security fixes.
+Load balancer and load balancer monitor for {{site.data.keyword.cloud_notm}} Provider 3563
+:   New version contains updates and security fixes.
+Portieris admission controller v0.13.36
+:   See the [Portieris admission controller release notes](https://github.com/{{site.data.keyword.IBM_notm}}/portieris/releases/tag/v0.13.36){: external}.
+{{site.data.keyword.openshiftlong_notm}}. 4.16.57
+:   See the [{{site.data.keyword.openshiftlong_notm}} release notes](https://docs.redhat.com/en/documentation/openshift_container_platform/4.16/html/release_notes/ocp-4-16-release-notes#ocp-4-16-57_release-notes){: external}.
+{{site.data.keyword.openshiftlong_notm}} Control Plane Operator, Metrics Server, and toolkit v4.16.0+20260312
+:   See the [{{site.data.keyword.openshiftlong_notm}} toolkit release notes](https://github.com/openshift/ibm-roks-toolkit/releases/tag/v4.16.0+20260312){: external}.
 
 
 ### Worker node fix pack 4.16.58_1608_openshift, released 24 March 2026
@@ -488,8 +464,6 @@ Red Hat CoreOS 4.16.58
 HAProxy 10c8639e6b5829d0af51a22755e13756f34630cf
 :   Resolves the following CVEs: [CVE-2025-15281](https://nvd.nist.gov/vuln/detail/CVE-2025-15281){: external}, and [CVE-2026-0915](https://nvd.nist.gov/vuln/detail/CVE-2026-0915){: external}.
 
-{: #cl-boms-41658_1608_openshift_W-component-table}
-
 
 ### Worker node fix pack 4.16.57_1605_openshift, released 11 March 2026
 {: #cl-boms-41657_1605_openshift_W}
@@ -511,8 +485,6 @@ Red Hat CoreOS 4.16.57
 :   For more information, see the [change logs](https://docs.redhat.com/en/documentation/openshift_container_platform/4.16/html/release_notes/ocp-4-16-release-notes.html#ocp-4-16-57_release-notes){: external}.
 HAProxy 965c403695b15b3410d87a3772002edbc5ed2569
 :   Resolves the following CVEs: [CVE-2025-69419](https://nvd.nist.gov/vuln/detail/CVE-2025-69419){: external}.
-
-{: #cl-boms-41657_1605_openshift_W-component-table}
 
 
 ### Worker node fix pack 4.16.57_1604_openshift, released 24 February 2026
@@ -536,26 +508,29 @@ Red Hat CoreOS 4.16.57
 HAProxy 2bf1aebe51a37cd9b4661656ce21e53f918166ea
 :   Resolves the following CVEs: [CVE-2025-6176](https://nvd.nist.gov/vuln/detail/CVE-2025-6176){: external}.
 
-{: #cl-boms-41657_1604_openshift_W-component-table}
-
 
 ### Change log for Master fix pack 4.16.56_1603_openshift, released 18 February 2026
 {: #41656_1603_openshift_M}
 
-The following table shows the changes that are in the master fix pack 4.16.56_1603_openshift. Master patch updates are applied automatically. 
+The following list shows the changes that are in the master fix pack 4.16.56_1603_openshift. Master patch updates are applied automatically. 
 
 
-| Component | Previous | Current | Description |
-| --- | --- | --- | --- |
-| Cluster health image | v1.6.13 | v1.6.14 | New version contains updates and security fixes. |
-| {{site.data.keyword.cloud_notm}} Block Storage driver and plug-in | v2.5.22 | v2.5.24 | New version contains updates and security fixes. |
-| {{site.data.keyword.cloud_notm}} Controller Manager | v1.29.15-38 | v1.29.15-42 | New version contains updates and security fixes. |
-| {{site.data.keyword.filestorage_full_notm}} for Classic plug-in and monitor | 452 | v453 | New version contains updates and security fixes. |
-| Key Management Service provider | v2.10.20 | 2.10.21 | New version contains updates and security fixes. |
-| Portieris admission controller | v0.13.33 | v0.13.35 | See the [Portieris admission controller release notes](https://github.com/{{site.data.keyword.IBM_notm}}/portieris/releases/tag/v0.13.35){: external}. |
-| {{site.data.keyword.openshiftlong_notm}}. | 4.16.54 | 4.16.56 | See the [{{site.data.keyword.openshiftlong_notm}} release notes](https://docs.redhat.com/en/documentation/openshift_container_platform/4.16/html/release_notes/ocp-4-16-release-notes#ocp-4-16-56_release-notes){: external}. |
-| {{site.data.keyword.openshiftlong_notm}} Control Plane Operator, Metrics Server, and toolkit | v4.16.0+20251015 | v4.16.0+20260209 | See the [{{site.data.keyword.openshiftlong_notm}} toolkit release notes](https://github.com/openshift/ibm-roks-toolkit/releases/tag/v4.16.0+20260209){: external}. |
-{: caption="Changes since version 4.16.54-1600-openshift" caption-side="bottom"}
+Cluster health image v1.6.14
+:   New version contains updates and security fixes.
+{{site.data.keyword.cloud_notm}} Block Storage driver and plug-in v2.5.24
+:   New version contains updates and security fixes.
+{{site.data.keyword.cloud_notm}} Controller Manager v1.29.15-42
+:   New version contains updates and security fixes.
+{{site.data.keyword.filestorage_full_notm}} for Classic plug-in and monitor v453
+:   New version contains updates and security fixes.
+Key Management Service provider 2.10.21
+:   New version contains updates and security fixes.
+Portieris admission controller v0.13.35
+:   See the [Portieris admission controller release notes](https://github.com/{{site.data.keyword.IBM_notm}}/portieris/releases/tag/v0.13.35){: external}.
+{{site.data.keyword.openshiftlong_notm}}. 4.16.56
+:   See the [{{site.data.keyword.openshiftlong_notm}} release notes](https://docs.redhat.com/en/documentation/openshift_container_platform/4.16/html/release_notes/ocp-4-16-release-notes#ocp-4-16-56_release-notes){: external}.
+{{site.data.keyword.openshiftlong_notm}} Control Plane Operator, Metrics Server, and toolkit v4.16.0+20260209
+:   See the [{{site.data.keyword.openshiftlong_notm}} toolkit release notes](https://github.com/openshift/ibm-roks-toolkit/releases/tag/v4.16.0+20260209){: external}.
 
 
 ### Worker node fix pack 4.16.56_1602_openshift, released 09 February 2026
@@ -579,8 +554,6 @@ Red Hat CoreOS 4.16.56
 HAProxy ace947f4ecf45f28effe8d125ffda48f9890223b
 :   Resolves the following CVEs: [CVE-2025-14104](https://nvd.nist.gov/vuln/detail/CVE-2025-14104){: external}.
 
-{: #cl-boms-41656_1602_openshift_W-component-table}
-
 
 ### Worker node fix pack 4.16.55_1601_openshift, released 27 January 2026
 {: #cl-boms-41655_1601_openshift_W}
@@ -603,26 +576,29 @@ Red Hat CoreOS 4.16.55
 HAProxy c9cb5ad988e916d184d1c308d4f2e5c502d99523
 :   Resolves the following CVEs: [CVE-2025-68973](https://nvd.nist.gov/vuln/detail/CVE-2025-68973){: external}, [CVE-2025-13601](https://nvd.nist.gov/vuln/detail/CVE-2025-13601){: external}, and [CVE-2025-9230](https://nvd.nist.gov/vuln/detail/CVE-2025-9230){: external}.
 
-{: #cl-boms-41655_1601_openshift_W-component-table}
-
 
 ### Master fix pack 4.16.54_1600_openshift, released 21 January 2026
 {: #41654_1600_openshift_M}
 
-The following table shows the changes that are in the master fix pack 4.16.54_1600_openshift. Master patch updates are applied automatically. 
+The following list shows the changes that are in the master fix pack 4.16.54_1600_openshift. Master patch updates are applied automatically. 
 
 
-| Component | Previous | Current | Description |
-| --- | --- | --- | --- |
-| Calico | v3.29.6 | v3.29.7 | See the [Calico release notes](https://docs.tigera.io/calico/3.29/release-notes/#calico-open-source-3297-bug-fix-release){: external}. |
-| Cluster health image | v1.6.10 | v1.6.13 | New version contains updates and security fixes. |
-| etcd | v3.5.24 | v3.5.26 | See the [etcd release notes](https://github.com/etcd-io/etcd/releases/v3.5.26){: external}. |
-| {{site.data.keyword.cloud_notm}} Controller Manager | v1.29.15-28 | v1.29.15-38 | New version contains updates and security fixes. |
-| Key Management Service provider | v2.10.18 | 2.10.20 | New version contains updates and security fixes. |
-| Portieris admission controller | v0.13.31 | v0.13.33 | See the [Portieris admission controller release notes](https://github.com/{{site.data.keyword.IBM_notm}}/portieris/releases/tag/v0.13.33){: external}. |
-| {{site.data.keyword.openshiftlong_notm}}. | 4.16.51 | 4.16.54 | See the [{{site.data.keyword.openshiftlong_notm}} release notes](https://docs.redhat.com/en/documentation/openshift_container_platform/4.16/html/release_notes/ocp-4-16-release-notes#ocp-4-16-54_release-notes){: external}. |
-| Tigera Operator | v1.36.14 | v1.36.16 | See the [Tigera Operator release notes](https://github.com/tigera/operator/releases/tag/v1.36.16){: external}. |
-{: caption="Changes since version 4.16.52-1595-openshift" caption-side="bottom"}
+Calico v3.29.7
+:   See the [Calico release notes](https://docs.tigera.io/calico/3.29/release-notes/#calico-open-source-3297-bug-fix-release){: external}.
+Cluster health image v1.6.13
+:   New version contains updates and security fixes.
+etcd v3.5.26
+:   See the [etcd release notes](https://github.com/etcd-io/etcd/releases/v3.5.26){: external}.
+{{site.data.keyword.cloud_notm}} Controller Manager v1.29.15-38
+:   New version contains updates and security fixes.
+Key Management Service provider 2.10.20
+:   New version contains updates and security fixes.
+Portieris admission controller v0.13.33
+:   See the [Portieris admission controller release notes](https://github.com/{{site.data.keyword.IBM_notm}}/portieris/releases/tag/v0.13.33){: external}.
+{{site.data.keyword.openshiftlong_notm}}. 4.16.54
+:   See the [{{site.data.keyword.openshiftlong_notm}} release notes](https://docs.redhat.com/en/documentation/openshift_container_platform/4.16/html/release_notes/ocp-4-16-release-notes#ocp-4-16-54_release-notes){: external}.
+Tigera Operator v1.36.16
+:   See the [Tigera Operator release notes](https://github.com/tigera/operator/releases/tag/v1.36.16){: external}.
 
 
 ### Worker node fix pack 4.16.54_1598_openshift, released 12 January 2026
@@ -642,8 +618,6 @@ Red Hat CoreOS 4.16.54
 HAProxy d04e61c5b29aa5328bc72455edb95e08e8f6d85c
 :   
 
-{: #cl-boms-41654_1598_openshift_W-component-table}
-
 
 ### Worker node fix pack 4.16.54_1597_openshift, released 29 December 2025
 {: #cl-boms-41654_1597_openshift_W}
@@ -661,8 +635,6 @@ Red Hat CoreOS 4.16.54
 :   For more information, see the [change logs](https://docs.redhat.com/en/documentation/openshift_container_platform/4.16/html/release_notes/ocp-4-16-release-notes.html#ocp-4-16-54_release-notes){: external}.
 HAProxy d04e61c5b29aa5328bc72455edb95e08e8f6d85c
 :   Resolves the following CVEs: [CVE-2025-9086](https://nvd.nist.gov/vuln/detail/CVE-2025-9086){: external}.
-
-{: #cl-boms-41654_1597_openshift_W-component-table}
 
 
 ### Worker node fix pack 4.16.54_1596_openshift, released 16 December 2025
@@ -682,24 +654,25 @@ Red Hat CoreOS 4.16.54
 HAProxy 03b74b82b63cd53403b6b587b84233c93edef18d
 :   
 
-{: #cl-boms-41654_1596_openshift_W-component-table}
-
 
 ### Master fix pack 4.16.52_1595_openshift, released 10 December 2025
 {: #41652_1595_openshift_M}
 
-The following table shows the changes that are in the master fix pack 4.16.52_1595_openshift. Master patch updates are applied automatically. 
+The following list shows the changes that are in the master fix pack 4.16.52_1595_openshift. Master patch updates are applied automatically. 
 
 
-| Component | Previous | Current | Description |
-| --- | --- | --- | --- |
-| Cluster health image | v1.6.10 | v1.6.13 | New version contains updates and security fixes. |
-| etcd | v3.5.24 | v3.5.25 | See the [etcd release notes](https://github.com/etcd-io/etcd/releases/v3.5.25){: external}. |
-| {{site.data.keyword.cloud_notm}} Controller Manager | v1.29.15-28 | v1.29.15-33 | New version contains updates and security fixes. |
-| Key Management Service provider | v2.10.18 | 2.10.19 | New version contains updates and security fixes. |
-| Portieris admission controller | v0.13.31 | v0.13.33 | See the [Portieris admission controller release notes](https://github.com/{{site.data.keyword.IBM_notm}}/portieris/releases/tag/v0.13.33){: external}. |
-| {{site.data.keyword.openshiftlong_notm}}. | 4.16.50 | 4.16.52 | See the [{{site.data.keyword.openshiftlong_notm}} release notes](https://docs.redhat.com/en/documentation/openshift_container_platform/4.16/html/release_notes/ocp-4-16-release-notes#ocp-4-16-52_release-notes){: external}. |
-{: caption="Changes since version 4.16.51-1592-openshift" caption-side="bottom"}
+Cluster health image v1.6.13
+:   New version contains updates and security fixes.
+etcd v3.5.25
+:   See the [etcd release notes](https://github.com/etcd-io/etcd/releases/v3.5.25){: external}.
+{{site.data.keyword.cloud_notm}} Controller Manager v1.29.15-33
+:   New version contains updates and security fixes.
+Key Management Service provider 2.10.19
+:   New version contains updates and security fixes.
+Portieris admission controller v0.13.33
+:   See the [Portieris admission controller release notes](https://github.com/{{site.data.keyword.IBM_notm}}/portieris/releases/tag/v0.13.33){: external}.
+{{site.data.keyword.openshiftlong_notm}}. 4.16.52
+:   See the [{{site.data.keyword.openshiftlong_notm}} release notes](https://docs.redhat.com/en/documentation/openshift_container_platform/4.16/html/release_notes/ocp-4-16-release-notes#ocp-4-16-52_release-notes){: external}.
 
 
 ### Worker node fix pack 4.16.52_1594_openshift, released 03 December 2025
@@ -719,8 +692,6 @@ Red Hat CoreOS 4.16.52
 HAProxy 03b74b82b63cd53403b6b587b84233c93edef18d
 :   Resolves the following CVEs: [CVE-2025-59375](https://nvd.nist.gov/vuln/detail/CVE-2025-59375){: external}, [CVE-2025-5372](https://nvd.nist.gov/vuln/detail/CVE-2025-5372){: external}, [CVE-2024-28757](https://nvd.nist.gov/vuln/detail/CVE-2024-28757){: external}, and [CVE-2022-23990](https://nvd.nist.gov/vuln/detail/CVE-2022-23990){: external}.
 
-{: #cl-boms-41652_1594_openshift_W-component-table}
-
 
 ### Worker node fix pack 4.16.52_1593_openshift, released 17 November 2025
 {: #cl-boms-41652_1593_openshift_W}
@@ -739,27 +710,31 @@ Red Hat CoreOS 4.16.52
 HAProxy fbe9b8146f23bbd12b2566a79fa897d5981e7273
 :   
 
-{: #cl-boms-41652_1593_openshift_W-component-table}
-
 
 ### Master fix pack 4.16.51_1592_openshift, released 15 November 2025
 {: #41651_1592_openshift_M}
 
-The following table shows the changes that are in the master fix pack 4.16.51_1592_openshift. Master patch updates are applied automatically. 
+The following list shows the changes that are in the master fix pack 4.16.51_1592_openshift. Master patch updates are applied automatically. 
 
 
-| Component | Previous | Current | Description |
-| --- | --- | --- | --- |
-| Calico | v3.29.5 | v3.29.6 | See the [Calico release notes](https://docs.tigera.io/calico/3.29/release-notes/#calico-open-source-3296-bug-fix-release){: external}. |
-| etcd | v3.5.23 | v3.5.24 | See the [etcd release notes](https://github.com/etcd-io/etcd/releases/v3.5.24){: external}. |
-| {{site.data.keyword.cloud_notm}} Block Storage driver and plug-in | v2.5.20 | v2.5.22 | New version contains updates and security fixes. |
-| {{site.data.keyword.cloud_notm}} Controller Manager | v1.29.15-24 | v1.29.15-28 | New version contains updates and security fixes. |
-| Key Management Service provider | v2.10.17 | v2.10.18 | New version contains updates and security fixes. |
-| Portieris admission controller | v0.13.30 | v0.13.31 | See the [Portieris admission controller release notes](https://github.com/{{site.data.keyword.IBM_notm}}/portieris/releases/tag/v0.13.31){: external}. |
-| {{site.data.keyword.openshiftlong_notm}}. | 4.16.48 | 4.16.51 | See the [{{site.data.keyword.openshiftlong_notm}} release notes](https://docs.redhat.com/en/documentation/openshift_container_platform/4.16/html/release_notes/ocp-4-16-release-notes#ocp-4-16-51_release-notes){: external}. |
-| {{site.data.keyword.openshiftlong_notm}} Control Plane Operator, Metrics Server, and toolkit | v4.16.0+20250821 | v4.16.0+20251015 | See the [{{site.data.keyword.openshiftlong_notm}} toolkit release notes](https://github.com/openshift/ibm-roks-toolkit/releases/tag/v4.16.0+20251015){: external}. |
-| Tigera Operator | v1.36.13 | v1.36.14 | See the [Tigera Operator release notes](https://github.com/tigera/operator/releases/tag/v1.36.14){: external}. |
-{: caption="Changes since version 4.16.48_1585_openshift" caption-side="bottom"}
+Calico v3.29.6
+:   See the [Calico release notes](https://docs.tigera.io/calico/3.29/release-notes/#calico-open-source-3296-bug-fix-release){: external}.
+etcd v3.5.24
+:   See the [etcd release notes](https://github.com/etcd-io/etcd/releases/v3.5.24){: external}.
+{{site.data.keyword.cloud_notm}} Block Storage driver and plug-in v2.5.22
+:   New version contains updates and security fixes.
+{{site.data.keyword.cloud_notm}} Controller Manager v1.29.15-28
+:   New version contains updates and security fixes.
+Key Management Service provider v2.10.18
+:   New version contains updates and security fixes.
+Portieris admission controller v0.13.31
+:   See the [Portieris admission controller release notes](https://github.com/{{site.data.keyword.IBM_notm}}/portieris/releases/tag/v0.13.31){: external}.
+{{site.data.keyword.openshiftlong_notm}}. 4.16.51
+:   See the [{{site.data.keyword.openshiftlong_notm}} release notes](https://docs.redhat.com/en/documentation/openshift_container_platform/4.16/html/release_notes/ocp-4-16-release-notes#ocp-4-16-51_release-notes){: external}.
+{{site.data.keyword.openshiftlong_notm}} Control Plane Operator, Metrics Server, and toolkit v4.16.0+20251015
+:   See the [{{site.data.keyword.openshiftlong_notm}} toolkit release notes](https://github.com/openshift/ibm-roks-toolkit/releases/tag/v4.16.0+20251015){: external}.
+Tigera Operator v1.36.14
+:   See the [Tigera Operator release notes](https://github.com/tigera/operator/releases/tag/v1.36.14){: external}.
 
 
 ### Worker node fix pack 4.16.51_1588_openshift, released 06 November 2025
@@ -779,8 +754,6 @@ Red Hat CoreOS 4.16.51
 HAProxy fbe9b8146f23bbd12b2566a79fa897d5981e7273
 :   Resolves the following CVEs: [CVE-2025-5318](https://nvd.nist.gov/vuln/detail/CVE-2025-5318){: external}.
 
-{: #cl-boms-41651_1588_openshift_W-component-table}
-
 
 ### Worker node fix pack 4.16.50_1587_openshift, released 21 October 2025
 {: #cl-boms-41650_1587_openshift_W}
@@ -796,8 +769,6 @@ Red Hat OpenShift and Red Hat CoreOS 4.16.50
 :   For more information, see the [change logs](https://docs.redhat.com/en/documentation/openshift_container_platform/4.16/html/release_notes/ocp-4-16-release-notes.html#ocp-4-16-50_release-notes){: external}.
 HAProxy c01cd5322cd5c284286c07fe9ad0cc0ef3ab5360
 :   Resolves the following CVEs: [CVE-2025-32988](https://nvd.nist.gov/vuln/detail/CVE-2025-32988){: external}, [CVE-2025-6395](https://nvd.nist.gov/vuln/detail/CVE-2025-6395){: external}, and [CVE-2025-32990](https://nvd.nist.gov/vuln/detail/CVE-2025-32990){: external}.
-
-{: #cl-boms-41650_1587_openshift_W-component-table}
 
 
 ### Worker node fix pack 4.16.49_1586_openshift, released 08 October 2025
@@ -815,27 +786,31 @@ Red Hat OpenShift and Red Hat CoreOS 4.16.49
 HAProxy e0a48fcf355d98dc769ea048d2fd02044b11ed62
 :   
 
-{: #cl-boms-41649_1586_openshift_W-component-table}
-
 
 ### Master fix pack 4.16.48_1585_openshift, released 07 October 2025
 {: #41648_1585_openshift_M}
 
-The following table shows the changes that are in the master fix pack 4.16.48_1585_openshift. Master patch updates are applied automatically. 
+The following list shows the changes that are in the master fix pack 4.16.48_1585_openshift. Master patch updates are applied automatically. 
 
 
-| Component | Previous | Current | Description |
-| --- | --- | --- | --- |
-| Calico | v3.28.5 | v3.29.5 | See the [Calico release notes](https://docs.tigera.io/calico/3.29/release-notes/#v3.29.5){: external}. |
-| etcd | v3.5.22 | v3.5.23 | See the [etcd release notes](https://github.com/etcd-io/etcd/releases/v3.5.23){: external}. |
-| {{site.data.keyword.cloud_notm}} Controller Manager | v1.29.15-18 | v1.29.15-24 | New version contains updates and security fixes. |
-| {{site.data.keyword.filestorage_full_notm}} for Classic plug-in and monitor | 451 | 452 | New version contains updates and security fixes. |
-| Key Management Service provider | v2.10.16 | v2.10.17 | New version contains updates and security fixes. |
-| Portieris admission controller | v0.13.29 | v0.13.30 | See the [Portieris admission controller release notes](https://github.com/{{site.data.keyword.IBM_notm}}/portieris/releases/tag/v0.13.30){: external}. |
-| {{site.data.keyword.openshiftlong_notm}}. | 4.16.45 | 4.16.48 | See the [{{site.data.keyword.openshiftlong_notm}} release notes](https://docs.redhat.com/en/documentation/openshift_container_platform/4.16/html/release_notes/ocp-4-16-release-notes#ocp-4-16-48){: external}. |
-| {{site.data.keyword.openshiftlong_notm}} Control Plane Operator, Metrics Server, and toolkit | 4.16.0+20250808 | 4.16.0+20250821 | See the [{{site.data.keyword.openshiftlong_notm}} toolkit release notes](https://github.com/openshift/ibm-roks-toolkit/releases/tag/v4.16.0+20250821){: external}. |
-| Tigera Operator | v1.34.13 | v1.36.13 | See the [Tigera Operator release notes](https://github.com/tigera/operator/releases/tag/v1.36.13){: external}. |
-{: caption="Changes since version 4.16.45_1578_openshift" caption-side="bottom"}
+Calico v3.29.5
+:   See the [Calico release notes](https://docs.tigera.io/calico/3.29/release-notes/#v3.29.5){: external}.
+etcd v3.5.23
+:   See the [etcd release notes](https://github.com/etcd-io/etcd/releases/v3.5.23){: external}.
+{{site.data.keyword.cloud_notm}} Controller Manager v1.29.15-24
+:   New version contains updates and security fixes.
+{{site.data.keyword.filestorage_full_notm}} for Classic plug-in and monitor 452
+:   New version contains updates and security fixes.
+Key Management Service provider v2.10.17
+:   New version contains updates and security fixes.
+Portieris admission controller v0.13.30
+:   See the [Portieris admission controller release notes](https://github.com/{{site.data.keyword.IBM_notm}}/portieris/releases/tag/v0.13.30){: external}.
+{{site.data.keyword.openshiftlong_notm}}. 4.16.48
+:   See the [{{site.data.keyword.openshiftlong_notm}} release notes](https://docs.redhat.com/en/documentation/openshift_container_platform/4.16/html/release_notes/ocp-4-16-release-notes#ocp-4-16-48){: external}.
+{{site.data.keyword.openshiftlong_notm}} Control Plane Operator, Metrics Server, and toolkit 4.16.0+20250821
+:   See the [{{site.data.keyword.openshiftlong_notm}} toolkit release notes](https://github.com/openshift/ibm-roks-toolkit/releases/tag/v4.16.0+20250821){: external}.
+Tigera Operator v1.36.13
+:   See the [Tigera Operator release notes](https://github.com/tigera/operator/releases/tag/v1.36.13){: external}.
 
 
 ### Worker node fix pack 4.16.48_1582_openshift, released 23 September 2025
@@ -853,8 +828,6 @@ Red Hat OpenShift and Red Hat CoreOS 4.16.48
 HAProxy e0a48fcf355d98dc769ea048d2fd02044b11ed62
 :   
 
-{: #cl-boms-41648_1582_openshift_W-component-table}
-
 
 ### Worker node fix pack 4.16.47_1580_openshift, released 09 September 2025
 {: #cl-boms-41647_1580_openshift_W}
@@ -870,8 +843,6 @@ Red Hat OpenShift and Red Hat CoreOS 4.16.47
 :   For more information, see the [change logs](https://docs.redhat.com/en/documentation/openshift_container_platform/4.16/html/release_notes/ocp-4-16-release-notes.html#ocp-4-16-47_release-notes){: external}.
 HAProxy e0a48fcf355d98dc769ea048d2fd02044b11ed62
 :   Resolves the following CVEs: [CVE-2025-6020](https://nvd.nist.gov/vuln/detail/CVE-2025-6020){: external}, and [CVE-2025-8941](https://nvd.nist.gov/vuln/detail/CVE-2025-8941){: external}.
-
-{: #cl-boms-41647_1580_openshift_W-component-table}
 
 
 ### Worker node fix pack 4.16.46_1579_openshift, released 26 August 2025
@@ -889,24 +860,25 @@ Red Hat OpenShift and Red Hat CoreOS 4.16.46
 HAProxy 3293782c542587d0ce46be4d053036b75509f4ef
 :   Resolves the following CVEs: [CVE-2025-5914](https://nvd.nist.gov/vuln/detail/CVE-2025-5914){: external}.
 
-{: #cl-boms-41646_1579_openshift_W-component-table}
-
 
 ### Master fix pack 4.16.45_1578_openshift, released 20 August 2025
 {: #41645_1578_openshift_M}
 
-The following table shows the changes that are in the master fix pack 4.16.45_1578_openshift. Master patch updates are applied automatically. 
+The following list shows the changes that are in the master fix pack 4.16.45_1578_openshift. Master patch updates are applied automatically. 
 
 
-| Component | Previous | Current | Description |
-| --- | --- | --- | --- |
-| etcd | v3.5.21 | v3.5.22 | See the [etcd release notes](https://github.com/etcd-io/etcd/releases/v3.5.22){: external}. |
-| {{site.data.keyword.cloud_notm}} Controller Manager | v1.29.15-16 | v1.29.15-18 | New version contains updates and security fixes. |
-| {{site.data.keyword.cloud_notm}} RBAC Operator | 38dc95c | 8a12251 | New version contains updates and security fixes. |
-| Key Management Service provider | v2.10.15 | v2.10.16 | New version contains updates and security fixes. |
-| {{site.data.keyword.openshiftlong_notm}} | 4.16.43 | 4.16.45 | See the [{{site.data.keyword.openshiftlong_notm}} release notes](https://docs.redhat.com/en/documentation/openshift_container_platform/4.16/html/release_notes/ocp-4-16-release-notes#ocp-4-16-45_release-notes){: external}. |
-| {{site.data.keyword.openshiftlong_notm}} Control Plane Operator, Metrics Server, and toolkit | v4.16.0+20250627 | v4.16.0+20250808 | See the [{{site.data.keyword.openshiftlong_notm}} toolkit release notes](https://github.com/openshift/ibm-roks-toolkit/releases/tag/v4.16.0+20250808){: external}. |
-{: caption="Changes since version 4.16.43_1574_openshift" caption-side="bottom"}
+etcd v3.5.22
+:   See the [etcd release notes](https://github.com/etcd-io/etcd/releases/v3.5.22){: external}.
+{{site.data.keyword.cloud_notm}} Controller Manager v1.29.15-18
+:   New version contains updates and security fixes.
+{{site.data.keyword.cloud_notm}} RBAC Operator 8a12251
+:   New version contains updates and security fixes.
+Key Management Service provider v2.10.16
+:   New version contains updates and security fixes.
+{{site.data.keyword.openshiftlong_notm}} 4.16.45
+:   See the [{{site.data.keyword.openshiftlong_notm}} release notes](https://docs.redhat.com/en/documentation/openshift_container_platform/4.16/html/release_notes/ocp-4-16-release-notes#ocp-4-16-45_release-notes){: external}.
+{{site.data.keyword.openshiftlong_notm}} Control Plane Operator, Metrics Server, and toolkit v4.16.0+20250808
+:   See the [{{site.data.keyword.openshiftlong_notm}} toolkit release notes](https://github.com/openshift/ibm-roks-toolkit/releases/tag/v4.16.0+20250808){: external}.
 
 
 ### Worker node fix pack 4.16.45_1576_openshift, released 12 August 2025
@@ -924,30 +896,37 @@ Red Hat OpenShift and Red Hat CoreOS 4.16.45
 HAProxy 3a9451f4782fa8e8e9ed60b060dc4393c7e1e31a
 :   Resolves the following CVEs: [CVE-2025-6965](https://nvd.nist.gov/vuln/detail/CVE-2025-6965){: external}, [CVE-2025-8058](https://nvd.nist.gov/vuln/detail/CVE-2025-8058){: external}, and [CVE-2025-7425](https://nvd.nist.gov/vuln/detail/CVE-2025-7425){: external}.
 
-{: #cl-boms-41645_1576_openshift_W-component-table}
-
 
 ### Master fix pack 4.16.43_1574_openshift, released 30 July 2025
 {: #41643_1574_openshift_M}
 
-The following table shows the changes that are in the master fix pack 4.16.43_1574_openshift. Master patch updates are applied automatically. 
+The following list shows the changes that are in the master fix pack 4.16.43_1574_openshift. Master patch updates are applied automatically. 
 
 
-| Component | Previous | Current | Description |
-| --- | --- | --- | --- |
-| Calico | v3.28.4 | v3.28.5 | See the [Calico release notes](https://archive-os-3-28.netlify.app/calico/3.28/release-notes/#calico-open-source-3285-bug-fix-update){: external}. |
-| Calico API server | v3.28.4 | v3.28.5 | See the [Calico release notes](https://docs.tigera.io/archive){: external}. |
-| Cluster health image | v1.6.9 | v1.6.10 | New version contains updates and security fixes. |
-| {{site.data.keyword.cloud_notm}} Block Storage driver and plug-in | v2.5.19 | v2.5.20 | New version contains updates and security fixes. |
-| {{site.data.keyword.cloud_notm}} Controller Manager | v1.29.15-12 | v1.29.15-16 | New version contains updates and security fixes. |
-| {{site.data.keyword.filestorage_full_notm}} for Classic plug-in and monitor | 450 | 451 | New version contains updates and security fixes. |
-| Key Management Service provider | v2.10.14 | v2.10.15 | New version contains updates and security fixes. |
-| Load balancer and load balancer monitor for {{site.data.keyword.cloud_notm}} Provider | 3293 | 3347 | New version contains updates and security fixes. |
-| Portieris admission controller | v0.13.28 | v0.13.29 | See the [Portieris admission controller release notes](https://github.com/{{site.data.keyword.IBM_notm}}/portieris/releases/tag/v0.13.29){: external}. |
-| {{site.data.keyword.openshiftlong_notm}}. | 4.16.41 | 4.16.43 | See the [{{site.data.keyword.openshiftlong_notm}} release notes](https://docs.redhat.com/en/documentation/openshift_container_platform/4.16#ocp-4-16-43_release-notes){: external}. |
-| {{site.data.keyword.openshiftlong_notm}} Control Plane Operator, Metrics Server, and toolkit | 4.16.0+20250609 | 4.16.0+20250627 | See the [{{site.data.keyword.openshiftlong_notm}} toolkit release notes](https://github.com/openshift/ibm-roks-toolkit/releases/tag/v4.16.0+20250627){: external}. |
-| Tigera Operator | v1.34.11 | v1.34.13 | See the [Tigera Operator release notes](https://github.com/tigera/operator/releases/tag/v1.34.13){: external}. |
-{: caption="Changes since version 4.16.41_1570_openshift" caption-side="bottom"}
+Calico v3.28.5
+:   See the [Calico release notes](https://archive-os-3-28.netlify.app/calico/3.28/release-notes/#calico-open-source-3285-bug-fix-update){: external}.
+Calico API server v3.28.5
+:   See the [Calico release notes](https://docs.tigera.io/archive){: external}.
+Cluster health image v1.6.10
+:   New version contains updates and security fixes.
+{{site.data.keyword.cloud_notm}} Block Storage driver and plug-in v2.5.20
+:   New version contains updates and security fixes.
+{{site.data.keyword.cloud_notm}} Controller Manager v1.29.15-16
+:   New version contains updates and security fixes.
+{{site.data.keyword.filestorage_full_notm}} for Classic plug-in and monitor 451
+:   New version contains updates and security fixes.
+Key Management Service provider v2.10.15
+:   New version contains updates and security fixes.
+Load balancer and load balancer monitor for {{site.data.keyword.cloud_notm}} Provider 3347
+:   New version contains updates and security fixes.
+Portieris admission controller v0.13.29
+:   See the [Portieris admission controller release notes](https://github.com/{{site.data.keyword.IBM_notm}}/portieris/releases/tag/v0.13.29){: external}.
+{{site.data.keyword.openshiftlong_notm}}. 4.16.43
+:   See the [{{site.data.keyword.openshiftlong_notm}} release notes](https://docs.redhat.com/en/documentation/openshift_container_platform/4.16#ocp-4-16-43_release-notes){: external}.
+{{site.data.keyword.openshiftlong_notm}} Control Plane Operator, Metrics Server, and toolkit 4.16.0+20250627
+:   See the [{{site.data.keyword.openshiftlong_notm}} toolkit release notes](https://github.com/openshift/ibm-roks-toolkit/releases/tag/v4.16.0+20250627){: external}.
+Tigera Operator v1.34.13
+:   See the [Tigera Operator release notes](https://github.com/tigera/operator/releases/tag/v1.34.13){: external}.
 
 
 ### Worker node fix pack 4.16.44_1575_openshift, released 28 July 2025
@@ -965,8 +944,6 @@ Red Hat OpenShift and Red Hat CoreOS 4.16.44
 HAProxy b19109a289be3a60985c14bfdaf2b48a472556c0
 :   Resolves the following CVEs: [CVE-2024-54661](https://nvd.nist.gov/vuln/detail/CVE-2024-54661){: external}, [CVE-2024-34397](https://nvd.nist.gov/vuln/detail/CVE-2024-34397){: external}, [CVE-2019-17543](https://nvd.nist.gov/vuln/detail/CVE-2019-17543){: external}, [CVE-2024-52533](https://nvd.nist.gov/vuln/detail/CVE-2024-52533){: external}, and [CVE-2025-4373](https://nvd.nist.gov/vuln/detail/CVE-2025-4373){: external}.
 
-{: #cl-boms-41644_1575_openshift_W-component-table}
-
 
 ### Worker node fix pack 4.16.43_1573_openshift, released 14 July 2025
 {: #cl-boms-41643_1573_openshift_W}
@@ -982,8 +959,6 @@ Red Hat OpenShift and Red Hat CoreOS 4.16.43
 :   For more information, see the [change logs](https://docs.redhat.com/en/documentation/openshift_container_platform/4.16/html/release_notes/ocp-4-16-release-notes.html#ocp-4-16-43_release-notes){: external}.
 HAProxy 3bb13ac682885a0885eacb7edd1ee7a36d54e2a8
 :   Resolves the following CVEs: [CVE-2025-6021](https://nvd.nist.gov/vuln/detail/CVE-2025-6021){: external}, [CVE-2025-49796](https://nvd.nist.gov/vuln/detail/CVE-2025-49796){: external}, [CVE-2025-49794](https://nvd.nist.gov/vuln/detail/CVE-2025-49794){: external}, and [CVE-2025-6020](https://nvd.nist.gov/vuln/detail/CVE-2025-6020){: external}.
-
-{: #cl-boms-41643_1573_openshift_W-component-table}
 
 
 ### Worker node fix pack 4.16.42_1572_openshift, released 01 July 2025
@@ -1001,26 +976,29 @@ Red Hat OpenShift and Red Hat CoreOS 4.16.42
 HAProxy 951efd90b46e95a54751966c644ac37c4c901f92
 :   
 
-{: #cl-boms-41642_1572_openshift_W-component-table}
-
 
 ### Master fix pack 4.16.41_1570_openshift, released 18 June 2025
 {: #41641_1570_openshift_M}
 
-The following table shows the changes that are in the master fix pack 4.16.41_1570_openshift. Master patch updates are applied automatically. 
+The following list shows the changes that are in the master fix pack 4.16.41_1570_openshift. Master patch updates are applied automatically. 
 
 
-| Component | Previous | Current | Description |
-| --- | --- | --- | --- |
-| Calico | v3.28.3 | v3.28.4 | See the [Calico release notes](https://archive-os-3-28.netlify.app/calico/3.28/release-notes/#v3.28.4){: external}. |
-| {{site.data.keyword.cloud_notm}} Block Storage driver and plug-in | v2.5.17 | v2.5.19 | New version contains updates and security fixes. |
-| {{site.data.keyword.cloud_notm}} Controller Manager | v1.29.15-9 | v1.29.15-12 | New version contains updates and security fixes. |
-| {{site.data.keyword.cloud_notm}} RBAC Operator | d1545bd | 38dc95c | New version contains updates and security fixes. |
-| Key Management Service provider | v2.10.13 | v2.10.14 | New version contains updates and security fixes. |
-| {{site.data.keyword.openshiftlong_notm}}. | 4.16.40 | 4.16.41 | See the [{{site.data.keyword.openshiftlong_notm}} release notes](https://docs.redhat.com/en/documentation/openshift_container_platform/4.16/html/release_notes/ocp-4-16-release-notes#ocp-4-16-41){: external}. |
-| {{site.data.keyword.openshiftlong_notm}} Control Plane Operator, Metrics Server, and toolkit | 4.16.0+20250509 | 4.16.0+20250609 | See the [{{site.data.keyword.openshiftlong_notm}} toolkit release notes](https://github.com/openshift/ibm-roks-toolkit/releases/tag/v4.16.0+20250609){: external}. |
-| Tigera Operator | v1.34.8 | v1.34.11 | See the [Tigera Operator release notes](https://github.com/tigera/operator/releases/tag/v1.34.11){: external}. |
-{: caption="Changes since version 4.16.40_1567_openshift" caption-side="bottom"}
+Calico v3.28.4
+:   See the [Calico release notes](https://archive-os-3-28.netlify.app/calico/3.28/release-notes/#v3.28.4){: external}.
+{{site.data.keyword.cloud_notm}} Block Storage driver and plug-in v2.5.19
+:   New version contains updates and security fixes.
+{{site.data.keyword.cloud_notm}} Controller Manager v1.29.15-12
+:   New version contains updates and security fixes.
+{{site.data.keyword.cloud_notm}} RBAC Operator 38dc95c
+:   New version contains updates and security fixes.
+Key Management Service provider v2.10.14
+:   New version contains updates and security fixes.
+{{site.data.keyword.openshiftlong_notm}}. 4.16.41
+:   See the [{{site.data.keyword.openshiftlong_notm}} release notes](https://docs.redhat.com/en/documentation/openshift_container_platform/4.16/html/release_notes/ocp-4-16-release-notes#ocp-4-16-41){: external}.
+{{site.data.keyword.openshiftlong_notm}} Control Plane Operator, Metrics Server, and toolkit 4.16.0+20250609
+:   See the [{{site.data.keyword.openshiftlong_notm}} toolkit release notes](https://github.com/openshift/ibm-roks-toolkit/releases/tag/v4.16.0+20250609){: external}.
+Tigera Operator v1.34.11
+:   See the [Tigera Operator release notes](https://github.com/tigera/operator/releases/tag/v1.34.11){: external}.
 
 
 ### Worker node fix pack 4.16.41_1571_openshift, released 16 June 2025
@@ -1038,8 +1016,6 @@ Red Hat OpenShift and Red Hat CoreOS 4.16.41
 HAProxy 951efd90b46e95a54751966c644ac37c4c901f92
 :   Resolves the following CVEs: [CVE-2025-4802](https://nvd.nist.gov/vuln/detail/CVE-2025-4802){: external}, [CVE-2025-32414](https://nvd.nist.gov/vuln/detail/CVE-2025-32414){: external}, and [CVE-2025-3576](https://nvd.nist.gov/vuln/detail/CVE-2025-3576){: external}.
 
-{: #cl-boms-41641_1571_openshift_W-component-table}
-
 
 ### Worker node fix pack 4.16.41_1568_openshift, released 04 June 2025
 {: #cl-boms-41641_1568_openshift_W}
@@ -1056,26 +1032,29 @@ Red Hat OpenShift and Red Hat CoreOS 4.16.41
 HAProxy 978e3c26ee7634e39a940696aaf57d9e374db5ce
 :   
 
-{: #cl-boms-41641_1568_openshift_W-component-table}
-
 
 ### Master fix pack 4.16.40_1567_openshift, released 28 May 2025
 {: #41640_1567_openshift_M}
 
-The following table shows the changes that are in the master fix pack 4.16.40_1567_openshift. Master patch updates are applied automatically. 
+The following list shows the changes that are in the master fix pack 4.16.40_1567_openshift. Master patch updates are applied automatically. 
 
 
-| Component | Previous | Current | Description |
-| --- | --- | --- | --- |
-| Cluster health image | v1.6.8 | v1.6.9 | New version contains updates and security fixes. |
-| {{site.data.keyword.cloud_notm}} Controller Manager | v1.29.15-6 | v1.29.15-9 | New version contains updates and security fixes. |
-| {{site.data.keyword.filestorage_full_notm}} for Classic plug-in and monitor | 449 | 450 | New version contains updates and security fixes. |
-| Key Management Service provider | v2.10.12 | v2.10.13 | New version contains updates and security fixes. |
-| Load balancer and load balancer monitor for {{site.data.keyword.cloud_notm}} Provider | 3232 | 3293 | New version contains updates and security fixes. |
-| Portieris admission controller | v0.13.26 | v0.13.28 | See the [Portieris admission controller release notes](https://github.com/{{site.data.keyword.IBM_notm}}/portieris/releases/tag/v0.13.28){: external}. |
-| {{site.data.keyword.openshiftlong_notm}}. | 4.16.38 | 4.16.40 | See the [{{site.data.keyword.openshiftlong_notm}} release notes](https://docs.redhat.com/en/documentation/openshift_container_platform/4.16/html/release_notes/ocp-4-16-release-notes#ocp-4-16-40_release-notes){: external}. |
-| {{site.data.keyword.openshiftlong_notm}} Control Plane Operator, Metrics Server, and toolkit | 4.16.0+20250414 | 4.16.0+20250509 | See the [{{site.data.keyword.openshiftlong_notm}} toolkit release notes](https://github.com/openshift/ibm-roks-toolkit/releases/tag/v4.16.0+20250509){: external}. |
-{: caption="Changes since version 4.16.38_1564_openshift" caption-side="bottom"}
+Cluster health image v1.6.9
+:   New version contains updates and security fixes.
+{{site.data.keyword.cloud_notm}} Controller Manager v1.29.15-9
+:   New version contains updates and security fixes.
+{{site.data.keyword.filestorage_full_notm}} for Classic plug-in and monitor 450
+:   New version contains updates and security fixes.
+Key Management Service provider v2.10.13
+:   New version contains updates and security fixes.
+Load balancer and load balancer monitor for {{site.data.keyword.cloud_notm}} Provider 3293
+:   New version contains updates and security fixes.
+Portieris admission controller v0.13.28
+:   See the [Portieris admission controller release notes](https://github.com/{{site.data.keyword.IBM_notm}}/portieris/releases/tag/v0.13.28){: external}.
+{{site.data.keyword.openshiftlong_notm}}. 4.16.40
+:   See the [{{site.data.keyword.openshiftlong_notm}} release notes](https://docs.redhat.com/en/documentation/openshift_container_platform/4.16/html/release_notes/ocp-4-16-release-notes#ocp-4-16-40_release-notes){: external}.
+{{site.data.keyword.openshiftlong_notm}} Control Plane Operator, Metrics Server, and toolkit 4.16.0+20250509
+:   See the [{{site.data.keyword.openshiftlong_notm}} toolkit release notes](https://github.com/openshift/ibm-roks-toolkit/releases/tag/v4.16.0+20250509){: external}.
 
 
 ### Worker node fix pack 4.16.40_1566_openshift, released 19 May 2025
@@ -1093,8 +1072,6 @@ Red Hat OpenShift and Red Hat CoreOS 4.16.40
 HAProxy 978e3c26ee7634e39a940696aaf57d9e374db5ce
 :   
 
-{: #cl-boms-41640_1566_openshift_W-component-table}
-
 
 ### Worker node fix pack 4.16.39_1565_openshift, released 07 May 2025
 {: #cl-boms-41639_1565_openshift_W}
@@ -1111,28 +1088,33 @@ Red Hat OpenShift and Red Hat CoreOS 4.16.39
 HAProxy 978e3c26ee7634e39a940696aaf57d9e374db5ce
 :   Resolves the following CVEs: [CVE-2024-12243](https://nvd.nist.gov/vuln/detail/CVE-2024-12243){: external}, and [CVE-2024-12133](https://nvd.nist.gov/vuln/detail/CVE-2024-12133){: external}.
 
-{: #cl-boms-41639_1565_openshift_W-component-table}
-
 
 ### Master fix pack 4.16.38_1564_openshift, released 30 April 2025
 {: #41638_1564_openshift_M}
 
-The following table shows the changes that are in the master fix pack 4.16.38_1564_openshift. Master patch updates are applied automatically. 
+The following list shows the changes that are in the master fix pack 4.16.38_1564_openshift. Master patch updates are applied automatically. 
 
 
-| Component | Previous | Current | Description |
-| --- | --- | --- | --- |
-| Calico | v3.28.2 | v3.28.3 | See the [Calico release notes](https://archive-os-3-28.netlify.app/calico/3.28/release-notes/#v3.28.3){: external}. |
-| Cluster health image | v1.6.7 | v1.6.8 | New version contains updates and security fixes. |
-| etcd | v3.5.18 | v3.5.21 | See the [etcd release notes](https://github.com/etcd-io/etcd/releases/v3.5.21){: external}. |
-| {{site.data.keyword.cloud_notm}} Controller Manager | v1.29.15-1 | v1.29.15-6 | New version contains updates and security fixes. |
-| {{site.data.keyword.cloud_notm}} RBAC Operator | cb4f333 | d1545bd | New version contains updates and security fixes. |
-| Key Management Service provider | v2.10.11 | v2.10.12 | New version contains updates and security fixes. |
-| Portieris admission controller | v0.13.25 | v0.13.26 | See the [Portieris admission controller release notes](https://github.com/{{site.data.keyword.IBM_notm}}/portieris/releases/tag/v0.13.26){: external}. |
-| {{site.data.keyword.openshiftlong_notm}}. | 4.16.36 | 4.16.38 | See the [{{site.data.keyword.openshiftlong_notm}} release notes](https://docs.redhat.com/en/documentation/openshift_container_platform/4.16/html/release_notes/ocp-4-16-release-notes#ocp-4-16-38){: external}. |
-| {{site.data.keyword.openshiftlong_notm}} Control Plane Operator, Metrics Server, and toolkit | 4.16.0+20250313 | 4.16.0+20250414 | See the [{{site.data.keyword.openshiftlong_notm}} toolkit release notes](https://github.com/openshift/ibm-roks-toolkit/releases/tag/v4.16.0+20250414){: external}. |
-| Tigera Operator | v1.34.5 | v1.34.8 | See the [Tigera Operator release notes](https://github.com/tigera/operator/releases/tag/v1.34.8){: external}. |
-{: caption="Changes since version 4.16.36_1560_openshift" caption-side="bottom"}
+Calico v3.28.3
+:   See the [Calico release notes](https://archive-os-3-28.netlify.app/calico/3.28/release-notes/#v3.28.3){: external}.
+Cluster health image v1.6.8
+:   New version contains updates and security fixes.
+etcd v3.5.21
+:   See the [etcd release notes](https://github.com/etcd-io/etcd/releases/v3.5.21){: external}.
+{{site.data.keyword.cloud_notm}} Controller Manager v1.29.15-6
+:   New version contains updates and security fixes.
+{{site.data.keyword.cloud_notm}} RBAC Operator d1545bd
+:   New version contains updates and security fixes.
+Key Management Service provider v2.10.12
+:   New version contains updates and security fixes.
+Portieris admission controller v0.13.26
+:   See the [Portieris admission controller release notes](https://github.com/{{site.data.keyword.IBM_notm}}/portieris/releases/tag/v0.13.26){: external}.
+{{site.data.keyword.openshiftlong_notm}}. 4.16.38
+:   See the [{{site.data.keyword.openshiftlong_notm}} release notes](https://docs.redhat.com/en/documentation/openshift_container_platform/4.16/html/release_notes/ocp-4-16-release-notes#ocp-4-16-38){: external}.
+{{site.data.keyword.openshiftlong_notm}} Control Plane Operator, Metrics Server, and toolkit 4.16.0+20250414
+:   See the [{{site.data.keyword.openshiftlong_notm}} toolkit release notes](https://github.com/openshift/ibm-roks-toolkit/releases/tag/v4.16.0+20250414){: external}.
+Tigera Operator v1.34.8
+:   See the [Tigera Operator release notes](https://github.com/tigera/operator/releases/tag/v1.34.8){: external}.
 
 
 ### Worker node fix pack 4.16.38_1563_openshift, released 21 April 2025
@@ -1150,8 +1132,6 @@ Red Hat OpenShift and Red Hat CoreOS 4.16.38
 HAProxy bb0015364d95e0a2e7ab83d4a659d1541cee183e
 :   Resolves the following CVEs: [CVE-2025-0395](https://nvd.nist.gov/vuln/detail/CVE-2025-0395){: external}, and [CVE-2024-8176](https://nvd.nist.gov/vuln/detail/CVE-2024-8176){: external}.
 
-{: #cl-boms-41638_1563_openshift_W-component-table}
-
 
 ### Worker node fix pack 4.16.38_1562_openshift, released 08 April 2025
 {: #cl-boms-41638_1562_openshift_W}
@@ -1168,26 +1148,29 @@ Red Hat OpenShift and Red Hat CoreOS 4.16.38
 HAProxy 997a4ab1e89a5c8ccf3a6823785d7ab5e34b0c83
 :   
 
-{: #cl-boms-41638_1562_openshift_W-component-table}
-
 
 ### Master fix pack 4.16.36_1560_openshift, released 26 March 2025
 {: #41636_1560_openshift_M}
 
-The following table shows the changes that are in the master fix pack 4.16.36_1560_openshift. Master patch updates are applied automatically. 
+The following list shows the changes that are in the master fix pack 4.16.36_1560_openshift. Master patch updates are applied automatically. 
 
 
-| Component | Previous | Current | Description |
-| --- | --- | --- | --- |
-| Cluster health image | v1.6.4 | v1.6.7 | New version contains updates and security fixes. |
-| etcd | v3.5.17 | v3.5.18 | See the [etcd release notes](https://github.com/etcd-io/etcd/releases/v3.5.18){: external}. |
-| {{site.data.keyword.cloud_notm}} Controller Manager | v1.29.13-3 | v1.29.15-1 | New version contains updates and security fixes. |
-| Key Management Service provider | v2.10.10 | v2.10.11 | New version contains updates and security fixes. |
-| Load balancer and load balancer monitor for {{site.data.keyword.cloud_notm}} Provider | 3178 | 3232 | New version contains updates and security fixes. |
-| Portieris admission controller | v0.13.23 | v0.13.25 | See the [Portieris admission controller release notes](https://github.com/{{site.data.keyword.IBM_notm}}/portieris/releases/tag/v0.13.25){: external}. |
-| {{site.data.keyword.openshiftlong_notm}}. | 4.16.32 | 4.16.36 | See the [{{site.data.keyword.openshiftlong_notm}} release notes](https://docs.redhat.com/en/documentation/openshift_container_platform/4.16/html/release_notes/ocp-4-16-release-notes#ocp-4-16-36){: external}. |
-| {{site.data.keyword.openshiftlong_notm}} Control Plane Operator, Metrics Server, and toolkit | 4.16.0+20250102 | 4.16.0+20250313 | See the [{{site.data.keyword.openshiftlong_notm}} toolkit release notes](https://github.com/openshift/ibm-roks-toolkit/releases/tag/v4.16.0+20250313){: external}. |
-{: caption="Changes since version 4.16.32_1557_openshift" caption-side="bottom"}
+Cluster health image v1.6.7
+:   New version contains updates and security fixes.
+etcd v3.5.18
+:   See the [etcd release notes](https://github.com/etcd-io/etcd/releases/v3.5.18){: external}.
+{{site.data.keyword.cloud_notm}} Controller Manager v1.29.15-1
+:   New version contains updates and security fixes.
+Key Management Service provider v2.10.11
+:   New version contains updates and security fixes.
+Load balancer and load balancer monitor for {{site.data.keyword.cloud_notm}} Provider 3232
+:   New version contains updates and security fixes.
+Portieris admission controller v0.13.25
+:   See the [Portieris admission controller release notes](https://github.com/{{site.data.keyword.IBM_notm}}/portieris/releases/tag/v0.13.25){: external}.
+{{site.data.keyword.openshiftlong_notm}}. 4.16.36
+:   See the [{{site.data.keyword.openshiftlong_notm}} release notes](https://docs.redhat.com/en/documentation/openshift_container_platform/4.16/html/release_notes/ocp-4-16-release-notes#ocp-4-16-36){: external}.
+{{site.data.keyword.openshiftlong_notm}} Control Plane Operator, Metrics Server, and toolkit 4.16.0+20250313
+:   See the [{{site.data.keyword.openshiftlong_notm}} toolkit release notes](https://github.com/openshift/ibm-roks-toolkit/releases/tag/v4.16.0+20250313){: external}.
 
 
 ### Worker node fix pack 4.16.37_1561_openshift, released 24 March 2025
@@ -1205,8 +1188,6 @@ Red Hat OpenShift and Red Hat CoreOS 4.16.37
 HAProxy 997a4ab1e89a5c8ccf3a6823785d7ab5e34b0c83
 :   Resolves the following CVEs: [CVE-2024-56171](https://nvd.nist.gov/vuln/detail/CVE-2024-56171){: external}, [CVE-2025-24528](https://nvd.nist.gov/vuln/detail/CVE-2025-24528){: external}, and [CVE-2025-24928](https://nvd.nist.gov/vuln/detail/CVE-2025-24928){: external}.
 
-{: #cl-boms-41637_1561_openshift_W-component-table}
-
 
 ### Worker node fix pack 4.16.37_1559_openshift, released 11 March 2025
 {: #cl-boms-41637_1559_openshift_W}
@@ -1222,8 +1203,6 @@ Red Hat OpenShift and Red Hat CoreOS 4.16.37
 :   For more information, see the [change logs](https://docs.redhat.com/en/documentation/openshift_container_platform/4.16/html/release_notes/ocp-4-16-release-notes#ocp-4-16-37_release-notes){: external}.
 HAProxy 1d72cc8c7d02da6ba0340191fa8d9a86550e5090
 :   
-
-{: #cl-boms-41637_1559_openshift_W-component-table}
 
 
 ### Worker node fix pack 4.16.35_1558_openshift, released 24 February 2025
@@ -1241,24 +1220,25 @@ Red Hat OpenShift and Red Hat CoreOS 4.16.35
 HAProxy 1d72cc8c7d02da6ba0340191fa8d9a86550e5090
 :   Resolves the following CVEs: [CVE-2020-11023](https://nvd.nist.gov/vuln/detail/CVE-2020-11023){: external}, and [CVE-2022-49043](https://nvd.nist.gov/vuln/detail/CVE-2022-49043){: external}.
 
-{: #cl-boms-41635_1558_openshift_W-component-table}
-
 
 ### Master fix pack 4.16.32_1557_openshift, released 19 February 2025
 {: #41632_1557_openshift_M}
 
-The following table shows the changes that are in the master fix pack 4.16.32_1557_openshift. Master patch updates are applied automatically. 
+The following list shows the changes that are in the master fix pack 4.16.32_1557_openshift. Master patch updates are applied automatically. 
 
 
-| Component | Previous | Current | Description |
-| --- | --- | --- | --- |
-| {{site.data.keyword.cloud_notm}} Block Storage driver and plug-in | v2.5.16 | v2.5.17 | New version contains updates and security fixes. |
-| {{site.data.keyword.cloud_notm}} Controller Manager | v1.29.12-3 | v1.29.13-3 | New version contains updates and security fixes. |
-| {{site.data.keyword.filestorage_full_notm}} for Classic plug-in and monitor | 447 | 449 | New version contains updates and security fixes. |
-| Key Management Service provider | v2.10.9 | v2.10.10 | New version contains updates and security fixes. |
-| Load balancer and load balancer monitor for {{site.data.keyword.cloud_notm}} Provider | 3079 | 3178 | New version contains updates and security fixes. |
-| {{site.data.keyword.openshiftlong_notm}}. | 4.16.28 | 4.16.32 | See the [{{site.data.keyword.openshiftlong_notm}} release notes](https://docs.redhat.com/en/documentation/openshift_container_platform/4.16/html/release_notes/ocp-4-16-release-notes#ocp-4-16-32){: external}. |
-{: caption="Changes since version 4.16.28_1550_openshift" caption-side="bottom"}
+{{site.data.keyword.cloud_notm}} Block Storage driver and plug-in v2.5.17
+:   New version contains updates and security fixes.
+{{site.data.keyword.cloud_notm}} Controller Manager v1.29.13-3
+:   New version contains updates and security fixes.
+{{site.data.keyword.filestorage_full_notm}} for Classic plug-in and monitor 449
+:   New version contains updates and security fixes.
+Key Management Service provider v2.10.10
+:   New version contains updates and security fixes.
+Load balancer and load balancer monitor for {{site.data.keyword.cloud_notm}} Provider 3178
+:   New version contains updates and security fixes.
+{{site.data.keyword.openshiftlong_notm}}. 4.16.32
+:   See the [{{site.data.keyword.openshiftlong_notm}} release notes](https://docs.redhat.com/en/documentation/openshift_container_platform/4.16/html/release_notes/ocp-4-16-release-notes#ocp-4-16-32){: external}.
 
 
 ### Worker node fix pack 4.16.32_1556_openshift, released 11 February 2025
@@ -1276,8 +1256,6 @@ Red Hat OpenShift and Red Hat CoreOS 4.16.32
 HAProxy 03d1ee01e9241d0e5ec93b9eb8986feb2771a01a
 :   Resolves the following CVEs: [CVE-2019-12900](https://nvd.nist.gov/vuln/detail/CVE-2019-12900){: external}.
 
-{: #cl-boms-41632_1556_openshift_W-component-table}
-
 
 ### Worker node fix pack 4.16.30_1554_openshift, released 29 January 2025
 {: #cl-boms-41630_1554_openshift_W}
@@ -1294,26 +1272,29 @@ Red Hat OpenShift and Red Hat CoreOS 4.16.30
 HAProxy 14daa781a66ca5ed5754656ce53c3cca4af580b5
 :   
 
-{: #cl-boms-41630_1554_openshift_W-component-table}
-
 
 ### Master fix pack 4.16.28_1550_openshift, released 22 January 2025
 {: #41628_1550_openshift_M}
 
-The following table shows the changes that are in the master fix pack 4.16.28_1550_openshift. Master patch updates are applied automatically. 
+The following list shows the changes that are in the master fix pack 4.16.28_1550_openshift. Master patch updates are applied automatically. 
 
 
-| Component | Previous | Current | Description |
-| --- | --- | --- | --- |
-| Cluster health image | v1.6.3 | v1.6.4 | New version contains updates and security fixes. |
-| etcd | v3.5.16 | v3.5.17 | See the [etcd release notes](https://github.com/etcd-io/etcd/releases/v3.5.17){: external}. |
-| {{site.data.keyword.cloud_notm}} Controller Manager | v1.29.10-4 | v1.29.12-3 | New version contains updates and security fixes. |
-| {{site.data.keyword.cloud_notm}} RBAC Operator | 743ed58 | cb4f333 | New version contains updates and security fixes. |
-| Key Management Service provider | v2.10.8 | v2.10.9 | New version contains updates and security fixes. |
-| Portieris admission controller | v0.13.21 | v0.13.23 | See the [Portieris admission controller release notes](https://github.com/{{site.data.keyword.IBM_notm}}/portieris/releases/tag/v0.13.23){: external}. |
-| {{site.data.keyword.openshiftlong_notm}}. | 4.16.23 | 4.16.28 | See the [{{site.data.keyword.openshiftlong_notm}} release notes](https://docs.redhat.com/en/documentation/openshift_container_platform/4.16/html/release_notes/ocp-4-16-release-notes#ocp-4-16-28){: external}. |
-| {{site.data.keyword.openshiftlong_notm}} Control Plane Operator, Metrics Server, and toolkit | 4.16.0+20241107 | 4.16.0+20250102 | See the [{{site.data.keyword.openshiftlong_notm}} toolkit release notes](https://github.com/openshift/ibm-roks-toolkit/releases/tag/v4.16.0+20250102){: external}. |
-{: caption="Changes since version 4.16.23_1545_openshift" caption-side="bottom"}
+Cluster health image v1.6.4
+:   New version contains updates and security fixes.
+etcd v3.5.17
+:   See the [etcd release notes](https://github.com/etcd-io/etcd/releases/v3.5.17){: external}.
+{{site.data.keyword.cloud_notm}} Controller Manager v1.29.12-3
+:   New version contains updates and security fixes.
+{{site.data.keyword.cloud_notm}} RBAC Operator cb4f333
+:   New version contains updates and security fixes.
+Key Management Service provider v2.10.9
+:   New version contains updates and security fixes.
+Portieris admission controller v0.13.23
+:   See the [Portieris admission controller release notes](https://github.com/{{site.data.keyword.IBM_notm}}/portieris/releases/tag/v0.13.23){: external}.
+{{site.data.keyword.openshiftlong_notm}}. 4.16.28
+:   See the [{{site.data.keyword.openshiftlong_notm}} release notes](https://docs.redhat.com/en/documentation/openshift_container_platform/4.16/html/release_notes/ocp-4-16-release-notes#ocp-4-16-28){: external}.
+{{site.data.keyword.openshiftlong_notm}} Control Plane Operator, Metrics Server, and toolkit 4.16.0+20250102
+:   See the [{{site.data.keyword.openshiftlong_notm}} toolkit release notes](https://github.com/openshift/ibm-roks-toolkit/releases/tag/v4.16.0+20250102){: external}.
 
 
 ### Worker node fix pack 4.16.29_1549_openshift, released 13 January 2025
@@ -1331,221 +1312,243 @@ Red Hat OpenShift and Red Hat CoreOS 4.16.29
 HAProxy 14daa781a66ca5ed5754656ce53c3cca4af580b5
 :   
 
-{: #cl-boms-41629_1549_openshift_W-component-table}
-
 
 ### Worker node fix pack 4.16.27_1548_openshift, released 30 December 2024
 {: #41627_1548_openshift_W}
 
-The following table shows the changes that are in the worker node fix pack 4.16.27_1548_openshift. Worker node patch updates can be applied by updating, reloading (in classic infrastructure), or replacing (in VPC infrastructure) the worker node.
+The following list shows the changes that are in the worker node fix pack 4.16.27_1548_openshift. Worker node patch updates can be applied by updating, reloading (in classic infrastructure), or replacing (in VPC infrastructure) the worker node.
 {: shortdesc}
 
-| Component | Previous | Current | Description |
-| --- | --- | --- | --- |
-| RHEL 8 Packages | N/A | N/A | Worker node package updates for [RHSA-2024:3043](https://access.redhat.com/errata/RHSA-2024:3043){: external}, [CVE-2024-0690](https://nvd.nist.gov/vuln/detail/CVE-2024-0690){: external}, [RHSA-2024:11161](https://access.redhat.com/errata/RHSA-2024:11161){: external}, [CVE-2024-52337](https://nvd.nist.gov/vuln/detail/CVE-2024-52337){: external}. |
-| {{site.data.keyword.openshiftshort}} and Red Hat CoreOS | 4.16.26 | 4.16.27 | For more information, see the [change logs](https://docs.redhat.com/en/documentation/openshift_container_platform/4.16/html/release_notes/ocp-4-16-release-notes#ocp-4-16-27_release-notes){: external}. |
-{: caption="Changes since version 4.16.26_1547_openshift" caption-side="bottom"}
+RHEL 8 Packages
+:   Worker node package updates for [RHSA-2024:3043](https://access.redhat.com/errata/RHSA-2024:3043){: external}, [CVE-2024-0690](https://nvd.nist.gov/vuln/detail/CVE-2024-0690){: external}, [RHSA-2024:11161](https://access.redhat.com/errata/RHSA-2024:11161){: external}, [CVE-2024-52337](https://nvd.nist.gov/vuln/detail/CVE-2024-52337){: external}.
+{{site.data.keyword.openshiftshort}} and Red Hat CoreOS 4.16.27
+:   For more information, see the [change logs](https://docs.redhat.com/en/documentation/openshift_container_platform/4.16/html/release_notes/ocp-4-16-release-notes#ocp-4-16-27_release-notes){: external}.
 
 
 ### Worker node fix pack 4.16.26_1547_openshift, released 16 December 2024
 {: #41626_1547_openshift_W}
 
-The following table shows the changes that are in the worker node fix pack 4.16.26_1547_openshift. Worker node patch updates can be applied by updating, reloading (in classic infrastructure), or replacing (in VPC infrastructure) the worker node.
+The following list shows the changes that are in the worker node fix pack 4.16.26_1547_openshift. Worker node patch updates can be applied by updating, reloading (in classic infrastructure), or replacing (in VPC infrastructure) the worker node.
 {: shortdesc}
 
-| Component | Previous | Current | Description |
-| --- | --- | --- | --- |
-| RHEL 8 Packages | 4.18.0-553.30.1.el8_10 | 4.18.0-553.32.1.el8_10 | Worker node kernel & package updates for [RHSA-2024:3043](https://access.redhat.com/errata/RHSA-2024:3043){: external}, [CVE-2024-0690](https://nvd.nist.gov/vuln/detail/CVE-2024-0690){: external}, [RHSA-2024:10943](https://access.redhat.com/errata/RHSA-2024:10943){: external}, [CVE-2024-46695](https://nvd.nist.gov/vuln/detail/CVE-2024-46695){: external}, [CVE-2024-49949](https://nvd.nist.gov/vuln/detail/CVE-2024-49949){: external}, [CVE-2024-50082](https://nvd.nist.gov/vuln/detail/CVE-2024-50082){: external}, [CVE-2024-50099](https://nvd.nist.gov/vuln/detail/CVE-2024-50099){: external}, [CVE-2024-50110](https://nvd.nist.gov/vuln/detail/CVE-2024-50110){: external}, [CVE-2024-50142](https://nvd.nist.gov/vuln/detail/CVE-2024-50142){: external}, [CVE-2024-50192](https://nvd.nist.gov/vuln/detail/CVE-2024-50192){: external}, [CVE-2024-50256](https://nvd.nist.gov/vuln/detail/CVE-2024-50256){: external}, [CVE-2024-50264](https://nvd.nist.gov/vuln/detail/CVE-2024-50264){: external}, [RHSA-2024:10779](https://access.redhat.com/errata/RHSA-2024:10779){: external}, [CVE-2024-11168](https://nvd.nist.gov/vuln/detail/CVE-2024-11168){: external}, [CVE-2024-9287](https://nvd.nist.gov/vuln/detail/CVE-2024-9287){: external}, [RHSA-2024:10784](https://access.redhat.com/errata/RHSA-2024:10784){: external}, [CVE-2022-3064](https://nvd.nist.gov/vuln/detail/CVE-2022-3064){: external}. |
-| HAProxy | 55c1488 | 14daa78 | Security fixes for [CVE-2024-10963](https://nvd.nist.gov/vuln/detail/CVE-2024-10963){: external}, [CVE-2024-11168](https://nvd.nist.gov/vuln/detail/CVE-2024-11168){: external}, [CVE-2024-9287](https://nvd.nist.gov/vuln/detail/CVE-2024-9287){: external}, [CVE-2024-10041](https://nvd.nist.gov/vuln/detail/CVE-2024-10041){: external}. |
-| {{site.data.keyword.openshiftshort}} | 4.16.23 | 4.16.26 | For more information, see the [change logs](https://docs.redhat.com/en/documentation/openshift_container_platform/4.16/html/release_notes/ocp-4-16-release-notes#ocp-4-16-26_release-notes){: external}. |
-{: caption="Changes since version 4.16.23_1546_openshift" caption-side="bottom"}
+RHEL 8 Packages 4.18.0-553.32.1.el8_10
+:   Worker node kernel & package updates for [RHSA-2024:3043](https://access.redhat.com/errata/RHSA-2024:3043){: external}, [CVE-2024-0690](https://nvd.nist.gov/vuln/detail/CVE-2024-0690){: external}, [RHSA-2024:10943](https://access.redhat.com/errata/RHSA-2024:10943){: external}, [CVE-2024-46695](https://nvd.nist.gov/vuln/detail/CVE-2024-46695){: external}, [CVE-2024-49949](https://nvd.nist.gov/vuln/detail/CVE-2024-49949){: external}, [CVE-2024-50082](https://nvd.nist.gov/vuln/detail/CVE-2024-50082){: external}, [CVE-2024-50099](https://nvd.nist.gov/vuln/detail/CVE-2024-50099){: external}, [CVE-2024-50110](https://nvd.nist.gov/vuln/detail/CVE-2024-50110){: external}, [CVE-2024-50142](https://nvd.nist.gov/vuln/detail/CVE-2024-50142){: external}, [CVE-2024-50192](https://nvd.nist.gov/vuln/detail/CVE-2024-50192){: external}, [CVE-2024-50256](https://nvd.nist.gov/vuln/detail/CVE-2024-50256){: external}, [CVE-2024-50264](https://nvd.nist.gov/vuln/detail/CVE-2024-50264){: external}, [RHSA-2024:10779](https://access.redhat.com/errata/RHSA-2024:10779){: external}, [CVE-2024-11168](https://nvd.nist.gov/vuln/detail/CVE-2024-11168){: external}, [CVE-2024-9287](https://nvd.nist.gov/vuln/detail/CVE-2024-9287){: external}, [RHSA-2024:10784](https://access.redhat.com/errata/RHSA-2024:10784){: external}, [CVE-2022-3064](https://nvd.nist.gov/vuln/detail/CVE-2022-3064){: external}.
+HAProxy 14daa78
+:   Security fixes for [CVE-2024-10963](https://nvd.nist.gov/vuln/detail/CVE-2024-10963){: external}, [CVE-2024-11168](https://nvd.nist.gov/vuln/detail/CVE-2024-11168){: external}, [CVE-2024-9287](https://nvd.nist.gov/vuln/detail/CVE-2024-9287){: external}, [CVE-2024-10041](https://nvd.nist.gov/vuln/detail/CVE-2024-10041){: external}.
+{{site.data.keyword.openshiftshort}} 4.16.26
+:   For more information, see the [change logs](https://docs.redhat.com/en/documentation/openshift_container_platform/4.16/html/release_notes/ocp-4-16-release-notes#ocp-4-16-26_release-notes){: external}.
 
 
 ### Worker node fix pack 4.16.23_1546_openshift, released 05 December 2024
 {: #41623_1546_openshift_W}
 
-The following table shows the changes that are in the worker node fix pack 4.16.23_1546_openshift. Worker node patch updates can be applied by updating, reloading (in classic infrastructure), or replacing (in VPC infrastructure) the worker node.
+The following list shows the changes that are in the worker node fix pack 4.16.23_1546_openshift. Worker node patch updates can be applied by updating, reloading (in classic infrastructure), or replacing (in VPC infrastructure) the worker node.
 {: shortdesc}
 
-| Component | Previous | Current | Description |
-| --- | --- | --- | --- |
-| RHEL 8 Packages | 4.18.0-553.27.1.el8_10 | 4.18.0-553.30.1.el8_10 | Worker node kernel & package updates for [RHSA-2024:10379](https://access.redhat.com/errata/RHSA-2024:10379){: external}, [CVE-2024-10041](https://nvd.nist.gov/vuln/detail/CVE-2024-10041){: external}, [CVE-2024-10963](https://nvd.nist.gov/vuln/detail/CVE-2024-10963){: external}, [RHSA-2024:3043](https://access.redhat.com/errata/RHSA-2024:3043){: external}, [CVE-2024-0690](https://nvd.nist.gov/vuln/detail/CVE-2024-0690){: external}, [RHSA-2024:10289](https://access.redhat.com/errata/RHSA-2024:10289){: external}, [CVE-2021-33198](https://nvd.nist.gov/vuln/detail/CVE-2021-33198){: external}, [CVE-2021-4024](https://nvd.nist.gov/vuln/detail/CVE-2021-4024){: external}, [CVE-2024-9676](https://nvd.nist.gov/vuln/detail/CVE-2024-9676){: external}, [RHSA-2024:10281](https://access.redhat.com/errata/RHSA-2024:10281){: external}, [CVE-2024-27043](https://nvd.nist.gov/vuln/detail/CVE-2024-27043){: external}, [CVE-2024-27399](https://nvd.nist.gov/vuln/detail/CVE-2024-27399){: external}, [CVE-2024-38564](https://nvd.nist.gov/vuln/detail/CVE-2024-38564){: external}, [CVE-2024-46858](https://nvd.nist.gov/vuln/detail/CVE-2024-46858){: external}. |
-| RHEL 9 Packages | N/A | N/A | N/A |
-| HAProxy | N/A | N/A | N/A |
-| {{site.data.keyword.openshiftshort}} and Red Hat CoreOS | 4.16.21 | 4.16.23 | For more information, see the [change logs](https://docs.redhat.com/en/documentation/openshift_container_platform/4.16/html/release_notes/ocp-4-16-release-notes){: external}. |
-{: caption="Changes since version 4.16.21_1544_openshift" caption-side="bottom"}
+RHEL 8 Packages 4.18.0-553.30.1.el8_10
+:   Worker node kernel & package updates for [RHSA-2024:10379](https://access.redhat.com/errata/RHSA-2024:10379){: external}, [CVE-2024-10041](https://nvd.nist.gov/vuln/detail/CVE-2024-10041){: external}, [CVE-2024-10963](https://nvd.nist.gov/vuln/detail/CVE-2024-10963){: external}, [RHSA-2024:3043](https://access.redhat.com/errata/RHSA-2024:3043){: external}, [CVE-2024-0690](https://nvd.nist.gov/vuln/detail/CVE-2024-0690){: external}, [RHSA-2024:10289](https://access.redhat.com/errata/RHSA-2024:10289){: external}, [CVE-2021-33198](https://nvd.nist.gov/vuln/detail/CVE-2021-33198){: external}, [CVE-2021-4024](https://nvd.nist.gov/vuln/detail/CVE-2021-4024){: external}, [CVE-2024-9676](https://nvd.nist.gov/vuln/detail/CVE-2024-9676){: external}, [RHSA-2024:10281](https://access.redhat.com/errata/RHSA-2024:10281){: external}, [CVE-2024-27043](https://nvd.nist.gov/vuln/detail/CVE-2024-27043){: external}, [CVE-2024-27399](https://nvd.nist.gov/vuln/detail/CVE-2024-27399){: external}, [CVE-2024-38564](https://nvd.nist.gov/vuln/detail/CVE-2024-38564){: external}, [CVE-2024-46858](https://nvd.nist.gov/vuln/detail/CVE-2024-46858){: external}.
+RHEL 9 Packages
+:   
+HAProxy
+:   
+{{site.data.keyword.openshiftshort}} and Red Hat CoreOS 4.16.23
+:   For more information, see the [change logs](https://docs.redhat.com/en/documentation/openshift_container_platform/4.16/html/release_notes/ocp-4-16-release-notes){: external}.
 
 
 ### Master fix pack 4.16.23_1545_openshift, released 04 December 2024
 {: #41623_1545_openshift_M}
 
-The following table shows the changes that are in the master fix pack 4.16.23_1545_openshift. Master patch updates are applied automatically. 
+The following list shows the changes that are in the master fix pack 4.16.23_1545_openshift. Master patch updates are applied automatically. 
 
 
-| Component | Previous | Current | Description |
-| --- | --- | --- | --- |
-| {{site.data.keyword.cloud_notm}} Controller Manager | v1.29.10-2 | v1.29.10-4 | New version contains updates and security fixes. |
-| {{site.data.keyword.cloud_notm}} RBAC Operator | c4a05b0 | 743ed58 | New version contains updates and security fixes. |
-| Key Management Service provider | v2.10.7 | v2.10.8 | New version contains updates and security fixes. |
-| Load balancer and load balancer monitor for {{site.data.keyword.cloud_notm}} Provider | 3051 | 3079 | New version contains updates and security fixes. |
-| Portieris admission controller | v0.13.20 | v0.13.21 | See the [Portieris admission controller release notes](https://github.com/{{site.data.keyword.IBM_notm}}/portieris/releases/tag/v0.13.21){: external}. |
-| {{site.data.keyword.openshiftlong_notm}}. | 4.16.19 | 4.16.23 | See the [{{site.data.keyword.openshiftlong_notm}} release notes](https://docs.redhat.com/en/documentation/openshift_container_platform/4.16/html/release_notes/ocp-4-16-release-notes#ocp-4-16-23){: external}. |
-| {{site.data.keyword.openshiftlong_notm}} Control Plane Operator, Metrics Server, and toolkit | 4.16.0+20240913 | 4.16.0+20241107 | See the [{{site.data.keyword.openshiftlong_notm}} toolkit release notes](https://github.com/openshift/ibm-roks-toolkit/releases/tag/v4.16.0+20241107){: external}. |
-{: caption="Changes since version 4.16.19_1543_openshift" caption-side="bottom"}
+{{site.data.keyword.cloud_notm}} Controller Manager v1.29.10-4
+:   New version contains updates and security fixes.
+{{site.data.keyword.cloud_notm}} RBAC Operator 743ed58
+:   New version contains updates and security fixes.
+Key Management Service provider v2.10.8
+:   New version contains updates and security fixes.
+Load balancer and load balancer monitor for {{site.data.keyword.cloud_notm}} Provider 3079
+:   New version contains updates and security fixes.
+Portieris admission controller v0.13.21
+:   See the [Portieris admission controller release notes](https://github.com/{{site.data.keyword.IBM_notm}}/portieris/releases/tag/v0.13.21){: external}.
+{{site.data.keyword.openshiftlong_notm}}. 4.16.23
+:   See the [{{site.data.keyword.openshiftlong_notm}} release notes](https://docs.redhat.com/en/documentation/openshift_container_platform/4.16/html/release_notes/ocp-4-16-release-notes#ocp-4-16-23){: external}.
+{{site.data.keyword.openshiftlong_notm}} Control Plane Operator, Metrics Server, and toolkit 4.16.0+20241107
+:   See the [{{site.data.keyword.openshiftlong_notm}} toolkit release notes](https://github.com/openshift/ibm-roks-toolkit/releases/tag/v4.16.0+20241107){: external}.
 
 
 ### Worker node fix pack 4.16.21_1544_openshift, released 18 November 2024
 {: #41621_1544_openshift_W}
 
-The following table shows the changes that are in the worker node fix pack 4.16.21_1544_openshift. Worker node patch updates can be applied by updating, reloading (in classic infrastructure), or replacing (in VPC infrastructure) the worker node.
+The following list shows the changes that are in the worker node fix pack 4.16.21_1544_openshift. Worker node patch updates can be applied by updating, reloading (in classic infrastructure), or replacing (in VPC infrastructure) the worker node.
 {: shortdesc}
 
-| Component | Previous | Current | Description |
-| --- | --- | --- | --- |
-| RHEL 8 Packages | 4.18.0-553.22.1.el8_10 | 4.18.0-553.27.1.el8_10 | Worker node kernel & package updates for [RHSA-2024:8846](https://access.redhat.com/errata/RHSA-2024:8846){: external}, [CVE-2024-9341](https://nvd.nist.gov/vuln/detail/CVE-2024-9341){: external}, [CVE-2024-9407](https://nvd.nist.gov/vuln/detail/CVE-2024-9407){: external}, [CVE-2024-9675](https://nvd.nist.gov/vuln/detail/CVE-2024-9675){: external}, [RHSA-2024:8860](https://access.redhat.com/errata/RHSA-2024:8860){: external}, [CVE-2024-3596](https://nvd.nist.gov/vuln/detail/CVE-2024-3596){: external}, [RHSA-2024:9689](https://access.redhat.com/errata/RHSA-2024:9689){: external}, [CVE-2018-12699](https://nvd.nist.gov/vuln/detail/CVE-2018-12699){: external}, [RHSA-2024:8922](https://access.redhat.com/errata/RHSA-2024:8922){: external}, [CVE-2019-12900](https://nvd.nist.gov/vuln/detail/CVE-2019-12900){: external}, [RHSA-2024:3043](https://access.redhat.com/errata/RHSA-2024:3043){: external}, [CVE-2024-0690](https://nvd.nist.gov/vuln/detail/CVE-2024-0690){: external}, [RHSA-2024:9502](https://access.redhat.com/errata/RHSA-2024:9502){: external}, [CVE-2024-50602](https://nvd.nist.gov/vuln/detail/CVE-2024-50602){: external}, [RHSA-2024:8849](https://access.redhat.com/errata/RHSA-2024:8849){: external}, [CVE-2023-45539](https://nvd.nist.gov/vuln/detail/CVE-2023-45539){: external}, [RHSA-2024:8856](https://access.redhat.com/errata/RHSA-2024:8856){: external}, [CVE-2022-48773](https://nvd.nist.gov/vuln/detail/CVE-2022-48773){: external}, [CVE-2022-48936](https://nvd.nist.gov/vuln/detail/CVE-2022-48936){: external}, [CVE-2023-52492](https://nvd.nist.gov/vuln/detail/CVE-2023-52492){: external}, [CVE-2024-24857](https://nvd.nist.gov/vuln/detail/CVE-2024-24857){: external}, [CVE-2024-26851](https://nvd.nist.gov/vuln/detail/CVE-2024-26851){: external}, [CVE-2024-26924](https://nvd.nist.gov/vuln/detail/CVE-2024-26924){: external}, [CVE-2024-26976](https://nvd.nist.gov/vuln/detail/CVE-2024-26976){: external}, [CVE-2024-27017](https://nvd.nist.gov/vuln/detail/CVE-2024-27017){: external}, [CVE-2024-27062](https://nvd.nist.gov/vuln/detail/CVE-2024-27062){: external}, [CVE-2024-35839](https://nvd.nist.gov/vuln/detail/CVE-2024-35839){: external}, [CVE-2024-35898](https://nvd.nist.gov/vuln/detail/CVE-2024-35898){: external}, [CVE-2024-35939](https://nvd.nist.gov/vuln/detail/CVE-2024-35939){: external}, [CVE-2024-38540](https://nvd.nist.gov/vuln/detail/CVE-2024-38540){: external}, [CVE-2024-38541](https://nvd.nist.gov/vuln/detail/CVE-2024-38541){: external}, [CVE-2024-38586](https://nvd.nist.gov/vuln/detail/CVE-2024-38586){: external}, [CVE-2024-38608](https://nvd.nist.gov/vuln/detail/CVE-2024-38608){: external}, [CVE-2024-39503](https://nvd.nist.gov/vuln/detail/CVE-2024-39503){: external}, [CVE-2024-40924](https://nvd.nist.gov/vuln/detail/CVE-2024-40924){: external}, [CVE-2024-40961](https://nvd.nist.gov/vuln/detail/CVE-2024-40961){: external}, [CVE-2024-40983](https://nvd.nist.gov/vuln/detail/CVE-2024-40983){: external}, [CVE-2024-40984](https://nvd.nist.gov/vuln/detail/CVE-2024-40984){: external}, [CVE-2024-41009](https://nvd.nist.gov/vuln/detail/CVE-2024-41009){: external}, [CVE-2024-41042](https://nvd.nist.gov/vuln/detail/CVE-2024-41042){: external}, [CVE-2024-41066](https://nvd.nist.gov/vuln/detail/CVE-2024-41066){: external}, [CVE-2024-41092](https://nvd.nist.gov/vuln/detail/CVE-2024-41092){: external}, [CVE-2024-41093](https://nvd.nist.gov/vuln/detail/CVE-2024-41093){: external}, [CVE-2024-42070](https://nvd.nist.gov/vuln/detail/CVE-2024-42070){: external}, [CVE-2024-42079](https://nvd.nist.gov/vuln/detail/CVE-2024-42079){: external}, [CVE-2024-42244](https://nvd.nist.gov/vuln/detail/CVE-2024-42244){: external}, [CVE-2024-42284](https://nvd.nist.gov/vuln/detail/CVE-2024-42284){: external}, [CVE-2024-42292](https://nvd.nist.gov/vuln/detail/CVE-2024-42292){: external}, [CVE-2024-42301](https://nvd.nist.gov/vuln/detail/CVE-2024-42301){: external}, [CVE-2024-43854](https://nvd.nist.gov/vuln/detail/CVE-2024-43854){: external}, [CVE-2024-43880](https://nvd.nist.gov/vuln/detail/CVE-2024-43880){: external}, [CVE-2024-43889](https://nvd.nist.gov/vuln/detail/CVE-2024-43889){: external}, [CVE-2024-43892](https://nvd.nist.gov/vuln/detail/CVE-2024-43892){: external}, [CVE-2024-44935](https://nvd.nist.gov/vuln/detail/CVE-2024-44935){: external}, [CVE-2024-44989](https://nvd.nist.gov/vuln/detail/CVE-2024-44989){: external}, [CVE-2024-44990](https://nvd.nist.gov/vuln/detail/CVE-2024-44990){: external}, [CVE-2024-45018](https://nvd.nist.gov/vuln/detail/CVE-2024-45018){: external}, [CVE-2024-46826](https://nvd.nist.gov/vuln/detail/CVE-2024-46826){: external}, [CVE-2024-47668](https://nvd.nist.gov/vuln/detail/CVE-2024-47668){: external}, CIS benchmark compliance: [1.4.3](https://workbench.cisecurity.org/sections/2250437/recommendations/3599694){: external}, [1.4.4](https://workbench.cisecurity.org/sections/2250437/recommendations/3599695){: external}, [1.6.2](https://workbench.cisecurity.org/sections/2250440/recommendations/3599717){: external}, [1.6.4](https://workbench.cisecurity.org/sections/2250440/recommendations/3599722){: external}. |
-| {{site.data.keyword.openshiftshort}} and Red Hat CoreOS | 4.16.19 | 4.16.21 | For more information, see the [change logs](https://docs.redhat.com/en/documentation/openshift_container_platform/4.16/html/release_notes/ocp-4-16-release-notes#ocp-4-16-21_release-notes){: external}.	|
-| HAProxy | 885986 | 55c148 | Security fixes for [CVE-2023-45539](https://nvd.nist.gov/vuln/detail/CVE-2023-45539){: external}, [CVE-2024-3596](https://nvd.nist.gov/vuln/detail/CVE-2024-3596){: external}, [CVE-2019-12900](https://nvd.nist.gov/vuln/detail/CVE-2019-12900){: external}, [CVE-2024-50602](https://nvd.nist.gov/vuln/detail/CVE-2024-50602){: external}. |
-{: caption="Changes since version 4.16.19_1542_openshift" caption-side="bottom"}
+RHEL 8 Packages 4.18.0-553.27.1.el8_10
+:   Worker node kernel & package updates for [RHSA-2024:8846](https://access.redhat.com/errata/RHSA-2024:8846){: external}, [CVE-2024-9341](https://nvd.nist.gov/vuln/detail/CVE-2024-9341){: external}, [CVE-2024-9407](https://nvd.nist.gov/vuln/detail/CVE-2024-9407){: external}, [CVE-2024-9675](https://nvd.nist.gov/vuln/detail/CVE-2024-9675){: external}, [RHSA-2024:8860](https://access.redhat.com/errata/RHSA-2024:8860){: external}, [CVE-2024-3596](https://nvd.nist.gov/vuln/detail/CVE-2024-3596){: external}, [RHSA-2024:9689](https://access.redhat.com/errata/RHSA-2024:9689){: external}, [CVE-2018-12699](https://nvd.nist.gov/vuln/detail/CVE-2018-12699){: external}, [RHSA-2024:8922](https://access.redhat.com/errata/RHSA-2024:8922){: external}, [CVE-2019-12900](https://nvd.nist.gov/vuln/detail/CVE-2019-12900){: external}, [RHSA-2024:3043](https://access.redhat.com/errata/RHSA-2024:3043){: external}, [CVE-2024-0690](https://nvd.nist.gov/vuln/detail/CVE-2024-0690){: external}, [RHSA-2024:9502](https://access.redhat.com/errata/RHSA-2024:9502){: external}, [CVE-2024-50602](https://nvd.nist.gov/vuln/detail/CVE-2024-50602){: external}, [RHSA-2024:8849](https://access.redhat.com/errata/RHSA-2024:8849){: external}, [CVE-2023-45539](https://nvd.nist.gov/vuln/detail/CVE-2023-45539){: external}, [RHSA-2024:8856](https://access.redhat.com/errata/RHSA-2024:8856){: external}, [CVE-2022-48773](https://nvd.nist.gov/vuln/detail/CVE-2022-48773){: external}, [CVE-2022-48936](https://nvd.nist.gov/vuln/detail/CVE-2022-48936){: external}, [CVE-2023-52492](https://nvd.nist.gov/vuln/detail/CVE-2023-52492){: external}, [CVE-2024-24857](https://nvd.nist.gov/vuln/detail/CVE-2024-24857){: external}, [CVE-2024-26851](https://nvd.nist.gov/vuln/detail/CVE-2024-26851){: external}, [CVE-2024-26924](https://nvd.nist.gov/vuln/detail/CVE-2024-26924){: external}, [CVE-2024-26976](https://nvd.nist.gov/vuln/detail/CVE-2024-26976){: external}, [CVE-2024-27017](https://nvd.nist.gov/vuln/detail/CVE-2024-27017){: external}, [CVE-2024-27062](https://nvd.nist.gov/vuln/detail/CVE-2024-27062){: external}, [CVE-2024-35839](https://nvd.nist.gov/vuln/detail/CVE-2024-35839){: external}, [CVE-2024-35898](https://nvd.nist.gov/vuln/detail/CVE-2024-35898){: external}, [CVE-2024-35939](https://nvd.nist.gov/vuln/detail/CVE-2024-35939){: external}, [CVE-2024-38540](https://nvd.nist.gov/vuln/detail/CVE-2024-38540){: external}, [CVE-2024-38541](https://nvd.nist.gov/vuln/detail/CVE-2024-38541){: external}, [CVE-2024-38586](https://nvd.nist.gov/vuln/detail/CVE-2024-38586){: external}, [CVE-2024-38608](https://nvd.nist.gov/vuln/detail/CVE-2024-38608){: external}, [CVE-2024-39503](https://nvd.nist.gov/vuln/detail/CVE-2024-39503){: external}, [CVE-2024-40924](https://nvd.nist.gov/vuln/detail/CVE-2024-40924){: external}, [CVE-2024-40961](https://nvd.nist.gov/vuln/detail/CVE-2024-40961){: external}, [CVE-2024-40983](https://nvd.nist.gov/vuln/detail/CVE-2024-40983){: external}, [CVE-2024-40984](https://nvd.nist.gov/vuln/detail/CVE-2024-40984){: external}, [CVE-2024-41009](https://nvd.nist.gov/vuln/detail/CVE-2024-41009){: external}, [CVE-2024-41042](https://nvd.nist.gov/vuln/detail/CVE-2024-41042){: external}, [CVE-2024-41066](https://nvd.nist.gov/vuln/detail/CVE-2024-41066){: external}, [CVE-2024-41092](https://nvd.nist.gov/vuln/detail/CVE-2024-41092){: external}, [CVE-2024-41093](https://nvd.nist.gov/vuln/detail/CVE-2024-41093){: external}, [CVE-2024-42070](https://nvd.nist.gov/vuln/detail/CVE-2024-42070){: external}, [CVE-2024-42079](https://nvd.nist.gov/vuln/detail/CVE-2024-42079){: external}, [CVE-2024-42244](https://nvd.nist.gov/vuln/detail/CVE-2024-42244){: external}, [CVE-2024-42284](https://nvd.nist.gov/vuln/detail/CVE-2024-42284){: external}, [CVE-2024-42292](https://nvd.nist.gov/vuln/detail/CVE-2024-42292){: external}, [CVE-2024-42301](https://nvd.nist.gov/vuln/detail/CVE-2024-42301){: external}, [CVE-2024-43854](https://nvd.nist.gov/vuln/detail/CVE-2024-43854){: external}, [CVE-2024-43880](https://nvd.nist.gov/vuln/detail/CVE-2024-43880){: external}, [CVE-2024-43889](https://nvd.nist.gov/vuln/detail/CVE-2024-43889){: external}, [CVE-2024-43892](https://nvd.nist.gov/vuln/detail/CVE-2024-43892){: external}, [CVE-2024-44935](https://nvd.nist.gov/vuln/detail/CVE-2024-44935){: external}, [CVE-2024-44989](https://nvd.nist.gov/vuln/detail/CVE-2024-44989){: external}, [CVE-2024-44990](https://nvd.nist.gov/vuln/detail/CVE-2024-44990){: external}, [CVE-2024-45018](https://nvd.nist.gov/vuln/detail/CVE-2024-45018){: external}, [CVE-2024-46826](https://nvd.nist.gov/vuln/detail/CVE-2024-46826){: external}, [CVE-2024-47668](https://nvd.nist.gov/vuln/detail/CVE-2024-47668){: external}, CIS benchmark compliance: [1.4.3](https://workbench.cisecurity.org/sections/2250437/recommendations/3599694){: external}, [1.4.4](https://workbench.cisecurity.org/sections/2250437/recommendations/3599695){: external}, [1.6.2](https://workbench.cisecurity.org/sections/2250440/recommendations/3599717){: external}, [1.6.4](https://workbench.cisecurity.org/sections/2250440/recommendations/3599722){: external}.
+{{site.data.keyword.openshiftshort}} and Red Hat CoreOS 4.16.21
+:   For more information, see the [change logs](https://docs.redhat.com/en/documentation/openshift_container_platform/4.16/html/release_notes/ocp-4-16-release-notes#ocp-4-16-21_release-notes){: external}.
+HAProxy 55c148
+:   Security fixes for [CVE-2023-45539](https://nvd.nist.gov/vuln/detail/CVE-2023-45539){: external}, [CVE-2024-3596](https://nvd.nist.gov/vuln/detail/CVE-2024-3596){: external}, [CVE-2019-12900](https://nvd.nist.gov/vuln/detail/CVE-2019-12900){: external}, [CVE-2024-50602](https://nvd.nist.gov/vuln/detail/CVE-2024-50602){: external}.
 
 
 ### Master fix pack 4.16.19_1543_openshift, released 13 November 2024
 {: #41619_1543_openshift_M}
 
-The following table shows the changes that are in the master fix pack 4.16.19_1543_openshift. Master patch updates are applied automatically. 
+The following list shows the changes that are in the master fix pack 4.16.19_1543_openshift. Master patch updates are applied automatically. 
 
 
-| Component | Previous | Current | Description |
-| --- | --- | --- | --- |
-| {{site.data.keyword.cloud_notm}} Block Storage driver and plug-in | v2.5.15 | v2.5.16 | New version contains updates and security fixes. |
-| {{site.data.keyword.cloud_notm}} Controller Manager | v1.29.9-6 | v1.29.10-2 | New version contains updates and security fixes. |
-| {{site.data.keyword.cloud_notm}} RBAC Operator | 77dac6b | c4a05b0 | New version contains updates and security fixes. |
-| {{site.data.keyword.openshiftlong_notm}}. | 4.16.16 | 4.16.19 | See the [{{site.data.keyword.openshiftlong_notm}} release notes](https://docs.redhat.com/en/documentation/openshift_container_platform/4.16/html/release_notes/ocp-4-16-release-notes#ocp-4-16-19){: external}. |
-{: caption="Changes since version 4.16.16_1541_openshift" caption-side="bottom"}
+{{site.data.keyword.cloud_notm}} Block Storage driver and plug-in v2.5.16
+:   New version contains updates and security fixes.
+{{site.data.keyword.cloud_notm}} Controller Manager v1.29.10-2
+:   New version contains updates and security fixes.
+{{site.data.keyword.cloud_notm}} RBAC Operator c4a05b0
+:   New version contains updates and security fixes.
+{{site.data.keyword.openshiftlong_notm}}. 4.16.19
+:   See the [{{site.data.keyword.openshiftlong_notm}} release notes](https://docs.redhat.com/en/documentation/openshift_container_platform/4.16/html/release_notes/ocp-4-16-release-notes#ocp-4-16-19){: external}.
 
 
 ### Worker node fix pack 4.16.19_1542_openshift, released 04 November 2024
 {: #41619_1542_openshift_W}
 
-The following table shows the changes that are in the worker node fix pack 4.16.19_1542_openshift. Worker node patch updates can be applied by updating, reloading (in classic infrastructure), or replacing (in VPC infrastructure) the worker node.
+The following list shows the changes that are in the worker node fix pack 4.16.19_1542_openshift. Worker node patch updates can be applied by updating, reloading (in classic infrastructure), or replacing (in VPC infrastructure) the worker node.
 {: shortdesc}
 
-| Component | Previous | Current | Description |
-| --- | --- | --- | --- |
-| RHEL 8 Packages	| N/A	| N/A	| Package updates for [RHSA-2024:3043](https://access.redhat.com/errata/RHSA-2024:3043){: external}, [CVE-2024-0690](https://nvd.nist.gov/vuln/detail/CVE-2024-0690){: external}, [RHSA-2024:8359](https://access.redhat.com/errata/RHSA-2024:8359){: external}, [CVE-2024-6232](https://nvd.nist.gov/vuln/detail/CVE-2024-6232){: external}	|
-| RHEL 9 Packages	| 5.14.0-427.40.1.el9_4	| 5.14.0-427.42.1.el9_4	| Kernel and package updates for [RHSA-2024:8617](https://access.redhat.com/errata/RHSA-2024:8617){: external}, [CVE-2021-47383](https://nvd.nist.gov/vuln/detail/CVE-2021-47383){: external}, [CVE-2024-2201](https://nvd.nist.gov/vuln/detail/CVE-2024-2201){: external}, [CVE-2024-26640](https://nvd.nist.gov/vuln/detail/CVE-2024-26640){: external}, [CVE-2024-26826](https://nvd.nist.gov/vuln/detail/CVE-2024-26826){: external}, [CVE-2024-26923](https://nvd.nist.gov/vuln/detail/CVE-2024-26923){: external}, [CVE-2024-26935](https://nvd.nist.gov/vuln/detail/CVE-2024-26935){: external}, [CVE-2024-26961](https://nvd.nist.gov/vuln/detail/CVE-2024-26961){: external}, [CVE-2024-36244](https://nvd.nist.gov/vuln/detail/CVE-2024-36244){: external}, [CVE-2024-39472](https://nvd.nist.gov/vuln/detail/CVE-2024-39472){: external}, [CVE-2024-39504](https://nvd.nist.gov/vuln/detail/CVE-2024-39504){: external}, [CVE-2024-40904](https://nvd.nist.gov/vuln/detail/CVE-2024-40904){: external}, [CVE-2024-40931](https://nvd.nist.gov/vuln/detail/CVE-2024-40931){: external}, [CVE-2024-40960](https://nvd.nist.gov/vuln/detail/CVE-2024-40960){: external}, [CVE-2024-40972](https://nvd.nist.gov/vuln/detail/CVE-2024-40972){: external}, [CVE-2024-40977](https://nvd.nist.gov/vuln/detail/CVE-2024-40977){: external}, [CVE-2024-40995](https://nvd.nist.gov/vuln/detail/CVE-2024-40995){: external}, [CVE-2024-40998](https://nvd.nist.gov/vuln/detail/CVE-2024-40998){: external}, [CVE-2024-41005](https://nvd.nist.gov/vuln/detail/CVE-2024-41005){: external}, [CVE-2024-41013](https://nvd.nist.gov/vuln/detail/CVE-2024-41013){: external}, [CVE-2024-41014](https://nvd.nist.gov/vuln/detail/CVE-2024-41014){: external}, [CVE-2024-43854](https://nvd.nist.gov/vuln/detail/CVE-2024-43854){: external}, [CVE-2024-45018](https://nvd.nist.gov/vuln/detail/CVE-2024-45018){: external}, [RHSA-2024:8446](https://access.redhat.com/errata/RHSA-2024:8446){: external}, [CVE-2024-6232](https://nvd.nist.gov/vuln/detail/CVE-2024-6232){: external}	|
-| {{site.data.keyword.openshiftshort}} and Red Hat CoreOS	| 4.16.17	| 4.16.19	| For more information, see the [change logs](https://docs.redhat.com/en/documentation/openshift_container_platform/4.16/html/release_notes/ocp-4-16-release-notes#ocp-4-16-19_release-notes){: external}.	|
-| Haproxy	| N/A	| N/A	| N/A	|
-{: caption="Changes since version 4.16.17_1540_openshift" caption-side="bottom"}
+RHEL 8 Packages
+:   Package updates for [RHSA-2024:3043](https://access.redhat.com/errata/RHSA-2024:3043){: external}, [CVE-2024-0690](https://nvd.nist.gov/vuln/detail/CVE-2024-0690){: external}, [RHSA-2024:8359](https://access.redhat.com/errata/RHSA-2024:8359){: external}, [CVE-2024-6232](https://nvd.nist.gov/vuln/detail/CVE-2024-6232){: external}
+RHEL 9 Packages 5.14.0-427.42.1.el9_4
+:   Kernel and package updates for [RHSA-2024:8617](https://access.redhat.com/errata/RHSA-2024:8617){: external}, [CVE-2021-47383](https://nvd.nist.gov/vuln/detail/CVE-2021-47383){: external}, [CVE-2024-2201](https://nvd.nist.gov/vuln/detail/CVE-2024-2201){: external}, [CVE-2024-26640](https://nvd.nist.gov/vuln/detail/CVE-2024-26640){: external}, [CVE-2024-26826](https://nvd.nist.gov/vuln/detail/CVE-2024-26826){: external}, [CVE-2024-26923](https://nvd.nist.gov/vuln/detail/CVE-2024-26923){: external}, [CVE-2024-26935](https://nvd.nist.gov/vuln/detail/CVE-2024-26935){: external}, [CVE-2024-26961](https://nvd.nist.gov/vuln/detail/CVE-2024-26961){: external}, [CVE-2024-36244](https://nvd.nist.gov/vuln/detail/CVE-2024-36244){: external}, [CVE-2024-39472](https://nvd.nist.gov/vuln/detail/CVE-2024-39472){: external}, [CVE-2024-39504](https://nvd.nist.gov/vuln/detail/CVE-2024-39504){: external}, [CVE-2024-40904](https://nvd.nist.gov/vuln/detail/CVE-2024-40904){: external}, [CVE-2024-40931](https://nvd.nist.gov/vuln/detail/CVE-2024-40931){: external}, [CVE-2024-40960](https://nvd.nist.gov/vuln/detail/CVE-2024-40960){: external}, [CVE-2024-40972](https://nvd.nist.gov/vuln/detail/CVE-2024-40972){: external}, [CVE-2024-40977](https://nvd.nist.gov/vuln/detail/CVE-2024-40977){: external}, [CVE-2024-40995](https://nvd.nist.gov/vuln/detail/CVE-2024-40995){: external}, [CVE-2024-40998](https://nvd.nist.gov/vuln/detail/CVE-2024-40998){: external}, [CVE-2024-41005](https://nvd.nist.gov/vuln/detail/CVE-2024-41005){: external}, [CVE-2024-41013](https://nvd.nist.gov/vuln/detail/CVE-2024-41013){: external}, [CVE-2024-41014](https://nvd.nist.gov/vuln/detail/CVE-2024-41014){: external}, [CVE-2024-43854](https://nvd.nist.gov/vuln/detail/CVE-2024-43854){: external}, [CVE-2024-45018](https://nvd.nist.gov/vuln/detail/CVE-2024-45018){: external}, [RHSA-2024:8446](https://access.redhat.com/errata/RHSA-2024:8446){: external}, [CVE-2024-6232](https://nvd.nist.gov/vuln/detail/CVE-2024-6232){: external}
+{{site.data.keyword.openshiftshort}} and Red Hat CoreOS 4.16.19
+:   For more information, see the [change logs](https://docs.redhat.com/en/documentation/openshift_container_platform/4.16/html/release_notes/ocp-4-16-release-notes#ocp-4-16-19_release-notes){: external}.
+Haproxy
+:   
 
 
 ### Master fix pack 4.16.16_1541_openshift, released 30 October 2024
 {: #41616_1541_openshift_M}
 
-The following table shows the changes that are in the master fix pack 4.16.16_1541_openshift. Master patch updates are applied automatically. 
+The following list shows the changes that are in the master fix pack 4.16.16_1541_openshift. Master patch updates are applied automatically. 
 
 
-| Component | Previous | Current | Description |
-| --- | --- | --- | --- |
-| Calico | v3.28.1 | v3.28.2 | See the [Calico release notes](https://archive-os-3-28.netlify.app/calico/3.28/release-notes/#v3.28.2){: external}. |
-| Cluster health image | v1.6.2 | v1.6.3 | New version contains updates and security fixes. |
-| etcd | v3.5.15 | v3.5.16 | See the [etcd release notes](https://github.com/etcd-io/etcd/releases/v3.5.16){: external}. |
-| {{site.data.keyword.cloud_notm}} Controller Manager | v1.29.9-1 | v1.29.9-6 | New version contains updates and security fixes. |
-| {{site.data.keyword.filestorage_full_notm}} plug-in and monitor | 446 | 447 | New version contains updates and security fixes. |
-| {{site.data.keyword.cloud_notm}} RBAC Operator | 5b17dab | 77dac6b | New version contains updates and security fixes. |
-| Key Management Service provider | v2.10.5 | v2.10.7 | New version contains updates and security fixes. |
-| Portieris admission controller | v0.13.18 | v0.13.20 | See the [Portieris admission controller release notes](https://github.com/{{site.data.keyword.IBM_notm}}/portieris/releases/tag/v0.13.20){: external}. |
-| {{site.data.keyword.openshiftlong_notm}}. | 4.16.10 | 4.16.16 | See the [{{site.data.keyword.openshiftlong_notm}} release notes](https://docs.redhat.com/en/documentation/openshift_container_platform/4.16/html/release_notes/ocp-4-16-release-notes#ocp-4-16-16){: external}. |
-| Tigera Operator | v1.34.3 | v1.34.5 | See the [Tigera Operator release notes](https://github.com/tigera/operator/releases/tag/v1.34.5){: external}. |
-{: caption="Changes since version 4.16.10_1537_openshift" caption-side="bottom"}
+Calico v3.28.2
+:   See the [Calico release notes](https://archive-os-3-28.netlify.app/calico/3.28/release-notes/#v3.28.2){: external}.
+Cluster health image v1.6.3
+:   New version contains updates and security fixes.
+etcd v3.5.16
+:   See the [etcd release notes](https://github.com/etcd-io/etcd/releases/v3.5.16){: external}.
+{{site.data.keyword.cloud_notm}} Controller Manager v1.29.9-6
+:   New version contains updates and security fixes.
+{{site.data.keyword.filestorage_full_notm}} plug-in and monitor 447
+:   New version contains updates and security fixes.
+{{site.data.keyword.cloud_notm}} RBAC Operator 77dac6b
+:   New version contains updates and security fixes.
+Key Management Service provider v2.10.7
+:   New version contains updates and security fixes.
+Portieris admission controller v0.13.20
+:   See the [Portieris admission controller release notes](https://github.com/{{site.data.keyword.IBM_notm}}/portieris/releases/tag/v0.13.20){: external}.
+{{site.data.keyword.openshiftlong_notm}}. 4.16.16
+:   See the [{{site.data.keyword.openshiftlong_notm}} release notes](https://docs.redhat.com/en/documentation/openshift_container_platform/4.16/html/release_notes/ocp-4-16-release-notes#ocp-4-16-16){: external}.
+Tigera Operator v1.34.5
+:   See the [Tigera Operator release notes](https://github.com/tigera/operator/releases/tag/v1.34.5){: external}.
 
 
 ### Worker node fix pack 4.16.17_1540_openshift, released 21 October 2024
 {: #41617_1540_openshift_W}
 
-The following table shows the changes that are in the worker node fix pack 4.16.17_1540_openshift. Worker node patch updates can be applied by updating, reloading (in classic infrastructure), or replacing (in VPC infrastructure) the worker node.
+The following list shows the changes that are in the worker node fix pack 4.16.17_1540_openshift. Worker node patch updates can be applied by updating, reloading (in classic infrastructure), or replacing (in VPC infrastructure) the worker node.
 {: shortdesc}
 
-| Component | Previous | Current | Description |
-| --- | --- | --- | --- |
-| RHEL 8 Packages | N/A| N/A | Package updates for [RHSA-2024:8038](https://access.redhat.com/errata/RHSA-2024:8038){: external}, [CVE-2023-45290](https://nvd.nist.gov/vuln/detail/CVE-2023-45290){: external}, [CVE-2024-34155](https://nvd.nist.gov/vuln/detail/CVE-2024-34155){: external}, [CVE-2024-34156](https://nvd.nist.gov/vuln/detail/CVE-2024-34156){: external}, [CVE-2024-34158](https://nvd.nist.gov/vuln/detail/CVE-2024-34158){: external}, [RHSA-2024:7848](https://access.redhat.com/errata/RHSA-2024:7848){: external}, [CVE-2024-5535](https://nvd.nist.gov/vuln/detail/CVE-2024-5535){: external}, [RHSA-2024:3043](https://access.redhat.com/errata/RHSA-2024:3043){: external}, [CVE-2024-0690](https://nvd.nist.gov/vuln/detail/CVE-2024-0690){: external}. |
-| RHEL 9 Packages | 5.14.0-427.37.1.el9_4 | 5.14.0-427.40.1.el9_4 | Kernel and package updates for [RHSA-2024:8162](https://access.redhat.com/errata/RHSA-2024:8162){: external}, [CVE-2021-47385](https://nvd.nist.gov/vuln/detail/CVE-2021-47385){: external}, [CVE-2023-28746](https://nvd.nist.gov/vuln/detail/CVE-2023-28746){: external}, [CVE-2023-52658](https://nvd.nist.gov/vuln/detail/CVE-2023-52658){: external}, [CVE-2024-27403](https://nvd.nist.gov/vuln/detail/CVE-2024-27403){: external}, [CVE-2024-35989](https://nvd.nist.gov/vuln/detail/CVE-2024-35989){: external}, [CVE-2024-36889](https://nvd.nist.gov/vuln/detail/CVE-2024-36889){: external}, [CVE-2024-36978](https://nvd.nist.gov/vuln/detail/CVE-2024-36978){: external}, [CVE-2024-38556](https://nvd.nist.gov/vuln/detail/CVE-2024-38556){: external}, [CVE-2024-39483](https://nvd.nist.gov/vuln/detail/CVE-2024-39483){: external}, [CVE-2024-39502](https://nvd.nist.gov/vuln/detail/CVE-2024-39502){: external}, [CVE-2024-40959](https://nvd.nist.gov/vuln/detail/CVE-2024-40959){: external}, [CVE-2024-42079](https://nvd.nist.gov/vuln/detail/CVE-2024-42079){: external}, [CVE-2024-42272](https://nvd.nist.gov/vuln/detail/CVE-2024-42272){: external}, [CVE-2024-42284](https://nvd.nist.gov/vuln/detail/CVE-2024-42284){: external}. CIS benchmark compliance: [5.2.18.](https://workbench.cisecurity.org/sections/1594521/recommendations/2564555){: external},[2.1.2](https://workbench.cisecurity.org/sections/1594532/recommendations/2564483){: external}, [3.3.7](https://workbench.cisecurity.org/sections/1594530/recommendations/2564508){: external}, [2.2.14](https://workbench.cisecurity.org/sections/1594533/recommendations/2564557){: external}. |
-| {{site.data.keyword.openshiftshort}} and Red Hat CoreOS| 4.16.15 | 4.16.17 | For more information, see the [change logs](https://docs.redhat.com/en/documentation/openshift_container_platform/4.16/html/release_notes/ocp-4-16-release-notes#ocp-4-16-17_release-notes){: external}.|
-| Haproxy | 67d03375 | 88598691 | Security fixes for [CVE-2024-5535](https://nvd.nist.gov/vuln/detail/CVE-2024-5535){: external}. |
-{: caption="Changes since version 4.16.15_1539_openshift" caption-side="bottom"}
+RHEL 8 Packages
+:   Package updates for [RHSA-2024:8038](https://access.redhat.com/errata/RHSA-2024:8038){: external}, [CVE-2023-45290](https://nvd.nist.gov/vuln/detail/CVE-2023-45290){: external}, [CVE-2024-34155](https://nvd.nist.gov/vuln/detail/CVE-2024-34155){: external}, [CVE-2024-34156](https://nvd.nist.gov/vuln/detail/CVE-2024-34156){: external}, [CVE-2024-34158](https://nvd.nist.gov/vuln/detail/CVE-2024-34158){: external}, [RHSA-2024:7848](https://access.redhat.com/errata/RHSA-2024:7848){: external}, [CVE-2024-5535](https://nvd.nist.gov/vuln/detail/CVE-2024-5535){: external}, [RHSA-2024:3043](https://access.redhat.com/errata/RHSA-2024:3043){: external}, [CVE-2024-0690](https://nvd.nist.gov/vuln/detail/CVE-2024-0690){: external}.
+RHEL 9 Packages 5.14.0-427.40.1.el9_4
+:   Kernel and package updates for [RHSA-2024:8162](https://access.redhat.com/errata/RHSA-2024:8162){: external}, [CVE-2021-47385](https://nvd.nist.gov/vuln/detail/CVE-2021-47385){: external}, [CVE-2023-28746](https://nvd.nist.gov/vuln/detail/CVE-2023-28746){: external}, [CVE-2023-52658](https://nvd.nist.gov/vuln/detail/CVE-2023-52658){: external}, [CVE-2024-27403](https://nvd.nist.gov/vuln/detail/CVE-2024-27403){: external}, [CVE-2024-35989](https://nvd.nist.gov/vuln/detail/CVE-2024-35989){: external}, [CVE-2024-36889](https://nvd.nist.gov/vuln/detail/CVE-2024-36889){: external}, [CVE-2024-36978](https://nvd.nist.gov/vuln/detail/CVE-2024-36978){: external}, [CVE-2024-38556](https://nvd.nist.gov/vuln/detail/CVE-2024-38556){: external}, [CVE-2024-39483](https://nvd.nist.gov/vuln/detail/CVE-2024-39483){: external}, [CVE-2024-39502](https://nvd.nist.gov/vuln/detail/CVE-2024-39502){: external}, [CVE-2024-40959](https://nvd.nist.gov/vuln/detail/CVE-2024-40959){: external}, [CVE-2024-42079](https://nvd.nist.gov/vuln/detail/CVE-2024-42079){: external}, [CVE-2024-42272](https://nvd.nist.gov/vuln/detail/CVE-2024-42272){: external}, [CVE-2024-42284](https://nvd.nist.gov/vuln/detail/CVE-2024-42284){: external}. CIS benchmark compliance: [5.2.18.](https://workbench.cisecurity.org/sections/1594521/recommendations/2564555){: external},[2.1.2](https://workbench.cisecurity.org/sections/1594532/recommendations/2564483){: external}, [3.3.7](https://workbench.cisecurity.org/sections/1594530/recommendations/2564508){: external}, [2.2.14](https://workbench.cisecurity.org/sections/1594533/recommendations/2564557){: external}.
+{{site.data.keyword.openshiftshort}} and Red Hat CoreOS 4.16.17
+:   For more information, see the [change logs](https://docs.redhat.com/en/documentation/openshift_container_platform/4.16/html/release_notes/ocp-4-16-release-notes#ocp-4-16-17_release-notes){: external}.
+Haproxy 88598691
+:   Security fixes for [CVE-2024-5535](https://nvd.nist.gov/vuln/detail/CVE-2024-5535){: external}.
 
 
 ### Worker node fix pack 4.16.15_1539_openshift, released 09 October 2024
 {: #41615_1539_openshift_W}
 
-The following table shows the changes that are in the worker node fix pack 4.16.15_1539_openshift. Worker node patch updates can be applied by updating, reloading (in classic infrastructure), or replacing (in VPC infrastructure) the worker node.
+The following list shows the changes that are in the worker node fix pack 4.16.15_1539_openshift. Worker node patch updates can be applied by updating, reloading (in classic infrastructure), or replacing (in VPC infrastructure) the worker node.
 {: shortdesc}
 
-| Component | Previous | Current | Description |
-| --- | --- | --- | --- |
-| RHEL 8 Packages | 4.18.0-553.16.1.el8_10 | 4.18.0-553.22.1.el8_10 | CIS benchmark compliance: [1.4.2.](https://workbench.cisecurity.org/sections/2250437/recommendations/3599691){: external}. Kernel and package updates for [RHSA-2024:7000](https://access.redhat.com/errata/RHSA-2024:7000){: external}, [CVE-2021-46984](https://nvd.nist.gov/vuln/detail/CVE-2021-46984){: external}, [CVE-2021-47097](https://nvd.nist.gov/vuln/detail/CVE-2021-47097){: external}, [CVE-2021-47101](https://nvd.nist.gov/vuln/detail/CVE-2021-47101){: external}, [CVE-2021-47287](https://nvd.nist.gov/vuln/detail/CVE-2021-47287){: external}, [CVE-2021-47289](https://nvd.nist.gov/vuln/detail/CVE-2021-47289){: external}, [CVE-2021-47321](https://nvd.nist.gov/vuln/detail/CVE-2021-47321){: external}, [CVE-2021-47338](https://nvd.nist.gov/vuln/detail/CVE-2021-47338){: external}, [CVE-2021-47352](https://nvd.nist.gov/vuln/detail/CVE-2021-47352){: external}, [CVE-2021-47383](https://nvd.nist.gov/vuln/detail/CVE-2021-47383){: external}, [CVE-2021-47384](https://nvd.nist.gov/vuln/detail/CVE-2021-47384){: external}, [CVE-2021-47385](https://nvd.nist.gov/vuln/detail/CVE-2021-47385){: external}, [CVE-2021-47386](https://nvd.nist.gov/vuln/detail/CVE-2021-47386){: external}, [CVE-2021-47393](https://nvd.nist.gov/vuln/detail/CVE-2021-47393){: external}, [CVE-2021-47412](https://nvd.nist.gov/vuln/detail/CVE-2021-47412){: external}, [CVE-2021-47432](https://nvd.nist.gov/vuln/detail/CVE-2021-47432){: external}, [CVE-2021-47441](https://nvd.nist.gov/vuln/detail/CVE-2021-47441){: external}, [CVE-2021-47455](https://nvd.nist.gov/vuln/detail/CVE-2021-47455){: external}, [CVE-2021-47466](https://nvd.nist.gov/vuln/detail/CVE-2021-47466){: external}, [CVE-2021-47497](https://nvd.nist.gov/vuln/detail/CVE-2021-47497){: external}, [CVE-2021-47527](https://nvd.nist.gov/vuln/detail/CVE-2021-47527){: external}, [CVE-2021-47560](https://nvd.nist.gov/vuln/detail/CVE-2021-47560){: external}, [CVE-2021-47582](https://nvd.nist.gov/vuln/detail/CVE-2021-47582){: external}, [CVE-2021-47609](https://nvd.nist.gov/vuln/detail/CVE-2021-47609){: external}, [CVE-2022-48619](https://nvd.nist.gov/vuln/detail/CVE-2022-48619){: external}, [CVE-2022-48754](https://nvd.nist.gov/vuln/detail/CVE-2022-48754){: external}, [CVE-2022-48760](https://nvd.nist.gov/vuln/detail/CVE-2022-48760){: external}, [CVE-2022-48804](https://nvd.nist.gov/vuln/detail/CVE-2022-48804){: external}, [CVE-2022-48836](https://nvd.nist.gov/vuln/detail/CVE-2022-48836){: external}, [CVE-2022-48866](https://nvd.nist.gov/vuln/detail/CVE-2022-48866){: external}, [CVE-2023-52470](https://nvd.nist.gov/vuln/detail/CVE-2023-52470){: external}, [CVE-2023-52476](https://nvd.nist.gov/vuln/detail/CVE-2023-52476){: external}, [CVE-2023-52478](https://nvd.nist.gov/vuln/detail/CVE-2023-52478){: external}, [CVE-2023-52522](https://nvd.nist.gov/vuln/detail/CVE-2023-52522){: external}, [CVE-2023-52605](https://nvd.nist.gov/vuln/detail/CVE-2023-52605){: external}, [CVE-2023-52683](https://nvd.nist.gov/vuln/detail/CVE-2023-52683){: external}, [CVE-2023-52798](https://nvd.nist.gov/vuln/detail/CVE-2023-52798){: external}, [CVE-2023-52800](https://nvd.nist.gov/vuln/detail/CVE-2023-52800){: external}, [CVE-2023-52809](https://nvd.nist.gov/vuln/detail/CVE-2023-52809){: external}, [CVE-2023-52817](https://nvd.nist.gov/vuln/detail/CVE-2023-52817){: external}, [CVE-2023-52840](https://nvd.nist.gov/vuln/detail/CVE-2023-52840){: external}, [CVE-2023-6040](https://nvd.nist.gov/vuln/detail/CVE-2023-6040){: external}, [CVE-2024-23848](https://nvd.nist.gov/vuln/detail/CVE-2024-23848){: external}, [CVE-2024-26595](https://nvd.nist.gov/vuln/detail/CVE-2024-26595){: external}, [CVE-2024-26600](https://nvd.nist.gov/vuln/detail/CVE-2024-26600){: external}, [CVE-2024-26638](https://nvd.nist.gov/vuln/detail/CVE-2024-26638){: external}, [CVE-2024-26645](https://nvd.nist.gov/vuln/detail/CVE-2024-26645){: external}, [CVE-2024-26649](https://nvd.nist.gov/vuln/detail/CVE-2024-26649){: external}, [CVE-2024-26665](https://nvd.nist.gov/vuln/detail/CVE-2024-26665){: external}, [CVE-2024-26717](https://nvd.nist.gov/vuln/detail/CVE-2024-26717){: external}, [CVE-2024-26720](https://nvd.nist.gov/vuln/detail/CVE-2024-26720){: external}, [CVE-2024-26769](https://nvd.nist.gov/vuln/detail/CVE-2024-26769){: external}, [CVE-2024-26846](https://nvd.nist.gov/vuln/detail/CVE-2024-26846){: external}, [CVE-2024-26855](https://nvd.nist.gov/vuln/detail/CVE-2024-26855){: external}, [CVE-2024-26880](https://nvd.nist.gov/vuln/detail/CVE-2024-26880){: external}, [CVE-2024-26894](https://nvd.nist.gov/vuln/detail/CVE-2024-26894){: external}, [CVE-2024-26923](https://nvd.nist.gov/vuln/detail/CVE-2024-26923){: external}, [CVE-2024-26939](https://nvd.nist.gov/vuln/detail/CVE-2024-26939){: external}, [CVE-2024-27013](https://nvd.nist.gov/vuln/detail/CVE-2024-27013){: external}, [CVE-2024-27042](https://nvd.nist.gov/vuln/detail/CVE-2024-27042){: external}, [CVE-2024-35809](https://nvd.nist.gov/vuln/detail/CVE-2024-35809){: external}, [CVE-2024-35877](https://nvd.nist.gov/vuln/detail/CVE-2024-35877){: external}, [CVE-2024-35884](https://nvd.nist.gov/vuln/detail/CVE-2024-35884){: external}, [CVE-2024-35944](https://nvd.nist.gov/vuln/detail/CVE-2024-35944){: external}, [CVE-2024-35989](https://nvd.nist.gov/vuln/detail/CVE-2024-35989){: external}, [CVE-2024-36883](https://nvd.nist.gov/vuln/detail/CVE-2024-36883){: external}, [CVE-2024-36901](https://nvd.nist.gov/vuln/detail/CVE-2024-36901){: external}, [CVE-2024-36902](https://nvd.nist.gov/vuln/detail/CVE-2024-36902){: external}, [CVE-2024-36919](https://nvd.nist.gov/vuln/detail/CVE-2024-36919){: external}, [CVE-2024-36920](https://nvd.nist.gov/vuln/detail/CVE-2024-36920){: external}, [CVE-2024-36922](https://nvd.nist.gov/vuln/detail/CVE-2024-36922){: external}, [CVE-2024-36939](https://nvd.nist.gov/vuln/detail/CVE-2024-36939){: external}, [CVE-2024-36953](https://nvd.nist.gov/vuln/detail/CVE-2024-36953){: external}, [CVE-2024-37356](https://nvd.nist.gov/vuln/detail/CVE-2024-37356){: external}, [CVE-2024-38558](https://nvd.nist.gov/vuln/detail/CVE-2024-38558){: external}, [CVE-2024-38559](https://nvd.nist.gov/vuln/detail/CVE-2024-38559){: external}, [CVE-2024-38570](https://nvd.nist.gov/vuln/detail/CVE-2024-38570){: external}, [CVE-2024-38579](https://nvd.nist.gov/vuln/detail/CVE-2024-38579){: external}, [CVE-2024-38581](https://nvd.nist.gov/vuln/detail/CVE-2024-38581){: external}, [CVE-2024-38619](https://nvd.nist.gov/vuln/detail/CVE-2024-38619){: external}, [CVE-2024-39471](https://nvd.nist.gov/vuln/detail/CVE-2024-39471){: external}, [CVE-2024-39499](https://nvd.nist.gov/vuln/detail/CVE-2024-39499){: external}, [CVE-2024-39501](https://nvd.nist.gov/vuln/detail/CVE-2024-39501){: external}, [CVE-2024-39506](https://nvd.nist.gov/vuln/detail/CVE-2024-39506){: external}, [CVE-2024-40901](https://nvd.nist.gov/vuln/detail/CVE-2024-40901){: external}, [CVE-2024-40904](https://nvd.nist.gov/vuln/detail/CVE-2024-40904){: external}, [CVE-2024-40911](https://nvd.nist.gov/vuln/detail/CVE-2024-40911){: external}, [CVE-2024-40912](https://nvd.nist.gov/vuln/detail/CVE-2024-40912){: external}, [CVE-2024-40929](https://nvd.nist.gov/vuln/detail/CVE-2024-40929){: external}, [CVE-2024-40931](https://nvd.nist.gov/vuln/detail/CVE-2024-40931){: external}, [CVE-2024-40941](https://nvd.nist.gov/vuln/detail/CVE-2024-40941){: external}, [CVE-2024-40954](https://nvd.nist.gov/vuln/detail/CVE-2024-40954){: external}, [CVE-2024-40958](https://nvd.nist.gov/vuln/detail/CVE-2024-40958){: external}, [CVE-2024-40959](https://nvd.nist.gov/vuln/detail/CVE-2024-40959){: external}, [CVE-2024-40960](https://nvd.nist.gov/vuln/detail/CVE-2024-40960){: external}, [CVE-2024-40972](https://nvd.nist.gov/vuln/detail/CVE-2024-40972){: external}, [CVE-2024-40977](https://nvd.nist.gov/vuln/detail/CVE-2024-40977){: external}, [CVE-2024-40978](https://nvd.nist.gov/vuln/detail/CVE-2024-40978){: external}, [CVE-2024-40988](https://nvd.nist.gov/vuln/detail/CVE-2024-40988){: external}, [CVE-2024-40989](https://nvd.nist.gov/vuln/detail/CVE-2024-40989){: external}, [CVE-2024-40995](https://nvd.nist.gov/vuln/detail/CVE-2024-40995){: external}, [CVE-2024-40997](https://nvd.nist.gov/vuln/detail/CVE-2024-40997){: external}, [CVE-2024-40998](https://nvd.nist.gov/vuln/detail/CVE-2024-40998){: external}, [CVE-2024-41005](https://nvd.nist.gov/vuln/detail/CVE-2024-41005){: external}, [CVE-2024-41007](https://nvd.nist.gov/vuln/detail/CVE-2024-41007){: external}, [CVE-2024-41008](https://nvd.nist.gov/vuln/detail/CVE-2024-41008){: external}, [CVE-2024-41012](https://nvd.nist.gov/vuln/detail/CVE-2024-41012){: external}, [CVE-2024-41013](https://nvd.nist.gov/vuln/detail/CVE-2024-41013){: external}, [CVE-2024-41014](https://nvd.nist.gov/vuln/detail/CVE-2024-41014){: external}, [CVE-2024-41023](https://nvd.nist.gov/vuln/detail/CVE-2024-41023){: external}, [CVE-2024-41035](https://nvd.nist.gov/vuln/detail/CVE-2024-41035){: external}, [CVE-2024-41038](https://nvd.nist.gov/vuln/detail/CVE-2024-41038){: external}, [CVE-2024-41039](https://nvd.nist.gov/vuln/detail/CVE-2024-41039){: external}, [CVE-2024-41040](https://nvd.nist.gov/vuln/detail/CVE-2024-41040){: external}, [CVE-2024-41041](https://nvd.nist.gov/vuln/detail/CVE-2024-41041){: external}, [CVE-2024-41044](https://nvd.nist.gov/vuln/detail/CVE-2024-41044){: external}, [CVE-2024-41055](https://nvd.nist.gov/vuln/detail/CVE-2024-41055){: external}, [CVE-2024-41056](https://nvd.nist.gov/vuln/detail/CVE-2024-41056){: external}, [CVE-2024-41060](https://nvd.nist.gov/vuln/detail/CVE-2024-41060){: external}, [CVE-2024-41064](https://nvd.nist.gov/vuln/detail/CVE-2024-41064){: external}, [CVE-2024-41065](https://nvd.nist.gov/vuln/detail/CVE-2024-41065){: external}, [CVE-2024-41071](https://nvd.nist.gov/vuln/detail/CVE-2024-41071){: external}, [CVE-2024-41076](https://nvd.nist.gov/vuln/detail/CVE-2024-41076){: external}, [CVE-2024-41090](https://nvd.nist.gov/vuln/detail/CVE-2024-41090){: external}, [CVE-2024-41091](https://nvd.nist.gov/vuln/detail/CVE-2024-41091){: external}, [CVE-2024-41097](https://nvd.nist.gov/vuln/detail/CVE-2024-41097){: external}, [CVE-2024-42084](https://nvd.nist.gov/vuln/detail/CVE-2024-42084){: external}, [CVE-2024-42090](https://nvd.nist.gov/vuln/detail/CVE-2024-42090){: external}, [CVE-2024-42094](https://nvd.nist.gov/vuln/detail/CVE-2024-42094){: external}, [CVE-2024-42096](https://nvd.nist.gov/vuln/detail/CVE-2024-42096){: external}, [CVE-2024-42114](https://nvd.nist.gov/vuln/detail/CVE-2024-42114){: external}, [CVE-2024-42124](https://nvd.nist.gov/vuln/detail/CVE-2024-42124){: external}, [CVE-2024-42131](https://nvd.nist.gov/vuln/detail/CVE-2024-42131){: external}, [CVE-2024-42152](https://nvd.nist.gov/vuln/detail/CVE-2024-42152){: external}, [CVE-2024-42154](https://nvd.nist.gov/vuln/detail/CVE-2024-42154){: external}, [CVE-2024-42225](https://nvd.nist.gov/vuln/detail/CVE-2024-42225){: external}, [CVE-2024-42226](https://nvd.nist.gov/vuln/detail/CVE-2024-42226){: external}, [CVE-2024-42228](https://nvd.nist.gov/vuln/detail/CVE-2024-42228){: external}, [CVE-2024-42237](https://nvd.nist.gov/vuln/detail/CVE-2024-42237){: external}, [CVE-2024-42238](https://nvd.nist.gov/vuln/detail/CVE-2024-42238){: external}, [CVE-2024-42240](https://nvd.nist.gov/vuln/detail/CVE-2024-42240){: external}, [CVE-2024-42246](https://nvd.nist.gov/vuln/detail/CVE-2024-42246){: external}, [CVE-2024-42265](https://nvd.nist.gov/vuln/detail/CVE-2024-42265){: external}, [CVE-2024-42322](https://nvd.nist.gov/vuln/detail/CVE-2024-42322){: external}, [CVE-2024-43830](https://nvd.nist.gov/vuln/detail/CVE-2024-43830){: external}, [CVE-2024-43871](https://nvd.nist.gov/vuln/detail/CVE-2024-43871){: external}, [RHSA-2024:7481](https://access.redhat.com/errata/RHSA-2024:7481){: external}, [CVE-2023-20584](https://nvd.nist.gov/vuln/detail/CVE-2023-20584){: external}, [CVE-2023-31315](https://nvd.nist.gov/vuln/detail/CVE-2023-31315){: external}, [CVE-2023-31356](https://nvd.nist.gov/vuln/detail/CVE-2023-31356){: external}, [RHSA-2024:3043](https://access.redhat.com/errata/RHSA-2024:3043){: external}, [CVE-2024-0690](https://nvd.nist.gov/vuln/detail/CVE-2024-0690){: external}, [RHSA-2024:6969](https://access.redhat.com/errata/RHSA-2024:6969){: external}, [CVE-2023-45290](https://nvd.nist.gov/vuln/detail/CVE-2023-45290){: external}, [CVE-2024-24783](https://nvd.nist.gov/vuln/detail/CVE-2024-24783){: external}, [CVE-2024-24784](https://nvd.nist.gov/vuln/detail/CVE-2024-24784){: external}, [CVE-2024-24788](https://nvd.nist.gov/vuln/detail/CVE-2024-24788){: external}, [CVE-2024-24791](https://nvd.nist.gov/vuln/detail/CVE-2024-24791){: external}, [RHSA-2024:6989](https://access.redhat.com/errata/RHSA-2024:6989){: external}, [CVE-2024-45490](https://nvd.nist.gov/vuln/detail/CVE-2024-45490){: external}, [CVE-2024-45491](https://nvd.nist.gov/vuln/detail/CVE-2024-45491){: external}, [CVE-2024-45492](https://nvd.nist.gov/vuln/detail/CVE-2024-45492){: external}, [RHSA-2024:6975](https://access.redhat.com/errata/RHSA-2024:6975){: external}, [CVE-2024-4032](https://nvd.nist.gov/vuln/detail/CVE-2024-4032){: external}, [CVE-2024-6232](https://nvd.nist.gov/vuln/detail/CVE-2024-6232){: external}, [CVE-2024-6923](https://nvd.nist.gov/vuln/detail/CVE-2024-6923){: external}. |
-| {{site.data.keyword.openshiftshort}} and Red Hat CoreOS | 4.16.13 | 4.16.15 | For more information, see the [change logs](https://docs.redhat.com/en/documentation/openshift_container_platform/4.16/html/release_notes/ocp-4-16-release-notes#ocp-4-16-15_release-notes){: external}. |
-| Haproxy | 546887ab | 67d03375 | Security fixes for [CVE-2024-4032](https://nvd.nist.gov/vuln/detail/CVE-2024-4032){: external}, [CVE-2024-6232](https://nvd.nist.gov/vuln/detail/CVE-2024-6232){: external}, [CVE-2024-6923](https://nvd.nist.gov/vuln/detail/CVE-2024-6923){: external}, [CVE-2024-45490](https://nvd.nist.gov/vuln/detail/CVE-2024-45490){: external}, [CVE-2024-45491](https://nvd.nist.gov/vuln/detail/CVE-2024-45491){: external}, [CVE-2024-45492](https://nvd.nist.gov/vuln/detail/CVE-2024-45492){: external}. |
-{: caption="Changes since version 4.16.13_1538_openshift" caption-side="bottom"}
+RHEL 8 Packages 4.18.0-553.22.1.el8_10
+:   CIS benchmark compliance: [1.4.2.](https://workbench.cisecurity.org/sections/2250437/recommendations/3599691){: external}. Kernel and package updates for [RHSA-2024:7000](https://access.redhat.com/errata/RHSA-2024:7000){: external}, [CVE-2021-46984](https://nvd.nist.gov/vuln/detail/CVE-2021-46984){: external}, [CVE-2021-47097](https://nvd.nist.gov/vuln/detail/CVE-2021-47097){: external}, [CVE-2021-47101](https://nvd.nist.gov/vuln/detail/CVE-2021-47101){: external}, [CVE-2021-47287](https://nvd.nist.gov/vuln/detail/CVE-2021-47287){: external}, [CVE-2021-47289](https://nvd.nist.gov/vuln/detail/CVE-2021-47289){: external}, [CVE-2021-47321](https://nvd.nist.gov/vuln/detail/CVE-2021-47321){: external}, [CVE-2021-47338](https://nvd.nist.gov/vuln/detail/CVE-2021-47338){: external}, [CVE-2021-47352](https://nvd.nist.gov/vuln/detail/CVE-2021-47352){: external}, [CVE-2021-47383](https://nvd.nist.gov/vuln/detail/CVE-2021-47383){: external}, [CVE-2021-47384](https://nvd.nist.gov/vuln/detail/CVE-2021-47384){: external}, [CVE-2021-47385](https://nvd.nist.gov/vuln/detail/CVE-2021-47385){: external}, [CVE-2021-47386](https://nvd.nist.gov/vuln/detail/CVE-2021-47386){: external}, [CVE-2021-47393](https://nvd.nist.gov/vuln/detail/CVE-2021-47393){: external}, [CVE-2021-47412](https://nvd.nist.gov/vuln/detail/CVE-2021-47412){: external}, [CVE-2021-47432](https://nvd.nist.gov/vuln/detail/CVE-2021-47432){: external}, [CVE-2021-47441](https://nvd.nist.gov/vuln/detail/CVE-2021-47441){: external}, [CVE-2021-47455](https://nvd.nist.gov/vuln/detail/CVE-2021-47455){: external}, [CVE-2021-47466](https://nvd.nist.gov/vuln/detail/CVE-2021-47466){: external}, [CVE-2021-47497](https://nvd.nist.gov/vuln/detail/CVE-2021-47497){: external}, [CVE-2021-47527](https://nvd.nist.gov/vuln/detail/CVE-2021-47527){: external}, [CVE-2021-47560](https://nvd.nist.gov/vuln/detail/CVE-2021-47560){: external}, [CVE-2021-47582](https://nvd.nist.gov/vuln/detail/CVE-2021-47582){: external}, [CVE-2021-47609](https://nvd.nist.gov/vuln/detail/CVE-2021-47609){: external}, [CVE-2022-48619](https://nvd.nist.gov/vuln/detail/CVE-2022-48619){: external}, [CVE-2022-48754](https://nvd.nist.gov/vuln/detail/CVE-2022-48754){: external}, [CVE-2022-48760](https://nvd.nist.gov/vuln/detail/CVE-2022-48760){: external}, [CVE-2022-48804](https://nvd.nist.gov/vuln/detail/CVE-2022-48804){: external}, [CVE-2022-48836](https://nvd.nist.gov/vuln/detail/CVE-2022-48836){: external}, [CVE-2022-48866](https://nvd.nist.gov/vuln/detail/CVE-2022-48866){: external}, [CVE-2023-52470](https://nvd.nist.gov/vuln/detail/CVE-2023-52470){: external}, [CVE-2023-52476](https://nvd.nist.gov/vuln/detail/CVE-2023-52476){: external}, [CVE-2023-52478](https://nvd.nist.gov/vuln/detail/CVE-2023-52478){: external}, [CVE-2023-52522](https://nvd.nist.gov/vuln/detail/CVE-2023-52522){: external}, [CVE-2023-52605](https://nvd.nist.gov/vuln/detail/CVE-2023-52605){: external}, [CVE-2023-52683](https://nvd.nist.gov/vuln/detail/CVE-2023-52683){: external}, [CVE-2023-52798](https://nvd.nist.gov/vuln/detail/CVE-2023-52798){: external}, [CVE-2023-52800](https://nvd.nist.gov/vuln/detail/CVE-2023-52800){: external}, [CVE-2023-52809](https://nvd.nist.gov/vuln/detail/CVE-2023-52809){: external}, [CVE-2023-52817](https://nvd.nist.gov/vuln/detail/CVE-2023-52817){: external}, [CVE-2023-52840](https://nvd.nist.gov/vuln/detail/CVE-2023-52840){: external}, [CVE-2023-6040](https://nvd.nist.gov/vuln/detail/CVE-2023-6040){: external}, [CVE-2024-23848](https://nvd.nist.gov/vuln/detail/CVE-2024-23848){: external}, [CVE-2024-26595](https://nvd.nist.gov/vuln/detail/CVE-2024-26595){: external}, [CVE-2024-26600](https://nvd.nist.gov/vuln/detail/CVE-2024-26600){: external}, [CVE-2024-26638](https://nvd.nist.gov/vuln/detail/CVE-2024-26638){: external}, [CVE-2024-26645](https://nvd.nist.gov/vuln/detail/CVE-2024-26645){: external}, [CVE-2024-26649](https://nvd.nist.gov/vuln/detail/CVE-2024-26649){: external}, [CVE-2024-26665](https://nvd.nist.gov/vuln/detail/CVE-2024-26665){: external}, [CVE-2024-26717](https://nvd.nist.gov/vuln/detail/CVE-2024-26717){: external}, [CVE-2024-26720](https://nvd.nist.gov/vuln/detail/CVE-2024-26720){: external}, [CVE-2024-26769](https://nvd.nist.gov/vuln/detail/CVE-2024-26769){: external}, [CVE-2024-26846](https://nvd.nist.gov/vuln/detail/CVE-2024-26846){: external}, [CVE-2024-26855](https://nvd.nist.gov/vuln/detail/CVE-2024-26855){: external}, [CVE-2024-26880](https://nvd.nist.gov/vuln/detail/CVE-2024-26880){: external}, [CVE-2024-26894](https://nvd.nist.gov/vuln/detail/CVE-2024-26894){: external}, [CVE-2024-26923](https://nvd.nist.gov/vuln/detail/CVE-2024-26923){: external}, [CVE-2024-26939](https://nvd.nist.gov/vuln/detail/CVE-2024-26939){: external}, [CVE-2024-27013](https://nvd.nist.gov/vuln/detail/CVE-2024-27013){: external}, [CVE-2024-27042](https://nvd.nist.gov/vuln/detail/CVE-2024-27042){: external}, [CVE-2024-35809](https://nvd.nist.gov/vuln/detail/CVE-2024-35809){: external}, [CVE-2024-35877](https://nvd.nist.gov/vuln/detail/CVE-2024-35877){: external}, [CVE-2024-35884](https://nvd.nist.gov/vuln/detail/CVE-2024-35884){: external}, [CVE-2024-35944](https://nvd.nist.gov/vuln/detail/CVE-2024-35944){: external}, [CVE-2024-35989](https://nvd.nist.gov/vuln/detail/CVE-2024-35989){: external}, [CVE-2024-36883](https://nvd.nist.gov/vuln/detail/CVE-2024-36883){: external}, [CVE-2024-36901](https://nvd.nist.gov/vuln/detail/CVE-2024-36901){: external}, [CVE-2024-36902](https://nvd.nist.gov/vuln/detail/CVE-2024-36902){: external}, [CVE-2024-36919](https://nvd.nist.gov/vuln/detail/CVE-2024-36919){: external}, [CVE-2024-36920](https://nvd.nist.gov/vuln/detail/CVE-2024-36920){: external}, [CVE-2024-36922](https://nvd.nist.gov/vuln/detail/CVE-2024-36922){: external}, [CVE-2024-36939](https://nvd.nist.gov/vuln/detail/CVE-2024-36939){: external}, [CVE-2024-36953](https://nvd.nist.gov/vuln/detail/CVE-2024-36953){: external}, [CVE-2024-37356](https://nvd.nist.gov/vuln/detail/CVE-2024-37356){: external}, [CVE-2024-38558](https://nvd.nist.gov/vuln/detail/CVE-2024-38558){: external}, [CVE-2024-38559](https://nvd.nist.gov/vuln/detail/CVE-2024-38559){: external}, [CVE-2024-38570](https://nvd.nist.gov/vuln/detail/CVE-2024-38570){: external}, [CVE-2024-38579](https://nvd.nist.gov/vuln/detail/CVE-2024-38579){: external}, [CVE-2024-38581](https://nvd.nist.gov/vuln/detail/CVE-2024-38581){: external}, [CVE-2024-38619](https://nvd.nist.gov/vuln/detail/CVE-2024-38619){: external}, [CVE-2024-39471](https://nvd.nist.gov/vuln/detail/CVE-2024-39471){: external}, [CVE-2024-39499](https://nvd.nist.gov/vuln/detail/CVE-2024-39499){: external}, [CVE-2024-39501](https://nvd.nist.gov/vuln/detail/CVE-2024-39501){: external}, [CVE-2024-39506](https://nvd.nist.gov/vuln/detail/CVE-2024-39506){: external}, [CVE-2024-40901](https://nvd.nist.gov/vuln/detail/CVE-2024-40901){: external}, [CVE-2024-40904](https://nvd.nist.gov/vuln/detail/CVE-2024-40904){: external}, [CVE-2024-40911](https://nvd.nist.gov/vuln/detail/CVE-2024-40911){: external}, [CVE-2024-40912](https://nvd.nist.gov/vuln/detail/CVE-2024-40912){: external}, [CVE-2024-40929](https://nvd.nist.gov/vuln/detail/CVE-2024-40929){: external}, [CVE-2024-40931](https://nvd.nist.gov/vuln/detail/CVE-2024-40931){: external}, [CVE-2024-40941](https://nvd.nist.gov/vuln/detail/CVE-2024-40941){: external}, [CVE-2024-40954](https://nvd.nist.gov/vuln/detail/CVE-2024-40954){: external}, [CVE-2024-40958](https://nvd.nist.gov/vuln/detail/CVE-2024-40958){: external}, [CVE-2024-40959](https://nvd.nist.gov/vuln/detail/CVE-2024-40959){: external}, [CVE-2024-40960](https://nvd.nist.gov/vuln/detail/CVE-2024-40960){: external}, [CVE-2024-40972](https://nvd.nist.gov/vuln/detail/CVE-2024-40972){: external}, [CVE-2024-40977](https://nvd.nist.gov/vuln/detail/CVE-2024-40977){: external}, [CVE-2024-40978](https://nvd.nist.gov/vuln/detail/CVE-2024-40978){: external}, [CVE-2024-40988](https://nvd.nist.gov/vuln/detail/CVE-2024-40988){: external}, [CVE-2024-40989](https://nvd.nist.gov/vuln/detail/CVE-2024-40989){: external}, [CVE-2024-40995](https://nvd.nist.gov/vuln/detail/CVE-2024-40995){: external}, [CVE-2024-40997](https://nvd.nist.gov/vuln/detail/CVE-2024-40997){: external}, [CVE-2024-40998](https://nvd.nist.gov/vuln/detail/CVE-2024-40998){: external}, [CVE-2024-41005](https://nvd.nist.gov/vuln/detail/CVE-2024-41005){: external}, [CVE-2024-41007](https://nvd.nist.gov/vuln/detail/CVE-2024-41007){: external}, [CVE-2024-41008](https://nvd.nist.gov/vuln/detail/CVE-2024-41008){: external}, [CVE-2024-41012](https://nvd.nist.gov/vuln/detail/CVE-2024-41012){: external}, [CVE-2024-41013](https://nvd.nist.gov/vuln/detail/CVE-2024-41013){: external}, [CVE-2024-41014](https://nvd.nist.gov/vuln/detail/CVE-2024-41014){: external}, [CVE-2024-41023](https://nvd.nist.gov/vuln/detail/CVE-2024-41023){: external}, [CVE-2024-41035](https://nvd.nist.gov/vuln/detail/CVE-2024-41035){: external}, [CVE-2024-41038](https://nvd.nist.gov/vuln/detail/CVE-2024-41038){: external}, [CVE-2024-41039](https://nvd.nist.gov/vuln/detail/CVE-2024-41039){: external}, [CVE-2024-41040](https://nvd.nist.gov/vuln/detail/CVE-2024-41040){: external}, [CVE-2024-41041](https://nvd.nist.gov/vuln/detail/CVE-2024-41041){: external}, [CVE-2024-41044](https://nvd.nist.gov/vuln/detail/CVE-2024-41044){: external}, [CVE-2024-41055](https://nvd.nist.gov/vuln/detail/CVE-2024-41055){: external}, [CVE-2024-41056](https://nvd.nist.gov/vuln/detail/CVE-2024-41056){: external}, [CVE-2024-41060](https://nvd.nist.gov/vuln/detail/CVE-2024-41060){: external}, [CVE-2024-41064](https://nvd.nist.gov/vuln/detail/CVE-2024-41064){: external}, [CVE-2024-41065](https://nvd.nist.gov/vuln/detail/CVE-2024-41065){: external}, [CVE-2024-41071](https://nvd.nist.gov/vuln/detail/CVE-2024-41071){: external}, [CVE-2024-41076](https://nvd.nist.gov/vuln/detail/CVE-2024-41076){: external}, [CVE-2024-41090](https://nvd.nist.gov/vuln/detail/CVE-2024-41090){: external}, [CVE-2024-41091](https://nvd.nist.gov/vuln/detail/CVE-2024-41091){: external}, [CVE-2024-41097](https://nvd.nist.gov/vuln/detail/CVE-2024-41097){: external}, [CVE-2024-42084](https://nvd.nist.gov/vuln/detail/CVE-2024-42084){: external}, [CVE-2024-42090](https://nvd.nist.gov/vuln/detail/CVE-2024-42090){: external}, [CVE-2024-42094](https://nvd.nist.gov/vuln/detail/CVE-2024-42094){: external}, [CVE-2024-42096](https://nvd.nist.gov/vuln/detail/CVE-2024-42096){: external}, [CVE-2024-42114](https://nvd.nist.gov/vuln/detail/CVE-2024-42114){: external}, [CVE-2024-42124](https://nvd.nist.gov/vuln/detail/CVE-2024-42124){: external}, [CVE-2024-42131](https://nvd.nist.gov/vuln/detail/CVE-2024-42131){: external}, [CVE-2024-42152](https://nvd.nist.gov/vuln/detail/CVE-2024-42152){: external}, [CVE-2024-42154](https://nvd.nist.gov/vuln/detail/CVE-2024-42154){: external}, [CVE-2024-42225](https://nvd.nist.gov/vuln/detail/CVE-2024-42225){: external}, [CVE-2024-42226](https://nvd.nist.gov/vuln/detail/CVE-2024-42226){: external}, [CVE-2024-42228](https://nvd.nist.gov/vuln/detail/CVE-2024-42228){: external}, [CVE-2024-42237](https://nvd.nist.gov/vuln/detail/CVE-2024-42237){: external}, [CVE-2024-42238](https://nvd.nist.gov/vuln/detail/CVE-2024-42238){: external}, [CVE-2024-42240](https://nvd.nist.gov/vuln/detail/CVE-2024-42240){: external}, [CVE-2024-42246](https://nvd.nist.gov/vuln/detail/CVE-2024-42246){: external}, [CVE-2024-42265](https://nvd.nist.gov/vuln/detail/CVE-2024-42265){: external}, [CVE-2024-42322](https://nvd.nist.gov/vuln/detail/CVE-2024-42322){: external}, [CVE-2024-43830](https://nvd.nist.gov/vuln/detail/CVE-2024-43830){: external}, [CVE-2024-43871](https://nvd.nist.gov/vuln/detail/CVE-2024-43871){: external}, [RHSA-2024:7481](https://access.redhat.com/errata/RHSA-2024:7481){: external}, [CVE-2023-20584](https://nvd.nist.gov/vuln/detail/CVE-2023-20584){: external}, [CVE-2023-31315](https://nvd.nist.gov/vuln/detail/CVE-2023-31315){: external}, [CVE-2023-31356](https://nvd.nist.gov/vuln/detail/CVE-2023-31356){: external}, [RHSA-2024:3043](https://access.redhat.com/errata/RHSA-2024:3043){: external}, [CVE-2024-0690](https://nvd.nist.gov/vuln/detail/CVE-2024-0690){: external}, [RHSA-2024:6969](https://access.redhat.com/errata/RHSA-2024:6969){: external}, [CVE-2023-45290](https://nvd.nist.gov/vuln/detail/CVE-2023-45290){: external}, [CVE-2024-24783](https://nvd.nist.gov/vuln/detail/CVE-2024-24783){: external}, [CVE-2024-24784](https://nvd.nist.gov/vuln/detail/CVE-2024-24784){: external}, [CVE-2024-24788](https://nvd.nist.gov/vuln/detail/CVE-2024-24788){: external}, [CVE-2024-24791](https://nvd.nist.gov/vuln/detail/CVE-2024-24791){: external}, [RHSA-2024:6989](https://access.redhat.com/errata/RHSA-2024:6989){: external}, [CVE-2024-45490](https://nvd.nist.gov/vuln/detail/CVE-2024-45490){: external}, [CVE-2024-45491](https://nvd.nist.gov/vuln/detail/CVE-2024-45491){: external}, [CVE-2024-45492](https://nvd.nist.gov/vuln/detail/CVE-2024-45492){: external}, [RHSA-2024:6975](https://access.redhat.com/errata/RHSA-2024:6975){: external}, [CVE-2024-4032](https://nvd.nist.gov/vuln/detail/CVE-2024-4032){: external}, [CVE-2024-6232](https://nvd.nist.gov/vuln/detail/CVE-2024-6232){: external}, [CVE-2024-6923](https://nvd.nist.gov/vuln/detail/CVE-2024-6923){: external}.
+{{site.data.keyword.openshiftshort}} and Red Hat CoreOS 4.16.15
+:   For more information, see the [change logs](https://docs.redhat.com/en/documentation/openshift_container_platform/4.16/html/release_notes/ocp-4-16-release-notes#ocp-4-16-15_release-notes){: external}.
+Haproxy 67d03375
+:   Security fixes for [CVE-2024-4032](https://nvd.nist.gov/vuln/detail/CVE-2024-4032){: external}, [CVE-2024-6232](https://nvd.nist.gov/vuln/detail/CVE-2024-6232){: external}, [CVE-2024-6923](https://nvd.nist.gov/vuln/detail/CVE-2024-6923){: external}, [CVE-2024-45490](https://nvd.nist.gov/vuln/detail/CVE-2024-45490){: external}, [CVE-2024-45491](https://nvd.nist.gov/vuln/detail/CVE-2024-45491){: external}, [CVE-2024-45492](https://nvd.nist.gov/vuln/detail/CVE-2024-45492){: external}.
 
 
 ### Master fix pack 4.16.10_1537_openshift, released 25 September 2024
 {: #41610_1537_openshift_M}
 
-The following table shows the changes that are in the master fix pack 4.16.10_1537_openshift. Master patch updates are applied automatically. 
+The following list shows the changes that are in the master fix pack 4.16.10_1537_openshift. Master patch updates are applied automatically. 
 
 
-| Component | Previous | Current | Description |
-| --- | --- | --- | --- |
-| Calico API server | N/A | v3.28.1 | See the [Calico release notes](https://docs.tigera.io/archive){: external}. |
-| {{site.data.keyword.cloud_notm}} Block Storage driver and plug-in | v2.5.13 | v2.5.15 | New version contains updates and security fixes. |
-| {{site.data.keyword.cloud_notm}} Controller Manager | v1.29.8-1 | v1.29.9-1 | New version contains updates and security fixes. |
-| {{site.data.keyword.filestorage_full_notm}} plug-in and monitor | 445 | 446 | New version contains updates and security fixes. |
-| {{site.data.keyword.cloud_notm}} RBAC Operator | 897f067 | 5b17dab | New version contains updates and security fixes. |
-| Key Management Service provider | v2.10.4 | v2.10.5 | New version contains updates and security fixes. |
-| Load balancer and load balancer monitor for {{site.data.keyword.cloud_notm}} Provider | 3022 | 3051 | New version contains updates and security fixes. |
-| {{site.data.keyword.openshiftlong_notm}}. | 4.16.7 | 4.16.10 | See the [{{site.data.keyword.openshiftlong_notm}} release notes](https://docs.redhat.com/en/documentation/openshift_container_platform/4.16/html/release_notes/ocp-4-16-release-notes#ocp-4-16-10){: external}. |
-| {{site.data.keyword.openshiftlong_notm}} Control Plane Operator, Metrics Server, and toolkit | 4.16.0+20240814 | 4.16.0+20240913 | See the [{{site.data.keyword.openshiftlong_notm}} toolkit release notes](https://github.com/openshift/ibm-roks-toolkit/releases/tag/v4.16.0+20240913){: external}. |
-{: caption="Changes since version 4.16.7_1532_openshift" caption-side="bottom"}
+Calico API server v3.28.1
+:   See the [Calico release notes](https://docs.tigera.io/archive){: external}.
+{{site.data.keyword.cloud_notm}} Block Storage driver and plug-in v2.5.15
+:   New version contains updates and security fixes.
+{{site.data.keyword.cloud_notm}} Controller Manager v1.29.9-1
+:   New version contains updates and security fixes.
+{{site.data.keyword.filestorage_full_notm}} plug-in and monitor 446
+:   New version contains updates and security fixes.
+{{site.data.keyword.cloud_notm}} RBAC Operator 5b17dab
+:   New version contains updates and security fixes.
+Key Management Service provider v2.10.5
+:   New version contains updates and security fixes.
+Load balancer and load balancer monitor for {{site.data.keyword.cloud_notm}} Provider 3051
+:   New version contains updates and security fixes.
+{{site.data.keyword.openshiftlong_notm}}. 4.16.10
+:   See the [{{site.data.keyword.openshiftlong_notm}} release notes](https://docs.redhat.com/en/documentation/openshift_container_platform/4.16/html/release_notes/ocp-4-16-release-notes#ocp-4-16-10){: external}.
+{{site.data.keyword.openshiftlong_notm}} Control Plane Operator, Metrics Server, and toolkit 4.16.0+20240913
+:   See the [{{site.data.keyword.openshiftlong_notm}} toolkit release notes](https://github.com/openshift/ibm-roks-toolkit/releases/tag/v4.16.0+20240913){: external}.
 
 
 ### Worker node fix pack 4.16.13_1538_openshift, released 23 September 2024
 {: #41613_1538_openshift_W}
 
-The following table shows the changes that are in the worker node fix pack 4.16.13_1538_openshift. Worker node patch updates can be applied by updating, reloading (in classic infrastructure), or replacing (in VPC infrastructure) the worker node.
+The following list shows the changes that are in the worker node fix pack 4.16.13_1538_openshift. Worker node patch updates can be applied by updating, reloading (in classic infrastructure), or replacing (in VPC infrastructure) the worker node.
 {: shortdesc}
 
-| Component | Previous | Current | Description |
-| --- | --- | --- | --- |
-| RHEL 8 Packages | N/A | N/A | Package updates for [RHSA-2024:3043](https://access.redhat.com/errata/RHSA-2024:3043){: external}, [CVE-2024-0690](https://nvd.nist.gov/vuln/detail/CVE-2024-0690){: external}. |
-| {{site.data.keyword.openshiftshort}}. | 4.16.10 | 4.16.13 | For more information, see the [change logs](https://docs.redhat.com/en/documentation/openshift_container_platform/4.16/html/release_notes/ocp-4-16-release-notes#ocp-4-16-13_release-notes){: external}. |
-{: caption="Changes since version 4.16.10_1535_openshift" caption-side="bottom"}
+RHEL 8 Packages
+:   Package updates for [RHSA-2024:3043](https://access.redhat.com/errata/RHSA-2024:3043){: external}, [CVE-2024-0690](https://nvd.nist.gov/vuln/detail/CVE-2024-0690){: external}.
+{{site.data.keyword.openshiftshort}}. 4.16.13
+:   For more information, see the [change logs](https://docs.redhat.com/en/documentation/openshift_container_platform/4.16/html/release_notes/ocp-4-16-release-notes#ocp-4-16-13_release-notes){: external}.
 
 
 ### Worker node fix pack 4.16.10_1535_openshift, released 10 September 2024
 {: #41610_1535_openshift_W}
 
-The following table shows the changes that are in the worker node fix pack 4.16.10_1535_openshift. Worker node patch updates can be applied by updating, reloading (in classic infrastructure), or replacing (in VPC infrastructure) the worker node.
+The following list shows the changes that are in the worker node fix pack 4.16.10_1535_openshift. Worker node patch updates can be applied by updating, reloading (in classic infrastructure), or replacing (in VPC infrastructure) the worker node.
 {: shortdesc}
 
-| Component | Previous | Current | Description |
-| --- | --- | --- | --- |
-| {{site.data.keyword.openshiftshort}}. | 4.16.8 | 4.16.10 | For more information, see the [change logs](https://docs.redhat.com/en/documentation/openshift_container_platform/4.16/html/release_notes/ocp-4-16-release-notes#ocp-4-16-10_release-notes){: external}. |
-| RHEL 8 Packages | N/A | N/A | Worker node package updates for [RHSA-2024:3043](https://access.redhat.com/errata/RHSA-2024:3043){: external}, [CVE-2024-0690](https://nvd.nist.gov/vuln/detail/CVE-2024-0690){: external}, [RHSA-2024:5962](https://access.redhat.com/errata/RHSA-2024:5962){: external}, [CVE-2024-4032](https://nvd.nist.gov/vuln/detail/CVE-2024-4032){: external}, [CVE-2024-6345](https://nvd.nist.gov/vuln/detail/CVE-2024-6345){: external}, [CVE-2024-6923](https://nvd.nist.gov/vuln/detail/CVE-2024-6923){: external}, [CVE-2024-8088](https://nvd.nist.gov/vuln/detail/CVE-2024-8088){: external}. |
-{: caption="Changes since version 4.16.8_1533_openshift" caption-side="bottom"}
+{{site.data.keyword.openshiftshort}}. 4.16.10
+:   For more information, see the [change logs](https://docs.redhat.com/en/documentation/openshift_container_platform/4.16/html/release_notes/ocp-4-16-release-notes#ocp-4-16-10_release-notes){: external}.
+RHEL 8 Packages
+:   Worker node package updates for [RHSA-2024:3043](https://access.redhat.com/errata/RHSA-2024:3043){: external}, [CVE-2024-0690](https://nvd.nist.gov/vuln/detail/CVE-2024-0690){: external}, [RHSA-2024:5962](https://access.redhat.com/errata/RHSA-2024:5962){: external}, [CVE-2024-4032](https://nvd.nist.gov/vuln/detail/CVE-2024-4032){: external}, [CVE-2024-6345](https://nvd.nist.gov/vuln/detail/CVE-2024-6345){: external}, [CVE-2024-6923](https://nvd.nist.gov/vuln/detail/CVE-2024-6923){: external}, [CVE-2024-8088](https://nvd.nist.gov/vuln/detail/CVE-2024-8088){: external}.
 
 
 ### Master fix pack 4.16.7_1532_openshift and worker node fix pack 4.16.6_1531_openshift, released 30 August 2024
 {: #openshift_changelog_4167_1532}
 
-| Component | Previous | Current | Description |
-| --- | --- | --- | --- |
-| Calico | v3.27.4 | v3.28.1 | See the [Calico release notes](https://archive-os-3-28.netlify.app/calico/3.28/release-notes/){: external}. |
-| Cluster health image | v1.5.8 | v1.6.2 | New version contains updates and security fixes. |
-| IBM Cloud Controller Manager | v1.28.13-1 | v1.29.8-1 | New version contains updates and security fixes. |
-| Key Management Service provider | v2.9.9 | v2.10.4 | New version contains updates and security fixes. In addition, only [KMS v2](https://kubernetes.io/docs/tasks/administer-cluster/kms-provider/){: external} is supported. KMS v1 instances were migrated to KMS v2 as part of the Red Hat OpenShift on IBM Cloud version 4.15 release. |
-| Pause container image | 3.9 | 3.10 | See the [pause container image release notes](https://github.com/kubernetes/kubernetes/blob/master/build/pause/CHANGELOG.md){: external}. |
-| {{site.data.keyword.redhat_openshift_notm}} (master) | 4.15.25 | 4.16.7 | See the [Red Hat OpenShift release notes](https://docs.redhat.com/en/documentation/openshift_container_platform/4.16/html/release_notes/ocp-4-16-release-notes#ocp-4-16-7_release-notes){: external}. |
-| {{site.data.keyword.redhat_openshift_notm}} (worker node) | 4.15.28 | 4.16.6 | See the [Red Hat OpenShift release notes](https://docs.redhat.com/en/documentation/openshift_container_platform/4.16/html/release_notes/ocp-4-16-release-notes#ocp-4-16-6_release-notes){: external}. |
-| {{site.data.keyword.redhat_openshift_notm}} on IBM Cloud Control Plane Operator, Metrics Server, and toolkit | 4.15.0+20240814 | 4.16.0+20240814 | See the [Red Hat OpenShift on IBM Cloud toolkit release notes](https://github.com/openshift/ibm-roks-toolkit/releases/tag/v4.16.0+20240814){: external}. |
-| Tigera Operator | v1.32.10 | v1.34.3 | See the [Tigera Operator release notes](https://github.com/tigera/operator/releases/tag/v1.34.3){: external}. |
-{: caption="Changes since master fix pack 4.15.25_1556_openshift and worker fix pack 4.15.28_1557_openshift." caption-side="bottom"}
+Calico v3.28.1
+:   See the [Calico release notes](https://archive-os-3-28.netlify.app/calico/3.28/release-notes/){: external}.
+Cluster health image v1.6.2
+:   New version contains updates and security fixes.
+IBM Cloud Controller Manager v1.29.8-1
+:   New version contains updates and security fixes.
+Key Management Service provider v2.10.4
+:   New version contains updates and security fixes. In addition, only [KMS v2](https://kubernetes.io/docs/tasks/administer-cluster/kms-provider/){: external} is supported. KMS v1 instances were migrated to KMS v2 as part of the Red Hat OpenShift on IBM Cloud version 4.15 release.
+Pause container image 3.10
+:   See the [pause container image release notes](https://github.com/kubernetes/kubernetes/blob/master/build/pause/CHANGELOG.md){: external}.
+{{site.data.keyword.redhat_openshift_notm}} (master) 4.16.7
+:   See the [Red Hat OpenShift release notes](https://docs.redhat.com/en/documentation/openshift_container_platform/4.16/html/release_notes/ocp-4-16-release-notes#ocp-4-16-7_release-notes){: external}.
+{{site.data.keyword.redhat_openshift_notm}} (worker node) 4.16.6
+:   See the [Red Hat OpenShift release notes](https://docs.redhat.com/en/documentation/openshift_container_platform/4.16/html/release_notes/ocp-4-16-release-notes#ocp-4-16-6_release-notes){: external}.
+{{site.data.keyword.redhat_openshift_notm}} on IBM Cloud Control Plane Operator, Metrics Server, and toolkit 4.16.0+20240814
+:   See the [Red Hat OpenShift on IBM Cloud toolkit release notes](https://github.com/openshift/ibm-roks-toolkit/releases/tag/v4.16.0+20240814){: external}.
+Tigera Operator v1.34.3
+:   See the [Tigera Operator release notes](https://github.com/tigera/operator/releases/tag/v1.34.3){: external}.

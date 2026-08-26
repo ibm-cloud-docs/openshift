@@ -58,8 +58,6 @@ Red Hat CoreOS 4.18.53
 HAProxy a70e8a8452c4d476687ad749df47b6f27a61851a
 :   Resolves the following CVEs: [CVE-2026-54411](https://nvd.nist.gov/vuln/detail/CVE-2026-54411){: external}, [CVE-2026-54371](https://nvd.nist.gov/vuln/detail/CVE-2026-54371){: external}, [CVE-2026-55204](https://nvd.nist.gov/vuln/detail/CVE-2026-55204){: external}, and [CVE-2026-58055](https://nvd.nist.gov/vuln/detail/CVE-2026-58055){: external}.
 
-{: #cl-boms-41853_1602_openshift_W-component-table}
-
 
 ### Worker node fix pack 4.18.51_1601_openshift, released 12 August 2026
 {: #cl-boms-41851_1601_openshift_W}
@@ -79,8 +77,6 @@ Red Hat CoreOS 4.18.51
 :   For more information, see the [change logs](https://docs.redhat.com/en/documentation/openshift_container_platform/4.18/html/release_notes/ocp-4-18-release-notes.html#ocp-4-18-51_release-notes){: external}.
 HAProxy bd7e64ef86b90455535107263466d1825f3e7f9f
 :   Resolves the following CVEs: [CVE-2026-56391](https://nvd.nist.gov/vuln/detail/CVE-2026-56391){: external}, and [CVE-2026-56392](https://nvd.nist.gov/vuln/detail/CVE-2026-56392){: external}.
-
-{: #cl-boms-41851_1601_openshift_W-component-table}
 
 
 ### Master fix pack 4.18.51_1600_openshift, released 05 August 2026
@@ -108,8 +104,6 @@ Portieris admission controller v0.14.2
 Red Hat OpenShift on IBM Cloud 4.18.51
 :   See the [Red Hat OpenShift on IBM Cloud release notes](https://docs.redhat.com/en/documentation/openshift_container_platform/4.18/html/release_notes/ocp-4-18-release-notes#ocp-4-18-51_release-notes){: external}.Resolves the following CVEs: [CVE-2026-16242](https://nvd.nist.gov/vuln/detail/CVE-2026-16242){: external}.
 
-{: #cl-boms_master-41851_1600_openshift_M-component-table}
-
 
 ### Worker node fix pack 4.18.49_1598_openshift, released 28 July 2026
 {: #cl-boms-41849_1598_openshift_W}
@@ -129,8 +123,6 @@ Red Hat CoreOS 4.18.49
 :   For more information, see the [change logs](https://docs.redhat.com/en/documentation/openshift_container_platform/4.18/html/release_notes/ocp-4-18-release-notes.html#ocp-4-18-49_release-notes){: external}.
 HAProxy 346c7130717ef7cc25d1dfbca7d57ca32396b692
 :   Resolves the following CVEs: [CVE-2026-6238](https://nvd.nist.gov/vuln/detail/CVE-2026-6238){: external}, [CVE-2026-5928](https://nvd.nist.gov/vuln/detail/CVE-2026-5928){: external}, [CVE-2026-48864](https://nvd.nist.gov/vuln/detail/CVE-2026-48864){: external}, [CVE-2026-54370](https://nvd.nist.gov/vuln/detail/CVE-2026-54370){: external}, [CVE-2026-28390](https://nvd.nist.gov/vuln/detail/CVE-2026-28390){: external}, [CVE-2026-5435](https://nvd.nist.gov/vuln/detail/CVE-2026-5435){: external}, [CVE-2025-13151](https://nvd.nist.gov/vuln/detail/CVE-2025-13151){: external}, [CVE-2026-54369](https://nvd.nist.gov/vuln/detail/CVE-2026-54369){: external}, [CVE-2026-58016](https://nvd.nist.gov/vuln/detail/CVE-2026-58016){: external}, and [CVE-2025-6170](https://nvd.nist.gov/vuln/detail/CVE-2025-6170){: external}.
-
-{: #cl-boms-41849_1598_openshift_W-component-table}
 
 
 ### Master fix pack 4.18.45_1596_openshift, released 28 July 2026
@@ -152,8 +144,6 @@ Portieris admission controller v0.14.2
 Red Hat OpenShift on IBM Cloud 4.18.45
 :   See the [Red Hat OpenShift on IBM Cloud release notes](https://docs.redhat.com/en/documentation/openshift_container_platform/4.18/html/release_notes/ocp-4-18-release-notes#ocp-4-18-45_release-notes){: external}.
 
-{: #cl-boms_master-41845_1596_openshift_M-component-table}
-
 
 ### Worker node fix pack 4.18.47_1597_openshift, released 13 July 2026
 {: #cl-boms-41847_1597_openshift_W}
@@ -174,8 +164,6 @@ Red Hat CoreOS 4.18.47
 HAProxy 27f76d0c7626993cde6e1ff90fa42253718cc5fa
 :   Resolves the following CVEs: [CVE-2026-5450](https://nvd.nist.gov/vuln/detail/CVE-2026-5450){: external}.
 
-{: #cl-boms-41847_1597_openshift_W-component-table}
-
 
 ### Worker node fix pack 4.18.45_1595_openshift, released 01 July 2026
 {: #cl-boms-41845_1595_openshift_W}
@@ -195,8 +183,6 @@ Red Hat CoreOS 4.18.45
 :   For more information, see the [change logs](https://docs.redhat.com/en/documentation/openshift_container_platform/4.18/html/release_notes/ocp-4-18-release-notes.html#ocp-4-18-45_release-notes){: external}.
 HAProxy 119de539a7da3c92449b38e1531722802988e50c
 :   Resolves the following CVEs: [CVE-2026-45447](https://nvd.nist.gov/vuln/detail/CVE-2026-45447){: external}, [CVE-2024-4741](https://nvd.nist.gov/vuln/detail/CVE-2024-4741){: external}, and [CVE-2024-34459](https://nvd.nist.gov/vuln/detail/CVE-2024-34459){: external}.
-
-{: #cl-boms-41845_1595_openshift_W-component-table}
 
 
 ### Master fix pack 4.18.43_1593_openshift, released 26 June 2026
@@ -222,8 +208,6 @@ Portieris admission controller v0.14.0
 Red Hat OpenShift on IBM Cloud 4.18.43
 :   See the [Red Hat OpenShift on IBM Cloud release notes](https://docs.redhat.com/en/documentation/openshift_container_platform/4.18/html/release_notes/ocp-4-18-release-notes#ocp-4-18-43_release-notes){: external}.
 
-{: #cl-boms_master-41843_1593_openshift_M-component-table}
-
 
 ### Worker node fix pack 4.18.43_1594_openshift, released 15 June 2026
 {: #cl-boms-41843_1594_openshift_W}
@@ -244,8 +228,6 @@ Red Hat CoreOS 4.18.43
 HAProxy d4656f400ca14059e1b5b8ef8078b4903290791a
 :   Resolves the following CVEs: [CVE-2026-45186](https://nvd.nist.gov/vuln/detail/CVE-2026-45186){: external}.
 
-{: #cl-boms-41843_1594_openshift_W-component-table}
-
 
 ### Worker node fix pack 4.18.42_1591_openshift, released 03 June 2026
 {: #cl-boms-41842_1591_openshift_W}
@@ -265,8 +247,6 @@ Red Hat CoreOS 4.18.42
 :   For more information, see the [change logs](https://docs.redhat.com/en/documentation/openshift_container_platform/4.18/html/release_notes/ocp-4-18-release-notes.html#ocp-4-18-42_release-notes){: external}.
 HAProxy 0e0730588ba21878845cdb0bee615a371a489a02
 :   Resolves the following CVEs: [CVE-2026-4046](https://nvd.nist.gov/vuln/detail/CVE-2026-4046){: external}, [CVE-2026-33846](https://nvd.nist.gov/vuln/detail/CVE-2026-33846){: external}, [CVE-2026-42010](https://nvd.nist.gov/vuln/detail/CVE-2026-42010){: external}, [CVE-2026-5260](https://nvd.nist.gov/vuln/detail/CVE-2026-5260){: external}, [CVE-2026-42014](https://nvd.nist.gov/vuln/detail/CVE-2026-42014){: external}, [CVE-2026-3833](https://nvd.nist.gov/vuln/detail/CVE-2026-3833){: external}, [CVE-2026-42015](https://nvd.nist.gov/vuln/detail/CVE-2026-42015){: external}, [CVE-2026-33845](https://nvd.nist.gov/vuln/detail/CVE-2026-33845){: external}, [CVE-2026-42011](https://nvd.nist.gov/vuln/detail/CVE-2026-42011){: external}, [CVE-2026-42009](https://nvd.nist.gov/vuln/detail/CVE-2026-42009){: external}, [CVE-2026-42013](https://nvd.nist.gov/vuln/detail/CVE-2026-42013){: external}, and [CVE-2026-42012](https://nvd.nist.gov/vuln/detail/CVE-2026-42012){: external}.
-
-{: #cl-boms-41842_1591_openshift_W-component-table}
 
 
 ### Master fix pack 4.18.40_1589_openshift, released 22 May 2026
@@ -290,8 +270,6 @@ Red Hat OpenShift on IBM Cloud 4.18.40
 Tigera Operator v1.38.13
 :   See the [Tigera Operator release notes](https://github.com/tigera/operator/releases/tag/v1.38.13){: external}.
 
-{: #cl-boms_master-41840_1589_openshift_M-component-table}
-
 
 ### Worker node fix pack 4.18.41_1590_openshift, released 20 May 2026
 {: #cl-boms-41841_1590_openshift_W}
@@ -312,8 +290,6 @@ Red Hat CoreOS 4.18.41
 HAProxy 6ba93946d8bd08ba581321189c719ab548cadf01
 :   Resolves the following CVEs: [CVE-2025-9714](https://nvd.nist.gov/vuln/detail/CVE-2025-9714){: external}, [CVE-2026-4424](https://nvd.nist.gov/vuln/detail/CVE-2026-4424){: external}, [CVE-2026-40356](https://nvd.nist.gov/vuln/detail/CVE-2026-40356){: external}, [CVE-2025-14512](https://nvd.nist.gov/vuln/detail/CVE-2025-14512){: external}, [CVE-2026-4878](https://nvd.nist.gov/vuln/detail/CVE-2026-4878){: external}, [CVE-2026-40355](https://nvd.nist.gov/vuln/detail/CVE-2026-40355){: external}, [CVE-2026-5121](https://nvd.nist.gov/vuln/detail/CVE-2026-5121){: external}, and [CVE-2025-14087](https://nvd.nist.gov/vuln/detail/CVE-2025-14087){: external}.
 
-{: #cl-boms-41841_1590_openshift_W-component-table}
-
 
 ### Worker node fix pack 4.18.38_1587_openshift, released 04 May 2026
 {: #cl-boms-41838_1587_openshift_W}
@@ -331,8 +307,6 @@ Red Hat CoreOS 4.18.38
 :   For more information, see the [change logs](https://docs.redhat.com/en/documentation/openshift_container_platform/4.18/html/release_notes/ocp-4-18-release-notes.html#ocp-4-18-38_release-notes){: external}. Includes mitigation for [CVE-2026-31431](https://nvd.nist.gov/vuln/detail/CVE-2026-31431){: external}.
 HAProxy c7e825675cbd75e8433801c99f8aca3b207a5a46
 :   Resolves the following CVEs: [CVE-2026-5121](https://nvd.nist.gov/vuln/detail/CVE-2026-5121){: external}, [CVE-2025-9714](https://nvd.nist.gov/vuln/detail/CVE-2025-9714){: external}, and [CVE-2026-4424](https://nvd.nist.gov/vuln/detail/CVE-2026-4424){: external}.
-
-{: #cl-boms-41838_1587_openshift_W-component-table}
 
 
 ### Master fix pack 4.18.37_1586_openshift, released 27 April 2026
@@ -366,8 +340,6 @@ Red Hat OpenShift on IBM Cloud 4.18.37
 Tigera Operator v1.38.13
 :   See the [Tigera Operator release notes](https://github.com/tigera/operator/releases/tag/v1.38.13){: external}.
 
-{: #cl-boms_master-41837_1586_openshift_M-component-table}
-
 
 ### Worker node fix pack 4.18.37_1585_openshift, released 20 April 2026
 {: #cl-boms-41837_1585_openshift_W}
@@ -385,8 +357,6 @@ Red Hat CoreOS 4.18.37
 :   For more information, see the [change logs](https://docs.redhat.com/en/documentation/openshift_container_platform/4.18/html/release_notes/ocp-4-18-release-notes.html#ocp-4-18-37_release-notes){: external}.
 HAProxy c7e825675cbd75e8433801c99f8aca3b207a5a46
 :   Resolves the following CVEs: [CVE-2026-27135](https://nvd.nist.gov/vuln/detail/CVE-2026-27135){: external}.
-
-{: #cl-boms-41837_1585_openshift_W-component-table}
 
 
 ### Worker node fix pack 4.18.36_1584_openshift, released 06 April 2026
@@ -406,28 +376,33 @@ Red Hat CoreOS 4.18.36
 HAProxy 91cc06f4e0a123d06f5ee7c226df6fb83e1ca223
 :   Resolves the following CVEs: [CVE-2025-14831](https://nvd.nist.gov/vuln/detail/CVE-2025-14831){: external}, and [CVE-2025-9820](https://nvd.nist.gov/vuln/detail/CVE-2025-9820){: external}.
 
-{: #cl-boms-41836_1584_openshift_W-component-table}
-
 
 ### Change log for Master fix pack 4.18.34_1583_openshift, released 02 April 2026
 {: #41834_1583_openshift_M}
 
-The following table shows the changes that are in the master fix pack 4.18.34_1583_openshift. Master patch updates are applied automatically. 
+The following list shows the changes that are in the master fix pack 4.18.34_1583_openshift. Master patch updates are applied automatically. 
 
 
-| Component | Previous | Current | Description |
-| --- | --- | --- | --- |
-| Cluster health image | v1.6.13 | v1.6.15 | New version contains updates and security fixes. |
-| etcd | v3.5.26 | v3.5.27 | See the [etcd release notes](https://github.com/etcd-io/etcd/releases/v3.5.27){: external}. |
-| {{site.data.keyword.cloud_notm}} Block Storage driver and plug-in | v2.5.22 | v2.5.25 | New version contains updates and security fixes. |
-| {{site.data.keyword.cloud_notm}} Controller Manager | v1.31.14-7 | v1.31.14-15 | New version contains updates and security fixes. |
-| {{site.data.keyword.filestorage_full_notm}} for Classic plug-in and monitor | 452 | v454 | New version contains updates and security fixes. |
-| {{site.data.keyword.cloud_notm}} RBAC Operator | 8a12251 | 6212368 | New version contains updates and security fixes. |
-| Key Management Service provider | v2.10.20 | 2.10.22 | New version contains updates and security fixes. |
-| Load balancer and load balancer monitor for {{site.data.keyword.cloud_notm}} Provider | 3347 | 3563 | New version contains updates and security fixes. |
-| Portieris admission controller | v0.13.33 | v0.13.36 | See the [Portieris admission controller release notes](https://github.com/{{site.data.keyword.IBM_notm}}/portieris/releases/tag/v0.13.36){: external}. |
-| {{site.data.keyword.openshiftlong_notm}}. | 4.18.30 | 4.18.34 | See the [{{site.data.keyword.openshiftlong_notm}} release notes](https://docs.redhat.com/en/documentation/openshift_container_platform/4.18/html/release_notes/ocp-4-18-release-notes#ocp-4-18-34_release-notes){: external}. |
-{: caption="Changes since version 4.18.32-1579-openshift" caption-side="bottom"}
+Cluster health image v1.6.15
+:   New version contains updates and security fixes.
+etcd v3.5.27
+:   See the [etcd release notes](https://github.com/etcd-io/etcd/releases/v3.5.27){: external}.
+{{site.data.keyword.cloud_notm}} Block Storage driver and plug-in v2.5.25
+:   New version contains updates and security fixes.
+{{site.data.keyword.cloud_notm}} Controller Manager v1.31.14-15
+:   New version contains updates and security fixes.
+{{site.data.keyword.filestorage_full_notm}} for Classic plug-in and monitor v454
+:   New version contains updates and security fixes.
+{{site.data.keyword.cloud_notm}} RBAC Operator 6212368
+:   New version contains updates and security fixes.
+Key Management Service provider 2.10.22
+:   New version contains updates and security fixes.
+Load balancer and load balancer monitor for {{site.data.keyword.cloud_notm}} Provider 3563
+:   New version contains updates and security fixes.
+Portieris admission controller v0.13.36
+:   See the [Portieris admission controller release notes](https://github.com/{{site.data.keyword.IBM_notm}}/portieris/releases/tag/v0.13.36){: external}.
+{{site.data.keyword.openshiftlong_notm}}. 4.18.34
+:   See the [{{site.data.keyword.openshiftlong_notm}} release notes](https://docs.redhat.com/en/documentation/openshift_container_platform/4.18/html/release_notes/ocp-4-18-release-notes#ocp-4-18-34_release-notes){: external}.
 
 
 ### Worker node fix pack 4.18.35_1583_openshift, released 24 March 2026
@@ -447,8 +422,6 @@ Red Hat CoreOS 4.18.35
 HAProxy 10c8639e6b5829d0af51a22755e13756f34630cf
 :   Resolves the following CVEs: [CVE-2025-15281](https://nvd.nist.gov/vuln/detail/CVE-2025-15281){: external}, and [CVE-2026-0915](https://nvd.nist.gov/vuln/detail/CVE-2026-0915){: external}.
 
-{: #cl-boms-41835_1583_openshift_W-component-table}
-
 
 ### Worker node fix pack 4.18.34_1581_openshift, released 11 March 2026
 {: #cl-boms-41834_1581_openshift_W}
@@ -466,8 +439,6 @@ Red Hat CoreOS 4.18.34
 :   For more information, see the [change logs](https://docs.redhat.com/en/documentation/openshift_container_platform/4.18/html/release_notes/ocp-4-18-release-notes.html#ocp-4-18-34_release-notes){: external}. CIS benchmark compliance [1.1.3.2](https://workbench.cisecurity.org/sections/1594516/recommendations/2564412){: external}, [1.1.3.3](https://workbench.cisecurity.org/sections/1594516/recommendations/2564414){: external}, [3.4.2](https://workbench.cisecurity.org/benchmarks/11478/sections/1594542){: external}, [4.2.2.3](https://workbench.cisecurity.org/sections/1594553/recommendations/2564633){: external}
 HAProxy 965c403695b15b3410d87a3772002edbc5ed2569
 :   Resolves the following CVEs: [CVE-2025-69419](https://nvd.nist.gov/vuln/detail/CVE-2025-69419){: external}.
-
-{: #cl-boms-41834_1581_openshift_W-component-table}
 
 
 ### Worker node fix pack 4.18.33_1580_openshift, released 24 February 2026
@@ -487,25 +458,27 @@ Red Hat CoreOS 4.18.33
 HAProxy 2bf1aebe51a37cd9b4661656ce21e53f918166ea
 :   Resolves the following CVEs: [CVE-2025-6176](https://nvd.nist.gov/vuln/detail/CVE-2025-6176){: external}.
 
-{: #cl-boms-41833_1580_openshift_W-component-table}
-
 
 ### Change log for Master fix pack 4.18.32_1579_openshift, released 18 February 2026
 {: #41832_1579_openshift_M}
 
-The following table shows the changes that are in the master fix pack 4.18.32_1579_openshift. Master patch updates are applied automatically. 
+The following list shows the changes that are in the master fix pack 4.18.32_1579_openshift. Master patch updates are applied automatically. 
 
 
-| Component | Previous | Current | Description |
-| --- | --- | --- | --- |
-| Cluster health image | v1.6.13 | v1.6.14 | New version contains updates and security fixes. |
-| {{site.data.keyword.cloud_notm}} Block Storage driver and plug-in | v2.5.22 | v2.5.24 | New version contains updates and security fixes. |
-| {{site.data.keyword.cloud_notm}} Controller Manager | v1.31.14-7 | v1.31.14-11 | New version contains updates and security fixes. |
-| {{site.data.keyword.filestorage_full_notm}} for Classic plug-in and monitor | 452 | v453 | New version contains updates and security fixes. |
-| Key Management Service provider | v2.10.20 | 2.10.21 | New version contains updates and security fixes. |
-| Portieris admission controller | v0.13.33 | v0.13.35 | See the [Portieris admission controller release notes](https://github.com/{{site.data.keyword.IBM_notm}}/portieris/releases/tag/v0.13.35){: external}. |
-| {{site.data.keyword.openshiftlong_notm}}. | 4.18.30 | 4.18.32 | See the [{{site.data.keyword.openshiftlong_notm}} release notes](https://docs.redhat.com/en/documentation/openshift_container_platform/4.18/html/release_notes/ocp-4-18-release-notes#ocp-4-18-32_release-notes){: external}. |
-{: caption="Changes since version 4.18.30-1576-openshift" caption-side="bottom"}
+Cluster health image v1.6.14
+:   New version contains updates and security fixes.
+{{site.data.keyword.cloud_notm}} Block Storage driver and plug-in v2.5.24
+:   New version contains updates and security fixes.
+{{site.data.keyword.cloud_notm}} Controller Manager v1.31.14-11
+:   New version contains updates and security fixes.
+{{site.data.keyword.filestorage_full_notm}} for Classic plug-in and monitor v453
+:   New version contains updates and security fixes.
+Key Management Service provider 2.10.21
+:   New version contains updates and security fixes.
+Portieris admission controller v0.13.35
+:   See the [Portieris admission controller release notes](https://github.com/{{site.data.keyword.IBM_notm}}/portieris/releases/tag/v0.13.35){: external}.
+{{site.data.keyword.openshiftlong_notm}}. 4.18.32
+:   See the [{{site.data.keyword.openshiftlong_notm}} release notes](https://docs.redhat.com/en/documentation/openshift_container_platform/4.18/html/release_notes/ocp-4-18-release-notes#ocp-4-18-32_release-notes){: external}.
 
 
 ### Worker node fix pack 4.18.32_1578_openshift, released 09 February 2026
@@ -525,8 +498,6 @@ Red Hat CoreOS 4.18.32
 HAProxy ace947f4ecf45f28effe8d125ffda48f9890223b
 :   Resolves the following CVEs: [CVE-2025-14104](https://nvd.nist.gov/vuln/detail/CVE-2025-14104){: external}.
 
-{: #cl-boms-41832_1578_openshift_W-component-table}
-
 
 ### Worker node fix pack 4.18.31_1577_openshift, released 27 January 2026
 {: #cl-boms-41831_1577_openshift_W}
@@ -545,26 +516,29 @@ Red Hat CoreOS 4.18.31
 HAProxy c9cb5ad988e916d184d1c308d4f2e5c502d99523
 :   Resolves the following CVEs: [CVE-2025-68973](https://nvd.nist.gov/vuln/detail/CVE-2025-68973){: external}, [CVE-2025-13601](https://nvd.nist.gov/vuln/detail/CVE-2025-13601){: external}, and [CVE-2025-9230](https://nvd.nist.gov/vuln/detail/CVE-2025-9230){: external}.
 
-{: #cl-boms-41831_1577_openshift_W-component-table}
-
 
 ### Master fix pack 4.18.30_1576_openshift, released 21 January 2026
 {: #41830_1576_openshift_M}
 
-The following table shows the changes that are in the master fix pack 4.18.30_1576_openshift. Master patch updates are applied automatically. 
+The following list shows the changes that are in the master fix pack 4.18.30_1576_openshift. Master patch updates are applied automatically. 
 
 
-| Component | Previous | Current | Description |
-| --- | --- | --- | --- |
-| Calico | v3.29.6 | v3.29.7 | See the [Calico release notes](https://docs.tigera.io/calico/3.29/release-notes/#calico-open-source-3297-bug-fix-release){: external}. |
-| Cluster health image | v1.6.10 | v1.6.13 | New version contains updates and security fixes. |
-| etcd | v3.5.24 | v3.5.26 | See the [etcd release notes](https://github.com/etcd-io/etcd/releases/v3.5.26){: external}. |
-| {{site.data.keyword.cloud_notm}} Controller Manager | v1.31.13-6 | v1.31.14-7 | New version contains updates and security fixes. |
-| Key Management Service provider | v2.10.18 | 2.10.20 | New version contains updates and security fixes. |
-| Portieris admission controller | v0.13.31 | v0.13.33 | See the [Portieris admission controller release notes](https://github.com/{{site.data.keyword.IBM_notm}}/portieris/releases/tag/v0.13.33){: external}. |
-| {{site.data.keyword.openshiftlong_notm}}. | 4.18.27 | 4.18.30 | See the [{{site.data.keyword.openshiftlong_notm}} release notes](https://docs.redhat.com/en/documentation/openshift_container_platform/4.18/html/release_notes/ocp-4-18-release-notes#ocp-4-18-30_release-notes){: external}. |
-| Tigera Operator | v1.36.14 | v1.36.16 | See the [Tigera Operator release notes](https://github.com/tigera/operator/releases/tag/v1.36.16){: external}. |
-{: caption="Changes since version 4.18.28-1571-openshift" caption-side="bottom"}
+Calico v3.29.7
+:   See the [Calico release notes](https://docs.tigera.io/calico/3.29/release-notes/#calico-open-source-3297-bug-fix-release){: external}.
+Cluster health image v1.6.13
+:   New version contains updates and security fixes.
+etcd v3.5.26
+:   See the [etcd release notes](https://github.com/etcd-io/etcd/releases/v3.5.26){: external}.
+{{site.data.keyword.cloud_notm}} Controller Manager v1.31.14-7
+:   New version contains updates and security fixes.
+Key Management Service provider 2.10.20
+:   New version contains updates and security fixes.
+Portieris admission controller v0.13.33
+:   See the [Portieris admission controller release notes](https://github.com/{{site.data.keyword.IBM_notm}}/portieris/releases/tag/v0.13.33){: external}.
+{{site.data.keyword.openshiftlong_notm}}. 4.18.30
+:   See the [{{site.data.keyword.openshiftlong_notm}} release notes](https://docs.redhat.com/en/documentation/openshift_container_platform/4.18/html/release_notes/ocp-4-18-release-notes#ocp-4-18-30_release-notes){: external}.
+Tigera Operator v1.36.16
+:   See the [Tigera Operator release notes](https://github.com/tigera/operator/releases/tag/v1.36.16){: external}.
 
 
 ### Worker node fix pack 4.18.30_1574_openshift, released 12 January 2026
@@ -582,8 +556,6 @@ Red Hat CoreOS 4.18.30
 HAProxy d04e61c5b29aa5328bc72455edb95e08e8f6d85c
 :   
 
-{: #cl-boms-41830_1574_openshift_W-component-table}
-
 
 ### Worker node fix pack 4.18.30_1573_openshift, released 29 December 2025
 {: #cl-boms-41830_1573_openshift_W}
@@ -599,8 +571,6 @@ Red Hat CoreOS 4.18.30
 :   For more information, see the [change logs](https://docs.redhat.com/en/documentation/openshift_container_platform/4.18/html/release_notes/ocp-4-18-release-notes.html#ocp-4-18-30_release-notes){: external}.
 HAProxy d04e61c5b29aa5328bc72455edb95e08e8f6d85c
 :   Resolves the following CVEs: [CVE-2025-9086](https://nvd.nist.gov/vuln/detail/CVE-2025-9086){: external}.
-
-{: #cl-boms-41830_1573_openshift_W-component-table}
 
 
 ### Worker node fix pack 4.18.30_1572_openshift, released 16 December 2025
@@ -618,24 +588,25 @@ Red Hat CoreOS 4.18.30
 HAProxy 03b74b82b63cd53403b6b587b84233c93edef18d
 :   
 
-{: #cl-boms-41830_1572_openshift_W-component-table}
-
 
 ### Master fix pack 4.18.28_1571_openshift, released 10 December 2025
 {: #41828_1571_openshift_M}
 
-The following table shows the changes that are in the master fix pack 4.18.28_1571_openshift. Master patch updates are applied automatically. 
+The following list shows the changes that are in the master fix pack 4.18.28_1571_openshift. Master patch updates are applied automatically. 
 
 
-| Component | Previous | Current | Description |
-| --- | --- | --- | --- |
-| Cluster health image | v1.6.10 | v1.6.13 | New version contains updates and security fixes. |
-| etcd | v3.5.24 | v3.5.25 | See the [etcd release notes](https://github.com/etcd-io/etcd/releases/v3.5.25){: external}. |
-| {{site.data.keyword.cloud_notm}} Controller Manager | v1.31.13-6 | v1.31.14-3 | New version contains updates and security fixes. |
-| Key Management Service provider | v2.10.17 | 2.10.19 | New version contains updates and security fixes. |
-| Portieris admission controller | v0.13.31 | v0.13.33 | See the [Portieris admission controller release notes](https://github.com/{{site.data.keyword.IBM_notm}}/portieris/releases/tag/v0.13.33){: external}. |
-| {{site.data.keyword.openshiftlong_notm}}. | 4.18.26 | 4.18.28 | See the [{{site.data.keyword.openshiftlong_notm}} release notes](https://docs.redhat.com/en/documentation/openshift_container_platform/4.18/html/release_notes/ocp-4-18-release-notes#ocp-4-18-28_release-notes){: external}. |
-{: caption="Changes since version 4.18.27-1568-openshift" caption-side="bottom"}
+Cluster health image v1.6.13
+:   New version contains updates and security fixes.
+etcd v3.5.25
+:   See the [etcd release notes](https://github.com/etcd-io/etcd/releases/v3.5.25){: external}.
+{{site.data.keyword.cloud_notm}} Controller Manager v1.31.14-3
+:   New version contains updates and security fixes.
+Key Management Service provider 2.10.19
+:   New version contains updates and security fixes.
+Portieris admission controller v0.13.33
+:   See the [Portieris admission controller release notes](https://github.com/{{site.data.keyword.IBM_notm}}/portieris/releases/tag/v0.13.33){: external}.
+{{site.data.keyword.openshiftlong_notm}}. 4.18.28
+:   See the [{{site.data.keyword.openshiftlong_notm}} release notes](https://docs.redhat.com/en/documentation/openshift_container_platform/4.18/html/release_notes/ocp-4-18-release-notes#ocp-4-18-28_release-notes){: external}.
 
 
 ### Worker node fix pack 4.18.29_1570_openshift, released 03 December 2025
@@ -653,8 +624,6 @@ Red Hat CoreOS 4.18.29
 HAProxy 03b74b82b63cd53403b6b587b84233c93edef18d
 :   Resolves the following CVEs: [CVE-2025-59375](https://nvd.nist.gov/vuln/detail/CVE-2025-59375){: external}, [CVE-2025-5372](https://nvd.nist.gov/vuln/detail/CVE-2025-5372){: external}, [CVE-2024-28757](https://nvd.nist.gov/vuln/detail/CVE-2024-28757){: external}, and [CVE-2022-23990](https://nvd.nist.gov/vuln/detail/CVE-2022-23990){: external}.
 
-{: #cl-boms-41829_1570_openshift_W-component-table}
-
 
 ### Worker node fix pack 4.18.27_1569_openshift, released 17 November 2025
 {: #cl-boms-41827_1569_openshift_W}
@@ -671,26 +640,29 @@ Red Hat CoreOS 4.18.27
 HAProxy fbe9b8146f23bbd12b2566a79fa897d5981e7273
 :   
 
-{: #cl-boms-41827_1569_openshift_W-component-table}
-
 
 ### Master fix pack 4.18.27_1568_openshift, released 15 November 2025
 {: #41827_1568_openshift_M}
 
-The following table shows the changes that are in the master fix pack 4.18.27_1568_openshift. Master patch updates are applied automatically. 
+The following list shows the changes that are in the master fix pack 4.18.27_1568_openshift. Master patch updates are applied automatically. 
 
 
-| Component | Previous | Current | Description |
-| --- | --- | --- | --- |
-| Calico | v3.29.5 | v3.29.6 | See the [Calico release notes](https://docs.tigera.io/calico/3.29/release-notes/#calico-open-source-3296-bug-fix-release){: external}. |
-| etcd | v3.5.23 | v3.5.24 | See the [etcd release notes](https://github.com/etcd-io/etcd/releases/v3.5.24){: external}. |
-| {{site.data.keyword.cloud_notm}} Block Storage driver and plug-in | v2.5.20 | v2.5.22 | New version contains updates and security fixes. |
-| {{site.data.keyword.cloud_notm}} Controller Manager | v1.31.13-2 | v1.31.13-6 | New version contains updates and security fixes. |
-| Key Management Service provider | v2.10.17 | v2.10.18 | New version contains updates and security fixes. |
-| Portieris admission controller | v0.13.30 | v0.13.31 | See the [Portieris admission controller release notes](https://github.com/{{site.data.keyword.IBM_notm}}/portieris/releases/tag/v0.13.31){: external}. |
-| {{site.data.keyword.openshiftlong_notm}}. | 4.18.24 | 4.18.27 | See the [{{site.data.keyword.openshiftlong_notm}} release notes](https://docs.redhat.com/en/documentation/openshift_container_platform/4.18/html/release_notes/ocp-4-18-release-notes#ocp-4-18-27_release-notes){: external}. |
-| Tigera Operator | v1.36.13 | v1.36.14 | See the [Tigera Operator release notes](https://github.com/tigera/operator/releases/tag/v1.36.14){: external}. |
-{: caption="Changes since version 4.18.24_1563_openshift" caption-side="bottom"}
+Calico v3.29.6
+:   See the [Calico release notes](https://docs.tigera.io/calico/3.29/release-notes/#calico-open-source-3296-bug-fix-release){: external}.
+etcd v3.5.24
+:   See the [etcd release notes](https://github.com/etcd-io/etcd/releases/v3.5.24){: external}.
+{{site.data.keyword.cloud_notm}} Block Storage driver and plug-in v2.5.22
+:   New version contains updates and security fixes.
+{{site.data.keyword.cloud_notm}} Controller Manager v1.31.13-6
+:   New version contains updates and security fixes.
+Key Management Service provider v2.10.18
+:   New version contains updates and security fixes.
+Portieris admission controller v0.13.31
+:   See the [Portieris admission controller release notes](https://github.com/{{site.data.keyword.IBM_notm}}/portieris/releases/tag/v0.13.31){: external}.
+{{site.data.keyword.openshiftlong_notm}}. 4.18.27
+:   See the [{{site.data.keyword.openshiftlong_notm}} release notes](https://docs.redhat.com/en/documentation/openshift_container_platform/4.18/html/release_notes/ocp-4-18-release-notes#ocp-4-18-27_release-notes){: external}.
+Tigera Operator v1.36.14
+:   See the [Tigera Operator release notes](https://github.com/tigera/operator/releases/tag/v1.36.14){: external}.
 
 
 ### Worker node fix pack 4.18.27_1566_openshift, released 06 November 2025
@@ -708,8 +680,6 @@ Red Hat CoreOS 4.18.27
 HAProxy fbe9b8146f23bbd12b2566a79fa897d5981e7273
 :   Resolves the following CVEs: [CVE-2025-5318](https://nvd.nist.gov/vuln/detail/CVE-2025-5318){: external}.
 
-{: #cl-boms-41827_1566_openshift_W-component-table}
-
 
 ### Worker node fix pack 4.18.26_1565_openshift, released 21 October 2025
 {: #cl-boms-41826_1565_openshift_W}
@@ -723,8 +693,6 @@ Red Hat OpenShift and Red Hat CoreOS 4.18.26
 :   For more information, see the [change logs](https://docs.redhat.com/en/documentation/openshift_container_platform/4.18/html/release_notes/ocp-4-18-release-notes.html#ocp-4-18-26_release-notes){: external}.
 HAProxy c01cd5322cd5c284286c07fe9ad0cc0ef3ab5360
 :   Resolves the following CVEs: [CVE-2025-32988](https://nvd.nist.gov/vuln/detail/CVE-2025-32988){: external}, [CVE-2025-6395](https://nvd.nist.gov/vuln/detail/CVE-2025-6395){: external}, and [CVE-2025-32990](https://nvd.nist.gov/vuln/detail/CVE-2025-32990){: external}.
-
-{: #cl-boms-41826_1565_openshift_W-component-table}
 
 
 ### Worker node fix pack 4.18.25_1564_openshift, released 08 October 2025
@@ -740,26 +708,29 @@ Red Hat OpenShift and Red Hat CoreOS 4.18.25
 HAProxy e0a48fcf355d98dc769ea048d2fd02044b11ed62
 :   
 
-{: #cl-boms-41825_1564_openshift_W-component-table}
-
 
 ### Master fix pack 4.18.24_1563_openshift, released 07 October 2025
 {: #41824_1563_openshift_M}
 
-The following table shows the changes that are in the master fix pack 4.18.24_1563_openshift. Master patch updates are applied automatically. 
+The following list shows the changes that are in the master fix pack 4.18.24_1563_openshift. Master patch updates are applied automatically. 
 
 
-| Component | Previous | Current | Description |
-| --- | --- | --- | --- |
-| Calico | v3.29.4 | v3.29.5 | See the [Calico release notes](https://docs.tigera.io/calico/3.29/release-notes/#v3.29.5){: external}. |
-| etcd | v3.5.22 | v3.5.23 | See the [etcd release notes](https://github.com/etcd-io/etcd/releases/v3.5.23){: external}. |
-| {{site.data.keyword.cloud_notm}} Controller Manager | v1.31.13-1 | v1.31.13-2 | New version contains updates and security fixes. |
-| {{site.data.keyword.filestorage_full_notm}} for Classic plug-in and monitor | 451 | 452 | New version contains updates and security fixes. |
-| Key Management Service provider | v2.10.16 | v2.10.17 | New version contains updates and security fixes. |
-| Portieris admission controller | v0.13.29 | v0.13.30 | See the [Portieris admission controller release notes](https://github.com/{{site.data.keyword.IBM_notm}}/portieris/releases/tag/v0.13.30){: external}. |
-| {{site.data.keyword.openshiftlong_notm}}. | 4.18.21 | 4.18.24 | See the [{{site.data.keyword.openshiftlong_notm}} release notes](https://docs.redhat.com/en/documentation/openshift_container_platform/4.18/html/release_notes/ocp-4-18-release-notes#ocp-4-18-24){: external}. |
-| Tigera Operator | v1.36.11 | v1.36.13 | See the [Tigera Operator release notes](https://github.com/tigera/operator/releases/tag/v1.36.13){: external}. |
-{: caption="Changes since version 4.18.21_1555_openshift" caption-side="bottom"}
+Calico v3.29.5
+:   See the [Calico release notes](https://docs.tigera.io/calico/3.29/release-notes/#v3.29.5){: external}.
+etcd v3.5.23
+:   See the [etcd release notes](https://github.com/etcd-io/etcd/releases/v3.5.23){: external}.
+{{site.data.keyword.cloud_notm}} Controller Manager v1.31.13-2
+:   New version contains updates and security fixes.
+{{site.data.keyword.filestorage_full_notm}} for Classic plug-in and monitor 452
+:   New version contains updates and security fixes.
+Key Management Service provider v2.10.17
+:   New version contains updates and security fixes.
+Portieris admission controller v0.13.30
+:   See the [Portieris admission controller release notes](https://github.com/{{site.data.keyword.IBM_notm}}/portieris/releases/tag/v0.13.30){: external}.
+{{site.data.keyword.openshiftlong_notm}}. 4.18.24
+:   See the [{{site.data.keyword.openshiftlong_notm}} release notes](https://docs.redhat.com/en/documentation/openshift_container_platform/4.18/html/release_notes/ocp-4-18-release-notes#ocp-4-18-24){: external}.
+Tigera Operator v1.36.13
+:   See the [Tigera Operator release notes](https://github.com/tigera/operator/releases/tag/v1.36.13){: external}.
 
 
 ### Worker node fix pack 4.18.24_1560_openshift, released 23 September 2025
@@ -775,8 +746,6 @@ Red Hat OpenShift and Red Hat CoreOS 4.18.24
 HAProxy e0a48fcf355d98dc769ea048d2fd02044b11ed62
 :   
 
-{: #cl-boms-41824_1560_openshift_W-component-table}
-
 
 ### Worker node fix pack 4.18.23_1558_openshift, released 15 September 2025
 {: #cl-boms-41823_1558_openshift_W}
@@ -790,8 +759,6 @@ Red Hat OpenShift and Red Hat CoreOS 4.18.23
 :   For more information, see the [change logs](https://docs.redhat.com/en/documentation/openshift_container_platform/4.18/html/release_notes/ocp-4-18-release-notes.html#ocp-4-18-23_release-notes){: external}.
 HAProxy e0a48fcf355d98dc769ea048d2fd02044b11ed62
 :   
-
-{: #cl-boms-41823_1558_openshift_W-component-table}
 
 
 ### Worker node fix pack 4.18.23_1557_openshift, released 09 September 2025
@@ -807,8 +774,6 @@ Red Hat OpenShift and Red Hat CoreOS 4.18.23
 HAProxy e0a48fcf355d98dc769ea048d2fd02044b11ed62
 :   Resolves the following CVEs: [CVE-2025-6020](https://nvd.nist.gov/vuln/detail/CVE-2025-6020){: external}, and [CVE-2025-8941](https://nvd.nist.gov/vuln/detail/CVE-2025-8941){: external}.
 
-{: #cl-boms-41823_1557_openshift_W-component-table}
-
 
 ### Worker node fix pack 4.18.22_1556_openshift, released 26 August 2025
 {: #cl-boms-41822_1556_openshift_W}
@@ -823,23 +788,23 @@ Red Hat OpenShift and Red Hat CoreOS 4.18.22
 HAProxy 3293782c542587d0ce46be4d053036b75509f4ef
 :   Resolves the following CVEs: [CVE-2025-5914](https://nvd.nist.gov/vuln/detail/CVE-2025-5914){: external}.
 
-{: #cl-boms-41822_1556_openshift_W-component-table}
-
 
 ### Master fix pack 4.18.21_1555_openshift, released 20 August 2025
 {: #41821_1555_openshift_M}
 
-The following table shows the changes that are in the master fix pack 4.18.21_1555_openshift. Master patch updates are applied automatically. 
+The following list shows the changes that are in the master fix pack 4.18.21_1555_openshift. Master patch updates are applied automatically. 
 
 
-| Component | Previous | Current | Description |
-| --- | --- | --- | --- |
-| etcd | v3.5.21 | v3.5.22 | See the [etcd release notes](https://github.com/etcd-io/etcd/releases/v3.5.22){: external}. |
-| {{site.data.keyword.cloud_notm}} Controller Manager | v1.31.10-4 | v1.31.11-2 | New version contains updates and security fixes. |
-| {{site.data.keyword.cloud_notm}} RBAC Operator | 38dc95c | 8a12251 | New version contains updates and security fixes. |
-| Key Management Service provider | v2.10.15 | v2.10.16 | New version contains updates and security fixes. |
-| {{site.data.keyword.openshiftlong_notm}} | 4.18.19 | 4.18.21 | See the [{{site.data.keyword.openshiftlong_notm}} release notes](https://docs.redhat.com/en/documentation/openshift_container_platform/4.18/html/release_notes/ocp-4-18-release-notes#ocp-4-18-21_release-notes){: external}. |
-{: caption="Changes since version 4.18.19_1552_openshift" caption-side="bottom"}
+etcd v3.5.22
+:   See the [etcd release notes](https://github.com/etcd-io/etcd/releases/v3.5.22){: external}.
+{{site.data.keyword.cloud_notm}} Controller Manager v1.31.11-2
+:   New version contains updates and security fixes.
+{{site.data.keyword.cloud_notm}} RBAC Operator 8a12251
+:   New version contains updates and security fixes.
+Key Management Service provider v2.10.16
+:   New version contains updates and security fixes.
+{{site.data.keyword.openshiftlong_notm}} 4.18.21
+:   See the [{{site.data.keyword.openshiftlong_notm}} release notes](https://docs.redhat.com/en/documentation/openshift_container_platform/4.18/html/release_notes/ocp-4-18-release-notes#ocp-4-18-21_release-notes){: external}.
 
 
 ### Worker node fix pack 4.18.21_1554_openshift, released 12 August 2025
@@ -855,30 +820,37 @@ Red Hat OpenShift and Red Hat CoreOS 4.18.21
 HAProxy 3a9451f4782fa8e8e9ed60b060dc4393c7e1e31a
 :   Resolves the following CVEs: [CVE-2025-6965](https://nvd.nist.gov/vuln/detail/CVE-2025-6965){: external}, [CVE-2025-8058](https://nvd.nist.gov/vuln/detail/CVE-2025-8058){: external}, and [CVE-2025-7425](https://nvd.nist.gov/vuln/detail/CVE-2025-7425){: external}.
 
-{: #cl-boms-41821_1554_openshift_W-component-table}
-
 
 ### Master fix pack 4.18.19_1552_openshift, released 30 July 2025
 {: #41819_1552_openshift_M}
 
-The following table shows the changes that are in the master fix pack 4.18.19_1552_openshift. Master patch updates are applied automatically. 
+The following list shows the changes that are in the master fix pack 4.18.19_1552_openshift. Master patch updates are applied automatically. 
 
 
-| Component | Previous | Current | Description |
-| --- | --- | --- | --- |
-| Calico | v3.29.3 | v3.29.4 | See the [Calico release notes](https://docs.tigera.io/calico/3.29/release-notes/#calico-open-source-3294-bug-fix-release){: external}. |
-| Calico API server | v3.29.2 | v3.29.4 | See the [Calico release notes](https://docs.tigera.io/archive){: external}. |
-| Cluster health image | v1.6.8 | v1.6.10 | New version contains updates and security fixes. |
-| {{site.data.keyword.cloud_notm}} Block Storage driver and plug-in | v2.5.19 | v2.5.20 | New version contains updates and security fixes. |
-| {{site.data.keyword.cloud_notm}} Controller Manager | v1.31.9-4 | v1.31.10-4 | New version contains updates and security fixes. |
-| {{site.data.keyword.filestorage_full_notm}} for Classic plug-in and monitor | 450 | 451 | New version contains updates and security fixes. |
-| {{site.data.keyword.cloud_notm}} RBAC Operator | d1545bd | 38dc95c | New version contains updates and security fixes. |
-| Key Management Service provider | v2.10.13 | v2.10.15 | New version contains updates and security fixes. |
-| Load balancer and load balancer monitor for {{site.data.keyword.cloud_notm}} Provider | 3232 | 3347 | New version contains updates and security fixes. |
-| Portieris admission controller | v0.13.26 | v0.13.29 | See the [Portieris admission controller release notes](https://github.com/{{site.data.keyword.IBM_notm}}/portieris/releases/tag/v0.13.29){: external}. |
-| {{site.data.keyword.openshiftlong_notm}}. | 4.18.12 | 4.18.19 | See the [{{site.data.keyword.openshiftlong_notm}} release notes](https://docs.redhat.com/en/documentation/openshift_container_platform/4.18/html/release_notes/ocp-4-18-release-notes#ocp-4-18-19){: external}. |
-| Tigera Operator | v1.36.8 | v1.36.11 | See the [Tigera Operator release notes](https://github.com/tigera/operator/releases/tag/v1.36.11){: external}. |
-{: caption="Changes since version 4.18.11_1547_openshift" caption-side="bottom"}
+Calico v3.29.4
+:   See the [Calico release notes](https://docs.tigera.io/calico/3.29/release-notes/#calico-open-source-3294-bug-fix-release){: external}.
+Calico API server v3.29.4
+:   See the [Calico release notes](https://docs.tigera.io/archive){: external}.
+Cluster health image v1.6.10
+:   New version contains updates and security fixes.
+{{site.data.keyword.cloud_notm}} Block Storage driver and plug-in v2.5.20
+:   New version contains updates and security fixes.
+{{site.data.keyword.cloud_notm}} Controller Manager v1.31.10-4
+:   New version contains updates and security fixes.
+{{site.data.keyword.filestorage_full_notm}} for Classic plug-in and monitor 451
+:   New version contains updates and security fixes.
+{{site.data.keyword.cloud_notm}} RBAC Operator 38dc95c
+:   New version contains updates and security fixes.
+Key Management Service provider v2.10.15
+:   New version contains updates and security fixes.
+Load balancer and load balancer monitor for {{site.data.keyword.cloud_notm}} Provider 3347
+:   New version contains updates and security fixes.
+Portieris admission controller v0.13.29
+:   See the [Portieris admission controller release notes](https://github.com/{{site.data.keyword.IBM_notm}}/portieris/releases/tag/v0.13.29){: external}.
+{{site.data.keyword.openshiftlong_notm}}. 4.18.19
+:   See the [{{site.data.keyword.openshiftlong_notm}} release notes](https://docs.redhat.com/en/documentation/openshift_container_platform/4.18/html/release_notes/ocp-4-18-release-notes#ocp-4-18-19){: external}.
+Tigera Operator v1.36.11
+:   See the [Tigera Operator release notes](https://github.com/tigera/operator/releases/tag/v1.36.11){: external}.
 
 
 ### Worker node fix pack 4.18.20_1553_openshift, released 28 July 2025
@@ -894,8 +866,6 @@ Red Hat OpenShift and Red Hat CoreOS 4.18.20
 HAProxy b19109a289be3a60985c14bfdaf2b48a472556c0
 :   Resolves the following CVEs: [CVE-2024-54661](https://nvd.nist.gov/vuln/detail/CVE-2024-54661){: external}, [CVE-2024-34397](https://nvd.nist.gov/vuln/detail/CVE-2024-34397){: external}, [CVE-2019-17543](https://nvd.nist.gov/vuln/detail/CVE-2019-17543){: external}, [CVE-2024-52533](https://nvd.nist.gov/vuln/detail/CVE-2024-52533){: external}, and [CVE-2025-4373](https://nvd.nist.gov/vuln/detail/CVE-2025-4373){: external}.
 
-{: #cl-boms-41820_1553_openshift_W-component-table}
-
 
 ### Worker node fix pack 4.18.19_1539_openshift, released 14 July 2025
 {: #cl-boms-41819_1539_openshift_W}
@@ -909,8 +879,6 @@ Red Hat OpenShift and Red Hat CoreOS 4.18.19
 :   For more information, see the [change logs](https://docs.redhat.com/en/documentation/openshift_container_platform/4.18/html/release_notes/ocp-4-18-release-notes.html#ocp-4-18-19_release-notes){: external}.
 HAProxy 3bb13ac682885a0885eacb7edd1ee7a36d54e2a8
 :   Resolves the following CVEs: [CVE-2025-6021](https://nvd.nist.gov/vuln/detail/CVE-2025-6021){: external}, [CVE-2025-49796](https://nvd.nist.gov/vuln/detail/CVE-2025-49796){: external}, [CVE-2025-49794](https://nvd.nist.gov/vuln/detail/CVE-2025-49794){: external}, and [CVE-2025-6020](https://nvd.nist.gov/vuln/detail/CVE-2025-6020){: external}.
-
-{: #cl-boms-41819_1539_openshift_W-component-table}
 
 
 ### Worker node fix pack 4.18.18_1539_openshift, released 01 July 2025
@@ -926,24 +894,25 @@ Red Hat OpenShift and Red Hat CoreOS 4.18.18
 HAProxy 951efd90b46e95a54751966c644ac37c4c901f92
 :   
 
-{: #cl-boms-41818_1539_openshift_W-component-table}
-
 
 ### Master fix pack 4.18.11_1547_openshift, released 18 June 2025
 {: #41811_1547_openshift_M}
 
-The following table shows the changes that are in the master fix pack 4.18.11_1547_openshift. Master patch updates are applied automatically. 
+The following list shows the changes that are in the master fix pack 4.18.11_1547_openshift. Master patch updates are applied automatically. 
 
 
-| Component | Previous | Current | Description |
-| --- | --- | --- | --- |
-| Calico | v3.29.2 | v3.29.3 | See the [Calico release notes](https://docs.tigera.io/calico/3.29/release-notes/#v3.29.3){: external}. |
-| {{site.data.keyword.cloud_notm}} Block Storage driver and plug-in | v2.5.17 | v2.5.19 | New version contains updates and security fixes. |
-| {{site.data.keyword.cloud_notm}} Controller Manager | v1.31.9-1 | v1.31.9-4 | New version contains updates and security fixes. |
-| {{site.data.keyword.cloud_notm}} RBAC Operator | d1545bd | 38dc95c | New version contains updates and security fixes. |
-| Key Management Service provider | v2.10.13 | v2.10.14 | New version contains updates and security fixes. |
-| Tigera Operator | v1.36.5 | v1.36.8 | See the [Tigera Operator release notes](https://github.com/tigera/operator/releases/tag/v1.36.8){: external}. |
-{: caption="Changes since version 4.18.11_1544_openshift" caption-side="bottom"}
+Calico v3.29.3
+:   See the [Calico release notes](https://docs.tigera.io/calico/3.29/release-notes/#v3.29.3){: external}.
+{{site.data.keyword.cloud_notm}} Block Storage driver and plug-in v2.5.19
+:   New version contains updates and security fixes.
+{{site.data.keyword.cloud_notm}} Controller Manager v1.31.9-4
+:   New version contains updates and security fixes.
+{{site.data.keyword.cloud_notm}} RBAC Operator 38dc95c
+:   New version contains updates and security fixes.
+Key Management Service provider v2.10.14
+:   New version contains updates and security fixes.
+Tigera Operator v1.36.8
+:   See the [Tigera Operator release notes](https://github.com/tigera/operator/releases/tag/v1.36.8){: external}.
 
 
 ### Worker node fix pack 4.18.17_1539_openshift, released 16 June 2025
@@ -959,8 +928,6 @@ Red Hat OpenShift and Red Hat CoreOS 4.18.17
 HAProxy 951efd90b46e95a54751966c644ac37c4c901f92
 :   Resolves the following CVEs: [CVE-2025-4802](https://nvd.nist.gov/vuln/detail/CVE-2025-4802){: external}, [CVE-2025-32414](https://nvd.nist.gov/vuln/detail/CVE-2025-32414){: external}, and [CVE-2025-3576](https://nvd.nist.gov/vuln/detail/CVE-2025-3576){: external}.
 
-{: #cl-boms-41817_1539_openshift_W-component-table}
-
 
 ### Worker node fix pack 4.18.15_1539_openshift, released 04 June 2025
 {: #cl-boms-41815_1539_openshift_W}
@@ -975,34 +942,37 @@ Red Hat OpenShift and Red Hat CoreOS 4.18.15
 HAProxy 978e3c26ee7634e39a940696aaf57d9e374db5ce
 :   
 
-{: #cl-boms-41815_1539_openshift_W-component-table}
-
 
 ### Master fix pack 4.18.11_1543_openshift, released 28 May 2025
 {: #41811_1544_openshift_M}
 
-The following table shows the changes that are in the master fix pack 4.18.11_1544_openshift. Master patch updates are applied automatically. 
+The following list shows the changes that are in the master fix pack 4.18.11_1544_openshift. Master patch updates are applied automatically. 
 
 
-| Component | Previous | Current | Description |
-| --- | --- | --- | --- |
-| {{site.data.keyword.cloud_notm}} Controller Manager | v1.31.8-3 | v1.31.9-1 | New version contains updates and security fixes. |
-| {{site.data.keyword.filestorage_full_notm}} for Classic plug-in and monitor | 449 | 450 | New version contains updates and security fixes. |
-{: caption="Changes since version 4.18.11_1543_openshift" caption-side="bottom"}
+{{site.data.keyword.cloud_notm}} Controller Manager v1.31.9-1
+:   New version contains updates and security fixes.
+{{site.data.keyword.filestorage_full_notm}} for Classic plug-in and monitor 450
+:   New version contains updates and security fixes.
 
 
 ### Master fix pack 4.18.11_1544_openshift and worker node fix pack 4.18.11_1541_openshift, released 27 May 2025
 {: #openshift_changelog_41811_1544}
 
-| Component | Previous | Current | Description |
-| --- | --- | --- | --- |
-| Calico API server, policy controller, and Typha | v3.28.3 | v3.29.2 | See the [Calico release notes](https://docs.tigera.io/calico/latest/release-notes/){: external}. |
-| Cluster health image | v1.6.8 | v1.6.9 | New version contains updates and security fixes. |
-| IBM Cloud Controller Manager | v1.30.11-6 | v1.31.8-3 | New version contains updates and security fixes. |
-| Key Management Service provider | 2.10.12 | 2.10.13 | New version contains updates and security fixes. |
-| Load balancer for IBM Cloud Provider | 3232 | 3293 | New version contains updates and security fixes. |
-| OpenShift | 4.17.24-x86_64 | 4.18.11-x86_64 | [OpenShift docs](https://docs.redhat.com/en/documentation/openshift_container_platform/4.18/){: external}. |
-| Portieris admission controller | v0.13.26 | v0.13.28 | See the [Portieris admission controller release notes](https://github.com/IBM/portieris/releases/tag/v0.13.28){: external}. |
-| Red Hat OpenShift on IBM Cloud Control Plane Operator, Metrics Server, and toolkit | 4.17.0+20250414 | N/A | Red Hat OpenShift on IBM Cloud 4.18 now utilizes [Red Hat HyperShift](https://github.com/openshift/hypershift){: external} in place of the toolkit. Also, see the [Red Hat OpenShift on IBM Cloud toolkit release notes](https://github.com/openshift/ibm-roks-toolkit/releases){: external}. |
-| Tigera Operator | v1.34.8 | v1.36.5 | See the [Tigera Operator release notes](https://github.com/tigera/operator/releases/tag/v1.36.5){: external}. |
-{: caption="Changes since master fix pack 4.17.24_1537_openshift and worker fix pack 4.17.25_1536_openshift." caption-side="bottom"}
+Calico API server, policy controller, and Typha v3.29.2
+:   See the [Calico release notes](https://docs.tigera.io/calico/latest/release-notes/){: external}.
+Cluster health image v1.6.9
+:   New version contains updates and security fixes.
+IBM Cloud Controller Manager v1.31.8-3
+:   New version contains updates and security fixes.
+Key Management Service provider 2.10.13
+:   New version contains updates and security fixes.
+Load balancer for IBM Cloud Provider 3293
+:   New version contains updates and security fixes.
+OpenShift 4.18.11-x86_64
+:   [OpenShift docs](https://docs.redhat.com/en/documentation/openshift_container_platform/4.18/){: external}.
+Portieris admission controller v0.13.28
+:   See the [Portieris admission controller release notes](https://github.com/IBM/portieris/releases/tag/v0.13.28){: external}.
+Red Hat OpenShift on IBM Cloud Control Plane Operator, Metrics Server, and toolkit
+:   Red Hat OpenShift on IBM Cloud 4.18 now utilizes [Red Hat HyperShift](https://github.com/openshift/hypershift){: external} in place of the toolkit. Also, see the [Red Hat OpenShift on IBM Cloud toolkit release notes](https://github.com/openshift/ibm-roks-toolkit/releases){: external}.
+Tigera Operator v1.36.5
+:   See the [Tigera Operator release notes](https://github.com/tigera/operator/releases/tag/v1.36.5){: external}.
