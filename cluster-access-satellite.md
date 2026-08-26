@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2026
-lastupdated: "2026-08-11"
+lastupdated: "2026-08-26"
 
 keywords: openshift, satellite, clusters, access, service url, link endpoint, public network
 
@@ -14,6 +14,8 @@ subcollection: openshift
 
 # Accessing clusters on {{site.data.keyword.satelliteshort}}
 {: #cluster-access-satellite}
+
+
 
 {{site.data.keyword.redhat_openshift_notm}} clusters on {{site.data.keyword.satelliteshort}} can be accessed through several methods depending on your network setup.
 {: shortdesc}
