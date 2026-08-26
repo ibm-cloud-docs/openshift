@@ -3,7 +3,7 @@
 copyright:
   years: 2024, 2026
 
-lastupdated: "2026-06-26"
+lastupdated: "2026-08-26"
 
 
 keywords: change log, version history, Confidential containers
@@ -23,6 +23,24 @@ subcollection: "openshift"
 
 Review the version history for Confidential containers.
 {: shortdesc}
+
+
+## Version 20260822-01-hardened
+{: #cl-confidential-containers-20260822-01-hardened}
+
+
+### Version 20260822-01-hardened, released 23 August 2026
+{: #cl-confidential-containers-20260822-01-hardened}
+
+- Uptycs 5.19.0.21 ca.crt fix — All 7 hardened tests passed
+- `rhel9-podvm-hardened-20260822-01.qcow2`
+
+
+### Version 20260822-01, released 23 August 2026
+{: #cl-confidential-containers-20260822-01}
+
+- Uptycs 5.19.0.21 ca.crt fix — All 18 tests passed
+- `rhel9-podvm-20260822-01.qcow2`
 
 
 ## Version 20260604-05-hardened
