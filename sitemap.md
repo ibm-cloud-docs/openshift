@@ -8865,6 +8865,12 @@ subcollection: openshift
 
 [Confidential containers](/docs/openshift?topic=openshift-cl-confidential-containers#cl-confidential-containers)
 
+* [Version 20260822-01-hardened](/docs/openshift?topic=openshift-cl-confidential-containers#cl-confidential-containers-20260822-01-hardened)
+
+    * [Version 20260822-01-hardened, released 23 August 2026](/docs/openshift?topic=openshift-cl-confidential-containers#cl-confidential-containers-20260822-01-hardened)
+
+    * [Version 20260822-01, released 23 August 2026](/docs/openshift?topic=openshift-cl-confidential-containers#cl-confidential-containers-20260822-01)
+
 * [Version 20260604-05-hardened](/docs/openshift?topic=openshift-cl-confidential-containers#cl-confidential-containers-20260604-05-hardened)
 
     * [Version 20260604-05-hardened, released 04 June 2026](/docs/openshift?topic=openshift-cl-confidential-containers#cl-confidential-containers-20260604-05-hardened)
