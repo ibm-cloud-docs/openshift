@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2026
-lastupdated: "2026-08-24"
+lastupdated: "2026-08-26"
 
 
 keywords: kubernetes, release notes, openshift, {{site.data.keyword.openshiftlong_notm}}
@@ -44,6 +44,9 @@ IBM Object CSI Driver cluster add-on patch updates.
 
 CLI version 1.0.829 is available.
 :   For more information, see the [CLI change log](/docs/openshift?topic=openshift-cs_cli_changelog).
+
+VPC Block CSI Driver cluster add-on patch updates.
+:   For more information, see the [change log](/docs/openshift?topic=openshift-cl-add-ons-vpc-block-csi-driver).
 
 ### 18 August 2026
 {: #openshift-aug1826}
