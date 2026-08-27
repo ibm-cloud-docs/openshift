@@ -487,6 +487,16 @@ subcollection: openshift
 
 * [August 2026](/docs/openshift?topic=openshift-openshift-relnotes#openshift-aug26)
 
+    * [26 August 2026](/docs/openshift?topic=openshift-openshift-relnotes#openshift-aug2626)
+
+        * VPC File CSI Driver cluster add-on patch updates.
+
+        * IBM Storage Operator cluster add-on patch updates.
+
+    * [25 August 2026](/docs/openshift?topic=openshift-openshift-relnotes#openshift-aug2526)
+
+        * Worker node fix packs are available for {{site.data.keyword.openshiftlong_notm}} and OpenShift Virtualization Service.
+
     * [20 August 2026](/docs/openshift?topic=openshift-openshift-relnotes#openshift-aug2026)
 
         * IBM Object CSI Driver cluster add-on patch updates.
