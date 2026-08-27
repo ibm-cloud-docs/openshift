@@ -3,7 +3,7 @@
 copyright:
   years: 2024, 2026
 
-lastupdated: "2026-08-24"
+lastupdated: "2026-08-27"
 
 
 keywords: change log, version history, Object Storage plug in
@@ -27,6 +27,14 @@ Review the version history for Object Storage plug in.
 
 ## Version 2.2
 {: #cl-object-storage-plug-in-2.2}
+
+
+### Version 2.2 - 2.2.59, released 27 August 2026
+{: #cl-object-storage-plug-in-2259}
+
+- Resolves the following CVEs: [CVE-2026-33818](https://nvd.nist.gov/vuln/detail/CVE-2026-33818){: external}, [CVE-2026-39821](https://nvd.nist.gov/vuln/detail/CVE-2026-39821){: external}, [CVE-2026-46600](https://nvd.nist.gov/vuln/detail/CVE-2026-46600){: external}, [CVE-2026-56853](https://nvd.nist.gov/vuln/detail/CVE-2026-56853){: external}, [CVE-2026-56858](https://nvd.nist.gov/vuln/detail/CVE-2026-56858){: external}, [CVE-2026-56859](https://nvd.nist.gov/vuln/detail/CVE-2026-56859){: external}, [CVE-2026-56860](https://nvd.nist.gov/vuln/detail/CVE-2026-56860){: external}, and [CVE-2026-56862](https://nvd.nist.gov/vuln/detail/CVE-2026-56862){: external}.
+- Updates Go to version `1.26.6`.
+- WORKER_OS detection issue on RHEL 9 due to unquoted tr syntax in ibmc.sh 
 
 
 ### Version 2.2 - 2.2.58, released 15 August 2026
