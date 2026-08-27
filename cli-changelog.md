@@ -32,6 +32,14 @@ Refer to the following change logs for a summary of changes for each version of 
 Review the following changes for 1.0 versions of the CLI plug-in.
 {: shortdesc}
 
+## Version v1.0.843
+{: #cli-01843}
+
+Version 1.0.843 of the CLI was released on 27 August 2026.
+- Improves the help text descriptions for add-on, logging, and ingress commands. No new commands or flags are added.
+- Fixes an issue where trailing slashes were not trimmed from API endpoint URLs.
+- Updates dependencies to address CVEs.
+
 ## Version v1.0.829
 {: #cli-01829}
 
