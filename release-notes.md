@@ -29,7 +29,6 @@ Looking for {{site.data.keyword.cloud_notm}} status, platform announcements, sec
 ## August 2026
 {: #openshift-aug26}
 
-
 ### 26 August 2026
 {: #openshift-aug2626}
 {: release-note}
@@ -46,7 +45,6 @@ VPC File CSI Driver cluster add-on patch updates.
 
 IBM Storage Operator cluster add-on patch updates.
 :   For more information, see the [change log](/docs/openshift?topic=openshift-cl-add-ons-ibm-storage-operator).
-
 
 ### 25 August 2026
 {: #openshift-aug2526}
