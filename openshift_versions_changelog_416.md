@@ -23,6 +23,13 @@ subcollection: openshift
 View information of version changes for major, minor, and patch updates that are available for your {{site.data.keyword.openshiftlong}} clusters that run this version. Changes include updates to {{site.data.keyword.redhat_openshift_notm}}, Kubernetes, and {{site.data.keyword.cloud_notm}} Provider components.
 {: shortdesc}
 
+
+
+This version is no longer supported. Update your cluster to a [supported version](/docs/openshift?topic=openshift-openshift_versions) as soon as possible.
+{: important}
+
+
+
 ## Overview
 {: #changelog_overview_416}
 

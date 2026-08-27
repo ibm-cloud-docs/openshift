@@ -2,7 +2,7 @@
 
 copyright:
   years: 2024, 2026
-lastupdated: "2026-07-30"
+lastupdated: "2026-08-27"
 
 
 keywords: openshift, version, update, upgrade, 4.16, update openshift
@@ -19,6 +19,13 @@ subcollection: openshift
 
 Review information about version 4.16 of {{site.data.keyword.openshiftlong_notm}}. This version is based on Kubernetes version {{site.data.keyword.openshift_416_kube_version}}. 
 {: shortdesc}
+
+
+
+This version is no longer supported. Update your cluster to a [supported version](/docs/openshift?topic=openshift-openshift_versions) as soon as possible.
+{: important}
+
+
 
 Looking for general information about updating clusters, or information on a different version? See [Red Hat {{site.data.keyword.redhat_openshift_notm}} on IBM Cloud version information](/docs/openshift?topic=openshift-openshift_versions) and the version [4.16 release notes](https://docs.redhat.com/en/documentation/openshift_container_platform/4.16/html/release_notes/ocp-4-16-release-notes#ocp-4-16-release-notes){: external}.
 {: tip}
@@ -39,7 +46,7 @@ Dates that are marked with a dagger (`†`) are tentative and subject to change.
 
 | Supported? | {{site.data.keyword.redhat_openshift_notm}} / Kubernetes version | Release date | Unsupported date |
 | --- | --- | --- | --- |
-| Supported | 4.16 / {{site.data.keyword.openshift_416_kube_version}} | {{site.data.keyword.openshift_416_release_date}} | {{site.data.keyword.openshift_416_unsupported_date}}`†` |
+| Unsupported | 4.16 / {{site.data.keyword.openshift_416_kube_version}} | {{site.data.keyword.openshift_416_release_date}} | {{site.data.keyword.openshift_416_unsupported_date}} |
 {: caption="Release history for {{site.data.keyword.openshiftlong_notm}} version 4.16." caption-side="bottom"}
 
 ## Preparing to update

@@ -34,11 +34,19 @@ Looking for {{site.data.keyword.cloud_notm}} status, platform announcements, sec
 {: #openshift-aug2626}
 {: release-note}
 
+
+
+{{site.data.keyword.openshiftlong_notm}} version 4.16 is no longer supported.
+:   {{site.data.keyword.openshiftlong_notm}} version 4.16 is unsupported as of 26 August 2026. Update your cluster to at least [version 4.17](/docs/openshift?topic=openshift-openshift_versions_417) as soon as possible.
+
+
+
 VPC File CSI Driver cluster add-on patch updates.
 :   For more information, see the [change log](/docs/openshift?topic=openshift-cl-add-ons-vpc-file-csi-driver).
 
 IBM Storage Operator cluster add-on patch updates.
 :   For more information, see the [change log](/docs/openshift?topic=openshift-cl-add-ons-ibm-storage-operator).
+
 
 ### 25 August 2026
 {: #openshift-aug2526}

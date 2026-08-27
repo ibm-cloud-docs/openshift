@@ -1,8 +1,8 @@
 ---
 
 copyright: 
-  years: 2024, 2025
-lastupdated: "2025-10-14"
+  years: 2024, 2026
+lastupdated: "2026-08-27"
 
 keywords: openshift, benchmarks, 4.16, openshift benchmarks, openshift 4.16, compliance operator, compliance
 
@@ -17,6 +17,11 @@ subcollection: openshift
 
 Review the compliance operator benchmark results for {{site.data.keyword.openshiftlong_notm}} version 4.16. 
 {: shortdesc}
+
+
+
+This version is no longer supported. Update your cluster to a [supported version](/docs/openshift?topic=openshift-openshift_versions) as soon as possible.
+{: important}
 
 
 
