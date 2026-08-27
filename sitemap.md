@@ -489,6 +489,8 @@ subcollection: openshift
 
     * [26 August 2026](/docs/openshift?topic=openshift-openshift-relnotes#openshift-aug2626)
 
+        * {{site.data.keyword.openshiftlong_notm}} version 4.16 is no longer supported.
+
         * VPC File CSI Driver cluster add-on patch updates.
 
         * IBM Storage Operator cluster add-on patch updates.
