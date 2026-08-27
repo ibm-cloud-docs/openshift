@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2026
-lastupdated: "2026-08-19"
+lastupdated: "2026-08-27"
 
 
 keywords: openshift, {{site.data.keyword.openshiftlong_notm}}, oc, ks
@@ -380,7 +380,7 @@ Version 0.1.589 of the CLI was released on 19 January 2024.
 - Adds the `sat experimental connector agent` commands.
 - Deprecates the `private service endpoint disable` commands.
 - Updates to experimental commands.
-- Resolves [CVE-2023-48795](https://nvd.nist.gov/vuln/detail/CVE-2023-48795){: external}.
+- Resolves [CVE-2023-48795](https://nvd.nist.gov/vuln/detail/cve-2023-48795){: external}.
 - Upgrades the golang version.
 - Updates the phrasing of various commands and help text strings. 
 
@@ -461,7 +461,7 @@ Version 1.0.510 of the CLI was released on 11 April 2023.
 
 Version 1.0.498 of the CLI was released on 1 March 2023.
 - Adds the `ibmcloud oc cluster master pod-security get` command.
-- Updates the `golang` version to resolve [CVE-2022-41723](https://www.cve.org/CVERecord?id=2022-41723){: external}.
+- Updates the `golang` version to resolve [CVE-2022-41723](https://www.cve.org/cveRecord?id=2022-41723){: external}.
 - Adds an `Architecture` field to the `ibmcloud oc flavor get` command output.
 - Improves formatting of the `ibmcloud oc ingress secret ls` command output.
 - When the `ibmcloud oc cluster config` command returns, you can run `kubectl` or `oc` commands immediately without a waiting period.

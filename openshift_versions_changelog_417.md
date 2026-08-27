@@ -3,7 +3,7 @@
 copyright:
   years: 2024, 2026
 
-lastupdated: "2026-08-26"
+lastupdated: "2026-08-27"
 
 
 keywords: change log, version history, 4.17_openshift
@@ -1758,7 +1758,7 @@ The following list shows the changes that are in the worker node fix pack 4.17.9
 {: shortdesc}
 
 RHEL 8 Packages
-:   Worker node package updates for [RHSA-2024:3043](https://access.redhat.com/errata/RHSA-2024:3043){: external}, [CVE-2024-0690](https://nvd.nist.gov/vuln/detail/CVE-2024-0690){: external}, [RHSA-2024:11161](https://access.redhat.com/errata/RHSA-2024:11161){: external}, [CVE-2024-52337](https://nvd.nist.gov/vuln/detail/CVE-2024-52337){: external}.
+:   Worker node package updates for [RHSA-2024:3043](https://access.redhat.com/errata/RHSA-2024:3043){: external}, [CVE-2024-0690](https://nvd.nist.gov/vuln/detail/cve-2024-0690){: external}, [RHSA-2024:11161](https://access.redhat.com/errata/RHSA-2024:11161){: external}, [CVE-2024-52337](https://nvd.nist.gov/vuln/detail/cve-2024-52337){: external}.
 {{site.data.keyword.openshiftshort}} and Red Hat CoreOS 4.17.9
 :   For more information, see the [change logs](https://docs.redhat.com/en/documentation/openshift_container_platform/4.17/html/release_notes/ocp-4-17-release-notes#ocp-4-17-9_release-notes){: external}.
 
@@ -1770,9 +1770,9 @@ The following list shows the changes that are in the worker node fix pack 4.17.8
 {: shortdesc}
 
 RHEL 8 Packages 4.18.0-553.32.1.el8_10
-:   Worker node kernel & package updates for [RHSA-2024:3043](https://access.redhat.com/errata/RHSA-2024:3043){: external}, [CVE-2024-0690](https://nvd.nist.gov/vuln/detail/CVE-2024-0690){: external}, [RHSA-2024:10943](https://access.redhat.com/errata/RHSA-2024:10943){: external}, [CVE-2024-46695](https://nvd.nist.gov/vuln/detail/CVE-2024-46695){: external}, [CVE-2024-49949](https://nvd.nist.gov/vuln/detail/CVE-2024-49949){: external}, [CVE-2024-50082](https://nvd.nist.gov/vuln/detail/CVE-2024-50082){: external}, [CVE-2024-50099](https://nvd.nist.gov/vuln/detail/CVE-2024-50099){: external}, [CVE-2024-50110](https://nvd.nist.gov/vuln/detail/CVE-2024-50110){: external}, [CVE-2024-50142](https://nvd.nist.gov/vuln/detail/CVE-2024-50142){: external}, [CVE-2024-50192](https://nvd.nist.gov/vuln/detail/CVE-2024-50192){: external}, [CVE-2024-50256](https://nvd.nist.gov/vuln/detail/CVE-2024-50256){: external}, [CVE-2024-50264](https://nvd.nist.gov/vuln/detail/CVE-2024-50264){: external}, [RHSA-2024:10779](https://access.redhat.com/errata/RHSA-2024:10779){: external}, [CVE-2024-11168](https://nvd.nist.gov/vuln/detail/CVE-2024-11168){: external}, [CVE-2024-9287](https://nvd.nist.gov/vuln/detail/CVE-2024-9287){: external}, [RHSA-2024:10784](https://access.redhat.com/errata/RHSA-2024:10784){: external}, [CVE-2022-3064](https://nvd.nist.gov/vuln/detail/CVE-2022-3064){: external}.
+:   Worker node kernel & package updates for [RHSA-2024:3043](https://access.redhat.com/errata/RHSA-2024:3043){: external}, [CVE-2024-0690](https://nvd.nist.gov/vuln/detail/cve-2024-0690){: external}, [RHSA-2024:10943](https://access.redhat.com/errata/RHSA-2024:10943){: external}, [CVE-2024-46695](https://nvd.nist.gov/vuln/detail/cve-2024-46695){: external}, [CVE-2024-49949](https://nvd.nist.gov/vuln/detail/cve-2024-49949){: external}, [CVE-2024-50082](https://nvd.nist.gov/vuln/detail/cve-2024-50082){: external}, [CVE-2024-50099](https://nvd.nist.gov/vuln/detail/cve-2024-50099){: external}, [CVE-2024-50110](https://nvd.nist.gov/vuln/detail/cve-2024-50110){: external}, [CVE-2024-50142](https://nvd.nist.gov/vuln/detail/cve-2024-50142){: external}, [CVE-2024-50192](https://nvd.nist.gov/vuln/detail/cve-2024-50192){: external}, [CVE-2024-50256](https://nvd.nist.gov/vuln/detail/cve-2024-50256){: external}, [CVE-2024-50264](https://nvd.nist.gov/vuln/detail/cve-2024-50264){: external}, [RHSA-2024:10779](https://access.redhat.com/errata/RHSA-2024:10779){: external}, [CVE-2024-11168](https://nvd.nist.gov/vuln/detail/cve-2024-11168){: external}, [CVE-2024-9287](https://nvd.nist.gov/vuln/detail/cve-2024-9287){: external}, [RHSA-2024:10784](https://access.redhat.com/errata/RHSA-2024:10784){: external}, [CVE-2022-3064](https://nvd.nist.gov/vuln/detail/cve-2022-3064){: external}.
 HAProxy 14daa78
-:   Security fixes for [CVE-2024-10963](https://nvd.nist.gov/vuln/detail/CVE-2024-10963){: external}, [CVE-2024-11168](https://nvd.nist.gov/vuln/detail/CVE-2024-11168){: external}, [CVE-2024-9287](https://nvd.nist.gov/vuln/detail/CVE-2024-9287){: external}, [CVE-2024-10041](https://nvd.nist.gov/vuln/detail/CVE-2024-10041){: external}.
+:   Security fixes for [CVE-2024-10963](https://nvd.nist.gov/vuln/detail/cve-2024-10963){: external}, [CVE-2024-11168](https://nvd.nist.gov/vuln/detail/cve-2024-11168){: external}, [CVE-2024-9287](https://nvd.nist.gov/vuln/detail/cve-2024-9287){: external}, [CVE-2024-10041](https://nvd.nist.gov/vuln/detail/cve-2024-10041){: external}.
 {{site.data.keyword.openshiftshort}} 4.17.8
 :   For more information, see the [change logs](https://docs.redhat.com/en/documentation/openshift_container_platform/4.17/html/release_notes/ocp-4-17-release-notes#ocp-4-17-8_release-notes){: external}.
 
@@ -1784,7 +1784,7 @@ The following list shows the changes that are in the worker node fix pack 4.17.5
 {: shortdesc}
 
 RHEL 8 Packages 4.18.0-553.30.1.el8_10
-:   Worker node kernel & package updates for [RHSA-2024:10379](https://access.redhat.com/errata/RHSA-2024:10379){: external}, [CVE-2024-10041](https://nvd.nist.gov/vuln/detail/CVE-2024-10041){: external}, [CVE-2024-10963](https://nvd.nist.gov/vuln/detail/CVE-2024-10963){: external}, [RHSA-2024:3043](https://access.redhat.com/errata/RHSA-2024:3043){: external}, [CVE-2024-0690](https://nvd.nist.gov/vuln/detail/CVE-2024-0690){: external}, [RHSA-2024:10289](https://access.redhat.com/errata/RHSA-2024:10289){: external}, [CVE-2021-33198](https://nvd.nist.gov/vuln/detail/CVE-2021-33198){: external}, [CVE-2021-4024](https://nvd.nist.gov/vuln/detail/CVE-2021-4024){: external}, [CVE-2024-9676](https://nvd.nist.gov/vuln/detail/CVE-2024-9676){: external}, [RHSA-2024:10281](https://access.redhat.com/errata/RHSA-2024:10281){: external}, [CVE-2024-27043](https://nvd.nist.gov/vuln/detail/CVE-2024-27043){: external}, [CVE-2024-27399](https://nvd.nist.gov/vuln/detail/CVE-2024-27399){: external}, [CVE-2024-38564](https://nvd.nist.gov/vuln/detail/CVE-2024-38564){: external}, [CVE-2024-46858](https://nvd.nist.gov/vuln/detail/CVE-2024-46858){: external}.
+:   Worker node kernel & package updates for [RHSA-2024:10379](https://access.redhat.com/errata/RHSA-2024:10379){: external}, [CVE-2024-10041](https://nvd.nist.gov/vuln/detail/cve-2024-10041){: external}, [CVE-2024-10963](https://nvd.nist.gov/vuln/detail/cve-2024-10963){: external}, [RHSA-2024:3043](https://access.redhat.com/errata/RHSA-2024:3043){: external}, [CVE-2024-0690](https://nvd.nist.gov/vuln/detail/cve-2024-0690){: external}, [RHSA-2024:10289](https://access.redhat.com/errata/RHSA-2024:10289){: external}, [CVE-2021-33198](https://nvd.nist.gov/vuln/detail/cve-2021-33198){: external}, [CVE-2021-4024](https://nvd.nist.gov/vuln/detail/cve-2021-4024){: external}, [CVE-2024-9676](https://nvd.nist.gov/vuln/detail/cve-2024-9676){: external}, [RHSA-2024:10281](https://access.redhat.com/errata/RHSA-2024:10281){: external}, [CVE-2024-27043](https://nvd.nist.gov/vuln/detail/cve-2024-27043){: external}, [CVE-2024-27399](https://nvd.nist.gov/vuln/detail/cve-2024-27399){: external}, [CVE-2024-38564](https://nvd.nist.gov/vuln/detail/cve-2024-38564){: external}, [CVE-2024-46858](https://nvd.nist.gov/vuln/detail/cve-2024-46858){: external}.
 RHEL 9 Packages
 :   
 HAProxy

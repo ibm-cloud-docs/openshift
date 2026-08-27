@@ -3,7 +3,7 @@
 copyright:
   years: 2024, 2026
 
-lastupdated: "2026-08-06"
+lastupdated: "2026-08-27"
 
 
 keywords: change log, version history, Cluster autoscaler
@@ -46,7 +46,7 @@ Review the version history for Cluster autoscaler.
 ### Version 2.0.0 - v200-12-0_351296784, released 07 July 2026
 {: #cl-add-ons-cluster-autoscaler-v200-12-0_351296784}
 
-- Resolves the following CVEs: [CVE-2026-42507](https://nvd.nist.gov/vuln/detail/CVE-2026-42507){: external}.
+- Resolves the following CVEs: [CVE-2026-42507](https://nvd.nist.gov/vuln/detail/cve-2026-42507){: external}.
 - Updates Go to version `1.25.11`.
 - Update storage secret sidecar 1.3.56 
 - `1.30.7 200-12`
@@ -84,7 +84,7 @@ Review the version history for Cluster autoscaler.
 ### Version 2.0.0 - v200-4_316755565, released 18 February 2026
 {: #cl-add-ons-cluster-autoscaler-v200-4_316755565}
 
-- Resolves the following CVEs: [CVE-2025-13281](https://nvd.nist.gov/vuln/detail/CVE-2025-13281){: external}.
+- Resolves the following CVEs: [CVE-2025-13281](https://nvd.nist.gov/vuln/detail/cve-2025-13281){: external}.
 - Update storage secret sidecar v1.3.40 
 - `1.30.7 200-4`
 - `1.31.5 200-4`
@@ -110,7 +110,7 @@ Review the version history for Cluster autoscaler.
 ### Version 1.2.4 - v124-13-0_351834855, released 07 July 2026
 {: #cl-add-ons-cluster-autoscaler-v124-13-0_351834855}
 
-- Resolves the following CVEs: [CVE-2026-27145](https://nvd.nist.gov/vuln/detail/CVE-2026-27145){: external}, and [CVE-2026-42507](https://nvd.nist.gov/vuln/detail/CVE-2026-42507){: external}.
+- Resolves the following CVEs: [CVE-2026-27145](https://nvd.nist.gov/vuln/detail/cve-2026-27145){: external}, and [CVE-2026-42507](https://nvd.nist.gov/vuln/detail/cve-2026-42507){: external}.
 - Updates Go to version `1.25.11`.
 - Update storage secret sidecar 1.3.56 
 - `1.28.7 124-13`
@@ -138,7 +138,7 @@ Review the version history for Cluster autoscaler.
 ### Version 1.2.4 - v124-7_312863411, released 16 February 2026
 {: #cl-add-ons-cluster-autoscaler-v124-7_312863411}
 
-- Resolves the following CVEs: [CVE-2025-4563](https://nvd.nist.gov/vuln/detail/CVE-2025-4563){: external}, [CVE-2025-5187](https://nvd.nist.gov/vuln/detail/CVE-2025-5187){: external}, [CVE-2025-13281](https://nvd.nist.gov/vuln/detail/CVE-2025-13281){: external}, [CVE-2025-30204](https://nvd.nist.gov/vuln/detail/CVE-2025-30204){: external}, and [CVE-2025-22872](https://nvd.nist.gov/vuln/detail/CVE-2025-22872){: external}.
+- Resolves the following CVEs: [CVE-2025-4563](https://nvd.nist.gov/vuln/detail/cve-2025-4563){: external}, [CVE-2025-5187](https://nvd.nist.gov/vuln/detail/cve-2025-5187){: external}, [CVE-2025-13281](https://nvd.nist.gov/vuln/detail/cve-2025-13281){: external}, [CVE-2025-30204](https://nvd.nist.gov/vuln/detail/cve-2025-30204){: external}, and [CVE-2025-22872](https://nvd.nist.gov/vuln/detail/cve-2025-22872){: external}.
 - Updates Go to version `1.25.4`.
 - Update storage secret sidecar v1.3.39 
 - Adds support for cluster version 1.34.
@@ -155,7 +155,7 @@ Review the version history for Cluster autoscaler.
 ### Version patch update 1.2.4_680, released 18 July 2025.
 {: #124_680_ca}
 
-- Resolves the following CVEs: [CVE-2025-3576](https://exchange.xforce.ibmcloud.com/vulnerabilities/CVE-2025-3576){: external}, [CVE-2025-4673](https://exchange.xforce.ibmcloud.com/vulnerabilities/CVE-2025-4673){: external}, [CVE-2025-4802](https://exchange.xforce.ibmcloud.com/vulnerabilities/CVE-2025-4802){: external}.   
+- Resolves the following CVEs: [CVE-2025-3576](https://exchange.xforce.ibmcloud.com/vulnerabilities/cve-2025-3576){: external}, [CVE-2025-4673](https://exchange.xforce.ibmcloud.com/vulnerabilities/cve-2025-4673){: external}, [CVE-2025-4802](https://exchange.xforce.ibmcloud.com/vulnerabilities/cve-2025-4802){: external}.   
 - Updates Go to 1.23.10
 - Updates the `storage-secret-sidecar` image to `v1.3.30`
 - Image tags: `1.28.7 124-1`, `1.29.5 124-1`, `1.30.4 124-1`, `1.31.1 124-1`, `1.32.1 124-1`.
@@ -208,7 +208,7 @@ Beginning in version 1.2.4 the `maxEmptyBulkDelete` option is no longer supporte
 - Updates the `storage-secret-sidecar` image to `v1.3.23`.
 - Updates source code to version `1.28.7`, `1.29.5`, `1.30.3`, and `1.31.1`.
 - Image tags: `1.27.3 123-1`, `1.28.7 123-2`, `1.29.5 123-2`, `1.30.3 123-2`, `1.31.1 123-2`.
-- Resolves [CVE-2024-24789](https://nvd.nist.gov/vuln/detail/CVE-2024-24789){: external}, [CVE-2024-24790](https://nvd.nist.gov/vuln/detail/CVE-2024-24790){: external}, [CVE-2024-34158](https://nvd.nist.gov/vuln/detail/CVE-2024-34158){: external}, [CVE-2024-34155](https://nvd.nist.gov/vuln/detail/CVE-2024-34155){: external}, [CVE-2024-34156](https://nvd.nist.gov/vuln/detail/CVE-2024-34156){: external}, and [CVE-2024-43040](https://nvd.nist.gov/vuln/detail/CVE-2024-43040){: external}.
+- Resolves [CVE-2024-24789](https://nvd.nist.gov/vuln/detail/cve-2024-24789){: external}, [CVE-2024-24790](https://nvd.nist.gov/vuln/detail/cve-2024-24790){: external}, [CVE-2024-34158](https://nvd.nist.gov/vuln/detail/cve-2024-34158){: external}, [CVE-2024-34155](https://nvd.nist.gov/vuln/detail/cve-2024-34155){: external}, [CVE-2024-34156](https://nvd.nist.gov/vuln/detail/cve-2024-34156){: external}, and [CVE-2024-43040](https://nvd.nist.gov/vuln/detail/cve-2024-43040){: external}.
 
 
 ### Version patch update 1.2.3_512, released 31 October 2024
@@ -227,7 +227,7 @@ Beginning in version 1.2.4 the `maxEmptyBulkDelete` option is no longer supporte
 {: #122_466_ca}
 
 - Updates the `storage-secret-sidecar` image to `v1.3.10`.
-- Resolves [CVE-2024-28182](https://nvd.nist.gov/vuln/detail/CVE-2024-28182){: external} and [CVE-2023-2953](https://nvd.nist.gov/vuln/detail/CVE-2023-2953){: external}
+- Resolves [CVE-2024-28182](https://nvd.nist.gov/vuln/detail/cve-2024-28182){: external} and [CVE-2023-2953](https://nvd.nist.gov/vuln/detail/cve-2023-2953){: external}
 - Image tags: `1.24.0-122-0`, `1.25.0-122-0`, `1.26.4-122-0`, `1.27.3-122-0`, `1.28.0-122-0`, `1.29.0-122-0`.
 
 
@@ -247,7 +247,7 @@ Beginning in version 1.2.4 the `maxEmptyBulkDelete` option is no longer supporte
 {: #121_467_ca}
 
 - Updates the `storage-secret-sidecar` image to `v1.3.10`.
-- Resolves [CVE-2024-28182](https://nvd.nist.gov/vuln/detail/CVE-2024-28182){: external} and [CVE-2023-2953](https://nvd.nist.gov/vuln/detail/CVE-2023-2953){: external}
+- Resolves [CVE-2024-28182](https://nvd.nist.gov/vuln/detail/cve-2024-28182){: external} and [CVE-2023-2953](https://nvd.nist.gov/vuln/detail/cve-2023-2953){: external}
 - Image tags: `1.24.0-121-2`, `1.25.0-121-2`, `1.26.4-121-2`, `1.27.3-121-2`, `1.28.0-121-2`, `1.29.0-121-2`.
 
 
@@ -290,7 +290,7 @@ Beginning in version 1.2.4 the `maxEmptyBulkDelete` option is no longer supporte
 {: #120_468_ca}
 
 - Updates the `storage-secret-sidecar` image to `v1.3.10`.
-- Resolves [CVE-2024-28182](https://nvd.nist.gov/vuln/detail/CVE-2024-28182){: external} and [CVE-2023-2953](https://nvd.nist.gov/vuln/detail/CVE-2023-2953){: external}
+- Resolves [CVE-2024-28182](https://nvd.nist.gov/vuln/detail/cve-2024-28182){: external} and [CVE-2023-2953](https://nvd.nist.gov/vuln/detail/cve-2023-2953){: external}
 - Image tags: `1.24.0-120-6`, `1.25.0-120-6`, `1.26.4-120-6`, `1.27.3-120-6`, `1.28.0-120-6`.
 
 
@@ -327,7 +327,7 @@ Beginning in version 1.2.4 the `maxEmptyBulkDelete` option is no longer supporte
 ### Version patch update 1.2.0_322, released 16 January 2024
 {: #120322_ca}
 
-- Fixes [CVE-2007-4559](https://nvd.nist.gov/vuln/detail/CVE-2007-4559){: external}, [CVE-2023-22745](https://nvd.nist.gov/vuln/detail/CVE-2023-22745){: external}, [CVE-2023-4641](https://nvd.nist.gov/vuln/detail/CVE-2023-4641){: external}
+- Fixes [CVE-2007-4559](https://nvd.nist.gov/vuln/detail/cve-2007-4559){: external}, [CVE-2023-22745](https://nvd.nist.gov/vuln/detail/cve-2023-22745){: external}, [CVE-2023-4641](https://nvd.nist.gov/vuln/detail/cve-2023-4641){: external}
 - Updated the storage-secret-sidecar image to `v1.3.4`
 - Fixes an issue while updating custom variables via add-on.
 - Adds support for the `maxPodEvictionTime` parameter.
@@ -337,7 +337,7 @@ Beginning in version 1.2.4 the `maxEmptyBulkDelete` option is no longer supporte
 ### Version patch update 1.2.0_290, released 27 November 2023
 {: #120290_ca}
 
-- Fixes [CVE-2007-4559](https://nvd.nist.gov/vuln/detail/CVE-2007-4559){: external}, [CVE-2023-22745](https://nvd.nist.gov/vuln/detail/CVE-2023-22745){: external}, and [CVE-2023-4641](https://nvd.nist.gov/vuln/detail/CVE-2023-4641){: external}.
+- Fixes [CVE-2007-4559](https://nvd.nist.gov/vuln/detail/cve-2007-4559){: external}, [CVE-2023-22745](https://nvd.nist.gov/vuln/detail/cve-2023-22745){: external}, and [CVE-2023-4641](https://nvd.nist.gov/vuln/detail/cve-2023-4641){: external}.
 - Updated the storage-secret-sidecar image to `v1.3.3`.
 - Image tags: `1.22.0-120-2`, `1.23.0-120-2`, `1.24.0-120-2`, `1.25.0-120-2`, `1.26.4-120-2`, `1.27.3-120-2`, and `1.28.0-120-2`.
 
@@ -371,7 +371,7 @@ Beginning in version 1.2.4 the `maxEmptyBulkDelete` option is no longer supporte
 ### Version patch update 1.0.9_328, released 16 January 2024
 {: #109328_ca}
 
-- Fixes [CVE-2007-4559](https://nvd.nist.gov/vuln/detail/CVE-2007-4559){: external}, [CVE-2023-22745](https://nvd.nist.gov/vuln/detail/CVE-2023-22745){: external}, [CVE-2023-4641](https://nvd.nist.gov/vuln/detail/CVE-2023-4641){: external}
+- Fixes [CVE-2007-4559](https://nvd.nist.gov/vuln/detail/cve-2007-4559){: external}, [CVE-2023-22745](https://nvd.nist.gov/vuln/detail/cve-2023-22745){: external}, [CVE-2023-4641](https://nvd.nist.gov/vuln/detail/cve-2023-4641){: external}
 - Updates the storage-secret-sidecar image to `v1.2.30`.
 - Fixes an issue while updating custom variables via add-on.
 
@@ -379,7 +379,7 @@ Beginning in version 1.2.4 the `maxEmptyBulkDelete` option is no longer supporte
 ### Version patch update 1.0.9_290, released 27 November 2023
 {: #109290_ca}
 
-- Fixes [CVE-2007-4559](https://nvd.nist.gov/vuln/detail/CVE-2007-4559){: external}, [CVE-2023-22745](https://nvd.nist.gov/vuln/detail/CVE-2023-22745){: external}, and [CVE-2023-4641](https://nvd.nist.gov/vuln/detail/CVE-2023-4641){: external}.
+- Fixes [CVE-2007-4559](https://nvd.nist.gov/vuln/detail/cve-2007-4559){: external}, [CVE-2023-22745](https://nvd.nist.gov/vuln/detail/cve-2023-22745){: external}, and [CVE-2023-4641](https://nvd.nist.gov/vuln/detail/cve-2023-4641){: external}.
 - Updated the storage-secret-sidecar image to `v1.2.29`.
 - Image tags: `1.22.0-109-2`, `1.23.0-109-2`, `1.24.0-109-2`, `1.25.0-109-2`, `1.26.1-109-2`, `1.27.2-109-2`.
 
@@ -404,7 +404,7 @@ Beginning in version 1.2.4 the `maxEmptyBulkDelete` option is no longer supporte
 
 - Image tags: `1.22.0-109-3`, `1.23.0-109-3`, `1.24.0-109-3`, `1.25.0-109-3`, `1.26.1-109-3`, `1.27.2-109-3`.
 - Updated the storage-secret-sidecar image to `v1.2.26`.
-- Golang update to resolve [CVE-2023-29409](https://nvd.nist.gov/vuln/detail/CVE-2023-29409){: external}.
+- Golang update to resolve [CVE-2023-29409](https://nvd.nist.gov/vuln/detail/cve-2023-29409){: external}.
 
 
 
@@ -421,7 +421,7 @@ Beginning in version 1.2.4 the `maxEmptyBulkDelete` option is no longer supporte
 ### Version patch update 1.0.8_292, released 27 November 2023
 {: #108292_ca}
 
-- Fixes [CVE-2007-4559](https://nvd.nist.gov/vuln/detail/CVE-2007-4559){: external}, [CVE-2023-22745](https://nvd.nist.gov/vuln/detail/CVE-2023-22745){: external}, and [CVE-2023-4641](https://nvd.nist.gov/vuln/detail/CVE-2023-4641){: external}.
+- Fixes [CVE-2007-4559](https://nvd.nist.gov/vuln/detail/cve-2007-4559){: external}, [CVE-2023-22745](https://nvd.nist.gov/vuln/detail/cve-2023-22745){: external}, and [CVE-2023-4641](https://nvd.nist.gov/vuln/detail/cve-2023-4641){: external}.
 - Updated the storage-secret-sidecar image to `v1.2.29`.
 - Image tags: `1.20.0 108-5`, `1.21.0 108-5`, `1.22.0 108-5`, `1.23.0 108-5`, `1.24.0 108-5`, `1.25.0 108-5`, and `1.26.0 108-5`.
 
@@ -440,7 +440,7 @@ Beginning in version 1.2.4 the `maxEmptyBulkDelete` option is no longer supporte
 
 - Image tags: `1.22.0-108-4`, `1.23.0-109-4`, `1.24.0-108-4`, `1.25.0-108-4`, `1.26.1-108-4`, `1.27.2-109-4`.
 - Updated the storage-secret-sidecar image to `v1.2.26`.
-- Golang update to resolve [CVE-2023-29409](https://nvd.nist.gov/vuln/detail/CVE-2023-29409){: external}.
+- Golang update to resolve [CVE-2023-29409](https://nvd.nist.gov/vuln/detail/cve-2023-29409){: external}.
 
 
 
@@ -448,7 +448,7 @@ Beginning in version 1.2.4 the `maxEmptyBulkDelete` option is no longer supporte
 ### Version patch update 1.0.7_291, released 27 November 2023
 {: #107291_ca}
 
-- Fixes [CVE-2007-4559](https://nvd.nist.gov/vuln/detail/CVE-2007-4559){: external}, [CVE-2023-22745](https://nvd.nist.gov/vuln/detail/CVE-2023-22745){: external}, and [CVE-2023-4641](https://nvd.nist.gov/vuln/detail/CVE-2023-4641){: external}.
+- Fixes [CVE-2007-4559](https://nvd.nist.gov/vuln/detail/cve-2007-4559){: external}, [CVE-2023-22745](https://nvd.nist.gov/vuln/detail/cve-2023-22745){: external}, and [CVE-2023-4641](https://nvd.nist.gov/vuln/detail/cve-2023-4641){: external}.
 - Updated the storage-secret-sidecar image to `v1.2.29`.
 - Image tags: `1.20.0 107-7`, `1.21.0 107-7`, `1.22.0 107-7`, `1.23.0 107-7`, `1.24.0 107-7`, and `1.25.0 107-7`.
 
@@ -466,4 +466,4 @@ Beginning in version 1.2.4 the `maxEmptyBulkDelete` option is no longer supporte
 
 - Image tags: `1.22.0-107-7`, `1.23.0-107-7`, `1.24.0-107-7`, `1.25.0-107-7`, `1.26.1-107-7`, `1.27.2-107-7`.
 - Updated the storage-secret-sidecar image to `v1.2.26`.
-- Golang update to resolve [CVE-2023-29409](https://nvd.nist.gov/vuln/detail/CVE-2023-29409){: external}.
+- Golang update to resolve [CVE-2023-29409](https://nvd.nist.gov/vuln/detail/cve-2023-29409){: external}.

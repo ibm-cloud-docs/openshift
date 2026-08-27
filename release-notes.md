@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2026
-lastupdated: "2026-08-26"
+lastupdated: "2026-08-27"
 
 
 keywords: kubernetes, release notes, openshift, {{site.data.keyword.openshiftlong_notm}}
@@ -28,6 +28,41 @@ Looking for {{site.data.keyword.cloud_notm}} status, platform announcements, sec
 
 ## August 2026
 {: #openshift-aug26}
+
+
+### 26 August 2026
+{: #openshift-aug2626}
+{: release-note}
+
+VPC File CSI Driver cluster add-on patch updates.
+:   For more information, see the [change log](/docs/openshift?topic=openshift-cl-add-ons-vpc-file-csi-driver).
+
+IBM Storage Operator cluster add-on patch updates.
+:   For more information, see the [change log](/docs/openshift?topic=openshift-cl-add-ons-ibm-storage-operator).
+
+### 25 August 2026
+{: #openshift-aug2526}
+{: release-note}
+
+
+
+
+
+Worker node fix packs are available for {{site.data.keyword.openshiftlong_notm}} and OpenShift Virtualization Service.
+:   Fix packs can be applied in the following ways. Review the change logs for your cluster version.
+:   Classic infrastructure
+:   :   Update or reload the worker node.
+:   VPC infrastructure
+:   :   Replace the worker node.
+:   VPC Bare Metal
+:   :   Reload the worker node.
+:   [Version 4.21 change log](/docs/openshift?topic=openshift-changelog_421)
+:   [Version 4.20 change log](/docs/openshift?topic=openshift-changelog_420)
+:   [Version 4.19 change log](/docs/openshift?topic=openshift-changelog_419)
+:   [Version 4.18 change log](/docs/openshift?topic=openshift-changelog_418)
+:   [Version 4.17 change log](/docs/openshift?topic=openshift-changelog_417)
+:   [Version 4.16 change log](/docs/openshift?topic=openshift-changelog_416)
+
 
 
 
@@ -95,11 +130,9 @@ RHEL worker node kernel updates to RHEL 9.8.
 
 Worker node fix packs are available for {{site.data.keyword.openshiftlong_notm}} and OpenShift Virtualization Service.
 :   Fix packs can be applied in the following ways. Review the change logs for your cluster version.
-:   Classic infrastructure
-:   :   Update or reload the worker node.
-:   VPC infrastructure
-:   :   Replace the worker node.
-:   VPC Bare Metal
+:   Classic infrastructure: Update or reload the worker node.
+:   VPC VSI: Replace the worker node.
+:   VPC Bare Metal: Reload the worker node.
 :   :   Reload the worker node.
 :   [Version 4.21 change log](/docs/openshift?topic=openshift-openshift_changelog_421)
 :   [Version 4.20 change log](/docs/openshift?topic=openshift-openshift_changelog_420)

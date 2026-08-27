@@ -3,7 +3,7 @@
 copyright:
   years: 2024, 2026
 
-lastupdated: "2026-08-26"
+lastupdated: "2026-08-27"
 
 
 keywords: change log, version history, VPC File CSI Driver
@@ -48,7 +48,7 @@ Review the version history for VPC File CSI Driver.
 
 [Default version]{: tag-green}
 
-- Resolves the following CVEs: [CVE-2026-11940](https://nvd.nist.gov/vuln/detail/CVE-2026-11940){: external}.
+- Resolves the following CVEs: [CVE-2026-11940](https://nvd.nist.gov/vuln/detail/cve-2026-11940){: external}.
 - `armada-storage-secret v1.3.63`
 
 
@@ -57,7 +57,7 @@ Review the version history for VPC File CSI Driver.
 
 [Default version]{: tag-green}
 
-- Resolves the following CVEs: [CVE-2026-41989](https://nvd.nist.gov/vuln/detail/CVE-2026-41989){: external}.
+- Resolves the following CVEs: [CVE-2026-41989](https://nvd.nist.gov/vuln/detail/cve-2026-41989){: external}.
 - `armada-storage-secret v1.3.62`
 
 
@@ -77,7 +77,7 @@ Review the version history for VPC File CSI Driver.
 
 [Default version]{: tag-green}
 
-- Resolves the following CVEs: [CVE-2026-5928](https://nvd.nist.gov/vuln/detail/CVE-2026-5928){: external}, [CVE-2026-6238](https://nvd.nist.gov/vuln/detail/CVE-2026-6238){: external}, [CVE-2026-5435](https://nvd.nist.gov/vuln/detail/CVE-2026-5435){: external}, [GHSA-hrxh-6v49-42gf](https://github.com/advisories/GHSA-hrxh-6v49-42gf){: external}, [CVE-2026-54370](https://nvd.nist.gov/vuln/detail/CVE-2026-54370){: external}, and [CVE-2026-54369](https://nvd.nist.gov/vuln/detail/CVE-2026-54369){: external}.
+- Resolves the following CVEs: [CVE-2026-5928](https://nvd.nist.gov/vuln/detail/cve-2026-5928){: external}, [CVE-2026-6238](https://nvd.nist.gov/vuln/detail/cve-2026-6238){: external}, [CVE-2026-5435](https://nvd.nist.gov/vuln/detail/cve-2026-5435){: external}, [GHSA-hrxh-6v49-42gf](https://github.com/advisories/GHSA-hrxh-6v49-42gf){: external}, [CVE-2026-54370](https://nvd.nist.gov/vuln/detail/cve-2026-54370){: external}, and [CVE-2026-54369](https://nvd.nist.gov/vuln/detail/cve-2026-54369){: external}.
 - `armada-storage-secret v1.3.60`
 
 
@@ -86,7 +86,7 @@ Review the version history for VPC File CSI Driver.
 
 [Default version]{: tag-green}
 
-- Resolves the following CVEs: [CVE-2026-15308](https://nvd.nist.gov/vuln/detail/CVE-2026-15308){: external}, [CVE-2025-5278](https://nvd.nist.gov/vuln/detail/CVE-2025-5278){: external}, [CVE-2026-5450](https://nvd.nist.gov/vuln/detail/CVE-2026-5450){: external}, [CVE-2026-42505](https://nvd.nist.gov/vuln/detail/CVE-2026-42505){: external}, [CVE-2026-2303](https://nvd.nist.gov/vuln/detail/CVE-2026-2303){: external}, [CVE-2025-58185](https://nvd.nist.gov/vuln/detail/CVE-2025-58185){: external}, [CVE-2025-61727](https://nvd.nist.gov/vuln/detail/CVE-2025-61727){: external}, [CVE-2025-61729](https://nvd.nist.gov/vuln/detail/CVE-2025-61729){: external}, [CVE-2025-47912](https://nvd.nist.gov/vuln/detail/CVE-2025-47912){: external}, [CVE-2025-58187](https://nvd.nist.gov/vuln/detail/CVE-2025-58187){: external}, [CVE-2025-58188](https://nvd.nist.gov/vuln/detail/CVE-2025-58188){: external}, [CVE-2025-58189](https://nvd.nist.gov/vuln/detail/CVE-2025-58189){: external}, [CVE-2025-61723](https://nvd.nist.gov/vuln/detail/CVE-2025-61723){: external}, [CVE-2025-61724](https://nvd.nist.gov/vuln/detail/CVE-2025-61724){: external}, [CVE-2025-61726](https://nvd.nist.gov/vuln/detail/CVE-2025-61726){: external}, [CVE-2025-61730](https://nvd.nist.gov/vuln/detail/CVE-2025-61730){: external}, [CVE-2025-68121](https://nvd.nist.gov/vuln/detail/CVE-2025-68121){: external}, [CVE-2025-47906](https://nvd.nist.gov/vuln/detail/CVE-2025-47906){: external}, and [CVE-2025-22870](https://nvd.nist.gov/vuln/detail/CVE-2025-22870){: external}.
+- Resolves the following CVEs: [CVE-2026-15308](https://nvd.nist.gov/vuln/detail/cve-2026-15308){: external}, [CVE-2025-5278](https://nvd.nist.gov/vuln/detail/cve-2025-5278){: external}, [CVE-2026-5450](https://nvd.nist.gov/vuln/detail/cve-2026-5450){: external}, [CVE-2026-42505](https://nvd.nist.gov/vuln/detail/cve-2026-42505){: external}, [CVE-2026-2303](https://nvd.nist.gov/vuln/detail/cve-2026-2303){: external}, [CVE-2025-58185](https://nvd.nist.gov/vuln/detail/cve-2025-58185){: external}, [CVE-2025-61727](https://nvd.nist.gov/vuln/detail/cve-2025-61727){: external}, [CVE-2025-61729](https://nvd.nist.gov/vuln/detail/cve-2025-61729){: external}, [CVE-2025-47912](https://nvd.nist.gov/vuln/detail/cve-2025-47912){: external}, [CVE-2025-58187](https://nvd.nist.gov/vuln/detail/cve-2025-58187){: external}, [CVE-2025-58188](https://nvd.nist.gov/vuln/detail/cve-2025-58188){: external}, [CVE-2025-58189](https://nvd.nist.gov/vuln/detail/cve-2025-58189){: external}, [CVE-2025-61723](https://nvd.nist.gov/vuln/detail/cve-2025-61723){: external}, [CVE-2025-61724](https://nvd.nist.gov/vuln/detail/cve-2025-61724){: external}, [CVE-2025-61726](https://nvd.nist.gov/vuln/detail/cve-2025-61726){: external}, [CVE-2025-61730](https://nvd.nist.gov/vuln/detail/cve-2025-61730){: external}, [CVE-2025-68121](https://nvd.nist.gov/vuln/detail/cve-2025-68121){: external}, [CVE-2025-47906](https://nvd.nist.gov/vuln/detail/cve-2025-47906){: external}, and [CVE-2025-22870](https://nvd.nist.gov/vuln/detail/cve-2025-22870){: external}.
 - Updates Go to version `1.25.12`.
 - Fixed incorrect UID/GID assignment for PVCs restored from a snapshot; ownership is now inherited from the source snapshot. 
 - Fixed silent PVC mount failures (e.g., NFS exit status 32) that caused Kubelet to mount the local disk instead of failing the mount. 
@@ -106,7 +106,7 @@ Review the version history for VPC File CSI Driver.
 
 [Default version]{: tag-green}
 
-- Resolves the following CVEs: [CVE-2026-34180](https://nvd.nist.gov/vuln/detail/CVE-2026-34180){: external}, [CVE-2026-42766](https://nvd.nist.gov/vuln/detail/CVE-2026-42766){: external}, [CVE-2026-34183](https://nvd.nist.gov/vuln/detail/CVE-2026-34183){: external}, [CVE-2026-42767](https://nvd.nist.gov/vuln/detail/CVE-2026-42767){: external}, [CVE-2026-7383](https://nvd.nist.gov/vuln/detail/CVE-2026-7383){: external}, [CVE-2026-45446](https://nvd.nist.gov/vuln/detail/CVE-2026-45446){: external}, [CVE-2026-42764](https://nvd.nist.gov/vuln/detail/CVE-2026-42764){: external}, [CVE-2026-45445](https://nvd.nist.gov/vuln/detail/CVE-2026-45445){: external}, [CVE-2026-34181](https://nvd.nist.gov/vuln/detail/CVE-2026-34181){: external}, [CVE-2026-42769](https://nvd.nist.gov/vuln/detail/CVE-2026-42769){: external}, [CVE-2026-42768](https://nvd.nist.gov/vuln/detail/CVE-2026-42768){: external}, [CVE-2026-45447](https://nvd.nist.gov/vuln/detail/CVE-2026-45447){: external}, [CVE-2026-34182](https://nvd.nist.gov/vuln/detail/CVE-2026-34182){: external}, [CVE-2026-9076](https://nvd.nist.gov/vuln/detail/CVE-2026-9076){: external}, and [CVE-2026-42770](https://nvd.nist.gov/vuln/detail/CVE-2026-42770){: external}.
+- Resolves the following CVEs: [CVE-2026-34180](https://nvd.nist.gov/vuln/detail/cve-2026-34180){: external}, [CVE-2026-42766](https://nvd.nist.gov/vuln/detail/cve-2026-42766){: external}, [CVE-2026-34183](https://nvd.nist.gov/vuln/detail/cve-2026-34183){: external}, [CVE-2026-42767](https://nvd.nist.gov/vuln/detail/cve-2026-42767){: external}, [CVE-2026-7383](https://nvd.nist.gov/vuln/detail/cve-2026-7383){: external}, [CVE-2026-45446](https://nvd.nist.gov/vuln/detail/cve-2026-45446){: external}, [CVE-2026-42764](https://nvd.nist.gov/vuln/detail/cve-2026-42764){: external}, [CVE-2026-45445](https://nvd.nist.gov/vuln/detail/cve-2026-45445){: external}, [CVE-2026-34181](https://nvd.nist.gov/vuln/detail/cve-2026-34181){: external}, [CVE-2026-42769](https://nvd.nist.gov/vuln/detail/cve-2026-42769){: external}, [CVE-2026-42768](https://nvd.nist.gov/vuln/detail/cve-2026-42768){: external}, [CVE-2026-45447](https://nvd.nist.gov/vuln/detail/cve-2026-45447){: external}, [CVE-2026-34182](https://nvd.nist.gov/vuln/detail/cve-2026-34182){: external}, [CVE-2026-9076](https://nvd.nist.gov/vuln/detail/cve-2026-9076){: external}, and [CVE-2026-42770](https://nvd.nist.gov/vuln/detail/cve-2026-42770){: external}.
 - `armada-storage-secret v1.3.56`
 
 
@@ -115,7 +115,7 @@ Review the version history for VPC File CSI Driver.
 
 [Default version]{: tag-green}
 
-- Resolves the following CVEs: [CVE-2026-28390](https://nvd.nist.gov/vuln/detail/CVE-2026-28390){: external}.
+- Resolves the following CVEs: [CVE-2026-28390](https://nvd.nist.gov/vuln/detail/cve-2026-28390){: external}.
 - `armada-storage-secret v1.3.55`
 
 
@@ -124,7 +124,7 @@ Review the version history for VPC File CSI Driver.
 
 [Default version]{: tag-green}
 
-- Resolves the following CVEs: [CVE-2026-4438](https://nvd.nist.gov/vuln/detail/CVE-2026-4438){: external}, [CVE-2026-4046](https://nvd.nist.gov/vuln/detail/CVE-2026-4046){: external}, and [CVE-2026-4437](https://nvd.nist.gov/vuln/detail/CVE-2026-4437){: external}.
+- Resolves the following CVEs: [CVE-2026-4438](https://nvd.nist.gov/vuln/detail/cve-2026-4438){: external}, [CVE-2026-4046](https://nvd.nist.gov/vuln/detail/cve-2026-4046){: external}, and [CVE-2026-4437](https://nvd.nist.gov/vuln/detail/cve-2026-4437){: external}.
 - `armada-storage-secret v1.3.51`
 
 
@@ -133,7 +133,7 @@ Review the version history for VPC File CSI Driver.
 
 [Default version]{: tag-green}
 
-- Resolves the following CVEs: [CVE-2026-33814](https://nvd.nist.gov/vuln/detail/CVE-2026-33814){: external}, [CVE-2026-31790](https://nvd.nist.gov/vuln/detail/CVE-2026-31790){: external}, [CVE-2026-29111](https://nvd.nist.gov/vuln/detail/CVE-2026-29111){: external}, [CVE-2026-40355](https://nvd.nist.gov/vuln/detail/CVE-2026-40355){: external}, [CVE-2026-40356](https://nvd.nist.gov/vuln/detail/CVE-2026-40356){: external}, and [CVE-2026-4878](https://nvd.nist.gov/vuln/detail/CVE-2026-4878){: external}.
+- Resolves the following CVEs: [CVE-2026-33814](https://nvd.nist.gov/vuln/detail/cve-2026-33814){: external}, [CVE-2026-31790](https://nvd.nist.gov/vuln/detail/cve-2026-31790){: external}, [CVE-2026-29111](https://nvd.nist.gov/vuln/detail/cve-2026-29111){: external}, [CVE-2026-40355](https://nvd.nist.gov/vuln/detail/cve-2026-40355){: external}, [CVE-2026-40356](https://nvd.nist.gov/vuln/detail/cve-2026-40356){: external}, and [CVE-2026-4878](https://nvd.nist.gov/vuln/detail/cve-2026-4878){: external}.
 - `armada-storage-secret v1.3.50`
 
 
@@ -142,7 +142,7 @@ Review the version history for VPC File CSI Driver.
 
 [Default version]{: tag-green}
 
-- Resolves the following CVEs: [CVE-2026-33811](https://nvd.nist.gov/vuln/detail/CVE-2026-33811){: external}, [CVE-2026-39979](https://nvd.nist.gov/vuln/detail/CVE-2026-39979){: external}, [CVE-2025-14512](https://nvd.nist.gov/vuln/detail/CVE-2025-14512){: external}, [CVE-2025-14087](https://nvd.nist.gov/vuln/detail/CVE-2025-14087){: external}, and [CVE-2026-40164](https://nvd.nist.gov/vuln/detail/CVE-2026-40164){: external}.
+- Resolves the following CVEs: [CVE-2026-33811](https://nvd.nist.gov/vuln/detail/cve-2026-33811){: external}, [CVE-2026-39979](https://nvd.nist.gov/vuln/detail/cve-2026-39979){: external}, [CVE-2025-14512](https://nvd.nist.gov/vuln/detail/cve-2025-14512){: external}, [CVE-2025-14087](https://nvd.nist.gov/vuln/detail/cve-2025-14087){: external}, and [CVE-2026-40164](https://nvd.nist.gov/vuln/detail/cve-2026-40164){: external}.
 - `armada-storage-secret v1.3.49`
 
 
@@ -151,7 +151,7 @@ Review the version history for VPC File CSI Driver.
 
 [Default version]{: tag-green}
 
-- Resolves the following CVEs: [CVE-2026-4786](https://nvd.nist.gov/vuln/detail/CVE-2026-4786){: external}, [CVE-2026-6100](https://nvd.nist.gov/vuln/detail/CVE-2026-6100){: external}, and [CVE-2026-4878](https://nvd.nist.gov/vuln/detail/CVE-2026-4878){: external}.
+- Resolves the following CVEs: [CVE-2026-4786](https://nvd.nist.gov/vuln/detail/cve-2026-4786){: external}, [CVE-2026-6100](https://nvd.nist.gov/vuln/detail/cve-2026-6100){: external}, and [CVE-2026-4878](https://nvd.nist.gov/vuln/detail/cve-2026-4878){: external}.
 - `armada-storage-secret v1.2.82`
 
 
@@ -160,7 +160,7 @@ Review the version history for VPC File CSI Driver.
 
 [Default version]{: tag-green}
 
-- Resolves the following CVEs: [CVE-2026-32281](https://nvd.nist.gov/vuln/detail/CVE-2026-32281){: external}, [CVE-2026-32289](https://nvd.nist.gov/vuln/detail/CVE-2026-32289){: external}, and [CVE-2026-4519](https://nvd.nist.gov/vuln/detail/CVE-2026-4519){: external}.
+- Resolves the following CVEs: [CVE-2026-32281](https://nvd.nist.gov/vuln/detail/cve-2026-32281){: external}, [CVE-2026-32289](https://nvd.nist.gov/vuln/detail/cve-2026-32289){: external}, and [CVE-2026-4519](https://nvd.nist.gov/vuln/detail/cve-2026-4519){: external}.
 - Updates Go to version `1.25.9`.
 - `armada-storage-secret v1.2.80`
 
@@ -170,7 +170,7 @@ Review the version history for VPC File CSI Driver.
 
 [Default version]{: tag-green}
 
-- Resolves the following CVEs: [CVE-2026-33186](https://nvd.nist.gov/vuln/detail/CVE-2026-33186){: external}.
+- Resolves the following CVEs: [CVE-2026-33186](https://nvd.nist.gov/vuln/detail/cve-2026-33186){: external}.
 - Updates Go to version `1.25.8`.
 - `armada-storage-secret v1.2.79`
 
@@ -180,7 +180,7 @@ Review the version history for VPC File CSI Driver.
 
 [Default version]{: tag-green}
 
-- Resolves the following CVEs: [CVE-2025-14831](https://nvd.nist.gov/vuln/detail/CVE-2025-14831){: external}, [CVE-2025-15366](https://nvd.nist.gov/vuln/detail/CVE-2025-15366){: external}, [CVE-2025-15367](https://nvd.nist.gov/vuln/detail/CVE-2025-15367){: external}, [CVE-2026-1299](https://nvd.nist.gov/vuln/detail/CVE-2026-1299){: external}, [CVE-2024-6923](https://nvd.nist.gov/vuln/detail/CVE-2024-6923){: external}, [CVE-2026-0865](https://nvd.nist.gov/vuln/detail/CVE-2026-0865){: external}, [CVE-2026-25679](https://nvd.nist.gov/vuln/detail/CVE-2026-25679){: external}, [CVE-2025-12801](https://nvd.nist.gov/vuln/detail/CVE-2025-12801){: external}, [CVE-2026-27139](https://nvd.nist.gov/vuln/detail/CVE-2026-27139){: external}, and [CVE-2026-27142](https://nvd.nist.gov/vuln/detail/CVE-2026-27142){: external}.
+- Resolves the following CVEs: [CVE-2025-14831](https://nvd.nist.gov/vuln/detail/cve-2025-14831){: external}, [CVE-2025-15366](https://nvd.nist.gov/vuln/detail/cve-2025-15366){: external}, [CVE-2025-15367](https://nvd.nist.gov/vuln/detail/cve-2025-15367){: external}, [CVE-2026-1299](https://nvd.nist.gov/vuln/detail/cve-2026-1299){: external}, [CVE-2024-6923](https://nvd.nist.gov/vuln/detail/cve-2024-6923){: external}, [CVE-2026-0865](https://nvd.nist.gov/vuln/detail/cve-2026-0865){: external}, [CVE-2026-25679](https://nvd.nist.gov/vuln/detail/cve-2026-25679){: external}, [CVE-2025-12801](https://nvd.nist.gov/vuln/detail/cve-2025-12801){: external}, [CVE-2026-27139](https://nvd.nist.gov/vuln/detail/cve-2026-27139){: external}, and [CVE-2026-27142](https://nvd.nist.gov/vuln/detail/cve-2026-27142){: external}.
 - `armada-storage-secret v1.2.78`
 
 
@@ -189,7 +189,7 @@ Review the version history for VPC File CSI Driver.
 
 [Default version]{: tag-green}
 
-- Resolves the following CVEs: [CVE-2026-0861](https://nvd.nist.gov/vuln/detail/CVE-2026-0861){: external}, [CVE-2025-15281](https://nvd.nist.gov/vuln/detail/CVE-2025-15281){: external}, and [CVE-2026-0915](https://nvd.nist.gov/vuln/detail/CVE-2026-0915){: external}.
+- Resolves the following CVEs: [CVE-2026-0861](https://nvd.nist.gov/vuln/detail/cve-2026-0861){: external}, [CVE-2025-15281](https://nvd.nist.gov/vuln/detail/cve-2025-15281){: external}, and [CVE-2026-0915](https://nvd.nist.gov/vuln/detail/cve-2026-0915){: external}.
 - Fixed an issue where EIT enablement was not triggered for new nodes in EIT‑enabled worker pools after a storage operator restart. 
 - `armada-storage-secret v1.2.77`
 
@@ -199,7 +199,7 @@ Review the version history for VPC File CSI Driver.
 
 [Default version]{: tag-green}
 
-- Resolves the following CVEs: [CVE-2025-68121](https://nvd.nist.gov/vuln/detail/CVE-2025-68121){: external}, and [CVE-2025-14104](https://nvd.nist.gov/vuln/detail/CVE-2025-14104){: external}.
+- Resolves the following CVEs: [CVE-2025-68121](https://nvd.nist.gov/vuln/detail/cve-2025-68121){: external}, and [CVE-2025-14104](https://nvd.nist.gov/vuln/detail/cve-2025-14104){: external}.
 - `armada-storage-secret v1.2.76`
 
 
@@ -208,7 +208,7 @@ Review the version history for VPC File CSI Driver.
 
 [Default version]{: tag-green}
 
-- Resolves the following CVEs: [CVE-2025-15467](https://nvd.nist.gov/vuln/detail/CVE-2025-15467){: external}, [CVE-2025-11187](https://nvd.nist.gov/vuln/detail/CVE-2025-11187){: external}, [CVE-2025-15468](https://nvd.nist.gov/vuln/detail/CVE-2025-15468){: external}, [CVE-2025-15469](https://nvd.nist.gov/vuln/detail/CVE-2025-15469){: external}, [CVE-2025-66199](https://nvd.nist.gov/vuln/detail/CVE-2025-66199){: external}, [CVE-2025-68160](https://nvd.nist.gov/vuln/detail/CVE-2025-68160){: external}, [CVE-2025-69418](https://nvd.nist.gov/vuln/detail/CVE-2025-69418){: external}, [CVE-2025-69419](https://nvd.nist.gov/vuln/detail/CVE-2025-69419){: external}, [CVE-2025-69420](https://nvd.nist.gov/vuln/detail/CVE-2025-69420){: external}, [CVE-2025-69421](https://nvd.nist.gov/vuln/detail/CVE-2025-69421){: external}, [CVE-2026-22795](https://nvd.nist.gov/vuln/detail/CVE-2026-22795){: external}, [CVE-2026-22796](https://nvd.nist.gov/vuln/detail/CVE-2026-22796){: external}, and [CVE-2025-9086](https://nvd.nist.gov/vuln/detail/CVE-2025-9086){: external}.
+- Resolves the following CVEs: [CVE-2025-15467](https://nvd.nist.gov/vuln/detail/cve-2025-15467){: external}, [CVE-2025-11187](https://nvd.nist.gov/vuln/detail/cve-2025-11187){: external}, [CVE-2025-15468](https://nvd.nist.gov/vuln/detail/cve-2025-15468){: external}, [CVE-2025-15469](https://nvd.nist.gov/vuln/detail/cve-2025-15469){: external}, [CVE-2025-66199](https://nvd.nist.gov/vuln/detail/cve-2025-66199){: external}, [CVE-2025-68160](https://nvd.nist.gov/vuln/detail/cve-2025-68160){: external}, [CVE-2025-69418](https://nvd.nist.gov/vuln/detail/cve-2025-69418){: external}, [CVE-2025-69419](https://nvd.nist.gov/vuln/detail/cve-2025-69419){: external}, [CVE-2025-69420](https://nvd.nist.gov/vuln/detail/cve-2025-69420){: external}, [CVE-2025-69421](https://nvd.nist.gov/vuln/detail/cve-2025-69421){: external}, [CVE-2026-22795](https://nvd.nist.gov/vuln/detail/cve-2026-22795){: external}, [CVE-2026-22796](https://nvd.nist.gov/vuln/detail/cve-2026-22796){: external}, and [CVE-2025-9086](https://nvd.nist.gov/vuln/detail/cve-2025-9086){: external}.
 - `armada-storage-secret v1.2.75`
 
 
@@ -217,7 +217,7 @@ Review the version history for VPC File CSI Driver.
 
 [Default version]{: tag-green}
 
-- Resolves the following CVEs: [CVE-2025-13281](https://nvd.nist.gov/vuln/detail/CVE-2025-13281){: external}, [CVE-2025-8291](https://nvd.nist.gov/vuln/detail/CVE-2025-8291){: external}, [CVE-2025-61729](https://nvd.nist.gov/vuln/detail/CVE-2025-61729){: external}, [CVE-2025-61727](https://nvd.nist.gov/vuln/detail/CVE-2025-61727){: external}, [CVE-2025-6069](https://nvd.nist.gov/vuln/detail/CVE-2025-6069){: external}, [CVE-2024-5642](https://nvd.nist.gov/vuln/detail/CVE-2024-5642){: external}, and [CVE-2025-6075](https://nvd.nist.gov/vuln/detail/CVE-2025-6075){: external}.
+- Resolves the following CVEs: [CVE-2025-13281](https://nvd.nist.gov/vuln/detail/cve-2025-13281){: external}, [CVE-2025-8291](https://nvd.nist.gov/vuln/detail/cve-2025-8291){: external}, [CVE-2025-61729](https://nvd.nist.gov/vuln/detail/cve-2025-61729){: external}, [CVE-2025-61727](https://nvd.nist.gov/vuln/detail/cve-2025-61727){: external}, [CVE-2025-6069](https://nvd.nist.gov/vuln/detail/cve-2025-6069){: external}, [CVE-2024-5642](https://nvd.nist.gov/vuln/detail/cve-2024-5642){: external}, and [CVE-2025-6075](https://nvd.nist.gov/vuln/detail/cve-2025-6075){: external}.
 - Updates k8s client libraries from 1.32.8 to 1.32.10. 
 - Fixed an issue where the EIT enablement was not working in tainted worker pools. 
 - `armada-storage-secret v1.2.74`
@@ -228,7 +228,7 @@ Review the version history for VPC File CSI Driver.
 
 [Default version]{: tag-green}
 
-- Resolves the following CVEs: [CVE-2025-9230](https://nvd.nist.gov/vuln/detail/CVE-2025-9230){: external}.
+- Resolves the following CVEs: [CVE-2025-9230](https://nvd.nist.gov/vuln/detail/cve-2025-9230){: external}.
 - Updates Go to version `1.25.4`.
 - Introduces Beta Snapshot support in the VPC File CSI Driver for DP2 and RFS profile-based storage classes.
 - Introduces support for default VolumeSnapshotClasses to enhance the user experience when creating snapshots, including ibmc-vpcfile-snapshot-delete and ibmc-vpcfile-snapshot-retain.
@@ -241,7 +241,7 @@ Review the version history for VPC File CSI Driver.
 
 [Default version]{: tag-green}
 
-- Resolves the following CVEs: [CVE-2025-58189](https://nvd.nist.gov/vuln/detail/CVE-2025-58189){: external}, [CVE-2025-61725](https://nvd.nist.gov/vuln/detail/CVE-2025-61725){: external}, [CVE-2025-58185](https://nvd.nist.gov/vuln/detail/CVE-2025-58185){: external}, and [CVE-2025-61723](https://nvd.nist.gov/vuln/detail/CVE-2025-61723){: external}.
+- Resolves the following CVEs: [CVE-2025-58189](https://nvd.nist.gov/vuln/detail/cve-2025-58189){: external}, [CVE-2025-61725](https://nvd.nist.gov/vuln/detail/cve-2025-61725){: external}, [CVE-2025-58185](https://nvd.nist.gov/vuln/detail/cve-2025-58185){: external}, and [CVE-2025-61723](https://nvd.nist.gov/vuln/detail/cve-2025-61723){: external}.
 - Updates Go to version `1.25.3`.
 - `armada-storage-secret v1.2.70`
 
@@ -251,7 +251,7 @@ Review the version history for VPC File CSI Driver.
 
 [Default version]{: tag-green}
 
-- Resolves the following CVEs: [CVE-2025-5187](https://nvd.nist.gov/vuln/detail/CVE-2025-5187){: external}.
+- Resolves the following CVEs: [CVE-2025-5187](https://nvd.nist.gov/vuln/detail/cve-2025-5187){: external}.
 - Updates k8s client libraries from 1.32.6 to 1.32.8 
 - `armada-storage-secret v1.2.69`
 
@@ -261,7 +261,7 @@ Review the version history for VPC File CSI Driver.
 
 [Default version]{: tag-green}
 
-- Resolves the following CVEs: [CVE-2025-8058](https://nvd.nist.gov/vuln/detail/CVE-2025-8058){: external}.
+- Resolves the following CVEs: [CVE-2025-8058](https://nvd.nist.gov/vuln/detail/cve-2025-8058){: external}.
 - Updates Go to version `1.23.12`.
 - {'Adds 3 new storage classes': 'ibmc-vpc-file-regional, ibmc-vpc-file-regional-max-bandwidth, and ibmc-vpc-file-regional-max-bandwidth-sds. These classes are based on VPC regional file share profiles and are available in Beta for allowlisted accounts.'}
 - `armada-storage-secret v1.2.66`
@@ -272,7 +272,7 @@ Review the version history for VPC File CSI Driver.
 
 [Default version]{: tag-green}
 
-- Resolves the following CVEs: [CVE-2025-4802](https://nvd.nist.gov/vuln/detail/CVE-2025-4802){: external}, [CVE-2025-4673](https://nvd.nist.gov/vuln/detail/CVE-2025-4673){: external}, and [CVE-2025-4563](https://nvd.nist.gov/vuln/detail/CVE-2025-4563){: external}.
+- Resolves the following CVEs: [CVE-2025-4802](https://nvd.nist.gov/vuln/detail/cve-2025-4802){: external}, [CVE-2025-4673](https://nvd.nist.gov/vuln/detail/cve-2025-4673){: external}, and [CVE-2025-4563](https://nvd.nist.gov/vuln/detail/cve-2025-4563){: external}.
 - Updates Go to version `1.23.10`.
 - Updates k8s client libraries from 1.32.3 to 1.32.6 
 - Updates imagePullPolicy to IfNotPresent for all containers in the deployment. 
@@ -291,7 +291,7 @@ Review the version history for VPC File CSI Driver.
 ### Version 2.0 - 2.0.13_370, released 16 June 2025
 {: #cl-add-ons-vpc-file-csi-driver-2013_370}
 
-- Resolves the following CVEs: [CVE-2025-0395](https://nvd.nist.gov/vuln/detail/CVE-2025-0395){: external}, [CVE-2025-3576](https://nvd.nist.gov/vuln/detail/CVE-2025-3576){: external}, and [CVE-2025-24528](https://nvd.nist.gov/vuln/detail/CVE-2025-24528){: external}.
+- Resolves the following CVEs: [CVE-2025-0395](https://nvd.nist.gov/vuln/detail/cve-2025-0395){: external}, [CVE-2025-3576](https://nvd.nist.gov/vuln/detail/cve-2025-3576){: external}, and [CVE-2025-24528](https://nvd.nist.gov/vuln/detail/cve-2025-24528){: external}.
 - Updates Go to version `1.23.9`.
 - Adds support for users to configure CPU and memory limits and requests for all file containers. 
 - Fixes an issue where the provisioner and resizer containers were restarting due to the client rate-limiter. 
@@ -305,7 +305,7 @@ Review the version history for VPC File CSI Driver.
 ### Version 2.0 - 2.0.10_334, released 19 February 2025
 {: #cl-add-ons-vpc-file-csi-driver-2010_334}
 
-- Resolves the following CVEs: [CVE-2024-45339](https://nvd.nist.gov/vuln/detail/CVE-2024-45339){: external}, and [CVE-2024-45338](https://nvd.nist.gov/vuln/detail/CVE-2024-45338){: external}.
+- Resolves the following CVEs: [CVE-2024-45339](https://nvd.nist.gov/vuln/detail/cve-2024-45339){: external}, and [CVE-2024-45338](https://nvd.nist.gov/vuln/detail/cve-2024-45338){: external}.
 - Resiliency improvement to use VPC Storage service API for tagging volumes. This doesn't impact existing or new PVCs. This reduces the number of Kubernetes service API calls. 
 - Updates the golang base image to 1.22.12. 
 - Updates the armada-storage-secret to v1.2.55. 
@@ -318,7 +318,7 @@ Review the version history for VPC File CSI Driver.
 ### Version 1.2 - 1.2.14_332, released 19 February 2025
 {: #cl-add-ons-vpc-file-csi-driver-1214_332}
 
-- Resolves the following CVEs: [CVE-2024-45339](https://nvd.nist.gov/vuln/detail/CVE-2024-45339){: external}, and [CVE-2024-45338](https://nvd.nist.gov/vuln/detail/CVE-2024-45338){: external}.
+- Resolves the following CVEs: [CVE-2024-45339](https://nvd.nist.gov/vuln/detail/cve-2024-45339){: external}, and [CVE-2024-45338](https://nvd.nist.gov/vuln/detail/cve-2024-45338){: external}.
 - Resiliency improvement to use VPC Storage service API for tagging volumes. This doesn't impact existing or new PVCs. This reduces the number of Kubernetes service API calls. 
 - Updates the golang base image to 1.22.12. 
 - Updates the armada-storage-secret to v1.2.55. 
@@ -327,7 +327,7 @@ Review the version history for VPC File CSI Driver.
 ### Version 1.2.13_326, released 11 December 2024
 {: #1.2.13_326_is_file_relnote}
 
-- Fixes [CVE-2024-51744](https://nvd.nist.gov/vuln/detail/CVE-2024-51744){: external}.
+- Fixes [CVE-2024-51744](https://nvd.nist.gov/vuln/detail/cve-2024-51744){: external}.
 - Updates the `storage-secret-sidecar` image to `v1.2.52`.
 
 
@@ -339,7 +339,7 @@ Review the version history for VPC File CSI Driver.
 - Updates the CSI specification to version `1.9.0`.
 - Fixes a security issue for the CSI sidecar liveness probe. The sidecar now runs as non-root in the Node Server pod.
 - Updates the following sidecar images: `csi-provisioner:v5.0.2`, `csi-resizer:v1.11.2`, `livenessprobe:v2.13.1`, and `csi-node-driver-registrar:v2.11.1`.
-- Resolves [CVE-2024-2398](https://nvd.nist.gov/vuln/detail/CVE-2024-2398){: external}, [CVE-2024-37370](https://nvd.nist.gov/vuln/detail/CVE-2024-37370){: external}, [CVE-2024-37371](https://nvd.nist.gov/vuln/detail/CVE-2024-37371){: external}.
+- Resolves [CVE-2024-2398](https://nvd.nist.gov/vuln/detail/cve-2024-2398){: external}, [CVE-2024-37370](https://nvd.nist.gov/vuln/detail/cve-2024-37370){: external}, [CVE-2024-37371](https://nvd.nist.gov/vuln/detail/cve-2024-37371){: external}.
 
 
 ### Version 1.2.10_254, released 15 July 2024
@@ -347,7 +347,7 @@ Review the version history for VPC File CSI Driver.
 
 - Updates the golang image to `1.21.12-community`.
 - Updates the `armada-storage-secret` to `v1.2.40`.
-- Resolves [CVE-2024-28182](https://nvd.nist.gov/vuln/detail/CVE-2024-28182){: external} and [CVE-2023-2953](https://nvd.nist.gov/vuln/detail/CVE-2023-2953){: external}.
+- Resolves [CVE-2024-28182](https://nvd.nist.gov/vuln/detail/cve-2024-28182){: external} and [CVE-2023-2953](https://nvd.nist.gov/vuln/detail/cve-2023-2953){: external}.
 
 
 ### Version 1.2.9_245, released 21 June 2024
@@ -355,7 +355,7 @@ Review the version history for VPC File CSI Driver.
 
 - Updates `golang` to `1.21.11-community`.
 - Updates the `armada-storage-secret` to `v1.3.8`.
-- Resolves: [CVE-2024-26458](https://nvd.nist.gov/vuln/detail/CVE-2024-26458){: external}, [CVE-2024-26461](https://nvd.nist.gov/vuln/detail/CVE-2024-26461){: external}, [CVE-2024-33600](https://nvd.nist.gov/vuln/detail/CVE-2024-33600){: external}, [CVE-2024-33601](https://nvd.nist.gov/vuln/detail/CVE-2024-33601){: external}, [CVE-2024-33602](https://nvd.nist.gov/vuln/detail/CVE-2024-33602){: external}, [CVE-2024-2961](https://nvd.nist.gov/vuln/detail/CVE-2024-33602){: external}, and [CVE-2024-33599](https://nvd.nist.gov/vuln/detail/CVE-2024-33599){: external}.
+- Resolves: [CVE-2024-26458](https://nvd.nist.gov/vuln/detail/cve-2024-26458){: external}, [CVE-2024-26461](https://nvd.nist.gov/vuln/detail/cve-2024-26461){: external}, [CVE-2024-33600](https://nvd.nist.gov/vuln/detail/cve-2024-33600){: external}, [CVE-2024-33601](https://nvd.nist.gov/vuln/detail/cve-2024-33601){: external}, [CVE-2024-33602](https://nvd.nist.gov/vuln/detail/cve-2024-33602){: external}, [CVE-2024-2961](https://nvd.nist.gov/vuln/detail/cve-2024-33602){: external}, and [CVE-2024-33599](https://nvd.nist.gov/vuln/detail/cve-2024-33599){: external}.
 
 
 ### Version 1.2.8_174, released 10 May 2024
@@ -365,7 +365,7 @@ Review the version history for VPC File CSI Driver.
 - Removes `curl` package from base image.
 - Updates the `armada-storage-secret` to `v1.2.35`.
 - Sets `handle-volume-inuse-error` flag to `false` in the `csi-resizer` to reduce costs associated with watching all pods in the cluster which can cause `OOM Killed` errors for the `csi-resizer`.
-- Resolves [CVE-2023-46218](https://nvd.nist.gov/vuln/detail/CVE-2023-46218){: external}, [CVE-2023-28322](https://nvd.nist.gov/vuln/detail/CVE-2023-28322){: external}, and [CVE-2023-38546](https://nvd.nist.gov/vuln/detail/CVE-2023-38546){: external}.
+- Resolves [CVE-2023-46218](https://nvd.nist.gov/vuln/detail/cve-2023-46218){: external}, [CVE-2023-28322](https://nvd.nist.gov/vuln/detail/cve-2023-28322){: external}, and [CVE-2023-38546](https://nvd.nist.gov/vuln/detail/cve-2023-38546){: external}.
 
 
 ### Version 1.2.7_154, released 08 March 2024
@@ -384,7 +384,7 @@ Review the version history for VPC File CSI Driver.
 - Changes how the IAM endpoint is determined for VPC Gen2 clusters.
 - Upgrades Kubernetes client library to 1.28.
 - Upgrades CSI spec to 1.8.0.
-- Resolves the following CVEs: [CVE-2022-48560](https://nvd.nist.gov/vuln/detail/CVE-2022-48560){: external}, [CVE-2022-48564](https://nvd.nist.gov/vuln/detail/CVE-2022-48564){: external}, [CVE-2023-39615](https://nvd.nist.gov/vuln/detail/CVE-2023-39615){: external}, [CVE-2023-43804](https://nvd.nist.gov/vuln/detail/CVE-2023-43804){: external}, [CVE-2023-45803](https://nvd.nist.gov/vuln/detail/CVE-2023-45803){: external}, and [CVE-2023-5981](https://nvd.nist.gov/vuln/detail/CVE-2023-5981){: external}.
+- Resolves the following CVEs: [CVE-2022-48560](https://nvd.nist.gov/vuln/detail/cve-2022-48560){: external}, [CVE-2022-48564](https://nvd.nist.gov/vuln/detail/cve-2022-48564){: external}, [CVE-2023-39615](https://nvd.nist.gov/vuln/detail/cve-2023-39615){: external}, [CVE-2023-43804](https://nvd.nist.gov/vuln/detail/cve-2023-43804){: external}, [CVE-2023-45803](https://nvd.nist.gov/vuln/detail/cve-2023-45803){: external}, and [CVE-2023-5981](https://nvd.nist.gov/vuln/detail/cve-2023-5981){: external}.
 - Updates the following sidecar images: 
     - `armada-storage-secret` to `v1.2.31`.
     - `csi-node-driver-registrar` to `v2.9.3`.
@@ -396,7 +396,7 @@ Review the version history for VPC File CSI Driver.
 ### Version 1.2.5_107, released 10 January 2024
 {: #1.2.5_107_is_file_relnote}
 
-- Resolves [CVE-2023-3446](https://nvd.nist.gov/vuln/detail/CVE-2023-3446){: external}, [CVE-2023-3817](https://nvd.nist.gov/vuln/detail/CVE-2023-3817){: external}, and [CVE-2023-5678](https://nvd.nist.gov/vuln/detail/CVE-2023-5678){: external}.
+- Resolves [CVE-2023-3446](https://nvd.nist.gov/vuln/detail/cve-2023-3446){: external}, [CVE-2023-3817](https://nvd.nist.gov/vuln/detail/cve-2023-3817){: external}, and [CVE-2023-5678](https://nvd.nist.gov/vuln/detail/cve-2023-5678){: external}.
 - Applies a security fix to use the correct socket path following SElinux policy module changes and CSI recommendations to use `/var/lib/kubelet/plugins/`.
 
 
@@ -406,7 +406,7 @@ Review the version history for VPC File CSI Driver.
 - Updates Golang to `1.20.11`.
 - Updates UBI image to `8.9.1029`.
 - Updates the `armada-storage-secret` to `v1.2.29`.
-- Resolves the following CVEs: [CVE-2023-22745](https://nvd.nist.gov/vuln/detail/CVE-2023-22745){: external}, [CVE-2007-4559](https://nvd.nist.gov/vuln/detail/CVE-2007-4559){: external}, [CVE-2023-40217](https://nvd.nist.gov/vuln/detail/CVE-2023-40217){: external}, and [CVE-2023-4641](https://nvd.nist.gov/vuln/detail/CVE-2023-4641){: external}.
+- Resolves the following CVEs: [CVE-2023-22745](https://nvd.nist.gov/vuln/detail/cve-2023-22745){: external}, [CVE-2007-4559](https://nvd.nist.gov/vuln/detail/cve-2007-4559){: external}, [CVE-2023-40217](https://nvd.nist.gov/vuln/detail/cve-2023-40217){: external}, and [CVE-2023-4641](https://nvd.nist.gov/vuln/detail/cve-2023-4641){: external}.
 
 
 ### Version version 1.2.0, released 31 October 2023
@@ -432,7 +432,7 @@ Review the version history for VPC File CSI Driver.
 - Updates Golang to `1.20.11`.
 - Updates UBI image to `8.9.1029`.
 - Updates the `armada-storage-secret` to `v1.2.29`.
-- Resolves the following CVEs: [CVE-2023-22745](https://nvd.nist.gov/vuln/detail/CVE-2023-22745){: external}, [CVE-2007-4559](https://nvd.nist.gov/vuln/detail/CVE-2007-4559){: external}, [CVE-2023-40217](https://nvd.nist.gov/vuln/detail/CVE-2023-40217){: external}, and [CVE-2023-4641](https://nvd.nist.gov/vuln/detail/CVE-2023-4641){: external}.
+- Resolves the following CVEs: [CVE-2023-22745](https://nvd.nist.gov/vuln/detail/cve-2023-22745){: external}, [CVE-2007-4559](https://nvd.nist.gov/vuln/detail/cve-2007-4559){: external}, [CVE-2023-40217](https://nvd.nist.gov/vuln/detail/cve-2023-40217){: external}, and [CVE-2023-4641](https://nvd.nist.gov/vuln/detail/cve-2023-4641){: external}.
 
 
 ### Version 1.1.9_87, released 13 November 2023
@@ -440,7 +440,7 @@ Review the version history for VPC File CSI Driver.
 
 - Updates the `storage-secret-sidecar` image to `1.2.27`.
 - Updates Golang to `1.20.10`.
-- Resolves [CVE-2023-44487](https://nvd.nist.gov/vuln/detail/CVE-2023-44487){: external}, [CVE-2023-4911](https://nvd.nist.gov/vuln/detail/CVE-2023-4911){: external}, [CVE-2023-4527](https://nvd.nist.gov/vuln/detail/CVE-2023-4527){: external}, [CVE-2023-4806](https://nvd.nist.gov/vuln/detail/CVE-2023-4806){: external}, [CVE-2023-4813](https://nvd.nist.gov/vuln/detail/CVE-2023-4813){: external}.
+- Resolves [CVE-2023-44487](https://nvd.nist.gov/vuln/detail/cve-2023-44487){: external}, [CVE-2023-4911](https://nvd.nist.gov/vuln/detail/cve-2023-4911){: external}, [CVE-2023-4527](https://nvd.nist.gov/vuln/detail/cve-2023-4527){: external}, [CVE-2023-4806](https://nvd.nist.gov/vuln/detail/cve-2023-4806){: external}, [CVE-2023-4813](https://nvd.nist.gov/vuln/detail/cve-2023-4813){: external}.
 
 
 ### Version 1.1.7_49, released 14 September 2023
@@ -449,4 +449,4 @@ Review the version history for VPC File CSI Driver.
 - Updates UBI image to `8.8-1037`.
 - Updates Golang to `1.19.12`.
 - Resolves the following CVEs: 
-    - [CVE-2023-34969](https://nvd.nist.gov/vuln/detail/CVE-2023-34969){: external}, [CVE-2023-28321](https://nvd.nist.gov/vuln/detail/CVE-2023-28321){: external}, [CVE-2023-2602](https://nvd.nist.gov/vuln/detail/CVE-2023-2602){: external}, [CVE-2023-2603](https://nvd.nist.gov/vuln/detail/CVE-2023-2603){: external}, [CVE-2023-28484](https://nvd.nist.gov/vuln/detail/CVE-2023-28484){: external}, [CVE-2023-29469](https://nvd.nist.gov/vuln/detail/CVE-2023-29469){: external}, [CVE-2023-27536](https://nvd.nist.gov/vuln/detail/CVE-2023-27536){: external}, [CVE-2023-3899](https://nvd.nist.gov/vuln/detail/CVE-2023-3899){: external}, and [CVE-2023-32681](https://nvd.nist.gov/vuln/detail/CVE-2023-32681){: external}.
+    - [CVE-2023-34969](https://nvd.nist.gov/vuln/detail/cve-2023-34969){: external}, [CVE-2023-28321](https://nvd.nist.gov/vuln/detail/cve-2023-28321){: external}, [CVE-2023-2602](https://nvd.nist.gov/vuln/detail/cve-2023-2602){: external}, [CVE-2023-2603](https://nvd.nist.gov/vuln/detail/cve-2023-2603){: external}, [CVE-2023-28484](https://nvd.nist.gov/vuln/detail/cve-2023-28484){: external}, [CVE-2023-29469](https://nvd.nist.gov/vuln/detail/cve-2023-29469){: external}, [CVE-2023-27536](https://nvd.nist.gov/vuln/detail/cve-2023-27536){: external}, [CVE-2023-3899](https://nvd.nist.gov/vuln/detail/cve-2023-3899){: external}, and [CVE-2023-32681](https://nvd.nist.gov/vuln/detail/cve-2023-32681){: external}.
