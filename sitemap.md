@@ -487,6 +487,10 @@ subcollection: openshift
 
 * [August 2026](/docs/openshift?topic=openshift-openshift-relnotes#openshift-aug26)
 
+    * [27 August 2026](/docs/openshift?topic=openshift-openshift-relnotes#openshift-aug2726)
+
+        * CLI version 1.0.843 is available.
+
     * [26 August 2026](/docs/openshift?topic=openshift-openshift-relnotes#openshift-aug2626)
 
         * {{site.data.keyword.openshiftlong_notm}} version 4.16 is no longer supported.
@@ -7764,6 +7768,8 @@ subcollection: openshift
 [CLI change log](/docs/openshift?topic=openshift-cs_cli_changelog#cs_cli_changelog)
 
 * [Version 1.0](/docs/openshift?topic=openshift-cs_cli_changelog#10)
+
+* [Version v1.0.843](/docs/openshift?topic=openshift-cs_cli_changelog#cli-01843)
 
 * [Version v1.0.829](/docs/openshift?topic=openshift-cs_cli_changelog#cli-01829)
 
