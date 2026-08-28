@@ -2,7 +2,7 @@
 
 copyright:
   years: 2026
-lastupdated: "2026-07-30"
+lastupdated: "2026-08-28"
 
 keywords: openshift data foundation, ODF, disaster recovery, upgrade, ODF-DR, regional disaster recovery, RDR
 
@@ -47,6 +47,12 @@ Wait until upgrade versions for all three components are available before you st
 
 Upgrade both the control plane and worker nodes on the hub cluster before upgrading any add-ons.
 
+Before running any commands in this step, set your CLI context to the hub cluster.
+```sh
+ibmcloud oc cluster config --cluster HUB_CLUSTER_NAME --admin
+```
+{: pre}
+
 1. Update the cluster master to the target version.
    ```sh
    ibmcloud oc cluster master update --cluster CLUSTER_NAME --version VERSION
@@ -71,7 +77,7 @@ Upgrade both the control plane and worker nodes on the hub cluster before upgrad
    ```
    {: pre}
 
-5. Confirm that all worker nodes are running the target version and show a **Ready** status.
+5. Confirm that all worker nodes are running the target version and show a **Ready** status. This may take several minutes.
    ```sh
    ibmcloud oc worker ls --cluster CLUSTER_NAME
    ```
@@ -83,6 +89,12 @@ Upgrade both the control plane and worker nodes on the hub cluster before upgrad
 
 [Managed cluster]{: tag-warm-gray}
 
+Before running any commands in this step, set your CLI context to the managed cluster you are upgrading. Repeat for each managed cluster.
+```sh
+ibmcloud oc cluster config --cluster MANAGED_CLUSTER_NAME --admin
+```
+{: pre}
+
 Because the managed clusters run ODF, follow the ODF-aware node upgrade procedure, which covers both the {{site.data.keyword.openshiftlong_notm}} and ODF upgrades. For detailed instructions, see [Updating or replacing VPC worker nodes that use ODF](/docs/openshift?topic=openshift-openshift-storage-update-vpc&interface=ui).
 
 ## Upgrading ACM on the hub cluster
@@ -93,15 +105,21 @@ Because the managed clusters run ODF, follow the ODF-aware node upgrade procedur
 
 After all clusters are running the target {{site.data.keyword.openshiftlong_notm}} version, upgrade the ACM add-on on the hub cluster.
 
-1. Upgrade the ACM add-on to the target version. Replace `<cluster_id>` with your hub cluster ID and `<version>` with the target ACM version (for example, `2.16`).
+Before running any commands in this step, set your CLI context to the hub cluster.
+```sh
+ibmcloud oc cluster config --cluster HUB_CLUSTER_NAME --admin
+```
+{: pre}
+
+1. Upgrade the ACM add-on to the target version. Replace `CLUSTER_NAME` with the name of your hub cluster and `VERSION` with the target ACM version (for example, `2.16`).
    ```sh
-   ibmcloud oc cluster addon update acm --cluster CLUSTER_ID --version VERSION
+   ibmcloud oc cluster addon update acm --cluster CLUSTER_NAME --version VERSION
    ```
    {: pre}
 
 2. Confirm that the add-on updated successfully. In the output, verify the ACM add-on shows the target version.
    ```sh
-   ibmcloud oc cluster addon ls --cluster CLUSTER_ID
+   ibmcloud oc cluster addon ls --cluster CLUSTER_NAME
    ```
    {: pre}
 
@@ -115,20 +133,37 @@ After ODF is upgraded on all managed clusters, upgrade the ODF Multicluster Orch
 
 1. Confirm the current subscription channel for the ODF Multicluster Orchestrator operator.
    ```sh
-   oc get subscription odf-multicluster-orchestrator -n openshift-operators -o jsonpath='{.spec.channel}'
+   oc get subscription.operators.coreos.com odf-multicluster-orchestrator -n openshift-operators -o jsonpath='{.spec.channel}'
    ```
    {: pre}
 
-2. Patch the subscription to the target channel. Replace `stable-4.21` with the target version channel.
+2. Patch the subscription channel to the version that matches the ODF version you upgraded to on your managed clusters. The channel follows the format `stable-X.Y`, where `X.Y` is the ODF version. For example, if you upgraded ODF to 4.21, use `stable-4.21`.
+
+   The ODF Multicluster Orchestrator version must match the ODF version installed on your managed clusters. Using a mismatched version may cause the DR policy to fail validation.
+   {: important}
+
+   To confirm which channels are available, run the following command.
    ```sh
-   oc patch subscription odf-multicluster-orchestrator -n openshift-operators \
+   oc get packagemanifest odf-multicluster-orchestrator -n openshift-marketplace -o jsonpath='{.status.channels[*].name}'
+   ```
+   {: pre}
+
+   Then patch the subscription to the target channel. Replace `stable-4.21` with the channel that matches your ODF version.
+   ```sh
+   oc patch subscription.operators.coreos.com odf-multicluster-orchestrator -n openshift-operators \
      --type merge -p '{"spec":{"channel":"stable-4.21"}}'
    ```
    {: pre}
 
-3. Confirm that the install plan for the new version has been created and approved.
+3. Confirm that the install plan for the new version has been created.
    ```sh
    oc get installplan -n openshift-operators
+   ```
+   {: pre}
+
+   If the install plan for the target version shows `APPROVED: false`, you must manually approve it before the upgrade proceeds. Replace `INSTALLPLAN_NAME` with the name of the install plan for the target version.
+   ```sh
+   oc patch installplan INSTALLPLAN_NAME -n openshift-operators --type merge -p '{"spec":{"approved":true}}'
    ```
    {: pre}
 

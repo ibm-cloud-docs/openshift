@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2026
-lastupdated: "2026-08-27"
+lastupdated: "2026-08-28"
 
 
 keywords: openshift
@@ -4659,9 +4659,9 @@ subcollection: openshift
 
 * [Make sure the storage cluster is healthy](/docs/openshift?topic=openshift-openshift-storage-update-vpc#cluster-health)
 
-* [Scale down OpenShift Data Foundation](/docs/openshift?topic=openshift-openshift-storage-update-vpc#scale-down-odf-vpc)
+* [Cordon and scale down OpenShift Data Foundation](/docs/openshift?topic=openshift-openshift-storage-update-vpc#scale-down-odf-vpc)
 
-* [Cordon and drain the worker node](/docs/openshift?topic=openshift-openshift-storage-update-vpc#cordon-drain-worker-node-vpc)
+* [Drain the worker node](/docs/openshift?topic=openshift-openshift-storage-update-vpc#cordon-drain-worker-node-vpc)
 
 * [Clean up persistent volumes for bare metal worker nodes](/docs/openshift?topic=openshift-openshift-storage-update-vpc#cleanup-pv-baremetal-vpc)
 
@@ -4669,7 +4669,7 @@ subcollection: openshift
 
 * [Clean up the resources from the old node](/docs/openshift?topic=openshift-openshift-storage-update-vpc#cleanup-os-storage-vpc)
 
-* [Add the new storage node](/docs/openshift?topic=openshift-openshift-storage-update-vpc#add-storage-node-vpc)
+* [Update the OcsCluster resource with the new node](/docs/openshift?topic=openshift-openshift-storage-update-vpc#add-storage-node-vpc)
 
 * [Update the OpenShift Data Foundation add-on](/docs/openshift?topic=openshift-openshift-storage-update-vpc#update-ocs-add-on-vpc)
 
@@ -4741,9 +4741,9 @@ subcollection: openshift
 
 * [Step 3. Create the managed clusters](/docs/openshift?topic=openshift-openshift_odf_rdr_roks#managed-cluster-create)
 
-* [Step 4. Prepare secrets for ACM](/docs/openshift?topic=openshift-openshift_odf_rdr_roks#prep-secret-rdr)
+* [Step 4. Install the ACM add-on on the hub cluster](/docs/openshift?topic=openshift-openshift_odf_rdr_roks#hub-acm-install)
 
-* [Step 5. Install the ACM add-on on the hub cluster](/docs/openshift?topic=openshift-openshift_odf_rdr_roks#hub-acm-install)
+* [Step 5. Import the managed clusters into ACM](/docs/openshift?topic=openshift-openshift_odf_rdr_roks#hub-acm-import)
 
 * [Step 6. Configure the Submariner add-on](/docs/openshift?topic=openshift-openshift_odf_rdr_roks#submariner)
 
@@ -5189,13 +5189,15 @@ subcollection: openshift
 
 * [Importing managed clusters after ACM is installed](/docs/openshift?topic=openshift-acm&interface=cli#import)
 
-    * [Importing a managed cluster using the CLI](/docs/openshift?topic=openshift-acm&interface=cli#import_cli)
+    * [Importing a managed cluster by using a generated command](/docs/openshift?topic=openshift-acm&interface=cli#import-generate)
 
-    * [Importing a managed cluster by using the OpenShift token and API server URL](/docs/openshift?topic=openshift-acm&interface=cli#import-token-url)
+    * [Importing a managed cluster by using the server URL and API token](/docs/openshift?topic=openshift-acm&interface=cli#import-token-url)
 
     * [Importing a managed cluster by using the kubeconfig](/docs/openshift?topic=openshift-acm&interface=cli#import-kubeconfig)
 
-    * [Importing a managed cluster by using a generated command](/docs/openshift?topic=openshift-acm&interface=cli#import-generate)
+    * [Import from Red Hat OpenShift Cluster Manager](/docs/openshift?topic=openshift-acm&interface=cli#import-ocm)
+
+    * [Importing a managed cluster using the CLI](/docs/openshift?topic=openshift-acm&interface=cli#import-cli)
 
 * [Updating or removing a managed cluster](/docs/openshift?topic=openshift-acm&interface=cli#after)
 

@@ -2,7 +2,7 @@
 
 copyright:
   years: 2025, 2026
-lastupdated: "2026-08-07"
+lastupdated: "2026-08-28"
 
 
 keywords: openshift, acm, advanced cluster management, manage cluster, management, addon, add-on, acm addon
@@ -38,7 +38,7 @@ Review the following prerequisite steps and information before you install the A
 1. You must have the [Administrator platform access role and the Manager service access role](/docs/openshift?topic=openshift-iam-platform-access-roles) for the cluster in IBM Cloud Kubernetes Service.
 1. You must have a VPC cluster with at least 3 worker nodes. Each worker node must have a minimum of 4 CPUs and 16GB RAM. For high availability, make sure that your cluster has at least one worker node per zone across 3 zones.
 1. [Create a trusted profile on your cluster to use for ACM](#trust-prof).
-1. For each cluster you want to manage with ACM, you must create a secret on the hub cluster with the managed cluster's access token and server URL. This step can be completed before or after installation.  See [Preparing secrets for ACM](#prep-secret).
+1. **Optional**: If you want to import managed clusters during the ACM add-on installation process, if you plan to import managed clusters using the CLI after installation, or if you plan to update a managed cluster's connection credentials later, you must create a secret on the hub cluster for each managed cluster. See [Preparing secrets for ACM](#prep-secret). This step is not required if you only plan to import managed clusters after installation using the OpenShift web console.
 1. [Install or update the CLI](/docs/openshift?topic=openshift-cli-install).
 
 ## Create a trusted profile for ACM
@@ -105,15 +105,21 @@ Once you add a trusted profile to a cluster, it cannot be removed and you cannot
     ```
     {: pre}
 
+1. Verify that the trusted profile secret was created in the cluster. This command can take up to 10 minutes to complete. Wait for the secret to appear before proceeding to install the ACM add-on. If you proceed before the secret is created, the ACM add-on installation will fail.
+    ```sh
+    oc get secrets -n kube-system | grep ibm-cloud-credentials
+    ```
+    {: pre}
+
 ## Preparing secrets for ACM
 {: #prep-secret}
 
-For each cluster that you want to manage with ACM, you must create a secret on the hub cluster that includes the managed cluster's access token and server URL.
+Creating secrets for ACM is optional. You only need to complete this section if you want to import managed clusters during the ACM add-on installation process, if you plan to [import managed clusters after installation using the CLI](#import-cli), or if you plan to [update a managed cluster's connection credentials](#after) later.
 
-If you want to import managed clusters during the ACM add-on installation process, complete these steps before you begin the installation. If you choose to create the secrets and import managed clusters after the add-on is installed on the hub cluster, you can do so by completing [additional steps](#after) with the CLI.
+If you plan to import managed clusters after installation using the OpenShift web console and do not need to update connection credentials later, you do not need to create secrets.
 {: important}
 
-Complete the following steps for each cluster that you want to manage.
+For each cluster that you want to manage, complete the following steps on the hub cluster.
 
 1. On the cluster that you want to manage with ACM, run the command to find the server URL. In the output, find and note the **Master URL** value. This is the server URL to reference in the secret. You also use this URL in the following steps.
 
@@ -212,7 +218,7 @@ Use the UI to install the ACM add-on and ACM operator to the hub cluster.
 
 1. Choose how you want to import managed clusters. To import clusters after the add-on is installed, select **Import from CLI**. If you created the required secrets on the hub cluster and you want to import managed clusters now, select **Import now**.
 
-    You can only use the IBM Cloud UI to import managed clusters during the installation process. Once the ACM add-on is installed on the hub cluster, you can [use the CLI](#after) or the OpenShift Web Console to import managed clusters.
+    You can only use the IBM Cloud UI to import managed clusters during the installation process. Once the ACM add-on is installed on the hub cluster, you can [use the CLI](#after) or the OpenShift web console to import managed clusters.
     {: important}
 
     1. If you selected the **Import now** option, click **Import cluster** in the pop-up menu.
@@ -348,14 +354,90 @@ You are responsible for managing these operators, including but not limited to u
 ## Importing managed clusters after ACM is installed
 {: #import}
 
-There are several ways to import clusters to manage with ACM. Before you can import a cluster, make sure you have [created the required secret for ACM](#prep-secret).
+You can import managed clusters after ACM is installed by using the OpenShift web console or the CLI. The console-based methods do not require a secret. The CLI method requires a [secret](#prep-secret).
 
-All clusters mangaged by ACM must belong to a cluster set. You can create a new cluster set, or you can add clusters to the `Default` cluster set. If no cluster set is specified, managed clusters are added to the `Default` option.
+All clusters managed by ACM must belong to a cluster set. You can create a new cluster set, or you can add clusters to the `Default` cluster set. If no cluster set is specified, managed clusters are added to the `Default` option.
 {: tip}
 
+### Importing a managed cluster by using a generated command
+{: #import-generate}
+
+Use the OpenShift web console to generate an import command, then run that command on the cluster you want to import.
+
+1. Open the OpenShift web console for the ACM hub cluster.
+
+2. From the **Fleet Management** perspective, click **Import cluster**.
+
+3. Enter the **Name** of the cluster, select a **Cluster set** if applicable, and enter **Additional labels** if applicable.
+
+4. For **Import mode**, select **Run import commands manually** and click **Next**.
+
+5. Optionally select an automation template and click **Next**.
+
+6. Review the details and click **Generate command**. Copy the command that is displayed.
+
+7. Log in to the cluster you want to import and run the copied command with `kubectl` configured for that cluster.
+
+### Importing a managed cluster by using the server URL and API token
+{: #import-token-url}
+
+Gather the API token and server URL for the cluster you want to import, then use the OpenShift web console to import the cluster.
+
+1. Get the API token and server URL for the cluster you want to import.
+
+    1. In the {{site.data.keyword.cloud_notm}} console, navigate to your [cluster list](https://cloud.ibm.com/containers/cluster-management/clusters){: external} and click the cluster you want to import.
+
+    2. From the cluster details page, click **OpenShift web console**.
+
+    3. Click the username menu, shown in the format `IAM#username`, then click **Copy login command**.
+
+    4. Click **Display token**. Find the command that begins with `oc login` and save the API token (`sha256~XXXX`) and the server URL.
+
+2. Open the OpenShift web console for the ACM hub cluster.
+
+3. From the **Fleet Management** perspective, click **Import cluster**.
+
+4. Enter the **Name** of the cluster, select a **Cluster set** if applicable, and enter **Additional labels** if applicable.
+
+5. For **Import mode**, select **Enter your server URL and API token for the existing cluster**. Enter the server URL and API token that you retrieved, then click **Next**.
+
+6. Optionally select an automation template and click **Next**.
+
+7. Review the details and click **Import**.
+
+### Importing a managed cluster by using the kubeconfig
+{: #import-kubeconfig}
+
+Gather the kubeconfig for the cluster you want to import, then use the OpenShift web console to import the cluster.
+
+1. Get the kubeconfig for the cluster you want to import. From the IBM Cloud CLI, run the following command and save the output.
+
+    ```sh
+    ibmcloud ks cluster config --cluster CLUSTER_NAME --admin --output yaml
+    ```
+    {: pre}
+
+2. Open the OpenShift web console for the ACM hub cluster.
+
+3. From the **Fleet Management** perspective, click **Import cluster**.
+
+4. Enter the **Name** of the cluster, select a **Cluster set** if applicable, and enter **Additional labels** if applicable.
+
+5. For **Import mode**, select **Kubeconfig** and paste in the kubeconfig content that you retrieved, then click **Next**.
+
+6. Optionally select an automation template and click **Next**.
+
+7. Review the details and click **Import**.
+
+### Import from Red Hat OpenShift Cluster Manager
+{: #import-ocm}
+
+The **Import from Red Hat OpenShift Cluster Manager** import mode is only supported for Red Hat OpenShift Service on AWS (ROSA) clusters and is not applicable for IBM Cloud clusters.
 
 ### Importing a managed cluster using the CLI
-{: #import_cli}
+{: #import-cli}
+
+The CLI import method requires you to have [created a secret](#prep-secret) for the managed cluster on the hub cluster.
 
 To import a managed cluster using the CLI, edit the ACM resource to include the cluster to manage.
 
@@ -366,66 +448,27 @@ To import a managed cluster using the CLI, edit the ACM resource to include the 
     ```
     {: pre}
 
-2. In the `managedClusters` section of the resource, add the cluster ID, the name of the cluster secret created for ACM, the namespace for the secret, and specify the `Import` action. See the example below for formatting. The following example imports `cluster_id_1`.
+2. In the `managedClusters` section of the resource, add the cluster ID, the name of the cluster secret created for ACM, the namespace for the secret, and specify the `Import` action. The following example imports `CLUSTER_ID_1`.
 
     ```json
     managedclusters:
-      - clusterid: "cluster_id_1"
-        secretname: "managed-secret-1"
-        secretnamespace: "managed-namespace" # The namespace that the secret was created in
+      - clusterid: "CLUSTER_ID_1"
+        secretname: "SECRET_NAME"
+        secretnamespace: "SECRET_NAMESPACE" # The namespace that the secret was created in
         action: "Import"
     ```
     {: screen}
 
 3. Save and apply the changes.
 
-### Importing a managed cluster by using the OpenShift token and API server URL
-{: #import-token-url}
-
-Gather the OpenShift token and API server URL for the cluster you want to import, then use the ACM console to import the cluster.
-
-1. In the IBM Cloud console, navigate to your [cluster list](https://cloud.ibm.com/containers/cluster-management/clusters){: external} and click on the cluster you want to import.
-
-2. From the cluster details page, click **OpenShift web console**.
-
-3. Click the username drop down, shown with the format `IAM#username`. From the drop down, click **Copy login command**.
-
-4. Click **Display token** to display your login commands. Find the command that begins with `oc login` and save the API token (`sha256~XXXX`) and the server URL.
-
-5. Navigate to your ACM console. Click **Infrastructure** > **Clusters** > **Import an existing cluster**.
-
-6. Follow the prompts to import your cluster and specify the API token and server URL in the parameters section.
-
-### Importing a managed cluster by using the kubeconfig
-{: #import-kubeconfig}
-
-Gather your kubeconfig details, then use the ACM console to import cluster.
-
-1. From the IBM Cloud CLI, run the following command to get the kubeconfig for the cluster you want to import. Save the kubeconfig file contents displayed in the output.
-    ```sh
-    ibmcloud ks cluster config --cluster CLUSTER_NAME --admin --output yaml
-    ```
-    {: pre}
-
-2. Navigate to your ACM console. Click **Infrastructure** > **Clusters** > **Import an existing cluster**.
-
-3. Follow the prompts to import your cluster and include the kubeconfig contents in the parameters section.
-
-
-### Importing a managed cluster by using a generated command
-{: #import-generate}
-
-Use the ACM console to generate a command to import a cluster, then run that command on the cluster you want to import.
-
-1. Navigate to your ACM console. Click **Infrastructure** > **Clusters** > **Import an existing cluster**.
-2. Select the option to generate an import command. Copy the command.
-3. Login to the IBM Cloud CLI and run the command on the cluster you want to import.
-
 
 ## Updating or removing a managed cluster
 {: #after}
 
-To remove or update managed cluster from an ACM instance, you must edit the `managedClusters` section of the ACM custom resource on the hub cluster.
+To remove a managed cluster from an ACM instance, or to update ACM's connection credentials for a managed cluster (for example, after token rotation or a server URL change), you must edit the `managedClusters` section of the ACM custom resource on the hub cluster. The `Update` action refreshes the secret-based credentials that ACM uses to communicate with a managed cluster. This is not the same as upgrading the OpenShift version of a cluster.
+
+Updating a managed cluster's connection credentials requires the [secret](#prep-secret) for that cluster.
+{: note}
 
 1. Run the command to edit the ACM resource.
 
@@ -434,17 +477,17 @@ To remove or update managed cluster from an ACM instance, you must edit the `man
     ```
     {: pre}
 
-2. In the `managedClusters` section of the resource, add the cluster ID, the name of the cluster secret created for ACM, the namespace for the secret, and the action you want to implement for the cluster. See the example below for formatting. For the action, specify, `Delete` or `Update`. Note that to delete a cluster, you do not need the secret or the secret namespace.
+2. In the `managedClusters` section of the resource, add the cluster ID, the name of the cluster secret created for ACM, the namespace for the secret, and the action you want to implement for the cluster. See the example below for formatting. For the action, specify `Delete` or `Update`. Note that to delete a cluster, you do not need the secret or the secret namespace.
 
-    The following example deletes`cluster_id_1` and updates `cluster_id_2`.
+    The following example deletes `CLUSTER_ID_1` and updates `CLUSTER_ID_2`.
 
     ```json
     managedclusters:
-      - clusterid: "cluster_id_1"
+      - clusterid: "CLUSTER_ID_1"
         action: "Delete"
-      - clusterid: "cluster_id_2"
-        secretname: "managed-secret-2"
-        secretnamespace: "managed-namespace-2" # The namespace that the secret was created in
+      - clusterid: "CLUSTER_ID_2"
+        secretname: "SECRET_NAME"
+        secretnamespace: "SECRET_NAMESPACE" # The namespace that the secret was created in
         action: "Update"
     ```
     {: screen}
