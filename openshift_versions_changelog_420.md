@@ -3,7 +3,7 @@
 copyright:
   years: 2026, 2026
 
-lastupdated: "2026-08-26"
+lastupdated: "2026-08-28"
 
 
 keywords: change log, version history, 4.20_openshift
@@ -39,7 +39,7 @@ Master patch updates are applied automatically. Worker node patch updates can be
 {: #420_components}
 
 
-### Worker node fix pack 4.20.34_1560_openshift, released 25 August 2026
+## Worker node fix pack 4.20.34_1560_openshift, released 25 August 2026
 {: #cl-boms-42034_1560_openshift_W}
 
 The following list shows the components included in the worker node fix pack 4.20.34_1560_openshift. Worker node patch updates can be applied by updating, reloading (in classic infrastructure), or replacing (in VPC infrastructure) the worker node.
@@ -69,7 +69,7 @@ HAProxy a70e8a8452c4d476687ad749df47b6f27a61851a
 :   Resolves the following CVEs: [CVE-2026-54411](https://nvd.nist.gov/vuln/detail/cve-2026-54411){: external}, [CVE-2026-54371](https://nvd.nist.gov/vuln/detail/cve-2026-54371){: external}, [CVE-2026-55204](https://nvd.nist.gov/vuln/detail/cve-2026-55204){: external}, and [CVE-2026-58055](https://nvd.nist.gov/vuln/detail/cve-2026-58055){: external}.
 
 
-### Worker node fix pack 4.20.32_1559_openshift, released 12 August 2026
+## Worker node fix pack 4.20.32_1559_openshift, released 12 August 2026
 {: #cl-boms-42032_1559_openshift_W}
 
 The following list shows the components included in the worker node fix pack 4.20.32_1559_openshift. Worker node patch updates can be applied by updating, reloading (in classic infrastructure), or replacing (in VPC infrastructure) the worker node.
@@ -99,7 +99,7 @@ HAProxy bd7e64ef86b90455535107263466d1825f3e7f9f
 :   Resolves the following CVEs: [CVE-2026-56391](https://nvd.nist.gov/vuln/detail/cve-2026-56391){: external}, and [CVE-2026-56392](https://nvd.nist.gov/vuln/detail/cve-2026-56392){: external}.
 
 
-### Master fix pack 4.20.32_1558_openshift, released 05 August 2026
+## Master fix pack 4.20.32_1558_openshift, released 05 August 2026
 {: #cl-boms_master-42032_1558_openshift_M}
 
 The following list shows the components that are in the master fix pack 4.20.32_1558_openshift. Master patch updates are applied automatically.
@@ -129,7 +129,7 @@ Red Hat OpenShift on IBM Cloud 4.20.32
 :   See the [Red Hat OpenShift on IBM Cloud release notes](https://docs.redhat.com/en/documentation/openshift_container_platform/4.20/html/release_notes/ocp-4-20-release-notes#ocp-4-20-32_release-notes){: external}.Resolves the following CVEs: [CVE-2026-16242](https://nvd.nist.gov/vuln/detail/cve-2026-16242){: external}.
 
 
-### Worker node fix pack 4.20.30_1557_openshift, released 28 July 2026
+## Worker node fix pack 4.20.30_1557_openshift, released 28 July 2026
 {: #cl-boms-42030_1557_openshift_W}
 
 The following list shows the components included in the worker node fix pack 4.20.30_1557_openshift. Worker node patch updates can be applied by updating, reloading (in classic infrastructure), or replacing (in VPC infrastructure) the worker node.
@@ -159,7 +159,7 @@ HAProxy 346c7130717ef7cc25d1dfbca7d57ca32396b692
 :   Resolves the following CVEs: [CVE-2026-6238](https://nvd.nist.gov/vuln/detail/cve-2026-6238){: external}, [CVE-2026-5928](https://nvd.nist.gov/vuln/detail/cve-2026-5928){: external}, [CVE-2026-48864](https://nvd.nist.gov/vuln/detail/cve-2026-48864){: external}, [CVE-2026-54370](https://nvd.nist.gov/vuln/detail/cve-2026-54370){: external}, [CVE-2026-28390](https://nvd.nist.gov/vuln/detail/cve-2026-28390){: external}, [CVE-2026-5435](https://nvd.nist.gov/vuln/detail/cve-2026-5435){: external}, [CVE-2025-13151](https://nvd.nist.gov/vuln/detail/cve-2025-13151){: external}, [CVE-2026-54369](https://nvd.nist.gov/vuln/detail/cve-2026-54369){: external}, [CVE-2026-58016](https://nvd.nist.gov/vuln/detail/cve-2026-58016){: external}, and [CVE-2025-6170](https://nvd.nist.gov/vuln/detail/cve-2025-6170){: external}.
 
 
-### Master fix pack 4.20.25_1556_openshift, released 28 July 2026
+## Master fix pack 4.20.25_1556_openshift, released 28 July 2026
 {: #cl-boms_master-42025_1556_openshift_M}
 
 The following list shows the components that are in the master fix pack 4.20.25_1556_openshift. Master patch updates are applied automatically.
@@ -201,7 +201,7 @@ Red Hat OpenShift on IBM Cloud 4.20.25
 :   See the [Red Hat OpenShift on IBM Cloud release notes](https://docs.redhat.com/en/documentation/openshift_container_platform/4.20/html/release_notes/ocp-4-20-release-notes#ocp-4-20-25_release-notes){: external}.
 
 
-### Worker node fix pack 4.20.28_1555_openshift, released 13 July 2026
+## Worker node fix pack 4.20.28_1555_openshift, released 13 July 2026
 {: #cl-boms-42028_1555_openshift_W}
 
 The following list shows the components included in the worker node fix pack 4.20.28_1555_openshift. Worker node patch updates can be applied by updating, reloading (in classic infrastructure), or replacing (in VPC infrastructure) the worker node.
@@ -231,7 +231,7 @@ HAProxy 27f76d0c7626993cde6e1ff90fa42253718cc5fa
 :   Resolves the following CVEs: [CVE-2026-5450](https://nvd.nist.gov/vuln/detail/cve-2026-5450){: external}.
 
 
-### Worker node fix pack 4.20.26_1553_openshift, released 01 July 2026
+## Worker node fix pack 4.20.26_1553_openshift, released 01 July 2026
 {: #cl-boms-42026_1553_openshift_W}
 
 The following list shows the components included in the worker node fix pack 4.20.26_1553_openshift. Worker node patch updates can be applied by updating, reloading (in classic infrastructure), or replacing (in VPC infrastructure) the worker node.
@@ -261,7 +261,7 @@ HAProxy 119de539a7da3c92449b38e1531722802988e50c
 :   Resolves the following CVEs: [CVE-2026-45447](https://nvd.nist.gov/vuln/detail/cve-2026-45447){: external}, [CVE-2024-4741](https://nvd.nist.gov/vuln/detail/cve-2024-4741){: external}, and [CVE-2024-34459](https://nvd.nist.gov/vuln/detail/cve-2024-34459){: external}.
 
 
-### Master fix pack 4.20.23_1551_openshift, released 26 June 2026
+## Master fix pack 4.20.23_1551_openshift, released 26 June 2026
 {: #cl-boms_master-42023_1551_openshift_M}
 
 The following list shows the components that are in the master fix pack 4.20.23_1551_openshift. Master patch updates are applied automatically.
@@ -299,7 +299,7 @@ Red Hat OpenShift on IBM Cloud 4.20.23
 :   See the [Red Hat OpenShift on IBM Cloud release notes](https://docs.redhat.com/en/documentation/openshift_container_platform/4.20/html/release_notes/ocp-4-20-release-notes#ocp-4-20-23_release-notes){: external}.
 
 
-### Worker node fix pack 4.20.24_1552_openshift, released 15 June 2026
+## Worker node fix pack 4.20.24_1552_openshift, released 15 June 2026
 {: #cl-boms-42024_1552_openshift_W}
 
 The following list shows the components included in the worker node fix pack 4.20.24_1552_openshift. Worker node patch updates can be applied by updating, reloading (in classic infrastructure), or replacing (in VPC infrastructure) the worker node.
@@ -329,7 +329,7 @@ HAProxy d4656f400ca14059e1b5b8ef8078b4903290791a
 :   Resolves the following CVEs: [CVE-2026-45186](https://nvd.nist.gov/vuln/detail/cve-2026-45186){: external}.
 
 
-### Worker node fix pack 4.20.23_1550_openshift, released 03 June 2026
+## Worker node fix pack 4.20.23_1550_openshift, released 03 June 2026
 {: #cl-boms-42023_1550_openshift_W}
 
 The following list shows the components included in the worker node fix pack 4.20.23_1550_openshift. Worker node patch updates can be applied by updating, reloading (in classic infrastructure), or replacing (in VPC infrastructure) the worker node.
@@ -359,7 +359,7 @@ HAProxy 0e0730588ba21878845cdb0bee615a371a489a02
 :   Resolves the following CVEs: [CVE-2026-4046](https://nvd.nist.gov/vuln/detail/cve-2026-4046){: external}, [CVE-2026-33846](https://nvd.nist.gov/vuln/detail/cve-2026-33846){: external}, [CVE-2026-42010](https://nvd.nist.gov/vuln/detail/cve-2026-42010){: external}, [CVE-2026-5260](https://nvd.nist.gov/vuln/detail/cve-2026-5260){: external}, [CVE-2026-42014](https://nvd.nist.gov/vuln/detail/cve-2026-42014){: external}, [CVE-2026-3833](https://nvd.nist.gov/vuln/detail/cve-2026-3833){: external}, [CVE-2026-42015](https://nvd.nist.gov/vuln/detail/cve-2026-42015){: external}, [CVE-2026-33845](https://nvd.nist.gov/vuln/detail/cve-2026-33845){: external}, [CVE-2026-42011](https://nvd.nist.gov/vuln/detail/cve-2026-42011){: external}, [CVE-2026-42009](https://nvd.nist.gov/vuln/detail/cve-2026-42009){: external}, [CVE-2026-42013](https://nvd.nist.gov/vuln/detail/cve-2026-42013){: external}, and [CVE-2026-42012](https://nvd.nist.gov/vuln/detail/cve-2026-42012){: external}.
 
 
-### Master fix pack 4.20.21_1548_openshift, released 22 May 2026
+## Master fix pack 4.20.21_1548_openshift, released 22 May 2026
 {: #cl-boms_master-42021_1548_openshift_M}
 
 The following list shows the components that are in the master fix pack 4.20.21_1548_openshift. Master patch updates are applied automatically.
@@ -393,7 +393,7 @@ Tigera Operator v1.38.13
 :   See the [Tigera Operator release notes](https://github.com/tigera/operator/releases/tag/v1.38.13){: external}.
 
 
-### Worker node fix pack 4.20.22_1549_openshift, released 20 May 2026
+## Worker node fix pack 4.20.22_1549_openshift, released 20 May 2026
 {: #cl-boms-42022_1549_openshift_W}
 
 The following list shows the components included in the worker node fix pack 4.20.22_1549_openshift. Worker node patch updates can be applied by updating, reloading (in classic infrastructure), or replacing (in VPC infrastructure) the worker node.
@@ -423,7 +423,7 @@ HAProxy 6ba93946d8bd08ba581321189c719ab548cadf01
 :   Resolves the following CVEs: [CVE-2025-9714](https://nvd.nist.gov/vuln/detail/cve-2025-9714){: external}, [CVE-2026-4424](https://nvd.nist.gov/vuln/detail/cve-2026-4424){: external}, [CVE-2026-40356](https://nvd.nist.gov/vuln/detail/cve-2026-40356){: external}, [CVE-2025-14512](https://nvd.nist.gov/vuln/detail/cve-2025-14512){: external}, [CVE-2026-4878](https://nvd.nist.gov/vuln/detail/cve-2026-4878){: external}, [CVE-2026-40355](https://nvd.nist.gov/vuln/detail/cve-2026-40355){: external}, [CVE-2026-5121](https://nvd.nist.gov/vuln/detail/cve-2026-5121){: external}, and [CVE-2025-14087](https://nvd.nist.gov/vuln/detail/cve-2025-14087){: external}.
 
 
-### Worker node fix pack 4.20.19_1546_openshift, released 04 May 2026
+## Worker node fix pack 4.20.19_1546_openshift, released 04 May 2026
 {: #cl-boms-42019_1546_openshift_W}
 
 The following list shows the components included in the worker node fix pack 4.20.19_1546_openshift. Worker node patch updates can be applied by updating, reloading (in classic infrastructure), or replacing (in VPC infrastructure) the worker node.
@@ -449,7 +449,7 @@ HAProxy c7e825675cbd75e8433801c99f8aca3b207a5a46
 :   Resolves the following CVEs: [CVE-2026-5121](https://nvd.nist.gov/vuln/detail/cve-2026-5121){: external}, [CVE-2025-9714](https://nvd.nist.gov/vuln/detail/cve-2025-9714){: external}, and [CVE-2026-4424](https://nvd.nist.gov/vuln/detail/cve-2026-4424){: external}.
 
 
-### Master fix pack 4.20.18_1545_openshift, released 27 April 2026
+## Master fix pack 4.20.18_1545_openshift, released 27 April 2026
 {: #cl-boms_master-42018_1545_openshift_M}
 
 The following list shows the components that are in the master fix pack 4.20.18_1545_openshift. Master patch updates are applied automatically.
@@ -503,7 +503,7 @@ Tigera Operator v1.38.13
 :   See the [Tigera Operator release notes](https://github.com/tigera/operator/releases/tag/v1.38.13){: external}.
 
 
-### Worker node fix pack 4.20.18_1544_openshift, released 20 April 2026
+## Worker node fix pack 4.20.18_1544_openshift, released 20 April 2026
 {: #cl-boms-42018_1544_openshift_W}
 
 The following list shows the components included in the worker node fix pack 4.20.18_1544_openshift. Worker node patch updates can be applied by updating, reloading (in classic infrastructure), or replacing (in VPC infrastructure) the worker node.
@@ -529,7 +529,7 @@ HAProxy c7e825675cbd75e8433801c99f8aca3b207a5a46
 :   Resolves the following CVEs: [CVE-2026-27135](https://nvd.nist.gov/vuln/detail/cve-2026-27135){: external}.
 
 
-### Worker node fix pack 4.20.17_1543_openshift, released 06 April 2026
+## Worker node fix pack 4.20.17_1543_openshift, released 06 April 2026
 {: #cl-boms-42017_1543_openshift_W}
 
 The following list shows the components included in the worker node fix pack 4.20.17_1543_openshift. Worker node patch updates can be applied by updating, reloading (in classic infrastructure), or replacing (in VPC infrastructure) the worker node.
@@ -555,39 +555,7 @@ HAProxy 91cc06f4e0a123d06f5ee7c226df6fb83e1ca223
 :   Resolves the following CVEs: [CVE-2025-14831](https://nvd.nist.gov/vuln/detail/cve-2025-14831){: external}, and [CVE-2025-9820](https://nvd.nist.gov/vuln/detail/cve-2025-9820){: external}.
 
 
-### Change log for Master fix pack 4.20.15_1542_openshift, released 02 April 2026
-{: #42015_1542_openshift_M}
-
-The following list shows the changes that are in the master fix pack 4.20.15_1542_openshift. Master patch updates are applied automatically. 
-
-
-Calico v3.30.6
-:   See the [Calico release notes](https://docs.tigera.io/calico/3.30/release-notes/#calico-open-source-3306-bug-fix-release){: external}.
-Cluster health image v1.6.15
-:   New version contains updates and security fixes.
-etcd v3.5.27
-:   See the [etcd release notes](https://github.com/etcd-io/etcd/releases/v3.5.27){: external}.
-{{site.data.keyword.cloud_notm}} Block Storage driver and plug-in v2.5.25
-:   New version contains updates and security fixes.
-{{site.data.keyword.cloud_notm}} Controller Manager v1.33.9-1
-:   New version contains updates and security fixes.
-{{site.data.keyword.filestorage_full_notm}} for Classic plug-in and monitor v454
-:   New version contains updates and security fixes.
-{{site.data.keyword.cloud_notm}} RBAC Operator 6212368
-:   New version contains updates and security fixes.
-Key Management Service provider 2.10.22
-:   New version contains updates and security fixes.
-Load balancer and load balancer monitor for {{site.data.keyword.cloud_notm}} Provider 3563
-:   New version contains updates and security fixes.
-Portieris admission controller v0.13.36
-:   See the [Portieris admission controller release notes](https://github.com/{{site.data.keyword.IBM_notm}}/portieris/releases/tag/v0.13.36){: external}.
-{{site.data.keyword.openshiftlong_notm}}. 4.20.15
-:   See the [{{site.data.keyword.openshiftlong_notm}} release notes](https://docs.redhat.com/en/documentation/openshift_container_platform/4.20/html/release_notes/ocp-4-20-release-notes#ocp-4-20-15_release-notes){: external}.
-Tigera Operator v1.38.11
-:   See the [Tigera Operator release notes](https://github.com/tigera/operator/releases/tag/v1.38.11){: external}.
-
-
-### Worker node fix pack 4.20.16_1542_openshift, released 24 March 2026
+## Worker node fix pack 4.20.16_1542_openshift, released 24 March 2026
 {: #cl-boms-42016_1542_openshift_W}
 
 The following list shows the components included in the worker node fix pack 4.20.16_1542_openshift. Worker node patch updates can be applied by updating, reloading (in classic infrastructure), or replacing (in VPC infrastructure) the worker node.
@@ -613,7 +581,7 @@ HAProxy 10c8639e6b5829d0af51a22755e13756f34630cf
 :   Resolves the following CVEs: [CVE-2025-15281](https://nvd.nist.gov/vuln/detail/cve-2025-15281){: external}, and [CVE-2026-0915](https://nvd.nist.gov/vuln/detail/cve-2026-0915){: external}.
 
 
-### Worker node fix pack 4.20.15_1540_openshift, released 11 March 2026
+## Worker node fix pack 4.20.15_1540_openshift, released 11 March 2026
 {: #cl-boms-42015_1540_openshift_W}
 
 The following list shows the components included in the worker node fix pack 4.20.15_1540_openshift. Worker node patch updates can be applied by updating, reloading (in classic infrastructure), or replacing (in VPC infrastructure) the worker node.
@@ -639,7 +607,7 @@ HAProxy 965c403695b15b3410d87a3772002edbc5ed2569
 :   Resolves the following CVEs: [CVE-2025-69419](https://nvd.nist.gov/vuln/detail/cve-2025-69419){: external}.
 
 
-### Worker node fix pack 4.20.14_1539_openshift, released 24 February 2026
+## Worker node fix pack 4.20.14_1539_openshift, released 24 February 2026
 {: #cl-boms-42014_1539_openshift_W}
 
 The following list shows the components included in the worker node fix pack 4.20.14_1539_openshift. Worker node patch updates can be applied by updating, reloading (in classic infrastructure), or replacing (in VPC infrastructure) the worker node.
@@ -665,29 +633,7 @@ HAProxy 2bf1aebe51a37cd9b4661656ce21e53f918166ea
 :   Resolves the following CVEs: [CVE-2025-6176](https://nvd.nist.gov/vuln/detail/cve-2025-6176){: external}.
 
 
-### Change log for Master fix pack 4.20.13_1538_openshift, released 18 February 2026
-{: #42013_1538_openshift_M}
-
-The following list shows the changes that are in the master fix pack 4.20.13_1538_openshift. Master patch updates are applied automatically. 
-
-
-Calico v3.30.6
-:   See the [Calico release notes](https://docs.tigera.io/calico/3.30/release-notes/#calico-open-source-3306-bug-fix-release){: external}.
-{{site.data.keyword.cloud_notm}} Controller Manager v1.33.7-8
-:   New version contains updates and security fixes.
-{{site.data.keyword.filestorage_full_notm}} for Classic plug-in and monitor v453
-:   New version contains updates and security fixes.
-Key Management Service provider 2.10.21
-:   New version contains updates and security fixes.
-Portieris admission controller v0.13.35
-:   See the [Portieris admission controller release notes](https://github.com/{{site.data.keyword.IBM_notm}}/portieris/releases/tag/v0.13.35){: external}.
-{{site.data.keyword.openshiftlong_notm}}. 4.20.13
-:   See the [{{site.data.keyword.openshiftlong_notm}} release notes](https://docs.redhat.com/en/documentation/openshift_container_platform/4.20/html/release_notes/ocp-4-20-release-notes#ocp-4-20-13_release-notes){: external}.
-Tigera Operator v1.38.11
-:   See the [Tigera Operator release notes](https://github.com/tigera/operator/releases/tag/v1.38.11){: external}.
-
-
-### Worker node fix pack 4.20.13_1537_openshift, released 09 February 2026
+## Worker node fix pack 4.20.13_1537_openshift, released 09 February 2026
 {: #cl-boms-42013_1537_openshift_W}
 
 The following list shows the components included in the worker node fix pack 4.20.13_1537_openshift. Worker node patch updates can be applied by updating, reloading (in classic infrastructure), or replacing (in VPC infrastructure) the worker node.
@@ -711,23 +657,3 @@ Red Hat CoreOS 4.20.13
 
 HAProxy ace947f4ecf45f28effe8d125ffda48f9890223b
 :   Resolves the following CVEs: [CVE-2025-14104](https://nvd.nist.gov/vuln/detail/cve-2025-14104){: external}.
-
-
-### Master and worker fixpacks 4.20.12_1536_openshift and 4.20.10_1535_openshift, released 04 February 2026
-{: #42012_1536M_and_42010_1535W}
-
-
-Calico v3.30.4
-:   See the [Calico release notes](https://docs.tigera.io/calico/3.30/release-notes/#calico-open-source-3304-bug-fix-release).
-Cluster health image v1.6.14
-:   New version contains updates and security fixes.
-IBM Cloud Block Storage driver and plug-in v2.5.24
-:   New version contains updates and security fixes.
-IBM Cloud Controller Manager v1.33.7-7
-:   New version contains updates and security fixes.
-Red Hat OpenShift (master) 4.20.12
-:   See the [Red Hat OpenShift on IBM Cloud release notes](https://docs.redhat.com/en/documentation/openshift_container_platform/4.20/html/release_notes/ocp-4-20-release-notes#ocp-4-20-12_release-notes).
-Red Hat OpenShift (worker node) 4.20.10
-:   See the [Red Hat OpenShift on IBM Cloud release notes](https://docs.redhat.com/en/documentation/openshift_container_platform/4.20/html/release_notes/ocp-4-20-release-notes#ocp-4-20-12_release-notes).
-Tigera Operator v1.38.8
-:   See the [Tigera Operator release notes](https://github.com/tigera/operator/releases/tag/v1.38.8).
