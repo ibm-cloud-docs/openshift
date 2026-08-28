@@ -2,7 +2,7 @@
 
 copyright:
   years: 2025, 2026
-lastupdated: "2026-08-07"
+lastupdated: "2026-08-28"
 
 
 keywords: openshift, openshift data foundation, openshift container storage, disaster recovery
@@ -36,8 +36,8 @@ Here are the high-level steps of this solution:
 1. Create the hub cluster.
 1. Create a trusted profile for the hub cluster.
 1. Create the managed clusters.
-1. Prepare secrets for ACM on the hub cluster.
 1. Install the ACM add-on on the hub cluster.
+1. Import the managed clusters into ACM.
 1. Install Submariner on the managed clusters to establish connectivity between them.
 1. Install ODF on the managed clusters.
 1. Configure the Regional Disaster Recovery policy.
@@ -90,7 +90,7 @@ This is the cluster you install ACM on to manage the primary and secondary ODF c
 For each cluster, make sure to allow outbound traffic by including the `--disable-outbound-traffic-protection` parameter in the CLI or selecting the option to disable outbound traffic protection in the UI.
 {: important}
 
-1. [Create a VPC cluster](/docs/openshift?topic=openshift-cluster-create-vpc-gen2) in `us-east` to install ACM on. This is the hub cluster that you can use to manage your ODF clusters. Make sure your hub cluster has at least 3 worker nodes that run RHCOS, available compute capacity of at least 16 vCPU and 64 GB, outbound traffic disabled, and meets all of the [prequisites for ACM](/docs/openshift?topic=openshift-acm&interface=ui#before). The following example command creates a cluster for ACM in `us-east`.
+1. [Create a VPC cluster](/docs/openshift?topic=openshift-cluster-create-vpc-gen2) in `us-east` to install ACM on. This is the hub cluster that you can use to manage your ODF clusters. Make sure your hub cluster has at least 3 worker nodes that run RHCOS, available compute capacity of at least 16 vCPU and 64 GB, outbound traffic disabled, and meets all of the [prerequisites for ACM](/docs/openshift?topic=openshift-acm&interface=ui#before). The following example command creates a cluster for ACM in `us-east`.
 
     ```sh
     ibmcloud ks cluster create vpc-gen2 --flavor bx2.16x64 --name acm-hub-cluster-dr-odf --subnet-id SUBNET_ID --vpc-id VPC_ID --zone us-east-2 --version 4.21.27_openshift --workers 3 --cos-instance COS_CRN --disable-outbound-traffic-protection --cni OVNKubernetes
@@ -135,7 +135,27 @@ For each cluster, make sure to allow outbound traffic by including the `--disabl
     ```
     {: pre}
 
-1. If you are using ODF version 4.21 or later, install the OpenShift GitOps operator on the hub cluster. For installation steps, see [Installing Red Hat OpenShift GitOps Operator in web console](https://docs.redhat.com/en/documentation/red_hat_openshift_gitops/1.20/html-single/installing_gitops/index#installing-gitops-operator-in-web-console_installing-openshift-gitops){: external}.
+1. Verify that the trusted profile secret was created in the cluster. This command can take up to 10 minutes to complete. Wait for the secret to appear before proceeding to install the ACM add-on. If you proceed before the secret is created, the ACM add-on installation will fail.
+    ```sh
+    oc get secrets -n kube-system | grep ibm-cloud-credentials
+    ```
+    {: pre}
+
+1. If you are using ODF version 4.21 or later, install the OpenShift GitOps operator on the hub cluster.
+    1. On the **Core platform** perspective of the hub cluster's OpenShift web console, navigate to **Ecosystem** > **Software Catalog** and search for **Red Hat OpenShift GitOps**.
+    1. Click the **Red Hat OpenShift GitOps** tile.
+    1. On the **Install Operator** page, select an **Update channel** and a **GitOps version** to install.
+    1. Choose an **Installed Namespace**. The default installation namespace is `openshift-gitops-operator`.
+
+        For GitOps version 1.10 and later, the default namespace changed from `openshift-operators` to `openshift-gitops-operator`.
+        {: note}
+
+    1. Select the **Enable Operator recommended cluster monitoring on this Namespace** checkbox to enable cluster monitoring.
+    1. Click **Install**. Red Hat OpenShift GitOps is installed in all namespaces of the cluster.
+    1. Verify that the Red Hat OpenShift GitOps Operator is listed in **Operators** > **Installed Operators** and that the **Status** shows **Succeeded**.
+
+    After installation, OpenShift GitOps automatically sets up a ready-to-use Argo CD instance in the `openshift-gitops` namespace, and an Argo CD icon is displayed in the console toolbar.
+    {: note}
 
 ## Step 3. Create the managed clusters
 {: #managed-cluster-create}
@@ -156,92 +176,7 @@ For each cluster, make sure to allow outbound traffic by including the `--disabl
     ```
     {: pre}
 
-## Step 4. Prepare secrets for ACM
-{: #prep-secret-rdr}
-
-[Hub cluster]{: tag-blue}
-
-For each cluster that you want to manage with ACM, you must create a secret on the hub cluster that includes the managed cluster's access token and server URL.
-
-If you want to import managed clusters during the ACM add-on installation process, complete these steps before you begin the installation. If you choose to create the secrets and import managed clusters after the add-on is installed on the hub cluster, you can do so by completing [additional steps](/docs/openshift?topic=openshift-acm#after) with the CLI.
-{: important}
-
-Complete the following steps for each cluster that you want to manage.
-
-1. On the cluster that you want to manage with ACM, run the command to find the server URL. In the output, find and note the **Master URL** value. This is the server URL to reference in the secret. You also use this URL in the following steps.
-
-    ```sh
-    ibmcloud oc cluster get -c CLUSTER_NAME_OR_ID
-    ```
-    {: pre}
-
-    Example output.
-
-    ```sh
-    NAME:                           mycluster
-    ID:                             1234567
-    State:                          normal
-    Created:                        2025-01-22T19:22:16+0000
-    Location:                       dal10
-    Master URL:                     https://c100-e.<region>.containers.cloud.ibm.com:<port>
-    ...
-    ```
-    {: screen}
-
-1. Retrieve the base URL of the Red Hat OpenShift oauth server. Replace `MASTER_URL` with the URL found in the previous step. The command extracts the base URL without the `/oauth/token` suffix.
-
-    ```sh
-    curl -sS MASTER_URL/.well-known/oauth-authorization-server | jq -r .token_endpoint | sed 's#/oauth/token##'
-    ```
-    {: pre}
-
-    Example output.
-
-    ```sh
-    https://c111-e.us-east.containers.cloud.ibm.com:31282
-    ```
-    {: screen}
-
-1. Retrieve an access token using the endpoint retrieved in the previous step. Execute the following cURL command, replacing `URL` with the output from the previous step and `API_KEY` with your [IBM Cloud API key](https://cloud.ibm.com/iam/apikeys){: external}. In the output, find the `ACCESS_TOKEN` contained in the **Location response**. This is the access token to include in the secret.
-
-    Example curl request:
-
-    ```sh
-    curl -u 'apikey:API_KEY' -H "X-CSRF-Token: a" 'URL/oauth/authorize?client_id=openshift-challenging-client&response_type=token' -vvv
-    ```
-    {: pre}
-
-    Example output. The ACCESS_TOKEN is included in the Location response string.
-
-    ```sh
-    < HTTP/1.1 302 Found
-    < Cache-Control: no-cache, no-store, max-age=0, must-revalidate
-    < Cache-Control: no-cache, no-store, max-age=0, must-revalidate
-    < Expires: 0
-    < Expires: Fri, 01 Jan 2030 00:00:00 GMT
-    < Location: TOKEN_ENDPOINT/oauth/token/implicit#access_token=ACCESS_TOKEN&expires_in=86400&scope=user%3Afull&token_type=Bearer
-    ...
-    ```
-    {: screen}
-
-1. On the hub cluster, create a secret that contains the cluster access token and server URL. For information on creating secrets, see [Working with secrets](https://kubernetes.io/docs/concepts/configuration/secret/){: external} in the Kubernetes documentation.
-
-    Example secret.
-
-    ```yaml
-    apiVersion: v1
-    kind: Secret
-    metadata:
-      name: SECRET_NAME
-      namespace: SECRET_NAMESPACE  # The namespace that the secret is to be created in
-    type: Opaque
-    stringData:
-      token: ACCESS_TOKEN
-      server: SERVER_URL
-    ```
-    {: pre}
-
-## Step 5. Install the ACM add-on on the hub cluster
+## Step 4. Install the ACM add-on on the hub cluster
 {: #hub-acm-install}
 
 [Hub cluster]{: tag-blue}
@@ -262,12 +197,10 @@ Use the CLI to install the ACM add-on on the hub cluster.
     ```
     {: pre}
 
-1. If you want to import clusters to be managed by the add-on, follow the steps in [Preparing secrets for ACM](#prep-secret-rdr) if you have not already done so. Be sure to save the cluster ID and the name and namespace of the secret you create on the hub cluster. You can also complete this process after the add-on is installed on the hub cluster, however additional steps are required to [import managed clusters after installation](/docs/openshift?topic=openshift-acm#after).
-
-1. Run the command to enable the add-on. Be sure to specify the `billingPlan` and `isLicenseAccepted` parameters, as well as the optional `--managedClusters` parameter if you want to import clusters during the installation process.
+1. Run the command to enable the add-on. Be sure to specify the `billingPlan` and `isLicenseAccepted` parameters.
 
     ```sh
-    ibmcloud oc cluster addon enable acm --cluster HUB_CLUSTER_ID --param 'managedClusters=["clusterid:CLUSTER_ID;secretname:SECRET_NAME;secretnamespace:SECRET_NAMESPACE;action:IMPORT"]' --param 'billingPlan=PLAN' --param 'isLicenseAccepted=BOOLEAN'
+    ibmcloud oc cluster addon enable acm --cluster HUB_CLUSTER_ID --param 'billingPlan=PLAN' --param 'isLicenseAccepted=BOOLEAN'
     ```
     {: pre}
 
@@ -276,24 +209,16 @@ Use the CLI to install the ACM add-on on the hub cluster.
     `--cluster`
     :   Required. The ID of the hub cluster to install the ACM add-on to.
 
-    `--param 'managedClusters=["]`
-    :   Optional. Include this parameter one or more times to import managed clusters during the add-on installation process. You can also complete this step later. For more information, see [Preparing secrets for ACM](#prep-secret-rdr).
-    :   Specify the following values:
-    :   - **clusterid**: The ID of the managed cluster to import.
-    :   - **secretname**: The name of the secret you created on the hub cluster. This secret contains the credentials for the managed cluster.
-    :   - **secretnamespace**: The namespace of the secret you created on the hub cluster. This secret contains the credentials for the managed cluster.
-    :   - **action:IMPORT**: The parameter that specifies the IMPORT action for the managed cluster.
-
     `--param 'billingPlan='`
     :   Required. The billing plan you want to select for ACM. Specify `KUBERNETES` for the **ACM for Kubernetes** plan.
 
     `--param 'isLicenseAccepted='`
-    :   Required. Specify `TRUE` to accept the license agreement for the selected billing plan. By accepting this license, you agree to the applicable terms and conditions and acknowledge your understanding of the services included in the selected plan.
+    :   Required. Set this to `true` to accept the license agreement for the selected billing plan. The add-on will not install successfully unless the license is accepted. By accepting this license, you agree to the applicable terms and conditions and acknowledge your understanding of the services included in the selected plan.
 
-    Example command to install the ACM add-on with the **ACM for Kubernetes** billing plan and import a managed cluster.
+    Example command to install the ACM add-on with the **ACM for Kubernetes** billing plan.
 
     ```sh
-    ibmcloud ks cluster addon enable acm --cluster a5bcde982dfer2nwxq73 --param 'managedClusters=["clusterid:w7rthce34gfbq7ww12d3;secretname:managed-secret-1;secretnamespace:managed-ns1;action:Import"]' --param 'billingPlan=KUBERNETES' --param 'isLicenseAccepted=true'
+    ibmcloud oc cluster addon enable acm --cluster a5bcde982dfer2nwxq73 --param 'billingPlan=KUBERNETES' --param 'isLicenseAccepted=true'
     ```
     {: pre}
 
@@ -316,17 +241,42 @@ Use the CLI to install the ACM add-on on the hub cluster.
     1. On the hub cluster, check the `acmhub` status.
 
         ```sh
-        oc describe acmhubstatus
+        oc describe acmhub
         ```
         {: pre}
 
         Example output.
 
         ```sh
-        status
-            phase: Ready
+        Status
+            Message: ACM installed successfully
         ```
         {: screen}
+
+## Step 5. Import the managed clusters into ACM
+{: #hub-acm-import}
+
+[Hub cluster]{: tag-blue} [Managed cluster]{: tag-warm-gray}
+
+Import both managed clusters into ACM so that the hub cluster can manage them.
+
+1. Open the OpenShift web console for the hub cluster.
+
+2. From the **Fleet Management** perspective, click **Import cluster**.
+
+3. Enter the **Name** of the first managed cluster, select a **Cluster set** if applicable, and enter **Additional labels** if applicable.
+
+4. For **Import mode**, select **Run import commands manually** and click **Next**.
+
+5. Optionally select an automation template and click **Next**.
+
+6. Review the details and click **Generate command**. Copy the command that is displayed.
+
+7. Log in to the first managed cluster and run the copied command with `kubectl` configured for that cluster.
+
+8. Repeat steps 2–7 for the second managed cluster.
+
+9. In the **Fleet Management** perspective, verify that both managed clusters are listed and show a **Ready** status before proceeding.
 
 ## Step 6. Configure the Submariner add-on
 {: #submariner}
@@ -335,8 +285,8 @@ Use the CLI to install the ACM add-on on the hub cluster.
 
 Follow the steps to install and configure the Submariner add-on, which establishes connectivity across your two managed clusters. These steps use the ACM console. For more detailed information, see [Deploying Submariner by using the console](https://docs.redhat.com/en/documentation/red_hat_advanced_cluster_management_for_kubernetes/2.11/html/networking/networking#deploying-submariner-console){: external} in the Red Hat documentation.
 
-1. Navigate to the ACM console. Then click **Fleet Management** > **Infrastructure** > **Clusters** > **Clusterset**.
-1. Click **Create a cluster set**. Follow the prompts to add your two managed clusters to the cluster set.
+1. Navigate to the ACM console. Then click **Fleet Management** > **Clusters** > **Cluster sets**.
+1. Click **Create cluster set**. Follow the prompts to add your two managed clusters to the cluster set.
 1. Click the option to install the Submariner add-on to the cluster set.
 1. Select the managed clusters as target clusters for add-on installation.
 1. When reviewing the configuration for both clusters, change the following settings as shown and leave the rest as default. Then click **Install**.
@@ -344,7 +294,7 @@ Follow the steps to install and configure the Submariner add-on, which establish
     globalnetEnabled: true (checked)
     gateways: 2
     NATTEnable: false (unchecked)
-    cableDriver: vxlan.
+    cableDriver: vxlan
     ```
     {: code}
 
@@ -358,23 +308,46 @@ Follow the steps to install and configure the Submariner add-on, which establish
 
 Install and configure ODF on your 2 managed clusters. Make sure to complete these steps on both the primary and secondary managed cluster.
 
-1. Follow the steps to [install the OpenShift Data Foundation add-on](/docs/openshift?topic=openshift-deploy-odf-vpc&interface=cli#install-odf-cli-vpc) onto your 2 managed clusters. Specify the default ODF version or later. Make sure you include the option to enable NooBaa as an add-on option during the installation.
+Before running any `oc` commands in this section, make sure your context is set to the managed cluster you are configuring. Run `ibmcloud oc cluster config --cluster MANAGED_CLUSTER_NAME_OR_ID --admin` to switch contexts, then verify with `oc config current-context`.
+{: important}
 
-1. Verify that the ODF foundation installed successfully. In the output, check that the status says `Ready`.
+1. For each managed cluster, install the OpenShift Data Foundation add-on from the [{{site.data.keyword.cloud_notm}} console](https://cloud.ibm.com){: external}.
+    1. Navigate to your cluster's **Overview** page and scroll down to the **Add-ons** section.
+    1. Under **OpenShift Data Foundation**, click **Install**.
+    1. Check the box for **Deploy NooBaa Multi-Cloud Object Gateway**.
+    1. Click **Install** again to confirm.
+    1. Wait for the ODF add-on status to change from **Enabling** to **Normal** (green checkmark) before proceeding.
+
+
+1. Verify that ODF installed successfully. In the output, check that the status says `Ready`.
+
+    The UI **Normal** status reflects that the add-on was deployed, but the ODF operator may still need a few minutes to finish initializing and registering its resources.
+    {: note}
+
     ```sh
     oc get storagecluster -n openshift-storage ocs-storagecluster -o jsonpath='{.status.phase}{"\n"}'
     ```
     {: pre}
 
-1. Run the command to update the `ACM Managed Cluster Name` in the `storageCluster` resource’s `multiClusterService` section. This allows ODF to use GlobalNet. For more information, see [Creating an OpenShift Data Foundation cluster on managed clusters](https://docs.redhat.com/documentation/red_hat_openshift_data_foundation/4.21/html/configuring_openshift_data_foundation_disaster_recovery_for_openshift_workloads/rdr-solution#creating-odf-cluster-on-managed-clusters_rdr){: external}.
+The following steps must be completed on each managed cluster. Switch your context to the first managed cluster using `ibmcloud oc cluster config --cluster MANAGED_CLUSTER_NAME_OR_ID --admin`, complete all steps through the end of this section, then switch to the second managed cluster and repeat.
+{: important}
 
-    Make sure to replace `MANAGED_CLUSTER_NAME` in the command with the name of your managed cluster.
-    {: important}
+1. Run the command to update the `ACM Managed Cluster Name` in the `storageCluster` resource's `multiClusterService` section. This allows ODF to use GlobalNet. For more information, see [Creating an OpenShift Data Foundation cluster on managed clusters](https://docs.redhat.com/documentation/red_hat_openshift_data_foundation/4.21/html/configuring_openshift_data_foundation_disaster_recovery_for_openshift_workloads/rdr-solution#creating-odf-cluster-on-managed-clusters_rdr){: external}.
+
+    Replace `MANAGED_CLUSTER_NAME` with the name of the cluster your context is currently pointed at.
+    {: note}
 
     ```sh
     kubectl patch storagecluster -n openshift-storage ocs-storagecluster --type merge -p'{"spec":{"network":{"multiClusterService":{"clusterID":"MANAGED_CLUSTER_NAME","enabled":true}}}}'
     ```
     {: pre}
+
+    Example output.
+
+    ```sh
+    storagecluster.ocs.openshift.io/ocs-storagecluster patched
+    ```
+    {: screen}
 
 1. Verify the service exports. This might take a few minutes to show in the output.
     ```sh
@@ -394,16 +367,25 @@ Install and configure ODF on your 2 managed clusters. Make sure to complete thes
     ```
     {: screen}
 
-1. Create a service export for `ocs-provider-server` by using the following YAML.
+1. Create a service export for `ocs-provider-server`.
 
-    ```yaml
+    ```sh
+    oc apply -f - <<EOF
     apiVersion: multicluster.x-k8s.io/v1alpha1
     kind: ServiceExport
     metadata:
       name: ocs-provider-server
       namespace: openshift-storage
+    EOF
     ```
-    {: codeblock}
+    {: pre}
+
+    Example output.
+
+    ```sh
+    serviceexport.multicluster.x-k8s.io/ocs-provider-server created
+    ```
+    {: screen}
 
 1. Run the command to update the `storageCluster` resource to use the `ocs-provider-server` service export you created.
 
@@ -411,6 +393,13 @@ Install and configure ODF on your 2 managed clusters. Make sure to complete thes
     oc annotate storagecluster ocs-storagecluster -n openshift-storage ocs.openshift.io/api-server-exported-address=MANAGED_CLUSTER_NAME.ocs-provider-server.openshift-storage.svc.clusterset.local:50051.
     ```
     {: pre}
+
+    Example output.
+
+    ```sh
+    storagecluster.ocs.openshift.io/ocs-storagecluster annotated
+    ```
+    {: screen}
 
 1. Verify that the `storageCluster` resource is ready.
 
@@ -433,10 +422,18 @@ Install and configure ODF on your 2 managed clusters. Make sure to complete thes
 
 [Hub cluster]{: tag-blue}
 
-Install the ODF Multicluster Orchestrator on your hub cluster and create the DR policy that enables mirroring between your two managed clusters.
+Install the ODF Multicluster Orchestrator on your hub cluster and create the disaster recovery (DR) policy that enables mirroring between your two managed clusters.
 
-1. Follow the steps to [install the ODF Multicluster Orchestrator](https://docs.redhat.com/en/documentation/red_hat_openshift_data_foundation/4.21/html-single/configuring_openshift_data_foundation_disaster_recovery_for_openshift_workloads/index#installing-odf-multicluster-orchestrator_mdr){: external} onto the **ACM hub cluster**. To ensure compatibility, make sure you install the **same version number** as the ODF version you installed onto the managed clusters in the previous section.
-1. Verify the installation by checking that the operator pods are running.
+1. Install the ODF Multicluster Orchestrator on the hub cluster.
+    1. Install the OpenShift GitOps operator on the hub cluster if you haven't already. For installation steps, see the end of [Step 2. Create a trusted profile for the hub cluster](#hub-cluster-trusted-profile).
+    1. On the **Core platform** perspective of the hub cluster's OpenShift web console, navigate to **Ecosystem** > **Software Catalog** and search for **ODF Multicluster Orchestrator**.
+    1. Click the **ODF Multicluster Orchestrator** tile. Make sure to select the **same version number** as the ODF version you installed onto the managed clusters in the previous section. Keep all other default settings and click **Install**.
+    1. Ensure that the operator resources are installed in the `openshift-operators` project and available to all namespaces. Click **Install** again to confirm.
+
+    The ODF Multicluster Orchestrator also installs the OpenShift DR Hub Operator on the hub cluster as a dependency.
+    {: note}
+
+1. Verify the installation by checking that the operator pods are running. Make sure your CLI context is set to the hub cluster before running this command.
 
     ```sh
     oc get pods -n openshift-operators
@@ -453,19 +450,35 @@ Install the ODF Multicluster Orchestrator on your hub cluster and create the DR 
     ```
     {: screen}
 
-1. On the **ACM hub cluster**, create a DR policy with a 5 minute sync interval and specify each managed cluster in the parameters. This creates NooBaa object buckets on both managed clusters and enables ODF Ceph block pool mirroring for volume replication.
-    1. Navigate to the ACM console, then click **Fleet management** > **Data services** > **Disaster Recovery** > **Policies** > **Create DR Policy**.
+1. On the hub cluster, create a DR policy with a 5 minute sync interval and specify each managed cluster in the parameters. This creates NooBaa object buckets on both managed clusters and enables ODF Ceph block pool mirroring for volume replication.
+    1. On the **Fleet Management** perspective of the hub cluster's OpenShift web console, navigate to **Data Services** > **Disaster recovery** > **Policies** > **Create DRPolicy**.
     2. Create a DR policy that includes the following parameters.
         - Connected clusters: PRIMARY_MANAGED_CLUSTER_NAME, SECONDARY_MANAGED_CLUSTER_NAME
         - Replication policy: Asynchronous
         - Replication interval: 5m
+        - If applicable, select **Enable disaster recovery support for restored and cloned PersistentVolumeClaims (For Data Foundation only)** under **Advanced settings**.
 
-1. On the hub cluster, run the commands to verify that the DR policy was created and applied to the managed clusters.
+        Red Hat explicitly states that this option should only be used with discovered applications and environments where cloned/restored RBD volumes are actively supported.
+        {: note}
+
+1. On the **hub cluster**, run the following commands to verify that the DR policy was created and applied to the managed clusters. Make sure your CLI context is set to the hub cluster before running these commands.
+
+    ```sh
+    ibmcloud oc cluster config --cluster HUB_CLUSTER_NAME --admin
+    ```
+    {: pre}
 
     ```sh
     oc get drpolicy DRPOLICY_NAME -o jsonpath='{.status.conditions[].reason}{"\n"}'
     ```
     {: pre}
+
+    Example output.
+
+    ```sh
+    Succeeded
+    ```
+    {: screen}
 
     ```sh
     oc get drclusters
@@ -475,13 +488,18 @@ Install the ODF Multicluster Orchestrator on your hub cluster and create the DR 
     Example output.
 
     ```sh
-    NAME        AGE
+    NAME               AGE
     managed-cluster1   4m42s
     managed-cluster2   4m42s
     ```
     {: screen}
 
-1. On each managed cluster, verify that the DR policy was applied and is in a healthy state.
+1. On **each managed cluster**, verify that the DR policy was applied and is in a healthy state. Switch your CLI context to each managed cluster before running these commands.
+
+    ```sh
+    ibmcloud oc cluster config --cluster MANAGED_CLUSTER_NAME --admin
+    ```
+    {: pre}
 
     ```sh
     oc get csv,pod -n openshift-dr-system

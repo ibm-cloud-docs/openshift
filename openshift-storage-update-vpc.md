@@ -2,7 +2,7 @@
 
 copyright:
   years: 2023, 2026
-lastupdated: "2026-08-06"
+lastupdated: "2026-08-28"
 
 
 keywords: openshift, openshift data foundation, openshift container storage, ocs, worker update, worker replace
@@ -40,7 +40,7 @@ The following tutorial covers both major and minor updates and worker node updat
 [Minor update]{: tag-blue}
 :   Complete the steps with this label to apply a patch update, for example if you are updating from `4.12.15_1542_openshift` to `4.12.16_1544_openshift` while keeping OpenShift Data Foundation at version `4.12`. You must repeat these steps for each node you want to update.
 
-[Worker replace]{: tag-green} 
+[Worker replace]{: tag-green}
 :   Complete the steps with this label steps if you are replacing a worker node at the same patch version. You must repeat these steps for each node you want to replace.
 
 Skipping versions during an upgrade, such as from 4.8 to 4.12 is not supported.
@@ -58,7 +58,7 @@ Before updating your worker nodes, make sure to back up your app data. Also, pla
 
 [Major update]{: tag-red} [Minor update]{: tag-blue} [Worker replace]{: tag-green}
 
-1. List the pods by running the following command. Verify that all the pods in `openshift-storage` namespace are in a good state. Address any pods that are not in “Running” or “Completed” state.
+1. List the pods by running the following command. Verify that all the pods in `openshift-storage` namespace are in a good state. Address any pods that are not in `Running` or `Completed` state.
 
 	```sh
 	oc get pods -n openshift-storage
@@ -79,7 +79,7 @@ Before updating your worker nodes, make sure to back up your app data. Also, pla
 	```
 	{: screen}
 
-1. Check the state of the Ceph Storage by running the following command. Verify that the health is `HEALTH_OK`, all OSDs are `up` and `IN` and that all the `pgs` are `active+clean`. If any of these checks fail, Open a [support case](/docs/support?topic=support-using-avatar). In the case details, be sure to include any relevant log files, error messages, or command outputs..  Resolve any issues before continuing.
+1. Check the state of the Ceph Storage by running the following command. Verify that the health is `HEALTH_OK`, all OSDs are `up` and `IN` and that all the `pgs` are `active+clean`. If any of these checks fail, Open a [support case](/docs/support?topic=support-using-avatar). In the case details, be sure to include any relevant log files, error messages, or command outputs.. Resolve any issues before continuing.
 
 	```sh
 	oc rsh -n openshift-storage $(oc get pods -n openshift-storage -o name -l app=rook-ceph-operator) ceph status -c /var/lib/rook/openshift-storage/openshift-storage.config
@@ -106,20 +106,20 @@ Before updating your worker nodes, make sure to back up your app data. Also, pla
 	```
 	{: screen}
 
-Repeat these health checks before repeating the update procedure for additional nodes. Bringing down more then one OSD pod at a time might jeopardize user data.
+Repeat these health checks before repeating the update procedure for additional nodes. Bringing down more than one OSD pod at a time might jeopardize user data.
 {: important}
 
 ## Update the cluster master
 {: #update-cluster-master-vpc}
 {: step}
- 
+
 [Major update]{: tag-red}
 
 
 1. If you are updating your worker nodes to a new major version, such as from `4.11` to `4.12`, update the cluster master first.
 
 	```sh
-	ibmcloud oc cluster master update --cluster CLUSTER [--version MAJOR.MINOR.PATCH] [--force-update] [-f] [-q]
+	ibmcloud oc cluster master update --cluster CLUSTER_NAME --version MAJOR.MINOR.PATCH --force-update
 	```
 	{: pre}
 
@@ -128,8 +128,12 @@ Repeat these health checks before repeating the update procedure for additional 
 	ibmcloud oc cluster master update --cluster mycluster --version 4.21.27 --force-update
 	```
 	{: pre}
-	
-1. Wait until the master update finishes. 
+
+1. Wait a few minutes, then confirm that the master update is complete.
+	  ```sh
+	  ibmcloud oc cluster ls
+	  ```
+	  {: pre}
 
 ## Decide which storage nodes you want to update or replace
 {: #determine-storage-nodes-vpc}
@@ -143,9 +147,9 @@ Repeat these health checks before repeating the update procedure for additional 
 	oc get nodes
 	```
 	{: pre}
-	
+
 	Example output
-		
+
 	```sh
 	NAME           STATUS   ROLES           AGE    VERSION
 	10.241.0.4     Ready    master,worker   106s   v1.21.6+4b61f94
@@ -163,84 +167,76 @@ Repeat these health checks before repeating the update procedure for additional 
 Run the following commands to check the storage cluster health.
 
 ```sh
-oc get storagecluster -n openshift-storage 
-oc get cephcluster -n openshift-storage 
+oc get storagecluster -n openshift-storage
+oc get cephcluster -n openshift-storage
 ```
 {: pre}
 
 Make sure the storage cluster is healthy before continuing.
 
-## Scale down OpenShift Data Foundation
+## Cordon and scale down OpenShift Data Foundation
 {: #scale-down-odf-vpc}
 {: step}
 
 [Major update]{: tag-red} [Minor update]{: tag-blue} [Worker replace]{: tag-green}
 
-1.  For each worker node that you found in the previous step, find the `rook-ceph-mon` and `rook-ceph-osd` deployments.
-
-	```sh
-	oc get pods -n openshift-storage -o wide | grep -i <node_name>
-	```
-	{: pre}
-
-	If the Noobaa pods get stuck while draining, you can manually delete the NooBaa pods, so that they get scheduled on a different node.
-	{: note}
-
-1. Delete any remaining the Noobaa pods in the following order.
-
-	```txt
-    noobaa-db
-    noobaa-core
-    noobaa-endpoint
-    noobaa-operator
-	```
-	{: codeblock}
-	
-1. Scale down the deployments that you found in the previous step.
-
-	```sh
-	oc scale deployment rook-ceph-mon-c --replicas=0 -n openshift-storage
-	```
-	{: pre}
-	
-	```sh
-	oc scale deployment rook-ceph-osd-2 --replicas=0 -n openshift-storage
-	```
-	{: pre}
-
-	```sh
-	oc scale deployment --selector=app=rook-ceph-crashcollector,node_name=NODE-NAME --replicas=0 -n openshift-storage
-	```
-	{: pre}
-
-	
-## Cordon and drain the worker node
-{: #cordon-drain-worker-node-vpc}
-{: step}
-
-[Major update]{: tag-red} [Minor update]{: tag-blue} [Worker replace]{: tag-green}
-
-1.  Cordon the node. Cordoning the node prevents any pods from being scheduled on this node.
+1. Cordon the node. Cordoning the node prevents any pods from being scheduled on this node while you scale down the ODF deployments.
 
 	```sh
 	oc adm cordon NODE_NAME
 	```
 	{: pre}
-	
+
 	Example output
-	
+
 	```sh
 	node/10.241.0.4 cordoned
 	```
 	{: screen}
-	
+
+1. Find the `rook-ceph-mon` and `rook-ceph-osd` pods running on the node you are updating. Note the pod names in the output — you need them in the next step.
+
+	```sh
+	oc get pods -n openshift-storage -o wide | grep NODE_NAME
+	```
+	{: pre}
+
+	The deployment name is the pod name without the trailing ReplicaSet hash and pod ID suffixes. For example, a pod named `rook-ceph-osd-1-6d9f99c68f-pgvxt` belongs to deployment `rook-ceph-osd-1`, and a pod named `rook-ceph-mon-e-85fbb8bcc-kttbt` belongs to deployment `rook-ceph-mon-e`.
+	{: note}
+
+1. Scale down the deployments for the pods you found in the previous step. Replace `ROOK_CEPH_MON_DEPLOYMENT` and `ROOK_CEPH_OSD_DEPLOYMENT` with the deployment names you derived from the pod names. If the previous command returned no `rook-ceph-mon` or `rook-ceph-osd` pods on this node, skip these two commands and continue to the crashcollector command.
+
+	```sh
+	oc scale deployment ROOK_CEPH_MON_DEPLOYMENT --replicas=0 -n openshift-storage
+	```
+	{: pre}
+
+	```sh
+	oc scale deployment ROOK_CEPH_OSD_DEPLOYMENT --replicas=0 -n openshift-storage
+	```
+	{: pre}
+
+	```sh
+	oc scale deployment --selector=app=rook-ceph-crashcollector,node_name=NODE_NAME --replicas=0 -n openshift-storage
+	```
+	{: pre}
+
+	If the command returns `error: no objects passed to scale`, verify that no crashcollector pod is running on this node by running `oc get pods -n openshift-storage -o wide | grep NODE_NAME | grep crashcollector`. If no pod is returned, you can safely skip this command and continue.
+	{: note}
+
+## Drain the worker node
+{: #cordon-drain-worker-node-vpc}
+{: step}
+
+[Major update]{: tag-red} [Minor update]{: tag-blue} [Worker replace]{: tag-green}
+
 1. Drain the node to remove all the pods. When you drain the worker node, the pods move to the other worker nodes ensuring there is no downtime. Draining also ensures that there is no disruption of the pod disruption budget.
 
 	```sh
 	oc adm drain NODE_NAME --force --delete-emptydir-data --ignore-daemonsets
 	```
 	{: pre}
-	
+
 	Example output
 	```sh
 	evicting pod "managed-storage-validation-webhooks-7fd79bc9f7-pdpv6"
@@ -256,7 +252,29 @@ Make sure the storage cluster is healthy before continuing.
 	evicting pod "network-check-source-66c7fbb86-2r78z"
 	```
 	{: screen}
-	
+
+1. If any NooBaa pods get stuck during the drain, delete them in the following order so that they reschedule on a different node.
+
+	```sh
+	oc delete pod -n openshift-storage -l app=noobaa-db
+	```
+	{: pre}
+
+	```sh
+	oc delete pod -n openshift-storage -l app=noobaa-core
+	```
+	{: pre}
+
+	```sh
+	oc delete pod -n openshift-storage -l app=noobaa-endpoint
+	```
+	{: pre}
+
+	```sh
+	oc delete pod -n openshift-storage -l app=noobaa-operator
+	```
+	{: pre}
+
 1. Wait until draining finishes, then complete the following steps to update the worker node.
 
 ## Clean up persistent volumes for bare metal worker nodes
@@ -403,7 +421,7 @@ After completing these steps, new persistent volumes will be automatically creat
 	ibmcloud oc worker ls -c CLUSTER
 	```
 	{: pre}
-	
+
 	Example output
 	```sh
 	ID                                                 Primary IP     Flavor     State    Status   Zone        Version
@@ -418,22 +436,22 @@ After completing these steps, new persistent volumes will be automatically creat
 
 	**Bare metal worker nodes**: Use the `worker reload` command to reload the worker node. This command is supported for VPC bare metal workers.
 	```sh
-	ibmcloud oc worker reload --worker kube-***
+	ibmcloud oc worker reload --worker NODE_NAME
 	```
 	{: pre}
 
-	**VSI worker nodes**: [Minor update]{: tag-blue} Example command to replace the worker node and apply the latest patch update.
+	**VSI worker nodes**: [Major update]{: tag-red} [Minor update]{: tag-blue} Example command to replace the worker node and apply the latest patch update.
 	```sh
-	ibmcloud oc worker replace -c CLUSTER --worker kube-*** --update
+	ibmcloud oc worker replace -c CLUSTER --worker NODE_NAME --update
 	```
 	{: pre}
 
 	**VSI worker nodes**: [Worker replace]{: tag-green} Example command to replace the worker node without applying the latest patch update.
 	```sh
-	ibmcloud oc worker replace -c CLUSTER --worker kube-***
+	ibmcloud oc worker replace -c CLUSTER --worker NODE_NAME
 	```
 	{: pre}
-		
+
 	Example output for VSI worker node replacement:
 	```sh
 	The replacement worker node is created in the same zone with the same flavor, but gets new public or private IP addresses. During the replacement, all pods might be rescheduled onto other worker nodes and data is deleted if not stored outside the pod. To avoid downtime, ensure that you have enough worker nodes to handle your workload while the selected worker nodes are being replaced.
@@ -441,16 +459,16 @@ After completing these steps, new persistent volumes will be automatically creat
 	Deleting worker node kube-c85ra07w091uv4nid9ug-cluster-default-00000288 and creating a new worker node in cluster
 	```
 	{: screen}
-	
+
 1. Wait for the worker node to be reloaded or replaced and then list your worker nodes. Note that this process might take 20 minutes or more.
 
 	```sh
 	oc get nodes
 	```
 	{: pre}
-	
+
 	Example output
-	
+
 	```sh
 	NAME           STATUS   ROLES           AGE   VERSION
 	10.241.0.4     Ready    master,worker   22d   v1.21.6+bb8d50a
@@ -465,7 +483,14 @@ After completing these steps, new persistent volumes will be automatically creat
 
 [Major update]{: tag-red} [Minor update]{: tag-blue} [Worker replace]{: tag-green}
 
-1. Verify OSD pod has come up on the replaced node in a `running` state. If the pod is running, continue to [step 7](#add-storage-node-vpc). If the pod has failed, perform the following steps.If more than one OSD pod is not `Running`, stop and contact support. Open a [support case](/docs/support?topic=support-using-avatar). In the case details, be sure to include any relevant log files, error messages, or command outputs.
+1. Verify that the OSD pod has come up on the replaced node in a `Running` state. Replace `NODE_NAME` with the name of the new replacement node.
+
+	```sh
+	oc get pods -n openshift-storage -o wide | grep NODE_NAME | grep osd
+	```
+	{: pre}
+
+	If the pod is running, continue to [Update the OcsCluster resource with the new node](#add-storage-node-vpc). If the pod has failed, perform the following steps. If more than one OSD pod is not `Running`, stop and contact support. Open a [support case](/docs/support?topic=support-using-avatar). In the case details, be sure to include any relevant log files, error messages, or command outputs.
 
 1. Navigate to the `openshift-storage` project.
 
@@ -480,7 +505,7 @@ After completing these steps, new persistent volumes will be automatically creat
 	oc process -n openshift-storage ocs-osd-removal -p FAILED_OSD_IDS=<failed_osd_id> -p FORCE_OSD_REMOVAL=true | oc create -f -
 	```
 	{: pre}
-	
+
 	The `FAILED_osd_id` value is the integer in the pod name immediately after the `rook-ceph-osd` prefix. The `FORCE_OSD_REMOVAL` value must be changed to `true` in clusters that have only three OSDs, or clusters with insufficient space to restore all three replicas of the data after the OSD is removed.
 	{: note}
 
@@ -505,22 +530,22 @@ After completing these steps, new persistent volumes will be automatically creat
 	```
 	{: screen}
 
-## Add the new storage node
+Before continuing to the following steps, make sure you've completed the previous steps for all storage nodes in the cluster.
+{: important}
+
+## Update the OcsCluster resource with the new node
 {: #add-storage-node-vpc}
 {: step}
 
-Before adding new storage nodes, make sure you've completed the previous steps for all storage nodes in the cluster.
-{: important}
-
 [Major update]{: tag-red} [Minor update]{: tag-blue} [Worker replace]{: tag-green}
 
-1. If you limited your ODF deployment to a subset of worker nodes by specifying node names during installation, you must update the `ocscluster` CRD to include the new name.
+1. If you limited your ODF deployment to a subset of worker nodes by specifying node names during installation, you must update the `ocscluster` CRD to include the new name. If you applied ODF to all your worker nodes and did not limit the deployment to a subset of nodes, skip this step and continue to [Update the OpenShift Data Foundation add-on](#update-ocs-add-on-vpc).
 
 	If you didn't limit your configuration to only certain worker nodes, you don't need to update the `ocscluster` CRD.
 	{: important}
-	
+
 	```sh
-	oc edit ocscluster 
+	oc edit ocscluster
 	```
 	{: pre}
 
@@ -555,7 +580,7 @@ Before adding new storage nodes, make sure you've completed the previous steps f
 	oc get pod -n openshift-storage | grep mon
 	```
 	{: pre}
-	
+
 	Example output:
 	```sh
 	rook-ceph-mon-a-cd575c89b-b6k66         2/2     Running
@@ -570,12 +595,10 @@ Before adding new storage nodes, make sure you've completed the previous steps f
 1. Verify that new OSD pods are running on the replacement node.
 
 	```sh
-	oc get pods -o wide -n openshift-storage| egrep -i <new_node_name> | egrep osd
+	oc get pods -o wide -n openshift-storage| egrep -i NEW_NODE_NAME | egrep osd
 	```
 	{: pre}
 
-	
-	
 ## Update the OpenShift Data Foundation add-on
 {: #update-ocs-add-on-vpc}
 {: step}
@@ -656,6 +679,12 @@ Before adding new storage nodes, make sure you've completed the previous steps f
 
 	```sh
 	oc get storagecluster -n openshift-storage
+	```
+	{: pre}
+
+	Example output.
+
+	```sh
 	NAME                 AGE   PHASE   EXTERNAL   CREATED AT             VERSION
 	ocs-storagecluster   43h   Ready              2023-06-21T09:22:00Z   4.11.0
 	```
@@ -663,13 +692,25 @@ Before adding new storage nodes, make sure you've completed the previous steps f
 
 	```sh
 	oc get cephcluster -n openshift-storage
+	```
+	{: pre}
+
+	Example output.
+
+	```sh
 	NAME                             DATADIRHOSTPATH   MONCOUNT   AGE   PHASE   MESSAGE                        HEALTH      EXTERNAL
-	ocs-storagecluster-cephcluster   /var/lib/rook     3          43h   Ready   Cluster created successfully   HEALTH_OK   
+	ocs-storagecluster-cephcluster   /var/lib/rook     3          43h   Ready   Cluster created successfully   HEALTH_OK
 	```
 	{: screen}
 
 	```sh
 	oc get csv -n openshift-storage
+	```
+	{: pre}
+
+	Example output.
+
+	```sh
 	NAME                              DISPLAY                       VERSION   REPLACES                          PHASE
 	mcg-operator.v4.11.8              NooBaa Operator               4.11.8    mcg-operator.v4.11.7              Succeeded
 	ocs-operator.v4.11.8              OpenShift Container Storage   4.11.8    ocs-operator.v4.11.7              Succeeded
@@ -677,5 +718,3 @@ Before adding new storage nodes, make sure you've completed the previous steps f
 	odf-operator.v4.11.8              OpenShift Data Foundation     4.11.8    odf-operator.v4.11.7              Succeeded
 	```
 	{: screen}
-
- 
