@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2026
-lastupdated: "2026-08-28"
+lastupdated: "2026-08-31"
 
 
 keywords: openshift
@@ -478,6 +478,18 @@ subcollection: openshift
 
 * [Migration steps](/docs/openshift?topic=openshift-rhel-deprecation#migration)
 
+[Classic cluster creation restrictions](/docs/openshift?topic=openshift-classic-create-restriction#classic-create-restriction)
+
+* [Who is affected by this restriction?](/docs/openshift?topic=openshift-classic-create-restriction#classic-create-restriction-affected)
+
+* [Why does this restriction exist?](/docs/openshift?topic=openshift-classic-create-restriction#classic-create-restriction-why)
+
+* [What error do I see when classic cluster creation is blocked?](/docs/openshift?topic=openshift-classic-create-restriction#classic-create-restriction-error)
+
+* [What are my options if I'm affected?](/docs/openshift?topic=openshift-classic-create-restriction#classic-create-restriction-next)
+
+* [How do I check whether my account has existing classic clusters?](/docs/openshift?topic=openshift-classic-create-restriction#classic-create-restriction-check)
+
 
 ## Release notes
 {: #sitemap_release_notes}
@@ -486,6 +498,12 @@ subcollection: openshift
 [Release notes](/docs/openshift?topic=openshift-openshift-relnotes#openshift-relnotes)
 
 * [August 2026](/docs/openshift?topic=openshift-openshift-relnotes#openshift-aug26)
+
+    * [31 August 2026](/docs/openshift?topic=openshift-openshift-relnotes#openshift-aug3126)
+
+        * OpenShift Virtualization cluster add-on patch updates.
+
+        * IBM Cloud Image Key Synchronizer cluster add-on patch updates.
 
     * [27 August 2026](/docs/openshift?topic=openshift-openshift-relnotes#openshift-aug2726)
 
@@ -8553,6 +8571,8 @@ subcollection: openshift
 
 * [Version 4.21](/docs/openshift?topic=openshift-cl-add-ons-openshift-virtualization#cl-add-ons-openshift-virtualization-4.21)
 
+    * [Version 4.21 - v1.0.9_4.21_366720299, released 31 August 2026](/docs/openshift?topic=openshift-cl-add-ons-openshift-virtualization#cl-add-ons-openshift-virtualization-v109_421_366720299)
+
     * [Version 4.21 - v1.0.8_4.21, released 10 August 2026](/docs/openshift?topic=openshift-cl-add-ons-openshift-virtualization#cl-add-ons-openshift-virtualization-v108_421)
 
     * [Version 4.21 - v1.0.7_4.21_360518333, released 06 August 2026](/docs/openshift?topic=openshift-cl-add-ons-openshift-virtualization#cl-add-ons-openshift-virtualization-v107_421_360518333)
@@ -8587,45 +8607,117 @@ subcollection: openshift
 
 * [Version 1.0.0](/docs/openshift?topic=openshift-cl-add-ons-ibm-cloud-image-key-synchronizer#cl-add-ons-ibm-cloud-image-key-synchronizer-1.0.0)
 
-    * [1.0.0_345162128, released 09 June 2026](/docs/openshift?topic=openshift-cl-add-ons-ibm-cloud-image-key-synchronizer#cl-add-ons-ibm-cloud-image-key-synchronizer-100_345162128)
+    * [Version 1.0.0 - 1.0.0_364389711, released 31 August 2026](/docs/openshift?topic=openshift-cl-add-ons-ibm-cloud-image-key-synchronizer#cl-add-ons-ibm-cloud-image-key-synchronizer-100_364389711)
 
-    * [1.0.0_341829798, released 27 May 2026](/docs/openshift?topic=openshift-cl-add-ons-ibm-cloud-image-key-synchronizer#cl-add-ons-ibm-cloud-image-key-synchronizer-100_341829798)
+    * [Version 1.0.0 - 1.0.0_359585651, released 17 August 2026](/docs/openshift?topic=openshift-cl-add-ons-ibm-cloud-image-key-synchronizer#cl-add-ons-ibm-cloud-image-key-synchronizer-100_359585651)
 
-    * [1.0.0_334950440, released 05 May 2026](/docs/openshift?topic=openshift-cl-add-ons-ibm-cloud-image-key-synchronizer#cl-add-ons-ibm-cloud-image-key-synchronizer-100_334950440)
+    * [Version 1.0.0 - 1.0.0_351682779, released 09 July 2026](/docs/openshift?topic=openshift-cl-add-ons-ibm-cloud-image-key-synchronizer#cl-add-ons-ibm-cloud-image-key-synchronizer-100_351682779)
 
-    * [1.0.0_325458899, released 24 March 2026](/docs/openshift?topic=openshift-cl-add-ons-ibm-cloud-image-key-synchronizer#cl-add-ons-ibm-cloud-image-key-synchronizer-100_325458899)
+    * [Version 1.0.0 - 1.0.0_348708490, released 25 June 2026](/docs/openshift?topic=openshift-cl-add-ons-ibm-cloud-image-key-synchronizer#cl-add-ons-ibm-cloud-image-key-synchronizer-100_348708490)
 
-    * [1.0.0_320394467, released 03 March 2026](/docs/openshift?topic=openshift-cl-add-ons-ibm-cloud-image-key-synchronizer#cl-add-ons-ibm-cloud-image-key-synchronizer-100_320394467)
+    * [Version 1.0.0 - 1.0.0_345162128, released 09 June 2026](/docs/openshift?topic=openshift-cl-add-ons-ibm-cloud-image-key-synchronizer#cl-add-ons-ibm-cloud-image-key-synchronizer-100_345162128)
 
-    * [1.0.0_318859798, released 23 February 2026](/docs/openshift?topic=openshift-cl-add-ons-ibm-cloud-image-key-synchronizer#cl-add-ons-ibm-cloud-image-key-synchronizer-100_318859798)
+    * [Version 1.0.0 - 1.0.0_341829798, released 27 May 2026](/docs/openshift?topic=openshift-cl-add-ons-ibm-cloud-image-key-synchronizer#cl-add-ons-ibm-cloud-image-key-synchronizer-100_341829798)
 
-    * [1.0.0_315380368, released 10 February 2026](/docs/openshift?topic=openshift-cl-add-ons-ibm-cloud-image-key-synchronizer#cl-add-ons-ibm-cloud-image-key-synchronizer-100_315380368)
+    * [Version 1.0.0 - 1.0.0_334950440, released 05 May 2026](/docs/openshift?topic=openshift-cl-add-ons-ibm-cloud-image-key-synchronizer#cl-add-ons-ibm-cloud-image-key-synchronizer-100_334950440)
 
-    * [1.0.0_302028792, released 04 December 2025](/docs/openshift?topic=openshift-cl-add-ons-ibm-cloud-image-key-synchronizer#cl-add-ons-ibm-cloud-image-key-synchronizer-100_302028792)
+    * [Version 1.0.0 - 1.0.0_325458899, released 24 March 2026](/docs/openshift?topic=openshift-cl-add-ons-ibm-cloud-image-key-synchronizer#cl-add-ons-ibm-cloud-image-key-synchronizer-100_325458899)
 
-    * [1.0.0_2983, released 08 September 2025](/docs/openshift?topic=openshift-cl-add-ons-ibm-cloud-image-key-synchronizer#cl-add-ons-ibm-cloud-image-key-synchronizer-100_2983)
+    * [Version 1.0.0 - 1.0.0_320394467, released 03 March 2026](/docs/openshift?topic=openshift-cl-add-ons-ibm-cloud-image-key-synchronizer#cl-add-ons-ibm-cloud-image-key-synchronizer-100_320394467)
 
-    * [1.0.0_2880, released 22 July 2025](/docs/openshift?topic=openshift-cl-add-ons-ibm-cloud-image-key-synchronizer#cl-add-ons-ibm-cloud-image-key-synchronizer-100_2880)
+    * [Version 1.0.0 - 1.0.0_318859798, released 23 February 2026](/docs/openshift?topic=openshift-cl-add-ons-ibm-cloud-image-key-synchronizer#cl-add-ons-ibm-cloud-image-key-synchronizer-100_318859798)
 
-    * [1.0.0_2824, released 23 June 2025](/docs/openshift?topic=openshift-cl-add-ons-ibm-cloud-image-key-synchronizer#cl-add-ons-ibm-cloud-image-key-synchronizer-100_2824)
+    * [Version 1.0.0 - 1.0.0_315380368, released 10 February 2026](/docs/openshift?topic=openshift-cl-add-ons-ibm-cloud-image-key-synchronizer#cl-add-ons-ibm-cloud-image-key-synchronizer-100_315380368)
 
-    * [1.0.0_2713, released 27 April 2025](/docs/openshift?topic=openshift-cl-add-ons-ibm-cloud-image-key-synchronizer#cl-add-ons-ibm-cloud-image-key-synchronizer-100_2713)
+    * [Version 1.0.0 - 1.0.0_302028792, released 04 December 2025](/docs/openshift?topic=openshift-cl-add-ons-ibm-cloud-image-key-synchronizer#cl-add-ons-ibm-cloud-image-key-synchronizer-100_302028792)
 
-    * [1.0.0_2640, released 13 March 2025](/docs/openshift?topic=openshift-cl-add-ons-ibm-cloud-image-key-synchronizer#cl-add-ons-ibm-cloud-image-key-synchronizer-100_2640)
+    * [Version 1.0.0 - 1.0.0_2983, released 08 September 2025](/docs/openshift?topic=openshift-cl-add-ons-ibm-cloud-image-key-synchronizer#cl-add-ons-ibm-cloud-image-key-synchronizer-100_2983)
 
-    * [1.0.0_2557, released 15 January 2025](/docs/openshift?topic=openshift-cl-add-ons-ibm-cloud-image-key-synchronizer#cl-add-ons-ibm-cloud-image-key-synchronizer-100_2557)
+    * [Version 1.0.0 - 1.0.0_2880, released 22 July 2025](/docs/openshift?topic=openshift-cl-add-ons-ibm-cloud-image-key-synchronizer#cl-add-ons-ibm-cloud-image-key-synchronizer-100_2880)
 
-    * [1.0.0_2450, released 30 October 2024](/docs/openshift?topic=openshift-cl-add-ons-ibm-cloud-image-key-synchronizer#cl-add-ons-ibm-cloud-image-key-synchronizer-100_2450)
+    * [Version 1.0.0 - 1.0.0_2824, released 23 June 2025](/docs/openshift?topic=openshift-cl-add-ons-ibm-cloud-image-key-synchronizer#cl-add-ons-ibm-cloud-image-key-synchronizer-100_2824)
 
-    * [1.0.0_2382, released 04 September 2024](/docs/openshift?topic=openshift-cl-add-ons-ibm-cloud-image-key-synchronizer#cl-add-ons-ibm-cloud-image-key-synchronizer-100_2382)
+    * [Version 1.0.0 - 1.0.0_2713, released 27 April 2025](/docs/openshift?topic=openshift-cl-add-ons-ibm-cloud-image-key-synchronizer#cl-add-ons-ibm-cloud-image-key-synchronizer-100_2713)
 
-    * [1.0.0_2308, released 09 July 2024](/docs/openshift?topic=openshift-cl-add-ons-ibm-cloud-image-key-synchronizer#cl-add-ons-ibm-cloud-image-key-synchronizer-100_2308)
+    * [Version 1.0.0 - 1.0.0_2640, released 13 March 2025](/docs/openshift?topic=openshift-cl-add-ons-ibm-cloud-image-key-synchronizer#cl-add-ons-ibm-cloud-image-key-synchronizer-100_2640)
 
-    * [1.0.0_2258, released 06 June 2024](/docs/openshift?topic=openshift-cl-add-ons-ibm-cloud-image-key-synchronizer#cl-add-ons-ibm-cloud-image-key-synchronizer-100_2258)
+    * [Version 1.0.0 - 1.0.0_2557, released 15 January 2025](/docs/openshift?topic=openshift-cl-add-ons-ibm-cloud-image-key-synchronizer#cl-add-ons-ibm-cloud-image-key-synchronizer-100_2557)
 
-    * [1.0.0_2244, released 04 June 2024](/docs/openshift?topic=openshift-cl-add-ons-ibm-cloud-image-key-synchronizer#cl-add-ons-ibm-cloud-image-key-synchronizer-100_2244)
+    * [Version 1.0.0 - 1.0.0_2450, released 30 October 2024](/docs/openshift?topic=openshift-cl-add-ons-ibm-cloud-image-key-synchronizer#cl-add-ons-ibm-cloud-image-key-synchronizer-100_2450)
 
-    * [1.0.0_2186, released 08 May 2024](/docs/openshift?topic=openshift-cl-add-ons-ibm-cloud-image-key-synchronizer#cl-add-ons-ibm-cloud-image-key-synchronizer-100_2186)
+    * [Version 1.0.0 - 1.0.0_2382, released 04 September 2024](/docs/openshift?topic=openshift-cl-add-ons-ibm-cloud-image-key-synchronizer#cl-add-ons-ibm-cloud-image-key-synchronizer-100_2382)
+
+    * [Version 1.0.0 - 1.0.0_2308, released 09 July 2024](/docs/openshift?topic=openshift-cl-add-ons-ibm-cloud-image-key-synchronizer#cl-add-ons-ibm-cloud-image-key-synchronizer-100_2308)
+
+    * [Version 1.0.0 - 1.0.0_2258, released 06 June 2024](/docs/openshift?topic=openshift-cl-add-ons-ibm-cloud-image-key-synchronizer#cl-add-ons-ibm-cloud-image-key-synchronizer-100_2258)
+
+    * [Version 1.0.0 - 1.0.0_2244, released 04 June 2024](/docs/openshift?topic=openshift-cl-add-ons-ibm-cloud-image-key-synchronizer#cl-add-ons-ibm-cloud-image-key-synchronizer-100_2244)
+
+    * [Version 1.0.0 - 1.0.0_2186, released 08 May 2024](/docs/openshift?topic=openshift-cl-add-ons-ibm-cloud-image-key-synchronizer#cl-add-ons-ibm-cloud-image-key-synchronizer-100_2186)
+
+    * [1.0.0_2111, released on 03 April 2024](/docs/openshift?topic=openshift-cl-add-ons-ibm-cloud-image-key-synchronizer#1.0.0_2111)
+
+    * [1.0.0_2015, released on 16 January 2024](/docs/openshift?topic=openshift-cl-add-ons-ibm-cloud-image-key-synchronizer#1.0.0_2015)
+
+    * [1.0.0_1936, released on 25 October 2023](/docs/openshift?topic=openshift-cl-add-ons-ibm-cloud-image-key-synchronizer#1.0.0_1936)
+
+    * [1.0.0_1921, released on 18 October 2023](/docs/openshift?topic=openshift-cl-add-ons-ibm-cloud-image-key-synchronizer#1.0.0_1921)
+
+    * [1.0.0_1831, released on 3 October 2023](/docs/openshift?topic=openshift-cl-add-ons-ibm-cloud-image-key-synchronizer#1_0_1831)
+
+    * [1.0.0_1701, released on 13 July 2023](/docs/openshift?topic=openshift-cl-add-ons-ibm-cloud-image-key-synchronizer#1_0_1701)
+
+    * [1.0.0_1633, released on 15 June 2023](/docs/openshift?topic=openshift-cl-add-ons-ibm-cloud-image-key-synchronizer#1_0_1633)
+
+    * [1.0.0_1523, released on 2 May 2023](/docs/openshift?topic=openshift-cl-add-ons-ibm-cloud-image-key-synchronizer#1_0_1523)
+
+    * [1.0.0_1362, released on 1 March 2023](/docs/openshift?topic=openshift-cl-add-ons-ibm-cloud-image-key-synchronizer#1_0_1362)
+
+    * [1.0.0_1329, released on 8 February 2023](/docs/openshift?topic=openshift-cl-add-ons-ibm-cloud-image-key-synchronizer#1_0_1329)
+
+    * [1.0.0_1269, released on 15 December 2022](/docs/openshift?topic=openshift-cl-add-ons-ibm-cloud-image-key-synchronizer#1_0_1269)
+
+    * [1.0.0_1200, released on 27 October 2022](/docs/openshift?topic=openshift-cl-add-ons-ibm-cloud-image-key-synchronizer#1_0_1200)
+
+    * [1.0.0_1061, released on 7 July 2022](/docs/openshift?topic=openshift-cl-add-ons-ibm-cloud-image-key-synchronizer#1_0_1061)
+
+    * [1.0.0_1022, released on 13 Jun 2022](/docs/openshift?topic=openshift-cl-add-ons-ibm-cloud-image-key-synchronizer#1_0_1022)
+
+    * [1.0.0_956, released on 4 May 2022](/docs/openshift?topic=openshift-cl-add-ons-ibm-cloud-image-key-synchronizer#1_0_0956)
+
+    * [1.0.0_927, released on 11 April 2022](/docs/openshift?topic=openshift-cl-add-ons-ibm-cloud-image-key-synchronizer#1_0_0927)
+
+    * [1.0.0_906, released on 24 March 2022](/docs/openshift?topic=openshift-cl-add-ons-ibm-cloud-image-key-synchronizer#1_0_0906)
+
+    * [1.0.0_883, released on 28 February 2022](/docs/openshift?topic=openshift-cl-add-ons-ibm-cloud-image-key-synchronizer#1_0_0883)
+
+    * [1.0.0_834, released on 25 January 2022](/docs/openshift?topic=openshift-cl-add-ons-ibm-cloud-image-key-synchronizer#1_0_0834)
+
+    * [1.0.0_804, released on 11 January 2022](/docs/openshift?topic=openshift-cl-add-ons-ibm-cloud-image-key-synchronizer#1_0_0804)
+
+    * [1.0.0_744, released on 19 November 2021](/docs/openshift?topic=openshift-cl-add-ons-ibm-cloud-image-key-synchronizer#1_0_0744)
+
+    * [1.0.0_734, released on 16 November 2021](/docs/openshift?topic=openshift-cl-add-ons-ibm-cloud-image-key-synchronizer#1_0_0734)
+
+    * [1.0.0_690, released on 6 October 2021](/docs/openshift?topic=openshift-cl-add-ons-ibm-cloud-image-key-synchronizer#1_0_0690)
+
+    * [1.0.0_627, released on 23 August 2021](/docs/openshift?topic=openshift-cl-add-ons-ibm-cloud-image-key-synchronizer#1_0_0627)
+
+    * [1.0.0_614, released on 10 August 2021](/docs/openshift?topic=openshift-cl-add-ons-ibm-cloud-image-key-synchronizer#1_0_0614)
+
+    * [1.0.0_575, released on 23 July 2021](/docs/openshift?topic=openshift-cl-add-ons-ibm-cloud-image-key-synchronizer#1_0_0575)
+
+    * [1.0.0_549, released on 17 June 2021](/docs/openshift?topic=openshift-cl-add-ons-ibm-cloud-image-key-synchronizer#1_0_0549)
+
+    * [1.0.0_529, released on 2 June 2021](/docs/openshift?topic=openshift-cl-add-ons-ibm-cloud-image-key-synchronizer#1_0_0529)
+
+    * [1.0.0_485, released on 28 April 2021](/docs/openshift?topic=openshift-cl-add-ons-ibm-cloud-image-key-synchronizer#1_0_0485)
+
+    * [1.0.0_473, released on 19 April 2021](/docs/openshift?topic=openshift-cl-add-ons-ibm-cloud-image-key-synchronizer#1_0_0473)
+
+    * [1.0.0_461, released on 14 April 2021](/docs/openshift?topic=openshift-cl-add-ons-ibm-cloud-image-key-synchronizer#1_0_0461)
+
+    * [1.0.0_438, released on 30 March 2021](/docs/openshift?topic=openshift-cl-add-ons-ibm-cloud-image-key-synchronizer#1_0_0438)
 
 [Confidential containers](/docs/openshift?topic=openshift-cl-confidential-containers#cl-confidential-containers)
 
