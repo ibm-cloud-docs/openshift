@@ -587,8 +587,6 @@ subcollection: openshift
 
 * [July 2026](/docs/openshift?topic=openshift-openshift-relnotes#openshift-jul26)
 
-    * [14 July 2026](/docs/openshift?topic=openshift-openshift-relnotes#openshift-jul1426)
-
     * [29 July 2026](/docs/openshift?topic=openshift-openshift-relnotes#openshift-jul2926)
 
         * VPC Block CSI Driver cluster add-on patch updates.

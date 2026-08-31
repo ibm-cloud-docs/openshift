@@ -262,10 +262,6 @@ CLI version 1.0.815 is available.
 ## July 2026
 {: #openshift-jul26}
 
-### 14 July 2026
-{: #openshift-jul1426}
-{: release-note}
-
 ### 29 July 2026
 {: #openshift-jul2926}
 {: release-note}
