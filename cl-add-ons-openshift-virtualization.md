@@ -3,7 +3,7 @@
 copyright:
   years: 2024, 2026
 
-lastupdated: "2026-08-27"
+lastupdated: "2026-08-31"
 
 
 keywords: change log, version history, OpenShift Virtualization
@@ -43,10 +43,20 @@ Review the version history for OpenShift Virtualization.
 {: #cl-add-ons-openshift-virtualization-4.21}
 
 
-### Version 4.21 - v1.0.8_4.21, released 10 August 2026
-{: #cl-add-ons-openshift-virtualization-v108_421}
+### Version 4.21 - v1.0.9_4.21_366720299, released 31 August 2026
+{: #cl-add-ons-openshift-virtualization-v109_421_366720299}
 
 [Default version]{: tag-green}
+
+- Updates Go to version `1.26.6`.
+- kubevirt-hyperconverged-operator.v4.21.16
+- kubernetes-nmstate-operator.4.21.0-202608172306
+- node-maintenance-operator.v5.6.1
+- Resolves the following Prisma CVEs: [CVE-2026-33818](https://nvd.nist.gov/vuln/detail/cve-2026-33818){: external}, [CVE-2026-39821](https://nvd.nist.gov/vuln/detail/cve-2026-39821){: external}, [CVE-2026-46600](https://nvd.nist.gov/vuln/detail/cve-2026-46600){: external}, [CVE-2026-56853](https://nvd.nist.gov/vuln/detail/cve-2026-56853){: external}, [CVE-2026-56858](https://nvd.nist.gov/vuln/detail/cve-2026-56858){: external}, [CVE-2026-56859](https://nvd.nist.gov/vuln/detail/cve-2026-56859){: external}, [CVE-2026-56860](https://nvd.nist.gov/vuln/detail/cve-2026-56860){: external}, and [CVE-2026-56862](https://nvd.nist.gov/vuln/detail/cve-2026-56862){: external}.
+
+
+### Version 4.21 - v1.0.8_4.21, released 10 August 2026
+{: #cl-add-ons-openshift-virtualization-v108_421}
 
 - Updates Go to version `1.26.5`.
 - Update cpu and memory requests/limits for ibm-openshift-virt-operator pods 
