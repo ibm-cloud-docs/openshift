@@ -478,18 +478,6 @@ subcollection: openshift
 
 * [Migration steps](/docs/openshift?topic=openshift-rhel-deprecation#migration)
 
-[Classic cluster creation restrictions](/docs/openshift?topic=openshift-classic-create-restriction#classic-create-restriction)
-
-* [Who is affected by this restriction?](/docs/openshift?topic=openshift-classic-create-restriction#classic-create-restriction-affected)
-
-* [Why does this restriction exist?](/docs/openshift?topic=openshift-classic-create-restriction#classic-create-restriction-why)
-
-* [What error do I see when classic cluster creation is blocked?](/docs/openshift?topic=openshift-classic-create-restriction#classic-create-restriction-error)
-
-* [What are my options if I'm affected?](/docs/openshift?topic=openshift-classic-create-restriction#classic-create-restriction-next)
-
-* [How do I check whether my account has existing classic clusters?](/docs/openshift?topic=openshift-classic-create-restriction#classic-create-restriction-check)
-
 
 ## Release notes
 {: #sitemap_release_notes}
@@ -2203,6 +2191,12 @@ subcollection: openshift
 * [Accessing a private VPC cluster from the CLI](/docs/openshift?topic=openshift-cluster-access-private-vpc#access-private-vpc-cli)
 
 * [Accessing through the Virtual Private Endpoint (VPE) gateway](/docs/openshift?topic=openshift-cluster-access-private-vpc#access-private-vpc-vpe)
+
+[Accessing Classic clusters through the private cloud service endpoint](/docs/openshift?topic=openshift-access-private-classic#access-private-classic)
+
+* [Before you begin](/docs/openshift?topic=openshift-access-private-classic#access-private-classic-prereqs)
+
+* [Accessing a private Classic cluster from the CLI](/docs/openshift?topic=openshift-access-private-classic#access-private-classic-cli)
 
 [Accessing VPC clusters through the Virtual Private Endpoint gateway](/docs/openshift?topic=openshift-cluster-access-vpe#cluster-access-vpe)
 

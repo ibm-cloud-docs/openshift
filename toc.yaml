@@ -45,7 +45,6 @@ toc:
           label: Important notices
           topics:
           - rhel-deprecation.md
-          - classic-create-restriction.md
       - release-notes.md
   - navgroup:
       id: tutorial
@@ -103,6 +102,7 @@ toc:
           - openshift_cluster_access.md
           - cluster-access-public.md
           - cluster-access-private-vpc.md
+          - cluster-access-private-classic.md
           - cluster-access-vpe.md
           - cluster-access-satellite.md
           - cluster-access-automation.md
