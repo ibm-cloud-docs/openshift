@@ -2204,12 +2204,6 @@ subcollection: openshift
 
 * [Accessing through the Virtual Private Endpoint (VPE) gateway](/docs/openshift?topic=openshift-cluster-access-private-vpc#access-private-vpc-vpe)
 
-[Accessing Classic clusters through the private cloud service endpoint](/docs/openshift?topic=openshift-access-private-classic#access-private-classic)
-
-* [Before you begin](/docs/openshift?topic=openshift-access-private-classic#access-private-classic-prereqs)
-
-* [Accessing a private Classic cluster from the CLI](/docs/openshift?topic=openshift-access-private-classic#access-private-classic-cli)
-
 [Accessing VPC clusters through the Virtual Private Endpoint gateway](/docs/openshift?topic=openshift-cluster-access-vpe#cluster-access-vpe)
 
 * [Before you begin](/docs/openshift?topic=openshift-cluster-access-vpe#cluster-access-vpe-prereqs)
