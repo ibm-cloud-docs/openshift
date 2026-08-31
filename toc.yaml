@@ -45,7 +45,6 @@ toc:
           label: Important notices
           topics:
           - rhel-deprecation.md
-          - classic-create-restriction.md
       - release-notes.md
   - navgroup:
       id: tutorial

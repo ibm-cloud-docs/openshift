@@ -478,18 +478,6 @@ subcollection: openshift
 
 * [Migration steps](/docs/openshift?topic=openshift-rhel-deprecation#migration)
 
-[Classic cluster creation restrictions](/docs/openshift?topic=openshift-classic-create-restriction#classic-create-restriction)
-
-* [Who is affected by this restriction?](/docs/openshift?topic=openshift-classic-create-restriction#classic-create-restriction-affected)
-
-* [Why does this restriction exist?](/docs/openshift?topic=openshift-classic-create-restriction#classic-create-restriction-why)
-
-* [What error do I see when classic cluster creation is blocked?](/docs/openshift?topic=openshift-classic-create-restriction#classic-create-restriction-error)
-
-* [What are my options if I'm affected?](/docs/openshift?topic=openshift-classic-create-restriction#classic-create-restriction-next)
-
-* [How do I check whether my account has existing classic clusters?](/docs/openshift?topic=openshift-classic-create-restriction#classic-create-restriction-check)
-
 
 ## Release notes
 {: #sitemap_release_notes}
