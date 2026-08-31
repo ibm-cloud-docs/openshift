@@ -2,7 +2,7 @@
 
 copyright:
   years: 2026
-lastupdated: "2026-08-28"
+lastupdated: "2026-08-31"
 
 keywords: openshift data foundation, ODF, disaster recovery, upgrade, ODF-DR, regional disaster recovery, RDR
 
@@ -123,13 +123,16 @@ ibmcloud oc cluster config --cluster HUB_CLUSTER_NAME --admin
    ```
    {: pre}
 
-## Upgrading the ODF-DR operator on the hub cluster
+## Upgrading the ODF Multicluster Orchestrator on the hub cluster
 {: #odf-rdr-upgrade-odf-dr}
 {: step}
 
 [Hub cluster]{: tag-blue}
 
-After ODF is upgraded on all managed clusters, upgrade the ODF Multicluster Orchestrator Operator on the hub cluster.
+After ODF is upgraded on all managed clusters, upgrade the ODF Multicluster Orchestrator on the hub cluster.
+
+The OpenShift DR Hub Operator and OpenShift DR Cluster Operators are installed as dependencies of the ODF Multicluster Orchestrator and are upgraded automatically. You do not need to upgrade them manually.
+{: note}
 
 1. Confirm the current subscription channel for the ODF Multicluster Orchestrator operator.
    ```sh

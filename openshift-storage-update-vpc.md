@@ -2,7 +2,7 @@
 
 copyright:
   years: 2023, 2026
-lastupdated: "2026-08-28"
+lastupdated: "2026-08-31"
 
 
 keywords: openshift, openshift data foundation, openshift container storage, ocs, worker update, worker replace
@@ -141,22 +141,22 @@ Repeat these health checks before repeating the update procedure for additional 
 
 [Major update]{: tag-red} [Minor update]{: tag-blue} [Worker replace]{: tag-green}
 
-1. List your worker nodes by using `oc get nodes` and determine which storage nodes you want to update.
+List your worker nodes by using `oc get nodes` and determine which storage nodes you want to update.
 
-	```sh
-	oc get nodes
-	```
-	{: pre}
+```sh
+oc get nodes
+```
+{: pre}
 
-	Example output
+Example output
 
-	```sh
-	NAME           STATUS   ROLES           AGE    VERSION
-	10.241.0.4     Ready    master,worker   106s   v1.21.6+4b61f94
-	10.241.128.4   Ready    master,worker   22d    v1.21.6+bb8d50a
-	10.241.64.4    Ready    master,worker   22d    v1.21.6+bb8d50a
-	```
-	{: screen}
+```sh
+NAME           STATUS   ROLES           AGE    VERSION
+10.241.0.4     Ready    master,worker   106s   v1.21.6+4b61f94
+10.241.128.4   Ready    master,worker   22d    v1.21.6+bb8d50a
+10.241.64.4    Ready    master,worker   22d    v1.21.6+bb8d50a
+```
+{: screen}
 
 ## Make sure the storage cluster is healthy
 {: #cluster-health}
