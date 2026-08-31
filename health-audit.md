@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2014, 2026
-lastupdated: "2026-08-06"
+lastupdated: "2026-08-31"
 
 
 keywords: openshift, kubernetes, logmet, logs, metrics, audit, events
@@ -67,8 +67,7 @@ To forward audit logs to {{site.data.keyword.logs_full_notm}}, you can create a 
 The following example uses the `icr.io/ibm/ibmcloud-kube-audit-to-ibm-cloud-logs` image to forward logs to {{site.data.keyword.logs_full_notm}}. If you only need a proof of concept, you may skip the [secure setup step](#secure-setup). For a more automated solution, configure and maintain your own log forwarding image.
 {: important}
 
-Previously the, `icr.io/ibm/ibmcloud-kube-audit-to-logdna` was used to forward logs. This image is deprecated and support ends soon. Update your log forwarding setup to use the `icr.io/ibm/ibmcloud-kube-audit-to-ibm-cloud-logs` instead.
-{: note}
+
 
 The Kubernetes audit system in your cluster consists of an audit webhook, a log collection service and web server app, and a logging agent. The webhook collects the Kubernetes API server events from your cluster master. The log collection service is a Kubernetes `ClusterIP` service that is created from an image from the public {{site.data.keyword.cloud_notm}} registry. This service exposes a simple HTTP web server app that is exposed only on the cluster's network. The web server app parses the log data from the audit webhook and creates each log as a unique JSON line. Finally, the logging agent forwards the logs from the web server app to {{site.data.keyword.logs_full_notm}}, where you can view the logs.
 

@@ -2,7 +2,7 @@
 
 copyright:
   years: 2025, 2026
-lastupdated: "2026-08-12"
+lastupdated: "2026-08-31"
 
 
 keywords: logging, monitoring, duplicate lobs, observability
@@ -45,12 +45,11 @@ Remove the unsupported observability plug-in resources from your cluster.
     ```
     {: pre}
 
-1. If there is a `logdna-agent` or a `sysdig-agent`, remove them.
+1. If there is a `sysdig-agent`, remove it.
 
     Example output that shows the resources which need to be removed.
     ```sh
     NAME           DESIRED   CURRENT   READY   UP-TO-DATE   AVAILABLE   NODE SELECTOR   AGE
-    logdna-agent   9         9         9       9            9           <none>          4d
     sysdig-agent   9         9         9       9            9           <none>          4d
     ```
     {: screen}
@@ -58,7 +57,6 @@ Remove the unsupported observability plug-in resources from your cluster.
 
 1. Delete the resources.
     ```sh
-    oc delete daemonset logdna-agent -n ibm-observe
     oc kubectl delete daemonset sysdig-agent -n ibm-observe
     ```
     {: pre}
@@ -67,8 +65,6 @@ Remove the unsupported observability plug-in resources from your cluster.
 
 1. Verify the daemonset and its pods were deleted.
     ```sh
-    oc get daemonset logdna-agent -n ibm-observe
-    oc get pods -l app=logdna-agent -n ibm-observe
     oc get daemonset sysdig-agent -n ibm-observe
     oc get pods -l app=sysdig-agent -n ibm-observe
     ```

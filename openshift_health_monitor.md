@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2026
-lastupdated: "2026-07-24"
+lastupdated: "2026-08-31"
 
 
 keywords: oks, iro, openshift, red hat, red hat openshift
@@ -111,12 +111,12 @@ If your volume is reaching capacity, try setting up [volume expansion](/docs/ope
 The observability CLI plug-in `ibmcloud ob` and the `v2/observe` endpoints are no longer supported. There is no direct replacement, but you can now manage your logging and monitoring integrations from the console or through the Helm charts. For the latest steps, [Deploying the Logging agent for OpenShift clusters](/docs/cloud-logs?topic=cloud-logs-agent-helm-os-deploy) and [Monitoring a Red Hat OpenShift cluster](/docs/monitoring?topic=monitoring-openshift_cluster).
 {: unsupported}
 
-You can no longer use the `ob` plug-in, Terraform, or API to install observability agents on a cluster or to modify your existing configuration. Sysdig agents continue to send metrics to the specified IBM Cloud Monitoring instance. LogDNA agents can no longer send logs since IBM Cloud Log Analysis is replaced by IBM Cloud Logs. 
+You can no longer use the `ob` plug-in, Terraform, or API to install observability agents on a cluster or to modify your existing configuration. Sysdig agents continue to send metrics to the specified IBM Cloud Monitoring instance.
 
 ### Reviewing your observability agents
 {: #ob-review-mon}
 
-The observability plug-in installs Sysdig and LogDNA agents in the `ibm-observe` namespace.
+The observability plug-in installs Sysdig agents in the `ibm-observe` namespace.
 
 1. [Access your {{site.data.keyword.redhat_openshift_notm}} cluster](/docs/openshift?topic=openshift-access_cluster).
 
@@ -137,16 +137,14 @@ The observability plug-in installs Sysdig and LogDNA agents in the `ibm-observe`
     ```
     {: pre}
 
-1. Observability agents installed by the observability plug-in use a configmap with the GUID of the IBM Cloud Monitoring instance or the IBM Cloud Log Analysis instance that logs or metrics are being sent to. If your cluster has agents in a namespace other than `ibm-observe` or the configmaps in `ibm-observe` are not named with the instance GUIDs, then these agents were not installed with the IKS observability (ob) plug-in.
+1. Observability agents installed by the observability plug-in use a configmap with the GUID of the IBM Cloud Monitoring instance that metrics are being sent to. If your cluster has agents in a namespace other than `ibm-observe` or the configmaps in `ibm-observe` are not named with the instance GUIDs, then these agents were not installed with the IKS observability (ob) plug-in.
 
 ### Removing the observability plug-in agents
 {: #ob-remove-mon}
 
 1. Clean up the daemonsets and configmaps.
     ```sh
-    kubectl delete daemonset logdna-agent -n ibm-observe
     kubectl delete daemonset sysdig-agent -n ibm-observe
-    kubectl delete configmap <logdna-configmap> -n ibm-observe
     kubectl delete configmap <sysdig-configmap> -n ibm-observe
     ```
     {: pre}

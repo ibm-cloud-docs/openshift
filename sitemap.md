@@ -4663,7 +4663,7 @@ subcollection: openshift
 
 * [Decide which storage nodes you want to update or replace](/docs/openshift?topic=openshift-openshift-storage-update-vpc#determine-storage-nodes-vpc)
 
-* [Make sure the storage cluster is healthy](/docs/openshift?topic=openshift-openshift-storage-update-vpc#cluster-health)
+* [Make sure the storage cluster is healthy](/docs/openshift?topic=openshift-openshift-storage-update-vpc#odf-vpc-cluster-health)
 
 * [Cordon and scale down OpenShift Data Foundation](/docs/openshift?topic=openshift-openshift-storage-update-vpc#scale-down-odf-vpc)
 
