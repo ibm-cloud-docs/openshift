@@ -589,8 +589,6 @@ subcollection: openshift
 
     * [14 July 2026](/docs/openshift?topic=openshift-openshift-relnotes#openshift-jul1426)
 
-        * New restriction on classic cluster creation.
-
     * [29 July 2026](/docs/openshift?topic=openshift-openshift-relnotes#openshift-jul2926)
 
         * VPC Block CSI Driver cluster add-on patch updates.

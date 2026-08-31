@@ -17,7 +17,7 @@ subcollection: openshift
 
 [Classic infrastructure]{: tag-classic-inf}
 
-Starting [VERIFY: date], accounts that do not already have at least one classic cluster in a region can no longer create new classic clusters in that region. This restriction applies when you create a cluster from the console, the CLI, the API, or Terraform.
+Accounts that do not already have at least one classic cluster in a region can no longer create new classic clusters in that region. This restriction applies when you create a cluster from the console, the CLI, the API, or Terraform.
 {: shortdesc}
 
 ## Who is affected by this restriction?
@@ -52,7 +52,7 @@ If your account is affected, consider the following options:
 
 - **Create a VPC cluster.** VPC clusters are the recommended option for new workloads. To get started, see [Creating VPC clusters](/docs/openshift?topic=openshift-cluster-create-vpc-gen2).
 - **Use a region where you already have a classic cluster.** If your account has a classic cluster in another region, you can create additional classic clusters in that region.
-- **Request an exception.** If you have a specific use case that requires classic infrastructure in a new region and you cannot migrate to VPC, [open a support case](/unifiedsupport/cases/add) and provide your account ID, the target region, and the reason that VPC infrastructure does not meet your requirements. [VERIFY: confirm the exception process — support case vs. sales/CSM contact]
+- **Request an exception.** If you have a specific use case that requires classic infrastructure in a new region and you cannot migrate to VPC, [open a support case](/unifiedsupport/cases/add) and provide your account ID, the target region, and the reason that VPC infrastructure does not meet your requirements.
 
 ## How do I check whether my account has existing classic clusters?
 {: #classic-create-restriction-check}
