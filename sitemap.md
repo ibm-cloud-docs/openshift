@@ -4777,7 +4777,7 @@ subcollection: openshift
 
 * [Upgrading ACM on the hub cluster](/docs/openshift?topic=openshift-openshift_odf_rdr_upgrade#odf-rdr-upgrade-acm)
 
-* [Upgrading the ODF-DR operator on the hub cluster](/docs/openshift?topic=openshift-openshift_odf_rdr_upgrade#odf-rdr-upgrade-odf-dr)
+* [Upgrading the ODF Multicluster Orchestrator on the hub cluster](/docs/openshift?topic=openshift-openshift_odf_rdr_upgrade#odf-rdr-upgrade-odf-dr)
 
 * [Upgrading optional operators](/docs/openshift?topic=openshift-openshift_odf_rdr_upgrade#odf-rdr-upgrade-optional-operators)
 
