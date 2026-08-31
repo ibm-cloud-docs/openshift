@@ -159,7 +159,7 @@ NAME           STATUS   ROLES           AGE    VERSION
 {: screen}
 
 ## Make sure the storage cluster is healthy
-{: #cluster-health}
+{: #odf-vpc-cluster-health}
 {: step}
 
 [Major update]{: tag-red} [Minor update]{: tag-blue} [Worker replace]{: tag-green}
