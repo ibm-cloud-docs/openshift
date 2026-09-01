@@ -2,7 +2,7 @@
 
 copyright:
   years: 2014, 2026
-lastupdated: "2026-08-31"
+lastupdated: "2026-09-01"
 
 
 keywords: kubernetes, release notes, openshift, {{site.data.keyword.openshiftlong_notm}}
@@ -25,6 +25,16 @@ Use the release notes to learn about the latest changes to the documentation tha
 
 Looking for {{site.data.keyword.cloud_notm}} status, platform announcements, security bulletins, or maintenance notifications? See [{{site.data.keyword.cloud_notm}} status](https://cloud.ibm.com/status?selected=status).
 {: tip}
+
+## September 2026
+{: #openshift-sep26}
+
+### 1 September 2026
+{: #openshift-sep0126}
+{: release-note}
+
+IBM Object CSI Driver cluster add-on patch updates.
+:   For more information, see the [change log](/docs/openshift?topic=openshift-cl-add-ons-ibm-object-csi-driver).
 
 ## August 2026
 {: #openshift-aug26}
