@@ -3,7 +3,7 @@
 copyright:
   years: 2024, 2026
 
-lastupdated: "2026-08-27"
+lastupdated: "2026-09-01"
 
 
 keywords: change log, version history, IBM Object CSI Driver
@@ -43,10 +43,18 @@ Review the version history for IBM Object CSI Driver.
 {: #cl-add-ons-ibm-object-csi-driver-1.0}
 
 
-### Version 1.0 - v1.0.27_360474192, released 20 August 2026
-{: #cl-add-ons-ibm-object-csi-driver-v1027_360474192}
+### Version 1.0 - v1.0.28_365471792, released 01 September 2026
+{: #cl-add-ons-ibm-object-csi-driver-v1028_365471792}
 
 [Default version]{: tag-green}
+
+- Resolves the following CVEs: [CVE-2026-8286](https://nvd.nist.gov/vuln/detail/cve-2026-8286){: external}, [CVE-2026-9547](https://nvd.nist.gov/vuln/detail/cve-2026-9547){: external}, [CVE-2026-1965](https://nvd.nist.gov/vuln/detail/cve-2026-1965){: external}, [CVE-2026-3783](https://nvd.nist.gov/vuln/detail/cve-2026-3783){: external}, [CVE-2026-33818](https://nvd.nist.gov/vuln/detail/cve-2026-33818){: external}, [CVE-2026-39821](https://nvd.nist.gov/vuln/detail/cve-2026-39821){: external}, [CVE-2026-46600](https://nvd.nist.gov/vuln/detail/cve-2026-46600){: external}, [CVE-2026-56853](https://nvd.nist.gov/vuln/detail/cve-2026-56853){: external}, [CVE-2026-56858](https://nvd.nist.gov/vuln/detail/cve-2026-56858){: external}, [CVE-2026-56859](https://nvd.nist.gov/vuln/detail/cve-2026-56859){: external}, [CVE-2026-56860](https://nvd.nist.gov/vuln/detail/cve-2026-56860){: external}, and [CVE-2026-56862](https://nvd.nist.gov/vuln/detail/cve-2026-56862){: external}.
+- Updates Go to version `1.26.6`.
+- Fix cos-csi-mounter RPM package upgrade issue on RHCOS nodes 
+
+
+### Version 1.0 - v1.0.27_360474192, released 20 August 2026
+{: #cl-add-ons-ibm-object-csi-driver-v1027_360474192}
 
 - Resolves the following CVEs: [CVE-2026-41176](https://nvd.nist.gov/vuln/detail/cve-2026-41176){: external}, [GO-2026-6061](https://pkg.go.dev/vuln/GO-2026-6061){: external}, [CVE-2026-71309](https://nvd.nist.gov/vuln/detail/cve-2026-71309){: external}, [CVE-2026-71312](https://nvd.nist.gov/vuln/detail/cve-2026-71312){: external}, [CVE-2026-71310](https://nvd.nist.gov/vuln/detail/cve-2026-71310){: external}, [CVE-2026-71311](https://nvd.nist.gov/vuln/detail/cve-2026-71311){: external}, [CVE-2026-71313](https://nvd.nist.gov/vuln/detail/cve-2026-71313){: external}, [GHSA-3x6r-wxxg-53vv](https://github.com/advisories/GHSA-3x6r-wxxg-53vv){: external}, [GHSA-8mxv-9xhp-86h4](https://github.com/advisories/GHSA-8mxv-9xhp-86h4){: external}, [GHSA-h4mf-4v27-hggj](https://github.com/advisories/GHSA-h4mf-4v27-hggj){: external}, and [GHSA-gwfq-86j8-7qhv](https://github.com/advisories/GHSA-gwfq-86j8-7qhv){: external}.
 - Updates Go to version `1.26.5`.
