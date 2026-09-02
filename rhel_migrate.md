@@ -2,7 +2,7 @@
 
 copyright:
   years: 2022, 2026
-lastupdated: "2026-08-07"
+lastupdated: "2026-09-02"
 
 
 keywords: rhel, os, operating system, rhcos, 418, migration, vpc
@@ -26,6 +26,9 @@ Complete the following steps to migrate your VPC worker nodes to RHCOS
 The information on this page applies to VPC clusters only. It does not apply to Satellite or Classic clusters.
 {: important}
 
+If you have RHEL 8 worker nodes, you must migrate them to RHEL 9 or RHCOS before upgrading your cluster to version 4.18. Version 4.17 is the last {{site.data.keyword.openshiftlong_notm}} release that supports RHEL 8. To migrate RHEL 8 workers to RHEL 9 first, see [Migrating to Red Hat Enterprise Linux 9](/docs/openshift?topic=openshift-migrate-rhel-9), then follow the steps on this page to migrate from RHEL 9 to RHCOS.
+{: important}
+
 Beginning with cluster version 4.18:
 - Red Hat Enterprise Linux CoreOS (RHCOS) is the default operating system for VPC clusters.
 - RHEL worker nodes are deprecated for VPC clusters.
@@ -36,6 +39,7 @@ Migrate your VPC clusters to use RHCOS worker nodes as soon as possible.
 
 | Milestone | Description |
 | --- | --- |
+| 4.17 release | Version 4.17 is the last {{site.data.keyword.openshiftlong_notm}} release that supports RHEL 8 worker nodes. Before upgrading to version 4.18, migrate all RHEL 8 worker nodes to RHEL 9 or RHCOS. |
 | 4.18 release: {{site.data.keyword.openshift_418_release_date}} | Beginning with cluster version 4.18, Red Hat Enterprise Linux CoreOS (RHCOS) is the default operating system and RHEL worker nodes are deprecated in this version. RHEL workers are still available in version 4.18 only to complete the migration to RHCOS workers. |
 | 4.22 release | Version 4.22 is the last version to support RHEL worker nodes on VPC. Migrate your RHEL 9 worker nodes to RHCOS before upgrading to future versions. |
 {: caption="RHEL deprecation timeline" caption-side="bottom"}

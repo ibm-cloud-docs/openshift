@@ -57,6 +57,14 @@ IBM Object CSI Driver cluster add-on patch updates.
 
 
 
+{{site.data.keyword.openshiftlong_notm}} version 4.17 is deprecated.
+:   Support for 4.17 ends on {{site.data.keyword.openshift_417_unsupported_date}}. Version 4.17 is also the last release that supports RHEL 8 worker nodes. Before upgrading to version 4.18, you must migrate all RHEL 8 worker nodes to RHEL 9 or RHCOS. For migration steps, see [Migrating to Red Hat Enterprise Linux 9](/docs/openshift?topic=openshift-migrate-rhel-9) or [Migrating VPC worker nodes to RHCOS](/docs/openshift?topic=openshift-rhel_migrate).
+:   Update your cluster to at least [version 4.18](/docs/openshift?topic=openshift-cs_versions_418) as soon as possible.
+
+
+
+
+
 OpenShift Virtualization cluster add-on patch updates.
 :   For more information, see the [change log](/docs/openshift?topic=openshift-cl-add-ons-openshift-virtualization).
 
