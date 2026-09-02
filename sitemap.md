@@ -10144,3 +10144,7 @@ subcollection: openshift
 
 
 [Requesting access to allowlisted features](/docs/openshift?topic=openshift-allowlist-request#allowlist-request)
+
+* [Standard, Advanced, or Premium support accounts](/docs/openshift?topic=openshift-allowlist-request#allowlist-standard)
+
+* [Basic support accounts](/docs/openshift?topic=openshift-allowlist-request#allowlist-basic)
