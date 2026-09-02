@@ -2,7 +2,7 @@
 
 copyright: 
   years: 2025, 2026
-lastupdated: "2026-08-12"
+lastupdated: "2026-09-02"
 
 keywords: nhc010, exceeded security group rules quota
 
@@ -34,38 +34,23 @@ NHC010   Network     Error      Exceeded security group rules related quota.
 ```
 {: screen}
 
-IBM Cloud VPC infrastructure enforces limits for security group rules per security group in production environments. If this [limit](/docs/vpc?topic=vpc-quotas#service-limits-for-vpc-services){: external} is exceeded, it can prevent your cluster from creating or updating required security group rules. So it means for example you cannot create another cluster.
+IBM Cloud VPC infrastructure enforces a limit of 100 security groups per VPC. Each cluster creation adds security groups, and this limit is reached around 33 clusters. 25 clusters per VPC is the recommended maximum. If this [limit](/docs/vpc?topic=vpc-quotas#service-limits-for-vpc-services){: external} is exceeded, it can prevent your cluster from creating or updating required security group rules, meaning you cannot create another cluster.
 {: tsCauses}
 
-Review and adjust your cluster's security group rules.
+Review and adjust your cluster's security group configuration.
 {: tsResolve}
 
-1. There are multiple security groups associated with a VPC cluster that need to be checked. One example is a shared security group named in the format `kube-vpegw-<VPC_ID>`. Each associated security group typically includes the CLUSTER_ID in its name, making it easier to identify which cluster it belongs to. The shared security group has remote security group rules referencing these associated groups, and it cannot have more than 15 such remote rules. Each cluster in the same VPC has an entry, and once it reaches 15, you cannot create more clusters. To check the number of remote rules, first retrieve the security group ID (SECURITY_GROUP_ID) for the shared security group by running:
+1. There are multiple security groups associated with a VPC cluster that need to be checked. One example is a shared security group named in the format `kube-vpegw-<VPC_ID>`. Each cluster creation adds security groups to the VPC, and a VPC supports a maximum of 100 security groups. Once this limit is reached, you cannot create more clusters. To check the current number of security groups in your VPC, run:
     ```sh
-    ibmcloud is security-groups <VPC_ID> --output json | jq -r '.[] | select(.name=="kube-vpegw-<VPC_ID>") | .id'
+    ibmcloud is security-groups --vpc <VPC_ID> --output json | jq 'length'
     ```
     {: pre}
 
-2. Count how many remote security group rules are associated with this group:
-    ```sh
-    ibmcloud is security-group-rules <SECURITY_GROUP_ID> | grep -c <CLUSTER_ID>
-    ```
-    {: pre}
+2. If the count is at or near 100, you must free up security groups before you can create more clusters. To resolve this:
 
-3. If the count reaches the limit. To resolve this:
+    - Delete unused clusters in the VPC to remove their associated security groups.
+    - Or [create a new VPC](/docs/vpc?topic=vpc-creating-vpc-resources-with-cli-and-api&interface=cli#create-a-vpc-cli) where you can provision additional clusters.
 
-    - Use different VPC or cleanup unused clusters in the VPC.
-    - Or if you have added custom remote rules earlier, than you can review them:
-      - Reduce the number of custom individual rules.
-      - Remove duplicate custom rules that point to the same remote group or IP addresses.
-      - Review and clean up any unnecessary custom rules.
+3. After making adjustments, wait a few minutes and check if the warning clears.
 
-4. For IBM Cloud enforced limits, see [VPC Security Group Rule Limits & Quotas](/docs/vpc?topic=vpc-quotas){: external}.
-
-5. For general best practices, see the [Security Group Guidelines](/docs/security-groups?topic=security-groups-security-groups-guidelines){: external}.
-
-6. For command references, see the [Security Group Rule CLI Reference](/docs/vpc?topic=vpc-vpc-reference#security-group-rule-view){: external}.
-
-7. After making adjustments, wait a few minutes and check if the warning clears.
-
-8. If the issue persists, contact support for further assistance. Open a [support case](/docs/support?topic=support-using-avatar). In the case details, be sure to include any relevant log files, error messages, or command outputs.
+4. If the issue persists, contact support for further assistance. Open a [support case](/docs/support?topic=support-using-avatar). In the case details, be sure to include any relevant log files, error messages, or command outputs.
