@@ -2,7 +2,7 @@
 
 copyright:
   years: 2022, 2026
-lastupdated: "2026-08-13"
+lastupdated: "2026-09-05"
 
 keywords: kubernetes, openshift
 
@@ -598,6 +598,11 @@ If you need the following features, you must [create your own storage class](/do
 
 If your cluster and VPC are not in the same resource group, you must specify the VPC resource group ID in the `resourceGroup` section and the `kube-<clusterID>` security group ID in the `securityGroupIDs` section. You can find the ID of the `kube-<clusterID>` security group by running `ibmcloud is sg kube-CLUSTER_ID  | grep ID`.
 {: important}
+
+
+Custom storage classes must include `nfsvers=4.1` in the `mountOptions` section. NFS version 4.1 is the only NFS version supported by the VPC File CSI Driver add-on.
+{: important}
+
 
 
 1. Create a storage class configuration file. The following example uses the `dp2` [profile](/docs/vpc?topic=vpc-file-storage-profiles&interface=ui#dp2-profile). Choose between a [first-generation and a second-generation](/docs/openshift?topic=openshift-storage-file-vpc-sc-ref) storage class.
