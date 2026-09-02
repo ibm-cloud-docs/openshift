@@ -3,7 +3,7 @@
 copyright:
   years: 2024, 2026
 
-lastupdated: "2026-08-28"
+lastupdated: "2026-09-02"
 
 
 keywords: change log, version history, 4.18_openshift
@@ -692,7 +692,7 @@ The following list shows the changes that are in the master fix pack 4.18.30_157
 
 
 Calico v3.29.7
-:   See the [Calico release notes](https://docs.tigera.io/calico/3.29/release-notes/#calico-open-source-3297-bug-fix-release){: external}.
+:   See the [Calico release notes](https://archive-os-3-29.netlify.app/calico/3.29/release-notes/#calico-open-source-3297-bug-fix-release){: external}.
 Cluster health image v1.6.13
 :   New version contains updates and security fixes.
 etcd v3.5.26
@@ -846,7 +846,7 @@ The following list shows the changes that are in the master fix pack 4.18.27_156
 
 
 Calico v3.29.6
-:   See the [Calico release notes](https://docs.tigera.io/calico/3.29/release-notes/#calico-open-source-3296-bug-fix-release){: external}.
+:   See the [Calico release notes](https://archive-os-3-29.netlify.app/calico/3.29/release-notes/#calico-open-source-3296-bug-fix-release){: external}.
 etcd v3.5.24
 :   See the [etcd release notes](https://github.com/etcd-io/etcd/releases/v3.5.24){: external}.
 {{site.data.keyword.cloud_notm}} Block Storage driver and plug-in v2.5.22
@@ -928,7 +928,7 @@ The following list shows the changes that are in the master fix pack 4.18.24_156
 
 
 Calico v3.29.5
-:   See the [Calico release notes](https://docs.tigera.io/calico/3.29/release-notes/#v3.29.5){: external}.
+:   See the [Calico release notes](https://archive-os-3-29.netlify.app/calico/3.29/release-notes/#v3.29.5){: external}.
 etcd v3.5.23
 :   See the [etcd release notes](https://github.com/etcd-io/etcd/releases/v3.5.23){: external}.
 {{site.data.keyword.cloud_notm}} Controller Manager v1.31.13-2
@@ -1060,7 +1060,7 @@ The following list shows the changes that are in the master fix pack 4.18.19_155
 
 
 Calico v3.29.4
-:   See the [Calico release notes](https://docs.tigera.io/calico/3.29/release-notes/#calico-open-source-3294-bug-fix-release){: external}.
+:   See the [Calico release notes](https://archive-os-3-29.netlify.app/calico/3.29/release-notes/#calico-open-source-3294-bug-fix-release){: external}.
 Calico API server v3.29.4
 :   See the [Calico release notes](https://docs.tigera.io/archive){: external}.
 Cluster health image v1.6.10
@@ -1146,7 +1146,7 @@ The following list shows the changes that are in the master fix pack 4.18.11_154
 
 
 Calico v3.29.3
-:   See the [Calico release notes](https://docs.tigera.io/calico/3.29/release-notes/#v3.29.3){: external}.
+:   See the [Calico release notes](https://archive-os-3-29.netlify.app/calico/3.29/release-notes/#v3.29.3){: external}.
 {{site.data.keyword.cloud_notm}} Block Storage driver and plug-in v2.5.19
 :   New version contains updates and security fixes.
 {{site.data.keyword.cloud_notm}} Controller Manager v1.31.9-4
