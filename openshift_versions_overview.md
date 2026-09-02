@@ -3,7 +3,7 @@
 copyright:
   years: 2014, 2026
 
-lastupdated: "2026-08-31"
+lastupdated: "2026-09-02"
 
 keywords: openshift, version, update, upgrade
 
@@ -42,7 +42,10 @@ For more details about the {{site.data.keyword.redhat_openshift_notm}} and Kuber
 
 ![OpenShift version support timeline](images/oc.svg "Version support timeline"){: caption="Red Hat OpenShift version support timeline" caption-side="bottom"}
 
-All VPC clusters created at version 4.18 or later can use RHCOS worker nodes. Clusters that were created at versions 4.15, 4.16, or 4.17 can only use RHCOS worker nodes if they were initially created with RHCOS worker nodes, or if they are upgraded to at least version 4.18. 
+All VPC clusters created at version 4.18 or later can use RHCOS worker nodes. Clusters that were created at versions 4.15, 4.16, or 4.17 can only use RHCOS worker nodes if they were initially created with RHCOS worker nodes, or if they are upgraded to at least version 4.18.
+{: important}
+
+RHEL 8 worker nodes are supported only through version 4.17. Version 4.18 does not support RHEL 8. If you have RHEL 8 worker nodes, migrate them to RHEL 9 or RHCOS before you upgrade to version 4.18. For more information, see [Red Hat Enterprise Linux (RHEL) deprecation](/docs/openshift?topic=openshift-rhel-deprecation).
 {: important}
 
 - `†` Indicates dates that are tentative and subject to change.

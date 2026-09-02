@@ -501,6 +501,8 @@ subcollection: openshift
 
     * [31 August 2026](/docs/openshift?topic=openshift-openshift-relnotes#openshift-aug3126)
 
+        * {{site.data.keyword.openshiftlong_notm}} version 4.17 is deprecated.
+
         * OpenShift Virtualization cluster add-on patch updates.
 
         * IBM Cloud Image Key Synchronizer cluster add-on patch updates.
@@ -10144,3 +10146,7 @@ subcollection: openshift
 
 
 [Requesting access to allowlisted features](/docs/openshift?topic=openshift-allowlist-request#allowlist-request)
+
+* [Standard, Advanced, or Premium support accounts](/docs/openshift?topic=openshift-allowlist-request#allowlist-standard)
+
+* [Basic support accounts](/docs/openshift?topic=openshift-allowlist-request#allowlist-basic)
