@@ -2,7 +2,7 @@
 
 copyright:
   years: 2024, 2026
-lastupdated: "2026-05-18"
+lastupdated: "2026-09-02"
 
 keywords: data, portability
 
@@ -45,9 +45,9 @@ For more information, see [Your responsibilities with {{site.data.keyword.opensh
 
 
 
-You can use the `oc` CLI to export and save the resources from your cluster. For more information, see the [Kubernetes documentation](https://docs.openshift.com/container-platform/4.19/cli_reference/openshift_cli/developer-cli-commands.html){: external}.
+You can use the `oc` CLI to export and save the resources from your cluster. For more information, see the [Kubernetes documentation](https://docs.redhat.com/en/documentation/openshift_container_platform/4.19/html/cli_tools/openshift-cli-oc#cli-developer-commands){: external}.
 
-Example `oc get` [commands](https://docs.openshift.com/container-platform/4.19/cli_reference/openshift_cli/developer-cli-commands.html){: external}.
+Example `oc get` [commands](https://docs.redhat.com/en/documentation/openshift_container_platform/4.19/html/cli_tools/openshift-cli-oc#cli-developer-commands){: external}.
 
 
 
@@ -121,7 +121,7 @@ To see an example scenario that uses `velero` in IBM Cloud for migrating from a 
 | Title | Description |
 | --- | --- |
 | [`Rclone`](https://rclone.org/){: external} | Review the [Migrating Cloud Object Storage (COS) apps and data between IBM Cloud accounts](/docs/openshift?topic=openshift-storage-cos-app-migration) tutorial to see how to move data that is one COS bucket to another COS bucket in IBM Cloud or in another cloud provider by using `rclone`. |
-| [OpenShift APIs for Data Protection](https://access.redhat.com/articles/5456281){: external} (OADP) | OADP (OpenShift APIs for Data Protection) is an operator that Red Hat has created to create backup and restore APIs for OpenShift clusters. For more information, see [Backup and restore Red Hat OpenShift cluster applications with OADP](https://developer.ibm.com/tutorials/awb-backup-and-restore-redhat-openshift-clusters-with-oadp/){: external} and the [OADP documentation](https://docs.openshift.com/container-platform/4.17/backup_and_restore/application_backup_and_restore/oadp-intro.html){: external} |
+| [OpenShift APIs for Data Protection](https://access.redhat.com/articles/5456281){: external} (OADP) | OADP (OpenShift APIs for Data Protection) is an operator that Red Hat has created to create backup and restore APIs for OpenShift clusters. For more information, see [Backup and restore Red Hat OpenShift cluster applications with OADP](https://developer.ibm.com/tutorials/awb-backup-and-restore-redhat-openshift-clusters-with-oadp/){: external} and the [OADP documentation](https://docs.redhat.com/en/documentation/openshift_container_platform/4.17/html/backup_and_restore/oadp-application-backup-and-restore#oadp-introduction){: external} |
 | [Backing up and restoring apps and data with Portworx Backup](/docs/openshift?topic=openshift-storage_portworx_backup#px-backup-storage) | This document walks you through setting up PX Backup. You can configure clusters from other providers and restore data from IBM Cloud to the new provider. |
 | [Wanclouds](https://wanclouds.net/){: external} VPC+ DRaaS (VPC+ Disaster Recovery as a Service) | Review the Wanclouds Multi Cloud Backup, Disaster Recovery and Optimization as a Service. For more information, see the [Wanclouds documentation](https://docs.wanclouds.net/ibm/About-VPC-DRaas/){: external}. |
 {: caption="Other options for exporting data" caption-side="bottom"}

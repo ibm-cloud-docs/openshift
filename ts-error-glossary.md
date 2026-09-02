@@ -3,7 +3,7 @@
 copyright:
   years: 2025, 2026
 
-lastupdated: "2026-08-25"
+lastupdated: "2026-09-02"
 
 keywords: openshift, error messages, error codes, troubleshooting reference
 
@@ -122,7 +122,7 @@ The following error codes appear in the output of the `ibmcloud oc ingress statu
 | `CAE003: Unable to determine the ingress IP address for the network load balancer.` | [Classic clusters: Why does the master status have an ingress IP address for NLB error?](/docs/openshift?topic=openshift-rhoks_ts_openvpn_subnet) |
 | VPC load balancer health status shows only 2 of N instances as passing | [VPC clusters: Why do I see VPC load balancer health status failures?](/docs/openshift?topic=openshift-vpc_lb_healthcheck) |
 | `Error on cloud load balancer ... Service and associated VPC load balancer do not match ... hostname.invalid` | [Why does my Private Path NLB contain a `hostname.invalid` error?](/docs/openshift?topic=openshift-ts-ppnlb-hostname) |
-| Ingress subdomain DNS issue | [Why does my Ingress subdomain have a DNS issue?](/docs/openshift?topic=openshift-ingress_subdomain_dns_marshal) |
+| Ingress subdomain DNS issue | [Why does my Ingress subdomain have a DNS issue?](/docs/openshift?topic=openshift-ts-ingress-erriodeg) |
 {: caption="Load balancer error messages" caption-side="bottom"}
 
 ## Apps and services
